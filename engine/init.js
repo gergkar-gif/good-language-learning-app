@@ -6,12 +6,12 @@ function showTab(tabName) {
         tab.classList.add('hidden');
     });
     document.getElementById(tabName).classList.remove('hidden');
-    
+
     document.querySelectorAll('.nav button').forEach(btn => {
         btn.classList.remove('active');
     });
     event.target.classList.add('active');
-    
+
     if (tabName === 'drills' && !currentVerb) {
         loadVerb(drillVerbs[0]);
     }
@@ -43,7 +43,7 @@ document.head.appendChild(style);
 function toggleLevel(levelId) {
     const lessonsDiv = document.getElementById(levelId + '-lessons');
     const arrow = document.getElementById(levelId + '-arrow');
-    
+
     if (lessonsDiv.style.display === 'none') {
         lessonsDiv.style.display = 'block';
         arrow.textContent = '▼';
@@ -59,4 +59,7 @@ loadDictionary().then(() => {
     loadXP();
     updateXPHeader();
     updateReaderWordColors();
+    if (typeof renderCurriculum === 'function') {
+        renderCurriculum();
+    }
 });

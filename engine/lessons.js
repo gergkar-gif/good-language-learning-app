@@ -20,11 +20,17 @@ const contentCache = {};
 
 async function loadContent(path) {
     if (contentCache[path]) return contentCache[path];
-    const response = await fetch(path);
-    if (!response.ok) throw new Error('Content not found: ' + path);
-    const data = await response.json();
-    contentCache[path] = data;
-    return data;
+    try {
+        const response = await fetch(path);
+        if (!response.ok) throw new Error('Content not found: ' + path);
+        const data = await response.json();
+        contentCache[path] = data;
+        return data;
+    } catch (error) {
+        console.warn('Content missing, using placeholder:', path);
+        // Return a safe placeholder so the lesson doesn't crash
+        return { title: 'Coming soon', sections: [], words: [], lines: [], exercises: [], cards: [] };
+    }
 }
 
 async function loadLesson(lessonId) {
@@ -704,4 +710,8 @@ function checkLessonAnswer(btn, isCorrect) {
         document.getElementById('quiz-feedback').textContent = '✗ Not quite. Try again!';
         document.getElementById('quiz-feedback').style.color = '#B8412F';
     }
+}
+
+if (typeof markLessonComplete === 'function') {
+    markLessonComplete(currentLesson.id);
 }
