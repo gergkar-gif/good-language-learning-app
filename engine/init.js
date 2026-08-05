@@ -1,7 +1,7 @@
 // ============================================
 // TAB SWITCHING
 // ============================================
-function showTab(tabName) {
+function showTab(tabName, event) {
     document.querySelectorAll('.tab').forEach(tab => {
         tab.classList.add('hidden');
     });
@@ -10,10 +10,18 @@ function showTab(tabName) {
     document.querySelectorAll('.nav button').forEach(btn => {
         btn.classList.remove('active');
     });
-    event.target.classList.add('active');
+    if (event && event.target) {
+        event.target.classList.add('active');
+    } else {
+        // If no event (called programmatically), activate first button
+        document.querySelector('.nav button:first-child').classList.add('active');
+    }
 
     if (tabName === 'drills' && !currentVerb) {
-        loadVerb(drillVerbs[0]);
+        // Initialize drills: load first verb if available
+        if (drillVerbs && drillVerbs.length > 0) {
+            loadVerb(drillVerbs[0]);
+        }
     }
     if (tabName === 'review') {
         showNextCard();

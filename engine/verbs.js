@@ -16,8 +16,12 @@ const ALL_TENSE_OPTIONS = [
     'subjuntivo.futuro'
 ];
 
-const drillVerbs = (typeof ALL_VERBS !== 'undefined') ? ALL_VERBS : ['hablar', 'comer', 'vivir'];
+// Ensure we have verbs to drill - use ALL_VERBS if available, otherwise fallback
+const drillVerbs = (typeof ALL_VERBS !== 'undefined' && ALL_VERBS.length > 0) 
+    ? [...ALL_VERBS] 
+    : ['hablar', 'comer', 'vivir', 'tener', 'hacer', 'decir', 'ir', 'ver', 'dar', 'saber'];
 
+// Shuffle the verbs for variety
 for (let i = drillVerbs.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [drillVerbs[i], drillVerbs[j]] = [drillVerbs[j], drillVerbs[i]];
@@ -64,7 +68,7 @@ function pickRandomTense() {
 function getTenseDisplayName(path) {
     const map = {
         'indicativo.presente': 'Presente (Indicative)',
-        'indicativo.preterito': 'Pretérito (Indicative)',
+        'indicativo.preterito': 'Pret\u00e9rito (Indicative)',
         'indicativo.imperfecto': 'Imperfecto (Indicative)',
         'indicativo.futuro': 'Futuro (Indicative)',
         'indicativo.condicional': 'Condicional (Indicative)',
@@ -78,6 +82,9 @@ function getTenseDisplayName(path) {
 async function loadVerb(verbName) {
     try {
         const response = await fetch('imports/verbs/' + verbName + '.json');
+        if (!response.ok) {
+            throw new Error('Verb file not found: ' + verbName);
+        }
         currentVerb = await response.json();
         if (document.getElementById('tense-select').value === 'all') {
             pickRandomTense();
@@ -85,16 +92,29 @@ async function loadVerb(verbName) {
         updateDrillDisplay();
         clearDrillInputs();
     } catch (error) {
-        console.error('Failed to load verb:', error);
-        alert('Could not load verb: ' + verbName);
+        console.error('Failed to load verb:', verbName, error);
+        // Try to load a fallback verb
+        if (verbName !== 'hablar') {
+            console.log('Trying fallback verb: hablar');
+            loadVerb('hablar');
+        } else {
+            alert('Could not load verb: ' + verbName + '. Please check your verb files.');
+        }
     }
 }
 
 function updateDrillDisplay() {
     const titleEl = document.getElementById('drill-title');
     const meaningEl = document.getElementById('drill-meaning');
+    
+    if (!currentVerb) {
+        if (titleEl) titleEl.textContent = 'Loading...';
+        if (meaningEl) meaningEl.textContent = '';
+        return;
+    }
+    
     if (titleEl) {
-        titleEl.textContent = currentVerb.infinitivo.toUpperCase() + ' — ' + getTenseDisplayName(currentTensePath);
+        titleEl.textContent = currentVerb.infinitivo.toUpperCase() + ' \u2014 ' + getTenseDisplayName(currentTensePath);
     }
     if (meaningEl && currentVerb.english) {
         meaningEl.textContent = currentVerb.english.infinitivo || '';
@@ -166,7 +186,7 @@ function checkDrill() {
     
     const resultDiv = document.getElementById('drill-result');
     if (correct === total) {
-        resultDiv.textContent = '✓ Perfect! ' + total + '/' + total;
+        resultDiv.textContent = '\u2713 Perfect! ' + total + '/' + total;
         resultDiv.style.color = '#3E8E5B';
     } else {
         resultDiv.textContent = correct + '/' + total + ' correct. Try again!';
