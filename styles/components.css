@@ -136,33 +136,61 @@
   border-bottom: none;
 }
 
-/* Story library — shelves */
-.story-shelf {
+/* Library — reading rooms (one per CEFR level, collapsible) */
+.reading-room {
   margin-bottom: 28px;
 }
 
-.story-shelf-header {
+.reading-room-header {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
+  width: 100%;
+  background: none;
+  text-align: left;
   border-bottom: 2px solid var(--border);
-  padding-bottom: 6px;
+  padding: 0 0 6px;
   margin-bottom: 14px;
 }
 
-.story-shelf-title {
+.reading-room-header:hover .reading-room-title {
+  color: var(--primary-dark);
+}
+
+.reading-room-title {
   color: var(--primary);
   font-size: 1.05em;
   text-transform: uppercase;
   letter-spacing: .05em;
 }
 
-.story-shelf-count {
+.reading-room-count {
   font-size: .8em;
   color: var(--muted);
 }
 
-.story-subshelf-title {
+.reading-room-arrow {
+  font-size: .8em;
+  color: var(--secondary);
+  flex-shrink: 0;
+  margin-left: 12px;
+}
+
+.reading-room-body.hidden {
+  display: none;
+}
+
+.reading-room-empty {
+  font-style: italic;
+  padding: 4px 0 8px;
+}
+
+/* Library — shelves (one per story type within a room) */
+.story-shelf {
+  margin-bottom: 20px;
+}
+
+.story-shelf-title {
   color: var(--muted);
   font-size: .85em;
   font-weight: 600;

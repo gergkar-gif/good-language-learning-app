@@ -549,6 +549,11 @@ function nextLessonStep() {
 
 function finishLesson() {
     const reward = currentLesson.steps.length * 10;
+
+    if (typeof markLessonComplete === 'function') {
+        markLessonComplete(currentLesson.id);
+    }
+
     if (typeof awardXP === 'function') {
         awardXP(reward, 'Lesson complete');
     } else {
@@ -719,8 +724,4 @@ function checkLessonAnswer(btn, isCorrect) {
         document.getElementById('quiz-feedback').textContent = '✗ Not quite. Try again!';
         document.getElementById('quiz-feedback').style.color = '#B8412F';
     }
-}
-
-if (typeof markLessonComplete === 'function') {
-    markLessonComplete(currentLesson.id);
 }

@@ -48,7 +48,7 @@ async function renderCurriculum() {
             <div class="level-section">
                 <div onclick="toggleLevel('${level.toLowerCase()}')" class="level-header">
                     <div>
-                        <h3>${data.title || level}</h3>
+                        <h3>${data.title || level} (${level})</h3>
                         <p>${completed}/${lessons.length} completed</p>
                     </div>
                     <span id="${level.toLowerCase()}-arrow">▼</span>
@@ -57,13 +57,13 @@ async function renderCurriculum() {
                 <div id="${level.toLowerCase()}-lessons">
         `;
 
-        lessons.forEach(lesson => {
+        lessons.forEach((lesson, index) => {
             const done = !!progress[lesson.id];
             html += `
                 <div class="card"
                      onclick="startLesson('${lesson.id}')"
                      style="${done ? "opacity:.7;border-left:4px solid #4CAF50;" : ""}">
-                    <h3>${CURRICULUM_EMOJIS[lesson.title] || "📚"} ${lesson.title} ${done ? "✓" : ""}</h3>
+                    <h3>${CURRICULUM_EMOJIS[lesson.title] || "📚"} ${index + 1} - ${lesson.title} ${done ? "✓" : ""}</h3>
                     <p>${lesson.goal || ""}</p>
                     ${UI.badge(level)}
                 </div>

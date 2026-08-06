@@ -131,10 +131,14 @@ function markStoryRead(storyId) {
 // ============================================
 
 const STORY_TYPE_LABELS = {
-    original: 'Original Stories',
-    classics: 'Classic Tales',
-    world: 'World Voices'
+    original: 'Original',
+    classics: 'Classics',
+    world: 'World'
 };
+
+// Every CEFR level gets a reading room, even before it has any stories —
+// matches the Learn tab, which shows all levels up front.
+const CEFR_LEVELS = ['A1', 'A2', 'B1', 'B2', 'C1'];
 
 // Deterministic pastel cover per story, so the same book always
 // looks the same instead of reshuffling colors on every render.
@@ -172,6 +176,18 @@ window.Reader = {
             // story), but this listener on the container itself survives that.
             const self = this;
             libraryEl.addEventListener('click', function(e) {
+                const roomToggle = e.target.closest('[data-room-toggle]');
+                if (roomToggle) {
+                    const levelId = roomToggle.getAttribute('data-room-toggle');
+                    const body = document.getElementById('reading-room-body-' + levelId);
+                    const arrow = document.getElementById('reading-room-arrow-' + levelId);
+                    if (!body) return;
+                    const nowOpen = body.classList.toggle('hidden') === false;
+                    roomToggle.setAttribute('aria-expanded', String(nowOpen));
+                    if (arrow) arrow.textContent = nowOpen ? '▼' : '▶';
+                    return;
+                }
+
                 const card = e.target.closest('.story-card');
                 if (!card) return;
                 const storyId = card.getAttribute('data-story-id');
@@ -184,15 +200,10 @@ window.Reader = {
     },
 
     buildLibraryUI(container) {
-        if (!this.stories.length) {
-            container.innerHTML = '<p class="text-muted">No stories in manifest yet.</p>';
-            return;
-        }
-
         const self = this;
         const readIds = getReadStoryIds();
 
-        // Shelves are grouped by level first (a learner's main axis of choice).
+        // Each CEFR level is a "reading room" — a collapsible top-level section.
         const byLevel = {};
         this.stories.forEach(function(s) {
             const level = s.level || 'Unknown';
@@ -200,39 +211,49 @@ window.Reader = {
             byLevel[level].push(s);
         });
 
+        // Any level present in the data but outside the known CEFR set
+        // (shouldn't normally happen) still gets shown, appended at the end.
+        const extraLevels = Object.keys(byLevel).filter(l => !CEFR_LEVELS.includes(l)).sort();
+        const levels = CEFR_LEVELS.concat(extraLevels);
+
         let html = '';
-        const levels = Object.keys(byLevel).sort();
 
         levels.forEach(function(level) {
-            const shelfStories = byLevel[level];
-            const readCount = shelfStories.filter(s => readIds.includes(s.id)).length;
+            const roomStories = byLevel[level] || [];
+            const readCount = roomStories.filter(s => readIds.includes(s.id)).length;
+            const levelId = level.toLowerCase().replace(/[^a-z0-9]/g, '-');
 
-            html += '<div class="story-shelf">' +
-                '<div class="story-shelf-header">' +
-                    '<h3 class="story-shelf-title">' + self.escapeHtml(level) + '</h3>' +
-                    '<span class="story-shelf-count">' + readCount + ' / ' + shelfStories.length + ' read</span>' +
-                '</div>';
+            html += '<div class="reading-room">' +
+                '<button class="reading-room-header" data-room-toggle="' + levelId + '" aria-expanded="true">' +
+                    '<div>' +
+                        '<h3 class="reading-room-title">' + self.escapeHtml(level) + '</h3>' +
+                        '<span class="reading-room-count">' + readCount + ' / ' + roomStories.length + ' read</span>' +
+                    '</div>' +
+                    '<span class="reading-room-arrow" id="reading-room-arrow-' + levelId + '">▼</span>' +
+                '</button>' +
+                '<div class="reading-room-body" id="reading-room-body-' + levelId + '">';
 
-            // If this shelf mixes story types (original/classics/world), split
-            // it into labelled sub-groups; a single-type shelf stays flat.
-            const types = Array.from(new Set(shelfStories.map(s => s.type || s.source || 'original')));
-
-            if (types.length > 1) {
-                types.forEach(function(type) {
-                    const group = shelfStories.filter(s => (s.type || s.source || 'original') === type);
-                    html += '<h4 class="story-subshelf-title">' +
-                        self.escapeHtml(STORY_TYPE_LABELS[type] || type) + '</h4>' +
-                        '<div class="story-grid">' +
-                        group.map(story => self.buildStoryCardHtml(story, readIds)).join('') +
-                        '</div>';
-                });
+            if (!roomStories.length) {
+                html += '<p class="text-muted reading-room-empty">No stories at this level yet.</p>';
             } else {
-                html += '<div class="story-grid">' +
-                    shelfStories.map(story => self.buildStoryCardHtml(story, readIds)).join('') +
+                // Within a room, stories are always split into shelves by type
+                // (original / classics / world) — whichever are available.
+                const types = Array.from(new Set(roomStories.map(s => s.type || s.source || 'original')));
+
+                types.forEach(function(type) {
+                    const group = roomStories.filter(s => (s.type || s.source || 'original') === type);
+                    html += '<div class="story-shelf">' +
+                        '<h4 class="story-shelf-title">' +
+                            self.escapeHtml(STORY_TYPE_LABELS[type] || type) +
+                        '</h4>' +
+                        '<div class="story-grid">' +
+                            group.map(story => self.buildStoryCardHtml(story, readIds)).join('') +
+                        '</div>' +
                     '</div>';
+                });
             }
 
-            html += '</div>';
+            html += '</div></div>';
         });
 
         container.innerHTML = html;
