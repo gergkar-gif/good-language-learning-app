@@ -18,3 +18,8 @@ node_modules/
 # Python (if you ever use it)
 __pycache__/
 *.pyc
+
+# Regeneratable dictionary/index build caches
+# (rebuild via scripts/import_dictionary.py and scripts/build_word_index.py)
+imports/dictionary/es-en.data.raw
+imports/dictionary/es_allforms.csv.raw

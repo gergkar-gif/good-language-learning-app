@@ -107,8 +107,6 @@ function _attachNavEvents() {
 // --------------------------------------------
 
 async function initialiseApp() {
-    await loadDictionary();
-
     loadDeck();
     loadXP();
     updateXPHeader();

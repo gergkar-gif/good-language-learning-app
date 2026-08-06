@@ -1,22 +1,6 @@
-// ============================================
-// WORD DATABASE (for the reader)
-// ============================================
-let wordDB = {};
-
-async function loadDictionary() {
-    try {
-        // Updated path to include language prefix
-        const response = await fetch('imports/dictionary/spanish-en.json');
-        if (!response.ok) {
-            console.warn('Dictionary not found. Using inline fallbacks only.');
-            return;
-        }
-        wordDB = await response.json();
-        console.log('Dictionary loaded:', Object.keys(wordDB).length, 'words');
-    } catch (error) {
-        console.error('Failed to load dictionary:', error);
-    }
-}
+// Word lookup lives in engine/lexicon.js (Lexicon), which loads the
+// dictionary and morphology indexes lazily on the first word tap — they
+// total several MB and shouldn't block app startup.
 
 // =============================================
 // READER WORD COLORING (Familiarity Ramp)
@@ -41,64 +25,114 @@ function updateReaderWordColors() {
 // ============================================
 // WORD POPUP
 // ============================================
-function showWord(spanish, english) {
-    currentWord = spanish.toLowerCase().replace(/[.,]/g, '');
-    currentWordInlineEnglish = english;
-    const cleanWord = currentWord;
-    const data = wordDB[cleanWord] || { en: english, type: 'unknown', note: 'Not in database yet' };
-
+function _ensureWordPopup() {
     let popup = document.getElementById('word-popup');
-    if (!popup) {
-        popup = document.createElement('div');
-        popup.id = 'word-popup';
-        popup.innerHTML = `
-            <div id="popup-overlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 100; display: flex; align-items: flex-end; justify-content: center;">
-                <div style="background: #F2EFE6; width: 100%; max-width: 500px; border-radius: 20px 20px 0 0; padding: 25px; animation: slideUp 0.3s ease-out;">
-                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 15px;">
-                        <div>
-                            <h2 id="popup-word" style="font-size: 28px; color: #1B4B5A; margin: 0;"></h2>
-                            <p id="popup-type" style="color: #8FB4BA; font-size: 14px; margin: 5px 0 0 0;"></p>
-                        </div>
-                        <button onclick="closePopup()" style="background: none; border: none; font-size: 24px; cursor: pointer; color: #8FB4BA;">×</button>
+    if (popup) return popup;
+
+    popup = document.createElement('div');
+    popup.id = 'word-popup';
+    popup.innerHTML = `
+        <div id="popup-overlay" class="wp-overlay">
+            <div class="wp-sheet">
+                <div class="wp-header">
+                    <div>
+                        <h2 id="popup-word" class="wp-word"></h2>
+                        <p id="popup-analysis" class="wp-analysis"></p>
                     </div>
-                    <p id="popup-meaning" style="font-size: 20px; margin-bottom: 10px; font-weight: 500; color: #2E2A26;"></p>
-                    <p id="popup-note" style="color: #8FB4BA; font-size: 14px; margin-bottom: 20px; font-style: italic;"></p>
-                    <p id="popup-new-word-cap" style="color: #E4572E; font-size: 13px; margin-bottom: 10px; display: none;">⚠️ Daily new word limit reached (20/20)</p>
-                    <button id="popup-add-btn" onclick="addToSRS()" style="width: 100%; padding: 14px; background: #1B4B5A; color: white; border: none; border-radius: 10px; font-size: 16px; cursor: pointer; font-weight: bold;">➕ Add to SRS Deck</button>
+                    <button class="wp-close" onclick="closePopup()" aria-label="Close">×</button>
                 </div>
+                <div id="popup-body"></div>
+                <p id="popup-new-word-cap" class="wp-cap">⚠️ Daily new word limit reached (20/20)</p>
+                <button id="popup-add-btn" class="wp-add" onclick="addToSRS()">➕ Add to SRS Deck</button>
             </div>
-        `;
-        document.body.appendChild(popup);
+        </div>
+    `;
+    document.body.appendChild(popup);
+    return popup;
+}
+
+function _renderWordReadings(tappedWord, readings) {
+    const body = document.getElementById('popup-body');
+    const analysisEl = document.getElementById('popup-analysis');
+
+    if (!readings.length) {
+        analysisEl.textContent = '';
+        body.innerHTML = '<p class="wp-empty">Not in the dictionary yet.</p>';
+        return;
     }
 
-    document.getElementById('popup-word').textContent = spanish;
-    document.getElementById('popup-type').textContent = data.type;
-    document.getElementById('popup-meaning').textContent = data.en;
-    document.getElementById('popup-note').textContent = data.note || 'No additional notes';
+    // Primary reading fills the header; any others are listed below, so an
+    // ambiguous word ("casas" = houses / you marry) still shows both.
+    const primary = readings[0];
+    analysisEl.textContent = [primary.pos, primary.gender, primary.analysis]
+        .filter(Boolean).join(' · ');
 
+    let html = '';
+    if (primary.lemma.toLowerCase() !== String(tappedWord).toLowerCase()) {
+        html += `<p class="wp-lemma">from <strong>${Reader.escapeHtml(primary.lemma)}</strong></p>`;
+    }
+    html += `<p class="wp-meaning">${Reader.escapeHtml(primary.translation || '— no translation available —')}</p>`;
+
+    if (readings.length > 1) {
+        html += '<div class="wp-alts"><p class="wp-alts-title">Other readings</p>';
+        readings.slice(1, 4).forEach(r => {
+            const meta = [r.pos, r.analysis].filter(Boolean).join(' · ');
+            html += `
+                <div class="wp-alt">
+                    <div class="wp-alt-lemma">${Reader.escapeHtml(r.lemma)}
+                        <span class="wp-alt-meta">${Reader.escapeHtml(meta)}</span>
+                    </div>
+                    <div class="wp-alt-en">${Reader.escapeHtml(r.translation || '—')}</div>
+                </div>
+            `;
+        });
+        html += '</div>';
+    }
+    body.innerHTML = html;
+}
+
+async function showWord(spanish) {
+    const popup = _ensureWordPopup();
+    document.getElementById('popup-word').textContent = spanish;
+    popup.style.display = 'block';
+
+    if (!Lexicon.isLoaded()) {
+        document.getElementById('popup-analysis').textContent = '';
+        document.getElementById('popup-body').innerHTML = '<p class="wp-empty">Loading dictionary…</p>';
+        await Lexicon.load();
+        // the learner may have closed the popup or tapped another word meanwhile
+        if (document.getElementById('popup-word').textContent !== spanish) return;
+    }
+
+    const readings = Lexicon.lookup(spanish).readings;
+    _renderWordReadings(spanish, readings);
+
+    // The deck stores dictionary forms, so a tapped "días" is saved as "día".
+    currentWord = readings.length
+        ? readings[0].lemma.toLowerCase()
+        : String(spanish).toLowerCase().replace(/[.,]/g, '');
+    currentWordTranslation = readings.length ? readings[0].translation : null;
+    currentWordPos = readings.length ? readings[0].pos : 'unknown';
+
+    const cleanWord = currentWord;
     const capWarning = document.getElementById('popup-new-word-cap');
     const btn = document.getElementById('popup-add-btn');
     const alreadySaved = srsDeck.find(w => w.spanish === cleanWord);
     const atCap = !canAddNewWord();
 
+    btn.classList.remove('is-saved', 'is-disabled');
+    capWarning.style.display = 'none';
+
     if (alreadySaved) {
         btn.textContent = '✓ Already in deck';
-        btn.style.background = '#8FB4BA';
-        btn.style.cursor = 'default';
-        capWarning.style.display = 'none';
+        btn.classList.add('is-saved');
     } else if (atCap) {
         btn.textContent = 'Daily limit reached';
-        btn.style.background = '#ccc';
-        btn.style.cursor = 'default';
+        btn.classList.add('is-disabled');
         capWarning.style.display = 'block';
     } else {
         btn.textContent = '➕ Add to SRS Deck';
-        btn.style.background = '#1B4B5A';
-        btn.style.cursor = 'pointer';
-        capWarning.style.display = 'none';
     }
-
-    popup.style.display = 'block';
 }
 
 function closePopup() {
@@ -360,11 +394,13 @@ window.Reader = {
         return tokens.map(function(token) {
             if (/^[a-zA-Z\u00e1\u00e9\u00ed\u00f3\u00fa\u00c1\u00c9\u00cd\u00d3\u00da\u00f1\u00d1\u00fc\u00dc0-9]+$/.test(token)) {
                 const cleanWord = token.toLowerCase().replace(/[.,]/g, '');
-                const dictEntry = wordDB[cleanWord];
-                const english = dictEntry ? dictEntry.en : '';
 
-                return '<span class="word" data-word="' + self.escapeHtml(cleanWord) + '" ' +
-                    'onclick="showWord(' + JSON.stringify(token) + ', ' + JSON.stringify(english) + ')">' +
+                // Taps are handled by a delegated listener (see below), not an
+                // inline onclick: JSON.stringify emits double quotes, which
+                // terminate the HTML attribute early and silently break every
+                // word in the story. No translation is baked in either —
+                // showWord() resolves the word through the Lexicon on tap.
+                return '<span class="word" data-word="' + self.escapeHtml(cleanWord) + '">' +
                     self.escapeHtml(token) + '</span>';
             }
             return self.escapeHtml(token);
@@ -396,7 +432,13 @@ window.Reader = {
 // AUTO-INIT
 // ============================================
 
-loadDictionary();
+// Word taps, delegated once at the document level so it covers both the
+// Library's story view and the story step inside a lesson, and survives
+// every re-render of either.
+document.addEventListener('click', function (e) {
+    const wordEl = e.target.closest('.word');
+    if (wordEl) showWord(wordEl.textContent.trim());
+});
 
 (function initWhenReady() {
     function start() {

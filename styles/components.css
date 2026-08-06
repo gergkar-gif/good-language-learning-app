@@ -885,3 +885,134 @@
 .review-rate-hard  { background: #d08b00; }
 .review-rate-good  { background: var(--primary); }
 .review-rate-easy  { background: #3E8E5B; }
+
+/* ============================================
+   WORD POPUP — tap-to-translate sheet
+============================================ */
+
+.wp-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, .5);
+  z-index: 100;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.wp-sheet {
+  background: var(--bg);
+  width: 100%;
+  max-width: 500px;
+  border-radius: var(--radius) var(--radius) 0 0;
+  padding: 24px;
+  animation: slideUp .3s ease-out;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.wp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 16px;
+}
+
+.wp-word {
+  font-size: 28px;
+  color: var(--primary);
+  margin: 0;
+}
+
+.wp-analysis {
+  color: var(--secondary);
+  font-size: 14px;
+  margin: 4px 0 0;
+}
+
+.wp-close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--secondary);
+  line-height: 1;
+}
+
+.wp-lemma {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.wp-lemma strong { color: var(--primary); }
+
+.wp-meaning {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 16px;
+}
+
+.wp-empty {
+  color: var(--muted);
+  font-style: italic;
+  margin-bottom: 16px;
+}
+
+/* Alternate readings — Spanish forms are often genuinely ambiguous */
+.wp-alts {
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+  margin-bottom: 16px;
+}
+
+.wp-alts-title {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.wp-alt { margin-bottom: 8px; }
+
+.wp-alt-lemma {
+  font-weight: 600;
+  color: var(--primary);
+  font-size: 15px;
+}
+
+.wp-alt-meta {
+  font-weight: 400;
+  color: var(--muted);
+  font-size: 12px;
+  margin-left: 6px;
+}
+
+.wp-alt-en {
+  font-size: 14px;
+  color: var(--text);
+}
+
+.wp-cap {
+  color: var(--accent);
+  font-size: 13px;
+  margin-bottom: 10px;
+  display: none;
+}
+
+.wp-add {
+  width: 100%;
+  padding: 14px;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.wp-add.is-saved   { background: var(--secondary); cursor: default; }
+.wp-add.is-disabled { background: #ccc; cursor: default; }

@@ -2,7 +2,11 @@
 // USER DATA & LOCAL STORAGE
 // ============================================
 let srsDeck = [];
+// Set by showWord() — the resolved lemma and its dictionary entry, so
+// addToSRS() saves the dictionary form rather than the tapped surface form.
 let currentWord = null;
+let currentWordTranslation = null;
+let currentWordPos = null;
 
 function loadDeck() {
     const saved = localStorage.getItem('spanishApp_srsDeck');
@@ -11,7 +15,7 @@ function loadDeck() {
         // Enrich cards that were added before dictionary loaded
         for (const card of srsDeck) {
             if (card.english === 'unknown' || !card.english) {
-                const entry = wordDB[card.spanish];
+                const entry = Lexicon.define(card.spanish);
                 if (entry) {
                     card.english = entry.en;
                     card.type = entry.type;
@@ -42,10 +46,14 @@ function clearDeck() {
 // ============================================
 function addToSRS() {
     if (!currentWord) return;
+    // currentWord is already the lemma resolved by showWord(), so an
+    // inflected "días" tapped in a story is saved to the deck as "día".
     const cleanWord = currentWord;
-    const dictEntry = wordDB[cleanWord];
-    const data = dictEntry || { en: currentWordInlineEnglish || 'unknown', type: 'unknown' };
-    
+    const data = {
+        en: currentWordTranslation || 'unknown',
+        type: currentWordPos || 'unknown'
+    };
+
     if (srsDeck.find(w => w.spanish === cleanWord)) {
         closePopup();
         return;
@@ -120,7 +128,7 @@ function showNextCard() {
     currentReviewCard = dueCards[0];
 
     // Live dictionary lookup — fixes cards added before dictionary loaded
-    const liveEntry = wordDB[currentReviewCard.spanish];
+    const liveEntry = Lexicon.define(currentReviewCard.spanish);
     const displayEnglish = liveEntry ? liveEntry.en : (currentReviewCard.english || '—');
     const displayType = liveEntry ? liveEntry.type : (currentReviewCard.type || '');
 
