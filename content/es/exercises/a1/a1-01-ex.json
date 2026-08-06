@@ -2,51 +2,73 @@
   "lesson": "a1-01",
   "exercises": [
     {
-      "id": "a1-01-greetings-match",
-      "category": "vocabulary",
+      "id": "a1-01-practice-match",
+      "category": "grammar",
       "type": "matching",
       "pairs": [
         ["Hola", "Hello"],
         ["Buenos días", "Good morning"],
         ["Buenas tardes", "Good afternoon"],
-        ["Buenas noches", "Good evening / Good night"],
+        ["Buenas noches", "Good evening"],
         ["Adiós", "Goodbye"],
         ["Hasta luego", "See you later"]
       ]
     },
     {
-      "id": "a1-01-grammar-01",
+      "id": "a1-01-practice-choice",
+      "category": "grammar",
+      "type": "multiple-choice",
+      "question": "Someone asks you '¿De dónde eres?'. What do they want to know?",
+      "options": [
+        "Where you are from",
+        "What your name is",
+        "How you are feeling"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-01-practice-blank",
       "category": "grammar",
       "type": "fill-blank",
-      "sentence": "_____ Carlos.",
+      "sentence": "_____ de Hungría.",
       "answer": "Soy"
     },
     {
-      "id": "a1-01-grammar-02",
+      "id": "a1-01-practice-build",
       "category": "grammar",
       "type": "sentence-builder",
       "tiles": [
-        "Soy",
-        "Carlos"
+        "Hola",
+        "me",
+        "llamo",
+        "Meg"
       ],
       "solution": [
-        "Soy",
-        "Carlos"
+        "Hola",
+        "me",
+        "llamo",
+        "Meg"
       ]
     },
     {
-      "id": "a1-01-toolkit-match",
-      "category": "vocabulary",
-      "type": "matching",
-      "pairs": [
-        ["Sí", "Yes"],
-        ["No", "No"],
-        ["País", "Country"],
-        ["Mucho gusto", "Nice to meet you"]
+      "id": "a1-01-practice-order",
+      "category": "grammar",
+      "type": "sentence-order",
+      "sentences": [
+        "Hola. Buenos días.",
+        "Me llamo Meg. ¿Cómo te llamas?",
+        "Me llamo Carlos. Mucho gusto.",
+        "Adiós. Hasta luego."
+      ],
+      "solution": [
+        0,
+        1,
+        2,
+        3
       ]
     },
     {
-      "id": "a1-01-reading-01",
+      "id": "a1-01-reading-choice",
       "category": "reading",
       "type": "multiple-choice",
       "question": "Where is Carlos from?",
@@ -58,28 +80,38 @@
       "correct": 0
     },
     {
-      "id": "a1-01-reading-02",
+      "id": "a1-01-reading-order",
       "category": "reading",
       "type": "sentence-order",
       "sentences": [
-        "Carlos enters the restaurant.",
-        "Meg says hello.",
-        "They introduce themselves."
+        "Carlos goes to a Mexican restaurant.",
+        "Meg and Carlos introduce themselves.",
+        "They say which country they are from.",
+        "They say goodbye."
       ],
       "solution": [
         0,
         1,
-        2
+        2,
+        3
       ]
     },
     {
-      "id": "a1-01-dialogue-01",
+      "id": "a1-01-dialogue",
       "category": "dialogue",
       "type": "dialogue-complete",
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Hola. Me llamo Meg."
+          "text": "Hola. Me llamo Meg. ¿Cómo te llamas?"
+        },
+        {
+          "speaker": "Carlos",
+          "text": "Me llamo Carlos. Mucho gusto."
+        },
+        {
+          "speaker": "Meg",
+          "text": "Mucho gusto. ¿De dónde eres?"
         },
         {
           "speaker": "Carlos",
@@ -87,41 +119,22 @@
         }
       ],
       "options": [
-        "Me llamo Carlos.",
-        "Tengo veinte años.",
-        "Hasta mañana."
+        "Soy de Hungría.",
+        "Me llamo Hungría.",
+        "Hasta luego."
       ],
       "correct": 0
     },
     {
-      "id": "a1-01-dialogue-02",
-      "category": "dialogue",
-      "type": "dialogue-complete",
-      "prompt": [
-        {
-          "speaker": "Carlos",
-          "text": "Mucho gusto."
-        },
-        {
-          "speaker": "Meg",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Mucho gusto.",
-        "Soy Hungría.",
-        "No gracias."
-      ],
-      "correct": 0
-    },
-    {
-      "id": "a1-01-writing-01",
+      "id": "a1-01-writing",
       "category": "writing",
       "type": "structured-writing",
       "template": [
-        "Hola.",
-        "Me llamo ______.",
-        "Soy de ______."
+        "Greet someone in the morning.",
+        "Say your name.",
+        "Say which country you are from.",
+        "Ask someone what their name is.",
+        "Say goodbye."
       ]
     }
   ]

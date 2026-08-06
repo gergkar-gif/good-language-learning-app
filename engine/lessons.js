@@ -62,6 +62,28 @@ async function loadLesson(lessonId) {
 // ============================================
 // Turns `sections` (refs to content files) into a flat list of steps.
 // Legacy lessons that already ship `steps` are returned untouched.
+// Every word the lesson teaches, in section order, de-duplicated by lemma.
+async function collectLessonVocabulary(lesson) {
+    const words = [];
+    const seen = {};
+
+    for (const section of lesson.sections || []) {
+        if (section.type !== 'vocabulary') continue;
+        const vocab = await loadContent(section.ref);
+        for (const word of vocab.words || []) {
+            if (!word || !word.lemma || seen[word.lemma]) continue;
+            seen[word.lemma] = true;
+            words.push({
+                lemma: word.lemma,
+                translation: word.translation || '',
+                pos: word.pos || 'unknown'
+            });
+        }
+    }
+
+    return words;
+}
+
 async function buildSteps(lesson) {
     if (Array.isArray(lesson.steps) && lesson.steps.length) return lesson.steps;
     if (!Array.isArray(lesson.sections)) return [];
@@ -79,11 +101,15 @@ async function buildSteps(lesson) {
             }
 
             else if (section.type === 'grammar') {
+                // One screen per grammar concept. The file's parts (text,
+                // table, examples, tip) render together — splitting them into
+                // a screen each produced a run of near-empty pages that all
+                // carried the same heading.
                 const grammar = await loadContent(section.ref);
-                (grammar.sections || []).forEach(part => {
-                    steps.push(Object.assign({}, part, {
-                        title: part.title || grammar.title
-                    }));
+                steps.push({
+                    type: 'grammar',
+                    title: section.title || grammar.title,
+                    parts: grammar.sections || []
                 });
             }
 
@@ -118,33 +144,21 @@ async function buildSteps(lesson) {
                         return;
                     }
                     steps.push(Object.assign({}, exercise, {
-                        title: section.title
-                            ? section.title + ' ' + (i + 1) + '/' + ids.length
-                            : 'Exercise'
+                        title: !section.title ? 'Exercise'
+                            : ids.length > 1 ? section.title + ' ' + (i + 1) + '/' + ids.length
+                            : section.title
                     }));
                 });
             }
 
             else if (section.type === 'srs') {
-                const srs = await loadContent(section.ref);
-                let words = [];
-                const vocabRef = (lesson.metadata && lesson.metadata.vocabularyRefs) || [];
-                for (const ref of vocabRef) {
-                    const vocab = await loadContent(ref);
-                    words = words.concat(vocab.words || []);
-                }
+                // Cards are the lesson's own vocabulary — there is no second
+                // word list to keep in sync, and the learner picks which of
+                // them are worth reviewing.
                 steps.push({
                     type: 'srs',
                     title: section.title || 'Add to Review',
-                    cards: (srs.cards || []).map(card => {
-                        const match = words.find(w => w.lemma === card.lemma);
-                        return {
-                            id: card.id,
-                            lemma: card.lemma,
-                            translation: card.translation || (match ? match.translation : ''),
-                            pos: match ? match.pos : 'unknown'
-                        };
-                    })
+                    cards: await collectLessonVocabulary(lesson)
                 });
             }
 
@@ -241,6 +255,54 @@ function setFeedback(ok, message) {
     el.style.color = ok ? '#3E8E5B' : '#B8412F';
 }
 
+// ============================================
+// STEP GATING
+// ============================================
+// Exercise steps hold the Continue button until they are answered. Three
+// wrong attempts reveal the answer and release the gate, so a learner can
+// never be stuck on one item.
+const MAX_ATTEMPTS = 3;
+
+function gateStep() {
+    stepState.gated = true;
+    stepState.solved = false;
+    stepState.attempts = 0;
+}
+
+function updateContinueButton() {
+    const btn = document.querySelector('#lesson-screen .btn-primary');
+    if (!btn) return;
+    const locked = !!stepState.gated && !stepState.solved;
+    btn.disabled = locked;
+    btn.classList.toggle('is-locked', locked);
+}
+
+function solveStep(message) {
+    stepState.solved = true;
+    setFeedback(true, message);
+    updateContinueButton();
+}
+
+// Records a wrong attempt. Returns true once the learner is out of tries,
+// which is the caller's cue to reveal the answer.
+function failStep(message) {
+    stepState.attempts = (stepState.attempts || 0) + 1;
+    const left = MAX_ATTEMPTS - stepState.attempts;
+
+    if (left > 0) {
+        setFeedback(false, message + ' — ' + left + (left === 1 ? ' try left' : ' tries left'));
+        return false;
+    }
+
+    stepState.solved = true;
+    updateContinueButton();
+    return true;
+}
+
+function revealHtml(inner) {
+    return '<div class="lsn-reveal">' + inner + '</div>';
+}
+
 function lessonProgressHtml() {
     const total = currentLesson.steps.length;
     const pct = Math.round(((currentStepIndex + 1) / total) * 100);
@@ -263,6 +325,21 @@ const stepRenderers = {
                 ${(step.items || []).map(item => `<li>${esc(item)}</li>`).join('')}
             </ul>
         `;
+    },
+
+    // A whole grammar concept on one screen. Only presentational parts are
+    // rendered — an exercise belongs in an exercise-group, not in here.
+    grammar(step) {
+        const allowed = ['text', 'table', 'examples', 'tip', 'external-link'];
+        return (step.parts || [])
+            .filter(part => allowed.indexOf(part.type) !== -1)
+            .map(part => {
+                const heading = part.title && part.title !== step.title
+                    ? `<h4 class="lsn-subtitle">${esc(part.title)}</h4>`
+                    : '';
+                return heading + stepRenderers[part.type](part);
+            })
+            .join('');
     },
 
     text(step) {
@@ -354,6 +431,7 @@ const stepRenderers = {
     },
 
     'multiple-choice'(step) {
+        gateStep();
         stepState.correct = step.correct;
         return `
             <p class="lsn-question">${esc(step.question)}</p>
@@ -367,6 +445,7 @@ const stepRenderers = {
     },
 
     'dialogue-complete'(step) {
+        gateStep();
         stepState.correct = step.correct;
         return `
             <div class="lsn-dialogue">
@@ -388,6 +467,7 @@ const stepRenderers = {
     },
 
     matching(step) {
+        gateStep();
         const pairs = step.pairs || [];
         stepState.pairs = pairs;
         stepState.matched = 0;
@@ -413,6 +493,7 @@ const stepRenderers = {
     },
 
     'fill-blank'(step) {
+        gateStep();
         stepState.answer = step.answer;
         return `
             <p class="lsn-question">${esc(step.sentence).replace(/_{2,}/, '<span class="lsn-blank">?</span>')}</p>
@@ -424,6 +505,7 @@ const stepRenderers = {
     },
 
     'sentence-builder'(step) {
+        gateStep();
         stepState.solution = step.solution || [];
         stepState.built = [];
         return `
@@ -441,7 +523,9 @@ const stepRenderers = {
     },
 
     'sentence-order'(step) {
+        gateStep();
         stepState.solution = step.solution || [];
+        stepState.sentences = step.sentences || [];
         stepState.order = [];
         return `
             <p class="lsn-question">Tap the sentences in the right order.</p>
@@ -457,31 +541,48 @@ const stepRenderers = {
     },
 
     'structured-writing'(step) {
+        // Nothing to mark against, so the gate is simply "every line written".
+        gateStep();
         return `
             <p class="lsn-question">Complete each line in Spanish.</p>
             ${(step.template || []).map((line, i) => `
                 <div class="lsn-write-row">
                     <div class="lsn-en">${esc(line)}</div>
-                    <input class="lsn-input" type="text" placeholder="Your sentence" data-write="${i}">
+                    <input class="lsn-input" type="text" placeholder="Your sentence"
+                        data-write="${i}" oninput="lessonCheckWriting()">
                 </div>
             `).join('')}
-            <p class="lsn-hint">Free writing — nothing to check. Continue when you're happy.</p>
+            <p class="lsn-hint">Free writing — fill in every line to continue.</p>
+            ${feedbackHtml()}
         `;
     },
 
     srs(step) {
         stepState.cards = step.cards || [];
+        const inDeck = lemma => typeof srsDeck !== 'undefined'
+            && srsDeck.some(card => card.spanish === lemma);
+        const fresh = stepState.cards.filter(card => !inDeck(card.lemma));
+
         return `
-            <p class="lsn-question">These words will be added to your review deck.</p>
+            <p class="lsn-question">Pick the words you want to review. Untick any you already know.</p>
             <div class="lsn-vocab">
-                ${(step.cards || []).map(card => `
-                    <div class="lsn-vocab-row">
-                        <div class="lsn-es">${esc(card.lemma)}</div>
-                        <div class="lsn-en">${esc(card.translation)}</div>
-                    </div>
-                `).join('')}
+                ${stepState.cards.map((card, i) => {
+                    const known = inDeck(card.lemma);
+                    return `
+                    <label class="lsn-vocab-row lsn-srs-row">
+                        <input type="checkbox" data-srs="${i}"
+                            ${known ? 'disabled' : 'checked'} onchange="lessonUpdateSrsButton()">
+                        <div>
+                            <div class="lsn-es">${esc(card.lemma)}</div>
+                            <div class="lsn-pos">${esc(card.pos)}</div>
+                        </div>
+                        <div class="lsn-en">${known ? 'already in your deck' : esc(card.translation)}</div>
+                    </label>
+                `;
+                }).join('')}
             </div>
-            <button class="lsn-check" id="srs-add-btn" onclick="lessonAddSrsCards()">Add ${(step.cards || []).length} words to review</button>
+            <button class="lsn-check" id="srs-add-btn" onclick="lessonAddSrsCards()"
+                ${fresh.length ? '' : 'disabled'}>Add ${fresh.length} words to review</button>
             ${feedbackHtml()}
         `;
     },
@@ -538,9 +639,12 @@ function renderStep() {
         btn.textContent = 'Continue →';
         btn.onclick = nextLessonStep;
     }
+
+    updateContinueButton();
 }
 
 function nextLessonStep() {
+    if (stepState.gated && !stepState.solved) return;
     currentStepIndex++;
     if (currentStepIndex < currentLesson.steps.length) {
         renderStep();
@@ -566,20 +670,27 @@ function finishLesson() {
 // INTERACTION HANDLERS
 // ============================================
 function lessonChoose(btn, index) {
+    if (stepState.solved) return;
+
     const group = btn.parentElement.querySelectorAll('.lsn-option');
     group.forEach(b => b.classList.remove('correct', 'wrong'));
 
     if (index === stepState.correct) {
         btn.classList.add('correct');
-        setFeedback(true, '✓ Correct!');
-    } else {
-        btn.classList.add('wrong');
-        setFeedback(false, '✗ Not quite. Try again!');
+        solveStep('✓ Correct!');
+        return;
+    }
+
+    btn.classList.add('wrong');
+    if (failStep('✗ Not quite.')) {
+        const answer = group[stepState.correct];
+        if (answer) answer.classList.add('correct');
+        setFeedback(false, 'The answer is highlighted — continue when you are ready.');
     }
 }
 
 function lessonMatch(btn) {
-    if (btn.classList.contains('correct')) return;
+    if (btn.classList.contains('correct') || stepState.solved) return;
 
     if (!stepState.pick) {
         document.querySelectorAll('.lsn-option.selected').forEach(b => b.classList.remove('selected'));
@@ -610,27 +721,58 @@ function lessonMatch(btn) {
         btn.classList.add('correct');
         stepState.matched++;
         if (stepState.matched === stepState.pairs.length) {
-            setFeedback(true, '✓ All matched!');
+            solveStep('✓ All matched!');
         } else {
             setFeedback(true, '✓ Match! ' + stepState.matched + '/' + stepState.pairs.length);
         }
-    } else {
-        btn.classList.add('wrong');
-        setFeedback(false, '✗ Not a match.');
-        setTimeout(() => btn.classList.remove('wrong'), 700);
+        return;
     }
+
+    btn.classList.add('wrong');
+    setTimeout(() => btn.classList.remove('wrong'), 700);
+
+    if (failStep('✗ Not a match.')) {
+        revealMatches();
+    }
+}
+
+function revealMatches() {
+    const grid = document.querySelector('.lsn-match');
+    if (grid) {
+        grid.insertAdjacentHTML('afterend', revealHtml(
+            (stepState.pairs || []).map(pair =>
+                `<div><strong>${esc(pair[0])}</strong> — ${esc(pair[1])}</div>`
+            ).join('')
+        ));
+        grid.style.display = 'none';
+    }
+    stepState.pick = null;
+    setFeedback(false, 'Here are the pairs — continue when you are ready.');
 }
 
 function lessonCheckBlank() {
     const input = document.getElementById('blank-input');
-    if (!input) return;
+    if (!input || stepState.solved) return;
+
     const ok = normalise(input.value) === normalise(stepState.answer);
     input.classList.toggle('correct', ok);
     input.classList.toggle('wrong', !ok);
-    setFeedback(ok, ok ? '✓ Correct!' : '✗ Try again.');
+
+    if (ok) {
+        solveStep('✓ Correct!');
+        return;
+    }
+
+    if (failStep('✗ Try again.')) {
+        input.value = stepState.answer;
+        input.classList.remove('wrong');
+        input.classList.add('correct');
+        setFeedback(false, 'The answer was "' + stepState.answer + '" — continue when you are ready.');
+    }
 }
 
 function lessonAddTile(btn) {
+    if (stepState.solved) return;
     btn.disabled = true;
     btn.classList.add('used');
     stepState.built.push(btn.textContent.trim());
@@ -638,6 +780,7 @@ function lessonAddTile(btn) {
 }
 
 function lessonResetBuild() {
+    if (stepState.solved) return;
     stepState.built = [];
     document.getElementById('build-target').textContent = '';
     document.querySelectorAll('.lsn-tile').forEach(b => {
@@ -648,34 +791,91 @@ function lessonResetBuild() {
 }
 
 function lessonCheckBuild() {
+    if (stepState.solved) return;
+
     const ok = normalise(stepState.built.join(' ')) === normalise(stepState.solution.join(' '));
-    setFeedback(ok, ok ? '✓ Correct!' : '✗ Not right yet — try reset.');
+    if (ok) {
+        solveStep('✓ Correct!');
+        return;
+    }
+
+    if (failStep('✗ Not right yet — try reset.')) {
+        document.getElementById('build-target').textContent = stepState.solution.join(' ');
+        setFeedback(false, 'The sentence is shown above — continue when you are ready.');
+    }
 }
 
 function lessonPickOrder(btn) {
-    if (btn.classList.contains('used')) return;
+    if (btn.classList.contains('used') || stepState.solved) return;
     btn.classList.add('used');
     stepState.order.push(Number(btn.dataset.index));
     btn.textContent = stepState.order.length + '. ' + btn.textContent;
 }
 
 function lessonCheckOrder() {
+    if (stepState.solved) return;
+
     const ok = stepState.order.length === stepState.solution.length
         && stepState.order.every((v, i) => v === stepState.solution[i]);
-    setFeedback(ok, ok ? '✓ Correct order!' : '✗ Not the right order.');
-    if (!ok) {
-        document.querySelectorAll('.lsn-option.used').forEach(b => {
-            b.classList.remove('used');
-            b.textContent = b.textContent.replace(/^\d+\.\s/, '');
-        });
-        stepState.order = [];
+
+    if (ok) {
+        solveStep('✓ Correct order!');
+        return;
     }
+
+    if (failStep('✗ Not the right order.')) {
+        revealOrder();
+        return;
+    }
+
+    document.querySelectorAll('.lsn-option.used').forEach(b => {
+        b.classList.remove('used');
+        b.textContent = b.textContent.replace(/^\d+\.\s/, '');
+    });
+    stepState.order = [];
+}
+
+function revealOrder() {
+    const list = document.querySelector('.lsn-options');
+    if (list) {
+        list.insertAdjacentHTML('afterend', revealHtml(
+            (stepState.solution || []).map((index, i) =>
+                `<div>${i + 1}. ${esc(stepState.sentences[index])}</div>`
+            ).join('')
+        ));
+        list.style.display = 'none';
+    }
+    setFeedback(false, 'Here is the right order — continue when you are ready.');
+}
+
+function lessonCheckWriting() {
+    const inputs = Array.prototype.slice.call(document.querySelectorAll('[data-write]'));
+    const done = inputs.length > 0 && inputs.every(input => input.value.trim().length > 0);
+
+    stepState.solved = done;
+    updateContinueButton();
+    setFeedback(true, done ? '✓ All lines written — continue when you are happy.' : '');
+}
+
+function selectedSrsCards() {
+    return Array.prototype.slice.call(document.querySelectorAll('[data-srs]'))
+        .filter(box => box.checked && !box.disabled)
+        .map(box => stepState.cards[Number(box.dataset.srs)])
+        .filter(Boolean);
+}
+
+function lessonUpdateSrsButton() {
+    const btn = document.getElementById('srs-add-btn');
+    if (!btn || btn.dataset.done) return;
+    const count = selectedSrsCards().length;
+    btn.textContent = 'Add ' + count + ' words to review';
+    btn.disabled = count === 0;
 }
 
 function lessonAddSrsCards() {
     let added = 0;
 
-    (stepState.cards || []).forEach(card => {
+    selectedSrsCards().forEach(card => {
         if (srsDeck.find(w => w.spanish === card.lemma)) return;
         srsDeck.push(Object.assign({
             spanish: card.lemma,
@@ -691,9 +891,11 @@ function lessonAddSrsCards() {
 
     const btn = document.getElementById('srs-add-btn');
     if (btn) {
-        btn.textContent = added ? '✓ Added ' + added + ' words' : '✓ Already in your deck';
+        btn.textContent = added ? '✓ Added ' + added + ' words' : '✓ Nothing new added';
         btn.disabled = true;
+        btn.dataset.done = '1';
     }
+    document.querySelectorAll('[data-srs]').forEach(box => { box.disabled = true; });
     setFeedback(true, 'Review them in the Review tab.');
 }
 

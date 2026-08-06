@@ -3,30 +3,37 @@
   "title": "",
   "level": "A1",
 
+  "_comment": "metadata holds only what sections[] cannot. Content refs live on the sections that use them, so there is one place to change a path.",
   "metadata": {
-    "estimatedMinutes": 20,
-    "grammarRefs": [],
-    "vocabularyRefs": [],
-    "storyRef": "",
-    "classicRef": null,
-    "worldRef": null,
-    "srsRef": ""
+    "estimatedMinutes": 20
   },
+
+  "_sectionOrder": "goal -> grammar -> practice -> vocabulary -> story -> reading -> dialogue -> writing -> srs -> checklist. Goal items and checklist items must be one-to-one, and every goal must be covered by something in between.",
 
   "sections": [
     {
       "type": "goal",
-      "title": "",
+      "title": "Lesson Goals",
       "items": []
     },
 
     {
+      "_comment": "One section per grammar concept. Every part of the referenced file renders on the same screen.",
       "type": "grammar",
       "ref": ""
     },
 
     {
+      "_comment": "Five different exercise types, or up to eight for a heavier grammar point. Draws on the vocabulary presented in the next section.",
+      "type": "exercise-group",
+      "title": "Practice",
+      "ref": "",
+      "exerciseRefs": []
+    },
+
+    {
       "type": "vocabulary",
+      "title": "Lesson Vocabulary",
       "ref": ""
     },
 
@@ -37,41 +44,35 @@
 
     {
       "type": "exercise-group",
-      "title": "Vocabulary",
-      "exerciseRefs": []
-    },
-
-    {
-      "type": "exercise-group",
-      "title": "Grammar",
-      "exerciseRefs": []
-    },
-
-    {
-      "type": "exercise-group",
       "title": "Reading",
+      "ref": "",
       "exerciseRefs": []
     },
 
     {
       "type": "exercise-group",
       "title": "Dialogue",
+      "ref": "",
       "exerciseRefs": []
     },
 
     {
       "type": "exercise-group",
       "title": "Writing",
+      "ref": "",
       "exerciseRefs": []
     },
 
     {
+      "_comment": "Cards are derived from the lesson's vocabulary sections; the learner picks which ones to review. No ref, and no separate srs file.",
       "type": "srs",
-      "ref": ""
+      "title": "Add to Review"
     },
 
     {
+      "_comment": "One item per goal, in the same order, phrased as 'I can ...'.",
       "type": "checklist",
+      "title": "Can you do this?",
       "items": []
     }
   ]

@@ -5,27 +5,18 @@
   "goal": "Introduce yourself",
   "grammar": "ser",
   "metadata": {
-    "estimatedMinutes": 20,
-    "grammarRefs": [
-      "grammar/a1/a1-01-greetings-gr.json",
-      "grammar/a1/a1-01-ser-gr.json"
-    ],
-    "vocabularyRefs": [
-      "vocabulary/a1/a1-01-voc.json"
-    ],
-    "storyRef": "stories/original/a1/a1-01.json",
-    "exercisesRef": "exercises/a1/a1-01-ex.json",
-    "srsRef": "srs/a1/a1-01-srs.json"
+    "estimatedMinutes": 20
   },
   "sections": [
     {
       "type": "goal",
       "title": "Lesson Goals",
       "items": [
-        "Greet someone in Spanish at any time of day",
-        "Say your name and where you are from",
-        "Ask someone their name and country",
-        "Say goodbye politely"
+        "Greet someone at any time of day, and say goodbye two ways",
+        "Say your name with 'me llamo'",
+        "Say which country you are from with 'soy de'",
+        "Ask someone their name and where they are from",
+        "Follow a short conversation between two people"
       ]
     },
     {
@@ -33,38 +24,25 @@
       "ref": "grammar/a1/a1-01-greetings-gr.json"
     },
     {
-      "type": "exercise-group",
-      "title": "Greetings",
-      "ref": "exercises/a1/a1-01-ex.json",
-      "exerciseRefs": [
-        "a1-01-greetings-match"
-      ]
-    },
-    {
       "type": "grammar",
       "ref": "grammar/a1/a1-01-ser-gr.json"
     },
     {
       "type": "exercise-group",
-      "title": "Introducing Yourself",
+      "title": "Practice",
       "ref": "exercises/a1/a1-01-ex.json",
       "exerciseRefs": [
-        "a1-01-grammar-01",
-        "a1-01-grammar-02"
+        "a1-01-practice-match",
+        "a1-01-practice-choice",
+        "a1-01-practice-blank",
+        "a1-01-practice-build",
+        "a1-01-practice-order"
       ]
     },
     {
       "type": "vocabulary",
       "ref": "vocabulary/a1/a1-01-voc.json",
       "title": "Lesson Vocabulary"
-    },
-    {
-      "type": "exercise-group",
-      "title": "Vocabulary",
-      "ref": "exercises/a1/a1-01-ex.json",
-      "exerciseRefs": [
-        "a1-01-toolkit-match"
-      ]
     },
     {
       "type": "story",
@@ -75,8 +53,8 @@
       "title": "Reading",
       "ref": "exercises/a1/a1-01-ex.json",
       "exerciseRefs": [
-        "a1-01-reading-01",
-        "a1-01-reading-02"
+        "a1-01-reading-choice",
+        "a1-01-reading-order"
       ]
     },
     {
@@ -84,8 +62,7 @@
       "title": "Dialogue",
       "ref": "exercises/a1/a1-01-ex.json",
       "exerciseRefs": [
-        "a1-01-dialogue-01",
-        "a1-01-dialogue-02"
+        "a1-01-dialogue"
       ]
     },
     {
@@ -93,23 +70,22 @@
       "title": "Writing",
       "ref": "exercises/a1/a1-01-ex.json",
       "exerciseRefs": [
-        "a1-01-writing-01"
+        "a1-01-writing"
       ]
     },
     {
       "type": "srs",
-      "ref": "srs/a1/a1-01-srs.json",
       "title": "Add to Review"
     },
     {
       "type": "checklist",
       "title": "Can you do this?",
       "items": [
-        "I can greet someone in the morning, afternoon and evening",
-        "I can say 'Me llamo ...' and 'Soy de ...'",
+        "I can greet someone at any time of day, and say goodbye two ways",
+        "I can say 'Me llamo ...'",
+        "I can say 'Soy de ...'",
         "I can ask '¿Cómo te llamas?' and '¿De dónde eres?'",
-        "I understood the story about Carlos and Meg",
-        "I can say goodbye in two different ways"
+        "I followed the story about Carlos and Meg"
       ]
     }
   ]

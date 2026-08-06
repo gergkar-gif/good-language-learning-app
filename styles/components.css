@@ -405,6 +405,57 @@
   margin-top: 10px;
 }
 
+.lsn-subtitle {
+  font-size: 16px;
+  color: var(--text);
+  margin: 18px 0 8px;
+}
+
+.lsn-subtitle:first-child {
+  margin-top: 0;
+}
+
+/* Continue stays locked until a gated step is answered */
+.btn-primary:disabled,
+.btn-primary.is-locked {
+  opacity: .4;
+  cursor: not-allowed;
+}
+
+.btn-primary:disabled:hover,
+.btn-primary.is-locked:hover {
+  background: var(--primary);
+}
+
+/* Shown when a learner runs out of attempts */
+.lsn-reveal {
+  border: 2px solid var(--border);
+  border-left: 4px solid var(--secondary, #8FB4BA);
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin-top: 12px;
+  line-height: 1.8;
+  color: var(--text);
+}
+
+.lsn-srs-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.lsn-srs-row input {
+  width: 18px;
+  height: 18px;
+  flex: none;
+}
+
+.lsn-srs-row > div:last-child {
+  margin-left: auto;
+  text-align: right;
+}
+
 .lsn-goal {
   list-style: none;
   padding: 0;
