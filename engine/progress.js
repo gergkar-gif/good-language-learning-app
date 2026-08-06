@@ -7,7 +7,8 @@ const PROGRESS_KEY = "spanishMastery_progress";
 function getProgress() {
     try {
         return JSON.parse(localStorage.getItem(PROGRESS_KEY) || "{}");
-    } catch {
+    } catch (e) {
+        console.warn("Failed to parse progress from localStorage:", e);
         return {};
     }
 }
@@ -28,7 +29,7 @@ function markLessonComplete(lessonId) {
     saveProgress(progress);
 
     if (typeof addXP === "function") {
-        addXP(50, "Completed " + lessonId);
+        addXP(50, `Completed ${lessonId}`);
     }
 
     if (typeof renderCurriculum === "function") {
@@ -41,7 +42,6 @@ function isLessonComplete(lessonId) {
 }
 
 function getLevelProgress(levelKey) {
-
     const data = window._curriculumData;
 
     if (!data || !data.levels || !data.levels[levelKey]) {

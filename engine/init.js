@@ -2,20 +2,14 @@
 // APP INITIALISATION
 // ============================================
 
-var LEVELS = ['a1','a2','b1','b2','c1'];
+const LEVELS = ['a1', 'a2', 'b1', 'b2', 'c1'];
 
 function showTab(tabName, button) {
-    document.querySelectorAll('.tab').forEach(function (tab) {
-        tab.classList.add('hidden');
-    });
-
-    var tab = document.getElementById(tabName);
+    document.querySelectorAll('.tab').forEach(tab => tab.classList.add('hidden'));
+    const tab = document.getElementById(tabName);
     if (tab) tab.classList.remove('hidden');
 
-    document.querySelectorAll('.nav button').forEach(function (btn) {
-        btn.classList.remove('active');
-    });
-
+    document.querySelectorAll('.nav button').forEach(btn => btn.classList.remove('active'));
     if (!button && window.event) button = window.event.target;
     if (button) button.classList.add('active');
 
@@ -23,8 +17,8 @@ function showTab(tabName, button) {
         updateReaderWordColors();
     }
 
-    if (tabName === 'drills') {
-        if (typeof Verbs !== 'undefined') Verbs.render();
+    if (tabName === 'drills' && typeof Verbs !== 'undefined') {
+        Verbs.render();
     }
 
     if (tabName === 'review' && typeof showNextCard === 'function') {
@@ -37,45 +31,43 @@ function showTab(tabName, button) {
 // --------------------------------------------
 
 function toggleLevel(level) {
-    var body = document.getElementById(level + '-lessons');
-    var arrow = document.getElementById(level + '-arrow');
+    const body = document.getElementById(`${level}-lessons`);
+    const arrow = document.getElementById(`${level}-arrow`);
 
     if (!body || !arrow) return;
 
-    var open = body.style.display !== 'none';
+    const open = body.style.display !== 'none';
     body.style.display = open ? 'none' : 'block';
-    arrow.textContent = open ? '\u25B6' : '\u25BC';
+    arrow.textContent = open ? '▶' : '▼';
 }
 
 function renderLearnPage(curriculum) {
-    var root = document.getElementById('learn-content');
+    const root = document.getElementById('learn-content');
     if (!root) return;
 
-    var html = '<h2 class="section-title">Your Path</h2>';
+    let html = '<h2 class="section-title">Your Path</h2>';
     html += '<p class="section-subtitle">All levels are open. Jump in anywhere.</p>';
 
-    Object.entries(curriculum.levels).forEach(function (entry) {
-        var level = entry[0];
-        var data  = entry[1];
-
-        html += ''
-            + '<div class="level-section">'
-            +   '<div class="level-header" data-level="' + level.toLowerCase() + '">'
-            +     '<div>'
-            +       '<h3>' + data.title + '</h3>'
-            +       '<p>' + (data.description || '') + '</p>'
-            +     '</div>'
-            +     '<span class="level-arrow" id="' + level.toLowerCase() + '-arrow">\u25BC</span>'
-            +   '</div>'
-            +   '<div id="' + level.toLowerCase() + '-lessons"></div>'
-            + '</div>';
+    Object.entries(curriculum.levels).forEach(([level, data]) => {
+        html += `
+            <div class="level-section">
+                <div class="level-header" data-level="${level.toLowerCase()}">
+                    <div>
+                        <h3>${data.title}</h3>
+                        <p>${data.description || ''}</p>
+                    </div>
+                    <span class="level-arrow" id="${level.toLowerCase()}-arrow">▼</span>
+                </div>
+                <div id="${level.toLowerCase()}-lessons"></div>
+            </div>
+        `;
     });
 
     root.innerHTML = html;
 
     // Attach level toggle events (event delegation)
-    root.addEventListener('click', function (e) {
-        var header = e.target.closest('.level-header');
+    root.addEventListener('click', e => {
+        const header = e.target.closest('.level-header');
         if (header) {
             toggleLevel(header.dataset.level);
         }
@@ -92,10 +84,10 @@ function renderLearnPage(curriculum) {
 // --------------------------------------------
 
 function _attachLessonClose() {
-    var btn = document.getElementById('lesson-close-btn');
+    const btn = document.getElementById('lesson-close-btn');
     if (btn) btn.addEventListener('click', closeLesson);
 
-    var nextBtn = document.getElementById('lesson-next-btn');
+    const nextBtn = document.getElementById('lesson-next-btn');
     if (nextBtn) nextBtn.addEventListener('click', nextLessonStep);
 }
 
@@ -104,8 +96,8 @@ function _attachLessonClose() {
 // --------------------------------------------
 
 function _attachNavEvents() {
-    document.querySelector('.nav').addEventListener('click', function (e) {
-        var btn = e.target.closest('button[data-tab]');
+    document.querySelector('.nav').addEventListener('click', e => {
+        const btn = e.target.closest('button[data-tab]');
         if (btn) showTab(btn.dataset.tab, btn);
     });
 }
@@ -115,15 +107,15 @@ function _attachNavEvents() {
 // --------------------------------------------
 
 async function initialiseApp() {
-
     await loadDictionary();
 
     loadDeck();
     loadXP();
     updateXPHeader();
 
-    var response = await fetch('content/curriculum/curriculum.json');
-    var curriculum = await response.json();
+    // Updated path to include language prefix
+    const response = await fetch('content/es/curriculum/curriculum.json');
+    const curriculum = await response.json();
 
     window._curriculumData = curriculum;
 
@@ -131,10 +123,12 @@ async function initialiseApp() {
     _attachNavEvents();
 
     // Learn page
-    renderLearnPage(curriculum);
-
     if (typeof renderCurriculum === 'function') {
-        renderCurriculum();
+        try {
+            await renderCurriculum();
+        } catch (e) {
+            console.error('Failed to render curriculum:', e);
+        }
     }
 
     // Lesson screen events

@@ -28,7 +28,7 @@ const CURRICULUM_EMOJIS = {
 async function renderCurriculum() {
 
     if (!window._curriculumData) {
-        const res = await fetch("content/curriculum/curriculum.json");
+        const res = await fetch("content/es/curriculum/curriculum.json");
         window._curriculumData = await res.json();
     }
 

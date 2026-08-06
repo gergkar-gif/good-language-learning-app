@@ -2,8 +2,8 @@ import urllib.request
 import os
 import json
 
-# Create the verbos folder
-os.makedirs('imports/verbs', exist_ok=True)
+# Create the verbos folder — Updated to include language prefix
+os.makedirs('content/es/imports/verbs', exist_ok=True)
 
 # List of all verb files from the repository
 verbs = [
@@ -106,7 +106,8 @@ failed = []
 
 for verb in verbs:
     url = base_url + verb + ".json"
-    filepath = os.path.join("verbos", verb + ".json")
+    # Updated to include language prefix
+    filepath = os.path.join("content/es/imports/verbs", verb + ".json")
     try:
         urllib.request.urlretrieve(url, filepath)
         downloaded += 1
@@ -115,6 +116,6 @@ for verb in verbs:
     except Exception as e:
         failed.append(verb)
 
-print(f"\n✓ Done! Downloaded {downloaded} verbs to 'imports/verbs/'.")
+print(f"\n✓ Done! Downloaded {downloaded} verbs to 'content/es/imports/verbs/'.")
 if failed:
     print(f"✗ Failed to download: {', '.join(failed)}")

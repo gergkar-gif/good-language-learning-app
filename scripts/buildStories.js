@@ -1,14 +1,15 @@
 const fs = require("fs");
 const path = require("path");
 
-const STORIES_DIR = path.join(__dirname, "..", "content", "stories");
+// Updated to include language prefix (Spanish)
+const STORIES_DIR = path.join(__dirname, "..", "content", "es", "stories");
 
 const manifest = {
   generated: new Date().toISOString(),
   stories: []
 };
 
-// Find every subfolder inside content/stories
+// Find every subfolder inside content/es/stories
 const folders = fs
   .readdirSync(STORIES_DIR, { withFileTypes: true })
   .filter(entry => entry.isDirectory())

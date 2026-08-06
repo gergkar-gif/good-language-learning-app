@@ -1,7 +1,7 @@
 // ============================================
 // LESSON ENGINE
 // ============================================
-// Lessons are loaded dynamically from content/lessons/*.json
+// Lessons are loaded dynamically from content/es/lessons/*.json
 // Two lesson formats are supported during the migration:
 //   1. legacy  -> lesson.steps[] with embedded `html`
 //   2. structured -> lesson.sections[] referencing content files
@@ -21,8 +21,10 @@ const contentCache = {};
 async function loadContent(path) {
     if (contentCache[path]) return contentCache[path];
     try {
-        const response = await fetch(path);
-        if (!response.ok) throw new Error('Content not found: ' + path);
+        // Updated to include language prefix
+        const fullPath = `content/es/${path}`;
+        const response = await fetch(fullPath);
+        if (!response.ok) throw new Error('Content not found: ' + fullPath);
         const data = await response.json();
         contentCache[path] = data;
         return data;
@@ -34,16 +36,23 @@ async function loadContent(path) {
 }
 
 async function loadLesson(lessonId) {
-    const filename = lessonId.replace(/^lesson\./, '').replace(/\./g, '-');
+    const parts = lessonId.replace(/^lesson\./, '').split('.');
+
+    const level = parts[0];      // a1
+    const number = parts[1];     // 01
+
+    // Updated path to include language prefix
+    const path = `content/es/lessons/${level}/${level}-${number}.json`;
+
     try {
-        const response = await fetch('content/lessons/' + filename + '.json');
+        const response = await fetch(path);
         if (!response.ok) {
-            console.error('Lesson not found:', lessonId);
+            console.error('Lesson not found:', path);
             return null;
         }
         return await response.json();
     } catch (error) {
-        console.error('Failed to load lesson:', lessonId, error);
+        console.error('Failed to load lesson:', path, error);
         return null;
     }
 }

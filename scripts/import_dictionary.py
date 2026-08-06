@@ -4,13 +4,13 @@ Import Spanish-English dictionary from Kaikki (parsed Wiktionary).
 
 Downloads the latest Spanish dictionary dump from kaikki.org,
 processes it into a simplified JSON format, and saves to
-imports/dictionary/spanish-en.json.
+content/es/imports/dictionary/spanish-en.json.
 
 Usage:
     python scripts/import_dictionary.py
 
 Output:
-    imports/dictionary/spanish-en.json
+    content/es/imports/dictionary/spanish-en.json
 """
 
 import json
@@ -21,8 +21,8 @@ import sys
 # Kaikki Spanish dictionary URL
 KAIKKI_URL = "https://kaikki.org/dictionary/Spanish/kaikki.org-dictionary-Spanish.jsonl"
 
-# Output paths
-OUTPUT_DIR = "imports/dictionary"
+# Output paths — Updated to include language prefix
+OUTPUT_DIR = "content/es/imports/dictionary"
 OUTPUT_FILE = os.path.join(OUTPUT_DIR, "spanish-en.json")
 
 # Optional: limit to most common words for a smaller file
@@ -174,8 +174,7 @@ def main():
     save_dictionary(dictionary)
 
     # Optional: clean up raw file
-    cleanup = input(f"
-Delete raw download {temp_file}? [y/N]: ").strip().lower()
+    cleanup = input(f"\nDelete raw download {temp_file}? [y/N]: ").strip().lower()
     if cleanup == "y":
         os.remove(temp_file)
         print(f"✓ Deleted {temp_file}")

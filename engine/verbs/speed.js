@@ -107,6 +107,9 @@ const VerbsSpeed = (function () {
         _busy = false;
         _phase = PHASE.PLAYING;
 
+        // Swap the settings view for the playing view (HUD + question area)
+        _renderPlaying(_container);
+
         // Start ticking
         _timerInterval = setInterval(function () {
             var remaining = Math.max(0, Math.ceil((_endTime - Date.now()) / 1000));

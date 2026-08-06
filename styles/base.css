@@ -1,129 +1,66 @@
 /* ============================================
-   RESET
-   ============================================ */
+   BASE — Reset, root vars, body, typography
+============================================ */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+:root {
+  --bg: #F2EFE6;
+  --surface: #FFFFFF;
+  --primary: #1B4B5A;
+  --primary-dark: #153a46;
+  --secondary: #8FB4BA;
+  --text: #2E2A26;
+  --muted: #7A7A7A;
+  --success: #4CAF50;
+  --danger: #B8412F;
+  --accent: #E4572E;
+  --accent-dark: #c44a24;
+  --border: #DCE6E8;
+  --border-light: #eee;
+  --success-bg: #e8f5ed;
+  --danger-bg: #fbecea;
+  --radius: 12px;
+  --radius-sm: 8px;
+  --radius-pill: 999px;
+  --shadow: 0 2px 8px rgba(0,0,0,.08);
 }
 
-
-/* ============================================
-   GLOBAL
-   ============================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    background: #F2EFE6;
-    color: #2E2A26;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.5 -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-
-/* ============================================
-   TYPOGRAPHY
-   ============================================ */
-
-.section-title {
-    font-size: 20px;
-    margin-bottom: 15px;
-    color: #1B4B5A;
+h1, h2, h3, p {
+  margin: 0;
 }
 
-.header h1 {
-    font-size: 24px;
+button {
+  font: inherit;
+  cursor: pointer;
+  border: none;
 }
 
-.header p {
-    font-size: 14px;
-    opacity: 0.9;
-    margin-top: 5px;
+input {
+  font: inherit;
 }
 
-
-/* ============================================
-   WORD FAMILIARITY
-   ============================================ */
-
-.word {
-    cursor: pointer;
-    padding: 2px 0;
-    border-radius: 3px;
-    transition: all 0.2s;
-}
-
-/* Unknown */
-
-.word-unknown {
-    border-bottom: 2px dotted #8FB4BA;
-    color: #2E2A26;
-}
-
-.word-unknown:hover {
-    background: #DCE6E8;
-}
-
-/* Seen */
-
-.word-seen {
-    color: #8FB4BA;
-    border-bottom: 2px dotted #8FB4BA;
-}
-
-.word-seen:hover {
-    background: #DCE6E8;
-}
-
-/* Known */
-
-.word-known {
-    color: #3E7986;
-    border-bottom: 2px solid #3E7986;
-}
-
-.word-known:hover {
-    background: #DCE6E8;
-}
-
-/* Mastered */
-
-.word-mastered {
-    color: #1B4B5A;
-    font-weight: 500;
-}
-
-.word-mastered:hover {
-    background: #DCE6E8;
-}
-
-
-/* ============================================
-   ANIMATIONS
-   ============================================ */
+/* Animations used by reader popup, XP float, etc. */
 
 @keyframes slideUp {
-    from {
-        transform: translateY(100%);
-    }
-
-    to {
-        transform: translateY(0);
-    }
+  from { transform: translateY(100%); }
+  to   { transform: translateY(0); }
 }
 
 @keyframes fadeUp {
-    0% {
-        opacity: 1;
-        transform: translateX(-50%) translateY(0);
-    }
-
-    80% {
-        opacity: 1;
-        transform: translateX(-50%) translateY(-10px);
-    }
-
-    100% {
-        opacity: 0;
-        transform: translateX(-50%) translateY(-30px);
-    }
+  0%   { opacity: 1; transform: translateX(-50%) translateY(0); }
+  80%  { opacity: 1; transform: translateX(-50%) translateY(-10px); }
+  100% { opacity: 0; transform: translateX(-50%) translateY(-30px); }
 }

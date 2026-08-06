@@ -7,7 +7,6 @@ const Content = {
     cache: {},
 
     async json(path) {
-
         if (this.cache[path]) {
             return this.cache[path];
         }
@@ -26,18 +25,22 @@ const Content = {
     },
 
     async manifest(name) {
-        return this.json(`content/${name}/manifest.json`);
+        // Updated to include language prefix
+        return this.json(`content/es/${name}/manifest.json`);
     },
 
     async story(path) {
-        return this.json(`content/stories/${path}`);
+        // Updated to include language prefix and story category
+        return this.json(`content/es/stories/${path}`);
     },
 
     async lesson(id) {
-        return this.json(`content/lessons/${id}.json`);
+        // Updated to include language prefix
+        return this.json(`content/es/lessons/${id}.json`);
     },
 
     async verb(name) {
+        // Path remains the same (imports/verbs/ is unchanged)
         return this.json(`imports/verbs/${name}.json`);
     },
 

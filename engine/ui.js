@@ -25,11 +25,13 @@ const UI = {
     show(id) {
         const el = document.getElementById(id);
         if (el) el.classList.remove("hidden");
+        return el;
     },
 
     hide(id) {
         const el = document.getElementById(id);
         if (el) el.classList.add("hidden");
+        return el;
     },
 
     card(title, body, extra = "") {

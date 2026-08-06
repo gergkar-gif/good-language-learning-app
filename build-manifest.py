@@ -1,98 +1,140 @@
 #!/usr/bin/env python3
 import json
-import os
+from datetime import datetime, timezone
 from pathlib import Path
 
-BASE_STORIES = Path("content/stories")
-BASE_LESSONS = Path("content/lessons")
+BASE_STORIES = Path("content")
+BASE_LESSONS = Path("content")
+
 CATEGORIES = ["original", "classics", "world"]
+SKIP_FILENAMES = {"manifest.json", "lessons-manifest.json"}
 
-def extract_level(name):
-    parts = name.split("-")
-    return parts[0].upper() if parts else "Unknown"
-
-def extract_number(name):
-    parts = name.split("-")
-    return parts[1] if len(parts) > 1 else "00"
-
-def build_stories():
+def build_stories(lang="es"):
     stories = []
+    lang_path = BASE_STORIES / lang / "stories"
+    if not lang_path.exists():
+        return stories
+
     for cat in CATEGORIES:
-        cat_path = BASE_STORIES / cat
+        cat_path = lang_path / cat
         if not cat_path.exists():
             continue
-        for f in sorted(cat_path.glob("*.json")):
-            if f.name == "manifest.json":
+        # rglob: story files live nested under a level folder,
+        # e.g. content/es/stories/original/a1/a1-01.json
+        for f in sorted(cat_path.rglob("*.json")):
+            if f.name in SKIP_FILENAMES:
                 continue
-            stem = f.stem
-            parts = stem.split("-", 2)
-            level = parts[0].upper() if len(parts) > 0 else "Unknown"
-            number = parts[1] if len(parts) > 1 else "00"
-            title_part = parts[2].replace("-", " ").title() if len(parts) > 2 else stem
-            
+            try:
+                with open(f, "r", encoding="utf-8") as fh:
+                    data = json.load(fh)
+            except (OSError, json.JSONDecodeError):
+                continue
+
             stories.append({
-                "id": f"story.{cat}.{level.lower()}.{number}",
-                "title": title_part,
-                "level": level,
-                "path": f"{cat}/{f.name}",
-                "source": cat
+                "id": data.get("id", f"story.{cat}.{f.stem}"),
+                "title": data.get("title", f.stem),
+                "level": data.get("level", "Unknown"),
+                "lesson": data.get("lesson"),
+                "type": cat,
+                "source": cat,
+                # relative to content/{lang}/stories/, matching what
+                # Content.story() fetches: content/{lang}/stories/${path}
+                "path": f.relative_to(lang_path).as_posix(),
+                "estimatedMinutes": data.get("estimatedMinutes"),
+                "characters": data.get("characters", []),
+                "location": data.get("location")
             })
     return stories
 
-def build_lessons():
-    lessons = []
-    levels = {
-        "a1": {"name": "Fundamentals", "color": "#1B4B5A"},
-        "a2": {"name": "Basic", "color": "#3E7986"},
-        "b1": {"name": "Intermediate", "color": "#8FB4BA"},
-        "b2": {"name": "Upper Intermediate", "color": "#2E2A26", "comingSoon": True},
-        "c1": {"name": "Advanced", "color": "#E4572E", "comingSoon": True}
-    }
-    
-    for level_id, meta in levels.items():
-        level_path = BASE_LESSONS / level_id
-        if not level_path.exists():
-            continue
-        
+LEVEL_META = {
+    "a1": {"title": "Fundamentals", "description": "Survival skills"},
+    "a2": {"title": "Basic", "description": "Manage basic interactions"},
+    "b1": {"title": "Intermediate", "description": "Express opinions, handle complex topics"},
+    "b2": {"title": "Upper Intermediate", "description": "Complex arguments, abstract topics"},
+    "c1": {"title": "Advanced", "description": "Fluency. Politics, philosophy, art, science"}
+}
+
+CURRICULUM_META = {
+    "es": {"id": "curriculum.spanish.dele-a1-c1", "title": "Spanish Mastery — DELE Aligned"}
+}
+
+def build_curriculum(lang="es"):
+    """Build the curriculum.json structure (what the Learn tab actually reads)
+    straight from each lesson's own JSON file — lesson files are the single
+    source of truth; curriculum.json is a generated index over them."""
+    lang_path = BASE_LESSONS / lang / "lessons"
+    if not lang_path.exists():
+        return None
+
+    levels = {}
+    for level_id, meta in LEVEL_META.items():
+        level_path = lang_path / level_id
         level_lessons = []
-        for f in sorted(level_path.glob("*.json")):
-            try:
-                with open(f, 'r', encoding='utf-8') as fh:
-                    data = json.load(fh)
-                level_lessons.append({
-                    "id": data.get("id", f"lesson.{level_id}.{f.stem}"),
-                    "emoji": data.get("emoji", "📚"),
-                    "title": data.get("title", f.stem),
-                    "description": data.get("description", "")
-                })
-            except:
-                pass
-        
-        if level_lessons or meta.get("comingSoon"):
-            lessons.append({
-                "id": level_id,
-                "name": meta["name"],
-                "subtitle": meta.get("subtitle", ""),
-                "color": meta["color"],
-                "comingSoon": meta.get("comingSoon", False),
-                "lessons": level_lessons
-            })
-    
-    return lessons
+
+        if level_path.exists():
+            for f in sorted(level_path.glob("*.json")):
+                if f.name in SKIP_FILENAMES:
+                    continue
+                try:
+                    with open(f, 'r', encoding='utf-8') as fh:
+                        data = json.load(fh)
+                    level_lessons.append({
+                        "id": data.get("id", f"lesson.{level_id}.{f.stem}"),
+                        "title": data.get("title", f.stem),
+                        "grammar": data.get("grammar", ""),
+                        "goal": data.get("goal", "")
+                    })
+                except (OSError, json.JSONDecodeError):
+                    pass
+
+        levels[level_id.upper()] = {
+            "title": meta["title"],
+            "description": meta["description"],
+            "lessons": level_lessons
+        }
+
+    curr_meta = CURRICULUM_META.get(lang, {
+        "id": f"curriculum.{lang}.a1-c1",
+        "title": f"{lang.upper()} Mastery"
+    })
+
+    return {
+        "id": curr_meta["id"],
+        "title": curr_meta["title"],
+        "levels": levels
+    }
 
 def main():
-    # Build stories manifest
-    stories = build_stories()
-    with open(BASE_STORIES / "manifest.json", "w", encoding="utf-8") as f:
-        json.dump({"stories": stories}, f, indent=2, ensure_ascii=False)
-    print(f"Stories manifest: {len(stories)} stories")
-    
-    # Build lessons manifest
-    lessons = build_lessons()
-    with open(BASE_LESSONS / "manifest.json", "w", encoding="utf-8") as f:
-        json.dump({"levels": lessons}, f, indent=2, ensure_ascii=False)
-    print(f"Lessons manifest: {sum(len(l['lessons']) for l in lessons)} lessons")
+    generated = datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
+
+    # Build stories manifest for each language that actually has a stories folder
+    for lang in ["es", "fr", "hu"]:
+        stories_dir = BASE_STORIES / lang / "stories"
+        if not stories_dir.exists():
+            print(f"Skipping stories manifest for {lang}: no {stories_dir} folder yet")
+            continue
+        stories = build_stories(lang)
+        with open(stories_dir / "manifest.json", "w", encoding='utf-8') as f:
+            json.dump({"generated": generated, "stories": stories}, f, indent=2, ensure_ascii=False)
+        print(f"Stories manifest for {lang}: {len(stories)} stories")
+
+    # Build curriculum.json for each language — this is what the Learn tab
+    # actually reads (engine/curriculum.js, engine/init.js), generated
+    # directly from each lesson file rather than hand-maintained separately.
+    for lang in ["es", "fr", "hu"]:
+        lessons_dir = BASE_LESSONS / lang / "lessons"
+        curriculum_dir = BASE_LESSONS / lang / "curriculum"
+        if not lessons_dir.exists():
+            print(f"Skipping curriculum for {lang}: no {lessons_dir} folder yet")
+            continue
+        if not curriculum_dir.exists():
+            print(f"Skipping curriculum for {lang}: no {curriculum_dir} folder yet")
+            continue
+        curriculum = build_curriculum(lang)
+        with open(curriculum_dir / "curriculum.json", "w", encoding='utf-8') as f:
+            json.dump(curriculum, f, indent=2, ensure_ascii=False)
+        total_lessons = sum(len(lvl['lessons']) for lvl in curriculum['levels'].values())
+        print(f"Curriculum for {lang}: {total_lessons} lessons across {len(curriculum['levels'])} levels")
 
 if __name__ == "__main__":
     main()
-    

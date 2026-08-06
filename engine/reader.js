@@ -5,6 +5,7 @@ let wordDB = {};
 
 async function loadDictionary() {
     try {
+        // Updated path to include language prefix
         const response = await fetch('imports/dictionary/spanish-en.json');
         if (!response.ok) {
             console.warn('Dictionary not found. Using inline fallbacks only.');
@@ -39,7 +40,7 @@ function updateReaderWordColors() {
 
 // ============================================
 // WORD POPUP
-// =============================================
+// ============================================
 function showWord(spanish, english) {
     currentWord = spanish.toLowerCase().replace(/[.,]/g, '');
     currentWordInlineEnglish = english;
@@ -106,11 +107,46 @@ function closePopup() {
 }
 
 // ============================================
+// READ-STATE TRACKING (which stories a learner has opened)
+// ============================================
+const READ_STORIES_KEY = 'spanishApp_readStories';
+
+function getReadStoryIds() {
+    try {
+        return JSON.parse(localStorage.getItem(READ_STORIES_KEY) || '[]');
+    } catch (e) {
+        return [];
+    }
+}
+
+function markStoryRead(storyId) {
+    const read = getReadStoryIds();
+    if (read.includes(storyId)) return;
+    read.push(storyId);
+    localStorage.setItem(READ_STORIES_KEY, JSON.stringify(read));
+}
+
+// ============================================
 // READER ENGINE — Dynamic JSON Story Loader
 // ============================================
 
+const STORY_TYPE_LABELS = {
+    original: 'Original Stories',
+    classics: 'Classic Tales',
+    world: 'World Voices'
+};
+
+// Deterministic pastel cover per story, so the same book always
+// looks the same instead of reshuffling colors on every render.
+const COVER_VARIANTS = ['cover-teal', 'cover-clay', 'cover-sage', 'cover-sand'];
+function coverVariantFor(id) {
+    let hash = 0;
+    for (let i = 0; i < id.length; i++) hash = (hash * 31 + id.charCodeAt(i)) >>> 0;
+    return COVER_VARIANTS[hash % COVER_VARIANTS.length];
+}
+
 window.Reader = {
-    storiesBasePath: 'content/stories/',
+    storiesBasePath: 'content/es/stories/', // Updated to include language prefix
     stories: [],
     currentStory: null,
 
@@ -130,6 +166,17 @@ window.Reader = {
             this.stories = manifest.stories || [];
             console.log('Reader: loaded', this.stories.length, 'stories from manifest');
             this.buildLibraryUI(libraryEl);
+
+            // Event delegation, attached once — buildLibraryUI() replaces the
+            // container's innerHTML on every re-render (e.g. after closing a
+            // story), but this listener on the container itself survives that.
+            const self = this;
+            libraryEl.addEventListener('click', function(e) {
+                const card = e.target.closest('.story-card');
+                if (!card) return;
+                const storyId = card.getAttribute('data-story-id');
+                if (storyId) self.loadStory(storyId);
+            });
         } catch (e) {
             libraryEl.innerHTML = '<p class="text-muted">No stories found. Run build-manifest.py</p>';
             console.error('Reader: failed to load manifest', e);
@@ -142,6 +189,10 @@ window.Reader = {
             return;
         }
 
+        const self = this;
+        const readIds = getReadStoryIds();
+
+        // Shelves are grouped by level first (a learner's main axis of choice).
         const byLevel = {};
         this.stories.forEach(function(s) {
             const level = s.level || 'Unknown';
@@ -151,36 +202,66 @@ window.Reader = {
 
         let html = '';
         const levels = Object.keys(byLevel).sort();
-        const self = this;
 
         levels.forEach(function(level) {
-            html += '<div class="story-level-group">' +
-                '<h3 class="story-level-title">' + self.escapeHtml(level) + '</h3>' +
-                '<div class="story-grid">';
+            const shelfStories = byLevel[level];
+            const readCount = shelfStories.filter(s => readIds.includes(s.id)).length;
 
-            byLevel[level].forEach(function(story) {
-                html += '<button ' +
-                    'class="story-card" ' +
-                    'data-story-id="' + self.escapeHtml(story.id) + '">' +
-                    '<div class="story-card-title">' + self.escapeHtml(story.title) + '</div>' +
-                    '<div class="story-card-meta">' +
-                        self.escapeHtml(story.source || '') +
-                    '</div>' +
-                '</button>';
-            });
+            html += '<div class="story-shelf">' +
+                '<div class="story-shelf-header">' +
+                    '<h3 class="story-shelf-title">' + self.escapeHtml(level) + '</h3>' +
+                    '<span class="story-shelf-count">' + readCount + ' / ' + shelfStories.length + ' read</span>' +
+                '</div>';
 
-            html += '</div></div>';
+            // If this shelf mixes story types (original/classics/world), split
+            // it into labelled sub-groups; a single-type shelf stays flat.
+            const types = Array.from(new Set(shelfStories.map(s => s.type || s.source || 'original')));
+
+            if (types.length > 1) {
+                types.forEach(function(type) {
+                    const group = shelfStories.filter(s => (s.type || s.source || 'original') === type);
+                    html += '<h4 class="story-subshelf-title">' +
+                        self.escapeHtml(STORY_TYPE_LABELS[type] || type) + '</h4>' +
+                        '<div class="story-grid">' +
+                        group.map(story => self.buildStoryCardHtml(story, readIds)).join('') +
+                        '</div>';
+                });
+            } else {
+                html += '<div class="story-grid">' +
+                    shelfStories.map(story => self.buildStoryCardHtml(story, readIds)).join('') +
+                    '</div>';
+            }
+
+            html += '</div>';
         });
 
         container.innerHTML = html;
+    },
 
-        // Event delegation — click any story card
-        container.addEventListener('click', function(e) {
-            const card = e.target.closest('.story-card');
-            if (!card) return;
-            const storyId = card.getAttribute('data-story-id');
-            if (storyId) self.loadStory(storyId);
-        });
+    buildStoryCardHtml(story, readIds) {
+        const isRead = readIds.includes(story.id);
+        const cover = coverVariantFor(story.id);
+        const minutes = story.estimatedMinutes
+            ? story.estimatedMinutes + ' min'
+            : '';
+
+        return '<button class="story-card" data-story-id="' + this.escapeHtml(story.id) + '">' +
+            '<div class="story-card-cover ' + cover + '">' +
+                '<svg class="story-card-cover-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">' +
+                    '<path d="M4 5.5C4 4.67 4.67 4 5.5 4H11v16H5.5A1.5 1.5 0 0 1 4 18.5v-13Z" stroke="currentColor" stroke-width="1.3"/>' +
+                    '<path d="M20 5.5c0-.83-.67-1.5-1.5-1.5H13v16h5.5a1.5 1.5 0 0 0 1.5-1.5v-13Z" stroke="currentColor" stroke-width="1.3"/>' +
+                '</svg>' +
+                (isRead ? '<span class="story-card-read-badge" title="Read">✓</span>' : '') +
+            '</div>' +
+            '<div class="story-card-body">' +
+                '<div class="story-card-title">' + this.escapeHtml(story.title) + '</div>' +
+                '<div class="story-card-meta">' +
+                    '<span class="story-card-badge">' + this.escapeHtml(story.level || '') +
+                        (minutes ? ' · ' + minutes : '') +
+                    '</span>' +
+                '</div>' +
+            '</div>' +
+        '</button>';
     },
 
     async loadStory(storyId) {
@@ -195,6 +276,7 @@ window.Reader = {
         try {
             const story = await Content.story(storyMeta.path);
             this.currentStory = story;
+            markStoryRead(storyId);
             this.renderStory(story);
         } catch (e) {
             console.error('Reader: failed to load story file', storyMeta.path, e);
@@ -281,7 +363,10 @@ window.Reader = {
             contentEl.innerHTML = '';
             contentEl.classList.add('hidden');
         }
-        if (libraryEl) libraryEl.classList.remove('hidden');
+        if (libraryEl) {
+            libraryEl.classList.remove('hidden');
+            this.buildLibraryUI(libraryEl); // refresh read badges/shelf counts
+        }
         this.currentStory = null;
     }
 };
