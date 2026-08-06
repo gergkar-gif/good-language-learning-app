@@ -81,6 +81,8 @@
 
                     <button id="show-answer-btn" class="review-show-btn" onclick="showAnswer()">Show Answer</button>
 
+                    <!-- Times are placeholders: updateRatingLabels() rewrites
+                         them per card, since intervals now depend on the card. -->
                     <div id="rating-buttons" class="review-ratings">
                         <button class="review-rate review-rate-again" onclick="rateCard('again')">
                             <span class="review-rate-label">Again</span>
@@ -88,15 +90,15 @@
                         </button>
                         <button class="review-rate review-rate-hard" onclick="rateCard('hard')">
                             <span class="review-rate-label">Hard</span>
-                            <span class="review-rate-time">2d</span>
+                            <span class="review-rate-time">1d</span>
                         </button>
                         <button class="review-rate review-rate-good" onclick="rateCard('good')">
                             <span class="review-rate-label">Good</span>
-                            <span class="review-rate-time">4d</span>
+                            <span class="review-rate-time">1d</span>
                         </button>
                         <button class="review-rate review-rate-easy" onclick="rateCard('easy')">
                             <span class="review-rate-label">Easy</span>
-                            <span class="review-rate-time">7d</span>
+                            <span class="review-rate-time">4d</span>
                         </button>
                     </div>
                 </div>

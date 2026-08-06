@@ -677,15 +677,12 @@ function lessonAddSrsCards() {
 
     (stepState.cards || []).forEach(card => {
         if (srsDeck.find(w => w.spanish === card.lemma)) return;
-        srsDeck.push({
+        srsDeck.push(Object.assign({
             spanish: card.lemma,
             english: card.translation || 'unknown',
             type: card.pos || 'unknown',
-            added: new Date().toISOString(),
-            reviews: 0,
-            lastReviewed: null,
-            nextReview: new Date().toISOString()
-        });
+            added: new Date().toISOString()
+        }, newCardSchedule()));
         added++;
     });
 
