@@ -15,6 +15,7 @@ const Lexicon = (function () {
     let _verbIndex = null;
     let _wordIndex = null;
     let _dictionary = null;
+    let _frequency = null;   // lemma -> rank (lower is more common)
     let _loadPromise = null;
 
     const TENSE_LABELS = {
@@ -44,20 +45,24 @@ const Lexicon = (function () {
         _loadPromise = Promise.all([
             fetch('generated/indexes/verb-index.json').then(r => r.ok ? r.json() : {}),
             fetch('generated/indexes/word-index.json').then(r => r.ok ? r.json() : {}),
-            fetch('imports/dictionary/spanish-en.json').then(r => r.ok ? r.json() : {})
-        ]).then(([verbs, words, dict]) => {
+            fetch('imports/dictionary/spanish-en.json').then(r => r.ok ? r.json() : {}),
+            fetch('generated/indexes/frequency.json').then(r => r.ok ? r.json() : [])
+        ]).then(([verbs, words, dict, freq]) => {
             _verbIndex = verbs;
             _wordIndex = words;
             _dictionary = dict;
+            _frequency = new Map(freq.map((lemma, i) => [lemma, i]));
             console.log('Lexicon loaded:',
                 Object.keys(verbs).length, 'verb forms,',
                 Object.keys(words).length, 'word forms,',
-                Object.keys(dict).length, 'dictionary entries');
+                Object.keys(dict).length, 'dictionary entries,',
+                _frequency.size, 'ranked lemmas');
         }).catch(err => {
             console.error('Lexicon failed to load:', err);
             _verbIndex = _verbIndex || {};
             _wordIndex = _wordIndex || {};
             _dictionary = _dictionary || {};
+            _frequency = _frequency || new Map();
         });
 
         return _loadPromise;
@@ -131,11 +136,14 @@ const Lexicon = (function () {
         // conjugated verb
         (_verbIndex[key] || []).forEach(a => add(a.lemma, 'verb', describeVerb(a)));
 
-        // Proper nouns sink to the bottom. Wiktionary lists a lot of
-        // surnames and place names that collide with ordinary vocabulary
-        // ("Casas" the surname vs. "casas", houses), and in a graded reader
-        // the everyday word is almost always the intended one.
-        readings.sort((a, b) => isProperNoun(a) - isProperNoun(b));
+        // Rank the readings so the likeliest one leads. Proper nouns sink
+        // to the bottom (Wiktionary carries many surnames and place names
+        // that collide with ordinary vocabulary), then the more frequent
+        // lemma wins — that is what separates "vez" (54th most common word
+        // in Spanish) from the rare preposition also spelled "veces".
+        readings.sort((a, b) =>
+            (isProperNoun(a) - isProperNoun(b)) || (rankOf(a) - rankOf(b))
+        );
 
         return { word: word, readings: readings };
     }
@@ -172,6 +180,14 @@ const Lexicon = (function () {
 
     function isProperNoun(reading) {
         return reading.pos === 'proper noun' ? 1 : 0;
+    }
+
+    // Unranked lemmas fall outside the top 20k, so they sort after
+    // everything that has a rank rather than ahead of it.
+    function rankOf(reading) {
+        if (!_frequency) return Number.MAX_SAFE_INTEGER;
+        const rank = _frequency.get(String(reading.lemma).toLowerCase());
+        return rank === undefined ? Number.MAX_SAFE_INTEGER : rank;
     }
 
     function isLoaded() {
