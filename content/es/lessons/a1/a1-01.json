@@ -7,7 +7,8 @@
   "metadata": {
     "estimatedMinutes": 20,
     "grammarRefs": [
-      "grammar/a1/a1-01-gr.json"
+      "grammar/a1/a1-01-greetings-gr.json",
+      "grammar/a1/a1-01-ser-gr.json"
     ],
     "vocabularyRefs": [
       "vocabulary/a1/a1-01-voc.json"
@@ -29,7 +30,28 @@
     },
     {
       "type": "grammar",
-      "ref": "grammar/a1/a1-01-gr.json"
+      "ref": "grammar/a1/a1-01-greetings-gr.json"
+    },
+    {
+      "type": "exercise-group",
+      "title": "Greetings",
+      "ref": "exercises/a1/a1-01-ex.json",
+      "exerciseRefs": [
+        "a1-01-greetings-match"
+      ]
+    },
+    {
+      "type": "grammar",
+      "ref": "grammar/a1/a1-01-ser-gr.json"
+    },
+    {
+      "type": "exercise-group",
+      "title": "Introducing Yourself",
+      "ref": "exercises/a1/a1-01-ex.json",
+      "exerciseRefs": [
+        "a1-01-grammar-01",
+        "a1-01-grammar-02"
+      ]
     },
     {
       "type": "vocabulary",
@@ -37,26 +59,16 @@
       "title": "Lesson Vocabulary"
     },
     {
-      "type": "story",
-      "ref": "stories/original/a1/a1-01.json"
-    },
-    {
       "type": "exercise-group",
       "title": "Vocabulary",
       "ref": "exercises/a1/a1-01-ex.json",
       "exerciseRefs": [
-        "a1-01-vocab-01",
-        "a1-01-vocab-02"
+        "a1-01-toolkit-match"
       ]
     },
     {
-      "type": "exercise-group",
-      "title": "Grammar",
-      "ref": "exercises/a1/a1-01-ex.json",
-      "exerciseRefs": [
-        "a1-01-grammar-01",
-        "a1-01-grammar-02"
-      ]
+      "type": "story",
+      "ref": "stories/original/a1/a1-01.json"
     },
     {
       "type": "exercise-group",

@@ -104,6 +104,61 @@ def build_curriculum(lang="es"):
         "levels": levels
     }
 
+def validate_lessons(lang="es"):
+    """Check that every ref inside each lesson file actually resolves to a
+    real file, and that every exercise-group's exerciseRefs id actually
+    exists inside the exercises file it points at. Content refs fail
+    silently at runtime (loadContent() just falls back to a "Coming soon"
+    placeholder), so this is the only place broken refs get surfaced.
+    Returns a list of human-readable issue strings; never raises."""
+    issues = []
+    lang_path = BASE_LESSONS / lang
+    lessons_dir = lang_path / "lessons"
+    if not lessons_dir.exists():
+        return issues
+
+    for level_dir in sorted(p for p in lessons_dir.iterdir() if p.is_dir()):
+        for f in sorted(level_dir.glob("*.json")):
+            if f.name in SKIP_FILENAMES or f.stat().st_size == 0:
+                continue
+            try:
+                data = json.loads(f.read_text(encoding="utf-8"))
+            except json.JSONDecodeError as e:
+                issues.append(f"{f}: invalid JSON ({e})")
+                continue
+
+            label = f"{f} ({data.get('id', '?')})"
+
+            # metadata.*Refs / *Ref
+            meta = data.get("metadata", {})
+            meta_refs = [(k, r) for k in ("grammarRefs", "vocabularyRefs") for r in meta.get(k, [])]
+            meta_refs += [(k, meta[k]) for k in ("storyRef", "exercisesRef", "srsRef") if meta.get(k)]
+            for key, ref in meta_refs:
+                if not (lang_path / ref).exists():
+                    issues.append(f"{label}: metadata.{key} -> '{ref}' does not exist")
+
+            # sections[].ref, and exercise-group exerciseRefs
+            for i, section in enumerate(data.get("sections", [])):
+                ref = section.get("ref")
+                if not ref:
+                    continue
+                ref_path = lang_path / ref
+                if not ref_path.exists():
+                    issues.append(f"{label}: sections[{i}] ({section.get('type')}) ref '{ref}' does not exist")
+                    continue
+
+                if section.get("type") == "exercise-group" and section.get("exerciseRefs"):
+                    try:
+                        ref_data = json.loads(ref_path.read_text(encoding="utf-8"))
+                        available_ids = {ex.get("id") for ex in ref_data.get("exercises", [])}
+                    except json.JSONDecodeError:
+                        available_ids = set()
+                    for ex_id in section["exerciseRefs"]:
+                        if ex_id not in available_ids:
+                            issues.append(f"{label}: sections[{i}] exerciseRefs '{ex_id}' not found in {ref}")
+
+    return issues
+
 def main():
     generated = datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
 
@@ -135,6 +190,17 @@ def main():
             json.dump(curriculum, f, indent=2, ensure_ascii=False)
         total_lessons = sum(len(lvl['lessons']) for lvl in curriculum['levels'].values())
         print(f"Curriculum for {lang}: {total_lessons} lessons across {len(curriculum['levels'])} levels")
+
+    # Validate lesson content refs — broken refs fail silently in the app
+    # (a "Coming soon" placeholder, no error), so surface them here instead.
+    print()
+    for lang in ["es", "fr", "hu"]:
+        issues = validate_lessons(lang)
+        if not issues:
+            continue
+        print(f"Content ref issues for {lang}: {len(issues)}")
+        for issue in issues:
+            print(f"  - {issue}")
 
 if __name__ == "__main__":
     main()

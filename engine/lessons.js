@@ -101,7 +101,9 @@ async function buildSteps(lesson) {
                 steps.push({
                     type: 'story',
                     title: section.title || story.title,
-                    lines: story.lines || []
+                    // Story files use `paragraphs` (same schema the Library
+                    // reader consumes), not a separate bilingual `lines` shape.
+                    lines: story.paragraphs || []
                 });
             }
 
@@ -334,22 +336,18 @@ const stepRenderers = {
     },
 
     story(step) {
+        // Same tap-a-word-to-translate interaction as the Library reader —
+        // story files carry Spanish text only, no parallel English lines.
+        const clickable = text => (typeof Reader !== 'undefined') ? Reader.makeClickable(text) : esc(text);
         return `
-            <button class="lsn-toggle" onclick="toggleStoryTranslation()">Show / hide English</button>
             <div class="lsn-story" id="story-body">
-                ${(step.lines || []).map(line => line.kind === 'dialogue' ? `
+                ${(step.lines || []).map(line => line.type === 'dialogue' ? `
                     <div class="lsn-line">
                         <div class="lsn-speaker">${esc(line.speaker)}</div>
-                        <div>
-                            <div class="lsn-es">—${esc(line.es)}</div>
-                            <div class="lsn-en lsn-translation">${esc(line.en)}</div>
-                        </div>
+                        <div class="lsn-es">${clickable(line.text)}</div>
                     </div>
                 ` : `
-                    <p class="lsn-narration">
-                        <span class="lsn-es">${esc(line.es)}</span>
-                        <span class="lsn-en lsn-translation">${esc(line.en)}</span>
-                    </p>
+                    <p class="lsn-narration">${clickable(line.text)}</p>
                 `).join('')}
             </div>
         `;
@@ -529,6 +527,8 @@ function renderStep() {
     container.innerHTML = html;
     container.scrollIntoView({ block: 'start' });
 
+    if (typeof updateReaderWordColors === 'function') updateReaderWordColors();
+
     const btn = document.querySelector('#lesson-screen .btn-primary');
 
     if (currentStepIndex >= currentLesson.steps.length - 1) {
@@ -565,11 +565,6 @@ function finishLesson() {
 // ============================================
 // INTERACTION HANDLERS
 // ============================================
-function toggleStoryTranslation() {
-    const body = document.getElementById('story-body');
-    if (body) body.classList.toggle('show-translation');
-}
-
 function lessonChoose(btn, index) {
     const group = btn.parentElement.querySelectorAll('.lsn-option');
     group.forEach(b => b.classList.remove('correct', 'wrong'));
