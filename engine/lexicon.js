@@ -140,6 +140,36 @@ const Lexicon = (function () {
         return { word: word, readings: readings };
     }
 
+    // Longest multi-word expression containing the tapped word, if any.
+    // "mucho gusto" means "nice to meet you" — translating the two words
+    // separately ("much" + "taste") is actively misleading, so a phrase
+    // match takes priority over the individual word.
+    const MAX_PHRASE_WORDS = 4;
+
+    function findPhrase(tokens, index) {
+        if (!_dictionary || !tokens || index == null) return null;
+        const clean = tokens.map(normalise);
+
+        for (let size = MAX_PHRASE_WORDS; size >= 2; size--) {
+            // every window of this size that still covers the tapped word
+            for (let start = index - size + 1; start <= index; start++) {
+                if (start < 0 || start + size > clean.length) continue;
+                const parts = clean.slice(start, start + size);
+                if (parts.some(p => !p)) continue;
+                const phrase = parts.join(' ');
+                const entry = _dictionary[phrase];
+                if (entry) {
+                    return {
+                        phrase: tokens.slice(start, start + size).join(' '),
+                        pos: entry.type || '',
+                        translation: entry.en
+                    };
+                }
+            }
+        }
+        return null;
+    }
+
     function isProperNoun(reading) {
         return reading.pos === 'proper noun' ? 1 : 0;
     }
@@ -154,5 +184,8 @@ const Lexicon = (function () {
         return _dictionary[String(lemma).toLowerCase()] || null;
     }
 
-    return { load: load, lookup: lookup, isLoaded: isLoaded, define: define };
+    return {
+        load: load, lookup: lookup, isLoaded: isLoaded,
+        define: define, findPhrase: findPhrase
+    };
 })();

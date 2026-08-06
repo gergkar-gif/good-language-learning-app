@@ -41,9 +41,12 @@ POS_MAP = {
 }
 # Categories not useful for word-tap lookup (single tapped words never
 # match these — they're multi-word or purely grammatical particles)
+# Multi-word entries ("mucho gusto", "hasta luego", "me llamo") are kept on
+# purpose: translating them word by word is actively misleading, and the
+# reader detects them when a learner taps any word inside one.
 SKIP_POS = {
-    "suffix", "prefix", "infix", "interfix", "particle", "phrase",
-    "proverb", "punct", "symbol", "character", "contraction", "name",
+    "suffix", "prefix", "infix", "interfix", "particle",
+    "punct", "symbol", "character", "contraction", "name",
 }
 
 

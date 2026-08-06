@@ -51,11 +51,23 @@ function _ensureWordPopup() {
     return popup;
 }
 
-function _renderWordReadings(tappedWord, readings) {
+function _renderWordReadings(tappedWord, readings, phrase) {
     const body = document.getElementById('popup-body');
     const analysisEl = document.getElementById('popup-analysis');
 
+    // A multi-word expression leads, since translating it word by word
+    // gives the wrong meaning ("mucho gusto" is not "much" + "taste").
+    let phraseHtml = '';
+    if (phrase) {
+        document.getElementById('popup-word').textContent = phrase.phrase;
+        analysisEl.textContent = ['expression', phrase.pos].filter(Boolean).join(' · ');
+        phraseHtml =
+            `<p class="wp-meaning">${Reader.escapeHtml(phrase.translation)}</p>` +
+            `<p class="wp-lemma">You tapped <strong>${Reader.escapeHtml(tappedWord)}</strong>, part of this expression.</p>`;
+    }
+
     if (!readings.length) {
+        if (phrase) { body.innerHTML = phraseHtml; return; }
         analysisEl.textContent = '';
         body.innerHTML = '<p class="wp-empty">Not in the dictionary yet.</p>';
         return;
@@ -64,10 +76,15 @@ function _renderWordReadings(tappedWord, readings) {
     // Primary reading fills the header; any others are listed below, so an
     // ambiguous word ("casas" = houses / you marry) still shows both.
     const primary = readings[0];
-    analysisEl.textContent = [primary.pos, primary.gender, primary.analysis]
-        .filter(Boolean).join(' · ');
+    if (!phrase) {
+        analysisEl.textContent = [primary.pos, primary.gender, primary.analysis]
+            .filter(Boolean).join(' · ');
+    }
 
-    let html = '';
+    let html = phraseHtml;
+    if (phrase) {
+        html += `<p class="wp-alts-title" style="margin-top:16px">${Reader.escapeHtml(tappedWord)} on its own</p>`;
+    }
     if (primary.lemma.toLowerCase() !== String(tappedWord).toLowerCase()) {
         html += `<p class="wp-lemma">from <strong>${Reader.escapeHtml(primary.lemma)}</strong></p>`;
     }
@@ -91,7 +108,7 @@ function _renderWordReadings(tappedWord, readings) {
     body.innerHTML = html;
 }
 
-async function showWord(spanish) {
+async function showWord(spanish, contextTokens, tokenIndex) {
     const popup = _ensureWordPopup();
     document.getElementById('popup-word').textContent = spanish;
     popup.style.display = 'block';
@@ -104,8 +121,9 @@ async function showWord(spanish) {
         if (document.getElementById('popup-word').textContent !== spanish) return;
     }
 
+    const phrase = Lexicon.findPhrase(contextTokens, tokenIndex);
     const readings = Lexicon.lookup(spanish).readings;
-    _renderWordReadings(spanish, readings);
+    _renderWordReadings(spanish, readings, phrase);
 
     // The deck stores dictionary forms, so a tapped "días" is saved as "día".
     currentWord = readings.length
@@ -437,7 +455,17 @@ window.Reader = {
 // every re-render of either.
 document.addEventListener('click', function (e) {
     const wordEl = e.target.closest('.word');
-    if (wordEl) showWord(wordEl.textContent.trim());
+    if (!wordEl) return;
+
+    // Pass the surrounding words so showWord() can recognise a multi-word
+    // expression the tapped word belongs to ("mucho gusto", "hasta luego").
+    const scope = wordEl.closest('p, div') || document;
+    const siblings = Array.from(scope.querySelectorAll('.word'));
+    showWord(
+        wordEl.textContent.trim(),
+        siblings.map(el => el.textContent.trim()),
+        siblings.indexOf(wordEl)
+    );
 });
 
 (function initWhenReady() {
