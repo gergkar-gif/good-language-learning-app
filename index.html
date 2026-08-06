@@ -3,446 +3,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spanish Learning App</title>
-    <link rel="stylesheet" href="style.css">
-<script type='text/javascript' src='https://prod-chat-kimi.tos-cn-beijing.volces.com/SZg4wV632G8ymRA6l58e5WiEPNOAhLXmKS2ht8QGmqVUmvuw1Xm6gYjvVQrABMX_cQ4wq2XGzxHb38m3ajopK7dqvLzKWSsSZfxuiPg0I61uL-mxX8uiX5isY86MWkmPLyMBVQ0D4BGfns8nVTHNOvjRl-oNziXUKpTwhL9GXoEXoX-ixwAd7GaEZDKGec1595w0ag_Y9MhA-xQCo0QH0E4V1uAp3eTKhQuuHZlhM7ztASPwwRRxgELXlRA9v_jv6n5vu2GyCN7_q2g4ggCBCdVKcN5hl5ahHCbwJgQC5Qr82XQ_xXXfjcoNH8Kxf4stTkNmRFbIXwH_LsmdtCWVUGoDRtXA0aSIKmgpWq2_a27kcwIsIeTuIltBVBmPCJr8arNeBcctm37yjH4HBck7UZXdM_ExBLZl6rbL-DEQpRpZ1Z6p-hCr7M9OCNiLn-80vs33ghdMVk84FxEpZu3QrxEL34gLg7lafxs7QYsFqt3DzDooGbFkNvEytTyYEmx4Rfe7UiteFIq296EYv2ght6QAyaQscJIIgFpPrUhem5S2uFgJvTG-YR-qAMMeile5pTmn4uODjs5ruqee-WUqOh4mg_o2H83V5VMiGxauDQR5bhct6wwzOmU3kY67FwFIYmnaXP2YwHjAL93PGmDXhCEIXjYFvXDuOkqShN-QyzPzsfCxdT1hgaojsv_-FLinWhPeBYHUVftySh9i0s7wYUUdqKqUzuDHGRo3ckimjAlxweFx7t1ZHJVS33usVLEHk5loGS-eAFM3MJAR5Mn2L80Q6XfYB4v4vmt0WtK0qyxhS8XZvKPMD6sMyg5sQYPp_rsLZQZqDODzPrh28l9XaHb1RSZAiCSQnXsguMdClJICIA9o7ACY_fVVZnSH85G3rOElteP4Wh3jeBww-HMlriOdIXFsEJpVrL7r6HWLi-OabpWa6bIlofviXkmwMnD6g47my8s3INrIiMpXOg3VD3vw_7evCPOPh90Ax1rueHgqr14_6CT0i3TjY_Fyc00TkdRDZfhKlU8YB5SFb5q1zS1W'></script><base target="_blank">
+    <title>Spanish Mastery</title>
+
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/utilities.css">
+    <link rel="stylesheet" href="styles/verbs.css">
 </head>
 <body>
-    <div class="app">
-        <div class="header">
-            <h1>🇪🇸 Spanish Mastery</h1>
-            <p>Grammar · Reading · Drills · SRS</p>
-            <div style="display: flex; justify-content: center; gap: 20px; margin-top: 10px; font-size: 14px;">
-                <span id="header-xp" style="font-weight: bold;">0 XP</span>
-                <span id="header-streak" style="color: #8FB4BA;">0/50 XP</span>
-            </div>
+
+<div class="app">
+
+    <header class="header">
+        <h1>🇪🇸 Spanish Mastery</h1>
+        <p>Grammar · Reading · Drills · SRS</p>
+
+        <div class="header-stats">
+            <span id="header-xp">0 XP</span>
+            <span id="header-streak">0/50 XP</span>
         </div>
+    </header>
 
-        <div class="nav">
-            <button class="active" onclick="showTab('learn')">Learn</button>
-            <button onclick="showTab('reader')">Reader</button>
-            <button onclick="showTab('drills')">Drills</button>
-            <button onclick="showTab('review')">Review</button>
-        </div>
+    <nav class="nav">
+        <button class="active" data-tab="learn">Learn</button>
+        <button data-tab="reader">Reader</button>
+        <button data-tab="drills">Drills</button>
+        <button data-tab="review">Review</button>
+    </nav>
 
-        <div class="content">
-            <!-- LEARN TAB -->
-            <div id="learn" class="tab">
-                <h2 class="section-title">Your Path</h2>
-                <p style="color: #2E2A26; opacity: 0.7; margin-bottom: 20px; font-size: 14px;">All levels are open. Jump in anywhere.</p>
+    <main class="content">
 
-                <!-- A1 -->
-                <div class="level-section" style="margin-bottom: 20px;">
-                    <div onclick="toggleLevel('a1')" style="display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; background: #1B4B5A; color: white; border-radius: 12px; cursor: pointer;">
-                        <div>
-                            <h3 style="font-size: 18px; margin: 0;">Fundamentals (A1)</h3>
-                            <p style="font-size: 13px; margin: 4px 0 0 0; opacity: 0.9;">Survival skills. <span id="a1-progress-text">Loading...</span></p>
-                        </div>
-                        <span id="a1-arrow" style="font-size: 20px;">▼</span>
-                    </div>
-                    <div id="a1-lessons" style="display: block;">
-                        <!-- A1 lessons rendered dynamically from curriculum.json -->
-                    
-                    </div>
-                </div>
+        <section id="learn" class="tab">
+            <div id="learn-content"></div>
+        </section>
 
-                <!-- A2 -->
-                <div class="level-section" style="margin-bottom: 20px;">
-                    <div onclick="toggleLevel('a2')" style="display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; background: #3E7986; color: white; border-radius: 12px; cursor: pointer;">
-                        <div>
-                            <h3 style="font-size: 18px; margin: 0;">Basic (A2)</h3>
-                            <p style="font-size: 13px; margin: 4px 0 0 0; opacity: 0.9;">Manage basic interactions. 10 lessons.</p>
-                        </div>
-                        <span id="a2-arrow" style="font-size: 20px;">▼</span>
-                    </div>
-                    <div id="a2-lessons" style="display: block;">
-                        <div class="card" onclick="startLesson('lesson.a2.01')">
-                            <h3>⏰ Talking About the Past</h3>
-                            <p>Master the preterite to tell stories about yesterday.</p>
-                            <span class="level-badge">A2</span>
-                        </div>
-                        <div class="card" onclick="startLesson('lesson.a2.02')">
-                            <h3>🔄 Habits in the Past</h3>
-                            <p>Use the imperfect for ongoing actions and descriptions.</p>
-                            <span class="level-badge">A2</span>
-                        </div>
-                        <div class="card" onclick="startLesson('lesson.a2.03')">
-                            <h3>⚖️ Preterite vs. Imperfect</h3>
-                            <p>Know when to use each past tense.</p>
-                            <span class="level-badge">A2</span>
-                        </div>
-                        <div class="card" onclick="startLesson('lesson.a2.04')">
-                            <h3>🛒 Shopping & Transactions</h3>
-                            <p>Buy things, compare prices, make choices.</p>
-                            <span class="level-badge">A2</span>
-                        </div>
-                        <div class="card" onclick="startLesson('lesson.a2.05')">
-                            <h3>🏥 Health & Body</h3>
-                            <p>Describe symptoms, see a doctor, give advice.</p>
-                            <span class="level-badge">A2</span>
-                        </div>
-                        <div class="card" onclick="startLesson('lesson.a2.06')">
-                            <h3>✈️ Travel & Transport</h3>
-                            <p>Navigate airports, hotels, and public transport.</p>
-                            <span class="level-badge">A2</span>
-                        </div>
-                        <div class="card" onclick="startLesson('lesson.a2.07')">
-                            <h3>🏠 Housing & Home</h3>
-                            <p>Describe rooms, furniture, and your living space.</p>
-                            <span class="level-badge">A2</span>
-                        </div>
-                        <div class="card" onclick="startLesson('lesson.a2.08')">
-                            <h3>🔮 Future Plans</h3>
-                            <p>Talk about what you are going to do.</p>
-                            <span class="level-badge">A2</span>
-                        </div>
-                        <div class="card" onclick="startLesson('lesson.a2.09')">
-                            <h3>📊 Comparisons & Superlatives</h3>
-                            <p>Say something is better, worse, or the best.</p>
-                            <span class="level-badge">A2</span>
-                        </div>
-                        <div class="card" onclick="startLesson('lesson.a2.10')">
-                            <h3>🎯 Object Pronouns</h3>
-                            <p>Use me, te, lo, la, le correctly in sentences.</p>
-                            <span class="level-badge">A2</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- B1 -->
-                <div class="level-section" style="margin-bottom: 20px;">
-                    <div onclick="toggleLevel('b1')" style="display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; background: #8FB4BA; color: white; border-radius: 12px; cursor: pointer;">
-                        <div>
-                            <h3 style="font-size: 18px; margin: 0;">Intermediate (B1)</h3>
-                            <p style="font-size: 13px; margin: 4px 0 0 0; opacity: 0.9;">Express opinions, handle complex topics. 5 lessons.</p>
-                        </div>
-                        <span id="b1-arrow" style="font-size: 20px;">▼</span>
-                    </div>
-                    <div id="b1-lessons" style="display: block;">
-                        <div class="card" onclick="startLesson('lesson.b1.01')">
-                            <h3>😰 Wishes & Doubts</h3>
-                            <p>Introduction to the present subjunctive mood.</p>
-                            <span class="level-badge">B1</span>
-                        </div>
-                        <div class="card" onclick="startLesson('lesson.b1.02')">
-                            <h3>🌍 Environment & Nature</h3>
-                            <p>Discuss climate, pollution, and sustainability.</p>
-                            <span class="level-badge">B1</span>
-                        </div>
-                        <div class="card" onclick="startLesson('lesson.b1.03')">
-                            <h3>🏛️ Politics & Society</h3>
-                            <p>Talk about government, elections, and social issues.</p>
-                            <span class="level-badge">B1</span>
-                        </div>
-                        <div class="card" onclick="startLesson('lesson.b1.04')">
-                            <h3>📜 History & Culture</h3>
-                            <p>Discuss historical events and cultural traditions.</p>
-                            <span class="level-badge">B1</span>
-                        </div>
-                        <div class="card" onclick="startLesson('lesson.b1.05')">
-                            <h3>💻 Technology & Future</h3>
-                            <p>Debate AI, social media, and where we're headed.</p>
-                            <span class="level-badge">B1</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- B2 -->
-                <div class="level-section" style="margin-bottom: 20px;">
-                    <div onclick="toggleLevel('b2')" style="display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; background: #2E2A26; color: white; border-radius: 12px; cursor: pointer;">
-                        <div>
-                            <h3 style="font-size: 18px; margin: 0;">Upper Intermediate (B2)</h3>
-                            <p style="font-size: 13px; margin: 4px 0 0 0; opacity: 0.9;">Complex arguments, abstract topics. Coming soon.</p>
-                        </div>
-                        <span id="b2-arrow" style="font-size: 20px;">▶</span>
-                    </div>
-                    <div id="b2-lessons" style="display: none;">
-                        <div class="card" style="opacity: 0.6;">
-                            <h3>📝 Advanced Narrative</h3>
-                            <p>Tell complex stories with compound tenses.</p>
-                            <span class="level-badge">B2</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- C1 -->
-                <div class="level-section" style="margin-bottom: 20px;">
-                    <div onclick="toggleLevel('c1')" style="display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; background: #E4572E; color: white; border-radius: 12px; cursor: pointer;">
-                        <div>
-                            <h3 style="font-size: 18px; margin: 0;">Advanced (C1)</h3>
-                            <p style="font-size: 13px; margin: 4px 0 0 0; opacity: 0.9;">Fluency. Politics, philosophy, art, science. Coming soon.</p>
-                        </div>
-                        <span id="c1-arrow" style="font-size: 20px;">▶</span>
-                    </div>
-                    <div id="c1-lessons" style="display: none;">
-                        <div class="card" style="opacity: 0.6;">
-                            <h3>🎭 Art & Literature</h3>
-                            <p>Analyze novels, films, and artistic movements.</p>
-                            <span class="level-badge">C1</span>
-                        </div>
-                        <div class="card" style="opacity: 0.6;">
-                            <h3>⚖️ Law & Ethics</h3>
-                            <p>Discuss justice, rights, and moral philosophy.</p>
-                            <span class="level-badge">C1</span>
-                        </div>
-                        <div class="card" style="opacity: 0.6;">
-                            <h3>🔬 Science & Discovery</h3>
-                            <p>Read about research, space, and medicine.</p>
-                            <span class="level-badge">C1</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- READER TAB -->
-            <div id="reader" class="tab hidden">
-                <h2 class="section-title">Read</h2>
-                <p style="color: #2E2A26; opacity: 0.7; margin-bottom: 20px;">Tap any word to see its meaning. Stories build in complexity as you level up. <span style="float: right; font-weight: bold; color: #1B4B5A;">Deck: <span id="srs-counter">0</span></span></p>
-                
-                <!-- Legend -->
-                <div style="display: flex; gap: 12px; margin-bottom: 15px; font-size: 12px; flex-wrap: wrap;">
-                    <span><span style="display: inline-block; width: 12px; height: 12px; background: #2E2A26; border-radius: 2px; vertical-align: middle; margin-right: 4px;"></span> Unknown</span>
-                    <span><span style="display: inline-block; width: 12px; height: 12px; background: #8FB4BA; border-radius: 2px; vertical-align: middle; margin-right: 4px;"></span> Seen</span>
-                    <span><span style="display: inline-block; width: 12px; height: 12px; background: #3E7986; border-radius: 2px; vertical-align: middle; margin-right: 4px;"></span> Known</span>
-                    <span><span style="display: inline-block; width: 12px; height: 12px; background: #1B4B5A; border-radius: 2px; vertical-align: middle; margin-right: 4px;"></span> Mastered</span>
-                </div>
-                
+        <section id="reader" class="tab hidden">
+            <div id="reader-root">
                 <div id="reader-library"></div>
-
-<div id="reader-content" class="hidden"></div>
-                
+                <div id="reader-content" class="hidden"></div>
             </div>
+        </section>
 
-            <!-- DRILLS TAB -->
-            <div id="drills" class="tab hidden">
-                <h2 class="section-title">Verb Drills</h2>
-                
-                <div class="card" style="margin-bottom: 15px;">
-                    <h3 style="margin-bottom: 12px; color: #2E2A26;">Select Tense</h3>
-                    <select id="tense-select" onchange="changeTense()" style="width: 100%; padding: 12px; font-size: 16px; border: 2px solid #DCE6E8; border-radius: 8px; background: white; color: #2E2A26;">
-                        <optgroup label="Indicative">
-                            <option value="indicativo.presente" selected>Presente (Present)</option>
-                            <option value="indicativo.preterito">Pretérito (Preterite)</option>
-                            <option value="indicativo.imperfecto">Imperfecto (Imperfect)</option>
-                            <option value="indicativo.futuro">Futuro (Future)</option>
-                            <option value="indicativo.condicional">Condicional (Conditional)</option>
-                        </optgroup>
-                        <optgroup label="Subjunctive">
-                            <option value="subjuntivo.presente">Presente (Present Subjunctive)</option>
-                            <option value="subjuntivo.imperfecto">Imperfecto (Imperfect Subjunctive)</option>
-                            <option value="subjuntivo.futuro">Futuro (Future Subjunctive)</option>
-                        </optgroup>
-                        <optgroup label="All">
-                            <option value="all">🎲 All Tenses (Random)</option>
-                        </optgroup>
-                    </select>
-                </div>
-                
-                <div class="card">
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
-                        <h3 id="drill-title" style="color: #1B4B5A;">HABLAR — Presente</h3>
-                        <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; font-size: 13px; color: #2E2A26; opacity: 0.8;">
-                            <span>vosotros</span>
-                            <input type="checkbox" id="vosotros-toggle" onchange="toggleVosotros()" style="display: none;">
-                            <span id="vosotros-switch" style="display: inline-block; width: 36px; height: 20px; background: #DCE6E8; border-radius: 10px; position: relative; transition: background 0.2s;">
-                                <span style="display: block; width: 16px; height: 16px; background: white; border-radius: 50%; position: absolute; top: 2px; left: 2px; transition: left 0.2s; box-shadow: 0 1px 3px rgba(0,0,0,0.2);"></span>
-                            </span>
-                        </label>
-                    </div>
-                    <p id="drill-meaning" style="color: #2E2A26; opacity: 0.7; font-size: 14px; margin-top: 4px;"></p>
+        <section id="drills" class="tab hidden">
+            <div id="drills-root"></div>
+        </section>
 
-                    <div style="margin-top: 15px;">
-                        <div class="drill-row">
-                            <span>yo</span>
-                            <input type="text" id="v1" placeholder="?">
-                        </div>
-                        <div class="drill-row">
-                            <span>tú</span>
-                            <input type="text" id="v2" placeholder="?">
-                        </div>
-                        <div class="drill-row">
-                            <span>él/ella/ud.</span>
-                            <input type="text" id="v3" placeholder="?">
-                        </div>
-                        <div class="drill-row">
-                            <span>nosotros</span>
-                            <input type="text" id="v4" placeholder="?">
-                        </div>
-                        <div class="drill-row" id="vosotros-row" style="display: none;">
-                            <span>vosotros</span>
-                            <input type="text" id="v5" placeholder="?">
-                        </div>
-                        <div class="drill-row">
-                            <span>ellos/ellas/uds.</span>
-                            <input type="text" id="v6" placeholder="?">
-                        </div>
-                    </div><div style="display: flex; gap: 10px; margin-top: 15px;">
-                        <button class="btn-primary" onclick="checkDrill()" style="flex: 1;">Check</button>
-                        <button class="btn-primary" onclick="nextVerb()" style="flex: 1; background: #3E7986;">Next Verb →</button>
-                    </div>
-                    <div id="drill-result" style="margin-top: 15px; text-align: center; font-weight: bold;"></div>
+        <section id="review" class="tab hidden">
+            <div id="review-root">
+
+                <!-- Stats bar -->
+                <div class="review-stats">
+                    <div class="review-stat">Due <strong id="due-count">0</strong></div>
+                    <div class="review-stat">New <strong id="new-count">0</strong></div>
+                    <div class="review-stat">Total <strong id="total-count">0</strong></div>
+                    <button class="review-clear-btn" onclick="clearDeck()">Reset</button>
                 </div>
+
+                <!-- Empty state -->
+                <div id="review-empty" class="review-empty">
+                    <div class="review-empty-icon">📚</div>
+                    <h3 class="review-empty-title">All caught up!</h3>
+                    <p class="review-empty-text">No cards are due for review.</p>
+                    <p class="review-empty-text">Read stories and tap words to add them to your deck.</p>
+                </div>
+
+                <!-- Flashcard -->
+                <div id="review-card" class="review-card">
+                    <div class="review-card-front">
+                        <span id="review-context" class="review-card-type"></span>
+                        <span id="review-front" class="review-card-word"></span>
+                    </div>
+
+                    <div id="review-answer" class="review-card-back">
+                        <span id="review-back" class="review-card-translation"></span>
+                    </div>
+
+                    <button id="show-answer-btn" class="review-show-btn" onclick="showAnswer()">Show Answer</button>
+
+                    <div id="rating-buttons" class="review-ratings">
+                        <button class="review-rate review-rate-again" onclick="rateCard('again')">
+                            <span class="review-rate-label">Again</span>
+                            <span class="review-rate-time">1m</span>
+                        </button>
+                        <button class="review-rate review-rate-hard" onclick="rateCard('hard')">
+                            <span class="review-rate-label">Hard</span>
+                            <span class="review-rate-time">2d</span>
+                        </button>
+                        <button class="review-rate review-rate-good" onclick="rateCard('good')">
+                            <span class="review-rate-label">Good</span>
+                            <span class="review-rate-time">4d</span>
+                        </button>
+                        <button class="review-rate review-rate-easy" onclick="rateCard('easy')">
+                            <span class="review-rate-label">Easy</span>
+                            <span class="review-rate-time">7d</span>
+                        </button>
+                    </div>
+                </div>
+
             </div>
+        </section>
 
-            <!-- REVIEW TAB -->
-            <div id="review" class="tab hidden">
-                <h2 class="section-title">SRS Review</h2>
-                
-                <div style="display: flex; gap: 15px; margin-bottom: 15px; padding: 0 5px;">
-                    <div style="flex: 1; text-align: center; background: #DCE6E8; padding: 10px; border-radius: 8px;">
-                        <div style="font-size: 20px; font-weight: bold; color: #1B4B5A;" id="due-count">0</div>
-                        <div style="font-size: 12px; color: #2E2A26; opacity: 0.7;">Due</div>
-                    </div>
-                    <div style="flex: 1; text-align: center; background: #DCE6E8; padding: 10px; border-radius: 8px;">
-                        <div style="font-size: 20px; font-weight: bold; color: #3E7986;" id="new-count">0</div>
-                        <div style="font-size: 12px; color: #2E2A26; opacity: 0.7;">New</div>
-                    </div>
-                    <div style="flex: 1; text-align: center; background: #DCE6E8; padding: 10px; border-radius: 8px;">
-                        <div style="font-size: 20px; font-weight: bold; color: #8FB4BA;" id="total-count">0</div>
-                        <div style="font-size: 12px; color: #2E2A26; opacity: 0.7;">Total</div>
-                    </div>
-                </div>
-                
-                <div id="review-card" class="card" style="text-align: center; padding: 40px 20px; min-height: 300px; display: flex; flex-direction: column; justify-content: center;">
-                    <p style="font-size: 14px; color: #2E2A26; opacity: 0.7; margin-bottom: 10px;">What does this mean?</p>
-                    <h2 style="font-size: 36px; color: #1B4B5A; margin-bottom: 20px;" id="review-front">—</h2>
-                    
-                    <div id="review-answer" style="display: none; margin-bottom: 25px;">
-                        <p style="font-size: 14px; color: #2E2A26; opacity: 0.7; margin-bottom: 5px;">Answer:</p>
-                        <p style="font-size: 24px; color: #2E2A26; font-weight: 500;" id="review-back">—</p>
-                        <p style="font-size: 13px; color: #8FB4BA; margin-top: 8px; font-style: italic;" id="review-context"></p>
-                    </div>
-                    
-                    <button id="show-answer-btn" class="btn-primary" onclick="showAnswer()" style="max-width: 200px; margin: 0 auto;">Show Answer</button>
-                    
-                    <div id="rating-buttons" style="display: none; gap: 8px; justify-content: center; margin-top: 10px;">
-                        <button onclick="rateCard('again')" style="padding: 10px 16px; background: #B8412F; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 13px;">
-                            <div>Again</div>
-                            <div style="font-size: 11px; opacity: 0.8;">&lt;1m</div>
-                        </button>
-                        <button onclick="rateCard('hard')" style="padding: 10px 16px; background: #E4572E; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 13px;">
-                            <div>Hard</div>
-                            <div style="font-size: 11px; opacity: 0.8;">2d</div>
-                        </button>
-                        <button onclick="rateCard('good')" style="padding: 10px 16px; background: #3E8E5B; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 13px;">
-                            <div>Good</div>
-                            <div style="font-size: 11px; opacity: 0.8;">4d</div>
-                        </button>
-                        <button onclick="rateCard('easy')" style="padding: 10px 16px; background: #1B4B5A; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 13px;">
-                            <div>Easy</div>
-                            <div style="font-size: 11px; opacity: 0.8;">7d</div>
-                        </button>
-                    </div>
-                </div>
-                
-                <div id="review-empty" style="display: none; text-align: center; padding: 60px 20px; color: #2E2A26; opacity: 0.7;">
-                    <p style="font-size: 48px; margin-bottom: 15px;">🎉</p>
-                    <p style="font-size: 18px; margin-bottom: 10px;">All caught up!</p>
-                    <p>No cards due for review.</p>
-                    <p style="margin-top: 15px; font-size: 14px;">Go to the <strong>Reader</strong> tab and tap words to add new cards.</p>
-                </div>
-            </div>
+        <section id="lesson-screen" class="tab hidden">
+            <div id="lesson-root">
 
-            <!-- LESSON SCREEN -->
-            <div id="lesson-screen" class="tab hidden">
-                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px;">
-                    <button onclick="closeLesson()" style="background: none; border: none; font-size: 24px; cursor: pointer; color: #1B4B5A;">←</button>
+                <div class="lesson-header">
+                    <button id="lesson-close-btn">←</button>
+
                     <div>
-                        <h2 id="lesson-title" style="font-size: 20px; color: #1B4B5A;">Lesson Title</h2>
-                        <p id="lesson-subtitle" style="font-size: 13px; color: #2E2A26; opacity: 0.7;">A1</p>
+                        <h2 id="lesson-title"></h2>
+                        <p id="lesson-subtitle"></p>
                     </div>
+
                 </div>
-                
+
                 <div id="lesson-content"></div>
-                
-                <div style="margin-top: 30px; padding-bottom: 40px;">
-                    <button class="btn-primary" onclick="nextLessonStep()">Continue →</button>
+
+                <div class="lesson-footer">
+                    <button class="btn-primary" id="lesson-next-btn">Continue →</button>
                 </div>
+
             </div>
+        </section>
 
-        </div>
-    </div>
+    </main>
 
-    <script src="imports/verbs/verb-list.js"></script>
-    <script src="engine/xp.js"></script>
-    <script src="engine/srs.js"></script>
-    <script src="engine/reader.js"></script>
-    <script src="engine/verbs.js"></script>
-    <script src="engine/lessons.js"></script>
-    <script src="engine/progress.js"></script>
-    <script src="engine/init.js"></script>
-<script>
-var EMOJI_MAP = {
-    "Greetings & Introductions": "👋",
-    "Personal Information": "🪪",
-    "Family": "👨‍👩‍👧‍👦",
-    "Describing People": "🎨",
-    "Describing a Home": "🏠",
-    "Where Things Are": "📍",
-    "Daily Routine": "🌅",
-    "Time & Plans": "⏰",
-    "Food & Drink": "🍽️",
-    "Shopping": "🛒",
-    "Hobbies": "⚽",
-    "Describing Your Town": "🏙️",
-    "Directions": "🧭",
-    "Weather": "🌤️",
-    "Work & Study": "💼",
-    "Health": "🏥",
-    "Future Plans": "✈️",
-    "Review 1": "📝",
-    "Review 2": "📝",
-    "A1 Final Review": "🎓"
-};
+</div>
 
-function getProgress() {
-    try { return JSON.parse(localStorage.getItem('spanishMastery_progress') || '{}'); }
-    catch (e) { return {}; }
-}
+<!-- Verb list (global ALL_VERBS) -->
+<script src="imports/verbs/verb-list.js"></script>
 
-function renderA1Lessons(lessons) {
-    var container = document.getElementById('a1-lessons');
-    if (!container || !lessons) return;
-    var progress = getProgress();
-    var completed = 0;
-    for (var i = 0; i < lessons.length; i++) {
-        if (progress[lessons[i].id]) completed++;
-    }
-    var headerText = document.getElementById('a1-progress-text');
-    if (headerText) headerText.textContent = completed + '/' + lessons.length + ' completed';
-    var html = '';
-    for (var i = 0; i < lessons.length; i++) {
-        var lesson = lessons[i];
-        var done = progress[lesson.id];
-        var emoji = EMOJI_MAP[lesson.title] || '📚';
-        var check = done ? '<span style="margin-left:8px;color:#4CAF50;">✓</span>' : '';
-        var opacity = done ? 'opacity:0.75;' : '';
-        var border = done ? 'border-left:4px solid #4CAF50;' : '';
-        html += '<div class="card" onclick="startLesson(\'' + lesson.id + '\')" style="' + opacity + border + '">' +
-            '<h3>' + emoji + ' ' + lesson.title + check + '</h3>' +
-            '<p>' + (lesson.goal || '') + '</p>' +
-            '<span class="level-badge">A1</span>' +
-            '</div>';
-    }
-    container.innerHTML = html;
-}
+<!-- Engine: core utilities (no deps) -->
+<script src="engine/xp.js"></script>
+<script src="engine/srs.js"></script>
+<script src="engine/content-loader.js"></script>
+<script src="engine/ui.js"></script>
 
-function renderCurriculum() {
-    fetch('content/curriculum/curriculum.json')
-        .then(function(r) { return r.json(); })
-        .then(function(data) {
-            window._curriculumData = data;
-            var a1 = data.levels && data.levels.A1 && data.levels.A1.lessons;
-            if (a1) renderA1Lessons(a1);
-        })
-        .catch(function(err) {
-            console.error('Curriculum load failed:', err);
-            var h = document.getElementById('a1-progress-text');
-            if (h) h.textContent = '20 lessons';
-        });
-}
+<!-- Engine: reader (depends on Content) -->
+<script src="engine/reader.js"></script>
 
-document.addEventListener('DOMContentLoaded', renderCurriculum);
-</script>
+<!-- Engine: verbs submodules (order matters) -->
+<script src="engine/verbs/stats.js"></script>
+<script src="engine/verbs/table.js"></script>
+<script src="engine/verbs/speed.js"></script>
+<script src="engine/verbs.js"></script>
+
+<!-- Engine: lessons, progress, curriculum -->
+<script src="engine/lessons.js"></script>
+<script src="engine/progress.js"></script>
+<script src="engine/curriculum.js"></script>
+
+<!-- Engine: bootstrap (loads last) -->
+<script src="engine/init.js"></script>
+
 </body>
 </html>

@@ -1,0 +1,51 @@
+/* Visibility */
+
+.hidden {
+    display: none;
+}
+
+
+/* Reader word familiarity */
+
+.word {
+    cursor: pointer;
+    padding: 2px 0;
+    border-radius: 3px;
+    transition: all 0.2s;
+}
+
+.word-unknown {
+    color: #2E2A26;
+    border-bottom: 2px dotted #8FB4BA;
+}
+
+.word-unknown:hover {
+    background: #DCE6E8;
+}
+
+.word-seen {
+    color: #8FB4BA;
+    border-bottom: 2px dotted #8FB4BA;
+}
+
+.word-seen:hover {
+    background: #DCE6E8;
+}
+
+.word-known {
+    color: #3E7986;
+    border-bottom: 2px solid #3E7986;
+}
+
+.word-known:hover {
+    background: #DCE6E8;
+}
+
+.word-mastered {
+    color: #1B4B5A;
+    font-weight: 500;
+}
+
+.word-mastered:hover {
+    background: #DCE6E8;
+}

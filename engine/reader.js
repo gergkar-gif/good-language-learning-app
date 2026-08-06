@@ -92,7 +92,7 @@ function showWord(spanish, english) {
         capWarning.style.display = 'block';
     } else {
         btn.textContent = '➕ Add to SRS Deck';
-        btn.style.background = '1B4B5A';
+        btn.style.background = '#1B4B5A';
         btn.style.cursor = 'pointer';
         capWarning.style.display = 'none';
     }
@@ -126,7 +126,7 @@ window.Reader = {
         }
 
         try {
-            const manifest = await this.loadJSON(this.storiesBasePath + 'manifest.json');
+            const manifest = await Content.manifest('stories');
             this.stories = manifest.stories || [];
             console.log('Reader: loaded', this.stories.length, 'stories from manifest');
             this.buildLibraryUI(libraryEl);
@@ -193,7 +193,7 @@ window.Reader = {
         console.log('Reader: loading story', storyId, 'from', storyMeta.path);
 
         try {
-            const story = await this.loadJSON(this.storiesBasePath + storyMeta.path);
+            const story = await Content.story(storyMeta.path);
             this.currentStory = story;
             this.renderStory(story);
         } catch (e) {
@@ -272,12 +272,6 @@ window.Reader = {
         const div = document.createElement('div');
         div.textContent = text;
         return div.innerHTML;
-    },
-
-    async loadJSON(url) {
-        const res = await fetch(url);
-        if (!res.ok) throw new Error('HTTP ' + res.status + ': ' + url);
-        return res.json();
     },
 
     closeStory() {

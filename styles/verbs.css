@@ -1,0 +1,477 @@
+/* ============================================
+   VERB DRILLS — Mobile-first
+   ============================================ */
+
+/* ---- Container ---- */
+.vb {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 16px;
+}
+
+.vb-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary, #1B4B5A);
+    margin-bottom: 16px;
+}
+
+/* ---- Mode switcher ---- */
+.vb-mode-switcher {
+    display: flex;
+    background: var(--surface, #FFFFFF);
+    border-radius: var(--radius, 12px);
+    box-shadow: var(--shadow, 0 2px 8px rgba(0,0,0,.08));
+    padding: 4px;
+    margin-bottom: 16px;
+}
+
+.vb-mode-btn {
+    flex: 1;
+    padding: 12px 0;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 8px;
+    background: transparent;
+    color: var(--muted, #7A7A7A);
+    transition: background 0.15s, color 0.15s;
+}
+
+.vb-mode-btn.active {
+    background: var(--primary, #1B4B5A);
+    color: #fff;
+}
+
+/* ---- Shared settings ---- */
+.vb-settings {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.vb-setting {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.vb-setting label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--muted, #7A7A7A);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.vb-select {
+    padding: 12px 14px;
+    font-size: 1rem;
+    border: 2px solid var(--secondary, #8FB4BA);
+    border-radius: 8px;
+    background: var(--surface, #FFFFFF);
+    color: var(--text, #2E2A26);
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%237A7A7A'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    padding-right: 36px;
+    min-height: 48px;
+}
+
+.vb-select:focus {
+    outline: 2px solid var(--primary, #1B4B5A);
+    outline-offset: 1px;
+}
+
+/* Toggle row */
+.vb-setting-row {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.vb-toggle {
+    position: relative;
+    width: 48px;
+    height: 28px;
+    border-radius: 14px;
+    background: var(--secondary, #8FB4BA);
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: background 0.2s;
+}
+
+.vb-toggle.active {
+    background: var(--primary, #1B4B5A);
+}
+
+.vb-toggle-knob {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,.2);
+    transition: left 0.2s;
+}
+
+.vb-toggle.active .vb-toggle-knob {
+    left: 22px;
+}
+
+.vb-toggle:focus-visible {
+    outline: 2px solid var(--primary, #1B4B5A);
+    outline-offset: 2px;
+}
+
+/* ---- Buttons ---- */
+.vbtn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    min-height: 48px;
+    transition: opacity 0.15s, transform 0.1s;
+}
+
+.vbtn:active {
+    transform: scale(0.97);
+}
+
+.vbtn:disabled {
+    opacity: 0.4;
+    cursor: default;
+    transform: none;
+}
+
+.vbtn:focus-visible {
+    outline: 2px solid var(--primary, #1B4B5A);
+    outline-offset: 2px;
+}
+
+.vbtn-primary {
+    background: var(--primary, #1B4B5A);
+    color: #fff;
+}
+
+.vbtn-secondary {
+    background: var(--secondary, #8FB4BA);
+    color: #fff;
+}
+
+.vbtn-block {
+    width: 100%;
+    margin-top: 8px;
+}
+
+/* ---- Mode content area ---- */
+.vb-mode-content {
+    min-height: 200px;
+}
+
+/* ================================================================
+   TABLE MODE
+   ================================================================ */
+
+.vtable-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.vtable-verb {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--primary, #1B4B5A);
+    letter-spacing: 0.02em;
+}
+
+.vtable-meaning {
+    font-size: 0.95rem;
+    color: var(--muted, #7A7A7A);
+    margin-top: 2px;
+}
+
+.vtable-tense {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 4px 12px;
+    border-radius: 999px;
+    background: var(--secondary, #8FB4BA);
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.vtable-body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.vtable-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.vtable-label {
+    width: 110px;
+    flex-shrink: 0;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text, #2E2A26);
+}
+
+.vtable-input {
+    flex: 1;
+    padding: 12px 14px;
+    font-size: 1rem;
+    border: 2px solid #DCE6E8;
+    border-radius: 8px;
+    background: var(--surface, #FFFFFF);
+    color: var(--text, #2E2A26);
+    min-height: 48px;
+}
+
+.vtable-input:focus {
+    outline: 2px solid var(--primary, #1B4B5A);
+    outline-offset: -1px;
+    border-color: var(--primary, #1B4B5A);
+}
+
+.vtable-input[readonly] {
+    background: #f5f5f5;
+    cursor: default;
+}
+
+/* Correct / Wrong states */
+.vtable-correct {
+    border-color: var(--success, #4CAF50) !important;
+    background: #e8f5ed !important;
+    color: #2e7d32 !important;
+}
+
+.vtable-wrong {
+    border-color: var(--danger, #B8412F) !important;
+    background: #fbecea !important;
+    color: var(--danger, #B8412F) !important;
+}
+
+.vtable-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 4px;
+}
+
+.vtable-actions .vbtn {
+    flex: 1;
+}
+
+.vtable-feedback {
+    text-align: center;
+    font-weight: 600;
+    font-size: 1rem;
+    margin-top: 12px;
+    min-height: 1.4em;
+}
+
+.vtable-feedback-success {
+    color: var(--success, #4CAF50);
+}
+
+.vtable-feedback-error {
+    color: var(--danger, #B8412F);
+}
+
+.vtable-empty {
+    text-align: center;
+    padding: 32px 16px;
+    color: var(--muted, #7A7A7A);
+}
+
+/* ================================================================
+   SPEED MODE
+   ================================================================ */
+
+/* Settings sub-panel */
+.vspeed-settings {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* HUD — timer + score */
+.vspeed-hud {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.vspeed-timer-display {
+    font-size: 2.2rem;
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+    color: var(--primary, #1B4B5A);
+    letter-spacing: 0.04em;
+}
+
+.vspeed-score {
+    font-size: 0.9rem;
+    color: var(--muted, #7A7A7A);
+}
+
+.vspeed-score-value {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--text, #2E2A26);
+    margin-left: 4px;
+}
+
+/* Question area */
+.vspeed-question {
+    text-align: center;
+}
+
+.vspeed-verb {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--primary, #1B4B5A);
+    margin-bottom: 2px;
+}
+
+.vspeed-meaning {
+    font-size: 0.95rem;
+    color: var(--muted, #7A7A7A);
+    margin-bottom: 4px;
+}
+
+.vspeed-tense-label {
+    font-size: 0.85rem;
+    color: var(--muted, #7A7A7A);
+    margin-bottom: 12px;
+}
+
+.vspeed-person {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text, #2E2A26);
+    margin-bottom: 16px;
+}
+
+.vspeed-input-row {
+    display: flex;
+    gap: 10px;
+    max-width: 320px;
+    margin: 0 auto;
+}
+
+.vspeed-input-row .vtable-input {
+    flex: 1;
+}
+
+.vspeed-feedback {
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-top: 16px;
+    min-height: 1.6em;
+}
+
+.vspeed-feedback-correct {
+    color: var(--success, #4CAF50);
+}
+
+.vspeed-feedback-wrong {
+    color: var(--danger, #B8412F);
+}
+
+/* Results screen */
+.vspeed-results {
+    text-align: center;
+}
+
+.vspeed-results-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary, #1B4B5A);
+    margin-bottom: 20px;
+}
+
+.vspeed-results-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.vspeed-stat {
+    background: var(--surface, #FFFFFF);
+    border-radius: var(--radius, 12px);
+    box-shadow: var(--shadow, 0 2px 8px rgba(0,0,0,.08));
+    padding: 16px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.vspeed-stat-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--muted, #7A7A7A);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.vspeed-stat-value {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--text, #2E2A26);
+}
+
+.vspeed-results-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.vspeed-results-actions .vbtn {
+    width: 100%;
+}
+
+/* ================================================================
+   RESPONSIVE — desktop enhancements
+   ================================================================ */
+@media (min-width: 600px) {
+    .vb {
+        padding: 24px;
+    }
+
+    .vtable-verb {
+        font-size: 2rem;
+    }
+
+    .vspeed-timer-display {
+        font-size: 2.8rem;
+    }
+
+    .vspeed-verb {
+        font-size: 2.2rem;
+    }
+
+    .vspeed-results-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
