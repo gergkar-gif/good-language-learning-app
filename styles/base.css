@@ -37,6 +37,12 @@
   --radius-sm: 8px;
   --radius-pill: 999px;
   --shadow: 0 1px 3px rgba(31, 27, 22, .06);
+
+  /* Titles and content headings are set in a serif; interface chrome stays
+     sans. Every face here ships with an OS — the app loads no webfonts and
+     should keep working offline. */
+  --font-display: 'Iowan Old Style', 'Palatino Linotype', Palatino,
+                  'Book Antiqua', Georgia, 'Times New Roman', serif;
 }
 
 *,
