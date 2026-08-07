@@ -1,5 +1,7 @@
 # A1 Learning Objectives
 
+Rewritten 2026-08-07 to match the corrected lesson topics in `curriculum.json` (which now reflect what the story chapters actually contain).
+
 ## Lesson 1
 
 **Goal**
@@ -17,123 +19,130 @@ Introduce yourself.
 ## Lesson 2
 
 **Goal**
-Exchange personal information.
+Order food and drinks, say what you want.
 
 **By the end of this lesson, the learner can:**
 
-- ask someone's age.
-- say their age.
-- say which languages they speak.
-- say their nationality.
+- order a drink and something to eat in a café.
+- say what they want with "quiero".
+- ask someone else what they want.
+- use "tomar" and "comer" in the present tense.
 
 ---
 
 ## Lesson 3
 
 **Goal**
-Talk about family.
+Meet new people and describe them.
 
 **By the end of this lesson, the learner can:**
 
-- introduce family members.
-- describe simple family relationships.
-- ask about someone else's family.
+- introduce someone to a friend.
+- say what someone's job or nationality is.
+- describe someone with a simple adjective, agreeing correctly.
+- use definite and indefinite articles.
 
 ---
 
 ## Lesson 4
 
 **Goal**
-Describe people.
+Say what there is and where things are in a city.
 
 **By the end of this lesson, the learner can:**
 
-- describe someone's appearance.
-- describe someone's personality.
-- describe basic colours.
+- say what there is in a place using "hay".
+- say where something is using "estar".
+- name common places in a city.
 
 ---
 
 ## Lesson 5
 
 **Goal**
-Describe a home.
+Introduce your family.
 
 **By the end of this lesson, the learner can:**
 
-- describe a house.
-- name rooms.
-- say what exists in a room.
+- name immediate family members.
+- use possessive adjectives (mi, tu, su).
+- use "tener" to say who they have / how many family members they have.
 
 ---
 
 ## Lesson 6
 
 **Goal**
-Say where things are.
+Talk about your daily routine.
 
 **By the end of this lesson, the learner can:**
 
-- describe the location of objects.
-- use basic location prepositions.
+- describe a typical day using regular present-tense verbs.
+- use basic time expressions (por la mañana, luego, después).
 
 ---
 
 ## Lesson 7
 
 **Goal**
-Talk about daily routines.
+Describe a home.
 
 **By the end of this lesson, the learner can:**
 
-- describe a typical day.
-- talk about common daily activities.
+- name the rooms of a house.
+- describe what's in a room using "hay" (recycled from Lesson 4).
+- use "tener" and "vivir" to talk about where and how they live.
 
 ---
 
 ## Lesson 8
 
 **Goal**
-Arrange to meet someone.
+Go shopping and ask prices.
 
 **By the end of this lesson, the learner can:**
 
-- tell the time.
-- mention dates.
-- arrange a meeting.
+- ask "¿cuánto cuesta?" and understand prices.
+- use numbers in a shopping context.
+- say what they want or need with "querer" and "necesitar".
 
 ---
 
 ## Lesson 9
 
 **Goal**
-Order food and drinks.
+Follow and give simple instructions while cooking.
 
 **By the end of this lesson, the learner can:**
 
-- order from a menu.
-- say what they like.
-- ask for food and drinks.
+- name common kitchen items and ingredients.
+- follow a simple sequence of instructions (primero, después, luego).
+- use basic imperatives.
 
 ---
 
 ## Lesson 10
 
 **Goal**
-Go shopping.
+Talk about birthdays and plan a celebration.
 
 **By the end of this lesson, the learner can:**
 
-- ask about prices.
-- buy clothes.
-- use demonstratives naturally.
+- say the date and ask about someone's birthday.
+- state and ask about age using "tener".
+- talk about plans for a celebration.
 
 ---
 
 ## Lesson 11
 
 **Goal**
-Talk about hobbies.
+Talk about hobbies and free time.
+
+**By the end of this lesson, the learner can:**
+
+- name common hobbies and sports.
+- talk about what they do in their free time using the present tense, including frequent irregulars.
 
 ---
 
@@ -142,12 +151,22 @@ Talk about hobbies.
 **Goal**
 Describe your town.
 
+**By the end of this lesson, the learner can:**
+
+- describe a town or neighbourhood.
+- correctly choose between "hay" and "estar".
+
 ---
 
 ## Lesson 13
 
 **Goal**
 Ask for and give directions.
+
+**By the end of this lesson, the learner can:**
+
+- ask for directions.
+- understand and give simple directions using prepositions of movement.
 
 ---
 
@@ -156,12 +175,21 @@ Ask for and give directions.
 **Goal**
 Talk about the weather.
 
+**By the end of this lesson, the learner can:**
+
+- describe the weather and the seasons.
+
 ---
 
 ## Lesson 15
 
 **Goal**
-Talk about work and study.
+Talk about work and obligations.
+
+**By the end of this lesson, the learner can:**
+
+- talk about their job.
+- express obligation using "hay que" and "tener que".
 
 ---
 
@@ -170,12 +198,20 @@ Talk about work and study.
 **Goal**
 Talk about health.
 
+**By the end of this lesson, the learner can:**
+
+- use common "tener" expressions related to health (tener dolor, tener fiebre, etc.).
+
 ---
 
 ## Lesson 17
 
 **Goal**
 Talk about future plans.
+
+**By the end of this lesson, the learner can:**
+
+- talk about future plans using "ir a + infinitivo".
 
 ---
 

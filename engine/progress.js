@@ -17,10 +17,12 @@ function saveProgress(progress) {
     localStorage.setItem(PROGRESS_KEY, JSON.stringify(progress));
 }
 
+// Returns true only on the first completion. XP is awarded by the caller
+// (finishLesson) so that completion and reward live in one place.
 function markLessonComplete(lessonId) {
     const progress = getProgress();
 
-    if (progress[lessonId]) return;
+    if (progress[lessonId]) return false;
 
     progress[lessonId] = {
         completedAt: new Date().toISOString()
@@ -28,13 +30,11 @@ function markLessonComplete(lessonId) {
 
     saveProgress(progress);
 
-    if (typeof addXP === "function") {
-        addXP(50, `Completed ${lessonId}`);
-    }
-
     if (typeof renderCurriculum === "function") {
         renderCurriculum();
     }
+
+    return true;
 }
 
 function isLessonComplete(lessonId) {

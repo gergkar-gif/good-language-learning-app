@@ -5,25 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A Language App</title>
 
-    <link rel="stylesheet" href="styles/base.css">
-    <link rel="stylesheet" href="styles/components.css">
-    <link rel="stylesheet" href="styles/layout.css">
-    <link rel="stylesheet" href="styles/utilities.css">
-    <link rel="stylesheet" href="styles/verbs.css">
+    <link rel="stylesheet" href="styles/base.css?v=2026-08-07">
+    <link rel="stylesheet" href="styles/components.css?v=2026-08-07">
+    <link rel="stylesheet" href="styles/layout.css?v=2026-08-07">
+    <link rel="stylesheet" href="styles/utilities.css?v=2026-08-07">
+    <link rel="stylesheet" href="styles/verbs.css?v=2026-08-07">
 </head>
 <body>
 
 <div class="app">
 
-    <header class="header">
-        <h1>A Language App</h1>
-        <p>Something that might actually work</p>
-
-        <div class="header-stats">
-            <span id="header-xp">0 XP</span>
-            <span id="header-streak">0/50 XP</span>
-        </div>
-    </header>
+    <!-- Contextual, rendered per section by engine/page-header.js -->
+    <header class="page-header" id="page-header"></header>
 
     <nav class="nav">
         <button class="active" data-tab="learn">Learn</button>
@@ -51,6 +44,17 @@
 
         <section id="review" class="tab hidden">
             <div id="review-root">
+
+                <!-- Today's three activities; two of three keeps the streak.
+                     Lives here rather than in the header, which is now
+                     editorial and carries no running state. -->
+                <div class="today">
+                    <div class="today-head">
+                        <span id="header-streak">No streak yet</span>
+                        <span id="header-xp">0 XP</span>
+                    </div>
+                    <div id="daily-activities" class="daily-activities"></div>
+                </div>
 
                 <!-- Stats bar -->
                 <div class="review-stats">
@@ -103,6 +107,29 @@
                     </div>
                 </div>
 
+                <!-- Progress: deliberately separate numbers, not one score -->
+                <section class="stats-panel">
+                    <h3 class="stats-title">Your progress</h3>
+
+                    <div class="stats-hero">
+                        <span class="stats-hero-value" id="stat-total-xp">0</span>
+                        <span class="stats-hero-label">total XP</span>
+                    </div>
+
+                    <div class="stats-grid" id="stats-grid"></div>
+
+                    <div class="stats-meter">
+                        <div class="stats-meter-head">
+                            <span>Monthly consistency</span>
+                            <span id="stat-consistency-label">0 of 30 days</span>
+                        </div>
+                        <div class="stats-meter-track" id="stat-consistency-track"
+                            role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                            <div class="stats-meter-fill" id="stat-consistency-fill"></div>
+                        </div>
+                    </div>
+                </section>
+
             </div>
         </section>
 
@@ -133,31 +160,32 @@
 </div>
 
 <!-- Verb list (global ALL_VERBS) -->
-<script src="imports/verbs/verb-list.js"></script>
+<script src="imports/verbs/verb-list.js?v=2026-08-07"></script>
 
 <!-- Engine: core utilities (no deps) -->
-<script src="engine/xp.js"></script>
-<script src="engine/lexicon.js"></script>
-<script src="engine/srs.js"></script>
-<script src="engine/content-loader.js"></script>
-<script src="engine/ui.js"></script>
+<script src="engine/xp.js?v=2026-08-07"></script>
+<script src="engine/lexicon.js?v=2026-08-07"></script>
+<script src="engine/srs.js?v=2026-08-07"></script>
+<script src="engine/content-loader.js?v=2026-08-07"></script>
+<script src="engine/ui.js?v=2026-08-07"></script>
+<script src="engine/page-header.js?v=2026-08-07"></script>
 
 <!-- Engine: reader (depends on Content) -->
-<script src="engine/reader.js"></script>
+<script src="engine/reader.js?v=2026-08-07"></script>
 
 <!-- Engine: verbs submodules (order matters) -->
-<script src="engine/verbs/stats.js"></script>
-<script src="engine/verbs/table.js"></script>
-<script src="engine/verbs/speed.js"></script>
-<script src="engine/verbs.js"></script>
+<script src="engine/verbs/stats.js?v=2026-08-07"></script>
+<script src="engine/verbs/table.js?v=2026-08-07"></script>
+<script src="engine/verbs/speed.js?v=2026-08-07"></script>
+<script src="engine/verbs.js?v=2026-08-07"></script>
 
 <!-- Engine: lessons, progress, curriculum -->
-<script src="engine/lessons.js"></script>
-<script src="engine/progress.js"></script>
-<script src="engine/curriculum.js"></script>
+<script src="engine/lessons.js?v=2026-08-07"></script>
+<script src="engine/progress.js?v=2026-08-07"></script>
+<script src="engine/curriculum.js?v=2026-08-07"></script>
 
 <!-- Engine: bootstrap (loads last) -->
-<script src="engine/init.js"></script>
+<script src="engine/init.js?v=2026-08-07"></script>
 
 </body>
 </html>

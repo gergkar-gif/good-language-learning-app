@@ -13,6 +13,9 @@ function showTab(tabName, button) {
     if (!button && window.event) button = window.event.target;
     if (button) button.classList.add('active');
 
+    // The header is contextual — it names the room you just walked into.
+    if (typeof PageHeader !== 'undefined') PageHeader.show(tabName);
+
     if (tabName === 'reader' && typeof updateReaderWordColors === 'function') {
         updateReaderWordColors();
     }
@@ -26,58 +29,9 @@ function showTab(tabName, button) {
     }
 }
 
-// --------------------------------------------
-// Learn page
-// --------------------------------------------
-
-function toggleLevel(level) {
-    const body = document.getElementById(`${level}-lessons`);
-    const arrow = document.getElementById(`${level}-arrow`);
-
-    if (!body || !arrow) return;
-
-    const open = body.style.display !== 'none';
-    body.style.display = open ? 'none' : 'block';
-    arrow.textContent = open ? '▶' : '▼';
-}
-
-function renderLearnPage(curriculum) {
-    const root = document.getElementById('learn-content');
-    if (!root) return;
-
-    let html = '<h2 class="section-title">Your Path</h2>';
-    html += '<p class="section-subtitle">All levels are open. Jump in anywhere.</p>';
-
-    Object.entries(curriculum.levels).forEach(([level, data]) => {
-        html += `
-            <div class="level-section">
-                <div class="level-header" data-level="${level.toLowerCase()}">
-                    <div>
-                        <h3>${data.title}</h3>
-                        <p>${data.description || ''}</p>
-                    </div>
-                    <span class="level-arrow" id="${level.toLowerCase()}-arrow">▼</span>
-                </div>
-                <div id="${level.toLowerCase()}-lessons"></div>
-            </div>
-        `;
-    });
-
-    root.innerHTML = html;
-
-    // Attach level toggle events (event delegation)
-    root.addEventListener('click', e => {
-        const header = e.target.closest('.level-header');
-        if (header) {
-            toggleLevel(header.dataset.level);
-        }
-    });
-
-    // Render A1 lessons (others empty for now)
-    if (typeof renderA1Lessons === 'function') {
-        renderA1Lessons(curriculum.levels.A1.lessons);
-    }
-}
+// The Learn page is rendered by engine/curriculum.js. An earlier accordion
+// version lived here (renderLearnPage/toggleLevel); nothing called it once
+// renderCurriculum took over, and the level list replaced it entirely.
 
 // --------------------------------------------
 // Lesson close button (replaces inline onclick)
@@ -110,6 +64,9 @@ async function initialiseApp() {
     loadDeck();
     loadXP();
     updateXPHeader();
+
+    // Learn is the landing section, so its header is the first one drawn.
+    if (typeof PageHeader !== 'undefined') PageHeader.show('learn');
 
     // Updated path to include language prefix
     const response = await fetch('content/es/curriculum/curriculum.json');

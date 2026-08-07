@@ -372,12 +372,12 @@ const stepRenderers = {
         `).join('');
     },
 
+    // Closes a grammar explanation with a sentence rather than a bare link,
+    // so the reference reads as part of the teaching.
     'external-link'(step) {
-        return `
-            <a class="lsn-link" href="${esc(step.url)}" target="_blank" rel="noopener noreferrer">
-                ${esc(step.title || step.url)} ↗
-            </a>
-        `;
+        const site = esc(step.site || 'Lingolia');
+        const link = `<a href="${esc(step.url)}" target="_blank" rel="noopener noreferrer">${site}</a>`;
+        return `<p class="lsn-reference">Read more about ${esc(step.topic || step.title || 'this')} on ${link}.</p>`;
     },
 
     vocabulary(step) {
@@ -541,18 +541,30 @@ const stepRenderers = {
     },
 
     'structured-writing'(step) {
-        // Nothing to mark against, so the gate is simply "every line written".
+        // Free writing can't be marked right or wrong, so instead of grading
+        // it we show a model answer once every line is written and let the
+        // learner compare. Continue unlocks on that comparison.
         gateStep();
+        stepState.lines = (step.template || []).map(line =>
+            typeof line === 'string' ? { prompt: line, answer: '' } : line);
+
         return `
             <p class="lsn-question">Complete each line in Spanish.</p>
-            ${(step.template || []).map((line, i) => `
+            ${stepState.lines.map((line, i) => `
                 <div class="lsn-write-row">
-                    <div class="lsn-en">${esc(line)}</div>
+                    <div class="lsn-en">${esc(line.prompt)}</div>
                     <input class="lsn-input" type="text" placeholder="Your sentence"
                         data-write="${i}" oninput="lessonCheckWriting()">
+                    ${line.answer ? `
+                        <div class="lsn-model" data-model="${i}">
+                            <span class="lsn-model-label">One way to say it</span>
+                            <span class="lsn-es">${esc(line.answer)}</span>
+                        </div>
+                    ` : ''}
                 </div>
             `).join('')}
-            <p class="lsn-hint">Free writing — fill in every line to continue.</p>
+            <button class="lsn-check" id="writing-check-btn" onclick="lessonRevealWriting()" disabled>Check</button>
+            <p class="lsn-hint">There is more than one right answer. Write every line, then compare yours with the examples.</p>
             ${feedbackHtml()}
         `;
     },
@@ -652,17 +664,16 @@ function nextLessonStep() {
 }
 
 function finishLesson() {
-    const reward = currentLesson.steps.length * 10;
+    // Fixed reward: a long lesson isn't worth more than a short one, and
+    // scaling by step count rewarded lesson length rather than learning.
+    const firstTime = typeof markLessonComplete === 'function'
+        ? markLessonComplete(currentLesson.id)
+        : true;
 
-    if (typeof markLessonComplete === 'function') {
-        markLessonComplete(currentLesson.id);
+    if (typeof recordLessonCompleted === 'function') {
+        recordLessonCompleted(firstTime);
     }
 
-    if (typeof awardXP === 'function') {
-        awardXP(reward, 'Lesson complete');
-    } else {
-        alert('🎉 Lesson complete! +' + reward + ' XP');
-    }
     closeLesson();
 }
 
@@ -848,13 +859,34 @@ function revealOrder() {
     setFeedback(false, 'Here is the right order — continue when you are ready.');
 }
 
+// Enables Check once every line has something in it. The step is not solved
+// yet — the learner still has to look at the model answers.
 function lessonCheckWriting() {
-    const inputs = Array.prototype.slice.call(document.querySelectorAll('[data-write]'));
-    const done = inputs.length > 0 && inputs.every(input => input.value.trim().length > 0);
+    if (stepState.revealed) return;
 
-    stepState.solved = done;
-    updateContinueButton();
-    setFeedback(true, done ? '✓ All lines written — continue when you are happy.' : '');
+    const inputs = Array.prototype.slice.call(document.querySelectorAll('[data-write]'));
+    const filled = inputs.length > 0 && inputs.every(input => input.value.trim().length > 0);
+
+    const btn = document.getElementById('writing-check-btn');
+    if (btn) btn.disabled = !filled;
+
+    setFeedback(true, filled ? 'Ready — check your answers against the examples.' : '');
+}
+
+function lessonRevealWriting() {
+    if (stepState.revealed) return;
+    stepState.revealed = true;
+
+    document.querySelectorAll('[data-model]').forEach(el => el.classList.add('is-shown'));
+
+    const btn = document.getElementById('writing-check-btn');
+    if (btn) {
+        btn.disabled = true;
+        btn.textContent = '✓ Checked';
+    }
+
+    // Inputs stay editable so the learner can correct their own sentence.
+    solveStep('Compare your sentences with the examples, then continue.');
 }
 
 function selectedSrsCards() {

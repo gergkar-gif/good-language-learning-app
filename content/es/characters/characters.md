@@ -58,7 +58,7 @@ Hungarian.
 Hanoi, Vietnam.
 
 **First Appearance**
-Lesson 3
+Lesson 5 (video call with Carlos's family)
 
 ---
 
@@ -77,7 +77,7 @@ Hanoi, Vietnam.
 Mother of a newborn baby.
 
 **First Appearance**
-Lesson 3
+Lesson 5 (video call with Carlos's family)
 
 ---
 
@@ -93,7 +93,7 @@ South African.
 Twin sister of Lauren.
 
 **First Appearance**
-Lesson 13
+Lesson 3 (language exchange, alongside Lauren)
 
 ---
 
@@ -109,4 +109,4 @@ South African.
 Twin sister of Kaylee.
 
 **First Appearance**
-Lesson 4
+Lesson 3 (language exchange, alongside Kaylee)

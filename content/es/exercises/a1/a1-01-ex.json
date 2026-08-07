@@ -3,26 +3,44 @@
   "exercises": [
     {
       "id": "a1-01-practice-match",
-      "category": "grammar",
+      "category": "vocabulary",
       "type": "matching",
       "pairs": [
-        ["Hola", "Hello"],
-        ["Buenos días", "Good morning"],
-        ["Buenas tardes", "Good afternoon"],
-        ["Buenas noches", "Good evening"],
-        ["Adiós", "Goodbye"],
-        ["Hasta luego", "See you later"]
+        [
+          "Hola",
+          "Hello"
+        ],
+        [
+          "Buenos días",
+          "Good morning"
+        ],
+        [
+          "Buenas tardes",
+          "Good afternoon"
+        ],
+        [
+          "Buenas noches",
+          "Good evening"
+        ],
+        [
+          "Adiós",
+          "Goodbye"
+        ],
+        [
+          "Hasta luego",
+          "See you later"
+        ]
       ]
     },
     {
-      "id": "a1-01-practice-choice",
-      "category": "grammar",
+      "id": "a1-01-practice-gusto",
+      "category": "vocabulary",
       "type": "multiple-choice",
-      "question": "Someone asks you '¿De dónde eres?'. What do they want to know?",
+      "question": "You are meeting someone for the first time. What do you say?",
       "options": [
-        "Where you are from",
-        "What your name is",
-        "How you are feeling"
+        "Mucho gusto.",
+        "Hasta luego.",
+        "Buenas noches."
       ],
       "correct": 0
     },
@@ -55,7 +73,7 @@
       "category": "grammar",
       "type": "sentence-order",
       "sentences": [
-        "Hola. Buenos días.",
+        "Buenos días.",
         "Me llamo Meg. ¿Cómo te llamas?",
         "Me llamo Carlos. Mucho gusto.",
         "Adiós. Hasta luego."
@@ -68,14 +86,50 @@
       ]
     },
     {
-      "id": "a1-01-reading-choice",
+      "id": "a1-01-practice-origin",
+      "category": "grammar",
+      "type": "multiple-choice",
+      "question": "Someone asks you '¿De dónde eres?'. What do they want to know?",
+      "options": [
+        "Where you are from",
+        "What your name is",
+        "How you are feeling"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-01-reading-carlos",
       "category": "reading",
       "type": "multiple-choice",
       "question": "Where is Carlos from?",
       "options": [
         "Hungary",
         "South Africa",
-        "Spain"
+        "Mexico"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-01-reading-meg",
+      "category": "reading",
+      "type": "multiple-choice",
+      "question": "Where is Meg from?",
+      "options": [
+        "South Africa",
+        "Hungary",
+        "Vietnam"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-01-reading-time",
+      "category": "reading",
+      "type": "multiple-choice",
+      "question": "What time of day do Carlos and Meg meet?",
+      "options": [
+        "In the morning",
+        "In the afternoon",
+        "At night"
       ],
       "correct": 0
     },
@@ -85,7 +139,7 @@
       "type": "sentence-order",
       "sentences": [
         "Carlos goes to a Mexican restaurant.",
-        "Meg and Carlos introduce themselves.",
+        "Meg and Carlos greet each other.",
         "They say which country they are from.",
         "They say goodbye."
       ],
@@ -97,7 +151,7 @@
       ]
     },
     {
-      "id": "a1-01-dialogue",
+      "id": "a1-01-dialogue-name",
       "category": "dialogue",
       "type": "dialogue-complete",
       "prompt": [
@@ -107,8 +161,21 @@
         },
         {
           "speaker": "Carlos",
-          "text": "Me llamo Carlos. Mucho gusto."
-        },
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Me llamo Carlos.",
+        "Soy de Carlos.",
+        "Hasta luego."
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-01-dialogue-origin",
+      "category": "dialogue",
+      "type": "dialogue-complete",
+      "prompt": [
         {
           "speaker": "Meg",
           "text": "Mucho gusto. ¿De dónde eres?"
@@ -121,20 +188,67 @@
       "options": [
         "Soy de Hungría.",
         "Me llamo Hungría.",
-        "Hasta luego."
+        "Buenos días."
       ],
       "correct": 0
     },
     {
-      "id": "a1-01-writing",
+      "id": "a1-01-dialogue-goodbye",
+      "category": "dialogue",
+      "type": "dialogue-complete",
+      "prompt": [
+        {
+          "speaker": "Carlos",
+          "text": "Adiós, Meg."
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Hasta luego, Carlos.",
+        "Mucho gusto, Carlos.",
+        "¿Cómo te llamas?"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-01-writing-self",
       "category": "writing",
       "type": "structured-writing",
       "template": [
-        "Greet someone in the morning.",
-        "Say your name.",
-        "Say which country you are from.",
-        "Ask someone what their name is.",
-        "Say goodbye."
+        {
+          "prompt": "Greet someone in the morning.",
+          "answer": "Buenos días."
+        },
+        {
+          "prompt": "Say your name.",
+          "answer": "Me llamo Ana."
+        },
+        {
+          "prompt": "Say which country you are from.",
+          "answer": "Soy de España."
+        }
+      ]
+    },
+    {
+      "id": "a1-01-writing-ask",
+      "category": "writing",
+      "type": "structured-writing",
+      "template": [
+        {
+          "prompt": "Ask someone what their name is.",
+          "answer": "¿Cómo te llamas?"
+        },
+        {
+          "prompt": "Ask someone where they are from.",
+          "answer": "¿De dónde eres?"
+        },
+        {
+          "prompt": "Say goodbye without sounding final.",
+          "answer": "Hasta luego."
+        }
       ]
     }
   ]

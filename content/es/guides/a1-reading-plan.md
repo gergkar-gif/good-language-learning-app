@@ -2,32 +2,36 @@
 
 ## Original Story
 
-| Lesson | Status |
+Rewritten 2026-08-07 to match `content/es/stories/original/a1` exactly (20 of 20 chapters exist and are written).
+
+| Lesson | Story |
 |---------|--------|
-| 1 | Carlos meets Meg |
-| 2 | They get to know each other |
-| 3 | Family introductions |
-| 4 | Ana and the baby |
-| 5 | Andreas moves house |
-| 6 | Unpacking the apartment |
-| 7 | Daily routines |
-| 8 | Making plans |
-| 9 | Dinner together |
-| 10 | Shopping for a gift |
-| 11 | Weekend hobbies |
-| 12 | Around Hanoi |
-| 13 | Kaylee arrives |
-| 14 | A rainy day |
-| 15 | Carlos' new job |
-| 16 | Baby's check-up |
-| 17 | Planning a holiday |
-| 18 | Family celebration |
-| 19 | Holiday preparations |
-| 20 | Holiday begins |
+| 1 | Carlos conoce a Meg |
+| 2 | Un café después de clase |
+| 3 | Los amigos de Meg |
+| 4 | Un sábado en Hanói |
+| 5 | La familia de Carlos |
+| 6 | Una videollamada con Daniela |
+| 7 | El nuevo apartamento |
+| 8 | En el supermercado |
+| 9 | Una cena mexicana |
+| 10 | El cumpleaños de Meg |
+| 11 | Un fin de semana activo |
+| 12 | Un paseo por Hanói |
+| 13 | ¿Dónde está Kaylee? |
+| 14 | Un día de lluvia |
+| 15 | El primer día de trabajo |
+| 16 | La revisión del bebé |
+| 17 | Las vacaciones |
+| 18 | Una fiesta en familia |
+| 19 | Un último día en Hanói |
+| 20 | ¡Buen viaje! |
 
 ---
 
 ## Classic Stories
+
+Status: **not yet written**. `content/es/stories/classics/` has no `a1/` folder yet (only `a2/`). The plan below is aspirational, unchanged from the previous version of this document.
 
 | Lesson | Story |
 |---------|-------|
@@ -46,6 +50,8 @@
 ---
 
 ## World Texts
+
+Status: **not yet written**. No `content/es/stories/world/` folder exists yet. Plan below is aspirational, unchanged from the previous version of this document.
 
 | Lesson | Topic |
 |---------|-------|

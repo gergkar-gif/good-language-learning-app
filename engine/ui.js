@@ -4,6 +4,16 @@
 
 const UI = {
 
+    // Content is authored JSON rather than user input, but titles carry
+    // ampersands ("Greetings & Introductions") that break markup unescaped.
+    escape(text) {
+        return String(text == null ? "" : text)
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;");
+    },
+
     html(id, html) {
         const el = document.getElementById(id);
         if (el) el.innerHTML = html;

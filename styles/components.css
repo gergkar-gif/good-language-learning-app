@@ -286,6 +286,118 @@
 
 /* Story reading view */
 
+/* ============================================
+   STATS PANEL — independent metrics, no blended score
+============================================ */
+
+.stats-panel {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-top: 20px;
+  box-shadow: var(--shadow);
+}
+
+.stats-title {
+  font-size: 16px;
+  color: var(--text);
+  margin-bottom: 16px;
+}
+
+.stats-hero {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.stats-hero-value {
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--primary);
+}
+
+.stats-hero-label {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(96px, 1fr));
+  gap: 10px;
+}
+
+.stat-tile {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+}
+
+.stat-tile-value {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.2;
+}
+
+.stat-tile-unit {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--muted);
+  margin-left: 4px;
+}
+
+.stat-tile-label {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.stats-meter {
+  margin-top: 20px;
+}
+
+.stats-meter-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+/* Track is a light step of the same family as the fill, so the whole bar
+   reads as one scale rather than a bar sitting on unrelated gray. */
+.stats-meter-track {
+  height: 8px;
+  border-radius: var(--radius-pill);
+  background: var(--border);
+  overflow: hidden;
+}
+
+.stats-meter-fill {
+  height: 100%;
+  width: 0;
+  border-radius: var(--radius-pill);
+  background: var(--primary);
+  transition: width .3s ease;
+}
+
+.story-finish {
+  display: flex;
+  justify-content: center;
+  margin: 28px 0 8px;
+}
+
+.story-finish .btn-primary {
+  padding: 12px 24px;
+}
+
 .story-header {
   display: flex;
   align-items: center;
@@ -533,11 +645,51 @@
   letter-spacing: .05em;
 }
 
+/* The Continue button needs air, or the last line of a story sits on top
+   of it. Applies to every step, so it fixes the checklist too. */
+.lesson-footer {
+  margin-top: 32px;
+}
+
+/* Grammar reference: a closing sentence with the source hyperlinked,
+   rather than a bare link floating under the explanation. */
+.lsn-reference {
+  margin-top: 16px;
+  line-height: 1.7;
+  color: var(--text);
+}
+
+.lsn-reference a {
+  color: var(--primary);
+  font-weight: 600;
+}
+
 .lsn-link {
   display: inline-block;
   margin-top: 8px;
   color: var(--primary);
   font-weight: 600;
+}
+
+/* Model answer for a free-writing line, revealed on Check */
+.lsn-model {
+  display: none;
+  margin-top: 8px;
+  padding: 10px 12px;
+  border-left: 3px solid var(--secondary, #8FB4BA);
+  background: var(--bg);
+  border-radius: 0 8px 8px 0;
+}
+
+.lsn-model.is-shown {
+  display: block;
+}
+
+.lsn-model-label {
+  display: block;
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 2px;
 }
 
 .lsn-vocab {

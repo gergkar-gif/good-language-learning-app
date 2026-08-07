@@ -9,35 +9,145 @@
   background: var(--bg);
   display: flex;
   flex-direction: column;
-  padding: 0;
+  /* The header used to supply its own padding. Now that it is part of the
+     page, the shell insets everything to one consistent margin. */
+  padding: 0 20px;
 }
 
-/* ---- Header ---- */
+/* ---- Page header ---- */
+/* Editorial, not a banner: the cream background runs unbroken from the top
+   of the screen into the content, and typography carries the weight. */
 
-.header {
-  background: var(--primary);
-  color: #fff;
-  padding: 20px;
-  text-align: center;
-  margin-bottom: 0;
-}
-
-.header h1 {
-  font-size: 24px;
-}
-
-.header p {
-  font-size: 14px;
-  opacity: .9;
-  margin-top: 5px;
-}
-
-.header-stats {
+.page-header {
+  position: relative;
   display: flex;
-  justify-content: center;
+  align-items: center;
   gap: 16px;
-  margin-top: 8px;
+  padding: 28px 0 20px;
+}
+
+.page-header-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.page-header-title {
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  color: var(--text);
+}
+
+.page-header-sub {
+  margin-top: 4px;
+  font-size: 15px;
+  color: var(--muted);
+}
+
+/* Decorative only — barely there, and never louder than the title */
+.page-header-art {
+  order: 2;
+  width: 76px;
+  height: 76px;
+  flex: none;
+  color: var(--text);
+  opacity: .08;
+  pointer-events: none;
+}
+
+.page-header-actions {
+  order: 3;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: none;
+}
+
+/* Entering a section: a short fade and rise, restarted on every change */
+.page-header.is-entering {
+  animation: pageHeaderIn 200ms ease-out both;
+}
+
+@keyframes pageHeaderIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-header.is-entering {
+    animation: none;
+  }
+}
+
+/* Mobile: the illustration sits above the title rather than beside it */
+@media (max-width: 420px) {
+  .page-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    padding-top: 20px;
+  }
+
+  .page-header-art {
+    order: -1;
+    width: 52px;
+    height: 52px;
+    margin-bottom: 4px;
+  }
+
+  .page-header-title {
+    font-size: 28px;
+  }
+
+  .page-header-actions {
+    margin-top: 12px;
+  }
+}
+
+/* ---- Daily activities (Review / Read / Learn) ---- */
+/* Now on the Decks page rather than the header, so they sit on cream */
+
+.today {
+  margin-bottom: 16px;
+}
+
+.today-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
   font-size: 14px;
+  color: var(--muted);
+}
+
+.daily-activities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.daily-activity {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 11px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--muted);
+}
+
+.daily-activity.is-done {
+  border-color: var(--primary);
+  color: var(--text);
+}
+
+.daily-activity-mark {
+  font-weight: bold;
 }
 
 /* ---- Navigation ---- */
@@ -80,40 +190,275 @@
   display: block;
 }
 
-/* ---- Level sections (curriculum) ---- */
+/* ============================================
+   LEARN TAB — level list and level detail
+============================================ */
 
-.level-section {
-  margin-bottom: 24px;
+/* Each level owns a colour, carried by its spine, icon and progress bar */
+.level-card,
+.level-detail {
+  --level: var(--primary);
 }
 
-.level-header {
+[data-level="A1"] { --level: #2F5D50; }
+[data-level="A2"] { --level: #2F5675; }
+[data-level="B1"] { --level: #A9762B; }
+[data-level="B2"] { --level: #5B4B7C; }
+[data-level="C1"] { --level: #1B4B5A; }
+
+.level-list {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.level-card {
+  position: relative;
+  display: flex;
   align-items: center;
-  padding: 14px 16px;
+  gap: 14px;
+  width: 100%;
+  padding: 16px 16px 16px 24px;
   background: var(--surface);
-  border: 2px solid var(--border);
-  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  text-align: left;
   cursor: pointer;
-  transition: border-color .2s;
+  transition: transform .15s, box-shadow .15s;
 }
 
-.level-header:hover {
-  border-color: var(--primary);
+.level-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, .10);
 }
 
-.level-header h3 {
-  font-size: 18px;
+.level-card-spine {
+  position: absolute;
+  left: 0;
+  top: 10px;
+  bottom: 10px;
+  width: 6px;
+  border-radius: 0 6px 6px 0;
+  background: var(--level);
+}
+
+.level-icon {
+  width: 28px;
+  height: 28px;
+  flex: none;
+  color: var(--level);
+}
+
+.level-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  min-width: 0;
+}
+
+.level-card-title {
+  font-size: 17px;
+  font-weight: 600;
   color: var(--text);
 }
 
-.level-header p {
+.level-card-sub {
   font-size: 13px;
   color: var(--muted);
-  margin-top: 2px;
 }
 
-.level-arrow {
+.level-card-meter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.level-card-track {
+  flex: 1;
+  height: 5px;
+  min-width: 60px;
+  border-radius: var(--radius-pill);
+  background: var(--border);
+  overflow: hidden;
+}
+
+.level-card-fill {
+  display: block;
+  height: 100%;
+  border-radius: var(--radius-pill);
+  background: var(--level);
+}
+
+.level-card-count {
+  font-size: 12px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.level-card-chevron {
+  font-size: 22px;
+  line-height: 1;
+  color: var(--muted);
+  flex: none;
+}
+
+/* ---- Level detail ---- */
+
+.level-detail {
+  position: relative;
+  padding-left: 18px;
+}
+
+.level-detail::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 6px;
+  border-radius: 6px;
+  background: var(--level);
+}
+
+.level-back {
+  background: none;
+  padding: 0;
+  margin-bottom: 16px;
   font-size: 14px;
-  color: var(--secondary);
+  color: var(--muted);
+}
+
+.level-back:hover {
+  color: var(--text);
+}
+
+.level-detail-head {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 8px;
+}
+
+.level-detail-titles {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  min-width: 0;
+}
+
+.level-detail-progress {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: none;
+}
+
+/* Ring reads the percentage off --pct so there is one source for it.
+   flex:none matters — without it the ring is squeezed to nothing on narrow
+   screens, because the label beside it refuses to wrap. */
+.progress-ring {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  flex: none;
+  border-radius: 50%;
+  background: conic-gradient(var(--level) calc(var(--pct) * 1%), var(--border) 0);
+}
+
+.progress-ring-label {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--surface);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.lesson-rows {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.lesson-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  padding: 13px 12px;
+  background: none;
+  border-radius: 10px;
+  text-align: left;
+  cursor: pointer;
+  transition: background .15s;
+}
+
+.lesson-row:hover {
+  background: var(--bg);
+}
+
+.lesson-row.is-current {
+  background: var(--bg);
+}
+
+.lesson-row-num {
+  font-size: 13px;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+  flex: none;
+}
+
+.lesson-row-title {
+  flex: 1;
+  min-width: 0;
+  font-size: 15px;
+  color: var(--text);
+}
+
+.lesson-row-time {
+  font-size: 12px;
+  color: var(--muted);
+  white-space: nowrap;
+  flex: none;
+}
+
+/* Status is a circle: filled tick when done, outlined play when current,
+   empty ring otherwise — never colour alone. */
+.lesson-row-state {
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border);
+  font-size: 11px;
+  line-height: 1;
+  color: transparent;
+  flex: none;
+}
+
+.lesson-row.is-done .lesson-row-state {
+  background: var(--level);
+  border-color: var(--level);
+  color: #fff;
+}
+
+.lesson-row.is-current .lesson-row-state {
+  border-color: var(--level);
+  color: var(--level);
+}
+
+.level-empty {
+  padding: 24px 12px;
 }

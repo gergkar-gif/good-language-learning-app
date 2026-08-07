@@ -1,0 +1,149 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "grammar.schema.json",
+  "title": "Grammar file",
+  "description": "One grammar concept. Every part renders on a single lesson screen in the order given, so a file should cover one idea rather than several. Only the five presentational part types below are rendered — an exercise belongs in the exercise file, and anything else is silently dropped by the grammar renderer.",
+  "type": "object",
+  "required": ["id", "title", "sections"],
+  "additionalProperties": false,
+
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^grammar\\.(a1|a2|b1|b2|c1)\\.\\d{2}\\.[a-z-]+$",
+      "examples": ["grammar.a1.01.ser"]
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "description": "The screen heading, unless the lesson section overrides it."
+    },
+    "sections": {
+      "type": "array",
+      "minItems": 1,
+      "description": "Parts of the explanation, rendered in order on one screen. A typical concept is text, then examples or a table, then a tip.",
+      "items": { "$ref": "#/definitions/part" }
+    }
+  },
+
+  "definitions": {
+    "part": {
+      "oneOf": [
+        { "$ref": "#/definitions/text" },
+        { "$ref": "#/definitions/table" },
+        { "$ref": "#/definitions/examples" },
+        { "$ref": "#/definitions/tip" },
+        { "$ref": "#/definitions/externalLink" }
+      ]
+    },
+
+    "partTitle": {
+      "type": "string",
+      "description": "Rendered as a sub-heading. Omit it when it would repeat the file title — the renderer skips a title identical to the screen's."
+    },
+
+    "text": {
+      "type": "object",
+      "description": "A paragraph of explanation.",
+      "required": ["type", "content"],
+      "additionalProperties": false,
+      "properties": {
+        "type": { "const": "text" },
+        "title": { "$ref": "#/definitions/partTitle" },
+        "content": { "type": "string", "minLength": 1 }
+      }
+    },
+
+    "table": {
+      "type": "object",
+      "description": "Two-column reference table. The first column renders bold.",
+      "required": ["type", "rows"],
+      "additionalProperties": false,
+      "properties": {
+        "type": { "const": "table" },
+        "title": { "$ref": "#/definitions/partTitle" },
+        "rows": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 2,
+            "items": { "type": "string" },
+            "description": "[spanish, english]"
+          }
+        }
+      }
+    },
+
+    "examples": {
+      "type": "object",
+      "description": "Sentence pairs, Spanish above English.",
+      "required": ["type", "items"],
+      "additionalProperties": false,
+      "properties": {
+        "type": { "const": "examples" },
+        "title": { "$ref": "#/definitions/partTitle" },
+        "items": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["spanish", "english"],
+            "additionalProperties": false,
+            "properties": {
+              "spanish": { "type": "string", "minLength": 1 },
+              "english": { "type": "string", "minLength": 1 }
+            }
+          }
+        }
+      }
+    },
+
+    "tip": {
+      "type": "object",
+      "description": "A callout for the thing learners get wrong.",
+      "required": ["type", "content"],
+      "additionalProperties": false,
+      "properties": {
+        "type": { "const": "tip" },
+        "title": { "$ref": "#/definitions/partTitle" },
+        "content": { "type": "string", "minLength": 1 }
+      }
+    },
+
+    "externalLink": {
+      "type": "object",
+      "description": "The closing reference of a grammar explanation. Renders as a sentence — 'Read more about the use of ser on Lingolia.' — with only the site name hyperlinked, so the reference reads as part of the teaching rather than a bare link hanging off the end. Put it last in sections.",
+      "required": ["type", "topic", "url"],
+      "additionalProperties": false,
+      "properties": {
+        "type": { "const": "external-link" },
+        "topic": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Completes the sentence 'Read more about ___ on Lingolia.' — a noun phrase, lower case, no trailing full stop.",
+          "examples": ["the use of 'ser'", "noun gender", "reflexive verbs"]
+        },
+        "site": {
+          "type": "string",
+          "default": "Lingolia",
+          "description": "The hyperlinked words. Defaults to Lingolia when omitted."
+        },
+        "url": { "type": "string", "format": "uri" }
+      }
+    }
+  },
+
+  "examples": [
+    {
+      "id": "grammar.a1.01.ser",
+      "title": "Introducing Yourself",
+      "sections": [
+        { "type": "text", "title": "Introducing Yourself", "content": "Use the verb 'ser' to say who you are and where you are from." },
+        { "type": "examples", "items": [{ "spanish": "Soy Carlos.", "english": "I am Carlos." }] },
+        { "type": "tip", "content": "Spanish usually omits the subject pronoun: 'Soy Carlos.', not 'Yo soy Carlos.'" }
+      ]
+    }
+  ]
+}

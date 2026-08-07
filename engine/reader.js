@@ -171,11 +171,18 @@ function getReadStoryIds() {
     }
 }
 
+// Returns true only the first time a story is finished, so re-reading keeps
+// the daily activity but doesn't pay the reading XP again.
 function markStoryRead(storyId) {
     const read = getReadStoryIds();
-    if (read.includes(storyId)) return;
+    if (read.includes(storyId)) return false;
     read.push(storyId);
     localStorage.setItem(READ_STORIES_KEY, JSON.stringify(read));
+    return true;
+}
+
+function hasReadStory(storyId) {
+    return getReadStoryIds().includes(storyId);
 }
 
 // ============================================
@@ -275,15 +282,17 @@ window.Reader = {
             const readCount = roomStories.filter(s => readIds.includes(s.id)).length;
             const levelId = level.toLowerCase().replace(/[^a-z0-9]/g, '-');
 
+            // Rooms start collapsed — fifty story cards across five levels is
+            // a wall to scroll past before you reach the one you want.
             html += '<div class="reading-room">' +
-                '<button class="reading-room-header" data-room-toggle="' + levelId + '" aria-expanded="true">' +
+                '<button class="reading-room-header" data-room-toggle="' + levelId + '" aria-expanded="false">' +
                     '<div>' +
                         '<h3 class="reading-room-title">' + self.escapeHtml(level) + '</h3>' +
                         '<span class="reading-room-count">' + readCount + ' / ' + roomStories.length + ' read</span>' +
                     '</div>' +
-                    '<span class="reading-room-arrow" id="reading-room-arrow-' + levelId + '">▼</span>' +
+                    '<span class="reading-room-arrow" id="reading-room-arrow-' + levelId + '">▶</span>' +
                 '</button>' +
-                '<div class="reading-room-body" id="reading-room-body-' + levelId + '">';
+                '<div class="reading-room-body hidden" id="reading-room-body-' + levelId + '">';
 
             if (!roomStories.length) {
                 html += '<p class="text-muted reading-room-empty">No stories at this level yet.</p>';
@@ -348,8 +357,10 @@ window.Reader = {
 
         try {
             const story = await Content.story(storyMeta.path);
+            // The manifest id is what read-state is keyed on; the story file
+            // itself doesn't necessarily carry the same id.
+            this.currentStoryId = storyId;
             this.currentStory = story;
-            markStoryRead(storyId);
             this.renderStory(story);
         } catch (e) {
             console.error('Reader: failed to load story file', storyMeta.path, e);
@@ -387,6 +398,16 @@ window.Reader = {
         }
 
         html += '</div>';
+
+        // Reading XP is for finishing a text, so it needs an explicit end —
+        // opening a story says nothing about having read it.
+        const alreadyRead = hasReadStory(this.currentStoryId);
+        html += '<div class="story-finish">' +
+            '<button class="btn-primary" id="reader-finish-btn">' +
+                (alreadyRead ? 'Finished again ✓' : 'I finished this story ✓') +
+            '</button>' +
+        '</div>';
+
         container.innerHTML = html;
 
         // Back button
@@ -394,6 +415,13 @@ window.Reader = {
         if (backBtn) {
             backBtn.addEventListener('click', function() {
                 self.closeStory();
+            });
+        }
+
+        const finishBtn = document.getElementById('reader-finish-btn');
+        if (finishBtn) {
+            finishBtn.addEventListener('click', function() {
+                self.finishStory();
             });
         }
 
@@ -431,6 +459,17 @@ window.Reader = {
         return div.innerHTML;
     },
 
+    finishStory() {
+        if (!this.currentStoryId) return;
+
+        const firstTime = markStoryRead(this.currentStoryId);
+        if (typeof recordStoryCompleted === 'function') {
+            recordStoryCompleted(firstTime);
+        }
+
+        this.closeStory();
+    },
+
     closeStory() {
         const contentEl = document.getElementById('reader-content');
         const libraryEl = document.getElementById('reader-library');
@@ -443,6 +482,7 @@ window.Reader = {
             this.buildLibraryUI(libraryEl); // refresh read badges/shelf counts
         }
         this.currentStory = null;
+        this.currentStoryId = null;
     }
 };
 

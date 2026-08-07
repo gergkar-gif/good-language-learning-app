@@ -316,12 +316,9 @@ function rateCard(rating) {
 
     const now = new Date();
 
-    // XP still treats an early review as worth little (see calculateReviewXP),
-    // but the rating itself always reschedules the card.
-    const xpResult = calculateReviewXP(currentReviewCard, rating);
-    if (xpResult.xp > 0) {
-        awardXP(xpResult.xp, xpResult.reason);
-    }
+    // Runs before scheduleCard, which is what makes "is this card new?"
+    // answerable — rescheduling increments the review count.
+    recordReview(currentReviewCard, rating);
 
     scheduleCard(currentReviewCard, rating, now);
 

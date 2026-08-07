@@ -1,9 +1,9 @@
 {
   "id": "lesson.a1.02",
-  "title": "Personal Information",
+  "title": "Ordering at a Café",
   "level": "A1",
-  "goal": "Exchange personal information",
-  "grammar": "llamarse, tener, question words",
+  "goal": "Order food and drinks, say what you want",
+  "grammar": "querer, tomar, comer",
   "metadata": {
     "estimatedMinutes": 20
   },
@@ -12,12 +12,28 @@
       "type": "goal",
       "title": "Lesson Goals",
       "items": [
-        "Exchange personal information: name, age, nationality, languages"
+        "Say what you want using 'quiero'",
+        "Order a drink and something to eat in a café",
+        "Ask someone else what they want",
+        "Follow a short conversation in a café"
       ]
     },
     {
       "type": "grammar",
       "ref": "grammar/a1/a1-02-gr.json"
+    },
+    {
+      "type": "exercise-group",
+      "title": "Practice",
+      "ref": "exercises/a1/a1-02-ex.json",
+      "exerciseRefs": [
+        "a1-02-practice-match",
+        "a1-02-practice-bill",
+        "a1-02-practice-quiero",
+        "a1-02-practice-build",
+        "a1-02-practice-tomar",
+        "a1-02-practice-order"
+      ]
     },
     {
       "type": "vocabulary",
@@ -30,29 +46,13 @@
     },
     {
       "type": "exercise-group",
-      "title": "Vocabulary",
-      "ref": "exercises/a1/a1-02-ex.json",
-      "exerciseRefs": [
-        "a1-02-vocab-01",
-        "a1-02-vocab-02"
-      ]
-    },
-    {
-      "type": "exercise-group",
-      "title": "Grammar",
-      "ref": "exercises/a1/a1-02-ex.json",
-      "exerciseRefs": [
-        "a1-02-grammar-01",
-        "a1-02-grammar-02"
-      ]
-    },
-    {
-      "type": "exercise-group",
       "title": "Reading",
       "ref": "exercises/a1/a1-02-ex.json",
       "exerciseRefs": [
-        "a1-02-reading-01",
-        "a1-02-reading-02"
+        "a1-02-reading-carlos",
+        "a1-02-reading-meg",
+        "a1-02-reading-opinion",
+        "a1-02-reading-order"
       ]
     },
     {
@@ -60,8 +60,9 @@
       "title": "Dialogue",
       "ref": "exercises/a1/a1-02-ex.json",
       "exerciseRefs": [
-        "a1-02-dialogue-01",
-        "a1-02-dialogue-02"
+        "a1-02-dialogue-order",
+        "a1-02-dialogue-opinion",
+        "a1-02-dialogue-bill"
       ]
     },
     {
@@ -69,7 +70,8 @@
       "title": "Writing",
       "ref": "exercises/a1/a1-02-ex.json",
       "exerciseRefs": [
-        "a1-02-writing-01"
+        "a1-02-writing-order",
+        "a1-02-writing-ask"
       ]
     },
     {
@@ -80,11 +82,10 @@
       "type": "checklist",
       "title": "Can you do this?",
       "items": [
-        "I can say my name with 'Me llamo ...'",
-        "I can say my age with 'Tengo ... años'",
-        "I can say where I'm from with 'Soy de ...'",
-        "I can ask '¿Cuántos años tienes?'",
-        "I can ask '¿De dónde eres?' and '¿Qué idiomas hablas?'"
+        "I can say what I want with 'Quiero...'",
+        "I can order a drink and food in a café",
+        "I can ask '¿Qué quieres?'",
+        "I can follow a short conversation in a café"
       ]
     }
   ]

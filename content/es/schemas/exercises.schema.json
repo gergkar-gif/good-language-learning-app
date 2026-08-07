@@ -1,0 +1,236 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "exercises.schema.json",
+  "title": "Exercise file",
+  "description": "All exercises for one lesson. A lesson's exercise-group sections pull items out of here by id, so one file serves the practice, reading, dialogue and writing groups. Every exercise type below gates the Continue button: the learner must answer correctly, and three wrong attempts reveal the answer and release the gate (engine/lessons.js, MAX_ATTEMPTS).",
+  "type": "object",
+  "required": ["lesson", "exercises"],
+  "additionalProperties": false,
+
+  "properties": {
+    "lesson": {
+      "type": "string",
+      "pattern": "^(a1|a2|b1|b2|c1)-\\d{2}$",
+      "description": "Owning lesson, e.g. a1-01.",
+      "examples": ["a1-01"]
+    },
+    "exercises": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/definitions/exercise" }
+    }
+  },
+
+  "definitions": {
+    "baseFields": {
+      "id": {
+        "type": "string",
+        "minLength": 1,
+        "description": "Referenced by a lesson's exerciseRefs. Must be unique within the file.",
+        "examples": ["a1-01-practice-match"]
+      },
+      "category": {
+        "type": "string",
+        "enum": ["vocabulary", "grammar", "reading", "dialogue", "writing"],
+        "description": "What the exercise is testing. Informational; the lesson decides placement."
+      }
+    },
+
+    "exercise": {
+      "oneOf": [
+        { "$ref": "#/definitions/matching" },
+        { "$ref": "#/definitions/multipleChoice" },
+        { "$ref": "#/definitions/fillBlank" },
+        { "$ref": "#/definitions/sentenceBuilder" },
+        { "$ref": "#/definitions/sentenceOrder" },
+        { "$ref": "#/definitions/dialogueComplete" },
+        { "$ref": "#/definitions/structuredWriting" }
+      ]
+    },
+
+    "matching": {
+      "type": "object",
+      "description": "Tap a Spanish item, then its translation. Both columns are shuffled on render. Solved when every pair is matched; on failure the full pair list is revealed.",
+      "required": ["id", "type", "pairs"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "#/definitions/baseFields/id" },
+        "category": { "$ref": "#/definitions/baseFields/category" },
+        "type": { "const": "matching" },
+        "pairs": {
+          "type": "array",
+          "minItems": 2,
+          "description": "Each pair is [spanish, english]. Keep to about six — every pair is on screen at once.",
+          "items": {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 2,
+            "items": { "type": "string", "minLength": 1 }
+          }
+        }
+      }
+    },
+
+    "multipleChoice": {
+      "type": "object",
+      "description": "One question, one right option. On failure the correct option is highlighted.",
+      "required": ["id", "type", "question", "options", "correct"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "#/definitions/baseFields/id" },
+        "category": { "$ref": "#/definitions/baseFields/category" },
+        "type": { "const": "multiple-choice" },
+        "question": { "type": "string", "minLength": 1 },
+        "options": {
+          "type": "array",
+          "minItems": 2,
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "correct": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Zero-based index into options. Options render in the order given, so this must point at the right one."
+        }
+      }
+    },
+
+    "fillBlank": {
+      "type": "object",
+      "description": "Type the missing word. Answers are compared with accents and punctuation stripped and case ignored, so 'soy' matches 'Soy'. On failure the answer is filled in.",
+      "required": ["id", "type", "sentence", "answer"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "#/definitions/baseFields/id" },
+        "category": { "$ref": "#/definitions/baseFields/category" },
+        "type": { "const": "fill-blank" },
+        "sentence": {
+          "type": "string",
+          "pattern": "_{2,}",
+          "description": "The blank is two or more underscores, replaced by a placeholder on render.",
+          "examples": ["_____ de Hungría."]
+        },
+        "answer": { "type": "string", "minLength": 1 }
+      }
+    },
+
+    "sentenceBuilder": {
+      "type": "object",
+      "description": "Assemble a sentence from shuffled word tiles. On failure the finished sentence is shown.",
+      "required": ["id", "type", "tiles", "solution"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "#/definitions/baseFields/id" },
+        "category": { "$ref": "#/definitions/baseFields/category" },
+        "type": { "const": "sentence-builder" },
+        "tiles": {
+          "type": "array",
+          "minItems": 3,
+          "items": { "type": "string", "minLength": 1 },
+          "description": "Shuffled on render. Two tiles have only one sensible arrangement, so use at least three."
+        },
+        "solution": {
+          "type": "array",
+          "minItems": 3,
+          "items": { "type": "string", "minLength": 1 },
+          "description": "The tiles in the right order. Must contain exactly the same strings as tiles."
+        }
+      }
+    },
+
+    "sentenceOrder": {
+      "type": "object",
+      "description": "Put sentences into sequence. On failure the correct order is listed out.",
+      "required": ["id", "type", "sentences", "solution"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "#/definitions/baseFields/id" },
+        "category": { "$ref": "#/definitions/baseFields/category" },
+        "type": { "const": "sentence-order" },
+        "sentences": {
+          "type": "array",
+          "minItems": 2,
+          "items": { "type": "string", "minLength": 1 },
+          "description": "Shuffled on render."
+        },
+        "solution": {
+          "type": "array",
+          "minItems": 2,
+          "items": { "type": "integer", "minimum": 0 },
+          "description": "Indices into sentences, in the right order. Writing them in order already means [0, 1, 2, ...]."
+        }
+      }
+    },
+
+    "dialogueComplete": {
+      "type": "object",
+      "description": "An exchange with one line missing; pick the line that fits. On failure the correct option is highlighted.",
+      "required": ["id", "type", "prompt", "options", "correct"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "#/definitions/baseFields/id" },
+        "category": { "$ref": "#/definitions/baseFields/category" },
+        "type": { "const": "dialogue-complete" },
+        "prompt": {
+          "type": "array",
+          "minItems": 2,
+          "description": "The exchange as shown. Exactly one line's text is the blank.",
+          "items": {
+            "type": "object",
+            "required": ["speaker", "text"],
+            "additionalProperties": false,
+            "properties": {
+              "speaker": { "type": "string", "minLength": 1 },
+              "text": {
+                "type": "string",
+                "minLength": 1,
+                "description": "Use underscores for the line the learner supplies.",
+                "examples": ["Hola. Me llamo Meg.", "_____"]
+              }
+            }
+          }
+        },
+        "options": {
+          "type": "array",
+          "minItems": 2,
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "correct": { "type": "integer", "minimum": 0 }
+      }
+    },
+
+    "structuredWriting": {
+      "type": "object",
+      "description": "Free writing against English prompts. There is no single right answer, so nothing is marked: once every line has text the learner presses Check, each model answer appears beneath their own sentence to compare against, and Continue unlocks.",
+      "required": ["id", "type", "template"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "#/definitions/baseFields/id" },
+        "category": { "$ref": "#/definitions/baseFields/category" },
+        "type": { "const": "structured-writing" },
+        "template": {
+          "type": "array",
+          "minItems": 1,
+          "description": "One entry per line the learner writes. Prompt and model answer are kept together so they cannot drift apart.",
+          "items": {
+            "type": "object",
+            "required": ["prompt", "answer"],
+            "additionalProperties": false,
+            "properties": {
+              "prompt": {
+                "type": "string",
+                "minLength": 1,
+                "description": "What to write, in English."
+              },
+              "answer": {
+                "type": "string",
+                "minLength": 1,
+                "description": "One natural way to say it, shown as an example rather than as the correct answer. Use only grammar and vocabulary the lesson has taught."
+              }
+            }
+          },
+          "examples": [[{ "prompt": "Greet someone in the morning.", "answer": "Buenos días." }]]
+        }
+      }
+    }
+  }
+}

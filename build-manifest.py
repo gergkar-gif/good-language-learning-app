@@ -82,7 +82,10 @@ def build_curriculum(lang="es"):
                         "id": data.get("id", f"lesson.{level_id}.{f.stem}"),
                         "title": data.get("title", f.stem),
                         "grammar": data.get("grammar", ""),
-                        "goal": data.get("goal", "")
+                        "goal": data.get("goal", ""),
+                        # Shown on the lesson row in the Learn tab, so the
+                        # index carries it rather than fetching 20 lessons.
+                        "estimatedMinutes": (data.get("metadata") or {}).get("estimatedMinutes")
                     })
                 except (OSError, json.JSONDecodeError):
                     pass
@@ -129,13 +132,9 @@ def validate_lessons(lang="es"):
 
             label = f"{f} ({data.get('id', '?')})"
 
-            # metadata.*Refs / *Ref
-            meta = data.get("metadata", {})
-            meta_refs = [(k, r) for k in ("grammarRefs", "vocabularyRefs") for r in meta.get(k, [])]
-            meta_refs += [(k, meta[k]) for k in ("storyRef", "exercisesRef", "srsRef") if meta.get(k)]
-            for key, ref in meta_refs:
-                if not (lang_path / ref).exists():
-                    issues.append(f"{label}: metadata.{key} -> '{ref}' does not exist")
+            # Content paths used to be duplicated into metadata.*Ref(s) as well
+            # as sections[].ref. They now live only on the section that uses
+            # them, so there is one path to check and one place to fix it.
 
             # sections[].ref, and exercise-group exerciseRefs
             for i, section in enumerate(data.get("sections", [])):
