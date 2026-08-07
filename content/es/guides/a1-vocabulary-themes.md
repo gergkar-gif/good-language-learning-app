@@ -15,7 +15,7 @@ Rewritten 2026-08-07 to match each lesson's actual story (`vocabularyTopics` fie
 | 9 | Kitchen, ingredients, cooking | 20 |
 | 10 | Birthdays, gifts, celebrations | 20 |
 | 11 | Hobbies and sports | 20 |
-| 12 | Town and places | 20 |
+| 12 | Numbers, time, quantities | 20 |
 | 13 | Transport and directions | 20 |
 | 14 | Weather and seasons | 20 |
 | 15 | Work and obligations | 20 |

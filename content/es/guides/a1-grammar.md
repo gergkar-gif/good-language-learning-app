@@ -15,7 +15,7 @@ Rewritten 2026-08-07 to match the grammar actually used in `content/es/stories/o
 | 9 | Regular verbs, basic imperatives, sequencing (primero, después, luego) | Cooking together |
 | 10 | Dates, age, `tener` (recycled) | Birthdays and celebrations |
 | 11 | Present tense review, common irregulars | Hobbies and free time |
-| 12 | `hay` vs `estar` (review) | Describing a town |
+| 12 | Numbers to 100, telling the time (`¿qué hora es?`, `a las…`) | Numbers were introduced for prices in Lesson 8 and for dates and age in Lesson 10; this is where the system itself is taught, together with the clock |
 | 13 | Directions, prepositions of movement | Asking the way |
 | 14 | Weather expressions, seasons | Weather |
 | 15 | `hay que`, `tener que` | Obligations |

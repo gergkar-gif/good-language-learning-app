@@ -169,7 +169,7 @@ function showXPNotification(amount, reason) {
         top: 80px;
         left: 50%;
         transform: translateX(-50%);
-        background: #E4572E;
+        background: var(--primary);
         color: white;
         padding: 10px 20px;
         border-radius: 20px;
@@ -316,7 +316,7 @@ function updateXPHeader() {
         if (perfect > 0) parts.push('⭐ ' + perfect + ' perfect');
 
         streakEl.textContent = parts.join('   ');
-        streakEl.style.color = streak > 0 ? '#E4572E' : '#8FB4BA';
+        streakEl.style.color = streak > 0 ? 'var(--accent-dark)' : 'var(--muted)';
     }
 
     renderStatsPanel();

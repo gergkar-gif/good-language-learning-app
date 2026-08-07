@@ -6,12 +6,33 @@
       "category": "vocabulary",
       "type": "matching",
       "pairs": [
-        ["El café", "Coffee"],
-        ["La comida", "Food"],
-        ["El menú", "Menu"],
-        ["La camarera", "Waitress"],
-        ["La cuenta", "The bill"],
-        ["Rico", "Delicious"]
+        [
+          "El café",
+          "Coffee"
+        ],
+        [
+          "La comida",
+          "Food"
+        ],
+        [
+          "El menú",
+          "Menu"
+        ],
+        [
+          "La camarera",
+          "Waitress"
+        ],
+        [
+          "La cuenta",
+          "The bill"
+        ],
+        [
+          "Rico",
+          "Delicious"
+        ]
+      ],
+      "teaches": [
+        "cafe-food-drinks"
       ]
     },
     {
@@ -24,14 +45,20 @@
         "El menú",
         "La comida"
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "cafe-food-drinks"
+      ]
     },
     {
       "id": "a1-02-practice-quiero",
       "category": "grammar",
       "type": "fill-blank",
       "sentence": "Yo _____ (querer) un café con leche.",
-      "answer": "quiero"
+      "answer": "quiero",
+      "teaches": [
+        "querer"
+      ]
     },
     {
       "id": "a1-02-practice-build",
@@ -48,14 +75,21 @@
         "comer",
         "algo",
         "también"
+      ],
+      "teaches": [
+        "querer",
+        "comer"
       ]
     },
     {
       "id": "a1-02-practice-tomar",
       "category": "grammar",
       "type": "fill-blank",
-      "sentence": "¿Quieres _____ un café conmigo?",
-      "answer": "tomar"
+      "sentence": "Carlos _____ un café negro.",
+      "answer": "toma",
+      "teaches": [
+        "tomar"
+      ]
     },
     {
       "id": "a1-02-practice-order",
@@ -72,6 +106,10 @@
         1,
         2,
         3
+      ],
+      "teaches": [
+        "querer",
+        "cafe-food-drinks"
       ]
     },
     {
@@ -146,7 +184,11 @@
         "Me llamo Meg.",
         "Hasta luego."
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "querer",
+        "cafe-food-drinks"
+      ]
     },
     {
       "id": "a1-02-dialogue-opinion",
@@ -167,7 +209,10 @@
         "Soy de Hungría.",
         "Quiero un café."
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "cafe-food-drinks"
+      ]
     },
     {
       "id": "a1-02-dialogue-bill",
@@ -175,15 +220,15 @@
       "type": "dialogue-complete",
       "prompt": [
         {
+          "speaker": "Carlos",
+          "text": "El café está muy bueno."
+        },
+        {
           "speaker": "Meg",
-          "text": "¡Qué rico! La comida está muy buena."
+          "text": "Sí, es muy rico."
         },
         {
           "speaker": "Carlos",
-          "text": "Sí. Ya terminamos."
-        },
-        {
-          "speaker": "Meg",
           "text": "_____"
         }
       ],
@@ -192,7 +237,10 @@
         "El menú, por favor.",
         "Mucho gusto."
       ],
-      "correct": 0
+      "correct": 0,
+      "teaches": [
+        "cafe-food-drinks"
+      ]
     },
     {
       "id": "a1-02-writing-order",
@@ -209,7 +257,7 @@
         },
         {
           "prompt": "Order something to eat.",
-          "answer": "Quiero comer una tostada."
+          "answer": "Quiero comer un taco."
         },
         {
           "prompt": "Say 'por favor'.",
@@ -219,6 +267,10 @@
           "prompt": "Ask for the bill at the end.",
           "answer": "La cuenta, por favor."
         }
+      ],
+      "teaches": [
+        "querer",
+        "cafe-food-drinks"
       ]
     },
     {
@@ -236,12 +288,16 @@
         },
         {
           "prompt": "Say the food is delicious.",
-          "answer": "¡Qué rica está la comida!"
+          "answer": "¡Qué rico!"
         },
         {
           "prompt": "Ask the waitress for the menu.",
           "answer": "El menú, por favor."
         }
+      ],
+      "teaches": [
+        "querer",
+        "tomar"
       ]
     }
   ]

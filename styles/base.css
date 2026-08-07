@@ -2,26 +2,41 @@
    BASE — Reset, root vars, body, typography
 ============================================ */
 
+/* Editorial palette: cream ground, dark navy, warm black, one accent.
+   The accent is rationed — it marks the single live thing on a screen and
+   nothing else. No gradients anywhere. */
 :root {
-  --bg: #F2EFE6;
+  --bg: #F5F1E8;
   --surface: #FFFFFF;
-  --primary: #1B4B5A;
-  --primary-dark: #153a46;
-  --secondary: #8FB4BA;
-  --text: #2E2A26;
-  --muted: #7A7A7A;
-  --success: #4CAF50;
-  --danger: #B8412F;
-  --accent: #E4572E;
-  --accent-dark: #c44a24;
-  --border: #DCE6E8;
-  --border-light: #eee;
-  --success-bg: #e8f5ed;
-  --danger-bg: #fbecea;
+
+  --primary: #17365B;
+  --primary-dark: #0F2540;
+  --primary-mid: #3D5A80;
+  /* Doubles as text on cream and as a fill under white text, so it has to
+     clear 4.5:1 in both directions. */
+  --secondary: #5F6B7E;
+
+  --text: #1F1B16;
+  --muted: #6B6354;
+
+  /* Two reds on purpose. --accent is the vivid one and is only ever used as
+     a shape fill, where 3:1 is the bar. Anything carrying text — a button
+     label, feedback copy — uses --accent-dark. */
+  --accent: #DC4E2E;
+  --accent-dark: #A8371C;
+
+  --success: #2F6B45;
+  --danger: #B23A22;
+
+  --border: #E4DDCF;
+  --border-light: #EFE9DD;
+  --success-bg: #EDF2ED;
+  --danger-bg: #FAEDE9;
+
   --radius: 12px;
   --radius-sm: 8px;
   --radius-pill: 999px;
-  --shadow: 0 2px 8px rgba(0,0,0,.08);
+  --shadow: 0 1px 3px rgba(31, 27, 22, .06);
 }
 
 *,

@@ -214,7 +214,7 @@ function addToSRS() {
     
     const btn = document.getElementById('popup-add-btn');
     btn.textContent = '✓ Added!';
-    btn.style.background = '#8FB4BA';
+    btn.style.background = 'var(--primary)';
     
     updateSRSCounter();
     saveDeck();

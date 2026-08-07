@@ -20,22 +20,22 @@
 
 .page-header {
   position: relative;
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  padding: 28px 0 20px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: start;
+  column-gap: 16px;
+  padding: 28px 0 12px;
 }
 
 .page-header-text {
-  flex: 1;
   min-width: 0;
 }
 
 .page-header-title {
-  font-size: 32px;
+  font-size: 34px;
   font-weight: 500;
   line-height: 1.1;
-  letter-spacing: -0.015em;
+  letter-spacing: -0.02em;
   color: var(--text);
 }
 
@@ -45,23 +45,55 @@
   color: var(--muted);
 }
 
-/* Decorative only — barely there, and never louder than the title */
-.page-header-art {
-  order: 2;
-  width: 76px;
-  height: 76px;
-  flex: none;
-  color: var(--text);
-  opacity: .08;
-  pointer-events: none;
-}
-
 .page-header-actions {
-  order: 3;
   display: flex;
   align-items: center;
   gap: 8px;
-  flex: none;
+}
+
+/* A frontispiece, not a watermark: full strength but mostly empty, sitting
+   under the title across the column. */
+.page-header-art {
+  grid-column: 1 / -1;
+  width: 100%;
+  height: auto;
+  max-height: 108px;
+  margin-top: 14px;
+  pointer-events: none;
+}
+
+/* Illustration ink. Only these four classes are used, so a composition can
+   never quietly introduce a fifth colour. */
+.page-header-art .ink-solid { fill: var(--primary); }
+
+.page-header-art .ink-line {
+  fill: none;
+  stroke: var(--primary);
+  stroke-width: 1.5;
+}
+
+.page-header-art .ink-rule {
+  fill: none;
+  stroke: var(--primary);
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+/* Thin architectural lines — direction and movement, not outlines */
+.page-header-art .ink-hair,
+.page-header-art .ink-hair line {
+  fill: none;
+  stroke: var(--primary);
+  stroke-width: .75;
+  opacity: .38;
+}
+
+.page-header-art .accent-solid { fill: var(--accent); }
+
+.page-header-art .accent-line {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 1.5;
 }
 
 /* Entering a section: a short fade and rise, restarted on every change */
@@ -80,28 +112,18 @@
   }
 }
 
-/* Mobile: the illustration sits above the title rather than beside it */
 @media (max-width: 420px) {
   .page-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0;
     padding-top: 20px;
   }
 
-  .page-header-art {
-    order: -1;
-    width: 52px;
-    height: 52px;
-    margin-bottom: 4px;
-  }
-
   .page-header-title {
-    font-size: 28px;
+    font-size: 29px;
   }
 
-  .page-header-actions {
-    margin-top: 12px;
+  .page-header-art {
+    max-height: 88px;
+    margin-top: 10px;
   }
 }
 
@@ -194,17 +216,13 @@
    LEARN TAB — level list and level detail
 ============================================ */
 
-/* Each level owns a colour, carried by its spine, icon and progress bar */
+/* One ink for every level. Five hues read as a category scale and there are
+   no categories here — the levels are a sequence, and depth carries that
+   better than colour. The accent stays reserved for the live lesson. */
 .level-card,
 .level-detail {
   --level: var(--primary);
 }
-
-[data-level="A1"] { --level: #2F5D50; }
-[data-level="A2"] { --level: #2F5675; }
-[data-level="B1"] { --level: #A9762B; }
-[data-level="B2"] { --level: #5B4B7C; }
-[data-level="C1"] { --level: #1B4B5A; }
 
 .level-list {
   display: flex;
@@ -454,9 +472,10 @@
   color: #fff;
 }
 
+/* The one live thing on the page, and the only accent on it */
 .lesson-row.is-current .lesson-row-state {
-  border-color: var(--level);
-  color: var(--level);
+  border-color: var(--accent-dark);
+  color: var(--accent-dark);
 }
 
 .level-empty {

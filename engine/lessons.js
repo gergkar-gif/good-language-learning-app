@@ -252,7 +252,7 @@ function setFeedback(ok, message) {
     const el = document.getElementById('step-feedback');
     if (!el) return;
     el.textContent = message;
-    el.style.color = ok ? '#3E8E5B' : '#B8412F';
+    el.style.color = ok ? 'var(--success)' : 'var(--accent-dark)';
 }
 
 // ============================================
@@ -935,19 +935,19 @@ function lessonAddSrsCards() {
 function checkLessonAnswer(btn, isCorrect) {
     const allBtns = btn.parentElement.querySelectorAll('button');
     allBtns.forEach(b => {
-        b.style.borderColor = '#DCE6E8';
+        b.style.borderColor = 'var(--border)';
         b.style.background = 'white';
     });
 
     if (isCorrect) {
-        btn.style.borderColor = '#3E8E5B';
-        btn.style.background = '#e8f5ed';
+        btn.style.borderColor = 'var(--success)';
+        btn.style.background = 'var(--success-bg)';
         document.getElementById('quiz-feedback').textContent = '✓ Correct!';
-        document.getElementById('quiz-feedback').style.color = '#3E8E5B';
+        document.getElementById('quiz-feedback').style.color = 'var(--success)';
     } else {
-        btn.style.borderColor = '#B8412F';
-        btn.style.background = '#fbecea';
+        btn.style.borderColor = 'var(--accent-dark)';
+        btn.style.background = 'var(--danger-bg)';
         document.getElementById('quiz-feedback').textContent = '✗ Not quite. Try again!';
-        document.getElementById('quiz-feedback').style.color = '#B8412F';
+        document.getElementById('quiz-feedback').style.color = 'var(--accent-dark)';
     }
 }

@@ -17,7 +17,7 @@ Rewritten 2026-08-07 to match `content/es/stories/original/a1` exactly (20 of 20
 | 9 | Una cena mexicana |
 | 10 | El cumpleaños de Meg |
 | 11 | Un fin de semana activo |
-| 12 | Un paseo por Hanói |
+| 12 | El número del autobús |
 | 13 | ¿Dónde está Kaylee? |
 | 14 | Un día de lluvia |
 | 15 | El primer día de trabajo |

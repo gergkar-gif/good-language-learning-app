@@ -149,12 +149,14 @@ Talk about hobbies and free time.
 ## Lesson 12
 
 **Goal**
-Describe your town.
+Use numbers and tell the time.
 
 **By the end of this lesson, the learner can:**
 
-- describe a town or neighbourhood.
-- correctly choose between "hay" and "estar".
+- count and say numbers up to one hundred.
+- tell the time and say when something happens.
+- ask for and give a phone number.
+- follow a conversation about times and numbers.
 
 ---
 

@@ -68,6 +68,83 @@ def searchable(lemma):
     return ARTICLE.sub("", norm(lemma).strip()).strip()
 
 
+PROPER_NOUNS = {"carlos", "meg", "daniela", "lauren", "kaylee", "hungria",
+                "sudafrica", "espana", "hanoi", "ana", "mexico", "vietnam"}
+
+
+def spanish_tokens(text):
+    return {w for w in re.findall(r"[a-zñ]+", norm(text)) if w not in PROPER_NOUNS}
+
+
+def exercise_spanish(ex):
+    """The Spanish a learner must already know to answer this exercise.
+
+    English prompts and reading comprehension, which is written in English by
+    design at A1, contribute nothing."""
+    kind = ex["type"]
+    if kind == "matching":
+        return [pair[0] for pair in ex["pairs"]]
+    if kind == "fill-blank":
+        return [ex["sentence"], ex["answer"]]
+    if kind == "sentence-builder":
+        return ex["tiles"]
+    if kind == "dialogue-complete":
+        return [line["text"] for line in ex["prompt"]] + ex["options"]
+    if kind == "structured-writing":
+        return [line["answer"] for line in ex["template"]]
+    if kind == "sentence-order":
+        return ex["sentences"] if ex.get("category") != "reading" else []
+    if kind == "multiple-choice":
+        return [o for o in ex["options"]
+                if re.search(r"[¿¡áéíóúñ]|\b(el|la|un|una|quiero|soy)\b", o.lower())]
+    return []
+
+
+def teach_tokens(lesson, all_ex):
+    """Walk one lesson in order, yielding (label, introduced, required) so a
+    caller can tell what was on screen before each exercise."""
+    for section in lesson.get("sections", []):
+        kind = section["type"]
+        if kind == "grammar":
+            path = ES / section["ref"]
+            if not path.exists():
+                continue
+            found = set()
+            for part in read(path).get("sections", []):
+                if part["type"] == "table":
+                    for row in part.get("rows", []):
+                        found |= spanish_tokens(row[0])
+                elif part["type"] == "examples":
+                    for item in part.get("items", []):
+                        found |= spanish_tokens(item["spanish"])
+                elif part["type"] in ("text", "tip"):
+                    found |= spanish_tokens(part.get("content", ""))
+            yield None, found, None
+        elif kind == "vocabulary":
+            path = ES / section["ref"]
+            if path.exists():
+                found = set()
+                for word in read(path).get("words", []):
+                    found |= spanish_tokens(searchable(word["lemma"]))
+                yield None, found, None
+        elif kind == "story":
+            path = ES / section["ref"]
+            if path.exists():
+                found = set()
+                for para in read(path).get("paragraphs", []):
+                    found |= spanish_tokens(para["text"])
+                yield None, found, None
+        elif kind == "exercise-group":
+            for eid in section.get("exerciseRefs", []):
+                ex = all_ex.get(eid)
+                if not ex:
+                    continue
+                required = set()
+                for text in exercise_spanish(ex):
+                    required |= spanish_tokens(text)
+                yield f"{section.get('title', '?')} / {eid}", set(), required
+
+
 def matches(term, haystack):
     if not term:
         return False
@@ -286,6 +363,46 @@ def audit(key):
     return r
 
 
+def check_teaching_order(keys):
+    """Nothing may be asked for before it has been taught.
+
+    Runs across lessons in order, because a word introduced in Lesson 1 is
+    fair game in Lesson 5. Within a lesson the order matters too: the practice
+    block sits before the vocabulary screen, so anything it tests has to have
+    appeared on a grammar screen first."""
+    issues = []
+    known = set()
+
+    for key in sorted(keys):
+        number = int(key.split("-")[1])
+        if number in REVIEW_LESSONS:
+            continue
+        lesson_path = ES / "lessons" / "a1" / f"{key}.json"
+        if not lesson_path.exists():
+            continue
+        lesson = read(lesson_path)
+
+        all_ex = {}
+        for section in lesson.get("sections", []):
+            if section["type"] == "exercise-group":
+                path = ES / section["ref"]
+                if path.exists():
+                    for ex in read(path).get("exercises", []):
+                        all_ex[ex["id"]] = ex
+
+        for label, introduced, required in teach_tokens(lesson, all_ex):
+            if label is None:
+                known |= introduced
+                continue
+            unseen = sorted(t for t in required
+                            if t not in known and not matches(t, " " + " ".join(known) + " "))
+            if unseen:
+                issues.append(f"{key} {label} needs: {', '.join(unseen)}")
+            known |= required
+
+    return issues
+
+
 def main():
     keys = sys.argv[1:] or [f"a1-{n:02d}" for n in TEACHING_LESSONS]
 
@@ -308,11 +425,20 @@ def main():
         for w in r.warnings:
             print(f"  warn  {w}")
 
+    order_issues = check_teaching_order(keys)
+    if order_issues:
+        print("\nAsked for before it was taught:")
+        for issue in order_issues:
+            print(f"  FAIL  {issue}")
+
     print()
     if skipped:
         print(f"{skipped} review lesson(s) skipped")
-    if failed:
-        print(f"{failed} lesson(s) need work")
+    if failed or order_issues:
+        if failed:
+            print(f"{failed} lesson(s) need work")
+        if order_issues:
+            print(f"{len(order_issues)} exercise(s) test untaught Spanish")
         return 1
     print("All audited lessons satisfy the A1 content spec")
     return 0
