@@ -37,6 +37,8 @@ function _ensureWordPopup() {
                 <div class="wp-header">
                     <div>
                         <h2 id="popup-word" class="wp-word"></h2>
+                        <button id="popup-speak" class="speak-btn wp-speak" type="button"
+                                aria-label="Listen" hidden>🔊</button>
                         <p id="popup-analysis" class="wp-analysis"></p>
                     </div>
                     <button class="wp-close" onclick="closePopup()" aria-label="Close">×</button>
@@ -51,6 +53,17 @@ function _ensureWordPopup() {
     return popup;
 }
 
+// The popup's speaker button is a fixed element rather than fresh markup, so
+// it is pointed at the current word instead of being re-rendered. It stays
+// hidden on a device with no Spanish voice.
+function _setSpeakTarget(text) {
+    const btn = document.getElementById('popup-speak');
+    if (!btn) return;
+    const ok = typeof Speech !== 'undefined' && Speech.available() && text;
+    btn.hidden = !ok;
+    if (ok) btn.setAttribute('data-speak', Speech.sayable(text));
+}
+
 function _renderWordReadings(tappedWord, readings, phrase) {
     const body = document.getElementById('popup-body');
     const analysisEl = document.getElementById('popup-analysis');
@@ -60,6 +73,7 @@ function _renderWordReadings(tappedWord, readings, phrase) {
     let phraseHtml = '';
     if (phrase) {
         document.getElementById('popup-word').textContent = phrase.phrase;
+        _setSpeakTarget(phrase.phrase);
         analysisEl.textContent = ['expression', phrase.pos].filter(Boolean).join(' · ');
         phraseHtml =
             `<p class="wp-meaning">${Reader.escapeHtml(phrase.translation)}</p>` +
@@ -111,6 +125,7 @@ function _renderWordReadings(tappedWord, readings, phrase) {
 async function showWord(spanish, contextTokens, tokenIndex) {
     const popup = _ensureWordPopup();
     document.getElementById('popup-word').textContent = spanish;
+    _setSpeakTarget(spanish);
     popup.style.display = 'block';
 
     if (!Lexicon.isLoaded()) {

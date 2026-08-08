@@ -226,6 +226,12 @@ function esc(value) {
         .replace(/"/g, '&quot;');
 }
 
+// A listen button for a piece of Spanish. Returns '' when the device has no
+// Spanish voice, so every caller can add it without a guard.
+function say(text) {
+    return (typeof Speech !== 'undefined') ? Speech.button(text) : '';
+}
+
 function shuffled(list) {
     const copy = list.slice();
     for (let i = copy.length - 1; i > 0; i--) {
@@ -355,7 +361,7 @@ const stepRenderers = {
             <table class="lsn-table">
                 ${(step.rows || []).map(row => `
                     <tr>
-                        <td><strong>${esc(row[0])}</strong></td>
+                        <td><strong>${esc(row[0])}</strong>${say(row[0])}</td>
                         <td>${esc(row[1])}</td>
                     </tr>
                 `).join('')}
@@ -366,7 +372,7 @@ const stepRenderers = {
     examples(step) {
         return (step.items || []).map(item => `
             <div class="lsn-example">
-                <div class="lsn-es">${esc(item.spanish)}</div>
+                <div class="lsn-es">${esc(item.spanish)}${say(item.spanish)}</div>
                 <div class="lsn-en">${esc(item.english)}</div>
             </div>
         `).join('');
@@ -386,7 +392,7 @@ const stepRenderers = {
                 ${(step.words || []).map(word => `
                     <div class="lsn-vocab-row">
                         <div>
-                            <div class="lsn-es">${esc(word.lemma)}</div>
+                            <div class="lsn-es">${esc(word.lemma)}${say(word.lemma)}</div>
                             <div class="lsn-pos">${esc(word.pos)}</div>
                         </div>
                         <div class="lsn-en">${esc(word.translation)}</div>
@@ -421,10 +427,10 @@ const stepRenderers = {
                 ${(step.lines || []).map(line => line.type === 'dialogue' ? `
                     <div class="lsn-line">
                         <div class="lsn-speaker">${esc(line.speaker)}</div>
-                        <div class="lsn-es">${clickable(line.text)}</div>
+                        <div class="lsn-es">${clickable(line.text)}${say(line.text)}</div>
                     </div>
                 ` : `
-                    <p class="lsn-narration">${clickable(line.text)}</p>
+                    <p class="lsn-narration">${clickable(line.text)}${say(line.text)}</p>
                 `).join('')}
             </div>
         `;

@@ -1230,3 +1230,44 @@
 
 .wp-add.is-saved   { background: var(--secondary); cursor: default; }
 .wp-add.is-disabled { background: var(--border); cursor: default; }
+
+/* ============================================
+   LISTEN BUTTONS
+   ============================================
+   Audio is an offer, not an instruction: the button sits at the end of the
+   Spanish it speaks, in the muted ink, and only takes colour on hover. It is
+   never rendered at all on a device with no Spanish voice, so there is no
+   disabled state to design. */
+
+.speak-btn {
+  border: 0;
+  background: none;
+  /* The glyph is small on purpose, but the target it presents to a thumb is
+     not: the padding widens the hit area to about 36x30 and the negative
+     margins keep it from opening up the line it sits in. */
+  padding: 8px 6px 8px 8px;
+  margin: -8px -2px -8px 0;
+  font-size: 13px;
+  line-height: 1;
+  cursor: pointer;
+  opacity: .35;
+  vertical-align: middle;
+  transition: opacity .15s ease;
+}
+
+.speak-btn:hover,
+.speak-btn:focus-visible {
+  opacity: 1;
+}
+
+/* In the word popup the button belongs beside the headword, which is set
+   much larger than body copy. */
+.wp-speak {
+  font-size: 18px;
+  padding-left: 10px;
+  align-self: center;
+}
+
+.lsn-table .speak-btn {
+  font-size: 12px;
+}
