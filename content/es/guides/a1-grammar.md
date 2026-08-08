@@ -6,7 +6,10 @@ Rewritten 2026-08-07 to match the grammar actually used in `content/es/stories/o
 |---------|----------|-------|
 | 1 | Greetings, `ser` (soy, eres, es) | Introductions only |
 | 2 | `querer`, `tomar`, `comer` (present tense) | Ordering food and drink. `tener` appears once as the fixed expression "tener hambre" — recognition only, not formally taught until Lesson 5 |
-| 3 | Definite & indefinite articles, `ser` + adjective | Meeting people, nationalities, basic description |
+| 3 | Definite & indefinite articles, `ser` + adjective | Split across three parts — one grammar screen each |
+| 3a | `presentar`, `por qué` / `porque` | Introducing someone, welcoming them, saying why |
+| 3b | Definite & indefinite articles (`el`, `la`, `un`, `una`) | Noun gender, plurals, naming people by family or job |
+| 3c | `ser` + adjective, gender and number agreement | Nationalities and describing character |
 | 4 | `hay`, `estar` (location) | Describing a city |
 | 5 | Possessive adjectives (`mi`, `tu`, `su`), `tener` | Family. First formal teaching of `tener` |
 | 6 | Present tense of regular verbs (-ar, -er, -ir), time expressions | Daily routine |

@@ -95,6 +95,37 @@ words.
 
 ---
 
+## 4b. Split lessons
+
+A slot whose grammar is too much for one sitting is split into **parts** —
+`a1-03a`, `a1-03b`, `a1-03c` — added 2026-08-08, when Lesson 3 turned out to
+need three grammar screens (articles, `presentar`, `ser` + adjective) before a
+single exercise. Three short classes teach that better than one long one.
+
+The parts share the slot, so Lesson 4 is still Lesson 4: the lesson row number
+comes from the filename (`label` in `curriculum.json`), not from the row's
+position in the list.
+
+A part is a whole lesson — its own goals, one grammar screen, its own
+vocabulary and SRS step, its own checklist — but a shorter one:
+
+| Block | Per part | Where it sits |
+|-------|---------:|---------------|
+| Practice | 4 | After the grammar screen, before the vocabulary list |
+| Reading | 4 | **Only in the part that carries the story** |
+| Dialogue | 1 | After reading |
+| Writing | 1 | Last, before SRS |
+
+And across the unit:
+
+- The slot's word target is **split evenly** between the parts (Lesson 3: 12 → 4 + 4 + 4). Give each part the words its own grammar screen uses.
+- **Exactly one part carries the story**, normally the last, so the text is read once, when the learner knows all of the slot's words. The other parts' words must still appear in that story.
+- Practice spans **3+ distinct types** per part rather than 5, since a part has four exercises rather than six.
+- 2–4 checklist items per part, still one-to-one with its goals, still beginning "I can".
+- Each part gets its own row in `a1.md`, keyed `3a`, `3b`, `3c` — `audit-lesson.py` matches title, goal and grammar against it exactly as for a whole lesson.
+
+---
+
 ## 5. Classic Story
 
 | Lessons | Required |

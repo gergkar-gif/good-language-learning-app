@@ -31,6 +31,17 @@ if hasattr(sys.stdout, "reconfigure"):
 # Block -> exercise count. Totals 15.
 EXERCISE_SPLIT = {"Practice": 6, "Reading": 4, "Dialogue": 3, "Writing": 2}
 MIN_PRACTICE_TYPES = 5
+
+# A lesson whose grammar is too much for one sitting is split into parts —
+# a1-03a, a1-03b, a1-03c — which share the slot, the word target and the
+# story. A part is a lesson in its own right, so it still opens on goals and
+# ends on a checklist, but it carries one grammar screen and a short block of
+# exercises. Only the part holding the story gets a Reading block, because the
+# unit's story is read once.
+PART_SPLIT = {"Practice": 4, "Dialogue": 1, "Writing": 1}
+PART_READING = 4
+MIN_PART_PRACTICE_TYPES = 3
+PART_CHECKLIST = (2, 4)
 GRAMMAR_MAX_WORDS = 300
 GRAMMAR_EXAMPLES = (3, 5)
 CHECKLIST_ITEMS = 4
@@ -179,6 +190,43 @@ def read(path):
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+KEY = re.compile(r"^(a1|a2|b1|b2|c1)-(\d{2})([a-z]?)$")
+
+
+def parse_key(key):
+    """'a1-03b' -> ('a1', 3, 'b'). An empty part means an unsplit lesson."""
+    m = KEY.match(key)
+    if not m:
+        raise ValueError(f"not a lesson key: {key}")
+    return m.group(1), int(m.group(2)), m.group(3)
+
+
+def lesson_keys(level="a1"):
+    """Every lesson file that exists, in teaching order. Globbed rather than
+    generated from a range, so parts appear without being listed anywhere."""
+    folder = ES / "lessons" / level
+    if not folder.exists():
+        return []
+    return sorted(p.stem for p in folder.glob(f"{level}-*.json") if KEY.match(p.stem))
+
+
+def unit_parts(level, number):
+    """The part keys sharing this slot, or [] when the lesson is not split."""
+    return [k for k in lesson_keys(level)
+            if parse_key(k)[1] == number and parse_key(k)[2]]
+
+
+def story_ref(key):
+    """The story a lesson file points at, if any."""
+    path = ES / "lessons" / key.split("-")[0] / f"{key}.json"
+    if not path.exists():
+        return None
+    for section in read(path).get("sections", []):
+        if section["type"] == "story":
+            return section["ref"]
+    return None
+
+
 def load_master():
     """The Overview table of guides/a1.md, which owns every lesson's title and
     communicative goal. Only the first numbered table is read — the file has
@@ -189,12 +237,14 @@ def load_master():
 
     master, started = {}, False
     for line in path.read_text(encoding="utf-8").splitlines():
-        row = re.match(r"^\|\s*(\d{1,2})\s*\|(.+)\|\s*$", line)
+        # Keyed by the label in the first column — "3" for a whole lesson,
+        # "3a" for a part of a split one.
+        row = re.match(r"^\|\s*(\d{1,2}[a-z]?)\s*\|(.+)\|\s*$", line)
         if row:
             started = True
             cells = [c.strip() for c in row.group(2).split("|")]
             if len(cells) >= 3:
-                master.setdefault(int(row.group(1)), {
+                master.setdefault(row.group(1), {
                     "title": cells[0], "goal": cells[1], "grammar": cells[2]
                 })
         elif started and line.startswith("#"):
@@ -222,22 +272,24 @@ class Report:
 
 
 def audit(key):
-    """key is like 'a1-01'. Returns None for a lesson with no file, and the
-    string 'review' for a consolidation lesson that this spec does not cover."""
-    number = int(key.split("-")[1])
+    """key is like 'a1-01', or 'a1-03b' for one part of a split lesson.
+    Returns None for a lesson with no file, and the string 'review' for a
+    consolidation lesson that this spec does not cover."""
+    level, number, part = parse_key(key)
     if number in REVIEW_LESSONS:
         return "review"
     r = Report(key)
 
-    lesson_path = ES / "lessons" / "a1" / f"{key}.json"
+    lesson_path = ES / "lessons" / level / f"{key}.json"
     if not lesson_path.exists():
         return None
     lesson = read(lesson_path)
+    siblings = unit_parts(level, number) if part else []
 
     # --- agrees with the master curriculum -------------------------------
     # guides/a1.md owns title and goal. They drifted once, silently, because
     # nothing compared them; this is what stops that happening again.
-    row = MASTER.get(number)
+    row = MASTER.get(f"{number}{part}")
     if row:
         r.rule(lesson.get("title") == row["title"], "title matches guides/a1.md",
                f'file "{lesson.get("title")}" vs master "{row["title"]}"')
@@ -267,7 +319,12 @@ def audit(key):
         if vp.exists():
             words = read(vp).get("words", [])
     target = NEW_WORDS.get(number)
-    if target:
+    if target and siblings:
+        # A split lesson shares one slot's word budget between its parts.
+        share = target // len(siblings)
+        r.rule(len(words) == share, "vocabulary hits its share of the target",
+               f"{len(words)} words, share {share} of {target}")
+    elif target:
         r.rule(len(words) == target, "vocabulary hits its new-word target",
                f"{len(words)} words, target {target}")
 
@@ -304,9 +361,22 @@ def audit(key):
             for e in read(ep).get("exercises", []):
                 all_ex[e["id"]] = e
 
-    total_expected = sum(EXERCISE_SPLIT.values())
+    story_section = section("story")
+
+    # A part carries the short block; only the part that owns the unit's story
+    # also asks Reading questions about it.
+    if siblings:
+        split = dict(PART_SPLIT)
+        if story_section:
+            split["Reading"] = PART_READING
+        min_types = MIN_PART_PRACTICE_TYPES
+    else:
+        split = dict(EXERCISE_SPLIT)
+        min_types = MIN_PRACTICE_TYPES
+
+    total_expected = sum(split.values())
     used = []
-    for title, count in EXERCISE_SPLIT.items():
+    for title, count in split.items():
         grp = section("exercise-group", title)
         if not grp:
             r.rule(False, f"has a '{title}' exercise group", "missing")
@@ -316,8 +386,8 @@ def audit(key):
         r.rule(len(refs) == count, f"'{title}' has {count} exercises", f"{len(refs)}")
         if title == "Practice":
             types = {all_ex[i]["type"] for i in refs if i in all_ex}
-            r.rule(len(types) >= MIN_PRACTICE_TYPES,
-                   f"practice spans {MIN_PRACTICE_TYPES}+ distinct types",
+            r.rule(len(types) >= min_types,
+                   f"practice spans {min_types}+ distinct types",
                    f"{len(types)}: {sorted(types)}")
 
     r.rule(len(used) == total_expected, f"lesson uses {total_expected} exercises",
@@ -328,30 +398,40 @@ def audit(key):
     # --- goals and checklist ---------------------------------------------
     goals = (section("goal") or {}).get("items", [])
     checks = (section("checklist") or {}).get("items", [])
-    r.rule(len(checks) == CHECKLIST_ITEMS, f"exactly {CHECKLIST_ITEMS} checklist items",
-           f"{len(checks)}")
+    if siblings:
+        lo, hi = PART_CHECKLIST
+        r.rule(lo <= len(checks) <= hi, f"{lo}-{hi} checklist items", f"{len(checks)}")
+    else:
+        r.rule(len(checks) == CHECKLIST_ITEMS,
+               f"exactly {CHECKLIST_ITEMS} checklist items", f"{len(checks)}")
     r.rule(len(goals) == len(checks), "goals and checklist are one-to-one",
            f"{len(goals)} goals vs {len(checks)} checks")
     bad = [c for c in checks if not c.startswith(CHECKLIST_PREFIX)]
     r.rule(not bad, f'every checklist item begins "{CHECKLIST_PREFIX}"', str(bad))
 
     # --- coverage: every new word in the story and in an exercise ---------
-    story_section = section("story")
-    story_words = 0
-    if story_section:
-        sp = ES / story_section["ref"]
+    # A part without a story is still checked against the unit's story, which
+    # one of its siblings owns: the words are met in the same reading.
+    own_story = story_section["ref"] if story_section else None
+    unit_story = own_story or next(
+        (ref for k in siblings if k != key for ref in [story_ref(k)] if ref), None)
+
+    if unit_story:
+        sp = ES / unit_story
         if sp.exists():
             story = read(sp)
             paras = [p["text"] for p in story.get("paragraphs", [])]
-            story_words = sum(len(p.split()) for p in paras)
             blob = norm(" ".join(paras))
             missing, unsure = find_missing(words, blob)
             r.rule(not missing, "every new word appears in the story", str(missing))
             if unsure:
                 r.warn("verbs not found literally in the story (check conjugated forms)",
                        str(unsure))
-            lo, hi = STORY_WORDS
-            r.rule(lo <= story_words <= hi, f"story is {lo}-{hi} words", f"{story_words}")
+            if own_story:
+                story_words = sum(len(p.split()) for p in paras)
+                lo, hi = STORY_WORDS
+                r.rule(lo <= story_words <= hi, f"story is {lo}-{hi} words",
+                       f"{story_words}")
 
     ex_blob = norm(json.dumps([all_ex[i] for i in used if i in all_ex], ensure_ascii=False))
     missing_ex, unsure_ex = find_missing(words, ex_blob)
@@ -374,10 +454,10 @@ def check_teaching_order(keys):
     known = set()
 
     for key in sorted(keys):
-        number = int(key.split("-")[1])
+        level, number, _ = parse_key(key)
         if number in REVIEW_LESSONS:
             continue
-        lesson_path = ES / "lessons" / "a1" / f"{key}.json"
+        lesson_path = ES / "lessons" / level / f"{key}.json"
         if not lesson_path.exists():
             continue
         lesson = read(lesson_path)
@@ -403,8 +483,41 @@ def check_teaching_order(keys):
     return issues
 
 
+def check_units(keys):
+    """Rules that belong to a split lesson as a whole rather than to a part."""
+    issues = []
+    numbers = sorted({parse_key(k)[1] for k in keys if parse_key(k)[2]})
+
+    for number in numbers:
+        parts = unit_parts("a1", number)
+        label = "/".join(p.split("-")[1] for p in parts)
+
+        with_story = [k for k in parts if story_ref(k)]
+        if len(with_story) != 1:
+            issues.append(f"a1-{label}: exactly one part carries the story — "
+                          f"{len(with_story)} do")
+
+        total = 0
+        for k in parts:
+            lesson = read(ES / "lessons" / "a1" / f"{k}.json")
+            for section in lesson.get("sections", []):
+                if section["type"] == "vocabulary":
+                    vp = ES / section["ref"]
+                    if vp.exists():
+                        total += len(read(vp).get("words", []))
+        target = NEW_WORDS.get(number)
+        if target and total != target:
+            issues.append(f"a1-{label}: parts teach {total} new words, "
+                          f"slot target {target}")
+
+    return issues
+
+
 def main():
-    keys = sys.argv[1:] or [f"a1-{n:02d}" for n in TEACHING_LESSONS]
+    # Globbed, not generated from a range, so a lesson split into parts is
+    # picked up without being listed anywhere. Review lessons are included
+    # and reported as skipped.
+    keys = sys.argv[1:] or lesson_keys("a1")
 
     failed = skipped = 0
     for key in keys:
@@ -425,6 +538,12 @@ def main():
         for w in r.warnings:
             print(f"  warn  {w}")
 
+    unit_issues = check_units(keys)
+    if unit_issues:
+        print("\nSplit lessons:")
+        for issue in unit_issues:
+            print(f"  FAIL  {issue}")
+
     order_issues = check_teaching_order(keys)
     if order_issues:
         print("\nAsked for before it was taught:")
@@ -434,9 +553,11 @@ def main():
     print()
     if skipped:
         print(f"{skipped} review lesson(s) skipped")
-    if failed or order_issues:
+    if failed or order_issues or unit_issues:
         if failed:
             print(f"{failed} lesson(s) need work")
+        if unit_issues:
+            print(f"{len(unit_issues)} split-lesson rule(s) broken")
         if order_issues:
             print(f"{len(order_issues)} exercise(s) test untaught Spanish")
         return 1

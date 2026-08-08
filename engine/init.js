@@ -41,8 +41,10 @@ function _attachLessonClose() {
     const btn = document.getElementById('lesson-close-btn');
     if (btn) btn.addEventListener('click', closeLesson);
 
-    const nextBtn = document.getElementById('lesson-next-btn');
-    if (nextBtn) nextBtn.addEventListener('click', nextLessonStep);
+    // The Continue button is not bound here: renderStep() sets its onclick
+    // every step, because the last step has to call finishLesson instead. A
+    // listener here as well fired alongside that onclick, so one press
+    // advanced two steps and the learner never saw every other screen.
 }
 
 // --------------------------------------------

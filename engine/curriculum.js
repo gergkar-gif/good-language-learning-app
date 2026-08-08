@@ -97,7 +97,7 @@ function levelDetailHtml(level) {
         return `
             <li>
                 <button class="lesson-row is-${state}" data-start-lesson="${UI.escape(lesson.id)}">
-                    <span class="lesson-row-num">${String(i + 1).padStart(2, '0')}</span>
+                    <span class="lesson-row-num">${UI.escape(lesson.label || String(i + 1).padStart(2, '0'))}</span>
                     <span class="lesson-row-title">${UI.escape(lesson.title)}</span>
                     <span class="lesson-row-time">${minutes}</span>
                     <span class="lesson-row-state" aria-label="${state}">${

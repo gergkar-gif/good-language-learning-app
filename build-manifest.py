@@ -80,6 +80,11 @@ def build_curriculum(lang="es"):
                         data = json.load(fh)
                     level_lessons.append({
                         "id": data.get("id", f"lesson.{level_id}.{f.stem}"),
+                        # The number shown on the lesson row. Taken from the
+                        # filename rather than the row's position, because a
+                        # lesson split into parts (a1-03a, a1-03b, a1-03c)
+                        # must keep slot 3 instead of pushing 04 down to 06.
+                        "label": f.stem.split("-", 1)[-1],
                         "title": data.get("title", f.stem),
                         "grammar": data.get("grammar", ""),
                         "goal": data.get("goal", ""),

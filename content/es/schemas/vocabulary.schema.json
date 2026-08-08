@@ -10,12 +10,12 @@
   "properties": {
     "id": {
       "type": "string",
-      "pattern": "^vocab\\.(a1|a2|b1|b2|c1)\\.\\d{2}$",
+      "pattern": "^vocab\\.(a1|a2|b1|b2|c1)\\.\\d{2}[a-z]?$",
       "examples": ["vocab.a1.01"]
     },
     "lesson": {
       "type": "string",
-      "pattern": "^(a1|a2|b1|b2|c1)-\\d{2}$",
+      "pattern": "^(a1|a2|b1|b2|c1)-\\d{2}[a-z]?$",
       "examples": ["a1-01"]
     },
     "title": { "type": "string", "minLength": 1 },

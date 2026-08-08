@@ -10,7 +10,7 @@
   "properties": {
     "id": {
       "type": "string",
-      "pattern": "^lesson\\.(a1|a2|b1|b2|c1)\\.\\d{2}$",
+      "pattern": "^lesson\\.(a1|a2|b1|b2|c1)\\.\\d{2}[a-z]?$",
       "description": "Stable identifier, also the progress key. Must match the id used in curriculum/curriculum.json.",
       "examples": ["lesson.a1.01"]
     },

@@ -12,7 +12,7 @@
   "properties": {
     "lesson": {
       "type": "string",
-      "pattern": "^(a1|a2|b1|b2|c1)-\\d{2}$",
+      "pattern": "^(a1|a2|b1|b2|c1)-\\d{2}[a-z]?$",
       "description": "Owning lesson, e.g. a1-01.",
       "examples": [
         "a1-01"

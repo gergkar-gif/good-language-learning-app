@@ -7,6 +7,9 @@ Rewritten 2026-08-07 to match each lesson's actual story (`vocabularyTopics` fie
 | 1 | Greetings, names, countries | 10 |
 | 2 | Café, food, drinks | 10 |
 | 3 | Friends, nationalities, adjectives | 12 |
+| 3a | — of which: friends, introductions | 4 |
+| 3b | — of which: people, family, languages | 4 |
+| 3c | — of which: nationalities, adjectives | 4 |
 | 4 | City, places | 12 |
 | 5 | Family | 15 |
 | 6 | Daily routine, work | 15 |
