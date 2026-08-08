@@ -12,15 +12,19 @@
       "type": "goal",
       "title": "Lesson Goals",
       "items": [
-        "Name kitchen items and common ingredients",
-        "Follow a simple cooking instruction",
-        "Put steps in order with 'primero', 'después' and 'luego'",
-        "Follow a conversation while cooking"
+        "Name ingredients and things on the table",
+        "Tell one person to do something",
+        "Put instructions in order with 'primero', 'después' and 'luego'",
+        "Follow a recipe given out loud"
       ]
     },
     {
       "type": "grammar",
-      "ref": "grammar/a1/a1-09-gr.json"
+      "ref": "grammar/a1/a1-09-cocina-gr.json"
+    },
+    {
+      "type": "grammar",
+      "ref": "grammar/a1/a1-09-imperativo-gr.json"
     },
     {
       "type": "exercise-group",
@@ -28,8 +32,9 @@
       "ref": "exercises/a1/a1-09-ex.json",
       "exerciseRefs": [
         "a1-09-practice-match",
-        "a1-09-practice-choice",
-        "a1-09-practice-blank",
+        "a1-09-practice-imperativo",
+        "a1-09-practice-prepara",
+        "a1-09-practice-mezcla",
         "a1-09-practice-build",
         "a1-09-practice-order"
       ]
@@ -48,7 +53,9 @@
       "title": "Reading",
       "ref": "exercises/a1/a1-09-ex.json",
       "exerciseRefs": [
-        "a1-09-reading-choice",
+        "a1-09-reading-tareas",
+        "a1-09-reading-sal",
+        "a1-09-reading-paises",
         "a1-09-reading-order"
       ]
     },
@@ -57,7 +64,9 @@
       "title": "Dialogue",
       "ref": "exercises/a1/a1-09-ex.json",
       "exerciseRefs": [
-        "a1-09-dialogue"
+        "a1-09-dialogue-queso",
+        "a1-09-dialogue-bien",
+        "a1-09-dialogue-tarea"
       ]
     },
     {
@@ -65,7 +74,8 @@
       "title": "Writing",
       "ref": "exercises/a1/a1-09-ex.json",
       "exerciseRefs": [
-        "a1-09-writing"
+        "a1-09-writing-instrucciones",
+        "a1-09-writing-cena"
       ]
     },
     {
@@ -76,10 +86,10 @@
       "type": "checklist",
       "title": "Can you do this?",
       "items": [
-        "I can name kitchen items and common ingredients",
-        "I can follow a simple cooking instruction",
-        "I can put steps in order with 'primero', 'después' and 'luego'",
-        "I can follow a conversation while cooking"
+        "I can name ingredients and things on the table",
+        "I can tell one person to do something",
+        "I can put instructions in order with 'primero', 'después' and 'luego'",
+        "I can follow a recipe given out loud"
       ]
     }
   ]
