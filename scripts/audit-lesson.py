@@ -433,7 +433,13 @@ def audit(key):
                 r.rule(lo <= story_words <= hi, f"story is {lo}-{hi} words",
                        f"{story_words}")
 
-    ex_blob = norm(json.dumps([all_ex[i] for i in used if i in all_ex], ensure_ascii=False))
+    # Ids and teaches slugs are metadata, not content the learner ever sees.
+    # Left in, they satisfy this rule by accident: 'la semana' counted as
+    # practised because an exercise was called a1-06-writing-semana.
+    seen_by_learner = [{k: v for k, v in all_ex[i].items()
+                        if k not in ("id", "teaches")}
+                       for i in used if i in all_ex]
+    ex_blob = norm(json.dumps(seen_by_learner, ensure_ascii=False))
     missing_ex, unsure_ex = find_missing(words, ex_blob)
     r.rule(not missing_ex, "every new word appears in an exercise", str(missing_ex))
     if unsure_ex:
