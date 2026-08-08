@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Parlour — voice check</title>
+<!--
+  Whether Parlour can read a language aloud depends entirely on the device,
+  and the answer differs by platform in ways that are not worth guessing at:
+  Windows ships English plus the system language and nothing else, Android
+  usually has Google's engine and can fetch a language on demand, iOS ships
+  most major languages, desktop Linux frequently has none.
+
+  This page measures it instead. Open it on any device and it lists every
+  voice that device reports, says whether the course languages are covered,
+  and — the part that matters — actually speaks through each one so you can
+  tell a voice that works from a voice that is merely listed. A device can
+  advertise a language whose data was never downloaded, and that failure is
+  silent: the app would show a listen button that does nothing.
+
+  Self-contained on purpose. No stylesheet, no script, no font: copy it to a
+  phone and open it from local storage if serving it is inconvenient.
+-->
+<style>
+  :root {
+    --bg:#F5F1E8; --surface:#fff; --primary:#17365B; --accent:#DC4E2E;
+    --border:#E4DDCF; --muted:#6B6354; --ok:#2F6B45;
+    --serif:'Source Serif 4','Source Serif Pro',Charter,Georgia,serif;
+  }
+  * { box-sizing:border-box; margin:0; }
+  body {
+    background:var(--bg); color:#1F1B16; padding:28px 20px 60px;
+    font:16px/1.5 Inter,'Segoe UI',system-ui,sans-serif;
+    max-width:760px; margin:0 auto;
+  }
+  h1 { font-family:var(--serif); font-size:30px; font-weight:600; color:var(--primary); }
+  .lede { color:var(--muted); margin:6px 0 26px; }
+  h2 { font-family:var(--serif); font-size:20px; font-weight:600; color:var(--primary); margin:30px 0 10px; }
+
+  .card { background:var(--surface); border:1px solid var(--border); border-radius:12px;
+          padding:16px 18px; margin-bottom:10px; }
+  .lang-head { display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; }
+  .lang-name { font-family:var(--serif); font-size:22px; color:var(--primary); }
+  .verdict { font-weight:600; }
+  .verdict.yes { color:var(--ok); }
+  .verdict.no  { color:var(--accent); }
+  .detail { color:var(--muted); font-size:14px; margin-top:4px; }
+
+  table { width:100%; border-collapse:collapse; margin-top:6px; }
+  th { text-align:left; font-size:12px; letter-spacing:.06em; text-transform:uppercase;
+       color:var(--muted); font-weight:600; padding:8px 8px 8px 0; border-bottom:1px solid var(--border); }
+  td { padding:10px 8px 10px 0; border-bottom:1px solid var(--border); vertical-align:top; font-size:15px; }
+  tr:last-child td { border-bottom:0; }
+  .tag { font-size:11px; letter-spacing:.04em; text-transform:uppercase; color:var(--muted);
+         border:1px solid var(--border); border-radius:99px; padding:2px 7px; white-space:nowrap; }
+  .mono { font-variant-numeric:tabular-nums; font-family:ui-monospace,'Cascadia Mono',Menlo,monospace; font-size:13px; }
+
+  button { font:inherit; font-size:14px; cursor:pointer; border-radius:8px; padding:7px 13px;
+           border:1px solid var(--primary); background:var(--surface); color:var(--primary); }
+  button:hover { background:var(--primary); color:#fff; }
+  button.primary { background:var(--primary); color:#fff; }
+  button.primary:hover { background:var(--accent); border-color:var(--accent); }
+
+  .status { font-size:13px; margin-top:5px; }
+  .status.ok   { color:var(--ok); }
+  .status.bad  { color:var(--accent); }
+  .status.wait { color:var(--muted); }
+
+  .warn { background:#FDF0EC; border:1px solid var(--accent); border-radius:12px;
+          padding:16px 18px; margin-bottom:20px; color:#7A2A14; }
+  .actions { display:flex; gap:10px; flex-wrap:wrap; margin-top:22px; }
+  textarea { width:100%; height:190px; margin-top:12px; font-family:ui-monospace,Menlo,monospace;
+             font-size:12px; border:1px solid var(--border); border-radius:10px; padding:12px;
+             background:var(--surface); color:#1F1B16; }
+  footer { margin-top:30px; color:var(--muted); font-size:13px; }
+</style>
+</head>
+<body>
+
+<h1>Voice check</h1>
+<p class="lede">What this device can actually speak. Press play on a voice to hear it — a
+device can list a language whose data was never installed, and that only shows up when
+you try.</p>
+
+<div id="unsupported"></div>
+<div id="summary"></div>
+
+<h2>Every voice on this device</h2>
+<div id="all" class="card"><p class="detail">Looking for voices…</p></div>
+
+<div class="actions">
+  <button id="refresh">Refresh list</button>
+  <button id="report" class="primary">Show report to copy</button>
+</div>
+<div id="report-out"></div>
+
+<footer>Parlour · this page needs no network and stores nothing.</footer>
+
+<script>
+(function () {
+  'use strict';
+
+  // The languages Parlour teaches or plans to. English is included as a
+  // control: if it is missing too, the problem is the device, not the course.
+  var LANGS = [
+    { code: 'es', name: 'Spanish',   sample: 'Hola, buenos días. ¿Cómo estás?' },
+    { code: 'hu', name: 'Hungarian', sample: 'Jó reggelt! Hogy vagy?' },
+    { code: 'en', name: 'English',   sample: 'This is the control voice.' }
+  ];
+
+  var synth = window.speechSynthesis;
+  var results = {};   // voice key -> outcome string, for the report
+
+  function sampleFor(lang) {
+    var base = String(lang || '').slice(0, 2).toLowerCase();
+    for (var i = 0; i < LANGS.length; i++) {
+      if (LANGS[i].code === base) return LANGS[i].sample;
+    }
+    return 'One two three.';
+  }
+
+  function voicesFor(code) {
+    if (!synth) return [];
+    return synth.getVoices().filter(function (v) {
+      return String(v.lang || '').slice(0, 2).toLowerCase() === code;
+    });
+  }
+
+  function key(v) { return v.name + '|' + v.lang; }
+
+  function esc(s) {
+    return String(s == null ? '' : s)
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+
+  // Speak through one voice and report what actually happened. The useful
+  // case is the silent one: no start, no end, no error — the voice exists on
+  // paper and produces nothing. Only a timeout catches that.
+  function play(voice, statusEl) {
+    if (!synth) return;
+    synth.cancel();
+
+    var utterance = new SpeechSynthesisUtterance(sampleFor(voice.lang));
+    try { utterance.voice = voice; } catch (e) { /* lang alone still steers it */ }
+    utterance.lang = voice.lang;
+    utterance.rate = 0.9;
+
+    var settled = false;
+    function settle(cls, text) {
+      if (settled) return;
+      settled = true;
+      statusEl.className = 'status ' + cls;
+      statusEl.textContent = text;
+      results[key(voice)] = text;
+    }
+
+    statusEl.className = 'status wait';
+    statusEl.textContent = 'Playing…';
+
+    utterance.onstart = function () { settle('ok', 'Speaking — you should hear it now.'); };
+    utterance.onend   = function () { if (!settled) settle('ok', 'Finished — it played.'); };
+    utterance.onerror = function (e) { settle('bad', 'Failed: ' + (e.error || 'unknown error') + '.'); };
+
+    setTimeout(function () {
+      settle('bad', 'No sound. The voice is listed but produced nothing — its data is probably not installed.');
+    }, 4000);
+
+    synth.speak(utterance);
+  }
+
+  function renderSummary() {
+    var host = document.getElementById('summary');
+    host.innerHTML = '';
+
+    LANGS.forEach(function (lang) {
+      var found = voicesFor(lang.code);
+      var offline = found.filter(function (v) { return v.localService; }).length;
+
+      var card = document.createElement('div');
+      card.className = 'card';
+
+      var verdict = found.length
+        ? '<span class="verdict yes">' + found.length + ' voice' + (found.length > 1 ? 's' : '') + '</span>'
+        : '<span class="verdict no">none installed</span>';
+
+      var detail = found.length
+        ? (offline ? offline + (offline > 1 ? ' work' : ' works') + ' offline. '
+                   : 'All need a network connection. ') +
+          'Parlour will show listen buttons for this language.'
+        : 'Parlour hides its listen buttons for this language on this device.';
+
+      card.innerHTML =
+        '<div class="lang-head"><span class="lang-name">' + lang.name + '</span>' + verdict + '</div>' +
+        '<p class="detail">' + detail + '</p>';
+
+      if (found.length) {
+        var btn = document.createElement('button');
+        btn.textContent = 'Hear ' + lang.name;
+        btn.style.marginTop = '10px';
+        var status = document.createElement('p');
+        status.className = 'status';
+        btn.onclick = function () { play(found[0], status); };
+        card.appendChild(btn);
+        card.appendChild(status);
+      }
+
+      host.appendChild(card);
+    });
+  }
+
+  function renderAll() {
+    var host = document.getElementById('all');
+    var voices = synth ? synth.getVoices() : [];
+
+    if (!voices.length) {
+      host.innerHTML = '<p class="detail">No voices reported yet. On some browsers the list ' +
+        'arrives a moment after the page loads — press <strong>Refresh list</strong>.</p>';
+      return;
+    }
+
+    var rows = voices.map(function (v) {
+      return '<tr>' +
+        '<td>' + esc(v.name) +
+          (v.default ? ' <span class="tag">default</span>' : '') +
+          '<p class="status" data-status="' + esc(key(v)) + '"></p></td>' +
+        '<td class="mono">' + esc(v.lang) + '</td>' +
+        '<td>' + (v.localService ? '<span class="tag">offline</span>' : '<span class="tag">network</span>') + '</td>' +
+        '<td><button data-play="' + esc(key(v)) + '">Play</button></td>' +
+      '</tr>';
+    }).join('');
+
+    host.innerHTML =
+      '<table><thead><tr><th>Voice</th><th>Lang</th><th>Where</th><th></th></tr></thead>' +
+      '<tbody>' + rows + '</tbody></table>';
+
+    host.querySelectorAll('[data-play]').forEach(function (btn) {
+      btn.onclick = function () {
+        var k = btn.getAttribute('data-play');
+        var voice = voices.filter(function (v) { return key(v) === k; })[0];
+        var status = host.querySelector('[data-status="' + k.replace(/"/g, '\\"') + '"]');
+        if (voice && status) play(voice, status);
+      };
+    });
+  }
+
+  function render() {
+    if (!synth) {
+      document.getElementById('unsupported').innerHTML =
+        '<div class="warn"><strong>This browser has no speech synthesis at all.</strong> ' +
+        'Parlour will hide every listen button here, whichever language you study.</div>';
+      document.getElementById('all').innerHTML = '<p class="detail">Nothing to list.</p>';
+      return;
+    }
+    renderSummary();
+    renderAll();
+  }
+
+  document.getElementById('refresh').onclick = render;
+
+  document.getElementById('report').onclick = function () {
+    var voices = synth ? synth.getVoices() : [];
+    var lines = [
+      'Parlour voice check',
+      new Date().toISOString(),
+      '',
+      'User agent: ' + navigator.userAgent,
+      'Speech synthesis: ' + (synth ? 'available' : 'NOT AVAILABLE'),
+      'Voices reported: ' + voices.length,
+      ''
+    ];
+    LANGS.forEach(function (l) {
+      var f = voicesFor(l.code);
+      lines.push(l.name + ': ' + (f.length ? f.length + ' voice(s)' : 'NONE'));
+    });
+    lines.push('', 'Full list:');
+    voices.forEach(function (v) {
+      lines.push('  ' + v.lang + '  ' + v.name +
+        (v.localService ? '  [offline]' : '  [network]') +
+        (results[key(v)] ? '  -> ' + results[key(v)] : ''));
+    });
+
+    document.getElementById('report-out').innerHTML =
+      '<textarea readonly>' + esc(lines.join('\n')) + '</textarea>';
+  };
+
+  // Chrome fills the list asynchronously, sometimes in more than one batch.
+  if (synth && typeof synth.addEventListener === 'function') {
+    synth.addEventListener('voiceschanged', render);
+  }
+  render();
+  setTimeout(render, 1200);   // catch late arrivals without a manual refresh
+})();
+</script>
+</body>
+</html>
