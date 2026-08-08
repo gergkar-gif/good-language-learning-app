@@ -12,15 +12,32 @@
       "type": "goal",
       "title": "Lesson Goals",
       "items": [
-        "Count and say numbers up to one hundred",
-        "Tell the time and say when something happens",
-        "Ask for and give a phone number",
-        "Follow a conversation about times and numbers"
+        "Count and read numbers up to a hundred",
+        "Ask and say what time it is",
+        "Say what time something happens",
+        "Handle money, bus numbers and stops"
       ]
     },
     {
       "type": "grammar",
-      "ref": "grammar/a1/a1-12-gr.json"
+      "ref": "grammar/a1/a1-12-numeros-gr.json"
+    },
+    {
+      "type": "grammar",
+      "ref": "grammar/a1/a1-12-hora-gr.json"
+    },
+    {
+      "type": "exercise-group",
+      "title": "Practice",
+      "ref": "exercises/a1/a1-12-ex.json",
+      "exerciseRefs": [
+        "a1-12-practice-match",
+        "a1-12-practice-hora",
+        "a1-12-practice-alas",
+        "a1-12-practice-una",
+        "a1-12-practice-build",
+        "a1-12-practice-order"
+      ]
     },
     {
       "type": "vocabulary",
@@ -33,29 +50,13 @@
     },
     {
       "type": "exercise-group",
-      "title": "Vocabulary",
-      "ref": "exercises/a1/a1-12-ex.json",
-      "exerciseRefs": [
-        "a1-12-vocab-01",
-        "a1-12-vocab-02"
-      ]
-    },
-    {
-      "type": "exercise-group",
-      "title": "Grammar",
-      "ref": "exercises/a1/a1-12-ex.json",
-      "exerciseRefs": [
-        "a1-12-grammar-01",
-        "a1-12-grammar-02"
-      ]
-    },
-    {
-      "type": "exercise-group",
       "title": "Reading",
       "ref": "exercises/a1/a1-12-ex.json",
       "exerciseRefs": [
-        "a1-12-reading-01",
-        "a1-12-reading-02"
+        "a1-12-reading-museo",
+        "a1-12-reading-autobus",
+        "a1-12-reading-dinero",
+        "a1-12-reading-order"
       ]
     },
     {
@@ -63,8 +64,9 @@
       "title": "Dialogue",
       "ref": "exercises/a1/a1-12-ex.json",
       "exerciseRefs": [
-        "a1-12-dialogue-01",
-        "a1-12-dialogue-02"
+        "a1-12-dialogue-hora",
+        "a1-12-dialogue-parada",
+        "a1-12-dialogue-telefono"
       ]
     },
     {
@@ -72,7 +74,8 @@
       "title": "Writing",
       "ref": "exercises/a1/a1-12-ex.json",
       "exerciseRefs": [
-        "a1-12-writing-01"
+        "a1-12-writing-hora",
+        "a1-12-writing-autobus"
       ]
     },
     {
@@ -83,10 +86,10 @@
       "type": "checklist",
       "title": "Can you do this?",
       "items": [
-        "I can count and say numbers up to one hundred",
-        "I can tell the time and say when something happens",
-        "I can ask for and give a phone number",
-        "I can follow a conversation about times and numbers"
+        "I can count and read numbers up to a hundred",
+        "I can ask and say what time it is",
+        "I can say what time something happens",
+        "I can handle money, bus numbers and stops"
       ]
     }
   ]
