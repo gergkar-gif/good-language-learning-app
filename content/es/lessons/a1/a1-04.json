@@ -15,12 +15,29 @@
         "Say what there is in a place using 'hay'",
         "Say where something is using 'estar'",
         "Name common places in a city",
-        "Ask if there's a lot of something using 'hay'"
+        "Say which place is your favourite and why"
       ]
     },
     {
       "type": "grammar",
-      "ref": "grammar/a1/a1-04-gr.json"
+      "ref": "grammar/a1/a1-04-ciudad-gr.json"
+    },
+    {
+      "type": "grammar",
+      "ref": "grammar/a1/a1-04-estar-gr.json"
+    },
+    {
+      "type": "exercise-group",
+      "title": "Practice",
+      "ref": "exercises/a1/a1-04-ex.json",
+      "exerciseRefs": [
+        "a1-04-practice-match",
+        "a1-04-practice-hay",
+        "a1-04-practice-cual",
+        "a1-04-practice-build",
+        "a1-04-practice-order",
+        "a1-04-practice-estan"
+      ]
     },
     {
       "type": "vocabulary",
@@ -33,29 +50,13 @@
     },
     {
       "type": "exercise-group",
-      "title": "Vocabulary",
-      "ref": "exercises/a1/a1-04-ex.json",
-      "exerciseRefs": [
-        "a1-04-vocab-01",
-        "a1-04-vocab-02"
-      ]
-    },
-    {
-      "type": "exercise-group",
-      "title": "Grammar",
-      "ref": "exercises/a1/a1-04-ex.json",
-      "exerciseRefs": [
-        "a1-04-grammar-01",
-        "a1-04-grammar-02"
-      ]
-    },
-    {
-      "type": "exercise-group",
       "title": "Reading",
       "ref": "exercises/a1/a1-04-ex.json",
       "exerciseRefs": [
-        "a1-04-reading-01",
-        "a1-04-reading-02"
+        "a1-04-reading-primero",
+        "a1-04-reading-mercado",
+        "a1-04-reading-libro",
+        "a1-04-reading-order"
       ]
     },
     {
@@ -63,8 +64,9 @@
       "title": "Dialogue",
       "ref": "exercises/a1/a1-04-ex.json",
       "exerciseRefs": [
-        "a1-04-dialogue-01",
-        "a1-04-dialogue-02"
+        "a1-04-dialogue-gente",
+        "a1-04-dialogue-donde",
+        "a1-04-dialogue-favorito"
       ]
     },
     {
@@ -72,7 +74,8 @@
       "title": "Writing",
       "ref": "exercises/a1/a1-04-ex.json",
       "exerciseRefs": [
-        "a1-04-writing-01"
+        "a1-04-writing-barrio",
+        "a1-04-writing-favorito"
       ]
     },
     {
@@ -84,9 +87,9 @@
       "title": "Can you do this?",
       "items": [
         "I can say what there is somewhere using 'hay'",
-        "I can say where something is using 'está'",
+        "I can say where something is using 'está' and 'están'",
         "I can name common places in a city",
-        "I followed the story about the group's Saturday in Hanoi"
+        "I can say which place is my favourite and why"
       ]
     }
   ]
