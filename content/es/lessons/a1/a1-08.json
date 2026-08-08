@@ -12,15 +12,32 @@
       "type": "goal",
       "title": "Lesson Goals",
       "items": [
-        "Name common things you buy in a supermarket",
-        "Ask how much something costs",
-        "Say what you want and need with 'querer' and 'necesitar'",
-        "Follow a conversation while shopping"
+        "Say what you need using 'necesitar'",
+        "Name the food on a shopping list",
+        "Ask what something costs",
+        "Pay at the checkout"
       ]
     },
     {
       "type": "grammar",
-      "ref": "grammar/a1/a1-08-gr.json"
+      "ref": "grammar/a1/a1-08-compra-gr.json"
+    },
+    {
+      "type": "grammar",
+      "ref": "grammar/a1/a1-08-precios-gr.json"
+    },
+    {
+      "type": "exercise-group",
+      "title": "Practice",
+      "ref": "exercises/a1/a1-08-ex.json",
+      "exerciseRefs": [
+        "a1-08-practice-match",
+        "a1-08-practice-necesito",
+        "a1-08-practice-cuanto",
+        "a1-08-practice-pagar",
+        "a1-08-practice-build",
+        "a1-08-practice-order"
+      ]
     },
     {
       "type": "vocabulary",
@@ -33,29 +50,13 @@
     },
     {
       "type": "exercise-group",
-      "title": "Vocabulary",
-      "ref": "exercises/a1/a1-08-ex.json",
-      "exerciseRefs": [
-        "a1-06-vocab-01",
-        "a1-06-vocab-02"
-      ]
-    },
-    {
-      "type": "exercise-group",
-      "title": "Grammar",
-      "ref": "exercises/a1/a1-08-ex.json",
-      "exerciseRefs": [
-        "a1-06-grammar-01",
-        "a1-06-grammar-02"
-      ]
-    },
-    {
-      "type": "exercise-group",
       "title": "Reading",
       "ref": "exercises/a1/a1-08-ex.json",
       "exerciseRefs": [
-        "a1-06-reading-01",
-        "a1-06-reading-02"
+        "a1-08-reading-lista",
+        "a1-08-reading-kaylee",
+        "a1-08-reading-precio",
+        "a1-08-reading-order"
       ]
     },
     {
@@ -63,8 +64,9 @@
       "title": "Dialogue",
       "ref": "exercises/a1/a1-08-ex.json",
       "exerciseRefs": [
-        "a1-06-dialogue-01",
-        "a1-06-dialogue-02"
+        "a1-08-dialogue-necesitamos",
+        "a1-08-dialogue-precio",
+        "a1-08-dialogue-caja"
       ]
     },
     {
@@ -72,7 +74,8 @@
       "title": "Writing",
       "ref": "exercises/a1/a1-08-ex.json",
       "exerciseRefs": [
-        "a1-06-writing-01"
+        "a1-08-writing-lista",
+        "a1-08-writing-caja"
       ]
     },
     {
@@ -83,10 +86,10 @@
       "type": "checklist",
       "title": "Can you do this?",
       "items": [
-        "I can name common things you buy in a supermarket",
-        "I can ask how much something costs",
-        "I can say what you want and need with 'querer' and 'necesitar'",
-        "I can follow a conversation while shopping"
+        "I can say what I need using 'necesitar'",
+        "I can name the food on a shopping list",
+        "I can ask what something costs",
+        "I can pay at the checkout"
       ]
     }
   ]
