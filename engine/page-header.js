@@ -30,6 +30,11 @@ const PAGE_HEADERS = {
         title: 'Decks',
         subtitle: 'Spaced repetition.',
         illustration: 'stack'
+    },
+    journey: {
+        title: 'My Journey',
+        subtitle: 'How far you have come.',
+        illustration: 'ascent'
     }
 };
 

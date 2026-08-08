@@ -1271,3 +1271,174 @@
 .lsn-table .speak-btn {
   font-size: 12px;
 }
+
+/* ============================================
+   MY JOURNEY
+   ============================================
+   Eight separate readings rather than one score. Each card answers one
+   question, and the numbers are large enough to read at a glance because
+   that is the whole point of the screen. */
+
+.jr-grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.jr-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 18px 20px 20px;
+}
+
+.jr-card-head { margin-bottom: 14px; }
+
+.jr-card-head h3 {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.jr-card-head p {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+/* The headline number for a card that has one. */
+.jr-big {
+  font-family: var(--font-display);
+  font-size: 34px;
+  line-height: 1.1;
+  color: var(--primary);
+  font-variant-numeric: tabular-nums;
+  margin-bottom: 10px;
+}
+
+.jr-of {
+  font-size: 16px;
+  color: var(--muted);
+}
+
+/* Rows of label / bar / count, used by curriculum and skills. */
+.jr-list { list-style: none; }
+
+.jr-row {
+  display: grid;
+  grid-template-columns: 1fr 90px auto;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 0;
+  font-size: 14px;
+}
+
+.jr-row-label { color: var(--text); }
+
+.jr-row-value {
+  color: var(--muted);
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+/* A skill with no data yet says so, in place of a bar that would read as
+   zero — which looks like failure rather than "not built". */
+.jr-row-muted .jr-row-label { color: var(--muted); }
+
+.jr-row-note {
+  grid-column: 2 / 4;
+  font-size: 12px;
+  color: var(--muted);
+  text-align: right;
+}
+
+.jr-track {
+  display: block;
+  height: 6px;
+  border-radius: 99px;
+  background: var(--border);
+  overflow: hidden;
+}
+
+.jr-fill {
+  display: block;
+  height: 100%;
+  border-radius: 99px;
+  background: var(--primary);
+}
+
+.jr-facts {
+  list-style: none;
+  margin-top: 12px;
+  border-top: 1px solid var(--border);
+  padding-top: 10px;
+}
+
+.jr-facts li {
+  font-size: 13px;
+  color: var(--muted);
+  padding: 3px 0;
+}
+
+.jr-facts strong {
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+}
+
+.jr-next {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 10px;
+}
+
+.jr-empty {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* Thirty days, one square each. Inactive days stay visible rather than
+   blank: the gaps are as informative as the marks. */
+.jr-days {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 5px;
+}
+
+.jr-day {
+  aspect-ratio: 1;
+  border-radius: 3px;
+  background: var(--border);
+}
+
+.jr-day.is-active { background: var(--primary); }
+
+.jr-milestones { list-style: none; }
+
+.jr-milestone {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.jr-milestone.is-reached { color: var(--text); }
+
+.jr-tick {
+  flex: 0 0 20px;
+  height: 20px;
+  border-radius: 99px;
+  border: 1px solid var(--border);
+  display: grid;
+  place-items: center;
+  font-size: 12px;
+  color: var(--surface);
+}
+
+.jr-milestone.is-reached .jr-tick {
+  background: var(--primary);
+  border-color: var(--primary);
+}

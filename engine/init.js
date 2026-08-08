@@ -27,6 +27,13 @@ function showTab(tabName, button) {
     if (tabName === 'review' && typeof showNextCard === 'function') {
         showNextCard();
     }
+
+    // Rendered on entry rather than kept up to date: everything on it is
+    // counted from data the rest of the app owns, so the only moment it can
+    // be wrong is the moment you walk in.
+    if (tabName === 'journey' && typeof Journey !== 'undefined') {
+        Journey.render();
+    }
 }
 
 // The Learn page is rendered by engine/curriculum.js. An earlier accordion

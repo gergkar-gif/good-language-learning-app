@@ -58,6 +58,41 @@ CURRICULUM_META = {
     "es": {"id": "curriculum.spanish.dele-a1-c1", "title": "Spanish — DELE aligned"}
 }
 
+def lesson_teaching_counts(lang, data):
+    """How many new words a lesson introduces, and how many exercises it has
+    of each category. My Journey needs these for every lesson at once; without
+    them here it would fetch forty content files to draw one screen."""
+    base = BASE_LESSONS / lang
+    words = 0
+    exercises = {}
+
+    for section in data.get("sections", []):
+        ref = section.get("ref")
+        if not ref:
+            continue
+        path = base / ref
+        if not path.exists():
+            continue
+        try:
+            content = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            continue
+
+        if section.get("type") == "vocabulary":
+            words += len(content.get("words", []))
+
+        elif section.get("type") == "exercise-group":
+            by_id = {e.get("id"): e for e in content.get("exercises", [])}
+            for ex_id in section.get("exerciseRefs", []):
+                exercise = by_id.get(ex_id)
+                if not exercise:
+                    continue
+                category = exercise.get("category", "other")
+                exercises[category] = exercises.get(category, 0) + 1
+
+    return words, exercises
+
+
 def build_curriculum(lang="es"):
     """Build the curriculum.json structure (what the Learn tab actually reads)
     straight from each lesson's own JSON file — lesson files are the single
@@ -78,6 +113,7 @@ def build_curriculum(lang="es"):
                 try:
                     with open(f, 'r', encoding='utf-8') as fh:
                         data = json.load(fh)
+                    new_words, exercise_counts = lesson_teaching_counts(lang, data)
                     level_lessons.append({
                         "id": data.get("id", f"lesson.{level_id}.{f.stem}"),
                         # The number shown on the lesson row. Taken from the
@@ -90,7 +126,10 @@ def build_curriculum(lang="es"):
                         "goal": data.get("goal", ""),
                         # Shown on the lesson row in the Learn tab, so the
                         # index carries it rather than fetching 20 lessons.
-                        "estimatedMinutes": (data.get("metadata") or {}).get("estimatedMinutes")
+                        "estimatedMinutes": (data.get("metadata") or {}).get("estimatedMinutes"),
+                        # Read by My Journey to total up coverage.
+                        "newWords": new_words,
+                        "exercises": exercise_counts
                     })
                 except (OSError, json.JSONDecodeError):
                     pass
