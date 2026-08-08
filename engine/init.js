@@ -70,11 +70,8 @@ async function initialiseApp() {
     // Learn is the landing section, so its header is the first one drawn.
     if (typeof PageHeader !== 'undefined') PageHeader.show('learn');
 
-    // Updated path to include language prefix
-    const response = await fetch('content/es/curriculum/curriculum.json');
-    const curriculum = await response.json();
-
-    window._curriculumData = curriculum;
+    // Falls back to the default course when the chosen one has no content.
+    window._curriculumData = await loadCurriculumData();
 
     // Nav
     _attachNavEvents();

@@ -35,10 +35,28 @@ function levelStats(lessons, progress) {
     };
 }
 
+// The chosen course may have no content yet — content/hu exists as an empty
+// folder — and a 404 here used to reject with a JSON parse error that killed
+// startup before anything rendered, leaving a blank page that a reload could
+// not fix, because the choice is saved. Fall back to the default course and
+// say so instead.
+async function loadCurriculumData() {
+    try {
+        const res = await fetch(Lang.content('curriculum/curriculum.json'));
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        return await res.json();
+    } catch (error) {
+        if (Lang.code() === Lang.defaultCode()) throw error;
+        console.warn(`No ${Lang.name()} course content yet — switching back to the default course.`, error);
+        Lang.set(Lang.defaultCode());
+        const res = await fetch(Lang.content('curriculum/curriculum.json'));
+        return await res.json();
+    }
+}
+
 async function renderCurriculum() {
     if (!window._curriculumData) {
-        const res = await fetch('content/es/curriculum/curriculum.json');
-        window._curriculumData = await res.json();
+        window._curriculumData = await loadCurriculumData();
     }
 
     const root = document.getElementById('learn-content');

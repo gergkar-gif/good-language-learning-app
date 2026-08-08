@@ -9,7 +9,7 @@ let currentWordTranslation = null;
 let currentWordPos = null;
 
 function loadDeck() {
-    const saved = localStorage.getItem('spanishApp_srsDeck');
+    const saved = localStorage.getItem(Lang.key('srsDeck'));
     if (saved) {
         srsDeck = JSON.parse(saved);
         // Enrich cards that were added before dictionary loaded
@@ -28,12 +28,15 @@ function loadDeck() {
 }
 
 function saveDeck() {
-    localStorage.setItem('spanishApp_srsDeck', JSON.stringify(srsDeck));
+    localStorage.setItem(Lang.key('srsDeck'), JSON.stringify(srsDeck));
     updateSRSCounter();
 }
 
 function clearDeck() {
-    localStorage.removeItem('spanishApp_srsDeck');
+    // Clears this course's deck. XP is not scoped by language — it records
+    // that the learner studied, not which course — so clearing it here wipes
+    // it for every course, which is what the button has always done.
+    localStorage.removeItem(Lang.key('srsDeck'));
     localStorage.removeItem('spanishApp_xp');
     srsDeck = [];
     xpData = { total: 0, history: {}, dailyNewWords: {} };

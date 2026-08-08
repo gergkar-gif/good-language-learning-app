@@ -2,11 +2,13 @@
 // PROGRESS ENGINE
 // ============================================
 
-const PROGRESS_KEY = "spanishMastery_progress";
+// Scoped per course: a Hungarian lesson carries the same id as its Spanish
+// counterpart, so one shared map would mark both complete at once.
+const progressKey = () => Lang.key('progress');
 
 function getProgress() {
     try {
-        return JSON.parse(localStorage.getItem(PROGRESS_KEY) || "{}");
+        return JSON.parse(localStorage.getItem(progressKey()) || "{}");
     } catch (e) {
         console.warn("Failed to parse progress from localStorage:", e);
         return {};
@@ -14,7 +16,7 @@ function getProgress() {
 }
 
 function saveProgress(progress) {
-    localStorage.setItem(PROGRESS_KEY, JSON.stringify(progress));
+    localStorage.setItem(progressKey(), JSON.stringify(progress));
 }
 
 // Returns true only on the first completion. XP is awarded by the caller

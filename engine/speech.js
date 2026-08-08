@@ -1,14 +1,16 @@
 // ============================================
 // SPEECH
 // ============================================
-// Reads Spanish out loud with the browser's own voices. No audio files and
-// no network: speechSynthesis can say any string, so this works across every
+// Reads the course's language out loud with the browser's own voices. No
+// audio files and
+// no network: speechSynthesis says any string, so this works across every
 // lesson the moment it ships, including content written later.
 //
 // The one thing it cannot do is invent a voice that is not installed. A
-// Spanish sentence read by an English voice teaches bad pronunciation, which
-// is worse for a learner than silence — so when no Spanish voice is present
-// the buttons are not rendered at all. Story narration recorded as real audio
+// sentence read by a voice from the wrong language teaches bad
+// pronunciation, which is worse for a learner than silence — so when no
+// voice for the course's language is present, the buttons are not rendered
+// at all. Story narration recorded as real audio
 // is a separate, later job; this covers words and single sentences.
 
 const Speech = (function () {
@@ -16,23 +18,27 @@ const Speech = (function () {
     let voice = null;
     let ready = false;
 
-    // Latin American first: it is what the course's characters speak, and its
-    // seseo is kinder to a beginner than peninsular /θ/.
-    const PREFERRED = ['es-MX', 'es-US', 'es-419', 'es-CO', 'es-AR', 'es-ES', 'es'];
+    // Which accents to prefer comes from the course — Lang owns that list, so
+    // a Hungarian course asks for hu-HU without this module knowing about it.
+    function preferred() {
+        return (typeof Lang !== 'undefined') ? Lang.voices() : ['es'];
+    }
 
     function pickVoice() {
         if (!synth) return null;
         const voices = synth.getVoices();
         if (!voices.length) return null;
 
-        const spanish = voices.filter(v => (v.lang || '').toLowerCase().startsWith('es'));
-        if (!spanish.length) return null;
+        const wanted = preferred();
+        const base = wanted[wanted.length - 1].split('-')[0].toLowerCase();
+        const inLanguage = voices.filter(v => (v.lang || '').toLowerCase().startsWith(base));
+        if (!inLanguage.length) return null;
 
-        for (const tag of PREFERRED) {
-            const match = spanish.find(v => (v.lang || '').toLowerCase().replace('_', '-') === tag.toLowerCase());
+        for (const tag of wanted) {
+            const match = inLanguage.find(v => (v.lang || '').toLowerCase().replace('_', '-') === tag.toLowerCase());
             if (match) return match;
         }
-        return spanish[0];
+        return inLanguage[0];
     }
 
     function init() {
@@ -42,7 +48,7 @@ const Speech = (function () {
 
         // Chrome populates the voice list asynchronously, and not always in
         // one go — the first event can carry the system voices and a later
-        // one the downloaded ones. Listening only once meant a Spanish voice
+        // one the downloaded ones. Listening only once meant a voice
         // arriving in the second batch was never noticed. Keep listening
         // until we have a voice, and re-announce when it changes.
         if (typeof synth.addEventListener === 'function') {
@@ -88,14 +94,14 @@ const Speech = (function () {
         // Naming the voice is the reliable way to get the accent we picked,
         // but a voice can go stale — uninstalled mid-session, or replaced
         // when the list is rebuilt — and assigning it then throws. The lang
-        // tag alone still steers the engine to a Spanish voice, so fall back
-        // to that rather than losing the click.
+        // tag alone still steers the engine to the right language, so fall
+        // back to that rather than losing the click.
         try {
             utterance.voice = voice;
         } catch (error) {
             console.warn('Speech: voice unavailable, falling back to lang', error);
         }
-        utterance.lang = voice.lang || 'es-MX';
+        utterance.lang = voice.lang || preferred()[0];
         // A shade under natural pace. Beginners lose word boundaries at 1.0.
         utterance.rate = (options && options.rate) || 0.9;
         synth.speak(utterance);

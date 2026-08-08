@@ -1,7 +1,7 @@
 // ============================================
 // LESSON ENGINE
 // ============================================
-// Lessons are loaded dynamically from content/es/lessons/*.json
+// Lessons are loaded dynamically from content/<lang>/lessons/*.json
 // Two lesson formats are supported during the migration:
 //   1. legacy  -> lesson.steps[] with embedded `html`
 //   2. structured -> lesson.sections[] referencing content files
@@ -21,8 +21,7 @@ const contentCache = {};
 async function loadContent(path) {
     if (contentCache[path]) return contentCache[path];
     try {
-        // Updated to include language prefix
-        const fullPath = `content/es/${path}`;
+        const fullPath = Lang.content(path);
         const response = await fetch(fullPath);
         if (!response.ok) throw new Error('Content not found: ' + fullPath);
         const data = await response.json();
@@ -41,8 +40,7 @@ async function loadLesson(lessonId) {
     const level = parts[0];      // a1
     const number = parts[1];     // 01
 
-    // Updated path to include language prefix
-    const path = `content/es/lessons/${level}/${level}-${number}.json`;
+    const path = Lang.content(`lessons/${level}/${level}-${number}.json`);
 
     try {
         const response = await fetch(path);

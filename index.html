@@ -165,6 +165,8 @@
 <script src="imports/verbs/verb-list.js?v=2026-08-07"></script>
 
 <!-- Engine: core utilities (no deps) -->
+<!-- Must load first: everything below reads paths and storage keys from it. -->
+<script src="engine/lang.js?v=2026-08-08"></script>
 <script src="engine/xp.js?v=2026-08-07"></script>
 <script src="engine/lexicon.js?v=2026-08-07"></script>
 <script src="engine/srs.js?v=2026-08-07"></script>

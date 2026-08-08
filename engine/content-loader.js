@@ -25,18 +25,15 @@ const Content = {
     },
 
     async manifest(name) {
-        // Updated to include language prefix
-        return this.json(`content/es/${name}/manifest.json`);
+        return this.json(Lang.content(`${name}/manifest.json`));
     },
 
     async story(path) {
-        // Updated to include language prefix and story category
-        return this.json(`content/es/stories/${path}`);
+        return this.json(Lang.content(`stories/${path}`));
     },
 
     async lesson(id) {
-        // Updated to include language prefix
-        return this.json(`content/es/lessons/${id}.json`);
+        return this.json(Lang.content(`lessons/${id}.json`));
     },
 
     async verb(name) {

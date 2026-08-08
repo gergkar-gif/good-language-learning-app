@@ -55,7 +55,7 @@ function _ensureWordPopup() {
 
 // The popup's speaker button is a fixed element rather than fresh markup, so
 // it is pointed at the current word instead of being re-rendered. It stays
-// hidden on a device with no Spanish voice.
+// hidden on a device with no voice for this course's language.
 function _setSpeakTarget(text) {
     const btn = document.getElementById('popup-speak');
     if (!btn) return;
@@ -176,11 +176,11 @@ function closePopup() {
 // ============================================
 // READ-STATE TRACKING (which stories a learner has opened)
 // ============================================
-const READ_STORIES_KEY = 'spanishApp_readStories';
+const readStoriesKey = () => Lang.key('readStories');
 
 function getReadStoryIds() {
     try {
-        return JSON.parse(localStorage.getItem(READ_STORIES_KEY) || '[]');
+        return JSON.parse(localStorage.getItem(readStoriesKey()) || '[]');
     } catch (e) {
         return [];
     }
@@ -192,7 +192,7 @@ function markStoryRead(storyId) {
     const read = getReadStoryIds();
     if (read.includes(storyId)) return false;
     read.push(storyId);
-    localStorage.setItem(READ_STORIES_KEY, JSON.stringify(read));
+    localStorage.setItem(readStoriesKey(), JSON.stringify(read));
     return true;
 }
 
@@ -224,7 +224,7 @@ function coverVariantFor(id) {
 }
 
 window.Reader = {
-    storiesBasePath: 'content/es/stories/', // Updated to include language prefix
+    storiesBasePath: Lang.content('stories/'),
     stories: [],
     currentStory: null,
 
