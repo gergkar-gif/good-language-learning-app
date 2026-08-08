@@ -55,7 +55,7 @@ LEVEL_META = {
 }
 
 CURRICULUM_META = {
-    "es": {"id": "curriculum.spanish.dele-a1-c1", "title": "Spanish Mastery — DELE Aligned"}
+    "es": {"id": "curriculum.spanish.dele-a1-c1", "title": "Spanish — DELE aligned"}
 }
 
 def build_curriculum(lang="es"):

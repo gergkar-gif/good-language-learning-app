@@ -1,7 +1,7 @@
-Spanish Mastery UI Design Principles (v1.0)
+Parlour UI Design Principles (v1.0)
 Vision
 
-Spanish Mastery should feel like a beautifully organised notebook for mastering Spanish.
+Parlour should feel like a beautifully organised notebook for language.
 
 It is not a game, a productivity dashboard, or a flashcard app. The experience should encourage calm, focused study, similar to working through a well-designed language textbook.
 

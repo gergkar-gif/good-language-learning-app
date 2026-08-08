@@ -1,4 +1,4 @@
-# Spanish Mastery Editorial Style Guide
+# Parlour Editorial Style Guide
 
 ## General
 

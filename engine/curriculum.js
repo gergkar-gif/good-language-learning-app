@@ -47,10 +47,17 @@ async function loadCurriculumData() {
         return await res.json();
     } catch (error) {
         if (Lang.code() === Lang.defaultCode()) throw error;
-        console.warn(`No ${Lang.name()} course content yet — switching back to the default course.`, error);
+
+        // By the time this runs, other modules have already read the wrong
+        // course — the reader has failed to load its manifest, the SRS deck
+        // has been read from an empty key. Re-fetching the curriculum alone
+        // would leave those stale for the rest of the session, so start over
+        // with the corrected language. This can only happen once: after the
+        // reload the language is the default, and this branch is not reached.
+        console.warn(`No ${Lang.name()} course content yet — restarting on the default course.`, error);
         Lang.set(Lang.defaultCode());
-        const res = await fetch(Lang.content('curriculum/curriculum.json'));
-        return await res.json();
+        location.reload();
+        return new Promise(() => {});   // halt startup; the reload takes over
     }
 }
 

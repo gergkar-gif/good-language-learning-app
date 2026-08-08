@@ -1,6 +1,10 @@
-# Spanish Mastery
+# Parlour
 
-A modular, content-driven digital Spanish curriculum (CEFR A1–C1, DELE-aligned).
+*A place for language.*
+
+Learn with lessons. Read stories. Practise with purpose. Remember what matters.
+
+A modular, content-driven language curriculum (CEFR A1–C1). The Spanish course is DELE-aligned; Hungarian is planned.
 
 ## Philosophy
 

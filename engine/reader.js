@@ -224,7 +224,11 @@ function coverVariantFor(id) {
 }
 
 window.Reader = {
-    storiesBasePath: Lang.content('stories/'),
+    // Resolved on every read rather than captured at load. The course can
+    // change after this file runs — startup falls back to the default when
+    // the chosen one has no content — and a value frozen here would leave the
+    // Library fetching stories from a language the rest of the app has left.
+    get storiesBasePath() { return Lang.content('stories/'); },
     stories: [],
     currentStory: null,
 
