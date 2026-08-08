@@ -408,12 +408,14 @@ window.Reader = {
                     : '';
                 const clickableText = self.makeClickable(para.text);
                 html += '<p class="' + paraClass + '" data-para-index="' + idx + '">' +
-                    speakerHtml + clickableText +
+                    speakerHtml + clickableText + Speech.button(para.text, 'Listen to this paragraph') +
                 '</p>';
             });
         } else if (story.text) {
             // Fallback: single text field
-            html += '<p class="story-paragraph narration">' + self.makeClickable(story.text) + '</p>';
+            html += '<p class="story-paragraph narration">' +
+                self.makeClickable(story.text) + Speech.button(story.text, 'Listen') +
+            '</p>';
         }
 
         html += '</div>';

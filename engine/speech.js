@@ -41,8 +41,28 @@ const Speech = (function () {
         return inLanguage[0];
     }
 
+    // Hiding the buttons when there is no voice is right, but it makes a
+    // missing voice and a broken feature look identical. Say which, once.
+    function report() {
+        if (!synth) {
+            console.info('Speech: this browser has no speechSynthesis; listen buttons are hidden.');
+            return;
+        }
+        if (voice) {
+            console.info(`Speech: reading ${Lang.name()} with "${voice.name}" (${voice.lang}).`);
+        } else {
+            const installed = synth.getVoices().map(v => v.lang).join(', ') || 'none';
+            console.warn(
+                `Speech: no ${Lang.name()} voice is installed, so listen buttons are hidden. ` +
+                `Voices this device has: ${installed}. ` +
+                `On Windows: Settings > Time & language > Language & region > add the language, ` +
+                `then Speech. On macOS/iOS: System Settings > Accessibility > Spoken Content > System Voice > Manage Voices.`
+            );
+        }
+    }
+
     function init() {
-        if (!synth) { ready = true; return; }
+        if (!synth) { ready = true; report(); return; }
         voice = pickVoice();
         ready = true;
 
@@ -56,10 +76,16 @@ const Speech = (function () {
                 const previous = voice;
                 voice = pickVoice();
                 if (voice !== previous) {
+                    report();
                     document.dispatchEvent(new CustomEvent('speech-ready'));
                 }
             });
         }
+
+        // Only conclude a voice is missing after the list has had a moment to
+        // arrive — saying so immediately would be wrong on most Chrome loads.
+        if (voice) report();
+        else setTimeout(() => { if (!voice) report(); }, 1500);
     }
 
     function available() {
