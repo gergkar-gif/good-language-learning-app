@@ -12,15 +12,32 @@
       "type": "goal",
       "title": "Lesson Goals",
       "items": [
-        "Say the date and the months of the year",
+        "Name the things at a birthday party",
         "Say how old someone is with 'tener'",
-        "Talk about presents and celebrations",
-        "Follow a conversation at a birthday party"
+        "Say a date and when your birthday is",
+        "Describe a celebration to someone else"
       ]
     },
     {
       "type": "grammar",
-      "ref": "grammar/a1/a1-10-gr.json"
+      "ref": "grammar/a1/a1-10-fiesta-gr.json"
+    },
+    {
+      "type": "grammar",
+      "ref": "grammar/a1/a1-10-fecha-gr.json"
+    },
+    {
+      "type": "exercise-group",
+      "title": "Practice",
+      "ref": "exercises/a1/a1-10-ex.json",
+      "exerciseRefs": [
+        "a1-10-practice-match",
+        "a1-10-practice-edad",
+        "a1-10-practice-fecha",
+        "a1-10-practice-cuantos",
+        "a1-10-practice-build",
+        "a1-10-practice-order"
+      ]
     },
     {
       "type": "vocabulary",
@@ -33,29 +50,13 @@
     },
     {
       "type": "exercise-group",
-      "title": "Vocabulary",
-      "ref": "exercises/a1/a1-10-ex.json",
-      "exerciseRefs": [
-        "a1-09-vocab-01",
-        "a1-09-vocab-02"
-      ]
-    },
-    {
-      "type": "exercise-group",
-      "title": "Grammar",
-      "ref": "exercises/a1/a1-10-ex.json",
-      "exerciseRefs": [
-        "a1-09-grammar-01",
-        "a1-09-grammar-02"
-      ]
-    },
-    {
-      "type": "exercise-group",
       "title": "Reading",
       "ref": "exercises/a1/a1-10-ex.json",
       "exerciseRefs": [
-        "a1-09-reading-01",
-        "a1-09-reading-02"
+        "a1-10-reading-sorpresa",
+        "a1-10-reading-regalo",
+        "a1-10-reading-viaje",
+        "a1-10-reading-order"
       ]
     },
     {
@@ -63,8 +64,9 @@
       "title": "Dialogue",
       "ref": "exercises/a1/a1-10-ex.json",
       "exerciseRefs": [
-        "a1-09-dialogue-01",
-        "a1-09-dialogue-02"
+        "a1-10-dialogue-edad",
+        "a1-10-dialogue-cumple",
+        "a1-10-dialogue-regalo"
       ]
     },
     {
@@ -72,7 +74,8 @@
       "title": "Writing",
       "ref": "exercises/a1/a1-10-ex.json",
       "exerciseRefs": [
-        "a1-09-writing-01"
+        "a1-10-writing-fiesta",
+        "a1-10-writing-fecha"
       ]
     },
     {
@@ -83,10 +86,10 @@
       "type": "checklist",
       "title": "Can you do this?",
       "items": [
-        "I can say the date and the months of the year",
+        "I can name the things at a birthday party",
         "I can say how old someone is with 'tener'",
-        "I can talk about presents and celebrations",
-        "I can follow a conversation at a birthday party"
+        "I can say a date and when my birthday is",
+        "I can describe a celebration to someone else"
       ]
     }
   ]
