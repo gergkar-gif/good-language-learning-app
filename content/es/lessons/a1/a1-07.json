@@ -15,12 +15,29 @@
         "Name the rooms of a home and the furniture in them",
         "Say where you live with 'vivir'",
         "Say what a home has with 'tener' and 'hay'",
-        "Follow a conversation about someone's home"
+        "Say what a place is near, using 'cerca de'"
       ]
     },
     {
       "type": "grammar",
-      "ref": "grammar/a1/a1-07-gr.json"
+      "ref": "grammar/a1/a1-07-casa-gr.json"
+    },
+    {
+      "type": "grammar",
+      "ref": "grammar/a1/a1-07-vivir-gr.json"
+    },
+    {
+      "type": "exercise-group",
+      "title": "Practice",
+      "ref": "exercises/a1/a1-07-ex.json",
+      "exerciseRefs": [
+        "a1-07-practice-match",
+        "a1-07-practice-vivimos",
+        "a1-07-practice-hay",
+        "a1-07-practice-frigorifico",
+        "a1-07-practice-build",
+        "a1-07-practice-order"
+      ]
     },
     {
       "type": "vocabulary",
@@ -33,29 +50,13 @@
     },
     {
       "type": "exercise-group",
-      "title": "Vocabulary",
-      "ref": "exercises/a1/a1-07-ex.json",
-      "exerciseRefs": [
-        "a1-07-vocab-01",
-        "a1-07-vocab-02"
-      ]
-    },
-    {
-      "type": "exercise-group",
-      "title": "Grammar",
-      "ref": "exercises/a1/a1-07-ex.json",
-      "exerciseRefs": [
-        "a1-07-grammar-01",
-        "a1-07-grammar-02"
-      ]
-    },
-    {
-      "type": "exercise-group",
       "title": "Reading",
       "ref": "exercises/a1/a1-07-ex.json",
       "exerciseRefs": [
-        "a1-07-reading-01",
-        "a1-07-reading-02"
+        "a1-07-reading-habitaciones",
+        "a1-07-reading-frigorifico",
+        "a1-07-reading-cerca",
+        "a1-07-reading-order"
       ]
     },
     {
@@ -63,8 +64,9 @@
       "title": "Dialogue",
       "ref": "exercises/a1/a1-07-ex.json",
       "exerciseRefs": [
-        "a1-07-dialogue-01",
-        "a1-07-dialogue-02"
+        "a1-07-dialogue-vivir",
+        "a1-07-dialogue-libros",
+        "a1-07-dialogue-sala"
       ]
     },
     {
@@ -72,7 +74,8 @@
       "title": "Writing",
       "ref": "exercises/a1/a1-07-ex.json",
       "exerciseRefs": [
-        "a1-07-writing-01"
+        "a1-07-writing-casa",
+        "a1-07-writing-sala"
       ]
     },
     {
@@ -84,9 +87,9 @@
       "title": "Can you do this?",
       "items": [
         "I can name the rooms of a home and the furniture in them",
-        "I can say where you live with 'vivir'",
+        "I can say where I live with 'vivir'",
         "I can say what a home has with 'tener' and 'hay'",
-        "I can follow a conversation about someone's home"
+        "I can say what a place is near, using 'cerca de'"
       ]
     }
   ]

@@ -459,7 +459,15 @@ def check_teaching_order(keys):
     issues = []
     known = set()
 
-    for key in sorted(keys):
+    # Always walk from Lesson 1, even when auditing a single lesson: 'tengo'
+    # is fair game in Lesson 7 because Lesson 5 taught it, and starting from
+    # an empty set reports half of a good lesson as untaught. Only the
+    # requested lessons are reported on.
+    requested = set(keys)
+    limit = max(requested)
+    walk = [k for k in sorted(set(lesson_keys("a1")) | requested) if k <= limit]
+
+    for key in walk:
         level, number, _ = parse_key(key)
         if number in REVIEW_LESSONS:
             continue
@@ -482,7 +490,7 @@ def check_teaching_order(keys):
                 continue
             unseen = sorted(t for t in required
                             if t not in known and not matches(t, " " + " ".join(known) + " "))
-            if unseen:
+            if unseen and key in requested:
                 issues.append(f"{key} {label} needs: {', '.join(unseen)}")
             known |= required
 
