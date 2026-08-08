@@ -12,12 +12,32 @@
       "type": "goal",
       "title": "Lesson Goals",
       "items": [
-        "Describe your town and places in it"
+        "Name the landmarks people give directions from",
+        "Say where something is with 'enfrente de' and 'a la derecha'",
+        "Give someone a route step by step",
+        "Say you cannot find a place and ask for help"
       ]
     },
     {
       "type": "grammar",
-      "ref": "grammar/a1/a1-13-gr.json"
+      "ref": "grammar/a1/a1-13-lugares-gr.json"
+    },
+    {
+      "type": "grammar",
+      "ref": "grammar/a1/a1-13-direcciones-gr.json"
+    },
+    {
+      "type": "exercise-group",
+      "title": "Practice",
+      "ref": "exercises/a1/a1-13-ex.json",
+      "exerciseRefs": [
+        "a1-13-practice-match",
+        "a1-13-practice-gira",
+        "a1-13-practice-cruza",
+        "a1-13-practice-enfrente",
+        "a1-13-practice-build",
+        "a1-13-practice-order"
+      ]
     },
     {
       "type": "vocabulary",
@@ -30,29 +50,13 @@
     },
     {
       "type": "exercise-group",
-      "title": "Vocabulary",
-      "ref": "exercises/a1/a1-13-ex.json",
-      "exerciseRefs": [
-        "a1-12-vocab-01",
-        "a1-12-vocab-02"
-      ]
-    },
-    {
-      "type": "exercise-group",
-      "title": "Grammar",
-      "ref": "exercises/a1/a1-13-ex.json",
-      "exerciseRefs": [
-        "a1-12-grammar-01",
-        "a1-12-grammar-02"
-      ]
-    },
-    {
-      "type": "exercise-group",
       "title": "Reading",
       "ref": "exercises/a1/a1-13-ex.json",
       "exerciseRefs": [
-        "a1-12-reading-01",
-        "a1-12-reading-02"
+        "a1-13-reading-donde",
+        "a1-13-reading-camino",
+        "a1-13-reading-final",
+        "a1-13-reading-order"
       ]
     },
     {
@@ -60,8 +64,9 @@
       "title": "Dialogue",
       "ref": "exercises/a1/a1-13-ex.json",
       "exerciseRefs": [
-        "a1-12-dialogue-01",
-        "a1-12-dialogue-02"
+        "a1-13-dialogue-donde",
+        "a1-13-dialogue-izquierda",
+        "a1-13-dialogue-porfin"
       ]
     },
     {
@@ -69,7 +74,8 @@
       "title": "Writing",
       "ref": "exercises/a1/a1-13-ex.json",
       "exerciseRefs": [
-        "a1-12-writing-01"
+        "a1-13-writing-direcciones",
+        "a1-13-writing-quedar"
       ]
     },
     {
@@ -80,10 +86,10 @@
       "type": "checklist",
       "title": "Can you do this?",
       "items": [
-        "I can name places in a town",
-        "I can use 'hay' to describe what a town has",
-        "I can say where places are located",
-        "I can give a simple tour of my town"
+        "I can name the landmarks people give directions from",
+        "I can say where something is with 'enfrente de' and 'a la derecha'",
+        "I can give someone a route step by step",
+        "I can say I cannot find a place and ask for help"
       ]
     }
   ]
