@@ -1501,35 +1501,78 @@
 
 .dk-grid {
   display: grid;
-  gap: 12px;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 14px;
+  grid-template-columns: repeat(auto-fill, minmax(268px, 1fr));
 }
 
+/* A deck card has to answer three things at a glance: what it is, what is
+   inside it, and how far in you are. The earlier version cramped all three
+   onto two lines and read as a list item rather than something to pick up. */
 .dk-card {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   text-align: left;
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 14px 16px;
+  border-radius: 12px;
+  padding: 18px 20px 16px;
   cursor: pointer;
-  transition: border-color .2s, transform .2s;
+  transition: border-color .2s, transform .2s, box-shadow .2s;
 }
 
-.dk-card:hover { border-color: var(--primary); transform: translateY(-2px); }
+.dk-card:hover {
+  border-color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
 
-.dk-card-head { display: flex; align-items: baseline; gap: 8px; }
+.dk-card-top {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
 
 .dk-num {
   font-variant-numeric: tabular-nums;
   font-size: 12px;
   color: var(--muted);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  padding: 1px 6px;
+  flex: 0 0 auto;
 }
 
 .dk-name {
   font-family: var(--font-display);
-  font-size: 16px;
-  color: var(--text);
+  font-size: 18px;
+  line-height: 1.25;
+  color: var(--primary);
+  flex: 1 1 auto;
+}
+
+/* Due count sits with the title, where it is a property of the deck rather
+   than a statistic buried under it. */
+.dk-due {
+  flex: 0 0 auto;
+  background: var(--accent);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: var(--radius-pill);
+  padding: 2px 9px;
+  font-variant-numeric: tabular-nums;
+}
+
+/* The first few words, so a deck is not an opaque label. */
+.dk-preview {
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--muted);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .dk-meter {
@@ -1538,7 +1581,6 @@
   border-radius: 99px;
   background: var(--border);
   overflow: hidden;
-  margin: 10px 0 8px;
 }
 
 .dk-fill { display: block; height: 100%; background: var(--primary); }
@@ -1546,12 +1588,11 @@
 .dk-meta {
   display: flex;
   justify-content: space-between;
-  gap: 8px;
+  gap: 10px;
   font-size: 12px;
   color: var(--muted);
+  font-variant-numeric: tabular-nums;
 }
-
-.dk-due { color: var(--accent-dark); font-weight: 600; }
 
 .dk-back {
   background: none;

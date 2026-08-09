@@ -27,7 +27,7 @@ const Decks = (function () {
     const KIND_BLURB = {
         lesson: 'The words each lesson teaches.',
         topic: 'Everything the course says about one subject.',
-        frequency: 'The course’s words, ranked by how common they are in Spanish.'
+        frequency: 'The most common words in Spanish, in order. Not all are taught by the course.'
     };
 
     let catalogue = null;      // decks.json, once fetched
@@ -52,14 +52,27 @@ const Decks = (function () {
         return srsDeck.find(card => card.spanish === lemma);
     }
 
+    // decks.json stores each word once in a shared table and each deck refers
+    // to it by lemma, so a word belonging to a lesson, a topic and a frequency
+    // band is not written out three times.
+    function wordsOf(deck) {
+        if (deck.words) return deck.words;                 // My Deck, built live
+        const table = (catalogue && catalogue.words) || {};
+        return (deck.lemmas || []).map(lemma => {
+            const entry = table[lemma] || {};
+            return { lemma: lemma, translation: entry.en || '', pos: entry.pos || 'unknown' };
+        });
+    }
+
     // A deck's standing: how much of it you have taken on, and how much of
     // that is due. Counted rather than stored, so adding a card anywhere in
     // the app is reflected everywhere without bookkeeping.
     function statusOf(deck) {
         let inDeck = 0, due = 0, mastered = 0;
         const now = new Date();
+        const words = wordsOf(deck);
 
-        deck.words.forEach(word => {
+        words.forEach(word => {
             const card = cardFor(word.lemma);
             if (!card) return;
             inDeck++;
@@ -68,11 +81,11 @@ const Decks = (function () {
         });
 
         return {
-            total: deck.words.length,
+            total: words.length,
             inDeck: inDeck,
             due: due,
             mastered: mastered,
-            missing: deck.words.length - inDeck
+            missing: words.length - inDeck
         };
     }
 
@@ -107,7 +120,7 @@ const Decks = (function () {
         if (!deck) return;
 
         let added = 0, blocked = 0;
-        deck.words.forEach(word => {
+        wordsOf(deck).forEach(word => {
             if (cardFor(word.lemma)) return;
             if (!canAddNewWord()) { blocked++; return; }
             srsDeck.push(Object.assign({
@@ -133,7 +146,7 @@ const Decks = (function () {
 
     function reviewDeck(id) {
         const deck = id === 'all' ? null : byId(id);
-        startReviewSession(deck ? deck.words.map(w => w.lemma) : null,
+        startReviewSession(deck ? wordsOf(deck).map(w => w.lemma) : null,
                            deck ? deck.name : 'All decks');
     }
 
@@ -148,17 +161,20 @@ const Decks = (function () {
     function deckCard(deck) {
         const s = statusOf(deck);
         const percent = s.total ? Math.round((s.inDeck / s.total) * 100) : 0;
+        const preview = wordsOf(deck).slice(0, 5).map(w => w.lemma).join(' · ');
 
         return `
             <button class="dk-card" data-open-deck="${esc(deck.id)}">
-                <span class="dk-card-head">
+                <span class="dk-card-top">
                     ${deck.label ? `<span class="dk-num">${esc(deck.label)}</span>` : ''}
                     <span class="dk-name">${esc(deck.name)}</span>
+                    ${s.due ? `<span class="dk-due">${s.due}</span>` : ''}
                 </span>
+                <span class="dk-preview">${esc(preview)}</span>
                 <span class="dk-meter"><span class="dk-fill" style="width:${percent}%"></span></span>
                 <span class="dk-meta">
-                    <span>${s.inDeck} of ${s.total} added</span>
-                    ${s.due ? `<span class="dk-due">${s.due} due</span>` : ''}
+                    <span>${s.total} ${s.total === 1 ? 'word' : 'words'}</span>
+                    <span>${s.inDeck ? s.inDeck + ' in your deck' : 'none added yet'}</span>
                 </span>
             </button>
         `;
@@ -206,7 +222,7 @@ const Decks = (function () {
     function detailHtml(deck) {
         const s = statusOf(deck);
 
-        const rows = deck.words.map(word => {
+        const rows = wordsOf(deck).map(word => {
             const card = cardFor(word.lemma);
             const state = !card ? 'not added'
                 : (card.reviews || 0) >= 3 ? 'mastered'

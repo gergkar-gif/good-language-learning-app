@@ -155,21 +155,69 @@ def build_curriculum(lang="es"):
 
 FREQUENCY_BANDS = [(1, 100), (101, 250), (251, 500), (501, 1000)]
 
+# The dictionary's first sense for a handful of very common words is the name
+# of the letter — 'de' glossed as "letter: d" — because that entry sorts first.
+# Those are exactly the words a frequency deck opens with, so they are given
+# the sense a learner actually needs.
+FREQUENCY_GLOSS = {
+    # Letter names, where the dictionary's first sense is the letter itself.
+    "de": "of, from", "a": "to, at", "y": "and", "o": "or", "e": "and",
+    "ese": "that", "del": "of the", "al": "to the", "u": "or",
+    # Grammatical descriptions, where the dictionary names the part of speech
+    # instead of translating it — accurate for a dictionary, useless on a card.
+    "el": "the", "la": "the", "lo": "it, the", "los": "the", "las": "the",
+    "un": "a, an", "una": "a, an", "unos": "some", "unas": "some",
+    "yo": "I", "se": "himself, herself, itself", "me": "me, myself",
+    "te": "you, yourself", "nos": "us, ourselves", "le": "him, her, to them",
+    "su": "his, her, their", "mi": "my", "tu": "your",
+}
+
+# A gloss that begins like this is describing the word rather than translating
+# it, and makes a useless flashcard.
+JUNK_GLOSS = re.compile(
+    r"^(letter|abbreviation|obsolete|pronunciation spelling|alternative form"
+    r"|apocopic|misspelling|eye dialect|initialism|acronym)", re.I)
+
+
+def short_gloss(text):
+    """A flashcard wants a translation, not a dictionary entry.
+
+    The dictionary explains as much as it defines — "she, her (used
+    subjectively and after prepositions)", "comparative of malo: worse" — and
+    a card carrying that is harder to read than the Spanish it glosses."""
+    first = str(text or "").split(";")[0]
+    first = re.sub(r"\([^)]*\)", " ", first)              # asides, not meaning
+    first = re.sub(r"^(comparative|superlative|diminutive|augmentative)"
+                   r"\s+of\s+[^:]*:\s*", "", first, flags=re.I)
+    first = re.sub(r"\s+", " ", first).strip(" ,")
+    if len(first) > 56:
+        first = first[:53].rstrip(" ,") + "…"
+    return first
+
 
 def build_decks(lang="es"):
-    """Every deck the Decks tab can offer, built from the content that already
+    """Every deck the Decks tab can offer, built from content that already
     exists rather than maintained by hand.
 
     A deck is a named list of words, not a schedule. The same word turns up in
     its lesson deck, a frequency band and a topic — scheduling it three times
     would mean reviewing it three times and would wreck the SM-2 interval, so
-    the card store stays single and decks are only ways of selecting from it."""
+    the card store stays single and decks only select from it.
+
+    Words are written once into a shared table and decks refer to them by
+    lemma, because a word that belongs to three decks should not be stored
+    three times."""
     base = BASE_LESSONS / lang
     vocab_dir = base / "vocabulary"
     if not vocab_dir.exists():
         return None
 
-    lesson_decks, by_theme, known = [], {}, {}
+    words = {}          # lemma -> {en, pos}
+    lesson_decks, by_theme = [], {}
+
+    def remember(lemma, translation, pos):
+        if lemma not in words:
+            words[lemma] = {"en": translation or "", "pos": pos or "unknown"}
 
     for level_dir in sorted(p for p in vocab_dir.iterdir() if p.is_dir()):
         for f in sorted(level_dir.glob("*-voc.json")):
@@ -178,16 +226,15 @@ def build_decks(lang="es"):
             except (OSError, json.JSONDecodeError):
                 continue
 
-            words = [
-                {"lemma": w["lemma"], "translation": w.get("translation", ""),
-                 "pos": w.get("pos", "unknown")}
-                for w in data.get("words", []) if w.get("lemma")
-            ]
-            if not words:
+            lemmas = []
+            for w in data.get("words", []):
+                lemma = w.get("lemma")
+                if not lemma:
+                    continue
+                remember(lemma, w.get("translation"), w.get("pos"))
+                lemmas.append(lemma)
+            if not lemmas:
                 continue
-
-            for w in words:
-                known.setdefault(w["lemma"], w)
 
             lesson_key = data.get("lesson", f.stem.replace("-voc", ""))
 
@@ -208,68 +255,77 @@ def build_decks(lang="es"):
                 "name": lesson_title,
                 "label": lesson_key.split("-", 1)[-1],
                 "level": level_dir.name.upper(),
-                "lesson": lesson_key,
-                "words": words
+                "lemmas": lemmas
             })
 
             theme = data.get("theme")
             if theme:
-                by_theme.setdefault(theme, []).extend(words)
+                by_theme.setdefault(theme, []).extend(lemmas)
 
     # Topic decks pool every lesson that teaches the same theme, so "City &
     # places" stays one deck however many lessons contribute to it.
     topic_decks = []
     for theme in sorted(by_theme):
-        seen, words = set(), []
-        for w in by_theme[theme]:
-            if w["lemma"] in seen:
+        seen, lemmas = set(), []
+        for lemma in by_theme[theme]:
+            if lemma in seen:
                 continue
-            seen.add(w["lemma"])
-            words.append(w)
+            seen.add(lemma)
+            lemmas.append(lemma)
         topic_decks.append({
             "id": "topic:" + re.sub(r"[^a-z0-9]+", "-", theme.lower()).strip("-"),
             "kind": "topic",
             "name": theme,
-            "words": words
+            "lemmas": lemmas
         })
 
-    # Frequency decks rank the course's own vocabulary by how common each word
-    # is in Spanish. Ranking the whole 20k list instead would produce decks
-    # full of words the course never teaches and cannot translate.
+    # Frequency decks are the most common words in Spanish, full stop — not
+    # the course's words sorted by frequency, which was the earlier mistake:
+    # it produced a deck called "Top 100 words" holding seventeen, none of
+    # them the actual top hundred. Translations come from the dictionary.
     frequency_decks = []
     ranks_path = ROOT / "generated" / "indexes" / "frequency.json"
-    if ranks_path.exists():
+    dict_path = ROOT / "imports" / "dictionary" / "spanish-en.json"
+
+    if ranks_path.exists() and dict_path.exists():
         try:
             ranked = json.loads(ranks_path.read_text(encoding="utf-8"))
+            lexicon = json.loads(dict_path.read_text(encoding="utf-8"))
         except (OSError, json.JSONDecodeError):
-            ranked = []
-
-        rank_of = {}
-        for i, lemma in enumerate(ranked):
-            rank_of.setdefault(lemma, i + 1)
-
-        def bare(lemma):
-            return re.sub(r"^(el|la|los|las|un|una) ", "", lemma).strip()
-
-        scored = []
-        for lemma, word in known.items():
-            rank = rank_of.get(bare(lemma))
-            if rank:
-                scored.append((rank, word))
-        scored.sort(key=lambda pair: pair[0])
+            ranked, lexicon = [], {}
 
         for low, high in FREQUENCY_BANDS:
-            words = [w for rank, w in scored if low <= rank <= high]
-            if words:
+            band = []
+            for lemma in ranked[low - 1:high]:
+                gloss = FREQUENCY_GLOSS.get(lemma)
+                pos = "unknown"
+
+                entry = lexicon.get(lemma)
+                if entry:
+                    pos = entry.get("type", "unknown")
+                    if not gloss:
+                        candidate = short_gloss(entry.get("en"))
+                        # A description of the word is not a translation.
+                        if candidate and not JUNK_GLOSS.match(candidate):
+                            gloss = candidate
+                if not gloss:
+                    continue
+
+                remember(lemma, gloss, pos)
+                band.append(lemma)
+
+            if band:
                 frequency_decks.append({
                     "id": "frequency:%d-%d" % (low, high),
                     "kind": "frequency",
-                    "name": "Top %d–%d words" % (low, high) if low > 1 else "Top %d words" % high,
-                    "words": words
+                    "name": ("Top %d words" % high) if low == 1
+                            else ("Words %d–%d" % (low, high)),
+                    "lemmas": band
                 })
 
     return {
         "generated": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
+        "words": words,
         "decks": lesson_decks + topic_decks + frequency_decks
     }
 
