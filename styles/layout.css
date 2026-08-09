@@ -63,16 +63,26 @@
   pointer-events: none;
 }
 
-/* Illustration ink. Only these four classes are used, so a composition can
-   never quietly introduce a fifth colour. */
+/* Illustration ink. Six classes and no more, so a composition can never
+   quietly introduce a seventh colour.
+
+   Scoped to .art rather than to the page header, because the same registry
+   draws the nav icons and the story-card marks. While these lived under
+   .page-header-art, an illustration used anywhere else inherited no fill at
+   all and rendered as invisible black shapes — which looks like a broken
+   asset rather than an unstyled one. .page-header-art keeps the class so
+   existing markup and the frontispiece sizing above still apply. */
+.art .ink-solid,
 .page-header-art .ink-solid { fill: var(--primary); }
 
+.art .ink-line,
 .page-header-art .ink-line {
   fill: none;
   stroke: var(--primary);
   stroke-width: 1.5;
 }
 
+.art .ink-rule,
 .page-header-art .ink-rule {
   fill: none;
   stroke: var(--primary);
@@ -81,6 +91,8 @@
 }
 
 /* Thin architectural lines — direction and movement, not outlines */
+.art .ink-hair,
+.art .ink-hair line,
 .page-header-art .ink-hair,
 .page-header-art .ink-hair line {
   fill: none;
@@ -89,12 +101,42 @@
   opacity: .38;
 }
 
+.art .accent-solid,
 .page-header-art .accent-solid { fill: var(--accent); }
 
+.art .accent-line,
 .page-header-art .accent-line {
   fill: none;
   stroke: var(--accent);
   stroke-width: 1.5;
+}
+
+/* Icons are drawn small, so they are stroked rather than filled and the
+   hairlines that give a frontispiece its depth would disappear. One weight,
+   sized by the element that holds them. */
+.icon {
+  width: 1.25em;
+  height: 1.25em;
+  flex: 0 0 auto;
+  vertical-align: -0.2em;
+}
+
+.icon .ink-line,
+.icon .ink-rule {
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.icon .ink-solid { fill: var(--primary); }
+.icon .accent-solid { fill: var(--accent); }
+
+/* A card mark sits behind a story title: small, square, and quiet. */
+.card-mark {
+  width: 100%;
+  height: auto;
+  display: block;
+  pointer-events: none;
 }
 
 /* Entering a section: a short fade and rise, restarted on every change */
@@ -197,7 +239,16 @@
   cursor: pointer;
   padding: 8px 16px;
   border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
 }
+
+/* The icon takes the button's colour, so the selected tab's mark turns white
+   with its label rather than staying navy on navy. */
+.nav button .icon .ink-line,
+.nav button .icon .ink-rule { stroke: currentColor; }
+.nav button .icon .ink-solid { fill: currentColor; }
 
 .nav button.active {
   background: var(--primary);

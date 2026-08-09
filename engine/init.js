@@ -62,6 +62,17 @@ function _attachLessonClose() {
 // Nav delegation (replaces inline onclick)
 // --------------------------------------------
 
+// Icons are put in from the registry rather than written into the markup, so
+// there is one place a shape is defined and index.html stays readable.
+function _drawNavIcons() {
+    if (typeof Art === 'undefined') return;
+    document.querySelectorAll('.nav button[data-icon]').forEach(btn => {
+        const label = btn.textContent.trim();
+        btn.innerHTML = Art.icon(btn.dataset.icon) +
+            '<span class="nav-label">' + label + '</span>';
+    });
+}
+
 function _attachNavEvents() {
     document.querySelector('.nav').addEventListener('click', e => {
         const btn = e.target.closest('button[data-tab]');
@@ -85,6 +96,7 @@ async function initialiseApp() {
     window._curriculumData = await loadCurriculumData();
 
     // Nav
+    _drawNavIcons();
     _attachNavEvents();
 
     // Learn page

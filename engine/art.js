@@ -110,6 +110,113 @@ const Art = (function () {
         `
     };
 
+
+    // ----------------------------------------
+    // ICONS
+    // ----------------------------------------
+    // 24x24, stroked rather than filled: at nav size a filled shape turns
+    // into a blob and the hairlines that give a frontispiece its depth
+    // disappear altogether. Each one is the section's illustration reduced to
+    // the single gesture that survives being drawn at twenty pixels — the
+    // Library's shelf of spines, the Workshop's beam over a fulcrum — so the
+    // icon and the header read as the same idea at two sizes.
+    //
+    // No accent: an icon is a label, and a red dot in a row of five competes
+    // with whichever one is actually selected.
+
+    const ICONS = {
+
+        // Home — a door standing open, the mark the app is named for.
+        home: `
+            <rect class="ink-line" x="4" y="3" width="16" height="18"/>
+            <path class="ink-line" d="M4 3 12 6v15l-8-3Z"/>
+            <circle class="ink-solid" cx="10" cy="12" r="1"/>
+        `,
+
+        // Lessons — the path out to a vanishing point.
+        lessons: `
+            <line class="ink-line" x1="2" y1="19" x2="22" y2="19"/>
+            <line class="ink-line" x1="6" y1="19" x2="15" y2="6"/>
+            <line class="ink-line" x1="14" y1="19" x2="16" y2="6"/>
+            <circle class="ink-solid" cx="15.5" cy="5" r="1.5"/>
+        `,
+
+        // Library — spines on a shelf.
+        library: `
+            <line class="ink-line" x1="3" y1="20" x2="21" y2="20"/>
+            <rect class="ink-line" x="5" y="8" width="3.4" height="12"/>
+            <rect class="ink-line" x="10.3" y="5" width="3.4" height="15"/>
+            <rect class="ink-line" x="15.6" y="10" width="3.4" height="10"/>
+        `,
+
+        // Workshop — a beam brought into balance over a fulcrum.
+        workshop: `
+            <line class="ink-line" x1="3" y1="21" x2="21" y2="21"/>
+            <line class="ink-line" x1="4" y1="9" x2="20" y2="12"/>
+            <path class="ink-line" d="M13 13 15.5 21h-5Z"/>
+            <rect class="ink-line" x="4" y="4" width="5" height="5"/>
+        `,
+
+        // Decks — cards receding.
+        decks: `
+            <rect class="ink-line" x="3" y="6" width="12" height="15" rx="1.5"/>
+            <path class="ink-line" d="M7 4h11a1.5 1.5 0 0 1 1.5 1.5v13"/>
+        `,
+
+        // My Journey — a line climbing by stages to a flag.
+        journey: `
+            <polyline class="ink-line" points="3,19 8,13 12,15 17,7"/>
+            <line class="ink-line" x1="17" y1="7" x2="17" y2="21"/>
+            <path class="ink-line" d="M17 3h4l-2 2 2 2h-4Z"/>
+        `,
+
+        // Reader — an open book, the Library's shelf turned to face you.
+        reader: `
+            <path class="ink-line" d="M12 7v14"/>
+            <path class="ink-line" d="M12 7C10 5 7 4.5 3 5v13c4-.5 7 0 9 2"/>
+            <path class="ink-line" d="M12 7c2-2 5-2.5 9-2v13c-4-.5-7 0-9 2"/>
+        `,
+
+        // Grammar — the paradigm, which is what a grammar screen owes you.
+        grammar: `
+            <rect class="ink-line" x="3" y="4" width="18" height="16" rx="1.5"/>
+            <line class="ink-line" x1="3" y1="9" x2="21" y2="9"/>
+            <line class="ink-line" x1="10" y1="9" x2="10" y2="20"/>
+        `,
+
+        // Listening — sound, drawn as the levels of a waveform.
+        listening: `
+            <line class="ink-line" x1="4" y1="10" x2="4" y2="14"/>
+            <line class="ink-line" x1="8" y1="7" x2="8" y2="17"/>
+            <line class="ink-line" x1="12" y1="4" x2="12" y2="20"/>
+            <line class="ink-line" x1="16" y1="8" x2="16" y2="16"/>
+            <line class="ink-line" x1="20" y1="11" x2="20" y2="13"/>
+        `,
+
+        // Settings — a dial with one mark, rather than a cog nobody can read
+        // at this size.
+        settings: `
+            <circle class="ink-line" cx="12" cy="12" r="8"/>
+            <circle class="ink-line" cx="12" cy="12" r="3"/>
+            <line class="ink-line" x1="12" y1="4" x2="12" y2="1.5"/>
+        `
+    };
+
+    function icon(id, className) {
+        const art = ICONS[id];
+        if (!art) return '';
+        return `
+            <svg class="art icon ${className || ''}" viewBox="0 0 24 24"
+                role="presentation" aria-hidden="true" focusable="false">
+                ${art}
+            </svg>
+        `;
+    }
+
+    function iconIds() {
+        return Object.keys(ICONS);
+    }
+
     function section(id) {
         return SECTIONS[id] || '';
     }
@@ -121,7 +228,7 @@ const Art = (function () {
         const art = section(id);
         if (!art) return '';
         return `
-            <svg class="${className || 'page-header-art'}" viewBox="0 0 320 100"
+            <svg class="art ${className || 'page-header-art'}" viewBox="0 0 320 100"
                 preserveAspectRatio="xMidYMid meet"
                 role="presentation" aria-hidden="true" focusable="false">
                 ${art}
@@ -133,5 +240,5 @@ const Art = (function () {
         return Object.keys(SECTIONS);
     }
 
-    return { section, svg, ids };
+    return { section, svg, ids, icon, iconIds };
 })();
