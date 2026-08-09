@@ -19,6 +19,12 @@
       "examples": ["a1-01"]
     },
     "title": { "type": "string", "minLength": 1 },
+    "theme": {
+      "type": "string",
+      "minLength": 1,
+      "description": "The vocabulary theme this lesson teaches, from guides/a1-vocabulary-themes.md. Groups words into a topic deck, so it is shared by every lesson covering that topic rather than being unique per lesson.",
+      "examples": ["City & places", "Body & health"]
+    },
     "words": {
       "type": "array",
       "minItems": 1,

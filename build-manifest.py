@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 import json
+import re
 from datetime import datetime, timezone
 from pathlib import Path
 
+ROOT = Path(".")
 BASE_STORIES = Path("content")
 BASE_LESSONS = Path("content")
 
@@ -151,6 +153,127 @@ def build_curriculum(lang="es"):
         "levels": levels
     }
 
+FREQUENCY_BANDS = [(1, 100), (101, 250), (251, 500), (501, 1000)]
+
+
+def build_decks(lang="es"):
+    """Every deck the Decks tab can offer, built from the content that already
+    exists rather than maintained by hand.
+
+    A deck is a named list of words, not a schedule. The same word turns up in
+    its lesson deck, a frequency band and a topic — scheduling it three times
+    would mean reviewing it three times and would wreck the SM-2 interval, so
+    the card store stays single and decks are only ways of selecting from it."""
+    base = BASE_LESSONS / lang
+    vocab_dir = base / "vocabulary"
+    if not vocab_dir.exists():
+        return None
+
+    lesson_decks, by_theme, known = [], {}, {}
+
+    for level_dir in sorted(p for p in vocab_dir.iterdir() if p.is_dir()):
+        for f in sorted(level_dir.glob("*-voc.json")):
+            try:
+                data = json.loads(f.read_text(encoding="utf-8"))
+            except (OSError, json.JSONDecodeError):
+                continue
+
+            words = [
+                {"lemma": w["lemma"], "translation": w.get("translation", ""),
+                 "pos": w.get("pos", "unknown")}
+                for w in data.get("words", []) if w.get("lemma")
+            ]
+            if not words:
+                continue
+
+            for w in words:
+                known.setdefault(w["lemma"], w)
+
+            lesson_key = data.get("lesson", f.stem.replace("-voc", ""))
+
+            # A vocabulary file's title names the story; the deck should carry
+            # the lesson's own title, which is what the learner picked from.
+            lesson_file = base / "lessons" / level_dir.name / (lesson_key + ".json")
+            lesson_title = data.get("title", lesson_key)
+            if lesson_file.exists():
+                try:
+                    lesson_title = json.loads(
+                        lesson_file.read_text(encoding="utf-8")).get("title", lesson_title)
+                except (OSError, json.JSONDecodeError):
+                    pass
+
+            lesson_decks.append({
+                "id": "lesson:" + lesson_key,
+                "kind": "lesson",
+                "name": lesson_title,
+                "label": lesson_key.split("-", 1)[-1],
+                "level": level_dir.name.upper(),
+                "lesson": lesson_key,
+                "words": words
+            })
+
+            theme = data.get("theme")
+            if theme:
+                by_theme.setdefault(theme, []).extend(words)
+
+    # Topic decks pool every lesson that teaches the same theme, so "City &
+    # places" stays one deck however many lessons contribute to it.
+    topic_decks = []
+    for theme in sorted(by_theme):
+        seen, words = set(), []
+        for w in by_theme[theme]:
+            if w["lemma"] in seen:
+                continue
+            seen.add(w["lemma"])
+            words.append(w)
+        topic_decks.append({
+            "id": "topic:" + re.sub(r"[^a-z0-9]+", "-", theme.lower()).strip("-"),
+            "kind": "topic",
+            "name": theme,
+            "words": words
+        })
+
+    # Frequency decks rank the course's own vocabulary by how common each word
+    # is in Spanish. Ranking the whole 20k list instead would produce decks
+    # full of words the course never teaches and cannot translate.
+    frequency_decks = []
+    ranks_path = ROOT / "generated" / "indexes" / "frequency.json"
+    if ranks_path.exists():
+        try:
+            ranked = json.loads(ranks_path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            ranked = []
+
+        rank_of = {}
+        for i, lemma in enumerate(ranked):
+            rank_of.setdefault(lemma, i + 1)
+
+        def bare(lemma):
+            return re.sub(r"^(el|la|los|las|un|una) ", "", lemma).strip()
+
+        scored = []
+        for lemma, word in known.items():
+            rank = rank_of.get(bare(lemma))
+            if rank:
+                scored.append((rank, word))
+        scored.sort(key=lambda pair: pair[0])
+
+        for low, high in FREQUENCY_BANDS:
+            words = [w for rank, w in scored if low <= rank <= high]
+            if words:
+                frequency_decks.append({
+                    "id": "frequency:%d-%d" % (low, high),
+                    "kind": "frequency",
+                    "name": "Top %d–%d words" % (low, high) if low > 1 else "Top %d words" % high,
+                    "words": words
+                })
+
+    return {
+        "generated": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
+        "decks": lesson_decks + topic_decks + frequency_decks
+    }
+
+
 def validate_lessons(lang="es"):
     """Check that every ref inside each lesson file actually resolves to a
     real file, and that every exercise-group's exerciseRefs id actually
@@ -233,6 +356,22 @@ def main():
             json.dump(curriculum, f, indent=2, ensure_ascii=False)
         total_lessons = sum(len(lvl['lessons']) for lvl in curriculum['levels'].values())
         print(f"Curriculum for {lang}: {total_lessons} lessons across {len(curriculum['levels'])} levels")
+
+    # Decks: named word lists over the single card store
+    for lang in ["es", "fr", "hu"]:
+        decks = build_decks(lang)
+        if not decks:
+            continue
+        out_dir = BASE_LESSONS / lang / "decks"
+        out_dir.mkdir(parents=True, exist_ok=True)
+        with open(out_dir / "decks.json", "w", encoding="utf-8") as f:
+            json.dump(decks, f, indent=2, ensure_ascii=False)
+        kinds = {}
+        for d in decks["decks"]:
+            kinds[d["kind"]] = kinds.get(d["kind"], 0) + 1
+        print("Decks for %s: %d (%s)" % (
+            lang, len(decks["decks"]),
+            ", ".join("%d %s" % (n, k) for k, n in sorted(kinds.items()))))
 
     # Validate lesson content refs — broken refs fail silently in the app
     # (a "Coming soon" placeholder, no error), so surface them here instead.

@@ -49,6 +49,14 @@
         <section id="review" class="tab hidden">
             <div id="review-root">
 
+                <!-- Deck browser: lesson, topic and frequency decks, plus My Deck -->
+                <div id="decks-root"></div>
+
+                <!-- Review session, scoped to whichever deck was chosen -->
+                <div id="review-session" class="hidden">
+                    <button class="dk-back" onclick="endReviewSession()">← All decks</button>
+                    <p id="review-scope" class="dk-scope"></p>
+
                 <!-- Today's three activities; two of three keeps the streak.
                      Lives here rather than in the header, which is now
                      editorial and carries no running state. -->
@@ -110,6 +118,8 @@
                         </button>
                     </div>
                 </div>
+
+                </div><!-- /review-session -->
 
                 <!-- Progress: deliberately separate numbers, not one score -->
                 <section class="stats-panel">
@@ -195,6 +205,7 @@
 <script src="engine/lessons.js?v=2026-08-09"></script>
 <script src="engine/progress.js?v=2026-08-09"></script>
 <script src="engine/journey.js?v=2026-08-09"></script>
+<script src="engine/decks.js?v=2026-08-09"></script>
 <script src="engine/curriculum.js?v=2026-08-09"></script>
 
 <!-- Engine: bootstrap (loads last) -->

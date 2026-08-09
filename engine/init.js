@@ -24,8 +24,12 @@ function showTab(tabName, button) {
         Verbs.render();
     }
 
-    if (tabName === 'review' && typeof showNextCard === 'function') {
-        showNextCard();
+    // Decks opens on the browser, not mid-session: arriving at a flashcard
+    // you did not ask for is disorienting, and the point of the tab now is
+    // choosing what to study.
+    if (tabName === 'review' && typeof Decks !== 'undefined') {
+        if (typeof endReviewSession === 'function') endReviewSession();
+        else Decks.render();
     }
 
     // Rendered on entry rather than kept up to date: everything on it is

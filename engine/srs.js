@@ -235,13 +235,52 @@ function updateSRSCounter() {
 // ============================================
 let currentReviewCard = null;
 
+// A review session can be scoped to one deck. The scope is a set of lemmas
+// rather than a copy of the cards, so rating a card still writes to the one
+// card the whole app shares — a deck is a way of choosing what to study, not
+// a second place to keep a schedule.
+let reviewScope = null;      // Set of lemmas, or null for everything
+let reviewScopeName = '';
+
+function startReviewSession(lemmas, name) {
+    reviewScope = lemmas ? new Set(lemmas) : null;
+    reviewScopeName = reviewScope ? (name || 'Deck') : '';
+
+    const banner = document.getElementById('review-scope');
+    if (banner) {
+        banner.textContent = reviewScope ? 'Reviewing: ' + reviewScopeName : '';
+        banner.style.display = reviewScope ? 'block' : 'none';
+    }
+
+    const root = document.getElementById('review-session');
+    if (root) root.classList.remove('hidden');
+    const browser = document.getElementById('decks-root');
+    if (browser) browser.classList.add('hidden');
+
+    showNextCard();
+}
+
+function endReviewSession() {
+    reviewScope = null;
+    reviewScopeName = '';
+    const root = document.getElementById('review-session');
+    if (root) root.classList.add('hidden');
+    const browser = document.getElementById('decks-root');
+    if (browser) browser.classList.remove('hidden');
+    if (typeof Decks !== 'undefined') Decks.render();
+}
+
+function inScope(card) {
+    return !reviewScope || reviewScope.has(card.spanish);
+}
+
 function getDueCards() {
     const now = new Date();
-    return srsDeck.filter(card => new Date(card.nextReview) <= now);
+    return srsDeck.filter(card => inScope(card) && new Date(card.nextReview) <= now);
 }
 
 function getNewCards() {
-    return srsDeck.filter(card => card.reviews === 0);
+    return srsDeck.filter(card => inScope(card) && card.reviews === 0);
 }
 
 // Fisher-Yates on a copy — the deck itself keeps its order.
@@ -255,9 +294,16 @@ function shuffled(cards) {
 }
 
 function updateReviewStats() {
-    document.getElementById('due-count').textContent = getDueCards().length;
-    document.getElementById('new-count').textContent = getNewCards().length;
-    document.getElementById('total-count').textContent = srsDeck.length;
+    const due = document.getElementById('due-count');
+    const fresh = document.getElementById('new-count');
+    const total = document.getElementById('total-count');
+    if (due) due.textContent = getDueCards().length;
+    if (fresh) fresh.textContent = getNewCards().length;
+    if (total) {
+        total.textContent = reviewScope
+            ? srsDeck.filter(inScope).length
+            : srsDeck.length;
+    }
 }
 
 function showNextCard() {

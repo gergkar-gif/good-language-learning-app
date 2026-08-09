@@ -1442,3 +1442,173 @@
   background: var(--primary);
   border-color: var(--primary);
 }
+
+/* ============================================
+   DECKS
+   ============================================
+   The tab is a browser first and a flashcard second. A deck is a way of
+   choosing what to study — the schedule underneath stays single, so these
+   are windows onto one pile rather than separate piles. */
+
+.dk-top {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: flex-end;
+  justify-content: space-between;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 18px 20px;
+  margin-bottom: 24px;
+}
+
+.dk-big {
+  font-family: var(--font-display);
+  font-size: 34px;
+  line-height: 1.1;
+  color: var(--primary);
+  font-variant-numeric: tabular-nums;
+}
+
+.dk-of { font-size: 16px; color: var(--muted); }
+
+.dk-meta-line { font-size: 13px; color: var(--muted); margin-top: 2px; }
+
+.dk-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+
+.dk-secondary {
+  background: var(--surface);
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 15px;
+}
+
+.dk-secondary:hover { background: var(--border); }
+
+.dk-group { margin-bottom: 28px; }
+
+.dk-group-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.dk-group-blurb { font-size: 13px; color: var(--muted); margin: 2px 0 12px; }
+
+.dk-grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+}
+
+.dk-card {
+  display: block;
+  text-align: left;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 16px;
+  cursor: pointer;
+  transition: border-color .2s, transform .2s;
+}
+
+.dk-card:hover { border-color: var(--primary); transform: translateY(-2px); }
+
+.dk-card-head { display: flex; align-items: baseline; gap: 8px; }
+
+.dk-num {
+  font-variant-numeric: tabular-nums;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.dk-name {
+  font-family: var(--font-display);
+  font-size: 16px;
+  color: var(--text);
+}
+
+.dk-meter {
+  display: block;
+  height: 5px;
+  border-radius: 99px;
+  background: var(--border);
+  overflow: hidden;
+  margin: 10px 0 8px;
+}
+
+.dk-fill { display: block; height: 100%; background: var(--primary); }
+
+.dk-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.dk-due { color: var(--accent-dark); font-weight: 600; }
+
+.dk-back {
+  background: none;
+  border: 0;
+  color: var(--primary);
+  font-size: 14px;
+  padding: 0;
+  margin-bottom: 14px;
+  cursor: pointer;
+}
+
+.dk-back:hover { text-decoration: underline; }
+
+.dk-scope {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.dk-detail-head { margin-bottom: 18px; }
+
+.dk-detail-head h3 {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.dk-detail-head p { font-size: 13px; color: var(--muted); margin: 2px 0 12px; }
+
+.dk-words { list-style: none; }
+
+.dk-word {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 10px;
+  align-items: baseline;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 15px;
+}
+
+.dk-word:last-child { border-bottom: 0; }
+
+.dk-word-es { color: var(--primary); }
+.dk-word-en { color: var(--muted); font-size: 14px; }
+
+.dk-word-state {
+  font-size: 11px;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+/* A word not yet taken on is legible but plainly not part of your deck. */
+.dk-word-not-added .dk-word-es { color: var(--muted); }
+.dk-word-mastered .dk-word-state { color: var(--success); }
+
+.dk-empty { color: var(--muted); font-size: 14px; }
