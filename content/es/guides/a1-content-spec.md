@@ -126,6 +126,46 @@ And across the unit:
 
 ---
 
+## 4c. Review lessons (18, 19, 20)
+
+Designed 2026-08-09. Lessons 18–20 teach no new words and no new grammar, so
+almost none of the teaching-lesson spec applies to them: there is no
+vocabulary target to hit, no grammar screen to write, and no new word to find
+in the story. They were skipped by the auditor until this shape existed.
+
+A review lesson has one job a teaching lesson cannot do: **show the learner
+what has decayed**. It ranges across a block of earlier lessons rather than
+drilling one point, and it is the only place where grammar from Lesson 2 and
+Lesson 14 can turn up in consecutive exercises.
+
+| Block | Count | Notes |
+|-------|------:|-------|
+| Story | 1 | The chapter for that lesson, 100–250 words like any other |
+| Reading | 4 | On the story, in English |
+| Recap | 8 | Mixed, drawn from across the block. **5+ distinct types** |
+| Dialogue | 2 | |
+| Writing | 2 | |
+
+Sixteen exercises, in this section order: goal → story → Reading → Recap →
+Dialogue → Writing → checklist.
+
+Differences from a teaching lesson, and why:
+
+- **No grammar screen.** Nothing is being taught. A recap screen would either repeat a screen the learner has already seen or become a new explanation, which is what the next level is for.
+- **No vocabulary section and no SRS step.** There are no new words to present or to offer. The block's words are already in the learner's decks, and Decks is where they are reviewed — a step offering "add 0 words to review" is worse than no step.
+- **Story comes first, not after the practice.** In a teaching lesson the story is the payoff for grammar just learned. Here it is the warm-up: it is written entirely in grammar the learner already has, so reading it is the first act of recall.
+- **Every Recap exercise carries `teaches`.** That is what makes the block auditable: the union of those tags across the lesson must cover **8 or more distinct points**, which is the check that a review actually ranges instead of drilling one thing eight times.
+
+Which lessons each review covers:
+
+| Review | Covers |
+|--------|--------|
+| 18 | Lessons 1–8 |
+| 19 | Lessons 9–14 |
+| 20 | Lessons 15–17, and a sweep of the level |
+
+---
+
 ## 5. Classic Story
 
 | Lessons | Required |

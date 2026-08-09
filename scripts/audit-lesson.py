@@ -53,9 +53,14 @@ NEW_WORDS = {1: 10, 2: 10, 3: 12, 4: 12, 5: 15, 6: 15, 7: 18, 8: 18, 9: 20,
 
 # Lessons 18-20 consolidate rather than teach: no new words, no new grammar,
 # and a different shape entirely. Holding them to the teaching-lesson spec
-# would report failures nobody can act on, so they are skipped until that
-# format is designed.
+# would report failures nobody can act on, so they have their own, from
+# a1-content-spec.md section 4c.
 REVIEW_LESSONS = {18, 19, 20}
+REVIEW_SPLIT = {"Recap": 8, "Reading": 4, "Dialogue": 2, "Writing": 2}
+MIN_RECAP_TYPES = 5
+# A review that drills one point eight times is not a review. The union of
+# what its Recap exercises claim to test has to actually range.
+MIN_REVIEW_POINTS = 8
 TEACHING_LESSONS = [n for n in range(1, 21) if n not in REVIEW_LESSONS]
 
 # From a1-content-spec.md section 3. Flat across A1 rather than escalating:
@@ -271,18 +276,112 @@ class Report:
         self.warnings.append(f"{label}" + (f" — {detail}" if detail else ""))
 
 
+def audit_review(key, lesson, r):
+    """A consolidation lesson: no new words, no new grammar, and a story that
+    is read first rather than last. See a1-content-spec.md section 4c."""
+    sections = lesson.get("sections", [])
+
+    def section(t, title=None):
+        for s in sections:
+            if s["type"] == t and (title is None or s.get("title") == title):
+                return s
+        return None
+
+    # --- what a review must NOT have ------------------------------------
+    r.rule(not section("grammar"), "no grammar screen",
+           "a review teaches nothing new")
+    r.rule(not section("vocabulary"), "no vocabulary section",
+           "a review introduces no words")
+    r.rule(not section("srs"), "no SRS step",
+           "there are no new words to offer; the block's words are in Decks")
+
+    # --- story, read first ----------------------------------------------
+    story_section = section("story")
+    r.rule(bool(story_section), "has a story")
+    types = [s["type"] for s in sections]
+    if story_section and "exercise-group" in types:
+        r.rule(types.index("story") < types.index("exercise-group"),
+               "story comes before the exercises",
+               "in a review the story is the warm-up, not the payoff")
+    if story_section:
+        sp = ES / story_section["ref"]
+        if sp.exists():
+            paras = [p["text"] for p in read(sp).get("paragraphs", [])]
+            words = sum(len(p.split()) for p in paras)
+            lo, hi = STORY_WORDS
+            r.rule(lo <= words <= hi, f"story is {lo}-{hi} words", f"{words}")
+
+    # --- exercises --------------------------------------------------------
+    all_ex = {}
+    for s in sections:
+        if s["type"] != "exercise-group":
+            continue
+        ep = ES / s["ref"]
+        if ep.exists():
+            for e in read(ep).get("exercises", []):
+                all_ex[e["id"]] = e
+
+    used, points = [], set()
+    for title, count in REVIEW_SPLIT.items():
+        grp = section("exercise-group", title)
+        if not grp:
+            r.rule(False, f"has a '{title}' exercise group", "missing")
+            continue
+        refs = grp.get("exerciseRefs", [])
+        used += refs
+        r.rule(len(refs) == count, f"'{title}' has {count} exercises", f"{len(refs)}")
+
+        if title == "Recap":
+            kinds = {all_ex[i]["type"] for i in refs if i in all_ex}
+            r.rule(len(kinds) >= MIN_RECAP_TYPES,
+                   f"recap spans {MIN_RECAP_TYPES}+ distinct types",
+                   f"{len(kinds)}: {sorted(kinds)}")
+            missing_tag = [i for i in refs
+                           if i in all_ex and not all_ex[i].get("teaches")]
+            r.rule(not missing_tag, "every recap exercise says what it tests",
+                   str(missing_tag))
+            for i in refs:
+                points |= set(all_ex.get(i, {}).get("teaches", []))
+
+    r.rule(len(points) >= MIN_REVIEW_POINTS,
+           f"recap ranges over {MIN_REVIEW_POINTS}+ points",
+           f"{len(points)}: {sorted(points)}")
+
+    total = sum(REVIEW_SPLIT.values())
+    r.rule(len(used) == total, f"lesson uses {total} exercises", f"{len(used)}")
+    r.rule(len(used) == len(set(used)), "no exercise is used twice",
+           str([i for i in used if used.count(i) > 1]))
+
+    # --- goals and checklist ---------------------------------------------
+    goals = (section("goal") or {}).get("items", [])
+    checks = (section("checklist") or {}).get("items", [])
+    r.rule(len(checks) == CHECKLIST_ITEMS,
+           f"exactly {CHECKLIST_ITEMS} checklist items", f"{len(checks)}")
+    r.rule(len(goals) == len(checks), "goals and checklist are one-to-one",
+           f"{len(goals)} goals vs {len(checks)} checks")
+    bad = [c for c in checks if not c.startswith(CHECKLIST_PREFIX)]
+    r.rule(not bad, f'every checklist item begins "{CHECKLIST_PREFIX}"', str(bad))
+
+    return r
+
+
 def audit(key):
-    """key is like 'a1-01', or 'a1-03b' for one part of a split lesson.
-    Returns None for a lesson with no file, and the string 'review' for a
-    consolidation lesson that this spec does not cover."""
+    """key is like 'a1-01', or 'a1-03b' for one part of a split lesson."""
     level, number, part = parse_key(key)
-    if number in REVIEW_LESSONS:
-        return "review"
     r = Report(key)
 
     lesson_path = ES / "lessons" / level / f"{key}.json"
     if not lesson_path.exists():
         return None
+
+    if number in REVIEW_LESSONS:
+        row = MASTER.get(str(number))
+        lesson = read(lesson_path)
+        if row:
+            r.rule(lesson.get("title") == row["title"], "title matches guides/a1.md",
+                   f'file "{lesson.get("title")}" vs master "{row["title"]}"')
+        return audit_review(key, lesson, r)
+
     lesson = read(lesson_path)
     siblings = unit_parts(level, number) if part else []
 
@@ -533,13 +632,9 @@ def main():
     # and reported as skipped.
     keys = sys.argv[1:] or lesson_keys("a1")
 
-    failed = skipped = 0
+    failed = 0
     for key in keys:
         r = audit(key)
-        if r == "review":
-            skipped += 1
-            print(f"{key}: skipped — review lesson, format not yet designed")
-            continue
         if r is None:
             continue
         if r.failures:
@@ -565,8 +660,6 @@ def main():
             print(f"  FAIL  {issue}")
 
     print()
-    if skipped:
-        print(f"{skipped} review lesson(s) skipped")
     if failed or order_issues or unit_issues:
         if failed:
             print(f"{failed} lesson(s) need work")
