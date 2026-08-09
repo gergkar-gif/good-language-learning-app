@@ -99,9 +99,21 @@ const Decks = (function () {
             words: srsDeck.map(card => ({
                 lemma: card.spanish,
                 translation: card.english,
-                pos: card.type
+                pos: card.type,
+                source: card.source
             }))
         };
+    }
+
+    // Where a card came from, in words. Cards saved before provenance was
+    // recorded have no source, and say so rather than guessing.
+    function originOf(source) {
+        if (!source) return '';
+        if (source === 'reading') return 'from reading';
+        const deck = (catalogue.decks || []).find(d => d.id === source);
+        if (deck) return 'from ' + deck.name;
+        if (source.indexOf('lesson:') === 0) return 'from lesson ' + source.slice(7);
+        return '';
     }
 
     function byId(id) {
@@ -228,11 +240,17 @@ const Decks = (function () {
                 : (card.reviews || 0) >= 3 ? 'mastered'
                 : (card.reviews || 0) >= 1 ? 'learning'
                 : 'new';
+            // Origin is worth showing in My Deck, where words arrive from
+            // everywhere. In a lesson deck every word has the same origin, so
+            // printing it on each row would be noise.
+            const origin = deck.id === 'mine' ? originOf(word.source) : '';
+
             return `
                 <li class="dk-word dk-word-${state.replace(' ', '-')}">
                     <span class="dk-word-es">${esc(word.lemma)}${
                         typeof Speech !== 'undefined' ? Speech.button(word.lemma) : ''}</span>
-                    <span class="dk-word-en">${esc(word.translation)}</span>
+                    <span class="dk-word-en">${esc(word.translation)}${
+                        origin ? `<span class="dk-word-origin">${esc(origin)}</span>` : ''}</span>
                     <span class="dk-word-state">${state}</span>
                 </li>
             `;

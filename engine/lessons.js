@@ -908,8 +908,17 @@ function lessonUpdateSrsButton() {
     btn.disabled = count === 0;
 }
 
+// Where a card came from, in the form the Decks tab uses for its ids, so a
+// word added during Lesson 4 is recognisably part of Lesson 4's deck.
+// 'lesson.a1.03a' -> 'lesson:a1-03a'.
+function lessonDeckId() {
+    if (!currentLesson || !currentLesson.id) return 'lesson';
+    return 'lesson:' + currentLesson.id.replace(/^lesson\./, '').split('.').join('-');
+}
+
 function lessonAddSrsCards() {
     let added = 0;
+    const source = lessonDeckId();
 
     selectedSrsCards().forEach(card => {
         if (srsDeck.find(w => w.spanish === card.lemma)) return;
@@ -917,6 +926,7 @@ function lessonAddSrsCards() {
             spanish: card.lemma,
             english: card.translation || 'unknown',
             type: card.pos || 'unknown',
+            source: source,
             added: new Date().toISOString()
         }, newCardSchedule()));
         added++;

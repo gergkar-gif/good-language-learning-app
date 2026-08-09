@@ -210,6 +210,8 @@ function addToSRS() {
         spanish: cleanWord,
         english: data.en,
         type: data.type,
+        // Tapped while reading, rather than taken from a lesson or a deck.
+        source: 'reading',
         added: new Date().toISOString()
     }, newCardSchedule()));
     
