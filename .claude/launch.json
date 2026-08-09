@@ -4,8 +4,9 @@
     {
       "name": "parlour",
       "runtimeExecutable": "python",
-      "runtimeArgs": ["scripts/dev-server.py", "8131"],
-      "port": 8131
+      "runtimeArgs": ["scripts/dev-server.py"],
+      "port": 8131,
+      "autoPort": true
     }
   ]
 }

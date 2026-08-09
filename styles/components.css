@@ -1778,3 +1778,206 @@
 .lt-verdict.is-fail { color: var(--accent-dark); }
 
 .lt-topics { margin: 8px 0 14px; font-size: 14px; color: var(--muted); }
+
+/* ============================================
+   HOME
+   ============================================
+   One dominant object, three doors, where today stands, and how far the
+   course has come — in that order, and nothing else. The screen exists to be
+   left quickly, so hierarchy does the work: a serif title and a meter mark
+   the thing to continue, and everything under it is a single line of sans. */
+
+/* ---- Continue: the dominant object ---- */
+
+.hm-continue {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  text-align: left;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  padding: 20px 22px 18px;
+  margin-bottom: 16px;
+  cursor: pointer;
+  transition: transform .15s, box-shadow .15s;
+}
+
+.hm-continue:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, .10);
+}
+
+/* A finished course is a statement rather than a door — nothing to press. */
+.hm-continue.is-done {
+  cursor: default;
+}
+
+.hm-continue.is-done:hover {
+  transform: none;
+  box-shadow: var(--shadow);
+}
+
+.hm-eyebrow {
+  font-size: 12px;
+  letter-spacing: .04em;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+.hm-continue-title {
+  font-family: var(--font-display);
+  font-size: 26px;
+  line-height: 1.15;
+  color: var(--text);
+}
+
+.hm-continue-sub {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+.hm-continue .hm-track {
+  margin-top: 16px;
+}
+
+.hm-continue-foot {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+/* The one accent on the screen. It marks the single live thing, which is why
+   the due count beside it is set in ink rather than competing for the same
+   signal. */
+.hm-cta {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent-dark);
+  white-space: nowrap;
+}
+
+.hm-count {
+  font-size: 12px;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---- Meter, shared by the continue card and the course line ---- */
+
+.hm-track {
+  display: block;
+  height: 5px;
+  border-radius: var(--radius-pill);
+  background: var(--border);
+  overflow: hidden;
+}
+
+.hm-fill {
+  display: block;
+  height: 100%;
+  border-radius: var(--radius-pill);
+  background: var(--primary);
+}
+
+/* ---- Doors ---- */
+
+.hm-doors {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.hm-door {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  padding: 13px 16px;
+  text-align: left;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: border-color .15s;
+}
+
+.hm-door:hover {
+  border-color: var(--primary-mid);
+}
+
+.hm-door .icon {
+  width: 22px;
+  height: 22px;
+}
+
+.hm-door-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  flex: 1;
+  min-width: 0;
+}
+
+.hm-door-title {
+  font-size: 15px;
+  color: var(--text);
+}
+
+/* One line only. A story title long enough to wrap would make three doors of
+   different heights, and the row is a label, not a description. */
+.hm-door-sub {
+  font-size: 13px;
+  color: var(--muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.hm-door-value {
+  flex: none;
+  font-family: var(--font-display);
+  font-size: 22px;
+  line-height: 1;
+  color: var(--primary);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---- The course, in one line ---- */
+
+.hm-progress {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  border-top: 1px solid var(--border);
+  padding: 16px 2px 0;
+  cursor: pointer;
+}
+
+.hm-progress-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 14px;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.hm-progress-foot {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 8px;
+}
+
+.hm-progress:hover .hm-progress-foot {
+  color: var(--text);
+}

@@ -22,7 +22,8 @@
     <!-- Labels match the page headers. The data-tab ids stay as they are —
          they key showTab, PageHeader and the tab sections. -->
     <nav class="nav">
-        <button class="active" data-tab="learn" data-icon="lessons">Lessons</button>
+        <button class="active" data-tab="home" data-icon="home">Home</button>
+        <button data-tab="learn" data-icon="lessons">Lessons</button>
         <button data-tab="reader" data-icon="library">Library</button>
         <button data-tab="drills" data-icon="workshop">Workshop</button>
         <button data-tab="review" data-icon="decks">Decks</button>
@@ -31,7 +32,12 @@
 
     <main class="content">
 
-        <section id="learn" class="tab">
+        <!-- The landing section. Everything on it is drawn by engine/home.js. -->
+        <section id="home" class="tab">
+            <div id="home-root"></div>
+        </section>
+
+        <section id="learn" class="tab hidden">
             <div id="learn-content"></div>
         </section>
 
@@ -57,16 +63,9 @@
                     <button class="dk-back" onclick="endReviewSession()">← All decks</button>
                     <p id="review-scope" class="dk-scope"></p>
 
-                <!-- Today's three activities; two of three keeps the streak.
-                     Lives here rather than in the header, which is now
-                     editorial and carries no running state. -->
-                <div class="today">
-                    <div class="today-head">
-                        <span id="header-streak">No streak yet</span>
-                        <span id="header-xp">0 XP</span>
-                    </div>
-                    <div id="daily-activities" class="daily-activities"></div>
-                </div>
+                <!-- Today's three activities used to sit here as a stopgap.
+                     They belong on Home, which is the screen that asks what
+                     to do today, and engine/home.js draws them now. -->
 
                 <!-- Stats bar -->
                 <div class="review-stats">
@@ -212,6 +211,9 @@
 <script src="engine/leveltest.js?v=2026-08-09"></script>
 <script src="engine/decks.js?v=2026-08-09"></script>
 <script src="engine/curriculum.js?v=2026-08-09"></script>
+
+<!-- Engine: home (reads from every module above) -->
+<script src="engine/home.js?v=2026-08-09"></script>
 
 <!-- Engine: bootstrap (loads last) -->
 <script src="engine/init.js?v=2026-08-09"></script>

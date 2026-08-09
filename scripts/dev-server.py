@@ -20,6 +20,7 @@ and cannot be answered from a desktop. Anyone on that network can then read
 the files, so use it on a network you trust and stop the server afterwards.
 """
 
+import os
 import socket
 import sys
 from functools import partial
@@ -67,7 +68,10 @@ def main():
     args = [a for a in sys.argv[1:] if not a.startswith("--")]
     lan = "--lan" in sys.argv[1:]
 
-    port = int(args[0]) if args else DEFAULT_PORT
+    # Argument first, then $PORT, then the default. The environment variable is
+    # how a tool that assigns its own port asks for one; two of these servers
+    # running at once should not fight over 8131.
+    port = int(args[0]) if args else int(os.environ.get("PORT") or DEFAULT_PORT)
     handler = partial(NoCacheHandler, directory=str(PROJECT_ROOT))
     host = "0.0.0.0" if lan else "127.0.0.1"
 

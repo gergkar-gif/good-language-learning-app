@@ -12,6 +12,9 @@ let lessons = {};
 let currentLesson = null;
 let currentStepIndex = 0;
 
+// The tab the lesson was opened from, so closing it goes back there.
+let lessonReturnTab = 'learn';
+
 // per-step interaction state, reset on every renderStep()
 let stepState = {};
 
@@ -196,6 +199,12 @@ async function startLesson(lessonId) {
     currentLesson = lesson;
     currentStepIndex = 0;
 
+    // A lesson can be opened from the level list or from Home's continue
+    // card, and closing it should put the learner back where they were rather
+    // than always on the level list.
+    const from = document.querySelector('.tab:not(.hidden)');
+    lessonReturnTab = (from && from.id !== 'lesson-screen') ? from.id : 'learn';
+
     document.querySelectorAll('.tab').forEach(tab => tab.classList.add('hidden'));
     document.getElementById('lesson-screen').classList.remove('hidden');
 
@@ -207,10 +216,11 @@ async function startLesson(lessonId) {
 
 function closeLesson() {
     document.getElementById('lesson-screen').classList.add('hidden');
-    document.getElementById('learn').classList.remove('hidden');
 
-    document.querySelectorAll('.nav button').forEach(btn => btn.classList.remove('active'));
-    document.querySelector('.nav button:first-child').classList.add('active');
+    // Through showTab rather than by hand, so the section is re-rendered on
+    // the way in: a lesson just finished is the moment its level list and
+    // Home are both out of date.
+    showTab(lessonReturnTab, document.querySelector('.nav button[data-tab="' + lessonReturnTab + '"]'));
 }
 
 // ============================================

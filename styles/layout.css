@@ -171,7 +171,8 @@
 }
 
 /* ---- Daily activities (Review / Read / Learn) ---- */
-/* Now on the Decks page rather than the header, so they sit on cream */
+/* On Home, the screen that asks what to do today. They sit on cream rather
+   than in the header, which is editorial and carries no running state. */
 
 .today {
   margin-bottom: 16px;
@@ -217,31 +218,52 @@
 
 /* ---- Navigation ---- */
 
+/* A tab bar, not a row of pills. Six sections set side by side as text
+   overflow 460px — the widest the shell ever is — and wrapping the nav onto
+   two rows costs more height than stacking each label under its mark. Equal
+   columns also mean adding a seventh section changes nothing here. */
+
 .nav {
   display: flex;
-  justify-content: space-around;
-  gap: 10px;
-  padding: 15px 0;
+  gap: 2px;
+  padding: 8px 0;
   background: var(--bg);
   border-bottom: 1px solid var(--border);
   position: sticky;
   top: 0;
   z-index: 10;
-  flex-wrap: wrap;
   margin-bottom: 0;
 }
 
 .nav button {
+  flex: 1 1 0;
+  min-width: 0;
   background: none;
   border: none;
-  font-size: 14px;
+  font-size: 11px;
   color: var(--secondary);
   cursor: pointer;
-  padding: 8px 16px;
-  border-radius: 20px;
+  padding: 6px 2px 5px;
+  border-radius: 12px;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 7px;
+  gap: 4px;
+}
+
+/* Fixed rather than the 1.25em the icon defaults to: at an 11px label that
+   would come out at fourteen pixels and the mark would vanish. */
+.nav button .icon {
+  width: 22px;
+  height: 22px;
+  vertical-align: baseline;
+}
+
+.nav-label {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 /* The icon takes the button's colour, so the selected tab's mark turns white
@@ -255,17 +277,15 @@
   color: #fff;
 }
 
-/* The longer labels ("Workshop") overflow four-across on a narrow phone and
-   drop the nav onto a second row. Tighten the padding rather than wrap. */
 @media (max-width: 420px) {
-  .nav {
-    gap: 2px;
-    padding: 12px 0;
+  .nav button {
+    font-size: 10px;
+    gap: 3px;
   }
 
-  .nav button {
-    padding: 8px 10px;
-    font-size: 13px;
+  .nav button .icon {
+    width: 20px;
+    height: 20px;
   }
 }
 

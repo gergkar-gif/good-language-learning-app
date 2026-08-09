@@ -7,10 +7,20 @@
 //
 //   PageHeader.render({ title, subtitle, illustration, actions })
 //
+// A title may be a function, resolved at render rather than at load. Only
+// Home needs it — its title is the time of day — and the rule stands that a
+// header carries no running state: the greeting is the one thing that changes
+// without saying anything about how the learner is doing.
+//
 // Illustrations live in engine/art.js, which the nav and story cards also
 // draw from. This module only names which one belongs to which section.
 
 const PAGE_HEADERS = {
+    home: {
+        title: () => (typeof Home !== 'undefined') ? Home.greeting() : 'Home',
+        subtitle: 'Where you left off.',
+        illustration: 'threshold'
+    },
     learn: {
         title: 'Lessons',
         subtitle: 'Your Spanish course.',
@@ -46,10 +56,11 @@ const PageHeader = {
 
         const art = Art.section(config.illustration);
         const actions = (config.actions || []).filter(Boolean);
+        const title = (typeof config.title === 'function') ? config.title() : config.title;
 
         host.innerHTML = `
             <div class="page-header-text">
-                <h1 class="page-header-title">${UI.escape(config.title)}</h1>
+                <h1 class="page-header-title">${UI.escape(title)}</h1>
                 <p class="page-header-sub">${UI.escape(config.subtitle || '')}</p>
             </div>
             ${actions.length ? `<div class="page-header-actions">${actions.join('')}</div>` : ''}

@@ -16,6 +16,13 @@ function showTab(tabName, button) {
     // The header is contextual — it names the room you just walked into.
     if (typeof PageHeader !== 'undefined') PageHeader.show(tabName);
 
+    // Home is entirely counted from data other modules own, so it is redrawn
+    // on entry rather than kept up to date. Walking back onto it after a
+    // lesson is exactly when every number on it has just changed.
+    if (tabName === 'home' && typeof Home !== 'undefined') {
+        Home.render();
+    }
+
     // Re-render on entry rather than trusting what was drawn last time. The
     // level list carries state the rest of the app changes — a finished
     // lesson, a passed level test — and coming back to a stale list is how a
@@ -97,8 +104,8 @@ async function initialiseApp() {
     loadXP();
     updateXPHeader();
 
-    // Learn is the landing section, so its header is the first one drawn.
-    if (typeof PageHeader !== 'undefined') PageHeader.show('learn');
+    // Home is the landing section, so its header is the first one drawn.
+    if (typeof PageHeader !== 'undefined') PageHeader.show('home');
 
     // Falls back to the default course when the chosen one has no content.
     window._curriculumData = await loadCurriculumData();
@@ -107,12 +114,22 @@ async function initialiseApp() {
     _drawNavIcons();
     _attachNavEvents();
 
-    // Learn page
+    // Learn page. Drawn at startup even though Home is what is on screen —
+    // the Lessons tab is one tap away and should not arrive empty.
     if (typeof renderCurriculum === 'function') {
         try {
             await renderCurriculum();
         } catch (e) {
             console.error('Failed to render curriculum:', e);
+        }
+    }
+
+    // Home page. After the curriculum, which it reads to name the next lesson.
+    if (typeof Home !== 'undefined') {
+        try {
+            await Home.render();
+        } catch (e) {
+            console.error('Failed to render home:', e);
         }
     }
 

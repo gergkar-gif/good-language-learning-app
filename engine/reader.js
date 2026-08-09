@@ -236,6 +236,17 @@ window.Reader = {
         this.renderLibrary();
     },
 
+    // The manifest, loaded once. Home asks for it too — it names the next
+    // unread story — and it must not depend on the Library having been opened
+    // first, which is what reading Reader.stories directly would require.
+    // Content caches by path, so this is one fetch however often it is called.
+    async ensureStories() {
+        if (this.stories.length) return this.stories;
+        const manifest = await Content.manifest('stories');
+        this.stories = manifest.stories || [];
+        return this.stories;
+    },
+
     async renderLibrary() {
         const libraryEl = document.getElementById('reader-library');
         if (!libraryEl) {
@@ -244,8 +255,7 @@ window.Reader = {
         }
 
         try {
-            const manifest = await Content.manifest('stories');
-            this.stories = manifest.stories || [];
+            await this.ensureStories();
             console.log('Reader: loaded', this.stories.length, 'stories from manifest');
             this.buildLibraryUI(libraryEl);
 
