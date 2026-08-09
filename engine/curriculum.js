@@ -133,6 +133,22 @@ function levelDetailHtml(level) {
         `;
     }).join('');
 
+    // The test closes the level, so it sits after the lessons rather than
+    // beside them — and it reports its own state, because a passed level is
+    // the one thing on this screen that is not simply "lessons finished".
+    const result = (typeof LevelTest !== 'undefined') ? LevelTest.resultFor(level) : null;
+    const testRow = `
+        <button class="level-test-row${result && result.passed ? ' is-passed' : ''}"
+                data-open-test="${level}">
+            <span class="level-test-title">${level} level test</span>
+            <span class="level-test-meta">${
+                result
+                    ? `${result.correct} / ${result.total}${result.passed ? ' · passed' : ''}`
+                    : '20 questions · 80% to move on'
+            }</span>
+        </button>
+    `;
+
     return `
         <div class="level-detail" data-level="${level}">
             <button class="level-back" data-close-level="1">← All levels</button>
@@ -152,7 +168,7 @@ function levelDetailHtml(level) {
             </header>
 
             ${lessons.length
-                ? `<ol class="lesson-rows">${rows}</ol>`
+                ? `<ol class="lesson-rows">${rows}</ol>${testRow}`
                 : '<p class="text-muted level-empty">No lessons at this level yet.</p>'}
         </div>
     `;
@@ -175,5 +191,10 @@ function attachCurriculumEvents(root) {
 
         const start = e.target.closest('[data-start-lesson]');
         if (start) startLesson(start.getAttribute('data-start-lesson'));
+
+        const test = e.target.closest('[data-open-test]');
+        if (test && typeof LevelTest !== 'undefined') {
+            LevelTest.open(test.getAttribute('data-open-test'));
+        }
     });
 }

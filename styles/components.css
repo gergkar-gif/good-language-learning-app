@@ -1662,3 +1662,119 @@
   color: var(--muted);
   opacity: .8;
 }
+
+/* ============================================
+   LEVEL TEST
+   ============================================
+   Twenty gapped sentences with a dropdown in each. Marked all at once, so
+   nothing on the page reacts until the learner asks it to. */
+
+.level-test-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  text-align: left;
+  margin-top: 14px;
+  padding: 16px 18px;
+  background: var(--surface);
+  border: 1px dashed var(--border);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: border-color .2s;
+}
+
+.level-test-row:hover { border-color: var(--primary); border-style: solid; }
+
+/* A passed level is the one thing in the list that is not simply
+   "lessons finished", so it gets the solid border rather than the dashed. */
+.level-test-row.is-passed {
+  border-style: solid;
+  border-color: var(--success);
+}
+
+.level-test-title {
+  font-family: var(--font-display);
+  font-size: 17px;
+  color: var(--primary);
+}
+
+.level-test-meta { font-size: 13px; color: var(--muted); }
+
+.lt-head { margin-bottom: 22px; }
+
+.lt-head h2 {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.lt-head p { color: var(--muted); font-size: 14px; margin-top: 4px; max-width: 62ch; }
+
+.lt-previous { color: var(--secondary); font-size: 13px; margin-top: 8px; }
+
+.lt-questions { list-style: none; }
+
+.lt-question {
+  display: grid;
+  grid-template-columns: 30px 1fr;
+  gap: 10px;
+  align-items: baseline;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 16px;
+  line-height: 2;
+}
+
+.lt-num {
+  font-size: 12px;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.lt-select {
+  font: inherit;
+  font-size: 15px;
+  color: var(--primary);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 3px 8px;
+  margin: 0 4px;
+}
+
+.lt-select:focus { outline: 2px solid var(--primary); outline-offset: 1px; }
+
+.lt-mark { margin-left: 10px; font-size: 14px; }
+.lt-right { color: var(--success); }
+.lt-wrong { color: var(--accent-dark); }
+
+.lt-question.is-wrong { background: rgba(220, 78, 46, .04); }
+
+.lt-actions { margin-top: 22px; }
+
+.lt-result {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px 22px;
+  margin-bottom: 24px;
+}
+
+.lt-score {
+  font-family: var(--font-display);
+  font-size: 40px;
+  line-height: 1;
+  color: var(--primary);
+  font-variant-numeric: tabular-nums;
+}
+
+.lt-of { font-size: 18px; color: var(--muted); }
+
+.lt-verdict { margin-top: 10px; font-size: 16px; }
+.lt-verdict.is-pass { color: var(--success); }
+.lt-verdict.is-fail { color: var(--accent-dark); }
+
+.lt-topics { margin: 8px 0 14px; font-size: 14px; color: var(--muted); }

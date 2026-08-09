@@ -16,6 +16,14 @@ function showTab(tabName, button) {
     // The header is contextual — it names the room you just walked into.
     if (typeof PageHeader !== 'undefined') PageHeader.show(tabName);
 
+    // Re-render on entry rather than trusting what was drawn last time. The
+    // level list carries state the rest of the app changes — a finished
+    // lesson, a passed level test — and coming back to a stale list is how a
+    // pass appears not to have registered.
+    if (tabName === 'learn' && typeof renderCurriculum === 'function') {
+        renderCurriculum();
+    }
+
     if (tabName === 'reader' && typeof updateReaderWordColors === 'function') {
         updateReaderWordColors();
     }
