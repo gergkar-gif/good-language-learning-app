@@ -249,6 +249,20 @@ function shuffled(list) {
     return copy;
 }
 
+// Options are shuffled here rather than in the content files. Every
+// multiple-choice item in the course stores its correct answer first, which
+// keeps a file reviewable at a glance — and, shipped in that order, made the
+// answer the top button every single time. Shuffling at render keeps the
+// convention and takes away the tell. The index moves with the option, so
+// stepState.correct always refers to what is on screen.
+function shuffledOptions(options, correct) {
+    const order = shuffled((options || []).map((text, i) => ({ text, i })));
+    return {
+        options: order.map(option => option.text),
+        correct: order.findIndex(option => option.i === correct)
+    };
+}
+
 function normalise(text) {
     return String(text || '')
         .toLowerCase()
@@ -446,11 +460,12 @@ const stepRenderers = {
 
     'multiple-choice'(step) {
         gateStep();
-        stepState.correct = step.correct;
+        const pick = shuffledOptions(step.options, step.correct);
+        stepState.correct = pick.correct;
         return `
             <p class="lsn-question">${esc(step.question)}</p>
             <div class="lsn-options">
-                ${(step.options || []).map((option, i) => `
+                ${pick.options.map((option, i) => `
                     <button class="lsn-option" onclick="lessonChoose(this, ${i})">${esc(option)}</button>
                 `).join('')}
             </div>
@@ -460,7 +475,8 @@ const stepRenderers = {
 
     'dialogue-complete'(step) {
         gateStep();
-        stepState.correct = step.correct;
+        const pick = shuffledOptions(step.options, step.correct);
+        stepState.correct = pick.correct;
         return `
             <div class="lsn-dialogue">
                 ${(step.prompt || []).map(line => `
@@ -472,7 +488,7 @@ const stepRenderers = {
             </div>
             <p class="lsn-question">Choose the missing line:</p>
             <div class="lsn-options">
-                ${(step.options || []).map((option, i) => `
+                ${pick.options.map((option, i) => `
                     <button class="lsn-option" onclick="lessonChoose(this, ${i})">${esc(option)}</button>
                 `).join('')}
             </div>
@@ -521,15 +537,19 @@ const stepRenderers = {
     'sentence-builder'(step) {
         gateStep();
         stepState.solution = step.solution || [];
+        stepState.english = step.english || '';
+
+        // Tiles are stored with their file index and shuffled once. The index
+        // is what the two rows exchange, not the text — a sentence with the
+        // same word twice ("la casa de la madre") has two distinct tiles, and
+        // matching on text would take back whichever came first.
+        stepState.tiles = shuffled((step.tiles || []).map((text, i) => ({ text, i })));
         stepState.built = [];
+
         return `
             <p class="lsn-question">Build the sentence.</p>
-            <div id="build-target" class="lsn-target"></div>
-            <div class="lsn-options lsn-tiles">
-                ${shuffled(step.tiles || []).map(tile => `
-                    <button class="lsn-tile" onclick="lessonAddTile(this)">${esc(tile)}</button>
-                `).join('')}
-            </div>
+            <div id="build-target" class="lsn-target">${buildTargetHtml()}</div>
+            <div id="build-bank" class="lsn-options lsn-tiles">${buildBankHtml()}</div>
             <button class="lsn-check" onclick="lessonCheckBuild()">Check</button>
             <button class="lsn-check lsn-secondary" onclick="lessonResetBuild()">Reset</button>
             ${feedbackHtml()}
@@ -796,36 +816,92 @@ function lessonCheckBlank() {
     }
 }
 
-function lessonAddTile(btn) {
+// ---- Sentence builder ----
+// Tiles live in two rows and move freely between them: tap one in the bank to
+// put it in the sentence, tap one in the sentence to take it back. A misplaced
+// word costs one tap, not a reset of everything built so far.
+
+function tileText(index) {
+    const tile = (stepState.tiles || []).find(t => t.i === index);
+    return tile ? tile.text : '';
+}
+
+// Used tiles stay in place, greyed, rather than being removed: taking a word
+// out of the sentence would otherwise reflow the whole bank under the finger
+// that is reaching for the next one.
+function buildBankHtml() {
+    return (stepState.tiles || []).map(tile => {
+        const used = stepState.built.includes(tile.i);
+        return `<button class="lsn-tile${used ? ' used' : ''}"${used ? ' disabled' : ''}
+            onclick="lessonAddTile(${tile.i})">${esc(tile.text)}</button>`;
+    }).join('');
+}
+
+function buildTargetHtml() {
+    if (!stepState.built.length) {
+        return '<span class="lsn-target-empty">Tap the words below.</span>';
+    }
+    return stepState.built.map((tileIndex, position) => `
+        <button class="lsn-tile" onclick="lessonRemoveTile(${position})">${esc(tileText(tileIndex))}</button>
+    `).join('');
+}
+
+function redrawBuild() {
+    UI.html('build-target', buildTargetHtml());
+    UI.html('build-bank', buildBankHtml());
+    setFeedback(true, '');
+}
+
+function lessonAddTile(tileIndex) {
+    if (stepState.solved || stepState.built.includes(tileIndex)) return;
+    stepState.built.push(tileIndex);
+    redrawBuild();
+}
+
+function lessonRemoveTile(position) {
     if (stepState.solved) return;
-    btn.disabled = true;
-    btn.classList.add('used');
-    stepState.built.push(btn.textContent.trim());
-    document.getElementById('build-target').textContent = stepState.built.join(' ');
+    stepState.built.splice(position, 1);
+    redrawBuild();
 }
 
 function lessonResetBuild() {
     if (stepState.solved) return;
     stepState.built = [];
-    document.getElementById('build-target').textContent = '';
-    document.querySelectorAll('.lsn-tile').forEach(b => {
-        b.disabled = false;
-        b.classList.remove('used');
-    });
-    setFeedback(true, '');
+    redrawBuild();
+}
+
+// The English is feedback, not a prompt. On screen while the tiles are still
+// on the table it turns building a sentence into translating one, so it
+// appears only once the sentence is settled — right or wrong.
+function revealBuildEnglish() {
+    if (!stepState.english || document.getElementById('build-english')) return;
+    const target = document.getElementById('build-target');
+    if (target) {
+        target.insertAdjacentHTML('afterend',
+            `<p id="build-english" class="lsn-build-en">${esc(stepState.english)}</p>`);
+    }
 }
 
 function lessonCheckBuild() {
-    if (stepState.solved) return;
+    if (stepState.solved || !stepState.built.length) return;
 
-    const ok = normalise(stepState.built.join(' ')) === normalise(stepState.solution.join(' '));
+    const built = stepState.built.map(tileText).join(' ');
+    const ok = normalise(built) === normalise(stepState.solution.join(' '));
+
     if (ok) {
+        UI.html('build-target',
+            `<span class="lsn-built is-correct">${esc(stepState.solution.join(' '))}</span>`);
+        UI.html('build-bank', '');
+        revealBuildEnglish();
         solveStep('✓ Correct!');
         return;
     }
 
-    if (failStep('✗ Not right yet — try reset.')) {
-        document.getElementById('build-target').textContent = stepState.solution.join(' ');
+    if (failStep('✗ Not right yet — tap a word in the sentence to take it back.')) {
+        UI.html('build-target',
+            `<span class="lsn-built is-correct">${esc(stepState.solution.join(' '))}</span>`);
+        UI.html('build-bank', '');
+        revealBuildEnglish();
         setFeedback(false, 'The sentence is shown above — continue when you are ready.');
     }
 }

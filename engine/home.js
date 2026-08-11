@@ -261,7 +261,7 @@ const Home = (function () {
     function readDoor(reading) {
         if (!reading.total) {
             return door({
-                icon: 'library', title: 'Read',
+                icon: 'reader', title: 'Read',
                 sub: 'No stories in this course yet.',
                 data: { go: 'reader' }
             });
@@ -269,7 +269,7 @@ const Home = (function () {
 
         if (!reading.story) {
             return door({
-                icon: 'library', title: 'Read',
+                icon: 'reader', title: 'Read',
                 sub: 'You have read every story. Any of them again?',
                 data: { go: 'reader' }
             });
@@ -280,7 +280,7 @@ const Home = (function () {
             .filter(Boolean).join(' · ');
 
         return door({
-            icon: 'library', title: 'Read',
+            icon: 'reader', title: 'Read',
             sub: `${story.title}${meta ? ' · ' + meta : ''}`,
             data: { 'open-story': story.id }
         });

@@ -77,19 +77,26 @@ const Art = (function () {
             <rect class="ink-solid" x="104" y="24" width="44" height="62" rx="3"/>
         `,
 
-        // My Journey — distance already covered. A line that climbs by stages
-        // rather than smoothly, each node a place the learner actually stood,
-        // planted at the top with a flag. The climb dips once on purpose: no
-        // honest account of learning a language only goes up.
+        // My Journey — distance already covered. A path that winds rather than
+        // steps: every segment is a cubic with horizontal tangents at both
+        // ends, so the line rises and then levels at each node instead of
+        // turning a corner there. That is what learning a language is shaped
+        // like, and the flat that follows a climb is as much a part of it as
+        // the climb. It dips once on purpose — no honest account only goes up.
+        //
+        // Each node is a place the learner actually stood. The line runs in
+        // from the left without one, because the beginning is not an
+        // achievement, and the flag is planted on the last node rather than
+        // in the ground: it marks where you are, not where the course ends.
         ascent: `
             <line class="ink-hair" x1="40" y1="86" x2="280" y2="86"/>
-            <polyline class="ink-rule" points="66,78 108,58 148,64 192,40 236,30"/>
-            <circle class="ink-solid" cx="66" cy="78" r="4"/>
-            <circle class="ink-solid" cx="108" cy="58" r="4"/>
-            <circle class="ink-solid" cx="148" cy="64" r="4"/>
-            <circle class="ink-solid" cx="192" cy="40" r="4"/>
-            <line class="ink-rule" x1="236" y1="30" x2="236" y2="86"/>
-            <path class="accent-solid" d="M236 16h30l-8 9 8 9h-30Z"/>
+            <path class="ink-rule" d="M44 78C76 78 76 56 108 56C128 56 128 62 148 62C170 62 170 42 192 42C214 42 214 32 236 32"/>
+            <circle class="ink-solid" cx="108" cy="56" r="4"/>
+            <circle class="ink-solid" cx="148" cy="62" r="4"/>
+            <circle class="ink-solid" cx="192" cy="42" r="4"/>
+            <circle class="ink-solid" cx="236" cy="32" r="4"/>
+            <line class="ink-rule" x1="236" y1="32" x2="236" y2="8"/>
+            <path class="accent-solid" d="M236 8h30l-8 9 8 9h-30Z"/>
         `,
 
         // Reader — the door the whole app is named for. A threshold standing
@@ -163,11 +170,13 @@ const Art = (function () {
             <path class="ink-line" d="M7 4h11a1.5 1.5 0 0 1 1.5 1.5v13"/>
         `,
 
-        // My Journey — a line climbing by stages to a flag.
+        // My Journey — the winding climb, reduced to two bends and the flag.
+        // The dip survives at illustration size but not at this one, where it
+        // would read as a wobble in the stroke rather than as a setback.
         journey: `
-            <polyline class="ink-line" points="3,19 8,13 12,15 17,7"/>
-            <line class="ink-line" x1="17" y1="7" x2="17" y2="21"/>
-            <path class="ink-line" d="M17 3h4l-2 2 2 2h-4Z"/>
+            <path class="ink-line" d="M2.5 19.5c4 0 3.5-5.5 7-5.5s3-6 6.5-6"/>
+            <line class="ink-line" x1="16" y1="8" x2="16" y2="3"/>
+            <path class="ink-line" d="M16 3h5l-2 2 2 2h-5Z"/>
         `,
 
         // Reader — an open book, the Library's shelf turned to face you.

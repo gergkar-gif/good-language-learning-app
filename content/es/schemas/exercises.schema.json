@@ -247,6 +247,11 @@
           },
           "description": "The tiles in the right order. Must contain exactly the same strings as tiles."
         },
+        "english": {
+          "type": "string",
+          "minLength": 1,
+          "description": "What the sentence means. Shown only after the learner has settled the sentence — on screen beforehand it turns building into translating."
+        },
         "teaches": {
           "$ref": "#/definitions/baseFields/teaches"
         }

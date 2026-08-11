@@ -212,6 +212,19 @@
   color: var(--text);
 }
 
+/* The mark is drawn from the art registry rather than set as an emoji, so it
+   needs a box: the icon default is 1.25em, which at this 13px chip would come
+   out at sixteen pixels and sit low. */
+.daily-activity-icon {
+  display: inline-flex;
+}
+
+.daily-activity-icon .icon {
+  width: 15px;
+  height: 15px;
+  vertical-align: baseline;
+}
+
 .daily-activity-mark {
   font-weight: bold;
 }

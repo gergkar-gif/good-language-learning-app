@@ -1,0 +1,310 @@
+{
+  "title": "Parlour Spanish A1 Source Mine",
+  "version": "1.0",
+  "purpose": "Research map for expanding Parlour's A1 grammar, Workshop exercise formats, communicative activities and reference content.",
+  "copyright_note": "Use external resources as coverage and exercise-design references. Parlour content should be newly authored rather than reproducing source wording, answer sets, illustrations or proprietary worksheets.",
+  "sources": [
+    {
+      "name": "Kwiziq Spanish",
+      "priority": 5,
+      "mine_for": [
+        "A1 grammar taxonomy",
+        "micro-explanations",
+        "contextual cloze",
+        "grammar-linked review"
+      ],
+      "parlour_use": "Grammar skill map and reference",
+      "url": "https://spanish.kwiziq.com/"
+    },
+    {
+      "name": "Lingolia Spanish",
+      "priority": 5,
+      "mine_for": [
+        "A1 grammar coverage",
+        "fill gaps",
+        "multiple choice",
+        "sentence ordering",
+        "short answer explanations"
+      ],
+      "parlour_use": "Drills, Sentence Builder and grammar reference",
+      "url": "https://espanol.lingolia.com/es/gramatica"
+    },
+    {
+      "name": "TODO-CLARO",
+      "priority": 5,
+      "mine_for": [
+        "contextual cloze",
+        "ser/estar/hay discrimination",
+        "possessives",
+        "present tense",
+        "situations",
+        "crosswords and ordering"
+      ],
+      "parlour_use": "Drills, contextual practice and Scenarios",
+      "url": "https://www.todo-claro.com/"
+    },
+    {
+      "name": "Conjuguemos",
+      "priority": 5,
+      "mine_for": [
+        "verb-pattern taxonomy",
+        "rapid conjugation",
+        "stem-changing verbs",
+        "irregular verbs",
+        "timed/repetition mechanics",
+        "games"
+      ],
+      "parlour_use": "Drills and future generated exercise engine",
+      "url": "https://conjuguemos.com/"
+    },
+    {
+      "name": "Lawless Spanish",
+      "priority": 4,
+      "mine_for": [
+        "A1 curriculum",
+        "grammar-linked reading",
+        "fill-in-the-blanks",
+        "reading/listening integration"
+      ],
+      "parlour_use": "Learn, Library and Workshop integration",
+      "url": "https://www.lawlessspanish.com/language-levels/a1-grammar/"
+    },
+    {
+      "name": "ProfedeELE",
+      "priority": 5,
+      "mine_for": [
+        "A1 sequencing",
+        "communicative scenarios",
+        "information gaps",
+        "visual prompts",
+        "dialogues",
+        "DELE-style tasks"
+      ],
+      "parlour_use": "Learn, Workshop and Journey",
+      "url": "https://mas.profedeele.es/curso-nivel-a1"
+    },
+    {
+      "name": "Spanish Unicorn",
+      "priority": 3,
+      "mine_for": [
+        "simple A1 exercise formats",
+        "error correction",
+        "plural/gender",
+        "verb combinations",
+        "comparisons",
+        "questions"
+      ],
+      "parlour_use": "Additional Drill coverage and QA",
+      "url": "https://www.spanishunicorn.com/"
+    },
+    {
+      "name": "Spanish-to-Learn-Free",
+      "priority": 2,
+      "mine_for": [
+        "additional grammar exercise patterns",
+        "grammar discrimination"
+      ],
+      "parlour_use": "Format inspiration and coverage QA",
+      "url": "https://spanish.tolearnfree.com/"
+    }
+  ],
+  "exercise_formats": [
+    {
+      "name": "multiple_choice",
+      "workshop": "Drills",
+      "purpose": "Recognition and discrimination",
+      "best_for": [
+        "ser/estar",
+        "articles",
+        "prepositions",
+        "agreement",
+        "question words"
+      ]
+    },
+    {
+      "name": "fill_blank",
+      "workshop": "Drills",
+      "purpose": "Controlled recall",
+      "best_for": [
+        "conjugation",
+        "articles",
+        "possessives",
+        "prepositions",
+        "verb patterns"
+      ]
+    },
+    {
+      "name": "transform",
+      "workshop": "Drills",
+      "purpose": "Manipulate a known structure",
+      "best_for": [
+        "singular/plural",
+        "gender agreement",
+        "affirmative/negative",
+        "person changes"
+      ]
+    },
+    {
+      "name": "sentence_builder",
+      "workshop": "Sentence Builder",
+      "purpose": "Construct correct Spanish word order",
+      "best_for": [
+        "syntax",
+        "questions",
+        "negation",
+        "adjective placement",
+        "verb + infinitive"
+      ]
+    },
+    {
+      "name": "translation",
+      "workshop": "Translation",
+      "purpose": "Active retrieval and production",
+      "best_for": [
+        "high-frequency structures",
+        "short communicative sentences"
+      ]
+    },
+    {
+      "name": "error_correction",
+      "workshop": "Error Correction",
+      "purpose": "Diagnose and repair incorrect Spanish",
+      "best_for": [
+        "agreement",
+        "ser/estar",
+        "conjugation",
+        "articles",
+        "prepositions"
+      ]
+    },
+    {
+      "name": "cloze_context",
+      "workshop": "Drills",
+      "purpose": "Apply grammar inside short context",
+      "best_for": [
+        "ser/estar/hay",
+        "possessives",
+        "present tense",
+        "routines"
+      ]
+    },
+    {
+      "name": "ordering",
+      "workshop": "Sentence Builder",
+      "purpose": "Reconstruct a grammatical sentence",
+      "best_for": [
+        "word order",
+        "questions",
+        "negation",
+        "verb phrases"
+      ]
+    },
+    {
+      "name": "matching",
+      "workshop": "Drills",
+      "purpose": "Connect forms with meanings or contexts",
+      "best_for": [
+        "pronouns",
+        "question words",
+        "articles"
+      ]
+    },
+    {
+      "name": "listening_identification",
+      "workshop": "Listening",
+      "purpose": "Recognise known grammar in speech",
+      "best_for": [
+        "verb endings",
+        "questions",
+        "numbers",
+        "time",
+        "short dialogues"
+      ]
+    },
+    {
+      "name": "dictation",
+      "workshop": "Listening",
+      "purpose": "Convert speech into writing",
+      "best_for": [
+        "short A1 sentences",
+        "verb endings",
+        "articles",
+        "accents"
+      ]
+    },
+    {
+      "name": "guided_speaking",
+      "workshop": "Speaking",
+      "purpose": "Produce controlled oral Spanish",
+      "best_for": [
+        "personal information",
+        "routines",
+        "likes",
+        "locations",
+        "plans"
+      ]
+    },
+    {
+      "name": "scenario",
+      "workshop": "Scenarios",
+      "purpose": "Use language to accomplish a real-world task",
+      "best_for": [
+        "introductions",
+        "ordering",
+        "shopping",
+        "directions",
+        "appointments"
+      ]
+    }
+  ],
+  "curriculum_findings": {
+    "profedeele_sequence": [
+      "Spanish from zero",
+      "Introductions",
+      "Gender and number",
+      "Articles",
+      "Personal pronouns",
+      "Regular present",
+      "Numbers",
+      "Question words",
+      "Personal information",
+      "Time/days/months",
+      "Irregular present",
+      "Reflexive routines",
+      "Hobbies",
+      "Food",
+      "Description",
+      "House/neighbourhood",
+      "Broader everyday topics"
+    ],
+    "design_implication": "The Learn curriculum should introduce grammar gradually through functions. The grammar reference should remain a separate lookup system."
+  },
+  "workshop_architecture": {
+    "Drills": "Grammar accuracy and repeated retrieval.",
+    "Sentence Builder": "Word order and construction.",
+    "Translation": "Active retrieval and controlled production.",
+    "Error Correction": "Diagnosis of why a sentence is wrong.",
+    "Listening": "Recognition, dictation and comprehension.",
+    "Speaking": "Controlled oral production progressing towards freer answers.",
+    "Scenarios": "Practical communication using previously taught structures."
+  },
+  "engineering_opportunities": [
+    "Build a structured verb lexicon so conjugation drills can be generated.",
+    "Tag every exercise with one or more grammar-skill IDs.",
+    "Link every grammar skill directly to its reference explanation.",
+    "Let Library texts expose the grammar skills they contain and offer Practise this.",
+    "Separate exercise format from grammar skill so one skill can have many exercise types.",
+    "Separate difficulty from CEFR level.",
+    "Use Latin American vocabulary and ustedes consistently."
+  ],
+  "recommended_next_build": [
+    "Audit the 600-item bank against the combined A1 inventories.",
+    "Create a structured A1 verb lexicon.",
+    "Create 100-150 Sentence Builder items.",
+    "Create 50-75 Error Correction items.",
+    "Create 50-75 Translation items.",
+    "Create the first 20 Listening items and 10 guided Speaking prompts.",
+    "Create 15-20 A1 Scenarios.",
+    "Tag everything to the same grammar-skill IDs as the reference JSON."
+  ]
+}

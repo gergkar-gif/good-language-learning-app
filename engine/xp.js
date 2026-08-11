@@ -189,10 +189,14 @@ function showXPNotification(amount, reason) {
 function getDailyActivities(dateStr) {
     const day = getDay(dateStr || getTodayString());
 
+    // Icons name a section of the app, so they are ids in the art registry
+    // rather than emoji: the three chips sit on Home now, next to the same
+    // marks drawn in the nav, and a colour emoji beside them reads as a
+    // different app.
     const list = [
-        { key: 'review', icon: '🧠', label: 'Review', count: day.reviewsDone, goal: DAILY_GOALS.reviews },
-        { key: 'reading', icon: '📖', label: 'Read', count: day.storiesDone, goal: DAILY_GOALS.stories },
-        { key: 'learn', icon: '📚', label: 'Learn', count: day.lessonsDone, goal: DAILY_GOALS.lessons }
+        { key: 'review', icon: 'decks', label: 'Review', count: day.reviewsDone, goal: DAILY_GOALS.reviews },
+        { key: 'reading', icon: 'reader', label: 'Read', count: day.storiesDone, goal: DAILY_GOALS.stories },
+        { key: 'learn', icon: 'lessons', label: 'Learn', count: day.lessonsDone, goal: DAILY_GOALS.lessons }
     ];
     list.forEach(activity => { activity.done = activity.count >= activity.goal; });
 
@@ -296,9 +300,10 @@ function updateXPHeader() {
             const mark = activity.done ? '✓'
                 : activity.goal > 1 ? activity.count + '/' + activity.goal
                 : '✗';
+            const iconHtml = (typeof Art !== 'undefined') ? Art.icon(activity.icon) : '';
             return `
                 <span class="daily-activity${activity.done ? ' is-done' : ''}">
-                    <span class="daily-activity-icon">${activity.icon}</span>
+                    <span class="daily-activity-icon">${iconHtml}</span>
                     <span class="daily-activity-label">${activity.label}</span>
                     <span class="daily-activity-mark">${mark}</span>
                 </span>
@@ -312,11 +317,17 @@ function updateXPHeader() {
         const perfect = getPerfectDays();
         const parts = [];
 
-        parts.push(streak > 0 ? '🔥 ' + streak + '-day streak' : 'No streak yet');
-        if (perfect > 0) parts.push('⭐ ' + perfect + ' perfect');
+        // No flame, no star: the words already say it, and this line now sits
+        // on Home among line-drawn marks where a colour emoji is the loudest
+        // thing on the screen.
+        parts.push(streak > 0 ? streak + '-day streak' : 'No streak yet');
+        if (perfect > 0) parts.push(perfect + ' perfect');
 
-        streakEl.textContent = parts.join('   ');
-        streakEl.style.color = streak > 0 ? 'var(--accent-dark)' : 'var(--muted)';
+        // Ink, not accent. On Home the accent already marks the one live
+        // thing — the lesson to continue — and a second one here would make
+        // the learner choose between two claims on the same signal.
+        streakEl.textContent = parts.join(' · ');
+        streakEl.style.color = streak > 0 ? 'var(--text)' : 'var(--muted)';
     }
 
     renderStatsPanel();

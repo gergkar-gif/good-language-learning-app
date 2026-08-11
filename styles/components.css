@@ -815,7 +815,13 @@
   opacity: .35;
 }
 
+/* The sentence being built. It holds tiles rather than text now — they are
+   tapped to be taken back — so it lays out like the bank below it. */
 .lsn-target {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
   min-height: 48px;
   border: 2px dashed var(--border);
   border-radius: 10px;
@@ -823,6 +829,28 @@
   margin-bottom: 12px;
   font-size: 18px;
   color: var(--primary);
+}
+
+.lsn-target-empty {
+  font-size: 15px;
+  color: var(--muted);
+}
+
+/* The settled sentence, once checked: plain text, nothing left to tap. */
+.lsn-built {
+  font-size: 18px;
+  color: var(--primary);
+}
+
+.lsn-built.is-correct {
+  color: var(--success);
+}
+
+/* The translation, shown only after the sentence is settled. */
+.lsn-build-en {
+  margin: -4px 0 12px;
+  font-size: 15px;
+  color: var(--muted);
 }
 
 .lsn-match {
