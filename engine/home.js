@@ -191,8 +191,7 @@ const Home = (function () {
         const lesson = step.lesson;
         const sub = [
             lesson.label ? 'Lesson ' + lesson.label : '',
-            lesson.grammar || '',
-            lesson.estimatedMinutes ? lesson.estimatedMinutes + ' min' : ''
+            lesson.grammar || ''
         ].filter(Boolean).join(' · ');
 
         return `

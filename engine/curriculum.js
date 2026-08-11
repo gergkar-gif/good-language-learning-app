@@ -116,7 +116,6 @@ function levelDetailHtml(level) {
     const rows = lessons.map((lesson, i) => {
         const done = !!progress[lesson.id];
         const current = i === currentIndex;
-        const minutes = lesson.estimatedMinutes ? lesson.estimatedMinutes + ' min' : '';
         const state = done ? 'done' : current ? 'current' : 'todo';
 
         return `
@@ -124,7 +123,6 @@ function levelDetailHtml(level) {
                 <button class="lesson-row is-${state}" data-start-lesson="${UI.escape(lesson.id)}">
                     <span class="lesson-row-num">${UI.escape(lesson.label || String(i + 1).padStart(2, '0'))}</span>
                     <span class="lesson-row-title">${UI.escape(lesson.title)}</span>
-                    <span class="lesson-row-time">${minutes}</span>
                     <span class="lesson-row-state" aria-label="${state}">${
                         done ? '✓' : current ? '▶' : ''
                     }</span>

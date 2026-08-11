@@ -49,7 +49,9 @@ CHECKLIST_PREFIX = "I can"
 
 # From a1-vocabulary-themes.md, which that document declares authoritative.
 NEW_WORDS = {1: 10, 2: 10, 3: 12, 4: 12, 5: 15, 6: 15, 7: 18, 8: 18, 9: 20,
-             10: 20, 11: 20, 12: 20, 13: 20, 14: 20, 15: 20, 16: 20, 17: 20}
+             # 10 was 20: 'el deseo' dropped with 'pedir un deseo', which
+             # PLANNING.md ruled out as premature at A1 — see a1-10-voc.json.
+             10: 19, 11: 20, 12: 20, 13: 20, 14: 20, 15: 20, 16: 20, 17: 20}
 
 # Lessons 18-20 consolidate rather than teach: no new words, no new grammar,
 # and a different shape entirely. Holding them to the teaching-lesson spec
@@ -447,8 +449,11 @@ def audit(key):
             lo, hi = GRAMMAR_EXAMPLES
             r.rule(lo <= examples <= hi, f"{name}: {lo}-{hi} worked examples",
                    f"{examples} examples")
-        r.rule(any(p["type"] == "external-link" for p in parts),
-               f"{name}: has a reference link", "none found")
+        # Not required: PLANNING.md asks for these third-party citations to
+        # come out, starting with lessons 1-3. A missing one is a choice, not
+        # a defect, so it's a warning rather than a failed rule.
+        if not any(p["type"] == "external-link" for p in parts):
+            r.warn(f"{name}: no reference link", "may be intentional — see PLANNING.md")
 
     # --- exercises --------------------------------------------------------
     all_ex = {}

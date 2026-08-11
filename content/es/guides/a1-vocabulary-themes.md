@@ -16,7 +16,7 @@ Rewritten 2026-08-07 to match each lesson's actual story (`vocabularyTopics` fie
 | 7 | House, rooms, furniture | 18 |
 | 8 | Supermarket, shopping, money | 18 |
 | 9 | Kitchen, ingredients, cooking | 20 |
-| 10 | Birthdays, gifts, celebrations | 20 |
+| 10 | Birthdays, gifts, celebrations | 19 |
 | 11 | Hobbies and sports | 20 |
 | 12 | Numbers, time, quantities | 20 |
 | 13 | Transport and directions | 20 |
