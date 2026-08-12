@@ -25,10 +25,17 @@ function recycleCard(schedule, id) {
     return normalizeCard(schedule[id]);
 }
 
-// Every teaches-tagged exercise from lessons before `lesson`, in the same
-// level, that the learner has already completed. Reading exercises are
-// never tagged and so never appear here — they only make sense right after
-// their own story.
+// Same order curriculum.js draws the level list in — duplicated rather than
+// shared because these are separate classic scripts with no module system,
+// and this list changes about as often as CEFR itself does.
+const RECYCLE_LEVEL_ORDER = ['A1', 'A2', 'B1', 'B2', 'C1'];
+
+// Every teaches-tagged exercise the learner is eligible to see again:
+// earlier completed lessons in this lesson's own level, plus — since a
+// learner starting A2 has already finished A1 — every completed lesson in
+// the level directly below it. One hop back, not the whole stack: B1 reaches
+// into A2, not all the way to A1. Reading exercises are never tagged and so
+// never appear here — they only make sense right after their own story.
 async function collectRecyclePool(lesson) {
     const data = window._curriculumData;
     if (!data) return [];
@@ -37,15 +44,27 @@ async function collectRecyclePool(lesson) {
     const levelData = data.levels && data.levels[levelKey];
     if (!levelData) return [];
 
+    const progress = (typeof getProgress === 'function') ? getProgress() : {};
+    const pool = [];
+
+    const prevLevelKey = RECYCLE_LEVEL_ORDER[RECYCLE_LEVEL_ORDER.indexOf(levelKey) - 1];
+    const prevLevelData = prevLevelKey && data.levels[prevLevelKey];
+    if (prevLevelData) {
+        const prevLessons = (prevLevelData.units || []).flatMap(u => u.lessons || []);
+        await addRecycleExercises(pool, prevLessons.filter(l => progress[l.id]));
+    }
+
     const lessons = (levelData.units || []).flatMap(u => u.lessons || []);
     const index = lessons.findIndex(l => l.id === lesson.id);
-    if (index <= 0) return [];
+    if (index > 0) {
+        await addRecycleExercises(pool, lessons.slice(0, index).filter(l => progress[l.id]));
+    }
 
-    const progress = (typeof getProgress === 'function') ? getProgress() : {};
-    const earlier = lessons.slice(0, index).filter(l => progress[l.id]);
+    return pool;
+}
 
-    const pool = [];
-    for (const entry of earlier) {
+async function addRecycleExercises(pool, lessonEntries) {
+    for (const entry of lessonEntries) {
         const earlierLesson = await loadLesson(entry.id);
         if (!earlierLesson) continue;
 
@@ -61,7 +80,6 @@ async function collectRecyclePool(lesson) {
             }
         }
     }
-    return pool;
 }
 
 // Due cards first, then whichever have been seen least — so a course still
