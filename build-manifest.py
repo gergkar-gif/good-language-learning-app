@@ -86,11 +86,15 @@ UNIT_TABLES = {
         # split arrives.
         ("Ordering at a Café", ["a1-cafe-01", "a1-cafe-02", "a1-cafe-03", "a1-cafe-04", "a1-cafe-05", "a1-cafe-consolidation"]),
         ("Birthdays & Celebrations", ["a1-10"]),
-        ("In the Kitchen", ["a1-09"]),
-        ("Numbers, Time & Schedules", ["a1-12"]),
+        # "a1-kitchen", not "a1-11" — a1-11 is Hobbies' old slot (still
+        # unsplit), same reasoning as the Café rename above.
+        ("In the Kitchen", ["a1-kitchen-01", "a1-kitchen-02", "a1-kitchen-03", "a1-kitchen-04", "a1-kitchen-05", "a1-kitchen-consolidation"]),
+        ("Numbers, Time & Schedules", ["a1-12-01", "a1-12-02", "a1-12-03", "a1-12-04", "a1-12-05", "a1-12-consolidation"]),
         ("Around Town", ["a1-04-01", "a1-04-02", "a1-04-03", "a1-04-04", "a1-04-05", "a1-04-consolidation"]),
-        ("Directions", ["a1-13"]),
-        ("Weather", ["a1-14"]),
+        # "a1-directions", not "a1-14" — a1-14 is Weather's old slot.
+        ("Directions", ["a1-directions-01", "a1-directions-02", "a1-directions-03", "a1-directions-04", "a1-directions-05", "a1-directions-consolidation"]),
+        # "a1-weather", not "a1-15" — a1-15 is Work & Obligations' old slot.
+        ("Weather", ["a1-weather-01", "a1-weather-02", "a1-weather-03", "a1-weather-04", "a1-weather-05", "a1-weather-consolidation"]),
         ("Work & Obligations", ["a1-15"]),
         ("Health", ["a1-16"]),
         ("Hobbies & Free Time", ["a1-11"]),
