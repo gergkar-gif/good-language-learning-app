@@ -85,7 +85,7 @@ UNIT_TABLES = {
         ("Birthdays & Celebrations", ["a1-10"]),
         ("In the Kitchen", ["a1-09"]),
         ("Numbers, Time & Schedules", ["a1-12"]),
-        ("Around Town", ["a1-04"]),
+        ("Around Town", ["a1-04-01", "a1-04-02", "a1-04-03", "a1-04-04", "a1-04-05", "a1-04-consolidation"]),
         ("Directions", ["a1-13"]),
         ("Weather", ["a1-14"]),
         ("Work & Obligations", ["a1-15"]),
