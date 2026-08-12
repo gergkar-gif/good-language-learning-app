@@ -76,7 +76,7 @@ UNIT_TABLES = {
         ("Greetings & Introductions", ["a1-01-01", "a1-01-02", "a1-01-03", "a1-01-04", "a1-01-05", "a1-01-consolidation"]),
         ("Meeting Someone New", ["a1-02-01", "a1-02-02", "a1-02-03", "a1-02-04", "a1-02-05", "a1-02-consolidation"]),
         ("Naming Things", ["a1-03-01", "a1-03-02", "a1-03-03", "a1-03-04", "a1-03-05", "a1-03-consolidation"]),
-        ("Describing People", ["a1-03c"]),
+        ("Describing People", ["a1-03c-01", "a1-03c-02", "a1-03c-03", "a1-03c-04", "a1-03c-05", "a1-03c-consolidation"]),
         ("Family", ["a1-05"]),
         ("Daily Routine", ["a1-06"]),
         ("At Home", ["a1-07"]),
