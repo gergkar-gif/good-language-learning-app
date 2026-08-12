@@ -26,8 +26,9 @@ Two files in `content/es/` are **generated** and should never be edited by hand 
 ```bash
 python scripts/validate-content.py      # every file against its schema
 python scripts/audit-lesson.py          # lessons against the A1 content spec
-python build-manifest.py                # rebuilds indexes, reports broken refs
-python scripts/build_grammar_index.py   # rebuilds Workshop's Grammar Driller pool
+python build-manifest.py                  # rebuilds indexes, reports broken refs
+python scripts/build_grammar_index.py     # rebuilds Workshop's Grammar Driller pool
+python scripts/build_translation_index.py # rebuilds Workshop's Translation Driller pool
 ```
 
 `validate-content.py` needs `jsonschema` (`python -m pip install jsonschema`).
@@ -38,6 +39,11 @@ drillable in Workshop's Grammar Driller — there is no separate registration
 step — but only after `build_grammar_index.py` has been re-run, since it
 reads `generated/indexes/grammar-index.json` rather than scanning content
 live. Run it whenever a lesson's exercises change, same as `build-manifest.py`.
+
+Likewise, any grammar file's `examples` items or `sentence-builder` exercise
+with an `english` field automatically becomes drillable in the Translation
+Driller (and, through the same sentence pool, the Vocabulary Driller's
+Context mode) once `build_translation_index.py` is re-run.
 
 `a1-01` is the reference lesson: it passes all three, and its shape is what
 later lessons should copy.

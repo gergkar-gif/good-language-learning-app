@@ -209,7 +209,14 @@
 <script src="engine/drills/grammar-runner.js?v=2026-08-12"></script>
 <script src="engine/drills/grammar.js?v=2026-08-12"></script>
 
-<!-- Engine: workshop shell (depends on Verbs and GrammarDriller) -->
+<!-- Engine: translation driller submodules -->
+<script src="engine/drills/translation-runner.js?v=2026-08-12"></script>
+<script src="engine/drills/translation.js?v=2026-08-12"></script>
+
+<!-- Engine: vocabulary driller (reuses GrammarRunner, loaded above) -->
+<script src="engine/drills/vocabulary.js?v=2026-08-12"></script>
+
+<!-- Engine: workshop shell (depends on Verbs, GrammarDriller, TranslationDriller, VocabularyDriller) -->
 <script src="engine/workshop.js?v=2026-08-12"></script>
 
 <!-- Engine: lessons, progress, curriculum -->

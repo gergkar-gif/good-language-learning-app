@@ -24,6 +24,20 @@ const Workshop = (function () {
             title: 'Grammar Driller',
             sub: 'Practice by skill, drawn from every lesson.',
             containerId: 'grammar-driller-root'
+        },
+        {
+            id: 'translation',
+            icon: 'reader',
+            title: 'Translation Driller',
+            sub: 'Translate real sentences, either direction.',
+            containerId: 'translation-driller-root'
+        },
+        {
+            id: 'vocabulary',
+            icon: 'decks',
+            title: 'Vocabulary Driller',
+            sub: 'Meaning and context, drawn from every word taught.',
+            containerId: 'vocabulary-driller-root'
         }
     ];
 
@@ -70,11 +84,17 @@ const Workshop = (function () {
     }
 
     function _renderDriller(driller) {
+        const DRILLER_MODULES = {
+            grammar: typeof GrammarDriller !== 'undefined' ? GrammarDriller : null,
+            translation: typeof TranslationDriller !== 'undefined' ? TranslationDriller : null,
+            vocabulary: typeof VocabularyDriller !== 'undefined' ? VocabularyDriller : null
+        };
+
         if (driller.id === 'verbs' && typeof Verbs !== 'undefined') {
             Verbs.render();
-        } else if (driller.id === 'grammar' && typeof GrammarDriller !== 'undefined') {
+        } else if (DRILLER_MODULES[driller.id]) {
             const container = document.getElementById(driller.containerId);
-            if (container) GrammarDriller.render(container);
+            if (container) DRILLER_MODULES[driller.id].render(container);
         }
     }
 

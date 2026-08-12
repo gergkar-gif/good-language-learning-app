@@ -105,6 +105,12 @@
     letter-spacing: 0.03em;
 }
 
+.gd-hint {
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin: -8px 0 16px;
+}
+
 /* ---- Session HUD ---- */
 .gd-hud {
     display: flex;
@@ -361,6 +367,77 @@
 
 .gd-actions .vbtn {
     flex: 1;
+}
+
+/* ============================================
+   TRANSLATION DRILLER
+   ============================================ */
+
+.td-source-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    margin-bottom: 4px;
+}
+
+.td-source {
+    font-size: 1.15rem;
+    color: var(--text);
+    margin-bottom: 16px;
+}
+
+.td-input {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 1rem;
+    border: 2px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--surface);
+    color: var(--text);
+    min-height: 48px;
+    margin-bottom: 8px;
+}
+
+.td-input:focus {
+    outline: none;
+    border-color: var(--primary-mid);
+}
+
+.td-input:disabled {
+    background: var(--bg);
+    color: var(--muted);
+}
+
+.td-model-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    margin-bottom: 2px;
+}
+
+.td-model {
+    font-size: 1.05rem;
+    color: var(--primary);
+    margin-bottom: 12px;
+}
+
+.td-self-rate {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.td-self-rate .vbtn {
+    flex: 1;
+}
+
+.td-self-rate.td-rated .vbtn {
+    opacity: 0.5;
+    pointer-events: none;
 }
 
 @media (min-width: 600px) {
