@@ -108,6 +108,9 @@ UNIT_TABLES = {
         # dating-decision resolution). a1-18's reading has no home in the new
         # unit and sits unused rather than deleted.
         ("Travel & Getting Away", ["a1-20-01", "a1-20-02", "a1-20-03", "a1-20-04", "a1-20-05", "a1-20-consolidation"]),
+    ],
+    "a2": [
+        ("Talking About Your Trip", ["a2-01-01", "a2-01-02", "a2-01-03", "a2-01-04", "a2-01-05", "a2-01-consolidation"]),
     ]
 }
 
