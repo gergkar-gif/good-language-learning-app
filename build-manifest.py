@@ -74,7 +74,7 @@ CURRICULUM_META = {
 UNIT_TABLES = {
     "a1": [
         ("Greetings & Introductions", ["a1-01-01", "a1-01-02", "a1-01-03", "a1-01-04", "a1-01-05", "a1-01-consolidation"]),
-        ("Meeting Someone New", ["a1-03a"]),
+        ("Meeting Someone New", ["a1-02-01", "a1-02-02", "a1-02-03", "a1-02-04", "a1-02-05", "a1-02-consolidation"]),
         ("Naming Things", ["a1-03b"]),
         ("Describing People", ["a1-03c"]),
         ("Family", ["a1-05"]),
