@@ -119,6 +119,7 @@ const Journey = (function () {
             totalXP: stats.totalXP || 0,
             reviews: stats.reviewsCompleted || 0,
             lessonsDone: stats.lessonsCompleted || 0,
+            newWordsLearned: stats.newWordsLearned || 0,
             streak: stats.currentStreak || 0,
             bestStreak: bestStreak(),
             perfectDays: stats.perfectDays || 0,
@@ -210,6 +211,7 @@ const Journey = (function () {
             <ul class="jr-facts">
                 <li><strong>${d.deckSize}</strong> in your review deck</li>
                 <li><strong>${d.deckMastered}</strong> reviewed three times or more</li>
+                <li><strong>${d.newWordsLearned}</strong> learned through review</li>
                 <li><strong>${d.storiesRead}</strong>${d.storiesTotal ? ' of ' + d.storiesTotal : ''} stories read</li>
             </ul>
         `);
