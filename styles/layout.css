@@ -367,6 +367,30 @@
   color: var(--level);
 }
 
+/* A unit's position, standing in for the level icon a unit card doesn't
+   have — units are a sequence within a level, not a category of their own,
+   so a number reads truer than a fresh icon set would. */
+.unit-card-num {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  flex: none;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 1.5px solid var(--level);
+  color: var(--level);
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+}
+
+.unit-detail-num {
+  width: 34px;
+  height: 34px;
+  font-size: 15px;
+}
+
 .level-card-body {
   display: flex;
   flex-direction: column;

@@ -60,6 +60,45 @@ CURRICULUM_META = {
     "es": {"id": "curriculum.spanish.dele-a1-c1", "title": "Spanish — DELE aligned"}
 }
 
+# Level -> Unit -> Lesson. Explicit rather than inferred from filenames,
+# because the mapping is a curriculum decision (which topic sits where, and
+# in what order) and reads as one here rather than being reverse-engineered
+# from a naming convention. Each entry is the unit title and the lesson file
+# stems it owns, in teaching order.
+#
+# Unit 1 is the only unit actually split into several lessons so far — every
+# other unit still wraps the one pre-restructure lesson file it always had,
+# just reordered and retitled to its approved position. Splitting those into
+# their own 4-6 lesson sets happens unit by unit as that content is authored;
+# nothing else here changes when it does.
+UNIT_TABLES = {
+    "a1": [
+        ("Greetings & Introductions", ["a1-01-01", "a1-01-02", "a1-01-03", "a1-01-04", "a1-01-05", "a1-01-consolidation"]),
+        ("Meeting Someone New", ["a1-03a"]),
+        ("Naming Things", ["a1-03b"]),
+        ("Describing People", ["a1-03c"]),
+        ("Family", ["a1-05"]),
+        ("Daily Routine", ["a1-06"]),
+        ("At Home", ["a1-07"]),
+        ("At the Supermarket", ["a1-08"]),
+        ("Ordering at a Café", ["a1-02"]),
+        ("Birthdays & Celebrations", ["a1-10"]),
+        ("In the Kitchen", ["a1-09"]),
+        ("Numbers, Time & Schedules", ["a1-12"]),
+        ("Around Town", ["a1-04"]),
+        ("Directions", ["a1-13"]),
+        ("Weather", ["a1-14"]),
+        ("Work & Obligations", ["a1-15"]),
+        ("Health", ["a1-16"]),
+        ("Hobbies & Free Time", ["a1-11"]),
+        ("Future Plans", ["a1-17"]),
+        # Placeholder: the target is original Travel content, still unwritten.
+        # Bundles the old Review 1/2/Final lessons so nothing is lost in the
+        # meantime — replace this list once Unit 20 has its own lessons.
+        ("Travel & Getting Away", ["a1-18", "a1-19", "a1-20"]),
+    ]
+}
+
 def lesson_teaching_counts(lang, data):
     """How many new words a lesson introduces, and how many exercises it has
     of each category. My Journey needs these for every lesson at once; without
@@ -95,10 +134,50 @@ def lesson_teaching_counts(lang, data):
     return words, exercises
 
 
+def load_lesson_entry(lang, level_id, level_path, stem):
+    """One lesson's row for the curriculum index, read from its own file.
+    Returns None if the file is missing or broken rather than raising —
+    a unit table can name a lesson before its file exists."""
+    f = level_path / f"{stem}.json"
+    if not f.exists():
+        return None
+    try:
+        data = json.loads(f.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return None
+
+    new_words, exercise_counts = lesson_teaching_counts(lang, data)
+    # The last hyphen segment: "03a" for an unsplit lesson, "01" for a unit
+    # part, "consolidation" for the lesson that closes a unit — rsplit rather
+    # than split so a1-01-01's label is "01", not "01-01".
+    label = stem.rsplit("-", 1)[-1]
+    if label == "consolidation":
+        label = "Review"
+    return {
+        "id": data.get("id", f"lesson.{level_id}.{stem}"),
+        "label": label,
+        "title": data.get("title", stem),
+        "grammar": data.get("grammar", ""),
+        "goal": data.get("goal", ""),
+        # Shown on the lesson row in the Learn tab, so the index carries it
+        # rather than fetching every lesson.
+        "estimatedMinutes": (data.get("metadata") or {}).get("estimatedMinutes"),
+        # Read by My Journey to total up coverage.
+        "newWords": new_words,
+        "exercises": exercise_counts
+    }
+
+
 def build_curriculum(lang="es"):
     """Build the curriculum.json structure (what the Learn tab actually reads)
     straight from each lesson's own JSON file — lesson files are the single
-    source of truth; curriculum.json is a generated index over them."""
+    source of truth; curriculum.json is a generated index over them.
+
+    Level -> Unit -> Lesson. A level with an entry in UNIT_TABLES is built
+    from that table, in the order given. A level without one (nothing past
+    A1 has content yet) falls back to one unit per lesson file, in filename
+    order, so the shape stays the same everywhere even before a level has a
+    real unit plan."""
     lang_path = BASE_LESSONS / lang / "lessons"
     if not lang_path.exists():
         return None
@@ -106,40 +185,39 @@ def build_curriculum(lang="es"):
     levels = {}
     for level_id, meta in LEVEL_META.items():
         level_path = lang_path / level_id
-        level_lessons = []
+        units = []
 
         if level_path.exists():
-            for f in sorted(level_path.glob("*.json")):
-                if f.name in SKIP_FILENAMES:
-                    continue
-                try:
-                    with open(f, 'r', encoding='utf-8') as fh:
-                        data = json.load(fh)
-                    new_words, exercise_counts = lesson_teaching_counts(lang, data)
-                    level_lessons.append({
-                        "id": data.get("id", f"lesson.{level_id}.{f.stem}"),
-                        # The number shown on the lesson row. Taken from the
-                        # filename rather than the row's position, because a
-                        # lesson split into parts (a1-03a, a1-03b, a1-03c)
-                        # must keep slot 3 instead of pushing 04 down to 06.
-                        "label": f.stem.split("-", 1)[-1],
-                        "title": data.get("title", f.stem),
-                        "grammar": data.get("grammar", ""),
-                        "goal": data.get("goal", ""),
-                        # Shown on the lesson row in the Learn tab, so the
-                        # index carries it rather than fetching 20 lessons.
-                        "estimatedMinutes": (data.get("metadata") or {}).get("estimatedMinutes"),
-                        # Read by My Journey to total up coverage.
-                        "newWords": new_words,
-                        "exercises": exercise_counts
+            table = UNIT_TABLES.get(level_id)
+            if table:
+                for position, (title, stems) in enumerate(table, start=1):
+                    lessons = [e for e in
+                               (load_lesson_entry(lang, level_id, level_path, s) for s in stems)
+                               if e is not None]
+                    units.append({
+                        "id": f"unit.{level_id}.{position:02d}",
+                        "label": str(position),
+                        "title": title,
+                        "lessons": lessons
                     })
-                except (OSError, json.JSONDecodeError):
-                    pass
+            else:
+                for position, f in enumerate(
+                        (p for p in sorted(level_path.glob("*.json")) if p.name not in SKIP_FILENAMES),
+                        start=1):
+                    entry = load_lesson_entry(lang, level_id, level_path, f.stem)
+                    if entry is None:
+                        continue
+                    units.append({
+                        "id": f"unit.{level_id}.{position:02d}",
+                        "label": str(position),
+                        "title": entry["title"],
+                        "lessons": [entry]
+                    })
 
         levels[level_id.upper()] = {
             "title": meta["title"],
             "description": meta["description"],
-            "lessons": level_lessons
+            "units": units
         }
 
     curr_meta = CURRICULUM_META.get(lang, {
@@ -410,8 +488,9 @@ def main():
         curriculum = build_curriculum(lang)
         with open(curriculum_dir / "curriculum.json", "w", encoding='utf-8') as f:
             json.dump(curriculum, f, indent=2, ensure_ascii=False)
-        total_lessons = sum(len(lvl['lessons']) for lvl in curriculum['levels'].values())
-        print(f"Curriculum for {lang}: {total_lessons} lessons across {len(curriculum['levels'])} levels")
+        total_units = sum(len(lvl['units']) for lvl in curriculum['levels'].values())
+        total_lessons = sum(len(u['lessons']) for lvl in curriculum['levels'].values() for u in lvl['units'])
+        print(f"Curriculum for {lang}: {total_lessons} lessons in {total_units} units across {len(curriculum['levels'])} levels")
 
     # Decks: named word lists over the single card store
     for lang in ["es", "fr", "hu"]:

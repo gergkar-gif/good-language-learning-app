@@ -53,7 +53,7 @@ function getLevelProgress(levelKey) {
         };
     }
 
-    const lessons = data.levels[levelKey].lessons || [];
+    const lessons = (data.levels[levelKey].units || []).flatMap(u => u.lessons || []);
     const progress = getProgress();
 
     return {

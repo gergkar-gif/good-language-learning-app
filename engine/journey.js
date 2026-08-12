@@ -64,7 +64,7 @@ const Journey = (function () {
         const doneSkills = {}, totalSkills = {};
 
         Object.keys((curriculum && curriculum.levels) || {}).forEach(levelKey => {
-            const lessons = curriculum.levels[levelKey].lessons || [];
+            const lessons = (curriculum.levels[levelKey].units || []).flatMap(u => u.lessons || []);
             if (!lessons.length) return;
 
             const done = lessons.filter(l => progress[l.id]);

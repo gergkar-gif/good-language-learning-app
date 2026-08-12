@@ -40,10 +40,10 @@ async function loadContent(path) {
 async function loadLesson(lessonId) {
     const parts = lessonId.replace(/^lesson\./, '').split('.');
 
-    const level = parts[0];      // a1
-    const number = parts[1];     // 01
+    const level = parts[0];                        // a1
+    const rest = parts.slice(1).join('-');          // 01, 03a, or 01-01 / 01-consolidation
 
-    const path = Lang.content(`lessons/${level}/${level}-${number}.json`);
+    const path = Lang.content(`lessons/${level}/${level}-${rest}.json`);
 
     try {
         const response = await fetch(path);

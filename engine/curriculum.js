@@ -1,9 +1,12 @@
 // ============================================
 // CURRICULUM RENDERER
 // ============================================
-// Two views in the Learn tab: a list of levels, and one level's lessons.
-// Levels are entered rather than expanded in place — five accordions open at
-// once buried the lesson you actually wanted.
+// Three views in the Learn tab: a list of levels, a level's units, and one
+// unit's lessons. Levels and units are entered rather than expanded in
+// place — five accordions open at once buried the lesson you actually
+// wanted. A unit with only one lesson skips its own detail screen and opens
+// straight into that lesson, since there is nothing to browse first — most
+// of A1 is still one lesson per unit while the rest gets split.
 
 // Line icons rather than emoji: they take the level's colour, so the icon,
 // the spine and the progress bar all read as one object.
@@ -17,8 +20,9 @@ const LEVEL_ICONS = {
 
 const LEVEL_ORDER = ['A1', 'A2', 'B1', 'B2', 'C1'];
 
-// Which level's lessons are on screen; null means the level list.
+// Which level and unit are on screen; null means "one level up".
 let openLevel = null;
+let openUnit = null;
 
 function levelIcon(level) {
     return '<svg class="level-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" ' +
@@ -26,13 +30,23 @@ function levelIcon(level) {
         (LEVEL_ICONS[level] || LEVEL_ICONS.A1) + '</svg>';
 }
 
-function levelStats(lessons, progress) {
+// Every lesson in a level, in teaching order, regardless of which unit it
+// sits in — what "how much of this level is done" has always meant.
+function levelLessons(levelData) {
+    return (levelData.units || []).flatMap(u => u.lessons || []);
+}
+
+function progressStats(lessons, progress) {
     const done = lessons.filter(l => progress[l.id]).length;
     return {
         done: done,
         total: lessons.length,
         percent: lessons.length ? Math.round((done / lessons.length) * 100) : 0
     };
+}
+
+function unitById(levelData, unitId) {
+    return (levelData.units || []).find(u => u.id === unitId) || null;
 }
 
 // The chosen course may have no content yet — content/hu exists as an empty
@@ -69,7 +83,10 @@ async function renderCurriculum() {
     const root = document.getElementById('learn-content');
     if (!root) return;
 
-    root.innerHTML = openLevel ? levelDetailHtml(openLevel) : levelListHtml();
+    root.innerHTML = !openLevel ? levelListHtml()
+        : !openUnit ? unitListHtml(openLevel)
+        : unitDetailHtml(openLevel, openUnit);
+
     attachCurriculumEvents(root);
 }
 
@@ -79,7 +96,7 @@ function levelListHtml() {
 
     const cards = LEVEL_ORDER.filter(l => levels[l]).map(level => {
         const data = levels[level];
-        const stats = levelStats(data.lessons || [], progress);
+        const stats = progressStats(levelLessons(data), progress);
 
         return `
             <button class="level-card" data-open-level="${level}" data-level="${level}">
@@ -104,16 +121,66 @@ function levelListHtml() {
     return `<div class="level-list">${cards}</div>`;
 }
 
-function levelDetailHtml(level) {
+// A level's units — the middle screen, new for the unit restructure. Visual
+// language matches the level list on purpose: a unit is the same kind of
+// object as a level, one step down.
+function unitListHtml(level) {
     const progress = getProgress();
     const data = window._curriculumData.levels[level];
-    const lessons = data.lessons || [];
-    const stats = levelStats(lessons, progress);
+    const units = data.units || [];
 
+    const cards = units.map(unit => {
+        const stats = progressStats(unit.lessons || [], progress);
+        return `
+            <button class="level-card unit-card" data-open-unit="${UI.escape(unit.id)}">
+                <span class="level-card-spine"></span>
+                <span class="unit-card-num" aria-hidden="true">${UI.escape(unit.label)}</span>
+                <span class="level-card-body">
+                    <span class="level-card-title">${UI.escape(unit.title)}</span>
+                    <span class="level-card-meter">
+                        <span class="level-card-track">
+                            <span class="level-card-fill" style="width:${stats.percent}%"></span>
+                        </span>
+                        <span class="level-card-count">${stats.done} / ${stats.total}
+                            ${stats.total === 1 ? 'lesson' : 'lessons'}</span>
+                    </span>
+                </span>
+                <span class="level-card-chevron" aria-hidden="true">›</span>
+            </button>
+        `;
+    }).join('');
+
+    // The test closes the level, so it sits after every unit rather than
+    // inside one — and it reports its own state, because a passed level is
+    // the one thing on this screen that is not simply "units finished".
+    const result = (typeof LevelTest !== 'undefined') ? LevelTest.resultFor(level) : null;
+    const testRow = `
+        <button class="level-test-row${result && result.passed ? ' is-passed' : ''}"
+                data-open-test="${level}">
+            <span class="level-test-title">${level} level test</span>
+            <span class="level-test-meta">${
+                result
+                    ? `${result.correct} / ${result.total}${result.passed ? ' · passed' : ''}`
+                    : '20 questions · 80% to move on'
+            }</span>
+        </button>
+    `;
+
+    return `
+        <div class="unit-list-view" data-level="${level}">
+            <button class="level-back" data-close-level="1">← All levels</button>
+            ${units.length
+                ? `<div class="level-list">${cards}</div>${testRow}`
+                : '<p class="text-muted level-empty">No units at this level yet.</p>'}
+        </div>
+    `;
+}
+
+function lessonRowsHtml(lessons, progress) {
     // The first unfinished lesson is the one to pick up next.
     const currentIndex = lessons.findIndex(l => !progress[l.id]);
 
-    const rows = lessons.map((lesson, i) => {
+    return lessons.map((lesson, i) => {
         const done = !!progress[lesson.id];
         const current = i === currentIndex;
         const state = done ? 'done' : current ? 'current' : 'todo';
@@ -130,35 +197,30 @@ function levelDetailHtml(level) {
             </li>
         `;
     }).join('');
+}
 
-    // The test closes the level, so it sits after the lessons rather than
-    // beside them — and it reports its own state, because a passed level is
-    // the one thing on this screen that is not simply "lessons finished".
-    const result = (typeof LevelTest !== 'undefined') ? LevelTest.resultFor(level) : null;
-    const testRow = `
-        <button class="level-test-row${result && result.passed ? ' is-passed' : ''}"
-                data-open-test="${level}">
-            <span class="level-test-title">${level} level test</span>
-            <span class="level-test-meta">${
-                result
-                    ? `${result.correct} / ${result.total}${result.passed ? ' · passed' : ''}`
-                    : '20 questions · 80% to move on'
-            }</span>
-        </button>
-    `;
+function unitDetailHtml(level, unitId) {
+    const progress = getProgress();
+    const data = window._curriculumData.levels[level];
+    const unit = unitById(data, unitId);
+    if (!unit) return unitListHtml(level);
+
+    const lessons = unit.lessons || [];
+    const stats = progressStats(lessons, progress);
 
     return `
-        <div class="level-detail" data-level="${level}">
-            <button class="level-back" data-close-level="1">← All levels</button>
+        <div class="level-detail" data-level="${level}" data-unit="${UI.escape(unit.id)}">
+            <button class="level-back" data-close-unit="1">← ${UI.escape(data.title || level)}</button>
 
             <header class="level-detail-head">
-                ${levelIcon(level)}
+                <span class="unit-card-num unit-detail-num" aria-hidden="true">${UI.escape(unit.label)}</span>
                 <span class="level-detail-titles">
-                    <span class="level-card-title">${UI.escape(data.title || level)}</span>
-                    <span class="level-card-sub">${level} · ${UI.escape(data.description || '')}</span>
+                    <span class="level-card-title">${UI.escape(unit.title)}</span>
+                    <span class="level-card-sub">${level}</span>
                 </span>
                 <span class="level-detail-progress">
-                    <span class="level-card-count">${stats.done} / ${stats.total} lessons</span>
+                    <span class="level-card-count">${stats.done} / ${stats.total}
+                        ${stats.total === 1 ? 'lesson' : 'lessons'}</span>
                     <span class="progress-ring" style="--pct:${stats.percent}">
                         <span class="progress-ring-label">${stats.percent}%</span>
                     </span>
@@ -166,23 +228,58 @@ function levelDetailHtml(level) {
             </header>
 
             ${lessons.length
-                ? `<ol class="lesson-rows">${rows}</ol>${testRow}`
-                : '<p class="text-muted level-empty">No lessons at this level yet.</p>'}
+                ? `<ol class="lesson-rows">${lessonRowsHtml(lessons, progress)}</ol>`
+                : '<p class="text-muted level-empty">No lessons in this unit yet.</p>'}
         </div>
     `;
 }
 
 function attachCurriculumEvents(root) {
+    // root.innerHTML is replaced on every render, but root itself is not —
+    // without this guard, every renderCurriculum() call bound a fresh
+    // listener on top of the ones already there. Harmless while every branch
+    // just re-renders, but startLesson() has real side effects (hiding every
+    // tab, showing the lesson screen), and two concurrent calls racing each
+    // other could leave that in a state neither call intended on its own.
+    if (root.dataset.wired) return;
+    root.dataset.wired = '1';
+
     root.addEventListener('click', e => {
         const open = e.target.closest('[data-open-level]');
         if (open) {
             openLevel = open.getAttribute('data-open-level');
+            openUnit = null;
             renderCurriculum();
             return;
         }
 
         if (e.target.closest('[data-close-level]')) {
             openLevel = null;
+            openUnit = null;
+            renderCurriculum();
+            return;
+        }
+
+        const openUnitBtn = e.target.closest('[data-open-unit]');
+        if (openUnitBtn) {
+            const unitId = openUnitBtn.getAttribute('data-open-unit');
+            const data = window._curriculumData.levels[openLevel];
+            const unit = unitById(data, unitId);
+
+            // A unit that is still one lesson has nothing to browse — go
+            // straight to the lesson rather than a detail screen with one row.
+            if (unit && unit.lessons && unit.lessons.length === 1) {
+                startLesson(unit.lessons[0].id);
+                return;
+            }
+
+            openUnit = unitId;
+            renderCurriculum();
+            return;
+        }
+
+        if (e.target.closest('[data-close-unit]')) {
+            openUnit = null;
             renderCurriculum();
             return;
         }

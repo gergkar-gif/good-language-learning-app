@@ -52,21 +52,24 @@ const Home = (function () {
         for (let i = 0; i < order.length; i++) {
             const level = order[i];
             const entry = data.levels[level];
-            const lessons = (entry && entry.lessons) || [];
+            const units = (entry && entry.units) || [];
+            const lessons = units.flatMap(u => u.lessons || []);
             if (!lessons.length) continue;
 
             const done = lessons.filter(l => progress[l.id]).length;
             const lesson = lessons.find(l => !progress[l.id]);
 
-            const title = entry.title || '';
-
             if (lesson) {
+                // The unit's own title is more useful here than the level's —
+                // "Greetings & Introductions" says more than "Fundamentals".
+                const unit = units.find(u => (u.lessons || []).some(l => l.id === lesson.id));
+                const title = (unit && unit.title) || entry.title || '';
                 return { kind: 'lesson', level, title, lesson, done, total: lessons.length };
             }
 
             const result = (typeof LevelTest !== 'undefined') ? LevelTest.resultFor(level) : null;
             if (!result || !result.passed) {
-                return { kind: 'test', level, title, result, done, total: lessons.length };
+                return { kind: 'test', level, title: entry.title || '', result, done, total: lessons.length };
             }
         }
 
@@ -79,7 +82,7 @@ const Home = (function () {
         let done = 0, total = 0;
 
         Object.keys((data && data.levels) || {}).forEach(level => {
-            const lessons = data.levels[level].lessons || [];
+            const lessons = (data.levels[level].units || []).flatMap(u => u.lessons || []);
             done += lessons.filter(l => progress[l.id]).length;
             total += lessons.length;
         });
