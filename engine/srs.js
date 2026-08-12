@@ -244,6 +244,48 @@ let currentReviewCard = null;
 let reviewScope = null;      // Set of lemmas, or null for everything
 let reviewScopeName = '';
 
+// Which side of the card shows first: 'es-en' is recognition (see Spanish,
+// recall the meaning), 'en-es' is production (see English, recall the
+// word). A study-style preference like XP and the streak (see the header
+// comment in engine/lang.js), not a property of one course, so it is a
+// plain key rather than one scoped through Lang.key() — a learner who
+// prefers production-first wants that whichever course they are reviewing.
+const REVIEW_DIRECTION_KEY = 'app_reviewDirection';
+let reviewDirection = 'es-en';
+try {
+    reviewDirection = localStorage.getItem(REVIEW_DIRECTION_KEY) === 'en-es' ? 'en-es' : 'es-en';
+} catch (error) {
+    // Private browsing with storage disabled: the default is fine.
+}
+
+function updateDirectionToggle() {
+    const btn = document.getElementById('dk-direction-toggle');
+    const esLabel = document.getElementById('dk-direction-es');
+    const enLabel = document.getElementById('dk-direction-en');
+    const englishFirst = reviewDirection === 'en-es';
+
+    if (btn) {
+        btn.classList.toggle('active', englishFirst);
+        btn.setAttribute('aria-checked', String(englishFirst));
+    }
+    if (esLabel) esLabel.classList.toggle('dk-direction-active', !englishFirst);
+    if (enLabel) enLabel.classList.toggle('dk-direction-active', englishFirst);
+}
+
+function toggleReviewDirection() {
+    reviewDirection = reviewDirection === 'es-en' ? 'en-es' : 'es-en';
+    try {
+        localStorage.setItem(REVIEW_DIRECTION_KEY, reviewDirection);
+    } catch (error) {
+        // Private browsing with storage disabled: the preference just won't
+        // survive a reload.
+    }
+    updateDirectionToggle();
+    // Re-show the same card in the new direction rather than skipping to a
+    // fresh one — flipping the switch mid-review shouldn't cost a card.
+    if (currentReviewCard) renderCard();
+}
+
 function startReviewSession(lemmas, name) {
     reviewScope = lemmas ? new Set(lemmas) : null;
     reviewScopeName = reviewScope ? (name || 'Deck') : '';
@@ -309,16 +351,19 @@ function updateReviewStats() {
 }
 
 function showNextCard() {
+    updateDirectionToggle();
+
     const dueCards = getDueCards();
     const cardEl = document.getElementById('review-card');
     const emptyEl = document.getElementById('review-empty');
-    
+
     if (dueCards.length === 0) {
         cardEl.style.display = 'none';
         emptyEl.style.display = 'block';
+        currentReviewCard = null;
         return;
     }
-    
+
     cardEl.style.display = 'flex';
     emptyEl.style.display = 'none';
 
@@ -327,13 +372,23 @@ function showNextCard() {
     currentReviewCard = shuffled(dueCards)[0];
     normalizeCard(currentReviewCard);
 
+    renderCard();
+}
+
+// Draws currentReviewCard in whichever direction reviewDirection currently
+// asks for. Split out from showNextCard() so toggling the direction
+// mid-review can redraw the same card instead of skipping to a new one.
+function renderCard() {
+    if (!currentReviewCard) return;
+
     // Live dictionary lookup — fixes cards added before dictionary loaded
     const liveEntry = Lexicon.define(currentReviewCard.spanish);
     const displayEnglish = liveEntry ? liveEntry.en : (currentReviewCard.english || '—');
     const displayType = liveEntry ? liveEntry.type : (currentReviewCard.type || '');
 
-    document.getElementById('review-front').textContent = currentReviewCard.spanish;
-    document.getElementById('review-back').textContent = displayEnglish;
+    const englishFirst = reviewDirection === 'en-es';
+    document.getElementById('review-front').textContent = englishFirst ? displayEnglish : currentReviewCard.spanish;
+    document.getElementById('review-back').textContent = englishFirst ? currentReviewCard.spanish : displayEnglish;
     document.getElementById('review-context').textContent = displayType ? `(${displayType})` : '';
 
     document.getElementById('review-answer').style.display = 'none';
@@ -342,6 +397,7 @@ function showNextCard() {
 
     updateRatingLabels();
     updateReviewStats();
+    updateDirectionToggle();
 }
 
 // The intervals are per-card now, so the buttons can't carry fixed labels.

@@ -77,6 +77,19 @@
                     <button class="review-clear-btn" onclick="clearDeck()">Reset</button>
                 </div>
 
+                <!-- Which side of the card is shown first: recognition (Spanish
+                     first) or production (English first). A study-style
+                     preference, so it applies to every deck, not just the one
+                     open right now. -->
+                <div class="dk-direction">
+                    <span id="dk-direction-es" class="dk-direction-label">Español</span>
+                    <button id="dk-direction-toggle" class="dk-toggle" onclick="toggleReviewDirection()"
+                        role="switch" aria-checked="false" aria-label="Show English side first">
+                        <span class="dk-toggle-knob"></span>
+                    </button>
+                    <span id="dk-direction-en" class="dk-direction-label">English</span>
+                </div>
+
                 <!-- Empty state -->
                 <div id="review-empty" class="review-empty">
                     <div class="review-empty-icon">📚</div>
