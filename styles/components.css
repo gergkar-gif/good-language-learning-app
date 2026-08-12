@@ -1516,7 +1516,20 @@
 
 .dk-secondary:hover { background: var(--border); }
 
-.dk-group { margin-bottom: 28px; }
+.dk-group { margin-bottom: 20px; }
+
+.dk-group-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  width: 100%;
+  background: none;
+  text-align: left;
+  border-bottom: 2px solid var(--border);
+  padding: 0 0 10px;
+}
+
+.dk-group-header:hover .dk-group-title { color: var(--primary-dark); }
 
 .dk-group-title {
   font-family: var(--font-display);
@@ -1524,6 +1537,23 @@
   font-weight: 600;
   color: var(--primary);
 }
+
+.dk-group-count {
+  margin-left: 8px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.dk-group-arrow {
+  font-size: .8em;
+  color: var(--secondary);
+  flex-shrink: 0;
+  margin-left: 12px;
+}
+
+.dk-group-body { padding-top: 12px; }
+
+.dk-group-body.hidden { display: none; }
 
 .dk-group-blurb { font-size: 13px; color: var(--muted); margin: 2px 0 12px; }
 

@@ -197,14 +197,25 @@ const Decks = (function () {
         const mine = myDeck();
         const mineStatus = statusOf(mine);
 
+        // Collapsed by default, same reasoning as the Library's reading
+        // rooms: three groups of cards is a wall to scroll past before
+        // reaching the one you actually opened Decks for.
         const groups = KIND_ORDER.map(kind => {
             const group = decks.filter(deck => deck.kind === kind);
             if (!group.length) return '';
             return `
                 <section class="dk-group">
-                    <h3 class="dk-group-title">${esc(KIND_LABEL[kind])}</h3>
-                    <p class="dk-group-blurb">${KIND_BLURB[kind]}</p>
-                    <div class="dk-grid">${group.map(deckCard).join('')}</div>
+                    <button class="dk-group-header" data-group-toggle="${kind}" aria-expanded="false">
+                        <span>
+                            <span class="dk-group-title">${esc(KIND_LABEL[kind])}</span>
+                            <span class="dk-group-count">${group.length}</span>
+                        </span>
+                        <span class="dk-group-arrow" id="dk-group-arrow-${kind}" aria-hidden="true">▶</span>
+                    </button>
+                    <div class="dk-group-body hidden" id="dk-group-body-${kind}">
+                        <p class="dk-group-blurb">${KIND_BLURB[kind]}</p>
+                        <div class="dk-grid">${group.map(deckCard).join('')}</div>
+                    </div>
                 </section>
             `;
         }).join('');
@@ -282,6 +293,17 @@ const Decks = (function () {
         const deck = openDeck ? byId(openDeck) : null;
         host.innerHTML = deck ? detailHtml(deck) : indexHtml();
 
+        host.querySelectorAll('[data-group-toggle]').forEach(el => {
+            el.onclick = function () {
+                const kind = el.getAttribute('data-group-toggle');
+                const body = document.getElementById('dk-group-body-' + kind);
+                const arrow = document.getElementById('dk-group-arrow-' + kind);
+                if (!body) return;
+                const nowOpen = body.classList.toggle('hidden') === false;
+                el.setAttribute('aria-expanded', String(nowOpen));
+                if (arrow) arrow.textContent = nowOpen ? '▼' : '▶';
+            };
+        });
         host.querySelectorAll('[data-open-deck]').forEach(el => {
             el.onclick = function () { openDeck = el.getAttribute('data-open-deck'); render(); };
         });
