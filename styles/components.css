@@ -803,6 +803,23 @@
   background: var(--secondary);
 }
 
+/* Listening exercises: the play button is the primary control, not the
+   small inline speak-btn, since there is no visible Spanish to attach it
+   to. */
+.lsn-listen {
+  margin-bottom: 16px;
+}
+
+.lsn-play {
+  padding: 14px 20px;
+  border: none;
+  border-radius: 10px;
+  background: var(--primary);
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
 .lsn-check:disabled {
   opacity: .6;
   cursor: default;

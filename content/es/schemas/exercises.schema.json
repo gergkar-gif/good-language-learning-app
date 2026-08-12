@@ -46,7 +46,8 @@
           "grammar",
           "reading",
           "dialogue",
-          "writing"
+          "writing",
+          "listening"
         ],
         "description": "What the exercise is testing. Informational; the lesson decides placement."
       },
@@ -94,6 +95,12 @@
         },
         {
           "$ref": "#/definitions/errorCorrection"
+        },
+        {
+          "$ref": "#/definitions/listeningChoice"
+        },
+        {
+          "$ref": "#/definitions/dictation"
         }
       ]
     },
@@ -468,6 +475,86 @@
                 "answer": "Buenos días."
               }
             ]
+          ]
+        },
+        "teaches": {
+          "$ref": "#/definitions/baseFields/teaches"
+        }
+      }
+    },
+    "listeningChoice": {
+      "type": "object",
+      "description": "Audio plays a Spanish sentence, with no Spanish text on screen; the learner picks its meaning from English options. Reuses the multiple-choice interaction — engine/lessons.js renders `sentence` as a play button instead of visible text. On failure the correct option is highlighted, same as multiple-choice.",
+      "required": [
+        "id",
+        "type",
+        "sentence",
+        "options",
+        "correct"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/baseFields/id"
+        },
+        "category": {
+          "$ref": "#/definitions/baseFields/category"
+        },
+        "type": {
+          "const": "listening-choice"
+        },
+        "sentence": {
+          "type": "string",
+          "minLength": 1,
+          "description": "The Spanish read aloud. Never shown as text — only spoken, via the browser's speechSynthesis.",
+          "examples": [
+            "Hemos llegado al hotel."
+          ]
+        },
+        "options": {
+          "type": "array",
+          "minItems": 2,
+          "description": "English meanings. Exactly one matches what was said.",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "correct": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Zero-based index into options."
+        },
+        "teaches": {
+          "$ref": "#/definitions/baseFields/teaches"
+        }
+      }
+    },
+    "dictation": {
+      "type": "object",
+      "description": "Audio plays a Spanish sentence; the learner types what they heard. Checked the same way as fill-blank: accents, punctuation and case are ignored.",
+      "required": [
+        "id",
+        "type",
+        "sentence"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/baseFields/id"
+        },
+        "category": {
+          "$ref": "#/definitions/baseFields/category"
+        },
+        "type": {
+          "const": "dictation"
+        },
+        "sentence": {
+          "type": "string",
+          "minLength": 1,
+          "description": "The Spanish read aloud and the expected answer. Never shown as text before the learner answers.",
+          "examples": [
+            "He viajado a Vietnam."
           ]
         },
         "teaches": {

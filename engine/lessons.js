@@ -521,6 +521,49 @@ const stepRenderers = {
         `;
     },
 
+    // Audio in place of visible Spanish — hearing it is the exercise, so
+    // unlike the small inline `say()` icon this is the primary control.
+    'listening-choice'(step) {
+        gateStep();
+        const pick = shuffledOptions(step.options, step.correct);
+        stepState.correct = pick.correct;
+        stepState.audio = step.sentence;
+        return `
+            <p class="lsn-question">Listen and choose what it means.</p>
+            <div class="lsn-listen">
+                <button class="lsn-play" onclick="lessonPlayAudio()" aria-label="Play audio">🔊 Play</button>
+                ${(typeof Speech === 'undefined' || !Speech.available())
+                    ? '<p class="lsn-hint">No Spanish voice found on this device — you can still answer after 3 tries.</p>' : ''}
+            </div>
+            <div class="lsn-options">
+                ${pick.options.map((option, i) => `
+                    <button class="lsn-option" onclick="lessonChoose(this, ${i})">${esc(option)}</button>
+                `).join('')}
+            </div>
+            ${feedbackHtml()}
+        `;
+    },
+
+    // Same audio control as listening-choice; checked exactly like fill-blank
+    // (lessonCheckBlank), since the whole sentence is the answer.
+    dictation(step) {
+        gateStep();
+        stepState.answer = step.sentence;
+        stepState.audio = step.sentence;
+        return `
+            <p class="lsn-question">Listen and type what you hear.</p>
+            <div class="lsn-listen">
+                <button class="lsn-play" onclick="lessonPlayAudio()" aria-label="Play audio">🔊 Play</button>
+                ${(typeof Speech === 'undefined' || !Speech.available())
+                    ? '<p class="lsn-hint">No Spanish voice found on this device — you can still answer after 3 tries.</p>' : ''}
+            </div>
+            <input id="blank-input" class="lsn-input" type="text" placeholder="Type what you hear"
+                onkeydown="if(event.key==='Enter')lessonCheckBlank()">
+            <button class="lsn-check" onclick="lessonCheckBlank()">Check</button>
+            ${feedbackHtml()}
+        `;
+    },
+
     matching(step) {
         gateStep();
         const pairs = step.pairs || [];
@@ -839,6 +882,10 @@ function lessonCheckBlank() {
         input.classList.add('correct');
         setFeedback(false, 'The answer was "' + stepState.answer + '" — continue when you are ready.');
     }
+}
+
+function lessonPlayAudio() {
+    if (typeof Speech !== 'undefined') Speech.speak(stepState.audio);
 }
 
 // ---- Sentence builder ----

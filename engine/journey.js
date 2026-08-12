@@ -32,18 +32,18 @@ const Journey = (function () {
     // words and grammar points themselves — one is practice, the other is
     // coverage, and conflating them flatters the learner.
     const SKILLS = [
-        { key: 'reading',  label: 'Reading',  from: 'reading' },
-        { key: 'writing',  label: 'Writing',  from: 'writing' },
-        { key: 'dialogue', label: 'Dialogue', from: 'dialogue' },
-        { key: 'grammar',  label: 'Grammar',  from: 'grammar' },
-        { key: 'vocab',    label: 'Vocabulary', from: 'vocabulary' }
+        { key: 'reading',   label: 'Reading',   from: 'reading' },
+        { key: 'listening', label: 'Listening', from: 'listening' },
+        { key: 'writing',   label: 'Writing',   from: 'writing' },
+        { key: 'dialogue',  label: 'Dialogue',  from: 'dialogue' },
+        { key: 'grammar',   label: 'Grammar',   from: 'grammar' },
+        { key: 'vocab',     label: 'Vocabulary', from: 'vocabulary' }
     ];
 
     // Skills the app cannot honestly report on yet. Named rather than hidden,
     // so the absence is legible as a plan rather than an oversight.
     const UNMEASURED = [
-        { label: 'Listening', note: 'Exercises arrive with A2.' },
-        { label: 'Speaking',  note: 'Not measured yet.' }
+        { label: 'Speaking', note: 'Not measured yet.' }
     ];
 
     // ----------------------------------------

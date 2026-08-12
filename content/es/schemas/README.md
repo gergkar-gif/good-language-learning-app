@@ -8,7 +8,7 @@ block, so it doubles as the template to copy when authoring.
 |---|---|---|
 | `lesson.schema.json` | A lesson: the ordered playlist of sections | yes |
 | `grammar.schema.json` | One grammar concept, rendered on one screen | yes |
-| `exercises.schema.json` | All exercises for a lesson, all seven types | yes |
+| `exercises.schema.json` | All exercises for a lesson, all nine types | yes |
 | `vocabulary.schema.json` | The words a lesson teaches | yes |
 | `story.schema.json` | A reading text | yes |
 | `drill-bank.schema.json` | A skill-organised practice bank for Workshop drillers, not tied to any one lesson | yes |

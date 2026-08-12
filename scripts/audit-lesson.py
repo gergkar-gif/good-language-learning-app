@@ -112,6 +112,8 @@ def exercise_spanish(ex):
         return [line["answer"] for line in ex["template"]]
     if kind == "sentence-order":
         return ex["sentences"] if ex.get("category") != "reading" else []
+    if kind in ("listening-choice", "dictation"):
+        return [ex["sentence"]]
     if kind == "multiple-choice":
         return [o for o in ex["options"]
                 if re.search(r"[¿¡áéíóúñ]|\b(el|la|un|una|quiero|soy)\b", o.lower())]
