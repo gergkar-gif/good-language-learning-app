@@ -95,14 +95,19 @@ UNIT_TABLES = {
         ("Directions", ["a1-directions-01", "a1-directions-02", "a1-directions-03", "a1-directions-04", "a1-directions-05", "a1-directions-consolidation"]),
         # "a1-weather", not "a1-15" — a1-15 is Work & Obligations' old slot.
         ("Weather", ["a1-weather-01", "a1-weather-02", "a1-weather-03", "a1-weather-04", "a1-weather-05", "a1-weather-consolidation"]),
-        ("Work & Obligations", ["a1-15"]),
-        ("Health", ["a1-16"]),
-        ("Hobbies & Free Time", ["a1-11"]),
-        ("Future Plans", ["a1-17"]),
-        # Placeholder: the target is original Travel content, still unwritten.
-        # Bundles the old Review 1/2/Final lessons so nothing is lost in the
-        # meantime — replace this list once Unit 20 has its own lessons.
-        ("Travel & Getting Away", ["a1-18", "a1-19", "a1-20"]),
+        # "a1-work", not "a1-16" — a1-16 is Health's old slot.
+        ("Work & Obligations", ["a1-work-01", "a1-work-02", "a1-work-03", "a1-work-04", "a1-work-05", "a1-work-consolidation"]),
+        # "a1-health", not "a1-17" — a1-17 is Future Plans' old slot.
+        ("Health", ["a1-health-01", "a1-health-02", "a1-health-03", "a1-health-04", "a1-health-05", "a1-health-consolidation"]),
+        # "a1-hobbies", not "a1-18" — a1-18 was Review 1's old slot.
+        ("Hobbies & Free Time", ["a1-hobbies-01", "a1-hobbies-02", "a1-hobbies-03", "a1-hobbies-04", "a1-hobbies-05", "a1-hobbies-consolidation"]),
+        # "a1-future", not "a1-19" — a1-19 was Review 2's old slot.
+        ("Future Plans", ["a1-future-01", "a1-future-02", "a1-future-03", "a1-future-04", "a1-future-05", "a1-future-consolidation"]),
+        # Old Review 1/2/Final are fully retired now — their readings live on,
+        # reused by lessons 20.4 (a1-19's reflection scene) and 20.5 (a1-20's
+        # dating-decision resolution). a1-18's reading has no home in the new
+        # unit and sits unused rather than deleted.
+        ("Travel & Getting Away", ["a1-20-01", "a1-20-02", "a1-20-03", "a1-20-04", "a1-20-05", "a1-20-consolidation"]),
     ]
 }
 
