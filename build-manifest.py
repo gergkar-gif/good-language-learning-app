@@ -113,6 +113,23 @@ UNIT_TABLES = {
         ("Talking About Your Trip", ["a2-01-01", "a2-01-02", "a2-01-03", "a2-01-04", "a2-01-05", "a2-01-consolidation"]),
         ("Talking About What You Have Done", ["a2-02-01", "a2-02-02", "a2-02-03", "a2-02-04", "a2-02-05", "a2-02-consolidation"]),
         ("Talking About a Day Out", ["a2-03-01", "a2-03-02", "a2-03-03", "a2-03-04", "a2-03-05", "a2-03-consolidation"]),
+        ("Following Instructions", ["a2-04-01", "a2-04-02", "a2-04-03", "a2-04-04", "a2-04-05", "a2-04-consolidation"]),
+        ("Giving Reasons and Opinions", ["a2-05-01", "a2-05-02", "a2-05-03", "a2-05-04", "a2-05-05", "a2-05-consolidation"]),
+        ("Comparing Trips and Memories", ["a2-06-01", "a2-06-02", "a2-06-03", "a2-06-04", "a2-06-05", "a2-06-consolidation"]),
+        ("Talking About How Long", ["a2-07-01", "a2-07-02", "a2-07-03", "a2-07-04", "a2-07-05", "a2-07-consolidation"]),
+        ("Making and Responding to Invitations", ["a2-08-01", "a2-08-02", "a2-08-03", "a2-08-04", "a2-08-05", "a2-08-consolidation"]),
+        ("Talking About Experiences", ["a2-09-01", "a2-09-02", "a2-09-03", "a2-09-04", "a2-09-05", "a2-09-consolidation"]),
+        ("Keeping in Touch", ["a2-10-01", "a2-10-02", "a2-10-03", "a2-10-04", "a2-10-05", "a2-10-consolidation"]),
+        ("Talking About What Happened", ["a2-11-01", "a2-11-02", "a2-11-03", "a2-11-04", "a2-11-05", "a2-11-consolidation"]),
+        ("Giving and Receiving Things", ["a2-12-01", "a2-12-02", "a2-12-03", "a2-12-04", "a2-12-05", "a2-12-consolidation"]),
+        ("Describing Events in Time", ["a2-13-01", "a2-13-02", "a2-13-03", "a2-13-04", "a2-13-05", "a2-13-consolidation"]),
+        ("Asking About What Happened", ["a2-14-01", "a2-14-02", "a2-14-03", "a2-14-04", "a2-14-05", "a2-14-consolidation"]),
+        ("Explaining What Happened", ["a2-15-01", "a2-15-02", "a2-15-03", "a2-15-04", "a2-15-05", "a2-15-consolidation"]),
+        ("Talking About Plans", ["a2-16-01", "a2-16-02", "a2-16-03", "a2-16-04", "a2-16-05", "a2-16-consolidation"]),
+        ("Reviewing A2 Experiences", ["a2-17-01", "a2-17-02", "a2-17-03", "a2-17-04", "a2-17-05", "a2-17-consolidation"]),
+        ("Talking About Travel and Goodbyes", ["a2-18-01", "a2-18-02", "a2-18-03", "a2-18-04", "a2-18-05", "a2-18-consolidation"]),
+        ("Talking About the Future", ["a2-19-01", "a2-19-02", "a2-19-03", "a2-19-04", "a2-19-05", "a2-19-consolidation"]),
+        ("Looking Back and Moving Forward", ["a2-20-01", "a2-20-02", "a2-20-03", "a2-20-04", "a2-20-05", "a2-20-consolidation"]),
     ]
 }
 
