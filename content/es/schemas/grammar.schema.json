@@ -10,8 +10,8 @@
   "properties": {
     "id": {
       "type": "string",
-      "pattern": "^grammar\\.(a1|a2|b1|b2|c1)\\.\\d{2}[a-z]?\\.((\\d{2}|consolidation)\\.)?[a-z-]+$",
-      "examples": ["grammar.a1.01.ser", "grammar.a1.01.01.greetings", "grammar.a1.03c.01.adjectives"]
+      "pattern": "^grammar\\.(a1|a2|b1|b2|c1)\\.(\\d{2}[a-z]?|[a-z]+)\\.((\\d{2}|consolidation)\\.)?[a-z-]+$",
+      "examples": ["grammar.a1.01.ser", "grammar.a1.01.01.greetings", "grammar.a1.03c.01.adjectives", "grammar.a1.cafe.01.tomar"]
     },
     "title": {
       "type": "string",

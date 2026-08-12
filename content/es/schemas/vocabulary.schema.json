@@ -10,13 +10,13 @@
   "properties": {
     "id": {
       "type": "string",
-      "pattern": "^vocab\\.(a1|a2|b1|b2|c1)\\.\\d{2}[a-z]?(\\.(\\d{2}|consolidation))?$",
-      "examples": ["vocab.a1.01", "vocab.a1.01.01"]
+      "pattern": "^vocab\\.(a1|a2|b1|b2|c1)\\.(\\d{2}[a-z]?|[a-z]+)(\\.(\\d{2}|consolidation))?$",
+      "examples": ["vocab.a1.01", "vocab.a1.01.01", "vocab.a1.cafe.01"]
     },
     "lesson": {
       "type": "string",
-      "pattern": "^(a1|a2|b1|b2|c1)-\\d{2}[a-z]?(-(\\d{2}|consolidation))?$",
-      "examples": ["a1-01", "a1-01-01"]
+      "pattern": "^(a1|a2|b1|b2|c1)-(\\d{2}[a-z]?|[a-z]+)(-(\\d{2}|consolidation))?$",
+      "examples": ["a1-01", "a1-01-01", "a1-cafe-01"]
     },
     "title": { "type": "string", "minLength": 1 },
     "theme": {

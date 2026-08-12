@@ -10,9 +10,9 @@
   "properties": {
     "id": {
       "type": "string",
-      "pattern": "^lesson\\.(a1|a2|b1|b2|c1)\\.\\d{2}[a-z]?(\\.(\\d{2}|consolidation))?$",
-      "description": "Stable identifier, also the progress key. Must match the id used in curriculum/curriculum.json. A unit split into several lessons adds a third segment: lesson.a1.01.01, lesson.a1.01.02, ..., lesson.a1.01.consolidation.",
-      "examples": ["lesson.a1.01", "lesson.a1.01.01", "lesson.a1.01.consolidation"]
+      "pattern": "^lesson\\.(a1|a2|b1|b2|c1)\\.(\\d{2}[a-z]?|[a-z]+)(\\.(\\d{2}|consolidation))?$",
+      "description": "Stable identifier, also the progress key. Must match the id used in curriculum/curriculum.json. A unit split into several lessons adds a third segment: lesson.a1.01.01, lesson.a1.01.02, ..., lesson.a1.01.consolidation. The unit segment is normally a two-digit position (optionally with a letter, for a not-yet-renumbered old slot like 03c), but a word is allowed where a numeric position would collide with another unit's old lesson slot (lesson.a1.cafe.01) — rare, only reach for it when a rename is otherwise ambiguous.",
+      "examples": ["lesson.a1.01", "lesson.a1.01.01", "lesson.a1.01.consolidation", "lesson.a1.cafe.01"]
     },
     "title": {
       "type": "string",

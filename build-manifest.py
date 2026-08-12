@@ -81,7 +81,10 @@ UNIT_TABLES = {
         ("Daily Routine", ["a1-06-01", "a1-06-02", "a1-06-03", "a1-06-04", "a1-06-05", "a1-06-consolidation"]),
         ("At Home", ["a1-07-01", "a1-07-02", "a1-07-03", "a1-07-04", "a1-07-05", "a1-07-consolidation"]),
         ("At the Supermarket", ["a1-08-01", "a1-08-02", "a1-08-03", "a1-08-04", "a1-08-05", "a1-08-consolidation"]),
-        ("Ordering at a Café", ["a1-09-01", "a1-09-02", "a1-09-03", "a1-09-04", "a1-09-05", "a1-09-consolidation"]),
+        # "a1-cafe", not "a1-09" — old lesson slot 9 is Kitchen (still
+        # unsplit), and a1-09 would collide with it the moment Kitchen's own
+        # split arrives.
+        ("Ordering at a Café", ["a1-cafe-01", "a1-cafe-02", "a1-cafe-03", "a1-cafe-04", "a1-cafe-05", "a1-cafe-consolidation"]),
         ("Birthdays & Celebrations", ["a1-10"]),
         ("In the Kitchen", ["a1-09"]),
         ("Numbers, Time & Schedules", ["a1-12"]),
