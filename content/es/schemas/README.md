@@ -11,6 +11,7 @@ block, so it doubles as the template to copy when authoring.
 | `exercises.schema.json` | All exercises for a lesson, all seven types | yes |
 | `vocabulary.schema.json` | The words a lesson teaches | yes |
 | `story.schema.json` | A reading text | yes |
+| `drill-bank.schema.json` | A skill-organised practice bank for Workshop drillers, not tied to any one lesson | yes |
 
 Two files in `content/es/` are **generated** and should never be edited by hand —
 `python build-manifest.py` rebuilds both:
@@ -26,10 +27,17 @@ Two files in `content/es/` are **generated** and should never be edited by hand 
 python scripts/validate-content.py      # every file against its schema
 python scripts/audit-lesson.py          # lessons against the A1 content spec
 python build-manifest.py                # rebuilds indexes, reports broken refs
+python scripts/build_grammar_index.py   # rebuilds Workshop's Grammar Driller pool
 ```
 
 `validate-content.py` needs `jsonschema` (`python -m pip install jsonschema`).
 Both scripts exit non-zero on failure, so either can gate a commit.
+
+Any `category:"grammar"` exercise with a `teaches` tag automatically becomes
+drillable in Workshop's Grammar Driller — there is no separate registration
+step — but only after `build_grammar_index.py` has been re-run, since it
+reads `generated/indexes/grammar-index.json` rather than scanning content
+live. Run it whenever a lesson's exercises change, same as `build-manifest.py`.
 
 `a1-01` is the reference lesson: it passes all three, and its shape is what
 later lessons should copy.

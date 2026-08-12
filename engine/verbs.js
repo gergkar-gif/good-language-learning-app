@@ -209,7 +209,7 @@ const Verbs = (function () {
     //  FULL RENDER
     // ================================================================
     function _render() {
-        var root = document.getElementById('drills-root');
+        var root = document.getElementById('verb-driller-root');
         if (!root) return;
         root.innerHTML = _buildShellHtml();
         _attachShellEvents(root);

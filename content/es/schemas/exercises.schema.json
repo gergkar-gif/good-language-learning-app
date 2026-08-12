@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "exercises.schema.json",
   "title": "Exercise file",
-  "description": "All exercises for one lesson. A lesson's exercise-group sections pull items out of here by id, so one file serves the practice, reading, dialogue and writing groups. Every exercise type below gates the Continue button: the learner must answer correctly, and three wrong attempts reveal the answer and release the gate (engine/lessons.js, MAX_ATTEMPTS).",
+  "description": "All exercises for one lesson. A lesson's exercise-group sections pull items out of here by id, so one file serves the practice, reading, dialogue and writing groups. Every exercise type engine/lessons.js renders gates the Continue button: the learner must answer correctly, and three wrong attempts reveal the answer and release the gate (MAX_ATTEMPTS). The one exception is error-correction, which lessons.js does not render at all yet — see its own description.",
   "type": "object",
   "required": [
     "lesson",
@@ -91,6 +91,9 @@
         },
         {
           "$ref": "#/definitions/structuredWriting"
+        },
+        {
+          "$ref": "#/definitions/errorCorrection"
         }
       ]
     },
@@ -363,6 +366,52 @@
         "correct": {
           "type": "integer",
           "minimum": 0
+        },
+        "teaches": {
+          "$ref": "#/definitions/baseFields/teaches"
+        }
+      }
+    },
+    "errorCorrection": {
+      "type": "object",
+      "description": "A Spanish sentence containing one deliberate mistake; the learner retypes it correctly. Checked the same way as fill-blank — accents/punctuation/case-insensitive comparison against `solution`. Not yet rendered by engine/lessons.js — only Workshop's Grammar Driller (engine/drills/grammar-runner.js) supports this type today, so do not reference it from a lesson's exercise-group until lessons.js gains a renderer for it.",
+      "required": [
+        "id",
+        "type",
+        "sentence",
+        "solution"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/baseFields/id"
+        },
+        "category": {
+          "$ref": "#/definitions/baseFields/category"
+        },
+        "type": {
+          "const": "error-correction"
+        },
+        "sentence": {
+          "type": "string",
+          "minLength": 1,
+          "description": "The Spanish sentence as given, containing exactly one mistake.",
+          "examples": [
+            "Yo tiene un perro."
+          ]
+        },
+        "solution": {
+          "type": "string",
+          "minLength": 1,
+          "description": "The corrected sentence.",
+          "examples": [
+            "Yo tengo un perro."
+          ]
+        },
+        "explanation": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Shown after the learner answers, right or wrong — what was wrong and why."
         },
         "teaches": {
           "$ref": "#/definitions/baseFields/teaches"

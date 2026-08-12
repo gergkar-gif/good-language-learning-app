@@ -1,0 +1,374 @@
+/* ============================================
+   WORKSHOP SHELL — driller picker + back chrome
+   ============================================ */
+
+.wk-picker {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 16px;
+}
+
+.wk-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+    padding: 16px;
+    text-align: left;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: border-color .15s;
+}
+
+.wk-card:hover {
+    border-color: var(--primary-mid);
+}
+
+.wk-card .icon {
+    width: 26px;
+    height: 26px;
+    flex-shrink: 0;
+}
+
+.wk-card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.wk-card-title {
+    font-family: var(--font-display);
+    font-size: 17px;
+    color: var(--text);
+}
+
+.wk-card-sub {
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.wk-back {
+    display: inline-block;
+    margin: 12px 0 4px 16px;
+    font-size: 14px;
+    color: var(--primary-mid);
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.wk-back:hover {
+    color: var(--primary);
+}
+
+/* ============================================
+   GRAMMAR DRILLER
+   ============================================ */
+
+.gd-loading,
+.gd-empty {
+    text-align: center;
+    padding: 32px 16px;
+    color: var(--muted);
+}
+
+.gd-settings {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 16px;
+}
+
+.gd-title {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    color: var(--primary);
+    margin-bottom: 16px;
+}
+
+.gd-setting {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 20px;
+}
+
+.gd-setting label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+/* ---- Session HUD ---- */
+.gd-hud {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    max-width: 480px;
+    margin: 0 auto 16px;
+    padding: 0 16px;
+}
+
+.gd-hud-score {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.gd-hud .vspeed-timer-display {
+    font-size: 1.1rem;
+}
+
+.gd-change-skill {
+    margin-left: auto;
+    font-size: 0.85rem;
+    color: var(--primary-mid);
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.gd-change-skill:hover {
+    color: var(--primary);
+}
+
+.gd-exercise {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 0 16px 24px;
+}
+
+/* ---- Question / options (multiple-choice, dialogue-complete, sentence-order) ---- */
+.gd-question {
+    font-size: 1.05rem;
+    color: var(--text);
+    margin-bottom: 16px;
+}
+
+.gd-options {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.gd-option {
+    padding: 12px 14px;
+    text-align: left;
+    font-size: 0.98rem;
+    border: 2px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--surface);
+    color: var(--text);
+    cursor: pointer;
+    min-height: 48px;
+    transition: border-color .15s, background .15s;
+}
+
+.gd-option.selected {
+    border-color: var(--primary-mid);
+}
+
+.gd-option.correct {
+    border-color: var(--success);
+    background: var(--success-bg);
+    color: var(--success);
+}
+
+.gd-option.wrong {
+    border-color: var(--danger);
+    background: var(--danger-bg);
+    color: var(--danger);
+}
+
+.gd-option.used {
+    opacity: 0.55;
+    cursor: default;
+}
+
+/* ---- Dialogue-complete prompt ---- */
+.gd-dialogue {
+    margin-bottom: 16px;
+    padding: 12px 14px;
+    background: var(--bg);
+    border-radius: var(--radius-sm);
+}
+
+.gd-dialogue-line {
+    display: flex;
+    gap: 8px;
+    font-size: 0.95rem;
+    padding: 4px 0;
+}
+
+.gd-dialogue-speaker {
+    font-weight: 600;
+    color: var(--muted);
+    flex-shrink: 0;
+}
+
+/* ---- Fill-blank / error-correction ---- */
+.gd-blank {
+    display: inline-block;
+    min-width: 2em;
+    border-bottom: 2px solid var(--primary-mid);
+    text-align: center;
+}
+
+.gd-broken-sentence {
+    font-size: 1.1rem;
+    color: var(--text);
+    margin-bottom: 12px;
+    font-style: italic;
+}
+
+.gd-input {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 1rem;
+    border: 2px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--surface);
+    color: var(--text);
+    min-height: 48px;
+    margin-bottom: 8px;
+}
+
+.gd-input:focus {
+    outline: none;
+    border-color: var(--primary-mid);
+}
+
+.gd-input.gd-correct {
+    border-color: var(--success);
+    background: var(--success-bg);
+    color: var(--success);
+}
+
+.gd-input.gd-wrong {
+    border-color: var(--danger);
+    background: var(--danger-bg);
+    color: var(--danger);
+}
+
+/* ---- Sentence builder ---- */
+.gd-build-target {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    min-height: 48px;
+    padding: 10px;
+    margin-bottom: 12px;
+    border: 2px dashed var(--border);
+    border-radius: var(--radius-sm);
+}
+
+.gd-target-empty {
+    color: var(--muted);
+    font-size: 0.9rem;
+    padding: 6px 4px;
+}
+
+.gd-tiles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 8px;
+}
+
+.gd-tile {
+    padding: 8px 12px;
+    font-size: 0.95rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--surface);
+    color: var(--text);
+    cursor: pointer;
+}
+
+.gd-tile.used {
+    opacity: 0.35;
+    cursor: default;
+}
+
+.gd-built {
+    display: inline-block;
+    font-size: 1.05rem;
+    padding: 4px 2px;
+}
+
+.gd-built.gd-correct {
+    color: var(--success);
+}
+
+.gd-built.gd-wrong {
+    color: var(--danger);
+}
+
+.gd-build-english {
+    font-size: 0.9rem;
+    color: var(--muted);
+    margin-bottom: 8px;
+}
+
+/* ---- Reveal (sentence-order, on failure) ---- */
+.gd-reveal {
+    margin: 8px 0;
+    padding: 10px 12px;
+    background: var(--bg);
+    border-radius: var(--radius-sm);
+    font-size: 0.95rem;
+    color: var(--text);
+}
+
+/* ---- Feedback / explanation ---- */
+.gd-feedback {
+    font-weight: 600;
+    font-size: 0.95rem;
+    min-height: 1.3em;
+    margin: 10px 0;
+}
+
+.gd-feedback-correct {
+    color: var(--success);
+}
+
+.gd-feedback-wrong {
+    color: var(--danger);
+}
+
+.gd-explanation {
+    font-size: 0.9rem;
+    color: var(--muted);
+    padding: 10px 12px;
+    background: var(--bg);
+    border-radius: var(--radius-sm);
+    margin-bottom: 8px;
+}
+
+/* ---- Actions ---- */
+.gd-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.gd-actions .vbtn {
+    flex: 1;
+}
+
+@media (min-width: 600px) {
+    .wk-picker,
+    .gd-settings,
+    .gd-hud,
+    .gd-exercise {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+}

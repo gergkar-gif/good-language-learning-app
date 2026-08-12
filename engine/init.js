@@ -35,8 +35,8 @@ function showTab(tabName, button) {
         updateReaderWordColors();
     }
 
-    if (tabName === 'drills' && typeof Verbs !== 'undefined') {
-        Verbs.render();
+    if (tabName === 'drills' && typeof Workshop !== 'undefined') {
+        Workshop.render();
     }
 
     // Decks opens on the browser, not mid-session: arriving at a flashcard
