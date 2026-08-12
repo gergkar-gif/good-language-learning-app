@@ -51,7 +51,7 @@
     "sections": {
       "type": "array",
       "minItems": 1,
-      "description": "Canonical order: goal, grammar (one per concept), the practice exercise-group, vocabulary, story, reading, dialogue, writing, srs, checklist.",
+      "description": "Canonical order: goal, recycle, grammar (one per concept), the practice exercise-group, vocabulary, story, reading, dialogue, writing, srs, checklist.",
       "items": { "$ref": "#/definitions/section" }
     }
   },
@@ -67,6 +67,7 @@
     "section": {
       "oneOf": [
         { "$ref": "#/definitions/goalSection" },
+        { "$ref": "#/definitions/recycleSection" },
         { "$ref": "#/definitions/grammarSection" },
         { "$ref": "#/definitions/exerciseGroupSection" },
         { "$ref": "#/definitions/vocabularySection" },
@@ -90,6 +91,18 @@
           "items": { "type": "string", "minLength": 1 },
           "description": "Phrased as capabilities: 'Say your name with me llamo'."
         }
+      }
+    },
+
+    "recycleSection": {
+      "type": "object",
+      "description": "Warms the learner up on earlier material before anything new. Takes no ref: engine/recycle.js assembles it at runtime from `teaches`-tagged exercises in lessons already completed, scheduled per exercise id with the same SM-2 curve as the vocabulary deck. A lesson with nothing yet to recycle (lesson 1, or a learner starting fresh) contributes zero screens rather than an empty block. See content/es/guides/a1-srs-srategy.md.",
+      "required": ["type"],
+      "additionalProperties": false,
+      "properties": {
+        "type": { "const": "recycle" },
+        "title": { "type": "string", "default": "Quick Review" },
+        "count": { "type": "integer", "minimum": 1, "maximum": 5, "default": 3 }
       }
     },
 

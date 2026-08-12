@@ -101,6 +101,18 @@ async function buildSteps(lesson) {
                 });
             }
 
+            else if (section.type === 'recycle') {
+                const pool = (typeof Recycle !== 'undefined') ? await Recycle.collectPool(lesson) : [];
+                const picks = (typeof Recycle !== 'undefined') ? Recycle.pick(pool, section.count || 3) : [];
+                picks.forEach((exercise, i) => {
+                    steps.push(Object.assign({}, exercise, {
+                        title: (section.title || 'Quick Review')
+                            + (picks.length > 1 ? ' ' + (i + 1) + '/' + picks.length : ''),
+                        isRecycle: true
+                    }));
+                });
+            }
+
             else if (section.type === 'grammar') {
                 // One screen per grammar concept. The file's parts (text,
                 // table, examples, tip) render together — splitting them into
@@ -309,6 +321,7 @@ function solveStep(message) {
     stepState.solved = true;
     setFeedback(true, message);
     updateContinueButton();
+    noteRecycleResult(true);
 }
 
 // Records a wrong attempt. Returns true once the learner is out of tries,
@@ -324,7 +337,19 @@ function failStep(message) {
 
     stepState.solved = true;
     updateContinueButton();
+    noteRecycleResult(false);
     return true;
+}
+
+// A recycle step's outcome feeds straight back into its own SM-2 schedule —
+// solved clean is "good", solved only after burning every attempt is
+// "again", same distinction the vocabulary deck's rating buttons make.
+function noteRecycleResult(success) {
+    if (stepState.recycleNoted) return;
+    const step = currentLesson.steps[currentStepIndex];
+    if (!step || !step.isRecycle || !step.id) return;
+    stepState.recycleNoted = true;
+    if (typeof Recycle !== 'undefined') Recycle.record(step.id, success ? 'good' : 'again');
 }
 
 function revealHtml(inner) {
