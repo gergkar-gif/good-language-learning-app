@@ -111,6 +111,8 @@ UNIT_TABLES = {
     ],
     "a2": [
         ("Talking About Your Trip", ["a2-01-01", "a2-01-02", "a2-01-03", "a2-01-04", "a2-01-05", "a2-01-consolidation"]),
+        ("Talking About What You Have Done", ["a2-02-01", "a2-02-02", "a2-02-03", "a2-02-04", "a2-02-05", "a2-02-consolidation"]),
+        ("Talking About a Day Out", ["a2-03-01", "a2-03-02", "a2-03-03", "a2-03-04", "a2-03-05", "a2-03-consolidation"]),
     ]
 }
 
