@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-12T01:40:16.889394Z",
+  "generated": "2026-08-12T01:51:32.845065Z",
   "words": {
     "hola": {
       "en": "hello / hi",
@@ -545,57 +545,57 @@
       "en": "next to",
       "pos": "expression"
     },
-    "la familia": {
-      "en": "family",
+    "hijo": {
+      "en": "son",
       "pos": "noun"
     },
-    "la madre": {
-      "en": "mother",
+    "hija": {
+      "en": "daughter",
       "pos": "noun"
     },
-    "el padre": {
-      "en": "father",
+    "padres": {
+      "en": "parents",
       "pos": "noun"
     },
-    "el hermano": {
-      "en": "brother",
+    "abuelo": {
+      "en": "grandfather",
       "pos": "noun"
     },
-    "tener": {
-      "en": "to have",
-      "pos": "verb"
-    },
-    "la videollamada": {
-      "en": "video call",
+    "abuela": {
+      "en": "grandmother",
       "pos": "noun"
     },
-    "el ordenador": {
-      "en": "computer",
+    "abuelos": {
+      "en": "grandparents",
       "pos": "noun"
     },
-    "el apartamento": {
-      "en": "apartment",
+    "esposo": {
+      "en": "husband",
       "pos": "noun"
     },
-    "la vida": {
-      "en": "life",
+    "esposa": {
+      "en": "wife",
       "pos": "noun"
     },
-    "la palabra": {
-      "en": "word",
+    "primo": {
+      "en": "male cousin",
       "pos": "noun"
     },
-    "la suerte": {
-      "en": "luck",
+    "prima": {
+      "en": "female cousin",
       "pos": "noun"
     },
-    "saludar": {
-      "en": "to greet",
-      "pos": "verb"
-    },
-    "cómodo": {
-      "en": "comfortable",
+    "divertido": {
+      "en": "fun / funny",
       "pos": "adjective"
+    },
+    "tranquilo": {
+      "en": "calm",
+      "pos": "adjective"
+    },
+    "juntos": {
+      "en": "together",
+      "pos": "adverb"
     },
     "la rutina": {
       "en": "routine",
@@ -1016,10 +1016,6 @@
     "la calle": {
       "en": "street",
       "pos": "noun"
-    },
-    "divertido": {
-      "en": "fun, enjoyable",
-      "pos": "adjective"
     },
     "contento": {
       "en": "happy, pleased",
@@ -1541,6 +1537,10 @@
       "en": "by",
       "pos": "preposition"
     },
+    "tener": {
+      "en": "to have",
+      "pos": "verb"
+    },
     "se": {
       "en": "himself, herself, itself",
       "pos": "pronoun"
@@ -1812,10 +1812,6 @@
     "mí": {
       "en": "me",
       "pos": "pronoun"
-    },
-    "hijo": {
-      "en": "son",
-      "pos": "noun"
     },
     "ni": {
       "en": "Used when negating two or more elements, and not, not…",
@@ -2307,10 +2303,6 @@
     },
     "camino": {
       "en": "way, route",
-      "pos": "noun"
-    },
-    "esposo": {
-      "en": "husband",
       "pos": "noun"
     },
     "permitir": {
@@ -3132,10 +3124,6 @@
     "varios": {
       "en": "various, several",
       "pos": "determiner"
-    },
-    "abuelo": {
-      "en": "grandfather",
-      "pos": "noun"
     },
     "parar": {
       "en": "to stop, halt",
@@ -5337,27 +5325,69 @@
       ]
     },
     {
-      "id": "lesson:a1-05",
+      "id": "lesson:a1-05-01",
       "kind": "lesson",
-      "name": "Family",
-      "label": "05",
+      "name": "My Family",
+      "label": "05-01",
       "level": "A1",
       "lemmas": [
-        "la familia",
-        "la madre",
-        "el padre",
-        "el hermano",
-        "tener",
-        "la videollamada",
-        "el ordenador",
-        "el apartamento",
-        "la vida",
-        "la palabra",
-        "la suerte",
-        "saludar",
-        "pequeño",
-        "cómodo",
-        "amable"
+        "madre",
+        "padre",
+        "hermano",
+        "hermana",
+        "hijo",
+        "hija"
+      ]
+    },
+    {
+      "id": "lesson:a1-05-02",
+      "kind": "lesson",
+      "name": "My Mother, Your Brother",
+      "label": "05-02",
+      "level": "A1",
+      "lemmas": [
+        "padres",
+        "familia",
+        "abuelo",
+        "abuela",
+        "abuelos"
+      ]
+    },
+    {
+      "id": "lesson:a1-05-03",
+      "kind": "lesson",
+      "name": "Family Relationships",
+      "label": "05-03",
+      "level": "A1",
+      "lemmas": [
+        "esposo",
+        "esposa",
+        "primo",
+        "prima"
+      ]
+    },
+    {
+      "id": "lesson:a1-05-04",
+      "kind": "lesson",
+      "name": "Describing My Family",
+      "label": "05-04",
+      "level": "A1",
+      "lemmas": [
+        "amable",
+        "divertido",
+        "tranquilo"
+      ]
+    },
+    {
+      "id": "lesson:a1-05-05",
+      "kind": "lesson",
+      "name": "Introducing My Family",
+      "label": "05-05",
+      "level": "A1",
+      "lemmas": [
+        "juntos",
+        "foto",
+        "presentar"
       ]
     },
     {
@@ -5888,6 +5918,16 @@
       ]
     },
     {
+      "id": "topic:describing-family-members",
+      "kind": "topic",
+      "name": "Describing family members",
+      "lemmas": [
+        "amable",
+        "divertido",
+        "tranquilo"
+      ]
+    },
+    {
       "id": "topic:describing-people",
       "kind": "topic",
       "name": "Describing people",
@@ -5941,25 +5981,26 @@
       ]
     },
     {
-      "id": "topic:family",
+      "id": "topic:family-members",
       "kind": "topic",
-      "name": "Family",
+      "name": "Family members",
       "lemmas": [
-        "la familia",
-        "la madre",
-        "el padre",
-        "el hermano",
-        "tener",
-        "la videollamada",
-        "el ordenador",
-        "el apartamento",
-        "la vida",
-        "la palabra",
-        "la suerte",
-        "saludar",
-        "pequeño",
-        "cómodo",
-        "amable"
+        "padres",
+        "familia",
+        "abuelo",
+        "abuela",
+        "abuelos"
+      ]
+    },
+    {
+      "id": "topic:family-relationships",
+      "kind": "topic",
+      "name": "Family relationships",
+      "lemmas": [
+        "esposo",
+        "esposa",
+        "primo",
+        "prima"
       ]
     },
     {
@@ -6015,6 +6056,19 @@
       ]
     },
     {
+      "id": "topic:immediate-family",
+      "kind": "topic",
+      "name": "Immediate family",
+      "lemmas": [
+        "madre",
+        "padre",
+        "hermano",
+        "hermana",
+        "hijo",
+        "hija"
+      ]
+    },
+    {
       "id": "topic:integrating-introductions",
       "kind": "topic",
       "name": "Integrating introductions",
@@ -6038,6 +6092,16 @@
         "grupo",
         "también",
         "aquí"
+      ]
+    },
+    {
+      "id": "topic:introducing-your-family",
+      "kind": "topic",
+      "name": "Introducing your family",
+      "lemmas": [
+        "juntos",
+        "foto",
+        "presentar"
       ]
     },
     {
