@@ -302,6 +302,24 @@ const Journey = (function () {
             `<ul class="jr-milestones">${items}</ul>`);
     }
 
+    // Which course the learner is studying. It sits at the top of the page
+    // rather than among the progress cards — a course choice isn't a
+    // reading of how far you've come, it's the frame everything below is
+    // measured inside. Only courses with real content are offered; see
+    // Lang.available() in engine/lang.js.
+    function courseBlock() {
+        const options = Lang.available()
+            .map(code => `<option value="${code}"${code === Lang.code() ? ' selected' : ''}>${esc(Lang.nameFor(code))}</option>`)
+            .join('');
+
+        return `
+            <div class="jr-course">
+                <label class="jr-course-label" for="jr-lang-select">Course</label>
+                <select id="jr-lang-select" class="jr-lang-select" aria-label="Course">${options}</select>
+            </div>
+        `;
+    }
+
     // ----------------------------------------
     // RENDER
     // ----------------------------------------
@@ -312,6 +330,7 @@ const Journey = (function () {
         const d = collect();
 
         host.innerHTML = `
+            ${courseBlock()}
             <div class="jr-grid">
                 ${curriculumBlock(d)}
                 ${grammarBlock(d)}
@@ -323,6 +342,19 @@ const Journey = (function () {
                 ${milestonesBlock(d)}
             </div>
         `;
+
+        // host itself persists across renders (only its innerHTML is
+        // replaced), so this listener is attached once and delegates —
+        // attaching fresh on every render() would stack up duplicates.
+        if (!host.dataset.wired) {
+            host.dataset.wired = '1';
+            host.addEventListener('change', e => {
+                const select = e.target.closest('#jr-lang-select');
+                if (!select || select.value === Lang.code()) return;
+                Lang.set(select.value);
+                location.reload();
+            });
+        }
     }
 
     return { render, collect };

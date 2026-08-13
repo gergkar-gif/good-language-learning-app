@@ -1716,6 +1716,37 @@
   border-color: var(--primary);
 }
 
+/* ---- Course / language picker ---- */
+/* Sits above .jr-grid, not among the progress cards — a course choice is
+   the frame the rest of the page is measured inside, not a reading of it. */
+.jr-course {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.jr-course-label {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.jr-lang-select {
+  font: inherit;
+  font-size: 15px;
+  color: var(--primary);
+  background: var(--bg);
+  border: none;
+  border-bottom: 1px solid var(--border);
+  border-radius: 0;
+  padding: 4px 2px;
+  cursor: pointer;
+}
+
+.jr-lang-select:hover {
+  border-bottom-color: var(--primary-mid);
+}
+
 /* ============================================
    DECKS
    ============================================

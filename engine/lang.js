@@ -32,6 +32,12 @@ const Lang = (function () {
 
     const NAMES = { es: 'Spanish', hu: 'Hungarian', fr: 'French' };
 
+    // Courses with real content behind them — what the language picker
+    // (My Journey) offers. content/fr and content/hu exist as empty
+    // folders (scaffolded per multi-language-plan) but have no lessons,
+    // stories or lexicon yet, so they stay out of this list until they do.
+    const AVAILABLE = ['es'];
+
     let current = DEFAULT;
     try {
         current = localStorage.getItem(SETTING_KEY) || DEFAULT;
@@ -49,6 +55,16 @@ const Lang = (function () {
 
     function name() {
         return NAMES[current] || current;
+    }
+
+    // The display name for any course code, not just the current one —
+    // for rendering a picker over all of them.
+    function nameFor(otherCode) {
+        return NAMES[otherCode] || otherCode;
+    }
+
+    function available() {
+        return AVAILABLE.slice();
     }
 
     function voices() {
@@ -101,5 +117,5 @@ const Lang = (function () {
 
     migrateLegacyKeys();
 
-    return { code, defaultCode, name, voices, content, key, set };
+    return { code, defaultCode, name, nameFor, available, voices, content, key, set };
 })();
