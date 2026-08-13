@@ -2,41 +2,56 @@
    BASE — Reset, root vars, body, typography
 ============================================ */
 
-/* Editorial palette: cream ground, dark navy, warm black, one accent.
-   The accent is rationed — it marks the single live thing on a screen and
-   nothing else. No gradients anywhere. */
+/* Parlour palette: warm cream ground, deep navy structure, one scarce deep
+   orange accent. Per the visual-overhaul spec (parlour_visual_overhaul_spec.md)
+   the interface itself is the composition — geometry and typography carry
+   the identity, not colour variety. No gradients anywhere. */
 :root {
   --bg: #F5F1E8;
   --surface: #FFFFFF;
 
-  --primary: #17365B;
-  --primary-dark: #0F2540;
-  --primary-mid: #3D5A80;
+  /* Deep navy is the one structural colour: text, headings, lines, icons,
+     active/inactive geometric forms. It reads almost as black at normal
+     size but keeps a clear navy cast. */
+  --primary: #102A47;
+  --primary-dark: #0A1D33;
+  --primary-mid: #3C5570;
   /* Doubles as text on cream and as a fill under white text, so it has to
-     clear 4.5:1 in both directions. */
+     clear 4.5:1 in both directions. Already navy-grey, so the shift to a
+     deeper structural navy above didn't require moving this. */
   --secondary: #5F6B7E;
 
-  --text: #1F1B16;
-  --muted: #6B6354;
+  /* Body copy is set in the same navy as headings, not a separate near-black
+     — the spec treats navy as *the* text colour, not one colour among
+     several. */
+  --text: var(--primary);
+  --muted: #5A6B80;
 
-  /* Two reds on purpose. --accent is the vivid one and is only ever used as
-     a shape fill, where 3:1 is the bar. Anything carrying text — a button
-     label, feedback copy — uses --accent-dark. */
-  --accent: #DC4E2E;
+  /* Deep, saturated orange — the principal and only accent, meant to stay
+     scarce. --accent is the vivid shape-fill version (3:1 bar, never carries
+     text). --accent-dark is the same hue pulled down until it clears 4.5:1
+     so it's safe under body-size text. */
+  --accent: #E94B16;
   --accent-dark: #A8371C;
 
-  --success: #2F6B45;
+  /* Reserved for destructive actions (delete/remove) — never for
+     correctness, which is carried by navy/orange and shape. See spec
+     section 18. */
   --danger: #B23A22;
-
-  --border: #E4DDCF;
-  --border-light: #EFE9DD;
-  --success-bg: #EDF2ED;
   --danger-bg: #FAEDE9;
 
-  --radius: 12px;
-  --radius-sm: 8px;
+  /* Hairline structure, not warm dividers — thin navy at low opacity so it
+     reads as an architectural line rather than a card boundary. */
+  --border: rgba(16, 42, 71, 0.18);
+  --border-light: rgba(16, 42, 71, 0.10);
+
+  /* Reduced from the previous rounded-card defaults — sharp geometry by
+     default, small radius only where it earns its place, pill reserved for
+     the rare control that genuinely needs one. */
+  --radius: 4px;
+  --radius-sm: 2px;
   --radius-pill: 999px;
-  --shadow: 0 1px 3px rgba(31, 27, 22, .06);
+  --shadow: 0 1px 3px rgba(16, 42, 71, .06);
 
   /* Titles and content headings are set in a serif; interface chrome stays
      sans. Both stacks name the brand faces first, then fall back through
@@ -54,6 +69,34 @@
   /* Inter, then the platform UI faces it was drawn to sit alongside. */
   --font-ui: Inter, 'Segoe UI Variable Text', -apple-system, BlinkMacSystemFont,
              'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+
+  /* Spacing scale — 4px base, multiples of 4/8. Existing components keep
+     their hand-tuned px values; this scale is for new geometric/composition
+     work so it doesn't invent its own numbers. */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+
+  /* Animation system — short, physical, no bounce. Reused by geometric
+     state transitions (styles/geometry.css) and page-level motion alike. */
+  --dur-fast: 180ms;
+  --dur-base: 280ms;
+  --dur-slow: 450ms;
+  --ease-standard: cubic-bezier(.4, 0, .2, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-fast: 1ms;
+    --dur-base: 1ms;
+    --dur-slow: 1ms;
+  }
 }
 
 *,
@@ -82,6 +125,15 @@ button {
 
 input {
   font: inherit;
+}
+
+/* One focus treatment for the whole app. Orange is otherwise rationed for
+   active/live states, and focus is exactly that — the one control the
+   keyboard is about to act on. Components with a more specific focus
+   treatment (e.g. an already-orange active state) can override this. */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }
 
 /* Animations used by reader popup, XP float, etc. */

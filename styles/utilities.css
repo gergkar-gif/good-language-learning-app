@@ -11,10 +11,8 @@
 .flex { display: flex; }
 .grid { display: grid; }
 
-.correct {
-  border: 2px solid var(--success) !important;
-}
-
-.wrong {
-  border: 2px solid var(--danger) !important;
-}
+/* Correctness styling for .correct/.wrong lives with each component now
+   (.lsn-option, .gd-option, .lsn-input, .drill-row input) — see spec
+   section 18: colour and a filled box must not be the primary language. A
+   blanket !important rule used to live here and silently win over all of
+   them. */

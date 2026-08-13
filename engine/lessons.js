@@ -288,11 +288,14 @@ function feedbackHtml() {
     return '<p id="step-feedback" class="lsn-feedback"></p>';
 }
 
+// Navy for correct, not green — matches the resolved-navy state on the
+// options themselves rather than adding a third correctness colour. See
+// parlour_visual_overhaul_spec.md section 18.
 function setFeedback(ok, message) {
     const el = document.getElementById('step-feedback');
     if (!el) return;
     el.textContent = message;
-    el.style.color = ok ? 'var(--success)' : 'var(--accent-dark)';
+    el.style.color = ok ? 'var(--primary)' : 'var(--accent-dark)';
 }
 
 // ============================================
@@ -531,7 +534,7 @@ const stepRenderers = {
         return `
             <p class="lsn-question">Listen and choose what it means.</p>
             <div class="lsn-listen">
-                <button class="lsn-play" onclick="lessonPlayAudio()" aria-label="Play audio">🔊 Play</button>
+                <button class="lsn-play" onclick="lessonPlayAudio()" aria-label="Play audio">${Art.icon('listening')} Play</button>
                 ${(typeof Speech === 'undefined' || !Speech.available())
                     ? '<p class="lsn-hint">No Spanish voice found on this device — you can still answer after 3 tries.</p>' : ''}
             </div>
@@ -553,7 +556,7 @@ const stepRenderers = {
         return `
             <p class="lsn-question">Listen and type what you hear.</p>
             <div class="lsn-listen">
-                <button class="lsn-play" onclick="lessonPlayAudio()" aria-label="Play audio">🔊 Play</button>
+                <button class="lsn-play" onclick="lessonPlayAudio()" aria-label="Play audio">${Art.icon('listening')} Play</button>
                 ${(typeof Speech === 'undefined' || !Speech.available())
                     ? '<p class="lsn-hint">No Spanish voice found on this device — you can still answer after 3 tries.</p>' : ''}
             </div>
@@ -1103,22 +1106,23 @@ function lessonAddSrsCards() {
     setFeedback(true, 'Review them in the Review tab.');
 }
 
-// Legacy quiz handler — kept for old HTML lessons
+// Legacy quiz handler — kept for old HTML lessons. Navy for correct, not
+// green — matches the rest of the app's correctness language (spec §18).
 function checkLessonAnswer(btn, isCorrect) {
     const allBtns = btn.parentElement.querySelectorAll('button');
     allBtns.forEach(b => {
         b.style.borderColor = 'var(--border)';
-        b.style.background = 'white';
+        b.style.background = 'none';
     });
 
     if (isCorrect) {
-        btn.style.borderColor = 'var(--success)';
-        btn.style.background = 'var(--success-bg)';
+        btn.style.borderColor = 'var(--primary)';
+        btn.style.background = 'none';
         document.getElementById('quiz-feedback').textContent = '✓ Correct!';
-        document.getElementById('quiz-feedback').style.color = 'var(--success)';
+        document.getElementById('quiz-feedback').style.color = 'var(--primary)';
     } else {
-        btn.style.borderColor = 'var(--accent-dark)';
-        btn.style.background = 'var(--danger-bg)';
+        btn.style.borderColor = 'var(--danger)';
+        btn.style.background = 'none';
         document.getElementById('quiz-feedback').textContent = '✗ Not quite. Try again!';
         document.getElementById('quiz-feedback').style.color = 'var(--accent-dark)';
     }

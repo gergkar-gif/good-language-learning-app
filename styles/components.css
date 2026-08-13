@@ -47,7 +47,7 @@
   background: var(--border);
   color: var(--primary);
   padding: 4px 12px;
-  border-radius: 12px;
+  border-radius: var(--radius-sm);
   font-size: 12px;
   margin-top: 10px;
   font-weight: bold;
@@ -81,17 +81,17 @@
   background: var(--accent-dark);
 }
 
+/* A typographic action, not a filled box — matches .wk-back/.level-back. */
 .btn-back {
   margin-left: auto;
-  background: var(--border);
-  color: var(--primary);
-  padding: 6px 14px;
-  border-radius: 6px;
+  background: none;
+  color: var(--primary-mid);
+  padding: 6px 4px;
   font-size: 14px;
 }
 
 .btn-back:hover {
-  background: var(--border-light);
+  color: var(--primary);
 }
 
 /* ============================================
@@ -207,21 +207,19 @@
 
 .story-card {
   background: var(--surface);
-  border: 2px solid var(--border);
-  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
   padding: 0;
   text-align: left;
   cursor: pointer;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  transition: border-color .2s, transform .2s, box-shadow .2s;
+  transition: border-color var(--dur-fast) var(--ease-standard);
 }
 
 .story-card:hover {
   border-color: var(--primary);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow);
 }
 
 .story-card-cover {
@@ -245,7 +243,7 @@
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: var(--success);
+  background: var(--primary);
   color: #fff;
   font-size: 12px;
   line-height: 20px;
@@ -328,7 +326,7 @@
   background: var(--primary);
   color: #fff;
   padding: 2px 10px;
-  border-radius: 12px;
+  border-radius: var(--radius-sm);
   font-size: .8em;
 }
 
@@ -422,16 +420,16 @@
   margin-bottom: 20px;
 }
 
-.lt-list { display: flex; flex-direction: column; gap: 10px; }
+.lt-list { display: flex; flex-direction: column; }
 
 .lt-card {
   display: flex;
   align-items: center;
   gap: 10px;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 4px 10px 4px 16px;
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  padding: 4px 4px 4px 10px;
 }
 
 .lt-card-main {
@@ -448,7 +446,7 @@
 
 .lt-card-title { font-family: var(--font-display); font-size: 16px; color: var(--primary); }
 .lt-card-meta { font-size: 12px; color: var(--muted); }
-.lt-card-coverage { font-size: 12px; color: var(--success); font-weight: 600; }
+.lt-card-coverage { font-size: 12px; color: var(--primary); font-weight: 600; }
 
 .lt-card-actions { display: flex; gap: 6px; flex: 0 0 auto; }
 
@@ -474,7 +472,7 @@
 .lt-analysis {
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 12px;
+  border-radius: var(--radius-sm);
   padding: 16px;
   margin: 6px 0 16px;
 }
@@ -568,39 +566,44 @@
 .drill-row input {
   width: 120px;
   padding: 8px;
-  border: 2px solid var(--border);
-  border-radius: 6px;
+  border: none;
+  border-bottom: 2px solid var(--border);
+  border-radius: 0;
+  background: none;
   text-align: center;
   font-size: 16px;
   color: var(--text);
 }
 
 .drill-row input.correct {
-  border-color: var(--success);
-  background: var(--success-bg);
+  border-bottom-color: var(--primary);
+  color: var(--primary);
 }
 
 .drill-row input.wrong {
-  border-color: var(--danger);
-  background: var(--danger-bg);
+  border-bottom-style: dashed;
+  border-bottom-color: var(--danger);
+  color: var(--danger);
 }
 
 /* ============================================
    LESSON RENDERER COMPONENTS
 ============================================ */
 
+/* A thin line with an orange segment marking how far in the learner is —
+   not a thick filled bar. See parlour_visual_overhaul_spec.md section 19. */
 .lsn-progress {
-  height: 6px;
+  height: 1px;
   background: var(--border);
-  border-radius: 3px;
-  overflow: hidden;
-  margin-bottom: 6px;
+  border-radius: 0;
+  overflow: visible;
+  margin-bottom: 10px;
 }
 
 .lsn-progress-bar {
   height: 100%;
-  background: var(--primary);
-  transition: width .25s ease;
+  background: var(--accent-dark);
+  transition: width var(--dur-base) var(--ease-standard);
 }
 
 .lsn-progress-label {
@@ -655,9 +658,9 @@
 
 /* Shown when a learner runs out of attempts */
 .lsn-reveal {
-  border: 2px solid var(--border);
+  border: 1px solid var(--border);
   border-left: 4px solid var(--secondary);
-  border-radius: 10px;
+  border-radius: var(--radius-sm);
   padding: 12px 14px;
   margin-top: 12px;
   line-height: 1.8;
@@ -690,7 +693,7 @@
 
 .lsn-goal li {
   background: var(--bg);
-  border-radius: 10px;
+  border-radius: var(--radius-sm);
   padding: 12px 14px;
   margin-bottom: 8px;
   color: var(--text);
@@ -703,7 +706,7 @@
 
 .lsn-tip {
   background: var(--border);
-  border-radius: 10px;
+  border-radius: var(--radius-sm);
   padding: 14px;
   margin-bottom: 12px;
 }
@@ -736,7 +739,7 @@
 .lsn-example {
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 10px;
+  border-radius: var(--radius-sm);
   padding: 12px;
   margin-bottom: 10px;
 }
@@ -808,7 +811,7 @@
 
 .lsn-vocab {
   border: 1px solid var(--border);
-  border-radius: 10px;
+  border-radius: var(--radius-sm);
   overflow: hidden;
 }
 
@@ -878,39 +881,80 @@
   flex-wrap: wrap;
 }
 
+/* A typographic object with a line under it, not a bordered card — see
+   section 18. Selection and correctness are carried by colour, the line
+   and small motion, never by a filled box. */
 .lsn-option {
-  padding: 14px;
-  border: 2px solid var(--border);
-  border-radius: 10px;
-  background: var(--surface);
+  position: relative;
+  padding: 14px 4px;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  border-radius: 0;
+  background: none;
   cursor: pointer;
   text-align: left;
-  font-size: 16px;
+  font-size: 17px;
   color: var(--text);
+  transition: color var(--dur-fast) var(--ease-standard),
+              border-color var(--dur-fast) var(--ease-standard),
+              transform var(--dur-fast) var(--ease-standard),
+              opacity var(--dur-fast) var(--ease-standard);
+}
+
+.lsn-option:hover {
+  border-bottom-color: var(--primary-mid);
 }
 
 .lsn-option.selected {
-  border-color: var(--primary);
+  border-bottom-color: var(--accent-dark);
+  color: var(--accent-dark);
 }
 
+/* Correct: the composition settles — a solid navy line and a small mark
+   at the end, not a green box. */
 .lsn-option.correct {
-  border-color: var(--success);
-  background: var(--success-bg);
+  border-bottom-width: 2px;
+  border-bottom-color: var(--primary);
+  color: var(--primary);
+  font-weight: 600;
 }
 
+.lsn-option.correct::after {
+  content: "";
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--primary);
+  transform: translateY(-50%);
+}
+
+/* Incorrect: the line breaks and the option drifts off rather than
+   turning into a red box. */
 .lsn-option.wrong {
-  border-color: var(--danger);
-  background: var(--danger-bg);
+  border-bottom-style: dashed;
+  border-bottom-color: var(--danger);
+  color: var(--danger);
+  opacity: .7;
+  transform: translateX(-6px);
 }
 
 .lsn-option.used {
   opacity: .5;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .lsn-option.wrong {
+    transform: none;
+  }
+}
+
 .lsn-tile {
   padding: 10px 14px;
-  border: 2px solid var(--border);
-  border-radius: 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
   background: var(--surface);
   cursor: pointer;
   font-size: 16px;
@@ -929,8 +973,8 @@
   align-items: center;
   gap: 8px;
   min-height: 48px;
-  border: 2px dashed var(--border);
-  border-radius: 10px;
+  border: 1px dashed var(--border);
+  border-radius: var(--radius-sm);
   padding: 12px;
   margin-bottom: 12px;
   font-size: 18px;
@@ -949,7 +993,7 @@
 }
 
 .lsn-built.is-correct {
-  color: var(--success);
+  color: var(--primary);
 }
 
 /* The translation, shown only after the sentence is settled. */
@@ -974,18 +1018,21 @@
 .lsn-input {
   width: 100%;
   padding: 12px;
-  border: 2px solid var(--border);
-  border-radius: 10px;
+  border: none;
+  border-bottom: 2px solid var(--border);
+  border-radius: 0;
+  background: none;
   font-size: 16px;
   color: var(--text);
 }
 
 .lsn-input.correct {
-  border-color: var(--success);
+  border-bottom-color: var(--primary);
 }
 
 .lsn-input.wrong {
-  border-color: var(--danger);
+  border-bottom-style: dashed;
+  border-bottom-color: var(--danger);
 }
 
 .lsn-write-row {
@@ -1001,7 +1048,7 @@
   margin-right: 8px;
   padding: 10px 16px;
   border: none;
-  border-radius: 10px;
+  border-radius: var(--radius-sm);
   background: var(--primary);
   color: #fff;
   font-size: 15px;
@@ -1020,14 +1067,22 @@
 }
 
 .lsn-play {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   padding: 14px 20px;
   border: none;
-  border-radius: 10px;
+  border-radius: var(--radius-sm);
   background: var(--primary);
   color: #fff;
   font-size: 16px;
   cursor: pointer;
 }
+
+/* White on navy here, so the icon takes the button's own colour rather
+   than its default navy stroke. */
+.lsn-play .icon .ink-line,
+.lsn-play .icon .ink-rule { stroke: currentColor; }
 
 .lsn-check:disabled {
   opacity: .6;
@@ -1051,7 +1106,7 @@
   align-items: flex-start;
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 10px;
+  border-radius: var(--radius-sm);
   padding: 12px;
   color: var(--text);
   cursor: pointer;
@@ -1090,7 +1145,7 @@
 .review-clear-btn {
   margin-left: auto;
   padding: 5px 14px;
-  border-radius: 20px;
+  border-radius: var(--radius-sm);
   background: transparent;
   color: var(--muted);
   font-size: 12px;
@@ -1123,43 +1178,9 @@
   font-weight: 700;
 }
 
-.dk-toggle {
-  position: relative;
-  width: 44px;
-  height: 26px;
-  border-radius: 13px;
-  background: var(--secondary);
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  flex-shrink: 0;
-  transition: background .2s;
-}
-
-.dk-toggle.active {
-  background: var(--primary);
-}
-
-.dk-toggle-knob {
-  position: absolute;
-  top: 2px;
-  left: 2px;
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  background: #fff;
-  box-shadow: 0 1px 3px rgba(0,0,0,.2);
-  transition: left .2s;
-}
-
-.dk-toggle.active .dk-toggle-knob {
-  left: 20px;
-}
-
-.dk-toggle:focus-visible {
-  outline: 2px solid var(--primary);
-  outline-offset: 2px;
-}
+/* The switch itself is .geo-toggle (styles/geometry.css) — navy circle for
+   Spanish-first, orange triangle for English-first, per the shape-state
+   system rather than a sliding pill. */
 
 /* Empty state */
 
@@ -1169,7 +1190,8 @@
 }
 
 .review-empty-icon {
-  font-size: 48px;
+  display: flex;
+  justify-content: center;
   margin-bottom: 12px;
 }
 
@@ -1274,7 +1296,7 @@
   align-items: center;
   gap: 2px;
   padding: 12px 4px 10px;
-  border-radius: 10px;
+  border-radius: var(--radius-sm);
   border: none;
   color: #fff;
   text-align: center;
@@ -1510,17 +1532,26 @@
    question, and the numbers are large enough to read at a glance because
    that is the whole point of the screen. */
 
+/* One continuous composition, not a grid of cards — eight readings
+   separated by a rule rather than boxed individually. See spec section 9:
+   "avoid a page composed of card + card + card + card." */
 .jr-grid {
-  display: grid;
-  gap: 14px;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  display: flex;
+  flex-direction: column;
 }
 
 .jr-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 18px 20px 20px;
+  background: none;
+  border: none;
+  border-top: 1px solid var(--border);
+  padding-top: var(--space-6);
+  margin-top: var(--space-6);
+}
+
+.jr-card:first-child {
+  border-top: none;
+  padding-top: 0;
+  margin-top: 0;
 }
 
 .jr-card-head { margin-bottom: 14px; }
@@ -1585,18 +1616,18 @@
   text-align: right;
 }
 
+/* A thin line, not a thick pill — matches .lsn-progress. See spec section 19. */
 .jr-track {
   display: block;
-  height: 6px;
-  border-radius: 99px;
+  height: 1px;
+  border-radius: 0;
   background: var(--border);
-  overflow: hidden;
+  overflow: visible;
 }
 
 .jr-fill {
   display: block;
   height: 100%;
-  border-radius: 99px;
   background: var(--primary);
 }
 
@@ -1689,7 +1720,7 @@
   justify-content: space-between;
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 12px;
+  border-radius: var(--radius-sm);
   padding: 18px 20px;
   margin-bottom: 24px;
 }
@@ -1776,16 +1807,14 @@
   text-align: left;
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 12px;
+  border-radius: var(--radius-sm);
   padding: 18px 20px 16px;
   cursor: pointer;
-  transition: border-color .2s, transform .2s, box-shadow .2s;
+  transition: border-color var(--dur-fast) var(--ease-standard);
 }
 
 .dk-card:hover {
   border-color: var(--primary);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow);
 }
 
 .dk-card-top {
@@ -1838,10 +1867,10 @@
 
 .dk-meter {
   display: block;
-  height: 5px;
-  border-radius: 99px;
+  height: 1px;
+  border-radius: 0;
   background: var(--border);
-  overflow: hidden;
+  overflow: visible;
 }
 
 .dk-fill { display: block; height: 100%; background: var(--primary); }
@@ -1916,7 +1945,7 @@
 
 /* A word not yet taken on is legible but plainly not part of your deck. */
 .dk-word-not-added .dk-word-es { color: var(--muted); }
-.dk-word-mastered .dk-word-state { color: var(--success); }
+.dk-word-mastered .dk-word-state { color: var(--primary); }
 
 .dk-empty { color: var(--muted); font-size: 14px; }
 
@@ -2026,7 +2055,7 @@
 
 .dk-picker-result-es { color: var(--primary); font-size: 14px; flex: 0 0 auto; }
 .dk-picker-result-en { color: var(--muted); font-size: 13px; flex: 1 1 auto; text-align: right; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.dk-picker-result-added { color: var(--success); flex: 0 0 auto; }
+.dk-picker-result-added { color: var(--primary); flex: 0 0 auto; }
 
 .dk-picker-manual {
   display: block;
@@ -2068,10 +2097,10 @@
 .dk-picker-list li:last-child .dk-picker-deck { border-bottom: 0; }
 
 .dk-picker-deck:hover:not(:disabled) { color: var(--primary); }
-.dk-picker-deck:disabled { cursor: default; color: var(--success); }
+.dk-picker-deck:disabled { cursor: default; color: var(--primary); }
 
 .dk-picker-deck-count { font-size: 12px; color: var(--muted); }
-.dk-picker-deck:disabled .dk-picker-deck-count { color: var(--success); }
+.dk-picker-deck:disabled .dk-picker-deck-count { color: var(--primary); }
 
 .dk-picker-create {
   display: flex;
@@ -2099,7 +2128,7 @@
   padding: 16px 18px;
   background: var(--surface);
   border: 1px dashed var(--border);
-  border-radius: 10px;
+  border-radius: var(--radius-sm);
   cursor: pointer;
   transition: border-color .2s;
 }
@@ -2110,7 +2139,7 @@
    "lessons finished", so it gets the solid border rather than the dashed. */
 .level-test-row.is-passed {
   border-style: solid;
-  border-color: var(--success);
+  border-color: var(--primary);
 }
 
 .level-test-title {
@@ -2167,7 +2196,7 @@
 .lt-select:focus { outline: 2px solid var(--primary); outline-offset: 1px; }
 
 .lt-mark { margin-left: 10px; font-size: 14px; }
-.lt-right { color: var(--success); }
+.lt-right { color: var(--primary); }
 .lt-wrong { color: var(--accent-dark); }
 
 .lt-question.is-wrong { background: rgba(220, 78, 46, .04); }
@@ -2177,7 +2206,7 @@
 .lt-result {
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 12px;
+  border-radius: var(--radius-sm);
   padding: 20px 22px;
   margin-bottom: 24px;
 }
@@ -2193,7 +2222,7 @@
 .lt-of { font-size: 18px; color: var(--muted); }
 
 .lt-verdict { margin-top: 10px; font-size: 16px; }
-.lt-verdict.is-pass { color: var(--success); }
+.lt-verdict.is-pass { color: var(--primary); }
 .lt-verdict.is-fail { color: var(--accent-dark); }
 
 .lt-topics { margin: 8px 0 14px; font-size: 14px; color: var(--muted); }
@@ -2215,17 +2244,15 @@
   text-align: left;
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 14px;
-  box-shadow: var(--shadow);
+  border-radius: var(--radius-sm);
   padding: 20px 22px 18px;
   margin-bottom: 16px;
   cursor: pointer;
-  transition: transform .15s, box-shadow .15s;
+  transition: border-color var(--dur-fast) var(--ease-standard);
 }
 
 .hm-continue:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, .10);
+  border-color: var(--primary-mid);
 }
 
 /* A finished course is a statement rather than a door — nothing to press. */
@@ -2234,8 +2261,7 @@
 }
 
 .hm-continue.is-done:hover {
-  transform: none;
-  box-shadow: var(--shadow);
+  border-color: var(--border);
 }
 
 .hm-eyebrow {
@@ -2288,27 +2314,27 @@
 
 /* ---- Meter, shared by the continue card and the course line ---- */
 
+/* A thin line, not a thick pill — matches .lsn-progress. */
 .hm-track {
   display: block;
-  height: 5px;
-  border-radius: var(--radius-pill);
+  height: 1px;
+  border-radius: 0;
   background: var(--border);
-  overflow: hidden;
+  overflow: visible;
 }
 
 .hm-fill {
   display: block;
   height: 100%;
-  border-radius: var(--radius-pill);
   background: var(--primary);
 }
 
 /* ---- Doors ---- */
+/* Open rows, not a stack of cards — same grammar as Lessons/Workshop. */
 
 .hm-doors {
   display: flex;
   flex-direction: column;
-  gap: 8px;
   margin-bottom: 20px;
 }
 
@@ -2317,17 +2343,17 @@
   align-items: center;
   gap: 14px;
   width: 100%;
-  padding: 13px 16px;
+  padding: 15px 4px;
   text-align: left;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 12px;
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--border);
   cursor: pointer;
-  transition: border-color .15s;
+  transition: color var(--dur-fast) var(--ease-standard);
 }
 
-.hm-door:hover {
-  border-color: var(--primary-mid);
+.hm-door:hover .hm-door-title {
+  color: var(--primary);
 }
 
 .hm-door .icon {

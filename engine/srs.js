@@ -265,7 +265,6 @@ function updateDirectionToggle() {
     const englishFirst = reviewDirection === 'en-es';
 
     if (btn) {
-        btn.classList.toggle('active', englishFirst);
         btn.setAttribute('aria-checked', String(englishFirst));
     }
     if (esLabel) esLabel.classList.toggle('dk-direction-active', !englishFirst);

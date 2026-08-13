@@ -17,29 +17,36 @@
 }
 
 /* ---- Mode switcher ---- */
+/* Same underline-tab language as Library's Parlour/Saved/My Texts subnav
+   (.lt-subnav in components.css) — a filled pill was here before. */
 .vb-mode-switcher {
     display: flex;
-    background: var(--surface, #FFFFFF);
-    border-radius: var(--radius, 12px);
-    box-shadow: var(--shadow, 0 2px 8px rgba(0,0,0,.08));
-    padding: 4px;
+    gap: 20px;
+    border-bottom: 2px solid var(--border);
     margin-bottom: 16px;
 }
 
 .vb-mode-btn {
-    flex: 1;
-    padding: 12px 0;
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+    padding: 10px 2px;
     font-size: 0.95rem;
     font-weight: 600;
-    border-radius: 8px;
-    background: transparent;
-    color: var(--muted, #7A7A7A);
-    transition: background 0.15s, color 0.15s;
+    color: var(--muted);
+    transition: color var(--dur-fast) var(--ease-standard),
+                border-color var(--dur-fast) var(--ease-standard);
+}
+
+.vb-mode-btn:hover {
+    color: var(--primary-dark);
 }
 
 .vb-mode-btn.active {
-    background: var(--primary, #1B4B5A);
-    color: #fff;
+    background: none;
+    color: var(--primary);
+    border-bottom-color: var(--primary);
 }
 
 /* ---- Shared settings ---- */
@@ -67,8 +74,8 @@
 .vb-select {
     padding: 12px 14px;
     font-size: 1rem;
-    border: 2px solid var(--secondary, #8FB4BA);
-    border-radius: 8px;
+    border: 1px solid var(--secondary, #8FB4BA);
+    border-radius: var(--radius-sm);
     background: var(--surface, #FFFFFF);
     color: var(--text, #2E2A26);
     appearance: none;
@@ -92,43 +99,8 @@
     justify-content: space-between;
 }
 
-.vb-toggle {
-    position: relative;
-    width: 48px;
-    height: 28px;
-    border-radius: 14px;
-    background: var(--secondary, #8FB4BA);
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    flex-shrink: 0;
-    transition: background 0.2s;
-}
-
-.vb-toggle.active {
-    background: var(--primary, #1B4B5A);
-}
-
-.vb-toggle-knob {
-    position: absolute;
-    top: 2px;
-    left: 2px;
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    background: #fff;
-    box-shadow: 0 1px 3px rgba(0,0,0,.2);
-    transition: left 0.2s;
-}
-
-.vb-toggle.active .vb-toggle-knob {
-    left: 22px;
-}
-
-.vb-toggle:focus-visible {
-    outline: 2px solid var(--primary, #1B4B5A);
-    outline-offset: 2px;
-}
+/* The switch itself is .geo-toggle (styles/geometry.css) — navy circle for
+   off, orange triangle for on, per the shape-state system. */
 
 /* ---- Buttons ---- */
 .vbtn {
@@ -138,7 +110,7 @@
     padding: 14px 24px;
     font-size: 1rem;
     font-weight: 600;
-    border-radius: 10px;
+    border-radius: var(--radius-sm);
     border: none;
     cursor: pointer;
     min-height: 48px;
@@ -236,37 +208,37 @@
 
 .vtable-input {
     flex: 1;
-    padding: 12px 14px;
+    padding: 12px 4px;
     font-size: 1rem;
-    border: 2px solid #DCE6E8;
-    border-radius: 8px;
-    background: var(--surface, #FFFFFF);
+    border: none;
+    border-bottom: 2px solid var(--border);
+    border-radius: 0;
+    background: none;
     color: var(--text, #2E2A26);
     min-height: 48px;
 }
 
 .vtable-input:focus {
-    outline: 2px solid var(--primary, #1B4B5A);
-    outline-offset: -1px;
-    border-color: var(--primary, #1B4B5A);
+    outline: none;
+    border-bottom-color: var(--primary, #1B4B5A);
 }
 
 .vtable-input[readonly] {
-    background: #f5f5f5;
+    background: none;
     cursor: default;
 }
 
-/* Correct / Wrong states */
+/* Correct / Wrong states — navy line for correct, dashed orange for wrong,
+   not a filled green/red box. See spec section 18. */
 .vtable-correct {
-    border-color: var(--success, #4CAF50) !important;
-    background: #e8f5ed !important;
-    color: #2e7d32 !important;
+    border-bottom-color: var(--primary);
+    color: var(--primary);
 }
 
 .vtable-wrong {
-    border-color: var(--danger, #B8412F) !important;
-    background: #fbecea !important;
-    color: var(--danger, #B8412F) !important;
+    border-bottom-style: dashed;
+    border-bottom-color: var(--danger);
+    color: var(--danger);
 }
 
 .vtable-actions {
@@ -288,11 +260,11 @@
 }
 
 .vtable-feedback-success {
-    color: var(--success, #4CAF50);
+    color: var(--primary);
 }
 
 .vtable-feedback-error {
-    color: var(--danger, #B8412F);
+    color: var(--accent-dark);
 }
 
 .vtable-empty {
@@ -418,9 +390,8 @@
 }
 
 .vspeed-stat {
-    background: var(--surface, #FFFFFF);
-    border-radius: var(--radius, 12px);
-    box-shadow: var(--shadow, 0 2px 8px rgba(0,0,0,.08));
+    background: none;
+    border-bottom: 1px solid var(--border);
     padding: 16px 12px;
     display: flex;
     flex-direction: column;

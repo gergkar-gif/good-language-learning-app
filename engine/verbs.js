@@ -125,11 +125,13 @@ const Verbs = (function () {
             +     '</div>'
             +     '<div class="vb-setting vb-setting-row">'
             +       '<label id="vb-vosotros-label">Include vosotros</label>'
-            +       '<button class="vb-toggle' + (_state.includeVosotros ? ' active' : '') + '"'
+            +       '<button class="geo-toggle"'
             +         ' data-action="toggle-vosotros" role="switch"'
             +         ' aria-checked="' + _state.includeVosotros + '"'
             +         ' aria-labelledby="vb-vosotros-label">'
-            +         '<span class="vb-toggle-knob"></span>'
+            +         '<span class="geo-toggle-track"></span>'
+            +         '<span class="geo-toggle-shape geo-toggle-shape--off"></span>'
+            +         '<span class="geo-toggle-shape geo-toggle-shape--on"></span>'
             +       '</button>'
             +     '</div>'
             +   '</div>'
@@ -164,7 +166,6 @@ const Verbs = (function () {
         if (vosotrosBtn) {
             vosotrosBtn.addEventListener('click', function () {
                 _state.includeVosotros = !_state.includeVosotros;
-                this.classList.toggle('active', _state.includeVosotros);
                 this.setAttribute('aria-checked', String(_state.includeVosotros));
                 VerbsSpeed.reset();
                 _renderModeContent();

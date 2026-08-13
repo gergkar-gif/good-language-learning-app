@@ -142,7 +142,8 @@ const Speech = (function () {
         if (!said) return '';
         const escaped = said.replace(/&/g, '&amp;').replace(/"/g, '&quot;')
             .replace(/</g, '&lt;').replace(/>/g, '&gt;');
-        return `<button class="speak-btn" data-speak="${escaped}" type="button" aria-label="${label || 'Listen'}">🔊</button>`;
+        const mark = (typeof Art !== 'undefined') ? Art.icon('listening') : '';
+        return `<button class="speak-btn" data-speak="${escaped}" type="button" aria-label="${label || 'Listen'}">${mark}</button>`;
     }
 
     // One delegated listener rather than a handler per button: lesson steps

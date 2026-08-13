@@ -101,6 +101,7 @@ function levelListHtml() {
         return `
             <button class="level-card" data-open-level="${level}" data-level="${level}">
                 <span class="level-card-spine"></span>
+                <span class="level-card-num" aria-hidden="true">${String(LEVEL_ORDER.indexOf(level) + 1).padStart(2, '0')}</span>
                 ${levelIcon(level)}
                 <span class="level-card-body">
                     <span class="level-card-title">${UI.escape(data.title || level)}</span>
@@ -112,7 +113,7 @@ function levelListHtml() {
                         <span class="level-card-count">${stats.done} / ${stats.total} lessons</span>
                     </span>
                 </span>
-                <span class="level-card-chevron" aria-hidden="true">›</span>
+                <span class="level-card-arrow geo-triangle" aria-hidden="true"></span>
             </button>
         `;
     }).join('');
@@ -145,7 +146,7 @@ function unitListHtml(level) {
                             ${stats.total === 1 ? 'lesson' : 'lessons'}</span>
                     </span>
                 </span>
-                <span class="level-card-chevron" aria-hidden="true">›</span>
+                <span class="level-card-arrow geo-triangle" aria-hidden="true"></span>
             </button>
         `;
     }).join('');

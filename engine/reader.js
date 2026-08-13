@@ -38,16 +38,16 @@ function _ensureWordPopup() {
                     <div>
                         <h2 id="popup-word" class="wp-word"></h2>
                         <button id="popup-speak" class="speak-btn wp-speak" type="button"
-                                aria-label="Listen" hidden>🔊</button>
+                                aria-label="Listen" hidden>${Art.icon('listening')}</button>
                         <p id="popup-analysis" class="wp-analysis"></p>
                     </div>
                     <button class="wp-close" onclick="closePopup()" aria-label="Close">×</button>
                 </div>
                 <div id="popup-body"></div>
-                <p id="popup-new-word-cap" class="wp-cap">⚠️ Daily new word limit reached (20/20)</p>
+                <p id="popup-new-word-cap" class="wp-cap">Daily new word limit reached (20/20)</p>
                 <div class="wp-actions">
-                    <button id="popup-add-btn" class="wp-add" onclick="addToSRS()">➕ Add to SRS Deck</button>
-                    <button id="popup-add-to-deck-btn" class="wp-add-to-deck" onclick="openWordDeckPicker()">＋ Add to deck</button>
+                    <button id="popup-add-btn" class="wp-add" onclick="addToSRS()">+ Add to SRS Deck</button>
+                    <button id="popup-add-to-deck-btn" class="wp-add-to-deck" onclick="openWordDeckPicker()">+ Add to deck</button>
                 </div>
             </div>
         </div>
@@ -167,7 +167,7 @@ async function showWord(spanish, contextTokens, tokenIndex) {
         btn.classList.add('is-disabled');
         capWarning.style.display = 'block';
     } else {
-        btn.textContent = '➕ Add to SRS Deck';
+        btn.textContent = '+ Add to SRS Deck';
     }
 }
 
@@ -417,7 +417,7 @@ window.Reader = {
         const canSave = typeof Library !== 'undefined' && this.currentStoryId;
         const saveBtnHtml = canSave
             ? '<button class="btn-back" id="reader-save-btn">' +
-                (Library.isSaved(this.currentStoryId) ? '★ Saved' : '☆ Save') + '</button>'
+                (Library.isSaved(this.currentStoryId) ? '● Saved' : '○ Save') + '</button>'
             : '';
 
         let html = '<div class="story-header">' +
@@ -481,7 +481,7 @@ window.Reader = {
         if (saveBtn) {
             saveBtn.addEventListener('click', function() {
                 const nowSaved = Library.toggleSave(self.currentStoryId);
-                saveBtn.textContent = nowSaved ? '★ Saved' : '☆ Save';
+                saveBtn.textContent = nowSaved ? '● Saved' : '○ Save';
             });
         }
 

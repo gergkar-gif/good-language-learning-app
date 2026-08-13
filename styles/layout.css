@@ -199,7 +199,7 @@
   align-items: center;
   gap: 6px;
   padding: 5px 11px;
-  border-radius: var(--radius-pill);
+  border-radius: var(--radius-sm);
   border: 1px solid var(--border);
   background: var(--surface);
   font-size: 13px;
@@ -249,19 +249,44 @@
 }
 
 .nav button {
+  position: relative;
   flex: 1 1 0;
   min-width: 0;
   background: none;
   border: none;
+  border-radius: 0;
   font-size: 11px;
   color: var(--secondary);
   cursor: pointer;
-  padding: 6px 2px 5px;
-  border-radius: 12px;
+  padding: 6px 2px 9px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 4px;
+  transition: color var(--dur-base) var(--ease-standard);
+}
+
+.nav button:hover {
+  color: var(--text);
+}
+
+/* The selected mark: a thin line growing in under the tab. Shape and
+   colour carry the state, not a filled pill — see the visual-overhaul
+   spec, section 10. */
+.nav button::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 2px;
+  width: 60%;
+  height: 2px;
+  background: var(--accent-dark);
+  transform: translateX(-50%) scaleX(0);
+  transition: transform var(--dur-base) var(--ease-standard);
+}
+
+.nav button.active::after {
+  transform: translateX(-50%) scaleX(1);
 }
 
 /* Fixed rather than the 1.25em the icon defaults to: at an 11px label that
@@ -285,9 +310,11 @@
 .nav button .icon .ink-rule { stroke: currentColor; }
 .nav button .icon .ink-solid { fill: currentColor; }
 
+/* Orange marks exactly one tab at a time — icon and label both take
+   accent-dark, which is the text-safe orange (see base.css), so the label
+   stays readable rather than merely vivid. */
 .nav button.active {
-  background: var(--primary);
-  color: #fff;
+  color: var(--accent-dark);
 }
 
 @media (max-width: 420px) {
@@ -323,10 +350,12 @@
   --level: var(--primary);
 }
 
+/* An archive, not a stack of cards — rows separated by a hairline, the
+   level's identity carried by a thin spine and an ordinal rather than by a
+   filled box. See parlour_visual_overhaul_spec.md section 13. */
 .level-list {
   display: flex;
   flex-direction: column;
-  gap: 12px;
 }
 
 .level-card {
@@ -335,29 +364,33 @@
   align-items: center;
   gap: 14px;
   width: 100%;
-  padding: 16px 16px 16px 24px;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  box-shadow: var(--shadow);
+  padding: 20px 6px 20px 26px;
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--border);
   text-align: left;
   cursor: pointer;
-  transition: transform .15s, box-shadow .15s;
 }
 
-.level-card:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, .10);
+.level-card:hover .level-card-title {
+  color: var(--primary);
 }
 
 .level-card-spine {
   position: absolute;
   left: 0;
-  top: 10px;
-  bottom: 10px;
-  width: 6px;
-  border-radius: 0 6px 6px 0;
+  top: 14px;
+  bottom: 14px;
+  width: 2px;
   background: var(--level);
+}
+
+.level-card-num {
+  flex: none;
+  width: 20px;
+  font-size: 13px;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
 }
 
 .level-icon {
@@ -440,11 +473,21 @@
   white-space: nowrap;
 }
 
-.level-card-chevron {
-  font-size: 22px;
-  line-height: 1;
-  color: var(--muted);
+/* A geometric triangle in place of a chevron glyph — see .geo-triangle in
+   styles/geometry.css. Muted at rest; nudges forward and turns accent-dark
+   on hover/focus, so the directional cue itself is the interaction. */
+.level-card-arrow {
+  --geo-size: 12px;
   flex: none;
+  background: var(--muted);
+  transition: transform var(--dur-fast) var(--ease-standard),
+              background var(--dur-fast) var(--ease-standard);
+}
+
+.level-card:hover .level-card-arrow,
+.level-card:focus-visible .level-card-arrow {
+  background: var(--accent-dark);
+  transform: translateX(3px);
 }
 
 /* ---- Level detail ---- */
@@ -540,7 +583,7 @@
   width: 100%;
   padding: 13px 12px;
   background: none;
-  border-radius: 10px;
+  border-radius: var(--radius-sm);
   text-align: left;
   cursor: pointer;
   transition: background .15s;

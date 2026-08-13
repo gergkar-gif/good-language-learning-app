@@ -56,14 +56,14 @@ const Art = (function () {
             <rect class="ink-line" x="188" y="56" width="14" height="30"/>
         `,
 
-        // Workshop — building skill. Two forms brought into balance across a
-        // beam; the fulcrum, small and off-centre, is what does the work.
+        // Workshop — building skill. A beam tilted off the level; the navy
+        // circle is the balance point resting on it, the orange square the
+        // weight thrown to one side. Practice is the beam finding level.
         balance: `
             <line class="ink-hair" x1="40" y1="88" x2="280" y2="88"/>
-            <line class="ink-rule" x1="66" y1="54" x2="266" y2="72"/>
-            <path class="ink-solid" d="M196 66 210 88H182Z"/>
-            <rect class="ink-solid" x="80" y="24" width="34" height="34"/>
-            <circle class="accent-solid" cx="164" cy="52" r="14"/>
+            <line class="ink-rule" x1="66" y1="70" x2="266" y2="38"/>
+            <circle class="ink-solid" cx="166" cy="54" r="10"/>
+            <rect class="accent-solid" x="222" y="18" width="26" height="26"/>
         `,
 
         // Decks — memory through repetition. The same form recurring, each
@@ -86,8 +86,8 @@ const Art = (function () {
         //
         // Each node is a place the learner actually stood. The line runs in
         // from the left without one, because the beginning is not an
-        // achievement, and the flag is planted on the last node rather than
-        // in the ground: it marks where you are, not where the course ends.
+        // achievement. The orange square stands off the last node rather
+        // than on it: a destination ahead, not a badge for what's done.
         ascent: `
             <line class="ink-hair" x1="40" y1="86" x2="280" y2="86"/>
             <path class="ink-rule" d="M44 78C76 78 76 56 108 56C128 56 128 62 148 62C170 62 170 42 192 42C214 42 214 32 236 32"/>
@@ -95,22 +95,17 @@ const Art = (function () {
             <circle class="ink-solid" cx="148" cy="62" r="4"/>
             <circle class="ink-solid" cx="192" cy="42" r="4"/>
             <circle class="ink-solid" cx="236" cy="32" r="4"/>
-            <line class="ink-rule" x1="236" y1="32" x2="236" y2="8"/>
-            <path class="accent-solid" d="M236 8h30l-8 9 8 9h-30Z"/>
+            <line class="ink-rule" x1="236" y1="32" x2="236" y2="14"/>
+            <rect class="accent-solid" x="228" y="4" width="16" height="16"/>
         `,
 
-        // Reader — the door the whole app is named for. A threshold standing
-        // open, light falling forward across the floor. The accent sits where
-        // a handle would: the point at which you push it open.
+        // Home — the door the whole app is named for. A threshold standing
+        // open, an accent semicircle rising behind it — arrival, not
+        // departure. The accent dot sits where a handle would: the point at
+        // which you push it open.
         threshold: `
             <line class="ink-hair" x1="20" y1="86" x2="300" y2="86"/>
-            <g class="ink-hair">
-                <line x1="176" y1="82" x2="44" y2="86"/>
-                <line x1="176" y1="74" x2="52" y2="82"/>
-                <line x1="176" y1="64" x2="66" y2="76"/>
-                <line x1="176" y1="52" x2="86" y2="68"/>
-                <line x1="176" y1="40" x2="112" y2="58"/>
-            </g>
+            <path class="accent-solid" d="M110 86a40 40 0 0 1 80 0Z"/>
             <rect class="ink-line" x="176" y="18" width="72" height="68"/>
             <path class="ink-solid" d="M176 18 140 30v62l36-6Z"/>
             <circle class="accent-solid" cx="168" cy="60" r="4"/>
@@ -156,12 +151,13 @@ const Art = (function () {
             <rect class="ink-line" x="15.6" y="10" width="3.4" height="10"/>
         `,
 
-        // Workshop — a beam brought into balance over a fulcrum.
+        // Workshop — a beam, a circle resting on it as the balance point, a
+        // square weighing down one end. Line, circle, square.
         workshop: `
             <line class="ink-line" x1="3" y1="21" x2="21" y2="21"/>
-            <line class="ink-line" x1="4" y1="9" x2="20" y2="12"/>
-            <path class="ink-line" d="M13 13 15.5 21h-5Z"/>
-            <rect class="ink-line" x="4" y="4" width="5" height="5"/>
+            <line class="ink-line" x1="4" y1="16" x2="20" y2="8"/>
+            <circle class="ink-line" cx="12" cy="12" r="2.5"/>
+            <rect class="ink-line" x="15" y="4" width="5" height="5"/>
         `,
 
         // Decks — cards receding.
@@ -170,13 +166,14 @@ const Art = (function () {
             <path class="ink-line" d="M7 4h11a1.5 1.5 0 0 1 1.5 1.5v13"/>
         `,
 
-        // My Journey — the winding climb, reduced to two bends and the flag.
-        // The dip survives at illustration size but not at this one, where it
-        // would read as a wobble in the stroke rather than as a setback.
+        // My Journey — the winding climb, reduced to two bends and a square
+        // destination. The dip survives at illustration size but not at this
+        // one, where it would read as a wobble in the stroke rather than as
+        // a setback.
         journey: `
             <path class="ink-line" d="M2.5 19.5c4 0 3.5-5.5 7-5.5s3-6 6.5-6"/>
-            <line class="ink-line" x1="16" y1="8" x2="16" y2="3"/>
-            <path class="ink-line" d="M16 3h5l-2 2 2 2h-5Z"/>
+            <line class="ink-line" x1="16" y1="8" x2="16" y2="4"/>
+            <rect class="ink-line" x="13" y="1" width="6" height="6"/>
         `,
 
         // Reader — an open book, the Library's shelf turned to face you.

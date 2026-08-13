@@ -66,6 +66,7 @@ const Workshop = (function () {
                             <span class="wk-card-title">${_esc(d.title)}</span>
                             <span class="wk-card-sub">${_esc(d.sub)}</span>
                         </span>
+                        <span class="wk-card-arrow geo-triangle" aria-hidden="true"></span>
                     </button>
                 `).join('')}
             </div>

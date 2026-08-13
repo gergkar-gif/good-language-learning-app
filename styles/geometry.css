@@ -1,0 +1,330 @@
+/* ============================================
+   GEOMETRY — Reusable primitives for the Parlour
+   visual system (parlour_visual_overhaul_spec.md,
+   sections 6, 29, 30).
+
+   These are visual objects, not icons: composable
+   building blocks that later phases assemble into
+   page compositions, nav marks and abstract controls.
+   Each primitive takes its size from --geo-size (set
+   inline or via a .geo--sm/--md/--lg modifier) so one
+   shape definition works at icon scale and hero scale.
+============================================ */
+
+.geo-circle,
+.geo-triangle,
+.geo-square,
+.geo-semicircle,
+.geo-arc,
+.geo-dot {
+  --geo-size: 24px;
+  display: inline-block;
+  width: var(--geo-size);
+  height: var(--geo-size);
+  flex: none;
+}
+
+/* Size modifiers — apply alongside any primitive class. */
+.geo--sm { --geo-size: 12px; }
+.geo--md { --geo-size: 24px; }
+.geo--lg { --geo-size: 64px; }
+.geo--xl { --geo-size: 128px; }
+
+/* ---- Circle ---- */
+/* Inactive states, focal points, progress anchors, selected objects. */
+
+.geo-circle {
+  border-radius: 50%;
+  background: var(--primary);
+}
+
+.geo-circle--outline {
+  background: none;
+  border: 1.5px solid var(--primary);
+}
+
+.geo-circle--accent {
+  background: var(--accent);
+}
+
+.geo-circle--accent.geo-circle--outline {
+  background: none;
+  border-color: var(--accent);
+}
+
+/* A line running through a circle — "intersected by a line" per 6.1 */
+.geo-circle--pierced {
+  position: relative;
+}
+
+.geo-circle--pierced::after {
+  content: "";
+  position: absolute;
+  left: -25%;
+  right: -25%;
+  top: 50%;
+  height: 1px;
+  background: currentColor;
+  transform: translateY(-50%);
+}
+
+/* ---- Triangle ---- */
+/* Active states, forward movement, directional emphasis. Points right
+   (the reading/forward direction) by default; rotate for other directions. */
+
+.geo-triangle {
+  background: var(--primary);
+  clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
+}
+
+.geo-triangle--accent {
+  background: var(--accent);
+}
+
+.geo-triangle--up    { transform: rotate(-90deg); }
+.geo-triangle--down   { transform: rotate(90deg); }
+.geo-triangle--left  { transform: rotate(180deg); }
+
+/* ---- Square ---- */
+
+.geo-square {
+  background: var(--primary);
+}
+
+.geo-square--outline {
+  background: none;
+  border: 1.5px solid var(--primary);
+}
+
+.geo-square--accent {
+  background: var(--accent);
+}
+
+/* ---- Semicircle ---- */
+/* Section transitions, large-page composition, movement between states.
+   Flat edge down by default (a rising sun / doorway arch); rotate for
+   other orientations. */
+
+.geo-semicircle {
+  height: calc(var(--geo-size) / 2);
+  border-radius: var(--geo-size) var(--geo-size) 0 0;
+  background: var(--primary);
+}
+
+.geo-semicircle--accent {
+  background: var(--accent);
+}
+
+.geo-semicircle--down  { transform: rotate(180deg); transform-origin: center; }
+.geo-semicircle--left  { transform: rotate(-90deg); }
+.geo-semicircle--right { transform: rotate(90deg); }
+
+/* ---- Arc ---- */
+/* A quarter-circle stroke — partial framing rather than a full ring. */
+
+.geo-arc {
+  border-radius: 50%;
+  border: 1.5px solid transparent;
+  border-top-color: var(--primary);
+  border-right-color: var(--primary);
+}
+
+.geo-arc--accent {
+  border-top-color: var(--accent);
+  border-right-color: var(--accent);
+}
+
+/* ---- Dot ---- */
+/* A small fixed focal point — progress position, handle, destination. */
+
+.geo-dot {
+  --geo-size: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.geo-dot--navy {
+  background: var(--primary);
+}
+
+/* ---- Line / Axis ---- */
+/* Thin structural lines. .geo-line is a short connector between objects;
+   .geo-axis spans its container as a full navigation/composition spine. */
+
+.geo-line {
+  display: block;
+  height: 1px;
+  width: 100%;
+  background: var(--border);
+}
+
+.geo-line--solid {
+  background: var(--primary);
+}
+
+.geo-line--accent {
+  background: var(--accent);
+}
+
+.geo-line--vertical {
+  width: 1px;
+  height: 100%;
+}
+
+.geo-line--diagonal {
+  transform: rotate(-24deg);
+  transform-origin: left center;
+}
+
+.geo-axis {
+  display: block;
+  position: relative;
+  height: 1px;
+  width: 100%;
+  background: var(--border);
+}
+
+.geo-axis--vertical {
+  width: 1px;
+  height: 100%;
+}
+
+/* ---- Stack (overlapping rectangles — the Decks motif, 11.5) ---- */
+
+.geo-stack {
+  position: relative;
+  display: inline-block;
+  width: var(--geo-size, 48px);
+  height: calc(var(--geo-size, 48px) * .72);
+}
+
+.geo-stack-layer {
+  position: absolute;
+  inset: 0;
+  border: 1.5px solid var(--primary);
+  border-radius: 2px;
+  background: var(--bg);
+}
+
+.geo-stack-layer:nth-child(1) {
+  background: var(--primary);
+  transform: translate(0, 10%);
+}
+
+.geo-stack-layer:nth-child(2) {
+  transform: translate(6%, 4%);
+}
+
+.geo-stack-layer:nth-child(3) {
+  border-color: var(--accent);
+  transform: translate(12%, -2%);
+}
+
+/* ---- Path (curved progress line — Journey, SVG-based per 29) ---- */
+
+.geo-path {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.geo-path-line {
+  fill: none;
+  stroke: var(--border);
+  stroke-width: 1.5;
+}
+
+.geo-path-line--progress {
+  stroke: var(--primary);
+}
+
+.geo-path-node {
+  fill: var(--primary);
+}
+
+.geo-path-node--current {
+  fill: var(--accent);
+}
+
+/* ============================================
+   Shape-state system (section 30) — the abstract
+   toggle: an off/on control expressed as a shape
+   change, not a sliding pill.
+
+   Semantics live on the element itself
+   (role="switch" aria-checked), so screen readers
+   and keyboards see a normal switch; only the visual
+   layer is geometric.
+============================================ */
+
+.geo-toggle {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  width: 64px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.geo-toggle-track {
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  top: 50%;
+  height: 1px;
+  background: var(--border);
+  transform: translateY(-50%);
+}
+
+.geo-toggle-shape {
+  position: absolute;
+  top: 50%;
+  width: 18px;
+  height: 18px;
+  transition: opacity var(--dur-base) var(--ease-standard),
+              transform var(--dur-base) var(--ease-standard);
+}
+
+.geo-toggle-shape--off {
+  left: 10px;
+  transform: translate(0, -50%) scale(1);
+  border-radius: 50%;
+  border: 1.5px solid var(--primary);
+  background: var(--bg);
+  opacity: 1;
+}
+
+.geo-toggle-shape--on {
+  left: 36px;
+  transform: translate(0, -50%) scale(.5);
+  background: var(--accent);
+  clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+  opacity: 0;
+}
+
+.geo-toggle[aria-checked="true"] .geo-toggle-shape--off {
+  opacity: 0;
+  transform: translate(0, -50%) scale(.5);
+}
+
+.geo-toggle[aria-checked="true"] .geo-toggle-shape--on {
+  opacity: 1;
+  transform: translate(0, -50%) scale(1);
+}
+
+.geo-toggle:disabled,
+.geo-toggle[aria-disabled="true"] {
+  cursor: default;
+  opacity: .45;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .geo-toggle-shape {
+    transition: opacity var(--dur-fast) linear;
+  }
+}

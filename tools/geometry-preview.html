@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parlour — Geometry system preview</title>
+<link rel="stylesheet" href="../styles/base.css?v=2026-08-13d">
+<link rel="stylesheet" href="../styles/geometry.css?v=2026-08-13d">
+<style>
+  body { padding: var(--space-7) var(--space-5); }
+  h1 { font-family: var(--font-display); font-size: 40px; font-weight: 400; margin-bottom: var(--space-1); }
+  p.lede { color: var(--muted); margin-bottom: var(--space-8); max-width: 60ch; }
+  section { margin-bottom: var(--space-8); }
+  h2 { font-family: var(--font-display); font-size: 24px; font-weight: 400; margin-bottom: var(--space-4); padding-bottom: var(--space-2); border-bottom: 1px solid var(--border); }
+  .row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-6); }
+  .cell { display: flex; flex-direction: column; align-items: center; gap: var(--space-2); }
+  .cell span.label { font-size: 12px; color: var(--muted); }
+  .swatch { width: 96px; height: 64px; border-radius: var(--radius); display: flex; align-items: flex-end; padding: var(--space-2); font-size: 12px; }
+  .path-demo { max-width: 360px; }
+  .toggle-demo { display: flex; align-items: center; gap: var(--space-3); }
+</style>
+</head>
+<body>
+
+<h1>Geometry system</h1>
+<p class="lede">Phase 1 (colour, type, spacing, motion tokens) + Phase 2 (reusable geometric primitives) from parlour_visual_overhaul_spec.md. Nothing on this page is wired into the app — it exists to check the tokens and shapes render and behave before any real page adopts them.</p>
+
+<section>
+  <h2>Colour tokens</h2>
+  <div class="row">
+    <div class="swatch" style="background:var(--bg); border:1px solid var(--border); color:var(--text);">cream / bg</div>
+    <div class="swatch" style="background:var(--primary); color:#fff;">navy / primary</div>
+    <div class="swatch" style="background:var(--accent); color:#fff;">deep orange / accent</div>
+    <div class="swatch" style="background:var(--accent-dark); color:#fff;">accent-dark (text-safe)</div>
+    <div class="swatch" style="background:var(--muted); color:#fff;">muted</div>
+    <div class="swatch" style="background:var(--secondary); color:#fff;">secondary</div>
+  </div>
+</section>
+
+<section>
+  <h2>Typography</h2>
+  <div style="font-family:var(--font-display); font-size:64px; line-height:1.05;">Lecciones</div>
+  <div style="font-family:var(--font-display); font-size:36px; margin-top:8px;">A2 · Fundamentos</div>
+  <div style="font-family:var(--font-ui); font-size:16px; margin-top:8px; color:var(--text);">Body text sits in the UI sans, restrained and neutral.</div>
+  <div style="font-family:var(--font-ui); font-size:13px; margin-top:4px; color:var(--muted); letter-spacing:.02em;">METADATA · 13/6 LESSONS</div>
+</section>
+
+<section>
+  <h2>Primitives — circle, triangle, square</h2>
+  <div class="row">
+    <div class="cell"><span class="geo-circle geo--lg"></span><span class="label">circle</span></div>
+    <div class="cell"><span class="geo-circle geo-circle--outline geo--lg"></span><span class="label">circle outline</span></div>
+    <div class="cell"><span class="geo-circle geo-circle--accent geo--lg"></span><span class="label">circle accent</span></div>
+    <div class="cell"><span class="geo-circle geo-circle--pierced geo--lg" style="color:var(--primary)"></span><span class="label">circle pierced</span></div>
+    <div class="cell"><span class="geo-triangle geo--lg"></span><span class="label">triangle</span></div>
+    <div class="cell"><span class="geo-triangle geo-triangle--accent geo--lg"></span><span class="label">triangle accent</span></div>
+    <div class="cell"><span class="geo-triangle geo-triangle--accent geo-triangle--up geo--lg"></span><span class="label">triangle up</span></div>
+    <div class="cell"><span class="geo-square geo--lg"></span><span class="label">square</span></div>
+    <div class="cell"><span class="geo-square geo-square--outline geo--lg"></span><span class="label">square outline</span></div>
+    <div class="cell"><span class="geo-square geo-square--accent geo--lg"></span><span class="label">square accent</span></div>
+  </div>
+</section>
+
+<section>
+  <h2>Primitives — semicircle, arc, dot, line</h2>
+  <div class="row">
+    <div class="cell"><span class="geo-semicircle geo--lg"></span><span class="label">semicircle</span></div>
+    <div class="cell"><span class="geo-semicircle geo-semicircle--accent geo--lg"></span><span class="label">semicircle accent</span></div>
+    <div class="cell"><span class="geo-semicircle geo--lg geo-semicircle--left"></span><span class="label">semicircle left</span></div>
+    <div class="cell"><span class="geo-arc geo--lg"></span><span class="label">arc</span></div>
+    <div class="cell"><span class="geo-arc geo-arc--accent geo--lg"></span><span class="label">arc accent</span></div>
+    <div class="cell"><span class="geo-dot"></span><span class="label">dot</span></div>
+    <div class="cell"><span class="geo-dot geo-dot--navy"></span><span class="label">dot navy</span></div>
+    <div class="cell" style="width:120px;"><span class="geo-line geo-line--solid"></span><span class="label">line</span></div>
+    <div class="cell" style="width:120px;"><span class="geo-line geo-line--accent"></span><span class="label">line accent</span></div>
+    <div class="cell" style="width:120px; height:40px; justify-content:center;"><span class="geo-line geo-line--solid geo-line--diagonal"></span><span class="label">line diagonal</span></div>
+  </div>
+</section>
+
+<section>
+  <h2>Stack (Decks motif)</h2>
+  <div class="row">
+    <div class="cell">
+      <span class="geo-stack geo--lg">
+        <span class="geo-stack-layer"></span>
+        <span class="geo-stack-layer"></span>
+        <span class="geo-stack-layer"></span>
+      </span>
+      <span class="label">geo-stack</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Path (Journey motif, SVG-based)</h2>
+  <div class="path-demo">
+    <svg class="geo-path" viewBox="0 0 320 100">
+      <path class="geo-path-line" d="M20,80 Q160,80 300,20"/>
+      <path class="geo-path-line geo-path-line--progress" d="M20,80 Q100,80 160,55" stroke-dasharray="140" stroke-dashoffset="0"/>
+      <circle class="geo-path-node" cx="20" cy="80" r="4"/>
+      <circle class="geo-path-node geo-path-node--current" cx="160" cy="55" r="5"/>
+    </svg>
+  </div>
+</section>
+
+<section>
+  <h2>Shape-state toggle (section 30)</h2>
+  <p class="lede" style="margin-bottom:var(--space-4);">Off = navy circle, on = orange triangle, crossfading along a track. Click, or tab to it and press Space/Enter.</p>
+  <div class="toggle-demo">
+    <button class="geo-toggle" role="switch" aria-checked="false" aria-label="Show translations">
+      <span class="geo-toggle-track"></span>
+      <span class="geo-toggle-shape geo-toggle-shape--off"></span>
+      <span class="geo-toggle-shape geo-toggle-shape--on"></span>
+    </button>
+    <span id="toggle-state" style="font-size:14px; color:var(--muted);">Show translations: off</span>
+  </div>
+  <div class="toggle-demo" style="margin-top:var(--space-4);">
+    <button class="geo-toggle" role="switch" aria-checked="true" aria-label="Autoplay audio">
+      <span class="geo-toggle-track"></span>
+      <span class="geo-toggle-shape geo-toggle-shape--off"></span>
+      <span class="geo-toggle-shape geo-toggle-shape--on"></span>
+    </button>
+    <span style="font-size:14px; color:var(--muted);">Starts pre-checked, to confirm both initial states render correctly.</span>
+  </div>
+</section>
+
+<script src="../engine/geo.js?v=2026-08-13d"></script>
+<script>
+  Geo.initToggles();
+  const first = document.querySelector('.geo-toggle');
+  const label = document.getElementById('toggle-state');
+  first.addEventListener('geo-change', (e) => {
+    label.textContent = 'Show translations: ' + (e.detail.checked ? 'on' : 'off');
+  });
+</script>
+
+</body>
+</html>
