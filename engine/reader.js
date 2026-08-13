@@ -45,7 +45,10 @@ function _ensureWordPopup() {
                 </div>
                 <div id="popup-body"></div>
                 <p id="popup-new-word-cap" class="wp-cap">⚠️ Daily new word limit reached (20/20)</p>
-                <button id="popup-add-btn" class="wp-add" onclick="addToSRS()">➕ Add to SRS Deck</button>
+                <div class="wp-actions">
+                    <button id="popup-add-btn" class="wp-add" onclick="addToSRS()">➕ Add to SRS Deck</button>
+                    <button id="popup-add-to-deck-btn" class="wp-add-to-deck" onclick="openWordDeckPicker()">＋ Add to deck</button>
+                </div>
             </div>
         </div>
     `;
@@ -171,6 +174,13 @@ async function showWord(spanish, contextTokens, tokenIndex) {
 function closePopup() {
     const popup = document.getElementById('word-popup');
     if (popup) popup.style.display = 'none';
+}
+
+// Membership, not SRS activation — see engine/decks.js. currentWord is the
+// same resolved lemma addToSRS() uses, set by showWord() below.
+function openWordDeckPicker() {
+    if (!currentWord || typeof Decks === 'undefined') return;
+    Decks.openAddToDeckPicker(currentWord, currentWordTranslation, currentWordPos);
 }
 
 // ============================================
@@ -401,10 +411,21 @@ window.Reader = {
         const container = document.getElementById('reader-content');
         if (!container) return;
 
+        // Saving is Library's concern (it owns the Saved list), but the
+        // action itself lives here because "save this" only makes sense
+        // while looking at the thing — see PARLOUR_LIBRARY_SPEC.md §1.
+        const canSave = typeof Library !== 'undefined' && this.currentStoryId;
+        const saveBtnHtml = canSave
+            ? '<button class="btn-back" id="reader-save-btn">' +
+                (Library.isSaved(this.currentStoryId) ? '★ Saved' : '☆ Save') + '</button>'
+            : '';
+
         let html = '<div class="story-header">' +
             '<h3 class="story-title">' + this.escapeHtml(story.title) + '</h3>' +
             '<span class="story-level-badge">' + this.escapeHtml(story.level) + '</span>' +
-            '<button class="btn-back" id="reader-back-btn">&larr; Back</button>' +
+            '<span class="story-header-actions">' + saveBtnHtml +
+                '<button class="btn-back" id="reader-back-btn">&larr; Back</button>' +
+            '</span>' +
         '</div>';
 
         html += '<div class="story-body">';
@@ -456,9 +477,23 @@ window.Reader = {
             });
         }
 
-        const libraryEl = document.getElementById('reader-library');
-        if (libraryEl) libraryEl.classList.add('hidden');
-        container.classList.remove('hidden');
+        const saveBtn = document.getElementById('reader-save-btn');
+        if (saveBtn) {
+            saveBtn.addEventListener('click', function() {
+                const nowSaved = Library.toggleSave(self.currentStoryId);
+                saveBtn.textContent = nowSaved ? '★ Saved' : '☆ Save';
+            });
+        }
+
+        // Library owns which of Parlour/Saved/My Texts is showing underneath;
+        // fall back to the old plain toggle if it isn't loaded for some reason.
+        if (typeof Library !== 'undefined') {
+            Library.showReading();
+        } else {
+            const libraryEl = document.getElementById('reader-library');
+            if (libraryEl) libraryEl.classList.add('hidden');
+            container.classList.remove('hidden');
+        }
 
         updateReaderWordColors();
     },
@@ -503,14 +538,23 @@ window.Reader = {
 
     closeStory() {
         const contentEl = document.getElementById('reader-content');
-        const libraryEl = document.getElementById('reader-library');
         if (contentEl) {
             contentEl.innerHTML = '';
             contentEl.classList.add('hidden');
         }
-        if (libraryEl) {
-            libraryEl.classList.remove('hidden');
-            this.buildLibraryUI(libraryEl); // refresh read badges/shelf counts
+
+        // Library remembers which of Parlour/Saved/My Texts was open and
+        // restores + refreshes it (read badges, saved list, etc). Without
+        // Library loaded, fall back to the plain "always return to Parlour"
+        // behaviour this had before Saved/My Texts existed.
+        if (typeof Library !== 'undefined') {
+            Library.returnFromReading();
+        } else {
+            const libraryEl = document.getElementById('reader-library');
+            if (libraryEl) {
+                libraryEl.classList.remove('hidden');
+                this.buildLibraryUI(libraryEl);
+            }
         }
         this.currentStory = null;
         this.currentStoryId = null;

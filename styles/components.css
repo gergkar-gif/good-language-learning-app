@@ -307,6 +307,15 @@
   flex-wrap: wrap;
 }
 
+/* Groups Save + Back (or just Back, for a My Text) so a single margin-left:
+   auto pushes the pair to the right edge together — giving each button its
+   own auto margin would split the leftover space between them instead. */
+.story-header-actions {
+  display: flex;
+  gap: 8px;
+  margin-left: auto;
+}
+
 .story-title {
   font-family: var(--font-display);
   font-weight: 400;
@@ -339,6 +348,206 @@
   font-weight: 600;
   color: var(--accent);
 }
+
+/* ============================================
+   LIBRARY — Parlour / Saved / My Texts subnav, and the two sections that
+   sit alongside the existing reading-room UI above.
+   ============================================ */
+
+.lt-subnav {
+  display: flex;
+  gap: 20px;
+  border-bottom: 2px solid var(--border);
+  margin-bottom: 22px;
+}
+
+.lt-subnav-btn {
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  padding: 10px 2px;
+  font-family: var(--font-display);
+  font-size: 15px;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.lt-subnav-btn:hover { color: var(--primary-dark); }
+
+.lt-subnav-btn.active {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+  font-weight: 600;
+}
+
+/* ----- Saved ----- */
+
+/* A div standing in for story-card's own <button> root, since a saved card
+   needs a second, separate Remove control a nested button couldn't hold. */
+.lt-saved-card { display: flex; flex-direction: column; }
+
+.story-card-open {
+  background: none;
+  border: none;
+  padding: 0;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.lt-saved-remove {
+  margin: 0 12px 12px;
+  padding: 6px 10px;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.lt-saved-remove:hover { border-color: var(--danger); color: var(--danger); }
+
+/* ----- My Texts ----- */
+
+.lt-index-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.lt-list { display: flex; flex-direction: column; gap: 10px; }
+
+.lt-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 4px 10px 4px 16px;
+}
+
+.lt-card-main {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  text-align: left;
+  background: none;
+  border: none;
+  padding: 12px 0;
+  cursor: pointer;
+}
+
+.lt-card-title { font-family: var(--font-display); font-size: 16px; color: var(--primary); }
+.lt-card-meta { font-size: 12px; color: var(--muted); }
+.lt-card-coverage { font-size: 12px; color: var(--success); font-weight: 600; }
+
+.lt-card-actions { display: flex; gap: 6px; flex: 0 0 auto; }
+
+.lt-card-action {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 8px 12px;
+  font-size: 13px;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.lt-card-action:hover { border-color: var(--primary); color: var(--primary); }
+.lt-card-action-danger:hover { border-color: var(--danger); color: var(--danger); }
+
+/* Add/edit text editor — reuses the Deck editor's input/label/actions
+   classes (dk-editor-*) for a consistent form language across the app. */
+.lt-text-area { min-height: 220px; resize: vertical; line-height: 1.6; }
+
+.lt-analyse-row { margin: 6px 0 4px; }
+
+.lt-analysis {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  margin: 6px 0 16px;
+}
+
+.lt-analysis-headline {
+  font-family: var(--font-display);
+  font-size: 16px;
+  color: var(--primary);
+  margin-bottom: 4px;
+}
+
+.lt-analysis-line { font-size: 13px; color: var(--muted); margin-bottom: 8px; }
+
+.lt-analysis-coverage {
+  font-family: var(--font-display);
+  font-size: 24px;
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+.lt-analysis-breakdown {
+  list-style: none;
+  font-size: 13px;
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+/* Vocabulary selection — nests inside the analysis panel, reusing the
+   dk-group-header/-body collapsible primitive from Decks. */
+.lt-vocab-group { margin-top: 14px; }
+
+.lt-vocab-category { margin: 12px 0; }
+
+.lt-vocab-category-title {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+.lt-vocab-list {
+  list-style: none;
+  max-height: 220px;
+  overflow-y: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+}
+
+.lt-vocab-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 10px;
+  font-size: 13px;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+}
+
+.lt-vocab-list li:last-child .lt-vocab-item { border-bottom: 0; }
+
+.lt-vocab-es { color: var(--primary); flex: 0 0 auto; }
+.lt-vocab-en {
+  color: var(--muted);
+  flex: 1 1 auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.lt-vocab-actions { margin-top: 12px; }
 
 /* ============================================
    DRILLS — Conjugation input rows
@@ -1231,6 +1440,28 @@
 .wp-add.is-saved   { background: var(--secondary); cursor: default; }
 .wp-add.is-disabled { background: var(--border); cursor: default; }
 
+.wp-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Deliberately quieter than wp-add: adding to a personal deck is membership
+   only, not a commitment to learn the word today, so it should not compete
+   with the button that actually starts a review schedule. */
+.wp-add-to-deck {
+  width: 100%;
+  padding: 12px;
+  background: var(--surface);
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  border-radius: var(--radius-sm);
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.wp-add-to-deck:hover { background: var(--border); }
+
 /* ============================================
    LISTEN BUTTONS
    ============================================
@@ -1665,6 +1896,11 @@
   font-size: 15px;
 }
 
+/* "All my words" adds a remove button as a fourth column — every other deck
+   view keeps the plain three-column layout since removing a word there
+   means editing membership, not deleting the card (see the deck editor). */
+.dk-words-removable .dk-word { grid-template-columns: 1fr 1fr auto auto; }
+
 .dk-word:last-child { border-bottom: 0; }
 
 .dk-word-es { color: var(--primary); }
@@ -1692,6 +1928,173 @@
   color: var(--muted);
   opacity: .8;
 }
+
+.dk-detail-desc { font-size: 14px; color: var(--text); margin: 4px 0 8px; }
+
+/* ----- My Decks vs Parlour Decks ----- */
+
+/* My Decks' header carries a second, non-toggling control (+ Create deck)
+   alongside the collapse button, so the border and spacing that every other
+   dk-group-header carries on its own move up to this shared row instead. */
+.dk-mine-header-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 2px solid var(--border);
+  padding-bottom: 10px;
+}
+
+.dk-mine-header-row .dk-group-header {
+  flex: 1 1 auto;
+  border-bottom: 0;
+  padding: 0;
+}
+
+.dk-create-btn { padding: 8px 14px; font-size: 14px; flex: 0 0 auto; }
+
+.dk-danger {
+  background: none;
+  border: 1px solid var(--danger);
+  color: var(--danger);
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 15px;
+}
+
+.dk-danger:hover { background: var(--danger-bg); }
+
+/* ----- Deck editor ----- */
+
+.dk-editor { display: flex; flex-direction: column; gap: 6px; }
+
+.dk-editor-title {
+  font-family: var(--font-display);
+  font-size: 22px;
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+
+.dk-editor-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: var(--muted);
+  margin-top: 10px;
+}
+
+.dk-editor-input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 15px;
+  font-family: inherit;
+  background: var(--surface);
+  color: var(--text);
+}
+
+.dk-editor-textarea { resize: vertical; min-height: 50px; }
+
+.dk-editor-words { margin-top: 6px; }
+
+.dk-word-remove {
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0 4px;
+}
+
+.dk-word-remove:hover { color: var(--danger); }
+
+.dk-editor-actions { margin-top: 18px; }
+
+/* ----- Vocabulary search, shared by the editor and the "Add to deck" picker ----- */
+
+.dk-picker-panel { margin-top: 6px; }
+
+.dk-picker-loading { font-size: 13px; color: var(--muted); }
+
+.dk-picker-results { list-style: none; border: 1px solid var(--border); border-radius: var(--radius-sm); overflow: hidden; }
+
+.dk-picker-result {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 10px;
+  padding: 9px 12px;
+  background: var(--surface);
+  border: none;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  cursor: pointer;
+}
+
+.dk-picker-results li:last-child .dk-picker-result { border-bottom: 0; }
+
+.dk-picker-result:hover:not(:disabled) { background: var(--border); }
+.dk-picker-result:disabled { cursor: default; opacity: .6; }
+
+.dk-picker-result-es { color: var(--primary); font-size: 14px; flex: 0 0 auto; }
+.dk-picker-result-en { color: var(--muted); font-size: 13px; flex: 1 1 auto; text-align: right; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.dk-picker-result-added { color: var(--success); flex: 0 0 auto; }
+
+.dk-picker-manual {
+  display: block;
+  width: 100%;
+  margin-top: 6px;
+  padding: 8px 10px;
+  background: none;
+  border: 1px dashed var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--muted);
+  font-size: 13px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.dk-picker-manual:hover { border-color: var(--primary); color: var(--primary); }
+
+/* ----- "Add to deck" overlay (reused wp-overlay/wp-sheet chrome) ----- */
+
+.dk-picker-sheet { max-width: 420px; }
+
+.dk-picker-list { list-style: none; margin-bottom: 14px; }
+
+.dk-picker-deck {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 4px;
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  font-size: 15px;
+  color: var(--text);
+  cursor: pointer;
+  text-align: left;
+}
+
+.dk-picker-list li:last-child .dk-picker-deck { border-bottom: 0; }
+
+.dk-picker-deck:hover:not(:disabled) { color: var(--primary); }
+.dk-picker-deck:disabled { cursor: default; color: var(--success); }
+
+.dk-picker-deck-count { font-size: 12px; color: var(--muted); }
+.dk-picker-deck:disabled .dk-picker-deck-count { color: var(--success); }
+
+.dk-picker-create {
+  display: flex;
+  gap: 8px;
+  border-top: 1px solid var(--border);
+  padding-top: 14px;
+}
+
+.dk-picker-create .dk-editor-input { flex: 1 1 auto; }
 
 /* ============================================
    LEVEL TEST

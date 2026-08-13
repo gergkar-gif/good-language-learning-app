@@ -200,8 +200,109 @@ const Lexicon = (function () {
         return _dictionary[String(lemma).toLowerCase()] || null;
     }
 
+    const WORD_CHAR = /[a-zà-ÿñ]/i;
+
+    // Where q sits inside en (already known to be a substring, at index
+    // `at`): a whole word/gloss match beats one that merely starts a word,
+    // which beats one buried mid-word — so searching "a" doesn't rank every
+    // definition containing "a difficulty..." above an actual match. Tiers
+    // are interleaved with the Spanish-side tiers in search() below: an
+    // exact English word ("table" -> "mesa") should outrank a Spanish word
+    // that merely happens to start with the same letters ("tablero"), which
+    // is why this returns 1/3/5 rather than 2/3/4.
+    function englishMatchTier(en, q, at) {
+        const before = at === 0 ? '' : en[at - 1];
+        const after = en[at + q.length] || '';
+        const startsWord = at === 0 || !WORD_CHAR.test(before);
+        const endsWord = !WORD_CHAR.test(after);
+        if (startsWord && endsWord) return 1;
+        if (startsWord) return 3;
+        return 5;
+    }
+
+    /**
+     * Free-text lookup across every headword and its translation, for
+     * pickers that let a learner find a word rather than tap one (e.g.
+     * building a My Deck) — in Spanish ("aeropuerto") or in English
+     * ("airport"), since a learner reaches for whichever they know. Ranked
+     * by how the query matched (exact lemma, lemma prefix, whole-word
+     * translation match, translation prefix, lemma substring, translation
+     * substring), then by frequency within each tier — proper nouns and
+     * unranked lemmas sink to the bottom of theirs, same reasoning as
+     * lookup()'s reading order.
+     */
+    function search(query, limit) {
+        limit = limit || 20;
+        const q = normalise(query);
+        if (!_dictionary || !q) return [];
+
+        const scored = [];
+        for (const lemma in _dictionary) {
+            const entry = _dictionary[lemma];
+
+            // A word can match on both sides at once ("mesa" -> "table" is
+            // an exact English match; a Spanish query might also happen to
+            // prefix-match its own lemma) — take whichever side matched
+            // better rather than picking one side and ignoring the other.
+            let tier = Infinity;
+            if (lemma === q) tier = 0;
+            else if (lemma.indexOf(q) === 0) tier = 2;
+            else if (lemma.indexOf(q) !== -1) tier = 4;
+
+            const en = (entry.en || '').toLowerCase();
+            const at = en.indexOf(q);
+            if (at !== -1) tier = Math.min(tier, englishMatchTier(en, q, at));
+
+            if (tier === Infinity) continue;
+            scored.push({ lemma: lemma, tier: tier });
+        }
+
+        const rank = item => {
+            const entry = _dictionary[item.lemma];
+            const reading = { pos: entry && entry.type, lemma: item.lemma };
+            return (isProperNoun(reading) * 1e9) + rankOf(reading);
+        };
+        scored.sort((a, b) => a.tier - b.tier || rank(a) - rank(b) || a.lemma.localeCompare(b.lemma));
+
+        return scored.slice(0, limit).map(item => {
+            const entry = _dictionary[item.lemma];
+            return { lemma: item.lemma, translation: entry.en, pos: entry.type || '' };
+        });
+    }
+
+    // "el" or "la" for a noun with a known simple gender, so a learner
+    // collecting vocabulary gets the article for free rather than having to
+    // learn "mesa" and its gender as two separate facts. Deliberately silent
+    // for anything not plainly 'm' or 'f' (invariant nouns, "m; f", plurals,
+    // etc.) — a wrong guess is worse than no article at all.
+    function article(lemma) {
+        const entry = define(lemma);
+        if (!entry || entry.type !== 'noun') return null;
+        if (entry.gender === 'm') return 'el';
+        if (entry.gender === 'f') return 'la';
+        return null;
+    }
+
+    // "gato" -> "el gato". The single place that formats a lemma with its
+    // article, so every screen that lists Spanish words (Decks, Library) does
+    // it the same way rather than each re-implementing the m/f check.
+    function withArticle(lemma) {
+        const a = article(lemma);
+        return a ? a + ' ' + lemma : lemma;
+    }
+
+    // Rank of a lemma in the frequency list (0 = most common), or null if it
+    // falls outside the top 20k or the list hasn't loaded. Used to estimate a
+    // My Text's reading level — a coarse proxy, not a real CEFR assessment.
+    function frequencyRank(lemma) {
+        if (!_frequency) return null;
+        const rank = _frequency.get(String(lemma || '').toLowerCase());
+        return rank === undefined ? null : rank;
+    }
+
     return {
-        load: load, lookup: lookup, isLoaded: isLoaded,
-        define: define, findPhrase: findPhrase
+        load: load, lookup: lookup, isLoaded: isLoaded, article: article,
+        withArticle: withArticle, frequencyRank: frequencyRank,
+        define: define, findPhrase: findPhrase, search: search
     };
 })();
