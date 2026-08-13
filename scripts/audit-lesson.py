@@ -1,19 +1,42 @@
 #!/usr/bin/env python3
-"""Check a lesson against the A1 content specification.
+"""Check lesson content against its content spec.
 
 scripts/validate-content.py checks the shape of each file on its own. This
 checks the rules that span files and that count things — the ones that
-actually go wrong when authoring at volume, and the ones a lesson generator
-has to satisfy. Rules come from content/es/guides/:
+actually go wrong when authoring at volume.
 
-  a1-content-spec.md       exercise split, grammar limits, checklist form
-  a1-vocabulary-themes.md  per-lesson new-word target (authoritative)
-  a1-quality-checklist.md  every new word in the story and in an exercise
+Content is organised as units of six lesson files: five teaching lessons
+(01-05) and one consolidation, e.g. a1-01-01.json ... a1-01-consolidation.json.
+This script discovers units from that id shape directly (the same pattern
+lesson.schema.json's `id` regex uses), rather than from a hardcoded list, so
+new units are picked up automatically.
 
-    python scripts/audit-lesson.py            # every A1 lesson that has content
-    python scripts/audit-lesson.py a1-01      # one lesson
+Per-lesson targets (title, new-word count, exercise count) come from
+whichever planning document actually describes lessons at this grain:
 
-Exits non-zero if any checked lesson fails.
+  a2  content/es/guides/a2-lesson-guide.md
+  b1  content/es/guides/Parlour B1 Consolidated Unit List.md (Core track only
+      — Latin America units use word-slug ids the document doesn't carry;
+      see b1-content-spec.md section 1a)
+  a1  no such document exists. guides/a1.md describes 20 units at unit grain
+      (one title/goal/grammar per unit), but the lesson files are five
+      classes per unit with their own narrower titles — the two no longer
+      correspond, and reconciling them is a separate, unstarted task. A1
+      lessons are checked structurally only; title/word/exercise-count
+      checks are skipped and reported as such rather than silently assumed
+      to pass.
+
+    python scripts/audit-lesson.py            # every unit in every level
+    python scripts/audit-lesson.py a1          # every a1 unit
+    python scripts/audit-lesson.py a1-01       # one unit
+    python scripts/audit-lesson.py a1-01-01    # one lesson file
+
+Exits non-zero if any checked lesson fails a hard rule. Exercise-count drift
+from the plan is a warning, not a failure — actual A2 content already
+diverges from a2-lesson-guide.md's stated counts in places, and that has
+evidently been tolerated, so flagging it outright would fail content nobody
+considers broken. Everything else a plan can check (title, new-word count)
+is a hard rule.
 """
 
 import json
@@ -28,50 +51,36 @@ ES = ROOT / "content" / "es"
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
-# Block -> exercise count. Totals 15.
-EXERCISE_SPLIT = {"Practice": 6, "Reading": 4, "Dialogue": 3, "Writing": 2}
-MIN_PRACTICE_TYPES = 5
+LEVELS = ("a1", "a2", "b1")
 
-# A lesson whose grammar is too much for one sitting is split into parts —
-# a1-03a, a1-03b, a1-03c — which share the slot, the word target and the
-# story. A part is a lesson in its own right, so it still opens on goals and
-# ends on a checklist, but it carries one grammar screen and a short block of
-# exercises. Only the part holding the story gets a Reading block, because the
-# unit's story is read once.
-PART_SPLIT = {"Practice": 4, "Dialogue": 1, "Writing": 1}
-PART_READING = 4
-MIN_PART_PRACTICE_TYPES = 3
-PART_CHECKLIST = (2, 4)
+# Does a teaching lesson have a Listening exercise-group? Introduced at A2
+# (see guides/listening-plan in project memory); A1 predates it.
+HAS_LISTENING = {"a1": False, "a2": True, "b1": True}
+
+# Consolidation shape. "single" = one "Review" exercise-group, every exercise
+# `teaches`-tagged, spanning several types and several distinct points — A1's
+# design (a1-content-spec.md section 4c), adopted for B1. "split" = the same
+# Practice/Listening/Dialogue/Writing blocks as a teaching lesson, just
+# without grammar/vocabulary/story — what A2 actually shipped, which drifted
+# from A1's design rather than deliberately choosing a different one.
+CONSOLIDATION_SHAPE = {"a1": "single", "a2": "split", "b1": "single"}
+
+MIN_PRACTICE_TYPES = {"a1": 5, "a2": 5, "b1": 6}
+MIN_REVIEW_TYPES = {"a1": 5, "a2": 5, "b1": 6}
+MIN_REVIEW_POINTS = {"a1": 8, "a2": 8, "b1": 10}
 GRAMMAR_MAX_WORDS = 300
 GRAMMAR_EXAMPLES = (3, 5)
-CHECKLIST_ITEMS = 4
 CHECKLIST_PREFIX = "I can"
 
-# From a1-vocabulary-themes.md, which that document declares authoritative.
-NEW_WORDS = {1: 10, 2: 10, 3: 12, 4: 12, 5: 15, 6: 15, 7: 18, 8: 18, 9: 20,
-             # 10 was 20: 'el deseo' dropped with 'pedir un deseo', which
-             # PLANNING.md ruled out as premature at A1 — see a1-10-voc.json.
-             10: 19, 11: 20, 12: 20, 13: 20, 14: 20, 15: 20, 16: 20, 17: 20}
-
-# Lessons 18-20 consolidate rather than teach: no new words, no new grammar,
-# and a different shape entirely. Holding them to the teaching-lesson spec
-# would report failures nobody can act on, so they have their own, from
-# a1-content-spec.md section 4c.
-REVIEW_LESSONS = {18, 19, 20}
-REVIEW_SPLIT = {"Recap": 8, "Reading": 4, "Dialogue": 2, "Writing": 2}
-MIN_RECAP_TYPES = 5
-# A review that drills one point eight times is not a review. The union of
-# what its Recap exercises claim to test has to actually range.
-MIN_REVIEW_POINTS = 8
-TEACHING_LESSONS = [n for n in range(1, 21) if n not in REVIEW_LESSONS]
-
-# From a1-content-spec.md section 3. Flat across A1 rather than escalating:
-# the stories that exist run 106-225 words with no upward trend, and A1 texts
-# stay short on purpose.
-STORY_WORDS = (100, 250)
-
-
 ARTICLE = re.compile(r"^(el|la|los|las|un|una|unos|unas) ")
+
+# Proper nouns the word-coverage matcher should ignore. Shared across the
+# existing A1/A2 story cast; Latin America and Core-classics stories at B1
+# will introduce their own (historical figures, adapted-classic character
+# names) and this list will need extending as that content is written.
+PROPER_NOUNS = {"carlos", "meg", "daniela", "lauren", "kaylee", "hungria",
+                "sudafrica", "espana", "hanoi", "ana", "mexico", "vietnam",
+                "ninh", "binh"}
 
 
 def norm(text):
@@ -86,19 +95,12 @@ def searchable(lemma):
     return ARTICLE.sub("", norm(lemma).strip()).strip()
 
 
-PROPER_NOUNS = {"carlos", "meg", "daniela", "lauren", "kaylee", "hungria",
-                "sudafrica", "espana", "hanoi", "ana", "mexico", "vietnam"}
-
-
 def spanish_tokens(text):
     return {w for w in re.findall(r"[a-zñ]+", norm(text)) if w not in PROPER_NOUNS}
 
 
 def exercise_spanish(ex):
-    """The Spanish a learner must already know to answer this exercise.
-
-    English prompts and reading comprehension, which is written in English by
-    design at A1, contribute nothing."""
+    """The Spanish a learner must already know to answer this exercise."""
     kind = ex["type"]
     if kind == "matching":
         return [pair[0] for pair in ex["pairs"]]
@@ -120,13 +122,391 @@ def exercise_spanish(ex):
     return []
 
 
+def matches(term, haystack):
+    if not term:
+        return False
+    if term in haystack:
+        return True
+    if " " in term:
+        return False
+    stem = re.sub(r"(es|os|as|s)$", "", term)
+    stem = re.sub(r"[oae]$", "", stem)
+    return len(stem) >= 4 and stem in haystack
+
+
+def find_missing(words, haystack):
+    """Split into hard misses and ones we cannot judge (conjugated verbs)."""
+    missing, unsure = [], []
+    for w in words:
+        if matches(searchable(w["lemma"]), haystack):
+            continue
+        (unsure if w.get("pos", "").startswith("verb") else missing).append(w["lemma"])
+    return missing, unsure
+
+
+def read(path):
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+# --- discovery ---------------------------------------------------------------
+# Matches lesson.schema.json's own id pattern: level, then a unit token that
+# is either a two-digit position (optionally lettered, for an old slot like
+# 03c) or a word slug, then a two-digit lesson position or "consolidation".
+
+KEY = re.compile(r"^(a1|a2|b1|b2|c1)-(\d{2}[a-z]?|[a-z]+)-(\d{2}|consolidation)$")
+
+
+def parse_key(key):
+    m = KEY.match(key)
+    return m.groups() if m else None
+
+
+def lesson_keys(level):
+    folder = ES / "lessons" / level
+    if not folder.exists():
+        return []
+    return sorted(p.stem for p in folder.glob(f"{level}-*.json"))
+
+
+def group_units(level):
+    """{unit: [parts in teaching order]}, plus keys that don't match the
+    unit/lesson-group shape at all (a handful of pre-restructure files, e.g.
+    a1-10.json, still sitting in the old one-file-per-lesson shape)."""
+    units, legacy = {}, []
+    for key in lesson_keys(level):
+        parsed = parse_key(key)
+        if not parsed:
+            legacy.append(key)
+            continue
+        _, unit, part = parsed
+        units.setdefault(unit, []).append(part)
+    for unit in units:
+        units[unit].sort(key=lambda p: (p == "consolidation", p))
+    return units, legacy
+
+
+def section(lesson, kind, title=None):
+    for s in lesson.get("sections", []):
+        if s["type"] == kind and (title is None or s.get("title") == title):
+            return s
+    return None
+
+
+def load_exercises(lesson):
+    all_ex = {}
+    for s in lesson.get("sections", []):
+        if s["type"] != "exercise-group":
+            continue
+        ep = ES / s["ref"]
+        if ep.exists():
+            for e in read(ep).get("exercises", []):
+                all_ex[e["id"]] = e
+    return all_ex
+
+
+def unit_story_ref(level, unit, parts):
+    for part in parts:
+        path = ES / "lessons" / level / f"{level}-{unit}-{part}.json"
+        if not path.exists():
+            continue
+        s = section(read(path), "story")
+        if s:
+            return s["ref"]
+    return None
+
+
+# --- plan sources --------------------------------------------------------------
+
+def parse_range(raw):
+    """'15' -> (15, 15). '15-17' or '15–17' -> (15, 17)."""
+    m = re.match(r"^(\d+)\s*[-–]\s*(\d+)$", raw)
+    if m:
+        return int(m.group(1)), int(m.group(2))
+    n = int(raw)
+    return n, n
+
+
+def load_a2_plan():
+    path = ES / "guides" / "a2-lesson-guide.md"
+    if not path.exists():
+        return {}
+    text = path.read_text(encoding="utf-8")
+    row = re.compile(
+        r'^(\d+)\.(\d+)\s+"([^"]+)"\s+—\s+grammar:\s+(.+?)\s+—\s+'
+        r'(~?\d+)\s+new words?\s+—\s+(\d+)\s+exercises', re.MULTILINE)
+    plan = {}
+    for unit, lesson, title, grammar, words, exercises in row.findall(text):
+        part = "consolidation" if lesson == "6" else lesson.zfill(2)
+        plan[(unit.zfill(2), part)] = {
+            "title": title, "grammar": grammar,
+            "words": int(words.lstrip("~")), "exercises": parse_range(exercises),
+        }
+    return plan
+
+
+def load_b1_plan():
+    """Core track only — see the module docstring."""
+    path = ES / "guides" / "Parlour B1 Consolidated Unit List.md"
+    if not path.exists():
+        return {}
+    text = path.read_text(encoding="utf-8")
+    core_end = text.find("# Part II")
+    core_text = text[:core_end] if core_end != -1 else text
+    row = re.compile(
+        r'\*\*Lesson (\d+)\.(\d+): ([^\n*]+)\*\*  \n'
+        r'(?:Grammar|Focus): ([^\n]+?)  \n'
+        r'New words: (~?\d+)  \n'
+        r'Exercises: (\S+)\n')
+    plan = {}
+    for unit, lesson, title, grammar, words, exercises in row.findall(core_text):
+        part = "consolidation" if lesson == "6" else lesson.zfill(2)
+        plan[(unit.zfill(2), part)] = {
+            "title": title, "grammar": grammar,
+            "words": int(words.lstrip("~")), "exercises": parse_range(exercises),
+        }
+    return plan
+
+
+PLAN_LOADERS = {"a2": load_a2_plan, "b1": load_b1_plan}
+
+
+# --- reporting -----------------------------------------------------------------
+
+class Report:
+    def __init__(self, name):
+        self.name = name
+        self.failures = []
+        self.warnings = []
+        self.checked = 0
+
+    def rule(self, ok, label, detail=""):
+        self.checked += 1
+        if not ok:
+            self.failures.append(label + (f" — {detail}" if detail else ""))
+
+    def warn(self, label, detail=""):
+        self.warnings.append(label + (f" — {detail}" if detail else ""))
+
+
+# --- per-lesson audits -----------------------------------------------------------
+
+def audit_teaching_lesson(level, unit, part, plan_entry, story_ref):
+    key = f"{level}-{unit}-{part}"
+    r = Report(key)
+    lesson_path = ES / "lessons" / level / f"{key}.json"
+    lesson = read(lesson_path)
+
+    if plan_entry:
+        r.rule(lesson.get("title") == plan_entry["title"], "title matches the plan",
+               f'file "{lesson.get("title")}" vs plan "{plan_entry["title"]}"')
+    else:
+        r.warn("no plan entry for this lesson — title/word-count checks skipped")
+
+    # --- vocabulary ---------------------------------------------------------
+    vocab_section = section(lesson, "vocabulary")
+    r.rule(vocab_section is not None, "has a vocabulary section")
+    words = []
+    if vocab_section:
+        vp = ES / vocab_section["ref"]
+        if vp.exists():
+            words = read(vp).get("words", [])
+    if plan_entry:
+        r.rule(len(words) == plan_entry["words"], "vocabulary hits its new-word target",
+               f'{len(words)} words, target {plan_entry["words"]}')
+
+    # --- grammar / Latin-America focus screen -------------------------------
+    grammar_sections = [s for s in lesson.get("sections", []) if s["type"] == "grammar"]
+    r.rule(len(grammar_sections) >= 1, "lesson has a grammar/focus section")
+    for gs in grammar_sections:
+        gp = ES / gs["ref"]
+        if not gp.exists():
+            r.rule(False, "grammar file exists", gs["ref"])
+            continue
+        g = read(gp)
+        parts_ = g.get("sections", [])
+        prose = sum(len(p.get("content", "").split())
+                    for p in parts_ if p["type"] in ("text", "tip"))
+        r.rule(prose <= GRAMMAR_MAX_WORDS, f"prose within {GRAMMAR_MAX_WORDS} words",
+               f"{prose} words")
+        examples = sum(len(p.get("items", [])) for p in parts_ if p["type"] == "examples")
+        if examples:
+            lo, hi = GRAMMAR_EXAMPLES
+            r.rule(lo <= examples <= hi, f"{lo}-{hi} worked examples", f"{examples}")
+        if not any(p["type"] == "external-link" for p in parts_):
+            r.warn("no reference link", "may be intentional, e.g. a Latin America focus screen")
+
+    # --- exercises -----------------------------------------------------------
+    all_ex = load_exercises(lesson)
+    has_story = section(lesson, "story") is not None
+    block_titles = ["Practice"]
+    if has_story:
+        block_titles.append("Reading")
+    if HAS_LISTENING[level]:
+        block_titles.append("Listening")
+    block_titles += ["Dialogue", "Writing"]
+
+    used = []
+    for title in block_titles:
+        grp = section(lesson, "exercise-group", title)
+        r.rule(grp is not None, f"has a '{title}' exercise group")
+        if not grp:
+            continue
+        refs = grp.get("exerciseRefs", [])
+        used += refs
+        if title == "Practice":
+            kinds = {all_ex[i]["type"] for i in refs if i in all_ex}
+            min_types = MIN_PRACTICE_TYPES[level]
+            r.rule(len(kinds) >= min_types, f"practice spans {min_types}+ distinct types",
+                   f"{len(kinds)}: {sorted(kinds)}")
+        if title == "Reading":
+            tagged = [i for i in refs if i in all_ex and all_ex[i].get("teaches")]
+            r.rule(not tagged, "reading exercises carry no teaches tag", str(tagged))
+
+    if plan_entry:
+        lo, hi = plan_entry["exercises"]
+        total = len(used)
+        if lo <= total <= hi:
+            r.rule(True, f"exercise total within plan ({lo}-{hi})", str(total))
+        else:
+            r.warn(f"exercise total drifted from plan ({lo}-{hi})", str(total))
+    r.rule(len(used) == len(set(used)), "no exercise is used twice",
+           str([i for i in used if used.count(i) > 1]))
+
+    # --- goal / checklist / srs ----------------------------------------------
+    goals = (section(lesson, "goal") or {}).get("items", [])
+    checks = (section(lesson, "checklist") or {}).get("items", [])
+    r.rule(len(goals) == len(checks), "goals and checklist are one-to-one",
+           f"{len(goals)} goals vs {len(checks)} checks")
+    bad = [c for c in checks if not c.startswith(CHECKLIST_PREFIX)]
+    r.rule(not bad, f'every checklist item begins "{CHECKLIST_PREFIX}"', str(bad))
+    r.rule(section(lesson, "srs") is not None, "has an srs section")
+
+    # --- coverage: every new word appears in the unit's story and in an
+    #     exercise here. A lesson without its own story is still checked
+    #     against the unit's shared one. ------------------------------------
+    if story_ref:
+        sp = ES / story_ref
+        if sp.exists():
+            story = read(sp)
+            paras = [p["text"] for p in story.get("paragraphs", [])]
+            blob = norm(" ".join(paras))
+            missing, unsure = find_missing(words, blob)
+            r.rule(not missing, "every new word appears in the unit's story", str(missing))
+            if unsure:
+                r.warn("verbs not found literally in the story (check conjugated forms)",
+                       str(unsure))
+    elif words:
+        r.warn("unit has no story yet — word-in-story coverage not checked")
+
+    seen_by_learner = [{k: v for k, v in all_ex[i].items() if k not in ("id", "teaches")}
+                        for i in used if i in all_ex]
+    ex_blob = norm(json.dumps(seen_by_learner, ensure_ascii=False))
+    missing_ex, unsure_ex = find_missing(words, ex_blob)
+    r.rule(not missing_ex, "every new word appears in an exercise", str(missing_ex))
+    if unsure_ex:
+        r.warn("verbs not found literally in an exercise (check conjugated forms)",
+               str(unsure_ex))
+
+    return r
+
+
+def audit_consolidation(level, unit, plan_entry):
+    key = f"{level}-{unit}-consolidation"
+    r = Report(key)
+    lesson = read(ES / "lessons" / level / f"{key}.json")
+
+    if plan_entry:
+        r.rule(lesson.get("title") == plan_entry["title"], "title matches the plan",
+               f'file "{lesson.get("title")}" vs plan "{plan_entry["title"]}"')
+    else:
+        r.warn("no plan entry for this lesson — title/word-count checks skipped")
+
+    r.rule(section(lesson, "grammar") is None, "no grammar/focus screen",
+           "a consolidation teaches nothing new")
+    r.rule(section(lesson, "vocabulary") is None, "no vocabulary section",
+           "a consolidation introduces no words")
+
+    all_ex = load_exercises(lesson)
+    shape = CONSOLIDATION_SHAPE[level]
+    used = []
+
+    if shape == "single":
+        r.rule(section(lesson, "srs") is None, "no SRS step",
+               "there are no new words to offer; the block's words are in Decks")
+        grp = section(lesson, "exercise-group", "Review")
+        r.rule(grp is not None, "has a 'Review' exercise group")
+        if grp:
+            refs = grp.get("exerciseRefs", [])
+            used = refs
+            kinds = {all_ex[i]["type"] for i in refs if i in all_ex}
+            min_types = MIN_REVIEW_TYPES[level]
+            r.rule(len(kinds) >= min_types, f"review spans {min_types}+ distinct types",
+                   f"{len(kinds)}: {sorted(kinds)}")
+            missing_tag = [i for i in refs if i in all_ex and not all_ex[i].get("teaches")]
+            r.rule(not missing_tag, "every review exercise says what it tests",
+                   str(missing_tag))
+            points = set()
+            for i in refs:
+                points |= set(all_ex.get(i, {}).get("teaches", []))
+            min_points = MIN_REVIEW_POINTS[level]
+            r.rule(len(points) >= min_points, f"review ranges over {min_points}+ points",
+                   f"{len(points)}: {sorted(points)}")
+    else:
+        block_titles = ["Practice"] + (["Listening"] if HAS_LISTENING[level] else []) + \
+                       ["Dialogue", "Writing"]
+        for title in block_titles:
+            grp = section(lesson, "exercise-group", title)
+            r.rule(grp is not None, f"has a '{title}' exercise group")
+            if grp:
+                used += grp.get("exerciseRefs", [])
+
+    if plan_entry:
+        lo, hi = plan_entry["exercises"]
+        total = len(used)
+        if lo <= total <= hi:
+            r.rule(True, f"exercise total within plan ({lo}-{hi})", str(total))
+        else:
+            r.warn(f"exercise total drifted from plan ({lo}-{hi})", str(total))
+    r.rule(len(used) == len(set(used)), "no exercise is used twice",
+           str([i for i in used if used.count(i) > 1]))
+
+    goals = (section(lesson, "goal") or {}).get("items", [])
+    checks = (section(lesson, "checklist") or {}).get("items", [])
+    r.rule(len(goals) == len(checks), "goals and checklist are one-to-one",
+           f"{len(goals)} goals vs {len(checks)} checks")
+    bad = [c for c in checks if not c.startswith(CHECKLIST_PREFIX)]
+    r.rule(not bad, f'every checklist item begins "{CHECKLIST_PREFIX}"', str(bad))
+    return r
+
+
+def audit_unit(level, unit, parts, plan):
+    if not parts:
+        return []
+    story_ref = unit_story_ref(level, unit, parts)
+    reports = []
+    for part in parts:
+        plan_entry = plan.get((unit, part))
+        if part == "consolidation":
+            reports.append(audit_consolidation(level, unit, plan_entry))
+        else:
+            reports.append(audit_teaching_lesson(level, unit, part, plan_entry, story_ref))
+    if not any(p != "consolidation" and unit_story_ref(level, unit, [p]) for p in parts):
+        pass  # covered per-lesson by the "unit has no story yet" warning
+    return reports
+
+
+# --- teaching order --------------------------------------------------------------
+# Nothing may be asked for before it has been taught. Only walks units with a
+# purely numeric id, in ascending order — word-slug units (a1's thematic
+# ones, and every Latin America unit at B1) have no inherent sequence
+# recoverable from the filename alone, so they are left out of this pass
+# rather than guessed at.
+
 def teach_tokens(lesson, all_ex):
-    """Walk one lesson in order, yielding (label, introduced, required) so a
-    caller can tell what was on screen before each exercise."""
-    for section in lesson.get("sections", []):
-        kind = section["type"]
+    for s in lesson.get("sections", []):
+        kind = s["type"]
         if kind == "grammar":
-            path = ES / section["ref"]
+            path = ES / s["ref"]
             if not path.exists():
                 continue
             found = set()
@@ -141,541 +521,166 @@ def teach_tokens(lesson, all_ex):
                     found |= spanish_tokens(part.get("content", ""))
             yield None, found, None
         elif kind == "vocabulary":
-            path = ES / section["ref"]
+            path = ES / s["ref"]
             if path.exists():
                 found = set()
                 for word in read(path).get("words", []):
                     found |= spanish_tokens(searchable(word["lemma"]))
                 yield None, found, None
         elif kind == "story":
-            path = ES / section["ref"]
+            path = ES / s["ref"]
             if path.exists():
                 found = set()
                 for para in read(path).get("paragraphs", []):
                     found |= spanish_tokens(para["text"])
                 yield None, found, None
         elif kind == "exercise-group":
-            for eid in section.get("exerciseRefs", []):
+            for eid in s.get("exerciseRefs", []):
                 ex = all_ex.get(eid)
                 if not ex:
                     continue
                 required = set()
                 for text in exercise_spanish(ex):
                     required |= spanish_tokens(text)
-                yield f"{section.get('title', '?')} / {eid}", set(), required
+                yield f"{s.get('title', '?')} / {eid}", set(), required
 
 
-def matches(term, haystack):
-    if not term:
-        return False
-    if term in haystack:
-        return True
-    if " " in term:
-        return False
-    # Nouns and adjectives agree in gender and number, so the listed form
-    # ('chileno') rarely appears verbatim ('chilena', 'chilenas'). Compare
-    # stems instead, with a length floor so short stems cannot match by luck.
-    stem = re.sub(r"(es|os|as|s)$", "", term)
-    stem = re.sub(r"[oae]$", "", stem)
-    return len(stem) >= 4 and stem in haystack
+def accumulate_known(level):
+    """Every token taught anywhere in a level — grammar, vocabulary, story,
+    exercises, all units, all parts, order within the level not enforced.
+    Used to seed a later level's walk: A2 lesson 1 assumes the whole of A1
+    is already known, not an empty vocabulary."""
+    known = set()
+    units, _ = group_units(level)
+    for unit, parts in units.items():
+        for part in parts:
+            path = ES / "lessons" / level / f"{level}-{unit}-{part}.json"
+            if not path.exists():
+                continue
+            lesson = read(path)
+            all_ex = load_exercises(lesson)
+            for label, introduced, required in teach_tokens(lesson, all_ex):
+                known |= introduced
+                if label is not None:
+                    known |= required
+    return known
 
 
-def find_missing(words, haystack):
-    """Split into hard misses and ones we cannot judge.
-
-    Verbs are listed as infinitives but appear conjugated, and stem changes
-    ('querer' -> 'quiero') defeat stem matching. Resolving those needs the
-    morphology index in imports/dictionary, so rather than report a false
-    failure an unmatched verb is returned separately for a human to confirm."""
-    missing, unsure = [], []
-    for w in words:
-        if matches(searchable(w["lemma"]), haystack):
-            continue
-        (unsure if w.get("pos", "").startswith("verb") else missing).append(w["lemma"])
-    return missing, unsure
-
-
-def read(path):
-    return json.loads(path.read_text(encoding="utf-8"))
-
-
-KEY = re.compile(r"^(a1|a2|b1|b2|c1)-(\d{2})([a-z]?)$")
-
-
-def parse_key(key):
-    """'a1-03b' -> ('a1', 3, 'b'). An empty part means an unsplit lesson."""
-    m = KEY.match(key)
-    if not m:
-        raise ValueError(f"not a lesson key: {key}")
-    return m.group(1), int(m.group(2)), m.group(3)
-
-
-def lesson_keys(level="a1"):
-    """Every lesson file that exists, in teaching order. Globbed rather than
-    generated from a range, so parts appear without being listed anywhere."""
-    folder = ES / "lessons" / level
-    if not folder.exists():
+def check_teaching_order(level, requested_units):
+    numeric_units = sorted((u for u, parts in group_units(level)[0].items() if u.isdigit()),
+                            key=int)
+    if not numeric_units:
         return []
-    return sorted(p.stem for p in folder.glob(f"{level}-*.json") if KEY.match(p.stem))
+    limit = max((u for u in requested_units if u.isdigit()), key=int, default=numeric_units[-1])
+    walk = [u for u in numeric_units if int(u) <= int(limit)]
 
-
-def unit_parts(level, number):
-    """The part keys sharing this slot, or [] when the lesson is not split."""
-    return [k for k in lesson_keys(level)
-            if parse_key(k)[1] == number and parse_key(k)[2]]
-
-
-def story_ref(key):
-    """The story a lesson file points at, if any."""
-    path = ES / "lessons" / key.split("-")[0] / f"{key}.json"
-    if not path.exists():
-        return None
-    for section in read(path).get("sections", []):
-        if section["type"] == "story":
-            return section["ref"]
-    return None
-
-
-def load_master():
-    """The Overview table of guides/a1.md, which owns every lesson's title and
-    communicative goal. Only the first numbered table is read — the file has
-    others further down."""
-    path = ES / "guides" / "a1.md"
-    if not path.exists():
-        return {}
-
-    master, started = {}, False
-    for line in path.read_text(encoding="utf-8").splitlines():
-        # Keyed by the label in the first column — "3" for a whole lesson,
-        # "3a" for a part of a split one.
-        row = re.match(r"^\|\s*(\d{1,2}[a-z]?)\s*\|(.+)\|\s*$", line)
-        if row:
-            started = True
-            cells = [c.strip() for c in row.group(2).split("|")]
-            if len(cells) >= 3:
-                master.setdefault(row.group(1), {
-                    "title": cells[0], "goal": cells[1], "grammar": cells[2]
-                })
-        elif started and line.startswith("#"):
-            break
-    return master
-
-
-MASTER = load_master()
-
-
-class Report:
-    def __init__(self, name):
-        self.name = name
-        self.failures = []
-        self.warnings = []
-        self.checked = 0
-
-    def rule(self, ok, label, detail=""):
-        self.checked += 1
-        if not ok:
-            self.failures.append(f"{label}" + (f" — {detail}" if detail else ""))
-
-    def warn(self, label, detail=""):
-        self.warnings.append(f"{label}" + (f" — {detail}" if detail else ""))
-
-
-def audit_review(key, lesson, r):
-    """A consolidation lesson: no new words, no new grammar, and a story that
-    is read first rather than last. See a1-content-spec.md section 4c."""
-    sections = lesson.get("sections", [])
-
-    def section(t, title=None):
-        for s in sections:
-            if s["type"] == t and (title is None or s.get("title") == title):
-                return s
-        return None
-
-    # --- what a review must NOT have ------------------------------------
-    r.rule(not section("grammar"), "no grammar screen",
-           "a review teaches nothing new")
-    r.rule(not section("vocabulary"), "no vocabulary section",
-           "a review introduces no words")
-    r.rule(not section("srs"), "no SRS step",
-           "there are no new words to offer; the block's words are in Decks")
-
-    # --- story, read first ----------------------------------------------
-    story_section = section("story")
-    r.rule(bool(story_section), "has a story")
-    types = [s["type"] for s in sections]
-    if story_section and "exercise-group" in types:
-        r.rule(types.index("story") < types.index("exercise-group"),
-               "story comes before the exercises",
-               "in a review the story is the warm-up, not the payoff")
-    if story_section:
-        sp = ES / story_section["ref"]
-        if sp.exists():
-            paras = [p["text"] for p in read(sp).get("paragraphs", [])]
-            words = sum(len(p.split()) for p in paras)
-            lo, hi = STORY_WORDS
-            r.rule(lo <= words <= hi, f"story is {lo}-{hi} words", f"{words}")
-
-    # --- exercises --------------------------------------------------------
-    all_ex = {}
-    for s in sections:
-        if s["type"] != "exercise-group":
-            continue
-        ep = ES / s["ref"]
-        if ep.exists():
-            for e in read(ep).get("exercises", []):
-                all_ex[e["id"]] = e
-
-    used, points = [], set()
-    for title, count in REVIEW_SPLIT.items():
-        grp = section("exercise-group", title)
-        if not grp:
-            r.rule(False, f"has a '{title}' exercise group", "missing")
-            continue
-        refs = grp.get("exerciseRefs", [])
-        used += refs
-        r.rule(len(refs) == count, f"'{title}' has {count} exercises", f"{len(refs)}")
-
-        if title == "Recap":
-            kinds = {all_ex[i]["type"] for i in refs if i in all_ex}
-            r.rule(len(kinds) >= MIN_RECAP_TYPES,
-                   f"recap spans {MIN_RECAP_TYPES}+ distinct types",
-                   f"{len(kinds)}: {sorted(kinds)}")
-            missing_tag = [i for i in refs
-                           if i in all_ex and not all_ex[i].get("teaches")]
-            r.rule(not missing_tag, "every recap exercise says what it tests",
-                   str(missing_tag))
-            for i in refs:
-                points |= set(all_ex.get(i, {}).get("teaches", []))
-
-    r.rule(len(points) >= MIN_REVIEW_POINTS,
-           f"recap ranges over {MIN_REVIEW_POINTS}+ points",
-           f"{len(points)}: {sorted(points)}")
-
-    total = sum(REVIEW_SPLIT.values())
-    r.rule(len(used) == total, f"lesson uses {total} exercises", f"{len(used)}")
-    r.rule(len(used) == len(set(used)), "no exercise is used twice",
-           str([i for i in used if used.count(i) > 1]))
-
-    # --- goals and checklist ---------------------------------------------
-    goals = (section("goal") or {}).get("items", [])
-    checks = (section("checklist") or {}).get("items", [])
-    r.rule(len(checks) == CHECKLIST_ITEMS,
-           f"exactly {CHECKLIST_ITEMS} checklist items", f"{len(checks)}")
-    r.rule(len(goals) == len(checks), "goals and checklist are one-to-one",
-           f"{len(goals)} goals vs {len(checks)} checks")
-    bad = [c for c in checks if not c.startswith(CHECKLIST_PREFIX)]
-    r.rule(not bad, f'every checklist item begins "{CHECKLIST_PREFIX}"', str(bad))
-
-    return r
-
-
-def audit(key):
-    """key is like 'a1-01', or 'a1-03b' for one part of a split lesson."""
-    level, number, part = parse_key(key)
-    r = Report(key)
-
-    lesson_path = ES / "lessons" / level / f"{key}.json"
-    if not lesson_path.exists():
-        return None
-
-    if number in REVIEW_LESSONS:
-        row = MASTER.get(str(number))
-        lesson = read(lesson_path)
-        if row:
-            r.rule(lesson.get("title") == row["title"], "title matches guides/a1.md",
-                   f'file "{lesson.get("title")}" vs master "{row["title"]}"')
-        return audit_review(key, lesson, r)
-
-    lesson = read(lesson_path)
-    siblings = unit_parts(level, number) if part else []
-
-    # --- agrees with the master curriculum -------------------------------
-    # guides/a1.md owns title and goal. They drifted once, silently, because
-    # nothing compared them; this is what stops that happening again.
-    row = MASTER.get(f"{number}{part}")
-    if row:
-        r.rule(lesson.get("title") == row["title"], "title matches guides/a1.md",
-               f'file "{lesson.get("title")}" vs master "{row["title"]}"')
-        r.rule(lesson.get("goal") == row["goal"], "goal matches guides/a1.md",
-               f'file "{lesson.get("goal")}" vs master "{row["goal"]}"')
-        r.rule(lesson.get("grammar") == row["grammar"], "grammar matches guides/a1.md",
-               f'file "{lesson.get("grammar")}" vs master "{row["grammar"]}"')
-    else:
-        r.warn("no row in guides/a1.md for this lesson")
-
-    sections = lesson.get("sections", [])
-    if not sections:
-        r.rule(False, "lesson has sections", "sections is empty")
-        return r
-
-    def section(t, title=None):
-        for s in sections:
-            if s["type"] == t and (title is None or s.get("title") == title):
-                return s
-        return None
-
-    # --- vocabulary -------------------------------------------------------
-    vocab_section = section("vocabulary")
-    words = []
-    if vocab_section:
-        vp = ES / vocab_section["ref"]
-        if vp.exists():
-            words = read(vp).get("words", [])
-    target = NEW_WORDS.get(number)
-    if target and siblings:
-        # A split lesson shares one slot's word budget between its parts.
-        share = target // len(siblings)
-        r.rule(len(words) == share, "vocabulary hits its share of the target",
-               f"{len(words)} words, share {share} of {target}")
-    elif target:
-        r.rule(len(words) == target, "vocabulary hits its new-word target",
-               f"{len(words)} words, target {target}")
-
-    # --- grammar ----------------------------------------------------------
-    grammar_sections = [s for s in sections if s["type"] == "grammar"]
-    r.rule(bool(grammar_sections), "lesson has at least one grammar section")
-    for gs in grammar_sections:
-        gp = ES / gs["ref"]
-        if not gp.exists():
-            r.rule(False, "grammar file exists", gs["ref"])
-            continue
-        g = read(gp)
-        name = gp.stem
-        parts = g.get("sections", [])
-        prose = sum(len(p.get("content", "").split())
-                    for p in parts if p["type"] in ("text", "tip"))
-        r.rule(prose <= GRAMMAR_MAX_WORDS, f"{name}: prose within {GRAMMAR_MAX_WORDS} words",
-               f"{prose} words")
-        examples = sum(len(p.get("items", [])) for p in parts if p["type"] == "examples")
-        if examples:
-            lo, hi = GRAMMAR_EXAMPLES
-            r.rule(lo <= examples <= hi, f"{name}: {lo}-{hi} worked examples",
-                   f"{examples} examples")
-        # Not required: PLANNING.md asks for these third-party citations to
-        # come out, starting with lessons 1-3. A missing one is a choice, not
-        # a defect, so it's a warning rather than a failed rule.
-        if not any(p["type"] == "external-link" for p in parts):
-            r.warn(f"{name}: no reference link", "may be intentional — see PLANNING.md")
-
-    # --- exercises --------------------------------------------------------
-    all_ex = {}
-    for s in sections:
-        if s["type"] != "exercise-group":
-            continue
-        ep = ES / s["ref"]
-        if ep.exists():
-            for e in read(ep).get("exercises", []):
-                all_ex[e["id"]] = e
-
-    story_section = section("story")
-
-    # A part carries the short block; only the part that owns the unit's story
-    # also asks Reading questions about it.
-    if siblings:
-        split = dict(PART_SPLIT)
-        if story_section:
-            split["Reading"] = PART_READING
-        min_types = MIN_PART_PRACTICE_TYPES
-    else:
-        split = dict(EXERCISE_SPLIT)
-        min_types = MIN_PRACTICE_TYPES
-
-    total_expected = sum(split.values())
-    used = []
-    for title, count in split.items():
-        grp = section("exercise-group", title)
-        if not grp:
-            r.rule(False, f"has a '{title}' exercise group", "missing")
-            continue
-        refs = grp.get("exerciseRefs", [])
-        used += refs
-        r.rule(len(refs) == count, f"'{title}' has {count} exercises", f"{len(refs)}")
-        if title == "Practice":
-            types = {all_ex[i]["type"] for i in refs if i in all_ex}
-            r.rule(len(types) >= min_types,
-                   f"practice spans {min_types}+ distinct types",
-                   f"{len(types)}: {sorted(types)}")
-
-    r.rule(len(used) == total_expected, f"lesson uses {total_expected} exercises",
-           f"{len(used)}")
-    r.rule(len(used) == len(set(used)), "no exercise is used twice",
-           str([i for i in used if used.count(i) > 1]))
-
-    # --- goals and checklist ---------------------------------------------
-    goals = (section("goal") or {}).get("items", [])
-    checks = (section("checklist") or {}).get("items", [])
-    if siblings:
-        lo, hi = PART_CHECKLIST
-        r.rule(lo <= len(checks) <= hi, f"{lo}-{hi} checklist items", f"{len(checks)}")
-    else:
-        r.rule(len(checks) == CHECKLIST_ITEMS,
-               f"exactly {CHECKLIST_ITEMS} checklist items", f"{len(checks)}")
-    r.rule(len(goals) == len(checks), "goals and checklist are one-to-one",
-           f"{len(goals)} goals vs {len(checks)} checks")
-    bad = [c for c in checks if not c.startswith(CHECKLIST_PREFIX)]
-    r.rule(not bad, f'every checklist item begins "{CHECKLIST_PREFIX}"', str(bad))
-
-    # --- coverage: every new word in the story and in an exercise ---------
-    # A part without a story is still checked against the unit's story, which
-    # one of its siblings owns: the words are met in the same reading.
-    own_story = story_section["ref"] if story_section else None
-    unit_story = own_story or next(
-        (ref for k in siblings if k != key for ref in [story_ref(k)] if ref), None)
-
-    if unit_story:
-        sp = ES / unit_story
-        if sp.exists():
-            story = read(sp)
-            paras = [p["text"] for p in story.get("paragraphs", [])]
-            blob = norm(" ".join(paras))
-            missing, unsure = find_missing(words, blob)
-            r.rule(not missing, "every new word appears in the story", str(missing))
-            if unsure:
-                r.warn("verbs not found literally in the story (check conjugated forms)",
-                       str(unsure))
-            if own_story:
-                story_words = sum(len(p.split()) for p in paras)
-                lo, hi = STORY_WORDS
-                r.rule(lo <= story_words <= hi, f"story is {lo}-{hi} words",
-                       f"{story_words}")
-
-    # Ids and teaches slugs are metadata, not content the learner ever sees.
-    # Left in, they satisfy this rule by accident: 'la semana' counted as
-    # practised because an exercise was called a1-06-writing-semana.
-    seen_by_learner = [{k: v for k, v in all_ex[i].items()
-                        if k not in ("id", "teaches")}
-                       for i in used if i in all_ex]
-    ex_blob = norm(json.dumps(seen_by_learner, ensure_ascii=False))
-    missing_ex, unsure_ex = find_missing(words, ex_blob)
-    r.rule(not missing_ex, "every new word appears in an exercise", str(missing_ex))
-    if unsure_ex:
-        r.warn("verbs not found literally in an exercise (check conjugated forms)",
-               str(unsure_ex))
-
-    return r
-
-
-def check_teaching_order(keys):
-    """Nothing may be asked for before it has been taught.
-
-    Runs across lessons in order, because a word introduced in Lesson 1 is
-    fair game in Lesson 5. Within a lesson the order matters too: the practice
-    block sits before the vocabulary screen, so anything it tests has to have
-    appeared on a grammar screen first."""
     issues = []
     known = set()
-
-    # Always walk from Lesson 1, even when auditing a single lesson: 'tengo'
-    # is fair game in Lesson 7 because Lesson 5 taught it, and starting from
-    # an empty set reports half of a good lesson as untaught. Only the
-    # requested lessons are reported on.
-    requested = set(keys)
-    limit = max(requested)
-    walk = [k for k in sorted(set(lesson_keys("a1")) | requested) if k <= limit]
-
-    for key in walk:
-        level, number, _ = parse_key(key)
-        if number in REVIEW_LESSONS:
-            continue
-        lesson_path = ES / "lessons" / level / f"{key}.json"
-        if not lesson_path.exists():
-            continue
-        lesson = read(lesson_path)
-
-        all_ex = {}
-        for section in lesson.get("sections", []):
-            if section["type"] == "exercise-group":
-                path = ES / section["ref"]
-                if path.exists():
-                    for ex in read(path).get("exercises", []):
-                        all_ex[ex["id"]] = ex
-
-        for label, introduced, required in teach_tokens(lesson, all_ex):
-            if label is None:
-                known |= introduced
+    prior = LEVELS[:LEVELS.index(level)] if level in LEVELS else ()
+    for earlier in prior:
+        known |= accumulate_known(earlier)
+    units, _ = group_units(level)
+    for unit in walk:
+        for part in units[unit]:
+            if part == "consolidation":
                 continue
-            unseen = sorted(t for t in required
-                            if t not in known and not matches(t, " " + " ".join(known) + " "))
-            if unseen and key in requested:
-                issues.append(f"{key} {label} needs: {', '.join(unseen)}")
-            known |= required
-
+            key = f"{level}-{unit}-{part}"
+            path = ES / "lessons" / level / f"{key}.json"
+            if not path.exists():
+                continue
+            lesson = read(path)
+            all_ex = load_exercises(lesson)
+            for label, introduced, required in teach_tokens(lesson, all_ex):
+                if label is None:
+                    known |= introduced
+                    continue
+                unseen = sorted(t for t in required
+                                if t not in known and not matches(t, " " + " ".join(known) + " "))
+                if unseen and unit in requested_units:
+                    issues.append(f"{key} {label} needs: {', '.join(unseen)}")
+                known |= required
     return issues
 
 
-def check_units(keys):
-    """Rules that belong to a split lesson as a whole rather than to a part."""
-    issues = []
-    numbers = sorted({parse_key(k)[1] for k in keys if parse_key(k)[2]})
+# --- main ------------------------------------------------------------------------
 
-    for number in numbers:
-        parts = unit_parts("a1", number)
-        label = "/".join(p.split("-")[1] for p in parts)
-
-        with_story = [k for k in parts if story_ref(k)]
-        if len(with_story) != 1:
-            issues.append(f"a1-{label}: exactly one part carries the story — "
-                          f"{len(with_story)} do")
-
-        total = 0
-        for k in parts:
-            lesson = read(ES / "lessons" / "a1" / f"{k}.json")
-            for section in lesson.get("sections", []):
-                if section["type"] == "vocabulary":
-                    vp = ES / section["ref"]
-                    if vp.exists():
-                        total += len(read(vp).get("words", []))
-        target = NEW_WORDS.get(number)
-        if target and total != target:
-            issues.append(f"a1-{label}: parts teach {total} new words, "
-                          f"slot target {target}")
-
-    return issues
+def resolve_targets(args):
+    """Returns {level: set(unit) or None (meaning "all units")}."""
+    if not args:
+        return {lvl: None for lvl in LEVELS}
+    targets = {}
+    for arg in args:
+        if arg in LEVELS:
+            targets[arg] = None
+            continue
+        parsed = parse_key(arg) or (arg.split("-", 1) + [None] if "-" in arg else None)
+        # accept both "a1-01" (unit) and "a1-01-01" (single lesson, audited
+        # as its whole unit since coverage checks are unit-scoped)
+        m = re.match(r"^(a1|a2|b1|b2|c1)-(\d{2}[a-z]?|[a-z]+)", arg)
+        if not m:
+            print(f"Unrecognised target: {arg}", file=sys.stderr)
+            continue
+        level, unit = m.groups()
+        targets.setdefault(level, set())
+        if targets[level] is not None:
+            targets[level].add(unit)
+    return targets
 
 
 def main():
-    # Globbed, not generated from a range, so a lesson split into parts is
-    # picked up without being listed anywhere. Review lessons are included
-    # and reported as skipped.
-    keys = sys.argv[1:] or lesson_keys("a1")
+    targets = resolve_targets(sys.argv[1:])
 
     failed = 0
-    for key in keys:
-        r = audit(key)
-        if r is None:
+    all_order_issues = []
+    for level in LEVELS:
+        if level not in targets:
             continue
-        if r.failures:
-            failed += 1
-            print(f"\n{r.name}: {r.checked - len(r.failures)}/{r.checked} rules pass")
-            for f in r.failures:
-                print(f"  FAIL  {f}")
-        else:
-            print(f"{r.name}: all {r.checked} rules pass")
-        for w in r.warnings:
-            print(f"  warn  {w}")
+        units, legacy = group_units(level)
+        plan = PLAN_LOADERS[level]() if level in PLAN_LOADERS else {}
+        if level not in PLAN_LOADERS:
+            print(f"[{level}] no per-lesson plan document — title/word/exercise "
+                  f"checks skipped for every unit\n")
 
-    unit_issues = check_units(keys)
-    if unit_issues:
-        print("\nSplit lessons:")
-        for issue in unit_issues:
-            print(f"  FAIL  {issue}")
+        wanted_units = sorted(units) if targets[level] is None else sorted(targets[level] & set(units))
+        if targets[level] is not None:
+            missing = targets[level] - set(units)
+            for u in missing:
+                print(f"[{level}] no unit '{u}' found (looked for {level}-{u}-*.json)")
 
-    order_issues = check_teaching_order(keys)
-    if order_issues:
-        print("\nAsked for before it was taught:")
-        for issue in order_issues:
-            print(f"  FAIL  {issue}")
+        for unit in wanted_units:
+            parts = units[unit]
+            reports = audit_unit(level, unit, parts, plan)
+            for r in reports:
+                if r.failures:
+                    failed += 1
+                    print(f"\n{r.name}: {r.checked - len(r.failures)}/{r.checked} rules pass")
+                    for f in r.failures:
+                        print(f"  FAIL  {f}")
+                else:
+                    print(f"{r.name}: all {r.checked} rules pass")
+                for w in r.warnings:
+                    print(f"  warn  {w}")
+
+        if legacy:
+            print(f"\n[{level}] {len(legacy)} lesson file(s) in the old one-file-per-lesson "
+                  f"shape, not audited by this script — migrate to the unit/lesson-group "
+                  f"layout to get coverage: {', '.join(legacy)}")
+
+        order_issues = check_teaching_order(level, wanted_units)
+        if order_issues:
+            print(f"\n[{level}] Asked for before it was taught:")
+            for issue in order_issues:
+                print(f"  FAIL  {issue}")
+            all_order_issues += order_issues
 
     print()
-    if failed or order_issues or unit_issues:
+    if failed or all_order_issues:
         if failed:
             print(f"{failed} lesson(s) need work")
-        if unit_issues:
-            print(f"{len(unit_issues)} split-lesson rule(s) broken")
-        if order_issues:
-            print(f"{len(order_issues)} exercise(s) test untaught Spanish")
+        if all_order_issues:
+            print(f"{len(all_order_issues)} exercise(s) test untaught Spanish")
         return 1
-    print("All audited lessons satisfy the A1 content spec")
+    print("All audited lessons satisfy their content spec")
     return 0
 
 

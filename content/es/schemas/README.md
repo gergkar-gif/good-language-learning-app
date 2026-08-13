@@ -25,7 +25,7 @@ Two files in `content/es/` are **generated** and should never be edited by hand 
 
 ```bash
 python scripts/validate-content.py      # every file against its schema
-python scripts/audit-lesson.py          # lessons against the A1 content spec
+python scripts/audit-lesson.py          # lessons against their level's content spec
 python build-manifest.py                  # rebuilds indexes, reports broken refs
 python scripts/build_grammar_index.py     # rebuilds Workshop's Grammar Driller pool
 python scripts/build_translation_index.py # rebuilds Workshop's Translation Driller pool
@@ -45,8 +45,13 @@ with an `english` field automatically becomes drillable in the Translation
 Driller (and, through the same sentence pool, the Vocabulary Driller's
 Context mode) once `build_translation_index.py` is re-run.
 
-`a1-01` is the reference lesson: it passes all three, and its shape is what
-later lessons should copy.
+`a1-01-01` (Unit 1, Lesson 1) is a reasonable lesson-file shape to copy — a
+unit is six lesson files (`{level}-{unit}-01.json` … `-05.json` plus
+`-consolidation.json`), not one. `scripts/audit-lesson.py` discovers units
+from that id shape directly and checks each lesson against whichever
+per-lesson plan document exists for its level (`a2-lesson-guide.md`, the B1
+Consolidated Unit List) — see the script's own docstring for what's checked
+per level and what isn't yet.
 
 ## What the schemas cannot check
 
