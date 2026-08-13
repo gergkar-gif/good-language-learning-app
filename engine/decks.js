@@ -38,6 +38,7 @@ const Decks = (function () {
     let myDecks = [];          // custom, learner-owned decks
     let openDeck = null;       // deck id being viewed, or null for the index
     let draft = null;          // deck under construction/edit in the editor, or null
+    let activeSection = 'mine'; // 'mine' or 'parlour' — which top-level tab is showing
 
     // ----------------------------------------
     // DATA — Parlour Decks (read-only catalogue)
@@ -645,32 +646,20 @@ const Decks = (function () {
         `;
     }
 
-    // My Decks and Parlour Decks are each one collapsible group, same
-    // mechanism as the Lesson/Topic/Frequency groups nested inside Parlour
-    // Decks — a learner who has built up a dozen My Decks, on top of the
-    // course's 300-odd curated ones, would otherwise be scrolling past a
-    // wall of cards to reach anything.
+    // My Decks and Parlour Decks are tabs on one subnav — same lt-subnav
+    // component the Library uses for Parlour/Saved/My Texts — rather than
+    // two stacked lists, so a learner isn't scrolling past a wall of My
+    // Decks to reach the course's 300-odd curated ones, or vice versa.
     function myDecksSectionHtml() {
         const decks = listMyDecks();
         return `
-            <section class="dk-group dk-mine-group">
-                <div class="dk-mine-header-row">
-                    <button class="dk-group-header" data-group-toggle="my-decks" aria-expanded="true">
-                        <span>
-                            <span class="dk-group-title">My Decks</span>
-                            <span class="dk-group-count">${decks.length}</span>
-                        </span>
-                        <span class="dk-group-arrow" id="dk-group-arrow-my-decks" aria-hidden="true">▼</span>
-                    </button>
-                    <button class="dk-secondary dk-create-btn" data-create-deck="1">+ Create deck</button>
-                </div>
-                <div class="dk-group-body" id="dk-group-body-my-decks">
-                    <p class="dk-group-blurb">Your own collections. Add any word, from anywhere in Parlour.</p>
-                    ${decks.length
-                        ? `<div class="dk-grid">${decks.map(deckCard).join('')}</div>`
-                        : '<p class="dk-empty">No decks yet. Create one to start collecting words.</p>'}
-                </div>
-            </section>
+            <div class="lt-index-head">
+                <p class="dk-group-blurb">Your own collections. Add any word, from anywhere in Parlour.</p>
+                <button class="dk-secondary dk-create-btn" data-create-deck="1">+ Create deck</button>
+            </div>
+            ${decks.length
+                ? `<div class="dk-grid">${decks.map(deckCard).join('')}</div>`
+                : '<p class="dk-empty">No decks yet. Create one to start collecting words.</p>'}
         `;
     }
 
@@ -697,26 +686,17 @@ const Decks = (function () {
         }).join('');
 
         return `
-            <section class="dk-group">
-                <button class="dk-group-header" data-group-toggle="parlour-decks" aria-expanded="false">
-                    <span>
-                        <span class="dk-group-title">Parlour Decks</span>
-                        <span class="dk-group-count">${decks.length}</span>
-                    </span>
-                    <span class="dk-group-arrow" id="dk-group-arrow-parlour-decks" aria-hidden="true">▶</span>
-                </button>
-                <div class="dk-group-body hidden" id="dk-group-body-parlour-decks">
-                    <p class="dk-group-blurb">Curated by the course. Browse and review them, or add
-                        their words to a deck of your own.</p>
-                    ${groups || '<p class="dk-empty">No decks for this course yet.</p>'}
-                </div>
-            </section>
+            <p class="dk-group-blurb">Curated by the course. Browse and review them, or add
+                their words to a deck of your own.</p>
+            ${groups || '<p class="dk-empty">No decks for this course yet.</p>'}
         `;
     }
 
     function indexHtml() {
         const mine = myDeck();
         const mineStatus = statusOf(mine);
+        const myDeckCount = listMyDecks().length;
+        const parlourCount = (catalogue.decks || []).length;
 
         return `
             <div class="dk-top">
@@ -736,8 +716,13 @@ const Decks = (function () {
                     <button data-open-deck="mine" class="dk-secondary">Browse all my words</button>
                 </div>
             </div>
-            ${myDecksSectionHtml()}
-            ${parlourDecksSectionHtml()}
+            <nav class="lt-subnav" id="dk-subnav">
+                <button class="lt-subnav-btn${activeSection === 'mine' ? ' active' : ''}"
+                    data-dk-tab="mine">My Decks <span class="dk-group-count">${myDeckCount}</span></button>
+                <button class="lt-subnav-btn${activeSection === 'parlour' ? ' active' : ''}"
+                    data-dk-tab="parlour">Parlour Decks <span class="dk-group-count">${parlourCount}</span></button>
+            </nav>
+            ${activeSection === 'parlour' ? parlourDecksSectionHtml() : myDecksSectionHtml()}
         `;
     }
 
@@ -848,6 +833,9 @@ const Decks = (function () {
         });
         host.querySelectorAll('[data-create-deck]').forEach(el => {
             el.onclick = function () { openCreateDeck(); };
+        });
+        host.querySelectorAll('[data-dk-tab]').forEach(el => {
+            el.onclick = function () { activeSection = el.getAttribute('data-dk-tab'); render(); };
         });
         host.querySelectorAll('[data-edit-deck]').forEach(el => {
             el.onclick = function () { openEditDeck(el.getAttribute('data-edit-deck')); };

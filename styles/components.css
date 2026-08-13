@@ -1932,23 +1932,9 @@
 .dk-detail-desc { font-size: 14px; color: var(--text); margin: 4px 0 8px; }
 
 /* ----- My Decks vs Parlour Decks ----- */
-
-/* My Decks' header carries a second, non-toggling control (+ Create deck)
-   alongside the collapse button, so the border and spacing that every other
-   dk-group-header carries on its own move up to this shared row instead. */
-.dk-mine-header-row {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  border-bottom: 2px solid var(--border);
-  padding-bottom: 10px;
-}
-
-.dk-mine-header-row .dk-group-header {
-  flex: 1 1 auto;
-  border-bottom: 0;
-  padding: 0;
-}
+/* The tab bar itself is .lt-subnav/.lt-subnav-btn — the same component the
+   Library uses for Parlour/Saved/My Texts, so the two top-level tabs in the
+   app look and behave identically. */
 
 .dk-create-btn { padding: 8px 14px; font-size: 14px; flex: 0 0 auto; }
 
