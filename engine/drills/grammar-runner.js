@@ -78,11 +78,15 @@ const GrammarRunner = (function () {
             : '';
     }
 
+    // Next starts hidden — showing both buttons at once let a learner skip
+    // straight past an answer without ever seeing whether they were right.
+    // _resolve() (called by every renderer once it knows the result) swaps
+    // them, so the flow is always Check -> see the answer -> Next.
     function _actionsHtml() {
         return `
             <div class="gd-actions">
                 <button class="vbtn vbtn-primary" data-action="check">Check</button>
-                <button class="vbtn vbtn-secondary" data-action="next">Next</button>
+                <button class="vbtn vbtn-secondary hidden" data-action="next">Next</button>
             </div>
         `;
     }
@@ -90,6 +94,10 @@ const GrammarRunner = (function () {
     function _resolve(correct) {
         if (_solved) return;
         _solved = true;
+        const checkBtn = _container.querySelector('[data-action="check"]');
+        const nextBtn = _container.querySelector('[data-action="next"]');
+        if (checkBtn) checkBtn.classList.add('hidden');
+        if (nextBtn) nextBtn.classList.remove('hidden');
         if (_onResult) _onResult(correct);
     }
 
