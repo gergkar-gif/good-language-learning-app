@@ -440,6 +440,64 @@
     pointer-events: none;
 }
 
+/* ============================================
+   LISTENING DRILLER
+   ============================================
+   Audio is the primary information source (PARLOUR_LISTENING_SPEC.md §3),
+   so Play is the one prominent control on an otherwise quiet screen — the
+   answer controls (.lr-answer, reused .gd-* classes) stay hidden until it's
+   been pressed at least once. */
+
+.lr-audio {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.lr-play-btn {
+    padding: 16px 32px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    border-radius: var(--radius-pill, 999px);
+    cursor: pointer;
+}
+
+.lr-play-btn:hover {
+    background: var(--primary-dark);
+}
+
+.lr-answer {
+    margin-bottom: 8px;
+}
+
+.lr-answer.hidden {
+    display: none;
+}
+
+/* "reveal the transcript after the answer" (spec §3) — shown for every
+   exercise kind, even the choice types where no Spanish text appeared
+   anywhere before this point. */
+.lr-reveal {
+    background: var(--bg);
+    border-radius: var(--radius-sm);
+    padding: 12px 14px;
+    margin-bottom: 8px;
+}
+
+.lr-transcript {
+    font-size: 1.05rem;
+    color: var(--primary);
+    margin-bottom: 4px;
+}
+
+.lr-translation {
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+
 @media (min-width: 600px) {
     .wk-picker,
     .gd-settings,

@@ -38,6 +38,13 @@ const Workshop = (function () {
             title: 'Vocabulary Driller',
             sub: 'Meaning and context, drawn from every word taught.',
             containerId: 'vocabulary-driller-root'
+        },
+        {
+            id: 'listening',
+            icon: 'listening',
+            title: 'Listening Driller',
+            sub: 'Decode spoken Spanish, by ear.',
+            containerId: 'listening-driller-root'
         }
     ];
 
@@ -87,7 +94,8 @@ const Workshop = (function () {
         const DRILLER_MODULES = {
             grammar: typeof GrammarDriller !== 'undefined' ? GrammarDriller : null,
             translation: typeof TranslationDriller !== 'undefined' ? TranslationDriller : null,
-            vocabulary: typeof VocabularyDriller !== 'undefined' ? VocabularyDriller : null
+            vocabulary: typeof VocabularyDriller !== 'undefined' ? VocabularyDriller : null,
+            listening: typeof ListeningDriller !== 'undefined' ? ListeningDriller : null
         };
 
         if (driller.id === 'verbs' && typeof Verbs !== 'undefined') {

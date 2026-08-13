@@ -27,9 +27,14 @@ const TranslationRunner = (function () {
         return d.innerHTML;
     }
 
+    // Next stays hidden until the learner has self-rated, not merely once
+    // Check is pressed — Check only reveals the model translation, Got
+    // it/Not quite is what actually resolves the exercise.
     function _resolve(correct) {
         if (_solved) return;
         _solved = true;
+        const nextBtn = _container.querySelector('[data-action="next"]');
+        if (nextBtn) nextBtn.classList.remove('hidden');
         if (_onResult) _onResult(correct);
     }
 
@@ -46,7 +51,7 @@ const TranslationRunner = (function () {
                 <button class="vbtn vbtn-secondary" data-action="not-quite">✗ Not quite</button>
             </div>
         `;
-        _container.querySelector('[data-action="check"]').disabled = true;
+        _container.querySelector('[data-action="check"]').classList.add('hidden');
 
         _container.querySelector('[data-action="got-it"]').addEventListener('click', () => {
             _container.querySelector('.td-self-rate').classList.add('td-rated');
@@ -79,7 +84,7 @@ const TranslationRunner = (function () {
             <div class="td-model-wrap"></div>
             <div class="gd-actions">
                 <button class="vbtn vbtn-primary" data-action="check">Check</button>
-                <button class="vbtn vbtn-secondary" data-action="next">Next</button>
+                <button class="vbtn vbtn-secondary hidden" data-action="next">Next</button>
             </div>
         `;
 
