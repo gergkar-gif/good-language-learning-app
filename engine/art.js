@@ -109,6 +109,36 @@ const Art = (function () {
             <rect class="ink-line" x="176" y="18" width="72" height="68"/>
             <path class="ink-solid" d="M176 18 140 30v62l36-6Z"/>
             <circle class="accent-solid" cx="168" cy="60" r="4"/>
+        `,
+
+        // Level identities — the same point/line/angle/plane sequence as
+        // LEVEL_ICONS in engine/curriculum.js, developed at hero scale. See
+        // that file's comment for why the five are one progression rather
+        // than five unrelated pictograms. No accent: levels are a sequence,
+        // not a category, so only form differs between them, never colour.
+        levelA1: `
+            <line class="ink-hair" x1="20" y1="86" x2="300" y2="86"/>
+            <circle class="ink-line" cx="160" cy="46" r="30"/>
+            <circle class="ink-solid" cx="160" cy="46" r="7"/>
+        `,
+        levelA2: `
+            <line class="ink-hair" x1="20" y1="86" x2="300" y2="86"/>
+            <line class="ink-rule" x1="60" y1="78" x2="260" y2="26"/>
+            <circle class="ink-solid" cx="260" cy="26" r="7"/>
+        `,
+        levelB1: `
+            <line class="ink-hair" x1="20" y1="86" x2="300" y2="86"/>
+            <path class="ink-rule" d="M70 78 170 26 270 78"/>
+            <circle class="ink-solid" cx="170" cy="26" r="7"/>
+        `,
+        levelB2: `
+            <line class="ink-hair" x1="20" y1="86" x2="300" y2="86"/>
+            <path class="ink-line" d="M160 18 226 86H94Z"/>
+        `,
+        levelC1: `
+            <line class="ink-hair" x1="20" y1="86" x2="300" y2="86"/>
+            <path class="ink-line" d="M148 18 208 86H88Z"/>
+            <circle class="ink-line" cx="196" cy="52" r="34"/>
         `
     };
 

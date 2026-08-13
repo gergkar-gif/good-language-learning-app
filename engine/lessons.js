@@ -221,7 +221,9 @@ async function startLesson(lessonId) {
     document.getElementById('lesson-screen').classList.remove('hidden');
 
     document.getElementById('lesson-title').textContent = currentLesson.title;
-    document.getElementById('lesson-subtitle').textContent = currentLesson.level;
+    const subtitle = document.getElementById('lesson-subtitle');
+    const levelMark = (typeof levelIcon === 'function') ? levelIcon(currentLesson.level, 'level-icon--sm') : '';
+    subtitle.innerHTML = levelMark + '<span>' + UI.escape(currentLesson.level) + '</span>';
 
     renderStep();
 }

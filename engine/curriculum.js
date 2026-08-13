@@ -8,14 +8,26 @@
 // straight into that lesson, since there is nothing to browse first — most
 // of A1 is still one lesson per unit while the rest gets split.
 
-// Line icons rather than emoji: they take the level's colour, so the icon,
-// the spine and the progress bar all read as one object.
+// Abstract, not pictograms: no sprout, no speech bubble, no compass, no
+// mountain, no star. Five levels as one geometric sequence instead — point,
+// line, angle, plane, and plane-with-circle — echoing Kandinsky's own
+// "Point and Line to Plane". Nothing here draws a *picture* of anything;
+// each level is just further along the same vocabulary the one before it
+// used, which is what "the levels are a sequence" (below) already asked for.
+// They take the level's colour, so the icon, the spine and the progress bar
+// all read as one object.
 const LEVEL_ICONS = {
-    A1: '<path d="M12 20v-7m0 0c0-3-2-5-5-5H4c0 3 2 5 5 5h3Zm0 0c0-3.3 2.7-6 6-6h2c0 3.3-2.7 6-6 6h-2Z"/>',
-    A2: '<path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v7a2.5 2.5 0 0 1-2.5 2.5H9l-5 4V6.5Z"/>',
-    B1: '<circle cx="12" cy="12" r="8.5"/><path d="m15 9-2 4.5L8.5 15l2-4.5L15 9Z"/>',
-    B2: '<path d="M3 18.5 9 8l4 6.5M11 18.5 15.5 10l5.5 8.5H3"/>',
-    C1: '<path d="m12 3.5 2.6 5.6 6 .8-4.4 4.2 1.1 6.1L12 17.3l-5.3 2.9 1.1-6.1L3.4 9.9l6-.8L12 3.5Z"/>'
+    // A1 — the point. A ring around a single dot: presence, nothing moving yet.
+    A1: '<circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="2" fill="currentColor" stroke="none"/>',
+    // A2 — the line. The point sets off in a direction.
+    A2: '<line x1="5" y1="18" x2="17" y2="7"/><circle cx="17" cy="7" r="2.2" fill="currentColor" stroke="none"/>',
+    // B1 — the angle. The line bends: a direction is chosen.
+    B1: '<path d="M6 18 12 7 18 18"/><circle cx="12" cy="7" r="2" fill="currentColor" stroke="none"/>',
+    // B2 — the plane. The angle closes into a shape and stands on its own.
+    B2: '<path d="M12 5 19 18 5 18Z"/>',
+    // C1 — synthesis. The plane overlapped by a circle: point, line and
+    // plane combined into one composition.
+    C1: '<path d="M9 4 17 19 3 19Z"/><circle cx="16" cy="13" r="6"/>'
 };
 
 const LEVEL_ORDER = ['A1', 'A2', 'B1', 'B2', 'C1'];
@@ -24,9 +36,10 @@ const LEVEL_ORDER = ['A1', 'A2', 'B1', 'B2', 'C1'];
 let openLevel = null;
 let openUnit = null;
 
-function levelIcon(level) {
-    return '<svg class="level-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" ' +
-        'stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+function levelIcon(level, extraClass) {
+    return '<svg class="level-icon' + (extraClass ? ' ' + extraClass : '') + '" viewBox="0 0 24 24" ' +
+        'fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" ' +
+        'stroke-linejoin="round" aria-hidden="true">' +
         (LEVEL_ICONS[level] || LEVEL_ICONS.A1) + '</svg>';
 }
 
@@ -136,6 +149,7 @@ function unitListHtml(level) {
             <button class="level-card unit-card" data-open-unit="${UI.escape(unit.id)}">
                 <span class="level-card-spine"></span>
                 <span class="unit-card-num" aria-hidden="true">${UI.escape(unit.label)}</span>
+                ${levelIcon(level, 'level-icon--sm')}
                 <span class="level-card-body">
                     <span class="level-card-title">${UI.escape(unit.title)}</span>
                     <span class="level-card-meter">
@@ -170,6 +184,7 @@ function unitListHtml(level) {
     return `
         <div class="unit-list-view" data-level="${level}">
             <button class="level-back" data-close-level="1">← All levels</button>
+            <div class="level-hero">${(typeof Art !== 'undefined') ? Art.svg('level' + level, 'level-hero-art') : ''}</div>
             ${units.length
                 ? `<div class="level-list">${cards}</div>${testRow}`
                 : '<p class="text-muted level-empty">No units at this level yet.</p>'}
@@ -215,6 +230,7 @@ function unitDetailHtml(level, unitId) {
 
             <header class="level-detail-head">
                 <span class="unit-card-num unit-detail-num" aria-hidden="true">${UI.escape(unit.label)}</span>
+                ${levelIcon(level)}
                 <span class="level-detail-titles">
                     <span class="level-card-title">${UI.escape(unit.title)}</span>
                     <span class="level-card-sub">${level}</span>

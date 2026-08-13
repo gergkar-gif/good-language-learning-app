@@ -590,6 +590,17 @@
    LESSON RENDERER COMPONENTS
 ============================================ */
 
+/* The level's own mark, carried into the lesson itself — the one place the
+   geometric language needs to persist across every step, not just the
+   level/unit screens on the way in. */
+#lesson-subtitle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
 /* A thin line with an orange segment marking how far in the learner is —
    not a thick filled bar. See parlour_visual_overhaul_spec.md section 19. */
 .lsn-progress {
