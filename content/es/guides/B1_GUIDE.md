@@ -572,7 +572,26 @@ Use:
 
 Do not use **vosotros** as the normal form in the Latin America course.
 
-The Core course can introduce or recognise other varieties where appropriate.
+## Core Spanish variant
+
+A1 and A2 never taught **vosotros** — every existing lesson, exercise and
+story uses **tú** and **ustedes** only. Core B1's own authored material
+(grammar examples, exercises, vocabulary, freshly written dialogue) follows
+that same convention, for the same reason the Latin America track avoids
+vosotros: testing a form nobody was ever taught breaks the "nothing is
+asked for before it is taught" rule the whole course depends on.
+
+This only bites where it wasn't obvious before: Core's adapted classics are
+Peninsular Spanish, and some of them (Cervantes, in particular) would
+naturally carry vosotros in their original dialogue. Where an adapted
+extract's *source* dialogue authentically uses it, it may appear in the
+**story text only**, as passive exposure — a learner reading, not
+producing. It must never be the subject of an exercise (no fill-blank,
+multiple-choice or dialogue-complete built around a vosotros form), and a
+unit should not lean on it structurally. When adapting, normalising a
+minor or ambiguous case to tú/ustedes is the safer default; only keep
+vosotros where the original genuinely needs a group of listeners addressed
+and normalising it would flatten the scene.
 
 ---
 

@@ -85,6 +85,22 @@ the level and the track's `{unit}` token from §1a:
 | Exercise id | `b1-{unit}-{NN}.exNN` | `b1-01-01.ex01` | `b1-precolombina-01.ex01` |
 | Grammar | `grammar.b1.{unit}.{NN}.{topic}` | `grammar.b1.01.01.preterito-indefinido` | `grammar.b1.precolombina.01.geografia` |
 
+### 1c. What a unit may assume is already known
+
+Core Unit *N* may assume everything taught by Core Units 1 through *N*−1
+(per their rows in the Consolidated Unit List) plus all of A1 and A2 — and
+nothing from Unit *N*+1 onward. This matters more than it looks: Unit 2,
+"Experiences & Memories" (imperfecto for memories, indefinido for
+experiences, pluscuamperfecto, connectors), covers almost the same
+grammatical ground as Unit 1, "Telling Stories" (indefinido, imperfecto vs
+indefinido, pluscuamperfecto, connectors). That overlap is fine — B1
+consolidates narrative tenses across several units before moving on — but
+it means a unit's own identity has to come from its vocabulary and its
+Latin America counterpart's content, not from a grammar point no earlier
+unit has already claimed. Don't write Unit 2 as Unit 1 with nouns swapped,
+and don't reach forward and rely on a grammar point a later unit is
+supposed to introduce first.
+
 ---
 
 ## 2. Section order (per lesson)
@@ -173,6 +189,24 @@ not need to be re-taught in a Latin America unit to be used by it, but a
 term specific to the historical content (*régimen*, *dictadura*,
 *desaparecido*) is new vocabulary for that Latin America lesson regardless
 of how many Core units come before or after it.
+
+### 4a. Check against what the course has already taught
+
+Before choosing a unit's 16 words, check
+`content/es/decks/decks.json` — its top-level `words` object is every
+lemma taught anywhere in the course so far (A1, A2, and every already-built
+B1 unit), generated straight from the vocabulary files by
+`build-manifest.py`. It exists for the Decks tab, but it is also the
+easiest way to answer "has this word already been taught?" without fetching
+every vocabulary file individually.
+
+This isn't a hypothetical: Unit 1's Lesson 5 already taught *recuerdo*
+("memory"). Unit 2, "Experiences & Memories," would reach for that exact
+word by instinct. Reusing an already-taught word isn't wrong — the course
+wants recycling — but it must be a **choice**, not an accident: a word
+already in `decks.json` doesn't count toward the unit's 16 new words, and
+doesn't need its own vocabulary-file entry, matching-pair, or fresh
+introduction. Only count and introduce words that are genuinely new.
 
 ---
 
@@ -273,6 +307,17 @@ correct answer is unrecoverable from context. This was missed across
 `a2-17-01` through `a2-17-consolidation` and only caught when a learner hit
 it in the Grammar Driller; check for it explicitly at B1's volume rather
 than relying on a later audit to catch it again.
+
+**`teaches` slugs must match across units, not just be internally
+consistent within one file.** `generated/indexes/grammar-index.json` (built
+by `scripts/build_grammar_index.py`) groups every exercise in the course by
+its `teaches` slug to build Workshop's Grammar Driller pool — a grammar
+point that recurs across units only pools together if every occurrence
+uses the exact same slug. Before inventing a new slug, check that index for
+one that already means the same thing (Unit 1 already uses
+`preterito-indefinido`, `pluscuamperfecto`, `narrative-connectors`, and
+others — reuse them rather than writing a near-duplicate like
+`pluscuamperfecto-narrativo`).
 
 ### Block split, per lesson
 
