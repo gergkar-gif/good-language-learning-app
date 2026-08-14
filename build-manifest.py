@@ -252,6 +252,10 @@ UNIT_TABLES = {
          ["b1-precolombina-01", "b1-precolombina-02", "b1-precolombina-03",
           "b1-precolombina-04", "b1-precolombina-05", "b1-precolombina-consolidation"],
          "latam"),
+        ("Indigenous Civilizations",
+         ["b1-civilizaciones-01", "b1-civilizaciones-02", "b1-civilizaciones-03",
+          "b1-civilizaciones-04", "b1-civilizaciones-05", "b1-civilizaciones-consolidation"],
+         "latam"),
     ],
 }
 
