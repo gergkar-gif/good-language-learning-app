@@ -192,6 +192,70 @@ One file per teaching lesson (lessons 01–05; consolidation has none).
 
 ---
 
+## 5a. Register floor: hitting the target isn't enough
+
+Unit 1's first draft passed every structural rule in this document — right
+word counts, right section order, right exercise-block split — and still
+read as A2, sometimes A1, because nothing here said how *complex* a sentence
+had to be, only what grammar point or topic it had to touch. That gap is
+now closed.
+
+**Isolated grammar drills are exempt.** A `fill-blank` or `sentence-builder`
+in the Practice block that isolates one clause to test one form
+(`"Ayer __ algo inesperado. (ocurrir)"`) is correct pedagogy, not a defect —
+narrowing to one thing is the point of a drill.
+
+**Everything that models how the language is actually used is not exempt.**
+That means the Grammar/Focus screen's `examples`, the story, every
+`Dialogue`-block exercise, `structured-writing` answers, and Consolidation's
+`Review` block. In each of these, **at least half the Spanish must combine
+two clauses** — a connector (*mientras, aunque, ya que, sin embargo, porque,
+cuando, lo que*), a relative clause, or a comparison — not a run of isolated
+simple declaratives. A Focus screen's four examples should not read like
+four vocabulary flashcards stitched into sentences.
+
+This is exactly what went wrong in Latin America Unit 1's Focus screens.
+Concretely, from `b1-precolombina-01-geography-and-historical-context-gr.json`:
+
+> ✗ *"La selva ofrecía recursos diversos."* — subject, verb, object. Nothing
+> a learner couldn't produce at A2.
+>
+> ✓ *"La selva, que cubría gran parte del territorio, ofrecía recursos que
+> las comunidades aprovechaban de formas distintas."* — same content, two
+> relative clauses, and it now actually needs B1 syntax to parse.
+
+And from the exercise file, where the dialogue-complete block used the
+identical two-line template in every lesson without ever supplying a reason:
+
+> ✗ *"¿Qué sabes sobre este tema?" → [fact] → "¿Por qué?" → [same fact
+> repeated]* — the "why" question goes unanswered.
+>
+> ✓ *"¿Por qué es importante este período?" → "Porque explica cómo se
+> formaron las sociedades que los europeos encontraron después."* — a real
+> causal connector, doing real work.
+
+Three more patterns from the same draft to specifically avoid, because each
+one technically satisfies its exercise type's schema while testing nothing:
+
+- **Multiple-choice that asks the learner to recognise a sentence they were
+  just shown** (`"¿Cuál afirmación corresponde al tema «geography»?"`, with
+  the correct option being the example sentence verbatim) is not a
+  comprehension question. Write one that requires understanding the content,
+  not matching strings.
+- **`sentence-order` items need an actual sequence** — temporal, causal, or
+  logical — that a learner can reason through. Three unrelated facts in
+  arbitrary order (*"La cordillera atravesaba grandes territorios." / "Las
+  comunidades se adaptaban a su entorno." / "Existían diferencias
+  regionales."*) has no correct answer beyond the one the file happens to
+  declare.
+- **`dialogue-complete` wrong options must be plausible near-misses in the
+  same register**, not absurd non-sequiturs (*"No lo sé mañana."*, *"Mañana
+  había ocurrido."* — the latter isn't even grammatical). A wrong option a
+  learner could imagine a real speaker saying is what makes the right one
+  worth choosing.
+
+---
+
 ## 6. Exercises
 
 Nine exercise types render in a lesson today: `matching`,
@@ -310,3 +374,60 @@ on it at volume:
   read as "unseen" even when the infinitive was taught, because the stem
   doesn't match. Treat its output as a worth-a-look list, not a hard
   contract, until that's tightened.
+
+---
+
+## 9. Known generation pitfalls
+
+Unit 1's first draft failed `validate-content.py` on 27 of 46 files and
+needed a second full fix pass after that — every item below is a bug that
+actually shipped, not a hypothetical. A generator that avoids all eleven
+gets much closer to a clean pass on the first try.
+
+1. **Every lesson file needs a top-level `"level": "B1"` field.** The
+   schema requires it; the first draft omitted it from all twelve lesson
+   files in the unit.
+2. **`recycle` is `{"type": "recycle"}`, optionally with `title`/`count` —
+   never an `items` field.** Present (and wrong) in every lesson file.
+3. **`srs` is `{"type": "srs"}`, optionally with `title` — never a `ref`
+   field.** Present (and wrong) in every teaching lesson.
+4. **Grammar files are `{"id", "title", "sections"}` only — no top-level
+   `"lesson"` field.** Present (and wrong) in every grammar file, both
+   tracks.
+5. **`external-link` parts take `type`, `topic`, `url`, and optionally
+   `site` — never `title`.** Present (and wrong) in every Core grammar
+   file.
+6. **`dialogue-complete`'s `options` array must contain only plain
+   strings.** A `[word, translation, pos]` vocabulary triple was pasted
+   into `options[0]` in five separate exercise files instead of a real
+   alternative line of dialogue.
+7. **`fill-blank` sentences place the blank *inside* the sentence, where
+   the target word belongs — never appended after an already-complete
+   sentence.** `"La cordillera atravesaba grandes territorios __.
+   (cordillera)"` is nonsense; it has to be `"La __ atravesaba grandes
+   territorios. (cordillera)"`. This exact pattern shipped in ten
+   exercises across the Latin America track (`ex03` and `ex08` in every
+   lesson).
+8. **When a lesson's exercise file has a block inserted partway through**
+   (Reading, only in lesson `.05`, sitting between Practice and
+   Listening), **every exercise id after that block must be renumbered
+   sequentially.** Reusing an earlier id (a second `ex10`/`ex11`/`ex12`
+   after the real Reading block's own `ex10`–`ex12`) silently shadows the
+   real exercise when the file is read as an id-keyed map — both tracks'
+   lesson-`.05` files had exactly this bug, and it also produced a false
+   failure on rule #10 below, since the shadowing entry happened to carry
+   a `teaches` tag the real Reading exercise didn't.
+9. **No exercise's full content (every field except `id`) may be
+   identical to another exercise's in the same unit.** Two variants of
+   this shipped: one exercise reused verbatim across all five (or all
+   four) teaching lessons of a unit with only its `id` changed, and pairs
+   of adjacent lessons sharing one exercise's exact sentence.
+10. **Reading-block exercises carry no `teaches` tag** (§6) — but per
+    pitfall #8, this can *look* satisfied while actually being violated by
+    a shadowed duplicate id. Check the ids are unique before checking the
+    tags.
+11. **Run `python scripts/validate-content.py` and
+    `python scripts/audit-lesson.py b1-{unit}` yourself and paste the
+    literal terminal output alongside the files.** Every one of the ten
+    pitfalls above was claimed "validated" in the first submission, and
+    none of it had actually been checked.
