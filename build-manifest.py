@@ -361,6 +361,30 @@ JUNK_GLOSS = re.compile(
     r"|apocopic|misspelling|eye dialect|initialism|acronym)", re.I)
 
 
+def _strip_balanced(text, open_ch, close_ch):
+    r"""Remove every top-level open_ch...close_ch span, including anything
+    nested inside it.
+
+    A naive `re.sub(r"\([^)]*\)", ...)` only eats up to the *first* close_ch
+    it finds — on a gloss with real nesting ("dog (# ... (sometimes ...),
+    domesticated ...)") that first close_ch belongs to the *inner* paren, so
+    the regex leaves the rest of the outer aside dangling as stray text.
+    Tracking depth handles nesting properly; unbalanced input (Wiktionary
+    template leakage sometimes ships mismatched brackets) degrades gracefully
+    rather than throwing, since a stray close_ch at depth 0 is just dropped."""
+    out = []
+    depth = 0
+    for ch in text:
+        if ch == open_ch:
+            depth += 1
+        elif ch == close_ch:
+            if depth > 0:
+                depth -= 1
+        elif depth == 0:
+            out.append(ch)
+    return "".join(out)
+
+
 def short_gloss(text):
     """A flashcard wants a translation, not a dictionary entry.
 
@@ -368,12 +392,18 @@ def short_gloss(text):
     subjectively and after prepositions)", "comparative of malo: worse" — and
     a card carrying that is harder to read than the Spanish it glosses."""
     first = str(text or "").split(";")[0]
-    first = re.sub(r"\([^)]*\)", " ", first)              # asides, not meaning
+    first = _strip_balanced(first, "(", ")")               # asides, not meaning
+    first = _strip_balanced(first, "[", "]")               # stray wiki-link/template leakage
     first = re.sub(r"^(comparative|superlative|diminutive|augmentative)"
                    r"\s+of\s+[^:]*:\s*", "", first, flags=re.I)
     first = re.sub(r"\s+", " ", first).strip(" ,")
     if len(first) > 56:
-        first = first[:53].rstrip(" ,") + "…"
+        # Cut at the last synonym boundary before the limit rather than
+        # mid-word — a card reading "...of high…" is worse than one that
+        # just drops the last synonym in the list cleanly.
+        truncated = first[:56]
+        cut = truncated.rfind(", ")
+        first = (truncated[:cut] if cut > 20 else truncated[:53]).rstrip(" ,") + "…"
     return first
 
 
