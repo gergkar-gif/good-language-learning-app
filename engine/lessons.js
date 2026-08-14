@@ -496,9 +496,10 @@ const stepRenderers = {
             <p class="lsn-question">${esc(step.question)}</p>
             <div class="lsn-options">
                 ${pick.options.map((option, i) => `
-                    <button class="lsn-option" onclick="lessonChoose(this, ${i})">${esc(option)}</button>
+                    <button class="lsn-option" onclick="lessonSelectOption(this, ${i})">${esc(option)}</button>
                 `).join('')}
             </div>
+            <button class="lsn-check" onclick="lessonCheckChoice()">Check</button>
             ${feedbackHtml()}
         `;
     },
@@ -519,9 +520,10 @@ const stepRenderers = {
             <p class="lsn-question">Choose the missing line:</p>
             <div class="lsn-options">
                 ${pick.options.map((option, i) => `
-                    <button class="lsn-option" onclick="lessonChoose(this, ${i})">${esc(option)}</button>
+                    <button class="lsn-option" onclick="lessonSelectOption(this, ${i})">${esc(option)}</button>
                 `).join('')}
             </div>
+            <button class="lsn-check" onclick="lessonCheckChoice()">Check</button>
             ${feedbackHtml()}
         `;
     },
@@ -542,9 +544,10 @@ const stepRenderers = {
             </div>
             <div class="lsn-options">
                 ${pick.options.map((option, i) => `
-                    <button class="lsn-option" onclick="lessonChoose(this, ${i})">${esc(option)}</button>
+                    <button class="lsn-option" onclick="lessonSelectOption(this, ${i})">${esc(option)}</button>
                 `).join('')}
             </div>
+            <button class="lsn-check" onclick="lessonCheckChoice()">Check</button>
             ${feedbackHtml()}
         `;
     },
@@ -787,19 +790,34 @@ function finishLesson() {
 // ============================================
 // INTERACTION HANDLERS
 // ============================================
-function lessonChoose(btn, index) {
+// Picking an option only marks it selected — grading happens on Check,
+// same as every other exercise type (fill-blank, sentence-builder, etc.).
+// This used to grade instantly on click, which let a learner lock in an
+// answer before ever meaning to commit to it.
+function lessonSelectOption(btn, index) {
     if (stepState.solved) return;
+    btn.parentElement.querySelectorAll('.lsn-option').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+    stepState.picked = index;
+}
 
-    const group = btn.parentElement.querySelectorAll('.lsn-option');
-    group.forEach(b => b.classList.remove('correct', 'wrong'));
+function lessonCheckChoice() {
+    if (stepState.solved) return;
+    if (stepState.picked === undefined || stepState.picked === null) {
+        setFeedback(false, 'Pick an answer first.');
+        return;
+    }
 
-    if (index === stepState.correct) {
-        btn.classList.add('correct');
+    const group = document.querySelectorAll('#lesson-content .lsn-option');
+    const btn = group[stepState.picked];
+
+    if (stepState.picked === stepState.correct) {
+        if (btn) btn.classList.add('correct');
         solveStep('✓ Correct!');
         return;
     }
 
-    btn.classList.add('wrong');
+    if (btn) btn.classList.add('wrong');
     if (failStep('✗ Not quite.')) {
         const answer = group[stepState.correct];
         if (answer) answer.classList.add('correct');
