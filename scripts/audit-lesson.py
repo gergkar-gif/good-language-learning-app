@@ -67,7 +67,7 @@ CONSOLIDATION_SHAPE = {"a1": "single", "a2": "split", "b1": "single"}
 
 MIN_PRACTICE_TYPES = {"a1": 5, "a2": 5, "b1": 6}
 MIN_REVIEW_TYPES = {"a1": 5, "a2": 5, "b1": 6}
-MIN_REVIEW_POINTS = {"a1": 8, "a2": 8, "b1": 10}
+MIN_REVIEW_POINTS = {"a1": 8, "a2": 8, "b1": 6}
 GRAMMAR_MAX_WORDS = 300
 GRAMMAR_EXAMPLES = (3, 5)
 CHECKLIST_PREFIX = "I can"
@@ -81,7 +81,8 @@ ARTICLE = re.compile(r"^(el|la|los|las|un|una|unos|unas) ")
 PROPER_NOUNS = {"carlos", "meg", "daniela", "lauren", "kaylee", "hungria",
                 "sudafrica", "espana", "hanoi", "ana", "mexico", "vietnam",
                 "ninh", "binh", "madrid", "colombia", "peru", "valencia",
-                "phileas", "fogg", "passepartout"}
+                "phileas", "fogg", "passepartout", "jo", "bartleby",
+                "rousseau", "odiseo", "itaca", "gregor", "york"}
 
 
 def norm(text):

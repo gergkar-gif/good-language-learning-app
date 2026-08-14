@@ -351,10 +351,19 @@ consistent rather than each improvising a different mix.
   design rather than A2's (which just repeats the teaching-lesson split).
   A1's reasoning holds at B1's scale better than A2's: every Review exercise
   must carry `teaches`, the block must span **at least 6 distinct types**,
-  and the union of `teaches` tags across the block must cover **at least 10
-  distinct points** (raised from A1's 8, matching a richer unit) — that
-  last rule is what stops a "consolidation" being eighteen drills of the
-  same one thing.
+  and the union of `teaches` tags across the block must cover **at least 6
+  distinct points** — that last rule is what stops a "consolidation" being
+  eighteen drills of the same one thing. This number was originally set to
+  10 (matching A1 scaled up), which Units 1-3 hit comfortably — but only by
+  splitting each lesson's grammar point into several near-duplicate slugs
+  (`imperfecto` *and* `imperfecto-habitual`, `narrative-connectors` *and*
+  `connectors`), which directly contradicts the slug-reuse rule this
+  section itself asks for. A five-lesson unit genuinely has about five
+  grammar points plus vocabulary — six distinct points, tagged honestly, is
+  the real ceiling without either fragmenting slugs or reaching into other
+  units' content (which the Review block does not do). Units 4-10 hit 6-7
+  once retagged properly; treat 10 as never having been achievable
+  cleanly.
 
 ---
 
