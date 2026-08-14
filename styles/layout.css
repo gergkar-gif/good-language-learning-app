@@ -498,6 +498,45 @@
   transform: translateX(3px);
 }
 
+/* ---- Unit tracks (B1's Core Spanish + Latin America) ----
+   One column per track, stacked on a narrow viewport — most of the app's
+   width budget — and side by side from 600px, the breakpoint already used
+   elsewhere for "widen up" layouts. Each column reuses .level-list/
+   .level-card as-is: a track is not a new visual object, just a second
+   archive next to the first. */
+.unit-tracks {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.unit-track-column {
+  min-width: 0;
+}
+
+.unit-track-heading {
+  margin: 0 0 4px;
+  padding-left: 26px;
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+@media (min-width: 600px) {
+  .unit-tracks {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 32px;
+  }
+
+  .unit-track-column {
+    flex: 1 1 0;
+  }
+}
+
 /* ---- Level detail ---- */
 
 .level-detail {

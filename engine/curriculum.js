@@ -138,32 +138,57 @@ function levelListHtml() {
 // A level's units — the middle screen, new for the unit restructure. Visual
 // language matches the level list on purpose: a unit is the same kind of
 // object as a level, one step down.
+function unitCardHtml(level, unit, progress) {
+    const stats = progressStats(unit.lessons || [], progress);
+    return `
+        <button class="level-card unit-card" data-open-unit="${UI.escape(unit.id)}">
+            <span class="level-card-spine"></span>
+            <span class="unit-card-num" aria-hidden="true">${UI.escape(unit.label)}</span>
+            ${levelIcon(level, 'level-icon--sm')}
+            <span class="level-card-body">
+                <span class="level-card-title">${UI.escape(unit.title)}</span>
+                <span class="level-card-meter">
+                    <span class="level-card-track">
+                        <span class="level-card-fill" style="width:${stats.percent}%"></span>
+                    </span>
+                    <span class="level-card-count">${stats.done} / ${stats.total}
+                        ${stats.total === 1 ? 'lesson' : 'lessons'}</span>
+                </span>
+            </span>
+            <span class="level-card-arrow geo-triangle" aria-hidden="true"></span>
+        </button>
+    `;
+}
+
+// A level that runs more than one track (B1's Core Spanish + Latin America
+// so far) shows each track's units in its own column, side by side on a
+// wide viewport and stacked on a narrow one — see .unit-tracks in
+// styles/layout.css. A level with no `tracks` entry renders exactly as
+// before: one flat list, no grouping markup at all.
+function tracksHtml(level, data, units, progress) {
+    const columns = data.tracks.map(track => {
+        const trackUnits = units.filter(u => u.track === track.id);
+        const cards = trackUnits.map(u => unitCardHtml(level, u, progress)).join('');
+        return `
+            <div class="unit-track-column">
+                <h3 class="unit-track-heading">${UI.escape(track.title)}</h3>
+                ${trackUnits.length
+                    ? `<div class="level-list">${cards}</div>`
+                    : '<p class="text-muted level-empty">No units yet.</p>'}
+            </div>
+        `;
+    }).join('');
+    return `<div class="unit-tracks">${columns}</div>`;
+}
+
 function unitListHtml(level) {
     const progress = getProgress();
     const data = window._curriculumData.levels[level];
     const units = data.units || [];
 
-    const cards = units.map(unit => {
-        const stats = progressStats(unit.lessons || [], progress);
-        return `
-            <button class="level-card unit-card" data-open-unit="${UI.escape(unit.id)}">
-                <span class="level-card-spine"></span>
-                <span class="unit-card-num" aria-hidden="true">${UI.escape(unit.label)}</span>
-                ${levelIcon(level, 'level-icon--sm')}
-                <span class="level-card-body">
-                    <span class="level-card-title">${UI.escape(unit.title)}</span>
-                    <span class="level-card-meter">
-                        <span class="level-card-track">
-                            <span class="level-card-fill" style="width:${stats.percent}%"></span>
-                        </span>
-                        <span class="level-card-count">${stats.done} / ${stats.total}
-                            ${stats.total === 1 ? 'lesson' : 'lessons'}</span>
-                    </span>
-                </span>
-                <span class="level-card-arrow geo-triangle" aria-hidden="true"></span>
-            </button>
-        `;
-    }).join('');
+    const unitsHtml = data.tracks
+        ? tracksHtml(level, data, units, progress)
+        : `<div class="level-list">${units.map(u => unitCardHtml(level, u, progress)).join('')}</div>`;
 
     // The test closes the level, so it sits after every unit rather than
     // inside one — and it reports its own state, because a passed level is
@@ -186,7 +211,7 @@ function unitListHtml(level) {
             <button class="level-back" data-close-level="1">← All levels</button>
             <div class="level-hero">${(typeof Art !== 'undefined') ? Art.svg('level' + level, 'level-hero-art') : ''}</div>
             ${units.length
-                ? `<div class="level-list">${cards}</div>${testRow}`
+                ? `${unitsHtml}${testRow}`
                 : '<p class="text-muted level-empty">No units at this level yet.</p>'}
         </div>
     `;

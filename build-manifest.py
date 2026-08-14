@@ -130,7 +130,35 @@ UNIT_TABLES = {
         ("Talking About Travel and Goodbyes", ["a2-18-01", "a2-18-02", "a2-18-03", "a2-18-04", "a2-18-05", "a2-18-consolidation"]),
         ("Talking About the Future", ["a2-19-01", "a2-19-02", "a2-19-03", "a2-19-04", "a2-19-05", "a2-19-consolidation"]),
         ("Looking Back and Moving Forward", ["a2-20-01", "a2-20-02", "a2-20-03", "a2-20-04", "a2-20-05", "a2-20-consolidation"]),
-    ]
+    ],
+    # B1 runs two parallel tracks — Core Spanish (the language progression)
+    # and Latin America (a Spanish-language history course) — that appear
+    # side by side in the Learn tab and are numbered independently within
+    # their own track. A table entry here is (title, stems, track); a1/a2
+    # entries above stay 2-tuples and are read as a single implicit track,
+    # so nothing about them changes. See content/es/guides/b1-content-spec.md
+    # section 1a for why Latin America units use a word slug (here,
+    # "precolombina") instead of a number in their lesson-file stems.
+    "b1": [
+        ("Telling Stories",
+         ["b1-01-01", "b1-01-02", "b1-01-03", "b1-01-04", "b1-01-05", "b1-01-consolidation"],
+         "core"),
+        ("Pre-Columbian America",
+         ["b1-precolombina-01", "b1-precolombina-02", "b1-precolombina-03",
+          "b1-precolombina-04", "b1-precolombina-05", "b1-precolombina-consolidation"],
+         "latam"),
+    ],
+}
+
+# Track metadata for levels that run more than one — id, display title, and
+# the order tracks should render in the Learn tab. A level absent here (or a
+# unit table entry with no third element) is single-track, and the Learn tab
+# falls back to today's flat unit list.
+LEVEL_TRACKS = {
+    "b1": [
+        {"id": "core", "title": "Core Spanish"},
+        {"id": "latam", "title": "Latin America"},
+    ],
 }
 
 def lesson_teaching_counts(lang, data):
@@ -224,16 +252,28 @@ def build_curriculum(lang="es"):
         if level_path.exists():
             table = UNIT_TABLES.get(level_id)
             if table:
-                for position, (title, stems) in enumerate(table, start=1):
+                # Position is counted per track, not across the whole table,
+                # so two tracks each start their own unit numbering at 1
+                # rather than interleaving into a single shared sequence.
+                track_position = {}
+                for entry in table:
+                    title, stems, track = entry if len(entry) == 3 else (*entry, None)
+                    track_position[track] = track_position.get(track, 0) + 1
+                    position = track_position[track]
                     lessons = [e for e in
                                (load_lesson_entry(lang, level_id, level_path, s) for s in stems)
                                if e is not None]
-                    units.append({
-                        "id": f"unit.{level_id}.{position:02d}",
+                    unit_id = (f"unit.{level_id}.{track}.{position:02d}" if track
+                               else f"unit.{level_id}.{position:02d}")
+                    unit = {
+                        "id": unit_id,
                         "label": str(position),
                         "title": title,
                         "lessons": lessons
-                    })
+                    }
+                    if track:
+                        unit["track"] = track
+                    units.append(unit)
             else:
                 for position, f in enumerate(
                         (p for p in sorted(level_path.glob("*.json")) if p.name not in SKIP_FILENAMES),
@@ -248,11 +288,14 @@ def build_curriculum(lang="es"):
                         "lessons": [entry]
                     })
 
-        levels[level_id.upper()] = {
+        level_entry = {
             "title": meta["title"],
             "description": meta["description"],
             "units": units
         }
+        if level_id in LEVEL_TRACKS:
+            level_entry["tracks"] = LEVEL_TRACKS[level_id]
+        levels[level_id.upper()] = level_entry
 
     curr_meta = CURRICULUM_META.get(lang, {
         "id": f"curriculum.{lang}.a1-c1",
