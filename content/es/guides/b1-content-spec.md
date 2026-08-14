@@ -563,3 +563,45 @@ gets much closer to a clean pass on the first try.
     literal terminal output alongside the files.** Every one of the ten
     pitfalls above was claimed "validated" in the first submission, and
     none of it had actually been checked.
+
+The pitfalls below surfaced across later Core batches (Units 4-36) and
+are just as real, even though `validate-content.py` stays green through
+every one of them — they only show up in `audit-lesson.py` or a manual
+check, so don't skip those just because the schema check passed.
+
+12. **Every non-Reading exercise needs a `teaches` tag.** One whole batch
+    (ten units) shipped with zero exercises tagged anywhere — not
+    fragmented, not blanket, just absent. Tag every Practice/Listening/
+    Dialogue/Writing exercise in a teaching lesson with that lesson's own
+    slug; tag consolidation's exercises by cycling through the unit's
+    lesson slugs plus one unit-level vocabulary slug.
+13. **`teaches` slugs are per-lesson, not one blanket tag for the whole
+    unit.** A blanket tag breaks Grammar Driller pooling
+    (`grammar-index.json`) and fails the same "review ranges over 6+
+    points" audit rule as fragmenting one grammar point into several
+    near-duplicate slugs (§6) — both are wrong in opposite directions.
+14. **Each `exercise-group`'s `exerciseRefs` must match the actual
+    `category` of the exercises it points at.** One whole batch had every
+    lesson's Listening/Dialogue/Writing groups off by one at each category
+    boundary — e.g. Listening's last ref was actually a
+    `dialogue-complete` exercise, Writing was missing its first item.
+    `category` is schema-declared "informational; the lesson decides
+    placement," so this never fails `validate-content.py` — check it by
+    hand, or rebuild every group's refs directly from each exercise's own
+    `category` rather than trusting the generated arrays.
+15. **Lesson `.05`'s `Reading` exercise-group must actually exist and be
+    non-empty.** Several batches omitted it completely, silently letting
+    Listening/Dialogue/Writing absorb the freed exercise slots instead of
+    flagging a missing block.
+16. **Grammar/Focus screens need 3-5 worked examples (§5), not 2.** One
+    whole batch shipped with exactly 2 examples in every file — it passes
+    every other check and only fails this one specific audit rule, so it's
+    easy to miss without actually reading the audit output line by line.
+17. **(Latin America only) Every Focus screen needs exactly one
+    grammar-extension point from §3's list, and it should vary across the
+    unit's five lessons rather than reusing the same one five times.**
+    Unit 1's first draft, and every Latin America Focus screen generated
+    before the §3 rewrite, taught zero grammar at all — historical content
+    only. That's the single biggest thing to get right generating Latin
+    America units, since nothing in `validate-content.py` catches its
+    absence.
