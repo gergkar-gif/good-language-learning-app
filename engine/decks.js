@@ -45,6 +45,9 @@ const Decks = (function () {
     // ----------------------------------------
     async function load() {
         loadMyDecks();
+        // Needed for withArticle() below — without it, article() finds no
+        // gender data and every card silently falls back to the bare lemma.
+        if (typeof Lexicon !== 'undefined') await Lexicon.load();
         if (catalogue) return catalogue;
         try {
             const res = await fetch(Lang.content('decks/decks.json'));
