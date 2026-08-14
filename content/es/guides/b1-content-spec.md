@@ -136,7 +136,7 @@ one.
 
 ---
 
-## 3. Latin America lessons: no grammar section, a Focus screen instead
+## 3. Latin America lessons: a Focus screen, plus a light grammar layer
 
 The schema has no "historical context" or "content" section type — only
 `grammar`, which is generic underneath (`text`, `table`, `examples`, `tip`,
@@ -157,12 +157,84 @@ The Consolidated Unit List's "Focus:" line (as opposed to Core's "Grammar:"
 line) is exactly this screen's subject — write the file's `title` and `text`
 from it.
 
-Latin America lessons still recycle Core grammar in their exercises (a
-`fill-blank` about a colonial economy can still exercise the imperfecto),
-but they introduce none. `recycle` in a Latin America lesson pulls from
-**both** tracks' completed lessons — nothing in `engine/recycle.js`
-restricts it by track, and the guide (§8) wants the two tracks reinforcing
-each other.
+**The Focus screen also carries one grammar-extension point per unit.**
+Core's B1 sequence is built around personal narration and everyday
+functions and never needs the structures formal historical writing leans
+on. Rather than re-teach a tense Core has already covered, each Latin
+America unit should introduce or deepen **one** of these, chosen for
+whatever fits the unit's actual content:
+
+- **voz pasiva** (*fue conquistado por, fueron gobernados por*) — the
+  passive Core's personal-narrative units never need
+- **se pasiva / impersonal** (*se estableció, se exportaba, se firmó el
+  tratado*) — the depersonalised historical-event construction
+- **gerundio for background/parallel action** in narration (*gobernando
+  el país, la economía crecía*) — distinct from Core's imperfecto, which
+  covers background description but not two actions running in parallel
+- **formal register connectors** historical/academic prose uses that
+  Core's conversational register skips (*a raíz de, a lo largo de, en el
+  marco de, como consecuencia de*)
+
+This is one extra worked example or a short second `text` paragraph
+introducing the structure — not a second grammar lesson. The Focus screen
+stays primarily historical content; treat the grammar point as a layer on
+top, sized so the whole file still fits the ≤300-word prose budget and
+3–5 worked examples from §5. Pick a different one of the four across a
+unit's five lessons rather than reusing the same structure five times.
+
+Latin America lessons still recycle Core grammar in their exercises beyond
+the one point above (a `fill-blank` about a colonial economy can still
+exercise the imperfecto), and `recycle` in a Latin America lesson pulls
+from **both** tracks' completed lessons — nothing in `engine/recycle.js`
+restricts it by track, and the two tracks are meant to reinforce each
+other.
+
+---
+
+## 3a. Thematic pairing with Core
+
+Core is a functional/communicative syllabus (Telling Stories, Relationships,
+Work, Travel...); Latin America is a chronological history course
+(Pre-Columbian → Conquest → Colonial era → Independence → 20th century).
+The two do **not** share a unit-by-unit theme order — Core unit *N* and
+Latin America unit *N* are unrelated by default, and forcing them to align
+would break one syllabus's internal logic (you can't teach independence
+before colonization just to match Core's unit numbering).
+
+Instead: **where a Latin America unit's topic genuinely overlaps a Core
+unit's theme, regardless of unit number, deliberately expand that Core
+unit's vocabulary** — reuse its domain, go further into it, don't
+re-teach the same words. **Where no real overlap exists, fall back to
+plain cumulative** (check `decks.json` per §4a as usual; no topical
+matching to chase).
+
+| Latin America unit | Paired Core unit | Latin America unit | Paired Core unit |
+|---|---|---|---|
+| 1. Pre-Columbian America | *cumulative only* | 19. Populismo | 18. Politics & Public Life |
+| 2. Civilizaciones indígenas | *cumulative only* | 20. Industrialización | 19. Money & the Economy |
+| 3. La llegada de los europeos | *cumulative only* | 21. La Revolución cubana | *cumulative only* |
+| 4. La conquista | *cumulative only* | 22. La Guerra Fría | 18. Politics & Public Life |
+| 5. La sociedad colonial | 17. Society & Inequality | 23. Estados Unidos y América Latina | 18. Politics & Public Life |
+| 6. Economía colonial | 19. Money & the Economy | 24. Gobiernos militares | 28. Rules, Rights & Responsibilities |
+| 7. Raza, clase y poder | 17. Society & Inequality | 25. Represión política | 28. Rules, Rights & Responsibilities |
+| 8. La independencia | 18. Politics & Public Life | 26. Centroamérica: Revolución y conflicto | *cumulative only* |
+| 9. Las nuevas repúblicas | 18. Politics & Public Life | 27. Las dictaduras del Cono Sur | 28. Rules, Rights & Responsibilities |
+| 10. Caudillismo | 18. Politics & Public Life | 28. La crisis de la deuda | 19. Money & the Economy |
+| 11. Nación y nacionalismo | 28. Rules, Rights & Responsibilities | 29. Neoliberalismo | 19. Money & the Economy |
+| 12. Liberalismo y modernización | 25. Change & Development | 30. Democratización | 28. Rules, Rights & Responsibilities |
+| 13. Las economías de exportación | 19. Money & the Economy | 31. Movimientos indígenas | 29. Migration & Identity |
+| 14. Cambio social | 25. Change & Development | 32. Integración regional | 30. Culture, Language & Society |
+| 15. Revolución | *cumulative only* | 33. El final de la Guerra Fría | 18. Politics & Public Life |
+| 16. La Revolución mexicana | *cumulative only* | 34. América Latina en los años 90 | *cumulative only* |
+| 17. Nacionalismo y Estado | 28. Rules, Rights & Responsibilities | 35. El legado del siglo XX | *cumulative only* |
+| 18. La Gran Depresión | 19. Money & the Economy | 36. América Latina hacia el año 2000 | *cumulative only* |
+
+A single Core unit gets paired against several Latin America units on
+purpose (Politics & Public Life and Money & the Economy each recur eight
+times) — that's expected, not a sign to spread pairings more evenly. Each
+of those Latin America units adds its own specific layer (nationalism
+vocabulary, populism vocabulary, Cold War vocabulary...) on top of the
+same Core baseline; they are not competing to "own" the pairing.
 
 ---
 
@@ -183,12 +255,18 @@ Every word must:
   A1 `audit-lesson.py` rule, applied per-unit rather than per-lesson: a
   part without its own story is still checked against the unit's story)
 
-Latin America vocabulary should deliberately overlap with Core where the
-guide calls for it (§9 of `B1_GUIDE.md`): a word taught in a Core unit does
-not need to be re-taught in a Latin America unit to be used by it, but a
-term specific to the historical content (*régimen*, *dictadura*,
-*desaparecido*) is new vocabulary for that Latin America lesson regardless
-of how many Core units come before or after it.
+Latin America vocabulary should deliberately overlap with Core: a word
+taught in a Core unit does not need to be re-taught in a Latin America unit
+to be used by it, but a term specific to the historical content (*régimen*,
+*dictadura*, *desaparecido*) is new vocabulary for that Latin America
+lesson regardless of how many Core units come before or after it. When
+§3a's pairing table gives the unit a paired Core theme, prefer choosing new
+words that extend that Core unit's domain (Core's "Money & the Economy"
+taught the everyday economic vocabulary; a paired Latin America unit adds
+the historical/institutional layer — *deuda externa*, *exportación*,
+*devaluación* — rather than words unconnected to that domain). When the
+table marks a unit cumulative-only, just pick whatever the historical
+content actually needs.
 
 ### 4a. Check against what the course has already taught
 

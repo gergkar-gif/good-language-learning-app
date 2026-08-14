@@ -20,39 +20,38 @@
         ]
       ],
       "teaches": [
-        "vocabulary",
-        "social-organisation"
+        "power-passive-voice"
       ]
     },
     {
       "id": "b1-precolombina-03.ex02",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "¿Cuál afirmación corresponde al tema «social-organisation»?",
+      "question": "¿Qué oración usa correctamente la voz pasiva?",
       "options": [
-        "La jerarquía organizaba las posiciones sociales.",
-        "Todo era igual.",
-        "No existían comunidades."
+        "El tributo era recibido por el gobernante.",
+        "El tributo recibía era por el gobernante.",
+        "El gobernante era recibido tributo."
       ],
       "correct": 0,
       "teaches": [
-        "social-organisation"
+        "power-passive-voice"
       ]
     },
     {
       "id": "b1-precolombina-03.ex03",
       "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "La __ organizaba las posiciones sociales. (jerarquía)",
-      "answer": "jerarquía",
+      "category": "grammar",
+      "sentence": "El tributo ___ recibido por el gobernante. (ser, imperfecto)",
+      "answer": "era",
       "teaches": [
-        "social-organisation"
+        "power-passive-voice"
       ]
     },
     {
       "id": "b1-precolombina-03.ex04",
       "type": "sentence-builder",
-      "category": "vocabulary",
+      "category": "grammar",
       "tiles": [
         "La",
         "jerarquía",
@@ -69,19 +68,19 @@
         "posiciones",
         "sociales."
       ],
-      "english": "Build the historical sentence.",
+      "english": "Hierarchy organised social positions.",
       "teaches": [
-        "social-organisation"
+        "power-passive-voice"
       ]
     },
     {
       "id": "b1-precolombina-03.ex05",
       "type": "sentence-order",
-      "category": "reading",
+      "category": "grammar",
       "sentences": [
-        "La jerarquía organizaba las posiciones sociales.",
-        "Las comunidades se adaptaban a su entorno.",
-        "Existían diferencias regionales."
+        "Las sociedades tenían distintas formas de autoridad. [Societies had different forms of authority.]",
+        "El gobernante recibía tributo de las comunidades. [The ruler received tribute from communities.]",
+        "Sin embargo, las comunidades conservaban cierta autonomía. [However, communities kept some autonomy.]"
       ],
       "solution": [
         0,
@@ -89,86 +88,71 @@
         2
       ],
       "teaches": [
-        "social-organisation"
+        "power-passive-voice"
       ]
     },
     {
       "id": "b1-precolombina-03.ex06",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "question": "¿Qué palabra significa 'ruler'?",
+      "options": [
+        "gobernante",
+        "tributo",
+        "jerarquía"
+      ],
+      "correct": 0,
+      "teaches": [
+        "power-passive-voice"
+      ]
+    },
+    {
+      "id": "b1-precolombina-03.ex07",
+      "type": "fill-blank",
+      "category": "grammar",
+      "sentence": "Las comunidades pagaban ___ al gobernante. (tributo)",
+      "answer": "tributo",
+      "teaches": [
+        "power-passive-voice"
+      ]
+    },
+    {
+      "id": "b1-precolombina-03.ex08",
       "type": "dialogue-complete",
       "category": "dialogue",
       "prompt": [
         {
           "speaker": "A",
-          "text": "¿Qué sabes sobre este tema?"
+          "text": "¿Todas las sociedades tenían el mismo sistema de poder?"
         },
         {
           "speaker": "B",
           "text": "_____"
-        },
-        {
-          "speaker": "A",
-          "text": "¿Por qué?"
         }
       ],
       "options": [
-        "La jerarquía organizaba las posiciones sociales.",
-        "No existía ninguna sociedad.",
-        "Todo era igual."
+        "No, el poder político no era ejercido de la misma manera en todas. [No, political power was not exercised the same way in all of them.]",
+        "Sí, todas tenían exactamente el mismo sistema. [Yes, they all had exactly the same system.]",
+        "No existía ningún tipo de poder político. [There was no kind of political power at all.]"
       ],
       "correct": 0,
       "teaches": [
-        "social-organisation"
-      ]
-    },
-    {
-      "id": "b1-precolombina-03.ex07",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "¿Qué significa «jerarquía»?",
-      "options": [
-        "hierarchy",
-        "tomorrow",
-        "a journey",
-        "nothing"
-      ],
-      "correct": 0,
-      "teaches": [
-        "vocabulary"
-      ]
-    },
-    {
-      "id": "b1-precolombina-03.ex08",
-      "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "El pueblo pagaba __ al gobernante. (tributo)",
-      "answer": "tributo",
-      "teaches": [
-        "social-organisation"
+        "power-passive-voice"
       ]
     },
     {
       "id": "b1-precolombina-03.ex09",
-      "type": "sentence-builder",
-      "category": "writing",
-      "tiles": [
-        "El",
-        "gobernante",
-        "recibía",
-        "tributo",
-        "cada",
-        "año."
+      "type": "listening-choice",
+      "category": "listening",
+      "sentence": "El tributo era recibido por el gobernante.",
+      "options": [
+        "Tribute was received by the ruler.",
+        "The ruler paid tribute to everyone.",
+        "There was no tribute at all."
       ],
-      "solution": [
-        "El",
-        "gobernante",
-        "recibía",
-        "tributo",
-        "cada",
-        "año."
-      ],
-      "english": "The ruler received tribute every year.",
+      "correct": 0,
       "teaches": [
-        "historical-context"
+        "power-passive-voice"
       ]
     },
     {
@@ -177,21 +161,22 @@
       "category": "listening",
       "sentence": "La jerarquía organizaba las posiciones sociales.",
       "options": [
-        "La jerarquía organizaba las posiciones sociales.",
-        "La historia ocurrirá mañana."
+        "Hierarchy organised social positions.",
+        "There was no social hierarchy.",
+        "Positions organised the hierarchy."
       ],
       "correct": 0,
       "teaches": [
-        "social-organisation"
+        "power-passive-voice"
       ]
     },
     {
       "id": "b1-precolombina-03.ex11",
       "type": "dictation",
       "category": "listening",
-      "sentence": "Las comunidades tenían formas de organización diferentes.",
+      "sentence": "El poder político no era ejercido de la misma manera en todas las sociedades.",
       "teaches": [
-        "social-organisation"
+        "power-passive-voice"
       ]
     },
     {
@@ -201,50 +186,69 @@
       "prompt": [
         {
           "speaker": "A",
-          "text": "¿Qué recuerdas de este tema?"
+          "text": "¿Quién recibía el tributo de las comunidades?"
         },
         {
           "speaker": "B",
           "text": "_____"
-        },
-        {
-          "speaker": "A",
-          "text": "¿Y qué pasó después?"
         }
       ],
       "options": [
-        "La jerarquía organizaba las posiciones sociales.",
-        "No lo sé mañana.",
-        "Estoy durmiendo."
+        "El tributo era recibido por el gobernante. [Tribute was received by the ruler.]",
+        "Nadie recibía tributo. [Nobody received tribute.]",
+        "Las comunidades no pagaban nada. [Communities paid nothing at all.]"
       ],
       "correct": 0,
       "teaches": [
-        "social-organisation"
+        "power-passive-voice"
       ]
     },
     {
       "id": "b1-precolombina-03.ex13",
-      "type": "multiple-choice",
+      "type": "dialogue-complete",
       "category": "dialogue",
-      "question": "Elige la continuación más natural.",
+      "prompt": [
+        {
+          "speaker": "A",
+          "text": "¿Conservaban las comunidades algo de autonomía?"
+        },
+        {
+          "speaker": "B",
+          "text": "_____"
+        }
+      ],
       "options": [
-        "La jerarquía organizaba las posiciones sociales.",
-        "Mañana había ocurrido.",
-        "No tengo ayer."
+        "Sí, aunque pagaban tributo, conservaban ciertas formas de autonomía. [Yes, even though they paid tribute, they kept certain forms of autonomy.]",
+        "No, perdían toda su independencia. [No, they lost all their independence.]",
+        "No pagaban tributo ni tenían autonomía. [They paid no tribute and had no autonomy.]"
       ],
       "correct": 0,
       "teaches": [
-        "social-organisation"
+        "power-passive-voice"
       ]
     },
     {
       "id": "b1-precolombina-03.ex14",
-      "type": "fill-blank",
+      "type": "dialogue-complete",
       "category": "dialogue",
-      "sentence": "El término __ es importante. (tributo)",
-      "answer": "tributo",
+      "prompt": [
+        {
+          "speaker": "A",
+          "text": "¿Cómo describirías el poder político en estas sociedades?"
+        },
+        {
+          "speaker": "B",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Variaba: la jerarquía y la autoridad no eran iguales en todas partes. [It varied: hierarchy and authority weren't the same everywhere.]",
+        "Era exactamente igual en todas las sociedades. [It was exactly the same in every society.]",
+        "No existía ninguna forma de autoridad. [No form of authority existed.]"
+      ],
+      "correct": 0,
       "teaches": [
-        "social-organisation"
+        "power-passive-voice"
       ]
     },
     {
@@ -253,16 +257,12 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Describe the main idea.",
-          "answer": "La jerarquía organizaba las posiciones sociales."
-        },
-        {
-          "prompt": "Add a second event or detail.",
-          "answer": "Las comunidades se adaptaban a su entorno."
+          "prompt": "Describe la relación entre el gobernante y las comunidades usando la voz pasiva. [Describe the relationship between the ruler and communities using the passive voice.]",
+          "answer": "El tributo era recibido por el gobernante, aunque las comunidades conservaban cierta autonomía."
         }
       ],
       "teaches": [
-        "social-organisation"
+        "power-passive-voice"
       ]
     },
     {
@@ -271,17 +271,12 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Use the lesson vocabulary.",
-          "answer": "jerarquía"
-        },
-        {
-          "prompt": "Connect the idea to the wider topic.",
-          "answer": "La sociedad era diversa."
+          "prompt": "Explica por qué el poder político variaba entre sociedades. [Explain why political power varied between societies.]",
+          "answer": "El poder político no era ejercido de la misma manera en todas las sociedades."
         }
       ],
       "teaches": [
-        "vocabulary",
-        "social-organisation"
+        "power-passive-voice"
       ]
     }
   ]
