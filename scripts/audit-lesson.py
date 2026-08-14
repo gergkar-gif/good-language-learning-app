@@ -80,7 +80,8 @@ ARTICLE = re.compile(r"^(el|la|los|las|un|una|unos|unas) ")
 # names) and this list will need extending as that content is written.
 PROPER_NOUNS = {"carlos", "meg", "daniela", "lauren", "kaylee", "hungria",
                 "sudafrica", "espana", "hanoi", "ana", "mexico", "vietnam",
-                "ninh", "binh"}
+                "ninh", "binh", "madrid", "colombia", "peru", "valencia",
+                "phileas", "fogg", "passepartout"}
 
 
 def norm(text):
