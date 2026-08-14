@@ -258,6 +258,44 @@ try {
     // Private browsing with storage disabled: the default is fine.
 }
 
+// 'flip' is the original self-honesty flashcard (Show Answer). 'type' asks
+// for the answer first — Check reveals whether it was right, then the same
+// rating buttons as flip mode, so SM-2 scheduling is identical either way;
+// only how the answer gets revealed changes. Same plain-key treatment as
+// reviewDirection above (a study preference, not scoped to one course).
+const REVIEW_MODE_KEY = 'app_reviewMode';
+let reviewMode = 'flip';
+try {
+    reviewMode = localStorage.getItem(REVIEW_MODE_KEY) === 'type' ? 'type' : 'flip';
+} catch (error) {
+    // Private browsing with storage disabled: the default is fine.
+}
+
+function updateModeToggle() {
+    const btn = document.getElementById('dk-mode-toggle');
+    const flipLabel = document.getElementById('dk-mode-flip');
+    const typeLabel = document.getElementById('dk-mode-type');
+    const typeMode = reviewMode === 'type';
+
+    if (btn) btn.setAttribute('aria-checked', String(typeMode));
+    if (flipLabel) flipLabel.classList.toggle('dk-direction-active', !typeMode);
+    if (typeLabel) typeLabel.classList.toggle('dk-direction-active', typeMode);
+}
+
+function toggleReviewMode() {
+    reviewMode = reviewMode === 'flip' ? 'type' : 'flip';
+    try {
+        localStorage.setItem(REVIEW_MODE_KEY, reviewMode);
+    } catch (error) {
+        // Private browsing with storage disabled: the preference just won't
+        // survive a reload.
+    }
+    updateModeToggle();
+    // Same reasoning as toggleReviewDirection(): redraw the same card in the
+    // new mode rather than skipping to a fresh one.
+    if (currentReviewCard) renderCard();
+}
+
 function updateDirectionToggle() {
     const btn = document.getElementById('dk-direction-toggle');
     const esLabel = document.getElementById('dk-direction-es');
@@ -374,6 +412,14 @@ function showNextCard() {
     renderCard();
 }
 
+// What renderCard() is currently asking the learner to produce, in Type
+// mode — the side of the card not shown. Set by renderCard(), read by
+// checkTypedAnswer(); kept separate from currentReviewCard so a live
+// dictionary lookup (translations can change/improve over time) doesn't
+// have to be redone at check time.
+let reviewExpectedSpanish = '';
+let reviewExpectedEnglish = '';
+
 // Draws currentReviewCard in whichever direction reviewDirection currently
 // asks for. Split out from showNextCard() so toggling the direction
 // mid-review can redraw the same card instead of skipping to a new one.
@@ -389,14 +435,26 @@ function renderCard() {
     document.getElementById('review-front').textContent = englishFirst ? displayEnglish : currentReviewCard.spanish;
     document.getElementById('review-back').textContent = englishFirst ? currentReviewCard.spanish : displayEnglish;
     document.getElementById('review-context').textContent = displayType ? `(${displayType})` : '';
+    reviewExpectedSpanish = currentReviewCard.spanish;
+    reviewExpectedEnglish = displayEnglish;
 
     document.getElementById('review-answer').style.display = 'none';
-    document.getElementById('show-answer-btn').style.display = 'block';
     document.getElementById('rating-buttons').style.display = 'none';
+
+    const typeMode = reviewMode === 'type';
+    document.getElementById('show-answer-btn').style.display = typeMode ? 'none' : 'block';
+    document.getElementById('review-type-input').classList.toggle('hidden', !typeMode);
+    const field = document.getElementById('review-type-field');
+    if (field) {
+        field.value = '';
+        field.classList.remove('correct', 'wrong');
+        if (typeMode) field.focus();
+    }
 
     updateRatingLabels();
     updateReviewStats();
     updateDirectionToggle();
+    updateModeToggle();
 }
 
 // The intervals are per-card now, so the buttons can't carry fixed labels.
@@ -411,10 +469,48 @@ function updateRatingLabels() {
     });
 }
 
-function showAnswer() {
+// Shared by both modes once the answer is settled — flip mode reaches this
+// straight from a tap, type mode reaches it after grading what was typed.
+function revealAnswer() {
     document.getElementById('review-answer').style.display = 'block';
     document.getElementById('show-answer-btn').style.display = 'none';
+    document.getElementById('review-type-input').classList.add('hidden');
     document.getElementById('rating-buttons').style.display = 'flex';
+}
+
+function showAnswer() {
+    revealAnswer();
+}
+
+// Same normalisation lessons.js/GrammarRunner use elsewhere: case, whitespace,
+// punctuation and accents stripped, so "dia" still matches "día".
+function srsNormalise(text) {
+    return String(text || '').toLowerCase().trim()
+        .replace(/[.,!?¡¿;:]/g, '')
+        .normalize('NFD').replace(/[̀-ͯ]/g, '');
+}
+
+// The English side is often a list of near-synonyms ("hello / hi", "to
+// remove, to take away") rather than one fixed phrase — split on both
+// separators and accept a match against any alternative.
+function englishAlternatives(text) {
+    return String(text || '').split(/[/,]/).map(srsNormalise).filter(Boolean);
+}
+
+function checkTypedAnswer() {
+    if (!currentReviewCard) return;
+    const field = document.getElementById('review-type-field');
+    if (!field) return;
+
+    const englishFirst = reviewDirection === 'en-es';
+    const typed = srsNormalise(field.value);
+    const ok = englishFirst
+        ? typed === srsNormalise(reviewExpectedSpanish)
+        : englishAlternatives(reviewExpectedEnglish).includes(typed);
+
+    field.classList.toggle('correct', ok);
+    field.classList.toggle('wrong', !ok);
+    revealAnswer();
 }
 
 function rateCard(rating) {

@@ -104,6 +104,20 @@
                     <span id="dk-direction-en" class="dk-direction-label">English</span>
                 </div>
 
+                <!-- Flip (self-rated recall) vs Type (typed recall, still
+                     self-rated after Check reveals whether you got it) — a
+                     study-style preference, same as direction above. -->
+                <div class="dk-direction">
+                    <span id="dk-mode-flip" class="dk-direction-label">Flip</span>
+                    <button id="dk-mode-toggle" class="geo-toggle" onclick="toggleReviewMode()"
+                        role="switch" aria-checked="false" aria-label="Type your answer instead of flipping the card">
+                        <span class="geo-toggle-track"></span>
+                        <span class="geo-toggle-shape geo-toggle-shape--off"></span>
+                        <span class="geo-toggle-shape geo-toggle-shape--on"></span>
+                    </button>
+                    <span id="dk-mode-type" class="dk-direction-label">Type</span>
+                </div>
+
                 <!-- Empty state -->
                 <div id="review-empty" class="review-empty">
                     <div class="review-empty-icon"><span class="geo-circle geo-circle--outline geo--lg"></span></div>
@@ -124,6 +138,16 @@
                     </div>
 
                     <button id="show-answer-btn" class="review-show-btn" onclick="showAnswer()">Show Answer</button>
+
+                    <!-- Type mode: an input + Check stands in for Show Answer.
+                         Checking still just reveals the card back and rating
+                         buttons below — grading stays self-rated. -->
+                    <div id="review-type-input" class="review-type-input hidden">
+                        <input id="review-type-field" class="review-input" type="text"
+                            placeholder="Type your answer" autocomplete="off" autocapitalize="off" spellcheck="false"
+                            onkeydown="if(event.key==='Enter')checkTypedAnswer()">
+                        <button class="review-show-btn" onclick="checkTypedAnswer()">Check</button>
+                    </div>
 
                     <!-- Times are placeholders: updateRatingLabels() rewrites
                          them per card, since intervals now depend on the card. -->

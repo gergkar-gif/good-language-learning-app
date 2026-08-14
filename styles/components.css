@@ -1291,6 +1291,40 @@
   background: var(--primary-dark);
 }
 
+/* Type mode — input + Check stands in for the Show Answer button */
+
+.review-type-input {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+}
+
+.review-input {
+  flex: 1;
+  min-width: 0;
+  padding: 12px;
+  border: none;
+  border-bottom: 2px solid var(--border);
+  border-radius: 0;
+  background: none;
+  font-size: 16px;
+  color: var(--text);
+}
+
+.review-input.correct {
+  border-bottom-color: var(--primary);
+}
+
+.review-input.wrong {
+  border-bottom-style: dashed;
+  border-bottom-color: var(--danger);
+}
+
+.review-type-input .review-show-btn {
+  width: auto;
+  padding: 14px 20px;
+}
+
 /* Rating buttons */
 
 .review-ratings {
