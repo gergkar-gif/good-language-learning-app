@@ -33,10 +33,12 @@ const Lang = (function () {
     const NAMES = { es: 'Spanish', hu: 'Hungarian', fr: 'French' };
 
     // Courses with real content behind them — what the language picker
-    // (My Journey) offers. content/fr and content/hu exist as empty
-    // folders (scaffolded per multi-language-plan) but have no lessons,
-    // stories or lexicon yet, so they stay out of this list until they do.
-    const AVAILABLE = ['es'];
+    // (My Journey) offers. content/fr is still an empty folder (scaffolded
+    // per multi-language-plan) so it stays out. content/hu has Unit 1 of
+    // A1 (5 lessons) as of 2026-08-15 — no lexicon yet, so tap-a-word
+    // translation won't resolve Hungarian's inflected forms, but the
+    // lessons, exercises and stories all render.
+    const AVAILABLE = ['es', 'hu'];
 
     let current = DEFAULT;
     try {

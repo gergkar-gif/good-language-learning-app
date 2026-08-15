@@ -33,21 +33,39 @@
      so it's safe under body-size text. */
   --accent: #E94B16;
   --accent-dark: #A8371C;
+  --accent-bg: #FCEBE3;
 
   /* Reserved for destructive actions (delete/remove) — never for
      correctness, which is carried by navy/orange and shape. See spec
-     section 18. */
+     section 18. Also doubles, sparingly, as the SRS "Again" rating and
+     incorrect-review-answer colour — see visual identity v2. */
   --danger: #B23A22;
   --danger-bg: #FAEDE9;
+
+  /* Reintroduced 2026-08-14 (visual identity v2) for a narrow, sparing use:
+     spaced-repetition mastery feedback only (Decks "Mastered" stat, review
+     "¡Correcto!" confirmation, retention chart, SRS "Easy" rating). Not for
+     general lesson-exercise correctness, which stays navy/accent-dark. */
+  --success: #2F7A4D;
+  --success-bg: #E8F3EC;
 
   /* Hairline structure, not warm dividers — thin navy at low opacity so it
      reads as an architectural line rather than a card boundary. */
   --border: rgba(16, 42, 71, 0.18);
   --border-light: rgba(16, 42, 71, 0.10);
 
-  /* Reduced from the previous rounded-card defaults — sharp geometry by
-     default, small radius only where it earns its place, pill reserved for
-     the rare control that genuinely needs one. */
+  /* Added 2026-08-14 (visual identity v2) — a warm sand tone, one step
+     darker than --bg, used as the second tone in two-tone illustrations
+     (the unit-path art) so a shape reads against the page without needing
+     a third hue. Not for text or UI chrome — decorative fill only. */
+  --wash: #E7DCC3;
+
+  /* Sharp geometry, no elevation. Briefly softened to 14px/8px with a real
+     shadow on 2026-08-14, then reversed the same day: checked against the
+     reference Lessons list, the identity is open rows on cream separated by
+     hairlines, not a stack of lifted white cards. Small radius only where
+     it earns its place; pill reserved for the rare control that needs one.
+     --shadow is kept defined but deliberately unused. */
   --radius: 4px;
   --radius-sm: 2px;
   --radius-pill: 999px;

@@ -15,7 +15,14 @@ A modular, content-driven language curriculum (CEFR A1–C1). The Spanish course
 
 ## Quick Start
 
-Open `index.html` in a browser. No build step required.
+The app loads its content with `fetch`, so serve the project locally rather
+than opening `index.html` through `file://`.
+
+```powershell
+.\.venv\Scripts\python.exe scripts\dev-server.py
+```
+
+Then open `http://localhost:8131`.
 
 ## Folder Structure
 
@@ -24,3 +31,12 @@ See `STRUCTURE.md` for the full directory map and ownership rules.
 ## Development
 
 One task → one test → one commit. Never large rewrites. Always keep the app working.
+
+Install the Python validation dependency once per checkout, then validate the
+content corpus before committing:
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements-dev.txt
+.\.venv\Scripts\python.exe scripts\validate-content.py es
+```

@@ -1,0 +1,111 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "story.schema.json",
+  "title": "Story file",
+  "description": "A reading text, used both by the Library reader and by a lesson's story section. The text carries no English — every word is tappable and resolved through the dictionary at read time. NOTE: paragraphs currently come in two shapes across the library (see the paragraph definition). Only the typed shape renders speaker labels; 49 of 50 stories use the untyped shape and therefore render entirely as narration.",
+  "type": "object",
+  "required": ["id", "title", "level", "paragraphs"],
+  "additionalProperties": false,
+
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Also the read-state key, so it must be unique across the library and stable — changing it makes a finished story look unread. Two conventions are in use: 49 files use the bare filename ('a2-classics-01') and one uses a dotted form ('story.a1.01'). The dotted form is preferred for new files; the difference is cosmetic because the manifest passes whatever it finds straight through.",
+      "examples": ["story.a1.01", "a2-classics-01"]
+    },
+    "title": { "type": "string", "minLength": 1 },
+    "level": {
+      "type": "string",
+      "enum": ["A1", "A2", "B1", "B2", "C1"],
+      "description": "Decides which reading room the story appears in."
+    },
+    "lesson": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Lesson number this story belongs with, if any."
+    },
+    "order": { "type": "integer", "minimum": 0, "description": "Sort position within its shelf." },
+    "type": {
+      "type": "string",
+      "enum": ["original", "classic", "classics", "world"],
+      "description": "Informational only — the manifest takes the shelf from the directory the story sits in, never from this field, so the two cannot disagree in the UI. Note the classics shelf is spelled 'classics' as a directory but 'classic' inside all ten of its files; both are accepted here."
+    },
+    "category": {
+      "type": "string",
+      "enum": ["original", "classic", "classics", "world"],
+      "description": "Legacy alias for type, present in one file. Prefer type."
+    },
+    "estimatedMinutes": { "type": "integer", "minimum": 1, "description": "Shown on the story card." },
+    "summary": { "type": "string", "description": "Not currently rendered." },
+    "characters": { "type": "array", "items": { "type": "string" } },
+    "location": { "type": ["string", "null"] },
+    "grammar": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Grammar points the story exercises."
+    },
+    "vocabularyTopics": { "type": "array", "items": { "type": "string" } },
+    "source": { "type": "string", "description": "Classics only: where the text came from." },
+    "author": { "type": "string", "description": "Classics only." },
+    "work": { "type": "string", "description": "Classics only: the original work." },
+    "text": {
+      "type": "string",
+      "description": "Fallback for a story with no paragraphs. The reader renders it as a single narration block."
+    },
+    "paragraphs": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/definitions/paragraph" }
+    }
+  },
+
+  "definitions": {
+    "paragraph": {
+      "type": "object",
+      "required": ["text"],
+      "additionalProperties": false,
+      "description": "A paragraph renders as dialogue only when type is exactly 'dialogue'; anything else, including a missing type, renders as narration. Authoring a conversation without type/speaker loses the speaker labels.",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["narration", "dialogue"],
+          "default": "narration",
+          "description": "Omitted in 49 of 50 existing files, which is why their dialogue reads as narration."
+        },
+        "speaker": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Required for dialogue; ignored otherwise. Should appear in characters."
+        },
+        "id": {
+          "type": ["string", "integer"],
+          "description": "Present in most files, read by nothing. Harmless."
+        },
+        "text": { "type": "string", "minLength": 1 }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "type": { "const": "dialogue" } }, "required": ["type"] },
+          "then": { "required": ["speaker"] }
+        }
+      ]
+    }
+  },
+
+  "examples": [
+    {
+      "id": "story.a1.01",
+      "title": "Carlos conoce a Meg",
+      "level": "A1",
+      "lesson": 1,
+      "type": "original",
+      "estimatedMinutes": 2,
+      "characters": ["Carlos", "Meg"],
+      "paragraphs": [
+        { "type": "narration", "text": "Carlos vive en Hanói." },
+        { "type": "dialogue", "speaker": "Meg", "text": "Hola. Me llamo Meg." }
+      ]
+    }
+  ]
+}

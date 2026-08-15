@@ -2,8 +2,6 @@
    WORKSHOP SHELL — driller picker + back chrome
    ============================================ */
 
-/* Open rows, not a stack of cards — same grammar as the Lessons level
-   list. See parlour_visual_overhaul_spec.md sections 9 and 16. */
 .wk-picker {
     display: flex;
     flex-direction: column;
@@ -11,22 +9,30 @@
     margin: 0 auto;
 }
 
+/* Open rows divided by hairlines, matching the Lessons list — see the note
+   on .level-card in styles/layout.css. */
 .wk-card {
     position: relative;
     display: flex;
     align-items: center;
     gap: 14px;
     width: 100%;
-    padding: 18px 6px;
+    padding: 18px 4px;
     text-align: left;
     background: none;
     border: none;
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid var(--border-light);
+    border-radius: 0;
     cursor: pointer;
+    transition: color var(--dur-fast) var(--ease-standard);
+}
+
+.wk-card:last-child {
+    border-bottom: none;
 }
 
 .wk-card:hover .wk-card-title {
-    color: var(--primary);
+    color: var(--accent-dark);
 }
 
 .wk-card:hover .wk-card-arrow,
@@ -35,9 +41,9 @@
     transform: translateX(3px);
 }
 
-.wk-card .icon {
-    width: 26px;
-    height: 26px;
+.wk-card-icon {
+    width: 44px;
+    height: 44px;
     flex-shrink: 0;
 }
 
@@ -180,59 +186,60 @@
     margin-bottom: 8px;
 }
 
-/* A typographic object with a line under it, not a bordered card — matches
-   .lsn-option in styles/components.css. See spec section 18. */
+/* Bordered, rounded box with a fill-tint highlight for state — matches
+   .lsn-option in styles/components.css. Reversed 2026-08-14. */
 .gd-option {
     position: relative;
-    padding: 12px 4px;
+    padding: 12px 16px;
     text-align: left;
     font-size: 0.98rem;
-    border: none;
-    border-bottom: 1px solid var(--border);
-    border-radius: 0;
-    background: none;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--surface);
     color: var(--text);
     cursor: pointer;
     min-height: 48px;
     transition: color var(--dur-fast) var(--ease-standard),
                 border-color var(--dur-fast) var(--ease-standard),
+                background-color var(--dur-fast) var(--ease-standard),
                 transform var(--dur-fast) var(--ease-standard),
                 opacity var(--dur-fast) var(--ease-standard);
 }
 
 .gd-option:hover {
-    border-bottom-color: var(--primary-mid);
+    border-color: var(--primary-mid);
 }
 
 .gd-option.selected {
-    border-bottom-color: var(--accent-dark);
+    border-color: var(--accent);
+    background: var(--accent-bg);
     color: var(--accent-dark);
 }
 
 .gd-option.correct {
-    border-bottom-width: 2px;
-    border-bottom-color: var(--primary);
-    color: var(--primary);
+    border-color: var(--success);
+    background: var(--success-bg);
+    color: var(--success);
     font-weight: 600;
 }
 
 .gd-option.correct::after {
     content: "";
     position: absolute;
-    right: 4px;
+    right: 14px;
     top: 50%;
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background: var(--primary);
+    background: var(--success);
     transform: translateY(-50%);
 }
 
 .gd-option.wrong {
-    border-bottom-style: dashed;
-    border-bottom-color: var(--danger);
+    border-color: var(--danger);
+    background: var(--danger-bg);
     color: var(--danger);
-    opacity: .7;
+    opacity: .85;
     transform: translateX(-6px);
 }
 

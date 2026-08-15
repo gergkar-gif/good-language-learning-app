@@ -57,7 +57,8 @@ LEVEL_META = {
 }
 
 CURRICULUM_META = {
-    "es": {"id": "curriculum.spanish.dele-a1-c1", "title": "Spanish — DELE aligned"}
+    "es": {"id": "curriculum.spanish.dele-a1-c1", "title": "Spanish — DELE aligned"},
+    "hu": {"id": "curriculum.hungarian.a1-c1", "title": "Hungarian"}
 }
 
 # Level -> Unit -> Lesson. Explicit rather than inferred from filenames,
@@ -395,6 +396,20 @@ UNIT_TABLES = {
     ],
 }
 
+# UNIT_TABLES above is Spanish's. table = UNIT_TABLES.get(level_id) used to
+# ignore language entirely, so a Hungarian a1 with no entry would have
+# silently tried to apply Spanish's a1 table (looking for stems like
+# a1-01-01, which don't exist in content/hu) and produced empty units. Each
+# language now gets its own table, keyed by lang first.
+LANG_UNIT_TABLES = {
+    "es": UNIT_TABLES,
+    "hu": {
+        "a1": [
+            ("Learning to Read Hungarian", ["a1-01", "a1-02", "a1-03", "a1-04", "a1-05"]),
+        ],
+    },
+}
+
 # Track metadata for levels that run more than one — id, display title, and
 # the order tracks should render in the Learn tab. A level absent here (or a
 # unit table entry with no third element) is single-track, and the Learn tab
@@ -495,7 +510,7 @@ def build_curriculum(lang="es"):
         units = []
 
         if level_path.exists():
-            table = UNIT_TABLES.get(level_id)
+            table = LANG_UNIT_TABLES.get(lang, {}).get(level_id)
             if table:
                 # Position is counted per track, not across the whole table,
                 # so two tracks each start their own unit numbering at 1

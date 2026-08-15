@@ -1,0 +1,62 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "test.schema.json",
+  "title": "Level test",
+  "description": "The check at the end of a level. Twenty gapped sentences, each answered from a short list of options, marked all at once at the end rather than one at a time — this is a test, not practice, and telling the learner after every question turns it back into a drill.",
+  "type": "object",
+  "required": ["id", "level", "passMark", "questions"],
+  "additionalProperties": false,
+
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^test\\.(a1|a2|b1|b2|c1)$",
+      "examples": ["test.a1"]
+    },
+    "level": { "enum": ["A1", "A2", "B1", "B2", "C1"] },
+    "title": { "type": "string", "minLength": 1 },
+    "intro": { "type": "string", "minLength": 1 },
+    "passMark": {
+      "type": "number",
+      "minimum": 0.5,
+      "maximum": 1,
+      "description": "Fraction correct needed to pass. 0.8 across A1-C1."
+    },
+    "questions": {
+      "type": "array",
+      "minItems": 20,
+      "maxItems": 20,
+      "items": { "$ref": "#/definitions/question" }
+    }
+  },
+
+  "definitions": {
+    "question": {
+      "type": "object",
+      "required": ["id", "sentence", "options", "correct", "teaches"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+        "sentence": {
+          "type": "string",
+          "pattern": "_{3,}",
+          "description": "The sentence with the gap written as _____. Everything either side is context the learner reads."
+        },
+        "options": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 4,
+          "items": { "type": "string", "minLength": 1 },
+          "description": "Real forms used wrongly, never invented words — a nonsense option is not a mistake anyone would make, and rules itself out without testing anything."
+        },
+        "correct": { "type": "integer", "minimum": 0 },
+        "teaches": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+          "description": "What this question tests. The result screen groups wrong answers by these, so a learner is told which topic to revisit rather than only a score."
+        }
+      }
+    }
+  }
+}

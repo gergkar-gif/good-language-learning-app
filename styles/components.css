@@ -222,18 +222,30 @@
   border-color: var(--primary);
 }
 
+/* Switched 2026-08-14 from four flat navy-shade backgrounds + one shared
+   book glyph to the disc language (PATH_SHAPES, engine/curriculum.js) —
+   see [[preferred-disc-art-language]]. One wash background rather than
+   four navy variants: the disc's own two-tone shape now carries per-story
+   variety, so the background doesn't need to as well. */
 .story-card-cover {
   position: relative;
   height: 84px;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: var(--wash);
 }
 
 .story-card-cover-icon {
-  width: 30px;
-  height: 30px;
-  color: rgba(255,255,255,.85);
+  width: 52px;
+  height: 52px;
+}
+
+/* Muted deliberately: a shelf can hold dozens of these at once, so the
+   disc language's usual orange accent (tuned for a handful of items) is
+   toned down to a soft navy instead of full --accent orange here. */
+.story-card-cover-icon .ps-accent {
+  fill: var(--primary-mid);
 }
 
 .story-card-read-badge {
@@ -249,13 +261,6 @@
   line-height: 20px;
   text-align: center;
 }
-
-/* No gradients. Four steps of the same ink, so a shelf of covers reads as
-   one material rather than four brands. */
-.cover-teal   { background: var(--primary); }
-.cover-clay   { background: var(--primary-dark); }
-.cover-sage   { background: var(--primary-mid); }
-.cover-sand   { background: var(--secondary); }
 
 .story-card-body {
   padding: 10px 12px 12px;
@@ -892,63 +897,60 @@
   flex-wrap: wrap;
 }
 
-/* A typographic object with a line under it, not a bordered card — see
-   section 18. Selection and correctness are carried by colour, the line
-   and small motion, never by a filled box. */
+/* Bordered, rounded box with a fill-tint highlight for state — reversed
+   2026-08-14 (visual identity v2) from the underlined-typographic-object
+   treatment. Matches the reference mockup's "Choose the right form". */
 .lsn-option {
   position: relative;
-  padding: 14px 4px;
-  border: none;
-  border-bottom: 1px solid var(--border);
-  border-radius: 0;
-  background: none;
+  padding: 14px 16px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
   cursor: pointer;
   text-align: left;
   font-size: 17px;
   color: var(--text);
   transition: color var(--dur-fast) var(--ease-standard),
               border-color var(--dur-fast) var(--ease-standard),
+              background-color var(--dur-fast) var(--ease-standard),
               transform var(--dur-fast) var(--ease-standard),
               opacity var(--dur-fast) var(--ease-standard);
 }
 
 .lsn-option:hover {
-  border-bottom-color: var(--primary-mid);
+  border-color: var(--primary-mid);
 }
 
 .lsn-option.selected {
-  border-bottom-color: var(--accent-dark);
+  border-color: var(--accent);
+  background: var(--accent-bg);
   color: var(--accent-dark);
 }
 
-/* Correct: the composition settles — a solid navy line and a small mark
-   at the end, not a green box. */
 .lsn-option.correct {
-  border-bottom-width: 2px;
-  border-bottom-color: var(--primary);
-  color: var(--primary);
+  border-color: var(--success);
+  background: var(--success-bg);
+  color: var(--success);
   font-weight: 600;
 }
 
 .lsn-option.correct::after {
   content: "";
   position: absolute;
-  right: 4px;
+  right: 14px;
   top: 50%;
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--primary);
+  background: var(--success);
   transform: translateY(-50%);
 }
 
-/* Incorrect: the line breaks and the option drifts off rather than
-   turning into a red box. */
 .lsn-option.wrong {
-  border-bottom-style: dashed;
-  border-bottom-color: var(--danger);
+  border-color: var(--danger);
+  background: var(--danger-bg);
   color: var(--danger);
-  opacity: .7;
+  opacity: .85;
   transform: translateX(-6px);
 }
 
@@ -1370,11 +1372,13 @@
 
 /* Four hues read as four categories; these are one scale. Depth of ink
    carries the ordering, and every button is labelled, so nothing here
-   depends on colour alone. Only "Again" takes the accent. */
-.review-rate-again { background: var(--accent-dark); }
+   depends on colour alone. Reversed 2026-08-14 (visual identity v2): the
+   two extremes take the sparing SRS-only red/green (see --success in
+   base.css); Hard/Good stay in the navy family. */
+.review-rate-again { background: var(--danger); }
 .review-rate-hard  { background: var(--secondary); }
 .review-rate-good  { background: var(--primary-mid); }
-.review-rate-easy  { background: var(--primary); }
+.review-rate-easy  { background: var(--success); }
 
 /* ============================================
    WORD POPUP — tap-to-translate sheet

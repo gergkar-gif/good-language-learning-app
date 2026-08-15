@@ -350,61 +350,61 @@
   --level: var(--primary);
 }
 
-/* An archive, not a stack of cards — rows separated by a hairline, the
-   level's identity carried by a thin spine and an ordinal rather than by a
-   filled box. See parlour_visual_overhaul_spec.md section 13. */
+/* Reversed 2026-08-14 (visual identity v2) — back to a stack of individual
+   rounded, shadowed cards rather than hairline-divided open rows, matching
+   the current reference mockups. The spine and ordinal are kept as an
+   accent inside each card rather than dropped. */
 .level-list {
   display: flex;
   flex-direction: column;
 }
 
+/* An archive of open rows on cream, divided by hairlines — not a stack of
+   lifted white cards. No spine bar either: it was a fixed navy accent
+   regardless of level, so it carried no information. */
 .level-card {
   position: relative;
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 18px;
   width: 100%;
-  padding: 20px 6px 20px 26px;
+  padding: 20px 4px;
   background: none;
   border: none;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--border-light);
+  border-radius: 0;
   text-align: left;
   cursor: pointer;
 }
 
+.level-card:last-child {
+  border-bottom: none;
+}
+
+.level-card:hover .level-card-code,
 .level-card:hover .level-card-title {
-  color: var(--primary);
+  color: var(--accent-dark);
 }
 
-.level-card-spine {
-  position: absolute;
-  left: 0;
-  top: 14px;
-  bottom: 14px;
-  width: 2px;
-  background: var(--level);
-}
-
-.level-card-num {
-  flex: none;
-  width: 20px;
-  font-size: 13px;
-  color: var(--muted);
-  font-variant-numeric: tabular-nums;
-}
-
+/* Fill comes from .ps-wash/.ps-ink/.ps-accent on the shapes themselves
+   (see LEVEL_ICONS, engine/curriculum.js) — this is sizing only. */
 .level-icon {
   width: 28px;
   height: 28px;
   flex: none;
-  /* Falls back to navy outside a .level-card/.level-detail ancestor (the
-     lesson screen's own header, for one), where --level is never set. */
-  color: var(--level, var(--primary));
 }
 
 .level-icon--sm {
   width: 18px;
   height: 18px;
+}
+
+/* The top-level Lessons list only — matches the reference, where each
+   level's icon is the dominant object in its row rather than a small
+   marker beside the title. */
+.level-icon--lg {
+  width: 48px;
+  height: 48px;
 }
 
 /* A unit's own position within the level — units are a sequence, not a
@@ -440,29 +440,45 @@
   min-width: 0;
 }
 
+/* The level code is the heading here — this is the list of levels, and the
+   code is what identifies one. The name sits under it as the gloss. */
+.level-card-code {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--text);
+}
+
 .level-card-title {
   font-family: var(--font-display);
-  font-size: 19px;
+  font-size: 16px;
   font-weight: 400;
   color: var(--text);
 }
 
 .level-card-sub {
-  font-size: 13px;
+  margin-top: 1px;
+  font-size: 12.5px;
+  line-height: 1.35;
   color: var(--muted);
 }
 
+/* Sits short and right-aligned under the name rather than spanning the
+   whole row — progress is a footnote to the level, not its headline. */
 .level-card-meter {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-top: 8px;
+  margin-top: 10px;
+  align-self: flex-end;
+  width: 72%;
 }
 
 .level-card-track {
   flex: 1;
-  height: 5px;
-  min-width: 60px;
+  height: 3px;
+  min-width: 50px;
   border-radius: var(--radius-pill);
   background: var(--border);
   overflow: hidden;
@@ -472,7 +488,7 @@
   display: block;
   height: 100%;
   border-radius: var(--radius-pill);
-  background: var(--level);
+  background: var(--accent);
 }
 
 .level-card-count {
@@ -481,21 +497,239 @@
   white-space: nowrap;
 }
 
-/* A geometric triangle in place of a chevron glyph — see .geo-triangle in
-   styles/geometry.css. Muted at rest; nudges forward and turns accent-dark
-   on hover/focus, so the directional cue itself is the interaction. */
+/* A drawn chevron rather than a solid triangle — the reference's rows end
+   in a thin open mark. Nudges forward and darkens on hover/focus, so the
+   directional cue itself is the interaction. */
 .level-card-arrow {
-  --geo-size: 12px;
   flex: none;
-  background: var(--muted);
+  width: 9px;
+  height: 9px;
+  border-right: 1.5px solid var(--muted);
+  border-top: 1.5px solid var(--muted);
+  transform: rotate(45deg);
   transition: transform var(--dur-fast) var(--ease-standard),
-              background var(--dur-fast) var(--ease-standard);
+              border-color var(--dur-fast) var(--ease-standard);
 }
 
 .level-card:hover .level-card-arrow,
 .level-card:focus-visible .level-card-arrow {
-  background: var(--accent-dark);
-  transform: translateX(3px);
+  border-color: var(--accent-dark);
+  transform: rotate(45deg) translate(2px, -2px);
+}
+
+/* ---- Level detail head (visual identity v2) ----
+   Names the level you drilled into, which this screen never did — the page
+   header still reads "Lessons". The name only: the description repeats the
+   level list you just came from, and the count is in the summary below. */
+.unit-path-head {
+  margin-bottom: var(--space-4);
+}
+
+.unit-path-head-title {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--text);
+}
+
+/* ---- Unit path (visual identity v2, 2026-08-14) ----
+   A hand-drawn-feeling line connecting each unit, replacing the card list
+   for the unit-list screen only — the level list one step up stays cards.
+   See engine/curriculum.js unitPathHtml/unitPathPoints/smoothPathD; --x/--y/
+   --path-w/--path-h are set inline per node/container from that layout. */
+/* Mobile-first, and the same disc-on-the-line composition as the dual-track
+   path (.dtp-*) — unified 2026-08-14 at the user's preference; see .dtp for
+   the parallel set of variables. --path-amp is how far the line swings
+   either side of centre; the art disc is centred directly on it rather
+   than sitting beside a separate dot marker, which was the pre-unification
+   version. A node is art + gap + label, and because units sit at
+   alternating extremes each one has half the column *plus* the swing:
+     375px viewport → 335 content → 167 half + 70 swing = 237 for 96+8+96=200
+     500px viewport → 460 content → 230 half + 96 swing = 326 for 128+12+138=278 */
+.unit-path {
+  --path-amp: 70px;
+  --path-art: 96px;
+  --path-gap: 8px;
+  --path-text: 96px;
+  position: relative;
+  width: 100%;
+  height: var(--path-h);
+  margin: var(--space-6) auto;
+}
+
+@media (min-width: 421px) {
+  .unit-path {
+    --path-amp: 96px;
+    --path-art: 128px;
+    --path-gap: 12px;
+    --path-text: 138px;
+  }
+}
+
+/* The curve keeps its own narrow width and sits centred, rather than
+   stretching to the container — preserveAspectRatio="none" on a container-
+   width box would flatten the wave out of shape. */
+.unit-path-line {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: calc(var(--path-amp) * 2);
+  height: 100%;
+  transform: translateX(-50%);
+  overflow: visible;
+}
+
+/* A confident navy route, not a hairline divider — at --border's 0.18 alpha
+   the line all but vanished, and the path is the main object on this
+   screen. preserveAspectRatio="none" would scale the stroke with the box,
+   so vector-effect keeps it an even weight. */
+.unit-path-line path {
+  fill: none;
+  stroke: var(--primary);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.unit-path-cap {
+  position: absolute;
+  top: var(--y);
+  left: calc(50% + var(--sx) * var(--path-amp));
+  transform: translate(-50%, -50%);
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+/* The disc is centred on its line — hence the negative margin of half its
+   width, same as .dtp-node — and the label hangs outside it, never over
+   it. Status used to be a colour-coded dot; there is no separate marker to
+   colour-code any more, so (matching .dtp-node) only "upcoming" changes
+   anything, by dimming the art and muting the text below. */
+.unit-path-node {
+  position: absolute;
+  top: var(--y);
+  left: calc(50% + var(--sx) * var(--path-amp));
+  transform: translateY(-50%);
+  margin-left: calc(var(--path-art) / -2);
+  display: flex;
+  align-items: center;
+  gap: var(--path-gap);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
+}
+
+.unit-path-node.is-left {
+  left: auto;
+  right: calc(50% - var(--sx) * var(--path-amp));
+  margin-left: 0;
+  margin-right: calc(var(--path-art) / -2);
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+.unit-path-art {
+  width: var(--path-art);
+  height: var(--path-art);
+  flex: none;
+}
+
+.unit-path-art.is-flip { transform: scaleX(-1); }
+
+.ps-wash { fill: var(--wash); }
+.ps-ink { fill: var(--primary); }
+.ps-accent { fill: var(--accent); }
+.ps-line { stroke: var(--primary); stroke-width: 3.5; fill: none; stroke-linecap: round; }
+.ps-hair { stroke: var(--primary); stroke-width: 1.25; fill: none; opacity: .5; }
+.ps-rules line { stroke: var(--primary); stroke-width: 3; stroke-linecap: round; }
+
+.unit-path-node.is-upcoming .unit-path-art { opacity: .55; }
+
+.unit-path-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  width: var(--path-text);
+  flex: none;
+}
+
+.unit-path-num {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent-dark);
+  font-variant-numeric: tabular-nums;
+}
+
+.unit-path-title {
+  font-family: var(--font-display);
+  font-size: 17px;
+  color: var(--text);
+}
+
+.unit-path-count {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.unit-path-node.is-upcoming .unit-path-title,
+.unit-path-node.is-upcoming .unit-path-num,
+.unit-path-node.is-upcoming .unit-path-count {
+  color: var(--muted);
+}
+
+/* ---- Unit path summary (visual identity v2) ----
+   The level-wide progress readout under the path — separate from the
+   header's own count, matching the reference's footer bar. */
+.unit-path-summary {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: var(--space-5) 0 var(--space-6);
+  padding: 14px 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.unit-path-summary-dot {
+  width: 10px;
+  height: 10px;
+  flex: none;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.unit-path-summary-text {
+  font-size: 13px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.unit-path-summary-track {
+  flex: 1;
+  height: 4px;
+  min-width: 40px;
+  border-radius: var(--radius-pill);
+  background: var(--border);
+  overflow: hidden;
+}
+
+.unit-path-summary-fill {
+  display: block;
+  height: 100%;
+  background: var(--primary);
+}
+
+.unit-path-summary-pct {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--primary);
+  white-space: nowrap;
 }
 
 /* ---- Unit tracks (B1's Core Spanish + Latin America) ----
@@ -525,16 +759,340 @@
   color: var(--muted);
 }
 
-@media (min-width: 600px) {
-  .unit-tracks {
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 32px;
-  }
+/* ---- Dual-track path (visual identity v2) ----
+   Two tracks braided into one composition: a line per track, crossing
+   between rows, with units interleaved down a single column. Superseded
+   side-by-side columns (214px each in the 500px shell — nodes overflowed
+   by 73px) and then stacked full-width paths. Mobile-first; every measure
+   derives from --dtp-amp so the swing widens with the viewport.
+     375px → 335 content → 167 half vs 22 + 38 + 8 + 92 = 160 used
+     500px → 460 content → 230 half vs 34 + 52 + 12 + 128 = 226 used */
+.dtp {
+  --dtp-amp: 22px;
+  --dtp-art: 76px;
+  --dtp-gap: 8px;
+  --dtp-text: 92px;
+  margin: var(--space-5) 0 var(--space-6);
+}
 
-  .unit-track-column {
-    flex: 1 1 0;
+@media (min-width: 421px) {
+  .dtp {
+    --dtp-amp: 34px;
+    --dtp-art: 104px;
+    --dtp-gap: 12px;
+    --dtp-text: 128px;
   }
+}
+
+.dtp-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  margin-bottom: var(--space-5);
+}
+
+.dtp-key {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.dtp-key-line {
+  width: 22px;
+  height: 2px;
+  border-radius: 1px;
+  background: var(--primary);
+}
+
+.dtp-key-line--t1 { background: var(--accent); }
+
+.dtp-path {
+  position: relative;
+  width: 100%;
+  height: var(--dtp-h);
+}
+
+.dtp-lines {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: calc(var(--dtp-amp) * 2);
+  height: 100%;
+  transform: translateX(-50%);
+  overflow: visible;
+}
+
+/* non-scaling-stroke because preserveAspectRatio="none" stretches x only,
+   which would otherwise draw the two lines at different apparent weights. */
+.dtp-line {
+  fill: none;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+  stroke: var(--primary);
+}
+
+.dtp-line--t1 { stroke: var(--accent); }
+
+/* The disc is centred on its line — hence the negative margin of half its
+   width — and the label hangs outside it, never over it. */
+.dtp-node {
+  position: absolute;
+  top: var(--y);
+  left: calc(50% + var(--sx) * var(--dtp-amp));
+  transform: translateY(-50%);
+  margin-left: calc(var(--dtp-art) / -2);
+  display: flex;
+  align-items: center;
+  gap: var(--dtp-gap);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
+}
+
+.dtp-node.is-left {
+  left: auto;
+  right: calc(50% - var(--sx) * var(--dtp-amp));
+  margin-left: 0;
+  margin-right: calc(var(--dtp-art) / -2);
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+.dtp-art {
+  width: var(--dtp-art);
+  height: var(--dtp-art);
+  flex: none;
+}
+
+.dtp-art.is-flip { transform: scaleX(-1); }
+
+.dtp-node.is-upcoming .dtp-art { opacity: .5; }
+
+.dtp-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  width: var(--dtp-text);
+  flex: none;
+}
+
+.dtp-num {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent-dark);
+  font-variant-numeric: tabular-nums;
+}
+
+.dtp-title {
+  font-family: var(--font-display);
+  font-size: 17px;
+  line-height: 1.2;
+  color: var(--text);
+}
+
+.dtp-track {
+  margin-top: 3px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  color: var(--primary-mid);
+}
+
+.dtp-node.is-t1 .dtp-track { color: var(--accent-dark); }
+
+.dtp-count {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.dtp-node.is-upcoming .dtp-title,
+.dtp-node.is-upcoming .dtp-count {
+  color: var(--muted);
+}
+
+/* ---- Unit detail (visual identity v2) ---- */
+/* No hero illustration here — tried, didn't earn its place at this depth
+   (the level list above already carries one). Straight from the back
+   button into the unit's own heading. */
+
+.ud-head {
+  margin-top: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.ud-num {
+  font-family: var(--font-display);
+  font-size: 24px;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+
+.ud-title {
+  font-family: var(--font-display);
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--text);
+}
+
+.ud-track {
+  margin-top: 8px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  color: var(--primary);
+}
+
+.ud-count {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* One mark per lesson: the unit's shape at a glance. */
+.ud-dots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: var(--space-5) 0;
+  padding-bottom: var(--space-5);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.ud-dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border);
+  background: none;
+}
+
+.ud-dot.is-done {
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
+.ud-section {
+  font-family: var(--font-display);
+  font-size: 19px;
+  font-weight: 400;
+  color: var(--text);
+  margin-bottom: var(--space-3);
+}
+
+.ud-lessons {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* A run of steps, not a stack of rows: each carries a node on a shared
+   spine so the unit reads as one path, matching the level view above it. */
+.ud-lesson {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 14px 0 14px 28px;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+/* The spine, drawn per row so it stops cleanly at the last one. */
+.ud-lesson::before {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 0;
+  bottom: 0;
+  width: 1.5px;
+  background: var(--border);
+}
+
+.ud-lessons li:first-child .ud-lesson::before { top: 50%; }
+.ud-lessons li:last-child .ud-lesson::before { bottom: 50%; }
+
+.ud-lesson-node {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 2px solid var(--border);
+  transform: translateY(-50%);
+}
+
+.ud-lesson.is-done .ud-lesson-node {
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
+.ud-lesson.is-current .ud-lesson-node {
+  border-color: var(--accent);
+}
+
+.ud-lesson-num {
+  flex: none;
+  font-size: 12px;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.ud-lesson-title {
+  flex: 1;
+  min-width: 0;
+  font-family: var(--font-display);
+  font-size: 16px;
+  color: var(--text);
+}
+
+.ud-lesson:hover .ud-lesson-title { color: var(--accent-dark); }
+
+.ud-lesson.is-todo .ud-lesson-title { color: var(--muted); }
+
+/* Ring at the end of the row: filled with a check when done, an open
+   accent ring for the lesson you are on, hairline for the rest. */
+.ud-lesson-mark {
+  position: relative;
+  flex: none;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border);
+}
+
+.ud-lesson.is-current .ud-lesson-mark { border-color: var(--accent); }
+
+.ud-lesson.is-done .ud-lesson-mark {
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
+.ud-lesson.is-done .ud-lesson-mark::after {
+  content: "";
+  position: absolute;
+  left: 8px;
+  top: 6px;
+  width: 6px;
+  height: 10px;
+  border-right: 2px solid var(--surface);
+  border-bottom: 2px solid var(--surface);
+  transform: rotate(45deg);
 }
 
 /* ---- Level detail ---- */
@@ -567,147 +1125,11 @@
   color: var(--text);
 }
 
-/* The level's identity, developed at hero scale — same composition as its
-   small icon in the level list, given room. One per level page, so the
-   geometric language reappears here rather than only in the small icon. */
-.level-hero {
-  width: 100%;
-  margin-bottom: 20px;
-  pointer-events: none;
-}
-
-.level-hero-art {
-  display: block;
-  width: 100%;
-  height: auto;
-  max-height: 108px;
-}
-
-.level-detail-head {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 14px;
-  padding-bottom: 16px;
-  border-bottom: 1px solid var(--border);
-  margin-bottom: 8px;
-}
-
-.level-detail-titles {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  flex: 1;
-  min-width: 0;
-}
-
-.level-detail-progress {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  flex: none;
-}
-
-/* Ring reads the percentage off --pct so there is one source for it.
-   flex:none matters — without it the ring is squeezed to nothing on narrow
-   screens, because the label beside it refuses to wrap. */
-.progress-ring {
-  display: grid;
-  place-items: center;
-  width: 46px;
-  height: 46px;
-  flex: none;
-  border-radius: 50%;
-  background: conic-gradient(var(--level) calc(var(--pct) * 1%), var(--border) 0);
-}
-
-.progress-ring-label {
-  display: grid;
-  place-items: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: var(--surface);
-  font-size: 11px;
-  font-weight: 600;
-  color: var(--text);
-}
-
-.lesson-rows {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.lesson-row {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  width: 100%;
-  padding: 13px 12px;
-  background: none;
-  border-radius: var(--radius-sm);
-  text-align: left;
-  cursor: pointer;
-  transition: background .15s;
-}
-
-.lesson-row:hover {
-  background: var(--bg);
-}
-
-.lesson-row.is-current {
-  background: var(--bg);
-}
-
-.lesson-row-num {
-  font-size: 13px;
-  color: var(--muted);
-  font-variant-numeric: tabular-nums;
-  flex: none;
-}
-
-.lesson-row-title {
-  flex: 1;
-  min-width: 0;
-  font-family: var(--font-display);
-  font-size: 16px;
-  color: var(--text);
-}
-
-.lesson-row-time {
-  font-size: 12px;
-  color: var(--muted);
-  white-space: nowrap;
-  flex: none;
-}
-
-/* Status is a circle: filled tick when done, outlined play when current,
-   empty ring otherwise — never colour alone. */
-.lesson-row-state {
-  display: grid;
-  place-items: center;
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  border: 1.5px solid var(--border);
-  font-size: 11px;
-  line-height: 1;
-  color: transparent;
-  flex: none;
-}
-
-.lesson-row.is-done .lesson-row-state {
-  background: var(--level);
-  border-color: var(--level);
-  color: #fff;
-}
-
-/* The one live thing on the page, and the only accent on it */
-.lesson-row.is-current .lesson-row-state {
-  border-color: var(--accent-dark);
-  color: var(--accent-dark);
-}
+/* .level-hero, .level-detail-head/-titles/-progress, .progress-ring(-label)
+   and .lesson-row* all removed 2026-08-14 — superseded by .unit-path-head
+   (level list) and .ud-* (unit detail) earlier the same day, and no longer
+   emitted by curriculum.js. The hero specifically: removed at the user's
+   request ("i hate it") from both the unit-list and unit-detail screens. */
 
 .level-empty {
   padding: 24px 12px;

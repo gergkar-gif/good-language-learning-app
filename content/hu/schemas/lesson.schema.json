@@ -1,0 +1,229 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "lesson.schema.json",
+  "title": "Lesson",
+  "description": "A lesson is a playlist, not content. It names an ordered list of sections; every word, rule and exercise lives in a separate content file that a section points at. engine/lessons.js buildSteps() expands sections into the flat list of screens the learner walks through. Rules that span more than one file (goals matching the checklist, exercise ids resolving, vocabulary actually being used) cannot be expressed here — see README.md in this folder.",
+  "type": "object",
+  "required": ["id", "title", "level", "sections"],
+  "additionalProperties": false,
+
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^lesson\\.(a1|a2|b1|b2|c1)\\.(\\d{2}[a-z]?|[a-z]+)(\\.(\\d{2}|consolidation))?$",
+      "description": "Stable identifier, also the progress key. Must match the id used in curriculum/curriculum.json. A unit split into several lessons adds a third segment: lesson.a1.01.01, lesson.a1.01.02, ..., lesson.a1.01.consolidation. The unit segment is normally a two-digit position (optionally with a letter, for a not-yet-renumbered old slot like 03c), but a word is allowed where a numeric position would collide with another unit's old lesson slot (lesson.a1.cafe.01) — rare, only reach for it when a rename is otherwise ambiguous.",
+      "examples": ["lesson.a1.01", "lesson.a1.01.01", "lesson.a1.01.consolidation", "lesson.a1.cafe.01"]
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Shown in the lesson header. Also appears in curriculum.json for the Learn card; the two must agree."
+    },
+    "level": {
+      "type": "string",
+      "enum": ["A1", "A2", "B1", "B2", "C1"],
+      "description": "Shown as the lesson subtitle."
+    },
+    "goal": {
+      "type": "string",
+      "minLength": 1,
+      "description": "One-line summary shown on the Learn card. Not the same as the goal section's items — this is the headline, those are the capabilities. build-manifest.py copies it into the generated curriculum.json, so edit it here and rebuild, never in curriculum.json.",
+      "examples": ["Introduce yourself"]
+    },
+    "grammar": {
+      "type": "string",
+      "minLength": 1,
+      "description": "The grammar point in a word or two, for the curriculum index. Also generated into curriculum.json.",
+      "examples": ["ser"]
+    },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Only what sections[] cannot carry. Content paths belong on the section that uses them, so a path lives in exactly one place. Nothing reads estimatedMinutes yet.",
+      "properties": {
+        "estimatedMinutes": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Rough completion time. Currently unused by the app."
+        }
+      }
+    },
+    "sections": {
+      "type": "array",
+      "minItems": 1,
+      "description": "Canonical order: goal, recycle, grammar (one per concept), the practice exercise-group, vocabulary, story, reading, dialogue, writing, srs, checklist.",
+      "items": { "$ref": "#/definitions/section" }
+    }
+  },
+
+  "definitions": {
+    "contentRef": {
+      "type": "string",
+      "pattern": "^(grammar|vocabulary|exercises|stories)/.+\\.json$",
+      "description": "Path relative to content/es/. loadContent() prefixes that itself.",
+      "examples": ["grammar/a1/a1-01-ser-gr.json"]
+    },
+
+    "section": {
+      "oneOf": [
+        { "$ref": "#/definitions/goalSection" },
+        { "$ref": "#/definitions/recycleSection" },
+        { "$ref": "#/definitions/grammarSection" },
+        { "$ref": "#/definitions/exerciseGroupSection" },
+        { "$ref": "#/definitions/vocabularySection" },
+        { "$ref": "#/definitions/storySection" },
+        { "$ref": "#/definitions/srsSection" },
+        { "$ref": "#/definitions/checklistSection" }
+      ]
+    },
+
+    "goalSection": {
+      "type": "object",
+      "description": "Opens the lesson. Produces one screen. Each item must be answered by a later section, and must have a matching checklist item in the same order.",
+      "required": ["type", "items"],
+      "additionalProperties": false,
+      "properties": {
+        "type": { "const": "goal" },
+        "title": { "type": "string", "default": "Lesson Goals" },
+        "items": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "minLength": 1 },
+          "description": "Phrased as capabilities: 'Say your name with me llamo'."
+        }
+      }
+    },
+
+    "recycleSection": {
+      "type": "object",
+      "description": "Warms the learner up on earlier material before anything new. Takes no ref: engine/recycle.js assembles it at runtime from `teaches`-tagged exercises in lessons already completed, scheduled per exercise id with the same SM-2 curve as the vocabulary deck. A lesson with nothing yet to recycle (lesson 1, or a learner starting fresh) contributes zero screens rather than an empty block. See content/es/guides/a1-srs-srategy.md.",
+      "required": ["type"],
+      "additionalProperties": false,
+      "properties": {
+        "type": { "const": "recycle" },
+        "title": { "type": "string", "default": "Quick Review" },
+        "count": { "type": "integer", "minimum": 1, "maximum": 5, "default": 3 }
+      }
+    },
+
+    "grammarSection": {
+      "type": "object",
+      "description": "One section per grammar concept, and one screen per section — every part of the referenced file renders together. Splitting a concept across screens produced a run of near-empty pages sharing a heading.",
+      "required": ["type", "ref"],
+      "additionalProperties": false,
+      "properties": {
+        "type": { "const": "grammar" },
+        "title": { "type": "string", "description": "Overrides the grammar file's own title." },
+        "ref": { "$ref": "#/definitions/contentRef" }
+      }
+    },
+
+    "exerciseGroupSection": {
+      "type": "object",
+      "description": "Produces one screen per id in exerciseRefs, each gated. With more than one id the screens are numbered ('Practice 3/6'). A lesson has four groups totalling 15 exercises — Practice 6, Reading 4, Dialogue 3, Writing 2 — and the Practice group must span at least 5 distinct exercise types. See a1-content-spec.md; scripts/audit-lesson.py enforces it.",
+      "required": ["type", "ref", "exerciseRefs"],
+      "additionalProperties": false,
+      "properties": {
+        "type": { "const": "exercise-group" },
+        "title": {
+          "type": "string",
+          "description": "Heading stem for the screens in this group.",
+          "examples": ["Practice", "Reading", "Dialogue", "Writing"]
+        },
+        "ref": { "$ref": "#/definitions/contentRef" },
+        "exerciseRefs": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "minLength": 1 },
+          "description": "Exercise ids from the referenced file, in the order they should be shown. An id that does not resolve is skipped with a console warning — silent in production, so the validator checks these."
+        }
+      }
+    },
+
+    "vocabularySection": {
+      "type": "object",
+      "description": "Produces one screen listing the words. Also the source for the srs section, so a lesson's word list exists in exactly one place.",
+      "required": ["type", "ref"],
+      "additionalProperties": false,
+      "properties": {
+        "type": { "const": "vocabulary" },
+        "title": { "type": "string", "default": "Lesson Vocabulary" },
+        "ref": { "$ref": "#/definitions/contentRef" }
+      }
+    },
+
+    "storySection": {
+      "type": "object",
+      "description": "Produces one screen. Words are tappable for translation, the same interaction as the Library reader.",
+      "required": ["type", "ref"],
+      "additionalProperties": false,
+      "properties": {
+        "type": { "const": "story" },
+        "title": { "type": "string", "description": "Overrides the story file's own title." },
+        "ref": { "$ref": "#/definitions/contentRef" }
+      }
+    },
+
+    "srsSection": {
+      "type": "object",
+      "description": "Cards are collected from this lesson's vocabulary sections and de-duplicated by lemma, so there is no second word list to keep in sync. Takes no ref. The learner ticks which words to add; words already in the deck are shown as such.",
+      "required": ["type"],
+      "additionalProperties": false,
+      "properties": {
+        "type": { "const": "srs" },
+        "title": { "type": "string", "default": "Add to Review" }
+      }
+    },
+
+    "checklistSection": {
+      "type": "object",
+      "description": "Closes the lesson. One item per goal, in the same order, phrased as 'I can ...'.",
+      "required": ["type", "items"],
+      "additionalProperties": false,
+      "properties": {
+        "type": { "const": "checklist" },
+        "title": { "type": "string", "default": "Can you do this?" },
+        "items": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "minLength": 1 }
+        }
+      }
+    }
+  },
+
+  "examples": [
+    {
+      "id": "lesson.a1.01",
+      "title": "Greetings & Introductions",
+      "level": "A1",
+      "goal": "Introduce yourself",
+      "grammar": "ser",
+      "metadata": { "estimatedMinutes": 20 },
+      "sections": [
+        { "type": "goal", "title": "Lesson Goals", "items": ["Greet someone at any time of day, and say goodbye two ways"] },
+        { "type": "grammar", "ref": "grammar/a1/a1-01-greetings-gr.json" },
+        { "type": "grammar", "ref": "grammar/a1/a1-01-ser-gr.json" },
+        {
+          "type": "exercise-group",
+          "title": "Practice",
+          "ref": "exercises/a1/a1-01-ex.json",
+          "exerciseRefs": [
+            "a1-01-practice-match",
+            "a1-01-practice-choice",
+            "a1-01-practice-blank",
+            "a1-01-practice-build",
+            "a1-01-practice-order"
+          ]
+        },
+        { "type": "vocabulary", "title": "Lesson Vocabulary", "ref": "vocabulary/a1/a1-01-voc.json" },
+        { "type": "story", "ref": "stories/original/a1/a1-01.json" },
+        { "type": "exercise-group", "title": "Reading", "ref": "exercises/a1/a1-01-ex.json", "exerciseRefs": ["a1-01-reading-choice", "a1-01-reading-order"] },
+        { "type": "exercise-group", "title": "Dialogue", "ref": "exercises/a1/a1-01-ex.json", "exerciseRefs": ["a1-01-dialogue"] },
+        { "type": "exercise-group", "title": "Writing", "ref": "exercises/a1/a1-01-ex.json", "exerciseRefs": ["a1-01-writing"] },
+        { "type": "srs", "title": "Add to Review" },
+        { "type": "checklist", "title": "Can you do this?", "items": ["I can greet someone at any time of day, and say goodbye two ways"] }
+      ]
+    }
+  ]
+}

@@ -92,16 +92,15 @@ const Library = (function () {
     // language (story-card/-cover/-body classes) so a saved reading looks
     // exactly like it did on its home shelf.
     function savedCardHtml(story, isRead) {
-        const cover = (typeof coverVariantFor === 'function') ? coverVariantFor(story.id) : 'cover-teal';
+        const art = (typeof pathArt === 'function' && typeof coverArtIndexFor === 'function')
+            ? pathArt(coverArtIndexFor(story.id), 'story-card-cover-icon')
+            : '';
         const minutes = story.estimatedMinutes ? story.estimatedMinutes + ' min' : '';
         return `
             <div class="story-card lt-saved-card">
                 <button class="story-card-open" data-saved-open="${esc(story.id)}">
-                    <div class="story-card-cover ${cover}">
-                        <svg class="story-card-cover-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                            <path d="M4 5.5C4 4.67 4.67 4 5.5 4H11v16H5.5A1.5 1.5 0 0 1 4 18.5v-13Z" stroke="currentColor" stroke-width="1.3"/>
-                            <path d="M20 5.5c0-.83-.67-1.5-1.5-1.5H13v16h5.5a1.5 1.5 0 0 0 1.5-1.5v-13Z" stroke="currentColor" stroke-width="1.3"/>
-                        </svg>
+                    <div class="story-card-cover">
+                        ${art}
                         ${isRead ? '<span class="story-card-read-badge" title="Read">✓</span>' : ''}
                     </div>
                     <div class="story-card-body">

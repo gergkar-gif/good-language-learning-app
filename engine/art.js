@@ -111,35 +111,11 @@ const Art = (function () {
             <circle class="accent-solid" cx="168" cy="60" r="4"/>
         `,
 
-        // Level identities — the same point/line/angle/plane sequence as
-        // LEVEL_ICONS in engine/curriculum.js, developed at hero scale. See
-        // that file's comment for why the five are one progression rather
-        // than five unrelated pictograms. No accent: levels are a sequence,
-        // not a category, so only form differs between them, never colour.
-        levelA1: `
-            <line class="ink-hair" x1="20" y1="86" x2="300" y2="86"/>
-            <circle class="ink-line" cx="160" cy="46" r="30"/>
-            <circle class="ink-solid" cx="160" cy="46" r="7"/>
-        `,
-        levelA2: `
-            <line class="ink-hair" x1="20" y1="86" x2="300" y2="86"/>
-            <line class="ink-rule" x1="60" y1="78" x2="260" y2="26"/>
-            <circle class="ink-solid" cx="260" cy="26" r="7"/>
-        `,
-        levelB1: `
-            <line class="ink-hair" x1="20" y1="86" x2="300" y2="86"/>
-            <path class="ink-rule" d="M70 78 170 26 270 78"/>
-            <circle class="ink-solid" cx="170" cy="26" r="7"/>
-        `,
-        levelB2: `
-            <line class="ink-hair" x1="20" y1="86" x2="300" y2="86"/>
-            <path class="ink-line" d="M160 18 226 86H94Z"/>
-        `,
-        levelC1: `
-            <line class="ink-hair" x1="20" y1="86" x2="300" y2="86"/>
-            <path class="ink-line" d="M148 18 208 86H88Z"/>
-            <circle class="ink-line" cx="196" cy="52" r="34"/>
-        `
+        // levelA1..levelC1 (hero-scale level identity art) removed
+        // 2026-08-14 — unused since Art.svg('level'+level, ...) was dropped
+        // from both curriculum.js call sites when the Lessons hero art was
+        // removed at the user's request the same day. LEVEL_ICONS in
+        // curriculum.js is the only level-identity art left.
     };
 
 

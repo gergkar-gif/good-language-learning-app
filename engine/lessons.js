@@ -540,7 +540,7 @@ const stepRenderers = {
             <div class="lsn-listen">
                 <button class="lsn-play" onclick="lessonPlayAudio()" aria-label="Play audio">${Art.icon('listening')} Play</button>
                 ${(typeof Speech === 'undefined' || !Speech.available())
-                    ? '<p class="lsn-hint">No Spanish voice found on this device — you can still answer after 3 tries.</p>' : ''}
+                    ? `<p class="lsn-hint">No ${esc(Lang.name())} voice found on this device — you can still answer after 3 tries.</p>` : ''}
             </div>
             <div class="lsn-options">
                 ${pick.options.map((option, i) => `
@@ -563,7 +563,7 @@ const stepRenderers = {
             <div class="lsn-listen">
                 <button class="lsn-play" onclick="lessonPlayAudio()" aria-label="Play audio">${Art.icon('listening')} Play</button>
                 ${(typeof Speech === 'undefined' || !Speech.available())
-                    ? '<p class="lsn-hint">No Spanish voice found on this device — you can still answer after 3 tries.</p>' : ''}
+                    ? `<p class="lsn-hint">No ${esc(Lang.name())} voice found on this device — you can still answer after 3 tries.</p>` : ''}
             </div>
             <input id="blank-input" class="lsn-input" type="text" placeholder="Type what you hear"
                 onkeydown="if(event.key==='Enter')lessonCheckBlank()">
@@ -579,7 +579,7 @@ const stepRenderers = {
         stepState.matched = 0;
         stepState.pick = null;
         return `
-            <p class="lsn-question">Tap a Spanish word, then its translation.</p>
+            <p class="lsn-question">Tap a ${esc(Lang.name())} word, then its translation.</p>
             <div class="lsn-match">
                 <div class="lsn-match-col">
                     ${shuffled(pairs.map((p, i) => ({ text: p[0], i }))).map(item => `
@@ -659,7 +659,7 @@ const stepRenderers = {
             typeof line === 'string' ? { prompt: line, answer: '' } : line);
 
         return `
-            <p class="lsn-question">Complete each line in Spanish.</p>
+            <p class="lsn-question">Complete each line in ${esc(Lang.name())}.</p>
             ${stepState.lines.map((line, i) => `
                 <div class="lsn-write-row">
                     <div class="lsn-en">${esc(line.prompt)}</div>

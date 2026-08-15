@@ -224,13 +224,19 @@ const STORY_TYPE_LABELS = {
 // matches the Learn tab, which shows all levels up front.
 const CEFR_LEVELS = ['A1', 'A2', 'B1', 'B2', 'C1'];
 
-// Deterministic pastel cover per story, so the same book always
-// looks the same instead of reshuffling colors on every render.
-const COVER_VARIANTS = ['cover-teal', 'cover-clay', 'cover-sage', 'cover-sand'];
-function coverVariantFor(id) {
+// Deterministic disc mark per story, so the same book always looks the
+// same instead of reshuffling on every render. Switched 2026-08-14 from
+// four flat navy-shade backgrounds + one shared book glyph to the same
+// PATH_SHAPES disc language as the Lessons path and Workshop drillers
+// (see [[preferred-disc-art-language]]) — but muted deliberately: no
+// orange accent (see .story-card-cover-icon .ps-accent override in
+// styles/components.css), because a shelf can hold dozens of these at
+// once and the disc language's usual orange accent is tuned for a
+// handful of items on screen, not dozens.
+function coverArtIndexFor(id) {
     let hash = 0;
-    for (let i = 0; i < id.length; i++) hash = (hash * 31 + id.charCodeAt(i)) >>> 0;
-    return COVER_VARIANTS[hash % COVER_VARIANTS.length];
+    for (let i = 0; i < id.length; i++) hash = (hash * 37 + id.charCodeAt(i)) >>> 0;
+    return hash;
 }
 
 window.Reader = {
@@ -361,17 +367,16 @@ window.Reader = {
 
     buildStoryCardHtml(story, readIds) {
         const isRead = readIds.includes(story.id);
-        const cover = coverVariantFor(story.id);
+        const art = (typeof pathArt === 'function')
+            ? pathArt(coverArtIndexFor(story.id), 'story-card-cover-icon')
+            : '';
         const minutes = story.estimatedMinutes
             ? story.estimatedMinutes + ' min'
             : '';
 
         return '<button class="story-card" data-story-id="' + this.escapeHtml(story.id) + '">' +
-            '<div class="story-card-cover ' + cover + '">' +
-                '<svg class="story-card-cover-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">' +
-                    '<path d="M4 5.5C4 4.67 4.67 4 5.5 4H11v16H5.5A1.5 1.5 0 0 1 4 18.5v-13Z" stroke="currentColor" stroke-width="1.3"/>' +
-                    '<path d="M20 5.5c0-.83-.67-1.5-1.5-1.5H13v16h5.5a1.5 1.5 0 0 0 1.5-1.5v-13Z" stroke="currentColor" stroke-width="1.3"/>' +
-                '</svg>' +
+            '<div class="story-card-cover">' +
+                art +
                 (isRead ? '<span class="story-card-read-badge" title="Read">✓</span>' : '') +
             '</div>' +
             '<div class="story-card-body">' +
