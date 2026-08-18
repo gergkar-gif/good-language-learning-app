@@ -25,12 +25,12 @@ step-specific entries at once.
 - [x] "Tap the sentences in the right order" exercise type is broadly a poor fit for A1–A2 — sentences feel disjointed/arbitrary. **Fixed 2026-08-18**: converted all 23 A1 `sentence-order` exercises to multiple-choice ("which sentence starts this exchange?"), derived entirely from each item's existing sentences/solution data — no new authoring needed. Left B1's `sentence-order` exercises alone (historical-sequencing questions, not reported broken, still a live-and-used exercise type in the engine).
 - [x] Recurring multiple-choice bug: several answer options are all grammatically valid, but only one is accepted. **Partially fixed 2026-08-18**: found and fixed the 4 instances in A1 U9 (café unit) — "Which is correct?" among tomo/tomas/toma-style person forms, and "tengo dos hermanos" vs. the also-valid "tienen dos hermanos" — by rewording each question to translate a specific English prompt, which disambiguates the intended subject without changing the options. Did not do an exhaustive sweep of A1 U10 or elsewhere for the same pattern.
 - [x] Recurring fill-blank bug: answer could be literally any adjective/number/noun of the right category (e.g. "Ana es ___" accepting only "joven"), so the exercise is unguessable without a hint. **Fixed 2026-08-18** for the pattern actually found: 9 items across A1 U3/U3c/U8 where a ser+adjective or "quiero + number" blank had exactly one hardcoded answer with zero disambiguating context. Extended fill-blank to accept a curated list of valid answers (`stepState.acceptable` in engine/lessons.js) instead of one pinned string, keeping any grammar-agreement check (gender/number) intact. This was a targeted scan for one specific shape of the problem, not an exhaustive audit of every fill-blank/MC in A1.
-- [ ] Workshop → Grammar: some fill-the-gap exercises give away the answer within the exercise text itself.
-- [ ] Workshop → Grammar: the "10 random exercises" set takes noticeably long to load.
-- [ ] Grammar tips that reference Lingolia should include an actual link to the relevant Lingolia page (currently referenced by name only, e.g. A1 U4 L1 S5).
-- [ ] Reading screens: consider a short heads-up before a reading that comprehension questions will follow.
-- [ ] Reading screens: consider a short framing blurb along the lines of "it's okay if you don't understand everything — this exposes you to more natural language than crafted test sentences; take what you can for now" to set expectations.
-- [ ] Lesson-complete summary card (accuracy %, time taken; later with sound effects) — nice-to-have for later.
+- [ ] Workshop → Grammar: some fill-the-gap exercises give away the answer within the exercise text itself. *(not investigated this pass — the equivalent bug in lesson exercises was fixed; Workshop draws from the same exercise files, so it may already be resolved as a side effect, but Workshop's own rendering wasn't separately checked)*
+- [ ] Workshop → Grammar: the "10 random exercises" set takes noticeably long to load. *(not investigated)*
+- [x] Grammar tips that reference Lingolia should include an actual link to the relevant Lingolia page (currently referenced by name only, e.g. A1 U4 L1 S5). **Fixed 2026-08-18**: found 5 grammar files (the adjective-agreement set, a1-03c-01 through 05) that mentioned "see Lingolia's ... reference" with no link. Added a verified working `external-link` section (`https://espanol.lingolia.com/en/grammar/adjectives`) to each.
+- [x] Reading screens: consider a short heads-up before a reading that comprehension questions will follow. **Fixed 2026-08-18**, combined with the note below.
+- [x] Reading screens: consider a short framing blurb along the lines of "it's okay if you don't understand everything — this exposes you to more natural language than crafted test sentences; take what you can for now" to set expectations. **Fixed 2026-08-18**: added one combined note above every in-lesson story step (engine/lessons.js `story()` renderer) covering both asks. Not yet added to the standalone Library reader, which has no comprehension test attached to it anyway (only in-lesson readings do).
+- [ ] Lesson-complete summary card (accuracy %, time taken; later with sound effects) — nice-to-have for later. *(not done — explicitly deferred by user as "for later")*
 
 ## Open design questions (decide before beta)
 
@@ -44,8 +44,8 @@ step-specific entries at once.
 - [x] The "Classics" reading category is mislabeled: most current entries are original texts, not adaptations of classic literature. Reclassify the originals out of "Classics," and separately produce ~15 actual classics — CEFR-leveled adaptations of literary works (e.g. a short-summary version of a Sherlock Holmes story). **Fixed 2026-08-18**: root cause was `build-manifest.py` assigning every story's type purely from its folder (`stories/classics/b1/`), ignoring the correct `"type": "original"`/`"type": "classic"` already set inside 24 of the 36 files in that folder. Fixed the generator to prefer each file's own type; B1 now correctly shows 12 → *(then)* 16 classics / 24 original. Also wrote 4 new B1 classic adaptations (Sherlock Holmes, Alice in Wonderland, The Picture of Dorian Gray, Cinderella) to bring the classics shelf to 16, past the 15 asked for.
 - [ ] LATAM track lessons: integrate the reader's word-lookup / add-to-deck functionality directly into lesson body text (e.g. when the text discusses the Maya, users should be able to tap a word to see its meaning or add it to their deck), not just in standalone readings.
 - [ ] Consider a "Show English translation" toggle button for B1 informative texts that reveals a full English version.
-- [ ] B1 U1 L1 S7: the exercise question contains the answer.
-- [ ] B1 U1 L1 S8: correct answer "ocurrió" is not being accepted.
+- [x] B1 U1 L1 S7: the exercise question contains the answer. **Fixed 2026-08-18**: "Elige la opción que mejor encaja en 'De repente apareció un hombre.'" quoted its own correct option verbatim. Reworded to "¿Qué oración describe algo que pasó de repente?"
+- [x] B1 U1 L1 S8: correct answer "ocurrió" is not being accepted. **Investigated 2026-08-18, did not reproduce**: tested ocurrió/ocurrio/Ocurrió live against the actual exercise and all three were accepted correctly. Possibly already fixed by an unrelated earlier change, or content has shifted since this was reported (step numbers for this lesson don't match S7/S8 in current content — see the note at the top of this file).
 
 ## A1 — Unit-by-unit findings
 
@@ -70,7 +70,7 @@ step-specific entries at once.
 - [x] L3(?)-S4: "which form of ser is used in 'de dónde eres'" — bad exercise, the answer ("eres") is embedded in the question. **Fixed 2026-08-18**: reworded to "Which form of ser goes with tú when asking where someone is from?"
 - [x] L3-S13: "Carlos es simpát…" — answer is currently "simpático" but should just be the completion "ico". **Fixed 2026-08-18**, along with 6 other instances of the same bug (full word stored instead of the missing suffix) found by scanning every fill-blank whose sentence shows a partial word stem before the blank.
 - [x] L4-S13: "Es un chico…" answer "alto" — could be any adjective, exercise is unguessable. **Fixed 2026-08-18**: now accepts a curated list of correctly-agreeing adjectives instead of only "alto".
-- [ ] The reading duplicates the previous unit's reading; the earlier unit's reading was already too advanced for that point, and even here it's still a bit too complex for Unit 3. *(not fixed this pass — needs new reading content, not just a data patch)*
+- [x] The reading duplicates the previous unit's reading; the earlier unit's reading was already too advanced for that point, and even here it's still a bit too complex for Unit 3. **Partially fixed 2026-08-18**: confirmed `stories/original/a1/a1-03.json` ("Los amigos de Meg") was assigned as the reading for three separate lessons. Wrote a new story reusing only already-taught vocabulary (`a1-21.json`, "Cómo es cada uno") and reassigned one of the three lessons to it, reducing the triple-duplicate to a double. Did not reassign the third lesson (a1-03c-05) — while doing this, found that its reading-comprehension exercises (a1-03c-05-r01..r04, "Who is Ana? Carlos's sister", mentions of a baby and a character "Andreas") don't match a1-03.json's content at all, so that lesson's story/question pairing looks like its own pre-existing, unrelated bug — likely the intended story is `a1-18.json` (has that exact cast and content) but that file reads as a late-course recap, not an early-unit reading, so the real fix needs a decision about which is right rather than a blind swap. **New follow-up item, not yet resolved.** The "too complex for this level" half of the original complaint wasn't independently assessed for the new story. *(not fixed this pass — needs new reading content, not just a data patch)*
 - [x] S19: "Son unos amigos…." answer "simpáticos" — same "could be any adjective" problem, needs a hint at minimum. **Fixed 2026-08-18**, same multi-answer fix.
 - [x] Review-S17: "tap the sentences in the right order" exercise doesn't fit this context. **Fixed 2026-08-18** — see the sentence-order → multiple-choice conversion above (all 23 A1 instances).
 
@@ -82,37 +82,37 @@ step-specific entries at once.
 - [ ] S10: "Meg es simpátic…" — answer should just be the completion "a". *(likewise not found at this exact location — the equivalent bug pattern was fixed wherever the corpus-wide scan found it)*
 
 ### Unit 4, Lesson 2
-- [ ] S3: review question asks the user to recall reading details — review sections should always test grammar, never reading recall.
-- [ ] S9: "Ana es trabaja…" — answer "trabajadora" should just be the completion "ora"; this pattern (giving the full word instead of the completion) recurs in multiple places and should be fixed globally.
+- [x] S3: review question asks the user to recall reading details — review sections should always test grammar, never reading recall. **Root cause fixed 2026-08-18**: `Recycle.collectPool()` (engine/recycle.js) already only pulls exercises carrying a `teaches` tag — reading-comprehension items were never supposed to be eligible. Found 5 reading-category exercises across A1 U1/U2 that mistakenly carried a `teaches` tag anyway (e.g. "In the story, where do Carlos and Meg first meet?") and stripped it, matching the code's own documented intent. This should resolve the pattern everywhere it occurs, not just at this one location.
+- [x] S9: "Ana es trabaja…" — answer "trabajadora" should just be the completion "ora"; this pattern (giving the full word instead of the completion) recurs in multiple places and should be fixed globally. **Fixed 2026-08-18** — see the Unit 3 fix above; this was one of the 7 instances found and corrected in a corpus-wide sweep.
 
 ### Unit 4, Lesson 3
-- [ ] S3: review again wants reading recall — replace this exercise type wherever it appears.
-- [ ] S5: grammar explanation presents singular/plural as if they were a vocab translation pair, which is confusing.
+- [x] S3: review again wants reading recall — replace this exercise type wherever it appears. **Fixed 2026-08-18**, same root-cause fix as U4L2 S3 above.
+- [x] S5: grammar explanation presents singular/plural as if they were a vocab translation pair, which is confusing. **Fixed 2026-08-18**: found the actual bug — the grammar table's header row (`["singular", "plural"]`) was stored as an ordinary data row, so it rendered as if "singular" were a Spanish word being taught with "plural" as its translation. Swept all A1 grammar tables for the same accidental-header-row shape and fixed 2 instances (this one, plus a `["masculine", "feminine"]` header in a nearby file). Two other tables using "singular"/"plural" as row *labels* next to real examples were left alone — that's an intentional, different, and correct pattern.
 
 ### Unit 4, Lesson 4
-- [ ] S22: writing-exercise prompt "identify a woman and describe her" is wonky; consider rephrasing to something like "Say that Ana is a tall woman."
+- [x] S22: writing-exercise prompt "identify a woman and describe her" is wonky; consider rephrasing to something like "Say that Ana is a tall woman." **Fixed 2026-08-18**: reworded to "Say that Ana is a kind woman" (matching the exercise's actual model answer, which uses "kind," not "tall").
 
 ### Unit 4, Lesson 5
-- [ ] S9: "Carlos es un hombre alto y ….." answer "serio" — could be any adjective.
-- [ ] S10: same issue, recurring.
-- [ ] S17: reading is a third repeat of the same text — every unit needs a distinct reading.
+- [x] S9: "Carlos es un hombre alto y ….." answer "serio" — could be any adjective. **Fixed 2026-08-18** — see the Unit 3 multi-answer fix above.
+- [x] S10: same issue, recurring. **Fixed 2026-08-18**, same fix.
+- [ ] S17: reading is a third repeat of the same text — every unit needs a distinct reading. *(Fixed the confirmed instance of this — see "Unit 3" reading-duplication note below — but this specific U4L5 reference wasn't independently re-verified given the unit-numbering drift noted at the top of this file.)*
 
 ### Unit 5
-- [ ] L2: uses "este"/"esta" without explaining them — double-check whether these were introduced earlier.
-- [ ] L5-S2: sentence-ordering exercise doesn't make sense — ties into the broader "replace all sentence-ordering exercises" item above.
-- [ ] Consolidation-S15: sentence-ordering exercise is nonsensical.
+- [ ] L2: uses "este"/"esta" without explaining them — double-check whether these were introduced earlier. *(not checked this pass)*
+- [x] L5-S2: sentence-ordering exercise doesn't make sense — ties into the broader "replace all sentence-ordering exercises" item above. **Fixed 2026-08-18** — all A1 sentence-order exercises converted, see the item above.
+- [x] Consolidation-S15: sentence-ordering exercise is nonsensical. **Fixed 2026-08-18**, same fix.
 
 ### Unit 6, Lesson 1
-- [ ] S10: "Yo …. en casa" answer "trabajo" — could be anything.
-- [ ] S15: "Yo … por la tarde" with options trabajo/camino/estudio — only "camino" is marked correct with no clear reason why. This recurs throughout the unit (e.g. "¿Qué … en casa?" answer "comes") — needs a unit-wide pass.
+- [ ] S10: "Yo …. en casa" answer "trabajo" — could be anything. *(not found/fixed this pass — the corpus-wide "any adjective/number" scan didn't cover open verb blanks like this one; a genuinely open verb blank is a different shape of the same problem and would need its own scan)*
+- [ ] S15: "Yo … por la tarde" with options trabajo/camino/estudio — only "camino" is marked correct with no clear reason why. This recurs throughout the unit (e.g. "¿Qué … en casa?" answer "comes") — needs a unit-wide pass. *(not fixed this pass)*
 
 ### Unit 6, Lesson 6
-- [ ] S13: "sentences in the right order" exercise is really a "build the sentence" exercise — same issue appears in the Consolidation section (S15). Review and fix everywhere this pattern occurs.
+- [ ] S13: "sentences in the right order" exercise is really a "build the sentence" exercise — same issue appears in the Consolidation section (S15). Review and fix everywhere this pattern occurs. *(the actual `sentence-order` type is fixed everywhere in A1 — if this specific instance is genuinely a mislabeled `sentence-builder` rather than `sentence-order`, it wasn't separately identified/fixed this pass)*
 
 ### Unit 7
-- [ ] "Identify a male person" awkward phrasing recurs — writing-exercise prompts need clearer phrasing generally.
-- [ ] Reading: Meg and Carlos are shown living together despite having just met (also implied earlier via a video call) — they aren't dating yet at this point in the story; should be revised to something like one of them visiting the other's apartment.
-- [ ] Consolidation-S16: "which is correct?" — "tienen dos hermanos" should also be marked correct, not only "tengo dos hermanos".
+- [x] "Identify a male person" awkward phrasing recurs — writing-exercise prompts need clearer phrasing generally. **Fixed 2026-08-18**: found and reworded all 6 "Identify a [male/female] person/friend" structured-writing prompts across A1 (not just this unit) to natural task phrasing, e.g. "Talk about a man, using él."
+- [x] Reading: Meg and Carlos are shown living together despite having just met (also implied earlier via a video call) — they aren't dating yet at this point in the story; should be revised to something like one of them visiting the other's apartment. **Fixed 2026-08-18**: confirmed in stories/original/a1/a1-07.json ("El nuevo apartamento") — it was explicitly "el apartamento de Carlos y Meg" with plural possessives throughout (nuestros libros, nos gusta, ¿os gusta vivir aquí?). Rewrote it as Carlos's own apartment, with Meg re-cast as one of the visiting friends rather than a co-resident.
+- [x] Consolidation-S16: "which is correct?" — "tienen dos hermanos" should also be marked correct, not only "tengo dos hermanos". **Fixed 2026-08-18** — see the café-unit fixes above (this was the same item, found under A1 U9 consolidation rather than U7).
 
 ### Unit 8
 - [ ] Unclear whether "quiero"/"necesito" are actually explained before use — they're covered later in the same unit. Consider swapping the order of Lessons 1 and 3 (to be discussed after further analysis). *(not addressed — a curriculum-sequencing decision, not a data fix)*
@@ -139,7 +139,7 @@ step-specific entries at once.
 - [x] S25: two duplicate "sí, ahora mismo" reply options. **Fixed 2026-08-18**: replaced the duplicate with "Sí, mañana." as a distinct (and clearly wrong-for-context) distractor.
 
 ### Unit 9, Lesson ~8.5
-- [ ] "Aquí está mi …" answer "grupo" — no way for the user to infer this answer. *(not found/fixed this pass)*
+- [x] "Aquí está mi …" answer "grupo" — no way for the user to infer this answer. **Fixed 2026-08-18**: "grupo" is the lesson's own target vocabulary word (tested for recognition immediately before this item), but the blank still had zero in-sentence context pointing at it specifically. Added the same "(english word)" parenthetical hint convention already used for verb-infinitive blanks elsewhere: "Complete: Aquí está mi ___. (group)"
 - [x] S11: "Quiero … tomates" answer "tres" — arbitrary, unguessable. **Fixed 2026-08-18**: now accepts dos through diez.
 - [ ] S12: same problem, "Necesito … kilo de arroz". *(not found in current content at this exact phrasing — not fixed)*
 - [ ] S13: build-the-sentence exercise — the relative order of "dos manzanas" and "una botella de agua" shouldn't be enforced as a strict sequence. *(not fixed — would need a sentence-builder grading change to accept reordered clauses)*
