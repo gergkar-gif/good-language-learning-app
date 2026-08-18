@@ -248,6 +248,16 @@ function esc(value) {
         .replace(/"/g, '&quot;');
 }
 
+// Same escaping as esc(), plus *word* / **word** markdown emphasis rendered
+// as italics — the convention content authors use to call out a Spanish
+// word inside otherwise-English prose (e.g. "this means *adiós*"). Doubles
+// are unwound first so **x** doesn't get read as two single-asterisk pairs.
+function escMd(value) {
+    return esc(value)
+        .replace(/\*\*([^*]+)\*\*/g, '<em>$1</em>')
+        .replace(/\*([^*]+)\*/g, '<em>$1</em>');
+}
+
 // A listen button for a piece of Spanish. Returns '' when the device has no
 // Spanish voice, so every caller can add it without a guard.
 function say(text) {
@@ -287,7 +297,18 @@ function normalise(text) {
 }
 
 function feedbackHtml() {
-    return '<p id="step-feedback" class="lsn-feedback"></p>';
+    return '<p id="step-feedback" class="lsn-feedback"></p><p id="step-translation" class="lsn-en"></p>';
+}
+
+// Shown once the answer is settled (solved or revealed after 3 tries), so a
+// learner who just solved a Spanish sentence sees what it means in English.
+// Only exercises whose content carries a translation (stepState.translation)
+// have anything to show here — sentence-builder shows its own via
+// revealBuildEnglish() instead, since that one sits above the sentence, not
+// in the shared feedback area.
+function showTranslation() {
+    const el = document.getElementById('step-translation');
+    if (el && stepState.translation) el.textContent = stepState.translation;
 }
 
 // Navy for correct, not green — matches the resolved-navy state on the
@@ -303,9 +324,9 @@ function setFeedback(ok, message) {
 // ============================================
 // STEP GATING
 // ============================================
-// Exercise steps hold the Continue button until they are answered. Three
-// wrong attempts reveal the answer and release the gate, so a learner can
-// never be stuck on one item.
+// Exercise steps hold the footer button locked until they are answered.
+// Three wrong attempts reveal the answer and release the gate, so a learner
+// can never be stuck on one item.
 const MAX_ATTEMPTS = 3;
 
 function gateStep() {
@@ -314,10 +335,29 @@ function gateStep() {
     stepState.attempts = 0;
 }
 
-function updateContinueButton() {
-    const btn = document.querySelector('#lesson-screen .btn-primary');
+// One button at the bottom of every lesson screen: it reads "Check" and
+// calls the step's checkFn while the step is gated and unsolved, then flips
+// to "Continue →" (or "Finish Lesson" on the last step) the moment the
+// step is solved — whether by a correct answer or by burning every attempt.
+// Steps with nothing to check (info screens, matching, srs) never set a
+// checkFn, so this always shows Continue for them, gated only on `solved`.
+function updateFooterButton() {
+    const btn = document.getElementById('lesson-next-btn');
     if (!btn) return;
+
+    if (stepState.gated && !stepState.solved && stepState.checkFn) {
+        const fnName = stepState.checkFn;
+        btn.textContent = 'Check';
+        btn.onclick = () => { const fn = window[fnName]; if (fn) fn(); };
+        btn.disabled = !!stepState.checkDisabled;
+        btn.classList.toggle('is-locked', !!stepState.checkDisabled);
+        return;
+    }
+
+    const isLast = currentStepIndex >= currentLesson.steps.length - 1;
     const locked = !!stepState.gated && !stepState.solved;
+    btn.textContent = isLast ? 'Finish Lesson ✓' : 'Continue →';
+    btn.onclick = isLast ? finishLesson : nextLessonStep;
     btn.disabled = locked;
     btn.classList.toggle('is-locked', locked);
 }
@@ -325,7 +365,8 @@ function updateContinueButton() {
 function solveStep(message) {
     stepState.solved = true;
     setFeedback(true, message);
-    updateContinueButton();
+    showTranslation();
+    updateFooterButton();
     noteRecycleResult(true);
 }
 
@@ -341,7 +382,8 @@ function failStep(message) {
     }
 
     stepState.solved = true;
-    updateContinueButton();
+    showTranslation();
+    updateFooterButton();
     noteRecycleResult(false);
     return true;
 }
@@ -401,11 +443,11 @@ const stepRenderers = {
     },
 
     text(step) {
-        return `<p class="lsn-text">${esc(step.content)}</p>`;
+        return `<p class="lsn-text">${escMd(step.content)}</p>`;
     },
 
     tip(step) {
-        return `<div class="lsn-tip"><strong>Tip</strong><p>${esc(step.content)}</p></div>`;
+        return `<div class="lsn-tip"><strong>Tip</strong><p>${escMd(step.content)}</p></div>`;
     },
 
     table(step) {
@@ -424,8 +466,8 @@ const stepRenderers = {
     examples(step) {
         return (step.items || []).map(item => `
             <div class="lsn-example">
-                <div class="lsn-es">${esc(item.spanish)}${say(item.spanish)}</div>
-                <div class="lsn-en">${esc(item.english)}</div>
+                <div class="lsn-es">${escMd(item.spanish)}${say(item.spanish)}</div>
+                <div class="lsn-en">${escMd(item.english)}</div>
             </div>
         `).join('');
     },
@@ -492,14 +534,14 @@ const stepRenderers = {
         gateStep();
         const pick = shuffledOptions(step.options, step.correct);
         stepState.correct = pick.correct;
+        stepState.checkFn = 'lessonCheckChoice';
         return `
-            <p class="lsn-question">${esc(step.question)}</p>
+            <p class="lsn-question">${escMd(step.question)}</p>
             <div class="lsn-options">
                 ${pick.options.map((option, i) => `
-                    <button class="lsn-option" onclick="lessonSelectOption(this, ${i})">${esc(option)}</button>
+                    <button class="lsn-option" onclick="lessonSelectOption(this, ${i})">${escMd(option)}</button>
                 `).join('')}
             </div>
-            <button class="lsn-check" onclick="lessonCheckChoice()">Check</button>
             ${feedbackHtml()}
         `;
     },
@@ -508,22 +550,22 @@ const stepRenderers = {
         gateStep();
         const pick = shuffledOptions(step.options, step.correct);
         stepState.correct = pick.correct;
+        stepState.checkFn = 'lessonCheckChoice';
         return `
             <div class="lsn-dialogue">
                 ${(step.prompt || []).map(line => `
                     <div class="lsn-line">
                         <div class="lsn-speaker">${esc(line.speaker)}</div>
-                        <div class="lsn-es">${esc(line.text)}</div>
+                        <div class="lsn-es">${escMd(line.text)}</div>
                     </div>
                 `).join('')}
             </div>
             <p class="lsn-question">Choose the missing line:</p>
             <div class="lsn-options">
                 ${pick.options.map((option, i) => `
-                    <button class="lsn-option" onclick="lessonSelectOption(this, ${i})">${esc(option)}</button>
+                    <button class="lsn-option" onclick="lessonSelectOption(this, ${i})">${escMd(option)}</button>
                 `).join('')}
             </div>
-            <button class="lsn-check" onclick="lessonCheckChoice()">Check</button>
             ${feedbackHtml()}
         `;
     },
@@ -535,6 +577,7 @@ const stepRenderers = {
         const pick = shuffledOptions(step.options, step.correct);
         stepState.correct = pick.correct;
         stepState.audio = step.sentence;
+        stepState.checkFn = 'lessonCheckChoice';
         return `
             <p class="lsn-question">Listen and choose what it means.</p>
             <div class="lsn-listen">
@@ -544,10 +587,9 @@ const stepRenderers = {
             </div>
             <div class="lsn-options">
                 ${pick.options.map((option, i) => `
-                    <button class="lsn-option" onclick="lessonSelectOption(this, ${i})">${esc(option)}</button>
+                    <button class="lsn-option" onclick="lessonSelectOption(this, ${i})">${escMd(option)}</button>
                 `).join('')}
             </div>
-            <button class="lsn-check" onclick="lessonCheckChoice()">Check</button>
             ${feedbackHtml()}
         `;
     },
@@ -558,6 +600,8 @@ const stepRenderers = {
         gateStep();
         stepState.answer = step.sentence;
         stepState.audio = step.sentence;
+        stepState.translation = step.english || step.translation || '';
+        stepState.checkFn = 'lessonCheckBlank';
         return `
             <p class="lsn-question">Listen and type what you hear.</p>
             <div class="lsn-listen">
@@ -566,7 +610,6 @@ const stepRenderers = {
                     ? `<p class="lsn-hint">No ${esc(Lang.name())} voice found on this device — you can still answer after 3 tries.</p>` : ''}
             </div>
             <input id="blank-input" class="lsn-input" type="text" placeholder="Type what you hear">
-            <button class="lsn-check" onclick="lessonCheckBlank()">Check</button>
             ${feedbackHtml()}
         `;
     },
@@ -600,10 +643,11 @@ const stepRenderers = {
     'fill-blank'(step) {
         gateStep();
         stepState.answer = step.answer;
+        stepState.translation = step.english || step.translation || '';
+        stepState.checkFn = 'lessonCheckBlank';
         return `
-            <p class="lsn-question">${esc(step.sentence).replace(/_{2,}/, '<span class="lsn-blank">?</span>')}</p>
+            <p class="lsn-question">${escMd(step.sentence).replace(/_{2,}/, '<span class="lsn-blank">?</span>')}</p>
             <input id="blank-input" class="lsn-input" type="text" placeholder="Type the missing word">
-            <button class="lsn-check" onclick="lessonCheckBlank()">Check</button>
             ${feedbackHtml()}
         `;
     },
@@ -612,6 +656,7 @@ const stepRenderers = {
         gateStep();
         stepState.solution = step.solution || [];
         stepState.english = step.english || '';
+        stepState.checkFn = 'lessonCheckBuild';
 
         // Tiles are stored with their file index and shuffled once. The index
         // is what the two rows exchange, not the text — a sentence with the
@@ -624,7 +669,6 @@ const stepRenderers = {
             <p class="lsn-question">Build the sentence.</p>
             <div id="build-target" class="lsn-target">${buildTargetHtml()}</div>
             <div id="build-bank" class="lsn-options lsn-tiles">${buildBankHtml()}</div>
-            <button class="lsn-check" onclick="lessonCheckBuild()">Check</button>
             <button class="lsn-check lsn-secondary" onclick="lessonResetBuild()">Reset</button>
             ${feedbackHtml()}
         `;
@@ -635,6 +679,7 @@ const stepRenderers = {
         stepState.solution = step.solution || [];
         stepState.sentences = step.sentences || [];
         stepState.order = [];
+        stepState.checkFn = 'lessonCheckOrder';
         return `
             <p class="lsn-question">Tap the sentences in the right order.</p>
             <div class="lsn-options">
@@ -643,7 +688,6 @@ const stepRenderers = {
                         onclick="lessonPickOrder(this)">${esc(item.text)}</button>
                 `).join('')}
             </div>
-            <button class="lsn-check" onclick="lessonCheckOrder()">Check</button>
             ${feedbackHtml()}
         `;
     },
@@ -655,6 +699,8 @@ const stepRenderers = {
         gateStep();
         stepState.lines = (step.template || []).map(line =>
             typeof line === 'string' ? { prompt: line, answer: '' } : line);
+        stepState.checkFn = 'lessonRevealWriting';
+        stepState.checkDisabled = true;
 
         return `
             <p class="lsn-question">Complete each line in ${esc(Lang.name())}.</p>
@@ -671,7 +717,6 @@ const stepRenderers = {
                     ` : ''}
                 </div>
             `).join('')}
-            <button class="lsn-check" id="writing-check-btn" onclick="lessonRevealWriting()" disabled>Check</button>
             <p class="lsn-hint">There is more than one right answer. Write every line, then compare yours with the examples.</p>
             ${feedbackHtml()}
         `;
@@ -725,13 +770,13 @@ const stepRenderers = {
 // STEP RENDERING
 // ============================================
 // Enter submits whatever's on screen, so a keyboard user never has to reach
-// for the Check button. #lesson-content itself survives every step's
+// for the footer button. #lesson-content itself survives every step's
 // re-render (only its innerHTML changes), so this is wired once rather than
 // per step. Two targets matter: a text input's Enter would otherwise do
 // nothing, and an answer button's Enter would otherwise just re-fire its own
-// select — both get redirected to Check instead. Everything else (Continue,
-// Check, Reset, checkboxes) already does the right thing on Enter natively,
-// so this leaves those alone.
+// select — both get redirected to the footer button instead, whatever it
+// currently does (Check or Continue). Everything else (Reset, checkboxes)
+// already does the right thing on Enter natively, so this leaves those alone.
 function _wireLessonEnterToCheck() {
     const container = document.getElementById('lesson-content');
     if (!container || container.dataset.enterWired) return;
@@ -744,11 +789,10 @@ function _wireLessonEnterToCheck() {
         const isAnswer = target.classList.contains('lsn-option') || target.classList.contains('lsn-tile');
         if (!isTextInput && !isAnswer) return;
 
-        const checkBtn = Array.from(container.querySelectorAll('.lsn-check'))
-            .find(b => b.textContent.trim().replace(/^✓\s*/, '') === 'Check' && !b.disabled);
-        if (checkBtn) {
+        const btn = document.getElementById('lesson-next-btn');
+        if (btn && !btn.disabled) {
             e.preventDefault();
-            checkBtn.click();
+            btn.click();
         }
     });
 }
@@ -780,17 +824,7 @@ function renderStep() {
 
     if (typeof updateReaderWordColors === 'function') updateReaderWordColors();
 
-    const btn = document.querySelector('#lesson-screen .btn-primary');
-
-    if (currentStepIndex >= currentLesson.steps.length - 1) {
-        btn.textContent = 'Finish Lesson ✓';
-        btn.onclick = finishLesson;
-    } else {
-        btn.textContent = 'Continue →';
-        btn.onclick = nextLessonStep;
-    }
-
-    updateContinueButton();
+    updateFooterButton();
 }
 
 function nextLessonStep() {
@@ -1072,16 +1106,17 @@ function revealOrder() {
     setFeedback(false, 'Here is the right order — continue when you are ready.');
 }
 
-// Enables Check once every line has something in it. The step is not solved
-// yet — the learner still has to look at the model answers.
+// Enables the footer Check button once every line has something in it. The
+// step is not solved yet — the learner still has to look at the model
+// answers.
 function lessonCheckWriting() {
     if (stepState.revealed) return;
 
     const inputs = Array.prototype.slice.call(document.querySelectorAll('[data-write]'));
     const filled = inputs.length > 0 && inputs.every(input => input.value.trim().length > 0);
 
-    const btn = document.getElementById('writing-check-btn');
-    if (btn) btn.disabled = !filled;
+    stepState.checkDisabled = !filled;
+    updateFooterButton();
 
     setFeedback(true, filled ? 'Ready — check your answers against the examples.' : '');
 }
@@ -1091,12 +1126,6 @@ function lessonRevealWriting() {
     stepState.revealed = true;
 
     document.querySelectorAll('[data-model]').forEach(el => el.classList.add('is-shown'));
-
-    const btn = document.getElementById('writing-check-btn');
-    if (btn) {
-        btn.disabled = true;
-        btn.textContent = '✓ Checked';
-    }
 
     // Inputs stay editable so the learner can correct their own sentence.
     solveStep('Compare your sentences with the examples, then continue.');

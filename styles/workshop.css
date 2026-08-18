@@ -211,9 +211,10 @@
 }
 
 .gd-option.selected {
-    border-color: var(--accent);
-    background: var(--accent-bg);
-    color: var(--accent-dark);
+    border-color: var(--primary);
+    border-width: 2px;
+    background: rgba(16, 42, 71, 0.05);
+    color: var(--primary);
 }
 
 .gd-option.correct {
