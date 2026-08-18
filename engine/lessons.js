@@ -667,7 +667,14 @@ const stepRenderers = {
 
     'sentence-builder'(step) {
         gateStep();
-        stepState.solution = step.solution || [];
+        // A few sentences have two clauses joined by "y"/"pero" with no
+        // grammatical reason to prefer one order over the other (e.g. "dos
+        // manzanas y una botella de agua" vs. the clauses swapped) — content
+        // can list every acceptable tile order in `solutions` instead of one
+        // fixed `solution`. stepState.solution stays the single canonical
+        // one shown on reveal; stepState.solutions is the full accepted set.
+        stepState.solutions = step.solutions || [step.solution || []];
+        stepState.solution = stepState.solutions[0];
         stepState.english = step.english || '';
         stepState.checkFn = 'lessonCheckBuild';
 
@@ -1073,8 +1080,9 @@ function revealBuildEnglish() {
 function lessonCheckBuild() {
     if (stepState.solved || !stepState.built.length) return;
 
-    const built = stepState.built.map(tileText).join(' ');
-    const ok = normalise(built) === normalise(stepState.solution.join(' '));
+    const built = normalise(stepState.built.map(tileText).join(' '));
+    const ok = (stepState.solutions || [stepState.solution])
+        .some(solution => built === normalise(solution.join(' ')));
 
     if (ok) {
         UI.html('build-target',
