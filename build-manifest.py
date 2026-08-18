@@ -32,13 +32,23 @@ def build_stories(lang="es"):
             except (OSError, json.JSONDecodeError):
                 continue
 
+            # A story's own "type" field (e.g. "classic"/"original") says what
+            # it actually is; the folder it lives in only says the default for
+            # files that don't specify one. Stories were being shelved by
+            # folder alone, so every file under stories/classics/ showed up
+            # under "Classics" even where its own type field said "original".
+            file_type = data.get("type")
+            if file_type == "classic":
+                file_type = "classics"
+            story_type = file_type if file_type in CATEGORIES else cat
+
             stories.append({
                 "id": data.get("id", f"story.{cat}.{f.stem}"),
                 "title": data.get("title", f.stem),
                 "level": data.get("level", "Unknown"),
                 "lesson": data.get("lesson"),
-                "type": cat,
-                "source": cat,
+                "type": story_type,
+                "source": story_type,
                 # relative to content/{lang}/stories/, matching what
                 # Content.story() fetches: content/{lang}/stories/${path}
                 "path": f.relative_to(lang_path).as_posix(),
