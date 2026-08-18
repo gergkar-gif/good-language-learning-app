@@ -565,8 +565,7 @@ const stepRenderers = {
                 ${(typeof Speech === 'undefined' || !Speech.available())
                     ? `<p class="lsn-hint">No ${esc(Lang.name())} voice found on this device — you can still answer after 3 tries.</p>` : ''}
             </div>
-            <input id="blank-input" class="lsn-input" type="text" placeholder="Type what you hear"
-                onkeydown="if(event.key==='Enter')lessonCheckBlank()">
+            <input id="blank-input" class="lsn-input" type="text" placeholder="Type what you hear">
             <button class="lsn-check" onclick="lessonCheckBlank()">Check</button>
             ${feedbackHtml()}
         `;
@@ -603,8 +602,7 @@ const stepRenderers = {
         stepState.answer = step.answer;
         return `
             <p class="lsn-question">${esc(step.sentence).replace(/_{2,}/, '<span class="lsn-blank">?</span>')}</p>
-            <input id="blank-input" class="lsn-input" type="text" placeholder="Type the missing word"
-                onkeydown="if(event.key==='Enter')lessonCheckBlank()">
+            <input id="blank-input" class="lsn-input" type="text" placeholder="Type the missing word">
             <button class="lsn-check" onclick="lessonCheckBlank()">Check</button>
             ${feedbackHtml()}
         `;
@@ -726,10 +724,40 @@ const stepRenderers = {
 // ============================================
 // STEP RENDERING
 // ============================================
+// Enter submits whatever's on screen, so a keyboard user never has to reach
+// for the Check button. #lesson-content itself survives every step's
+// re-render (only its innerHTML changes), so this is wired once rather than
+// per step. Two targets matter: a text input's Enter would otherwise do
+// nothing, and an answer button's Enter would otherwise just re-fire its own
+// select — both get redirected to Check instead. Everything else (Continue,
+// Check, Reset, checkboxes) already does the right thing on Enter natively,
+// so this leaves those alone.
+function _wireLessonEnterToCheck() {
+    const container = document.getElementById('lesson-content');
+    if (!container || container.dataset.enterWired) return;
+    container.dataset.enterWired = '1';
+
+    container.addEventListener('keydown', e => {
+        if (e.key !== 'Enter') return;
+        const target = e.target;
+        const isTextInput = target.tagName === 'INPUT' && target.type === 'text';
+        const isAnswer = target.classList.contains('lsn-option') || target.classList.contains('lsn-tile');
+        if (!isTextInput && !isAnswer) return;
+
+        const checkBtn = Array.from(container.querySelectorAll('.lsn-check'))
+            .find(b => b.textContent.trim().replace(/^✓\s*/, '') === 'Check' && !b.disabled);
+        if (checkBtn) {
+            e.preventDefault();
+            checkBtn.click();
+        }
+    });
+}
+
 function renderStep() {
     const step = currentLesson.steps[currentStepIndex];
     const container = document.getElementById('lesson-content');
 
+    _wireLessonEnterToCheck();
     stepState = {};
 
     let html = lessonProgressHtml();

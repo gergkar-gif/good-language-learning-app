@@ -218,6 +218,25 @@ const ListeningRunner = (function () {
 
         _container.querySelector('[data-action="check"]').addEventListener('click', _doCheck);
         _container.querySelector('[data-action="next"]').addEventListener('click', () => _onNext());
+        _wireEnterToCheck();
+    }
+
+    // An option button's own Enter just re-fires its click (re-selecting the
+    // same option) rather than submitting — redirect it to Check instead.
+    // Text inputs already wire Enter directly where they're rendered.
+    // _container is the same node across exercises in one session (only its
+    // innerHTML is replaced), so this is wired once rather than per exercise.
+    function _wireEnterToCheck() {
+        if (_container.dataset.enterWired) return;
+        _container.dataset.enterWired = '1';
+        _container.addEventListener('keydown', e => {
+            if (e.key !== 'Enter' || !e.target.classList.contains('gd-option')) return;
+            const checkBtn = _container.querySelector('[data-action="check"]');
+            if (checkBtn && !checkBtn.disabled) {
+                e.preventDefault();
+                checkBtn.click();
+            }
+        });
     }
 
     return { render };
