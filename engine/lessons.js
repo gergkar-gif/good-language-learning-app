@@ -824,6 +824,9 @@ function renderStep() {
 
     if (typeof updateReaderWordColors === 'function') updateReaderWordColors();
 
+    const backBtn = document.getElementById('lesson-back-btn');
+    if (backBtn) backBtn.disabled = currentStepIndex === 0;
+
     updateFooterButton();
 }
 
@@ -833,6 +836,16 @@ function nextLessonStep() {
     if (currentStepIndex < currentLesson.steps.length) {
         renderStep();
     }
+}
+
+// Re-renders the previous step from scratch, same as arriving at it fresh —
+// there is no saved answer to restore, so a re-visited exercise is ungraded
+// again rather than showing its old solved state. Simple and consistent
+// with renderStep() itself, which already treats every step as stateless.
+function prevLessonStep() {
+    if (currentStepIndex <= 0) return;
+    currentStepIndex--;
+    renderStep();
 }
 
 function finishLesson() {

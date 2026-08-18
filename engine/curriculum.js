@@ -98,6 +98,13 @@ async function renderCurriculum() {
         : unitDetailHtml(openLevel, openUnit);
 
     attachCurriculumEvents(root);
+
+    // The unit path and the unit's lesson list both mark the learner's next
+    // stop with .is-current — on a level with dozens of units, or a unit
+    // split into many lessons, that can sit well below the fold. Land there
+    // directly instead of leaving the learner to scroll and hunt for it.
+    const current = root.querySelector('.is-current');
+    if (current) current.scrollIntoView({ block: 'center' });
 }
 
 function levelListHtml() {

@@ -782,6 +782,26 @@
    of it. Applies to every step, so it fixes the checklist too. */
 .lesson-footer {
   margin-top: 32px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* .btn-back normally sits alone at the end of a header row, hence its own
+   margin-left: auto — here it shares the footer with the primary button, so
+   that push is cancelled and the primary button grows to fill the rest. */
+.lesson-footer .btn-back {
+  margin-left: 0;
+  flex-shrink: 0;
+}
+
+.lesson-footer .btn-primary {
+  flex: 1;
+}
+
+.lesson-footer .btn-back:disabled {
+  opacity: .35;
+  cursor: not-allowed;
 }
 
 /* Grammar reference: a closing sentence with the source hyperlinked,
