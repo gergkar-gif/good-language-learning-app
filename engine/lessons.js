@@ -450,15 +450,25 @@ const stepRenderers = {
         return `<div class="lsn-tip"><strong>Tip</strong><p>${escMd(step.content)}</p></div>`;
     },
 
+    // A table serves two different shapes of content: a sentence/translation
+    // reference (row 0 Spanish, row 1 English — only row 0 needs audio) and a
+    // conjugation paradigm (row 0 a bare pronoun, row 1 the conjugated
+    // Spanish form — the form is the whole point, and used to have no listen
+    // button at all). Detecting a pronoun in row 0 tells the two apart
+    // without a schema change.
     table(step) {
+        const PRONOUN_RE = /^(yo|tú|usted|él|ella|nosotros|nosotras|vosotros|vosotras|ustedes|ellos|ellas)(\s*\/\s*(yo|tú|usted|él|ella|nosotros|nosotras|vosotros|vosotras|ustedes|ellos|ellas))*$/i;
         return `
             <table class="lsn-table">
-                ${(step.rows || []).map(row => `
+                ${(step.rows || []).map(row => {
+                    const isConjugation = PRONOUN_RE.test((row[0] || '').trim());
+                    return `
                     <tr>
                         <td><strong>${esc(row[0])}</strong>${say(row[0])}</td>
-                        <td>${esc(row[1])}</td>
+                        <td>${esc(row[1])}${isConjugation ? say(row[1]) : ''}</td>
                     </tr>
-                `).join('')}
+                `;
+                }).join('')}
             </table>
         `;
     },
@@ -642,7 +652,8 @@ const stepRenderers = {
 
     'fill-blank'(step) {
         gateStep();
-        stepState.answer = step.answer;
+        stepState.answer = step.answer || (step.answers && step.answers[0]) || '';
+        stepState.acceptable = step.answers || [step.answer];
         stepState.translation = step.english || step.translation || '';
         stepState.checkFn = 'lessonCheckBlank';
         return `
@@ -965,7 +976,12 @@ function lessonCheckBlank() {
     const input = document.getElementById('blank-input');
     if (!input || stepState.solved) return;
 
-    const ok = normalise(input.value) === normalise(stepState.answer);
+    // Most blanks have exactly one right answer, but some genuinely accept
+    // several (e.g. any of the story's characters completing "Soy ___.") —
+    // stepState.acceptable carries the full list, stepState.answer stays the
+    // one shown on reveal.
+    const acceptable = stepState.acceptable || [stepState.answer];
+    const ok = acceptable.some(a => normalise(input.value) === normalise(a));
     input.classList.toggle('correct', ok);
     input.classList.toggle('wrong', !ok);
 

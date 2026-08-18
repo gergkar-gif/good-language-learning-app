@@ -6,32 +6,76 @@
       "category": "vocabulary",
       "type": "matching",
       "pairs": [
-        ["el cumpleaños", "birthday"],
-        ["el pastel", "cake"],
-        ["el regalo", "present"],
-        ["la vela", "candle"],
-        ["el globo", "balloon"],
-        ["el cuaderno", "notebook"]
+        [
+          "el cumpleaños",
+          "birthday"
+        ],
+        [
+          "el pastel",
+          "cake"
+        ],
+        [
+          "el regalo",
+          "present"
+        ],
+        [
+          "la vela",
+          "candle"
+        ],
+        [
+          "el globo",
+          "balloon"
+        ],
+        [
+          "el cuaderno",
+          "notebook"
+        ]
       ],
-      "teaches": ["birthdays-celebrations"]
+      "teaches": [
+        "birthdays-celebrations"
+      ]
     },
     {
       "id": "a1.10.01.ex02",
       "category": "grammar",
       "type": "sentence-builder",
-      "tiles": ["Todos", "cantan", "y", "Meg", "abre", "sus", "regalos"],
-      "solution": ["Todos", "cantan", "y", "Meg", "abre", "sus", "regalos"],
+      "tiles": [
+        "Todos",
+        "cantan",
+        "y",
+        "Meg",
+        "abre",
+        "sus",
+        "regalos"
+      ],
+      "solution": [
+        "Todos",
+        "cantan",
+        "y",
+        "Meg",
+        "abre",
+        "sus",
+        "regalos"
+      ],
       "english": "Everyone sings and Meg opens her presents.",
-      "teaches": ["birthdays-celebrations"]
+      "teaches": [
+        "birthdays-celebrations"
+      ]
     },
     {
       "id": "a1.10.01.ex03",
       "category": "grammar",
       "type": "multiple-choice",
       "question": "¿Qué necesitas para decorar la fiesta?",
-      "options": ["Globos y velas", "Café y té", "Sillas y mesas"],
+      "options": [
+        "Globos y velas",
+        "Café y té",
+        "Sillas y mesas"
+      ],
       "correct": 0,
-      "teaches": ["birthdays-celebrations"]
+      "teaches": [
+        "birthdays-celebrations"
+      ]
     },
     {
       "id": "a1.10.01.ex04",
@@ -39,28 +83,39 @@
       "type": "fill-blank",
       "sentence": "Carlos y Daniela _____ (cantar) 'Feliz cumpleaños.'",
       "answer": "cantan",
-      "teaches": ["birthdays-celebrations"]
+      "teaches": [
+        "birthdays-celebrations"
+      ]
     },
     {
       "id": "a1.10.01.ex05",
       "category": "grammar",
-      "type": "sentence-order",
-      "sentences": [
+      "type": "multiple-choice",
+      "teaches": [
+        "birthdays-celebrations"
+      ],
+      "question": "Which sentence starts this exchange?",
+      "options": [
         "Kaylee decora la sala con globos.",
         "Carlos canta 'Feliz cumpleaños.'",
         "Meg abre sus regalos.",
         "Todos cantan también."
       ],
-      "solution": [0, 1, 2, 3],
-      "teaches": ["birthdays-celebrations"]
+      "correct": 0
     },
     {
       "id": "a1.10.01.ex06",
       "category": "dialogue",
       "type": "dialogue-complete",
       "prompt": [
-        {"speaker": "Carlos", "text": "Es un cuaderno para escribir palabras nuevas."},
-        {"speaker": "Meg", "text": "_____"}
+        {
+          "speaker": "Carlos",
+          "text": "Es un cuaderno para escribir palabras nuevas."
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
       ],
       "options": [
         "Es perfecto. Me gusta mucho estudiar español.",
@@ -68,20 +123,39 @@
         "Es perfecto. Mi apartamento es muy luminoso."
       ],
       "correct": 0,
-      "teaches": ["birthdays-celebrations"]
+      "teaches": [
+        "birthdays-celebrations"
+      ]
     },
     {
       "id": "a1.10.01.ex07",
       "category": "writing",
       "type": "structured-writing",
       "template": [
-        {"prompt": "Say it's your friend's birthday.", "answer": "Es el cumpleaños de mi amigo."},
-        {"prompt": "Say you decorate the living room with balloons.", "answer": "Decoro la sala con globos."},
-        {"prompt": "Say you buy a cake and a present.", "answer": "Compro un pastel y un regalo."},
-        {"prompt": "Say everyone sings and he opens his presents.", "answer": "Todos cantan y él abre sus regalos."},
-        {"prompt": "Say the present is a notebook.", "answer": "El regalo es un cuaderno."}
+        {
+          "prompt": "Say it's your friend's birthday.",
+          "answer": "Es el cumpleaños de mi amigo."
+        },
+        {
+          "prompt": "Say you decorate the living room with balloons.",
+          "answer": "Decoro la sala con globos."
+        },
+        {
+          "prompt": "Say you buy a cake and a present.",
+          "answer": "Compro un pastel y un regalo."
+        },
+        {
+          "prompt": "Say everyone sings and he opens his presents.",
+          "answer": "Todos cantan y él abre sus regalos."
+        },
+        {
+          "prompt": "Say the present is a notebook.",
+          "answer": "El regalo es un cuaderno."
+        }
       ],
-      "teaches": ["birthdays-celebrations"]
+      "teaches": [
+        "birthdays-celebrations"
+      ]
     }
   ]
 }

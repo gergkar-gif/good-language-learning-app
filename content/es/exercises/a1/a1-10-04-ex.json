@@ -6,12 +6,26 @@
       "category": "vocabulary",
       "type": "matching",
       "pairs": [
-        ["el viaje", "trip"],
-        ["la tradición", "tradition"],
-        ["la pared", "wall"],
-        ["el mapa", "map"]
+        [
+          "el viaje",
+          "trip"
+        ],
+        [
+          "la tradición",
+          "tradition"
+        ],
+        [
+          "la pared",
+          "wall"
+        ],
+        [
+          "el mapa",
+          "map"
+        ]
       ],
-      "teaches": ["age-dates"]
+      "teaches": [
+        "age-dates"
+      ]
     },
     {
       "id": "a1.10.04.ex02",
@@ -24,7 +38,9 @@
         "Tengo el doce de mayo y mi cumpleaños es veinticinco años."
       ],
       "correct": 0,
-      "teaches": ["age-dates"]
+      "teaches": [
+        "age-dates"
+      ]
     },
     {
       "id": "a1.10.04.ex03",
@@ -32,37 +48,64 @@
       "type": "fill-blank",
       "sentence": "Cada país _____ (tener) tradiciones diferentes.",
       "answer": "tiene",
-      "teaches": ["age-dates"]
+      "teaches": [
+        "age-dates"
+      ]
     },
     {
       "id": "a1.10.04.ex04",
       "category": "grammar",
       "type": "sentence-builder",
-      "tiles": ["El", "próximo", "mes", "hacemos", "un", "viaje"],
-      "solution": ["El", "próximo", "mes", "hacemos", "un", "viaje"],
+      "tiles": [
+        "El",
+        "próximo",
+        "mes",
+        "hacemos",
+        "un",
+        "viaje"
+      ],
+      "solution": [
+        "El",
+        "próximo",
+        "mes",
+        "hacemos",
+        "un",
+        "viaje"
+      ],
       "english": "Next month we're taking a trip.",
-      "teaches": ["age-dates"]
+      "teaches": [
+        "age-dates"
+      ]
     },
     {
       "id": "a1.10.04.ex05",
       "category": "grammar",
-      "type": "sentence-order",
-      "sentences": [
+      "type": "multiple-choice",
+      "teaches": [
+        "age-dates"
+      ],
+      "question": "Which sentence starts this exchange?",
+      "options": [
         "Tengo veinticinco años.",
         "Mi cumpleaños es el doce de mayo.",
         "El próximo mes hacemos un viaje.",
         "Cada país tiene tradiciones diferentes."
       ],
-      "solution": [0, 1, 2, 3],
-      "teaches": ["age-dates"]
+      "correct": 0
     },
     {
       "id": "a1.10.04.ex06",
       "category": "dialogue",
       "type": "dialogue-complete",
       "prompt": [
-        {"speaker": "Daniela", "text": "¿Vas a viajar para tu cumpleaños?"},
-        {"speaker": "Carlos", "text": "_____"}
+        {
+          "speaker": "Daniela",
+          "text": "¿Vas a viajar para tu cumpleaños?"
+        },
+        {
+          "speaker": "Carlos",
+          "text": "_____"
+        }
       ],
       "options": [
         "Voy a viajar a Ninh Bình.",
@@ -70,20 +113,39 @@
         "Es un cuaderno especial."
       ],
       "correct": 0,
-      "teaches": ["age-dates"]
+      "teaches": [
+        "age-dates"
+      ]
     },
     {
       "id": "a1.10.04.ex07",
       "category": "writing",
       "type": "structured-writing",
       "template": [
-        {"prompt": "Say how old you are.", "answer": "Tengo veinticinco años."},
-        {"prompt": "Say when your birthday is.", "answer": "Mi cumpleaños es el doce de mayo."},
-        {"prompt": "Say each country has different traditions.", "answer": "Cada país tiene tradiciones diferentes."},
-        {"prompt": "Say next month you are taking a trip.", "answer": "El próximo mes hacemos un viaje."},
-        {"prompt": "Say there is a map of Vietnam on the wall.", "answer": "Hay un mapa de Vietnam en la pared."}
+        {
+          "prompt": "Say how old you are.",
+          "answer": "Tengo veinticinco años."
+        },
+        {
+          "prompt": "Say when your birthday is.",
+          "answer": "Mi cumpleaños es el doce de mayo."
+        },
+        {
+          "prompt": "Say each country has different traditions.",
+          "answer": "Cada país tiene tradiciones diferentes."
+        },
+        {
+          "prompt": "Say next month you are taking a trip.",
+          "answer": "El próximo mes hacemos un viaje."
+        },
+        {
+          "prompt": "Say there is a map of Vietnam on the wall.",
+          "answer": "Hay un mapa de Vietnam en la pared."
+        }
       ],
-      "teaches": ["age-dates"]
+      "teaches": [
+        "age-dates"
+      ]
     }
   ]
 }
