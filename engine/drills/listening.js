@@ -218,7 +218,7 @@ const ListeningDriller = (function () {
         _container.innerHTML = `
             <div class="gd-settings">
                 <h2 class="gd-title">Listening Driller</h2>
-                <p class="gd-hint">Decode spoken Spanish — meaning, matching, dictation and missing
+                <p class="gd-hint">Decode spoken ${Lang.name()} — meaning, matching, dictation and missing
                     words, all by ear. Play as many times as you like.</p>
 
                 <div class="vb-mode-switcher" role="tablist">

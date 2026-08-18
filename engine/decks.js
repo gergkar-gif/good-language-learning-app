@@ -435,7 +435,7 @@ const Decks = (function () {
 
                 <label class="dk-editor-label" for="dk-editor-name">Name</label>
                 <input id="dk-editor-name" class="dk-editor-input" type="text"
-                    placeholder="e.g. Spanish for Mexico" value="${esc(draft.name)}" maxlength="60">
+                    placeholder="e.g. Travel essentials" value="${esc(draft.name)}" maxlength="60">
 
                 <label class="dk-editor-label" for="dk-editor-desc">Description (optional)</label>
                 <textarea id="dk-editor-desc" class="dk-editor-input dk-editor-textarea"
@@ -443,7 +443,7 @@ const Decks = (function () {
 
                 <label class="dk-editor-label" for="dk-editor-search">Add vocabulary</label>
                 <input id="dk-editor-search" class="dk-editor-input" type="text"
-                    placeholder="Search in Spanish or English…" autocomplete="off">
+                    placeholder="Search in ${Lang.name()} or English…" autocomplete="off">
                 <div id="dk-editor-results" class="dk-picker-panel"></div>
 
                 <ul class="dk-words dk-editor-words">

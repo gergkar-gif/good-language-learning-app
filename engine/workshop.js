@@ -10,13 +10,23 @@
 const Workshop = (function () {
     'use strict';
 
+    // `langs` is omitted where a driller is genuinely language-agnostic
+    // (drawn from generated indexes that, once HUNGARIAN_READER_IMPLEMENTATION_BRIEF.md's
+    // language-scoping fix lands, resolve per course) — those fail gracefully
+    // to an honest empty pool today, which is a fine state to show. `verbs`
+    // is the one exception: imports/verbs/verb-list.js is a plain global
+    // script with no language scoping at all, so without a gate here a
+    // Hungarian learner would silently drill *Spanish* conjugation under a
+    // Hungarian course — wrong content, not just missing content — until
+    // engine/verbs/ gets the rewrite multi-language-plan already calls for.
     const DRILLERS = [
         {
             id: 'verbs',
             icon: 'verbs',
             title: 'Verb Driller',
             sub: 'Conjugation tables and speed drills.',
-            containerId: 'verb-driller-root'
+            containerId: 'verb-driller-root',
+            langs: ['es']
         },
         {
             id: 'grammar',
@@ -43,10 +53,14 @@ const Workshop = (function () {
             id: 'listening',
             icon: 'listening',
             title: 'Listening Driller',
-            sub: 'Decode spoken Spanish, by ear.',
+            sub: `Decode spoken ${(typeof Lang !== 'undefined') ? Lang.name() : 'the language'}, by ear.`,
             containerId: 'listening-driller-root'
         }
     ];
+
+    function _available(driller) {
+        return !driller.langs || driller.langs.includes(Lang.code());
+    }
 
     // Each driller's own mark, two-tone in the same --wash/--ink/--accent
     // formula as the Lessons path art (PATH_SHAPES in engine/curriculum.js)
@@ -81,7 +95,7 @@ const Workshop = (function () {
     function _pickerHtml() {
         return `
             <div class="wk-picker">
-                ${DRILLERS.map(d => `
+                ${DRILLERS.filter(_available).map(d => `
                     <button class="wk-card" data-driller="${d.id}">
                         ${_drillerIcon(d.icon)}
                         <span class="wk-card-body">
@@ -140,7 +154,7 @@ const Workshop = (function () {
         }
 
         const driller = DRILLERS.find(d => d.id === _active);
-        if (!driller) { _active = null; return render(); }
+        if (!driller || !_available(driller)) { _active = null; return render(); }
 
         root.innerHTML = _activeHtml(driller);
         _attachActiveEvents(root);

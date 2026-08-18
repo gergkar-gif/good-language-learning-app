@@ -74,7 +74,7 @@ const TranslationDriller = (function () {
             : _direction;
 
         return dir === DIRECTION.ES_EN
-            ? { prompt: pair.spanish, model: pair.english, promptLabel: 'Spanish' }
+            ? { prompt: pair.spanish, model: pair.english, promptLabel: Lang.name() }
             : { prompt: pair.english, model: pair.spanish, promptLabel: 'English' };
     }
 
@@ -105,8 +105,8 @@ const TranslationDriller = (function () {
                 <div class="gd-setting">
                     <label for="td-direction">Direction</label>
                     <select id="td-direction" class="vb-select">
-                        <option value="${DIRECTION.ES_EN}">Spanish → English</option>
-                        <option value="${DIRECTION.EN_ES}">English → Spanish</option>
+                        <option value="${DIRECTION.ES_EN}">${Lang.name()} → English</option>
+                        <option value="${DIRECTION.EN_ES}">English → ${Lang.name()}</option>
                         <option value="${DIRECTION.MIXED}">Mixed</option>
                     </select>
                 </div>

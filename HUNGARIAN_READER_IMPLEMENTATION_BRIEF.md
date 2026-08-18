@@ -36,6 +36,43 @@ The Library specification also explicitly expects the existing Reader to support
 
 Do not create a separate Hungarian Reader unless the existing architecture genuinely cannot support Hungarian.
 
+## Wider scope: the generated-index gap is not just the Lexicon
+
+Inspection (2026-08-18) found that `engine/lexicon.js` is not a special case — it's
+one instance of a pattern that runs through every module built on generated
+indexes. Each of these fetches a bare top-level path instead of going through
+`Lang.content()`, the same way `lessons/`, `stories/` and `curriculum/`
+already do:
+
+| File | Hardcoded path | Feature |
+|---|---|---|
+| `engine/lexicon.js` | `verb-index.json`, `word-index.json`, `spanish-en.json`, `frequency.json` | Reader word-tap lookup (this brief's original scope) |
+| `engine/drills/grammar.js` | `generated/indexes/grammar-index.json` | Workshop Grammar Driller's skill pool |
+| `engine/drills/translation.js` | `generated/indexes/translation-index.json` | Workshop Translation Driller |
+| `engine/drills/listening.js` | `generated/indexes/translation-index.json` | Workshop Listening Driller |
+| `engine/drills/vocabulary.js` | `generated/indexes/translation-index.json` | Workshop Vocabulary Driller (Context mode) |
+
+All four Workshop files sit downstream of `scripts/build_grammar_index.py`
+and `scripts/build_translation_index.py`, which themselves only ever scan
+`content/es/`. So this is one fix, not five: make the generated-index
+location itself language-scoped — most consistent with the rest of the app
+would be moving them under `content/<lang>/indexes/...` (matching how
+`content/hu/curriculum/` and `content/hu/decks/` already work from the
+course-picker work), updating the four build scripts to write there
+per-language, and swapping these fetch call sites to `Lang.content(...)`.
+
+**Deliberately out of scope:** `engine/content-loader.js`'s `Content.verb()`
+also hardcodes `imports/verbs/`, but that's an existing, documented
+exception — Hungarian's definite/indefinite verb conjugation has no Spanish
+analogue, so `engine/verbs/` needs an actual rewrite regardless of any data
+scoping (see multi-language-plan). Don't fold it into this pass.
+
+This means Phase 3 ("integrate with existing Lexicon... make the Lexicon
+language-aware without duplicating the Reader") should really be scoped as
+*make every generated-index consumer language-aware*, not just the Lexicon —
+otherwise Hungarian gets a working Reader but a Workshop that's silently
+still serving Spanish content, or serving nothing, under every driller.
+
 ## Hungarian requirement
 
 Hungarian needs richer morphology than Spanish.
@@ -235,7 +272,18 @@ Investigate whether the best approach is:
 
 The target is good Reader behaviour with a small memory/download footprint, not linguistic completeness at any cost.
 
-The A1/A2 curriculum can also constrain what morphology needs to be surfaced initially. The system can become richer as the Hungarian course expands.
+**Coverage cannot be scoped to the curriculum's own vocabulary.** Library's
+My Texts feature (see [[parlour-library-my-texts-feature]]) lets a learner
+paste and read *any* text — not just Parlour's own stories — and it runs
+through this same Reader. A Hungarian lexicon sized only to the ~30-lesson
+A1 word list would work for lesson content and then return "not in the
+dictionary yet" for most of whatever a learner actually pastes in, which
+defeats the point of My Texts existing at all. The dictionary/lemma layer
+in particular needs essentially full coverage (the same shape as
+`imports/dictionary/spanish-en.json`'s ~110k Spanish entries, not a few
+hundred). Where the curriculum *can* legitimately constrain scope is the
+morphological *depth* surfaced by default early on (which cases/tenses get
+a friendly label vs. a raw tag) — not which words are recognised at all.
 
 ## Reader behaviour
 

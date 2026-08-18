@@ -436,11 +436,11 @@ const Library = (function () {
 
                 <label class="dk-editor-label" for="lt-text-title">Title</label>
                 <input id="lt-text-title" class="dk-editor-input" type="text"
-                    placeholder="e.g. La Revolución Mexicana" value="${esc(textDraft.title)}" maxlength="120">
+                    placeholder="e.g. A Short History" value="${esc(textDraft.title)}" maxlength="120">
 
                 <label class="dk-editor-label" for="lt-text-body">Paste your text</label>
                 <textarea id="lt-text-body" class="dk-editor-input lt-text-area"
-                    placeholder="Paste any Spanish text here — an article, an essay, a story…">${esc(textDraft.text)}</textarea>
+                    placeholder="Paste any ${Lang.name()} text here — an article, an essay, a story…">${esc(textDraft.text)}</textarea>
 
                 <div class="dk-actions lt-analyse-row">
                     <button class="dk-secondary" data-text-analyse="1">Analyse text</button>
@@ -481,7 +481,7 @@ const Library = (function () {
         const texts = listMyTexts();
         return `
             <div class="lt-index-head">
-                <p class="dk-group-blurb">Bring in any Spanish text and read it with the same dictionary
+                <p class="dk-group-blurb">Bring in any ${Lang.name()} text and read it with the same dictionary
                     and deck tools as the rest of Parlour.</p>
                 <button class="btn-primary" data-text-add="1">+ Add text</button>
             </div>

@@ -23,7 +23,7 @@ const PAGE_HEADERS = {
     },
     learn: {
         title: 'Lessons',
-        subtitle: 'Your Spanish course.',
+        subtitle: () => `Your ${(typeof Lang !== 'undefined') ? Lang.name() : 'Spanish'} course.`,
         illustration: 'path'
     },
     reader: {
@@ -57,11 +57,12 @@ const PageHeader = {
         const art = Art.section(config.illustration);
         const actions = (config.actions || []).filter(Boolean);
         const title = (typeof config.title === 'function') ? config.title() : config.title;
+        const subtitle = (typeof config.subtitle === 'function') ? config.subtitle() : config.subtitle;
 
         host.innerHTML = `
             <div class="page-header-text">
                 <h1 class="page-header-title">${UI.escape(title)}</h1>
-                <p class="page-header-sub">${UI.escape(config.subtitle || '')}</p>
+                <p class="page-header-sub">${UI.escape(subtitle || '')}</p>
             </div>
             ${actions.length ? `<div class="page-header-actions">${actions.join('')}</div>` : ''}
             ${art ? `
