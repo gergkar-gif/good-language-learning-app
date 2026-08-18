@@ -147,6 +147,36 @@ const GrammarDriller = (function () {
         return resolved;
     }
 
+    // "Mixed" flattens every skill's lesson-exercise entries — 7000+ of them
+    // across 550+ skills, pointing at 650+ distinct exercise files — even
+    // though a session only ever needs a few dozen questions at most. Fetching
+    // every one of those files up front (_resolveLessonEntries did exactly
+    // that) was the "10 random exercises takes a while to load" report: the
+    // pool-building cost scaled with the whole course, not the session size.
+    // Deduping by exercise id, shuffling, then stopping once enough distinct
+    // files are queued keeps the fetch count bounded while still leaving far
+    // more variety than any single session (30 questions, max) can use.
+    const MIXED_FILE_CAP = 40;
+
+    function _sampleMixedEntries(entries) {
+        const seenIds = new Set();
+        const deduped = entries.filter(e => {
+            if (seenIds.has(e.id)) return false;
+            seenIds.add(e.id);
+            return true;
+        });
+
+        const shuffled = _shuffled(deduped);
+        const refs = new Set();
+        const sampled = [];
+        for (const entry of shuffled) {
+            if (refs.size >= MIXED_FILE_CAP && !refs.has(entry.ref)) continue;
+            refs.add(entry.ref);
+            sampled.push(entry);
+        }
+        return sampled;
+    }
+
     // Every normalised exercise available for a skill (or every skill, for
     // "mixed"), in random order. Count mode samples from this with
     // _takeN(); Timed mode uses it as-is and reshuffles when it runs out.
@@ -155,7 +185,7 @@ const GrammarDriller = (function () {
 
         if (moduleId === 'mixed') {
             bankItems = _bank.items;
-            lessonEntries = Object.values(_index.bySkill).flat();
+            lessonEntries = _sampleMixedEntries(Object.values(_index.bySkill).flat());
         } else {
             bankItems = _bank.items.filter(i => i.module === moduleId);
             lessonEntries = _index.bySkill[_lessonSkillFor(moduleId)] || [];
