@@ -416,6 +416,9 @@ LANG_UNIT_TABLES = {
     "hu": {
         "a1": [
             ("Learning to Read Hungarian", ["a1-01", "a1-02", "a1-03", "a1-04", "a1-05"]),
+            ("Greetings & Basic Interaction", ["a1-06", "a1-07", "a1-08", "a1-09", "a1-10", "a1-10-consolidation"]),
+            ("Introducing Yourself", ["a1-11", "a1-12", "a1-13", "a1-14", "a1-15", "a1-15-consolidation"]),
+            ("Numbers & Personal Information", ["a1-16", "a1-17", "a1-18", "a1-19", "a1-20", "a1-20-consolidation"]),
         ],
     },
 }
