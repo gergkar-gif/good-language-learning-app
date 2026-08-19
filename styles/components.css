@@ -1575,6 +1575,40 @@
   line-height: 1.4;
 }
 
+/* Hungarian word-tap popup only, from HungarianMorphology.splitCompound()
+   via engine/reader.js's _compoundSplitHtml() — a last-resort guess for a
+   word not in the dictionary at all, formed by splitting it into two
+   known words ("haláltök" -> halál + tök). Always paired with a .wp-why
+   caveat (see reader.js), so this only needs to lay out the two parts
+   themselves. */
+.wp-compound {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.wp-compound-part {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 8px 12px;
+  flex: 1;
+}
+
+.wp-compound-form {
+  display: block;
+  font-weight: 600;
+  color: var(--primary);
+  font-size: 14px;
+}
+
+.wp-compound-gloss {
+  display: block;
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 2px;
+}
+
 .wp-meaning {
   font-size: 20px;
   font-weight: 500;

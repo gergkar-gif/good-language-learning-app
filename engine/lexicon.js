@@ -228,16 +228,22 @@ const Lexicon = (function () {
         // context, including a synthesised sense for a prefixed verb that
         // isn't its own dictionary headword — see addPrefixedVerb() in
         // engine/morphology/hungarian.js).
-        function add(lemma, sense, analysis) {
+        function add(lemma, sense, analysis, compoundParts) {
             const dedupeKey = lemma + '|' + (analysis || '');
             if (seen.has(dedupeKey)) return;
             seen.add(dedupeKey);
-            readings.push({
+            const reading = {
                 lemma: lemma,
                 pos: (sense && sense.type) || '',
                 translation: sense ? sense.en : null,
                 analysis: analysis || ''
-            });
+            };
+            // Only present for HungarianMorphology's last-resort compound
+            // split ("haláltök" -> halál + tök) — reader.js checks for
+            // this to render the literal-translation caveat instead of a
+            // normal reading.
+            if (compoundParts) reading.compoundParts = compoundParts;
+            readings.push(reading);
         }
 
         // "The tapped word IS a dictionary headword" is strong, reliable
@@ -261,7 +267,7 @@ const Lexicon = (function () {
         // collision found while building this ("nőtt", "élt", "örült").
         if (!directHit && typeof HungarianMorphology !== 'undefined') {
             HungarianMorphology.analyze(key, _dictionary, _wordIndex)
-                .forEach(r => add(r.lemma, { type: r.pos, en: r.translation }, r.analysis));
+                .forEach(r => add(r.lemma, { type: r.pos, en: r.translation }, r.analysis, r.compoundParts));
         }
 
         // nominalSense() picks the nominal sense specifically for a
@@ -271,6 +277,18 @@ const Lexicon = (function () {
         // reading in that case, same "él" collision as above).
         (_wordIndex[key] || []).forEach(a => {
             const sense = HungarianMorphology.nominalSense(_dictionary[a.lemma]);
+            // a.lemma === key means this word-index entry is the lemma's
+            // own nominative-singular citation form ("július" indexed
+            // under "július" itself, case=nom/number=sg) — every common
+            // noun/adjective has one, since it's trivially part of the
+            // declension table. That's only redundant with the direct-hit
+            // branch above when it's literally THE SAME sense (reference
+            // equality against anySense() picks the identical object);
+            // "igen" also has a genuine second sense (noun "yes", not
+            // just the interjection the direct hit shows) worth keeping
+            // as its own "other reading", so lemma-string-equality alone
+            // isn't enough to call it a duplicate.
+            if (a.lemma === key && directHit && sense === HungarianMorphology.anySense(_dictionary[key])) return;
             if (sense || !_dictionary[a.lemma]) add(a.lemma, sense, HungarianMorphology.describe(a));
         });
 

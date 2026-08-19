@@ -114,6 +114,31 @@ function _hungarianBreakdownHtml(primary, ladder) {
     `;
 }
 
+// Last-resort compound guess ("haláltök" -> halál + tök, "death" +
+// "pumpkin") from HungarianMorphology's splitCompound() via analyze() ->
+// Lexicon.lookup()'s compoundParts field — see that function's own
+// comment for why this only ever appears when nothing else resolved the
+// word at all. Rendered as a distinct, clearly-caveated block rather
+// than folded into the normal reading, since it's a guess about what the
+// word probably means, not a real dictionary definition of it.
+function _compoundSplitHtml(primary) {
+    if (!primary.compoundParts || primary.compoundParts.length < 2) return '';
+    const parts = primary.compoundParts.map(p => `
+        <div class="wp-compound-part">
+            <span class="wp-compound-form">${Reader.escapeHtml(p.form)}</span>
+            <span class="wp-compound-gloss">${Reader.escapeHtml(p.translation)}</span>
+        </div>
+    `).join('');
+    return `
+        <div class="wp-compound">${parts}</div>
+        <p class="wp-meaning">${Reader.escapeHtml(primary.translation)}</p>
+        <div class="wp-why">
+            <p class="wp-why-q">Literal translation</p>
+            <p class="wp-why-a">“${Reader.escapeHtml(primary.lemma)}” isn’t in the dictionary yet — this combines its two parts word-by-word, which may not match the real meaning.</p>
+        </div>
+    `;
+}
+
 function _renderWordReadings(tappedWord, readings, phrase, ladder) {
     const body = document.getElementById('popup-body');
     const analysisEl = document.getElementById('popup-analysis');
@@ -140,12 +165,13 @@ function _renderWordReadings(tappedWord, readings, phrase, ladder) {
     // Primary reading fills the header; any others are listed below, so an
     // ambiguous word ("casas" = houses / you marry) still shows both.
     const primary = readings[0];
-    const breakdownHtml = phrase ? '' : _hungarianBreakdownHtml(primary, ladder);
+    const compoundHtml = phrase ? '' : _compoundSplitHtml(primary);
+    const breakdownHtml = (phrase || compoundHtml) ? '' : _hungarianBreakdownHtml(primary, ladder);
     if (!phrase) {
-        // The breakdown block already states the POS and full morphology
-        // (lemma line, chain, suffix table) more clearly than this compact
-        // subtitle would alongside it — only shown when there's no breakdown.
-        analysisEl.textContent = breakdownHtml ? '' : [primary.pos, primary.gender, primary.analysis]
+        // The breakdown/compound block already states the POS and full
+        // morphology more clearly than this compact subtitle would
+        // alongside it — only shown when there's neither.
+        analysisEl.textContent = (breakdownHtml || compoundHtml) ? '' : [primary.pos, primary.gender, primary.analysis]
             .filter(Boolean).join(' · ');
     }
 
@@ -153,7 +179,9 @@ function _renderWordReadings(tappedWord, readings, phrase, ladder) {
     if (phrase) {
         html += `<p class="wp-alts-title" style="margin-top:16px">${Reader.escapeHtml(tappedWord)} on its own</p>`;
     }
-    if (breakdownHtml) {
+    if (compoundHtml) {
+        html += compoundHtml;
+    } else if (breakdownHtml) {
         html += breakdownHtml;
     } else {
         if (primary.lemma.toLowerCase() !== String(tappedWord).toLowerCase()) {

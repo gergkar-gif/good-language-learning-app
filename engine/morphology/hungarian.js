@@ -460,6 +460,40 @@ const HungarianMorphology = (function () {
         return null;
     }
 
+    // Content parts only — a function word (postposition, conjunction,
+    // particle, pronoun, determiner, article, interjection) makes for a
+    // nonsense split ("vala" isn't a compound of two real short words
+    // just because both halves happen to also be spellable words).
+    const COMPOUND_PART_POS = { noun: 1, verb: 1, adjective: 1, adverb: 1, numeral: 1 };
+    const MIN_COMPOUND_PART = 3;
+
+    // Hungarian compounding is fully productive (gyümölcs + lé ->
+    // gyümölcslé, "fruit juice") and routinely produces words no
+    // dictionary — however large — will ever fully enumerate. When
+    // nothing else resolves a word at all, try splitting it into two
+    // known dictionary words and offer their combined meaning as a
+    // literal, word-by-word guess. This is deliberately the LAST resort
+    // (only ever reached when analyze() and ladder() both come up empty
+    // for a word) and is never treated as if it were a real dictionary
+    // definition of the whole compound — callers must label it as a
+    // literal/compositional guess, not present it as authoritative.
+    // Scans left-to-right and takes the first valid split rather than
+    // every possible one: Hungarian compounds are normally exactly two
+    // meaningful parts, and the leftmost split is the one a reader
+    // parsing the word left-to-right would find first too.
+    function splitCompound(word, dictionary) {
+        for (let i = MIN_COMPOUND_PART; i <= word.length - MIN_COMPOUND_PART; i++) {
+            const left = word.slice(0, i);
+            const right = word.slice(i);
+            const leftSense = anySense(dictionary[left]);
+            const rightSense = anySense(dictionary[right]);
+            if (leftSense && rightSense && COMPOUND_PART_POS[leftSense.type] && COMPOUND_PART_POS[rightSense.type]) {
+                return { left: left, leftSense: leftSense, right: right, rightSense: rightSense };
+            }
+        }
+        return null;
+    }
+
     /**
      * Step-by-step build-up of a Hungarian word for the Reader popup.
      * Returns { chain, breakdown }: chain is the cumulative forms
@@ -543,6 +577,29 @@ const HungarianMorphology = (function () {
                     breakdown: splitPossessiveSuffix(
                         remainder.slice(indexHit.lemma.length), indexHit.person, indexHit.ownerNumber, indexHit.number
                     ).concat(caseBreakdown)
+                };
+            }
+
+            // One layer deeper: a plural marker under the case
+            // ("megjelenteknek" = megjelent + plural "-ek" + dative
+            // "-nek") — same reach as analyze()'s own deeper chain (see
+            // its "one more layer down: plural marker under the case
+            // suffix" comment), which is what actually resolves this kind
+            // of word; without the matching branch here, it translated
+            // correctly but showed no breakdown at all.
+            for (const plSuffix of PLURAL_SUFFIXES) {
+                const deeper = strip(remainder, plSuffix);
+                const deeperSense = deeper !== null ? nominalSense(dictionary[deeper]) : null;
+                if (!deeperSense || !matches(deeper)) continue;
+                const base = gloss(deeperSense);
+                const pluralPhrase = naivePluralize(base);
+                return {
+                    chain: [
+                        { form: deeper, translation: base },
+                        { form: remainder, translation: pluralPhrase },
+                        { form: word, translation: prep ? prep + ' ' + pluralPhrase : pluralPhrase + ' (' + caseName(caseCode) + ')' }
+                    ],
+                    breakdown: [{ suffix: plSuffix, label: 'plural' }, caseBreakdown]
                 };
             }
 
@@ -831,6 +888,34 @@ const HungarianMorphology = (function () {
             const sense = remainder !== null ? nominalSense(dictionary[remainder]) : null;
             if (sense) {
                 addFromLemma(remainder, sense, 'nominative, plural');
+            }
+        }
+
+        // Last resort: nothing above resolved this word at all. Try
+        // splitting it into two known dictionary words and offer their
+        // combined meaning as a literal, word-by-word guess — see
+        // splitCompound()'s own comment for why this only ever runs here,
+        // never ahead of an actual morphological reading. analysis is
+        // deliberately the literal string 'literal translation' (checked
+        // by engine/reader.js to render this distinctly, with a caveat,
+        // rather than as an ordinary grammatical label) and compoundParts
+        // carries the split itself for that same rendering.
+        if (!results.length) {
+            const split = splitCompound(word, dictionary);
+            if (split) {
+                const shorten = sense => (typeof Lexicon !== 'undefined' && Lexicon.shortGloss)
+                    ? Lexicon.shortGloss(sense.en) : sense.en;
+                const leftGloss = shorten(split.leftSense);
+                const rightGloss = shorten(split.rightSense);
+                results.push({
+                    lemma: word, pos: split.rightSense.type,
+                    translation: leftGloss + ' + ' + rightGloss,
+                    analysis: 'literal translation',
+                    compoundParts: [
+                        { form: split.left, translation: leftGloss },
+                        { form: split.right, translation: rightGloss }
+                    ]
+                });
             }
         }
 
