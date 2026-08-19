@@ -32,13 +32,104 @@ function saveDeck() {
     updateSRSCounter();
 }
 
+// ============================================
+// KNOWN WORDS ("My Dictionary")
+// ============================================
+// A word here is retired from review entirely — distinct from a "mastered"
+// SRS card (3+ successful reviews, engine/decks.js), which still comes back
+// on its schedule. A word gets here three ways: the learner says so at the
+// end of a lesson, they add it directly in My Dictionary, or a long-lived
+// SRS card graduates on its own (see maybeGraduate() below). Known and
+// reviewing are mutually exclusive on purpose — marking a word known always
+// retires any active card for it, so the same word never sits in both.
+let knownWords = [];
+
+function loadKnownWords() {
+    try {
+        const saved = localStorage.getItem(Lang.key('knownWords'));
+        knownWords = saved ? JSON.parse(saved) : [];
+    } catch (error) {
+        knownWords = [];
+    }
+}
+
+function saveKnownWords() {
+    localStorage.setItem(Lang.key('knownWords'), JSON.stringify(knownWords));
+}
+
+function isKnown(lemma) {
+    return knownWords.some(w => w.spanish === lemma);
+}
+
+function addKnownWord(spanish, english, type, source) {
+    if (!spanish || isKnown(spanish)) return false;
+    srsDeck = srsDeck.filter(card => card.spanish !== spanish);
+    knownWords.push({
+        spanish: spanish,
+        english: english || 'unknown',
+        type: type || 'unknown',
+        source: source || 'manual',
+        added: new Date().toISOString()
+    });
+    saveDeck();
+    saveKnownWords();
+    return true;
+}
+
+// The undo, from My Dictionary: back into review as a fresh card rather than
+// restoring whatever schedule it had before — a word retired long enough ago
+// to need pulling back deserves to start over, not resume mid-interval.
+function moveKnownToReview(spanish) {
+    const word = knownWords.find(w => w.spanish === spanish);
+    if (!word) return;
+    knownWords = knownWords.filter(w => w.spanish !== spanish);
+    srsDeck.push(Object.assign({
+        spanish: word.spanish,
+        english: word.english,
+        type: word.type,
+        source: word.source
+    }, newCardSchedule()));
+    saveKnownWords();
+    saveDeck();
+}
+
+// A card that has held up for months across several successful reviews has
+// earned its way out of the queue — SRS keeps testing what's still fragile,
+// and by this point this word isn't. Checked right after every rating
+// (rateCard(), below) rather than on a timer, so graduation only ever
+// follows a review that just confirmed the word is solid.
+const GRADUATION_MIN_REVIEWS = 5;
+const GRADUATION_MIN_INTERVAL_DAYS = 180;
+
+function maybeGraduate(card) {
+    if (!card || card.reviews < GRADUATION_MIN_REVIEWS) return false;
+    if (card.interval < GRADUATION_MIN_INTERVAL_DAYS) return false;
+    if (isKnown(card.spanish)) return false;
+
+    srsDeck = srsDeck.filter(c => c.spanish !== card.spanish);
+    knownWords.push({
+        spanish: card.spanish,
+        english: card.english,
+        type: card.type,
+        source: card.source,
+        added: new Date().toISOString(),
+        graduated: true
+    });
+    saveKnownWords();
+    return true;
+}
+
 function clearDeck() {
     // Clears this course's deck. XP is not scoped by language — it records
     // that the learner studied, not which course — so clearing it here wipes
-    // it for every course, which is what the button has always done.
+    // it for every course, which is what the button has always done. Known
+    // words are cleared alongside the deck they came from for the same
+    // reason — leaving them behind would be half a reset.
     localStorage.removeItem(Lang.key('srsDeck'));
+    localStorage.removeItem(Lang.key('knownWords'));
     localStorage.removeItem('spanishApp_xp');
     srsDeck = [];
+    knownWords = [];
     xpData = { total: 0, history: {}, dailyNewWords: {} };
     updateSRSCounter();
     updateXPHeader();
@@ -523,6 +614,7 @@ function rateCard(rating) {
     recordReview(currentReviewCard, rating);
 
     scheduleCard(currentReviewCard, rating, now);
+    maybeGraduate(currentReviewCard);
 
     saveDeck();
     updateReaderWordColors();

@@ -686,19 +686,50 @@
 .lsn-srs-row {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 12px;
-  cursor: pointer;
 }
 
-.lsn-srs-row input {
-  width: 18px;
-  height: 18px;
-  flex: none;
-}
-
-.lsn-srs-row > div:last-child {
+.lsn-srs-badge {
   margin-left: auto;
-  text-align: right;
+  font-size: 13px;
+  color: var(--muted);
+  font-style: italic;
+}
+
+.lsn-srs-toggle {
+  display: flex;
+  gap: 6px;
+  margin-left: auto;
+}
+
+.lsn-srs-opt {
+  padding: 6px 12px;
+  font-size: 13px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+  color: var(--text);
+  cursor: pointer;
+  transition: border-color var(--dur-fast) var(--ease-standard),
+              background-color var(--dur-fast) var(--ease-standard),
+              color var(--dur-fast) var(--ease-standard);
+}
+
+.lsn-srs-opt:hover {
+  border-color: var(--primary-mid);
+}
+
+.lsn-srs-opt.is-selected {
+  border-color: var(--primary);
+  background: rgba(16, 42, 71, 0.06);
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.lsn-srs-opt:disabled {
+  opacity: .6;
+  cursor: not-allowed;
 }
 
 .lsn-goal {
@@ -1839,6 +1870,19 @@
 .dk-meta-line { font-size: 13px; color: var(--muted); margin-top: 2px; }
 
 .dk-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+
+.dk-dictionary-add {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.dk-dictionary-add .lsn-input {
+  width: auto;
+  flex: 1;
+  min-width: 0;
+}
 
 .dk-secondary {
   background: var(--bg);

@@ -39,6 +39,7 @@ const Decks = (function () {
     let openDeck = null;       // deck id being viewed, or null for the index
     let draft = null;          // deck under construction/edit in the editor, or null
     let activeSection = 'mine'; // 'mine' or 'parlour' — which top-level tab is showing
+    let showDictionary = false; // My Dictionary (known words) view, instead of the index
 
     // ----------------------------------------
     // DATA — Parlour Decks (read-only catalogue)
@@ -700,6 +701,7 @@ const Decks = (function () {
         const mineStatus = statusOf(mine);
         const myDeckCount = listMyDecks().length;
         const parlourCount = (catalogue.decks || []).length;
+        const knownCount = (typeof knownWords !== 'undefined') ? knownWords.length : 0;
 
         return `
             <div class="dk-top">
@@ -707,9 +709,16 @@ const Decks = (function () {
                     <h3 class="dk-group-title">All my words</h3>
                     <p class="dk-group-blurb">Every word you have taken on, from wherever you met it.</p>
                     <p class="dk-big">${mineStatus.total}
-                        <span class="dk-of">${mineStatus.total === 1 ? 'word' : 'words'}</span></p>
+                        <span class="dk-of">reviewing</span></p>
                     <p class="dk-meta-line">${mineStatus.due} due now ·
                         ${mineStatus.mastered} reviewed three times or more</p>
+                </div>
+                <div class="dk-mine">
+                    <h3 class="dk-group-title">My Dictionary</h3>
+                    <p class="dk-group-blurb">Words you already know — retired from review.</p>
+                    <p class="dk-big">${knownCount}
+                        <span class="dk-of">known</span></p>
+                    <p class="dk-meta-line">${mineStatus.total + knownCount} words total</p>
                 </div>
                 <div class="dk-actions">
                     <button class="btn-primary" data-review-deck="all"
@@ -717,6 +726,7 @@ const Decks = (function () {
                         Review all${mineStatus.due ? ` (${mineStatus.due})` : ''}
                     </button>
                     <button data-open-deck="mine" class="dk-secondary">Browse all my words</button>
+                    <button data-open-dictionary="1" class="dk-secondary">My Dictionary</button>
                 </div>
             </div>
             <nav class="lt-subnav" id="dk-subnav">
@@ -781,6 +791,60 @@ const Decks = (function () {
         `;
     }
 
+    // Words the learner has said they know, whichever way they said it
+    // (lesson-end choice, graduated out of SRS, or added by hand below).
+    // Nothing here is scheduled — that's the point — so the list is just
+    // alphabetical rather than sorted by any review state.
+    function dictionaryHtml() {
+        const words = (typeof knownWords !== 'undefined')
+            ? knownWords.slice().sort((a, b) => a.spanish.localeCompare(b.spanish))
+            : [];
+
+        const rows = words.map(w => `
+            <li class="dk-word">
+                <span class="dk-word-es">${esc(withArticle(w.spanish))}${
+                    typeof Speech !== 'undefined' ? Speech.button(w.spanish) : ''}</span>
+                <span class="dk-word-en">${esc(w.english)}</span>
+                <button class="dk-secondary" data-move-to-review="${esc(w.spanish)}">Back to review</button>
+            </li>
+        `).join('');
+
+        return `
+            <button class="dk-back" data-close-dictionary="1">← All decks</button>
+            <div class="dk-detail-head">
+                <h3>My Dictionary</h3>
+                <p>Words you already know stay out of review. Add one any time you'd
+                    rather not keep seeing it.</p>
+            </div>
+            <div class="dk-dictionary-add">
+                <input type="text" id="dict-add-input" class="lsn-input" placeholder="Add a word, e.g. vivir">
+                <button class="dk-secondary" id="dict-add-btn">+ Add</button>
+            </div>
+            <p id="dict-add-feedback" class="dk-meta-line"></p>
+            <ul class="dk-words">${rows || '<li class="dk-empty">No known words yet.</li>'}</ul>
+        `;
+    }
+
+    function addKnownWordByHand() {
+        const input = document.getElementById('dict-add-input');
+        const feedback = document.getElementById('dict-add-feedback');
+        if (!input) return;
+
+        const raw = input.value.trim().toLowerCase();
+        if (!raw) return;
+
+        const entry = (typeof Lexicon !== 'undefined') ? Lexicon.define(raw) : null;
+        if (!entry) {
+            if (feedback) feedback.textContent = `Couldn't find "${raw}" in the dictionary.`;
+            return;
+        }
+
+        const added = (typeof addKnownWord === 'function') && addKnownWord(raw, entry.en, entry.type, 'manual');
+        if (feedback) feedback.textContent = added ? `Added "${raw}."` : `"${raw}" is already known.`;
+        input.value = '';
+        render();
+    }
+
     // Deleting a word from "All my words" deletes its SRS card — there is
     // nothing else to remove it from. That is different from removing a word
     // from a My Deck, which only ever touches membership; this is the one
@@ -805,6 +869,26 @@ const Decks = (function () {
             return;
         }
 
+        if (showDictionary) {
+            host.innerHTML = dictionaryHtml();
+            host.querySelectorAll('[data-close-dictionary]').forEach(el => {
+                el.onclick = function () { showDictionary = false; render(); };
+            });
+            host.querySelectorAll('[data-move-to-review]').forEach(el => {
+                el.onclick = function () {
+                    if (typeof moveKnownToReview === 'function') {
+                        moveKnownToReview(el.getAttribute('data-move-to-review'));
+                    }
+                    render();
+                };
+            });
+            const addBtn = document.getElementById('dict-add-btn');
+            if (addBtn) addBtn.onclick = addKnownWordByHand;
+            const addInput = document.getElementById('dict-add-input');
+            if (addInput) addInput.onkeydown = e => { if (e.key === 'Enter') addKnownWordByHand(); };
+            return;
+        }
+
         const deck = openDeck ? byId(openDeck) : null;
         host.innerHTML = deck ? detailHtml(deck) : indexHtml();
 
@@ -821,6 +905,9 @@ const Decks = (function () {
         });
         host.querySelectorAll('[data-open-deck]').forEach(el => {
             el.onclick = function () { openDeck = el.getAttribute('data-open-deck'); render(); };
+        });
+        host.querySelectorAll('[data-open-dictionary]').forEach(el => {
+            el.onclick = function () { showDictionary = true; render(); };
         });
         host.querySelectorAll('[data-close-deck]').forEach(el => {
             el.onclick = function () { openDeck = null; render(); };

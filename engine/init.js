@@ -101,6 +101,7 @@ function _attachNavEvents() {
 
 async function initialiseApp() {
     loadDeck();
+    loadKnownWords();
     loadXP();
     updateXPHeader();
 

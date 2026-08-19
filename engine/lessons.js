@@ -742,32 +742,52 @@ const stepRenderers = {
         `;
     },
 
+    // Every word the lesson taught, each sorted into review or known — never
+    // silently. Defaulting an unresolved choice to "known" would let one fast
+    // click through a lesson quietly mark words the learner hasn't actually
+    // learned, so every fresh word starts on "Review" and only moves to
+    // "Know it" on a deliberate tap. Words already settled one way or the
+    // other (already reviewing, or already in My Dictionary) show as a
+    // plain fact instead of a choice — there's nothing left to decide.
     srs(step) {
         stepState.cards = step.cards || [];
         const inDeck = lemma => typeof srsDeck !== 'undefined'
             && srsDeck.some(card => card.spanish === lemma);
-        const fresh = stepState.cards.filter(card => !inDeck(card.lemma));
+        const known = lemma => typeof isKnown === 'function' && isKnown(lemma);
+
+        stepState.srsChoices = {};
+        stepState.cards.forEach((card, i) => {
+            if (!inDeck(card.lemma) && !known(card.lemma)) stepState.srsChoices[i] = 'review';
+        });
 
         return `
-            <p class="lsn-question">Pick the words you want to review. Untick any you already know.</p>
+            <p class="lsn-question">For each word: keep reviewing it, or mark it as one you already know.</p>
             <div class="lsn-vocab">
                 ${stepState.cards.map((card, i) => {
-                    const known = inDeck(card.lemma);
+                    const settled = inDeck(card.lemma) ? 'already reviewing'
+                        : known(card.lemma) ? 'already known' : null;
                     return `
-                    <label class="lsn-vocab-row lsn-srs-row">
-                        <input type="checkbox" data-srs="${i}"
-                            ${known ? 'disabled' : 'checked'} onchange="lessonUpdateSrsButton()">
+                    <div class="lsn-vocab-row lsn-srs-row">
                         <div>
                             <div class="lsn-es">${esc(card.lemma)}</div>
                             <div class="lsn-pos">${esc(card.pos)}</div>
                         </div>
-                        <div class="lsn-en">${known ? 'already in your deck' : esc(card.translation)}</div>
-                    </label>
+                        <div class="lsn-en">${esc(card.translation)}</div>
+                        ${settled ? `<span class="lsn-srs-badge">${settled}</span>` : `
+                            <div class="lsn-srs-toggle" role="group">
+                                <button type="button" class="lsn-srs-opt is-selected"
+                                    data-srs-choice="${i}" data-srs-value="review"
+                                    onclick="lessonSetSrsChoice(${i}, 'review')">Review</button>
+                                <button type="button" class="lsn-srs-opt"
+                                    data-srs-choice="${i}" data-srs-value="known"
+                                    onclick="lessonSetSrsChoice(${i}, 'known')">Know it</button>
+                            </div>
+                        `}
+                    </div>
                 `;
                 }).join('')}
             </div>
-            <button class="lsn-check" id="srs-add-btn" onclick="lessonAddSrsCards()"
-                ${fresh.length ? '' : 'disabled'}>Add ${fresh.length} words to review</button>
+            <button class="lsn-check" id="srs-add-btn" onclick="lessonSaveSrsChoices()">Save</button>
             ${feedbackHtml()}
         `;
     },
@@ -1170,19 +1190,11 @@ function lessonRevealWriting() {
     solveStep('Compare your sentences with the examples, then continue.');
 }
 
-function selectedSrsCards() {
-    return Array.prototype.slice.call(document.querySelectorAll('[data-srs]'))
-        .filter(box => box.checked && !box.disabled)
-        .map(box => stepState.cards[Number(box.dataset.srs)])
-        .filter(Boolean);
-}
-
-function lessonUpdateSrsButton() {
-    const btn = document.getElementById('srs-add-btn');
-    if (!btn || btn.dataset.done) return;
-    const count = selectedSrsCards().length;
-    btn.textContent = 'Add ' + count + ' words to review';
-    btn.disabled = count === 0;
+function lessonSetSrsChoice(index, value) {
+    stepState.srsChoices[index] = value;
+    document.querySelectorAll('[data-srs-choice="' + index + '"]').forEach(btn => {
+        btn.classList.toggle('is-selected', btn.dataset.srsValue === value);
+    });
 }
 
 // Where a card came from, in the form the Decks tab uses for its ids, so a
@@ -1193,11 +1205,21 @@ function lessonDeckId() {
     return 'lesson:' + currentLesson.id.replace(/^lesson\./, '').split('.').join('-');
 }
 
-function lessonAddSrsCards() {
-    let added = 0;
+function lessonSaveSrsChoices() {
+    if (!stepState.cards) return;
+    let toReview = 0, toKnown = 0;
     const source = lessonDeckId();
 
-    selectedSrsCards().forEach(card => {
+    Object.keys(stepState.srsChoices || {}).forEach(key => {
+        const card = stepState.cards[Number(key)];
+        if (!card) return;
+
+        if (stepState.srsChoices[key] === 'known') {
+            if (typeof addKnownWord === 'function'
+                && addKnownWord(card.lemma, card.translation, card.pos, source)) toKnown++;
+            return;
+        }
+
         if (srsDeck.find(w => w.spanish === card.lemma)) return;
         srsDeck.push(Object.assign({
             spanish: card.lemma,
@@ -1206,7 +1228,7 @@ function lessonAddSrsCards() {
             source: source,
             added: new Date().toISOString()
         }, newCardSchedule()));
-        added++;
+        toReview++;
     });
 
     saveDeck();
@@ -1214,12 +1236,11 @@ function lessonAddSrsCards() {
 
     const btn = document.getElementById('srs-add-btn');
     if (btn) {
-        btn.textContent = added ? '✓ Added ' + added + ' words' : '✓ Nothing new added';
+        btn.textContent = '✓ Saved (' + toReview + ' to review, ' + toKnown + ' known)';
         btn.disabled = true;
-        btn.dataset.done = '1';
     }
-    document.querySelectorAll('[data-srs]').forEach(box => { box.disabled = true; });
-    setFeedback(true, 'Review them in the Review tab.');
+    document.querySelectorAll('.lsn-srs-opt').forEach(opt => { opt.disabled = true; });
+    setFeedback(true, 'You can move words between review and My Dictionary any time from Decks.');
 }
 
 // Legacy quiz handler — kept for old HTML lessons. Navy for correct, not
