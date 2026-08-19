@@ -5,32 +5,30 @@ Build a Spanish/English sentence-pair pool for Workshop's Translation Driller
 for sentences containing a given word).
 
 Two sources, both already authored for other purposes:
-  - content/es/grammar/**/*.json  -- every `examples` part's {spanish, english}
-    pairs (the worked examples on a grammar screen).
-  - content/es/exercises/**/*.json -- `sentence-builder` exercises that carry
-    an `english` field (most of them do; a few omit it and are skipped).
+  - content/<lang>/grammar/**/*.json  -- every `examples` part's
+    {spanish, english} pairs (the worked examples on a grammar screen; the
+    "spanish" key just means "target language" — reused as-is for Hungarian).
+  - content/<lang>/exercises/**/*.json -- `sentence-builder` exercises that
+    carry an `english` field (most of them do; a few omit it and are
+    skipped).
 
-Output: generated/indexes/translation-index.json
+Output: content/<lang>/indexes/translation-index.json
     { "pairs": [ { spanish, english, level, source }, ... ] }
 
 `level` is the a1/a2/... directory each file already lives in -- content is
 organised one directory per level, so no per-file field to read.
 
 Usage:
-    python scripts/build_translation_index.py
+    python scripts/build_translation_index.py [lang ...]   (default: es hu)
 """
 import json
+import sys
 from pathlib import Path
 
-GRAMMAR_DIR = Path("content/es/grammar")
-EXERCISES_DIR = Path("content/es/exercises")
-OUTPUT_DIR = Path("generated/indexes")
-OUTPUT_FILE = OUTPUT_DIR / "translation-index.json"
 
-
-def from_grammar():
+def from_grammar(grammar_dir):
     pairs = []
-    for f in sorted(GRAMMAR_DIR.glob("*/*.json")):
+    for f in sorted(grammar_dir.glob("*/*.json")):
         level = f.parent.name.upper()
         try:
             data = json.loads(f.read_text(encoding="utf-8"))
@@ -47,9 +45,9 @@ def from_grammar():
     return pairs
 
 
-def from_exercises():
+def from_exercises(exercises_dir):
     pairs = []
-    for f in sorted(EXERCISES_DIR.glob("*/*.json")):
+    for f in sorted(exercises_dir.glob("*/*.json")):
         level = f.parent.name.upper()
         try:
             data = json.loads(f.read_text(encoding="utf-8"))
@@ -66,20 +64,31 @@ def from_exercises():
 
 
 def main():
-    pairs = from_grammar() + from_exercises()
+    langs = sys.argv[1:] or ["es", "hu"]
 
-    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-        json.dump({"pairs": pairs}, f, ensure_ascii=False, separators=(",", ":"))
+    for lang in langs:
+        grammar_dir = Path(f"content/{lang}/grammar")
+        exercises_dir = Path(f"content/{lang}/exercises")
+        if not grammar_dir.is_dir() and not exercises_dir.is_dir():
+            print(f"[{lang}] no grammar/exercises dirs, skipping")
+            continue
 
-    by_level = {}
-    for p in pairs:
-        by_level[p["level"]] = by_level.get(p["level"], 0) + 1
+        pairs = from_grammar(grammar_dir) + from_exercises(exercises_dir)
 
-    raw_size = OUTPUT_FILE.stat().st_size
-    print(f"Pairs total:  {len(pairs)}")
-    print(f"By level:     {dict(sorted(by_level.items()))}")
-    print(f"Output:       {OUTPUT_FILE} ({raw_size:,} bytes)")
+        output_dir = Path(f"content/{lang}/indexes")
+        output_file = output_dir / "translation-index.json"
+        output_dir.mkdir(parents=True, exist_ok=True)
+        with open(output_file, "w", encoding="utf-8") as f:
+            json.dump({"pairs": pairs}, f, ensure_ascii=False, separators=(",", ":"))
+
+        by_level = {}
+        for p in pairs:
+            by_level[p["level"]] = by_level.get(p["level"], 0) + 1
+
+        raw_size = output_file.stat().st_size
+        print(f"[{lang}] Pairs total:  {len(pairs)}")
+        print(f"[{lang}] By level:     {dict(sorted(by_level.items()))}")
+        print(f"[{lang}] Output:       {output_file} ({raw_size:,} bytes)")
 
 
 if __name__ == "__main__":

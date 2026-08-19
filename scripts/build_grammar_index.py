@@ -11,7 +11,7 @@ exercise across the whole course, grouped by skill, available up front — so
 rather than re-walking every lesson file on every drill session, this script
 does it once at build time.
 
-Output: generated/indexes/grammar-index.json
+Output: content/<lang>/indexes/grammar-index.json
     { "bySkill": { "<teaches slug>": [ { id, ref, type }, ... ] } }
 
 `ref` is the path engine/content-loader.js's Content fetcher expects, relative
@@ -19,22 +19,19 @@ to content/<lang>/ (e.g. "exercises/a1/a1-02-02-ex.json") — the same shape
 already used by a lesson's `sections[].ref`.
 
 Usage:
-    python scripts/build_grammar_index.py
+    python scripts/build_grammar_index.py [lang ...]   (default: es hu)
 """
 import json
+import sys
 from pathlib import Path
 from collections import defaultdict
 
-EXERCISES_DIR = Path("content/es/exercises")
-OUTPUT_DIR = Path("generated/indexes")
-OUTPUT_FILE = OUTPUT_DIR / "grammar-index.json"
 
-
-def build_index():
+def build_index(exercises_dir):
     by_skill = defaultdict(list)
     stats = {"files": 0, "exercises": 0, "errors": 0}
 
-    for f in sorted(EXERCISES_DIR.glob("*/*.json")):
+    for f in sorted(exercises_dir.glob("*/*.json")):
         try:
             data = json.loads(f.read_text(encoding="utf-8"))
         except (json.JSONDecodeError, OSError):
@@ -42,7 +39,7 @@ def build_index():
             continue
         stats["files"] += 1
 
-        ref = f.relative_to(EXERCISES_DIR.parent).as_posix()
+        ref = f.relative_to(exercises_dir.parent).as_posix()
 
         for ex in data.get("exercises", []):
             if ex.get("category") != "grammar":
@@ -56,18 +53,28 @@ def build_index():
 
 
 def main():
-    by_skill, stats = build_index()
+    langs = sys.argv[1:] or ["es", "hu"]
 
-    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-        json.dump({"bySkill": by_skill}, f, ensure_ascii=False, separators=(",", ":"))
+    for lang in langs:
+        exercises_dir = Path(f"content/{lang}/exercises")
+        if not exercises_dir.is_dir():
+            print(f"[{lang}] no exercises dir, skipping")
+            continue
 
-    raw_size = OUTPUT_FILE.stat().st_size
+        by_skill, stats = build_index(exercises_dir)
 
-    print(f"Exercise files scanned: {stats['files']} (errors: {stats['errors']})")
-    print(f"Grammar exercises:      {stats['exercises']}")
-    print(f"Distinct skills:        {len(by_skill)}")
-    print(f"Output:                 {OUTPUT_FILE} ({raw_size:,} bytes)")
+        output_dir = Path(f"content/{lang}/indexes")
+        output_file = output_dir / "grammar-index.json"
+        output_dir.mkdir(parents=True, exist_ok=True)
+        with open(output_file, "w", encoding="utf-8") as f:
+            json.dump({"bySkill": by_skill}, f, ensure_ascii=False, separators=(",", ":"))
+
+        raw_size = output_file.stat().st_size
+
+        print(f"[{lang}] Exercise files scanned: {stats['files']} (errors: {stats['errors']})")
+        print(f"[{lang}] Grammar exercises:      {stats['exercises']}")
+        print(f"[{lang}] Distinct skills:        {len(by_skill)}")
+        print(f"[{lang}] Output:                 {output_file} ({raw_size:,} bytes)")
 
 
 if __name__ == "__main__":

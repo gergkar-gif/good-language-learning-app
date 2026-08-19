@@ -1,8 +1,8 @@
 // ============================================
 // LISTENING DRILLER
 // ============================================
-// Draws from generated/indexes/translation-index.json — the same ~1,000
-// Spanish/English sentence pairs Translation and Vocabulary Driller use —
+// Draws from content/<lang>/indexes/translation-index.json — the same
+// sentence pairs Translation and Vocabulary Driller use, per-course —
 // nothing authored specifically for this driller, per
 // PARLOUR_LISTENING_SPEC.md §4's "the existing curriculum should provide
 // much of the initial controlled content".
@@ -37,12 +37,12 @@ const ListeningDriller = (function () {
     const COUNT_OPTIONS = [5, 10, 15, 20, 30];
     const TIMER_PRESETS = [1, 2, 3, 5];
     const DECOY_COUNT = 3;
-    const WORD_RE = /[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ]+/g;
+    const WORD_RE = /\p{L}+/gu;
 
     let _phase = PHASE.SETTINGS;
     let _container = null;
 
-    let _pairs = null; // generated/indexes/translation-index.json -> pairs[]
+    let _pairs = null; // content/<lang>/indexes/translation-index.json -> pairs[]
 
     let _mode = MODE.COUNT;
     let _level = 'all';
@@ -81,7 +81,7 @@ const ListeningDriller = (function () {
     // ---- Data loading (once) ----
     async function _load() {
         if (_pairs) return;
-        const index = await Content.json('generated/indexes/translation-index.json').catch(() => ({ pairs: [] }));
+        const index = await Content.json(Lang.content('indexes/translation-index.json')).catch(() => ({ pairs: [] }));
         _pairs = index.pairs || [];
     }
 

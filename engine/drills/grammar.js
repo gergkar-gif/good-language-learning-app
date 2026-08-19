@@ -7,9 +7,10 @@
 //      (today: a1-bank.json, 41 modules, 600 multiple-choice items).
 //   2. content/es/exercises/**/*.json — the same category:"grammar",
 //      `teaches`-tagged exercises engine/recycle.js already recycles,
-//      looked up through generated/indexes/grammar-index.json (built by
-//      scripts/build_grammar_index.py — any new grammar exercise joins the
-//      pool the next time that script runs, no further wiring needed).
+//      looked up through content/<lang>/indexes/grammar-index.json (built
+//      per-course by scripts/build_grammar_index.py — any new grammar
+//      exercise joins the pool the next time that script runs, no further
+//      wiring needed).
 //
 // The browsable skill list is the bank's modules — a clean, curated
 // catalogue. Each module is opportunistically enriched with lesson
@@ -34,7 +35,7 @@ const GrammarDriller = (function () {
     let _phase = PHASE.SETTINGS;
     let _container = null;
 
-    let _index = null;   // generated/indexes/grammar-index.json -> { bySkill }
+    let _index = null;   // content/<lang>/indexes/grammar-index.json -> { bySkill }
     let _bank  = null;   // content/es/drills/grammar/a1-bank.json
 
     let _mode = MODE.COUNT;
@@ -77,7 +78,7 @@ const GrammarDriller = (function () {
     async function _load() {
         if (_index && _bank) return;
         const [index, bank] = await Promise.all([
-            Content.json('generated/indexes/grammar-index.json').catch(() => ({ bySkill: {} })),
+            Content.json(Lang.content('indexes/grammar-index.json')).catch(() => ({ bySkill: {} })),
             Content.json(Lang.content('drills/grammar/a1-bank.json')).catch(() => ({ modules: [], items: [] }))
         ]);
         _index = index;

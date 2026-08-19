@@ -1,10 +1,10 @@
 // ============================================
 // TRANSLATION DRILLER
 // ============================================
-// Draws from generated/indexes/translation-index.json (built by
-// scripts/build_translation_index.py out of grammar examples and
-// sentence-builder exercises — ~450 Spanish/English sentence pairs,
-// nothing authored specifically for this driller).
+// Draws from content/<lang>/indexes/translation-index.json (built per-course
+// by scripts/build_translation_index.py out of grammar examples and
+// sentence-builder exercises — nothing authored specifically for this
+// driller).
 //
 // Same shell as engine/drills/grammar.js — settings -> session -> results,
 // Count/Timed modes reusing engine/verbs/speed.js's .vspeed-* timer/results
@@ -23,7 +23,7 @@ const TranslationDriller = (function () {
     let _phase = PHASE.SETTINGS;
     let _container = null;
 
-    let _pairs = null; // generated/indexes/translation-index.json -> pairs[]
+    let _pairs = null; // content/<lang>/indexes/translation-index.json -> pairs[]
 
     let _mode = MODE.COUNT;
     let _direction = DIRECTION.ES_EN;
@@ -59,7 +59,7 @@ const TranslationDriller = (function () {
     // ---- Data loading (once) ----
     async function _load() {
         if (_pairs) return;
-        const index = await Content.json('generated/indexes/translation-index.json').catch(() => ({ pairs: [] }));
+        const index = await Content.json(Lang.content('indexes/translation-index.json')).catch(() => ({ pairs: [] }));
         _pairs = index.pairs || [];
     }
 

@@ -8,8 +8,8 @@
 //
 // No new content or exercise database. Everything is built at runtime from
 // three things Parlour already has:
-//   content/es/decks/decks.json                  the curriculum word list
-//   generated/indexes/translation-index.json      ~1,000 real sentences
+//   content/<lang>/decks/decks.json                  the curriculum word list
+//   content/<lang>/indexes/translation-index.json    real sentences, per-course
 //   engine/lexicon.js (word/verb index + dictionary)  surface form -> lemma
 //
 // _buildContextIndex() scans every sentence once, resolving each token to
@@ -44,7 +44,7 @@ const VocabularyDriller = (function () {
     // A sentence shorter than this can't reliably support an inferable
     // answer — see the spec's own "Yo quiero un ______" counter-example.
     const MIN_CONTEXT_WORDS = 5;
-    const WORD_RE = /[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ]+/g;
+    const WORD_RE = /\p{L}+/gu;
 
     let _phase = PHASE.SETTINGS;
     let _container = null;
@@ -93,7 +93,7 @@ const VocabularyDriller = (function () {
         if (_words && _pairs && _contextIndex) return;
         const [deckData, translationIndex] = await Promise.all([
             Content.json(Lang.content('decks/decks.json')).catch(() => ({ words: {}, decks: [] })),
-            Content.json('generated/indexes/translation-index.json').catch(() => ({ pairs: [] })),
+            Content.json(Lang.content('indexes/translation-index.json')).catch(() => ({ pairs: [] })),
             Lexicon.load()
         ]);
         _words = deckData.words || {};
