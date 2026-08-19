@@ -98,6 +98,48 @@ const Lexicon = (function () {
         return '';
     }
 
+    // Object/reflexive pronouns attach directly onto an infinitive, gerund
+    // or affirmative command with no space — "conocerte" (conocer + te),
+    // "dármelo" (dar + me + lo) — a fully productive construction, so it
+    // can't be enumerated in the verb index the way finite conjugations
+    // are (checked: none of these forms are in generated/indexes/verb-
+    // index.json, confirmed against 102 real examples found across the
+    // course's own reading content, "conocerte" among them). Longest
+    // pronoun first so "selo" strips as one clitic pair, not "s" + "elo".
+    const ENCLITIC_PRONOUNS = ['selo', 'sela', 'selos', 'selas',
+        'nos', 'les', 'los', 'las', 'me', 'te', 'se', 'lo', 'la', 'le'];
+
+    function stripAccents(text) {
+        return text.normalize('NFD').replace(/[̀-ͯ]/g, '');
+    }
+
+    // Every way `word` could be an infinitive/gerund with one or two
+    // enclitic pronouns stuck on the end, longest (most specific) match
+    // first. A stem only counts if it still looks like a verb form once
+    // the pronoun(s) are gone — checked accent-insensitively, since a
+    // second pronoun can force a written accent onto the stem ("dar" ->
+    // "dármelo") that a bare infinitive never carries. The stem itself is
+    // returned accent-stripped too, since that written accent exists only
+    // to preserve the pronunciation once the pronouns are attached — the
+    // dictionary/verb-index key underneath is always the plain "dar".
+    function encliticStems(word) {
+        const stems = [];
+        const looksLikeVerb = s => /(ar|er|ir|ando|iendo)$/.test(stripAccents(s));
+
+        for (const p1 of ENCLITIC_PRONOUNS) {
+            if (!word.endsWith(p1) || word.length - p1.length < 3) continue;
+            const stem1 = word.slice(0, -p1.length);
+            if (looksLikeVerb(stem1)) stems.push(stripAccents(stem1));
+
+            for (const p2 of ENCLITIC_PRONOUNS) {
+                if (!stem1.endsWith(p2) || stem1.length - p2.length < 3) continue;
+                const stem2 = stem1.slice(0, -p2.length);
+                if (looksLikeVerb(stem2)) stems.push(stripAccents(stem2));
+            }
+        }
+        return stems;
+    }
+
     /**
      * Look up a word, returning every reading we can find.
      *
@@ -135,6 +177,23 @@ const Lexicon = (function () {
         (_wordIndex[key] || []).forEach(a => add(a.lemma, a.pos, describeWord(key, a.lemma)));
         // conjugated verb
         (_verbIndex[key] || []).forEach(a => add(a.lemma, 'verb', describeVerb(a)));
+
+        // Nothing direct — try peeling one or two attached pronouns off and
+        // looking up what's left, itself either a conjugated form (gerunds,
+        // commands — checked first) or, failing that, a bare dictionary
+        // headword. Whichever finds it, not both: the infinitive form of
+        // "conocer" is in *both* the dictionary and the verb index, and
+        // without this the two would add the same reading twice.
+        if (!readings.length) {
+            for (const stem of encliticStems(key)) {
+                const verbForms = _verbIndex[stem] || [];
+                if (verbForms.length) {
+                    verbForms.forEach(a => add(a.lemma, 'verb', describeVerb(a) + ' + pronoun'));
+                } else if (_dictionary[stem]) {
+                    add(stem, null, 'infinitive + pronoun');
+                }
+            }
+        }
 
         // Rank the readings so the likeliest one leads. Proper nouns sink
         // to the bottom (Wiktionary carries many surnames and place names
