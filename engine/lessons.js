@@ -12,6 +12,15 @@ let lessons = {};
 let currentLesson = null;
 let currentStepIndex = 0;
 
+// End-of-lesson remediation: exercises missed on their first try within a
+// lesson are re-served, one at a time, after the last regular step — the
+// "let's make sure that sticks" pass. missedSteps is the queue still to
+// come; originalStepCount is where the regular lesson ends and the redo
+// pass begins, so the progress bar can tell the two apart. See
+// finalizeMissedTracking() and nextLessonStep().
+let missedSteps = [];
+let originalStepCount = 0;
+
 // The tab the lesson was opened from, so closing it goes back there.
 let lessonReturnTab = 'learn';
 
@@ -210,6 +219,8 @@ async function startLesson(lessonId) {
 
     currentLesson = lesson;
     currentStepIndex = 0;
+    originalStepCount = lesson.steps.length;
+    missedSteps = [];
 
     // A lesson can be opened from the level list or from Home's continue
     // card, and closing it should put the learner back where they were rather
@@ -354,10 +365,15 @@ function updateFooterButton() {
         return;
     }
 
-    const isLast = currentStepIndex >= currentLesson.steps.length - 1;
+    // "Last step" only means "finishing" once the remediation queue is
+    // empty too — nextLessonStep() is what actually pulls the next missed
+    // step in when there is one, so the button always just says Continue
+    // until there is truly nothing left to do.
+    const atEnd = currentStepIndex >= currentLesson.steps.length - 1;
+    const finishing = atEnd && !missedSteps.length;
     const locked = !!stepState.gated && !stepState.solved;
-    btn.textContent = isLast ? 'Finish Lesson ✓' : 'Continue →';
-    btn.onclick = isLast ? finishLesson : nextLessonStep;
+    btn.textContent = finishing ? 'Finish Lesson ✓' : 'Continue →';
+    btn.onclick = nextLessonStep;
     btn.disabled = locked;
     btn.classList.toggle('is-locked', locked);
 }
@@ -368,6 +384,7 @@ function solveStep(message) {
     showTranslation();
     updateFooterButton();
     noteRecycleResult(true);
+    queueForRemediationIfMissed();
 }
 
 // Records a wrong attempt. Returns true once the learner is out of tries,
@@ -376,16 +393,35 @@ function failStep(message) {
     stepState.attempts = (stepState.attempts || 0) + 1;
     const left = MAX_ATTEMPTS - stepState.attempts;
 
+    // The first wrong attempt is what "missed on the first try" means —
+    // later attempts on the same try-count just narrate how many are left.
+    if (stepState.attempts === 1) stepState.wasMissed = true;
+
     if (left > 0) {
         setFeedback(false, message + ' — ' + left + (left === 1 ? ' try left' : ' tries left'));
         return false;
     }
 
     stepState.solved = true;
+    // Exhausting every attempt already reveals the answer — that's the
+    // existing "never stuck on one item" escape valve. Queuing a gaveUp step
+    // for remediation too would turn a step the learner is genuinely stuck
+    // on into a loop with no exit, so this path does not queue it again.
+    stepState.gaveUp = true;
     showTranslation();
     updateFooterButton();
     noteRecycleResult(false);
     return true;
+}
+
+// A step that took a wrong attempt before landing on the right answer goes
+// back on the queue to be re-served once, after the last regular step —
+// unless it's a recycle-block item, which already has its own SM-2 schedule
+// outside this lesson and shouldn't be graded twice for one sitting.
+function queueForRemediationIfMissed() {
+    if (!stepState.wasMissed || stepState.gaveUp) return;
+    if (!stepState.sourceStep || stepState.sourceStep.isRecycle) return;
+    missedSteps.push(stepState.sourceStep);
 }
 
 // A recycle step's outcome feeds straight back into its own SM-2 schedule —
@@ -403,8 +439,23 @@ function revealHtml(inner) {
     return '<div class="lsn-reveal">' + inner + '</div>';
 }
 
+// The remediation queue can grow currentLesson.steps past its original
+// length, so the bar tracks against originalStepCount instead — otherwise
+// a lesson with 3 missed steps would show "23 of 23" and reset to 100% on
+// every redo instead of counting down the redo pass itself.
 function lessonProgressHtml() {
-    const total = currentLesson.steps.length;
+    if (currentStepIndex >= originalStepCount) {
+        const position = currentStepIndex - originalStepCount + 1;
+        const total = position + missedSteps.length;
+        return `
+            <div class="lsn-progress">
+                <div class="lsn-progress-bar" style="width:100%"></div>
+            </div>
+            <div class="lsn-progress-label">Quick review — ${position} of ${total}</div>
+        `;
+    }
+
+    const total = originalStepCount;
     const pct = Math.round(((currentStepIndex + 1) / total) * 100);
     return `
         <div class="lsn-progress">
@@ -842,7 +893,7 @@ function renderStep() {
     const container = document.getElementById('lesson-content');
 
     _wireLessonEnterToCheck();
-    stepState = {};
+    stepState = { sourceStep: step };
 
     let html = lessonProgressHtml();
     html += `<h3 class="lsn-title">${esc(step.title || '')}</h3>`;
@@ -872,10 +923,26 @@ function renderStep() {
 
 function nextLessonStep() {
     if (stepState.gated && !stepState.solved) return;
+
     currentStepIndex++;
     if (currentStepIndex < currentLesson.steps.length) {
         renderStep();
+        return;
     }
+
+    // Reached the end of the regular steps — work through anything missed
+    // on its first try before actually finishing, one at a time, so it's
+    // the last thing the learner sees rather than the first thing they
+    // forget. Re-queues itself (via queueForRemediationIfMissed()) if this
+    // attempt is missed too, so a step keeps coming back until it's solved
+    // clean or the 3-try reveal kicks in.
+    if (missedSteps.length) {
+        currentLesson.steps.push(missedSteps.shift());
+        renderStep();
+        return;
+    }
+
+    finishLesson();
 }
 
 // Re-renders the previous step from scratch, same as arriving at it fresh —
