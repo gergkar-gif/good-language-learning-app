@@ -116,6 +116,19 @@ SKIP_POS = {
 FORM_OF_TAG = "form-of"
 FORM_OF_EXCEPTION_TAGS = {"noun-from-verb"}
 
+# Hand-corrected glosses for specific (lemma, pos) pairs whose Wiktionary
+# entry is accurate but unusually clinical for a learner-facing dictionary
+# — same idea as build-manifest.py's FREQUENCY_GLOSS for Spanish. "marha"'s
+# real primary sense is "head of cattle, animal of the species Bos taurus":
+# correct, but nobody says it like that. This is deliberately NOT a general
+# regex (checked: most animal headwords — kutya "dog", macska "cat", ló
+# "horse", róka "fox" — already have plain glosses; this phrasing isn't a
+# systematic Wiktionary pattern here, just this one entry), so fix it by
+# name rather than writing pattern-matching logic for a one-off.
+GLOSS_OVERRIDES = {
+    ("marha", "noun"): "cattle, ox",
+}
+
 # Senses tagged like this are deprioritised but not dropped outright — a
 # rare/dated sense is still better than no dictionary entry. Also used
 # ACROSS competing POS entries for the same lemma (see build()'s
@@ -326,7 +339,10 @@ def build():
     dictionary = {}
     for key, by_pos in senses_by_key.items():
         ordered = sorted(by_pos.values(), key=lambda s: s["_deprioritised"])
-        dictionary[key] = [{"en": s["en"], "type": s["type"]} for s in ordered]
+        dictionary[key] = [
+            {"en": GLOSS_OVERRIDES.get((key, s["type"]), s["en"]), "type": s["type"]}
+            for s in ordered
+        ]
 
     return dictionary, word_index, stats
 
