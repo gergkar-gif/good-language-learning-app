@@ -396,7 +396,10 @@ function updateDirectionToggle() {
     if (btn) {
         btn.setAttribute('aria-checked', String(englishFirst));
     }
-    if (esLabel) esLabel.classList.toggle('dk-direction-active', !englishFirst);
+    if (esLabel) {
+        esLabel.textContent = (typeof Lang !== 'undefined') ? Lang.name() : 'Spanish';
+        esLabel.classList.toggle('dk-direction-active', !englishFirst);
+    }
     if (enLabel) enLabel.classList.toggle('dk-direction-active', englishFirst);
 }
 

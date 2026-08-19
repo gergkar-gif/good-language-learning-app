@@ -92,7 +92,12 @@ const HungarianMorphology = (function () {
         // possessed-singular
         ['am', 1, 'sg', 'sg'], ['em', 1, 'sg', 'sg'], ['om', 1, 'sg', 'sg'], ['öm', 1, 'sg', 'sg'], ['m', 1, 'sg', 'sg'],
         ['ad', 2, 'sg', 'sg'], ['ed', 2, 'sg', 'sg'], ['od', 2, 'sg', 'sg'], ['öd', 2, 'sg', 'sg'], ['d', 2, 'sg', 'sg'],
-        ['ja', 3, 'sg', 'sg'], ['je', 3, 'sg', 'sg'], ['a', 3, 'sg', 'sg'], ['e', 3, 'sg', 'sg'],
+        // "-a/-e" lengthens to "-á/-é" when a case suffix follows
+        // ("eredménye" -> "eredményé-nek") — see the case-suffix loop
+        // below, which strips a case first and tries these against what's
+        // left, so both the plain and lengthened forms are listed here
+        ['ja', 3, 'sg', 'sg'], ['je', 3, 'sg', 'sg'], ['já', 3, 'sg', 'sg'], ['jé', 3, 'sg', 'sg'],
+        ['a', 3, 'sg', 'sg'], ['e', 3, 'sg', 'sg'], ['á', 3, 'sg', 'sg'], ['é', 3, 'sg', 'sg'],
         ['unk', 1, 'pl', 'sg'], ['ünk', 1, 'pl', 'sg'], ['nk', 1, 'pl', 'sg'],
         ['otok', 2, 'pl', 'sg'], ['etek', 2, 'pl', 'sg'], ['ötök', 2, 'pl', 'sg'], ['tok', 2, 'pl', 'sg'], ['tek', 2, 'pl', 'sg'],
         ['juk', 3, 'pl', 'sg'], ['jük', 3, 'pl', 'sg'], ['uk', 3, 'pl', 'sg'], ['ük', 3, 'pl', 'sg']
@@ -118,14 +123,41 @@ const HungarianMorphology = (function () {
         ['unk', 'pres', 1, 'pl'], ['ünk', 'pres', 1, 'pl'],
         ['otok', 'pres', 2, 'pl'], ['etek', 'pres', 2, 'pl'], ['tok', 'pres', 2, 'pl'], ['tek', 'pres', 2, 'pl'],
         ['nak', 'pres', 3, 'pl'], ['nek', 'pres', 3, 'pl'],
+        // present, definite conjugation (the object is a specific "it"/
+        // "them" — "olvasom a könyvet" vs indefinite "olvasok"). 1sg is
+        // the same surface form as the -ik-verb indefinite already listed
+        // above, so isn't repeated here.
+        ['od', 'pres', 2, 'sg'], ['ed', 'pres', 2, 'sg'], ['öd', 'pres', 2, 'sg'],
+        ['ja', 'pres', 3, 'sg'], ['i', 'pres', 3, 'sg'],
+        ['juk', 'pres', 1, 'pl'], ['jük', 'pres', 1, 'pl'],
+        ['játok', 'pres', 2, 'pl'], ['itek', 'pres', 2, 'pl'],
+        ['ják', 'pres', 3, 'pl'], ['ik', 'pres', 3, 'pl'],
         // past — -t-/-ott-/-ett-/-ött- + personal ending; 3sg has no
-        // further ending beyond the tense marker itself
+        // further ending beyond the tense marker itself. Consonant
+        // clusters that can't take a bare -t- (stems already ending in a
+        // consonant that clashes with it) need the same -ott-/-ett-/-ött-
+        // linking vowel in every person, not just 3sg indefinite
+        // ("felfüggesztettek", not "felfüggesztek") — so both the plain
+        // and linking-vowel forms are listed for 1pl/2pl/3pl.
         ['tam', 'past', 1, 'sg'], ['tem', 'past', 1, 'sg'],
         ['tál', 'past', 2, 'sg'], ['tél', 'past', 2, 'sg'],
         ['ott', 'past', 3, 'sg'], ['ett', 'past', 3, 'sg'], ['ött', 'past', 3, 'sg'], ['t', 'past', 3, 'sg'],
         ['tunk', 'past', 1, 'pl'], ['tünk', 'past', 1, 'pl'],
+        ['ottunk', 'past', 1, 'pl'], ['ettünk', 'past', 1, 'pl'], ['öttünk', 'past', 1, 'pl'],
         ['tatok', 'past', 2, 'pl'], ['tetek', 'past', 2, 'pl'],
-        ['tak', 'past', 3, 'pl'], ['tek', 'past', 3, 'pl']
+        ['ottatok', 'past', 2, 'pl'], ['ettetek', 'past', 2, 'pl'], ['öttetek', 'past', 2, 'pl'],
+        ['tak', 'past', 3, 'pl'], ['tek', 'past', 3, 'pl'],
+        ['ottak', 'past', 3, 'pl'], ['ettek', 'past', 3, 'pl'], ['öttek', 'past', 3, 'pl'],
+        // past, definite conjugation — 3sg/3pl get the same linking-vowel
+        // treatment as indefinite above ("gyűjtötte", not "gyűjtte";
+        // "hamisították", not "hamisítták")
+        ['tad', 'past', 2, 'sg'], ['ted', 'past', 2, 'sg'],
+        ['ta', 'past', 3, 'sg'], ['te', 'past', 3, 'sg'],
+        ['otta', 'past', 3, 'sg'], ['ette', 'past', 3, 'sg'], ['ötte', 'past', 3, 'sg'],
+        ['tuk', 'past', 1, 'pl'], ['tük', 'past', 1, 'pl'],
+        ['tátok', 'past', 2, 'pl'], ['tétek', 'past', 2, 'pl'],
+        ['ták', 'past', 3, 'pl'], ['ték', 'past', 3, 'pl'],
+        ['ották', 'past', 3, 'pl'], ['ették', 'past', 3, 'pl'], ['ötték', 'past', 3, 'pl']
     ].sort((a, b) => b[0].length - a[0].length);
 
     const PERSON_LABELS = {
@@ -280,6 +312,18 @@ const HungarianMorphology = (function () {
                     addFromLemma(deeper, dictionary[deeper].type, caseLabel + ', plural');
                 }
             }
+            // ...or a possessive suffix under the case suffix, for a
+            // lemma outside the static index's frequency cutoff
+            // ("eredményének" = eredmény + possessive 3sg + dative,
+            // where "eredményének" itself was never common enough to be
+            // pre-baked but "eredmény" the lemma still is)
+            for (const [possSuffix, person, ownerNumber, possessedNumber] of POSSESSIVE_SUFFIXES) {
+                const deeper = strip(remainder, possSuffix);
+                if (deeper !== null && dictionary[deeper]) {
+                    addFromLemma(deeper, dictionary[deeper].type,
+                        describePossessive(person, ownerNumber, possessedNumber) + ', ' + caseLabel);
+                }
+            }
         }
 
         // 2. possessive suffix alone (no case) — for lemmas outside the
@@ -291,11 +335,14 @@ const HungarianMorphology = (function () {
                 describePossessive(person, ownerNumber, possessedNumber));
         }
 
-        // 3. plural marker alone
+        // 3. plural marker alone — nouns mainly, but pronouns/determiners
+        // pluralize the same way ("az" -> "azok", "ami" -> "amik")
+        const PLURALIZABLE = { noun: 1, pronoun: 1, determiner: 1, adjective: 1, article: 1 };
         for (const suffix of PLURAL_SUFFIXES) {
             const remainder = strip(word, suffix);
-            if (remainder !== null && dictionary[remainder] && dictionary[remainder].type === 'noun') {
-                addFromLemma(remainder, 'noun', 'plural');
+            const entry = remainder !== null ? dictionary[remainder] : null;
+            if (entry && PLURALIZABLE[entry.type]) {
+                addFromLemma(remainder, entry.type, 'plural');
             }
         }
 
@@ -323,9 +370,21 @@ const HungarianMorphology = (function () {
 })();
 
 // Known gaps (v1, deliberately deferred rather than blocking the first
-// version — see HUNGARIAN_READER_IMPLEMENTATION_BRIEF.md):
+// version — see HUNGARIAN_READER_IMPLEMENTATION_BRIEF.md). Measured
+// against a real Hungarian news article (2026-08-19): 232/276 running
+// words resolved (84%); nearly all of the remaining misses are proper
+// nouns/acronyms (correctly not matching) or lemmas the dictionary
+// itself doesn't have yet (see import_hu_dictionary.py's docstring on
+// dictionary size), not suffix-stripping failures. Two real analyser
+// gaps remain, both narrower than they first look:
 //   - suppletive verbs beyond IRREGULAR_VERBS above (van/megy/jön/eszik/
 //     iszik/alszik cover the most curriculum-critical ones; Hungarian has
 //     a few more with less common irregular stems)
-//   - definite-conjugation verb endings beyond the informal 2sg forms
-//     already covered
+//   - stem-vowel deletion before a vowel-initial suffix ("tükör" ->
+//     "tükr-öm", not "tüköröm") — affects a closed, learnable set of
+//     nouns (tükör, majom, bokor, álom, torok, ...) but isn't derivable
+//     from the surface form alone the way suffix-stripping is; would need
+//     a small lexical list of which nouns do this
+//   - the noun -> adjective "-i" suffix ("kiértékelés" -> "kiértékelési",
+//     "the evaluation's") isn't in POSSESSIVE_SUFFIXES or CASE_SUFFIXES
+//     since it's neither — a third suffix category not yet modelled

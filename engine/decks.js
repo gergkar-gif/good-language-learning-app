@@ -31,7 +31,10 @@ const Decks = (function () {
     const KIND_BLURB = {
         lesson: 'The words each lesson teaches.',
         topic: 'Everything the course says about one subject.',
-        frequency: 'The most common words in Spanish, in order. Not all are taught by the course.'
+        get frequency() {
+            const lang = (typeof Lang !== 'undefined') ? Lang.name() : 'Spanish';
+            return `The most common words in ${lang}, in order. Not all are taught by the course.`;
+        }
     };
 
     let catalogue = null;      // decks.json, once fetched
