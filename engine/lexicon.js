@@ -1,10 +1,22 @@
 // ============================================
 // LEXICON — word lookup (lemma + grammar + translation)
 // ============================================
-// Three data layers, loaded together on first use:
+// Spanish: three data layers, loaded together on first use:
 //   generated/indexes/verb-index.json  conjugated form -> lemma + full analysis
 //   generated/indexes/word-index.json  inflected noun/adj/adv -> lemma
 //   imports/dictionary/spanish-en.json lemma -> English translation
+//
+// Hungarian: same shape, different source and no verb/word split (Hungarian
+// conjugation is regular enough to resolve by rule rather than needing its
+// own precomputed table — see engine/morphology/hungarian.js):
+//   content/hu/indexes/word-index.json      noun/adj case+possessive forms
+//                                            for common lemmas (built by
+//                                            scripts/import_hu_dictionary.py)
+//   imports/dictionary/hungarian-en.json    lemma -> English translation
+//   content/hu/indexes/frequency.json       lemma frequency ranking
+// Anything the static word-index doesn't cover (case+possessive stacking,
+// any verb form, lemmas outside the frequency cutoff) falls through to
+// HungarianMorphology.analyze() at lookup time.
 //
 // These total several MB, so they are fetched lazily the first time a
 // learner taps a word rather than on app startup.
@@ -17,6 +29,7 @@ const Lexicon = (function () {
     let _dictionary = null;
     let _frequency = null;   // lemma -> rank (lower is more common)
     let _loadPromise = null;
+    let _lang = null;        // language this load() call fetched data for
 
     const TENSE_LABELS = {
         presente: 'Present', preterito: 'Preterite', imperfecto: 'Imperfect',
@@ -42,17 +55,27 @@ const Lexicon = (function () {
     function load() {
         if (_loadPromise) return _loadPromise;
 
-        _loadPromise = Promise.all([
-            fetch('generated/indexes/verb-index.json').then(r => r.ok ? r.json() : {}),
-            fetch('generated/indexes/word-index.json').then(r => r.ok ? r.json() : {}),
-            fetch('imports/dictionary/spanish-en.json').then(r => r.ok ? r.json() : {}),
-            fetch('generated/indexes/frequency.json').then(r => r.ok ? r.json() : [])
-        ]).then(([verbs, words, dict, freq]) => {
+        _lang = Lang.code();
+        const sources = _lang === 'hu'
+            ? [
+                Promise.resolve({}),   // no separate verb index — see file header
+                fetch(Lang.content('indexes/word-index.json')).then(r => r.ok ? r.json() : {}),
+                fetch('imports/dictionary/hungarian-en.json').then(r => r.ok ? r.json() : {}),
+                fetch(Lang.content('indexes/frequency.json')).then(r => r.ok ? r.json() : [])
+            ]
+            : [
+                fetch('generated/indexes/verb-index.json').then(r => r.ok ? r.json() : {}),
+                fetch('generated/indexes/word-index.json').then(r => r.ok ? r.json() : {}),
+                fetch('imports/dictionary/spanish-en.json').then(r => r.ok ? r.json() : {}),
+                fetch('generated/indexes/frequency.json').then(r => r.ok ? r.json() : [])
+            ];
+
+        _loadPromise = Promise.all(sources).then(([verbs, words, dict, freq]) => {
             _verbIndex = verbs;
             _wordIndex = words;
             _dictionary = dict;
             _frequency = new Map(freq.map((lemma, i) => [lemma, i]));
-            console.log('Lexicon loaded:',
+            console.log('Lexicon loaded (' + _lang + '):',
                 Object.keys(verbs).length, 'verb forms,',
                 Object.keys(words).length, 'word forms,',
                 Object.keys(dict).length, 'dictionary entries,',
@@ -150,7 +173,46 @@ const Lexicon = (function () {
      * often the intended one — but every reading is returned so the UI can
      * offer the alternatives rather than silently choosing.
      */
+    // Hungarian has no gender, no separate verb-index table, and its
+    // productive suffixation (see engine/morphology/hungarian.js) means
+    // the "peel a pronoun off and look again" fallback below doesn't
+    // apply — a single dictionary/word-index/morphology-analyzer pipeline
+    // covers it instead.
+    function lookupHungarian(word) {
+        const key = normalise(word);
+        if (!key) return { word: word, readings: [] };
+
+        const readings = [];
+        const seen = new Set();
+
+        function add(lemma, pos, analysis) {
+            const entry = _dictionary[lemma];
+            const dedupeKey = lemma + '|' + (analysis || '');
+            if (seen.has(dedupeKey)) return;
+            seen.add(dedupeKey);
+            readings.push({
+                lemma: lemma,
+                pos: (entry && entry.type) || pos || '',
+                translation: entry ? entry.en : null,
+                analysis: analysis || ''
+            });
+        }
+
+        if (_dictionary[key]) add(key, _dictionary[key].type, '');
+        (_wordIndex[key] || []).forEach(a => add(a.lemma, a.pos, HungarianMorphology.describe(a)));
+
+        if (!readings.length && typeof HungarianMorphology !== 'undefined') {
+            HungarianMorphology.analyze(key, _dictionary, _wordIndex)
+                .forEach(r => add(r.lemma, r.pos, r.analysis));
+        }
+
+        readings.sort((a, b) => rankOf(a) - rankOf(b));
+        return { word: word, readings: readings };
+    }
+
     function lookup(word) {
+        if (_lang === 'hu') return lookupHungarian(word);
+
         const key = normalise(word);
         if (!key) return { word: word, readings: [] };
 
