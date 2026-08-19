@@ -42,10 +42,15 @@
   --danger: #B23A22;
   --danger-bg: #FAEDE9;
 
-  /* Reintroduced 2026-08-14 (visual identity v2) for a narrow, sparing use:
-     spaced-repetition mastery feedback only (Decks "Mastered" stat, review
-     "¡Correcto!" confirmation, retention chart, SRS "Easy" rating). Not for
-     general lesson-exercise correctness, which stays navy/accent-dark. */
+  /* Reintroduced 2026-08-14 (visual identity v2) for spaced-repetition
+     mastery feedback (Decks "Mastered" stat, review "¡Correcto!"
+     confirmation, retention chart, SRS "Easy" rating). Widened 2026-08-19
+     to the general correctness colour app-wide — lesson/driller exercises
+     already used it for tap-based options (.lsn-option.correct,
+     .gd-option.correct) while typed inputs, sentence-builder, feedback
+     text, and the level test still used navy for the same thing with no
+     functional reason. Green now means "correct" everywhere consistently;
+     navy/accent-dark stays reserved for "wrong". */
   --success: #2F7A4D;
   --success-bg: #E8F3EC;
 

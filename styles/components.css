@@ -581,8 +581,8 @@
 }
 
 .drill-row input.correct {
-  border-bottom-color: var(--primary);
-  color: var(--primary);
+  border-bottom-color: var(--success);
+  color: var(--success);
 }
 
 .drill-row input.wrong {
@@ -1058,7 +1058,7 @@
 }
 
 .lsn-built.is-correct {
-  color: var(--primary);
+  color: var(--success);
 }
 
 /* The translation, shown only after the sentence is settled. */
@@ -1092,7 +1092,7 @@
 }
 
 .lsn-input.correct {
-  border-bottom-color: var(--primary);
+  border-bottom-color: var(--success);
 }
 
 .lsn-input.wrong {
@@ -1366,7 +1366,7 @@
 }
 
 .review-input.correct {
-  border-bottom-color: var(--primary);
+  border-bottom-color: var(--success);
 }
 
 .review-input.wrong {
@@ -2284,7 +2284,7 @@
    "lessons finished", so it gets the solid border rather than the dashed. */
 .level-test-row.is-passed {
   border-style: solid;
-  border-color: var(--primary);
+  border-color: var(--success);
 }
 
 .level-test-title {
@@ -2367,7 +2367,7 @@
 .lt-of { font-size: 18px; color: var(--muted); }
 
 .lt-verdict { margin-top: 10px; font-size: 16px; }
-.lt-verdict.is-pass { color: var(--primary); }
+.lt-verdict.is-pass { color: var(--success); }
 .lt-verdict.is-fail { color: var(--accent-dark); }
 
 .lt-topics { margin: 8px 0 14px; font-size: 14px; color: var(--muted); }

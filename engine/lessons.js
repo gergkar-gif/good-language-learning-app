@@ -322,14 +322,19 @@ function showTranslation() {
     if (el && stepState.translation) el.textContent = stepState.translation;
 }
 
-// Navy for correct, not green — matches the resolved-navy state on the
-// options themselves rather than adding a third correctness colour. See
-// parlour_visual_overhaul_spec.md section 18.
+// Green for correct, matching .lsn-option.correct and every other
+// correctness indicator in the app — a 2026-08-19 pass made this consistent
+// on purpose after finding the app had drifted into a navy/green split with
+// no functional reason (tap-based exercises were already green; typed
+// inputs, sentence-builder, and this text were still navy). This
+// intentionally supersedes the older "navy for correct, green is only for
+// SRS mastery" rule from visual identity v2 (see base.css's --success
+// comment) — green is the general correctness colour now, app-wide.
 function setFeedback(ok, message) {
     const el = document.getElementById('step-feedback');
     if (!el) return;
     el.textContent = message;
-    el.style.color = ok ? 'var(--primary)' : 'var(--accent-dark)';
+    el.style.color = ok ? 'var(--success)' : 'var(--accent-dark)';
 }
 
 // ============================================
@@ -1310,8 +1315,8 @@ function lessonSaveSrsChoices() {
     setFeedback(true, 'You can move words between review and My Dictionary any time from Decks.');
 }
 
-// Legacy quiz handler — kept for old HTML lessons. Navy for correct, not
-// green — matches the rest of the app's correctness language (spec §18).
+// Legacy quiz handler — kept for old HTML lessons. Green for correct, same
+// as everywhere else (see setFeedback() above).
 function checkLessonAnswer(btn, isCorrect) {
     const allBtns = btn.parentElement.querySelectorAll('button');
     allBtns.forEach(b => {
@@ -1320,10 +1325,10 @@ function checkLessonAnswer(btn, isCorrect) {
     });
 
     if (isCorrect) {
-        btn.style.borderColor = 'var(--primary)';
+        btn.style.borderColor = 'var(--success)';
         btn.style.background = 'none';
         document.getElementById('quiz-feedback').textContent = '✓ Correct!';
-        document.getElementById('quiz-feedback').style.color = 'var(--primary)';
+        document.getElementById('quiz-feedback').style.color = 'var(--success)';
     } else {
         btn.style.borderColor = 'var(--danger)';
         btn.style.background = 'none';
