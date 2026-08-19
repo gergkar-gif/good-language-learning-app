@@ -413,14 +413,12 @@ UNIT_TABLES = {
 # language now gets its own table, keyed by lang first.
 LANG_UNIT_TABLES = {
     "es": UNIT_TABLES,
-    "hu": {
-        "a1": [
-            ("Learning to Read Hungarian", ["a1-01", "a1-02", "a1-03", "a1-04", "a1-05"]),
-            ("Greetings & Basic Interaction", ["a1-06", "a1-07", "a1-08", "a1-09", "a1-10", "a1-10-consolidation"]),
-            ("Introducing Yourself", ["a1-11", "a1-12", "a1-13", "a1-14", "a1-15", "a1-15-consolidation"]),
-            ("Numbers & Personal Information", ["a1-16", "a1-17", "a1-18", "a1-19", "a1-20", "a1-20-consolidation"]),
-        ],
-    },
+    # Hungarian has no entry here on purpose — its lessons are plain
+    # numbered files (a1-06, a1-07, ...) with no word-slug ids and no
+    # multi-track split, so auto_group_units() below derives the grouping
+    # directly from the files on disk instead of a hand-maintained stems
+    # list. See LANG_UNIT_TITLES for the one thing that still needs a
+    # manual entry per unit.
 }
 
 # Track metadata for levels that run more than one — id, display title, and
@@ -433,6 +431,72 @@ LEVEL_TRACKS = {
         {"id": "latam", "title": "Latin America"},
     ],
 }
+
+# Unit titles, in order, for a lang/level using auto_group_units() (no
+# LANG_UNIT_TABLES entry). This is the ONE thing auto-grouping can't derive
+# from the files themselves — a unit's thematic name ("Greetings & Basic
+# Interaction") only ever existed in that content package's own
+# UNIT_N_MANIFEST.json, which isn't part of the committed repo. Add one
+# title here, in position, when a new unit's lessons land. Forgetting costs
+# a generic "Unit N" label (auto_group_units() falls back to that), not a
+# unit silently missing lessons or vanishing from the count — unlike the
+# old stems-table approach, where a missed/mistyped entry meant
+# curriculum.json quietly kept reporting the previous lesson total.
+LANG_UNIT_TITLES = {
+    "hu": {
+        "a1": [
+            "Learning to Read Hungarian",
+            "Greetings & Basic Interaction",
+            "Introducing Yourself",
+            "Numbers & Personal Information",
+        ],
+    },
+}
+
+
+def auto_group_units(lang, level_id, level_path):
+    """Fallback for a lang/level with no LANG_UNIT_TABLES entry: groups
+    plain-numbered lesson files (a1-06, a1-07, ... — no word-slug ids, no
+    multi-track split) into blocks of 5 in numeric order, folding in a
+    trailing "{lastlesson}-consolidation" file for that block when one
+    exists on disk. Titles come from LANG_UNIT_TITLES by position; running
+    past the end of that list yields a generic "Unit N" rather than
+    dropping the unit. Returns None (not a real fallback) if no lesson in
+    this level matches the plain-numbered pattern at all — a word-slug-id
+    level should never have reached here, since every level using those
+    already has a LANG_UNIT_TABLES entry, but this keeps that assumption
+    from silently producing an empty curriculum if it's ever wrong."""
+    plain = []
+    for f in sorted(level_path.glob(f"{level_id}-*.json")):
+        if f.name in SKIP_FILENAMES:
+            continue
+        m = re.match(rf"^{re.escape(level_id)}-(\d+)$", f.stem)
+        if m:
+            plain.append((int(m.group(1)), f.stem))
+    if not plain:
+        return None
+    plain.sort()
+
+    titles = LANG_UNIT_TITLES.get(lang, {}).get(level_id, [])
+    units = []
+    for block_index, start in enumerate(range(0, len(plain), 5)):
+        position = block_index + 1
+        chunk = plain[start:start + 5]
+        stems = [stem for _, stem in chunk]
+        consolidation_stem = f"{level_id}-{chunk[-1][0]}-consolidation"
+        if (level_path / f"{consolidation_stem}.json").exists():
+            stems.append(consolidation_stem)
+        lessons = [e for e in
+                   (load_lesson_entry(lang, level_id, level_path, s) for s in stems)
+                   if e is not None]
+        title = titles[block_index] if block_index < len(titles) else f"Unit {position}"
+        units.append({
+            "id": f"unit.{level_id}.{position:02d}",
+            "label": str(position),
+            "title": title,
+            "lessons": lessons,
+        })
+    return units
 
 def lesson_teaching_counts(lang, data):
     """How many new words a lesson introduces, and how many exercises it has
@@ -548,18 +612,22 @@ def build_curriculum(lang="es"):
                         unit["track"] = track
                     units.append(unit)
             else:
-                for position, f in enumerate(
-                        (p for p in sorted(level_path.glob("*.json")) if p.name not in SKIP_FILENAMES),
-                        start=1):
-                    entry = load_lesson_entry(lang, level_id, level_path, f.stem)
-                    if entry is None:
-                        continue
-                    units.append({
-                        "id": f"unit.{level_id}.{position:02d}",
-                        "label": str(position),
-                        "title": entry["title"],
-                        "lessons": [entry]
-                    })
+                auto_units = auto_group_units(lang, level_id, level_path)
+                if auto_units is not None:
+                    units = auto_units
+                else:
+                    for position, f in enumerate(
+                            (p for p in sorted(level_path.glob("*.json")) if p.name not in SKIP_FILENAMES),
+                            start=1):
+                        entry = load_lesson_entry(lang, level_id, level_path, f.stem)
+                        if entry is None:
+                            continue
+                        units.append({
+                            "id": f"unit.{level_id}.{position:02d}",
+                            "label": str(position),
+                            "title": entry["title"],
+                            "lessons": [entry]
+                        })
 
         level_entry = {
             "title": meta["title"],
