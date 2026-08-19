@@ -206,7 +206,7 @@
 }
 
 .story-card {
-  background: var(--surface);
+  background: var(--bg);
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   padding: 0;
@@ -956,7 +956,7 @@
   padding: 14px 16px;
   border: 1.5px solid var(--border);
   border-radius: var(--radius-sm);
-  background: var(--surface);
+  background: var(--bg);
   cursor: pointer;
   text-align: left;
   font-size: 17px;
@@ -1020,7 +1020,7 @@
   padding: 10px 14px;
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
-  background: var(--surface);
+  background: var(--bg);
   cursor: pointer;
   font-size: 16px;
   color: var(--text);
@@ -1190,7 +1190,7 @@
   align-items: center;
   gap: 16px;
   padding: 14px 16px;
-  background: var(--surface);
+  background: var(--bg);
   border: 2px solid var(--border);
   border-radius: var(--radius);
   margin-bottom: 16px;
@@ -1275,11 +1275,18 @@
 
 /* Flashcard */
 
+/* .story-card, .review-stats and .review-card below all had the same
+   pure-white --surface fill as .lsn-option/.gd-option before their
+   2026-08-19/20 fixes — found by a computed-style DOM scan (getComputedStyle
+   against rgb(255,255,255)) covering every tab's markup at once rather than
+   spotting them one screen at a time, since the app keeps every tab's DOM
+   mounted and just toggles visibility. Same fix, same reasoning: open rows
+   on cream, not lifted white cards (see base.css's own --radius comment). */
 .review-card {
   display: none;
   flex-direction: column;
   align-items: center;
-  background: var(--surface);
+  background: var(--bg);
   border: 2px solid var(--border);
   border-radius: var(--radius);
   padding: 28px 20px 24px;
@@ -1507,7 +1514,7 @@
 }
 
 .wp-lemma-block {
-  background: var(--surface);
+  background: var(--bg);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 8px 12px;
@@ -1555,7 +1562,7 @@
 }
 
 .wp-why {
-  background: var(--surface);
+  background: var(--bg);
   border-left: 3px solid var(--primary);
   border-radius: var(--radius);
   padding: 8px 12px;
@@ -1588,7 +1595,7 @@
 }
 
 .wp-compound-part {
-  background: var(--surface);
+  background: var(--bg);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 8px 12px;
@@ -1687,11 +1694,14 @@
 
 /* Deliberately quieter than wp-add: adding to a personal deck is membership
    only, not a commitment to learn the word today, so it should not compete
-   with the button that actually starts a review schedule. */
+   with the button that actually starts a review schedule. Background was
+   --surface (pure white), standing out against the .wp-sheet popup it
+   sits in (already correctly --bg/cream) as its own small white rectangle
+   — same fix as everywhere else, found the same way (2026-08-20). */
 .wp-add-to-deck {
   width: 100%;
   padding: 12px;
-  background: var(--surface);
+  background: var(--bg);
   border: 1px solid var(--primary);
   color: var(--primary);
   border-radius: var(--radius-sm);

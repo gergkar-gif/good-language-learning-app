@@ -192,9 +192,9 @@
    2026-08-19 — same "boxy white rectangle" issue the Home/Decks fix in
    6722cbe called out, just not caught there since that pass covered
    card/bar-scale fills, not exercise option buttons. Reads via its
-   hairline border instead of a filled block now. .lsn-option still has
-   the same --surface fill and would want the same fix, but that's
-   lessons.js's rendering, out of scope here. */
+   hairline border instead of a filled block now. .lsn-option and
+   .lsn-tile (styles/components.css) had the exact same --surface fill and
+   got the same fix on 2026-08-20. */
 .gd-option {
     position: relative;
     padding: 12px 16px;

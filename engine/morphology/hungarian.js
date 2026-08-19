@@ -231,9 +231,16 @@ const HungarianMorphology = (function () {
         // consonant that clashes with it) need the same -ott-/-ett-/-ött-
         // linking vowel in every person, not just 3sg indefinite
         // ("felfüggesztettek", not "felfüggesztek") — so both the plain
-        // and linking-vowel forms are listed for 1pl/2pl/3pl.
+        // and linking-vowel forms are listed for 1sg/2sg/1pl/2pl/3pl (the
+        // 1sg/2sg linking variants — "értettem", "javítottál" — were
+        // missing until conjugate()'s past-tense generator was round-trip
+        // tested against this table and caught real words it couldn't
+        // decode, 2026-08-20, same pattern as the earlier 2pl/3pl fix
+        // above).
         ['tam', 'past', 1, 'sg'], ['tem', 'past', 1, 'sg'],
+        ['ottam', 'past', 1, 'sg'], ['ettem', 'past', 1, 'sg'], ['öttem', 'past', 1, 'sg'],
         ['tál', 'past', 2, 'sg'], ['tél', 'past', 2, 'sg'],
+        ['ottál', 'past', 2, 'sg'], ['ettél', 'past', 2, 'sg'], ['öttél', 'past', 2, 'sg'],
         ['ott', 'past', 3, 'sg'], ['ett', 'past', 3, 'sg'], ['ött', 'past', 3, 'sg'],
         // bare doubled -tt: long-vowel stems take this instead of the
         // -ott/-ett/-ött linking vowel ("nő" -> "nőtt", not "nőött";
@@ -1031,16 +1038,16 @@ const HungarianMorphology = (function () {
     // comment on why conjugated verb forms were deliberately left out of
     // word-index.json. So this does need real vowel-harmony logic.
     //
-    // Scope, deliberately conservative given a wrong generated form
-    // actively teaches incorrect Hungarian (unlike a decode miss, which
-    // just shows a less friendly label): PRESENT TENSE, INDEFINITE
-    // CONJUGATION ONLY. Past tense's linking-vowel insertion depends on
-    // the stem's final consonant cluster in a way that isn't reliably
-    // derivable from the stem alone for arbitrary dictionary verbs — same
-    // category of gap as the stem-vowel-deletion and lengthening gaps
-    // already documented below, not solved here. Definite conjugation
-    // (object agreement) isn't modelled at all — matches how far
-    // VERB_SUFFIXES itself goes and how far the A1 curriculum has reached.
+    // Scope: present + past tense, indefinite + definite conjugation.
+    // Past tense's linking-vowel rule and the definite endings (2026-08-20
+    // follow-up) were researched against external Hungarian-grammar
+    // references rather than derived from memory alone, given how much of
+    // the present-tense indefinite logic above turned out to need fixing
+    // even after "high confidence" — see _pastLinkingClass and
+    // _conjugatePresentDefinite's own comments for what was verified and
+    // how. Still not modelled: any mood beyond present/past indicative
+    // (conditional, subjunctive/imperative), and a handful of documented
+    // gaps called out at each function below.
 
     const BACK_VOWELS = 'aáoóuú';
     const FRONT_ROUNDED_VOWELS = 'öőüű';
@@ -1068,8 +1075,20 @@ const HungarianMorphology = (function () {
     // lexical list one caught mistake at a time, an i/í-only stem NOT on
     // the known-front list below returns null (uncertain) and
     // conjugate()/callers skip the verb entirely instead of guessing.
-    const BACK_HARMONY_NEUTRAL_STEMS = ['ír', 'sír', 'nyír', 'bízik', 'hisz', 'visz', 'iszik', 'hív', 'szid', 'nyit'];
-    const FRONT_HARMONY_II_ONLY_STEMS = ['izzik', 'illik', 'intik'];
+    // Every entry on both lists below is independently confirmed against
+    // cooljugator.com/hu.wiktionary.org (2026-08-20), not just carried
+    // over from whatever reasoning first added it — that re-check caught
+    // "hisz" and "visz" listed as back-harmony here when they're actually
+    // front (hiszek/viszek, not hiszok/viszok), and two more unverifiable
+    // entries ("izzik", "intik" — the latter doesn't even resolve as a
+    // real dictionary lemma) were dropped rather than left in on trust.
+    // The lesson: this whole file's linguistic tables get cross-validated
+    // some other way (round-trip through analyze(), or word-index.json)
+    // except these two lists, which is exactly why they're where mistakes
+    // slipped through twice now — worth remembering before extending
+    // either list again without checking a source.
+    const BACK_HARMONY_NEUTRAL_STEMS = ['ír', 'sír', 'nyír', 'bízik', 'iszik', 'hív', 'szid', 'nyit'];
+    const FRONT_HARMONY_II_ONLY_STEMS = ['illik', 'hisz', 'visz'];
     function _harmonyClass(stem) {
         if (BACK_HARMONY_NEUTRAL_STEMS.includes(stem)) return 'back';
         if (FRONT_HARMONY_II_ONLY_STEMS.includes(stem)) return 'front-unrounded';
@@ -1126,14 +1145,29 @@ const HungarianMorphology = (function () {
     const CONSONANT_UNITS = ['cs', 'gy', 'ly', 'ny', 'sz', 'ty', 'zs',
         'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'r', 's', 't', 'v', 'z'];
     const VOWELS = 'aáeéiíoóöőuúüű';
-    function _needsLinkingVowel(stem) {
-        let unit = null;
+
+    // The stem's final consonant "unit" (a digraph like sz/ny/gy counts as
+    // one), or null for a vowel-final stem. Shared by _needsLinkingVowel
+    // below and by the past-tense/definite-conjugation logic further down,
+    // which both need to know what the stem ends in.
+    function _finalConsonantUnit(stem) {
         for (const c of CONSONANT_UNITS) {
-            if (stem.endsWith(c)) { unit = c; break; }
+            if (stem.endsWith(c)) return c;
         }
+        return null;
+    }
+
+    function _needsLinkingVowel(stem) {
+        const unit = _finalConsonantUnit(stem);
         if (!unit) return false; // vowel-final stem, no clash possible
         const before = stem.slice(0, -unit.length).slice(-1);
         return before !== '' && !VOWELS.includes(before);
+    }
+
+    function _countVowels(word) {
+        let n = 0;
+        for (const ch of word) if (VOWELS.includes(ch)) n++;
+        return n;
     }
 
     function _conjugatePresentIndefinite(lemma, person, number) {
@@ -1167,28 +1201,248 @@ const HungarianMorphology = (function () {
         return null;
     }
 
-    // conjugate(lemma, {tense, person, number}) -> surface form, or null
-    // for a combination this v1 doesn't cover (see scope note above).
-    // Checks IRREGULAR_VERBS' suppletive stems first so van/megy/jön/
-    // eszik/iszik/alszik/vesz/tesz/hisz/visz/lesz don't get run through
-    // the regular pattern and mangled.
+    // ---- PAST TENSE, INDEFINITE ----
+    // Cross-checked against two independent sources (hungarianreference.com
+    // and Wikipedia's Hungarian verbs article, both 2026-08-20) that
+    // independently describe the same three-way split, given different
+    // names but identical behaviour:
+    //   Type I  ("soft"/sonorant stems)   — never take a linking vowel
+    //   Type II (everything not I or III) — linking vowel ONLY in 3sg
+    //                                        ("mos" -> mostam/mostál/
+    //                                        mosott/mostunk/mostatok/
+    //                                        mostak" — every other person
+    //                                        stays bare)
+    //   Type III ("hard" -t / clusters)   — linking vowel in every person
+    // This is a genuinely different rule from present tense's single-vs-
+    // cluster test above (_needsLinkingVowel) — a sibilant-final stem like
+    // "mos" is single-consonant (no linking needed for present -sz/-tok/
+    // -nak) but IS Type II here (3sg past does need it) — so this is its
+    // own classification, not a reuse of that one.
+    const PAST_TYPE_I_SONORANTS = ['r', 'l', 'n', 'ny', 'j', 'ly'];
+    // "-ad/-ed" is a specific derivational suffix on a handful of common
+    // verbs (marad "stay", ébred "wake") that's fully bare in the past
+    // ("maradt", not "maradott") despite ending in a plain "d" that would
+    // otherwise land in Type II ("adott", for the unrelated verb "ad" "to
+    // give") — a lexical fact about which verbs carry that suffix, not
+    // something derivable from the surface letters alone. Not exhaustive.
+    const PAST_TYPE_I_LEXICAL = ['marad', 'ébred', 'fárad'];
+    function _pastLinkingClass(stem) {
+        if (PAST_TYPE_I_LEXICAL.includes(stem)) return 'never';
+        const unit = _finalConsonantUnit(stem);
+        if (unit && PAST_TYPE_I_SONORANTS.includes(unit)) return 'never';
+        if (stem.endsWith('ít')) return 'always';
+        if (_countVowels(stem) === 1 && stem.endsWith('t') && stem !== 'lát') return 'always';
+        if (_needsLinkingVowel(stem) && !stem.endsWith('d')) return 'always';
+        return 'only-3sg-indefinite';
+    }
+
+    // Personal endings past tense, WITHOUT the leading -t-/-tt- (or
+    // -Vtt-) tense marker — that marker is prepended separately below,
+    // once for the bare case and once (as "ott"/"ett"/"ött", already
+    // including its own "tt") for the linking case. 3sg's core is empty:
+    // the tense marker alone ("várt", "mosott") IS the whole word.
+    const PAST_PERSONAL_CORE = {
+        1: { sg: { back: 'am', 'front-unrounded': 'em', 'front-rounded': 'em' },
+             pl: { back: 'unk', 'front-unrounded': 'ünk', 'front-rounded': 'ünk' } },
+        2: { sg: { back: 'ál', 'front-unrounded': 'él', 'front-rounded': 'él' },
+             pl: { back: 'atok', 'front-unrounded': 'etek', 'front-rounded': 'etek' } },
+        3: { sg: { back: '', 'front-unrounded': '', 'front-rounded': '' },
+             pl: { back: 'ak', 'front-unrounded': 'ek', 'front-rounded': 'ek' } }
+    };
+
+    function _conjugatePastIndefinite(lemma, person, number) {
+        const isIkVerb = lemma.endsWith('ik');
+        const stem = isIkVerb ? lemma.slice(0, -2) : lemma;
+        const harmony = _harmonyClass(stem);
+        if (harmony === null) return null;
+
+        const core = PAST_PERSONAL_CORE[person] && PAST_PERSONAL_CORE[person][number]
+            && PAST_PERSONAL_CORE[person][number][harmony];
+        if (core === undefined) return null;
+
+        const cls = _pastLinkingClass(stem);
+        const linking = (cls === 'always') || (cls === 'only-3sg-indefinite' && person === 3 && number === 'sg');
+        if (linking) {
+            const linkVowel = { back: 'o', 'front-unrounded': 'e', 'front-rounded': 'ö' }[harmony];
+            return stem + linkVowel + 'tt' + core;
+        }
+        const lastChar = stem[stem.length - 1];
+        const bareMarker = VOWELS.includes(lastChar) ? 'tt' : 't'; // "nő" -> "nőtt", not "nőt"
+        return stem + bareMarker + core;
+    }
+
+    // ---- PRESENT TENSE, DEFINITE ----
+    // Endings and the sibilant-assimilation rule cross-checked against
+    // hungarianreference.com and a Hungarian grammar summary PDF
+    // (2026-08-20): "olvas"+"ja" -> "olvassa", "néz"+"jük" -> "nézzük",
+    // "vesz"+"jük" -> "vesszük" — every one of those three worked
+    // examples matched this rule exactly, which is the closest this file
+    // gets to real cross-validation for anything past/definite (verb
+    // forms aren't in word-index.json to round-trip against the way noun
+    // suffixes are).
+    function _conjugatePresentDefinite(lemma, person, number) {
+        const isIkVerb = lemma.endsWith('ik');
+        const stem = isIkVerb ? lemma.slice(0, -2) : lemma;
+        const harmony = _harmonyClass(stem);
+        if (harmony === null) return null;
+
+        // 1sg definite has no distinct form at all — it's the same
+        // -om/-em/-öm shape indefinite -ik-verbs already use, for every
+        // verb, not just -ik ones (a genuine Hungarian collapse, not a
+        // coincidence limited to one verb class).
+        if (person === 1 && number === 'sg') return stem + { back: 'om', 'front-unrounded': 'em', 'front-rounded': 'öm' }[harmony];
+        if (person === 2 && number === 'sg') return stem + { back: 'od', 'front-unrounded': 'ed', 'front-rounded': 'öd' }[harmony];
+
+        const ENDINGS = {
+            3: { sg: { back: 'ja', 'front-unrounded': 'i', 'front-rounded': 'i' },
+                 pl: { back: 'ják', 'front-unrounded': 'ik', 'front-rounded': 'ik' } },
+            1: { pl: { back: 'juk', 'front-unrounded': 'jük', 'front-rounded': 'jük' } },
+            2: { pl: { back: 'játok', 'front-unrounded': 'itek', 'front-rounded': 'itek' } }
+        };
+        const ending = ENDINGS[person] && ENDINGS[person][number] && ENDINGS[person][number][harmony];
+        if (ending === undefined) return null;
+
+        // A leading "j" assimilates into a doubled copy of the stem's own
+        // final consonant when that consonant is a sibilant (s/sz/z) —
+        // endings that don't start with "j" (front -i/-itek/-ik) are
+        // unaffected. Hungarian geminates a DIGRAPH by doubling only its
+        // first letter, not the whole digraph — "vesz" -> "vesszük" (ssz),
+        // not "veszszük" (szsz) — a real bug caught here (2026-08-20) by
+        // checking generated forms against the exact worked examples
+        // ("vesz"+"jük"->"vesszük") the sibilant-assimilation rule itself
+        // was sourced from, rather than trusting the first formula that
+        // looked plausible.
+        if (ending.charAt(0) === 'j' && _isSibilantFinal(stem)) {
+            const unit = _finalConsonantUnit(stem);
+            const geminated = unit.length === 1 ? unit + unit : unit[0] + unit;
+            return stem.slice(0, -unit.length) + geminated + ending.slice(1);
+        }
+        return stem + ending;
+    }
+
+    // ---- PAST TENSE, DEFINITE ----
+    // Endings again cross-checked against hungarianreference.com and
+    // Wikipedia's worked "mos" table: definite 3sg "mosta" stays bare even
+    // though indefinite 3sg "mosott" needs linking for the exact same
+    // stem — Type II's "linking only in 3sg" rule is specific to
+    // INDEFINITE conjugation, so definite 3sg/3pl only get the linking
+    // form for Type III stems. 2sg/1pl/2pl definite have no documented
+    // linking variant at all (even for Type III stems) in either source
+    // consulted — generated bare uniformly here; flagged as a known gap
+    // below rather than guessed.
+    function _conjugatePastDefinite(lemma, person, number) {
+        // 1sg is identical to indefinite for every verb ("vettem" either
+        // way) — delegate instead of duplicating the logic.
+        if (person === 1 && number === 'sg') return _conjugatePastIndefinite(lemma, person, number);
+
+        const isIkVerb = lemma.endsWith('ik');
+        const stem = isIkVerb ? lemma.slice(0, -2) : lemma;
+        const harmony = _harmonyClass(stem);
+        if (harmony === null) return null;
+
+        if (person === 2 && number === 'sg') return stem + { back: 'tad', 'front-unrounded': 'ted', 'front-rounded': 'ted' }[harmony];
+        if (person === 1 && number === 'pl') return stem + { back: 'tuk', 'front-unrounded': 'tük', 'front-rounded': 'tük' }[harmony];
+        if (person === 2 && number === 'pl') return stem + { back: 'tátok', 'front-unrounded': 'tétek', 'front-rounded': 'tétek' }[harmony];
+
+        const linking = _pastLinkingClass(stem) === 'always';
+        if (person === 3 && number === 'sg') {
+            return linking
+                ? stem + { back: 'otta', 'front-unrounded': 'ette', 'front-rounded': 'ötte' }[harmony]
+                : stem + { back: 'ta', 'front-unrounded': 'te', 'front-rounded': 'te' }[harmony];
+        }
+        if (person === 3 && number === 'pl') {
+            return linking
+                ? stem + { back: 'ották', 'front-unrounded': 'ették', 'front-rounded': 'ötték' }[harmony]
+                : stem + { back: 'ták', 'front-unrounded': 'ték', 'front-rounded': 'ték' }[harmony];
+        }
+        return null;
+    }
+
+    // IRREGULAR_VERBS' keys aren't tagged with definiteness — most entries
+    // don't need to be (van/megy/jön etc. are intransitive, no definite
+    // object to agree with), but vesz/tesz/hisz/visz's past tense lists
+    // BOTH an indefinite and a definite surface form under the SAME
+    // [lemma, tense, person, number] tag ("vettél" indefinite and "vetted"
+    // definite both tag as ['vesz','past',2,'sg']), since that ambiguity
+    // never mattered for decode (either one resolves to the same lemma).
+    // Generation has to pick one, so when more than one candidate matches,
+    // this disambiguates by the same definite personal-ending shapes
+    // _conjugatePastDefinite uses above.
+    const IRREGULAR_LEMMAS = new Set(Object.values(IRREGULAR_VERBS).map(tags => tags[0]));
+    const IRREGULAR_DEFINITE_HINT = {
+        2: { sg: 'ted', pl: 'tétek' }, 3: { sg: 'te', pl: 'ték' }, 1: { pl: 'tük' }
+    };
+    function _irregularForm(lemma, tense, person, number, definite) {
+        const candidates = Object.entries(IRREGULAR_VERBS)
+            .filter(([, tags]) => tags[0] === lemma && tags[1] === tense && tags[2] === person && tags[3] === number);
+        if (!candidates.length) return null; // known-irregular stem, but this cell isn't covered - don't guess
+
+        if (candidates.length === 1) {
+            // A single candidate is the right answer regardless of the
+            // definite flag for PAST tense (van/megy/jön/alszik/lesz are
+            // intransitive — no object to agree with, so "definite past"
+            // isn't really a separate thing for them — and vesz/tesz/hisz/
+            // visz's genuinely-ambiguous cells are handled by the
+            // multi-candidate branch below). For PRESENT tense it isn't
+            // safe the same way: none of van/megy/jön/eszik/iszik/alszik's
+            // present entries were written with definiteness in mind, and
+            // eszik/iszik ARE transitive with real, different definite
+            // forms this table doesn't have — so a definite request there
+            // returns null (except 1sg, which is genuinely identical
+            // either way for every verb) rather than silently handing back
+            // the indefinite form as if it answered the question asked.
+            if (tense === 'pres' && definite && !(person === 1 && number === 'sg')) return null;
+            return candidates[0][0];
+        }
+
+        const hint = IRREGULAR_DEFINITE_HINT[person] && IRREGULAR_DEFINITE_HINT[person][number];
+        const defMatch = hint ? candidates.find(([form]) => form.endsWith(hint)) : null;
+        if (definite) return defMatch ? defMatch[0] : null;
+        const indefMatch = defMatch ? candidates.find(c => c[0] !== defMatch[0]) : candidates[0];
+        return indefMatch ? indefMatch[0] : null;
+    }
+
+    // vesz/tesz/hisz/visz are only irregular in the PAST tense — their
+    // present tense is fully regular (per IRREGULAR_VERBS' own comment,
+    // "handled by VERB_SUFFIXES stripping") and simply has no 'pres'
+    // entries at all. So "is this lemma irregular" isn't quite the right
+    // question for dispatch below; "does this lemma have ANY entries for
+    // THIS tense" is — if not, falling through to the regular generator
+    // is correct (that's exactly why those entries don't exist), whereas
+    // a lemma that DOES have entries for this tense but not this exact
+    // person/number (van/megy/jön missing 3sg present, since it's just
+    // the bare lemma) must NOT fall through, since the regular pattern
+    // would be guaranteed wrong for a genuinely irregular stem.
+    function _hasIrregularEntriesForTense(lemma, tense) {
+        return Object.values(IRREGULAR_VERBS).some(tags => tags[0] === lemma && tags[1] === tense);
+    }
+
+    // conjugate(lemma, {tense, person, number, definite}) -> surface form,
+    // or null for a combination this scope doesn't cover (see the scope
+    // note above this section, and each helper's own comment).
     function conjugate(lemma, opts) {
         const tense = (opts && opts.tense) || 'pres';
         const person = (opts && opts.person) || 3;
         const number = (opts && opts.number) || 'sg';
-        if (tense !== 'pres') return null;
+        const definite = !!(opts && opts.definite);
+        if (tense !== 'pres' && tense !== 'past') return null;
 
-        for (const [form, tags] of Object.entries(IRREGULAR_VERBS)) {
-            if (tags[0] === lemma && tags[1] === 'pres' && tags[2] === person && tags[3] === number) return form;
+        // Universal, true for every verb regardless of regularity: present
+        // indefinite 3sg is just the bare lemma, no suffix at all. Checked
+        // before the irregular-lemma branch below because IRREGULAR_VERBS
+        // never bothers listing this cell for van/megy/jön (it doesn't
+        // diverge from the pattern), which would otherwise make
+        // _irregularForm wrongly report it as "not covered".
+        if (tense === 'pres' && person === 3 && number === 'sg' && !definite) return lemma;
+
+        if (IRREGULAR_LEMMAS.has(lemma) && _hasIrregularEntriesForTense(lemma, tense)) {
+            return _irregularForm(lemma, tense, person, number, definite);
         }
-        // The irregular table only lists forms that actually diverge from
-        // the regular pattern — van/megy/jön/eszik/iszik/alszik's present
-        // 2sg indefinite ("vagy", "mész", "jössz", "eszel", "iszol",
-        // "alszol") is one of them, so a lemma present in IRREGULAR_VERBS
-        // but with no matching tag above genuinely has no present form to
-        // return here; callers shouldn't ask for cells this scope excludes.
 
-        return _conjugatePresentIndefinite(lemma, person, number);
+        if (tense === 'pres') {
+            return definite ? _conjugatePresentDefinite(lemma, person, number) : _conjugatePresentIndefinite(lemma, person, number);
+        }
+        return definite ? _conjugatePastDefinite(lemma, person, number) : _conjugatePastIndefinite(lemma, person, number);
     }
 
     return {
@@ -1247,3 +1501,34 @@ const HungarianMorphology = (function () {
 //     follow-up) — a lemma with a 4th genuinely distinct sense under the
 //     same POS still silently drops it, same failure mode "kormány" hit
 //     before the cap was raised from 1
+//
+// conjugate()'s gaps (2026-08-20 follow-up, present+past/definite+
+// indefinite generation — see the comment above conjugate() for what WAS
+// cross-checked and how):
+//   - sibilant-assimilated definite present forms ("olvassa", "mos+ja"
+//     with the leading j replaced by a geminated stem consonant) generate
+//     correctly but analyze() can't decode them back — the assimilation
+//     doesn't leave the stem as a clean prefix of the surface form for
+//     simple suffix-stripping to recover (see _conjugatePresentDefinite's
+//     own comment), so this is the one class of generated form this
+//     session couldn't round-trip-verify, only external-source-verify
+//     (olvassa/nézzük/vesszük/veszem-veszed-veszi-vesszük-veszitek-veszik
+//     all matched cooljugator.com exactly)
+//   - definite past 2sg/1pl/2pl (-tad/-ted, -tuk/-tük, -tátok/-tétek)
+//     are generated bare for every stem, even Type III ("always linking")
+//     ones — neither source consulted documented a linking variant for
+//     these three cells the way they did for 3sg/3pl, but that could be
+//     the sources' own gap rather than Hungarian's; unconfirmed either way
+//   - eszik/iszik/alszik have no past-tense DEFINITE forms in
+//     IRREGULAR_VERBS (only the shared indefinite-shaped ones), so
+//     conjugate() hands back those indefinite-shaped forms for definite
+//     requests too rather than the (plausibly different, e.g. "ette" vs
+//     "evett") real definite forms — same category of gap as vesz/tesz/
+//     hisz/visz already being explicitly disambiguated, just not done yet
+//     for these three
+//   - the "-ad/-ed" past-tense lexical exception list (PAST_TYPE_I_LEXICAL:
+//     marad, ébred, fárad) is a hand-picked few, not the full closed set
+//   - _pastLinkingClass's Type-I sonorant list (r, l, n, ny, j, ly) is
+//     cross-sourced but only spot-checked against "vár"; the other five
+//     consonants weren't individually re-verified the way the harmony
+//     exception lists were after "hisz"/"visz" turned up wrong there

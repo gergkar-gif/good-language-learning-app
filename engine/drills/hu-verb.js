@@ -11,11 +11,15 @@
 // this is its own module with its own data and paradigm constants,
 // following the Settings->Session->Results shell every other driller uses.
 //
-// Present tense, indefinite conjugation only, per
+// Present and past tense, indefinite and definite conjugation, per
 // engine/morphology/hungarian.js's conjugate() — see that function's own
-// scope note. Definite conjugation and past tense aren't modelled yet;
-// matches how far the A1 curriculum has reached (Unit 1 doesn't teach
-// regular verb conjugation at all yet, only the irregular copula "van").
+// scope note for what it does and doesn't cover (2026-08-20: extended from
+// present-indefinite-only to all four). Two settings-screen toggles
+// (Tense, Conjugation), same `.geo-toggle` component engine/verbs.js
+// already uses for its "include vosotros" switch, control which of the
+// four cells the pool is built from — a session drills one at a time
+// rather than mixing them, so a "which person is this" question never
+// needs to also disclose tense/definiteness to stay answerable.
 //
 // Four exercise types from HUNGARIAN_WORKSHOP_IMPLEMENTATION_HANDOVER.md's
 // Verb Driller section: recognition, selection, production, transformation.
@@ -51,9 +55,14 @@ const HuVerbDriller = (function () {
     let _phase = PHASE.SETTINGS;
     let _container = null;
 
+    let _dict = null; // imports/dictionary/hungarian-en.json, fetched once
     // Each entry: { lemma, gloss, forms: [{person, number, pronoun, form}] }
+    // — rebuilt (cheaply, no re-fetch) whenever _tense/_definite change,
+    // since conjugate()'s output differs per cell.
     let _verbs = null;
 
+    let _tense = 'pres';    // 'pres' | 'past'
+    let _definite = false;
     let _mode = MODE.COUNT;
     let _questionCount = 10;
     let _timerMinutes = 2;
@@ -89,22 +98,34 @@ const HuVerbDriller = (function () {
 
     // ---- Data loading (once) ----
     async function _load() {
-        if (_verbs) return;
+        if (_dict) return;
         const [dict] = await Promise.all([
             fetch('imports/dictionary/hungarian-en.json').then(r => r.ok ? r.json() : {}),
             Lexicon.load()
         ]);
+        _dict = dict;
+        _buildVerbs();
+    }
 
+    // Cheap and synchronous (no re-fetch) — called on load and again
+    // whenever the Tense/Conjugation toggles change. A verb only makes it
+    // into the pool if conjugate() filled in all 6 persons for the
+    // CURRENT tense/definite combo — e.g. intransitive irregular verbs
+    // (van, megy, jön, alszik, lesz) correctly drop out of the definite
+    // present pool (conjugate() returns null for them there on purpose,
+    // see its own comment), so the toggle set isn't just relabelling the
+    // same verb list four ways.
+    function _buildVerbs() {
         _verbs = [];
-        for (const lemma in dict) {
+        for (const lemma in _dict) {
             const rank = Lexicon.frequencyRank(lemma);
             if (rank === null || rank >= MAX_LEMMA_RANK) continue;
-            const sense = HungarianMorphology.verbSense(dict[lemma]);
+            const sense = HungarianMorphology.verbSense(_dict[lemma]);
             if (!sense || FORM_OF_GLOSS.test(sense.en)) continue;
 
             const forms = PERSONS.map(([person, number, pronoun]) => ({
                 person, number, pronoun,
-                form: HungarianMorphology.conjugate(lemma, { tense: 'pres', person, number })
+                form: HungarianMorphology.conjugate(lemma, { tense: _tense, person, number, definite: _definite })
             })).filter(f => f.form);
             if (forms.length < PERSONS.length) continue; // skip anything conjugate() couldn't fill in
 
@@ -191,8 +212,28 @@ const HuVerbDriller = (function () {
         _container.innerHTML = `
             <div class="gd-settings">
                 <h2 class="gd-title">Verb Driller</h2>
-                <p class="gd-hint">Decode and produce Hungarian verb forms — present tense, indefinite
-                    conjugation. Draws from the full dictionary rather than just your lessons so far.</p>
+                <p class="gd-hint">Decode and produce Hungarian verb forms. Draws from the full dictionary
+                    rather than just your lessons so far — ${_verbs.length} verbs available for this combination.</p>
+
+                <div class="vb-setting vb-setting-row">
+                    <label id="hv-tense-label">Past tense</label>
+                    <button class="geo-toggle" data-action="toggle-tense" role="switch"
+                        aria-checked="${_tense === 'past'}" aria-labelledby="hv-tense-label">
+                        <span class="geo-toggle-track"></span>
+                        <span class="geo-toggle-shape geo-toggle-shape--off"></span>
+                        <span class="geo-toggle-shape geo-toggle-shape--on"></span>
+                    </button>
+                </div>
+
+                <div class="vb-setting vb-setting-row">
+                    <label id="hv-definite-label">Definite conjugation</label>
+                    <button class="geo-toggle" data-action="toggle-definite" role="switch"
+                        aria-checked="${_definite}" aria-labelledby="hv-definite-label">
+                        <span class="geo-toggle-track"></span>
+                        <span class="geo-toggle-shape geo-toggle-shape--off"></span>
+                        <span class="geo-toggle-shape geo-toggle-shape--on"></span>
+                    </button>
+                </div>
 
                 <div class="vb-mode-switcher" role="tablist">
                     <button class="vb-mode-btn${_mode === MODE.COUNT ? ' active' : ''}"
@@ -227,6 +268,17 @@ const HuVerbDriller = (function () {
 
         _container.querySelectorAll('[data-mode]').forEach(btn => {
             btn.addEventListener('click', () => { _mode = btn.dataset.mode; _renderSettings(); });
+        });
+
+        _container.querySelector('[data-action="toggle-tense"]').addEventListener('click', function () {
+            _tense = _tense === 'pres' ? 'past' : 'pres';
+            _buildVerbs();
+            _renderSettings();
+        });
+        _container.querySelector('[data-action="toggle-definite"]').addEventListener('click', function () {
+            _definite = !_definite;
+            _buildVerbs();
+            _renderSettings();
         });
 
         const countSelect = _container.querySelector('#hv-count');
