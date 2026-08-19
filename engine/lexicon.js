@@ -229,7 +229,18 @@ const Lexicon = (function () {
         // isn't its own dictionary headword — see addPrefixedVerb() in
         // engine/morphology/hungarian.js).
         function add(lemma, sense, analysis, compoundParts) {
-            const dedupeKey = lemma + '|' + (analysis || '');
+            // Translation (and POS) are part of the dedupe key, not just
+            // lemma+analysis — two senses under the SAME (lemma, pos) with
+            // no suffix to tell them apart ("kormány" = "steering wheel"
+            // AND "government", both bare nouns) still need to survive as
+            // separate readings rather than the second one silently
+            // colliding with the first. POS matters too: "igen" is both an
+            // interjection AND a noun glossed identically "yes" — without
+            // POS in the key those two would collide on lemma+analysis+
+            // translation alone even though they're genuinely different
+            // readings.
+            const dedupeKey = lemma + '|' + (analysis || '') + '|' +
+                (sense ? sense.type + ':' + sense.en : '');
             if (seen.has(dedupeKey)) return;
             seen.add(dedupeKey);
             const reading = {
@@ -254,7 +265,15 @@ const Lexicon = (function () {
         // when one exists ("élt" is indexed as "él" the noun "edge" +
         // accusative, but is also "él" the verb "to live" + past tense).
         const directHit = !!_dictionary[key];
-        if (directHit) add(key, HungarianMorphology.anySense(_dictionary[key]), '');
+        // Every sense of the headword, not just the first — a bare tap on
+        // "kormány" should offer "government" as an alternate reading
+        // alongside "steering wheel", both plain nouns with no suffix to
+        // otherwise distinguish them. add()'s dedupe key now includes the
+        // translation text specifically so this doesn't collapse to one.
+        if (directHit) {
+            const entry = _dictionary[key];
+            (Array.isArray(entry) ? entry : [entry]).forEach(sense => add(key, sense, ''));
+        }
 
         // Run BEFORE the word-index below, not after: when both a lemma's
         // frequency-tied readings tie exactly (same lemma spelling either
@@ -276,19 +295,18 @@ const Lexicon = (function () {
         // for that lemma, skip it (analyze() above is what finds the real
         // reading in that case, same "él" collision as above).
         (_wordIndex[key] || []).forEach(a => {
-            const sense = HungarianMorphology.nominalSense(_dictionary[a.lemma]);
             // a.lemma === key means this word-index entry is the lemma's
             // own nominative-singular citation form ("július" indexed
             // under "július" itself, case=nom/number=sg) — every common
             // noun/adjective has one, since it's trivially part of the
-            // declension table. That's only redundant with the direct-hit
-            // branch above when it's literally THE SAME sense (reference
-            // equality against anySense() picks the identical object);
-            // "igen" also has a genuine second sense (noun "yes", not
-            // just the interjection the direct hit shows) worth keeping
-            // as its own "other reading", so lemma-string-equality alone
-            // isn't enough to call it a duplicate.
-            if (a.lemma === key && directHit && sense === HungarianMorphology.anySense(_dictionary[key])) return;
+            // declension table. That's always redundant with the direct-
+            // hit branch above: it adds EVERY sense of _dictionary[key]
+            // already (including "igen"'s noun "yes", not just its
+            // interjection sense), so a word-index entry for the exact
+            // same lemma can never contribute a sense direct-hit didn't
+            // already cover.
+            if (a.lemma === key && directHit) return;
+            const sense = HungarianMorphology.nominalSense(_dictionary[a.lemma]);
             if (sense || !_dictionary[a.lemma]) add(a.lemma, sense, HungarianMorphology.describe(a));
         });
 

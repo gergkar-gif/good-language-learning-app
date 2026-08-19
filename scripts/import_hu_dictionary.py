@@ -167,12 +167,29 @@ def download():
 VERBAL_NOUN_PREFIX = re.compile(r"^verbal noun of [^:]+:\s*", re.I)
 
 
-def primary_gloss(senses):
-    """(gloss, is_deprioritised) from the best non-form-of sense, preferring
-    one that isn't flagged obsolete/archaic/dated/rare/literary if a better
-    one exists. is_deprioritised is also used by build() to choose between
-    an entry's ENTIRE gloss and a competing entry for the same lemma under
-    a different POS (see DEPRIORITISE_TAGS's docstring on "igen")."""
+# How many distinct senses a single (lemma, pos) keeps at most — see
+# all_glosses()'s own docstring on why more than one at all. 2 wasn't
+# enough: "kormány" has three real senses under noun — "steering wheel",
+# "helm", "government" — in exactly that Wiktionary order, so a cap of 2
+# silently dropped "government", the one a learner most needs.
+MAX_SENSES_PER_POS = 3
+
+
+def all_glosses(senses):
+    """Up to MAX_SENSES_PER_POS (gloss, is_deprioritised) pairs, most
+    useful first — not just the single best one. "kormány" has three
+    senses under the same noun POS: "steering wheel", "helm", "government"
+    — genuinely different concepts sharing a word, not nuances of one
+    meaning (unlike "ház"'s many senses, which are all recognisably "a
+    house" in some extended way). Collapsing to one sense per POS, this
+    script's original design, is right for a real nuance list but wrong
+    here: "government" was silently unreachable because "steering wheel"
+    happened to be listed first on the Wiktionary page. is_deprioritised
+    is also used by build() to choose between an entry's BEST sense and a
+    competing entry for the same lemma under a different POS (see
+    DEPRIORITISE_TAGS's docstring on "igen") — only the first pair's
+    flag matters for that, since it's always the non-deprioritised one
+    when any exist."""
     candidates = []
     for sense in senses or []:
         tags = set(sense.get("tags") or [])
@@ -189,9 +206,19 @@ def primary_gloss(senses):
             gloss = stripped
         candidates.append((bool(tags & DEPRIORITISE_TAGS), gloss))
     if not candidates:
-        return None, True
+        return []
     candidates.sort(key=lambda c: c[0])  # non-deprioritised first
-    return candidates[0][1], candidates[0][0]
+
+    kept = []
+    seen_text = set()
+    for deprioritised, gloss in candidates:
+        if gloss in seen_text:
+            continue
+        seen_text.add(gloss)
+        kept.append((gloss, deprioritised))
+        if len(kept) >= MAX_SENSES_PER_POS:
+            break
+    return kept
 
 
 def extract_case_forms(entry, lemma, pos):
@@ -292,35 +319,43 @@ def build():
                 stats["form_of_only"] += 1
             else:
                 pos = POS_MAP[raw_pos]
-                gloss, deprioritised = primary_gloss(entry.get("senses"))
-                if gloss is None:
+                glosses = all_glosses(entry.get("senses"))
+                if not glosses:
                     stats["no_gloss"] += 1
                 else:
                     key = word.lower()
                     is_lower = word == key
                     by_pos = senses_by_key.setdefault(key, {})
-                    existing = by_pos.get(pos)
-                    # Tie-break within the SAME (lemma, pos) pair only —
-                    # a capitalised homograph or duplicate page competing
-                    # for the identical grammatical slot. A non-deprioritised
-                    # sense always beats a deprioritised one; only when
-                    # that's tied does the lowercase-headword preference
-                    # apply; otherwise first-seen wins. A DIFFERENT pos for
-                    # the same spelling is never a competitor — see the
-                    # module docstring on why both are kept.
-                    if existing is None:
-                        replace = True
-                    elif deprioritised != existing["_deprioritised"]:
-                        replace = existing["_deprioritised"] and not deprioritised
-                    else:
-                        replace = is_lower and not existing["_is_lower"]
-                    if replace:
+                    # gloss text -> sense dict, so a second distinct sense
+                    # for the same (lemma, pos) — "kormány" = "government"
+                    # alongside "steering wheel" — accumulates instead of
+                    # overwriting; MAX_SENSES_PER_POS is enforced later, at
+                    # flatten time, once every page has contributed.
+                    pos_senses = by_pos.setdefault(pos, {})
+                    for gloss, deprioritised in glosses:
+                        existing = pos_senses.get(gloss)
+                        # Tie-break for the SAME gloss text under the SAME
+                        # (lemma, pos) — a capitalised homograph or duplicate
+                        # page restating the identical sense. A non-
+                        # deprioritised sense always beats a deprioritised
+                        # one; only when that's tied does the lowercase-
+                        # headword preference apply; otherwise first-seen
+                        # wins. A DIFFERENT pos for the same spelling is
+                        # never a competitor — see the module docstring on
+                        # why both are kept.
                         if existing is None:
-                            stats["dict_entries"] += 1
-                        by_pos[pos] = {
-                            "en": gloss, "type": pos,
-                            "_deprioritised": deprioritised, "_is_lower": is_lower,
-                        }
+                            replace = True
+                        elif deprioritised != existing["_deprioritised"]:
+                            replace = existing["_deprioritised"] and not deprioritised
+                        else:
+                            replace = is_lower and not existing["_is_lower"]
+                        if replace:
+                            if existing is None:
+                                stats["dict_entries"] += 1
+                            pos_senses[gloss] = {
+                                "en": gloss, "type": pos,
+                                "_deprioritised": deprioritised, "_is_lower": is_lower,
+                            }
 
                 in_scope = frequent_lemmas is None or word.lower() in frequent_lemmas
                 if raw_pos in ("noun", "adj") and in_scope:
@@ -335,13 +370,18 @@ def build():
     # sort first — the sense a bare-lemma lookup (no suffix at all) shows
     # as primary should be the everyday one, not e.g. an archaic noun use
     # sitting ahead of the common verb sense purely by file order. Python's
-    # sort is stable, so ties keep encounter order beyond that.
+    # sort is stable, so ties keep encounter order beyond that. Each POS
+    # contributes at most MAX_SENSES_PER_POS of its own accumulated senses.
     dictionary = {}
     for key, by_pos in senses_by_key.items():
-        ordered = sorted(by_pos.values(), key=lambda s: s["_deprioritised"])
+        all_senses = []
+        for pos_senses in by_pos.values():
+            ordered = sorted(pos_senses.values(), key=lambda s: s["_deprioritised"])
+            all_senses.extend(ordered[:MAX_SENSES_PER_POS])
+        all_senses.sort(key=lambda s: s["_deprioritised"])
         dictionary[key] = [
             {"en": GLOSS_OVERRIDES.get((key, s["type"]), s["en"]), "type": s["type"]}
-            for s in ordered
+            for s in all_senses
         ]
 
     return dictionary, word_index, stats

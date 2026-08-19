@@ -72,6 +72,39 @@ const HungarianMorphology = (function () {
         return Array.isArray(dictEntry) ? (dictEntry[0] || null) : dictEntry;
     }
 
+    // Hungarian's low vowel lengthening: a stem ending in short "a"/"e"
+    // lengthens to "á"/"é" before almost every suffix ("intelligencia" ->
+    // "intelligenciával", not "intelligenciaval") — a spelling change, not
+    // just a sound one, so stripping a suffix by string length alone can
+    // leave a remainder ("intelligenciá") that doesn't literally match its
+    // own dictionary headword ("intelligencia"). Confirmed live: the word-
+    // index already resolves these correctly (it's built from Wiktionary's
+    // own pre-inflected declension tables, so the lengthened spelling is
+    // baked in), but analyze()/ladder()'s own string-stripping — needed
+    // for anything outside the word-index's frequency cutoff, or for the
+    // ladder's independent re-derivation — didn't know to shorten back.
+    function delengthen(form) {
+        if (form.endsWith('á')) return form.slice(0, -1) + 'a';
+        if (form.endsWith('é')) return form.slice(0, -1) + 'e';
+        return null;
+    }
+
+    // nominalSense(dictionary[remainder]), with the delengthened spelling
+    // tried as a fallback when the literal remainder isn't a headword.
+    // Returns { lemma, sense } (lemma is whichever spelling actually
+    // resolved — not necessarily `remainder` itself) or null.
+    function resolveNominal(dictionary, remainder) {
+        if (remainder == null) return null;
+        let sense = nominalSense(dictionary[remainder]);
+        if (sense) return { lemma: remainder, sense: sense };
+        const shortened = delengthen(remainder);
+        if (shortened) {
+            sense = nominalSense(dictionary[shortened]);
+            if (sense) return { lemma: shortened, sense: sense };
+        }
+        return null;
+    }
+
     const CASE_LABELS = {
         nom: 'nominative', acc: 'accusative', dat: 'dative',
         ins: 'instrumental', cfi: 'causal-final', tra: 'translative',
@@ -349,6 +382,23 @@ const HungarianMorphology = (function () {
             : null;
     }
 
+    // Hungarian's "-kodik/-kedik/-ködik" derivational suffix attaches to a
+    // verb stem to intensify or add reciprocity to its action ("osztozik"
+    // "to share" -> "osztozkodik" "to share out, to keep sharing with each
+    // other") — productive enough that the derived form usually isn't its
+    // own dictionary headword even when the base verb is. `stem` here has
+    // already had its personal verb ending stripped (VERB_SUFFIXES), so
+    // this only needs to peel the bare "kod/ked/köd" tail, mirroring how
+    // the "-ik" fallback just above it peels a different verb-class tail.
+    const FREQUENTATIVE_TAILS = ['kod', 'ked', 'köd'];
+    function stripFrequentative(stem) {
+        for (const tail of FREQUENTATIVE_TAILS) {
+            const shortened = strip(stem, tail);
+            if (shortened !== null) return shortened;
+        }
+        return null;
+    }
+
     // "my house" / "our friends" / etc, from a POSSESSIVE_SUFFIXES match.
     function describePossessive(person, ownerNumber, possessedNumber) {
         const owner = { 1: { sg: 'my', pl: 'our' }, 2: { sg: 'your', pl: 'your (pl.)' },
@@ -545,13 +595,13 @@ const HungarianMorphology = (function () {
             const caseWhy = caseSuffixWhy(suffix, caseCode);
             if (caseWhy) caseBreakdown.why = caseWhy;
 
-            const remainderSense = nominalSense(dictionary[remainder]);
-            if (remainderSense && matches(remainder)) {
-                const plainGloss = gloss(remainderSense);
-                const base = withArticle(plainGloss, remainderSense.type);
+            const resolved = resolveNominal(dictionary, remainder);
+            if (resolved && matches(resolved.lemma)) {
+                const plainGloss = gloss(resolved.sense);
+                const base = withArticle(plainGloss, resolved.sense.type);
                 return {
                     chain: [
-                        { form: remainder, translation: plainGloss },
+                        { form: resolved.lemma, translation: plainGloss },
                         { form: word, translation: prep ? prep + ' ' + base : base + ' (' + caseName(caseCode) + ')' }
                     ],
                     breakdown: [caseBreakdown]
@@ -589,13 +639,13 @@ const HungarianMorphology = (function () {
             // correctly but showed no breakdown at all.
             for (const plSuffix of PLURAL_SUFFIXES) {
                 const deeper = strip(remainder, plSuffix);
-                const deeperSense = deeper !== null ? nominalSense(dictionary[deeper]) : null;
-                if (!deeperSense || !matches(deeper)) continue;
-                const base = gloss(deeperSense);
+                const deeperResolved = resolveNominal(dictionary, deeper);
+                if (!deeperResolved || !matches(deeperResolved.lemma)) continue;
+                const base = gloss(deeperResolved.sense);
                 const pluralPhrase = naivePluralize(base);
                 return {
                     chain: [
-                        { form: deeper, translation: base },
+                        { form: deeperResolved.lemma, translation: base },
                         { form: remainder, translation: pluralPhrase },
                         { form: word, translation: prep ? prep + ' ' + pluralPhrase : pluralPhrase + ' (' + caseName(caseCode) + ')' }
                     ],
@@ -610,13 +660,13 @@ const HungarianMorphology = (function () {
             // exactly what the resolved reading actually found.
             for (const [possSuffix, person, ownerNumber, possessedNumber] of POSSESSIVE_SUFFIXES) {
                 const deeper = strip(remainder, possSuffix);
-                const deeperSense = deeper !== null ? nominalSense(dictionary[deeper]) : null;
-                if (!deeperSense || !matches(deeper)) continue;
-                const base = gloss(deeperSense);
+                const deeperResolved = resolveNominal(dictionary, deeper);
+                if (!deeperResolved || !matches(deeperResolved.lemma)) continue;
+                const base = gloss(deeperResolved.sense);
                 const possPhrase = possessivePhrase(base, person, ownerNumber, possessedNumber);
                 return {
                     chain: [
-                        { form: deeper, translation: base },
+                        { form: deeperResolved.lemma, translation: base },
                         { form: remainder, translation: possPhrase },
                         { form: word, translation: prep ? prep + ' ' + possPhrase : possPhrase + ' (' + caseName(caseCode) + ')' }
                     ],
@@ -627,12 +677,12 @@ const HungarianMorphology = (function () {
 
         for (const [suffix, person, ownerNumber, possessedNumber] of POSSESSIVE_SUFFIXES) {
             const remainder = strip(word, suffix);
-            const sense = remainder !== null ? nominalSense(dictionary[remainder]) : null;
-            if (!sense || !matches(remainder)) continue;
-            const base = gloss(sense);
+            const resolved = resolveNominal(dictionary, remainder);
+            if (!resolved || !matches(resolved.lemma)) continue;
+            const base = gloss(resolved.sense);
             return {
                 chain: [
-                    { form: remainder, translation: base },
+                    { form: resolved.lemma, translation: base },
                     { form: word, translation: possessivePhrase(base, person, ownerNumber, possessedNumber) }
                 ],
                 breakdown: splitPossessiveSuffix(suffix, person, ownerNumber, possessedNumber)
@@ -647,12 +697,12 @@ const HungarianMorphology = (function () {
         // to show.
         for (const suffix of PLURAL_SUFFIXES) {
             const remainder = strip(word, suffix);
-            const sense = remainder !== null ? nominalSense(dictionary[remainder]) : null;
-            if (!sense || !matches(remainder)) continue;
-            const base = gloss(sense);
+            const resolved = resolveNominal(dictionary, remainder);
+            if (!resolved || !matches(resolved.lemma)) continue;
+            const base = gloss(resolved.sense);
             return {
                 chain: [
-                    { form: remainder, translation: base },
+                    { form: resolved.lemma, translation: base },
                     { form: word, translation: naivePluralize(base) }
                 ],
                 breakdown: [{ suffix: suffix, label: 'plural' }]
@@ -743,6 +793,22 @@ const HungarianMorphology = (function () {
             return true;
         }
 
+        // A "-kodik/-kedik/-ködik"-derived verb whose exact form isn't its
+        // own dictionary headword ("osztozkodik" isn't listed even though
+        // "osztozik" is) — same reconstruct-and-borrow approach as
+        // addPrefixedVerb above, just for a suffix instead of a prefix.
+        function addFrequentativeVerb(lemma, baseSense, analysisText) {
+            const key = lemma + '|' + analysisText;
+            if (seen.has(key)) return true;
+            seen.add(key);
+            results.push({
+                lemma: lemma, pos: 'verb',
+                translation: baseSense.en + ' (mutually, with each other)',
+                analysis: analysisText
+            });
+            return true;
+        }
+
         // 0. suppletive verbs — checked first since these can't be
         // reached by stripping a suffix off the dictionary lemma at all
         const irregular = IRREGULAR_VERBS[word];
@@ -766,9 +832,9 @@ const HungarianMorphology = (function () {
         // "házam" is already in word-index as ház + possessive 1sg).
         function resolveRemainder(remainder, caseLabel) {
             let hit = false;
-            const sense = nominalSense(dictionary[remainder]);
-            if (sense) {
-                hit = addFromLemma(remainder, sense, caseLabel) || hit;
+            const resolved = resolveNominal(dictionary, remainder);
+            if (resolved) {
+                hit = addFromLemma(resolved.lemma, resolved.sense, caseLabel) || hit;
             }
             // a.person required — this branch exists to catch a possessive
             // form stacked under a case ("házamban" = "házam" + "-ban";
@@ -834,6 +900,18 @@ const HungarianMorphology = (function () {
                         addPrefixedVerb(pfx.prefix, pfx.sense, pfxIk, label);
                     }
                 }
+
+                // ...or a "-kodik/-kedik/-ködik" derivational tail
+                // ("osztozkodnak" strips "-nak" to "osztozkod", which
+                // isn't a headword itself, but peeling "-kod" too leaves
+                // "osztoz", whose "-ik" form "osztozik" is).
+                const freqStem = stripFrequentative(remainder);
+                if (freqStem) {
+                    const freqSense = verbSense(dictionary[freqStem]) || verbSense(dictionary[freqStem + 'ik']);
+                    if (freqSense) {
+                        addFrequentativeVerb(remainder + 'ik', freqSense, label);
+                    }
+                }
             }
         }
 
@@ -847,9 +925,9 @@ const HungarianMorphology = (function () {
             // ("házakban" = ház + plural + inessive)
             for (const plSuffix of PLURAL_SUFFIXES) {
                 const deeper = strip(remainder, plSuffix);
-                const deeperSense = deeper !== null ? nominalSense(dictionary[deeper]) : null;
-                if (deeperSense) {
-                    addFromLemma(deeper, deeperSense, caseLabel + ', plural');
+                const deeperResolved = resolveNominal(dictionary, deeper);
+                if (deeperResolved) {
+                    addFromLemma(deeperResolved.lemma, deeperResolved.sense, caseLabel + ', plural');
                 }
             }
             // ...or a possessive suffix under the case suffix, for a
@@ -859,9 +937,9 @@ const HungarianMorphology = (function () {
             // pre-baked but "eredmény" the lemma still is)
             for (const [possSuffix, person, ownerNumber, possessedNumber] of POSSESSIVE_SUFFIXES) {
                 const deeper = strip(remainder, possSuffix);
-                const deeperSense = deeper !== null ? nominalSense(dictionary[deeper]) : null;
-                if (deeperSense) {
-                    addFromLemma(deeper, deeperSense,
+                const deeperResolved = resolveNominal(dictionary, deeper);
+                if (deeperResolved) {
+                    addFromLemma(deeperResolved.lemma, deeperResolved.sense,
                         describePossessive(person, ownerNumber, possessedNumber) + ', ' + caseLabel);
                 }
             }
@@ -871,9 +949,9 @@ const HungarianMorphology = (function () {
         // static index's frequency cutoff
         for (const [suffix, person, ownerNumber, possessedNumber] of POSSESSIVE_SUFFIXES) {
             const remainder = strip(word, suffix);
-            const sense = remainder !== null ? nominalSense(dictionary[remainder]) : null;
-            if (!sense) continue;
-            addFromLemma(remainder, sense, describePossessive(person, ownerNumber, possessedNumber));
+            const resolved = resolveNominal(dictionary, remainder);
+            if (!resolved) continue;
+            addFromLemma(resolved.lemma, resolved.sense, describePossessive(person, ownerNumber, possessedNumber));
         }
 
         // 4. plural marker alone — nouns mainly, but pronouns/determiners
@@ -885,9 +963,9 @@ const HungarianMorphology = (function () {
         // as one reading instead of showing as two near-identical ones.
         for (const suffix of PLURAL_SUFFIXES) {
             const remainder = strip(word, suffix);
-            const sense = remainder !== null ? nominalSense(dictionary[remainder]) : null;
-            if (sense) {
-                addFromLemma(remainder, sense, 'nominative, plural');
+            const resolved = resolveNominal(dictionary, remainder);
+            if (resolved) {
+                addFromLemma(resolved.lemma, resolved.sense, 'nominative, plural');
             }
         }
 
@@ -951,3 +1029,18 @@ const HungarianMorphology = (function () {
 //   - the noun -> adjective "-i" suffix ("kiértékelés" -> "kiértékelési",
 //     "the evaluation's") isn't in POSSESSIVE_SUFFIXES or CASE_SUFFIXES
 //     since it's neither — a third suffix category not yet modelled
+//   - low vowel lengthening (delengthen()/resolveNominal(), 2026-08-19
+//     follow-up) only tries ONE step back (á->a, é->e) on the immediate
+//     remainder — covers "intelligenciával" but not a lengthened stem
+//     buried under two stacked suffixes at once
+//   - the "-kodik/-kedik/-ködik" frequentative/reciprocal verb suffix
+//     (stripFrequentative()/addFrequentativeVerb(), 2026-08-19 follow-up)
+//     is tried only as a last resort after a bare remainder and its "-ik"
+//     form both fail, and only ever composes a generic "(mutually, with
+//     each other)" gloss onto the base verb's translation — right for
+//     "osztozkodik", not guaranteed for every verb this suffix attaches to
+//   - within-POS dictionary sense selection is capped at 3 per (lemma,
+//     pos) (MAX_SENSES_PER_POS in import_hu_dictionary.py, 2026-08-19
+//     follow-up) — a lemma with a 4th genuinely distinct sense under the
+//     same POS still silently drops it, same failure mode "kormány" hit
+//     before the cap was raised from 1
