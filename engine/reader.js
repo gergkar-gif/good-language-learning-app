@@ -67,7 +67,24 @@ function _setSpeakTarget(text) {
     if (ok) btn.setAttribute('data-speak', Speech.sayable(text));
 }
 
-function _renderWordReadings(tappedWord, readings, phrase) {
+// Step-by-step build-up for a stacked Hungarian form ("barátaimmal" ->
+// barát: friend / barátaim: my friends / barátaimmal: with my friends),
+// from HungarianMorphology.ladder() via Lexicon.lookup(). Spanish readings
+// never carry a ladder (Lexicon only attaches one on the Hungarian path),
+// so this renders nothing for the Spanish course — the popup falls back to
+// the plain "from <lemma>" line below instead.
+function _ladderHtml(ladder) {
+    if (!ladder || ladder.length < 2) return '';
+    const steps = ladder.map((step, i) => `
+        <div class="wp-ladder-step${i === ladder.length - 1 ? ' wp-ladder-current' : ''}">
+            <span class="wp-ladder-form">${Reader.escapeHtml(step.form)}</span>
+            <span class="wp-ladder-en">${Reader.escapeHtml(step.translation)}</span>
+        </div>
+    `).join('');
+    return `<div class="wp-ladder">${steps}</div>`;
+}
+
+function _renderWordReadings(tappedWord, readings, phrase, ladder) {
     const body = document.getElementById('popup-body');
     const analysisEl = document.getElementById('popup-analysis');
 
@@ -102,10 +119,19 @@ function _renderWordReadings(tappedWord, readings, phrase) {
     if (phrase) {
         html += `<p class="wp-alts-title" style="margin-top:16px">${Reader.escapeHtml(tappedWord)} on its own</p>`;
     }
-    if (primary.lemma.toLowerCase() !== String(tappedWord).toLowerCase()) {
-        html += `<p class="wp-lemma">from <strong>${Reader.escapeHtml(primary.lemma)}</strong></p>`;
+    const ladderHtml = _ladderHtml(ladder);
+    if (ladderHtml) {
+        // The ladder's own last row already gives the tapped form's actual
+        // contextual meaning ("with my friends") — a bare-lemma .wp-meaning
+        // line under it ("friend") would just repeat the first row instead
+        // of adding anything.
+        html += ladderHtml;
+    } else {
+        if (primary.lemma.toLowerCase() !== String(tappedWord).toLowerCase()) {
+            html += `<p class="wp-lemma">from <strong>${Reader.escapeHtml(primary.lemma)}</strong></p>`;
+        }
+        html += `<p class="wp-meaning">${Reader.escapeHtml(primary.translation || '— no translation available —')}</p>`;
     }
-    html += `<p class="wp-meaning">${Reader.escapeHtml(primary.translation || '— no translation available —')}</p>`;
 
     if (readings.length > 1) {
         html += '<div class="wp-alts"><p class="wp-alts-title">Other readings</p>';
@@ -140,8 +166,9 @@ async function showWord(spanish, contextTokens, tokenIndex) {
     }
 
     const phrase = Lexicon.findPhrase(contextTokens, tokenIndex);
-    const readings = Lexicon.lookup(spanish).readings;
-    _renderWordReadings(spanish, readings, phrase);
+    const lookup = Lexicon.lookup(spanish);
+    const readings = lookup.readings;
+    _renderWordReadings(spanish, readings, phrase, lookup.ladder);
 
     // The deck stores dictionary forms, so a tapped "días" is saved as "día".
     currentWord = readings.length

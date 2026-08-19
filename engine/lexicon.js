@@ -91,6 +91,40 @@ const Lexicon = (function () {
         return _loadPromise;
     }
 
+    // Runtime twin of build-manifest.py's short_gloss(), used there only
+    // for pre-built Parlour Decks. This is for every other path a word
+    // reaches an SRS/Deck card from — chiefly tapping it in the Reader —
+    // where the raw dictionary gloss ("to hang (to cause something to be
+    // suspended, as from a hook, hanger or the like)") would otherwise
+    // ride straight onto the card. The Reader popup itself deliberately
+    // keeps the full gloss — see showWord()/​_renderWordReadings() in
+    // reader.js — since a learner who just tapped a word has room for the
+    // detail; a review card testing recall doesn't.
+    function stripBalanced(text, openCh, closeCh) {
+        let out = '', depth = 0;
+        for (const ch of text) {
+            if (ch === openCh) depth++;
+            else if (ch === closeCh) { if (depth > 0) depth--; }
+            else if (depth === 0) out += ch;
+        }
+        return out;
+    }
+
+    function shortGloss(text) {
+        let first = String(text || '').split(';')[0];
+        first = stripBalanced(first, '(', ')');
+        first = stripBalanced(first, '[', ']');
+        first = first.replace(/^(comparative|superlative|diminutive|augmentative)\s+of\s+[^:]*:\s*/i, '');
+        first = first.replace(/\s+/g, ' ').replace(/^[\s,]+|[\s,]+$/g, '');
+        if (first.length > 56) {
+            const truncated = first.slice(0, 56);
+            const cut = truncated.lastIndexOf(', ');
+            first = (cut > 20 ? truncated.slice(0, cut) : truncated.slice(0, 53))
+                .replace(/[\s,]+$/, '') + '…';
+        }
+        return first;
+    }
+
     function normalise(word) {
         return String(word || '').toLowerCase().replace(/[.,!?¡¿;:"'()]/g, '').trim();
     }
@@ -207,7 +241,8 @@ const Lexicon = (function () {
         }
 
         readings.sort((a, b) => rankOf(a) - rankOf(b));
-        return { word: word, readings: readings };
+        const ladder = (typeof HungarianMorphology !== 'undefined') ? HungarianMorphology.ladder(key, _dictionary, _wordIndex) : [];
+        return { word: word, readings: readings, ladder: ladder };
     }
 
     function lookup(word) {
@@ -424,6 +459,7 @@ const Lexicon = (function () {
     return {
         load: load, lookup: lookup, isLoaded: isLoaded, article: article,
         withArticle: withArticle, frequencyRank: frequencyRank,
-        define: define, findPhrase: findPhrase, search: search
+        define: define, findPhrase: findPhrase, search: search,
+        shortGloss: shortGloss
     };
 })();

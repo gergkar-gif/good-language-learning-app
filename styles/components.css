@@ -1493,6 +1493,48 @@
 
 .wp-lemma strong { color: var(--primary); }
 
+/* Hungarian word-tap popup only — the step-by-step build-up of a stacked
+   form (barát -> barátaim -> barátaimmal), from HungarianMorphology.ladder()
+   via engine/reader.js's _ladderHtml(). Replaces the plain .wp-lemma "from
+   X" line when a ladder is available. */
+.wp-ladder {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 8px 12px;
+  margin-bottom: 12px;
+}
+
+.wp-ladder-step {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 4px 0;
+}
+
+.wp-ladder-step + .wp-ladder-step {
+  border-top: 1px solid var(--border);
+}
+
+.wp-ladder-form {
+  font-weight: 600;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.wp-ladder-en {
+  color: var(--muted);
+  font-size: 13px;
+  text-align: right;
+}
+
+.wp-ladder-current .wp-ladder-form,
+.wp-ladder-current .wp-ladder-en {
+  color: var(--primary);
+  font-weight: 700;
+}
+
 .wp-meaning {
   font-size: 20px;
   font-weight: 500;

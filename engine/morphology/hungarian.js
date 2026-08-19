@@ -37,6 +37,16 @@ const HungarianMorphology = (function () {
         ela: 'elative ("out of")', del: 'delative ("off/about")', abl: 'ablative ("from")'
     };
 
+    // The English preposition a case roughly translates as, for building a
+    // plain-English phrase in the popup's step-by-step breakdown (see
+    // ladder() below) — plainer than CASE_LABELS' linguistic names, which
+    // are for the one-line "noun · inessive" summary instead.
+    const CASE_PREPOSITION = {
+        dat: 'to', ins: 'with', cfi: 'for', tra: 'into', ter: 'up to',
+        esf: 'as', ine: 'in', sup: 'on', ade: 'at', ill: 'into',
+        sub: 'onto', all: 'to', ela: 'out of', del: 'off', abl: 'from'
+    };
+
     // Longest-first within each case so "-ként" isn't shadowed by a
     // shorter suffix that happens to be a substring of it.
     const CASE_SUFFIXES = [
@@ -245,6 +255,107 @@ const HungarianMorphology = (function () {
         return bits.join(', ');
     }
 
+    // Crude English pluralization for a ladder phrase's noun ("friend" ->
+    // "friends"). Good enough for the common case; irregular English
+    // plurals (child/children) are a known, accepted miss rather than a
+    // reason to ship a full pluralization table for what's a teaching aid.
+    function naivePluralize(noun) {
+        if (/[sxz]$/i.test(noun) || /[cs]h$/i.test(noun)) return noun + 'es';
+        if (/[^aeiou]y$/i.test(noun)) return noun.slice(0, -1) + 'ies';
+        return noun + 's';
+    }
+
+    // "my friend" / "our friends" / etc, as a natural phrase rather than
+    // describePossessive()'s compact "my, plural" label — used by ladder()
+    // below, where the point is to read like English, not like a tag.
+    function possessivePhrase(gloss, person, ownerNumber, possessedNumber) {
+        const owner = { 1: { sg: 'my', pl: 'our' }, 2: { sg: 'your', pl: 'your' },
+            3: { sg: 'his/her', pl: 'their' } }[person][ownerNumber];
+        const noun = possessedNumber === 'pl' ? naivePluralize(gloss) : gloss;
+        return owner + ' ' + noun;
+    }
+
+    function caseName(caseCode) { return CASE_LABELS[caseCode] || caseCode; }
+
+    /**
+     * Step-by-step build-up of a Hungarian word for the Reader popup —
+     * "barátaimmal" -> [barát: friend, barátaim: my friends, barátaimmal:
+     * with my friends] — so a learner sees how the pieces stack rather
+     * than just a compact "my, plural, instrumental" label.
+     *
+     * Deliberately traces the SAME decomposition analyze() actually found
+     * (same case/possessive tables, same order) rather than independently
+     * generating forms — every step shown is a form the resolution
+     * genuinely passed through, not a synthesized comparison that could be
+     * wrong about which suffix allomorph the word actually needs. Returns
+     * [] when there's nothing to stack (the word already is the lemma, or
+     * it's a verb form — conjugation doesn't stack the way case/possessive
+     * do, so there's no ladder worth showing).
+     */
+    function ladder(word, dictionary, wordIndex) {
+        if (!word || dictionary[word]) return [];
+        const gloss = lemma => (typeof Lexicon !== 'undefined' && Lexicon.shortGloss)
+            ? Lexicon.shortGloss(dictionary[lemma].en) : dictionary[lemma].en;
+        // "to hotel" reads wrong in English; "with my friends" doesn't need
+        // it since the possessive already makes the noun definite — only
+        // the bare-noun-plus-case branch needs an article added.
+        const withArticle = (base, type) => type === 'noun' ? 'the ' + base : base;
+
+        for (const [suffix, caseCode] of CASE_SUFFIXES) {
+            const remainder = strip(word, suffix);
+            if (remainder === null) continue;
+            const prep = CASE_PREPOSITION[caseCode];
+
+            if (dictionary[remainder]) {
+                const base = withArticle(gloss(remainder), dictionary[remainder].type);
+                return [
+                    { form: remainder, translation: gloss(remainder) },
+                    { form: word, translation: prep ? prep + ' ' + base : base + ' (' + caseName(caseCode) + ')' }
+                ];
+            }
+
+            const indexHit = (wordIndex[remainder] || [])[0];
+            if (indexHit && dictionary[indexHit.lemma]) {
+                const base = gloss(indexHit.lemma);
+                const possPhrase = possessivePhrase(base, indexHit.person, indexHit.ownerNumber, indexHit.number);
+                return [
+                    { form: indexHit.lemma, translation: base },
+                    { form: remainder, translation: possPhrase },
+                    { form: word, translation: prep ? prep + ' ' + possPhrase : possPhrase + ' (' + caseName(caseCode) + ')' }
+                ];
+            }
+
+            // One layer deeper: a possessive suffix under the case, for a
+            // lemma outside the static index's frequency cutoff
+            // ("eredményének" = eredmény + possessive 3sg + dative) — same
+            // reach as analyze()'s own deeper chain, so the ladder covers
+            // exactly what the resolved reading actually found.
+            for (const [possSuffix, person, ownerNumber, possessedNumber] of POSSESSIVE_SUFFIXES) {
+                const deeper = strip(remainder, possSuffix);
+                if (deeper === null || !dictionary[deeper]) continue;
+                const base = gloss(deeper);
+                const possPhrase = possessivePhrase(base, person, ownerNumber, possessedNumber);
+                return [
+                    { form: deeper, translation: base },
+                    { form: remainder, translation: possPhrase },
+                    { form: word, translation: prep ? prep + ' ' + possPhrase : possPhrase + ' (' + caseName(caseCode) + ')' }
+                ];
+            }
+        }
+
+        for (const [suffix, person, ownerNumber, possessedNumber] of POSSESSIVE_SUFFIXES) {
+            const remainder = strip(word, suffix);
+            if (remainder === null || !dictionary[remainder]) continue;
+            const base = gloss(remainder);
+            return [
+                { form: remainder, translation: base },
+                { form: word, translation: possessivePhrase(base, person, ownerNumber, possessedNumber) }
+            ];
+        }
+
+        return [];
+    }
+
     /**
      * Try to resolve a Hungarian surface form the dictionary and static
      * word-index didn't recognise directly. dictionary and wordIndex are
@@ -366,7 +477,7 @@ const HungarianMorphology = (function () {
         return results;
     }
 
-    return { analyze: analyze, describe: describe };
+    return { analyze: analyze, describe: describe, ladder: ladder };
 })();
 
 // Known gaps (v1, deliberately deferred rather than blocking the first

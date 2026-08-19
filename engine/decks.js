@@ -71,12 +71,20 @@ const Decks = (function () {
     // to it by lemma, so a word belonging to a lesson, a topic and a frequency
     // band is not written out three times. A My Deck carries its own words
     // directly, since it has no shared table to refer into.
+    // Every deck view (My Deck, custom decks, Parlour catalogue decks) reads
+    // its word list through here, which makes this the one place to shorten
+    // a translation for display — see Lexicon.shortGloss()'s own comment for
+    // why: a card wants a translation, not a dictionary entry. Returns a
+    // fresh array rather than mutating deck.words in place, since that's the
+    // learner's actual saved data.
     function wordsOf(deck) {
-        if (deck.words) return deck.words;
+        if (deck.words) {
+            return deck.words.map(w => Object.assign({}, w, { translation: Lexicon.shortGloss(w.translation) }));
+        }
         const table = (catalogue && catalogue.words) || {};
         return (deck.lemmas || []).map(lemma => {
             const entry = table[lemma] || {};
-            return { lemma: lemma, translation: entry.en || '', pos: entry.pos || 'unknown' };
+            return { lemma: lemma, translation: Lexicon.shortGloss(entry.en || ''), pos: entry.pos || 'unknown' };
         });
     }
 
@@ -376,7 +384,11 @@ const Decks = (function () {
             if (!current || current.value.trim() !== q) return;
         }
 
-        const results = Lexicon.search(q, 8);
+        // Shortened here, once — feeds both the preview text and the
+        // data-editor-add-en attribute the click handler below reads to
+        // build the draft word, so what's added matches what was shown.
+        const results = Lexicon.search(q, 8)
+            .map(r => Object.assign({}, r, { translation: Lexicon.shortGloss(r.translation) }));
         const already = new Set(draft.words.map(w => w.lemma));
 
         host.innerHTML = `
@@ -426,7 +438,7 @@ const Decks = (function () {
         const rows = draft.words.map(w => `
             <li class="dk-word">
                 <span class="dk-word-es">${esc(withArticle(w.lemma))}</span>
-                <span class="dk-word-en">${esc(w.translation || '—')}</span>
+                <span class="dk-word-en">${esc(Lexicon.shortGloss(w.translation) || '—')}</span>
                 <button class="dk-word-remove" data-editor-remove="${esc(w.lemma)}"
                     aria-label="Remove ${esc(w.lemma)}">×</button>
             </li>
@@ -807,7 +819,7 @@ const Decks = (function () {
             <li class="dk-word">
                 <span class="dk-word-es">${esc(withArticle(w.spanish))}${
                     typeof Speech !== 'undefined' ? Speech.button(w.spanish) : ''}</span>
-                <span class="dk-word-en">${esc(w.english)}</span>
+                <span class="dk-word-en">${esc(Lexicon.shortGloss(w.english))}</span>
                 <button class="dk-secondary" data-move-to-review="${esc(w.spanish)}">Back to review</button>
             </li>
         `).join('');

@@ -520,9 +520,11 @@ let reviewExpectedEnglish = '';
 function renderCard() {
     if (!currentReviewCard) return;
 
-    // Live dictionary lookup — fixes cards added before dictionary loaded
+    // Live dictionary lookup — fixes cards added before dictionary loaded.
+    // Shortened either way: a review card tests recall, it isn't the place
+    // for the Reader popup's full dictionary gloss (see Lexicon.shortGloss).
     const liveEntry = Lexicon.define(currentReviewCard.spanish);
-    const displayEnglish = liveEntry ? liveEntry.en : (currentReviewCard.english || '—');
+    const displayEnglish = Lexicon.shortGloss(liveEntry ? liveEntry.en : (currentReviewCard.english || '—'));
     const displayType = liveEntry ? liveEntry.type : (currentReviewCard.type || '');
 
     const englishFirst = reviewDirection === 'en-es';
