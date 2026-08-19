@@ -28,6 +28,50 @@
 const HungarianMorphology = (function () {
     'use strict';
 
+    // Case, possessive and (nominal) plural marking only ever attach to
+    // these parts of speech in Hungarian — never a verb. Without this
+    // guard, a verb whose bare stem happens to be one letter shorter than
+    // its conjugated form ("él" = to live) gets mis-parsed as that stem
+    // plus a case/possessive/plural suffix ("élt" -> "él" + accusative
+    // "-t", rather than "él" + past-tense "-t") purely because the
+    // dictionary lookup succeeded without checking what kind of word it
+    // found. Checked at every nominal-suffix dictionary hit below, in both
+    // analyze() and ladder().
+    const CASEABLE_POS = {
+        noun: 1, pronoun: 1, adjective: 1, numeral: 1, determiner: 1, article: 1,
+        // A closed class of postpositions personally-inflect the same way
+        // ("köztük" = "among them", "belőle" = "out of him/her/it") —
+        // rarer than noun/pronoun inflection but real, not a false match.
+        postposition: 1
+    };
+    function isNominal(entry) { return !!entry && !!CASEABLE_POS[entry.type]; }
+
+    // Dictionary entries are arrays of senses (see import_hu_dictionary.py
+    // — "él" is both noun "edge" and verb "to live", kept as two entries
+    // rather than one arbitrarily discarded). These three pick the ONE
+    // sense a given grammatical context actually wants, rather than every
+    // caller re-deriving "is this the sense I mean" itself:
+    //   nominalSense — for case/possessive/plural suffix contexts, which
+    //     can only ever apply to a nominal sense
+    //   verbSense    — for conjugation-suffix contexts
+    //   anySense     — no grammatical evidence either way (a bare-lemma
+    //     direct hit); takes whichever sense sorted first at build time
+    //     (see that script's docstring on ordering)
+    function nominalSense(dictEntry) {
+        if (!dictEntry) return null;
+        const senses = Array.isArray(dictEntry) ? dictEntry : [dictEntry];
+        return senses.find(isNominal) || null;
+    }
+    function verbSense(dictEntry) {
+        if (!dictEntry) return null;
+        const senses = Array.isArray(dictEntry) ? dictEntry : [dictEntry];
+        return senses.find(s => s.type === 'verb') || null;
+    }
+    function anySense(dictEntry) {
+        if (!dictEntry) return null;
+        return Array.isArray(dictEntry) ? (dictEntry[0] || null) : dictEntry;
+    }
+
     const CASE_LABELS = {
         nom: 'nominative', acc: 'accusative', dat: 'dative',
         ins: 'instrumental', cfi: 'causal-final', tra: 'translative',
@@ -151,7 +195,11 @@ const HungarianMorphology = (function () {
         // and linking-vowel forms are listed for 1pl/2pl/3pl.
         ['tam', 'past', 1, 'sg'], ['tem', 'past', 1, 'sg'],
         ['tál', 'past', 2, 'sg'], ['tél', 'past', 2, 'sg'],
-        ['ott', 'past', 3, 'sg'], ['ett', 'past', 3, 'sg'], ['ött', 'past', 3, 'sg'], ['t', 'past', 3, 'sg'],
+        ['ott', 'past', 3, 'sg'], ['ett', 'past', 3, 'sg'], ['ött', 'past', 3, 'sg'],
+        // bare doubled -tt: long-vowel stems take this instead of the
+        // -ott/-ett/-ött linking vowel ("nő" -> "nőtt", not "nőött";
+        // "fő" -> "főtt", "lő" -> "lőtt")
+        ['tt', 'past', 3, 'sg'], ['t', 'past', 3, 'sg'],
         ['tunk', 'past', 1, 'pl'], ['tünk', 'past', 1, 'pl'],
         ['ottunk', 'past', 1, 'pl'], ['ettünk', 'past', 1, 'pl'], ['öttünk', 'past', 1, 'pl'],
         ['tatok', 'past', 2, 'pl'], ['tetek', 'past', 2, 'pl'],
@@ -225,8 +273,75 @@ const HungarianMorphology = (function () {
         alszanak: ['alszik', 'pres', 3, 'pl'],
         aludtam: ['alszik', 'past', 1, 'sg'], aludtál: ['alszik', 'past', 2, 'sg'],
         aludt: ['alszik', 'past', 3, 'sg'], aludtunk: ['alszik', 'past', 1, 'pl'],
-        aludtatok: ['alszik', 'past', 2, 'pl'], aludtak: ['alszik', 'past', 3, 'pl']
+        aludtatok: ['alszik', 'past', 2, 'pl'], aludtak: ['alszik', 'past', 3, 'pl'],
+
+        // vesz/tesz/hisz/visz/lesz — present tense is regular (handled by
+        // VERB_SUFFIXES stripping), but the past stem shortens irregularly
+        // (vesz -> vett-, not "veszt-"), same treatment as the suppletive
+        // verbs above. 1sg is the same surface form for definite and
+        // indefinite past ("vettem" either way), so only needs one entry;
+        // "meg-" combines with several of these constantly (megvette,
+        // megvettem, megtette) — see stripKnownPrefix() below for why that
+        // still resolves even though these entries only cover the bare form.
+        vettem: ['vesz', 'past', 1, 'sg'], vettél: ['vesz', 'past', 2, 'sg'], vetted: ['vesz', 'past', 2, 'sg'],
+        vett: ['vesz', 'past', 3, 'sg'], vette: ['vesz', 'past', 3, 'sg'],
+        vettünk: ['vesz', 'past', 1, 'pl'], vettük: ['vesz', 'past', 1, 'pl'],
+        vettetek: ['vesz', 'past', 2, 'pl'], vettétek: ['vesz', 'past', 2, 'pl'],
+        vettek: ['vesz', 'past', 3, 'pl'], vették: ['vesz', 'past', 3, 'pl'],
+
+        tettem: ['tesz', 'past', 1, 'sg'], tettél: ['tesz', 'past', 2, 'sg'], tetted: ['tesz', 'past', 2, 'sg'],
+        tett: ['tesz', 'past', 3, 'sg'], tette: ['tesz', 'past', 3, 'sg'],
+        tettünk: ['tesz', 'past', 1, 'pl'], tettük: ['tesz', 'past', 1, 'pl'],
+        tettetek: ['tesz', 'past', 2, 'pl'], tettétek: ['tesz', 'past', 2, 'pl'],
+        tettek: ['tesz', 'past', 3, 'pl'], tették: ['tesz', 'past', 3, 'pl'],
+
+        hittem: ['hisz', 'past', 1, 'sg'], hittél: ['hisz', 'past', 2, 'sg'], hitted: ['hisz', 'past', 2, 'sg'],
+        hitt: ['hisz', 'past', 3, 'sg'], hitte: ['hisz', 'past', 3, 'sg'],
+        hittünk: ['hisz', 'past', 1, 'pl'], hittük: ['hisz', 'past', 1, 'pl'],
+        hittetek: ['hisz', 'past', 2, 'pl'], hittétek: ['hisz', 'past', 2, 'pl'],
+        hittek: ['hisz', 'past', 3, 'pl'], hitték: ['hisz', 'past', 3, 'pl'],
+
+        vittem: ['visz', 'past', 1, 'sg'], vittél: ['visz', 'past', 2, 'sg'], vitted: ['visz', 'past', 2, 'sg'],
+        vitt: ['visz', 'past', 3, 'sg'], vitte: ['visz', 'past', 3, 'sg'],
+        vittünk: ['visz', 'past', 1, 'pl'], vittük: ['visz', 'past', 1, 'pl'],
+        vittetek: ['visz', 'past', 2, 'pl'], vittétek: ['visz', 'past', 2, 'pl'],
+        vittek: ['visz', 'past', 3, 'pl'], vitték: ['visz', 'past', 3, 'pl'],
+
+        // lesz ("to become") is intransitive — no definite conjugation
+        lettem: ['lesz', 'past', 1, 'sg'], lettél: ['lesz', 'past', 2, 'sg'],
+        lett: ['lesz', 'past', 3, 'sg'], lettünk: ['lesz', 'past', 1, 'pl'],
+        lettetek: ['lesz', 'past', 2, 'pl'], lettek: ['lesz', 'past', 3, 'pl']
     };
+
+    // Separable verbal prefixes — fully productive, and change a verb's
+    // meaning in ways too idiomatic to translate mechanically in every
+    // case ("eszik" = to eat, "megeszik" = to eat up/finish eating). Only
+    // the sense is noted here, not a composed translation. Longest-first
+    // so "elő-" isn't shadowed by "el-" matching its own first two letters.
+    const VERB_PREFIXES = [
+        ['vissza', 'back'], ['össze', 'together'],
+        ['meg', 'completive — often "up"/"through"/"done"'],
+        ['elő', 'ahead/forward'], ['után', 'after'],
+        ['el', 'away'], ['ki', 'out'], ['be', 'in'],
+        ['le', 'down'], ['fel', 'up'], ['föl', 'up'],
+        ['át', 'across/through'], ['rá', 'onto'], ['ide', 'here'], ['oda', 'there']
+    ].sort((a, b) => b[0].length - a[0].length);
+
+    // A prefixed verb often isn't its own dictionary headword even though
+    // the bare verb is ("eszik" is listed, "megeszik" usually isn't) — see
+    // the "meg-" fallback in analyze() below, which strips a known prefix
+    // and re-checks the bare stem (including IRREGULAR_VERBS) when the
+    // prefixed form alone doesn't resolve. Requires at least 2 letters left
+    // after the prefix so "el" alone (a real word, "the") isn't mistaken
+    // for "e" + "l".
+    function stripKnownPrefix(word) {
+        for (const [prefix, sense] of VERB_PREFIXES) {
+            if (word.startsWith(prefix) && word.length - prefix.length >= 2) {
+                return { prefix: prefix, sense: sense, stem: word.slice(prefix.length) };
+            }
+        }
+        return null;
+    }
 
     function strip(word, suffix) {
         return word.length > suffix.length && word.endsWith(suffix)
@@ -249,9 +364,20 @@ const HungarianMorphology = (function () {
     // same way.
     function describe(a) {
         const bits = [];
-        if (a.person) bits.push(describePossessive(a.person, a.ownerNumber, a.number));
-        if (a.case) bits.push(CASE_LABELS[a.case] || a.case);
-        else if (!a.person && a.number === 'pl') bits.push('plural');
+        if (a.person) {
+            // describePossessive() already reports possessed-plural itself
+            // ("my, plural") — number here is the possessed noun's number,
+            // not a separate fact to restate.
+            bits.push(describePossessive(a.person, a.ownerNumber, a.number));
+            if (a.case) bits.push(CASE_LABELS[a.case] || a.case);
+        } else {
+            // A plain noun form can be BOTH cased and plural at once
+            // ("házak" = nominative plural) — these aren't mutually
+            // exclusive, so both get reported when both are present
+            // rather than the case silently swallowing the plural.
+            if (a.case) bits.push(CASE_LABELS[a.case] || a.case);
+            if (a.number === 'pl') bits.push('plural');
+        }
         return bits.join(', ');
     }
 
@@ -302,6 +428,38 @@ const HungarianMorphology = (function () {
     // breakdown table's per-suffix row ("-mal" -> "with").
     function caseSuffixLabel(caseCode) { return CASE_PREPOSITION[caseCode] || caseName(caseCode); }
 
+    // Plain-language reason for a verb-suffix allomorph that isn't the
+    // "default" ending — this is what actually makes "nőtt" explainable
+    // rather than just recognisable: a learner who sees the breakdown
+    // table's "-tt" row wants to know why it isn't "-ett", not just that
+    // it means "past, 3rd person". Returns null for the ordinary case,
+    // where there's nothing surprising to explain.
+    function verbSuffixWhy(suffix) {
+        if (suffix === 'tt') {
+            return 'Stems ending in a long vowel double the "t" directly instead of adding a linking vowel.';
+        }
+        if (/^(ott|ett|ött)/.test(suffix)) {
+            return 'A linking vowel (o/e/ö) is inserted so "-t" doesn’t collide with the stem’s own final consonant.';
+        }
+        if (suffix === 'ol' || suffix === 'el' || suffix === 'öl') {
+            return 'Stems ending in a hissing sound (s, sz, z) take "-ol/-el/-öl" here instead of "-sz", which would be awkward to say.';
+        }
+        return null;
+    }
+
+    // Same idea for a case suffix: instrumental/translative assimilate
+    // their "v" to match the stem's final consonant ("ház" + val ->
+    // "házzal", not "házval") — see CASE_SUFFIXES' own generated block
+    // above for how those variants are built. Anything other than the
+    // plain -val/-vel/-vá/-vé form is one of them.
+    const PLAIN_VA_VE = { val: 1, vel: 1, vá: 1, vé: 1 };
+    function caseSuffixWhy(suffix, caseCode) {
+        if ((caseCode === 'ins' || caseCode === 'tra') && !PLAIN_VA_VE[suffix]) {
+            return '-val/-vel (and -vá/-vé) change their "v" to match the sound right before them.';
+        }
+        return null;
+    }
+
     /**
      * Step-by-step build-up of a Hungarian word for the Reader popup.
      * Returns { chain, breakdown }: chain is the cumulative forms
@@ -334,8 +492,11 @@ const HungarianMorphology = (function () {
     function ladder(word, dictionary, wordIndex, targetLemma) {
         const empty = { chain: [], breakdown: [] };
         if (!word || dictionary[word]) return empty;
-        const gloss = lemma => (typeof Lexicon !== 'undefined' && Lexicon.shortGloss)
-            ? Lexicon.shortGloss(dictionary[lemma].en) : dictionary[lemma].en;
+        // sense is an already-resolved nominalSense() object, never a raw
+        // (possibly multi-sense) dictionary entry — same reasoning as
+        // analyze()'s addFromLemma above.
+        const gloss = sense => (typeof Lexicon !== 'undefined' && Lexicon.shortGloss)
+            ? Lexicon.shortGloss(sense.en) : sense.en;
         // "to hotel" reads wrong in English; "with my friends" doesn't need
         // it since the possessive already makes the noun definite — only
         // the bare-noun-plus-case branch needs an article added.
@@ -347,21 +508,31 @@ const HungarianMorphology = (function () {
             if (remainder === null) continue;
             const prep = CASE_PREPOSITION[caseCode];
             const caseBreakdown = { suffix: suffix, label: caseSuffixLabel(caseCode) };
+            const caseWhy = caseSuffixWhy(suffix, caseCode);
+            if (caseWhy) caseBreakdown.why = caseWhy;
 
-            if (dictionary[remainder] && matches(remainder)) {
-                const base = withArticle(gloss(remainder), dictionary[remainder].type);
+            const remainderSense = nominalSense(dictionary[remainder]);
+            if (remainderSense && matches(remainder)) {
+                const plainGloss = gloss(remainderSense);
+                const base = withArticle(plainGloss, remainderSense.type);
                 return {
                     chain: [
-                        { form: remainder, translation: gloss(remainder) },
+                        { form: remainder, translation: plainGloss },
                         { form: word, translation: prep ? prep + ' ' + base : base + ' (' + caseName(caseCode) + ')' }
                     ],
                     breakdown: [caseBreakdown]
                 };
             }
 
-            const indexHit = (wordIndex[remainder] || []).find(a => dictionary[a.lemma] && matches(a.lemma));
+            // a.person is required — this branch assumes a possessive form
+            // (feeds possessivePhrase() below), and a plain case-only
+            // word-index entry for the same remainder (no .person) would
+            // otherwise match first and crash possessivePhrase on a
+            // missing person.
+            const indexHit = (wordIndex[remainder] || [])
+                .find(a => a.person && nominalSense(dictionary[a.lemma]) && matches(a.lemma));
             if (indexHit) {
-                const base = gloss(indexHit.lemma);
+                const base = gloss(nominalSense(dictionary[indexHit.lemma]));
                 const possPhrase = possessivePhrase(base, indexHit.person, indexHit.ownerNumber, indexHit.number);
                 return {
                     chain: [
@@ -382,8 +553,9 @@ const HungarianMorphology = (function () {
             // exactly what the resolved reading actually found.
             for (const [possSuffix, person, ownerNumber, possessedNumber] of POSSESSIVE_SUFFIXES) {
                 const deeper = strip(remainder, possSuffix);
-                if (deeper === null || !dictionary[deeper] || !matches(deeper)) continue;
-                const base = gloss(deeper);
+                const deeperSense = deeper !== null ? nominalSense(dictionary[deeper]) : null;
+                if (!deeperSense || !matches(deeper)) continue;
+                const base = gloss(deeperSense);
                 const possPhrase = possessivePhrase(base, person, ownerNumber, possessedNumber);
                 return {
                     chain: [
@@ -398,14 +570,66 @@ const HungarianMorphology = (function () {
 
         for (const [suffix, person, ownerNumber, possessedNumber] of POSSESSIVE_SUFFIXES) {
             const remainder = strip(word, suffix);
-            if (remainder === null || !dictionary[remainder] || !matches(remainder)) continue;
-            const base = gloss(remainder);
+            const sense = remainder !== null ? nominalSense(dictionary[remainder]) : null;
+            if (!sense || !matches(remainder)) continue;
+            const base = gloss(sense);
             return {
                 chain: [
                     { form: remainder, translation: base },
                     { form: word, translation: possessivePhrase(base, person, ownerNumber, possessedNumber) }
                 ],
                 breakdown: splitPossessiveSuffix(suffix, person, ownerNumber, possessedNumber)
+            };
+        }
+
+        // Plain plural, no case or possessive ("aratók" = arató + -k,
+        // "reapers") — the simplest stack there is, but easy to miss since
+        // it doesn't go through either loop above; without this, every
+        // plain plural noun/adjective/pronoun fell through to no ladder
+        // at all despite being exactly the kind of stacking this exists
+        // to show.
+        for (const suffix of PLURAL_SUFFIXES) {
+            const remainder = strip(word, suffix);
+            const sense = remainder !== null ? nominalSense(dictionary[remainder]) : null;
+            if (!sense || !matches(remainder)) continue;
+            const base = gloss(sense);
+            return {
+                chain: [
+                    { form: remainder, translation: base },
+                    { form: word, translation: naivePluralize(base) }
+                ],
+                breakdown: [{ suffix: suffix, label: 'plural' }]
+            };
+        }
+
+        // Verb conjugation ("nőtt" = nő + -tt, past tense) — this is the
+        // case that actually motivated adding "why" notes at all: a
+        // suffix like "-tt" or "-ott" isn't obvious from the label alone,
+        // and a learner asking "why is it nőtt, not nőett?" deserves a
+        // real answer, not just "past tense". Skipped for IRREGULAR_VERBS
+        // matches on purpose — a suppletive stem (van -> voltam) has no
+        // clean stem+ending split worth drawing a chain for.
+        for (const [suffix, tense, person, number] of VERB_SUFFIXES) {
+            const remainder = strip(word, suffix);
+            if (remainder === null) continue;
+            let sense = verbSense(dictionary[remainder]);
+            let lemma = remainder;
+            if (!sense) {
+                sense = verbSense(dictionary[remainder + 'ik']);
+                lemma = remainder + 'ik';
+            }
+            if (!sense || !matches(lemma)) continue;
+            const base = gloss(sense);
+            const label = [TENSE_LABELS[tense], PERSON_LABELS[person][number]].join(', ');
+            const breakdown = { suffix: suffix, label: label };
+            const why = verbSuffixWhy(suffix);
+            if (why) breakdown.why = why;
+            return {
+                chain: [
+                    { form: lemma, translation: base },
+                    { form: word, translation: base + ' (' + label + ')' }
+                ],
+                breakdown: [breakdown]
             };
         }
 
@@ -426,15 +650,38 @@ const HungarianMorphology = (function () {
         const results = [];
         const seen = new Set();
 
-        function addFromLemma(lemma, pos, analysisText) {
-            const entry = dictionary[lemma];
-            if (!entry) return false;
+        // sense is an already-resolved single sense object (from
+        // nominalSense()/verbSense()/anySense() above) — never a raw
+        // dictionary entry, so this never has to guess which of a
+        // multi-sense lemma's readings applies; the caller already decided
+        // that from grammatical context (case suffix -> nominal sense,
+        // conjugation suffix -> verb sense).
+        function addFromLemma(lemma, sense, analysisText) {
+            if (!sense) return false;
+            const key = lemma + '|' + analysisText;
+            if (seen.has(key)) return true;
+            seen.add(key);
+            results.push({ lemma: lemma, pos: sense.type, translation: sense.en, analysis: analysisText });
+            return true;
+        }
+
+        // A prefixed verb whose exact prefixed form isn't its own
+        // dictionary headword ("megeszik" isn't listed even though "eszik"
+        // is) — reconstructs the citation form (prefix + baseLemma) and
+        // borrows the base verb's translation, noting the prefix's rough
+        // sense separately rather than composing a translation that could
+        // be wrong about exactly how the prefix shifted the meaning.
+        function addPrefixedVerb(prefix, sense, baseLemma, analysisText) {
+            const baseSense = verbSense(dictionary[baseLemma]);
+            if (!baseSense) return false;
+            const lemma = prefix + baseLemma;
             const key = lemma + '|' + analysisText;
             if (seen.has(key)) return true;
             seen.add(key);
             results.push({
-                lemma: lemma, pos: entry.type || pos || '',
-                translation: entry.en, analysis: analysisText
+                lemma: lemma, pos: 'verb',
+                translation: baseSense.en + ' (+ ' + prefix + '-: ' + sense + ')',
+                analysis: analysisText
             });
             return true;
         }
@@ -444,7 +691,16 @@ const HungarianMorphology = (function () {
         const irregular = IRREGULAR_VERBS[word];
         if (irregular) {
             const [lemma, tense, person, number] = irregular;
-            addFromLemma(lemma, 'verb', [TENSE_LABELS[tense], PERSON_LABELS[person][number]].join(', '));
+            addFromLemma(lemma, verbSense(dictionary[lemma]),
+                [TENSE_LABELS[tense], PERSON_LABELS[person][number]].join(', '));
+        } else {
+            const pfx = stripKnownPrefix(word);
+            const stemIrregular = pfx && IRREGULAR_VERBS[pfx.stem];
+            if (stemIrregular) {
+                const [baseLemma, tense, person, number] = stemIrregular;
+                addPrefixedVerb(pfx.prefix, pfx.sense, baseLemma,
+                    [TENSE_LABELS[tense], PERSON_LABELS[person][number]].join(', '));
+            }
         }
 
         // A remainder left after stripping a case suffix — check whether
@@ -453,19 +709,78 @@ const HungarianMorphology = (function () {
         // "házam" is already in word-index as ház + possessive 1sg).
         function resolveRemainder(remainder, caseLabel) {
             let hit = false;
-            if (dictionary[remainder]) {
-                hit = addFromLemma(remainder, dictionary[remainder].type, caseLabel) || hit;
+            const sense = nominalSense(dictionary[remainder]);
+            if (sense) {
+                hit = addFromLemma(remainder, sense, caseLabel) || hit;
             }
+            // a.person required — this branch exists to catch a possessive
+            // form stacked under a case ("házamban" = "házam" + "-ban";
+            // "házam" carries a.person). A plain case-only word-index entry
+            // for the same remainder ("nőt" = "nő" + accusative) isn't a
+            // possessive form at all — accepting it here would read "nőtt"
+            // as "nő" plus a nonsensical double accusative instead of
+            // giving the past-tense verb reading ("nő" the verb, "to grow")
+            // a chance to be found instead.
             (wordIndex[remainder] || []).forEach(a => {
-                const bits = [];
-                if (a.person) bits.push(describePossessive(a.person, a.ownerNumber, a.number));
+                if (!a.person) return;
+                const aSense = nominalSense(dictionary[a.lemma]);
+                if (!aSense) return;
+                const bits = [describePossessive(a.person, a.ownerNumber, a.number)];
                 if (caseLabel) bits.push(caseLabel);
-                hit = addFromLemma(a.lemma, a.pos, bits.join(', ') || describe(a)) || hit;
+                hit = addFromLemma(a.lemma, aSense, bits.join(', ')) || hit;
             });
             return hit;
         }
 
-        // 1. case suffix, optionally stacked over a possessive/plural form
+        // 1. verb personal ending, present or past — tried before any
+        // nominal suffix. Where a bare stem is ambiguous between a nominal
+        // case reading and a verb conjugation reading of the SAME lemma
+        // spelling ("élt" = "él" the noun "edge" + accusative "-t", or
+        // "él" the verb "to live" + past "-t" — both grammatically real),
+        // there's no per-sense frequency data to break the tie with, only
+        // lemma-level frequency, which is identical either way. Trying
+        // verb suffixes first — so a verb reading is already in `results`
+        // before a same-lemma case reading could out-rank it on a tied
+        // score — resolved every such collision found while building this
+        // ("nőtt", "élt", "örült"): the verb sense was the one a learner
+        // actually needed. "-ik" is tried as an alternate lemma form since
+        // many verb dictionary headwords include it (dolgozik) while the
+        // stem alone (dolgoz) is not a separate entry.
+        for (const [suffix, tense, person, number] of VERB_SUFFIXES) {
+            const remainder = strip(word, suffix);
+            if (remainder === null) continue;
+            const label = [TENSE_LABELS[tense], PERSON_LABELS[person][number]].join(', ');
+            const remainderSense = verbSense(dictionary[remainder]);
+            if (remainderSense) {
+                addFromLemma(remainder, remainderSense, label);
+            }
+            const ikForm = remainder + 'ik';
+            const ikSense = verbSense(dictionary[ikForm]);
+            if (ikSense) {
+                addFromLemma(ikForm, ikSense, label);
+            }
+
+            // Neither the bare remainder nor its -ik form is a headword —
+            // try peeling a known prefix off it too ("megettem" strips
+            // "-em" or the irregular table catches it whole, but
+            // "megettél" needs "-él" stripped first, leaving "megett",
+            // which still needs "meg-" stripped to reach the dictionary's
+            // "eszik"/base-stem coverage).
+            if (!remainderSense && !ikSense) {
+                const pfx = stripKnownPrefix(remainder);
+                if (pfx) {
+                    if (verbSense(dictionary[pfx.stem])) {
+                        addPrefixedVerb(pfx.prefix, pfx.sense, pfx.stem, label);
+                    }
+                    const pfxIk = pfx.stem + 'ik';
+                    if (verbSense(dictionary[pfxIk])) {
+                        addPrefixedVerb(pfx.prefix, pfx.sense, pfxIk, label);
+                    }
+                }
+            }
+        }
+
+        // 2. case suffix, optionally stacked over a possessive/plural form
         for (const [suffix, caseCode] of CASE_SUFFIXES) {
             const remainder = strip(word, suffix);
             if (remainder === null) continue;
@@ -475,8 +790,9 @@ const HungarianMorphology = (function () {
             // ("házakban" = ház + plural + inessive)
             for (const plSuffix of PLURAL_SUFFIXES) {
                 const deeper = strip(remainder, plSuffix);
-                if (deeper !== null && dictionary[deeper]) {
-                    addFromLemma(deeper, dictionary[deeper].type, caseLabel + ', plural');
+                const deeperSense = deeper !== null ? nominalSense(dictionary[deeper]) : null;
+                if (deeperSense) {
+                    addFromLemma(deeper, deeperSense, caseLabel + ', plural');
                 }
             }
             // ...or a possessive suffix under the case suffix, for a
@@ -486,54 +802,45 @@ const HungarianMorphology = (function () {
             // pre-baked but "eredmény" the lemma still is)
             for (const [possSuffix, person, ownerNumber, possessedNumber] of POSSESSIVE_SUFFIXES) {
                 const deeper = strip(remainder, possSuffix);
-                if (deeper !== null && dictionary[deeper]) {
-                    addFromLemma(deeper, dictionary[deeper].type,
+                const deeperSense = deeper !== null ? nominalSense(dictionary[deeper]) : null;
+                if (deeperSense) {
+                    addFromLemma(deeper, deeperSense,
                         describePossessive(person, ownerNumber, possessedNumber) + ', ' + caseLabel);
                 }
             }
         }
 
-        // 2. possessive suffix alone (no case) — for lemmas outside the
+        // 3. possessive suffix alone (no case) — for lemmas outside the
         // static index's frequency cutoff
         for (const [suffix, person, ownerNumber, possessedNumber] of POSSESSIVE_SUFFIXES) {
             const remainder = strip(word, suffix);
-            if (remainder === null || !dictionary[remainder]) continue;
-            addFromLemma(remainder, dictionary[remainder].type,
-                describePossessive(person, ownerNumber, possessedNumber));
+            const sense = remainder !== null ? nominalSense(dictionary[remainder]) : null;
+            if (!sense) continue;
+            addFromLemma(remainder, sense, describePossessive(person, ownerNumber, possessedNumber));
         }
 
-        // 3. plural marker alone — nouns mainly, but pronouns/determiners
-        // pluralize the same way ("az" -> "azok", "ami" -> "amik")
-        const PLURALIZABLE = { noun: 1, pronoun: 1, determiner: 1, adjective: 1, article: 1 };
+        // 4. plural marker alone — nouns mainly, but pronouns/determiners
+        // pluralize the same way ("az" -> "azok", "ami" -> "amik"). Labelled
+        // "nominative, plural", not just "plural" — this strips the bare
+        // marker straight off the nominative stem with no case suffix
+        // involved, and matching the word-index's own label for the exact
+        // same fact (see describe() above) means the two agree and dedupe
+        // as one reading instead of showing as two near-identical ones.
         for (const suffix of PLURAL_SUFFIXES) {
             const remainder = strip(word, suffix);
-            const entry = remainder !== null ? dictionary[remainder] : null;
-            if (entry && PLURALIZABLE[entry.type]) {
-                addFromLemma(remainder, entry.type, 'plural');
-            }
-        }
-
-        // 4. verb personal ending, present or past. "-ik" is tried as an
-        // alternate lemma form since many verb dictionary headwords
-        // include it (dolgozik) while the stem alone (dolgoz) is not a
-        // separate entry.
-        for (const [suffix, tense, person, number] of VERB_SUFFIXES) {
-            const remainder = strip(word, suffix);
-            if (remainder === null) continue;
-            const label = [TENSE_LABELS[tense], PERSON_LABELS[person][number]].join(', ');
-            if (dictionary[remainder] && dictionary[remainder].type === 'verb') {
-                addFromLemma(remainder, 'verb', label);
-            }
-            const ikForm = remainder + 'ik';
-            if (dictionary[ikForm] && dictionary[ikForm].type === 'verb') {
-                addFromLemma(ikForm, 'verb', label);
+            const sense = remainder !== null ? nominalSense(dictionary[remainder]) : null;
+            if (sense) {
+                addFromLemma(remainder, sense, 'nominative, plural');
             }
         }
 
         return results;
     }
 
-    return { analyze: analyze, describe: describe, ladder: ladder };
+    return {
+        analyze: analyze, describe: describe, ladder: ladder, isNominal: isNominal,
+        nominalSense: nominalSense, verbSense: verbSense, anySense: anySense
+    };
 })();
 
 // Known gaps (v1, deliberately deferred rather than blocking the first
@@ -542,11 +849,15 @@ const HungarianMorphology = (function () {
 // words resolved (84%); nearly all of the remaining misses are proper
 // nouns/acronyms (correctly not matching) or lemmas the dictionary
 // itself doesn't have yet (see import_hu_dictionary.py's docstring on
-// dictionary size), not suffix-stripping failures. Two real analyser
-// gaps remain, both narrower than they first look:
+// dictionary size), not suffix-stripping failures. VERB_PREFIXES/
+// stripKnownPrefix() (2026-08-19 follow-up) covers the 15 most common
+// separable prefixes (meg-, el-, ki-, be-, le-, fel-, össze-, át-,
+// vissza-, rá-, ide-, oda-, elő-, után-); rarer ones (agyon-, félre-,
+// tovább-, ...) aren't covered. Remaining real analyser gaps:
 //   - suppletive verbs beyond IRREGULAR_VERBS above (van/megy/jön/eszik/
-//     iszik/alszik cover the most curriculum-critical ones; Hungarian has
-//     a few more with less common irregular stems)
+//     iszik/alszik/vesz/tesz/hisz/visz/lesz cover the most curriculum-
+//     critical ones; Hungarian has a few more with less common irregular
+//     stems)
 //   - stem-vowel deletion before a vowel-initial suffix ("tükör" ->
 //     "tükr-öm", not "tüköröm") — affects a closed, learnable set of
 //     nouns (tükör, majom, bokor, álom, torok, ...) but isn't derivable

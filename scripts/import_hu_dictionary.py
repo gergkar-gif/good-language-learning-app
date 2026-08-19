@@ -12,11 +12,22 @@ entries; CC-BY-SA 4.0 + GFDL — see https://kaikki.org for details).
 Both outputs come from a single pass over the same 583MB source file rather
 than two scripts each re-reading it:
 
-  imports/dictionary/hungarian-en.json  lemma -> { en, pos }
-      One real (non-form-of) entry per lemma, mirroring spanish-en.json's
-      shape. "Real" excludes Wiktionary pages that exist only to point at
-      an inflected form of another word (see FORM_OF_TAG below) — those
-      carry no independent gloss worth surfacing as a translation.
+  imports/dictionary/hungarian-en.json  lemma -> [ { en, pos }, ... ]
+      Every real (non-form-of) POS sense for that spelling, not just one —
+      "él" is genuinely both a noun ("edge") and a verb ("to live"), "nő"
+      both a noun ("woman") and a verb ("to grow"). An earlier version of
+      this script picked a single "primary" sense per spelling and threw
+      the rest away, which is fine for genuinely unrelated capitalisation
+      collisions but actively wrong for real cross-POS homographs: a verb
+      reading would get labelled with noun-only grammar ("nőtt" = "nő" +
+      accusative, instead of "nő" the verb, past tense) because the sense
+      that could have explained it had already been discarded at import
+      time. Multiple senses under the SAME POS are still collapsed to one
+      (see primary_gloss) — that's a genuine "pick the best definition"
+      call, not a lost distinction the reader needs. "Real" excludes
+      Wiktionary pages that exist only to point at an inflected form of
+      another word (see FORM_OF_TAG below) — those carry no independent
+      gloss worth surfacing as a translation.
 
   content/hu/indexes/word-index.json  surface form -> [ { lemma, pos,
       case?, number?, person?, ownerNumber? }, ... ]
@@ -52,6 +63,7 @@ Both files are cached/gitignored raw data — see .gitignore.
 """
 import gzip
 import json
+import re
 import urllib.request
 from pathlib import Path
 
@@ -89,12 +101,29 @@ SKIP_POS = {
 # Wiktextract marks a sense as pointing at another word's inflected form
 # with this tag (e.g. "nominative plural of ház"). These aren't primary
 # definitions and would pollute the dictionary with glosses like
-# "accusative plural of ház" instead of an actual translation.
+# "accusative plural of ház" instead of an actual translation — EXCEPT
+# for FORM_OF_EXCEPTION_TAGS below, which use the same "form-of" tag for
+# something categorically different: a DERIVED word with its own
+# independent meaning, not an inflected form of the same word. "alvás"
+# ("sleep") is tagged form-of + noun-from-verb pointing at "alszik" ("to
+# sleep") — a learner reading "Jó az alvás" needs "alvás" defined as its
+# own noun, not silently dropped the way "házak" (mechanically, "ház" +
+# plural, exactly what engine/morphology/hungarian.js already resolves at
+# runtime) correctly is. Confirmed via a coverage comparison against
+# github.com/tdulcet/compact-dictionaries' independently-built Hungarian
+# dictionary (2026-08-19): ~200 common words its build kept that this
+# script was dropping were overwhelmingly this exact pattern.
 FORM_OF_TAG = "form-of"
+FORM_OF_EXCEPTION_TAGS = {"noun-from-verb"}
 
 # Senses tagged like this are deprioritised but not dropped outright — a
-# rare/dated sense is still better than no dictionary entry.
-DEPRIORITISE_TAGS = {"obsolete", "archaic", "dated", "rare"}
+# rare/dated sense is still better than no dictionary entry. Also used
+# ACROSS competing POS entries for the same lemma (see build()'s
+# dict_deprioritised tracking) — "igen" has three separate Wiktionary
+# entries (adv "quite/very/rather", tagged literary; intj "yes"; noun
+# "yes"), and without this, first-in-file-order picked the literary
+# adverb sense over the everyday "yes" a learner actually needs.
+DEPRIORITISE_TAGS = {"obsolete", "archaic", "dated", "rare", "literary"}
 
 # Declension-table rows that describe the template itself rather than an
 # actual inflected form (see the "ház" example: 'no-table-tags',
@@ -121,22 +150,35 @@ def download():
     print(f"Downloaded {RAW_CACHE.stat().st_size:,} bytes")
 
 
+# "verbal noun of alszik: sleep" -> "sleep" — see FORM_OF_EXCEPTION_TAGS.
+VERBAL_NOUN_PREFIX = re.compile(r"^verbal noun of [^:]+:\s*", re.I)
+
+
 def primary_gloss(senses):
-    """First usable gloss from a non-form-of sense, preferring one that
-    isn't flagged obsolete/archaic/dated/rare if a better one exists."""
+    """(gloss, is_deprioritised) from the best non-form-of sense, preferring
+    one that isn't flagged obsolete/archaic/dated/rare/literary if a better
+    one exists. is_deprioritised is also used by build() to choose between
+    an entry's ENTIRE gloss and a competing entry for the same lemma under
+    a different POS (see DEPRIORITISE_TAGS's docstring on "igen")."""
     candidates = []
     for sense in senses or []:
         tags = set(sense.get("tags") or [])
-        if FORM_OF_TAG in tags:
-            continue
         glosses = sense.get("glosses") or []
         if not glosses:
             continue
-        candidates.append((bool(tags & DEPRIORITISE_TAGS), glosses[0]))
+        gloss = glosses[0]
+        if FORM_OF_TAG in tags:
+            if not (tags & FORM_OF_EXCEPTION_TAGS):
+                continue
+            stripped = VERBAL_NOUN_PREFIX.sub("", gloss)
+            if stripped == gloss or not stripped:
+                continue  # exception tag present but no clean translation to extract
+            gloss = stripped
+        candidates.append((bool(tags & DEPRIORITISE_TAGS), gloss))
     if not candidates:
-        return None
+        return None, True
     candidates.sort(key=lambda c: c[0])  # non-deprioritised first
-    return candidates[0][1]
+    return candidates[0][1], candidates[0][0]
 
 
 def extract_case_forms(entry, lemma, pos):
@@ -200,8 +242,12 @@ def load_frequent_lemmas():
 
 def build():
     frequent_lemmas = load_frequent_lemmas()
-    dictionary = {}
-    dict_is_lowercase_headword = {}
+    # key -> {pos -> {"en", "type", "_deprioritised", "_is_lower"}} while
+    # building, so a same-POS collision (capitalised homograph, duplicate
+    # page) still ties-breaks the way it always did; flattened to
+    # key -> [sense, ...] (dropping the private "_" fields) at the end,
+    # which is the actual output shape — see the module docstring.
+    senses_by_key = {}
     word_index = {}
 
     stats = {"lines": 0, "hu_entries": 0, "dict_entries": 0,
@@ -233,19 +279,35 @@ def build():
                 stats["form_of_only"] += 1
             else:
                 pos = POS_MAP[raw_pos]
-                gloss = primary_gloss(entry.get("senses"))
+                gloss, deprioritised = primary_gloss(entry.get("senses"))
                 if gloss is None:
                     stats["no_gloss"] += 1
                 else:
                     key = word.lower()
                     is_lower = word == key
-                    # Prefer a lowercase headword over an incidental
-                    # capitalised homograph, same tie-break as the Spanish
-                    # importer; otherwise first-seen wins.
-                    if key not in dictionary or (is_lower and not dict_is_lowercase_headword.get(key)):
-                        dictionary[key] = {"en": gloss, "type": pos}
-                        dict_is_lowercase_headword[key] = is_lower
-                        stats["dict_entries"] += 1
+                    by_pos = senses_by_key.setdefault(key, {})
+                    existing = by_pos.get(pos)
+                    # Tie-break within the SAME (lemma, pos) pair only —
+                    # a capitalised homograph or duplicate page competing
+                    # for the identical grammatical slot. A non-deprioritised
+                    # sense always beats a deprioritised one; only when
+                    # that's tied does the lowercase-headword preference
+                    # apply; otherwise first-seen wins. A DIFFERENT pos for
+                    # the same spelling is never a competitor — see the
+                    # module docstring on why both are kept.
+                    if existing is None:
+                        replace = True
+                    elif deprioritised != existing["_deprioritised"]:
+                        replace = existing["_deprioritised"] and not deprioritised
+                    else:
+                        replace = is_lower and not existing["_is_lower"]
+                    if replace:
+                        if existing is None:
+                            stats["dict_entries"] += 1
+                        by_pos[pos] = {
+                            "en": gloss, "type": pos,
+                            "_deprioritised": deprioritised, "_is_lower": is_lower,
+                        }
 
                 in_scope = frequent_lemmas is None or word.lower() in frequent_lemmas
                 if raw_pos in ("noun", "adj") and in_scope:
@@ -254,6 +316,17 @@ def build():
                         if analysis not in bucket:
                             bucket.append(analysis)
                             stats["case_forms"] += 1
+
+    # Flatten to the actual output shape: lemma -> [sense, ...], dropping
+    # the private tie-break bookkeeping fields. Non-deprioritised senses
+    # sort first — the sense a bare-lemma lookup (no suffix at all) shows
+    # as primary should be the everyday one, not e.g. an archaic noun use
+    # sitting ahead of the common verb sense purely by file order. Python's
+    # sort is stable, so ties keep encounter order beyond that.
+    dictionary = {}
+    for key, by_pos in senses_by_key.items():
+        ordered = sorted(by_pos.values(), key=lambda s: s["_deprioritised"])
+        dictionary[key] = [{"en": s["en"], "type": s["type"]} for s in ordered]
 
     return dictionary, word_index, stats
 
@@ -284,7 +357,9 @@ def main():
     print(f"  skipped (pos):    {stats['skipped_pos']:,}")
     print(f"  skipped (form-of):{stats['form_of_only']:,} (inflected-form pages, not primary lemmas)")
     print(f"  skipped (gloss):  {stats['no_gloss']:,} (form-of only or no usable gloss)")
-    print(f"Dictionary:       {len(dictionary):,} lemmas")
+    homographs = sum(1 for senses in dictionary.values() if len(senses) > 1)
+    print(f"Dictionary:       {len(dictionary):,} lemmas, {stats['dict_entries']:,} senses "
+          f"({homographs:,} spellings with >1 POS sense, e.g. noun+verb homographs)")
     print(f"  Output:           {DICT_OUTPUT} ({dict_size:,} bytes, {dict_gz/1024:.0f} KB gzipped)")
     print(f"Word index:       {len(word_index):,} surface forms ({stats['case_forms']:,} analyses)")
     print(f"  Output:           {INDEX_OUTPUT} ({idx_size:,} bytes, {idx_gz/1024:.0f} KB gzipped)")

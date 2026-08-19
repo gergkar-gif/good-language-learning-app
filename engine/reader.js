@@ -83,10 +83,22 @@ function _hungarianBreakdownHtml(primary, ladder) {
     const contextual = chain[chain.length - 1].translation;
     const chainText = chain.map(s => Reader.escapeHtml(s.form)).join(' → ');
 
-    const rows = (ladder.breakdown || []).map(b => `
+    const breakdown = ladder.breakdown || [];
+    const rows = breakdown.map(b => `
         <div class="wp-suffix-row">
             <span class="wp-suffix-form">-${Reader.escapeHtml(b.suffix)}</span>
             <span class="wp-suffix-label">${Reader.escapeHtml(b.label)}</span>
+        </div>
+    `).join('');
+
+    // "Why -mal?" — only the suffixes that actually deviate from the
+    // default form carry a why (see verbSuffixWhy()/caseSuffixWhy() in
+    // engine/morphology/hungarian.js), so this section is often empty and
+    // renders nothing rather than explaining every ordinary suffix.
+    const whyRows = breakdown.filter(b => b.why).map(b => `
+        <div class="wp-why">
+            <p class="wp-why-q">Why -${Reader.escapeHtml(b.suffix)}?</p>
+            <p class="wp-why-a">${Reader.escapeHtml(b.why)}</p>
         </div>
     `).join('');
 
@@ -98,6 +110,7 @@ function _hungarianBreakdownHtml(primary, ladder) {
         </div>
         <p class="wp-chain">${chainText}</p>
         <div class="wp-suffixes">${rows}</div>
+        ${whyRows}
     `;
 }
 
@@ -546,13 +559,24 @@ window.Reader = {
         updateReaderWordColors();
     },
 
+    // Spanish (\u00e1 \u00e9 \u00ed \u00f3 \u00fa \u00f1 \u00fc) plus Hungarian's remaining letters not
+    // already in that set (\u00f6 \u0151 \u0171 \u2014 \u00fc is shared with Spanish already).
+    // Missing \u00f6/\u0151/\u0171 here doesn't just mislabel a word's part of speech,
+    // it splits the word itself into separate tap targets at those
+    // letters ("bel\u0151le" -> "bel" / "\u0151" / "le" as three spans), which is
+    // worse than an ordinary lookup miss.
+    WORD_CHARS: 'a-zA-Z\u00e1\u00e9\u00ed\u00f3\u00fa\u00c1\u00c9\u00cd\u00d3\u00da' +
+        '\u00f1\u00d1\u00fc\u00dc\u00f6\u00d6\u0151\u0150\u0171\u0170',
+
     makeClickable(text) {
         if (!text) return '';
-        const tokens = text.match(/[a-zA-Z\u00e1\u00e9\u00ed\u00f3\u00fa\u00c1\u00c9\u00cd\u00d3\u00da\u00f1\u00d1\u00fc\u00dc]+|[0-9]+|[^a-zA-Z\u00e1\u00e9\u00ed\u00f3\u00fa\u00c1\u00c9\u00cd\u00d3\u00da\u00f1\u00d1\u00fc\u00dc0-9]+/g) || [];
+        const w = this.WORD_CHARS;
+        const tokens = text.match(new RegExp('[' + w + ']+|[0-9]+|[^' + w + '0-9]+', 'g')) || [];
         const self = this;
+        const wordRe = new RegExp('^[' + w + '0-9]+$');
 
         return tokens.map(function(token) {
-            if (/^[a-zA-Z\u00e1\u00e9\u00ed\u00f3\u00fa\u00c1\u00c9\u00cd\u00d3\u00da\u00f1\u00d1\u00fc\u00dc0-9]+$/.test(token)) {
+            if (wordRe.test(token)) {
                 const cleanWord = token.toLowerCase().replace(/[.,]/g, '');
 
                 // Taps are handled by a delegated listener (see below), not an

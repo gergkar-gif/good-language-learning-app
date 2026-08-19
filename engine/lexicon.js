@@ -219,26 +219,60 @@ const Lexicon = (function () {
         const readings = [];
         const seen = new Set();
 
-        function add(lemma, pos, analysis) {
-            const entry = _dictionary[lemma];
+        // sense is an already-resolved single sense object ({type, en}),
+        // never a raw (possibly multi-sense) dictionary entry — the caller
+        // decides which sense applies (direct hit: whichever sorted
+        // primary; word-index: always nominal, since that index only ever
+        // comes from a noun/adjective's own declension table; analyze():
+        // whatever HungarianMorphology already resolved from grammatical
+        // context, including a synthesised sense for a prefixed verb that
+        // isn't its own dictionary headword — see addPrefixedVerb() in
+        // engine/morphology/hungarian.js).
+        function add(lemma, sense, analysis) {
             const dedupeKey = lemma + '|' + (analysis || '');
             if (seen.has(dedupeKey)) return;
             seen.add(dedupeKey);
             readings.push({
                 lemma: lemma,
-                pos: (entry && entry.type) || pos || '',
-                translation: entry ? entry.en : null,
+                pos: (sense && sense.type) || '',
+                translation: sense ? sense.en : null,
                 analysis: analysis || ''
             });
         }
 
-        if (_dictionary[key]) add(key, _dictionary[key].type, '');
-        (_wordIndex[key] || []).forEach(a => add(a.lemma, a.pos, HungarianMorphology.describe(a)));
+        // "The tapped word IS a dictionary headword" is strong, reliable
+        // evidence, so a hit here skips analyze() below entirely (same as
+        // before) — but a word-index hit is weaker: that index only ever
+        // comes from a noun/adjective's own declension table, so it can
+        // never see a competing verb reading of the SAME surface form even
+        // when one exists ("élt" is indexed as "él" the noun "edge" +
+        // accusative, but is also "él" the verb "to live" + past tense).
+        const directHit = !!_dictionary[key];
+        if (directHit) add(key, HungarianMorphology.anySense(_dictionary[key]), '');
 
-        if (!readings.length && typeof HungarianMorphology !== 'undefined') {
+        // Run BEFORE the word-index below, not after: when both a lemma's
+        // frequency-tied readings tie exactly (same lemma spelling either
+        // way, so identical rank), the final sort is stable and keeps
+        // whichever was added first. analyze() already tries verb
+        // conjugation before any nominal suffix internally (see its own
+        // comment on why), so running it first here means a genuine verb
+        // reading is already in `readings` before a same-lemma word-index
+        // case reading could contest the tie — resolved every such
+        // collision found while building this ("nőtt", "élt", "örült").
+        if (!directHit && typeof HungarianMorphology !== 'undefined') {
             HungarianMorphology.analyze(key, _dictionary, _wordIndex)
-                .forEach(r => add(r.lemma, r.pos, r.analysis));
+                .forEach(r => add(r.lemma, { type: r.pos, en: r.translation }, r.analysis));
         }
+
+        // nominalSense() picks the nominal sense specifically for a
+        // word-index entry, since that index is nominal-only by
+        // construction; if the dictionary no longer has ANY nominal sense
+        // for that lemma, skip it (analyze() above is what finds the real
+        // reading in that case, same "él" collision as above).
+        (_wordIndex[key] || []).forEach(a => {
+            const sense = HungarianMorphology.nominalSense(_dictionary[a.lemma]);
+            if (sense || !_dictionary[a.lemma]) add(a.lemma, sense, HungarianMorphology.describe(a));
+        });
 
         readings.sort((a, b) => rankOf(a) - rankOf(b));
         // Pinned to the reading that actually won ranking — see ladder()'s
@@ -326,7 +360,7 @@ const Lexicon = (function () {
                 const parts = clean.slice(start, start + size);
                 if (parts.some(p => !p)) continue;
                 const phrase = parts.join(' ');
-                const entry = _dictionary[phrase];
+                const entry = bestSense(_dictionary[phrase]);
                 if (entry) {
                     return {
                         phrase: tokens.slice(start, start + size).join(' '),
@@ -355,10 +389,23 @@ const Lexicon = (function () {
         return _dictionary !== null;
     }
 
-    /** Raw dictionary entry for an exact lemma, or null if unavailable. */
+    // A Hungarian dictionary entry is an array of senses (see
+    // scripts/import_hu_dictionary.py — "él" is both noun "edge" and verb
+    // "to live", kept as two rather than one arbitrarily discarded); a
+    // Spanish one is still a single flat object. anySense() normalises
+    // either into the single "best" sense a generic caller (this function,
+    // search() below, every SRS/Deck card display) wants — grammatical
+    // disambiguation between senses only matters inside
+    // HungarianMorphology's own lookup/analyse path, which reads the raw
+    // (possibly multi-sense) entry itself rather than going through here.
+    function bestSense(entry) {
+        return (typeof HungarianMorphology !== 'undefined') ? HungarianMorphology.anySense(entry) : entry;
+    }
+
+    /** Best dictionary sense for an exact lemma, or null if unavailable. */
     function define(lemma) {
         if (!_dictionary || !lemma) return null;
-        return _dictionary[String(lemma).toLowerCase()] || null;
+        return bestSense(_dictionary[String(lemma).toLowerCase()]) || null;
     }
 
     const WORD_CHAR = /[a-zà-ÿñ]/i;
@@ -399,7 +446,7 @@ const Lexicon = (function () {
 
         const scored = [];
         for (const lemma in _dictionary) {
-            const entry = _dictionary[lemma];
+            const entry = bestSense(_dictionary[lemma]);
 
             // A word can match on both sides at once ("mesa" -> "table" is
             // an exact English match; a Spanish query might also happen to
@@ -419,14 +466,14 @@ const Lexicon = (function () {
         }
 
         const rank = item => {
-            const entry = _dictionary[item.lemma];
+            const entry = bestSense(_dictionary[item.lemma]);
             const reading = { pos: entry && entry.type, lemma: item.lemma };
             return (isProperNoun(reading) * 1e9) + rankOf(reading);
         };
         scored.sort((a, b) => a.tier - b.tier || rank(a) - rank(b) || a.lemma.localeCompare(b.lemma));
 
         return scored.slice(0, limit).map(item => {
-            const entry = _dictionary[item.lemma];
+            const entry = bestSense(_dictionary[item.lemma]);
             return { lemma: item.lemma, translation: entry.en, pos: entry.type || '' };
         });
     }
