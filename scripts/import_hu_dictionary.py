@@ -175,7 +175,18 @@ VERBAL_NOUN_PREFIX = re.compile(r"^verbal noun of [^:]+:\s*", re.I)
 MAX_SENSES_PER_POS = 3
 
 
-def all_glosses(senses):
+# A noun sense whose gloss is just its own capitalised headword plus a
+# parenthetical ("Kér (one of the seven Hungarian tribes...)") is Wiktionary
+# mistagging a proper noun (tribe/place/personal name) as a common noun —
+# SKIP_POS's "name" filter exists for exactly this but only catches it when
+# the page's OWN pos field says so, and this one says "noun". Found via
+# "kérem" (the common verb form "I ask for it") wrongly explaining its "-em"
+# as a possessive ("my Kér") once MAX_SENSES_PER_POS made this 3rd, obscure
+# sense of "kér" reachable at all.
+MISTAGGED_PROPER_NOUN = re.compile(r"^([A-ZÁÉÍÓÖŐÚÜŰ]\w*)\s*\(")
+
+
+def all_glosses(senses, word=None):
     """Up to MAX_SENSES_PER_POS (gloss, is_deprioritised) pairs, most
     useful first — not just the single best one. "kormány" has three
     senses under the same noun POS: "steering wheel", "helm", "government"
@@ -204,6 +215,9 @@ def all_glosses(senses):
             if stripped == gloss or not stripped:
                 continue  # exception tag present but no clean translation to extract
             gloss = stripped
+        m = MISTAGGED_PROPER_NOUN.match(gloss)
+        if m and word and m.group(1).lower() == word.lower():
+            continue
         candidates.append((bool(tags & DEPRIORITISE_TAGS), gloss))
     if not candidates:
         return []
@@ -319,7 +333,7 @@ def build():
                 stats["form_of_only"] += 1
             else:
                 pos = POS_MAP[raw_pos]
-                glosses = all_glosses(entry.get("senses"))
+                glosses = all_glosses(entry.get("senses"), word)
                 if not glosses:
                     stats["no_gloss"] += 1
                 else:

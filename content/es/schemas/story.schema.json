@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "story.schema.json",
   "title": "Story file",
-  "description": "A reading text, used both by the Library reader and by a lesson's story section. The text carries no English — every word is tappable and resolved through the dictionary at read time. NOTE: paragraphs currently come in two shapes across the library (see the paragraph definition). Only the typed shape renders speaker labels; 49 of 50 stories use the untyped shape and therefore render entirely as narration.",
+  "description": "A reading text, used both by the Library reader and by a lesson's story section. A paragraph is normally all target-language text, tappable and resolved through the dictionary at read time — EXCEPT a paragraph carrying its own `lang` different from the course (see the paragraph definition's `lang` property), which renders as plain, non-tappable, non-spoken text instead. Hungarian's A1 unit stories use this deliberately: narration is English scaffolding for a true beginner, dialogue is Hungarian; no Spanish story uses it as of this writing. NOTE: paragraphs currently come in two shapes across the library (see the paragraph definition). Only the typed shape renders speaker labels; 49 of 50 stories use the untyped shape and therefore render entirely as narration.",
   "type": "object",
   "required": ["id", "title", "level", "paragraphs"],
   "additionalProperties": false,
@@ -81,6 +81,11 @@
         "id": {
           "type": ["string", "integer"],
           "description": "Present in most files, read by nothing. Harmless."
+        },
+        "lang": {
+          "type": "string",
+          "description": "Overrides the course language for THIS paragraph only. Omit for ordinary (monolingual) target-language text — every existing story before Hungarian's A1 Unit 1 relies on the default. When present and different from the course, the reader renders plain escaped text: no tap-to-translate (an English 'a' would otherwise resolve against the Hungarian dictionary and show 'the'), no text-to-speech (which would otherwise read English narration in the target-language voice).",
+          "examples": ["en"]
         },
         "text": { "type": "string", "minLength": 1 }
       },

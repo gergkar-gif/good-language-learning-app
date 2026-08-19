@@ -206,10 +206,16 @@ const HungarianMorphology = (function () {
         // present, 2sg — plain -sz and the sibilant-stem -ol/-el/-öl variant
         ['asz', 'pres', 2, 'sg'], ['esz', 'pres', 2, 'sg'], ['sz', 'pres', 2, 'sg'],
         ['ol', 'pres', 2, 'sg'], ['el', 'pres', 2, 'sg'], ['öl', 'pres', 2, 'sg'],
-        // present, 1pl / 2pl / 3pl
+        // present, 1pl / 2pl / 3pl. 2pl's front-rounded variants ("üt" ->
+        // "üttök", "küld" -> "küldötök") and 3pl's cluster-final linking-
+        // vowel variant ("ért" -> "értenek", "mond" -> "mondanak") were
+        // missing here until conjugate() below was round-trip tested
+        // against this table (2026-08-19) and caught real words it
+        // couldn't decode.
         ['unk', 'pres', 1, 'pl'], ['ünk', 'pres', 1, 'pl'],
-        ['otok', 'pres', 2, 'pl'], ['etek', 'pres', 2, 'pl'], ['tok', 'pres', 2, 'pl'], ['tek', 'pres', 2, 'pl'],
-        ['nak', 'pres', 3, 'pl'], ['nek', 'pres', 3, 'pl'],
+        ['otok', 'pres', 2, 'pl'], ['etek', 'pres', 2, 'pl'], ['ötök', 'pres', 2, 'pl'],
+        ['tok', 'pres', 2, 'pl'], ['tek', 'pres', 2, 'pl'], ['tök', 'pres', 2, 'pl'],
+        ['nak', 'pres', 3, 'pl'], ['nek', 'pres', 3, 'pl'], ['anak', 'pres', 3, 'pl'], ['enek', 'pres', 3, 'pl'],
         // present, definite conjugation (the object is a specific "it"/
         // "them" — "olvasom a könyvet" vs indefinite "olvasok"). 1sg is
         // the same surface form as the -ik-verb indefinite already listed
@@ -587,6 +593,48 @@ const HungarianMorphology = (function () {
         const withArticle = (base, type) => type === 'noun' ? 'the ' + base : base;
         const matches = lemma => !targetLemma || lemma === targetLemma;
 
+        // Verb conjugation is checked FIRST, before any nominal suffix —
+        // matching analyze()'s and lexicon.js's own tie-break order (see
+        // their comments on "nőtt"/"élt"/"örült"). Without this agreement,
+        // a lemma spelling with a spurious/rare nominal sense could win the
+        // ladder even when ranking correctly picked the verb reading as
+        // primary — exactly what happened with "kérem": "kér" carries an
+        // obscure noun sense (a historical tribe name) alongside its
+        // everyday verb sense "to ask for", and the CASE/POSSESSIVE loops
+        // below would happily explain "-em" as "my [tribe]" before ever
+        // reaching the correct "present, 1st person singular" verb
+        // explanation, even though readings[0] was already the verb.
+        // ("nőtt" = nő + -tt, past tense) is the case that motivated the
+        // "why" notes at all: a suffix like "-tt" or "-ott" isn't obvious
+        // from the label alone, and a learner asking "why is it nőtt, not
+        // nőett?" deserves a real answer, not just "past tense". Skipped
+        // for IRREGULAR_VERBS matches on purpose — a suppletive stem
+        // (van -> voltam) has no clean stem+ending split worth drawing a
+        // chain for.
+        for (const [suffix, tense, person, number] of VERB_SUFFIXES) {
+            const remainder = strip(word, suffix);
+            if (remainder === null) continue;
+            let sense = verbSense(dictionary[remainder]);
+            let lemma = remainder;
+            if (!sense) {
+                sense = verbSense(dictionary[remainder + 'ik']);
+                lemma = remainder + 'ik';
+            }
+            if (!sense || !matches(lemma)) continue;
+            const base = gloss(sense);
+            const label = [TENSE_LABELS[tense], PERSON_LABELS[person][number]].join(', ');
+            const breakdown = { suffix: suffix, label: label };
+            const why = verbSuffixWhy(suffix);
+            if (why) breakdown.why = why;
+            return {
+                chain: [
+                    { form: lemma, translation: base },
+                    { form: word, translation: base + ' (' + label + ')' }
+                ],
+                breakdown: [breakdown]
+            };
+        }
+
         for (const [suffix, caseCode] of CASE_SUFFIXES) {
             const remainder = strip(word, suffix);
             if (remainder === null) continue;
@@ -706,37 +754,6 @@ const HungarianMorphology = (function () {
                     { form: word, translation: naivePluralize(base) }
                 ],
                 breakdown: [{ suffix: suffix, label: 'plural' }]
-            };
-        }
-
-        // Verb conjugation ("nőtt" = nő + -tt, past tense) — this is the
-        // case that actually motivated adding "why" notes at all: a
-        // suffix like "-tt" or "-ott" isn't obvious from the label alone,
-        // and a learner asking "why is it nőtt, not nőett?" deserves a
-        // real answer, not just "past tense". Skipped for IRREGULAR_VERBS
-        // matches on purpose — a suppletive stem (van -> voltam) has no
-        // clean stem+ending split worth drawing a chain for.
-        for (const [suffix, tense, person, number] of VERB_SUFFIXES) {
-            const remainder = strip(word, suffix);
-            if (remainder === null) continue;
-            let sense = verbSense(dictionary[remainder]);
-            let lemma = remainder;
-            if (!sense) {
-                sense = verbSense(dictionary[remainder + 'ik']);
-                lemma = remainder + 'ik';
-            }
-            if (!sense || !matches(lemma)) continue;
-            const base = gloss(sense);
-            const label = [TENSE_LABELS[tense], PERSON_LABELS[person][number]].join(', ');
-            const breakdown = { suffix: suffix, label: label };
-            const why = verbSuffixWhy(suffix);
-            if (why) breakdown.why = why;
-            return {
-                chain: [
-                    { form: lemma, translation: base },
-                    { form: word, translation: base + ' (' + label + ')' }
-                ],
-                breakdown: [breakdown]
             };
         }
 
@@ -1000,9 +1017,168 @@ const HungarianMorphology = (function () {
         return results;
     }
 
+    // ------------------------------------------------------------------
+    // GENERATION (2026-08-19, for Workshop drillers)
+    // ------------------------------------------------------------------
+    // Everything above this point only ever strips a suffix and validates
+    // the remainder by outcome (dictionary/word-index lookup) — it never
+    // has to independently know which vowel-harmony variant is "correct"
+    // for a given stem, because trying all of them and keeping whichever
+    // one resolves does that job for free. Generation can't lean on that
+    // trick: a driller asking "what's the 2pl present of tanul" needs one
+    // answer, not a set of candidates to validate against data that (for
+    // verbs) mostly doesn't exist — see import_hu_dictionary.py's own
+    // comment on why conjugated verb forms were deliberately left out of
+    // word-index.json. So this does need real vowel-harmony logic.
+    //
+    // Scope, deliberately conservative given a wrong generated form
+    // actively teaches incorrect Hungarian (unlike a decode miss, which
+    // just shows a less friendly label): PRESENT TENSE, INDEFINITE
+    // CONJUGATION ONLY. Past tense's linking-vowel insertion depends on
+    // the stem's final consonant cluster in a way that isn't reliably
+    // derivable from the stem alone for arbitrary dictionary verbs — same
+    // category of gap as the stem-vowel-deletion and lengthening gaps
+    // already documented below, not solved here. Definite conjugation
+    // (object agreement) isn't modelled at all — matches how far
+    // VERB_SUFFIXES itself goes and how far the A1 curriculum has reached.
+
+    const BACK_VOWELS = 'aáoóuú';
+    const FRONT_ROUNDED_VOWELS = 'öőüű';
+    // e/é/i/í don't have independent harmonic pull in real Hungarian
+    // (they're "neutral" — a stem can be back-harmony even with only these
+    // vowels in it, e.g. "ír" -> "írok"/"írnak", not "*írek"/"*írnek").
+    // Defaulting neutral-only stems to front is the standard beginner-level
+    // simplification and right for most such verbs, but round-trip testing
+    // conjugate() through analyze() (2026-08-19) caught "ír" as a real,
+    // common miss — not just a theoretical gap — so the handful of common
+    // A1 verbs already known to break the default get a lexical override
+    // here rather than silently generating wrong Hungarian for them. Not
+    // exhaustive; same "would need a small lexical list" treatment as the
+    // tükör-type stem-vowel-deletion gap documented below.
+    const BACK_HARMONY_NEUTRAL_STEMS = ['ír', 'sír', 'nyír', 'bízik', 'hisz', 'visz', 'iszik'];
+    function _harmonyClass(stem) {
+        if (BACK_HARMONY_NEUTRAL_STEMS.includes(stem)) return 'back';
+        for (let i = stem.length - 1; i >= 0; i--) {
+            const ch = stem[i];
+            if (BACK_VOWELS.includes(ch)) return 'back';
+            if (FRONT_ROUNDED_VOWELS.includes(ch)) return 'front-rounded';
+            if ('eéií'.includes(ch)) return 'front-unrounded';
+        }
+        return 'front-unrounded';
+    }
+
+    // s/sz/z-final stems take -ol/-el/-öl instead of -asz/-esz (or bare
+    // -sz) at 2sg — "olvasol" not "olvasasz"/"olvassz" — to avoid the
+    // sibilant clashing with the -sz ending. -ik verbs take -ol/-el/-öl at
+    // 2sg unconditionally, as a property of that verb class, independent
+    // of whether the stem happens to be sibilant-final too.
+    function _isSibilantFinal(stem) {
+        return stem.endsWith('sz') || stem.endsWith('s') || stem.endsWith('z');
+    }
+
+    // Whether a consonant-initial ending (-sz, -tok/-tek/-tök, -nak/-nek)
+    // needs a linking vowel before it, or attaches bare: bare when the
+    // stem ends in a single consonant after a vowel ("tanul" -> "tanulsz",
+    // "tanultok"), a linking vowel when it ends in a consonant CLUSTER
+    // ("ért" -> "értesz", "értetek" — the r+t cluster can't take the
+    // ending directly). Digraphs (sz, cs, zs, gy, ly, ny, ty) count as one
+    // consonant, same unit CASE_SUFFIXES' assimilation logic already
+    // treats them as. Unlike everything else in this file, this couldn't
+    // be cross-validated against real data the way the noun suffix tables
+    // are via word-index.json, since conjugated verb forms aren't in that
+    // index (see the comment above conjugate()) — instead it was round-trip
+    // tested by generating all persons/numbers for 21 verbs spanning every
+    // harmony class, sibilant-final, cluster-final and vowel-final stems,
+    // and feeding each generated form back through analyze() to confirm it
+    // resolves to the same lemma (2026-08-19; also caught and fixed two
+    // real gaps this surfaced: "ír"'s neutral-vowel harmony above, and a
+    // missing front-rounded/cluster-linking 2pl and 3pl branch in
+    // VERB_SUFFIXES itself, which also means the Reader can now decode
+    // forms like "üttök"/"értenek" it couldn't before). Still worth a
+    // native-speaker spot-check before leaning on it hard for anything
+    // beyond the verb classes that testing actually covered.
+    const CONSONANT_UNITS = ['cs', 'gy', 'ly', 'ny', 'sz', 'ty', 'zs',
+        'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'r', 's', 't', 'v', 'z'];
+    const VOWELS = 'aáeéiíoóöőuúüű';
+    function _needsLinkingVowel(stem) {
+        let unit = null;
+        for (const c of CONSONANT_UNITS) {
+            if (stem.endsWith(c)) { unit = c; break; }
+        }
+        if (!unit) return false; // vowel-final stem, no clash possible
+        const before = stem.slice(0, -unit.length).slice(-1);
+        return before !== '' && !VOWELS.includes(before);
+    }
+
+    function _conjugatePresentIndefinite(lemma, person, number) {
+        const isIkVerb = lemma.endsWith('ik');
+        const stem = isIkVerb ? lemma.slice(0, -2) : lemma;
+        const harmony = _harmonyClass(stem);
+        const linking = _needsLinkingVowel(stem);
+
+        if (person === 3 && number === 'sg') return lemma;
+
+        if (person === 1 && number === 'sg') {
+            if (isIkVerb) return stem + { back: 'om', 'front-unrounded': 'em', 'front-rounded': 'öm' }[harmony];
+            return stem + { back: 'ok', 'front-unrounded': 'ek', 'front-rounded': 'ök' }[harmony];
+        }
+        if (person === 2 && number === 'sg') {
+            if (isIkVerb || _isSibilantFinal(stem)) return stem + { back: 'ol', 'front-unrounded': 'el', 'front-rounded': 'öl' }[harmony];
+            if (linking) return stem + { back: 'asz', 'front-unrounded': 'esz', 'front-rounded': 'esz' }[harmony];
+            return stem + 'sz';
+        }
+        if (person === 1 && number === 'pl') return stem + { back: 'unk', 'front-unrounded': 'ünk', 'front-rounded': 'ünk' }[harmony];
+        if (person === 2 && number === 'pl') {
+            if (linking) return stem + { back: 'otok', 'front-unrounded': 'etek', 'front-rounded': 'ötök' }[harmony];
+            return stem + { back: 'tok', 'front-unrounded': 'tek', 'front-rounded': 'tök' }[harmony];
+        }
+        if (person === 3 && number === 'pl') {
+            if (linking) return stem + { back: 'anak', 'front-unrounded': 'enek', 'front-rounded': 'enek' }[harmony];
+            return stem + { back: 'nak', 'front-unrounded': 'nek', 'front-rounded': 'nek' }[harmony];
+        }
+
+        return null;
+    }
+
+    // conjugate(lemma, {tense, person, number}) -> surface form, or null
+    // for a combination this v1 doesn't cover (see scope note above).
+    // Checks IRREGULAR_VERBS' suppletive stems first so van/megy/jön/
+    // eszik/iszik/alszik/vesz/tesz/hisz/visz/lesz don't get run through
+    // the regular pattern and mangled.
+    function conjugate(lemma, opts) {
+        const tense = (opts && opts.tense) || 'pres';
+        const person = (opts && opts.person) || 3;
+        const number = (opts && opts.number) || 'sg';
+        if (tense !== 'pres') return null;
+
+        for (const [form, tags] of Object.entries(IRREGULAR_VERBS)) {
+            if (tags[0] === lemma && tags[1] === 'pres' && tags[2] === person && tags[3] === number) return form;
+        }
+        // The irregular table only lists forms that actually diverge from
+        // the regular pattern — van/megy/jön/eszik/iszik/alszik's present
+        // 2sg indefinite ("vagy", "mész", "jössz", "eszel", "iszol",
+        // "alszol") is one of them, so a lemma present in IRREGULAR_VERBS
+        // but with no matching tag above genuinely has no present form to
+        // return here; callers shouldn't ask for cells this scope excludes.
+
+        return _conjugatePresentIndefinite(lemma, person, number);
+    }
+
     return {
         analyze: analyze, describe: describe, ladder: ladder, isNominal: isNominal,
-        nominalSense: nominalSense, verbSense: verbSense, anySense: anySense
+        nominalSense: nominalSense, verbSense: verbSense, anySense: anySense,
+        conjugate: conjugate,
+        caseName: caseName, caseSuffixLabel: caseSuffixLabel,
+        casesList: function () {
+            return Object.keys(CASE_LABELS).map(code => ({
+                code: code, label: CASE_LABELS[code], preposition: CASE_PREPOSITION[code] || null
+            }));
+        },
+        personLabel: function (person, number) { return PERSON_LABELS[person][number]; },
+        tenseLabel: function (tense) { return TENSE_LABELS[tense]; },
+        prefixList: function () {
+            return VERB_PREFIXES.map(([prefix, sense]) => ({ prefix: prefix, sense: sense }));
+        }
     };
 })();
 

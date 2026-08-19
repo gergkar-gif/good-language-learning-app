@@ -526,9 +526,21 @@ window.Reader = {
                 const speakerHtml = para.speaker
                     ? '<span class="speaker-label">' + self.escapeHtml(para.speaker) + ':</span> '
                     : '';
-                const clickableText = self.makeClickable(para.text);
+                // A paragraph's own `lang`, when present, overrides the
+                // course language — Hungarian's A1 unit stories
+                // deliberately narrate in English (scaffolding for a true
+                // beginner) while dialogue stays in Hungarian. Tapping an
+                // English word for a "Hungarian translation" ("a" ->
+                // "the", since "a" is also the Hungarian definite
+                // article) is actively wrong, not just unhelpful, and
+                // hearing it read in the Hungarian voice would be too.
+                // Absent `lang`, a paragraph is the course's own
+                // language, matching every existing (monolingual) story.
+                const isTargetLanguage = !para.lang || (typeof Lang !== 'undefined' && para.lang === Lang.code());
+                const bodyHtml = isTargetLanguage ? self.makeClickable(para.text) : self.escapeHtml(para.text);
+                const speechHtml = isTargetLanguage ? Speech.button(para.text, 'Listen to this paragraph') : '';
                 html += '<p class="' + paraClass + '" data-para-index="' + idx + '">' +
-                    speakerHtml + clickableText + Speech.button(para.text, 'Listen to this paragraph') +
+                    speakerHtml + bodyHtml + speechHtml +
                 '</p>';
             });
         } else if (story.text) {

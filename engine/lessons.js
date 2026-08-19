@@ -580,8 +580,16 @@ const stepRenderers = {
 
     story(step) {
         // Same tap-a-word-to-translate interaction as the Library reader —
-        // story files carry target-language text only, no parallel English lines.
+        // story files usually carry target-language text only, but a line's
+        // own `lang`, when present, overrides the course language (see
+        // Reader.renderStory's matching comment): Hungarian's A1 unit
+        // stories deliberately narrate in English while dialogue stays in
+        // Hungarian, and tapping/hearing that English narration as if it
+        // were Hungarian would be actively wrong, not just unhelpful.
+        const isTargetLanguage = line => !line.lang || line.lang === Lang.code();
         const clickable = text => (typeof Reader !== 'undefined') ? Reader.makeClickable(text) : esc(text);
+        const body = line => isTargetLanguage(line) ? clickable(line.text) : esc(line.text);
+        const speech = line => isTargetLanguage(line) ? say(line.text) : '';
         return `
             <p class="lsn-hint">It's okay if you don't understand every word — this is here to get you used to
                 natural ${esc(Lang.name())}, not another test sentence. Read for the general idea; a few questions follow.</p>
@@ -589,10 +597,10 @@ const stepRenderers = {
                 ${(step.lines || []).map(line => line.type === 'dialogue' ? `
                     <div class="lsn-line">
                         <div class="lsn-speaker">${esc(line.speaker)}</div>
-                        <div class="lsn-es">${clickable(line.text)}${say(line.text)}</div>
+                        <div class="lsn-es">${body(line)}${speech(line)}</div>
                     </div>
                 ` : `
-                    <p class="lsn-narration">${clickable(line.text)}${say(line.text)}</p>
+                    <p class="lsn-narration">${body(line)}${speech(line)}</p>
                 `).join('')}
             </div>
         `;
