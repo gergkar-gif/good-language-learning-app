@@ -1,35 +1,43 @@
 {
   "id": "lesson.a1.05",
-  "title": "Building a Basic Hungarian Sentence",
+  "title": "Putting It Together",
   "level": "A1",
-  "goal": "Recognise the basic order of simple Hungarian statements",
-  "grammar": "basic-sentence",
+  "grammar": "integrated review",
   "sections": [
     {
       "type": "goal",
       "title": "Lesson Goals",
       "items": [
-        "Recognise the basic order of simple Hungarian statements",
-        "Form simple positive and negative sentences",
-        "Recognise simple yes/no questions",
-        "Understand how a familiar sentence can change through negation or questioning"
+        "Reuse the Unit 1 language in a short supported exchange.",
+        "Understand the Reading and use the core vocabulary independently."
+      ]
+    },
+    {
+      "type": "exercise-group",
+      "title": "Review",
+      "ref": "exercises/a1/a1-05-ex.json",
+      "exerciseRefs": [
+        "a1-05-review-1",
+        "a1-05-review-2"
       ]
     },
     {
       "type": "grammar",
-      "ref": "grammar/a1/a1-05-basic-sentence-gr.json"
+      "title": "Grammar 1",
+      "ref": "grammar/a1/a1-05-a-gr.json"
+    },
+    {
+      "type": "grammar",
+      "title": "Grammar 2",
+      "ref": "grammar/a1/a1-05-b-gr.json"
     },
     {
       "type": "exercise-group",
-      "title": "Practice",
+      "title": "Introduce",
       "ref": "exercises/a1/a1-05-ex.json",
       "exerciseRefs": [
-        "a1-05-practice-match",
-        "a1-05-practice-choice",
-        "a1-05-practice-blank",
-        "a1-05-practice-build",
-        "a1-05-practice-order",
-        "a1-05-practice-identify"
+        "a1-05-intro-1",
+        "a1-05-intro-2"
       ]
     },
     {
@@ -38,18 +46,25 @@
       "ref": "vocabulary/a1/a1-05-voc.json"
     },
     {
-      "type": "story",
-      "ref": "stories/original/a1/a1-05.json"
+      "type": "exercise-group",
+      "title": "Controlled",
+      "ref": "exercises/a1/a1-05-ex.json",
+      "exerciseRefs": [
+        "a1-05-controlled-1",
+        "a1-05-controlled-2",
+        "a1-05-controlled-3"
+      ]
     },
     {
       "type": "exercise-group",
-      "title": "Reading",
+      "title": "Practice",
       "ref": "exercises/a1/a1-05-ex.json",
       "exerciseRefs": [
-        "a1-05-reading-choice",
-        "a1-05-reading-choice-2",
-        "a1-05-reading-order",
-        "a1-05-reading-match"
+        "a1-05-practice-match",
+        "a1-05-practice-1",
+        "a1-05-practice-fill",
+        "a1-05-practice-4",
+        "a1-05-practice-dialogue"
       ]
     },
     {
@@ -58,13 +73,12 @@
       "ref": "exercises/a1/a1-05-ex.json",
       "exerciseRefs": [
         "a1-05-dialogue-1",
-        "a1-05-dialogue-2",
-        "a1-05-dialogue-3"
+        "a1-05-dialogue-2"
       ]
     },
     {
       "type": "exercise-group",
-      "title": "Writing",
+      "title": "Production",
       "ref": "exercises/a1/a1-05-ex.json",
       "exerciseRefs": [
         "a1-05-writing-1",
@@ -72,17 +86,29 @@
       ]
     },
     {
+      "type": "story",
+      "title": "Reading: Meg in Budapest",
+      "ref": "stories/original/a1/a1-unit-01.json"
+    },
+    {
       "type": "srs",
       "title": "Add to Review"
+    },
+    {
+      "type": "exercise-group",
+      "title": "Check",
+      "ref": "exercises/a1/a1-05-ex.json",
+      "exerciseRefs": [
+        "a1-05-check-1",
+        "a1-05-check-2"
+      ]
     },
     {
       "type": "checklist",
       "title": "Can you do this?",
       "items": [
-        "I can recognise the basic order of simple Hungarian statements",
-        "I can form simple positive and negative sentences",
-        "I can recognise simple yes/no questions",
-        "I can understand how a familiar sentence can change through negation or questioning"
+        "I can use the core Unit 1 patterns in a short exchange.",
+        "I can understand the main idea of the Reading."
       ]
     }
   ]

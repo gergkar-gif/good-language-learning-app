@@ -580,11 +580,11 @@ const stepRenderers = {
 
     story(step) {
         // Same tap-a-word-to-translate interaction as the Library reader —
-        // story files carry Spanish text only, no parallel English lines.
+        // story files carry target-language text only, no parallel English lines.
         const clickable = text => (typeof Reader !== 'undefined') ? Reader.makeClickable(text) : esc(text);
         return `
             <p class="lsn-hint">It's okay if you don't understand every word — this is here to get you used to
-                natural Spanish, not another test sentence. Read for the general idea; a few questions follow.</p>
+                natural ${esc(Lang.name())}, not another test sentence. Read for the general idea; a few questions follow.</p>
             <div class="lsn-story" id="story-body">
                 ${(step.lines || []).map(line => line.type === 'dialogue' ? `
                     <div class="lsn-line">

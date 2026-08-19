@@ -1,35 +1,43 @@
 {
   "id": "lesson.a1.02",
-  "title": "Finding the Subject",
+  "title": "Meg vagyok",
   "level": "A1",
-  "goal": "Recognise the basic personal pronouns used for people",
-  "grammar": "personal-pronouns",
+  "grammar": "én, te, ő; vagyok, vagy, van",
   "sections": [
     {
       "type": "goal",
       "title": "Lesson Goals",
       "items": [
-        "Recognise the basic personal pronouns used for people",
-        "Identify who a simple Hungarian sentence is about",
-        "Recognise the difference between én, te and ő",
-        "Use basic personal information in short sentences"
+        "Say who you are and identify another person.",
+        "Use én, te and ő with basic identity statements."
+      ]
+    },
+    {
+      "type": "exercise-group",
+      "title": "Review",
+      "ref": "exercises/a1/a1-02-ex.json",
+      "exerciseRefs": [
+        "a1-02-review-1",
+        "a1-02-review-2"
       ]
     },
     {
       "type": "grammar",
-      "ref": "grammar/a1/a1-02-personal-pronouns-gr.json"
+      "title": "Grammar 1",
+      "ref": "grammar/a1/a1-02-a-gr.json"
+    },
+    {
+      "type": "grammar",
+      "title": "Grammar 2",
+      "ref": "grammar/a1/a1-02-b-gr.json"
     },
     {
       "type": "exercise-group",
-      "title": "Practice",
+      "title": "Introduce",
       "ref": "exercises/a1/a1-02-ex.json",
       "exerciseRefs": [
-        "a1-02-practice-match",
-        "a1-02-practice-choice",
-        "a1-02-practice-blank",
-        "a1-02-practice-build",
-        "a1-02-practice-order",
-        "a1-02-practice-identify"
+        "a1-02-intro-1",
+        "a1-02-intro-2"
       ]
     },
     {
@@ -38,18 +46,26 @@
       "ref": "vocabulary/a1/a1-02-voc.json"
     },
     {
-      "type": "story",
-      "ref": "stories/original/a1/a1-02.json"
+      "type": "exercise-group",
+      "title": "Controlled",
+      "ref": "exercises/a1/a1-02-ex.json",
+      "exerciseRefs": [
+        "a1-02-controlled-1",
+        "a1-02-controlled-2",
+        "a1-02-controlled-3",
+        "a1-02-controlled-4"
+      ]
     },
     {
       "type": "exercise-group",
-      "title": "Reading",
+      "title": "Practice",
       "ref": "exercises/a1/a1-02-ex.json",
       "exerciseRefs": [
-        "a1-02-reading-choice",
-        "a1-02-reading-choice-2",
-        "a1-02-reading-order",
-        "a1-02-reading-match"
+        "a1-02-practice-7",
+        "a1-02-practice-1",
+        "a1-02-practice-3",
+        "a1-02-practice-5",
+        "a1-02-practice-dialogue"
       ]
     },
     {
@@ -58,13 +74,12 @@
       "ref": "exercises/a1/a1-02-ex.json",
       "exerciseRefs": [
         "a1-02-dialogue-1",
-        "a1-02-dialogue-2",
-        "a1-02-dialogue-3"
+        "a1-02-dialogue-2"
       ]
     },
     {
       "type": "exercise-group",
-      "title": "Writing",
+      "title": "Production",
       "ref": "exercises/a1/a1-02-ex.json",
       "exerciseRefs": [
         "a1-02-writing-1",
@@ -76,13 +91,20 @@
       "title": "Add to Review"
     },
     {
+      "type": "exercise-group",
+      "title": "Check",
+      "ref": "exercises/a1/a1-02-ex.json",
+      "exerciseRefs": [
+        "a1-02-check-1",
+        "a1-02-check-2"
+      ]
+    },
+    {
       "type": "checklist",
       "title": "Can you do this?",
       "items": [
-        "I can recognise the basic personal pronouns used for people",
-        "I can identify who a simple Hungarian sentence is about",
-        "I can recognise the difference between én, te and ő",
-        "I can use basic personal information in short sentences"
+        "I can say who I am.",
+        "I can identify another person."
       ]
     }
   ]

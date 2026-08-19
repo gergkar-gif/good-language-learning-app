@@ -1,35 +1,43 @@
 {
   "id": "lesson.a1.01",
-  "title": "Hungarian Sounds and the Alphabet",
+  "title": "First Sounds, First Words",
   "level": "A1",
-  "goal": "Recognise the Hungarian alphabet and its special letters",
-  "grammar": "alphabet",
+  "grammar": "Hungarian pronunciation and spelling",
   "sections": [
     {
       "type": "goal",
       "title": "Lesson Goals",
       "items": [
-        "Recognise the Hungarian alphabet and its special letters",
-        "Distinguish short and long vowels when reading",
-        "Recognise common Hungarian letter combinations such as sz and cs",
-        "Read simple Hungarian words aloud with reasonable pronunciation"
+        "Recognise and use the core greetings and responses from Unit 1.",
+        "Read simple Hungarian words with attention to stress and accents."
+      ]
+    },
+    {
+      "type": "exercise-group",
+      "title": "Review",
+      "ref": "exercises/a1/a1-01-ex.json",
+      "exerciseRefs": [
+        "a1-01-review-1",
+        "a1-01-review-2"
       ]
     },
     {
       "type": "grammar",
-      "ref": "grammar/a1/a1-01-alphabet-gr.json"
+      "title": "Grammar 1",
+      "ref": "grammar/a1/a1-01-a-gr.json"
+    },
+    {
+      "type": "grammar",
+      "title": "Grammar 2",
+      "ref": "grammar/a1/a1-01-b-gr.json"
     },
     {
       "type": "exercise-group",
-      "title": "Practice",
+      "title": "Introduce",
       "ref": "exercises/a1/a1-01-ex.json",
       "exerciseRefs": [
-        "a1-01-practice-match",
-        "a1-01-practice-choice",
-        "a1-01-practice-blank",
-        "a1-01-practice-build",
-        "a1-01-practice-order",
-        "a1-01-practice-identify"
+        "a1-01-intro-1",
+        "a1-01-intro-2"
       ]
     },
     {
@@ -38,18 +46,26 @@
       "ref": "vocabulary/a1/a1-01-voc.json"
     },
     {
-      "type": "story",
-      "ref": "stories/original/a1/a1-01.json"
+      "type": "exercise-group",
+      "title": "Controlled",
+      "ref": "exercises/a1/a1-01-ex.json",
+      "exerciseRefs": [
+        "a1-01-controlled-1",
+        "a1-01-controlled-2",
+        "a1-01-controlled-3",
+        "a1-01-controlled-4"
+      ]
     },
     {
       "type": "exercise-group",
-      "title": "Reading",
+      "title": "Practice",
       "ref": "exercises/a1/a1-01-ex.json",
       "exerciseRefs": [
-        "a1-01-reading-choice",
-        "a1-01-reading-choice-2",
-        "a1-01-reading-order",
-        "a1-01-reading-match"
+        "a1-01-practice-1",
+        "a1-01-practice-2",
+        "a1-01-practice-3",
+        "a1-01-practice-4",
+        "a1-01-practice-dialogue"
       ]
     },
     {
@@ -58,13 +74,12 @@
       "ref": "exercises/a1/a1-01-ex.json",
       "exerciseRefs": [
         "a1-01-dialogue-1",
-        "a1-01-dialogue-2",
-        "a1-01-dialogue-3"
+        "a1-01-dialogue-2"
       ]
     },
     {
       "type": "exercise-group",
-      "title": "Writing",
+      "title": "Production",
       "ref": "exercises/a1/a1-01-ex.json",
       "exerciseRefs": [
         "a1-01-writing-1",
@@ -76,13 +91,20 @@
       "title": "Add to Review"
     },
     {
+      "type": "exercise-group",
+      "title": "Check",
+      "ref": "exercises/a1/a1-01-ex.json",
+      "exerciseRefs": [
+        "a1-01-check-1",
+        "a1-01-check-2"
+      ]
+    },
+    {
       "type": "checklist",
       "title": "Can you do this?",
       "items": [
-        "I can recognise the Hungarian alphabet and its special letters",
-        "I can distinguish short and long vowels when reading",
-        "I can recognise common Hungarian letter combinations such as sz and cs",
-        "I can read simple Hungarian words aloud with reasonable pronunciation"
+        "I can greet someone and respond simply in Hungarian.",
+        "I can recognise the key sounds and spellings from this lesson."
       ]
     }
   ]
