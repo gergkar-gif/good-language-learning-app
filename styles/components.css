@@ -1493,46 +1493,65 @@
 
 .wp-lemma strong { color: var(--primary); }
 
-/* Hungarian word-tap popup only — the step-by-step build-up of a stacked
-   form (barát -> barátaim -> barátaimmal), from HungarianMorphology.ladder()
-   via engine/reader.js's _ladderHtml(). Replaces the plain .wp-lemma "from
-   X" line when a ladder is available. */
-.wp-ladder {
+/* Hungarian word-tap popup only, from HungarianMorphology.ladder() via
+   engine/reader.js's _hungarianBreakdownHtml(). Replaces the plain
+   .wp-lemma "from X" + .wp-meaning lines when a breakdown is available:
+   contextual meaning up top (.wp-contextual, same visual weight as
+   .wp-meaning normally carries), then the lemma/POS/gloss, the word's
+   build-up as a compact arrow chain, then a per-suffix table. */
+.wp-contextual {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.wp-lemma-block {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 8px 12px;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
-.wp-ladder-step {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 4px 0;
-}
-
-.wp-ladder-step + .wp-ladder-step {
-  border-top: 1px solid var(--border);
-}
-
-.wp-ladder-form {
+.wp-lemma-pos {
   font-weight: 600;
-  color: var(--muted);
+  color: var(--primary);
   font-size: 14px;
 }
 
-.wp-ladder-en {
+.wp-lemma-gloss {
   color: var(--muted);
   font-size: 13px;
-  text-align: right;
+  margin-top: 2px;
 }
 
-.wp-ladder-current .wp-ladder-form,
-.wp-ladder-current .wp-ladder-en {
+.wp-chain {
+  color: var(--muted);
+  font-size: 13px;
+  letter-spacing: .01em;
+  margin-bottom: 10px;
+}
+
+.wp-suffixes { margin-bottom: 16px; }
+
+.wp-suffix-row {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 3px 0;
+}
+
+.wp-suffix-form {
+  font-weight: 600;
   color: var(--primary);
-  font-weight: 700;
+  font-size: 14px;
+  min-width: 48px;
+}
+
+.wp-suffix-label {
+  color: var(--muted);
+  font-size: 13px;
 }
 
 .wp-meaning {

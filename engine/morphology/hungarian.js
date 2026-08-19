@@ -277,52 +277,102 @@ const HungarianMorphology = (function () {
 
     function caseName(caseCode) { return CASE_LABELS[caseCode] || caseCode; }
 
+    // Splits a possessive suffix into its own sub-morphemes for the
+    // popup's per-suffix breakdown table — "-aim" isn't atomic, it's the
+    // plural-possessed marker "-ai-" ("houses/friends", not "house/friend")
+    // plus the 1st-person owner marker "-m" ("my"). Only 1st/2nd person
+    // plural-possessed forms split cleanly this way; 3rd person singular
+    // owner has no separate trailing person letter at all ("barátai" =
+    // "his/her friends" is fully carried by "-ai" alone), so that one stays
+    // a single row rather than a fake second one with nothing in it.
+    function splitPossessiveSuffix(suffixStr, person, ownerNumber, possessedNumber) {
+        const wholeLabel = describePossessive(person, ownerNumber, possessedNumber);
+        if (possessedNumber !== 'pl') return [{ suffix: suffixStr, label: wholeLabel }];
+        const m = suffixStr.match(/^(j?[ae]i)(.*)$/);
+        if (!m || !m[2]) return [{ suffix: suffixStr, label: wholeLabel }];
+        const personLabel = { 1: { sg: 'my', pl: 'our' }, 2: { sg: 'your', pl: 'your' },
+            3: { sg: 'his/her', pl: 'their' } }[person][ownerNumber];
+        return [
+            { suffix: m[1], label: 'plural/possessive' },
+            { suffix: m[2], label: personLabel }
+        ];
+    }
+
+    // The preposition-or-caseName label for a case suffix, for the
+    // breakdown table's per-suffix row ("-mal" -> "with").
+    function caseSuffixLabel(caseCode) { return CASE_PREPOSITION[caseCode] || caseName(caseCode); }
+
     /**
-     * Step-by-step build-up of a Hungarian word for the Reader popup —
-     * "barátaimmal" -> [barát: friend, barátaim: my friends, barátaimmal:
-     * with my friends] — so a learner sees how the pieces stack rather
-     * than just a compact "my, plural, instrumental" label.
+     * Step-by-step build-up of a Hungarian word for the Reader popup.
+     * Returns { chain, breakdown }: chain is the cumulative forms
+     * ("barátaimmal" -> [barát: friend, barátaim: my friends,
+     * barátaimmal: with my friends]); breakdown is the individual
+     * suffixes added along the way ([-ai: plural/possessive, -m: my,
+     * -mal: with]) — the popup shows the chain as a compact arrow list
+     * and the breakdown as a small table underneath.
      *
      * Deliberately traces the SAME decomposition analyze() actually found
      * (same case/possessive tables, same order) rather than independently
      * generating forms — every step shown is a form the resolution
      * genuinely passed through, not a synthesized comparison that could be
      * wrong about which suffix allomorph the word actually needs. Returns
-     * [] when there's nothing to stack (the word already is the lemma, or
-     * it's a verb form — conjugation doesn't stack the way case/possessive
-     * do, so there's no ladder worth showing).
+     * { chain: [], breakdown: [] } when there's nothing to stack (the word
+     * already is the lemma, or it's a verb form — conjugation doesn't
+     * stack the way case/possessive do, so there's no ladder to show).
+     *
+     * A form can be ambiguous between an unrelated verb and a noun+suffix
+     * reading — "lakom" is both "lakik" ("I dwell", present 1sg) and "lak"
+     * + possessive ("my dwelling"). This function only ever searches
+     * case/possessive tables, so left to itself it always finds the noun
+     * reading, even when frequency ranking picked the verb as primary.
+     * targetLemma pins the search to that winning reading: a candidate
+     * whose base lemma doesn't match is skipped rather than accepted, so
+     * the ladder never contradicts the reading the popup shows above it.
+     * Pass null/omit to take whatever's found first (only safe when
+     * there's no such ambiguity to worry about).
      */
-    function ladder(word, dictionary, wordIndex) {
-        if (!word || dictionary[word]) return [];
+    function ladder(word, dictionary, wordIndex, targetLemma) {
+        const empty = { chain: [], breakdown: [] };
+        if (!word || dictionary[word]) return empty;
         const gloss = lemma => (typeof Lexicon !== 'undefined' && Lexicon.shortGloss)
             ? Lexicon.shortGloss(dictionary[lemma].en) : dictionary[lemma].en;
         // "to hotel" reads wrong in English; "with my friends" doesn't need
         // it since the possessive already makes the noun definite — only
         // the bare-noun-plus-case branch needs an article added.
         const withArticle = (base, type) => type === 'noun' ? 'the ' + base : base;
+        const matches = lemma => !targetLemma || lemma === targetLemma;
 
         for (const [suffix, caseCode] of CASE_SUFFIXES) {
             const remainder = strip(word, suffix);
             if (remainder === null) continue;
             const prep = CASE_PREPOSITION[caseCode];
+            const caseBreakdown = { suffix: suffix, label: caseSuffixLabel(caseCode) };
 
-            if (dictionary[remainder]) {
+            if (dictionary[remainder] && matches(remainder)) {
                 const base = withArticle(gloss(remainder), dictionary[remainder].type);
-                return [
-                    { form: remainder, translation: gloss(remainder) },
-                    { form: word, translation: prep ? prep + ' ' + base : base + ' (' + caseName(caseCode) + ')' }
-                ];
+                return {
+                    chain: [
+                        { form: remainder, translation: gloss(remainder) },
+                        { form: word, translation: prep ? prep + ' ' + base : base + ' (' + caseName(caseCode) + ')' }
+                    ],
+                    breakdown: [caseBreakdown]
+                };
             }
 
-            const indexHit = (wordIndex[remainder] || [])[0];
-            if (indexHit && dictionary[indexHit.lemma]) {
+            const indexHit = (wordIndex[remainder] || []).find(a => dictionary[a.lemma] && matches(a.lemma));
+            if (indexHit) {
                 const base = gloss(indexHit.lemma);
                 const possPhrase = possessivePhrase(base, indexHit.person, indexHit.ownerNumber, indexHit.number);
-                return [
-                    { form: indexHit.lemma, translation: base },
-                    { form: remainder, translation: possPhrase },
-                    { form: word, translation: prep ? prep + ' ' + possPhrase : possPhrase + ' (' + caseName(caseCode) + ')' }
-                ];
+                return {
+                    chain: [
+                        { form: indexHit.lemma, translation: base },
+                        { form: remainder, translation: possPhrase },
+                        { form: word, translation: prep ? prep + ' ' + possPhrase : possPhrase + ' (' + caseName(caseCode) + ')' }
+                    ],
+                    breakdown: splitPossessiveSuffix(
+                        remainder.slice(indexHit.lemma.length), indexHit.person, indexHit.ownerNumber, indexHit.number
+                    ).concat(caseBreakdown)
+                };
             }
 
             // One layer deeper: a possessive suffix under the case, for a
@@ -332,28 +382,34 @@ const HungarianMorphology = (function () {
             // exactly what the resolved reading actually found.
             for (const [possSuffix, person, ownerNumber, possessedNumber] of POSSESSIVE_SUFFIXES) {
                 const deeper = strip(remainder, possSuffix);
-                if (deeper === null || !dictionary[deeper]) continue;
+                if (deeper === null || !dictionary[deeper] || !matches(deeper)) continue;
                 const base = gloss(deeper);
                 const possPhrase = possessivePhrase(base, person, ownerNumber, possessedNumber);
-                return [
-                    { form: deeper, translation: base },
-                    { form: remainder, translation: possPhrase },
-                    { form: word, translation: prep ? prep + ' ' + possPhrase : possPhrase + ' (' + caseName(caseCode) + ')' }
-                ];
+                return {
+                    chain: [
+                        { form: deeper, translation: base },
+                        { form: remainder, translation: possPhrase },
+                        { form: word, translation: prep ? prep + ' ' + possPhrase : possPhrase + ' (' + caseName(caseCode) + ')' }
+                    ],
+                    breakdown: splitPossessiveSuffix(possSuffix, person, ownerNumber, possessedNumber).concat(caseBreakdown)
+                };
             }
         }
 
         for (const [suffix, person, ownerNumber, possessedNumber] of POSSESSIVE_SUFFIXES) {
             const remainder = strip(word, suffix);
-            if (remainder === null || !dictionary[remainder]) continue;
+            if (remainder === null || !dictionary[remainder] || !matches(remainder)) continue;
             const base = gloss(remainder);
-            return [
-                { form: remainder, translation: base },
-                { form: word, translation: possessivePhrase(base, person, ownerNumber, possessedNumber) }
-            ];
+            return {
+                chain: [
+                    { form: remainder, translation: base },
+                    { form: word, translation: possessivePhrase(base, person, ownerNumber, possessedNumber) }
+                ],
+                breakdown: splitPossessiveSuffix(suffix, person, ownerNumber, possessedNumber)
+            };
         }
 
-        return [];
+        return empty;
     }
 
     /**

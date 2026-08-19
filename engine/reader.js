@@ -67,21 +67,38 @@ function _setSpeakTarget(text) {
     if (ok) btn.setAttribute('data-speak', Speech.sayable(text));
 }
 
-// Step-by-step build-up for a stacked Hungarian form ("barátaimmal" ->
-// barát: friend / barátaim: my friends / barátaimmal: with my friends),
-// from HungarianMorphology.ladder() via Lexicon.lookup(). Spanish readings
-// never carry a ladder (Lexicon only attaches one on the Hungarian path),
-// so this renders nothing for the Spanish course — the popup falls back to
-// the plain "from <lemma>" line below instead.
-function _ladderHtml(ladder) {
-    if (!ladder || ladder.length < 2) return '';
-    const steps = ladder.map((step, i) => `
-        <div class="wp-ladder-step${i === ladder.length - 1 ? ' wp-ladder-current' : ''}">
-            <span class="wp-ladder-form">${Reader.escapeHtml(step.form)}</span>
-            <span class="wp-ladder-en">${Reader.escapeHtml(step.translation)}</span>
+// Rich breakdown for a stacked Hungarian form: the contextual meaning
+// ("with my friends"), the lemma/POS/plain gloss ("barát · noun" /
+// "friend"), the word's build-up as a compact arrow chain ("barát →
+// barátaim → barátaimmal"), and a per-suffix table ("-ai" plural/
+// possessive, "-m" my, "-mal" with). From HungarianMorphology.ladder()
+// via Lexicon.lookup(). Spanish readings never carry a ladder (Lexicon
+// only builds one on the Hungarian path), so this renders nothing for
+// that course — the popup falls back to the plain "from <lemma>" +
+// .wp-meaning lines below instead.
+function _hungarianBreakdownHtml(primary, ladder) {
+    if (!ladder || !ladder.chain || ladder.chain.length < 2) return '';
+    const chain = ladder.chain;
+    const lemmaStep = chain[0];
+    const contextual = chain[chain.length - 1].translation;
+    const chainText = chain.map(s => Reader.escapeHtml(s.form)).join(' → ');
+
+    const rows = (ladder.breakdown || []).map(b => `
+        <div class="wp-suffix-row">
+            <span class="wp-suffix-form">-${Reader.escapeHtml(b.suffix)}</span>
+            <span class="wp-suffix-label">${Reader.escapeHtml(b.label)}</span>
         </div>
     `).join('');
-    return `<div class="wp-ladder">${steps}</div>`;
+
+    return `
+        <p class="wp-contextual">${Reader.escapeHtml(contextual)}</p>
+        <div class="wp-lemma-block">
+            <p class="wp-lemma-pos">${Reader.escapeHtml(lemmaStep.form)}${primary.pos ? ' · ' + Reader.escapeHtml(primary.pos) : ''}</p>
+            <p class="wp-lemma-gloss">${Reader.escapeHtml(lemmaStep.translation)}</p>
+        </div>
+        <p class="wp-chain">${chainText}</p>
+        <div class="wp-suffixes">${rows}</div>
+    `;
 }
 
 function _renderWordReadings(tappedWord, readings, phrase, ladder) {
@@ -110,8 +127,12 @@ function _renderWordReadings(tappedWord, readings, phrase, ladder) {
     // Primary reading fills the header; any others are listed below, so an
     // ambiguous word ("casas" = houses / you marry) still shows both.
     const primary = readings[0];
+    const breakdownHtml = phrase ? '' : _hungarianBreakdownHtml(primary, ladder);
     if (!phrase) {
-        analysisEl.textContent = [primary.pos, primary.gender, primary.analysis]
+        // The breakdown block already states the POS and full morphology
+        // (lemma line, chain, suffix table) more clearly than this compact
+        // subtitle would alongside it — only shown when there's no breakdown.
+        analysisEl.textContent = breakdownHtml ? '' : [primary.pos, primary.gender, primary.analysis]
             .filter(Boolean).join(' · ');
     }
 
@@ -119,13 +140,8 @@ function _renderWordReadings(tappedWord, readings, phrase, ladder) {
     if (phrase) {
         html += `<p class="wp-alts-title" style="margin-top:16px">${Reader.escapeHtml(tappedWord)} on its own</p>`;
     }
-    const ladderHtml = _ladderHtml(ladder);
-    if (ladderHtml) {
-        // The ladder's own last row already gives the tapped form's actual
-        // contextual meaning ("with my friends") — a bare-lemma .wp-meaning
-        // line under it ("friend") would just repeat the first row instead
-        // of adding anything.
-        html += ladderHtml;
+    if (breakdownHtml) {
+        html += breakdownHtml;
     } else {
         if (primary.lemma.toLowerCase() !== String(tappedWord).toLowerCase()) {
             html += `<p class="wp-lemma">from <strong>${Reader.escapeHtml(primary.lemma)}</strong></p>`;

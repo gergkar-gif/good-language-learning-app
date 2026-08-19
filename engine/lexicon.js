@@ -241,7 +241,12 @@ const Lexicon = (function () {
         }
 
         readings.sort((a, b) => rankOf(a) - rankOf(b));
-        const ladder = (typeof HungarianMorphology !== 'undefined') ? HungarianMorphology.ladder(key, _dictionary, _wordIndex) : [];
+        // Pinned to the reading that actually won ranking — see ladder()'s
+        // own comment on why ("lakom" is ambiguous between "lakik" the verb
+        // and "lak" + possessive, and the ladder must agree with whichever
+        // one the popup is showing above it).
+        const ladder = (readings.length && typeof HungarianMorphology !== 'undefined')
+            ? HungarianMorphology.ladder(key, _dictionary, _wordIndex, readings[0].lemma) : { chain: [], breakdown: [] };
         return { word: word, readings: readings, ladder: ladder };
     }
 
