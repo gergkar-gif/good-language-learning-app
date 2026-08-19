@@ -34,7 +34,7 @@ step-specific entries at once.
 
 ## Open design questions (decide before beta)
 
-- [ ] How do we track a user's "known words"? Candidate: auto-add all words from a unit once completed — should the same apply to readings? Needs a real decision before beta.
+- [x] How do we track a user's "known words"? **Decided and built 2026-08-19**: a separate, unscheduled `knownWords` list distinct from the SRS deck. Populated three ways — an explicit Review/Know-it choice per word at the end of each lesson (replacing the old silent "untick what you know" checkbox), typing a word directly into a new Decks → My Dictionary view, or automatic graduation when an SRS card survives 5+ reviews and reaches a 180+ day interval. Known and reviewing are mutually exclusive by construction. Decks now shows both counts ("X reviewing" / "Y known") as the vocab-reach figures. Readings were *not* included in this pass — words tapped/looked up while reading still only join the SRS deck via the existing "add to deck" gesture, since looking a word up is arguably evidence against already knowing it; whether reading-encountered words should ever feed "known" is still open.
 - [ ] Accent sensitivity in answer-checking (e.g. está vs esta) — currently not enforced; decide whether/when to introduce.
 - [ ] Name interchangeability in exercises — e.g. "Carlos presenta a Meg" and "Meg presenta a Carlos" should probably both validate when either could be correct.
 - [ ] Can the dictionary/Library lookup handle inflected/reflexive forms like "conocerte"?
