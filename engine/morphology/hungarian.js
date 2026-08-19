@@ -1044,27 +1044,48 @@ const HungarianMorphology = (function () {
 
     const BACK_VOWELS = 'aáoóuú';
     const FRONT_ROUNDED_VOWELS = 'öőüű';
-    // e/é/i/í don't have independent harmonic pull in real Hungarian
-    // (they're "neutral" — a stem can be back-harmony even with only these
-    // vowels in it, e.g. "ír" -> "írok"/"írnak", not "*írek"/"*írnek").
-    // Defaulting neutral-only stems to front is the standard beginner-level
-    // simplification and right for most such verbs, but round-trip testing
-    // conjugate() through analyze() (2026-08-19) caught "ír" as a real,
-    // common miss — not just a theoretical gap — so the handful of common
-    // A1 verbs already known to break the default get a lexical override
-    // here rather than silently generating wrong Hungarian for them. Not
-    // exhaustive; same "would need a small lexical list" treatment as the
-    // tükör-type stem-vowel-deletion gap documented below.
-    const BACK_HARMONY_NEUTRAL_STEMS = ['ír', 'sír', 'nyír', 'bízik', 'hisz', 'visz', 'iszik'];
+    // e/é/i/í are "neutral" in Hungarian vowel harmony — they carry no
+    // harmonic pull of their own and are TRANSPARENT to it, so a stem's
+    // harmony class is set by the nearest non-neutral vowel, which isn't
+    // necessarily the stem's last vowel: "szólít" (to call/address) is
+    // back-harmony (szólítok, szólítunk, szólítanak) because of its "ó",
+    // even though the closer, final vowel is the neutral "í" — a bug
+    // caught live (2026-08-19) when this returned "szólítnek" as "correct"
+    // and a manual test typed the identical string and was marked wrong
+    // (the exercise's own displayed "correct" answer was already wrong,
+    // not a separate grading bug).
+    //
+    // When EVERY vowel in the stem is neutral, real Hungarian splits by
+    // WHICH neutral vowel: stems with an e/é anywhere reliably default to
+    // front (kér, ért, beszél, néz, fizet, ken — all verified by round-trip
+    // testing) — but stems with ONLY i/í are unreliable. That same
+    // live-testing session also caught "hív" -> "hívnek" as wrong (real
+    // Hungarian: hívok/hívnak, back) sitting right next to "ír" in the
+    // pool, which means this isn't one or two isolated exceptions to patch
+    // — pure i/í stems are back-harmony often enough that guessing "front"
+    // for an unlisted one is a real, repeated risk of teaching wrong
+    // Hungarian, not a rare edge case. So rather than keep extending a
+    // lexical list one caught mistake at a time, an i/í-only stem NOT on
+    // the known-front list below returns null (uncertain) and
+    // conjugate()/callers skip the verb entirely instead of guessing.
+    const BACK_HARMONY_NEUTRAL_STEMS = ['ír', 'sír', 'nyír', 'bízik', 'hisz', 'visz', 'iszik', 'hív', 'szid', 'nyit'];
+    const FRONT_HARMONY_II_ONLY_STEMS = ['izzik', 'illik', 'intik'];
     function _harmonyClass(stem) {
         if (BACK_HARMONY_NEUTRAL_STEMS.includes(stem)) return 'back';
+        if (FRONT_HARMONY_II_ONLY_STEMS.includes(stem)) return 'front-unrounded';
+
+        let sawEE = false, sawII = false;
         for (let i = stem.length - 1; i >= 0; i--) {
             const ch = stem[i];
             if (BACK_VOWELS.includes(ch)) return 'back';
             if (FRONT_ROUNDED_VOWELS.includes(ch)) return 'front-rounded';
-            if ('eéií'.includes(ch)) return 'front-unrounded';
+            if (ch === 'e' || ch === 'é') sawEE = true;
+            else if (ch === 'i' || ch === 'í') sawII = true;
+            // neutral - transparent, keep scanning past it either way
         }
-        return 'front-unrounded';
+        if (sawEE) return 'front-unrounded';
+        if (sawII) return null; // i/í-only and not on either list - unreliable, don't guess
+        return 'front-unrounded'; // no vowels at all - shouldn't happen for a real word
     }
 
     // s/sz/z-final stems take -ol/-el/-öl instead of -asz/-esz (or bare
@@ -1087,14 +1108,19 @@ const HungarianMorphology = (function () {
     // be cross-validated against real data the way the noun suffix tables
     // are via word-index.json, since conjugated verb forms aren't in that
     // index (see the comment above conjugate()) — instead it was round-trip
-    // tested by generating all persons/numbers for 21 verbs spanning every
-    // harmony class, sibilant-final, cluster-final and vowel-final stems,
-    // and feeding each generated form back through analyze() to confirm it
-    // resolves to the same lemma (2026-08-19; also caught and fixed two
-    // real gaps this surfaced: "ír"'s neutral-vowel harmony above, and a
-    // missing front-rounded/cluster-linking 2pl and 3pl branch in
-    // VERB_SUFFIXES itself, which also means the Reader can now decode
-    // forms like "üttök"/"értenek" it couldn't before). Still worth a
+    // tested by generating all persons/numbers for a growing set of verbs
+    // spanning every harmony class, sibilant-final, cluster-final and
+    // vowel-final stems, and feeding each generated form back through
+    // analyze() to confirm it resolves to the same lemma (2026-08-19).
+    // That testing caught and fixed a missing front-rounded/cluster-linking
+    // 2pl and 3pl branch in VERB_SUFFIXES itself (which also means the
+    // Reader can now decode forms like "üttök"/"értenek" it couldn't
+    // before) — but round-trip testing only proves internal consistency
+    // with VERB_SUFFIXES, not correctness against real Hungarian, and it
+    // was live manual testing (not this harness) that caught the harmony
+    // function returning a flatly wrong "correct" answer for "ír" and
+    // "hív" both (see _harmonyClass's own comment on why i/í-only stems
+    // now come back null rather than a guess). Still worth a
     // native-speaker spot-check before leaning on it hard for anything
     // beyond the verb classes that testing actually covered.
     const CONSONANT_UNITS = ['cs', 'gy', 'ly', 'ny', 'sz', 'ty', 'zs',
@@ -1113,10 +1139,11 @@ const HungarianMorphology = (function () {
     function _conjugatePresentIndefinite(lemma, person, number) {
         const isIkVerb = lemma.endsWith('ik');
         const stem = isIkVerb ? lemma.slice(0, -2) : lemma;
-        const harmony = _harmonyClass(stem);
-        const linking = _needsLinkingVowel(stem);
+        if (person === 3 && number === 'sg') return lemma; // harmony-independent, safe even when harmony is uncertain
 
-        if (person === 3 && number === 'sg') return lemma;
+        const harmony = _harmonyClass(stem);
+        if (harmony === null) return null; // i/í-only stem not on either known list - don't guess
+        const linking = _needsLinkingVowel(stem);
 
         if (person === 1 && number === 'sg') {
             if (isIkVerb) return stem + { back: 'om', 'front-unrounded': 'em', 'front-rounded': 'öm' }[harmony];

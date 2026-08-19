@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="styles/layout.css?v=2026-08-14q">
     <link rel="stylesheet" href="styles/utilities.css?v=2026-08-13e">
     <link rel="stylesheet" href="styles/verbs.css?v=2026-08-18a">
-    <link rel="stylesheet" href="styles/workshop.css?v=2026-08-18a">
+    <link rel="stylesheet" href="styles/workshop.css?v=2026-08-19a">
 </head>
 <body>
 
@@ -252,8 +252,14 @@
 <script src="engine/drills/listening-runner.js?v=2026-08-15a"></script>
 <script src="engine/drills/listening.js?v=2026-08-19a"></script>
 
-<!-- Engine: workshop shell (depends on Verbs, GrammarDriller, TranslationDriller, VocabularyDriller, ListeningDriller) -->
-<script src="engine/workshop.js?v=2026-08-18a"></script>
+<!-- Engine: Hungarian-specific drillers (depend on HungarianMorphology, Lexicon, GrammarRunner, all loaded earlier) -->
+<script src="engine/drills/hu-suffix.js?v=2026-08-19a"></script>
+<script src="engine/drills/hu-prefix.js?v=2026-08-19a"></script>
+<script src="engine/drills/hu-morphology.js?v=2026-08-19a"></script>
+<script src="engine/drills/hu-verb.js?v=2026-08-19a"></script>
+
+<!-- Engine: workshop shell (depends on Verbs, GrammarDriller, TranslationDriller, VocabularyDriller, ListeningDriller, Hu*Driller) -->
+<script src="engine/workshop.js?v=2026-08-19a"></script>
 
 <!-- Engine: lessons, progress, curriculum -->
 <script src="engine/lessons.js?v=2026-08-19e"></script>

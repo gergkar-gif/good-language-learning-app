@@ -187,7 +187,14 @@
 }
 
 /* Bordered, rounded box with a fill-tint highlight for state — matches
-   .lsn-option in styles/components.css. Reversed 2026-08-14. */
+   .lsn-option in styles/components.css. Reversed 2026-08-14. Background
+   switched from --surface (pure white) to --bg (cream, matches the page)
+   2026-08-19 — same "boxy white rectangle" issue the Home/Decks fix in
+   6722cbe called out, just not caught there since that pass covered
+   card/bar-scale fills, not exercise option buttons. Reads via its
+   hairline border instead of a filled block now. .lsn-option still has
+   the same --surface fill and would want the same fix, but that's
+   lessons.js's rendering, out of scope here. */
 .gd-option {
     position: relative;
     padding: 12px 16px;
@@ -195,7 +202,7 @@
     font-size: 0.98rem;
     border: 1.5px solid var(--border);
     border-radius: var(--radius-sm);
-    background: var(--surface);
+    background: var(--bg);
     color: var(--text);
     cursor: pointer;
     min-height: 48px;

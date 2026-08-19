@@ -38,10 +38,19 @@ const GrammarRunner = (function () {
         return d.innerHTML;
     }
 
+    // Accent-stripping is lenient grading Spanish wants (á≈a) but Hungarian
+    // can't afford — a/á, o/ó/ö/ő, u/ú/ü/ű are distinct letters there, not
+    // accent variants of one letter, so stripping them would silently accept
+    // wrong-vowel-length answers as correct. Still canonicalise to NFC
+    // (compose, don't strip) even for Hungarian — an accented letter typed
+    // via IME/some keyboards can arrive decomposed (e + combining acute)
+    // rather than precomposed (é), which renders identically but wouldn't
+    // string-equal a source-file literal without this.
     function _normalise(text) {
-        return String(text || '').toLowerCase().trim()
-            .replace(/[.,!?¡¿;:]/g, '')
-            .normalize('NFD').replace(/[̀-ͯ]/g, '');
+        const base = String(text || '').toLowerCase().trim().replace(/[.,!?¡¿;:]/g, '');
+        return (typeof Lang !== 'undefined' && Lang.code() === 'hu')
+            ? base.normalize('NFC')
+            : base.normalize('NFD').replace(/[̀-ͯ]/g, '');
     }
 
     function _shuffled(list) {

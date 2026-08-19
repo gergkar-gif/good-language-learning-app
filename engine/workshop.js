@@ -55,6 +55,38 @@ const Workshop = (function () {
             title: 'Listening Driller',
             sub: `Decode spoken ${(typeof Lang !== 'undefined') ? Lang.name() : 'the language'}, by ear.`,
             containerId: 'listening-driller-root'
+        },
+        {
+            id: 'hu-verb',
+            icon: 'hu-verb',
+            title: 'Verb Driller',
+            sub: 'Decode and produce Hungarian verb forms.',
+            containerId: 'hu-verb-driller-root',
+            langs: ['hu']
+        },
+        {
+            id: 'hu-suffix',
+            icon: 'hu-suffix',
+            title: 'Suffix Driller',
+            sub: 'Plurals, possession, and case — attach the right ending.',
+            containerId: 'hu-suffix-driller-root',
+            langs: ['hu']
+        },
+        {
+            id: 'hu-prefix',
+            icon: 'hu-prefix',
+            title: 'Prefix Driller',
+            sub: 'Verb prefixes — meaning and construction.',
+            containerId: 'hu-prefix-driller-root',
+            langs: ['hu']
+        },
+        {
+            id: 'hu-morphology',
+            icon: 'hu-morphology',
+            title: 'Morphology Driller',
+            sub: 'Take Hungarian words apart, and put them back together.',
+            containerId: 'hu-morphology-driller-root',
+            langs: ['hu']
         }
     ];
 
@@ -77,7 +109,17 @@ const Workshop = (function () {
         // a card standing on the disc — one word, given room
         vocabulary: '<circle cx="50" cy="50" r="42" class="ps-wash"/><rect x="30" y="22" width="30" height="42" rx="2" class="ps-ink"/><rect x="38" y="70" width="14" height="10" class="ps-accent"/>',
         // a waveform — sound decoded into bars
-        listening: '<circle cx="50" cy="50" r="42" class="ps-wash"/><rect x="28" y="40" width="8" height="20" class="ps-ink"/><rect x="46" y="26" width="8" height="48" class="ps-ink"/><rect x="64" y="40" width="8" height="20" class="ps-accent"/>'
+        listening: '<circle cx="50" cy="50" r="42" class="ps-wash"/><rect x="28" y="40" width="8" height="20" class="ps-ink"/><rect x="46" y="26" width="8" height="48" class="ps-ink"/><rect x="64" y="40" width="8" height="20" class="ps-accent"/>',
+        // a root block with a smaller piece attached at its edge — a
+        // suffix/case ending joining onto a stem
+        'hu-suffix': '<circle cx="50" cy="50" r="42" class="ps-wash"/><rect x="20" y="34" width="36" height="32" class="ps-ink"/><rect x="56" y="42" width="20" height="16" class="ps-accent"/>',
+        // the same join, mirrored — a prefix attaching ahead of the stem
+        'hu-prefix': '<circle cx="50" cy="50" r="42" class="ps-wash"/><rect x="44" y="34" width="36" height="32" class="ps-ink"/><rect x="24" y="42" width="20" height="16" class="ps-accent"/>',
+        // a word split into stacked segments — decomposition
+        'hu-morphology': '<circle cx="50" cy="50" r="42" class="ps-wash"/><rect x="26" y="26" width="48" height="12" class="ps-ink"/><rect x="26" y="44" width="48" height="12" class="ps-accent"/><rect x="26" y="62" width="30" height="12" class="ps-ink"/>',
+        // the table-corner mark again, distinct fill order from the
+        // Spanish Verb Driller's since only one of the two ever shows
+        'hu-verb': '<circle cx="50" cy="50" r="42" class="ps-wash"/><path d="M50 92 50 8A42 42 0 0 1 50 92Z" class="ps-ink"/><rect x="60" y="60" width="16" height="16" class="ps-accent"/>'
     };
 
     function _drillerIcon(id) {
@@ -132,7 +174,11 @@ const Workshop = (function () {
             grammar: typeof GrammarDriller !== 'undefined' ? GrammarDriller : null,
             translation: typeof TranslationDriller !== 'undefined' ? TranslationDriller : null,
             vocabulary: typeof VocabularyDriller !== 'undefined' ? VocabularyDriller : null,
-            listening: typeof ListeningDriller !== 'undefined' ? ListeningDriller : null
+            listening: typeof ListeningDriller !== 'undefined' ? ListeningDriller : null,
+            'hu-verb': typeof HuVerbDriller !== 'undefined' ? HuVerbDriller : null,
+            'hu-suffix': typeof HuSuffixDriller !== 'undefined' ? HuSuffixDriller : null,
+            'hu-prefix': typeof HuPrefixDriller !== 'undefined' ? HuPrefixDriller : null,
+            'hu-morphology': typeof HuMorphologyDriller !== 'undefined' ? HuMorphologyDriller : null
         };
 
         if (driller.id === 'verbs' && typeof Verbs !== 'undefined') {
