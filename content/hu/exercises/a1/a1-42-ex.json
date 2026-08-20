@@ -5,48 +5,32 @@
       "id": "a1-42-review-1",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Which is the correct plural?",
-      "options": [
-        "címed",
-        "táskád",
-        "xyz"
-      ],
+      "question": "Which word means \"key\"?",
+      "options": ["kulcs", "táska", "telefon"],
       "correct": 0
     },
     {
       "id": "a1-42-review-2",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Which word names a familiar item?",
-      "options": [
-        "telefonja",
-        "kulcsa",
-        "xyz"
-      ],
+      "question": "How do you say \"His/her key is here\"?",
+      "options": ["A kulcsa itt van.", "A kulcs itt van.", "Kulcsa itt van ő."],
       "correct": 0
     },
     {
       "id": "a1-42-intro-1",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which form fits the new pattern?",
-      "options": [
-        "címed",
-        "táskád",
-        "xyz"
-      ],
+      "question": "Which word means \"room\"?",
+      "options": ["szoba", "barát", "család"],
       "correct": 0
     },
     {
       "id": "a1-42-intro-2",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which sentence uses today's language?",
-      "options": [
-        "táskád címed.",
-        "telefonja kulcsa.",
-        "xyz"
-      ],
+      "question": "Which means \"our room\"?",
+      "options": ["szobánk", "szoba", "szobák"],
       "correct": 0
     },
     {
@@ -54,188 +38,103 @@
       "type": "matching",
       "category": "controlled",
       "pairs": [
-        [
-          "táskád",
-          "familiar word"
-        ],
-        [
-          "címed",
-          "familiar word"
-        ],
-        [
-          "telefonja",
-          "familiar word"
-        ],
-        [
-          "kulcsa",
-          "familiar word"
-        ]
+        ["szoba", "room"],
+        ["barát", "friend"],
+        ["család", "family"],
+        ["név", "name"]
       ]
     },
     {
       "id": "a1-42-controlled-2",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "____.",
-      "answer": [
-        "táskád",
-        "familiar word"
-      ]
+      "sentence": "A ____ kicsi. (our room)",
+      "answer": "szobánk"
     },
     {
       "id": "a1-42-controlled-3",
       "type": "multiple-choice",
       "category": "controlled",
-      "question": "Choose the correct Hungarian form.",
-      "options": [
-        "címed",
-        "táskád",
-        "xyz"
-      ],
+      "question": "Which is the \"my friend\" form of barát?",
+      "options": ["barátom", "barátnk", "barátom van"],
       "correct": 0
     },
     {
       "id": "a1-42-controlled-4",
-      "type": "multiple-choice",
+      "type": "fill-blank",
       "category": "controlled",
-      "question": "Choose the correct answer.",
-      "options": [
-        "táskád címed.",
-        "telefonja kulcsa.",
-        "xyz"
-      ],
-      "correct": 0
+      "sentence": "A ____ itt van. (my friend)",
+      "answer": "barátom"
     },
     {
       "id": "a1-42-practice-1",
-      "type": "matching",
-      "category": "practice",
-      "pairs": [
-        [
-          "táskád",
-          "familiar word"
-        ],
-        [
-          "címed",
-          "familiar word"
-        ],
-        [
-          "telefonja",
-          "familiar word"
-        ],
-        [
-          "kulcsa",
-          "familiar word"
-        ]
-      ]
-    },
-    {
-      "id": "a1-42-practice-2",
       "type": "multiple-choice",
       "category": "practice",
-      "question": "Which sentence best matches the meaning?",
-      "options": [
-        "táskád címed.",
-        "telefonja kulcsa.",
-        "xyz"
-      ],
+      "question": "Why does szoba lengthen its final -a to -á before the possessive suffix?",
+      "options": ["vowel-final stems shift shape slightly before the suffix", "it never changes", "it's a random exception"],
       "correct": 0
     },
     {
-      "id": "a1-42-practice-3",
+      "id": "a1-42-practice-2",
       "type": "fill-blank",
       "category": "practice",
-      "sentence": "____.",
-      "answer": [
-        "címed",
-        "familiar word"
+      "sentence": "A barátom ____ van. (here)",
+      "answer": "itt"
+    },
+    {
+      "id": "a1-42-practice-3",
+      "type": "matching",
+      "category": "practice",
+      "pairs": [
+        ["A szobánk kicsi.", "Our room is small."],
+        ["A barátom itt van.", "My friend is here."],
+        ["A családod nagy?", "Is your family big?"],
+        ["A neved szép.", "Your name is nice."]
       ]
     },
     {
       "id": "a1-42-practice-4",
       "type": "sentence-builder",
       "category": "practice",
-      "tiles": [
-        [
-          "táskád",
-          "familiar word"
-        ],
-        [
-          "címed",
-          "familiar word"
-        ],
-        "."
-      ],
-      "solution": [
-        [
-          "táskád",
-          "familiar word"
-        ],
-        [
-          "címed",
-          "familiar word"
-        ],
-        "."
-      ],
-      "english": "('táskád', 'familiar word') ('címed', 'familiar word')."
+      "tiles": ["A", "szobánk", "kicsi", "."],
+      "solution": ["A", "szobánk", "kicsi", "."],
+      "english": "Our room is small."
     },
     {
       "id": "a1-42-practice-5",
-      "type": "dialogue-complete",
+      "type": "sentence-order",
       "category": "practice",
-      "prompt": [
-        {
-          "speaker": "Károly",
-          "text": "Mi ez?"
-        },
-        {
-          "speaker": "Meg",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Ez ('táskád', 'familiar word').",
-        "Ez ('címed', 'familiar word')."
-      ],
-      "correct": 0
+      "sentences": ["Milyen a szobátok?", "A szobánk kicsi.", "Itt van a barátod?", "A barátom itt van."],
+      "solution": [0, 1, 2, 3]
     },
     {
       "id": "a1-42-practice-6",
-      "type": "error-correction",
+      "type": "multiple-choice",
       "category": "practice",
-      "sentence": "('címed', 'familiar word') ('táskád', 'familiar word').",
-      "corrected": "('táskád', 'familiar word') ('címed', 'familiar word')."
+      "question": "Which word means \"name\"?",
+      "options": ["név", "barát", "család"],
+      "correct": 0
     },
     {
       "id": "a1-42-practice-7",
-      "type": "multiple-choice",
+      "type": "substitution",
       "category": "practice",
-      "question": "Choose the natural form.",
+      "base_sentence": "A szobánk kicsi.",
+      "base_word": "szobánk",
+      "base_gloss": "Our room is small.",
       "options": [
-        "címed",
-        "táskád",
-        "xyz"
-      ],
-      "correct": 0
+        { "word": "barát", "inflected": "barátom", "sentence": "A barátom kicsi.", "gloss": "my friend" }
+      ]
     },
     {
       "id": "a1-42-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
       "prompt": [
-        {
-          "speaker": "Mariann",
-          "text": "Mi ez?"
-        },
-        {
-          "speaker": "Meg",
-          "text": "_____"
-        }
+        { "speaker": "Meg", "text": "Milyen a szobátok?" },
+        { "speaker": "Károly", "text": "_____" }
       ],
-      "options": [
-        "Ez ('táskád', 'familiar word').",
-        "Ez ('telefonja', 'familiar word')."
-      ],
+      "options": ["A szobánk kicsi.", "A szoba kicsi mi van."],
       "correct": 0
     },
     {
@@ -243,19 +142,10 @@
       "type": "dialogue-complete",
       "category": "dialogue",
       "prompt": [
-        {
-          "speaker": "András",
-          "text": "Hol van?"
-        },
-        {
-          "speaker": "Meg",
-          "text": "_____"
-        }
+        { "speaker": "Meg", "text": "Itt van a barátod?" },
+        { "speaker": "Károly", "text": "_____" }
       ],
-      "options": [
-        "Itt van.",
-        "Nem tudom."
-      ],
+      "options": ["Igen, a barátom itt van.", "Igen, barát itt van om."],
       "correct": 0
     },
     {
@@ -263,10 +153,7 @@
       "type": "structured-writing",
       "category": "writing",
       "template": [
-        {
-          "prompt": "Write one short Hungarian sentence using today's language.",
-          "answer": "('táskád', 'familiar word') ('címed', 'familiar word')."
-        }
+        { "prompt": "Say \"My friend is here.\" in Hungarian.", "answer": "A barátom itt van." }
       ]
     },
     {
@@ -274,34 +161,23 @@
       "type": "structured-writing",
       "category": "writing",
       "template": [
-        {
-          "prompt": "Write another short Hungarian sentence using today's language.",
-          "answer": "('telefonja', 'familiar word') ('kulcsa', 'familiar word')."
-        }
+        { "prompt": "Say \"Our room is small.\" in Hungarian.", "answer": "A szobánk kicsi." }
       ]
     },
     {
       "id": "a1-42-check-1",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Which form is correct?",
-      "options": [
-        "címed",
-        "táskád",
-        "xyz"
-      ],
+      "question": "Which word means \"family\"?",
+      "options": ["család", "szoba", "név"],
       "correct": 0
     },
     {
       "id": "a1-42-check-2",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Which sentence is correct?",
-      "options": [
-        "táskád címed.",
-        "címed táskád.",
-        "xyz"
-      ],
+      "question": "How do you say \"My friend is here\"?",
+      "options": ["A barátom itt van.", "A barát itt van.", "Barátom itt van ő."],
       "correct": 0
     }
   ]

@@ -5,48 +5,32 @@
       "id": "a1-43-review-1",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Which is the correct plural?",
-      "options": [
-        "barátom",
-        "szobánk",
-        "xyz"
-      ],
+      "question": "Which word means \"room\"?",
+      "options": ["szoba", "cím", "lakás"],
       "correct": 0
     },
     {
       "id": "a1-43-review-2",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Which word names a familiar item?",
-      "options": [
-        "családod",
-        "nevem",
-        "xyz"
-      ],
+      "question": "How do you say \"My friend is here\"?",
+      "options": ["A barátom itt van.", "A barát itt van.", "Barátom itt van ő."],
       "correct": 0
     },
     {
       "id": "a1-43-intro-1",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which form fits the new pattern?",
-      "options": [
-        "barátom",
-        "szobánk",
-        "xyz"
-      ],
+      "question": "Which word means \"flat / apartment\"?",
+      "options": ["lakás", "cím", "autó"],
       "correct": 0
     },
     {
       "id": "a1-43-intro-2",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which sentence uses today's language?",
-      "options": [
-        "szobánk barátom.",
-        "családod nevem.",
-        "xyz"
-      ],
+      "question": "Which word means \"mine\"?",
+      "options": ["enyém", "tiéd", "övé"],
       "correct": 0
     },
     {
@@ -54,188 +38,103 @@
       "type": "matching",
       "category": "controlled",
       "pairs": [
-        [
-          "szobánk",
-          "familiar word"
-        ],
-        [
-          "barátom",
-          "familiar word"
-        ],
-        [
-          "családod",
-          "familiar word"
-        ],
-        [
-          "nevem",
-          "familiar word"
-        ]
+        ["cím", "address"],
+        ["lakás", "flat"],
+        ["autó", "car"],
+        ["enyém", "mine"]
       ]
     },
     {
       "id": "a1-43-controlled-2",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "____.",
-      "answer": [
-        "szobánk",
-        "familiar word"
-      ]
+      "sentence": "A ____ itt van. (my flat)",
+      "answer": "lakásom"
     },
     {
       "id": "a1-43-controlled-3",
       "type": "multiple-choice",
       "category": "controlled",
-      "question": "Choose the correct Hungarian form.",
-      "options": [
-        "barátom",
-        "szobánk",
-        "xyz"
-      ],
+      "question": "Which sentence means \"The car is mine\"?",
+      "options": ["Az autó az enyém.", "Az autó enyém van.", "Enyém az autó van."],
       "correct": 0
     },
     {
       "id": "a1-43-controlled-4",
-      "type": "multiple-choice",
+      "type": "fill-blank",
       "category": "controlled",
-      "question": "Choose the correct answer.",
-      "options": [
-        "szobánk barátom.",
-        "családod nevem.",
-        "xyz"
-      ],
-      "correct": 0
+      "sentence": "Az autó az ____. (mine)",
+      "answer": "enyém"
     },
     {
       "id": "a1-43-practice-1",
-      "type": "matching",
-      "category": "practice",
-      "pairs": [
-        [
-          "szobánk",
-          "familiar word"
-        ],
-        [
-          "barátom",
-          "familiar word"
-        ],
-        [
-          "családod",
-          "familiar word"
-        ],
-        [
-          "nevem",
-          "familiar word"
-        ]
-      ]
-    },
-    {
-      "id": "a1-43-practice-2",
       "type": "multiple-choice",
       "category": "practice",
-      "question": "Which sentence best matches the meaning?",
-      "options": [
-        "szobánk barátom.",
-        "családod nevem.",
-        "xyz"
-      ],
+      "question": "Which is more natural to avoid repeating the noun: \"az autó az autóm\" or \"az autó az enyém\"?",
+      "options": ["az autó az enyém", "az autó az autóm", "both are equally natural"],
       "correct": 0
     },
     {
-      "id": "a1-43-practice-3",
+      "id": "a1-43-practice-2",
       "type": "fill-blank",
       "category": "practice",
-      "sentence": "____.",
-      "answer": [
-        "barátom",
-        "familiar word"
+      "sentence": "A ____ itt van. (my address)",
+      "answer": "címem"
+    },
+    {
+      "id": "a1-43-practice-3",
+      "type": "matching",
+      "category": "practice",
+      "pairs": [
+        ["A lakásom itt van.", "My flat is here."],
+        ["Az autó az enyém.", "The car is mine."],
+        ["A cím fontos.", "The address is important."],
+        ["Ez az én lakásom.", "This is my flat."]
       ]
     },
     {
       "id": "a1-43-practice-4",
       "type": "sentence-builder",
       "category": "practice",
-      "tiles": [
-        [
-          "szobánk",
-          "familiar word"
-        ],
-        [
-          "barátom",
-          "familiar word"
-        ],
-        "."
-      ],
-      "solution": [
-        [
-          "szobánk",
-          "familiar word"
-        ],
-        [
-          "barátom",
-          "familiar word"
-        ],
-        "."
-      ],
-      "english": "('szobánk', 'familiar word') ('barátom', 'familiar word')."
+      "tiles": ["Az", "autó", "az", "enyém", "."],
+      "solution": ["Az", "autó", "az", "enyém", "."],
+      "english": "The car is mine."
     },
     {
       "id": "a1-43-practice-5",
-      "type": "dialogue-complete",
+      "type": "sentence-order",
       "category": "practice",
-      "prompt": [
-        {
-          "speaker": "Károly",
-          "text": "Mi ez?"
-        },
-        {
-          "speaker": "Meg",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Ez ('szobánk', 'familiar word').",
-        "Ez ('barátom', 'familiar word')."
-      ],
-      "correct": 0
+      "sentences": ["Hol van a lakásod?", "A lakásom itt van.", "Kié az autó?", "Az autó az enyém."],
+      "solution": [0, 1, 2, 3]
     },
     {
       "id": "a1-43-practice-6",
-      "type": "error-correction",
+      "type": "multiple-choice",
       "category": "practice",
-      "sentence": "('barátom', 'familiar word') ('szobánk', 'familiar word').",
-      "corrected": "('szobánk', 'familiar word') ('barátom', 'familiar word')."
+      "question": "Which word means \"car\"?",
+      "options": ["autó", "lakás", "cím"],
+      "correct": 0
     },
     {
       "id": "a1-43-practice-7",
-      "type": "multiple-choice",
+      "type": "substitution",
       "category": "practice",
-      "question": "Choose the natural form.",
+      "base_sentence": "A lakásom itt van.",
+      "base_word": "lakásom",
+      "base_gloss": "My flat is here.",
       "options": [
-        "barátom",
-        "szobánk",
-        "xyz"
-      ],
-      "correct": 0
+        { "word": "autó", "inflected": "autóm", "sentence": "Az autóm itt van.", "gloss": "my car" }
+      ]
     },
     {
       "id": "a1-43-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
       "prompt": [
-        {
-          "speaker": "Mariann",
-          "text": "Mi ez?"
-        },
-        {
-          "speaker": "Meg",
-          "text": "_____"
-        }
+        { "speaker": "Meg", "text": "Kié az autó?" },
+        { "speaker": "Károly", "text": "_____" }
       ],
-      "options": [
-        "Ez ('szobánk', 'familiar word').",
-        "Ez ('családod', 'familiar word')."
-      ],
+      "options": ["Az autó az enyém.", "Az autó enyém van."],
       "correct": 0
     },
     {
@@ -243,19 +142,10 @@
       "type": "dialogue-complete",
       "category": "dialogue",
       "prompt": [
-        {
-          "speaker": "András",
-          "text": "Hol van?"
-        },
-        {
-          "speaker": "Meg",
-          "text": "_____"
-        }
+        { "speaker": "Meg", "text": "Hol van a lakásod?" },
+        { "speaker": "Károly", "text": "_____" }
       ],
-      "options": [
-        "Itt van.",
-        "Nem tudom."
-      ],
+      "options": ["A lakásom itt van.", "A lakás itt van om."],
       "correct": 0
     },
     {
@@ -263,10 +153,7 @@
       "type": "structured-writing",
       "category": "writing",
       "template": [
-        {
-          "prompt": "Write one short Hungarian sentence using today's language.",
-          "answer": "('szobánk', 'familiar word') ('barátom', 'familiar word')."
-        }
+        { "prompt": "Say \"The car is mine.\" in Hungarian.", "answer": "Az autó az enyém." }
       ]
     },
     {
@@ -274,34 +161,23 @@
       "type": "structured-writing",
       "category": "writing",
       "template": [
-        {
-          "prompt": "Write another short Hungarian sentence using today's language.",
-          "answer": "('családod', 'familiar word') ('nevem', 'familiar word')."
-        }
+        { "prompt": "Say \"My flat is here.\" in Hungarian.", "answer": "A lakásom itt van." }
       ]
     },
     {
       "id": "a1-43-check-1",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Which form is correct?",
-      "options": [
-        "barátom",
-        "szobánk",
-        "xyz"
-      ],
+      "question": "Which word means \"address\"?",
+      "options": ["cím", "lakás", "autó"],
       "correct": 0
     },
     {
       "id": "a1-43-check-2",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Which sentence is correct?",
-      "options": [
-        "szobánk barátom.",
-        "barátom szobánk.",
-        "xyz"
-      ],
+      "question": "How do you say \"The car is mine\"?",
+      "options": ["Az autó az enyém.", "Az autó enyém.", "Enyém autó van."],
       "correct": 0
     }
   ]

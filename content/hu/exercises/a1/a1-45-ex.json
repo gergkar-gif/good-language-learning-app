@@ -5,48 +5,32 @@
       "id": "a1-45-review-1",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Which is the correct plural?",
-      "options": [
-        "tiéd",
-        "enyém",
-        "xyz"
-      ],
+      "question": "Which word means \"yours\"?",
+      "options": ["tiéd", "enyém", "övé"],
       "correct": 0
     },
     {
       "id": "a1-45-review-2",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Which word names a familiar item?",
-      "options": [
-        "övé",
-        "miénk",
-        "xyz"
-      ],
+      "question": "How do you say \"The bag is ours\"?",
+      "options": ["A táska a miénk.", "A táska miénk.", "Miénk táska van."],
       "correct": 0
     },
     {
       "id": "a1-45-intro-1",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which form fits the new pattern?",
-      "options": [
-        "tiéd",
-        "enyém",
-        "xyz"
-      ],
+      "question": "Which word means \"theirs\"?",
+      "options": ["övék", "övé", "miénk"],
       "correct": 0
     },
     {
       "id": "a1-45-intro-2",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which sentence uses today's language?",
-      "options": [
-        "enyém tiéd.",
-        "övé miénk.",
-        "xyz"
-      ],
+      "question": "Which word means \"own\"?",
+      "options": ["saját", "tulajdon", "dolog"],
       "correct": 0
     },
     {
@@ -54,188 +38,103 @@
       "type": "matching",
       "category": "controlled",
       "pairs": [
-        [
-          "enyém",
-          "familiar word"
-        ],
-        [
-          "tiéd",
-          "familiar word"
-        ],
-        [
-          "övé",
-          "familiar word"
-        ],
-        [
-          "miénk",
-          "familiar word"
-        ]
+        ["övék", "theirs"],
+        ["saját", "own"],
+        ["tulajdon", "property"],
+        ["dolog", "thing"]
       ]
     },
     {
       "id": "a1-45-controlled-2",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "____.",
-      "answer": [
-        "enyém",
-        "familiar word"
-      ]
+      "sentence": "A könyv az ____. (theirs)",
+      "answer": "övék"
     },
     {
       "id": "a1-45-controlled-3",
       "type": "multiple-choice",
       "category": "controlled",
-      "question": "Choose the correct Hungarian form.",
-      "options": [
-        "tiéd",
-        "enyém",
-        "xyz"
-      ],
+      "question": "Which sentence means \"I have my own room\"?",
+      "options": ["Van egy saját szobám.", "Van saját szoba van.", "Saját szobám van egy."],
       "correct": 0
     },
     {
       "id": "a1-45-controlled-4",
-      "type": "multiple-choice",
+      "type": "fill-blank",
       "category": "controlled",
-      "question": "Choose the correct answer.",
-      "options": [
-        "enyém tiéd.",
-        "övé miénk.",
-        "xyz"
-      ],
-      "correct": 0
+      "sentence": "Nekik van egy ____. (their car)",
+      "answer": "autójuk"
     },
     {
       "id": "a1-45-practice-1",
-      "type": "matching",
-      "category": "practice",
-      "pairs": [
-        [
-          "enyém",
-          "familiar word"
-        ],
-        [
-          "tiéd",
-          "familiar word"
-        ],
-        [
-          "övé",
-          "familiar word"
-        ],
-        [
-          "miénk",
-          "familiar word"
-        ]
-      ]
-    },
-    {
-      "id": "a1-45-practice-2",
       "type": "multiple-choice",
       "category": "practice",
-      "question": "Which sentence best matches the meaning?",
-      "options": [
-        "enyém tiéd.",
-        "övé miénk.",
-        "xyz"
-      ],
+      "question": "Which sound gets inserted between autó and the suffix -juk to avoid two vowels colliding?",
+      "options": ["j", "v", "n"],
       "correct": 0
     },
     {
-      "id": "a1-45-practice-3",
+      "id": "a1-45-practice-2",
       "type": "fill-blank",
       "category": "practice",
-      "sentence": "____.",
-      "answer": [
-        "tiéd",
-        "familiar word"
+      "sentence": "Minden saját ____ megvan. (thing)",
+      "answer": "dolog"
+    },
+    {
+      "id": "a1-45-practice-3",
+      "type": "matching",
+      "category": "practice",
+      "pairs": [
+        ["A könyv az övék.", "The book is theirs."],
+        ["Minden saját dolog megvan.", "All of my own things are here."],
+        ["Van egy saját szobám.", "I have my own room."],
+        ["Nekik van egy autójuk.", "They have a car."]
       ]
     },
     {
       "id": "a1-45-practice-4",
       "type": "sentence-builder",
       "category": "practice",
-      "tiles": [
-        [
-          "enyém",
-          "familiar word"
-        ],
-        [
-          "tiéd",
-          "familiar word"
-        ],
-        "."
-      ],
-      "solution": [
-        [
-          "enyém",
-          "familiar word"
-        ],
-        [
-          "tiéd",
-          "familiar word"
-        ],
-        "."
-      ],
-      "english": "('enyém', 'familiar word') ('tiéd', 'familiar word')."
+      "tiles": ["Nekik", "van", "egy", "autójuk", "."],
+      "solution": ["Nekik", "van", "egy", "autójuk", "."],
+      "english": "They have a car."
     },
     {
       "id": "a1-45-practice-5",
-      "type": "dialogue-complete",
+      "type": "sentence-order",
       "category": "practice",
-      "prompt": [
-        {
-          "speaker": "Károly",
-          "text": "Mi ez?"
-        },
-        {
-          "speaker": "Meg",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Ez ('enyém', 'familiar word').",
-        "Ez ('tiéd', 'familiar word')."
-      ],
-      "correct": 0
+      "sentences": ["Kié a könyv?", "A könyv az övék.", "Van saját szobád?", "Igen, van egy saját szobám."],
+      "solution": [0, 1, 2, 3]
     },
     {
       "id": "a1-45-practice-6",
-      "type": "error-correction",
+      "type": "multiple-choice",
       "category": "practice",
-      "sentence": "('tiéd', 'familiar word') ('enyém', 'familiar word').",
-      "corrected": "('enyém', 'familiar word') ('tiéd', 'familiar word')."
+      "question": "Which word means \"thing\"?",
+      "options": ["dolog", "tulajdon", "saját"],
+      "correct": 0
     },
     {
       "id": "a1-45-practice-7",
-      "type": "multiple-choice",
+      "type": "substitution",
       "category": "practice",
-      "question": "Choose the natural form.",
+      "base_sentence": "Nekik van egy autójuk.",
+      "base_word": "autójuk",
+      "base_gloss": "They have a car.",
       "options": [
-        "tiéd",
-        "enyém",
-        "xyz"
-      ],
-      "correct": 0
+        { "word": "szoba", "inflected": "szobájuk", "sentence": "Nekik van egy szobájuk.", "gloss": "room" }
+      ]
     },
     {
       "id": "a1-45-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
       "prompt": [
-        {
-          "speaker": "Mariann",
-          "text": "Mi ez?"
-        },
-        {
-          "speaker": "Meg",
-          "text": "_____"
-        }
+        { "speaker": "Meg", "text": "Kié ez a könyv?" },
+        { "speaker": "Károly", "text": "_____" }
       ],
-      "options": [
-        "Ez ('enyém', 'familiar word').",
-        "Ez ('övé', 'familiar word')."
-      ],
+      "options": ["A könyv az övék.", "A könyv övék van."],
       "correct": 0
     },
     {
@@ -243,19 +142,10 @@
       "type": "dialogue-complete",
       "category": "dialogue",
       "prompt": [
-        {
-          "speaker": "András",
-          "text": "Hol van?"
-        },
-        {
-          "speaker": "Meg",
-          "text": "_____"
-        }
+        { "speaker": "Meg", "text": "Van saját szobád?" },
+        { "speaker": "Károly", "text": "_____" }
       ],
-      "options": [
-        "Itt van.",
-        "Nem tudom."
-      ],
+      "options": ["Igen, van egy saját szobám.", "Igen, saját szoba van nekem."],
       "correct": 0
     },
     {
@@ -263,10 +153,7 @@
       "type": "structured-writing",
       "category": "writing",
       "template": [
-        {
-          "prompt": "Write one short Hungarian sentence using today's language.",
-          "answer": "('enyém', 'familiar word') ('tiéd', 'familiar word')."
-        }
+        { "prompt": "Say \"They have a car.\" in Hungarian.", "answer": "Nekik van egy autójuk." }
       ]
     },
     {
@@ -274,34 +161,23 @@
       "type": "structured-writing",
       "category": "writing",
       "template": [
-        {
-          "prompt": "Write another short Hungarian sentence using today's language.",
-          "answer": "('övé', 'familiar word') ('miénk', 'familiar word')."
-        }
+        { "prompt": "Say \"The book is theirs.\" in Hungarian.", "answer": "A könyv az övék." }
       ]
     },
     {
       "id": "a1-45-check-1",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Which form is correct?",
-      "options": [
-        "tiéd",
-        "enyém",
-        "xyz"
-      ],
+      "question": "Which word means \"property\"?",
+      "options": ["tulajdon", "dolog", "saját"],
       "correct": 0
     },
     {
       "id": "a1-45-check-2",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Which sentence is correct?",
-      "options": [
-        "enyém tiéd.",
-        "tiéd enyém.",
-        "xyz"
-      ],
+      "question": "How do you say \"They have a car\"?",
+      "options": ["Nekik van egy autójuk.", "Nekik van egy autó.", "Ők van autójuk."],
       "correct": 0
     }
   ]
