@@ -314,13 +314,29 @@ function shuffledOptions(options, correct) {
     };
 }
 
+// Dropping accents before comparing a typed answer is a deliberate
+// leniency for Spanish (see exercises.schema.json's fill-blank
+// description) - rarely changes which word is meant, so it is friendlier
+// to a learner without a Spanish keyboard. It is NOT safe for Hungarian:
+// accents there are often the entire distinction between different words
+// or grammatical forms (kor / kor-with-acute / kor-with-umlaut are three
+// unrelated words; several lessons exist specifically to teach a vowel
+// pattern like viz -> vizet), and checked directly - 187 of the course's
+// 394 fill-blank answers carry an accent. Stripping them the same way
+// would make those exercises unable to verify the one thing many of them
+// are actually testing.
 function normalise(text) {
-    return String(text || '')
+    const value = String(text || '')
         .toLowerCase()
         .trim()
-        .replace(/[.,!?¡¿;:]/g, '')
-        .normalize('NFD')
-        .replace(/[\u0300-\u036f]/g, '');
+        .replace(/[.,!?¡¿;:]/g, '');
+    if (Lang.code() === 'hu') {
+        // Still normalise Unicode representation (NFC) so a precomposed
+        // accented letter typed on one keyboard/IME matches a decomposed
+        // one from another - just do not strip the accent itself.
+        return value.normalize('NFC');
+    }
+    return value.normalize('NFD').replace(/[̀-ͯ]/g, '');
 }
 
 function feedbackHtml() {
