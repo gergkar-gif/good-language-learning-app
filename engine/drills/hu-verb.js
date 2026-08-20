@@ -45,6 +45,20 @@ const HuVerbDriller = (function () {
     // conjugate.
     const FORM_OF_GLOSS = /\b(participle|verbal noun|gerund|imperative) of\b/i;
 
+    // Short, practical, example-led explanations for the two toggles below
+    // — matches the tone of content/hu/grammar's own "text" sections
+    // (one or two plain sentences, a real example, no grammar-book jargon)
+    // rather than writing a new, heavier style just for this driller.
+    const TENSE_INFO = 'Hungarian has just one past tense — no separate '
+        + '"was doing" vs "did" like some languages. Add -t or -tt before '
+        + 'the personal ending: olvasok (I read, now) becomes olvastam '
+        + '(I read, before).';
+    const DEFINITE_INFO = 'Hungarian verbs conjugate differently depending on '
+        + 'the object. Indefinite: no object, or a non-specific one — '
+        + 'olvasok egy könyvet (I read a book). Definite: a specific, known '
+        + 'object — usually "the", "this/that", or a possessive — olvasom '
+        + 'a könyvet (I read the book). No object at all → always indefinite.';
+
     // [person, number, pronoun] — no gendered 3rd person, matches
     // Hungarian's actual pronoun set.
     const PERSONS = [
@@ -63,6 +77,8 @@ const HuVerbDriller = (function () {
 
     let _tense = 'pres';    // 'pres' | 'past'
     let _definite = false;
+    let _showTenseInfo = false;
+    let _showDefiniteInfo = false;
     let _mode = MODE.COUNT;
     let _questionCount = 10;
     let _timerMinutes = 2;
@@ -216,7 +232,9 @@ const HuVerbDriller = (function () {
                     rather than just your lessons so far — ${_verbs.length} verbs available for this combination.</p>
 
                 <div class="vb-setting vb-setting-row">
-                    <label id="hv-tense-label">Past tense</label>
+                    <label id="hv-tense-label">Past tense
+                        <button class="hv-info-link" type="button" data-action="toggle-tense-info">What's this?</button>
+                    </label>
                     <button class="geo-toggle" data-action="toggle-tense" role="switch"
                         aria-checked="${_tense === 'past'}" aria-labelledby="hv-tense-label">
                         <span class="geo-toggle-track"></span>
@@ -224,9 +242,12 @@ const HuVerbDriller = (function () {
                         <span class="geo-toggle-shape geo-toggle-shape--on"></span>
                     </button>
                 </div>
+                ${_showTenseInfo ? `<p class="gd-hint hv-info">${TENSE_INFO}</p>` : ''}
 
                 <div class="vb-setting vb-setting-row">
-                    <label id="hv-definite-label">Definite conjugation</label>
+                    <label id="hv-definite-label">Definite conjugation
+                        <button class="hv-info-link" type="button" data-action="toggle-definite-info">What's this?</button>
+                    </label>
                     <button class="geo-toggle" data-action="toggle-definite" role="switch"
                         aria-checked="${_definite}" aria-labelledby="hv-definite-label">
                         <span class="geo-toggle-track"></span>
@@ -234,6 +255,7 @@ const HuVerbDriller = (function () {
                         <span class="geo-toggle-shape geo-toggle-shape--on"></span>
                     </button>
                 </div>
+                ${_showDefiniteInfo ? `<p class="gd-hint hv-info">${DEFINITE_INFO}</p>` : ''}
 
                 <div class="vb-mode-switcher" role="tablist">
                     <button class="vb-mode-btn${_mode === MODE.COUNT ? ' active' : ''}"
@@ -278,6 +300,14 @@ const HuVerbDriller = (function () {
         _container.querySelector('[data-action="toggle-definite"]').addEventListener('click', function () {
             _definite = !_definite;
             _buildVerbs();
+            _renderSettings();
+        });
+        _container.querySelector('[data-action="toggle-tense-info"]').addEventListener('click', function () {
+            _showTenseInfo = !_showTenseInfo;
+            _renderSettings();
+        });
+        _container.querySelector('[data-action="toggle-definite-info"]').addEventListener('click', function () {
+            _showDefiniteInfo = !_showDefiniteInfo;
             _renderSettings();
         });
 

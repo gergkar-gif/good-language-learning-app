@@ -357,7 +357,7 @@
     font-size: 0.95rem;
     border: 1px solid var(--border);
     border-radius: var(--radius-sm);
-    background: var(--surface);
+    background: var(--bg);
     color: var(--text);
     cursor: pointer;
 }
@@ -573,4 +573,34 @@
         padding-left: 24px;
         padding-right: 24px;
     }
+}
+
+/* Verb Driller's "What's this?" explainers (Tense / Definite toggles) —
+   a small text link next to the toggle's own label, not a full button,
+   since it's a secondary action next to the switch that actually does
+   something. The expanded paragraph reuses .gd-hint's own type scale. */
+.hv-info-link {
+    display: inline;
+    margin-left: 8px;
+    padding: 0;
+    border: none;
+    background: none;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-decoration: underline;
+    text-transform: none;
+    letter-spacing: normal;
+    color: var(--accent-dark);
+    cursor: pointer;
+}
+
+.hv-info-link:hover {
+    color: var(--accent);
+}
+
+.hv-info {
+    margin: -4px 0 16px;
+    padding: 10px 12px;
+    border-left: 3px solid var(--primary-mid);
+    background: var(--bg);
 }
