@@ -5,48 +5,32 @@
       "id": "a1-93-review-1",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the useful Hungarian item.",
-      "options": [
-        "darab",
-        "üveg",
-        "pohár"
-      ],
+      "question": "Which word means \"coffee\"?",
+      "options": ["kávé", "tea", "víz"],
       "correct": 0
     },
     {
       "id": "a1-93-review-2",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Which item belongs to this lesson?",
-      "options": [
-        "üveg",
-        "pohár",
-        "kevés"
-      ],
+      "question": "How do you say \"Dinner is delicious\"?",
+      "options": ["A vacsora finom.", "A vacsora van finom.", "Finom vacsora van."],
       "correct": 0
     },
     {
       "id": "a1-93-intro-1",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which sentence uses darab naturally?",
-      "options": [
-        "A darab itt van.",
-        "A darab megy.",
-        "darab ember."
-      ],
+      "question": "Which word means \"apple\"?",
+      "options": ["alma", "pohár", "üveg"],
       "correct": 0
     },
     {
       "id": "a1-93-intro-2",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which word is üveg?",
-      "options": [
-        "üveg",
-        "pohár",
-        "kevés"
-      ],
+      "question": "Which word means \"piece\"?",
+      "options": ["darab", "üveg", "pohár"],
       "correct": 0
     },
     {
@@ -54,162 +38,100 @@
       "type": "matching",
       "category": "controlled",
       "pairs": [
-        [
-          "darab",
-          "target 1"
-        ],
-        [
-          "üveg",
-          "target 2"
-        ],
-        [
-          "pohár",
-          "target 3"
-        ],
-        [
-          "kevés",
-          "target 4"
-        ]
+        ["alma", "apple"],
+        ["pohár", "glass"],
+        ["üveg", "bottle"],
+        ["darab", "piece"]
       ]
     },
     {
       "id": "a1-93-controlled-2",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "Ez a(z) ____.",
+      "sentence": "Van két ____ alma. (piece)",
       "answer": "darab"
     },
     {
       "id": "a1-93-controlled-3",
       "type": "multiple-choice",
       "category": "controlled",
-      "question": "Choose the natural sentence.",
-      "options": [
-        "A üveg fontos.",
-        "A üveg fontosak.",
-        "üveg a fontos."
-      ],
+      "question": "Which word means \"many/much\"?",
+      "options": ["sok", "kevés", "darab"],
       "correct": 0
     },
     {
       "id": "a1-93-controlled-4",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "A ____ itt van.",
-      "answer": "üveg"
+      "sentence": "De ____ a sajt. (little)",
+      "answer": "kevés"
     },
     {
       "id": "a1-93-practice-1",
       "type": "multiple-choice",
       "category": "practice",
-      "question": "Which answer fits?",
-      "options": [
-        "Igen, darab.",
-        "Hol, pohár?",
-        "Nem kevés?"
-      ],
+      "question": "Which word is used as a measure word for countable items?",
+      "options": ["darab", "üveg", "pohár"],
       "correct": 0
     },
     {
       "id": "a1-93-practice-2",
       "type": "fill-blank",
       "category": "practice",
-      "sentence": "Ma ____ van.",
-      "answer": "darab"
+      "sentence": "____ kenyér van. (much)",
+      "answer": "Sok"
     },
     {
       "id": "a1-93-practice-3",
       "type": "matching",
       "category": "practice",
       "pairs": [
-        [
-          "darab",
-          "meaning 1"
-        ],
-        [
-          "üveg",
-          "meaning 2"
-        ],
-        [
-          "pohár",
-          "meaning 3"
-        ],
-        [
-          "kevés",
-          "meaning 4"
-        ]
+        ["Van két darab alma.", "There are two pieces of apple."],
+        ["De kevés a sajt.", "But there is little cheese."],
+        ["Sok kenyér van.", "There is much bread."],
+        ["Kérek egy üveg vizet.", "I'd like one bottle of water."]
       ]
     },
     {
       "id": "a1-93-practice-4",
       "type": "sentence-builder",
       "category": "practice",
-      "tiles": [
-        "A",
-        "darab",
-        "itt",
-        "van",
-        "."
-      ],
-      "solution": [
-        "A",
-        "darab",
-        "itt",
-        "van",
-        "."
-      ],
-      "english": "The darab is here."
+      "tiles": ["Van", "két", "darab", "alma", "."],
+      "solution": ["Van", "két", "darab", "alma", "."],
+      "english": "There are two pieces of apple."
     },
     {
       "id": "a1-93-practice-5",
-      "type": "dialogue-complete",
+      "type": "substitution",
       "category": "practice",
-      "prompt": [
-        {
-          "speaker": "Károly",
-          "text": "Hol van?"
-        },
-        {
-          "speaker": "Meg",
-          "text": "_____"
-        }
-      ],
+      "base_sentence": "Kérek egy üveg vizet.",
+      "base_word": "vizet",
+      "base_gloss": "I'd like one bottle of water.",
       "options": [
-        "A üveg van.",
-        "A pohár megy."
-      ],
-      "correct": 0
+        { "word": "tea", "inflected": "teát", "sentence": "Kérek egy pohár teát.", "gloss": "tea" },
+        { "word": "alma", "inflected": "almát", "sentence": "Kérek egy darab almát.", "gloss": "apple" }
+      ]
     },
     {
       "id": "a1-93-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
       "prompt": [
-        {
-          "speaker": "Károly",
-          "text": "Rendben?"
-        },
-        {
-          "speaker": "Meg",
-          "text": "_____"
-        }
+        { "speaker": "Károly", "text": "Mennyi sajt van?" },
+        { "speaker": "Meg", "text": "_____" }
       ],
-      "options": [
-        "Igen, rendben.",
-        "Nem tudom."
-      ],
+      "options": ["De kevés a sajt.", "De kevés sajt van a."],
       "correct": 0
     },
     {
       "id": "a1-93-dialogue-2",
-      "type": "multiple-choice",
+      "type": "dialogue-complete",
       "category": "dialogue",
-      "question": "Choose the natural reply.",
-      "options": [
-        "Rendben, üveg.",
-        "pohár hol.",
-        "Nem kevés."
+      "prompt": [
+        { "speaker": "Meg", "text": "Mit kérsz?" },
+        { "speaker": "Károly", "text": "_____" }
       ],
+      "options": ["Kérek egy pohár teát.", "Kérek egy pohár tea."],
       "correct": 0
     },
     {
@@ -217,10 +139,7 @@
       "type": "structured-writing",
       "category": "writing",
       "template": [
-        {
-          "prompt": "Write one short Hungarian sentence using a target word.",
-          "answer": "Use darab in a simple sentence."
-        }
+        { "prompt": "Say \"There is much bread.\" in Hungarian.", "answer": "Sok kenyér van." }
       ]
     },
     {
@@ -228,34 +147,23 @@
       "type": "structured-writing",
       "category": "writing",
       "template": [
-        {
-          "prompt": "Write another short Hungarian sentence using a target word.",
-          "answer": "Use üveg in a simple sentence."
-        }
+        { "prompt": "Say \"I'd like one piece of apple.\" in Hungarian.", "answer": "Kérek egy darab almát." }
       ]
     },
     {
       "id": "a1-93-check-1",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Which target word completes the sentence?",
-      "options": [
-        "darab",
-        "pohár",
-        "kevés"
-      ],
+      "question": "Which word means \"bottle\"?",
+      "options": ["üveg", "pohár", "darab"],
       "correct": 0
     },
     {
       "id": "a1-93-check-2",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Which sentence is natural?",
-      "options": [
-        "A üveg itt van.",
-        "A üveg itt vannak.",
-        "A üveg van ittünk."
-      ],
+      "question": "How do you say \"I'd like one bottle of water\"?",
+      "options": ["Kérek egy üveg vizet.", "Kérek egy üveg víz.", "Egy üveg vizet van."],
       "correct": 0
     }
   ]

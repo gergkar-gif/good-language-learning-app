@@ -5,48 +5,32 @@
       "id": "a1-100-review-1",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the useful Hungarian item.",
-      "options": [
-        "találkozó",
-        "otthon",
-        "ebéd"
-      ],
+      "question": "Which word means \"room\"?",
+      "options": ["szoba", "konyha", "asztal"],
       "correct": 0
     },
     {
       "id": "a1-100-review-2",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Which item belongs to this lesson?",
-      "options": [
-        "otthon",
-        "ebéd",
-        "együtt"
-      ],
+      "question": "How do you say \"The bed is in the room\"?",
+      "options": ["Az ágy a szobában van.", "Az ágy a szoba van.", "Szobában az ágy."],
       "correct": 0
     },
     {
       "id": "a1-100-intro-1",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which sentence uses találkozó naturally?",
-      "options": [
-        "A találkozó itt van.",
-        "A találkozó megy.",
-        "találkozó ember."
-      ],
+      "question": "Which word means \"lunch\"?",
+      "options": ["ebéd", "vacsora", "reggeli"],
       "correct": 0
     },
     {
       "id": "a1-100-intro-2",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which word is otthon?",
-      "options": [
-        "otthon",
-        "ebéd",
-        "együtt"
-      ],
+      "question": "Which word means \"at noon\"?",
+      "options": ["délben", "reggel", "este"],
       "correct": 0
     },
     {
@@ -54,162 +38,97 @@
       "type": "matching",
       "category": "controlled",
       "pairs": [
-        [
-          "találkozó",
-          "target 1"
-        ],
-        [
-          "otthon",
-          "target 2"
-        ],
-        [
-          "ebéd",
-          "target 3"
-        ],
-        [
-          "együtt",
-          "target 4"
-        ]
+        ["ebéd", "lunch"],
+        ["délben", "at noon"],
+        ["után", "after"],
+        ["holnap", "tomorrow"]
       ]
     },
     {
       "id": "a1-100-controlled-2",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "Ez a(z) ____.",
-      "answer": "találkozó"
+      "sentence": "____ ebédelünk. (at noon)",
+      "answer": "Délben"
     },
     {
       "id": "a1-100-controlled-3",
       "type": "multiple-choice",
       "category": "controlled",
-      "question": "Choose the natural sentence.",
-      "options": [
-        "A otthon fontos.",
-        "A otthon fontosak.",
-        "otthon a fontos."
-      ],
+      "question": "Where does the postposition után go relative to its noun?",
+      "options": ["after it", "before it", "it doesn't combine with nouns"],
       "correct": 0
     },
     {
       "id": "a1-100-controlled-4",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "A ____ itt van.",
-      "answer": "otthon"
+      "sentence": "A találkozó ____ együtt megyünk haza. (after)",
+      "answer": "után"
     },
     {
       "id": "a1-100-practice-1",
       "type": "multiple-choice",
       "category": "practice",
-      "question": "Which answer fits?",
-      "options": [
-        "Igen, találkozó.",
-        "Hol, ebéd?",
-        "Nem együtt?"
-      ],
+      "question": "Which sentence correctly combines location and \"in order\"?",
+      "options": ["A szoba és a konyha rendben van.", "A szoba és konyha van rendben.", "Rendben szoba és konyha van."],
       "correct": 0
     },
     {
       "id": "a1-100-practice-2",
       "type": "fill-blank",
       "category": "practice",
-      "sentence": "Ma ____ van.",
-      "answer": "találkozó"
+      "sentence": "Délben ebédelünk. Kérek kenyeret és ____. (coffee, accusative)",
+      "answer": "kávét"
     },
     {
       "id": "a1-100-practice-3",
       "type": "matching",
       "category": "practice",
       "pairs": [
-        [
-          "találkozó",
-          "meaning 1"
-        ],
-        [
-          "otthon",
-          "meaning 2"
-        ],
-        [
-          "ebéd",
-          "meaning 3"
-        ],
-        [
-          "együtt",
-          "meaning 4"
-        ]
+        ["Hétfőn reggel otthon vagyunk.", "On Monday morning we are at home."],
+        ["Utána megyünk az iskolába.", "After that we go to school."],
+        ["Délben ebédelünk.", "At noon we eat lunch."],
+        ["A találkozó után együtt megyünk haza.", "After the meeting we go home together."]
       ]
     },
     {
       "id": "a1-100-practice-4",
       "type": "sentence-builder",
       "category": "practice",
-      "tiles": [
-        "A",
-        "találkozó",
-        "itt",
-        "van",
-        "."
-      ],
-      "solution": [
-        "A",
-        "találkozó",
-        "itt",
-        "van",
-        "."
-      ],
-      "english": "The találkozó is here."
+      "tiles": ["A", "találkozó", "után", "együtt", "megyünk", "haza", "."],
+      "solution": ["A", "találkozó", "után", "együtt", "megyünk", "haza", "."],
+      "english": "After the meeting we go home together."
     },
     {
       "id": "a1-100-practice-5",
-      "type": "dialogue-complete",
+      "type": "structured-writing",
       "category": "practice",
-      "prompt": [
-        {
-          "speaker": "Károly",
-          "text": "Hol van?"
-        },
-        {
-          "speaker": "Meg",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "A otthon van.",
-        "A ebéd megy."
-      ],
-      "correct": 0
+      "template": [
+        { "prompt": "Describe your morning: say you always work in the morning.", "answer": "Mindig reggel dolgozom." },
+        { "prompt": "Say what happens at noon: say at noon you eat lunch.", "answer": "Délben ebédelek." }
+      ]
     },
     {
       "id": "a1-100-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
       "prompt": [
-        {
-          "speaker": "Károly",
-          "text": "Rendben?"
-        },
-        {
-          "speaker": "Meg",
-          "text": "_____"
-        }
+        { "speaker": "Meg", "text": "Milyen volt a nap?" },
+        { "speaker": "Károly", "text": "_____" }
       ],
-      "options": [
-        "Igen, rendben.",
-        "Nem tudom."
-      ],
+      "options": ["Jó nap volt.", "Jó nap van."],
       "correct": 0
     },
     {
       "id": "a1-100-dialogue-2",
-      "type": "multiple-choice",
+      "type": "dialogue-complete",
       "category": "dialogue",
-      "question": "Choose the natural reply.",
-      "options": [
-        "Rendben, otthon.",
-        "ebéd hol.",
-        "Nem együtt."
+      "prompt": [
+        { "speaker": "Meg", "text": "Holnap is találkozunk?" },
+        { "speaker": "Károly", "text": "_____" }
       ],
+      "options": ["Igen, holnap is találkozunk.", "Igen, holnap van találkozunk."],
       "correct": 0
     },
     {
@@ -217,10 +136,7 @@
       "type": "structured-writing",
       "category": "writing",
       "template": [
-        {
-          "prompt": "Write one short Hungarian sentence using a target word.",
-          "answer": "Use találkozó in a simple sentence."
-        }
+        { "prompt": "Say \"It was a good day.\" in Hungarian.", "answer": "Jó nap volt." }
       ]
     },
     {
@@ -228,34 +144,23 @@
       "type": "structured-writing",
       "category": "writing",
       "template": [
-        {
-          "prompt": "Write another short Hungarian sentence using a target word.",
-          "answer": "Use otthon in a simple sentence."
-        }
+        { "prompt": "Say \"After the meeting we go home together.\" in Hungarian.", "answer": "A találkozó után együtt megyünk haza." }
       ]
     },
     {
       "id": "a1-100-check-1",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Which target word completes the sentence?",
-      "options": [
-        "találkozó",
-        "ebéd",
-        "együtt"
-      ],
+      "question": "Which word means \"after\"?",
+      "options": ["után", "délben", "holnap"],
       "correct": 0
     },
     {
       "id": "a1-100-check-2",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Which sentence is natural?",
-      "options": [
-        "A otthon itt van.",
-        "A otthon itt vannak.",
-        "A otthon van ittünk."
-      ],
+      "question": "How do you say \"At noon we eat lunch\"?",
+      "options": ["Délben ebédelünk.", "Délben van ebédelünk.", "Ebédelünk délben van."],
       "correct": 0
     }
   ]

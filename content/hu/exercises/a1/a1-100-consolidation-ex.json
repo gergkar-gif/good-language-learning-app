@@ -5,98 +5,54 @@
       "id": "a1-100-consolidation-1",
       "type": "multiple-choice",
       "category": "consolidation",
-      "question": "Choose the best answer.",
-      "options": [
-        "Igen, rendben.",
-        "Hol van?",
-        "Nem tudom."
-      ],
+      "question": "Which sentence correctly says \"He goes to school\"?",
+      "options": ["Az iskolába megy.", "Az iskola megy.", "Iskolába van megy."],
       "correct": 0
     },
     {
       "id": "a1-100-consolidation-2",
-      "type": "multiple-choice",
+      "type": "matching",
       "category": "consolidation",
-      "question": "Choose the best answer.",
-      "options": [
-        "Igen, rendben.",
-        "Hol van?",
-        "Nem tudom."
-      ],
-      "correct": 0
+      "pairs": [
+        ["dolgozik", "he/she works"],
+        ["hétfőn", "on Monday"],
+        ["szoba", "room"],
+        ["ebéd", "lunch"]
+      ]
     },
     {
       "id": "a1-100-consolidation-3",
-      "type": "multiple-choice",
+      "type": "fill-blank",
       "category": "consolidation",
-      "question": "Choose the best answer.",
-      "options": [
-        "Igen, rendben.",
-        "Hol van?",
-        "Nem tudom."
-      ],
-      "correct": 0
+      "sentence": "____ reggel otthon vagyunk. (on Monday)",
+      "answer": "Hétfőn"
     },
     {
       "id": "a1-100-consolidation-4",
-      "type": "sentence-builder",
+      "type": "multiple-choice",
       "category": "consolidation",
-      "tiles": [
-        "A",
-        "nap",
-        "jó",
-        "."
-      ],
-      "solution": [
-        "A",
-        "nap",
-        "jó",
-        "."
-      ],
-      "english": "The day is good."
+      "question": "Which sentence correctly places bread \"in the kitchen\"?",
+      "options": ["A konyhában van a kenyér.", "A konyha van a kenyér.", "A konyhában kenyér van a."],
+      "correct": 0
     },
     {
       "id": "a1-100-consolidation-5",
       "type": "dialogue-complete",
       "category": "consolidation",
       "prompt": [
-        {
-          "speaker": "Károly",
-          "text": "Rendben?"
-        },
-        {
-          "speaker": "Meg",
-          "text": "_____"
-        }
+        { "speaker": "Meg", "text": "Hol dolgozol?" },
+        { "speaker": "Károly", "text": "_____" }
       ],
-      "options": [
-        "Igen, rendben.",
-        "Hol?"
-      ],
+      "options": ["Az iskola mellett dolgozom.", "Az iskola mellett van dolgozom."],
       "correct": 0
     },
     {
       "id": "a1-100-consolidation-6",
-      "type": "matching",
+      "type": "sentence-builder",
       "category": "consolidation",
-      "pairs": [
-        [
-          "szoba",
-          "szoba"
-        ],
-        [
-          "konyha",
-          "konyha"
-        ],
-        [
-          "iskola",
-          "iskola"
-        ],
-        [
-          "bolt",
-          "bolt"
-        ]
-      ]
+      "tiles": ["A", "találkozó", "után", "együtt", "megyünk", "haza", "."],
+      "solution": ["A", "találkozó", "után", "együtt", "megyünk", "haza", "."],
+      "english": "After the meeting we go home together."
     }
   ]
 }

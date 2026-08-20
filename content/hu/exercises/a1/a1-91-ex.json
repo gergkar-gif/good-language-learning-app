@@ -5,48 +5,32 @@
       "id": "a1-91-review-1",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the useful Hungarian item.",
-      "options": [
-        "kenyér",
-        "vaj",
-        "sajt"
-      ],
+      "question": "Which word means \"together\"?",
+      "options": ["együtt", "minden", "otthon"],
       "correct": 0
     },
     {
       "id": "a1-91-review-2",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Which item belongs to this lesson?",
-      "options": [
-        "vaj",
-        "sajt",
-        "tej"
-      ],
+      "question": "Which is the \"in the room\" form of szoba?",
+      "options": ["szobában", "szobák", "szobát"],
       "correct": 0
     },
     {
       "id": "a1-91-intro-1",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which sentence uses kenyér naturally?",
-      "options": [
-        "A kenyér itt van.",
-        "A kenyér megy.",
-        "kenyér ember."
-      ],
+      "question": "Which word means \"bread\"?",
+      "options": ["kenyér", "vaj", "sajt"],
       "correct": 0
     },
     {
       "id": "a1-91-intro-2",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which word is vaj?",
-      "options": [
-        "vaj",
-        "sajt",
-        "tej"
-      ],
+      "question": "Which word means \"milk\"?",
+      "options": ["tej", "víz", "kávé"],
       "correct": 0
     },
     {
@@ -54,162 +38,100 @@
       "type": "matching",
       "category": "controlled",
       "pairs": [
-        [
-          "kenyér",
-          "target 1"
-        ],
-        [
-          "vaj",
-          "target 2"
-        ],
-        [
-          "sajt",
-          "target 3"
-        ],
-        [
-          "tej",
-          "target 4"
-        ]
+        ["kenyér", "bread"],
+        ["vaj", "butter"],
+        ["sajt", "cheese"],
+        ["tej", "milk"]
       ]
     },
     {
       "id": "a1-91-controlled-2",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "Ez a(z) ____.",
-      "answer": "kenyér"
+      "sentence": "Van ____, sajt és tej. (butter)",
+      "answer": "vaj"
     },
     {
       "id": "a1-91-controlled-3",
       "type": "multiple-choice",
       "category": "controlled",
-      "question": "Choose the natural sentence.",
-      "options": [
-        "A vaj fontos.",
-        "A vaj fontosak.",
-        "vaj a fontos."
-      ],
+      "question": "Which sentence correctly asks for bread using the accusative?",
+      "options": ["Kérek kenyeret.", "Kérek kenyér.", "Kenyeret van."],
       "correct": 0
     },
     {
       "id": "a1-91-controlled-4",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "A ____ itt van.",
-      "answer": "vaj"
+      "sentence": "Kérek ____. (water, accusative)",
+      "answer": "vizet"
     },
     {
       "id": "a1-91-practice-1",
       "type": "multiple-choice",
       "category": "practice",
-      "question": "Which answer fits?",
-      "options": [
-        "Igen, kenyér.",
-        "Hol, sajt?",
-        "Nem tej?"
-      ],
+      "question": "Which suffix marks the object of kérek?",
+      "options": ["-t", "-ban", "-nak"],
       "correct": 0
     },
     {
       "id": "a1-91-practice-2",
       "type": "fill-blank",
       "category": "practice",
-      "sentence": "Ma ____ van.",
-      "answer": "kenyér"
+      "sentence": "Kérek ____. (tea, accusative)",
+      "answer": "teát"
     },
     {
       "id": "a1-91-practice-3",
       "type": "matching",
       "category": "practice",
       "pairs": [
-        [
-          "kenyér",
-          "meaning 1"
-        ],
-        [
-          "vaj",
-          "meaning 2"
-        ],
-        [
-          "sajt",
-          "meaning 3"
-        ],
-        [
-          "tej",
-          "meaning 4"
-        ]
+        ["Van kenyér.", "There is bread."],
+        ["Kérek kenyeret.", "I'd like bread."],
+        ["Kérek vizet.", "I'd like water."],
+        ["A kenyér jó.", "The bread is good."]
       ]
     },
     {
       "id": "a1-91-practice-4",
       "type": "sentence-builder",
       "category": "practice",
-      "tiles": [
-        "A",
-        "kenyér",
-        "itt",
-        "van",
-        "."
-      ],
-      "solution": [
-        "A",
-        "kenyér",
-        "itt",
-        "van",
-        "."
-      ],
-      "english": "The kenyér is here."
+      "tiles": ["Kérek", "kenyeret", "."],
+      "solution": ["Kérek", "kenyeret", "."],
+      "english": "I'd like bread."
     },
     {
       "id": "a1-91-practice-5",
-      "type": "dialogue-complete",
+      "type": "substitution",
       "category": "practice",
-      "prompt": [
-        {
-          "speaker": "Károly",
-          "text": "Hol van?"
-        },
-        {
-          "speaker": "Meg",
-          "text": "_____"
-        }
-      ],
+      "base_sentence": "Kérek kenyeret.",
+      "base_word": "kenyeret",
+      "base_gloss": "I'd like bread.",
       "options": [
-        "A vaj van.",
-        "A sajt megy."
-      ],
-      "correct": 0
+        { "word": "tej", "inflected": "tejet", "sentence": "Kérek tejet.", "gloss": "milk" },
+        { "word": "sajt", "inflected": "sajtot", "sentence": "Kérek sajtot.", "gloss": "cheese" }
+      ]
     },
     {
       "id": "a1-91-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
       "prompt": [
-        {
-          "speaker": "Károly",
-          "text": "Rendben?"
-        },
-        {
-          "speaker": "Meg",
-          "text": "_____"
-        }
+        { "speaker": "Károly", "text": "Mit kérsz?" },
+        { "speaker": "Meg", "text": "_____" }
       ],
-      "options": [
-        "Igen, rendben.",
-        "Nem tudom."
-      ],
+      "options": ["Kérek kenyeret.", "Kérek kenyér."],
       "correct": 0
     },
     {
       "id": "a1-91-dialogue-2",
-      "type": "multiple-choice",
+      "type": "dialogue-complete",
       "category": "dialogue",
-      "question": "Choose the natural reply.",
-      "options": [
-        "Rendben, vaj.",
-        "sajt hol.",
-        "Nem tej."
+      "prompt": [
+        { "speaker": "Meg", "text": "Van vaj?" },
+        { "speaker": "Károly", "text": "_____" }
       ],
+      "options": ["Igen, van vaj, sajt és tej.", "Igen, vaj van."],
       "correct": 0
     },
     {
@@ -217,10 +139,7 @@
       "type": "structured-writing",
       "category": "writing",
       "template": [
-        {
-          "prompt": "Write one short Hungarian sentence using a target word.",
-          "answer": "Use kenyér in a simple sentence."
-        }
+        { "prompt": "Say \"I'd like cheese.\" in Hungarian.", "answer": "Kérek sajtot." }
       ]
     },
     {
@@ -228,34 +147,23 @@
       "type": "structured-writing",
       "category": "writing",
       "template": [
-        {
-          "prompt": "Write another short Hungarian sentence using a target word.",
-          "answer": "Use vaj in a simple sentence."
-        }
+        { "prompt": "Say \"There is bread and milk.\" in Hungarian.", "answer": "Van kenyér és tej." }
       ]
     },
     {
       "id": "a1-91-check-1",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Which target word completes the sentence?",
-      "options": [
-        "kenyér",
-        "sajt",
-        "tej"
-      ],
+      "question": "Which word means \"cheese\"?",
+      "options": ["sajt", "vaj", "tej"],
       "correct": 0
     },
     {
       "id": "a1-91-check-2",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Which sentence is natural?",
-      "options": [
-        "A vaj itt van.",
-        "A vaj itt vannak.",
-        "A vaj van ittünk."
-      ],
+      "question": "How do you say \"I'd like water\"?",
+      "options": ["Kérek vizet.", "Kérek víz.", "Vizet kérek van."],
       "correct": 0
     }
   ]

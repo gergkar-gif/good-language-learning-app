@@ -5,48 +5,32 @@
       "id": "a1-94-review-1",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the useful Hungarian item.",
-      "options": [
-        "ebéd",
-        "vacsora",
-        "alma"
-      ],
+      "question": "Which word means \"apple\"?",
+      "options": ["alma", "pohár", "üveg"],
       "correct": 0
     },
     {
       "id": "a1-94-review-2",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Which item belongs to this lesson?",
-      "options": [
-        "vacsora",
-        "alma",
-        "leves"
-      ],
+      "question": "How do you say \"There is much bread\"?",
+      "options": ["Sok kenyér van.", "Sok kenyér.", "Kenyér sok van."],
       "correct": 0
     },
     {
       "id": "a1-94-intro-1",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which sentence uses ebéd naturally?",
-      "options": [
-        "A ebéd itt van.",
-        "A ebéd megy.",
-        "ebéd ember."
-      ],
+      "question": "Which word means \"few / little\"?",
+      "options": ["kevés", "sok", "darab"],
       "correct": 0
     },
     {
       "id": "a1-94-intro-2",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which word is vacsora?",
-      "options": [
-        "vacsora",
-        "alma",
-        "leves"
-      ],
+      "question": "Which word means \"I request / please\"?",
+      "options": ["kérek", "van", "sok"],
       "correct": 0
     },
     {
@@ -54,162 +38,100 @@
       "type": "matching",
       "category": "controlled",
       "pairs": [
-        [
-          "ebéd",
-          "target 1"
-        ],
-        [
-          "vacsora",
-          "target 2"
-        ],
-        [
-          "alma",
-          "target 3"
-        ],
-        [
-          "leves",
-          "target 4"
-        ]
+        ["kevés", "little, few"],
+        ["sok", "much, many"],
+        ["kérek", "I request"],
+        ["van", "there is"]
       ]
     },
     {
       "id": "a1-94-controlled-2",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "Ez a(z) ____.",
-      "answer": "ebéd"
+      "sentence": "____ vizet, kávét és teát. (I request)",
+      "answer": "Kérek"
     },
     {
       "id": "a1-94-controlled-3",
       "type": "multiple-choice",
       "category": "controlled",
-      "question": "Choose the natural sentence.",
-      "options": [
-        "A vacsora fontos.",
-        "A vacsora fontosak.",
-        "vacsora a fontos."
-      ],
+      "question": "In a list of requested items, which suffix must EVERY item take?",
+      "options": ["-t (accusative)", "-ban (locative)", "no suffix at all"],
       "correct": 0
     },
     {
       "id": "a1-94-controlled-4",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "A ____ itt van.",
-      "answer": "vacsora"
+      "sentence": "Kérek egy üveg vizet és egy pohár ____. (tea, accusative)",
+      "answer": "teát"
     },
     {
       "id": "a1-94-practice-1",
       "type": "multiple-choice",
       "category": "practice",
-      "question": "Which answer fits?",
-      "options": [
-        "Igen, ebéd.",
-        "Hol, alma?",
-        "Nem leves?"
-      ],
+      "question": "Which sentence correctly lists three requested drinks?",
+      "options": ["Kérek vizet, kávét és teát.", "Kérek víz, kávé és tea.", "Kérek vizet, kávé és teát."],
       "correct": 0
     },
     {
       "id": "a1-94-practice-2",
       "type": "fill-blank",
       "category": "practice",
-      "sentence": "Ma ____ van.",
-      "answer": "ebéd"
+      "sentence": "Kérek ____. (soup, accusative)",
+      "answer": "levest"
     },
     {
       "id": "a1-94-practice-3",
       "type": "matching",
       "category": "practice",
       "pairs": [
-        [
-          "ebéd",
-          "meaning 1"
-        ],
-        [
-          "vacsora",
-          "meaning 2"
-        ],
-        [
-          "alma",
-          "meaning 3"
-        ],
-        [
-          "leves",
-          "meaning 4"
-        ]
+        ["Kérek vizet, kávét és teát.", "I request water, coffee and tea."],
+        ["Kérek egy üveg vizet.", "I request one bottle of water."],
+        ["Kérek levest.", "I request soup."],
+        ["Kérek egy pohár teát.", "I request one glass of tea."]
       ]
     },
     {
       "id": "a1-94-practice-4",
       "type": "sentence-builder",
       "category": "practice",
-      "tiles": [
-        "A",
-        "ebéd",
-        "itt",
-        "van",
-        "."
-      ],
-      "solution": [
-        "A",
-        "ebéd",
-        "itt",
-        "van",
-        "."
-      ],
-      "english": "The ebéd is here."
+      "tiles": ["Kérek", "vizet", ",", "kávét", "és", "teát", "."],
+      "solution": ["Kérek", "vizet", ",", "kávét", "és", "teát", "."],
+      "english": "I request water, coffee and tea."
     },
     {
       "id": "a1-94-practice-5",
-      "type": "dialogue-complete",
+      "type": "substitution",
       "category": "practice",
-      "prompt": [
-        {
-          "speaker": "Károly",
-          "text": "Hol van?"
-        },
-        {
-          "speaker": "Meg",
-          "text": "_____"
-        }
-      ],
+      "base_sentence": "Kérek levest.",
+      "base_word": "levest",
+      "base_gloss": "I request soup.",
       "options": [
-        "A vacsora van.",
-        "A alma megy."
-      ],
-      "correct": 0
+        { "word": "kenyér", "inflected": "kenyeret", "sentence": "Kérek kenyeret.", "gloss": "bread" },
+        { "word": "alma", "inflected": "almát", "sentence": "Kérek almát.", "gloss": "apple" }
+      ]
     },
     {
       "id": "a1-94-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
       "prompt": [
-        {
-          "speaker": "Károly",
-          "text": "Rendben?"
-        },
-        {
-          "speaker": "Meg",
-          "text": "_____"
-        }
+        { "speaker": "Károly", "text": "Mit kérsz?" },
+        { "speaker": "Meg", "text": "_____" }
       ],
-      "options": [
-        "Igen, rendben.",
-        "Nem tudom."
-      ],
+      "options": ["Kérek vizet, kávét és teát.", "Kérek víz, kávé és tea."],
       "correct": 0
     },
     {
       "id": "a1-94-dialogue-2",
-      "type": "multiple-choice",
+      "type": "dialogue-complete",
       "category": "dialogue",
-      "question": "Choose the natural reply.",
-      "options": [
-        "Rendben, vacsora.",
-        "alma hol.",
-        "Nem leves."
+      "prompt": [
+        { "speaker": "Meg", "text": "Kérsz levest?" },
+        { "speaker": "Károly", "text": "_____" }
       ],
+      "options": ["Igen, kérek levest.", "Igen, kérek leves."],
       "correct": 0
     },
     {
@@ -217,10 +139,7 @@
       "type": "structured-writing",
       "category": "writing",
       "template": [
-        {
-          "prompt": "Write one short Hungarian sentence using a target word.",
-          "answer": "Use ebéd in a simple sentence."
-        }
+        { "prompt": "Say \"I request bread and cheese.\" in Hungarian.", "answer": "Kérek kenyeret és sajtot." }
       ]
     },
     {
@@ -228,34 +147,23 @@
       "type": "structured-writing",
       "category": "writing",
       "template": [
-        {
-          "prompt": "Write another short Hungarian sentence using a target word.",
-          "answer": "Use vacsora in a simple sentence."
-        }
+        { "prompt": "Say \"I request one bottle of water and one glass of tea.\" in Hungarian.", "answer": "Kérek egy üveg vizet és egy pohár teát." }
       ]
     },
     {
       "id": "a1-94-check-1",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Which target word completes the sentence?",
-      "options": [
-        "ebéd",
-        "alma",
-        "leves"
-      ],
+      "question": "Which word means \"there is\"?",
+      "options": ["van", "kérek", "sok"],
       "correct": 0
     },
     {
       "id": "a1-94-check-2",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Which sentence is natural?",
-      "options": [
-        "A vacsora itt van.",
-        "A vacsora itt vannak.",
-        "A vacsora van ittünk."
-      ],
+      "question": "How do you say \"I request soup\"?",
+      "options": ["Kérek levest.", "Kérek leves.", "Levest kérek van."],
       "correct": 0
     }
   ]

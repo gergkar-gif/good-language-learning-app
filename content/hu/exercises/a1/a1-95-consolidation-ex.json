@@ -5,98 +5,54 @@
       "id": "a1-95-consolidation-1",
       "type": "multiple-choice",
       "category": "consolidation",
-      "question": "Choose the best answer.",
-      "options": [
-        "Igen, rendben.",
-        "Hol van?",
-        "Nem tudom."
-      ],
+      "question": "Which sentence correctly asks for bread?",
+      "options": ["Kérek kenyeret.", "Kérek kenyér.", "Kenyeret van."],
       "correct": 0
     },
     {
       "id": "a1-95-consolidation-2",
-      "type": "multiple-choice",
+      "type": "matching",
       "category": "consolidation",
-      "question": "Choose the best answer.",
-      "options": [
-        "Igen, rendben.",
-        "Hol van?",
-        "Nem tudom."
-      ],
-      "correct": 0
+      "pairs": [
+        ["kenyér", "bread"],
+        ["kávé", "coffee"],
+        ["alma", "apple"],
+        ["éhes", "hungry"]
+      ]
     },
     {
       "id": "a1-95-consolidation-3",
-      "type": "multiple-choice",
+      "type": "fill-blank",
       "category": "consolidation",
-      "question": "Choose the best answer.",
-      "options": [
-        "Igen, rendben.",
-        "Hol van?",
-        "Nem tudom."
-      ],
-      "correct": 0
+      "sentence": "Kérek egy üveg ____. (water, accusative)",
+      "answer": "vizet"
     },
     {
       "id": "a1-95-consolidation-4",
-      "type": "sentence-builder",
+      "type": "multiple-choice",
       "category": "consolidation",
-      "tiles": [
-        "A",
-        "nap",
-        "jó",
-        "."
-      ],
-      "solution": [
-        "A",
-        "nap",
-        "jó",
-        "."
-      ],
-      "english": "The day is good."
+      "question": "Which word means \"there is little\"?",
+      "options": ["kevés", "sok", "darab"],
+      "correct": 0
     },
     {
       "id": "a1-95-consolidation-5",
       "type": "dialogue-complete",
       "category": "consolidation",
       "prompt": [
-        {
-          "speaker": "Károly",
-          "text": "Rendben?"
-        },
-        {
-          "speaker": "Meg",
-          "text": "_____"
-        }
+        { "speaker": "Károly", "text": "Éhes vagy?" },
+        { "speaker": "Meg", "text": "_____" }
       ],
-      "options": [
-        "Igen, rendben.",
-        "Hol?"
-      ],
+      "options": ["Igen, nagyon éhes vagyok.", "Igen, éhes van nagyon."],
       "correct": 0
     },
     {
       "id": "a1-95-consolidation-6",
-      "type": "matching",
+      "type": "sentence-builder",
       "category": "consolidation",
-      "pairs": [
-        [
-          "kenyér",
-          "kenyér"
-        ],
-        [
-          "vaj",
-          "vaj"
-        ],
-        [
-          "sajt",
-          "sajt"
-        ],
-        [
-          "tej",
-          "tej"
-        ]
-      ]
+      "tiles": ["A", "vacsora", "nagyon", "finom", "."],
+      "solution": ["A", "vacsora", "nagyon", "finom", "."],
+      "english": "Dinner is very delicious."
     }
   ]
 }

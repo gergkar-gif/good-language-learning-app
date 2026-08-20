@@ -5,48 +5,32 @@
       "id": "a1-99-review-1",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the useful Hungarian item.",
-      "options": [
-        "asztal",
-        "ágy",
-        "kenyér"
-      ],
+      "question": "Which word means \"Monday\"?",
+      "options": ["hétfő", "reggel", "mindig"],
       "correct": 0
     },
     {
       "id": "a1-99-review-2",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Which item belongs to this lesson?",
-      "options": [
-        "ágy",
-        "kenyér",
-        "kávé"
-      ],
+      "question": "How do you say \"Tomorrow we also meet\"?",
+      "options": ["Holnap is találkozunk.", "Holnap van találkozunk.", "Találkozunk holnap is van."],
       "correct": 0
     },
     {
       "id": "a1-99-intro-1",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which sentence uses asztal naturally?",
-      "options": [
-        "A asztal itt van.",
-        "A asztal megy.",
-        "asztal ember."
-      ],
+      "question": "Which word means \"room\"?",
+      "options": ["szoba", "konyha", "asztal"],
       "correct": 0
     },
     {
       "id": "a1-99-intro-2",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which word is ágy?",
-      "options": [
-        "ágy",
-        "kenyér",
-        "kávé"
-      ],
+      "question": "Which word means \"kitchen\"?",
+      "options": ["konyha", "szoba", "otthon"],
       "correct": 0
     },
     {
@@ -54,162 +38,99 @@
       "type": "matching",
       "category": "controlled",
       "pairs": [
-        [
-          "asztal",
-          "target 1"
-        ],
-        [
-          "ágy",
-          "target 2"
-        ],
-        [
-          "kenyér",
-          "target 3"
-        ],
-        [
-          "kávé",
-          "target 4"
-        ]
+        ["otthon", "at home"],
+        ["szoba", "room"],
+        ["konyha", "kitchen"],
+        ["asztal", "table"]
       ]
     },
     {
       "id": "a1-99-controlled-2",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "Ez a(z) ____.",
-      "answer": "asztal"
+      "sentence": "A ____ és a konyha rendben van. (room)",
+      "answer": "szoba"
     },
     {
       "id": "a1-99-controlled-3",
       "type": "multiple-choice",
       "category": "controlled",
-      "question": "Choose the natural sentence.",
-      "options": [
-        "A ágy fontos.",
-        "A ágy fontosak.",
-        "ágy a fontos."
-      ],
+      "question": "Which sentence correctly says \"In the kitchen there is bread\"?",
+      "options": ["A konyhában van a kenyér.", "A konyha van a kenyér.", "A konyhában kenyér."],
       "correct": 0
     },
     {
       "id": "a1-99-controlled-4",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "A ____ itt van.",
-      "answer": "ágy"
+      "sentence": "Az ágy a ____ van. (in the room)",
+      "answer": "szobában"
     },
     {
       "id": "a1-99-practice-1",
       "type": "multiple-choice",
       "category": "practice",
-      "question": "Which answer fits?",
-      "options": [
-        "Igen, asztal.",
-        "Hol, kenyér?",
-        "Nem kávé?"
-      ],
+      "question": "Which suffix shows something is on a surface, like a table?",
+      "options": ["-on/-en", "-ban/-ben", "mellett"],
       "correct": 0
     },
     {
       "id": "a1-99-practice-2",
       "type": "fill-blank",
       "category": "practice",
-      "sentence": "Ma ____ van.",
-      "answer": "asztal"
+      "sentence": "Az ____ a kávé. (on the table)",
+      "answer": "asztalon"
     },
     {
       "id": "a1-99-practice-3",
       "type": "matching",
       "category": "practice",
       "pairs": [
-        [
-          "asztal",
-          "meaning 1"
-        ],
-        [
-          "ágy",
-          "meaning 2"
-        ],
-        [
-          "kenyér",
-          "meaning 3"
-        ],
-        [
-          "kávé",
-          "meaning 4"
-        ]
+        ["A konyhában van a kenyér.", "In the kitchen there is bread."],
+        ["Az asztalon a kávé.", "On the table (there is) coffee."],
+        ["Az ágy a szobában van.", "The bed is in the room."],
+        ["A szoba és a konyha rendben van.", "The room and the kitchen are in order."]
       ]
     },
     {
       "id": "a1-99-practice-4",
       "type": "sentence-builder",
       "category": "practice",
-      "tiles": [
-        "A",
-        "asztal",
-        "itt",
-        "van",
-        "."
-      ],
-      "solution": [
-        "A",
-        "asztal",
-        "itt",
-        "van",
-        "."
-      ],
-      "english": "The asztal is here."
+      "tiles": ["Az", "ágy", "a", "szobában", "van", "."],
+      "solution": ["Az", "ágy", "a", "szobában", "van", "."],
+      "english": "The bed is in the room."
     },
     {
       "id": "a1-99-practice-5",
-      "type": "dialogue-complete",
+      "type": "substitution",
       "category": "practice",
-      "prompt": [
-        {
-          "speaker": "Károly",
-          "text": "Hol van?"
-        },
-        {
-          "speaker": "Meg",
-          "text": "_____"
-        }
-      ],
+      "base_sentence": "A konyhában van a kenyér.",
+      "base_word": "konyhában",
+      "base_gloss": "In the kitchen there is bread.",
       "options": [
-        "A ágy van.",
-        "A kenyér megy."
-      ],
-      "correct": 0
+        { "word": "szoba", "inflected": "szobában", "sentence": "A szobában van a kenyér.", "gloss": "room" }
+      ]
     },
     {
       "id": "a1-99-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
       "prompt": [
-        {
-          "speaker": "Károly",
-          "text": "Rendben?"
-        },
-        {
-          "speaker": "Meg",
-          "text": "_____"
-        }
+        { "speaker": "Meg", "text": "Hol van a kenyér?" },
+        { "speaker": "Károly", "text": "_____" }
       ],
-      "options": [
-        "Igen, rendben.",
-        "Nem tudom."
-      ],
+      "options": ["A konyhában van a kenyér.", "A konyha van a kenyér."],
       "correct": 0
     },
     {
       "id": "a1-99-dialogue-2",
-      "type": "multiple-choice",
+      "type": "dialogue-complete",
       "category": "dialogue",
-      "question": "Choose the natural reply.",
-      "options": [
-        "Rendben, ágy.",
-        "kenyér hol.",
-        "Nem kávé."
+      "prompt": [
+        { "speaker": "Meg", "text": "Rendben van a szoba?" },
+        { "speaker": "Károly", "text": "_____" }
       ],
+      "options": ["Igen, a szoba és a konyha rendben van.", "Igen, rendben a szoba van."],
       "correct": 0
     },
     {
@@ -217,10 +138,7 @@
       "type": "structured-writing",
       "category": "writing",
       "template": [
-        {
-          "prompt": "Write one short Hungarian sentence using a target word.",
-          "answer": "Use asztal in a simple sentence."
-        }
+        { "prompt": "Say \"The bed is in the room.\" in Hungarian.", "answer": "Az ágy a szobában van." }
       ]
     },
     {
@@ -228,34 +146,23 @@
       "type": "structured-writing",
       "category": "writing",
       "template": [
-        {
-          "prompt": "Write another short Hungarian sentence using a target word.",
-          "answer": "Use ágy in a simple sentence."
-        }
+        { "prompt": "Say \"On the table there is coffee.\" in Hungarian.", "answer": "Az asztalon a kávé." }
       ]
     },
     {
       "id": "a1-99-check-1",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Which target word completes the sentence?",
-      "options": [
-        "asztal",
-        "kenyér",
-        "kávé"
-      ],
+      "question": "Which word means \"table\"?",
+      "options": ["asztal", "szoba", "konyha"],
       "correct": 0
     },
     {
       "id": "a1-99-check-2",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Which sentence is natural?",
-      "options": [
-        "A ágy itt van.",
-        "A ágy itt vannak.",
-        "A ágy van ittünk."
-      ],
+      "question": "How do you say \"In the kitchen there is bread, on the table (there is) coffee\"?",
+      "options": ["A konyhában van a kenyér, az asztalon a kávé.", "A konyha van kenyér, asztal kávé.", "Kenyér a konyhában, kávé az asztalon van."],
       "correct": 0
     }
   ]

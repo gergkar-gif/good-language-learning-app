@@ -5,48 +5,32 @@
       "id": "a1-95-review-1",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the useful Hungarian item.",
-      "options": [
-        "finom",
-        "éhes",
-        "szomjas"
-      ],
+      "question": "Which word means \"few / little\"?",
+      "options": ["kevés", "sok", "darab"],
       "correct": 0
     },
     {
       "id": "a1-95-review-2",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Which item belongs to this lesson?",
-      "options": [
-        "éhes",
-        "szomjas",
-        "kér"
-      ],
+      "question": "How do you say \"I request soup\"?",
+      "options": ["Kérek levest.", "Kérek leves.", "Levest kérek van."],
       "correct": 0
     },
     {
       "id": "a1-95-intro-1",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which sentence uses finom naturally?",
-      "options": [
-        "A finom itt van.",
-        "A finom megy.",
-        "finom ember."
-      ],
+      "question": "Which word means \"thirsty\"?",
+      "options": ["szomjas", "éhes", "finom"],
       "correct": 0
     },
     {
       "id": "a1-95-intro-2",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which word is éhes?",
-      "options": [
-        "éhes",
-        "szomjas",
-        "kér"
-      ],
+      "question": "Which word means \"hungry\"?",
+      "options": ["éhes", "szomjas", "finom"],
       "correct": 0
     },
     {
@@ -54,162 +38,99 @@
       "type": "matching",
       "category": "controlled",
       "pairs": [
-        [
-          "finom",
-          "target 1"
-        ],
-        [
-          "éhes",
-          "target 2"
-        ],
-        [
-          "szomjas",
-          "target 3"
-        ],
-        [
-          "kér",
-          "target 4"
-        ]
+        ["szomjas", "thirsty"],
+        ["éhes", "hungry"],
+        ["finom", "delicious"],
+        ["vacsora", "dinner"]
       ]
     },
     {
       "id": "a1-95-controlled-2",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "Ez a(z) ____.",
-      "answer": "finom"
+      "sentence": "Nem vagyok szomjas, de ____ vagyok. (hungry)",
+      "answer": "éhes"
     },
     {
       "id": "a1-95-controlled-3",
       "type": "multiple-choice",
       "category": "controlled",
-      "question": "Choose the natural sentence.",
-      "options": [
-        "A éhes fontos.",
-        "A éhes fontosak.",
-        "éhes a fontos."
-      ],
+      "question": "Which sentence correctly says \"I am hungry\"?",
+      "options": ["Éhes vagyok.", "Éhes van.", "Éhesen vagyok."],
       "correct": 0
     },
     {
       "id": "a1-95-controlled-4",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "A ____ itt van.",
-      "answer": "éhes"
+      "sentence": "A leves nagyon ____. (delicious)",
+      "answer": "finom"
     },
     {
       "id": "a1-95-practice-1",
       "type": "multiple-choice",
       "category": "practice",
-      "question": "Which answer fits?",
-      "options": [
-        "Igen, finom.",
-        "Hol, szomjas?",
-        "Nem kér?"
-      ],
+      "question": "Which word intensifies finom in \"A leves nagyon finom\"?",
+      "options": ["nagyon", "sok", "kevés"],
       "correct": 0
     },
     {
       "id": "a1-95-practice-2",
       "type": "fill-blank",
       "category": "practice",
-      "sentence": "Ma ____ van.",
-      "answer": "finom"
+      "sentence": "A vacsora finom ____. (will be)",
+      "answer": "lesz"
     },
     {
       "id": "a1-95-practice-3",
       "type": "matching",
       "category": "practice",
       "pairs": [
-        [
-          "finom",
-          "meaning 1"
-        ],
-        [
-          "éhes",
-          "meaning 2"
-        ],
-        [
-          "szomjas",
-          "meaning 3"
-        ],
-        [
-          "kér",
-          "meaning 4"
-        ]
+        ["Nem vagyok szomjas, de éhes vagyok.", "I am not thirsty, but I am hungry."],
+        ["A leves nagyon finom.", "The soup is very delicious."],
+        ["A vacsora finom lesz.", "Dinner will be delicious."],
+        ["Van levesünk.", "We have soup."]
       ]
     },
     {
       "id": "a1-95-practice-4",
       "type": "sentence-builder",
       "category": "practice",
-      "tiles": [
-        "A",
-        "finom",
-        "itt",
-        "van",
-        "."
-      ],
-      "solution": [
-        "A",
-        "finom",
-        "itt",
-        "van",
-        "."
-      ],
-      "english": "The finom is here."
+      "tiles": ["Nem", "vagyok", "szomjas", ",", "de", "éhes", "vagyok", "."],
+      "solution": ["Nem", "vagyok", "szomjas", ",", "de", "éhes", "vagyok", "."],
+      "english": "I am not thirsty, but I am hungry."
     },
     {
       "id": "a1-95-practice-5",
-      "type": "dialogue-complete",
+      "type": "substitution",
       "category": "practice",
-      "prompt": [
-        {
-          "speaker": "Károly",
-          "text": "Hol van?"
-        },
-        {
-          "speaker": "Meg",
-          "text": "_____"
-        }
-      ],
+      "base_sentence": "Éhes vagyok.",
+      "base_word": "Éhes",
+      "base_gloss": "I am hungry.",
       "options": [
-        "A éhes van.",
-        "A szomjas megy."
-      ],
-      "correct": 0
+        { "word": "szomjas", "inflected": "Szomjas", "sentence": "Szomjas vagyok.", "gloss": "thirsty" }
+      ]
     },
     {
       "id": "a1-95-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
       "prompt": [
-        {
-          "speaker": "Károly",
-          "text": "Rendben?"
-        },
-        {
-          "speaker": "Meg",
-          "text": "_____"
-        }
+        { "speaker": "Károly", "text": "Éhes vagy?" },
+        { "speaker": "Meg", "text": "_____" }
       ],
-      "options": [
-        "Igen, rendben.",
-        "Nem tudom."
-      ],
+      "options": ["Nem vagyok szomjas, de éhes vagyok.", "Nem szomjas vagyok, de éhes."],
       "correct": 0
     },
     {
       "id": "a1-95-dialogue-2",
-      "type": "multiple-choice",
+      "type": "dialogue-complete",
       "category": "dialogue",
-      "question": "Choose the natural reply.",
-      "options": [
-        "Rendben, éhes.",
-        "szomjas hol.",
-        "Nem kér."
+      "prompt": [
+        { "speaker": "Meg", "text": "Milyen a leves?" },
+        { "speaker": "Károly", "text": "_____" }
       ],
+      "options": ["A leves nagyon finom.", "A leves van nagyon finom."],
       "correct": 0
     },
     {
@@ -217,10 +138,7 @@
       "type": "structured-writing",
       "category": "writing",
       "template": [
-        {
-          "prompt": "Write one short Hungarian sentence using a target word.",
-          "answer": "Use finom in a simple sentence."
-        }
+        { "prompt": "Say \"I am thirsty.\" in Hungarian.", "answer": "Szomjas vagyok." }
       ]
     },
     {
@@ -228,34 +146,23 @@
       "type": "structured-writing",
       "category": "writing",
       "template": [
-        {
-          "prompt": "Write another short Hungarian sentence using a target word.",
-          "answer": "Use éhes in a simple sentence."
-        }
+        { "prompt": "Say \"Dinner will be delicious.\" in Hungarian.", "answer": "A vacsora finom lesz." }
       ]
     },
     {
       "id": "a1-95-check-1",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Which target word completes the sentence?",
-      "options": [
-        "finom",
-        "szomjas",
-        "kér"
-      ],
+      "question": "Which word means \"delicious\"?",
+      "options": ["finom", "éhes", "szomjas"],
       "correct": 0
     },
     {
       "id": "a1-95-check-2",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Which sentence is natural?",
-      "options": [
-        "A éhes itt van.",
-        "A éhes itt vannak.",
-        "A éhes van ittünk."
-      ],
+      "question": "How do you say \"I am not thirsty, but I am hungry\"?",
+      "options": ["Nem vagyok szomjas, de éhes vagyok.", "Nem szomjas van, de éhes van.", "Szomjas nem vagyok, éhes vagyok de."],
       "correct": 0
     }
   ]

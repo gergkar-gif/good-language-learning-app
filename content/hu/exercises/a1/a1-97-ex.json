@@ -5,48 +5,32 @@
       "id": "a1-97-review-1",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the useful Hungarian item.",
-      "options": [
-        "megy",
-        "jön",
-        "dolgozik"
-      ],
+      "question": "Which word means \"beside, next to\"?",
+      "options": ["mellett", "haza", "bolt"],
       "correct": 0
     },
     {
       "id": "a1-97-review-2",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Which item belongs to this lesson?",
-      "options": [
-        "jön",
-        "dolgozik",
-        "tanul"
-      ],
+      "question": "How do you say \"He/she goes to school\"?",
+      "options": ["Az iskolába megy.", "Az iskola megy.", "Iskolába van megy."],
       "correct": 0
     },
     {
       "id": "a1-97-intro-1",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which sentence uses megy naturally?",
-      "options": [
-        "A megy itt van.",
-        "A megy megy.",
-        "megy ember."
-      ],
+      "question": "Which word means \"he/she works\"?",
+      "options": ["dolgozik", "tanul", "megy"],
       "correct": 0
     },
     {
       "id": "a1-97-intro-2",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which word is jön?",
-      "options": [
-        "jön",
-        "dolgozik",
-        "tanul"
-      ],
+      "question": "Which word means \"he/she studies\"?",
+      "options": ["tanul", "dolgozik", "jön"],
       "correct": 0
     },
     {
@@ -54,162 +38,100 @@
       "type": "matching",
       "category": "controlled",
       "pairs": [
-        [
-          "megy",
-          "target 1"
-        ],
-        [
-          "jön",
-          "target 2"
-        ],
-        [
-          "dolgozik",
-          "target 3"
-        ],
-        [
-          "tanul",
-          "target 4"
-        ]
+        ["dolgozik", "he/she works"],
+        ["tanul", "he/she studies"],
+        ["megy", "he/she goes"],
+        ["jön", "he/she comes"]
       ]
     },
     {
       "id": "a1-97-controlled-2",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "Ez a(z) ____.",
-      "answer": "megy"
+      "sentence": "András ____, Anna tanul. (works)",
+      "answer": "dolgozik"
     },
     {
       "id": "a1-97-controlled-3",
       "type": "multiple-choice",
       "category": "controlled",
-      "question": "Choose the natural sentence.",
-      "options": [
-        "A jön fontos.",
-        "A jön fontosak.",
-        "jön a fontos."
-      ],
+      "question": "Which is the correct 1st-person form of dolgozik?",
+      "options": ["dolgozom", "dolgozok", "dolgozon"],
       "correct": 0
     },
     {
       "id": "a1-97-controlled-4",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "A ____ itt van.",
+      "sentence": "András ____ velünk. (comes)",
       "answer": "jön"
     },
     {
       "id": "a1-97-practice-1",
       "type": "multiple-choice",
       "category": "practice",
-      "question": "Which answer fits?",
-      "options": [
-        "Igen, megy.",
-        "Hol, dolgozik?",
-        "Nem tanul?"
-      ],
+      "question": "Which word does NOT take -ba/-be, unlike a normal destination noun?",
+      "options": ["haza", "iskola", "bolt"],
       "correct": 0
     },
     {
       "id": "a1-97-practice-2",
       "type": "fill-blank",
       "category": "practice",
-      "sentence": "Ma ____ van.",
-      "answer": "megy"
+      "sentence": "Együtt megyünk ____. (home)",
+      "answer": "haza"
     },
     {
       "id": "a1-97-practice-3",
       "type": "matching",
       "category": "practice",
       "pairs": [
-        [
-          "megy",
-          "meaning 1"
-        ],
-        [
-          "jön",
-          "meaning 2"
-        ],
-        [
-          "dolgozik",
-          "meaning 3"
-        ],
-        [
-          "tanul",
-          "meaning 4"
-        ]
+        ["Én mindig reggel dolgozom.", "I always work in the morning."],
+        ["András dolgozik, Anna tanul.", "András works, Anna studies."],
+        ["Utána megyünk az iskolába.", "After that we go to school."],
+        ["András jön velünk.", "András comes with us."]
       ]
     },
     {
       "id": "a1-97-practice-4",
       "type": "sentence-builder",
       "category": "practice",
-      "tiles": [
-        "A",
-        "megy",
-        "itt",
-        "van",
-        "."
-      ],
-      "solution": [
-        "A",
-        "megy",
-        "itt",
-        "van",
-        "."
-      ],
-      "english": "The megy is here."
+      "tiles": ["András", "dolgozik", ",", "Anna", "tanul", "."],
+      "solution": ["András", "dolgozik", ",", "Anna", "tanul", "."],
+      "english": "András works, Anna studies."
     },
     {
       "id": "a1-97-practice-5",
-      "type": "dialogue-complete",
+      "type": "substitution",
       "category": "practice",
-      "prompt": [
-        {
-          "speaker": "Károly",
-          "text": "Hol van?"
-        },
-        {
-          "speaker": "Meg",
-          "text": "_____"
-        }
-      ],
+      "base_sentence": "András dolgozik.",
+      "base_word": "dolgozik",
+      "base_gloss": "András works.",
       "options": [
-        "A jön van.",
-        "A dolgozik megy."
-      ],
-      "correct": 0
+        { "word": "tanul", "inflected": "tanul", "sentence": "András tanul.", "gloss": "studies" },
+        { "word": "jön", "inflected": "jön", "sentence": "András jön.", "gloss": "comes" }
+      ]
     },
     {
       "id": "a1-97-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
       "prompt": [
-        {
-          "speaker": "Károly",
-          "text": "Rendben?"
-        },
-        {
-          "speaker": "Meg",
-          "text": "_____"
-        }
+        { "speaker": "Meg", "text": "Ki dolgozik?" },
+        { "speaker": "Károly", "text": "_____" }
       ],
-      "options": [
-        "Igen, rendben.",
-        "Nem tudom."
-      ],
+      "options": ["András dolgozik, Anna tanul.", "András dolgozik van."],
       "correct": 0
     },
     {
       "id": "a1-97-dialogue-2",
-      "type": "multiple-choice",
+      "type": "dialogue-complete",
       "category": "dialogue",
-      "question": "Choose the natural reply.",
-      "options": [
-        "Rendben, jön.",
-        "dolgozik hol.",
-        "Nem tanul."
+      "prompt": [
+        { "speaker": "Meg", "text": "András jön velünk?" },
+        { "speaker": "Károly", "text": "_____" }
       ],
+      "options": ["Igen, András jön velünk.", "Igen, András van jön velünk."],
       "correct": 0
     },
     {
@@ -217,10 +139,7 @@
       "type": "structured-writing",
       "category": "writing",
       "template": [
-        {
-          "prompt": "Write one short Hungarian sentence using a target word.",
-          "answer": "Use megy in a simple sentence."
-        }
+        { "prompt": "Say \"I always work in the morning.\" in Hungarian.", "answer": "Én mindig reggel dolgozom." }
       ]
     },
     {
@@ -228,34 +147,23 @@
       "type": "structured-writing",
       "category": "writing",
       "template": [
-        {
-          "prompt": "Write another short Hungarian sentence using a target word.",
-          "answer": "Use jön in a simple sentence."
-        }
+        { "prompt": "Say \"After the meeting we go home together.\" in Hungarian.", "answer": "A találkozó után együtt megyünk haza." }
       ]
     },
     {
       "id": "a1-97-check-1",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Which target word completes the sentence?",
-      "options": [
-        "megy",
-        "dolgozik",
-        "tanul"
-      ],
+      "question": "Which word means \"he/she goes\"?",
+      "options": ["megy", "jön", "dolgozik"],
       "correct": 0
     },
     {
       "id": "a1-97-check-2",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Which sentence is natural?",
-      "options": [
-        "A jön itt van.",
-        "A jön itt vannak.",
-        "A jön van ittünk."
-      ],
+      "question": "How do you say \"After that we go to school\"?",
+      "options": ["Utána megyünk az iskolába.", "Utána megyünk az iskola.", "Az iskolába utána megyünk van."],
       "correct": 0
     }
   ]
