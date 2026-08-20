@@ -449,6 +449,27 @@ LANG_UNIT_TITLES = {
             "Greetings & Basic Interaction",
             "Introducing Yourself",
             "Numbers & Personal Information",
+            # Units 5-20 shipped with no UNIT_N_MANIFEST.json (unlike 1-4),
+            # so these titles are inferred from each unit's own lesson
+            # titles/grammar fields and consolidation goals rather than
+            # sourced from the content package itself — check with whoever
+            # is generating the content if a more authoritative title exists.
+            "Objects & Locations",
+            "Family",
+            "Describing People",
+            "Plurals & Quantities",
+            "Possession",
+            "Foundations Review",
+            "Where Things Are",
+            "Going Places",
+            "Everyday Actions",
+            "Questions & Negation",
+            "Daily Routine",
+            "Time & Dates",
+            "Frequency & Word Order",
+            "At Home",
+            "Food & Drink",
+            "Everyday Hungarian Review",
         ],
     },
 }
