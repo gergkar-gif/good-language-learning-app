@@ -1007,7 +1007,9 @@ function lessonCheckChoice() {
     const btn = group[stepState.picked];
 
     if (stepState.picked === stepState.correct) {
-        if (btn) btn.classList.add('correct');
+        // Blur so the focus ring (still showing from the click that picked
+        // this option) doesn't linger over the green correct state.
+        if (btn) { btn.classList.add('correct'); btn.blur(); }
         solveStep('✓ Correct!');
         return;
     }

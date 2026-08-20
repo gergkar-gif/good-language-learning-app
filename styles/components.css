@@ -1091,6 +1091,11 @@
   color: var(--text);
 }
 
+.lsn-input:focus {
+  outline: none;
+  border-bottom-color: var(--primary-mid);
+}
+
 .lsn-input.correct {
   border-bottom-color: var(--success);
 }
