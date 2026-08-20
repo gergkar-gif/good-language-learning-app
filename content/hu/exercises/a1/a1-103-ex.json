@@ -5,11 +5,11 @@
       "id": "a1-103-review-1",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the Hungarian word that fits the meaning.",
+      "question": "Which word means 'orange'?",
       "options": [
-        "kenyér",
-        "tej",
-        "sajt"
+        "narancs",
+        "tojás",
+        "hús"
       ],
       "correct": 0
     },
@@ -19,16 +19,20 @@
       "category": "review",
       "pairs": [
         [
-          "kenyér",
-          "bread"
+          "narancs",
+          "orange"
         ],
         [
-          "tej",
-          "milk"
+          "tojás",
+          "egg"
         ],
         [
-          "sajt",
-          "cheese"
+          "hús",
+          "meat"
+        ],
+        [
+          "hal",
+          "fish"
         ]
       ]
     },
@@ -36,7 +40,7 @@
       "id": "a1-103-intro-1",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which expression is useful in this lesson?",
+      "question": "Which word means 'rice'?",
       "options": [
         "rizs",
         "víz",
@@ -48,25 +52,25 @@
       "id": "a1-103-intro-2",
       "type": "fill-blank",
       "category": "introduce",
-      "sentence": "____.",
-      "answer": "víz"
+      "sentence": "Kérek egy ____ rizst.",
+      "answer": "kiló"
     },
     {
       "id": "a1-103-controlled-1",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "Kérek ____.",
+      "sentence": "Mennyi a ____?",
       "answer": "rizs"
     },
     {
       "id": "a1-103-controlled-2",
       "type": "multiple-choice",
       "category": "controlled",
-      "question": "Choose the correct form.",
+      "question": "What does 'víz' mean?",
       "options": [
-        "rizs",
-        "víz",
-        "kiló"
+        "water",
+        "kilo",
+        "litre"
       ],
       "correct": 0
     },
@@ -74,70 +78,6 @@
       "id": "a1-103-controlled-3",
       "type": "matching",
       "category": "controlled",
-      "pairs": [
-        [
-          "kenyér",
-          "bread"
-        ],
-        [
-          "tej",
-          "milk"
-        ],
-        [
-          "sajt",
-          "cheese"
-        ],
-        [
-          "alma",
-          "apple"
-        ]
-      ]
-    },
-    {
-      "id": "a1-103-controlled-4",
-      "type": "substitution",
-      "category": "controlled",
-      "base_sentence": "Kérek rizst.",
-      "base_word": "rizst",
-      "base_gloss": "I'd like rice.",
-      "options": [
-        {
-          "word": "víz",
-          "inflected": "vizet",
-          "sentence": "Kérek vizet.",
-          "gloss": "water"
-        },
-        {
-          "word": "kiló",
-          "inflected": "kilót",
-          "sentence": "Kérek kilót.",
-          "gloss": "a kilo"
-        }
-      ]
-    },
-    {
-      "id": "a1-103-practice-1",
-      "type": "multiple-choice",
-      "category": "practice",
-      "question": "Choose the best answer for the situation.",
-      "options": [
-        "rizs",
-        "víz",
-        "kiló"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "a1-103-practice-2",
-      "type": "fill-blank",
-      "category": "practice",
-      "sentence": "Kérek ____.",
-      "answer": "víz"
-    },
-    {
-      "id": "a1-103-practice-3",
-      "type": "matching",
-      "category": "practice",
       "pairs": [
         [
           "rizs",
@@ -150,6 +90,74 @@
         [
           "kiló",
           "kilo"
+        ],
+        [
+          "liter",
+          "litre"
+        ]
+      ]
+    },
+    {
+      "id": "a1-103-controlled-4",
+      "type": "substitution",
+      "category": "controlled",
+      "base_sentence": "Kérek egy kiló rizst.",
+      "base_word": "rizst",
+      "base_gloss": "I'd like one kilo of rice.",
+      "options": [
+        {
+          "word": "hús",
+          "inflected": "húst",
+          "sentence": "Kérek egy kiló húst.",
+          "gloss": "meat"
+        },
+        {
+          "word": "alma",
+          "inflected": "almát",
+          "sentence": "Kérek egy kiló almát.",
+          "gloss": "apple"
+        }
+      ]
+    },
+    {
+      "id": "a1-103-practice-1",
+      "type": "multiple-choice",
+      "category": "practice",
+      "question": "Which word means 'kilo'?",
+      "options": [
+        "kiló",
+        "rizs",
+        "liter"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-103-practice-2",
+      "type": "fill-blank",
+      "category": "practice",
+      "sentence": "Kérek egy liter ____.",
+      "answer": "vizet"
+    },
+    {
+      "id": "a1-103-practice-3",
+      "type": "matching",
+      "category": "practice",
+      "pairs": [
+        [
+          "Mennyi a rizs?",
+          "How much is the rice?"
+        ],
+        [
+          "Kérek egy kiló rizst.",
+          "I'd like one kilo of rice."
+        ],
+        [
+          "Kérek egy liter vizet.",
+          "I'd like one litre of water."
+        ],
+        [
+          "Mennyi az ár?",
+          "How much is the price?"
         ]
       ]
     },
@@ -157,21 +165,21 @@
       "id": "a1-103-practice-4",
       "type": "substitution",
       "category": "practice",
-      "base_sentence": "Kérek litert.",
-      "base_word": "litert",
-      "base_gloss": "I'd like a litre.",
+      "base_sentence": "Kérek vizet.",
+      "base_word": "vizet",
+      "base_gloss": "I'd like water.",
       "options": [
         {
-          "word": "rizs",
-          "inflected": "rizst",
-          "sentence": "Kérek rizst.",
-          "gloss": "rice"
+          "word": "tej",
+          "inflected": "tejet",
+          "sentence": "Kérek tejet.",
+          "gloss": "milk"
         },
         {
-          "word": "víz",
-          "inflected": "vizet",
-          "sentence": "Kérek vizet.",
-          "gloss": "water"
+          "word": "alma",
+          "inflected": "almát",
+          "sentence": "Kérek almát.",
+          "gloss": "apple"
         }
       ]
     },
@@ -179,26 +187,6 @@
       "id": "a1-103-practice-5",
       "type": "dialogue-complete",
       "category": "practice",
-      "prompt": [
-        {
-          "speaker": "Meg",
-          "text": "Mit kérsz?"
-        },
-        {
-          "speaker": "Károly",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Kérek rizs.",
-        "Hol van víz?"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "a1-103-dialogue-1",
-      "type": "dialogue-complete",
-      "category": "dialogue",
       "prompt": [
         {
           "speaker": "Eladó",
@@ -210,8 +198,28 @@
         }
       ],
       "options": [
-        "Kérek rizs.",
-        "Nem tudom."
+        "Kérek egy kiló rizst és egy liter vizet.",
+        "Ez a bolt drága."
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-103-dialogue-1",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        {
+          "speaker": "Eladó",
+          "text": "Mennyi vizet kér?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Egy liter vizet kérek.",
+        "Igen, szeretem a teát."
       ],
       "correct": 0
     },
@@ -219,11 +227,10 @@
       "id": "a1-103-dialogue-2",
       "type": "multiple-choice",
       "category": "dialogue",
-      "question": "Choose the natural reply.",
+      "question": "Which is the natural reply to \"Mennyi vizet kér?\"",
       "options": [
-        "Rendben, köszönöm.",
-        "Nem.",
-        "Hol?"
+        "Egy litert kérek.",
+        "Kérek egy almát."
       ],
       "correct": 0
     },
@@ -233,8 +240,8 @@
       "category": "production",
       "template": [
         {
-          "prompt": "Write a sentence using this word: rizs",
-          "answer": "Kérek egy kiló rizst."
+          "prompt": "Write a sentence using this word: víz",
+          "answer": "Kérek egy liter vizet."
         }
       ]
     },
@@ -244,8 +251,8 @@
       "category": "production",
       "template": [
         {
-          "prompt": "Write a request or question using this word: víz",
-          "answer": "Kérek egy vizet."
+          "prompt": "Write a sentence using this word: kiló",
+          "answer": "Kérek egy kiló rizst."
         }
       ]
     },
@@ -253,11 +260,11 @@
       "id": "a1-103-check-1",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Choose the correct Hungarian expression.",
+      "question": "Which word means 'litre'?",
       "options": [
+        "liter",
         "rizs",
-        "kiló",
-        "xyz"
+        "víz"
       ],
       "correct": 0
     },
@@ -265,8 +272,8 @@
       "id": "a1-103-check-2",
       "type": "fill-blank",
       "category": "check",
-      "sentence": "Kérek ____.",
-      "answer": "rizs"
+      "sentence": "Mennyi az ____?",
+      "answer": "ár"
     }
   ]
 }

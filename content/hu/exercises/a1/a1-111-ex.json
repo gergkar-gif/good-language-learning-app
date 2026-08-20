@@ -5,11 +5,11 @@
       "id": "a1-111-review-1",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the Hungarian word that fits the meaning.",
+      "question": "Which word means 'quarter'?",
       "options": [
-        "kávé",
-        "tea",
-        "limonádé"
+        "negyed",
+        "mennyi",
+        "hány"
       ],
       "correct": 0
     },
@@ -19,16 +19,20 @@
       "category": "review",
       "pairs": [
         [
-          "kávé",
-          "coffee"
+          "negyed",
+          "quarter"
         ],
         [
-          "tea",
-          "tea"
+          "mennyi",
+          "how much"
         ],
         [
-          "limonádé",
-          "lemonade"
+          "hány",
+          "how many"
+        ],
+        [
+          "friss",
+          "fresh"
         ]
       ]
     },
@@ -36,7 +40,7 @@
       "id": "a1-111-intro-1",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which expression is useful in this lesson?",
+      "question": "Which word means 'coffee'?",
       "options": [
         "kávé",
         "tea",
@@ -48,25 +52,25 @@
       "id": "a1-111-intro-2",
       "type": "fill-blank",
       "category": "introduce",
-      "sentence": "____.",
-      "answer": "tea"
+      "sentence": "Szeretnék egy ____.",
+      "answer": "limonádét"
     },
     {
       "id": "a1-111-controlled-1",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "Kérek ____.",
-      "answer": "kávé"
+      "sentence": "Kérek egy ____ és egy teát.",
+      "answer": "kávét"
     },
     {
       "id": "a1-111-controlled-2",
       "type": "multiple-choice",
       "category": "controlled",
-      "question": "Choose the correct form.",
+      "question": "What does 'tea' mean?",
       "options": [
-        "kávé",
         "tea",
-        "limonádé"
+        "lemonade",
+        "soft drink"
       ],
       "correct": 0
     },
@@ -97,20 +101,20 @@
       "id": "a1-111-controlled-4",
       "type": "substitution",
       "category": "controlled",
-      "base_sentence": "Kérek kávét.",
+      "base_sentence": "Kérek egy kávét.",
       "base_word": "kávét",
-      "base_gloss": "I'd like coffee.",
+      "base_gloss": "I'd like a coffee.",
       "options": [
         {
           "word": "tea",
           "inflected": "teát",
-          "sentence": "Kérek teát.",
+          "sentence": "Kérek egy teát.",
           "gloss": "tea"
         },
         {
           "word": "limonádé",
           "inflected": "limonádét",
-          "sentence": "Kérek limonádét.",
+          "sentence": "Kérek egy limonádét.",
           "gloss": "lemonade"
         }
       ]
@@ -119,11 +123,11 @@
       "id": "a1-111-practice-1",
       "type": "multiple-choice",
       "category": "practice",
-      "question": "Choose the best answer for the situation.",
+      "question": "Which word means 'lemonade'?",
       "options": [
+        "limonádé",
         "kávé",
-        "tea",
-        "limonádé"
+        "üdítő"
       ],
       "correct": 0
     },
@@ -131,8 +135,8 @@
       "id": "a1-111-practice-2",
       "type": "fill-blank",
       "category": "practice",
-      "sentence": "Kérek ____.",
-      "answer": "tea"
+      "sentence": "Szeretne limonádét vagy ____?",
+      "answer": "üdítőt"
     },
     {
       "id": "a1-111-practice-3",
@@ -140,16 +144,20 @@
       "category": "practice",
       "pairs": [
         [
-          "kávé",
-          "coffee"
+          "Kérek egy kávét és egy teát.",
+          "I'd like a coffee and a tea."
         ],
         [
-          "tea",
-          "tea"
+          "Szeretnék egy limonádét.",
+          "I would like a lemonade."
         ],
         [
-          "limonádé",
-          "lemonade"
+          "Szeretne limonádét vagy üdítőt?",
+          "Would you like lemonade or a soft drink?"
+        ],
+        [
+          "Jó napot kívánok! Itt az étlap.",
+          "Good day! Here's the menu."
         ]
       ]
     },
@@ -157,21 +165,21 @@
       "id": "a1-111-practice-4",
       "type": "substitution",
       "category": "practice",
-      "base_sentence": "Kérek üdítőt.",
+      "base_sentence": "Szeretnék egy üdítőt.",
       "base_word": "üdítőt",
-      "base_gloss": "I'd like a soft drink.",
+      "base_gloss": "I would like a soft drink.",
       "options": [
-        {
-          "word": "kávé",
-          "inflected": "kávét",
-          "sentence": "Kérek kávét.",
-          "gloss": "coffee"
-        },
         {
           "word": "tea",
           "inflected": "teát",
-          "sentence": "Kérek teát.",
+          "sentence": "Szeretnék egy teát.",
           "gloss": "tea"
+        },
+        {
+          "word": "kávé",
+          "inflected": "kávét",
+          "sentence": "Szeretnék egy kávét.",
+          "gloss": "coffee"
         }
       ]
     },
@@ -181,17 +189,17 @@
       "category": "practice",
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Mit kérsz?"
+          "speaker": "Pincér",
+          "text": "Jó napot kívánok! Itt az étlap."
         },
         {
-          "speaker": "Károly",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "Kérek kávé.",
-        "Hol van tea?"
+        "Kérek egy kávét és egy teát.",
+        "Kérek egy kiló húst."
       ],
       "correct": 0
     },
@@ -201,8 +209,8 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Eladó",
-          "text": "Mit kér?"
+          "speaker": "Pincér",
+          "text": "Szeretne limonádét vagy üdítőt?"
         },
         {
           "speaker": "Meg",
@@ -210,8 +218,8 @@
         }
       ],
       "options": [
-        "Kérek kávé.",
-        "Nem tudom."
+        "Szeretnék egy limonádét.",
+        "Kérek egy kiló almát."
       ],
       "correct": 0
     },
@@ -219,11 +227,10 @@
       "id": "a1-111-dialogue-2",
       "type": "multiple-choice",
       "category": "dialogue",
-      "question": "Choose the natural reply.",
+      "question": "Which is the natural reply to \"Szeretne limonádét vagy üdítőt?\"",
       "options": [
-        "Rendben, köszönöm.",
-        "Nem.",
-        "Hol?"
+        "Üdítőt kérek.",
+        "A répa friss."
       ],
       "correct": 0
     },
@@ -244,8 +251,8 @@
       "category": "production",
       "template": [
         {
-          "prompt": "Write a request or question using this word: tea",
-          "answer": "Kérek egy teát."
+          "prompt": "Write a sentence using this word: üdítő",
+          "answer": "Szeretnék egy üdítőt."
         }
       ]
     },
@@ -253,11 +260,11 @@
       "id": "a1-111-check-1",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Choose the correct Hungarian expression.",
+      "question": "Which word means 'soft drink'?",
       "options": [
+        "üdítő",
         "kávé",
-        "limonádé",
-        "xyz"
+        "tea"
       ],
       "correct": 0
     },
@@ -265,8 +272,8 @@
       "id": "a1-111-check-2",
       "type": "fill-blank",
       "category": "check",
-      "sentence": "Kérek ____.",
-      "answer": "kávé"
+      "sentence": "Jó napot kívánok! Itt az ____.",
+      "answer": "étlap"
     }
   ]
 }

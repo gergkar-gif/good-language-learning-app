@@ -5,7 +5,7 @@
       "id": "a1-117-review-1",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the Hungarian word that fits the meaning.",
+      "question": "Which word means 'restaurant'?",
       "options": [
         "étterem",
         "leves",
@@ -29,6 +29,10 @@
         [
           "saláta",
           "salad"
+        ],
+        [
+          "köret",
+          "side dish"
         ]
       ]
     },
@@ -36,7 +40,7 @@
       "id": "a1-117-intro-1",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which expression is useful in this lesson?",
+      "question": "Which word means 'dessert'?",
       "options": [
         "desszert",
         "menü",
@@ -48,25 +52,25 @@
       "id": "a1-117-intro-2",
       "type": "fill-blank",
       "category": "introduce",
-      "sentence": "____.",
-      "answer": "menü"
+      "sentence": "Szeretnék ____, mert éhes vagyok.",
+      "answer": "menüt"
     },
     {
       "id": "a1-117-controlled-1",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "Kérek ____.",
-      "answer": "desszert"
+      "sentence": "Szeretne csirkét vagy ____?",
+      "answer": "marhát"
     },
     {
       "id": "a1-117-controlled-2",
       "type": "multiple-choice",
       "category": "controlled",
-      "question": "Choose the correct form.",
+      "question": "What does 'menü' mean?",
       "options": [
-        "desszert",
-        "menü",
-        "marha"
+        "set meal/menu",
+        "beef",
+        "chicken"
       ],
       "correct": 0
     },
@@ -74,70 +78,6 @@
       "id": "a1-117-controlled-3",
       "type": "matching",
       "category": "controlled",
-      "pairs": [
-        [
-          "étterem",
-          "restaurant"
-        ],
-        [
-          "leves",
-          "soup"
-        ],
-        [
-          "saláta",
-          "salad"
-        ],
-        [
-          "köret",
-          "side dish"
-        ]
-      ]
-    },
-    {
-      "id": "a1-117-controlled-4",
-      "type": "substitution",
-      "category": "controlled",
-      "base_sentence": "Kérek desszertet.",
-      "base_word": "desszertet",
-      "base_gloss": "I'd like dessert.",
-      "options": [
-        {
-          "word": "menü",
-          "inflected": "menüt",
-          "sentence": "Kérek menüt.",
-          "gloss": "the set meal"
-        },
-        {
-          "word": "marha",
-          "inflected": "marhát",
-          "sentence": "Kérek marhát.",
-          "gloss": "beef"
-        }
-      ]
-    },
-    {
-      "id": "a1-117-practice-1",
-      "type": "multiple-choice",
-      "category": "practice",
-      "question": "Choose the best answer for the situation.",
-      "options": [
-        "desszert",
-        "menü",
-        "marha"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "a1-117-practice-2",
-      "type": "fill-blank",
-      "category": "practice",
-      "sentence": "Kérek ____.",
-      "answer": "menü"
-    },
-    {
-      "id": "a1-117-practice-3",
-      "type": "matching",
-      "category": "practice",
       "pairs": [
         [
           "desszert",
@@ -150,6 +90,74 @@
         [
           "marha",
           "beef"
+        ],
+        [
+          "csirke",
+          "chicken"
+        ]
+      ]
+    },
+    {
+      "id": "a1-117-controlled-4",
+      "type": "substitution",
+      "category": "controlled",
+      "base_sentence": "Szeretnék menüt.",
+      "base_word": "menüt",
+      "base_gloss": "I would like the set meal.",
+      "options": [
+        {
+          "word": "desszert",
+          "inflected": "desszertet",
+          "sentence": "Szeretnék desszertet.",
+          "gloss": "dessert"
+        },
+        {
+          "word": "marha",
+          "inflected": "marhát",
+          "sentence": "Szeretnék marhát.",
+          "gloss": "beef"
+        }
+      ]
+    },
+    {
+      "id": "a1-117-practice-1",
+      "type": "multiple-choice",
+      "category": "practice",
+      "question": "Which word means 'beef'?",
+      "options": [
+        "marha",
+        "desszert",
+        "csirke"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-117-practice-2",
+      "type": "fill-blank",
+      "category": "practice",
+      "sentence": "Mariann marhát ____.",
+      "answer": "kér"
+    },
+    {
+      "id": "a1-117-practice-3",
+      "type": "matching",
+      "category": "practice",
+      "pairs": [
+        [
+          "Szeretne csirkét vagy marhát?",
+          "Would you like chicken or beef?"
+        ],
+        [
+          "Szeretnék menüt, mert éhes vagyok.",
+          "I would like the set meal because I'm hungry."
+        ],
+        [
+          "Mariann marhát kér.",
+          "Mariann asks for beef."
+        ],
+        [
+          "Desszert is kell.",
+          "Dessert is needed too."
         ]
       ]
     },
@@ -157,20 +165,20 @@
       "id": "a1-117-practice-4",
       "type": "substitution",
       "category": "practice",
-      "base_sentence": "Kérek csirkét.",
-      "base_word": "csirkét",
+      "base_sentence": "Csirkét kérek.",
+      "base_word": "Csirkét",
       "base_gloss": "I'd like chicken.",
       "options": [
         {
           "word": "marha",
-          "inflected": "marhát",
-          "sentence": "Kérek marhát.",
+          "inflected": "Marhát",
+          "sentence": "Marhát kérek.",
           "gloss": "beef"
         },
         {
           "word": "desszert",
-          "inflected": "desszertet",
-          "sentence": "Kérek desszertet.",
+          "inflected": "Desszertet",
+          "sentence": "Desszertet kérek.",
           "gloss": "dessert"
         }
       ]
@@ -181,17 +189,17 @@
       "category": "practice",
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Mit kérsz?"
+          "speaker": "Pincér",
+          "text": "Szeretne csirkét vagy marhát?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "András",
           "text": "_____"
         }
       ],
       "options": [
-        "Kérek desszert.",
-        "Hol van menü?"
+        "Én csirkét kérek körettel.",
+        "Nem vagyok szomjas."
       ],
       "correct": 0
     },
@@ -201,17 +209,17 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Eladó",
-          "text": "Mit kér?"
+          "speaker": "Anna",
+          "text": "Desszert is kell."
         },
         {
-          "speaker": "Meg",
+          "speaker": "Pincér",
           "text": "_____"
         }
       ],
       "options": [
-        "Kérek desszert.",
-        "Nem tudom."
+        "Rendben, hozom.",
+        "Nem, ez a répa friss."
       ],
       "correct": 0
     },
@@ -219,16 +227,26 @@
       "id": "a1-117-dialogue-2",
       "type": "multiple-choice",
       "category": "dialogue",
-      "question": "Choose the natural reply.",
+      "question": "Which is the natural reply to \"Szeretne csirkét vagy marhát?\"",
       "options": [
-        "Rendben, köszönöm.",
-        "Nem.",
-        "Hol?"
+        "Marhát kérek.",
+        "Éhes vagyok, de nem vagyok szomjas."
       ],
       "correct": 0
     },
     {
       "id": "a1-117-writing-1",
+      "type": "structured-writing",
+      "category": "production",
+      "template": [
+        {
+          "prompt": "Write a sentence using this word: menü",
+          "answer": "Szeretnék menüt."
+        }
+      ]
+    },
+    {
+      "id": "a1-117-writing-2",
       "type": "structured-writing",
       "category": "production",
       "template": [
@@ -239,25 +257,14 @@
       ]
     },
     {
-      "id": "a1-117-writing-2",
-      "type": "structured-writing",
-      "category": "production",
-      "template": [
-        {
-          "prompt": "Write a request or question using this word: menü",
-          "answer": "Kérek egy menüt."
-        }
-      ]
-    },
-    {
       "id": "a1-117-check-1",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Choose the correct Hungarian expression.",
+      "question": "Which word means 'chicken'?",
       "options": [
+        "csirke",
         "desszert",
-        "marha",
-        "xyz"
+        "menü"
       ],
       "correct": 0
     },
@@ -265,8 +272,8 @@
       "id": "a1-117-check-2",
       "type": "fill-blank",
       "category": "check",
-      "sentence": "Kérek ____.",
-      "answer": "desszert"
+      "sentence": "____ is kell.",
+      "answer": "Desszert"
     }
   ]
 }

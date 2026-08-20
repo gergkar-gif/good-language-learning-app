@@ -5,11 +5,11 @@
       "id": "a1-118-review-1",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the Hungarian word that fits the meaning.",
+      "question": "Which word means 'dessert'?",
       "options": [
-        "étterem",
-        "leves",
-        "saláta"
+        "desszert",
+        "menü",
+        "marha"
       ],
       "correct": 0
     },
@@ -19,16 +19,20 @@
       "category": "review",
       "pairs": [
         [
-          "étterem",
-          "restaurant"
+          "desszert",
+          "dessert"
         ],
         [
-          "leves",
-          "soup"
+          "menü",
+          "set meal/menu"
         ],
         [
-          "saláta",
-          "salad"
+          "marha",
+          "beef"
+        ],
+        [
+          "csirke",
+          "chicken"
         ]
       ]
     },
@@ -36,7 +40,7 @@
       "id": "a1-118-intro-1",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which expression is useful in this lesson?",
+      "question": "Which word means 'vegetarian'?",
       "options": [
         "vegetáriánus",
         "éhes",
@@ -48,25 +52,25 @@
       "id": "a1-118-intro-2",
       "type": "fill-blank",
       "category": "introduce",
-      "sentence": "____.",
-      "answer": "éhes"
+      "sentence": "Anna ____.",
+      "answer": "vegetáriánus"
     },
     {
       "id": "a1-118-controlled-1",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "Kérek ____.",
-      "answer": "vegetáriánus"
+      "sentence": "Éhes vagyok, de nem vagyok ____.",
+      "answer": "szomjas"
     },
     {
       "id": "a1-118-controlled-2",
       "type": "multiple-choice",
       "category": "controlled",
-      "question": "Choose the correct form.",
+      "question": "What does 'éhes' mean?",
       "options": [
-        "vegetáriánus",
-        "éhes",
-        "szomjas"
+        "hungry",
+        "thirsty",
+        "need / must"
       ],
       "correct": 0
     },
@@ -74,64 +78,6 @@
       "id": "a1-118-controlled-3",
       "type": "matching",
       "category": "controlled",
-      "pairs": [
-        [
-          "étterem",
-          "restaurant"
-        ],
-        [
-          "leves",
-          "soup"
-        ],
-        [
-          "saláta",
-          "salad"
-        ],
-        [
-          "köret",
-          "side dish"
-        ]
-      ]
-    },
-    {
-      "id": "a1-118-controlled-4",
-      "type": "substitution",
-      "category": "controlled",
-      "base_sentence": "Éhes vagyok.",
-      "base_word": "Éhes",
-      "base_gloss": "I'm hungry.",
-      "options": [
-        {
-          "word": "szomjas",
-          "inflected": "Szomjas",
-          "sentence": "Szomjas vagyok.",
-          "gloss": "thirsty"
-        }
-      ]
-    },
-    {
-      "id": "a1-118-practice-1",
-      "type": "multiple-choice",
-      "category": "practice",
-      "question": "Choose the best answer for the situation.",
-      "options": [
-        "vegetáriánus",
-        "éhes",
-        "szomjas"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "a1-118-practice-2",
-      "type": "fill-blank",
-      "category": "practice",
-      "sentence": "Kérek ____.",
-      "answer": "éhes"
-    },
-    {
-      "id": "a1-118-practice-3",
-      "type": "matching",
-      "category": "practice",
       "pairs": [
         [
           "vegetáriánus",
@@ -144,6 +90,74 @@
         [
           "szomjas",
           "thirsty"
+        ],
+        [
+          "kell",
+          "need / must"
+        ]
+      ]
+    },
+    {
+      "id": "a1-118-controlled-4",
+      "type": "substitution",
+      "category": "controlled",
+      "base_sentence": "Éhes vagyok.",
+      "base_word": "Éhes",
+      "base_gloss": "I am hungry.",
+      "options": [
+        {
+          "word": "szomjas",
+          "inflected": "Szomjas",
+          "sentence": "Szomjas vagyok.",
+          "gloss": "thirsty"
+        },
+        {
+          "word": "vegetáriánus",
+          "inflected": "Vegetáriánus",
+          "sentence": "Vegetáriánus vagyok.",
+          "gloss": "vegetarian"
+        }
+      ]
+    },
+    {
+      "id": "a1-118-practice-1",
+      "type": "multiple-choice",
+      "category": "practice",
+      "question": "Which word means 'thirsty'?",
+      "options": [
+        "szomjas",
+        "vegetáriánus",
+        "kell"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-118-practice-2",
+      "type": "fill-blank",
+      "category": "practice",
+      "sentence": "____ még valami?",
+      "answer": "Kell"
+    },
+    {
+      "id": "a1-118-practice-3",
+      "type": "matching",
+      "category": "practice",
+      "pairs": [
+        [
+          "Éhes vagyok, de nem vagyok szomjas.",
+          "I'm hungry, but I'm not thirsty."
+        ],
+        [
+          "Anna vegetáriánus.",
+          "Anna is vegetarian."
+        ],
+        [
+          "Kell még valami?",
+          "Is anything else needed?"
+        ],
+        [
+          "Igen, vizet kérek.",
+          "Yes, I'd like water."
         ]
       ]
     },
@@ -151,15 +165,21 @@
       "id": "a1-118-practice-4",
       "type": "substitution",
       "category": "practice",
-      "base_sentence": "Vegetáriánus vagyok.",
-      "base_word": "Vegetáriánus",
-      "base_gloss": "I'm vegetarian.",
+      "base_sentence": "Anna vegetáriánus.",
+      "base_word": "vegetáriánus",
+      "base_gloss": "Anna is vegetarian.",
       "options": [
         {
           "word": "éhes",
-          "inflected": "Éhes",
-          "sentence": "Éhes vagyok.",
+          "inflected": "éhes",
+          "sentence": "Anna éhes.",
           "gloss": "hungry"
+        },
+        {
+          "word": "szomjas",
+          "inflected": "szomjas",
+          "sentence": "Anna szomjas.",
+          "gloss": "thirsty"
         }
       ]
     },
@@ -169,17 +189,17 @@
       "category": "practice",
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Mit kérsz?"
+          "speaker": "Károly",
+          "text": "Kell még valami?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "Kérek vegetáriánus.",
-        "Hol van éhes?"
+        "Igen, vizet kérek.",
+        "Nem, ez a menü drága."
       ],
       "correct": 0
     },
@@ -189,17 +209,17 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Eladó",
-          "text": "Mit kér?"
+          "speaker": "Mariann",
+          "text": "Éhes vagyok, de nem vagyok szomjas."
         },
         {
-          "speaker": "Meg",
+          "speaker": "Károly",
           "text": "_____"
         }
       ],
       "options": [
-        "Kérek vegetáriánus.",
-        "Nem tudom."
+        "Szeretnél levest?",
+        "Kártya vagy készpénz?"
       ],
       "correct": 0
     },
@@ -207,11 +227,10 @@
       "id": "a1-118-dialogue-2",
       "type": "multiple-choice",
       "category": "dialogue",
-      "question": "Choose the natural reply.",
+      "question": "Which is the natural reply to \"Éhes vagy?\"",
       "options": [
-        "Rendben, köszönöm.",
-        "Nem.",
-        "Hol?"
+        "Igen, éhes vagyok.",
+        "Kártya vagy készpénz?"
       ],
       "correct": 0
     },
@@ -221,8 +240,8 @@
       "category": "production",
       "template": [
         {
-          "prompt": "Write a sentence using this word: vegetáriánus",
-          "answer": "Vegetáriánus vagyok."
+          "prompt": "Write a sentence using this word: éhes",
+          "answer": "Éhes vagyok."
         }
       ]
     },
@@ -232,8 +251,8 @@
       "category": "production",
       "template": [
         {
-          "prompt": "Write a request or question using this word: éhes",
-          "answer": "Éhes vagyok."
+          "prompt": "Write a sentence using this word: szomjas",
+          "answer": "Nem vagyok szomjas."
         }
       ]
     },
@@ -241,11 +260,11 @@
       "id": "a1-118-check-1",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Choose the correct Hungarian expression.",
+      "question": "Which word means 'need / must'?",
       "options": [
+        "kell",
         "vegetáriánus",
-        "szomjas",
-        "xyz"
+        "éhes"
       ],
       "correct": 0
     },
@@ -253,8 +272,8 @@
       "id": "a1-118-check-2",
       "type": "fill-blank",
       "category": "check",
-      "sentence": "Kérek ____.",
-      "answer": "vegetáriánus"
+      "sentence": "Igen, ____ kérek.",
+      "answer": "vizet"
     }
   ]
 }

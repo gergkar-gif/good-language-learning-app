@@ -5,11 +5,11 @@
       "id": "a1-115-consolidation-1",
       "type": "multiple-choice",
       "category": "consolidation",
-      "question": "Choose the correct expression.",
+      "question": "Which word means 'waiter'?",
       "options": [
-        "Kérek egyet.",
-        "Hol van?",
-        "Nem tudom."
+        "pincér",
+        "asztal",
+        "étlap"
       ],
       "correct": 0
     },
@@ -27,12 +27,12 @@
           "tea"
         ],
         [
-          "limonádé",
-          "lemonade"
+          "szendvics",
+          "sandwich"
         ],
         [
-          "üdítő",
-          "soft drink"
+          "számla",
+          "bill"
         ]
       ]
     },
@@ -40,30 +40,20 @@
       "id": "a1-115-consolidation-3",
       "type": "fill-blank",
       "category": "consolidation",
-      "sentence": "Kérek ____.",
-      "answer": "kávé"
+      "sentence": "Kérek egy ____ és egy teát.",
+      "answer": "kávét"
     },
     {
       "id": "a1-115-consolidation-4",
-      "type": "substitution",
+      "type": "multiple-choice",
       "category": "consolidation",
-      "base_sentence": "Kérek kávét.",
-      "base_word": "kávét",
-      "base_gloss": "I'd like coffee.",
+      "question": "Which is the more polite way to order?",
       "options": [
-        {
-          "word": "tea",
-          "inflected": "teát",
-          "sentence": "Kérek teát.",
-          "gloss": "tea"
-        },
-        {
-          "word": "limonádé",
-          "inflected": "limonádét",
-          "sentence": "Kérek limonádét.",
-          "gloss": "lemonade"
-        }
-      ]
+        "szeretnék",
+        "kérek",
+        "hoz"
+      ],
+      "correct": 0
     },
     {
       "id": "a1-115-consolidation-5",
@@ -71,8 +61,8 @@
       "category": "consolidation",
       "prompt": [
         {
-          "speaker": "Eladó",
-          "text": "Mit kér?"
+          "speaker": "Pincér",
+          "text": "Kér még süteményt?"
         },
         {
           "speaker": "Meg",
@@ -80,22 +70,21 @@
         }
       ],
       "options": [
-        "Kérek kávé.",
-        "Jó reggelt."
+        "Igen, kérek egy süteményt.",
+        "Nem, köszönöm. Csak nézek."
       ],
       "correct": 0
     },
     {
       "id": "a1-115-consolidation-6",
-      "type": "multiple-choice",
+      "type": "structured-writing",
       "category": "consolidation",
-      "question": "Which sentence fits the situation?",
-      "options": [
-        "Rendben, köszönöm.",
-        "Nem tudom.",
-        "Hol lakik?"
-      ],
-      "correct": 0
+      "template": [
+        {
+          "prompt": "Ask the waiter for the bill.",
+          "answer": "Kérem a számlát."
+        }
+      ]
     }
   ]
 }

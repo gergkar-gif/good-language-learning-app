@@ -5,11 +5,11 @@
       "id": "a1-110-review-1",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the Hungarian word that fits the meaning.",
+      "question": "Which word means 'bottle/jar'?",
       "options": [
-        "piac",
-        "árus",
-        "zöldség"
+        "üveg",
+        "csomag",
+        "kiló"
       ],
       "correct": 0
     },
@@ -19,16 +19,20 @@
       "category": "review",
       "pairs": [
         [
-          "piac",
-          "market"
+          "üveg",
+          "bottle/jar"
         ],
         [
-          "árus",
-          "vendor"
+          "csomag",
+          "packet"
         ],
         [
-          "zöldség",
-          "vegetable"
+          "kiló",
+          "kilo"
+        ],
+        [
+          "fél",
+          "half"
         ]
       ]
     },
@@ -36,7 +40,7 @@
       "id": "a1-110-intro-1",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which expression is useful in this lesson?",
+      "question": "Which word means 'quarter'?",
       "options": [
         "negyed",
         "mennyi",
@@ -48,25 +52,25 @@
       "id": "a1-110-intro-2",
       "type": "fill-blank",
       "category": "introduce",
-      "sentence": "____.",
-      "answer": "mennyi"
+      "sentence": "A répa is ____.",
+      "answer": "friss"
     },
     {
       "id": "a1-110-controlled-1",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "Kérek ____.",
-      "answer": "negyed"
+      "sentence": "____ kiló is elég?",
+      "answer": "Negyed"
     },
     {
       "id": "a1-110-controlled-2",
       "type": "multiple-choice",
       "category": "controlled",
-      "question": "Choose the correct form.",
+      "question": "What does 'mennyi' mean?",
       "options": [
-        "negyed",
-        "mennyi",
-        "hány"
+        "how much",
+        "how many",
+        "fresh"
       ],
       "correct": 0
     },
@@ -74,70 +78,6 @@
       "id": "a1-110-controlled-3",
       "type": "matching",
       "category": "controlled",
-      "pairs": [
-        [
-          "piac",
-          "market"
-        ],
-        [
-          "árus",
-          "vendor"
-        ],
-        [
-          "zöldség",
-          "vegetable"
-        ],
-        [
-          "gyümölcs",
-          "fruit"
-        ]
-      ]
-    },
-    {
-      "id": "a1-110-controlled-4",
-      "type": "substitution",
-      "category": "controlled",
-      "base_sentence": "Kérek negyedet.",
-      "base_word": "negyedet",
-      "base_gloss": "I'd like a quarter.",
-      "options": [
-        {
-          "word": "fél",
-          "inflected": "felet",
-          "sentence": "Kérek felet.",
-          "gloss": "a half"
-        },
-        {
-          "word": "darab",
-          "inflected": "darabot",
-          "sentence": "Kérek darabot.",
-          "gloss": "a piece"
-        }
-      ]
-    },
-    {
-      "id": "a1-110-practice-1",
-      "type": "multiple-choice",
-      "category": "practice",
-      "question": "Choose the best answer for the situation.",
-      "options": [
-        "negyed",
-        "mennyi",
-        "hány"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "a1-110-practice-2",
-      "type": "fill-blank",
-      "category": "practice",
-      "sentence": "Kérek ____.",
-      "answer": "mennyi"
-    },
-    {
-      "id": "a1-110-practice-3",
-      "type": "matching",
-      "category": "practice",
       "pairs": [
         [
           "negyed",
@@ -150,6 +90,74 @@
         [
           "hány",
           "how many"
+        ],
+        [
+          "friss",
+          "fresh"
+        ]
+      ]
+    },
+    {
+      "id": "a1-110-controlled-4",
+      "type": "substitution",
+      "category": "controlled",
+      "base_sentence": "A répa friss.",
+      "base_word": "répa",
+      "base_gloss": "The carrot is fresh.",
+      "options": [
+        {
+          "word": "paradicsom",
+          "inflected": "paradicsom",
+          "sentence": "A paradicsom friss.",
+          "gloss": "tomato"
+        },
+        {
+          "word": "hagyma",
+          "inflected": "hagyma",
+          "sentence": "A hagyma friss.",
+          "gloss": "onion"
+        }
+      ]
+    },
+    {
+      "id": "a1-110-practice-1",
+      "type": "multiple-choice",
+      "category": "practice",
+      "question": "Which word means 'how many'?",
+      "options": [
+        "hány",
+        "negyed",
+        "friss"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-110-practice-2",
+      "type": "fill-blank",
+      "category": "practice",
+      "sentence": "____ a paradicsom?",
+      "answer": "Mennyi"
+    },
+    {
+      "id": "a1-110-practice-3",
+      "type": "matching",
+      "category": "practice",
+      "pairs": [
+        [
+          "Negyed kiló is elég?",
+          "Is a quarter kilo enough too?"
+        ],
+        [
+          "A répa is friss.",
+          "The carrot is fresh too."
+        ],
+        [
+          "Mennyi a paradicsom?",
+          "How much is the tomato?"
+        ],
+        [
+          "Ez a hagyma friss?",
+          "Is this onion fresh?"
         ]
       ]
     },
@@ -157,21 +165,21 @@
       "id": "a1-110-practice-4",
       "type": "substitution",
       "category": "practice",
-      "base_sentence": "Kérek felet.",
-      "base_word": "felet",
-      "base_gloss": "I'd like a half.",
+      "base_sentence": "Mennyi a paradicsom?",
+      "base_word": "paradicsom",
+      "base_gloss": "How much is the tomato?",
       "options": [
         {
-          "word": "negyed",
-          "inflected": "negyedet",
-          "sentence": "Kérek negyedet.",
-          "gloss": "a quarter"
+          "word": "krumpli",
+          "inflected": "krumpli",
+          "sentence": "Mennyi a krumpli?",
+          "gloss": "potato"
         },
         {
-          "word": "kiló",
-          "inflected": "kilót",
-          "sentence": "Kérek kilót.",
-          "gloss": "a kilo"
+          "word": "répa",
+          "inflected": "répa",
+          "sentence": "Mennyi a répa?",
+          "gloss": "carrot"
         }
       ]
     },
@@ -181,17 +189,17 @@
       "category": "practice",
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Mit kérsz?"
+          "speaker": "Árus",
+          "text": "Negyed kiló is elég?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "Kérek negyed.",
-        "Hol van mennyi?"
+        "Igen, köszönöm.",
+        "Kérek egy teát."
       ],
       "correct": 0
     },
@@ -201,17 +209,17 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Eladó",
-          "text": "Mit kér?"
+          "speaker": "Meg",
+          "text": "Mennyi a paradicsom?"
         },
         {
-          "speaker": "Meg",
+          "speaker": "Árus",
           "text": "_____"
         }
       ],
       "options": [
-        "Kérek negyed.",
-        "Nem tudom."
+        "Egy kiló három forint.",
+        "Szia, Károly!"
       ],
       "correct": 0
     },
@@ -219,11 +227,10 @@
       "id": "a1-110-dialogue-2",
       "type": "multiple-choice",
       "category": "dialogue",
-      "question": "Choose the natural reply.",
+      "question": "Which is the natural reply to \"Mennyi a paradicsom?\"",
       "options": [
-        "Rendben, köszönöm.",
-        "Nem.",
-        "Hol?"
+        "Egy kiló három forint.",
+        "Igen, kérem a számlát."
       ],
       "correct": 0
     },
@@ -233,8 +240,8 @@
       "category": "production",
       "template": [
         {
-          "prompt": "Write a sentence using this word: negyed",
-          "answer": "Kérek egy negyedet."
+          "prompt": "Write a sentence using this word: friss",
+          "answer": "A zöldség friss."
         }
       ]
     },
@@ -244,8 +251,8 @@
       "category": "production",
       "template": [
         {
-          "prompt": "Write a request or question using this word: mennyi",
-          "answer": "Mennyi ez?"
+          "prompt": "Write a sentence using this word: hány",
+          "answer": "Hány csomag kolbász kell?"
         }
       ]
     },
@@ -253,11 +260,11 @@
       "id": "a1-110-check-1",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Choose the correct Hungarian expression.",
+      "question": "Which word means 'fresh'?",
       "options": [
+        "friss",
         "negyed",
-        "hány",
-        "xyz"
+        "mennyi"
       ],
       "correct": 0
     },
@@ -265,8 +272,8 @@
       "id": "a1-110-check-2",
       "type": "fill-blank",
       "category": "check",
-      "sentence": "Kérek ____.",
-      "answer": "negyed"
+      "sentence": "____ csomag kolbász kell?",
+      "answer": "Hány"
     }
   ]
 }

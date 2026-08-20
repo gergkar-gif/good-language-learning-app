@@ -5,11 +5,11 @@
       "id": "a1-116-review-1",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the Hungarian word that fits the meaning.",
+      "question": "Which word means 'I would like'?",
       "options": [
-        "étterem",
-        "leves",
-        "saláta"
+        "szeretnék",
+        "még",
+        "finom"
       ],
       "correct": 0
     },
@@ -19,16 +19,20 @@
       "category": "review",
       "pairs": [
         [
-          "étterem",
-          "restaurant"
+          "szeretnék",
+          "I would like"
         ],
         [
-          "leves",
-          "soup"
+          "még",
+          "more / another"
         ],
         [
-          "saláta",
-          "salad"
+          "finom",
+          "delicious"
+        ],
+        [
+          "meleg",
+          "hot / warm"
         ]
       ]
     },
@@ -36,7 +40,7 @@
       "id": "a1-116-intro-1",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which expression is useful in this lesson?",
+      "question": "Which word means 'restaurant'?",
       "options": [
         "étterem",
         "leves",
@@ -48,25 +52,25 @@
       "id": "a1-116-intro-2",
       "type": "fill-blank",
       "category": "introduce",
-      "sentence": "____.",
-      "answer": "leves"
+      "sentence": "Én csirkét kérek ____.",
+      "answer": "körettel"
     },
     {
       "id": "a1-116-controlled-1",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "Kérek ____.",
-      "answer": "étterem"
+      "sentence": "Szeretnék ____ és salátát.",
+      "answer": "levest"
     },
     {
       "id": "a1-116-controlled-2",
       "type": "multiple-choice",
       "category": "controlled",
-      "question": "Choose the correct form.",
+      "question": "What does 'leves' mean?",
       "options": [
-        "étterem",
-        "leves",
-        "saláta"
+        "soup",
+        "salad",
+        "side dish"
       ],
       "correct": 0
     },
@@ -97,21 +101,21 @@
       "id": "a1-116-controlled-4",
       "type": "substitution",
       "category": "controlled",
-      "base_sentence": "Kérek levest.",
+      "base_sentence": "Szeretnék levest.",
       "base_word": "levest",
-      "base_gloss": "I'd like soup.",
+      "base_gloss": "I would like soup.",
       "options": [
         {
           "word": "saláta",
           "inflected": "salátát",
-          "sentence": "Kérek salátát.",
+          "sentence": "Szeretnék salátát.",
           "gloss": "salad"
         },
         {
           "word": "köret",
           "inflected": "köretet",
-          "sentence": "Kérek köretet.",
-          "gloss": "a side dish"
+          "sentence": "Szeretnék köretet.",
+          "gloss": "side dish"
         }
       ]
     },
@@ -119,11 +123,11 @@
       "id": "a1-116-practice-1",
       "type": "multiple-choice",
       "category": "practice",
-      "question": "Choose the best answer for the situation.",
+      "question": "Which word means 'salad'?",
       "options": [
+        "saláta",
         "étterem",
-        "leves",
-        "saláta"
+        "köret"
       ],
       "correct": 0
     },
@@ -131,8 +135,8 @@
       "id": "a1-116-practice-2",
       "type": "fill-blank",
       "category": "practice",
-      "sentence": "Kérek ____.",
-      "answer": "leves"
+      "sentence": "Jó napot kívánok! Itt az ____.",
+      "answer": "étlap"
     },
     {
       "id": "a1-116-practice-3",
@@ -140,16 +144,20 @@
       "category": "practice",
       "pairs": [
         [
-          "étterem",
-          "restaurant"
+          "Szeretnék levest és salátát.",
+          "I would like soup and salad."
         ],
         [
-          "leves",
-          "soup"
+          "Én csirkét kérek körettel.",
+          "I'd like chicken with a side dish."
         ],
         [
-          "saláta",
-          "salad"
+          "Jó napot kívánok! Itt az étlap.",
+          "Good day! Here's the menu."
+        ],
+        [
+          "Kérek egy köretet.",
+          "I'd like a side dish."
         ]
       ]
     },
@@ -157,20 +165,20 @@
       "id": "a1-116-practice-4",
       "type": "substitution",
       "category": "practice",
-      "base_sentence": "Kérek köretet.",
+      "base_sentence": "Kérek egy köretet.",
       "base_word": "köretet",
       "base_gloss": "I'd like a side dish.",
       "options": [
         {
           "word": "leves",
           "inflected": "levest",
-          "sentence": "Kérek levest.",
+          "sentence": "Kérek egy levest.",
           "gloss": "soup"
         },
         {
           "word": "saláta",
           "inflected": "salátát",
-          "sentence": "Kérek salátát.",
+          "sentence": "Kérek egy salátát.",
           "gloss": "salad"
         }
       ]
@@ -181,17 +189,17 @@
       "category": "practice",
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Mit kérsz?"
+          "speaker": "Pincér",
+          "text": "Jó napot kívánok! Itt az étlap."
         },
         {
-          "speaker": "Károly",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "Kérek étterem.",
-        "Hol van leves?"
+        "Szeretnék levest és salátát.",
+        "Kártya vagy készpénz?"
       ],
       "correct": 0
     },
@@ -201,7 +209,7 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Eladó",
+          "speaker": "Pincér",
           "text": "Mit kér?"
         },
         {
@@ -210,8 +218,8 @@
         }
       ],
       "options": [
-        "Kérek étterem.",
-        "Nem tudom."
+        "Levest és salátát kérek.",
+        "Itt a piac."
       ],
       "correct": 0
     },
@@ -219,11 +227,10 @@
       "id": "a1-116-dialogue-2",
       "type": "multiple-choice",
       "category": "dialogue",
-      "question": "Choose the natural reply.",
+      "question": "Which is the natural reply to \"Mit kér?\"",
       "options": [
-        "Rendben, köszönöm.",
-        "Nem.",
-        "Hol?"
+        "Csirkét kérek körettel.",
+        "Kérek egy kávét."
       ],
       "correct": 0
     },
@@ -233,8 +240,8 @@
       "category": "production",
       "template": [
         {
-          "prompt": "Write a sentence using this word: étterem",
-          "answer": "Az étterem jó."
+          "prompt": "Write a sentence using this word: leves",
+          "answer": "Szeretnék levest."
         }
       ]
     },
@@ -244,8 +251,8 @@
       "category": "production",
       "template": [
         {
-          "prompt": "Write a request or question using this word: leves",
-          "answer": "Kérek egy levest."
+          "prompt": "Write a sentence using this word: saláta",
+          "answer": "Kérek egy salátát."
         }
       ]
     },
@@ -253,11 +260,11 @@
       "id": "a1-116-check-1",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Choose the correct Hungarian expression.",
+      "question": "Which word means 'side dish'?",
       "options": [
+        "köret",
         "étterem",
-        "saláta",
-        "xyz"
+        "leves"
       ],
       "correct": 0
     },
@@ -265,8 +272,8 @@
       "id": "a1-116-check-2",
       "type": "fill-blank",
       "category": "check",
-      "sentence": "Kérek ____.",
-      "answer": "étterem"
+      "sentence": "Kérek egy ____.",
+      "answer": "köretet"
     }
   ]
 }

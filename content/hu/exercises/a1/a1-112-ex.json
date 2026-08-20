@@ -5,7 +5,7 @@
       "id": "a1-112-review-1",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the Hungarian word that fits the meaning.",
+      "question": "Which word means 'coffee'?",
       "options": [
         "kávé",
         "tea",
@@ -29,6 +29,10 @@
         [
           "limonádé",
           "lemonade"
+        ],
+        [
+          "üdítő",
+          "soft drink"
         ]
       ]
     },
@@ -36,7 +40,7 @@
       "id": "a1-112-intro-1",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which expression is useful in this lesson?",
+      "question": "Which word means 'sandwich'?",
       "options": [
         "szendvics",
         "sütemény",
@@ -48,25 +52,25 @@
       "id": "a1-112-intro-2",
       "type": "fill-blank",
       "category": "introduce",
-      "sentence": "____.",
-      "answer": "sütemény"
+      "sentence": "Kér még ____?",
+      "answer": "süteményt"
     },
     {
       "id": "a1-112-controlled-1",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "Kérek ____.",
-      "answer": "szendvics"
+      "sentence": "És egy ____ kérek.",
+      "answer": "szendvicset"
     },
     {
       "id": "a1-112-controlled-2",
       "type": "multiple-choice",
       "category": "controlled",
-      "question": "Choose the correct form.",
+      "question": "What does 'sütemény' mean?",
       "options": [
-        "szendvics",
-        "sütemény",
-        "reggeli"
+        "pastry",
+        "breakfast",
+        "sugar"
       ],
       "correct": 0
     },
@@ -74,70 +78,6 @@
       "id": "a1-112-controlled-3",
       "type": "matching",
       "category": "controlled",
-      "pairs": [
-        [
-          "kávé",
-          "coffee"
-        ],
-        [
-          "tea",
-          "tea"
-        ],
-        [
-          "limonádé",
-          "lemonade"
-        ],
-        [
-          "üdítő",
-          "soft drink"
-        ]
-      ]
-    },
-    {
-      "id": "a1-112-controlled-4",
-      "type": "substitution",
-      "category": "controlled",
-      "base_sentence": "Kérek szendvicset.",
-      "base_word": "szendvicset",
-      "base_gloss": "I'd like a sandwich.",
-      "options": [
-        {
-          "word": "sütemény",
-          "inflected": "süteményt",
-          "sentence": "Kérek süteményt.",
-          "gloss": "a pastry"
-        },
-        {
-          "word": "reggeli",
-          "inflected": "reggelit",
-          "sentence": "Kérek reggelit.",
-          "gloss": "breakfast"
-        }
-      ]
-    },
-    {
-      "id": "a1-112-practice-1",
-      "type": "multiple-choice",
-      "category": "practice",
-      "question": "Choose the best answer for the situation.",
-      "options": [
-        "szendvics",
-        "sütemény",
-        "reggeli"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "a1-112-practice-2",
-      "type": "fill-blank",
-      "category": "practice",
-      "sentence": "Kérek ____.",
-      "answer": "sütemény"
-    },
-    {
-      "id": "a1-112-practice-3",
-      "type": "matching",
-      "category": "practice",
       "pairs": [
         [
           "szendvics",
@@ -150,6 +90,74 @@
         [
           "reggeli",
           "breakfast"
+        ],
+        [
+          "cukor",
+          "sugar"
+        ]
+      ]
+    },
+    {
+      "id": "a1-112-controlled-4",
+      "type": "substitution",
+      "category": "controlled",
+      "base_sentence": "Kérek egy szendvicset.",
+      "base_word": "szendvicset",
+      "base_gloss": "I'd like a sandwich.",
+      "options": [
+        {
+          "word": "sütemény",
+          "inflected": "süteményt",
+          "sentence": "Kérek egy süteményt.",
+          "gloss": "pastry"
+        },
+        {
+          "word": "reggeli",
+          "inflected": "reggelit",
+          "sentence": "Kérek egy reggelit.",
+          "gloss": "breakfast"
+        }
+      ]
+    },
+    {
+      "id": "a1-112-practice-1",
+      "type": "multiple-choice",
+      "category": "practice",
+      "question": "Which word means 'breakfast'?",
+      "options": [
+        "reggeli",
+        "szendvics",
+        "cukor"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-112-practice-2",
+      "type": "fill-blank",
+      "category": "practice",
+      "sentence": "Igen, kérek egy ____.",
+      "answer": "süteményt"
+    },
+    {
+      "id": "a1-112-practice-3",
+      "type": "matching",
+      "category": "practice",
+      "pairs": [
+        [
+          "És egy szendvicset kérek.",
+          "And I'd like a sandwich."
+        ],
+        [
+          "Kér még süteményt?",
+          "Would you like more pastry?"
+        ],
+        [
+          "Igen, kérek egy süteményt.",
+          "Yes, I'd like a pastry."
+        ],
+        [
+          "Kérek cukrot és tejet is.",
+          "I'd like sugar and milk too."
         ]
       ]
     },
@@ -162,16 +170,16 @@
       "base_gloss": "I'd like sugar.",
       "options": [
         {
-          "word": "szendvics",
-          "inflected": "szendvicset",
-          "sentence": "Kérek szendvicset.",
-          "gloss": "a sandwich"
+          "word": "tej",
+          "inflected": "tejet",
+          "sentence": "Kérek tejet.",
+          "gloss": "milk"
         },
         {
           "word": "sütemény",
           "inflected": "süteményt",
           "sentence": "Kérek süteményt.",
-          "gloss": "a pastry"
+          "gloss": "pastry"
         }
       ]
     },
@@ -181,17 +189,17 @@
       "category": "practice",
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Mit kérsz?"
+          "speaker": "Pincér",
+          "text": "Kér még süteményt?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "Kérek szendvics.",
-        "Hol van sütemény?"
+        "Igen, kérek egy süteményt.",
+        "Nem, köszönöm. Csak nézek."
       ],
       "correct": 0
     },
@@ -201,17 +209,17 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Eladó",
-          "text": "Mit kér?"
+          "speaker": "Károly",
+          "text": "Én kérek reggelit."
         },
         {
-          "speaker": "Meg",
+          "speaker": "Pincér",
           "text": "_____"
         }
       ],
       "options": [
-        "Kérek szendvics.",
-        "Nem tudom."
+        "Rendben, hozom.",
+        "Nem drága a piac."
       ],
       "correct": 0
     },
@@ -219,11 +227,10 @@
       "id": "a1-112-dialogue-2",
       "type": "multiple-choice",
       "category": "dialogue",
-      "question": "Choose the natural reply.",
+      "question": "Which is the natural reply to \"Kér még süteményt?\"",
       "options": [
-        "Rendben, köszönöm.",
-        "Nem.",
-        "Hol?"
+        "Igen, kérek még egyet.",
+        "Ez a répa friss."
       ],
       "correct": 0
     },
@@ -244,8 +251,8 @@
       "category": "production",
       "template": [
         {
-          "prompt": "Write a request or question using this word: sütemény",
-          "answer": "Kérek egy süteményt."
+          "prompt": "Write a sentence using this word: cukor",
+          "answer": "Kérek cukrot és tejet."
         }
       ]
     },
@@ -253,11 +260,11 @@
       "id": "a1-112-check-1",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Choose the correct Hungarian expression.",
+      "question": "Which word means 'sugar'?",
       "options": [
+        "cukor",
         "szendvics",
-        "reggeli",
-        "xyz"
+        "sütemény"
       ],
       "correct": 0
     },
@@ -265,8 +272,8 @@
       "id": "a1-112-check-2",
       "type": "fill-blank",
       "category": "check",
-      "sentence": "Kérek ____.",
-      "answer": "szendvics"
+      "sentence": "Kérek ____ és tejet is.",
+      "answer": "cukrot"
     }
   ]
 }

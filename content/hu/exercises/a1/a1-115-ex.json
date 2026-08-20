@@ -5,11 +5,11 @@
       "id": "a1-115-review-1",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the Hungarian word that fits the meaning.",
+      "question": "Which word means 'bill'?",
       "options": [
-        "kávé",
-        "tea",
-        "limonádé"
+        "számla",
+        "kér",
+        "hoz"
       ],
       "correct": 0
     },
@@ -19,16 +19,20 @@
       "category": "review",
       "pairs": [
         [
-          "kávé",
-          "coffee"
+          "számla",
+          "bill"
         ],
         [
-          "tea",
-          "tea"
+          "kér",
+          "ask"
         ],
         [
-          "limonádé",
-          "lemonade"
+          "hoz",
+          "bring"
+        ],
+        [
+          "szeretne",
+          "would like"
         ]
       ]
     },
@@ -36,7 +40,7 @@
       "id": "a1-115-intro-1",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which expression is useful in this lesson?",
+      "question": "Which word means 'I would like'?",
       "options": [
         "szeretnék",
         "még",
@@ -48,25 +52,25 @@
       "id": "a1-115-intro-2",
       "type": "fill-blank",
       "category": "introduce",
-      "sentence": "____.",
-      "answer": "még"
+      "sentence": "Igen, ____.",
+      "answer": "kérem"
     },
     {
       "id": "a1-115-controlled-1",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "Kérek ____.",
-      "answer": "szeretnék"
+      "sentence": "____ a kávé.",
+      "answer": "Meleg"
     },
     {
       "id": "a1-115-controlled-2",
       "type": "multiple-choice",
       "category": "controlled",
-      "question": "Choose the correct form.",
+      "question": "What does 'még' mean?",
       "options": [
-        "szeretnék",
-        "még",
-        "finom"
+        "more / another",
+        "delicious",
+        "hot / warm"
       ],
       "correct": 0
     },
@@ -74,70 +78,6 @@
       "id": "a1-115-controlled-3",
       "type": "matching",
       "category": "controlled",
-      "pairs": [
-        [
-          "kávé",
-          "coffee"
-        ],
-        [
-          "tea",
-          "tea"
-        ],
-        [
-          "limonádé",
-          "lemonade"
-        ],
-        [
-          "üdítő",
-          "soft drink"
-        ]
-      ]
-    },
-    {
-      "id": "a1-115-controlled-4",
-      "type": "substitution",
-      "category": "controlled",
-      "base_sentence": "Szeretnék még egy kávét.",
-      "base_word": "kávét",
-      "base_gloss": "I'd like one more coffee.",
-      "options": [
-        {
-          "word": "tea",
-          "inflected": "teát",
-          "sentence": "Szeretnék még egy teát.",
-          "gloss": "tea"
-        },
-        {
-          "word": "limonádé",
-          "inflected": "limonádét",
-          "sentence": "Szeretnék még egy limonádét.",
-          "gloss": "lemonade"
-        }
-      ]
-    },
-    {
-      "id": "a1-115-practice-1",
-      "type": "multiple-choice",
-      "category": "practice",
-      "question": "Choose the best answer for the situation.",
-      "options": [
-        "szeretnék",
-        "még",
-        "finom"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "a1-115-practice-2",
-      "type": "fill-blank",
-      "category": "practice",
-      "sentence": "Kérek ____.",
-      "answer": "még"
-    },
-    {
-      "id": "a1-115-practice-3",
-      "type": "matching",
-      "category": "practice",
       "pairs": [
         [
           "szeretnék",
@@ -150,6 +90,74 @@
         [
           "finom",
           "delicious"
+        ],
+        [
+          "meleg",
+          "hot / warm"
+        ]
+      ]
+    },
+    {
+      "id": "a1-115-controlled-4",
+      "type": "substitution",
+      "category": "controlled",
+      "base_sentence": "Meleg a kávé.",
+      "base_word": "kávé",
+      "base_gloss": "The coffee is hot.",
+      "options": [
+        {
+          "word": "tea",
+          "inflected": "tea",
+          "sentence": "Meleg a tea.",
+          "gloss": "tea"
+        },
+        {
+          "word": "reggeli",
+          "inflected": "reggeli",
+          "sentence": "Meleg a reggeli.",
+          "gloss": "breakfast"
+        }
+      ]
+    },
+    {
+      "id": "a1-115-practice-1",
+      "type": "multiple-choice",
+      "category": "practice",
+      "question": "Which word means 'delicious'?",
+      "options": [
+        "finom",
+        "szeretnék",
+        "meleg"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-115-practice-2",
+      "type": "fill-blank",
+      "category": "practice",
+      "sentence": "Szeretnék egy ____.",
+      "answer": "limonádét"
+    },
+    {
+      "id": "a1-115-practice-3",
+      "type": "matching",
+      "category": "practice",
+      "pairs": [
+        [
+          "Meleg a kávé.",
+          "The coffee is hot."
+        ],
+        [
+          "Köszönöm. Finom.",
+          "Thank you. It's delicious."
+        ],
+        [
+          "Igen, kérem.",
+          "Yes, please. / Yes, I'd like it."
+        ],
+        [
+          "Szeretnék egy limonádét.",
+          "I would like a lemonade."
         ]
       ]
     },
@@ -157,15 +165,21 @@
       "id": "a1-115-practice-4",
       "type": "substitution",
       "category": "practice",
-      "base_sentence": "Ez nagyon finom.",
-      "base_word": "finom",
-      "base_gloss": "This is very tasty.",
+      "base_sentence": "Finom a sütemény.",
+      "base_word": "sütemény",
+      "base_gloss": "The pastry is delicious.",
       "options": [
         {
-          "word": "meleg",
-          "inflected": "meleg",
-          "sentence": "Ez nagyon meleg.",
-          "gloss": "hot"
+          "word": "kávé",
+          "inflected": "kávé",
+          "sentence": "Finom a kávé.",
+          "gloss": "coffee"
+        },
+        {
+          "word": "szendvics",
+          "inflected": "szendvics",
+          "sentence": "Finom a szendvics.",
+          "gloss": "sandwich"
         }
       ]
     },
@@ -175,17 +189,17 @@
       "category": "practice",
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Mit kérsz?"
+          "speaker": "Pincér",
+          "text": "Hozom. Meleg a kávé."
         },
         {
-          "speaker": "Károly",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "Kérek szeretnék.",
-        "Hol van még?"
+        "Köszönöm. Finom.",
+        "Nem kérek süteményt."
       ],
       "correct": 0
     },
@@ -195,8 +209,8 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Eladó",
-          "text": "Mit kér?"
+          "speaker": "Pincér",
+          "text": "Kér még valamit?"
         },
         {
           "speaker": "Meg",
@@ -204,8 +218,8 @@
         }
       ],
       "options": [
-        "Kérek szeretnék.",
-        "Nem tudom."
+        "Igen, még egy teát kérek.",
+        "Nem, ez a piac drága."
       ],
       "correct": 0
     },
@@ -213,11 +227,10 @@
       "id": "a1-115-dialogue-2",
       "type": "multiple-choice",
       "category": "dialogue",
-      "question": "Choose the natural reply.",
+      "question": "Which is the natural reply to \"Kér még valamit?\"",
       "options": [
-        "Rendben, köszönöm.",
-        "Nem.",
-        "Hol?"
+        "Nem, köszönöm.",
+        "Kérek egy kiló húst."
       ],
       "correct": 0
     },
@@ -227,8 +240,8 @@
       "category": "production",
       "template": [
         {
-          "prompt": "Write a sentence using this word: szeretnék",
-          "answer": "Szeretnék egy kávét."
+          "prompt": "Write a sentence using this word: finom",
+          "answer": "A kávé finom."
         }
       ]
     },
@@ -238,8 +251,8 @@
       "category": "production",
       "template": [
         {
-          "prompt": "Write a request or question using this word: még",
-          "answer": "Kérek még egyet."
+          "prompt": "Write a sentence using this word: meleg",
+          "answer": "Meleg a tea."
         }
       ]
     },
@@ -247,11 +260,11 @@
       "id": "a1-115-check-1",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Choose the correct Hungarian expression.",
+      "question": "Which word means 'hot / warm'?",
       "options": [
+        "meleg",
         "szeretnék",
-        "finom",
-        "xyz"
+        "még"
       ],
       "correct": 0
     },
@@ -259,8 +272,8 @@
       "id": "a1-115-check-2",
       "type": "fill-blank",
       "category": "check",
-      "sentence": "Kérek ____.",
-      "answer": "szeretnék"
+      "sentence": "Kér még ____?",
+      "answer": "valamit"
     }
   ]
 }

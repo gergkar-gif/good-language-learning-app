@@ -5,11 +5,11 @@
       "id": "a1-114-review-1",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the Hungarian word that fits the meaning.",
+      "question": "Which word means 'milk'?",
       "options": [
-        "kávé",
-        "tea",
-        "limonádé"
+        "tej",
+        "pincér",
+        "étlap"
       ],
       "correct": 0
     },
@@ -19,16 +19,20 @@
       "category": "review",
       "pairs": [
         [
-          "kávé",
-          "coffee"
+          "tej",
+          "milk"
         ],
         [
-          "tea",
-          "tea"
+          "pincér",
+          "waiter"
         ],
         [
-          "limonádé",
-          "lemonade"
+          "étlap",
+          "menu"
+        ],
+        [
+          "asztal",
+          "table"
         ]
       ]
     },
@@ -36,7 +40,7 @@
       "id": "a1-114-intro-1",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which expression is useful in this lesson?",
+      "question": "Which word means 'bill'?",
       "options": [
         "számla",
         "kér",
@@ -48,25 +52,25 @@
       "id": "a1-114-intro-2",
       "type": "fill-blank",
       "category": "introduce",
-      "sentence": "____.",
-      "answer": "kér"
+      "sentence": "____ kenyeret.",
+      "answer": "Kérek"
     },
     {
       "id": "a1-114-controlled-1",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "Kérek ____.",
-      "answer": "számla"
+      "sentence": "Mit ____?",
+      "answer": "kér"
     },
     {
       "id": "a1-114-controlled-2",
       "type": "multiple-choice",
       "category": "controlled",
-      "question": "Choose the correct form.",
+      "question": "What does 'kér' mean?",
       "options": [
-        "számla",
-        "kér",
-        "hoz"
+        "ask",
+        "bring",
+        "would like"
       ],
       "correct": 0
     },
@@ -74,64 +78,6 @@
       "id": "a1-114-controlled-3",
       "type": "matching",
       "category": "controlled",
-      "pairs": [
-        [
-          "kávé",
-          "coffee"
-        ],
-        [
-          "tea",
-          "tea"
-        ],
-        [
-          "limonádé",
-          "lemonade"
-        ],
-        [
-          "üdítő",
-          "soft drink"
-        ]
-      ]
-    },
-    {
-      "id": "a1-114-controlled-4",
-      "type": "substitution",
-      "category": "controlled",
-      "base_sentence": "Kérek egy számlát.",
-      "base_word": "számlát",
-      "base_gloss": "I'd like a bill.",
-      "options": [
-        {
-          "word": "étlap",
-          "inflected": "étlapot",
-          "sentence": "Kérek egy étlapot.",
-          "gloss": "a menu"
-        }
-      ]
-    },
-    {
-      "id": "a1-114-practice-1",
-      "type": "multiple-choice",
-      "category": "practice",
-      "question": "Choose the best answer for the situation.",
-      "options": [
-        "számla",
-        "kér",
-        "hoz"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "a1-114-practice-2",
-      "type": "fill-blank",
-      "category": "practice",
-      "sentence": "Kérek ____.",
-      "answer": "kér"
-    },
-    {
-      "id": "a1-114-practice-3",
-      "type": "matching",
-      "category": "practice",
       "pairs": [
         [
           "számla",
@@ -144,6 +90,74 @@
         [
           "hoz",
           "bring"
+        ],
+        [
+          "szeretne",
+          "would like"
+        ]
+      ]
+    },
+    {
+      "id": "a1-114-controlled-4",
+      "type": "substitution",
+      "category": "controlled",
+      "base_sentence": "Kérek egy számlát.",
+      "base_word": "számlát",
+      "base_gloss": "I'd like the bill.",
+      "options": [
+        {
+          "word": "étlap",
+          "inflected": "étlapot",
+          "sentence": "Kérek egy étlapot.",
+          "gloss": "menu"
+        },
+        {
+          "word": "tea",
+          "inflected": "teát",
+          "sentence": "Kérek egy teát.",
+          "gloss": "tea"
+        }
+      ]
+    },
+    {
+      "id": "a1-114-practice-1",
+      "type": "multiple-choice",
+      "category": "practice",
+      "question": "Which word means 'bring'?",
+      "options": [
+        "hoz",
+        "számla",
+        "szeretne"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-114-practice-2",
+      "type": "fill-blank",
+      "category": "practice",
+      "sentence": "Kérik a ____?",
+      "answer": "számlát"
+    },
+    {
+      "id": "a1-114-practice-3",
+      "type": "matching",
+      "category": "practice",
+      "pairs": [
+        [
+          "Mit kér?",
+          "What would you like?"
+        ],
+        [
+          "Kérek kenyeret.",
+          "I'd like bread."
+        ],
+        [
+          "Hozom.",
+          "I'll bring it."
+        ],
+        [
+          "Kérik a számlát?",
+          "Would you like the bill?"
         ]
       ]
     },
@@ -151,15 +165,21 @@
       "id": "a1-114-practice-4",
       "type": "substitution",
       "category": "practice",
-      "base_sentence": "Szeretnék egy kávét.",
-      "base_word": "Szeretnék",
-      "base_gloss": "I would like a coffee.",
+      "base_sentence": "Hozom a kávét.",
+      "base_word": "kávét",
+      "base_gloss": "I'll bring the coffee.",
       "options": [
         {
-          "word": "kér",
-          "inflected": "Kérek",
-          "sentence": "Kérek egy kávét.",
-          "gloss": "I ask for"
+          "word": "tea",
+          "inflected": "teát",
+          "sentence": "Hozom a teát.",
+          "gloss": "tea"
+        },
+        {
+          "word": "számla",
+          "inflected": "számlát",
+          "sentence": "Hozom a számlát.",
+          "gloss": "bill"
         }
       ]
     },
@@ -169,17 +189,17 @@
       "category": "practice",
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Mit kérsz?"
+          "speaker": "Pincér",
+          "text": "Mit kér?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "Kérek számla.",
-        "Hol van kér?"
+        "Kérek egy kávét és egy teát.",
+        "Itt a piac."
       ],
       "correct": 0
     },
@@ -189,8 +209,8 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Eladó",
-          "text": "Mit kér?"
+          "speaker": "Pincér",
+          "text": "Kérik a számlát?"
         },
         {
           "speaker": "Meg",
@@ -198,8 +218,8 @@
         }
       ],
       "options": [
-        "Kérek számla.",
-        "Nem tudom."
+        "Igen, kérem.",
+        "Nem, ez a répa friss."
       ],
       "correct": 0
     },
@@ -207,11 +227,10 @@
       "id": "a1-114-dialogue-2",
       "type": "multiple-choice",
       "category": "dialogue",
-      "question": "Choose the natural reply.",
+      "question": "Which is the natural reply to \"Kérik a számlát?\"",
       "options": [
-        "Rendben, köszönöm.",
-        "Nem.",
-        "Hol?"
+        "Igen, kérem.",
+        "Kérek egy kiló almát."
       ],
       "correct": 0
     },
@@ -221,8 +240,8 @@
       "category": "production",
       "template": [
         {
-          "prompt": "Write a sentence using this word: számla",
-          "answer": "Kérek egy számlát."
+          "prompt": "Write a sentence using this word: kér",
+          "answer": "Mit kér?"
         }
       ]
     },
@@ -232,8 +251,8 @@
       "category": "production",
       "template": [
         {
-          "prompt": "Write a request or question using this word: kér",
-          "answer": "Mit kérsz?"
+          "prompt": "Write a sentence using this word: hoz",
+          "answer": "Hozom a kávét."
         }
       ]
     },
@@ -241,11 +260,11 @@
       "id": "a1-114-check-1",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Choose the correct Hungarian expression.",
+      "question": "Which word means 'would like'?",
       "options": [
+        "szeretne",
         "számla",
-        "hoz",
-        "xyz"
+        "kér"
       ],
       "correct": 0
     },
@@ -253,8 +272,8 @@
       "id": "a1-114-check-2",
       "type": "fill-blank",
       "category": "check",
-      "sentence": "Kérek ____.",
-      "answer": "számla"
+      "sentence": "____ a kávét.",
+      "answer": "Hozom"
     }
   ]
 }

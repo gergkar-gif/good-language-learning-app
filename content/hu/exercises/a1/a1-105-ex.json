@@ -5,11 +5,11 @@
       "id": "a1-105-review-1",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the Hungarian word that fits the meaning.",
+      "question": "Which word means 'piece'?",
       "options": [
-        "kenyér",
-        "tej",
-        "sajt"
+        "darab",
+        "mennyi",
+        "ár"
       ],
       "correct": 0
     },
@@ -19,16 +19,20 @@
       "category": "review",
       "pairs": [
         [
-          "kenyér",
-          "bread"
+          "darab",
+          "piece"
         ],
         [
-          "tej",
-          "milk"
+          "mennyi",
+          "how much/how many"
         ],
         [
-          "sajt",
-          "cheese"
+          "ár",
+          "price"
+        ],
+        [
+          "forint",
+          "forint"
         ]
       ]
     },
@@ -36,7 +40,7 @@
       "id": "a1-105-intro-1",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which expression is useful in this lesson?",
+      "question": "Which word means 'expensive'?",
       "options": [
         "drága",
         "olcsó",
@@ -48,25 +52,25 @@
       "id": "a1-105-intro-2",
       "type": "fill-blank",
       "category": "introduce",
-      "sentence": "____.",
-      "answer": "olcsó"
+      "sentence": "A hús ____.",
+      "answer": "drága"
     },
     {
       "id": "a1-105-controlled-1",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "Kérek ____.",
-      "answer": "drága"
+      "sentence": "A kenyér ____.",
+      "answer": "olcsó"
     },
     {
       "id": "a1-105-controlled-2",
       "type": "multiple-choice",
       "category": "controlled",
-      "question": "Choose the correct form.",
+      "question": "What does 'olcsó' mean?",
       "options": [
-        "drága",
-        "olcsó",
-        "kérek"
+        "cheap",
+        "I'd like / I ask for",
+        "pay"
       ],
       "correct": 0
     },
@@ -74,64 +78,6 @@
       "id": "a1-105-controlled-3",
       "type": "matching",
       "category": "controlled",
-      "pairs": [
-        [
-          "kenyér",
-          "bread"
-        ],
-        [
-          "tej",
-          "milk"
-        ],
-        [
-          "sajt",
-          "cheese"
-        ],
-        [
-          "alma",
-          "apple"
-        ]
-      ]
-    },
-    {
-      "id": "a1-105-controlled-4",
-      "type": "substitution",
-      "category": "controlled",
-      "base_sentence": "A kenyér drága.",
-      "base_word": "drága",
-      "base_gloss": "The bread is expensive.",
-      "options": [
-        {
-          "word": "olcsó",
-          "inflected": "olcsó",
-          "sentence": "A kenyér olcsó.",
-          "gloss": "cheap"
-        }
-      ]
-    },
-    {
-      "id": "a1-105-practice-1",
-      "type": "multiple-choice",
-      "category": "practice",
-      "question": "Choose the best answer for the situation.",
-      "options": [
-        "drága",
-        "olcsó",
-        "kérek"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "a1-105-practice-2",
-      "type": "fill-blank",
-      "category": "practice",
-      "sentence": "Kérek ____.",
-      "answer": "olcsó"
-    },
-    {
-      "id": "a1-105-practice-3",
-      "type": "matching",
-      "category": "practice",
       "pairs": [
         [
           "drága",
@@ -144,6 +90,74 @@
         [
           "kérek",
           "I'd like / I ask for"
+        ],
+        [
+          "fizet",
+          "pay"
+        ]
+      ]
+    },
+    {
+      "id": "a1-105-controlled-4",
+      "type": "substitution",
+      "category": "controlled",
+      "base_sentence": "A kenyér olcsó.",
+      "base_word": "kenyér",
+      "base_gloss": "The bread is cheap.",
+      "options": [
+        {
+          "word": "hús",
+          "inflected": "hús",
+          "sentence": "A hús olcsó.",
+          "gloss": "meat"
+        },
+        {
+          "word": "alma",
+          "inflected": "alma",
+          "sentence": "Az alma olcsó.",
+          "gloss": "apple"
+        }
+      ]
+    },
+    {
+      "id": "a1-105-practice-1",
+      "type": "multiple-choice",
+      "category": "practice",
+      "question": "Which word means 'I'd like / I ask for'?",
+      "options": [
+        "kérek",
+        "drága",
+        "fizet"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-105-practice-2",
+      "type": "fill-blank",
+      "category": "practice",
+      "sentence": "Rendben. ____.",
+      "answer": "Fizetek"
+    },
+    {
+      "id": "a1-105-practice-3",
+      "type": "matching",
+      "category": "practice",
+      "pairs": [
+        [
+          "A kenyér olcsó.",
+          "The bread is cheap."
+        ],
+        [
+          "A hús drága.",
+          "The meat is expensive."
+        ],
+        [
+          "Rendben. Fizetek.",
+          "Okay. I'm paying."
+        ],
+        [
+          "Kérek egy kiló húst és egy liter vizet.",
+          "I'd like one kilo of meat and one litre of water."
         ]
       ]
     },
@@ -151,21 +165,21 @@
       "id": "a1-105-practice-4",
       "type": "substitution",
       "category": "practice",
-      "base_sentence": "Kérek egy kiló almát.",
-      "base_word": "almát",
-      "base_gloss": "I'd like a kilo of apples.",
+      "base_sentence": "A hús drága.",
+      "base_word": "hús",
+      "base_gloss": "The meat is expensive.",
       "options": [
         {
           "word": "kenyér",
-          "inflected": "kenyeret",
-          "sentence": "Kérek egy kiló kenyeret.",
+          "inflected": "kenyér",
+          "sentence": "A kenyér drága.",
           "gloss": "bread"
         },
         {
-          "word": "hús",
-          "inflected": "húst",
-          "sentence": "Kérek egy kiló húst.",
-          "gloss": "meat"
+          "word": "sajt",
+          "inflected": "sajt",
+          "sentence": "A sajt drága.",
+          "gloss": "cheese"
         }
       ]
     },
@@ -175,17 +189,17 @@
       "category": "practice",
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Mit kérsz?"
+          "speaker": "Eladó",
+          "text": "Olcsó. Öt forint."
         },
         {
-          "speaker": "Károly",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "Kérek drága.",
-        "Hol van olcsó?"
+        "Rendben. Fizetek.",
+        "Nem kérek kenyeret."
       ],
       "correct": 0
     },
@@ -195,17 +209,17 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Eladó",
-          "text": "Mit kér?"
+          "speaker": "Meg",
+          "text": "Mennyi az ár?"
         },
         {
-          "speaker": "Meg",
+          "speaker": "Eladó",
           "text": "_____"
         }
       ],
       "options": [
-        "Kérek drága.",
-        "Nem tudom."
+        "Öt forint. Olcsó.",
+        "Nem, köszönöm."
       ],
       "correct": 0
     },
@@ -213,11 +227,10 @@
       "id": "a1-105-dialogue-2",
       "type": "multiple-choice",
       "category": "dialogue",
-      "question": "Choose the natural reply.",
+      "question": "Which is the natural reply to \"Olcsó. Öt forint.\"",
       "options": [
-        "Rendben, köszönöm.",
-        "Nem.",
-        "Hol?"
+        "Rendben. Fizetek.",
+        "Kérek egy kávét."
       ],
       "correct": 0
     },
@@ -228,7 +241,7 @@
       "template": [
         {
           "prompt": "Write a sentence using this word: drága",
-          "answer": "Ez nagyon drága."
+          "answer": "A hús drága."
         }
       ]
     },
@@ -238,8 +251,8 @@
       "category": "production",
       "template": [
         {
-          "prompt": "Write a request or question using this word: olcsó",
-          "answer": "Ez nagyon olcsó."
+          "prompt": "Write a sentence using this word: olcsó",
+          "answer": "Az alma olcsó."
         }
       ]
     },
@@ -247,11 +260,11 @@
       "id": "a1-105-check-1",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Choose the correct Hungarian expression.",
+      "question": "Which word means 'pay'?",
       "options": [
+        "fizet",
         "drága",
-        "kérek",
-        "xyz"
+        "olcsó"
       ],
       "correct": 0
     },
@@ -259,8 +272,8 @@
       "id": "a1-105-check-2",
       "type": "fill-blank",
       "category": "check",
-      "sentence": "Kérek ____.",
-      "answer": "drága"
+      "sentence": "Kérek egy ____ húst és egy liter vizet.",
+      "answer": "kiló"
     }
   ]
 }

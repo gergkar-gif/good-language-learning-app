@@ -5,11 +5,11 @@
       "id": "a1-110-consolidation-1",
       "type": "multiple-choice",
       "category": "consolidation",
-      "question": "Choose the correct expression.",
+      "question": "Which word means 'market'?",
       "options": [
-        "Kérek egyet.",
-        "Hol van?",
-        "Nem tudom."
+        "piac",
+        "árus",
+        "zöldség"
       ],
       "correct": 0
     },
@@ -19,20 +19,20 @@
       "category": "consolidation",
       "pairs": [
         [
-          "piac",
-          "market"
+          "paradicsom",
+          "tomato"
         ],
         [
-          "árus",
-          "vendor"
+          "krumpli",
+          "potato"
         ],
         [
-          "zöldség",
-          "vegetable"
+          "hagyma",
+          "onion"
         ],
         [
-          "gyümölcs",
-          "fruit"
+          "répa",
+          "carrot"
         ]
       ]
     },
@@ -40,30 +40,20 @@
       "id": "a1-110-consolidation-3",
       "type": "fill-blank",
       "category": "consolidation",
-      "sentence": "Kérek ____.",
-      "answer": "piac"
+      "sentence": "Ez a hagyma ____?",
+      "answer": "friss"
     },
     {
       "id": "a1-110-consolidation-4",
-      "type": "substitution",
+      "type": "multiple-choice",
       "category": "consolidation",
-      "base_sentence": "Kérek zöldséget.",
-      "base_word": "zöldséget",
-      "base_gloss": "I'd like vegetables.",
+      "question": "Which question word asks about countable items?",
       "options": [
-        {
-          "word": "gyümölcs",
-          "inflected": "gyümölcsöt",
-          "sentence": "Kérek gyümölcsöt.",
-          "gloss": "fruit"
-        },
-        {
-          "word": "paradicsom",
-          "inflected": "paradicsomot",
-          "sentence": "Kérek paradicsomot.",
-          "gloss": "tomato"
-        }
-      ]
+        "hány",
+        "mennyi",
+        "mit"
+      ],
+      "correct": 0
     },
     {
       "id": "a1-110-consolidation-5",
@@ -71,8 +61,8 @@
       "category": "consolidation",
       "prompt": [
         {
-          "speaker": "Eladó",
-          "text": "Mit kér?"
+          "speaker": "Árus",
+          "text": "Negyed kiló is elég?"
         },
         {
           "speaker": "Meg",
@@ -80,22 +70,21 @@
         }
       ],
       "options": [
-        "Kérek piac.",
-        "Jó reggelt."
+        "Igen, köszönöm.",
+        "Kérek egy teát."
       ],
       "correct": 0
     },
     {
       "id": "a1-110-consolidation-6",
-      "type": "multiple-choice",
+      "type": "structured-writing",
       "category": "consolidation",
-      "question": "Which sentence fits the situation?",
-      "options": [
-        "Rendben, köszönöm.",
-        "Nem tudom.",
-        "Hol lakik?"
-      ],
-      "correct": 0
+      "template": [
+        {
+          "prompt": "Say you'd like half a kilo of tomatoes.",
+          "answer": "Kérek fél kiló paradicsomot."
+        }
+      ]
     }
   ]
 }

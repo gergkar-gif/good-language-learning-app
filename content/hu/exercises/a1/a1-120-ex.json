@@ -5,11 +5,11 @@
       "id": "a1-120-review-1",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the Hungarian word that fits the meaning.",
+      "question": "Which word means 'would like'?",
       "options": [
-        "étterem",
-        "leves",
-        "saláta"
+        "szeretne",
+        "kérek",
+        "és"
       ],
       "correct": 0
     },
@@ -19,16 +19,20 @@
       "category": "review",
       "pairs": [
         [
-          "étterem",
-          "restaurant"
+          "szeretne",
+          "would like"
         ],
         [
-          "leves",
-          "soup"
+          "kérek",
+          "I'd like"
         ],
         [
-          "saláta",
-          "salad"
+          "és",
+          "and"
+        ],
+        [
+          "de",
+          "but"
         ]
       ]
     },
@@ -36,7 +40,7 @@
       "id": "a1-120-intro-1",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which expression is useful in this lesson?",
+      "question": "Which word means 'because'?",
       "options": [
         "mert",
         "kártya",
@@ -48,25 +52,25 @@
       "id": "a1-120-intro-2",
       "type": "fill-blank",
       "category": "introduce",
-      "sentence": "____.",
-      "answer": "kártya"
+      "sentence": "Kártya. ____.",
+      "answer": "Fizetek"
     },
     {
       "id": "a1-120-controlled-1",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "Kérek ____.",
-      "answer": "mert"
+      "sentence": "Kártya vagy ____?",
+      "answer": "készpénz"
     },
     {
       "id": "a1-120-controlled-2",
       "type": "multiple-choice",
       "category": "controlled",
-      "question": "Choose the correct form.",
+      "question": "What does 'kártya' mean?",
       "options": [
-        "mert",
-        "kártya",
-        "készpénz"
+        "card",
+        "cash",
+        "pay"
       ],
       "correct": 0
     },
@@ -74,64 +78,6 @@
       "id": "a1-120-controlled-3",
       "type": "matching",
       "category": "controlled",
-      "pairs": [
-        [
-          "étterem",
-          "restaurant"
-        ],
-        [
-          "leves",
-          "soup"
-        ],
-        [
-          "saláta",
-          "salad"
-        ],
-        [
-          "köret",
-          "side dish"
-        ]
-      ]
-    },
-    {
-      "id": "a1-120-controlled-4",
-      "type": "substitution",
-      "category": "controlled",
-      "base_sentence": "Kártyával fizetek, mert nincs készpénzem.",
-      "base_word": "mert",
-      "base_gloss": "I'm paying by card because I have no cash.",
-      "options": [
-        {
-          "word": "és",
-          "inflected": "és",
-          "sentence": "Kártyával fizetek és borravalót is adok.",
-          "gloss": "and"
-        }
-      ]
-    },
-    {
-      "id": "a1-120-practice-1",
-      "type": "multiple-choice",
-      "category": "practice",
-      "question": "Choose the best answer for the situation.",
-      "options": [
-        "mert",
-        "kártya",
-        "készpénz"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "a1-120-practice-2",
-      "type": "fill-blank",
-      "category": "practice",
-      "sentence": "Kérek ____.",
-      "answer": "kártya"
-    },
-    {
-      "id": "a1-120-practice-3",
-      "type": "matching",
-      "category": "practice",
       "pairs": [
         [
           "mert",
@@ -144,6 +90,68 @@
         [
           "készpénz",
           "cash"
+        ],
+        [
+          "fizet",
+          "pay"
+        ]
+      ]
+    },
+    {
+      "id": "a1-120-controlled-4",
+      "type": "substitution",
+      "category": "controlled",
+      "base_sentence": "Kártya vagy készpénz?",
+      "base_word": "Kártya",
+      "base_gloss": "Card or cash?",
+      "options": [
+        {
+          "word": "készpénz",
+          "inflected": "Készpénz",
+          "sentence": "Készpénz vagy kártya?",
+          "gloss": "cash"
+        }
+      ]
+    },
+    {
+      "id": "a1-120-practice-1",
+      "type": "multiple-choice",
+      "category": "practice",
+      "question": "Which word means 'cash'?",
+      "options": [
+        "készpénz",
+        "mert",
+        "fizet"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-120-practice-2",
+      "type": "fill-blank",
+      "category": "practice",
+      "sentence": "Szeretnék ____, mert éhes vagyok.",
+      "answer": "menüt"
+    },
+    {
+      "id": "a1-120-practice-3",
+      "type": "matching",
+      "category": "practice",
+      "pairs": [
+        [
+          "Kártya vagy készpénz?",
+          "Card or cash?"
+        ],
+        [
+          "Kártya. Fizetek.",
+          "Card. I'm paying."
+        ],
+        [
+          "Köszönöm.",
+          "Thank you."
+        ],
+        [
+          "Szeretnék menüt, mert éhes vagyok.",
+          "I would like the set meal because I'm hungry."
         ]
       ]
     },
@@ -151,15 +159,21 @@
       "id": "a1-120-practice-4",
       "type": "substitution",
       "category": "practice",
-      "base_sentence": "Kártyával fizetek.",
-      "base_word": "Kártyával",
-      "base_gloss": "I'm paying by card.",
+      "base_sentence": "Szeretnék menüt, mert éhes vagyok.",
+      "base_word": "menüt",
+      "base_gloss": "I would like the set meal because I'm hungry.",
       "options": [
         {
-          "word": "készpénz",
-          "inflected": "Készpénzzel",
-          "sentence": "Készpénzzel fizetek.",
-          "gloss": "in cash"
+          "word": "leves",
+          "inflected": "levest",
+          "sentence": "Szeretnék levest, mert éhes vagyok.",
+          "gloss": "soup"
+        },
+        {
+          "word": "desszert",
+          "inflected": "desszertet",
+          "sentence": "Szeretnék desszertet, mert éhes vagyok.",
+          "gloss": "dessert"
         }
       ]
     },
@@ -169,8 +183,8 @@
       "category": "practice",
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Mit kérsz?"
+          "speaker": "Pincér",
+          "text": "Kártya vagy készpénz?"
         },
         {
           "speaker": "Károly",
@@ -178,8 +192,8 @@
         }
       ],
       "options": [
-        "Kérek mert.",
-        "Hol van kártya?"
+        "Kártya. Fizetek.",
+        "Szeretnék egy teát."
       ],
       "correct": 0
     },
@@ -189,17 +203,17 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Eladó",
-          "text": "Mit kér?"
+          "speaker": "Meg",
+          "text": "Köszönöm."
         },
         {
-          "speaker": "Meg",
+          "speaker": "Pincér",
           "text": "_____"
         }
       ],
       "options": [
-        "Kérek mert.",
-        "Nem tudom."
+        "Kérem.",
+        "Hol a pincér?"
       ],
       "correct": 0
     },
@@ -207,11 +221,10 @@
       "id": "a1-120-dialogue-2",
       "type": "multiple-choice",
       "category": "dialogue",
-      "question": "Choose the natural reply.",
+      "question": "Which is the natural reply to \"Kártya vagy készpénz?\"",
       "options": [
-        "Rendben, köszönöm.",
-        "Nem.",
-        "Hol?"
+        "Készpénz. Fizetek.",
+        "Éhes vagyok."
       ],
       "correct": 0
     },
@@ -221,8 +234,8 @@
       "category": "production",
       "template": [
         {
-          "prompt": "Write a sentence using this word: mert",
-          "answer": "Kérek vizet, mert szomjas vagyok."
+          "prompt": "Write a sentence using this word: kártya",
+          "answer": "Kártya. Fizetek."
         }
       ]
     },
@@ -232,8 +245,8 @@
       "category": "production",
       "template": [
         {
-          "prompt": "Write a request or question using this word: kártya",
-          "answer": "Kártyával fizetek."
+          "prompt": "Write a sentence using this word: készpénz",
+          "answer": "Készpénz vagy kártya?"
         }
       ]
     },
@@ -241,11 +254,11 @@
       "id": "a1-120-check-1",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Choose the correct Hungarian expression.",
+      "question": "Which word means 'pay'?",
       "options": [
+        "fizet",
         "mert",
-        "készpénz",
-        "xyz"
+        "kártya"
       ],
       "correct": 0
     },
@@ -253,8 +266,8 @@
       "id": "a1-120-check-2",
       "type": "fill-blank",
       "category": "check",
-      "sentence": "Kérek ____.",
-      "answer": "mert"
+      "sentence": "Köszönöm! ____.",
+      "answer": "Kérem"
     }
   ]
 }

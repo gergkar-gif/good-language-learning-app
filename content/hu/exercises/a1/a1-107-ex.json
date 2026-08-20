@@ -5,7 +5,7 @@
       "id": "a1-107-review-1",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the Hungarian word that fits the meaning.",
+      "question": "Which word means 'market'?",
       "options": [
         "piac",
         "árus",
@@ -29,6 +29,10 @@
         [
           "zöldség",
           "vegetable"
+        ],
+        [
+          "gyümölcs",
+          "fruit"
         ]
       ]
     },
@@ -36,7 +40,7 @@
       "id": "a1-107-intro-1",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which expression is useful in this lesson?",
+      "question": "Which word means 'tomato'?",
       "options": [
         "paradicsom",
         "krumpli",
@@ -48,25 +52,25 @@
       "id": "a1-107-intro-2",
       "type": "fill-blank",
       "category": "introduce",
-      "sentence": "____.",
-      "answer": "krumpli"
+      "sentence": "____ kérem.",
+      "answer": "Azt"
     },
     {
       "id": "a1-107-controlled-1",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "Kérek ____.",
-      "answer": "paradicsom"
+      "sentence": "____ kérem.",
+      "answer": "Ezt"
     },
     {
       "id": "a1-107-controlled-2",
       "type": "multiple-choice",
       "category": "controlled",
-      "question": "Choose the correct form.",
+      "question": "What does 'krumpli' mean?",
       "options": [
-        "paradicsom",
-        "krumpli",
-        "hagyma"
+        "potato",
+        "onion",
+        "carrot"
       ],
       "correct": 0
     },
@@ -74,70 +78,6 @@
       "id": "a1-107-controlled-3",
       "type": "matching",
       "category": "controlled",
-      "pairs": [
-        [
-          "piac",
-          "market"
-        ],
-        [
-          "árus",
-          "vendor"
-        ],
-        [
-          "zöldség",
-          "vegetable"
-        ],
-        [
-          "gyümölcs",
-          "fruit"
-        ]
-      ]
-    },
-    {
-      "id": "a1-107-controlled-4",
-      "type": "substitution",
-      "category": "controlled",
-      "base_sentence": "Kérek paradicsomot.",
-      "base_word": "paradicsomot",
-      "base_gloss": "I'd like tomato.",
-      "options": [
-        {
-          "word": "krumpli",
-          "inflected": "krumplit",
-          "sentence": "Kérek krumplit.",
-          "gloss": "potato"
-        },
-        {
-          "word": "hagyma",
-          "inflected": "hagymát",
-          "sentence": "Kérek hagymát.",
-          "gloss": "onion"
-        }
-      ]
-    },
-    {
-      "id": "a1-107-practice-1",
-      "type": "multiple-choice",
-      "category": "practice",
-      "question": "Choose the best answer for the situation.",
-      "options": [
-        "paradicsom",
-        "krumpli",
-        "hagyma"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "a1-107-practice-2",
-      "type": "fill-blank",
-      "category": "practice",
-      "sentence": "Kérek ____.",
-      "answer": "krumpli"
-    },
-    {
-      "id": "a1-107-practice-3",
-      "type": "matching",
-      "category": "practice",
       "pairs": [
         [
           "paradicsom",
@@ -150,6 +90,74 @@
         [
           "hagyma",
           "onion"
+        ],
+        [
+          "répa",
+          "carrot"
+        ]
+      ]
+    },
+    {
+      "id": "a1-107-controlled-4",
+      "type": "substitution",
+      "category": "controlled",
+      "base_sentence": "Kérek egy kiló paradicsomot.",
+      "base_word": "paradicsomot",
+      "base_gloss": "I'd like one kilo of tomatoes.",
+      "options": [
+        {
+          "word": "krumpli",
+          "inflected": "krumplit",
+          "sentence": "Kérek egy kiló krumplit.",
+          "gloss": "potato"
+        },
+        {
+          "word": "répa",
+          "inflected": "répát",
+          "sentence": "Kérek egy kiló répát.",
+          "gloss": "carrot"
+        }
+      ]
+    },
+    {
+      "id": "a1-107-practice-1",
+      "type": "multiple-choice",
+      "category": "practice",
+      "question": "Which word means 'onion'?",
+      "options": [
+        "hagyma",
+        "paradicsom",
+        "répa"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-107-practice-2",
+      "type": "fill-blank",
+      "category": "practice",
+      "sentence": "Kérek egy kiló ____.",
+      "answer": "paradicsomot"
+    },
+    {
+      "id": "a1-107-practice-3",
+      "type": "matching",
+      "category": "practice",
+      "pairs": [
+        [
+          "Ezt kérem.",
+          "I'd like this one."
+        ],
+        [
+          "Azt kérem.",
+          "I'd like that one."
+        ],
+        [
+          "Kérek egy kiló paradicsomot.",
+          "I'd like one kilo of tomatoes."
+        ],
+        [
+          "Ez a hagyma friss?",
+          "Is this onion fresh?"
         ]
       ]
     },
@@ -157,21 +165,21 @@
       "id": "a1-107-practice-4",
       "type": "substitution",
       "category": "practice",
-      "base_sentence": "Kérek répát.",
-      "base_word": "répát",
-      "base_gloss": "I'd like carrot.",
+      "base_sentence": "Ez a hagyma friss.",
+      "base_word": "hagyma",
+      "base_gloss": "This onion is fresh.",
       "options": [
         {
-          "word": "paradicsom",
-          "inflected": "paradicsomot",
-          "sentence": "Kérek paradicsomot.",
-          "gloss": "tomato"
+          "word": "répa",
+          "inflected": "répa",
+          "sentence": "Ez a répa friss.",
+          "gloss": "carrot"
         },
         {
-          "word": "krumpli",
-          "inflected": "krumplit",
-          "sentence": "Kérek krumplit.",
-          "gloss": "potato"
+          "word": "paradicsom",
+          "inflected": "paradicsom",
+          "sentence": "Ez a paradicsom friss.",
+          "gloss": "tomato"
         }
       ]
     },
@@ -181,17 +189,17 @@
       "category": "practice",
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Mit kérsz?"
+          "speaker": "Károly",
+          "text": "Ez a hagyma friss?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Árus",
           "text": "_____"
         }
       ],
       "options": [
-        "Kérek paradicsom.",
-        "Hol van krumpli?"
+        "Igen, friss. A répa is friss.",
+        "Kérek egy kávét."
       ],
       "correct": 0
     },
@@ -201,8 +209,8 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Eladó",
-          "text": "Mit kér?"
+          "speaker": "Árus",
+          "text": "Ezt vagy azt kéri?"
         },
         {
           "speaker": "Meg",
@@ -210,8 +218,8 @@
         }
       ],
       "options": [
-        "Kérek paradicsom.",
-        "Nem tudom."
+        "Ezt kérem, köszönöm.",
+        "Nem, köszönöm. Csak nézek."
       ],
       "correct": 0
     },
@@ -219,11 +227,10 @@
       "id": "a1-107-dialogue-2",
       "type": "multiple-choice",
       "category": "dialogue",
-      "question": "Choose the natural reply.",
+      "question": "Which is the natural reply to \"Ezt vagy azt kéri?\"",
       "options": [
-        "Rendben, köszönöm.",
-        "Nem.",
-        "Hol?"
+        "Azt kérem.",
+        "Meleg a kávé."
       ],
       "correct": 0
     },
@@ -233,8 +240,8 @@
       "category": "production",
       "template": [
         {
-          "prompt": "Write a sentence using this word: paradicsom",
-          "answer": "Kérek egy paradicsomot."
+          "prompt": "Write a sentence using this word: krumpli",
+          "answer": "Kérek egy kiló krumplit."
         }
       ]
     },
@@ -244,8 +251,8 @@
       "category": "production",
       "template": [
         {
-          "prompt": "Write a request or question using this word: krumpli",
-          "answer": "Kérek egy kiló krumplit."
+          "prompt": "Write a sentence using this word: répa",
+          "answer": "A répa friss."
         }
       ]
     },
@@ -253,11 +260,11 @@
       "id": "a1-107-check-1",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Choose the correct Hungarian expression.",
+      "question": "Which word means 'carrot'?",
       "options": [
+        "répa",
         "paradicsom",
-        "hagyma",
-        "xyz"
+        "krumpli"
       ],
       "correct": 0
     },
@@ -265,8 +272,8 @@
       "id": "a1-107-check-2",
       "type": "fill-blank",
       "category": "check",
-      "sentence": "Kérek ____.",
-      "answer": "paradicsom"
+      "sentence": "Ez a ____ friss?",
+      "answer": "hagyma"
     }
   ]
 }

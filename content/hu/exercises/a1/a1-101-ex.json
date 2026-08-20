@@ -5,11 +5,11 @@
       "id": "a1-101-review-1",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the Hungarian word that fits the meaning.",
+      "question": "Which word means 'hi / bye'?",
       "options": [
-        "kenyér",
-        "tej",
-        "sajt"
+        "szia",
+        "köszönöm",
+        "igen"
       ],
       "correct": 0
     },
@@ -19,16 +19,20 @@
       "category": "review",
       "pairs": [
         [
-          "kenyér",
-          "bread"
+          "szia",
+          "hi / bye"
         ],
         [
-          "tej",
-          "milk"
+          "köszönöm",
+          "thank you"
         ],
         [
-          "sajt",
-          "cheese"
+          "igen",
+          "yes"
+        ],
+        [
+          "nem",
+          "no"
         ]
       ]
     },
@@ -36,7 +40,7 @@
       "id": "a1-101-intro-1",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which expression is useful in this lesson?",
+      "question": "Which word means 'bread'?",
       "options": [
         "kenyér",
         "tej",
@@ -48,25 +52,25 @@
       "id": "a1-101-intro-2",
       "type": "fill-blank",
       "category": "introduce",
-      "sentence": "____.",
-      "answer": "tej"
+      "sentence": "Mennyi az ____?",
+      "answer": "ár"
     },
     {
       "id": "a1-101-controlled-1",
       "type": "fill-blank",
       "category": "controlled",
       "sentence": "Kérek ____.",
-      "answer": "kenyér"
+      "answer": "kenyeret"
     },
     {
       "id": "a1-101-controlled-2",
       "type": "multiple-choice",
       "category": "controlled",
-      "question": "Choose the correct form.",
+      "question": "What does 'tej' mean?",
       "options": [
-        "kenyér",
-        "tej",
-        "sajt"
+        "milk",
+        "cheese",
+        "apple"
       ],
       "correct": 0
     },
@@ -119,11 +123,11 @@
       "id": "a1-101-practice-1",
       "type": "multiple-choice",
       "category": "practice",
-      "question": "Choose the best answer for the situation.",
+      "question": "Which word means 'cheese'?",
       "options": [
+        "sajt",
         "kenyér",
-        "tej",
-        "sajt"
+        "alma"
       ],
       "correct": 0
     },
@@ -131,8 +135,8 @@
       "id": "a1-101-practice-2",
       "type": "fill-blank",
       "category": "practice",
-      "sentence": "Kérek ____.",
-      "answer": "tej"
+      "sentence": "Kérek tejet és ____.",
+      "answer": "sajtot"
     },
     {
       "id": "a1-101-practice-3",
@@ -140,16 +144,20 @@
       "category": "practice",
       "pairs": [
         [
-          "kenyér",
-          "bread"
+          "Kérek kenyeret.",
+          "I'd like bread."
         ],
         [
-          "tej",
-          "milk"
+          "Mennyi az ár?",
+          "How much is the price?"
         ],
         [
-          "sajt",
-          "cheese"
+          "Kérek tejet és sajtot.",
+          "I'd like milk and cheese."
+        ],
+        [
+          "Kérek egy almát.",
+          "I'd like an apple."
         ]
       ]
     },
@@ -159,7 +167,7 @@
       "category": "practice",
       "base_sentence": "Kérek almát.",
       "base_word": "almát",
-      "base_gloss": "I'd like apple.",
+      "base_gloss": "I'd like apple(s).",
       "options": [
         {
           "word": "kenyér",
@@ -181,17 +189,17 @@
       "category": "practice",
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Mit kérsz?"
+          "speaker": "Eladó",
+          "text": "Mit kér?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "Kérek kenyér.",
-        "Hol van tej?"
+        "Kérek kenyeret, tejet és sajtot.",
+        "Hol van a piac?"
       ],
       "correct": 0
     },
@@ -202,16 +210,16 @@
       "prompt": [
         {
           "speaker": "Eladó",
-          "text": "Mit kér?"
+          "text": "Jó napot kívánok!"
         },
         {
-          "speaker": "Meg",
+          "speaker": "Károly",
           "text": "_____"
         }
       ],
       "options": [
-        "Kérek kenyér.",
-        "Nem tudom."
+        "Jó napot!",
+        "Kérek egy kávét."
       ],
       "correct": 0
     },
@@ -219,11 +227,10 @@
       "id": "a1-101-dialogue-2",
       "type": "multiple-choice",
       "category": "dialogue",
-      "question": "Choose the natural reply.",
+      "question": "Which is the natural reply to \"Mit kér?\"",
       "options": [
-        "Rendben, köszönöm.",
-        "Nem.",
-        "Hol?"
+        "Kérek egy almát, köszönöm.",
+        "Nem tudom, hol van."
       ],
       "correct": 0
     },
@@ -244,8 +251,8 @@
       "category": "production",
       "template": [
         {
-          "prompt": "Write a request or question using this word: tej",
-          "answer": "Kérek egy tejet."
+          "prompt": "Write a sentence using this word: alma",
+          "answer": "Kérek egy almát."
         }
       ]
     },
@@ -253,11 +260,11 @@
       "id": "a1-101-check-1",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Choose the correct Hungarian expression.",
+      "question": "Which word means 'apple'?",
       "options": [
+        "alma",
         "kenyér",
-        "sajt",
-        "xyz"
+        "tej"
       ],
       "correct": 0
     },
@@ -265,8 +272,8 @@
       "id": "a1-101-check-2",
       "type": "fill-blank",
       "category": "check",
-      "sentence": "Kérek ____.",
-      "answer": "kenyér"
+      "sentence": "Kérek egy ____.",
+      "answer": "almát"
     }
   ]
 }

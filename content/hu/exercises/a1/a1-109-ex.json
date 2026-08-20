@@ -5,11 +5,11 @@
       "id": "a1-109-review-1",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the Hungarian word that fits the meaning.",
+      "question": "Which word means 'sour cream'?",
       "options": [
-        "piac",
-        "árus",
-        "zöldség"
+        "tejföl",
+        "vaj",
+        "csirke"
       ],
       "correct": 0
     },
@@ -19,16 +19,20 @@
       "category": "review",
       "pairs": [
         [
-          "piac",
-          "market"
+          "tejföl",
+          "sour cream"
         ],
         [
-          "árus",
-          "vendor"
+          "vaj",
+          "butter"
         ],
         [
-          "zöldség",
-          "vegetable"
+          "csirke",
+          "chicken"
+        ],
+        [
+          "kolbász",
+          "sausage"
         ]
       ]
     },
@@ -36,7 +40,7 @@
       "id": "a1-109-intro-1",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which expression is useful in this lesson?",
+      "question": "Which word means 'bottle/jar'?",
       "options": [
         "üveg",
         "csomag",
@@ -48,25 +52,25 @@
       "id": "a1-109-intro-2",
       "type": "fill-blank",
       "category": "introduce",
-      "sentence": "____.",
-      "answer": "csomag"
+      "sentence": "Kérek egy ____ tejfölt.",
+      "answer": "üveg"
     },
     {
       "id": "a1-109-controlled-1",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "Kérek ____.",
-      "answer": "üveg"
+      "sentence": "Kérek ____ kiló paradicsomot.",
+      "answer": "fél"
     },
     {
       "id": "a1-109-controlled-2",
       "type": "multiple-choice",
       "category": "controlled",
-      "question": "Choose the correct form.",
+      "question": "What does 'csomag' mean?",
       "options": [
-        "üveg",
-        "csomag",
-        "kiló"
+        "packet",
+        "kilo",
+        "half"
       ],
       "correct": 0
     },
@@ -74,70 +78,6 @@
       "id": "a1-109-controlled-3",
       "type": "matching",
       "category": "controlled",
-      "pairs": [
-        [
-          "piac",
-          "market"
-        ],
-        [
-          "árus",
-          "vendor"
-        ],
-        [
-          "zöldség",
-          "vegetable"
-        ],
-        [
-          "gyümölcs",
-          "fruit"
-        ]
-      ]
-    },
-    {
-      "id": "a1-109-controlled-4",
-      "type": "substitution",
-      "category": "controlled",
-      "base_sentence": "Kérek üveget.",
-      "base_word": "üveget",
-      "base_gloss": "I'd like a bottle.",
-      "options": [
-        {
-          "word": "csomag",
-          "inflected": "csomagot",
-          "sentence": "Kérek csomagot.",
-          "gloss": "a packet"
-        },
-        {
-          "word": "kiló",
-          "inflected": "kilót",
-          "sentence": "Kérek kilót.",
-          "gloss": "a kilo"
-        }
-      ]
-    },
-    {
-      "id": "a1-109-practice-1",
-      "type": "multiple-choice",
-      "category": "practice",
-      "question": "Choose the best answer for the situation.",
-      "options": [
-        "üveg",
-        "csomag",
-        "kiló"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "a1-109-practice-2",
-      "type": "fill-blank",
-      "category": "practice",
-      "sentence": "Kérek ____.",
-      "answer": "csomag"
-    },
-    {
-      "id": "a1-109-practice-3",
-      "type": "matching",
-      "category": "practice",
       "pairs": [
         [
           "üveg",
@@ -150,6 +90,74 @@
         [
           "kiló",
           "kilo"
+        ],
+        [
+          "fél",
+          "half"
+        ]
+      ]
+    },
+    {
+      "id": "a1-109-controlled-4",
+      "type": "substitution",
+      "category": "controlled",
+      "base_sentence": "Kérek egy üveg tejfölt.",
+      "base_word": "tejfölt",
+      "base_gloss": "I'd like a bottle of sour cream.",
+      "options": [
+        {
+          "word": "vaj",
+          "inflected": "vajat",
+          "sentence": "Kérek egy csomag vajat.",
+          "gloss": "butter"
+        },
+        {
+          "word": "kolbász",
+          "inflected": "kolbászt",
+          "sentence": "Kérek egy csomag kolbászt.",
+          "gloss": "sausage"
+        }
+      ]
+    },
+    {
+      "id": "a1-109-practice-1",
+      "type": "multiple-choice",
+      "category": "practice",
+      "question": "Which word means 'kilo'?",
+      "options": [
+        "kiló",
+        "üveg",
+        "fél"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-109-practice-2",
+      "type": "fill-blank",
+      "category": "practice",
+      "sentence": "Kérek egy ____ vajat.",
+      "answer": "csomag"
+    },
+    {
+      "id": "a1-109-practice-3",
+      "type": "matching",
+      "category": "practice",
+      "pairs": [
+        [
+          "Kérek fél kiló paradicsomot.",
+          "I'd like half a kilo of tomatoes."
+        ],
+        [
+          "Kérek egy üveg tejfölt.",
+          "I'd like a bottle of sour cream."
+        ],
+        [
+          "Kérek egy csomag vajat.",
+          "I'd like a packet of butter."
+        ],
+        [
+          "Egy kiló három forint.",
+          "One kilo is three forints."
         ]
       ]
     },
@@ -157,21 +165,21 @@
       "id": "a1-109-practice-4",
       "type": "substitution",
       "category": "practice",
-      "base_sentence": "Kérek csomagot.",
-      "base_word": "csomagot",
-      "base_gloss": "I'd like a packet.",
+      "base_sentence": "Kérek fél kiló paradicsomot.",
+      "base_word": "paradicsomot",
+      "base_gloss": "I'd like half a kilo of tomatoes.",
       "options": [
         {
-          "word": "üveg",
-          "inflected": "üveget",
-          "sentence": "Kérek üveget.",
-          "gloss": "a bottle"
+          "word": "krumpli",
+          "inflected": "krumplit",
+          "sentence": "Kérek fél kiló krumplit.",
+          "gloss": "potato"
         },
         {
-          "word": "kiló",
-          "inflected": "kilót",
-          "sentence": "Kérek kilót.",
-          "gloss": "a kilo"
+          "word": "hagyma",
+          "inflected": "hagymát",
+          "sentence": "Kérek fél kiló hagymát.",
+          "gloss": "onion"
         }
       ]
     },
@@ -182,16 +190,16 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Mit kérsz?"
+          "text": "Kérek fél kiló paradicsomot és egy kiló krumplit."
         },
         {
-          "speaker": "Károly",
+          "speaker": "Árus",
           "text": "_____"
         }
       ],
       "options": [
-        "Kérek üveg.",
-        "Hol van csomag?"
+        "Egy kiló három forint.",
+        "A répa nem friss."
       ],
       "correct": 0
     },
@@ -201,8 +209,8 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Eladó",
-          "text": "Mit kér?"
+          "speaker": "Árus",
+          "text": "Mennyi krumplit kér?"
         },
         {
           "speaker": "Meg",
@@ -210,8 +218,8 @@
         }
       ],
       "options": [
-        "Kérek üveg.",
-        "Nem tudom."
+        "Egy kilót kérek.",
+        "Szia, hogy vagy?"
       ],
       "correct": 0
     },
@@ -219,11 +227,10 @@
       "id": "a1-109-dialogue-2",
       "type": "multiple-choice",
       "category": "dialogue",
-      "question": "Choose the natural reply.",
+      "question": "Which is the natural reply to \"Mennyi krumplit kér?\"",
       "options": [
-        "Rendben, köszönöm.",
-        "Nem.",
-        "Hol?"
+        "Egy kilót kérek.",
+        "Meleg a leves."
       ],
       "correct": 0
     },
@@ -234,7 +241,7 @@
       "template": [
         {
           "prompt": "Write a sentence using this word: üveg",
-          "answer": "Kérek egy üveget."
+          "answer": "Kérek egy üveg tejfölt."
         }
       ]
     },
@@ -244,8 +251,8 @@
       "category": "production",
       "template": [
         {
-          "prompt": "Write a request or question using this word: csomag",
-          "answer": "Kérek egy csomagot."
+          "prompt": "Write a sentence using this word: csomag",
+          "answer": "Kérek egy csomag vajat."
         }
       ]
     },
@@ -253,11 +260,11 @@
       "id": "a1-109-check-1",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Choose the correct Hungarian expression.",
+      "question": "Which word means 'half'?",
       "options": [
+        "fél",
         "üveg",
-        "kiló",
-        "xyz"
+        "csomag"
       ],
       "correct": 0
     },
@@ -265,8 +272,8 @@
       "id": "a1-109-check-2",
       "type": "fill-blank",
       "category": "check",
-      "sentence": "Kérek ____.",
-      "answer": "üveg"
+      "sentence": "Egy ____ három forint.",
+      "answer": "kiló"
     }
   ]
 }

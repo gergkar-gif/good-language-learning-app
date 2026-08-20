@@ -5,11 +5,11 @@
       "id": "a1-104-review-1",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the Hungarian word that fits the meaning.",
+      "question": "Which word means 'rice'?",
       "options": [
-        "kenyér",
-        "tej",
-        "sajt"
+        "rizs",
+        "víz",
+        "kiló"
       ],
       "correct": 0
     },
@@ -19,16 +19,20 @@
       "category": "review",
       "pairs": [
         [
-          "kenyér",
-          "bread"
+          "rizs",
+          "rice"
         ],
         [
-          "tej",
-          "milk"
+          "víz",
+          "water"
         ],
         [
-          "sajt",
-          "cheese"
+          "kiló",
+          "kilo"
+        ],
+        [
+          "liter",
+          "litre"
         ]
       ]
     },
@@ -36,7 +40,7 @@
       "id": "a1-104-intro-1",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which expression is useful in this lesson?",
+      "question": "Which word means 'piece'?",
       "options": [
         "darab",
         "mennyi",
@@ -48,25 +52,25 @@
       "id": "a1-104-intro-2",
       "type": "fill-blank",
       "category": "introduce",
-      "sentence": "____.",
-      "answer": "mennyi"
+      "sentence": "____ az ár?",
+      "answer": "Mennyi"
     },
     {
       "id": "a1-104-controlled-1",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "Kérek ____.",
+      "sentence": "Kérek egy ____ sajtot.",
       "answer": "darab"
     },
     {
       "id": "a1-104-controlled-2",
       "type": "multiple-choice",
       "category": "controlled",
-      "question": "Choose the correct form.",
+      "question": "What does 'mennyi' mean?",
       "options": [
-        "darab",
-        "mennyi",
-        "ár"
+        "how much/how many",
+        "price",
+        "forint"
       ],
       "correct": 0
     },
@@ -74,70 +78,6 @@
       "id": "a1-104-controlled-3",
       "type": "matching",
       "category": "controlled",
-      "pairs": [
-        [
-          "kenyér",
-          "bread"
-        ],
-        [
-          "tej",
-          "milk"
-        ],
-        [
-          "sajt",
-          "cheese"
-        ],
-        [
-          "alma",
-          "apple"
-        ]
-      ]
-    },
-    {
-      "id": "a1-104-controlled-4",
-      "type": "substitution",
-      "category": "controlled",
-      "base_sentence": "Kérek darabot.",
-      "base_word": "darabot",
-      "base_gloss": "I'd like a piece.",
-      "options": [
-        {
-          "word": "ár",
-          "inflected": "árat",
-          "sentence": "Kérek árat.",
-          "gloss": "a price"
-        },
-        {
-          "word": "forint",
-          "inflected": "forintot",
-          "sentence": "Kérek forintot.",
-          "gloss": "forints"
-        }
-      ]
-    },
-    {
-      "id": "a1-104-practice-1",
-      "type": "multiple-choice",
-      "category": "practice",
-      "question": "Choose the best answer for the situation.",
-      "options": [
-        "darab",
-        "mennyi",
-        "ár"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "a1-104-practice-2",
-      "type": "fill-blank",
-      "category": "practice",
-      "sentence": "Kérek ____.",
-      "answer": "mennyi"
-    },
-    {
-      "id": "a1-104-practice-3",
-      "type": "matching",
-      "category": "practice",
       "pairs": [
         [
           "darab",
@@ -150,6 +90,74 @@
         [
           "ár",
           "price"
+        ],
+        [
+          "forint",
+          "forint"
+        ]
+      ]
+    },
+    {
+      "id": "a1-104-controlled-4",
+      "type": "substitution",
+      "category": "controlled",
+      "base_sentence": "Kérek egy darab sajtot.",
+      "base_word": "sajtot",
+      "base_gloss": "I'd like a piece of cheese.",
+      "options": [
+        {
+          "word": "kenyér",
+          "inflected": "kenyeret",
+          "sentence": "Kérek egy darab kenyeret.",
+          "gloss": "bread"
+        },
+        {
+          "word": "hús",
+          "inflected": "húst",
+          "sentence": "Kérek egy darab húst.",
+          "gloss": "meat"
+        }
+      ]
+    },
+    {
+      "id": "a1-104-practice-1",
+      "type": "multiple-choice",
+      "category": "practice",
+      "question": "Which word means 'price'?",
+      "options": [
+        "ár",
+        "darab",
+        "forint"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-104-practice-2",
+      "type": "fill-blank",
+      "category": "practice",
+      "sentence": "Három ____ egy kiló.",
+      "answer": "forint"
+    },
+    {
+      "id": "a1-104-practice-3",
+      "type": "matching",
+      "category": "practice",
+      "pairs": [
+        [
+          "Kérek egy darab sajtot.",
+          "I'd like a piece of cheese."
+        ],
+        [
+          "Mennyi az ár?",
+          "How much is the price?"
+        ],
+        [
+          "Három forint egy kiló.",
+          "Three forints per kilo."
+        ],
+        [
+          "Nem drága.",
+          "It's not expensive."
         ]
       ]
     },
@@ -157,21 +165,21 @@
       "id": "a1-104-practice-4",
       "type": "substitution",
       "category": "practice",
-      "base_sentence": "Kérek forintot.",
-      "base_word": "forintot",
-      "base_gloss": "I'd like forints.",
+      "base_sentence": "Kérek egy kiló almát.",
+      "base_word": "almát",
+      "base_gloss": "I'd like one kilo of apples.",
       "options": [
         {
-          "word": "darab",
-          "inflected": "darabot",
-          "sentence": "Kérek darabot.",
-          "gloss": "a piece"
+          "word": "narancs",
+          "inflected": "narancsot",
+          "sentence": "Kérek egy kiló narancsot.",
+          "gloss": "orange"
         },
         {
-          "word": "ár",
-          "inflected": "árat",
-          "sentence": "Kérek árat.",
-          "gloss": "a price"
+          "word": "rizs",
+          "inflected": "rizst",
+          "sentence": "Kérek egy kiló rizst.",
+          "gloss": "rice"
         }
       ]
     },
@@ -181,17 +189,17 @@
       "category": "practice",
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Mit kérsz?"
+          "speaker": "Eladó",
+          "text": "Három forint egy kiló. Nem drága."
         },
         {
-          "speaker": "Károly",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "Kérek darab.",
-        "Hol van mennyi?"
+        "Kérek egy kiló húst és egy liter vizet.",
+        "Hol van a piac?"
       ],
       "correct": 0
     },
@@ -201,17 +209,17 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Eladó",
-          "text": "Mit kér?"
+          "speaker": "Meg",
+          "text": "Mennyi az ár?"
         },
         {
-          "speaker": "Meg",
+          "speaker": "Eladó",
           "text": "_____"
         }
       ],
       "options": [
-        "Kérek darab.",
-        "Nem tudom."
+        "Öt forint.",
+        "Szia, hogy vagy?"
       ],
       "correct": 0
     },
@@ -219,11 +227,10 @@
       "id": "a1-104-dialogue-2",
       "type": "multiple-choice",
       "category": "dialogue",
-      "question": "Choose the natural reply.",
+      "question": "Which is the natural reply to \"Mennyi az ár?\"",
       "options": [
-        "Rendben, köszönöm.",
-        "Nem.",
-        "Hol?"
+        "Öt forint. Nem drága.",
+        "Kérek egy teát."
       ],
       "correct": 0
     },
@@ -233,8 +240,8 @@
       "category": "production",
       "template": [
         {
-          "prompt": "Write a sentence using this word: darab",
-          "answer": "Kérek egy darabot."
+          "prompt": "Write a sentence using this word: forint",
+          "answer": "Öt forint."
         }
       ]
     },
@@ -244,8 +251,8 @@
       "category": "production",
       "template": [
         {
-          "prompt": "Write a request or question using this word: mennyi",
-          "answer": "Mennyi ez?"
+          "prompt": "Write a sentence using this word: ár",
+          "answer": "Mennyi az ár?"
         }
       ]
     },
@@ -253,11 +260,11 @@
       "id": "a1-104-check-1",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Choose the correct Hungarian expression.",
+      "question": "Which word means 'forint'?",
       "options": [
+        "forint",
         "darab",
-        "ár",
-        "xyz"
+        "mennyi"
       ],
       "correct": 0
     },
@@ -265,8 +272,8 @@
       "id": "a1-104-check-2",
       "type": "fill-blank",
       "category": "check",
-      "sentence": "Kérek ____.",
-      "answer": "darab"
+      "sentence": "Nem ____.",
+      "answer": "drága"
     }
   ]
 }

@@ -5,11 +5,11 @@
       "id": "a1-108-review-1",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the Hungarian word that fits the meaning.",
+      "question": "Which word means 'tomato'?",
       "options": [
-        "piac",
-        "árus",
-        "zöldség"
+        "paradicsom",
+        "krumpli",
+        "hagyma"
       ],
       "correct": 0
     },
@@ -19,16 +19,20 @@
       "category": "review",
       "pairs": [
         [
-          "piac",
-          "market"
+          "paradicsom",
+          "tomato"
         ],
         [
-          "árus",
-          "vendor"
+          "krumpli",
+          "potato"
         ],
         [
-          "zöldség",
-          "vegetable"
+          "hagyma",
+          "onion"
+        ],
+        [
+          "répa",
+          "carrot"
         ]
       ]
     },
@@ -36,7 +40,7 @@
       "id": "a1-108-intro-1",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which expression is useful in this lesson?",
+      "question": "Which word means 'sour cream'?",
       "options": [
         "tejföl",
         "vaj",
@@ -48,25 +52,25 @@
       "id": "a1-108-intro-2",
       "type": "fill-blank",
       "category": "introduce",
-      "sentence": "____.",
-      "answer": "vaj"
+      "sentence": "Hány csomag ____ kell?",
+      "answer": "kolbász"
     },
     {
       "id": "a1-108-controlled-1",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "Kérek ____.",
-      "answer": "tejföl"
+      "sentence": "Mennyi a ____?",
+      "answer": "vaj"
     },
     {
       "id": "a1-108-controlled-2",
       "type": "multiple-choice",
       "category": "controlled",
-      "question": "Choose the correct form.",
+      "question": "What does 'vaj' mean?",
       "options": [
-        "tejföl",
-        "vaj",
-        "csirke"
+        "butter",
+        "chicken",
+        "sausage"
       ],
       "correct": 0
     },
@@ -74,70 +78,6 @@
       "id": "a1-108-controlled-3",
       "type": "matching",
       "category": "controlled",
-      "pairs": [
-        [
-          "piac",
-          "market"
-        ],
-        [
-          "árus",
-          "vendor"
-        ],
-        [
-          "zöldség",
-          "vegetable"
-        ],
-        [
-          "gyümölcs",
-          "fruit"
-        ]
-      ]
-    },
-    {
-      "id": "a1-108-controlled-4",
-      "type": "substitution",
-      "category": "controlled",
-      "base_sentence": "Kérek tejfölt.",
-      "base_word": "tejfölt",
-      "base_gloss": "I'd like sour cream.",
-      "options": [
-        {
-          "word": "vaj",
-          "inflected": "vajat",
-          "sentence": "Kérek vajat.",
-          "gloss": "butter"
-        },
-        {
-          "word": "csirke",
-          "inflected": "csirkét",
-          "sentence": "Kérek csirkét.",
-          "gloss": "chicken"
-        }
-      ]
-    },
-    {
-      "id": "a1-108-practice-1",
-      "type": "multiple-choice",
-      "category": "practice",
-      "question": "Choose the best answer for the situation.",
-      "options": [
-        "tejföl",
-        "vaj",
-        "csirke"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "a1-108-practice-2",
-      "type": "fill-blank",
-      "category": "practice",
-      "sentence": "Kérek ____.",
-      "answer": "vaj"
-    },
-    {
-      "id": "a1-108-practice-3",
-      "type": "matching",
-      "category": "practice",
       "pairs": [
         [
           "tejföl",
@@ -150,6 +90,74 @@
         [
           "csirke",
           "chicken"
+        ],
+        [
+          "kolbász",
+          "sausage"
+        ]
+      ]
+    },
+    {
+      "id": "a1-108-controlled-4",
+      "type": "substitution",
+      "category": "controlled",
+      "base_sentence": "Kérek egy csomag vajat.",
+      "base_word": "vajat",
+      "base_gloss": "I'd like a packet of butter.",
+      "options": [
+        {
+          "word": "kolbász",
+          "inflected": "kolbászt",
+          "sentence": "Kérek egy csomag kolbászt.",
+          "gloss": "sausage"
+        },
+        {
+          "word": "tejföl",
+          "inflected": "tejfölt",
+          "sentence": "Kérek egy üveg tejfölt.",
+          "gloss": "sour cream"
+        }
+      ]
+    },
+    {
+      "id": "a1-108-practice-1",
+      "type": "multiple-choice",
+      "category": "practice",
+      "question": "Which word means 'chicken'?",
+      "options": [
+        "csirke",
+        "tejföl",
+        "kolbász"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-108-practice-2",
+      "type": "fill-blank",
+      "category": "practice",
+      "sentence": "Kérek egy csomag vajat és egy üveg ____.",
+      "answer": "tejfölt"
+    },
+    {
+      "id": "a1-108-practice-3",
+      "type": "matching",
+      "category": "practice",
+      "pairs": [
+        [
+          "Mennyi a vaj?",
+          "How much is the butter?"
+        ],
+        [
+          "Hány csomag kolbász kell?",
+          "How many packets of sausage are needed?"
+        ],
+        [
+          "Kérek egy csomag vajat és egy üveg tejfölt.",
+          "I'd like a packet of butter and a bottle of sour cream."
+        ],
+        [
+          "Negyed kiló is elég?",
+          "Is a quarter kilo enough too?"
         ]
       ]
     },
@@ -157,20 +165,20 @@
       "id": "a1-108-practice-4",
       "type": "substitution",
       "category": "practice",
-      "base_sentence": "Kérek kolbászt.",
-      "base_word": "kolbászt",
-      "base_gloss": "I'd like sausage.",
+      "base_sentence": "Kérek egy csirkét.",
+      "base_word": "csirkét",
+      "base_gloss": "I'd like a chicken.",
       "options": [
         {
-          "word": "tejföl",
-          "inflected": "tejfölt",
-          "sentence": "Kérek tejfölt.",
-          "gloss": "sour cream"
+          "word": "kolbász",
+          "inflected": "kolbászt",
+          "sentence": "Kérek egy kolbászt.",
+          "gloss": "sausage"
         },
         {
           "word": "vaj",
           "inflected": "vajat",
-          "sentence": "Kérek vajat.",
+          "sentence": "Kérek egy vajat.",
           "gloss": "butter"
         }
       ]
@@ -181,17 +189,17 @@
       "category": "practice",
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Mit kérsz?"
+          "speaker": "Károly",
+          "text": "Hány csomag kolbász kell?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "Kérek tejföl.",
-        "Hol van vaj?"
+        "Egy csomag. És egy csirke.",
+        "Kérek egy teát."
       ],
       "correct": 0
     },
@@ -201,8 +209,8 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Eladó",
-          "text": "Mit kér?"
+          "speaker": "Árus",
+          "text": "Negyed kiló is elég?"
         },
         {
           "speaker": "Meg",
@@ -210,8 +218,8 @@
         }
       ],
       "options": [
-        "Kérek tejföl.",
-        "Nem tudom."
+        "Igen, köszönöm.",
+        "Ez a piac nagy."
       ],
       "correct": 0
     },
@@ -219,11 +227,10 @@
       "id": "a1-108-dialogue-2",
       "type": "multiple-choice",
       "category": "dialogue",
-      "question": "Choose the natural reply.",
+      "question": "Which is the natural reply to \"Negyed kiló is elég?\"",
       "options": [
-        "Rendben, köszönöm.",
-        "Nem.",
-        "Hol?"
+        "Igen, elég.",
+        "Kérek egy limonádét."
       ],
       "correct": 0
     },
@@ -233,8 +240,8 @@
       "category": "production",
       "template": [
         {
-          "prompt": "Write a sentence using this word: tejföl",
-          "answer": "Kérek egy tejfölt."
+          "prompt": "Write a sentence using this word: csirke",
+          "answer": "Kérek egy csirkét."
         }
       ]
     },
@@ -244,8 +251,8 @@
       "category": "production",
       "template": [
         {
-          "prompt": "Write a request or question using this word: vaj",
-          "answer": "Kérek egy vajat."
+          "prompt": "Write a sentence using this word: kolbász",
+          "answer": "Kérek egy csomag kolbászt."
         }
       ]
     },
@@ -253,11 +260,11 @@
       "id": "a1-108-check-1",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Choose the correct Hungarian expression.",
+      "question": "Which word means 'sausage'?",
       "options": [
+        "kolbász",
         "tejföl",
-        "csirke",
-        "xyz"
+        "vaj"
       ],
       "correct": 0
     },
@@ -265,8 +272,8 @@
       "id": "a1-108-check-2",
       "type": "fill-blank",
       "category": "check",
-      "sentence": "Kérek ____.",
-      "answer": "tejföl"
+      "sentence": "____ kiló is elég?",
+      "answer": "Negyed"
     }
   ]
 }

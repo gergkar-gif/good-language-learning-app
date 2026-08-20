@@ -5,11 +5,11 @@
       "id": "a1-120-consolidation-1",
       "type": "multiple-choice",
       "category": "consolidation",
-      "question": "Choose the correct expression.",
+      "question": "Which word means 'hungry'?",
       "options": [
-        "Kérek egyet.",
-        "Hol van?",
-        "Nem tudom."
+        "éhes",
+        "szomjas",
+        "vegetáriánus"
       ],
       "correct": 0
     },
@@ -19,10 +19,6 @@
       "category": "consolidation",
       "pairs": [
         [
-          "étterem",
-          "restaurant"
-        ],
-        [
           "leves",
           "soup"
         ],
@@ -31,8 +27,12 @@
           "salad"
         ],
         [
-          "köret",
-          "side dish"
+          "marha",
+          "beef"
+        ],
+        [
+          "desszert",
+          "dessert"
         ]
       ]
     },
@@ -40,30 +40,20 @@
       "id": "a1-120-consolidation-3",
       "type": "fill-blank",
       "category": "consolidation",
-      "sentence": "Kérek ____.",
-      "answer": "étterem"
+      "sentence": "Éhes vagyok, ____ nem vagyok szomjas.",
+      "answer": "de"
     },
     {
       "id": "a1-120-consolidation-4",
-      "type": "substitution",
+      "type": "multiple-choice",
       "category": "consolidation",
-      "base_sentence": "Kérek levest.",
-      "base_word": "levest",
-      "base_gloss": "I'd like soup.",
+      "question": "Which word introduces a reason ('because')?",
       "options": [
-        {
-          "word": "saláta",
-          "inflected": "salátát",
-          "sentence": "Kérek salátát.",
-          "gloss": "salad"
-        },
-        {
-          "word": "desszert",
-          "inflected": "desszertet",
-          "sentence": "Kérek desszertet.",
-          "gloss": "dessert"
-        }
-      ]
+        "mert",
+        "és",
+        "de"
+      ],
+      "correct": 0
     },
     {
       "id": "a1-120-consolidation-5",
@@ -71,31 +61,30 @@
       "category": "consolidation",
       "prompt": [
         {
-          "speaker": "Eladó",
-          "text": "Mit kér?"
+          "speaker": "Pincér",
+          "text": "Kártya vagy készpénz?"
         },
         {
-          "speaker": "Meg",
+          "speaker": "Károly",
           "text": "_____"
         }
       ],
       "options": [
-        "Kérek étterem.",
-        "Jó reggelt."
+        "Kártya. Fizetek.",
+        "Szeretnék egy teát."
       ],
       "correct": 0
     },
     {
       "id": "a1-120-consolidation-6",
-      "type": "multiple-choice",
+      "type": "structured-writing",
       "category": "consolidation",
-      "question": "Which sentence fits the situation?",
-      "options": [
-        "Rendben, köszönöm.",
-        "Nem tudom.",
-        "Hol lakik?"
-      ],
-      "correct": 0
+      "template": [
+        {
+          "prompt": "Say you'd like the set meal because you're hungry.",
+          "answer": "Szeretnék menüt, mert éhes vagyok."
+        }
+      ]
     }
   ]
 }

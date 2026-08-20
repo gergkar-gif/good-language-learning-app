@@ -5,11 +5,11 @@
       "id": "a1-119-review-1",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the Hungarian word that fits the meaning.",
+      "question": "Which word means 'vegetarian'?",
       "options": [
-        "étterem",
-        "leves",
-        "saláta"
+        "vegetáriánus",
+        "éhes",
+        "szomjas"
       ],
       "correct": 0
     },
@@ -19,16 +19,20 @@
       "category": "review",
       "pairs": [
         [
-          "étterem",
-          "restaurant"
+          "vegetáriánus",
+          "vegetarian"
         ],
         [
-          "leves",
-          "soup"
+          "éhes",
+          "hungry"
         ],
         [
-          "saláta",
-          "salad"
+          "szomjas",
+          "thirsty"
+        ],
+        [
+          "kell",
+          "need / must"
         ]
       ]
     },
@@ -36,7 +40,7 @@
       "id": "a1-119-intro-1",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which expression is useful in this lesson?",
+      "question": "Which word means 'would like'?",
       "options": [
         "szeretne",
         "kérek",
@@ -48,25 +52,25 @@
       "id": "a1-119-intro-2",
       "type": "fill-blank",
       "category": "introduce",
-      "sentence": "____.",
-      "answer": "kérek"
+      "sentence": "Éhes vagyok, ____ nem vagyok szomjas.",
+      "answer": "de"
     },
     {
       "id": "a1-119-controlled-1",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "Kérek ____.",
-      "answer": "szeretne"
+      "sentence": "Szeretnék levest ____ salátát.",
+      "answer": "és"
     },
     {
       "id": "a1-119-controlled-2",
       "type": "multiple-choice",
       "category": "controlled",
-      "question": "Choose the correct form.",
+      "question": "What does 'kérek' mean?",
       "options": [
-        "szeretne",
-        "kérek",
-        "és"
+        "I'd like",
+        "and",
+        "but"
       ],
       "correct": 0
     },
@@ -74,64 +78,6 @@
       "id": "a1-119-controlled-3",
       "type": "matching",
       "category": "controlled",
-      "pairs": [
-        [
-          "étterem",
-          "restaurant"
-        ],
-        [
-          "leves",
-          "soup"
-        ],
-        [
-          "saláta",
-          "salad"
-        ],
-        [
-          "köret",
-          "side dish"
-        ]
-      ]
-    },
-    {
-      "id": "a1-119-controlled-4",
-      "type": "substitution",
-      "category": "controlled",
-      "base_sentence": "Kérek levest és salátát.",
-      "base_word": "és",
-      "base_gloss": "I'd like soup and salad.",
-      "options": [
-        {
-          "word": "de",
-          "inflected": "de",
-          "sentence": "Kérek levest, de nem kérek salátát.",
-          "gloss": "but"
-        }
-      ]
-    },
-    {
-      "id": "a1-119-practice-1",
-      "type": "multiple-choice",
-      "category": "practice",
-      "question": "Choose the best answer for the situation.",
-      "options": [
-        "szeretne",
-        "kérek",
-        "és"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "a1-119-practice-2",
-      "type": "fill-blank",
-      "category": "practice",
-      "sentence": "Kérek ____.",
-      "answer": "kérek"
-    },
-    {
-      "id": "a1-119-practice-3",
-      "type": "matching",
-      "category": "practice",
       "pairs": [
         [
           "szeretne",
@@ -144,6 +90,74 @@
         [
           "és",
           "and"
+        ],
+        [
+          "de",
+          "but"
+        ]
+      ]
+    },
+    {
+      "id": "a1-119-controlled-4",
+      "type": "substitution",
+      "category": "controlled",
+      "base_sentence": "Mariann marhát kér, mert éhes.",
+      "base_word": "mert",
+      "base_gloss": "Mariann asks for beef, because she's hungry.",
+      "options": [
+        {
+          "word": "és",
+          "inflected": "és",
+          "sentence": "Mariann marhát kér, és csirkét is kér.",
+          "gloss": "and"
+        },
+        {
+          "word": "de",
+          "inflected": "de",
+          "sentence": "Mariann marhát kér, de Anna vegetáriánus.",
+          "gloss": "but"
+        }
+      ]
+    },
+    {
+      "id": "a1-119-practice-1",
+      "type": "multiple-choice",
+      "category": "practice",
+      "question": "Which word means 'and'?",
+      "options": [
+        "és",
+        "szeretne",
+        "de"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-119-practice-2",
+      "type": "fill-blank",
+      "category": "practice",
+      "sentence": "Szeretnék menüt, ____ éhes vagyok.",
+      "answer": "mert"
+    },
+    {
+      "id": "a1-119-practice-3",
+      "type": "matching",
+      "category": "practice",
+      "pairs": [
+        [
+          "Szeretnék levest és salátát.",
+          "I would like soup and salad."
+        ],
+        [
+          "Éhes vagyok, de nem vagyok szomjas.",
+          "I'm hungry, but I'm not thirsty."
+        ],
+        [
+          "Szeretnék menüt, mert éhes vagyok.",
+          "I would like the set meal because I'm hungry."
+        ],
+        [
+          "Anna vegetáriánus, de Mariann marhát kér.",
+          "Anna is vegetarian, but Mariann asks for beef."
         ]
       ]
     },
@@ -151,15 +165,21 @@
       "id": "a1-119-practice-4",
       "type": "substitution",
       "category": "practice",
-      "base_sentence": "Szeretnék egy kávét.",
-      "base_word": "Szeretnék",
-      "base_gloss": "I would like a coffee.",
+      "base_sentence": "Szeretnék levest és salátát.",
+      "base_word": "levest",
+      "base_gloss": "I would like soup and salad.",
       "options": [
         {
-          "word": "kér",
-          "inflected": "Kérek",
-          "sentence": "Kérek egy kávét.",
-          "gloss": "I ask for"
+          "word": "köret",
+          "inflected": "köretet",
+          "sentence": "Szeretnék köretet és salátát.",
+          "gloss": "side dish"
+        },
+        {
+          "word": "marha",
+          "inflected": "marhát",
+          "sentence": "Szeretnék marhát és salátát.",
+          "gloss": "beef"
         }
       ]
     },
@@ -169,17 +189,17 @@
       "category": "practice",
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Mit kérsz?"
+          "speaker": "Anna",
+          "text": "Én vegetáriánus vagyok. Salátát szeretnék."
         },
         {
-          "speaker": "Károly",
+          "speaker": "Pincér",
           "text": "_____"
         }
       ],
       "options": [
-        "Kérek szeretne.",
-        "Hol van kérek?"
+        "Rendben. Hozom a salátát.",
+        "Kártya vagy készpénz?"
       ],
       "correct": 0
     },
@@ -189,17 +209,17 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Eladó",
-          "text": "Mit kér?"
+          "speaker": "Meg",
+          "text": "Igen, vizet kérek."
         },
         {
-          "speaker": "Meg",
+          "speaker": "Pincér",
           "text": "_____"
         }
       ],
       "options": [
-        "Kérek szeretne.",
-        "Nem tudom."
+        "Rendben, hozom.",
+        "Ez a répa nem friss."
       ],
       "correct": 0
     },
@@ -207,11 +227,10 @@
       "id": "a1-119-dialogue-2",
       "type": "multiple-choice",
       "category": "dialogue",
-      "question": "Choose the natural reply.",
+      "question": "Which sentence correctly uses mert (because)?",
       "options": [
-        "Rendben, köszönöm.",
-        "Nem.",
-        "Hol?"
+        "Szeretnék menüt, mert éhes vagyok.",
+        "Szeretnék menüt és salátát."
       ],
       "correct": 0
     },
@@ -221,8 +240,8 @@
       "category": "production",
       "template": [
         {
-          "prompt": "Write a sentence using this word: szeretne",
-          "answer": "Mit szeretne inni?"
+          "prompt": "Write a sentence using this word: és",
+          "answer": "Szeretnék levest és salátát."
         }
       ]
     },
@@ -232,8 +251,8 @@
       "category": "production",
       "template": [
         {
-          "prompt": "Write a request or question using this word: kérek",
-          "answer": "Egy vizet kérek."
+          "prompt": "Write a sentence using this word: de",
+          "answer": "Éhes vagyok, de nem vagyok szomjas."
         }
       ]
     },
@@ -241,11 +260,11 @@
       "id": "a1-119-check-1",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Choose the correct Hungarian expression.",
+      "question": "Which word means 'but'?",
       "options": [
+        "de",
         "szeretne",
-        "és",
-        "xyz"
+        "kérek"
       ],
       "correct": 0
     },
@@ -253,8 +272,8 @@
       "id": "a1-119-check-2",
       "type": "fill-blank",
       "category": "check",
-      "sentence": "Kérek ____.",
-      "answer": "szeretne"
+      "sentence": "Anna vegetáriánus, ____ Mariann marhát kér.",
+      "answer": "de"
     }
   ]
 }

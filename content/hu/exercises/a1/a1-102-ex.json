@@ -5,7 +5,7 @@
       "id": "a1-102-review-1",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the Hungarian word that fits the meaning.",
+      "question": "Which word means 'bread'?",
       "options": [
         "kenyér",
         "tej",
@@ -29,6 +29,10 @@
         [
           "sajt",
           "cheese"
+        ],
+        [
+          "alma",
+          "apple"
         ]
       ]
     },
@@ -36,7 +40,7 @@
       "id": "a1-102-intro-1",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which expression is useful in this lesson?",
+      "question": "Which word means 'orange'?",
       "options": [
         "narancs",
         "tojás",
@@ -48,25 +52,25 @@
       "id": "a1-102-intro-2",
       "type": "fill-blank",
       "category": "introduce",
-      "sentence": "____.",
-      "answer": "tojás"
+      "sentence": "Kérek ____.",
+      "answer": "tojást"
     },
     {
       "id": "a1-102-controlled-1",
       "type": "fill-blank",
       "category": "controlled",
       "sentence": "Kérek ____.",
-      "answer": "narancs"
+      "answer": "narancsot"
     },
     {
       "id": "a1-102-controlled-2",
       "type": "multiple-choice",
       "category": "controlled",
-      "question": "Choose the correct form.",
+      "question": "What does 'tojás' mean?",
       "options": [
-        "narancs",
-        "tojás",
-        "hús"
+        "egg",
+        "meat",
+        "fish"
       ],
       "correct": 0
     },
@@ -76,20 +80,20 @@
       "category": "controlled",
       "pairs": [
         [
-          "kenyér",
-          "bread"
+          "narancs",
+          "orange"
         ],
         [
-          "tej",
-          "milk"
+          "tojás",
+          "egg"
         ],
         [
-          "sajt",
-          "cheese"
+          "hús",
+          "meat"
         ],
         [
-          "alma",
-          "apple"
+          "hal",
+          "fish"
         ]
       ]
     },
@@ -99,13 +103,13 @@
       "category": "controlled",
       "base_sentence": "Kérek narancsot.",
       "base_word": "narancsot",
-      "base_gloss": "I'd like orange.",
+      "base_gloss": "I'd like an orange.",
       "options": [
         {
           "word": "tojás",
           "inflected": "tojást",
           "sentence": "Kérek tojást.",
-          "gloss": "eggs"
+          "gloss": "egg"
         },
         {
           "word": "hús",
@@ -119,11 +123,11 @@
       "id": "a1-102-practice-1",
       "type": "multiple-choice",
       "category": "practice",
-      "question": "Choose the best answer for the situation.",
+      "question": "Which word means 'meat'?",
       "options": [
+        "hús",
         "narancs",
-        "tojás",
-        "hús"
+        "hal"
       ],
       "correct": 0
     },
@@ -131,8 +135,8 @@
       "id": "a1-102-practice-2",
       "type": "fill-blank",
       "category": "practice",
-      "sentence": "Kérek ____.",
-      "answer": "tojás"
+      "sentence": "Szeretnék ____.",
+      "answer": "halat"
     },
     {
       "id": "a1-102-practice-3",
@@ -140,16 +144,20 @@
       "category": "practice",
       "pairs": [
         [
-          "narancs",
-          "orange"
+          "Kérek narancsot.",
+          "I'd like an orange."
         ],
         [
-          "tojás",
-          "egg"
+          "Kérek tojást.",
+          "I'd like an egg."
         ],
         [
-          "hús",
-          "meat"
+          "Szeretnék halat.",
+          "I would like fish."
+        ],
+        [
+          "Kérek húst.",
+          "I'd like meat."
         ]
       ]
     },
@@ -157,21 +165,21 @@
       "id": "a1-102-practice-4",
       "type": "substitution",
       "category": "practice",
-      "base_sentence": "Kérek halat.",
+      "base_sentence": "Szeretnék halat.",
       "base_word": "halat",
-      "base_gloss": "I'd like fish.",
+      "base_gloss": "I would like fish.",
       "options": [
         {
           "word": "narancs",
           "inflected": "narancsot",
-          "sentence": "Kérek narancsot.",
+          "sentence": "Szeretnék narancsot.",
           "gloss": "orange"
         },
         {
           "word": "tojás",
           "inflected": "tojást",
-          "sentence": "Kérek tojást.",
-          "gloss": "eggs"
+          "sentence": "Szeretnék tojást.",
+          "gloss": "egg"
         }
       ]
     },
@@ -179,26 +187,6 @@
       "id": "a1-102-practice-5",
       "type": "dialogue-complete",
       "category": "practice",
-      "prompt": [
-        {
-          "speaker": "Meg",
-          "text": "Mit kérsz?"
-        },
-        {
-          "speaker": "Károly",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Kérek narancs.",
-        "Hol van tojás?"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "a1-102-dialogue-1",
-      "type": "dialogue-complete",
-      "category": "dialogue",
       "prompt": [
         {
           "speaker": "Eladó",
@@ -210,8 +198,28 @@
         }
       ],
       "options": [
-        "Kérek narancs.",
-        "Nem tudom."
+        "Kérek húst és halat.",
+        "Mennyi a kenyér?"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-102-dialogue-1",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        {
+          "speaker": "Eladó",
+          "text": "Halat vagy húst kér?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Húst kérek.",
+        "Nem, köszönöm. Csak nézek."
       ],
       "correct": 0
     },
@@ -219,11 +227,10 @@
       "id": "a1-102-dialogue-2",
       "type": "multiple-choice",
       "category": "dialogue",
-      "question": "Choose the natural reply.",
+      "question": "Which is the natural reply to \"Halat vagy húst kér?\"",
       "options": [
-        "Rendben, köszönöm.",
-        "Nem.",
-        "Hol?"
+        "Halat kérek.",
+        "Kérek egy kávét."
       ],
       "correct": 0
     },
@@ -244,8 +251,8 @@
       "category": "production",
       "template": [
         {
-          "prompt": "Write a request or question using this word: tojás",
-          "answer": "Kérek egy tojást."
+          "prompt": "Write a sentence using this word: hal",
+          "answer": "Szeretnék egy halat."
         }
       ]
     },
@@ -253,11 +260,11 @@
       "id": "a1-102-check-1",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Choose the correct Hungarian expression.",
+      "question": "Which word means 'fish'?",
       "options": [
+        "hal",
         "narancs",
-        "hús",
-        "xyz"
+        "tojás"
       ],
       "correct": 0
     },
@@ -266,7 +273,7 @@
       "type": "fill-blank",
       "category": "check",
       "sentence": "Kérek ____.",
-      "answer": "narancs"
+      "answer": "húst"
     }
   ]
 }

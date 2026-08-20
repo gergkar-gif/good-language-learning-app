@@ -5,11 +5,11 @@
       "id": "a1-106-review-1",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the Hungarian word that fits the meaning.",
+      "question": "Which word means 'expensive'?",
       "options": [
-        "piac",
-        "árus",
-        "zöldség"
+        "drága",
+        "olcsó",
+        "kérek"
       ],
       "correct": 0
     },
@@ -19,16 +19,20 @@
       "category": "review",
       "pairs": [
         [
-          "piac",
-          "market"
+          "drága",
+          "expensive"
         ],
         [
-          "árus",
-          "vendor"
+          "olcsó",
+          "cheap"
         ],
         [
-          "zöldség",
-          "vegetable"
+          "kérek",
+          "I'd like / I ask for"
+        ],
+        [
+          "fizet",
+          "pay"
         ]
       ]
     },
@@ -36,7 +40,7 @@
       "id": "a1-106-intro-1",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which expression is useful in this lesson?",
+      "question": "Which word means 'market'?",
       "options": [
         "piac",
         "árus",
@@ -48,25 +52,25 @@
       "id": "a1-106-intro-2",
       "type": "fill-blank",
       "category": "introduce",
-      "sentence": "____.",
-      "answer": "árus"
+      "sentence": "Az a ____.",
+      "answer": "gyümölcs"
     },
     {
       "id": "a1-106-controlled-1",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "Kérek ____.",
-      "answer": "piac"
+      "sentence": "Ez a ____.",
+      "answer": "zöldség"
     },
     {
       "id": "a1-106-controlled-2",
       "type": "multiple-choice",
       "category": "controlled",
-      "question": "Choose the correct form.",
+      "question": "What does 'árus' mean?",
       "options": [
-        "piac",
-        "árus",
-        "zöldség"
+        "vendor",
+        "vegetable",
+        "fruit"
       ],
       "correct": 0
     },
@@ -97,6 +101,70 @@
       "id": "a1-106-controlled-4",
       "type": "substitution",
       "category": "controlled",
+      "base_sentence": "Ez a zöldség.",
+      "base_word": "zöldség",
+      "base_gloss": "This is the vegetable.",
+      "options": [
+        {
+          "word": "gyümölcs",
+          "inflected": "gyümölcs",
+          "sentence": "Ez a gyümölcs.",
+          "gloss": "fruit"
+        },
+        {
+          "word": "piac",
+          "inflected": "piac",
+          "sentence": "Ez a piac.",
+          "gloss": "market"
+        }
+      ]
+    },
+    {
+      "id": "a1-106-practice-1",
+      "type": "multiple-choice",
+      "category": "practice",
+      "question": "Which word means 'vegetable'?",
+      "options": [
+        "zöldség",
+        "piac",
+        "gyümölcs"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-106-practice-2",
+      "type": "fill-blank",
+      "category": "practice",
+      "sentence": "Itt a ____. Sok árus van.",
+      "answer": "piac"
+    },
+    {
+      "id": "a1-106-practice-3",
+      "type": "matching",
+      "category": "practice",
+      "pairs": [
+        [
+          "Ez a zöldség.",
+          "This is the vegetable."
+        ],
+        [
+          "Az a gyümölcs.",
+          "That is the fruit."
+        ],
+        [
+          "Itt a piac. Sok árus van.",
+          "Here's the market. There are many vendors."
+        ],
+        [
+          "Kérek zöldséget és gyümölcsöt.",
+          "I'd like vegetables and fruit."
+        ]
+      ]
+    },
+    {
+      "id": "a1-106-practice-4",
+      "type": "substitution",
+      "category": "practice",
       "base_sentence": "Kérek zöldséget.",
       "base_word": "zöldséget",
       "base_gloss": "I'd like vegetables.",
@@ -108,70 +176,10 @@
           "gloss": "fruit"
         },
         {
-          "word": "kenyér",
-          "inflected": "kenyeret",
-          "sentence": "Kérek kenyeret.",
-          "gloss": "bread"
-        }
-      ]
-    },
-    {
-      "id": "a1-106-practice-1",
-      "type": "multiple-choice",
-      "category": "practice",
-      "question": "Choose the best answer for the situation.",
-      "options": [
-        "piac",
-        "árus",
-        "zöldség"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "a1-106-practice-2",
-      "type": "fill-blank",
-      "category": "practice",
-      "sentence": "Kérek ____.",
-      "answer": "árus"
-    },
-    {
-      "id": "a1-106-practice-3",
-      "type": "matching",
-      "category": "practice",
-      "pairs": [
-        [
-          "piac",
-          "market"
-        ],
-        [
-          "árus",
-          "vendor"
-        ],
-        [
-          "zöldség",
-          "vegetable"
-        ]
-      ]
-    },
-    {
-      "id": "a1-106-practice-4",
-      "type": "substitution",
-      "category": "practice",
-      "base_sentence": "Kérek gyümölcsöt.",
-      "base_word": "gyümölcsöt",
-      "base_gloss": "I'd like fruit.",
-      "options": [
-        {
-          "word": "zöldség",
-          "inflected": "zöldséget",
-          "sentence": "Kérek zöldséget.",
-          "gloss": "vegetables"
-        },
-        {
-          "word": "tej",
-          "inflected": "tejet",
-          "sentence": "Kérek tejet.",
-          "gloss": "milk"
+          "word": "hús",
+          "inflected": "húst",
+          "sentence": "Kérek húst.",
+          "gloss": "meat"
         }
       ]
     },
@@ -181,17 +189,17 @@
       "category": "practice",
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Mit kérsz?"
+          "speaker": "Károly",
+          "text": "Itt a piac. Sok árus van."
         },
         {
-          "speaker": "Károly",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "Kérek piac.",
-        "Hol van árus?"
+        "Kérek zöldséget és gyümölcsöt.",
+        "Kérek egy kávét."
       ],
       "correct": 0
     },
@@ -201,8 +209,8 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Eladó",
-          "text": "Mit kér?"
+          "speaker": "Károly",
+          "text": "Itt a piac."
         },
         {
           "speaker": "Meg",
@@ -210,8 +218,8 @@
         }
       ],
       "options": [
-        "Kérek piac.",
-        "Nem tudom."
+        "Sok árus van.",
+        "Finom a leves."
       ],
       "correct": 0
     },
@@ -219,11 +227,10 @@
       "id": "a1-106-dialogue-2",
       "type": "multiple-choice",
       "category": "dialogue",
-      "question": "Choose the natural reply.",
+      "question": "Which is the natural reply to \"Itt a piac.\"",
       "options": [
-        "Rendben, köszönöm.",
-        "Nem.",
-        "Hol?"
+        "Sok árus van.",
+        "Meleg a kávé."
       ],
       "correct": 0
     },
@@ -234,7 +241,7 @@
       "template": [
         {
           "prompt": "Write a sentence using this word: piac",
-          "answer": "A piac nagy."
+          "answer": "Itt a piac."
         }
       ]
     },
@@ -244,8 +251,8 @@
       "category": "production",
       "template": [
         {
-          "prompt": "Write a request or question using this word: árus",
-          "answer": "Az árus kedves."
+          "prompt": "Write a sentence using this word: árus",
+          "answer": "Az árus itt van."
         }
       ]
     },
@@ -253,11 +260,11 @@
       "id": "a1-106-check-1",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Choose the correct Hungarian expression.",
+      "question": "Which word means 'fruit'?",
       "options": [
+        "gyümölcs",
         "piac",
-        "zöldség",
-        "xyz"
+        "árus"
       ],
       "correct": 0
     },
@@ -265,8 +272,8 @@
       "id": "a1-106-check-2",
       "type": "fill-blank",
       "category": "check",
-      "sentence": "Kérek ____.",
-      "answer": "piac"
+      "sentence": "Kérek zöldséget és ____.",
+      "answer": "gyümölcsöt"
     }
   ]
 }

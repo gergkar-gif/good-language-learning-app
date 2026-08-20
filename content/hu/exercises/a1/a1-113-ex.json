@@ -5,11 +5,11 @@
       "id": "a1-113-review-1",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the Hungarian word that fits the meaning.",
+      "question": "Which word means 'sandwich'?",
       "options": [
-        "kávé",
-        "tea",
-        "limonádé"
+        "szendvics",
+        "sütemény",
+        "reggeli"
       ],
       "correct": 0
     },
@@ -19,16 +19,20 @@
       "category": "review",
       "pairs": [
         [
-          "kávé",
-          "coffee"
+          "szendvics",
+          "sandwich"
         ],
         [
-          "tea",
-          "tea"
+          "sütemény",
+          "pastry"
         ],
         [
-          "limonádé",
-          "lemonade"
+          "reggeli",
+          "breakfast"
+        ],
+        [
+          "cukor",
+          "sugar"
         ]
       ]
     },
@@ -36,7 +40,7 @@
       "id": "a1-113-intro-1",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which expression is useful in this lesson?",
+      "question": "Which word means 'milk'?",
       "options": [
         "tej",
         "pincér",
@@ -48,25 +52,25 @@
       "id": "a1-113-intro-2",
       "type": "fill-blank",
       "category": "introduce",
-      "sentence": "____.",
-      "answer": "pincér"
+      "sentence": "Kérek cukrot és ____ is.",
+      "answer": "tejet"
     },
     {
       "id": "a1-113-controlled-1",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "Kérek ____.",
-      "answer": "tej"
+      "sentence": "Jó napot kívánok! Itt az ____.",
+      "answer": "étlap"
     },
     {
       "id": "a1-113-controlled-2",
       "type": "multiple-choice",
       "category": "controlled",
-      "question": "Choose the correct form.",
+      "question": "What does 'pincér' mean?",
       "options": [
-        "tej",
-        "pincér",
-        "étlap"
+        "waiter",
+        "menu",
+        "table"
       ],
       "correct": 0
     },
@@ -74,70 +78,6 @@
       "id": "a1-113-controlled-3",
       "type": "matching",
       "category": "controlled",
-      "pairs": [
-        [
-          "kávé",
-          "coffee"
-        ],
-        [
-          "tea",
-          "tea"
-        ],
-        [
-          "limonádé",
-          "lemonade"
-        ],
-        [
-          "üdítő",
-          "soft drink"
-        ]
-      ]
-    },
-    {
-      "id": "a1-113-controlled-4",
-      "type": "substitution",
-      "category": "controlled",
-      "base_sentence": "Kérek tejet.",
-      "base_word": "tejet",
-      "base_gloss": "I'd like milk.",
-      "options": [
-        {
-          "word": "kávé",
-          "inflected": "kávét",
-          "sentence": "Kérek kávét.",
-          "gloss": "coffee"
-        },
-        {
-          "word": "tea",
-          "inflected": "teát",
-          "sentence": "Kérek teát.",
-          "gloss": "tea"
-        }
-      ]
-    },
-    {
-      "id": "a1-113-practice-1",
-      "type": "multiple-choice",
-      "category": "practice",
-      "question": "Choose the best answer for the situation.",
-      "options": [
-        "tej",
-        "pincér",
-        "étlap"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "a1-113-practice-2",
-      "type": "fill-blank",
-      "category": "practice",
-      "sentence": "Kérek ____.",
-      "answer": "pincér"
-    },
-    {
-      "id": "a1-113-practice-3",
-      "type": "matching",
-      "category": "practice",
       "pairs": [
         [
           "tej",
@@ -150,6 +90,74 @@
         [
           "étlap",
           "menu"
+        ],
+        [
+          "asztal",
+          "table"
+        ]
+      ]
+    },
+    {
+      "id": "a1-113-controlled-4",
+      "type": "substitution",
+      "category": "controlled",
+      "base_sentence": "Kérek egy teát.",
+      "base_word": "teát",
+      "base_gloss": "I'd like a tea.",
+      "options": [
+        {
+          "word": "kávé",
+          "inflected": "kávét",
+          "sentence": "Kérek egy kávét.",
+          "gloss": "coffee"
+        },
+        {
+          "word": "tej",
+          "inflected": "tejet",
+          "sentence": "Kérek tejet.",
+          "gloss": "milk"
+        }
+      ]
+    },
+    {
+      "id": "a1-113-practice-1",
+      "type": "multiple-choice",
+      "category": "practice",
+      "question": "Which word means 'menu'?",
+      "options": [
+        "étlap",
+        "tej",
+        "asztal"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-113-practice-2",
+      "type": "fill-blank",
+      "category": "practice",
+      "sentence": "Itt az ____.",
+      "answer": "asztal"
+    },
+    {
+      "id": "a1-113-practice-3",
+      "type": "matching",
+      "category": "practice",
+      "pairs": [
+        [
+          "Jó napot kívánok! Itt az étlap.",
+          "Good day! Here's the menu."
+        ],
+        [
+          "Kérek cukrot és tejet is.",
+          "I'd like sugar and milk too."
+        ],
+        [
+          "Itt az asztal.",
+          "Here's the table."
+        ],
+        [
+          "Hol a pincér?",
+          "Where's the waiter?"
         ]
       ]
     },
@@ -157,15 +165,21 @@
       "id": "a1-113-practice-4",
       "type": "substitution",
       "category": "practice",
-      "base_sentence": "A pincér hozza az étlapot.",
-      "base_word": "étlapot",
-      "base_gloss": "The waiter brings the menu.",
+      "base_sentence": "Itt az asztal.",
+      "base_word": "asztal",
+      "base_gloss": "Here's the table.",
       "options": [
         {
-          "word": "számla",
-          "inflected": "számlát",
-          "sentence": "A pincér hozza a számlát.",
-          "gloss": "the bill"
+          "word": "pincér",
+          "inflected": "pincér",
+          "sentence": "Itt a pincér.",
+          "gloss": "waiter"
+        },
+        {
+          "word": "étlap",
+          "inflected": "étlap",
+          "sentence": "Itt az étlap.",
+          "gloss": "menu"
         }
       ]
     },
@@ -176,7 +190,7 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Mit kérsz?"
+          "text": "Hol a pincér?"
         },
         {
           "speaker": "Károly",
@@ -184,8 +198,8 @@
         }
       ],
       "options": [
-        "Kérek tej.",
-        "Hol van pincér?"
+        "Itt van.",
+        "Nem kérek teát."
       ],
       "correct": 0
     },
@@ -195,17 +209,17 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Eladó",
-          "text": "Mit kér?"
+          "speaker": "Meg",
+          "text": "Itt az asztal?"
         },
         {
-          "speaker": "Meg",
+          "speaker": "Károly",
           "text": "_____"
         }
       ],
       "options": [
-        "Kérek tej.",
-        "Nem tudom."
+        "Igen, itt van.",
+        "Nem, ez drága."
       ],
       "correct": 0
     },
@@ -213,11 +227,10 @@
       "id": "a1-113-dialogue-2",
       "type": "multiple-choice",
       "category": "dialogue",
-      "question": "Choose the natural reply.",
+      "question": "Which is the natural reply to \"Itt az asztal?\"",
       "options": [
-        "Rendben, köszönöm.",
-        "Nem.",
-        "Hol?"
+        "Igen, itt van.",
+        "Kérek egy csomagot."
       ],
       "correct": 0
     },
@@ -227,8 +240,8 @@
       "category": "production",
       "template": [
         {
-          "prompt": "Write a sentence using this word: tej",
-          "answer": "Kérek egy tejet."
+          "prompt": "Write a sentence using this word: pincér",
+          "answer": "Hol a pincér?"
         }
       ]
     },
@@ -238,8 +251,8 @@
       "category": "production",
       "template": [
         {
-          "prompt": "Write a request or question using this word: pincér",
-          "answer": "A pincér kedves."
+          "prompt": "Write a sentence using this word: asztal",
+          "answer": "Itt az asztal."
         }
       ]
     },
@@ -247,11 +260,11 @@
       "id": "a1-113-check-1",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Choose the correct Hungarian expression.",
+      "question": "Which word means 'table'?",
       "options": [
+        "asztal",
         "tej",
-        "étlap",
-        "xyz"
+        "pincér"
       ],
       "correct": 0
     },
@@ -259,8 +272,8 @@
       "id": "a1-113-check-2",
       "type": "fill-blank",
       "category": "check",
-      "sentence": "Kérek ____.",
-      "answer": "tej"
+      "sentence": "Hol a ____?",
+      "answer": "pincér"
     }
   ]
 }

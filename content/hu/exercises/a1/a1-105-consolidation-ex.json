@@ -5,11 +5,11 @@
       "id": "a1-105-consolidation-1",
       "type": "multiple-choice",
       "category": "consolidation",
-      "question": "Choose the correct expression.",
+      "question": "Which word means 'expensive'?",
       "options": [
-        "Kérek egyet.",
-        "Hol van?",
-        "Nem tudom."
+        "drága",
+        "olcsó",
+        "forint"
       ],
       "correct": 0
     },
@@ -23,16 +23,16 @@
           "bread"
         ],
         [
-          "tej",
-          "milk"
+          "hús",
+          "meat"
         ],
         [
-          "sajt",
-          "cheese"
+          "víz",
+          "water"
         ],
         [
-          "alma",
-          "apple"
+          "forint",
+          "forint"
         ]
       ]
     },
@@ -40,30 +40,20 @@
       "id": "a1-105-consolidation-3",
       "type": "fill-blank",
       "category": "consolidation",
-      "sentence": "Kérek ____.",
-      "answer": "kenyér"
+      "sentence": "Kérek egy kiló ____.",
+      "answer": "rizst"
     },
     {
       "id": "a1-105-consolidation-4",
-      "type": "substitution",
+      "type": "multiple-choice",
       "category": "consolidation",
-      "base_sentence": "Kérek kenyeret.",
-      "base_word": "kenyeret",
-      "base_gloss": "I'd like bread.",
+      "question": "Which sentence correctly asks 'How much is the price?'",
       "options": [
-        {
-          "word": "tej",
-          "inflected": "tejet",
-          "sentence": "Kérek tejet.",
-          "gloss": "milk"
-        },
-        {
-          "word": "sajt",
-          "inflected": "sajtot",
-          "sentence": "Kérek sajtot.",
-          "gloss": "cheese"
-        }
-      ]
+        "Mennyi az ár?",
+        "Hány az ár?",
+        "Ki az ár?"
+      ],
+      "correct": 0
     },
     {
       "id": "a1-105-consolidation-5",
@@ -80,22 +70,21 @@
         }
       ],
       "options": [
-        "Kérek kenyér.",
-        "Jó reggelt."
+        "Kérek kenyeret, tejet és sajtot.",
+        "Hol van a piac?"
       ],
       "correct": 0
     },
     {
       "id": "a1-105-consolidation-6",
-      "type": "multiple-choice",
+      "type": "structured-writing",
       "category": "consolidation",
-      "question": "Which sentence fits the situation?",
-      "options": [
-        "Rendben, köszönöm.",
-        "Nem tudom.",
-        "Hol lakik?"
-      ],
-      "correct": 0
+      "template": [
+        {
+          "prompt": "Ask how much the bread costs.",
+          "answer": "Mennyi a kenyér?"
+        }
+      ]
     }
   ]
 }
