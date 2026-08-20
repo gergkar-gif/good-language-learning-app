@@ -116,18 +116,44 @@ SKIP_POS = {
 FORM_OF_TAG = "form-of"
 FORM_OF_EXCEPTION_TAGS = {"noun-from-verb"}
 
-# Hand-corrected glosses for specific (lemma, pos) pairs whose Wiktionary
-# entry is accurate but unusually clinical for a learner-facing dictionary
-# — same idea as build-manifest.py's FREQUENCY_GLOSS for Spanish. "marha"'s
-# real primary sense is "head of cattle, animal of the species Bos taurus":
-# correct, but nobody says it like that. This is deliberately NOT a general
-# regex (checked: most animal headwords — kutya "dog", macska "cat", ló
-# "horse", róka "fox" — already have plain glosses; this phrasing isn't a
-# systematic Wiktionary pattern here, just this one entry), so fix it by
-# name rather than writing pattern-matching logic for a one-off.
-GLOSS_OVERRIDES = {
-    ("marha", "noun"): "cattle, ox",
-}
+# Hand-corrected glosses for specific (lemma, pos) senses whose Wiktionary
+# entry is accurate but unusually verbose/clinical for a learner-facing
+# dictionary — same idea as build-manifest.py's FREQUENCY_GLOSS for Spanish.
+# "marha"'s real primary sense is "head of cattle, animal of the species Bos
+# taurus": correct, but nobody says it like that. "jó"'s adjective sense
+# spells out which case suffix each nuance takes ("good for something
+# -ra/-re, good at something -ban/-ben, ...") — real grammar info, but too
+# much for a reader tap-popup meant for a quick glance, not a usage note.
+#
+# This is deliberately NOT a general regex (checked: most animal headwords
+# — kutya "dog", macska "cat", ló "horse", róka "fox" — already have plain
+# glosses; this phrasing isn't a systematic Wiktionary pattern, just these
+# specific entries), so fix them by name rather than writing pattern-
+# matching logic for a handful of one-offs.
+#
+# Matched by a distinctive PREFIX of the original gloss, not the full text
+# or an exact (lemma, pos) pair — a word can have more than one sense under
+# the same POS ("jó" has two distinct adjective senses: "good" and "quite
+# (some), fair (amount of)"), so keying on (lemma, pos) alone would
+# overwrite every sense sharing that POS with the same replacement text
+# instead of just the one being fixed. Each (lemma, pos, prefix) is checked
+# against the ORIGINAL gloss before any override is applied.
+GLOSS_OVERRIDES = [
+    ("marha", "noun", "head of cattle", "cattle, ox"),
+    ("jó", "adjective", "good (good for something", "good"),
+    ("ház", "noun", "house, building (closed structure", "house, building"),
+    ("ház", "noun", "home (the place of one", "home"),
+    ("köszönöm", "interjection", "thank you (an expression of gratitude", "thank you"),
+    ("köszönöm", "interjection", "keep the change (if said with some emphasis",
+     "keep the change (said when overpaying)"),
+]
+
+
+def apply_gloss_override(lemma, pos, gloss):
+    for l, p, prefix, replacement in GLOSS_OVERRIDES:
+        if lemma == l and pos == p and gloss.startswith(prefix):
+            return replacement
+    return gloss
 
 # Senses tagged like this are deprioritised but not dropped outright — a
 # rare/dated sense is still better than no dictionary entry. Also used
@@ -394,7 +420,7 @@ def build():
             all_senses.extend(ordered[:MAX_SENSES_PER_POS])
         all_senses.sort(key=lambda s: s["_deprioritised"])
         dictionary[key] = [
-            {"en": GLOSS_OVERRIDES.get((key, s["type"]), s["en"]), "type": s["type"]}
+            {"en": apply_gloss_override(key, s["type"], s["en"]), "type": s["type"]}
             for s in all_senses
         ]
 
