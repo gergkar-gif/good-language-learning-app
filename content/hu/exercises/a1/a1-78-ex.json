@@ -5,7 +5,31 @@
       "id": "a1-78-review-1",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the useful Hungarian item.",
+      "question": "Which word means \"evening\"?",
+      "options": [
+        "este",
+        "reggel",
+        "délután"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-78-review-2",
+      "type": "multiple-choice",
+      "category": "review",
+      "question": "Which sentence means \"I work at noon\"?",
+      "options": [
+        "Délben dolgozom.",
+        "Reggel dolgozom.",
+        "Este dolgozom."
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-78-intro-1",
+      "type": "multiple-choice",
+      "category": "introduce",
+      "question": "Which word means \"Monday\"?",
       "options": [
         "hétfő",
         "kedd",
@@ -14,38 +38,14 @@
       "correct": 0
     },
     {
-      "id": "a1-78-review-2",
-      "type": "multiple-choice",
-      "category": "review",
-      "question": "Which item belongs to this lesson?",
-      "options": [
-        "kedd",
-        "szerda",
-        "csütörtök"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "a1-78-intro-1",
-      "type": "multiple-choice",
-      "category": "introduce",
-      "question": "Which sentence uses hétfő naturally?",
-      "options": [
-        "A hétfő itt van.",
-        "A hétfő megy.",
-        "hétfő ember."
-      ],
-      "correct": 0
-    },
-    {
       "id": "a1-78-intro-2",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which word is kedd?",
+      "question": "Which word means \"Thursday\"?",
       "options": [
-        "kedd",
+        "csütörtök",
         "szerda",
-        "csütörtök"
+        "kedd"
       ],
       "correct": 0
     },
@@ -56,19 +56,19 @@
       "pairs": [
         [
           "hétfő",
-          "target 1"
+          "Monday"
         ],
         [
           "kedd",
-          "target 2"
+          "Tuesday"
         ],
         [
           "szerda",
-          "target 3"
+          "Wednesday"
         ],
         [
           "csütörtök",
-          "target 4"
+          "Thursday"
         ]
       ]
     },
@@ -76,18 +76,18 @@
       "id": "a1-78-controlled-2",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "Ez a(z) ____.",
-      "answer": "hétfő"
+      "sentence": "Ma ____ van. (Wednesday)",
+      "answer": "szerda"
     },
     {
       "id": "a1-78-controlled-3",
       "type": "multiple-choice",
       "category": "controlled",
-      "question": "Choose the natural sentence.",
+      "question": "Which is the correct \"on Tuesday\" form?",
       "options": [
-        "A kedd fontos.",
-        "A kedd fontosak.",
-        "kedd a fontos."
+        "kedden",
+        "kedd",
+        "keddban"
       ],
       "correct": 0
     },
@@ -95,18 +95,18 @@
       "id": "a1-78-controlled-4",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "A ____ itt van.",
-      "answer": "kedd"
+      "sentence": "A találkozó ____ van. (on Thursday)",
+      "answer": "csütörtökön"
     },
     {
       "id": "a1-78-practice-1",
       "type": "multiple-choice",
       "category": "practice",
-      "question": "Which answer fits?",
+      "question": "Which day comes right after szerda?",
       "options": [
-        "Igen, hétfő.",
-        "Hol, szerda?",
-        "Nem csütörtök?"
+        "csütörtök",
+        "kedd",
+        "péntek"
       ],
       "correct": 0
     },
@@ -114,8 +114,8 @@
       "id": "a1-78-practice-2",
       "type": "fill-blank",
       "category": "practice",
-      "sentence": "Ma ____ van.",
-      "answer": "hétfő"
+      "sentence": "Hétfőn, kedden, szerdán vagy ____? (on Thursday)",
+      "answer": "csütörtökön"
     },
     {
       "id": "a1-78-practice-3",
@@ -123,20 +123,20 @@
       "category": "practice",
       "pairs": [
         [
-          "hétfő",
-          "meaning 1"
+          "hétfőn",
+          "on Monday"
         ],
         [
-          "kedd",
-          "meaning 2"
+          "kedden",
+          "on Tuesday"
         ],
         [
-          "szerda",
-          "meaning 3"
+          "szerdán",
+          "on Wednesday"
         ],
         [
-          "csütörtök",
-          "meaning 4"
+          "csütörtökön",
+          "on Thursday"
         ]
       ]
     },
@@ -145,20 +145,16 @@
       "type": "sentence-builder",
       "category": "practice",
       "tiles": [
-        "A",
-        "hétfő",
-        "itt",
-        "van",
+        "Szerdán",
+        "dolgozom",
         "."
       ],
       "solution": [
-        "A",
-        "hétfő",
-        "itt",
-        "van",
+        "Szerdán",
+        "dolgozom",
         "."
       ],
-      "english": "The hétfő is here."
+      "english": "I work on Wednesday."
     },
     {
       "id": "a1-78-practice-5",
@@ -166,17 +162,17 @@
       "category": "practice",
       "prompt": [
         {
-          "speaker": "Károly",
-          "text": "Hol van?"
+          "speaker": "Meg",
+          "text": "Hétfőn, kedden, szerdán vagy csütörtökön?"
         },
         {
-          "speaker": "Meg",
+          "speaker": "Károly",
           "text": "_____"
         }
       ],
       "options": [
-        "A kedd van.",
-        "A szerda megy."
+        "Szerda is jó.",
+        "Öt óra van."
       ],
       "correct": 0
     },
@@ -187,7 +183,7 @@
       "prompt": [
         {
           "speaker": "Károly",
-          "text": "Rendben?"
+          "text": "Mikor van a találkozó?"
         },
         {
           "speaker": "Meg",
@@ -195,8 +191,8 @@
         }
       ],
       "options": [
-        "Igen, rendben.",
-        "Nem tudom."
+        "Csütörtökön.",
+        "Csütörtök van otthon."
       ],
       "correct": 0
     },
@@ -204,11 +200,11 @@
       "id": "a1-78-dialogue-2",
       "type": "multiple-choice",
       "category": "dialogue",
-      "question": "Choose the natural reply.",
+      "question": "Choose the natural reply to \"Ma hétfő van?\"",
       "options": [
-        "Rendben, kedd.",
-        "szerda hol.",
-        "Nem csütörtök."
+        "Nem, ma kedd van.",
+        "Nem, ma hétfőn van.",
+        "Igen, kedd van."
       ],
       "correct": 0
     },
@@ -218,8 +214,8 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Write one short Hungarian sentence using a target word.",
-          "answer": "Use hétfő in a simple sentence."
+          "prompt": "Write \"Today is Wednesday.\" in Hungarian.",
+          "answer": "Ma szerda van."
         }
       ]
     },
@@ -229,8 +225,8 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Write another short Hungarian sentence using a target word.",
-          "answer": "Use kedd in a simple sentence."
+          "prompt": "Write \"I work on Thursday.\" in Hungarian.",
+          "answer": "Csütörtökön dolgozom."
         }
       ]
     },
@@ -238,11 +234,11 @@
       "id": "a1-78-check-1",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Which target word completes the sentence?",
+      "question": "Which is the \"on Monday\" form?",
       "options": [
+        "hétfőn",
         "hétfő",
-        "szerda",
-        "csütörtök"
+        "hétfőt"
       ],
       "correct": 0
     },
@@ -250,11 +246,11 @@
       "id": "a1-78-check-2",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Which sentence is natural?",
+      "question": "Which day is between kedd and csütörtök?",
       "options": [
-        "A kedd itt van.",
-        "A kedd itt vannak.",
-        "A kedd van ittünk."
+        "szerda",
+        "hétfő",
+        "péntek"
       ],
       "correct": 0
     }

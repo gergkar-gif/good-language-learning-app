@@ -5,7 +5,31 @@
       "id": "a1-85-review-1",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the useful Hungarian item.",
+      "question": "Which word means \"today\"?",
+      "options": [
+        "ma",
+        "most",
+        "otthon"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-85-review-2",
+      "type": "multiple-choice",
+      "category": "review",
+      "question": "Which sentence puts the emphasis on WHERE, not WHEN?",
+      "options": [
+        "Otthon vagyok ma.",
+        "Ma otthon vagyok.",
+        "Vagyok otthon ma."
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-85-intro-1",
+      "type": "multiple-choice",
+      "category": "introduce",
+      "question": "Which word means \"work\" (the noun)?",
       "options": [
         "munka",
         "tanulás",
@@ -14,38 +38,14 @@
       "correct": 0
     },
     {
-      "id": "a1-85-review-2",
-      "type": "multiple-choice",
-      "category": "review",
-      "question": "Which item belongs to this lesson?",
-      "options": [
-        "tanulás",
-        "sport",
-        "pihenés"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "a1-85-intro-1",
-      "type": "multiple-choice",
-      "category": "introduce",
-      "question": "Which sentence uses munka naturally?",
-      "options": [
-        "A munka itt van.",
-        "A munka megy.",
-        "munka ember."
-      ],
-      "correct": 0
-    },
-    {
       "id": "a1-85-intro-2",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which word is tanulás?",
+      "question": "Which word means \"resting\"?",
       "options": [
-        "tanulás",
-        "sport",
-        "pihenés"
+        "pihenés",
+        "munka",
+        "sport"
       ],
       "correct": 0
     },
@@ -56,19 +56,19 @@
       "pairs": [
         [
           "munka",
-          "target 1"
+          "work"
         ],
         [
           "tanulás",
-          "target 2"
+          "studying"
         ],
         [
           "sport",
-          "target 3"
+          "sport"
         ],
         [
           "pihenés",
-          "target 4"
+          "resting"
         ]
       ]
     },
@@ -76,18 +76,18 @@
       "id": "a1-85-controlled-2",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "Ez a(z) ____.",
+      "sentence": "Hétvégén gyakran van ____. (work)",
       "answer": "munka"
     },
     {
       "id": "a1-85-controlled-3",
       "type": "multiple-choice",
       "category": "controlled",
-      "question": "Choose the natural sentence.",
+      "question": "Which is the correct 1st person singular of dolgozik (to work)?",
       "options": [
-        "A tanulás fontos.",
-        "A tanulás fontosak.",
-        "tanulás a fontos."
+        "dolgozom",
+        "dolgozok",
+        "dolgozik"
       ],
       "correct": 0
     },
@@ -95,18 +95,18 @@
       "id": "a1-85-controlled-4",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "A ____ itt van.",
-      "answer": "tanulás"
+      "sentence": "Délben ____. (I work)",
+      "answer": "dolgozom"
     },
     {
       "id": "a1-85-practice-1",
       "type": "multiple-choice",
       "category": "practice",
-      "question": "Which answer fits?",
+      "question": "Which answer fits \"Mit csinálsz hétvégén?\"",
       "options": [
-        "Igen, munka.",
-        "Hol, sport?",
-        "Nem pihenés?"
+        "Sportolok és pihenek.",
+        "Sport és pihenés vagyok.",
+        "Munka sportolok."
       ],
       "correct": 0
     },
@@ -114,8 +114,8 @@
       "id": "a1-85-practice-2",
       "type": "fill-blank",
       "category": "practice",
-      "sentence": "Ma ____ van.",
-      "answer": "munka"
+      "sentence": "A ____ is fontos. A pihenés is fontos. (studying)",
+      "answer": "tanulás"
     },
     {
       "id": "a1-85-practice-3",
@@ -123,20 +123,20 @@
       "category": "practice",
       "pairs": [
         [
-          "munka",
-          "meaning 1"
+          "A tanulás is fontos.",
+          "Studying is important too."
         ],
         [
-          "tanulás",
-          "meaning 2"
+          "A sport jó.",
+          "Sport is good."
         ],
         [
-          "sport",
-          "meaning 3"
+          "Délben dolgozom.",
+          "I work at noon."
         ],
         [
-          "pihenés",
-          "meaning 4"
+          "A munka után pihenés kell.",
+          "After work, rest is needed."
         ]
       ]
     },
@@ -146,19 +146,17 @@
       "category": "practice",
       "tiles": [
         "A",
-        "munka",
-        "itt",
-        "van",
+        "sport",
+        "jó",
         "."
       ],
       "solution": [
         "A",
-        "munka",
-        "itt",
-        "van",
+        "sport",
+        "jó",
         "."
       ],
-      "english": "The munka is here."
+      "english": "Sport is good."
     },
     {
       "id": "a1-85-practice-5",
@@ -166,17 +164,17 @@
       "category": "practice",
       "prompt": [
         {
-          "speaker": "Károly",
-          "text": "Hol van?"
+          "speaker": "Meg",
+          "text": "A tanulás is fontos. A pihenés is fontos."
         },
         {
-          "speaker": "Meg",
+          "speaker": "Károly",
           "text": "_____"
         }
       ],
       "options": [
-        "A tanulás van.",
-        "A sport megy."
+        "A sport jó. A munka után pihenés kell.",
+        "A sport rossz."
       ],
       "correct": 0
     },
@@ -187,7 +185,7 @@
       "prompt": [
         {
           "speaker": "Károly",
-          "text": "Rendben?"
+          "text": "Mikor dolgozol?"
         },
         {
           "speaker": "Meg",
@@ -195,8 +193,8 @@
         }
       ],
       "options": [
-        "Igen, rendben.",
-        "Nem tudom."
+        "Délben dolgozom.",
+        "Délben dolgozok."
       ],
       "correct": 0
     },
@@ -204,11 +202,11 @@
       "id": "a1-85-dialogue-2",
       "type": "multiple-choice",
       "category": "dialogue",
-      "question": "Choose the natural reply.",
+      "question": "Choose the natural reply to \"Szeretsz sportolni?\" (Do you like doing sports?)",
       "options": [
-        "Rendben, tanulás.",
-        "sport hol.",
-        "Nem pihenés."
+        "Igen, gyakran sportolok.",
+        "Igen, gyakran sport vagyok.",
+        "Igen, sport szeretek."
       ],
       "correct": 0
     },
@@ -218,8 +216,8 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Write one short Hungarian sentence using a target word.",
-          "answer": "Use munka in a simple sentence."
+          "prompt": "Write \"I work at noon.\" in Hungarian, using dolgozik correctly.",
+          "answer": "Délben dolgozom."
         }
       ]
     },
@@ -229,8 +227,8 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Write another short Hungarian sentence using a target word.",
-          "answer": "Use tanulás in a simple sentence."
+          "prompt": "Write \"Sport is good.\" in Hungarian.",
+          "answer": "A sport jó."
         }
       ]
     },
@@ -238,11 +236,11 @@
       "id": "a1-85-check-1",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Which target word completes the sentence?",
+      "question": "Which word means \"sport\"?",
       "options": [
-        "munka",
         "sport",
-        "pihenés"
+        "munka",
+        "tanulás"
       ],
       "correct": 0
     },
@@ -250,11 +248,11 @@
       "id": "a1-85-check-2",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Which sentence is natural?",
+      "question": "Which is the correct -ik-verb 1st person singular pattern?",
       "options": [
-        "A tanulás itt van.",
-        "A tanulás itt vannak.",
-        "A tanulás van ittünk."
+        "-om / -em / -öm",
+        "-ok / -ek / -ök",
+        "-unk / -ünk"
       ],
       "correct": 0
     }

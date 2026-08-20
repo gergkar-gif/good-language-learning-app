@@ -5,7 +5,31 @@
       "id": "a1-86-review-1",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the useful Hungarian item.",
+      "question": "Which word means \"sport\"?",
+      "options": [
+        "sport",
+        "munka",
+        "tanulás"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-86-review-2",
+      "type": "multiple-choice",
+      "category": "review",
+      "question": "Which is the correct -ik-verb 1st person singular pattern?",
+      "options": [
+        "-om / -em / -öm",
+        "-ok / -ek / -ök",
+        "-unk / -ünk"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-86-intro-1",
+      "type": "multiple-choice",
+      "category": "introduce",
+      "question": "Which word means \"living room\"?",
       "options": [
         "nappali",
         "hálószoba",
@@ -14,38 +38,14 @@
       "correct": 0
     },
     {
-      "id": "a1-86-review-2",
-      "type": "multiple-choice",
-      "category": "review",
-      "question": "Which item belongs to this lesson?",
-      "options": [
-        "hálószoba",
-        "konyha",
-        "fürdőszoba"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "a1-86-intro-1",
-      "type": "multiple-choice",
-      "category": "introduce",
-      "question": "Which sentence uses nappali naturally?",
-      "options": [
-        "A nappali itt van.",
-        "A nappali megy.",
-        "nappali ember."
-      ],
-      "correct": 0
-    },
-    {
       "id": "a1-86-intro-2",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which word is hálószoba?",
+      "question": "Which word means \"kitchen\"?",
       "options": [
-        "hálószoba",
         "konyha",
-        "fürdőszoba"
+        "fürdőszoba",
+        "hálószoba"
       ],
       "correct": 0
     },
@@ -56,19 +56,19 @@
       "pairs": [
         [
           "nappali",
-          "target 1"
+          "living room"
         ],
         [
           "hálószoba",
-          "target 2"
+          "bedroom"
         ],
         [
           "konyha",
-          "target 3"
+          "kitchen"
         ],
         [
           "fürdőszoba",
-          "target 4"
+          "bathroom"
         ]
       ]
     },
@@ -76,18 +76,18 @@
       "id": "a1-86-controlled-2",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "Ez a(z) ____.",
+      "sentence": "A ____ világos és otthonos. (living room)",
       "answer": "nappali"
     },
     {
       "id": "a1-86-controlled-3",
       "type": "multiple-choice",
       "category": "controlled",
-      "question": "Choose the natural sentence.",
+      "question": "Which means \"in the kitchen\"?",
       "options": [
-        "A hálószoba fontos.",
-        "A hálószoba fontosak.",
-        "hálószoba a fontos."
+        "a konyhában",
+        "a konyhaban",
+        "a konyhán"
       ],
       "correct": 0
     },
@@ -95,18 +95,18 @@
       "id": "a1-86-controlled-4",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "A ____ itt van.",
+      "sentence": "A ____ is világos. (bedroom)",
       "answer": "hálószoba"
     },
     {
       "id": "a1-86-practice-1",
       "type": "multiple-choice",
       "category": "practice",
-      "question": "Which answer fits?",
+      "question": "Which room is \"a fürdőszoba\"?",
       "options": [
-        "Igen, nappali.",
-        "Hol, konyha?",
-        "Nem fürdőszoba?"
+        "bathroom",
+        "bedroom",
+        "kitchen"
       ],
       "correct": 0
     },
@@ -114,8 +114,8 @@
       "id": "a1-86-practice-2",
       "type": "fill-blank",
       "category": "practice",
-      "sentence": "Ma ____ van.",
-      "answer": "nappali"
+      "sentence": "A konyha a nappali ____ van. (next to)",
+      "answer": "mellett"
     },
     {
       "id": "a1-86-practice-3",
@@ -123,20 +123,20 @@
       "category": "practice",
       "pairs": [
         [
-          "nappali",
-          "meaning 1"
+          "A nappali világos és otthonos.",
+          "The living room is bright and cozy."
         ],
         [
-          "hálószoba",
-          "meaning 2"
+          "A hálószoba is világos.",
+          "The bedroom is also bright."
         ],
         [
-          "konyha",
-          "meaning 3"
+          "A konyha a nappali mellett van.",
+          "The kitchen is next to the living room."
         ],
         [
-          "fürdőszoba",
-          "meaning 4"
+          "A fürdőszoba a hálószoba mellett van.",
+          "The bathroom is next to the bedroom."
         ]
       ]
     },
@@ -147,18 +147,20 @@
       "tiles": [
         "A",
         "nappali",
-        "itt",
-        "van",
+        "világos",
+        "és",
+        "otthonos",
         "."
       ],
       "solution": [
         "A",
         "nappali",
-        "itt",
-        "van",
+        "világos",
+        "és",
+        "otthonos",
         "."
       ],
-      "english": "The nappali is here."
+      "english": "The living room is bright and cozy."
     },
     {
       "id": "a1-86-practice-5",
@@ -167,7 +169,7 @@
       "prompt": [
         {
           "speaker": "Károly",
-          "text": "Hol van?"
+          "text": "A nappali világos és otthonos."
         },
         {
           "speaker": "Meg",
@@ -175,8 +177,8 @@
         }
       ],
       "options": [
-        "A hálószoba van.",
-        "A konyha megy."
+        "A hálószoba is világos.",
+        "A hálószoba van otthonos."
       ],
       "correct": 0
     },
@@ -186,17 +188,17 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Károly",
-          "text": "Rendben?"
+          "speaker": "Meg",
+          "text": "Hol van a konyha?"
         },
         {
-          "speaker": "Meg",
+          "speaker": "Károly",
           "text": "_____"
         }
       ],
       "options": [
-        "Igen, rendben.",
-        "Nem tudom."
+        "A konyha a nappali mellett van.",
+        "A konyha nappali van."
       ],
       "correct": 0
     },
@@ -204,11 +206,11 @@
       "id": "a1-86-dialogue-2",
       "type": "multiple-choice",
       "category": "dialogue",
-      "question": "Choose the natural reply.",
+      "question": "Choose the natural reply to \"Hány szoba van a lakásban?\"",
       "options": [
-        "Rendben, hálószoba.",
-        "konyha hol.",
-        "Nem fürdőszoba."
+        "Nappali, hálószoba, konyha és fürdőszoba.",
+        "Nappali és hálószoba van most.",
+        "Négy lakás van."
       ],
       "correct": 0
     },
@@ -218,8 +220,8 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Write one short Hungarian sentence using a target word.",
-          "answer": "Use nappali in a simple sentence."
+          "prompt": "Write \"The living room is bright and cozy.\" in Hungarian.",
+          "answer": "A nappali világos és otthonos."
         }
       ]
     },
@@ -229,8 +231,8 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Write another short Hungarian sentence using a target word.",
-          "answer": "Use hálószoba in a simple sentence."
+          "prompt": "Write \"The bathroom is next to the bedroom.\" in Hungarian.",
+          "answer": "A fürdőszoba a hálószoba mellett van."
         }
       ]
     },
@@ -238,11 +240,11 @@
       "id": "a1-86-check-1",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Which target word completes the sentence?",
+      "question": "Which word means \"bathroom\"?",
       "options": [
-        "nappali",
-        "konyha",
-        "fürdőszoba"
+        "fürdőszoba",
+        "hálószoba",
+        "konyha"
       ],
       "correct": 0
     },
@@ -250,11 +252,11 @@
       "id": "a1-86-check-2",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Which sentence is natural?",
+      "question": "Which is the correct \"in the bedroom\" form?",
       "options": [
-        "A hálószoba itt van.",
-        "A hálószoba itt vannak.",
-        "A hálószoba van ittünk."
+        "hálószobában",
+        "hálószobaban",
+        "hálószobán"
       ],
       "correct": 0
     }

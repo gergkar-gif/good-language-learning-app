@@ -4,69 +4,74 @@
     {
       "id": "a1-30-review-1",
       "type": "multiple-choice",
-      "category": "review",
-      "question": "Choose the familiar Hungarian word.",
+      "category": "vocabulary",
+      "question": "Which means 'wife'?",
       "options": [
-        "családtag",
-        "együtt",
-        "xyz"
+        "feleség",
+        "férj",
+        "nagymama"
       ],
       "correct": 0
     },
     {
       "id": "a1-30-review-2",
       "type": "multiple-choice",
-      "category": "review",
-      "question": "Choose the correct form.",
+      "category": "vocabulary",
+      "question": "Which means 'grandfather'?",
       "options": [
-        "együtt",
-        "sok",
-        "xyz"
+        "nagypapa",
+        "nagymama",
+        "férj"
       ],
       "correct": 0
     },
     {
       "id": "a1-30-introduce-1",
       "type": "multiple-choice",
-      "category": "introduce",
-      "question": "Which word is being introduced?",
+      "category": "vocabulary",
+      "question": "Which word means 'family member'?",
       "options": [
         "családtag",
-        "együtt",
-        "sok"
+        "család",
+        "testvér"
       ],
       "correct": 0
     },
     {
       "id": "a1-30-introduce-2",
-      "type": "fill-blank",
-      "category": "introduce",
-      "sentence": "____.",
-      "answer": "együtt"
+      "type": "multiple-choice",
+      "category": "vocabulary",
+      "question": "Which word means 'together'?",
+      "options": [
+        "együtt",
+        "sok",
+        "egy"
+      ],
+      "correct": 0
     },
     {
       "id": "a1-30-controlled-1",
       "type": "multiple-choice",
-      "category": "controlled",
-      "question": "Choose the correct word.",
+      "category": "grammar",
+      "question": "____ családtag van a képen. (many)",
       "options": [
-        "családtag",
-        "együtt",
-        "sok"
+        "Sok",
+        "Egy",
+        "Együtt"
       ],
       "correct": 0
     },
     {
       "id": "a1-30-controlled-2",
       "type": "fill-blank",
-      "category": "controlled",
-      "sentence": "____.",
+      "category": "vocabulary",
+      "sentence": "A család ____ van. (together)",
       "answer": "együtt"
     },
     {
       "id": "a1-30-controlled-3",
       "type": "matching",
-      "category": "controlled",
+      "category": "vocabulary",
       "pairs": [
         [
           "családtag",
@@ -89,122 +94,120 @@
     {
       "id": "a1-30-controlled-4",
       "type": "sentence-builder",
-      "category": "controlled",
+      "category": "grammar",
       "tiles": [
+        "Sok",
         "családtag",
-        "együtt",
+        "van",
+        "a",
+        "képen",
         "."
       ],
       "solution": [
+        "Sok",
         "családtag",
-        "együtt",
+        "van",
+        "a",
+        "képen",
         "."
       ],
-      "english": "családtag együtt."
+      "english": "There are many family members in the photo."
     },
     {
       "id": "a1-30-practice-1",
       "type": "multiple-choice",
-      "category": "practice",
-      "question": "Choose the target word.",
+      "category": "grammar",
+      "question": "After 'sok', does the noun stay singular or become plural?",
       "options": [
-        "családtag",
-        "együtt",
-        "xyz"
+        "singular",
+        "plural",
+        "either"
       ],
       "correct": 0
     },
     {
       "id": "a1-30-practice-2",
       "type": "fill-blank",
-      "category": "practice",
-      "sentence": "____.",
-      "answer": "együtt"
+      "category": "grammar",
+      "sentence": "____ testvérem van. (one)",
+      "answer": "Egy"
     },
     {
       "id": "a1-30-practice-3",
       "type": "matching",
-      "category": "practice",
+      "category": "grammar",
       "pairs": [
         [
-          "családtag",
-          "family member"
+          "Sok családtag van a képen.",
+          "There are many family members in the photo."
         ],
         [
-          "együtt",
-          "together"
+          "A családtagok együtt vannak.",
+          "The family members are together."
         ],
         [
-          "sok",
-          "many"
+          "Egy testvérem van.",
+          "I have one sibling."
         ],
         [
-          "egy",
-          "one"
+          "A család együtt van.",
+          "The family is together."
         ]
       ]
     },
     {
       "id": "a1-30-practice-4",
       "type": "sentence-builder",
-      "category": "practice",
+      "category": "grammar",
       "tiles": [
-        "családtag",
+        "A",
+        "családtagok",
         "együtt",
+        "vannak",
         "."
       ],
       "solution": [
-        "családtag",
+        "A",
+        "családtagok",
         "együtt",
+        "vannak",
         "."
       ],
-      "english": "családtag együtt."
+      "english": "The family members are together."
     },
     {
       "id": "a1-30-practice-5",
-      "type": "dialogue-complete",
-      "category": "practice",
-      "prompt": [
-        {
-          "speaker": "Meg",
-          "text": "Mi ez?"
-        },
-        {
-          "speaker": "Károly",
-          "text": "_____"
-        }
+      "type": "sentence-order",
+      "category": "vocabulary",
+      "sentences": [
+        "Sok családtag van a képen.",
+        "Ki ő?",
+        "Ő a nagymamám."
       ],
-      "options": [
-        "Ez családtag.",
-        "Ő együtt."
-      ],
-      "correct": 0
+      "solution": [
+        1,
+        2,
+        0
+      ]
     },
     {
       "id": "a1-30-practice-6",
-      "type": "sentence-order",
-      "category": "practice",
-      "words": [
-        "családtag",
-        "együtt"
+      "type": "multiple-choice",
+      "category": "grammar",
+      "question": "Choose the correct sentence for 'I have one brother.'",
+      "options": [
+        "Egy bátyám van.",
+        "Egy bátyáim van.",
+        "Bátyám egy van."
       ],
-      "solution": [
-        "családtag",
-        "együtt"
-      ],
-      "english": "családtag együtt."
+      "correct": 0
     },
     {
       "id": "a1-30-practice-7",
-      "type": "multiple-choice",
-      "category": "practice",
-      "question": "Choose the natural answer.",
-      "options": [
-        "családtag",
-        "együtt",
-        "sok"
-      ],
-      "correct": 0
+      "type": "fill-blank",
+      "category": "vocabulary",
+      "sentence": "A családtagok ____ vannak. (together)",
+      "answer": "együtt"
     },
     {
       "id": "a1-30-dialogue-1",
@@ -212,17 +215,17 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Károly",
-          "text": "Mi ez?"
+          "speaker": "Meg",
+          "text": "Sok családtag van a képen."
         },
         {
-          "speaker": "Meg",
+          "speaker": "Károly",
           "text": "_____"
         }
       ],
       "options": [
-        "Ez családtag.",
-        "Ő együtt."
+        "Igen, együtt vagyunk.",
+        "Ez egy ajtó."
       ],
       "correct": 0
     },
@@ -232,17 +235,17 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Milyen?"
+          "speaker": "Károly",
+          "text": "A családtagok együtt vannak."
         },
         {
-          "speaker": "Károly",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "együtt",
-        "sok"
+        "Szép!",
+        "Ez egy kulcs."
       ],
       "correct": 0
     },
@@ -250,37 +253,45 @@
       "id": "a1-30-writing-1",
       "type": "structured-writing",
       "category": "writing",
-      "prompt": "Write a short Hungarian sentence using a target word.",
-      "answer": "családtag."
+      "template": [
+        {
+          "prompt": "Say 'There are many family members here.' in Hungarian.",
+          "answer": "Sok családtag van itt."
+        }
+      ]
     },
     {
       "id": "a1-30-writing-2",
       "type": "structured-writing",
       "category": "writing",
-      "prompt": "Write another short Hungarian sentence using a target word.",
-      "answer": "együtt."
+      "template": [
+        {
+          "prompt": "Say 'The family is together.' in Hungarian.",
+          "answer": "A család együtt van."
+        }
+      ]
     },
     {
       "id": "a1-30-check-1",
       "type": "multiple-choice",
-      "category": "check",
-      "question": "Choose the correct target word.",
+      "category": "vocabulary",
+      "question": "Which means 'many'?",
       "options": [
-        "családtag",
-        "együtt",
-        "xyz"
+        "sok",
+        "egy",
+        "együtt"
       ],
       "correct": 0
     },
     {
       "id": "a1-30-check-2",
       "type": "multiple-choice",
-      "category": "check",
-      "question": "Choose the correct target word.",
+      "category": "vocabulary",
+      "question": "Which means 'family member'?",
       "options": [
-        "együtt",
-        "sok",
-        "xyz"
+        "családtag",
+        "család",
+        "testvér"
       ],
       "correct": 0
     }

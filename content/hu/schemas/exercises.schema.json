@@ -12,7 +12,7 @@
   "properties": {
     "lesson": {
       "type": "string",
-      "pattern": "^(a1|a2|b1|b2|c1)-(\\d{2}[a-z]?|[a-z]+)(-(\\d{2}|consolidation))?$",
+      "pattern": "^(a1|a2|b1|b2|c1)-(\\d{2,3}[a-z]?|[a-z]+)(-(\\d{2}|consolidation))?$",
       "description": "Owning lesson, e.g. a1-01. A unit split into several lessons adds a third segment, e.g. a1-01-01, a1-01-consolidation. The unit segment is a word instead of a number only where a number would collide with another unit's old lesson slot, e.g. a1-cafe-01.",
       "examples": [
         "a1-01",

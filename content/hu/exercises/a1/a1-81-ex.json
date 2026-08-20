@@ -5,11 +5,11 @@
       "id": "a1-81-review-1",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the useful Hungarian item.",
+      "question": "Which word means \"Friday\"?",
       "options": [
-        "mindig",
-        "gyakran",
-        "szokott"
+        "péntek",
+        "szombat",
+        "vasárnap"
       ],
       "correct": 0
     },
@@ -17,11 +17,11 @@
       "id": "a1-81-review-2",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Which item belongs to this lesson?",
+      "question": "Which sentence means \"We'll meet on Friday\"?",
       "options": [
-        "gyakran",
-        "szokott",
-        "általában"
+        "Találkozunk pénteken.",
+        "Találkozó pénteken van.",
+        "Péntek találkozunk."
       ],
       "correct": 0
     },
@@ -29,11 +29,11 @@
       "id": "a1-81-intro-1",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which sentence uses mindig naturally?",
+      "question": "Which word means \"always\"?",
       "options": [
-        "A mindig itt van.",
-        "A mindig megy.",
-        "mindig ember."
+        "mindig",
+        "gyakran",
+        "néha"
       ],
       "correct": 0
     },
@@ -41,11 +41,11 @@
       "id": "a1-81-intro-2",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which word is gyakran?",
+      "question": "Which word means \"often\"?",
       "options": [
         "gyakran",
-        "szokott",
-        "általában"
+        "mindig",
+        "ritkán"
       ],
       "correct": 0
     },
@@ -56,19 +56,19 @@
       "pairs": [
         [
           "mindig",
-          "target 1"
+          "always"
         ],
         [
           "gyakran",
-          "target 2"
+          "often"
         ],
         [
           "szokott",
-          "target 3"
+          "usually does / tends to"
         ],
         [
           "általában",
-          "target 4"
+          "usually / generally"
         ]
       ]
     },
@@ -76,7 +76,7 @@
       "id": "a1-81-controlled-2",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "Ez a(z) ____.",
+      "sentence": "Én ____ reggel tanulok. (always)",
       "answer": "mindig"
     },
     {
@@ -85,9 +85,9 @@
       "category": "controlled",
       "question": "Choose the natural sentence.",
       "options": [
-        "A gyakran fontos.",
-        "A gyakran fontosak.",
-        "gyakran a fontos."
+        "Gyakran sportolok.",
+        "Sportolok gyakran vagyok.",
+        "Gyakran vagyok sportolok."
       ],
       "correct": 0
     },
@@ -95,18 +95,18 @@
       "id": "a1-81-controlled-4",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "A ____ itt van.",
-      "answer": "gyakran"
+      "sentence": "Iskolában is ____ tanulni. (usually / habitually)",
+      "answer": "szokott"
     },
     {
       "id": "a1-81-practice-1",
       "type": "multiple-choice",
       "category": "practice",
-      "question": "Which answer fits?",
+      "question": "Which answer fits \"Te gyakran sportolsz?\"",
       "options": [
-        "Igen, mindig.",
-        "Hol, szokott?",
-        "Nem általában?"
+        "Általában igen.",
+        "Általában sportol.",
+        "Igen, sport vagyok."
       ],
       "correct": 0
     },
@@ -114,8 +114,8 @@
       "id": "a1-81-practice-2",
       "type": "fill-blank",
       "category": "practice",
-      "sentence": "Ma ____ van.",
-      "answer": "mindig"
+      "sentence": "____ sportolok, de néha pihenek. (usually)",
+      "answer": "Általában"
     },
     {
       "id": "a1-81-practice-3",
@@ -123,20 +123,20 @@
       "category": "practice",
       "pairs": [
         [
-          "mindig",
-          "meaning 1"
+          "Mindig reggel tanulok.",
+          "I always study in the morning."
         ],
         [
-          "gyakran",
-          "meaning 2"
+          "Általában sportolok.",
+          "I usually do sports."
         ],
         [
-          "szokott",
-          "meaning 3"
+          "Iskolában is szokott tanulni.",
+          "At school they usually study too."
         ],
         [
-          "általában",
-          "meaning 4"
+          "Te gyakran sportolsz?",
+          "Do you often do sports?"
         ]
       ]
     },
@@ -145,20 +145,18 @@
       "type": "sentence-builder",
       "category": "practice",
       "tiles": [
-        "A",
-        "mindig",
-        "itt",
-        "van",
+        "Mindig",
+        "reggel",
+        "tanulok",
         "."
       ],
       "solution": [
-        "A",
-        "mindig",
-        "itt",
-        "van",
+        "Mindig",
+        "reggel",
+        "tanulok",
         "."
       ],
-      "english": "The mindig is here."
+      "english": "I always study in the morning."
     },
     {
       "id": "a1-81-practice-5",
@@ -166,17 +164,17 @@
       "category": "practice",
       "prompt": [
         {
-          "speaker": "Károly",
-          "text": "Hol van?"
+          "speaker": "Meg",
+          "text": "Én mindig reggel tanulok. Te gyakran sportolsz?"
         },
         {
-          "speaker": "Meg",
+          "speaker": "Károly",
           "text": "_____"
         }
       ],
       "options": [
-        "A gyakran van.",
-        "A szokott megy."
+        "Általában igen.",
+        "Mindig szombat."
       ],
       "correct": 0
     },
@@ -186,17 +184,17 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Károly",
-          "text": "Rendben?"
+          "speaker": "Meg",
+          "text": "Mindig reggel tanulsz?"
         },
         {
-          "speaker": "Meg",
+          "speaker": "Károly",
           "text": "_____"
         }
       ],
       "options": [
-        "Igen, rendben.",
-        "Nem tudom."
+        "Igen, mindig reggel tanulok.",
+        "Igen, mindig reggel tanul."
       ],
       "correct": 0
     },
@@ -204,11 +202,11 @@
       "id": "a1-81-dialogue-2",
       "type": "multiple-choice",
       "category": "dialogue",
-      "question": "Choose the natural reply.",
+      "question": "Choose the natural reply to \"Gyakran sportolsz?\"",
       "options": [
-        "Rendben, gyakran.",
-        "szokott hol.",
-        "Nem általában."
+        "Igen, gyakran sportolok.",
+        "Igen, gyakran sportolsz.",
+        "Igen, sport vagyok."
       ],
       "correct": 0
     },
@@ -218,8 +216,8 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Write one short Hungarian sentence using a target word.",
-          "answer": "Use mindig in a simple sentence."
+          "prompt": "Write \"I always study in the morning.\" in Hungarian.",
+          "answer": "Mindig reggel tanulok."
         }
       ]
     },
@@ -229,8 +227,8 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Write another short Hungarian sentence using a target word.",
-          "answer": "Use gyakran in a simple sentence."
+          "prompt": "Write \"I usually do sports, but sometimes I rest.\" in Hungarian.",
+          "answer": "Általában sportolok, de néha pihenek."
         }
       ]
     },
@@ -238,11 +236,11 @@
       "id": "a1-81-check-1",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Which target word completes the sentence?",
+      "question": "Which word means \"usually / generally\"?",
       "options": [
+        "általában",
         "mindig",
-        "szokott",
-        "általában"
+        "gyakran"
       ],
       "correct": 0
     },
@@ -250,11 +248,11 @@
       "id": "a1-81-check-2",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Which sentence is natural?",
+      "question": "In szokott tanulni, which part carries the person ending?",
       "options": [
-        "A gyakran itt van.",
-        "A gyakran itt vannak.",
-        "A gyakran van ittünk."
+        "szokott",
+        "tanulni",
+        "neither"
       ],
       "correct": 0
     }

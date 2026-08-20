@@ -5,7 +5,31 @@
       "id": "a1-82-review-1",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the useful Hungarian item.",
+      "question": "Which word means \"always\"?",
+      "options": [
+        "mindig",
+        "gyakran",
+        "szokott"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-82-review-2",
+      "type": "multiple-choice",
+      "category": "review",
+      "question": "Which sentence means \"I usually do sports, but sometimes I rest\"?",
+      "options": [
+        "Általában sportolok, de néha pihenek.",
+        "Mindig sportolok, de soha pihenek.",
+        "Gyakran pihenek, de mindig sportolok."
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-82-intro-1",
+      "type": "multiple-choice",
+      "category": "introduce",
+      "question": "Which word means \"sometimes\"?",
       "options": [
         "néha",
         "ritkán",
@@ -14,38 +38,14 @@
       "correct": 0
     },
     {
-      "id": "a1-82-review-2",
-      "type": "multiple-choice",
-      "category": "review",
-      "question": "Which item belongs to this lesson?",
-      "options": [
-        "ritkán",
-        "soha",
-        "gyakran"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "a1-82-intro-1",
-      "type": "multiple-choice",
-      "category": "introduce",
-      "question": "Which sentence uses néha naturally?",
-      "options": [
-        "A néha itt van.",
-        "A néha megy.",
-        "néha ember."
-      ],
-      "correct": 0
-    },
-    {
       "id": "a1-82-intro-2",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which word is ritkán?",
+      "question": "Which word means \"never\"?",
       "options": [
-        "ritkán",
         "soha",
-        "gyakran"
+        "néha",
+        "ritkán"
       ],
       "correct": 0
     },
@@ -56,19 +56,19 @@
       "pairs": [
         [
           "néha",
-          "target 1"
+          "sometimes"
         ],
         [
           "ritkán",
-          "target 2"
+          "rarely"
         ],
         [
           "soha",
-          "target 3"
+          "never"
         ],
         [
           "gyakran",
-          "target 4"
+          "often"
         ]
       ]
     },
@@ -76,18 +76,18 @@
       "id": "a1-82-controlled-2",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "Ez a(z) ____.",
+      "sentence": "Általában sportolok, de ____ pihenek. (sometimes)",
       "answer": "néha"
     },
     {
       "id": "a1-82-controlled-3",
       "type": "multiple-choice",
       "category": "controlled",
-      "question": "Choose the natural sentence.",
+      "question": "Choose the grammatically correct sentence.",
       "options": [
-        "A ritkán fontos.",
-        "A ritkán fontosak.",
-        "ritkán a fontos."
+        "Soha nem dolgozom vasárnap.",
+        "Soha dolgozom vasárnap.",
+        "Nem soha dolgozom vasárnap."
       ],
       "correct": 0
     },
@@ -95,18 +95,18 @@
       "id": "a1-82-controlled-4",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "A ____ itt van.",
+      "sentence": "Én ____ dolgozom hétvégén. (rarely)",
       "answer": "ritkán"
     },
     {
       "id": "a1-82-practice-1",
       "type": "multiple-choice",
       "category": "practice",
-      "question": "Which answer fits?",
+      "question": "Which is the correct way to say \"never\" inside a sentence?",
       "options": [
-        "Igen, néha.",
-        "Hol, soha?",
-        "Nem gyakran?"
+        "soha nem",
+        "csak soha",
+        "nem soha"
       ],
       "correct": 0
     },
@@ -114,8 +114,8 @@
       "id": "a1-82-practice-2",
       "type": "fill-blank",
       "category": "practice",
-      "sentence": "Ma ____ van.",
-      "answer": "néha"
+      "sentence": "Soha ____ dolgozom vasárnap. (not — completes the negative)",
+      "answer": "nem"
     },
     {
       "id": "a1-82-practice-3",
@@ -123,20 +123,20 @@
       "category": "practice",
       "pairs": [
         [
-          "néha",
-          "meaning 1"
+          "Én ritkán dolgozom hétvégén.",
+          "I rarely work on the weekend."
         ],
         [
-          "ritkán",
-          "meaning 2"
+          "Soha nem dolgozom vasárnap.",
+          "I never work on Sunday."
         ],
         [
-          "soha",
-          "meaning 3"
+          "Általában sportolok, de néha pihenek.",
+          "I usually do sports, but sometimes I rest."
         ],
         [
-          "gyakran",
-          "meaning 4"
+          "Gyakran sportolsz?",
+          "Do you often do sports?"
         ]
       ]
     },
@@ -145,20 +145,20 @@
       "type": "sentence-builder",
       "category": "practice",
       "tiles": [
-        "A",
-        "néha",
-        "itt",
-        "van",
+        "Soha",
+        "nem",
+        "dolgozom",
+        "vasárnap",
         "."
       ],
       "solution": [
-        "A",
-        "néha",
-        "itt",
-        "van",
+        "Soha",
+        "nem",
+        "dolgozom",
+        "vasárnap",
         "."
       ],
-      "english": "The néha is here."
+      "english": "I never work on Sunday."
     },
     {
       "id": "a1-82-practice-5",
@@ -167,7 +167,7 @@
       "prompt": [
         {
           "speaker": "Károly",
-          "text": "Hol van?"
+          "text": "Dolgozol vasárnap?"
         },
         {
           "speaker": "Meg",
@@ -175,8 +175,8 @@
         }
       ],
       "options": [
-        "A ritkán van.",
-        "A soha megy."
+        "Soha nem dolgozom vasárnap.",
+        "Soha dolgozom vasárnap."
       ],
       "correct": 0
     },
@@ -186,17 +186,17 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Károly",
-          "text": "Rendben?"
+          "speaker": "Meg",
+          "text": "Én ritkán dolgozom hétvégén."
         },
         {
-          "speaker": "Meg",
+          "speaker": "Károly",
           "text": "_____"
         }
       ],
       "options": [
-        "Igen, rendben.",
-        "Nem tudom."
+        "Én is ritkán dolgozom.",
+        "Én mindig ritkán."
       ],
       "correct": 0
     },
@@ -204,11 +204,11 @@
       "id": "a1-82-dialogue-2",
       "type": "multiple-choice",
       "category": "dialogue",
-      "question": "Choose the natural reply.",
+      "question": "Choose the natural reply to \"Néha pihensz?\"",
       "options": [
-        "Rendben, ritkán.",
-        "soha hol.",
-        "Nem gyakran."
+        "Igen, néha pihenek.",
+        "Igen, néha pihensz.",
+        "Igen, pihenés vagyok."
       ],
       "correct": 0
     },
@@ -218,8 +218,8 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Write one short Hungarian sentence using a target word.",
-          "answer": "Use néha in a simple sentence."
+          "prompt": "Write \"I never work on Sunday.\" in Hungarian.",
+          "answer": "Soha nem dolgozom vasárnap."
         }
       ]
     },
@@ -229,8 +229,8 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Write another short Hungarian sentence using a target word.",
-          "answer": "Use ritkán in a simple sentence."
+          "prompt": "Write \"I rarely work on the weekend.\" in Hungarian.",
+          "answer": "Én ritkán dolgozom hétvégén."
         }
       ]
     },
@@ -238,11 +238,11 @@
       "id": "a1-82-check-1",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Which target word completes the sentence?",
+      "question": "Which word means \"rarely\"?",
       "options": [
+        "ritkán",
         "néha",
-        "soha",
-        "gyakran"
+        "soha"
       ],
       "correct": 0
     },
@@ -250,11 +250,11 @@
       "id": "a1-82-check-2",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Which sentence is natural?",
+      "question": "Which sentence correctly uses negative concord?",
       "options": [
-        "A ritkán itt van.",
-        "A ritkán itt vannak.",
-        "A ritkán van ittünk."
+        "Soha nem dolgozom vasárnap.",
+        "Soha dolgozom vasárnap.",
+        "Nem soha dolgozom vasárnap."
       ],
       "correct": 0
     }

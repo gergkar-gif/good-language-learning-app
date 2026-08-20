@@ -4,26 +4,55 @@
     {
       "id": "a1-35-consolidation-1",
       "type": "multiple-choice",
-      "category": "review",
-      "question": "Review the unit language.",
-      "options": [
-        "A",
-        "B",
-        "C"
-      ],
+      "category": "consolidation",
+      "question": "Milyen ő? Ő ____.",
+      "options": ["magas", "van magas", "magas van"],
       "correct": 0
     },
     {
       "id": "a1-35-consolidation-2",
+      "type": "matching",
+      "category": "consolidation",
+      "pairs": [
+        ["kedves", "kind"],
+        ["vicces", "funny"],
+        ["erős", "strong"],
+        ["fiatal", "young"]
+      ]
+    },
+    {
+      "id": "a1-35-consolidation-3",
+      "type": "fill-blank",
+      "category": "consolidation",
+      "sentence": "Ő magas, de ők ____. (tall, plural)",
+      "answer": "magasak"
+    },
+    {
+      "id": "a1-35-consolidation-4",
       "type": "multiple-choice",
-      "category": "review",
-      "question": "Review the unit language.",
-      "options": [
-        "A",
-        "B",
-        "C"
-      ],
+      "category": "consolidation",
+      "question": "Which sentence uses an adjective correctly in front of a noun?",
+      "options": ["Egy magas férfi.", "Egy magasak férfi.", "Férfi magas egy."],
       "correct": 0
+    },
+    {
+      "id": "a1-35-consolidation-5",
+      "type": "dialogue-complete",
+      "category": "consolidation",
+      "prompt": [
+        { "speaker": "Meg", "text": "Milyen a barátod?" },
+        { "speaker": "Károly", "text": "_____" }
+      ],
+      "options": ["Nagyon kedves és vicces.", "Nagyon kedves és vicces van."],
+      "correct": 0
+    },
+    {
+      "id": "a1-35-consolidation-6",
+      "type": "sentence-builder",
+      "category": "consolidation",
+      "tiles": ["Kicsi", ",", "de", "erős", "."],
+      "solution": ["Kicsi", ",", "de", "erős", "."],
+      "english": "Small, but strong."
     }
   ]
 }

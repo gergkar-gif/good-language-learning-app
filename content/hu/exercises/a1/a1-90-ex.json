@@ -5,11 +5,11 @@
       "id": "a1-90-review-1",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the useful Hungarian item.",
+      "question": "Which word means \"between\"?",
       "options": [
-        "otthonos",
-        "tiszta",
-        "kényelmes"
+        "között",
+        "mellett",
+        "előtt"
       ],
       "correct": 0
     },
@@ -17,11 +17,11 @@
       "id": "a1-90-review-2",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Which item belongs to this lesson?",
+      "question": "Which reads correctly as \"behind the window\"?",
       "options": [
-        "tiszta",
-        "kényelmes",
-        "világos"
+        "ablak mögött",
+        "mögött ablak",
+        "ablak mögötte"
       ],
       "correct": 0
     },
@@ -29,11 +29,11 @@
       "id": "a1-90-intro-1",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which sentence uses otthonos naturally?",
+      "question": "Which word means \"bright\"?",
       "options": [
-        "A otthonos itt van.",
-        "A otthonos megy.",
-        "otthonos ember."
+        "világos",
+        "tiszta",
+        "kényelmes"
       ],
       "correct": 0
     },
@@ -41,10 +41,10 @@
       "id": "a1-90-intro-2",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which word is tiszta?",
+      "question": "Which word means \"cozy\"?",
       "options": [
+        "otthonos",
         "tiszta",
-        "kényelmes",
         "világos"
       ],
       "correct": 0
@@ -56,19 +56,19 @@
       "pairs": [
         [
           "otthonos",
-          "target 1"
+          "cozy"
         ],
         [
           "tiszta",
-          "target 2"
+          "clean"
         ],
         [
           "kényelmes",
-          "target 3"
+          "comfortable"
         ],
         [
           "világos",
-          "target 4"
+          "bright"
         ]
       ]
     },
@@ -76,18 +76,18 @@
       "id": "a1-90-controlled-2",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "Ez a(z) ____.",
-      "answer": "otthonos"
+      "sentence": "A nappali ____ és otthonos. (bright)",
+      "answer": "világos"
     },
     {
       "id": "a1-90-controlled-3",
       "type": "multiple-choice",
       "category": "controlled",
-      "question": "Choose the natural sentence.",
+      "question": "Choose the grammatically correct sentence.",
       "options": [
-        "A tiszta fontos.",
-        "A tiszta fontosak.",
-        "tiszta a fontos."
+        "A nappali világos.",
+        "A nappali van világos.",
+        "A nappali világos van."
       ],
       "correct": 0
     },
@@ -95,18 +95,18 @@
       "id": "a1-90-controlled-4",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "A ____ itt van.",
-      "answer": "tiszta"
+      "sentence": "A lakás ____. (comfortable)",
+      "answer": "kényelmes"
     },
     {
       "id": "a1-90-practice-1",
       "type": "multiple-choice",
       "category": "practice",
-      "question": "Which answer fits?",
+      "question": "Which sentence lists three adjectives correctly?",
       "options": [
-        "Igen, otthonos.",
-        "Hol, kényelmes?",
-        "Nem világos?"
+        "A lakás tiszta, kényelmes és világos.",
+        "A lakás tiszta és kényelmes és világos.",
+        "A lakás tiszta, és, kényelmes és világos."
       ],
       "correct": 0
     },
@@ -114,8 +114,8 @@
       "id": "a1-90-practice-2",
       "type": "fill-blank",
       "category": "practice",
-      "sentence": "Ma ____ van.",
-      "answer": "otthonos"
+      "sentence": "A hálószoba ____ világos. (also/too)",
+      "answer": "is"
     },
     {
       "id": "a1-90-practice-3",
@@ -123,20 +123,20 @@
       "category": "practice",
       "pairs": [
         [
-          "otthonos",
-          "meaning 1"
+          "A nappali világos és otthonos.",
+          "The living room is bright and cozy."
         ],
         [
-          "tiszta",
-          "meaning 2"
+          "A lakás tiszta, kényelmes és világos.",
+          "The apartment is clean, comfortable and bright."
         ],
         [
-          "kényelmes",
-          "meaning 3"
+          "A hálószoba is világos.",
+          "The bedroom is also bright."
         ],
         [
-          "világos",
-          "meaning 4"
+          "A lakás kényelmes.",
+          "The apartment is comfortable."
         ]
       ]
     },
@@ -146,19 +146,21 @@
       "category": "practice",
       "tiles": [
         "A",
-        "otthonos",
-        "itt",
-        "van",
+        "lakás",
+        "kényelmes",
+        "és",
+        "világos",
         "."
       ],
       "solution": [
         "A",
-        "otthonos",
-        "itt",
-        "van",
+        "lakás",
+        "kényelmes",
+        "és",
+        "világos",
         "."
       ],
-      "english": "The otthonos is here."
+      "english": "The apartment is comfortable and bright."
     },
     {
       "id": "a1-90-practice-5",
@@ -167,7 +169,7 @@
       "prompt": [
         {
           "speaker": "Károly",
-          "text": "Hol van?"
+          "text": "A nappali világos és otthonos."
         },
         {
           "speaker": "Meg",
@@ -175,8 +177,8 @@
         }
       ],
       "options": [
-        "A tiszta van.",
-        "A kényelmes megy."
+        "A hálószoba is világos.",
+        "A hálószoba van világos."
       ],
       "correct": 0
     },
@@ -186,17 +188,17 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Károly",
-          "text": "Rendben?"
+          "speaker": "Meg",
+          "text": "Milyen a lakás?"
         },
         {
-          "speaker": "Meg",
+          "speaker": "Károly",
           "text": "_____"
         }
       ],
       "options": [
-        "Igen, rendben.",
-        "Nem tudom."
+        "A lakás tiszta, kényelmes és világos.",
+        "A lakás van tiszta."
       ],
       "correct": 0
     },
@@ -204,11 +206,11 @@
       "id": "a1-90-dialogue-2",
       "type": "multiple-choice",
       "category": "dialogue",
-      "question": "Choose the natural reply.",
+      "question": "Choose the natural reply to \"Milyen a konyha?\"",
       "options": [
-        "Rendben, tiszta.",
-        "kényelmes hol.",
-        "Nem világos."
+        "A konyha világos.",
+        "A konyha van világos.",
+        "A konyha világos van."
       ],
       "correct": 0
     },
@@ -218,8 +220,8 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Write one short Hungarian sentence using a target word.",
-          "answer": "Use otthonos in a simple sentence."
+          "prompt": "Write \"The living room is bright and cozy.\" in Hungarian.",
+          "answer": "A nappali világos és otthonos."
         }
       ]
     },
@@ -229,8 +231,8 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Write another short Hungarian sentence using a target word.",
-          "answer": "Use tiszta in a simple sentence."
+          "prompt": "Write \"The apartment is clean, comfortable and bright.\" in Hungarian.",
+          "answer": "A lakás tiszta, kényelmes és világos."
         }
       ]
     },
@@ -238,11 +240,11 @@
       "id": "a1-90-check-1",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Which target word completes the sentence?",
+      "question": "Which word means \"clean\"?",
       "options": [
-        "otthonos",
-        "kényelmes",
-        "világos"
+        "tiszta",
+        "világos",
+        "kényelmes"
       ],
       "correct": 0
     },
@@ -250,11 +252,11 @@
       "id": "a1-90-check-2",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Which sentence is natural?",
+      "question": "Which sentence correctly uses the zero-copula rule?",
       "options": [
-        "A tiszta itt van.",
-        "A tiszta itt vannak.",
-        "A tiszta van ittünk."
+        "A szoba kényelmes.",
+        "A szoba van kényelmes.",
+        "A szoba kényelmes van."
       ],
       "correct": 0
     }

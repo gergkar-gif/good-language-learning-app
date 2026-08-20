@@ -4,32 +4,32 @@
     {
       "id": "a1-27-review-1",
       "type": "multiple-choice",
-      "category": "review",
-      "question": "Choose the familiar Hungarian word.",
+      "category": "vocabulary",
+      "question": "Which means 'mother'?",
       "options": [
-        "testvér",
-        "fiú",
-        "xyz"
+        "anya",
+        "apa",
+        "szülő"
       ],
       "correct": 0
     },
     {
       "id": "a1-27-review-2",
       "type": "multiple-choice",
-      "category": "review",
-      "question": "Choose the correct form.",
+      "category": "grammar",
+      "question": "Which means 'my father'?",
       "options": [
-        "fiú",
-        "lány",
-        "xyz"
+        "apám",
+        "anyám",
+        "családom"
       ],
       "correct": 0
     },
     {
       "id": "a1-27-introduce-1",
       "type": "multiple-choice",
-      "category": "introduce",
-      "question": "Which word is being introduced?",
+      "category": "vocabulary",
+      "question": "Which word means 'sibling'?",
       "options": [
         "testvér",
         "fiú",
@@ -39,34 +39,39 @@
     },
     {
       "id": "a1-27-introduce-2",
-      "type": "fill-blank",
-      "category": "introduce",
-      "sentence": "____.",
-      "answer": "fiú"
-    },
-    {
-      "id": "a1-27-controlled-1",
       "type": "multiple-choice",
-      "category": "controlled",
-      "question": "Choose the correct word.",
+      "category": "vocabulary",
+      "question": "Which word means 'child'?",
       "options": [
-        "testvér",
+        "gyerek",
         "fiú",
         "lány"
       ],
       "correct": 0
     },
     {
+      "id": "a1-27-controlled-1",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "question": "Van egy ____. (I have a son.)",
+      "options": [
+        "fiam",
+        "fiú",
+        "fiúm"
+      ],
+      "correct": 0
+    },
+    {
       "id": "a1-27-controlled-2",
       "type": "fill-blank",
-      "category": "controlled",
-      "sentence": "____.",
-      "answer": "fiú"
+      "category": "grammar",
+      "sentence": "Van egy ____. (I have a daughter.)",
+      "answer": "lányom"
     },
     {
       "id": "a1-27-controlled-3",
       "type": "matching",
-      "category": "controlled",
+      "category": "vocabulary",
       "pairs": [
         [
           "testvér",
@@ -89,122 +94,112 @@
     {
       "id": "a1-27-controlled-4",
       "type": "sentence-builder",
-      "category": "controlled",
+      "category": "grammar",
       "tiles": [
-        "testvér",
-        "fiú",
+        "Van",
+        "egy",
+        "testvérem",
         "."
       ],
       "solution": [
-        "testvér",
-        "fiú",
+        "Van",
+        "egy",
+        "testvérem",
         "."
       ],
-      "english": "testvér fiú."
+      "english": "I have a sibling."
     },
     {
       "id": "a1-27-practice-1",
       "type": "multiple-choice",
-      "category": "practice",
-      "question": "Choose the target word.",
+      "category": "grammar",
+      "question": "How do you say 'I have' in Hungarian?",
       "options": [
-        "testvér",
-        "fiú",
-        "xyz"
+        "van + possessive suffix",
+        "habok",
+        "vagyok"
       ],
       "correct": 0
     },
     {
       "id": "a1-27-practice-2",
       "type": "fill-blank",
-      "category": "practice",
-      "sentence": "____.",
-      "answer": "fiú"
+      "category": "grammar",
+      "sentence": "____ testvérem. (I don't have a sibling.)",
+      "answer": "Nincs"
     },
     {
       "id": "a1-27-practice-3",
       "type": "matching",
-      "category": "practice",
+      "category": "grammar",
       "pairs": [
         [
-          "testvér",
-          "sibling"
+          "Van egy fiam.",
+          "I have a son."
         ],
         [
-          "fiú",
-          "boy / son"
+          "Van egy lányom.",
+          "I have a daughter."
         ],
         [
-          "lány",
-          "girl / daughter"
+          "Nincs testvérem.",
+          "I don't have a sibling."
         ],
         [
-          "gyerek",
-          "child"
+          "Ő egy gyerek.",
+          "He is a child."
         ]
       ]
     },
     {
       "id": "a1-27-practice-4",
       "type": "sentence-builder",
-      "category": "practice",
+      "category": "grammar",
       "tiles": [
-        "testvér",
-        "fiú",
+        "Nincs",
+        "testvérem",
         "."
       ],
       "solution": [
-        "testvér",
-        "fiú",
+        "Nincs",
+        "testvérem",
         "."
       ],
-      "english": "testvér fiú."
+      "english": "I don't have a sibling."
     },
     {
       "id": "a1-27-practice-5",
-      "type": "dialogue-complete",
-      "category": "practice",
-      "prompt": [
-        {
-          "speaker": "Meg",
-          "text": "Mi ez?"
-        },
-        {
-          "speaker": "Károly",
-          "text": "_____"
-        }
+      "type": "sentence-order",
+      "category": "vocabulary",
+      "sentences": [
+        "Szia!",
+        "Van egy fiam.",
+        "Van egy lányom."
       ],
-      "options": [
-        "Ez testvér.",
-        "Ő fiú."
-      ],
-      "correct": 0
+      "solution": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": "a1-27-practice-6",
-      "type": "sentence-order",
-      "category": "practice",
-      "words": [
-        "testvér",
-        "fiú"
+      "type": "multiple-choice",
+      "category": "grammar",
+      "question": "Choose the correct sentence for 'I don't have a son.'",
+      "options": [
+        "Nincs fiam.",
+        "Nem fiam.",
+        "Fiam nincs van."
       ],
-      "solution": [
-        "testvér",
-        "fiú"
-      ],
-      "english": "testvér fiú."
+      "correct": 0
     },
     {
       "id": "a1-27-practice-7",
-      "type": "multiple-choice",
-      "category": "practice",
-      "question": "Choose the natural answer.",
-      "options": [
-        "testvér",
-        "fiú",
-        "lány"
-      ],
-      "correct": 0
+      "type": "fill-blank",
+      "category": "vocabulary",
+      "sentence": "Ő egy ____. (child)",
+      "answer": "gyerek"
     },
     {
       "id": "a1-27-dialogue-1",
@@ -212,17 +207,17 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Károly",
-          "text": "Mi ez?"
+          "speaker": "Meg",
+          "text": "Van testvéred?"
         },
         {
-          "speaker": "Meg",
+          "speaker": "Károly",
           "text": "_____"
         }
       ],
       "options": [
-        "Ez testvér.",
-        "Ő fiú."
+        "Igen. Van egy fiú és egy lány.",
+        "Ez egy telefon."
       ],
       "correct": 0
     },
@@ -232,17 +227,17 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Milyen?"
+          "speaker": "Károly",
+          "text": "Ki ő?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "fiú",
-        "lány"
+        "Ő a gyerekem.",
+        "Ez egy szoba."
       ],
       "correct": 0
     },
@@ -250,37 +245,45 @@
       "id": "a1-27-writing-1",
       "type": "structured-writing",
       "category": "writing",
-      "prompt": "Write a short Hungarian sentence using a target word.",
-      "answer": "testvér."
+      "template": [
+        {
+          "prompt": "Say 'I have a sibling.' in Hungarian.",
+          "answer": "Van egy testvérem."
+        }
+      ]
     },
     {
       "id": "a1-27-writing-2",
       "type": "structured-writing",
       "category": "writing",
-      "prompt": "Write another short Hungarian sentence using a target word.",
-      "answer": "fiú."
+      "template": [
+        {
+          "prompt": "Say 'I don't have a sibling.' in Hungarian.",
+          "answer": "Nincs testvérem."
+        }
+      ]
     },
     {
       "id": "a1-27-check-1",
       "type": "multiple-choice",
-      "category": "check",
-      "question": "Choose the correct target word.",
+      "category": "grammar",
+      "question": "Which means 'I have a son'?",
       "options": [
-        "testvér",
-        "fiú",
-        "xyz"
+        "Van egy fiam.",
+        "Van egy fiú.",
+        "Fiam van."
       ],
       "correct": 0
     },
     {
       "id": "a1-27-check-2",
       "type": "multiple-choice",
-      "category": "check",
-      "question": "Choose the correct target word.",
+      "category": "vocabulary",
+      "question": "Which means 'child'?",
       "options": [
-        "fiú",
-        "lány",
-        "xyz"
+        "gyerek",
+        "testvér",
+        "lány"
       ],
       "correct": 0
     }

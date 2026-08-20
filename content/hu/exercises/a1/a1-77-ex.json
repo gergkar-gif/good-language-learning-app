@@ -5,11 +5,11 @@
       "id": "a1-77-review-1",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the useful Hungarian item.",
+      "question": "Which word means \"hour / o'clock\"?",
       "options": [
-        "reggel",
-        "délben",
-        "délután"
+        "óra",
+        "nap",
+        "hét"
       ],
       "correct": 0
     },
@@ -17,11 +17,11 @@
       "id": "a1-77-review-2",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Which item belongs to this lesson?",
+      "question": "Which clock time is 9:30?",
       "options": [
-        "délben",
-        "délután",
-        "este"
+        "Fél tíz.",
+        "Negyed tíz.",
+        "Tíz óra."
       ],
       "correct": 0
     },
@@ -29,11 +29,11 @@
       "id": "a1-77-intro-1",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which sentence uses reggel naturally?",
+      "question": "Which word means \"morning\"?",
       "options": [
-        "A reggel itt van.",
-        "A reggel megy.",
-        "reggel ember."
+        "reggel",
+        "délután",
+        "este"
       ],
       "correct": 0
     },
@@ -41,11 +41,11 @@
       "id": "a1-77-intro-2",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which word is délben?",
+      "question": "Which word means \"evening\"?",
       "options": [
-        "délben",
-        "délután",
-        "este"
+        "este",
+        "reggel",
+        "délben"
       ],
       "correct": 0
     },
@@ -56,19 +56,19 @@
       "pairs": [
         [
           "reggel",
-          "target 1"
+          "morning"
         ],
         [
           "délben",
-          "target 2"
+          "at noon"
         ],
         [
           "délután",
-          "target 3"
+          "afternoon"
         ],
         [
           "este",
-          "target 4"
+          "evening"
         ]
       ]
     },
@@ -76,8 +76,8 @@
       "id": "a1-77-controlled-2",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "Ez a(z) ____.",
-      "answer": "reggel"
+      "sentence": "____ dolgozom. (in the morning)",
+      "answer": "Reggel"
     },
     {
       "id": "a1-77-controlled-3",
@@ -85,9 +85,9 @@
       "category": "controlled",
       "question": "Choose the natural sentence.",
       "options": [
-        "A délben fontos.",
-        "A délben fontosak.",
-        "délben a fontos."
+        "Este otthon vagyok.",
+        "Este otthon van.",
+        "Este otthon vagy."
       ],
       "correct": 0
     },
@@ -95,18 +95,18 @@
       "id": "a1-77-controlled-4",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "A ____ itt van.",
-      "answer": "délben"
+      "sentence": "____ szabad vagyok. (in the afternoon)",
+      "answer": "Délután"
     },
     {
       "id": "a1-77-practice-1",
       "type": "multiple-choice",
       "category": "practice",
-      "question": "Which answer fits?",
+      "question": "Which answer fits \"Mikor dolgozol?\" (When do you work?)",
       "options": [
-        "Igen, reggel.",
-        "Hol, délután?",
-        "Nem este?"
+        "Délben dolgozom.",
+        "Délben vagyok.",
+        "Reggel te vagy."
       ],
       "correct": 0
     },
@@ -114,8 +114,8 @@
       "id": "a1-77-practice-2",
       "type": "fill-blank",
       "category": "practice",
-      "sentence": "Ma ____ van.",
-      "answer": "reggel"
+      "sentence": "Délben dolgozom, délután szabad vagyok, ____ otthon vagyok. (in the evening)",
+      "answer": "este"
     },
     {
       "id": "a1-77-practice-3",
@@ -123,20 +123,20 @@
       "category": "practice",
       "pairs": [
         [
-          "reggel",
-          "meaning 1"
+          "Reggel dolgozom.",
+          "I work in the morning."
         ],
         [
-          "délben",
-          "meaning 2"
+          "Délután szabad vagyok.",
+          "I'm free in the afternoon."
         ],
         [
-          "délután",
-          "meaning 3"
+          "Este otthon vagyok.",
+          "I'm home in the evening."
         ],
         [
-          "este",
-          "meaning 4"
+          "Délben ebédelek.",
+          "I have lunch at noon."
         ]
       ]
     },
@@ -145,20 +145,16 @@
       "type": "sentence-builder",
       "category": "practice",
       "tiles": [
-        "A",
-        "reggel",
-        "itt",
-        "van",
+        "Reggel",
+        "dolgozom",
         "."
       ],
       "solution": [
-        "A",
-        "reggel",
-        "itt",
-        "van",
+        "Reggel",
+        "dolgozom",
         "."
       ],
-      "english": "The reggel is here."
+      "english": "I work in the morning."
     },
     {
       "id": "a1-77-practice-5",
@@ -167,7 +163,7 @@
       "prompt": [
         {
           "speaker": "Károly",
-          "text": "Hol van?"
+          "text": "Mikor vagy szabad?"
         },
         {
           "speaker": "Meg",
@@ -175,8 +171,8 @@
         }
       ],
       "options": [
-        "A délben van.",
-        "A délután megy."
+        "Délután szabad vagyok.",
+        "Reggel az asztal van."
       ],
       "correct": 0
     },
@@ -187,7 +183,7 @@
       "prompt": [
         {
           "speaker": "Károly",
-          "text": "Rendben?"
+          "text": "Mikor vagy otthon?"
         },
         {
           "speaker": "Meg",
@@ -195,8 +191,8 @@
         }
       ],
       "options": [
-        "Igen, rendben.",
-        "Nem tudom."
+        "Este otthon vagyok.",
+        "Este otthon van."
       ],
       "correct": 0
     },
@@ -204,11 +200,11 @@
       "id": "a1-77-dialogue-2",
       "type": "multiple-choice",
       "category": "dialogue",
-      "question": "Choose the natural reply.",
+      "question": "Choose the natural reply to \"Mit csinálsz délután?\"",
       "options": [
-        "Rendben, délben.",
-        "délután hol.",
-        "Nem este."
+        "Délután tanulok.",
+        "Délután tanul.",
+        "Reggel tanulok."
       ],
       "correct": 0
     },
@@ -218,8 +214,8 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Write one short Hungarian sentence using a target word.",
-          "answer": "Use reggel in a simple sentence."
+          "prompt": "Write \"I work at noon.\" in Hungarian.",
+          "answer": "Délben dolgozom."
         }
       ]
     },
@@ -229,8 +225,8 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Write another short Hungarian sentence using a target word.",
-          "answer": "Use délben in a simple sentence."
+          "prompt": "Write \"I'm home in the evening.\" in Hungarian.",
+          "answer": "Este otthon vagyok."
         }
       ]
     },
@@ -238,10 +234,10 @@
       "id": "a1-77-check-1",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Which target word completes the sentence?",
+      "question": "Which word means \"afternoon\"?",
       "options": [
-        "reggel",
         "délután",
+        "délben",
         "este"
       ],
       "correct": 0
@@ -250,11 +246,11 @@
       "id": "a1-77-check-2",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Which sentence is natural?",
+      "question": "\"Délben dolgozom, délután szabad vagyok, este otthon vagyok.\" — What does this describe?",
       "options": [
-        "A délben itt van.",
-        "A délben itt vannak.",
-        "A délben van ittünk."
+        "A daily schedule across noon, afternoon and evening.",
+        "A weekly schedule across days.",
+        "A list of rooms in a home."
       ],
       "correct": 0
     }

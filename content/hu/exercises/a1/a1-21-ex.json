@@ -4,32 +4,32 @@
     {
       "id": "a1-21-review-1",
       "type": "multiple-choice",
-      "category": "review",
-      "question": "Choose the familiar Hungarian word.",
+      "category": "vocabulary",
+      "question": "Which means 'who'?",
       "options": [
-        "ez",
-        "az",
-        "xyz"
+        "ki",
+        "mi",
+        "van"
       ],
       "correct": 0
     },
     {
       "id": "a1-21-review-2",
       "type": "multiple-choice",
-      "category": "review",
-      "question": "Choose the correct form.",
+      "category": "grammar",
+      "question": "Én Károly ____.",
       "options": [
-        "az",
-        "mi",
-        "xyz"
+        "vagyok",
+        "vagy",
+        "van"
       ],
       "correct": 0
     },
     {
       "id": "a1-21-introduce-1",
       "type": "multiple-choice",
-      "category": "introduce",
-      "question": "Which word is being introduced?",
+      "category": "grammar",
+      "question": "Which word means 'this'?",
       "options": [
         "ez",
         "az",
@@ -39,34 +39,39 @@
     },
     {
       "id": "a1-21-introduce-2",
-      "type": "fill-blank",
-      "category": "introduce",
-      "sentence": "____.",
-      "answer": "az"
+      "type": "multiple-choice",
+      "category": "grammar",
+      "question": "Which word means 'that'?",
+      "options": [
+        "az",
+        "ez",
+        "mi"
+      ],
+      "correct": 0
     },
     {
       "id": "a1-21-controlled-1",
       "type": "multiple-choice",
-      "category": "controlled",
-      "question": "Choose the correct word.",
+      "category": "grammar",
+      "question": "____ egy tea.",
       "options": [
-        "ez",
-        "az",
-        "mi"
+        "Ez",
+        "Az",
+        "Mi"
       ],
       "correct": 0
     },
     {
       "id": "a1-21-controlled-2",
       "type": "fill-blank",
-      "category": "controlled",
-      "sentence": "____.",
-      "answer": "az"
+      "category": "grammar",
+      "sentence": "Mi az? ____ egy kávé. (that)",
+      "answer": "Az"
     },
     {
       "id": "a1-21-controlled-3",
       "type": "matching",
-      "category": "controlled",
+      "category": "vocabulary",
       "pairs": [
         [
           "ez",
@@ -89,122 +94,112 @@
     {
       "id": "a1-21-controlled-4",
       "type": "sentence-builder",
-      "category": "controlled",
+      "category": "grammar",
       "tiles": [
+        "Mi",
         "ez",
-        "az",
-        "."
+        "?"
       ],
       "solution": [
+        "Mi",
         "ez",
-        "az",
-        "."
+        "?"
       ],
-      "english": "ez az."
+      "english": "What is this?"
     },
     {
       "id": "a1-21-practice-1",
       "type": "multiple-choice",
-      "category": "practice",
-      "question": "Choose the target word.",
+      "category": "vocabulary",
+      "question": "Which one asks 'what' with extra emphasis?",
       "options": [
-        "ez",
-        "az",
-        "xyz"
+        "micsoda",
+        "mi",
+        "ki"
       ],
       "correct": 0
     },
     {
       "id": "a1-21-practice-2",
       "type": "fill-blank",
-      "category": "practice",
-      "sentence": "____.",
-      "answer": "az"
+      "category": "vocabulary",
+      "sentence": "____ ez? Egy tea. (what)",
+      "answer": "Mi"
     },
     {
       "id": "a1-21-practice-3",
       "type": "matching",
-      "category": "practice",
+      "category": "vocabulary",
       "pairs": [
         [
-          "ez",
-          "this"
+          "Mi ez?",
+          "What is this?"
         ],
         [
-          "az",
-          "that"
+          "Mi az?",
+          "What is that?"
         ],
         [
-          "mi",
-          "what"
+          "Ez egy tea.",
+          "This is a tea."
         ],
         [
-          "micsoda",
-          "what thing"
+          "Az egy kávé.",
+          "That is a coffee."
         ]
       ]
     },
     {
       "id": "a1-21-practice-4",
       "type": "sentence-builder",
-      "category": "practice",
+      "category": "grammar",
       "tiles": [
-        "ez",
-        "az",
+        "Az",
+        "egy",
+        "kávé",
         "."
       ],
       "solution": [
-        "ez",
-        "az",
+        "Az",
+        "egy",
+        "kávé",
         "."
       ],
-      "english": "ez az."
+      "english": "That is a coffee."
     },
     {
       "id": "a1-21-practice-5",
-      "type": "dialogue-complete",
-      "category": "practice",
-      "prompt": [
-        {
-          "speaker": "Meg",
-          "text": "Mi ez?"
-        },
-        {
-          "speaker": "Károly",
-          "text": "_____"
-        }
+      "type": "sentence-order",
+      "category": "vocabulary",
+      "sentences": [
+        "Mi ez?",
+        "Ez egy tea.",
+        "Köszönöm."
       ],
-      "options": [
-        "Ez ez.",
-        "Ő az."
-      ],
-      "correct": 0
+      "solution": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": "a1-21-practice-6",
-      "type": "sentence-order",
-      "category": "practice",
-      "words": [
-        "ez",
-        "az"
+      "type": "multiple-choice",
+      "category": "grammar",
+      "question": "How do you ask 'What is that?'",
+      "options": [
+        "Mi az?",
+        "Mi ez?",
+        "Ki az?"
       ],
-      "solution": [
-        "ez",
-        "az"
-      ],
-      "english": "ez az."
+      "correct": 0
     },
     {
       "id": "a1-21-practice-7",
-      "type": "multiple-choice",
-      "category": "practice",
-      "question": "Choose the natural answer.",
-      "options": [
-        "ez",
-        "az",
-        "mi"
-      ],
-      "correct": 0
+      "type": "fill-blank",
+      "category": "vocabulary",
+      "sentence": "Ez nem kávé, ez egy ____. (tea)",
+      "answer": "tea"
     },
     {
       "id": "a1-21-dialogue-1",
@@ -212,17 +207,17 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Károly",
+          "speaker": "Meg",
           "text": "Mi ez?"
         },
         {
-          "speaker": "Meg",
+          "speaker": "Károly",
           "text": "_____"
         }
       ],
       "options": [
-        "Ez ez.",
-        "Ő az."
+        "Ez egy tea.",
+        "Ő Meg."
       ],
       "correct": 0
     },
@@ -232,17 +227,17 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Milyen?"
+          "speaker": "Károly",
+          "text": "Mi az?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "az",
-        "mi"
+        "Az egy kávé.",
+        "Ki az?"
       ],
       "correct": 0
     },
@@ -250,37 +245,45 @@
       "id": "a1-21-writing-1",
       "type": "structured-writing",
       "category": "writing",
-      "prompt": "Write a short Hungarian sentence using a target word.",
-      "answer": "ez."
+      "template": [
+        {
+          "prompt": "Ask 'What is this?' in Hungarian.",
+          "answer": "Mi ez?"
+        }
+      ]
     },
     {
       "id": "a1-21-writing-2",
       "type": "structured-writing",
       "category": "writing",
-      "prompt": "Write another short Hungarian sentence using a target word.",
-      "answer": "az."
+      "template": [
+        {
+          "prompt": "Say 'This is a tea.' in Hungarian.",
+          "answer": "Ez egy tea."
+        }
+      ]
     },
     {
       "id": "a1-21-check-1",
       "type": "multiple-choice",
-      "category": "check",
-      "question": "Choose the correct target word.",
+      "category": "vocabulary",
+      "question": "Which means 'this'?",
       "options": [
         "ez",
         "az",
-        "xyz"
+        "mi"
       ],
       "correct": 0
     },
     {
       "id": "a1-21-check-2",
       "type": "multiple-choice",
-      "category": "check",
-      "question": "Choose the correct target word.",
+      "category": "vocabulary",
+      "question": "Which means 'that'?",
       "options": [
         "az",
-        "mi",
-        "xyz"
+        "ez",
+        "mi"
       ],
       "correct": 0
     }

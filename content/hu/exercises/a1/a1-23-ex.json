@@ -4,69 +4,74 @@
     {
       "id": "a1-23-review-1",
       "type": "multiple-choice",
-      "category": "review",
-      "question": "Choose the familiar Hungarian word.",
+      "category": "vocabulary",
+      "question": "Which means 'chair'?",
       "options": [
-        "ajtó",
-        "ablak",
-        "xyz"
+        "szék",
+        "asztal",
+        "könyv"
       ],
       "correct": 0
     },
     {
       "id": "a1-23-review-2",
       "type": "multiple-choice",
-      "category": "review",
-      "question": "Choose the correct form.",
+      "category": "vocabulary",
+      "question": "Which means 'phone'?",
       "options": [
-        "ablak",
-        "lámpa",
-        "xyz"
+        "telefon",
+        "asztal",
+        "könyv"
       ],
       "correct": 0
     },
     {
       "id": "a1-23-introduce-1",
       "type": "multiple-choice",
-      "category": "introduce",
-      "question": "Which word is being introduced?",
+      "category": "vocabulary",
+      "question": "Which word means 'door'?",
       "options": [
         "ajtó",
         "ablak",
-        "lámpa"
+        "konyha"
       ],
       "correct": 0
     },
     {
       "id": "a1-23-introduce-2",
-      "type": "fill-blank",
-      "category": "introduce",
-      "sentence": "____.",
-      "answer": "ablak"
+      "type": "multiple-choice",
+      "category": "vocabulary",
+      "question": "Which word means 'window'?",
+      "options": [
+        "ablak",
+        "ajtó",
+        "lámpa"
+      ],
+      "correct": 0
     },
     {
       "id": "a1-23-controlled-1",
       "type": "multiple-choice",
-      "category": "controlled",
-      "question": "Choose the correct word.",
+      "category": "vocabulary",
+      "question": "Ez egy ____. (lamp)",
       "options": [
-        "ajtó",
+        "lámpa",
         "ablak",
-        "lámpa"
+        "konyha"
       ],
       "correct": 0
     },
     {
       "id": "a1-23-controlled-2",
       "type": "fill-blank",
-      "category": "controlled",
-      "sentence": "____.",
-      "answer": "ablak"
+      "category": "vocabulary",
+      "sentence": "Az egy ____. (kitchen)",
+      "answer": "konyha"
     },
     {
       "id": "a1-23-controlled-3",
       "type": "matching",
-      "category": "controlled",
+      "category": "vocabulary",
       "pairs": [
         [
           "ajtó",
@@ -89,122 +94,120 @@
     {
       "id": "a1-23-controlled-4",
       "type": "sentence-builder",
-      "category": "controlled",
+      "category": "grammar",
       "tiles": [
-        "ajtó",
-        "ablak",
+        "A",
+        "telefon",
+        "a",
+        "konyhában",
+        "van",
         "."
       ],
       "solution": [
-        "ajtó",
-        "ablak",
+        "A",
+        "telefon",
+        "a",
+        "konyhában",
+        "van",
         "."
       ],
-      "english": "ajtó ablak."
+      "english": "The phone is in the kitchen."
     },
     {
       "id": "a1-23-practice-1",
       "type": "multiple-choice",
-      "category": "practice",
-      "question": "Choose the target word.",
+      "category": "grammar",
+      "question": "Which definite article goes with 'ablak' (it starts with a vowel)?",
       "options": [
-        "ajtó",
-        "ablak",
-        "xyz"
+        "az ablak",
+        "a ablak",
+        "az ablakok"
       ],
       "correct": 0
     },
     {
       "id": "a1-23-practice-2",
       "type": "fill-blank",
-      "category": "practice",
-      "sentence": "____.",
-      "answer": "ablak"
+      "category": "grammar",
+      "sentence": "___ ajtó itt van. (the — before a vowel)",
+      "answer": "Az"
     },
     {
       "id": "a1-23-practice-3",
       "type": "matching",
-      "category": "practice",
+      "category": "vocabulary",
       "pairs": [
         [
-          "ajtó",
-          "door"
+          "Ez az ajtó.",
+          "This is the door."
         ],
         [
-          "ablak",
-          "window"
+          "Ez az ablak.",
+          "This is the window."
         ],
         [
-          "lámpa",
-          "lamp"
+          "Ez a lámpa.",
+          "This is the lamp."
         ],
         [
-          "konyha",
-          "kitchen"
+          "Ez a konyha.",
+          "This is the kitchen."
         ]
       ]
     },
     {
       "id": "a1-23-practice-4",
       "type": "sentence-builder",
-      "category": "practice",
+      "category": "grammar",
       "tiles": [
-        "ajtó",
-        "ablak",
-        "."
+        "Mi",
+        "van",
+        "a",
+        "könyvben",
+        "?"
       ],
       "solution": [
-        "ajtó",
-        "ablak",
-        "."
+        "Mi",
+        "van",
+        "a",
+        "könyvben",
+        "?"
       ],
-      "english": "ajtó ablak."
+      "english": "What's in the book?"
     },
     {
       "id": "a1-23-practice-5",
-      "type": "dialogue-complete",
-      "category": "practice",
-      "prompt": [
-        {
-          "speaker": "Meg",
-          "text": "Mi ez?"
-        },
-        {
-          "speaker": "Károly",
-          "text": "_____"
-        }
+      "type": "sentence-order",
+      "category": "vocabulary",
+      "sentences": [
+        "A konyhában van.",
+        "Köszönöm.",
+        "Hol van a telefon?"
       ],
-      "options": [
-        "Ez ajtó.",
-        "Ő ablak."
-      ],
-      "correct": 0
+      "solution": [
+        2,
+        0,
+        1
+      ]
     },
     {
       "id": "a1-23-practice-6",
-      "type": "sentence-order",
-      "category": "practice",
-      "words": [
-        "ajtó",
-        "ablak"
+      "type": "multiple-choice",
+      "category": "grammar",
+      "question": "Which sentence means 'The book is in the kitchen'?",
+      "options": [
+        "A könyv a konyhában van.",
+        "A konyha a könyvben van.",
+        "A könyv a konyha."
       ],
-      "solution": [
-        "ajtó",
-        "ablak"
-      ],
-      "english": "ajtó ablak."
+      "correct": 0
     },
     {
       "id": "a1-23-practice-7",
-      "type": "multiple-choice",
-      "category": "practice",
-      "question": "Choose the natural answer.",
-      "options": [
-        "ajtó",
-        "ablak",
-        "lámpa"
-      ],
-      "correct": 0
+      "type": "fill-blank",
+      "category": "grammar",
+      "sentence": "Mi van a ____? (in the book)",
+      "answer": "könyvben"
     },
     {
       "id": "a1-23-dialogue-1",
@@ -212,17 +215,17 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Károly",
-          "text": "Mi ez?"
+          "speaker": "Meg",
+          "text": "Hol van a telefon?"
         },
         {
-          "speaker": "Meg",
+          "speaker": "Károly",
           "text": "_____"
         }
       ],
       "options": [
-        "Ez ajtó.",
-        "Ő ablak."
+        "A konyhában van.",
+        "Ez egy telefon."
       ],
       "correct": 0
     },
@@ -232,17 +235,17 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Milyen?"
+          "speaker": "Károly",
+          "text": "Mi ez?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "ablak",
-        "lámpa"
+        "Ez egy ablak.",
+        "Ez a konyhában van."
       ],
       "correct": 0
     },
@@ -250,37 +253,44 @@
       "id": "a1-23-writing-1",
       "type": "structured-writing",
       "category": "writing",
-      "prompt": "Write a short Hungarian sentence using a target word.",
-      "answer": "ajtó."
+      "template": [
+        {
+          "prompt": "Say 'This is the door.' in Hungarian.",
+          "answer": "Ez az ajtó."
+        }
+      ]
     },
     {
       "id": "a1-23-writing-2",
       "type": "structured-writing",
       "category": "writing",
-      "prompt": "Write another short Hungarian sentence using a target word.",
-      "answer": "ablak."
+      "template": [
+        {
+          "prompt": "Say 'The phone is in the kitchen.' in Hungarian.",
+          "answer": "A telefon a konyhában van."
+        }
+      ]
     },
     {
       "id": "a1-23-check-1",
       "type": "multiple-choice",
-      "category": "check",
-      "question": "Choose the correct target word.",
+      "category": "vocabulary",
+      "question": "Which means 'window'?",
       "options": [
-        "ajtó",
         "ablak",
-        "xyz"
+        "ajtó",
+        "lámpa"
       ],
       "correct": 0
     },
     {
       "id": "a1-23-check-2",
       "type": "multiple-choice",
-      "category": "check",
-      "question": "Choose the correct target word.",
+      "category": "grammar",
+      "question": "Which article fits before 'ajtó'?",
       "options": [
-        "ablak",
-        "lámpa",
-        "xyz"
+        "az",
+        "a"
       ],
       "correct": 0
     }

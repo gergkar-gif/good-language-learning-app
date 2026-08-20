@@ -5,7 +5,31 @@
       "id": "a1-79-review-1",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the useful Hungarian item.",
+      "question": "Which day is csütörtök?",
+      "options": [
+        "Thursday",
+        "Tuesday",
+        "Friday"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-79-review-2",
+      "type": "multiple-choice",
+      "category": "review",
+      "question": "Which is the \"on Wednesday\" form?",
+      "options": [
+        "szerdán",
+        "szerda",
+        "szerdaban"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-79-intro-1",
+      "type": "multiple-choice",
+      "category": "introduce",
+      "question": "Which word means \"January\"?",
       "options": [
         "január",
         "február",
@@ -14,38 +38,14 @@
       "correct": 0
     },
     {
-      "id": "a1-79-review-2",
-      "type": "multiple-choice",
-      "category": "review",
-      "question": "Which item belongs to this lesson?",
-      "options": [
-        "február",
-        "március",
-        "április"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "a1-79-intro-1",
-      "type": "multiple-choice",
-      "category": "introduce",
-      "question": "Which sentence uses január naturally?",
-      "options": [
-        "A január itt van.",
-        "A január megy.",
-        "január ember."
-      ],
-      "correct": 0
-    },
-    {
       "id": "a1-79-intro-2",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which word is február?",
+      "question": "Which word means \"April\"?",
       "options": [
-        "február",
+        "április",
         "március",
-        "április"
+        "február"
       ],
       "correct": 0
     },
@@ -56,19 +56,19 @@
       "pairs": [
         [
           "január",
-          "target 1"
+          "January"
         ],
         [
           "február",
-          "target 2"
+          "February"
         ],
         [
           "március",
-          "target 3"
+          "March"
         ],
         [
           "április",
-          "target 4"
+          "April"
         ]
       ]
     },
@@ -76,18 +76,18 @@
       "id": "a1-79-controlled-2",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "Ez a(z) ____.",
-      "answer": "január"
+      "sentence": "____ van a találkozó? (When)",
+      "answer": "Mikor"
     },
     {
       "id": "a1-79-controlled-3",
       "type": "multiple-choice",
       "category": "controlled",
-      "question": "Choose the natural sentence.",
+      "question": "Which means \"in April\"?",
       "options": [
-        "A február fontos.",
-        "A február fontosak.",
-        "február a fontos."
+        "áprilisban",
+        "április",
+        "áprilison"
       ],
       "correct": 0
     },
@@ -95,18 +95,18 @@
       "id": "a1-79-controlled-4",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "A ____ itt van.",
-      "answer": "február"
+      "sentence": "A találkozó ____ van. (in April)",
+      "answer": "áprilisban"
     },
     {
       "id": "a1-79-practice-1",
       "type": "multiple-choice",
       "category": "practice",
-      "question": "Which answer fits?",
+      "question": "Which month comes right after február?",
       "options": [
-        "Igen, január.",
-        "Hol, március?",
-        "Nem április?"
+        "március",
+        "január",
+        "április"
       ],
       "correct": 0
     },
@@ -114,8 +114,8 @@
       "id": "a1-79-practice-2",
       "type": "fill-blank",
       "category": "practice",
-      "sentence": "Ma ____ van.",
-      "answer": "január"
+      "sentence": "Január, február, március vagy ____?",
+      "answer": "április"
     },
     {
       "id": "a1-79-practice-3",
@@ -123,20 +123,20 @@
       "category": "practice",
       "pairs": [
         [
-          "január",
-          "meaning 1"
+          "Mikor van a találkozó?",
+          "When is the meeting?"
         ],
         [
-          "február",
-          "meaning 2"
+          "Áprilisban.",
+          "In April."
         ],
         [
-          "március",
-          "meaning 3"
+          "Január, február, március vagy április?",
+          "January, February, March, or April?"
         ],
         [
-          "április",
-          "meaning 4"
+          "A találkozó áprilisban van.",
+          "The meeting is in April."
         ]
       ]
     },
@@ -146,19 +146,19 @@
       "category": "practice",
       "tiles": [
         "A",
-        "január",
-        "itt",
+        "találkozó",
+        "áprilisban",
         "van",
         "."
       ],
       "solution": [
         "A",
-        "január",
-        "itt",
+        "találkozó",
+        "áprilisban",
         "van",
         "."
       ],
-      "english": "The január is here."
+      "english": "The meeting is in April."
     },
     {
       "id": "a1-79-practice-5",
@@ -166,17 +166,17 @@
       "category": "practice",
       "prompt": [
         {
-          "speaker": "Károly",
-          "text": "Hol van?"
+          "speaker": "Meg",
+          "text": "Január, február, március vagy április?"
         },
         {
-          "speaker": "Meg",
+          "speaker": "Károly",
           "text": "_____"
         }
       ],
       "options": [
-        "A február van.",
-        "A március megy."
+        "Április.",
+        "Szerda van."
       ],
       "correct": 0
     },
@@ -187,7 +187,7 @@
       "prompt": [
         {
           "speaker": "Károly",
-          "text": "Rendben?"
+          "text": "Mikor van a találkozó?"
         },
         {
           "speaker": "Meg",
@@ -195,8 +195,8 @@
         }
       ],
       "options": [
-        "Igen, rendben.",
-        "Nem tudom."
+        "Áprilisban.",
+        "Csütörtök van."
       ],
       "correct": 0
     },
@@ -204,11 +204,11 @@
       "id": "a1-79-dialogue-2",
       "type": "multiple-choice",
       "category": "dialogue",
-      "question": "Choose the natural reply.",
+      "question": "Choose the natural reply to \"Melyik hónapban vagy szabad?\" (Which month are you free?)",
       "options": [
-        "Rendben, február.",
-        "március hol.",
-        "Nem április."
+        "Márciusban szabad vagyok.",
+        "Március szabad van.",
+        "Én március vagyok."
       ],
       "correct": 0
     },
@@ -218,8 +218,8 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Write one short Hungarian sentence using a target word.",
-          "answer": "Use január in a simple sentence."
+          "prompt": "Ask \"When is the meeting?\" in Hungarian.",
+          "answer": "Mikor van a találkozó?"
         }
       ]
     },
@@ -229,8 +229,8 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Write another short Hungarian sentence using a target word.",
-          "answer": "Use február in a simple sentence."
+          "prompt": "Write \"The meeting is in April.\" in Hungarian.",
+          "answer": "A találkozó áprilisban van."
         }
       ]
     },
@@ -238,11 +238,11 @@
       "id": "a1-79-check-1",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Which target word completes the sentence?",
+      "question": "Which word means \"March\"?",
       "options": [
-        "január",
         "március",
-        "április"
+        "április",
+        "február"
       ],
       "correct": 0
     },
@@ -250,11 +250,11 @@
       "id": "a1-79-check-2",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Which sentence is natural?",
+      "question": "Which is the correct form of \"in January\"?",
       "options": [
-        "A február itt van.",
-        "A február itt vannak.",
-        "A február van ittünk."
+        "januárban",
+        "január",
+        "januáron"
       ],
       "correct": 0
     }

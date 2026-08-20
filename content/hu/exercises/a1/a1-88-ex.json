@@ -5,7 +5,31 @@
       "id": "a1-88-review-1",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the useful Hungarian item.",
+      "question": "Which word means \"bed\"?",
+      "options": [
+        "ágy",
+        "asztal",
+        "szék"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-88-review-2",
+      "type": "multiple-choice",
+      "category": "review",
+      "question": "Which article is correct for ágy?",
+      "options": [
+        "az",
+        "a",
+        "nincs (none)"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-88-intro-1",
+      "type": "multiple-choice",
+      "category": "introduce",
+      "question": "Which word means \"lamp\"?",
       "options": [
         "lámpa",
         "tükör",
@@ -14,38 +38,14 @@
       "correct": 0
     },
     {
-      "id": "a1-88-review-2",
-      "type": "multiple-choice",
-      "category": "review",
-      "question": "Which item belongs to this lesson?",
-      "options": [
-        "tükör",
-        "ajtó",
-        "ablak"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "a1-88-intro-1",
-      "type": "multiple-choice",
-      "category": "introduce",
-      "question": "Which sentence uses lámpa naturally?",
-      "options": [
-        "A lámpa itt van.",
-        "A lámpa megy.",
-        "lámpa ember."
-      ],
-      "correct": 0
-    },
-    {
       "id": "a1-88-intro-2",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which word is tükör?",
+      "question": "Which word means \"window\"?",
       "options": [
-        "tükör",
+        "ablak",
         "ajtó",
-        "ablak"
+        "tükör"
       ],
       "correct": 0
     },
@@ -56,19 +56,19 @@
       "pairs": [
         [
           "lámpa",
-          "target 1"
+          "lamp"
         ],
         [
           "tükör",
-          "target 2"
+          "mirror"
         ],
         [
           "ajtó",
-          "target 3"
+          "door"
         ],
         [
           "ablak",
-          "target 4"
+          "window"
         ]
       ]
     },
@@ -76,18 +76,18 @@
       "id": "a1-88-controlled-2",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "Ez a(z) ____.",
-      "answer": "lámpa"
+      "sentence": "____ ablak nyitva van. (the — vowel-initial article)",
+      "answer": "Az"
     },
     {
       "id": "a1-88-controlled-3",
       "type": "multiple-choice",
       "category": "controlled",
-      "question": "Choose the natural sentence.",
+      "question": "Which is correct: \"the mirror\"?",
       "options": [
-        "A tükör fontos.",
-        "A tükör fontosak.",
-        "tükör a fontos."
+        "a tükör",
+        "az tükör",
+        "a tükör az"
       ],
       "correct": 0
     },
@@ -95,18 +95,18 @@
       "id": "a1-88-controlled-4",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "A ____ itt van.",
-      "answer": "tükör"
+      "sentence": "A lámpa a tükör ____ van. (in front of)",
+      "answer": "előtt"
     },
     {
       "id": "a1-88-practice-1",
       "type": "multiple-choice",
       "category": "practice",
-      "question": "Which answer fits?",
+      "question": "Which is the correct \"my window\" form?",
       "options": [
-        "Igen, lámpa.",
-        "Hol, ajtó?",
-        "Nem ablak?"
+        "ablakom",
+        "ablakm",
+        "ablakok"
       ],
       "correct": 0
     },
@@ -114,8 +114,8 @@
       "id": "a1-88-practice-2",
       "type": "fill-blank",
       "category": "practice",
-      "sentence": "Ma ____ van.",
-      "answer": "lámpa"
+      "sentence": "Az ajtó az ablak ____ van. (next to)",
+      "answer": "mellett"
     },
     {
       "id": "a1-88-practice-3",
@@ -123,20 +123,20 @@
       "category": "practice",
       "pairs": [
         [
-          "lámpa",
-          "meaning 1"
+          "A lámpa a tükör előtt van.",
+          "The lamp is in front of the mirror."
         ],
         [
-          "tükör",
-          "meaning 2"
+          "Az ajtó az ablak mellett van.",
+          "The door is next to the window."
         ],
         [
-          "ajtó",
-          "meaning 3"
+          "ablakom",
+          "my window"
         ],
         [
-          "ablak",
-          "meaning 4"
+          "tükröm",
+          "my mirror"
         ]
       ]
     },
@@ -147,18 +147,22 @@
       "tiles": [
         "A",
         "lámpa",
-        "itt",
+        "a",
+        "tükör",
+        "előtt",
         "van",
         "."
       ],
       "solution": [
         "A",
         "lámpa",
-        "itt",
+        "a",
+        "tükör",
+        "előtt",
         "van",
         "."
       ],
-      "english": "The lámpa is here."
+      "english": "The lamp is in front of the mirror."
     },
     {
       "id": "a1-88-practice-5",
@@ -166,17 +170,17 @@
       "category": "practice",
       "prompt": [
         {
-          "speaker": "Károly",
-          "text": "Hol van?"
+          "speaker": "Meg",
+          "text": "A lámpa a tükör előtt van."
         },
         {
-          "speaker": "Meg",
+          "speaker": "Károly",
           "text": "_____"
         }
       ],
       "options": [
-        "A tükör van.",
-        "A ajtó megy."
+        "Az ajtó az ablak mellett van.",
+        "Az ajtó ablak van mellett."
       ],
       "correct": 0
     },
@@ -187,7 +191,7 @@
       "prompt": [
         {
           "speaker": "Károly",
-          "text": "Rendben?"
+          "text": "Hol van az ajtó?"
         },
         {
           "speaker": "Meg",
@@ -195,8 +199,8 @@
         }
       ],
       "options": [
-        "Igen, rendben.",
-        "Nem tudom."
+        "Az ajtó az ablak mellett van.",
+        "Az ajtó van ablak mellett."
       ],
       "correct": 0
     },
@@ -204,11 +208,11 @@
       "id": "a1-88-dialogue-2",
       "type": "multiple-choice",
       "category": "dialogue",
-      "question": "Choose the natural reply.",
+      "question": "Choose the natural reply to \"Hol van a tükör?\"",
       "options": [
-        "Rendben, tükör.",
-        "ajtó hol.",
-        "Nem ablak."
+        "A tükör az ajtó mellett van.",
+        "A tükör ajtó van mellett.",
+        "Tükör van a mellett ajtó."
       ],
       "correct": 0
     },
@@ -218,8 +222,8 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Write one short Hungarian sentence using a target word.",
-          "answer": "Use lámpa in a simple sentence."
+          "prompt": "Write \"The lamp is in front of the mirror.\" in Hungarian.",
+          "answer": "A lámpa a tükör előtt van."
         }
       ]
     },
@@ -229,8 +233,8 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Write another short Hungarian sentence using a target word.",
-          "answer": "Use tükör in a simple sentence."
+          "prompt": "Write \"my window\" in Hungarian.",
+          "answer": "ablakom"
         }
       ]
     },
@@ -238,11 +242,11 @@
       "id": "a1-88-check-1",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Which target word completes the sentence?",
+      "question": "Which word means \"mirror\"?",
       "options": [
+        "tükör",
         "lámpa",
-        "ajtó",
-        "ablak"
+        "ajtó"
       ],
       "correct": 0
     },
@@ -250,11 +254,11 @@
       "id": "a1-88-check-2",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Which sentence is natural?",
+      "question": "Which is the correct \"my mirror\" form?",
       "options": [
-        "A tükör itt van.",
-        "A tükör itt vannak.",
-        "A tükör van ittünk."
+        "tükröm",
+        "tüköröm",
+        "tükörem"
       ],
       "correct": 0
     }

@@ -5,7 +5,31 @@
       "id": "a1-87-review-1",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the useful Hungarian item.",
+      "question": "Which word means \"bathroom\"?",
+      "options": [
+        "fürdőszoba",
+        "hálószoba",
+        "konyha"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-87-review-2",
+      "type": "multiple-choice",
+      "category": "review",
+      "question": "Which is the correct \"in the bedroom\" form?",
+      "options": [
+        "hálószobában",
+        "hálószobaban",
+        "hálószobán"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-87-intro-1",
+      "type": "multiple-choice",
+      "category": "introduce",
+      "question": "Which word means \"table\"?",
       "options": [
         "asztal",
         "szék",
@@ -14,38 +38,14 @@
       "correct": 0
     },
     {
-      "id": "a1-87-review-2",
-      "type": "multiple-choice",
-      "category": "review",
-      "question": "Which item belongs to this lesson?",
-      "options": [
-        "szék",
-        "ágy",
-        "kanapé"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "a1-87-intro-1",
-      "type": "multiple-choice",
-      "category": "introduce",
-      "question": "Which sentence uses asztal naturally?",
-      "options": [
-        "A asztal itt van.",
-        "A asztal megy.",
-        "asztal ember."
-      ],
-      "correct": 0
-    },
-    {
       "id": "a1-87-intro-2",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which word is szék?",
+      "question": "Which word means \"sofa\"?",
       "options": [
-        "szék",
+        "kanapé",
         "ágy",
-        "kanapé"
+        "szék"
       ],
       "correct": 0
     },
@@ -56,19 +56,19 @@
       "pairs": [
         [
           "asztal",
-          "target 1"
+          "table"
         ],
         [
           "szék",
-          "target 2"
+          "chair"
         ],
         [
           "ágy",
-          "target 3"
+          "bed"
         ],
         [
           "kanapé",
-          "target 4"
+          "sofa"
         ]
       ]
     },
@@ -76,18 +76,18 @@
       "id": "a1-87-controlled-2",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "Ez a(z) ____.",
-      "answer": "asztal"
+      "sentence": "____ asztal itt van. (the — vowel-initial article)",
+      "answer": "Az"
     },
     {
       "id": "a1-87-controlled-3",
       "type": "multiple-choice",
       "category": "controlled",
-      "question": "Choose the natural sentence.",
+      "question": "Which is correct: \"the chair\"?",
       "options": [
-        "A szék fontos.",
-        "A szék fontosak.",
-        "szék a fontos."
+        "a szék",
+        "az szék",
+        "a szeék"
       ],
       "correct": 0
     },
@@ -95,18 +95,18 @@
       "id": "a1-87-controlled-4",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "A ____ itt van.",
-      "answer": "szék"
+      "sentence": "____ ágy az ablak mögött van. (the)",
+      "answer": "Az"
     },
     {
       "id": "a1-87-practice-1",
       "type": "multiple-choice",
       "category": "practice",
-      "question": "Which answer fits?",
+      "question": "Which article goes with kanapé?",
       "options": [
-        "Igen, asztal.",
-        "Hol, ágy?",
-        "Nem kanapé?"
+        "a",
+        "az",
+        "nincs (none)"
       ],
       "correct": 0
     },
@@ -114,8 +114,8 @@
       "id": "a1-87-practice-2",
       "type": "fill-blank",
       "category": "practice",
-      "sentence": "Ma ____ van.",
-      "answer": "asztal"
+      "sentence": "Az asztal a kanapé ____ van. (in front of)",
+      "answer": "előtt"
     },
     {
       "id": "a1-87-practice-3",
@@ -123,20 +123,20 @@
       "category": "practice",
       "pairs": [
         [
-          "asztal",
-          "meaning 1"
+          "Az asztal a kanapé előtt van.",
+          "The table is in front of the sofa."
         ],
         [
-          "szék",
-          "meaning 2"
+          "A szék az asztal mellett van.",
+          "The chair is next to the table."
         ],
         [
-          "ágy",
-          "meaning 3"
+          "Az ágy az ablak mögött van.",
+          "The bed is behind the window."
         ],
         [
-          "kanapé",
-          "meaning 4"
+          "A szék a kanapé és az asztal között van.",
+          "The chair is between the sofa and the table."
         ]
       ]
     },
@@ -146,19 +146,23 @@
       "category": "practice",
       "tiles": [
         "A",
+        "szék",
+        "az",
         "asztal",
-        "itt",
+        "mellett",
         "van",
         "."
       ],
       "solution": [
         "A",
+        "szék",
+        "az",
         "asztal",
-        "itt",
+        "mellett",
         "van",
         "."
       ],
-      "english": "The asztal is here."
+      "english": "The chair is next to the table."
     },
     {
       "id": "a1-87-practice-5",
@@ -166,17 +170,17 @@
       "category": "practice",
       "prompt": [
         {
-          "speaker": "Károly",
-          "text": "Hol van?"
+          "speaker": "Meg",
+          "text": "Az asztal a kanapé előtt van."
         },
         {
-          "speaker": "Meg",
+          "speaker": "Károly",
           "text": "_____"
         }
       ],
       "options": [
-        "A szék van.",
-        "A ágy megy."
+        "A szék az asztal mellett van.",
+        "A szék asztal van mellett."
       ],
       "correct": 0
     },
@@ -187,7 +191,7 @@
       "prompt": [
         {
           "speaker": "Károly",
-          "text": "Rendben?"
+          "text": "Hol van az ágy?"
         },
         {
           "speaker": "Meg",
@@ -195,8 +199,8 @@
         }
       ],
       "options": [
-        "Igen, rendben.",
-        "Nem tudom."
+        "Az ágy az ablak mögött van.",
+        "Az ágy ablak mögött."
       ],
       "correct": 0
     },
@@ -204,11 +208,11 @@
       "id": "a1-87-dialogue-2",
       "type": "multiple-choice",
       "category": "dialogue",
-      "question": "Choose the natural reply.",
+      "question": "Choose the natural reply to \"Van kanapé a nappaliban?\"",
       "options": [
-        "Rendben, szék.",
-        "ágy hol.",
-        "Nem kanapé."
+        "Igen, van egy kanapé.",
+        "Igen, kanapé van a nappali.",
+        "Igen, a kanapé nappali van."
       ],
       "correct": 0
     },
@@ -218,8 +222,8 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Write one short Hungarian sentence using a target word.",
-          "answer": "Use asztal in a simple sentence."
+          "prompt": "Write \"The table is in front of the sofa.\" in Hungarian.",
+          "answer": "Az asztal a kanapé előtt van."
         }
       ]
     },
@@ -229,8 +233,8 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Write another short Hungarian sentence using a target word.",
-          "answer": "Use szék in a simple sentence."
+          "prompt": "Write \"The chair is next to the table.\" in Hungarian.",
+          "answer": "A szék az asztal mellett van."
         }
       ]
     },
@@ -238,11 +242,11 @@
       "id": "a1-87-check-1",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Which target word completes the sentence?",
+      "question": "Which word means \"bed\"?",
       "options": [
-        "asztal",
         "ágy",
-        "kanapé"
+        "asztal",
+        "szék"
       ],
       "correct": 0
     },
@@ -250,11 +254,11 @@
       "id": "a1-87-check-2",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Which sentence is natural?",
+      "question": "Which article is correct for ágy?",
       "options": [
-        "A szék itt van.",
-        "A szék itt vannak.",
-        "A szék van ittünk."
+        "az",
+        "a",
+        "nincs (none)"
       ],
       "correct": 0
     }

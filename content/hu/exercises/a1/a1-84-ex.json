@@ -5,7 +5,31 @@
       "id": "a1-84-review-1",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the useful Hungarian item.",
+      "question": "Which word means \"together\"?",
+      "options": [
+        "együtt",
+        "minden",
+        "nap"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-84-review-2",
+      "type": "multiple-choice",
+      "category": "review",
+      "question": "Which correctly means \"after work\"?",
+      "options": [
+        "a munka után",
+        "után a munka",
+        "munka utánja"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-84-intro-1",
+      "type": "multiple-choice",
+      "category": "introduce",
+      "question": "Which word means \"today\"?",
       "options": [
         "ma",
         "most",
@@ -14,38 +38,14 @@
       "correct": 0
     },
     {
-      "id": "a1-84-review-2",
-      "type": "multiple-choice",
-      "category": "review",
-      "question": "Which item belongs to this lesson?",
-      "options": [
-        "most",
-        "otthon",
-        "iskolában"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "a1-84-intro-1",
-      "type": "multiple-choice",
-      "category": "introduce",
-      "question": "Which sentence uses ma naturally?",
-      "options": [
-        "A ma itt van.",
-        "A ma megy.",
-        "ma ember."
-      ],
-      "correct": 0
-    },
-    {
       "id": "a1-84-intro-2",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which word is most?",
+      "question": "Which word means \"now\"?",
       "options": [
         "most",
-        "otthon",
-        "iskolában"
+        "ma",
+        "otthon"
       ],
       "correct": 0
     },
@@ -56,19 +56,19 @@
       "pairs": [
         [
           "ma",
-          "target 1"
+          "today"
         ],
         [
           "most",
-          "target 2"
+          "now"
         ],
         [
           "otthon",
-          "target 3"
+          "home / at home"
         ],
         [
-          "iskolában",
-          "target 4"
+          "iskola",
+          "school"
         ]
       ]
     },
@@ -76,8 +76,8 @@
       "id": "a1-84-controlled-2",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "Ez a(z) ____.",
-      "answer": "ma"
+      "sentence": "____ otthon vagyok. (today)",
+      "answer": "Ma"
     },
     {
       "id": "a1-84-controlled-3",
@@ -85,9 +85,9 @@
       "category": "controlled",
       "question": "Choose the natural sentence.",
       "options": [
-        "A most fontos.",
-        "A most fontosak.",
-        "most a fontos."
+        "Most tanulok.",
+        "Most tanul vagyok.",
+        "Tanulok most van."
       ],
       "correct": 0
     },
@@ -95,18 +95,18 @@
       "id": "a1-84-controlled-4",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "A ____ itt van.",
-      "answer": "most"
+      "sentence": "____ pedig tanulok. (now)",
+      "answer": "Most"
     },
     {
       "id": "a1-84-practice-1",
       "type": "multiple-choice",
       "category": "practice",
-      "question": "Which answer fits?",
+      "question": "Which sentence puts the emphasis on WHERE, not WHEN?",
       "options": [
-        "Igen, ma.",
-        "Hol, otthon?",
-        "Nem iskolában?"
+        "Otthon vagyok ma.",
+        "Ma otthon vagyok.",
+        "Vagyok otthon ma."
       ],
       "correct": 0
     },
@@ -114,8 +114,8 @@
       "id": "a1-84-practice-2",
       "type": "fill-blank",
       "category": "practice",
-      "sentence": "Ma ____ van.",
-      "answer": "ma"
+      "sentence": "Ma otthon vagyok, most ____ tanulok. (whereas/and)",
+      "answer": "pedig"
     },
     {
       "id": "a1-84-practice-3",
@@ -123,20 +123,20 @@
       "category": "practice",
       "pairs": [
         [
-          "ma",
-          "meaning 1"
+          "Ma otthon vagyok, most pedig tanulok.",
+          "Today I'm home, and now I'm studying."
         ],
         [
-          "most",
-          "meaning 2"
+          "Iskolában is szokott tanulni.",
+          "At school they usually study too."
         ],
         [
-          "otthon",
-          "meaning 3"
+          "Otthon vagyok ma.",
+          "I am home today."
         ],
         [
-          "iskolában",
-          "meaning 4"
+          "Most tanulok.",
+          "I'm studying now."
         ]
       ]
     },
@@ -145,20 +145,18 @@
       "type": "sentence-builder",
       "category": "practice",
       "tiles": [
-        "A",
-        "ma",
-        "itt",
-        "van",
+        "Ma",
+        "otthon",
+        "vagyok",
         "."
       ],
       "solution": [
-        "A",
-        "ma",
-        "itt",
-        "van",
+        "Ma",
+        "otthon",
+        "vagyok",
         "."
       ],
-      "english": "The ma is here."
+      "english": "Today I'm home."
     },
     {
       "id": "a1-84-practice-5",
@@ -167,7 +165,7 @@
       "prompt": [
         {
           "speaker": "Károly",
-          "text": "Hol van?"
+          "text": "Minden nap együtt vagyunk?"
         },
         {
           "speaker": "Meg",
@@ -175,8 +173,8 @@
         }
       ],
       "options": [
-        "A most van.",
-        "A otthon megy."
+        "Nem. Ma otthon vagyok, most pedig tanulok.",
+        "Nem. Iskola van otthon."
       ],
       "correct": 0
     },
@@ -186,17 +184,17 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Károly",
-          "text": "Rendben?"
+          "speaker": "Meg",
+          "text": "Hol vagy most?"
         },
         {
-          "speaker": "Meg",
+          "speaker": "Károly",
           "text": "_____"
         }
       ],
       "options": [
-        "Igen, rendben.",
-        "Nem tudom."
+        "Iskolában vagyok.",
+        "Iskola vagyok most."
       ],
       "correct": 0
     },
@@ -204,11 +202,11 @@
       "id": "a1-84-dialogue-2",
       "type": "multiple-choice",
       "category": "dialogue",
-      "question": "Choose the natural reply.",
+      "question": "Choose the natural reply to \"Mit csinálsz most?\"",
       "options": [
-        "Rendben, most.",
-        "otthon hol.",
-        "Nem iskolában."
+        "Most tanulok.",
+        "Most tanul.",
+        "Tanulok van most."
       ],
       "correct": 0
     },
@@ -218,8 +216,8 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Write one short Hungarian sentence using a target word.",
-          "answer": "Use ma in a simple sentence."
+          "prompt": "Write \"Today I'm home, and now I'm studying.\" in Hungarian.",
+          "answer": "Ma otthon vagyok, most pedig tanulok."
         }
       ]
     },
@@ -229,8 +227,8 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Write another short Hungarian sentence using a target word.",
-          "answer": "Use most in a simple sentence."
+          "prompt": "Write \"I am home today.\" in Hungarian.",
+          "answer": "Otthon vagyok ma."
         }
       ]
     },
@@ -238,11 +236,11 @@
       "id": "a1-84-check-1",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Which target word completes the sentence?",
+      "question": "Which word means \"school\"?",
       "options": [
-        "ma",
+        "iskola",
         "otthon",
-        "iskolában"
+        "hétvége"
       ],
       "correct": 0
     },
@@ -250,11 +248,11 @@
       "id": "a1-84-check-2",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Which sentence is natural?",
+      "question": "In Hungarian word order, what typically sits right before the verb?",
       "options": [
-        "A most itt van.",
-        "A most itt vannak.",
-        "A most van ittünk."
+        "the focused / emphasized word",
+        "the subject, always",
+        "the object, always"
       ],
       "correct": 0
     }

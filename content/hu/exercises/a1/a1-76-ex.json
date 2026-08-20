@@ -5,11 +5,11 @@
       "id": "a1-76-review-1",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the useful Hungarian item.",
+      "question": "Which number is tíz?",
       "options": [
-        "óra",
-        "perc",
-        "fél"
+        "10",
+        "5",
+        "3"
       ],
       "correct": 0
     },
@@ -17,11 +17,11 @@
       "id": "a1-76-review-2",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Which item belongs to this lesson?",
+      "question": "Which word means \"day\"?",
       "options": [
-        "perc",
-        "fél",
-        "negyed"
+        "nap",
+        "hét",
+        "hónap"
       ],
       "correct": 0
     },
@@ -29,11 +29,11 @@
       "id": "a1-76-intro-1",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which sentence uses óra naturally?",
+      "question": "Which word means \"hour / o'clock\"?",
       "options": [
-        "A óra itt van.",
-        "A óra megy.",
-        "óra ember."
+        "óra",
+        "perc",
+        "negyed"
       ],
       "correct": 0
     },
@@ -41,11 +41,11 @@
       "id": "a1-76-intro-2",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which word is perc?",
+      "question": "Which word means \"half\"?",
       "options": [
-        "perc",
         "fél",
-        "negyed"
+        "negyed",
+        "perc"
       ],
       "correct": 0
     },
@@ -56,19 +56,19 @@
       "pairs": [
         [
           "óra",
-          "target 1"
+          "hour / o'clock"
         ],
         [
           "perc",
-          "target 2"
+          "minute"
         ],
         [
           "fél",
-          "target 3"
+          "half"
         ],
         [
           "negyed",
-          "target 4"
+          "quarter"
         ]
       ]
     },
@@ -76,18 +76,18 @@
       "id": "a1-76-controlled-2",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "Ez a(z) ____.",
+      "sentence": "Hány ____ van? – Tíz óra van.",
       "answer": "óra"
     },
     {
       "id": "a1-76-controlled-3",
       "type": "multiple-choice",
       "category": "controlled",
-      "question": "Choose the natural sentence.",
+      "question": "Which sentence means \"It's ten o'clock\"?",
       "options": [
-        "A perc fontos.",
-        "A perc fontosak.",
-        "perc a fontos."
+        "Tíz óra van.",
+        "Tíz perc van.",
+        "Tíz negyed van."
       ],
       "correct": 0
     },
@@ -95,18 +95,18 @@
       "id": "a1-76-controlled-4",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "A ____ itt van.",
-      "answer": "perc"
+      "sentence": "____ tíz van. (half past nine)",
+      "answer": "Fél"
     },
     {
       "id": "a1-76-practice-1",
       "type": "multiple-choice",
       "category": "practice",
-      "question": "Which answer fits?",
+      "question": "Which clock time is 9:15?",
       "options": [
-        "Igen, óra.",
-        "Hol, fél?",
-        "Nem negyed?"
+        "Negyed tíz.",
+        "Fél tíz.",
+        "Tíz óra."
       ],
       "correct": 0
     },
@@ -114,8 +114,8 @@
       "id": "a1-76-practice-2",
       "type": "fill-blank",
       "category": "practice",
-      "sentence": "Ma ____ van.",
-      "answer": "óra"
+      "sentence": "Fél tíz van. Még van néhány ____. (minute)",
+      "answer": "perc"
     },
     {
       "id": "a1-76-practice-3",
@@ -123,20 +123,20 @@
       "category": "practice",
       "pairs": [
         [
-          "óra",
-          "meaning 1"
+          "Fél tíz.",
+          "9:30 (half past nine)"
         ],
         [
-          "perc",
-          "meaning 2"
+          "Negyed tíz.",
+          "9:15 (a quarter past nine)"
         ],
         [
-          "fél",
-          "meaning 3"
+          "Tíz óra.",
+          "10:00 (ten o'clock)"
         ],
         [
-          "negyed",
-          "meaning 4"
+          "Öt perc.",
+          "five minutes"
         ]
       ]
     },
@@ -145,20 +145,18 @@
       "type": "sentence-builder",
       "category": "practice",
       "tiles": [
-        "A",
+        "Hány",
         "óra",
-        "itt",
         "van",
-        "."
+        "?"
       ],
       "solution": [
-        "A",
+        "Hány",
         "óra",
-        "itt",
         "van",
-        "."
+        "?"
       ],
-      "english": "The óra is here."
+      "english": "What time is it?"
     },
     {
       "id": "a1-76-practice-5",
@@ -167,7 +165,7 @@
       "prompt": [
         {
           "speaker": "Károly",
-          "text": "Hol van?"
+          "text": "Hány óra van?"
         },
         {
           "speaker": "Meg",
@@ -175,8 +173,8 @@
         }
       ],
       "options": [
-        "A perc van.",
-        "A fél megy."
+        "Fél tíz.",
+        "Öt nap."
       ],
       "correct": 0
     },
@@ -186,17 +184,17 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Károly",
-          "text": "Rendben?"
+          "speaker": "Meg",
+          "text": "Mikor van a találkozó?"
         },
         {
-          "speaker": "Meg",
+          "speaker": "Károly",
           "text": "_____"
         }
       ],
       "options": [
-        "Igen, rendben.",
-        "Nem tudom."
+        "Fél tíz.",
+        "Kedd van."
       ],
       "correct": 0
     },
@@ -204,11 +202,11 @@
       "id": "a1-76-dialogue-2",
       "type": "multiple-choice",
       "category": "dialogue",
-      "question": "Choose the natural reply.",
+      "question": "Choose the natural reply to \"Hány perc?\"",
       "options": [
-        "Rendben, perc.",
-        "fél hol.",
-        "Nem negyed."
+        "Negyed óra.",
+        "Fél asztal.",
+        "Tíz szék."
       ],
       "correct": 0
     },
@@ -218,8 +216,8 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Write one short Hungarian sentence using a target word.",
-          "answer": "Use óra in a simple sentence."
+          "prompt": "Ask what time it is, in Hungarian.",
+          "answer": "Hány óra van?"
         }
       ]
     },
@@ -229,8 +227,8 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Write another short Hungarian sentence using a target word.",
-          "answer": "Use perc in a simple sentence."
+          "prompt": "Write \"It's half past nine.\" in Hungarian.",
+          "answer": "Fél tíz van."
         }
       ]
     },
@@ -238,11 +236,11 @@
       "id": "a1-76-check-1",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Which target word completes the sentence?",
+      "question": "Which means \"a quarter past nine\" (9:15)?",
       "options": [
-        "óra",
-        "fél",
-        "negyed"
+        "Negyed tíz.",
+        "Fél tíz.",
+        "Tíz óra."
       ],
       "correct": 0
     },
@@ -250,11 +248,11 @@
       "id": "a1-76-check-2",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Which sentence is natural?",
+      "question": "Fél tíz van. What time is it?",
       "options": [
-        "A perc itt van.",
-        "A perc itt vannak.",
-        "A perc van ittünk."
+        "9:30",
+        "10:30",
+        "9:15"
       ],
       "correct": 0
     }

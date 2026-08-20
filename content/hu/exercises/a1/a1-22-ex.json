@@ -4,32 +4,32 @@
     {
       "id": "a1-22-review-1",
       "type": "multiple-choice",
-      "category": "review",
-      "question": "Choose the familiar Hungarian word.",
+      "category": "vocabulary",
+      "question": "Which means 'this'?",
       "options": [
-        "asztal",
-        "szék",
-        "xyz"
+        "ez",
+        "az",
+        "mi"
       ],
       "correct": 0
     },
     {
       "id": "a1-22-review-2",
       "type": "multiple-choice",
-      "category": "review",
-      "question": "Choose the correct form.",
+      "category": "vocabulary",
+      "question": "Which means 'what'?",
       "options": [
-        "szék",
-        "könyv",
-        "xyz"
+        "mi",
+        "ez",
+        "az"
       ],
       "correct": 0
     },
     {
       "id": "a1-22-introduce-1",
       "type": "multiple-choice",
-      "category": "introduce",
-      "question": "Which word is being introduced?",
+      "category": "vocabulary",
+      "question": "Which word means 'table'?",
       "options": [
         "asztal",
         "szék",
@@ -39,34 +39,39 @@
     },
     {
       "id": "a1-22-introduce-2",
-      "type": "fill-blank",
-      "category": "introduce",
-      "sentence": "____.",
-      "answer": "szék"
+      "type": "multiple-choice",
+      "category": "vocabulary",
+      "question": "Which word means 'chair'?",
+      "options": [
+        "szék",
+        "asztal",
+        "telefon"
+      ],
+      "correct": 0
     },
     {
       "id": "a1-22-controlled-1",
       "type": "multiple-choice",
-      "category": "controlled",
-      "question": "Choose the correct word.",
+      "category": "vocabulary",
+      "question": "Ez egy ____. (book)",
       "options": [
-        "asztal",
-        "szék",
-        "könyv"
+        "könyv",
+        "telefon",
+        "asztal"
       ],
       "correct": 0
     },
     {
       "id": "a1-22-controlled-2",
       "type": "fill-blank",
-      "category": "controlled",
-      "sentence": "____.",
-      "answer": "szék"
+      "category": "vocabulary",
+      "sentence": "Az egy ____. (phone)",
+      "answer": "telefon"
     },
     {
       "id": "a1-22-controlled-3",
       "type": "matching",
-      "category": "controlled",
+      "category": "vocabulary",
       "pairs": [
         [
           "asztal",
@@ -89,122 +94,114 @@
     {
       "id": "a1-22-controlled-4",
       "type": "sentence-builder",
-      "category": "controlled",
+      "category": "grammar",
       "tiles": [
-        "asztal",
+        "Ez",
+        "egy",
         "szék",
         "."
       ],
       "solution": [
-        "asztal",
+        "Ez",
+        "egy",
         "szék",
         "."
       ],
-      "english": "asztal szék."
+      "english": "This is a chair."
     },
     {
       "id": "a1-22-practice-1",
       "type": "multiple-choice",
-      "category": "practice",
-      "question": "Choose the target word.",
+      "category": "grammar",
+      "question": "Which is the plural of 'asztal'?",
       "options": [
-        "asztal",
-        "szék",
-        "xyz"
+        "asztalok",
+        "asztalak",
+        "asztalek"
       ],
       "correct": 0
     },
     {
       "id": "a1-22-practice-2",
       "type": "fill-blank",
-      "category": "practice",
-      "sentence": "____.",
+      "category": "vocabulary",
+      "sentence": "Ez egy ____. (chair)",
       "answer": "szék"
     },
     {
       "id": "a1-22-practice-3",
       "type": "matching",
-      "category": "practice",
+      "category": "vocabulary",
       "pairs": [
         [
-          "asztal",
-          "table"
+          "Ez egy asztal.",
+          "This is a table."
         ],
         [
-          "szék",
-          "chair"
+          "Az egy szék.",
+          "That is a chair."
         ],
         [
-          "könyv",
-          "book"
+          "Ez egy könyv.",
+          "This is a book."
         ],
         [
-          "telefon",
-          "phone"
+          "Az egy telefon.",
+          "That is a phone."
         ]
       ]
     },
     {
       "id": "a1-22-practice-4",
       "type": "sentence-builder",
-      "category": "practice",
+      "category": "grammar",
       "tiles": [
-        "asztal",
-        "szék",
+        "Az",
+        "egy",
+        "telefon",
         "."
       ],
       "solution": [
-        "asztal",
-        "szék",
+        "Az",
+        "egy",
+        "telefon",
         "."
       ],
-      "english": "asztal szék."
+      "english": "That is a phone."
     },
     {
       "id": "a1-22-practice-5",
-      "type": "dialogue-complete",
-      "category": "practice",
-      "prompt": [
-        {
-          "speaker": "Meg",
-          "text": "Mi ez?"
-        },
-        {
-          "speaker": "Károly",
-          "text": "_____"
-        }
+      "type": "sentence-order",
+      "category": "vocabulary",
+      "sentences": [
+        "Mi ez?",
+        "Ez egy könyv.",
+        "Köszönöm."
       ],
-      "options": [
-        "Ez asztal.",
-        "Ő szék."
-      ],
-      "correct": 0
+      "solution": [
+        0,
+        1,
+        2
+      ]
     },
     {
       "id": "a1-22-practice-6",
-      "type": "sentence-order",
-      "category": "practice",
-      "words": [
-        "asztal",
-        "szék"
+      "type": "multiple-choice",
+      "category": "grammar",
+      "question": "Which is the plural of 'könyv'?",
+      "options": [
+        "könyvek",
+        "könyvok",
+        "könyvak"
       ],
-      "solution": [
-        "asztal",
-        "szék"
-      ],
-      "english": "asztal szék."
+      "correct": 0
     },
     {
       "id": "a1-22-practice-7",
-      "type": "multiple-choice",
-      "category": "practice",
-      "question": "Choose the natural answer.",
-      "options": [
-        "asztal",
-        "szék",
-        "könyv"
-      ],
-      "correct": 0
+      "type": "fill-blank",
+      "category": "vocabulary",
+      "sentence": "Mi ez? Ez egy ____. (table)",
+      "answer": "asztal"
     },
     {
       "id": "a1-22-dialogue-1",
@@ -212,17 +209,17 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Károly",
+          "speaker": "Meg",
           "text": "Mi ez?"
         },
         {
-          "speaker": "Meg",
+          "speaker": "Károly",
           "text": "_____"
         }
       ],
       "options": [
-        "Ez asztal.",
-        "Ő szék."
+        "Ez egy asztal.",
+        "Ki ő?"
       ],
       "correct": 0
     },
@@ -232,17 +229,17 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Milyen?"
+          "speaker": "Károly",
+          "text": "Mi az?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "szék",
-        "könyv"
+        "Az egy telefon.",
+        "Az egy tea."
       ],
       "correct": 0
     },
@@ -250,37 +247,45 @@
       "id": "a1-22-writing-1",
       "type": "structured-writing",
       "category": "writing",
-      "prompt": "Write a short Hungarian sentence using a target word.",
-      "answer": "asztal."
+      "template": [
+        {
+          "prompt": "Say 'This is a table.' in Hungarian.",
+          "answer": "Ez egy asztal."
+        }
+      ]
     },
     {
       "id": "a1-22-writing-2",
       "type": "structured-writing",
       "category": "writing",
-      "prompt": "Write another short Hungarian sentence using a target word.",
-      "answer": "szék."
+      "template": [
+        {
+          "prompt": "Say 'That is a book.' in Hungarian.",
+          "answer": "Az egy könyv."
+        }
+      ]
     },
     {
       "id": "a1-22-check-1",
       "type": "multiple-choice",
-      "category": "check",
-      "question": "Choose the correct target word.",
+      "category": "vocabulary",
+      "question": "Which means 'table'?",
       "options": [
         "asztal",
         "szék",
-        "xyz"
+        "könyv"
       ],
       "correct": 0
     },
     {
       "id": "a1-22-check-2",
       "type": "multiple-choice",
-      "category": "check",
-      "question": "Choose the correct target word.",
+      "category": "vocabulary",
+      "question": "Which means 'phone'?",
       "options": [
-        "szék",
+        "telefon",
         "könyv",
-        "xyz"
+        "szék"
       ],
       "correct": 0
     }

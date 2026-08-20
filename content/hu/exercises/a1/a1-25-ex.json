@@ -4,54 +4,59 @@
     {
       "id": "a1-25-review-1",
       "type": "multiple-choice",
-      "category": "review",
-      "question": "Choose the familiar Hungarian word.",
+      "category": "grammar",
+      "question": "Which means 'here'?",
       "options": [
-        "tárgy",
-        "lakás",
-        "xyz"
+        "itt",
+        "ott",
+        "van"
       ],
       "correct": 0
     },
     {
       "id": "a1-25-review-2",
       "type": "multiple-choice",
-      "category": "review",
-      "question": "Choose the correct form.",
+      "category": "grammar",
+      "question": "Which means 'there isn't'?",
       "options": [
-        "lakás",
-        "szoba",
-        "xyz"
+        "nincs",
+        "nem",
+        "van"
       ],
       "correct": 0
     },
     {
       "id": "a1-25-introduce-1",
       "type": "multiple-choice",
-      "category": "introduce",
-      "question": "Which word is being introduced?",
+      "category": "vocabulary",
+      "question": "Which word means 'key'?",
       "options": [
-        "tárgy",
-        "lakás",
+        "kulcs",
+        "ajtó",
         "szoba"
       ],
       "correct": 0
     },
     {
       "id": "a1-25-introduce-2",
-      "type": "fill-blank",
-      "category": "introduce",
-      "sentence": "____.",
-      "answer": "lakás"
+      "type": "multiple-choice",
+      "category": "vocabulary",
+      "question": "Which word means 'room'?",
+      "options": [
+        "szoba",
+        "lakás",
+        "tárgy"
+      ],
+      "correct": 0
     },
     {
       "id": "a1-25-controlled-1",
       "type": "multiple-choice",
-      "category": "controlled",
-      "question": "Choose the correct word.",
+      "category": "vocabulary",
+      "question": "Ez egy ____. (object)",
       "options": [
         "tárgy",
-        "lakás",
+        "kulcs",
         "szoba"
       ],
       "correct": 0
@@ -59,14 +64,14 @@
     {
       "id": "a1-25-controlled-2",
       "type": "fill-blank",
-      "category": "controlled",
-      "sentence": "____.",
+      "category": "vocabulary",
+      "sentence": "Van egy ____ itt. (flat)",
       "answer": "lakás"
     },
     {
       "id": "a1-25-controlled-3",
       "type": "matching",
-      "category": "controlled",
+      "category": "vocabulary",
       "pairs": [
         [
           "tárgy",
@@ -89,122 +94,120 @@
     {
       "id": "a1-25-controlled-4",
       "type": "sentence-builder",
-      "category": "controlled",
+      "category": "grammar",
       "tiles": [
-        "tárgy",
-        "lakás",
+        "A",
+        "kulcs",
+        "a",
+        "szobában",
+        "van",
         "."
       ],
       "solution": [
-        "tárgy",
-        "lakás",
+        "A",
+        "kulcs",
+        "a",
+        "szobában",
+        "van",
         "."
       ],
-      "english": "tárgy lakás."
+      "english": "The key is in the room."
     },
     {
       "id": "a1-25-practice-1",
       "type": "multiple-choice",
-      "category": "practice",
-      "question": "Choose the target word.",
+      "category": "grammar",
+      "question": "Which suffix does 'lakás' take for 'in' (it has back vowels)?",
       "options": [
-        "tárgy",
-        "lakás",
-        "xyz"
+        "lakásban",
+        "lakásben",
+        "lakások"
       ],
       "correct": 0
     },
     {
       "id": "a1-25-practice-2",
       "type": "fill-blank",
-      "category": "practice",
-      "sentence": "____.",
-      "answer": "lakás"
+      "category": "grammar",
+      "sentence": "Hol van a kulcs? A ____ van. (in the room)",
+      "answer": "szobában"
     },
     {
       "id": "a1-25-practice-3",
       "type": "matching",
-      "category": "practice",
+      "category": "vocabulary",
       "pairs": [
         [
-          "tárgy",
-          "object"
+          "Ez egy tárgy.",
+          "This is an object."
         ],
         [
-          "lakás",
-          "flat"
+          "Van egy lakás itt.",
+          "There is a flat here."
         ],
         [
-          "szoba",
-          "room"
+          "A kulcs a szobában van.",
+          "The key is in the room."
         ],
         [
-          "kulcs",
-          "key"
+          "Nincs itt kulcs.",
+          "There's no key here."
         ]
       ]
     },
     {
       "id": "a1-25-practice-4",
       "type": "sentence-builder",
-      "category": "practice",
+      "category": "grammar",
       "tiles": [
+        "Mi",
+        "ez",
+        "a",
         "tárgy",
-        "lakás",
-        "."
+        "?"
       ],
       "solution": [
+        "Mi",
+        "ez",
+        "a",
         "tárgy",
-        "lakás",
-        "."
+        "?"
       ],
-      "english": "tárgy lakás."
+      "english": "What is this object?"
     },
     {
       "id": "a1-25-practice-5",
-      "type": "dialogue-complete",
-      "category": "practice",
-      "prompt": [
-        {
-          "speaker": "Meg",
-          "text": "Mi ez?"
-        },
-        {
-          "speaker": "Károly",
-          "text": "_____"
-        }
+      "type": "sentence-order",
+      "category": "vocabulary",
+      "sentences": [
+        "Itt van.",
+        "Hol van a kulcs?",
+        "Köszönöm."
       ],
-      "options": [
-        "Ez tárgy.",
-        "Ő lakás."
-      ],
-      "correct": 0
+      "solution": [
+        1,
+        0,
+        2
+      ]
     },
     {
       "id": "a1-25-practice-6",
-      "type": "sentence-order",
-      "category": "practice",
-      "words": [
-        "tárgy",
-        "lakás"
+      "type": "multiple-choice",
+      "category": "grammar",
+      "question": "Choose the correct sentence for 'This is the room.'",
+      "options": [
+        "Ez a szoba.",
+        "Ez van szoba.",
+        "Szoba ez van."
       ],
-      "solution": [
-        "tárgy",
-        "lakás"
-      ],
-      "english": "tárgy lakás."
+      "correct": 0
     },
     {
       "id": "a1-25-practice-7",
-      "type": "multiple-choice",
-      "category": "practice",
-      "question": "Choose the natural answer.",
-      "options": [
-        "tárgy",
-        "lakás",
-        "szoba"
-      ],
-      "correct": 0
+      "type": "fill-blank",
+      "category": "vocabulary",
+      "sentence": "Micsoda ez? Ez egy ____. (key)",
+      "answer": "kulcs"
     },
     {
       "id": "a1-25-dialogue-1",
@@ -212,17 +215,17 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Károly",
-          "text": "Mi ez?"
+          "speaker": "Meg",
+          "text": "Mi ez a tárgy?"
         },
         {
-          "speaker": "Meg",
+          "speaker": "Károly",
           "text": "_____"
         }
       ],
       "options": [
-        "Ez tárgy.",
-        "Ő lakás."
+        "Ez egy kulcs.",
+        "Ő Károly."
       ],
       "correct": 0
     },
@@ -232,17 +235,17 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Milyen?"
+          "speaker": "Károly",
+          "text": "Van itt egy szék?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "lakás",
-        "szoba"
+        "Nincs. Van egy asztal.",
+        "Igen, egy szoba."
       ],
       "correct": 0
     },
@@ -250,37 +253,45 @@
       "id": "a1-25-writing-1",
       "type": "structured-writing",
       "category": "writing",
-      "prompt": "Write a short Hungarian sentence using a target word.",
-      "answer": "tárgy."
+      "template": [
+        {
+          "prompt": "Say 'The key is in the room.' in Hungarian.",
+          "answer": "A kulcs a szobában van."
+        }
+      ]
     },
     {
       "id": "a1-25-writing-2",
       "type": "structured-writing",
       "category": "writing",
-      "prompt": "Write another short Hungarian sentence using a target word.",
-      "answer": "lakás."
+      "template": [
+        {
+          "prompt": "Ask 'What is this object?' in Hungarian.",
+          "answer": "Mi ez a tárgy?"
+        }
+      ]
     },
     {
       "id": "a1-25-check-1",
       "type": "multiple-choice",
-      "category": "check",
-      "question": "Choose the correct target word.",
+      "category": "vocabulary",
+      "question": "Which means 'flat / apartment'?",
       "options": [
-        "tárgy",
         "lakás",
-        "xyz"
+        "szoba",
+        "tárgy"
       ],
       "correct": 0
     },
     {
       "id": "a1-25-check-2",
       "type": "multiple-choice",
-      "category": "check",
-      "question": "Choose the correct target word.",
+      "category": "vocabulary",
+      "question": "Which means 'key'?",
       "options": [
-        "lakás",
-        "szoba",
-        "xyz"
+        "kulcs",
+        "ajtó",
+        "ablak"
       ],
       "correct": 0
     }

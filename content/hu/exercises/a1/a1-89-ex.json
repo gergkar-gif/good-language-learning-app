@@ -5,7 +5,31 @@
       "id": "a1-89-review-1",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the useful Hungarian item.",
+      "question": "Which word means \"mirror\"?",
+      "options": [
+        "tükör",
+        "lámpa",
+        "ajtó"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-89-review-2",
+      "type": "multiple-choice",
+      "category": "review",
+      "question": "Which is the correct \"my mirror\" form?",
+      "options": [
+        "tükröm",
+        "tüköröm",
+        "tükörem"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-89-intro-1",
+      "type": "multiple-choice",
+      "category": "introduce",
+      "question": "Which word means \"next to\"?",
       "options": [
         "mellett",
         "előtt",
@@ -14,37 +38,13 @@
       "correct": 0
     },
     {
-      "id": "a1-89-review-2",
-      "type": "multiple-choice",
-      "category": "review",
-      "question": "Which item belongs to this lesson?",
-      "options": [
-        "előtt",
-        "mögött",
-        "között"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "a1-89-intro-1",
-      "type": "multiple-choice",
-      "category": "introduce",
-      "question": "Which sentence uses mellett naturally?",
-      "options": [
-        "A mellett itt van.",
-        "A mellett megy.",
-        "mellett ember."
-      ],
-      "correct": 0
-    },
-    {
       "id": "a1-89-intro-2",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which word is előtt?",
+      "question": "Which word means \"behind\"?",
       "options": [
-        "előtt",
         "mögött",
+        "előtt",
         "között"
       ],
       "correct": 0
@@ -56,19 +56,19 @@
       "pairs": [
         [
           "mellett",
-          "target 1"
+          "next to"
         ],
         [
           "előtt",
-          "target 2"
+          "in front of"
         ],
         [
           "mögött",
-          "target 3"
+          "behind"
         ],
         [
           "között",
-          "target 4"
+          "between"
         ]
       ]
     },
@@ -76,18 +76,18 @@
       "id": "a1-89-controlled-2",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "Ez a(z) ____.",
+      "sentence": "A konyha a nappali ____ van. (next to)",
       "answer": "mellett"
     },
     {
       "id": "a1-89-controlled-3",
       "type": "multiple-choice",
       "category": "controlled",
-      "question": "Choose the natural sentence.",
+      "question": "Which sentence means \"The bed is behind the window\"?",
       "options": [
-        "A előtt fontos.",
-        "A előtt fontosak.",
-        "előtt a fontos."
+        "Az ágy az ablak mögött van.",
+        "Az ágy az ablak előtt van.",
+        "Az ágy az ablak mellett van."
       ],
       "correct": 0
     },
@@ -95,18 +95,18 @@
       "id": "a1-89-controlled-4",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "A ____ itt van.",
+      "sentence": "Az asztal a kanapé ____ van. (in front of)",
       "answer": "előtt"
     },
     {
       "id": "a1-89-practice-1",
       "type": "multiple-choice",
       "category": "practice",
-      "question": "Which answer fits?",
+      "question": "Which postposition needs TWO nouns joined by és?",
       "options": [
-        "Igen, mellett.",
-        "Hol, mögött?",
-        "Nem között?"
+        "között",
+        "mellett",
+        "mögött"
       ],
       "correct": 0
     },
@@ -114,8 +114,8 @@
       "id": "a1-89-practice-2",
       "type": "fill-blank",
       "category": "practice",
-      "sentence": "Ma ____ van.",
-      "answer": "mellett"
+      "sentence": "A szék a kanapé és az asztal ____ van. (between)",
+      "answer": "között"
     },
     {
       "id": "a1-89-practice-3",
@@ -123,20 +123,20 @@
       "category": "practice",
       "pairs": [
         [
-          "mellett",
-          "meaning 1"
+          "A konyha a nappali mellett van.",
+          "The kitchen is next to the living room."
         ],
         [
-          "előtt",
-          "meaning 2"
+          "Az ágy az ablak mögött van.",
+          "The bed is behind the window."
         ],
         [
-          "mögött",
-          "meaning 3"
+          "Az asztal a kanapé előtt van.",
+          "The table is in front of the sofa."
         ],
         [
-          "között",
-          "meaning 4"
+          "A szék a kanapé és az asztal között van.",
+          "The chair is between the sofa and the table."
         ]
       ]
     },
@@ -146,19 +146,29 @@
       "category": "practice",
       "tiles": [
         "A",
-        "mellett",
-        "itt",
+        "szék",
+        "a",
+        "kanapé",
+        "és",
+        "az",
+        "asztal",
+        "között",
         "van",
         "."
       ],
       "solution": [
         "A",
-        "mellett",
-        "itt",
+        "szék",
+        "a",
+        "kanapé",
+        "és",
+        "az",
+        "asztal",
+        "között",
         "van",
         "."
       ],
-      "english": "The mellett is here."
+      "english": "The chair is between the sofa and the table."
     },
     {
       "id": "a1-89-practice-5",
@@ -167,7 +177,7 @@
       "prompt": [
         {
           "speaker": "Károly",
-          "text": "Hol van?"
+          "text": "Hol van a szék?"
         },
         {
           "speaker": "Meg",
@@ -175,8 +185,8 @@
         }
       ],
       "options": [
-        "A előtt van.",
-        "A mögött megy."
+        "A szék a kanapé és az asztal között van.",
+        "A szék kanapé asztal között."
       ],
       "correct": 0
     },
@@ -186,17 +196,17 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Károly",
-          "text": "Rendben?"
+          "speaker": "Meg",
+          "text": "Az ajtó az ablak mellett van."
         },
         {
-          "speaker": "Meg",
+          "speaker": "Károly",
           "text": "_____"
         }
       ],
       "options": [
-        "Igen, rendben.",
-        "Nem tudom."
+        "Igen, és a lámpa a tükör előtt van.",
+        "Igen, és a lámpa tükör előtt."
       ],
       "correct": 0
     },
@@ -204,11 +214,11 @@
       "id": "a1-89-dialogue-2",
       "type": "multiple-choice",
       "category": "dialogue",
-      "question": "Choose the natural reply.",
+      "question": "Choose the natural reply to \"Hol van a fürdőszoba?\"",
       "options": [
-        "Rendben, előtt.",
-        "mögött hol.",
-        "Nem között."
+        "A fürdőszoba a hálószoba mellett van.",
+        "A fürdőszoba hálószoba van mellett.",
+        "Mellett van a fürdőszoba hálószoba."
       ],
       "correct": 0
     },
@@ -218,8 +228,8 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Write one short Hungarian sentence using a target word.",
-          "answer": "Use mellett in a simple sentence."
+          "prompt": "Write \"The chair is between the sofa and the table.\" in Hungarian.",
+          "answer": "A szék a kanapé és az asztal között van."
         }
       ]
     },
@@ -229,8 +239,8 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Write another short Hungarian sentence using a target word.",
-          "answer": "Use előtt in a simple sentence."
+          "prompt": "Write \"The bed is behind the window.\" in Hungarian.",
+          "answer": "Az ágy az ablak mögött van."
         }
       ]
     },
@@ -238,11 +248,11 @@
       "id": "a1-89-check-1",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Which target word completes the sentence?",
+      "question": "Which word means \"between\"?",
       "options": [
+        "között",
         "mellett",
-        "mögött",
-        "között"
+        "előtt"
       ],
       "correct": 0
     },
@@ -250,11 +260,11 @@
       "id": "a1-89-check-2",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Which sentence is natural?",
+      "question": "Which reads correctly as \"behind the window\"?",
       "options": [
-        "A előtt itt van.",
-        "A előtt itt vannak.",
-        "A előtt van ittünk."
+        "ablak mögött",
+        "mögött ablak",
+        "ablak mögötte"
       ],
       "correct": 0
     }

@@ -5,225 +5,134 @@
       "id": "a1-32-review-1",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the familiar Hungarian word.",
-      "options": [
-        "öreg",
-        "szép",
-        "xyz"
-      ],
+      "question": "Which word means \"tall\"?",
+      "options": ["magas", "alacsony", "fiatal"],
       "correct": 0
     },
     {
       "id": "a1-32-review-2",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the correct form.",
-      "options": [
-        "szép",
-        "barna",
-        "xyz"
-      ],
+      "question": "Which is the plural predicate form of magas?",
+      "options": ["magasak", "magask", "magasok"],
       "correct": 0
     },
     {
       "id": "a1-32-introduce-1",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which word is being introduced?",
-      "options": [
-        "öreg",
-        "szép",
-        "barna"
-      ],
+      "question": "Which word means \"old\"?",
+      "options": ["öreg", "szép", "barna"],
       "correct": 0
     },
     {
       "id": "a1-32-introduce-2",
-      "type": "fill-blank",
+      "type": "multiple-choice",
       "category": "introduce",
-      "sentence": "____.",
-      "answer": "szép"
+      "question": "Which word means \"beautiful / nice\"?",
+      "options": ["szép", "öreg", "barna"],
+      "correct": 0
     },
     {
       "id": "a1-32-controlled-1",
-      "type": "multiple-choice",
+      "type": "matching",
       "category": "controlled",
-      "question": "Choose the correct word.",
-      "options": [
-        "öreg",
-        "szép",
-        "barna"
-      ],
-      "correct": 0
+      "pairs": [
+        ["öreg", "old"],
+        ["szép", "beautiful / nice"],
+        ["barna", "brown"],
+        ["haj", "hair"]
+      ]
     },
     {
       "id": "a1-32-controlled-2",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "____.",
-      "answer": "szép"
+      "sentence": "Barna ____ van. (his hair — haj + possessive)",
+      "answer": "haja"
     },
     {
       "id": "a1-32-controlled-3",
-      "type": "matching",
+      "type": "multiple-choice",
       "category": "controlled",
-      "pairs": [
-        [
-          "öreg",
-          "old"
-        ],
-        [
-          "szép",
-          "nice / beautiful"
-        ],
-        [
-          "barna",
-          "brown"
-        ],
-        [
-          "szőke",
-          "blond"
-        ]
-      ]
+      "question": "Which sentence means \"He has brown hair\"?",
+      "options": ["Barna haja van.", "Ő barna haj.", "Barna haj van ő."],
+      "correct": 0
     },
     {
       "id": "a1-32-controlled-4",
-      "type": "sentence-builder",
+      "type": "fill-blank",
       "category": "controlled",
-      "tiles": [
-        "öreg",
-        "szép",
-        "."
-      ],
-      "solution": [
-        "öreg",
-        "szép",
-        "."
-      ],
-      "english": "öreg szép."
+      "sentence": "Ő ____. Ők öregek. (old, singular)",
+      "answer": "öreg"
     },
     {
       "id": "a1-32-practice-1",
       "type": "multiple-choice",
       "category": "practice",
-      "question": "Choose the target word.",
-      "options": [
-        "öreg",
-        "szép",
-        "xyz"
-      ],
+      "question": "Which sentence means \"She has blond hair\"?",
+      "options": ["Szőke haja van.", "Ő szőke haj.", "Szőke van haja."],
       "correct": 0
     },
     {
       "id": "a1-32-practice-2",
       "type": "fill-blank",
       "category": "practice",
-      "sentence": "____.",
-      "answer": "szép"
+      "sentence": "Ő szép. Ők ____. (beautiful, plural)",
+      "answer": "szépek"
     },
     {
       "id": "a1-32-practice-3",
       "type": "matching",
       "category": "practice",
       "pairs": [
-        [
-          "öreg",
-          "old"
-        ],
-        [
-          "szép",
-          "nice / beautiful"
-        ],
-        [
-          "barna",
-          "brown"
-        ],
-        [
-          "szőke",
-          "blond"
-        ]
+        ["Barna haja van.", "He has brown hair."],
+        ["Ő öreg.", "He is old."],
+        ["Ők öregek.", "They are old."],
+        ["Ő szép.", "She is beautiful."]
       ]
     },
     {
       "id": "a1-32-practice-4",
       "type": "sentence-builder",
       "category": "practice",
-      "tiles": [
-        "öreg",
-        "szép",
-        "."
-      ],
-      "solution": [
-        "öreg",
-        "szép",
-        "."
-      ],
-      "english": "öreg szép."
+      "tiles": ["Barna", "haja", "van", "."],
+      "solution": ["Barna", "haja", "van", "."],
+      "english": "He has brown hair."
     },
     {
       "id": "a1-32-practice-5",
-      "type": "dialogue-complete",
+      "type": "sentence-order",
       "category": "practice",
-      "prompt": [
-        {
-          "speaker": "Meg",
-          "text": "Mi ez?"
-        },
-        {
-          "speaker": "Károly",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Ez öreg.",
-        "Ő szép."
-      ],
-      "correct": 0
+      "sentences": ["Milyen a haja?", "Barna haja van.", "Ő öreg?", "Nem, ő fiatal."],
+      "solution": [0, 1, 2, 3]
     },
     {
       "id": "a1-32-practice-6",
-      "type": "sentence-order",
+      "type": "multiple-choice",
       "category": "practice",
-      "words": [
-        "öreg",
-        "szép"
-      ],
-      "solution": [
-        "öreg",
-        "szép"
-      ],
-      "english": "öreg szép."
+      "question": "Which pattern does haja van follow?",
+      "options": ["van + possessive suffix, for \"has\"", "the plural predicate -k rule", "the zero-copula identity rule"],
+      "correct": 0
     },
     {
       "id": "a1-32-practice-7",
-      "type": "multiple-choice",
+      "type": "structured-writing",
       "category": "practice",
-      "question": "Choose the natural answer.",
-      "options": [
-        "öreg",
-        "szép",
-        "barna"
-      ],
-      "correct": 0
+      "template": [
+        { "prompt": "Say he has brown hair.", "answer": "Barna haja van." },
+        { "prompt": "Say she is beautiful.", "answer": "Ő szép." }
+      ]
     },
     {
       "id": "a1-32-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
       "prompt": [
-        {
-          "speaker": "Károly",
-          "text": "Mi ez?"
-        },
-        {
-          "speaker": "Meg",
-          "text": "_____"
-        }
+        { "speaker": "Meg", "text": "Milyen a haja?" },
+        { "speaker": "Károly", "text": "_____" }
       ],
-      "options": [
-        "Ez öreg.",
-        "Ő szép."
-      ],
+      "options": ["Barna haja van.", "Barna van haja."],
       "correct": 0
     },
     {
@@ -231,57 +140,42 @@
       "type": "dialogue-complete",
       "category": "dialogue",
       "prompt": [
-        {
-          "speaker": "Meg",
-          "text": "Milyen?"
-        },
-        {
-          "speaker": "Károly",
-          "text": "_____"
-        }
+        { "speaker": "Meg", "text": "Ő öreg?" },
+        { "speaker": "Károly", "text": "_____" }
       ],
-      "options": [
-        "szép",
-        "barna"
-      ],
+      "options": ["Nem, ő fiatal.", "Nem, öreg ő van."],
       "correct": 0
     },
     {
       "id": "a1-32-writing-1",
       "type": "structured-writing",
       "category": "writing",
-      "prompt": "Write a short Hungarian sentence using a target word.",
-      "answer": "öreg."
+      "template": [
+        { "prompt": "Say \"She has blond hair.\" in Hungarian.", "answer": "Szőke haja van." }
+      ]
     },
     {
       "id": "a1-32-writing-2",
       "type": "structured-writing",
       "category": "writing",
-      "prompt": "Write another short Hungarian sentence using a target word.",
-      "answer": "szép."
+      "template": [
+        { "prompt": "Say \"They are old.\" in Hungarian.", "answer": "Ők öregek." }
+      ]
     },
     {
       "id": "a1-32-check-1",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Choose the correct target word.",
-      "options": [
-        "öreg",
-        "szép",
-        "xyz"
-      ],
+      "question": "Which word means \"brown\"?",
+      "options": ["barna", "szőke", "szép"],
       "correct": 0
     },
     {
       "id": "a1-32-check-2",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Choose the correct target word.",
-      "options": [
-        "szép",
-        "barna",
-        "xyz"
-      ],
+      "question": "How do you say \"He has brown hair\"?",
+      "options": ["Barna haja van.", "Ő barna haj van.", "Haja barna van."],
       "correct": 0
     }
   ]

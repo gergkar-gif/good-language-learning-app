@@ -5,225 +5,134 @@
       "id": "a1-31-review-1",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the familiar Hungarian word.",
-      "options": [
-        "milyen",
-        "magas",
-        "xyz"
-      ],
+      "question": "Which word means \"together\"?",
+      "options": ["együtt", "minden", "nap"],
       "correct": 0
     },
     {
       "id": "a1-31-review-2",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the correct form.",
-      "options": [
-        "magas",
-        "alacsony",
-        "xyz"
-      ],
+      "question": "Which correctly means \"after work\"?",
+      "options": ["a munka után", "után a munka", "munka utánja"],
       "correct": 0
     },
     {
       "id": "a1-31-introduce-1",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which word is being introduced?",
-      "options": [
-        "milyen",
-        "magas",
-        "alacsony"
-      ],
+      "question": "Which word means \"tall\"?",
+      "options": ["magas", "alacsony", "fiatal"],
       "correct": 0
     },
     {
       "id": "a1-31-introduce-2",
-      "type": "fill-blank",
+      "type": "multiple-choice",
       "category": "introduce",
-      "sentence": "____.",
-      "answer": "magas"
+      "question": "Which word asks \"what is ... like?\"",
+      "options": ["milyen", "mikor", "ki"],
+      "correct": 0
     },
     {
       "id": "a1-31-controlled-1",
-      "type": "multiple-choice",
+      "type": "matching",
       "category": "controlled",
-      "question": "Choose the correct word.",
-      "options": [
-        "milyen",
-        "magas",
-        "alacsony"
-      ],
-      "correct": 0
+      "pairs": [
+        ["milyen", "what is ... like"],
+        ["magas", "tall"],
+        ["alacsony", "short"],
+        ["fiatal", "young"]
+      ]
     },
     {
       "id": "a1-31-controlled-2",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "____.",
+      "sentence": "Milyen ő? Ő ____. (tall)",
       "answer": "magas"
     },
     {
       "id": "a1-31-controlled-3",
-      "type": "matching",
+      "type": "multiple-choice",
       "category": "controlled",
-      "pairs": [
-        [
-          "milyen",
-          "what is ... like"
-        ],
-        [
-          "magas",
-          "tall"
-        ],
-        [
-          "alacsony",
-          "short"
-        ],
-        [
-          "fiatal",
-          "young"
-        ]
-      ]
+      "question": "Which sentence correctly avoids a copula?",
+      "options": ["Ő magas.", "Ő van magas.", "Ő magas van."],
+      "correct": 0
     },
     {
       "id": "a1-31-controlled-4",
-      "type": "sentence-builder",
+      "type": "fill-blank",
       "category": "controlled",
-      "tiles": [
-        "milyen",
-        "magas",
-        "."
-      ],
-      "solution": [
-        "milyen",
-        "magas",
-        "."
-      ],
-      "english": "milyen magas."
+      "sentence": "Milyen a fiú? ____. (young)",
+      "answer": "Fiatal"
     },
     {
       "id": "a1-31-practice-1",
       "type": "multiple-choice",
       "category": "practice",
-      "question": "Choose the target word.",
-      "options": [
-        "milyen",
-        "magas",
-        "xyz"
-      ],
+      "question": "Which is the plural predicate form of magas?",
+      "options": ["magasak", "magask", "magasok"],
       "correct": 0
     },
     {
       "id": "a1-31-practice-2",
       "type": "fill-blank",
       "category": "practice",
-      "sentence": "____.",
-      "answer": "magas"
+      "sentence": "Ő magas, de ők ____. (tall, plural)",
+      "answer": "magasak"
     },
     {
       "id": "a1-31-practice-3",
       "type": "matching",
       "category": "practice",
       "pairs": [
-        [
-          "milyen",
-          "what is ... like"
-        ],
-        [
-          "magas",
-          "tall"
-        ],
-        [
-          "alacsony",
-          "short"
-        ],
-        [
-          "fiatal",
-          "young"
-        ]
+        ["Ő magas.", "He is tall."],
+        ["Ők magasak.", "They are tall."],
+        ["A fiúk fiatalok.", "The boys are young."],
+        ["Ő alacsony.", "He is short."]
       ]
     },
     {
       "id": "a1-31-practice-4",
       "type": "sentence-builder",
       "category": "practice",
-      "tiles": [
-        "milyen",
-        "magas",
-        "."
-      ],
-      "solution": [
-        "milyen",
-        "magas",
-        "."
-      ],
-      "english": "milyen magas."
+      "tiles": ["Ők", "magasak", "."],
+      "solution": ["Ők", "magasak", "."],
+      "english": "They are tall."
     },
     {
       "id": "a1-31-practice-5",
-      "type": "dialogue-complete",
+      "type": "sentence-order",
       "category": "practice",
-      "prompt": [
-        {
-          "speaker": "Meg",
-          "text": "Mi ez?"
-        },
-        {
-          "speaker": "Károly",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Ez milyen.",
-        "Ő magas."
-      ],
-      "correct": 0
+      "sentences": ["Milyen ő?", "Ő magas.", "Milyen a fiú?", "Fiatal."],
+      "solution": [0, 1, 2, 3]
     },
     {
       "id": "a1-31-practice-6",
-      "type": "sentence-order",
+      "type": "multiple-choice",
       "category": "practice",
-      "words": [
-        "milyen",
-        "magas"
-      ],
-      "solution": [
-        "milyen",
-        "magas"
-      ],
-      "english": "milyen magas."
+      "question": "Which sentence describes more than one person?",
+      "options": ["A fiúk fiatalok.", "A fiú fiatal.", "Ő fiatal."],
+      "correct": 0
     },
     {
       "id": "a1-31-practice-7",
-      "type": "multiple-choice",
+      "type": "structured-writing",
       "category": "practice",
-      "question": "Choose the natural answer.",
-      "options": [
-        "milyen",
-        "magas",
-        "alacsony"
-      ],
-      "correct": 0
+      "template": [
+        { "prompt": "Ask what someone is like.", "answer": "Milyen ő?" },
+        { "prompt": "Say he is tall.", "answer": "Ő magas." }
+      ]
     },
     {
       "id": "a1-31-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
       "prompt": [
-        {
-          "speaker": "Károly",
-          "text": "Mi ez?"
-        },
-        {
-          "speaker": "Meg",
-          "text": "_____"
-        }
+        { "speaker": "Meg", "text": "Milyen ő?" },
+        { "speaker": "Károly", "text": "_____" }
       ],
-      "options": [
-        "Ez milyen.",
-        "Ő magas."
-      ],
+      "options": ["Ő magas.", "Ő van magas."],
       "correct": 0
     },
     {
@@ -231,57 +140,42 @@
       "type": "dialogue-complete",
       "category": "dialogue",
       "prompt": [
-        {
-          "speaker": "Meg",
-          "text": "Milyen?"
-        },
-        {
-          "speaker": "Károly",
-          "text": "_____"
-        }
+        { "speaker": "Meg", "text": "Milyen a fiú?" },
+        { "speaker": "Károly", "text": "_____" }
       ],
-      "options": [
-        "magas",
-        "alacsony"
-      ],
+      "options": ["Fiatal.", "Fiatal van."],
       "correct": 0
     },
     {
       "id": "a1-31-writing-1",
       "type": "structured-writing",
       "category": "writing",
-      "prompt": "Write a short Hungarian sentence using a target word.",
-      "answer": "milyen."
+      "template": [
+        { "prompt": "Say \"He is short.\" in Hungarian.", "answer": "Ő alacsony." }
+      ]
     },
     {
       "id": "a1-31-writing-2",
       "type": "structured-writing",
       "category": "writing",
-      "prompt": "Write another short Hungarian sentence using a target word.",
-      "answer": "magas."
+      "template": [
+        { "prompt": "Say \"They are tall.\" in Hungarian.", "answer": "Ők magasak." }
+      ]
     },
     {
       "id": "a1-31-check-1",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Choose the correct target word.",
-      "options": [
-        "milyen",
-        "magas",
-        "xyz"
-      ],
+      "question": "Which word means \"short\"?",
+      "options": ["alacsony", "magas", "fiatal"],
       "correct": 0
     },
     {
       "id": "a1-31-check-2",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Choose the correct target word.",
-      "options": [
-        "magas",
-        "alacsony",
-        "xyz"
-      ],
+      "question": "How do you say \"They are young\"?",
+      "options": ["Ők fiatalok.", "Ők fiatal.", "Ő fiatalok."],
       "correct": 0
     }
   ]

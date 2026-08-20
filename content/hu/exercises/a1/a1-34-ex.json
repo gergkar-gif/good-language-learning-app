@@ -5,120 +5,80 @@
       "id": "a1-34-review-1",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the familiar Hungarian word.",
-      "options": [
-        "ember",
-        "férfi",
-        "xyz"
-      ],
+      "question": "Which word means \"kind\"?",
+      "options": ["kedves", "vicces", "hangos"],
       "correct": 0
     },
     {
       "id": "a1-34-review-2",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the correct form.",
-      "options": [
-        "férfi",
-        "nő",
-        "xyz"
-      ],
+      "question": "Which pair are natural opposites?",
+      "options": ["csendes / hangos", "kedves / vicces", "öreg / szép"],
       "correct": 0
     },
     {
       "id": "a1-34-introduce-1",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which word is being introduced?",
-      "options": [
-        "ember",
-        "férfi",
-        "nő"
-      ],
+      "question": "Which word means \"person\"?",
+      "options": ["ember", "férfi", "nő"],
       "correct": 0
     },
     {
       "id": "a1-34-introduce-2",
-      "type": "fill-blank",
+      "type": "multiple-choice",
       "category": "introduce",
-      "sentence": "____.",
-      "answer": "férfi"
+      "question": "Which word means \"man\"?",
+      "options": ["férfi", "nő", "ember"],
+      "correct": 0
     },
     {
       "id": "a1-34-controlled-1",
-      "type": "multiple-choice",
+      "type": "matching",
       "category": "controlled",
-      "question": "Choose the correct word.",
-      "options": [
-        "ember",
-        "férfi",
-        "nő"
-      ],
-      "correct": 0
+      "pairs": [
+        ["ember", "person"],
+        ["férfi", "man"],
+        ["nő", "woman"],
+        ["barát", "friend"]
+      ]
     },
     {
       "id": "a1-34-controlled-2",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "____.",
+      "sentence": "Ő egy magas ____. (man)",
       "answer": "férfi"
     },
     {
       "id": "a1-34-controlled-3",
-      "type": "matching",
+      "type": "multiple-choice",
       "category": "controlled",
-      "pairs": [
-        [
-          "ember",
-          "person"
-        ],
-        [
-          "férfi",
-          "man"
-        ],
-        [
-          "nő",
-          "woman"
-        ],
-        [
-          "barát",
-          "friend"
-        ]
-      ]
+      "question": "Which sentence means \"He is my friend\"?",
+      "options": ["Ő a barátom.", "Ő barát van.", "Barátom ő van."],
+      "correct": 0
     },
     {
       "id": "a1-34-controlled-4",
-      "type": "sentence-builder",
+      "type": "fill-blank",
       "category": "controlled",
-      "tiles": [
-        "ember",
-        "férfi",
-        "."
-      ],
-      "solution": [
-        "ember",
-        "férfi",
-        "."
-      ],
-      "english": "ember férfi."
+      "sentence": "Ő egy fiatal ____. (woman)",
+      "answer": "nő"
     },
     {
       "id": "a1-34-practice-1",
       "type": "multiple-choice",
       "category": "practice",
-      "question": "Choose the target word.",
-      "options": [
-        "ember",
-        "férfi",
-        "xyz"
-      ],
+      "question": "Which word covers both férfi and nő?",
+      "options": ["ember", "barát", "gyerek"],
       "correct": 0
     },
     {
       "id": "a1-34-practice-2",
       "type": "fill-blank",
       "category": "practice",
-      "sentence": "____.",
+      "sentence": "A ____ magas, a nő alacsony. (the man)",
       "answer": "férfi"
     },
     {
@@ -126,104 +86,53 @@
       "type": "matching",
       "category": "practice",
       "pairs": [
-        [
-          "ember",
-          "person"
-        ],
-        [
-          "férfi",
-          "man"
-        ],
-        [
-          "nő",
-          "woman"
-        ],
-        [
-          "barát",
-          "friend"
-        ]
+        ["Ő egy férfi.", "He is a man."],
+        ["Ő egy nő.", "She is a woman."],
+        ["Ő a barátom.", "He is my friend."],
+        ["Egy magas férfi.", "A tall man."]
       ]
     },
     {
       "id": "a1-34-practice-4",
       "type": "sentence-builder",
       "category": "practice",
-      "tiles": [
-        "ember",
-        "férfi",
-        "."
-      ],
-      "solution": [
-        "ember",
-        "férfi",
-        "."
-      ],
-      "english": "ember férfi."
+      "tiles": ["Egy", "magas", "férfi", "."],
+      "solution": ["Egy", "magas", "férfi", "."],
+      "english": "A tall man."
     },
     {
       "id": "a1-34-practice-5",
-      "type": "dialogue-complete",
+      "type": "sentence-order",
       "category": "practice",
-      "prompt": [
-        {
-          "speaker": "Meg",
-          "text": "Mi ez?"
-        },
-        {
-          "speaker": "Károly",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Ez ember.",
-        "Ő férfi."
-      ],
-      "correct": 0
+      "sentences": ["Milyen az ember?", "A férfi magas, a nő alacsony.", "Ő a barátod?", "Igen, ő a barátom."],
+      "solution": [0, 1, 2, 3]
     },
     {
       "id": "a1-34-practice-6",
-      "type": "sentence-order",
+      "type": "multiple-choice",
       "category": "practice",
-      "words": [
-        "ember",
-        "férfi"
-      ],
-      "solution": [
-        "ember",
-        "férfi"
-      ],
-      "english": "ember férfi."
+      "question": "Which sentence puts the adjective correctly in front of the noun?",
+      "options": ["Egy magas férfi.", "Egy magasak férfi.", "Férfi egy magas."],
+      "correct": 0
     },
     {
       "id": "a1-34-practice-7",
-      "type": "multiple-choice",
+      "type": "structured-writing",
       "category": "practice",
-      "question": "Choose the natural answer.",
-      "options": [
-        "ember",
-        "férfi",
-        "nő"
-      ],
-      "correct": 0
+      "template": [
+        { "prompt": "Say he is a tall man.", "answer": "Ő egy magas férfi." },
+        { "prompt": "Say she is my friend.", "answer": "Ő a barátom." }
+      ]
     },
     {
       "id": "a1-34-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
       "prompt": [
-        {
-          "speaker": "Károly",
-          "text": "Mi ez?"
-        },
-        {
-          "speaker": "Meg",
-          "text": "_____"
-        }
+        { "speaker": "Meg", "text": "Ő a barátod?" },
+        { "speaker": "Károly", "text": "_____" }
       ],
-      "options": [
-        "Ez ember.",
-        "Ő férfi."
-      ],
+      "options": ["Igen, ő a barátom.", "Igen, barátom ő van."],
       "correct": 0
     },
     {
@@ -231,57 +140,42 @@
       "type": "dialogue-complete",
       "category": "dialogue",
       "prompt": [
-        {
-          "speaker": "Meg",
-          "text": "Milyen?"
-        },
-        {
-          "speaker": "Károly",
-          "text": "_____"
-        }
+        { "speaker": "Meg", "text": "Milyen az ember?" },
+        { "speaker": "Károly", "text": "_____" }
       ],
-      "options": [
-        "férfi",
-        "nő"
-      ],
+      "options": ["A férfi magas, a nő alacsony.", "Az ember van magas."],
       "correct": 0
     },
     {
       "id": "a1-34-writing-1",
       "type": "structured-writing",
       "category": "writing",
-      "prompt": "Write a short Hungarian sentence using a target word.",
-      "answer": "ember."
+      "template": [
+        { "prompt": "Say \"She is a woman.\" in Hungarian.", "answer": "Ő egy nő." }
+      ]
     },
     {
       "id": "a1-34-writing-2",
       "type": "structured-writing",
       "category": "writing",
-      "prompt": "Write another short Hungarian sentence using a target word.",
-      "answer": "férfi."
+      "template": [
+        { "prompt": "Say \"A young woman.\" in Hungarian.", "answer": "Egy fiatal nő." }
+      ]
     },
     {
       "id": "a1-34-check-1",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Choose the correct target word.",
-      "options": [
-        "ember",
-        "férfi",
-        "xyz"
-      ],
+      "question": "Which word means \"woman\"?",
+      "options": ["nő", "férfi", "ember"],
       "correct": 0
     },
     {
       "id": "a1-34-check-2",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Choose the correct target word.",
-      "options": [
-        "férfi",
-        "nő",
-        "xyz"
-      ],
+      "question": "How do you say \"A tall man\"?",
+      "options": ["Egy magas férfi.", "Egy magasak férfi.", "Férfi magas egy."],
       "correct": 0
     }
   ]

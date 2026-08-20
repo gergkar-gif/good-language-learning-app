@@ -5,7 +5,31 @@
       "id": "a1-80-review-1",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the useful Hungarian item.",
+      "question": "Which word means \"April\"?",
+      "options": [
+        "április",
+        "március",
+        "február"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-80-review-2",
+      "type": "multiple-choice",
+      "category": "review",
+      "question": "Which means \"in April\"?",
+      "options": [
+        "áprilisban",
+        "április",
+        "áprilison"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a1-80-intro-1",
+      "type": "multiple-choice",
+      "category": "introduce",
+      "question": "Which word means \"Friday\"?",
       "options": [
         "péntek",
         "szombat",
@@ -14,38 +38,14 @@
       "correct": 0
     },
     {
-      "id": "a1-80-review-2",
-      "type": "multiple-choice",
-      "category": "review",
-      "question": "Which item belongs to this lesson?",
-      "options": [
-        "szombat",
-        "vasárnap",
-        "találkozó"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "a1-80-intro-1",
-      "type": "multiple-choice",
-      "category": "introduce",
-      "question": "Which sentence uses péntek naturally?",
-      "options": [
-        "A péntek itt van.",
-        "A péntek megy.",
-        "péntek ember."
-      ],
-      "correct": 0
-    },
-    {
       "id": "a1-80-intro-2",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which word is szombat?",
+      "question": "Which word means \"meeting\"?",
       "options": [
-        "szombat",
-        "vasárnap",
-        "találkozó"
+        "találkozó",
+        "találkozunk",
+        "találkozik"
       ],
       "correct": 0
     },
@@ -56,19 +56,19 @@
       "pairs": [
         [
           "péntek",
-          "target 1"
+          "Friday"
         ],
         [
           "szombat",
-          "target 2"
+          "Saturday"
         ],
         [
           "vasárnap",
-          "target 3"
+          "Sunday"
         ],
         [
           "találkozó",
-          "target 4"
+          "meeting"
         ]
       ]
     },
@@ -76,18 +76,18 @@
       "id": "a1-80-controlled-2",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "Ez a(z) ____.",
-      "answer": "péntek"
+      "sentence": "A találkozó ____ van. (on Friday)",
+      "answer": "pénteken"
     },
     {
       "id": "a1-80-controlled-3",
       "type": "multiple-choice",
       "category": "controlled",
-      "question": "Choose the natural sentence.",
+      "question": "Which is the correct \"on Saturday\" form?",
       "options": [
-        "A szombat fontos.",
-        "A szombat fontosak.",
-        "szombat a fontos."
+        "szombaton",
+        "szombatn",
+        "szombatban"
       ],
       "correct": 0
     },
@@ -95,18 +95,18 @@
       "id": "a1-80-controlled-4",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "A ____ itt van.",
-      "answer": "szombat"
+      "sentence": "Szombat vagy ____ is jó.",
+      "answer": "vasárnap"
     },
     {
       "id": "a1-80-practice-1",
       "type": "multiple-choice",
       "category": "practice",
-      "question": "Which answer fits?",
+      "question": "Which word needs NO -n suffix to mean \"on Sunday\"?",
       "options": [
-        "Igen, péntek.",
-        "Hol, vasárnap?",
-        "Nem találkozó?"
+        "vasárnap",
+        "szombat",
+        "péntek"
       ],
       "correct": 0
     },
@@ -114,8 +114,8 @@
       "id": "a1-80-practice-2",
       "type": "fill-blank",
       "category": "practice",
-      "sentence": "Ma ____ van.",
-      "answer": "péntek"
+      "sentence": "____ jó. Szombat vagy vasárnap is jó.",
+      "answer": "Péntek"
     },
     {
       "id": "a1-80-practice-3",
@@ -123,20 +123,20 @@
       "category": "practice",
       "pairs": [
         [
-          "péntek",
-          "meaning 1"
+          "Mikor van a találkozó?",
+          "When is the meeting?"
         ],
         [
-          "szombat",
-          "meaning 2"
+          "Találkozunk pénteken.",
+          "We'll meet on Friday."
         ],
         [
-          "vasárnap",
-          "meaning 3"
+          "Péntek jó.",
+          "Friday is good."
         ],
         [
-          "találkozó",
-          "meaning 4"
+          "Szombat vagy vasárnap is jó.",
+          "Saturday or Sunday works too."
         ]
       ]
     },
@@ -145,20 +145,16 @@
       "type": "sentence-builder",
       "category": "practice",
       "tiles": [
-        "A",
-        "péntek",
-        "itt",
-        "van",
+        "Találkozunk",
+        "pénteken",
         "."
       ],
       "solution": [
-        "A",
-        "péntek",
-        "itt",
-        "van",
+        "Találkozunk",
+        "pénteken",
         "."
       ],
-      "english": "The péntek is here."
+      "english": "We'll meet on Friday."
     },
     {
       "id": "a1-80-practice-5",
@@ -166,17 +162,17 @@
       "category": "practice",
       "prompt": [
         {
-          "speaker": "Károly",
-          "text": "Hol van?"
+          "speaker": "Meg",
+          "text": "Hétfőn, kedden, szerdán vagy csütörtökön? Szerda is jó."
         },
         {
-          "speaker": "Meg",
+          "speaker": "Károly",
           "text": "_____"
         }
       ],
       "options": [
-        "A szombat van.",
-        "A vasárnap megy."
+        "Nem. Péntek jó.",
+        "Igen, szerda jó."
       ],
       "correct": 0
     },
@@ -187,7 +183,7 @@
       "prompt": [
         {
           "speaker": "Károly",
-          "text": "Rendben?"
+          "text": "Mikor van a találkozó?"
         },
         {
           "speaker": "Meg",
@@ -195,8 +191,8 @@
         }
       ],
       "options": [
-        "Igen, rendben.",
-        "Nem tudom."
+        "Pénteken reggel.",
+        "Csütörtök van."
       ],
       "correct": 0
     },
@@ -204,11 +200,11 @@
       "id": "a1-80-dialogue-2",
       "type": "multiple-choice",
       "category": "dialogue",
-      "question": "Choose the natural reply.",
+      "question": "Choose the natural reply to \"Találkozunk pénteken?\"",
       "options": [
-        "Rendben, szombat.",
-        "vasárnap hol.",
-        "Nem találkozó."
+        "Igen, találkozunk.",
+        "Igen, találkozó vagyok.",
+        "Nem, péntek van."
       ],
       "correct": 0
     },
@@ -218,8 +214,8 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Write one short Hungarian sentence using a target word.",
-          "answer": "Use péntek in a simple sentence."
+          "prompt": "Write \"We'll meet on Friday.\" in Hungarian.",
+          "answer": "Találkozunk pénteken."
         }
       ]
     },
@@ -229,8 +225,8 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Write another short Hungarian sentence using a target word.",
-          "answer": "Use szombat in a simple sentence."
+          "prompt": "Write \"Saturday or Sunday works too.\" in Hungarian.",
+          "answer": "Szombat vagy vasárnap is jó."
         }
       ]
     },
@@ -238,11 +234,11 @@
       "id": "a1-80-check-1",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Which target word completes the sentence?",
+      "question": "Which word means \"Saturday\"?",
       "options": [
-        "péntek",
+        "szombat",
         "vasárnap",
-        "találkozó"
+        "péntek"
       ],
       "correct": 0
     },
@@ -250,11 +246,11 @@
       "id": "a1-80-check-2",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Which sentence is natural?",
+      "question": "Which sentence means \"The meeting is on Friday\"?",
       "options": [
-        "A szombat itt van.",
-        "A szombat itt vannak.",
-        "A szombat van ittünk."
+        "A találkozó pénteken van.",
+        "A találkozó péntek van.",
+        "A találkozó pénteki van."
       ],
       "correct": 0
     }

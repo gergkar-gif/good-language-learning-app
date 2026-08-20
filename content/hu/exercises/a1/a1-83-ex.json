@@ -5,11 +5,11 @@
       "id": "a1-83-review-1",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the useful Hungarian item.",
+      "question": "Which word means \"sometimes\"?",
       "options": [
-        "minden",
-        "nap",
-        "hétvégén"
+        "néha",
+        "ritkán",
+        "soha"
       ],
       "correct": 0
     },
@@ -17,11 +17,11 @@
       "id": "a1-83-review-2",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Which item belongs to this lesson?",
+      "question": "Which sentence correctly uses negative concord?",
       "options": [
-        "nap",
-        "hétvégén",
-        "együtt"
+        "Soha nem dolgozom vasárnap.",
+        "Soha dolgozom vasárnap.",
+        "Nem soha dolgozom vasárnap."
       ],
       "correct": 0
     },
@@ -29,11 +29,11 @@
       "id": "a1-83-intro-1",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which sentence uses minden naturally?",
+      "question": "Which word means \"every / all\"?",
       "options": [
-        "A minden itt van.",
-        "A minden megy.",
-        "minden ember."
+        "minden",
+        "nap",
+        "együtt"
       ],
       "correct": 0
     },
@@ -41,11 +41,11 @@
       "id": "a1-83-intro-2",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which word is nap?",
+      "question": "Which word means \"day\"?",
       "options": [
         "nap",
-        "hétvégén",
-        "együtt"
+        "hét",
+        "hónap"
       ],
       "correct": 0
     },
@@ -56,19 +56,19 @@
       "pairs": [
         [
           "minden",
-          "target 1"
+          "every / all"
         ],
         [
           "nap",
-          "target 2"
+          "day"
         ],
         [
-          "hétvégén",
-          "target 3"
+          "hétvége",
+          "weekend"
         ],
         [
           "együtt",
-          "target 4"
+          "together"
         ]
       ]
     },
@@ -76,18 +76,18 @@
       "id": "a1-83-controlled-2",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "Ez a(z) ____.",
-      "answer": "minden"
+      "sentence": "____ nap tanulok. (every)",
+      "answer": "Minden"
     },
     {
       "id": "a1-83-controlled-3",
       "type": "multiple-choice",
       "category": "controlled",
-      "question": "Choose the natural sentence.",
+      "question": "Which sentence correctly places is (also/too)?",
       "options": [
-        "A nap fontos.",
-        "A nap fontosak.",
-        "nap a fontos."
+        "A pihenés is fontos.",
+        "Is a pihenés fontos.",
+        "A pihenés fontos is."
       ],
       "correct": 0
     },
@@ -95,18 +95,18 @@
       "id": "a1-83-controlled-4",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "A ____ itt van.",
-      "answer": "nap"
+      "sentence": "A munka ____ pihenés kell. (after)",
+      "answer": "után"
     },
     {
       "id": "a1-83-practice-1",
       "type": "multiple-choice",
       "category": "practice",
-      "question": "Which answer fits?",
+      "question": "Which answer fits \"Minden nap együtt vagyunk?\"",
       "options": [
-        "Igen, minden.",
-        "Hol, hétvégén?",
-        "Nem együtt?"
+        "Nem. Ma otthon vagyok.",
+        "Nem. Munka után.",
+        "Igen, hétvégén."
       ],
       "correct": 0
     },
@@ -114,8 +114,8 @@
       "id": "a1-83-practice-2",
       "type": "fill-blank",
       "category": "practice",
-      "sentence": "Ma ____ van.",
-      "answer": "minden"
+      "sentence": "Minden nap tanulok, de hétvégén ____ van tanulás. (rarely)",
+      "answer": "ritkán"
     },
     {
       "id": "a1-83-practice-3",
@@ -123,20 +123,20 @@
       "category": "practice",
       "pairs": [
         [
-          "minden",
-          "meaning 1"
+          "Minden nap együtt vagyunk?",
+          "Are we together every day?"
         ],
         [
-          "nap",
-          "meaning 2"
+          "A tanulás is fontos.",
+          "Studying is important too."
         ],
         [
-          "hétvégén",
-          "meaning 3"
+          "A munka után pihenés kell.",
+          "After work, rest is needed."
         ],
         [
-          "együtt",
-          "meaning 4"
+          "Általában otthon tanulok.",
+          "I usually study at home."
         ]
       ]
     },
@@ -146,19 +146,19 @@
       "category": "practice",
       "tiles": [
         "A",
-        "minden",
-        "itt",
-        "van",
+        "tanulás",
+        "is",
+        "fontos",
         "."
       ],
       "solution": [
         "A",
-        "minden",
-        "itt",
-        "van",
+        "tanulás",
+        "is",
+        "fontos",
         "."
       ],
-      "english": "The minden is here."
+      "english": "Studying is important too."
     },
     {
       "id": "a1-83-practice-5",
@@ -167,7 +167,7 @@
       "prompt": [
         {
           "speaker": "Károly",
-          "text": "Hol van?"
+          "text": "Minden nap együtt vagyunk?"
         },
         {
           "speaker": "Meg",
@@ -175,8 +175,8 @@
         }
       ],
       "options": [
-        "A nap van.",
-        "A hétvégén megy."
+        "Nem. Ma otthon vagyok.",
+        "Nem. Péntek van."
       ],
       "correct": 0
     },
@@ -186,17 +186,17 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Károly",
-          "text": "Rendben?"
+          "speaker": "Meg",
+          "text": "A tanulás is fontos."
         },
         {
-          "speaker": "Meg",
+          "speaker": "Károly",
           "text": "_____"
         }
       ],
       "options": [
-        "Igen, rendben.",
-        "Nem tudom."
+        "A pihenés is fontos.",
+        "A pihenés fontos is."
       ],
       "correct": 0
     },
@@ -204,11 +204,11 @@
       "id": "a1-83-dialogue-2",
       "type": "multiple-choice",
       "category": "dialogue",
-      "question": "Choose the natural reply.",
+      "question": "Choose the natural reply to \"Mikor kell pihenés?\"",
       "options": [
-        "Rendben, nap.",
-        "hétvégén hol.",
-        "Nem együtt."
+        "A munka után.",
+        "Munka után van.",
+        "Után a munka."
       ],
       "correct": 0
     },
@@ -218,8 +218,8 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Write one short Hungarian sentence using a target word.",
-          "answer": "Use minden in a simple sentence."
+          "prompt": "Write \"Studying is important too.\" in Hungarian.",
+          "answer": "A tanulás is fontos."
         }
       ]
     },
@@ -229,8 +229,8 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Write another short Hungarian sentence using a target word.",
-          "answer": "Use nap in a simple sentence."
+          "prompt": "Write \"After work, rest is needed.\" in Hungarian.",
+          "answer": "A munka után pihenés kell."
         }
       ]
     },
@@ -238,11 +238,11 @@
       "id": "a1-83-check-1",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Which target word completes the sentence?",
+      "question": "Which word means \"together\"?",
       "options": [
+        "együtt",
         "minden",
-        "hétvégén",
-        "együtt"
+        "nap"
       ],
       "correct": 0
     },
@@ -250,11 +250,11 @@
       "id": "a1-83-check-2",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Which sentence is natural?",
+      "question": "Which correctly means \"after work\"?",
       "options": [
-        "A nap itt van.",
-        "A nap itt vannak.",
-        "A nap van ittünk."
+        "a munka után",
+        "után a munka",
+        "munka utánja"
       ],
       "correct": 0
     }

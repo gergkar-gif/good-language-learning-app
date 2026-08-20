@@ -4,32 +4,32 @@
     {
       "id": "a1-29-review-1",
       "type": "multiple-choice",
-      "category": "review",
-      "question": "Choose the familiar Hungarian word.",
+      "category": "vocabulary",
+      "question": "Which means 'older brother'?",
       "options": [
-        "férj",
-        "feleség",
-        "xyz"
+        "báty",
+        "öcs",
+        "nővér"
       ],
       "correct": 0
     },
     {
       "id": "a1-29-review-2",
       "type": "multiple-choice",
-      "category": "review",
-      "question": "Choose the correct form.",
+      "category": "vocabulary",
+      "question": "Which means 'younger sister'?",
       "options": [
-        "feleség",
-        "nagymama",
-        "xyz"
+        "húg",
+        "nővér",
+        "báty"
       ],
       "correct": 0
     },
     {
       "id": "a1-29-introduce-1",
       "type": "multiple-choice",
-      "category": "introduce",
-      "question": "Which word is being introduced?",
+      "category": "vocabulary",
+      "question": "Which word means 'husband'?",
       "options": [
         "férj",
         "feleség",
@@ -39,34 +39,39 @@
     },
     {
       "id": "a1-29-introduce-2",
-      "type": "fill-blank",
-      "category": "introduce",
-      "sentence": "____.",
-      "answer": "feleség"
+      "type": "multiple-choice",
+      "category": "vocabulary",
+      "question": "Which word means 'grandmother'?",
+      "options": [
+        "nagymama",
+        "nagypapa",
+        "feleség"
+      ],
+      "correct": 0
     },
     {
       "id": "a1-29-controlled-1",
       "type": "multiple-choice",
-      "category": "controlled",
-      "question": "Choose the correct word.",
+      "category": "grammar",
+      "question": "Ő a ____. (my husband)",
       "options": [
-        "férj",
-        "feleség",
-        "nagymama"
+        "férjem",
+        "feleségem",
+        "nagymamám"
       ],
       "correct": 0
     },
     {
       "id": "a1-29-controlled-2",
       "type": "fill-blank",
-      "category": "controlled",
-      "sentence": "____.",
-      "answer": "feleség"
+      "category": "grammar",
+      "sentence": "Ő a ____. (my wife)",
+      "answer": "feleségem"
     },
     {
       "id": "a1-29-controlled-3",
       "type": "matching",
-      "category": "controlled",
+      "category": "vocabulary",
       "pairs": [
         [
           "férj",
@@ -89,122 +94,112 @@
     {
       "id": "a1-29-controlled-4",
       "type": "sentence-builder",
-      "category": "controlled",
+      "category": "grammar",
       "tiles": [
-        "férj",
-        "feleség",
+        "Ő",
+        "a",
+        "nagypapám",
         "."
       ],
       "solution": [
-        "férj",
-        "feleség",
+        "Ő",
+        "a",
+        "nagypapám",
         "."
       ],
-      "english": "férj feleség."
+      "english": "He is my grandfather."
     },
     {
       "id": "a1-29-practice-1",
       "type": "multiple-choice",
-      "category": "practice",
-      "question": "Choose the target word.",
+      "category": "grammar",
+      "question": "Which means 'my grandmother'?",
       "options": [
-        "férj",
-        "feleség",
-        "xyz"
+        "nagymamám",
+        "nagymama",
+        "nagypapám"
       ],
       "correct": 0
     },
     {
       "id": "a1-29-practice-2",
       "type": "fill-blank",
-      "category": "practice",
-      "sentence": "____.",
-      "answer": "feleség"
+      "category": "grammar",
+      "sentence": "Ki ő? Ő a ____. (my grandfather)",
+      "answer": "nagypapám"
     },
     {
       "id": "a1-29-practice-3",
       "type": "matching",
-      "category": "practice",
+      "category": "grammar",
       "pairs": [
         [
-          "férj",
-          "husband"
+          "férjem",
+          "my husband"
         ],
         [
-          "feleség",
-          "wife"
+          "feleségem",
+          "my wife"
         ],
         [
-          "nagymama",
-          "grandmother"
+          "nagymamám",
+          "my grandmother"
         ],
         [
-          "nagypapa",
-          "grandfather"
+          "nagypapám",
+          "my grandfather"
         ]
       ]
     },
     {
       "id": "a1-29-practice-4",
       "type": "sentence-builder",
-      "category": "practice",
+      "category": "grammar",
       "tiles": [
-        "férj",
-        "feleség",
-        "."
+        "Ki",
+        "az",
+        "?"
       ],
       "solution": [
-        "férj",
-        "feleség",
-        "."
+        "Ki",
+        "az",
+        "?"
       ],
-      "english": "férj feleség."
+      "english": "Who is that?"
     },
     {
       "id": "a1-29-practice-5",
-      "type": "dialogue-complete",
-      "category": "practice",
-      "prompt": [
-        {
-          "speaker": "Meg",
-          "text": "Mi ez?"
-        },
-        {
-          "speaker": "Károly",
-          "text": "_____"
-        }
+      "type": "sentence-order",
+      "category": "vocabulary",
+      "sentences": [
+        "Az a nagymamám.",
+        "Ki az?",
+        "Szia!"
       ],
-      "options": [
-        "Ez férj.",
-        "Ő feleség."
-      ],
-      "correct": 0
+      "solution": [
+        2,
+        1,
+        0
+      ]
     },
     {
       "id": "a1-29-practice-6",
-      "type": "sentence-order",
-      "category": "practice",
-      "words": [
-        "férj",
-        "feleség"
+      "type": "multiple-choice",
+      "category": "grammar",
+      "question": "Which question fits pointing at a photo of someone far off?",
+      "options": [
+        "Ki az?",
+        "Ki ő?",
+        "Mi az?"
       ],
-      "solution": [
-        "férj",
-        "feleség"
-      ],
-      "english": "férj feleség."
+      "correct": 0
     },
     {
       "id": "a1-29-practice-7",
-      "type": "multiple-choice",
-      "category": "practice",
-      "question": "Choose the natural answer.",
-      "options": [
-        "férj",
-        "feleség",
-        "nagymama"
-      ],
-      "correct": 0
+      "type": "fill-blank",
+      "category": "grammar",
+      "sentence": "Ő a férjem, ő a ____. (my wife)",
+      "answer": "feleségem"
     },
     {
       "id": "a1-29-dialogue-1",
@@ -212,17 +207,17 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Károly",
-          "text": "Mi ez?"
+          "speaker": "Meg",
+          "text": "Ki ő?"
         },
         {
-          "speaker": "Meg",
+          "speaker": "Károly",
           "text": "_____"
         }
       ],
       "options": [
-        "Ez férj.",
-        "Ő feleség."
+        "Ő a feleségem.",
+        "Ez egy telefon."
       ],
       "correct": 0
     },
@@ -233,7 +228,7 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Milyen?"
+          "text": "És ők?"
         },
         {
           "speaker": "Károly",
@@ -241,8 +236,8 @@
         }
       ],
       "options": [
-        "feleség",
-        "nagymama"
+        "Ők a szüleim.",
+        "Ez egy ajtó."
       ],
       "correct": 0
     },
@@ -250,37 +245,45 @@
       "id": "a1-29-writing-1",
       "type": "structured-writing",
       "category": "writing",
-      "prompt": "Write a short Hungarian sentence using a target word.",
-      "answer": "férj."
+      "template": [
+        {
+          "prompt": "Say 'She is my wife.' in Hungarian.",
+          "answer": "Ő a feleségem."
+        }
+      ]
     },
     {
       "id": "a1-29-writing-2",
       "type": "structured-writing",
       "category": "writing",
-      "prompt": "Write another short Hungarian sentence using a target word.",
-      "answer": "feleség."
+      "template": [
+        {
+          "prompt": "Say 'He is my grandfather.' in Hungarian.",
+          "answer": "Ő a nagypapám."
+        }
+      ]
     },
     {
       "id": "a1-29-check-1",
       "type": "multiple-choice",
-      "category": "check",
-      "question": "Choose the correct target word.",
+      "category": "vocabulary",
+      "question": "Which means 'wife'?",
       "options": [
-        "férj",
         "feleség",
-        "xyz"
+        "férj",
+        "nagymama"
       ],
       "correct": 0
     },
     {
       "id": "a1-29-check-2",
       "type": "multiple-choice",
-      "category": "check",
-      "question": "Choose the correct target word.",
+      "category": "vocabulary",
+      "question": "Which means 'grandfather'?",
       "options": [
-        "feleség",
+        "nagypapa",
         "nagymama",
-        "xyz"
+        "férj"
       ],
       "correct": 0
     }

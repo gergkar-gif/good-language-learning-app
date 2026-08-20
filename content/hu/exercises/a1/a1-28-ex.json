@@ -4,32 +4,32 @@
     {
       "id": "a1-28-review-1",
       "type": "multiple-choice",
-      "category": "review",
-      "question": "Choose the familiar Hungarian word.",
+      "category": "vocabulary",
+      "question": "Which means 'sibling'?",
       "options": [
-        "báty",
-        "öcs",
-        "xyz"
+        "testvér",
+        "gyerek",
+        "fiú"
       ],
       "correct": 0
     },
     {
       "id": "a1-28-review-2",
       "type": "multiple-choice",
-      "category": "review",
-      "question": "Choose the correct form.",
+      "category": "grammar",
+      "question": "Which means 'I have a daughter'?",
       "options": [
-        "öcs",
-        "nővér",
-        "xyz"
+        "Van egy lányom.",
+        "Van egy fiam.",
+        "Lányom van egy."
       ],
       "correct": 0
     },
     {
       "id": "a1-28-introduce-1",
       "type": "multiple-choice",
-      "category": "introduce",
-      "question": "Which word is being introduced?",
+      "category": "vocabulary",
+      "question": "Which word means 'older brother'?",
       "options": [
         "báty",
         "öcs",
@@ -39,34 +39,39 @@
     },
     {
       "id": "a1-28-introduce-2",
-      "type": "fill-blank",
-      "category": "introduce",
-      "sentence": "____.",
-      "answer": "öcs"
+      "type": "multiple-choice",
+      "category": "vocabulary",
+      "question": "Which word means 'younger sister'?",
+      "options": [
+        "húg",
+        "nővér",
+        "öcs"
+      ],
+      "correct": 0
     },
     {
       "id": "a1-28-controlled-1",
       "type": "multiple-choice",
-      "category": "controlled",
-      "question": "Choose the correct word.",
+      "category": "grammar",
+      "question": "Ő a ____. (my older brother)",
       "options": [
-        "báty",
-        "öcs",
-        "nővér"
+        "bátyám",
+        "öcsém",
+        "húgom"
       ],
       "correct": 0
     },
     {
       "id": "a1-28-controlled-2",
       "type": "fill-blank",
-      "category": "controlled",
-      "sentence": "____.",
-      "answer": "öcs"
+      "category": "grammar",
+      "sentence": "Ő az ____. (my younger brother)",
+      "answer": "öcsém"
     },
     {
       "id": "a1-28-controlled-3",
       "type": "matching",
-      "category": "controlled",
+      "category": "vocabulary",
       "pairs": [
         [
           "báty",
@@ -89,122 +94,116 @@
     {
       "id": "a1-28-controlled-4",
       "type": "sentence-builder",
-      "category": "controlled",
+      "category": "grammar",
       "tiles": [
-        "báty",
-        "öcs",
+        "Ő",
+        "a",
+        "nővérem",
         "."
       ],
       "solution": [
-        "báty",
-        "öcs",
+        "Ő",
+        "a",
+        "nővérem",
         "."
       ],
-      "english": "báty öcs."
+      "english": "She is my older sister."
     },
     {
       "id": "a1-28-practice-1",
       "type": "multiple-choice",
-      "category": "practice",
-      "question": "Choose the target word.",
+      "category": "vocabulary",
+      "question": "Which pair means 'older brother / younger brother'?",
       "options": [
-        "báty",
-        "öcs",
-        "xyz"
+        "báty / öcs",
+        "nővér / húg",
+        "fiú / lány"
       ],
       "correct": 0
     },
     {
       "id": "a1-28-practice-2",
       "type": "fill-blank",
-      "category": "practice",
-      "sentence": "____.",
-      "answer": "öcs"
+      "category": "grammar",
+      "sentence": "Ő a ____. (my younger sister)",
+      "answer": "húgom"
     },
     {
       "id": "a1-28-practice-3",
       "type": "matching",
-      "category": "practice",
+      "category": "grammar",
       "pairs": [
         [
-          "báty",
-          "older brother"
+          "bátyám",
+          "my older brother"
         ],
         [
-          "öcs",
-          "younger brother"
+          "öcsém",
+          "my younger brother"
         ],
         [
-          "nővér",
-          "older sister"
+          "nővérem",
+          "my older sister"
         ],
         [
-          "húg",
-          "younger sister"
+          "húgom",
+          "my younger sister"
         ]
       ]
     },
     {
       "id": "a1-28-practice-4",
       "type": "sentence-builder",
-      "category": "practice",
+      "category": "grammar",
       "tiles": [
-        "báty",
-        "öcs",
+        "Ő",
+        "nem",
+        "a",
+        "bátyám",
         "."
       ],
       "solution": [
-        "báty",
-        "öcs",
+        "Ő",
+        "nem",
+        "a",
+        "bátyám",
         "."
       ],
-      "english": "báty öcs."
+      "english": "He is not my older brother."
     },
     {
       "id": "a1-28-practice-5",
-      "type": "dialogue-complete",
-      "category": "practice",
-      "prompt": [
-        {
-          "speaker": "Meg",
-          "text": "Mi ez?"
-        },
-        {
-          "speaker": "Károly",
-          "text": "_____"
-        }
+      "type": "sentence-order",
+      "category": "vocabulary",
+      "sentences": [
+        "Ki ő?",
+        "Ő a bátyám.",
+        "Szia!"
       ],
-      "options": [
-        "Ez báty.",
-        "Ő öcs."
-      ],
-      "correct": 0
+      "solution": [
+        2,
+        0,
+        1
+      ]
     },
     {
       "id": "a1-28-practice-6",
-      "type": "sentence-order",
-      "category": "practice",
-      "words": [
-        "báty",
-        "öcs"
+      "type": "multiple-choice",
+      "category": "grammar",
+      "question": "Choose the correct sentence for 'I don't have a younger sister.'",
+      "options": [
+        "Nincs húgom.",
+        "Nem húgom.",
+        "Húgom nincs van."
       ],
-      "solution": [
-        "báty",
-        "öcs"
-      ],
-      "english": "báty öcs."
+      "correct": 0
     },
     {
       "id": "a1-28-practice-7",
-      "type": "multiple-choice",
-      "category": "practice",
-      "question": "Choose the natural answer.",
-      "options": [
-        "báty",
-        "öcs",
-        "nővér"
-      ],
-      "correct": 0
+      "type": "fill-blank",
+      "category": "grammar",
+      "sentence": "Van egy ____. (I have an older sister.)",
+      "answer": "nővérem"
     },
     {
       "id": "a1-28-dialogue-1",
@@ -212,17 +211,17 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Károly",
-          "text": "Mi ez?"
+          "speaker": "Meg",
+          "text": "Ki ő?"
         },
         {
-          "speaker": "Meg",
+          "speaker": "Károly",
           "text": "_____"
         }
       ],
       "options": [
-        "Ez báty.",
-        "Ő öcs."
+        "Ő a bátyám.",
+        "Ez egy ajtó."
       ],
       "correct": 0
     },
@@ -232,17 +231,17 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Milyen?"
+          "speaker": "Károly",
+          "text": "Van húgod?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "öcs",
-        "nővér"
+        "Igen, van egy húgom.",
+        "Ez egy húg."
       ],
       "correct": 0
     },
@@ -250,37 +249,45 @@
       "id": "a1-28-writing-1",
       "type": "structured-writing",
       "category": "writing",
-      "prompt": "Write a short Hungarian sentence using a target word.",
-      "answer": "báty."
+      "template": [
+        {
+          "prompt": "Say 'He is my older brother.' in Hungarian.",
+          "answer": "Ő a bátyám."
+        }
+      ]
     },
     {
       "id": "a1-28-writing-2",
       "type": "structured-writing",
       "category": "writing",
-      "prompt": "Write another short Hungarian sentence using a target word.",
-      "answer": "öcs."
+      "template": [
+        {
+          "prompt": "Say 'She is not my older sister.' in Hungarian.",
+          "answer": "Ő nem a nővérem."
+        }
+      ]
     },
     {
       "id": "a1-28-check-1",
       "type": "multiple-choice",
-      "category": "check",
-      "question": "Choose the correct target word.",
+      "category": "vocabulary",
+      "question": "Which means 'older sister'?",
       "options": [
-        "báty",
-        "öcs",
-        "xyz"
+        "nővér",
+        "húg",
+        "báty"
       ],
       "correct": 0
     },
     {
       "id": "a1-28-check-2",
       "type": "multiple-choice",
-      "category": "check",
-      "question": "Choose the correct target word.",
+      "category": "vocabulary",
+      "question": "Which means 'younger brother'?",
       "options": [
         "öcs",
-        "nővér",
-        "xyz"
+        "báty",
+        "nővér"
       ],
       "correct": 0
     }

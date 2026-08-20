@@ -10,12 +10,12 @@
   "properties": {
     "id": {
       "type": "string",
-      "pattern": "^vocab\\.(a1|a2|b1|b2|c1)\\.(\\d{2}[a-z]?|[a-z]+)(\\.(\\d{2}|consolidation))?$",
+      "pattern": "^vocab\\.(a1|a2|b1|b2|c1)\\.(\\d{2,3}[a-z]?|[a-z]+)(\\.(\\d{2}|consolidation))?$",
       "examples": ["vocab.a1.01", "vocab.a1.01.01", "vocab.a1.cafe.01"]
     },
     "lesson": {
       "type": "string",
-      "pattern": "^(a1|a2|b1|b2|c1)-(\\d{2}[a-z]?|[a-z]+)(-(\\d{2}|consolidation))?$",
+      "pattern": "^(a1|a2|b1|b2|c1)-(\\d{2,3}[a-z]?|[a-z]+)(-(\\d{2}|consolidation))?$",
       "examples": ["a1-01", "a1-01-01", "a1-cafe-01"]
     },
     "title": { "type": "string", "minLength": 1 },
@@ -47,8 +47,8 @@
         "translation": { "type": "string", "minLength": 1 },
         "pos": {
           "type": "string",
-          "pattern": "^(noun|verb|adjective|adverb|pronoun|preposition|conjunction|article|interjection|expression|number|unknown)(/(noun|verb|adjective|adverb|pronoun|preposition|conjunction|article|interjection|expression|number))?$",
-          "description": "Use 'expression' for anything longer than a single word. A word that is genuinely two classes may join them with a slash, as in 'noun/adjective' for joven — but only where both readings are taught, since this string is shown to the learner verbatim on the card.",
+          "pattern": "^(noun|verb|adjective|adverb|pronoun|preposition|postposition|conjunction|article|interjection|expression|number|unknown)(/(noun|verb|adjective|adverb|pronoun|preposition|postposition|conjunction|article|interjection|expression|number))?$",
+          "description": "Use 'expression' for anything longer than a single word. A word that is genuinely two classes may join them with a slash, as in 'noun/adjective' for joven — but only where both readings are taught, since this string is shown to the learner verbatim on the card. 'postposition' is for Hungarian words like mellett/előtt/mögött that follow the noun instead of preceding it — distinct from 'preposition' so a learner sees the correct grammatical term.",
           "examples": ["noun", "expression", "noun/adjective"]
         }
       }

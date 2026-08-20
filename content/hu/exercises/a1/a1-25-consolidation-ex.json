@@ -4,26 +4,55 @@
     {
       "id": "a1-25-consolidation-1",
       "type": "multiple-choice",
-      "category": "review",
-      "question": "Review the unit language.",
-      "options": [
-        "A",
-        "B",
-        "C"
-      ],
+      "category": "consolidation",
+      "question": "Mi ez? Ez egy ____.",
+      "options": ["könyv", "ajtó", "van"],
       "correct": 0
     },
     {
       "id": "a1-25-consolidation-2",
+      "type": "matching",
+      "category": "consolidation",
+      "pairs": [
+        ["asztal", "table"],
+        ["szék", "chair"],
+        ["ablak", "window"],
+        ["kulcs", "key"]
+      ]
+    },
+    {
+      "id": "a1-25-consolidation-3",
+      "type": "fill-blank",
+      "category": "consolidation",
+      "sentence": "A kulcs ____ van, az asztalon. (here)",
+      "answer": "itt"
+    },
+    {
+      "id": "a1-25-consolidation-4",
       "type": "multiple-choice",
-      "category": "review",
-      "question": "Review the unit language.",
-      "options": [
-        "A",
-        "B",
-        "C"
-      ],
+      "category": "consolidation",
+      "question": "Which word says something is NOT there?",
+      "options": ["nincs", "van", "itt"],
       "correct": 0
+    },
+    {
+      "id": "a1-25-consolidation-5",
+      "type": "dialogue-complete",
+      "category": "consolidation",
+      "prompt": [
+        { "speaker": "Meg", "text": "Hol van a könyv?" },
+        { "speaker": "Károly", "text": "_____" }
+      ],
+      "options": ["Itt van, az asztalon.", "Itt van könyv."],
+      "correct": 0
+    },
+    {
+      "id": "a1-25-consolidation-6",
+      "type": "sentence-builder",
+      "category": "consolidation",
+      "tiles": ["A", "lámpa", "a", "szobában", "van", "."],
+      "solution": ["A", "lámpa", "a", "szobában", "van", "."],
+      "english": "The lamp is in the room."
     }
   ]
 }
