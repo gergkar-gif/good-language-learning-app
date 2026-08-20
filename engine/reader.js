@@ -574,7 +574,7 @@ window.Reader = {
         const finishBtn = document.getElementById('reader-finish-btn');
         if (finishBtn) {
             finishBtn.addEventListener('click', function() {
-                self.finishStory();
+                self.showWordReview();
             });
         }
 
@@ -635,6 +635,118 @@ window.Reader = {
         const div = document.createElement('div');
         div.textContent = text;
         return div.innerHTML;
+    },
+
+    // Content words only — a full story's plain-text analysis also resolves
+    // every article/pronoun/preposition it contains, and nobody "reviews" or
+    // "already knows" "el" as a vocabulary item the way they do a noun or a
+    // verb. Same idea as the lesson-end word list, just derived from running
+    // text instead of a curated list.
+    CONTENT_POS: { noun: 1, verb: 1, adjective: 1, adverb: 1 },
+
+    storyPlainText(story) {
+        if (story.paragraphs && story.paragraphs.length) {
+            return story.paragraphs.map(p => p.text || '').join(' ');
+        }
+        return story.text || '';
+    },
+
+    // The same "decide per word: keep reviewing it, or mark it known"
+    // screen the end of a lesson shows (engine/lessons.js's `srs` step),
+    // built here from Library.analyseText() instead of a lesson's curated
+    // vocabulary list. Reuses that screen's CSS classes (.lsn-vocab,
+    // .lsn-srs-row/-toggle/-opt/-badge) for the same look. Falls back to
+    // finishing straight away if analysis isn't available for some reason,
+    // rather than blocking completion on it.
+    async showWordReview() {
+        const story = this.currentStory;
+        const container = document.getElementById('reader-content');
+        if (!story || !container || typeof Library === 'undefined' || !Library.analyseText) {
+            this.finishStory();
+            return;
+        }
+
+        if (typeof Lexicon !== 'undefined' && !Lexicon.isLoaded()) await Lexicon.load();
+
+        const analysis = Library.analyseText(this.storyPlainText(story));
+        const words = analysis.lemmas.filter(w => this.CONTENT_POS[w.pos]);
+
+        const self = this;
+        this._reviewChoices = {};
+        words.forEach((w, i) => {
+            if (!w.familiar && !w.inDeck && !(typeof isKnown === 'function' && isKnown(w.lemma))) {
+                this._reviewChoices[i] = 'review';
+            }
+        });
+
+        const rowHtml = (w, i) => {
+            const settled = (typeof isKnown === 'function' && isKnown(w.lemma)) ? 'already known'
+                : (w.familiar || w.inDeck) ? 'already reviewing' : null;
+            return '<div class="lsn-vocab-row lsn-srs-row">' +
+                '<div><div class="lsn-es">' + self.escapeHtml(w.lemma) + '</div>' +
+                    '<div class="lsn-pos">' + self.escapeHtml(w.pos || '') + '</div></div>' +
+                '<div class="lsn-en">' + self.escapeHtml(w.translation || '') + '</div>' +
+                (settled
+                    ? '<span class="lsn-srs-badge">' + settled + '</span>'
+                    : '<div class="lsn-srs-toggle" role="group">' +
+                        '<button type="button" class="lsn-srs-opt is-selected" data-review-choice="' + i + '" data-review-value="review">Review</button>' +
+                        '<button type="button" class="lsn-srs-opt" data-review-choice="' + i + '" data-review-value="known">Know it</button>' +
+                      '</div>') +
+            '</div>';
+        };
+
+        container.innerHTML =
+            '<div class="story-header"><h3 class="story-title">' + self.escapeHtml(story.title) + '</h3></div>' +
+            '<p class="lsn-question">' + (words.length
+                ? 'For each word from this story: keep reviewing it, or mark it as one you already know.'
+                : 'No new vocabulary words were found in this story.') + '</p>' +
+            '<div class="lsn-vocab">' + words.map(rowHtml).join('') + '</div>' +
+            '<div class="lesson-footer">' +
+                (words.length ? '<button class="btn-back" id="reader-word-skip-btn">Skip</button>' : '') +
+                '<button class="btn-primary" id="reader-word-save-btn">' + (words.length ? 'Save and finish' : 'Finish') + '</button>' +
+            '</div>';
+
+        container.querySelectorAll('[data-review-choice]').forEach(function(btn) {
+            btn.addEventListener('click', function () {
+                const i = btn.getAttribute('data-review-choice');
+                const value = btn.getAttribute('data-review-value');
+                self._reviewChoices[i] = value;
+                container.querySelectorAll('[data-review-choice="' + i + '"]').forEach(function(b) {
+                    b.classList.toggle('is-selected', b.getAttribute('data-review-value') === value);
+                });
+            });
+        });
+
+        const saveBtn = document.getElementById('reader-word-save-btn');
+        if (saveBtn) saveBtn.addEventListener('click', function () { self.saveWordChoices(words); });
+        const skipBtn = document.getElementById('reader-word-skip-btn');
+        if (skipBtn) skipBtn.addEventListener('click', function () { self.finishStory(); });
+    },
+
+    saveWordChoices(words) {
+        const choices = this._reviewChoices || {};
+        Object.keys(choices).forEach(function(key) {
+            const w = words[Number(key)];
+            if (!w) return;
+
+            if (choices[key] === 'known') {
+                if (typeof addKnownWord === 'function') addKnownWord(w.lemma, w.translation, w.pos, 'reading');
+                return;
+            }
+
+            if (typeof srsDeck === 'undefined' || srsDeck.find(function(c) { return c.spanish === w.lemma; })) return;
+            srsDeck.push(Object.assign({
+                spanish: w.lemma,
+                english: w.translation || 'unknown',
+                type: w.pos || 'unknown',
+                source: 'reading',
+                added: new Date().toISOString()
+            }, newCardSchedule()));
+        });
+
+        if (typeof saveDeck === 'function') saveDeck();
+        if (typeof updateReaderWordColors === 'function') updateReaderWordColors();
+        this.finishStory();
     },
 
     finishStory() {

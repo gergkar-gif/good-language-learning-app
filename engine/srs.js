@@ -527,9 +527,13 @@ function renderCard() {
     const displayEnglish = Lexicon.shortGloss(liveEntry ? liveEntry.en : (currentReviewCard.english || '—'));
     const displayType = liveEntry ? liveEntry.type : (currentReviewCard.type || '');
 
+    // el/la in front of a noun the same way Decks' own word lists already
+    // show it (Lexicon.withArticle) — silently a no-op for anything that
+    // isn't a noun with a known simple gender.
+    const spanishDisplay = Lexicon.withArticle(currentReviewCard.spanish);
     const englishFirst = reviewDirection === 'en-es';
-    document.getElementById('review-front').textContent = englishFirst ? displayEnglish : currentReviewCard.spanish;
-    document.getElementById('review-back').textContent = englishFirst ? currentReviewCard.spanish : displayEnglish;
+    document.getElementById('review-front').textContent = englishFirst ? displayEnglish : spanishDisplay;
+    document.getElementById('review-back').textContent = englishFirst ? spanishDisplay : displayEnglish;
     document.getElementById('review-context').textContent = displayType ? `(${displayType})` : '';
     reviewExpectedSpanish = currentReviewCard.spanish;
     reviewExpectedEnglish = displayEnglish;

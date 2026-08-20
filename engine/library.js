@@ -680,6 +680,6 @@ const Library = (function () {
     }
 
     return {
-        isSaved, toggleSave, showReading, returnFromReading, showSection
+        isSaved, toggleSave, showReading, returnFromReading, showSection, analyseText
     };
 })();

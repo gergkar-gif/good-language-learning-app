@@ -43,6 +43,7 @@ const Decks = (function () {
     let draft = null;          // deck under construction/edit in the editor, or null
     let activeSection = 'mine'; // 'mine' or 'parlour' — which top-level tab is showing
     let showDictionary = false; // My Dictionary (known words) view, instead of the index
+    let shuffledWordOrder = null; // a shuffled copy of the open deck's word list, or null for natural order
 
     // ----------------------------------------
     // DATA — Parlour Decks (read-only catalogue)
@@ -762,7 +763,15 @@ const Decks = (function () {
         // its card outright, not unlinking it from a deck.
         const removable = deck.id === 'mine';
 
-        const rows = wordsOf(deck).map(word => {
+        // A deck's own word order is otherwise fixed (insertion order, or
+        // decks.json's authored order for Parlour Decks) — the same list
+        // every time isn't great for actually testing recall by browsing,
+        // so Shuffle below re-rolls it. Resets to natural order whenever a
+        // different deck is opened (see the data-open-deck/-close-deck
+        // handlers in render()).
+        const words = shuffledWordOrder || wordsOf(deck);
+
+        const rows = words.map(word => {
             const card = cardFor(word.lemma);
             const state = !card ? 'not added'
                 : (card.reviews || 0) >= 3 ? 'mastered'
@@ -800,6 +809,7 @@ const Decks = (function () {
                     ${s.missing ? `<button class="dk-secondary" data-add-deck="${esc(deck.id)}">
                         Add ${s.missing} to review</button>` : ''}
                     ${isCustom ? `<button class="dk-secondary" data-edit-deck="${esc(deck.id)}">Edit deck</button>` : ''}
+                    ${words.length > 1 ? `<button class="dk-secondary" data-shuffle-words="1">🔀 Shuffle</button>` : ''}
                 </div>
             </div>
             <ul class="dk-words${removable ? ' dk-words-removable' : ''}">${rows || '<li class="dk-empty">No words yet.</li>'}</ul>
@@ -919,13 +929,21 @@ const Decks = (function () {
             };
         });
         host.querySelectorAll('[data-open-deck]').forEach(el => {
-            el.onclick = function () { openDeck = el.getAttribute('data-open-deck'); render(); };
+            el.onclick = function () { openDeck = el.getAttribute('data-open-deck'); shuffledWordOrder = null; render(); };
         });
         host.querySelectorAll('[data-open-dictionary]').forEach(el => {
             el.onclick = function () { showDictionary = true; render(); };
         });
         host.querySelectorAll('[data-close-deck]').forEach(el => {
-            el.onclick = function () { openDeck = null; render(); };
+            el.onclick = function () { openDeck = null; shuffledWordOrder = null; render(); };
+        });
+        host.querySelectorAll('[data-shuffle-words]').forEach(el => {
+            el.onclick = function () {
+                const deck = openDeck ? byId(openDeck) : null;
+                if (!deck) return;
+                shuffledWordOrder = shuffled(wordsOf(deck));
+                render();
+            };
         });
         host.querySelectorAll('[data-add-deck]').forEach(el => {
             el.onclick = function () { addDeck(el.getAttribute('data-add-deck')); };
