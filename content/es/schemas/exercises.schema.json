@@ -94,6 +94,9 @@
           "$ref": "#/definitions/structuredWriting"
         },
         {
+          "$ref": "#/definitions/substitution"
+        },
+        {
           "$ref": "#/definitions/errorCorrection"
         },
         {
@@ -378,6 +381,119 @@
           "$ref": "#/definitions/baseFields/teaches"
         }
       }
+    },
+    "substitution": {
+      "type": "object",
+      "description": "Swap one word into a base sentence and see the result — a pattern drill, not a graded question, same as structured-writing: tapping each option reveals its resulting sentence, and Continue unlocks once every option has been seen. Added specifically for Hungarian's case/agreement marking: the swapped-in word is rarely just dropped in bare ('tejet', not 'tej'), so content supplies each option's ALREADY-inflected form and the full resulting sentence — engine/lessons.js never generates or inflects Hungarian itself, only bolds the literal substring given in `inflected`/`word` within `sentence` (highlightWord() in engine/lessons.js). A `base_word`/`inflected` value that isn't a verbatim substring of its sentence just renders with nothing bolded, not an error — but defeats the point of the exercise. No Spanish content uses this as of this writing.",
+      "required": [
+        "id",
+        "type",
+        "base_sentence",
+        "base_word",
+        "options"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/baseFields/id"
+        },
+        "category": {
+          "$ref": "#/definitions/baseFields/category"
+        },
+        "type": {
+          "const": "substitution"
+        },
+        "base_sentence": {
+          "type": "string",
+          "minLength": 1,
+          "description": "The sentence as first shown."
+        },
+        "base_word": {
+          "type": "string",
+          "minLength": 1,
+          "description": "The word being swapped, in its EXACT inflected form as it appears in base_sentence — must be a verbatim substring of it, since that's what gets bolded on render."
+        },
+        "base_gloss": {
+          "type": "string",
+          "description": "English translation of base_sentence, shown as a hint underneath it."
+        },
+        "options": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": [
+              "word",
+              "sentence"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "word": {
+                "type": "string",
+                "minLength": 1,
+                "description": "The replacement word's citation/dictionary form — shown on the option button, and used for bolding in `sentence` if `inflected` is omitted."
+              },
+              "inflected": {
+                "type": "string",
+                "minLength": 1,
+                "description": "The replacement word's EXACT inflected form as it appears in `sentence`. Required whenever it differs from `word` — almost always, for Hungarian."
+              },
+              "sentence": {
+                "type": "string",
+                "minLength": 1,
+                "description": "base_sentence with the word swapped in, written out in full and already grammatically correct — the whole point of this exercise is that it is NOT a naive text substitution."
+              },
+              "gloss": {
+                "type": "string",
+                "description": "English for the replacement word, shown next to it on the option button."
+              }
+            }
+          },
+          "examples": [
+            [
+              {
+                "word": "víz",
+                "inflected": "vizet",
+                "sentence": "Iszom egy pohár vizet.",
+                "gloss": "water"
+              },
+              {
+                "word": "bor",
+                "inflected": "bort",
+                "sentence": "Iszom egy pohár bort.",
+                "gloss": "wine"
+              }
+            ]
+          ]
+        },
+        "teaches": {
+          "$ref": "#/definitions/baseFields/teaches"
+        }
+      },
+      "examples": [
+        {
+          "id": "a1-101-practice-4",
+          "type": "substitution",
+          "category": "practice",
+          "base_sentence": "Kérek kenyeret.",
+          "base_word": "kenyeret",
+          "base_gloss": "I'd like bread.",
+          "options": [
+            {
+              "word": "tej",
+              "inflected": "tejet",
+              "sentence": "Kérek tejet.",
+              "gloss": "milk"
+            },
+            {
+              "word": "sajt",
+              "inflected": "sajtot",
+              "sentence": "Kérek sajtot.",
+              "gloss": "cheese"
+            }
+          ]
+        }
+      ]
     },
     "errorCorrection": {
       "type": "object",

@@ -269,6 +269,22 @@ function escMd(value) {
         .replace(/\*([^*]+)\*/g, '<em>$1</em>');
 }
 
+// Bolds `word` where it appears literally in `sentence` — used by the
+// substitution exercise to show what changed. Deliberately a plain
+// substring match, not a guess: the caller passes the word's ACTUAL
+// inflected form as it appears in that exact sentence (content authors
+// write both together), so this never has to reconcile a bare lemma
+// against an inflected surface form itself. No match (wrong word passed,
+// or the field is missing) just renders the plain escaped sentence.
+function highlightWord(sentence, word) {
+    const text = String(sentence || '');
+    if (!word) return esc(text);
+    const idx = text.indexOf(word);
+    if (idx === -1) return esc(text);
+    return esc(text.slice(0, idx)) + '<strong>' + esc(text.slice(idx, idx + word.length)) + '</strong>'
+        + esc(text.slice(idx + word.length));
+}
+
 // A listen button for a piece of Spanish. Returns '' when the device has no
 // Spanish voice, so every caller can add it without a guard.
 function say(text) {
@@ -806,6 +822,38 @@ const stepRenderers = {
         `;
     },
 
+    // A "swap one word into the sentence" pattern drill (Hungarian's case
+    // suffixes mean the swapped-in word is rarely just dropped in bare —
+    // "kenyeret" -> "tejet", not "tej" — so content supplies each option's
+    // ALREADY-inflected form and full resulting sentence rather than this
+    // renderer trying to inflect anything itself; see the "why" comment on
+    // highlightWord() below for the same reasoning applied to display).
+    // No right/wrong to grade, same as structured-writing — tapping each
+    // option reveals what the sentence becomes; Continue unlocks once every
+    // option has been seen.
+    substitution(step) {
+        gateStep();
+        stepState.options = step.options || [];
+        stepState.viewed = new Set();
+        return `
+            <p class="lsn-question">See how the sentence changes.</p>
+            <p class="lsn-sub-base">${highlightWord(step.base_sentence, step.base_word)}</p>
+            ${step.base_gloss ? `<p class="lsn-hint">${esc(step.base_gloss)}</p>` : ''}
+            ${stepState.options.map((opt, i) => `
+                <div class="lsn-write-row">
+                    <button class="lsn-option" data-sub-index="${i}" onclick="lessonRevealSub(${i})">
+                        ${esc(opt.word)}${opt.gloss ? ' <span class="lsn-hint">(' + esc(opt.gloss) + ')</span>' : ''}
+                    </button>
+                    <div class="lsn-model" id="sub-result-${i}">
+                        <span class="lsn-model-label">Becomes</span>
+                        <span class="lsn-es"></span>
+                    </div>
+                </div>
+            `).join('')}
+            ${feedbackHtml()}
+        `;
+    },
+
     // Every word the lesson taught, each sorted into review or known — never
     // silently. Defaulting an unresolved choice to "known" would let one fast
     // click through a lesson quietly mark words the learner hasn't actually
@@ -1270,6 +1318,31 @@ function lessonRevealWriting() {
 
     // Inputs stay editable so the learner can correct their own sentence.
     solveStep('Compare your sentences with the examples, then continue.');
+}
+
+// Reveals one substitution option's resulting sentence; Continue unlocks
+// once every option has been viewed (no right/wrong here, same reasoning
+// as lessonRevealWriting() above — this is exposure to a pattern, not a
+// graded question).
+function lessonRevealSub(i) {
+    if (stepState.solved) return;
+    const opt = (stepState.options || [])[i];
+    if (!opt || stepState.viewed.has(i)) return;
+
+    stepState.viewed.add(i);
+    const result = document.getElementById('sub-result-' + i);
+    if (result) {
+        result.querySelector('.lsn-es').innerHTML = highlightWord(opt.sentence, opt.inflected || opt.word);
+        result.classList.add('is-shown');
+    }
+    const btn = document.querySelector('[data-sub-index="' + i + '"]');
+    if (btn) btn.classList.add('used');
+
+    if (stepState.viewed.size >= stepState.options.length) {
+        solveStep('✓ Same pattern, different word.');
+    } else {
+        setFeedback(true, stepState.viewed.size + '/' + stepState.options.length + ' seen');
+    }
 }
 
 function lessonSetSrsChoice(index, value) {
