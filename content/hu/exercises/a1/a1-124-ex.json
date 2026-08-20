@@ -5,11 +5,11 @@
       "id": "a1-124-review-1",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the correct Hungarian expression.",
+      "question": "What does 'méret' mean?",
       "options": [
-        "nadrág",
-        "cipő",
-        "táska"
+        "size",
+        "price",
+        "colour"
       ],
       "correct": 0
     },
@@ -17,11 +17,11 @@
       "id": "a1-124-review-2",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the correct Hungarian expression.",
+      "question": "What does 'piros' mean?",
       "options": [
-        "cipő",
-        "táska",
-        "könyv"
+        "red",
+        "blue",
+        "black"
       ],
       "correct": 0
     },
@@ -29,11 +29,11 @@
       "id": "a1-124-introduce-1",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which expression is useful here?",
+      "question": "What does 'kék' mean?",
       "options": [
-        "szín",
-        "piros",
-        "kék"
+        "blue",
+        "black",
+        "white"
       ],
       "correct": 0
     },
@@ -41,11 +41,11 @@
       "id": "a1-124-introduce-2",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which expression is useful here?",
+      "question": "What does 'nagy' mean?",
       "options": [
-        "piros",
-        "kék",
-        "fekete"
+        "large",
+        "small",
+        "good"
       ],
       "correct": 0
     },
@@ -53,18 +53,18 @@
       "id": "a1-124-controlled-1",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "Kérek szín.",
-      "answer": "szín"
+      "sentence": "Piros, kék, fekete és ____ van.",
+      "answer": "fehér"
     },
     {
       "id": "a1-124-controlled-2",
       "type": "multiple-choice",
       "category": "controlled",
-      "question": "Choose the correct word.",
+      "question": "Choose the word for 'black'.",
       "options": [
-        "piros",
-        "kék",
-        "fekete"
+        "fekete",
+        "fehér",
+        "kék"
       ],
       "correct": 0
     },
@@ -74,16 +74,20 @@
       "category": "controlled",
       "pairs": [
         [
-          "ár",
-          "price"
+          "kék",
+          "blue"
         ],
         [
-          "szín",
-          "colour"
+          "fekete",
+          "black"
         ],
         [
-          "piros",
-          "red"
+          "fehér",
+          "white"
+        ],
+        [
+          "nagy",
+          "large"
         ]
       ]
     },
@@ -91,14 +95,20 @@
       "id": "a1-124-controlled-4",
       "type": "substitution",
       "category": "controlled",
-      "base_sentence": "Van ez fekete színben?",
-      "base_word": "fekete",
-      "base_gloss": "Do you have this in black?",
+      "base_sentence": "A kék pólót kérem.",
+      "base_word": "kék",
+      "base_gloss": "I'd like the blue T-shirt.",
       "options": [
+        {
+          "word": "fekete",
+          "inflected": "fekete",
+          "sentence": "A fekete pólót kérem.",
+          "gloss": "black"
+        },
         {
           "word": "fehér",
           "inflected": "fehér",
-          "sentence": "Van ez fehér színben?",
+          "sentence": "A fehér pólót kérem.",
           "gloss": "white"
         }
       ]
@@ -107,11 +117,11 @@
       "id": "a1-124-practice-1",
       "type": "multiple-choice",
       "category": "practice",
-      "question": "Choose the best answer in context.",
+      "question": "How would a shop assistant politely ask 'What are you looking for?'",
       "options": [
-        "fekete",
-        "fehér",
-        "nagy"
+        "Mit keres?",
+        "Mit keresel?",
+        "Mit keresek?"
       ],
       "correct": 0
     },
@@ -119,8 +129,8 @@
       "id": "a1-124-practice-2",
       "type": "fill-blank",
       "category": "practice",
-      "sentence": "Ez a(z) ____. ",
-      "answer": "fehér"
+      "sentence": "Jó napot kívánok! Mit ____?",
+      "answer": "keres"
     },
     {
       "id": "a1-124-practice-3",
@@ -138,6 +148,14 @@
         [
           "fehér",
           "white"
+        ],
+        [
+          "nagy",
+          "large"
+        ],
+        [
+          "piros",
+          "red"
         ]
       ]
     },
@@ -145,15 +163,21 @@
       "id": "a1-124-practice-4",
       "type": "substitution",
       "category": "practice",
-      "base_sentence": "Ez túl nagy.",
-      "base_word": "nagy",
-      "base_gloss": "This is too big.",
+      "base_sentence": "Nagy és kicsi van.",
+      "base_word": "Nagy",
+      "base_gloss": "There's large and small.",
       "options": [
         {
-          "word": "kicsi",
-          "inflected": "kicsi",
-          "sentence": "Ez túl kicsi.",
-          "gloss": "small"
+          "word": "piros",
+          "inflected": "Piros",
+          "sentence": "Piros és kék van.",
+          "gloss": "red"
+        },
+        {
+          "word": "fekete",
+          "inflected": "Fekete",
+          "sentence": "Fekete és fehér van.",
+          "gloss": "black"
         }
       ]
     },
@@ -164,16 +188,16 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Mit szeretnél?"
+          "text": "Milyen a szín?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Eladó",
           "text": "_____"
         }
       ],
       "options": [
-        "jó.",
-        "Nem tudom."
+        "Piros, kék, fekete és fehér van.",
+        "Nagy vagy kicsi?"
       ],
       "correct": 0
     },
@@ -183,17 +207,17 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Mit kérsz?"
+          "speaker": "Eladó",
+          "text": "Jó napot kívánok! Mit keres?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "Kérek cipő.",
-        "Hol van?"
+        "A kék pólót kérem.",
+        "Igen, tetszik."
       ],
       "correct": 0
     },
@@ -204,38 +228,38 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Mit kérsz?"
+          "text": "A kék pólót kérem. Mennyi az ár?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Eladó",
           "text": "_____"
         }
       ],
       "options": [
-        "Kérek táska.",
-        "Hol van?"
+        "Tíz forint.",
+        "Piros, kék, fekete és fehér van."
       ],
       "correct": 0
     },
     {
       "id": "a1-124-production-1",
       "type": "structured-writing",
-      "category": "production",
+      "category": "writing",
       "template": [
         {
-          "prompt": "Write a sentence using this word: cipő",
-          "answer": "Kérek egy cipőt."
+          "prompt": "Say there's red, blue, black, and white.",
+          "answer": "Piros, kék, fekete és fehér van."
         }
       ]
     },
     {
       "id": "a1-124-production-2",
       "type": "structured-writing",
-      "category": "production",
+      "category": "writing",
       "template": [
         {
-          "prompt": "Write a sentence using this word: táska",
-          "answer": "Kérek egy táskát."
+          "prompt": "Say you'd like the blue T-shirt.",
+          "answer": "A kék pólót kérem."
         }
       ]
     },
@@ -243,11 +267,11 @@
       "id": "a1-124-check-1",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Choose the correct expression.",
+      "question": "Choose the correct word for 'blue'.",
       "options": [
-        "cipő",
-        "táska",
-        "xyz"
+        "kék",
+        "piros",
+        "fekete"
       ],
       "correct": 0
     },
@@ -255,11 +279,11 @@
       "id": "a1-124-check-2",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Choose the correct expression.",
+      "question": "Choose the correct word for 'large'.",
       "options": [
-        "táska",
-        "könyv",
-        "xyz"
+        "nagy",
+        "kicsi",
+        "jó"
       ],
       "correct": 0
     }

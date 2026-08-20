@@ -5,11 +5,11 @@
       "id": "a1-147-review-1",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the correct Hungarian expression.",
+      "question": "What does 'terv' mean?",
       "options": [
-        "program",
-        "meghív",
-        "találkozó"
+        "plan",
+        "meeting",
+        "invitation"
       ],
       "correct": 0
     },
@@ -17,11 +17,11 @@
       "id": "a1-147-review-2",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the correct Hungarian expression.",
+      "question": "What does 'meghív' mean?",
       "options": [
-        "meghív",
-        "találkozó",
-        "találkozik"
+        "to invite",
+        "to plan",
+        "to want"
       ],
       "correct": 0
     },
@@ -29,11 +29,11 @@
       "id": "a1-147-introduce-1",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which expression is useful here?",
+      "question": "What does 'holnap' mean?",
       "options": [
-        "találkozik",
-        "holnap",
-        "ma"
+        "tomorrow",
+        "today",
+        "weekend"
       ],
       "correct": 0
     },
@@ -41,11 +41,11 @@
       "id": "a1-147-introduce-2",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which expression is useful here?",
+      "question": "What does 'hétvége' mean?",
       "options": [
-        "holnap",
-        "ma",
-        "hétvége"
+        "weekend",
+        "tomorrow",
+        "today"
       ],
       "correct": 0
     },
@@ -53,17 +53,17 @@
       "id": "a1-147-controlled-1",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "Kérek találkozik.",
-      "answer": "találkozik"
+      "sentence": "Akarunk találkozni ____?",
+      "answer": "hétkor"
     },
     {
       "id": "a1-147-controlled-2",
       "type": "multiple-choice",
       "category": "controlled",
-      "question": "Choose the correct word.",
+      "question": "Choose the word for 'today'.",
       "options": [
-        "holnap",
         "ma",
+        "holnap",
         "hétvége"
       ],
       "correct": 0
@@ -74,16 +74,20 @@
       "category": "controlled",
       "pairs": [
         [
-          "találkozó",
-          "meeting"
-        ],
-        [
           "találkozik",
           "meet"
         ],
         [
           "holnap",
           "tomorrow"
+        ],
+        [
+          "ma",
+          "today"
+        ],
+        [
+          "hétvége",
+          "weekend"
         ]
       ]
     },
@@ -91,21 +95,21 @@
       "id": "a1-147-controlled-4",
       "type": "substitution",
       "category": "controlled",
-      "base_sentence": "Holnap találkozunk.",
-      "base_word": "Holnap",
-      "base_gloss": "We're meeting tomorrow.",
+      "base_sentence": "Akarunk találkozni hétkor?",
+      "base_word": "hétkor",
+      "base_gloss": "Do we want to meet at seven?",
       "options": [
         {
           "word": "ma",
-          "inflected": "Ma",
-          "sentence": "Ma találkozunk.",
+          "inflected": "ma",
+          "sentence": "Akarunk találkozni ma?",
           "gloss": "today"
         },
         {
-          "word": "hétvége",
-          "inflected": "Hétvégén",
-          "sentence": "Hétvégén találkozunk.",
-          "gloss": "at the weekend"
+          "word": "holnap",
+          "inflected": "holnap",
+          "sentence": "Akarunk találkozni holnap?",
+          "gloss": "tomorrow"
         }
       ]
     },
@@ -113,11 +117,11 @@
       "id": "a1-147-practice-1",
       "type": "multiple-choice",
       "category": "practice",
-      "question": "Choose the best answer in context.",
+      "question": "Which suffix means 'at' a specific time and never changes for vowel harmony?",
       "options": [
-        "holnap",
-        "ma",
-        "hétvége"
+        "-kor",
+        "-ban",
+        "-ra"
       ],
       "correct": 0
     },
@@ -125,8 +129,8 @@
       "id": "a1-147-practice-2",
       "type": "fill-blank",
       "category": "practice",
-      "sentence": "Ez a(z) ____. ",
-      "answer": "ma"
+      "sentence": "Igen, ____.",
+      "answer": "szeretnék"
     },
     {
       "id": "a1-147-practice-3",
@@ -144,6 +148,14 @@
         [
           "ma",
           "today"
+        ],
+        [
+          "hétvége",
+          "weekend"
+        ],
+        [
+          "terv",
+          "plan"
         ]
       ]
     },
@@ -151,15 +163,21 @@
       "id": "a1-147-practice-4",
       "type": "substitution",
       "category": "practice",
-      "base_sentence": "Ma találkozunk.",
-      "base_word": "Ma",
-      "base_gloss": "We're meeting today.",
+      "base_sentence": "Találkozunk a hétvégén?",
+      "base_word": "hétvégén",
+      "base_gloss": "Are we meeting at the weekend?",
       "options": [
         {
           "word": "holnap",
-          "inflected": "Holnap",
-          "sentence": "Holnap találkozunk.",
+          "inflected": "holnap",
+          "sentence": "Találkozunk holnap?",
           "gloss": "tomorrow"
+        },
+        {
+          "word": "ma",
+          "inflected": "ma",
+          "sentence": "Találkozunk ma?",
+          "gloss": "today"
         }
       ]
     },
@@ -169,16 +187,16 @@
       "category": "practice",
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Mit szeretnél?"
+          "speaker": "Károly",
+          "text": "Akarunk találkozni hétkor?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "este.",
+        "Igen, szeretnék.",
         "Nem tudom."
       ],
       "correct": 0
@@ -189,17 +207,17 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Mit kérsz?"
+          "speaker": "Anna",
+          "text": "Holnap délután jó?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Mariann",
           "text": "_____"
         }
       ],
       "options": [
-        "Kérek meghív.",
-        "Hol van?"
+        "Nekem nem jó délután, de este ráérek.",
+        "Mennyi az ár?"
       ],
       "correct": 0
     },
@@ -210,7 +228,7 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Mit kérsz?"
+          "text": "Ma vagy holnap találkozunk?"
         },
         {
           "speaker": "Károly",
@@ -218,30 +236,30 @@
         }
       ],
       "options": [
-        "Kérek találkozó.",
-        "Hol van?"
+        "Holnap, a hétvégén.",
+        "Szia, hogy vagy?"
       ],
       "correct": 0
     },
     {
       "id": "a1-147-production-1",
       "type": "structured-writing",
-      "category": "production",
+      "category": "writing",
       "template": [
         {
-          "prompt": "Write a sentence using this word: meghív",
-          "answer": "Meghívlak egy programra."
+          "prompt": "Ask if we want to meet at seven.",
+          "answer": "Akarunk találkozni hétkor?"
         }
       ]
     },
     {
       "id": "a1-147-production-2",
       "type": "structured-writing",
-      "category": "production",
+      "category": "writing",
       "template": [
         {
-          "prompt": "Write a sentence using this word: találkozó",
-          "answer": "Kérek egy találkozót."
+          "prompt": "Say yes, you would like to.",
+          "answer": "Igen, szeretnék."
         }
       ]
     },
@@ -249,11 +267,11 @@
       "id": "a1-147-check-1",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Choose the correct expression.",
+      "question": "Choose the correct word for 'tomorrow'.",
       "options": [
-        "meghív",
-        "találkozó",
-        "xyz"
+        "holnap",
+        "ma",
+        "hétvége"
       ],
       "correct": 0
     },
@@ -261,11 +279,11 @@
       "id": "a1-147-check-2",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Choose the correct expression.",
+      "question": "Choose the correct word for 'weekend'.",
       "options": [
-        "találkozó",
-        "találkozik",
-        "xyz"
+        "hétvége",
+        "holnap",
+        "ma"
       ],
       "correct": 0
     }

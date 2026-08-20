@@ -5,11 +5,11 @@
       "id": "a1-138-review-1",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the correct Hungarian expression.",
+      "question": "What does 'jegy' mean?",
       "options": [
-        "metró",
-        "vonat",
-        "jegy"
+        "ticket",
+        "stop",
+        "taxi"
       ],
       "correct": 0
     },
@@ -17,11 +17,11 @@
       "id": "a1-138-review-2",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the correct Hungarian expression.",
+      "question": "What does 'pályaudvar' mean?",
       "options": [
-        "vonat",
-        "jegy",
-        "megálló"
+        "railway station",
+        "stop",
+        "ticket"
       ],
       "correct": 0
     },
@@ -29,11 +29,11 @@
       "id": "a1-138-introduce-1",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which expression is useful here?",
+      "question": "What does 'gyalog' mean?",
       "options": [
-        "taxi",
-        "gyalog",
-        "bicikli"
+        "on foot",
+        "by bicycle",
+        "by taxi"
       ],
       "correct": 0
     },
@@ -41,11 +41,11 @@
       "id": "a1-138-introduce-2",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which expression is useful here?",
+      "question": "What does 'jön' mean?",
       "options": [
-        "gyalog",
-        "bicikli",
-        "megy"
+        "to come",
+        "to go",
+        "to arrive"
       ],
       "correct": 0
     },
@@ -53,18 +53,18 @@
       "id": "a1-138-controlled-1",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "Kérek taxi.",
-      "answer": "taxi"
+      "sentence": "____ a busz.",
+      "answer": "Jön"
     },
     {
       "id": "a1-138-controlled-2",
       "type": "multiple-choice",
       "category": "controlled",
-      "question": "Choose the correct word.",
+      "question": "Choose the word for 'bicycle'.",
       "options": [
-        "gyalog",
         "bicikli",
-        "megy"
+        "gyalog",
+        "busz"
       ],
       "correct": 0
     },
@@ -74,16 +74,20 @@
       "category": "controlled",
       "pairs": [
         [
-          "pályaudvar",
-          "railway station"
-        ],
-        [
-          "taxi",
-          "taxi"
-        ],
-        [
           "gyalog",
           "on foot"
+        ],
+        [
+          "bicikli",
+          "bicycle"
+        ],
+        [
+          "megy",
+          "go"
+        ],
+        [
+          "jön",
+          "come"
         ]
       ]
     },
@@ -91,15 +95,21 @@
       "id": "a1-138-controlled-4",
       "type": "substitution",
       "category": "controlled",
-      "base_sentence": "Gyalog megyek.",
-      "base_word": "megyek",
-      "base_gloss": "I'm going on foot.",
+      "base_sentence": "Jön a busz.",
+      "base_word": "Jön",
+      "base_gloss": "The bus is coming.",
       "options": [
         {
-          "word": "jön",
-          "inflected": "jövök",
-          "sentence": "Gyalog jövök.",
-          "gloss": "I'm coming"
+          "word": "Megy",
+          "inflected": "Megy",
+          "sentence": "Megy a busz.",
+          "gloss": "is going"
+        },
+        {
+          "word": "Érkezik",
+          "inflected": "Érkezik",
+          "sentence": "Érkezik a busz.",
+          "gloss": "is arriving"
         }
       ]
     },
@@ -107,11 +117,11 @@
       "id": "a1-138-practice-1",
       "type": "multiple-choice",
       "category": "practice",
-      "question": "Choose the best answer in context.",
+      "question": "How do you tell someone to 'Go straight'?",
       "options": [
-        "bicikli",
-        "megy",
-        "jön"
+        "Menj egyenesen.",
+        "Megyek egyenesen.",
+        "Mész egyenesen."
       ],
       "correct": 0
     },
@@ -119,8 +129,8 @@
       "id": "a1-138-practice-2",
       "type": "fill-blank",
       "category": "practice",
-      "sentence": "Ez a(z) ____. ",
-      "answer": "megy"
+      "sentence": "____ egyenesen, aztán jobbra.",
+      "answer": "Menj"
     },
     {
       "id": "a1-138-practice-3",
@@ -138,6 +148,14 @@
         [
           "megy",
           "go"
+        ],
+        [
+          "jön",
+          "come"
+        ],
+        [
+          "jegy",
+          "ticket"
         ]
       ]
     },
@@ -145,15 +163,21 @@
       "id": "a1-138-practice-4",
       "type": "substitution",
       "category": "practice",
-      "base_sentence": "A busz indul.",
-      "base_word": "indul",
-      "base_gloss": "The bus is departing.",
+      "base_sentence": "Gyalog megyek.",
+      "base_word": "Gyalog",
+      "base_gloss": "I go on foot.",
       "options": [
         {
-          "word": "érkezik",
-          "inflected": "érkezik",
-          "sentence": "A busz érkezik.",
-          "gloss": "arriving"
+          "word": "bicikli",
+          "inflected": "Biciklivel",
+          "sentence": "Biciklivel megyek.",
+          "gloss": "by bicycle"
+        },
+        {
+          "word": "busz",
+          "inflected": "Busszal",
+          "sentence": "Busszal megyek.",
+          "gloss": "by bus"
         }
       ]
     },
@@ -164,15 +188,15 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Mit szeretnél?"
+          "text": "Mikor érkezünk?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Mariann",
           "text": "_____"
         }
       ],
       "options": [
-        "érkezik.",
+        "Hamarosan. Jön a busz.",
         "Nem tudom."
       ],
       "correct": 0
@@ -184,16 +208,16 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Mit kérsz?"
+          "text": "Hol a pályaudvar?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Mariann",
           "text": "_____"
         }
       ],
       "options": [
-        "Kérek vonat.",
-        "Hol van?"
+        "Menj egyenesen, aztán jobbra.",
+        "Mennyi az ár?"
       ],
       "correct": 0
     },
@@ -204,38 +228,38 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Mit kérsz?"
+          "text": "Gyalog mész?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Mariann",
           "text": "_____"
         }
       ],
       "options": [
-        "Kérek jegy.",
-        "Hol van?"
+        "Nem, biciklivel megyek.",
+        "Szia, hogy vagy?"
       ],
       "correct": 0
     },
     {
       "id": "a1-138-production-1",
       "type": "structured-writing",
-      "category": "production",
+      "category": "writing",
       "template": [
         {
-          "prompt": "Write a sentence using this word: vonat",
-          "answer": "Vonattal megyek."
+          "prompt": "Say the bus is coming.",
+          "answer": "Jön a busz."
         }
       ]
     },
     {
       "id": "a1-138-production-2",
       "type": "structured-writing",
-      "category": "production",
+      "category": "writing",
       "template": [
         {
-          "prompt": "Write a sentence using this word: jegy",
-          "answer": "Kérek egy jegyet."
+          "prompt": "Tell someone to go straight, then right.",
+          "answer": "Menj egyenesen, aztán jobbra."
         }
       ]
     },
@@ -243,11 +267,11 @@
       "id": "a1-138-check-1",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Choose the correct expression.",
+      "question": "Choose the correct word for 'on foot'.",
       "options": [
-        "vonat",
-        "jegy",
-        "xyz"
+        "gyalog",
+        "bicikli",
+        "busz"
       ],
       "correct": 0
     },
@@ -255,11 +279,11 @@
       "id": "a1-138-check-2",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Choose the correct expression.",
+      "question": "Choose the correct word for 'come'.",
       "options": [
-        "jegy",
-        "megálló",
-        "xyz"
+        "jön",
+        "megy",
+        "indul"
       ],
       "correct": 0
     }

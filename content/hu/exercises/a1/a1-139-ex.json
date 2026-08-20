@@ -5,11 +5,11 @@
       "id": "a1-139-review-1",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the correct Hungarian expression.",
+      "question": "What does 'gyalog' mean?",
       "options": [
-        "vonat",
-        "jegy",
-        "megálló"
+        "on foot",
+        "by bicycle",
+        "by taxi"
       ],
       "correct": 0
     },
@@ -17,11 +17,11 @@
       "id": "a1-139-review-2",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the correct Hungarian expression.",
+      "question": "What does 'jön' mean?",
       "options": [
-        "jegy",
-        "megálló",
-        "pályaudvar"
+        "to come",
+        "to go",
+        "to depart"
       ],
       "correct": 0
     },
@@ -29,11 +29,11 @@
       "id": "a1-139-introduce-1",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which expression is useful here?",
+      "question": "What does 'indul' mean?",
       "options": [
-        "megy",
-        "jön",
-        "indul"
+        "to depart",
+        "to arrive",
+        "to come"
       ],
       "correct": 0
     },
@@ -41,11 +41,11 @@
       "id": "a1-139-introduce-2",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which expression is useful here?",
+      "question": "What does 'felszáll' mean?",
       "options": [
-        "jön",
-        "indul",
-        "érkezik"
+        "to get on",
+        "to get off",
+        "to depart"
       ],
       "correct": 0
     },
@@ -53,18 +53,18 @@
       "id": "a1-139-controlled-1",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "Kérek megy.",
-      "answer": "megy"
+      "sentence": "Mikor ____ a vonat?",
+      "answer": "indul"
     },
     {
       "id": "a1-139-controlled-2",
       "type": "multiple-choice",
       "category": "controlled",
-      "question": "Choose the correct word.",
+      "question": "Choose the word for 'to arrive'.",
       "options": [
-        "jön",
+        "érkezik",
         "indul",
-        "érkezik"
+        "leszáll"
       ],
       "correct": 0
     },
@@ -74,16 +74,20 @@
       "category": "controlled",
       "pairs": [
         [
-          "bicikli",
-          "bicycle"
+          "indul",
+          "depart"
         ],
         [
-          "megy",
-          "go"
+          "érkezik",
+          "arrive"
         ],
         [
-          "jön",
-          "come"
+          "felszáll",
+          "get on"
+        ],
+        [
+          "leszáll",
+          "get off"
         ]
       ]
     },
@@ -91,15 +95,21 @@
       "id": "a1-139-controlled-4",
       "type": "substitution",
       "category": "controlled",
-      "base_sentence": "A vonat indul.",
+      "base_sentence": "Mikor indul a vonat?",
       "base_word": "indul",
-      "base_gloss": "The train is departing.",
+      "base_gloss": "When does the train depart?",
       "options": [
         {
           "word": "érkezik",
           "inflected": "érkezik",
-          "sentence": "A vonat érkezik.",
-          "gloss": "arriving"
+          "sentence": "Mikor érkezik a vonat?",
+          "gloss": "arrives"
+        },
+        {
+          "word": "megy",
+          "inflected": "megy",
+          "sentence": "Mikor megy a vonat?",
+          "gloss": "goes"
         }
       ]
     },
@@ -107,11 +117,11 @@
       "id": "a1-139-practice-1",
       "type": "multiple-choice",
       "category": "practice",
-      "question": "Choose the best answer in context.",
+      "question": "Which verb is an ik-verb, needing -em for 'I' instead of -ek?",
       "options": [
         "érkezik",
-        "felszáll",
-        "leszáll"
+        "indul",
+        "jön"
       ],
       "correct": 0
     },
@@ -119,8 +129,8 @@
       "id": "a1-139-practice-2",
       "type": "fill-blank",
       "category": "practice",
-      "sentence": "Ez a(z) ____. ",
-      "answer": "felszáll"
+      "sentence": "Mi ____, aztán te leszállsz.",
+      "answer": "felszállunk"
     },
     {
       "id": "a1-139-practice-3",
@@ -138,6 +148,14 @@
         [
           "felszáll",
           "get on"
+        ],
+        [
+          "leszáll",
+          "get off"
+        ],
+        [
+          "jön",
+          "come"
         ]
       ]
     },
@@ -145,15 +163,21 @@
       "id": "a1-139-practice-4",
       "type": "substitution",
       "category": "practice",
-      "base_sentence": "Felszállok a buszra.",
-      "base_word": "Felszállok",
-      "base_gloss": "I'm getting on the bus.",
+      "base_sentence": "Mikor érkezünk?",
+      "base_word": "érkezünk",
+      "base_gloss": "When do we arrive?",
       "options": [
         {
-          "word": "leszáll",
-          "inflected": "Leszállok",
-          "sentence": "Leszállok a buszról.",
-          "gloss": "I'm getting off"
+          "word": "indulunk",
+          "inflected": "indulunk",
+          "sentence": "Mikor indulunk?",
+          "gloss": "do we depart"
+        },
+        {
+          "word": "felszállunk",
+          "inflected": "felszállunk",
+          "sentence": "Mikor felszállunk?",
+          "gloss": "do we get on"
         }
       ]
     },
@@ -164,15 +188,15 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Mit szeretnél?"
+          "text": "Mikor indul a vonat?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Mariann",
           "text": "_____"
         }
       ],
       "options": [
-        "jobbra.",
+        "Hamarosan. Mi felszállunk, aztán te leszállsz.",
         "Nem tudom."
       ],
       "correct": 0
@@ -184,16 +208,16 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Mit kérsz?"
+          "text": "Mikor érkezünk?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Mariann",
           "text": "_____"
         }
       ],
       "options": [
-        "Kérek jegy.",
-        "Hol van?"
+        "Hamarosan. Jön a busz.",
+        "Mennyi az ár?"
       ],
       "correct": 0
     },
@@ -203,39 +227,39 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Mit kérsz?"
+          "speaker": "Mariann",
+          "text": "Most felszállunk."
         },
         {
-          "speaker": "Károly",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "Kérek megálló.",
-        "Hol van?"
+        "Rendben, én is felszállok.",
+        "Szia, hogy vagy?"
       ],
       "correct": 0
     },
     {
       "id": "a1-139-production-1",
       "type": "structured-writing",
-      "category": "production",
+      "category": "writing",
       "template": [
         {
-          "prompt": "Write a sentence using this word: jegy",
-          "answer": "Kérek egy jegyet."
+          "prompt": "Ask when the train departs.",
+          "answer": "Mikor indul a vonat?"
         }
       ]
     },
     {
       "id": "a1-139-production-2",
       "type": "structured-writing",
-      "category": "production",
+      "category": "writing",
       "template": [
         {
-          "prompt": "Write a sentence using this word: megálló",
-          "answer": "A megálló közel van."
+          "prompt": "Say we get on, then you get off.",
+          "answer": "Mi felszállunk, aztán te leszállsz."
         }
       ]
     },
@@ -243,11 +267,11 @@
       "id": "a1-139-check-1",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Choose the correct expression.",
+      "question": "Choose the correct word for 'depart'.",
       "options": [
-        "jegy",
-        "megálló",
-        "xyz"
+        "indul",
+        "érkezik",
+        "jön"
       ],
       "correct": 0
     },
@@ -255,11 +279,11 @@
       "id": "a1-139-check-2",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Choose the correct expression.",
+      "question": "Choose the correct word for 'get off'.",
       "options": [
-        "megálló",
-        "pályaudvar",
-        "xyz"
+        "leszáll",
+        "felszáll",
+        "indul"
       ],
       "correct": 0
     }

@@ -5,11 +5,11 @@
       "id": "a1-136-review-1",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the correct Hungarian expression.",
+      "question": "What does 'közel' mean?",
       "options": [
-        "busz",
-        "villamos",
-        "metró"
+        "near",
+        "far",
+        "right"
       ],
       "correct": 0
     },
@@ -17,11 +17,11 @@
       "id": "a1-136-review-2",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the correct Hungarian expression.",
+      "question": "What does 'jobb' mean?",
       "options": [
-        "villamos",
-        "metró",
-        "vonat"
+        "right",
+        "left",
+        "far"
       ],
       "correct": 0
     },
@@ -29,11 +29,11 @@
       "id": "a1-136-introduce-1",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which expression is useful here?",
+      "question": "What does 'busz' mean?",
       "options": [
-        "villamos",
-        "metró",
-        "vonat"
+        "bus",
+        "tram",
+        "train"
       ],
       "correct": 0
     },
@@ -41,11 +41,11 @@
       "id": "a1-136-introduce-2",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which expression is useful here?",
+      "question": "What does 'vonat' mean?",
       "options": [
-        "metró",
-        "vonat",
-        "jegy"
+        "train",
+        "bus",
+        "metro"
       ],
       "correct": 0
     },
@@ -53,18 +53,18 @@
       "id": "a1-136-controlled-1",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "Kérek villamos.",
-      "answer": "villamos"
+      "sentence": "____ vagy villamossal.",
+      "answer": "Busszal"
     },
     {
       "id": "a1-136-controlled-2",
       "type": "multiple-choice",
       "category": "controlled",
-      "question": "Choose the correct word.",
+      "question": "Choose the word for 'metro'.",
       "options": [
         "metró",
         "vonat",
-        "jegy"
+        "busz"
       ],
       "correct": 0
     },
@@ -84,6 +84,10 @@
         [
           "metró",
           "metro"
+        ],
+        [
+          "vonat",
+          "train"
         ]
       ]
     },
@@ -91,20 +95,20 @@
       "id": "a1-136-controlled-4",
       "type": "substitution",
       "category": "controlled",
-      "base_sentence": "Busszal megyek.",
+      "base_sentence": "Busszal megyünk.",
       "base_word": "Busszal",
-      "base_gloss": "I go by bus.",
+      "base_gloss": "We're going by bus.",
       "options": [
         {
           "word": "villamos",
           "inflected": "Villamossal",
-          "sentence": "Villamossal megyek.",
+          "sentence": "Villamossal megyünk.",
           "gloss": "by tram"
         },
         {
           "word": "metró",
           "inflected": "Metróval",
-          "sentence": "Metróval megyek.",
+          "sentence": "Metróval megyünk.",
           "gloss": "by metro"
         }
       ]
@@ -113,11 +117,11 @@
       "id": "a1-136-practice-1",
       "type": "multiple-choice",
       "category": "practice",
-      "question": "Choose the best answer in context.",
+      "question": "How do you say 'we go' in Hungarian?",
       "options": [
-        "villamos",
-        "metró",
-        "vonat"
+        "megyünk",
+        "megyek",
+        "mész"
       ],
       "correct": 0
     },
@@ -125,8 +129,8 @@
       "id": "a1-136-practice-2",
       "type": "fill-blank",
       "category": "practice",
-      "sentence": "Ez a(z) ____. ",
-      "answer": "metró"
+      "sentence": "Mivel ____?",
+      "answer": "megyünk"
     },
     {
       "id": "a1-136-practice-3",
@@ -144,6 +148,14 @@
         [
           "metró",
           "metro"
+        ],
+        [
+          "vonat",
+          "train"
+        ],
+        [
+          "közel",
+          "near"
         ]
       ]
     },
@@ -151,14 +163,20 @@
       "id": "a1-136-practice-4",
       "type": "substitution",
       "category": "practice",
-      "base_sentence": "Vonattal megyek.",
-      "base_word": "Vonattal",
-      "base_gloss": "I go by train.",
+      "base_sentence": "A metróval megyünk?",
+      "base_word": "metróval",
+      "base_gloss": "Are we going by metro?",
       "options": [
         {
+          "word": "vonat",
+          "inflected": "vonattal",
+          "sentence": "A vonattal megyünk?",
+          "gloss": "by train"
+        },
+        {
           "word": "busz",
-          "inflected": "Busszal",
-          "sentence": "Busszal megyek.",
+          "inflected": "busszal",
+          "sentence": "A busszal megyünk?",
           "gloss": "by bus"
         }
       ]
@@ -170,15 +188,15 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Mit szeretnél?"
+          "text": "Mivel megyünk?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Mariann",
           "text": "_____"
         }
       ],
       "options": [
-        "megálló.",
+        "Busszal vagy villamossal.",
         "Nem tudom."
       ],
       "correct": 0
@@ -190,16 +208,16 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Mit kérsz?"
+          "text": "A metróval megyünk?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Mariann",
           "text": "_____"
         }
       ],
       "options": [
-        "Kérek villamos.",
-        "Hol van?"
+        "Nem, most busszal utazunk.",
+        "Mennyi az ár?"
       ],
       "correct": 0
     },
@@ -210,38 +228,38 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Mit kérsz?"
+          "text": "Van vonat is?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Mariann",
           "text": "_____"
         }
       ],
       "options": [
-        "Kérek metró.",
-        "Hol van?"
+        "Igen, van vonat és villamos is.",
+        "Szia, hogy vagy?"
       ],
       "correct": 0
     },
     {
       "id": "a1-136-production-1",
       "type": "structured-writing",
-      "category": "production",
+      "category": "writing",
       "template": [
         {
-          "prompt": "Write a sentence using this word: villamos",
-          "answer": "Villamossal megyek."
+          "prompt": "Ask how you're going (by what means).",
+          "answer": "Mivel megyünk?"
         }
       ]
     },
     {
       "id": "a1-136-production-2",
       "type": "structured-writing",
-      "category": "production",
+      "category": "writing",
       "template": [
         {
-          "prompt": "Write a sentence using this word: metró",
-          "answer": "Metróval megyek."
+          "prompt": "Say by bus or by tram.",
+          "answer": "Busszal vagy villamossal."
         }
       ]
     },
@@ -249,11 +267,11 @@
       "id": "a1-136-check-1",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Choose the correct expression.",
+      "question": "Choose the correct word for 'bus'.",
       "options": [
+        "busz",
         "villamos",
-        "metró",
-        "xyz"
+        "vonat"
       ],
       "correct": 0
     },
@@ -261,11 +279,11 @@
       "id": "a1-136-check-2",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Choose the correct expression.",
+      "question": "Choose the correct word for 'tram'.",
       "options": [
+        "villamos",
         "metró",
-        "vonat",
-        "xyz"
+        "busz"
       ],
       "correct": 0
     }

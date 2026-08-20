@@ -5,11 +5,11 @@
       "id": "a1-141-review-1",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the correct Hungarian expression.",
+      "question": "What does 'egyenesen' mean?",
       "options": [
-        "szabadidő",
-        "sport",
-        "foci"
+        "straight",
+        "to the right",
+        "to the left"
       ],
       "correct": 0
     },
@@ -17,11 +17,11 @@
       "id": "a1-141-review-2",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the correct Hungarian expression.",
+      "question": "What does 'utazik' mean?",
       "options": [
-        "sport",
-        "foci",
-        "úszás"
+        "to travel",
+        "to arrive",
+        "to depart"
       ],
       "correct": 0
     },
@@ -29,11 +29,11 @@
       "id": "a1-141-introduce-1",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which expression is useful here?",
+      "question": "What does 'szabadidő' mean?",
       "options": [
+        "free time",
         "sport",
-        "foci",
-        "úszás"
+        "football"
       ],
       "correct": 0
     },
@@ -41,11 +41,11 @@
       "id": "a1-141-introduce-2",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which expression is useful here?",
+      "question": "What does 'úszás' mean?",
       "options": [
-        "foci",
-        "úszás",
-        "futás"
+        "swimming",
+        "running",
+        "football"
       ],
       "correct": 0
     },
@@ -53,18 +53,18 @@
       "id": "a1-141-controlled-1",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "Kérek sport.",
-      "answer": "sport"
+      "sentence": "Mit csinálsz ____?",
+      "answer": "szabadidőben"
     },
     {
       "id": "a1-141-controlled-2",
       "type": "multiple-choice",
       "category": "controlled",
-      "question": "Choose the correct word.",
+      "question": "Choose the word for 'football'.",
       "options": [
         "foci",
-        "úszás",
-        "futás"
+        "sport",
+        "úszás"
       ],
       "correct": 0
     },
@@ -84,6 +84,10 @@
         [
           "foci",
           "football"
+        ],
+        [
+          "úszás",
+          "swimming"
         ]
       ]
     },
@@ -91,21 +95,21 @@
       "id": "a1-141-controlled-4",
       "type": "substitution",
       "category": "controlled",
-      "base_sentence": "Szeretem a sportot.",
-      "base_word": "sportot",
-      "base_gloss": "I like sport.",
+      "base_sentence": "Szeretek sportolni.",
+      "base_word": "sportolni",
+      "base_gloss": "I like doing sport.",
       "options": [
         {
-          "word": "foci",
-          "inflected": "focit",
-          "sentence": "Szeretem a focit.",
-          "gloss": "football"
+          "word": "úszni",
+          "inflected": "úszni",
+          "sentence": "Szeretek úszni.",
+          "gloss": "swimming"
         },
         {
-          "word": "úszás",
-          "inflected": "úszást",
-          "sentence": "Szeretem az úszást.",
-          "gloss": "swimming"
+          "word": "focizni",
+          "inflected": "focizni",
+          "sentence": "Szeretek focizni.",
+          "gloss": "playing football"
         }
       ]
     },
@@ -113,11 +117,11 @@
       "id": "a1-141-practice-1",
       "type": "multiple-choice",
       "category": "practice",
-      "question": "Choose the best answer in context.",
+      "question": "Which form is used with an infinitive and no named object?",
       "options": [
-        "sport",
-        "foci",
-        "úszás"
+        "szeretek",
+        "szeretem",
+        "szereted"
       ],
       "correct": 0
     },
@@ -125,8 +129,8 @@
       "id": "a1-141-practice-2",
       "type": "fill-blank",
       "category": "practice",
-      "sentence": "Ez a(z) ____. ",
-      "answer": "foci"
+      "sentence": "Szeretem az úszást és a ____.",
+      "answer": "futást"
     },
     {
       "id": "a1-141-practice-3",
@@ -144,6 +148,14 @@
         [
           "foci",
           "football"
+        ],
+        [
+          "úszás",
+          "swimming"
+        ],
+        [
+          "egyenesen",
+          "straight"
         ]
       ]
     },
@@ -151,15 +163,21 @@
       "id": "a1-141-practice-4",
       "type": "substitution",
       "category": "practice",
-      "base_sentence": "Szabadidőben úszom.",
-      "base_word": "úszom",
-      "base_gloss": "In my free time I swim.",
+      "base_sentence": "Szeretem az úszást.",
+      "base_word": "úszást",
+      "base_gloss": "I like swimming.",
       "options": [
         {
-          "word": "fut",
-          "inflected": "futok",
-          "sentence": "Szabadidőben futok.",
-          "gloss": "I run"
+          "word": "focit",
+          "inflected": "focit",
+          "sentence": "Szeretem a focit.",
+          "gloss": "football"
+        },
+        {
+          "word": "sportot",
+          "inflected": "sportot",
+          "sentence": "Szeretem a sportot.",
+          "gloss": "sport"
         }
       ]
     },
@@ -169,16 +187,16 @@
       "category": "practice",
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Mit szeretnél?"
+          "speaker": "Károly",
+          "text": "Mit csinálsz szabadidőben?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "zene.",
+        "Szeretek sportolni. Szeretem az úszást és a futást.",
         "Nem tudom."
       ],
       "correct": 0
@@ -190,16 +208,16 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Mit kérsz?"
+          "text": "Szeretek sportolni."
         },
         {
-          "speaker": "Károly",
+          "speaker": "Anna",
           "text": "_____"
         }
       ],
       "options": [
-        "Kérek sport.",
-        "Hol van?"
+        "Én a focit szeretem.",
+        "Mennyi az ár?"
       ],
       "correct": 0
     },
@@ -209,39 +227,39 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Mit kérsz?"
+          "speaker": "Károly",
+          "text": "Szereted az úszást?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "Kérek foci.",
-        "Hol van?"
+        "Igen, nagyon szeretem.",
+        "Szia, hogy vagy?"
       ],
       "correct": 0
     },
     {
       "id": "a1-141-production-1",
       "type": "structured-writing",
-      "category": "production",
+      "category": "writing",
       "template": [
         {
-          "prompt": "Write a sentence using this word: sport",
-          "answer": "Szeretem a sportot."
+          "prompt": "Say what you do in your free time.",
+          "answer": "Szeretek sportolni."
         }
       ]
     },
     {
       "id": "a1-141-production-2",
       "type": "structured-writing",
-      "category": "production",
+      "category": "writing",
       "template": [
         {
-          "prompt": "Write a sentence using this word: foci",
-          "answer": "Szeretem a focit."
+          "prompt": "Say you like swimming and running.",
+          "answer": "Szeretem az úszást és a futást."
         }
       ]
     },
@@ -249,11 +267,11 @@
       "id": "a1-141-check-1",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Choose the correct expression.",
+      "question": "Choose the correct word for 'free time'.",
       "options": [
+        "szabadidő",
         "sport",
-        "foci",
-        "xyz"
+        "foci"
       ],
       "correct": 0
     },
@@ -261,11 +279,11 @@
       "id": "a1-141-check-2",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Choose the correct expression.",
+      "question": "Choose the correct word for 'swimming'.",
       "options": [
-        "foci",
         "úszás",
-        "xyz"
+        "futás",
+        "foci"
       ],
       "correct": 0
     }

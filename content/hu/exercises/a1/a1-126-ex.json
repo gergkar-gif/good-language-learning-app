@@ -5,11 +5,11 @@
       "id": "a1-126-review-1",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the correct Hungarian expression.",
+      "question": "What does 'tetszik' mean?",
       "options": [
-        "ruha",
-        "ing",
-        "kabát"
+        "to be liked / to please",
+        "to wear",
+        "to try"
       ],
       "correct": 0
     },
@@ -17,11 +17,11 @@
       "id": "a1-126-review-2",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the correct Hungarian expression.",
+      "question": "What does 'eladó' mean?",
       "options": [
-        "ing",
-        "kabát",
-        "szoknya"
+        "salesperson",
+        "product",
+        "gift"
       ],
       "correct": 0
     },
@@ -29,11 +29,11 @@
       "id": "a1-126-introduce-1",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which expression is useful here?",
+      "question": "What does 'ruha' mean?",
       "options": [
-        "ing",
-        "kabát",
-        "szoknya"
+        "clothing / dress",
+        "shirt",
+        "coat"
       ],
       "correct": 0
     },
@@ -41,11 +41,11 @@
       "id": "a1-126-introduce-2",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which expression is useful here?",
+      "question": "What does 'szoknya' mean?",
       "options": [
-        "kabát",
-        "szoknya",
-        "pulóver"
+        "skirt",
+        "coat",
+        "shirt"
       ],
       "correct": 0
     },
@@ -53,18 +53,18 @@
       "id": "a1-126-controlled-1",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "Kérek ing.",
-      "answer": "ing"
+      "sentence": "Szép ez a ____.",
+      "answer": "ruha"
     },
     {
       "id": "a1-126-controlled-2",
       "type": "multiple-choice",
       "category": "controlled",
-      "question": "Choose the correct word.",
+      "question": "Choose the word for 'shirt'.",
       "options": [
+        "ing",
         "kabát",
-        "szoknya",
-        "pulóver"
+        "szoknya"
       ],
       "correct": 0
     },
@@ -75,7 +75,7 @@
       "pairs": [
         [
           "ruha",
-          "clothing/dress"
+          "clothing / dress"
         ],
         [
           "ing",
@@ -84,6 +84,10 @@
         [
           "kabát",
           "coat"
+        ],
+        [
+          "szoknya",
+          "skirt"
         ]
       ]
     },
@@ -91,21 +95,21 @@
       "id": "a1-126-controlled-4",
       "type": "substitution",
       "category": "controlled",
-      "base_sentence": "Kérek ruhát.",
-      "base_word": "ruhát",
-      "base_gloss": "I'd like a dress.",
+      "base_sentence": "Inget viselek.",
+      "base_word": "Inget",
+      "base_gloss": "I'm wearing a shirt.",
       "options": [
         {
-          "word": "ing",
-          "inflected": "inget",
-          "sentence": "Kérek inget.",
-          "gloss": "a shirt"
+          "word": "kabát",
+          "inflected": "Kabátot",
+          "sentence": "Kabátot viselek.",
+          "gloss": "a coat"
         },
         {
-          "word": "kabát",
-          "inflected": "kabátot",
-          "sentence": "Kérek kabátot.",
-          "gloss": "a coat"
+          "word": "ruha",
+          "inflected": "Ruhát",
+          "sentence": "Ruhát viselek.",
+          "gloss": "a dress"
         }
       ]
     },
@@ -113,11 +117,11 @@
       "id": "a1-126-practice-1",
       "type": "multiple-choice",
       "category": "practice",
-      "question": "Choose the best answer in context.",
+      "question": "Which sentence emphasises how pretty the dress is?",
       "options": [
-        "ing",
-        "kabát",
-        "szoknya"
+        "Szép ez a ruha.",
+        "Ez a ruha.",
+        "A ruha jó."
       ],
       "correct": 0
     },
@@ -125,8 +129,8 @@
       "id": "a1-126-practice-2",
       "type": "fill-blank",
       "category": "practice",
-      "sentence": "Ez a(z) ____. ",
-      "answer": "kabát"
+      "sentence": "Én inget és pulóvert ____.",
+      "answer": "viselek"
     },
     {
       "id": "a1-126-practice-3",
@@ -135,7 +139,7 @@
       "pairs": [
         [
           "ruha",
-          "clothing/dress"
+          "clothing / dress"
         ],
         [
           "ing",
@@ -144,6 +148,14 @@
         [
           "kabát",
           "coat"
+        ],
+        [
+          "szoknya",
+          "skirt"
+        ],
+        [
+          "tetszik",
+          "like / please"
         ]
       ]
     },
@@ -151,21 +163,21 @@
       "id": "a1-126-practice-4",
       "type": "substitution",
       "category": "practice",
-      "base_sentence": "Kérek szoknyát.",
-      "base_word": "szoknyát",
-      "base_gloss": "I'd like a skirt.",
+      "base_sentence": "A szoknya is szép.",
+      "base_word": "szoknya",
+      "base_gloss": "The skirt is pretty too.",
       "options": [
         {
           "word": "ruha",
-          "inflected": "ruhát",
-          "sentence": "Kérek ruhát.",
-          "gloss": "a dress"
+          "inflected": "ruha",
+          "sentence": "A ruha is szép.",
+          "gloss": "the dress"
         },
         {
           "word": "ing",
-          "inflected": "inget",
-          "sentence": "Kérek inget.",
-          "gloss": "a shirt"
+          "inflected": "ing",
+          "sentence": "Az ing is szép.",
+          "gloss": "the shirt"
         }
       ]
     },
@@ -175,16 +187,16 @@
       "category": "practice",
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Mit szeretnél?"
+          "speaker": "Anna",
+          "text": "Szép ez a ruha."
         },
         {
-          "speaker": "Károly",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "zokni.",
+        "Igen. A szoknya is szép.",
         "Nem tudom."
       ],
       "correct": 0
@@ -196,16 +208,16 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Mit kérsz?"
+          "text": "Igen. A szoknya is szép."
         },
         {
-          "speaker": "Károly",
+          "speaker": "Mariann",
           "text": "_____"
         }
       ],
       "options": [
-        "Kérek ing.",
-        "Hol van?"
+        "Én inget és pulóvert viselek.",
+        "Mennyi az ár?"
       ],
       "correct": 0
     },
@@ -215,39 +227,39 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Mit kérsz?"
+          "speaker": "Anna",
+          "text": "Milyen ruhát viselsz?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "Kérek kabát.",
-        "Hol van?"
+        "Szoknyát és inget viselek.",
+        "Szia, hogy vagy?"
       ],
       "correct": 0
     },
     {
       "id": "a1-126-production-1",
       "type": "structured-writing",
-      "category": "production",
+      "category": "writing",
       "template": [
         {
-          "prompt": "Write a sentence using this word: ing",
-          "answer": "Kérek egy inget."
+          "prompt": "Say this dress is pretty.",
+          "answer": "Szép ez a ruha."
         }
       ]
     },
     {
       "id": "a1-126-production-2",
       "type": "structured-writing",
-      "category": "production",
+      "category": "writing",
       "template": [
         {
-          "prompt": "Write a sentence using this word: kabát",
-          "answer": "Kérek egy kabátot."
+          "prompt": "Say you're wearing a shirt and a jumper.",
+          "answer": "Inget és pulóvert viselek."
         }
       ]
     },
@@ -255,11 +267,11 @@
       "id": "a1-126-check-1",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Choose the correct expression.",
+      "question": "Choose the correct word for 'coat'.",
       "options": [
-        "ing",
         "kabát",
-        "xyz"
+        "ing",
+        "ruha"
       ],
       "correct": 0
     },
@@ -267,11 +279,11 @@
       "id": "a1-126-check-2",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Choose the correct expression.",
+      "question": "Choose the correct word for 'skirt'.",
       "options": [
-        "kabát",
         "szoknya",
-        "xyz"
+        "ruha",
+        "ing"
       ],
       "correct": 0
     }

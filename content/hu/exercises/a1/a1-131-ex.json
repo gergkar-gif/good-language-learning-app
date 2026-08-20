@@ -5,11 +5,11 @@
       "id": "a1-131-review-1",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the correct Hungarian expression.",
+      "question": "What does 'hosszú' mean?",
       "options": [
-        "város",
-        "utca",
-        "tér"
+        "long",
+        "short",
+        "comfortable"
       ],
       "correct": 0
     },
@@ -17,11 +17,11 @@
       "id": "a1-131-review-2",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the correct Hungarian expression.",
+      "question": "What does 'visel' mean?",
       "options": [
-        "utca",
-        "tér",
-        "állomás"
+        "to wear",
+        "to try",
+        "to look for"
       ],
       "correct": 0
     },
@@ -29,11 +29,11 @@
       "id": "a1-131-introduce-1",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which expression is useful here?",
+      "question": "What does 'város' mean?",
       "options": [
-        "utca",
-        "tér",
-        "állomás"
+        "city",
+        "street",
+        "square"
       ],
       "correct": 0
     },
@@ -41,11 +41,11 @@
       "id": "a1-131-introduce-2",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which expression is useful here?",
+      "question": "What does 'állomás' mean?",
       "options": [
-        "tér",
-        "állomás",
-        "bank"
+        "station",
+        "street",
+        "city"
       ],
       "correct": 0
     },
@@ -53,18 +53,18 @@
       "id": "a1-131-controlled-1",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "Kérek utca.",
-      "answer": "utca"
+      "sentence": "Hol van a ____?",
+      "answer": "bank"
     },
     {
       "id": "a1-131-controlled-2",
       "type": "multiple-choice",
       "category": "controlled",
-      "question": "Choose the correct word.",
+      "question": "Choose the word for 'street'.",
       "options": [
+        "utca",
         "tér",
-        "állomás",
-        "bank"
+        "város"
       ],
       "correct": 0
     },
@@ -84,6 +84,10 @@
         [
           "tér",
           "square"
+        ],
+        [
+          "állomás",
+          "station"
         ]
       ]
     },
@@ -91,21 +95,21 @@
       "id": "a1-131-controlled-4",
       "type": "substitution",
       "category": "controlled",
-      "base_sentence": "A könyvtár a városban van.",
-      "base_word": "városban",
-      "base_gloss": "The library is in the city.",
+      "base_sentence": "Hol van a bank?",
+      "base_word": "bank",
+      "base_gloss": "Where is the bank?",
       "options": [
         {
-          "word": "utca",
-          "inflected": "utcán",
-          "sentence": "A könyvtár az utcán van.",
-          "gloss": "on the street"
+          "word": "állomás",
+          "inflected": "állomás",
+          "sentence": "Hol van az állomás?",
+          "gloss": "the station"
         },
         {
           "word": "tér",
-          "inflected": "téren",
-          "sentence": "A könyvtár a téren van.",
-          "gloss": "on the square"
+          "inflected": "tér",
+          "sentence": "Hol van a tér?",
+          "gloss": "the square"
         }
       ]
     },
@@ -113,11 +117,11 @@
       "id": "a1-131-practice-1",
       "type": "multiple-choice",
       "category": "practice",
-      "question": "Choose the best answer in context.",
+      "question": "Which word means 'where' (asking about a location)?",
       "options": [
-        "utca",
-        "tér",
-        "állomás"
+        "hol",
+        "hová",
+        "milyen"
       ],
       "correct": 0
     },
@@ -125,8 +129,8 @@
       "id": "a1-131-practice-2",
       "type": "fill-blank",
       "category": "practice",
-      "sentence": "Ez a(z) ____. ",
-      "answer": "tér"
+      "sentence": "Az állomásra ____.",
+      "answer": "megyünk"
     },
     {
       "id": "a1-131-practice-3",
@@ -144,6 +148,14 @@
         [
           "tér",
           "square"
+        ],
+        [
+          "állomás",
+          "station"
+        ],
+        [
+          "hosszú",
+          "long"
         ]
       ]
     },
@@ -151,15 +163,21 @@
       "id": "a1-131-practice-4",
       "type": "substitution",
       "category": "practice",
-      "base_sentence": "Az állomáson vagyok.",
-      "base_word": "állomáson",
-      "base_gloss": "I'm at the station.",
+      "base_sentence": "Hová megyünk?",
+      "base_word": "Hová",
+      "base_gloss": "Where are we going?",
       "options": [
         {
-          "word": "város",
-          "inflected": "városban",
-          "sentence": "A városban vagyok.",
-          "gloss": "in the city"
+          "word": "Hol",
+          "inflected": "Hol",
+          "sentence": "Hol vagyunk?",
+          "gloss": "where (location)"
+        },
+        {
+          "word": "Mikor",
+          "inflected": "Mikor",
+          "sentence": "Mikor megyünk?",
+          "gloss": "when"
         }
       ]
     },
@@ -170,15 +188,15 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Mit szeretnél?"
+          "text": "Hol van a bank?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Mariann",
           "text": "_____"
         }
       ],
       "options": [
-        "bolt.",
+        "A bank közel van. A posta is közel van.",
         "Nem tudom."
       ],
       "correct": 0
@@ -190,16 +208,16 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Mit kérsz?"
+          "text": "Hová megyünk?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Mariann",
           "text": "_____"
         }
       ],
       "options": [
-        "Kérek utca.",
-        "Hol van?"
+        "Az állomásra megyünk.",
+        "Mennyi az ár?"
       ],
       "correct": 0
     },
@@ -210,38 +228,38 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Mit kérsz?"
+          "text": "Hol van a tér?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Mariann",
           "text": "_____"
         }
       ],
       "options": [
-        "Kérek tér.",
-        "Hol van?"
+        "A város közepén van.",
+        "Szia, hogy vagy?"
       ],
       "correct": 0
     },
     {
       "id": "a1-131-production-1",
       "type": "structured-writing",
-      "category": "production",
+      "category": "writing",
       "template": [
         {
-          "prompt": "Write a sentence using this word: utca",
-          "answer": "Az utcán vagyok."
+          "prompt": "Ask where the bank is.",
+          "answer": "Hol van a bank?"
         }
       ]
     },
     {
       "id": "a1-131-production-2",
       "type": "structured-writing",
-      "category": "production",
+      "category": "writing",
       "template": [
         {
-          "prompt": "Write a sentence using this word: tér",
-          "answer": "A téren vagyok."
+          "prompt": "Ask where you're going.",
+          "answer": "Hová megyünk?"
         }
       ]
     },
@@ -249,11 +267,11 @@
       "id": "a1-131-check-1",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Choose the correct expression.",
+      "question": "Choose the correct word for 'city'.",
       "options": [
+        "város",
         "utca",
-        "tér",
-        "xyz"
+        "tér"
       ],
       "correct": 0
     },
@@ -261,11 +279,11 @@
       "id": "a1-131-check-2",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Choose the correct expression.",
+      "question": "Choose the correct word for 'square'.",
       "options": [
         "tér",
         "állomás",
-        "xyz"
+        "utca"
       ],
       "correct": 0
     }

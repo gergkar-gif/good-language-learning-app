@@ -5,11 +5,11 @@
       "id": "a1-128-review-1",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the correct Hungarian expression.",
+      "question": "What does 'pulóver' mean?",
       "options": [
-        "kabát",
-        "szoknya",
-        "pulóver"
+        "jumper",
+        "boot",
+        "hat"
       ],
       "correct": 0
     },
@@ -17,11 +17,11 @@
       "id": "a1-128-review-2",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the correct Hungarian expression.",
+      "question": "What does 'csizma' mean?",
       "options": [
-        "szoknya",
-        "pulóver",
-        "zokni"
+        "boot",
+        "sock",
+        "jumper"
       ],
       "correct": 0
     },
@@ -29,11 +29,11 @@
       "id": "a1-128-introduce-1",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which expression is useful here?",
+      "question": "What does 'farmer' mean?",
       "options": [
-        "csizma",
-        "farmer",
-        "cipő"
+        "jeans",
+        "jumper",
+        "coat"
       ],
       "correct": 0
     },
@@ -41,11 +41,11 @@
       "id": "a1-128-introduce-2",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which expression is useful here?",
+      "question": "What does 'világos' mean?",
       "options": [
-        "farmer",
-        "cipő",
-        "színes"
+        "light (colour)",
+        "dark",
+        "colourful"
       ],
       "correct": 0
     },
@@ -53,18 +53,18 @@
       "id": "a1-128-controlled-1",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "Kérek csizma.",
-      "answer": "csizma"
+      "sentence": "A sapka világos ____ sötét?",
+      "answer": "vagy"
     },
     {
       "id": "a1-128-controlled-2",
       "type": "multiple-choice",
       "category": "controlled",
-      "question": "Choose the correct word.",
+      "question": "Choose the word for 'colourful'.",
       "options": [
-        "farmer",
-        "cipő",
-        "színes"
+        "színes",
+        "világos",
+        "sötét"
       ],
       "correct": 0
     },
@@ -74,16 +74,20 @@
       "category": "controlled",
       "pairs": [
         [
-          "sapka",
-          "hat"
-        ],
-        [
-          "csizma",
-          "boot"
-        ],
-        [
           "farmer",
           "jeans"
+        ],
+        [
+          "cipő",
+          "shoe"
+        ],
+        [
+          "színes",
+          "colourful"
+        ],
+        [
+          "világos",
+          "light"
         ]
       ]
     },
@@ -91,15 +95,21 @@
       "id": "a1-128-controlled-4",
       "type": "substitution",
       "category": "controlled",
-      "base_sentence": "Kérek farmert.",
-      "base_word": "farmert",
-      "base_gloss": "I'd like jeans.",
+      "base_sentence": "Szeretném felpróbálni a cipőt.",
+      "base_word": "cipőt",
+      "base_gloss": "I would like to try on the shoe.",
       "options": [
         {
-          "word": "cipő",
-          "inflected": "cipőt",
-          "sentence": "Kérek cipőt.",
-          "gloss": "shoes"
+          "word": "farmer",
+          "inflected": "farmert",
+          "sentence": "Szeretném felpróbálni a farmert.",
+          "gloss": "the jeans"
+        },
+        {
+          "word": "kabát",
+          "inflected": "kabátot",
+          "sentence": "Szeretném felpróbálni a kabátot.",
+          "gloss": "the coat"
         }
       ]
     },
@@ -107,11 +117,11 @@
       "id": "a1-128-practice-1",
       "type": "multiple-choice",
       "category": "practice",
-      "question": "Choose the best answer in context.",
+      "question": "Which word means 'or', for offering a choice?",
       "options": [
-        "cipő",
-        "színes",
-        "világos"
+        "vagy",
+        "és",
+        "de"
       ],
       "correct": 0
     },
@@ -119,8 +129,8 @@
       "id": "a1-128-practice-2",
       "type": "fill-blank",
       "category": "practice",
-      "sentence": "Ez a(z) ____. ",
-      "answer": "színes"
+      "sentence": "Szeretném ____ a cipőt.",
+      "answer": "felpróbálni"
     },
     {
       "id": "a1-128-practice-3",
@@ -138,6 +148,14 @@
         [
           "színes",
           "colourful"
+        ],
+        [
+          "világos",
+          "light"
+        ],
+        [
+          "zokni",
+          "sock"
         ]
       ]
     },
@@ -145,15 +163,21 @@
       "id": "a1-128-practice-4",
       "type": "substitution",
       "category": "practice",
-      "base_sentence": "Ez a kabát színes.",
-      "base_word": "színes",
-      "base_gloss": "This coat is colourful.",
+      "base_sentence": "A sapka világos vagy sötét?",
+      "base_word": "világos",
+      "base_gloss": "Is the hat light or dark?",
       "options": [
         {
-          "word": "világos",
-          "inflected": "világos",
-          "sentence": "Ez a kabát világos.",
-          "gloss": "light-coloured"
+          "word": "nagy",
+          "inflected": "nagy",
+          "sentence": "A sapka nagy vagy kicsi?",
+          "gloss": "large"
+        },
+        {
+          "word": "szép",
+          "inflected": "szép",
+          "sentence": "A sapka szép vagy csúnya?",
+          "gloss": "pretty"
         }
       ]
     },
@@ -164,15 +188,15 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Mit szeretnél?"
+          "text": "A sapka világos vagy sötét?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Mariann",
           "text": "_____"
         }
       ],
       "options": [
-        "szép.",
+        "Sötét. A csizma is sötét.",
         "Nem tudom."
       ],
       "correct": 0
@@ -183,17 +207,17 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Mit kérsz?"
+          "speaker": "Mariann",
+          "text": "Sötét. A csizma is sötét."
         },
         {
-          "speaker": "Károly",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "Kérek szoknya.",
-        "Hol van?"
+        "Szeretném felpróbálni a cipőt.",
+        "Mennyi az ár?"
       ],
       "correct": 0
     },
@@ -203,8 +227,8 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Mit kérsz?"
+          "speaker": "Anna",
+          "text": "Milyen a farmer, világos vagy sötét?"
         },
         {
           "speaker": "Károly",
@@ -212,30 +236,30 @@
         }
       ],
       "options": [
-        "Kérek pulóver.",
-        "Hol van?"
+        "Sötét, de kényelmes.",
+        "Szia, hogy vagy?"
       ],
       "correct": 0
     },
     {
       "id": "a1-128-production-1",
       "type": "structured-writing",
-      "category": "production",
+      "category": "writing",
       "template": [
         {
-          "prompt": "Write a sentence using this word: szoknya",
-          "answer": "Kérek egy szoknyát."
+          "prompt": "Ask if the hat is light or dark.",
+          "answer": "A sapka világos vagy sötét?"
         }
       ]
     },
     {
       "id": "a1-128-production-2",
       "type": "structured-writing",
-      "category": "production",
+      "category": "writing",
       "template": [
         {
-          "prompt": "Write a sentence using this word: pulóver",
-          "answer": "Kérek egy pulóvert."
+          "prompt": "Say you'd like to try on the shoe.",
+          "answer": "Szeretném felpróbálni a cipőt."
         }
       ]
     },
@@ -243,11 +267,11 @@
       "id": "a1-128-check-1",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Choose the correct expression.",
+      "question": "Choose the correct word for 'jeans'.",
       "options": [
-        "szoknya",
-        "pulóver",
-        "xyz"
+        "farmer",
+        "cipő",
+        "sapka"
       ],
       "correct": 0
     },
@@ -255,11 +279,11 @@
       "id": "a1-128-check-2",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Choose the correct expression.",
+      "question": "Choose the correct word for 'light (colour)'.",
       "options": [
-        "pulóver",
-        "zokni",
-        "xyz"
+        "világos",
+        "sötét",
+        "színes"
       ],
       "correct": 0
     }

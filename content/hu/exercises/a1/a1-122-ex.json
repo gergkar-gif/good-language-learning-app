@@ -5,11 +5,11 @@
       "id": "a1-122-review-1",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the correct Hungarian expression.",
+      "question": "What does 'bolt' mean?",
       "options": [
-        "termék",
-        "póló",
-        "nadrág"
+        "shop",
+        "product",
+        "gift"
       ],
       "correct": 0
     },
@@ -17,11 +17,11 @@
       "id": "a1-122-review-2",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the correct Hungarian expression.",
+      "question": "What does 'nadrág' mean?",
       "options": [
-        "póló",
-        "nadrág",
-        "cipő"
+        "trousers",
+        "T-shirt",
+        "bag"
       ],
       "correct": 0
     },
@@ -29,11 +29,11 @@
       "id": "a1-122-introduce-1",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which expression is useful here?",
+      "question": "What does 'táska' mean?",
       "options": [
-        "cipő",
-        "táska",
-        "könyv"
+        "bag",
+        "book",
+        "shoe"
       ],
       "correct": 0
     },
@@ -41,11 +41,11 @@
       "id": "a1-122-introduce-2",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which expression is useful here?",
+      "question": "What does 'ajándék' mean?",
       "options": [
-        "táska",
-        "könyv",
-        "ajándék"
+        "gift",
+        "book",
+        "bag"
       ],
       "correct": 0
     },
@@ -53,18 +53,18 @@
       "id": "a1-122-controlled-1",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "Kérek cipő.",
-      "answer": "cipő"
+      "sentence": "Melyik ____ szép?",
+      "answer": "táska"
     },
     {
       "id": "a1-122-controlled-2",
       "type": "multiple-choice",
       "category": "controlled",
-      "question": "Choose the correct word.",
+      "question": "Choose the word for 'shoe'.",
       "options": [
-        "táska",
+        "cipő",
         "könyv",
-        "ajándék"
+        "táska"
       ],
       "correct": 0
     },
@@ -74,16 +74,20 @@
       "category": "controlled",
       "pairs": [
         [
-          "nadrág",
-          "trousers"
-        ],
-        [
           "cipő",
           "shoe"
         ],
         [
           "táska",
           "bag"
+        ],
+        [
+          "könyv",
+          "book"
+        ],
+        [
+          "ajándék",
+          "gift"
         ]
       ]
     },
@@ -91,21 +95,21 @@
       "id": "a1-122-controlled-4",
       "type": "substitution",
       "category": "controlled",
-      "base_sentence": "Kérek ajándékot.",
-      "base_word": "ajándékot",
-      "base_gloss": "I'd like a gift.",
+      "base_sentence": "Ezt kérem, nem azt.",
+      "base_word": "Ezt",
+      "base_gloss": "I'd like this one, not that one.",
       "options": [
         {
-          "word": "táska",
-          "inflected": "táskát",
-          "sentence": "Kérek táskát.",
-          "gloss": "a bag"
+          "word": "cipő",
+          "inflected": "Ezt a cipőt",
+          "sentence": "Ezt a cipőt kérem, nem azt.",
+          "gloss": "this shoe"
         },
         {
           "word": "könyv",
-          "inflected": "könyvet",
-          "sentence": "Kérek könyvet.",
-          "gloss": "a book"
+          "inflected": "Ezt a könyvet",
+          "sentence": "Ezt a könyvet kérem, nem azt.",
+          "gloss": "this book"
         }
       ]
     },
@@ -113,11 +117,11 @@
       "id": "a1-122-practice-1",
       "type": "multiple-choice",
       "category": "practice",
-      "question": "Choose the best answer in context.",
+      "question": "Which word means 'which one'?",
       "options": [
-        "táska",
-        "könyv",
-        "ajándék"
+        "melyik",
+        "milyen",
+        "mennyi"
       ],
       "correct": 0
     },
@@ -125,8 +129,8 @@
       "id": "a1-122-practice-2",
       "type": "fill-blank",
       "category": "practice",
-      "sentence": "Ez a(z) ____. ",
-      "answer": "könyv"
+      "sentence": "Melyik színt szereted? ____ tetszik.",
+      "answer": "Ez"
     },
     {
       "id": "a1-122-practice-3",
@@ -144,6 +148,14 @@
         [
           "könyv",
           "book"
+        ],
+        [
+          "ajándék",
+          "gift"
+        ],
+        [
+          "bolt",
+          "shop"
         ]
       ]
     },
@@ -151,21 +163,21 @@
       "id": "a1-122-practice-4",
       "type": "substitution",
       "category": "practice",
-      "base_sentence": "Ez a méret jó.",
-      "base_word": "méret",
-      "base_gloss": "This size is good.",
+      "base_sentence": "Ez a könyv ajándék.",
+      "base_word": "könyv",
+      "base_gloss": "This book is a gift.",
       "options": [
         {
-          "word": "ár",
-          "inflected": "ár",
-          "sentence": "Ez az ár jó.",
-          "gloss": "price"
+          "word": "táska",
+          "inflected": "táska",
+          "sentence": "Ez a táska ajándék.",
+          "gloss": "bag"
         },
         {
-          "word": "szín",
-          "inflected": "szín",
-          "sentence": "Ez a szín jó.",
-          "gloss": "colour"
+          "word": "cipő",
+          "inflected": "cipő",
+          "sentence": "Ez a cipő ajándék.",
+          "gloss": "shoe"
         }
       ]
     },
@@ -176,7 +188,7 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Mit szeretnél?"
+          "text": "Ez a termék jó?"
         },
         {
           "speaker": "Károly",
@@ -184,8 +196,8 @@
         }
       ],
       "options": [
-        "ár.",
-        "Nem tudom."
+        "Igen, tetszik.",
+        "Mennyi az ár?"
       ],
       "correct": 0
     },
@@ -196,16 +208,16 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Mit kérsz?"
+          "text": "Melyik táskát szereted?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Anna",
           "text": "_____"
         }
       ],
       "options": [
-        "Kérek póló.",
-        "Hol van?"
+        "Ezt szeretem, nem azt.",
+        "Szia, hogy vagy?"
       ],
       "correct": 0
     },
@@ -215,39 +227,39 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Mit kérsz?"
+          "speaker": "Károly",
+          "text": "Ez a könyv ajándék?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "Kérek nadrág.",
-        "Hol van?"
+        "Igen, ez ajándék.",
+        "Nagy vagy kicsi?"
       ],
       "correct": 0
     },
     {
       "id": "a1-122-production-1",
       "type": "structured-writing",
-      "category": "production",
+      "category": "writing",
       "template": [
         {
-          "prompt": "Write a sentence using this word: póló",
-          "answer": "Kérek egy pólót."
+          "prompt": "Ask which bag is pretty.",
+          "answer": "Melyik táska szép?"
         }
       ]
     },
     {
       "id": "a1-122-production-2",
       "type": "structured-writing",
-      "category": "production",
+      "category": "writing",
       "template": [
         {
-          "prompt": "Write a sentence using this word: nadrág",
-          "answer": "Kérek egy nadrágot."
+          "prompt": "Say you'd like this one, not that one.",
+          "answer": "Ezt kérem, nem azt."
         }
       ]
     },
@@ -255,11 +267,11 @@
       "id": "a1-122-check-1",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Choose the correct expression.",
+      "question": "Choose the correct word for 'book'.",
       "options": [
-        "póló",
-        "nadrág",
-        "xyz"
+        "könyv",
+        "cipő",
+        "táska"
       ],
       "correct": 0
     },
@@ -267,11 +279,11 @@
       "id": "a1-122-check-2",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Choose the correct expression.",
+      "question": "Choose the correct word for 'gift'.",
       "options": [
-        "nadrág",
-        "cipő",
-        "xyz"
+        "ajándék",
+        "könyv",
+        "cipő"
       ],
       "correct": 0
     }

@@ -5,11 +5,11 @@
       "id": "a1-132-review-1",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the correct Hungarian expression.",
+      "question": "What does 'város' mean?",
       "options": [
-        "utca",
-        "tér",
-        "állomás"
+        "city",
+        "street",
+        "station"
       ],
       "correct": 0
     },
@@ -17,11 +17,11 @@
       "id": "a1-132-review-2",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the correct Hungarian expression.",
+      "question": "What does 'állomás' mean?",
       "options": [
-        "tér",
-        "állomás",
-        "bank"
+        "station",
+        "square",
+        "city"
       ],
       "correct": 0
     },
@@ -29,11 +29,11 @@
       "id": "a1-132-introduce-1",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which expression is useful here?",
+      "question": "What does 'gyógyszertár' mean?",
       "options": [
-        "bank",
-        "bolt",
-        "gyógyszertár"
+        "pharmacy",
+        "school",
+        "bank"
       ],
       "correct": 0
     },
@@ -41,11 +41,11 @@
       "id": "a1-132-introduce-2",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which expression is useful here?",
+      "question": "What does 'iskola' mean?",
       "options": [
-        "bolt",
-        "gyógyszertár",
-        "iskola"
+        "school",
+        "pharmacy",
+        "bank"
       ],
       "correct": 0
     },
@@ -53,17 +53,17 @@
       "id": "a1-132-controlled-1",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "Kérek bank.",
-      "answer": "bank"
+      "sentence": "A gyógyszertár hol ____?",
+      "answer": "van"
     },
     {
       "id": "a1-132-controlled-2",
       "type": "multiple-choice",
       "category": "controlled",
-      "question": "Choose the correct word.",
+      "question": "Choose the word for 'bank'.",
       "options": [
+        "bank",
         "bolt",
-        "gyógyszertár",
         "iskola"
       ],
       "correct": 0
@@ -74,16 +74,20 @@
       "category": "controlled",
       "pairs": [
         [
-          "állomás",
-          "station"
-        ],
-        [
           "bank",
           "bank"
         ],
         [
           "bolt",
           "shop"
+        ],
+        [
+          "gyógyszertár",
+          "pharmacy"
+        ],
+        [
+          "iskola",
+          "school"
         ]
       ]
     },
@@ -91,21 +95,21 @@
       "id": "a1-132-controlled-4",
       "type": "substitution",
       "category": "controlled",
-      "base_sentence": "A bankban vagyok.",
-      "base_word": "bankban",
-      "base_gloss": "I'm at the bank.",
+      "base_sentence": "A bolt mellett van.",
+      "base_word": "bolt",
+      "base_gloss": "It's next to the shop.",
       "options": [
         {
-          "word": "bolt",
-          "inflected": "boltban",
-          "sentence": "A boltban vagyok.",
-          "gloss": "at the shop"
+          "word": "bank",
+          "inflected": "bank",
+          "sentence": "A bank mellett van.",
+          "gloss": "the bank"
         },
         {
-          "word": "gyógyszertár",
-          "inflected": "gyógyszertárban",
-          "sentence": "A gyógyszertárban vagyok.",
-          "gloss": "at the pharmacy"
+          "word": "iskola",
+          "inflected": "iskola",
+          "sentence": "Az iskola mellett van.",
+          "gloss": "the school"
         }
       ]
     },
@@ -113,11 +117,11 @@
       "id": "a1-132-practice-1",
       "type": "multiple-choice",
       "category": "practice",
-      "question": "Choose the best answer in context.",
+      "question": "Which word means 'next to'?",
       "options": [
-        "bolt",
-        "gyógyszertár",
-        "iskola"
+        "mellett",
+        "közel",
+        "messze"
       ],
       "correct": 0
     },
@@ -125,8 +129,8 @@
       "id": "a1-132-practice-2",
       "type": "fill-blank",
       "category": "practice",
-      "sentence": "Ez a(z) ____. ",
-      "answer": "gyógyszertár"
+      "sentence": "A bank ____ van a posta.",
+      "answer": "mellett"
     },
     {
       "id": "a1-132-practice-3",
@@ -144,6 +148,14 @@
         [
           "gyógyszertár",
           "pharmacy"
+        ],
+        [
+          "iskola",
+          "school"
+        ],
+        [
+          "város",
+          "city"
         ]
       ]
     },
@@ -151,15 +163,21 @@
       "id": "a1-132-practice-4",
       "type": "substitution",
       "category": "practice",
-      "base_sentence": "Az iskolában vagyok.",
-      "base_word": "iskolában",
-      "base_gloss": "I'm at school.",
+      "base_sentence": "Az iskola az utca végén van.",
+      "base_word": "iskola",
+      "base_gloss": "The school is at the end of the street.",
       "options": [
         {
-          "word": "bank",
-          "inflected": "bankban",
-          "sentence": "A bankban vagyok.",
-          "gloss": "at the bank"
+          "word": "gyógyszertár",
+          "inflected": "gyógyszertár",
+          "sentence": "A gyógyszertár az utca végén van.",
+          "gloss": "the pharmacy"
+        },
+        {
+          "word": "bolt",
+          "inflected": "bolt",
+          "sentence": "A bolt az utca végén van.",
+          "gloss": "the shop"
         }
       ]
     },
@@ -170,16 +188,16 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Mit szeretnél?"
+          "text": "A gyógyszertár hol van?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Mariann",
           "text": "_____"
         }
       ],
       "options": [
-        "kórház.",
-        "Nem tudom."
+        "A bolt mellett van.",
+        "Mennyi az ár?"
       ],
       "correct": 0
     },
@@ -190,16 +208,16 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Mit kérsz?"
+          "text": "És az iskola?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Mariann",
           "text": "_____"
         }
       ],
       "options": [
-        "Kérek tér.",
-        "Hol van?"
+        "Az utca végén van.",
+        "Nem tudom."
       ],
       "correct": 0
     },
@@ -210,38 +228,38 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Mit kérsz?"
+          "text": "Hol van a bank?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Mariann",
           "text": "_____"
         }
       ],
       "options": [
-        "Kérek állomás.",
-        "Hol van?"
+        "A gyógyszertár mellett van.",
+        "Szia, hogy vagy?"
       ],
       "correct": 0
     },
     {
       "id": "a1-132-production-1",
       "type": "structured-writing",
-      "category": "production",
+      "category": "writing",
       "template": [
         {
-          "prompt": "Write a sentence using this word: tér",
-          "answer": "A téren vagyok."
+          "prompt": "Ask where the pharmacy is.",
+          "answer": "Hol van a gyógyszertár?"
         }
       ]
     },
     {
       "id": "a1-132-production-2",
       "type": "structured-writing",
-      "category": "production",
+      "category": "writing",
       "template": [
         {
-          "prompt": "Write a sentence using this word: állomás",
-          "answer": "Az állomáson vagyok."
+          "prompt": "Say it's next to the shop.",
+          "answer": "A bolt mellett van."
         }
       ]
     },
@@ -249,11 +267,11 @@
       "id": "a1-132-check-1",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Choose the correct expression.",
+      "question": "Choose the correct word for 'pharmacy'.",
       "options": [
-        "tér",
-        "állomás",
-        "xyz"
+        "gyógyszertár",
+        "iskola",
+        "bank"
       ],
       "correct": 0
     },
@@ -261,11 +279,11 @@
       "id": "a1-132-check-2",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Choose the correct expression.",
+      "question": "Choose the correct word for 'school'.",
       "options": [
-        "állomás",
-        "bank",
-        "xyz"
+        "iskola",
+        "bolt",
+        "bank"
       ],
       "correct": 0
     }

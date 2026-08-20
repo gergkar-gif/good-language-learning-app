@@ -5,11 +5,11 @@
       "id": "a1-135-review-1",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the correct Hungarian expression.",
+      "question": "What does 'kávézó' mean?",
       "options": [
-        "bank",
-        "bolt",
-        "gyógyszertár"
+        "café",
+        "library",
+        "museum"
       ],
       "correct": 0
     },
@@ -17,11 +17,11 @@
       "id": "a1-135-review-2",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the correct Hungarian expression.",
+      "question": "What does 'múzeum' mean?",
       "options": [
-        "bolt",
-        "gyógyszertár",
-        "iskola"
+        "museum",
+        "café",
+        "cinema"
       ],
       "correct": 0
     },
@@ -29,11 +29,11 @@
       "id": "a1-135-introduce-1",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which expression is useful here?",
+      "question": "What does 'közel' mean?",
       "options": [
-        "múzeum",
-        "mozi",
-        "könyvtár"
+        "near",
+        "far",
+        "left"
       ],
       "correct": 0
     },
@@ -41,11 +41,11 @@
       "id": "a1-135-introduce-2",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which expression is useful here?",
+      "question": "What does 'jobb' mean?",
       "options": [
-        "mozi",
-        "könyvtár",
-        "közel"
+        "right",
+        "left",
+        "far"
       ],
       "correct": 0
     },
@@ -53,18 +53,18 @@
       "id": "a1-135-controlled-1",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "Kérek múzeum.",
-      "answer": "múzeum"
+      "sentence": "A múzeum ____ van.",
+      "answer": "jobb"
     },
     {
       "id": "a1-135-controlled-2",
       "type": "multiple-choice",
       "category": "controlled",
-      "question": "Choose the correct word.",
+      "question": "Choose the word for 'far'.",
       "options": [
-        "mozi",
-        "könyvtár",
-        "közel"
+        "messze",
+        "közel",
+        "bal"
       ],
       "correct": 0
     },
@@ -74,16 +74,20 @@
       "category": "controlled",
       "pairs": [
         [
-          "kávézó",
-          "café"
+          "közel",
+          "near"
         ],
         [
-          "múzeum",
-          "museum"
+          "messze",
+          "far"
         ],
         [
-          "mozi",
-          "cinema"
+          "bal",
+          "left"
+        ],
+        [
+          "jobb",
+          "right"
         ]
       ]
     },
@@ -91,15 +95,21 @@
       "id": "a1-135-controlled-4",
       "type": "substitution",
       "category": "controlled",
-      "base_sentence": "Közel van az étterem.",
-      "base_word": "Közel",
-      "base_gloss": "The restaurant is near.",
+      "base_sentence": "A park bal van.",
+      "base_word": "bal",
+      "base_gloss": "The park is on the left.",
       "options": [
         {
-          "word": "messze",
-          "inflected": "Messze",
-          "sentence": "Messze van az étterem.",
-          "gloss": "far"
+          "word": "jobb",
+          "inflected": "jobb",
+          "sentence": "A park jobb van.",
+          "gloss": "on the right"
+        },
+        {
+          "word": "közel",
+          "inflected": "közel",
+          "sentence": "A park közel van.",
+          "gloss": "near"
         }
       ]
     },
@@ -107,11 +117,11 @@
       "id": "a1-135-practice-1",
       "type": "multiple-choice",
       "category": "practice",
-      "question": "Choose the best answer in context.",
+      "question": "Which suffix does 'tér' take for 'on the square'?",
       "options": [
-        "messze",
-        "bal",
-        "jobb"
+        "-en",
+        "-ban",
+        "-ra"
       ],
       "correct": 0
     },
@@ -119,8 +129,8 @@
       "id": "a1-135-practice-2",
       "type": "fill-blank",
       "category": "practice",
-      "sentence": "Ez a(z) ____. ",
-      "answer": "bal"
+      "sentence": "A könyvtár a ____ van.",
+      "answer": "téren"
     },
     {
       "id": "a1-135-practice-3",
@@ -138,6 +148,14 @@
         [
           "bal",
           "left"
+        ],
+        [
+          "jobb",
+          "right"
+        ],
+        [
+          "kávézó",
+          "café"
         ]
       ]
     },
@@ -145,15 +163,21 @@
       "id": "a1-135-practice-4",
       "type": "substitution",
       "category": "practice",
-      "base_sentence": "A tér a bal oldalon van.",
-      "base_word": "bal",
-      "base_gloss": "The square is on the left.",
+      "base_sentence": "Az étterem a téren van.",
+      "base_word": "étterem",
+      "base_gloss": "The restaurant is on the square.",
       "options": [
         {
-          "word": "jobb",
-          "inflected": "jobb",
-          "sentence": "A tér a jobb oldalon van.",
-          "gloss": "right"
+          "word": "könyvtár",
+          "inflected": "könyvtár",
+          "sentence": "A könyvtár a téren van.",
+          "gloss": "the library"
+        },
+        {
+          "word": "mozi",
+          "inflected": "mozi",
+          "sentence": "A mozi a téren van.",
+          "gloss": "the cinema"
         }
       ]
     },
@@ -164,15 +188,15 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Mit szeretnél?"
+          "text": "Hol van a park?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Mariann",
           "text": "_____"
         }
       ],
       "options": [
-        "utca.",
+        "Bal van.",
         "Nem tudom."
       ],
       "correct": 0
@@ -184,16 +208,16 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Mit kérsz?"
+          "text": "A múzeum és a mozi is itt van?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Mariann",
           "text": "_____"
         }
       ],
       "options": [
-        "Kérek bolt.",
-        "Hol van?"
+        "Igen. A könyvtár a téren van.",
+        "Mennyi az ár?"
       ],
       "correct": 0
     },
@@ -204,38 +228,38 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Mit kérsz?"
+          "text": "A gyógyszertár közel van?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Mariann",
           "text": "_____"
         }
       ],
       "options": [
-        "Kérek gyógyszertár.",
-        "Hol van?"
+        "Igen, közel van, jobb kéz felől.",
+        "Szia, hogy vagy?"
       ],
       "correct": 0
     },
     {
       "id": "a1-135-production-1",
       "type": "structured-writing",
-      "category": "production",
+      "category": "writing",
       "template": [
         {
-          "prompt": "Write a sentence using this word: bolt",
-          "answer": "A boltban vagyok."
+          "prompt": "Say the library is on the square.",
+          "answer": "A könyvtár a téren van."
         }
       ]
     },
     {
       "id": "a1-135-production-2",
       "type": "structured-writing",
-      "category": "production",
+      "category": "writing",
       "template": [
         {
-          "prompt": "Write a sentence using this word: gyógyszertár",
-          "answer": "A gyógyszertárban vagyok."
+          "prompt": "Say the park is on the left.",
+          "answer": "A park bal van."
         }
       ]
     },
@@ -243,11 +267,11 @@
       "id": "a1-135-check-1",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Choose the correct expression.",
+      "question": "Choose the correct word for 'near'.",
       "options": [
-        "bolt",
-        "gyógyszertár",
-        "xyz"
+        "közel",
+        "messze",
+        "bal"
       ],
       "correct": 0
     },
@@ -255,11 +279,11 @@
       "id": "a1-135-check-2",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Choose the correct expression.",
+      "question": "Choose the correct word for 'left'.",
       "options": [
-        "gyógyszertár",
-        "iskola",
-        "xyz"
+        "bal",
+        "jobb",
+        "messze"
       ],
       "correct": 0
     }

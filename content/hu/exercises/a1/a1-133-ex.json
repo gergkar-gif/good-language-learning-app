@@ -5,11 +5,11 @@
       "id": "a1-133-review-1",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the correct Hungarian expression.",
+      "question": "What does 'gyógyszertár' mean?",
       "options": [
-        "tér",
-        "állomás",
-        "bank"
+        "pharmacy",
+        "school",
+        "hospital"
       ],
       "correct": 0
     },
@@ -17,11 +17,11 @@
       "id": "a1-133-review-2",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the correct Hungarian expression.",
+      "question": "What does 'iskola' mean?",
       "options": [
-        "állomás",
+        "school",
         "bank",
-        "bolt"
+        "hospital"
       ],
       "correct": 0
     },
@@ -29,11 +29,11 @@
       "id": "a1-133-introduce-1",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which expression is useful here?",
+      "question": "What does 'posta' mean?",
       "options": [
-        "iskola",
-        "posta",
-        "kórház"
+        "post office",
+        "hospital",
+        "park"
       ],
       "correct": 0
     },
@@ -41,11 +41,11 @@
       "id": "a1-133-introduce-2",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which expression is useful here?",
+      "question": "What does 'kórház' mean?",
       "options": [
-        "posta",
-        "kórház",
-        "park"
+        "hospital",
+        "post office",
+        "restaurant"
       ],
       "correct": 0
     },
@@ -53,18 +53,18 @@
       "id": "a1-133-controlled-1",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "Kérek iskola.",
-      "answer": "iskola"
+      "sentence": "Van itt ____?",
+      "answer": "park"
     },
     {
       "id": "a1-133-controlled-2",
       "type": "multiple-choice",
       "category": "controlled",
-      "question": "Choose the correct word.",
+      "question": "Choose the word for 'restaurant'.",
       "options": [
-        "posta",
-        "kórház",
-        "park"
+        "étterem",
+        "park",
+        "posta"
       ],
       "correct": 0
     },
@@ -74,16 +74,20 @@
       "category": "controlled",
       "pairs": [
         [
-          "gyógyszertár",
-          "pharmacy"
-        ],
-        [
-          "iskola",
-          "school"
-        ],
-        [
           "posta",
           "post office"
+        ],
+        [
+          "kórház",
+          "hospital"
+        ],
+        [
+          "park",
+          "park"
+        ],
+        [
+          "étterem",
+          "restaurant"
         ]
       ]
     },
@@ -91,21 +95,21 @@
       "id": "a1-133-controlled-4",
       "type": "substitution",
       "category": "controlled",
-      "base_sentence": "A postára megyek.",
-      "base_word": "postára",
-      "base_gloss": "I'm going to the post office.",
+      "base_sentence": "Van itt park?",
+      "base_word": "park",
+      "base_gloss": "Is there a park here?",
       "options": [
         {
-          "word": "kórház",
-          "inflected": "kórházba",
-          "sentence": "A kórházba megyek.",
-          "gloss": "to the hospital"
+          "word": "étterem",
+          "inflected": "étterem",
+          "sentence": "Van itt étterem?",
+          "gloss": "a restaurant"
         },
         {
-          "word": "park",
-          "inflected": "parkba",
-          "sentence": "A parkba megyek.",
-          "gloss": "to the park"
+          "word": "posta",
+          "inflected": "posta",
+          "sentence": "Van itt posta?",
+          "gloss": "a post office"
         }
       ]
     },
@@ -113,11 +117,11 @@
       "id": "a1-133-practice-1",
       "type": "multiple-choice",
       "category": "practice",
-      "question": "Choose the best answer in context.",
+      "question": "What does 'Az utca végén van' mean?",
       "options": [
-        "kórház",
-        "park",
-        "étterem"
+        "It's at the end of the street.",
+        "It's next to the street.",
+        "It's on the street."
       ],
       "correct": 0
     },
@@ -125,8 +129,8 @@
       "id": "a1-133-practice-2",
       "type": "fill-blank",
       "category": "practice",
-      "sentence": "Ez a(z) ____. ",
-      "answer": "park"
+      "sentence": "Igen, a park közel van. A kórház ____ van.",
+      "answer": "messze"
     },
     {
       "id": "a1-133-practice-3",
@@ -144,6 +148,14 @@
         [
           "park",
           "park"
+        ],
+        [
+          "étterem",
+          "restaurant"
+        ],
+        [
+          "iskola",
+          "school"
         ]
       ]
     },
@@ -151,21 +163,21 @@
       "id": "a1-133-practice-4",
       "type": "substitution",
       "category": "practice",
-      "base_sentence": "A kávézóba megyek.",
-      "base_word": "kávézóba",
-      "base_gloss": "I'm going to the café.",
+      "base_sentence": "A kórház messze van.",
+      "base_word": "messze",
+      "base_gloss": "The hospital is far.",
       "options": [
         {
-          "word": "múzeum",
-          "inflected": "múzeumba",
-          "sentence": "A múzeumba megyek.",
-          "gloss": "to the museum"
+          "word": "közel",
+          "inflected": "közel",
+          "sentence": "A kórház közel van.",
+          "gloss": "near"
         },
         {
-          "word": "mozi",
-          "inflected": "moziba",
-          "sentence": "A moziba megyek.",
-          "gloss": "to the cinema"
+          "word": "mellett",
+          "inflected": "mellett",
+          "sentence": "A kórház a posta mellett van.",
+          "gloss": "next to"
         }
       ]
     },
@@ -176,15 +188,15 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Mit szeretnél?"
+          "text": "Van itt park?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Mariann",
           "text": "_____"
         }
       ],
       "options": [
-        "múzeum.",
+        "Igen, a park közel van. A kórház messze van.",
         "Nem tudom."
       ],
       "correct": 0
@@ -196,16 +208,16 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Mit kérsz?"
+          "text": "Hol van a posta?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Mariann",
           "text": "_____"
         }
       ],
       "options": [
-        "Kérek állomás.",
-        "Hol van?"
+        "A bank mellett van.",
+        "Mennyi az ár?"
       ],
       "correct": 0
     },
@@ -216,38 +228,38 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Mit kérsz?"
+          "text": "Van itt étterem?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Mariann",
           "text": "_____"
         }
       ],
       "options": [
-        "Kérek bank.",
-        "Hol van?"
+        "Igen, közel van.",
+        "Szia, hogy vagy?"
       ],
       "correct": 0
     },
     {
       "id": "a1-133-production-1",
       "type": "structured-writing",
-      "category": "production",
+      "category": "writing",
       "template": [
         {
-          "prompt": "Write a sentence using this word: állomás",
-          "answer": "Az állomáson vagyok."
+          "prompt": "Ask if there's a park here.",
+          "answer": "Van itt park?"
         }
       ]
     },
     {
       "id": "a1-133-production-2",
       "type": "structured-writing",
-      "category": "production",
+      "category": "writing",
       "template": [
         {
-          "prompt": "Write a sentence using this word: bank",
-          "answer": "A bankban vagyok."
+          "prompt": "Say the hospital is far.",
+          "answer": "A kórház messze van."
         }
       ]
     },
@@ -255,11 +267,11 @@
       "id": "a1-133-check-1",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Choose the correct expression.",
+      "question": "Choose the correct word for 'post office'.",
       "options": [
-        "állomás",
-        "bank",
-        "xyz"
+        "posta",
+        "kórház",
+        "étterem"
       ],
       "correct": 0
     },
@@ -267,11 +279,11 @@
       "id": "a1-133-check-2",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Choose the correct expression.",
+      "question": "Choose the correct word for 'hospital'.",
       "options": [
-        "bank",
-        "bolt",
-        "xyz"
+        "kórház",
+        "park",
+        "posta"
       ],
       "correct": 0
     }

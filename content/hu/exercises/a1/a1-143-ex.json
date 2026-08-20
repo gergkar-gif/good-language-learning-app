@@ -5,11 +5,11 @@
       "id": "a1-143-review-1",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the correct Hungarian expression.",
+      "question": "What does 'futás' mean?",
       "options": [
-        "foci",
-        "úszás",
-        "futás"
+        "running",
+        "swimming",
+        "dance"
       ],
       "correct": 0
     },
@@ -17,11 +17,11 @@
       "id": "a1-143-review-2",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the correct Hungarian expression.",
+      "question": "What does 'zene' mean?",
       "options": [
-        "úszás",
-        "futás",
-        "zene"
+        "music",
+        "film",
+        "book"
       ],
       "correct": 0
     },
@@ -29,11 +29,11 @@
       "id": "a1-143-introduce-1",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which expression is useful here?",
+      "question": "What does 'olvasás' mean?",
       "options": [
-        "könyv",
-        "olvasás",
-        "tánc"
+        "reading",
+        "dance",
+        "hiking"
       ],
       "correct": 0
     },
@@ -41,11 +41,11 @@
       "id": "a1-143-introduce-2",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which expression is useful here?",
+      "question": "What does 'barát' mean?",
       "options": [
-        "olvasás",
-        "tánc",
-        "kirándulás"
+        "friend",
+        "dance",
+        "hike"
       ],
       "correct": 0
     },
@@ -53,18 +53,18 @@
       "id": "a1-143-controlled-1",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "Kérek könyv.",
-      "answer": "könyv"
+      "sentence": "Szeretsz ____?",
+      "answer": "táncolni"
     },
     {
       "id": "a1-143-controlled-2",
       "type": "multiple-choice",
       "category": "controlled",
-      "question": "Choose the correct word.",
+      "question": "Choose the word for 'hike / excursion'.",
       "options": [
-        "olvasás",
+        "kirándulás",
         "tánc",
-        "kirándulás"
+        "olvasás"
       ],
       "correct": 0
     },
@@ -74,16 +74,20 @@
       "category": "controlled",
       "pairs": [
         [
-          "film",
-          "film"
-        ],
-        [
-          "könyv",
-          "book"
-        ],
-        [
           "olvasás",
           "reading"
+        ],
+        [
+          "tánc",
+          "dance"
+        ],
+        [
+          "kirándulás",
+          "hike / excursion"
+        ],
+        [
+          "barát",
+          "friend"
         ]
       ]
     },
@@ -91,20 +95,20 @@
       "id": "a1-143-controlled-4",
       "type": "substitution",
       "category": "controlled",
-      "base_sentence": "Szeretem az olvasást.",
-      "base_word": "olvasást",
-      "base_gloss": "I like reading.",
+      "base_sentence": "Szeretsz táncolni?",
+      "base_word": "táncolni",
+      "base_gloss": "Do you like dancing?",
       "options": [
         {
-          "word": "tánc",
-          "inflected": "táncot",
-          "sentence": "Szeretem a táncot.",
-          "gloss": "dance"
+          "word": "olvasni",
+          "inflected": "olvasni",
+          "sentence": "Szeretsz olvasni?",
+          "gloss": "reading"
         },
         {
-          "word": "kirándulás",
-          "inflected": "kirándulást",
-          "sentence": "Szeretem a kirándulást.",
+          "word": "kirándulni",
+          "inflected": "kirándulni",
+          "sentence": "Szeretsz kirándulni?",
           "gloss": "hiking"
         }
       ]
@@ -113,11 +117,11 @@
       "id": "a1-143-practice-1",
       "type": "multiple-choice",
       "category": "practice",
-      "question": "Choose the best answer in context.",
+      "question": "Which suffix builds an infinitive from a verb stem?",
       "options": [
-        "tánc",
-        "kirándulás",
-        "barát"
+        "-ni",
+        "-ban",
+        "-tól"
       ],
       "correct": 0
     },
@@ -125,8 +129,8 @@
       "id": "a1-143-practice-2",
       "type": "fill-blank",
       "category": "practice",
-      "sentence": "Ez a(z) ____. ",
-      "answer": "kirándulás"
+      "sentence": "Én szeretek ____.",
+      "answer": "kirándulni"
     },
     {
       "id": "a1-143-practice-3",
@@ -143,7 +147,15 @@
         ],
         [
           "kirándulás",
-          "hike/excursion"
+          "hike / excursion"
+        ],
+        [
+          "barát",
+          "friend"
+        ],
+        [
+          "zene",
+          "music"
         ]
       ]
     },
@@ -151,15 +163,21 @@
       "id": "a1-143-practice-4",
       "type": "substitution",
       "category": "practice",
-      "base_sentence": "A barátommal találkozom.",
-      "base_word": "találkozom",
-      "base_gloss": "I'm meeting my friend.",
+      "base_sentence": "Szeretek olvasni.",
+      "base_word": "olvasni",
+      "base_gloss": "I like reading.",
       "options": [
         {
-          "word": "játszik",
-          "inflected": "játszom",
-          "sentence": "A barátommal játszom.",
-          "gloss": "I play"
+          "word": "táncolni",
+          "inflected": "táncolni",
+          "sentence": "Szeretek táncolni.",
+          "gloss": "dancing"
+        },
+        {
+          "word": "kirándulni",
+          "inflected": "kirándulni",
+          "sentence": "Szeretek kirándulni.",
+          "gloss": "hiking"
         }
       ]
     },
@@ -170,7 +188,7 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Mit szeretnél?"
+          "text": "Szeretsz táncolni?"
         },
         {
           "speaker": "Károly",
@@ -178,7 +196,7 @@
         }
       ],
       "options": [
-        "játszik.",
+        "Igen, szeretek táncolni.",
         "Nem tudom."
       ],
       "correct": 0
@@ -189,17 +207,17 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Mit kérsz?"
+          "speaker": "Mariann",
+          "text": "Szeretek olvasni."
         },
         {
-          "speaker": "Károly",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "Kérek úszás.",
-        "Hol van?"
+        "Szeretsz táncolni?",
+        "Mennyi az ár?"
       ],
       "correct": 0
     },
@@ -209,8 +227,8 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Mit kérsz?"
+          "speaker": "Anna",
+          "text": "Én szeretek kirándulni."
         },
         {
           "speaker": "Károly",
@@ -218,30 +236,30 @@
         }
       ],
       "options": [
-        "Kérek futás.",
-        "Hol van?"
+        "Én szeretek táncolni.",
+        "Szia, hogy vagy?"
       ],
       "correct": 0
     },
     {
       "id": "a1-143-production-1",
       "type": "structured-writing",
-      "category": "production",
+      "category": "writing",
       "template": [
         {
-          "prompt": "Write a sentence using this word: úszás",
-          "answer": "Szeretem az úszást."
+          "prompt": "Ask if someone likes dancing.",
+          "answer": "Szeretsz táncolni?"
         }
       ]
     },
     {
       "id": "a1-143-production-2",
       "type": "structured-writing",
-      "category": "production",
+      "category": "writing",
       "template": [
         {
-          "prompt": "Write a sentence using this word: futás",
-          "answer": "Szeretem a futást."
+          "prompt": "Say you like hiking.",
+          "answer": "Szeretek kirándulni."
         }
       ]
     },
@@ -249,11 +267,11 @@
       "id": "a1-143-check-1",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Choose the correct expression.",
+      "question": "Choose the correct word for 'reading'.",
       "options": [
-        "úszás",
-        "futás",
-        "xyz"
+        "olvasás",
+        "tánc",
+        "futás"
       ],
       "correct": 0
     },
@@ -261,11 +279,11 @@
       "id": "a1-143-check-2",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Choose the correct expression.",
+      "question": "Choose the correct word for 'friend'.",
       "options": [
-        "futás",
-        "zene",
-        "xyz"
+        "barát",
+        "kirándulás",
+        "zene"
       ],
       "correct": 0
     }

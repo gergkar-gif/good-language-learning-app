@@ -5,11 +5,11 @@
       "id": "a1-148-review-1",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the correct Hungarian expression.",
+      "question": "What does 'holnap' mean?",
       "options": [
-        "meghív",
-        "találkozó",
-        "találkozik"
+        "tomorrow",
+        "today",
+        "weekend"
       ],
       "correct": 0
     },
@@ -17,11 +17,11 @@
       "id": "a1-148-review-2",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the correct Hungarian expression.",
+      "question": "What does 'hétvége' mean?",
       "options": [
-        "találkozó",
-        "találkozik",
-        "holnap"
+        "weekend",
+        "tomorrow",
+        "evening"
       ],
       "correct": 0
     },
@@ -29,11 +29,11 @@
       "id": "a1-148-introduce-1",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which expression is useful here?",
+      "question": "What does 'délután' mean?",
       "options": [
-        "hétvége",
-        "délután",
-        "este"
+        "afternoon",
+        "evening",
+        "morning"
       ],
       "correct": 0
     },
@@ -41,11 +41,11 @@
       "id": "a1-148-introduce-2",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which expression is useful here?",
+      "question": "What does 'mikor' mean?",
       "options": [
-        "délután",
-        "este",
-        "óra"
+        "when",
+        "where",
+        "how"
       ],
       "correct": 0
     },
@@ -53,17 +53,17 @@
       "id": "a1-148-controlled-1",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "Kérek hétvége.",
-      "answer": "hétvége"
+      "sentence": "Nekem nem jó ____.",
+      "answer": "délután"
     },
     {
       "id": "a1-148-controlled-2",
       "type": "multiple-choice",
       "category": "controlled",
-      "question": "Choose the correct word.",
+      "question": "Choose the word for 'evening'.",
       "options": [
-        "délután",
         "este",
+        "délután",
         "óra"
       ],
       "correct": 0
@@ -74,16 +74,20 @@
       "category": "controlled",
       "pairs": [
         [
-          "ma",
-          "today"
-        ],
-        [
-          "hétvége",
-          "weekend"
-        ],
-        [
           "délután",
           "afternoon"
+        ],
+        [
+          "este",
+          "evening"
+        ],
+        [
+          "óra",
+          "o'clock / hour"
+        ],
+        [
+          "mikor",
+          "when"
         ]
       ]
     },
@@ -91,15 +95,21 @@
       "id": "a1-148-controlled-4",
       "type": "substitution",
       "category": "controlled",
-      "base_sentence": "Délután találkozunk.",
-      "base_word": "Délután",
-      "base_gloss": "We're meeting in the afternoon.",
+      "base_sentence": "Nekem nem jó délután.",
+      "base_word": "délután",
+      "base_gloss": "The afternoon doesn't work for me.",
       "options": [
         {
           "word": "este",
-          "inflected": "Este",
-          "sentence": "Este találkozunk.",
-          "gloss": "in the evening"
+          "inflected": "este",
+          "sentence": "Nekem nem jó este.",
+          "gloss": "the evening"
+        },
+        {
+          "word": "hétvégén",
+          "inflected": "hétvégén",
+          "sentence": "Nekem nem jó hétvégén.",
+          "gloss": "at the weekend"
         }
       ]
     },
@@ -107,11 +117,11 @@
       "id": "a1-148-practice-1",
       "type": "multiple-choice",
       "category": "practice",
-      "question": "Choose the best answer in context.",
+      "question": "Which word asks 'when'?",
       "options": [
-        "este",
-        "óra",
-        "mikor"
+        "mikor",
+        "hol",
+        "milyen"
       ],
       "correct": 0
     },
@@ -119,7 +129,7 @@
       "id": "a1-148-practice-2",
       "type": "fill-blank",
       "category": "practice",
-      "sentence": "Ez a(z) ____. ",
+      "sentence": "Nekem hét ____ jó.",
       "answer": "óra"
     },
     {
@@ -137,7 +147,15 @@
         ],
         [
           "óra",
-          "o'clock/hour"
+          "o'clock / hour"
+        ],
+        [
+          "mikor",
+          "when"
+        ],
+        [
+          "holnap",
+          "tomorrow"
         ]
       ]
     },
@@ -145,15 +163,21 @@
       "id": "a1-148-practice-4",
       "type": "substitution",
       "category": "practice",
-      "base_sentence": "Hány órakor találkozunk?",
-      "base_word": "órakor",
-      "base_gloss": "What time are we meeting?",
+      "base_sentence": "Nekem hét óra jó.",
+      "base_word": "hét óra",
+      "base_gloss": "Seven o'clock works for me.",
       "options": [
         {
-          "word": "mikor",
-          "inflected": "Mikor",
-          "sentence": "Mikor találkozunk?",
-          "gloss": "when"
+          "word": "nyolc óra",
+          "inflected": "nyolc óra",
+          "sentence": "Nekem nyolc óra jó.",
+          "gloss": "eight o'clock"
+        },
+        {
+          "word": "délután",
+          "inflected": "délután",
+          "sentence": "Nekem délután jó.",
+          "gloss": "the afternoon"
         }
       ]
     },
@@ -164,15 +188,15 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Mit szeretnél?"
+          "text": "Mikor találkozunk?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Anna",
           "text": "_____"
         }
       ],
       "options": [
-        "szeretne.",
+        "Holnap délután jó?",
         "Nem tudom."
       ],
       "correct": 0
@@ -183,17 +207,17 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Mit kérsz?"
+          "speaker": "Mariann",
+          "text": "Nekem nem jó délután, de este ráérek."
         },
         {
-          "speaker": "Károly",
+          "speaker": "András",
           "text": "_____"
         }
       ],
       "options": [
-        "Kérek találkozó.",
-        "Hol van?"
+        "Nekem is jó az este.",
+        "Mennyi az ár?"
       ],
       "correct": 0
     },
@@ -203,39 +227,39 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Mit kérsz?"
+          "speaker": "Anna",
+          "text": "Mikor jó neked?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "Kérek találkozik.",
-        "Hol van?"
+        "Nekem hét óra jó.",
+        "Szia, hogy vagy?"
       ],
       "correct": 0
     },
     {
       "id": "a1-148-production-1",
       "type": "structured-writing",
-      "category": "production",
+      "category": "writing",
       "template": [
         {
-          "prompt": "Write a sentence using this word: találkozó",
-          "answer": "Kérek egy találkozót."
+          "prompt": "Ask when we're meeting.",
+          "answer": "Mikor találkozunk?"
         }
       ]
     },
     {
       "id": "a1-148-production-2",
       "type": "structured-writing",
-      "category": "production",
+      "category": "writing",
       "template": [
         {
-          "prompt": "Write a sentence using this word: találkozik",
-          "answer": "Holnap találkozunk."
+          "prompt": "Say seven o'clock works for you.",
+          "answer": "Nekem hét óra jó."
         }
       ]
     },
@@ -243,11 +267,11 @@
       "id": "a1-148-check-1",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Choose the correct expression.",
+      "question": "Choose the correct word for 'afternoon'.",
       "options": [
-        "találkozó",
-        "találkozik",
-        "xyz"
+        "délután",
+        "este",
+        "óra"
       ],
       "correct": 0
     },
@@ -255,11 +279,11 @@
       "id": "a1-148-check-2",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Choose the correct expression.",
+      "question": "Choose the correct word for 'when'.",
       "options": [
-        "találkozik",
-        "holnap",
-        "xyz"
+        "mikor",
+        "hol",
+        "milyen"
       ],
       "correct": 0
     }

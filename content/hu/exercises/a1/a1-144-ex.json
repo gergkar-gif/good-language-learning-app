@@ -5,11 +5,11 @@
       "id": "a1-144-review-1",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the correct Hungarian expression.",
+      "question": "What does 'olvasás' mean?",
       "options": [
-        "úszás",
-        "futás",
-        "zene"
+        "reading",
+        "dance",
+        "hiking"
       ],
       "correct": 0
     },
@@ -17,11 +17,11 @@
       "id": "a1-144-review-2",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the correct Hungarian expression.",
+      "question": "What does 'barát' mean?",
       "options": [
-        "futás",
-        "zene",
-        "film"
+        "friend",
+        "dance",
+        "hike"
       ],
       "correct": 0
     },
@@ -29,11 +29,11 @@
       "id": "a1-144-introduce-1",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which expression is useful here?",
+      "question": "What does 'találkozik' mean?",
       "options": [
-        "kirándulás",
-        "barát",
-        "találkozik"
+        "to meet",
+        "to play",
+        "to listen"
       ],
       "correct": 0
     },
@@ -41,11 +41,11 @@
       "id": "a1-144-introduce-2",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which expression is useful here?",
+      "question": "What does 'néz' mean?",
       "options": [
-        "barát",
-        "találkozik",
-        "játszik"
+        "to watch",
+        "to listen",
+        "to meet"
       ],
       "correct": 0
     },
@@ -53,17 +53,17 @@
       "id": "a1-144-controlled-1",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "Kérek kirándulás.",
-      "answer": "kirándulás"
+      "sentence": "Találkozunk a ____?",
+      "answer": "hétvégén"
     },
     {
       "id": "a1-144-controlled-2",
       "type": "multiple-choice",
       "category": "controlled",
-      "question": "Choose the correct word.",
+      "question": "Choose the word for 'to listen'.",
       "options": [
-        "barát",
-        "találkozik",
+        "hallgat",
+        "néz",
         "játszik"
       ],
       "correct": 0
@@ -74,16 +74,20 @@
       "category": "controlled",
       "pairs": [
         [
-          "tánc",
-          "dance"
+          "találkozik",
+          "meet"
         ],
         [
-          "kirándulás",
-          "hike/excursion"
+          "játszik",
+          "play"
         ],
         [
-          "barát",
-          "friend"
+          "hallgat",
+          "listen"
+        ],
+        [
+          "néz",
+          "watch"
         ]
       ]
     },
@@ -91,15 +95,21 @@
       "id": "a1-144-controlled-4",
       "type": "substitution",
       "category": "controlled",
-      "base_sentence": "Zenét hallgatok.",
-      "base_word": "hallgatok",
-      "base_gloss": "I listen to music.",
+      "base_sentence": "Találkozunk a hétvégén?",
+      "base_word": "hétvégén",
+      "base_gloss": "Are we meeting at the weekend?",
       "options": [
         {
-          "word": "néz",
-          "inflected": "nézek",
-          "sentence": "Filmet nézek.",
-          "gloss": "I watch"
+          "word": "ma",
+          "inflected": "ma",
+          "sentence": "Találkozunk ma?",
+          "gloss": "today"
+        },
+        {
+          "word": "holnap",
+          "inflected": "holnap",
+          "sentence": "Találkozunk holnap?",
+          "gloss": "tomorrow"
         }
       ]
     },
@@ -107,11 +117,11 @@
       "id": "a1-144-practice-1",
       "type": "multiple-choice",
       "category": "practice",
-      "question": "Choose the best answer in context.",
+      "question": "What is the correct first-person form of 'találkozik' (I meet)?",
       "options": [
-        "játszik",
-        "hallgat",
-        "néz"
+        "találkozom",
+        "találkozok",
+        "találkozik"
       ],
       "correct": 0
     },
@@ -119,8 +129,8 @@
       "id": "a1-144-practice-2",
       "type": "fill-blank",
       "category": "practice",
-      "sentence": "Ez a(z) ____. ",
-      "answer": "hallgat"
+      "sentence": "Én játszani is ____.",
+      "answer": "szeretek"
     },
     {
       "id": "a1-144-practice-3",
@@ -138,6 +148,14 @@
         [
           "hallgat",
           "listen"
+        ],
+        [
+          "néz",
+          "watch"
+        ],
+        [
+          "olvasás",
+          "reading"
         ]
       ]
     },
@@ -145,21 +163,21 @@
       "id": "a1-144-practice-4",
       "type": "substitution",
       "category": "practice",
-      "base_sentence": "Könyvet olvasok.",
-      "base_word": "olvasok",
-      "base_gloss": "I read a book.",
+      "base_sentence": "Én szeretek filmet nézni és zenét hallgatni.",
+      "base_word": "nézni",
+      "base_gloss": "I like watching films and listening to music.",
       "options": [
         {
-          "word": "fut",
-          "inflected": "futok",
-          "sentence": "A parkban futok.",
-          "gloss": "I run"
+          "word": "olvasni",
+          "inflected": "olvasni",
+          "sentence": "Én szeretek könyvet olvasni és zenét hallgatni.",
+          "gloss": "reading"
         },
         {
-          "word": "úszik",
-          "inflected": "úszom",
-          "sentence": "A medencében úszom.",
-          "gloss": "I swim"
+          "word": "játszani",
+          "inflected": "játszani",
+          "sentence": "Én szeretek focizni és zenét hallgatni.",
+          "gloss": "playing"
         }
       ]
     },
@@ -169,16 +187,16 @@
       "category": "practice",
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Mit szeretnél?"
+          "speaker": "András",
+          "text": "Találkozunk a hétvégén?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "fut.",
+        "Igen, együtt.",
         "Nem tudom."
       ],
       "correct": 0
@@ -189,8 +207,8 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Mit kérsz?"
+          "speaker": "Mariann",
+          "text": "Én játszani is szeretek."
         },
         {
           "speaker": "Károly",
@@ -198,8 +216,8 @@
         }
       ],
       "options": [
-        "Kérek futás.",
-        "Hol van?"
+        "Én szeretek filmet nézni és zenét hallgatni.",
+        "Mennyi az ár?"
       ],
       "correct": 0
     },
@@ -210,7 +228,7 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Mit kérsz?"
+          "text": "Szereted a zenét hallgatni?"
         },
         {
           "speaker": "Károly",
@@ -218,30 +236,30 @@
         }
       ],
       "options": [
-        "Kérek zene.",
-        "Hol van?"
+        "Igen, nagyon szeretem.",
+        "Szia, hogy vagy?"
       ],
       "correct": 0
     },
     {
       "id": "a1-144-production-1",
       "type": "structured-writing",
-      "category": "production",
+      "category": "writing",
       "template": [
         {
-          "prompt": "Write a sentence using this word: futás",
-          "answer": "Szeretem a futást."
+          "prompt": "Ask if we're meeting at the weekend.",
+          "answer": "Találkozunk a hétvégén?"
         }
       ]
     },
     {
       "id": "a1-144-production-2",
       "type": "structured-writing",
-      "category": "production",
+      "category": "writing",
       "template": [
         {
-          "prompt": "Write a sentence using this word: zene",
-          "answer": "Szeretem a zenét."
+          "prompt": "Say you like watching films and listening to music.",
+          "answer": "Szeretek filmet nézni és zenét hallgatni."
         }
       ]
     },
@@ -249,11 +267,11 @@
       "id": "a1-144-check-1",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Choose the correct expression.",
+      "question": "Choose the correct word for 'to meet'.",
       "options": [
-        "futás",
-        "zene",
-        "xyz"
+        "találkozik",
+        "játszik",
+        "néz"
       ],
       "correct": 0
     },
@@ -261,11 +279,11 @@
       "id": "a1-144-check-2",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Choose the correct expression.",
+      "question": "Choose the correct word for 'to watch'.",
       "options": [
-        "zene",
-        "film",
-        "xyz"
+        "néz",
+        "hallgat",
+        "olvas"
       ],
       "correct": 0
     }

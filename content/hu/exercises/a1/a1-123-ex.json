@@ -5,11 +5,11 @@
       "id": "a1-123-review-1",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the correct Hungarian expression.",
+      "question": "What does 'táska' mean?",
       "options": [
-        "póló",
-        "nadrág",
-        "cipő"
+        "bag",
+        "shoe",
+        "gift"
       ],
       "correct": 0
     },
@@ -17,11 +17,11 @@
       "id": "a1-123-review-2",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the correct Hungarian expression.",
+      "question": "What does 'ajándék' mean?",
       "options": [
-        "nadrág",
-        "cipő",
-        "táska"
+        "gift",
+        "product",
+        "shop"
       ],
       "correct": 0
     },
@@ -29,11 +29,11 @@
       "id": "a1-123-introduce-1",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which expression is useful here?",
+      "question": "What does 'méret' mean?",
       "options": [
-        "ajándék",
-        "méret",
-        "ár"
+        "size",
+        "price",
+        "colour"
       ],
       "correct": 0
     },
@@ -41,11 +41,11 @@
       "id": "a1-123-introduce-2",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which expression is useful here?",
+      "question": "What does 'ár' mean?",
       "options": [
-        "méret",
-        "ár",
-        "szín"
+        "price",
+        "size",
+        "red"
       ],
       "correct": 0
     },
@@ -53,18 +53,18 @@
       "id": "a1-123-controlled-1",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "Kérek ajándék.",
-      "answer": "ajándék"
+      "sentence": "Milyen a ____? Nagy vagy kicsi?",
+      "answer": "méret"
     },
     {
       "id": "a1-123-controlled-2",
       "type": "multiple-choice",
       "category": "controlled",
-      "question": "Choose the correct word.",
+      "question": "Choose the word for 'colour'.",
       "options": [
-        "méret",
+        "szín",
         "ár",
-        "szín"
+        "méret"
       ],
       "correct": 0
     },
@@ -74,16 +74,20 @@
       "category": "controlled",
       "pairs": [
         [
-          "könyv",
-          "book"
-        ],
-        [
-          "ajándék",
-          "gift"
-        ],
-        [
           "méret",
           "size"
+        ],
+        [
+          "ár",
+          "price"
+        ],
+        [
+          "szín",
+          "colour"
+        ],
+        [
+          "piros",
+          "red"
         ]
       ]
     },
@@ -91,15 +95,21 @@
       "id": "a1-123-controlled-4",
       "type": "substitution",
       "category": "controlled",
-      "base_sentence": "Milyen színt szeretne?",
-      "base_word": "színt",
-      "base_gloss": "What colour would you like?",
+      "base_sentence": "Mennyi az ár?",
+      "base_word": "ár",
+      "base_gloss": "How much is the price?",
       "options": [
         {
           "word": "méret",
-          "inflected": "méretet",
-          "sentence": "Milyen méretet szeretne?",
+          "inflected": "méret",
+          "sentence": "Mennyi a méret?",
           "gloss": "size"
+        },
+        {
+          "word": "szín",
+          "inflected": "szín",
+          "sentence": "Milyen a szín?",
+          "gloss": "colour"
         }
       ]
     },
@@ -107,11 +117,11 @@
       "id": "a1-123-practice-1",
       "type": "multiple-choice",
       "category": "practice",
-      "question": "Choose the best answer in context.",
+      "question": "Which question word asks about price?",
       "options": [
-        "ár",
-        "szín",
-        "piros"
+        "mennyi",
+        "milyen",
+        "melyik"
       ],
       "correct": 0
     },
@@ -119,8 +129,8 @@
       "id": "a1-123-practice-2",
       "type": "fill-blank",
       "category": "practice",
-      "sentence": "Ez a(z) ____. ",
-      "answer": "szín"
+      "sentence": "A nagy méret ____ forint.",
+      "answer": "tíz"
     },
     {
       "id": "a1-123-practice-3",
@@ -138,6 +148,14 @@
         [
           "szín",
           "colour"
+        ],
+        [
+          "piros",
+          "red"
+        ],
+        [
+          "nagy",
+          "large"
         ]
       ]
     },
@@ -145,15 +163,21 @@
       "id": "a1-123-practice-4",
       "type": "substitution",
       "category": "practice",
-      "base_sentence": "Ez piros.",
-      "base_word": "piros",
-      "base_gloss": "This is red.",
+      "base_sentence": "Piros pólót kérek.",
+      "base_word": "Piros",
+      "base_gloss": "I'd like a red T-shirt.",
       "options": [
         {
           "word": "kék",
-          "inflected": "kék",
-          "sentence": "Ez kék.",
+          "inflected": "Kék",
+          "sentence": "Kék pólót kérek.",
           "gloss": "blue"
+        },
+        {
+          "word": "fekete",
+          "inflected": "Fekete",
+          "sentence": "Fekete pólót kérek.",
+          "gloss": "black"
         }
       ]
     },
@@ -163,17 +187,17 @@
       "category": "practice",
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Mit szeretnél?"
+          "speaker": "Eladó",
+          "text": "Nagy vagy kicsi?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "fekete.",
-        "Nem tudom."
+        "A nagy jó.",
+        "Mennyi az ár?"
       ],
       "correct": 0
     },
@@ -184,16 +208,16 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Mit kérsz?"
+          "text": "Milyen a méret?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Eladó",
           "text": "_____"
         }
       ],
       "options": [
-        "Kérek nadrág.",
-        "Hol van?"
+        "Nagy vagy kicsi?",
+        "Piros, kék, fekete és fehér van."
       ],
       "correct": 0
     },
@@ -204,38 +228,38 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Mit kérsz?"
+          "text": "Mennyi az ár?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Eladó",
           "text": "_____"
         }
       ],
       "options": [
-        "Kérek cipő.",
-        "Hol van?"
+        "Tíz forint.",
+        "Nagy vagy kicsi?"
       ],
       "correct": 0
     },
     {
       "id": "a1-123-production-1",
       "type": "structured-writing",
-      "category": "production",
+      "category": "writing",
       "template": [
         {
-          "prompt": "Write a sentence using this word: nadrág",
-          "answer": "Kérek egy nadrágot."
+          "prompt": "Ask what the size is like.",
+          "answer": "Milyen a méret?"
         }
       ]
     },
     {
       "id": "a1-123-production-2",
       "type": "structured-writing",
-      "category": "production",
+      "category": "writing",
       "template": [
         {
-          "prompt": "Write a sentence using this word: cipő",
-          "answer": "Kérek egy cipőt."
+          "prompt": "Ask how much the price is.",
+          "answer": "Mennyi az ár?"
         }
       ]
     },
@@ -243,11 +267,11 @@
       "id": "a1-123-check-1",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Choose the correct expression.",
+      "question": "Choose the correct word for 'size'.",
       "options": [
-        "nadrág",
-        "cipő",
-        "xyz"
+        "méret",
+        "ár",
+        "szín"
       ],
       "correct": 0
     },
@@ -255,11 +279,11 @@
       "id": "a1-123-check-2",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Choose the correct expression.",
+      "question": "Choose the correct word for 'red'.",
       "options": [
-        "cipő",
-        "táska",
-        "xyz"
+        "piros",
+        "kék",
+        "fekete"
       ],
       "correct": 0
     }

@@ -5,11 +5,11 @@
       "id": "a1-145-review-1",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the correct Hungarian expression.",
+      "question": "What does 'találkozik' mean?",
       "options": [
-        "futás",
-        "zene",
-        "film"
+        "to meet",
+        "to play",
+        "to listen"
       ],
       "correct": 0
     },
@@ -17,11 +17,11 @@
       "id": "a1-145-review-2",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the correct Hungarian expression.",
+      "question": "What does 'néz' mean?",
       "options": [
-        "zene",
-        "film",
-        "könyv"
+        "to watch",
+        "to listen",
+        "to meet"
       ],
       "correct": 0
     },
@@ -29,11 +29,11 @@
       "id": "a1-145-introduce-1",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which expression is useful here?",
+      "question": "What does 'fut' mean?",
       "options": [
-        "játszik",
-        "hallgat",
-        "néz"
+        "to run",
+        "to read",
+        "to swim"
       ],
       "correct": 0
     },
@@ -41,11 +41,11 @@
       "id": "a1-145-introduce-2",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which expression is useful here?",
+      "question": "What does 'táncol' mean?",
       "options": [
-        "hallgat",
-        "néz",
-        "olvas"
+        "to dance",
+        "to run",
+        "to swim"
       ],
       "correct": 0
     },
@@ -53,18 +53,18 @@
       "id": "a1-145-controlled-1",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "Kérek játszik.",
-      "answer": "játszik"
+      "sentence": "Szeretek ____.",
+      "answer": "úszni"
     },
     {
       "id": "a1-145-controlled-2",
       "type": "multiple-choice",
       "category": "controlled",
-      "question": "Choose the correct word.",
+      "question": "Choose the word for 'to read'.",
       "options": [
-        "hallgat",
-        "néz",
-        "olvas"
+        "olvas",
+        "fut",
+        "úszik"
       ],
       "correct": 0
     },
@@ -74,16 +74,20 @@
       "category": "controlled",
       "pairs": [
         [
-          "találkozik",
-          "meet"
+          "olvas",
+          "read"
         ],
         [
-          "játszik",
-          "play"
+          "fut",
+          "run"
         ],
         [
-          "hallgat",
-          "listen"
+          "úszik",
+          "swim"
+        ],
+        [
+          "táncol",
+          "dance"
         ]
       ]
     },
@@ -91,21 +95,21 @@
       "id": "a1-145-controlled-4",
       "type": "substitution",
       "category": "controlled",
-      "base_sentence": "Szeretek olvasni.",
-      "base_word": "olvasni",
-      "base_gloss": "I like reading.",
+      "base_sentence": "Szeretek futni.",
+      "base_word": "futni",
+      "base_gloss": "I like running.",
       "options": [
         {
-          "word": "fut",
-          "inflected": "futni",
-          "sentence": "Szeretek futni.",
-          "gloss": "running"
-        },
-        {
-          "word": "úszik",
+          "word": "úszni",
           "inflected": "úszni",
           "sentence": "Szeretek úszni.",
           "gloss": "swimming"
+        },
+        {
+          "word": "táncolni",
+          "inflected": "táncolni",
+          "sentence": "Szeretek táncolni.",
+          "gloss": "dancing"
         }
       ]
     },
@@ -113,11 +117,11 @@
       "id": "a1-145-practice-1",
       "type": "multiple-choice",
       "category": "practice",
-      "question": "Choose the best answer in context.",
+      "question": "Is the infinitive of úszik (an ik-verb) regular or irregular?",
       "options": [
-        "fut",
-        "úszik",
-        "táncol"
+        "Regular: úszni",
+        "Irregular: úszikni",
+        "Irregular: úszekni"
       ],
       "correct": 0
     },
@@ -125,8 +129,8 @@
       "id": "a1-145-practice-2",
       "type": "fill-blank",
       "category": "practice",
-      "sentence": "Ez a(z) ____. ",
-      "answer": "úszik"
+      "sentence": "Igen, ____.",
+      "answer": "együtt"
     },
     {
       "id": "a1-145-practice-3",
@@ -144,6 +148,14 @@
         [
           "úszik",
           "swim"
+        ],
+        [
+          "táncol",
+          "dance"
+        ],
+        [
+          "találkozik",
+          "meet"
         ]
       ]
     },
@@ -151,21 +163,21 @@
       "id": "a1-145-practice-4",
       "type": "substitution",
       "category": "practice",
-      "base_sentence": "A szabadidőmet olvasással töltöm.",
-      "base_word": "olvasással",
-      "base_gloss": "I spend my free time reading.",
+      "base_sentence": "Szeretünk együtt táncolni.",
+      "base_word": "táncolni",
+      "base_gloss": "We like dancing together.",
       "options": [
         {
-          "word": "tánc",
-          "inflected": "tánccal",
-          "sentence": "A szabadidőmet tánccal töltöm.",
-          "gloss": "dancing"
+          "word": "úszni",
+          "inflected": "úszni",
+          "sentence": "Szeretünk együtt úszni.",
+          "gloss": "swimming"
         },
         {
-          "word": "futás",
-          "inflected": "futással",
-          "sentence": "A szabadidőmet futással töltöm.",
-          "gloss": "running"
+          "word": "olvasni",
+          "inflected": "olvasni",
+          "sentence": "Szeretünk együtt olvasni.",
+          "gloss": "reading"
         }
       ]
     },
@@ -176,7 +188,7 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Mit szeretnél?"
+          "text": "Szeretsz úszni?"
         },
         {
           "speaker": "Károly",
@@ -184,7 +196,7 @@
         }
       ],
       "options": [
-        "sport.",
+        "Igen, és futni is szeretek.",
         "Nem tudom."
       ],
       "correct": 0
@@ -195,17 +207,17 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Mit kérsz?"
+          "speaker": "András",
+          "text": "Találkozunk a hétvégén?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "Kérek zene.",
-        "Hol van?"
+        "Igen, együtt.",
+        "Mennyi az ár?"
       ],
       "correct": 0
     },
@@ -215,39 +227,39 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Mit kérsz?"
+          "speaker": "Mariann",
+          "text": "Én játszani is szeretek."
         },
         {
-          "speaker": "Károly",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "Kérek film.",
-        "Hol van?"
+        "Én szeretek táncolni és úszni.",
+        "Szia, hogy vagy?"
       ],
       "correct": 0
     },
     {
       "id": "a1-145-production-1",
       "type": "structured-writing",
-      "category": "production",
+      "category": "writing",
       "template": [
         {
-          "prompt": "Write a sentence using this word: zene",
-          "answer": "Szeretem a zenét."
+          "prompt": "Say you like swimming.",
+          "answer": "Szeretek úszni."
         }
       ]
     },
     {
       "id": "a1-145-production-2",
       "type": "structured-writing",
-      "category": "production",
+      "category": "writing",
       "template": [
         {
-          "prompt": "Write a sentence using this word: film",
-          "answer": "Szeretem a filmet."
+          "prompt": "Say yes, together.",
+          "answer": "Igen, együtt."
         }
       ]
     },
@@ -255,11 +267,11 @@
       "id": "a1-145-check-1",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Choose the correct expression.",
+      "question": "Choose the correct word for 'run'.",
       "options": [
-        "zene",
-        "film",
-        "xyz"
+        "fut",
+        "úszik",
+        "táncol"
       ],
       "correct": 0
     },
@@ -267,11 +279,11 @@
       "id": "a1-145-check-2",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Choose the correct expression.",
+      "question": "Choose the correct word for 'dance'.",
       "options": [
-        "film",
-        "könyv",
-        "xyz"
+        "táncol",
+        "olvas",
+        "fut"
       ],
       "correct": 0
     }

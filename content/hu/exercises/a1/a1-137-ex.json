@@ -5,11 +5,11 @@
       "id": "a1-137-review-1",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the correct Hungarian expression.",
+      "question": "What does 'busz' mean?",
       "options": [
-        "villamos",
-        "metró",
-        "vonat"
+        "bus",
+        "tram",
+        "train"
       ],
       "correct": 0
     },
@@ -17,11 +17,11 @@
       "id": "a1-137-review-2",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the correct Hungarian expression.",
+      "question": "What does 'metró' mean?",
       "options": [
-        "metró",
-        "vonat",
-        "jegy"
+        "metro",
+        "train",
+        "bus"
       ],
       "correct": 0
     },
@@ -29,11 +29,11 @@
       "id": "a1-137-introduce-1",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which expression is useful here?",
+      "question": "What does 'jegy' mean?",
       "options": [
-        "jegy",
-        "megálló",
-        "pályaudvar"
+        "ticket",
+        "stop",
+        "taxi"
       ],
       "correct": 0
     },
@@ -41,11 +41,11 @@
       "id": "a1-137-introduce-2",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which expression is useful here?",
+      "question": "What does 'megálló' mean?",
       "options": [
-        "megálló",
-        "pályaudvar",
-        "taxi"
+        "stop",
+        "ticket",
+        "station"
       ],
       "correct": 0
     },
@@ -53,18 +53,18 @@
       "id": "a1-137-controlled-1",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "Kérek jegy.",
-      "answer": "jegy"
+      "sentence": "Van ____?",
+      "answer": "jegyünk"
     },
     {
       "id": "a1-137-controlled-2",
       "type": "multiple-choice",
       "category": "controlled",
-      "question": "Choose the correct word.",
+      "question": "Choose the word for 'taxi'.",
       "options": [
-        "megálló",
-        "pályaudvar",
-        "taxi"
+        "taxi",
+        "jegy",
+        "megálló"
       ],
       "correct": 0
     },
@@ -74,16 +74,20 @@
       "category": "controlled",
       "pairs": [
         [
-          "vonat",
-          "train"
-        ],
-        [
           "jegy",
           "ticket"
         ],
         [
           "megálló",
           "stop"
+        ],
+        [
+          "pályaudvar",
+          "railway station"
+        ],
+        [
+          "taxi",
+          "taxi"
         ]
       ]
     },
@@ -91,15 +95,21 @@
       "id": "a1-137-controlled-4",
       "type": "substitution",
       "category": "controlled",
-      "base_sentence": "Kérek egy jegyet.",
-      "base_word": "jegyet",
-      "base_gloss": "I'd like a ticket.",
+      "base_sentence": "Van jegyünk?",
+      "base_word": "jegyünk",
+      "base_gloss": "Do we have a ticket?",
       "options": [
         {
-          "word": "taxi",
-          "inflected": "taxit",
-          "sentence": "Kérek egy taxit.",
-          "gloss": "a taxi"
+          "word": "taxink",
+          "inflected": "taxink",
+          "sentence": "Van taxink?",
+          "gloss": "our taxi"
+        },
+        {
+          "word": "jegyed",
+          "inflected": "jegyed",
+          "sentence": "Van jegyed?",
+          "gloss": "your ticket"
         }
       ]
     },
@@ -107,11 +117,11 @@
       "id": "a1-137-practice-1",
       "type": "multiple-choice",
       "category": "practice",
-      "question": "Choose the best answer in context.",
+      "question": "Which question word means 'by what means'?",
       "options": [
-        "megálló",
-        "pályaudvar",
-        "taxi"
+        "mivel",
+        "mikor",
+        "hová"
       ],
       "correct": 0
     },
@@ -119,8 +129,8 @@
       "id": "a1-137-practice-2",
       "type": "fill-blank",
       "category": "practice",
-      "sentence": "Ez a(z) ____. ",
-      "answer": "pályaudvar"
+      "sentence": "A ____ ott van.",
+      "answer": "megálló"
     },
     {
       "id": "a1-137-practice-3",
@@ -138,6 +148,14 @@
         [
           "pályaudvar",
           "railway station"
+        ],
+        [
+          "taxi",
+          "taxi"
+        ],
+        [
+          "busz",
+          "bus"
         ]
       ]
     },
@@ -145,15 +163,21 @@
       "id": "a1-137-practice-4",
       "type": "substitution",
       "category": "practice",
-      "base_sentence": "Taxival megyek a pályaudvarra.",
-      "base_word": "Taxival",
-      "base_gloss": "I'm going to the station by taxi.",
+      "base_sentence": "Hol a pályaudvar?",
+      "base_word": "pályaudvar",
+      "base_gloss": "Where's the railway station?",
       "options": [
         {
-          "word": "bicikli",
-          "inflected": "Biciklivel",
-          "sentence": "Biciklivel megyek a pályaudvarra.",
-          "gloss": "by bicycle"
+          "word": "megálló",
+          "inflected": "megálló",
+          "sentence": "Hol a megálló?",
+          "gloss": "stop"
+        },
+        {
+          "word": "taxi",
+          "inflected": "taxi",
+          "sentence": "Hol a taxi?",
+          "gloss": "taxi"
         }
       ]
     },
@@ -164,15 +188,15 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Mit szeretnél?"
+          "text": "Van jegyünk?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Mariann",
           "text": "_____"
         }
       ],
       "options": [
-        "bicikli.",
+        "Igen. A megálló ott van.",
         "Nem tudom."
       ],
       "correct": 0
@@ -184,16 +208,16 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Mit kérsz?"
+          "text": "Hol a pályaudvar?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Mariann",
           "text": "_____"
         }
       ],
       "options": [
-        "Kérek metró.",
-        "Hol van?"
+        "Menj egyenesen, aztán jobbra.",
+        "Mennyi az ár?"
       ],
       "correct": 0
     },
@@ -204,38 +228,38 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Mit kérsz?"
+          "text": "És a taxi?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Mariann",
           "text": "_____"
         }
       ],
       "options": [
-        "Kérek vonat.",
-        "Hol van?"
+        "A taxi balra van.",
+        "Szia, hogy vagy?"
       ],
       "correct": 0
     },
     {
       "id": "a1-137-production-1",
       "type": "structured-writing",
-      "category": "production",
+      "category": "writing",
       "template": [
         {
-          "prompt": "Write a sentence using this word: metró",
-          "answer": "Metróval megyek."
+          "prompt": "Ask if we have a ticket.",
+          "answer": "Van jegyünk?"
         }
       ]
     },
     {
       "id": "a1-137-production-2",
       "type": "structured-writing",
-      "category": "production",
+      "category": "writing",
       "template": [
         {
-          "prompt": "Write a sentence using this word: vonat",
-          "answer": "Vonattal megyek."
+          "prompt": "Ask where the railway station is.",
+          "answer": "Hol a pályaudvar?"
         }
       ]
     },
@@ -243,11 +267,11 @@
       "id": "a1-137-check-1",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Choose the correct expression.",
+      "question": "Choose the correct word for 'ticket'.",
       "options": [
-        "metró",
-        "vonat",
-        "xyz"
+        "jegy",
+        "megálló",
+        "taxi"
       ],
       "correct": 0
     },
@@ -255,11 +279,11 @@
       "id": "a1-137-check-2",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Choose the correct expression.",
+      "question": "Choose the correct word for 'stop'.",
       "options": [
-        "vonat",
-        "jegy",
-        "xyz"
+        "megálló",
+        "pályaudvar",
+        "jegy"
       ],
       "correct": 0
     }

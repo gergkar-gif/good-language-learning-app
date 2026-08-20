@@ -5,11 +5,11 @@
       "id": "a1-130-review-1",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the correct Hungarian expression.",
+      "question": "What does 'csúnya' mean?",
       "options": [
-        "pulóver",
-        "zokni",
-        "sapka"
+        "ugly",
+        "beautiful",
+        "comfortable"
       ],
       "correct": 0
     },
@@ -17,11 +17,11 @@
       "id": "a1-130-review-2",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the correct Hungarian expression.",
+      "question": "What does 'kényelmes' mean?",
       "options": [
-        "zokni",
-        "sapka",
-        "csizma"
+        "comfortable",
+        "long",
+        "short"
       ],
       "correct": 0
     },
@@ -29,11 +29,11 @@
       "id": "a1-130-introduce-1",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which expression is useful here?",
+      "question": "What does 'hosszú' mean?",
       "options": [
-        "szép",
-        "csúnya",
-        "kényelmes"
+        "long",
+        "short",
+        "comfortable"
       ],
       "correct": 0
     },
@@ -41,11 +41,11 @@
       "id": "a1-130-introduce-2",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which expression is useful here?",
+      "question": "What does 'visel' mean?",
       "options": [
-        "csúnya",
-        "kényelmes",
-        "hosszú"
+        "to wear",
+        "to try",
+        "to look for"
       ],
       "correct": 0
     },
@@ -53,18 +53,18 @@
       "id": "a1-130-controlled-1",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "Kérek szép.",
-      "answer": "szép"
+      "sentence": "A nadrág ____?",
+      "answer": "rövid"
     },
     {
       "id": "a1-130-controlled-2",
       "type": "multiple-choice",
       "category": "controlled",
-      "question": "Choose the correct word.",
+      "question": "Choose the word for 'try'.",
       "options": [
-        "csúnya",
-        "kényelmes",
-        "hosszú"
+        "próbál",
+        "visel",
+        "keres"
       ],
       "correct": 0
     },
@@ -74,16 +74,20 @@
       "category": "controlled",
       "pairs": [
         [
-          "sötét",
-          "dark"
+          "hosszú",
+          "long"
         ],
         [
-          "szép",
-          "beautiful"
+          "rövid",
+          "short"
         ],
         [
-          "csúnya",
-          "ugly"
+          "próbál",
+          "try"
+        ],
+        [
+          "visel",
+          "wear"
         ]
       ]
     },
@@ -91,15 +95,21 @@
       "id": "a1-130-controlled-4",
       "type": "substitution",
       "category": "controlled",
-      "base_sentence": "Ez a nadrág hosszú.",
-      "base_word": "hosszú",
-      "base_gloss": "These trousers are long.",
+      "base_sentence": "Rendben, ezt viselem.",
+      "base_word": "viselem",
+      "base_gloss": "Okay, I'll wear this.",
       "options": [
         {
-          "word": "rövid",
-          "inflected": "rövid",
-          "sentence": "Ez a nadrág rövid.",
-          "gloss": "short"
+          "word": "próbálom",
+          "inflected": "próbálom",
+          "sentence": "Rendben, ezt próbálom.",
+          "gloss": "I'm trying this"
+        },
+        {
+          "word": "kérem",
+          "inflected": "kérem",
+          "sentence": "Rendben, ezt kérem.",
+          "gloss": "I'd like this"
         }
       ]
     },
@@ -107,10 +117,10 @@
       "id": "a1-130-practice-1",
       "type": "multiple-choice",
       "category": "practice",
-      "question": "Choose the best answer in context.",
+      "question": "Which form is correct when the object is specific, like 'ezt' (this one)?",
       "options": [
-        "rövid",
-        "próbál",
+        "viselem",
+        "viselek",
         "visel"
       ],
       "correct": 0
@@ -119,8 +129,8 @@
       "id": "a1-130-practice-2",
       "type": "fill-blank",
       "category": "practice",
-      "sentence": "Ez a(z) ____. ",
-      "answer": "próbál"
+      "sentence": "Nem, a nadrág ____.",
+      "answer": "hosszú"
     },
     {
       "id": "a1-130-practice-3",
@@ -138,6 +148,14 @@
         [
           "próbál",
           "try"
+        ],
+        [
+          "visel",
+          "wear"
+        ],
+        [
+          "kényelmes",
+          "comfortable"
         ]
       ]
     },
@@ -145,15 +163,21 @@
       "id": "a1-130-practice-4",
       "type": "substitution",
       "category": "practice",
-      "base_sentence": "Felpróbálom a kabátot.",
-      "base_word": "próbálom",
-      "base_gloss": "I'm trying on the coat.",
+      "base_sentence": "A nadrág rövid?",
+      "base_word": "rövid",
+      "base_gloss": "Is the trousers short?",
       "options": [
         {
-          "word": "viselem",
-          "inflected": "viselem",
-          "sentence": "Felveszem és viselem a kabátot.",
-          "gloss": "wear"
+          "word": "hosszú",
+          "inflected": "hosszú",
+          "sentence": "A nadrág hosszú?",
+          "gloss": "long"
+        },
+        {
+          "word": "kényelmes",
+          "inflected": "kényelmes",
+          "sentence": "A nadrág kényelmes?",
+          "gloss": "comfortable"
         }
       ]
     },
@@ -164,7 +188,7 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Mit szeretnél?"
+          "text": "A nadrág rövid?"
         },
         {
           "speaker": "Károly",
@@ -172,8 +196,8 @@
         }
       ],
       "options": [
-        "ing.",
-        "Nem tudom."
+        "Nem, a nadrág hosszú.",
+        "Igen, tetszik."
       ],
       "correct": 0
     },
@@ -183,17 +207,17 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Mit kérsz?"
+          "speaker": "Anna",
+          "text": "Ez csúnya, de az szép."
         },
         {
-          "speaker": "Károly",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "Kérek zokni.",
-        "Hol van?"
+        "Rendben, ezt viselem.",
+        "Mennyi az ár?"
       ],
       "correct": 0
     },
@@ -203,39 +227,39 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Mit kérsz?"
+          "speaker": "Károly",
+          "text": "Szeretnéd felpróbálni a kabátot?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "Kérek sapka.",
-        "Hol van?"
+        "Igen, szeretném próbálni.",
+        "Nem, a nadrág hosszú."
       ],
       "correct": 0
     },
     {
       "id": "a1-130-production-1",
       "type": "structured-writing",
-      "category": "production",
+      "category": "writing",
       "template": [
         {
-          "prompt": "Write a sentence using this word: zokni",
-          "answer": "Kérek egy zoknit."
+          "prompt": "Ask if the trousers are short.",
+          "answer": "A nadrág rövid?"
         }
       ]
     },
     {
       "id": "a1-130-production-2",
       "type": "structured-writing",
-      "category": "production",
+      "category": "writing",
       "template": [
         {
-          "prompt": "Write a sentence using this word: sapka",
-          "answer": "Kérek egy sapkát."
+          "prompt": "Say okay, you'll wear this.",
+          "answer": "Rendben, ezt viselem."
         }
       ]
     },
@@ -243,11 +267,11 @@
       "id": "a1-130-check-1",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Choose the correct expression.",
+      "question": "Choose the correct word for 'long'.",
       "options": [
-        "zokni",
-        "sapka",
-        "xyz"
+        "hosszú",
+        "rövid",
+        "kényelmes"
       ],
       "correct": 0
     },
@@ -255,11 +279,11 @@
       "id": "a1-130-check-2",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Choose the correct expression.",
+      "question": "Choose the correct word for 'wear'.",
       "options": [
-        "sapka",
-        "csizma",
-        "xyz"
+        "visel",
+        "próbál",
+        "keres"
       ],
       "correct": 0
     }

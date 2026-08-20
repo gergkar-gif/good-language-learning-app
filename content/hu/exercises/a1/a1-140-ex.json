@@ -5,11 +5,11 @@
       "id": "a1-140-review-1",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the correct Hungarian expression.",
+      "question": "What does 'indul' mean?",
       "options": [
-        "jegy",
-        "megálló",
-        "pályaudvar"
+        "to depart",
+        "to arrive",
+        "to come"
       ],
       "correct": 0
     },
@@ -17,11 +17,11 @@
       "id": "a1-140-review-2",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the correct Hungarian expression.",
+      "question": "What does 'felszáll' mean?",
       "options": [
-        "megálló",
-        "pályaudvar",
-        "taxi"
+        "to get on",
+        "to get off",
+        "to depart"
       ],
       "correct": 0
     },
@@ -29,11 +29,11 @@
       "id": "a1-140-introduce-1",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which expression is useful here?",
+      "question": "What does 'egyenesen' mean?",
       "options": [
-        "érkezik",
-        "felszáll",
-        "leszáll"
+        "straight",
+        "to the right",
+        "to the left"
       ],
       "correct": 0
     },
@@ -41,11 +41,11 @@
       "id": "a1-140-introduce-2",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which expression is useful here?",
+      "question": "What does 'utazik' mean?",
       "options": [
-        "felszáll",
-        "leszáll",
-        "egyenesen"
+        "to travel",
+        "to arrive",
+        "to depart"
       ],
       "correct": 0
     },
@@ -53,17 +53,17 @@
       "id": "a1-140-controlled-1",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "Kérek érkezik.",
-      "answer": "érkezik"
+      "sentence": "Menj ____, aztán jobbra.",
+      "answer": "egyenesen"
     },
     {
       "id": "a1-140-controlled-2",
       "type": "multiple-choice",
       "category": "controlled",
-      "question": "Choose the correct word.",
+      "question": "Choose the word for 'to the left'.",
       "options": [
-        "felszáll",
-        "leszáll",
+        "balra",
+        "jobbra",
         "egyenesen"
       ],
       "correct": 0
@@ -74,16 +74,20 @@
       "category": "controlled",
       "pairs": [
         [
-          "indul",
-          "depart"
+          "egyenesen",
+          "straight"
         ],
         [
-          "érkezik",
-          "arrive"
+          "jobbra",
+          "to the right"
         ],
         [
-          "felszáll",
-          "get on"
+          "balra",
+          "to the left"
+        ],
+        [
+          "utazik",
+          "travel"
         ]
       ]
     },
@@ -91,21 +95,21 @@
       "id": "a1-140-controlled-4",
       "type": "substitution",
       "category": "controlled",
-      "base_sentence": "Menjen egyenesen!",
-      "base_word": "egyenesen",
-      "base_gloss": "Go straight ahead!",
+      "base_sentence": "A taxi balra van.",
+      "base_word": "balra",
+      "base_gloss": "The taxi is to the left.",
       "options": [
         {
           "word": "jobbra",
           "inflected": "jobbra",
-          "sentence": "Menjen jobbra!",
+          "sentence": "A taxi jobbra van.",
           "gloss": "to the right"
         },
         {
-          "word": "balra",
-          "inflected": "balra",
-          "sentence": "Menjen balra!",
-          "gloss": "to the left"
+          "word": "közel",
+          "inflected": "közel",
+          "sentence": "A taxi közel van.",
+          "gloss": "near"
         }
       ]
     },
@@ -113,10 +117,10 @@
       "id": "a1-140-practice-1",
       "type": "multiple-choice",
       "category": "practice",
-      "question": "Choose the best answer in context.",
+      "question": "What's the correct first-person form of 'utazik' (I travel)?",
       "options": [
-        "jobbra",
-        "balra",
+        "utazom",
+        "utazok",
         "utazik"
       ],
       "correct": 0
@@ -125,8 +129,8 @@
       "id": "a1-140-practice-2",
       "type": "fill-blank",
       "category": "practice",
-      "sentence": "Ez a(z) ____. ",
-      "answer": "balra"
+      "sentence": "Most busszal ____.",
+      "answer": "utazunk"
     },
     {
       "id": "a1-140-practice-3",
@@ -144,6 +148,14 @@
         [
           "balra",
           "to the left"
+        ],
+        [
+          "utazik",
+          "travel"
+        ],
+        [
+          "indul",
+          "depart"
         ]
       ]
     },
@@ -151,21 +163,21 @@
       "id": "a1-140-practice-4",
       "type": "substitution",
       "category": "practice",
-      "base_sentence": "Busszal utazom.",
-      "base_word": "Busszal",
-      "base_gloss": "I'm travelling by bus.",
+      "base_sentence": "Vonattal utazom.",
+      "base_word": "utazom",
+      "base_gloss": "I travel by train.",
       "options": [
         {
-          "word": "villamos",
-          "inflected": "Villamossal",
-          "sentence": "Villamossal utazom.",
-          "gloss": "by tram"
+          "word": "busszal",
+          "inflected": "busszal utazom",
+          "sentence": "Busszal utazom.",
+          "gloss": "by bus"
         },
         {
-          "word": "metró",
-          "inflected": "Metróval",
-          "sentence": "Metróval utazom.",
-          "gloss": "by metro"
+          "word": "gyalog",
+          "inflected": "gyalog megyek",
+          "sentence": "Gyalog megyek.",
+          "gloss": "on foot"
         }
       ]
     },
@@ -176,15 +188,15 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Mit szeretnél?"
+          "text": "És a taxi?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Mariann",
           "text": "_____"
         }
       ],
       "options": [
-        "villamos.",
+        "A taxi balra van.",
         "Nem tudom."
       ],
       "correct": 0
@@ -196,16 +208,16 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Mit kérsz?"
+          "text": "Hol a pályaudvar?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Mariann",
           "text": "_____"
         }
       ],
       "options": [
-        "Kérek megálló.",
-        "Hol van?"
+        "Menj egyenesen, aztán jobbra.",
+        "Mennyi az ár?"
       ],
       "correct": 0
     },
@@ -216,38 +228,38 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Mit kérsz?"
+          "text": "A metróval megyünk?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Mariann",
           "text": "_____"
         }
       ],
       "options": [
-        "Kérek pályaudvar.",
-        "Hol van?"
+        "Nem, most busszal utazunk.",
+        "Szia, hogy vagy?"
       ],
       "correct": 0
     },
     {
       "id": "a1-140-production-1",
       "type": "structured-writing",
-      "category": "production",
+      "category": "writing",
       "template": [
         {
-          "prompt": "Write a sentence using this word: megálló",
-          "answer": "A megálló közel van."
+          "prompt": "Tell someone to go straight, then right.",
+          "answer": "Menj egyenesen, aztán jobbra."
         }
       ]
     },
     {
       "id": "a1-140-production-2",
       "type": "structured-writing",
-      "category": "production",
+      "category": "writing",
       "template": [
         {
-          "prompt": "Write a sentence using this word: pályaudvar",
-          "answer": "A pályaudvarra megyek."
+          "prompt": "Say you're travelling by train.",
+          "answer": "Vonattal utazom."
         }
       ]
     },
@@ -255,11 +267,11 @@
       "id": "a1-140-check-1",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Choose the correct expression.",
+      "question": "Choose the correct word for 'straight'.",
       "options": [
-        "megálló",
-        "pályaudvar",
-        "xyz"
+        "egyenesen",
+        "balra",
+        "jobbra"
       ],
       "correct": 0
     },
@@ -267,11 +279,11 @@
       "id": "a1-140-check-2",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Choose the correct expression.",
+      "question": "Choose the correct word for 'to the right'.",
       "options": [
-        "pályaudvar",
-        "taxi",
-        "xyz"
+        "jobbra",
+        "balra",
+        "egyenesen"
       ],
       "correct": 0
     }

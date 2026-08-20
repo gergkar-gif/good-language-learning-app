@@ -5,11 +5,11 @@
       "id": "a1-142-review-1",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the correct Hungarian expression.",
+      "question": "What does 'szabadidő' mean?",
       "options": [
+        "free time",
         "sport",
-        "foci",
-        "úszás"
+        "music"
       ],
       "correct": 0
     },
@@ -17,11 +17,11 @@
       "id": "a1-142-review-2",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the correct Hungarian expression.",
+      "question": "What does 'úszás' mean?",
       "options": [
-        "foci",
-        "úszás",
-        "futás"
+        "swimming",
+        "running",
+        "dance"
       ],
       "correct": 0
     },
@@ -29,11 +29,11 @@
       "id": "a1-142-introduce-1",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which expression is useful here?",
+      "question": "What does 'futás' mean?",
       "options": [
-        "futás",
-        "zene",
-        "film"
+        "running",
+        "swimming",
+        "reading"
       ],
       "correct": 0
     },
@@ -41,11 +41,11 @@
       "id": "a1-142-introduce-2",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which expression is useful here?",
+      "question": "What does 'zene' mean?",
       "options": [
-        "zene",
+        "music",
         "film",
-        "könyv"
+        "book"
       ],
       "correct": 0
     },
@@ -53,18 +53,18 @@
       "id": "a1-142-controlled-1",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "Kérek futás.",
-      "answer": "futás"
+      "sentence": "Én a ____ szeretem.",
+      "answer": "focit"
     },
     {
       "id": "a1-142-controlled-2",
       "type": "multiple-choice",
       "category": "controlled",
-      "question": "Choose the correct word.",
+      "question": "Choose the word for 'film'.",
       "options": [
-        "zene",
         "film",
-        "könyv"
+        "könyv",
+        "zene"
       ],
       "correct": 0
     },
@@ -74,16 +74,20 @@
       "category": "controlled",
       "pairs": [
         [
-          "úszás",
-          "swimming"
-        ],
-        [
           "futás",
           "running"
         ],
         [
           "zene",
           "music"
+        ],
+        [
+          "film",
+          "film"
+        ],
+        [
+          "könyv",
+          "book"
         ]
       ]
     },
@@ -91,21 +95,21 @@
       "id": "a1-142-controlled-4",
       "type": "substitution",
       "category": "controlled",
-      "base_sentence": "Szeretem a futást.",
-      "base_word": "futást",
-      "base_gloss": "I like running.",
+      "base_sentence": "Szeretem a zenét.",
+      "base_word": "zenét",
+      "base_gloss": "I like music.",
       "options": [
         {
-          "word": "zene",
-          "inflected": "zenét",
-          "sentence": "Szeretem a zenét.",
-          "gloss": "music"
+          "word": "filmeket",
+          "inflected": "filmeket",
+          "sentence": "Szeretem a filmeket.",
+          "gloss": "films"
         },
         {
-          "word": "film",
-          "inflected": "filmet",
-          "sentence": "Szeretem a filmet.",
-          "gloss": "films"
+          "word": "könyvet",
+          "inflected": "könyvet",
+          "sentence": "Szeretem a könyvet.",
+          "gloss": "the book"
         }
       ]
     },
@@ -113,11 +117,11 @@
       "id": "a1-142-practice-1",
       "type": "multiple-choice",
       "category": "practice",
-      "question": "Choose the best answer in context.",
+      "question": "Which sentence fronts the object for emphasis?",
       "options": [
-        "zene",
-        "film",
-        "könyv"
+        "Én a focit szeretem.",
+        "Szeretem a focit.",
+        "Szeretek focizni."
       ],
       "correct": 0
     },
@@ -125,8 +129,8 @@
       "id": "a1-142-practice-2",
       "type": "fill-blank",
       "category": "practice",
-      "sentence": "Ez a(z) ____. ",
-      "answer": "film"
+      "sentence": "Szeretem a zenét és a ____.",
+      "answer": "filmeket"
     },
     {
       "id": "a1-142-practice-3",
@@ -144,6 +148,14 @@
         [
           "film",
           "film"
+        ],
+        [
+          "könyv",
+          "book"
+        ],
+        [
+          "foci",
+          "football"
         ]
       ]
     },
@@ -151,21 +163,21 @@
       "id": "a1-142-practice-4",
       "type": "substitution",
       "category": "practice",
-      "base_sentence": "Szeretem a könyvet.",
-      "base_word": "könyvet",
-      "base_gloss": "I like books.",
+      "base_sentence": "Szeretem a zenét és a filmeket.",
+      "base_word": "filmeket",
+      "base_gloss": "I like music and films.",
       "options": [
         {
-          "word": "zene",
-          "inflected": "zenét",
-          "sentence": "Szeretem a zenét.",
-          "gloss": "music"
+          "word": "könyveket",
+          "inflected": "könyveket",
+          "sentence": "Szeretem a zenét és a könyveket.",
+          "gloss": "books"
         },
         {
-          "word": "film",
-          "inflected": "filmet",
-          "sentence": "Szeretem a filmet.",
-          "gloss": "films"
+          "word": "focit",
+          "inflected": "focit",
+          "sentence": "Szeretem a zenét és a focit.",
+          "gloss": "football"
         }
       ]
     },
@@ -175,16 +187,16 @@
       "category": "practice",
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Mit szeretnél?"
+          "speaker": "Anna",
+          "text": "Én a focit szeretem."
         },
         {
-          "speaker": "Károly",
+          "speaker": "András",
           "text": "_____"
         }
       ],
       "options": [
-        "tánc.",
+        "Szeretem a zenét és a filmeket.",
         "Nem tudom."
       ],
       "correct": 0
@@ -195,17 +207,17 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Mit kérsz?"
+          "speaker": "Károly",
+          "text": "Mit szeretsz?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "András",
           "text": "_____"
         }
       ],
       "options": [
-        "Kérek foci.",
-        "Hol van?"
+        "Szeretem a zenét és a filmeket.",
+        "Mennyi az ár?"
       ],
       "correct": 0
     },
@@ -216,38 +228,38 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Mit kérsz?"
+          "text": "Szereted a futást?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Anna",
           "text": "_____"
         }
       ],
       "options": [
-        "Kérek úszás.",
-        "Hol van?"
+        "Nem, a focit szeretem.",
+        "Szia, hogy vagy?"
       ],
       "correct": 0
     },
     {
       "id": "a1-142-production-1",
       "type": "structured-writing",
-      "category": "production",
+      "category": "writing",
       "template": [
         {
-          "prompt": "Write a sentence using this word: foci",
-          "answer": "Szeretem a focit."
+          "prompt": "Say you like football (with emphasis on 'I').",
+          "answer": "Én a focit szeretem."
         }
       ]
     },
     {
       "id": "a1-142-production-2",
       "type": "structured-writing",
-      "category": "production",
+      "category": "writing",
       "template": [
         {
-          "prompt": "Write a sentence using this word: úszás",
-          "answer": "Szeretem az úszást."
+          "prompt": "Say you like music and films.",
+          "answer": "Szeretem a zenét és a filmeket."
         }
       ]
     },
@@ -255,11 +267,11 @@
       "id": "a1-142-check-1",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Choose the correct expression.",
+      "question": "Choose the correct word for 'running'.",
       "options": [
-        "foci",
+        "futás",
         "úszás",
-        "xyz"
+        "tánc"
       ],
       "correct": 0
     },
@@ -267,11 +279,11 @@
       "id": "a1-142-check-2",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Choose the correct expression.",
+      "question": "Choose the correct word for 'music'.",
       "options": [
-        "úszás",
-        "futás",
-        "xyz"
+        "zene",
+        "film",
+        "könyv"
       ],
       "correct": 0
     }

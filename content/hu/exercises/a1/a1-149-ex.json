@@ -5,11 +5,11 @@
       "id": "a1-149-review-1",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the correct Hungarian expression.",
+      "question": "What does 'délután' mean?",
       "options": [
-        "találkozó",
-        "találkozik",
-        "holnap"
+        "afternoon",
+        "evening",
+        "morning"
       ],
       "correct": 0
     },
@@ -17,11 +17,11 @@
       "id": "a1-149-review-2",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the correct Hungarian expression.",
+      "question": "What does 'este' mean?",
       "options": [
-        "találkozik",
-        "holnap",
-        "ma"
+        "evening",
+        "afternoon",
+        "morning"
       ],
       "correct": 0
     },
@@ -29,11 +29,11 @@
       "id": "a1-149-introduce-1",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which expression is useful here?",
+      "question": "What does 'akar' mean?",
       "options": [
-        "óra",
-        "mikor",
-        "akar"
+        "to want",
+        "to be free",
+        "may/can"
       ],
       "correct": 0
     },
@@ -41,11 +41,11 @@
       "id": "a1-149-introduce-2",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which expression is useful here?",
+      "question": "What does 'ráér' mean?",
       "options": [
-        "mikor",
-        "akar",
-        "szeretne"
+        "to be free / have time",
+        "to want",
+        "to invite"
       ],
       "correct": 0
     },
@@ -53,18 +53,18 @@
       "id": "a1-149-controlled-1",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "Kérek óra.",
-      "answer": "óra"
+      "sentence": "____ nyolc óra?",
+      "answer": "Lehet"
     },
     {
       "id": "a1-149-controlled-2",
       "type": "multiple-choice",
       "category": "controlled",
-      "question": "Choose the correct word.",
+      "question": "Choose the word for 'would like'.",
       "options": [
-        "mikor",
+        "szeretne",
         "akar",
-        "szeretne"
+        "ráér"
       ],
       "correct": 0
     },
@@ -74,16 +74,20 @@
       "category": "controlled",
       "pairs": [
         [
-          "este",
-          "evening"
+          "akar",
+          "want"
         ],
         [
-          "óra",
-          "o'clock/hour"
+          "szeretne",
+          "would like"
         ],
         [
-          "mikor",
-          "when"
+          "lehet",
+          "can / may"
+        ],
+        [
+          "ráér",
+          "be free"
         ]
       ]
     },
@@ -91,15 +95,21 @@
       "id": "a1-149-controlled-4",
       "type": "substitution",
       "category": "controlled",
-      "base_sentence": "Szeretne moziba menni.",
-      "base_word": "Szeretne",
-      "base_gloss": "He/she would like to go to the cinema.",
+      "base_sentence": "Igen, lehet.",
+      "base_word": "lehet",
+      "base_gloss": "Yes, that's possible.",
       "options": [
         {
-          "word": "lehet",
-          "inflected": "Lehet",
-          "sentence": "Lehet moziba menni.",
-          "gloss": "It's possible"
+          "word": "szeretném",
+          "inflected": "szeretném",
+          "sentence": "Igen, szeretném.",
+          "gloss": "I'd like that"
+        },
+        {
+          "word": "jó",
+          "inflected": "jó",
+          "sentence": "Igen, jó.",
+          "gloss": "good"
         }
       ]
     },
@@ -107,11 +117,11 @@
       "id": "a1-149-practice-1",
       "type": "multiple-choice",
       "category": "practice",
-      "question": "Choose the best answer in context.",
+      "question": "Which form means 'I would like' (first person)?",
       "options": [
+        "szeretnék",
         "szeretne",
-        "lehet",
-        "ráér"
+        "szeretnétek"
       ],
       "correct": 0
     },
@@ -119,8 +129,8 @@
       "id": "a1-149-practice-2",
       "type": "fill-blank",
       "category": "practice",
-      "sentence": "Ez a(z) ____. ",
-      "answer": "lehet"
+      "sentence": "Este ____.",
+      "answer": "ráérek"
     },
     {
       "id": "a1-149-practice-3",
@@ -137,7 +147,15 @@
         ],
         [
           "lehet",
-          "can/may"
+          "can / may"
+        ],
+        [
+          "ráér",
+          "be free"
+        ],
+        [
+          "mikor",
+          "when"
         ]
       ]
     },
@@ -145,15 +163,21 @@
       "id": "a1-149-practice-4",
       "type": "substitution",
       "category": "practice",
-      "base_sentence": "Igen, ráérek.",
-      "base_word": "ráérek",
-      "base_gloss": "Yes, I'm free.",
+      "base_sentence": "Lehet nyolc óra?",
+      "base_word": "nyolc óra",
+      "base_gloss": "Could it be eight o'clock?",
       "options": [
         {
-          "word": "szeretne",
-          "inflected": "szeretnék",
-          "sentence": "Igen, szeretnék.",
-          "gloss": "I'd like to"
+          "word": "hét óra",
+          "inflected": "hét óra",
+          "sentence": "Lehet hét óra?",
+          "gloss": "seven o'clock"
+        },
+        {
+          "word": "holnap",
+          "inflected": "holnap",
+          "sentence": "Lehet holnap?",
+          "gloss": "tomorrow"
         }
       ]
     },
@@ -163,8 +187,8 @@
       "category": "practice",
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Mit szeretnél?"
+          "speaker": "Mariann",
+          "text": "Lehet nyolc óra?"
         },
         {
           "speaker": "Károly",
@@ -172,7 +196,7 @@
         }
       ],
       "options": [
-        "igen.",
+        "Igen, lehet.",
         "Nem tudom."
       ],
       "correct": 0
@@ -183,17 +207,17 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Mit kérsz?"
+          "speaker": "Anna",
+          "text": "Nekem hét óra jó."
         },
         {
-          "speaker": "Károly",
+          "speaker": "Mariann",
           "text": "_____"
         }
       ],
       "options": [
-        "Kérek találkozik.",
-        "Hol van?"
+        "Lehet nyolc óra?",
+        "Mennyi az ár?"
       ],
       "correct": 0
     },
@@ -203,39 +227,39 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Mit kérsz?"
+          "speaker": "Károly",
+          "text": "Ráérsz este?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Mariann",
           "text": "_____"
         }
       ],
       "options": [
-        "Kérek holnap.",
-        "Hol van?"
+        "Igen, este ráérek.",
+        "Szia, hogy vagy?"
       ],
       "correct": 0
     },
     {
       "id": "a1-149-production-1",
       "type": "structured-writing",
-      "category": "production",
+      "category": "writing",
       "template": [
         {
-          "prompt": "Write a sentence using this word: találkozik",
-          "answer": "Holnap találkozunk."
+          "prompt": "Ask if eight o'clock could work.",
+          "answer": "Lehet nyolc óra?"
         }
       ]
     },
     {
       "id": "a1-149-production-2",
       "type": "structured-writing",
-      "category": "production",
+      "category": "writing",
       "template": [
         {
-          "prompt": "Write a sentence using this word: holnap",
-          "answer": "Holnap találkozunk."
+          "prompt": "Say you're free in the evening.",
+          "answer": "Este ráérek."
         }
       ]
     },
@@ -243,11 +267,11 @@
       "id": "a1-149-check-1",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Choose the correct expression.",
+      "question": "Choose the correct word for 'to want'.",
       "options": [
-        "találkozik",
-        "holnap",
-        "xyz"
+        "akar",
+        "szeretne",
+        "lehet"
       ],
       "correct": 0
     },
@@ -255,11 +279,11 @@
       "id": "a1-149-check-2",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Choose the correct expression.",
+      "question": "Choose the correct word for 'can / may'.",
       "options": [
-        "holnap",
-        "ma",
-        "xyz"
+        "lehet",
+        "akar",
+        "ráér"
       ],
       "correct": 0
     }

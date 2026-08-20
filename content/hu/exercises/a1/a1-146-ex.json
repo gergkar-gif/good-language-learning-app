@@ -5,11 +5,11 @@
       "id": "a1-146-review-1",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the correct Hungarian expression.",
+      "question": "What does 'úszik' mean?",
       "options": [
-        "terv",
-        "program",
-        "meghív"
+        "to swim",
+        "to run",
+        "to read"
       ],
       "correct": 0
     },
@@ -17,11 +17,11 @@
       "id": "a1-146-review-2",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the correct Hungarian expression.",
+      "question": "What does 'táncol' mean?",
       "options": [
-        "program",
-        "meghív",
-        "találkozó"
+        "to dance",
+        "to run",
+        "to swim"
       ],
       "correct": 0
     },
@@ -29,11 +29,11 @@
       "id": "a1-146-introduce-1",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which expression is useful here?",
+      "question": "What does 'terv' mean?",
       "options": [
-        "program",
-        "meghív",
-        "találkozó"
+        "plan",
+        "meeting",
+        "invitation"
       ],
       "correct": 0
     },
@@ -41,11 +41,11 @@
       "id": "a1-146-introduce-2",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which expression is useful here?",
+      "question": "What does 'meghív' mean?",
       "options": [
-        "meghív",
-        "találkozó",
-        "találkozik"
+        "to invite",
+        "to plan",
+        "to meet"
       ],
       "correct": 0
     },
@@ -53,18 +53,18 @@
       "id": "a1-146-controlled-1",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "Kérek program.",
-      "answer": "program"
+      "sentence": "Van egy ____.",
+      "answer": "tervem"
     },
     {
       "id": "a1-146-controlled-2",
       "type": "multiple-choice",
       "category": "controlled",
-      "question": "Choose the correct word.",
+      "question": "Choose the word for 'meeting'.",
       "options": [
-        "meghív",
         "találkozó",
-        "találkozik"
+        "terv",
+        "program"
       ],
       "correct": 0
     },
@@ -79,11 +79,15 @@
         ],
         [
           "program",
-          "activity/plan"
+          "activity / plan"
         ],
         [
           "meghív",
           "invite"
+        ],
+        [
+          "találkozó",
+          "meeting"
         ]
       ]
     },
@@ -91,15 +95,21 @@
       "id": "a1-146-controlled-4",
       "type": "substitution",
       "category": "controlled",
-      "base_sentence": "Meghívlak egy programra.",
-      "base_word": "programra",
-      "base_gloss": "I invite you to an activity.",
+      "base_sentence": "Van egy tervem.",
+      "base_word": "tervem",
+      "base_gloss": "I have a plan.",
       "options": [
         {
-          "word": "találkozó",
-          "inflected": "találkozóra",
-          "sentence": "Meghívlak egy találkozóra.",
-          "gloss": "a meeting"
+          "word": "programom",
+          "inflected": "programom",
+          "sentence": "Van egy programom.",
+          "gloss": "my activity"
+        },
+        {
+          "word": "találkozóm",
+          "inflected": "találkozóm",
+          "sentence": "Van egy találkozóm.",
+          "gloss": "my meeting"
         }
       ]
     },
@@ -107,11 +117,11 @@
       "id": "a1-146-practice-1",
       "type": "multiple-choice",
       "category": "practice",
-      "question": "Choose the best answer in context.",
+      "question": "Which is the polite invitation form, 'would you like'?",
       "options": [
-        "program",
-        "meghív",
-        "találkozó"
+        "szeretnétek",
+        "szerettek",
+        "szeretitek"
       ],
       "correct": 0
     },
@@ -119,8 +129,8 @@
       "id": "a1-146-practice-2",
       "type": "fill-blank",
       "category": "practice",
-      "sentence": "Ez a(z) ____. ",
-      "answer": "meghív"
+      "sentence": "Szeretnétek együtt ____?",
+      "answer": "programot"
     },
     {
       "id": "a1-146-practice-3",
@@ -133,11 +143,19 @@
         ],
         [
           "program",
-          "activity/plan"
+          "activity / plan"
         ],
         [
           "meghív",
           "invite"
+        ],
+        [
+          "találkozó",
+          "meeting"
+        ],
+        [
+          "úszik",
+          "swim"
         ]
       ]
     },
@@ -145,20 +163,20 @@
       "id": "a1-146-practice-4",
       "type": "substitution",
       "category": "practice",
-      "base_sentence": "Kérek tervet.",
-      "base_word": "tervet",
-      "base_gloss": "I'd like a plan.",
+      "base_sentence": "Szeretnétek együtt programot?",
+      "base_word": "programot",
+      "base_gloss": "Would you like an activity together?",
       "options": [
         {
-          "word": "program",
-          "inflected": "programot",
-          "sentence": "Kérek programot.",
-          "gloss": "an activity"
+          "word": "kirándulást",
+          "inflected": "kirándulást",
+          "sentence": "Szeretnétek együtt kirándulást?",
+          "gloss": "a hike"
         },
         {
-          "word": "találkozó",
+          "word": "találkozót",
           "inflected": "találkozót",
-          "sentence": "Kérek találkozót.",
+          "sentence": "Szeretnétek együtt találkozót?",
           "gloss": "a meeting"
         }
       ]
@@ -169,16 +187,16 @@
       "category": "practice",
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Mit szeretnél?"
+          "speaker": "Károly",
+          "text": "Van egy tervem. Szeretnétek együtt programot?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "holnap.",
+        "Igen. Mikor találkozunk?",
         "Nem tudom."
       ],
       "correct": 0
@@ -190,16 +208,16 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Mit kérsz?"
+          "text": "Igen. Mikor találkozunk?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Anna",
           "text": "_____"
         }
       ],
       "options": [
-        "Kérek program.",
-        "Hol van?"
+        "Holnap délután jó?",
+        "Mennyi az ár?"
       ],
       "correct": 0
     },
@@ -209,39 +227,39 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Mit kérsz?"
+          "speaker": "Károly",
+          "text": "Van egy tervem."
         },
         {
-          "speaker": "Károly",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "Kérek meghív.",
-        "Hol van?"
+        "Milyen terv?",
+        "Szia, hogy vagy?"
       ],
       "correct": 0
     },
     {
       "id": "a1-146-production-1",
       "type": "structured-writing",
-      "category": "production",
+      "category": "writing",
       "template": [
         {
-          "prompt": "Write a sentence using this word: program",
-          "answer": "Jó programot csinálunk."
+          "prompt": "Say you have a plan.",
+          "answer": "Van egy tervem."
         }
       ]
     },
     {
       "id": "a1-146-production-2",
       "type": "structured-writing",
-      "category": "production",
+      "category": "writing",
       "template": [
         {
-          "prompt": "Write a sentence using this word: meghív",
-          "answer": "Meghívlak egy programra."
+          "prompt": "Ask if they'd like an activity together.",
+          "answer": "Szeretnétek együtt programot?"
         }
       ]
     },
@@ -249,11 +267,11 @@
       "id": "a1-146-check-1",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Choose the correct expression.",
+      "question": "Choose the correct word for 'plan'.",
       "options": [
+        "terv",
         "program",
-        "meghív",
-        "xyz"
+        "találkozó"
       ],
       "correct": 0
     },
@@ -261,11 +279,11 @@
       "id": "a1-146-check-2",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Choose the correct expression.",
+      "question": "Choose the correct word for 'to invite'.",
       "options": [
         "meghív",
-        "találkozó",
-        "xyz"
+        "találkozik",
+        "akar"
       ],
       "correct": 0
     }

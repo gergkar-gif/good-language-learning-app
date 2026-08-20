@@ -5,11 +5,11 @@
       "id": "a1-127-review-1",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the correct Hungarian expression.",
+      "question": "What does 'ruha' mean?",
       "options": [
-        "ing",
-        "kabát",
-        "szoknya"
+        "clothing / dress",
+        "shirt",
+        "coat"
       ],
       "correct": 0
     },
@@ -17,11 +17,11 @@
       "id": "a1-127-review-2",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the correct Hungarian expression.",
+      "question": "What does 'kabát' mean?",
       "options": [
-        "kabát",
-        "szoknya",
-        "pulóver"
+        "coat",
+        "skirt",
+        "shirt"
       ],
       "correct": 0
     },
@@ -29,11 +29,11 @@
       "id": "a1-127-introduce-1",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which expression is useful here?",
+      "question": "What does 'pulóver' mean?",
       "options": [
-        "pulóver",
-        "zokni",
-        "sapka"
+        "jumper",
+        "sock",
+        "hat"
       ],
       "correct": 0
     },
@@ -41,11 +41,11 @@
       "id": "a1-127-introduce-2",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which expression is useful here?",
+      "question": "What does 'sapka' mean?",
       "options": [
-        "zokni",
-        "sapka",
-        "csizma"
+        "hat",
+        "boot",
+        "sock"
       ],
       "correct": 0
     },
@@ -53,18 +53,18 @@
       "id": "a1-127-controlled-1",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "Kérek pulóver.",
-      "answer": "pulóver"
+      "sentence": "Ez a ____ színes.",
+      "answer": "zokni"
     },
     {
       "id": "a1-127-controlled-2",
       "type": "multiple-choice",
       "category": "controlled",
-      "question": "Choose the correct word.",
+      "question": "Choose the word for 'boot'.",
       "options": [
-        "zokni",
+        "csizma",
         "sapka",
-        "csizma"
+        "zokni"
       ],
       "correct": 0
     },
@@ -74,16 +74,20 @@
       "category": "controlled",
       "pairs": [
         [
-          "szoknya",
-          "skirt"
-        ],
-        [
           "pulóver",
           "jumper"
         ],
         [
           "zokni",
           "sock"
+        ],
+        [
+          "sapka",
+          "hat"
+        ],
+        [
+          "csizma",
+          "boot"
         ]
       ]
     },
@@ -91,21 +95,21 @@
       "id": "a1-127-controlled-4",
       "type": "substitution",
       "category": "controlled",
-      "base_sentence": "Kérek pulóvert.",
-      "base_word": "pulóvert",
-      "base_gloss": "I'd like a jumper.",
+      "base_sentence": "A kabát hosszú, de kényelmes.",
+      "base_word": "kabát",
+      "base_gloss": "The coat is long, but comfortable.",
       "options": [
         {
-          "word": "zokni",
-          "inflected": "zoknit",
-          "sentence": "Kérek zoknit.",
-          "gloss": "socks"
+          "word": "pulóver",
+          "inflected": "pulóver",
+          "sentence": "A pulóver hosszú, de kényelmes.",
+          "gloss": "the jumper"
         },
         {
           "word": "sapka",
-          "inflected": "sapkát",
-          "sentence": "Kérek sapkát.",
-          "gloss": "a hat"
+          "inflected": "sapka",
+          "sentence": "A sapka szép, de sötét.",
+          "gloss": "the hat"
         }
       ]
     },
@@ -113,11 +117,11 @@
       "id": "a1-127-practice-1",
       "type": "multiple-choice",
       "category": "practice",
-      "question": "Choose the best answer in context.",
+      "question": "Which suffix turns 'szín' (colour) into 'colourful'?",
       "options": [
-        "zokni",
-        "sapka",
-        "csizma"
+        "-es",
+        "-t",
+        "-ban"
       ],
       "correct": 0
     },
@@ -125,8 +129,8 @@
       "id": "a1-127-practice-2",
       "type": "fill-blank",
       "category": "practice",
-      "sentence": "Ez a(z) ____. ",
-      "answer": "sapka"
+      "sentence": "A kabát hosszú, ____ kényelmes.",
+      "answer": "de"
     },
     {
       "id": "a1-127-practice-3",
@@ -144,6 +148,14 @@
         [
           "sapka",
           "hat"
+        ],
+        [
+          "csizma",
+          "boot"
+        ],
+        [
+          "ruha",
+          "clothing / dress"
         ]
       ]
     },
@@ -151,21 +163,21 @@
       "id": "a1-127-practice-4",
       "type": "substitution",
       "category": "practice",
-      "base_sentence": "Kérek csizmát.",
-      "base_word": "csizmát",
-      "base_gloss": "I'd like boots.",
+      "base_sentence": "Ez a zokni színes.",
+      "base_word": "zokni",
+      "base_gloss": "This sock is colourful.",
       "options": [
         {
-          "word": "pulóver",
-          "inflected": "pulóvert",
-          "sentence": "Kérek pulóvert.",
-          "gloss": "a jumper"
+          "word": "sapka",
+          "inflected": "sapka",
+          "sentence": "Ez a sapka színes.",
+          "gloss": "the hat"
         },
         {
-          "word": "zokni",
-          "inflected": "zoknit",
-          "sentence": "Kérek zoknit.",
-          "gloss": "socks"
+          "word": "csizma",
+          "inflected": "csizma",
+          "sentence": "Ez a csizma színes.",
+          "gloss": "the boot"
         }
       ]
     },
@@ -175,17 +187,17 @@
       "category": "practice",
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Mit szeretnél?"
+          "speaker": "Anna",
+          "text": "Ez a zokni színes."
         },
         {
-          "speaker": "Károly",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "cipő.",
-        "Nem tudom."
+        "A sapka világos vagy sötét?",
+        "Mennyi az ár?"
       ],
       "correct": 0
     },
@@ -195,17 +207,17 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Mit kérsz?"
+          "speaker": "Károly",
+          "text": "A kabát hosszú, de kényelmes."
         },
         {
-          "speaker": "Károly",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "Kérek kabát.",
-        "Hol van?"
+        "A nadrág rövid?",
+        "Nem tudom."
       ],
       "correct": 0
     },
@@ -216,38 +228,38 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Mit kérsz?"
+          "text": "Milyen a pulóver?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Mariann",
           "text": "_____"
         }
       ],
       "options": [
-        "Kérek szoknya.",
-        "Hol van?"
+        "Kényelmes, de színes.",
+        "Nagy vagy kicsi?"
       ],
       "correct": 0
     },
     {
       "id": "a1-127-production-1",
       "type": "structured-writing",
-      "category": "production",
+      "category": "writing",
       "template": [
         {
-          "prompt": "Write a sentence using this word: kabát",
-          "answer": "Kérek egy kabátot."
+          "prompt": "Say this sock is colourful.",
+          "answer": "Ez a zokni színes."
         }
       ]
     },
     {
       "id": "a1-127-production-2",
       "type": "structured-writing",
-      "category": "production",
+      "category": "writing",
       "template": [
         {
-          "prompt": "Write a sentence using this word: szoknya",
-          "answer": "Kérek egy szoknyát."
+          "prompt": "Say the coat is long, but comfortable.",
+          "answer": "A kabát hosszú, de kényelmes."
         }
       ]
     },
@@ -255,11 +267,11 @@
       "id": "a1-127-check-1",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Choose the correct expression.",
+      "question": "Choose the correct word for 'jumper'.",
       "options": [
-        "kabát",
-        "szoknya",
-        "xyz"
+        "pulóver",
+        "sapka",
+        "zokni"
       ],
       "correct": 0
     },
@@ -267,11 +279,11 @@
       "id": "a1-127-check-2",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Choose the correct expression.",
+      "question": "Choose the correct word for 'hat'.",
       "options": [
-        "szoknya",
-        "pulóver",
-        "xyz"
+        "sapka",
+        "csizma",
+        "pulóver"
       ],
       "correct": 0
     }

@@ -5,11 +5,11 @@
       "id": "a1-134-review-1",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the correct Hungarian expression.",
+      "question": "What does 'posta' mean?",
       "options": [
-        "állomás",
-        "bank",
-        "bolt"
+        "post office",
+        "hospital",
+        "café"
       ],
       "correct": 0
     },
@@ -17,11 +17,11 @@
       "id": "a1-134-review-2",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the correct Hungarian expression.",
+      "question": "What does 'étterem' mean?",
       "options": [
-        "bank",
-        "bolt",
-        "gyógyszertár"
+        "restaurant",
+        "café",
+        "museum"
       ],
       "correct": 0
     },
@@ -29,11 +29,11 @@
       "id": "a1-134-introduce-1",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which expression is useful here?",
+      "question": "What does 'kávézó' mean?",
       "options": [
-        "park",
-        "étterem",
-        "kávézó"
+        "café",
+        "restaurant",
+        "museum"
       ],
       "correct": 0
     },
@@ -41,11 +41,11 @@
       "id": "a1-134-introduce-2",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which expression is useful here?",
+      "question": "What does 'könyvtár' mean?",
       "options": [
-        "étterem",
-        "kávézó",
-        "múzeum"
+        "library",
+        "museum",
+        "cinema"
       ],
       "correct": 0
     },
@@ -53,18 +53,18 @@
       "id": "a1-134-controlled-1",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "Kérek park.",
-      "answer": "park"
+      "sentence": "A múzeum és a ____ is itt van?",
+      "answer": "mozi"
     },
     {
       "id": "a1-134-controlled-2",
       "type": "multiple-choice",
       "category": "controlled",
-      "question": "Choose the correct word.",
+      "question": "Choose the word for 'museum'.",
       "options": [
-        "étterem",
-        "kávézó",
-        "múzeum"
+        "múzeum",
+        "mozi",
+        "könyvtár"
       ],
       "correct": 0
     },
@@ -74,16 +74,20 @@
       "category": "controlled",
       "pairs": [
         [
-          "kórház",
-          "hospital"
+          "kávézó",
+          "café"
         ],
         [
-          "park",
-          "park"
+          "múzeum",
+          "museum"
         ],
         [
-          "étterem",
-          "restaurant"
+          "mozi",
+          "cinema"
+        ],
+        [
+          "könyvtár",
+          "library"
         ]
       ]
     },
@@ -91,21 +95,21 @@
       "id": "a1-134-controlled-4",
       "type": "substitution",
       "category": "controlled",
-      "base_sentence": "A múzeumban vagyok.",
-      "base_word": "múzeumban",
-      "base_gloss": "I'm at the museum.",
+      "base_sentence": "A múzeum és a mozi is itt van?",
+      "base_word": "mozi",
+      "base_gloss": "Are the museum and the cinema here too?",
       "options": [
         {
-          "word": "mozi",
-          "inflected": "moziban",
-          "sentence": "A moziban vagyok.",
-          "gloss": "at the cinema"
+          "word": "könyvtár",
+          "inflected": "könyvtár",
+          "sentence": "A múzeum és a könyvtár is itt van?",
+          "gloss": "the library"
         },
         {
-          "word": "könyvtár",
-          "inflected": "könyvtárban",
-          "sentence": "A könyvtárban vagyok.",
-          "gloss": "at the library"
+          "word": "kávézó",
+          "inflected": "kávézó",
+          "sentence": "A múzeum és a kávézó is itt van?",
+          "gloss": "the café"
         }
       ]
     },
@@ -113,11 +117,11 @@
       "id": "a1-134-practice-1",
       "type": "multiple-choice",
       "category": "practice",
-      "question": "Choose the best answer in context.",
+      "question": "What does 'És az iskola?' mean, as a follow-up question?",
       "options": [
-        "múzeum",
-        "mozi",
-        "könyvtár"
+        "And the school?",
+        "Where's the school?",
+        "Is the school big?"
       ],
       "correct": 0
     },
@@ -125,8 +129,8 @@
       "id": "a1-134-practice-2",
       "type": "fill-blank",
       "category": "practice",
-      "sentence": "Ez a(z) ____. ",
-      "answer": "mozi"
+      "sentence": "És a ____?",
+      "answer": "kávézó"
     },
     {
       "id": "a1-134-practice-3",
@@ -144,6 +148,14 @@
         [
           "mozi",
           "cinema"
+        ],
+        [
+          "könyvtár",
+          "library"
+        ],
+        [
+          "park",
+          "park"
         ]
       ]
     },
@@ -151,15 +163,21 @@
       "id": "a1-134-practice-4",
       "type": "substitution",
       "category": "practice",
-      "base_sentence": "Messze van a park.",
-      "base_word": "Messze",
-      "base_gloss": "The park is far.",
+      "base_sentence": "A könyvtár a téren van.",
+      "base_word": "könyvtár",
+      "base_gloss": "The library is on the square.",
       "options": [
         {
-          "word": "közel",
-          "inflected": "Közel",
-          "sentence": "Közel van a park.",
-          "gloss": "near"
+          "word": "mozi",
+          "inflected": "mozi",
+          "sentence": "A mozi a téren van.",
+          "gloss": "the cinema"
+        },
+        {
+          "word": "kávézó",
+          "inflected": "kávézó",
+          "sentence": "A kávézó a téren van.",
+          "gloss": "the café"
         }
       ]
     },
@@ -170,15 +188,15 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Mit szeretnél?"
+          "text": "A múzeum és a mozi is itt van?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Mariann",
           "text": "_____"
         }
       ],
       "options": [
-        "messze.",
+        "Igen. A könyvtár a téren van.",
         "Nem tudom."
       ],
       "correct": 0
@@ -190,16 +208,16 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Mit kérsz?"
+          "text": "Van itt kávézó?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Mariann",
           "text": "_____"
         }
       ],
       "options": [
-        "Kérek bank.",
-        "Hol van?"
+        "Igen, a téren van.",
+        "Mennyi az ár?"
       ],
       "correct": 0
     },
@@ -210,38 +228,38 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Mit kérsz?"
+          "text": "Hol van a könyvtár?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Mariann",
           "text": "_____"
         }
       ],
       "options": [
-        "Kérek bolt.",
-        "Hol van?"
+        "A téren van.",
+        "Szia, hogy vagy?"
       ],
       "correct": 0
     },
     {
       "id": "a1-134-production-1",
       "type": "structured-writing",
-      "category": "production",
+      "category": "writing",
       "template": [
         {
-          "prompt": "Write a sentence using this word: bank",
-          "answer": "A bankban vagyok."
+          "prompt": "Ask if the museum and the cinema are here too.",
+          "answer": "A múzeum és a mozi is itt van?"
         }
       ]
     },
     {
       "id": "a1-134-production-2",
       "type": "structured-writing",
-      "category": "production",
+      "category": "writing",
       "template": [
         {
-          "prompt": "Write a sentence using this word: bolt",
-          "answer": "A boltban vagyok."
+          "prompt": "Say the library is on the square.",
+          "answer": "A könyvtár a téren van."
         }
       ]
     },
@@ -249,11 +267,11 @@
       "id": "a1-134-check-1",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Choose the correct expression.",
+      "question": "Choose the correct word for 'café'.",
       "options": [
-        "bank",
-        "bolt",
-        "xyz"
+        "kávézó",
+        "étterem",
+        "posta"
       ],
       "correct": 0
     },
@@ -261,11 +279,11 @@
       "id": "a1-134-check-2",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Choose the correct expression.",
+      "question": "Choose the correct word for 'library'.",
       "options": [
-        "bolt",
-        "gyógyszertár",
-        "xyz"
+        "könyvtár",
+        "iskola",
+        "múzeum"
       ],
       "correct": 0
     }

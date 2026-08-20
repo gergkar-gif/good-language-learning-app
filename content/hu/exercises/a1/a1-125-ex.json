@@ -5,11 +5,11 @@
       "id": "a1-125-review-1",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the correct Hungarian expression.",
+      "question": "What does 'kék' mean?",
       "options": [
-        "cipő",
-        "táska",
-        "könyv"
+        "blue",
+        "black",
+        "white"
       ],
       "correct": 0
     },
@@ -17,11 +17,11 @@
       "id": "a1-125-review-2",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Choose the correct Hungarian expression.",
+      "question": "What does 'fehér' mean?",
       "options": [
-        "táska",
-        "könyv",
-        "ajándék"
+        "white",
+        "blue",
+        "black"
       ],
       "correct": 0
     },
@@ -29,11 +29,11 @@
       "id": "a1-125-introduce-1",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which expression is useful here?",
+      "question": "What does 'kicsi' mean?",
       "options": [
-        "fekete",
-        "fehér",
-        "nagy"
+        "small",
+        "large",
+        "good"
       ],
       "correct": 0
     },
@@ -41,11 +41,11 @@
       "id": "a1-125-introduce-2",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which expression is useful here?",
+      "question": "What does 'tetszik' mean?",
       "options": [
-        "fehér",
-        "nagy",
-        "kicsi"
+        "to be liked / to please",
+        "to look for",
+        "to buy"
       ],
       "correct": 0
     },
@@ -53,17 +53,17 @@
       "id": "a1-125-controlled-1",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "Kérek fekete.",
-      "answer": "fekete"
+      "sentence": "Igen, ____. Milyen a méret?",
+      "answer": "tetszik"
     },
     {
       "id": "a1-125-controlled-2",
       "type": "multiple-choice",
       "category": "controlled",
-      "question": "Choose the correct word.",
+      "question": "Choose the word for 'salesperson'.",
       "options": [
-        "fehér",
-        "nagy",
+        "eladó",
+        "jó",
         "kicsi"
       ],
       "correct": 0
@@ -74,16 +74,20 @@
       "category": "controlled",
       "pairs": [
         [
-          "kék",
-          "blue"
+          "kicsi",
+          "small"
         ],
         [
-          "fekete",
-          "black"
+          "jó",
+          "good"
         ],
         [
-          "fehér",
-          "white"
+          "tetszik",
+          "like / please"
+        ],
+        [
+          "eladó",
+          "salesperson"
         ]
       ]
     },
@@ -91,15 +95,21 @@
       "id": "a1-125-controlled-4",
       "type": "substitution",
       "category": "controlled",
-      "base_sentence": "Ez túl kicsi nekem.",
-      "base_word": "kicsi",
-      "base_gloss": "This is too small for me.",
+      "base_sentence": "A könyv is ajándék.",
+      "base_word": "könyv",
+      "base_gloss": "The book is a gift too.",
       "options": [
         {
-          "word": "jó",
-          "inflected": "jó",
-          "sentence": "Ez jó nekem.",
-          "gloss": "good/fits"
+          "word": "táska",
+          "inflected": "táska",
+          "sentence": "A táska is ajándék.",
+          "gloss": "bag"
+        },
+        {
+          "word": "póló",
+          "inflected": "póló",
+          "sentence": "A póló is ajándék.",
+          "gloss": "T-shirt"
         }
       ]
     },
@@ -107,11 +117,11 @@
       "id": "a1-125-practice-1",
       "type": "multiple-choice",
       "category": "practice",
-      "question": "Choose the best answer in context.",
+      "question": "Which word means 'also / too'?",
       "options": [
-        "jó",
-        "tetszik",
-        "eladó"
+        "is",
+        "és",
+        "de"
       ],
       "correct": 0
     },
@@ -119,8 +129,8 @@
       "id": "a1-125-practice-2",
       "type": "fill-blank",
       "category": "practice",
-      "sentence": "Ez a(z) ____. ",
-      "answer": "tetszik"
+      "sentence": "Nem, az ajándék ____ van.",
+      "answer": "külön"
     },
     {
       "id": "a1-125-practice-3",
@@ -137,7 +147,15 @@
         ],
         [
           "tetszik",
-          "like"
+          "like / please"
+        ],
+        [
+          "eladó",
+          "salesperson"
+        ],
+        [
+          "nagy",
+          "large"
         ]
       ]
     },
@@ -145,15 +163,21 @@
       "id": "a1-125-practice-4",
       "type": "substitution",
       "category": "practice",
-      "base_sentence": "Ez a póló nagyon tetszik.",
+      "base_sentence": "Igen, tetszik.",
       "base_word": "tetszik",
-      "base_gloss": "I really like this T-shirt.",
+      "base_gloss": "Yes, I like it.",
       "options": [
         {
-          "word": "jó",
-          "inflected": "jó",
-          "sentence": "Ez a póló nagyon jó.",
-          "gloss": "good"
+          "word": "nem tetszik",
+          "inflected": "nem tetszik",
+          "sentence": "Nem, nem tetszik.",
+          "gloss": "I don't like it"
+        },
+        {
+          "word": "nagyon tetszik",
+          "inflected": "nagyon tetszik",
+          "sentence": "Igen, nagyon tetszik.",
+          "gloss": "I like it a lot"
         }
       ]
     },
@@ -164,16 +188,16 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Mit szeretnél?"
+          "text": "Igen, tetszik. Milyen a méret?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Eladó",
           "text": "_____"
         }
       ],
       "options": [
-        "termék.",
-        "Nem tudom."
+        "Nagy vagy kicsi?",
+        "Tíz forint."
       ],
       "correct": 0
     },
@@ -184,7 +208,7 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Mit kérsz?"
+          "text": "Rendben. A könyv is ajándék?"
         },
         {
           "speaker": "Károly",
@@ -192,8 +216,8 @@
         }
       ],
       "options": [
-        "Kérek táska.",
-        "Hol van?"
+        "Nem, az ajándék külön van.",
+        "Igen, tetszik."
       ],
       "correct": 0
     },
@@ -203,39 +227,39 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Mit kérsz?"
+          "speaker": "Eladó",
+          "text": "Mit keres?"
         },
         {
-          "speaker": "Károly",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "Kérek könyv.",
-        "Hol van?"
+        "Egy pólót és egy táskát keresek.",
+        "Nem, az ajándék külön van."
       ],
       "correct": 0
     },
     {
       "id": "a1-125-production-1",
       "type": "structured-writing",
-      "category": "production",
+      "category": "writing",
       "template": [
         {
-          "prompt": "Write a sentence using this word: táska",
-          "answer": "Kérek egy táskát."
+          "prompt": "Say yes, you like it.",
+          "answer": "Igen, tetszik."
         }
       ]
     },
     {
       "id": "a1-125-production-2",
       "type": "structured-writing",
-      "category": "production",
+      "category": "writing",
       "template": [
         {
-          "prompt": "Write a sentence using this word: könyv",
-          "answer": "Kérek egy könyvet."
+          "prompt": "Say no, the gift is separate.",
+          "answer": "Nem, az ajándék külön van."
         }
       ]
     },
@@ -243,11 +267,11 @@
       "id": "a1-125-check-1",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Choose the correct expression.",
+      "question": "Choose the correct word for 'small'.",
       "options": [
-        "táska",
-        "könyv",
-        "xyz"
+        "kicsi",
+        "nagy",
+        "jó"
       ],
       "correct": 0
     },
@@ -255,11 +279,11 @@
       "id": "a1-125-check-2",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Choose the correct expression.",
+      "question": "Choose the correct word for 'salesperson'.",
       "options": [
-        "könyv",
-        "ajándék",
-        "xyz"
+        "eladó",
+        "termék",
+        "bolt"
       ],
       "correct": 0
     }
