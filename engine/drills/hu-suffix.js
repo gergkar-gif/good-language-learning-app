@@ -116,7 +116,7 @@ const HuSuffixDriller = (function () {
 
     function _gloss(lemma) {
         const sense = Lexicon.define(lemma);
-        return (sense && sense.en) ? sense.en : lemma;
+        return (sense && sense.en) ? Lexicon.shortGloss(sense.en) : lemma;
     }
 
     // ---- Data loading (once) ----
@@ -168,7 +168,15 @@ const HuSuffixDriller = (function () {
         }
         if (entry.tag.case) {
             const prep = HungarianMorphology.caseSuffixLabel(entry.tag.case);
-            return prep + ' ' + gloss;
+            // A case-tagged word-index entry can ALSO be plural
+            // ("szerkezetűekre" = szerkezetű + plural + sublative) — the
+            // case branch used to ignore tag.number entirely, so the
+            // prompt read as if the answer were singular even when the
+            // only correct form was the plural one. Naive English "+s"
+            // matches the same pluralisation the possessive branch above
+            // already uses.
+            const noun = entry.tag.number === 'pl' ? gloss + 's' : gloss;
+            return prep + ' ' + noun;
         }
         return gloss + 's'; // plural
     }
