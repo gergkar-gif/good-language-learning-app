@@ -470,6 +470,17 @@ LANG_UNIT_TITLES = {
             "At Home",
             "Food & Drink",
             "Everyday Hungarian Review",
+            # Units 21-30 shipped with real UNIT_N_MANIFEST.json titles.
+            "Buying Food",
+            "At the Market",
+            "At the Café",
+            "At the Restaurant",
+            "Shopping",
+            "Clothes & Appearance",
+            "The City",
+            "Transport & Directions",
+            "Hobbies & Free Time",
+            "Friends & Making Plans",
         ],
     },
 }
