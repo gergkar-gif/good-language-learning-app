@@ -33,6 +33,29 @@ const HuPrefixDriller = (function () {
     const DECOY_COUNT = 3;
     const MAX_LEMMA_RANK = 5000;
 
+    // Same leak hu-verb.js already had to filter (2026-08-19): a dictionary
+    // entry can carry a verb-tagged sense that's really a leftover
+    // "participle of X:"/"verbal noun of X:" gloss, not a real translation
+    // ("költő" = the noun "poet", not a conjugatable verb, despite
+    // verbSense() finding a verb-tagged sense on it). hu-verb.js filters
+    // this after calling verbSense(); this file called the same function on
+    // both halves of every prefix pair without it — found auditing this
+    // driller against the fix already made in its sibling (2026-08-20).
+    const FORM_OF_GLOSS = /\b(participle|verbal noun|gerund|imperative) of\b/i;
+
+    // VERB_PREFIXES' own sense text is written for the Reader's tap-word
+    // popup, where a qualifier reads fine alongside the whole surrounding
+    // explanation. Every entry there is already a short word/phrase except
+    // "meg" (Hungarian's single most common verb prefix, so this shows up
+    // constantly), whose sense is dense enough to read as broken quiz copy
+    // ("Which prefix means 'completive — often "up"/"through"/"done"'?").
+    // Overridden here for display only — engine/morphology/hungarian.js's
+    // own table is untouched, so the Reader's explanation is unaffected.
+    const QUIZ_SENSE_OVERRIDE = { meg: 'completive, up/through/done' };
+    function _quizSense(prefix) {
+        return QUIZ_SENSE_OVERRIDE[prefix.prefix] || prefix.sense;
+    }
+
     let _phase = PHASE.SETTINGS;
     let _container = null;
 
@@ -91,17 +114,17 @@ const HuPrefixDriller = (function () {
             const rank = Lexicon.frequencyRank(lemma);
             if (rank === null || rank >= MAX_LEMMA_RANK) continue;
             const prefixedSense = HungarianMorphology.verbSense(dict[lemma]);
-            if (!prefixedSense) continue;
+            if (!prefixedSense || FORM_OF_GLOSS.test(prefixedSense.en)) continue;
 
             for (const p of _prefixes) {
                 if (!lemma.startsWith(p.prefix) || lemma.length - p.prefix.length < 2) continue;
                 const bareLemma = lemma.slice(p.prefix.length);
                 const bareSense = HungarianMorphology.verbSense(dict[bareLemma]);
-                if (!bareSense) continue; // only pairs where the bare verb is ALSO a real headword
+                if (!bareSense || FORM_OF_GLOSS.test(bareSense.en)) continue; // only pairs where the bare verb is ALSO a real, genuine headword
                 _pairs.push({
                     prefix: p.prefix, sense: p.sense,
-                    bareLemma, bareGloss: bareSense.en,
-                    prefixedLemma: lemma, prefixedGloss: prefixedSense.en
+                    bareLemma, bareGloss: Lexicon.shortGloss(bareSense.en),
+                    prefixedLemma: lemma, prefixedGloss: Lexicon.shortGloss(prefixedSense.en)
                 });
                 break; // longest matching prefix wins, don't also try shorter ones
             }
@@ -121,7 +144,7 @@ const HuPrefixDriller = (function () {
         const options = _shuffled([prefix.prefix, ...decoys]);
         return {
             kind: 'multiple-choice',
-            question: `Which prefix means "${prefix.sense}"?`,
+            question: `Which prefix means "${_quizSense(prefix)}"?`,
             options,
             correct: options.indexOf(prefix.prefix)
         };
@@ -140,7 +163,7 @@ const HuPrefixDriller = (function () {
             question: `What does "${pair.prefixedLemma}" mean?`,
             options,
             correct: options.indexOf(pair.prefixedGloss),
-            explanation: `${pair.bareLemma} (${pair.bareGloss}) + "${pair.prefix}-" (${pair.sense})`
+            explanation: `${pair.bareLemma} (${pair.bareGloss}) + "${pair.prefix}-" (${_quizSense(pair)})`
         };
     }
 
@@ -150,7 +173,7 @@ const HuPrefixDriller = (function () {
     function _buildConstruction(pair) {
         return {
             kind: 'fill-blank',
-            sentence: `"${pair.bareLemma}" (${pair.bareGloss}) + "${pair.prefix}-" (${pair.sense}) = ______`,
+            sentence: `"${pair.bareLemma}" (${pair.bareGloss}) + "${pair.prefix}-" (${_quizSense(pair)}) = ______`,
             answer: pair.prefixedLemma,
             explanation: `${pair.prefixedLemma} = ${pair.prefixedGloss}`
         };

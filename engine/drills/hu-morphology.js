@@ -121,15 +121,28 @@ const HuMorphologyDriller = (function () {
         };
     }
 
-    function _decoyLabels(entry, pool, n) {
-        const label = entry.breakdown[0].label;
-        const candidates = pool.filter(e => e.breakdown[0].label !== label);
-        return _shuffled(candidates).slice(0, n).map(e => e.breakdown[0].label);
+    // Bug found 2026-08-20: this used to always read entry.breakdown[0] —
+    // fine for a single-suffix word, but _buildRecognition below samples a
+    // RANDOM row of entry.breakdown, and for a stacked word (the pool
+    // deliberately weights toward these) that's often the 2nd or 3rd
+    // suffix, not the 1st. Decoys ended up filtered/drawn against whatever
+    // the word's FIRST suffix meant, unrelated to the suffix the question
+    // actually asks about — e.g. a question about an instrumental case
+    // ending could get possessive-meaning decoys, since those just
+    // happened to be other entries' first suffix. Now takes the sampled
+    // row itself, and samples one row per OTHER entry (matching the
+    // original's "one decoy candidate per other entry" variety) rather
+    // than always their first row either.
+    function _decoyLabels(row, pool, n) {
+        const candidates = pool
+            .map(e => _sample(e.breakdown))
+            .filter(b => b.label !== row.label);
+        return _shuffled(candidates).slice(0, n).map(b => b.label);
     }
 
     function _buildRecognition(entry, pool) {
         const row = _sample(entry.breakdown);
-        const decoys = _decoyLabels(entry, pool, DECOY_COUNT);
+        const decoys = _decoyLabels(row, pool, DECOY_COUNT);
         if (decoys.length < DECOY_COUNT) return null;
         const options = _shuffled([row.label, ...decoys]);
         return {
