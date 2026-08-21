@@ -40,13 +40,21 @@ const BugReport = (function () {
             lang: (typeof Lang !== 'undefined' && Lang.code) ? Lang.code() : null,
             tab: null,
             lesson: null,
-            step: null
+            step: null,
+            reading: null
         };
 
         const activeTab = document.querySelector('.tab:not(.hidden)');
         if (activeTab) ctx.tab = activeTab.id;
 
-        if (typeof currentLesson !== 'undefined' && currentLesson) {
+        // currentLesson is a global that startLesson() sets and only
+        // startLesson()/closeLesson() ever change — it stays populated with
+        // whatever lesson was last opened even after navigating away to the
+        // Library or another tab without formally closing it. Only trust it
+        // when the lesson screen is the tab actually on screen right now,
+        // or a report from the Reader ends up describing an unrelated
+        // lesson from earlier in the session.
+        if (ctx.tab === 'lesson-screen' && typeof currentLesson !== 'undefined' && currentLesson) {
             ctx.lesson = { id: currentLesson.id, title: currentLesson.title };
             const steps = currentLesson.steps || [];
             const step = steps[currentStepIndex];
@@ -61,6 +69,13 @@ const BugReport = (function () {
             }
         }
 
+        if (ctx.tab === 'reader' && typeof Reader !== 'undefined' && Reader.currentStoryId) {
+            ctx.reading = {
+                id: Reader.currentStoryId,
+                title: Reader.currentStory ? Reader.currentStory.title : null
+            };
+        }
+
         return ctx;
     }
 
@@ -71,6 +86,7 @@ const BugReport = (function () {
                 ' (' + ctx.step.type + ')';
         }
         if (ctx.lesson) return ctx.lesson.title || ctx.lesson.id;
+        if (ctx.reading) return 'Reading: ' + (ctx.reading.title || ctx.reading.id);
         if (ctx.tab) return 'Tab: ' + ctx.tab;
         return 'Unknown location';
     }
@@ -95,6 +111,7 @@ const BugReport = (function () {
                 ', type `' + ctx.step.type + '`' +
                 (ctx.step.id ? ', id `' + ctx.step.id + '`' : '') + '\n';
         }
+        if (ctx.reading) body += '- Reading: ' + (ctx.reading.title || '') + ' (`' + ctx.reading.id + '`)\n';
         body += '- Reported: ' + ctx.timestamp + '\n';
         return body;
     }
