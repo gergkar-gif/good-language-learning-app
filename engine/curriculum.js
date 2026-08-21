@@ -35,6 +35,11 @@ const LEVEL_ORDER = ['A1', 'A2', 'B1', 'B2', 'C1'];
 let openLevel = null;
 let openUnit = null;
 
+// The unit whose Grammar Guide is open, or null. A fourth, deeper screen
+// than openUnit rather than a sibling of it — closing it goes back to that
+// unit's lesson list, not up to the unit list.
+let openGrammarGuideUnit = null;
+
 function levelIcon(level, extraClass) {
     return '<svg class="level-icon' + (extraClass ? ' ' + extraClass : '') + '" viewBox="0 0 100 100" aria-hidden="true">' +
         (LEVEL_ICONS[level] || LEVEL_ICONS.A1) + '</svg>';
@@ -95,6 +100,7 @@ async function renderCurriculum() {
 
     root.innerHTML = !openLevel ? levelListHtml()
         : !openUnit ? unitListHtml(openLevel)
+        : openGrammarGuideUnit ? await grammarGuideHtml(openLevel, openGrammarGuideUnit)
         : unitDetailHtml(openLevel, openUnit);
 
     attachCurriculumEvents(root);
@@ -502,12 +508,88 @@ function unitDetailHtml(level, unitId) {
                 <span class="ud-count">${stats.total} ${stats.total === 1 ? 'lesson' : 'lessons'}</span>
             </header>
 
+            <button class="ud-grammar-guide-row" data-open-grammar-guide="${UI.escape(unit.id)}">
+                ${(typeof Art !== 'undefined') ? Art.icon('grammar') : ''}
+                <span class="ud-grammar-guide-title">Grammar Guide</span>
+                <span class="ud-grammar-guide-arrow" aria-hidden="true">→</span>
+            </button>
+
             ${lessons.length ? `<div class="ud-dots">${dots}</div>` : ''}
 
             ${lessons.length
                 ? `<h3 class="ud-section">Unit path</h3>
                    <ol class="ud-lessons">${lessonRowsHtml(lessons, progress, unit.label)}</ol>`
                 : '<p class="text-muted level-empty">No lessons in this unit yet.</p>'}
+        </div>
+    `;
+}
+
+// Every grammar section referenced by every lesson in the unit, in teaching
+// order, with the file's own title (a real topic name, e.g. "Hungarian
+// Sounds") preferred over the section's generic "Grammar 1"/"Grammar 2".
+// Uses loadLesson()/loadContent() from engine/lessons.js — both already
+// cache by path, so re-opening a guide, or opening a lesson the guide
+// already touched, does not refetch.
+async function collectUnitGrammarTopics(unit) {
+    const topics = [];
+    for (const lessonRef of unit.lessons || []) {
+        const lesson = await loadLesson(lessonRef.id);
+        if (!lesson) continue;
+        for (const section of lesson.sections || []) {
+            if (section.type !== 'grammar' || !section.ref) continue;
+            const grammar = await loadContent(section.ref);
+            topics.push({
+                title: grammar.title || section.title || 'Grammar',
+                paragraphs: (grammar.sections || [])
+                    .filter(part => part.type === 'text' || part.type === 'tip')
+                    .map(part => ({ type: part.type, content: part.content || '' }))
+                    .filter(part => part.content)
+            });
+        }
+    }
+    return topics;
+}
+
+// A quick-reference summary, not a re-teaching of the unit: text and tips
+// only, in the same markup the lesson's own grammar screen uses (.lsn-text/
+// .lsn-tip), so the prose reads identically in both places. Tables and
+// examples are left out on purpose — this is meant to be skimmed in under a
+// minute, and full paradigms/vocab already live in the lesson itself and in
+// Decks respectively.
+async function grammarGuideHtml(level, unitId) {
+    const data = window._curriculumData.levels[level];
+    const unit = unitById(data, unitId);
+    if (!unit) return unitListHtml(level);
+
+    const topics = await collectUnitGrammarTopics(unit);
+    const subtitle = topics.map(t => UI.escape(t.title)).join(' · ');
+
+    const list = topics.map((topic, i) => `
+        <li class="gg-topic">
+            <span class="gg-topic-num">${i + 1}</span>
+            <div class="gg-topic-body">
+                <h4 class="gg-topic-title">${UI.escape(topic.title)}</h4>
+                ${topic.paragraphs.map(p => p.type === 'tip'
+                    ? `<div class="lsn-tip"><strong>Tip</strong><p>${escMd(p.content)}</p></div>`
+                    : `<p class="lsn-text">${escMd(p.content)}</p>`
+                ).join('')}
+            </div>
+        </li>
+    `).join('');
+
+    return `
+        <div class="grammar-guide" data-level="${level}" data-unit="${UI.escape(unit.id)}">
+            <button class="level-back" data-close-grammar-guide="1">← ${UI.escape(unit.title)}</button>
+
+            <header class="ud-head">
+                <h2 class="ud-title">Grammar Guide</h2>
+                ${subtitle ? `<p class="gg-subtitle">${subtitle}</p>` : ''}
+            </header>
+
+            ${topics.length
+                ? `<h3 class="ud-section">What you'll encounter</h3>
+                   <ol class="gg-topics">${list}</ol>`
+                : '<p class="text-muted level-empty">No grammar topics in this unit yet.</p>'}
         </div>
     `;
 }
@@ -534,6 +616,7 @@ function attachCurriculumEvents(root) {
         if (e.target.closest('[data-close-level]')) {
             openLevel = null;
             openUnit = null;
+            openGrammarGuideUnit = null;
             renderCurriculum();
             return;
         }
@@ -558,6 +641,20 @@ function attachCurriculumEvents(root) {
 
         if (e.target.closest('[data-close-unit]')) {
             openUnit = null;
+            openGrammarGuideUnit = null;
+            renderCurriculum();
+            return;
+        }
+
+        const openGuide = e.target.closest('[data-open-grammar-guide]');
+        if (openGuide) {
+            openGrammarGuideUnit = openGuide.getAttribute('data-open-grammar-guide');
+            renderCurriculum();
+            return;
+        }
+
+        if (e.target.closest('[data-close-grammar-guide]')) {
+            openGrammarGuideUnit = null;
             renderCurriculum();
             return;
         }

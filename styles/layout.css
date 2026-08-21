@@ -1125,6 +1125,86 @@
   color: var(--text);
 }
 
+/* ---- Grammar Guide ---- */
+/* A dashed-border row matching .level-test-row's "opens a related sub-view"
+   treatment, so both entry points into a unit's extra material read as the
+   same kind of thing. */
+.ud-grammar-guide-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  text-align: left;
+  margin-top: var(--space-4);
+  padding: 14px 18px;
+  background: var(--bg);
+  border: 1px dashed var(--border);
+  border-radius: 8px;
+}
+
+.ud-grammar-guide-row:hover {
+  border-color: var(--primary);
+  border-style: solid;
+}
+
+.ud-grammar-guide-title {
+  font-family: var(--font-display);
+  font-size: 16px;
+  color: var(--primary);
+}
+
+.ud-grammar-guide-arrow {
+  margin-left: auto;
+  color: var(--muted);
+}
+
+/* The unit's grammar topics as one line, up top — a preview of what the
+   numbered list below expands on, in LingoDeer's Learning-Tips style. */
+.gg-subtitle {
+  margin-top: 6px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.gg-topics {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.gg-topic {
+  display: flex;
+  gap: 14px;
+  padding: var(--space-4) 0;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.gg-topic:last-child { border-bottom: none; }
+
+.gg-topic-num {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border);
+  font-family: var(--font-display);
+  font-size: 13px;
+  color: var(--primary);
+}
+
+.gg-topic-body { min-width: 0; }
+
+.gg-topic-title {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--text);
+  margin: 0 0 4px;
+}
+
 /* .level-hero, .level-detail-head/-titles/-progress, .progress-ring(-label)
    and .lesson-row* all removed 2026-08-14 — superseded by .unit-path-head
    (level list) and .ud-* (unit detail) earlier the same day, and no longer
