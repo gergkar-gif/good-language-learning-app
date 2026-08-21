@@ -12,10 +12,19 @@ inline note.
 - Consolidations: rebuild to ~20 pure exercises each — 5 multiple-choice, then
   15 production, testing the unit's grammar and vocab. *(not started — large
   content-authoring task across 29 consolidation files)*
-- Unit-at-a-glance: LingoDeer-style page (numbered index + expanded points
-  below), auto-assembled from each lesson's existing `grammar` sections. No
-  vocab section — words already live in SRS/Decks by topic. *(not started —
-  new feature, needs a renderer + a nav entry per unit)*
+- [x] Unit-at-a-glance, renamed "Grammar Guide": LingoDeer-style page
+  (numbered index + expanded points below), auto-assembled from each
+  lesson's existing `grammar` sections. No vocab section — words already
+  live in SRS/Decks by topic. **Built 2026-08-21**: new screen in
+  `engine/curriculum.js`, opened via a button at the top of a unit's lesson
+  list (`unitDetailHtml`). Walks every lesson in the unit, collects each
+  `grammar`-type section's referenced file, and renders a "Grammar Guide"
+  header with a one-line dot-separated topic preview, then a "What you'll
+  encounter" numbered list — each entry the topic's real title plus its
+  text/tip prose (reusing `.lsn-text`/`.lsn-tip`, the same markup the
+  lesson's own grammar screen uses). Tables and worked examples are left
+  out deliberately to keep it skimmable. Shared engine file — works for
+  Spanish too; verified live for both languages.
 
 ## Cross-cutting (apply everywhere)
 
