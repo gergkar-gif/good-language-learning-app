@@ -809,7 +809,7 @@ const Decks = (function () {
                     ${s.missing ? `<button class="dk-secondary" data-add-deck="${esc(deck.id)}">
                         Add ${s.missing} to review</button>` : ''}
                     ${isCustom ? `<button class="dk-secondary" data-edit-deck="${esc(deck.id)}">Edit deck</button>` : ''}
-                    ${words.length > 1 ? `<button class="dk-secondary" data-shuffle-words="1">🔀 Shuffle</button>` : ''}
+                    ${words.length > 1 ? `<button class="dk-secondary" data-shuffle-words="1">${Art.icon('shuffle')} Shuffle</button>` : ''}
                 </div>
             </div>
             <ul class="dk-words${removable ? ' dk-words-removable' : ''}">${rows || '<li class="dk-empty">No words yet.</li>'}</ul>

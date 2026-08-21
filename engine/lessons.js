@@ -785,7 +785,6 @@ const stepRenderers = {
             <p class="lsn-question">Build the sentence.</p>
             <div id="build-target" class="lsn-target">${buildTargetHtml()}</div>
             <div id="build-bank" class="lsn-options lsn-tiles">${buildBankHtml()}</div>
-            <button class="lsn-check lsn-secondary" onclick="lessonResetBuild()">Reset</button>
             ${feedbackHtml()}
         `;
     },
@@ -1222,12 +1221,6 @@ function lessonAddTile(tileIndex) {
 function lessonRemoveTile(position) {
     if (stepState.solved) return;
     stepState.built.splice(position, 1);
-    redrawBuild();
-}
-
-function lessonResetBuild() {
-    if (stepState.solved) return;
-    stepState.built = [];
     redrawBuild();
 }
 

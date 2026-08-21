@@ -211,6 +211,15 @@ const Art = (function () {
             <circle class="ink-line" cx="12" cy="12" r="8"/>
             <circle class="ink-line" cx="12" cy="12" r="3"/>
             <line class="ink-line" x1="12" y1="4" x2="12" y2="1.5"/>
+        `,
+
+        // Shuffle — two strands crossing, each ending in an arrowhead: order
+        // going in, a different order coming out.
+        shuffle: `
+            <polyline class="ink-line" points="3 17 8 17 20 6"/>
+            <polyline class="ink-line" points="15 6 20 6 20 11"/>
+            <polyline class="ink-line" points="3 7 8 7 20 18"/>
+            <polyline class="ink-line" points="15 18 20 18 20 13"/>
         `
     };
 
