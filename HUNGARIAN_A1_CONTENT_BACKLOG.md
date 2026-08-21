@@ -70,6 +70,37 @@ inline note.
   intentional ✓/✗ text-glyph convention, which is a different and unrelated
   pattern).
 
+## Curriculum-wide gaps (found 2026-08-21, auditing per user request)
+
+- [ ] Vowel harmony has no dedicated treatment anywhere in A1 — confirmed by
+  grep: it only ever appears as a one-sentence aside inside unrelated
+  lessons (first at `a1-22-b-gr.json`, a Plural Nouns page: "it follows
+  vowel harmony: back words take -ok, front words take -ek"). Nothing ever
+  explains what makes a word "back" or "front", or shows the pattern as its
+  own concept. Matches the existing Unit 5 backlog note below ("it just
+  drops in vowel harmony with no setup... maybe dedicate a full grammar
+  page to vowel harmony in this unit") — that's the natural place to build
+  it properly, since it's the earliest point vowel-harmonized suffixes
+  (plurals) are taught.
+- [ ] Definite/indefinite conjugation is mislabeled, not just under-taught.
+  `a1-61-a-gr.json` (Unit 13) is titled "Present-tense indefinite
+  conjugation" but only explains ordinary present-tense endings
+  (-ok/-ek/-ök) — it never contrasts against the *definite* conjugation the
+  name implies, because that requires the accusative case (definite
+  objects), which isn't taught until Unit 21. Right now the course uses
+  "indefinite" as a label with nothing to be indefinite *against*.
+  Needs a real design decision: either (a) rename Unit 13's page to drop
+  the "indefinite" framing until it can be paired properly, and build the
+  actual definite/indefinite contrast as a dedicated pair of pages once
+  Unit 21's accusative work is done, or (b) something else — flag for
+  discussion once other units are further along, since A1 doesn't have a
+  natural home for it yet and Hungarian, this course's second language,
+  doesn't currently extend past A1.
+- [ ] Hungarian sounds: covered in Unit 1 (see below, fixed 2026-08-21) —
+  re-confirm this still reads as complete once the rest of the course is
+  reviewed, per the user's "have their day in the sun" ask covering sounds
+  alongside vowel harmony and def/indef conjugation.
+
 ## HUN A1
 
 ### Unit 1
