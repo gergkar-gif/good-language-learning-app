@@ -2789,10 +2789,15 @@
   margin: 0 0 8px;
 }
 
-.br-hint {
-  font-size: 12px;
+.br-status {
+  font-size: 13px;
   color: var(--muted);
-  margin: 0 0 20px;
+  min-height: 18px;
+  margin: 0 0 12px;
+}
+
+.br-status a {
+  color: var(--primary);
 }
 
 .br-actions {
