@@ -371,6 +371,32 @@ const Home = (function () {
             const go = e.target.closest('[data-go]');
             if (go) goTab(go.getAttribute('data-go'));
         });
+
+        host.addEventListener('change', e => {
+            const select = e.target.closest('#hm-lang-select');
+            if (!select || select.value === Lang.code()) return;
+            Lang.set(select.value);
+            location.reload();
+        });
+    }
+
+    // Which course the learner is studying. Lives at the top of Home rather
+    // than buried in My Journey — a course choice isn't a reading of
+    // progress, it's the frame everything else on screen (including Home
+    // itself) is drawn inside, so it belongs where the learner lands first.
+    // Only courses with real content are offered; see Lang.available() in
+    // engine/lang.js.
+    function courseBlock() {
+        const options = Lang.available()
+            .map(code => `<option value="${code}"${code === Lang.code() ? ' selected' : ''}>${esc(Lang.nameFor(code))}</option>`)
+            .join('');
+
+        return `
+            <div class="jr-course">
+                <label class="jr-course-label" for="hm-lang-select">Course</label>
+                <select id="hm-lang-select" class="jr-lang-select" aria-label="Course">${options}</select>
+            </div>
+        `;
     }
 
     // ----------------------------------------
@@ -387,6 +413,7 @@ const Home = (function () {
         const reading = await nextStory(step ? step.level : null);
 
         host.innerHTML = `
+            ${courseBlock()}
             ${continueCard(step)}
             <div class="hm-doors">
                 ${reviewDoor(deck)}
