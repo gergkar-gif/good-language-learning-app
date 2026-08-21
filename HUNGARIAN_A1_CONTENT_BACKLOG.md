@@ -269,6 +269,20 @@ inline note.
   One unrelated bug found and fixed in passing: `a1-15-consolidation-7`
   had the exact same malformed `sentence-order` schema bug as Unit 2's
   consolidation (see above) — converted to multiple-choice.
+  - [x] **Much more serious bug found and fixed later, 2026-08-21**: while
+    building unit-grouped decks, found that Unit 3's 5 lessons plus their
+    grammar and vocabulary files (20 files total) still carried their OLD
+    internal `id` fields from the earlier-session Unit 2/3 renumbering fix —
+    only the filenames were updated at the time, not the ids embedded
+    inside the JSON. Since the Learn tab starts a lesson by id, not
+    filename, every one of Unit 3's lessons was actually loading and
+    playing Unit 2's content, and completing either unit would have marked
+    the other complete too (both claimed the same ids). This was not
+    caught by the "checked to be fine" pass above, which only compared
+    content/title/vocab coherence, not id correctness. Confirmed via a
+    full-corpus sweep that no other lesson/grammar/vocab file in A1 has
+    the same mismatch. All 20 fixed; verified live that Unit 3 lessons now
+    load their own real content.
 
 ### Unit 4
 - [x] Not a wrong-topic mixup like Unit 2 — grammar/vocab/titles all
