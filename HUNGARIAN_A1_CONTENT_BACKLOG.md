@@ -112,8 +112,17 @@ inline note.
     fixed in Units 2 and 4. Needs its own pass, same scope as those units'
     fixes: each lesson should teach something distinct that actually
     matches its own title.
-- [x] Hungarian sounds: re-confirmed complete (see Unit 1 fixes above) —
-  no further gap found.
+- [x] Hungarian sounds: user asked to re-verify directly — a careful
+  re-audit against the full alphabet found it was NOT actually complete as
+  first claimed. **Fixed 2026-08-21**: two real gaps — `c` (plain, "ts" as
+  in "cats", distinct from `cs`) and `j` (sounds like English "y", not
+  English "j" — a genuine gotcha) were both missing entirely from the
+  Consonant Sounds page. Also the long-vowel table only showed 5 of the 7
+  pairs (á and ú had no example row). Added `c`→cukor, `j`→jó (reusing
+  already-taught vocabulary), and á→ház, ú→kút to close both gaps.
+  `dz`/`dzs` deliberately left out — genuinely rare, appear in a handful of
+  loanwords, not standard even in hungarianreference.com-style A1
+  coverage. Verified live.
 
 ## HUN A1
 
