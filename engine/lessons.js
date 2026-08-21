@@ -1389,11 +1389,23 @@ function lessonSetSrsChoice(index, value) {
     });
 }
 
-// Where a card came from, in the form the Decks tab uses for its ids, so a
-// word added during Lesson 4 is recognisably part of Lesson 4's deck.
-// 'lesson.a1.03a' -> 'lesson:a1-03a'.
+// Where a card came from, in the form the Decks tab uses for its ids — so a
+// word added during a lesson is recognisably part of that lesson's *unit*
+// deck (decks.json groups by unit, not by individual lesson; see
+// build_decks() in build-manifest.py). Falls back to the old per-lesson
+// stem if the curriculum data needed to find the unit isn't loaded, so a
+// card still gets a sensible-looking source either way.
 function lessonDeckId() {
     if (!currentLesson || !currentLesson.id) return 'lesson';
+
+    const data = window._curriculumData;
+    const level = data && data.levels && data.levels[currentLesson.level];
+    if (level) {
+        const unit = (level.units || []).find(u =>
+            (u.lessons || []).some(l => l.id === currentLesson.id));
+        if (unit) return 'lesson:' + unit.id;
+    }
+
     return 'lesson:' + currentLesson.id.replace(/^lesson\./, '').split('.').join('-');
 }
 

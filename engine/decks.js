@@ -24,12 +24,12 @@ const Decks = (function () {
 
     const KIND_ORDER = ['lesson', 'topic', 'frequency'];
     const KIND_LABEL = {
-        lesson: 'Lesson decks',
+        lesson: 'Unit decks',
         topic: 'Topic decks',
         frequency: 'Frequency decks'
     };
     const KIND_BLURB = {
-        lesson: 'The words each lesson teaches.',
+        lesson: 'The words each unit teaches.',
         topic: 'Everything the course says about one subject.',
         get frequency() {
             const lang = (typeof Lang !== 'undefined') ? Lang.name() : 'Spanish';

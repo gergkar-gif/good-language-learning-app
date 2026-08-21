@@ -769,7 +769,27 @@ def short_gloss(text):
     return first
 
 
-def build_decks(lang="es"):
+def _lesson_id_to_unit(curriculum):
+    """lesson id -> {id, title, label, level} for every lesson in a built
+    curriculum, so decks can be grouped exactly the way the Learn tab
+    already groups the same lessons — one source of truth for "what unit is
+    this lesson in" instead of re-deriving it from filenames a second way."""
+    index = {}
+    if not curriculum:
+        return index
+    for level_id, level in curriculum.get("levels", {}).items():
+        for unit in level.get("units", []):
+            for lesson in unit.get("lessons", []):
+                index[lesson["id"]] = {
+                    "id": unit["id"],
+                    "title": unit["title"],
+                    "label": unit["label"],
+                    "level": level_id
+                }
+    return index
+
+
+def build_decks(lang="es", curriculum=None):
     """Every deck the Decks tab can offer, built from content that already
     exists rather than maintained by hand.
 
@@ -780,14 +800,24 @@ def build_decks(lang="es"):
 
     Words are written once into a shared table and decks refer to them by
     lemma, because a word that belongs to three decks should not be stored
-    three times."""
+    three times.
+
+    "Lesson" decks are grouped by unit, not by individual lesson file — a
+    single lesson's vocabulary (4-8 words) was too thin to be a useful review
+    deck on its own; a unit's (5-6 lessons pooled) lands close to the ~20
+    words a deck is meant to hold. Unit membership comes from the same
+    curriculum structure the Learn tab uses, not re-derived from filenames."""
     base = BASE_LESSONS / lang
     vocab_dir = base / "vocabulary"
     if not vocab_dir.exists():
         return None
 
+    if curriculum is None:
+        curriculum = build_curriculum(lang)
+    lesson_to_unit = _lesson_id_to_unit(curriculum)
+
     words = {}          # lemma -> {en, pos}
-    lesson_decks, by_theme = [], {}
+    by_unit, unit_order, by_theme = {}, [], {}
 
     def remember(lemma, translation, pos):
         if lemma not in words:
@@ -811,30 +841,45 @@ def build_decks(lang="es"):
                 continue
 
             lesson_key = data.get("lesson", f.stem.replace("-voc", ""))
+            lesson_id = "lesson." + lesson_key.replace("-", ".")
+            unit = lesson_to_unit.get(lesson_id)
 
-            # A vocabulary file's title names the story; the deck should carry
-            # the lesson's own title, which is what the learner picked from.
-            lesson_file = base / "lessons" / level_dir.name / (lesson_key + ".json")
-            lesson_title = data.get("title", lesson_key)
-            if lesson_file.exists():
-                try:
-                    lesson_title = json.loads(
-                        lesson_file.read_text(encoding="utf-8")).get("title", lesson_title)
-                except (OSError, json.JSONDecodeError):
-                    pass
+            # A lesson whose unit can't be found (missing from the
+            # curriculum, e.g. a stray vocab file with no matching lesson)
+            # still gets a deck of its own rather than being silently
+            # dropped — same fallback shape, just scoped to that one lesson.
+            if unit:
+                key, name, label, level = unit["id"], unit["title"], unit["label"], unit["level"]
+            else:
+                key = lesson_key
+                name = data.get("title", lesson_key)
+                label = lesson_key.split("-", 1)[-1]
+                level = level_dir.name.upper()
 
-            lesson_decks.append({
-                "id": "lesson:" + lesson_key,
-                "kind": "lesson",
-                "name": lesson_title,
-                "label": lesson_key.split("-", 1)[-1],
-                "level": level_dir.name.upper(),
-                "lemmas": lemmas
-            })
+            if key not in by_unit:
+                by_unit[key] = {"name": name, "label": label, "level": level, "lemmas": [], "seen": set()}
+                unit_order.append(key)
+            bucket = by_unit[key]
+            for lemma in lemmas:
+                if lemma not in bucket["seen"]:
+                    bucket["seen"].add(lemma)
+                    bucket["lemmas"].append(lemma)
 
             theme = data.get("theme")
             if theme:
                 by_theme.setdefault(theme, []).extend(lemmas)
+
+    lesson_decks = []
+    for key in unit_order:
+        bucket = by_unit[key]
+        lesson_decks.append({
+            "id": "lesson:" + key,
+            "kind": "lesson",
+            "name": bucket["name"],
+            "label": bucket["label"],
+            "level": bucket["level"],
+            "lemmas": bucket["lemmas"]
+        })
 
     # Topic decks pool every lesson that teaches the same theme, so "City &
     # places" stays one deck however many lessons contribute to it.
@@ -987,6 +1032,9 @@ def main():
     # Build curriculum.json for each language — this is what the Learn tab
     # actually reads (engine/curriculum.js, engine/init.js), generated
     # directly from each lesson file rather than hand-maintained separately.
+    # Kept around per language so the decks pass below can group by the same
+    # units without rebuilding the curriculum a second time.
+    curricula = {}
     for lang in ["es", "fr", "hu"]:
         lessons_dir = BASE_LESSONS / lang / "lessons"
         curriculum_dir = BASE_LESSONS / lang / "curriculum"
@@ -997,6 +1045,7 @@ def main():
             print(f"Skipping curriculum for {lang}: no {curriculum_dir} folder yet")
             continue
         curriculum = build_curriculum(lang)
+        curricula[lang] = curriculum
         with open(curriculum_dir / "curriculum.json", "w", encoding='utf-8') as f:
             json.dump(curriculum, f, indent=2, ensure_ascii=False)
         total_units = sum(len(lvl['units']) for lvl in curriculum['levels'].values())
@@ -1005,7 +1054,7 @@ def main():
 
     # Decks: named word lists over the single card store
     for lang in ["es", "fr", "hu"]:
-        decks = build_decks(lang)
+        decks = build_decks(lang, curriculum=curricula.get(lang))
         if not decks:
             continue
         out_dir = BASE_LESSONS / lang / "decks"
