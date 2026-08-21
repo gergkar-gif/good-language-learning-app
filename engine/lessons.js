@@ -939,7 +939,6 @@ const stepRenderers = {
                 `;
                 }).join('')}
             </div>
-            <button class="lsn-check" id="srs-add-btn" onclick="lessonSaveSrsChoices()">Save</button>
             ${feedbackHtml()}
         `;
     },
@@ -1024,6 +1023,14 @@ function renderStep() {
 
 function nextLessonStep() {
     if (stepState.gated && !stepState.solved) return;
+
+    // The srs step used to need its own "Save" tap before Continue did
+    // anything useful — easy to miss, since Continue itself was already
+    // enabled, so a learner could leave the choices on screen unsaved.
+    // Saving here means Continue always commits them.
+    if (stepState.sourceStep && stepState.sourceStep.type === 'srs') {
+        lessonSaveSrsChoices();
+    }
 
     currentStepIndex++;
     if (currentStepIndex < currentLesson.steps.length) {
@@ -1411,7 +1418,6 @@ function lessonDeckId() {
 
 function lessonSaveSrsChoices() {
     if (!stepState.cards) return;
-    let toReview = 0, toKnown = 0;
     const source = lessonDeckId();
 
     Object.keys(stepState.srsChoices || {}).forEach(key => {
@@ -1419,8 +1425,7 @@ function lessonSaveSrsChoices() {
         if (!card) return;
 
         if (stepState.srsChoices[key] === 'known') {
-            if (typeof addKnownWord === 'function'
-                && addKnownWord(card.lemma, card.translation, card.pos, source)) toKnown++;
+            if (typeof addKnownWord === 'function') addKnownWord(card.lemma, card.translation, card.pos, source);
             return;
         }
 
@@ -1432,19 +1437,10 @@ function lessonSaveSrsChoices() {
             source: source,
             added: new Date().toISOString()
         }, newCardSchedule()));
-        toReview++;
     });
 
     saveDeck();
     if (typeof updateReaderWordColors === 'function') updateReaderWordColors();
-
-    const btn = document.getElementById('srs-add-btn');
-    if (btn) {
-        btn.textContent = '✓ Saved (' + toReview + ' to review, ' + toKnown + ' known)';
-        btn.disabled = true;
-    }
-    document.querySelectorAll('.lsn-srs-opt').forEach(opt => { opt.disabled = true; });
-    setFeedback(true, 'You can move words between review and My Dictionary any time from Decks.');
 }
 
 // Legacy quiz handler — kept for old HTML lessons. Green for correct, same
