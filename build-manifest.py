@@ -683,10 +683,26 @@ def build_curriculum(lang="es"):
 
 FREQUENCY_BANDS = [(1, 100), (101, 250), (251, 500), (501, 1000)]
 
-# The dictionary's first sense for a handful of very common words is the name
-# of the letter — 'de' glossed as "letter: d" — because that entry sorts first.
-# Those are exactly the words a frequency deck opens with, so they are given
-# the sense a learner actually needs.
+# Where each language's frequency deck sources from. The ranked list and the
+# dictionary both have to be for the same language — es's ranks/dictionary
+# have always lived in these locations (not under content/es/), while hu's
+# ranks were generated straight into content/hu/indexes/ alongside its other
+# indexes. Missing entirely for a language just skips its frequency decks,
+# the same as a missing file already did before this map existed.
+FREQUENCY_SOURCES = {
+    "es": (ROOT / "generated" / "indexes" / "frequency.json",
+           ROOT / "imports" / "dictionary" / "spanish-en.json"),
+    "hu": (ROOT / "content" / "hu" / "indexes" / "frequency.json",
+           ROOT / "imports" / "dictionary" / "hungarian-en.json"),
+}
+
+# The dictionary's first sense for a handful of very common Spanish words is
+# the name of the letter — 'de' glossed as "letter: d" — because that entry
+# sorts first. Those are exactly the words a frequency deck opens with, so
+# they are given the sense a learner actually needs. Spanish-only: these are
+# overrides for specific Spanish dictionary entries, applied by lemma, and a
+# handful of them (a, e, o, su, mi, tu...) collide with unrelated Hungarian
+# words that happen to share the same spelling.
 FREQUENCY_GLOSS = {
     # Letter names, where the dictionary's first sense is the letter itself.
     "de": "of, from", "a": "to, at", "y": "and", "o": "or", "e": "and",
@@ -837,35 +853,50 @@ def build_decks(lang="es"):
             "lemmas": lemmas
         })
 
-    # Frequency decks are the most common words in Spanish, full stop — not
-    # the course's words sorted by frequency, which was the earlier mistake:
-    # it produced a deck called "Top 100 words" holding seventeen, none of
-    # them the actual top hundred. Translations come from the dictionary.
+    # Frequency decks are the most common words in the language, full stop —
+    # not the course's words sorted by frequency, which was the earlier
+    # mistake: it produced a deck called "Top 100 words" holding seventeen,
+    # none of them the actual top hundred. Translations come from the
+    # dictionary. Every language builds from its own ranked list and its own
+    # dictionary — mismatching them (e.g. Hungarian ranks against the
+    # Spanish dictionary) was the later mistake this replaced: it silently
+    # produced Spanish frequency decks for every language.
     frequency_decks = []
-    ranks_path = ROOT / "generated" / "indexes" / "frequency.json"
-    dict_path = ROOT / "imports" / "dictionary" / "spanish-en.json"
+    sources = FREQUENCY_SOURCES.get(lang)
 
-    if ranks_path.exists() and dict_path.exists():
+    if sources and sources[0].exists() and sources[1].exists():
+        ranks_path, dict_path = sources
         try:
             ranked = json.loads(ranks_path.read_text(encoding="utf-8"))
             lexicon = json.loads(dict_path.read_text(encoding="utf-8"))
         except (OSError, json.JSONDecodeError):
             ranked, lexicon = [], {}
 
+        gloss_overrides = FREQUENCY_GLOSS if lang == "es" else {}
+
         for low, high in FREQUENCY_BANDS:
             band = []
             for lemma in ranked[low - 1:high]:
-                gloss = FREQUENCY_GLOSS.get(lemma)
+                gloss = gloss_overrides.get(lemma)
                 pos = "unknown"
 
+                # spanish-en.json stores one sense per lemma (a dict); the
+                # Hungarian dictionary stores several (a list, ordered by
+                # source frequency, not usefulness — "a" 's own first sense
+                # is fine, but plenty of others open on an "alternative
+                # form of..." or similarly useless entry). Normalise to a
+                # list either way and take the first sense that isn't junk.
                 entry = lexicon.get(lemma)
-                if entry:
-                    pos = entry.get("type", "unknown")
-                    if not gloss:
-                        candidate = short_gloss(entry.get("en"))
-                        # A description of the word is not a translation.
-                        if candidate and not JUNK_GLOSS.match(candidate):
-                            gloss = candidate
+                senses = entry if isinstance(entry, list) else ([entry] if entry else [])
+                for sense in senses:
+                    pos = sense.get("type", "unknown")
+                    if gloss:
+                        break
+                    candidate = short_gloss(sense.get("en"))
+                    # A description of the word is not a translation.
+                    if candidate and not JUNK_GLOSS.match(candidate):
+                        gloss = candidate
+                        break
                 if not gloss:
                     continue
 
