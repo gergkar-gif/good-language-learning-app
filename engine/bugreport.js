@@ -1,26 +1,27 @@
 // ============================================
 // BUG REPORT
 // ============================================
-// A floating flag button, present on every screen, that files a GitHub
-// issue with whatever the app can tell about where the learner was standing
-// — lesson, step, language, tab — plus an optional note. Built so the two
-// people testing this app (not yet the public) can flag a mistake the
+// A floating flag button, present on every screen, that opens a GitHub
+// "new issue" page prefilled with whatever the app can tell about where the
+// learner was standing — lesson, step, language, tab — plus an optional
+// note. Built so the two people testing this app can flag a mistake the
 // instant they see it instead of writing it up by hand afterward.
 //
-// The GitHub token below is embedded in this public, client-side file on
-// purpose — a deliberate, discussed tradeoff for a small trusted audience,
-// not an oversight. It is a fine-grained personal access token scoped to
-// ONLY this repository and ONLY "Issues: Read and write" — nothing else it
-// could be used for if someone found it. Revisit this (move to a proxied
-// backend, or gate the button behind a shared passphrase) before this app
-// has any audience beyond people the owner already trusts. See
-// BUG_REPORT_SETUP.md for how the token was created and how to rotate it.
+// No token, on purpose: an earlier version POSTed straight to the GitHub
+// API with an embedded fine-grained PAT. GitHub's own push protection
+// rejected that commit outright — it scans for GitHub's own token formats
+// and blocks them from ever landing in a repo, and would very likely have
+// revoked the token anyway once its secret scanner found the same string
+// served in plaintext by the live GitHub Pages site. There is no client-
+// side way to hide a token from GitHub's own scanners in a public repo, so
+// this uses GitHub's prefilled-issue URL scheme instead: no secret exists
+// anywhere, but the reporter needs to be logged into GitHub and click
+// "Submit new issue" themselves once the page opens.
 
 const BugReport = (function () {
     'use strict';
 
     const GITHUB_REPO = 'gergkar-gif/good-language-learning-app';
-    const GITHUB_TOKEN = 'PASTE_YOUR_FINE_GRAINED_TOKEN_HERE';
     const LABEL = 'bug-report';
 
     let open = false;
@@ -101,24 +102,18 @@ const BugReport = (function () {
     // ----------------------------------------
     // SUBMIT
     // ----------------------------------------
-    async function submit(note) {
+    // Opens GitHub's own "new issue" form, prefilled — this is a plain link,
+    // not a network call, so there is nothing to fail except a popup
+    // blocker. The reporter still has to click "Submit new issue" on
+    // GitHub's page; this only saves them typing it.
+    function submitUrl(note) {
         const ctx = captureContext();
-        const res = await fetch('https://api.github.com/repos/' + GITHUB_REPO + '/issues', {
-            method: 'POST',
-            headers: {
-                'Authorization': 'Bearer ' + GITHUB_TOKEN,
-                'Accept': 'application/vnd.github+json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                title: formatTitle(ctx),
-                body: formatBody(ctx, note),
-                labels: [LABEL]
-            })
+        const params = new URLSearchParams({
+            title: formatTitle(ctx),
+            body: formatBody(ctx, note),
+            labels: LABEL
         });
-
-        if (!res.ok) throw new Error('GitHub API responded ' + res.status);
-        return res.json();
+        return 'https://github.com/' + GITHUB_REPO + '/issues/new?' + params.toString();
     }
 
     // ----------------------------------------
@@ -158,7 +153,7 @@ const BugReport = (function () {
                         <button class="br-close" id="br-close" aria-label="Close">&times;</button>
                     </div>
                     <p class="br-context">${esc(summaryLine(ctx))}</p>
-                    <div id="br-status" class="br-status" aria-live="polite"></div>
+                    <p class="br-hint">Opens a prefilled GitHub issue in a new tab — you'll need to be signed in to submit it.</p>
                     ${!noteVisible ? `
                         <div class="br-actions">
                             <button class="br-primary" id="br-quick">Report issue</button>
@@ -167,7 +162,7 @@ const BugReport = (function () {
                     ` : `
                         <textarea id="br-note" class="br-note" placeholder="What's wrong here?" autofocus></textarea>
                         <div class="br-actions">
-                            <button class="br-primary" id="br-submit-note">Submit</button>
+                            <button class="br-primary" id="br-submit-note">Open on GitHub</button>
                             <button class="br-secondary" id="br-cancel-note">Cancel</button>
                         </div>
                     `}
@@ -179,21 +174,11 @@ const BugReport = (function () {
         if (textarea) textarea.focus();
     }
 
-    async function handleSubmit(note) {
-        const status = document.getElementById('br-status');
-        const actions = document.querySelector('.br-actions');
-        if (actions) actions.style.display = 'none';
-        if (status) status.textContent = 'Sending…';
-
-        try {
-            await submit(note);
-            if (status) status.textContent = 'Reported — thank you.';
-            setTimeout(() => { open = false; noteVisible = false; render(); }, 1100);
-        } catch (err) {
-            console.error('Bug report failed:', err);
-            if (status) status.textContent = 'Could not send — check your connection and try again.';
-            if (actions) actions.style.display = '';
-        }
+    function goToGithub(note) {
+        window.open(submitUrl(note), '_blank', 'noopener');
+        open = false;
+        noteVisible = false;
+        render();
     }
 
     function wire(host) {
@@ -211,7 +196,7 @@ const BugReport = (function () {
                 return;
             }
             if (e.target.closest('#br-quick')) {
-                handleSubmit('');
+                goToGithub('');
                 return;
             }
             if (e.target.closest('#br-write-in')) {
@@ -226,7 +211,7 @@ const BugReport = (function () {
             }
             if (e.target.closest('#br-submit-note')) {
                 const note = document.getElementById('br-note');
-                handleSubmit(note ? note.value : '');
+                goToGithub(note ? note.value : '');
                 return;
             }
         });
