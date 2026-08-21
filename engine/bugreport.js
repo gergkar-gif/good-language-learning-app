@@ -25,7 +25,7 @@
 const BugReport = (function () {
     'use strict';
 
-    const WORKER_URL = 'PASTE_YOUR_WORKER_URL_HERE';
+    const WORKER_URL = 'https://parlour-bug-report.gergkar.workers.dev';
     const GITHUB_REPO = 'gergkar-gif/good-language-learning-app';
     const LABEL = 'bug-report';
 
