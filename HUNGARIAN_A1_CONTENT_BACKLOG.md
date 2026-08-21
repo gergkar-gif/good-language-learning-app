@@ -179,26 +179,73 @@ inline note.
   introduce a lookup gap.
 
 ### Unit 2
-- [ ] L1 S9: needs a clue.
-- [ ] L1: the second tip shouldn't go on about 'reggelente' — should instead
-  explain 'délelőtt' and 'délután' (before noon / after noon), and how
-  délelőtt differs from "morning."
-  - [ ] S24: the question is about 'megismételné?', which hasn't been taught.
-- [ ] L2: introduce 'semmi baj' before it's used in S19.
-- [ ] L3:
-  - [ ] Don't introduce 'ön' — it's old-timey, nobody really uses it; spend
-    the time on something else instead.
-  - [ ] This lesson seems confused — it talks about times of day but then
-    introduces 'ön'; seems like a mixup.
-  - [ ] S15: "Te Károly?" is nonsense — should be "Te károly vagy?"
-  - [ ] S19: same "Te károly" issue — should be "Károly vagy?" or "Te károly
-    vagy."
-  - [ ] S20: same "Te károly" sentence, fix it.
-- [ ] L4: lesson title is "I don't understand" but the exercises are about
-  'korán'/'későn' etc. — seems like a mixup.
+- [x] Root-caused, not just patched. **Investigated 2026-08-21**: this
+  wasn't a handful of separate bugs — every lesson in the unit had the
+  *vocabulary and title* it was supposed to have, but the *grammar content*
+  was uniformly about an unrelated topic (daily-routine verbs, time-of-day,
+  frequency, early/late), the same wrong topic cluster in all five lessons.
+  Confirmed it isn't a true swap: Units 15 and 17, which really are about
+  routines and frequency, still have their own distinct, correct content —
+  Unit 2's grammar files were simply never written for what the lesson
+  actually teaches. Rewrote all 10 grammar files (2 per lesson) to match
+  each lesson's real, already-correct vocabulary and title. Also found and
+  fixed a unit-wide duplication artifact along the way: a `practice-2`
+  matching exercise with identical greeting pairs, and a `check-2` testing
+  "megismételné?" (not taught until Lesson 4), both copy-pasted verbatim
+  into every lesson without being customized — fixed wherever the tested
+  word wasn't actually taught in that lesson (L1/L2/L3), left alone where
+  it legitimately was (L4/L5, where megismételné and jó napot recap are
+  real, already-taught content).
+  - [x] L1 S9: needs a clue. *(Superseded — S9 in the original numbering
+    was inside the removed daily-routine grammar content, which no longer
+    exists after the rewrite above.)*
+  - [x] L1: the second tip shouldn't go on about 'reggelente' — should
+    instead explain 'délelőtt' and 'délután', and how délelőtt differs
+    from "morning." *(Superseded — this tip belonged to the wrong grammar
+    content entirely, removed in the rewrite. délelőtt/délután belong to
+    whichever later unit actually teaches time-of-day vocabulary, not
+    Unit 2, which is about greetings.)*
+    - [x] S24: the question is about 'megismételné?', which hasn't been
+      taught. **Fixed 2026-08-21** — see the check-2 fix above.
+  - [x] L2: introduce 'semmi baj' before it's used in S19. **Fixed
+    2026-08-21**: added to Lesson 2's vocabulary, along with 'kérem'
+    itself, which — despite being half of this lesson's own Hungarian
+    title ("Kérem, köszönöm, bocsánat") — was missing from its vocabulary
+    entirely. New grammar page written to cover both.
+  - [x] L3:
+    - [x] Don't introduce 'ön' — spend the time on something else instead.
+      **Resolved 2026-08-21**: asked the user for a replacement topic;
+      chose "Hogy vagy?" (how are you / basic small talk). Fully retitled,
+      re-grammared, re-vocabbed, and every exercise rewritten from
+      scratch. Also removed the now-orphaned `uram`/`asszonyom` (sir/
+      madam) from Lesson 5, which depended on the dropped formal-address
+      theme — replaced with content using only that lesson's own real
+      vocabulary (rendben/persze/tessék).
+    - [x] This lesson seems confused — it talks about times of day but
+      then introduces 'ön'; seems like a mixup. **Explained by the
+      root-cause fix above** — neither topic belonged here.
+    - [x] S15/S19/S20: "Te Károly?" is nonsense, should be "Te Károly
+      vagy?" **Moot after the retheme** — the te/ön exercises that
+      contained this sentence no longer exist.
+  - [x] L4: lesson title is "I don't understand" but the exercises are
+    about 'korán'/'későn' — mixup. **Fixed 2026-08-21**, same root-cause
+    rewrite — this lesson's exercises were already correctly about
+    understanding/repetition; only its grammar pages were wrong.
+  - Also found and fixed while in the unit's consolidation: a
+    `sentence-order` exercise (`a1-10-consolidation-7`) with a malformed
+    schema (a `words` array instead of `sentences`) that would have
+    rendered with no content to reorder — converted to multiple-choice,
+    matching how this exercise type was already handled everywhere else
+    in A1.
 
 ### Unit 3
-- [ ] Also seems all mixed up — no specifics given, needs a full pass.
+- [x] Also seems all mixed up — no specifics given, needs a full pass.
+  **Investigated 2026-08-21, found to be fine**: checked every lesson's
+  grammar content against its title and vocabulary (pronouns → lenni →
+  ki/mi → hol laksz → bemutatkozás) — all coherent, no mixup like Unit 2's.
+  One unrelated bug found and fixed in passing: `a1-15-consolidation-7`
+  had the exact same malformed `sentence-order` schema bug as Unit 2's
+  consolidation (see above) — converted to multiple-choice.
 
 ### Unit 4
 - [ ] L1:

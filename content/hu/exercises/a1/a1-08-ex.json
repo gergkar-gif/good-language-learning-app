@@ -5,10 +5,10 @@
       "id": "a1-08-review-1",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Which means “sorry”?",
+      "question": "Which means “good evening”?",
       "options": [
-        "bocsánat",
-        "szívesen",
+        "jó estét",
+        "jó reggelt",
         "viszlát"
       ],
       "correct": 0
@@ -17,11 +17,11 @@
       "id": "a1-08-review-2",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Which means “thank you”?",
+      "question": "Which means “please”?",
       "options": [
-        "köszönöm",
-        "jó napot",
-        "rendben"
+        "kérem",
+        "szívesen",
+        "bocsánat"
       ],
       "correct": 0
     },
@@ -29,11 +29,11 @@
       "id": "a1-08-intro-1",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which pronoun is informal “you”?",
+      "question": "Which asks how someone is doing?",
       "options": [
-        "te",
-        "ön",
-        "ő"
+        "Hogy vagy?",
+        "Mi ez?",
+        "Ki ő?"
       ],
       "correct": 0
     },
@@ -41,35 +41,30 @@
       "id": "a1-08-intro-2",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which pronoun is formal “you”?",
+      "question": "Which means “I'm well”?",
       "options": [
-        "ön",
-        "te",
-        "én"
+        "Jól vagyok.",
+        "Rosszul vagyok.",
+        "Nem vagyok."
       ],
       "correct": 0
     },
     {
       "id": "a1-08-controlled-1",
-      "type": "multiple-choice",
+      "type": "fill-blank",
       "category": "controlled",
-      "question": "Which is the informal form?",
-      "options": [
-        "Te Károly vagy?",
-        "Ön Károly?",
-        "Ő Károly?"
-      ],
-      "correct": 0
+      "sentence": "Hogy ____? (informal)",
+      "answer": "vagy"
     },
     {
       "id": "a1-08-controlled-2",
       "type": "multiple-choice",
       "category": "controlled",
-      "question": "Which is the formal form?",
+      "question": "You feel great. Which reply fits?",
       "options": [
-        "Ön Anna?",
-        "Te Anna?",
-        "Ő Anna?"
+        "Jól vagyok.",
+        "Rosszul vagyok.",
+        "Bocsánat."
       ],
       "correct": 0
     },
@@ -79,20 +74,20 @@
       "category": "controlled",
       "pairs": [
         [
-          "te",
-          "informal you"
+          "hogy vagy?",
+          "how are you?"
         ],
         [
-          "ön",
-          "formal you"
+          "jól vagyok",
+          "I'm well"
         ],
         [
-          "én",
-          "I"
+          "rosszul vagyok",
+          "I'm not well"
         ],
         [
-          "ő",
-          "he / she"
+          "és te?",
+          "and you?"
         ]
       ]
     },
@@ -100,11 +95,11 @@
       "id": "a1-08-practice-1",
       "type": "multiple-choice",
       "category": "practice",
-      "question": "You are speaking to a friend. Which pronoun fits?",
+      "question": "Someone asks “Hogy vagy?” and you feel great. You say:",
       "options": [
-        "te",
-        "ön",
-        "ő"
+        "Jól vagyok, köszönöm.",
+        "Rosszul vagyok.",
+        "Bocsánat."
       ],
       "correct": 0
     },
@@ -114,20 +109,20 @@
       "category": "practice",
       "pairs": [
         [
-          "jó reggelt",
-          "morning"
+          "hogy vagy?",
+          "how are you?"
         ],
         [
-          "jó napot",
-          "daytime greeting"
+          "jól",
+          "well"
         ],
         [
-          "jó estét",
-          "evening"
+          "rosszul",
+          "badly"
         ],
         [
-          "viszlát",
-          "goodbye"
+          "és te?",
+          "and you?"
         ]
       ]
     },
@@ -135,62 +130,33 @@
       "id": "a1-08-practice-3",
       "type": "fill-blank",
       "category": "practice",
-      "sentence": "____ Károly? (informal)",
-      "answer": "Te"
+      "sentence": "Jól vagyok, köszönöm. ____ te?",
+      "answer": "És"
     },
     {
       "id": "a1-08-practice-4",
       "type": "sentence-builder",
       "category": "practice",
-      "pairs": [
-        [
-          "te",
-          "informal"
-        ],
-        [
-          "ön",
-          "formal"
-        ],
-        [
-          "én",
-          "speaker"
-        ],
-        [
-          "ő",
-          "other person"
-        ]
-      ],
       "tiles": [
-        "Jó",
-        "estét",
-        "!"
+        "Hogy",
+        "vagy",
+        "?"
       ],
       "solution": [
-        "Jó",
-        "estét",
-        "!"
+        "Hogy",
+        "vagy",
+        "?"
       ],
-      "english": "Good evening!"
+      "english": "How are you?"
     },
     {
       "id": "a1-08-practice-5",
       "type": "dialogue-complete",
       "category": "practice",
-      "tiles": [
-        "Ön",
-        "Károly",
-        "?"
-      ],
-      "solution": [
-        "Ön",
-        "Károly",
-        "?"
-      ],
-      "english": "Are you Károly? (formal)",
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Jó napot!"
+          "text": "Szia! Hogy vagy?"
         },
         {
           "speaker": "Károly",
@@ -198,8 +164,8 @@
         }
       ],
       "options": [
-        "Jó napot!",
-        "Jó éjszakát!"
+        "Jól vagyok, köszönöm.",
+        "Viszlát!"
       ],
       "correct": 0
     },
@@ -207,11 +173,11 @@
       "id": "a1-08-controlled-extra",
       "type": "multiple-choice",
       "category": "controlled",
-      "question": "Which pronoun is formal?",
+      "question": "Which word means “well” (not badly)?",
       "options": [
-        "ön",
-        "te",
-        "én"
+        "Jól",
+        "Rosszul",
+        "Nem"
       ],
       "correct": 0
     },
@@ -221,17 +187,17 @@
       "category": "dialogue",
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "Ön Anna?"
+          "speaker": "Anna",
+          "text": "Hogy vagy?"
         },
         {
-          "speaker": "Anna",
+          "speaker": "Meg",
           "text": "_____"
         }
       ],
       "options": [
-        "Igen.",
-        "Nem."
+        "Jól vagyok, köszönöm. És te?",
+        "Bocsánat!"
       ],
       "correct": 0
     },
@@ -242,7 +208,7 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "Te Károly?"
+          "text": "Jól vagyok, köszönöm. És te?"
         },
         {
           "speaker": "Károly",
@@ -250,8 +216,8 @@
         }
       ],
       "options": [
-        "Igen.",
-        "Viszlát!"
+        "Jól vagyok, köszönöm.",
+        "Nem értem."
       ],
       "correct": 0
     },
@@ -261,8 +227,8 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Write “Are you Károly?” using informal te.",
-          "answer": "Te Károly?"
+          "prompt": "Write “How are you?” in Hungarian.",
+          "answer": "Hogy vagy?"
         }
       ]
     },
@@ -272,8 +238,8 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Write “Are you Anna?” using formal ön.",
-          "answer": "Ön Anna?"
+          "prompt": "Write “I'm well, thank you.” in Hungarian.",
+          "answer": "Jól vagyok, köszönöm."
         }
       ]
     },
@@ -293,11 +259,11 @@
       "id": "a1-08-check-2",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Which expression asks for repetition?",
+      "question": "Which means “I'm well”?",
       "options": [
-        "Megismételné?",
-        "Szívesen.",
-        "Jó estét!"
+        "Jól vagyok.",
+        "Rosszul vagyok.",
+        "Nem értem."
       ],
       "correct": 0
     }
