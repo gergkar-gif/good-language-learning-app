@@ -165,21 +165,21 @@
       "id": "a1-16-practice-5",
       "type": "dialogue-complete",
       "category": "practice",
-      "options": [
-        "Harminc éves vagyok.",
-        "Kossuth utca 10."
-      ],
-      "correct": 0,
       "prompt": [
         {
           "speaker": "Károly",
-          "text": "Hány éves vagy?"
+          "text": "Nulla, egy, kettő..."
         },
         {
           "speaker": "Meg",
           "text": "_____"
         }
-      ]
+      ],
+      "options": [
+        "Három!",
+        "Öt!"
+      ],
+      "correct": 0
     },
     {
       "id": "a1-16-dialogue-1",
@@ -250,8 +250,8 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Write one short Hungarian sentence using today’s personal-information language.",
-          "answer": "Harminc éves vagyok."
+          "prompt": "List all the even numbers from 0 to 10, in Hungarian.",
+          "answer": "nulla, kettő, négy, hat, nyolc, tíz"
         }
       ]
     },
@@ -259,11 +259,11 @@
       "id": "a1-16-check-2",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Which sentence is correct?",
+      "question": "Which means “nine”? ",
       "options": [
-        "Hány éves vagy?",
-        "Hány vagy éves?",
-        "Éves hány vagy?"
+        "kilenc",
+        "nyolc",
+        "tíz"
       ],
       "correct": 0
     }

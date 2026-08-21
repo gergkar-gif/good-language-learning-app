@@ -76,8 +76,8 @@
       "id": "a1-19-controlled-2",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "Mi a telefonszámod? A telefonszámom: ____.",
-      "answer": "nulla"
+      "sentence": "Mi a telefonszámod? A ____: 06 30 123 4567.",
+      "answer": "telefonszámom"
     },
     {
       "id": "a1-19-controlled-3",
@@ -150,38 +150,38 @@
       "type": "sentence-builder",
       "category": "practice",
       "tiles": [
-        "Hány",
-        "éves",
-        "vagy",
+        "Mi",
+        "a",
+        "telefonszámod",
         "?"
       ],
       "solution": [
-        "Hány",
-        "éves",
-        "vagy",
+        "Mi",
+        "a",
+        "telefonszámod",
         "?"
       ],
-      "english": "How old are you?"
+      "english": "What is your phone number?"
     },
     {
       "id": "a1-19-practice-7",
       "type": "dialogue-complete",
       "category": "practice",
-      "options": [
-        "Harminc éves vagyok.",
-        "Kossuth utca 10."
-      ],
-      "correct": 0,
       "prompt": [
         {
-          "speaker": "Károly",
-          "text": "Hány éves vagy?"
+          "speaker": "Anna",
+          "text": "Ez a te születésnapod?"
         },
         {
           "speaker": "Meg",
           "text": "_____"
         }
-      ]
+      ],
+      "options": [
+        "Igen.",
+        "Kossuth utca 10."
+      ],
+      "correct": 0
     },
     {
       "id": "a1-19-dialogue-1",
@@ -252,8 +252,8 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Write one short Hungarian sentence using today’s personal-information language.",
-          "answer": "Harminc éves vagyok."
+          "prompt": "Write “My phone number is 06 30 123 4567.” in Hungarian.",
+          "answer": "A telefonszámom: 06 30 123 4567."
         }
       ]
     },
@@ -261,11 +261,11 @@
       "id": "a1-19-check-2",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Which sentence is correct?",
+      "question": "Which question asks for a phone number?",
       "options": [
+        "Mi a telefonszámod?",
         "Hány éves vagy?",
-        "Hány vagy éves?",
-        "Éves hány vagy?"
+        "Hol laksz?"
       ],
       "correct": 0
     }

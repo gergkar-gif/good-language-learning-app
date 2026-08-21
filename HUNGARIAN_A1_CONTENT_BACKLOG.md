@@ -248,27 +248,70 @@ inline note.
   consolidation (see above) — converted to multiple-choice.
 
 ### Unit 4
-- [ ] L1:
-  - [ ] S16: replace this exercise.
-  - [ ] S21: replace the writing exercise with "list all even numbers."
-- [ ] L2:
-  - [ ] S3: 'telefonszám' hasn't been taught yet.
-  - [ ] S5: in the tip, explain how 3rd person doesn't need 'van' — hány
-    éves vagyok, hány éves vagy, hány éves?
-  - [ ] S12: 'szám' hasn't been taught before this point.
-  - [ ] S14: both "harminc éves" and "harminc éves vagyok" are correct.
-  - [ ] "Write one short Hungarian sentence using today's personal
+- [x] Not a wrong-topic mixup like Unit 2 — grammar/vocab/titles all
+  cohere (Numbers → Age → Where You Live → Contact Details → combined
+  recap). The real, recurring bug was the same unit-wide duplication
+  artifact found in Unit 2: several exercises testing age content
+  ("Hány éves vagy?"/"Harminc éves vagyok.") had clearly been copy-pasted
+  into every lesson without adjusting for what that specific lesson
+  actually teaches — including into Lesson 1, before ages exist at all.
+- [x] L1 (Numbers 0-10):
+  - [x] S16: replace this exercise. **Fixed 2026-08-21**: `practice-5`
+    tested "Hány éves vagy?" (age, not taught until Lesson 2) — replaced
+    with a numbers-only sequence-completion exercise. `check-2` had the
+    same problem and was fixed the same way, though not explicitly named.
+  - [x] S21: replace the writing exercise with "list all even numbers."
+    **Fixed 2026-08-21** exactly as suggested — `writing-2` previously
+    asked for "Harminc éves vagyok." in a lesson that hadn't taught ages.
+- [x] L2 (How Old Are You?):
+  - [x] S3: 'telefonszám' hasn't been taught yet. **Fixed 2026-08-21**:
+    it was in the *Review* section (`review-2`), framing it as prior
+    knowledge — telefonszám isn't taught until Lesson 4. Replaced with a
+    genuine review of Lesson 1's numbers. Also removed it from
+    `controlled-1`'s matching pairs, where it appeared un-introduced.
+  - [x] S5: in the tip, explain how 3rd person doesn't need 'van' — hány
+    éves vagyok, hány éves vagy, hány éves? **Fixed 2026-08-21**: extended
+    the grammar tip to cover the third-person zero-copula form (Hány
+    éves? / Harminc éves — no vagyok, no van), tying it back to the
+    pattern already taught in Unit 1.
+  - [x] S12: 'szám' hasn't been taught before this point. **Resolved as a
+    side effect** of the earlier cross-cutting fix moving vocabulary
+    ahead of the exercises that use it — szám is now properly pre-taught
+    by the time this lesson's exercises reach it.
+  - [x] S14: both "harminc éves" and "harminc éves vagyok" are correct.
+    **Fixed 2026-08-21**: `practice-2` now accepts both (multi-correct).
+  - [x] "Write one short Hungarian sentence using today's personal
     information language" — replace this and similar prompts with more
-    direct translation exercises.
-- [ ] L(?) S10: "mi a telefonszámod" exercise — change it.
-- [ ] L4: "…. éves vagyok" — change it.
-  - [ ] S15: "hány éves …?" — could be vagy/vagyok.
-- [ ] Reading: start with: "Moving to a new country comes with a lot of
-  bureaucracy — and often, you need to fill in many forms. Károly is
-  practising with Meg some of the most important details that one can be
-  asked when introducing themselves."
-  - [ ] "Tíz? És még egy szám?" doesn't really make sense.
-  - [ ] Meg's birthday is in April and she is 32 years old.
+    direct translation exercises. **Fixed 2026-08-21**: this exact vague
+    prompt, always paired with the mismatched answer "Harminc éves
+    vagyok." regardless of the lesson's actual topic, turned out to be
+    duplicated into every lesson in the unit (L1, L2, L3, L4) — replaced
+    each with a direct, on-topic translation prompt.
+- [x] L(?) S10: "mi a telefonszámod" exercise — change it. **Fixed
+  2026-08-21**: `a1-19-controlled-2` asked the learner to fill in "nulla"
+  as if it were an entire phone number, which didn't make sense — rewrote
+  to ask for the word "telefonszámom" in context instead.
+- [x] L4/L5 (Personal Information recap): "…. éves vagyok" — change it.
+  **Fixed 2026-08-21**: `a1-20-controlled-2`'s "____ éves vagyok." had
+  only one hardcoded correct number (harminc) when any number word fits —
+  extended to accept a curated list.
+  - [x] S15: "hány éves …?" — could be vagy/vagyok. **Fixed 2026-08-21**:
+    `a1-20-practice-3` now accepts both.
+- [x] Reading: start with the bureaucracy/forms framing text. **Fixed
+  2026-08-21**, using the exact text supplied.
+  - [x] "Tíz? És még egy szám?" doesn't really make sense. **Fixed
+    2026-08-21**: root cause was a malformed phone number (13 digit-words
+    instead of the standard 11-digit "06 30 123 4567" format used
+    everywhere else in the unit) with a reply referencing "tíz", which
+    was never actually said. Rewrote the exchange: Meg gives the number in
+    the correct format, Károly asks her to repeat it more slowly (reusing
+    lassabban/kérem/még egyszer from Unit 2), she does, then she turns the
+    question around and asks for his address — all natural, and all
+    already-taught vocabulary. Also fixed the same malformed phone number
+    in the unit's consolidation model answer for consistency.
+  - [x] Meg's birthday is in April and she is 32 years old. **Fixed
+    2026-08-21**: updated both facts (was June / 30 — the same age as
+    Károly, which the fix also incidentally de-duplicates).
 
 ### Unit 5
 - [ ] L1:

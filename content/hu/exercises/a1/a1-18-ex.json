@@ -117,12 +117,12 @@
           "street"
         ],
         [
-          "szám",
-          "number"
+          "lakom",
+          "I live"
         ],
         [
-          "telefonszám",
-          "phone number"
+          "hol",
+          "where"
         ]
       ]
     },
@@ -150,38 +150,36 @@
       "type": "sentence-builder",
       "category": "practice",
       "tiles": [
-        "Hány",
-        "éves",
-        "vagy",
+        "Hol",
+        "laksz",
         "?"
       ],
       "solution": [
-        "Hány",
-        "éves",
-        "vagy",
+        "Hol",
+        "laksz",
         "?"
       ],
-      "english": "How old are you?"
+      "english": "Where do you live?"
     },
     {
       "id": "a1-18-practice-7",
       "type": "dialogue-complete",
       "category": "practice",
-      "options": [
-        "Harminc éves vagyok.",
-        "Kossuth utca 10."
-      ],
-      "correct": 0,
       "prompt": [
         {
           "speaker": "Károly",
-          "text": "Hány éves vagy?"
+          "text": "Hol laksz?"
         },
         {
           "speaker": "Meg",
           "text": "_____"
         }
-      ]
+      ],
+      "options": [
+        "Kossuth utca 10.",
+        "Harminc éves vagyok."
+      ],
+      "correct": 0
     },
     {
       "id": "a1-18-dialogue-1",
@@ -252,8 +250,8 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Write one short Hungarian sentence using today’s personal-information language.",
-          "answer": "Harminc éves vagyok."
+          "prompt": "Write “My address is Kossuth utca 10.” in Hungarian.",
+          "answer": "A címem: Kossuth utca 10."
         }
       ]
     },
@@ -261,11 +259,11 @@
       "id": "a1-18-check-2",
       "type": "multiple-choice",
       "category": "check",
-      "question": "Which sentence is correct?",
+      "question": "Which is a natural way to give an address?",
       "options": [
-        "Hány éves vagy?",
-        "Hány vagy éves?",
-        "Éves hány vagy?"
+        "Kossuth utca 10.",
+        "Kossuth 10 utca.",
+        "Utca Kossuth 10."
       ],
       "correct": 0
     }
