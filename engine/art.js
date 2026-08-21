@@ -220,6 +220,15 @@ const Art = (function () {
             <polyline class="ink-line" points="15 6 20 6 20 11"/>
             <polyline class="ink-line" points="3 7 8 7 20 18"/>
             <polyline class="ink-line" points="15 18 20 18 20 13"/>
+        `,
+
+        // Flag — a pennant on a pole, for reporting a problem. Filled with
+        // the accent rather than left as an outline: unlike the nav row
+        // (see the note above), this icon stands alone and is meant to
+        // read as "something needs attention" at a glance.
+        flag: `
+            <line class="ink-line" x1="6" y1="21" x2="6" y2="3"/>
+            <path class="accent-solid" d="M6 4 19 4 15 8 19 12 6 12Z"/>
         `
     };
 
