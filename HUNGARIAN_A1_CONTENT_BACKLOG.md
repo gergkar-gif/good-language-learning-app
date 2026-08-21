@@ -73,32 +73,79 @@ inline note.
 ## HUN A1
 
 ### Unit 1
-- [ ] Shouldn't start with a review — nothing to review yet. Instead: a
+- [x] Shouldn't start with a review — nothing to review yet. Instead: a
   welcome page, then 'lesson goals', then the grammar page about 'sounds',
-  then the one about 'stress'.
-  - [ ] Stress page: words shouldn't be in ALL CAPS (e.g. SZIA) — confirmed
-    live bug in `a1-01-a-gr.json`.
-- [ ] S5: not only letters but words should also be listenable.
+  then the one about 'stress'. **Fixed 2026-08-21**: added a new "intro"
+  section type (engine/lessons.js) and a welcome screen using it as the
+  first step; removed the opening Review exercise group entirely (and its
+  now-orphaned exercises). Order is now Welcome → Lesson Goals → Hungarian
+  Vowels → Hungarian Consonant Sounds (stress folded into the latter's tip,
+  see below).
+  - [x] Stress page: words shouldn't be in ALL CAPS (e.g. SZIA) — confirmed
+    live bug in `a1-01-a-gr.json`. **Fixed 2026-08-21**: the ALL-CAPS
+    "Notice" examples block was removed as part of the grammar rewrite
+    below rather than case-fixed in place — stress is now a short tip
+    rather than its own illustrated section.
+- [x] S5: not only letters but words should also be listenable.
   - [ ] Get actual sound files, not TTS — build the engine and procure
     CC-licensed files. *(deferred — see Decisions above)*
-  - [ ] All special sounds should be explained — template:
+  - [x] All special sounds should be explained — template:
     hungarianreference.com's Hungarian alphabet phonetic pronunciation page,
     Transliteration Examples section. Maybe split across three grammar
-    pages, fold 'stress' in as a tip on one of them.
-- [ ] S8: take 'kérem' out of this lesson entirely.
-- [ ] S15: the answer could also be 'nem'.
-- [ ] S19: both replies are good (you can say 'köszönöm' in reply to 'tea?').
+    pages, fold 'stress' in as a tip on one of them. **Fixed 2026-08-21**:
+    rewrote the two grammar files as "Hungarian Vowels" (all 7 short/long
+    pairs explained, table examples for the ones with no English
+    equivalent) and "Hungarian Consonant Sounds" (sz/s/zs/cs/gy/ny/ty/ly all
+    explained, with the stress rule folded in as a tip at the end — 2 pages
+    rather than 3, judged sufficient). Also fixed the underlying "only
+    letters were listenable" bug generally: `table()` in engine/lessons.js
+    now supports an explicit `"bothAudible": true` opt-in so a table's
+    example-word column gets a listen button too, not just the bare
+    letter/digraph column — applied to both new tables.
+- [x] S8: take 'kérem' out of this lesson entirely. **Fixed 2026-08-21**:
+  removed from the lesson's vocabulary list and from every exercise that
+  referenced it (as a taught pair or as a distractor) — it now appears
+  nowhere in Unit 1 Lesson 1. It's correctly taught in Unit 2 Lesson 2
+  ("Please, Thank You, Sorry").
+- [x] S15: the answer could also be 'nem'. **Fixed 2026-08-21**: fill-blank
+  `a1-01-practice-3` now accepts either "Igen" or "Nem".
+- [x] S19: both replies are good (you can say 'köszönöm' in reply to
+  'tea?'). **Fixed 2026-08-21**: this needed a real engine change, not just
+  a content edit — dialogue-complete only supported one correct index.
+  Extended `shuffledOptions()`/`lessonCheckChoice()` (engine/lessons.js) to
+  accept `correct` as an array, applied here (both "Igen." and "Köszönöm."
+  now accepted, "Szia." added as a genuine wrong distractor), and exposed
+  the same capability for `multiple-choice` since it shares the same
+  checking code — schema updated in both content/hu and content/es.
 
 ### Unit 1, Lesson 4 (a1-04 / "1.4")
-- [ ] S5: grammar tip's first sentence is missing a capital letter at the
-  start ("Nem").
-- [ ] S12: 'nem vagyok' is also correct, not only 'nem tea'.
-- [ ] S15: the answer could be either 'igen' or 'nem' — needs a hint.
-- [ ] S22: víz, ház, and nagy appear as new words here without having been
-  used in the lesson.
+- [x] S5: grammar tip's first sentence is missing a capital letter at the
+  start ("Nem"). **Fixed 2026-08-21**: also italicized the inline "nem"
+  mentions to match the app's usual convention for target-language words
+  embedded in English prose.
+- [x] S12: 'nem vagyok' is also correct, not only 'nem tea'. **Fixed
+  2026-08-21**: `a1-04-controlled-4` now accepts both "tea" and "vagyok"
+  (multi-correct array, see the engine fix under Unit 1 above).
+- [x] S15: the answer could be either 'igen' or 'nem' — needs a hint.
+  **Fixed 2026-08-21**: `a1-04-practice-1` now accepts both, with a
+  "(yes/no)" hint appended to the sentence.
+- [x] S22: víz, ház, and nagy appear as new words here without having been
+  used in the lesson. **Fixed 2026-08-21**: confirmed by checking every
+  word against this lesson's actual grammar/exercise text — víz, ház, nagy,
+  and also (unflagged but equally unused) jó, könyv, telefon never appear
+  anywhere in Lesson 4. They're all genuinely taught in Lesson 5's reading
+  and its own vocabulary list — removed from Lesson 4's vocabulary,
+  leaving only igen/nem, which the lesson actually teaches and uses.
 
 ### Unit 1, Lesson 5 (a1-05 / "1.5")
-- [ ] Reading: remove 'kérem' at the end, replace with 'semmiség'.
+- [x] Reading: remove 'kérem' at the end, replace with 'semmiség'. **Fixed
+  2026-08-21**: also removed 'kérem' from Lesson 5's own vocabulary
+  recap list, which listed it as taught unit vocabulary — now that it's
+  taught nowhere in Unit 1 (see the Lesson 1 fix above), leaving it there
+  would have been a dangling inconsistency. Confirmed "semmiség" already
+  resolves correctly in the Reader's tap-to-translate dictionary
+  (imports/dictionary/hungarian-en.json), so the substitution doesn't
+  introduce a lookup gap.
 
 ### Unit 2
 - [ ] L1 S9: needs a clue.
