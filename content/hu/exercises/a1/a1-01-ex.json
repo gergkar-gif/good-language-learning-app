@@ -2,30 +2,6 @@
   "lesson": "a1-01",
   "exercises": [
     {
-      "id": "a1-01-review-1",
-      "type": "multiple-choice",
-      "category": "review",
-      "question": "Which means “hi / bye”?",
-      "options": [
-        "szia",
-        "igen",
-        "köszönöm"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "a1-01-review-2",
-      "type": "multiple-choice",
-      "category": "review",
-      "question": "Which means “yes”?",
-      "options": [
-        "nem",
-        "igen",
-        "kérem"
-      ],
-      "correct": 1
-    },
-    {
       "id": "a1-01-intro-1",
       "type": "multiple-choice",
       "category": "introduce",
@@ -43,7 +19,7 @@
       "category": "introduce",
       "question": "Which means “thank you”?",
       "options": [
-        "kérem",
+        "szia",
         "köszönöm",
         "igen"
       ],
@@ -112,8 +88,8 @@
           "thank you"
         ],
         [
-          "kérem",
-          "please / here you are"
+          "jó",
+          "good"
         ],
         [
           "igen",
@@ -148,7 +124,7 @@
       "type": "fill-blank",
       "category": "practice",
       "sentence": "Kávé? ____ , kávé.",
-      "answer": "Igen"
+      "answers": ["Igen", "Nem"]
     },
     {
       "id": "a1-01-practice-4",
@@ -198,9 +174,10 @@
       ],
       "options": [
         "Igen.",
-        "Köszönöm."
+        "Köszönöm.",
+        "Szia."
       ],
-      "correct": 0
+      "correct": [0, 1]
     },
     {
       "id": "a1-01-writing-1",
@@ -232,7 +209,7 @@
       "options": [
         "igen",
         "nem",
-        "kérem"
+        "jó"
       ],
       "correct": 1
     },

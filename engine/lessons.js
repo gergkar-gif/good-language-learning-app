@@ -110,6 +110,17 @@ async function buildSteps(lesson) {
                 });
             }
 
+            // A one-off welcome screen, not a grammar concept — kept as its
+            // own section type rather than reusing `grammar` so it never
+            // shows up as a topic in that unit's Grammar Guide.
+            else if (section.type === 'intro') {
+                steps.push({
+                    type: 'intro',
+                    title: section.title || 'Welcome',
+                    body: section.body || []
+                });
+            }
+
             else if (section.type === 'recycle') {
                 const pool = (typeof Recycle !== 'undefined') ? await Recycle.collectPool(lesson) : [];
                 const picks = (typeof Recycle !== 'undefined') ? Recycle.pick(pool, section.count || 3) : [];
@@ -306,11 +317,17 @@ function shuffled(list) {
 // answer the top button every single time. Shuffling at render keeps the
 // convention and takes away the tell. The index moves with the option, so
 // stepState.correct always refers to what is on screen.
+//
+// `correct` is normally a single index, but a handful of items (e.g. a
+// dialogue reply where more than one option is a genuinely natural answer)
+// have more than one right option — those pass an array instead, and it is
+// remapped through the shuffle the same way.
 function shuffledOptions(options, correct) {
     const order = shuffled((options || []).map((text, i) => ({ text, i })));
+    const remap = i => order.findIndex(option => option.i === i);
     return {
         options: order.map(option => option.text),
-        correct: order.findIndex(option => option.i === correct)
+        correct: Array.isArray(correct) ? correct.map(remap) : remap(correct)
     };
 }
 
@@ -515,6 +532,10 @@ const stepRenderers = {
         `;
     },
 
+    intro(step) {
+        return (step.body || []).map(p => `<p class="lsn-text">${escMd(p)}</p>`).join('');
+    },
+
     // A whole grammar concept on one screen. Only presentational parts are
     // rendered — an exercise belongs in an exercise-group, not in here.
     grammar(step) {
@@ -543,13 +564,17 @@ const stepRenderers = {
     // conjugation paradigm (row 0 a bare pronoun, row 1 the conjugated
     // Spanish form — the form is the whole point, and used to have no listen
     // button at all). Detecting a pronoun in row 0 tells the two apart
-    // without a schema change.
+    // without a schema change. A third shape — row 0 a bare letter/digraph,
+    // row 1 the actual word demonstrating it — needs row 1 audible too, but
+    // "is this a letter" isn't reliably detectable from the string alone, so
+    // content opts in explicitly with `"bothAudible": true` on the section
+    // rather than guessing.
     table(step) {
         const PRONOUN_RE = /^(yo|tú|usted|él|ella|nosotros|nosotras|vosotros|vosotras|ustedes|ellos|ellas)(\s*\/\s*(yo|tú|usted|él|ella|nosotros|nosotras|vosotros|vosotras|ustedes|ellos|ellas))*$/i;
         return `
             <table class="lsn-table">
                 ${(step.rows || []).map(row => {
-                    const isConjugation = PRONOUN_RE.test((row[0] || '').trim());
+                    const isConjugation = step.bothAudible || PRONOUN_RE.test((row[0] || '').trim());
                     return `
                     <tr>
                         <td><strong>${esc(row[0])}</strong>${say(row[0])}</td>
@@ -1068,8 +1093,11 @@ function lessonCheckChoice() {
 
     const group = document.querySelectorAll('#lesson-content .lsn-option');
     const btn = group[stepState.picked];
+    const isRight = Array.isArray(stepState.correct)
+        ? stepState.correct.includes(stepState.picked)
+        : stepState.picked === stepState.correct;
 
-    if (stepState.picked === stepState.correct) {
+    if (isRight) {
         // Blur so the focus ring (still showing from the click that picked
         // this option) doesn't linger over the green correct state.
         if (btn) { btn.classList.add('correct'); btn.blur(); }
@@ -1079,8 +1107,8 @@ function lessonCheckChoice() {
 
     if (btn) btn.classList.add('wrong');
     if (failStep('✗ Not quite.')) {
-        const answer = group[stepState.correct];
-        if (answer) answer.classList.add('correct');
+        const correctIndexes = Array.isArray(stepState.correct) ? stepState.correct : [stepState.correct];
+        correctIndexes.forEach(i => { if (group[i]) group[i].classList.add('correct'); });
         setFeedback(false, 'The answer is highlighted — continue when you are ready.');
     }
 }

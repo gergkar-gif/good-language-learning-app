@@ -179,9 +179,11 @@
           }
         },
         "correct": {
-          "type": "integer",
-          "minimum": 0,
-          "description": "Zero-based index into options. Options render in the order given, so this must point at the right one."
+          "oneOf": [
+            { "type": "integer", "minimum": 0 },
+            { "type": "array", "minItems": 2, "items": { "type": "integer", "minimum": 0 } }
+          ],
+          "description": "Zero-based index into options, or (rarely) an array of indexes when more than one option is a genuinely correct answer. Options render in the order given, so this must point at the right one(s)."
         },
         "teaches": {
           "$ref": "#/definitions/baseFields/teaches"
@@ -374,8 +376,11 @@
           }
         },
         "correct": {
-          "type": "integer",
-          "minimum": 0
+          "oneOf": [
+            { "type": "integer", "minimum": 0 },
+            { "type": "array", "minItems": 2, "items": { "type": "integer", "minimum": 0 } }
+          ],
+          "description": "Zero-based index into options, or (rarely) an array of indexes when more than one reply is a genuinely natural answer."
         },
         "teaches": {
           "$ref": "#/definitions/baseFields/teaches"

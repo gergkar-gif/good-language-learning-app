@@ -540,22 +540,19 @@ async function collectUnitGrammarTopics(unit) {
             const grammar = await loadContent(section.ref);
             topics.push({
                 title: grammar.title || section.title || 'Grammar',
-                paragraphs: (grammar.sections || [])
-                    .filter(part => part.type === 'text' || part.type === 'tip')
-                    .map(part => ({ type: part.type, content: part.content || '' }))
-                    .filter(part => part.content)
+                parts: grammar.sections || []
             });
         }
     }
     return topics;
 }
 
-// A quick-reference summary, not a re-teaching of the unit: text and tips
-// only, in the same markup the lesson's own grammar screen uses (.lsn-text/
-// .lsn-tip), so the prose reads identically in both places. Tables and
-// examples are left out on purpose — this is meant to be skimmed in under a
-// minute, and full paradigms/vocab already live in the lesson itself and in
-// Decks respectively.
+// A quick-reference summary, not a re-teaching of the unit, but a complete
+// one: every part of each grammar screen — text, conjugation tables,
+// examples, tips — renders here exactly as it does in the lesson itself, via
+// the same stepRenderers.grammar() the lesson screen calls, so the two never
+// drift out of sync. Only vocabulary is left out, since that already lives
+// in Decks by topic rather than per grammar concept.
 async function grammarGuideHtml(level, unitId) {
     const data = window._curriculumData.levels[level];
     const unit = unitById(data, unitId);
@@ -569,10 +566,7 @@ async function grammarGuideHtml(level, unitId) {
             <span class="gg-topic-num">${i + 1}</span>
             <div class="gg-topic-body">
                 <h4 class="gg-topic-title">${UI.escape(topic.title)}</h4>
-                ${topic.paragraphs.map(p => p.type === 'tip'
-                    ? `<div class="lsn-tip"><strong>Tip</strong><p>${escMd(p.content)}</p></div>`
-                    : `<p class="lsn-text">${escMd(p.content)}</p>`
-                ).join('')}
+                ${stepRenderers.grammar({ title: topic.title, parts: topic.parts })}
             </div>
         </li>
     `).join('');
