@@ -72,34 +72,48 @@ inline note.
 
 ## Curriculum-wide gaps (found 2026-08-21, auditing per user request)
 
-- [ ] Vowel harmony has no dedicated treatment anywhere in A1 — confirmed by
-  grep: it only ever appears as a one-sentence aside inside unrelated
-  lessons (first at `a1-22-b-gr.json`, a Plural Nouns page: "it follows
-  vowel harmony: back words take -ok, front words take -ek"). Nothing ever
-  explains what makes a word "back" or "front", or shows the pattern as its
-  own concept. Matches the existing Unit 5 backlog note below ("it just
-  drops in vowel harmony with no setup... maybe dedicate a full grammar
-  page to vowel harmony in this unit") — that's the natural place to build
-  it properly, since it's the earliest point vowel-harmonized suffixes
-  (plurals) are taught.
-- [ ] Definite/indefinite conjugation is mislabeled, not just under-taught.
-  `a1-61-a-gr.json` (Unit 13) is titled "Present-tense indefinite
-  conjugation" but only explains ordinary present-tense endings
-  (-ok/-ek/-ök) — it never contrasts against the *definite* conjugation the
-  name implies, because that requires the accusative case (definite
-  objects), which isn't taught until Unit 21. Right now the course uses
-  "indefinite" as a label with nothing to be indefinite *against*.
-  Needs a real design decision: either (a) rename Unit 13's page to drop
-  the "indefinite" framing until it can be paired properly, and build the
-  actual definite/indefinite contrast as a dedicated pair of pages once
-  Unit 21's accusative work is done, or (b) something else — flag for
-  discussion once other units are further along, since A1 doesn't have a
-  natural home for it yet and Hungarian, this course's second language,
-  doesn't currently extend past A1.
-- [ ] Hungarian sounds: covered in Unit 1 (see below, fixed 2026-08-21) —
-  re-confirm this still reads as complete once the rest of the course is
-  reviewed, per the user's "have their day in the sun" ask covering sounds
-  alongside vowel harmony and def/indef conjugation.
+- [x] Vowel harmony has no dedicated treatment anywhere in A1. **Fixed
+  2026-08-21**: built a new dedicated grammar page ("Vowel Harmony",
+  `a1-22-vh-gr.json`) — the two vowel families, why suffixes come in
+  matching versions, and a clean 3-way example table (asztal/szék/sör)
+  deliberately avoiding words like *könyv* that are exceptions to their
+  own rule. Inserted into Unit 5 Lesson 2 (a1-22, "Objects"), right before
+  the existing Plural Nouns page, which is the earliest point a
+  vowel-harmonized suffix (the plural -k) is taught — matches the Unit 5
+  backlog note below. Trimmed the Plural Nouns page's own vowel-harmony
+  aside since it's now properly covered just before it, so it applies
+  the concept instead of re-explaining it. Verified live, including that
+  it flows correctly through the Grammar Guide.
+- [x] Definite/indefinite conjugation is mislabeled, not just under-taught.
+  **Investigated and fixed 2026-08-21**: found the fuller picture — the
+  actual definite/indefinite *contrast* already gets used in three later
+  spots (`a1-114-b` "Hozom", `a1-141-b` "szeretem", and a referenced-but-
+  unverified `viselek/viselem` instance), each introduced as an isolated
+  aside with no foundational page to point back to. Built one: a new
+  "Definite vs Indefinite Conjugation" page in Unit 21 (`a1-102-def-gr.json`,
+  inserted into "The Accusative -t") — right after the accusative exists,
+  since definite objects are what the definite conjugation is *for*. Uses
+  kérek/kérem as the central example, explicitly bridging back to "kérem"
+  already having been taught as an interjection in Unit 2. Added two new
+  practice exercises (`a1-102-practice-6/7`) testing the egy/a
+  indefinite/definite distinction. Updated `a1-114-b` and `a1-141-b` to
+  reference this page by name instead of re-deriving the concept solo.
+  Separately fixed the immediate mislabeling this gap was named for:
+  `a1-61-a-gr.json` (Unit 13) was titled "Present-tense indefinite
+  conjugation" while only teaching ordinary present-tense endings, with
+  nothing to contrast against this early — renamed to "Present Tense:
+  -ok/-ek/-ök" and reworded the false "indefinite present" phrasing, across
+  all 5 lessons in Unit 13 that carried the identical wrong title/text.
+  - [ ] Found in the process, not yet fixed: Unit 13's five lessons
+    (a1-61 through a1-65 — "I Work, I Study", "Everyday Verbs", "Who Does
+    What?", "Talking About Activities", "Verb Review") don't just share a
+    title — their grammar content is byte-for-byte identical across all
+    five, the same duplication-without-customization bug already found and
+    fixed in Units 2 and 4. Needs its own pass, same scope as those units'
+    fixes: each lesson should teach something distinct that actually
+    matches its own title.
+- [x] Hungarian sounds: re-confirmed complete (see Unit 1 fixes above) —
+  no further gap found.
 
 ## HUN A1
 
