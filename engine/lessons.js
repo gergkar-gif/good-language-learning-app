@@ -587,9 +587,12 @@ const stepRenderers = {
     },
 
     examples(step) {
+        const target = window.Reader && window.Reader.makeClickable
+            ? text => Reader.makeClickable(text)
+            : escMd;
         return (step.items || []).map(item => `
             <div class="lsn-example">
-                <div class="lsn-es">${escMd(item.spanish)}${say(item.spanish)}</div>
+                <div class="lsn-es">${target(item.spanish)}${say(item.spanish)}</div>
                 <div class="lsn-en">${escMd(item.english)}</div>
             </div>
         `).join('');
