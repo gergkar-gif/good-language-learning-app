@@ -6,6 +6,13 @@
   max-width: 500px;
   margin: 0 auto;
   min-height: 100vh;
+  /* 100vh is the *largest* possible viewport on Android Chrome — it doesn't
+     shrink when the on-screen keyboard opens, so the app shell stayed full
+     height while the keyboard covered whatever was in the space it now
+     occupies (reported as the keyboard "covering the whole screen" while
+     typing). 100dvh tracks the actual visible viewport instead; browsers
+     that don't support it ignore the line and keep the 100vh above. */
+  min-height: 100dvh;
   background: var(--bg);
   display: flex;
   flex-direction: column;
