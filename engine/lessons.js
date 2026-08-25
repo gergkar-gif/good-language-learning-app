@@ -32,18 +32,27 @@ const contentCache = {};
 
 async function loadContent(path) {
     if (contentCache[path]) return contentCache[path];
-    try {
-        const fullPath = Lang.content(path);
-        const response = await fetch(fullPath);
-        if (!response.ok) throw new Error('Content not found: ' + fullPath);
-        const data = await response.json();
-        contentCache[path] = data;
-        return data;
-    } catch (error) {
-        console.warn('Content missing, using placeholder:', path);
-        // Return a safe placeholder so the lesson doesn't crash
-        return { title: 'Coming soon', sections: [], words: [], lines: [], exercises: [], cards: [] };
+    const fullPath = Lang.content(path);
+    // One retry before giving up: a transient fetch blip (flaky mobile
+    // connection, a cold service worker) on the FIRST reference to a file
+    // used to permanently drop that section's steps for the rest of the
+    // lesson, while a later section referencing the same file would fetch
+    // again (nothing had been cached) and quietly succeed — the lesson
+    // would render with fewer total steps than it has, with no sign why.
+    for (let attempt = 0; attempt < 2; attempt++) {
+        try {
+            const response = await fetch(fullPath);
+            if (!response.ok) throw new Error('Content not found: ' + fullPath);
+            const data = await response.json();
+            contentCache[path] = data;
+            return data;
+        } catch (error) {
+            if (attempt === 0) continue;
+            console.warn('Content missing, using placeholder:', path);
+        }
     }
+    // Return a safe placeholder so the lesson doesn't crash
+    return { title: 'Coming soon', sections: [], words: [], lines: [], exercises: [], cards: [] };
 }
 
 async function loadLesson(lessonId) {
