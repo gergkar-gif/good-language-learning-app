@@ -46,7 +46,8 @@ const BugReport = (function () {
             tab: null,
             lesson: null,
             step: null,
-            reading: null
+            reading: null,
+            driller: null
         };
 
         const activeTab = document.querySelector('.tab:not(.hidden)');
@@ -81,6 +82,10 @@ const BugReport = (function () {
             };
         }
 
+        if (ctx.tab === 'drills' && typeof Workshop !== 'undefined' && Workshop.activeDriller) {
+            ctx.driller = Workshop.activeDriller();
+        }
+
         return ctx;
     }
 
@@ -92,6 +97,7 @@ const BugReport = (function () {
         }
         if (ctx.lesson) return ctx.lesson.title || ctx.lesson.id;
         if (ctx.reading) return 'Reading: ' + (ctx.reading.title || ctx.reading.id);
+        if (ctx.driller) return 'Drills: ' + ctx.driller.title;
         if (ctx.tab) return 'Tab: ' + ctx.tab;
         return 'Unknown location';
     }
@@ -117,6 +123,7 @@ const BugReport = (function () {
                 (ctx.step.id ? ', id `' + ctx.step.id + '`' : '') + '\n';
         }
         if (ctx.reading) body += '- Reading: ' + (ctx.reading.title || '') + ' (`' + ctx.reading.id + '`)\n';
+        if (ctx.driller) body += '- Driller: ' + (ctx.driller.title || '') + ' (`' + ctx.driller.id + '`)\n';
         body += '- Reported: ' + ctx.timestamp + '\n';
         return body;
     }
