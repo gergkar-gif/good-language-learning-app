@@ -17,11 +17,11 @@
       "id": "a1-19-review-2",
       "type": "multiple-choice",
       "category": "review",
-      "question": "Which means “phone number”? ",
+      "question": "Which means “street”? ",
       "options": [
-        "telefonszám",
-        "születésnap",
-        "hány éves"
+        "utca",
+        "cím",
+        "szám"
       ],
       "correct": 0
     },
@@ -76,8 +76,8 @@
       "id": "a1-19-controlled-2",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "Mi a telefonszámod? A ____: 06 30 123 4567.",
-      "answer": "telefonszámom"
+      "sentence": "Mi a ____? (your phone number)",
+      "answer": "telefonszámod"
     },
     {
       "id": "a1-19-controlled-3",
@@ -252,8 +252,8 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Write “My phone number is 06 30 123 4567.” in Hungarian.",
-          "answer": "A telefonszámom: 06 30 123 4567."
+          "prompt": "Answer “Mi a telefonszámod?” the short, natural way: 06 30 123 4567.",
+          "answer": "06 30 123 4567."
         }
       ]
     },
