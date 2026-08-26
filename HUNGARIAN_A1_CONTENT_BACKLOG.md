@@ -10,8 +10,16 @@ inline note.
 
 - Audio (real files replacing TTS): deferred — future feature, not in this pass.
 - Consolidations: rebuild to ~20 pure exercises each — 5 multiple-choice, then
-  15 production, testing the unit's grammar and vocab. *(not started — large
-  content-authoring task across 29 consolidation files)*
+  15 production, testing the unit's grammar and vocab. **Built 2026-08-26**,
+  though the final shape diverged from this line's original 5/15 split per a
+  later, more specific instruction ("mostly-reused, ordered easy to hard"):
+  28 of 29 consolidation units rebuilt to 20 exercises each, reused directly
+  from the unit's own 5 lessons and grouped into four difficulty tiers
+  (Recognize/Recall/In Context/Produce) rather than freshly authored. Unit 2
+  (`a1-10-consolidation`) is still the original 18-exercise hand-built pilot
+  from earlier in that same pass. See memory
+  `hu-a1-consolidation-and-recycle-2026-08-26` and
+  `hu-a1-consolidation-drilling-preference` for the full account.
 - [x] Unit-at-a-glance, renamed "Grammar Guide": LingoDeer-style page
   (numbered index + expanded points below), auto-assembled from each
   lesson's existing `grammar` sections. No vocab section — words already
