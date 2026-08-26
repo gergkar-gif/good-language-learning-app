@@ -6,7 +6,11 @@
       "type": "multiple-choice",
       "category": "review",
       "question": "Which word means \"he/she works\"?",
-      "options": ["dolgozik", "tanul", "megy"],
+      "options": [
+        "dolgozik",
+        "tanul",
+        "megy"
+      ],
       "correct": 0
     },
     {
@@ -14,7 +18,11 @@
       "type": "multiple-choice",
       "category": "review",
       "question": "How do you say \"András comes with us\"?",
-      "options": ["András jön velünk.", "András jön van velünk.", "Velünk András jön van."],
+      "options": [
+        "András jön velünk.",
+        "András jön van velünk.",
+        "Velünk András jön van."
+      ],
       "correct": 0
     },
     {
@@ -22,26 +30,58 @@
       "type": "multiple-choice",
       "category": "introduce",
       "question": "Which word means \"Monday\"?",
-      "options": ["hétfő", "reggel", "mindig"],
-      "correct": 0
+      "options": [
+        "hétfő",
+        "reggel",
+        "mindig"
+      ],
+      "correct": 0,
+      "teaches": [
+        "review-of-days-and-frequency",
+        "time-references"
+      ]
     },
     {
       "id": "a1-98-intro-2",
       "type": "multiple-choice",
       "category": "introduce",
       "question": "Which word means \"always\"?",
-      "options": ["mindig", "néha", "hétfő"],
-      "correct": 0
+      "options": [
+        "mindig",
+        "néha",
+        "hétfő"
+      ],
+      "correct": 0,
+      "teaches": [
+        "review-of-days-and-frequency",
+        "time-references"
+      ]
     },
     {
       "id": "a1-98-controlled-1",
       "type": "matching",
       "category": "controlled",
       "pairs": [
-        ["hétfő", "Monday"],
-        ["reggel", "morning"],
-        ["mindig", "always"],
-        ["néha", "sometimes"]
+        [
+          "hétfő",
+          "Monday"
+        ],
+        [
+          "reggel",
+          "morning"
+        ],
+        [
+          "mindig",
+          "always"
+        ],
+        [
+          "néha",
+          "sometimes"
+        ]
+      ],
+      "teaches": [
+        "review-of-days-and-frequency",
+        "time-references"
       ]
     },
     {
@@ -49,56 +89,116 @@
       "type": "fill-blank",
       "category": "controlled",
       "sentence": "____ reggel otthon vagyunk. (on Monday)",
-      "answer": "Hétfőn"
+      "answer": "Hétfőn",
+      "teaches": [
+        "review-of-days-and-frequency",
+        "time-references"
+      ]
     },
     {
       "id": "a1-98-controlled-3",
       "type": "multiple-choice",
       "category": "controlled",
       "question": "Which suffix marks \"on\" a day of the week?",
-      "options": ["-n", "-ban", "-ra"],
-      "correct": 0
+      "options": [
+        "-n",
+        "-ban",
+        "-ra"
+      ],
+      "correct": 0,
+      "teaches": [
+        "review-of-days-and-frequency",
+        "time-references"
+      ]
     },
     {
       "id": "a1-98-controlled-4",
       "type": "fill-blank",
       "category": "controlled",
       "sentence": "Én mindig reggel dolgozom, de ____ otthon tanulok. (sometimes)",
-      "answer": "néha"
+      "answer": "néha",
+      "teaches": [
+        "review-of-days-and-frequency",
+        "time-references"
+      ]
     },
     {
       "id": "a1-98-practice-1",
       "type": "multiple-choice",
       "category": "practice",
       "question": "Which word means \"tomorrow\"?",
-      "options": ["holnap", "hétfő", "reggel"],
-      "correct": 0
+      "options": [
+        "holnap",
+        "hétfő",
+        "reggel"
+      ],
+      "correct": 0,
+      "teaches": [
+        "review-of-days-and-frequency",
+        "time-references"
+      ]
     },
     {
       "id": "a1-98-practice-2",
       "type": "fill-blank",
       "category": "practice",
       "sentence": "____ is találkozunk. (tomorrow)",
-      "answer": "Holnap"
+      "answer": "Holnap",
+      "teaches": [
+        "review-of-days-and-frequency",
+        "time-references"
+      ]
     },
     {
       "id": "a1-98-practice-3",
       "type": "matching",
       "category": "practice",
       "pairs": [
-        ["Hétfőn reggel otthon vagyunk.", "On Monday morning we are at home."],
-        ["Én mindig reggel dolgozom.", "I always work in the morning."],
-        ["De néha otthon tanulok.", "But sometimes I study at home."],
-        ["Holnap is találkozunk.", "Tomorrow we also meet."]
+        [
+          "Hétfőn reggel otthon vagyunk.",
+          "On Monday morning we are at home."
+        ],
+        [
+          "Én mindig reggel dolgozom.",
+          "I always work in the morning."
+        ],
+        [
+          "De néha otthon tanulok.",
+          "But sometimes I study at home."
+        ],
+        [
+          "Holnap is találkozunk.",
+          "Tomorrow we also meet."
+        ]
+      ],
+      "teaches": [
+        "review-of-days-and-frequency",
+        "time-references"
       ]
     },
     {
       "id": "a1-98-practice-4",
       "type": "sentence-builder",
       "category": "practice",
-      "tiles": ["Hétfőn", "reggel", "otthon", "vagyunk", "."],
-      "solution": ["Hétfőn", "reggel", "otthon", "vagyunk", "."],
-      "english": "On Monday morning we are at home."
+      "tiles": [
+        "Hétfőn",
+        "reggel",
+        "otthon",
+        "vagyunk",
+        "."
+      ],
+      "solution": [
+        "Hétfőn",
+        "reggel",
+        "otthon",
+        "vagyunk",
+        "."
+      ],
+      "english": "On Monday morning we are at home.",
+      "teaches": [
+        "review-of-days-and-frequency",
+        "time-references"
+      ]
     },
     {
       "id": "a1-98-practice-5",
@@ -108,7 +208,16 @@
       "base_word": "mindig",
       "base_gloss": "I always work in the morning.",
       "options": [
-        { "word": "néha", "inflected": "néha", "sentence": "Én néha reggel dolgozom.", "gloss": "sometimes" }
+        {
+          "word": "néha",
+          "inflected": "néha",
+          "sentence": "Én néha reggel dolgozom.",
+          "gloss": "sometimes"
+        }
+      ],
+      "teaches": [
+        "review-of-days-and-frequency",
+        "time-references"
       ]
     },
     {
@@ -116,29 +225,62 @@
       "type": "dialogue-complete",
       "category": "dialogue",
       "prompt": [
-        { "speaker": "Meg", "text": "Mindig otthon vagytok hétfőn?" },
-        { "speaker": "Károly", "text": "_____" }
+        {
+          "speaker": "Meg",
+          "text": "Mindig otthon vagytok hétfőn?"
+        },
+        {
+          "speaker": "Károly",
+          "text": "_____"
+        }
       ],
-      "options": ["Igen, hétfőn reggel otthon vagyunk.", "Igen, hétfő reggel otthon van."],
-      "correct": 0
+      "options": [
+        "Igen, hétfőn reggel otthon vagyunk.",
+        "Igen, hétfő reggel otthon van."
+      ],
+      "correct": 0,
+      "teaches": [
+        "review-of-days-and-frequency",
+        "time-references"
+      ]
     },
     {
       "id": "a1-98-dialogue-2",
       "type": "dialogue-complete",
       "category": "dialogue",
       "prompt": [
-        { "speaker": "Meg", "text": "Holnap is találkozunk?" },
-        { "speaker": "Károly", "text": "_____" }
+        {
+          "speaker": "Meg",
+          "text": "Holnap is találkozunk?"
+        },
+        {
+          "speaker": "Károly",
+          "text": "_____"
+        }
       ],
-      "options": ["Igen, holnap is találkozunk.", "Igen, holnap van találkozunk."],
-      "correct": 0
+      "options": [
+        "Igen, holnap is találkozunk.",
+        "Igen, holnap van találkozunk."
+      ],
+      "correct": 0,
+      "teaches": [
+        "review-of-days-and-frequency",
+        "time-references"
+      ]
     },
     {
       "id": "a1-98-writing-1",
       "type": "structured-writing",
       "category": "writing",
       "template": [
-        { "prompt": "Say \"On Monday morning we are at home.\" in Hungarian.", "answer": "Hétfőn reggel otthon vagyunk." }
+        {
+          "prompt": "Say \"On Monday morning we are at home.\" in Hungarian.",
+          "answer": "Hétfőn reggel otthon vagyunk."
+        }
+      ],
+      "teaches": [
+        "review-of-days-and-frequency",
+        "time-references"
       ]
     },
     {
@@ -146,7 +288,14 @@
       "type": "structured-writing",
       "category": "writing",
       "template": [
-        { "prompt": "Say \"Tomorrow we also meet.\" in Hungarian.", "answer": "Holnap is találkozunk." }
+        {
+          "prompt": "Say \"Tomorrow we also meet.\" in Hungarian.",
+          "answer": "Holnap is találkozunk."
+        }
+      ],
+      "teaches": [
+        "review-of-days-and-frequency",
+        "time-references"
       ]
     },
     {
@@ -154,16 +303,32 @@
       "type": "multiple-choice",
       "category": "check",
       "question": "Which word means \"sometimes\"?",
-      "options": ["néha", "mindig", "holnap"],
-      "correct": 0
+      "options": [
+        "néha",
+        "mindig",
+        "holnap"
+      ],
+      "correct": 0,
+      "teaches": [
+        "review-of-days-and-frequency",
+        "time-references"
+      ]
     },
     {
       "id": "a1-98-check-2",
       "type": "multiple-choice",
       "category": "check",
       "question": "How do you say \"I always work in the morning, but sometimes I study at home\"?",
-      "options": ["Én mindig reggel dolgozom, de néha otthon tanulok.", "Én mindig reggel dolgozom, néha de otthon tanulok.", "Mindig dolgozom reggel én, de néha tanulok otthon."],
-      "correct": 0
+      "options": [
+        "Én mindig reggel dolgozom, de néha otthon tanulok.",
+        "Én mindig reggel dolgozom, néha de otthon tanulok.",
+        "Mindig dolgozom reggel én, de néha tanulok otthon."
+      ],
+      "correct": 0,
+      "teaches": [
+        "review-of-days-and-frequency",
+        "time-references"
+      ]
     }
   ]
 }

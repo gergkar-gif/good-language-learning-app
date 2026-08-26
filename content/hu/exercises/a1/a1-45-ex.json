@@ -6,7 +6,11 @@
       "type": "multiple-choice",
       "category": "review",
       "question": "Which word means \"yours\"?",
-      "options": ["tiéd", "enyém", "övé"],
+      "options": [
+        "tiéd",
+        "enyém",
+        "övé"
+      ],
       "correct": 0
     },
     {
@@ -14,7 +18,11 @@
       "type": "multiple-choice",
       "category": "review",
       "question": "How do you say \"The bag is ours\"?",
-      "options": ["A táska a miénk.", "A táska miénk.", "Miénk táska van."],
+      "options": [
+        "A táska a miénk.",
+        "A táska miénk.",
+        "Miénk táska van."
+      ],
       "correct": 0
     },
     {
@@ -22,26 +30,58 @@
       "type": "multiple-choice",
       "category": "introduce",
       "question": "Which word means \"theirs\"?",
-      "options": ["övék", "övé", "miénk"],
-      "correct": 0
+      "options": [
+        "övék",
+        "övé",
+        "miénk"
+      ],
+      "correct": 0,
+      "teaches": [
+        "possessive-suffixes-45",
+        "the-hungarian-have-construction-45"
+      ]
     },
     {
       "id": "a1-45-intro-2",
       "type": "multiple-choice",
       "category": "introduce",
       "question": "Which word means \"own\"?",
-      "options": ["saját", "tulajdon", "dolog"],
-      "correct": 0
+      "options": [
+        "saját",
+        "tulajdon",
+        "dolog"
+      ],
+      "correct": 0,
+      "teaches": [
+        "possessive-suffixes-45",
+        "the-hungarian-have-construction-45"
+      ]
     },
     {
       "id": "a1-45-controlled-1",
       "type": "matching",
       "category": "controlled",
       "pairs": [
-        ["övék", "theirs"],
-        ["saját", "own"],
-        ["tulajdon", "property"],
-        ["dolog", "thing"]
+        [
+          "övék",
+          "theirs"
+        ],
+        [
+          "saját",
+          "own"
+        ],
+        [
+          "tulajdon",
+          "property"
+        ],
+        [
+          "dolog",
+          "thing"
+        ]
+      ],
+      "teaches": [
+        "possessive-suffixes-45",
+        "the-hungarian-have-construction-45"
       ]
     },
     {
@@ -49,71 +89,153 @@
       "type": "fill-blank",
       "category": "controlled",
       "sentence": "A könyv az ____. (theirs)",
-      "answer": "övék"
+      "answer": "övék",
+      "teaches": [
+        "possessive-suffixes-45",
+        "the-hungarian-have-construction-45"
+      ]
     },
     {
       "id": "a1-45-controlled-3",
       "type": "multiple-choice",
       "category": "controlled",
       "question": "Which sentence means \"I have my own room\"?",
-      "options": ["Van egy saját szobám.", "Van saját szoba van.", "Saját szobám van egy."],
-      "correct": 0
+      "options": [
+        "Van egy saját szobám.",
+        "Van saját szoba van.",
+        "Saját szobám van egy."
+      ],
+      "correct": 0,
+      "teaches": [
+        "possessive-suffixes-45",
+        "the-hungarian-have-construction-45"
+      ]
     },
     {
       "id": "a1-45-controlled-4",
       "type": "fill-blank",
       "category": "controlled",
       "sentence": "Nekik van egy ____. (their car)",
-      "answer": "autójuk"
+      "answer": "autójuk",
+      "teaches": [
+        "possessive-suffixes-45",
+        "the-hungarian-have-construction-45"
+      ]
     },
     {
       "id": "a1-45-practice-1",
       "type": "multiple-choice",
       "category": "practice",
       "question": "Which sound gets inserted between autó and the suffix -juk to avoid two vowels colliding?",
-      "options": ["j", "v", "n"],
-      "correct": 0
+      "options": [
+        "j",
+        "v",
+        "n"
+      ],
+      "correct": 0,
+      "teaches": [
+        "possessive-suffixes-45",
+        "the-hungarian-have-construction-45"
+      ]
     },
     {
       "id": "a1-45-practice-2",
       "type": "fill-blank",
       "category": "practice",
       "sentence": "Minden saját ____ megvan. (thing)",
-      "answer": "dolog"
+      "answer": "dolog",
+      "teaches": [
+        "possessive-suffixes-45",
+        "the-hungarian-have-construction-45"
+      ]
     },
     {
       "id": "a1-45-practice-3",
       "type": "matching",
       "category": "practice",
       "pairs": [
-        ["A könyv az övék.", "The book is theirs."],
-        ["Minden saját dolog megvan.", "All of my own things are here."],
-        ["Van egy saját szobám.", "I have my own room."],
-        ["Nekik van egy autójuk.", "They have a car."]
+        [
+          "A könyv az övék.",
+          "The book is theirs."
+        ],
+        [
+          "Minden saját dolog megvan.",
+          "All of my own things are here."
+        ],
+        [
+          "Van egy saját szobám.",
+          "I have my own room."
+        ],
+        [
+          "Nekik van egy autójuk.",
+          "They have a car."
+        ]
+      ],
+      "teaches": [
+        "possessive-suffixes-45",
+        "the-hungarian-have-construction-45"
       ]
     },
     {
       "id": "a1-45-practice-4",
       "type": "sentence-builder",
       "category": "practice",
-      "tiles": ["Nekik", "van", "egy", "autójuk", "."],
-      "solution": ["Nekik", "van", "egy", "autójuk", "."],
-      "english": "They have a car."
+      "tiles": [
+        "Nekik",
+        "van",
+        "egy",
+        "autójuk",
+        "."
+      ],
+      "solution": [
+        "Nekik",
+        "van",
+        "egy",
+        "autójuk",
+        "."
+      ],
+      "english": "They have a car.",
+      "teaches": [
+        "possessive-suffixes-45",
+        "the-hungarian-have-construction-45"
+      ]
     },
     {
       "id": "a1-45-practice-5",
       "type": "sentence-order",
       "category": "practice",
-      "sentences": ["Kié a könyv?", "A könyv az övék.", "Van saját szobád?", "Igen, van egy saját szobám."],
-      "solution": [0, 1, 2, 3]
+      "sentences": [
+        "Kié a könyv?",
+        "A könyv az övék.",
+        "Van saját szobád?",
+        "Igen, van egy saját szobám."
+      ],
+      "solution": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "teaches": [
+        "possessive-suffixes-45",
+        "the-hungarian-have-construction-45"
+      ]
     },
     {
       "id": "a1-45-practice-6",
       "type": "multiple-choice",
       "category": "practice",
       "question": "Which word means \"thing\"?",
-      "options": ["dolog", "tulajdon", "saját"],
-      "correct": 0
+      "options": [
+        "dolog",
+        "tulajdon",
+        "saját"
+      ],
+      "correct": 0,
+      "teaches": [
+        "possessive-suffixes-45",
+        "the-hungarian-have-construction-45"
+      ]
     },
     {
       "id": "a1-45-practice-7",
@@ -123,7 +245,16 @@
       "base_word": "autójuk",
       "base_gloss": "They have a car.",
       "options": [
-        { "word": "szoba", "inflected": "szobájuk", "sentence": "Nekik van egy szobájuk.", "gloss": "room" }
+        {
+          "word": "szoba",
+          "inflected": "szobájuk",
+          "sentence": "Nekik van egy szobájuk.",
+          "gloss": "room"
+        }
+      ],
+      "teaches": [
+        "possessive-suffixes-45",
+        "the-hungarian-have-construction-45"
       ]
     },
     {
@@ -131,29 +262,62 @@
       "type": "dialogue-complete",
       "category": "dialogue",
       "prompt": [
-        { "speaker": "Meg", "text": "Kié ez a könyv?" },
-        { "speaker": "Károly", "text": "_____" }
+        {
+          "speaker": "Meg",
+          "text": "Kié ez a könyv?"
+        },
+        {
+          "speaker": "Károly",
+          "text": "_____"
+        }
       ],
-      "options": ["A könyv az övék.", "A könyv övék van."],
-      "correct": 0
+      "options": [
+        "A könyv az övék.",
+        "A könyv övék van."
+      ],
+      "correct": 0,
+      "teaches": [
+        "possessive-suffixes-45",
+        "the-hungarian-have-construction-45"
+      ]
     },
     {
       "id": "a1-45-dialogue-2",
       "type": "dialogue-complete",
       "category": "dialogue",
       "prompt": [
-        { "speaker": "Meg", "text": "Van saját szobád?" },
-        { "speaker": "Károly", "text": "_____" }
+        {
+          "speaker": "Meg",
+          "text": "Van saját szobád?"
+        },
+        {
+          "speaker": "Károly",
+          "text": "_____"
+        }
       ],
-      "options": ["Igen, van egy saját szobám.", "Igen, saját szoba van nekem."],
-      "correct": 0
+      "options": [
+        "Igen, van egy saját szobám.",
+        "Igen, saját szoba van nekem."
+      ],
+      "correct": 0,
+      "teaches": [
+        "possessive-suffixes-45",
+        "the-hungarian-have-construction-45"
+      ]
     },
     {
       "id": "a1-45-writing-1",
       "type": "structured-writing",
       "category": "writing",
       "template": [
-        { "prompt": "Say \"They have a car.\" in Hungarian.", "answer": "Nekik van egy autójuk." }
+        {
+          "prompt": "Say \"They have a car.\" in Hungarian.",
+          "answer": "Nekik van egy autójuk."
+        }
+      ],
+      "teaches": [
+        "possessive-suffixes-45",
+        "the-hungarian-have-construction-45"
       ]
     },
     {
@@ -161,7 +325,14 @@
       "type": "structured-writing",
       "category": "writing",
       "template": [
-        { "prompt": "Say \"The book is theirs.\" in Hungarian.", "answer": "A könyv az övék." }
+        {
+          "prompt": "Say \"The book is theirs.\" in Hungarian.",
+          "answer": "A könyv az övék."
+        }
+      ],
+      "teaches": [
+        "possessive-suffixes-45",
+        "the-hungarian-have-construction-45"
       ]
     },
     {
@@ -169,16 +340,32 @@
       "type": "multiple-choice",
       "category": "check",
       "question": "Which word means \"property\"?",
-      "options": ["tulajdon", "dolog", "saját"],
-      "correct": 0
+      "options": [
+        "tulajdon",
+        "dolog",
+        "saját"
+      ],
+      "correct": 0,
+      "teaches": [
+        "possessive-suffixes-45",
+        "the-hungarian-have-construction-45"
+      ]
     },
     {
       "id": "a1-45-check-2",
       "type": "multiple-choice",
       "category": "check",
       "question": "How do you say \"They have a car\"?",
-      "options": ["Nekik van egy autójuk.", "Nekik van egy autó.", "Ők van autójuk."],
-      "correct": 0
+      "options": [
+        "Nekik van egy autójuk.",
+        "Nekik van egy autó.",
+        "Ők van autójuk."
+      ],
+      "correct": 0,
+      "teaches": [
+        "possessive-suffixes-45",
+        "the-hungarian-have-construction-45"
+      ]
     }
   ]
 }

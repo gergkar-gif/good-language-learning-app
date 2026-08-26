@@ -6,7 +6,11 @@
       "type": "multiple-choice",
       "category": "review",
       "question": "Which word means \"apple\"?",
-      "options": ["alma", "pohár", "üveg"],
+      "options": [
+        "alma",
+        "pohár",
+        "üveg"
+      ],
       "correct": 0
     },
     {
@@ -14,7 +18,11 @@
       "type": "multiple-choice",
       "category": "review",
       "question": "How do you say \"There is much bread\"?",
-      "options": ["Sok kenyér van.", "Sok kenyér.", "Kenyér sok van."],
+      "options": [
+        "Sok kenyér van.",
+        "Sok kenyér.",
+        "Kenyér sok van."
+      ],
       "correct": 0
     },
     {
@@ -22,26 +30,58 @@
       "type": "multiple-choice",
       "category": "introduce",
       "question": "Which word means \"few / little\"?",
-      "options": ["kevés", "sok", "darab"],
-      "correct": 0
+      "options": [
+        "kevés",
+        "sok",
+        "darab"
+      ],
+      "correct": 0,
+      "teaches": [
+        "making-requests",
+        "responding-to-requests"
+      ]
     },
     {
       "id": "a1-94-intro-2",
       "type": "multiple-choice",
       "category": "introduce",
       "question": "Which word means \"I request / please\"?",
-      "options": ["kérek", "van", "sok"],
-      "correct": 0
+      "options": [
+        "kérek",
+        "van",
+        "sok"
+      ],
+      "correct": 0,
+      "teaches": [
+        "making-requests",
+        "responding-to-requests"
+      ]
     },
     {
       "id": "a1-94-controlled-1",
       "type": "matching",
       "category": "controlled",
       "pairs": [
-        ["kevés", "little, few"],
-        ["sok", "much, many"],
-        ["kérek", "I request"],
-        ["van", "there is"]
+        [
+          "kevés",
+          "little, few"
+        ],
+        [
+          "sok",
+          "much, many"
+        ],
+        [
+          "kérek",
+          "I request"
+        ],
+        [
+          "van",
+          "there is"
+        ]
+      ],
+      "teaches": [
+        "making-requests",
+        "responding-to-requests"
       ]
     },
     {
@@ -49,56 +89,120 @@
       "type": "fill-blank",
       "category": "controlled",
       "sentence": "____ vizet, kávét és teát. (I request)",
-      "answer": "Kérek"
+      "answer": "Kérek",
+      "teaches": [
+        "making-requests",
+        "responding-to-requests"
+      ]
     },
     {
       "id": "a1-94-controlled-3",
       "type": "multiple-choice",
       "category": "controlled",
       "question": "In a list of requested items, which suffix must EVERY item take?",
-      "options": ["-t (accusative)", "-ban (locative)", "no suffix at all"],
-      "correct": 0
+      "options": [
+        "-t (accusative)",
+        "-ban (locative)",
+        "no suffix at all"
+      ],
+      "correct": 0,
+      "teaches": [
+        "making-requests",
+        "responding-to-requests"
+      ]
     },
     {
       "id": "a1-94-controlled-4",
       "type": "fill-blank",
       "category": "controlled",
       "sentence": "Kérek egy üveg vizet és egy pohár ____. (tea, accusative)",
-      "answer": "teát"
+      "answer": "teát",
+      "teaches": [
+        "making-requests",
+        "responding-to-requests"
+      ]
     },
     {
       "id": "a1-94-practice-1",
       "type": "multiple-choice",
       "category": "practice",
       "question": "Which sentence correctly lists three requested drinks?",
-      "options": ["Kérek vizet, kávét és teát.", "Kérek víz, kávé és tea.", "Kérek vizet, kávé és teát."],
-      "correct": 0
+      "options": [
+        "Kérek vizet, kávét és teát.",
+        "Kérek víz, kávé és tea.",
+        "Kérek vizet, kávé és teát."
+      ],
+      "correct": 0,
+      "teaches": [
+        "making-requests",
+        "responding-to-requests"
+      ]
     },
     {
       "id": "a1-94-practice-2",
       "type": "fill-blank",
       "category": "practice",
       "sentence": "Kérek ____. (soup, accusative)",
-      "answer": "levest"
+      "answer": "levest",
+      "teaches": [
+        "making-requests",
+        "responding-to-requests"
+      ]
     },
     {
       "id": "a1-94-practice-3",
       "type": "matching",
       "category": "practice",
       "pairs": [
-        ["Kérek vizet, kávét és teát.", "I request water, coffee and tea."],
-        ["Kérek egy üveg vizet.", "I request one bottle of water."],
-        ["Kérek levest.", "I request soup."],
-        ["Kérek egy pohár teát.", "I request one glass of tea."]
+        [
+          "Kérek vizet, kávét és teát.",
+          "I request water, coffee and tea."
+        ],
+        [
+          "Kérek egy üveg vizet.",
+          "I request one bottle of water."
+        ],
+        [
+          "Kérek levest.",
+          "I request soup."
+        ],
+        [
+          "Kérek egy pohár teát.",
+          "I request one glass of tea."
+        ]
+      ],
+      "teaches": [
+        "making-requests",
+        "responding-to-requests"
       ]
     },
     {
       "id": "a1-94-practice-4",
       "type": "sentence-builder",
       "category": "practice",
-      "tiles": ["Kérek", "vizet", ",", "kávét", "és", "teát", "."],
-      "solution": ["Kérek", "vizet", ",", "kávét", "és", "teát", "."],
-      "english": "I request water, coffee and tea."
+      "tiles": [
+        "Kérek",
+        "vizet",
+        ",",
+        "kávét",
+        "és",
+        "teát",
+        "."
+      ],
+      "solution": [
+        "Kérek",
+        "vizet",
+        ",",
+        "kávét",
+        "és",
+        "teát",
+        "."
+      ],
+      "english": "I request water, coffee and tea.",
+      "teaches": [
+        "making-requests",
+        "responding-to-requests"
+      ]
     },
     {
       "id": "a1-94-practice-5",
@@ -108,8 +212,22 @@
       "base_word": "levest",
       "base_gloss": "I request soup.",
       "options": [
-        { "word": "kenyér", "inflected": "kenyeret", "sentence": "Kérek kenyeret.", "gloss": "bread" },
-        { "word": "alma", "inflected": "almát", "sentence": "Kérek almát.", "gloss": "apple" }
+        {
+          "word": "kenyér",
+          "inflected": "kenyeret",
+          "sentence": "Kérek kenyeret.",
+          "gloss": "bread"
+        },
+        {
+          "word": "alma",
+          "inflected": "almát",
+          "sentence": "Kérek almát.",
+          "gloss": "apple"
+        }
+      ],
+      "teaches": [
+        "making-requests",
+        "responding-to-requests"
       ]
     },
     {
@@ -117,29 +235,62 @@
       "type": "dialogue-complete",
       "category": "dialogue",
       "prompt": [
-        { "speaker": "Károly", "text": "Mit kérsz?" },
-        { "speaker": "Meg", "text": "_____" }
+        {
+          "speaker": "Károly",
+          "text": "Mit kérsz?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
       ],
-      "options": ["Kérek vizet, kávét és teát.", "Kérek víz, kávé és tea."],
-      "correct": 0
+      "options": [
+        "Kérek vizet, kávét és teát.",
+        "Kérek víz, kávé és tea."
+      ],
+      "correct": 0,
+      "teaches": [
+        "making-requests",
+        "responding-to-requests"
+      ]
     },
     {
       "id": "a1-94-dialogue-2",
       "type": "dialogue-complete",
       "category": "dialogue",
       "prompt": [
-        { "speaker": "Meg", "text": "Kérsz levest?" },
-        { "speaker": "Károly", "text": "_____" }
+        {
+          "speaker": "Meg",
+          "text": "Kérsz levest?"
+        },
+        {
+          "speaker": "Károly",
+          "text": "_____"
+        }
       ],
-      "options": ["Igen, kérek levest.", "Igen, kérek leves."],
-      "correct": 0
+      "options": [
+        "Igen, kérek levest.",
+        "Igen, kérek leves."
+      ],
+      "correct": 0,
+      "teaches": [
+        "making-requests",
+        "responding-to-requests"
+      ]
     },
     {
       "id": "a1-94-writing-1",
       "type": "structured-writing",
       "category": "writing",
       "template": [
-        { "prompt": "Say \"I request bread and cheese.\" in Hungarian.", "answer": "Kérek kenyeret és sajtot." }
+        {
+          "prompt": "Say \"I request bread and cheese.\" in Hungarian.",
+          "answer": "Kérek kenyeret és sajtot."
+        }
+      ],
+      "teaches": [
+        "making-requests",
+        "responding-to-requests"
       ]
     },
     {
@@ -147,7 +298,14 @@
       "type": "structured-writing",
       "category": "writing",
       "template": [
-        { "prompt": "Say \"I request one bottle of water and one glass of tea.\" in Hungarian.", "answer": "Kérek egy üveg vizet és egy pohár teát." }
+        {
+          "prompt": "Say \"I request one bottle of water and one glass of tea.\" in Hungarian.",
+          "answer": "Kérek egy üveg vizet és egy pohár teát."
+        }
+      ],
+      "teaches": [
+        "making-requests",
+        "responding-to-requests"
       ]
     },
     {
@@ -155,16 +313,32 @@
       "type": "multiple-choice",
       "category": "check",
       "question": "Which word means \"there is\"?",
-      "options": ["van", "kérek", "sok"],
-      "correct": 0
+      "options": [
+        "van",
+        "kérek",
+        "sok"
+      ],
+      "correct": 0,
+      "teaches": [
+        "making-requests",
+        "responding-to-requests"
+      ]
     },
     {
       "id": "a1-94-check-2",
       "type": "multiple-choice",
       "category": "check",
       "question": "How do you say \"I request soup\"?",
-      "options": ["Kérek levest.", "Kérek leves.", "Levest kérek van."],
-      "correct": 0
+      "options": [
+        "Kérek levest.",
+        "Kérek leves.",
+        "Levest kérek van."
+      ],
+      "correct": 0,
+      "teaches": [
+        "making-requests",
+        "responding-to-requests"
+      ]
     }
   ]
 }

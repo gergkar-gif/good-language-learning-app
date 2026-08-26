@@ -6,7 +6,11 @@
       "type": "multiple-choice",
       "category": "review",
       "question": "Which word means \"old\"?",
-      "options": ["öreg", "szép", "barna"],
+      "options": [
+        "öreg",
+        "szép",
+        "barna"
+      ],
       "correct": 0
     },
     {
@@ -14,7 +18,11 @@
       "type": "multiple-choice",
       "category": "review",
       "question": "Which sentence means \"He has brown hair\"?",
-      "options": ["Barna haja van.", "Ő barna haj.", "Barna haj van ő."],
+      "options": [
+        "Barna haja van.",
+        "Ő barna haj.",
+        "Barna haj van ő."
+      ],
       "correct": 0
     },
     {
@@ -22,26 +30,58 @@
       "type": "multiple-choice",
       "category": "introduce",
       "question": "Which word means \"kind\"?",
-      "options": ["kedves", "vicces", "hangos"],
-      "correct": 0
+      "options": [
+        "kedves",
+        "vicces",
+        "hangos"
+      ],
+      "correct": 0,
+      "teaches": [
+        "personality-kedves-vicces-csendes-hangos",
+        "linking-adjectives-with-es"
+      ]
     },
     {
       "id": "a1-33-introduce-2",
       "type": "multiple-choice",
       "category": "introduce",
       "question": "Which word means \"funny\"?",
-      "options": ["vicces", "kedves", "csendes"],
-      "correct": 0
+      "options": [
+        "vicces",
+        "kedves",
+        "csendes"
+      ],
+      "correct": 0,
+      "teaches": [
+        "personality-kedves-vicces-csendes-hangos",
+        "linking-adjectives-with-es"
+      ]
     },
     {
       "id": "a1-33-controlled-1",
       "type": "matching",
       "category": "controlled",
       "pairs": [
-        ["kedves", "kind"],
-        ["vicces", "funny"],
-        ["csendes", "quiet"],
-        ["hangos", "loud"]
+        [
+          "kedves",
+          "kind"
+        ],
+        [
+          "vicces",
+          "funny"
+        ],
+        [
+          "csendes",
+          "quiet"
+        ],
+        [
+          "hangos",
+          "loud"
+        ]
+      ],
+      "teaches": [
+        "personality-kedves-vicces-csendes-hangos",
+        "linking-adjectives-with-es"
       ]
     },
     {
@@ -49,79 +89,171 @@
       "type": "fill-blank",
       "category": "controlled",
       "sentence": "Ő ____ és vicces. (kind)",
-      "answer": "kedves"
+      "answer": "kedves",
+      "teaches": [
+        "personality-kedves-vicces-csendes-hangos",
+        "linking-adjectives-with-es"
+      ]
     },
     {
       "id": "a1-33-controlled-3",
       "type": "multiple-choice",
       "category": "controlled",
       "question": "Which sentence links two qualities correctly?",
-      "options": ["Kedves és vicces.", "Kedves vicces és.", "És kedves vicces."],
-      "correct": 0
+      "options": [
+        "Kedves és vicces.",
+        "Kedves vicces és.",
+        "És kedves vicces."
+      ],
+      "correct": 0,
+      "teaches": [
+        "personality-kedves-vicces-csendes-hangos",
+        "linking-adjectives-with-es"
+      ]
     },
     {
       "id": "a1-33-controlled-4",
       "type": "fill-blank",
       "category": "controlled",
       "sentence": "Ő nem hangos, ____. (quiet)",
-      "answer": "csendes"
+      "answer": "csendes",
+      "teaches": [
+        "personality-kedves-vicces-csendes-hangos",
+        "linking-adjectives-with-es"
+      ]
     },
     {
       "id": "a1-33-practice-1",
       "type": "multiple-choice",
       "category": "practice",
       "question": "Which word negates hangos in Ő nem hangos?",
-      "options": ["nem", "nincs", "sem"],
-      "correct": 0
+      "options": [
+        "nem",
+        "nincs",
+        "sem"
+      ],
+      "correct": 0,
+      "teaches": [
+        "personality-kedves-vicces-csendes-hangos",
+        "linking-adjectives-with-es"
+      ]
     },
     {
       "id": "a1-33-practice-2",
       "type": "fill-blank",
       "category": "practice",
       "sentence": "Ők kedvesek ____ viccesek. (and)",
-      "answer": "és"
+      "answer": "és",
+      "teaches": [
+        "personality-kedves-vicces-csendes-hangos",
+        "linking-adjectives-with-es"
+      ]
     },
     {
       "id": "a1-33-practice-3",
       "type": "matching",
       "category": "practice",
       "pairs": [
-        ["Ő kedves és vicces.", "He is kind and funny."],
-        ["Csendes és kedves.", "Quiet and kind."],
-        ["Ő nem hangos, csendes.", "He isn't loud, he's quiet."],
-        ["Ők kedvesek.", "They are kind."]
+        [
+          "Ő kedves és vicces.",
+          "He is kind and funny."
+        ],
+        [
+          "Csendes és kedves.",
+          "Quiet and kind."
+        ],
+        [
+          "Ő nem hangos, csendes.",
+          "He isn't loud, he's quiet."
+        ],
+        [
+          "Ők kedvesek.",
+          "They are kind."
+        ]
+      ],
+      "teaches": [
+        "personality-kedves-vicces-csendes-hangos",
+        "linking-adjectives-with-es"
       ]
     },
     {
       "id": "a1-33-practice-4",
       "type": "sentence-builder",
       "category": "practice",
-      "tiles": ["Ő", "kedves", "és", "vicces", "."],
-      "solution": ["Ő", "kedves", "és", "vicces", "."],
-      "english": "He is kind and funny."
+      "tiles": [
+        "Ő",
+        "kedves",
+        "és",
+        "vicces",
+        "."
+      ],
+      "solution": [
+        "Ő",
+        "kedves",
+        "és",
+        "vicces",
+        "."
+      ],
+      "english": "He is kind and funny.",
+      "teaches": [
+        "personality-kedves-vicces-csendes-hangos",
+        "linking-adjectives-with-es"
+      ]
     },
     {
       "id": "a1-33-practice-5",
       "type": "sentence-order",
       "category": "practice",
-      "sentences": ["Milyen ő?", "Kedves és vicces.", "Ő hangos?", "Nem, csendes."],
-      "solution": [0, 1, 2, 3]
+      "sentences": [
+        "Milyen ő?",
+        "Kedves és vicces.",
+        "Ő hangos?",
+        "Nem, csendes."
+      ],
+      "solution": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "teaches": [
+        "personality-kedves-vicces-csendes-hangos",
+        "linking-adjectives-with-es"
+      ]
     },
     {
       "id": "a1-33-practice-6",
       "type": "multiple-choice",
       "category": "practice",
       "question": "Which pair are natural opposites?",
-      "options": ["csendes / hangos", "kedves / vicces", "öreg / szép"],
-      "correct": 0
+      "options": [
+        "csendes / hangos",
+        "kedves / vicces",
+        "öreg / szép"
+      ],
+      "correct": 0,
+      "teaches": [
+        "personality-kedves-vicces-csendes-hangos",
+        "linking-adjectives-with-es"
+      ]
     },
     {
       "id": "a1-33-practice-7",
       "type": "structured-writing",
       "category": "practice",
       "template": [
-        { "prompt": "Say she is kind and funny.", "answer": "Ő kedves és vicces." },
-        { "prompt": "Say he isn't loud, he's quiet.", "answer": "Ő nem hangos, csendes." }
+        {
+          "prompt": "Say she is kind and funny.",
+          "answer": "Ő kedves és vicces."
+        },
+        {
+          "prompt": "Say he isn't loud, he's quiet.",
+          "answer": "Ő nem hangos, csendes."
+        }
+      ],
+      "teaches": [
+        "personality-kedves-vicces-csendes-hangos",
+        "linking-adjectives-with-es"
       ]
     },
     {
@@ -129,29 +261,62 @@
       "type": "dialogue-complete",
       "category": "dialogue",
       "prompt": [
-        { "speaker": "Meg", "text": "Milyen ő?" },
-        { "speaker": "Károly", "text": "_____" }
+        {
+          "speaker": "Meg",
+          "text": "Milyen ő?"
+        },
+        {
+          "speaker": "Károly",
+          "text": "_____"
+        }
       ],
-      "options": ["Kedves és vicces.", "Kedves vicces van."],
-      "correct": 0
+      "options": [
+        "Kedves és vicces.",
+        "Kedves vicces van."
+      ],
+      "correct": 0,
+      "teaches": [
+        "personality-kedves-vicces-csendes-hangos",
+        "linking-adjectives-with-es"
+      ]
     },
     {
       "id": "a1-33-dialogue-2",
       "type": "dialogue-complete",
       "category": "dialogue",
       "prompt": [
-        { "speaker": "Meg", "text": "Ő hangos?" },
-        { "speaker": "Károly", "text": "_____" }
+        {
+          "speaker": "Meg",
+          "text": "Ő hangos?"
+        },
+        {
+          "speaker": "Károly",
+          "text": "_____"
+        }
       ],
-      "options": ["Nem, csendes.", "Nem, hangos nem."],
-      "correct": 0
+      "options": [
+        "Nem, csendes.",
+        "Nem, hangos nem."
+      ],
+      "correct": 0,
+      "teaches": [
+        "personality-kedves-vicces-csendes-hangos",
+        "linking-adjectives-with-es"
+      ]
     },
     {
       "id": "a1-33-writing-1",
       "type": "structured-writing",
       "category": "writing",
       "template": [
-        { "prompt": "Say \"Quiet and kind.\" in Hungarian.", "answer": "Csendes és kedves." }
+        {
+          "prompt": "Say \"Quiet and kind.\" in Hungarian.",
+          "answer": "Csendes és kedves."
+        }
+      ],
+      "teaches": [
+        "personality-kedves-vicces-csendes-hangos",
+        "linking-adjectives-with-es"
       ]
     },
     {
@@ -159,7 +324,14 @@
       "type": "structured-writing",
       "category": "writing",
       "template": [
-        { "prompt": "Say \"They are funny.\" in Hungarian.", "answer": "Ők viccesek." }
+        {
+          "prompt": "Say \"They are funny.\" in Hungarian.",
+          "answer": "Ők viccesek."
+        }
+      ],
+      "teaches": [
+        "personality-kedves-vicces-csendes-hangos",
+        "linking-adjectives-with-es"
       ]
     },
     {
@@ -167,16 +339,32 @@
       "type": "multiple-choice",
       "category": "check",
       "question": "Which word means \"loud\"?",
-      "options": ["hangos", "csendes", "kedves"],
-      "correct": 0
+      "options": [
+        "hangos",
+        "csendes",
+        "kedves"
+      ],
+      "correct": 0,
+      "teaches": [
+        "personality-kedves-vicces-csendes-hangos",
+        "linking-adjectives-with-es"
+      ]
     },
     {
       "id": "a1-33-check-2",
       "type": "multiple-choice",
       "category": "check",
       "question": "How do you say \"He is kind and funny\"?",
-      "options": ["Ő kedves és vicces.", "Ő van kedves és vicces.", "Kedves és vicces ő."],
-      "correct": 0
+      "options": [
+        "Ő kedves és vicces.",
+        "Ő van kedves és vicces.",
+        "Kedves és vicces ő."
+      ],
+      "correct": 0,
+      "teaches": [
+        "personality-kedves-vicces-csendes-hangos",
+        "linking-adjectives-with-es"
+      ]
     }
   ]
 }

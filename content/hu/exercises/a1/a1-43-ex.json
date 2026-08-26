@@ -6,7 +6,11 @@
       "type": "multiple-choice",
       "category": "review",
       "question": "Which word means \"room\"?",
-      "options": ["szoba", "cím", "lakás"],
+      "options": [
+        "szoba",
+        "cím",
+        "lakás"
+      ],
       "correct": 0
     },
     {
@@ -14,7 +18,11 @@
       "type": "multiple-choice",
       "category": "review",
       "question": "How do you say \"My friend is here\"?",
-      "options": ["A barátom itt van.", "A barát itt van.", "Barátom itt van ő."],
+      "options": [
+        "A barátom itt van.",
+        "A barát itt van.",
+        "Barátom itt van ő."
+      ],
       "correct": 0
     },
     {
@@ -22,26 +30,58 @@
       "type": "multiple-choice",
       "category": "introduce",
       "question": "Which word means \"flat / apartment\"?",
-      "options": ["lakás", "cím", "autó"],
-      "correct": 0
+      "options": [
+        "lakás",
+        "cím",
+        "autó"
+      ],
+      "correct": 0,
+      "teaches": [
+        "possessive-suffixes-43",
+        "the-hungarian-have-construction-43"
+      ]
     },
     {
       "id": "a1-43-intro-2",
       "type": "multiple-choice",
       "category": "introduce",
       "question": "Which word means \"mine\"?",
-      "options": ["enyém", "tiéd", "övé"],
-      "correct": 0
+      "options": [
+        "enyém",
+        "tiéd",
+        "övé"
+      ],
+      "correct": 0,
+      "teaches": [
+        "possessive-suffixes-43",
+        "the-hungarian-have-construction-43"
+      ]
     },
     {
       "id": "a1-43-controlled-1",
       "type": "matching",
       "category": "controlled",
       "pairs": [
-        ["cím", "address"],
-        ["lakás", "flat"],
-        ["autó", "car"],
-        ["enyém", "mine"]
+        [
+          "cím",
+          "address"
+        ],
+        [
+          "lakás",
+          "flat"
+        ],
+        [
+          "autó",
+          "car"
+        ],
+        [
+          "enyém",
+          "mine"
+        ]
+      ],
+      "teaches": [
+        "possessive-suffixes-43",
+        "the-hungarian-have-construction-43"
       ]
     },
     {
@@ -49,71 +89,153 @@
       "type": "fill-blank",
       "category": "controlled",
       "sentence": "A ____ itt van. (my flat)",
-      "answer": "lakásom"
+      "answer": "lakásom",
+      "teaches": [
+        "possessive-suffixes-43",
+        "the-hungarian-have-construction-43"
+      ]
     },
     {
       "id": "a1-43-controlled-3",
       "type": "multiple-choice",
       "category": "controlled",
       "question": "Which sentence means \"The car is mine\"?",
-      "options": ["Az autó az enyém.", "Az autó enyém van.", "Enyém az autó van."],
-      "correct": 0
+      "options": [
+        "Az autó az enyém.",
+        "Az autó enyém van.",
+        "Enyém az autó van."
+      ],
+      "correct": 0,
+      "teaches": [
+        "possessive-suffixes-43",
+        "the-hungarian-have-construction-43"
+      ]
     },
     {
       "id": "a1-43-controlled-4",
       "type": "fill-blank",
       "category": "controlled",
       "sentence": "Az autó az ____. (mine)",
-      "answer": "enyém"
+      "answer": "enyém",
+      "teaches": [
+        "possessive-suffixes-43",
+        "the-hungarian-have-construction-43"
+      ]
     },
     {
       "id": "a1-43-practice-1",
       "type": "multiple-choice",
       "category": "practice",
       "question": "Which is more natural to avoid repeating the noun: \"az autó az autóm\" or \"az autó az enyém\"?",
-      "options": ["az autó az enyém", "az autó az autóm", "both are equally natural"],
-      "correct": 0
+      "options": [
+        "az autó az enyém",
+        "az autó az autóm",
+        "both are equally natural"
+      ],
+      "correct": 0,
+      "teaches": [
+        "possessive-suffixes-43",
+        "the-hungarian-have-construction-43"
+      ]
     },
     {
       "id": "a1-43-practice-2",
       "type": "fill-blank",
       "category": "practice",
       "sentence": "A ____ itt van. (my address)",
-      "answer": "címem"
+      "answer": "címem",
+      "teaches": [
+        "possessive-suffixes-43",
+        "the-hungarian-have-construction-43"
+      ]
     },
     {
       "id": "a1-43-practice-3",
       "type": "matching",
       "category": "practice",
       "pairs": [
-        ["A lakásom itt van.", "My flat is here."],
-        ["Az autó az enyém.", "The car is mine."],
-        ["A cím fontos.", "The address is important."],
-        ["Ez az én lakásom.", "This is my flat."]
+        [
+          "A lakásom itt van.",
+          "My flat is here."
+        ],
+        [
+          "Az autó az enyém.",
+          "The car is mine."
+        ],
+        [
+          "A cím fontos.",
+          "The address is important."
+        ],
+        [
+          "Ez az én lakásom.",
+          "This is my flat."
+        ]
+      ],
+      "teaches": [
+        "possessive-suffixes-43",
+        "the-hungarian-have-construction-43"
       ]
     },
     {
       "id": "a1-43-practice-4",
       "type": "sentence-builder",
       "category": "practice",
-      "tiles": ["Az", "autó", "az", "enyém", "."],
-      "solution": ["Az", "autó", "az", "enyém", "."],
-      "english": "The car is mine."
+      "tiles": [
+        "Az",
+        "autó",
+        "az",
+        "enyém",
+        "."
+      ],
+      "solution": [
+        "Az",
+        "autó",
+        "az",
+        "enyém",
+        "."
+      ],
+      "english": "The car is mine.",
+      "teaches": [
+        "possessive-suffixes-43",
+        "the-hungarian-have-construction-43"
+      ]
     },
     {
       "id": "a1-43-practice-5",
       "type": "sentence-order",
       "category": "practice",
-      "sentences": ["Hol van a lakásod?", "A lakásom itt van.", "Kié az autó?", "Az autó az enyém."],
-      "solution": [0, 1, 2, 3]
+      "sentences": [
+        "Hol van a lakásod?",
+        "A lakásom itt van.",
+        "Kié az autó?",
+        "Az autó az enyém."
+      ],
+      "solution": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "teaches": [
+        "possessive-suffixes-43",
+        "the-hungarian-have-construction-43"
+      ]
     },
     {
       "id": "a1-43-practice-6",
       "type": "multiple-choice",
       "category": "practice",
       "question": "Which word means \"car\"?",
-      "options": ["autó", "lakás", "cím"],
-      "correct": 0
+      "options": [
+        "autó",
+        "lakás",
+        "cím"
+      ],
+      "correct": 0,
+      "teaches": [
+        "possessive-suffixes-43",
+        "the-hungarian-have-construction-43"
+      ]
     },
     {
       "id": "a1-43-practice-7",
@@ -123,7 +245,16 @@
       "base_word": "lakásom",
       "base_gloss": "My flat is here.",
       "options": [
-        { "word": "autó", "inflected": "autóm", "sentence": "Az autóm itt van.", "gloss": "my car" }
+        {
+          "word": "autó",
+          "inflected": "autóm",
+          "sentence": "Az autóm itt van.",
+          "gloss": "my car"
+        }
+      ],
+      "teaches": [
+        "possessive-suffixes-43",
+        "the-hungarian-have-construction-43"
       ]
     },
     {
@@ -131,29 +262,62 @@
       "type": "dialogue-complete",
       "category": "dialogue",
       "prompt": [
-        { "speaker": "Meg", "text": "Kié az autó?" },
-        { "speaker": "Károly", "text": "_____" }
+        {
+          "speaker": "Meg",
+          "text": "Kié az autó?"
+        },
+        {
+          "speaker": "Károly",
+          "text": "_____"
+        }
       ],
-      "options": ["Az autó az enyém.", "Az autó enyém van."],
-      "correct": 0
+      "options": [
+        "Az autó az enyém.",
+        "Az autó enyém van."
+      ],
+      "correct": 0,
+      "teaches": [
+        "possessive-suffixes-43",
+        "the-hungarian-have-construction-43"
+      ]
     },
     {
       "id": "a1-43-dialogue-2",
       "type": "dialogue-complete",
       "category": "dialogue",
       "prompt": [
-        { "speaker": "Meg", "text": "Hol van a lakásod?" },
-        { "speaker": "Károly", "text": "_____" }
+        {
+          "speaker": "Meg",
+          "text": "Hol van a lakásod?"
+        },
+        {
+          "speaker": "Károly",
+          "text": "_____"
+        }
       ],
-      "options": ["A lakásom itt van.", "A lakás itt van om."],
-      "correct": 0
+      "options": [
+        "A lakásom itt van.",
+        "A lakás itt van om."
+      ],
+      "correct": 0,
+      "teaches": [
+        "possessive-suffixes-43",
+        "the-hungarian-have-construction-43"
+      ]
     },
     {
       "id": "a1-43-writing-1",
       "type": "structured-writing",
       "category": "writing",
       "template": [
-        { "prompt": "Say \"The car is mine.\" in Hungarian.", "answer": "Az autó az enyém." }
+        {
+          "prompt": "Say \"The car is mine.\" in Hungarian.",
+          "answer": "Az autó az enyém."
+        }
+      ],
+      "teaches": [
+        "possessive-suffixes-43",
+        "the-hungarian-have-construction-43"
       ]
     },
     {
@@ -161,7 +325,14 @@
       "type": "structured-writing",
       "category": "writing",
       "template": [
-        { "prompt": "Say \"My flat is here.\" in Hungarian.", "answer": "A lakásom itt van." }
+        {
+          "prompt": "Say \"My flat is here.\" in Hungarian.",
+          "answer": "A lakásom itt van."
+        }
+      ],
+      "teaches": [
+        "possessive-suffixes-43",
+        "the-hungarian-have-construction-43"
       ]
     },
     {
@@ -169,16 +340,32 @@
       "type": "multiple-choice",
       "category": "check",
       "question": "Which word means \"address\"?",
-      "options": ["cím", "lakás", "autó"],
-      "correct": 0
+      "options": [
+        "cím",
+        "lakás",
+        "autó"
+      ],
+      "correct": 0,
+      "teaches": [
+        "possessive-suffixes-43",
+        "the-hungarian-have-construction-43"
+      ]
     },
     {
       "id": "a1-43-check-2",
       "type": "multiple-choice",
       "category": "check",
       "question": "How do you say \"The car is mine\"?",
-      "options": ["Az autó az enyém.", "Az autó enyém.", "Enyém autó van."],
-      "correct": 0
+      "options": [
+        "Az autó az enyém.",
+        "Az autó enyém.",
+        "Enyém autó van."
+      ],
+      "correct": 0,
+      "teaches": [
+        "possessive-suffixes-43",
+        "the-hungarian-have-construction-43"
+      ]
     }
   ]
 }

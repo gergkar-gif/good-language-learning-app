@@ -6,7 +6,11 @@
       "type": "multiple-choice",
       "category": "review",
       "question": "Which word means \"beside, next to\"?",
-      "options": ["mellett", "haza", "bolt"],
+      "options": [
+        "mellett",
+        "haza",
+        "bolt"
+      ],
       "correct": 0
     },
     {
@@ -14,7 +18,11 @@
       "type": "multiple-choice",
       "category": "review",
       "question": "How do you say \"He/she goes to school\"?",
-      "options": ["Az iskolába megy.", "Az iskola megy.", "Iskolába van megy."],
+      "options": [
+        "Az iskolába megy.",
+        "Az iskola megy.",
+        "Iskolába van megy."
+      ],
       "correct": 0
     },
     {
@@ -22,26 +30,58 @@
       "type": "multiple-choice",
       "category": "introduce",
       "question": "Which word means \"he/she works\"?",
-      "options": ["dolgozik", "tanul", "megy"],
-      "correct": 0
+      "options": [
+        "dolgozik",
+        "tanul",
+        "megy"
+      ],
+      "correct": 0,
+      "teaches": [
+        "review-of-present-tense-verbs",
+        "movement-verbs"
+      ]
     },
     {
       "id": "a1-97-intro-2",
       "type": "multiple-choice",
       "category": "introduce",
       "question": "Which word means \"he/she studies\"?",
-      "options": ["tanul", "dolgozik", "jön"],
-      "correct": 0
+      "options": [
+        "tanul",
+        "dolgozik",
+        "jön"
+      ],
+      "correct": 0,
+      "teaches": [
+        "review-of-present-tense-verbs",
+        "movement-verbs"
+      ]
     },
     {
       "id": "a1-97-controlled-1",
       "type": "matching",
       "category": "controlled",
       "pairs": [
-        ["dolgozik", "he/she works"],
-        ["tanul", "he/she studies"],
-        ["megy", "he/she goes"],
-        ["jön", "he/she comes"]
+        [
+          "dolgozik",
+          "he/she works"
+        ],
+        [
+          "tanul",
+          "he/she studies"
+        ],
+        [
+          "megy",
+          "he/she goes"
+        ],
+        [
+          "jön",
+          "he/she comes"
+        ]
+      ],
+      "teaches": [
+        "review-of-present-tense-verbs",
+        "movement-verbs"
       ]
     },
     {
@@ -49,56 +89,118 @@
       "type": "fill-blank",
       "category": "controlled",
       "sentence": "András ____, Anna tanul. (works)",
-      "answer": "dolgozik"
+      "answer": "dolgozik",
+      "teaches": [
+        "review-of-present-tense-verbs",
+        "movement-verbs"
+      ]
     },
     {
       "id": "a1-97-controlled-3",
       "type": "multiple-choice",
       "category": "controlled",
       "question": "Which is the correct 1st-person form of dolgozik?",
-      "options": ["dolgozom", "dolgozok", "dolgozon"],
-      "correct": 0
+      "options": [
+        "dolgozom",
+        "dolgozok",
+        "dolgozon"
+      ],
+      "correct": 0,
+      "teaches": [
+        "review-of-present-tense-verbs",
+        "movement-verbs"
+      ]
     },
     {
       "id": "a1-97-controlled-4",
       "type": "fill-blank",
       "category": "controlled",
       "sentence": "András ____ velünk. (comes)",
-      "answer": "jön"
+      "answer": "jön",
+      "teaches": [
+        "review-of-present-tense-verbs",
+        "movement-verbs"
+      ]
     },
     {
       "id": "a1-97-practice-1",
       "type": "multiple-choice",
       "category": "practice",
       "question": "Which word does NOT take -ba/-be, unlike a normal destination noun?",
-      "options": ["haza", "iskola", "bolt"],
-      "correct": 0
+      "options": [
+        "haza",
+        "iskola",
+        "bolt"
+      ],
+      "correct": 0,
+      "teaches": [
+        "review-of-present-tense-verbs",
+        "movement-verbs"
+      ]
     },
     {
       "id": "a1-97-practice-2",
       "type": "fill-blank",
       "category": "practice",
       "sentence": "Együtt megyünk ____. (home)",
-      "answer": "haza"
+      "answer": "haza",
+      "teaches": [
+        "review-of-present-tense-verbs",
+        "movement-verbs"
+      ]
     },
     {
       "id": "a1-97-practice-3",
       "type": "matching",
       "category": "practice",
       "pairs": [
-        ["Én mindig reggel dolgozom.", "I always work in the morning."],
-        ["András dolgozik, Anna tanul.", "András works, Anna studies."],
-        ["Utána megyünk az iskolába.", "After that we go to school."],
-        ["András jön velünk.", "András comes with us."]
+        [
+          "Én mindig reggel dolgozom.",
+          "I always work in the morning."
+        ],
+        [
+          "András dolgozik, Anna tanul.",
+          "András works, Anna studies."
+        ],
+        [
+          "Utána megyünk az iskolába.",
+          "After that we go to school."
+        ],
+        [
+          "András jön velünk.",
+          "András comes with us."
+        ]
+      ],
+      "teaches": [
+        "review-of-present-tense-verbs",
+        "movement-verbs"
       ]
     },
     {
       "id": "a1-97-practice-4",
       "type": "sentence-builder",
       "category": "practice",
-      "tiles": ["András", "dolgozik", ",", "Anna", "tanul", "."],
-      "solution": ["András", "dolgozik", ",", "Anna", "tanul", "."],
-      "english": "András works, Anna studies."
+      "tiles": [
+        "András",
+        "dolgozik",
+        ",",
+        "Anna",
+        "tanul",
+        "."
+      ],
+      "solution": [
+        "András",
+        "dolgozik",
+        ",",
+        "Anna",
+        "tanul",
+        "."
+      ],
+      "english": "András works, Anna studies.",
+      "teaches": [
+        "review-of-present-tense-verbs",
+        "movement-verbs"
+      ]
     },
     {
       "id": "a1-97-practice-5",
@@ -108,8 +210,22 @@
       "base_word": "dolgozik",
       "base_gloss": "András works.",
       "options": [
-        { "word": "tanul", "inflected": "tanul", "sentence": "András tanul.", "gloss": "studies" },
-        { "word": "jön", "inflected": "jön", "sentence": "András jön.", "gloss": "comes" }
+        {
+          "word": "tanul",
+          "inflected": "tanul",
+          "sentence": "András tanul.",
+          "gloss": "studies"
+        },
+        {
+          "word": "jön",
+          "inflected": "jön",
+          "sentence": "András jön.",
+          "gloss": "comes"
+        }
+      ],
+      "teaches": [
+        "review-of-present-tense-verbs",
+        "movement-verbs"
       ]
     },
     {
@@ -117,29 +233,62 @@
       "type": "dialogue-complete",
       "category": "dialogue",
       "prompt": [
-        { "speaker": "Meg", "text": "Ki dolgozik?" },
-        { "speaker": "Károly", "text": "_____" }
+        {
+          "speaker": "Meg",
+          "text": "Ki dolgozik?"
+        },
+        {
+          "speaker": "Károly",
+          "text": "_____"
+        }
       ],
-      "options": ["András dolgozik, Anna tanul.", "András dolgozik van."],
-      "correct": 0
+      "options": [
+        "András dolgozik, Anna tanul.",
+        "András dolgozik van."
+      ],
+      "correct": 0,
+      "teaches": [
+        "review-of-present-tense-verbs",
+        "movement-verbs"
+      ]
     },
     {
       "id": "a1-97-dialogue-2",
       "type": "dialogue-complete",
       "category": "dialogue",
       "prompt": [
-        { "speaker": "Meg", "text": "András jön velünk?" },
-        { "speaker": "Károly", "text": "_____" }
+        {
+          "speaker": "Meg",
+          "text": "András jön velünk?"
+        },
+        {
+          "speaker": "Károly",
+          "text": "_____"
+        }
       ],
-      "options": ["Igen, András jön velünk.", "Igen, András van jön velünk."],
-      "correct": 0
+      "options": [
+        "Igen, András jön velünk.",
+        "Igen, András van jön velünk."
+      ],
+      "correct": 0,
+      "teaches": [
+        "review-of-present-tense-verbs",
+        "movement-verbs"
+      ]
     },
     {
       "id": "a1-97-writing-1",
       "type": "structured-writing",
       "category": "writing",
       "template": [
-        { "prompt": "Say \"I always work in the morning.\" in Hungarian.", "answer": "Én mindig reggel dolgozom." }
+        {
+          "prompt": "Say \"I always work in the morning.\" in Hungarian.",
+          "answer": "Én mindig reggel dolgozom."
+        }
+      ],
+      "teaches": [
+        "review-of-present-tense-verbs",
+        "movement-verbs"
       ]
     },
     {
@@ -147,7 +296,14 @@
       "type": "structured-writing",
       "category": "writing",
       "template": [
-        { "prompt": "Say \"After the meeting we go home together.\" in Hungarian.", "answer": "A találkozó után együtt megyünk haza." }
+        {
+          "prompt": "Say \"After the meeting we go home together.\" in Hungarian.",
+          "answer": "A találkozó után együtt megyünk haza."
+        }
+      ],
+      "teaches": [
+        "review-of-present-tense-verbs",
+        "movement-verbs"
       ]
     },
     {
@@ -155,16 +311,32 @@
       "type": "multiple-choice",
       "category": "check",
       "question": "Which word means \"he/she goes\"?",
-      "options": ["megy", "jön", "dolgozik"],
-      "correct": 0
+      "options": [
+        "megy",
+        "jön",
+        "dolgozik"
+      ],
+      "correct": 0,
+      "teaches": [
+        "review-of-present-tense-verbs",
+        "movement-verbs"
+      ]
     },
     {
       "id": "a1-97-check-2",
       "type": "multiple-choice",
       "category": "check",
       "question": "How do you say \"After that we go to school\"?",
-      "options": ["Utána megyünk az iskolába.", "Utána megyünk az iskola.", "Az iskolába utána megyünk van."],
-      "correct": 0
+      "options": [
+        "Utána megyünk az iskolába.",
+        "Utána megyünk az iskola.",
+        "Az iskolába utána megyünk van."
+      ],
+      "correct": 0,
+      "teaches": [
+        "review-of-present-tense-verbs",
+        "movement-verbs"
+      ]
     }
   ]
 }

@@ -6,7 +6,11 @@
       "type": "multiple-choice",
       "category": "review",
       "question": "Which word means \"together\"?",
-      "options": ["együtt", "minden", "otthon"],
+      "options": [
+        "együtt",
+        "minden",
+        "otthon"
+      ],
       "correct": 0
     },
     {
@@ -14,7 +18,11 @@
       "type": "multiple-choice",
       "category": "review",
       "question": "Which is the \"in the room\" form of szoba?",
-      "options": ["szobában", "szobák", "szobát"],
+      "options": [
+        "szobában",
+        "szobák",
+        "szobát"
+      ],
       "correct": 0
     },
     {
@@ -22,26 +30,58 @@
       "type": "multiple-choice",
       "category": "introduce",
       "question": "Which word means \"bread\"?",
-      "options": ["kenyér", "vaj", "sajt"],
-      "correct": 0
+      "options": [
+        "kenyér",
+        "vaj",
+        "sajt"
+      ],
+      "correct": 0,
+      "teaches": [
+        "staple-foods",
+        "simple-requests-for-food"
+      ]
     },
     {
       "id": "a1-91-intro-2",
       "type": "multiple-choice",
       "category": "introduce",
       "question": "Which word means \"milk\"?",
-      "options": ["tej", "víz", "kávé"],
-      "correct": 0
+      "options": [
+        "tej",
+        "víz",
+        "kávé"
+      ],
+      "correct": 0,
+      "teaches": [
+        "staple-foods",
+        "simple-requests-for-food"
+      ]
     },
     {
       "id": "a1-91-controlled-1",
       "type": "matching",
       "category": "controlled",
       "pairs": [
-        ["kenyér", "bread"],
-        ["vaj", "butter"],
-        ["sajt", "cheese"],
-        ["tej", "milk"]
+        [
+          "kenyér",
+          "bread"
+        ],
+        [
+          "vaj",
+          "butter"
+        ],
+        [
+          "sajt",
+          "cheese"
+        ],
+        [
+          "tej",
+          "milk"
+        ]
+      ],
+      "teaches": [
+        "staple-foods",
+        "simple-requests-for-food"
       ]
     },
     {
@@ -49,56 +89,112 @@
       "type": "fill-blank",
       "category": "controlled",
       "sentence": "Van ____, sajt és tej. (butter)",
-      "answer": "vaj"
+      "answer": "vaj",
+      "teaches": [
+        "staple-foods",
+        "simple-requests-for-food"
+      ]
     },
     {
       "id": "a1-91-controlled-3",
       "type": "multiple-choice",
       "category": "controlled",
       "question": "Which sentence correctly asks for bread using the accusative?",
-      "options": ["Kérek kenyeret.", "Kérek kenyér.", "Kenyeret van."],
-      "correct": 0
+      "options": [
+        "Kérek kenyeret.",
+        "Kérek kenyér.",
+        "Kenyeret van."
+      ],
+      "correct": 0,
+      "teaches": [
+        "staple-foods",
+        "simple-requests-for-food"
+      ]
     },
     {
       "id": "a1-91-controlled-4",
       "type": "fill-blank",
       "category": "controlled",
       "sentence": "Kérek ____. (water, accusative)",
-      "answer": "vizet"
+      "answer": "vizet",
+      "teaches": [
+        "staple-foods",
+        "simple-requests-for-food"
+      ]
     },
     {
       "id": "a1-91-practice-1",
       "type": "multiple-choice",
       "category": "practice",
       "question": "Which suffix marks the object of kérek?",
-      "options": ["-t", "-ban", "-nak"],
-      "correct": 0
+      "options": [
+        "-t",
+        "-ban",
+        "-nak"
+      ],
+      "correct": 0,
+      "teaches": [
+        "staple-foods",
+        "simple-requests-for-food"
+      ]
     },
     {
       "id": "a1-91-practice-2",
       "type": "fill-blank",
       "category": "practice",
       "sentence": "Kérek ____. (tea, accusative)",
-      "answer": "teát"
+      "answer": "teát",
+      "teaches": [
+        "staple-foods",
+        "simple-requests-for-food"
+      ]
     },
     {
       "id": "a1-91-practice-3",
       "type": "matching",
       "category": "practice",
       "pairs": [
-        ["Van kenyér.", "There is bread."],
-        ["Kérek kenyeret.", "I'd like bread."],
-        ["Kérek vizet.", "I'd like water."],
-        ["A kenyér jó.", "The bread is good."]
+        [
+          "Van kenyér.",
+          "There is bread."
+        ],
+        [
+          "Kérek kenyeret.",
+          "I'd like bread."
+        ],
+        [
+          "Kérek vizet.",
+          "I'd like water."
+        ],
+        [
+          "A kenyér jó.",
+          "The bread is good."
+        ]
+      ],
+      "teaches": [
+        "staple-foods",
+        "simple-requests-for-food"
       ]
     },
     {
       "id": "a1-91-practice-4",
       "type": "sentence-builder",
       "category": "practice",
-      "tiles": ["Kérek", "kenyeret", "."],
-      "solution": ["Kérek", "kenyeret", "."],
-      "english": "I'd like bread."
+      "tiles": [
+        "Kérek",
+        "kenyeret",
+        "."
+      ],
+      "solution": [
+        "Kérek",
+        "kenyeret",
+        "."
+      ],
+      "english": "I'd like bread.",
+      "teaches": [
+        "staple-foods",
+        "simple-requests-for-food"
+      ]
     },
     {
       "id": "a1-91-practice-5",
@@ -108,8 +204,22 @@
       "base_word": "kenyeret",
       "base_gloss": "I'd like bread.",
       "options": [
-        { "word": "tej", "inflected": "tejet", "sentence": "Kérek tejet.", "gloss": "milk" },
-        { "word": "sajt", "inflected": "sajtot", "sentence": "Kérek sajtot.", "gloss": "cheese" }
+        {
+          "word": "tej",
+          "inflected": "tejet",
+          "sentence": "Kérek tejet.",
+          "gloss": "milk"
+        },
+        {
+          "word": "sajt",
+          "inflected": "sajtot",
+          "sentence": "Kérek sajtot.",
+          "gloss": "cheese"
+        }
+      ],
+      "teaches": [
+        "staple-foods",
+        "simple-requests-for-food"
       ]
     },
     {
@@ -117,29 +227,62 @@
       "type": "dialogue-complete",
       "category": "dialogue",
       "prompt": [
-        { "speaker": "Károly", "text": "Mit kérsz?" },
-        { "speaker": "Meg", "text": "_____" }
+        {
+          "speaker": "Károly",
+          "text": "Mit kérsz?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
       ],
-      "options": ["Kérek kenyeret.", "Kérek kenyér."],
-      "correct": 0
+      "options": [
+        "Kérek kenyeret.",
+        "Kérek kenyér."
+      ],
+      "correct": 0,
+      "teaches": [
+        "staple-foods",
+        "simple-requests-for-food"
+      ]
     },
     {
       "id": "a1-91-dialogue-2",
       "type": "dialogue-complete",
       "category": "dialogue",
       "prompt": [
-        { "speaker": "Meg", "text": "Van vaj?" },
-        { "speaker": "Károly", "text": "_____" }
+        {
+          "speaker": "Meg",
+          "text": "Van vaj?"
+        },
+        {
+          "speaker": "Károly",
+          "text": "_____"
+        }
       ],
-      "options": ["Igen, van vaj, sajt és tej.", "Igen, vaj van."],
-      "correct": 0
+      "options": [
+        "Igen, van vaj, sajt és tej.",
+        "Igen, vaj van."
+      ],
+      "correct": 0,
+      "teaches": [
+        "staple-foods",
+        "simple-requests-for-food"
+      ]
     },
     {
       "id": "a1-91-writing-1",
       "type": "structured-writing",
       "category": "writing",
       "template": [
-        { "prompt": "Say \"I'd like cheese.\" in Hungarian.", "answer": "Kérek sajtot." }
+        {
+          "prompt": "Say \"I'd like cheese.\" in Hungarian.",
+          "answer": "Kérek sajtot."
+        }
+      ],
+      "teaches": [
+        "staple-foods",
+        "simple-requests-for-food"
       ]
     },
     {
@@ -147,7 +290,14 @@
       "type": "structured-writing",
       "category": "writing",
       "template": [
-        { "prompt": "Say \"There is bread and milk.\" in Hungarian.", "answer": "Van kenyér és tej." }
+        {
+          "prompt": "Say \"There is bread and milk.\" in Hungarian.",
+          "answer": "Van kenyér és tej."
+        }
+      ],
+      "teaches": [
+        "staple-foods",
+        "simple-requests-for-food"
       ]
     },
     {
@@ -155,16 +305,32 @@
       "type": "multiple-choice",
       "category": "check",
       "question": "Which word means \"cheese\"?",
-      "options": ["sajt", "vaj", "tej"],
-      "correct": 0
+      "options": [
+        "sajt",
+        "vaj",
+        "tej"
+      ],
+      "correct": 0,
+      "teaches": [
+        "staple-foods",
+        "simple-requests-for-food"
+      ]
     },
     {
       "id": "a1-91-check-2",
       "type": "multiple-choice",
       "category": "check",
       "question": "How do you say \"I'd like water\"?",
-      "options": ["Kérek vizet.", "Kérek víz.", "Vizet kérek van."],
-      "correct": 0
+      "options": [
+        "Kérek vizet.",
+        "Kérek víz.",
+        "Vizet kérek van."
+      ],
+      "correct": 0,
+      "teaches": [
+        "staple-foods",
+        "simple-requests-for-food"
+      ]
     }
   ]
 }

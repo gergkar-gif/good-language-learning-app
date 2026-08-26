@@ -6,7 +6,11 @@
       "type": "multiple-choice",
       "category": "review",
       "question": "Which word means \"thirsty\"?",
-      "options": ["szomjas", "éhes", "finom"],
+      "options": [
+        "szomjas",
+        "éhes",
+        "finom"
+      ],
       "correct": 0
     },
     {
@@ -14,7 +18,11 @@
       "type": "multiple-choice",
       "category": "review",
       "question": "How do you say \"Dinner will be delicious\"?",
-      "options": ["A vacsora finom lesz.", "A vacsora finom van.", "Finom lesz a vacsora van."],
+      "options": [
+        "A vacsora finom lesz.",
+        "A vacsora finom van.",
+        "Finom lesz a vacsora van."
+      ],
       "correct": 0
     },
     {
@@ -22,26 +30,58 @@
       "type": "multiple-choice",
       "category": "introduce",
       "question": "Which word means \"shop / store\"?",
-      "options": ["bolt", "iskola", "haza"],
-      "correct": 0
+      "options": [
+        "bolt",
+        "iskola",
+        "haza"
+      ],
+      "correct": 0,
+      "teaches": [
+        "review-of-location",
+        "review-of-destination"
+      ]
     },
     {
       "id": "a1-96-intro-2",
       "type": "multiple-choice",
       "category": "introduce",
       "question": "Which word means \"beside, next to\"?",
-      "options": ["mellett", "haza", "iskola"],
-      "correct": 0
+      "options": [
+        "mellett",
+        "haza",
+        "iskola"
+      ],
+      "correct": 0,
+      "teaches": [
+        "review-of-location",
+        "review-of-destination"
+      ]
     },
     {
       "id": "a1-96-controlled-1",
       "type": "matching",
       "category": "controlled",
       "pairs": [
-        ["iskola", "school"],
-        ["bolt", "shop, store"],
-        ["haza", "home"],
-        ["mellett", "beside, next to"]
+        [
+          "iskola",
+          "school"
+        ],
+        [
+          "bolt",
+          "shop, store"
+        ],
+        [
+          "haza",
+          "home"
+        ],
+        [
+          "mellett",
+          "beside, next to"
+        ]
+      ],
+      "teaches": [
+        "review-of-location",
+        "review-of-destination"
       ]
     },
     {
@@ -49,56 +89,120 @@
       "type": "fill-blank",
       "category": "controlled",
       "sentence": "A bolt az iskola ____ van. (beside)",
-      "answer": "mellett"
+      "answer": "mellett",
+      "teaches": [
+        "review-of-location",
+        "review-of-destination"
+      ]
     },
     {
       "id": "a1-96-controlled-3",
       "type": "multiple-choice",
       "category": "controlled",
       "question": "Which sentence correctly asks \"Where is he going?\"",
-      "options": ["Hová megy?", "Hol megy?", "Hová van?"],
-      "correct": 0
+      "options": [
+        "Hová megy?",
+        "Hol megy?",
+        "Hová van?"
+      ],
+      "correct": 0,
+      "teaches": [
+        "review-of-location",
+        "review-of-destination"
+      ]
     },
     {
       "id": "a1-96-controlled-4",
       "type": "fill-blank",
       "category": "controlled",
       "sentence": "Az ____ megy. (to school)",
-      "answer": "iskolába"
+      "answer": "iskolába",
+      "teaches": [
+        "review-of-location",
+        "review-of-destination"
+      ]
     },
     {
       "id": "a1-96-practice-1",
       "type": "multiple-choice",
       "category": "practice",
       "question": "Which suffix marks destination (\"to\"), not location (\"in/at\")?",
-      "options": ["-ba/-be", "-ban/-ben", "mellett"],
-      "correct": 0
+      "options": [
+        "-ba/-be",
+        "-ban/-ben",
+        "mellett"
+      ],
+      "correct": 0,
+      "teaches": [
+        "review-of-location",
+        "review-of-destination"
+      ]
     },
     {
       "id": "a1-96-practice-2",
       "type": "fill-blank",
       "category": "practice",
       "sentence": "Megyünk az iskolába. András ____ velünk. (comes)",
-      "answer": "jön"
+      "answer": "jön",
+      "teaches": [
+        "review-of-location",
+        "review-of-destination"
+      ]
     },
     {
       "id": "a1-96-practice-3",
       "type": "matching",
       "category": "practice",
       "pairs": [
-        ["Hol van?", "Where is he/she?"],
-        ["Az iskola mellett van.", "He/she is beside the school."],
-        ["Hová megy?", "Where is he/she going?"],
-        ["Az iskolába megy.", "He/she goes to school."]
+        [
+          "Hol van?",
+          "Where is he/she?"
+        ],
+        [
+          "Az iskola mellett van.",
+          "He/she is beside the school."
+        ],
+        [
+          "Hová megy?",
+          "Where is he/she going?"
+        ],
+        [
+          "Az iskolába megy.",
+          "He/she goes to school."
+        ]
+      ],
+      "teaches": [
+        "review-of-location",
+        "review-of-destination"
       ]
     },
     {
       "id": "a1-96-practice-4",
       "type": "sentence-builder",
       "category": "practice",
-      "tiles": ["A", "bolt", "az", "iskola", "mellett", "van", "."],
-      "solution": ["A", "bolt", "az", "iskola", "mellett", "van", "."],
-      "english": "The shop is beside the school."
+      "tiles": [
+        "A",
+        "bolt",
+        "az",
+        "iskola",
+        "mellett",
+        "van",
+        "."
+      ],
+      "solution": [
+        "A",
+        "bolt",
+        "az",
+        "iskola",
+        "mellett",
+        "van",
+        "."
+      ],
+      "english": "The shop is beside the school.",
+      "teaches": [
+        "review-of-location",
+        "review-of-destination"
+      ]
     },
     {
       "id": "a1-96-practice-5",
@@ -108,7 +212,16 @@
       "base_word": "iskola",
       "base_gloss": "He/she is beside the school.",
       "options": [
-        { "word": "bolt", "inflected": "bolt", "sentence": "A bolt mellett van.", "gloss": "shop" }
+        {
+          "word": "bolt",
+          "inflected": "bolt",
+          "sentence": "A bolt mellett van.",
+          "gloss": "shop"
+        }
+      ],
+      "teaches": [
+        "review-of-location",
+        "review-of-destination"
       ]
     },
     {
@@ -116,29 +229,62 @@
       "type": "dialogue-complete",
       "category": "dialogue",
       "prompt": [
-        { "speaker": "Meg", "text": "Hová megy Károly?" },
-        { "speaker": "András", "text": "_____" }
+        {
+          "speaker": "Meg",
+          "text": "Hová megy Károly?"
+        },
+        {
+          "speaker": "András",
+          "text": "_____"
+        }
       ],
-      "options": ["Az iskolába megy.", "Az iskola megy."],
-      "correct": 0
+      "options": [
+        "Az iskolába megy.",
+        "Az iskola megy."
+      ],
+      "correct": 0,
+      "teaches": [
+        "review-of-location",
+        "review-of-destination"
+      ]
     },
     {
       "id": "a1-96-dialogue-2",
       "type": "dialogue-complete",
       "category": "dialogue",
       "prompt": [
-        { "speaker": "Meg", "text": "Hol van a bolt?" },
-        { "speaker": "Károly", "text": "_____" }
+        {
+          "speaker": "Meg",
+          "text": "Hol van a bolt?"
+        },
+        {
+          "speaker": "Károly",
+          "text": "_____"
+        }
       ],
-      "options": ["Az iskola mellett van.", "Az iskola mellett."],
-      "correct": 0
+      "options": [
+        "Az iskola mellett van.",
+        "Az iskola mellett."
+      ],
+      "correct": 0,
+      "teaches": [
+        "review-of-location",
+        "review-of-destination"
+      ]
     },
     {
       "id": "a1-96-writing-1",
       "type": "structured-writing",
       "category": "writing",
       "template": [
-        { "prompt": "Say \"He is beside the school.\" in Hungarian.", "answer": "Az iskola mellett van." }
+        {
+          "prompt": "Say \"He is beside the school.\" in Hungarian.",
+          "answer": "Az iskola mellett van."
+        }
+      ],
+      "teaches": [
+        "review-of-location",
+        "review-of-destination"
       ]
     },
     {
@@ -146,7 +292,14 @@
       "type": "structured-writing",
       "category": "writing",
       "template": [
-        { "prompt": "Say \"We go to school.\" in Hungarian.", "answer": "Megyünk az iskolába." }
+        {
+          "prompt": "Say \"We go to school.\" in Hungarian.",
+          "answer": "Megyünk az iskolába."
+        }
+      ],
+      "teaches": [
+        "review-of-location",
+        "review-of-destination"
       ]
     },
     {
@@ -154,16 +307,32 @@
       "type": "multiple-choice",
       "category": "check",
       "question": "Which word means \"school\"?",
-      "options": ["iskola", "bolt", "haza"],
-      "correct": 0
+      "options": [
+        "iskola",
+        "bolt",
+        "haza"
+      ],
+      "correct": 0,
+      "teaches": [
+        "review-of-location",
+        "review-of-destination"
+      ]
     },
     {
       "id": "a1-96-check-2",
       "type": "multiple-choice",
       "category": "check",
       "question": "How do you say \"András comes with us\"?",
-      "options": ["András jön velünk.", "András jön van velünk.", "Velünk András jön van."],
-      "correct": 0
+      "options": [
+        "András jön velünk.",
+        "András jön van velünk.",
+        "Velünk András jön van."
+      ],
+      "correct": 0,
+      "teaches": [
+        "review-of-location",
+        "review-of-destination"
+      ]
     }
   ]
 }

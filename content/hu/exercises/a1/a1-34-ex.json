@@ -6,7 +6,11 @@
       "type": "multiple-choice",
       "category": "review",
       "question": "Which word means \"kind\"?",
-      "options": ["kedves", "vicces", "hangos"],
+      "options": [
+        "kedves",
+        "vicces",
+        "hangos"
+      ],
       "correct": 0
     },
     {
@@ -14,7 +18,11 @@
       "type": "multiple-choice",
       "category": "review",
       "question": "Which pair are natural opposites?",
-      "options": ["csendes / hangos", "kedves / vicces", "öreg / szép"],
+      "options": [
+        "csendes / hangos",
+        "kedves / vicces",
+        "öreg / szép"
+      ],
       "correct": 0
     },
     {
@@ -22,26 +30,58 @@
       "type": "multiple-choice",
       "category": "introduce",
       "question": "Which word means \"person\"?",
-      "options": ["ember", "férfi", "nő"],
-      "correct": 0
+      "options": [
+        "ember",
+        "férfi",
+        "nő"
+      ],
+      "correct": 0,
+      "teaches": [
+        "ember-ferfi-no-barat",
+        "adjective-order-before-the-noun"
+      ]
     },
     {
       "id": "a1-34-introduce-2",
       "type": "multiple-choice",
       "category": "introduce",
       "question": "Which word means \"man\"?",
-      "options": ["férfi", "nő", "ember"],
-      "correct": 0
+      "options": [
+        "férfi",
+        "nő",
+        "ember"
+      ],
+      "correct": 0,
+      "teaches": [
+        "ember-ferfi-no-barat",
+        "adjective-order-before-the-noun"
+      ]
     },
     {
       "id": "a1-34-controlled-1",
       "type": "matching",
       "category": "controlled",
       "pairs": [
-        ["ember", "person"],
-        ["férfi", "man"],
-        ["nő", "woman"],
-        ["barát", "friend"]
+        [
+          "ember",
+          "person"
+        ],
+        [
+          "férfi",
+          "man"
+        ],
+        [
+          "nő",
+          "woman"
+        ],
+        [
+          "barát",
+          "friend"
+        ]
+      ],
+      "teaches": [
+        "ember-ferfi-no-barat",
+        "adjective-order-before-the-noun"
       ]
     },
     {
@@ -49,79 +89,169 @@
       "type": "fill-blank",
       "category": "controlled",
       "sentence": "Ő egy magas ____. (man)",
-      "answer": "férfi"
+      "answer": "férfi",
+      "teaches": [
+        "ember-ferfi-no-barat",
+        "adjective-order-before-the-noun"
+      ]
     },
     {
       "id": "a1-34-controlled-3",
       "type": "multiple-choice",
       "category": "controlled",
       "question": "Which sentence means \"He is my friend\"?",
-      "options": ["Ő a barátom.", "Ő barát van.", "Barátom ő van."],
-      "correct": 0
+      "options": [
+        "Ő a barátom.",
+        "Ő barát van.",
+        "Barátom ő van."
+      ],
+      "correct": 0,
+      "teaches": [
+        "ember-ferfi-no-barat",
+        "adjective-order-before-the-noun"
+      ]
     },
     {
       "id": "a1-34-controlled-4",
       "type": "fill-blank",
       "category": "controlled",
       "sentence": "Ő egy fiatal ____. (woman)",
-      "answer": "nő"
+      "answer": "nő",
+      "teaches": [
+        "ember-ferfi-no-barat",
+        "adjective-order-before-the-noun"
+      ]
     },
     {
       "id": "a1-34-practice-1",
       "type": "multiple-choice",
       "category": "practice",
       "question": "Which word covers both férfi and nő?",
-      "options": ["ember", "barát", "gyerek"],
-      "correct": 0
+      "options": [
+        "ember",
+        "barát",
+        "gyerek"
+      ],
+      "correct": 0,
+      "teaches": [
+        "ember-ferfi-no-barat",
+        "adjective-order-before-the-noun"
+      ]
     },
     {
       "id": "a1-34-practice-2",
       "type": "fill-blank",
       "category": "practice",
       "sentence": "A ____ magas, a nő alacsony. (the man)",
-      "answer": "férfi"
+      "answer": "férfi",
+      "teaches": [
+        "ember-ferfi-no-barat",
+        "adjective-order-before-the-noun"
+      ]
     },
     {
       "id": "a1-34-practice-3",
       "type": "matching",
       "category": "practice",
       "pairs": [
-        ["Ő egy férfi.", "He is a man."],
-        ["Ő egy nő.", "She is a woman."],
-        ["Ő a barátom.", "He is my friend."],
-        ["Egy magas férfi.", "A tall man."]
+        [
+          "Ő egy férfi.",
+          "He is a man."
+        ],
+        [
+          "Ő egy nő.",
+          "She is a woman."
+        ],
+        [
+          "Ő a barátom.",
+          "He is my friend."
+        ],
+        [
+          "Egy magas férfi.",
+          "A tall man."
+        ]
+      ],
+      "teaches": [
+        "ember-ferfi-no-barat",
+        "adjective-order-before-the-noun"
       ]
     },
     {
       "id": "a1-34-practice-4",
       "type": "sentence-builder",
       "category": "practice",
-      "tiles": ["Egy", "magas", "férfi", "."],
-      "solution": ["Egy", "magas", "férfi", "."],
-      "english": "A tall man."
+      "tiles": [
+        "Egy",
+        "magas",
+        "férfi",
+        "."
+      ],
+      "solution": [
+        "Egy",
+        "magas",
+        "férfi",
+        "."
+      ],
+      "english": "A tall man.",
+      "teaches": [
+        "ember-ferfi-no-barat",
+        "adjective-order-before-the-noun"
+      ]
     },
     {
       "id": "a1-34-practice-5",
       "type": "sentence-order",
       "category": "practice",
-      "sentences": ["Milyen az ember?", "A férfi magas, a nő alacsony.", "És ő a barátod?", "Igen, ő a barátom."],
-      "solution": [0, 1, 2, 3]
+      "sentences": [
+        "Milyen az ember?",
+        "A férfi magas, a nő alacsony.",
+        "És ő a barátod?",
+        "Igen, ő a barátom."
+      ],
+      "solution": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "teaches": [
+        "ember-ferfi-no-barat",
+        "adjective-order-before-the-noun"
+      ]
     },
     {
       "id": "a1-34-practice-6",
       "type": "multiple-choice",
       "category": "practice",
       "question": "Which sentence puts the adjective correctly in front of the noun?",
-      "options": ["Egy magas férfi.", "Egy magasak férfi.", "Férfi egy magas."],
-      "correct": 0
+      "options": [
+        "Egy magas férfi.",
+        "Egy magasak férfi.",
+        "Férfi egy magas."
+      ],
+      "correct": 0,
+      "teaches": [
+        "ember-ferfi-no-barat",
+        "adjective-order-before-the-noun"
+      ]
     },
     {
       "id": "a1-34-practice-7",
       "type": "structured-writing",
       "category": "practice",
       "template": [
-        { "prompt": "Say he is a tall man.", "answer": "Ő egy magas férfi." },
-        { "prompt": "Say she is my friend.", "answer": "Ő a barátom." }
+        {
+          "prompt": "Say he is a tall man.",
+          "answer": "Ő egy magas férfi."
+        },
+        {
+          "prompt": "Say she is my friend.",
+          "answer": "Ő a barátom."
+        }
+      ],
+      "teaches": [
+        "ember-ferfi-no-barat",
+        "adjective-order-before-the-noun"
       ]
     },
     {
@@ -129,29 +259,62 @@
       "type": "dialogue-complete",
       "category": "dialogue",
       "prompt": [
-        { "speaker": "Meg", "text": "Ő a barátod?" },
-        { "speaker": "Károly", "text": "_____" }
+        {
+          "speaker": "Meg",
+          "text": "Ő a barátod?"
+        },
+        {
+          "speaker": "Károly",
+          "text": "_____"
+        }
       ],
-      "options": ["Igen, ő a barátom.", "Igen, barátom ő van."],
-      "correct": 0
+      "options": [
+        "Igen, ő a barátom.",
+        "Igen, barátom ő van."
+      ],
+      "correct": 0,
+      "teaches": [
+        "ember-ferfi-no-barat",
+        "adjective-order-before-the-noun"
+      ]
     },
     {
       "id": "a1-34-dialogue-2",
       "type": "dialogue-complete",
       "category": "dialogue",
       "prompt": [
-        { "speaker": "Meg", "text": "Milyen az ember?" },
-        { "speaker": "Károly", "text": "_____" }
+        {
+          "speaker": "Meg",
+          "text": "Milyen az ember?"
+        },
+        {
+          "speaker": "Károly",
+          "text": "_____"
+        }
       ],
-      "options": ["A férfi magas, a nő alacsony.", "Az ember van magas."],
-      "correct": 0
+      "options": [
+        "A férfi magas, a nő alacsony.",
+        "Az ember van magas."
+      ],
+      "correct": 0,
+      "teaches": [
+        "ember-ferfi-no-barat",
+        "adjective-order-before-the-noun"
+      ]
     },
     {
       "id": "a1-34-writing-1",
       "type": "structured-writing",
       "category": "writing",
       "template": [
-        { "prompt": "Say \"She is a woman.\" in Hungarian.", "answer": "Ő egy nő." }
+        {
+          "prompt": "Say \"She is a woman.\" in Hungarian.",
+          "answer": "Ő egy nő."
+        }
+      ],
+      "teaches": [
+        "ember-ferfi-no-barat",
+        "adjective-order-before-the-noun"
       ]
     },
     {
@@ -159,7 +322,14 @@
       "type": "structured-writing",
       "category": "writing",
       "template": [
-        { "prompt": "Say \"A young woman.\" in Hungarian.", "answer": "Egy fiatal nő." }
+        {
+          "prompt": "Say \"A young woman.\" in Hungarian.",
+          "answer": "Egy fiatal nő."
+        }
+      ],
+      "teaches": [
+        "ember-ferfi-no-barat",
+        "adjective-order-before-the-noun"
       ]
     },
     {
@@ -167,16 +337,32 @@
       "type": "multiple-choice",
       "category": "check",
       "question": "Which word means \"woman\"?",
-      "options": ["nő", "férfi", "ember"],
-      "correct": 0
+      "options": [
+        "nő",
+        "férfi",
+        "ember"
+      ],
+      "correct": 0,
+      "teaches": [
+        "ember-ferfi-no-barat",
+        "adjective-order-before-the-noun"
+      ]
     },
     {
       "id": "a1-34-check-2",
       "type": "multiple-choice",
       "category": "check",
       "question": "How do you say \"A tall man\"?",
-      "options": ["Egy magas férfi.", "Egy magasak férfi.", "Férfi magas egy."],
-      "correct": 0
+      "options": [
+        "Egy magas férfi.",
+        "Egy magasak férfi.",
+        "Férfi magas egy."
+      ],
+      "correct": 0,
+      "teaches": [
+        "ember-ferfi-no-barat",
+        "adjective-order-before-the-noun"
+      ]
     }
   ]
 }

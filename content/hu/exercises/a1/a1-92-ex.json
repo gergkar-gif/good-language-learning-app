@@ -6,7 +6,11 @@
       "type": "multiple-choice",
       "category": "review",
       "question": "Which word means \"bread\"?",
-      "options": ["kenyér", "vaj", "sajt"],
+      "options": [
+        "kenyér",
+        "vaj",
+        "sajt"
+      ],
       "correct": 0
     },
     {
@@ -14,7 +18,11 @@
       "type": "multiple-choice",
       "category": "review",
       "question": "How do you say \"I'd like bread\"?",
-      "options": ["Kérek kenyeret.", "Kérek kenyér.", "Kenyeret van."],
+      "options": [
+        "Kérek kenyeret.",
+        "Kérek kenyér.",
+        "Kenyeret van."
+      ],
       "correct": 0
     },
     {
@@ -22,26 +30,58 @@
       "type": "multiple-choice",
       "category": "introduce",
       "question": "Which word means \"coffee\"?",
-      "options": ["kávé", "tea", "víz"],
-      "correct": 0
+      "options": [
+        "kávé",
+        "tea",
+        "víz"
+      ],
+      "correct": 0,
+      "teaches": [
+        "drinks",
+        "meals-of-the-day"
+      ]
     },
     {
       "id": "a1-92-intro-2",
       "type": "multiple-choice",
       "category": "introduce",
       "question": "Which word means \"soup\"?",
-      "options": ["leves", "kávé", "tej"],
-      "correct": 0
+      "options": [
+        "leves",
+        "kávé",
+        "tej"
+      ],
+      "correct": 0,
+      "teaches": [
+        "drinks",
+        "meals-of-the-day"
+      ]
     },
     {
       "id": "a1-92-controlled-1",
       "type": "matching",
       "category": "controlled",
       "pairs": [
-        ["víz", "water"],
-        ["kávé", "coffee"],
-        ["tea", "tea"],
-        ["leves", "soup"]
+        [
+          "víz",
+          "water"
+        ],
+        [
+          "kávé",
+          "coffee"
+        ],
+        [
+          "tea",
+          "tea"
+        ],
+        [
+          "leves",
+          "soup"
+        ]
+      ],
+      "teaches": [
+        "drinks",
+        "meals-of-the-day"
       ]
     },
     {
@@ -49,56 +89,114 @@
       "type": "fill-blank",
       "category": "controlled",
       "sentence": "Kérek ____. (coffee, accusative)",
-      "answer": "kávét"
+      "answer": "kávét",
+      "teaches": [
+        "drinks",
+        "meals-of-the-day"
+      ]
     },
     {
       "id": "a1-92-controlled-3",
       "type": "multiple-choice",
       "category": "controlled",
       "question": "Which meal name means \"dinner\"?",
-      "options": ["vacsora", "reggeli", "ebéd"],
-      "correct": 0
+      "options": [
+        "vacsora",
+        "reggeli",
+        "ebéd"
+      ],
+      "correct": 0,
+      "teaches": [
+        "drinks",
+        "meals-of-the-day"
+      ]
     },
     {
       "id": "a1-92-controlled-4",
       "type": "fill-blank",
       "category": "controlled",
       "sentence": "A ____ finom. (dinner)",
-      "answer": "vacsora"
+      "answer": "vacsora",
+      "teaches": [
+        "drinks",
+        "meals-of-the-day"
+      ]
     },
     {
       "id": "a1-92-practice-1",
       "type": "multiple-choice",
       "category": "practice",
       "question": "Which suffix on ebéd means \"for lunch\"?",
-      "options": ["-re", "-ban", "-t"],
-      "correct": 0
+      "options": [
+        "-re",
+        "-ban",
+        "-t"
+      ],
+      "correct": 0,
+      "teaches": [
+        "drinks",
+        "meals-of-the-day"
+      ]
     },
     {
       "id": "a1-92-practice-2",
       "type": "fill-blank",
       "category": "practice",
       "sentence": "____ lesz leves. (for lunch)",
-      "answer": "Ebédre"
+      "answer": "Ebédre",
+      "teaches": [
+        "drinks",
+        "meals-of-the-day"
+      ]
     },
     {
       "id": "a1-92-practice-3",
       "type": "matching",
       "category": "practice",
       "pairs": [
-        ["Kérek kávét.", "I request coffee."],
-        ["A vacsora finom.", "Dinner is delicious."],
-        ["Ebédre lesz leves.", "For lunch there will be soup."],
-        ["Kérek teát.", "I request tea."]
+        [
+          "Kérek kávét.",
+          "I request coffee."
+        ],
+        [
+          "A vacsora finom.",
+          "Dinner is delicious."
+        ],
+        [
+          "Ebédre lesz leves.",
+          "For lunch there will be soup."
+        ],
+        [
+          "Kérek teát.",
+          "I request tea."
+        ]
+      ],
+      "teaches": [
+        "drinks",
+        "meals-of-the-day"
       ]
     },
     {
       "id": "a1-92-practice-4",
       "type": "sentence-builder",
       "category": "practice",
-      "tiles": ["A", "vacsora", "finom", "."],
-      "solution": ["A", "vacsora", "finom", "."],
-      "english": "Dinner is delicious."
+      "tiles": [
+        "A",
+        "vacsora",
+        "finom",
+        "."
+      ],
+      "solution": [
+        "A",
+        "vacsora",
+        "finom",
+        "."
+      ],
+      "english": "Dinner is delicious.",
+      "teaches": [
+        "drinks",
+        "meals-of-the-day"
+      ]
     },
     {
       "id": "a1-92-practice-5",
@@ -108,8 +206,22 @@
       "base_word": "kávét",
       "base_gloss": "I request coffee.",
       "options": [
-        { "word": "tea", "inflected": "teát", "sentence": "Kérek teát.", "gloss": "tea" },
-        { "word": "víz", "inflected": "vizet", "sentence": "Kérek vizet.", "gloss": "water" }
+        {
+          "word": "tea",
+          "inflected": "teát",
+          "sentence": "Kérek teát.",
+          "gloss": "tea"
+        },
+        {
+          "word": "víz",
+          "inflected": "vizet",
+          "sentence": "Kérek vizet.",
+          "gloss": "water"
+        }
+      ],
+      "teaches": [
+        "drinks",
+        "meals-of-the-day"
       ]
     },
     {
@@ -117,29 +229,62 @@
       "type": "dialogue-complete",
       "category": "dialogue",
       "prompt": [
-        { "speaker": "Károly", "text": "Kávét vagy teát kérsz?" },
-        { "speaker": "Meg", "text": "_____" }
+        {
+          "speaker": "Károly",
+          "text": "Kávét vagy teát kérsz?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
       ],
-      "options": ["Kérek teát.", "Kérek tea."],
-      "correct": 0
+      "options": [
+        "Kérek teát.",
+        "Kérek tea."
+      ],
+      "correct": 0,
+      "teaches": [
+        "drinks",
+        "meals-of-the-day"
+      ]
     },
     {
       "id": "a1-92-dialogue-2",
       "type": "dialogue-complete",
       "category": "dialogue",
       "prompt": [
-        { "speaker": "Meg", "text": "Milyen a vacsora?" },
-        { "speaker": "Károly", "text": "_____" }
+        {
+          "speaker": "Meg",
+          "text": "Milyen a vacsora?"
+        },
+        {
+          "speaker": "Károly",
+          "text": "_____"
+        }
       ],
-      "options": ["A vacsora finom.", "A vacsora van finom."],
-      "correct": 0
+      "options": [
+        "A vacsora finom.",
+        "A vacsora van finom."
+      ],
+      "correct": 0,
+      "teaches": [
+        "drinks",
+        "meals-of-the-day"
+      ]
     },
     {
       "id": "a1-92-writing-1",
       "type": "structured-writing",
       "category": "writing",
       "template": [
-        { "prompt": "Say \"I'd like water.\" in Hungarian.", "answer": "Kérek vizet." }
+        {
+          "prompt": "Say \"I'd like water.\" in Hungarian.",
+          "answer": "Kérek vizet."
+        }
+      ],
+      "teaches": [
+        "drinks",
+        "meals-of-the-day"
       ]
     },
     {
@@ -147,7 +292,14 @@
       "type": "structured-writing",
       "category": "writing",
       "template": [
-        { "prompt": "Say \"For lunch there will be soup.\" in Hungarian.", "answer": "Ebédre lesz leves." }
+        {
+          "prompt": "Say \"For lunch there will be soup.\" in Hungarian.",
+          "answer": "Ebédre lesz leves."
+        }
+      ],
+      "teaches": [
+        "drinks",
+        "meals-of-the-day"
       ]
     },
     {
@@ -155,16 +307,32 @@
       "type": "multiple-choice",
       "category": "check",
       "question": "Which word means \"tea\"?",
-      "options": ["tea", "kávé", "víz"],
-      "correct": 0
+      "options": [
+        "tea",
+        "kávé",
+        "víz"
+      ],
+      "correct": 0,
+      "teaches": [
+        "drinks",
+        "meals-of-the-day"
+      ]
     },
     {
       "id": "a1-92-check-2",
       "type": "multiple-choice",
       "category": "check",
       "question": "How do you say \"Dinner is delicious\"?",
-      "options": ["A vacsora finom.", "A vacsora van finom.", "Finom vacsora van."],
-      "correct": 0
+      "options": [
+        "A vacsora finom.",
+        "A vacsora van finom.",
+        "Finom vacsora van."
+      ],
+      "correct": 0,
+      "teaches": [
+        "drinks",
+        "meals-of-the-day"
+      ]
     }
   ]
 }

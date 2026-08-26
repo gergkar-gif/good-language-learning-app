@@ -6,7 +6,11 @@
       "type": "multiple-choice",
       "category": "review",
       "question": "Which word means \"key\"?",
-      "options": ["kulcs", "táska", "telefon"],
+      "options": [
+        "kulcs",
+        "táska",
+        "telefon"
+      ],
       "correct": 0
     },
     {
@@ -14,7 +18,11 @@
       "type": "multiple-choice",
       "category": "review",
       "question": "How do you say \"His/her key is here\"?",
-      "options": ["A kulcsa itt van.", "A kulcs itt van.", "Kulcsa itt van ő."],
+      "options": [
+        "A kulcsa itt van.",
+        "A kulcs itt van.",
+        "Kulcsa itt van ő."
+      ],
       "correct": 0
     },
     {
@@ -22,26 +30,58 @@
       "type": "multiple-choice",
       "category": "introduce",
       "question": "Which word means \"room\"?",
-      "options": ["szoba", "barát", "család"],
-      "correct": 0
+      "options": [
+        "szoba",
+        "barát",
+        "család"
+      ],
+      "correct": 0,
+      "teaches": [
+        "possessive-suffixes-42",
+        "the-hungarian-have-construction-42"
+      ]
     },
     {
       "id": "a1-42-intro-2",
       "type": "multiple-choice",
       "category": "introduce",
       "question": "Which means \"our room\"?",
-      "options": ["szobánk", "szoba", "szobák"],
-      "correct": 0
+      "options": [
+        "szobánk",
+        "szoba",
+        "szobák"
+      ],
+      "correct": 0,
+      "teaches": [
+        "possessive-suffixes-42",
+        "the-hungarian-have-construction-42"
+      ]
     },
     {
       "id": "a1-42-controlled-1",
       "type": "matching",
       "category": "controlled",
       "pairs": [
-        ["szoba", "room"],
-        ["barát", "friend"],
-        ["család", "family"],
-        ["név", "name"]
+        [
+          "szoba",
+          "room"
+        ],
+        [
+          "barát",
+          "friend"
+        ],
+        [
+          "család",
+          "family"
+        ],
+        [
+          "név",
+          "name"
+        ]
+      ],
+      "teaches": [
+        "possessive-suffixes-42",
+        "the-hungarian-have-construction-42"
       ]
     },
     {
@@ -49,71 +89,151 @@
       "type": "fill-blank",
       "category": "controlled",
       "sentence": "A ____ kicsi. (our room)",
-      "answer": "szobánk"
+      "answer": "szobánk",
+      "teaches": [
+        "possessive-suffixes-42",
+        "the-hungarian-have-construction-42"
+      ]
     },
     {
       "id": "a1-42-controlled-3",
       "type": "multiple-choice",
       "category": "controlled",
       "question": "Which is the \"my friend\" form of barát?",
-      "options": ["barátom", "barátnk", "barátom van"],
-      "correct": 0
+      "options": [
+        "barátom",
+        "barátnk",
+        "barátom van"
+      ],
+      "correct": 0,
+      "teaches": [
+        "possessive-suffixes-42",
+        "the-hungarian-have-construction-42"
+      ]
     },
     {
       "id": "a1-42-controlled-4",
       "type": "fill-blank",
       "category": "controlled",
       "sentence": "A ____ itt van. (my friend)",
-      "answer": "barátom"
+      "answer": "barátom",
+      "teaches": [
+        "possessive-suffixes-42",
+        "the-hungarian-have-construction-42"
+      ]
     },
     {
       "id": "a1-42-practice-1",
       "type": "multiple-choice",
       "category": "practice",
       "question": "Why does szoba lengthen its final -a to -á before the possessive suffix?",
-      "options": ["vowel-final stems shift shape slightly before the suffix", "it never changes", "it's a random exception"],
-      "correct": 0
+      "options": [
+        "vowel-final stems shift shape slightly before the suffix",
+        "it never changes",
+        "it's a random exception"
+      ],
+      "correct": 0,
+      "teaches": [
+        "possessive-suffixes-42",
+        "the-hungarian-have-construction-42"
+      ]
     },
     {
       "id": "a1-42-practice-2",
       "type": "fill-blank",
       "category": "practice",
       "sentence": "A barátom ____ van. (here)",
-      "answer": "itt"
+      "answer": "itt",
+      "teaches": [
+        "possessive-suffixes-42",
+        "the-hungarian-have-construction-42"
+      ]
     },
     {
       "id": "a1-42-practice-3",
       "type": "matching",
       "category": "practice",
       "pairs": [
-        ["A szobánk kicsi.", "Our room is small."],
-        ["A barátom itt van.", "My friend is here."],
-        ["A családod nagy?", "Is your family big?"],
-        ["A neved szép.", "Your name is nice."]
+        [
+          "A szobánk kicsi.",
+          "Our room is small."
+        ],
+        [
+          "A barátom itt van.",
+          "My friend is here."
+        ],
+        [
+          "A családod nagy?",
+          "Is your family big?"
+        ],
+        [
+          "A neved szép.",
+          "Your name is nice."
+        ]
+      ],
+      "teaches": [
+        "possessive-suffixes-42",
+        "the-hungarian-have-construction-42"
       ]
     },
     {
       "id": "a1-42-practice-4",
       "type": "sentence-builder",
       "category": "practice",
-      "tiles": ["A", "szobánk", "kicsi", "."],
-      "solution": ["A", "szobánk", "kicsi", "."],
-      "english": "Our room is small."
+      "tiles": [
+        "A",
+        "szobánk",
+        "kicsi",
+        "."
+      ],
+      "solution": [
+        "A",
+        "szobánk",
+        "kicsi",
+        "."
+      ],
+      "english": "Our room is small.",
+      "teaches": [
+        "possessive-suffixes-42",
+        "the-hungarian-have-construction-42"
+      ]
     },
     {
       "id": "a1-42-practice-5",
       "type": "sentence-order",
       "category": "practice",
-      "sentences": ["Milyen a szobátok?", "A szobánk kicsi.", "Itt van a barátod?", "A barátom itt van."],
-      "solution": [0, 1, 2, 3]
+      "sentences": [
+        "Milyen a szobátok?",
+        "A szobánk kicsi.",
+        "Itt van a barátod?",
+        "A barátom itt van."
+      ],
+      "solution": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "teaches": [
+        "possessive-suffixes-42",
+        "the-hungarian-have-construction-42"
+      ]
     },
     {
       "id": "a1-42-practice-6",
       "type": "multiple-choice",
       "category": "practice",
       "question": "Which word means \"name\"?",
-      "options": ["név", "barát", "család"],
-      "correct": 0
+      "options": [
+        "név",
+        "barát",
+        "család"
+      ],
+      "correct": 0,
+      "teaches": [
+        "possessive-suffixes-42",
+        "the-hungarian-have-construction-42"
+      ]
     },
     {
       "id": "a1-42-practice-7",
@@ -123,7 +243,16 @@
       "base_word": "szobánk",
       "base_gloss": "Our room is small.",
       "options": [
-        { "word": "barát", "inflected": "barátom", "sentence": "A barátom kicsi.", "gloss": "my friend" }
+        {
+          "word": "barát",
+          "inflected": "barátom",
+          "sentence": "A barátom kicsi.",
+          "gloss": "my friend"
+        }
+      ],
+      "teaches": [
+        "possessive-suffixes-42",
+        "the-hungarian-have-construction-42"
       ]
     },
     {
@@ -131,29 +260,62 @@
       "type": "dialogue-complete",
       "category": "dialogue",
       "prompt": [
-        { "speaker": "Meg", "text": "Milyen a szobátok?" },
-        { "speaker": "Károly", "text": "_____" }
+        {
+          "speaker": "Meg",
+          "text": "Milyen a szobátok?"
+        },
+        {
+          "speaker": "Károly",
+          "text": "_____"
+        }
       ],
-      "options": ["A szobánk kicsi.", "A szoba kicsi mi van."],
-      "correct": 0
+      "options": [
+        "A szobánk kicsi.",
+        "A szoba kicsi mi van."
+      ],
+      "correct": 0,
+      "teaches": [
+        "possessive-suffixes-42",
+        "the-hungarian-have-construction-42"
+      ]
     },
     {
       "id": "a1-42-dialogue-2",
       "type": "dialogue-complete",
       "category": "dialogue",
       "prompt": [
-        { "speaker": "Meg", "text": "Itt van a barátod?" },
-        { "speaker": "Károly", "text": "_____" }
+        {
+          "speaker": "Meg",
+          "text": "Itt van a barátod?"
+        },
+        {
+          "speaker": "Károly",
+          "text": "_____"
+        }
       ],
-      "options": ["Igen, a barátom itt van.", "Igen, barát itt van om."],
-      "correct": 0
+      "options": [
+        "Igen, a barátom itt van.",
+        "Igen, barát itt van om."
+      ],
+      "correct": 0,
+      "teaches": [
+        "possessive-suffixes-42",
+        "the-hungarian-have-construction-42"
+      ]
     },
     {
       "id": "a1-42-writing-1",
       "type": "structured-writing",
       "category": "writing",
       "template": [
-        { "prompt": "Say \"My friend is here.\" in Hungarian.", "answer": "A barátom itt van." }
+        {
+          "prompt": "Say \"My friend is here.\" in Hungarian.",
+          "answer": "A barátom itt van."
+        }
+      ],
+      "teaches": [
+        "possessive-suffixes-42",
+        "the-hungarian-have-construction-42"
       ]
     },
     {
@@ -161,7 +323,14 @@
       "type": "structured-writing",
       "category": "writing",
       "template": [
-        { "prompt": "Say \"Our room is small.\" in Hungarian.", "answer": "A szobánk kicsi." }
+        {
+          "prompt": "Say \"Our room is small.\" in Hungarian.",
+          "answer": "A szobánk kicsi."
+        }
+      ],
+      "teaches": [
+        "possessive-suffixes-42",
+        "the-hungarian-have-construction-42"
       ]
     },
     {
@@ -169,16 +338,32 @@
       "type": "multiple-choice",
       "category": "check",
       "question": "Which word means \"family\"?",
-      "options": ["család", "szoba", "név"],
-      "correct": 0
+      "options": [
+        "család",
+        "szoba",
+        "név"
+      ],
+      "correct": 0,
+      "teaches": [
+        "possessive-suffixes-42",
+        "the-hungarian-have-construction-42"
+      ]
     },
     {
       "id": "a1-42-check-2",
       "type": "multiple-choice",
       "category": "check",
       "question": "How do you say \"My friend is here\"?",
-      "options": ["A barátom itt van.", "A barát itt van.", "Barátom itt van ő."],
-      "correct": 0
+      "options": [
+        "A barátom itt van.",
+        "A barát itt van.",
+        "Barátom itt van ő."
+      ],
+      "correct": 0,
+      "teaches": [
+        "possessive-suffixes-42",
+        "the-hungarian-have-construction-42"
+      ]
     }
   ]
 }

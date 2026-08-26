@@ -6,7 +6,11 @@
       "type": "multiple-choice",
       "category": "review",
       "question": "Which word means \"coffee\"?",
-      "options": ["kávé", "tea", "víz"],
+      "options": [
+        "kávé",
+        "tea",
+        "víz"
+      ],
       "correct": 0
     },
     {
@@ -14,7 +18,11 @@
       "type": "multiple-choice",
       "category": "review",
       "question": "How do you say \"Dinner is delicious\"?",
-      "options": ["A vacsora finom.", "A vacsora van finom.", "Finom vacsora van."],
+      "options": [
+        "A vacsora finom.",
+        "A vacsora van finom.",
+        "Finom vacsora van."
+      ],
       "correct": 0
     },
     {
@@ -22,26 +30,58 @@
       "type": "multiple-choice",
       "category": "introduce",
       "question": "Which word means \"apple\"?",
-      "options": ["alma", "pohár", "üveg"],
-      "correct": 0
+      "options": [
+        "alma",
+        "pohár",
+        "üveg"
+      ],
+      "correct": 0,
+      "teaches": [
+        "counting-food-items",
+        "containers-and-measures"
+      ]
     },
     {
       "id": "a1-93-intro-2",
       "type": "multiple-choice",
       "category": "introduce",
       "question": "Which word means \"piece\"?",
-      "options": ["darab", "üveg", "pohár"],
-      "correct": 0
+      "options": [
+        "darab",
+        "üveg",
+        "pohár"
+      ],
+      "correct": 0,
+      "teaches": [
+        "counting-food-items",
+        "containers-and-measures"
+      ]
     },
     {
       "id": "a1-93-controlled-1",
       "type": "matching",
       "category": "controlled",
       "pairs": [
-        ["alma", "apple"],
-        ["pohár", "glass"],
-        ["üveg", "bottle"],
-        ["darab", "piece"]
+        [
+          "alma",
+          "apple"
+        ],
+        [
+          "pohár",
+          "glass"
+        ],
+        [
+          "üveg",
+          "bottle"
+        ],
+        [
+          "darab",
+          "piece"
+        ]
+      ],
+      "teaches": [
+        "counting-food-items",
+        "containers-and-measures"
       ]
     },
     {
@@ -49,56 +89,116 @@
       "type": "fill-blank",
       "category": "controlled",
       "sentence": "Van két ____ alma. (piece)",
-      "answer": "darab"
+      "answer": "darab",
+      "teaches": [
+        "counting-food-items",
+        "containers-and-measures"
+      ]
     },
     {
       "id": "a1-93-controlled-3",
       "type": "multiple-choice",
       "category": "controlled",
       "question": "Which word means \"many/much\"?",
-      "options": ["sok", "kevés", "darab"],
-      "correct": 0
+      "options": [
+        "sok",
+        "kevés",
+        "darab"
+      ],
+      "correct": 0,
+      "teaches": [
+        "counting-food-items",
+        "containers-and-measures"
+      ]
     },
     {
       "id": "a1-93-controlled-4",
       "type": "fill-blank",
       "category": "controlled",
       "sentence": "De ____ a sajt. (little)",
-      "answer": "kevés"
+      "answer": "kevés",
+      "teaches": [
+        "counting-food-items",
+        "containers-and-measures"
+      ]
     },
     {
       "id": "a1-93-practice-1",
       "type": "multiple-choice",
       "category": "practice",
       "question": "Which word is used as a measure word for countable items?",
-      "options": ["darab", "üveg", "pohár"],
-      "correct": 0
+      "options": [
+        "darab",
+        "üveg",
+        "pohár"
+      ],
+      "correct": 0,
+      "teaches": [
+        "counting-food-items",
+        "containers-and-measures"
+      ]
     },
     {
       "id": "a1-93-practice-2",
       "type": "fill-blank",
       "category": "practice",
       "sentence": "____ kenyér van. (much)",
-      "answer": "Sok"
+      "answer": "Sok",
+      "teaches": [
+        "counting-food-items",
+        "containers-and-measures"
+      ]
     },
     {
       "id": "a1-93-practice-3",
       "type": "matching",
       "category": "practice",
       "pairs": [
-        ["Van két darab alma.", "There are two pieces of apple."],
-        ["De kevés a sajt.", "But there is little cheese."],
-        ["Sok kenyér van.", "There is much bread."],
-        ["Kérek egy üveg vizet.", "I'd like one bottle of water."]
+        [
+          "Van két darab alma.",
+          "There are two pieces of apple."
+        ],
+        [
+          "De kevés a sajt.",
+          "But there is little cheese."
+        ],
+        [
+          "Sok kenyér van.",
+          "There is much bread."
+        ],
+        [
+          "Kérek egy üveg vizet.",
+          "I'd like one bottle of water."
+        ]
+      ],
+      "teaches": [
+        "counting-food-items",
+        "containers-and-measures"
       ]
     },
     {
       "id": "a1-93-practice-4",
       "type": "sentence-builder",
       "category": "practice",
-      "tiles": ["Van", "két", "darab", "alma", "."],
-      "solution": ["Van", "két", "darab", "alma", "."],
-      "english": "There are two pieces of apple."
+      "tiles": [
+        "Van",
+        "két",
+        "darab",
+        "alma",
+        "."
+      ],
+      "solution": [
+        "Van",
+        "két",
+        "darab",
+        "alma",
+        "."
+      ],
+      "english": "There are two pieces of apple.",
+      "teaches": [
+        "counting-food-items",
+        "containers-and-measures"
+      ]
     },
     {
       "id": "a1-93-practice-5",
@@ -108,8 +208,22 @@
       "base_word": "vizet",
       "base_gloss": "I'd like one bottle of water.",
       "options": [
-        { "word": "tea", "inflected": "teát", "sentence": "Kérek egy pohár teát.", "gloss": "tea" },
-        { "word": "alma", "inflected": "almát", "sentence": "Kérek egy darab almát.", "gloss": "apple" }
+        {
+          "word": "tea",
+          "inflected": "teát",
+          "sentence": "Kérek egy pohár teát.",
+          "gloss": "tea"
+        },
+        {
+          "word": "alma",
+          "inflected": "almát",
+          "sentence": "Kérek egy darab almát.",
+          "gloss": "apple"
+        }
+      ],
+      "teaches": [
+        "counting-food-items",
+        "containers-and-measures"
       ]
     },
     {
@@ -117,29 +231,62 @@
       "type": "dialogue-complete",
       "category": "dialogue",
       "prompt": [
-        { "speaker": "Károly", "text": "Mennyi sajt van?" },
-        { "speaker": "Meg", "text": "_____" }
+        {
+          "speaker": "Károly",
+          "text": "Mennyi sajt van?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
       ],
-      "options": ["De kevés a sajt.", "De kevés sajt van a."],
-      "correct": 0
+      "options": [
+        "De kevés a sajt.",
+        "De kevés sajt van a."
+      ],
+      "correct": 0,
+      "teaches": [
+        "counting-food-items",
+        "containers-and-measures"
+      ]
     },
     {
       "id": "a1-93-dialogue-2",
       "type": "dialogue-complete",
       "category": "dialogue",
       "prompt": [
-        { "speaker": "Meg", "text": "Mit kérsz?" },
-        { "speaker": "Károly", "text": "_____" }
+        {
+          "speaker": "Meg",
+          "text": "Mit kérsz?"
+        },
+        {
+          "speaker": "Károly",
+          "text": "_____"
+        }
       ],
-      "options": ["Kérek egy pohár teát.", "Kérek egy pohár tea."],
-      "correct": 0
+      "options": [
+        "Kérek egy pohár teát.",
+        "Kérek egy pohár tea."
+      ],
+      "correct": 0,
+      "teaches": [
+        "counting-food-items",
+        "containers-and-measures"
+      ]
     },
     {
       "id": "a1-93-writing-1",
       "type": "structured-writing",
       "category": "writing",
       "template": [
-        { "prompt": "Say \"There is much bread.\" in Hungarian.", "answer": "Sok kenyér van." }
+        {
+          "prompt": "Say \"There is much bread.\" in Hungarian.",
+          "answer": "Sok kenyér van."
+        }
+      ],
+      "teaches": [
+        "counting-food-items",
+        "containers-and-measures"
       ]
     },
     {
@@ -147,7 +294,14 @@
       "type": "structured-writing",
       "category": "writing",
       "template": [
-        { "prompt": "Say \"I'd like one piece of apple.\" in Hungarian.", "answer": "Kérek egy darab almát." }
+        {
+          "prompt": "Say \"I'd like one piece of apple.\" in Hungarian.",
+          "answer": "Kérek egy darab almát."
+        }
+      ],
+      "teaches": [
+        "counting-food-items",
+        "containers-and-measures"
       ]
     },
     {
@@ -155,16 +309,32 @@
       "type": "multiple-choice",
       "category": "check",
       "question": "Which word means \"bottle\"?",
-      "options": ["üveg", "pohár", "darab"],
-      "correct": 0
+      "options": [
+        "üveg",
+        "pohár",
+        "darab"
+      ],
+      "correct": 0,
+      "teaches": [
+        "counting-food-items",
+        "containers-and-measures"
+      ]
     },
     {
       "id": "a1-93-check-2",
       "type": "multiple-choice",
       "category": "check",
       "question": "How do you say \"I'd like one bottle of water\"?",
-      "options": ["Kérek egy üveg vizet.", "Kérek egy üveg víz.", "Egy üveg vizet van."],
-      "correct": 0
+      "options": [
+        "Kérek egy üveg vizet.",
+        "Kérek egy üveg víz.",
+        "Egy üveg vizet van."
+      ],
+      "correct": 0,
+      "teaches": [
+        "counting-food-items",
+        "containers-and-measures"
+      ]
     }
   ]
 }
