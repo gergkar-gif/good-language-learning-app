@@ -25,7 +25,8 @@
     "questions": {
       "type": "array",
       "minItems": 20,
-      "maxItems": 20,
+      "maxItems": 40,
+      "description": "Hungarian A1 raised this to 30 (of a 40 ceiling) since its 30-unit level is much larger than Spanish's ~22-lesson A1, and 20 questions left the back half of the level thinly tested.",
       "items": { "$ref": "#/definitions/question" }
     }
   },

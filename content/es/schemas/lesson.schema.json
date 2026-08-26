@@ -66,6 +66,7 @@
 
     "section": {
       "oneOf": [
+        { "$ref": "#/definitions/introSection" },
         { "$ref": "#/definitions/goalSection" },
         { "$ref": "#/definitions/recycleSection" },
         { "$ref": "#/definitions/grammarSection" },
@@ -75,6 +76,23 @@
         { "$ref": "#/definitions/srsSection" },
         { "$ref": "#/definitions/checklistSection" }
       ]
+    },
+
+    "introSection": {
+      "type": "object",
+      "description": "A welcome/orientation screen, used at the very start of a level (e.g. Unit 1 Lesson 1) before the goal section. Renders `body` as plain paragraphs.",
+      "required": ["type", "body"],
+      "additionalProperties": false,
+      "properties": {
+        "type": { "const": "intro" },
+        "title": { "type": "string", "default": "Welcome" },
+        "body": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "minLength": 1 },
+          "description": "One paragraph per entry."
+        }
+      }
     },
 
     "goalSection": {

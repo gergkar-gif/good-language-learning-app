@@ -10,9 +10,14 @@
   "properties": {
     "id": {
       "type": "string",
-      "pattern": "^lesson\\.(a1|a2|b1|b2|c1)\\.(\\d{2,3}[a-z]?|[a-z]+)(\\.(\\d{2}|consolidation))?$",
-      "description": "Stable identifier, also the progress key. Must match the id used in curriculum/curriculum.json. A unit split into several lessons adds a third segment: lesson.a1.01.01, lesson.a1.01.02, ..., lesson.a1.01.consolidation. The unit segment is normally a two-digit position (optionally with a letter, for a not-yet-renumbered old slot like 03c), but a word is allowed where a numeric position would collide with another unit's old lesson slot (lesson.a1.cafe.01) — rare, only reach for it when a rename is otherwise ambiguous.",
-      "examples": ["lesson.a1.01", "lesson.a1.01.01", "lesson.a1.01.consolidation", "lesson.a1.cafe.01"]
+      "pattern": "^lesson\\.(a1|a2|b1|b2|c1)\\.(\\d{2,3}[a-z]?|[a-z]+)(-(\\d{2}|consolidation))?$",
+      "description": "Stable identifier, also the progress key. Must match the id used in curriculum/curriculum.json. Hungarian is one lesson per file (not Spanish's multi-part-per-unit shape), so the only second segment is the consolidation lesson that closes a unit, joined with a hyphen (matching the exercises schema's `lesson` field pattern and every actual id in content): lesson.a1.10-consolidation.",
+      "examples": ["lesson.a1.01", "lesson.a1.10-consolidation", "lesson.a1.cafe-01"]
+    },
+    "unit": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Which unit (block of 5 lessons + consolidation) this lesson belongs to. Hungarian-specific — auto_group_units() in build-manifest.py can also derive this from the filename, but the field makes it explicit and machine-readable without re-deriving it."
     },
     "title": {
       "type": "string",
@@ -25,10 +30,11 @@
       "description": "Shown as the lesson subtitle."
     },
     "goal": {
-      "type": "string",
-      "minLength": 1,
-      "description": "One-line summary shown on the Learn card. Not the same as the goal section's items — this is the headline, those are the capabilities. build-manifest.py copies it into the generated curriculum.json, so edit it here and rebuild, never in curriculum.json.",
-      "examples": ["Introduce yourself"]
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "minLength": 1 },
+      "description": "The lesson's capabilities, top-level for quick reference — Hungarian duplicates the goal section's own `items` here rather than a one-line summary. Not required: consolidation lessons omit it and rely on the goal section alone.",
+      "examples": [["I can greet someone at any time of day.", "I can handle a short basic interaction in Hungarian."]]
     },
     "grammar": {
       "type": "string",
@@ -66,6 +72,7 @@
 
     "section": {
       "oneOf": [
+        { "$ref": "#/definitions/introSection" },
         { "$ref": "#/definitions/goalSection" },
         { "$ref": "#/definitions/recycleSection" },
         { "$ref": "#/definitions/grammarSection" },
@@ -75,6 +82,23 @@
         { "$ref": "#/definitions/srsSection" },
         { "$ref": "#/definitions/checklistSection" }
       ]
+    },
+
+    "introSection": {
+      "type": "object",
+      "description": "A welcome/orientation screen, used at the very start of a level (e.g. Unit 1 Lesson 1) before the goal section. Renders `body` as plain paragraphs.",
+      "required": ["type", "body"],
+      "additionalProperties": false,
+      "properties": {
+        "type": { "const": "intro" },
+        "title": { "type": "string", "default": "Welcome" },
+        "body": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "minLength": 1 },
+          "description": "One paragraph per entry."
+        }
+      }
     },
 
     "goalSection": {

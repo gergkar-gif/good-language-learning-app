@@ -56,12 +56,16 @@
 
     "table": {
       "type": "object",
-      "description": "Two-column reference table. The first column renders bold.",
+      "description": "Two-column reference table. The first column renders bold, unless bothAudible is set.",
       "required": ["type", "rows"],
       "additionalProperties": false,
       "properties": {
         "type": { "const": "table" },
         "title": { "$ref": "#/definitions/partTitle" },
+        "bothAudible": {
+          "type": "boolean",
+          "description": "Gives both columns a listen button instead of just the first, for letter-to-word or pair-to-pair phonetic tables where both sides are worth hearing."
+        },
         "rows": {
           "type": "array",
           "minItems": 1,
