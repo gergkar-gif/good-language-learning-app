@@ -167,13 +167,25 @@ a1-21 through a1-35, the Vowel Harmony page inserted into a1-22, and the
 consolidation rebuild to 20 exercises) and were dropped rather than
 carried over.*
 
-- [ ] Units 13 (`a1-61` through `a1-65`, "I Work, I Study" / "Everyday
-  Verbs" / "Who Does What?" / "Talking About Activities" / "Verb Review"):
-  grammar content is byte-for-byte identical across all five lessons
-  despite each having a distinct title and vocabulary — the same
-  duplication-without-customization bug already found and fixed in HU
-  Units 2 and 4. Needs the same treatment: each lesson's grammar should
-  teach something distinct that actually matches its own title and vocab.
+- [x] Unit 13 (`unit.a1.13`, "Everyday Actions" — `a1-61` through `a1-65`,
+  "I Work, I Study" / "Everyday Verbs" / "Who Does What?" / "Talking About
+  Activities" / "Verb Review"): grammar content was byte-for-byte identical
+  across all five lessons despite each having a distinct title and
+  vocabulary — the same duplication-without-customization bug already
+  found and fixed in HU Units 2 and 4. **Fixed 2026-08-26**: rewrote both
+  grammar screens ("Present Tense: -ok/-ek/-ök" and "Subject omission") for
+  `a1-62` through `a1-65` to use each lesson's own new verbs (beszélni/
+  hallgatni/nézni, főzni, keresni/várni/sétálni, tanítani/kérni/válaszolni)
+  instead of all five repeating a1-61's dolgozom/tanulok/olvasok examples.
+  Avoided each lesson's own irregular -ik verbs not taught until much later
+  in the course (enni→eszem, inni→iszom, aludni→alszom, játszani→játszom,
+  utazni→utazom — a1-63's own vocab is inni/aludni/főzni/venni, so only
+  főzni is a safe regular verb; borrowed already-established `írok` for its
+  second grammar example the same way the exercise-level fix did). a1-61
+  itself needed no change — its examples already matched its own vocab.
+  Verified live: all four lessons' grammar screens now show distinct,
+  vocab-matched examples with no console errors; `validate-content.py hu`
+  unaffected (still the same 3 pre-existing failures).
 
 ### HU Unit 5
 - [ ] L1 (a1-21, "What Is This?"):
