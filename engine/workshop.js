@@ -217,5 +217,15 @@ const Workshop = (function () {
         render();
     }
 
-    return { render, open, close };
+    // Exposed for the bug-report button — it can only tell context apart at
+    // the tab level (`#drills`) otherwise, so a flag filed from inside a
+    // specific driller (Verb, Grammar, ...) would report the same generic
+    // "drills" location as one filed from the driller picker itself.
+    function activeDriller() {
+        if (!_active) return null;
+        const driller = DRILLERS.find(d => d.id === _active);
+        return driller ? { id: driller.id, title: driller.title } : null;
+    }
+
+    return { render, open, close, activeDriller };
 })();

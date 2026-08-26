@@ -43,6 +43,18 @@ const HuPrefixDriller = (function () {
     // driller against the fix already made in its sibling (2026-08-20).
     const FORM_OF_GLOSS = /\b(participle|verbal noun|gerund|imperative) of\b/i;
 
+    // Both halves being real dictionary headwords still isn't proof the
+    // language actually treats them as a pair: "felejt" ("to forget")
+    // happens to start with the prefix "fel-" ("up"), and the remainder
+    // "ejt" ("to drop") is a real verb too — but no native speaker derives
+    // "felejt" from those two pieces, and it doesn't behave like a real
+    // separable-prefix verb (there's no "fel ejtem" for "I forget" the way
+    // "fel" + "kelek" <-> "kelek fel" actually works). Found by a learner
+    // hitting exactly this pairing in the driller (2026-08-21). Keyed by
+    // "prefix:bareLemma" since only this specific coincidence is wrong —
+    // "fel-" pairs with other real bare verbs are unaffected.
+    const KNOWN_FALSE_PAIRS = new Set(['fel:ejt']);
+
     // VERB_PREFIXES' own sense text is written for the Reader's tap-word
     // popup, where a qualifier reads fine alongside the whole surrounding
     // explanation. Every entry there is already a short word/phrase except
@@ -121,6 +133,7 @@ const HuPrefixDriller = (function () {
                 const bareLemma = lemma.slice(p.prefix.length);
                 const bareSense = HungarianMorphology.verbSense(dict[bareLemma]);
                 if (!bareSense || FORM_OF_GLOSS.test(bareSense.en)) continue; // only pairs where the bare verb is ALSO a real, genuine headword
+                if (KNOWN_FALSE_PAIRS.has(p.prefix + ':' + bareLemma)) continue;
                 _pairs.push({
                     prefix: p.prefix, sense: p.sense,
                     bareLemma, bareGloss: Lexicon.shortGloss(bareSense.en),

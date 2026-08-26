@@ -32,18 +32,27 @@ const contentCache = {};
 
 async function loadContent(path) {
     if (contentCache[path]) return contentCache[path];
-    try {
-        const fullPath = Lang.content(path);
-        const response = await fetch(fullPath);
-        if (!response.ok) throw new Error('Content not found: ' + fullPath);
-        const data = await response.json();
-        contentCache[path] = data;
-        return data;
-    } catch (error) {
-        console.warn('Content missing, using placeholder:', path);
-        // Return a safe placeholder so the lesson doesn't crash
-        return { title: 'Coming soon', sections: [], words: [], lines: [], exercises: [], cards: [] };
+    const fullPath = Lang.content(path);
+    // One retry before giving up: a transient fetch blip (flaky mobile
+    // connection, a cold service worker) on the FIRST reference to a file
+    // used to permanently drop that section's steps for the rest of the
+    // lesson, while a later section referencing the same file would fetch
+    // again (nothing had been cached) and quietly succeed — the lesson
+    // would render with fewer total steps than it has, with no sign why.
+    for (let attempt = 0; attempt < 2; attempt++) {
+        try {
+            const response = await fetch(fullPath);
+            if (!response.ok) throw new Error('Content not found: ' + fullPath);
+            const data = await response.json();
+            contentCache[path] = data;
+            return data;
+        } catch (error) {
+            if (attempt === 0) continue;
+            console.warn('Content missing, using placeholder:', path);
+        }
     }
+    // Return a safe placeholder so the lesson doesn't crash
+    return { title: 'Coming soon', sections: [], words: [], lines: [], exercises: [], cards: [] };
 }
 
 async function loadLesson(lessonId) {
@@ -587,9 +596,12 @@ const stepRenderers = {
     },
 
     examples(step) {
+        const target = window.Reader && window.Reader.makeClickable
+            ? text => Reader.makeClickable(text)
+            : escMd;
         return (step.items || []).map(item => `
             <div class="lsn-example">
-                <div class="lsn-es">${escMd(item.spanish)}${say(item.spanish)}</div>
+                <div class="lsn-es">${target(item.spanish)}${say(item.spanish)}</div>
                 <div class="lsn-en">${escMd(item.english)}</div>
             </div>
         `).join('');
@@ -939,7 +951,6 @@ const stepRenderers = {
                 `;
                 }).join('')}
             </div>
-            <button class="lsn-check" id="srs-add-btn" onclick="lessonSaveSrsChoices()">Save</button>
             ${feedbackHtml()}
         `;
     },
@@ -1024,6 +1035,14 @@ function renderStep() {
 
 function nextLessonStep() {
     if (stepState.gated && !stepState.solved) return;
+
+    // The srs step used to need its own "Save" tap before Continue did
+    // anything useful — easy to miss, since Continue itself was already
+    // enabled, so a learner could leave the choices on screen unsaved.
+    // Saving here means Continue always commits them.
+    if (stepState.sourceStep && stepState.sourceStep.type === 'srs') {
+        lessonSaveSrsChoices();
+    }
 
     currentStepIndex++;
     if (currentStepIndex < currentLesson.steps.length) {
@@ -1411,7 +1430,6 @@ function lessonDeckId() {
 
 function lessonSaveSrsChoices() {
     if (!stepState.cards) return;
-    let toReview = 0, toKnown = 0;
     const source = lessonDeckId();
 
     Object.keys(stepState.srsChoices || {}).forEach(key => {
@@ -1419,8 +1437,7 @@ function lessonSaveSrsChoices() {
         if (!card) return;
 
         if (stepState.srsChoices[key] === 'known') {
-            if (typeof addKnownWord === 'function'
-                && addKnownWord(card.lemma, card.translation, card.pos, source)) toKnown++;
+            if (typeof addKnownWord === 'function') addKnownWord(card.lemma, card.translation, card.pos, source);
             return;
         }
 
@@ -1432,19 +1449,10 @@ function lessonSaveSrsChoices() {
             source: source,
             added: new Date().toISOString()
         }, newCardSchedule()));
-        toReview++;
     });
 
     saveDeck();
     if (typeof updateReaderWordColors === 'function') updateReaderWordColors();
-
-    const btn = document.getElementById('srs-add-btn');
-    if (btn) {
-        btn.textContent = '✓ Saved (' + toReview + ' to review, ' + toKnown + ' known)';
-        btn.disabled = true;
-    }
-    document.querySelectorAll('.lsn-srs-opt').forEach(opt => { opt.disabled = true; });
-    setFeedback(true, 'You can move words between review and My Dictionary any time from Decks.');
 }
 
 // Legacy quiz handler — kept for old HTML lessons. Green for correct, same
