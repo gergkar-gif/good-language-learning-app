@@ -221,34 +221,19 @@ carried over.*
 - [x] **Canon underuse** — none of the 30 readings mentioned Anna's one-year-old baby, András working as a teacher, or Meg's twin sisters Kaylee and Lauren by name/location (Johannesburg); Unit 6 only gestured at "her two younger sisters happen to be twins" without naming them. **Fixed 2026-08-26**: added these as English narration asides (no new Hungarian dialogue vocabulary needed, so no "used before taught" risk) — Unit 6 ("Family") now notes the baby held by Anna in the family photo and names Meg's twin sisters and their home city ("Her two younger sisters, Kaylee and Lauren, are twins — they still live in Johannesburg."); Unit 13 ("What You Do") now has a narration line distinguishing András's day job as a schoolteacher from Mariann's Hungarian tutoring, followed by Károly's dialogue line "András is tanít." — reusing only vocabulary ("is", "tanít") already established earlier in that same unit. Verified both files are valid JSON and pass `validate-content.py hu` (same 3 pre-existing, unrelated failures as before).
 - [x] Verified all 18 edited files still pass `python3 scripts/validate-content.py hu` (837 passed; the same pre-existing 3 unrelated exercise-file failures noted elsewhere in this doc are untouched) and are valid JSON. `manifest.json`/`curriculum.json`/`decks.json` weren't regenerated — none of these edits touched titles, ids, lesson numbers, or character lists, only paragraph text, so the manifest stays byte-identical except its own contents-derived fields.
 
-### HU Unit 5
-- [ ] L1 (a1-21, "What Is This?"):
-  - [ ] S4: tip merely restates what was already said above.
-  - [ ] S5: explain in the tip that 'micsoda' is made from mi (what) +
-    csoda (wonder).
-  - [ ] S11: 'micsoda' is translated as "what thing."
-  - [ ] S17: replace the "sentences in the right order" exercise with
-    another type.
-- [ ] L2 (a1-22, "Objects"):
-  - [ ] S4: "van egy könyv itt" is very unnatural — "van itt egy könyv" is
-    better.
-- [ ] L4 (a1-24, "Where Is It?"):
-  - [ ] S4: what is "zero copula"? (clarify/explain)
-  - [ ] S9: "van egy telefon …" — wrong word order, should be "… van egy
-    telefon."
-  - [ ] S12: "itt nincs lámpa" is more natural.
-    - [ ] Maybe explain 'nincs' as the merging of 'nem van'.
-  - [ ] S18: "nincs itt szék" means "there is no chair here."
-- [ ] L5 (a1-25, "Summary"):
-  - [ ] S10: "itt van egy lakás" is more natural.
-  - [ ] S15: "itt nincs kulcs" and "itt van egy lakás" are more natural.
-  - [ ] Story ends very abruptly — should be rounded off.
-- [ ] Consolidation (a1-25-consolidation): S2 — two options can be correct.
-  *(the consolidation was fully rebuilt 2026-08-26 with different, reused-
-  from-the-unit's-lessons exercises, so this old "S2" position almost
-  certainly doesn't point at the same exercise anymore — would need a
-  fresh look at the current consolidation to find whatever the equivalent
-  issue is, if it still exists at all)*
+### HU Unit 5 — resolved 2026-08-26
+*Re-audited by content (not step number, since numbering had drifted per the note at the top of this file) rather than the original S-numbers.*
+- [x] L1 (a1-21, "What Is This?"):
+  - [x] S4/S5 (micsoda tip): already resolved as a side effect of an earlier pass — the tip now explains the mi+csoda (wonder) etymology and no longer just restates the text above it (verified current `a1-21-b-gr.json`).
+  - [x] S11: `micsoda` was glossed as "what thing" in `a1-21-voc.json` and in the generated `decks.json` — wrong sense for an emphatic "what on earth" word. **Fixed**: both now say "what on earth," matching the grammar screen's own explanation.
+  - [x] S17: already resolved — all A1 `sentence-order` exercises were converted to multiple-choice in an earlier pass; none remain in `a1-21-ex.json`.
+- [x] L2 (a1-22, "Objects"): S4 — `a1-22-a-gr.json`'s own example read "Van egy könyv itt." (locative stranded at the end). **Fixed**: reordered to "Itt van egy könyv."
+- [x] L4 (a1-24, "Where Is It?"):
+  - [x] S4 (zero copula): already clarified inline — the grammar text names it explicitly and contrasts it directly ("Ez egy könyv, not Ez van egy könyv").
+  - [x] S9: found the real instance — exercise `a1-24-controlled-1` was "Van egy telefon ____. (here)" answer "itt," producing "Van egy telefon itt." **Fixed**: rebuilt as a sentence-builder tile exercise for "Itt van egy telefon." (avoids the capitalization ambiguity a leading fill-in blank would create).
+  - [x] S12 + S18 + L5's S10/S15: **all the same underlying bug** — this whole grammar point (`van`/`nincs` + `itt`/`ott`) was inconsistent about whether the locative leads or trails, and `a1-24-b-gr.json`'s own tip already stated the intended rule ("itt/ott usually leads the sentence... Itt van a könyv, not Van itt a könyv") while several examples and exercises across `a1-24`, `a1-25`, and `a1-25-consolidation` contradicted it. **Fixed by standardizing the whole itt/ott+van/nincs pattern on locative-first** across `a1-24-a-gr.json` and `a1-24-b-gr.json`'s examples, `a1-24-ex.json` (controlled-1, controlled-4, practice-3, practice-6 — which also had a mismatched English prompt, "The chair isn't here" for an indefinite "Nincs itt szék," now "There's no chair here" — and writing-2), `a1-25-ex.json`'s practice-3 matching pairs, and `a1-25-consolidation-ex.json`'s consolidation-11 fill-blank. Also added a requested tip explaining `nincs` as a fusion of `nem` + `van`.
+  - [x] Story ending abruptly (the Unit 5 reading is `story.a1.unit05`, "What Is This?", covering lessons a1-21 through a1-25): confirmed it stopped cold on an unanswered "Micsoda ez?" **Fixed**: added Károly's reply and a closing narration beat.
+- [x] Consolidation (a1-25-consolidation): re-checked the current (rebuilt) consolidation directly rather than trusting the stale "S2" position — found the same locative-order bug in consolidation-11 (folded into the fix above) and confirmed all 6 multiple-choice items have exactly one defensible correct answer with no overlap.
 
 ### Deferred — future feature, not a bug
 - [ ] HU audio: replace TTS with real recorded sound files. *(explicitly

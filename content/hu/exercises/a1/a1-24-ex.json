@@ -67,15 +67,23 @@
     },
     {
       "id": "a1-24-controlled-1",
-      "type": "multiple-choice",
+      "type": "sentence-builder",
       "category": "grammar",
-      "question": "Van egy telefon ____. (here)",
-      "options": [
-        "itt",
-        "ott",
-        "nincs"
+      "tiles": [
+        "Itt",
+        "van",
+        "egy",
+        "telefon",
+        "."
       ],
-      "correct": 0,
+      "solution": [
+        "Itt",
+        "van",
+        "egy",
+        "telefon",
+        "."
+      ],
+      "english": "There is a phone here.",
       "teaches": [
         "van-and-nincs-there-is-there-isn-t",
         "itt-ott-here-there"
@@ -124,14 +132,14 @@
       "type": "sentence-builder",
       "category": "grammar",
       "tiles": [
-        "Nincs",
-        "itt",
+        "Itt",
+        "nincs",
         "lámpa",
         "."
       ],
       "solution": [
-        "Nincs",
-        "itt",
+        "Itt",
+        "nincs",
         "lámpa",
         "."
       ],
@@ -174,11 +182,11 @@
       "category": "vocabulary",
       "pairs": [
         [
-          "Van itt egy szék.",
+          "Itt van egy szék.",
           "There is a chair here."
         ],
         [
-          "Nincs itt telefon.",
+          "Itt nincs telefon.",
           "There's no phone here."
         ],
         [
@@ -239,9 +247,9 @@
       "id": "a1-24-practice-6",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Choose the correct sentence for 'The chair isn't here.'",
+      "question": "Choose the correct sentence for 'There's no chair here.'",
       "options": [
-        "Nincs itt szék.",
+        "Itt nincs szék.",
         "Nem itt szék.",
         "Itt szék nincs van."
       ],
@@ -332,7 +340,7 @@
       "template": [
         {
           "prompt": "Say 'There is no chair there.' in Hungarian.",
-          "answer": "Nincs ott szék."
+          "answer": "Ott nincs szék."
         }
       ],
       "teaches": [
