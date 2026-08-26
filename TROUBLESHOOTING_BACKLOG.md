@@ -154,6 +154,60 @@ step-specific entries at once.
 - [x] Users are asked to state their age in an exercise but have only been taught numbers up to 3 at that point. **Confirmed 2026-08-19, and it's worse than reported**: by the point numbers are taught at all (A1 U8), only uno/dos/tres are introduced — the full 1-20 system isn't taught until **Unit 12**, two units *after* Unit 10 already leans on ages like "veinticinco" (25) and dates like "el doce de mayo." This is a curriculum-sequencing problem (Numbers is taught after Ages/Dates, not before), not a small content patch — belongs with the item below rather than a standalone fix.
 - [ ] Unit 10 overall needs a full review: too much writing, too little active practice. Prioritize teaching how to conjugate "saber" and basic connectors (y, con, sin, pero) over incidental vocabulary like "vela" and "globo". *(not addressed — needs a product decision on curriculum reordering/rebalancing, not a content fix. The numbers-sequencing finding above should factor into that review.)*
 
+## HU A1 — Unit-by-unit findings
+
+*Merged in from `HUNGARIAN_A1_CONTENT_BACKLOG.md` 2026-08-26, which is now
+deleted — that doc's cross-cutting fixes, curriculum-wide gaps, and Units
+1-4 were all resolved during the session that captured them (2026-08-21)
+plus this session's teaches-tag/consolidation/duplicate-dialogue audit;
+only Unit 5's line items and the Unit 13 finding below were still open.
+Several of Unit 5's original items turned out to already be resolved as a
+side effect of this session's other work (the lesson-goal rewrite for
+a1-21 through a1-35, the Vowel Harmony page inserted into a1-22, and the
+consolidation rebuild to 20 exercises) and were dropped rather than
+carried over.*
+
+- [ ] Units 13 (`a1-61` through `a1-65`, "I Work, I Study" / "Everyday
+  Verbs" / "Who Does What?" / "Talking About Activities" / "Verb Review"):
+  grammar content is byte-for-byte identical across all five lessons
+  despite each having a distinct title and vocabulary — the same
+  duplication-without-customization bug already found and fixed in HU
+  Units 2 and 4. Needs the same treatment: each lesson's grammar should
+  teach something distinct that actually matches its own title and vocab.
+
+### HU Unit 5
+- [ ] L1 (a1-21, "What Is This?"):
+  - [ ] S4: tip merely restates what was already said above.
+  - [ ] S5: explain in the tip that 'micsoda' is made from mi (what) +
+    csoda (wonder).
+  - [ ] S11: 'micsoda' is translated as "what thing."
+  - [ ] S17: replace the "sentences in the right order" exercise with
+    another type.
+- [ ] L2 (a1-22, "Objects"):
+  - [ ] S4: "van egy könyv itt" is very unnatural — "van itt egy könyv" is
+    better.
+- [ ] L4 (a1-24, "Where Is It?"):
+  - [ ] S4: what is "zero copula"? (clarify/explain)
+  - [ ] S9: "van egy telefon …" — wrong word order, should be "… van egy
+    telefon."
+  - [ ] S12: "itt nincs lámpa" is more natural.
+    - [ ] Maybe explain 'nincs' as the merging of 'nem van'.
+  - [ ] S18: "nincs itt szék" means "there is no chair here."
+- [ ] L5 (a1-25, "Summary"):
+  - [ ] S10: "itt van egy lakás" is more natural.
+  - [ ] S15: "itt nincs kulcs" and "itt van egy lakás" are more natural.
+  - [ ] Story ends very abruptly — should be rounded off.
+- [ ] Consolidation (a1-25-consolidation): S2 — two options can be correct.
+  *(the consolidation was fully rebuilt 2026-08-26 with different, reused-
+  from-the-unit's-lessons exercises, so this old "S2" position almost
+  certainly doesn't point at the same exercise anymore — would need a
+  fresh look at the current consolidation to find whatever the equivalent
+  issue is, if it still exists at all)*
+
+### Deferred — future feature, not a bug
+- [ ] HU audio: replace TTS with real recorded sound files. *(explicitly
+  deferred by the user, 2026-08-21 — "future feature, not in this pass")*
+
 ### Found this pass, not originally reported
 - [x] Exhaustive re-scan for the name-blank pattern (any fill-blank whose answer is a proper name): confirmed only the one instance already fixed (A1 U1 L2, "Soy ___.") exists anywhere in A1 — no further instances found.
 - [x] Exhaustive re-scan for duplicate options within a single exercise (beyond the café-unit "sí, ahora mismo" case already found): 3 more instances — "Queremos una botella de agua." listed twice in one multiple-choice item, all three options identically "diecinueve" in a numbers item, and "Está a la izquierda." listed twice in a directions dialogue. All fixed with distinct, plausible-but-wrong distractors.
