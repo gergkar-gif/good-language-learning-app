@@ -192,7 +192,20 @@ carried over.*
   lessons' top-level `goal`, goal-section `items`, and checklist `items`
   (kept identical to each other within a lesson, as required) to name
   each lesson's own verbs instead of the generic shared text. Regenerated
-  curriculum.json/decks.json afterward. Verified live.
+  curriculum.json/decks.json afterward. Verified live. **Second follow-up,
+  same day**: the user caught that two of the five rewritten goals
+  (a1-63's "I can name more everyday actions: inni, aludni, venni." and
+  a1-65's "I can name a few more everyday verbs: ...") were themselves
+  the exact word-drill pattern this whole class of fix exists to
+  eliminate — a bare vocabulary list, not a communicative framing.
+  Reworded both to describe what the words let you talk about instead of
+  just naming them ("I can talk about basic daily needs, like drinking,
+  sleeping, and buying things."). Also caught and fixed a real editing
+  bug from the first pass: a `replace_all` edit missed each lesson's
+  top-level `goal` field (4-space indented) because the search string
+  was copied from the 8-space-indented section copies — the two fields
+  had silently diverged until this pass. All three locations verified
+  identical again after the fix.
 
 ### HU Unit 5
 - [ ] L1 (a1-21, "What Is This?"):
