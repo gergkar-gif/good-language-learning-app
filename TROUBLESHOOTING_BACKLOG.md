@@ -185,7 +185,14 @@ carried over.*
   itself needed no change — its examples already matched its own vocab.
   Verified live: all four lessons' grammar screens now show distinct,
   vocab-matched examples with no console errors; `validate-content.py hu`
-  unaffected (still the same 3 pre-existing failures).
+  unaffected (still the same 3 pre-existing failures). **Follow-up, same
+  day**: the user checked and found the lesson *goals* were also
+  byte-identical across all five lessons (missed in the first pass, which
+  only looked at grammar) — same bug, different field. Rewrote all five
+  lessons' top-level `goal`, goal-section `items`, and checklist `items`
+  (kept identical to each other within a lesson, as required) to name
+  each lesson's own verbs instead of the generic shared text. Regenerated
+  curriculum.json/decks.json afterward. Verified live.
 
 ### HU Unit 5
 - [ ] L1 (a1-21, "What Is This?"):
