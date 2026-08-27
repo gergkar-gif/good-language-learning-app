@@ -28,6 +28,7 @@ const TranslationDriller = (function () {
     let _mode = MODE.COUNT;
     let _direction = DIRECTION.ES_EN;
     let _level = 'all';
+    let _topic = 'all';
     let _questionCount = 10;
     let _timerMinutes = 2;
 
@@ -56,6 +57,10 @@ const TranslationDriller = (function () {
         return (m < 10 ? '0' : '') + m + ':' + (s < 10 ? '0' : '') + s;
     }
 
+    function _esc(text) {
+        return (typeof UI !== 'undefined' && UI.escape) ? UI.escape(text) : String(text == null ? '' : text);
+    }
+
     // ---- Data loading (once) ----
     async function _load() {
         if (_pairs) return;
@@ -63,8 +68,29 @@ const TranslationDriller = (function () {
         _pairs = index.pairs || [];
     }
 
-    function _poolFor(level) {
+    function _byLevel(level) {
         return level === 'all' ? _pairs : _pairs.filter(p => p.level === level);
+    }
+
+    function _poolFor(level, topic) {
+        const byLevel = _byLevel(level);
+        return topic === 'all' ? byLevel : byLevel.filter(p => p.topic === topic);
+    }
+
+    // Distinct topics among this level's pairs, alphabetical, with counts —
+    // scoped to the level so switching level always shows a topic list
+    // that's actually browsable (the full cross-level set is 100+, one
+    // level's worth is usually a few dozen). Pairs without a derived topic
+    // (a handful of irregular filenames — see build_translation_index.py)
+    // aren't lost, they're just not filterable by topic; "All topics"
+    // still includes them.
+    function _topicsFor(level) {
+        const counts = new Map();
+        _byLevel(level).forEach(p => {
+            if (!p.topic) return;
+            counts.set(p.topic, (counts.get(p.topic) || 0) + 1);
+        });
+        return Array.from(counts.entries()).sort((a, b) => a[0].localeCompare(b[0]));
     }
 
     // ---- Normalisation: a pair + direction -> TranslationRunner's shape ----
@@ -90,6 +116,13 @@ const TranslationDriller = (function () {
     function _renderSettings() {
         const totalA1 = _pairs.filter(p => p.level === 'A1').length;
         const totalA2 = _pairs.filter(p => p.level === 'A2').length;
+        const totalB1 = _pairs.filter(p => p.level === 'B1').length;
+        const topics = _topicsFor(_level);
+        // The level select above can leave _topic pointing at a topic that
+        // doesn't exist at the newly-chosen level (e.g. picking A1 right
+        // after selecting a B1-only topic) — fall back to "All topics"
+        // rather than silently filtering to nothing.
+        if (_topic !== 'all' && !topics.some(([name]) => name === _topic)) _topic = 'all';
 
         _container.innerHTML = `
             <div class="gd-settings">
@@ -117,6 +150,17 @@ const TranslationDriller = (function () {
                         <option value="all">All levels (${_pairs.length} sentences)</option>
                         <option value="A1">A1 (${totalA1} sentences)</option>
                         <option value="A2">A2 (${totalA2} sentences)</option>
+                        <option value="B1">B1 (${totalB1} sentences)</option>
+                    </select>
+                </div>
+
+                <div class="gd-setting">
+                    <label for="td-topic">Topic</label>
+                    <select id="td-topic" class="vb-select">
+                        <option value="all">All topics</option>
+                        ${topics.map(([name, count]) => `
+                            <option value="${_esc(name)}">${_esc(name)} (${count})</option>
+                        `).join('')}
                     </select>
                 </div>
 
@@ -154,7 +198,14 @@ const TranslationDriller = (function () {
 
         const levelSelect = _container.querySelector('#td-level');
         levelSelect.value = _level;
-        levelSelect.addEventListener('change', e => { _level = e.target.value; });
+        // Full re-render, not just updating _level, since the topic list
+        // below is scoped to whichever level is selected — picking a new
+        // level needs to refresh which topics are even offered.
+        levelSelect.addEventListener('change', e => { _level = e.target.value; _renderSettings(); });
+
+        const topicSelect = _container.querySelector('#td-topic');
+        topicSelect.value = _topic;
+        topicSelect.addEventListener('change', e => { _topic = e.target.value; });
 
         const countSelect = _container.querySelector('#td-count');
         if (countSelect) countSelect.addEventListener('change', e => { _questionCount = Number(e.target.value); });
@@ -169,14 +220,14 @@ const TranslationDriller = (function () {
     //  RENDERING — Session
     // ================================================================
     function _startSession() {
-        const pool = _poolFor(_level);
+        const pool = _poolFor(_level, _topic);
         _seen = 0;
         _correct = 0;
 
         if (!pool.length) {
             _phase = PHASE.SETTINGS;
             _container.innerHTML = `
-                <div class="gd-empty">No sentences found for this level yet.</div>
+                <div class="gd-empty">No sentences found for this level/topic yet.</div>
                 <button class="vbtn vbtn-secondary" data-action="change-settings">Change settings</button>
             `;
             _container.querySelector('[data-action="change-settings"]').addEventListener('click', _abortSession);

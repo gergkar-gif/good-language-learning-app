@@ -81,7 +81,60 @@ track known bugs in existing content rather than things not yet built.
   Verified live end-to-end: a real 1-minute timed session correctly
   recorded to `localStorage` and rendered both the best-accuracy stat
   and the new-best banner.
-- [ ] Translation driller: practice by topic.
+- [x] Translation driller: practice by topic. **Built 2026-08-27.** The
+  driller's own source data (`translation-index.json`) only ever carried
+  `spanish`/`english`/`level`/`source` — no topic — so this was really a
+  content-derivation problem before it was a UI one, and the actual
+  content turned out messier than expected: the codebase has accumulated
+  several different filename conventions over time, not one, and they
+  differ between the two courses.
+  - `scripts/build_translation_index.py` now derives a `topic` per pair
+    from whichever of three shapes its source file's name matches: a
+    slug filename (`{level}-{slug}-...`, e.g. `a1-hobbies-03-...` or
+    `b1-nacionalismo-03-...`) uses the slug directly as the topic — the 8
+    English A1 ones read fine as-is, the 36 Spanish B1 ones (the LatAm
+    cultural-history track) get a hand-written label in the new
+    `SLUG_TOPIC_LABELS` map; a numeric-unit filename
+    (`{level}-{unit:2d}-{lesson:2d}-...`, most of ES) is looked up
+    against `curriculum.json`'s `unit.<level>.<NN>` id for that unit's
+    title; a numeric lesson-across-level filename (`{level}-{lesson}-
+    {variant}-...`, all of HU) is looked up against `lesson.<level>.<NN>`
+    instead, since HU's curriculum numbers lessons sequentially across
+    the whole level rather than restarting per unit — a real content
+    convention difference between the courses, not a bug, discovered
+    while building this. B1 additionally needed a fix mid-way: its unit
+    ids carry a third "track" segment (`unit.b1.core.NN` /
+    `unit.b1.latam.NN`, both numbering 1-36) since it's dual-track, which
+    collided until the numeric-unit lookup was scoped to register only
+    "core" — B1's numeric filenames are always core; latam's are always
+    the slug filenames instead, so this doesn't lose latam topics, they
+    just come from the slug path. Coverage after the fix: 3015/3034 (99%)
+    ES pairs, 734/734 (100%) HU pairs got a topic; the last 19 ES pairs
+    are 5 irregular "b1-03c-*" grammar files that match none of the three
+    shapes and simply have no topic (still included in the driller,
+    just not topic-filterable).
+  - `engine/drills/translation.js`: new Topic `<select>` next to the
+    existing Level one, scoped to whichever level is currently selected
+    (the full cross-level list is 100+ topics — one level's worth is a
+    browsable few dozen), each option showing its sentence count like the
+    level options already do. Changing level re-renders the topic list
+    and resets the topic selection to "All topics" if the previously
+    chosen one doesn't exist at the new level. `_poolFor()` now filters by
+    topic as well as level before a session starts. Also added the
+    missing "B1" option to the Level select itself while in there — it
+    turned out over half of ES's pairs (2,013 of 3,034) were B1 and had
+    no way to be selected at all before this, an unrelated pre-existing
+    gap noticed and fixed as a one-line addition alongside the topic work.
+  - Verified live with Playwright: Level select now reads "B1 (2013
+    sentences)"; Topic select at "All levels" lists 111 distinct topics,
+    narrows to exactly A1's 19 (matching its 19 curriculum units) when
+    Level is switched to A1; starting a session scoped to "At Home"
+    produced a thematically correct sentence ("Hay un baño." / "Las
+    ventanas están en la habitación."); a B1 latam-track topic ("The
+    Cuban Revolution") correctly produced a matching sentence about Cuba,
+    confirming both B1 tracks resolve correctly despite their different
+    filename shapes; Hungarian's Topic select listed all 30 units. No
+    console/page errors in any run.
 
 ## Library / dictionary
 
