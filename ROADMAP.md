@@ -425,22 +425,26 @@ track known bugs in existing content rather than things not yet built.
 - [x] Match mode: fixed columns instead of one shuffled board. Feedback:
   "shouldn't match have English in one column, Spanish or Hungarian in
   the other, because now it just does randomly... which makes the quick
-  matching quite annoying." **Fixed 2026-08-27** — `.dkm-grid` is a plain
+  matching quite annoying," followed shortly by "English should be in
+  the left column." **Fixed 2026-08-27** — `.dkm-grid` is a plain
   2-column CSS grid filled in DOM order, and `_newRound()` in
   `engine/decks/match.js` had been building one combined array of lemma
   and translation tiles and shuffling the whole thing together, so either
   language could land in either column round to round. Changed to shuffle
   the lemma tiles and translation tiles separately, then interleave them
-  (lemma, translation, lemma, translation, ...) so the target language
-  always fills the left column and English always fills the right — each
-  column still independently randomised, just no longer swapping sides.
+  so English always fills the left column and the target language always
+  fills the right (translation first in the interleave, per the
+  follow-up direction — an earlier pass had it the other way round and
+  was corrected the same day) — each column still independently
+  randomised, just no longer swapping sides.
   Verified live with a temporary debug hook (added, exercised, then
   removed before commit): sampled 10 fresh rounds of an 8-word deck and
   confirmed every even tile index was `lemma` and every odd index was
-  `translation` in all 10, then re-verified without the hook via a
-  6-word deck's actual rendered tile text — "palabra1..6" consistently in
-  the left column, "word1..6" consistently in the right, across a fresh
-  shuffle. No console/page errors.
+  `translation` in all 10 (before the left/right correction). Re-verified
+  the final left-English/right-target order without the hook via a
+  6-word deck's actual rendered tile text — "word1..6" consistently in
+  the left column, "palabra1..6" consistently in the right, across a
+  fresh shuffle. No console/page errors.
 
 ## Grammar reference
 

@@ -89,15 +89,16 @@ const DeckMatch = (function () {
         // Two fixed columns rather than one board shuffled as a whole —
         // .dkm-grid is a plain 2-column grid filled in DOM order, so
         // interleaving lemma/translation here (each shuffled only within
-        // its own side) keeps the target language always in the left
-        // column and English always in the right. Feedback: matching
-        // "which makes the quick matching quite annoying" when either
-        // language could land in either column and a learner had to scan
-        // the whole board rather than just their own side (2026-08-27).
+        // its own side) keeps English always in the left column and the
+        // target language always in the right (2026-08-27: "English
+        // should be in the left column"). Feedback: matching "which makes
+        // the quick matching quite annoying" when either language could
+        // land in either column and a learner had to scan the whole
+        // board rather than just their own side.
         _tiles = [];
         for (let i = 0; i < shuffledLemma.length; i++) {
-            _tiles.push(shuffledLemma[i]);
             _tiles.push(shuffledTranslation[i]);
+            _tiles.push(shuffledLemma[i]);
         }
 
         _selected = [];
