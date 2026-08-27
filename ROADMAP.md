@@ -208,6 +208,18 @@ track known bugs in existing content rather than things not yet built.
     `canAddNewWord()` for the Reader's own path — stayed untouched at 20/
     `false`, confirming the two are now fully decoupled rather than one
     fix breaking the other's intended behaviour.
+- [x] Equal-weight study row: Review/Match/Learn shouldn't have one
+  visually outranking the others. **Done 2026-08-27**: new `.dk-study-row`
+  of three identically-sized/styled tabs (`.dk-study-tab`) replaces
+  Review's old `.btn-primary` treatment — no single mode reads as "the"
+  primary action any more. Review keeps a small due-count badge (real
+  scheduling info, not a status claim) and its disabled-when-nothing-due
+  state. "Add N to review" and "Edit deck" moved into a smaller, quieter
+  `.dk-utility-row` below (plain underlined text buttons, `.dk-link-btn`
+  — the same treatment the word list's Sort toggle already used, so it's
+  now one consistent "meta action" style rather than a one-off). Verified
+  live: all three tabs render at pixel-identical width/height, and
+  clicking through to Match still works correctly from its new spot.
 
 ## Grammar reference
 

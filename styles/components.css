@@ -2491,6 +2491,65 @@
 
 .dk-detail-head p { font-size: 13px; color: var(--muted); margin: 2px 0 12px; }
 
+/* Review/Match/Learn as one equal-weight row — same size, same border
+   treatment, no single one visually "the" primary action. Wraps to 2+1 on
+   a narrow screen rather than shrinking illegibly. */
+.dk-study-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.dk-study-tab {
+  flex: 1 1 0;
+  min-width: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 14px 12px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.dk-study-tab:hover:not(:disabled) { border-color: var(--primary); color: var(--primary); }
+
+.dk-study-tab:disabled { color: var(--muted); cursor: default; opacity: 0.6; }
+
+.dk-study-tab-badge {
+  background: var(--primary);
+  color: var(--surface);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 1px 7px;
+  border-radius: 10px;
+}
+
+/* Meta actions — smaller and quieter than the study row above on purpose,
+   since neither is "how do I practice this deck," they're bookkeeping. */
+.dk-utility-row {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 4px;
+}
+
+.dk-link-btn {
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 13px;
+  text-decoration: underline;
+  padding: 0;
+}
+
+.dk-link-btn:hover { color: var(--primary); }
+
 .dk-words-head {
   display: flex;
   align-items: center;
@@ -2505,17 +2564,6 @@
   text-transform: uppercase;
   letter-spacing: 0.04em;
 }
-
-.dk-sort-toggle {
-  background: none;
-  border: none;
-  color: var(--muted);
-  font-size: 13px;
-  text-decoration: underline;
-  padding: 0;
-}
-
-.dk-sort-toggle:hover { color: var(--primary); }
 
 .dk-words { list-style: none; }
 

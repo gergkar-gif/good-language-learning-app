@@ -807,22 +807,33 @@ const Decks = (function () {
                 <h3>${esc(deck.name)}</h3>
                 ${deck.description ? `<p class="dk-detail-desc">${esc(deck.description)}</p>` : ''}
                 <p>${s.inDeck} of ${s.total} in your review deck · ${s.due} due · ${s.mastered} mastered</p>
-                <div class="dk-actions">
-                    <button class="btn-primary" data-review-deck="${esc(deck.id)}"
-                        ${s.due ? '' : 'disabled'}>
-                        Review this deck${s.due ? ` (${s.due})` : ''}
+
+                <!-- Three equal ways to engage with this deck right now — same size,
+                     same weight, no one of them "the" primary action the way
+                     Review used to visually outrank Match/Learn. Only Review
+                     carries a due-count badge, since that's real information
+                     (what's actually scheduled), not a status claim about which
+                     mode matters more. -->
+                <div class="dk-study-row">
+                    <button class="dk-study-tab" data-review-deck="${esc(deck.id)}" ${s.due ? '' : 'disabled'}>
+                        <span class="dk-study-tab-label">Review</span>
+                        ${s.due ? `<span class="dk-study-tab-badge">${s.due}</span>` : ''}
                     </button>
-                    ${s.missing ? `<button class="dk-secondary" data-add-deck="${esc(deck.id)}">
-                        Add ${s.missing} to review</button>` : ''}
-                    ${words.length > 1 ? `<button class="dk-secondary" data-open-match="1">Match</button>` : ''}
-                    ${words.length ? `<button class="dk-secondary" data-open-learn="1">Learn</button>` : ''}
-                    ${isCustom ? `<button class="dk-secondary" data-edit-deck="${esc(deck.id)}">Edit deck</button>` : ''}
+                    ${words.length > 1 ? `<button class="dk-study-tab" data-open-match="1"><span class="dk-study-tab-label">Match</span></button>` : ''}
+                    ${words.length ? `<button class="dk-study-tab" data-open-learn="1"><span class="dk-study-tab-label">Learn</span></button>` : ''}
                 </div>
+
+                ${(s.missing || isCustom) ? `
+                    <div class="dk-utility-row">
+                        ${s.missing ? `<button class="dk-link-btn" data-add-deck="${esc(deck.id)}">Add ${s.missing} to review</button>` : ''}
+                        ${isCustom ? `<button class="dk-link-btn" data-edit-deck="${esc(deck.id)}">Edit deck</button>` : ''}
+                    </div>
+                ` : ''}
             </div>
             ${words.length > 1 ? `
                 <div class="dk-words-head">
                     <span class="dk-words-count">${words.length} ${words.length === 1 ? 'word' : 'words'}</span>
-                    <button class="dk-sort-toggle" data-toggle-sort="1">
+                    <button class="dk-link-btn" data-toggle-sort="1">
                         ${sortOrder === 'alphabetical' ? 'Sorted A–Z' : 'Added order'}
                     </button>
                 </div>
