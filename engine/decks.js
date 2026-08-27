@@ -106,12 +106,19 @@ const Decks = (function () {
             if (!card.nextReview || new Date(card.nextReview) <= now) due++;
         });
 
+        const missing = words.length - inDeck;
         return {
             total: words.length,
             inDeck: inDeck,
             due: due,
             mastered: mastered,
-            missing: words.length - inDeck
+            missing: missing,
+            // What "Review this deck" will actually cover: already-due cards
+            // PLUS every word with no card yet — reviewDeck() creates those
+            // on the spot (a fresh card is always immediately due), so a
+            // learner never has to visit a separate "add to review" step
+            // before this count/button becomes real.
+            ready: due + missing
         };
     }
 
@@ -231,37 +238,36 @@ const Decks = (function () {
     }
 
     // ----------------------------------------
-    // ACTIONS — review & bulk-add (Parlour Decks and My Decks alike)
+    // ACTIONS — review
     // ----------------------------------------
-    // No daily cap here, by design (2026-08-27): the cap in engine/xp.js
-    // exists to stop the Reader's incidental, one-word-at-a-time "+Add to
-    // SRS Deck" from burying a learner mid-reading — a deliberate, whole
-    // deck's worth of words a learner just chose to add is a different act
-    // with its own built-in judgment call, not the moment that guard is
-    // for. Doesn't call canAddNewWord()/recordNewWord() at all, so a deck
-    // add neither gets blocked by that cap nor eats into it for the
-    // Reader's sake either.
-    function addDeck(id) {
-        const deck = byId(id);
-        if (!deck) return;
-
-        wordsOf(deck).forEach(word => {
-            if (cardFor(word.lemma)) return;
-            srsDeck.push(Object.assign({
-                spanish: word.lemma,
-                english: word.translation || 'unknown',
-                type: word.pos || 'unknown',
-                source: deck.id,
-                added: new Date().toISOString()
-            }, newCardSchedule()));
-        });
-
-        saveDeck();
-        render();
-    }
-
+    // Reviewing a deck IS what turns its membership into SRS activation —
+    // there used to be a separate "Add N to review" step required before
+    // Review would do anything, which was exactly the two-clicks-for-one-
+    // action friction the whole flow got simplified to remove (2026-08-27).
+    // Any word here with no card yet gets a fresh one on the spot; a fresh
+    // card is always immediately due, so it's included in this session
+    // without a separate visit first. No daily cap here either, by the
+    // same 2026-08-27 decision: the cap in engine/xp.js exists to stop the
+    // Reader's incidental, one-word-at-a-time "+Add to SRS Deck" from
+    // burying a learner mid-reading — a deliberate whole-deck review is a
+    // different act with its own built-in judgment call, and doesn't call
+    // canAddNewWord()/recordNewWord() at all, so it neither gets blocked by
+    // that cap nor eats into it for the Reader's sake either.
     function reviewDeck(id) {
         const deck = id === 'all' ? null : byId(id);
+        if (deck) {
+            wordsOf(deck).forEach(word => {
+                if (cardFor(word.lemma)) return;
+                srsDeck.push(Object.assign({
+                    spanish: word.lemma,
+                    english: word.translation || 'unknown',
+                    type: word.pos || 'unknown',
+                    source: deck.id,
+                    added: new Date().toISOString()
+                }, newCardSchedule()));
+            });
+            saveDeck();
+        }
         startReviewSession(deck ? wordsOf(deck).map(w => w.lemma) : null,
                            deck ? deck.name : 'All decks');
     }
@@ -806,27 +812,28 @@ const Decks = (function () {
             <div class="dk-detail-head">
                 <h3>${esc(deck.name)}</h3>
                 ${deck.description ? `<p class="dk-detail-desc">${esc(deck.description)}</p>` : ''}
-                <p>${s.inDeck} of ${s.total} in your review deck · ${s.due} due · ${s.mastered} mastered</p>
+                <p>${s.mastered} mastered${s.total ? ` · ${s.total} ${s.total === 1 ? 'word' : 'words'} total` : ''}</p>
 
                 <!-- Three equal ways to engage with this deck right now — same size,
                      same weight, no one of them "the" primary action the way
-                     Review used to visually outrank Match/Learn. Only Review
-                     carries a due-count badge, since that's real information
-                     (what's actually scheduled), not a status claim about which
+                     Review used to visually outrank Match/Learn. Review no
+                     longer needs a separate "add to review" step first — it
+                     activates any not-yet-added word on the spot (see
+                     reviewDeck()) — so its badge is simply "everything this
+                     click covers right now", not a status claim about which
                      mode matters more. -->
                 <div class="dk-study-row">
-                    <button class="dk-study-tab" data-review-deck="${esc(deck.id)}" ${s.due ? '' : 'disabled'}>
+                    <button class="dk-study-tab" data-review-deck="${esc(deck.id)}" ${s.ready ? '' : 'disabled'}>
                         <span class="dk-study-tab-label">Review</span>
-                        ${s.due ? `<span class="dk-study-tab-badge">${s.due}</span>` : ''}
+                        ${s.ready ? `<span class="dk-study-tab-badge">${s.ready}</span>` : ''}
                     </button>
                     ${words.length > 1 ? `<button class="dk-study-tab" data-open-match="1"><span class="dk-study-tab-label">Match</span></button>` : ''}
                     ${words.length ? `<button class="dk-study-tab" data-open-learn="1"><span class="dk-study-tab-label">Learn</span></button>` : ''}
                 </div>
 
-                ${(s.missing || isCustom) ? `
+                ${isCustom ? `
                     <div class="dk-utility-row">
-                        ${s.missing ? `<button class="dk-link-btn" data-add-deck="${esc(deck.id)}">Add ${s.missing} to review</button>` : ''}
-                        ${isCustom ? `<button class="dk-link-btn" data-edit-deck="${esc(deck.id)}">Edit deck</button>` : ''}
+                        <button class="dk-link-btn" data-edit-deck="${esc(deck.id)}">Edit deck</button>
                     </div>
                 ` : ''}
             </div>
@@ -999,9 +1006,6 @@ const Decks = (function () {
                 render();
             };
         });
-        host.querySelectorAll('[data-add-deck]').forEach(el => {
-            el.onclick = function () { addDeck(el.getAttribute('data-add-deck')); };
-        });
         host.querySelectorAll('[data-remove-card]').forEach(el => {
             el.onclick = function () { removeFromAllWords(el.getAttribute('data-remove-card')); };
         });
@@ -1020,7 +1024,7 @@ const Decks = (function () {
     }
 
     return {
-        render, load, statusOf, myDeck, addDeck, reviewDeck,
+        render, load, statusOf, myDeck, reviewDeck,
         openAddToDeckPicker, openBulkAddPicker, allMyDeckLemmas
     };
 })();

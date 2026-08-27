@@ -220,6 +220,60 @@ track known bugs in existing content rather than things not yet built.
   now one consistent "meta action" style rather than a one-off). Verified
   live: all three tabs render at pixel-identical width/height, and
   clicking through to Match still works correctly from its new spot.
+- [x] Collapse "Add to review, then Review" into one step; a per-course
+  direction toggle and a shuffle for review. Feedback: "the way to review
+  and then review, and then you have to add it to review to able to
+  review it... too many steps... if you compare it to Quizlet... just go
+  and practice what they want to practice... if they want to have the
+  English first, good, just flip a switch. If they want to shuffle it,
+  good, just flip a switch." **Done 2026-08-27**:
+  - `engine/decks.js`: deleted the standalone `addDeck()` function (the
+    "Add N to review" button's SRS-card-creation step) and folded its
+    logic directly into `reviewDeck()` — any word in the deck with no SRS
+    card yet now gets one created on the spot, immediately before
+    `startReviewSession()` runs, so clicking "Review" is the only click
+    needed regardless of whether any of the deck's words had been
+    reviewed before. `newCardSchedule()` always sets a fresh card's
+    `nextReview` to right now, so a same-turn creation is included in the
+    session it's created for rather than waiting a day. No daily-cap call
+    here either (same reasoning as the earlier 20-word-cap fix above:
+    this is a deliberate whole-deck action, not the Reader's incidental
+    one-word popup). `statusOf()` gained a `ready: due + missing` field —
+    what "Review" is actually about to cover — and the deck-detail Review
+    tab's badge/disabled state now reads `s.ready` instead of `s.due`, so
+    a brand-new deck with zero existing cards shows an enabled Review tab
+    with the deck's full word count, not a disabled one reading 0. The
+    now-redundant "Add N to review" button and its `[data-add-deck]`
+    handler are removed from `.dk-utility-row` (which now only shows
+    "Edit deck" for custom decks) and from `detailHtml()`'s status line.
+  - The direction toggle (target-language-first vs. English-first) and
+    the always-random per-card draw a learner would expect from "shuffle"
+    turned out to already exist and already be course-generic — both
+    predate this session's Quizlet-mechanics work. `reviewDirection`/
+    `toggleReviewDirection()` in `engine/srs.js` already labels its own
+    toggle via `Lang.name()` rather than a hardcoded "Spanish", and
+    `showNextCard()` already draws the next due card via `shuffled(dueCards)[0]`
+    — every card in a review session is already presented in random
+    order, with no sequential/linear mode to opt out of, so there's no
+    meaningful "off" state a toggle would switch to. No new toggle was
+    built for either; both were verified live instead (see below), and
+    review's presentation order was deliberately left as-is (always
+    random by design, matching SRS practice) rather than adding a
+    Flashcards-style on/off switch for a linear order nothing else in the
+    app produces.
+  - Verified live via Playwright, once per course: opened a Spanish
+    lesson deck with zero existing SRS cards for any of its 46 words —
+    detail view showed a Review tab already enabled with a "46" badge
+    (not disabled/0) and status line "0 mastered · 46 words total" (no
+    "in your review deck" framing left); clicking Review launched the
+    session immediately (no intermediate step), with due/new/total all
+    reading 46 and the direction toggle right there in the session,
+    correctly labelled "Spanish". Repeated for a Hungarian lesson deck
+    (19 words, all previously un-added): Review tab enabled with badge
+    "19", session launched immediately, direction toggle correctly
+    labelled "Hungarian" via the same `Lang.name()` call. Clicking the
+    direction toggle flipped its `aria-checked` state correctly in both
+    runs. No console/page errors in either run.
 
 ## Grammar reference
 
