@@ -42,7 +42,6 @@ const Decks = (function () {
     let openDeck = null;       // deck id being viewed, or null for the index
     let draft = null;          // deck under construction/edit in the editor, or null
     let activeSection = 'mine'; // 'mine' or 'parlour' — which top-level tab is showing
-    let showDictionary = false; // My Dictionary (known words) view, instead of the index
     let sortOrder = 'natural'; // 'natural' | 'alphabetical' — how the open deck's word list is displayed. Shuffling is a per-mode concern (Match/Learn already randomize their own round), never something that reorders the list itself.
     let studyMode = null;      // null | 'match' | 'learn' — which study mode (if any) is open over the current deck
 
@@ -94,11 +93,22 @@ const Decks = (function () {
     // that is due. Counted rather than stored, so adding a card anywhere in
     // the app is reflected everywhere without bookkeeping.
     function statusOf(deck) {
-        let inDeck = 0, due = 0, mastered = 0;
+        let inDeck = 0, due = 0, mastered = 0, eligible = 0;
         const now = new Date();
         const words = wordsOf(deck);
 
         words.forEach(word => {
+            // A graduated/known word is outside review standing entirely —
+            // it has no card on purpose (engine/srs.js keeps known and
+            // reviewing mutually exclusive), and isn't "missing" one either,
+            // so it must never count toward `missing`/`ready` below or
+            // reviewDeck() would treat it as never-added and hand it a
+            // fresh card, silently un-graduating it the moment someone
+            // clicks Review on a deck (very possibly "All my words" itself,
+            // now that My Dictionary lives inside it) that happens to
+            // contain it.
+            if (word.known || (typeof isKnown === 'function' && isKnown(word.lemma))) return;
+            eligible++;
             const card = cardFor(word.lemma);
             if (!card) return;
             inDeck++;
@@ -106,7 +116,7 @@ const Decks = (function () {
             if (!card.nextReview || new Date(card.nextReview) <= now) due++;
         });
 
-        const missing = words.length - inDeck;
+        const missing = eligible - inDeck;
         return {
             total: words.length,
             inDeck: inDeck,
@@ -117,24 +127,40 @@ const Decks = (function () {
             // PLUS every word with no card yet — reviewDeck() creates those
             // on the spot (a fresh card is always immediately due), so a
             // learner never has to visit a separate "add to review" step
-            // before this count/button becomes real.
+            // before this count/button becomes real. Known words are
+            // excluded above, so they never inflate this.
             ready: due + missing
         };
     }
 
-    // My Deck is every card, whatever put it there. It is the honest total:
-    // the other decks are windows onto the same pile.
+    // My Deck is every word the learner has taken on, whatever put it there
+    // and whether it's still actively cycling through review or has already
+    // graduated out — known words carry `known: true` so detailHtml() can
+    // tell the two apart without a card lookup (a known word has none).
+    // This is the honest total: the other decks are windows onto the same
+    // pile, and My Dictionary is a state within this one rather than a
+    // separate destination (2026-08-27) — known and reviewing stay
+    // mutually exclusive underneath (engine/srs.js), just no longer split
+    // across two screens.
     function myDeck() {
+        const reviewing = srsDeck.map(card => ({
+            lemma: card.spanish,
+            translation: card.english,
+            pos: card.type,
+            source: card.source
+        }));
+        const known = (typeof knownWords !== 'undefined' ? knownWords : []).map(w => ({
+            lemma: w.spanish,
+            translation: w.english,
+            pos: w.type,
+            source: w.source,
+            known: true
+        }));
         return {
             id: 'mine',
             kind: 'mine',
             name: 'All my words',
-            words: srsDeck.map(card => ({
-                lemma: card.spanish,
-                translation: card.english,
-                pos: card.type,
-                source: card.source
-            }))
+            words: reviewing.concat(known)
         };
     }
 
@@ -258,6 +284,10 @@ const Decks = (function () {
         if (deck) {
             wordsOf(deck).forEach(word => {
                 if (cardFor(word.lemma)) return;
+                // A graduated word has no card on purpose — creating one
+                // here would silently un-graduate it (see statusOf()'s
+                // matching guard, above).
+                if (word.known || (typeof isKnown === 'function' && isKnown(word.lemma))) return;
                 srsDeck.push(Object.assign({
                     spanish: word.lemma,
                     english: word.translation || 'unknown',
@@ -718,31 +748,31 @@ const Decks = (function () {
         const myDeckCount = listMyDecks().length;
         const parlourCount = (catalogue.decks || []).length;
         const knownCount = (typeof knownWords !== 'undefined') ? knownWords.length : 0;
+        const reviewedToday = (typeof getDay === 'function' && typeof getTodayString === 'function')
+            ? getDay(getTodayString()).reviewsDone : 0;
 
         return `
             <div class="dk-top">
-                <div class="dk-mine">
-                    <h3 class="dk-group-title">All my words</h3>
-                    <p class="dk-group-blurb">Every word you have taken on, from wherever you met it.</p>
-                    <p class="dk-big">${mineStatus.total}
-                        <span class="dk-of">reviewing</span></p>
-                    <p class="dk-meta-line">${mineStatus.due} due now ·
-                        ${mineStatus.mastered} reviewed three times or more</p>
-                </div>
-                <div class="dk-mine">
-                    <h3 class="dk-group-title">My Dictionary</h3>
-                    <p class="dk-group-blurb">Words you already know — retired from review.</p>
-                    <p class="dk-big">${knownCount}
-                        <span class="dk-of">known</span></p>
-                    <p class="dk-meta-line">${mineStatus.total + knownCount} words total</p>
+                <div class="dk-stats-row">
+                    <div class="dk-stat">
+                        <p class="dk-stat-num">${mineStatus.due}</p>
+                        <p class="dk-stat-label">waiting to review</p>
+                    </div>
+                    <div class="dk-stat">
+                        <p class="dk-stat-num">${reviewedToday}</p>
+                        <p class="dk-stat-label">reviewed today</p>
+                    </div>
+                    <div class="dk-stat">
+                        <p class="dk-stat-num">${knownCount}</p>
+                        <p class="dk-stat-label">known</p>
+                    </div>
                 </div>
                 <div class="dk-actions">
                     <button class="btn-primary" data-review-deck="all"
                         ${mineStatus.due ? '' : 'disabled'}>
                         Review all${mineStatus.due ? ` (${mineStatus.due})` : ''}
                     </button>
-                    <button data-open-deck="mine" class="dk-secondary">Browse all my words</button>
-                    <button data-open-dictionary="1" class="dk-secondary">My Dictionary</button>
+                    <button data-open-deck="mine" class="dk-secondary">All my words</button>
                 </div>
             </div>
             <nav class="lt-subnav" id="dk-subnav">
@@ -784,8 +814,10 @@ const Decks = (function () {
         const words = orderedWords(deck);
 
         const rows = words.map(word => {
+            const isKnownWord = word.known || (typeof isKnown === 'function' && isKnown(word.lemma));
             const card = cardFor(word.lemma);
-            const state = !card ? 'not added'
+            const state = isKnownWord ? 'known'
+                : !card ? 'not added'
                 : (card.reviews || 0) >= 3 ? 'mastered'
                 : (card.reviews || 0) >= 1 ? 'learning'
                 : 'new';
@@ -794,6 +826,16 @@ const Decks = (function () {
             // printing it on each row would be noise.
             const origin = deck.id === 'mine' ? originOf(word.source) : '';
 
+            // A known word's row action is "Back to review" rather than the
+            // usual delete — it isn't gone, it graduated, and pulling it
+            // back into review is the one thing removeFromAllWords() (which
+            // deletes review history outright) shouldn't be doing to it.
+            const rowAction = !removable ? ''
+                : isKnownWord
+                    ? `<button class="dk-link-btn dk-word-restore" data-move-to-review="${esc(word.lemma)}">Back to review</button>`
+                    : `<button class="dk-word-remove" data-remove-card="${esc(word.lemma)}"
+                        aria-label="Remove ${esc(word.lemma)}">×</button>`;
+
             return `
                 <li class="dk-word dk-word-${state.replace(' ', '-')}">
                     <span class="dk-word-es">${esc(withArticle(word.lemma))}${
@@ -801,8 +843,7 @@ const Decks = (function () {
                     <span class="dk-word-en">${esc(word.translation)}${
                         origin ? `<span class="dk-word-origin">${esc(origin)}</span>` : ''}</span>
                     <span class="dk-word-state">${state}</span>
-                    ${removable ? `<button class="dk-word-remove" data-remove-card="${esc(word.lemma)}"
-                        aria-label="Remove ${esc(word.lemma)}">×</button>` : ''}
+                    ${rowAction}
                 </li>
             `;
         }).join('');
@@ -836,6 +877,14 @@ const Decks = (function () {
                         <button class="dk-link-btn" data-edit-deck="${esc(deck.id)}">Edit deck</button>
                     </div>
                 ` : ''}
+
+                ${deck.id === 'mine' ? `
+                    <div class="dk-dictionary-add">
+                        <input type="text" id="dict-add-input" class="lsn-input" placeholder="Mark a word known, e.g. vivir">
+                        <button class="dk-secondary" id="dict-add-btn">+ Add</button>
+                    </div>
+                    <p id="dict-add-feedback" class="dk-meta-line"></p>
+                ` : ''}
             </div>
             ${words.length > 1 ? `
                 <div class="dk-words-head">
@@ -846,40 +895,6 @@ const Decks = (function () {
                 </div>
             ` : ''}
             <ul class="dk-words${removable ? ' dk-words-removable' : ''}">${rows || '<li class="dk-empty">No words yet.</li>'}</ul>
-        `;
-    }
-
-    // Words the learner has said they know, whichever way they said it
-    // (lesson-end choice, graduated out of SRS, or added by hand below).
-    // Nothing here is scheduled — that's the point — so the list is just
-    // alphabetical rather than sorted by any review state.
-    function dictionaryHtml() {
-        const words = (typeof knownWords !== 'undefined')
-            ? knownWords.slice().sort((a, b) => a.spanish.localeCompare(b.spanish))
-            : [];
-
-        const rows = words.map(w => `
-            <li class="dk-word">
-                <span class="dk-word-es">${esc(withArticle(w.spanish))}${
-                    typeof Speech !== 'undefined' ? Speech.button(w.spanish) : ''}</span>
-                <span class="dk-word-en">${esc(Lexicon.shortGloss(w.english))}</span>
-                <button class="dk-secondary" data-move-to-review="${esc(w.spanish)}">Back to review</button>
-            </li>
-        `).join('');
-
-        return `
-            <button class="dk-back" data-close-dictionary="1">← All decks</button>
-            <div class="dk-detail-head">
-                <h3>My Dictionary</h3>
-                <p>Words you already know stay out of review. Add one any time you'd
-                    rather not keep seeing it.</p>
-            </div>
-            <div class="dk-dictionary-add">
-                <input type="text" id="dict-add-input" class="lsn-input" placeholder="Add a word, e.g. vivir">
-                <button class="dk-secondary" id="dict-add-btn">+ Add</button>
-            </div>
-            <p id="dict-add-feedback" class="dk-meta-line"></p>
-            <ul class="dk-words">${rows || '<li class="dk-empty">No known words yet.</li>'}</ul>
         `;
     }
 
@@ -924,26 +939,6 @@ const Decks = (function () {
         if (draft) {
             host.innerHTML = editorHtml();
             wireEditor(host);
-            return;
-        }
-
-        if (showDictionary) {
-            host.innerHTML = dictionaryHtml();
-            host.querySelectorAll('[data-close-dictionary]').forEach(el => {
-                el.onclick = function () { showDictionary = false; render(); };
-            });
-            host.querySelectorAll('[data-move-to-review]').forEach(el => {
-                el.onclick = function () {
-                    if (typeof moveKnownToReview === 'function') {
-                        moveKnownToReview(el.getAttribute('data-move-to-review'));
-                    }
-                    render();
-                };
-            });
-            const addBtn = document.getElementById('dict-add-btn');
-            if (addBtn) addBtn.onclick = addKnownWordByHand;
-            const addInput = document.getElementById('dict-add-input');
-            if (addInput) addInput.onkeydown = e => { if (e.key === 'Enter') addKnownWordByHand(); };
             return;
         }
 
@@ -994,9 +989,6 @@ const Decks = (function () {
         host.querySelectorAll('[data-open-deck]').forEach(el => {
             el.onclick = function () { openDeck = el.getAttribute('data-open-deck'); sortOrder = 'natural'; studyMode = null; render(); };
         });
-        host.querySelectorAll('[data-open-dictionary]').forEach(el => {
-            el.onclick = function () { showDictionary = true; render(); };
-        });
         host.querySelectorAll('[data-close-deck]').forEach(el => {
             el.onclick = function () { openDeck = null; sortOrder = 'natural'; studyMode = null; render(); };
         });
@@ -1009,6 +1001,20 @@ const Decks = (function () {
         host.querySelectorAll('[data-remove-card]').forEach(el => {
             el.onclick = function () { removeFromAllWords(el.getAttribute('data-remove-card')); };
         });
+        host.querySelectorAll('[data-move-to-review]').forEach(el => {
+            el.onclick = function () {
+                if (typeof moveKnownToReview === 'function') {
+                    moveKnownToReview(el.getAttribute('data-move-to-review'));
+                }
+                render();
+            };
+        });
+        {
+            const addBtn = document.getElementById('dict-add-btn');
+            if (addBtn) addBtn.onclick = addKnownWordByHand;
+            const addInput = document.getElementById('dict-add-input');
+            if (addInput) addInput.onkeydown = e => { if (e.key === 'Enter') addKnownWordByHand(); };
+        }
         host.querySelectorAll('[data-review-deck]').forEach(el => {
             el.onclick = function () { reviewDeck(el.getAttribute('data-review-deck')); };
         });

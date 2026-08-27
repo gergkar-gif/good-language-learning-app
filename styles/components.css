@@ -2083,10 +2083,8 @@
 
 .dk-top {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 16px;
-  align-items: flex-end;
-  justify-content: space-between;
   background: var(--bg);
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
@@ -2094,15 +2092,33 @@
   margin-bottom: 24px;
 }
 
-.dk-big {
+/* Three equal-weight numbers rather than the two unevenly-sized cards this
+   replaced — due, reviewed today and known are all one glance, not a
+   whole screen's worth of vertical space. */
+.dk-stats-row {
+  display: flex;
+  gap: 12px;
+}
+
+.dk-stat {
+  flex: 1;
+  min-width: 0;
+  text-align: center;
+}
+
+.dk-stat-num {
   font-family: var(--font-display);
-  font-size: 34px;
+  font-size: 30px;
   line-height: 1.1;
   color: var(--primary);
   font-variant-numeric: tabular-nums;
 }
 
-.dk-of { font-size: 16px; color: var(--muted); }
+.dk-stat-label {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 2px;
+}
 
 .dk-meta-line { font-size: 13px; color: var(--muted); margin-top: 2px; }
 
@@ -2605,6 +2621,7 @@
 /* A word not yet taken on is legible but plainly not part of your deck. */
 .dk-word-not-added .dk-word-es { color: var(--muted); }
 .dk-word-mastered .dk-word-state { color: var(--primary); }
+.dk-word-known .dk-word-state { color: var(--primary); }
 
 .dk-empty { color: var(--muted); font-size: 14px; }
 

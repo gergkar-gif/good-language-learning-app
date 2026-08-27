@@ -342,6 +342,57 @@ track known bugs in existing content rather than things not yet built.
     a 9-word deck splitting into two rounds (7 + 2) with a correct "Round
     1 complete — 7 words mastered" transition. No console/page errors in
     any run.
+- [x] Decks screen: the top of the tab took up too much space. Feedback:
+  "there should be two big numbers. No. Maybe three big numbers. First
+  one should be waiting to review... the one in the middle should be
+  reviewed today... the last one should be known words... those should be
+  the words that the user has mastered... under that, we should have
+  review all and all my words... my dictionary should actually go inside
+  all my words." **Done 2026-08-27**:
+  - The two unevenly-sized "All my words"/"My Dictionary" cards are
+    replaced with one compact `.dk-stats-row` of three equal numbers:
+    waiting to review (`mineStatus.due`), reviewed today (reused from the
+    XP system's existing `xpData.history[today].reviewsDone`, tracked
+    since well before this session — no new counter needed), and known
+    (`knownWords.length`, the words that have actually graduated out of
+    review for good, not the softer in-deck "reviewed 3+ times" signal).
+  - The action row under it is down to two buttons: "Review all" and "All
+    my words" — "My Dictionary" is gone as a separate destination.
+  - My Dictionary is now a state inside "All my words" instead of its own
+    screen: `myDeck()` concatenates `srsDeck` (actively reviewing) with
+    `knownWords` (graduated), tagging the latter with `known: true`.
+    `detailHtml()`'s row rendering shows a `known` state for those rows
+    and swaps the usual "×" remove button for "Back to review"
+    (`data-move-to-review`, reusing the existing `moveKnownToReview()`)
+    since deleting a known word's row shouldn't delete review history it
+    doesn't have. The standalone `dictionaryHtml()` screen, `showDictionary`
+    state, and its `data-open-dictionary`/`data-close-dictionary` wiring
+    are all removed; the "mark a word known by hand" input
+    (`addKnownWordByHand()`, unchanged) now sits directly in "All my
+    words"'s detail head instead of the old separate screen.
+  - Merging the two exposed a latent bug worth fixing alongside it:
+    `statusOf()` and `reviewDeck()` both treated any word with no SRS card
+    as "never added, create one on Review" — which used to only matter for
+    a lesson/topic deck's un-added words, but now that a known word sits
+    right next to reviewing ones in the same "All my words" list (and
+    "Review" is one click away on that exact screen), the same logic
+    would have silently un-graduated every known word the moment someone
+    reviewed "All my words". Both functions now skip any word that
+    `isKnown()` (or carries `known: true`), so known words stay known
+    through a Review click, verified live below.
+  - Verified live with Playwright: seeded 3 reviewing words (2 due, 1
+    mastered) and 2 known words plus a `reviewsDone: 7` XP history entry
+    for today — the stats row read "2 / waiting to review", "7 / reviewed
+    today", "2 / known" exactly, the action row showed only "Review all
+    (2)" and "All my words", and `[data-open-dictionary]` was absent from
+    the DOM. Opening "All my words" showed all 5 words in one list
+    ("1 mastered · 5 words total"), the 3 reviewing words with their
+    existing states and "×" remove, the 2 known words as `KNOWN` with
+    "Back to review" instead. Clicking "Back to review" on one moved it
+    from `knownWords` into `srsDeck` correctly; clicking "Review" on "All
+    my words" immediately afterward left the *other*, still-known word
+    untouched in `knownWords` — confirming the un-graduation bug fix
+    actually holds under the exact click sequence a learner would use.
 
 ## Grammar reference
 
