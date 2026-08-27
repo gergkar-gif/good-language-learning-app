@@ -2,13 +2,19 @@
 // SOUND
 // ============================================
 // Small UI sound effects — correct, wrong, lesson complete. Synthesised
-// with the Web Audio API rather than shipped as audio files: three short
-// tones are a few lines of code and zero requests, where sourcing,
-// licensing and loading actual sound assets would be a much bigger lift
-// for the same result. Every tone is a plain sine wave with a soft
-// attack/decay envelope, kept quiet and brief on purpose — this is a
-// language-learning tool, not a game, so a chime should register and get
-// out of the way rather than announce itself.
+// with the Web Audio API rather than shipped as audio files: a few lines
+// of code and zero requests, where sourcing, licensing and loading actual
+// sound assets would be a much bigger lift for the same result.
+//
+// The palette is deliberately not a game's: no bright synth "ding," no
+// cha-ching. Two textures instead, both quiet —
+//   - a soft paper rustle (filtered noise) for neutral/wrong feedback,
+//     the sound of a page turning rather than a buzzer;
+//   - a small singing-bowl-like tone (a few closely-detuned sine partials
+//     over a slow decay) for correct and lesson-complete, the sound of a
+//     struck bowl rather than an arcade chime.
+// This is a language-learning tool, not a game — a sound here should
+// register once and get out of the way, not perform.
 //
 // Muting is one global preference (not scoped per lesson/course): a
 // learner who doesn't want sound effects in Lessons won't want them
@@ -19,6 +25,7 @@ const Sound = (function () {
 
     const MUTE_KEY = 'app_sound_muted';
     let ctx = null;
+    let noiseBuffer = null;
 
     function muted() {
         try {
@@ -55,67 +62,109 @@ const Sound = (function () {
         return ctx;
     }
 
-    // One tone: a sine wave with a fast linear attack (so it doesn't
-    // click) and an exponential decay (so it fades rather than cuts off).
-    // startAt is an offset in seconds from now, for sequencing notes into
-    // a short phrase.
-    function tone(frequency, startAt, duration, peakGain) {
+    // A second of plain white noise, generated once and reused as the raw
+    // material for every rustle — a bandpass filter shapes each play into
+    // a soft swish, so the same buffer never sounds identically "sampled."
+    function noiseBufferFor(c) {
+        if (!noiseBuffer) {
+            const length = c.sampleRate * 1;
+            noiseBuffer = c.createBuffer(1, length, c.sampleRate);
+            const data = noiseBuffer.getChannelData(0);
+            for (let i = 0; i < length; i++) data[i] = Math.random() * 2 - 1;
+        }
+        return noiseBuffer;
+    }
+
+    // Paper rustle: a short burst of filtered noise, band-passed around
+    // the upper-mid range so it reads as a soft swish (like a page
+    // turning) rather than a hiss or a harsh click.
+    function rustle(startAt, duration, peakGain) {
         const c = context();
         if (!c) return;
 
-        const osc = c.createOscillator();
+        const src = c.createBufferSource();
+        src.buffer = noiseBufferFor(c);
+
+        const band = c.createBiquadFilter();
+        band.type = 'bandpass';
+        band.frequency.value = 2200;
+        band.Q.value = 0.7;
+
         const gain = c.createGain();
-        osc.type = 'sine';
-        osc.frequency.value = frequency;
-        osc.connect(gain);
+        src.connect(band);
+        band.connect(gain);
         gain.connect(c.destination);
 
         const t0 = c.currentTime + startAt;
         gain.gain.setValueAtTime(0, t0);
-        gain.gain.linearRampToValueAtTime(peakGain, t0 + 0.012);
+        gain.gain.linearRampToValueAtTime(peakGain, t0 + 0.02);
         gain.gain.exponentialRampToValueAtTime(0.0001, t0 + duration);
 
-        osc.start(t0);
-        osc.stop(t0 + duration + 0.02);
+        src.start(t0);
+        src.stop(t0 + duration + 0.02);
     }
 
-    function play(notes) {
+    // One small struck-bowl tone: a fundamental plus two faint, slightly
+    // detuned partials above it, so it shimmers a little rather than
+    // reading as one flat pitch — the same beating a real bowl's
+    // overtones produce. Soft attack, slow exponential decay.
+    function bowl(frequency, startAt, duration, peakGain) {
+        const c = context();
+        if (!c) return;
+
+        const gain = c.createGain();
+        gain.connect(c.destination);
+
+        const t0 = c.currentTime + startAt;
+        gain.gain.setValueAtTime(0, t0);
+        gain.gain.linearRampToValueAtTime(peakGain, t0 + 0.05);
+        gain.gain.exponentialRampToValueAtTime(0.0001, t0 + duration);
+
+        // [overtone multiplier, relative level]
+        [[1, 1], [2.005, 0.22], [3.011, 0.10]].forEach(([mult, level]) => {
+            const osc = c.createOscillator();
+            osc.type = 'sine';
+            osc.frequency.value = frequency * mult;
+            const partial = c.createGain();
+            partial.gain.value = level;
+            osc.connect(partial);
+            partial.connect(gain);
+            osc.start(t0);
+            osc.stop(t0 + duration + 0.05);
+        });
+    }
+
+    function safely(fn) {
         if (muted()) return;
         // A silently-failing AudioContext (blocked autoplay, no user
         // gesture yet, unsupported browser) should never throw and
         // interrupt the grading flow that triggered it.
         try {
-            notes.forEach(note => tone(note[0], note[1], note[2], note[3]));
+            fn();
         } catch (error) {
-            // Ignored — a missing chime is not worth breaking the lesson.
+            // Ignored — a missing sound is not worth breaking the lesson.
         }
     }
 
-    // Correct answer: a short rising interval (C6 -> E6) — an "up"
-    // gesture, not a game-show ding.
+    // Correct answer: one brief, soft bowl tap.
     function correct() {
-        play([
-            [1046.50, 0,    0.14, 0.10],
-            [1318.51, 0.07, 0.16, 0.10]
-        ]);
+        safely(() => bowl(659.25, 0, 0.35, 0.06));
     }
 
-    // Wrong answer: one soft, low note — a gentle "not quite" rather than
-    // a buzzer. Quieter than correct() on purpose, so it reads as neutral
-    // feedback rather than a penalty.
+    // Wrong answer: a soft rustle, not a buzzer — the same neutral texture
+    // whether this is the first attempt or the third, so retrying never
+    // starts to feel like a penalty.
     function wrong() {
-        play([[220.00, 0, 0.18, 0.07]]);
+        safely(() => rustle(0, 0.16, 0.045));
     }
 
-    // Lesson complete: a short three-note rise (C5-E5-G5) — fuller and a
-    // little longer than correct(), for the one moment per lesson that
-    // deserves more than a single chime.
+    // Lesson complete: a page settling, then a fuller, longer bowl tone —
+    // the one moment per lesson that earns more than the everyday tap.
     function complete() {
-        play([
-            [523.25, 0,    0.18, 0.09],
-            [659.25, 0.11, 0.18, 0.09],
-            [783.99, 0.22, 0.30, 0.11]
-        ]);
+        safely(() => {
+            rustle(0, 0.22, 0.04);
+            bowl(440.00, 0.16, 1.3, 0.08);
+        });
     }
 
     return { correct, wrong, complete, muted, toggleMuted };

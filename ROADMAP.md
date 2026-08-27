@@ -47,10 +47,15 @@ track known bugs in existing content rather than things not yet built.
 - [ ] Small AI agent for discussion/writing practice.
 - [x] End-of-lesson summary screen ("well done, you finished"). **Built 2026-08-27** — see TROUBLESHOOTING_BACKLOG.md's "Lesson-complete summary card" entry for detail.
 - [x] Audio: small sound effects for right answer, wrong answer, finishing
-  a lesson, etc. **Built 2026-08-27**: `engine/sound.js` (new) synthesises
-  three short tones with the Web Audio API — a rising two-note chime for
-  correct, one soft low note for wrong, a fuller three-note rise for lesson
-  complete — rather than shipping audio files. Wired into the shared
+  a lesson, etc. **Built 2026-08-27**, then redesigned same day on
+  feedback that the first pass sounded too "gamey": `engine/sound.js`
+  (new) synthesises two quiet textures with the Web Audio API rather than
+  shipping audio files — a soft paper rustle (filtered noise) for wrong
+  answers, and a small singing-bowl-like tone (a few detuned sine
+  partials over a slow decay) for correct answers, with both combined
+  (rustle then a longer bowl) for lesson complete. No bright synth
+  "ding," no Duolingo-style cha-ching — a sound here should register once
+  and get out of the way, not perform. Wired into the shared
   `solveStep()`/`failStep()` in `engine/lessons.js`, so every exercise type
   gets sound with one hook each instead of five separate places (unlike the
   accent-sensitivity fix earlier this session, there's only one grading
@@ -58,9 +63,11 @@ track known bugs in existing content rather than things not yet built.
   touched, matching the roadmap item's own "lesson" scope). One global mute
   toggle (new speaker icon in the lesson header, `localStorage`-persisted)
   rather than per-course, since a learner who mutes it won't want it back
-  the moment they're somewhere else in the app. Verified live: toggling
-  mute actually suppresses/restores oscillator creation, not just the
-  visible icon state.
+  the moment they're somewhere else in the app. Verified live via a
+  Playwright node-graph inspection (oscillator/bufferSource/filter counts
+  and gain envelopes per sound), since literal listening isn't possible in
+  this environment; toggling mute actually suppresses/restores node
+  creation, not just the visible icon state.
 - [ ] Jump ahead: an end-of-level exam that, passed at 90%+, lets a
   learner skip straight to the next level — the assumption being they
   already know that level's content.
