@@ -122,9 +122,44 @@ track known bugs in existing content rather than things not yet built.
   shared, this also tightened a few dozen overly long Hungarian frequency
   glosses the same way (e.g. "case, instance, event, occurrence" →
   "case, instance, event…") as a side effect of the same fix.
-- [ ] Decks mechanics should work more like Quizlet. **Captured
-  2026-08-27, explicitly deferred by the user** ("to be discussed
-  later") — no design or scope decided yet.
+- [x] Decks mechanics should work more like Quizlet. **Built 2026-08-27**.
+  Asked which specific mechanic mattered most (a deck screen was, until
+  now, just a plain word list — no flashcard/match/learn mode existed at
+  all); the user picked all three offered. Each is a self-contained
+  module under the new `engine/decks/` directory, same one-file-per-mode
+  pattern as Workshop's drillers, reached via new "Flashcards"/"Match"/
+  "Learn" buttons on the deck detail screen (`decks.js` gained a small
+  `studyMode` state and delegates rendering to whichever module is open,
+  closing back to the same deck it was opened from):
+  - **Flashcards** (`flashcards.js`): one card at a time, tap to flip
+    (CSS 3D transform, no per-frame JS), Prev/Next, shuffle, a completion
+    screen with restart.
+  - **Match** (`match.js`): timed tap-to-match, 8 pairs per round (a
+    full deck would make an unplayably huge grid), wrong pairs flash and
+    clear, correct pairs fade. Personal best time persists per deck via
+    `localStorage`, same idea as the Verb Speed leaderboard
+    (`engine/verbs/leaderboard.js`) — a record to chase, not a
+    multiplayer ranking.
+  - **Learn** (`learn.js`): adaptive practice — every word starts as
+    multiple-choice (recognition) and only "masters" out of the round
+    after ALSO surviving a typed question (recall); a wrong answer at
+    either stage re-queues the word to reappear in ~3 questions rather
+    than immediately or at the very end. Deliberately unscheduled and
+    separate from SRS review (`engine/srs.js`) — resets every time it's
+    opened and never touches a word's review interval; SRS still owns
+    "when should I see this next," Learn is just "drill this deck right
+    now." Typed grading is lenient (splits a multi-sense gloss like
+    "hello / hi" or "to see, to watch" on `/`/`,` and accepts any
+    alternative, stripping a leading "to/a/an/the" from both sides) since
+    this grades free-typed English, not the target language.
+
+  Verified live: Flashcards flipped through a real 46-word deck correctly
+  end to end; Match won by building a lemma→translation map from the
+  deck's own word list and clicking all 8 correct pairs (reached "New
+  personal best!"), and the wrong-pair flash confirmed separately; Learn
+  fully completed a 5-word deck in 11 rounds (10 is the theoretical
+  minimum — 2 passes × 5 words) via the same map-driven approach, with
+  both question types and the wrong-answer requeue path exercised.
 
 ## Grammar reference
 
