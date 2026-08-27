@@ -43,8 +43,8 @@ const Decks = (function () {
     let draft = null;          // deck under construction/edit in the editor, or null
     let activeSection = 'mine'; // 'mine' or 'parlour' — which top-level tab is showing
     let showDictionary = false; // My Dictionary (known words) view, instead of the index
-    let sortOrder = 'natural'; // 'natural' | 'alphabetical' — how the open deck's word LIST is displayed. Shuffling is a Flashcards-only concern now (DeckFlashcards' own toggle), not something that reorders the list itself.
-    let studyMode = null;      // null | 'flashcards' | 'match' | 'learn' — which study mode (if any) is open over the current deck
+    let sortOrder = 'natural'; // 'natural' | 'alphabetical' — how the open deck's word list is displayed. Shuffling is a per-mode concern (Match/Learn already randomize their own round), never something that reorders the list itself.
+    let studyMode = null;      // null | 'match' | 'learn' — which study mode (if any) is open over the current deck
 
     // ----------------------------------------
     // DATA — Parlour Decks (read-only catalogue)
@@ -233,19 +233,20 @@ const Decks = (function () {
     // ----------------------------------------
     // ACTIONS — review & bulk-add (Parlour Decks and My Decks alike)
     // ----------------------------------------
-    // Adding a deck respects the daily new-word cap: it is there to stop a
-    // learner burying themselves, and a button marked "add 20 words" is
-    // exactly the moment that matters. This is the one place deck membership
-    // turns into SRS activation — reviewing a deck brings its words into the
-    // shared schedule, rather than membership doing that on its own.
+    // No daily cap here, by design (2026-08-27): the cap in engine/xp.js
+    // exists to stop the Reader's incidental, one-word-at-a-time "+Add to
+    // SRS Deck" from burying a learner mid-reading — a deliberate, whole
+    // deck's worth of words a learner just chose to add is a different act
+    // with its own built-in judgment call, not the moment that guard is
+    // for. Doesn't call canAddNewWord()/recordNewWord() at all, so a deck
+    // add neither gets blocked by that cap nor eats into it for the
+    // Reader's sake either.
     function addDeck(id) {
         const deck = byId(id);
         if (!deck) return;
 
-        let added = 0, blocked = 0;
         wordsOf(deck).forEach(word => {
             if (cardFor(word.lemma)) return;
-            if (!canAddNewWord()) { blocked++; return; }
             srsDeck.push(Object.assign({
                 spanish: word.lemma,
                 english: word.translation || 'unknown',
@@ -253,18 +254,10 @@ const Decks = (function () {
                 source: deck.id,
                 added: new Date().toISOString()
             }, newCardSchedule()));
-            recordNewWord();
-            added++;
         });
 
         saveDeck();
         render();
-
-        if (blocked) {
-            alert(added
-                ? `Added ${added}. The remaining ${blocked} would go past today's new-word limit — they will be here tomorrow.`
-                : `That would go past today's new-word limit of ${NEW_WORDS_DAILY_CAP}. Try again tomorrow.`);
-        }
     }
 
     function reviewDeck(id) {
@@ -821,16 +814,10 @@ const Decks = (function () {
                     </button>
                     ${s.missing ? `<button class="dk-secondary" data-add-deck="${esc(deck.id)}">
                         Add ${s.missing} to review</button>` : ''}
+                    ${words.length > 1 ? `<button class="dk-secondary" data-open-match="1">Match</button>` : ''}
+                    ${words.length ? `<button class="dk-secondary" data-open-learn="1">Learn</button>` : ''}
                     ${isCustom ? `<button class="dk-secondary" data-edit-deck="${esc(deck.id)}">Edit deck</button>` : ''}
                 </div>
-                ${words.length ? `
-                    <p class="dk-study-label">Study this deck</p>
-                    <div class="dk-study-modes">
-                        <button class="dk-study-btn" data-open-flashcards="1">Flashcards</button>
-                        ${words.length > 1 ? '<button class="dk-study-btn" data-open-match="1">Match</button>' : ''}
-                        <button class="dk-study-btn" data-open-learn="1">Learn</button>
-                    </div>
-                ` : ''}
             </div>
             ${words.length > 1 ? `
                 <div class="dk-words-head">
@@ -949,13 +936,6 @@ const Decks = (function () {
         // detail screen — closing it just clears studyMode and re-renders,
         // landing back on the same deck rather than the deck index.
         if (studyMode && deck) {
-            if (studyMode === 'flashcards' && typeof DeckFlashcards !== 'undefined') {
-                DeckFlashcards.render(host, {
-                    words: orderedWords(deck),
-                    onExit: () => { studyMode = null; render(); }
-                });
-                return;
-            }
             if (studyMode === 'match' && typeof DeckMatch !== 'undefined') {
                 DeckMatch.render(host, {
                     words: wordsOf(deck),
@@ -976,9 +956,6 @@ const Decks = (function () {
 
         host.innerHTML = deck ? detailHtml(deck) : indexHtml();
 
-        host.querySelectorAll('[data-open-flashcards]').forEach(el => {
-            el.onclick = function () { studyMode = 'flashcards'; render(); };
-        });
         host.querySelectorAll('[data-open-match]').forEach(el => {
             el.onclick = function () { studyMode = 'match'; render(); };
         });

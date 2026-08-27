@@ -182,6 +182,32 @@ track known bugs in existing content rather than things not yet built.
   (confirmed round-trip back to the exact original order); Flashcards'
   toggle starts off (first card "hola", matching the list), turning it on
   changes the first card, turning it off restores "hola" as first again.
+- [x] Follow-up to the above, same day: scrap Flashcards (SRS review
+  already covers that better), fold Match into the deck screen as one of
+  the primary action buttons rather than a separate "Study this deck"
+  section, and remove the 20-word daily cap that was blocking bulk-adding
+  a deck to review. **Done 2026-08-27**:
+  - Deleted `engine/decks/flashcards.js` entirely — its script tag, CSS
+    (`.dkf-*`), button, and `studyMode` dispatch branch are all gone.
+  - The separate "Study this deck" row (`.dk-study-label`/`.dk-study-btn`)
+    is gone too — Match and Learn now sit directly in `.dk-actions`,
+    styled identically to "Review this deck"/"Add to review"/"Edit deck"
+    (same `.dk-secondary` class), so opening a deck shows one consistent
+    row of actions instead of two visually different tiers.
+  - `addDeck()` (the "Add N to review" button — bulk SRS-activating an
+    entire deck at once) no longer calls `canAddNewWord()`/
+    `recordNewWord()` at all. That cap (`engine/xp.js`, `NEW_WORDS_DAILY_CAP
+    = 20`) still exists and still works exactly as before for the
+    Reader's own "+Add to SRS Deck" popup (`engine/reader.js`/
+    `engine/srs.js`'s `addToSRS()`) — it's there specifically to stop
+    incidental one-word-at-a-time adds while reading from burying a
+    learner, which isn't the same moment as a learner deliberately adding
+    a whole deck. Verified live: with the daily counter pre-set to 20/20
+    (cap already active), "Add 46 to review" on a 46-word deck added all
+    46 with no block and no alert, while the counter itself — and
+    `canAddNewWord()` for the Reader's own path — stayed untouched at 20/
+    `false`, confirming the two are now fully decoupled rather than one
+    fix breaking the other's intended behaviour.
 
 ## Grammar reference
 
