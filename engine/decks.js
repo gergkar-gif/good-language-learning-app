@@ -44,7 +44,7 @@ const Decks = (function () {
     let activeSection = 'mine'; // 'mine' or 'parlour' — which top-level tab is showing
     let showDictionary = false; // My Dictionary (known words) view, instead of the index
     let shuffledWordOrder = null; // a shuffled copy of the open deck's word list, or null for natural order
-    let studyMode = null;      // null | 'flashcards' — which study mode (if any) is open over the current deck
+    let studyMode = null;      // null | 'flashcards' | 'match' — which study mode (if any) is open over the current deck
 
     // ----------------------------------------
     // DATA — Parlour Decks (read-only catalogue)
@@ -816,6 +816,7 @@ const Decks = (function () {
                     <p class="dk-study-label">Study this deck</p>
                     <div class="dk-study-modes">
                         <button class="dk-study-btn" data-open-flashcards="1">Flashcards</button>
+                        ${words.length > 1 ? '<button class="dk-study-btn" data-open-match="1">Match</button>' : ''}
                     </div>
                 ` : ''}
             </div>
@@ -935,6 +936,14 @@ const Decks = (function () {
                 });
                 return;
             }
+            if (studyMode === 'match' && typeof DeckMatch !== 'undefined') {
+                DeckMatch.render(host, {
+                    words: wordsOf(deck),
+                    deckId: deck.id,
+                    onExit: () => { studyMode = null; render(); }
+                });
+                return;
+            }
             studyMode = null; // module missing/unknown — fall through to the deck screen rather than a blank one
         }
 
@@ -942,6 +951,9 @@ const Decks = (function () {
 
         host.querySelectorAll('[data-open-flashcards]').forEach(el => {
             el.onclick = function () { studyMode = 'flashcards'; render(); };
+        });
+        host.querySelectorAll('[data-open-match]').forEach(el => {
+            el.onclick = function () { studyMode = 'match'; render(); };
         });
         host.querySelectorAll('[data-group-toggle]').forEach(el => {
             el.onclick = function () {
