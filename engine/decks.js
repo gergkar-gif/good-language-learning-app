@@ -44,6 +44,7 @@ const Decks = (function () {
     let activeSection = 'mine'; // 'mine' or 'parlour' — which top-level tab is showing
     let showDictionary = false; // My Dictionary (known words) view, instead of the index
     let shuffledWordOrder = null; // a shuffled copy of the open deck's word list, or null for natural order
+    let studyMode = null;      // null | 'flashcards' — which study mode (if any) is open over the current deck
 
     // ----------------------------------------
     // DATA — Parlour Decks (read-only catalogue)
@@ -811,6 +812,12 @@ const Decks = (function () {
                     ${isCustom ? `<button class="dk-secondary" data-edit-deck="${esc(deck.id)}">Edit deck</button>` : ''}
                     ${words.length > 1 ? `<button class="dk-secondary" data-shuffle-words="1">${Art.icon('shuffle')} Shuffle</button>` : ''}
                 </div>
+                ${words.length ? `
+                    <p class="dk-study-label">Study this deck</p>
+                    <div class="dk-study-modes">
+                        <button class="dk-study-btn" data-open-flashcards="1">Flashcards</button>
+                    </div>
+                ` : ''}
             </div>
             <ul class="dk-words${removable ? ' dk-words-removable' : ''}">${rows || '<li class="dk-empty">No words yet.</li>'}</ul>
         `;
@@ -915,8 +922,27 @@ const Decks = (function () {
         }
 
         const deck = openDeck ? byId(openDeck) : null;
+
+        // A study mode is a self-contained module (engine/decks/*.js, same
+        // pattern as Workshop's drillers) rendered in place of the deck
+        // detail screen — closing it just clears studyMode and re-renders,
+        // landing back on the same deck rather than the deck index.
+        if (studyMode && deck) {
+            if (studyMode === 'flashcards' && typeof DeckFlashcards !== 'undefined') {
+                DeckFlashcards.render(host, {
+                    words: shuffledWordOrder || wordsOf(deck),
+                    onExit: () => { studyMode = null; render(); }
+                });
+                return;
+            }
+            studyMode = null; // module missing/unknown — fall through to the deck screen rather than a blank one
+        }
+
         host.innerHTML = deck ? detailHtml(deck) : indexHtml();
 
+        host.querySelectorAll('[data-open-flashcards]').forEach(el => {
+            el.onclick = function () { studyMode = 'flashcards'; render(); };
+        });
         host.querySelectorAll('[data-group-toggle]').forEach(el => {
             el.onclick = function () {
                 const kind = el.getAttribute('data-group-toggle');
@@ -929,13 +955,13 @@ const Decks = (function () {
             };
         });
         host.querySelectorAll('[data-open-deck]').forEach(el => {
-            el.onclick = function () { openDeck = el.getAttribute('data-open-deck'); shuffledWordOrder = null; render(); };
+            el.onclick = function () { openDeck = el.getAttribute('data-open-deck'); shuffledWordOrder = null; studyMode = null; render(); };
         });
         host.querySelectorAll('[data-open-dictionary]').forEach(el => {
             el.onclick = function () { showDictionary = true; render(); };
         });
         host.querySelectorAll('[data-close-deck]').forEach(el => {
-            el.onclick = function () { openDeck = null; shuffledWordOrder = null; render(); };
+            el.onclick = function () { openDeck = null; shuffledWordOrder = null; studyMode = null; render(); };
         });
         host.querySelectorAll('[data-shuffle-words]').forEach(el => {
             el.onclick = function () {
