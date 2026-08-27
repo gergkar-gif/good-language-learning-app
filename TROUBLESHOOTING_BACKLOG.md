@@ -250,36 +250,25 @@ applied this pass — logged for prioritization later.*
   idő` grammar files) — **intentional**, matches the user's stated plan to
   cover it in A2 and is standard practice (the A1→A2 boundary is commonly
   marked by narrating past events). Not a gap.
-- [ ] **Numbers above 10 are never taught anywhere, but are required.**
-  Grepped every vocabulary/grammar file for `tizenegy`, `húsz`, `harminc`,
-  `negyven`...`száz` — zero hits; only 0–10 is introduced (`a1-16-a-gr.json`).
-  Yet the Unit 4 story has Meg say "Harminckettő éves vagyok" (32) and a
-  multi-digit phone number, and `a1-17-ex.json`'s own exercises require
-  choosing/producing "Harminc éves vagyok" as the correct answer to "how
-  old are you?" — a number that was never taught. This is a real
-  used-before-taught bug, not just a curriculum gap: some lesson needs to
-  teach at least 11–100 before the age/phone-number content that already
-  relies on it.
-- [ ] **The to/from/at-a-person case trio is absent**: `-hoz/-hez/-höz`
-  ("to"), `-tól/-től` ("from"), `-nál/-nél` ("at [someone's place]") have
-  no dedicated grammar screens. Found exactly one incidental, unexplained
-  use of `-hoz` (in an imperative-lesson example) and zero uses of
-  `-tól/-től/-nál/-nél` anywhere in course content; `honnan` ("where from")
-  only exists in the auto-generated frequency index, never in any lesson.
-- [ ] **Dative case is a memorized chunk, not a taught rule**: `nekem`
-  ("for me") is taught as a fixed pronoun phrase (`a1-148-a-gr.json`), but
-  the productive `-nak/-nek` suffix (e.g. "Annának") is never generalized.
-- [ ] **`tud`** (can / to know how — one of the most basic Hungarian modal
-  verbs) has zero vocabulary or grammar hits anywhere in the course.
-- [ ] **`szabad`** as a permission modal ("allowed to") is absent — it only
-  exists as `szabadidő` (free time) and `szabad vagyok` (I'm available).
-- [ ] Comparative/superlative adjectives (`nagyobb`, `legszebb`, the
-  `-bb`/`leg-` pattern) — zero coverage.
-- [ ] Nationality/country vocabulary — zero coverage. Worth pairing with
-  the Meg-is-South-African canon detail already in the readings (see the
-  narrative audit above) if this gets picked up.
-- [ ] Weather vocabulary — zero coverage; a near-universal A1 topic
-  elsewhere.
+- [x] **Decided 2026-08-27: all of the gaps below are deliberately deferred
+  to A2, not A1 bugs to fix.** Cross-checked against
+  `content/hu/a2-curriculum-draft.json` (the existing A2 planning doc) and
+  found it already covers nearly everything this audit flagged — `tud`,
+  `szabad`, `akar`, `lehet` are all in `verb_system`; `-hoz/-hez/-höz`,
+  `-tól/-től`, `-nál/-nél`, `-ig` are all in `noun_and_case_system`;
+  `Comparative`/`Superlative` are in `adjectives_and_comparison`; there's a
+  whole "Weather & Seasons" unit (21). Added the three real gaps found *in
+  the draft itself*: the productive dative `-nak/-nek` suffix was missing
+  from `noun_and_case_system` (only the memorized `nekem` chunk exists in
+  A1); "Nationalities and countries" was missing from `thematic_coverage`
+  (worth pairing with Meg's South African background, already in the
+  readings' canon); and the generic "Numbers" entry in `other_structures`
+  was expanded into a note that numbers 11+ need to land early in A2 since
+  A1 already uses them unglossed (ages, phone numbers) despite only
+  formally teaching 0–10 — this is the one item here that's a live
+  used-before-taught bug today, not just a sequencing preference, so it
+  shouldn't wait for A2 to be prioritized within that level once work
+  starts.
 - [x] Areas confirmed to already meet or exceed typical A1 depth (no
   action needed): vowel harmony, zero-copula, van/nincs existentials, the
   full possessive-suffix "have" construction, plural `-k`, a wide spread of
