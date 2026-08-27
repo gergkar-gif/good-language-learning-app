@@ -978,6 +978,30 @@
   border-bottom: none;
 }
 
+.lsn-vocab-row-end {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.lsn-vocab-add {
+  width: 24px;
+  height: 24px;
+  flex: none;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.lsn-vocab-add:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
 .lsn-dialogue,
 .lsn-story {
   display: flex;

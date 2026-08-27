@@ -646,7 +646,7 @@ async function wordBankHtml(level, unitId) {
             <span class="gg-topic-num">${i + 1}</span>
             <div class="gg-topic-body">
                 <h4 class="gg-topic-title">${UI.escape(topic.title)}</h4>
-                ${stepRenderers.vocabulary({ words: topic.words })}
+                ${stepRenderers.vocabulary({ words: topic.words, addToDeck: true })}
             </div>
         </li>
     `).join('');
@@ -747,6 +747,16 @@ function attachCurriculumEvents(root) {
         if (e.target.closest('[data-close-word-bank]')) {
             openWordBankUnit = null;
             renderCurriculum();
+            return;
+        }
+
+        const addToDeck = e.target.closest('[data-add-to-deck]');
+        if (addToDeck && typeof Decks !== 'undefined') {
+            Decks.openAddToDeckPicker(
+                addToDeck.getAttribute('data-lemma'),
+                addToDeck.getAttribute('data-translation'),
+                addToDeck.getAttribute('data-pos')
+            );
             return;
         }
 

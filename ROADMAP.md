@@ -26,7 +26,16 @@ track known bugs in existing content rather than things not yet built.
   uses, so it can't drift from how words actually appear in-lesson. New
   `wordBank` tag icon in `engine/art.js`. Verified live: a 6-lesson unit
   correctly shows 46 words across 5 topic groups, and closing/reopening
-  navigates cleanly.
+  navigates cleanly. **Add-to-deck added 2026-08-27**: each word row now
+  has a small "+" button (`stepRenderers.vocabulary()`'s new `addToDeck`
+  option, only passed by Word Bank's call site — the in-lesson vocabulary
+  step is unchanged) that opens the same `Decks.openAddToDeckPicker()`
+  overlay the Library's word-tap popup already uses. Wired via
+  `data-add-to-deck`/delegated click in `attachCurriculumEvents()`, not an
+  inline `onclick`, since a translation can contain a quote character
+  ("don't") that would break a naively-interpolated JS string. Verified
+  live: 46/46 rows carry a working button, clicking one opens "Add 'hola'
+  to a deck".
 
 ## Workshop
 
@@ -113,6 +122,25 @@ track known bugs in existing content rather than things not yet built.
   shared, this also tightened a few dozen overly long Hungarian frequency
   glosses the same way (e.g. "case, instance, event, occurrence" →
   "case, instance, event…") as a side effect of the same fix.
+- [ ] Decks mechanics should work more like Quizlet. **Captured
+  2026-08-27, explicitly deferred by the user** ("to be discussed
+  later") — no design or scope decided yet.
+
+## Grammar reference
+
+- [ ] Grammar tips inside Workshop drillers (e.g. Suffix Driller),
+  similar to the unit-level Grammar Guide. **Captured 2026-08-27** — user
+  proposed this ("maybe we should"); needs a design decision before
+  building, since "similar to the Grammar Guide" could mean two fairly
+  different things: (a) a reference panel/link to the general grammar
+  concept being drilled (e.g. "About the Instrumental Case"), which
+  doesn't map cleanly since a driller pulls from the whole
+  dictionary/word-index rather than one unit's lessons, so there's no
+  single Grammar Guide entry to link to — this would mean authoring new
+  concept-level reference content; or (b) richer per-exercise "why" text
+  than the terse one-liners `explanation` already shows (added
+  2026-08-27, see "Workshop" section above) — a smaller, more
+  self-contained change. Asked the user to clarify before starting.
 
 ## Interface & platform
 

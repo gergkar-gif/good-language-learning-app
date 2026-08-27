@@ -635,6 +635,12 @@ const stepRenderers = {
         return `<p class="lsn-reference">Read more about ${esc(step.topic || step.title || 'this')} on ${link}.</p>`;
     },
 
+    // step.addToDeck (Word Bank only, not the in-lesson step — a lesson
+    // already has its own end-of-lesson Review/Know-it flow for adding
+    // words, see finishLesson()) adds a small per-row button wired via
+    // data attributes + delegated click, not an inline onclick, since a
+    // translation can contain a quote character ("don't") that would
+    // break a naively-interpolated JS string literal.
     vocabulary(step) {
         return `
             <div class="lsn-vocab">
@@ -644,7 +650,14 @@ const stepRenderers = {
                             <div class="lsn-es">${esc(word.lemma)}${say(word.lemma)}</div>
                             <div class="lsn-pos">${esc(word.pos)}</div>
                         </div>
-                        <div class="lsn-en">${esc(word.translation)}</div>
+                        <div class="lsn-vocab-row-end">
+                            <div class="lsn-en">${esc(word.translation)}</div>
+                            ${step.addToDeck ? `
+                                <button class="lsn-vocab-add" data-add-to-deck
+                                    data-lemma="${esc(word.lemma)}" data-translation="${esc(word.translation)}" data-pos="${esc(word.pos)}"
+                                    aria-label="Add ${esc(word.lemma)} to a deck">+</button>
+                            ` : ''}
+                        </div>
                     </div>
                 `).join('')}
             </div>
