@@ -6,12 +6,21 @@
 // move through the deck. Purely a study aid — unlike SRS review, nothing
 // here is scheduled or persisted; the same deck can be flipped through as
 // many times as the learner likes with no effect on review state.
+//
+// Shuffle here is a Spotify-style ON/OFF toggle over card PRESENTATION
+// order only — it never touches the deck's own word list (that ordering,
+// natural-vs-alphabetical, lives in engine/decks.js and is passed in as
+// `options.words`). Toggling it on reshuffles from that original order;
+// toggling it off restores that exact order — neither ever mutates the
+// list the deck screen itself shows.
 
 const DeckFlashcards = (function () {
     'use strict';
 
     let _container = null;
-    let _words = [];
+    let _original = []; // the order passed in — never reordered in place
+    let _words = [];     // what's actually being presented: _original, or a shuffle of it
+    let _shuffleOn = false;
     let _index = 0;
     let _flipped = false;
     let _onExit = null;
@@ -74,6 +83,10 @@ const DeckFlashcards = (function () {
                 <div class="dkf-head">
                     <button class="dk-back" data-flashcards-exit="1">← Back to deck</button>
                     <span class="dkf-count">${_index + 1} / ${_words.length}</span>
+                    <button class="dkf-shuffle-toggle${_shuffleOn ? ' is-on' : ''}" data-flashcards-shuffle-toggle="1"
+                        aria-pressed="${_shuffleOn}" aria-label="Shuffle">
+                        ${(typeof Art !== 'undefined') ? Art.icon('shuffle') : ''}
+                    </button>
                 </div>
                 <button class="dkf-card${_flipped ? ' is-flipped' : ''}" data-flashcards-flip="1" aria-label="Flip card">
                     <span class="dkf-card-face dkf-card-front">${_escapeHtml(_withArticle(word.lemma))}</span>
@@ -84,7 +97,6 @@ const DeckFlashcards = (function () {
                     <button class="dk-secondary" data-flashcards-prev="1" ${_index === 0 ? 'disabled' : ''}>← Prev</button>
                     <button class="btn-primary" data-flashcards-next="1">${_index === _words.length - 1 ? 'Finish' : 'Next →'}</button>
                 </div>
-                <button class="dk-secondary dkf-shuffle" data-flashcards-shuffle="1">${(typeof Art !== 'undefined') ? Art.icon('shuffle') : ''} Shuffle</button>
             </div>
         `;
         _wire();
@@ -103,11 +115,22 @@ const DeckFlashcards = (function () {
         const nextBtn = _container.querySelector('[data-flashcards-next]');
         if (nextBtn) nextBtn.onclick = () => { _index++; _flipped = false; _render(); };
 
-        const shuffleBtn = _container.querySelector('[data-flashcards-shuffle]');
-        if (shuffleBtn) shuffleBtn.onclick = () => { _words = _shuffled(_words); _index = 0; _flipped = false; _render(); };
+        const shuffleToggle = _container.querySelector('[data-flashcards-shuffle-toggle]');
+        if (shuffleToggle) shuffleToggle.onclick = () => {
+            _shuffleOn = !_shuffleOn;
+            _words = _shuffleOn ? _shuffled(_original) : _original.slice();
+            _index = 0;
+            _flipped = false;
+            _render();
+        };
 
         const restartBtn = _container.querySelector('[data-flashcards-restart]');
-        if (restartBtn) restartBtn.onclick = () => { _index = 0; _flipped = false; _render(); };
+        if (restartBtn) restartBtn.onclick = () => {
+            if (_shuffleOn) _words = _shuffled(_original); // a fresh shuffle each restart, not the same run replayed
+            _index = 0;
+            _flipped = false;
+            _render();
+        };
     }
 
     /**
@@ -116,7 +139,9 @@ const DeckFlashcards = (function () {
      */
     function render(root, options) {
         _container = root;
-        _words = ((options && options.words) || []).filter(w => w && w.lemma);
+        _original = ((options && options.words) || []).filter(w => w && w.lemma);
+        _shuffleOn = false;
+        _words = _original.slice();
         _index = 0;
         _flipped = false;
         _onExit = (options && options.onExit) || function () {};

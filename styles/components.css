@@ -2207,7 +2207,37 @@
 .dkf-nav .btn-primary,
 .dkf-nav .dk-secondary { flex: 1; }
 
-.dkf-shuffle { margin-top: 12px; }
+.dkf-shuffle-toggle {
+  width: 32px;
+  height: 32px;
+  flex: none;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dkf-shuffle-toggle:hover { border-color: var(--primary); color: var(--primary); }
+
+/* Spotify-style persistent toggle, not a one-shot button — the accent
+   fill is the "this state is active" signal, same idea as any other
+   pressed/on control in the app. */
+.dkf-shuffle-toggle.is-on {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: var(--surface);
+}
+
+.dkf-shuffle-toggle .art.icon { width: 16px; height: 16px; }
+
+/* Icon strokes default to --primary regardless of the button's own color
+   (see .lesson-sound-btn's identical override) — without this, the glyph
+   would stay navy on a navy .is-on background instead of following the
+   button into --surface. */
+.dkf-shuffle-toggle .icon .ink-line { stroke: currentColor; }
 
 .dkf-done {
   text-align: center;
@@ -2611,6 +2641,32 @@
 }
 
 .dk-detail-head p { font-size: 13px; color: var(--muted); margin: 2px 0 12px; }
+
+.dk-words-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px 0 6px;
+}
+
+.dk-words-count {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.dk-sort-toggle {
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 13px;
+  text-decoration: underline;
+  padding: 0;
+}
+
+.dk-sort-toggle:hover { color: var(--primary); }
 
 .dk-words { list-style: none; }
 

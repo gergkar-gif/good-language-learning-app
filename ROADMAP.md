@@ -160,6 +160,28 @@ track known bugs in existing content rather than things not yet built.
   fully completed a 5-word deck in 11 rounds (10 is the theoretical
   minimum — 2 passes × 5 words) via the same map-driven approach, with
   both question types and the wrong-answer requeue path exercised.
+- [x] Deck word list should default to add order with an explicit sort
+  option, and Shuffle shouldn't rearrange the list itself — it should be a
+  Flashcards-only presentation toggle, "like the shuffle button on
+  Spotify." **Fixed 2026-08-27**: the deck detail screen's old one-shot
+  "Shuffle" button (which reordered the persisted list in place) is gone;
+  in its place, a small "Added order"/"Sorted A–Z" toggle above the word
+  list (`engine/decks.js`'s new `sortOrder` state, default `'natural'` —
+  insertion order for a My Deck, decks.json's authored order for a
+  Parlour Deck) switches the LIST's own order, never randomizes it.
+  Flashcards (`engine/decks/flashcards.js`) instead gained a persistent
+  ON/OFF shuffle toggle (icon button in its header, filled when active) —
+  off by default, presenting the deck's current list order exactly;
+  turning it on reshuffles from that original order, turning it off
+  restores that exact order again, and neither ever mutates
+  `options.words` itself (a new `_original` array is kept separate from
+  the presented `_words`). Match and Learn were left alone — both already
+  randomize their own round/queue every time regardless of any list
+  order, so a separate shuffle control would have nothing to toggle.
+  Verified live: toggling the list's sort control changes only the list
+  (confirmed round-trip back to the exact original order); Flashcards'
+  toggle starts off (first card "hola", matching the list), turning it on
+  changes the first card, turning it off restores "hola" as first again.
 
 ## Grammar reference
 
