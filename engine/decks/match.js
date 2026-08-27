@@ -79,12 +79,26 @@ const DeckMatch = (function () {
         const sample = _shuffled(_words0).slice(0, Math.min(ROUND_SIZE, _words0.length));
         _words = sample;
 
-        const tiles = [];
-        sample.forEach((word, i) => {
-            tiles.push({ id: 'l' + i, wordIndex: i, kind: 'lemma', text: _withArticle(word.lemma), matched: false });
-            tiles.push({ id: 't' + i, wordIndex: i, kind: 'translation', text: word.translation || '—', matched: false });
-        });
-        _tiles = _shuffled(tiles);
+        const lemmaTiles = sample.map((word, i) =>
+            ({ id: 'l' + i, wordIndex: i, kind: 'lemma', text: _withArticle(word.lemma), matched: false }));
+        const translationTiles = sample.map((word, i) =>
+            ({ id: 't' + i, wordIndex: i, kind: 'translation', text: word.translation || '—', matched: false }));
+        const shuffledLemma = _shuffled(lemmaTiles);
+        const shuffledTranslation = _shuffled(translationTiles);
+
+        // Two fixed columns rather than one board shuffled as a whole —
+        // .dkm-grid is a plain 2-column grid filled in DOM order, so
+        // interleaving lemma/translation here (each shuffled only within
+        // its own side) keeps the target language always in the left
+        // column and English always in the right. Feedback: matching
+        // "which makes the quick matching quite annoying" when either
+        // language could land in either column and a learner had to scan
+        // the whole board rather than just their own side (2026-08-27).
+        _tiles = [];
+        for (let i = 0; i < shuffledLemma.length; i++) {
+            _tiles.push(shuffledLemma[i]);
+            _tiles.push(shuffledTranslation[i]);
+        }
 
         _selected = [];
         _matchedCount = 0;
