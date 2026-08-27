@@ -74,6 +74,37 @@ function _attachLessonClose() {
 }
 
 // --------------------------------------------
+// Lesson sound-effects toggle
+// --------------------------------------------
+// One global mute preference (see engine/sound.js), surfaced here because
+// the lesson screen is the only place a sound effect plays today. Wired
+// once at startup rather than per-lesson since the button itself is
+// static markup — only its icon/label need refreshing, on click.
+
+function _renderSoundToggleIcon(btn) {
+    const isMuted = (typeof Sound !== 'undefined') && Sound.muted();
+    btn.innerHTML = (typeof Art !== 'undefined')
+        ? Art.icon(isMuted ? 'soundOff' : 'soundOn')
+        : '';
+    btn.setAttribute('aria-label', isMuted ? 'Sound effects off — tap to turn on' : 'Sound effects on — tap to turn off');
+    btn.setAttribute('aria-pressed', String(!isMuted));
+}
+
+function _attachSoundToggle() {
+    const btn = document.getElementById('lesson-sound-btn');
+    if (!btn || typeof Sound === 'undefined') return;
+
+    _renderSoundToggleIcon(btn);
+    btn.addEventListener('click', () => {
+        Sound.toggleMuted();
+        _renderSoundToggleIcon(btn);
+        // Immediate confirmation that turning it back on actually worked,
+        // rather than the learner having to wait for the next exercise.
+        if (!Sound.muted()) Sound.correct();
+    });
+}
+
+// --------------------------------------------
 // Nav delegation (replaces inline onclick)
 // --------------------------------------------
 
@@ -136,6 +167,7 @@ async function initialiseApp() {
 
     // Lesson screen events
     _attachLessonClose();
+    _attachSoundToggle();
 
     // Verbs module
     if (typeof Verbs !== 'undefined') {

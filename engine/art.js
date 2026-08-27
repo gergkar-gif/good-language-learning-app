@@ -217,6 +217,21 @@ const Art = (function () {
             <line class="ink-line" x1="20" y1="11" x2="20" y2="13"/>
         `,
 
+        // Sound effects on/off — a speaker with (or without) the two arcs
+        // of sound leaving it. Reuses the same speaker cone as `listening`
+        // draws for its waveform bars, kept as one glyph pair so "on" and
+        // "off" read as the same control, not two different icons.
+        soundOn: `
+            <path class="ink-line" d="M4 9v6h4l6 5V4l-6 5Z"/>
+            <path class="ink-line" d="M17 8.5a5.5 5.5 0 0 1 0 7"/>
+            <path class="ink-line" d="M19.5 6a9 9 0 0 1 0 12"/>
+        `,
+        soundOff: `
+            <path class="ink-line" d="M4 9v6h4l6 5V4l-6 5Z"/>
+            <line class="ink-line" x1="16" y1="9" x2="21" y2="14"/>
+            <line class="ink-line" x1="21" y1="9" x2="16" y2="14"/>
+        `,
+
         // Settings — a dial with one mark, rather than a cog nobody can read
         // at this size.
         settings: `

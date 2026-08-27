@@ -465,6 +465,7 @@ function solveStep(message) {
     queueForRemediationIfMissed();
     lessonStats.total++;
     if (!stepState.wasMissed) lessonStats.correctFirstTry++;
+    if (typeof Sound !== 'undefined') Sound.correct();
 }
 
 // Records a wrong attempt. Returns true once the learner is out of tries,
@@ -472,6 +473,7 @@ function solveStep(message) {
 function failStep(message) {
     stepState.attempts = (stepState.attempts || 0) + 1;
     const left = MAX_ATTEMPTS - stepState.attempts;
+    if (typeof Sound !== 'undefined') Sound.wrong();
 
     // The first wrong attempt is what "missed on the first try" means —
     // later attempts on the same try-count just narrate how many are left.
@@ -1148,6 +1150,8 @@ function formatLessonElapsed(ms) {
 function renderLessonSummary() {
     const container = document.getElementById('lesson-content');
     if (!container) return;
+
+    if (typeof Sound !== 'undefined') Sound.complete();
 
     const elapsed = lessonStartTime ? formatLessonElapsed(Date.now() - lessonStartTime) : null;
     const accuracy = lessonStats.total > 0

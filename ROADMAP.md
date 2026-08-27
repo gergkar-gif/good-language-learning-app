@@ -46,8 +46,21 @@ track known bugs in existing content rather than things not yet built.
     into the Reader.
 - [ ] Small AI agent for discussion/writing practice.
 - [x] End-of-lesson summary screen ("well done, you finished"). **Built 2026-08-27** — see TROUBLESHOOTING_BACKLOG.md's "Lesson-complete summary card" entry for detail.
-- [ ] Audio: small sound effects for right answer, wrong answer, finishing
-  a lesson, etc.
+- [x] Audio: small sound effects for right answer, wrong answer, finishing
+  a lesson, etc. **Built 2026-08-27**: `engine/sound.js` (new) synthesises
+  three short tones with the Web Audio API — a rising two-note chime for
+  correct, one soft low note for wrong, a fuller three-note rise for lesson
+  complete — rather than shipping audio files. Wired into the shared
+  `solveStep()`/`failStep()` in `engine/lessons.js`, so every exercise type
+  gets sound with one hook each instead of five separate places (unlike the
+  accent-sensitivity fix earlier this session, there's only one grading
+  path in the main lesson flow to wire — Workshop's drillers weren't
+  touched, matching the roadmap item's own "lesson" scope). One global mute
+  toggle (new speaker icon in the lesson header, `localStorage`-persisted)
+  rather than per-course, since a learner who mutes it won't want it back
+  the moment they're somewhere else in the app. Verified live: toggling
+  mute actually suppresses/restores oscillator creation, not just the
+  visible icon state.
 - [ ] Jump ahead: an end-of-level exam that, passed at 90%+, lets a
   learner skip straight to the next level — the assumption being they
   already know that level's content.

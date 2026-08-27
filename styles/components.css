@@ -629,6 +629,40 @@
   margin-bottom: 16px;
 }
 
+/* Close button, title block, and the sound toggle in one row — previously
+   unstyled (block-stacked on whatever the browser default gave buttons and
+   headings), which was fine with just two children but left no sane place
+   to put a third. */
+.lesson-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.lesson-sound-btn {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: none;
+  color: var(--muted);
+}
+
+.lesson-sound-btn:hover {
+  color: var(--primary);
+}
+
+.lesson-sound-btn .icon {
+  width: 20px;
+  height: 20px;
+}
+
+.lesson-sound-btn .icon .ink-line { stroke: currentColor; }
+
 .lsn-title {
   font-family: var(--font-display);
   font-weight: 400;
