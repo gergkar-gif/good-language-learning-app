@@ -235,6 +235,59 @@ carried over.*
   - [x] Story ending abruptly (the Unit 5 reading is `story.a1.unit05`, "What Is This?", covering lessons a1-21 through a1-25): confirmed it stopped cold on an unanswered "Micsoda ez?" **Fixed**: added Károly's reply and a closing narration beat.
 - [x] Consolidation (a1-25-consolidation): re-checked the current (rebuilt) consolidation directly rather than trusting the stale "S2" position — found the same locative-order bug in consolidation-11 (folded into the fix above) and confirmed all 6 multiple-choice items have exactly one defensible correct answer with no overlap.
 
+### HU A1 — curriculum coverage audit (2026-08-27)
+*Requested: triangulate the 150-lesson HU A1 curriculum against external
+CEFR A1/Hungarian-pedagogy standards and confirm it covers what an A1
+course should. `WebFetch` was unavailable in this session (blocked by the
+network egress policy for every domain tested, including generic ones like
+google.com) — findings below combine `WebSearch` snippets with established
+CEFR/Hungarian-pedagogy knowledge, but every concrete claim about *this*
+course's content was verified directly against the content files (grep),
+not inferred. User confirmed the deliberate scope decision below; no fixes
+applied this pass — logged for prioritization later.*
+
+- [x] Past/future tense: confirmed genuinely absent (zero `múlt idő`/`jövő
+  idő` grammar files) — **intentional**, matches the user's stated plan to
+  cover it in A2 and is standard practice (the A1→A2 boundary is commonly
+  marked by narrating past events). Not a gap.
+- [ ] **Numbers above 10 are never taught anywhere, but are required.**
+  Grepped every vocabulary/grammar file for `tizenegy`, `húsz`, `harminc`,
+  `negyven`...`száz` — zero hits; only 0–10 is introduced (`a1-16-a-gr.json`).
+  Yet the Unit 4 story has Meg say "Harminckettő éves vagyok" (32) and a
+  multi-digit phone number, and `a1-17-ex.json`'s own exercises require
+  choosing/producing "Harminc éves vagyok" as the correct answer to "how
+  old are you?" — a number that was never taught. This is a real
+  used-before-taught bug, not just a curriculum gap: some lesson needs to
+  teach at least 11–100 before the age/phone-number content that already
+  relies on it.
+- [ ] **The to/from/at-a-person case trio is absent**: `-hoz/-hez/-höz`
+  ("to"), `-tól/-től` ("from"), `-nál/-nél` ("at [someone's place]") have
+  no dedicated grammar screens. Found exactly one incidental, unexplained
+  use of `-hoz` (in an imperative-lesson example) and zero uses of
+  `-tól/-től/-nál/-nél` anywhere in course content; `honnan` ("where from")
+  only exists in the auto-generated frequency index, never in any lesson.
+- [ ] **Dative case is a memorized chunk, not a taught rule**: `nekem`
+  ("for me") is taught as a fixed pronoun phrase (`a1-148-a-gr.json`), but
+  the productive `-nak/-nek` suffix (e.g. "Annának") is never generalized.
+- [ ] **`tud`** (can / to know how — one of the most basic Hungarian modal
+  verbs) has zero vocabulary or grammar hits anywhere in the course.
+- [ ] **`szabad`** as a permission modal ("allowed to") is absent — it only
+  exists as `szabadidő` (free time) and `szabad vagyok` (I'm available).
+- [ ] Comparative/superlative adjectives (`nagyobb`, `legszebb`, the
+  `-bb`/`leg-` pattern) — zero coverage.
+- [ ] Nationality/country vocabulary — zero coverage. Worth pairing with
+  the Meg-is-South-African canon detail already in the readings (see the
+  narrative audit above) if this gets picked up.
+- [ ] Weather vocabulary — zero coverage; a near-universal A1 topic
+  elsewhere.
+- [x] Areas confirmed to already meet or exceed typical A1 depth (no
+  action needed): vowel harmony, zero-copula, van/nincs existentials, the
+  full possessive-suffix "have" construction, plural `-k`, a wide spread of
+  spatial cases already taught (`-ban/-ben`, `-ba/-be`, `-ra/-re`, `-n`,
+  `-val/-vel`, `-kor`), postpositions (`mellett/előtt/mögött/között`), and
+  notably **both indefinite and definite conjugation** — many slimmer A1
+  courses skip definite conjugation almost entirely.
+
 ### Deferred — future feature, not a bug
 - [ ] HU audio: replace TTS with real recorded sound files. *(explicitly
   deferred by the user, 2026-08-21 — "future feature, not in this pass")*
