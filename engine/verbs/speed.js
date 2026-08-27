@@ -261,21 +261,45 @@ const VerbsSpeed = (function () {
     function _endSession() {
         _phase = PHASE.RESULTS;
         if (_timerInterval) { clearInterval(_timerInterval); _timerInterval = null; }
-        _renderResults();
+
+        // Read the previous best before record() folds this session in, so
+        // the results screen can tell whether this run just set a new one.
+        var stats = VerbsStats.getStats();
+        var previousBest = (typeof VerbsLeaderboard !== 'undefined') ? VerbsLeaderboard.best() : null;
+        var newBest = (typeof VerbsLeaderboard !== 'undefined') ? VerbsLeaderboard.record({
+            correct: stats.correct,
+            wrong: stats.wrong,
+            accuracy: stats.accuracy,
+            tenseLabel: _tense === 'all' ? 'All tenses' : _tenseLabel,
+            timerMinutes: _timerMinutes
+        }) : null;
+        var isNewBest = !!newBest && (!previousBest || newBest.accuracy > previousBest.accuracy ||
+            (newBest.accuracy === previousBest.accuracy && newBest.correct > previousBest.correct));
+
+        _renderResults(newBest, isNewBest && (stats.correct + stats.wrong) > 0);
     }
 
     // ================================================================
     //  PHASE — RESULTS
     // ================================================================
-    function _renderResults() {
+    function _renderResults(best, isNewBest) {
         var stats = VerbsStats.getStats();
+        best = best || ((typeof VerbsLeaderboard !== 'undefined') ? VerbsLeaderboard.best() : null);
 
         var area = _container.querySelector('.vspeed-play-area');
         if (!area) return;
 
+        var bestHtml = best
+            ? '<div class="vspeed-stat">'
+                + '<span class="vspeed-stat-label">Best accuracy</span>'
+                + '<span class="vspeed-stat-value">' + best.accuracy + '%</span>'
+              + '</div>'
+            : '';
+
         area.innerHTML = ''
             + '<div class="vspeed-results">'
             +   '<h3 class="vspeed-results-title">Session Results</h3>'
+            +   (isNewBest ? '<p class="vspeed-new-best">New personal best!</p>' : '')
             +   '<div class="vspeed-results-grid">'
             +     '<div class="vspeed-stat">'
             +       '<span class="vspeed-stat-label">Correct</span>'
@@ -289,6 +313,7 @@ const VerbsSpeed = (function () {
             +       '<span class="vspeed-stat-label">Accuracy</span>'
             +       '<span class="vspeed-stat-value">' + stats.accuracy + '%</span>'
             +     '</div>'
+            +     bestHtml
             +     '<div class="vspeed-stat">'
             +       '<span class="vspeed-stat-label">Weakest tense</span>'
             +       '<span class="vspeed-stat-value">' + _escapeHtml(stats.weakestTense) + '</span>'

@@ -150,6 +150,14 @@ const HuPrefixDriller = (function () {
         return _shuffled(candidates).slice(0, n).map(p => p.prefix);
     }
 
+    // One real attested pair for this prefix, if _pairs has loaded one, to
+    // ground the abstract sense in a concrete example rather than just
+    // restating the question.
+    function _exampleFor(prefix) {
+        const match = _pairs && _pairs.find(p => p.prefix === prefix.prefix);
+        return match ? ` E.g. "${match.bareLemma}" (${match.bareGloss}) → "${match.prefixedLemma}" (${match.prefixedGloss}).` : '';
+    }
+
     // 1. Meaning -> prefix. Doesn't need a verb pairing at all — just the
     // prefix table itself, so always safe regardless of dictionary data.
     function _buildMeaningToPrefix(prefix) {
@@ -159,7 +167,8 @@ const HuPrefixDriller = (function () {
             kind: 'multiple-choice',
             question: `Which prefix means "${_quizSense(prefix)}"?`,
             options,
-            correct: options.indexOf(prefix.prefix)
+            correct: options.indexOf(prefix.prefix),
+            explanation: `"${prefix.prefix}-" means "${_quizSense(prefix)}".${_exampleFor(prefix)}`
         };
     }
 

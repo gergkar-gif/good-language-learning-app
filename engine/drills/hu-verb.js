@@ -188,7 +188,8 @@ const HuVerbDriller = (function () {
         return {
             kind: 'fill-blank',
             sentence: `"${verb.lemma}" (${verb.gloss}), ${_personLabel(target)} (${target.pronoun}) = ______`,
-            answer: target.form
+            answer: target.form,
+            explanation: `${verb.lemma} = ${verb.gloss}`
         };
     }
 

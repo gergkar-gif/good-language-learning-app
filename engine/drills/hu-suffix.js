@@ -199,6 +199,23 @@ const HuSuffixDriller = (function () {
         return _shuffled(candidates).slice(0, n).map(e => e.form);
     }
 
+    // The question text already states the translation inline (via
+    // _promptFor's English gloss), so this "why" names the grammar concept
+    // itself — the case or possessive suffix responsible for the form —
+    // which the question text doesn't spell out.
+    function _explanationFor(entry) {
+        const gloss = _gloss(entry.lemma);
+        if (entry.tag.person) {
+            const owner = OWNER_WORDS[entry.tag.person][entry.tag.ownerNumber];
+            return `"${entry.lemma}" (${gloss}) takes the possessive suffix for "${owner}" to become "${entry.form}".`;
+        }
+        if (entry.tag.case) {
+            const caseLabel = HungarianMorphology.caseName(entry.tag.case);
+            return `"${entry.lemma}" (${gloss}) takes the ${caseLabel} case to become "${entry.form}".`;
+        }
+        return `"${entry.lemma}" (${gloss}) takes the plural suffix to become "${entry.form}".`;
+    }
+
     // ---- Exercise builders -> GrammarRunner shapes ----
     function _buildMultipleChoice(entry) {
         const decoys = _decoysFor(entry, DECOY_COUNT);
@@ -208,7 +225,8 @@ const HuSuffixDriller = (function () {
             kind: 'multiple-choice',
             question: `Which form means "${_promptFor(entry)}"?`,
             options,
-            correct: options.indexOf(entry.form)
+            correct: options.indexOf(entry.form),
+            explanation: _explanationFor(entry)
         };
     }
 
@@ -216,7 +234,8 @@ const HuSuffixDriller = (function () {
         return {
             kind: 'fill-blank',
             sentence: `"${entry.lemma}" (${_gloss(entry.lemma)}) + ${_promptFor(entry)} = ______`,
-            answer: entry.form
+            answer: entry.form,
+            explanation: _explanationFor(entry)
         };
     }
 

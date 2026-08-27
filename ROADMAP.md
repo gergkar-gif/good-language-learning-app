@@ -32,9 +32,46 @@ track known bugs in existing content rather than things not yet built.
 
 - [ ] In the various Workshop drillers, show an English translation and an
   explanation of why that's the right response at the bottom of each
-  exercise.
-- [ ] Verb drill: leaderboard / top score / top accuracy — maybe extended
-  to all Workshop activities, not just verbs.
+  exercise. **Partially fixed 2026-08-27** — audited every driller first:
+  Vocabulary, Listening, and Translation drillers already showed both on
+  every exercise (they're built at runtime from an inherently bilingual
+  corpus — `translation-index.json` — rather than authored per-item), and
+  Grammar Driller's 600-item bank already had a "why" explanation on
+  100% of items. The real gaps were the 4 Hungarian drillers, where the
+  translation/gloss was already available (dictionary/morphology data)
+  but not consistently wired into a visible `explanation` field —
+  fixed: `hu-suffix.js`'s multiple-choice/fill-blank builders,
+  `hu-prefix.js`'s meaning-to-prefix builder (now cites a real
+  attested example pair too), `hu-verb.js`'s production builder, and
+  `hu-morphology.js`'s construction builder. Also extended
+  `GrammarRunner`'s explanation reveal to the `dialogue-complete` and
+  `sentence-order` kinds for consistency (no content uses it yet, but
+  the display now exists). **Not fixed — this is the bulk of the
+  original ask and is content-blocked, not a wiring problem**: Grammar
+  Driller's lesson-sourced pool (7,170 entries, pulled from
+  `grammar-index.json`) has neither an English translation nor a "why"
+  for its two largest exercise types — 3,049 multiple-choice and 2,001
+  fill-blank items, 0% coverage on both fields. This mirrors the
+  existing lesson fill-blank/dictation translation gap already noted
+  above (0/1,560, 0/522) — a real content-authoring project on the
+  order of ~5,000 items, not attempted here.
+- [x] Verb drill: leaderboard / top score / top accuracy — maybe extended
+  to all Workshop activities, not just verbs. **Built 2026-08-27**, for
+  Verb Speed only (the "maybe extended to all Workshop activities" part
+  wasn't done — every driller's results screen is a near-identical
+  copy-pasted block, so extending this would mean threading the same
+  history store through 9 files, a bigger refactor than asked for here).
+  New `engine/verbs/leaderboard.js`: a personal-best history, not a
+  multiplayer ranking (this app has no accounts to compete against) —
+  persisted per-course via `Lang.key('verbSpeedScores')`, ranked by
+  accuracy then correct count, capped to the top 20 sessions.
+  `VerbsSpeed._endSession()` records each completed session (sessions
+  with zero answered questions are ignored); `_renderResults()` shows a
+  new "Best accuracy" stat alongside the existing grid and a "New
+  personal best!" banner when the just-finished session set one.
+  Verified live end-to-end: a real 1-minute timed session correctly
+  recorded to `localStorage` and rendered both the best-accuracy stat
+  and the new-best banner.
 - [ ] Translation driller: practice by topic.
 
 ## Library / dictionary

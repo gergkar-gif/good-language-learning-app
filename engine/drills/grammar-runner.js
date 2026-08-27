@@ -196,6 +196,7 @@ const GrammarRunner = (function () {
                 else if (i === picked) b.classList.add('wrong');
             });
             _setFeedback(ok, ok ? '✓ Correct!' : '✗ Not quite.');
+            if (ex.explanation) _container.insertAdjacentHTML('beforeend', _explanationHtml(ex.explanation));
             _resolve(ok);
         });
     }
@@ -353,6 +354,7 @@ const GrammarRunner = (function () {
             }
 
             _setFeedback(ok, ok ? '✓ Correct order!' : '✗ Not the right order — shown below.');
+            if (ex.explanation) _container.insertAdjacentHTML('beforeend', _explanationHtml(ex.explanation));
             _resolve(ok);
         });
     }

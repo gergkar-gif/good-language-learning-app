@@ -159,7 +159,8 @@ const HuMorphologyDriller = (function () {
         return {
             kind: 'fill-blank',
             sentence: `"${entry.chain[0].form}" (${entry.chain[0].translation}) ${steps} = ______`,
-            answer: entry.word
+            answer: entry.word,
+            explanation: `${entry.word} = ${entry.chain[entry.chain.length - 1].translation}`
         };
     }
 
