@@ -145,8 +145,14 @@ const HuPrefixDriller = (function () {
     }
 
     // ---- Exercise builders -> GrammarRunner shapes ----
-    function _decoyPrefixes(correct, n) {
-        const candidates = _prefixes.filter(p => p.prefix !== correct);
+    // Excludes by SENSE, not just by prefix string — fel-/föl- are real
+    // dialectal variants sharing the exact same "up" sense, so filtering
+    // only `p.prefix !== target.prefix` used to let föl- stand as a decoy
+    // for fel- (and vice versa), producing a "which prefix means X?"
+    // question where two of the shown options were both correct.
+    function _decoyPrefixes(target, n) {
+        const targetSense = _quizSense(target);
+        const candidates = _prefixes.filter(p => p.prefix !== target.prefix && _quizSense(p) !== targetSense);
         return _shuffled(candidates).slice(0, n).map(p => p.prefix);
     }
 
@@ -161,7 +167,7 @@ const HuPrefixDriller = (function () {
     // 1. Meaning -> prefix. Doesn't need a verb pairing at all — just the
     // prefix table itself, so always safe regardless of dictionary data.
     function _buildMeaningToPrefix(prefix) {
-        const decoys = _decoyPrefixes(prefix.prefix, DECOY_COUNT);
+        const decoys = _decoyPrefixes(prefix, DECOY_COUNT);
         const options = _shuffled([prefix.prefix, ...decoys]);
         return {
             kind: 'multiple-choice',

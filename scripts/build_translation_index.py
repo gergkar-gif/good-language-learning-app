@@ -22,8 +22,26 @@ Usage:
     python scripts/build_translation_index.py [lang ...]   (default: es hu)
 """
 import json
+import re
 import sys
 from pathlib import Path
+
+_PUNCTUATION_TILE = re.compile(r"^[,.!?;:]+$")
+
+
+def _join_tiles(tiles):
+    """Join sentence-builder tiles into one sentence. A tile that's pure
+    punctuation (",", ".", "?", ...) attaches directly to the previous word
+    instead of getting its own leading space — plain " ".join(tiles) used to
+    produce "Tegnap tanultam ." for any exercise that tiles punctuation
+    separately, which most Hungarian ones do."""
+    out = []
+    for tile in tiles:
+        if out and _PUNCTUATION_TILE.match(tile):
+            out[-1] += tile
+        else:
+            out.append(tile)
+    return " ".join(out)
 
 
 def from_grammar(grammar_dir):
@@ -59,7 +77,7 @@ def from_exercises(exercises_dir):
             english = ex.get("english")
             solution = ex.get("solution")
             if english and solution:
-                pairs.append({"spanish": " ".join(solution), "english": english, "level": level, "source": "exercises"})
+                pairs.append({"spanish": _join_tiles(solution), "english": english, "level": level, "source": "exercises"})
     return pairs
 
 

@@ -282,6 +282,103 @@ applied this pass — logged for prioritization later.*
   notably **both indefinite and definite conjugation** — many slimmer A1
   courses skip definite conjugation almost entirely.
 
+### HU Workshop drillers — audit and fix (2026-08-27)
+Full audit of every Hungarian Workshop driller (Grammar, Vocabulary,
+Listening, Translation, plus the 4 HU-specific ones: Verb, Suffix, Prefix,
+Morphology), driven live via Playwright through 100+ rounds total, not just
+a code read. 7 real findings, all fixed and re-verified live:
+- [x] **Grammar Driller 100% dead for Hungarian**: `content/hu/indexes/
+  grammar-index.json` referenced exercise IDs that no longer existed
+  (renamed at some point after the index was last built) — 25/25 entries
+  failed to resolve, so "Mixed" showed "0+ items" and Start immediately said
+  "No exercises found." **Fixed**: reran `scripts/build_grammar_index.py hu
+  es` — HU now has 20 skills / 162 resolvable entries (was 5/25, all stale);
+  ES was unaffected (already 0 mismatches, just a routine refresh from new
+  content). Also fixed the "Mixed — 0+ items" label itself
+  (`engine/drills/grammar.js`) to count lesson-exercise entries too, not
+  just the (for HU, nonexistent) hand-authored bank — was misleadingly
+  showing "0+" even once the driller worked. Verified live: real questions
+  now render ("Which means 'I have a son'?").
+- [x] **Vocabulary Driller completely empty for Hungarian**: it needs 5+
+  word sentences to build any exercise (`MIN_CONTEXT_WORDS` in
+  `engine/drills/vocabulary.js`); `translation-index.json` had only 28
+  pairs, longest 3 words. Root cause turned out to be the same as the next
+  finding — a stale index, not a code bug in vocabulary.js. Fixed by the
+  translation-index regeneration below; verified live afterward with a real
+  question ("What does 'haza' mean in both?").
+- [x] **`translation-index.json` stale and buggy**: only 28 pairs (should
+  reflect current content), several of which were phoneme-pronunciation
+  notes ("sz" → "s sound") pulled verbatim from a grammar screen's example
+  block rather than real sentences, and sentence-builder-derived pairs had
+  a punctuation-spacing bug ("Tegnap tanultam ." with a stray space before
+  the period) from joining tiles with a plain `" ".join()`. **Fixed**:
+  `scripts/build_translation_index.py` now joins a punctuation-only tile
+  directly onto the previous word instead of space-separating it; reran
+  for both languages. HU jumped from 28 → 734 pairs (135 of them 5+ words)
+  — the phoneme-note entries disappeared because their source content had
+  already been rewritten since the index was last built, confirming this
+  was pure staleness, not a content-authoring gap. ES: 3019 → 3034 pairs
+  (routine refresh). Verified live: 10 sampled Translation Driller
+  sentences, all correctly punctuated, no phoneme notes.
+- [x] **Past-tense conjugation bug — fabricated non-words graded as
+  correct**: `engine/morphology/hungarian.js`'s `_pastLinkingClass()`
+  classified any stem ending in a sonorant (r/l/n/ny/j/ly) as never needing
+  a linking vowel, without checking whether that sonorant was preceded by a
+  vowel (true Type I, "gondol" → "gondolt") or by another consonant (a
+  cluster, "ugr" in "ugrik", which needs the linking vowel in every person
+  like any other cluster-final stem). Verb Driller was presenting "ugrta"
+  as the graded-correct 3sg past of "ugrik" — the real word is "ugrott".
+  **Fixed**: gated the sonorant check on the same single-consonant-after-
+  vowel test present tense already uses. Verified live: `ugrik`/`csuklik`
+  now correctly generate `ugrottam.../csuklottam...`; controls (`gondol`,
+  `vándorol`, `mos`) unchanged.
+- [x] **Definite-conjugation guard missing for past tense**: present tense
+  already excludes intransitive irregular verbs (van/megy/jön/alszik) from
+  the "definite conjugation" pool (they have no real definite form), but
+  past tense didn't — the driller's Past+Definite mode presented plain
+  past-tense forms for these as if a distinct definite conjugation existed.
+  Worse, `lesz` ("to become") is irregular only in the PAST table, so it
+  never even reached the present-tense guard and got fully fabricated
+  non-word "definite present" forms (leszem, leszi, ...). `eszik`/`iszik`
+  are genuinely transitive with real distinct definite past forms
+  (ette/itta) the table just doesn't have, so they were silently returning
+  the wrong (indefinite-shaped) answer. **Fixed**: extended the guard to
+  past tense for van/megy/jön/alszik/lesz (return null, matching present's
+  treatment) and to eszik/iszik (return null rather than the wrong guess —
+  the real definite forms still aren't authored, this only stops teaching
+  a wrong one). Added a `lesz`-specific present-tense guard since it can't
+  reach the shared irregular-lemma dispatch path. Verified live: the Verb
+  Driller's Past+Definite pool correctly dropped from 563 to 556 verbs
+  (exactly the 7 excluded lemmas), 10 rounds ran clean.
+- [x] **Prefix Driller: `fel-`/`föl-` ambiguous question**: both are real
+  dialectal variants meaning "up", but decoy selection only excluded the
+  exact target prefix string, not other prefixes sharing its sense — so
+  "Which prefix means 'up'?" could show both as options with only one
+  marked correct (~1 in 35 questions, by simulation). **Fixed**:
+  `_decoyPrefixes()` in `engine/drills/hu-prefix.js` now also excludes
+  candidates whose sense matches the target's. Verified live: 7 sampled
+  "up" questions, zero show both options (unrelated fel/föl co-occurrence
+  as two decoys for a different question is fine and still happens, since
+  neither is "correct" there).
+- [x] **Naive English pluralization producing broken text**: bare `gloss +
+  's'` (two independent copies: `engine/drills/hu-suffix.js` inline, and
+  `naivePluralize()`/`possessivePhrase()` in `engine/morphology/
+  hungarian.js`, shared by the Morphology Driller and the Reader's word
+  popup) pluralized adjectives ("with freshs"), doubled/tripled a gloss
+  already ending in "s" ("effectivenesss"), and appended "s" straight onto
+  a truncated gloss's ellipsis ("unprovoked…s") or only the LAST of several
+  comma-separated senses ("sour cream, smetanas"). Sampled ~30 live
+  questions per driller; roughly a quarter to a third were affected.
+  **Fixed**: `naivePluralize(gloss, pos)` now takes an optional POS and
+  returns the gloss unchanged for anything but a noun, and pluralizes only
+  the first comma-separated sense after trimming a trailing "…". Threaded
+  the POS through all 5 call sites in hungarian.js (now exported so
+  hu-suffix.js can reuse it instead of its cruder inline version, which
+  also fixes the double/triple-"s" case that inline version didn't guard
+  against). Verified live: 0/55 hu-suffix.js questions and 0/40
+  hu-morphology.js questions matched the broken patterns afterward
+  (previously reproducible on ~25-33% of samples).
+
 ### Deferred — future feature, not a bug
 - [ ] HU audio: replace TTS with real recorded sound files. *(explicitly
   deferred by the user, 2026-08-21 — "future feature, not in this pass")*

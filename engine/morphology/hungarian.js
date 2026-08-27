@@ -448,7 +448,22 @@ const HungarianMorphology = (function () {
     // "friends"). Good enough for the common case; irregular English
     // plurals (child/children) are a known, accepted miss rather than a
     // reason to ship a full pluralization table for what's a teaching aid.
-    function naivePluralize(noun) {
+    //
+    // `pos`, when passed, gates this to nouns only — an adjective or
+    // participle gloss doesn't pluralize in English ("fresh" stays
+    // "fresh"), so a non-noun pos returns the gloss unchanged instead of
+    // producing "freshs". Also trims a trailing "…" (Lexicon.shortGloss()
+    // truncates long multi-sense glosses with one) and pluralizes only the
+    // FIRST comma-separated sense, dropping the rest — pluralizing the
+    // whole string used to tack "s" straight onto the ellipsis
+    // ("unprovoked…s") or, when the LAST of several senses got the "s",
+    // read as a singular/plural mismatch mid-phrase ("sour cream,
+    // smetanas"). Callers that don't have a pos to pass (pos omitted)
+    // still get this cleanup, just without the noun-only gate.
+    function naivePluralize(gloss, pos) {
+        if (pos && pos !== 'noun') return gloss;
+        const noun = String(gloss || '').split(',')[0].replace(/[…\s]+$/, '').trim();
+        if (!noun) return gloss;
         if (/[sxz]$/i.test(noun) || /[cs]h$/i.test(noun)) return noun + 'es';
         if (/[^aeiou]y$/i.test(noun)) return noun.slice(0, -1) + 'ies';
         return noun + 's';
@@ -457,10 +472,10 @@ const HungarianMorphology = (function () {
     // "my friend" / "our friends" / etc, as a natural phrase rather than
     // describePossessive()'s compact "my, plural" label — used by ladder()
     // below, where the point is to read like English, not like a tag.
-    function possessivePhrase(gloss, person, ownerNumber, possessedNumber) {
+    function possessivePhrase(gloss, person, ownerNumber, possessedNumber, pos) {
         const owner = { 1: { sg: 'my', pl: 'our' }, 2: { sg: 'your', pl: 'your' },
             3: { sg: 'his/her', pl: 'their' } }[person][ownerNumber];
-        const noun = possessedNumber === 'pl' ? naivePluralize(gloss) : gloss;
+        const noun = possessedNumber === 'pl' ? naivePluralize(gloss, pos) : gloss;
         return owner + ' ' + noun;
     }
 
@@ -671,8 +686,9 @@ const HungarianMorphology = (function () {
             const indexHit = (wordIndex[remainder] || [])
                 .find(a => a.person && nominalSense(dictionary[a.lemma]) && matches(a.lemma));
             if (indexHit) {
-                const base = gloss(nominalSense(dictionary[indexHit.lemma]));
-                const possPhrase = possessivePhrase(base, indexHit.person, indexHit.ownerNumber, indexHit.number);
+                const indexHitSense = nominalSense(dictionary[indexHit.lemma]);
+                const base = gloss(indexHitSense);
+                const possPhrase = possessivePhrase(base, indexHit.person, indexHit.ownerNumber, indexHit.number, indexHitSense.type);
                 return {
                     chain: [
                         { form: indexHit.lemma, translation: base },
@@ -697,7 +713,7 @@ const HungarianMorphology = (function () {
                 const deeperResolved = resolveNominal(dictionary, deeper);
                 if (!deeperResolved || !matches(deeperResolved.lemma)) continue;
                 const base = gloss(deeperResolved.sense);
-                const pluralPhrase = naivePluralize(base);
+                const pluralPhrase = naivePluralize(base, deeperResolved.sense.type);
                 return {
                     chain: [
                         { form: deeperResolved.lemma, translation: base },
@@ -718,7 +734,7 @@ const HungarianMorphology = (function () {
                 const deeperResolved = resolveNominal(dictionary, deeper);
                 if (!deeperResolved || !matches(deeperResolved.lemma)) continue;
                 const base = gloss(deeperResolved.sense);
-                const possPhrase = possessivePhrase(base, person, ownerNumber, possessedNumber);
+                const possPhrase = possessivePhrase(base, person, ownerNumber, possessedNumber, deeperResolved.sense.type);
                 return {
                     chain: [
                         { form: deeperResolved.lemma, translation: base },
@@ -738,7 +754,7 @@ const HungarianMorphology = (function () {
             return {
                 chain: [
                     { form: resolved.lemma, translation: base },
-                    { form: word, translation: possessivePhrase(base, person, ownerNumber, possessedNumber) }
+                    { form: word, translation: possessivePhrase(base, person, ownerNumber, possessedNumber, resolved.sense.type) }
                 ],
                 breakdown: splitPossessiveSuffix(suffix, person, ownerNumber, possessedNumber)
             };
@@ -758,7 +774,7 @@ const HungarianMorphology = (function () {
             return {
                 chain: [
                     { form: resolved.lemma, translation: base },
-                    { form: word, translation: naivePluralize(base) }
+                    { form: word, translation: naivePluralize(base, resolved.sense.type) }
                 ],
                 breakdown: [{ suffix: suffix, label: 'plural' }]
             };
@@ -1229,10 +1245,20 @@ const HungarianMorphology = (function () {
     function _pastLinkingClass(stem) {
         if (PAST_TYPE_I_LEXICAL.includes(stem)) return 'never';
         const unit = _finalConsonantUnit(stem);
-        if (unit && PAST_TYPE_I_SONORANTS.includes(unit)) return 'never';
+        // Type I only holds for a sonorant preceded by a VOWEL ("gondol" ->
+        // gondolt) — the same single-consonant-after-vowel test
+        // _needsLinkingVowel already makes for present tense. A sonorant
+        // preceded by another consonant ("ugr" in "ugrik", "csukl" in
+        // "csuklik") is a cluster and needs the linking vowel in every
+        // person just like any other cluster-final stem — this used to be
+        // missed entirely (checked only whether the FINAL letter was a
+        // sonorant, not what came before it), fabricating non-words like
+        // "ugrtam" instead of the real "ugrottam".
+        const clusterFinal = _needsLinkingVowel(stem);
+        if (unit && PAST_TYPE_I_SONORANTS.includes(unit) && !clusterFinal) return 'never';
         if (stem.endsWith('ít')) return 'always';
         if (_countVowels(stem) === 1 && stem.endsWith('t') && stem !== 'lát') return 'always';
-        if (_needsLinkingVowel(stem) && !stem.endsWith('d')) return 'always';
+        if (clusterFinal && !stem.endsWith('d')) return 'always';
         return 'only-3sg-indefinite';
     }
 
@@ -1372,26 +1398,38 @@ const HungarianMorphology = (function () {
     const IRREGULAR_DEFINITE_HINT = {
         2: { sg: 'ted', pl: 'tétek' }, 3: { sg: 'te', pl: 'ték' }, 1: { pl: 'tük' }
     };
+    // van/megy/jön/alszik are intransitive (no object to agree with, so
+    // "definite past" isn't a real thing for them, same as already-excluded
+    // present). eszik/iszik ARE transitive and DO have real, distinct
+    // definite past forms (ette, itta, ...) — but this table only carries
+    // their indefinite-shaped forms, so returning that single candidate for
+    // a definite request would silently hand back the wrong answer, same
+    // class of risk present tense already guards against for them.
+    const PAST_DEFINITE_EXCLUDED = new Set(['van', 'megy', 'jön', 'alszik', 'lesz', 'eszik', 'iszik']);
     function _irregularForm(lemma, tense, person, number, definite) {
         const candidates = Object.entries(IRREGULAR_VERBS)
             .filter(([, tags]) => tags[0] === lemma && tags[1] === tense && tags[2] === person && tags[3] === number);
         if (!candidates.length) return null; // known-irregular stem, but this cell isn't covered - don't guess
 
         if (candidates.length === 1) {
-            // A single candidate is the right answer regardless of the
-            // definite flag for PAST tense (van/megy/jön/alszik/lesz are
-            // intransitive — no object to agree with, so "definite past"
-            // isn't really a separate thing for them — and vesz/tesz/hisz/
-            // visz's genuinely-ambiguous cells are handled by the
-            // multi-candidate branch below). For PRESENT tense it isn't
-            // safe the same way: none of van/megy/jön/eszik/iszik/alszik's
-            // present entries were written with definiteness in mind, and
-            // eszik/iszik ARE transitive with real, different definite
-            // forms this table doesn't have — so a definite request there
-            // returns null (except 1sg, which is genuinely identical
-            // either way for every verb) rather than silently handing back
-            // the indefinite form as if it answered the question asked.
+            // 1sg is excluded from both guards below: Hungarian genuinely
+            // uses the same 1sg form for definite and indefinite regardless
+            // of tense or transitivity (vesz/tesz/hisz/visz's own table only
+            // lists one 1sg past entry each for exactly this reason), so
+            // returning it for a "definite" request isn't a wrong answer,
+            // just a non-distinguishing one.
+            //
+            // PRESENT: none of van/megy/jön/eszik/iszik/alszik's present
+            // entries were written with definiteness in mind, and eszik/
+            // iszik ARE transitive with real, different definite forms this
+            // table doesn't have — so a definite request there returns null
+            // rather than silently handing back the indefinite form as if
+            // it answered the question asked.
             if (tense === 'pres' && definite && !(person === 1 && number === 'sg')) return null;
+            // PAST: same reasoning, scoped to the lemmas above — vesz/tesz/
+            // hisz/visz's genuinely-ambiguous cells reach the multi-candidate
+            // branch below instead and aren't affected by this guard.
+            if (tense === 'past' && definite && PAST_DEFINITE_EXCLUDED.has(lemma) && !(person === 1 && number === 'sg')) return null;
             return candidates[0][0];
         }
 
@@ -1439,6 +1477,19 @@ const HungarianMorphology = (function () {
             return _irregularForm(lemma, tense, person, number, definite);
         }
 
+        // lesz ("to become") is intransitive but is only irregular in the
+        // PAST tense (present is fully regular — leszek, leszel, lesz, ...
+        // — so it has no 'pres' entries in IRREGULAR_VERBS at all), which
+        // means the branch above never runs for it in present tense and
+        // dispatch falls straight to the regular generator below. Unlike
+        // _irregularForm, that generator has no concept of transitivity and
+        // would happily fabricate non-word "definite" forms (leszem, leszi,
+        // ...) for a verb with no object to agree with. lesz is the one
+        // lemma in this scope irregular in only one tense while needing a
+        // definite exclusion in the other, so it needs its own guard here
+        // rather than fitting the IRREGULAR_LEMMAS-gated check above.
+        if (lemma === 'lesz' && tense === 'pres' && definite && !(person === 1 && number === 'sg')) return null;
+
         if (tense === 'pres') {
             return definite ? _conjugatePresentDefinite(lemma, person, number) : _conjugatePresentIndefinite(lemma, person, number);
         }
@@ -1449,6 +1500,7 @@ const HungarianMorphology = (function () {
         analyze: analyze, describe: describe, ladder: ladder, isNominal: isNominal,
         nominalSense: nominalSense, verbSense: verbSense, anySense: anySense,
         conjugate: conjugate,
+        naivePluralize: naivePluralize,
         caseName: caseName, caseSuffixLabel: caseSuffixLabel,
         casesList: function () {
             return Object.keys(CASE_LABELS).map(code => ({
@@ -1519,16 +1571,29 @@ const HungarianMorphology = (function () {
 //     ones — neither source consulted documented a linking variant for
 //     these three cells the way they did for 3sg/3pl, but that could be
 //     the sources' own gap rather than Hungarian's; unconfirmed either way
-//   - eszik/iszik/alszik have no past-tense DEFINITE forms in
-//     IRREGULAR_VERBS (only the shared indefinite-shaped ones), so
-//     conjugate() hands back those indefinite-shaped forms for definite
-//     requests too rather than the (plausibly different, e.g. "ette" vs
-//     "evett") real definite forms — same category of gap as vesz/tesz/
-//     hisz/visz already being explicitly disambiguated, just not done yet
-//     for these three
+//   - eszik/iszik have no past-tense DEFINITE forms in IRREGULAR_VERBS
+//     (only the shared indefinite-shaped ones) — same category of gap as
+//     vesz/tesz/hisz/visz already being explicitly disambiguated, just not
+//     done yet for these two (real forms would be "ette"/"itta" etc., not
+//     derivable from IRREGULAR_DEFINITE_HINT as-is since it only covers
+//     front-harmony endings and iszik's are back-harmony). **Partially
+//     fixed 2026-08-27**: conjugate() no longer hands back the indefinite-
+//     shaped form for a definite request (that was actively wrong, e.g.
+//     the driller presenting "evett" as the graded-correct definite
+//     answer) — PAST_DEFINITE_EXCLUDED in _irregularForm now returns null
+//     for eszik/iszik definite past instead, same as it already did for
+//     alszik/van/megy/jön, which are truly intransitive. The real definite
+//     forms still aren't authored; this only stops the wrong guess.
 //   - the "-ad/-ed" past-tense lexical exception list (PAST_TYPE_I_LEXICAL:
 //     marad, ébred, fárad) is a hand-picked few, not the full closed set
 //   - _pastLinkingClass's Type-I sonorant list (r, l, n, ny, j, ly) is
-//     cross-sourced but only spot-checked against "vár"; the other five
-//     consonants weren't individually re-verified the way the harmony
-//     exception lists were after "hisz"/"visz" turned up wrong there
+//     cross-sourced but only spot-checked against "vár". **Fixed
+//     2026-08-27**: the list itself wasn't the problem — the classifier
+//     was checking only whether the stem's FINAL letter was a sonorant,
+//     not whether that sonorant was preceded by a vowel (true Type I,
+//     e.g. "gondol" -> gondolt) or by another consonant (a cluster,
+//     e.g. "ugr" in "ugrik", which needs the linking vowel in every
+//     person like any other cluster-final stem: ugrottam, not ugrtam).
+//     Now gated on the same single-consonant-after-vowel test
+//     (_needsLinkingVowel) present tense already uses. The list itself is
+//     still only spot-checked per-consonant against "vár".

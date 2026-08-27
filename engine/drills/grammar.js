@@ -210,7 +210,11 @@ const GrammarDriller = (function () {
     // ================================================================
     function _renderSettings() {
         const modules = (_bank.modules || []).slice().sort((a, b) => a.title.localeCompare(b.title));
-        const totalItems = _bank.items.length;
+        // Bank items plus every lesson exercise across every skill — for a
+        // course with no hand-authored bank yet (e.g. Hungarian), this is
+        // the whole count, not "0+ items" implying the pool is empty when
+        // it isn't.
+        const totalItems = _bank.items.length + Object.values(_index.bySkill).flat().length;
 
         _container.innerHTML = `
             <div class="gd-settings">

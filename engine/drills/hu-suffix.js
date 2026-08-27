@@ -159,11 +159,18 @@ const HuSuffixDriller = (function () {
     }
 
     // ---- English question text for one entry ----
+    // Pluralization goes through HungarianMorphology.naivePluralize(gloss,
+    // entry.tag.pos) rather than a bare "+ 's'" — gated by POS so an
+    // adjective entry (this driller's pool is noun/adjective, see _load())
+    // doesn't get "freshs", and it already trims a truncated gloss's
+    // trailing "…" and drops all but the first sense of a multi-sense
+    // gloss before pluralizing, avoiding the doubled/tripled "s" and
+    // singular/plural-mismatch issues a plain "+ 's'" produced.
     function _promptFor(entry) {
         const gloss = _gloss(entry.lemma);
         if (entry.tag.person) {
             const owner = OWNER_WORDS[entry.tag.person][entry.tag.ownerNumber];
-            const possessed = entry.tag.number === 'pl' ? gloss + 's' : gloss;
+            const possessed = entry.tag.number === 'pl' ? HungarianMorphology.naivePluralize(gloss, entry.tag.pos) : gloss;
             return owner + ' ' + possessed;
         }
         if (entry.tag.case) {
@@ -172,13 +179,11 @@ const HuSuffixDriller = (function () {
             // ("szerkezetűekre" = szerkezetű + plural + sublative) — the
             // case branch used to ignore tag.number entirely, so the
             // prompt read as if the answer were singular even when the
-            // only correct form was the plural one. Naive English "+s"
-            // matches the same pluralisation the possessive branch above
-            // already uses.
-            const noun = entry.tag.number === 'pl' ? gloss + 's' : gloss;
+            // only correct form was the plural one.
+            const noun = entry.tag.number === 'pl' ? HungarianMorphology.naivePluralize(gloss, entry.tag.pos) : gloss;
             return prep + ' ' + noun;
         }
-        return gloss + 's'; // plural
+        return HungarianMorphology.naivePluralize(gloss, entry.tag.pos); // plural
     }
 
     // Decoys: real forms of OTHER lemmas carrying the exact same tag
