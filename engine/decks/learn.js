@@ -12,18 +12,23 @@
 // the deck isn't touched until this round is cleared, which is what
 // keeps a single pass manageable instead of dumping a 40+ word deck into
 // one session. Within a round, each word must be answered correctly at
-// each of four STAGES, in order, before it's mastered and drops out:
-//   1. Multiple choice, English shown -> pick the target-language term.
-//   2. Multiple choice, target-language term shown -> pick the English
-//      meaning (the reverse direction, so recognition is solid both ways
-//      before asking for production).
-//   3. Typed, target-language term shown -> type the English meaning.
-//      Free recall rather than a pick from options, but still graded
-//      leniently (synonyms accepted, no accent-checking — it's English)
-//      since this stage is testing recall of MEANING, not spelling.
-//   4. Typed, English shown -> type the target-language term. The one
-//      stage that has to be perfect: graded strictly, accents included
-//      (see _gradeTarget below) — genuine production, so it's last.
+// each of four STAGES, in order, before it's mastered and drops out
+// (sequence and grading per explicit direction, 2026-08-27 — "the learn
+// sequence should be from target to English, then multiple choice also
+// from English to target, then from English to target typed no accent
+// checking, and the fourth one should be from English to target.
+// Perfect."):
+//   1. Multiple choice, target-language term shown -> pick the English
+//      meaning.
+//   2. Multiple choice, English shown -> pick the target-language term
+//      (the reverse direction, so recognition is solid both ways before
+//      asking for production).
+//   3. Typed, English shown -> type the target-language term, graded
+//      leniently (accents not checked — see _gradeTargetLenient below).
+//      A first, lower-stakes rep at production before the real test.
+//   4. Typed, English shown -> type the target-language term again, the
+//      same direction as stage 3 but graded strictly this time — accents
+//      included (_gradeTarget) — "has to be perfect," so it's last.
 // A wrong answer at any stage doesn't demote the word, just re-asks the
 // same stage a few questions later (_requeue) rather than immediately —
 // long enough that the answer isn't just sitting in short-term memory,
@@ -51,14 +56,15 @@ const DeckLearn = (function () {
     // Increasing difficulty, in order. `kind` is 'mc' or 'typed'; `prompt`/
     // `answer` say which field (lemma or translation) is shown as the
     // question vs. expected as the answer (multiple-choice options, or —
-    // for 'typed' — which grading function and strictness apply: typing
-    // the translation is graded leniently by _gradeEnglish, typing the
-    // lemma is graded strictly by _gradeTarget).
+    // for 'typed', which is always target-language production here — the
+    // value graded against). `strict` (typed stages only) picks the
+    // grading function: false is _gradeTargetLenient (accents optional),
+    // true is _gradeTarget (accents required).
     const STAGES = [
-        { kind: 'mc', prompt: 'translation', answer: 'lemma', label: 'Step 1 of 4 · Recognize it' },
-        { kind: 'mc', prompt: 'lemma', answer: 'translation', label: 'Step 2 of 4 · Recall it' },
-        { kind: 'typed', prompt: 'lemma', answer: 'translation', label: 'Step 3 of 4 · Translate it' },
-        { kind: 'typed', prompt: 'translation', answer: 'lemma', label: 'Step 4 of 4 · Produce it' }
+        { kind: 'mc', prompt: 'lemma', answer: 'translation', label: 'Step 1 of 4 · Recognize it' },
+        { kind: 'mc', prompt: 'translation', answer: 'lemma', label: 'Step 2 of 4 · Recall it' },
+        { kind: 'typed', prompt: 'translation', answer: 'lemma', strict: false, label: 'Step 3 of 4 · Try producing it' },
+        { kind: 'typed', prompt: 'translation', answer: 'lemma', strict: true, label: 'Step 4 of 4 · Produce it perfectly' }
     ];
 
     let _container = null;
@@ -97,38 +103,41 @@ const DeckLearn = (function () {
         return (typeof Lang !== 'undefined' && Lang.name) ? Lang.name() : 'the target language';
     }
 
-    // Lenient on purpose: this grades free-typed ENGLISH meanings against a
-    // gloss that's often several synonyms ("hello / hi", "to see, to
-    // watch") — an exact-string match would fail a learner who typed a
-    // perfectly good synonym.
-    function _normaliseEnglish(text) {
-        return String(text || '').toLowerCase().trim().replace(/^(to|a|an|the)\s+/, '');
-    }
-
-    // Strict on purpose, unlike the English grading above: accents are
-    // checked for every language here, matching the standard the main
-    // lesson flow settled on for the same reason (engine/lessons.js's
-    // normalise(), 2026-08-27) — an accent is often the entire distinction
-    // between two different target-language words, not typing friction to
-    // wave through. Only Unicode representation (NFC) and surrounding
-    // punctuation/whitespace are normalised; the accent itself never is.
-    // Lenient about the article, though: a learner who typed the bare noun
-    // without "el"/"la" still knew the word.
+    // Base normalisation shared by both typed-target graders: lowercase,
+    // trim, drop terminal punctuation, and settle Unicode representation
+    // (NFC) so a precomposed accented letter from one keyboard/IME matches
+    // a decomposed one from another — representation, not leniency.
     function _normaliseTarget(text) {
         return String(text || '').toLowerCase().trim().replace(/[.,!?¡¿;:]/g, '').normalize('NFC');
     }
 
-    function _gradeEnglish(input, translation) {
-        const guess = _normaliseEnglish(input);
-        if (!guess) return false;
-        const alternatives = String(translation || '').split(/[\/,;]/).map(_normaliseEnglish).filter(Boolean);
-        return alternatives.includes(guess);
+    // Accent marks stripped entirely (Unicode combining-diacritic range),
+    // for the deliberately lenient first production stage (stage 3) —
+    // "no accent checking" per the 2026-08-27 direction above.
+    function _stripAccents(text) {
+        return text.normalize('NFD').replace(/[̀-ͯ]/g, '');
     }
 
+    // Strict: accents checked, matching the standard the main lesson flow
+    // settled on for the same reason (engine/lessons.js's normalise(),
+    // also 2026-08-27) — an accent is often the entire distinction between
+    // two different target-language words, not typing friction to wave
+    // through. Lenient about the article, though: a learner who typed the
+    // bare noun without "el"/"la" still knew the word.
     function _gradeTarget(input, lemma) {
         const guess = _normaliseTarget(input);
         if (!guess) return false;
         return guess === _normaliseTarget(lemma) || guess === _normaliseTarget(_withArticle(lemma));
+    }
+
+    // Lenient: same as above but with accents stripped from both sides
+    // first — a first rep at production shouldn't fail over a missed
+    // accent when a stricter identical-direction stage is coming right
+    // after it.
+    function _gradeTargetLenient(input, lemma) {
+        const guess = _stripAccents(_normaliseTarget(input));
+        if (!guess) return false;
+        return guess === _stripAccents(_normaliseTarget(lemma)) || guess === _stripAccents(_normaliseTarget(_withArticle(lemma)));
     }
 
     // ---- Round setup ----
@@ -250,7 +259,7 @@ const DeckLearn = (function () {
 
     function _renderTyped(stage) {
         const promptText = stage.prompt === 'lemma' ? _withArticle(_current.lemma) : _current.translation;
-        const placeholder = stage.answer === 'lemma' ? `Type it in ${_targetLabel()}` : 'Type it in English';
+        const placeholder = `Type it in ${_targetLabel()}`;
         _container.innerHTML = `
             <div class="dkl">
                 <div class="dkl-head">
@@ -279,9 +288,8 @@ const DeckLearn = (function () {
         _solved = true;
         const stage = STAGES[_current.stage];
         const input = _container.querySelector('.dkl-input');
-        const targetAnswer = stage.answer === 'lemma'; // strict target-language production vs. lenient English recall
-        const ok = targetAnswer ? _gradeTarget(input.value, _current.lemma) : _gradeEnglish(input.value, _current.translation);
-        const correctAnswerText = targetAnswer ? _withArticle(_current.lemma) : _current.translation;
+        const ok = stage.strict ? _gradeTarget(input.value, _current.lemma) : _gradeTargetLenient(input.value, _current.lemma);
+        const correctAnswerText = _withArticle(_current.lemma);
         input.disabled = true;
         input.classList.toggle('dkl-input-correct', ok);
         input.classList.toggle('dkl-input-wrong', !ok);

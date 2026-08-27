@@ -275,47 +275,54 @@ track known bugs in existing content rather than things not yet built.
     direction toggle flipped its `aria-checked` state correctly in both
     runs. No console/page errors in either run.
 - [x] Learn mode: gradual, smaller-batch recall instead of one giant pass.
-  Feedback: "you only go through one round, and it's not enough... not
-  too many words at one go... maybe seven, maximum ten... it needs to be
-  asked at least three times with increasing difficulty," followed same
-  day by a refinement once the three-stage version was live: "what if we
-  do four stages? And the third is typed English, but it is not accent
-  sensitive. And the last one is it has to be perfect." **Done
-  2026-08-27** — `engine/decks/learn.js` rewritten (and its stage count
-  revised within the same day per that follow-up):
+  Feedback arrived in three rounds the same day. First: "you only go
+  through one round, and it's not enough... not too many words at one
+  go... maybe seven, maximum ten... it needs to be asked at least three
+  times with increasing difficulty." Then, once a three-stage version was
+  live: "what if we do four stages? And the third is typed English, but
+  it is not accent sensitive. And the last one is it has to be perfect."
+  Then, once that four-stage version was live: "the learn sequence should
+  be from target to English, then multiple choice also from English to
+  target, then from English to target typed no accent checking, and the
+  fourth one should be from English to target. Perfect. That's the right
+  four step sequence." **Done 2026-08-27** — `engine/decks/learn.js`
+  rewritten, then revised twice more the same day to land on the final
+  sequence below:
   - The deck is shuffled once and chunked into rounds of 7 words
     (`ROUND_SIZE`, the low end of the range asked for, and roughly what
     Quizlet's own Learn mode uses) rather than the whole deck at once —
     only the current round's words are in play; the rest of the deck
     isn't touched until the round clears.
-  - Each word now needs to pass four `STAGES`, in order, before it's
-    mastered and drops out of the round: (1) multiple choice, English
-    shown, pick the target-language term; (2) multiple choice, the
-    target-language term shown, pick the English meaning — the reverse
-    direction, so recognition holds both ways before asking for
-    production; (3) typed, target-language term shown, type the English
-    meaning — free recall rather than a pick from options, but still
-    graded leniently since it's testing recall of meaning, not spelling;
-    (4) typed, English shown, type the target-language term — the stage
-    that "has to be perfect," graded strictly, last because it's hardest.
-    Passing a stage re-queues the word a few questions later rather than
-    immediately (existing `_requeue`, `RETRY_DELAY`), so a word isn't
-    tested at increasing difficulty four times in a row — it comes back
-    around, which is the actual "gradual recall" the feedback was asking
-    for rather than four consecutive ticks. A wrong answer at any stage
-    doesn't demote it, just re-asks the same stage again a few questions
-    later.
-  - The two typed stages are graded on purpose-different standards, per
-    the follow-up feedback: stage 3 (typed English) reuses the existing
-    lenient, synonym-splitting grading ("hello / hi" both pass, no
-    accent-checking — it's English) since it's testing whether the
-    meaning landed, not exact spelling. Stage 4 (typed target-language)
-    is accent-strict, matching the standard the main lesson flow settled
-    on for the same reason (`engine/lessons.js`'s `normalise()`, also
-    2026-08-27): an accent is often the entire distinction between two
-    target-language words, not typing friction to wave through. Only
-    Unicode representation (NFC) and surrounding punctuation are
-    normalised there, and the article is optional either way.
+  - Each word needs to pass four `STAGES`, in order, before it's mastered
+    and drops out of the round — the final locked-in sequence: (1)
+    multiple choice, target-language term shown, pick the English
+    meaning; (2) multiple choice, English shown, pick the target-language
+    term — the reverse direction, so recognition holds both ways before
+    asking for production; (3) typed, English shown, type the
+    target-language term, graded leniently — accents not checked
+    (`_gradeTargetLenient`) — a first, lower-stakes rep at production; (4)
+    typed, English shown, type the target-language term again, same
+    direction as stage 3 but graded strictly this time — accents included
+    (`_gradeTarget`) — "has to be perfect," so it's last. Passing a stage
+    re-queues the word a few questions later rather than immediately
+    (`_requeue`, `RETRY_DELAY`), so a word isn't tested four times in a
+    row back-to-back — it comes back around, the "gradual recall" the
+    original feedback asked for. A wrong answer at any stage doesn't
+    demote it, just re-asks the same stage again a few questions later.
+  - The two typed stages share one direction (English shown, type the
+    target-language term) and differ only in strictness, per the final
+    direction above — a deliberate change from the previous version's
+    typed-English-meaning stage, which this replaced outright. Both share
+    `_normaliseTarget` (lowercase, trims, drops terminal punctuation, NFC
+    Unicode representation) as a base; `_gradeTargetLenient` (stage 3)
+    additionally strips accent marks from both sides before comparing,
+    while `_gradeTarget` (stage 4) leaves them in, matching the standard
+    the main lesson flow settled on for the same reason
+    (`engine/lessons.js`'s `normalise()`, also 2026-08-27) — an accent is
+    often the entire distinction between two target-language words. Both
+    stay lenient about the article either way. The now-unused
+    `_gradeEnglish`/`_normaliseEnglish` (the old lenient-English grading)
+    were deleted along with the stage that used them.
   - Once every word in a round is mastered, the next round starts
     automatically via a "Round N complete — continue" screen (or, on the
     last round, the existing results screen) rather than silently
@@ -324,24 +331,20 @@ track known bugs in existing content rather than things not yet built.
     (fewer than 2 usable decoys, checked against the whole deck's word
     pool, not just the round) skips that stage rather than asking a
     spuriously easy 1-option question — verified live down to a 2-word
-    deck, which lands directly on stage 3 (typed English) for both words,
-    both MC stages having nothing to build options from.
-  - Verified live end-to-end via Playwright, twice — once for the initial
-    three-stage version, then again after the four-stage revision — both
-    via a temporary in-module debug hook (added, exercised, then removed
-    before each commit) to drive real gameplay deterministically. Final
-    pass: a 46-word deck correctly read "Round 1 of 7 · 0 of 46 words
-    learned," "Step 1 of 4 · Recognize it," with an English-prompt,
-    Spanish-option first question, answered correctly; a 2-word custom
-    deck (café/coffee, año/year) skipped both MC stages straight to stage
-    3 (typed English), accepted "  COFFEE  " and "YEAR" despite case and
-    stray whitespace (the lenient grading working as intended), then at
-    stage 4 (typed Spanish) required and accepted the exact accented
-    "café"/"año", finishing "All 2 words learned! 100% accuracy across 4
-    questions · 1 round". Earlier three-stage pass additionally confirmed
-    a 9-word deck splitting into two rounds (7 + 2) with a correct "Round
-    1 complete — 7 words mastered" transition. No console/page errors in
-    any run.
+    deck, which lands directly on stage 3 (typed, lenient) for both
+    words, both MC stages having nothing to build options from.
+  - Verified live end-to-end via Playwright across all three revisions,
+    each via a temporary in-module debug hook (added, exercised, then
+    removed before each commit) to drive real gameplay deterministically.
+    Final pass: a 46-word deck's first question showed the target-language
+    term as the prompt with English-meaning options (stage 1's "target to
+    English" direction, per the final sequence); a 2-word custom deck
+    (café/año) skipped both MC stages straight to stage 3, where typing
+    the unaccented "cafe"/"ano" was accepted ("✓ Correct!") — confirming
+    the lenient grading — then at stage 4 the same unaccented input was
+    correctly rejected ("✗ café"/"✗ el año") across several repeated
+    requeues, confirming the strict grading holds distinctly from stage
+    3's. No console/page errors in any run.
 - [x] Decks screen: the top of the tab took up too much space. Feedback:
   "there should be two big numbers. No. Maybe three big numbers. First
   one should be waiting to review... the one in the middle should be
