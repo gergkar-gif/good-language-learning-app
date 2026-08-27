@@ -340,29 +340,32 @@ function shuffledOptions(options, correct) {
     };
 }
 
-// Dropping accents before comparing a typed answer is a deliberate
-// leniency for Spanish (see exercises.schema.json's fill-blank
-// description) - rarely changes which word is meant, so it is friendlier
-// to a learner without a Spanish keyboard. It is NOT safe for Hungarian:
-// accents there are often the entire distinction between different words
-// or grammatical forms (kor / kor-with-acute / kor-with-umlaut are three
-// unrelated words; several lessons exist specifically to teach a vowel
-// pattern like viz -> vizet), and checked directly - 187 of the course's
-// 394 fill-blank answers carry an accent. Stripping them the same way
-// would make those exercises unable to verify the one thing many of them
-// are actually testing.
+// Accents are checked directly for every language, Spanish included as of
+// 2026-08-27. Spanish used to drop them before comparing (leniency for a
+// learner without a Spanish keyboard), but that leniency was hiding real
+// content bugs rather than typing friction: a2-14-01's own grammar tip
+// teaches "qué/dónde/cuándo/cómo carry an accent because they're asking,
+// not relating" while the old lenient check accepted "que/donde/cuando/como"
+// as equally correct for the same blank, silently disproving the lesson it
+// sat right next to. A corpus-wide check of every interrogative/relative
+// minimal pair (qué/que, cómo/como, dónde/donde, cuándo/cuando, cuál/cual,
+// quién/quien) across every fill-blank and sentence-builder answer in A1,
+// A2, and B1 found the content itself already gets this right everywhere -
+// it was only the grading that was lenient. Hungarian was never lenient
+// here: accents there are often the entire distinction between different
+// words or grammatical forms (kor / kor-with-acute / kor-with-umlaut are
+// three unrelated words), so this makes Spanish consistent with the
+// standard the course already held Hungarian to.
 function normalise(text) {
     const value = String(text || '')
         .toLowerCase()
         .trim()
         .replace(/[.,!?¡¿;:]/g, '');
-    if (Lang.code() === 'hu') {
-        // Still normalise Unicode representation (NFC) so a precomposed
-        // accented letter typed on one keyboard/IME matches a decomposed
-        // one from another - just do not strip the accent itself.
-        return value.normalize('NFC');
-    }
-    return value.normalize('NFD').replace(/[̀-ͯ]/g, '');
+    // Normalise Unicode representation (NFC) so a precomposed accented
+    // letter typed on one keyboard/IME matches a decomposed one from
+    // another - this is normalisation of representation, not leniency;
+    // the accent itself is never stripped.
+    return value.normalize('NFC');
 }
 
 function feedbackHtml() {

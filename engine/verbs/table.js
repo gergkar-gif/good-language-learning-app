@@ -24,9 +24,15 @@ const VerbsTable = (function () {
         return d.innerHTML;
     }
 
+    // Accents are checked directly (2026-08-27) \u2014 a conjugated form's
+    // accent can be the only thing distinguishing it from another person
+    // or tense (hablo "I speak" vs habl\u00f3 "he/she spoke"), so stripping it
+    // would let a wrong answer through undetected. Still canonicalise to
+    // NFC so a decomposed accented letter from some keyboards/IMEs
+    // string-equals a precomposed one, without discarding the accent
+    // itself.
     function _normalise(text) {
-        return String(text || '').toLowerCase().trim()
-            .normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+        return String(text || '').toLowerCase().trim().normalize('NFC');
     }
 
     function _getTenseData(verb, tensePath) {
@@ -125,7 +131,8 @@ const VerbsTable = (function () {
             if (normalisedUser === normalisedCorrect && userVal.trim() !== '') {
                 input.classList.add('vtable-correct');
                 input.readOnly = true;
-                // Fix accent/casing to canonical form
+                // Fix casing to canonical form (accents must already match
+                // to reach this branch, now that they're checked directly)
                 if (userVal !== correctAnswer.toLowerCase()) {
                     input.value = correctAnswer;
                 }

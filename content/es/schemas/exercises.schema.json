@@ -192,7 +192,7 @@
     },
     "fillBlank": {
       "type": "object",
-      "description": "Type the missing word. Answers are compared with accents and punctuation stripped and case ignored, so 'soy' matches 'Soy'. On failure the answer is filled in.",
+      "description": "Type the missing word. Answers are compared with punctuation stripped and case ignored, so 'soy' matches 'Soy' - but accents are checked directly (as of 2026-08-27), so 'que' does not match 'qué'. On failure the answer is filled in.",
       "required": [
         "id",
         "type",

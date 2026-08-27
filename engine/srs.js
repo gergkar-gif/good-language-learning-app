@@ -582,12 +582,14 @@ function showAnswer() {
     revealAnswer();
 }
 
-// Same normalisation lessons.js/GrammarRunner use elsewhere: case, whitespace,
-// punctuation and accents stripped, so "dia" still matches "día".
+// Same normalisation lessons.js/GrammarRunner use elsewhere: case,
+// whitespace and punctuation stripped, but accents checked directly
+// (2026-08-27) - "dia" no longer matches "día", matching the standard the
+// rest of the course now holds accents to for both languages.
 function srsNormalise(text) {
     return String(text || '').toLowerCase().trim()
         .replace(/[.,!?¡¿;:]/g, '')
-        .normalize('NFD').replace(/[̀-ͯ]/g, '');
+        .normalize('NFC');
 }
 
 // The English side is often a list of near-synonyms ("hello / hi", "to

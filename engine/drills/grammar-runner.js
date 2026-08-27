@@ -38,19 +38,20 @@ const GrammarRunner = (function () {
         return d.innerHTML;
     }
 
-    // Accent-stripping is lenient grading Spanish wants (á≈a) but Hungarian
-    // can't afford — a/á, o/ó/ö/ő, u/ú/ü/ű are distinct letters there, not
-    // accent variants of one letter, so stripping them would silently accept
-    // wrong-vowel-length answers as correct. Still canonicalise to NFC
-    // (compose, don't strip) even for Hungarian — an accented letter typed
-    // via IME/some keyboards can arrive decomposed (e + combining acute)
-    // rather than precomposed (é), which renders identically but wouldn't
-    // string-equal a source-file literal without this.
+    // Accents are checked directly for every language (2026-08-27) — this
+    // mirrors engine/lessons.js's normalise(), which used to strip them for
+    // Spanish as lenient grading (á≈a) but that leniency was hiding real
+    // content bugs: Spanish minimal pairs like qué/que and dónde/donde are
+    // taught as accent-distinguished on purpose, so accepting the unaccented
+    // form as correct silently defeated those lessons. Still canonicalise to
+    // NFC (compose, don't strip) — an accented letter typed via IME/some
+    // keyboards can arrive decomposed (e + combining acute) rather than
+    // precomposed (é), which renders identically but wouldn't string-equal a
+    // source-file literal without this.
     function _normalise(text) {
-        const base = String(text || '').toLowerCase().trim().replace(/[.,!?¡¿;:]/g, '');
-        return (typeof Lang !== 'undefined' && Lang.code() === 'hu')
-            ? base.normalize('NFC')
-            : base.normalize('NFD').replace(/[̀-ͯ]/g, '');
+        return String(text || '').toLowerCase().trim()
+            .replace(/[.,!?¡¿;:]/g, '')
+            .normalize('NFC');
     }
 
     function _shuffled(list) {

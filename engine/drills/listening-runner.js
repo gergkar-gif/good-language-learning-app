@@ -33,10 +33,12 @@ const ListeningRunner = (function () {
         return d.innerHTML;
     }
 
+    // Accents are checked directly (2026-08-27) — see engine/lessons.js's
+    // normalise() for why.
     function _normalise(text) {
         return String(text || '').toLowerCase().trim()
             .replace(/[.,!?¡¿;:]/g, '')
-            .normalize('NFD').replace(/[̀-ͯ]/g, '');
+            .normalize('NFC');
     }
 
     function _shuffled(list) {

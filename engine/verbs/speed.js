@@ -40,9 +40,11 @@ const VerbsSpeed = (function () {
         return d.innerHTML;
     }
 
+    // Accents are checked directly (2026-08-27) \u2014 see engine/verbs/table.js's
+    // _normalise for why (a conjugated form's accent can be the only thing
+    // distinguishing it from another person or tense).
     function _normalise(text) {
-        return String(text || '').toLowerCase().trim()
-            .normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+        return String(text || '').toLowerCase().trim().normalize('NFC');
     }
 
     function _getTenseData(verb, tensePath) {
