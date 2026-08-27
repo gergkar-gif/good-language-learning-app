@@ -27,11 +27,15 @@ const Sound = (function () {
     let ctx = null;
     let noiseBuffer = null;
 
+    // Off by default: the redesigned rustle/bowl palette still read as
+    // annoying in practice, so sound now requires an explicit opt-in via
+    // the mute toggle rather than playing until someone turns it off.
     function muted() {
         try {
-            return localStorage.getItem(MUTE_KEY) === '1';
+            const stored = localStorage.getItem(MUTE_KEY);
+            return stored === null ? true : stored === '1';
         } catch (error) {
-            return false;
+            return true;
         }
     }
 
