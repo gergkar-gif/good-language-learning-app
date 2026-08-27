@@ -491,14 +491,14 @@ const HungarianMorphology = (function () {
     // a single row rather than a fake second one with nothing in it.
     function splitPossessiveSuffix(suffixStr, person, ownerNumber, possessedNumber) {
         const wholeLabel = describePossessive(person, ownerNumber, possessedNumber);
-        if (possessedNumber !== 'pl') return [{ suffix: suffixStr, label: wholeLabel }];
+        if (possessedNumber !== 'pl') return [{ suffix: suffixStr, label: wholeLabel, concept: 'possessive' }];
         const m = suffixStr.match(/^(j?[ae]i)(.*)$/);
-        if (!m || !m[2]) return [{ suffix: suffixStr, label: wholeLabel }];
+        if (!m || !m[2]) return [{ suffix: suffixStr, label: wholeLabel, concept: 'possessive' }];
         const personLabel = { 1: { sg: 'my', pl: 'our' }, 2: { sg: 'your', pl: 'your' },
             3: { sg: 'his/her', pl: 'their' } }[person][ownerNumber];
         return [
-            { suffix: m[1], label: 'plural/possessive' },
-            { suffix: m[2], label: personLabel }
+            { suffix: m[1], label: 'plural/possessive', concept: 'possessive' },
+            { suffix: m[2], label: personLabel, concept: 'possessive' }
         ];
     }
 
@@ -661,7 +661,13 @@ const HungarianMorphology = (function () {
             const remainder = strip(word, suffix);
             if (remainder === null) continue;
             const prep = CASE_PREPOSITION[caseCode];
-            const caseBreakdown = { suffix: suffix, label: caseSuffixLabel(caseCode) };
+            // `concept` is the same key content/hu/reference/cases.json uses
+            // (a case code, or 'plural'/'possessive' elsewhere in this
+            // function) — purely additive, existing consumers only read
+            // .suffix/.label/.why. Lets a caller like hu-morphology.js's
+            // Workshop driller look up a general reference for whichever
+            // suffix layer a question is actually about.
+            const caseBreakdown = { suffix: suffix, label: caseSuffixLabel(caseCode), concept: caseCode };
             const caseWhy = caseSuffixWhy(suffix, caseCode);
             if (caseWhy) caseBreakdown.why = caseWhy;
 
@@ -720,7 +726,7 @@ const HungarianMorphology = (function () {
                         { form: remainder, translation: pluralPhrase },
                         { form: word, translation: prep ? prep + ' ' + pluralPhrase : pluralPhrase + ' (' + caseName(caseCode) + ')' }
                     ],
-                    breakdown: [{ suffix: plSuffix, label: 'plural' }, caseBreakdown]
+                    breakdown: [{ suffix: plSuffix, label: 'plural', concept: 'plural' }, caseBreakdown]
                 };
             }
 
@@ -776,7 +782,7 @@ const HungarianMorphology = (function () {
                     { form: resolved.lemma, translation: base },
                     { form: word, translation: naivePluralize(base, resolved.sense.type) }
                 ],
-                breakdown: [{ suffix: suffix, label: 'plural' }]
+                breakdown: [{ suffix: suffix, label: 'plural', concept: 'plural' }]
             };
         }
 

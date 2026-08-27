@@ -154,6 +154,21 @@ const HuVerbDriller = (function () {
         return HungarianMorphology.personLabel(f.person, f.number);
     }
 
+    // The general reference for whichever tense/definiteness combo the
+    // whole SESSION is set to — unlike Suffix/Morphology's per-word
+    // reference, this doesn't vary question to question, since a Verb
+    // Driller session tests one fixed combo throughout (see the Tense/
+    // Definite toggles above). Definiteness is the one genuinely hard
+    // concept here, so it's always included; the past-tense note (a
+    // smaller, easier fact already covered by the settings-screen toggle)
+    // only joins it for a past-tense session, where it's actually relevant.
+    function _moreInfo() {
+        return {
+            title: (_definite ? 'Definite' : 'Indefinite') + ' Conjugation',
+            explanation: _tense === 'past' ? TENSE_INFO + ' ' + DEFINITE_INFO : DEFINITE_INFO
+        };
+    }
+
     // 1. Recognition — a conjugated form -> which person is it.
     function _buildRecognition(verb) {
         const target = _sample(verb.forms);
@@ -164,7 +179,8 @@ const HuVerbDriller = (function () {
             question: `"${target.form}" — which person is this?`,
             options,
             correct: options.indexOf(_personLabel(target)),
-            explanation: `${verb.lemma} = ${verb.gloss}`
+            explanation: `${verb.lemma} = ${verb.gloss}`,
+            moreInfo: _moreInfo()
         };
     }
 
@@ -178,7 +194,8 @@ const HuVerbDriller = (function () {
             question: `${target.pronoun} ___.`,
             options,
             correct: options.indexOf(target.form),
-            explanation: `${verb.lemma} = ${verb.gloss}`
+            explanation: `${verb.lemma} = ${verb.gloss}`,
+            moreInfo: _moreInfo()
         };
     }
 
@@ -189,7 +206,8 @@ const HuVerbDriller = (function () {
             kind: 'fill-blank',
             sentence: `"${verb.lemma}" (${verb.gloss}), ${_personLabel(target)} (${target.pronoun}) = ______`,
             answer: target.form,
-            explanation: `${verb.lemma} = ${verb.gloss}`
+            explanation: `${verb.lemma} = ${verb.gloss}`,
+            moreInfo: _moreInfo()
         };
     }
 
@@ -201,7 +219,8 @@ const HuVerbDriller = (function () {
             kind: 'fill-blank',
             sentence: `${from.pronoun} ${from.form} → ${to.pronoun} ______`,
             answer: to.form,
-            explanation: `${verb.lemma} = ${verb.gloss}`
+            explanation: `${verb.lemma} = ${verb.gloss}`,
+            moreInfo: _moreInfo()
         };
     }
 

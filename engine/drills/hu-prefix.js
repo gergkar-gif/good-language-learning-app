@@ -72,6 +72,16 @@ const HuPrefixDriller = (function () {
     let _container = null;
 
     let _prefixes = null; // [{prefix, sense}], longest prefix first
+
+    // content/hu/reference/prefixes.json — a deeper note on each preverb
+    // than the bare sense gloss (`_quizSense()`) already shown in the
+    // question/explanation: aspectual role, dialectal variants, common
+    // idiomatic extensions. Null if it failed to load; _referenceFor()
+    // tolerates that (no "Learn more" panel shown).
+    let _reference = null;
+    function _referenceFor(prefix) {
+        return (_reference && _reference[prefix]) || null;
+    }
     // Each entry: an attested pair, both halves real dictionary headwords.
     let _pairs = null;    // [{prefix, sense, bareLemma, bareGloss, prefixedLemma, prefixedGloss}]
 
@@ -113,7 +123,8 @@ const HuPrefixDriller = (function () {
         if (_prefixes && _pairs) return;
         const [dict] = await Promise.all([
             fetch('imports/dictionary/hungarian-en.json').then(r => r.ok ? r.json() : {}),
-            Lexicon.load()
+            Lexicon.load(),
+            Content.json(Lang.content('reference/prefixes.json')).catch(() => null).then(r => { _reference = r; })
         ]);
 
         // Longest-first, same reason VERB_PREFIXES itself is sorted that
@@ -174,7 +185,8 @@ const HuPrefixDriller = (function () {
             question: `Which prefix means "${_quizSense(prefix)}"?`,
             options,
             correct: options.indexOf(prefix.prefix),
-            explanation: `"${prefix.prefix}-" means "${_quizSense(prefix)}".${_exampleFor(prefix)}`
+            explanation: `"${prefix.prefix}-" means "${_quizSense(prefix)}".${_exampleFor(prefix)}`,
+            moreInfo: _referenceFor(prefix.prefix)
         };
     }
 
@@ -191,7 +203,8 @@ const HuPrefixDriller = (function () {
             question: `What does "${pair.prefixedLemma}" mean?`,
             options,
             correct: options.indexOf(pair.prefixedGloss),
-            explanation: `${pair.bareLemma} (${pair.bareGloss}) + "${pair.prefix}-" (${_quizSense(pair)})`
+            explanation: `${pair.bareLemma} (${pair.bareGloss}) + "${pair.prefix}-" (${_quizSense(pair)})`,
+            moreInfo: _referenceFor(pair.prefix)
         };
     }
 
@@ -203,7 +216,8 @@ const HuPrefixDriller = (function () {
             kind: 'fill-blank',
             sentence: `"${pair.bareLemma}" (${pair.bareGloss}) + "${pair.prefix}-" (${_quizSense(pair)}) = ______`,
             answer: pair.prefixedLemma,
-            explanation: `${pair.prefixedLemma} = ${pair.prefixedGloss}`
+            explanation: `${pair.prefixedLemma} = ${pair.prefixedGloss}`,
+            moreInfo: _referenceFor(pair.prefix)
         };
     }
 

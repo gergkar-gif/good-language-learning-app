@@ -149,11 +149,35 @@ track known bugs in existing content rather than things not yet built.
   concepts observed, zero malformed/`undefined` content, panel expands
   correctly and reads as a real grammar note (e.g. "About the Delative —
   -ról / -ről — Motion off a surface... — Beszélek a munkámról. — I'm
-  talking about my job."). Not extended to Prefix/Verb/Morphology
-  drillers — the user's example was Suffix specifically; the mechanism
-  (`GrammarRunner`'s `moreInfo` support) is already generic enough that
-  giving those a reference file each is the only remaining work if
-  wanted.
+  talking about my job."). **Extended to the other 3 HU drillers,
+  2026-08-27**:
+  - Morphology Driller reuses `cases.json` directly (it decomposes the
+    exact same case/plural/possessive suffixes, just stacked) — `ladder()`
+    in `engine/morphology/hungarian.js` now tags every nominal breakdown
+    row with a `concept` key (a case code, or `'plural'`/`'possessive'`)
+    matching the reference's own keys, purely additive so the Reader's
+    tap-word popup (the other consumer of `ladder()`) is unaffected. Wired
+    into `_buildRecognition` (the sampled row's own concept) and
+    `_buildConstruction` (the last-applied layer, usually the case).
+  - Prefix Driller got its own new `content/hu/reference/prefixes.json`,
+    one entry per preverb (15: meg-, el-, ki-, be-, le-, fel-, föl-, át-,
+    rá-, vissza-, össze-, elő-, után-, ide-, oda-) going beyond the sense
+    gloss already shown — e.g. meg-'s aspectual/completive role, fel-/
+    föl-'s dialectal-variant relationship (the same pair the earlier
+    ambiguous-decoy fix was about).
+  - Verb Driller reuses its own existing `TENSE_INFO`/`DEFINITE_INFO`
+    strings (previously only shown via a settings-screen "What's this?"
+    toggle) as the `moreInfo` for every exercise — one combo per session
+    (tense/definiteness is fixed for the whole session, unlike the
+    per-word variation in the other three drillers), always including the
+    definiteness note and adding the past-tense note only for a
+    past-tense session.
+
+  Verified live across all three: Morphology 32/60 rounds showed a panel
+  (13 distinct concepts), Prefix 55/60 (title tweaked from "About the
+  meg-" to "About the meg- prefix" after the first pass read oddly),
+  Verb 8/8 with the combined tense+definiteness note. Zero malformed
+  content in any sweep.
 
 ## Interface & platform
 

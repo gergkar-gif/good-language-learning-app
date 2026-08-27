@@ -38,6 +38,20 @@ const HuMorphologyDriller = (function () {
     let _stacked = null; // breakdown.length >= 2 - genuinely multi-suffix
     let _single = null;  // breakdown.length === 1
 
+    // content/hu/reference/cases.json, shared with the Suffix Driller —
+    // this driller decomposes the exact same case/plural/possessive
+    // suffixes, just as a stack rather than one at a time, so the same
+    // reference answers "what is this suffix, in general" here too. Each
+    // ladder() breakdown row now carries a `concept` key (a case code, or
+    // 'plural'/'possessive') matching this file's own top-level keys.
+    let _reference = null;
+
+    function _referenceFor(concept) {
+        if (!_reference || !concept) return null;
+        if (concept === 'plural' || concept === 'possessive') return _reference[concept] || null;
+        return (_reference.cases && _reference.cases[concept]) || null;
+    }
+
     let _mode = MODE.COUNT;
     let _questionCount = 10;
     let _timerMinutes = 2;
@@ -77,7 +91,8 @@ const HuMorphologyDriller = (function () {
         const [dict, wordIndex] = await Promise.all([
             fetch('imports/dictionary/hungarian-en.json').then(r => r.ok ? r.json() : {}),
             Content.json(Lang.content('indexes/word-index.json')).catch(() => ({})),
-            Lexicon.load()
+            Lexicon.load(),
+            Content.json(Lang.content('reference/cases.json')).catch(() => null).then(r => { _reference = r; })
         ]);
 
         _stacked = [];
@@ -150,17 +165,24 @@ const HuMorphologyDriller = (function () {
             question: `What does "-${row.suffix}" contribute to "${entry.word}"?`,
             options,
             correct: options.indexOf(row.label),
-            explanation: row.why || undefined
+            explanation: row.why || undefined,
+            moreInfo: _referenceFor(row.concept)
         };
     }
 
     function _buildConstruction(entry) {
         const steps = entry.breakdown.map(b => `+ -${b.suffix} (${b.label})`).join(' ');
+        // The reference for the LAST layer applied — usually the case,
+        // when there is one, since a stack builds inside-out (plural or
+        // possessive first, case last) and that's the layer a learner
+        // most often stumbles on.
+        const lastRow = entry.breakdown[entry.breakdown.length - 1];
         return {
             kind: 'fill-blank',
             sentence: `"${entry.chain[0].form}" (${entry.chain[0].translation}) ${steps} = ______`,
             answer: entry.word,
-            explanation: `${entry.word} = ${entry.chain[entry.chain.length - 1].translation}`
+            explanation: `${entry.word} = ${entry.chain[entry.chain.length - 1].translation}`,
+            moreInfo: _referenceFor(lastRow && lastRow.concept)
         };
     }
 
