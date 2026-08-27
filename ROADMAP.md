@@ -45,7 +45,7 @@ track known bugs in existing content rather than things not yet built.
   - [ ] Same idea, one click: import an article/email/any text straight
     into the Reader.
 - [ ] Small AI agent for discussion/writing practice.
-- [ ] End-of-lesson summary screen ("well done, you finished").
+- [x] End-of-lesson summary screen ("well done, you finished"). **Built 2026-08-27** — see TROUBLESHOOTING_BACKLOG.md's "Lesson-complete summary card" entry for detail.
 - [ ] Audio: small sound effects for right answer, wrong answer, finishing
   a lesson, etc.
 - [ ] Jump ahead: an end-of-level exam that, passed at 90%+, lets a

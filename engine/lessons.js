@@ -21,6 +21,16 @@ let currentStepIndex = 0;
 let missedSteps = [];
 let originalStepCount = 0;
 
+// Feeds the end-of-lesson summary screen. lessonStartTime is a wall-clock
+// timestamp so the elapsed time survives a tab switch mid-lesson the same
+// way progress does. lessonStats counts every graded interaction across the
+// lesson (including the remediation redo pass — those are additional
+// attempts at mastery, not a do-over that should be forgotten): total is
+// every step that reached solveStep()/failStep(), correctFirstTry is how
+// many of those never failed on the way there. See solveStep()/failStep().
+let lessonStartTime = null;
+let lessonStats = { total: 0, correctFirstTry: 0 };
+
 // The tab the lesson was opened from, so closing it goes back there.
 let lessonReturnTab = 'learn';
 
@@ -241,6 +251,8 @@ async function startLesson(lessonId) {
     currentStepIndex = 0;
     originalStepCount = lesson.steps.length;
     missedSteps = [];
+    lessonStartTime = Date.now();
+    lessonStats = { total: 0, correctFirstTry: 0 };
 
     // A lesson can be opened from the level list or from Home's continue
     // card, and closing it should put the learner back where they were rather
@@ -451,6 +463,8 @@ function solveStep(message) {
     updateFooterButton();
     noteRecycleResult(true);
     queueForRemediationIfMissed();
+    lessonStats.total++;
+    if (!stepState.wasMissed) lessonStats.correctFirstTry++;
 }
 
 // Records a wrong attempt. Returns true once the learner is out of tries,
@@ -477,6 +491,7 @@ function failStep(message) {
     showTranslation();
     updateFooterButton();
     noteRecycleResult(false);
+    lessonStats.total++;
     return true;
 }
 
@@ -1089,7 +1104,95 @@ function finishLesson() {
         recordLessonCompleted(firstTime);
     }
 
-    closeLesson();
+    renderLessonSummary();
+}
+
+// "Unit 1 · Lesson 1.5" — the same within-unit numbering the unit's own
+// lesson list uses (see lessonRowsHtml() in curriculum.js: unitLabel +
+// "." + position), so a lesson reads as the same step in both places
+// rather than acquiring a second numbering scheme just for this screen.
+// Returns null if the curriculum index isn't loaded or the lesson isn't
+// in it (e.g. the level test) — the summary screen just omits the line.
+function lessonNumberLabel() {
+    if (!currentLesson || !currentLesson.id) return null;
+
+    const data = window._curriculumData;
+    const level = data && data.levels && data.levels[currentLesson.level];
+    if (!level) return null;
+
+    const unit = (level.units || []).find(u =>
+        (u.lessons || []).some(l => l.id === currentLesson.id));
+    if (!unit) return null;
+
+    const position = unit.lessons.findIndex(l => l.id === currentLesson.id) + 1;
+    return `Unit ${unit.label} · Lesson ${unit.label}.${position}`;
+}
+
+// "4 min" rather than "4m 12s" — a learner checking how long a lesson took
+// wants a rough sense of it, not a stopwatch reading. Anything under a
+// minute still says "1 min" rather than "0 min", since "you took no time"
+// reads as broken, not as a compliment.
+function formatLessonElapsed(ms) {
+    const totalMinutes = Math.max(1, Math.round(ms / 60000));
+    if (totalMinutes < 60) return `${totalMinutes} min`;
+    const hours = Math.floor(totalMinutes / 60);
+    const minutes = totalMinutes % 60;
+    return minutes ? `${hours} hr ${minutes} min` : `${hours} hr`;
+}
+
+// The screen shown after the last step (and any remediation redo) instead
+// of returning straight to whatever tab the lesson was opened from — one
+// beat to register the lesson is actually done before moving on. Reuses
+// #lesson-content and the footer button rather than a separate overlay, so
+// it inherits the same layout the rest of the lesson already has.
+function renderLessonSummary() {
+    const container = document.getElementById('lesson-content');
+    if (!container) return;
+
+    const elapsed = lessonStartTime ? formatLessonElapsed(Date.now() - lessonStartTime) : null;
+    const accuracy = lessonStats.total > 0
+        ? Math.round((lessonStats.correctFirstTry / lessonStats.total) * 100)
+        : null;
+    const numberLabel = lessonNumberLabel();
+
+    const statsHtml = (accuracy === null && !elapsed) ? '' : `
+        <div class="lsn-summary-stats">
+            ${accuracy === null ? '' : `
+                <div class="lsn-summary-stat">
+                    <div class="jr-big">${accuracy}%</div>
+                    <div class="jr-of">accuracy</div>
+                </div>
+            `}
+            ${elapsed ? `
+                <div class="lsn-summary-stat">
+                    <div class="jr-big">${esc(elapsed)}</div>
+                    <div class="jr-of">time</div>
+                </div>
+            ` : ''}
+        </div>
+    `;
+
+    container.innerHTML = `
+        <div class="lsn-summary">
+            <p class="lsn-summary-eyebrow">Lesson complete</p>
+            <h2 class="lsn-summary-title">Congratulations!</h2>
+            ${numberLabel ? `<p class="lsn-summary-lesson">${esc(numberLabel)} — ${esc(currentLesson.title || '')}</p>` : ''}
+            ${Art.svg('summit', 'lsn-summary-art')}
+            ${statsHtml}
+        </div>
+    `;
+    container.scrollIntoView({ block: 'start' });
+
+    const backBtn = document.getElementById('lesson-back-btn');
+    if (backBtn) backBtn.disabled = true;
+
+    const nextBtn = document.getElementById('lesson-next-btn');
+    if (nextBtn) {
+        nextBtn.textContent = 'Done';
+        nextBtn.disabled = false;
+        nextBtn.classList.remove('is-locked');
+        nextBtn.onclick = closeLesson;
+    }
 }
 
 // ============================================

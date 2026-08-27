@@ -111,6 +111,18 @@ const Art = (function () {
             <circle class="accent-solid" cx="168" cy="60" r="4"/>
         `,
 
+        // Lesson complete — one climb just made, not the whole journey
+        // (that's ascent, on My Journey). A single rise from the small
+        // hollow-feeling point where the learner started this lesson to
+        // the solid accent circle where they now stand — the arrival, not
+        // the path still ahead of it.
+        summit: `
+            <line class="ink-hair" x1="60" y1="86" x2="260" y2="86"/>
+            <path class="ink-rule" d="M84 78C124 78 124 50 174 50"/>
+            <circle class="ink-solid" cx="84" cy="78" r="4"/>
+            <circle class="accent-solid" cx="174" cy="50" r="7"/>
+        `,
+
         // levelA1..levelC1 (hero-scale level identity art) removed
         // 2026-08-14 — unused since Art.svg('level'+level, ...) was dropped
         // from both curriculum.js call sites when the Lessons hero art was

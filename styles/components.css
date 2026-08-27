@@ -660,6 +660,54 @@
   margin-top: 0;
 }
 
+/* End-of-lesson summary — one quiet beat before returning to whatever tab
+   the lesson was opened from. Centred and mostly empty, like the page
+   headers' own frontispieces, rather than a "results screen" grid — this
+   is a close of a lesson, not a scoreboard. */
+.lsn-summary {
+  text-align: center;
+  padding: 24px 0 8px;
+}
+
+.lsn-summary-eyebrow {
+  font-size: 13px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+
+.lsn-summary-title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 30px;
+  color: var(--text);
+  margin: 6px 0;
+}
+
+.lsn-summary-lesson {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.lsn-summary-art {
+  width: 100%;
+  max-width: 260px;
+  height: auto;
+  max-height: 88px;
+  margin: 20px auto;
+}
+
+.lsn-summary-stats {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  margin-top: 8px;
+}
+
+.lsn-summary-stat .jr-big {
+  margin-bottom: 2px;
+}
+
 /* Continue stays locked until a gated step is answered */
 .btn-primary:disabled,
 .btn-primary.is-locked {
