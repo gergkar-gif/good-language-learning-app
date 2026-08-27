@@ -40,6 +40,11 @@ let openUnit = null;
 // unit's lesson list, not up to the unit list.
 let openGrammarGuideUnit = null;
 
+// Same idea as openGrammarGuideUnit, for the Word Bank. The two are mutually
+// exclusive — opening either clears the other — since both are the same
+// "fourth screen" slot off a unit's detail view.
+let openWordBankUnit = null;
+
 function levelIcon(level, extraClass) {
     return '<svg class="level-icon' + (extraClass ? ' ' + extraClass : '') + '" viewBox="0 0 100 100" aria-hidden="true">' +
         (LEVEL_ICONS[level] || LEVEL_ICONS.A1) + '</svg>';
@@ -101,6 +106,7 @@ async function renderCurriculum() {
     root.innerHTML = !openLevel ? levelListHtml()
         : !openUnit ? unitListHtml(openLevel)
         : openGrammarGuideUnit ? await grammarGuideHtml(openLevel, openGrammarGuideUnit)
+        : openWordBankUnit ? await wordBankHtml(openLevel, openWordBankUnit)
         : unitDetailHtml(openLevel, openUnit);
 
     attachCurriculumEvents(root);
@@ -514,6 +520,12 @@ function unitDetailHtml(level, unitId) {
                 <span class="ud-grammar-guide-arrow" aria-hidden="true">→</span>
             </button>
 
+            <button class="ud-grammar-guide-row" data-open-word-bank="${UI.escape(unit.id)}">
+                ${(typeof Art !== 'undefined') ? Art.icon('wordBank') : ''}
+                <span class="ud-grammar-guide-title">Word Bank</span>
+                <span class="ud-grammar-guide-arrow" aria-hidden="true">→</span>
+            </button>
+
             ${lessons.length ? `<div class="ud-dots">${dots}</div>` : ''}
 
             ${lessons.length
@@ -588,6 +600,74 @@ async function grammarGuideHtml(level, unitId) {
     `;
 }
 
+// Every word taught anywhere in the unit, grouped by the lesson vocabulary
+// section it comes from (using that file's own title, e.g. "Greetings"),
+// de-duplicated by lemma across the whole unit — a word already shown under
+// an earlier lesson's group does not repeat under a later one.
+async function collectUnitVocabTopics(unit) {
+    const topics = [];
+    const seen = {};
+    for (const lessonRef of unit.lessons || []) {
+        const lesson = await loadLesson(lessonRef.id);
+        if (!lesson) continue;
+        for (const section of lesson.sections || []) {
+            if (section.type !== 'vocabulary' || !section.ref) continue;
+            const vocab = await loadContent(section.ref);
+            const words = (vocab.words || []).filter(w => w && w.lemma && !seen[w.lemma]);
+            if (!words.length) continue;
+            words.forEach(w => { seen[w.lemma] = true; });
+            topics.push({
+                title: vocab.title || section.title || 'Vocabulary',
+                words: words.map(w => ({
+                    lemma: w.lemma,
+                    translation: w.translation || '',
+                    pos: w.pos || 'unknown'
+                }))
+            });
+        }
+    }
+    return topics;
+}
+
+// A quick-reference list of every word the unit introduces, the vocabulary
+// counterpart to the Grammar Guide above — same shell, same collect-then-
+// render shape, reusing the shared stepRenderers.vocabulary() so the list
+// never drifts out of sync with how the words appear inside the lesson.
+async function wordBankHtml(level, unitId) {
+    const data = window._curriculumData.levels[level];
+    const unit = unitById(data, unitId);
+    if (!unit) return unitListHtml(level);
+
+    const topics = await collectUnitVocabTopics(unit);
+    const wordCount = topics.reduce((n, t) => n + t.words.length, 0);
+
+    const list = topics.map((topic, i) => `
+        <li class="gg-topic">
+            <span class="gg-topic-num">${i + 1}</span>
+            <div class="gg-topic-body">
+                <h4 class="gg-topic-title">${UI.escape(topic.title)}</h4>
+                ${stepRenderers.vocabulary({ words: topic.words })}
+            </div>
+        </li>
+    `).join('');
+
+    return `
+        <div class="word-bank" data-level="${level}" data-unit="${UI.escape(unit.id)}">
+            <button class="level-back" data-close-word-bank="1">← ${UI.escape(unit.title)}</button>
+
+            <header class="ud-head">
+                <h2 class="ud-title">Word Bank</h2>
+                ${wordCount ? `<p class="gg-subtitle">${wordCount} ${wordCount === 1 ? 'word' : 'words'}</p>` : ''}
+            </header>
+
+            ${topics.length
+                ? `<h3 class="ud-section">What you'll encounter</h3>
+                   <ol class="gg-topics">${list}</ol>`
+                : '<p class="text-muted level-empty">No vocabulary in this unit yet.</p>'}
+        </div>
+    `;
+}
+
 function attachCurriculumEvents(root) {
     // root.innerHTML is replaced on every render, but root itself is not —
     // without this guard, every renderCurriculum() call bound a fresh
@@ -611,6 +691,7 @@ function attachCurriculumEvents(root) {
             openLevel = null;
             openUnit = null;
             openGrammarGuideUnit = null;
+            openWordBankUnit = null;
             renderCurriculum();
             return;
         }
@@ -636,6 +717,7 @@ function attachCurriculumEvents(root) {
         if (e.target.closest('[data-close-unit]')) {
             openUnit = null;
             openGrammarGuideUnit = null;
+            openWordBankUnit = null;
             renderCurriculum();
             return;
         }
@@ -643,12 +725,27 @@ function attachCurriculumEvents(root) {
         const openGuide = e.target.closest('[data-open-grammar-guide]');
         if (openGuide) {
             openGrammarGuideUnit = openGuide.getAttribute('data-open-grammar-guide');
+            openWordBankUnit = null;
             renderCurriculum();
             return;
         }
 
         if (e.target.closest('[data-close-grammar-guide]')) {
             openGrammarGuideUnit = null;
+            renderCurriculum();
+            return;
+        }
+
+        const openBank = e.target.closest('[data-open-word-bank]');
+        if (openBank) {
+            openWordBankUnit = openBank.getAttribute('data-open-word-bank');
+            openGrammarGuideUnit = null;
+            renderCurriculum();
+            return;
+        }
+
+        if (e.target.closest('[data-close-word-bank]')) {
+            openWordBankUnit = null;
             renderCurriculum();
             return;
         }

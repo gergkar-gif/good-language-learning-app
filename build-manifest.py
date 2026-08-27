@@ -759,6 +759,16 @@ def short_gloss(text):
     first = re.sub(r"^(comparative|superlative|diminutive|augmentative)"
                    r"\s+of\s+[^:]*:\s*", "", first, flags=re.I)
     first = re.sub(r"\s+", " ", first).strip(" ,")
+
+    # Cap to the first 3 synonyms, not just a character count — Wiktionary
+    # glosses often keep piling on near-synonyms well past what fits the
+    # 56-char limit below, and a card with "to gather, to collect, to bring
+    # together, to assemble, to get together..." reads as noise, not a
+    # definition. Three is usually enough to triangulate the meaning.
+    parts = first.split(", ")
+    if len(parts) > 3:
+        first = ", ".join(parts[:3]) + "…"
+
     if len(first) > 56:
         # Cut at the last synonym boundary before the limit rather than
         # mid-word — a card reading "...of high…" is worse than one that

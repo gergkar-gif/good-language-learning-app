@@ -116,6 +116,14 @@ const Lexicon = (function () {
         first = stripBalanced(first, '[', ']');
         first = first.replace(/^(comparative|superlative|diminutive|augmentative)\s+of\s+[^:]*:\s*/i, '');
         first = first.replace(/\s+/g, ' ').replace(/^[\s,]+|[\s,]+$/g, '');
+
+        // Cap to the first 3 synonyms, not just a character count — kept in
+        // sync with short_gloss() in build-manifest.py, see its comment.
+        const parts = first.split(', ');
+        if (parts.length > 3) {
+            first = parts.slice(0, 3).join(', ') + '…';
+        }
+
         if (first.length > 56) {
             const truncated = first.slice(0, 56);
             const cut = truncated.lastIndexOf(', ');

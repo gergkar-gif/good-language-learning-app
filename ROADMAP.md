@@ -11,8 +11,22 @@ track known bugs in existing content rather than things not yet built.
   originals as exists for Hungarian, up to A1 level.
 - [ ] Hungarian: introduce Hungarian cultural material at B1-B2 (for the
   citizenship exam), similar to the LatAm course's dual-track structure.
-- [ ] Word Bank: same idea as Grammar Guide, but for vocabulary — a
+- [x] Word Bank: same idea as Grammar Guide, but for vocabulary — a
   per-unit collection of the ~15-20 new words the unit introduces.
+  **Built 2026-08-27**: `wordBankHtml()` in `engine/curriculum.js` is a
+  near-exact clone of `grammarGuideHtml()` — same collect-then-render
+  shape, same "fourth screen" slot off a unit's detail view (new
+  `openWordBankUnit` state, mutually exclusive with the existing
+  `openGrammarGuideUnit`), reached via a new "Word Bank" row placed right
+  under "Grammar Guide". `collectUnitVocabTopics()` walks every lesson's
+  `vocabulary` sections, grouped by each section's own title (e.g.
+  "Greetings"), de-duplicated by lemma across the whole unit so a word
+  taught earlier doesn't repeat under a later lesson's group. Renders
+  through the same `stepRenderers.vocabulary()` the lesson screen itself
+  uses, so it can't drift from how words actually appear in-lesson. New
+  `wordBank` tag icon in `engine/art.js`. Verified live: a 6-lesson unit
+  correctly shows 46 words across 5 topic groups, and closing/reopening
+  navigates cleanly.
 
 ## Workshop
 
@@ -25,16 +39,43 @@ track known bugs in existing content rather than things not yet built.
 
 ## Library / dictionary
 
-- [ ] Spanish Library's word-translation popup currently shows the raw
+- [x] Spanish Library's word-translation popup currently shows the raw
   grammatical parse (e.g. "empezaba: verb · Imperfect, Indicative, 1st
   person singular from empezar, to start, begin, to get started") instead
   of the actual contextual translation (e.g. "started"). Should lead with
   the real translation, and could put the grammar explanation underneath.
+  **Fixed 2026-08-27**: reordered `_renderWordReadings()`'s plain fallback
+  branch in `engine/reader.js` — the translation now renders first, at the
+  same visual weight (`.wp-contextual`) Hungarian's breakdown already gives
+  its own contextual line, with "from `<lemma>`" and the pos/gender/tense
+  parse (`.wp-analysis`) demoted underneath. The compact subtitle under the
+  header (`#popup-analysis`) no longer duplicates the parse for this path
+  either. True per-form contextual translation (e.g. "empezaba" →
+  "started" rather than the infinitive's own gloss "to start, begin...")
+  would need a real conjugation-aware gloss table, which doesn't exist for
+  Spanish yet (Hungarian's ladder/chain mechanism is a different,
+  language-specific thing) — not attempted here; this only fixes the
+  ordering/prominence half of the ask. Verified live: tapping "vive" (from
+  "vivir") now shows "to live; to be alive" first, "verb · Present,
+  Indicative, 3rd person singular" below it.
 
 ## Decks
 
-- [ ] Spanish decks: some verb definitions are overly verbose — needs a
-  pass to tighten them.
+- [x] Spanish decks: some verb definitions are overly verbose — needs a
+  pass to tighten them. **Fixed 2026-08-27**: `short_gloss()` in
+  `build-manifest.py` (and its JS twin `Lexicon.shortGloss()` in
+  `engine/lexicon.js`) now caps a gloss to its first 3 comma-separated
+  synonyms, not just a 56-character cut — e.g. `reunir` went from "to
+  gather, to collect, to bring together, to assemble, to get together, to
+  round up, to marshal, to compile, to put together, to pull together, to
+  draw together, to pool" to "to gather, to collect, to bring together…".
+  Only affects the frequency decks (Top 100, 101-250, etc.), which pull
+  raw Wiktionary glosses — lesson/topic decks are hand-authored from
+  `content/*/vocabulary/` and were already short. Regenerated
+  `decks.json` via `build-manifest.py`; since the capping function is
+  shared, this also tightened a few dozen overly long Hungarian frequency
+  glosses the same way (e.g. "case, instance, event, occurrence" →
+  "case, instance, event…") as a side effect of the same fix.
 
 ## Interface & platform
 

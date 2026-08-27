@@ -170,9 +170,10 @@ function _renderWordReadings(tappedWord, readings, phrase, ladder) {
     if (!phrase) {
         // The breakdown/compound block already states the POS and full
         // morphology more clearly than this compact subtitle would
-        // alongside it — only shown when there's neither.
-        analysisEl.textContent = (breakdownHtml || compoundHtml) ? '' : [primary.pos, primary.gender, primary.analysis]
-            .filter(Boolean).join(' · ');
+        // alongside it. The plain fallback path (below) leads with the
+        // actual translation instead and folds this same grammar summary
+        // in underneath it, so it's never shown up here either.
+        analysisEl.textContent = '';
     }
 
     let html = phraseHtml;
@@ -184,10 +185,19 @@ function _renderWordReadings(tappedWord, readings, phrase, ladder) {
     } else if (breakdownHtml) {
         html += breakdownHtml;
     } else {
+        // The real translation leads, at the same visual weight the
+        // Hungarian breakdown gives its contextual meaning (.wp-contextual)
+        // — a learner taps a word to find out what it means, not to read
+        // its grammatical parse first. "from <lemma>" and the parse itself
+        // (pos/gender/tense-mood-person) follow underneath, smaller.
+        html += `<p class="wp-contextual">${Reader.escapeHtml(primary.translation || '— no translation available —')}</p>`;
         if (primary.lemma.toLowerCase() !== String(tappedWord).toLowerCase()) {
             html += `<p class="wp-lemma">from <strong>${Reader.escapeHtml(primary.lemma)}</strong></p>`;
         }
-        html += `<p class="wp-meaning">${Reader.escapeHtml(primary.translation || '— no translation available —')}</p>`;
+        const grammar = [primary.pos, primary.gender, primary.analysis].filter(Boolean).join(' · ');
+        if (grammar) {
+            html += `<p class="wp-analysis">${Reader.escapeHtml(grammar)}</p>`;
+        }
     }
 
     if (readings.length > 1) {
