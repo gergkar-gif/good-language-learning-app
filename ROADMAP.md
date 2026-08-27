@@ -396,6 +396,32 @@ track known bugs in existing content rather than things not yet built.
     my words" immediately afterward left the *other*, still-known word
     untouched in `knownWords` — confirming the un-graduation bug fix
     actually holds under the exact click sequence a learner would use.
+- [x] "No white rectangles" — the Review/Match/Learn study-tab buttons,
+  Learn mode's multiple-choice options and typed input, and Match mode's
+  tiles all rendered as flat white boxes on the cream page, at odds with
+  the app's own documented identity (`styles/base.css`: "the identity is
+  open rows on cream separated by hairlines, not a stack of lifted white
+  cards"). **Fixed 2026-08-27** — traced to four rules in
+  `styles/components.css` (`.dk-study-tab`, `.dkm-tile`, `.dkl-option`,
+  `.dkl-input`) filled with `var(--surface)` (pure white `#FFFFFF`)
+  instead of `var(--bg)` (the cream `#F5F1E8` every other button/input in
+  the app already uses — confirmed against `.dk-secondary` and
+  `.dk-editor-input`, both already correctly on `--bg`). Switched all
+  four to `--bg`. That in turn flattened two interaction states that had
+  been relying on the old white-to-cream contrast to read as "different
+  from resting": `.dkm-tile.is-selected`/`.dkl-option.is-correct` now use
+  a light navy tint (`rgba(16, 42, 71, 0.05)`, the same tint
+  `.lsn-option.selected` already uses elsewhere) instead of the
+  now-identical `--bg`, and `.dkm-tile.is-wrong` uses `--accent-bg` to
+  pair with its existing `--accent-dark` border/text rather than blending
+  into the resting tile. `.dkl-option.is-wrong` was already
+  border/text-only with no background of its own, so it needed no change.
+  Verified live: screenshotted the deck detail row, Learn mode's MC
+  screen at rest and after answering (correct option tinted, wrong option
+  bordered red, both legible against the cream resting options), and
+  Match mode at rest and with a tile selected (clearly distinguished from
+  its neighbours) — no white anywhere, every interaction state still
+  reads correctly.
 
 ## Grammar reference
 

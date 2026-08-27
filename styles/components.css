@@ -2156,7 +2156,7 @@
 .dkm-tile {
   padding: 14px 10px;
   min-height: 56px;
-  background: var(--surface);
+  background: var(--bg);
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   color: var(--text);
@@ -2170,12 +2170,12 @@
 
 .dkm-tile.is-selected {
   border-color: var(--primary);
-  background: var(--bg);
+  background: rgba(16, 42, 71, 0.05);
 }
 
 .dkm-tile.is-wrong {
   border-color: var(--accent-dark);
-  background: var(--bg);
+  background: var(--accent-bg);
   color: var(--accent-dark);
 }
 
@@ -2249,7 +2249,7 @@
 
 .dkl-option {
   padding: 14px 16px;
-  background: var(--surface);
+  background: var(--bg);
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   color: var(--text);
@@ -2261,7 +2261,7 @@
 
 .dkl-option.is-correct {
   border-color: var(--primary);
-  background: var(--bg);
+  background: rgba(16, 42, 71, 0.05);
   font-weight: 600;
 }
 
@@ -2276,7 +2276,7 @@
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   font-size: 16px;
-  background: var(--surface);
+  background: var(--bg);
   color: var(--text);
 }
 
@@ -2532,7 +2532,7 @@
   justify-content: center;
   gap: 6px;
   padding: 14px 12px;
-  background: var(--surface);
+  background: var(--bg);
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   font-size: 15px;
