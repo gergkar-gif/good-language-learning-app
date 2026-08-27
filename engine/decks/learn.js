@@ -12,20 +12,25 @@
 // the deck isn't touched until this round is cleared, which is what
 // keeps a single pass manageable instead of dumping a 40+ word deck into
 // one session. Within a round, each word must be answered correctly at
-// each of three STAGES, in order, before it's mastered and drops out:
+// each of four STAGES, in order, before it's mastered and drops out:
 //   1. Multiple choice, English shown -> pick the target-language term.
 //   2. Multiple choice, target-language term shown -> pick the English
 //      meaning (the reverse direction, so recognition is solid both ways
 //      before asking for production).
-//   3. Typed, English shown -> type the target-language term. The one
-//      genuinely productive stage, so it's last.
+//   3. Typed, target-language term shown -> type the English meaning.
+//      Free recall rather than a pick from options, but still graded
+//      leniently (synonyms accepted, no accent-checking — it's English)
+//      since this stage is testing recall of MEANING, not spelling.
+//   4. Typed, English shown -> type the target-language term. The one
+//      stage that has to be perfect: graded strictly, accents included
+//      (see _gradeTarget below) — genuine production, so it's last.
 // A wrong answer at any stage doesn't demote the word, just re-asks the
 // same stage a few questions later (_requeue) rather than immediately —
 // long enough that the answer isn't just sitting in short-term memory,
 // short enough it isn't the following round. Passing a stage does the
 // same: it doesn't re-ask stage 2 back-to-back with stage 1, it comes
 // back around a few words later, which is the "gradual recall" this was
-// built for, not just three ticks in a row.
+// built for, not just four ticks in a row.
 // Once every word in the round is mastered, the next round starts
 // automatically (new words, same rules) until the deck is done.
 //
@@ -43,13 +48,17 @@ const DeckLearn = (function () {
     const DECOY_COUNT = 3;
     const RETRY_DELAY = 3; // a requeued word reappears after roughly this many other questions, not immediately and not at the very end
 
-    // Increasing difficulty, in order. `kind` is 'mc' or 'typed'; for
-    // 'mc', `prompt`/`answer` say which field (lemma or translation) is
-    // shown as the question vs. offered as multiple-choice options.
+    // Increasing difficulty, in order. `kind` is 'mc' or 'typed'; `prompt`/
+    // `answer` say which field (lemma or translation) is shown as the
+    // question vs. expected as the answer (multiple-choice options, or —
+    // for 'typed' — which grading function and strictness apply: typing
+    // the translation is graded leniently by _gradeEnglish, typing the
+    // lemma is graded strictly by _gradeTarget).
     const STAGES = [
-        { kind: 'mc', prompt: 'translation', answer: 'lemma', label: 'Step 1 of 3 · Recognize it' },
-        { kind: 'mc', prompt: 'lemma', answer: 'translation', label: 'Step 2 of 3 · Recall it' },
-        { kind: 'typed', prompt: 'translation', answer: 'lemma', label: 'Step 3 of 3 · Produce it' }
+        { kind: 'mc', prompt: 'translation', answer: 'lemma', label: 'Step 1 of 4 · Recognize it' },
+        { kind: 'mc', prompt: 'lemma', answer: 'translation', label: 'Step 2 of 4 · Recall it' },
+        { kind: 'typed', prompt: 'lemma', answer: 'translation', label: 'Step 3 of 4 · Translate it' },
+        { kind: 'typed', prompt: 'translation', answer: 'lemma', label: 'Step 4 of 4 · Produce it' }
     ];
 
     let _container = null;
@@ -241,6 +250,7 @@ const DeckLearn = (function () {
 
     function _renderTyped(stage) {
         const promptText = stage.prompt === 'lemma' ? _withArticle(_current.lemma) : _current.translation;
+        const placeholder = stage.answer === 'lemma' ? `Type it in ${_targetLabel()}` : 'Type it in English';
         _container.innerHTML = `
             <div class="dkl">
                 <div class="dkl-head">
@@ -248,7 +258,7 @@ const DeckLearn = (function () {
                 </div>
                 ${_progressHtml()}
                 <p class="dkl-question">${_escapeHtml(promptText)}</p>
-                <input class="dkl-input" type="text" placeholder="Type it in ${_escapeHtml(_targetLabel())}"
+                <input class="dkl-input" type="text" placeholder="${_escapeHtml(placeholder)}"
                     autocomplete="off" autocapitalize="off" spellcheck="false">
                 <p class="dkl-feedback" aria-live="polite"></p>
                 <div class="dkl-actions">
@@ -267,15 +277,18 @@ const DeckLearn = (function () {
     function _checkTyped() {
         if (_solved) return;
         _solved = true;
+        const stage = STAGES[_current.stage];
         const input = _container.querySelector('.dkl-input');
-        const ok = _gradeTarget(input.value, _current.lemma);
+        const targetAnswer = stage.answer === 'lemma'; // strict target-language production vs. lenient English recall
+        const ok = targetAnswer ? _gradeTarget(input.value, _current.lemma) : _gradeEnglish(input.value, _current.translation);
+        const correctAnswerText = targetAnswer ? _withArticle(_current.lemma) : _current.translation;
         input.disabled = true;
         input.classList.toggle('dkl-input-correct', ok);
         input.classList.toggle('dkl-input-wrong', !ok);
-        if (!ok) input.value = _withArticle(_current.lemma);
+        if (!ok) input.value = correctAnswerText;
         const checkBtn = _container.querySelector('[data-learn-check]');
         if (checkBtn) checkBtn.classList.add('hidden');
-        _resolve(ok, _withArticle(_current.lemma));
+        _resolve(ok, correctAnswerText);
     }
 
     function _resolve(ok, correctAnswerText) {
