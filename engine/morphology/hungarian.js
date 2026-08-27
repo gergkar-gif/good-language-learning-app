@@ -506,6 +506,15 @@ const HungarianMorphology = (function () {
     // breakdown table's per-suffix row ("-mal" -> "with").
     function caseSuffixLabel(caseCode) { return CASE_PREPOSITION[caseCode] || caseName(caseCode); }
 
+    // The bare English preposition for a case, or null when the case has
+    // none (nominative, accusative, essive-modal — grammatical cases with
+    // no locational/instrumental English equivalent). Unlike
+    // caseSuffixLabel() above, this never falls back to the case name, so
+    // callers building a natural-English phrase ("to mugs", not "dative
+    // mugs") can tell the two situations apart instead of treating a
+    // missing preposition as if it were one.
+    function casePreposition(caseCode) { return CASE_PREPOSITION[caseCode] || null; }
+
     // Plain-language reason for a verb-suffix allomorph that isn't the
     // "default" ending — this is what actually makes "nőtt" explainable
     // rather than just recognisable: a learner who sees the breakdown
@@ -1507,7 +1516,7 @@ const HungarianMorphology = (function () {
         nominalSense: nominalSense, verbSense: verbSense, anySense: anySense,
         conjugate: conjugate,
         naivePluralize: naivePluralize,
-        caseName: caseName, caseSuffixLabel: caseSuffixLabel,
+        caseName: caseName, caseSuffixLabel: caseSuffixLabel, casePreposition: casePreposition,
         casesList: function () {
             return Object.keys(CASE_LABELS).map(code => ({
                 code: code, label: CASE_LABELS[code], preposition: CASE_PREPOSITION[code] || null

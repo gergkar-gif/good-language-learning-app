@@ -191,14 +191,20 @@ const HuSuffixDriller = (function () {
             return owner + ' ' + possessed;
         }
         if (entry.tag.case) {
-            const prep = HungarianMorphology.caseSuffixLabel(entry.tag.case);
+            const prep = HungarianMorphology.casePreposition(entry.tag.case);
             // A case-tagged word-index entry can ALSO be plural
             // ("szerkezetűekre" = szerkezetű + plural + sublative) — the
             // case branch used to ignore tag.number entirely, so the
             // prompt read as if the answer were singular even when the
             // only correct form was the plural one.
             const noun = entry.tag.number === 'pl' ? HungarianMorphology.naivePluralize(gloss, entry.tag.pos) : gloss;
-            return prep + ' ' + noun;
+            // Cases without a natural English preposition (accusative,
+            // nominative, essive-modal) used to fall back to prefixing the
+            // grammatical case name itself ("accusative mugs"), which reads
+            // as broken English. Suffix the case name onto the noun instead
+            // ("mugs (accusative)"), matching how the Reader's own popup
+            // phrases the same no-preposition cases.
+            return prep ? prep + ' ' + noun : noun + ' (' + HungarianMorphology.caseName(entry.tag.case) + ')';
         }
         return HungarianMorphology.naivePluralize(gloss, entry.tag.pos); // plural
     }
