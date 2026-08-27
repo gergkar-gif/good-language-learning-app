@@ -1,0 +1,124 @@
+{
+  "cases": {
+    "nom": {
+      "title": "Nominative",
+      "suffix": "no suffix",
+      "explanation": "The plain, undecorated form of a noun — the subject of a sentence, and the form a dictionary lists. Every other entry in this reference adds something to this base form.",
+      "example": { "hu": "A macska alszik.", "en": "The cat is sleeping." }
+    },
+    "acc": {
+      "title": "Accusative",
+      "suffix": "-t (with a linking vowel — -at/-et/-ot/-öt — after most consonant-final stems)",
+      "explanation": "Marks the direct object: whatever an action is done to. Because this suffix, not word order, says who does what to what, Hungarian word order is free to shift for emphasis instead.",
+      "example": { "hu": "Olvasom a könyvet.", "en": "I'm reading the book." }
+    },
+    "dat": {
+      "title": "Dative",
+      "suffix": "-nak / -nek",
+      "explanation": "Marks who or what something is given, said, or done for. Hungarian also reuses it to say \"have\" — paired with van/nincs, since there's no separate verb for \"to have\".",
+      "example": { "hu": "Katinak van egy macskája.", "en": "Kati has a cat." }
+    },
+    "ins": {
+      "title": "Instrumental-comitative",
+      "suffix": "-val / -vel (the v assimilates to double the stem's final consonant: ház -> házzal, not házval)",
+      "explanation": "Covers both senses English keeps separate: the tool or means something is done with, and the company someone is with.",
+      "example": { "hu": "A barátommal beszélek.", "en": "I'm talking with my friend." }
+    },
+    "cfi": {
+      "title": "Causal-final",
+      "suffix": "-ért",
+      "explanation": "Expresses a reason, a goal, or an exchange — what something is done for, or traded for.",
+      "example": { "hu": "Fizetek a kávéért.", "en": "I'm paying for the coffee." }
+    },
+    "tra": {
+      "title": "Translative",
+      "suffix": "-vá / -vé (assimilates like the instrumental)",
+      "explanation": "Marks a change of state — becoming or turning into something.",
+      "example": { "hu": "Orvossá válik.", "en": "He/she is becoming a doctor." }
+    },
+    "ter": {
+      "title": "Terminative",
+      "suffix": "-ig",
+      "explanation": "Marks an endpoint — up to or until, whether in time or in space.",
+      "example": { "hu": "Öt óráig várok.", "en": "I'll wait until five o'clock." }
+    },
+    "esf": {
+      "title": "Essive-formal",
+      "suffix": "-ként",
+      "explanation": "In the role or capacity of something — English's \"as a...\".",
+      "example": { "hu": "Tanárként dolgozom.", "en": "I work as a teacher." }
+    },
+    "esm": {
+      "title": "Essive-modal",
+      "suffix": "-ul / -ül",
+      "explanation": "Describes how something is done — especially the language something is done in.",
+      "example": { "hu": "Magyarul beszélek.", "en": "I speak Hungarian." }
+    },
+    "ine": {
+      "title": "Inessive",
+      "suffix": "-ban / -ben",
+      "explanation": "Static location: inside something, at rest.",
+      "example": { "hu": "A könyv a táskában van.", "en": "The book is in the bag." }
+    },
+    "sup": {
+      "title": "Superessive",
+      "suffix": "-n / -on / -en / -ön",
+      "explanation": "Static location: on top of a surface, at rest.",
+      "example": { "hu": "A kulcs az asztalon van.", "en": "The key is on the table." }
+    },
+    "ade": {
+      "title": "Adessive",
+      "suffix": "-nál / -nél",
+      "explanation": "Static location: near, at, or \"at someone's place\" — the closest Hungarian gets to French chez.",
+      "example": { "hu": "Katinál vagyok.", "en": "I'm at Kati's place." }
+    },
+    "ill": {
+      "title": "Illative",
+      "suffix": "-ba / -be",
+      "explanation": "Motion into the inside of something.",
+      "example": { "hu": "A szobába megyek.", "en": "I'm going into the room." }
+    },
+    "sub": {
+      "title": "Sublative",
+      "suffix": "-ra / -re",
+      "explanation": "Motion onto the top of a surface.",
+      "example": { "hu": "A könyvet az asztalra teszem.", "en": "I'm putting the book onto the table." }
+    },
+    "all": {
+      "title": "Allative",
+      "suffix": "-hoz / -hez / -höz",
+      "explanation": "Motion toward or up to near someone or something — arriving at, not necessarily inside.",
+      "example": { "hu": "Elmegyek a barátomhoz.", "en": "I'm going to my friend's place." }
+    },
+    "ela": {
+      "title": "Elative",
+      "suffix": "-ból / -ből",
+      "explanation": "Motion out of the inside of something — the reverse of the inessive/illative pair.",
+      "example": { "hu": "Kijövök a szobából.", "en": "I'm coming out of the room." }
+    },
+    "del": {
+      "title": "Delative",
+      "suffix": "-ról / -ről",
+      "explanation": "Motion off a surface — and, just as often in everyday speech, \"about\" a topic.",
+      "example": { "hu": "Beszélek a munkámról.", "en": "I'm talking about my job." }
+    },
+    "abl": {
+      "title": "Ablative",
+      "suffix": "-tól / -től",
+      "explanation": "Motion away from near someone or something (not out of — just away from the vicinity). Also used for \"from\" a person, and in comparisons (\"than\").",
+      "example": { "hu": "Kaptam egy ajándékot anyámtól.", "en": "I got a present from my mom." }
+    }
+  },
+  "plural": {
+    "title": "Plural",
+    "suffix": "-k (with a linking vowel — -ak/-ek/-ok/-ök — after most consonant-final stems)",
+    "explanation": "Marks more than one. Attaches directly to the bare noun, before any case suffix — a noun is always made plural first, then put into its case (barát -> barátok -> barátoknak, \"friend\" -> \"friends\" -> \"to the friends\").",
+    "example": { "hu": "A gyerekek játszanak.", "en": "The children are playing." }
+  },
+  "possessive": {
+    "title": "Possessive",
+    "suffix": "varies by person (e.g. -m/-om/-am \"my\", -d/-od/-ad \"your\", -a/-e/-ja/-je \"his/her\")",
+    "explanation": "Hungarian marks \"my/your/his/her/our/your/their\" directly on the possessed noun itself, rather than with a separate possessive pronoun the way English does — a bit like English's \"'s\", but for every person, not just the third.",
+    "example": { "hu": "Ez a házam.", "en": "This is my house." }
+  }
+}

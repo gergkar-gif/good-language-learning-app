@@ -88,6 +88,26 @@ const GrammarRunner = (function () {
             : '';
     }
 
+    // A general grammar reference for the CONCEPT the exercise is testing
+    // (e.g. "About the Illative case"), distinct from _explanationHtml's
+    // per-word "why" — collapsed by default via <details> so it doesn't
+    // compete with the feedback for attention, expandable for a learner who
+    // wants the fuller rule rather than just this one word's answer.
+    function _moreInfoHtml(moreInfo) {
+        if (!moreInfo || !moreInfo.explanation) return '';
+        const example = moreInfo.example
+            ? `<p class="gd-more-info-example">${_escapeHtml(moreInfo.example.hu)} — <em>${_escapeHtml(moreInfo.example.en)}</em></p>`
+            : '';
+        return `
+            <details class="gd-more-info">
+                <summary>${_escapeHtml('About the ' + (moreInfo.title || 'concept'))}</summary>
+                ${moreInfo.suffix ? `<p class="gd-more-info-suffix">${_escapeHtml(moreInfo.suffix)}</p>` : ''}
+                <p>${_escapeHtml(moreInfo.explanation)}</p>
+                ${example}
+            </details>
+        `;
+    }
+
     // Next starts hidden — showing both buttons at once let a learner skip
     // straight past an answer without ever seeing whether they were right.
     // _resolve() (called by every renderer once it knows the result) swaps
@@ -153,6 +173,7 @@ const GrammarRunner = (function () {
             });
             _setFeedback(ok, ok ? '✓ Correct!' : '✗ Not quite.');
             if (ex.explanation) _container.insertAdjacentHTML('beforeend', _explanationHtml(ex.explanation));
+            if (ex.moreInfo) _container.insertAdjacentHTML('beforeend', _moreInfoHtml(ex.moreInfo));
             _resolve(ok);
         });
     }
@@ -197,6 +218,7 @@ const GrammarRunner = (function () {
             });
             _setFeedback(ok, ok ? '✓ Correct!' : '✗ Not quite.');
             if (ex.explanation) _container.insertAdjacentHTML('beforeend', _explanationHtml(ex.explanation));
+            if (ex.moreInfo) _container.insertAdjacentHTML('beforeend', _moreInfoHtml(ex.moreInfo));
             _resolve(ok);
         });
     }
@@ -220,6 +242,7 @@ const GrammarRunner = (function () {
             if (!ok) input.value = ex.answer;
             _setFeedback(ok, ok ? '✓ Correct!' : `✗ The answer was "${ex.answer}".`);
             if (ex.explanation) _container.insertAdjacentHTML('beforeend', _explanationHtml(ex.explanation));
+            if (ex.moreInfo) _container.insertAdjacentHTML('beforeend', _moreInfoHtml(ex.moreInfo));
             _resolve(ok);
         });
     }
@@ -244,6 +267,7 @@ const GrammarRunner = (function () {
             if (!ok) input.value = ex.solution;
             _setFeedback(ok, ok ? '✓ Correct!' : `✗ The correct sentence was "${ex.solution}".`);
             if (ex.explanation) _container.insertAdjacentHTML('beforeend', _explanationHtml(ex.explanation));
+            if (ex.moreInfo) _container.insertAdjacentHTML('beforeend', _moreInfoHtml(ex.moreInfo));
             _resolve(ok);
         });
     }
@@ -355,6 +379,7 @@ const GrammarRunner = (function () {
 
             _setFeedback(ok, ok ? '✓ Correct order!' : '✗ Not the right order — shown below.');
             if (ex.explanation) _container.insertAdjacentHTML('beforeend', _explanationHtml(ex.explanation));
+            if (ex.moreInfo) _container.insertAdjacentHTML('beforeend', _moreInfoHtml(ex.moreInfo));
             _resolve(ok);
         });
     }

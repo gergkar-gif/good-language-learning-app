@@ -128,19 +128,32 @@ track known bugs in existing content rather than things not yet built.
 
 ## Grammar reference
 
-- [ ] Grammar tips inside Workshop drillers (e.g. Suffix Driller),
-  similar to the unit-level Grammar Guide. **Captured 2026-08-27** — user
-  proposed this ("maybe we should"); needs a design decision before
-  building, since "similar to the Grammar Guide" could mean two fairly
-  different things: (a) a reference panel/link to the general grammar
-  concept being drilled (e.g. "About the Instrumental Case"), which
-  doesn't map cleanly since a driller pulls from the whole
-  dictionary/word-index rather than one unit's lessons, so there's no
-  single Grammar Guide entry to link to — this would mean authoring new
-  concept-level reference content; or (b) richer per-exercise "why" text
-  than the terse one-liners `explanation` already shows (added
-  2026-08-27, see "Workshop" section above) — a smaller, more
-  self-contained change. Asked the user to clarify before starting.
+- [x] Grammar tips inside Workshop drillers (e.g. Suffix Driller),
+  similar to the unit-level Grammar Guide. **Built 2026-08-27**, scoped to
+  the Suffix Driller (the user's own example) after they picked "a
+  reference panel for the concept" over the lighter alternative (richer
+  per-exercise "why" text — already covered by the `explanation` field
+  added earlier the same day). New `content/hu/reference/cases.json`: a
+  standalone reference — NOT a `grammar.schema.json` file, since that
+  schema's id pattern and validate-content.py's glob both assume
+  lesson-tied content, and this deliberately isn't tied to any lesson —
+  covering all 18 Hungarian cases plus plural and possessive (title,
+  suffix form(s), a plain-English explanation of when it's used, one
+  example sentence each). `GrammarRunner` gained a generic `_moreInfoHtml()`
+  (native `<details>`/`<summary>`, no extra JS) shown alongside the
+  existing per-word `explanation`, wired through all 5 exercise kinds so
+  any driller can supply `moreInfo` later; only `hu-suffix.js` populates
+  it for now via a new `_referenceFor(entry)` lookup keyed the same way
+  `_promptFor()`/`_groupFor()` already branch (case code, or plural/
+  possessive). Verified live across 80 sampled rounds: 19 of the 20
+  concepts observed, zero malformed/`undefined` content, panel expands
+  correctly and reads as a real grammar note (e.g. "About the Delative —
+  -ról / -ről — Motion off a surface... — Beszélek a munkámról. — I'm
+  talking about my job."). Not extended to Prefix/Verb/Morphology
+  drillers — the user's example was Suffix specifically; the mechanism
+  (`GrammarRunner`'s `moreInfo` support) is already generic enough that
+  giving those a reference file each is the only remaining work if
+  wanted.
 
 ## Interface & platform
 

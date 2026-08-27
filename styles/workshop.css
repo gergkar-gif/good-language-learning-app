@@ -424,6 +424,48 @@
     margin-bottom: 8px;
 }
 
+/* A general reference on the grammar concept, not the per-word "why"
+   .gd-explanation already gives — collapsed by default (native <details>,
+   no extra JS) so it stays a step further away than the feedback itself. */
+.gd-more-info {
+    margin-bottom: 8px;
+    padding: 10px 12px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+}
+
+.gd-more-info summary {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--primary);
+    cursor: pointer;
+}
+
+.gd-more-info summary::marker {
+    color: var(--muted);
+}
+
+.gd-more-info p {
+    font-size: 0.9rem;
+    color: var(--text);
+    margin-top: 8px;
+}
+
+.gd-more-info-suffix {
+    font-family: monospace;
+    color: var(--muted) !important;
+    font-size: 0.85rem !important;
+}
+
+.gd-more-info-example {
+    font-style: italic;
+}
+
+.gd-more-info-example em {
+    color: var(--muted);
+    font-style: normal;
+}
+
 /* ---- Actions ---- */
 .gd-actions {
     display: flex;

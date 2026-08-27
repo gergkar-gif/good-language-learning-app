@@ -60,6 +60,22 @@ const HuSuffixDriller = (function () {
     let _caseGroups = null;      // caseCode -> entries
     let _possessiveGroups = null; // "person:ownerNumber:number" -> entries
 
+    // content/hu/reference/cases.json — a general-purpose grammar reference
+    // ("About the Illative case", not "why 'háztartás' becomes
+    // 'háztartásokhoz'"), one entry per case code plus "plural" and
+    // "possessive". Null if it failed to load; every caller through
+    // _referenceFor() already tolerates that (no "Learn more" panel shown).
+    let _reference = null;
+
+    // The general reference entry for one exercise's tag, keyed the same
+    // three ways _groupFor()/_promptFor() already branch on.
+    function _referenceFor(entry) {
+        if (!_reference) return null;
+        if (entry.tag.person) return _reference.possessive || null;
+        if (entry.tag.case) return (_reference.cases && _reference.cases[entry.tag.case]) || null;
+        return _reference.plural || null;
+    }
+
     function _possessiveKey(tag) {
         return tag.person + ':' + tag.ownerNumber + ':' + tag.number;
     }
@@ -124,7 +140,8 @@ const HuSuffixDriller = (function () {
         if (_plural && _possessive && _case) return;
         const [wordIndex] = await Promise.all([
             Content.json(Lang.content('indexes/word-index.json')).catch(() => ({})),
-            Lexicon.load()
+            Lexicon.load(),
+            Content.json(Lang.content('reference/cases.json')).catch(() => null).then(r => { _reference = r; })
         ]);
 
         _plural = [];
@@ -231,7 +248,8 @@ const HuSuffixDriller = (function () {
             question: `Which form means "${_promptFor(entry)}"?`,
             options,
             correct: options.indexOf(entry.form),
-            explanation: _explanationFor(entry)
+            explanation: _explanationFor(entry),
+            moreInfo: _referenceFor(entry)
         };
     }
 
@@ -240,7 +258,8 @@ const HuSuffixDriller = (function () {
             kind: 'fill-blank',
             sentence: `"${entry.lemma}" (${_gloss(entry.lemma)}) + ${_promptFor(entry)} = ______`,
             answer: entry.form,
-            explanation: _explanationFor(entry)
+            explanation: _explanationFor(entry),
+            moreInfo: _referenceFor(entry)
         };
     }
 
