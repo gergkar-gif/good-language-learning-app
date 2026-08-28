@@ -6,290 +6,102 @@
       "type": "matching",
       "category": "vocabulary",
       "pairs": [
-        [
-          "administración",
-          "administration"
-        ],
-        [
-          "institución",
-          "institution"
-        ],
-        [
-          "gobierno",
-          "government"
-        ],
-        [
-          "legitimidad",
-          "legitimacy"
-        ]
-      ],
-      "teaches": [
-        "formacion-estado"
+        ["la moneda", "currency"],
+        ["el impuesto", "tax"],
+        ["el correo", "mail, postal service"],
+        ["la federación", "federation"]
+      ]
+    },
+    {
+      "id": "b1-nuevasrepublicas-01.ex01b",
+      "type": "matching",
+      "category": "vocabulary",
+      "pairs": [
+        ["disolverse", "to dissolve, break up"],
+        ["la facción", "faction"],
+        ["redactar", "to draft, write up"],
+        ["incierto", "uncertain"]
       ]
     },
     {
       "id": "b1-nuevasrepublicas-01.ex02",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Qué oración expresa mejor una relación histórica entre dos ideas?",
+      "category": "reading",
+      "question": "¿Qué cuestiones básicas tuvieron que resolverse casi desde el primer día tras la independencia?",
       "options": [
-        "Se organizaron nuevas administraciones, aunque muchas regiones seguían teniendo recursos y autoridades diferentes.",
-        "La situación fue importante.",
-        "No se puede explicar el proceso."
+        "Qué moneda circularía, cómo se cobrarían los impuestos y quién controlaría el correo entre ciudades distantes.",
+        "Ninguna: todas esas instituciones ya existían y funcionaban perfectamente desde la época colonial.",
+        "Únicamente cuestiones militares, sin ningún problema administrativo civil."
       ],
-      "correct": 0,
-      "teaches": [
-        "formacion-estado"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-nuevasrepublicas-01.ex03",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "_____ organizaron nuevas administraciones, aunque algunas regiones seguían teniendo autoridades diferentes. (se)",
-      "answer": "Se",
-      "teaches": [
-        "formacion-estado"
-      ]
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Qué fueron las Provincias Unidas del Centro de América, y qué les ocurrió?",
+      "options": [
+        "Una federación formada en 1823 que agrupaba cinco países actuales, disuelta en apenas dieciocho años tras guerras civiles internas.",
+        "Un imperio que duró más de un siglo sin ningún conflicto interno.",
+        "Una alianza puramente comercial sin ninguna estructura política."
+      ],
+      "correct": 0
     },
     {
       "id": "b1-nuevasrepublicas-01.ex04",
-      "type": "sentence-builder",
+      "type": "fill-blank",
       "category": "grammar",
-      "tiles": [
-        "Se",
-        "organizaron",
-        "nuevas",
-        "administraciones,",
-        "aunque",
-        "muchas",
-        "regiones",
-        "seguían",
-        "teniendo",
-        "recursos",
-        "y",
-        "autoridades",
-        "diferentes."
-      ],
-      "solution": [
-        "Se",
-        "organizaron",
-        "nuevas",
-        "administraciones,",
-        "aunque",
-        "muchas",
-        "regiones",
-        "seguían",
-        "teniendo",
-        "recursos",
-        "y",
-        "autoridades",
-        "diferentes."
-      ],
-      "english": "New administrations were organised, although many regions still had different resources and authorities.",
-      "teaches": [
-        "formacion-estado"
-      ]
+      "sentence": "Después de 1821, ___ organizaron administraciones desde cero. (organizar)",
+      "answer": "se",
+      "teaches": ["se-pasiva-impersonal-formacion-estado"]
     },
     {
       "id": "b1-nuevasrepublicas-01.ex05",
-      "type": "sentence-order",
-      "category": "grammar",
-      "sentences": [
-        "Las nuevas repúblicas heredaron territorios diversos.",
-        "Los gobiernos intentaron crear instituciones comunes.",
-        "Los conflictos regionales dificultaron la consolidación."
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Existía experiencia previa real de autogobierno a gran escala en estos nuevos países?",
+      "options": [
+        "No, y buena parte del proceso de construcción del Estado avanzó por ensayo y error.",
+        "Sí, gracias a la extensa formación administrativa que España había dado a los criollos.",
+        "Sí, porque ya existían instituciones republicanas plenamente desarrolladas desde antes."
       ],
-      "solution": [
-        0,
-        1,
-        2
-      ],
-      "teaches": [
-        "formacion-estado"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-nuevasrepublicas-01.ex06",
-      "type": "multiple-choice",
+      "type": "sentence-builder",
       "category": "grammar",
-      "question": "¿Cuál es la mejor interpretación del proceso descrito?",
-      "options": [
-        "Construir un Estado era difícil cuando las instituciones eran débiles y los conflictos regionales continuaban.",
-        "Todos los territorios tuvieron exactamente el mismo desarrollo.",
-        "Las instituciones nunca cambiaron."
-      ],
-      "correct": 0,
-      "teaches": [
-        "formacion-estado"
-      ]
+      "tiles": ["En", "Centroamérica", "se", "optó", "inicialmente", "por", "una", "solución", "federal."],
+      "solution": ["En", "Centroamérica", "se", "optó", "inicialmente", "por", "una", "solución", "federal."],
+      "english": "In Central America, a federal solution was initially chosen.",
+      "teaches": ["se-pasiva-impersonal-formacion-estado"]
     },
     {
       "id": "b1-nuevasrepublicas-01.ex07",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "La _____ de un gobierno dependía también del apoyo de distintos grupos. (legitimidad)",
-      "answer": "legitimidad",
-      "teaches": [
-        "formacion-estado"
-      ]
+      "type": "dialogue-complete",
+      "category": "reading",
+      "prompt": [
+        { "speaker": "Marta", "text": "¿Fue construir un Estado un proyecto rápido tras la independencia?" },
+        { "speaker": "Pablo", "text": "_____" }
+      ],
+      "options": [
+        "No, resultó ser un proyecto de generaciones, no de años, construido casi sobre la marcha sin ningún manual previo.",
+        "Sí, la mayoría de las instituciones quedaron completamente establecidas en pocos meses.",
+        "No hizo falta construir ningún Estado nuevo; las instituciones coloniales siguieron funcionando igual."
+      ],
+      "correct": 0
     },
     {
       "id": "b1-nuevasrepublicas-01.ex08",
-      "type": "sentence-order",
-      "category": "grammar",
-      "sentences": [
-        "Las instituciones tuvieron que adaptarse a territorios extensos, porque el gobierno no podía controlar todas las regiones de la misma manera.",
-        "La legitimidad de un gobierno dependía de cómo ejercía el poder y de si conseguía el apoyo de distintos grupos.",
-        "Construir un Estado era difícil cuando las instituciones eran débiles y los conflictos regionales continuaban."
-      ],
-      "solution": [
-        0,
-        1,
-        2
-      ],
-      "teaches": [
-        "formacion-estado"
-      ]
-    },
-    {
-      "id": "b1-nuevasrepublicas-01.ex09",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "¿Qué palabra pertenece directamente al tema de esta lección?",
-      "options": [
-        "administración",
-        "aeropuerto",
-        "receta"
-      ],
-      "correct": 0,
-      "teaches": [
-        "formacion-estado"
-      ]
-    },
-    {
-      "id": "b1-nuevasrepublicas-01.ex10",
       "type": "listening-choice",
       "category": "listening",
-      "sentence": "La legitimidad de un gobierno dependía de cómo ejercía el poder y de si conseguía el apoyo de distintos grupos.",
+      "sentence": "Cada una de las cinco provincias terminó convirtiéndose en un país completamente independiente.",
       "options": [
-        "A government's legitimacy depended on how it exercised power and whether it gained the support of different groups.",
-        "The statement says that nothing changed.",
-        "The statement refers to a different period."
+        "Each of the five provinces ended up becoming a completely independent country.",
+        "The five provinces remained united as a single federation permanently.",
+        "Only one of the five provinces ever became independent."
       ],
-      "correct": 0,
-      "teaches": [
-        "formacion-estado"
-      ]
-    },
-    {
-      "id": "b1-nuevasrepublicas-01.ex11",
-      "type": "dictation",
-      "category": "listening",
-      "sentence": "Construir un Estado era difícil cuando las instituciones eran débiles y los conflictos regionales continuaban.",
-      "teaches": [
-        "formacion-estado"
-      ]
-    },
-    {
-      "id": "b1-nuevasrepublicas-01.ex12",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Cuál fue uno de los principales problemas de construir un estado?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Se organizaron nuevas administraciones, aunque muchas regiones seguían teniendo recursos y autoridades diferentes.",
-        "Fue un proceso sin dificultades.",
-        "No tuvo consecuencias."
-      ],
-      "correct": 0,
-      "teaches": [
-        "formacion-estado"
-      ]
-    },
-    {
-      "id": "b1-nuevasrepublicas-01.ex13",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Por qué el proceso fue difícil?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Las instituciones tuvieron que adaptarse a territorios extensos, porque el gobierno no podía controlar todas las regiones de la misma manera.",
-        "Porque todos los grupos estaban de acuerdo.",
-        "Porque no existían diferencias regionales."
-      ],
-      "correct": 0,
-      "teaches": [
-        "formacion-estado"
-      ]
-    },
-    {
-      "id": "b1-nuevasrepublicas-01.ex14",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Qué podemos concluir de este período?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Construir un Estado era difícil cuando las instituciones eran débiles y los conflictos regionales continuaban.",
-        "Que todas las repúblicas siguieron exactamente el mismo camino.",
-        "Que las instituciones no cambiaron."
-      ],
-      "correct": 0,
-      "teaches": [
-        "formacion-estado"
-      ]
-    },
-    {
-      "id": "b1-nuevasrepublicas-01.ex15",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Explica un problema del proceso usando dos cláusulas relacionadas.",
-          "answer": "Se organizaron nuevas administraciones, aunque muchas regiones seguían teniendo recursos y autoridades diferentes."
-        }
-      ],
-      "teaches": [
-        "formacion-estado"
-      ]
-    },
-    {
-      "id": "b1-nuevasrepublicas-01.ex16",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Explica una consecuencia usando un conector.",
-          "answer": "Construir un Estado era difícil cuando las instituciones eran débiles y los conflictos regionales continuaban."
-        }
-      ],
-      "teaches": [
-        "formacion-estado"
-      ]
+      "correct": 0
     }
   ]
 }

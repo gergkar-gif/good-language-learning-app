@@ -6,286 +6,102 @@
       "type": "matching",
       "category": "vocabulary",
       "pairs": [
-        [
-          "liberal",
-          "liberal"
-        ],
-        [
-          "conservador",
-          "conservative"
-        ],
-        [
-          "reforma",
-          "reform"
-        ]
-      ],
-      "teaches": [
-        "liberales-conservadores"
+        ["discrepar", "to disagree"],
+        ["el pilar", "pillar"],
+        ["estimular", "to stimulate, encourage"],
+        ["despojar", "to strip, dispossess"]
+      ]
+    },
+    {
+      "id": "b1-nuevasrepublicas-03.ex01b",
+      "type": "matching",
+      "category": "vocabulary",
+      "pairs": [
+        ["desechar", "to discard, scrap"],
+        ["oscilar", "to swing, oscillate"],
+        ["el matiz", "nuance"],
+        ["definitivo", "definitive, final"]
       ]
     },
     {
       "id": "b1-nuevasrepublicas-03.ex02",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Qué oración expresa mejor una relación histórica entre dos ideas?",
+      "category": "reading",
+      "question": "¿Sobre qué discrepaban liberales y conservadores, además de sobre quién debía gobernar?",
       "options": [
-        "Los liberales defendían reformas, buscando ampliar determinadas libertades mientras cuestionaban algunas instituciones tradicionales.",
-        "La situación fue importante.",
-        "No se puede explicar el proceso."
+        "El papel de la Iglesia católica, la propiedad de la tierra y la forma misma del Estado.",
+        "Únicamente sobre el nombre oficial que debía tener cada país.",
+        "No existía ningún desacuerdo real entre ambos grupos."
       ],
-      "correct": 0,
-      "teaches": [
-        "liberales-conservadores"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-nuevasrepublicas-03.ex03",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Los liberales defendían reformas, _____ ampliar determinadas libertades. (buscar)",
-      "answer": "buscando",
-      "teaches": [
-        "liberales-conservadores"
-      ]
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Qué efecto tuvo, en la práctica, la política liberal de propiedad individual de la tierra?",
+      "options": [
+        "A menudo terminó despojando de sus tierras tanto a comunidades indígenas como a la propia Iglesia.",
+        "Benefició exclusivamente a las comunidades indígenas, sin afectar a la Iglesia.",
+        "No tuvo ningún efecto real sobre la propiedad de la tierra."
+      ],
+      "correct": 0
     },
     {
       "id": "b1-nuevasrepublicas-03.ex04",
-      "type": "sentence-builder",
+      "type": "fill-blank",
       "category": "grammar",
-      "tiles": [
-        "Los",
-        "liberales",
-        "defendían",
-        "reformas,",
-        "buscando",
-        "ampliar",
-        "determinadas",
-        "libertades",
-        "mientras",
-        "cuestionaban",
-        "algunas",
-        "instituciones",
-        "tradicionales."
-      ],
-      "solution": [
-        "Los",
-        "liberales",
-        "defendían",
-        "reformas,",
-        "buscando",
-        "ampliar",
-        "determinadas",
-        "libertades",
-        "mientras",
-        "cuestionaban",
-        "algunas",
-        "instituciones",
-        "tradicionales."
-      ],
-      "english": "Liberals defended reforms, seeking to expand certain freedoms while questioning some traditional institutions.",
-      "teaches": [
-        "liberales-conservadores"
-      ]
+      "sentence": "Los liberales, ___ reducir el poder de la Iglesia, defendían la venta de sus propiedades. (buscar)",
+      "answer": "buscando",
+      "teaches": ["gerundio-liberales-conservadores-competencia"]
     },
     {
       "id": "b1-nuevasrepublicas-03.ex05",
-      "type": "sentence-order",
-      "category": "grammar",
-      "sentences": [
-        "Las nuevas repúblicas heredaron territorios diversos.",
-        "Los gobiernos intentaron crear instituciones comunes.",
-        "Los conflictos regionales dificultaron la consolidación."
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Cuántas constituciones distintas llegó a tener Colombia (Nueva Granada) a lo largo del siglo diecinueve?",
+      "options": [
+        "Cerca de diez, oscilando entre modelos liberales y conservadores según cambiaba el bando en el poder.",
+        "Solo una, que se mantuvo sin cambios durante todo el siglo.",
+        "Ninguna: Colombia nunca tuvo una constitución escrita en el siglo diecinueve."
       ],
-      "solution": [
-        0,
-        1,
-        2
-      ],
-      "teaches": [
-        "liberales-conservadores"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-nuevasrepublicas-03.ex06",
-      "type": "multiple-choice",
+      "type": "sentence-builder",
       "category": "grammar",
-      "question": "¿Cuál es la mejor interpretación del proceso descrito?",
-      "options": [
-        "Aunque ambos grupos querían organizar el nuevo Estado, diferían sobre la velocidad y el alcance de las reformas.",
-        "Todos los territorios tuvieron exactamente el mismo desarrollo.",
-        "Las instituciones nunca cambiaron."
-      ],
-      "correct": 0,
-      "teaches": [
-        "liberales-conservadores"
-      ]
+      "tiles": ["Los", "conservadores,", "intentando", "preservar", "el", "orden", "social", "heredado", "de", "la", "colonia,", "defendían", "a", "la", "Iglesia."],
+      "solution": ["Los", "conservadores,", "intentando", "preservar", "el", "orden", "social", "heredado", "de", "la", "colonia,", "defendían", "a", "la", "Iglesia."],
+      "english": "Conservatives, trying to preserve the social order inherited from the colony, defended the Church.",
+      "teaches": ["gerundio-liberales-conservadores-competencia"]
     },
     {
       "id": "b1-nuevasrepublicas-03.ex07",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Los grupos políticos debatían el alcance de la _____. (reforma)",
-      "answer": "reforma",
-      "teaches": [
-        "liberales-conservadores"
-      ]
+      "type": "dialogue-complete",
+      "category": "reading",
+      "prompt": [
+        { "speaker": "Marta", "text": "¿Logró alguno de los dos bandos, liberal o conservador, una victoria definitiva durante este periodo?" },
+        { "speaker": "Pablo", "text": "_____" }
+      ],
+      "options": [
+        "No, durante mucho tiempo ninguno de los dos logró una victoria realmente definitiva; cada constitución duraba solo unos años.",
+        "Sí, los liberales ganaron de forma permanente e indiscutible desde el principio.",
+        "Sí, los conservadores impusieron su modelo sin ninguna oposición durante todo el siglo."
+      ],
+      "correct": 0
     },
     {
       "id": "b1-nuevasrepublicas-03.ex08",
-      "type": "sentence-order",
-      "category": "grammar",
-      "sentences": [
-        "Los conservadores apoyaban cambios limitados porque consideraban que un cambio demasiado rápido podía producir inestabilidad.",
-        "Liberales y conservadores competían por el poder, formando alianzas que cambiaban según las circunstancias.",
-        "Aunque ambos grupos querían organizar el nuevo Estado, diferían sobre la velocidad y el alcance de las reformas."
-      ],
-      "solution": [
-        0,
-        1,
-        2
-      ],
-      "teaches": [
-        "liberales-conservadores"
-      ]
-    },
-    {
-      "id": "b1-nuevasrepublicas-03.ex09",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "¿Qué palabra pertenece directamente al tema de esta lección?",
-      "options": [
-        "liberal",
-        "aeropuerto",
-        "receta"
-      ],
-      "correct": 0,
-      "teaches": [
-        "liberales-conservadores"
-      ]
-    },
-    {
-      "id": "b1-nuevasrepublicas-03.ex10",
       "type": "listening-choice",
       "category": "listening",
-      "sentence": "Liberales y conservadores competían por el poder, formando alianzas que cambiaban según las circunstancias.",
+      "sentence": "Cada nueva constitución duraba, en promedio, solo unos años antes de ser reemplazada.",
       "options": [
-        "Liberals and conservatives competed for power, forming alliances that changed according to circumstances.",
-        "The statement says that nothing changed.",
-        "The statement refers to a different period."
+        "Each new constitution lasted, on average, only a few years before being replaced.",
+        "Constitutions in this period typically lasted for many decades.",
+        "No country in the region ever changed its constitution."
       ],
-      "correct": 0,
-      "teaches": [
-        "liberales-conservadores"
-      ]
-    },
-    {
-      "id": "b1-nuevasrepublicas-03.ex11",
-      "type": "dictation",
-      "category": "listening",
-      "sentence": "Aunque ambos grupos querían organizar el nuevo Estado, diferían sobre la velocidad y el alcance de las reformas.",
-      "teaches": [
-        "liberales-conservadores"
-      ]
-    },
-    {
-      "id": "b1-nuevasrepublicas-03.ex12",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Cuál fue uno de los principales problemas de liberales y conservadores?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Los liberales defendían reformas, buscando ampliar determinadas libertades mientras cuestionaban algunas instituciones tradicionales.",
-        "Fue un proceso sin dificultades.",
-        "No tuvo consecuencias."
-      ],
-      "correct": 0,
-      "teaches": [
-        "liberales-conservadores"
-      ]
-    },
-    {
-      "id": "b1-nuevasrepublicas-03.ex13",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Por qué el proceso fue difícil?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Los conservadores apoyaban cambios limitados porque consideraban que un cambio demasiado rápido podía producir inestabilidad.",
-        "Porque todos los grupos estaban de acuerdo.",
-        "Porque no existían diferencias regionales."
-      ],
-      "correct": 0,
-      "teaches": [
-        "liberales-conservadores"
-      ]
-    },
-    {
-      "id": "b1-nuevasrepublicas-03.ex14",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Qué podemos concluir de este período?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Aunque ambos grupos querían organizar el nuevo Estado, diferían sobre la velocidad y el alcance de las reformas.",
-        "Que todas las repúblicas siguieron exactamente el mismo camino.",
-        "Que las instituciones no cambiaron."
-      ],
-      "correct": 0,
-      "teaches": [
-        "liberales-conservadores"
-      ]
-    },
-    {
-      "id": "b1-nuevasrepublicas-03.ex15",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Explica un problema del proceso usando dos cláusulas relacionadas.",
-          "answer": "Los liberales defendían reformas, buscando ampliar determinadas libertades mientras cuestionaban algunas instituciones tradicionales."
-        }
-      ],
-      "teaches": [
-        "liberales-conservadores"
-      ]
-    },
-    {
-      "id": "b1-nuevasrepublicas-03.ex16",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Explica una consecuencia usando un conector.",
-          "answer": "Aunque ambos grupos querían organizar el nuevo Estado, diferían sobre la velocidad y el alcance de las reformas."
-        }
-      ],
-      "teaches": [
-        "liberales-conservadores"
-      ]
+      "correct": 0
     }
   ]
 }
