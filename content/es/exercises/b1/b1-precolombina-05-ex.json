@@ -6,336 +6,102 @@
       "type": "matching",
       "category": "vocabulary",
       "pairs": [
-        [
-          "legado",
-          "legacy"
-        ],
-        [
-          "fuente",
-          "source"
-        ],
-        [
-          "evidencia",
-          "evidence"
-        ]
-      ],
-      "teaches": [
-        "synthesis-connectors"
+        ["el legado", "legacy"],
+        ["la fuente", "source"],
+        ["la evidencia", "evidence"],
+        ["la prueba", "proof"]
+      ]
+    },
+    {
+      "id": "b1-precolombina-05.ex01b",
+      "type": "matching",
+      "category": "vocabulary",
+      "pairs": [
+        ["quemar", "to burn"],
+        ["sobrevivir", "to survive"],
+        ["el hallazgo", "finding, discovery"],
+        ["fiable", "reliable"]
       ]
     },
     {
       "id": "b1-precolombina-05.ex02",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Qué oración usa correctamente 'a pesar de'?",
+      "category": "reading",
+      "question": "¿Por qué sobreviven hoy solo cuatro códices mayas originales?",
       "options": [
-        "A pesar de las diferencias entre los pueblos, todos dejaron un legado que continúa presente.",
-        "A pesar las diferencias, dejaron legado.",
-        "Los pueblos a pesar dejaron un legado."
+        "Porque el fraile Diego de Landa ordenó quemar decenas de ellos en 1562, y hubo otras destrucciones similares.",
+        "Porque los mayas nunca desarrollaron un sistema de escritura completo.",
+        "Porque los códices se perdieron accidentalmente en un incendio natural."
       ],
-      "correct": 0,
-      "teaches": [
-        "synthesis-connectors"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-precolombina-05.ex03",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "___ nuevos hallazgos arqueológicos, los historiadores revisan sus interpretaciones. (a raíz de)",
-      "answer": "a raíz de",
-      "teaches": [
-        "synthesis-connectors"
-      ]
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "Además de los códices, ¿qué otro tipo de evidencia permite a los arqueólogos fechar el mundo maya con precisión?",
+      "options": [
+        "Las fechas grabadas en estelas de piedra según el calendario de Cuenta Larga, más técnicas como la datación por radiocarbono.",
+        "Solo los testimonios orales transmitidos sin ningún cambio hasta hoy.",
+        "Documentos notariales escritos por los mismos mayas en español."
+      ],
+      "correct": 0
     },
     {
       "id": "b1-precolombina-05.ex04",
-      "type": "sentence-builder",
+      "type": "fill-blank",
       "category": "grammar",
-      "tiles": [
-        "Una",
-        "fuente",
-        "aporta",
-        "información."
-      ],
-      "solution": [
-        "Una",
-        "fuente",
-        "aporta",
-        "información."
-      ],
-      "english": "A source provides information.",
-      "teaches": [
-        "synthesis-connectors"
-      ]
+      "sentence": "___ que los mayas escribían con un sistema jeroglífico completo, hoy solo sobreviven cuatro libros mayas originales.",
+      "answer": "A pesar de",
+      "teaches": ["conectores-a-pesar-de-a-raiz-de"]
     },
     {
       "id": "b1-precolombina-05.ex05",
-      "type": "sentence-order",
-      "category": "grammar",
-      "sentences": [
-        "Los historiadores comparan distintas fuentes. [Historians compare different sources.]",
-        "Cada fuente aporta información parcial. [Each source provides partial information.]",
-        "Por eso, la interpretación combina varias evidencias. [Therefore, interpretation combines several pieces of evidence.]"
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Cómo llegó el Popol Vuh, el relato sagrado k'iche', hasta nuestros días?",
+      "options": [
+        "Nobles k'iche' lo transcribieron al alfabeto latino en el siglo dieciséis, y hacia 1701 un fraile dominico lo copió y tradujo al español.",
+        "Se conservó intacto en piedra desde antes de la llegada de los españoles.",
+        "Fue descubierto completo en el siglo veinte, sin ninguna copia anterior."
       ],
-      "solution": [
-        0,
-        1,
-        2
-      ],
-      "teaches": [
-        "synthesis-connectors"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-precolombina-05.ex06",
-      "type": "multiple-choice",
+      "type": "sentence-builder",
       "category": "grammar",
-      "question": "¿Qué palabra significa 'evidence'?",
-      "options": [
-        "evidencia",
-        "fuente",
-        "legado"
-      ],
-      "correct": 0,
-      "teaches": [
-        "synthesis-connectors"
-      ]
+      "tiles": ["A", "raíz", "de", "descubrimientos", "recientes,", "la", "imagen", "del", "mundo", "precolombino", "sigue", "cambiando."],
+      "solution": ["A", "raíz", "de", "descubrimientos", "recientes,", "la", "imagen", "del", "mundo", "precolombino", "sigue", "cambiando."],
+      "english": "As a result of recent discoveries, the picture of the pre-Columbian world keeps changing.",
+      "teaches": ["conectores-a-pesar-de-a-raiz-de"]
     },
     {
       "id": "b1-precolombina-05.ex07",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "El ___ continúa presente en muchas lenguas y tradiciones. (legado)",
-      "answer": "legado",
-      "teaches": [
-        "synthesis-connectors"
-      ]
+      "type": "dialogue-complete",
+      "category": "reading",
+      "prompt": [
+        { "speaker": "Marta", "text": "¿Los historiadores suelen tener una sola prueba definitiva sobre el mundo precolombino?" },
+        { "speaker": "Pablo", "text": "_____" }
+      ],
+      "options": [
+        "Rara vez: cada fuente, como los códices, las estelas o las crónicas, aporta solo una pieza distinta.",
+        "Sí, siempre existe un único documento que lo explica todo sin ninguna duda.",
+        "No, porque no existe ninguna evidencia sobre esas civilizaciones."
+      ],
+      "correct": 0
     },
     {
       "id": "b1-precolombina-05.ex08",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Por qué necesitan los historiadores comparar varias fuentes?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Porque una sola fuente no aporta toda la información. [Because a single source doesn't provide all the information.]",
-        "Porque una fuente siempre dice toda la verdad. [Because a single source always tells the whole truth.]",
-        "No es necesario comparar nada. [It isn't necessary to compare anything.]"
-      ],
-      "correct": 0,
-      "teaches": [
-        "synthesis-connectors"
-      ]
-    },
-    {
-      "id": "b1-precolombina-05.ex09",
-      "type": "multiple-choice",
-      "category": "reading",
-      "question": "¿Cuál es la idea principal del texto?",
-      "options": [
-        "Antes de la conquista, América tenía una gran diversidad geográfica y social.",
-        "Toda América tenía exactamente el mismo paisaje y la misma sociedad.",
-        "Los europeos ya habían llegado antes del periodo descrito."
-      ],
-      "correct": 0
-    },
-    {
-      "id": "b1-precolombina-05.ex10",
-      "type": "multiple-choice",
-      "category": "reading",
-      "question": "¿Qué detalle aparece en el texto?",
-      "options": [
-        "En los Andes se estableció un Estado inca que controlaba un territorio extenso.",
-        "Los inca vivían únicamente en la selva.",
-        "No existía ningún Estado en los Andes."
-      ],
-      "correct": 0
-    },
-    {
-      "id": "b1-precolombina-05.ex11",
-      "type": "multiple-choice",
-      "category": "reading",
-      "question": "¿Qué elemento ayuda a entender el texto?",
-      "options": [
-        "El tributo era recibido por el gobernante, aunque las comunidades conservaban autonomía.",
-        "Todas las comunidades eran completamente independientes del gobernante.",
-        "El gobernante nunca recibía nada de las comunidades."
-      ],
-      "correct": 0
-    },
-    {
-      "id": "b1-precolombina-05.ex12",
-      "type": "multiple-choice",
-      "category": "reading",
-      "question": "¿Qué conclusión encaja mejor?",
-      "options": [
-        "A pesar de las diferencias entre los pueblos, su legado continúa presente hoy.",
-        "El legado de estos pueblos desapareció por completo.",
-        "Solo una de las tres civilizaciones dejó algún legado."
-      ],
-      "correct": 0
-    },
-    {
-      "id": "b1-precolombina-05.ex13",
       "type": "listening-choice",
       "category": "listening",
-      "sentence": "A pesar de las diferencias entre los pueblos, todos dejaron un legado que continúa presente.",
+      "sentence": "La autenticidad del códice Grolier fue puesta en duda durante más de cuarenta años.",
       "options": [
-        "Despite the differences between the peoples, all of them left a legacy that remains present.",
-        "The peoples left no legacy at all.",
-        "Only one people left any legacy."
+        "The authenticity of the Grolier Codex was doubted for more than forty years.",
+        "The Grolier Codex was destroyed more than forty years ago.",
+        "Nobody has ever questioned the Grolier Codex."
       ],
-      "correct": 0,
-      "teaches": [
-        "synthesis-connectors"
-      ]
-    },
-    {
-      "id": "b1-precolombina-05.ex14",
-      "type": "listening-choice",
-      "category": "listening",
-      "sentence": "Una fuente aporta información, pero siempre debe compararse con otras evidencias.",
-      "options": [
-        "A source provides information, but it must always be compared with other evidence.",
-        "A single source is always enough.",
-        "Sources should never be compared."
-      ],
-      "correct": 0,
-      "teaches": [
-        "synthesis-connectors"
-      ]
-    },
-    {
-      "id": "b1-precolombina-05.ex15",
-      "type": "dictation",
-      "category": "listening",
-      "sentence": "El legado continúa presente.",
-      "teaches": [
-        "synthesis-connectors"
-      ]
-    },
-    {
-      "id": "b1-precolombina-05.ex16",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Por qué revisan los historiadores sus interpretaciones?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "A raíz de nuevos hallazgos arqueológicos, revisan constantemente sus interpretaciones. [As a result of new archaeological findings, they constantly revise their interpretations.]",
-        "Nunca cambian de opinión. [They never change their minds.]",
-        "No usan evidencia arqueológica. [They don't use archaeological evidence.]"
-      ],
-      "correct": 0,
-      "teaches": [
-        "synthesis-connectors"
-      ]
-    },
-    {
-      "id": "b1-precolombina-05.ex17",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Qué debe hacerse con una fuente histórica?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Debe compararse siempre con otras evidencias. [It must always be compared with other evidence.]",
-        "Debe aceptarse sin comprobar nada más. [It must be accepted without checking anything else.]",
-        "No debe usarse nunca. [It should never be used.]"
-      ],
-      "correct": 0,
-      "teaches": [
-        "synthesis-connectors"
-      ]
-    },
-    {
-      "id": "b1-precolombina-05.ex18",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Qué queda hoy del mundo pre-colombino?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Su legado continúa presente en muchas lenguas, alimentos y tradiciones. [Its legacy remains present in many languages, foods and traditions.]",
-        "No queda absolutamente nada. [Nothing remains at all.]",
-        "Solo queda un idioma. [Only one language remains.]"
-      ],
-      "correct": 0,
-      "teaches": [
-        "synthesis-connectors"
-      ]
-    },
-    {
-      "id": "b1-precolombina-05.ex19",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Explica por qué los historiadores comparan varias fuentes, usando 'a pesar de' o 'a raíz de'. [Explain why historians compare several sources, using 'a pesar de' or 'a raíz de'.]",
-          "answer": "A raíz de nuevos hallazgos arqueológicos, los historiadores revisan constantemente sus interpretaciones."
-        }
-      ],
-      "teaches": [
-        "synthesis-connectors"
-      ]
-    },
-    {
-      "id": "b1-precolombina-05.ex20",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Resume en una frase el legado del mundo pre-colombino. [Summarise the legacy of the pre-Columbian world in one sentence.]",
-          "answer": "A pesar de las diferencias entre los pueblos, su legado continúa presente en muchas lenguas, alimentos y tradiciones."
-        }
-      ],
-      "teaches": [
-        "synthesis-connectors"
-      ]
-    },
-    {
-      "id": "b1-precolombina-05.ex21",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Explica qué aporta una fuente histórica y por qué no basta con una sola. [Explain what a historical source provides and why one alone isn't enough.]",
-          "answer": "Una fuente aporta información, pero siempre debe compararse con otras evidencias."
-        }
-      ],
-      "teaches": [
-        "synthesis-connectors"
-      ]
+      "correct": 0
     }
   ]
 }

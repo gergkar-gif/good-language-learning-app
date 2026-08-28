@@ -6,276 +6,102 @@
       "type": "matching",
       "category": "vocabulary",
       "pairs": [
-        [
-          "agricultura",
-          "agriculture"
-        ],
-        [
-          "ritual",
-          "ritual"
-        ],
-        [
-          "trueque",
-          "barter"
-        ]
-      ],
-      "teaches": [
-        "daily-life-gerund"
+        ["la desnutrición", "malnutrition"],
+        ["amargo", "bitter"],
+        ["la especia", "spice"],
+        ["masticar", "to chew"]
+      ]
+    },
+    {
+      "id": "b1-precolombina-04.ex01b",
+      "type": "matching",
+      "category": "vocabulary",
+      "pairs": [
+        ["la vestimenta", "clothing, attire"],
+        ["el rango", "rank"],
+        ["la cancha", "court (sports)"],
+        ["el sacrificio", "sacrifice"]
       ]
     },
     {
       "id": "b1-precolombina-04.ex02",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Qué oración describe correctamente dos acciones simultáneas con gerundio?",
+      "category": "reading",
+      "question": "¿Por qué era tan importante cocinar el maíz con cal o ceniza (nixtamalización)?",
       "options": [
-        "Muchas familias vivían cultivando la tierra y participando en rituales a la vez.",
-        "Muchas familias vivían cultivar la tierra y participar en rituales.",
-        "Muchas familias cultivando vivían la tierra."
+        "Porque liberaba nutrientes que el maíz crudo no ofrece, evitando la desnutrición.",
+        "Porque hacía que el maíz supiera más dulce y agradable.",
+        "Porque era un requisito puramente religioso, sin relación con la nutrición."
       ],
-      "correct": 0,
-      "teaches": [
-        "daily-life-gerund"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-precolombina-04.ex03",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "La religión acompañaba la vida cotidiana, ___ los ciclos agrícolas. (marcar)",
-      "answer": "marcando",
-      "teaches": [
-        "daily-life-gerund"
-      ]
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Por qué aparecieron epidemias de pelagra en Europa siglos después de que llegara el maíz americano?",
+      "options": [
+        "Porque en Europa se comía el maíz sin la técnica de nixtamalización.",
+        "Porque el maíz europeo era una variedad completamente distinta y tóxica.",
+        "Porque los médicos europeos prohibieron por completo el consumo de maíz."
+      ],
+      "correct": 0
     },
     {
       "id": "b1-precolombina-04.ex04",
-      "type": "sentence-builder",
+      "type": "fill-blank",
       "category": "grammar",
-      "tiles": [
-        "El",
-        "trueque",
-        "permitía",
-        "intercambiar",
-        "productos."
-      ],
-      "solution": [
-        "El",
-        "trueque",
-        "permitía",
-        "intercambiar",
-        "productos."
-      ],
-      "english": "Barter allowed goods to be exchanged.",
-      "teaches": [
-        "daily-life-gerund"
-      ]
+      "sentence": "___ los granos con cal o ceniza, los pueblos mesoamericanos liberaban nutrientes que el maíz crudo no ofrece. (cocinar)",
+      "answer": "Cocinando",
+      "teaches": ["gerundio-accion-paralela"]
     },
     {
       "id": "b1-precolombina-04.ex05",
-      "type": "sentence-order",
-      "category": "grammar",
-      "sentences": [
-        "La agricultura proporcionaba la mayor parte de los alimentos. [Agriculture provided most of the food.]",
-        "El trueque permitía intercambiar lo que faltaba. [Barter allowed exchanging what was missing.]",
-        "Así, comunidades distintas dependían unas de otras. [This way, different communities depended on each other.]"
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "Además de para preparar una bebida, ¿para qué servían los granos de cacao entre los mexica?",
+      "options": [
+        "Funcionaban como una forma de moneda: con ellos se podía pagar tributo o comprar en el mercado.",
+        "Se usaban únicamente como ofrenda en funerales.",
+        "Estaban prohibidos fuera de la familia del emperador."
       ],
-      "solution": [
-        0,
-        1,
-        2
-      ],
-      "teaches": [
-        "daily-life-gerund"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-precolombina-04.ex06",
-      "type": "multiple-choice",
+      "type": "sentence-builder",
       "category": "grammar",
-      "question": "¿Qué palabra significa 'barter'?",
-      "options": [
-        "trueque",
-        "agricultura",
-        "ritual"
-      ],
-      "correct": 0,
-      "teaches": [
-        "daily-life-gerund"
-      ]
+      "tiles": ["Masticando", "hojas", "de", "coca,", "los", "habitantes", "de", "las", "alturas", "combatían", "el", "hambre."],
+      "solution": ["Masticando", "hojas", "de", "coca,", "los", "habitantes", "de", "las", "alturas", "combatían", "el", "hambre."],
+      "english": "By chewing coca leaves, people in the highlands fought off hunger.",
+      "teaches": ["gerundio-accion-paralela"]
     },
     {
       "id": "b1-precolombina-04.ex07",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "El ___ formaba parte de la vida religiosa. (ritual)",
-      "answer": "ritual",
-      "teaches": [
-        "daily-life-gerund"
-      ]
+      "type": "dialogue-complete",
+      "category": "reading",
+      "prompt": [
+        { "speaker": "Marta", "text": "¿Cualquiera en el imperio inca podía vestir los mejores tejidos de lana de vicuña?" },
+        { "speaker": "Pablo", "text": "_____" }
+      ],
+      "options": [
+        "No, esos tejidos se reservaban exclusivamente para el Inca y su familia.",
+        "Sí, la ropa no indicaba ninguna diferencia de rango social.",
+        "No, porque la lana de vicuña estaba completamente prohibida en el imperio."
+      ],
+      "correct": 0
     },
     {
       "id": "b1-precolombina-04.ex08",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Cómo se organizaba la vida diaria en estas sociedades?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Muchas familias vivían cultivando la tierra y participando en rituales a la vez. [Many families lived cultivating the land and taking part in rituals at the same time.]",
-        "Nadie trabajaba la tierra. [Nobody worked the land.]",
-        "No existían prácticas religiosas. [No religious practices existed.]"
-      ],
-      "correct": 0,
-      "teaches": [
-        "daily-life-gerund"
-      ]
-    },
-    {
-      "id": "b1-precolombina-04.ex09",
       "type": "listening-choice",
       "category": "listening",
-      "sentence": "Muchas familias vivían cultivando la tierra y participando en rituales religiosos a la vez.",
+      "sentence": "En algunas ciudades, el juego de pelota se relacionaba con rituales religiosos.",
       "options": [
-        "Many families lived cultivating the land and taking part in religious rituals at the same time.",
-        "Families never cultivated the land.",
-        "Rituals replaced agriculture completely."
+        "In some cities, the ballgame was connected to religious rituals.",
+        "The ballgame was strictly forbidden in every Mesoamerican city.",
+        "Nobody in Mesoamerica ever played the ballgame."
       ],
-      "correct": 0,
-      "teaches": [
-        "daily-life-gerund"
-      ]
-    },
-    {
-      "id": "b1-precolombina-04.ex10",
-      "type": "listening-choice",
-      "category": "listening",
-      "sentence": "El trueque permitía intercambiar productos.",
-      "options": [
-        "Barter allowed goods to be exchanged.",
-        "Barter was forbidden.",
-        "Products could never be exchanged."
-      ],
-      "correct": 0,
-      "teaches": [
-        "daily-life-gerund"
-      ]
-    },
-    {
-      "id": "b1-precolombina-04.ex11",
-      "type": "dictation",
-      "category": "listening",
-      "sentence": "La agricultura proporcionaba alimentos.",
-      "teaches": [
-        "daily-life-gerund"
-      ]
-    },
-    {
-      "id": "b1-precolombina-04.ex12",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Qué hacían las familias mientras cultivaban la tierra?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "También participaban en rituales religiosos a la vez. [They also took part in religious rituals at the same time.]",
-        "No hacían ninguna otra actividad. [They did no other activity.]",
-        "Dejaban de practicar cualquier religión. [They stopped practising any religion at all.]"
-      ],
-      "correct": 0,
-      "teaches": [
-        "daily-life-gerund"
-      ]
-    },
-    {
-      "id": "b1-precolombina-04.ex13",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Para qué servía el trueque?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Permitía intercambiar productos entre comunidades distintas. [It allowed goods to be exchanged between different communities.]",
-        "No tenía ninguna función económica. [It had no economic function at all.]",
-        "Servía solo para guardar productos. [It only served to store goods.]"
-      ],
-      "correct": 0,
-      "teaches": [
-        "daily-life-gerund"
-      ]
-    },
-    {
-      "id": "b1-precolombina-04.ex14",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Qué papel tenía la religión en la vida cotidiana?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Acompañaba la vida diaria, marcando los ciclos agrícolas y sociales. [It accompanied daily life, marking the agricultural and social cycles.]",
-        "No tenía ningún papel en la vida diaria. [It had no role in daily life.]",
-        "Solo existía una vez al año. [It only existed once a year.]"
-      ],
-      "correct": 0,
-      "teaches": [
-        "daily-life-gerund"
-      ]
-    },
-    {
-      "id": "b1-precolombina-04.ex15",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Describe dos actividades simultáneas de la vida cotidiana usando gerundio. [Describe two simultaneous daily-life activities using the gerund.]",
-          "answer": "Muchas familias vivían cultivando la tierra y participando en rituales religiosos a la vez."
-        }
-      ],
-      "teaches": [
-        "daily-life-gerund"
-      ]
-    },
-    {
-      "id": "b1-precolombina-04.ex16",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Explica para qué servía el trueque. [Explain what barter was used for.]",
-          "answer": "El trueque permitía intercambiar productos entre comunidades distintas."
-        }
-      ],
-      "teaches": [
-        "daily-life-gerund"
-      ]
+      "correct": 0
     }
   ]
 }

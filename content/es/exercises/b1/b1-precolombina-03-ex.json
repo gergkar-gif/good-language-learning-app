@@ -6,278 +6,102 @@
       "type": "matching",
       "category": "vocabulary",
       "pairs": [
-        [
-          "jerarquía",
-          "hierarchy"
-        ],
-        [
-          "tributo",
-          "tribute"
-        ],
-        [
-          "gobernante",
-          "ruler"
-        ]
-      ],
-      "teaches": [
-        "power-passive-voice"
+        ["sagrado", "sacred"],
+        ["la estela", "stele"],
+        ["el guerrero", "warrior"],
+        ["la movilidad", "mobility"]
+      ]
+    },
+    {
+      "id": "b1-precolombina-03.ex01b",
+      "type": "matching",
+      "category": "vocabulary",
+      "pairs": [
+        ["la servidumbre", "servitude"],
+        ["la deuda", "debt"],
+        ["el impuesto", "tax"],
+        ["someter", "to subjugate"]
       ]
     },
     {
       "id": "b1-precolombina-03.ex02",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Qué oración usa correctamente la voz pasiva?",
+      "category": "reading",
+      "question": "¿Qué se creía sobre el k'uhul ajaw, el «señor sagrado» maya?",
       "options": [
-        "El tributo era recibido por el gobernante.",
-        "El tributo recibía era por el gobernante.",
-        "El gobernante era recibido tributo."
+        "Que su cuerpo conectaba el mundo humano con el de los dioses y los antepasados.",
+        "Que era elegido democráticamente por el pueblo cada cierto número de años.",
+        "Que no cumplía ninguna función religiosa, solo administrativa."
       ],
-      "correct": 0,
-      "teaches": [
-        "power-passive-voice"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-precolombina-03.ex03",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "El tributo ___ recibido por el gobernante. (ser, imperfecto)",
-      "answer": "era",
-      "teaches": [
-        "power-passive-voice"
-      ]
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "Según el texto, ¿cómo podía ascender socialmente un plebeyo mexica?",
+      "options": [
+        "Capturando suficientes prisioneros en batalla para entrar en las órdenes de guerreros águila o jaguar.",
+        "Casándose con un miembro de la familia del emperador.",
+        "No existía ninguna forma de movilidad social entre los mexica."
+      ],
+      "correct": 0
     },
     {
       "id": "b1-precolombina-03.ex04",
-      "type": "sentence-builder",
+      "type": "fill-blank",
       "category": "grammar",
-      "tiles": [
-        "La",
-        "jerarquía",
-        "organizaba",
-        "las",
-        "posiciones",
-        "sociales."
-      ],
-      "solution": [
-        "La",
-        "jerarquía",
-        "organizaba",
-        "las",
-        "posiciones",
-        "sociales."
-      ],
-      "english": "Hierarchy organised social positions.",
-      "teaches": [
-        "power-passive-voice"
-      ]
+      "sentence": "En el imperio inca, el poder ___ de forma muy distinta. (organizarse)",
+      "answer": "se organizaba",
+      "teaches": ["se-impersonal-historico"]
     },
     {
       "id": "b1-precolombina-03.ex05",
-      "type": "sentence-order",
-      "category": "grammar",
-      "sentences": [
-        "Las sociedades tenían distintas formas de autoridad. [Societies had different forms of authority.]",
-        "El gobernante recibía tributo de las comunidades. [The ruler received tribute from communities.]",
-        "Sin embargo, las comunidades conservaban cierta autonomía. [However, communities kept some autonomy.]"
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Por qué el sistema inca del mit'a no cobraba impuestos en dinero?",
+      "options": [
+        "Porque no existía el dinero: cada familia trabajaba un número de días al año en proyectos estatales.",
+        "Porque el oro estaba prohibido por motivos religiosos.",
+        "Porque todas las familias del imperio eran igual de ricas."
       ],
-      "solution": [
-        0,
-        1,
-        2
-      ],
-      "teaches": [
-        "power-passive-voice"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-precolombina-03.ex06",
-      "type": "multiple-choice",
+      "type": "sentence-builder",
       "category": "grammar",
-      "question": "¿Qué palabra significa 'ruler'?",
-      "options": [
-        "gobernante",
-        "tributo",
-        "jerarquía"
-      ],
-      "correct": 0,
-      "teaches": [
-        "power-passive-voice"
-      ]
+      "tiles": ["Se", "exigía", "tributo", "a", "las", "ciudades", "sometidas."],
+      "solution": ["Se", "exigía", "tributo", "a", "las", "ciudades", "sometidas."],
+      "english": "Tribute was demanded from the subjugated cities.",
+      "teaches": ["se-impersonal-historico"]
     },
     {
       "id": "b1-precolombina-03.ex07",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Las comunidades pagaban ___ al gobernante. (tributo)",
-      "answer": "tributo",
-      "teaches": [
-        "power-passive-voice"
-      ]
+      "type": "dialogue-complete",
+      "category": "reading",
+      "prompt": [
+        { "speaker": "Lucía", "text": "¿Los mexica y los incas gobernaban sus territorios conquistados de la misma manera?" },
+        { "speaker": "Diego", "text": "_____" }
+      ],
+      "options": [
+        "No: los mexica solían dejar a los gobernantes locales y solo exigían tributo, mientras que los incas imponían más directamente su lengua y administración.",
+        "Sí, los dos imperios aplicaban exactamente el mismo sistema en todos los territorios.",
+        "No, porque ninguno de los dos conquistaba territorios ajenos."
+      ],
+      "correct": 0
     },
     {
       "id": "b1-precolombina-03.ex08",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Todas las sociedades tenían el mismo sistema de poder?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "No, el poder político no era ejercido de la misma manera en todas. [No, political power was not exercised the same way in all of them.]",
-        "Sí, todas tenían exactamente el mismo sistema. [Yes, they all had exactly the same system.]",
-        "No existía ningún tipo de poder político. [There was no kind of political power at all.]"
-      ],
-      "correct": 0,
-      "teaches": [
-        "power-passive-voice"
-      ]
-    },
-    {
-      "id": "b1-precolombina-03.ex09",
       "type": "listening-choice",
       "category": "listening",
-      "sentence": "El tributo era recibido por el gobernante.",
+      "sentence": "El ritual se representaba en estelas de piedra que todavía pueden verse hoy.",
       "options": [
-        "Tribute was received by the ruler.",
-        "The ruler paid tribute to everyone.",
-        "There was no tribute at all."
+        "The ritual was depicted on stone stelae that can still be seen today.",
+        "The ritual was forbidden to be shown in any form of art.",
+        "Nobody knows what the ritual looked like."
       ],
-      "correct": 0,
-      "teaches": [
-        "power-passive-voice"
-      ]
-    },
-    {
-      "id": "b1-precolombina-03.ex10",
-      "type": "listening-choice",
-      "category": "listening",
-      "sentence": "La jerarquía organizaba las posiciones sociales.",
-      "options": [
-        "Hierarchy organised social positions.",
-        "There was no social hierarchy.",
-        "Positions organised the hierarchy."
-      ],
-      "correct": 0,
-      "teaches": [
-        "power-passive-voice"
-      ]
-    },
-    {
-      "id": "b1-precolombina-03.ex11",
-      "type": "dictation",
-      "category": "listening",
-      "sentence": "El poder político no era ejercido de la misma manera en todas las sociedades.",
-      "teaches": [
-        "power-passive-voice"
-      ]
-    },
-    {
-      "id": "b1-precolombina-03.ex12",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Quién recibía el tributo de las comunidades?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "El tributo era recibido por el gobernante. [Tribute was received by the ruler.]",
-        "Nadie recibía tributo. [Nobody received tribute.]",
-        "Las comunidades no pagaban nada. [Communities paid nothing at all.]"
-      ],
-      "correct": 0,
-      "teaches": [
-        "power-passive-voice"
-      ]
-    },
-    {
-      "id": "b1-precolombina-03.ex13",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Conservaban las comunidades algo de autonomía?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Sí, aunque pagaban tributo, conservaban ciertas formas de autonomía. [Yes, even though they paid tribute, they kept certain forms of autonomy.]",
-        "No, perdían toda su independencia. [No, they lost all their independence.]",
-        "No pagaban tributo ni tenían autonomía. [They paid no tribute and had no autonomy.]"
-      ],
-      "correct": 0,
-      "teaches": [
-        "power-passive-voice"
-      ]
-    },
-    {
-      "id": "b1-precolombina-03.ex14",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Cómo describirías el poder político en estas sociedades?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Variaba: la jerarquía y la autoridad no eran iguales en todas partes. [It varied: hierarchy and authority weren't the same everywhere.]",
-        "Era exactamente igual en todas las sociedades. [It was exactly the same in every society.]",
-        "No existía ninguna forma de autoridad. [No form of authority existed.]"
-      ],
-      "correct": 0,
-      "teaches": [
-        "power-passive-voice"
-      ]
-    },
-    {
-      "id": "b1-precolombina-03.ex15",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Describe la relación entre el gobernante y las comunidades usando la voz pasiva. [Describe the relationship between the ruler and communities using the passive voice.]",
-          "answer": "El tributo era recibido por el gobernante, aunque las comunidades conservaban cierta autonomía."
-        }
-      ],
-      "teaches": [
-        "power-passive-voice"
-      ]
-    },
-    {
-      "id": "b1-precolombina-03.ex16",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Explica por qué el poder político variaba entre sociedades. [Explain why political power varied between societies.]",
-          "answer": "El poder político no era ejercido de la misma manera en todas las sociedades."
-        }
-      ],
-      "teaches": [
-        "power-passive-voice"
-      ]
+      "correct": 0
     }
   ]
 }

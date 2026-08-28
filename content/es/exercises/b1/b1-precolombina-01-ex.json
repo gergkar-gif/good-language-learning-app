@@ -6,280 +6,102 @@
       "type": "matching",
       "category": "vocabulary",
       "pairs": [
-        [
-          "cordillera",
-          "mountain range"
-        ],
-        [
-          "selva",
-          "rainforest"
-        ],
-        [
-          "altiplano",
-          "high plateau"
-        ],
-        [
-          "territorio",
-          "territory"
-        ]
-      ],
-      "teaches": [
-        "geography-connectors"
+        ["la diversidad", "diversity"],
+        ["el paisaje", "landscape"],
+        ["la enfermedad", "disease"],
+        ["el legado", "legacy"]
+      ]
+    },
+    {
+      "id": "b1-precolombina-01.ex01b",
+      "type": "matching",
+      "category": "vocabulary",
+      "pairs": [
+        ["tallar", "to carve"],
+        ["la longitud", "length"],
+        ["la alimentación", "diet, food supply"],
+        ["el cultivo", "crop"]
       ]
     },
     {
       "id": "b1-precolombina-01.ex02",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Qué oración combina correctamente dos ideas con 'mientras que'?",
+      "category": "reading",
+      "question": "Según el texto, ¿por qué es tan difícil saber con exactitud cuántas personas vivían en América antes de 1492?",
       "options": [
-        "En la costa las comunidades pescaban, mientras que en el altiplano cultivaban otros productos.",
-        "En la costa las comunidades pescaban mientras que cultivaban.",
-        "Mientras que la costa, el altiplano cultivaban."
+        "Porque las enfermedades que llegaron con los europeos mataron a mucha gente antes de que se pudiera contar.",
+        "Porque nadie ha intentado calcularlo todavía.",
+        "Porque el continente estaba prácticamente deshabitado."
       ],
-      "correct": 0,
-      "teaches": [
-        "geography-connectors"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-precolombina-01.ex03",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "___ la cordillera, las comunidades desarrollaron formas de vida distintas. (a lo largo de)",
-      "answer": "a lo largo de",
-      "teaches": [
-        "geography-connectors"
-      ]
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Qué papel se atribuye a los olmecas en la historia de Mesoamérica?",
+      "options": [
+        "El de «cultura madre», cuyo legado influyó en las civilizaciones posteriores.",
+        "Una rama de los mexica que se separó en el siglo catorce.",
+        "El pueblo que construyó Machu Picchu."
+      ],
+      "correct": 0
     },
     {
       "id": "b1-precolombina-01.ex04",
-      "type": "sentence-builder",
+      "type": "fill-blank",
       "category": "grammar",
-      "tiles": [
-        "La",
-        "selva",
-        "ofrecía",
-        "recursos",
-        "diversos."
-      ],
-      "solution": [
-        "La",
-        "selva",
-        "ofrecía",
-        "recursos",
-        "diversos."
-      ],
-      "english": "The rainforest offered diverse resources.",
-      "teaches": [
-        "geography-connectors"
-      ]
+      "sentence": "El maíz terminó cultivándose a lo largo de todo el continente, ___ la papa se convirtió en la base de la alimentación andina. (mientras)",
+      "answer": "mientras que",
+      "teaches": ["conectores-formales-historicos"]
     },
     {
       "id": "b1-precolombina-01.ex05",
-      "type": "sentence-order",
-      "category": "grammar",
-      "sentences": [
-        "La geografía del continente era muy variada. [The continent's geography was very varied.]",
-        "Cada territorio ofrecía recursos distintos. [Each territory offered different resources.]",
-        "Como consecuencia, las comunidades desarrollaron formas de vida propias. [As a consequence, communities developed their own ways of life.]"
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Qué todavía no pueden explicar con certeza los arqueólogos sobre las líneas de Nazca?",
+      "options": [
+        "Su propósito exacto: hay teorías astronómicas, religiosas y relacionadas con el agua, pero ninguna es definitiva.",
+        "Quién las descubrió, ya que se conoce con exactitud desde 1901.",
+        "En qué país de Sudamérica se encuentran."
       ],
-      "solution": [
-        0,
-        1,
-        2
-      ],
-      "teaches": [
-        "geography-connectors"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-precolombina-01.ex06",
-      "type": "multiple-choice",
+      "type": "sentence-builder",
       "category": "grammar",
-      "question": "¿Qué palabra significa 'high plateau'?",
-      "options": [
-        "altiplano",
-        "cordillera",
-        "selva"
-      ],
-      "correct": 0,
-      "teaches": [
-        "geography-connectors"
-      ]
+      "tiles": ["Mucho", "antes", "de", "que", "existieran", "los", "mayas,", "ya", "se", "habían", "desarrollado", "civilizaciones", "influyentes."],
+      "solution": ["Mucho", "antes", "de", "que", "existieran", "los", "mayas,", "ya", "se", "habían", "desarrollado", "civilizaciones", "influyentes."],
+      "english": "Long before the Maya existed, influential civilisations had already developed.",
+      "teaches": ["conectores-formales-historicos"]
     },
     {
       "id": "b1-precolombina-01.ex07",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "En el ___ vivían comunidades adaptadas a la altura. (altiplano)",
-      "answer": "altiplano",
-      "teaches": [
-        "geography-connectors"
-      ]
+      "type": "dialogue-complete",
+      "category": "reading",
+      "prompt": [
+        { "speaker": "Sara", "text": "¿El maíz y la papa se domesticaron en el mismo lugar?" },
+        { "speaker": "Iván", "text": "_____" }
+      ],
+      "options": [
+        "No, el maíz se domesticó en México y la papa, de forma independiente, en los Andes.",
+        "Sí, los dos se domesticaron exactamente en el mismo valle mexicano.",
+        "No, ninguno de los dos se cultivaba antes de la llegada de los europeos."
+      ],
+      "correct": 0
     },
     {
       "id": "b1-precolombina-01.ex08",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Cómo era la geografía de América antes de la llegada de los europeos?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Era muy diversa: había cordilleras, selvas y altiplanos. [It was very diverse: there were mountain ranges, rainforests and high plateaus.]",
-        "Era igual en todo el continente. [It was the same across the whole continent.]",
-        "No había territorios diferentes. [There were no different territories.]"
-      ],
-      "correct": 0,
-      "teaches": [
-        "geography-connectors"
-      ]
-    },
-    {
-      "id": "b1-precolombina-01.ex09",
       "type": "listening-choice",
       "category": "listening",
-      "sentence": "A lo largo de la costa, las comunidades pescaban.",
+      "sentence": "Este continente diverso no era un territorio vacío esperando ser descubierto.",
       "options": [
-        "Along the coast, the communities fished.",
-        "The coast had no communities.",
-        "The communities fished yesterday."
+        "This diverse continent was not an empty territory waiting to be discovered.",
+        "This continent was completely empty before the Europeans arrived.",
+        "Nobody had ever lived on this continent before 1492."
       ],
-      "correct": 0,
-      "teaches": [
-        "geography-connectors"
-      ]
-    },
-    {
-      "id": "b1-precolombina-01.ex10",
-      "type": "listening-choice",
-      "category": "listening",
-      "sentence": "Cada territorio tenía condiciones distintas.",
-      "options": [
-        "Each territory had different conditions.",
-        "Every territory was identical.",
-        "The territory changed conditions."
-      ],
-      "correct": 0,
-      "teaches": [
-        "geography-connectors"
-      ]
-    },
-    {
-      "id": "b1-precolombina-01.ex11",
-      "type": "dictation",
-      "category": "listening",
-      "sentence": "La cordillera atraviesa grandes territorios.",
-      "teaches": [
-        "geography-connectors"
-      ]
-    },
-    {
-      "id": "b1-precolombina-01.ex12",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿En qué se diferenciaban la selva y el altiplano?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "La selva ofrecía recursos distintos que el altiplano. [The rainforest offered different resources than the high plateau.]",
-        "Eran exactamente iguales. [They were exactly the same.]",
-        "No tenían ninguna diferencia climática. [They had no climate difference at all.]"
-      ],
-      "correct": 0,
-      "teaches": [
-        "geography-connectors"
-      ]
-    },
-    {
-      "id": "b1-precolombina-01.ex13",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Por qué importaba la geografía para las comunidades?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Porque determinaba qué recursos tenían disponibles. [Because it determined what resources they had available.]",
-        "No importaba en absoluto. [It didn't matter at all.]",
-        "Solo importaba el clima de la costa. [Only the coast's climate mattered.]"
-      ],
-      "correct": 0,
-      "teaches": [
-        "geography-connectors"
-      ]
-    },
-    {
-      "id": "b1-precolombina-01.ex14",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Puedes resumir la diversidad geográfica del continente?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Había cordilleras, selvas y altiplanos con condiciones muy distintas. [There were mountain ranges, rainforests and high plateaus with very different conditions.]",
-        "El continente tenía un solo tipo de terreno. [The continent had only one type of terrain.]",
-        "No existían diferencias entre las regiones. [There were no differences between the regions.]"
-      ],
-      "correct": 0,
-      "teaches": [
-        "geography-connectors"
-      ]
-    },
-    {
-      "id": "b1-precolombina-01.ex15",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Describe la geografía de un territorio usando 'a lo largo de'. [Describe the geography of a territory using 'a lo largo de'.]",
-          "answer": "A lo largo de la costa, las comunidades pescaban y cultivaban."
-        }
-      ],
-      "teaches": [
-        "geography-connectors"
-      ]
-    },
-    {
-      "id": "b1-precolombina-01.ex16",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Explica una consecuencia de la diversidad geográfica usando 'como consecuencia de'. [Explain a consequence of the geographic diversity using 'como consecuencia de'.]",
-          "answer": "Como consecuencia de la diversidad geográfica, cada territorio desarrolló recursos propios."
-        }
-      ],
-      "teaches": [
-        "geography-connectors"
-      ]
+      "correct": 0
     }
   ]
 }

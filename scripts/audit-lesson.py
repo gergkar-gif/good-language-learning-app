@@ -484,16 +484,18 @@ def audit_consolidation(level, unit, plan_entry):
 def audit_unit(level, unit, parts, plan):
     if not parts:
         return []
-    story_ref = unit_story_ref(level, unit, parts)
+    unit_wide_story = unit_story_ref(level, unit, parts)
     reports = []
     for part in parts:
         plan_entry = plan.get((unit, part))
         if part == "consolidation":
             reports.append(audit_consolidation(level, unit, plan_entry))
         else:
+            # Prefer this lesson's own story (the new one-story-per-lesson
+            # shape); fall back to the unit's shared story for lessons that
+            # still use the older one-story-per-unit shape.
+            story_ref = unit_story_ref(level, unit, [part]) or unit_wide_story
             reports.append(audit_teaching_lesson(level, unit, part, plan_entry, story_ref))
-    if not any(p != "consolidation" and unit_story_ref(level, unit, [p]) for p in parts):
-        pass  # covered per-lesson by the "unit has no story yet" warning
     return reports
 
 
