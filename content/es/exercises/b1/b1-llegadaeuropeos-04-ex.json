@@ -6,292 +6,102 @@
       "type": "matching",
       "category": "vocabulary",
       "pairs": [
-        [
-          "virreinato",
-          "viceroyalty"
-        ],
-        [
-          "colonia",
-          "colony"
-        ],
-        [
-          "mestizaje",
-          "cultural and biological mixing"
-        ],
-        [
-          "administración",
-          "administration"
-        ]
-      ],
-      "teaches": [
-        "causa-consecuencia"
+        ["desatar", "to unleash, trigger"],
+        ["extinguirse", "to become extinct"],
+        ["desplazarse", "to move around, travel"],
+        ["duradero", "lasting, long-lasting"]
+      ]
+    },
+    {
+      "id": "b1-llegadaeuropeos-04.ex01b",
+      "type": "matching",
+      "category": "vocabulary",
+      "pairs": [
+        ["el patógeno", "pathogen"],
+        ["la catástrofe", "catastrophe"],
+        ["la hectárea", "hectare"],
+        ["absorber", "to absorb"]
       ]
     },
     {
       "id": "b1-llegadaeuropeos-04.ex02",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Qué conector introduce una consecuencia?",
+      "category": "reading",
+      "question": "¿Qué productos viajaron de América hacia Europa, y cuáles en la dirección contraria?",
       "options": [
-        "Por lo tanto",
-        "Debido a",
-        "A causa de"
+        "De América a Europa: maíz, papa, tomate, cacao; de Europa a América: caballo, vaca, cerdo, trigo.",
+        "Todos los productos mencionados viajaron únicamente de Europa hacia América.",
+        "El intercambio fue exclusivamente de animales, sin ningún tipo de planta."
       ],
-      "correct": 0,
-      "teaches": [
-        "causa-consecuencia"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-llegadaeuropeos-04.ex03",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Qué expresión introduce una causa?",
+      "category": "reading",
+      "question": "¿Por qué recurrieron los colonos europeos cada vez más al tráfico de personas esclavizadas desde África?",
       "options": [
-        "Debido a",
-        "Por eso",
-        "Como consecuencia"
+        "Porque el cultivo de la caña de azúcar exigía mucha mano de obra, y la población indígena del Caribe ya se había reducido drásticamente.",
+        "Porque los indígenas del Caribe se negaron completamente a trabajar en cualquier tipo de cultivo.",
+        "Porque no existía ningún cultivo que requiriera mano de obra en las colonias."
       ],
-      "correct": 0,
-      "teaches": [
-        "causa-consecuencia"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-llegadaeuropeos-04.ex04",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "La población sufrió grandes pérdidas; _____, la sociedad cambió profundamente.",
-      "answer": "como consecuencia",
-      "teaches": [
-        "causa-consecuencia"
-      ]
+      "sentence": "La población indígena no tenía ninguna inmunidad, ___ estos patógenos habían evolucionado junto a los animales de Eurasia. (ya que)",
+      "answer": "ya que",
+      "teaches": ["causa-y-consecuencia"]
     },
     {
       "id": "b1-llegadaeuropeos-04.ex05",
-      "type": "sentence-builder",
-      "category": "grammar",
-      "tiles": [
-        "Debido",
-        "a",
-        "la",
-        "nueva",
-        "administración",
-        "cambiaron",
-        "las",
-        "instituciones."
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Qué hipótesis científica reciente relaciona la catástrofe demográfica americana con el clima global?",
+      "options": [
+        "Que millones de hectáreas de tierras de cultivo abandonadas volvieron a cubrirse de bosque, absorbiendo carbono y contribuyendo posiblemente a la Pequeña Edad de Hielo.",
+        "Que la catástrofe demográfica no tuvo ningún efecto medible sobre el clima global.",
+        "Que el clima global causó directamente la llegada de los europeos a América."
       ],
-      "solution": [
-        "Debido",
-        "a",
-        "la",
-        "nueva",
-        "administración",
-        "cambiaron",
-        "las",
-        "instituciones."
-      ],
-      "english": "Because of the new administration, the institutions changed.",
-      "teaches": [
-        "causa-consecuencia"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-llegadaeuropeos-04.ex06",
-      "type": "sentence-order",
+      "type": "sentence-builder",
       "category": "grammar",
-      "sentences": [
-        "Se reorganizaron los territorios.",
-        "Aparecieron nuevas instituciones.",
-        "Por lo tanto, cambió la administración."
-      ],
-      "solution": [
-        0,
-        1,
-        2
-      ],
-      "teaches": [
-        "causa-consecuencia"
-      ]
+      "tiles": ["Por", "eso,", "muchos", "historiadores", "consideran", "la", "caña", "de", "azúcar", "uno", "de", "los", "motores", "principales", "del", "comercio", "de", "esclavos."],
+      "solution": ["Por", "eso,", "muchos", "historiadores", "consideran", "la", "caña", "de", "azúcar", "uno", "de", "los", "motores", "principales", "del", "comercio", "de", "esclavos."],
+      "english": "That's why many historians consider sugarcane one of the main engines behind the slave trade.",
+      "teaches": ["causa-y-consecuencia"]
     },
     {
       "id": "b1-llegadaeuropeos-04.ex07",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "¿Qué significa 'virreinato'?",
-      "options": [
-        "viceroyalty",
-        "colony",
-        "legacy"
+      "type": "dialogue-complete",
+      "category": "reading",
+      "prompt": [
+        { "speaker": "Marta", "text": "¿Por qué fue tan importante la reintroducción del caballo en América?" },
+        { "speaker": "Pablo", "text": "_____" }
       ],
-      "correct": 0,
-      "teaches": [
-        "causa-consecuencia"
-      ]
+      "options": [
+        "Porque se había extinguido en el continente antes de la llegada de los europeos, y al reintroducirse transformó la forma de cazar y desplazarse de varios pueblos indígenas.",
+        "Porque los caballos nunca antes habían existido en ningún continente.",
+        "Porque el caballo no tuvo ningún impacto real en la vida indígena."
+      ],
+      "correct": 0
     },
     {
       "id": "b1-llegadaeuropeos-04.ex08",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Por qué cambiaron las estructuras políticas?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Debido a la nueva administración colonial.",
-        "Por lo tanto a la nueva administración.",
-        "Después significa administración."
-      ],
-      "correct": 0,
-      "teaches": [
-        "causa-consecuencia"
-      ]
-    },
-    {
-      "id": "b1-llegadaeuropeos-04.ex09",
       "type": "listening-choice",
       "category": "listening",
-      "sentence": "En 1492, la expedición llegó al Caribe después de una larga ruta.",
+      "sentence": "El elemento más devastador del intercambio colombino fueron las enfermedades.",
       "options": [
-        "In 1492, the expedition reached the Caribbean after a long route.",
-        "The opposite happened.",
-        "The statement is unrelated."
+        "The most devastating element of the Columbian Exchange was disease.",
+        "Diseases had no real impact during the Columbian Exchange.",
+        "Only animals were exchanged between the two continents."
       ],
-      "correct": 0,
-      "teaches": [
-        "causa-consecuencia"
-      ]
-    },
-    {
-      "id": "b1-llegadaeuropeos-04.ex10",
-      "type": "listening-choice",
-      "category": "listening",
-      "sentence": "Aunque hubo intercambio, las epidemias tuvieron consecuencias muy graves.",
-      "options": [
-        "Although there was exchange, epidemics had very serious consequences.",
-        "The opposite happened.",
-        "The statement is unrelated."
-      ],
-      "correct": 0,
-      "teaches": [
-        "causa-consecuencia"
-      ]
-    },
-    {
-      "id": "b1-llegadaeuropeos-04.ex11",
-      "type": "listening-choice",
-      "category": "listening",
-      "sentence": "Las sociedades que sobrevivieron conservaron y transformaron muchas tradiciones.",
-      "options": [
-        "The societies that survived preserved and transformed many traditions.",
-        "The opposite happened.",
-        "The statement is unrelated."
-      ],
-      "correct": 0,
-      "teaches": [
-        "causa-consecuencia"
-      ]
-    },
-    {
-      "id": "b1-llegadaeuropeos-04.ex12",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Qué consecuencia fue especialmente grave?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Las epidemias provocaron grandes pérdidas de población.",
-        "La expedición eliminó todas las rutas.",
-        "No hubo consecuencias."
-      ],
-      "correct": 0,
-      "teaches": [
-        "causa-consecuencia"
-      ]
-    },
-    {
-      "id": "b1-llegadaeuropeos-04.ex13",
-      "type": "multiple-choice",
-      "category": "dialogue",
-      "question": "¿Qué interpretación es más precisa?",
-      "options": [
-        "La llegada europea produjo contactos, conflictos y transformaciones profundas.",
-        "La llegada europea fue un acontecimiento sin consecuencias.",
-        "Todos los pueblos reaccionaron de la misma manera."
-      ],
-      "correct": 0,
-      "teaches": [
-        "causa-consecuencia"
-      ]
-    },
-    {
-      "id": "b1-llegadaeuropeos-04.ex14",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Cambió todo de la misma manera?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "No. Las consecuencias variaron según la región y la sociedad.",
-        "Sí. Todas las regiones cambiaron exactamente igual.",
-        "No. No hubo transformaciones."
-      ],
-      "correct": 0,
-      "teaches": [
-        "causa-consecuencia"
-      ]
-    },
-    {
-      "id": "b1-llegadaeuropeos-04.ex15",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Describe one historical event from the lesson using a clear sequence.",
-          "answer": "Debido a la nueva administración, cambiaron algunas estructuras políticas."
-        },
-        {
-          "prompt": "Add one sentence explaining a cause or consequence.",
-          "answer": "Se reorganizaron los territorios; por eso aparecieron nuevas instituciones."
-        }
-      ],
-      "teaches": [
-        "causa-consecuencia"
-      ]
-    },
-    {
-      "id": "b1-llegadaeuropeos-04.ex16",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Write one sentence using the lesson's main focus.",
-          "answer": "La población sufrió grandes pérdidas, como consecuencia de las epidemias y la violencia."
-        }
-      ],
-      "teaches": [
-        "causa-consecuencia"
-      ]
+      "correct": 0
     }
   ]
 }

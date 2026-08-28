@@ -6,288 +6,102 @@
       "type": "matching",
       "category": "vocabulary",
       "pairs": [
-        [
-          "encuentro",
-          "encounter"
-        ],
-        [
-          "intercambio",
-          "exchange"
-        ],
-        [
-          "aliado",
-          "ally"
-        ],
-        [
-          "epidemia",
-          "epidemic"
-        ]
-      ],
-      "teaches": [
-        "secuencia-encuentro"
+        ["el intercambio", "exchange"],
+        ["la hospitalidad", "hospitality"],
+        ["castigar", "to punish"],
+        ["la mano de obra", "labor, workforce"]
+      ]
+    },
+    {
+      "id": "b1-llegadaeuropeos-02.ex01b",
+      "type": "matching",
+      "category": "vocabulary",
+      "pairs": [
+        ["la viruela", "smallpox"],
+        ["reducirse", "to shrink, be reduced"],
+        ["presenciar", "to witness"],
+        ["denunciar", "to denounce, expose"]
       ]
     },
     {
       "id": "b1-llegadaeuropeos-02.ex02",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Qué conector expresa simultaneidad?",
+      "category": "reading",
+      "question": "¿Cómo fue el primer encuentro entre españoles y taínos, según los diarios de Colón?",
       "options": [
-        "Mientras",
-        "Después",
-        "Por lo tanto"
+        "Relativamente pacífico, con intercambio de objetos y cierta hospitalidad, aunque esa impresión cambió con rapidez.",
+        "Violento desde el primer momento, sin ningún tipo de intercambio.",
+        "Los taínos atacaron a los españoles apenas desembarcaron."
       ],
-      "correct": 0,
-      "teaches": [
-        "secuencia-encuentro"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-llegadaeuropeos-02.ex03",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Qué frase presenta primero una fase y después otra?",
+      "category": "reading",
+      "question": "¿Qué era la encomienda, oficialmente, y qué era en la práctica?",
       "options": [
-        "Al principio hubo intercambio; después aumentaron las tensiones.",
-        "Aunque hubo intercambio, después.",
-        "Por lo tanto hubo intercambio."
+        "Oficialmente, protección y educación religiosa a cambio de mano de obra; en la práctica, funcionaba como trabajo forzado.",
+        "Un impuesto que los taínos pagaban voluntariamente en oro.",
+        "Un sistema educativo dirigido exclusivamente por los propios taínos."
       ],
-      "correct": 0,
-      "teaches": [
-        "secuencia-encuentro"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-llegadaeuropeos-02.ex04",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "_____ algunos grupos buscaban aliados, otros defendían sus territorios.",
-      "answer": "Mientras",
-      "teaches": [
-        "secuencia-encuentro"
-      ]
+      "sentence": "Al principio, el encuentro fue pacífico. ___, esa primera impresión cambió con rapidez. (sin embargo)",
+      "answer": "Sin embargo",
+      "teaches": ["conectores-ordenar-contrastar-acontecimientos"]
     },
     {
       "id": "b1-llegadaeuropeos-02.ex05",
-      "type": "sentence-builder",
-      "category": "grammar",
-      "tiles": [
-        "Al",
-        "principio",
-        "hubo",
-        "intercambio",
-        "de",
-        "productos."
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Qué causó la reducción más drástica de la población taína en pocas décadas?",
+      "options": [
+        "Las enfermedades europeas, como la viruela, contra las que los taínos no tenían ninguna inmunidad.",
+        "Una guerra civil entre distintos pueblos taínos.",
+        "La emigración voluntaria de los taínos hacia el continente."
       ],
-      "solution": [
-        "Al",
-        "principio",
-        "hubo",
-        "intercambio",
-        "de",
-        "productos."
-      ],
-      "english": "At first there was an exchange of products.",
-      "teaches": [
-        "secuencia-encuentro"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-llegadaeuropeos-02.ex06",
-      "type": "sentence-order",
+      "type": "sentence-builder",
       "category": "grammar",
-      "sentences": [
-        "Al principio hubo contactos.",
-        "Después aumentaron las tensiones.",
-        "Aunque hubo intercambio, también hubo conflicto."
-      ],
-      "solution": [
-        0,
-        1,
-        2
-      ],
-      "teaches": [
-        "secuencia-encuentro"
-      ]
+      "tiles": ["Mientras", "los", "españoles", "buscaban", "oro,", "empezaron", "a", "exigir", "a", "los", "taínos", "que", "entregaran", "una", "cantidad", "fija", "de", "metal."],
+      "solution": ["Mientras", "los", "españoles", "buscaban", "oro,", "empezaron", "a", "exigir", "a", "los", "taínos", "que", "entregaran", "una", "cantidad", "fija", "de", "metal."],
+      "english": "While the Spanish searched for gold, they began demanding that the Taíno hand over a fixed amount of metal.",
+      "teaches": ["conectores-ordenar-contrastar-acontecimientos"]
     },
     {
       "id": "b1-llegadaeuropeos-02.ex07",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "¿Qué significa 'aliado'?",
-      "options": [
-        "ally",
-        "epidemic",
-        "encounter"
+      "type": "dialogue-complete",
+      "category": "reading",
+      "prompt": [
+        { "speaker": "Marta", "text": "¿Quién fue Bartolomé de las Casas y qué hizo después de participar en el sistema de encomienda?" },
+        { "speaker": "Pablo", "text": "_____" }
       ],
-      "correct": 0,
-      "teaches": [
-        "secuencia-encuentro"
-      ]
+      "options": [
+        "Renunció a sus propios indígenas encomendados, se hizo fraile y denunció los abusos en un libro de 1552.",
+        "Fue el primer encomendero y nunca cuestionó el sistema.",
+        "Fundó la ciudad de San Salvador junto con Colón."
+      ],
+      "correct": 0
     },
     {
       "id": "b1-llegadaeuropeos-02.ex08",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Hubo solamente conflictos?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "No. También hubo intercambio y alianzas.",
-        "Sí. Nunca hubo contactos.",
-        "No. No hubo pueblos indígenas."
-      ],
-      "correct": 0,
-      "teaches": [
-        "secuencia-encuentro"
-      ]
-    },
-    {
-      "id": "b1-llegadaeuropeos-02.ex09",
       "type": "listening-choice",
       "category": "listening",
-      "sentence": "En 1492, la expedición llegó al Caribe después de una larga ruta.",
+      "sentence": "En 1552, Las Casas publicó un texto que describía con crudeza la violencia colonial.",
       "options": [
-        "In 1492, the expedition reached the Caribbean after a long route.",
-        "The opposite happened.",
-        "The statement is unrelated."
+        "In 1552, Las Casas published a text that described colonial violence in stark terms.",
+        "In 1552, Las Casas was executed for criticizing the Spanish crown.",
+        "Las Casas never wrote about what he had witnessed."
       ],
-      "correct": 0,
-      "teaches": [
-        "secuencia-encuentro"
-      ]
-    },
-    {
-      "id": "b1-llegadaeuropeos-02.ex10",
-      "type": "listening-choice",
-      "category": "listening",
-      "sentence": "Aunque hubo intercambio, las epidemias tuvieron consecuencias muy graves.",
-      "options": [
-        "Although there was exchange, epidemics had very serious consequences.",
-        "The opposite happened.",
-        "The statement is unrelated."
-      ],
-      "correct": 0,
-      "teaches": [
-        "secuencia-encuentro"
-      ]
-    },
-    {
-      "id": "b1-llegadaeuropeos-02.ex11",
-      "type": "listening-choice",
-      "category": "listening",
-      "sentence": "Las sociedades que sobrevivieron conservaron y transformaron muchas tradiciones.",
-      "options": [
-        "The societies that survived preserved and transformed many traditions.",
-        "The opposite happened.",
-        "The statement is unrelated."
-      ],
-      "correct": 0,
-      "teaches": [
-        "secuencia-encuentro"
-      ]
-    },
-    {
-      "id": "b1-llegadaeuropeos-02.ex12",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Qué consecuencia fue especialmente grave?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Las epidemias provocaron grandes pérdidas de población.",
-        "La expedición eliminó todas las rutas.",
-        "No hubo consecuencias."
-      ],
-      "correct": 0,
-      "teaches": [
-        "secuencia-encuentro"
-      ]
-    },
-    {
-      "id": "b1-llegadaeuropeos-02.ex13",
-      "type": "multiple-choice",
-      "category": "dialogue",
-      "question": "¿Qué interpretación es más precisa?",
-      "options": [
-        "La llegada europea produjo contactos, conflictos y transformaciones profundas.",
-        "La llegada europea fue un acontecimiento sin consecuencias.",
-        "Todos los pueblos reaccionaron de la misma manera."
-      ],
-      "correct": 0,
-      "teaches": [
-        "secuencia-encuentro"
-      ]
-    },
-    {
-      "id": "b1-llegadaeuropeos-02.ex14",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Cambió todo de la misma manera?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "No. Las consecuencias variaron según la región y la sociedad.",
-        "Sí. Todas las regiones cambiaron exactamente igual.",
-        "No. No hubo transformaciones."
-      ],
-      "correct": 0,
-      "teaches": [
-        "secuencia-encuentro"
-      ]
-    },
-    {
-      "id": "b1-llegadaeuropeos-02.ex15",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Describe one historical event from the lesson using a clear sequence.",
-          "answer": "Mientras algunos grupos buscaban aliados, otros intentaban defender sus territorios."
-        },
-        {
-          "prompt": "Add one sentence explaining a cause or consequence.",
-          "answer": "Cuando llegaron los europeos, ya existían redes políticas y comerciales complejas."
-        }
-      ],
-      "teaches": [
-        "secuencia-encuentro"
-      ]
-    },
-    {
-      "id": "b1-llegadaeuropeos-02.ex16",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Write one sentence using the lesson's main focus.",
-          "answer": "Al principio hubo intercambio de productos; después aumentaron las tensiones."
-        }
-      ],
-      "teaches": [
-        "secuencia-encuentro"
-      ]
+      "correct": 0
     }
   ]
 }

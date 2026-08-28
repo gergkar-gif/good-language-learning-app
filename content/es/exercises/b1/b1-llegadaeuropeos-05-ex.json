@@ -6,292 +6,102 @@
       "type": "matching",
       "category": "vocabulary",
       "pairs": [
-        [
-          "consecuencia",
-          "consequence"
-        ],
-        [
-          "transformación",
-          "transformation"
-        ],
-        [
-          "población",
-          "population"
-        ],
-        [
-          "legado",
-          "legacy"
-        ]
-      ],
-      "teaches": [
-        "relativas-historicas"
+        ["el consenso", "consensus"],
+        ["el desacuerdo", "disagreement"],
+        ["el cálculo", "estimate, calculation"],
+        ["elevar", "to raise"]
+      ]
+    },
+    {
+      "id": "b1-llegadaeuropeos-05.ex01b",
+      "type": "matching",
+      "category": "vocabulary",
+      "pairs": [
+        ["mestizo", "of mixed heritage"],
+        ["la aparición", "apparition, appearance"],
+        ["sagrado", "sacred"],
+        ["la devoción", "devotion"]
       ]
     },
     {
       "id": "b1-llegadaeuropeos-05.ex02",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Qué palabra permite añadir información sobre un sustantivo?",
+      "category": "reading",
+      "question": "¿Por qué no hay consenso sobre cómo llamar al suceso de 1492?",
       "options": [
-        "Que",
-        "Porque",
-        "Después"
+        "Porque 'descubrimiento' asume que América no existía hasta que Europa la encontró, mientras que organizaciones indígenas prefieren 'invasión'.",
+        "Porque nadie ha propuesto nunca un nombre alternativo a 'descubrimiento'.",
+        "Porque todos los historiadores están de acuerdo en usar 'encuentro de dos mundos'."
       ],
-      "correct": 0,
-      "teaches": [
-        "relativas-historicas"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-llegadaeuropeos-05.ex03",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Cuál es correcta?",
+      "category": "reading",
+      "question": "¿Por qué importa tanto la diferencia entre los 'contadores bajos' y las investigaciones posteriores sobre la población americana?",
       "options": [
-        "Las sociedades que sobrevivieron conservaron tradiciones.",
-        "Las sociedades que sobrevivieron, conservaron tradiciones que.",
-        "Las sociedades sobrevivieron que conservaron tradiciones."
+        "Porque cambia radicalmente lo catastrófica que parece la caída demográfica posterior a 1492.",
+        "Porque no tiene ninguna relación con la gravedad del colapso demográfico.",
+        "Porque los 'contadores bajos' y los cálculos posteriores coinciden exactamente en sus cifras."
       ],
-      "correct": 0,
-      "teaches": [
-        "relativas-historicas"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-llegadaeuropeos-05.ex04",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "La conquista fue un proceso _____ cambió profundamente la región.",
-      "answer": "que",
-      "teaches": [
-        "relativas-historicas"
-      ]
+      "sentence": "Un ejemplo célebre es la Virgen de Guadalupe, ___ aparición se sitúa en 1531. (cuyo)",
+      "answer": "cuya",
+      "teaches": ["oraciones-relativo-precisar-informacion"]
     },
     {
       "id": "b1-llegadaeuropeos-05.ex05",
-      "type": "sentence-builder",
-      "category": "grammar",
-      "tiles": [
-        "El",
-        "legado",
-        "que",
-        "dejaron",
-        "estos",
-        "siglos",
-        "sigue",
-        "presente."
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Por qué se considera la Virgen de Guadalupe un ejemplo de sincretismo religioso?",
+      "options": [
+        "Porque su aparición se sitúa en el cerro del Tepeyac, un lugar antes sagrado para los mexicas y dedicado a la diosa Tonantzin.",
+        "Porque fue inventada por los mexicas antes de la llegada de los españoles.",
+        "Porque no tiene ninguna relación con ninguna tradición religiosa indígena."
       ],
-      "solution": [
-        "El",
-        "legado",
-        "que",
-        "dejaron",
-        "estos",
-        "siglos",
-        "sigue",
-        "presente."
-      ],
-      "english": "The legacy these centuries left remains present.",
-      "teaches": [
-        "relativas-historicas"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-llegadaeuropeos-05.ex06",
-      "type": "sentence-order",
+      "type": "sentence-builder",
       "category": "grammar",
-      "sentences": [
-        "La conquista fue un proceso.",
-        "Ese proceso cambió la región.",
-        "La conquista fue un proceso que cambió la región."
-      ],
-      "solution": [
-        0,
-        1,
-        2
-      ],
-      "teaches": [
-        "relativas-historicas"
-      ]
+      "tiles": ["Investigaciones", "posteriores,", "cuyos", "autores", "revisaron", "fuentes", "coloniales", "con", "más", "detalle,", "elevaron", "esa", "cifra."],
+      "solution": ["Investigaciones", "posteriores,", "cuyos", "autores", "revisaron", "fuentes", "coloniales", "con", "más", "detalle,", "elevaron", "esa", "cifra."],
+      "english": "Later research, whose authors reviewed colonial sources in more detail, raised that figure.",
+      "teaches": ["oraciones-relativo-precisar-informacion"]
     },
     {
       "id": "b1-llegadaeuropeos-05.ex07",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "¿Qué significa 'legado'?",
-      "options": [
-        "legacy",
-        "population",
-        "transformation"
+      "type": "dialogue-complete",
+      "category": "reading",
+      "prompt": [
+        { "speaker": "Marta", "text": "¿Se ha resuelto ya el debate sobre el nombre del suceso y el tamaño de la población original?" },
+        { "speaker": "Pablo", "text": "_____" }
       ],
-      "correct": 0,
-      "teaches": [
-        "relativas-historicas"
-      ]
+      "options": [
+        "No, ninguno de esos debates tiene una respuesta simple ni definitiva, y por eso los historiadores siguen investigando.",
+        "Sí, todos los historiadores llegaron a un acuerdo definitivo hace décadas.",
+        "El debate nunca existió realmente; siempre se ha usado el mismo término."
+      ],
+      "correct": 0
     },
     {
       "id": "b1-llegadaeuropeos-05.ex08",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Cómo podemos describir el legado?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Es un legado que sigue influyendo en las sociedades actuales.",
-        "Es un legado porque después.",
-        "No es un legado que."
-      ],
-      "correct": 0,
-      "teaches": [
-        "relativas-historicas"
-      ]
-    },
-    {
-      "id": "b1-llegadaeuropeos-05.ex09",
       "type": "listening-choice",
       "category": "listening",
-      "sentence": "En 1492, la expedición llegó al Caribe después de una larga ruta.",
+      "sentence": "La sociedad que surgió después fue profundamente mestiza.",
       "options": [
-        "In 1492, the expedition reached the Caribbean after a long route.",
-        "The opposite happened.",
-        "The statement is unrelated."
+        "The society that emerged afterward was deeply mixed-heritage.",
+        "The society that emerged afterward remained entirely separate.",
+        "No new society emerged after these events."
       ],
-      "correct": 0,
-      "teaches": [
-        "relativas-historicas"
-      ]
-    },
-    {
-      "id": "b1-llegadaeuropeos-05.ex10",
-      "type": "listening-choice",
-      "category": "listening",
-      "sentence": "Aunque hubo intercambio, las epidemias tuvieron consecuencias muy graves.",
-      "options": [
-        "Although there was exchange, epidemics had very serious consequences.",
-        "The opposite happened.",
-        "The statement is unrelated."
-      ],
-      "correct": 0,
-      "teaches": [
-        "relativas-historicas"
-      ]
-    },
-    {
-      "id": "b1-llegadaeuropeos-05.ex11",
-      "type": "listening-choice",
-      "category": "listening",
-      "sentence": "Las sociedades que sobrevivieron conservaron y transformaron muchas tradiciones.",
-      "options": [
-        "The societies that survived preserved and transformed many traditions.",
-        "The opposite happened.",
-        "The statement is unrelated."
-      ],
-      "correct": 0,
-      "teaches": [
-        "relativas-historicas"
-      ]
-    },
-    {
-      "id": "b1-llegadaeuropeos-05.ex12",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Qué consecuencia fue especialmente grave?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Las epidemias provocaron grandes pérdidas de población.",
-        "La expedición eliminó todas las rutas.",
-        "No hubo consecuencias."
-      ],
-      "correct": 0,
-      "teaches": [
-        "relativas-historicas"
-      ]
-    },
-    {
-      "id": "b1-llegadaeuropeos-05.ex13",
-      "type": "multiple-choice",
-      "category": "dialogue",
-      "question": "¿Qué interpretación es más precisa?",
-      "options": [
-        "La llegada europea produjo contactos, conflictos y transformaciones profundas.",
-        "La llegada europea fue un acontecimiento sin consecuencias.",
-        "Todos los pueblos reaccionaron de la misma manera."
-      ],
-      "correct": 0,
-      "teaches": [
-        "relativas-historicas"
-      ]
-    },
-    {
-      "id": "b1-llegadaeuropeos-05.ex14",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Cambió todo de la misma manera?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "No. Las consecuencias variaron según la región y la sociedad.",
-        "Sí. Todas las regiones cambiaron exactamente igual.",
-        "No. No hubo transformaciones."
-      ],
-      "correct": 0,
-      "teaches": [
-        "relativas-historicas"
-      ]
-    },
-    {
-      "id": "b1-llegadaeuropeos-05.ex15",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Describe one historical event from the lesson using a clear sequence.",
-          "answer": "La conquista fue un proceso que cambió profundamente la región."
-        },
-        {
-          "prompt": "Add one sentence explaining a cause or consequence.",
-          "answer": "Las sociedades que sobrevivieron conservaron y transformaron muchas tradiciones."
-        }
-      ],
-      "teaches": [
-        "relativas-historicas"
-      ]
-    },
-    {
-      "id": "b1-llegadaeuropeos-05.ex16",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Write one sentence using the lesson's main focus.",
-          "answer": "Las ciudades donde se instalaron nuevas autoridades cambiaron su organización."
-        }
-      ],
-      "teaches": [
-        "relativas-historicas"
-      ]
+      "correct": 0
     }
   ]
 }

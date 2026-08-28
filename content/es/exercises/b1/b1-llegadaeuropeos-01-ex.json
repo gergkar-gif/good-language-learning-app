@@ -6,290 +6,102 @@
       "type": "matching",
       "category": "vocabulary",
       "pairs": [
-        [
-          "expedición",
-          "expedition"
-        ],
-        [
-          "navegante",
-          "navigator"
-        ],
-        [
-          "ruta",
-          "route"
-        ],
-        [
-          "patrocinio",
-          "sponsorship"
-        ]
-      ],
-      "teaches": [
-        "llegada-historica"
+        ["financiar", "to fund, finance"],
+        ["rechazar", "to reject"],
+        ["la tripulación", "crew"],
+        ["el motín", "mutiny"]
+      ]
+    },
+    {
+      "id": "b1-llegadaeuropeos-01.ex01b",
+      "type": "matching",
+      "category": "vocabulary",
+      "pairs": [
+        ["avistar", "to sight, spot"],
+        ["la recompensa", "reward"],
+        ["desembarcar", "to disembark, land"],
+        ["bautizar", "to name, christen"]
       ]
     },
     {
       "id": "b1-llegadaeuropeos-01.ex02",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Qué oración combina correctamente el contexto y el acontecimiento?",
+      "category": "reading",
+      "question": "¿Por qué aceptó Isabel de Castilla financiar el viaje de Colón, después de que otros monarcas ya lo hubieran rechazado?",
       "options": [
-        "La expedición navegaba cuando apareció tierra.",
-        "La expedición navegó mientras estaba de fondo.",
-        "La expedición aparecía cuando navegaba."
+        "El texto no explica exactamente por qué, pero fue poco después de completarse la Reconquista con la toma de Granada.",
+        "Portugal exigió a España que financiara el viaje como condición de paz.",
+        "Colón amenazó con financiar el viaje él mismo si España no lo hacía."
       ],
-      "correct": 0,
-      "teaches": [
-        "llegada-historica"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-llegadaeuropeos-01.ex03",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Qué tiempo presenta normalmente el contexto en una narración histórica?",
+      "category": "reading",
+      "question": "¿Quién avistó tierra por primera vez el 12 de octubre de 1492, y quién se llevó la recompensa?",
       "options": [
-        "El imperfecto",
-        "El indefinido",
-        "El futuro"
+        "Un marinero llamado Rodrigo de Triana la avistó primero, pero Colón reclamó la recompensa para sí mismo.",
+        "Colón fue quien avistó tierra primero y recibió la recompensa merecidamente.",
+        "Ningún miembro de la tripulación avistó tierra; llegaron a la isla por casualidad de noche."
       ],
-      "correct": 0,
-      "teaches": [
-        "llegada-historica"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-llegadaeuropeos-01.ex04",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "La expedición _____ hacia el oeste cuando apareció tierra. (navegar)",
-      "answer": "navegaba",
-      "teaches": [
-        "llegada-historica"
-      ]
+      "sentence": "Colón ___ del puerto de Palos de la Frontera el 3 de agosto de 1492. (partir)",
+      "answer": "partió",
+      "teaches": ["preterito-narrar-hechos-historicos"]
     },
     {
       "id": "b1-llegadaeuropeos-01.ex05",
-      "type": "sentence-builder",
-      "category": "grammar",
-      "tiles": [
-        "La",
-        "expedición",
-        "llegó",
-        "al",
-        "Caribe",
-        "en",
-        "1492."
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Por qué se llama 'América' el continente, y no 'Colombia'?",
+      "options": [
+        "Porque en 1507 un cartógrafo alemán bautizó el continente con una versión del nombre de Américo Vespucio, quien había argumentado que era un continente nuevo.",
+        "Porque Colón mismo pidió que se llamara así en honor a su propio nombre de pila.",
+        "Porque los habitantes del continente eligieron ese nombre después de la conquista."
       ],
-      "solution": [
-        "La",
-        "expedición",
-        "llegó",
-        "al",
-        "Caribe",
-        "en",
-        "1492."
-      ],
-      "english": "The expedition reached the Caribbean in 1492.",
-      "teaches": [
-        "llegada-historica"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-llegadaeuropeos-01.ex06",
-      "type": "sentence-order",
+      "type": "sentence-builder",
       "category": "grammar",
-      "sentences": [
-        "La expedición navegaba hacia el oeste.",
-        "Apareció tierra.",
-        "Los navegantes llegaron a unas islas."
-      ],
-      "solution": [
-        0,
-        1,
-        2
-      ],
-      "teaches": [
-        "llegada-historica"
-      ]
+      "tiles": ["Colón", "murió", "en", "1506", "sin", "admitir", "jamás", "que", "no", "había", "llegado", "a", "Asia."],
+      "solution": ["Colón", "murió", "en", "1506", "sin", "admitir", "jamás", "que", "no", "había", "llegado", "a", "Asia."],
+      "english": "Columbus died in 1506 never admitting that he hadn't reached Asia.",
+      "teaches": ["preterito-narrar-hechos-historicos"]
     },
     {
       "id": "b1-llegadaeuropeos-01.ex07",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "¿Qué significa 'ruta'?",
-      "options": [
-        "route",
-        "sponsorship",
-        "navigator"
+      "type": "dialogue-complete",
+      "category": "reading",
+      "prompt": [
+        { "speaker": "Marta", "text": "¿Colón supo alguna vez que había llegado a un continente desconocido, y no a Asia?" },
+        { "speaker": "Pablo", "text": "_____" }
       ],
-      "correct": 0,
-      "teaches": [
-        "llegada-historica"
-      ]
+      "options": [
+        "No, murió en 1506 sin admitirlo jamás; fue Américo Vespucio quien argumentó correctamente que era un continente nuevo.",
+        "Sí, lo supo desde el primer viaje y lo escribió en sus diarios.",
+        "No importaba, porque en esa época nadie usaba mapas ni cartografía."
+      ],
+      "correct": 0
     },
     {
       "id": "b1-llegadaeuropeos-01.ex08",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Qué ocurrió en 1492?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "La expedición llegó al Caribe.",
-        "La expedición no salió de Europa.",
-        "La ruta desapareció."
-      ],
-      "correct": 0,
-      "teaches": [
-        "llegada-historica"
-      ]
-    },
-    {
-      "id": "b1-llegadaeuropeos-01.ex09",
       "type": "listening-choice",
       "category": "listening",
-      "sentence": "En 1492, la expedición llegó al Caribe después de una larga ruta.",
+      "sentence": "La tripulación, cada vez más nerviosa, llegó a hablar de motín a principios de octubre.",
       "options": [
-        "In 1492, the expedition reached the Caribbean after a long route.",
-        "The opposite happened.",
-        "The statement is unrelated."
+        "The crew, growing increasingly nervous, started talking about mutiny in early October.",
+        "The crew celebrated calmly throughout the entire voyage.",
+        "Nobody on the ships ever felt nervous during the journey."
       ],
-      "correct": 0,
-      "teaches": [
-        "llegada-historica"
-      ]
-    },
-    {
-      "id": "b1-llegadaeuropeos-01.ex10",
-      "type": "listening-choice",
-      "category": "listening",
-      "sentence": "Aunque hubo intercambio, las epidemias tuvieron consecuencias muy graves.",
-      "options": [
-        "Although there was exchange, epidemics had very serious consequences.",
-        "The opposite happened.",
-        "The statement is unrelated."
-      ],
-      "correct": 0,
-      "teaches": [
-        "llegada-historica"
-      ]
-    },
-    {
-      "id": "b1-llegadaeuropeos-01.ex11",
-      "type": "listening-choice",
-      "category": "listening",
-      "sentence": "Las sociedades que sobrevivieron conservaron y transformaron muchas tradiciones.",
-      "options": [
-        "The societies that survived preserved and transformed many traditions.",
-        "The opposite happened.",
-        "The statement is unrelated."
-      ],
-      "correct": 0,
-      "teaches": [
-        "llegada-historica"
-      ]
-    },
-    {
-      "id": "b1-llegadaeuropeos-01.ex12",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Qué consecuencia fue especialmente grave?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Las epidemias provocaron grandes pérdidas de población.",
-        "La expedición eliminó todas las rutas.",
-        "No hubo consecuencias."
-      ],
-      "correct": 0,
-      "teaches": [
-        "llegada-historica"
-      ]
-    },
-    {
-      "id": "b1-llegadaeuropeos-01.ex13",
-      "type": "multiple-choice",
-      "category": "dialogue",
-      "question": "¿Qué interpretación es más precisa?",
-      "options": [
-        "La llegada europea produjo contactos, conflictos y transformaciones profundas.",
-        "La llegada europea fue un acontecimiento sin consecuencias.",
-        "Todos los pueblos reaccionaron de la misma manera."
-      ],
-      "correct": 0,
-      "teaches": [
-        "llegada-historica"
-      ]
-    },
-    {
-      "id": "b1-llegadaeuropeos-01.ex14",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Cambió todo de la misma manera?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "No. Las consecuencias variaron según la región y la sociedad.",
-        "Sí. Todas las regiones cambiaron exactamente igual.",
-        "No. No hubo transformaciones."
-      ],
-      "correct": 0,
-      "teaches": [
-        "llegada-historica"
-      ]
-    },
-    {
-      "id": "b1-llegadaeuropeos-01.ex15",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Describe one historical event from the lesson using a clear sequence.",
-          "answer": "En 1492, Colón llegó al Caribe después de una larga expedición."
-        },
-        {
-          "prompt": "Add one sentence explaining a cause or consequence.",
-          "answer": "La expedición navegaba hacia el oeste cuando apareció tierra."
-        }
-      ],
-      "teaches": [
-        "llegada-historica"
-      ]
-    },
-    {
-      "id": "b1-llegadaeuropeos-01.ex16",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Write one sentence using the lesson's main focus.",
-          "answer": "Los navegantes buscaban una nueva ruta y finalmente llegaron a unas islas del Caribe."
-        }
-      ],
-      "teaches": [
-        "llegada-historica"
-      ]
+      "correct": 0
     }
   ]
 }
