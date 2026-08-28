@@ -6,280 +6,103 @@
       "type": "matching",
       "category": "vocabulary",
       "pairs": [
-        [
-          "Maya",
-          "Maya"
-        ],
-        [
-          "mexica",
-          "Mexica"
-        ],
-        [
-          "inca",
-          "Inca"
-        ]
-      ],
-      "teaches": [
-        "civilization-se-impersonal"
+        ["el glifo", "glyph"],
+        ["la escritura", "writing (system)"],
+        ["el imperio", "empire"],
+        ["la ciudad-estado", "city-state"],
+        ["el calendario", "calendar"]
+      ]
+    },
+    {
+      "id": "b1-precolombina-02.ex01b",
+      "type": "matching",
+      "category": "vocabulary",
+      "pairs": [
+        ["el puente", "bridge"],
+        ["el terremoto", "earthquake"],
+        ["el descendiente", "descendant"],
+        ["la lengua", "language"]
       ]
     },
     {
       "id": "b1-precolombina-02.ex02",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Qué construcción usa correctamente el 'se' impersonal?",
+      "category": "reading",
+      "question": "Según el texto, ¿por qué dicen los historiadores que los mayas nunca formaron un solo imperio?",
       "options": [
-        "En los Andes se estableció un Estado inca muy extenso.",
-        "En los Andes establecieron se un Estado inca.",
-        "En los Andes se establecieron un Estado inca."
+        "Porque se organizaban en ciudades-estado independientes que a menudo competían y luchaban entre sí.",
+        "Porque nunca desarrollaron ningún tipo de gobierno.",
+        "Porque todas sus ciudades desaparecieron antes del periodo Clásico."
       ],
-      "correct": 0,
-      "teaches": [
-        "civilization-se-impersonal"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-precolombina-02.ex03",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "En Mesoamérica ___ varias ciudades mayas. (desarrollarse)",
-      "answer": "se desarrollaron",
-      "teaches": [
-        "civilization-se-impersonal"
-      ]
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Qué representa la imagen del águila y la serpiente en el centro de la bandera mexicana?",
+      "options": [
+        "El lugar donde, según la leyenda, los mexica fundaron Tenochtitlan.",
+        "Una batalla entre los mexica y los mayas.",
+        "El dios principal de la religión inca."
+      ],
+      "correct": 0
     },
     {
       "id": "b1-precolombina-02.ex04",
-      "type": "sentence-builder",
+      "type": "fill-blank",
       "category": "grammar",
-      "tiles": [
-        "Los",
-        "mexica",
-        "construyeron",
-        "un",
-        "gran",
-        "centro",
-        "político."
-      ],
-      "solution": [
-        "Los",
-        "mexica",
-        "construyeron",
-        "un",
-        "gran",
-        "centro",
-        "político."
-      ],
-      "english": "The Mexica built a great political centre.",
-      "teaches": [
-        "civilization-se-impersonal"
-      ]
+      "sentence": "Cuzco ___ en el centro político y religioso de todo el imperio inca. (convertirse)",
+      "answer": "se convirtió",
+      "teaches": ["se-impersonal-historico"]
     },
     {
       "id": "b1-precolombina-02.ex05",
-      "type": "sentence-order",
-      "category": "grammar",
-      "sentences": [
-        "Los Maya, los mexica y los inca vivían en regiones distintas. [The Maya, the Mexica and the Inca lived in different regions.]",
-        "Cada sociedad tenía su propia historia y organización. [Each society had its own history and organisation.]",
-        "Por eso, no se debían tratar como una sola civilización. [Therefore, they should not be treated as a single civilisation.]"
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "Sin caballos ni ruedas, ¿cómo llevaban mensajes los incas a través de un imperio de más de cuatro mil kilómetros?",
+      "options": [
+        "Corredores llamados chasquis se turnaban para llevarlos por una red de caminos de montaña.",
+        "Usaban palomas mensajeras entrenadas en Cuzco.",
+        "No podían comunicarse entre regiones lejanas del imperio."
       ],
-      "solution": [
-        0,
-        1,
-        2
-      ],
-      "teaches": [
-        "civilization-se-impersonal"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-precolombina-02.ex06",
-      "type": "multiple-choice",
+      "type": "sentence-builder",
       "category": "grammar",
-      "question": "¿Qué palabra identifica el Estado que controlaba los Andes?",
-      "options": [
-        "inca",
-        "Maya",
-        "mexica"
-      ],
-      "correct": 0,
-      "teaches": [
-        "civilization-se-impersonal"
-      ]
+      "tiles": ["Todavía", "se", "debate", "por", "qué", "fueron", "abandonadas", "muchas", "ciudades", "mayas."],
+      "solution": ["Todavía", "se", "debate", "por", "qué", "fueron", "abandonadas", "muchas", "ciudades", "mayas."],
+      "english": "It's still debated why many Maya cities were abandoned.",
+      "teaches": ["se-impersonal-historico"]
     },
     {
       "id": "b1-precolombina-02.ex07",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "El Estado ___ controlaba un territorio extenso en los Andes. (inca)",
-      "answer": "inca",
-      "teaches": [
-        "civilization-se-impersonal"
-      ]
+      "type": "dialogue-complete",
+      "category": "reading",
+      "prompt": [
+        { "speaker": "Ana", "text": "¿Las lenguas maya, náhuatl y quechua desaparecieron junto con estos imperios?" },
+        { "speaker": "Tomás", "text": "_____" }
+      ],
+      "options": [
+        "No, millones de personas todavía las hablan hoy en día.",
+        "Sí, ya no queda ningún hablante de estas lenguas.",
+        "No lo sé, nadie ha estudiado esa pregunta."
+      ],
+      "correct": 0
     },
     {
       "id": "b1-precolombina-02.ex08",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Se puede tratar a los Maya, los mexica y los inca como una sola civilización?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "No, cada una tuvo su propia historia y organización política. [No, each one had its own history and political organisation.]",
-        "Sí, eran exactamente la misma civilización. [Yes, they were exactly the same civilisation.]",
-        "Sí, todas surgieron en la misma región. [Yes, they all arose in the same region.]"
-      ],
-      "correct": 0,
-      "teaches": [
-        "civilization-se-impersonal"
-      ]
-    },
-    {
-      "id": "b1-precolombina-02.ex09",
       "type": "listening-choice",
       "category": "listening",
-      "sentence": "En los Andes se estableció un Estado inca que controlaba un territorio extenso.",
+      "sentence": "Cuzco se convirtió en el centro político y religioso de todo el imperio inca.",
       "options": [
-        "In the Andes an Inca state was established that controlled an extensive territory.",
-        "The Andes had no states at all.",
-        "An Inca state was destroyed in the Andes."
+        "Cuzco became the political and religious centre of the whole Inca empire.",
+        "Cuzco was destroyed during a war between two Inca emperors.",
+        "Cuzco was the smallest city under Inca control."
       ],
-      "correct": 0,
-      "teaches": [
-        "civilization-se-impersonal"
-      ]
-    },
-    {
-      "id": "b1-precolombina-02.ex10",
-      "type": "listening-choice",
-      "category": "listening",
-      "sentence": "No formaban una sola civilización.",
-      "options": [
-        "They did not form a single civilisation.",
-        "They formed exactly one civilisation.",
-        "They formed no civilisation."
-      ],
-      "correct": 0,
-      "teaches": [
-        "civilization-se-impersonal"
-      ]
-    },
-    {
-      "id": "b1-precolombina-02.ex11",
-      "type": "dictation",
-      "category": "listening",
-      "sentence": "Los mexica construyeron un gran centro político.",
-      "teaches": [
-        "civilization-se-impersonal"
-      ]
-    },
-    {
-      "id": "b1-precolombina-02.ex12",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Dónde se desarrollaron varias ciudades mayas?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Se desarrollaron en Mesoamérica. [They developed in Mesoamerica.]",
-        "Se desarrollaron en los Andes. [They developed in the Andes.]",
-        "No se desarrollaron en ningún lugar. [They didn't develop anywhere.]"
-      ],
-      "correct": 0,
-      "teaches": [
-        "civilization-se-impersonal"
-      ]
-    },
-    {
-      "id": "b1-precolombina-02.ex13",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Qué construyeron los mexica?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Construyeron un gran centro político que dominaba territorios vecinos. [They built a great political centre that dominated neighbouring territories.]",
-        "No construyeron nada importante. [They didn't build anything important.]",
-        "Construyeron solo pequeñas aldeas aisladas. [They only built small isolated villages.]"
-      ],
-      "correct": 0,
-      "teaches": [
-        "civilization-se-impersonal"
-      ]
-    },
-    {
-      "id": "b1-precolombina-02.ex14",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Qué tenían en común los Maya, los mexica y los inca?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Poco: eran sociedades distintas en regiones y periodos distintos. [Little: they were different societies in different regions and periods.]",
-        "Compartían exactamente la misma lengua. [They shared exactly the same language.]",
-        "Eran la misma civilización con nombres distintos. [They were the same civilisation with different names.]"
-      ],
-      "correct": 0,
-      "teaches": [
-        "civilization-se-impersonal"
-      ]
-    },
-    {
-      "id": "b1-precolombina-02.ex15",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Describe una de las tres civilizaciones usando 'se' impersonal. [Describe one of the three civilisations using the impersonal 'se'.]",
-          "answer": "En los Andes se estableció un Estado inca que controlaba un territorio extenso."
-        }
-      ],
-      "teaches": [
-        "civilization-se-impersonal"
-      ]
-    },
-    {
-      "id": "b1-precolombina-02.ex16",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Explica por qué no se deben tratar como una sola civilización. [Explain why they should not be treated as a single civilisation.]",
-          "answer": "No formaban una sola civilización, porque cada una tenía su propia historia y organización."
-        }
-      ],
-      "teaches": [
-        "civilization-se-impersonal"
-      ]
+      "correct": 0
     }
   ]
 }

@@ -110,7 +110,7 @@ the engine understands — there are exactly eight section types
 (`goal`, `recycle`, `grammar`, `exercise-group`, `vocabulary`, `story`,
 `srs`, `checklist`); anything else silently renders nothing (see §8).
 
-**Teaching lesson (01–05):**
+**Core teaching lesson (01–05):**
 
 ```
 goal → recycle → grammar → exercise-group "Practice" → vocabulary
@@ -118,6 +118,18 @@ goal → recycle → grammar → exercise-group "Practice" → vocabulary
   → exercise-group "Listening" → exercise-group "Dialogue"
   → exercise-group "Writing" → srs → checklist
 ```
+
+**Latin America teaching lesson (01–05) — revised 2026-08-27, see §3:**
+
+```
+goal → recycle → story → vocabulary → grammar
+  → exercise-group "Practice" (one light group) → srs → checklist
+```
+
+Latin America no longer shares Core's shape. The reading moves first (not
+last, and not only in lesson 05 — every teaching lesson gets its own), and
+the four exercise-group split (Practice/Reading/Listening/Dialogue/Writing)
+collapses into one light group. See §3 for why and the full rationale.
 
 **Consolidation lesson:**
 
@@ -136,26 +148,130 @@ one.
 
 ---
 
-## 3. Latin America lessons: a Focus screen, plus a light grammar layer
+## 3. Latin America lessons: reading-first, exercise-light (revised 2026-08-27)
+
+**This section replaces the original Latin America design.** The original
+version put one short (150–350 word) story in lesson 05 only, with the
+other four teaching lessons carrying nothing but a Focus/grammar screen and
+a full Core-sized exercise block (16–19 exercises across four groups). An
+audit of the shipped content (starting with `lesson.b1.precolombina.02`,
+"Grandes civilizaciones" — the Maya/Mexica/Inca lesson) found this
+produced lessons that were structurally complete but hollow: the Focus
+screen's 3–4 example sentences were the *entire* factual content of the
+lesson — the same sentences were then reused verbatim as the story (when
+the unit's one story happened to cover that lesson's topic at all) and
+recombined into every exercise. A learner could finish "Grandes
+civilizaciones" without learning one specific, memorable fact about the
+Maya, Mexica or Inca beyond "they existed in different places and were
+different from each other" — the lesson's entire vocabulary list was three
+proper nouns that translate to themselves (`Maya → Maya`). Reasoning
+through abstract-policy units (Neoliberalismo, Democratización) made this
+worse, not better — with no named country, leader or date to anchor it,
+those Focus screens could describe any country's economic policy in any
+decade. See `TROUBLESHOOTING_BACKLOG.md`'s Latin America audit entries for
+the full findings.
+
+Direct user feedback drove the rebuild: *"if someone finishes the Maya
+lesson, they should be able to have a five to fifteen minute conversation
+about the Mayas... they should have some fun facts... the grammar comes
+before the actual reading, so it doesn't really stick together... this
+should be a primarily reading-focused lesson, and not just lesson, but a
+whole track — reading and information heavy, and recall and exercise
+light."*
+
+**The new model, per teaching lesson (01–05), reading-first:**
+
+1. **`story`** — every teaching lesson gets its own dedicated reading, not
+   just lesson 05. Substantial: **400–700+ words**, real names, dates,
+   places and numbers, not generic sentence templates ("a great political
+   centre was built that dominated neighbouring territories" — with
+   neither the centre nor the territories ever named — is exactly what
+   this replaces). At least one explicit "¿Sabías que...?" (did you know)
+   aside per reading, genuinely surprising, not a restatement of the main
+   text. Directly address at least one thing historians still debate or a
+   common misconception worth correcting (the Maya rebuild's example:
+   correcting "they disappeared" — the languages and millions of
+   descendants are still there). This is the lesson's centrepiece; it goes
+   first because reading is the point, not a coda after the drilling.
+2. **`vocabulary`** — real, transferable content words drawn from the
+   reading (aim for 8–10, not 3), never proper nouns that translate to
+   themselves. A word belongs here only if it does real work beyond this
+   one lesson (`glifo`, `imperio`, `calendario` — not `Maya → Maya`).
+3. **`grammar`** — comes *after* the reading, not before, and its worked
+   examples are **sentences lifted verbatim from that lesson's own
+   story**, not a separately-authored set. This is what makes the grammar
+   and the reading "stick together" rather than being two disconnected
+   pieces of content that happen to share a lesson: a learner meets the
+   construction once, in context, doing real work, then sees it named and
+   explained using the exact sentence they already read. The grammar point
+   itself is still one of the four extension points below (voz pasiva, se
+   pasiva/impersonal, gerundio, formal connectors) — that framework was
+   sound and is unchanged; only where its examples come from changes.
+4. **`exercise-group` "Practice" — one light group, roughly 6–9 exercises**,
+   not 16–19 across four groups. Majority (5–6 of them) should be
+   `category: "reading"` comprehension questions that test whether the
+   learner actually understood and retained the reading's specific facts —
+   "¿Por qué dicen los historiadores que los mayas nunca formaron un solo
+   imperio?" with a real answer requiring comprehension, not "¿Cuál
+   afirmación corresponde al tema?" with the correct option being a
+   sentence the learner was just shown verbatim (§5a already banned this
+   pattern; it matters even more now that reading is the centrepiece it's
+   meant to test). The rest (2–3) are grammar-pattern practice built from
+   the *same* sentences the story and Focus screen already used — a
+   `fill-blank` or `sentence-builder` reconstructing a sentence the
+   learner has now met three times (reading, grammar example, exercise),
+   which is real spaced reinforcement, not three unrelated exposures to
+   the same idea. One `matching` for the new vocabulary is fine; keep it
+   to two matching blocks of ≤5 pairs each if the word list runs to 8–10,
+   rather than one crowded block.
+5. `srs` → `checklist`, unchanged.
+
+**Difficulty must actually escalate across the level, not just get
+longer.** The original story-length bands (§7) scaled word count from
+150–250 up to 250–350 across the 36 units, but register stayed flat —
+sampled units from early, middle and late in the sequence read at
+essentially the same sentence complexity. The user's direction is explicit
+that this track can run **closer to B2 than strict B1**, and should get
+harder as it goes: 
+
+| Units | Register target |
+|---|---|
+| 1–12 (early) | Solid B1 — the register floor in §5a, not pushed further |
+| 13–24 (mid) | B1, leaning B1+: denser subordination, more formal connectors used more often |
+| 25–36 (late) | B1+ leaning B2: longer sentences, more formal/abstract vocabulary, faster pacing |
+
+This is a register and density change, not a grammar-inventory change —
+late units should not require grammar Core/Latin America hasn't taught;
+they should read like a more demanding treatment of material the learner
+is, by that point, actually ready for.
+
+**Status as of 2026-08-27: one lesson rebuilt to this model**
+(`lesson.b1.precolombina.02`, as the validated prototype — story, grammar,
+vocabulary, exercises and lesson-flow all rewritten; see its files for a
+worked example of every rule above). The other four teaching lessons of
+Unit 1 (`precolombina-01`, `-03`, `-04`, `-05`) and all 35 other Latin
+America units still follow the original model and need the same rebuild.
+Treat this section, not the original text below it, as current — the
+grammar-extension-point list and the thematic-pairing table (§3a) are
+unaffected and still apply as written.
+
+### 3.0 The Focus/grammar screen's own content rules
 
 The schema has no "historical context" or "content" section type — only
 `grammar`, which is generic underneath (`text`, `table`, `examples`, `tip`,
 `external-link` parts; none of the field names are grammar-specific). Latin
-America teaching lessons use the `grammar` section type to carry historical
-or cultural content instead of a grammar rule:
+America teaching lessons use the `grammar` section type, now positioned
+after the story per the model above:
 
-- `text` — the historical/regional context (≤300 words, same limit as
-  Core, §5)
-- `examples` — Spanish/English pairs of the unit's key historical
-  vocabulary in a sentence, not verb conjugations
-- `tip` — a fact, distinction or common misconception worth flagging
+- `text` — brief framing of the grammar point itself (≤150 words — shorter
+  than the old ≤300-word budget, since the historical content now lives in
+  the story, not here)
+- `examples` — 3–5 sentences **lifted verbatim from that lesson's own
+  story** (not separately authored) that demonstrate the point
+- `tip` — a distinction or usage note about the grammar point
 - `external-link` — optional; when used, `site` should name the actual
   source (a museum, archive or reference work) rather than defaulting to
   Lingolia, which has nothing relevant to link to for this track
-
-The Consolidated Unit List's "Focus:" line (as opposed to Core's "Grammar:"
-line) is exactly this screen's subject — write the file's `title` and `text`
-from it.
 
 **The Focus screen also carries one grammar-extension point per unit.**
 Core's B1 sequence is built around personal narration and everyday
@@ -399,6 +515,10 @@ others — reuse them rather than writing a near-duplicate like
 
 ### Block split, per lesson
 
+**Core only.** Latin America's exercise block is lighter and shaped
+differently — one "Practice" group of 6–9 exercises, majority reading
+comprehension — per §3's revised model, not the table below.
+
 | Lesson | Practice | Reading | Listening | Dialogue | Writing | Total |
 |---|---:|---:|---:|---:|---:|---:|
 | 01 | 9 | — | 2 | 3 | 2 | 16 |
@@ -447,15 +567,25 @@ consistent rather than each improvising a different mix.
 
 ## 7. Story
 
-One per unit, referenced only from lesson 05's `story` section, followed
-immediately by the "Reading" exercise-group.
+**Core:** one per unit, referenced only from lesson 05's `story` section,
+followed immediately by the "Reading" exercise-group, as below.
+
+**Latin America (revised 2026-08-27, see §3):** one story **per teaching
+lesson** (five per unit, not one), each 400–700+ words, referenced first
+in that lesson's own section list — not last, and not confined to lesson
+05. File under `content/es/stories/world/b1/`, one file per lesson (e.g.
+`b1-precolombina-02-civilizaciones.json` for `lesson.b1.precolombina.02`),
+`type: "world"`. The length band table below and the "one per unit" framing
+are Core-only; see §3 for Latin America's word count and register-escalation
+rules.
 
 - **Core** stories are adapted extracts from the real works already named
   in the Consolidated Unit List (*Don Quijote*, *The Odyssey*, etc.) — file
   under `content/es/stories/classics/b1/`, `type: "classic"`.
 - **Latin America** stories are adapted historical/documentary material
-  (chronicles, testimonies, speeches, reports) — file under
-  `content/es/stories/world/b1/`, `type: "world"`.
+  (chronicles, testimonies, speeches, reports), written specifically for
+  the lesson rather than adapted from a single source document — file
+  under `content/es/stories/world/b1/`, `type: "world"`.
 
 Neither track uses `type: "original"` at B1 — `B1_GUIDE.md` §1 is explicit
 that "literary, historical and world texts replace original Parlour
