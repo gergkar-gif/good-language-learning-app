@@ -6,282 +6,102 @@
       "type": "matching",
       "category": "vocabulary",
       "pairs": [
-        [
-          "ayllu",
-          "kin-based community"
-        ],
-        [
-          "quipu",
-          "quipu recording device"
-        ],
-        [
-          "curaca",
-          "local community leader"
-        ]
-      ],
-      "teaches": [
-        "incas-gerundio"
+        ["el nudo", "knot"],
+        ["el mensajero", "messenger"],
+        ["heredar", "to inherit"],
+        ["la ladera", "hillside, slope"]
+      ]
+    },
+    {
+      "id": "b1-civilizaciones-03.ex01b",
+      "type": "matching",
+      "category": "vocabulary",
+      "pairs": [
+        ["concéntrico", "concentric"],
+        ["la altitud", "altitude"],
+        ["la finca", "estate"],
+        ["el ingenio", "ingenuity"]
       ]
     },
     {
       "id": "b1-civilizaciones-03.ex02",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Qué oración usa correctamente el gerundio para mostrar una acción paralela?",
+      "category": "reading",
+      "question": "¿Cómo administraba el imperio inca la información sin usar un sistema de escritura como el maya?",
       "options": [
-        "El Estado se expandía integrando nuevos territorios.",
-        "El Estado se expandía integrar nuevos territorios.",
-        "El Estado se expandía integró nuevos territorios."
+        "Con quipus: cuerdas de colores con nudos que codificaban números según su altura y tipo.",
+        "Con un sistema de escritura silábica similar al maya, pero tallado en piedra.",
+        "El imperio inca no llevaba ningún registro de población, cosechas o tributo."
       ],
-      "correct": 0,
-      "teaches": [
-        "incas-gerundio"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-civilizaciones-03.ex03",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Los administradores registraban información _____ quipus. (utilizar)",
-      "answer": "utilizando",
-      "teaches": [
-        "incas-gerundio"
-      ]
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Por qué cada nuevo Sapa Inca tenía que conquistar tierra propia en lugar de heredar la de sus antepasados?",
+      "options": [
+        "Porque la momia del gobernante anterior seguía 'gobernando' simbólicamente sus antiguas propiedades a través de la panaca.",
+        "Porque la ley inca prohibía expresamente heredar cualquier tipo de propiedad.",
+        "Porque no existía ningún sistema de propiedad de la tierra en el imperio inca."
+      ],
+      "correct": 0
     },
     {
       "id": "b1-civilizaciones-03.ex04",
-      "type": "sentence-builder",
+      "type": "fill-blank",
       "category": "grammar",
-      "tiles": [
-        "Los",
-        "curacas",
-        "dirigían",
-        "sus",
-        "comunidades",
-        "manteniendo",
-        "cierta",
-        "autonomía."
-      ],
-      "solution": [
-        "Los",
-        "curacas",
-        "dirigían",
-        "sus",
-        "comunidades",
-        "manteniendo",
-        "cierta",
-        "autonomía."
-      ],
-      "english": "Local leaders directed their communities while maintaining some autonomy.",
-      "teaches": [
-        "incas-gerundio"
-      ]
+      "sentence": "___ con la agricultura en altura, los incas construyeron terrazas escalonadas en las laderas de las montañas. (experimentar)",
+      "answer": "Experimentando",
+      "teaches": ["gerundio-procesos-historicos"]
     },
     {
       "id": "b1-civilizaciones-03.ex05",
-      "type": "sentence-order",
-      "category": "grammar",
-      "sentences": [
-        "El ayllu organizaba parte de la vida comunitaria. [The ayllu organised part of community life.]",
-        "Los curacas dirigían sus comunidades. [Local leaders directed their communities.]",
-        "Al mismo tiempo, respondían a autoridades superiores. [At the same time, they answered to higher authorities.]"
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Qué hace especiales a las terrazas circulares de Moray?",
+      "options": [
+        "Creaban diferencias de temperatura de varios grados entre niveles, por lo que hoy se interpretan como un laboratorio agrícola.",
+        "Fueron construidas únicamente como tumbas reales, sin ningún propósito agrícola.",
+        "Eran idénticas a todas las demás terrazas incas, sin ninguna característica especial."
       ],
-      "solution": [
-        0,
-        1,
-        2
-      ],
-      "teaches": [
-        "incas-gerundio"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-civilizaciones-03.ex06",
-      "type": "multiple-choice",
+      "type": "sentence-builder",
       "category": "grammar",
-      "question": "¿Qué palabra designa una comunidad basada en vínculos familiares?",
-      "options": [
-        "ayllu",
-        "quipu",
-        "curaca"
-      ],
-      "correct": 0,
-      "teaches": [
-        "incas-gerundio"
-      ]
+      "tiles": ["Corriendo", "en", "relevos", "de", "pocos", "kilómetros", "cada", "uno,", "los", "chasquis", "podían", "llevar", "un", "mensaje", "en", "apenas", "unos", "días."],
+      "solution": ["Corriendo", "en", "relevos", "de", "pocos", "kilómetros", "cada", "uno,", "los", "chasquis", "podían", "llevar", "un", "mensaje", "en", "apenas", "unos", "días."],
+      "english": "By running relays of just a few kilometres each, the chasquis could carry a message in just a few days.",
+      "teaches": ["gerundio-procesos-historicos"]
     },
     {
       "id": "b1-civilizaciones-03.ex07",
-      "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "Los _____ servían para registrar información. (quipu)",
-      "answer": "quipus",
-      "teaches": [
-        "incas-gerundio"
-      ]
+      "type": "dialogue-complete",
+      "category": "reading",
+      "prompt": [
+        { "speaker": "Marta", "text": "¿Fueron los españoles quienes descubrieron Machu Picchu para el mundo?" },
+        { "speaker": "Pablo", "text": "_____" }
+      ],
+      "options": [
+        "No, los españoles nunca la encontraron; agricultores locales ya la conocían y llevaron hasta allí a Hiram Bingham en 1911.",
+        "Sí, los españoles la descubrieron durante la conquista y la destruyeron poco después.",
+        "No, porque Machu Picchu no existía todavía en la época de la conquista."
+      ],
+      "correct": 0
     },
     {
       "id": "b1-civilizaciones-03.ex08",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Cómo registraban información los administradores?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "La registraban utilizando quipus que ayudaban a organizar los recursos. [They recorded it using quipus that helped organise resources.]",
-        "La registraban mediante mercados. [They recorded it through markets.]",
-        "La registraban mediante cenotes. [They recorded it through cenotes.]"
-      ],
-      "correct": 0,
-      "teaches": [
-        "incas-gerundio"
-      ]
-    },
-    {
-      "id": "b1-civilizaciones-03.ex09",
       "type": "listening-choice",
       "category": "listening",
-      "sentence": "Los administradores registraban información utilizando quipus que ayudaban a organizar los recursos.",
+      "sentence": "El Qhapaq Ñan conectaba el imperio de norte a sur atravesando desiertos, selvas y montañas.",
       "options": [
-        "Administrators recorded information using quipus that helped organise resources.",
-        "The opposite happened.",
-        "The statement is unrelated."
+        "The Qhapaq Ñan connected the empire from north to south, crossing deserts, jungles and mountains.",
+        "The Qhapaq Ñan was a short road used only near Cusco.",
+        "The Qhapaq Ñan was never actually built."
       ],
-      "correct": 0,
-      "teaches": [
-        "incas-gerundio"
-      ]
-    },
-    {
-      "id": "b1-civilizaciones-03.ex10",
-      "type": "listening-choice",
-      "category": "listening",
-      "sentence": "El Estado se expandía integrando nuevos territorios.",
-      "options": [
-        "The state expanded by integrating new territories.",
-        "The opposite happened.",
-        "The statement is unrelated."
-      ],
-      "correct": 0,
-      "teaches": [
-        "incas-gerundio"
-      ]
-    },
-    {
-      "id": "b1-civilizaciones-03.ex11",
-      "type": "dictation",
-      "category": "listening",
-      "sentence": "Los curacas dirigían sus comunidades manteniendo cierta autonomía.",
-      "teaches": [
-        "incas-gerundio"
-      ]
-    },
-    {
-      "id": "b1-civilizaciones-03.ex12",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Qué era un ayllu?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Era una forma de organización comunitaria basada en vínculos familiares. [It was a form of community organisation based on family ties.]",
-        "Era un mercado. [It was a market.]",
-        "Era un campo lacustre. [It was a lake field.]"
-      ],
-      "correct": 0,
-      "teaches": [
-        "incas-gerundio"
-      ]
-    },
-    {
-      "id": "b1-civilizaciones-03.ex13",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Para qué servían los quipus?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Servían para registrar información. [They were used to record information.]",
-        "Servían para cultivar maíz. [They were used to grow maize.]",
-        "Servían para observar cenotes. [They were used to observe cenotes.]"
-      ],
-      "correct": 0,
-      "teaches": [
-        "incas-gerundio"
-      ]
-    },
-    {
-      "id": "b1-civilizaciones-03.ex14",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Qué función tenía un curaca?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Podía representar a una comunidad ante autoridades superiores. [A local leader could represent a community before higher authorities.]",
-        "Construía códices. [He built codices.]",
-        "Organizaba mercados mexicas. [He organised Mexica markets.]"
-      ],
-      "correct": 0,
-      "teaches": [
-        "incas-gerundio"
-      ]
-    },
-    {
-      "id": "b1-civilizaciones-03.ex15",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Explain how the Inca state expanded while integrating communities.",
-          "answer": "El Estado se expandía integrando nuevos territorios y estableciendo relaciones con comunidades locales."
-        }
-      ],
-      "teaches": [
-        "incas-gerundio"
-      ]
-    },
-    {
-      "id": "b1-civilizaciones-03.ex16",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Explain how quipus were used.",
-          "answer": "Los administradores registraban información utilizando quipus que ayudaban a organizar los recursos."
-        }
-      ],
-      "teaches": [
-        "incas-gerundio"
-      ]
+      "correct": 0
     }
   ]
 }

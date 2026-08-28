@@ -6,342 +6,102 @@
       "type": "matching",
       "category": "vocabulary",
       "pairs": [
-        [
-          "patrimonio",
-          "heritage"
-        ],
-        [
-          "ancestral",
-          "ancestral"
-        ],
-        [
-          "vigente",
-          "still in force / current"
-        ]
-      ],
-      "teaches": [
-        "legado-passive"
+        ["la raíz", "root"],
+        ["venenoso", "poisonous"],
+        ["la desconfianza", "distrust"],
+        ["la plaga", "plague, blight"]
+      ]
+    },
+    {
+      "id": "b1-civilizaciones-05.ex01b",
+      "type": "matching",
+      "category": "vocabulary",
+      "pairs": [
+        ["la hambruna", "famine"],
+        ["en peligro", "endangered, at risk"],
+        ["el tribunal", "court (of law)"],
+        ["transmitir", "to pass on, transmit"]
       ]
     },
     {
       "id": "b1-civilizaciones-05.ex02",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Qué oración usa correctamente la voz pasiva para hablar de una living tradition?",
+      "category": "reading",
+      "question": "¿De dónde vienen palabras como 'tomate', 'aguacate', 'papa' y 'cóndor'?",
       "options": [
-        "Muchas prácticas ancestrales son mantenidas por comunidades que las adaptan a la vida actual.",
-        "Muchas prácticas ancestrales son mantener por comunidades.",
-        "Muchas prácticas ancestrales mantienen por comunidades."
+        "'Tomate' y 'aguacate' vienen del náhuatl; 'papa' y 'cóndor' vienen del quechua.",
+        "Todas estas palabras tienen origen exclusivamente latino.",
+        "Son palabras inventadas por los colonizadores españoles sin ninguna raíz indígena."
       ],
-      "correct": 0,
-      "teaches": [
-        "legado-passive"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-civilizaciones-05.ex03",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "El patrimonio cultural _____ transmitido entre generaciones. (ser)",
-      "answer": "es",
-      "teaches": [
-        "legado-passive"
-      ]
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Qué relación hay entre la patata andina y la hambruna irlandesa de 1845-1852?",
+      "options": [
+        "La dependencia excesiva de muy pocas variedades de patata en Irlanda contribuyó a que una plaga arrasara las cosechas y causara la hambruna.",
+        "La hambruna irlandesa no tuvo ninguna relación con la patata.",
+        "La patata llegó a Irlanda después de la hambruna, no antes."
+      ],
+      "correct": 0
     },
     {
       "id": "b1-civilizaciones-05.ex04",
-      "type": "sentence-builder",
+      "type": "fill-blank",
       "category": "grammar",
-      "tiles": [
-        "Algunas",
-        "tradiciones",
-        "son",
-        "mantenidas",
-        "por",
-        "comunidades",
-        "indígenas."
-      ],
-      "solution": [
-        "Algunas",
-        "tradiciones",
-        "son",
-        "mantenidas",
-        "por",
-        "comunidades",
-        "indígenas."
-      ],
-      "english": "Some traditions are maintained by Indigenous communities.",
-      "teaches": [
-        "legado-passive"
-      ]
+      "sentence": "La patata ___ llevada a Europa por los españoles en el siglo dieciséis. (ser)",
+      "answer": "fue",
+      "teaches": ["voz-pasiva-legado"]
     },
     {
       "id": "b1-civilizaciones-05.ex05",
-      "type": "sentence-order",
-      "category": "grammar",
-      "sentences": [
-        "Muchas comunidades conservan prácticas ancestrales. [Many communities preserve ancestral practices.]",
-        "Algunas de estas prácticas han cambiado con el tiempo. [Some of these practices have changed over time.]",
-        "Sin embargo, una parte importante de su patrimonio sigue vigente. [However, an important part of their heritage remains current.]"
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Qué han hecho Guatemala y Bolivia para reconocer sus lenguas indígenas?",
+      "options": [
+        "Guatemala reconoce por ley veintiuna lenguas mayas más el xinca y el garífuna; Bolivia nombra treinta y seis idiomas oficiales en su constitución de 2009.",
+        "Ninguno de los dos países reconoce oficialmente ninguna lengua indígena.",
+        "Ambos países prohíben por ley el uso de lenguas indígenas en público."
       ],
-      "solution": [
-        0,
-        1,
-        2
-      ],
-      "teaches": [
-        "legado-passive"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-civilizaciones-05.ex06",
-      "type": "multiple-choice",
+      "type": "sentence-builder",
       "category": "grammar",
-      "question": "¿Qué palabra significa 'heritage'?",
-      "options": [
-        "patrimonio",
-        "ancestral",
-        "vigente"
-      ],
-      "correct": 0,
-      "teaches": [
-        "legado-passive"
-      ]
+      "tiles": ["Hoy", "se", "hablan", "más", "de", "quinientas", "lenguas", "indígenas", "en", "América", "Latina."],
+      "solution": ["Hoy", "se", "hablan", "más", "de", "quinientas", "lenguas", "indígenas", "en", "América", "Latina."],
+      "english": "Today more than five hundred indigenous languages are spoken in Latin America.",
+      "teaches": ["voz-pasiva-legado"]
     },
     {
       "id": "b1-civilizaciones-05.ex07",
-      "type": "fill-blank",
-      "category": "vocabulary",
-      "sentence": "Una lengua puede formar parte del _____ cultural de una comunidad. [A language can be part of a community's cultural heritage.]",
-      "answer": "patrimonio",
-      "teaches": [
-        "legado-passive"
-      ]
+      "type": "dialogue-complete",
+      "category": "reading",
+      "prompt": [
+        { "speaker": "Marta", "text": "¿El reconocimiento legal de una lengua indígena garantiza que se use en la vida diaria?" },
+        { "speaker": "Pablo", "text": "_____" }
+      ],
+      "options": [
+        "No siempre: muchas comunidades siguen luchando para que sus lenguas se enseñen en las escuelas o se usen en los tribunales.",
+        "Sí, el reconocimiento legal garantiza automáticamente su uso cotidiano en todo el país.",
+        "No, porque ningún país reconoce legalmente sus lenguas indígenas."
+      ],
+      "correct": 0
     },
     {
       "id": "b1-civilizaciones-05.ex08",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Cómo continúa vigente parte del legado indígena?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Muchas prácticas son mantenidas por comunidades que las adaptan a la vida actual. [Many practices are maintained by communities that adapt them to modern life.]",
-        "Todas las prácticas desaparecieron. [All practices disappeared.]",
-        "Solo quedan edificios antiguos. [Only old buildings remain.]"
-      ],
-      "correct": 0,
-      "teaches": [
-        "legado-passive"
-      ]
-    },
-    {
-      "id": "b1-civilizaciones-05.ex09",
-      "type": "multiple-choice",
-      "category": "reading",
-      "question": "¿Cuál es la idea principal del texto?",
-      "options": [
-        "Las sociedades indígenas compartían algunas características, pero también tenían formas distintas de organización. [Indigenous societies shared some features but also had different forms of organisation.]",
-        "Todas las sociedades eran idénticas. [All societies were identical.]",
-        "No existían formas de organización. [There were no forms of organisation.]"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "b1-civilizaciones-05.ex10",
-      "type": "multiple-choice",
-      "category": "reading",
-      "question": "¿Qué se dice sobre las chinampas?",
-      "options": [
-        "Permitían cultivar en zonas lacustres. [They allowed people to farm in lake areas.]",
-        "Servían para registrar información. [They were used to record information.]",
-        "Eran observatorios. [They were observatories.]"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "b1-civilizaciones-05.ex11",
-      "type": "multiple-choice",
-      "category": "reading",
-      "question": "¿Para qué servían los quipus según el texto?",
-      "options": [
-        "Servían para registrar información. [They were used to record information.]",
-        "Servían para cultivar la milpa. [They were used to cultivate the milpa.]",
-        "Servían para almacenar agua. [They were used to store water.]"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "b1-civilizaciones-05.ex12",
-      "type": "multiple-choice",
-      "category": "reading",
-      "question": "¿Qué conclusión presenta el texto?",
-      "options": [
-        "Muchas prácticas y formas de organización siguen vigentes, aunque las sociedades hayan cambiado. [Many practices and forms of organisation remain current, although societies have changed.]",
-        "Todo el legado desapareció. [All the heritage disappeared.]",
-        "Nada cambió después de la conquista. [Nothing changed after the conquest.]"
-      ],
-      "correct": 0
-    },
-    {
-      "id": "b1-civilizaciones-05.ex13",
       "type": "listening-choice",
       "category": "listening",
-      "sentence": "Muchas prácticas ancestrales son mantenidas por comunidades que las adaptan a la vida actual.",
+      "sentence": "El legado indígena no se limita a ruinas y museos.",
       "options": [
-        "Many ancestral practices are maintained by communities that adapt them to modern life.",
-        "The opposite happened.",
-        "The statement is unrelated."
+        "The indigenous legacy is not limited to ruins and museums.",
+        "The indigenous legacy exists only in ruins and museums.",
+        "There is no indigenous legacy left today."
       ],
-      "correct": 0,
-      "teaches": [
-        "legado-passive"
-      ]
-    },
-    {
-      "id": "b1-civilizaciones-05.ex14",
-      "type": "listening-choice",
-      "category": "listening",
-      "sentence": "El patrimonio cultural es transmitido entre generaciones, aunque algunas tradiciones han cambiado.",
-      "options": [
-        "Cultural heritage is passed between generations, although some traditions have changed.",
-        "The opposite happened.",
-        "The statement is unrelated."
-      ],
-      "correct": 0,
-      "teaches": [
-        "legado-passive"
-      ]
-    },
-    {
-      "id": "b1-civilizaciones-05.ex15",
-      "type": "dictation",
-      "category": "listening",
-      "sentence": "Algunos conocimientos son reconocidos como parte de una historia que sigue vigente.",
-      "teaches": [
-        "legado-passive"
-      ]
-    },
-    {
-      "id": "b1-civilizaciones-05.ex16",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Qué significa patrimonio cultural?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Es un conjunto de elementos culturales que una comunidad conserva y transmite. [It is a set of cultural elements that a community preserves and transmits.]",
-        "Es una forma de agricultura. [It is a form of agriculture.]",
-        "Es un tipo de mercado. [It is a type of market.]"
-      ],
-      "correct": 0,
-      "teaches": [
-        "legado-passive"
-      ]
-    },
-    {
-      "id": "b1-civilizaciones-05.ex17",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Por qué algunas tradiciones siguen vigentes?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Porque las comunidades las mantienen y también pueden adaptarlas a nuevas circunstancias. [Because communities maintain them and can also adapt them to new circumstances.]",
-        "Porque nunca han cambiado. [Because they have never changed.]",
-        "Porque ya no tienen relación con las comunidades. [Because they are no longer related to communities.]"
-      ],
-      "correct": 0,
-      "teaches": [
-        "legado-passive"
-      ]
-    },
-    {
-      "id": "b1-civilizaciones-05.ex18",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Cómo se transmite el patrimonio?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Puede ser transmitido entre generaciones, aunque algunas prácticas cambien. [It can be passed between generations, although some practices change.]",
-        "Solo puede transmitirse por escrito. [It can only be transmitted in writing.]",
-        "No puede transmitirse. [It cannot be transmitted.]"
-      ],
-      "correct": 0,
-      "teaches": [
-        "legado-passive"
-      ]
-    },
-    {
-      "id": "b1-civilizaciones-05.ex19",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Explain how an ancestral practice can remain current.",
-          "answer": "Muchas prácticas ancestrales son mantenidas por comunidades que las adaptan a la vida actual."
-        }
-      ],
-      "teaches": [
-        "legado-passive"
-      ]
-    },
-    {
-      "id": "b1-civilizaciones-05.ex20",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Explain how cultural heritage is transmitted.",
-          "answer": "El patrimonio cultural es transmitido entre generaciones, aunque algunas tradiciones han cambiado."
-        }
-      ],
-      "teaches": [
-        "legado-passive"
-      ]
-    },
-    {
-      "id": "b1-civilizaciones-05.ex21",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Explain why Indigenous heritage remains important today.",
-          "answer": "El patrimonio cultural es transmitido entre generaciones, aunque algunas tradiciones han cambiado y otras siguen vigentes."
-        }
-      ],
-      "teaches": [
-        "legado-passive"
-      ]
+      "correct": 0
     }
   ]
 }
