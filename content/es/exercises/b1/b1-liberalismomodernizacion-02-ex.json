@@ -6,260 +6,102 @@
       "type": "matching",
       "category": "vocabulary",
       "pairs": [
-        [
-          "reforma",
-          "reform"
-        ],
-        [
-          "Estado",
-          "state"
-        ],
-        [
-          "institución",
-          "institution"
-        ],
-        [
-          "administración",
-          "administration"
-        ]
-      ],
-      "teaches": [
-        "passive"
+        ["la defunción", "death, decease (legal term)"],
+        ["parroquial", "parish (adjective)"],
+        ["controvertido", "controversial"],
+        ["el sacramento", "sacrament"]
+      ]
+    },
+    {
+      "id": "b1-liberalismomodernizacion-02.ex01b",
+      "type": "matching",
+      "category": "vocabulary",
+      "pairs": [
+        ["nacionalizar", "to nationalize"],
+        ["el propietario", "owner"],
+        ["prolongarse", "to drag on, extend"],
+        ["dar por sentado", "to take for granted"]
       ]
     },
     {
       "id": "b1-liberalismomodernizacion-02.ex02",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Qué afirmación encaja mejor con el tema?",
+      "category": "reading",
+      "question": "¿Quién registraba tradicionalmente los nacimientos, matrimonios y defunciones antes de las reformas liberales?",
       "options": [
-        "Las instituciones fueron reformadas para crear administraciones más centralizadas.",
-        "Las reformas tuvieron exactamente los mismos resultados en todos los países.",
-        "Las ideas liberales no tuvieron ninguna relación con las instituciones."
+        "La Iglesia católica, a través de sus propios libros parroquiales.",
+        "El gobierno central, mediante oficinas civiles ya existentes.",
+        "Nadie los registraba de forma sistemática antes del siglo diecinueve."
       ],
-      "correct": 0,
-      "teaches": [
-        "passive"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-liberalismomodernizacion-02.ex03",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Las instituciones fueron ___das para crear administraciones más centralizadas.",
-      "answer": "reforma",
-      "teaches": [
-        "passive"
-      ]
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Qué cambió en México, entre 1855 y 1863, respecto al matrimonio?",
+      "options": [
+        "El matrimonio fue convertido en un contrato civil independiente del sacramento religioso.",
+        "El matrimonio religioso fue declarado obligatorio para toda la población.",
+        "El matrimonio civil fue prohibido por las Leyes de Reforma."
+      ],
+      "correct": 0
     },
     {
       "id": "b1-liberalismomodernizacion-02.ex04",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Nuevas leyes fueron aprobadas para modificar las relaciones entre ciudadanos y ___.",
-      "answer": "Estado",
-      "teaches": [
-        "passive"
-      ]
+      "sentence": "Entre 1855 y 1863 ___ las llamadas Leyes de Reforma, impulsadas por Benito Juárez. (ser + promulgar, pretérito)",
+      "answer": "fueron promulgadas",
+      "teaches": ["voz-pasiva-reformas-liberales-del-estado"]
     },
     {
       "id": "b1-liberalismomodernizacion-02.ex05",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Una palabra clave de este tema es _____. (institución)",
-      "answer": "institución",
-      "teaches": [
-        "passive"
-      ]
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Qué ocurrió con buena parte de las propiedades de la Iglesia católica bajo estas mismas leyes?",
+      "options": [
+        "Fueron nacionalizadas, ya que la Iglesia era considerada uno de los mayores propietarios de tierras y edificios del país.",
+        "Fueron devueltas íntegramente a comunidades indígenas.",
+        "Permanecieron exactamente igual, sin ningún cambio legal."
+      ],
+      "correct": 0
     },
     {
       "id": "b1-liberalismomodernizacion-02.ex06",
-      "type": "fill-blank",
+      "type": "sentence-builder",
       "category": "grammar",
-      "sentence": "El concepto de _____ aparece en el contexto estudiado. (administración)",
-      "answer": "administración",
-      "teaches": [
-        "passive"
-      ]
+      "tiles": ["Fue", "creado", "un", "registro", "civil", "encargado", "de", "documentar", "oficialmente", "nacimientos,", "matrimonios", "y", "defunciones."],
+      "solution": ["Fue", "creado", "un", "registro", "civil", "encargado", "de", "documentar", "oficialmente", "nacimientos,", "matrimonios", "y", "defunciones."],
+      "english": "A civil registry was created, tasked with officially documenting births, marriages and deaths.",
+      "teaches": ["voz-pasiva-reformas-liberales-del-estado"]
     },
     {
       "id": "b1-liberalismomodernizacion-02.ex07",
-      "type": "sentence-builder",
-      "category": "grammar",
-      "tiles": [
-        "Las",
-        "instituciones",
-        "fueron",
-        "reformadas",
-        "para",
-        "crear",
-        "administraciones",
-        "más",
-        "centralizadas."
+      "type": "dialogue-complete",
+      "category": "reading",
+      "prompt": [
+        { "speaker": "Sofía", "text": "¿Aceptaron pacíficamente los conservadores estas reformas liberales?" },
+        { "speaker": "Diego", "text": "_____" }
       ],
-      "solution": [
-        "Las",
-        "instituciones",
-        "fueron",
-        "reformadas",
-        "para",
-        "crear",
-        "administraciones",
-        "más",
-        "centralizadas."
+      "options": [
+        "No, las rechazaron con las armas, y el país fue sumido en la Guerra de Reforma entre 1857 y 1861.",
+        "Sí, todos los sectores conservadores apoyaron de inmediato el registro civil.",
+        "No hubo ningún tipo de conflicto en torno a estas leyes."
       ],
-      "english": "Institutions were reformed to create more centralised administrations.",
-      "teaches": [
-        "passive"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-liberalismomodernizacion-02.ex08",
-      "type": "sentence-order",
-      "category": "grammar",
-      "sentences": [
-        "Las instituciones fueron reformadas para crear administraciones más centralizadas.",
-        "Nuevas leyes fueron aprobadas para modificar las relaciones entre ciudadanos y Estado.",
-        "La administración pública fue reorganizada durante los procesos de modernización estatal."
-      ],
-      "solution": [
-        0,
-        1,
-        2
-      ],
-      "teaches": [
-        "passive"
-      ]
-    },
-    {
-      "id": "b1-liberalismomodernizacion-02.ex09",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Qué ejemplo utiliza correctamente la estructura de enfoque?",
-      "options": [
-        "Las instituciones fueron reformadas para crear administraciones más centralizadas.",
-        "Nuevas leyes fueron aprobadas para modificar las relaciones entre ciudadanos y Estado.",
-        "La administración pública fue reorganizada durante los procesos de modernización estatal."
-      ],
-      "correct": 0,
-      "teaches": [
-        "passive"
-      ]
-    },
-    {
-      "id": "b1-liberalismomodernizacion-02.ex10",
       "type": "listening-choice",
       "category": "listening",
-      "sentence": "Nuevas leyes fueron aprobadas para modificar las relaciones entre ciudadanos y Estado.",
+      "sentence": "Hoy el registro civil se da por sentado, pero su creación fue una de las transformaciones más radicales del liberalismo latinoamericano.",
       "options": [
-        "New laws were passed to change relations between citizens and the state.",
-        "The opposite happened.",
-        "No information is given."
-      ],
-      "correct": 0,
-      "teaches": [
-        "passive"
-      ]
-    },
-    {
-      "id": "b1-liberalismomodernizacion-02.ex11",
-      "type": "listening-choice",
-      "category": "listening",
-      "sentence": "La administración pública fue reorganizada durante los procesos de modernización estatal.",
-      "options": [
-        "Public administration was reorganised during processes of state modernisation.",
-        "The statement is false.",
-        "The topic is unrelated."
-      ],
-      "correct": 0,
-      "teaches": [
-        "passive"
-      ]
-    },
-    {
-      "id": "b1-liberalismomodernizacion-02.ex12",
-      "type": "dictation",
-      "category": "listening",
-      "sentence": "Las instituciones fueron reformadas para crear administraciones más centralizadas.",
-      "teaches": [
-        "passive"
-      ]
-    },
-    {
-      "id": "b1-liberalismomodernizacion-02.ex13",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "teaches": [
-        "passive"
-      ],
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "Las instituciones fueron reformadas para crear administraciones más centralizadas."
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Nuevas leyes fueron aprobadas para modificar las relaciones entre ciudadanos y Estado.",
-        "No hubo ningún cambio en la región.",
-        "Todos los países vivieron exactamente el mismo proceso."
+        "Today the civil registry is taken for granted, but its creation was one of the most radical transformations of Latin American liberalism.",
+        "The civil registry was abandoned shortly after its creation and never used again.",
+        "Nobody today remembers that a civil registry was ever created."
       ],
       "correct": 0
-    },
-    {
-      "id": "b1-liberalismomodernizacion-02.ex14",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "teaches": [
-        "passive"
-      ],
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "La administración pública fue reorganizada durante los procesos de modernización estatal."
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Los recursos del Estado fueron utilizados para ampliar su presencia en distintas regiones.",
-        "El proceso fue completamente uniforme en toda la región.",
-        "No existieron consecuencias importantes."
-      ],
-      "correct": 0
-    },
-    {
-      "id": "b1-liberalismomodernizacion-02.ex15",
-      "type": "structured-writing",
-      "category": "writing",
-      "teaches": [
-        "passive"
-      ],
-      "template": [
-        {
-          "prompt": "Explica brevemente reforma institucional y menciona una consecuencia.",
-          "answer": "Las instituciones fueron reformadas para crear administraciones más centralizadas. La administración pública fue reorganizada durante los procesos de modernización estatal."
-        }
-      ]
-    },
-    {
-      "id": "b1-liberalismomodernizacion-02.ex16",
-      "type": "structured-writing",
-      "category": "writing",
-      "teaches": [
-        "passive"
-      ],
-      "template": [
-        {
-          "prompt": "¿Por qué el proceso fue desigual?",
-          "answer": "Los recursos del Estado fueron utilizados para ampliar su presencia en distintas regiones."
-        }
-      ]
     }
   ]
 }

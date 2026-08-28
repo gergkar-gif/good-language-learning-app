@@ -6,278 +6,102 @@
       "type": "matching",
       "category": "vocabulary",
       "pairs": [
-        [
-          "liberalismo",
-          "liberalism"
-        ],
-        [
-          "libertad",
-          "freedom / liberty"
-        ],
-        [
-          "ciudadanía",
-          "citizenship"
-        ],
-        [
-          "derecho",
-          "right"
-        ]
-      ],
-      "teaches": [
-        "formal-connectors"
+        ["el conjunto", "set, group"],
+        ["igualitario", "egalitarian"],
+        ["el requisito", "requirement"],
+        ["la alfabetización", "literacy"]
+      ]
+    },
+    {
+      "id": "b1-liberalismomodernizacion-01.ex01b",
+      "type": "matching",
+      "category": "vocabulary",
+      "pairs": [
+        ["excluido", "excluded"],
+        ["desapercibido", "unnoticed"],
+        ["radical", "radical"],
+        ["el sufragio", "suffrage, the vote"]
       ]
     },
     {
       "id": "b1-liberalismomodernizacion-01.ex02",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Qué afirmación encaja mejor con el tema?",
+      "category": "reading",
+      "question": "¿Qué valores defendía el liberalismo, en principio?",
       "options": [
-        "A raíz de la difusión de las ideas liberales, algunos grupos comenzaron a reclamar nuevas formas de ciudadanía.",
-        "Las reformas tuvieron exactamente los mismos resultados en todos los países.",
-        "Las ideas liberales no tuvieron ninguna relación con las instituciones."
+        "La libertad individual, la igualdad ante la ley y la ciudadanía como derecho compartido sin distinciones de casta.",
+        "El mantenimiento estricto de las jerarquías coloniales heredadas.",
+        "La exclusión total de cualquier forma de participación política."
       ],
-      "correct": 0,
-      "teaches": [
-        "formal-connectors"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-liberalismomodernizacion-01.ex03",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "El término _____ es central en esta lección. (liberalismo)",
-      "answer": "liberalismo",
-      "teaches": [
-        "formal-connectors"
-      ]
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Podía votar toda la población adulta bajo las constituciones liberales del siglo diecinueve?",
+      "options": [
+        "No, la mayoría exigía requisitos de propiedad o alfabetización, por lo que solo una minoría ejercía realmente el derecho al voto.",
+        "Sí, todas las constituciones liberales garantizaban el voto universal desde el principio.",
+        "No, porque el voto estaba reservado exclusivamente a los peninsulares."
+      ],
+      "correct": 0
     },
     {
       "id": "b1-liberalismomodernizacion-01.ex04",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Una palabra clave de este tema es _____. (libertad)",
-      "answer": "libertad",
-      "teaches": [
-        "formal-connectors"
-      ]
+      "sentence": "___, la igualdad legal proclamada en el papel convivía con una ciudadanía política restringida. (como consecuencia)",
+      "answer": "Como consecuencia",
+      "teaches": ["conectores-formales-principios-liberales"]
     },
     {
       "id": "b1-liberalismomodernizacion-01.ex05",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "El concepto de _____ aparece en el contexto estudiado. (ciudadanía)",
-      "answer": "ciudadanía",
-      "teaches": [
-        "formal-connectors"
-      ]
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿A quiénes excluyó particularmente el requisito de saber leer y escribir?",
+      "options": [
+        "A la mayoría de la población indígena, afrodescendiente y campesina, precisamente los grupos más beneficiados en teoría por el fin de las castas.",
+        "Únicamente a los antiguos peninsulares residentes en América.",
+        "No excluyó a ningún grupo social en particular."
+      ],
+      "correct": 0
     },
     {
       "id": "b1-liberalismomodernizacion-01.ex06",
-      "type": "fill-blank",
+      "type": "sentence-builder",
       "category": "grammar",
-      "sentence": "El término _____ es central en esta lección. (derecho)",
-      "answer": "derecho",
-      "teaches": [
-        "formal-connectors"
-      ]
+      "tiles": ["Por", "consiguiente,", "solo", "una", "minoría", "de", "hombres", "adultos", "ejercía", "realmente", "el", "derecho", "al", "voto."],
+      "solution": ["Por", "consiguiente,", "solo", "una", "minoría", "de", "hombres", "adultos", "ejercía", "realmente", "el", "derecho", "al", "voto."],
+      "english": "Consequently, only a minority of adult men actually exercised the right to vote.",
+      "teaches": ["conectores-formales-principios-liberales"]
     },
     {
       "id": "b1-liberalismomodernizacion-01.ex07",
-      "type": "sentence-builder",
-      "category": "grammar",
-      "tiles": [
-        "A",
-        "raíz",
-        "de",
-        "la",
-        "difusión",
-        "de",
-        "las",
-        "ideas",
-        "liberales,",
-        "algunos",
-        "grupos",
-        "comenzaron",
-        "a",
-        "reclamar",
-        "nuevas",
-        "formas",
-        "de",
-        "ciudadanía."
+      "type": "dialogue-complete",
+      "category": "reading",
+      "prompt": [
+        { "speaker": "Marta", "text": "¿Pasó desapercibida, en su momento, la contradicción entre el ideal liberal y la exclusión real del voto?" },
+        { "speaker": "Pablo", "text": "_____" }
       ],
-      "solution": [
-        "A",
-        "raíz",
-        "de",
-        "la",
-        "difusión",
-        "de",
-        "las",
-        "ideas",
-        "liberales,",
-        "algunos",
-        "grupos",
-        "comenzaron",
-        "a",
-        "reclamar",
-        "nuevas",
-        "formas",
-        "de",
-        "ciudadanía."
+      "options": [
+        "No, algunos críticos de la época, tanto conservadores como liberales radicales, señalaron abiertamente esa contradicción.",
+        "Sí, nadie en el siglo diecinueve notó jamás ninguna contradicción de este tipo.",
+        "No existió ninguna crítica a los sistemas liberales de esa época."
       ],
-      "english": "As a result of the spread of liberal ideas, some groups began to demand new forms of citizenship.",
-      "teaches": [
-        "formal-connectors"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-liberalismomodernizacion-01.ex08",
-      "type": "sentence-order",
-      "category": "grammar",
-      "sentences": [
-        "A raíz de la difusión de las ideas liberales, algunos grupos comenzaron a reclamar nuevas formas de ciudadanía.",
-        "A lo largo del siglo XIX, los gobiernos debatieron cómo ampliar los derechos políticos.",
-        "Como consecuencia de estos debates, algunas instituciones fueron reformadas."
-      ],
-      "solution": [
-        0,
-        1,
-        2
-      ],
-      "teaches": [
-        "formal-connectors"
-      ]
-    },
-    {
-      "id": "b1-liberalismomodernizacion-01.ex09",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Qué ejemplo utiliza correctamente la estructura de enfoque?",
-      "options": [
-        "A raíz de la difusión de las ideas liberales, algunos grupos comenzaron a reclamar nuevas formas de ciudadanía.",
-        "A lo largo del siglo XIX, los gobiernos debatieron cómo ampliar los derechos políticos.",
-        "Como consecuencia de estos debates, algunas instituciones fueron reformadas."
-      ],
-      "correct": 0,
-      "teaches": [
-        "formal-connectors"
-      ]
-    },
-    {
-      "id": "b1-liberalismomodernizacion-01.ex10",
       "type": "listening-choice",
       "category": "listening",
-      "sentence": "A lo largo del siglo XIX, los gobiernos debatieron cómo ampliar los derechos políticos.",
+      "sentence": "El proceso completo de ampliación del sufragio se extendería mucho más allá del siglo diecinueve.",
       "options": [
-        "Throughout the nineteenth century, governments debated how to expand political rights.",
-        "The opposite happened.",
-        "No information is given."
-      ],
-      "correct": 0,
-      "teaches": [
-        "formal-connectors"
-      ]
-    },
-    {
-      "id": "b1-liberalismomodernizacion-01.ex11",
-      "type": "listening-choice",
-      "category": "listening",
-      "sentence": "Como consecuencia de estos debates, algunas instituciones fueron reformadas.",
-      "options": [
-        "As a consequence of these debates, some institutions were reformed.",
-        "The statement is false.",
-        "The topic is unrelated."
-      ],
-      "correct": 0,
-      "teaches": [
-        "formal-connectors"
-      ]
-    },
-    {
-      "id": "b1-liberalismomodernizacion-01.ex12",
-      "type": "dictation",
-      "category": "listening",
-      "sentence": "A raíz de la difusión de las ideas liberales, algunos grupos comenzaron a reclamar nuevas formas de ciudadanía.",
-      "teaches": [
-        "formal-connectors"
-      ]
-    },
-    {
-      "id": "b1-liberalismomodernizacion-01.ex13",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "teaches": [
-        "formal-connectors"
-      ],
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "A raíz de la difusión de las ideas liberales, algunos grupos comenzaron a reclamar nuevas formas de ciudadanía."
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "A lo largo del siglo XIX, los gobiernos debatieron cómo ampliar los derechos políticos.",
-        "No hubo ningún cambio en la región.",
-        "Todos los países vivieron exactamente el mismo proceso."
+        "The full process of expanding suffrage would extend well beyond the nineteenth century.",
+        "Suffrage was fully universal by the end of the nineteenth century.",
+        "No expansion of suffrage ever took place in the region."
       ],
       "correct": 0
-    },
-    {
-      "id": "b1-liberalismomodernizacion-01.ex14",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "teaches": [
-        "formal-connectors"
-      ],
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "Como consecuencia de estos debates, algunas instituciones fueron reformadas."
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Aunque el liberalismo defendía la igualdad ante la ley, su aplicación fue limitada en muchos casos.",
-        "El proceso fue completamente uniforme en toda la región.",
-        "No existieron consecuencias importantes."
-      ],
-      "correct": 0
-    },
-    {
-      "id": "b1-liberalismomodernizacion-01.ex15",
-      "type": "structured-writing",
-      "category": "writing",
-      "teaches": [
-        "formal-connectors"
-      ],
-      "template": [
-        {
-          "prompt": "Explica brevemente liberalismo y menciona una consecuencia.",
-          "answer": "A raíz de la difusión de las ideas liberales, algunos grupos comenzaron a reclamar nuevas formas de ciudadanía. Como consecuencia de estos debates, algunas instituciones fueron reformadas."
-        }
-      ]
-    },
-    {
-      "id": "b1-liberalismomodernizacion-01.ex16",
-      "type": "structured-writing",
-      "category": "writing",
-      "teaches": [
-        "formal-connectors"
-      ],
-      "template": [
-        {
-          "prompt": "¿Por qué el proceso fue desigual?",
-          "answer": "Aunque el liberalismo defendía la igualdad ante la ley, su aplicación fue limitada en muchos casos."
-        }
-      ]
     }
   ]
 }
