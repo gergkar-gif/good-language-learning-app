@@ -5,289 +5,103 @@
       "id": "b1-caudillismo-03.ex01",
       "type": "matching",
       "category": "vocabulary",
-      "teaches": [
-        "caudillismo-03"
-      ],
       "pairs": [
-        [
-          "ejército",
-          "army"
-        ],
-        [
-          "militar",
-          "military"
-        ],
-        [
-          "pronunciamiento",
-          "military uprising"
-        ]
+        ["la caballería", "cavalry"],
+        ["reclutar", "to recruit"],
+        ["ostentar", "to hold, bear (a title)"],
+        ["el rango", "rank"]
+      ]
+    },
+    {
+      "id": "b1-caudillismo-03.ex01b",
+      "type": "matching",
+      "category": "vocabulary",
+      "pairs": [
+        ["la emboscada", "ambush"],
+        ["esclarecer", "to clarify, shed light on"],
+        ["el colapso", "collapse"],
+        ["instantáneo", "instant"]
       ]
     },
     {
       "id": "b1-caudillismo-03.ex02",
       "type": "multiple-choice",
-      "category": "grammar",
-      "teaches": [
-        "caudillismo-03"
-      ],
-      "question": "¿Qué oración interpreta mejor el proceso histórico?",
+      "category": "reading",
+      "question": "¿Qué eran las 'montoneras' que comandaba Facundo Quiroga?",
       "options": [
-        "El caudillo aumentaba su influencia reuniendo fuerzas militares mientras negociaba con otros grupos políticos.",
-        "Todos los casos fueron iguales.",
-        "No hubo relaciones entre líderes e instituciones."
+        "Fuerzas de caballería irregular formadas por gauchos armados, reclutados y organizados directamente por él, sin estructura militar estatal.",
+        "El ejército regular y permanente del gobierno argentino.",
+        "Un cuerpo de policía urbana dedicado a mantener el orden en las ciudades."
       ],
       "correct": 0
     },
     {
       "id": "b1-caudillismo-03.ex03",
-      "type": "fill-blank",
-      "category": "grammar",
-      "teaches": [
-        "caudillismo-03"
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿De qué dependía la autoridad de Quiroga sobre sus tropas?",
+      "options": [
+        "Enteramente de su prestigio personal, ya que nunca ostentó un rango militar formal comparable al de un general de carrera.",
+        "De un rango militar oficial otorgado por el gobierno central.",
+        "De un título hereditario transmitido por su familia."
       ],
-      "sentence": "El caudillo aumentaba su influencia _____ fuerzas mientras negociaba. (reunir)",
-      "answer": "reuniendo"
+      "correct": 0
     },
     {
       "id": "b1-caudillismo-03.ex04",
-      "type": "sentence-builder",
+      "type": "fill-blank",
       "category": "grammar",
-      "teaches": [
-        "caudillismo-03"
-      ],
-      "tiles": [
-        "El",
-        "caudillo",
-        "aumentaba",
-        "su",
-        "influencia",
-        "reuniendo",
-        "fuerzas",
-        "militares",
-        "mientras",
-        "negociaba",
-        "con",
-        "otros",
-        "grupos",
-        "políticos."
-      ],
-      "solution": [
-        "El",
-        "caudillo",
-        "aumentaba",
-        "su",
-        "influencia",
-        "reuniendo",
-        "fuerzas",
-        "militares",
-        "mientras",
-        "negociaba",
-        "con",
-        "otros",
-        "grupos",
-        "políticos."
-      ],
-      "english": "The caudillo increased his influence by gathering military forces while negotiating with other political groups."
+      "sentence": "___ su influencia mediante campañas militares, Quiroga se convirtió en una figura muy poderosa. (extender)",
+      "answer": "Extendiendo",
+      "teaches": ["gerundio-influencia-militar-poder-politico"]
     },
     {
       "id": "b1-caudillismo-03.ex05",
-      "type": "sentence-order",
-      "category": "grammar",
-      "teaches": [
-        "caudillismo-03"
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Qué ocurrió tras la muerte de Quiroga en 1835?",
+      "options": [
+        "Su muerte desató una crisis política considerable, dejando un vacío de poder real en varias provincias que dependían de él.",
+        "Nada cambió, porque su autoridad estaba completamente institucionalizada.",
+        "Las provincias que gobernaba continuaron funcionando exactamente igual, sin ningún cambio."
       ],
-      "sentences": [
-        "Las instituciones nacionales eran débiles.",
-        "Los líderes regionales reunían apoyos diferentes.",
-        "La relación entre poder local y Estado era compleja."
-      ],
-      "solution": [
-        0,
-        1,
-        2
-      ]
+      "correct": 0
     },
     {
       "id": "b1-caudillismo-03.ex06",
-      "type": "multiple-choice",
+      "type": "sentence-builder",
       "category": "grammar",
-      "teaches": [
-        "caudillismo-03"
-      ],
-      "question": "¿Cuál es la conclusión más prudente?",
-      "options": [
-        "Las fuerzas armadas podían tener influencia política sin que el país se convirtiera necesariamente en una dictadura militar.",
-        "Todos los caudillos actuaron de la misma manera.",
-        "El caudillismo no tuvo relación con las instituciones."
-      ],
-      "correct": 0
+      "tiles": ["Reuniendo", "estas", "fuerzas", "rápidamente", "cuando", "la", "situación", "lo", "exigía,", "Quiroga", "ejercía", "un", "poder", "militar", "flexible."],
+      "solution": ["Reuniendo", "estas", "fuerzas", "rápidamente", "cuando", "la", "situación", "lo", "exigía,", "Quiroga", "ejercía", "un", "poder", "militar", "flexible."],
+      "english": "Gathering these forces quickly when the situation demanded it, Quiroga wielded a flexible military power.",
+      "teaches": ["gerundio-influencia-militar-poder-politico"]
     },
     {
       "id": "b1-caudillismo-03.ex07",
-      "type": "fill-blank",
-      "category": "grammar",
-      "teaches": [
-        "caudillismo-03"
+      "type": "dialogue-complete",
+      "category": "reading",
+      "prompt": [
+        { "speaker": "Marta", "text": "¿Por qué fue tan grave, institucionalmente, la muerte de un caudillo como Quiroga?" },
+        { "speaker": "Pablo", "text": "_____" }
       ],
-      "sentence": "El _____ es importante en este tema. (militar)",
-      "answer": "militar"
-    },
-    {
-      "id": "b1-caudillismo-03.ex08",
-      "type": "sentence-order",
-      "category": "grammar",
-      "teaches": [
-        "caudillismo-03"
-      ],
-      "sentences": [
-        "Algunos militares intervinieron en política porque consideraban que el gobierno no podía resolver la crisis.",
-        "Un pronunciamiento podía cambiar el gobierno, aunque su resultado dependiera del apoyo recibido en otras regiones.",
-        "Las fuerzas armadas podían tener influencia política sin que el país se convirtiera necesariamente en una dictadura militar."
-      ],
-      "solution": [
-        0,
-        1,
-        2
-      ]
-    },
-    {
-      "id": "b1-caudillismo-03.ex09",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "teaches": [
-        "caudillismo-03"
-      ],
-      "question": "¿Qué palabra pertenece directamente al tema?",
       "options": [
-        "ejército",
-        "receta",
-        "aeropuerto"
+        "Porque cuando el poder militar y político dependen de la misma persona, su muerte provoca un colapso institucional instantáneo, no solo una pérdida individual.",
+        "Porque no tuvo ninguna consecuencia real más allá de su propia familia.",
+        "Porque el ejército regular asumió automáticamente el control sin ningún problema."
       ],
       "correct": 0
     },
     {
-      "id": "b1-caudillismo-03.ex10",
+      "id": "b1-caudillismo-03.ex08",
       "type": "listening-choice",
       "category": "listening",
-      "sentence": "Un pronunciamiento podía cambiar el gobierno, aunque su resultado dependiera del apoyo recibido en otras regiones.",
+      "sentence": "Quiroga murió asesinado en 1835 en una emboscada cuyas circunstancias nunca quedaron completamente esclarecidas.",
       "options": [
-        "A military uprising could change the government, although its outcome depended on support received in other regions.",
-        "Nothing changed.",
-        "The statement refers to another period."
+        "Quiroga was killed in 1835 in an ambush whose circumstances were never fully clarified.",
+        "Quiroga died of natural causes in old age.",
+        "The circumstances of Quiroga's death were fully documented and undisputed."
       ],
-      "correct": 0,
-      "teaches": [
-        "caudillismo-03"
-      ]
-    },
-    {
-      "id": "b1-caudillismo-03.ex11",
-      "type": "dictation",
-      "category": "listening",
-      "sentence": "Las fuerzas armadas podían tener influencia política sin que el país se convirtiera necesariamente en una dictadura militar.",
-      "teaches": [
-        "caudillismo-03"
-      ]
-    },
-    {
-      "id": "b1-caudillismo-03.ex12",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Cuál es una idea importante sobre este tema?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "El caudillo aumentaba su influencia reuniendo fuerzas militares mientras negociaba con otros grupos políticos.",
-        "Todos los casos fueron iguales.",
-        "No tuvo consecuencias."
-      ],
-      "correct": 0,
-      "teaches": [
-        "caudillismo-03"
-      ]
-    },
-    {
-      "id": "b1-caudillismo-03.ex13",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Por qué fue complejo?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Algunos militares intervinieron en política porque consideraban que el gobierno no podía resolver la crisis.",
-        "Porque no había diferencias regionales.",
-        "Porque todos tenían el mismo apoyo."
-      ],
-      "correct": 0,
-      "teaches": [
-        "caudillismo-03"
-      ]
-    },
-    {
-      "id": "b1-caudillismo-03.ex14",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Cómo podemos interpretarlo con cuidado?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Las fuerzas armadas podían tener influencia política sin que el país se convirtiera necesariamente en una dictadura militar.",
-        "Aplicando la misma explicación a todos los países.",
-        "Ignorando las instituciones."
-      ],
-      "correct": 0,
-      "teaches": [
-        "caudillismo-03"
-      ]
-    },
-    {
-      "id": "b1-caudillismo-03.ex15",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Explica una característica del fenómeno usando dos cláusulas relacionadas.",
-          "answer": "El caudillo aumentaba su influencia reuniendo fuerzas militares mientras negociaba con otros grupos políticos."
-        }
-      ],
-      "teaches": [
-        "caudillismo-03"
-      ]
-    },
-    {
-      "id": "b1-caudillismo-03.ex16",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Explica una consecuencia o interpretación usando un conector.",
-          "answer": "Las fuerzas armadas podían tener influencia política sin que el país se convirtiera necesariamente en una dictadura militar."
-        }
-      ],
-      "teaches": [
-        "caudillismo-03"
-      ]
+      "correct": 0
     }
   ]
 }

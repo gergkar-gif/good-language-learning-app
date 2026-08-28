@@ -5,291 +5,103 @@
       "id": "b1-caudillismo-02.ex01",
       "type": "matching",
       "category": "vocabulary",
-      "teaches": [
-        "caudillismo-02"
-      ],
       "pairs": [
-        [
-          "patronazgo",
-          "patronage"
-        ],
-        [
-          "clientelismo",
-          "clientelism"
-        ],
-        [
-          "personalismo",
-          "personalism"
-        ]
+        ["el funcionario", "official, civil servant"],
+        ["el jinete", "horseman, rider"],
+        ["el ganado", "cattle, livestock"],
+        ["confiscado", "confiscated"]
+      ]
+    },
+    {
+      "id": "b1-caudillismo-02.ex01b",
+      "type": "matching",
+      "category": "vocabulary",
+      "pairs": [
+        ["el vínculo", "bond, link"],
+        ["retirar", "to withdraw, remove"],
+        ["el rival", "rival"],
+        ["frágil", "fragile"]
       ]
     },
     {
       "id": "b1-caudillismo-02.ex02",
       "type": "multiple-choice",
-      "category": "grammar",
-      "teaches": [
-        "caudillismo-02"
-      ],
-      "question": "¿Qué oración interpreta mejor el proceso histórico?",
+      "category": "reading",
+      "question": "¿Cómo gobernaba un caudillo, a diferencia de un funcionario moderno?",
       "options": [
-        "Los recursos eran distribuidos por redes de patronazgo, mientras los seguidores ofrecían apoyo al líder.",
-        "Todos los casos fueron iguales.",
-        "No hubo relaciones entre líderes e instituciones."
+        "Mediante una red de patronazgo: favores, tierras y protección a cambio de lealtad, no a través de una burocracia impersonal.",
+        "Exactamente igual que un funcionario moderno, con procedimientos administrativos idénticos.",
+        "Sin ninguna relación personal con sus seguidores, solo mediante decretos escritos."
       ],
       "correct": 0
     },
     {
       "id": "b1-caudillismo-02.ex03",
-      "type": "fill-blank",
-      "category": "grammar",
-      "teaches": [
-        "caudillismo-02"
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Por qué fue reconocido José Antonio Páez como líder por otros llaneros?",
+      "options": [
+        "Por respeto personal directo, ganado durante años de campaña militar compartida, no por ningún cargo oficial.",
+        "Porque heredó el título de su familia noble española.",
+        "Porque fue nombrado líder por decreto de la corona española."
       ],
-      "sentence": "Los recursos _____ distribuidos por redes de patronazgo. (ser)",
-      "answer": "eran"
+      "correct": 0
     },
     {
       "id": "b1-caudillismo-02.ex04",
-      "type": "sentence-builder",
+      "type": "fill-blank",
       "category": "grammar",
-      "teaches": [
-        "caudillismo-02"
-      ],
-      "tiles": [
-        "Los",
-        "recursos",
-        "eran",
-        "distribuidos",
-        "por",
-        "redes",
-        "de",
-        "patronazgo,",
-        "mientras",
-        "los",
-        "seguidores",
-        "ofrecían",
-        "apoyo",
-        "al",
-        "líder."
-      ],
-      "solution": [
-        "Los",
-        "recursos",
-        "eran",
-        "distribuidos",
-        "por",
-        "redes",
-        "de",
-        "patronazgo,",
-        "mientras",
-        "los",
-        "seguidores",
-        "ofrecían",
-        "apoyo",
-        "al",
-        "líder."
-      ],
-      "english": "Resources were distributed through patronage networks while followers offered support to the leader."
+      "sentence": "Sus antiguos compañeros de armas ___ colocados en puestos de confianza. (ser)",
+      "answer": "fueron",
+      "teaches": ["voz-pasiva-patronazgo-clientelismo"]
     },
     {
       "id": "b1-caudillismo-02.ex05",
-      "type": "sentence-order",
-      "category": "grammar",
-      "teaches": [
-        "caudillismo-02"
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Cómo funcionaba la 'pirámide de lealtades superpuestas' bajo Páez?",
+      "options": [
+        "Cada nivel dependía tanto del apoyo del nivel inferior como de la autoridad del nivel superior, con el Estado formal como un marco superpuesto a esa red.",
+        "Cada nivel era completamente independiente de los demás, sin ninguna conexión real.",
+        "Solo existía un único nivel de autoridad, sin ninguna jerarquía intermedia."
       ],
-      "sentences": [
-        "Las instituciones nacionales eran débiles.",
-        "Los líderes regionales reunían apoyos diferentes.",
-        "La relación entre poder local y Estado era compleja."
-      ],
-      "solution": [
-        0,
-        1,
-        2
-      ]
+      "correct": 0
     },
     {
       "id": "b1-caudillismo-02.ex06",
-      "type": "multiple-choice",
+      "type": "sentence-builder",
       "category": "grammar",
-      "teaches": [
-        "caudillismo-02"
-      ],
-      "question": "¿Cuál es la conclusión más prudente?",
-      "options": [
-        "Las reglas podían perder importancia cuando las decisiones eran asociadas principalmente con una persona.",
-        "Todos los caudillos actuaron de la misma manera.",
-        "El caudillismo no tuvo relación con las instituciones."
-      ],
-      "correct": 0
+      "tiles": ["Las", "tierras", "conquistadas", "o", "confiscadas", "durante", "las", "guerras", "fueron", "repartidas", "entre", "sus", "seguidores."],
+      "solution": ["Las", "tierras", "conquistadas", "o", "confiscadas", "durante", "las", "guerras", "fueron", "repartidas", "entre", "sus", "seguidores."],
+      "english": "Lands conquered or confiscated during the wars were distributed among his followers.",
+      "teaches": ["voz-pasiva-patronazgo-clientelismo"]
     },
     {
       "id": "b1-caudillismo-02.ex07",
-      "type": "fill-blank",
-      "category": "grammar",
-      "teaches": [
-        "caudillismo-02"
+      "type": "dialogue-complete",
+      "category": "reading",
+      "prompt": [
+        { "speaker": "Marta", "text": "¿Eran estables las relaciones de patronazgo y lealtad bajo un caudillo?" },
+        { "speaker": "Pablo", "text": "_____" }
       ],
-      "sentence": "El _____ es importante en este tema. (clientelismo)",
-      "answer": "clientelismo"
-    },
-    {
-      "id": "b1-caudillismo-02.ex08",
-      "type": "sentence-order",
-      "category": "grammar",
-      "teaches": [
-        "caudillismo-02"
-      ],
-      "sentences": [
-        "El apoyo político podía ser organizado mediante relaciones personales, aunque existieran instituciones formales.",
-        "El clientelismo se fortalecía cuando los ciudadanos dependían de un dirigente para obtener determinados beneficios.",
-        "Las reglas podían perder importancia cuando las decisiones eran asociadas principalmente con una persona."
-      ],
-      "solution": [
-        0,
-        1,
-        2
-      ]
-    },
-    {
-      "id": "b1-caudillismo-02.ex09",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "teaches": [
-        "caudillismo-02"
-      ],
-      "question": "¿Qué palabra pertenece directamente al tema?",
       "options": [
-        "patronazgo",
-        "receta",
-        "aeropuerto"
+        "No, los favores podían retirarse y un antiguo aliado podía convertirse, de un día para otro, en un rival armado.",
+        "Sí, una vez establecida, la lealtad nunca cambiaba ni se rompía.",
+        "No existía ningún tipo de alianza ni de ruptura política en este sistema."
       ],
       "correct": 0
     },
     {
-      "id": "b1-caudillismo-02.ex10",
+      "id": "b1-caudillismo-02.ex08",
       "type": "listening-choice",
       "category": "listening",
-      "sentence": "El clientelismo se fortalecía cuando los ciudadanos dependían de un dirigente para obtener determinados beneficios.",
+      "sentence": "El poder personal, precisamente por depender de vínculos humanos concretos, resultaba tan poderoso como frágil.",
       "options": [
-        "Clientelism became stronger when citizens depended on a leader to obtain certain benefits.",
-        "Nothing changed.",
-        "The statement refers to another period."
+        "Personal power, precisely because it depended on concrete human bonds, was as powerful as it was fragile.",
+        "Personal power was completely stable and never changed.",
+        "Personal power had no connection to human relationships at all."
       ],
-      "correct": 0,
-      "teaches": [
-        "caudillismo-02"
-      ]
-    },
-    {
-      "id": "b1-caudillismo-02.ex11",
-      "type": "dictation",
-      "category": "listening",
-      "sentence": "Las reglas podían perder importancia cuando las decisiones eran asociadas principalmente con una persona.",
-      "teaches": [
-        "caudillismo-02"
-      ]
-    },
-    {
-      "id": "b1-caudillismo-02.ex12",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Cuál es una idea importante sobre este tema?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Los recursos eran distribuidos por redes de patronazgo, mientras los seguidores ofrecían apoyo al líder.",
-        "Todos los casos fueron iguales.",
-        "No tuvo consecuencias."
-      ],
-      "correct": 0,
-      "teaches": [
-        "caudillismo-02"
-      ]
-    },
-    {
-      "id": "b1-caudillismo-02.ex13",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Por qué fue complejo?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "El apoyo político podía ser organizado mediante relaciones personales, aunque existieran instituciones formales.",
-        "Porque no había diferencias regionales.",
-        "Porque todos tenían el mismo apoyo."
-      ],
-      "correct": 0,
-      "teaches": [
-        "caudillismo-02"
-      ]
-    },
-    {
-      "id": "b1-caudillismo-02.ex14",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Cómo podemos interpretarlo con cuidado?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Las reglas podían perder importancia cuando las decisiones eran asociadas principalmente con una persona.",
-        "Aplicando la misma explicación a todos los países.",
-        "Ignorando las instituciones."
-      ],
-      "correct": 0,
-      "teaches": [
-        "caudillismo-02"
-      ]
-    },
-    {
-      "id": "b1-caudillismo-02.ex15",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Explica una característica del fenómeno usando dos cláusulas relacionadas.",
-          "answer": "Los recursos eran distribuidos por redes de patronazgo, mientras los seguidores ofrecían apoyo al líder."
-        }
-      ],
-      "teaches": [
-        "caudillismo-02"
-      ]
-    },
-    {
-      "id": "b1-caudillismo-02.ex16",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Explica una consecuencia o interpretación usando un conector.",
-          "answer": "Las reglas podían perder importancia cuando las decisiones eran asociadas principalmente con una persona."
-        }
-      ],
-      "teaches": [
-        "caudillismo-02"
-      ]
+      "correct": 0
     }
   ]
 }
