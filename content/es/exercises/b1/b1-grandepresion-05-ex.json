@@ -6,274 +6,100 @@
       "type": "matching",
       "category": "vocabulary",
       "pairs": [
-        [
-          "consecuencia",
-          "consequence"
-        ],
-        [
-          "transformación",
-          "transformation"
-        ],
-        [
-          "dependencia",
-          "dependency"
-        ]
-      ],
-      "teaches": [
-        "formal-synthesis"
+        ["el hilo", "thread"],
+        ["exponer", "to expose"],
+        ["bastar", "to be enough"],
+        ["apelar", "to appeal"]
+      ]
+    },
+    {
+      "id": "b1-grandepresion-05.ex01b",
+      "type": "matching",
+      "category": "vocabulary",
+      "pairs": [
+        ["el liderazgo", "leadership"],
+        ["pasajero", "passing, temporary"],
+        ["el punto de inflexión", "turning point"],
+        ["el punto de quiebre", "breaking point"]
       ]
     },
     {
       "id": "b1-grandepresion-05.ex02",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Qué afirmación encaja mejor con el tema?",
+      "category": "reading",
+      "question": "¿Por qué consideran muchos historiadores 1929 uno de los verdaderos puntos de inflexión de la historia latinoamericana moderna?",
       "options": [
-        "A lo largo de la década, la crisis produjo una transformación de las políticas económicas de varios países.",
-        "La crisis no tuvo consecuencias fuera de Estados Unidos.",
-        "Las exportaciones aumentaron en todos los países."
+        "Porque la crisis expuso brutalmente la vulnerabilidad de un modelo exportador construido durante más de medio siglo.",
+        "Porque en 1929 se firmó un tratado de paz entre todos los países de la región.",
+        "Porque 1929 marcó el final definitivo de cualquier crisis económica futura."
       ],
-      "correct": 0,
-      "teaches": [
-        "formal-synthesis"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-grandepresion-05.ex03",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Una palabra clave de este tema es _____. (consecuencia)",
-      "answer": "consecuencia",
-      "teaches": [
-        "formal-synthesis"
-      ]
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Desapareció el modelo exportador de un día para otro tras la crisis?",
+      "options": [
+        "No, algunos países siguieron dependiendo de sus productos tradicionales durante décadas más.",
+        "Sí, desapareció por completo en cuestión de semanas en toda la región.",
+        "No, porque en realidad el modelo exportador nunca llegó a verse afectado."
+      ],
+      "correct": 0
     },
     {
       "id": "b1-grandepresion-05.ex04",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "El concepto de _____ aparece en el contexto estudiado. (transformación)",
-      "answer": "transformación",
-      "teaches": [
-        "formal-synthesis"
-      ]
+      "sentence": "La crisis demostró que el modelo exportador ya no bastaba. ___ resultara tan difícil defender seriamente su continuidad. (de ahí que)",
+      "answer": "De ahí que",
+      "teaches": ["de-ahi-que-subjuntivo-sacar-una-conclusion"]
     },
     {
       "id": "b1-grandepresion-05.ex05",
-      "type": "fill-blank",
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Qué espacio político se abrió, precisamente porque la crisis demostró los límites del modelo exportador tradicional?",
+      "options": [
+        "Un espacio para nuevas ideas y nuevos liderazgos capaces de apelar directamente a las masas.",
+        "Ningún espacio nuevo, ya que la política se mantuvo exactamente igual.",
+        "Un espacio exclusivamente para el regreso de los antiguos caudillos del siglo diecinueve."
+      ],
+      "correct": 0
+    },
+    {
+      "id": "b1-grandepresion-05.ex06",
+      "type": "sentence-builder",
       "category": "grammar",
-      "sentence": "La crisis puso de manifiesto una ___ exterior que había sido menos visible durante los años anteriores.",
-      "answer": "dependencia",
-      "teaches": [
-        "formal-synthesis"
-      ]
+      "tiles": ["La", "industrialización", "comenzó", "casi", "por", "necesidad.", "De", "ahí", "que", "se", "convirtiera", "en", "la", "política", "económica", "dominante."],
+      "solution": ["La", "industrialización", "comenzó", "casi", "por", "necesidad.", "De", "ahí", "que", "se", "convirtiera", "en", "la", "política", "económica", "dominante."],
+      "english": "Industrialization began almost out of necessity. That's why it became the dominant economic policy.",
+      "teaches": ["de-ahi-que-subjuntivo-sacar-una-conclusion"]
     },
     {
       "id": "b1-grandepresion-05.ex07",
-      "type": "sentence-builder",
-      "category": "grammar",
-      "tiles": [
-        "A",
-        "lo",
-        "largo",
-        "de",
-        "la",
-        "década,",
-        "la",
-        "crisis",
-        "produjo",
-        "una",
-        "transformación",
-        "de",
-        "las",
-        "políticas",
-        "económicas",
-        "de",
-        "varios",
-        "países."
+      "type": "dialogue-complete",
+      "category": "reading",
+      "prompt": [
+        { "speaker": "Camila", "text": "¿Fue la Gran Depresión simplemente una crisis económica pasajera para América Latina?" },
+        { "speaker": "Nicanor", "text": "_____" }
       ],
-      "solution": [
-        "A",
-        "lo",
-        "largo",
-        "de",
-        "la",
-        "década,",
-        "la",
-        "crisis",
-        "produjo",
-        "una",
-        "transformación",
-        "de",
-        "las",
-        "políticas",
-        "económicas",
-        "de",
-        "varios",
-        "países."
+      "options": [
+        "No, fue un auténtico punto de quiebre que dejó a la región notablemente distinta de la que había entrado en esos años.",
+        "Sí, fue una crisis menor sin ninguna consecuencia duradera.",
+        "No, porque en realidad la crisis nunca llegó a afectar seriamente a la región."
       ],
-      "english": "Throughout the decade, the crisis produced a transformation of the economic policies of several countries.",
-      "teaches": [
-        "formal-synthesis"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-grandepresion-05.ex08",
-      "type": "sentence-order",
-      "category": "grammar",
-      "sentences": [
-        "A lo largo de la década, la crisis produjo una transformación de las políticas económicas de varios países.",
-        "Como consecuencia de la caída de las exportaciones, los gobiernos tuvieron que buscar nuevas fuentes de crecimiento.",
-        "La crisis puso de manifiesto una dependencia exterior que había sido menos visible durante los años anteriores."
-      ],
-      "solution": [
-        0,
-        1,
-        2
-      ],
-      "teaches": [
-        "formal-synthesis"
-      ]
-    },
-    {
-      "id": "b1-grandepresion-05.ex09",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Qué ejemplo utiliza correctamente la estructura de enfoque?",
-      "options": [
-        "A lo largo de la década, la crisis produjo una transformación de las políticas económicas de varios países.",
-        "Como consecuencia de la caída de las exportaciones, los gobiernos tuvieron que buscar nuevas fuentes de crecimiento.",
-        "La crisis puso de manifiesto una dependencia exterior que había sido menos visible durante los años anteriores."
-      ],
-      "correct": 0,
-      "teaches": [
-        "formal-synthesis"
-      ]
-    },
-    {
-      "id": "b1-grandepresion-05.ex10",
       "type": "listening-choice",
       "category": "listening",
-      "sentence": "Como consecuencia de la caída de las exportaciones, los gobiernos tuvieron que buscar nuevas fuentes de crecimiento.",
+      "sentence": "La región que emergió de estos años difíciles fue, en aspectos económicos, políticos y sociales fundamentales, notablemente distinta de la que había entrado en ellos.",
       "options": [
-        "As a consequence of the fall in exports, governments had to seek new sources of growth.",
-        "The opposite happened.",
-        "No information is given."
-      ],
-      "correct": 0,
-      "teaches": [
-        "formal-synthesis"
-      ]
-    },
-    {
-      "id": "b1-grandepresion-05.ex11",
-      "type": "listening-choice",
-      "category": "listening",
-      "sentence": "La crisis puso de manifiesto una dependencia exterior que había sido menos visible durante los años anteriores.",
-      "options": [
-        "The crisis revealed an external dependency that had been less visible during previous years.",
-        "The statement is false.",
-        "The topic is unrelated."
-      ],
-      "correct": 0,
-      "teaches": [
-        "formal-synthesis"
-      ]
-    },
-    {
-      "id": "b1-grandepresion-05.ex12",
-      "type": "dictation",
-      "category": "listening",
-      "sentence": "A lo largo de la década, la crisis produjo una transformación de las políticas económicas de varios países.",
-      "teaches": [
-        "formal-synthesis"
-      ]
-    },
-    {
-      "id": "b1-grandepresion-05.ex13",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "teaches": [
-        "formal-synthesis"
-      ],
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "A lo largo de la década, la crisis produjo una transformación de las políticas económicas de varios países."
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Como consecuencia de la caída de las exportaciones, los gobiernos tuvieron que buscar nuevas fuentes de crecimiento.",
-        "No hubo ningún cambio en la región.",
-        "Todos los países vivieron exactamente el mismo proceso."
-      ],
-      "correct": 0
-    },
-    {
-      "id": "b1-grandepresion-05.ex14",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "teaches": [
-        "formal-synthesis"
-      ],
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "La crisis puso de manifiesto una dependencia exterior que había sido menos visible durante los años anteriores."
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Aunque la recuperación fue desigual, el periodo contribuyó a fortalecer la intervención del Estado en la economía.",
-        "El proceso fue completamente uniforme en toda la región.",
-        "No existieron consecuencias importantes."
-      ],
-      "correct": 0
-    },
-    {
-      "id": "b1-grandepresion-05.ex15",
-      "type": "structured-writing",
-      "category": "writing",
-      "teaches": [
-        "formal-synthesis"
-      ],
-      "template": [
-        {
-          "prompt": "Explica brevemente consecuencias a largo plazo y menciona una consecuencia.",
-          "answer": "A lo largo de la década, la crisis produjo una transformación de las políticas económicas de varios países. La crisis puso de manifiesto una dependencia exterior que había sido menos visible durante los años anteriores."
-        }
-      ]
-    },
-    {
-      "id": "b1-grandepresion-05.ex16",
-      "type": "structured-writing",
-      "category": "writing",
-      "teaches": [
-        "formal-synthesis"
-      ],
-      "template": [
-        {
-          "prompt": "¿Por qué la crisis produjo cambios económicos duraderos?",
-          "answer": "Aunque la recuperación fue desigual, el periodo contribuyó a fortalecer la intervención del Estado en la economía."
-        }
-      ]
-    },
-    {
-      "id": "b1-grandepresion-05.ex17",
-      "type": "multiple-choice",
-      "category": "reading",
-      "question": "¿Cómo transformó la Gran Depresión la relación entre Estado y economía en América Latina?",
-      "options": [
-        "La caída del comercio exterior favoreció políticas de mayor intervención estatal y una mayor atención a la producción interna.",
-        "Nada cambió durante este período.",
-        "Los resultados fueron idénticos en todos los países."
+        "The region that emerged from these difficult years was, in fundamental economic, political and social respects, notably different from the one that had entered them.",
+        "The region emerged from this period completely unchanged in every respect.",
+        "Only economic aspects of the region changed, while politics and society stayed identical."
       ],
       "correct": 0
     }

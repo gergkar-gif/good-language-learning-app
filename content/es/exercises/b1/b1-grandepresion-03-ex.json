@@ -6,252 +6,102 @@
       "type": "matching",
       "category": "vocabulary",
       "pairs": [
-        [
-          "arancel",
-          "tariff"
-        ],
-        [
-          "ingreso",
-          "income / revenue"
-        ],
-        [
-          "comercio exterior",
-          "foreign trade"
-        ]
-      ],
-      "teaches": [
-        "se-impersonal"
+        ["coincidir", "to agree, coincide"],
+        ["el volumen", "volume"],
+        ["la contracción", "contraction"],
+        ["traducirse", "to translate into, result in"]
+      ]
+    },
+    {
+      "id": "b1-grandepresion-03.ex01b",
+      "type": "matching",
+      "category": "vocabulary",
+      "pairs": [
+        ["severo", "severe"],
+        ["drásticamente", "drastically"],
+        ["el esfuerzo", "effort"],
+        ["recién", "recently, newly"]
       ]
     },
     {
       "id": "b1-grandepresion-03.ex02",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Qué afirmación encaja mejor con el tema?",
+      "category": "reading",
+      "question": "¿En qué coinciden, casi sin excepción, los historiadores económicos sobre la Gran Depresión en América Latina?",
       "options": [
-        "Se redujeron las importaciones cuando disminuyeron los ingresos procedentes de las exportaciones.",
-        "La crisis no tuvo consecuencias fuera de Estados Unidos.",
-        "Las exportaciones aumentaron en todos los países."
+        "En que fue la peor crisis económica que la región había sufrido jamás hasta ese momento.",
+        "En que fue una crisis menor, sin ninguna importancia real.",
+        "En que apenas afectó a la región, a diferencia de Europa y Estados Unidos."
       ],
-      "correct": 0,
-      "teaches": [
-        "se-impersonal"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-grandepresion-03.ex03",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "El término _____ es central en esta lección. (arancel)",
-      "answer": "arancel",
-      "teaches": [
-        "se-impersonal"
-      ]
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Qué ocurrió con el volumen total del comercio exterior de la región entre 1929 y 1932?",
+      "options": [
+        "Se redujo drásticamente, representando en varios países la mayor contracción comercial jamás experimentada.",
+        "Se mantuvo prácticamente igual durante todo el periodo.",
+        "Aumentó considerablemente gracias a nuevos acuerdos comerciales."
+      ],
+      "correct": 0
     },
     {
       "id": "b1-grandepresion-03.ex04",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Una palabra clave de este tema es _____. (ingreso)",
-      "answer": "ingreso",
-      "teaches": [
-        "se-impersonal"
-      ]
+      "sentence": "La Gran Depresión fue la peor crisis económica que América Latina había sufrido ___ hasta ese momento. (jamás)",
+      "answer": "jamás",
+      "teaches": ["superlativo-la-peor-crisis-que-jamas"]
     },
     {
       "id": "b1-grandepresion-03.ex05",
-      "type": "fill-blank",
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Por qué se tradujo la caída del comercio exterior directamente en una crisis fiscal severa para los gobiernos?",
+      "options": [
+        "Porque los Estados de la región dependían todavía, en gran medida, de los ingresos aduaneros generados por el comercio exterior.",
+        "Porque los gobiernos habían dejado de necesitar ingresos fiscales por completo.",
+        "Porque el comercio exterior no tenía ninguna relación con los ingresos del Estado."
+      ],
+      "correct": 0
+    },
+    {
+      "id": "b1-grandepresion-03.ex06",
+      "type": "sentence-builder",
       "category": "grammar",
-      "sentence": "Se buscó reducir la dependencia del ___ mediante nuevas políticas económicas.",
-      "answer": "comercio exterior",
-      "teaches": [
-        "se-impersonal"
-      ]
+      "tiles": ["Esta", "caída", "resultó", "ser", "la", "mayor", "contracción", "comercial", "que", "sus", "economías", "jamás", "habían", "experimentado."],
+      "solution": ["Esta", "caída", "resultó", "ser", "la", "mayor", "contracción", "comercial", "que", "sus", "economías", "jamás", "habían", "experimentado."],
+      "english": "This drop turned out to be the biggest trade contraction their economies had ever experienced.",
+      "teaches": ["superlativo-la-peor-crisis-que-jamas"]
     },
     {
       "id": "b1-grandepresion-03.ex07",
-      "type": "sentence-builder",
-      "category": "grammar",
-      "tiles": [
-        "Se",
-        "redujeron",
-        "las",
-        "importaciones",
-        "cuando",
-        "disminuyeron",
-        "los",
-        "ingresos",
-        "procedentes",
-        "de",
-        "las",
-        "exportaciones."
+      "type": "dialogue-complete",
+      "category": "reading",
+      "prompt": [
+        { "speaker": "Elisa", "text": "¿Qué ya no podían hacer varios gobiernos, al quedarse sin dinero suficiente?" },
+        { "speaker": "Máximo", "text": "_____" }
       ],
-      "solution": [
-        "Se",
-        "redujeron",
-        "las",
-        "importaciones",
-        "cuando",
-        "disminuyeron",
-        "los",
-        "ingresos",
-        "procedentes",
-        "de",
-        "las",
-        "exportaciones."
+      "options": [
+        "Pagar a sus funcionarios, mantener sus ejércitos recién profesionalizados o financiar las escuelas rurales.",
+        "Nada cambió realmente en la capacidad de gasto de estos gobiernos.",
+        "Solo dejaron de financiar el ejército, manteniendo todo lo demás intacto."
       ],
-      "english": "Imports were reduced when income from exports declined.",
-      "teaches": [
-        "se-impersonal"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-grandepresion-03.ex08",
-      "type": "sentence-order",
-      "category": "grammar",
-      "sentences": [
-        "Se redujeron las importaciones cuando disminuyeron los ingresos procedentes de las exportaciones.",
-        "Se aumentaron algunos aranceles para proteger la producción nacional.",
-        "Se buscó reducir la dependencia del comercio exterior mediante nuevas políticas económicas."
-      ],
-      "solution": [
-        0,
-        1,
-        2
-      ],
-      "teaches": [
-        "se-impersonal"
-      ]
-    },
-    {
-      "id": "b1-grandepresion-03.ex09",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Qué ejemplo utiliza correctamente la estructura de enfoque?",
-      "options": [
-        "Se redujeron las importaciones cuando disminuyeron los ingresos procedentes de las exportaciones.",
-        "Se aumentaron algunos aranceles para proteger la producción nacional.",
-        "Se buscó reducir la dependencia del comercio exterior mediante nuevas políticas económicas."
-      ],
-      "correct": 0,
-      "teaches": [
-        "se-impersonal"
-      ]
-    },
-    {
-      "id": "b1-grandepresion-03.ex10",
       "type": "listening-choice",
       "category": "listening",
-      "sentence": "Se aumentaron algunos aranceles para proteger la producción nacional.",
+      "sentence": "Esta combinación resultó la prueba más severa que los Estados latinoamericanos recién fortalecidos jamás habían enfrentado.",
       "options": [
-        "Some tariffs were increased to protect domestic production.",
-        "The opposite happened.",
-        "No information is given."
-      ],
-      "correct": 0,
-      "teaches": [
-        "se-impersonal"
-      ]
-    },
-    {
-      "id": "b1-grandepresion-03.ex11",
-      "type": "listening-choice",
-      "category": "listening",
-      "sentence": "Se buscó reducir la dependencia del comercio exterior mediante nuevas políticas económicas.",
-      "options": [
-        "Efforts were made to reduce dependence on foreign trade through new economic policies.",
-        "The statement is false.",
-        "The topic is unrelated."
-      ],
-      "correct": 0,
-      "teaches": [
-        "se-impersonal"
-      ]
-    },
-    {
-      "id": "b1-grandepresion-03.ex12",
-      "type": "dictation",
-      "category": "listening",
-      "sentence": "Se redujeron las importaciones cuando disminuyeron los ingresos procedentes de las exportaciones.",
-      "teaches": [
-        "se-impersonal"
-      ]
-    },
-    {
-      "id": "b1-grandepresion-03.ex13",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "teaches": [
-        "se-impersonal"
-      ],
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "Se redujeron las importaciones cuando disminuyeron los ingresos procedentes de las exportaciones."
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Se aumentaron algunos aranceles para proteger la producción nacional.",
-        "No hubo ningún cambio en la región.",
-        "Todos los países vivieron exactamente el mismo proceso."
+        "This combination turned out to be the most severe test the newly strengthened Latin American states had ever faced.",
+        "The newly strengthened states faced no real challenges during this period.",
+        "This crisis had no impact on the states discussed in the previous unit."
       ],
       "correct": 0
-    },
-    {
-      "id": "b1-grandepresion-03.ex14",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "teaches": [
-        "se-impersonal"
-      ],
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "Se buscó reducir la dependencia del comercio exterior mediante nuevas políticas económicas."
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "En varios países se adoptaron medidas para estimular la demanda interna.",
-        "El proceso fue completamente uniforme en toda la región.",
-        "No existieron consecuencias importantes."
-      ],
-      "correct": 0
-    },
-    {
-      "id": "b1-grandepresion-03.ex15",
-      "type": "structured-writing",
-      "category": "writing",
-      "teaches": [
-        "se-impersonal"
-      ],
-      "template": [
-        {
-          "prompt": "Explica brevemente comercio exterior y menciona una consecuencia.",
-          "answer": "Se redujeron las importaciones cuando disminuyeron los ingresos procedentes de las exportaciones. Se buscó reducir la dependencia del comercio exterior mediante nuevas políticas económicas."
-        }
-      ]
-    },
-    {
-      "id": "b1-grandepresion-03.ex16",
-      "type": "structured-writing",
-      "category": "writing",
-      "teaches": [
-        "se-impersonal"
-      ],
-      "template": [
-        {
-          "prompt": "¿Por qué la crisis produjo cambios económicos duraderos?",
-          "answer": "En varios países se adoptaron medidas para estimular la demanda interna."
-        }
-      ]
     }
   ]
 }
