@@ -6,288 +6,102 @@
       "type": "matching",
       "category": "vocabulary",
       "pairs": [
-        [
-          "exportación",
-          "export"
-        ],
-        [
-          "mercado",
-          "market"
-        ],
-        [
-          "producto",
-          "product"
-        ]
-      ],
-      "teaches": [
-        "exportacion-01-vocab"
+        ["mercantil", "mercantile, commercial"],
+        ["la metrópoli", "the mother country, metropole"],
+        ["especializarse", "to specialize"],
+        ["rentable", "profitable"]
+      ]
+    },
+    {
+      "id": "b1-economiasexportacion-01.ex01b",
+      "type": "matching",
+      "category": "vocabulary",
+      "pairs": [
+        ["el ingreso", "revenue, income"],
+        ["el fertilizante", "fertilizer"],
+        ["el financiamiento", "financing"],
+        ["expuesto", "exposed"]
       ]
     },
     {
       "id": "b1-economiasexportacion-01.ex02",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Cuál resume mejor la lección?",
+      "category": "reading",
+      "question": "¿Qué sistema impuso España a sus colonias durante la época colonial?",
       "options": [
-        "Durante el siglo XIX, varias economías se orientaron hacia la exportación de productos agrícolas.",
-        "Todas las economías tuvieron el mismo modelo.",
-        "Los mercados internacionales no tuvieron importancia."
+        "Un sistema mercantil que obligaba a comerciar casi exclusivamente con la metrópoli.",
+        "Un sistema de libre comercio con cualquier país europeo.",
+        "Un sistema en el que las colonias no comerciaban con nadie."
       ],
-      "correct": 0,
-      "teaches": [
-        "exportacion-01-interpretacion"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-economiasexportacion-01.ex03",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Mientras _____ las exportaciones, los gobiernos buscaban nuevos ingresos. (aumentar)",
-      "answer": "aumentaban",
-      "teaches": [
-        "exportacion-01-estructura"
-      ]
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Qué ocurrió con el comercio latinoamericano tras la independencia?",
+      "options": [
+        "Se volvió más libre que antes, pero la región siguió exportando sobre todo materias primas, ahora principalmente hacia Gran Bretaña.",
+        "Desapareció por completo durante varias décadas.",
+        "Volvió a depender exclusivamente de España, igual que antes."
+      ],
+      "correct": 0
     },
     {
       "id": "b1-economiasexportacion-01.ex04",
-      "type": "sentence-builder",
+      "type": "fill-blank",
       "category": "grammar",
-      "tiles": [
-        "Durante",
-        "el",
-        "siglo",
-        "XIX,",
-        "varias",
-        "economías",
-        "se",
-        "orientaron",
-        "hacia",
-        "la",
-        "exportación",
-        "de",
-        "productos",
-        "agrícolas."
-      ],
-      "solution": [
-        "Durante",
-        "el",
-        "siglo",
-        "XIX,",
-        "varias",
-        "economías",
-        "se",
-        "orientaron",
-        "hacia",
-        "la",
-        "exportación",
-        "de",
-        "productos",
-        "agrícolas."
-      ],
-      "english": "During the nineteenth century, several economies became oriented towards the export of agricultural products.",
-      "teaches": [
-        "exportacion-01-estructura"
-      ]
+      "sentence": "El comercio se volvió más libre ___ antes, pero la región siguió exportando materias primas. (comparativo de superioridad)",
+      "answer": "que",
+      "teaches": ["comparativos-el-viejo-modelo-frente-al-nuevo"]
     },
     {
       "id": "b1-economiasexportacion-01.ex05",
-      "type": "sentence-order",
-      "category": "grammar",
-      "sentences": [
-        "Aumentaron las exportaciones.",
-        "Se construyeron nuevas infraestructuras.",
-        "Las economías quedaron más conectadas con los mercados internacionales."
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Qué llegó a representar el guano para el Estado peruano durante las décadas centrales del siglo diecinueve?",
+      "options": [
+        "Una parte tan grande de los ingresos estatales que, durante un tiempo, fue más valioso que la plata misma.",
+        "Un producto sin ninguna importancia económica real.",
+        "Un producto exportado exclusivamente hacia Chile."
       ],
-      "solution": [
-        0,
-        1,
-        2
-      ],
-      "teaches": [
-        "exportacion-01-secuencia"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-economiasexportacion-01.ex06",
-      "type": "multiple-choice",
+      "type": "sentence-builder",
       "category": "grammar",
-      "question": "¿Cuál presenta un matiz importante?",
-      "options": [
-        "El modelo no se desarrolló de la misma manera en toda América Latina.",
-        "El crecimiento benefició siempre a todos.",
-        "Las condiciones externas no importaban."
-      ],
-      "correct": 0,
-      "teaches": [
-        "exportacion-01-interpretacion"
-      ]
+      "tiles": ["Cuanto", "más", "dependía", "un", "país", "de", "un", "solo", "producto,", "más", "expuesto", "quedaba."],
+      "solution": ["Cuanto", "más", "dependía", "un", "país", "de", "un", "solo", "producto,", "más", "expuesto", "quedaba."],
+      "english": "The more a country depended on a single product, the more exposed it was.",
+      "teaches": ["comparativos-el-viejo-modelo-frente-al-nuevo"]
     },
     {
       "id": "b1-economiasexportacion-01.ex07",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "El _____ es un concepto importante en esta lección. (exportación)",
-      "answer": "exportación",
-      "teaches": [
-        "exportacion-01-vocab"
-      ]
+      "type": "dialogue-complete",
+      "category": "reading",
+      "prompt": [
+        { "speaker": "Laura", "text": "¿Dónde se tomaban, con frecuencia, las decisiones clave del modelo exportador?" },
+        { "speaker": "Andrés", "text": "_____" }
+      ],
+      "options": [
+        "Mucho más lejos de Lima o de Buenos Aires que en la época colonial.",
+        "Siempre en la propia capital del país exportador.",
+        "En ningún lugar concreto, ya que no existían decisiones clave."
+      ],
+      "correct": 0
     },
     {
       "id": "b1-economiasexportacion-01.ex08",
-      "type": "sentence-order",
-      "category": "grammar",
-      "sentences": [
-        "Mientras aumentaban las exportaciones, los gobiernos buscaban nuevas fuentes de ingresos.",
-        "En algunos países, el modelo exportador cambió la relación con los mercados internacionales.",
-        "El modelo no se desarrolló de la misma manera en toda América Latina."
-      ],
-      "solution": [
-        0,
-        1,
-        2
-      ],
-      "teaches": [
-        "exportacion-01-conectores"
-      ]
-    },
-    {
-      "id": "b1-economiasexportacion-01.ex09",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "¿Qué palabra pertenece directamente al tema?",
-      "options": [
-        "exportación",
-        "receta",
-        "aeropuerto"
-      ],
-      "correct": 0,
-      "teaches": [
-        "exportacion-01-vocab"
-      ]
-    },
-    {
-      "id": "b1-economiasexportacion-01.ex10",
       "type": "listening-choice",
       "category": "listening",
-      "sentence": "En algunos países, el modelo exportador cambió la relación con los mercados internacionales.",
+      "sentence": "El nuevo modelo era más próspero que el viejo, al menos para las élites exportadoras, pero también más vulnerable.",
       "options": [
-        "In some countries, the export model changed the relationship with international markets.",
-        "The statement says there was no change.",
-        "The statement describes another topic."
+        "The new model was more prosperous than the old one, at least for the exporting elites, but also more vulnerable.",
+        "The new model was identical to the colonial economy in every way.",
+        "The new model eliminated all economic risk for the region."
       ],
-      "correct": 0,
-      "teaches": [
-        "exportacion-01-listening"
-      ]
-    },
-    {
-      "id": "b1-economiasexportacion-01.ex11",
-      "type": "dictation",
-      "category": "listening",
-      "sentence": "El modelo no se desarrolló de la misma manera en toda América Latina.",
-      "teaches": [
-        "exportacion-01-listening"
-      ]
-    },
-    {
-      "id": "b1-economiasexportacion-01.ex12",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Cuál es una idea importante sobre este tema?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Durante el siglo XIX, varias economías se orientaron hacia la exportación de productos agrícolas.",
-        "Todos los países tuvieron el mismo resultado.",
-        "No hubo cambios económicos."
-      ],
-      "correct": 0,
-      "teaches": [
-        "exportacion-01-dialogo"
-      ]
-    },
-    {
-      "id": "b1-economiasexportacion-01.ex13",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Por qué fue un proceso complejo?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Mientras aumentaban las exportaciones, los gobiernos buscaban nuevas fuentes de ingresos.",
-        "Porque todos recibieron los mismos beneficios.",
-        "Porque los precios nunca cambiaban."
-      ],
-      "correct": 0,
-      "teaches": [
-        "exportacion-01-dialogo"
-      ]
-    },
-    {
-      "id": "b1-economiasexportacion-01.ex14",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Cómo podemos interpretarlo con cuidado?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "El modelo no se desarrolló de la misma manera en toda América Latina.",
-        "Aplicando la misma explicación a todos los países.",
-        "Ignorando las condiciones externas."
-      ],
-      "correct": 0,
-      "teaches": [
-        "exportacion-01-dialogo"
-      ]
-    },
-    {
-      "id": "b1-economiasexportacion-01.ex15",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Explica una característica del modelo exportador usando dos cláusulas relacionadas.",
-          "answer": "Durante el siglo XIX, varias economías se orientaron hacia la exportación de productos agrícolas."
-        }
-      ],
-      "teaches": [
-        "exportacion-01-escritura"
-      ]
-    },
-    {
-      "id": "b1-economiasexportacion-01.ex16",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Explica una consecuencia o un límite del modelo usando un conector.",
-          "answer": "El modelo no se desarrolló de la misma manera en toda América Latina."
-        }
-      ],
-      "teaches": [
-        "exportacion-01-escritura"
-      ]
+      "correct": 0
     }
   ]
 }

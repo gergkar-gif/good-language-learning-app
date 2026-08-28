@@ -6,280 +6,102 @@
       "type": "matching",
       "category": "vocabulary",
       "pairs": [
-        [
-          "materia prima",
-          "raw material"
-        ],
-        [
-          "demanda",
-          "demand"
-        ],
-        [
-          "precio",
-          "price"
-        ]
-      ],
-      "teaches": [
-        "exportacion-02-vocab"
+        ["el cultivo", "crop, cultivation"],
+        ["el yacimiento", "deposit (of a mineral)"],
+        ["la refrigeración", "refrigeration"],
+        ["el cuero", "hide, leather"]
+      ]
+    },
+    {
+      "id": "b1-economiasexportacion-02.ex01b",
+      "type": "matching",
+      "category": "vocabulary",
+      "pairs": [
+        ["la mano de obra", "labor, workforce"],
+        ["la disponibilidad", "availability"],
+        ["superar", "to surpass"],
+        ["el explosivo", "explosive"]
       ]
     },
     {
       "id": "b1-economiasexportacion-02.ex02",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Cuál resume mejor la lección?",
+      "category": "reading",
+      "question": "¿Qué construyó Brasil alrededor de su producción de café?",
       "options": [
-        "Los productos que tenían demanda internacional podían generar ingresos importantes.",
-        "Todas las economías tuvieron el mismo modelo.",
-        "Los mercados internacionales no tuvieron importancia."
+        "Toda una estructura política y social, especialmente en el estado de São Paulo.",
+        "Una economía basada exclusivamente en la minería.",
+        "Ninguna estructura política relevante, ya que el café era poco importante."
       ],
-      "correct": 0,
-      "teaches": [
-        "exportacion-02-interpretacion"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-economiasexportacion-02.ex03",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Los productos _____ tenían demanda internacional podían generar ingresos. (que)",
-      "answer": "que",
-      "teaches": [
-        "exportacion-02-estructura"
-      ]
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Qué encontró Chile en el salitre, sobre todo tras la Guerra del Pacífico?",
+      "options": [
+        "Una nueva fuente de riqueza, usada principalmente en fertilizantes y explosivos.",
+        "Un producto sin ningún valor comercial fuera del país.",
+        "Un sustituto exacto de la plata, sin ningún otro uso."
+      ],
+      "correct": 0
     },
     {
       "id": "b1-economiasexportacion-02.ex04",
-      "type": "sentence-builder",
+      "type": "fill-blank",
       "category": "grammar",
-      "tiles": [
-        "Los",
-        "productos",
-        "que",
-        "tenían",
-        "demanda",
-        "internacional",
-        "podían",
-        "generar",
-        "ingresos",
-        "importantes."
-      ],
-      "solution": [
-        "Los",
-        "productos",
-        "que",
-        "tenían",
-        "demanda",
-        "internacional",
-        "podían",
-        "generar",
-        "ingresos",
-        "importantes."
-      ],
-      "english": "Products that had international demand could generate significant income.",
-      "teaches": [
-        "exportacion-02-estructura"
-      ]
+      "sentence": "Brasil, ___ producción de café llegó a superar la de cualquier otro país, construyó toda una estructura social alrededor del café. (cuyo/cuya)",
+      "answer": "cuya",
+      "teaches": ["clausulas-relativas-que-donde-cuyo"]
     },
     {
       "id": "b1-economiasexportacion-02.ex05",
-      "type": "sentence-order",
-      "category": "grammar",
-      "sentences": [
-        "Aumentaron las exportaciones.",
-        "Se construyeron nuevas infraestructuras.",
-        "Las economías quedaron más conectadas con los mercados internacionales."
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Qué permitió por primera vez el barco Le Frigorifique, a partir de 1876?",
+      "options": [
+        "Transportar carne fresca a través del Atlántico gracias a su sistema de refrigeración.",
+        "Transportar café desde Brasil hasta Europa por primera vez.",
+        "Sustituir por completo la exportación argentina de cueros y lana."
       ],
-      "solution": [
-        0,
-        1,
-        2
-      ],
-      "teaches": [
-        "exportacion-02-secuencia"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-economiasexportacion-02.ex06",
-      "type": "multiple-choice",
+      "type": "sentence-builder",
       "category": "grammar",
-      "question": "¿Cuál presenta un matiz importante?",
-      "options": [
-        "La materia prima que se exportaba dependía de las condiciones del mercado internacional.",
-        "El crecimiento benefició siempre a todos.",
-        "Las condiciones externas no importaban."
-      ],
-      "correct": 0,
-      "teaches": [
-        "exportacion-02-interpretacion"
-      ]
+      "tiles": ["El", "estado", "de", "São", "Paulo,", "donde", "se", "concentraba", "la", "mayor", "parte", "de", "las", "plantaciones,", "se", "volvió", "central", "en", "la", "política."],
+      "solution": ["El", "estado", "de", "São", "Paulo,", "donde", "se", "concentraba", "la", "mayor", "parte", "de", "las", "plantaciones,", "se", "volvió", "central", "en", "la", "política."],
+      "english": "The state of São Paulo, where most of the plantations were concentrated, became central to politics.",
+      "teaches": ["clausulas-relativas-que-donde-cuyo"]
     },
     {
       "id": "b1-economiasexportacion-02.ex07",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "El _____ es un concepto importante en esta lección. (materia prima)",
-      "answer": "materia prima",
-      "teaches": [
-        "exportacion-02-vocab"
-      ]
+      "type": "dialogue-complete",
+      "category": "reading",
+      "prompt": [
+        { "speaker": "Marisol", "text": "¿Qué producto comenzó a desarrollarse en Centroamérica hacia finales del siglo diecinueve?" },
+        { "speaker": "Beto", "text": "_____" }
+      ],
+      "options": [
+        "El banano, que creció rápidamente en países como Costa Rica y Honduras gracias a su clima tropical.",
+        "El café, que solo se cultivaba en Brasil durante ese periodo.",
+        "El salitre, que era exclusivo de la costa chilena."
+      ],
+      "correct": 0
     },
     {
       "id": "b1-economiasexportacion-02.ex08",
-      "type": "sentence-order",
-      "category": "grammar",
-      "sentences": [
-        "Cuando aumentaba la demanda, los productores ampliaban la producción.",
-        "Si los precios bajaban, los ingresos de los productores podían disminuir.",
-        "La materia prima que se exportaba dependía de las condiciones del mercado internacional."
-      ],
-      "solution": [
-        0,
-        1,
-        2
-      ],
-      "teaches": [
-        "exportacion-02-conectores"
-      ]
-    },
-    {
-      "id": "b1-economiasexportacion-02.ex09",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "¿Qué palabra pertenece directamente al tema?",
-      "options": [
-        "materia prima",
-        "receta",
-        "aeropuerto"
-      ],
-      "correct": 0,
-      "teaches": [
-        "exportacion-02-vocab"
-      ]
-    },
-    {
-      "id": "b1-economiasexportacion-02.ex10",
       "type": "listening-choice",
       "category": "listening",
-      "sentence": "Si los precios bajaban, los ingresos de los productores podían disminuir.",
+      "sentence": "Este mapa de productos no fue una simple coincidencia geográfica, sino el resultado de decisiones económicas e inversiones extranjeras.",
       "options": [
-        "If prices fell, producers' income could decrease.",
-        "The statement says there was no change.",
-        "The statement describes another topic."
+        "This map of products was not a simple geographic coincidence, but the result of economic decisions and foreign investment.",
+        "Every country in the region produced exactly the same set of goods.",
+        "Foreign investment played no role in shaping these export economies."
       ],
-      "correct": 0,
-      "teaches": [
-        "exportacion-02-listening"
-      ]
-    },
-    {
-      "id": "b1-economiasexportacion-02.ex11",
-      "type": "dictation",
-      "category": "listening",
-      "sentence": "La materia prima que se exportaba dependía de las condiciones del mercado internacional.",
-      "teaches": [
-        "exportacion-02-listening"
-      ]
-    },
-    {
-      "id": "b1-economiasexportacion-02.ex12",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Cuál es una idea importante sobre este tema?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Los productos que tenían demanda internacional podían generar ingresos importantes.",
-        "Todos los países tuvieron el mismo resultado.",
-        "No hubo cambios económicos."
-      ],
-      "correct": 0,
-      "teaches": [
-        "exportacion-02-dialogo"
-      ]
-    },
-    {
-      "id": "b1-economiasexportacion-02.ex13",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Por qué fue un proceso complejo?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Cuando aumentaba la demanda, los productores ampliaban la producción.",
-        "Porque todos recibieron los mismos beneficios.",
-        "Porque los precios nunca cambiaban."
-      ],
-      "correct": 0,
-      "teaches": [
-        "exportacion-02-dialogo"
-      ]
-    },
-    {
-      "id": "b1-economiasexportacion-02.ex14",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Cómo podemos interpretarlo con cuidado?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "La materia prima que se exportaba dependía de las condiciones del mercado internacional.",
-        "Aplicando la misma explicación a todos los países.",
-        "Ignorando las condiciones externas."
-      ],
-      "correct": 0,
-      "teaches": [
-        "exportacion-02-dialogo"
-      ]
-    },
-    {
-      "id": "b1-economiasexportacion-02.ex15",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Explica una característica del modelo exportador usando dos cláusulas relacionadas.",
-          "answer": "Los productos que tenían demanda internacional podían generar ingresos importantes."
-        }
-      ],
-      "teaches": [
-        "exportacion-02-escritura"
-      ]
-    },
-    {
-      "id": "b1-economiasexportacion-02.ex16",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Explica una consecuencia o un límite del modelo usando un conector.",
-          "answer": "La materia prima que se exportaba dependía de las condiciones del mercado internacional."
-        }
-      ],
-      "teaches": [
-        "exportacion-02-escritura"
-      ]
+      "correct": 0
     }
   ]
 }

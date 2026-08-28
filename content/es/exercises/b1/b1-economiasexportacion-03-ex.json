@@ -6,282 +6,102 @@
       "type": "matching",
       "category": "vocabulary",
       "pairs": [
-        [
-          "ferrocarril",
-          "railway"
-        ],
-        [
-          "puerto",
-          "port"
-        ],
-        [
-          "infraestructura",
-          "infrastructure"
-        ]
-      ],
-      "teaches": [
-        "exportacion-03-vocab"
+        ["tentador", "tempting"],
+        ["administrar", "to administer, manage"],
+        ["el enclave", "enclave"],
+        ["la ganancia", "profit"]
+      ]
+    },
+    {
+      "id": "b1-economiasexportacion-03.ex01b",
+      "type": "matching",
+      "category": "vocabulary",
+      "pairs": [
+        ["el empresario", "businessman, entrepreneur"],
+        ["la industria", "industry"],
+        ["la manufactura", "manufactured good"],
+        ["la ruta", "route"]
       ]
     },
     {
       "id": "b1-economiasexportacion-03.ex02",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Cuál resume mejor la lección?",
+      "category": "reading",
+      "question": "¿Quiénes construyeron y financiaron, con frecuencia, los ferrocarriles latinoamericanos del siglo diecinueve?",
       "options": [
-        "Se construyeron ferrocarriles para conectar las zonas productoras con los puertos.",
-        "Todas las economías tuvieron el mismo modelo.",
-        "Los mercados internacionales no tuvieron importancia."
+        "Empresas extranjeras, sobre todo británicas.",
+        "Exclusivamente los propios gobiernos nacionales.",
+        "Cooperativas de trabajadores locales, sin ninguna inversión extranjera."
       ],
-      "correct": 0,
-      "teaches": [
-        "exportacion-03-interpretacion"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-economiasexportacion-03.ex03",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Se construyeron ferrocarriles _____ conectar las zonas productoras con los puertos. (para)",
-      "answer": "para",
-      "teaches": [
-        "exportacion-03-estructura"
-      ]
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Qué es una \"economía de enclave\"?",
+      "options": [
+        "Una zona productiva controlada casi por completo por una compañía extranjera, con poca conexión con el resto de la economía nacional.",
+        "Una región completamente aislada, sin ningún tipo de producción económica.",
+        "Un sistema en el que el Estado nacional controla toda la producción minera."
+      ],
+      "correct": 0
     },
     {
       "id": "b1-economiasexportacion-03.ex04",
-      "type": "sentence-builder",
+      "type": "fill-blank",
       "category": "grammar",
-      "tiles": [
-        "Se",
-        "construyeron",
-        "ferrocarriles",
-        "para",
-        "conectar",
-        "las",
-        "zonas",
-        "productoras",
-        "con",
-        "los",
-        "puertos."
-      ],
-      "solution": [
-        "Se",
-        "construyeron",
-        "ferrocarriles",
-        "para",
-        "conectar",
-        "las",
-        "zonas",
-        "productoras",
-        "con",
-        "los",
-        "puertos."
-      ],
-      "english": "Railways were built to connect production areas with ports.",
-      "teaches": [
-        "exportacion-03-estructura"
-      ]
+      "sentence": "___ estas empresas generaran empleo local, buena parte de sus ganancias salía directamente del país. (aunque + subjuntivo)",
+      "answer": "Aunque",
+      "teaches": ["aunque-subjuntivo-concesiones-sobre-el-comercio"]
     },
     {
       "id": "b1-economiasexportacion-03.ex05",
-      "type": "sentence-order",
-      "category": "grammar",
-      "sentences": [
-        "Aumentaron las exportaciones.",
-        "Se construyeron nuevas infraestructuras.",
-        "Las economías quedaron más conectadas con los mercados internacionales."
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Quién fue John Thomas North, y qué llegó a controlar en Chile?",
+      "options": [
+        "Un empresario británico conocido como el \"Rey del Salitre\", que llegó a controlar una porción tan grande de la industria que influía incluso en la política chilena.",
+        "Un presidente chileno que nacionalizó toda la industria del salitre.",
+        "Un ingeniero que diseñó los principales ferrocarriles de Argentina."
       ],
-      "solution": [
-        0,
-        1,
-        2
-      ],
-      "teaches": [
-        "exportacion-03-secuencia"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-economiasexportacion-03.ex06",
-      "type": "multiple-choice",
+      "type": "sentence-builder",
       "category": "grammar",
-      "question": "¿Cuál presenta un matiz importante?",
-      "options": [
-        "Las rutas se concentraban en zonas que facilitaban la exportación.",
-        "El crecimiento benefició siempre a todos.",
-        "Las condiciones externas no importaban."
-      ],
-      "correct": 0,
-      "teaches": [
-        "exportacion-03-interpretacion"
-      ]
+      "tiles": ["Los", "puertos", "se", "expandieron", "enormemente,", "aunque", "su", "función", "principal", "siguiera", "siendo", "la", "salida", "de", "materias", "primas."],
+      "solution": ["Los", "puertos", "se", "expandieron", "enormemente,", "aunque", "su", "función", "principal", "siguiera", "siendo", "la", "salida", "de", "materias", "primas."],
+      "english": "The ports expanded enormously, even though their main function continued to be the outflow of raw materials.",
+      "teaches": ["aunque-subjuntivo-concesiones-sobre-el-comercio"]
     },
     {
       "id": "b1-economiasexportacion-03.ex07",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "El _____ es un concepto importante en esta lección. (ferrocarril)",
-      "answer": "ferrocarril",
-      "teaches": [
-        "exportacion-03-vocab"
-      ]
+      "type": "dialogue-complete",
+      "category": "reading",
+      "prompt": [
+        { "speaker": "Nora", "text": "¿Dónde seguían tomándose, con demasiada frecuencia, decisiones fundamentales como el precio del salitre?" },
+        { "speaker": "Ezequiel", "text": "_____" }
+      ],
+      "options": [
+        "En Londres, antes que en Santiago o en Lima.",
+        "Siempre en la propia capital del país productor.",
+        "En ningún lugar, ya que estas decisiones no dependían de nadie en particular."
+      ],
+      "correct": 0
     },
     {
       "id": "b1-economiasexportacion-03.ex08",
-      "type": "sentence-order",
-      "category": "grammar",
-      "sentences": [
-        "Las nuevas infraestructuras permitían transportar mercancías con mayor rapidez.",
-        "Los ferrocarriles se ampliaron para que los productos llegaran a los mercados internacionales.",
-        "Las rutas se concentraban en zonas que facilitaban la exportación."
-      ],
-      "solution": [
-        0,
-        1,
-        2
-      ],
-      "teaches": [
-        "exportacion-03-conectores"
-      ]
-    },
-    {
-      "id": "b1-economiasexportacion-03.ex09",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "¿Qué palabra pertenece directamente al tema?",
-      "options": [
-        "ferrocarril",
-        "receta",
-        "aeropuerto"
-      ],
-      "correct": 0,
-      "teaches": [
-        "exportacion-03-vocab"
-      ]
-    },
-    {
-      "id": "b1-economiasexportacion-03.ex10",
       "type": "listening-choice",
       "category": "listening",
-      "sentence": "Los ferrocarriles se ampliaron para que los productos llegaran a los mercados internacionales.",
+      "sentence": "Este sistema trajo consigo indudables avances materiales, pero también dejó decisiones fundamentales en manos extranjeras.",
       "options": [
-        "Railways were expanded so that products could reach international markets.",
-        "The statement says there was no change.",
-        "The statement describes another topic."
+        "This system brought undeniable material advances, but it also left fundamental decisions in foreign hands.",
+        "This system had no effect at all on the region's infrastructure.",
+        "All economic decisions remained entirely in local hands throughout this period."
       ],
-      "correct": 0,
-      "teaches": [
-        "exportacion-03-listening"
-      ]
-    },
-    {
-      "id": "b1-economiasexportacion-03.ex11",
-      "type": "dictation",
-      "category": "listening",
-      "sentence": "Las rutas se concentraban en zonas que facilitaban la exportación.",
-      "teaches": [
-        "exportacion-03-listening"
-      ]
-    },
-    {
-      "id": "b1-economiasexportacion-03.ex12",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Cuál es una idea importante sobre este tema?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Se construyeron ferrocarriles para conectar las zonas productoras con los puertos.",
-        "Todos los países tuvieron el mismo resultado.",
-        "No hubo cambios económicos."
-      ],
-      "correct": 0,
-      "teaches": [
-        "exportacion-03-dialogo"
-      ]
-    },
-    {
-      "id": "b1-economiasexportacion-03.ex13",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Por qué fue un proceso complejo?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Las nuevas infraestructuras permitían transportar mercancías con mayor rapidez.",
-        "Porque todos recibieron los mismos beneficios.",
-        "Porque los precios nunca cambiaban."
-      ],
-      "correct": 0,
-      "teaches": [
-        "exportacion-03-dialogo"
-      ]
-    },
-    {
-      "id": "b1-economiasexportacion-03.ex14",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Cómo podemos interpretarlo con cuidado?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Las rutas se concentraban en zonas que facilitaban la exportación.",
-        "Aplicando la misma explicación a todos los países.",
-        "Ignorando las condiciones externas."
-      ],
-      "correct": 0,
-      "teaches": [
-        "exportacion-03-dialogo"
-      ]
-    },
-    {
-      "id": "b1-economiasexportacion-03.ex15",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Explica una característica del modelo exportador usando dos cláusulas relacionadas.",
-          "answer": "Se construyeron ferrocarriles para conectar las zonas productoras con los puertos."
-        }
-      ],
-      "teaches": [
-        "exportacion-03-escritura"
-      ]
-    },
-    {
-      "id": "b1-economiasexportacion-03.ex16",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Explica una consecuencia o un límite del modelo usando un conector.",
-          "answer": "Las rutas se concentraban en zonas que facilitaban la exportación."
-        }
-      ],
-      "teaches": [
-        "exportacion-03-escritura"
-      ]
+      "correct": 0
     }
   ]
 }
