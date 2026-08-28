@@ -6,340 +6,100 @@
       "type": "matching",
       "category": "vocabulary",
       "pairs": [
-        [
-          "interpretación",
-          "interpretación"
-        ],
-        [
-          "testimonio",
-          "testimonio"
-        ],
-        [
-          "perspectiva",
-          "perspectiva"
-        ],
-        [
-          "fuente",
-          "fuente"
-        ],
-        [
-          "memoria",
-          "memoria"
-        ]
-      ],
-      "teaches": [
-        "voz-pasiva-fuentes"
+        ["redactar", "to write, draft"],
+        ["el bando", "side, faction"],
+        ["escaso", "scarce, scant"],
+        ["recopilar", "to compile"]
+      ]
+    },
+    {
+      "id": "b1-conquista-05.ex01b",
+      "type": "matching",
+      "category": "vocabulary",
+      "pairs": [
+        ["benévolo", "benevolent"],
+        ["resistir", "to withstand, hold up"],
+        ["de antemano", "beforehand, in advance"],
+        ["la hambruna", "famine"]
       ]
     },
     {
       "id": "b1-conquista-05.ex02",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Qué estructura es característica de interpretación histórica?",
+      "category": "reading",
+      "question": "¿Por qué es tan desigual el conjunto de fuentes escritas que existen sobre la conquista?",
       "options": [
-        "La conquista fue descrita desde perspectivas diferentes.",
-        "Una frase sin verbo",
-        "Una lista de palabras"
+        "Porque casi todos los relatos que se conservan fueron redactados por el bando vencedor, y los testimonios indígenas directos son extremadamente escasos.",
+        "Porque no existe ningún relato escrito sobre la conquista.",
+        "Porque los testimonios indígenas y españoles son igual de numerosos y detallados."
       ],
-      "correct": 0,
-      "teaches": [
-        "voz-pasiva-fuentes"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-conquista-05.ex03",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Qué afirmación es más precisa?",
+      "category": "reading",
+      "question": "¿Qué es 'Visión de los vencidos', y quién la elaboró?",
       "options": [
-        "Muchas experiencias fueron registradas por autores con posiciones distintas.",
-        "La estructura solo sirve para conversaciones informales.",
-        "La estructura no aparece en textos históricos."
+        "Una obra del historiador mexicano Miguel León-Portilla que recopiló y tradujo, en el siglo veinte, testimonios nahuas del siglo dieciséis.",
+        "Una crónica escrita por el propio Hernán Cortés poco después de la conquista.",
+        "Un documento oficial de la corona española sobre la conquista."
       ],
-      "correct": 0,
-      "teaches": [
-        "voz-pasiva-fuentes"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-conquista-05.ex04",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "La conquista _____ descrita desde perspectivas diferentes.",
-      "answer": "conquista",
-      "teaches": [
-        "voz-pasiva-fuentes"
-      ]
+      "sentence": "Casi todos los relatos ___ redactados por el bando vencedor. (ser)",
+      "answer": "fueron",
+      "teaches": ["voz-pasiva-interpretacion-historica"]
     },
     {
       "id": "b1-conquista-05.ex05",
-      "type": "sentence-builder",
-      "category": "grammar",
-      "tiles": [
-        "La",
-        "conquista",
-        "fue",
-        "descrita",
-        "desde",
-        "perspectivas",
-        "diferentes."
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Qué opinan los historiadores actuales sobre la 'leyenda blanca' y la 'leyenda negra'?",
+      "options": [
+        "Que ninguna de las dos resiste bien el análisis, porque ambas fueron construidas con fines políticos más que históricos.",
+        "Que la 'leyenda blanca' es completamente exacta y debe aceptarse sin cuestionarla.",
+        "Que la 'leyenda negra' es la única versión históricamente válida."
       ],
-      "solution": [
-        "La",
-        "conquista",
-        "fue",
-        "descrita",
-        "desde",
-        "perspectivas",
-        "diferentes."
-      ],
-      "english": "The conquest was described from different perspectives.",
-      "teaches": [
-        "voz-pasiva-fuentes"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-conquista-05.ex06",
-      "type": "sentence-order",
+      "type": "sentence-builder",
       "category": "grammar",
-      "sentences": [
-        "La conquista fue descrita desde perspectivas diferentes.",
-        "Muchas experiencias fueron registradas por autores con posiciones distintas.",
-        "Las fuentes deben ser comparadas para comprender el proceso."
-      ],
-      "solution": [
-        0,
-        1,
-        2
-      ],
-      "teaches": [
-        "voz-pasiva-fuentes"
-      ]
+      "tiles": ["Ambas", "leyendas", "fueron", "construidas,", "en", "última", "instancia,", "con", "fines", "políticos", "más", "que", "históricos."],
+      "solution": ["Ambas", "leyendas", "fueron", "construidas,", "en", "última", "instancia,", "con", "fines", "políticos", "más", "que", "históricos."],
+      "english": "Both legends were built, ultimately, for political rather than historical purposes.",
+      "teaches": ["voz-pasiva-interpretacion-historica"]
     },
     {
       "id": "b1-conquista-05.ex07",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "¿Cuál palabra pertenece al tema «¿Conquista o catástrofe?»?",
-      "options": [
-        "interpretación",
-        "playa",
-        "desayuno"
+      "type": "dialogue-complete",
+      "category": "reading",
+      "prompt": [
+        { "speaker": "Marta", "text": "Entonces, ¿'conquista' o 'catástrofe'? ¿Cuál es la palabra correcta?" },
+        { "speaker": "Pablo", "text": "_____" }
       ],
-      "correct": 0,
-      "teaches": [
-        "voz-pasiva-fuentes"
-      ]
+      "options": [
+        "Muchos historiadores usan 'conquista' para el episodio militar y reservan 'catástrofe' para el proceso demográfico mucho más amplio que causó.",
+        "Solo una de las dos palabras es correcta, y la otra debe evitarse siempre.",
+        "Ninguna de las dos palabras se usa en la historiografía actual."
+      ],
+      "correct": 0
     },
     {
       "id": "b1-conquista-05.ex08",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Qué caracteriza ¿conquista o catástrofe??"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "La conquista fue descrita desde perspectivas diferentes.",
-        "No tuvo consecuencias.",
-        "No hubo conflictos ni cambios."
-      ],
-      "correct": 0,
-      "teaches": [
-        "voz-pasiva-fuentes"
-      ]
-    },
-    {
-      "id": "b1-conquista-05.ex09",
       "type": "listening-choice",
       "category": "listening",
-      "sentence": "La conquista fue descrita desde perspectivas diferentes.",
+      "sentence": "Las muertes causadas en combate fueron muy inferiores a las provocadas después por enfermedades y hambrunas.",
       "options": [
-        "La conquista fue descrita desde perspectivas diferentes.",
-        "The opposite happened.",
-        "The statement is unrelated."
-      ],
-      "correct": 0,
-      "teaches": [
-        "voz-pasiva-fuentes"
-      ]
-    },
-    {
-      "id": "b1-conquista-05.ex10",
-      "type": "listening-choice",
-      "category": "listening",
-      "sentence": "Muchas experiencias fueron registradas por autores con posiciones distintas.",
-      "options": [
-        "Muchas experiencias fueron registradas por autores con posiciones distintas.",
-        "The statement is unrelated.",
-        "No such event occurred."
-      ],
-      "correct": 0,
-      "teaches": [
-        "voz-pasiva-fuentes"
-      ]
-    },
-    {
-      "id": "b1-conquista-05.ex11",
-      "type": "listening-choice",
-      "category": "listening",
-      "sentence": "Las fuentes deben ser comparadas para comprender el proceso.",
-      "options": [
-        "Las fuentes deben ser comparadas para comprender el proceso.",
-        "The statement is unrelated.",
-        "The opposite happened."
-      ],
-      "correct": 0,
-      "teaches": [
-        "voz-pasiva-fuentes"
-      ]
-    },
-    {
-      "id": "b1-conquista-05.ex12",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Por qué es importante estudiar este proceso desde varias perspectivas?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Porque las fuentes muestran experiencias y posiciones diferentes.",
-        "Porque todas las fuentes dicen exactamente lo mismo.",
-        "Porque no existen testimonios."
-      ],
-      "correct": 0,
-      "teaches": [
-        "voz-pasiva-fuentes"
-      ]
-    },
-    {
-      "id": "b1-conquista-05.ex13",
-      "type": "multiple-choice",
-      "category": "dialogue",
-      "question": "¿Qué interpretación evita una simplificación histórica?",
-      "options": [
-        "Reconocer alianzas, conflictos y diferentes experiencias.",
-        "Reducir todo el proceso a una sola causa.",
-        "Ignorar las fuentes indígenas."
-      ],
-      "correct": 0,
-      "teaches": [
-        "voz-pasiva-fuentes"
-      ]
-    },
-    {
-      "id": "b1-conquista-05.ex14",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Fue la conquista un proceso sencillo?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "No, porque participaron distintos grupos y hubo conflictos, alianzas y resistencia.",
-        "Sí, porque todos los grupos actuaron igual.",
-        "Sí, porque terminó en un solo día."
-      ],
-      "correct": 0,
-      "teaches": [
-        "voz-pasiva-fuentes"
-      ]
-    },
-    {
-      "id": "b1-conquista-05.ex15",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Describe one aspect of the lesson using the Focus structure.",
-          "answer": "La conquista fue descrita desde perspectivas diferentes."
-        },
-        {
-          "prompt": "Add a second clause explaining a consequence, contrast or reason.",
-          "answer": "Muchas experiencias fueron registradas por autores con posiciones distintas."
-        }
-      ],
-      "teaches": [
-        "voz-pasiva-fuentes"
-      ]
-    },
-    {
-      "id": "b1-conquista-05.ex16",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Write a short historical explanation using two clauses.",
-          "answer": "Las fuentes deben ser comparadas para comprender el proceso."
-        }
-      ],
-      "teaches": [
-        "voz-pasiva-fuentes"
-      ]
-    },
-    {
-      "id": "b1-conquista-05.ex20",
-      "type": "multiple-choice",
-      "category": "reading",
-      "question": "¿Cuál es la idea principal del texto?",
-      "options": [
-        "La conquista de los imperios americanos combinó violencia, alianzas y negociación, no fue un proceso simple.",
-        "La conquista ocurrió en un solo día sin ninguna resistencia.",
-        "Los pueblos indígenas nunca colaboraron con los españoles."
-      ],
-      "correct": 0
-    },
-    {
-      "id": "b1-conquista-05.ex21",
-      "type": "multiple-choice",
-      "category": "reading",
-      "question": "¿Qué detalle aparece en el texto?",
-      "options": [
-        "Atahualpa fue capturado en Cajamarca en 1532, cuando el Imperio inca estaba debilitado por una rivalidad interna.",
-        "Atahualpa gobernó el imperio sin ningún conflicto interno.",
-        "Los incas nunca tuvieron contacto con los españoles."
-      ],
-      "correct": 0
-    },
-    {
-      "id": "b1-conquista-05.ex22",
-      "type": "multiple-choice",
-      "category": "reading",
-      "question": "¿Qué elemento ayuda a entender el texto?",
-      "options": [
-        "Algunos pueblos colaboraron con los conquistadores esperando derrotar a rivales regionales.",
-        "Todos los pueblos indígenas actuaron exactamente de la misma manera.",
-        "La colaboración con los españoles era imposible."
-      ],
-      "correct": 0
-    },
-    {
-      "id": "b1-conquista-05.ex23",
-      "type": "multiple-choice",
-      "category": "reading",
-      "question": "¿Qué conclusión encaja mejor?",
-      "options": [
-        "Las fuentes sobre la conquista deben compararse porque fueron producidas desde perspectivas diferentes.",
-        "Existe una sola fuente confiable sobre la conquista.",
-        "La conquista no transformó las instituciones ni la economía."
+        "Deaths caused in combat were far fewer than those later caused by disease and famine.",
+        "Combat deaths were the only cause of the population decline.",
+        "No deaths were ever recorded after the conquest ended."
       ],
       "correct": 0
     }

@@ -6,296 +6,102 @@
       "type": "matching",
       "category": "vocabulary",
       "pairs": [
-        [
-          "captura",
-          "captura"
-        ],
-        [
-          "rivalidad",
-          "rivalidad"
-        ],
-        [
-          "sucesión",
-          "sucesión"
-        ],
-        [
-          "territorio",
-          "territorio"
-        ],
-        [
-          "campaña",
-          "campaña"
-        ]
-      ],
-      "teaches": [
-        "se-pasiva"
+        ["disputarse", "to fight over, contend for"],
+        ["el pretexto", "pretext, excuse"],
+        ["masacrar", "to massacre"],
+        ["el rescate", "ransom"]
+      ]
+    },
+    {
+      "id": "b1-conquista-02.ex01b",
+      "type": "matching",
+      "category": "vocabulary",
+      "pairs": [
+        ["recolectar", "to collect, gather"],
+        ["bautizarse", "to be baptized"],
+        ["el títere", "puppet (figurehead)"],
+        ["sitiar", "to besiege"]
       ]
     },
     {
       "id": "b1-conquista-02.ex02",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Qué estructura es característica de pizarro y el imperio inca?",
+      "category": "reading",
+      "question": "¿Qué tipo de imperio encontró Pizarro al llegar al Perú en 1532?",
       "options": [
-        "En Cajamarca se capturó a Atahualpa en 1532.",
-        "Una frase sin verbo",
-        "Una lista de palabras"
+        "Un imperio debilitado por una guerra civil entre Atahualpa y Huáscar, hijos de Huayna Cápac.",
+        "Un imperio completamente unido y sin ningún conflicto interno.",
+        "Un imperio que ya se había rendido antes de la llegada de los españoles."
       ],
-      "correct": 0,
-      "teaches": [
-        "se-pasiva"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-conquista-02.ex03",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Qué afirmación es más precisa?",
+      "category": "reading",
+      "question": "¿Qué ofreció Atahualpa a cambio de su libertad, y cumplieron los españoles su parte del trato?",
       "options": [
-        "Se organizaron nuevas campañas en distintos territorios.",
-        "La estructura solo sirve para conversaciones informales.",
-        "La estructura no aparece en textos históricos."
+        "Ofreció llenar una habitación de oro y dos veces de plata; aun así, Pizarro lo ejecutó una vez reunido el rescate.",
+        "Ofreció entregar su ejército, y los españoles lo liberaron de inmediato tal como prometieron.",
+        "No ofreció nada, porque fue liberado sin condiciones."
       ],
-      "correct": 0,
-      "teaches": [
-        "se-pasiva"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-conquista-02.ex04",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "En Cajamarca _____ capturó a Atahualpa en 1532.",
-      "answer": "Cajamarca",
-      "teaches": [
-        "se-pasiva"
-      ]
+      "sentence": "En Cajamarca ___ organizó un encuentro entre Atahualpa y los españoles. (organizar)",
+      "answer": "se",
+      "teaches": ["se-pasiva-pizarro-imperio-inca"]
     },
     {
       "id": "b1-conquista-02.ex05",
-      "type": "sentence-builder",
-      "category": "grammar",
-      "tiles": [
-        "En",
-        "Cajamarca",
-        "se",
-        "capturó",
-        "a",
-        "Atahualpa",
-        "en",
-        "1532."
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Cambió la conversión religiosa de Atahualpa el resultado final de su condena?",
+      "options": [
+        "No: solo cambió el método de ejecución, de la hoguera al garrote, considerado menos cruel.",
+        "Sí, gracias a su bautismo fue liberado y pudo recuperar su trono.",
+        "Sí, los españoles cancelaron por completo su ejecución."
       ],
-      "solution": [
-        "En",
-        "Cajamarca",
-        "se",
-        "capturó",
-        "a",
-        "Atahualpa",
-        "en",
-        "1532."
-      ],
-      "english": "In Cajamarca, Atahualpa was captured in 1532.",
-      "teaches": [
-        "se-pasiva"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-conquista-02.ex06",
-      "type": "sentence-order",
+      "type": "sentence-builder",
       "category": "grammar",
-      "sentences": [
-        "En Cajamarca se capturó a Atahualpa en 1532.",
-        "Se organizaron nuevas campañas en distintos territorios.",
-        "Se establecieron nuevas autoridades."
-      ],
-      "solution": [
-        0,
-        1,
-        2
-      ],
-      "teaches": [
-        "se-pasiva"
-      ]
+      "tiles": ["En", "Vilcabamba", "se", "mantuvo", "una", "resistencia", "inca", "continua", "durante", "casi", "cuarenta", "años", "más."],
+      "solution": ["En", "Vilcabamba", "se", "mantuvo", "una", "resistencia", "inca", "continua", "durante", "casi", "cuarenta", "años", "más."],
+      "english": "In Vilcabamba, continuous Inca resistance was maintained for almost forty more years.",
+      "teaches": ["se-pasiva-pizarro-imperio-inca"]
     },
     {
       "id": "b1-conquista-02.ex07",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "¿Cuál palabra pertenece al tema «La conquista del Perú»?",
-      "options": [
-        "captura",
-        "playa",
-        "desayuno"
+      "type": "dialogue-complete",
+      "category": "reading",
+      "prompt": [
+        { "speaker": "Marta", "text": "¿Terminó la resistencia inca con la ejecución de Atahualpa en 1533?" },
+        { "speaker": "Pablo", "text": "_____" }
       ],
-      "correct": 0,
-      "teaches": [
-        "se-pasiva"
-      ]
+      "options": [
+        "No, Manco Inca se rebeló después y fundó un estado independiente en Vilcabamba que resistió hasta 1572.",
+        "Sí, ningún inca volvió a resistir después de la muerte de Atahualpa.",
+        "No, porque Atahualpa nunca fue realmente ejecutado."
+      ],
+      "correct": 0
     },
     {
       "id": "b1-conquista-02.ex08",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Qué caracteriza la conquista del perú?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "En Cajamarca se capturó a Atahualpa en 1532.",
-        "No tuvo consecuencias.",
-        "No hubo conflictos ni cambios."
-      ],
-      "correct": 0,
-      "teaches": [
-        "se-pasiva"
-      ]
-    },
-    {
-      "id": "b1-conquista-02.ex09",
       "type": "listening-choice",
       "category": "listening",
-      "sentence": "En Cajamarca se capturó a Atahualpa en 1532.",
+      "sentence": "Túpac Amaru fue capturado y ejecutado en 1572, cuatro décadas después de la caída de Cajamarca.",
       "options": [
-        "En Cajamarca se capturó a Atahualpa en 1532.",
-        "The opposite happened.",
-        "The statement is unrelated."
+        "Túpac Amaru was captured and executed in 1572, four decades after the fall of Cajamarca.",
+        "Túpac Amaru was captured the same year as Atahualpa.",
+        "Túpac Amaru was never captured by the Spanish."
       ],
-      "correct": 0,
-      "teaches": [
-        "se-pasiva"
-      ]
-    },
-    {
-      "id": "b1-conquista-02.ex10",
-      "type": "listening-choice",
-      "category": "listening",
-      "sentence": "Se organizaron nuevas campañas en distintos territorios.",
-      "options": [
-        "Se organizaron nuevas campañas en distintos territorios.",
-        "The statement is unrelated.",
-        "No such event occurred."
-      ],
-      "correct": 0,
-      "teaches": [
-        "se-pasiva"
-      ]
-    },
-    {
-      "id": "b1-conquista-02.ex11",
-      "type": "listening-choice",
-      "category": "listening",
-      "sentence": "Se establecieron nuevas autoridades.",
-      "options": [
-        "Se establecieron nuevas autoridades.",
-        "The statement is unrelated.",
-        "The opposite happened."
-      ],
-      "correct": 0,
-      "teaches": [
-        "se-pasiva"
-      ]
-    },
-    {
-      "id": "b1-conquista-02.ex12",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Por qué es importante estudiar este proceso desde varias perspectivas?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Porque las fuentes muestran experiencias y posiciones diferentes.",
-        "Porque todas las fuentes dicen exactamente lo mismo.",
-        "Porque no existen testimonios."
-      ],
-      "correct": 0,
-      "teaches": [
-        "se-pasiva"
-      ]
-    },
-    {
-      "id": "b1-conquista-02.ex13",
-      "type": "multiple-choice",
-      "category": "dialogue",
-      "question": "¿Qué interpretación evita una simplificación histórica?",
-      "options": [
-        "Reconocer alianzas, conflictos y diferentes experiencias.",
-        "Reducir todo el proceso a una sola causa.",
-        "Ignorar las fuentes indígenas."
-      ],
-      "correct": 0,
-      "teaches": [
-        "se-pasiva"
-      ]
-    },
-    {
-      "id": "b1-conquista-02.ex14",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Fue la conquista un proceso sencillo?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "No, porque participaron distintos grupos y hubo conflictos, alianzas y resistencia.",
-        "Sí, porque todos los grupos actuaron igual.",
-        "Sí, porque terminó en un solo día."
-      ],
-      "correct": 0,
-      "teaches": [
-        "se-pasiva"
-      ]
-    },
-    {
-      "id": "b1-conquista-02.ex15",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Describe one aspect of the lesson using the Focus structure.",
-          "answer": "En Cajamarca se capturó a Atahualpa en 1532."
-        },
-        {
-          "prompt": "Add a second clause explaining a consequence, contrast or reason.",
-          "answer": "Se organizaron nuevas campañas en distintos territorios."
-        }
-      ],
-      "teaches": [
-        "se-pasiva"
-      ]
-    },
-    {
-      "id": "b1-conquista-02.ex16",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Write a short historical explanation using two clauses.",
-          "answer": "Se establecieron nuevas autoridades."
-        }
-      ],
-      "teaches": [
-        "se-pasiva"
-      ]
+      "correct": 0
     }
   ]
 }

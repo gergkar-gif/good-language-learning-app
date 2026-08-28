@@ -6,290 +6,102 @@
       "type": "matching",
       "category": "vocabulary",
       "pairs": [
-        [
-          "conquistador",
-          "conquistador"
-        ],
-        [
-          "alianza",
-          "alianza"
-        ],
-        [
-          "tributo",
-          "tributo"
-        ],
-        [
-          "asedio",
-          "asedio"
-        ],
-        [
-          "imperio",
-          "imperio"
-        ]
-      ],
-      "teaches": [
-        "voz-pasiva"
+        ["inutilizar", "to disable, render useless"],
+        ["el aliado", "ally"],
+        ["el rehén", "hostage"],
+        ["deteriorarse", "to deteriorate, worsen"]
+      ]
+    },
+    {
+      "id": "b1-conquista-01.ex01b",
+      "type": "matching",
+      "category": "vocabulary",
+      "pairs": [
+        ["expulsar", "to expel"],
+        ["el asedio", "siege"],
+        ["el suministro", "supply"],
+        ["conspirar", "to conspire, plot"]
       ]
     },
     {
       "id": "b1-conquista-01.ex02",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Qué estructura es característica de cortés y el imperio mexica?",
+      "category": "reading",
+      "question": "¿Qué hizo Cortés con sus barcos al llegar a México, y qué mito hay al respecto?",
       "options": [
-        "Tenochtitlan fue conquistada en 1521.",
-        "Una frase sin verbo",
-        "Una lista de palabras"
+        "Mandó hundirlos deliberadamente para impedir la retirada; no los quemó, como dice la leyenda popular.",
+        "Los vendió a otros conquistadores españoles antes de avanzar.",
+        "Los dejó anclados en la costa durante toda la campaña."
       ],
-      "correct": 0,
-      "teaches": [
-        "voz-pasiva"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-conquista-01.ex03",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Qué afirmación es más precisa?",
+      "category": "reading",
+      "question": "¿Por qué fue tan importante la alianza de Cortés con Tlaxcala?",
       "options": [
-        "La ciudad fue defendida durante meses.",
-        "La estructura solo sirve para conversaciones informales.",
-        "La estructura no aparece en textos históricos."
+        "Porque sin miles de guerreros tlaxcaltecas, dispuestos a unirse contra su enemigo común, la conquista habría sido casi imposible.",
+        "Porque Tlaxcala era un aliado tradicional de los mexica desde hacía generaciones.",
+        "Porque los tlaxcaltecas proporcionaron únicamente comida, sin ningún apoyo militar."
       ],
-      "correct": 0,
-      "teaches": [
-        "voz-pasiva"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-conquista-01.ex04",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Tenochtitlan _____ conquistada en 1521.",
-      "answer": "conquistada",
-      "teaches": [
-        "voz-pasiva"
-      ]
+      "sentence": "Los españoles ___ expulsados violentamente de la ciudad durante la Noche Triste. (ser)",
+      "answer": "fueron",
+      "teaches": ["voz-pasiva-cortes-imperio-mexica"]
     },
     {
       "id": "b1-conquista-01.ex05",
-      "type": "sentence-builder",
-      "category": "grammar",
-      "tiles": [
-        "Tenochtitlan",
-        "fue",
-        "conquistada",
-        "en",
-        "1521."
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Qué factor, además de la fuerza militar, inclinó decisivamente la balanza a favor de los españoles?",
+      "options": [
+        "Una epidemia de viruela que se extendió por la ciudad y mató al nuevo emperador, Cuitláhuac, tras solo ochenta días en el trono.",
+        "La rendición voluntaria e inmediata de todos los pueblos mexicas.",
+        "La falta total de resistencia militar por parte de los mexica."
       ],
-      "solution": [
-        "Tenochtitlan",
-        "fue",
-        "conquistada",
-        "en",
-        "1521."
-      ],
-      "english": "Tenochtitlan was conquered in 1521.",
-      "teaches": [
-        "voz-pasiva"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-conquista-01.ex06",
-      "type": "sentence-order",
+      "type": "sentence-builder",
       "category": "grammar",
-      "sentences": [
-        "Tenochtitlan fue conquistada en 1521.",
-        "La ciudad fue defendida durante meses.",
-        "Varios pueblos fueron incorporados a nuevas estructuras de poder."
-      ],
-      "solution": [
-        0,
-        1,
-        2
-      ],
-      "teaches": [
-        "voz-pasiva"
-      ]
+      "tiles": ["Tenochtitlan", "finalmente", "fue", "conquistada", "el", "13", "de", "agosto", "de", "1521."],
+      "solution": ["Tenochtitlan", "finalmente", "fue", "conquistada", "el", "13", "de", "agosto", "de", "1521."],
+      "english": "Tenochtitlan finally fell on August 13, 1521.",
+      "teaches": ["voz-pasiva-cortes-imperio-mexica"]
     },
     {
       "id": "b1-conquista-01.ex07",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "¿Cuál palabra pertenece al tema «La conquista de México»?",
-      "options": [
-        "conquistador",
-        "playa",
-        "desayuno"
+      "type": "dialogue-complete",
+      "category": "reading",
+      "prompt": [
+        { "speaker": "Marta", "text": "¿Cayó Tenochtitlan de un día para otro, en un solo ataque sorpresa?" },
+        { "speaker": "Pablo", "text": "_____" }
       ],
-      "correct": 0,
-      "teaches": [
-        "voz-pasiva"
-      ]
+      "options": [
+        "No, el asedio final duró meses: los españoles cortaron el suministro de agua y alimentos mientras la ciudad ya estaba debilitada por el hambre y la enfermedad.",
+        "Sí, la ciudad cayó en cuestión de horas sin ninguna resistencia previa.",
+        "No, porque Tenochtitlan nunca llegó a ser sitiada realmente."
+      ],
+      "correct": 0
     },
     {
       "id": "b1-conquista-01.ex08",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Qué caracteriza la conquista de méxico?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Tenochtitlan fue conquistada en 1521.",
-        "No tuvo consecuencias.",
-        "No hubo conflictos ni cambios."
-      ],
-      "correct": 0,
-      "teaches": [
-        "voz-pasiva"
-      ]
-    },
-    {
-      "id": "b1-conquista-01.ex09",
       "type": "listening-choice",
       "category": "listening",
-      "sentence": "Tenochtitlan fue conquistada en 1521.",
+      "sentence": "Cuauhtémoc fue capturado el mismo día en que cayó Tenochtitlan.",
       "options": [
-        "Tenochtitlan fue conquistada en 1521.",
-        "The opposite happened.",
-        "The statement is unrelated."
+        "Cuauhtémoc was captured the same day that Tenochtitlan fell.",
+        "Cuauhtémoc escaped and was never captured.",
+        "Cuauhtémoc surrendered voluntarily years before the siege began."
       ],
-      "correct": 0,
-      "teaches": [
-        "voz-pasiva"
-      ]
-    },
-    {
-      "id": "b1-conquista-01.ex10",
-      "type": "listening-choice",
-      "category": "listening",
-      "sentence": "La ciudad fue defendida durante meses.",
-      "options": [
-        "La ciudad fue defendida durante meses.",
-        "The statement is unrelated.",
-        "No such event occurred."
-      ],
-      "correct": 0,
-      "teaches": [
-        "voz-pasiva"
-      ]
-    },
-    {
-      "id": "b1-conquista-01.ex11",
-      "type": "listening-choice",
-      "category": "listening",
-      "sentence": "Varios pueblos fueron incorporados a nuevas estructuras de poder.",
-      "options": [
-        "Varios pueblos fueron incorporados a nuevas estructuras de poder.",
-        "The statement is unrelated.",
-        "The opposite happened."
-      ],
-      "correct": 0,
-      "teaches": [
-        "voz-pasiva"
-      ]
-    },
-    {
-      "id": "b1-conquista-01.ex12",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Por qué es importante estudiar este proceso desde varias perspectivas?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Porque las fuentes muestran experiencias y posiciones diferentes.",
-        "Porque todas las fuentes dicen exactamente lo mismo.",
-        "Porque no existen testimonios."
-      ],
-      "correct": 0,
-      "teaches": [
-        "voz-pasiva"
-      ]
-    },
-    {
-      "id": "b1-conquista-01.ex13",
-      "type": "multiple-choice",
-      "category": "dialogue",
-      "question": "¿Qué interpretación evita una simplificación histórica?",
-      "options": [
-        "Reconocer alianzas, conflictos y diferentes experiencias.",
-        "Reducir todo el proceso a una sola causa.",
-        "Ignorar las fuentes indígenas."
-      ],
-      "correct": 0,
-      "teaches": [
-        "voz-pasiva"
-      ]
-    },
-    {
-      "id": "b1-conquista-01.ex14",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Fue la conquista un proceso sencillo?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "No, porque participaron distintos grupos y hubo conflictos, alianzas y resistencia.",
-        "Sí, porque todos los grupos actuaron igual.",
-        "Sí, porque terminó en un solo día."
-      ],
-      "correct": 0,
-      "teaches": [
-        "voz-pasiva"
-      ]
-    },
-    {
-      "id": "b1-conquista-01.ex15",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Describe one aspect of the lesson using the Focus structure.",
-          "answer": "Tenochtitlan fue conquistada en 1521."
-        },
-        {
-          "prompt": "Add a second clause explaining a consequence, contrast or reason.",
-          "answer": "La ciudad fue defendida durante meses."
-        }
-      ],
-      "teaches": [
-        "voz-pasiva"
-      ]
-    },
-    {
-      "id": "b1-conquista-01.ex16",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Write a short historical explanation using two clauses.",
-          "answer": "Varios pueblos fueron incorporados a nuevas estructuras de poder."
-        }
-      ],
-      "teaches": [
-        "voz-pasiva"
-      ]
+      "correct": 0
     }
   ]
 }
