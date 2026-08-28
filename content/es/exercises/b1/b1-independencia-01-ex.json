@@ -6,316 +6,102 @@
       "type": "matching",
       "category": "vocabulary",
       "pairs": [
-        [
-          "Ilustración",
-          "Enlightenment"
-        ],
-        [
-          "revolución",
-          "revolution"
-        ],
-        [
-          "libertad",
-          "freedom"
-        ],
-        [
-          "igualdad",
-          "equality"
-        ]
-      ],
-      "teaches": [
-        "ilustracion"
+        ["el panfleto", "pamphlet"],
+        ["la censura", "censorship"],
+        ["desatar", "to unleash, trigger"],
+        ["el detonante", "trigger, spark"]
+      ]
+    },
+    {
+      "id": "b1-independencia-01.ex01b",
+      "type": "matching",
+      "category": "vocabulary",
+      "pairs": [
+        ["la abdicación", "abdication"],
+        ["cautivo", "captive"],
+        ["la advertencia", "warning"],
+        ["imitar", "to imitate"]
       ]
     },
     {
       "id": "b1-independencia-01.ex02",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Qué función cumple la estructura «voz pasiva» en esta lección?",
+      "category": "reading",
+      "question": "¿Bastaron las ideas ilustradas por sí solas para desatar las guerras de independencia?",
       "options": [
-        "Ayuda a presentar un proceso histórico con mayor precisión.",
-        "Sirve solamente para hablar del tiempo atmosférico.",
-        "No cambia el significado de la oración."
+        "No, hizo falta un detonante político mucho más inmediato: la invasión napoleónica de España en 1808.",
+        "Sí, las ideas ilustradas fueron la única causa de las guerras de independencia.",
+        "No, las ideas ilustradas nunca llegaron a circular por América."
       ],
-      "correct": 0,
-      "teaches": [
-        "ilustracion"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-independencia-01.ex03",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Las ideas de la Ilustración _____ difundidas por libros y periódicos. (ser)",
-      "answer": "fueron",
-      "teaches": [
-        "ilustracion"
-      ]
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Qué ocurrió en España en 1808, y qué consecuencia tuvo en América?",
+      "options": [
+        "Napoleón forzó la abdicación de Fernando VII, y al quedar España sin rey legítimo, ciudades americanas formaron juntas de gobierno cada vez más autónomas.",
+        "España declaró la independencia de todas sus colonias americanas voluntariamente.",
+        "Fernando VII invadió Francia y depuso a Napoleón."
+      ],
+      "correct": 0
     },
     {
       "id": "b1-independencia-01.ex04",
-      "type": "sentence-builder",
+      "type": "fill-blank",
       "category": "grammar",
-      "tiles": [
-        "Las",
-        "ideas",
-        "de",
-        "la",
-        "Ilustración",
-        "fueron",
-        "difundidas",
-        "por",
-        "libros",
-        "y",
-        "periódicos,",
-        "aunque",
-        "solo",
-        "una",
-        "parte",
-        "de",
-        "la",
-        "población",
-        "tenía",
-        "acceso",
-        "a",
-        "ellos."
-      ],
-      "solution": [
-        "Las",
-        "ideas",
-        "de",
-        "la",
-        "Ilustración",
-        "fueron",
-        "difundidas",
-        "por",
-        "libros",
-        "y",
-        "periódicos,",
-        "aunque",
-        "solo",
-        "una",
-        "parte",
-        "de",
-        "la",
-        "población",
-        "tenía",
-        "acceso",
-        "a",
-        "ellos."
-      ],
-      "english": "Enlightenment ideas were spread through books and newspapers, although only part of the population had access to them.",
-      "teaches": [
-        "ilustracion"
-      ]
+      "sentence": "Nuevas ideas sobre la libertad ___ difundidas por el mundo atlántico mediante libros y periódicos. (ser)",
+      "answer": "fueron",
+      "teaches": ["voz-pasiva-circulacion-ideas-ilustradas"]
     },
     {
       "id": "b1-independencia-01.ex05",
-      "type": "sentence-order",
-      "category": "grammar",
-      "sentences": [
-        "Las ideas circularon por el mundo atlántico.",
-        "Algunos grupos cuestionaron la autoridad existente.",
-        "El orden político comenzó a transformarse."
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Cómo reaccionaron muchos criollos propietarios de esclavos ante la independencia de Haití en 1804?",
+      "options": [
+        "La admiraron algunos, pero también la temieron profundamente, viéndola como una advertencia sobre una posible revuelta social.",
+        "La ignoraron por completo, sin ningún interés en lo ocurrido en Haití.",
+        "La celebraron sin ninguna reserva, sin temer ninguna consecuencia."
       ],
-      "solution": [
-        0,
-        1,
-        2
-      ],
-      "teaches": [
-        "ilustracion"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-independencia-01.ex06",
-      "type": "fill-blank",
+      "type": "sentence-builder",
       "category": "grammar",
-      "sentence": "Las noticias _____ discutidas por personas que buscaban nuevas formas de gobierno. (ser)",
-      "answer": "fueron",
-      "teaches": [
-        "ilustracion"
-      ]
+      "tiles": ["La", "independencia", "de", "Estados", "Unidos", "fue", "seguida", "de", "cerca", "por", "lectores", "criollos", "educados."],
+      "solution": ["La", "independencia", "de", "Estados", "Unidos", "fue", "seguida", "de", "cerca", "por", "lectores", "criollos", "educados."],
+      "english": "The independence of the United States was followed closely by educated criollo readers.",
+      "teaches": ["voz-pasiva-circulacion-ideas-ilustradas"]
     },
     {
       "id": "b1-independencia-01.ex07",
-      "type": "sentence-order",
-      "category": "grammar",
-      "sentences": [
-        "Las nuevas autoridades heredaron problemas.",
-        "Intentaron construir instituciones.",
-        "La estabilidad política siguió siendo difícil."
+      "type": "dialogue-complete",
+      "category": "reading",
+      "prompt": [
+        { "speaker": "Marta", "text": "Entonces, ¿cómo resumirías el escenario que llevó a las guerras de independencia?" },
+        { "speaker": "Pablo", "text": "_____" }
       ],
-      "solution": [
-        0,
-        1,
-        2
+      "options": [
+        "Una combinación de una crisis política inmediata en España, un lenguaje ilustrado ya disponible, y un ejemplo revolucionario cercano en Haití.",
+        "Simplemente ideas nuevas enfrentadas a un imperio viejo, sin ningún otro factor relevante.",
+        "Una decisión espontánea sin ninguna causa política identificable."
       ],
-      "teaches": [
-        "ilustracion"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-independencia-01.ex08",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "¿Qué palabra pertenece directamente al tema de esta lección?",
-      "options": [
-        "Ilustración",
-        "aeropuerto",
-        "receta"
-      ],
-      "correct": 0,
-      "teaches": [
-        "ilustracion"
-      ]
-    },
-    {
-      "id": "b1-independencia-01.ex09",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Qué relación expresa mejor esta afirmación histórica?",
-      "options": [
-        "El cambio político fue importante, aunque sus consecuencias variaron según el grupo y el territorio.",
-        "El cambio político fue importante porque todos los grupos tuvieron exactamente la misma experiencia.",
-        "El cambio político no tuvo consecuencias para la sociedad."
-      ],
-      "correct": 0,
-      "teaches": [
-        "ilustracion"
-      ]
-    },
-    {
-      "id": "b1-independencia-01.ex10",
       "type": "listening-choice",
       "category": "listening",
-      "sentence": "Las revoluciones atlánticas demostraron que un orden político podía cambiar cuando distintos grupos cuestionaban la autoridad existente.",
+      "sentence": "En 1804, Haití se convirtió en la primera república gobernada por antiguos esclavizados.",
       "options": [
-        "The Atlantic revolutions demonstrated that a political order could change when different groups questioned existing authority.",
-        "The statement says the opposite.",
-        "The statement concerns a different period."
+        "In 1804, Haiti became the first republic governed by formerly enslaved people.",
+        "Haiti remained a French colony throughout the nineteenth century.",
+        "No slave revolt ever succeeded in the Americas."
       ],
-      "correct": 0,
-      "teaches": [
-        "ilustracion"
-      ]
-    },
-    {
-      "id": "b1-independencia-01.ex11",
-      "type": "dictation",
-      "category": "listening",
-      "sentence": "Las noticias sobre las revoluciones llegaron a América, donde fueron discutidas por personas que buscaban nuevas formas de gobierno.",
-      "teaches": [
-        "ilustracion"
-      ]
-    },
-    {
-      "id": "b1-independencia-01.ex12",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Qué importancia tuvo el mundo cambia?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "La libertad y la igualdad se convirtieron en conceptos políticos importantes, pero no siempre se aplicaron de la misma manera.",
-        "Fue importante porque sí.",
-        "No se puede decir nada sobre este tema."
-      ],
-      "correct": 0,
-      "teaches": [
-        "ilustracion"
-      ]
-    },
-    {
-      "id": "b1-independencia-01.ex13",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿La independencia resolvió inmediatamente todos los problemas políticos?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "No, porque transformó las instituciones, pero también dejó problemas económicos, sociales y políticos que las nuevas repúblicas tuvieron que afrontar.",
-        "Sí, porque una independencia siempre elimina todos los conflictos.",
-        "No sé, y por eso la historia no puede estudiarse."
-      ],
-      "correct": 0,
-      "teaches": [
-        "ilustracion"
-      ]
-    },
-    {
-      "id": "b1-independencia-01.ex14",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Por qué es importante preguntar «¿independencia para quién?»?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Porque los cambios políticos no beneficiaron ni incluyeron a toda la población de la misma manera, aunque se proclamaran nuevos principios.",
-        "Porque la independencia no cambió ninguna institución.",
-        "Porque todas las personas obtuvieron automáticamente los mismos derechos."
-      ],
-      "correct": 0,
-      "teaches": [
-        "ilustracion"
-      ]
-    },
-    {
-      "id": "b1-independencia-01.ex15",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Explain one historical feature using a connector or a second clause.",
-          "answer": "Las ideas de la Ilustración fueron difundidas por libros y periódicos, aunque solo una parte de la población tenía acceso a ellos."
-        },
-        {
-          "prompt": "Add a consequence, contrast or qualification.",
-          "answer": "Las noticias sobre las revoluciones llegaron a América, donde fueron discutidas por personas que buscaban nuevas formas de gobierno."
-        }
-      ],
-      "teaches": [
-        "ilustracion"
-      ]
-    },
-    {
-      "id": "b1-independencia-01.ex16",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Compare a political change with one limitation.",
-          "answer": "Las revoluciones atlánticas demostraron que un orden político podía cambiar cuando distintos grupos cuestionaban la autoridad existente."
-        },
-        {
-          "prompt": "Use a connector to explain the relationship.",
-          "answer": "Las noticias sobre las revoluciones llegaron a América, donde fueron discutidas por personas que buscaban nuevas formas de gobierno."
-        }
-      ],
-      "teaches": [
-        "ilustracion"
-      ]
+      "correct": 0
     }
   ]
 }
