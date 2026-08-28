@@ -6,300 +6,102 @@
       "type": "matching",
       "category": "vocabulary",
       "pairs": [
-        [
-          "jerarquía",
-          "hierarchy"
-        ],
-        [
-          "peninsular",
-          "person born in Spain"
-        ],
-        [
-          "criollo",
-          "creole, person of Spanish descent born in America"
-        ]
-      ],
-      "teaches": [
-        "jerarquia"
+        ["la esfera", "sphere"],
+        ["el tribunal", "court (of law)"],
+        ["descender", "to be descended from"],
+        ["el gremio", "guild"]
+      ]
+    },
+    {
+      "id": "b1-sociedadcolonial-02.ex01b",
+      "type": "matching",
+      "category": "vocabulary",
+      "pairs": [
+        ["falsificar", "to forge, falsify"],
+        ["el agravio", "grievance"],
+        ["el arraigo", "roots, deep ties (to a place)"],
+        ["acumularse", "to build up, accumulate"]
       ]
     },
     {
       "id": "b1-sociedadcolonial-02.ex02",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Cuál oración muestra se pasiva / impersonal?",
+      "category": "reading",
+      "question": "¿Cómo se organizaba legalmente la sociedad colonial, según el texto?",
       "options": [
-        "En la sociedad colonial se establecían diferencias según el origen y la posición social.",
-        "La sociedad cambia.",
-        "Las personas trabajaban."
+        "En dos esferas jurídicas separadas, la 'república de españoles' y la 'república de indios', aunque en la práctica se favorecía sistemáticamente a la primera.",
+        "En una sola jerarquía legal idéntica para todos los habitantes.",
+        "No existía ningún tipo de organización legal formal en las colonias."
       ],
-      "correct": 0,
-      "teaches": [
-        "jerarquia"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-sociedadcolonial-02.ex03",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Qué función cumple esta estructura en el texto?",
+      "category": "reading",
+      "question": "¿Qué era un certificado de 'limpieza de sangre', y para qué se exigía?",
       "options": [
-        "Presenta el proceso histórico con el foco adecuado.",
-        "Sirve únicamente para hablar del futuro.",
-        "Elimina la relación entre las ideas."
+        "Un documento que demostraba, mediante investigación genealógica, que la persona no descendía de judíos, musulmanes ni indígenas o africanos; se exigía para acceder a la universidad, cargos públicos o ciertos gremios.",
+        "Un certificado médico obligatorio para viajar entre virreinatos.",
+        "Un documento que garantizaba automáticamente un puesto en la audiencia."
       ],
-      "correct": 0,
-      "teaches": [
-        "jerarquia"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-sociedadcolonial-02.ex04",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "En la sociedad colonial _____ diferencias según el origen.",
-      "answer": "se establecían",
-      "teaches": [
-        "jerarquia"
-      ]
+      "sentence": "Para acceder a la universidad, ___ exigía presentar un certificado de limpieza de sangre. (exigir)",
+      "answer": "se",
+      "teaches": ["se-pasiva-impersonal-jerarquia-colonial"]
     },
     {
       "id": "b1-sociedadcolonial-02.ex05",
-      "type": "sentence-builder",
-      "category": "grammar",
-      "tiles": [
-        "En",
-        "la",
-        "sociedad",
-        "colonial",
-        "se",
-        "establecían",
-        "diferencias",
-        "según",
-        "el",
-        "origen",
-        "y",
-        "la",
-        "posición",
-        "social."
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Por qué se convirtió la exclusión de los criollos de los cargos más altos en un agravio importante?",
+      "options": [
+        "Porque familias criollas ricas, educadas y con arraigo local veían cómo esos puestos se entregaban una y otra vez a recién llegados de la península.",
+        "Porque los criollos nunca tuvieron ningún interés en ocupar cargos públicos.",
+        "Porque los peninsulares y los criollos tenían exactamente el mismo acceso a los cargos más altos."
       ],
-      "solution": [
-        "En",
-        "la",
-        "sociedad",
-        "colonial",
-        "se",
-        "establecían",
-        "diferencias",
-        "según",
-        "el",
-        "origen",
-        "y",
-        "la",
-        "posición",
-        "social."
-      ],
-      "english": "In colonial society, differences were established according to origin and social position.",
-      "teaches": [
-        "jerarquia"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-sociedadcolonial-02.ex06",
-      "type": "sentence-order",
+      "type": "sentence-builder",
       "category": "grammar",
-      "sentences": [
-        "En la sociedad colonial se establecían diferencias según el origen y la posición social.",
-        "Se reservaban determinados cargos para grupos con vínculos privilegiados con la Corona.",
-        "Los criollos podían tener riqueza, aunque no siempre tenían acceso a los mismos cargos."
-      ],
-      "solution": [
-        0,
-        1,
-        2
-      ],
-      "teaches": [
-        "jerarquia"
-      ]
+      "tiles": ["Se", "reservaban", "los", "cargos", "más", "altos", "casi", "exclusivamente", "para", "los", "peninsulares."],
+      "solution": ["Se", "reservaban", "los", "cargos", "más", "altos", "casi", "exclusivamente", "para", "los", "peninsulares."],
+      "english": "The highest posts were reserved almost exclusively for those born in Spain.",
+      "teaches": ["se-pasiva-impersonal-jerarquia-colonial"]
     },
     {
       "id": "b1-sociedadcolonial-02.ex07",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "¿Cuál palabra pertenece al tema de esta lección?",
-      "options": [
-        "jerarquía",
-        "avión",
-        "semáforo"
+      "type": "dialogue-complete",
+      "category": "reading",
+      "prompt": [
+        { "speaker": "Marta", "text": "¿Tuvo alguna consecuencia a largo plazo la exclusión sistemática de los criollos de los cargos más altos?" },
+        { "speaker": "Pablo", "text": "_____" }
       ],
-      "correct": 0,
-      "teaches": [
-        "jerarquia"
-      ]
+      "options": [
+        "Sí, se acumuló tanto resentimiento que buena parte del liderazgo independentista saldría después de esas mismas familias criollas.",
+        "No, los criollos nunca mostraron ningún interés en cambiar la situación.",
+        "No, porque en realidad nunca existió tal exclusión."
+      ],
+      "correct": 0
     },
     {
       "id": "b1-sociedadcolonial-02.ex08",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Qué caracteriza una sociedad jerárquica?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "En la sociedad colonial se establecían diferencias según el origen y la posición social.",
-        "No tuvo ninguna relación con la sociedad.",
-        "No hubo cambios."
-      ],
-      "correct": 0,
-      "teaches": [
-        "jerarquia"
-      ]
-    },
-    {
-      "id": "b1-sociedadcolonial-02.ex09",
       "type": "listening-choice",
       "category": "listening",
-      "sentence": "En la sociedad colonial se establecían diferencias según el origen y la posición social.",
+      "sentence": "Los criollos a menudo eran igual de ricos que los peninsulares, pero no accedían a los mismos cargos.",
       "options": [
-        "In colonial society, differences were established according to origin and social position.",
-        "The opposite happened.",
-        "The statement is unrelated."
+        "Criollos were often just as wealthy as peninsulares, but did not have access to the same posts.",
+        "Criollos were always poorer than peninsulares.",
+        "There was no wealth difference of any kind between any colonial groups."
       ],
-      "correct": 0,
-      "teaches": [
-        "jerarquia"
-      ]
-    },
-    {
-      "id": "b1-sociedadcolonial-02.ex10",
-      "type": "listening-choice",
-      "category": "listening",
-      "sentence": "Se reservaban determinados cargos para grupos con vínculos privilegiados con la Corona.",
-      "options": [
-        "Certain positions were reserved for groups with privileged ties to the Crown.",
-        "The opposite happened.",
-        "The statement is unrelated."
-      ],
-      "correct": 0,
-      "teaches": [
-        "jerarquia"
-      ]
-    },
-    {
-      "id": "b1-sociedadcolonial-02.ex11",
-      "type": "listening-choice",
-      "category": "listening",
-      "sentence": "Los criollos podían tener riqueza, aunque no siempre tenían acceso a los mismos cargos.",
-      "options": [
-        "Creoles could have wealth, although they did not always have access to the same positions.",
-        "The opposite happened.",
-        "The statement is unrelated."
-      ],
-      "correct": 0,
-      "teaches": [
-        "jerarquia"
-      ]
-    },
-    {
-      "id": "b1-sociedadcolonial-02.ex12",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿La sociedad colonial era igual para todas las personas?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "No, porque la posición social, el origen y las instituciones influían en las oportunidades.",
-        "Sí, porque todas las personas tenían la misma posición.",
-        "No, porque no existían instituciones."
-      ],
-      "correct": 0,
-      "teaches": [
-        "jerarquia"
-      ]
-    },
-    {
-      "id": "b1-sociedadcolonial-02.ex13",
-      "type": "multiple-choice",
-      "category": "dialogue",
-      "question": "¿Qué afirmación evita una simplificación histórica?",
-      "options": [
-        "Las estructuras coloniales eran jerárquicas, aunque las experiencias variaban según la persona y la región.",
-        "Todas las personas vivían exactamente de la misma manera.",
-        "La sociedad colonial no cambió nunca."
-      ],
-      "correct": 0,
-      "teaches": [
-        "jerarquia"
-      ]
-    },
-    {
-      "id": "b1-sociedadcolonial-02.ex14",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Cómo se relacionaban las instituciones con la vida cotidiana?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Las instituciones organizaban la sociedad y afectaban las oportunidades de las personas.",
-        "No tenían ninguna relación.",
-        "Solo afectaban a los comerciantes."
-      ],
-      "correct": 0,
-      "teaches": [
-        "jerarquia"
-      ]
-    },
-    {
-      "id": "b1-sociedadcolonial-02.ex15",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Describe one aspect of the lesson using the Focus structure.",
-          "answer": "En la sociedad colonial se establecían diferencias según el origen y la posición social."
-        },
-        {
-          "prompt": "Add a second clause explaining a consequence, contrast or reason.",
-          "answer": "La jerarquía colonial se mantuvo durante generaciones, aunque las categorías sociales eran más complejas de lo que sugieren las etiquetas."
-        }
-      ],
-      "teaches": [
-        "jerarquia"
-      ]
-    },
-    {
-      "id": "b1-sociedadcolonial-02.ex16",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Write a short historical explanation using at least two clauses.",
-          "answer": "Se reservaban determinados cargos para grupos con vínculos privilegiados con la Corona."
-        }
-      ],
-      "teaches": [
-        "jerarquia"
-      ]
+      "correct": 0
     }
   ]
 }

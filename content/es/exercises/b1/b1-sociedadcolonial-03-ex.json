@@ -6,292 +6,102 @@
       "type": "matching",
       "category": "vocabulary",
       "pairs": [
-        [
-          "parroquia",
-          "parish"
-        ],
-        [
-          "misionero",
-          "missionary"
-        ],
-        [
-          "evangelización",
-          "evangelisation"
-        ]
-      ],
-      "teaches": [
-        "iglesia"
+        ["la orden religiosa", "religious order"],
+        ["semiautónomo", "semi-autonomous"],
+        ["el tejido", "textile, fabric"],
+        ["próspero", "prosperous"]
+      ]
+    },
+    {
+      "id": "b1-sociedadcolonial-03.ex01b",
+      "type": "matching",
+      "category": "vocabulary",
+      "pairs": [
+        ["expulsar", "to expel"],
+        ["la herejía", "heresy"],
+        ["carecer", "to lack"],
+        ["eclesiástico", "ecclesiastical"]
       ]
     },
     {
       "id": "b1-sociedadcolonial-03.ex02",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Cuál oración muestra gerundio para acciones paralelas?",
+      "category": "reading",
+      "question": "¿Qué más administraba la Iglesia católica además de la vida religiosa?",
       "options": [
-        "Los misioneros trabajaban enseñando la doctrina mientras aprendían lenguas locales.",
-        "La sociedad cambia.",
-        "Las personas trabajaban."
+        "Buena parte de la educación y la sanidad, incluidas universidades fundadas apenas décadas después de la conquista.",
+        "Únicamente los templos y las ceremonias religiosas.",
+        "La Iglesia no tenía ninguna función fuera de lo estrictamente religioso."
       ],
-      "correct": 0,
-      "teaches": [
-        "iglesia"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-sociedadcolonial-03.ex03",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Qué función cumple esta estructura en el texto?",
+      "category": "reading",
+      "question": "¿Qué eran las 'reducciones' jesuitas del Río de la Plata?",
       "options": [
-        "Presenta el proceso histórico con el foco adecuado.",
-        "Sirve únicamente para hablar del futuro.",
-        "Elimina la relación entre las ideas."
+        "Comunidades guaraníes semiautónomas donde los jesuitas enseñaban la doctrina mientras usaban el idioma guaraní, con una relación menos violenta que la encomienda habitual.",
+        "Cárceles coloniales para indígenas rebeldes.",
+        "Un tipo de impuesto que los guaraníes pagaban a la Iglesia."
       ],
-      "correct": 0,
-      "teaches": [
-        "iglesia"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-sociedadcolonial-03.ex04",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Los misioneros avanzaban _____ la doctrina.",
-      "answer": "enseñando",
-      "teaches": [
-        "iglesia"
-      ]
+      "sentence": "___ la doctrina cristiana mientras aprendían guaraní, los jesuitas lograron una relación menos violenta. (enseñar)",
+      "answer": "Enseñando",
+      "teaches": ["gerundio-religion-sociedad-colonial"]
     },
     {
       "id": "b1-sociedadcolonial-03.ex05",
-      "type": "sentence-builder",
-      "category": "grammar",
-      "tiles": [
-        "Los",
-        "misioneros",
-        "trabajaban",
-        "enseñando",
-        "la",
-        "doctrina",
-        "mientras",
-        "aprendían",
-        "lenguas",
-        "locales."
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Qué pasó con las reducciones jesuitas en 1767?",
+      "options": [
+        "Carlos III expulsó a los jesuitas de todos los territorios españoles, y las reducciones, dependiendo de su administración, entraron en rápida decadencia.",
+        "Se independizaron completamente de la corona española.",
+        "Se transformaron en universidades reconocidas oficialmente."
       ],
-      "solution": [
-        "Los",
-        "misioneros",
-        "trabajaban",
-        "enseñando",
-        "la",
-        "doctrina",
-        "mientras",
-        "aprendían",
-        "lenguas",
-        "locales."
-      ],
-      "english": "Missionaries worked teaching doctrine while learning local languages.",
-      "teaches": [
-        "iglesia"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-sociedadcolonial-03.ex06",
-      "type": "sentence-order",
+      "type": "sentence-builder",
       "category": "grammar",
-      "sentences": [
-        "Los misioneros trabajaban enseñando la doctrina mientras aprendían lenguas locales.",
-        "La Iglesia se expandió creando parroquias y organizando actividades comunitarias.",
-        "Algunas comunidades adoptaron nuevas prácticas manteniendo elementos de sus tradiciones anteriores."
-      ],
-      "solution": [
-        0,
-        1,
-        2
-      ],
-      "teaches": [
-        "iglesia"
-      ]
+      "tiles": ["Las", "reducciones,", "dependiendo", "casi", "por", "completo", "de", "la", "administración", "jesuita,", "entraron", "en", "rápida", "decadencia."],
+      "solution": ["Las", "reducciones,", "dependiendo", "casi", "por", "completo", "de", "la", "administración", "jesuita,", "entraron", "en", "rápida", "decadencia."],
+      "english": "The missions, depending almost entirely on Jesuit administration, fell into rapid decline.",
+      "teaches": ["gerundio-religion-sociedad-colonial"]
     },
     {
       "id": "b1-sociedadcolonial-03.ex07",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "¿Cuál palabra pertenece al tema de esta lección?",
-      "options": [
-        "parroquia",
-        "avión",
-        "semáforo"
+      "type": "dialogue-complete",
+      "category": "reading",
+      "prompt": [
+        { "speaker": "Marta", "text": "¿Tenía la Inquisición jurisdicción sobre la población indígena?" },
+        { "speaker": "Pablo", "text": "_____" }
       ],
-      "correct": 0,
-      "teaches": [
-        "iglesia"
-      ]
+      "options": [
+        "No, oficialmente carecía de jurisdicción sobre los indígenas, que quedaban bajo tribunales eclesiásticos distintos.",
+        "Sí, la Inquisición juzgaba exclusivamente a la población indígena.",
+        "La Inquisición nunca existió en los territorios americanos."
+      ],
+      "correct": 0
     },
     {
       "id": "b1-sociedadcolonial-03.ex08",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Qué caracteriza la iglesia?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Los misioneros trabajaban enseñando la doctrina mientras aprendían lenguas locales.",
-        "No tuvo ninguna relación con la sociedad.",
-        "No hubo cambios."
-      ],
-      "correct": 0,
-      "teaches": [
-        "iglesia"
-      ]
-    },
-    {
-      "id": "b1-sociedadcolonial-03.ex09",
       "type": "listening-choice",
       "category": "listening",
-      "sentence": "Los misioneros trabajaban enseñando la doctrina mientras aprendían lenguas locales.",
+      "sentence": "La Iglesia colonial funcionó como una de las instituciones más poderosas del imperio.",
       "options": [
-        "Missionaries worked teaching doctrine while learning local languages.",
-        "The opposite happened.",
-        "The statement is unrelated."
+        "The colonial Church functioned as one of the empire's most powerful institutions.",
+        "The colonial Church had almost no influence over colonial society.",
+        "The Church was banned from operating in the colonies."
       ],
-      "correct": 0,
-      "teaches": [
-        "iglesia"
-      ]
-    },
-    {
-      "id": "b1-sociedadcolonial-03.ex10",
-      "type": "listening-choice",
-      "category": "listening",
-      "sentence": "La Iglesia se expandió creando parroquias y organizando actividades comunitarias.",
-      "options": [
-        "The Church expanded by creating parishes and organising community activities.",
-        "The opposite happened.",
-        "The statement is unrelated."
-      ],
-      "correct": 0,
-      "teaches": [
-        "iglesia"
-      ]
-    },
-    {
-      "id": "b1-sociedadcolonial-03.ex11",
-      "type": "listening-choice",
-      "category": "listening",
-      "sentence": "Algunas comunidades adoptaron nuevas prácticas manteniendo elementos de sus tradiciones anteriores.",
-      "options": [
-        "Some communities adopted new practices while maintaining elements of their earlier traditions.",
-        "The opposite happened.",
-        "The statement is unrelated."
-      ],
-      "correct": 0,
-      "teaches": [
-        "iglesia"
-      ]
-    },
-    {
-      "id": "b1-sociedadcolonial-03.ex12",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿La sociedad colonial era igual para todas las personas?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "No, porque la posición social, el origen y las instituciones influían en las oportunidades.",
-        "Sí, porque todas las personas tenían la misma posición.",
-        "No, porque no existían instituciones."
-      ],
-      "correct": 0,
-      "teaches": [
-        "iglesia"
-      ]
-    },
-    {
-      "id": "b1-sociedadcolonial-03.ex13",
-      "type": "multiple-choice",
-      "category": "dialogue",
-      "question": "¿Qué afirmación evita una simplificación histórica?",
-      "options": [
-        "Las estructuras coloniales eran jerárquicas, aunque las experiencias variaban según la persona y la región.",
-        "Todas las personas vivían exactamente de la misma manera.",
-        "La sociedad colonial no cambió nunca."
-      ],
-      "correct": 0,
-      "teaches": [
-        "iglesia"
-      ]
-    },
-    {
-      "id": "b1-sociedadcolonial-03.ex14",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Cómo se relacionaban las instituciones con la vida cotidiana?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Las instituciones organizaban la sociedad y afectaban las oportunidades de las personas.",
-        "No tenían ninguna relación.",
-        "Solo afectaban a los comerciantes."
-      ],
-      "correct": 0,
-      "teaches": [
-        "iglesia"
-      ]
-    },
-    {
-      "id": "b1-sociedadcolonial-03.ex15",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Describe one aspect of the lesson using the Focus structure.",
-          "answer": "Los misioneros trabajaban enseñando la doctrina mientras aprendían lenguas locales."
-        },
-        {
-          "prompt": "Add a second clause explaining a consequence, contrast or reason.",
-          "answer": "La evangelización avanzaba adaptando ciertos métodos a las condiciones de cada región."
-        }
-      ],
-      "teaches": [
-        "iglesia"
-      ]
-    },
-    {
-      "id": "b1-sociedadcolonial-03.ex16",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Write a short historical explanation using at least two clauses.",
-          "answer": "La Iglesia se expandió creando parroquias y organizando actividades comunitarias."
-        }
-      ],
-      "teaches": [
-        "iglesia"
-      ]
+      "correct": 0
     }
   ]
 }

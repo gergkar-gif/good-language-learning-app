@@ -6,292 +6,102 @@
       "type": "matching",
       "category": "vocabulary",
       "pairs": [
-        [
-          "virreinato",
-          "viceroyalty"
-        ],
-        [
-          "virrey",
-          "viceroy"
-        ],
-        [
-          "audiencia",
-          "high court / audiencia"
-        ],
-        [
-          "corregidor",
-          "colonial magistrate"
-        ]
-      ],
-      "teaches": [
-        "administracion"
+        ["el virreinato", "viceroyalty"],
+        ["el virrey", "viceroy"],
+        ["vasto", "vast"],
+        ["la audiencia", "high court (colonial)"]
+      ]
+    },
+    {
+      "id": "b1-sociedadcolonial-01.ex01b",
+      "type": "matching",
+      "category": "vocabulary",
+      "pairs": [
+        ["la sede", "headquarters, seat"],
+        ["la mercancía", "merchandise, goods"],
+        ["perjudicial", "harmful"],
+        ["el margen", "margin, leeway"]
       ]
     },
     {
       "id": "b1-sociedadcolonial-01.ex02",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Cuál oración muestra voz pasiva?",
+      "category": "reading",
+      "question": "¿Cuáles fueron los primeros dos virreinatos, y cuándo se crearon?",
       "options": [
-        "Los territorios americanos fueron organizados en distintas jurisdicciones.",
-        "La sociedad cambia.",
-        "Las personas trabajaban."
+        "Nueva España (1535, capital en la Ciudad de México) y Perú (1542, capital en Lima).",
+        "Nueva Granada y Río de la Plata, ambos creados en el siglo dieciséis.",
+        "Un único virreinato que gobernaba toda América desde Madrid."
       ],
-      "correct": 0,
-      "teaches": [
-        "administracion"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-sociedadcolonial-01.ex03",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Qué función cumple esta estructura en el texto?",
+      "category": "reading",
+      "question": "¿Por qué se crearon los virreinatos de Nueva Granada y Río de la Plata casi dos siglos y medio después?",
       "options": [
-        "Presenta el proceso histórico con el foco adecuado.",
-        "Sirve únicamente para hablar del futuro.",
-        "Elimina la relación entre las ideas."
+        "Porque, a raíz de las reformas borbónicas, los dos virreinatos originales ya no bastaban para administrar un territorio tan vasto.",
+        "Porque los dos primeros virreinatos habían desaparecido por completo.",
+        "Porque el rey decidió reducir el número total de virreinatos."
       ],
-      "correct": 0,
-      "teaches": [
-        "administracion"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-sociedadcolonial-01.ex04",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Las instituciones coloniales _____ por la Corona. (organizar)",
-      "answer": "fueron organizadas",
-      "teaches": [
-        "administracion"
-      ]
+      "sentence": "El virreinato de Nueva España ___ creado en 1535. (ser)",
+      "answer": "fue",
+      "teaches": ["voz-pasiva-administracion-colonial"]
     },
     {
       "id": "b1-sociedadcolonial-01.ex05",
-      "type": "sentence-builder",
-      "category": "grammar",
-      "tiles": [
-        "Los",
-        "territorios",
-        "americanos",
-        "fueron",
-        "organizados",
-        "en",
-        "distintas",
-        "jurisdicciones."
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Qué controlaba la Casa de Contratación, y dónde tenía su sede?",
+      "options": [
+        "Controlaba todo el comercio con las colonias, autorizando barcos y mercancías, y tenía su sede en Sevilla.",
+        "Controlaba únicamente la educación religiosa en las colonias.",
+        "Era una institución sin ninguna autoridad real sobre el comercio."
       ],
-      "solution": [
-        "Los",
-        "territorios",
-        "americanos",
-        "fueron",
-        "organizados",
-        "en",
-        "distintas",
-        "jurisdicciones."
-      ],
-      "english": "The American territories were organised into different jurisdictions.",
-      "teaches": [
-        "administracion"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-sociedadcolonial-01.ex06",
-      "type": "sentence-order",
+      "type": "sentence-builder",
       "category": "grammar",
-      "sentences": [
-        "Los territorios americanos fueron organizados en distintas jurisdicciones.",
-        "El virreinato fue administrado por un virrey que representaba a la Corona.",
-        "Las decisiones importantes fueron comunicadas a las autoridades locales."
-      ],
-      "solution": [
-        0,
-        1,
-        2
-      ],
-      "teaches": [
-        "administracion"
-      ]
+      "tiles": ["Todo", "el", "comercio", "con", "las", "colonias", "estaba", "controlado", "por", "una", "sola", "institución."],
+      "solution": ["Todo", "el", "comercio", "con", "las", "colonias", "estaba", "controlado", "por", "una", "sola", "institución."],
+      "english": "All trade with the colonies was controlled by a single institution.",
+      "teaches": ["voz-pasiva-administracion-colonial"]
     },
     {
       "id": "b1-sociedadcolonial-01.ex07",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "¿Cuál palabra pertenece al tema de esta lección?",
-      "options": [
-        "virreinato",
-        "avión",
-        "semáforo"
+      "type": "dialogue-complete",
+      "category": "reading",
+      "prompt": [
+        { "speaker": "Marta", "text": "¿Qué era el mecanismo 'se obedece pero no se cumple'?" },
+        { "speaker": "Pablo", "text": "_____" }
       ],
-      "correct": 0,
-      "teaches": [
-        "administracion"
-      ]
+      "options": [
+        "Un funcionario colonial podía reconocer la autoridad de una orden real y, a la vez, negarse a aplicarla si la consideraba perjudicial en la práctica.",
+        "Una ley que obligaba a cumplir cualquier orden real sin excepción.",
+        "Un castigo aplicado a los funcionarios que desobedecían al rey."
+      ],
+      "correct": 0
     },
     {
       "id": "b1-sociedadcolonial-01.ex08",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Qué caracteriza el imperio español?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Los territorios americanos fueron organizados en distintas jurisdicciones.",
-        "No tuvo ninguna relación con la sociedad.",
-        "No hubo cambios."
-      ],
-      "correct": 0,
-      "teaches": [
-        "administracion"
-      ]
-    },
-    {
-      "id": "b1-sociedadcolonial-01.ex09",
       "type": "listening-choice",
       "category": "listening",
-      "sentence": "Los territorios americanos fueron organizados en distintas jurisdicciones.",
+      "sentence": "Una carta tardaba meses en cruzar el Atlántico entre España y las colonias.",
       "options": [
-        "The American territories were organised into different jurisdictions.",
-        "The opposite happened.",
-        "The statement is unrelated."
+        "A letter took months to cross the Atlantic between Spain and the colonies.",
+        "Letters were delivered within a single day.",
+        "There was no communication at all between Spain and the colonies."
       ],
-      "correct": 0,
-      "teaches": [
-        "administracion"
-      ]
-    },
-    {
-      "id": "b1-sociedadcolonial-01.ex10",
-      "type": "listening-choice",
-      "category": "listening",
-      "sentence": "El virreinato fue administrado por un virrey que representaba a la Corona.",
-      "options": [
-        "The viceroyalty was administered by a viceroy who represented the Crown.",
-        "The opposite happened.",
-        "The statement is unrelated."
-      ],
-      "correct": 0,
-      "teaches": [
-        "administracion"
-      ]
-    },
-    {
-      "id": "b1-sociedadcolonial-01.ex11",
-      "type": "listening-choice",
-      "category": "listening",
-      "sentence": "Las decisiones importantes fueron comunicadas a las autoridades locales.",
-      "options": [
-        "Important decisions were communicated to local authorities.",
-        "The opposite happened.",
-        "The statement is unrelated."
-      ],
-      "correct": 0,
-      "teaches": [
-        "administracion"
-      ]
-    },
-    {
-      "id": "b1-sociedadcolonial-01.ex12",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿La sociedad colonial era igual para todas las personas?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "No, porque la posición social, el origen y las instituciones influían en las oportunidades.",
-        "Sí, porque todas las personas tenían la misma posición.",
-        "No, porque no existían instituciones."
-      ],
-      "correct": 0,
-      "teaches": [
-        "administracion"
-      ]
-    },
-    {
-      "id": "b1-sociedadcolonial-01.ex13",
-      "type": "multiple-choice",
-      "category": "dialogue",
-      "question": "¿Qué afirmación evita una simplificación histórica?",
-      "options": [
-        "Las estructuras coloniales eran jerárquicas, aunque las experiencias variaban según la persona y la región.",
-        "Todas las personas vivían exactamente de la misma manera.",
-        "La sociedad colonial no cambió nunca."
-      ],
-      "correct": 0,
-      "teaches": [
-        "administracion"
-      ]
-    },
-    {
-      "id": "b1-sociedadcolonial-01.ex14",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Cómo se relacionaban las instituciones con la vida cotidiana?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Las instituciones organizaban la sociedad y afectaban las oportunidades de las personas.",
-        "No tenían ninguna relación.",
-        "Solo afectaban a los comerciantes."
-      ],
-      "correct": 0,
-      "teaches": [
-        "administracion"
-      ]
-    },
-    {
-      "id": "b1-sociedadcolonial-01.ex15",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Describe one aspect of the lesson using the Focus structure.",
-          "answer": "Los territorios americanos fueron organizados en distintas jurisdicciones."
-        },
-        {
-          "prompt": "Add a second clause explaining a consequence, contrast or reason.",
-          "answer": "La administración colonial fue compleja porque combinaba instituciones reales y autoridades locales."
-        }
-      ],
-      "teaches": [
-        "administracion"
-      ]
-    },
-    {
-      "id": "b1-sociedadcolonial-01.ex16",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Write a short historical explanation using at least two clauses.",
-          "answer": "El virreinato fue administrado por un virrey que representaba a la Corona."
-        }
-      ],
-      "teaches": [
-        "administracion"
-      ]
+      "correct": 0
     }
   ]
 }
