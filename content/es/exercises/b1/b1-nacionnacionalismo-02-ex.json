@@ -6,280 +6,102 @@
       "type": "matching",
       "category": "vocabulary",
       "pairs": [
-        [
-          "bandera",
-          "flag"
-        ],
-        [
-          "himno",
-          "anthem"
-        ],
-        [
-          "símbolo",
-          "symbol"
-        ]
-      ],
-      "teaches": [
-        "nacion-02-vocab"
+        ["el escudo", "coat of arms, shield"],
+        ["espontáneo", "spontaneous"],
+        ["milenario", "ancient, thousand-year-old"],
+        ["despejado", "clear (sky)"]
+      ]
+    },
+    {
+      "id": "b1-nacionnacionalismo-02.ex01b",
+      "type": "matching",
+      "category": "vocabulary",
+      "pairs": [
+        ["el concurso", "competition, contest"],
+        ["la esencia", "essence"],
+        ["contingente", "contingent, dependent on chance"],
+        ["sagrado", "sacred"]
       ]
     },
     {
       "id": "b1-nacionnacionalismo-02.ex02",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Qué oración presenta mejor la idea central de la lección?",
+      "category": "reading",
+      "question": "¿Surgieron los símbolos nacionales de una tradición milenaria y espontánea?",
       "options": [
-        "Se adoptaron banderas e himnos para representar la nueva nación.",
-        "Todos los países construyeron la nación de la misma manera.",
-        "La identidad nacional no tuvo relación con las instituciones."
+        "No, fueron creados, muchas veces, de manera bastante improvisada, en circunstancias concretas y a menudo urgentes.",
+        "Sí, todos los símbolos nacionales existían desde hacía miles de años.",
+        "No se sabe cómo surgieron los símbolos nacionales latinoamericanos."
       ],
-      "correct": 0,
-      "teaches": [
-        "nacion-02-interpretacion"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-nacionnacionalismo-02.ex03",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "_____ adoptaron banderas e himnos para representar la nueva nación. (se)",
-      "answer": "se",
-      "teaches": [
-        "nacion-02-estructura"
-      ]
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Quién diseñó la bandera argentina, y qué dice el relato tradicional sobre sus colores?",
+      "options": [
+        "El general Manuel Belgrano, en 1812; según el relato tradicional, el celeste y blanco se inspiraron en el cielo despejado de esa mañana.",
+        "Fue diseñada por un comité oficial varias décadas después de la independencia.",
+        "Nadie sabe quién diseñó la bandera argentina."
+      ],
+      "correct": 0
     },
     {
       "id": "b1-nacionnacionalismo-02.ex04",
-      "type": "sentence-builder",
+      "type": "fill-blank",
       "category": "grammar",
-      "tiles": [
-        "Se",
-        "adoptaron",
-        "banderas",
-        "e",
-        "himnos",
-        "para",
-        "representar",
-        "la",
-        "nueva",
-        "nación."
-      ],
-      "solution": [
-        "Se",
-        "adoptaron",
-        "banderas",
-        "e",
-        "himnos",
-        "para",
-        "representar",
-        "la",
-        "nueva",
-        "nación."
-      ],
-      "english": "Flags and anthems were adopted to represent the new nation.",
-      "teaches": [
-        "nacion-02-estructura"
-      ]
+      "sentence": "___ organizó un concurso público para elegir la letra y la música del himno mexicano. (organizar)",
+      "answer": "Se",
+      "teaches": ["voz-pasiva-se-impersonal-simbolos-nacionales"]
     },
     {
       "id": "b1-nacionnacionalismo-02.ex05",
-      "type": "sentence-order",
-      "category": "grammar",
-      "sentences": [
-        "Los nuevos Estados necesitaban instituciones.",
-        "También necesitaban construir una identidad.",
-        "La nación se convirtió en una idea política."
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Cuándo se escribió el himno nacional mexicano, y quiénes lo compusieron?",
+      "options": [
+        "En 1854, más de tres décadas después de la independencia; los versos son de Francisco González Bocanegra y la música de Jaime Nunó.",
+        "Se escribió el mismo día de la independencia, en 1821.",
+        "Nunca se organizó ningún concurso ni se compuso ningún himno oficial en México."
       ],
-      "solution": [
-        0,
-        1,
-        2
-      ],
-      "teaches": [
-        "nacion-02-secuencia"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-nacionnacionalismo-02.ex06",
-      "type": "multiple-choice",
+      "type": "sentence-builder",
       "category": "grammar",
-      "question": "¿Cuál es una interpretación más prudente?",
-      "options": [
-        "Las ceremonias públicas ayudaban a convertir los símbolos en parte de la vida cotidiana.",
-        "Todos los grupos compartían automáticamente la misma identidad.",
-        "Las fronteras eliminaron todas las diferencias regionales."
-      ],
-      "correct": 0,
-      "teaches": [
-        "nacion-02-interpretacion"
-      ]
+      "tiles": ["La", "bandera", "argentina", "fue", "diseñada", "por", "el", "general", "Manuel", "Belgrano", "en", "1812."],
+      "solution": ["La", "bandera", "argentina", "fue", "diseñada", "por", "el", "general", "Manuel", "Belgrano", "en", "1812."],
+      "english": "The Argentine flag was designed by General Manuel Belgrano in 1812.",
+      "teaches": ["voz-pasiva-se-impersonal-simbolos-nacionales"]
     },
     {
       "id": "b1-nacionnacionalismo-02.ex07",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "El _____ es un elemento importante de este tema. (bandera)",
-      "answer": "bandera",
-      "teaches": [
-        "nacion-02-vocab"
-      ]
+      "type": "dialogue-complete",
+      "category": "reading",
+      "prompt": [
+        { "speaker": "Marta", "text": "¿Cómo lograron estos símbolos, inventados de forma bastante improvisada, sentirse después tan naturales y permanentes?" },
+        { "speaker": "Pablo", "text": "_____" }
+      ],
+      "options": [
+        "Fueron enseñados sistemáticamente en las escuelas y se cantaron en actos públicos hasta convertirse en objetos de un respeto casi sagrado.",
+        "No llegaron a sentirse naturales nunca; siempre se percibieron como artificiales.",
+        "Se prohibió enseñarlos en las escuelas para evitar cualquier tipo de manipulación."
+      ],
+      "correct": 0
     },
     {
       "id": "b1-nacionnacionalismo-02.ex08",
-      "type": "sentence-order",
-      "category": "grammar",
-      "sentences": [
-        "Los símbolos nacionales eran presentados como elementos que unían a la población.",
-        "Con el tiempo, el himno llegó a ser asociado con la identidad nacional.",
-        "Las ceremonias públicas ayudaban a convertir los símbolos en parte de la vida cotidiana."
-      ],
-      "solution": [
-        0,
-        1,
-        2
-      ],
-      "teaches": [
-        "nacion-02-conectores"
-      ]
-    },
-    {
-      "id": "b1-nacionnacionalismo-02.ex09",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "¿Qué palabra pertenece directamente al tema?",
-      "options": [
-        "bandera",
-        "receta",
-        "aeropuerto"
-      ],
-      "correct": 0,
-      "teaches": [
-        "nacion-02-vocab"
-      ]
-    },
-    {
-      "id": "b1-nacionnacionalismo-02.ex10",
       "type": "listening-choice",
       "category": "listening",
-      "sentence": "Con el tiempo, el himno llegó a ser asociado con la identidad nacional.",
+      "sentence": "Jaime Nunó, compositor del himno mexicano, ni siquiera era mexicano de nacimiento.",
       "options": [
-        "Over time, the anthem came to be associated with national identity.",
-        "The statement says that no identity existed.",
-        "The statement describes a completely different period."
+        "Jaime Nunó, the composer of the Mexican anthem, wasn't even Mexican by birth.",
+        "Jaime Nunó was born and raised in Mexico City.",
+        "The Mexican anthem was composed by a committee, not one individual."
       ],
-      "correct": 0,
-      "teaches": [
-        "nacion-02-listening"
-      ]
-    },
-    {
-      "id": "b1-nacionnacionalismo-02.ex11",
-      "type": "dictation",
-      "category": "listening",
-      "sentence": "Las ceremonias públicas ayudaban a convertir los símbolos en parte de la vida cotidiana.",
-      "teaches": [
-        "nacion-02-listening"
-      ]
-    },
-    {
-      "id": "b1-nacionnacionalismo-02.ex12",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Cuál es una idea importante sobre este tema?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Se adoptaron banderas e himnos para representar la nueva nación.",
-        "Todos los casos fueron idénticos.",
-        "No hubo diferencias sociales."
-      ],
-      "correct": 0,
-      "teaches": [
-        "nacion-02-dialogo"
-      ]
-    },
-    {
-      "id": "b1-nacionnacionalismo-02.ex13",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Por qué fue un proceso complejo?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Los símbolos nacionales eran presentados como elementos que unían a la población.",
-        "Porque todas las identidades eran iguales.",
-        "Porque las instituciones no importaban."
-      ],
-      "correct": 0,
-      "teaches": [
-        "nacion-02-dialogo"
-      ]
-    },
-    {
-      "id": "b1-nacionnacionalismo-02.ex14",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Cómo podemos interpretarlo con cuidado?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Las ceremonias públicas ayudaban a convertir los símbolos en parte de la vida cotidiana.",
-        "Aplicando la misma explicación a todos los grupos.",
-        "Ignorando las diferencias regionales."
-      ],
-      "correct": 0,
-      "teaches": [
-        "nacion-02-dialogo"
-      ]
-    },
-    {
-      "id": "b1-nacionnacionalismo-02.ex15",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Explica una característica del proceso usando dos cláusulas relacionadas.",
-          "answer": "Se adoptaron banderas e himnos para representar la nueva nación."
-        }
-      ],
-      "teaches": [
-        "nacion-02-escritura"
-      ]
-    },
-    {
-      "id": "b1-nacionnacionalismo-02.ex16",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Explica una consecuencia o interpretación usando un conector.",
-          "answer": "Las ceremonias públicas ayudaban a convertir los símbolos en parte de la vida cotidiana."
-        }
-      ],
-      "teaches": [
-        "nacion-02-escritura"
-      ]
+      "correct": 0
     }
   ]
 }

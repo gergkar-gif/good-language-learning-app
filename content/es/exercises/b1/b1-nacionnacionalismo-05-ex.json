@@ -6,315 +6,102 @@
       "type": "matching",
       "category": "vocabulary",
       "pairs": [
-        [
-          "imaginar",
-          "to imagine"
-        ],
-        [
-          "relato",
-          "narrative"
-        ],
-        [
-          "legitimidad",
-          "legitimacy"
-        ]
-      ],
-      "teaches": [
-        "nacion-05-vocab"
+        ["recorrer", "to go through, cover"],
+        ["legítimo", "legitimate"],
+        ["eterno", "eternal"],
+        ["la mentira", "lie"]
+      ]
+    },
+    {
+      "id": "b1-nacionnacionalismo-05.ex01b",
+      "type": "matching",
+      "category": "vocabulary",
+      "pairs": [
+        ["manipulador", "manipulative"],
+        ["previsto", "foreseen, expected"],
+        ["el telón de fondo", "backdrop"],
+        ["ambicioso", "ambitious"]
       ]
     },
     {
       "id": "b1-nacionnacionalismo-05.ex02",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Qué oración presenta mejor la idea central de la lección?",
+      "category": "reading",
+      "question": "¿Significa que una nación sea una 'comunidad imaginada' que sea menos legítima o menos real?",
       "options": [
-        "Los relatos nacionales podían aumentar la legitimidad de las nuevas instituciones.",
-        "Todos los países construyeron la nación de la misma manera.",
-        "La identidad nacional no tuvo relación con las instituciones."
+        "No, ese hecho no la hace menos real para quienes la viven, la sienten y están dispuestos a defenderla.",
+        "Sí, ser una comunidad imaginada significa que la nación no existe realmente.",
+        "Sí, solo las naciones no imaginadas pueden considerarse legítimas."
       ],
-      "correct": 0,
-      "teaches": [
-        "nacion-05-interpretacion"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-nacionnacionalismo-05.ex03",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "El nacionalismo debe _____ como una construcción histórica. (entender)",
-      "answer": "entender",
-      "teaches": [
-        "nacion-05-estructura"
-      ]
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Cómo propone el texto que se estudie el nacionalismo?",
+      "options": [
+        "Ni como una verdad eterna ni como una simple mentira, sino como un proceso histórico concreto con ganadores, perdedores y consecuencias no siempre previstas.",
+        "Únicamente como una verdad eterna que siempre estuvo ahí.",
+        "Únicamente como una mentira inventada cínicamente por las élites."
+      ],
+      "correct": 0
     },
     {
       "id": "b1-nacionnacionalismo-05.ex04",
-      "type": "sentence-builder",
+      "type": "fill-blank",
       "category": "grammar",
-      "tiles": [
-        "Los",
-        "relatos",
-        "nacionales",
-        "podían",
-        "aumentar",
-        "la",
-        "legitimidad",
-        "de",
-        "las",
-        "nuevas",
-        "instituciones."
-      ],
-      "solution": [
-        "Los",
-        "relatos",
-        "nacionales",
-        "podían",
-        "aumentar",
-        "la",
-        "legitimidad",
-        "de",
-        "las",
-        "nuevas",
-        "instituciones."
-      ],
-      "english": "National narratives could increase the legitimacy of new institutions.",
-      "teaches": [
-        "nacion-05-estructura"
-      ]
+      "sentence": "El nacionalismo debe estudiarse ___ como una verdad eterna ni como una mentira, sino como un proceso histórico. (ni)",
+      "answer": "ni",
+      "teaches": ["argumento-integrado-valoracion-historica"]
     },
     {
       "id": "b1-nacionnacionalismo-05.ex05",
-      "type": "sentence-order",
-      "category": "grammar",
-      "sentences": [
-        "Los nuevos Estados necesitaban instituciones.",
-        "También necesitaban construir una identidad.",
-        "La nación se convirtió en una idea política."
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Qué piezas concretas del proceso de construcción nacional se recorrieron a lo largo de esta unidad?",
+      "options": [
+        "Una bandera improvisada, un himno elegido por concurso, un pasado indígena glorificado mientras su presente era ignorado, y fronteras que dividieron comunidades.",
+        "Ninguna pieza concreta; la unidad se limitó a definiciones abstractas.",
+        "Únicamente cuestiones militares, sin ninguna relación con símbolos o identidad."
       ],
-      "solution": [
-        0,
-        1,
-        2
-      ],
-      "teaches": [
-        "nacion-05-secuencia"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-nacionnacionalismo-05.ex06",
-      "type": "multiple-choice",
+      "type": "sentence-builder",
       "category": "grammar",
-      "question": "¿Cuál es una interpretación más prudente?",
-      "options": [
-        "Por eso, el nacionalismo debe entenderse como una construcción histórica relacionada con el poder.",
-        "Todos los grupos compartían automáticamente la misma identidad.",
-        "Las fronteras eliminaron todas las diferencias regionales."
-      ],
-      "correct": 0,
-      "teaches": [
-        "nacion-05-interpretacion"
-      ]
+      "tiles": ["Comprendido", "así,", "el", "nacionalismo", "deja", "de", "ser", "un", "simple", "telón", "de", "fondo."],
+      "solution": ["Comprendido", "así,", "el", "nacionalismo", "deja", "de", "ser", "un", "simple", "telón", "de", "fondo."],
+      "english": "Understood this way, nationalism stops being a mere backdrop.",
+      "teaches": ["argumento-integrado-valoracion-historica"]
     },
     {
       "id": "b1-nacionnacionalismo-05.ex07",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "El _____ es un elemento importante de este tema. (imaginar)",
-      "answer": "imaginar",
-      "teaches": [
-        "nacion-05-vocab"
-      ]
+      "type": "dialogue-complete",
+      "category": "reading",
+      "prompt": [
+        { "speaker": "Marta", "text": "Entonces, ¿en qué se convierte el nacionalismo latinoamericano del siglo diecinueve, comprendido de esta manera?" },
+        { "speaker": "Pablo", "text": "_____" }
+      ],
+      "options": [
+        "Se convierte en uno de los proyectos más ambiciosos, y más inciertos, de todo el periodo.",
+        "Se convierte en un tema completamente irrelevante para entender el siglo diecinueve.",
+        "Se convierte en la única causa de todos los conflictos posteriores de la región."
+      ],
+      "correct": 0
     },
     {
       "id": "b1-nacionnacionalismo-05.ex08",
-      "type": "sentence-order",
-      "category": "grammar",
-      "sentences": [
-        "Era posible imaginar una comunidad nacional aunque existieran profundas diferencias sociales.",
-        "Los símbolos y las ceremonias ayudaban a presentar el Estado como representante de una nación.",
-        "Por eso, el nacionalismo debe entenderse como una construcción histórica relacionada con el poder."
-      ],
-      "solution": [
-        0,
-        1,
-        2
-      ],
-      "teaches": [
-        "nacion-05-conectores"
-      ]
-    },
-    {
-      "id": "b1-nacionnacionalismo-05.ex09",
-      "type": "multiple-choice",
-      "category": "reading",
-      "question": "¿Cuál es la idea principal?",
-      "options": [
-        "Los relatos, símbolos e instituciones ayudaron a construir una idea de nación, pero también podían excluir a ciertos grupos.",
-        "El nacionalismo fue completamente automático.",
-        "La identidad nacional no tuvo relación con el poder."
-      ],
-      "correct": 0
-    },
-    {
-      "id": "b1-nacionnacionalismo-05.ex10",
-      "type": "multiple-choice",
-      "category": "reading",
-      "question": "¿Qué podían conseguir los relatos nacionales?",
-      "options": [
-        "Podían aumentar la legitimidad de las nuevas instituciones.",
-        "El nacionalismo fue completamente automático.",
-        "La identidad nacional no tuvo relación con el poder."
-      ],
-      "correct": 0
-    },
-    {
-      "id": "b1-nacionnacionalismo-05.ex11",
-      "type": "multiple-choice",
-      "category": "reading",
-      "question": "¿Por qué la construcción nacional podía ser excluyente?",
-      "options": [
-        "Porque la imagen oficial de la nación no siempre incluía a todos los grupos.",
-        "El nacionalismo fue completamente automático.",
-        "La identidad nacional no tuvo relación con el poder."
-      ],
-      "correct": 0
-    },
-    {
-      "id": "b1-nacionnacionalismo-05.ex12",
-      "type": "multiple-choice",
-      "category": "reading",
-      "question": "¿Cómo debe estudiarse el nacionalismo?",
-      "options": [
-        "Como una construcción histórica relacionada con identidad, territorio, instituciones y poder.",
-        "El nacionalismo fue completamente automático.",
-        "La identidad nacional no tuvo relación con el poder."
-      ],
-      "correct": 0
-    },
-    {
-      "id": "b1-nacionnacionalismo-05.ex13",
       "type": "listening-choice",
       "category": "listening",
-      "sentence": "Los símbolos y las ceremonias ayudaban a presentar el Estado como representante de una nación.",
+      "sentence": "Las élites políticas presentaron al Estado como representante natural de un pueblo que, en realidad, tenían que terminar de construir.",
       "options": [
-        "Symbols and ceremonies helped present the state as the representative of a nation.",
-        "Nothing changed.",
-        "The statement concerns a different subject."
+        "Political elites presented the state as the natural representative of a people they actually still had to finish building.",
+        "The state and the nation were always identical from the very beginning.",
+        "Political elites had no role in shaping national identity."
       ],
-      "correct": 0,
-      "teaches": [
-        "nacion-05-listening"
-      ]
-    },
-    {
-      "id": "b1-nacionnacionalismo-05.ex14",
-      "type": "dictation",
-      "category": "listening",
-      "sentence": "Por eso, el nacionalismo debe entenderse como una construcción histórica relacionada con el poder.",
-      "teaches": [
-        "nacion-05-listening"
-      ]
-    },
-    {
-      "id": "b1-nacionnacionalismo-05.ex15",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿La nación era simplemente un territorio?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "No, también implicaba identidad, instituciones y una población.",
-        "Sí, la nación era solamente una frontera.",
-        "Sí, la identidad no tenía importancia."
-      ],
-      "correct": 0,
-      "teaches": [
-        "nacion-05-dialogo"
-      ]
-    },
-    {
-      "id": "b1-nacionnacionalismo-05.ex16",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Podía el nacionalismo excluir a algunos grupos?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Sí, porque la imagen oficial de la nación no siempre incluía a todos.",
-        "No, todos estaban representados de la misma manera.",
-        "No, porque los símbolos no tenían importancia."
-      ],
-      "correct": 0,
-      "teaches": [
-        "nacion-05-dialogo"
-      ]
-    },
-    {
-      "id": "b1-nacionnacionalismo-05.ex17",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Cuál es una buena síntesis?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Por eso, el nacionalismo debe entenderse como una construcción histórica relacionada con el poder.",
-        "El nacionalismo fue solamente una cuestión militar.",
-        "La nación no tuvo relación con las instituciones."
-      ],
-      "correct": 0,
-      "teaches": [
-        "nacion-05-dialogo"
-      ]
-    },
-    {
-      "id": "b1-nacionnacionalismo-05.ex18",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Explica por qué la nación puede entenderse como una construcción histórica.",
-          "answer": "Por eso, el nacionalismo debe entenderse como una construcción histórica relacionada con el poder."
-        }
-      ],
-      "teaches": [
-        "nacion-05-escritura"
-      ]
-    },
-    {
-      "id": "b1-nacionnacionalismo-05.ex19",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Escribe una conclusión sobre nación y poder usando un conector.",
-          "answer": "Por eso, el nacionalismo debe entenderse como una construcción histórica relacionada con el poder."
-        }
-      ],
-      "teaches": [
-        "nacion-05-escritura"
-      ]
+      "correct": 0
     }
   ]
 }
