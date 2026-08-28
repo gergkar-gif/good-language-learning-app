@@ -6,299 +6,102 @@
       "type": "matching",
       "category": "vocabulary",
       "pairs": [
-        [
-          "comercio",
-          "trade"
-        ],
-        [
-          "puerto",
-          "port"
-        ],
-        [
-          "mercancía",
-          "merchandise / goods"
-        ]
-      ],
-      "teaches": [
-        "comercio"
+        ["la flota", "fleet"],
+        ["el pirata", "pirate"],
+        ["el contrabando", "contraband, smuggling"],
+        ["la complicidad", "complicity"]
+      ]
+    },
+    {
+      "id": "b1-economiacolonial-04.ex01b",
+      "type": "matching",
+      "category": "vocabulary",
+      "pairs": [
+        ["rivalizar", "to rival, compete with"],
+        ["navegar", "to sail, navigate"],
+        ["la seda", "silk"],
+        ["la porcelana", "porcelain"]
       ]
     },
     {
       "id": "b1-economiacolonial-04.ex02",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Cuál oración ejemplifica conectores formales?",
+      "category": "reading",
+      "question": "¿Cómo funcionaba el sistema de flotas, y para qué servía?",
       "options": [
-        "A lo largo del periodo colonial, los puertos crecieron porque concentraban mercancías procedentes de distintas regiones.",
-        "La economía colonial cambió.",
-        "Las personas trabajaban."
+        "Convoyes de barcos cruzaban el Atlántico juntos, normalmente dos veces al año, para protegerse de piratas y corsarios.",
+        "Cada barco viajaba de forma completamente independiente, sin ninguna coordinación.",
+        "El sistema de flotas se usaba únicamente para el transporte de personas, no de mercancías."
       ],
-      "correct": 0,
-      "teaches": [
-        "comercio"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-economiacolonial-04.ex03",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Qué relación expresa mejor la oración?",
+      "category": "reading",
+      "question": "¿Qué tan grande llegó a ser el contrabando en algunas regiones y periodos?",
       "options": [
-        "Presenta una relación histórica entre una actividad económica y sus condiciones o consecuencias.",
-        "Solo describe una acción futura.",
-        "No establece ninguna relación entre ideas."
+        "Según algunos historiadores, pudo haber llegado a rivalizar con el comercio legal, o incluso superarlo.",
+        "El contrabando fue un fenómeno insignificante que nunca afectó al comercio oficial.",
+        "El contrabando fue eliminado completamente por las autoridades desde el principio."
       ],
-      "correct": 0,
-      "teaches": [
-        "comercio"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-economiacolonial-04.ex04",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "_____ largo del periodo colonial, los puertos adquirieron importancia. (a)",
-      "answer": "A lo",
-      "teaches": [
-        "comercio"
-      ]
+      "sentence": "___ dos siglos y medio, el Galeón de Manila navegó anualmente entre Acapulco y Manila. (a lo largo de)",
+      "answer": "A lo largo de",
+      "teaches": ["conectores-formales-comercio-colonial"]
     },
     {
       "id": "b1-economiacolonial-04.ex05",
-      "type": "sentence-builder",
-      "category": "grammar",
-      "tiles": [
-        "A",
-        "lo",
-        "largo",
-        "del",
-        "periodo",
-        "colonial,",
-        "los",
-        "puertos",
-        "crecieron",
-        "porque",
-        "concentraban",
-        "mercancías",
-        "procedentes",
-        "de",
-        "distintas",
-        "regiones."
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Qué conectaba el Galeón de Manila, y qué intercambiaba en cada dirección?",
+      "options": [
+        "Conectaba la economía americana con la asiática: plata mexicana viajaba hacia Asia, y seda y porcelana chinas viajaban hacia América.",
+        "Conectaba únicamente distintos puertos dentro del propio virreinato de Nueva España.",
+        "No transportaba ningún bien, solo pasajeros y correspondencia oficial."
       ],
-      "solution": [
-        "A",
-        "lo",
-        "largo",
-        "del",
-        "periodo",
-        "colonial,",
-        "los",
-        "puertos",
-        "crecieron",
-        "porque",
-        "concentraban",
-        "mercancías",
-        "procedentes",
-        "de",
-        "distintas",
-        "regiones."
-      ],
-      "english": "Throughout the colonial period, ports grew because they concentrated goods from different regions.",
-      "teaches": [
-        "comercio"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-economiacolonial-04.ex06",
-      "type": "sentence-order",
+      "type": "sentence-builder",
       "category": "grammar",
-      "sentences": [
-        "La producción aumentó.",
-        "Las redes comerciales se expandieron.",
-        "Los mercados recibieron más productos."
-      ],
-      "solution": [
-        0,
-        1,
-        2
-      ],
-      "teaches": [
-        "comercio"
-      ]
+      "tiles": ["Como", "consecuencia", "de", "restricciones", "tan", "estrictas,", "se", "desarrolló", "un", "comercio", "ilegal."],
+      "solution": ["Como", "consecuencia", "de", "restricciones", "tan", "estrictas,", "se", "desarrolló", "un", "comercio", "ilegal."],
+      "english": "As a consequence of such strict restrictions, an illegal trade developed.",
+      "teaches": ["conectores-formales-comercio-colonial"]
     },
     {
       "id": "b1-economiacolonial-04.ex07",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "¿Cuál término pertenece directamente al tema de esta lección?",
-      "options": [
-        "comercio",
-        "aeropuerto",
-        "biblioteca"
+      "type": "dialogue-complete",
+      "category": "reading",
+      "prompt": [
+        { "speaker": "Marta", "text": "¿Fue el comercio imperial español el sistema cerrado y ordenado que describían las leyes?" },
+        { "speaker": "Pablo", "text": "_____" }
       ],
-      "correct": 0,
-      "teaches": [
-        "comercio"
-      ]
+      "options": [
+        "No, convivieron flotas oficiales, contrabando extendido y una ruta transpacífica, mucho más complejo que lo que las leyes describían.",
+        "Sí, el sistema funcionó exactamente como establecían las leyes, sin ninguna excepción.",
+        "No existió ningún tipo de comercio organizado durante el periodo colonial."
+      ],
+      "correct": 0
     },
     {
       "id": "b1-economiacolonial-04.ex08",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Qué caracteriza comercio imperial?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "A lo largo del periodo colonial, los puertos crecieron porque concentraban mercancías procedentes de distintas regiones.",
-        "Porque no tuvo ninguna relación con la economía.",
-        "No hubo ningún cambio."
-      ],
-      "correct": 0,
-      "teaches": [
-        "comercio"
-      ]
-    },
-    {
-      "id": "b1-economiacolonial-04.ex09",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "_____ consecuencia de la expansión, las economías locales quedaron conectadas. (como)",
-      "answer": "Como",
-      "teaches": [
-        "comercio"
-      ]
-    },
-    {
-      "id": "b1-economiacolonial-04.ex10",
       "type": "listening-choice",
       "category": "listening",
-      "sentence": "En el marco del comercio imperial, determinadas rutas fueron controladas por las autoridades.",
+      "sentence": "Durante los meses de llegada del galeón, Acapulco se transformaba en un mercado temporal enorme.",
       "options": [
-        "Within imperial trade, certain routes were controlled by the authorities.",
-        "The opposite happened.",
-        "The statement is unrelated."
+        "During the months the galleon arrived, Acapulco transformed into an enormous temporary market.",
+        "Acapulco never had any connection to Asian trade.",
+        "The galleon never actually reached Acapulco."
       ],
-      "correct": 0,
-      "teaches": [
-        "comercio"
-      ]
-    },
-    {
-      "id": "b1-economiacolonial-04.ex11",
-      "type": "listening-choice",
-      "category": "listening",
-      "sentence": "A raíz de estas restricciones, algunos comerciantes buscaron rutas alternativas para vender sus mercancías.",
-      "options": [
-        "As a result of these restrictions, some merchants sought alternative routes to sell their goods.",
-        "The statement is unrelated.",
-        "The opposite happened."
-      ],
-      "correct": 0,
-      "teaches": [
-        "comercio"
-      ]
-    },
-    {
-      "id": "b1-economiacolonial-04.ex12",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿La economía colonial benefició a todas las comunidades por igual?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "No, porque la riqueza se distribuyó de forma desigual y muchas comunidades soportaron costes importantes.",
-        "Sí, porque todos recibieron los mismos beneficios.",
-        "No, porque no existían actividades económicas."
-      ],
-      "correct": 0,
-      "teaches": [
-        "comercio"
-      ]
-    },
-    {
-      "id": "b1-economiacolonial-04.ex13",
-      "type": "multiple-choice",
-      "category": "dialogue",
-      "question": "¿Qué explicación es más precisa?",
-      "options": [
-        "La producción colonial estaba conectada con el trabajo, el transporte y los mercados, por lo que una actividad podía transformar regiones enteras.",
-        "La minería solo afectaba a las personas que trabajaban directamente en una mina.",
-        "El comercio no tenía relación con la producción."
-      ],
-      "correct": 0,
-      "teaches": [
-        "comercio"
-      ]
-    },
-    {
-      "id": "b1-economiacolonial-04.ex14",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Por qué crecieron algunos puertos?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Porque concentraban mercancías y conectaban las zonas de producción con mercados más amplios.",
-        "Porque no tenían ninguna función económica.",
-        "Porque solo recibían productos locales."
-      ],
-      "correct": 0,
-      "teaches": [
-        "comercio"
-      ]
-    },
-    {
-      "id": "b1-economiacolonial-04.ex15",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Explain one economic process from the lesson using two clauses.",
-          "answer": "A lo largo del periodo colonial, los puertos crecieron porque concentraban mercancías procedentes de distintas regiones."
-        },
-        {
-          "prompt": "Add a consequence, contrast or reason.",
-          "answer": "Como consecuencia de la expansión comercial, las economías locales quedaron conectadas con mercados lejanos."
-        }
-      ],
-      "teaches": [
-        "comercio"
-      ]
-    },
-    {
-      "id": "b1-economiacolonial-04.ex16",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Write a short explanation connecting production, labour or trade with a consequence.",
-          "answer": "A raíz de estas restricciones, algunos comerciantes buscaron rutas alternativas para vender sus mercancías."
-        }
-      ],
-      "teaches": [
-        "comercio"
-      ]
+      "correct": 0
     }
   ]
 }

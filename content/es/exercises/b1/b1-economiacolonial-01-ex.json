@@ -6,299 +6,102 @@
       "type": "matching",
       "category": "vocabulary",
       "pairs": [
-        [
-          "mina",
-          "mine"
-        ],
-        [
-          "plata",
-          "silver"
-        ],
-        [
-          "oro",
-          "gold"
-        ],
-        [
-          "extracción",
-          "extraction"
-        ]
-      ],
-      "teaches": [
-        "extraccion"
+        ["el yacimiento", "deposit (mineral)"],
+        ["extraer", "to extract"],
+        ["el mineral", "ore, mineral"],
+        ["tóxico", "toxic"]
+      ]
+    },
+    {
+      "id": "b1-economiacolonial-01.ex01b",
+      "type": "matching",
+      "category": "vocabulary",
+      "pairs": [
+        ["el temblor", "tremor, shaking"],
+        ["el auge", "peak, boom"],
+        ["acuñar", "to mint (coins)"],
+        ["circular", "to circulate"]
       ]
     },
     {
       "id": "b1-economiacolonial-01.ex02",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Cuál oración ejemplifica voz pasiva?",
+      "category": "reading",
+      "question": "¿Qué se descubrió en 1545 en el actual territorio de Bolivia, y por qué fue tan importante?",
       "options": [
-        "Grandes cantidades de plata fueron extraídas de las minas, que abastecían los mercados imperiales.",
-        "La economía colonial cambió.",
-        "Las personas trabajaban."
+        "El yacimiento de plata del Cerro Rico de Potosí, uno de los depósitos de plata más grandes jamás encontrados.",
+        "Un yacimiento de oro que resultó ser mucho más pequeño de lo esperado.",
+        "Una mina que nunca llegó a producir ninguna cantidad significativa de plata."
       ],
-      "correct": 0,
-      "teaches": [
-        "extraccion"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-economiacolonial-01.ex03",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Qué relación expresa mejor la oración?",
+      "category": "reading",
+      "question": "¿Qué causó, según el texto, un descenso demográfico particularmente severo cerca de Potosí?",
       "options": [
-        "Presenta una relación histórica entre una actividad económica y sus condiciones o consecuencias.",
-        "Solo describe una acción futura.",
-        "No establece ninguna relación entre ideas."
+        "El trabajo forzado de la mita, más que la enfermedad por sí sola.",
+        "Únicamente las enfermedades europeas, sin ninguna relación con el trabajo minero.",
+        "Una sequía prolongada que afectó solo a esa región."
       ],
-      "correct": 0,
-      "teaches": [
-        "extraccion"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-economiacolonial-01.ex04",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Grandes cantidades de plata _____ extraídas de las minas. (ser)",
+      "sentence": "Enormes cantidades de plata ___ extraídas de esa montaña y enviadas a España. (ser)",
       "answer": "fueron",
-      "teaches": [
-        "extraccion"
-      ]
+      "teaches": ["voz-pasiva-extraccion-plata-oro"]
     },
     {
       "id": "b1-economiacolonial-01.ex05",
-      "type": "sentence-builder",
-      "category": "grammar",
-      "tiles": [
-        "Grandes",
-        "cantidades",
-        "de",
-        "plata",
-        "fueron",
-        "extraídas",
-        "de",
-        "las",
-        "minas,",
-        "que",
-        "abastecían",
-        "los",
-        "mercados",
-        "imperiales."
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Qué consecuencia tuvo el 'proceso de patio' inventado en 1554 para los trabajadores?",
+      "options": [
+        "Miles fueron envenenados lentamente por el mercurio, sufriendo temblores y daños neurológicos irreversibles.",
+        "El proceso eliminó por completo cualquier riesgo para la salud de los trabajadores.",
+        "El proceso no tuvo ningún efecto en la cantidad de plata producida."
       ],
-      "solution": [
-        "Grandes",
-        "cantidades",
-        "de",
-        "plata",
-        "fueron",
-        "extraídas",
-        "de",
-        "las",
-        "minas,",
-        "que",
-        "abastecían",
-        "los",
-        "mercados",
-        "imperiales."
-      ],
-      "english": "Large quantities of silver were extracted from the mines, which supplied imperial markets.",
-      "teaches": [
-        "extraccion"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-economiacolonial-01.ex06",
-      "type": "sentence-order",
+      "type": "sentence-builder",
       "category": "grammar",
-      "sentences": [
-        "La producción aumentó.",
-        "Las redes comerciales se expandieron.",
-        "Los mercados recibieron más productos."
-      ],
-      "solution": [
-        0,
-        1,
-        2
-      ],
-      "teaches": [
-        "extraccion"
-      ]
+      "tiles": ["Gran", "parte", "de", "esa", "plata", "fue", "acuñada", "en", "monedas,", "los", "llamados", "'reales", "de", "a", "ocho'."],
+      "solution": ["Gran", "parte", "de", "esa", "plata", "fue", "acuñada", "en", "monedas,", "los", "llamados", "'reales", "de", "a", "ocho'."],
+      "english": "Much of that silver was minted into coins, the so-called 'pieces of eight'.",
+      "teaches": ["voz-pasiva-extraccion-plata-oro"]
     },
     {
       "id": "b1-economiacolonial-01.ex07",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "¿Cuál término pertenece directamente al tema de esta lección?",
-      "options": [
-        "mina",
-        "aeropuerto",
-        "biblioteca"
+      "type": "dialogue-complete",
+      "category": "reading",
+      "prompt": [
+        { "speaker": "Marta", "text": "¿Se quedaba toda la plata de Potosí dentro del imperio español?" },
+        { "speaker": "Pablo", "text": "_____" }
       ],
-      "correct": 0,
-      "teaches": [
-        "extraccion"
-      ]
+      "options": [
+        "No, gracias al Galeón de Manila, monedas de plata potosina llegaron a circular incluso en mercados de la China Ming.",
+        "Sí, ninguna moneda de plata salió jamás del imperio español.",
+        "No se sabe qué ocurrió con la plata después de ser extraída."
+      ],
+      "correct": 0
     },
     {
       "id": "b1-economiacolonial-01.ex08",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Qué caracteriza plata y oro?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Grandes cantidades de plata fueron extraídas de las minas, que abastecían los mercados imperiales.",
-        "Porque no tuvo ninguna relación con la economía.",
-        "No hubo ningún cambio."
-      ],
-      "correct": 0,
-      "teaches": [
-        "extraccion"
-      ]
-    },
-    {
-      "id": "b1-economiacolonial-01.ex09",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Las minas _____ abastecidas por trabajadores de distintas regiones. (ser)",
-      "answer": "fueron",
-      "teaches": [
-        "extraccion"
-      ]
-    },
-    {
-      "id": "b1-economiacolonial-01.ex10",
       "type": "listening-choice",
       "category": "listening",
-      "sentence": "El oro fue enviado a otros territorios después de que fuera registrado por las autoridades.",
+      "sentence": "Hacia 1610, la población de Potosí llegó a superar los cien mil habitantes.",
       "options": [
-        "Gold was sent to other territories after it was registered by the authorities.",
-        "The opposite happened.",
-        "The statement is unrelated."
+        "By around 1610, Potosí's population came to exceed one hundred thousand inhabitants.",
+        "Potosí never had more than a few hundred residents.",
+        "Potosí was abandoned completely by 1610."
       ],
-      "correct": 0,
-      "teaches": [
-        "extraccion"
-      ]
-    },
-    {
-      "id": "b1-economiacolonial-01.ex11",
-      "type": "listening-choice",
-      "category": "listening",
-      "sentence": "La extracción transformó regiones enteras porque las minas necesitaban trabajadores, alimentos y transporte.",
-      "options": [
-        "Extraction transformed entire regions because mines needed workers, food and transport.",
-        "The statement is unrelated.",
-        "The opposite happened."
-      ],
-      "correct": 0,
-      "teaches": [
-        "extraccion"
-      ]
-    },
-    {
-      "id": "b1-economiacolonial-01.ex12",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿La economía colonial benefició a todas las comunidades por igual?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "No, porque la riqueza se distribuyó de forma desigual y muchas comunidades soportaron costes importantes.",
-        "Sí, porque todos recibieron los mismos beneficios.",
-        "No, porque no existían actividades económicas."
-      ],
-      "correct": 0,
-      "teaches": [
-        "extraccion"
-      ]
-    },
-    {
-      "id": "b1-economiacolonial-01.ex13",
-      "type": "multiple-choice",
-      "category": "dialogue",
-      "question": "¿Qué explicación es más precisa?",
-      "options": [
-        "La producción colonial estaba conectada con el trabajo, el transporte y los mercados, por lo que una actividad podía transformar regiones enteras.",
-        "La minería solo afectaba a las personas que trabajaban directamente en una mina.",
-        "El comercio no tenía relación con la producción."
-      ],
-      "correct": 0,
-      "teaches": [
-        "extraccion"
-      ]
-    },
-    {
-      "id": "b1-economiacolonial-01.ex14",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Por qué crecieron algunos puertos?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Porque concentraban mercancías y conectaban las zonas de producción con mercados más amplios.",
-        "Porque no tenían ninguna función económica.",
-        "Porque solo recibían productos locales."
-      ],
-      "correct": 0,
-      "teaches": [
-        "extraccion"
-      ]
-    },
-    {
-      "id": "b1-economiacolonial-01.ex15",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Explain one economic process from the lesson using two clauses.",
-          "answer": "Grandes cantidades de plata fueron extraídas de las minas, que abastecían los mercados imperiales."
-        },
-        {
-          "prompt": "Add a consequence, contrast or reason.",
-          "answer": "La riqueza minera fue concentrada en determinadas redes comerciales, aunque sus efectos llegaron a comunidades muy alejadas."
-        }
-      ],
-      "teaches": [
-        "extraccion"
-      ]
-    },
-    {
-      "id": "b1-economiacolonial-01.ex16",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Write a short explanation connecting production, labour or trade with a consequence.",
-          "answer": "La extracción transformó regiones enteras porque las minas necesitaban trabajadores, alimentos y transporte."
-        }
-      ],
-      "teaches": [
-        "extraccion"
-      ]
+      "correct": 0
     }
   ]
 }

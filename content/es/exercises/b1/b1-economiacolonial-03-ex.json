@@ -6,295 +6,102 @@
       "type": "matching",
       "category": "vocabulary",
       "pairs": [
-        [
-          "plantación",
-          "plantation"
-        ],
-        [
-          "azúcar",
-          "sugar"
-        ],
-        [
-          "cultivo",
-          "crop / cultivation"
-        ]
-      ],
-      "teaches": [
-        "plantaciones"
+        ["el monocultivo", "monoculture"],
+        ["el ingenio", "mill (sugar), refinery"],
+        ["el horno", "furnace, oven"],
+        ["el reemplazo", "replacement"]
+      ]
+    },
+    {
+      "id": "b1-economiacolonial-03.ex01b",
+      "type": "matching",
+      "category": "vocabulary",
+      "pairs": [
+        ["acumular", "to amass, accumulate"],
+        ["la fortuna", "fortune"],
+        ["la finca", "farm, estate"],
+        ["la calidad", "quality"]
       ]
     },
     {
       "id": "b1-economiacolonial-03.ex02",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Cuál oración ejemplifica gerundio para acciones paralelas?",
+      "category": "reading",
+      "question": "¿En qué se diferenciaba el modelo de plantación del modelo minero de los Andes?",
       "options": [
-        "Las plantaciones crecieron utilizando grandes extensiones de tierra mientras aumentaba la demanda de azúcar.",
-        "La economía colonial cambió.",
-        "Las personas trabajaban."
+        "La plantación se dedicaba al monocultivo tropical destinado a la exportación, en contraste con la extracción de plata en las alturas andinas.",
+        "Eran exactamente el mismo modelo económico aplicado en distintas regiones.",
+        "Las plantaciones no tenían ninguna relación con la exportación."
       ],
-      "correct": 0,
-      "teaches": [
-        "plantaciones"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-economiacolonial-03.ex03",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Qué relación expresa mejor la oración?",
+      "category": "reading",
+      "question": "¿Por qué se compara un ingenio azucarero con una fábrica temprana?",
       "options": [
-        "Presenta una relación histórica entre una actividad económica y sus condiciones o consecuencias.",
-        "Solo describe una acción futura.",
-        "No establece ninguna relación entre ideas."
+        "Porque combinaba maquinaria pesada, grandes hornos y mano de obra intensiva mucho antes de la revolución industrial.",
+        "Porque no requería ningún tipo de maquinaria ni instalación especial.",
+        "Porque procesaba productos distintos al azúcar exclusivamente."
       ],
-      "correct": 0,
-      "teaches": [
-        "plantaciones"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-economiacolonial-03.ex04",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Las plantaciones crecieron _____ grandes extensiones de tierra. (utilizar)",
-      "answer": "utilizando",
-      "teaches": [
-        "plantaciones"
-      ]
+      "sentence": "El azúcar fue el producto más importante, ___ constantemente la demanda europea. (aumentar)",
+      "answer": "aumentando",
+      "teaches": ["gerundio-expansion-plantaciones"]
     },
     {
       "id": "b1-economiacolonial-03.ex05",
-      "type": "sentence-builder",
-      "category": "grammar",
-      "tiles": [
-        "Las",
-        "plantaciones",
-        "crecieron",
-        "utilizando",
-        "grandes",
-        "extensiones",
-        "de",
-        "tierra",
-        "mientras",
-        "aumentaba",
-        "la",
-        "demanda",
-        "de",
-        "azúcar."
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Qué destino recibió más personas esclavizadas africanas que cualquier otro en América, y por qué?",
+      "options": [
+        "Brasil, debido a la enorme escala de sus plantaciones azucareras y el constante reemplazo de mano de obra que exigían.",
+        "Ningún destino americano recibió jamás personas esclavizadas de África.",
+        "Cuba recibió más que cualquier otro destino combinado."
       ],
-      "solution": [
-        "Las",
-        "plantaciones",
-        "crecieron",
-        "utilizando",
-        "grandes",
-        "extensiones",
-        "de",
-        "tierra",
-        "mientras",
-        "aumentaba",
-        "la",
-        "demanda",
-        "de",
-        "azúcar."
-      ],
-      "english": "Plantations grew by using large areas of land while demand for sugar increased.",
-      "teaches": [
-        "plantaciones"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-economiacolonial-03.ex06",
-      "type": "sentence-order",
+      "type": "sentence-builder",
       "category": "grammar",
-      "sentences": [
-        "La producción aumentó.",
-        "Las redes comerciales se expandieron.",
-        "Los mercados recibieron más productos."
-      ],
-      "solution": [
-        0,
-        1,
-        2
-      ],
-      "teaches": [
-        "plantaciones"
-      ]
+      "tiles": ["Un", "pequeño", "grupo", "de", "familias", "acumuló", "fortunas", "cultivando", "y", "exportando", "cacao."],
+      "solution": ["Un", "pequeño", "grupo", "de", "familias", "acumuló", "fortunas", "cultivando", "y", "exportando", "cacao."],
+      "english": "A small group of families amassed fortunes growing and exporting cacao.",
+      "teaches": ["gerundio-expansion-plantaciones"]
     },
     {
       "id": "b1-economiacolonial-03.ex07",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "¿Cuál término pertenece directamente al tema de esta lección?",
-      "options": [
-        "plantación",
-        "aeropuerto",
-        "biblioteca"
+      "type": "dialogue-complete",
+      "category": "reading",
+      "prompt": [
+        { "speaker": "Marta", "text": "¿Qué relación tenía la familia de Simón Bolívar con la economía de plantación?" },
+        { "speaker": "Pablo", "text": "_____" }
       ],
-      "correct": 0,
-      "teaches": [
-        "plantaciones"
-      ]
+      "options": [
+        "Formaba parte del 'gran cacao', la élite económica venezolana que se enriqueció cultivando y exportando cacao.",
+        "No tenía absolutamente ninguna relación con la economía colonial.",
+        "Trabajaba como mano de obra en las plantaciones de otras familias."
+      ],
+      "correct": 0
     },
     {
       "id": "b1-economiacolonial-03.ex08",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Qué caracteriza plantaciones?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Las plantaciones crecieron utilizando grandes extensiones de tierra mientras aumentaba la demanda de azúcar.",
-        "Porque no tuvo ninguna relación con la economía.",
-        "No hubo ningún cambio."
-      ],
-      "correct": 0,
-      "teaches": [
-        "plantaciones"
-      ]
-    },
-    {
-      "id": "b1-economiacolonial-03.ex09",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Los propietarios ampliaban los cultivos _____ aumentar la producción. (buscar)",
-      "answer": "buscando",
-      "teaches": [
-        "plantaciones"
-      ]
-    },
-    {
-      "id": "b1-economiacolonial-03.ex10",
       "type": "listening-choice",
       "category": "listening",
-      "sentence": "Los propietarios ampliaban los cultivos buscando aumentar la producción para los mercados exteriores.",
+      "sentence": "En Cuba, junto a las grandes plantaciones, sobrevivieron numerosas fincas familiares pequeñas llamadas vegas.",
       "options": [
-        "Owners expanded crops while seeking to increase production for foreign markets.",
-        "The opposite happened.",
-        "The statement is unrelated."
+        "In Cuba, alongside the large plantations, numerous small family farms called vegas survived.",
+        "Cuba had no small farms of any kind during the colonial period.",
+        "Vegas were large industrial sugar plantations."
       ],
-      "correct": 0,
-      "teaches": [
-        "plantaciones"
-      ]
-    },
-    {
-      "id": "b1-economiacolonial-03.ex11",
-      "type": "listening-choice",
-      "category": "listening",
-      "sentence": "Las regiones agrícolas cambiaron rápidamente, desarrollando nuevas rutas mientras las plantaciones se expandían.",
-      "options": [
-        "Agricultural regions changed rapidly, developing new routes while plantations expanded.",
-        "The statement is unrelated.",
-        "The opposite happened."
-      ],
-      "correct": 0,
-      "teaches": [
-        "plantaciones"
-      ]
-    },
-    {
-      "id": "b1-economiacolonial-03.ex12",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿La economía colonial benefició a todas las comunidades por igual?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "No, porque la riqueza se distribuyó de forma desigual y muchas comunidades soportaron costes importantes.",
-        "Sí, porque todos recibieron los mismos beneficios.",
-        "No, porque no existían actividades económicas."
-      ],
-      "correct": 0,
-      "teaches": [
-        "plantaciones"
-      ]
-    },
-    {
-      "id": "b1-economiacolonial-03.ex13",
-      "type": "multiple-choice",
-      "category": "dialogue",
-      "question": "¿Qué explicación es más precisa?",
-      "options": [
-        "La producción colonial estaba conectada con el trabajo, el transporte y los mercados, por lo que una actividad podía transformar regiones enteras.",
-        "La minería solo afectaba a las personas que trabajaban directamente en una mina.",
-        "El comercio no tenía relación con la producción."
-      ],
-      "correct": 0,
-      "teaches": [
-        "plantaciones"
-      ]
-    },
-    {
-      "id": "b1-economiacolonial-03.ex14",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Por qué crecieron algunos puertos?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Porque concentraban mercancías y conectaban las zonas de producción con mercados más amplios.",
-        "Porque no tenían ninguna función económica.",
-        "Porque solo recibían productos locales."
-      ],
-      "correct": 0,
-      "teaches": [
-        "plantaciones"
-      ]
-    },
-    {
-      "id": "b1-economiacolonial-03.ex15",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Explain one economic process from the lesson using two clauses.",
-          "answer": "Las plantaciones crecieron utilizando grandes extensiones de tierra mientras aumentaba la demanda de azúcar."
-        },
-        {
-          "prompt": "Add a consequence, contrast or reason.",
-          "answer": "La producción aumentó creando nuevas relaciones económicas, aunque también intensificó las desigualdades sociales."
-        }
-      ],
-      "teaches": [
-        "plantaciones"
-      ]
-    },
-    {
-      "id": "b1-economiacolonial-03.ex16",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Write a short explanation connecting production, labour or trade with a consequence.",
-          "answer": "Las regiones agrícolas cambiaron rápidamente, desarrollando nuevas rutas mientras las plantaciones se expandían."
-        }
-      ],
-      "teaches": [
-        "plantaciones"
-      ]
+      "correct": 0
     }
   ]
 }
