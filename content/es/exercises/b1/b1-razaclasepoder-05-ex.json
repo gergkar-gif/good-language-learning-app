@@ -6,337 +6,102 @@
       "type": "matching",
       "category": "vocabulary",
       "pairs": [
-        [
-          "legado",
-          "legacy"
-        ],
-        [
-          "persistir",
-          "to persist"
-        ],
-        [
-          "desigualdad",
-          "inequality"
-        ]
-      ],
-      "teaches": [
-        "legados"
+        ["estallar", "to break out, erupt"],
+        ["abolir", "to abolish"],
+        ["derogar", "to repeal (a law)"],
+        ["la correlación", "correlation"]
+      ]
+    },
+    {
+      "id": "b1-razaclasepoder-05.ex01b",
+      "type": "matching",
+      "category": "vocabulary",
+      "pairs": [
+        ["el prejuicio", "prejudice"],
+        ["reproducir", "to reproduce, replicate"],
+        ["disolverse", "to dissolve"],
+        ["la continuidad", "continuity"]
       ]
     },
     {
       "id": "b1-razaclasepoder-05.ex02",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Cuál oración ejemplifica voz pasiva?",
+      "category": "reading",
+      "question": "¿Qué ocurrió con el sistema legal de castas al estallar las guerras de independencia?",
       "options": [
-        "Algunas desigualdades fueron heredadas de la época colonial, aunque las nuevas repúblicas también crearon estructuras diferentes.",
-        "La sociedad era compleja.",
-        "Había muchas personas."
+        "Fue abolido con notable rapidez, y la ciudadanía fue declarada igual para todos los hombres libres, al menos sobre el papel.",
+        "Se mantuvo exactamente igual durante todo el siglo diecinueve.",
+        "Fue reforzado y ampliado por las nuevas repúblicas independientes."
       ],
-      "correct": 0,
-      "teaches": [
-        "legados"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-razaclasepoder-05.ex03",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Qué interpretación corresponde mejor al contenido de la lección?",
+      "category": "reading",
+      "question": "¿Desaparecieron las desigualdades económicas y sociales al mismo tiempo que las categorías legales de castas?",
       "options": [
-        "Las diferencias sociales estaban relacionadas con el origen, el poder, la riqueza o las condiciones locales.",
-        "Todas las personas tenían exactamente las mismas oportunidades.",
-        "Las categorías sociales no tenían ninguna relación con la vida cotidiana."
+        "No, la tierra, el capital y el poder político siguieron controlados, en su mayoría, por las mismas familias criollas de antes de la independencia.",
+        "Sí, la riqueza y el poder se redistribuyeron de forma completamente equitativa de inmediato.",
+        "No se sabe nada sobre lo que ocurrió con la riqueza tras la independencia."
       ],
-      "correct": 0,
-      "teaches": [
-        "legados"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-razaclasepoder-05.ex04",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Algunas desigualdades _____ heredadas de la época colonial. (ser)",
-      "answer": "fueron",
-      "teaches": [
-        "legados"
-      ]
+      "sentence": "El sistema legal de castas ___ abolido con notable rapidez tras la independencia. (ser)",
+      "answer": "fue",
+      "teaches": ["voz-pasiva-herencias-jerarquia-colonial"]
     },
     {
       "id": "b1-razaclasepoder-05.ex05",
-      "type": "sentence-builder",
-      "category": "grammar",
-      "tiles": [
-        "Algunas",
-        "desigualdades",
-        "fueron",
-        "heredadas",
-        "de",
-        "la",
-        "época",
-        "colonial,",
-        "aunque",
-        "las",
-        "nuevas",
-        "repúblicas",
-        "también",
-        "crearon",
-        "estructuras",
-        "diferentes."
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Qué sugiere el texto sobre la relación entre origen racial y riqueza o educación después de la independencia?",
+      "options": [
+        "Que esa correlación pudo seguir midiéndose estadísticamente durante generaciones después de derogadas las leyes de castas.",
+        "Que esa correlación desapareció por completo el mismo día de la independencia.",
+        "Que nunca existió ninguna correlación de ese tipo en ningún periodo."
       ],
-      "solution": [
-        "Algunas",
-        "desigualdades",
-        "fueron",
-        "heredadas",
-        "de",
-        "la",
-        "época",
-        "colonial,",
-        "aunque",
-        "las",
-        "nuevas",
-        "repúblicas",
-        "también",
-        "crearon",
-        "estructuras",
-        "diferentes."
-      ],
-      "english": "Some inequalities were inherited from the colonial period, although the new republics also created different structures.",
-      "teaches": [
-        "legados"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-razaclasepoder-05.ex06",
-      "type": "sentence-order",
+      "type": "sentence-builder",
       "category": "grammar",
-      "sentences": [
-        "La sociedad se hizo más diversa.",
-        "Surgieron nuevas identidades.",
-        "Las jerarquías sociales continuaron existiendo."
-      ],
-      "solution": [
-        0,
-        1,
-        2
-      ],
-      "teaches": [
-        "legados"
-      ]
+      "tiles": ["Las", "jerarquías", "no", "fueron", "simplemente", "borradas", "por", "un", "decreto", "legal:", "fueron", "transformadas."],
+      "solution": ["Las", "jerarquías", "no", "fueron", "simplemente", "borradas", "por", "un", "decreto", "legal:", "fueron", "transformadas."],
+      "english": "The hierarchies were not simply erased by a legal decree: they were transformed.",
+      "teaches": ["voz-pasiva-herencias-jerarquia-colonial"]
     },
     {
       "id": "b1-razaclasepoder-05.ex07",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "¿Cuál término pertenece directamente al tema de esta lección?",
-      "options": [
-        "legado",
-        "aeropuerto",
-        "receta"
+      "type": "dialogue-complete",
+      "category": "reading",
+      "prompt": [
+        { "speaker": "Marta", "text": "¿Significa esta continuidad que la independencia legal no fue realmente importante?" },
+        { "speaker": "Pablo", "text": "_____" }
       ],
-      "correct": 0,
-      "teaches": [
-        "legados"
-      ]
+      "options": [
+        "No, significa que las leyes cambiaron casi de inmediato, pero las estructuras que esas leyes habían sostenido tardarían mucho más en transformarse.",
+        "Sí, la independencia legal no tuvo ningún efecto real ni siquiera sobre el papel.",
+        "No hubo ninguna continuidad real entre la época colonial y las nuevas repúblicas."
+      ],
+      "correct": 0
     },
     {
       "id": "b1-razaclasepoder-05.ex08",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Qué caracteriza herencias coloniales?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Algunas desigualdades fueron heredadas de la época colonial, aunque las nuevas repúblicas también crearon estructuras diferentes.",
-        "Porque no existían diferencias sociales.",
-        "No tuvo ninguna consecuencia."
-      ],
-      "correct": 0,
-      "teaches": [
-        "legados"
-      ]
-    },
-    {
-      "id": "b1-razaclasepoder-05.ex17",
-      "type": "multiple-choice",
-      "category": "reading",
-      "question": "¿Cuál es la idea principal del texto?",
-      "options": [
-        "Algunas jerarquías coloniales dejaron efectos que continuaron después de la independencia, aunque también hubo cambios importantes.",
-        "La independencia eliminó inmediatamente todas las desigualdades.",
-        "Las sociedades coloniales eran completamente iguales."
-      ],
-      "correct": 0
-    },
-    {
-      "id": "b1-razaclasepoder-05.ex18",
-      "type": "multiple-choice",
-      "category": "reading",
-      "question": "¿Qué diferencia establece el texto entre continuidad y cambio?",
-      "options": [
-        "Algunas estructuras persistieron, mientras que otras fueron transformadas por las nuevas repúblicas.",
-        "Todo permaneció exactamente igual.",
-        "Todo desapareció inmediatamente."
-      ],
-      "correct": 0
-    },
-    {
-      "id": "b1-razaclasepoder-05.ex19",
-      "type": "multiple-choice",
-      "category": "reading",
-      "question": "¿Por qué el texto evita explicar el presente solo mediante la colonia?",
-      "options": [
-        "Porque el legado colonial forma parte de una historia más larga y no explica por sí solo la situación contemporánea.",
-        "Porque la colonia no tuvo ningún efecto.",
-        "Porque las sociedades latinoamericanas no cambiaron."
-      ],
-      "correct": 0
-    },
-    {
-      "id": "b1-razaclasepoder-05.ex20",
-      "type": "multiple-choice",
-      "category": "reading",
-      "question": "¿Qué aspecto permite estudiar el legado colonial de forma más precisa?",
-      "options": [
-        "Comparar las estructuras que continuaron con los cambios políticos y sociales posteriores.",
-        "Suponer que todas las estructuras continuaron intactas.",
-        "Ignorar los cambios posteriores a la independencia."
-      ],
-      "correct": 0
-    },
-    {
-      "id": "b1-razaclasepoder-05.ex10",
       "type": "listening-choice",
       "category": "listening",
-      "sentence": "Determinadas diferencias de acceso a la tierra persistieron después de la independencia, pero no permanecieron idénticas.",
+      "sentence": "Ciertas prácticas culturales fueron mantenidas de forma casi inalterada durante décadas.",
       "options": [
-        "Certain differences in access to land persisted after independence, but they did not remain identical.",
-        "The statement is unrelated.",
-        "The opposite happened."
+        "Certain cultural practices were maintained almost unchanged for decades.",
+        "All colonial-era cultural practices disappeared immediately after independence.",
+        "No cultural practices from the colonial period ever survived independence."
       ],
-      "correct": 0,
-      "teaches": [
-        "legados"
-      ]
-    },
-    {
-      "id": "b1-razaclasepoder-05.ex11",
-      "type": "listening-choice",
-      "category": "listening",
-      "sentence": "El legado colonial puede estudiarse comparando las estructuras que continuaron con los cambios políticos posteriores.",
-      "options": [
-        "The colonial legacy can be studied by comparing the structures that continued with later political changes.",
-        "The statement is unrelated.",
-        "The opposite happened."
-      ],
-      "correct": 0,
-      "teaches": [
-        "legados"
-      ]
-    },
-    {
-      "id": "b1-razaclasepoder-05.ex12",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿La sociedad colonial era completamente homogénea?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "No, porque existían diferencias de origen, riqueza, posición y acceso al poder, aunque variaban según la región.",
-        "Sí, porque todas las personas ocupaban la misma posición.",
-        "Sí, porque no existían jerarquías."
-      ],
-      "correct": 0,
-      "teaches": [
-        "legados"
-      ]
-    },
-    {
-      "id": "b1-razaclasepoder-05.ex13",
-      "type": "multiple-choice",
-      "category": "dialogue",
-      "question": "¿Qué explicación es más precisa?",
-      "options": [
-        "Las categorías sociales podían influir en las oportunidades, pero no determinaban por sí solas toda la experiencia de una persona.",
-        "El origen explicaba absolutamente todos los aspectos de la vida.",
-        "Las categorías sociales no tenían ningún efecto."
-      ],
-      "correct": 0,
-      "teaches": [
-        "legados"
-      ]
-    },
-    {
-      "id": "b1-razaclasepoder-05.ex14",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Por qué es importante distinguir entre diversidad y desigualdad?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Porque una sociedad puede hacerse más diversa mientras mantiene jerarquías que distribuyen el poder de forma desigual.",
-        "Porque diversidad y desigualdad significan exactamente lo mismo.",
-        "Porque una sociedad diversa no puede tener diferencias económicas."
-      ],
-      "correct": 0,
-      "teaches": [
-        "legados"
-      ]
-    },
-    {
-      "id": "b1-razaclasepoder-05.ex15",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Explain one feature of colonial social hierarchy using two connected clauses.",
-          "answer": "Algunas desigualdades fueron heredadas de la época colonial, aunque las nuevas repúblicas también crearon estructuras diferentes."
-        },
-        {
-          "prompt": "Add a qualification or consequence.",
-          "answer": "Las jerarquías no fueron simplemente copiadas después de la independencia, sino que fueron transformadas y adaptadas a nuevos contextos."
-        }
-      ],
-      "teaches": [
-        "legados"
-      ]
-    },
-    {
-      "id": "b1-razaclasepoder-05.ex16",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Write a short explanation connecting social hierarchy with an opportunity or consequence.",
-          "answer": "El legado colonial puede estudiarse comparando las estructuras que continuaron con los cambios políticos posteriores."
-        }
-      ],
-      "teaches": [
-        "legados"
-      ]
+      "correct": 0
     }
   ]
 }

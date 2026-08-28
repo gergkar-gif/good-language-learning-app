@@ -6,307 +6,102 @@
       "type": "matching",
       "category": "vocabulary",
       "pairs": [
-        [
-          "casta",
-          "caste"
-        ],
-        [
-          "jerarquía",
-          "hierarchy"
-        ],
-        [
-          "privilegio",
-          "privilege"
-        ],
-        [
-          "ascendencia",
-          "ancestry"
-        ]
-      ],
-      "teaches": [
-        "jerarquia"
+        ["la ascendencia", "ancestry, lineage"],
+        ["el privilegio", "privilege"],
+        ["el oficio", "trade, occupation"],
+        ["portar", "to carry, bear"]
+      ]
+    },
+    {
+      "id": "b1-razaclasepoder-01.ex01b",
+      "type": "matching",
+      "category": "vocabulary",
+      "pairs": [
+        ["la cuadrícula", "grid"],
+        ["la etiqueta", "label"],
+        ["insultante", "insulting"],
+        ["encargar", "to commission, order"]
       ]
     },
     {
       "id": "b1-razaclasepoder-01.ex02",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Cuál oración ejemplifica se pasiva / impersonal?",
+      "category": "reading",
+      "question": "¿Cómo se clasificaba a las personas en la sociedad colonial, y qué determinaba esa clasificación?",
       "options": [
-        "En la sociedad colonial se clasificaba a las personas según su origen, aunque las categorías variaban entre regiones.",
-        "La sociedad era compleja.",
-        "Había muchas personas."
+        "Según su origen y ascendencia, con términos como mestizo, mulato o zambo, que determinaban el acceso a ciertos privilegios legales.",
+        "Únicamente según su lugar de nacimiento, sin considerar el origen de sus padres.",
+        "No existía ningún sistema de clasificación racial en la sociedad colonial."
       ],
-      "correct": 0,
-      "teaches": [
-        "jerarquia"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-razaclasepoder-01.ex03",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Qué interpretación corresponde mejor al contenido de la lección?",
+      "category": "reading",
+      "question": "¿Se aplicaba el sistema de castas de forma precisa y consistente en la práctica?",
       "options": [
-        "Las diferencias sociales estaban relacionadas con el origen, el poder, la riqueza o las condiciones locales.",
-        "Todas las personas tenían exactamente las mismas oportunidades.",
-        "Las categorías sociales no tenían ninguna relación con la vida cotidiana."
+        "No, una misma persona podía ser clasificada de forma distinta según la ciudad, el documento o el funcionario.",
+        "Sí, cada persona recibía siempre exactamente la misma clasificación en cualquier documento.",
+        "El sistema de castas nunca se aplicó realmente en ningún documento oficial."
       ],
-      "correct": 0,
-      "teaches": [
-        "jerarquia"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-razaclasepoder-01.ex04",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "En la sociedad colonial _____ clasificaba a las personas según su origen. (se)",
+      "sentence": "En la sociedad colonial ___ clasificaba a las personas según su origen y ascendencia. (clasificar)",
       "answer": "se",
-      "teaches": [
-        "jerarquia"
-      ]
+      "teaches": ["se-pasiva-impersonal-sociedad-castas"]
     },
     {
       "id": "b1-razaclasepoder-01.ex05",
-      "type": "sentence-builder",
-      "category": "grammar",
-      "tiles": [
-        "En",
-        "la",
-        "sociedad",
-        "colonial",
-        "se",
-        "clasificaba",
-        "a",
-        "las",
-        "personas",
-        "según",
-        "su",
-        "origen,",
-        "aunque",
-        "las",
-        "categorías",
-        "variaban",
-        "entre",
-        "regiones."
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Qué eran las 'pinturas de castas' del siglo dieciocho?",
+      "options": [
+        "Series de dieciséis cuadros organizados en cuadrícula que representaban una familia por cada combinación racial, con una etiqueta indicando su categoría.",
+        "Retratos oficiales de los virreyes de Nueva España.",
+        "Mapas coloniales que mostraban los límites entre distintos virreinatos."
       ],
-      "solution": [
-        "En",
-        "la",
-        "sociedad",
-        "colonial",
-        "se",
-        "clasificaba",
-        "a",
-        "las",
-        "personas",
-        "según",
-        "su",
-        "origen,",
-        "aunque",
-        "las",
-        "categorías",
-        "variaban",
-        "entre",
-        "regiones."
-      ],
-      "english": "In colonial society, people were classified according to their origin, although the categories varied between regions.",
-      "teaches": [
-        "jerarquia"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-razaclasepoder-01.ex06",
-      "type": "sentence-order",
+      "type": "sentence-builder",
       "category": "grammar",
-      "sentences": [
-        "La sociedad se hizo más diversa.",
-        "Surgieron nuevas identidades.",
-        "Las jerarquías sociales continuaron existiendo."
-      ],
-      "solution": [
-        0,
-        1,
-        2
-      ],
-      "teaches": [
-        "jerarquia"
-      ]
+      "tiles": ["Estas", "pinturas", "se", "encargaban", "a", "artistas", "locales,", "y", "se", "enviaban", "con", "frecuencia", "a", "España."],
+      "solution": ["Estas", "pinturas", "se", "encargaban", "a", "artistas", "locales,", "y", "se", "enviaban", "con", "frecuencia", "a", "España."],
+      "english": "These paintings were commissioned from local artists, and were frequently sent to Spain.",
+      "teaches": ["se-pasiva-impersonal-sociedad-castas"]
     },
     {
       "id": "b1-razaclasepoder-01.ex07",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "¿Cuál término pertenece directamente al tema de esta lección?",
-      "options": [
-        "casta",
-        "aeropuerto",
-        "receta"
+      "type": "dialogue-complete",
+      "category": "reading",
+      "prompt": [
+        { "speaker": "Marta", "text": "¿Qué revela, sin querer, el hecho de que se necesitaran dieciséis cuadros para representar el sistema de castas?" },
+        { "speaker": "Pablo", "text": "_____" }
       ],
-      "correct": 0,
-      "teaches": [
-        "jerarquia"
-      ]
+      "options": [
+        "Revela justo lo contrario de lo que pretendían mostrar: una realidad demográfica mucho más mezclada y fluida de lo que el sistema podía capturar.",
+        "Revela que la sociedad colonial era perfectamente ordenada y fácil de clasificar.",
+        "Revela que solo existían dieciséis personas de origen mixto en toda la Nueva España."
+      ],
+      "correct": 0
     },
     {
       "id": "b1-razaclasepoder-01.ex08",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Qué caracteriza una sociedad de castas?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "En la sociedad colonial se clasificaba a las personas según su origen, aunque las categorías variaban entre regiones.",
-        "Porque no existían diferencias sociales.",
-        "No tuvo ninguna consecuencia."
-      ],
-      "correct": 0,
-      "teaches": [
-        "jerarquia"
-      ]
-    },
-    {
-      "id": "b1-razaclasepoder-01.ex09",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "_____ concedían determinados privilegios a los grupos superiores. (se)",
-      "answer": "Se",
-      "teaches": [
-        "jerarquia"
-      ]
-    },
-    {
-      "id": "b1-razaclasepoder-01.ex10",
       "type": "listening-choice",
       "category": "listening",
-      "sentence": "Se concedían determinados privilegios a los grupos que ocupaban posiciones superiores en la jerarquía.",
+      "sentence": "Las pinturas de castas despertaban curiosidad en España como una especie de catálogo visual.",
       "options": [
-        "Certain privileges were granted to groups that occupied higher positions in the hierarchy.",
-        "The statement is unrelated.",
-        "The opposite happened."
+        "The casta paintings sparked curiosity in Spain as a kind of visual catalog.",
+        "The casta paintings were completely banned from leaving New Spain.",
+        "Nobody in Spain ever saw a casta painting."
       ],
-      "correct": 0,
-      "teaches": [
-        "jerarquia"
-      ]
-    },
-    {
-      "id": "b1-razaclasepoder-01.ex11",
-      "type": "listening-choice",
-      "category": "listening",
-      "sentence": "La ascendencia podía influir en las oportunidades disponibles, pero no explicaba por sí sola todas las diferencias sociales.",
-      "options": [
-        "Ancestry could influence the opportunities available, but it did not by itself explain all social differences.",
-        "The statement is unrelated.",
-        "The opposite happened."
-      ],
-      "correct": 0,
-      "teaches": [
-        "jerarquia"
-      ]
-    },
-    {
-      "id": "b1-razaclasepoder-01.ex12",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿La sociedad colonial era completamente homogénea?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "No, porque existían diferencias de origen, riqueza, posición y acceso al poder, aunque variaban según la región.",
-        "Sí, porque todas las personas ocupaban la misma posición.",
-        "Sí, porque no existían jerarquías."
-      ],
-      "correct": 0,
-      "teaches": [
-        "jerarquia"
-      ]
-    },
-    {
-      "id": "b1-razaclasepoder-01.ex13",
-      "type": "multiple-choice",
-      "category": "dialogue",
-      "question": "¿Qué explicación es más precisa?",
-      "options": [
-        "Las categorías sociales podían influir en las oportunidades, pero no determinaban por sí solas toda la experiencia de una persona.",
-        "El origen explicaba absolutamente todos los aspectos de la vida.",
-        "Las categorías sociales no tenían ningún efecto."
-      ],
-      "correct": 0,
-      "teaches": [
-        "jerarquia"
-      ]
-    },
-    {
-      "id": "b1-razaclasepoder-01.ex14",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Por qué es importante distinguir entre diversidad y desigualdad?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Porque una sociedad puede hacerse más diversa mientras mantiene jerarquías que distribuyen el poder de forma desigual.",
-        "Porque diversidad y desigualdad significan exactamente lo mismo.",
-        "Porque una sociedad diversa no puede tener diferencias económicas."
-      ],
-      "correct": 0,
-      "teaches": [
-        "jerarquia"
-      ]
-    },
-    {
-      "id": "b1-razaclasepoder-01.ex15",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Explain one feature of colonial social hierarchy using two connected clauses.",
-          "answer": "En la sociedad colonial se clasificaba a las personas según su origen, aunque las categorías variaban entre regiones."
-        },
-        {
-          "prompt": "Add a qualification or consequence.",
-          "answer": "Las jerarquías coloniales fueron cambiando con el tiempo, aunque algunas diferencias de origen siguieron siendo importantes."
-        }
-      ],
-      "teaches": [
-        "jerarquia"
-      ]
-    },
-    {
-      "id": "b1-razaclasepoder-01.ex16",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Write a short explanation connecting social hierarchy with an opportunity or consequence.",
-          "answer": "La ascendencia podía influir en las oportunidades disponibles, pero no explicaba por sí sola todas las diferencias sociales."
-        }
-      ],
-      "teaches": [
-        "jerarquia"
-      ]
+      "correct": 0
     }
   ]
 }

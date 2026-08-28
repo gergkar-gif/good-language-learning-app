@@ -6,299 +6,102 @@
       "type": "matching",
       "category": "vocabulary",
       "pairs": [
-        [
-          "peninsular",
-          "person born in Spain"
-        ],
-        [
-          "criollo",
-          "person of Spanish descent born in the Americas"
-        ],
-        [
-          "élite",
-          "elite"
-        ]
-      ],
-      "teaches": [
-        "elites"
+        ["el fondo", "fund"],
+        ["restringir", "to restrict"],
+        ["el vínculo", "link, tie"],
+        ["la proporción", "proportion"]
+      ]
+    },
+    {
+      "id": "b1-razaclasepoder-02.ex01b",
+      "type": "matching",
+      "category": "vocabulary",
+      "pairs": [
+        ["entreabierto", "half-open"],
+        ["la ruptura", "rupture, break"],
+        ["degradado", "demoted, degraded"],
+        ["la lealtad", "loyalty"]
       ]
     },
     {
       "id": "b1-razaclasepoder-02.ex02",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Cuál oración ejemplifica voz pasiva?",
+      "category": "reading",
+      "question": "¿Cómo consiguieron algunos criollos ricos acceder a cargos importantes durante el periodo de los Habsburgo?",
       "options": [
-        "Determinados cargos fueron ocupados preferentemente por peninsulares, aunque los criollos también formaban parte de las élites.",
-        "La sociedad era compleja.",
-        "Había muchas personas."
+        "Comprando esos cargos directamente, gracias a la práctica de la venalidad de oficios.",
+        "Los criollos nunca pudieron acceder a ningún cargo administrativo importante.",
+        "Heredando automáticamente los cargos de sus padres peninsulares."
       ],
-      "correct": 0,
-      "teaches": [
-        "elites"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-razaclasepoder-02.ex03",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Qué interpretación corresponde mejor al contenido de la lección?",
+      "category": "reading",
+      "question": "¿Qué cambió con las reformas borbónicas del siglo dieciocho?",
       "options": [
-        "Las diferencias sociales estaban relacionadas con el origen, el poder, la riqueza o las condiciones locales.",
-        "Todas las personas tenían exactamente las mismas oportunidades.",
-        "Las categorías sociales no tenían ninguna relación con la vida cotidiana."
+        "La venta de cargos fue restringida drásticamente, y los puestos más importantes se reservaron casi exclusivamente para peninsulares recién llegados.",
+        "Los criollos obtuvieron, por primera vez, acceso garantizado a los cargos más altos.",
+        "No hubo ningún cambio real en la distribución de cargos administrativos."
       ],
-      "correct": 0,
-      "teaches": [
-        "elites"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-razaclasepoder-02.ex04",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Determinados cargos _____ ocupados preferentemente por peninsulares. (ser)",
-      "answer": "fueron",
-      "teaches": [
-        "elites"
-      ]
+      "sentence": "Esa situación ___ transformada radicalmente por las reformas borbónicas. (ser)",
+      "answer": "fue",
+      "teaches": ["voz-pasiva-peninsulares-criollos"]
     },
     {
       "id": "b1-razaclasepoder-02.ex05",
-      "type": "sentence-builder",
-      "category": "grammar",
-      "tiles": [
-        "Determinados",
-        "cargos",
-        "fueron",
-        "ocupados",
-        "preferentemente",
-        "por",
-        "peninsulares,",
-        "aunque",
-        "los",
-        "criollos",
-        "también",
-        "formaban",
-        "parte",
-        "de",
-        "las",
-        "élites."
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Cómo se sintieron muchos criollos ante este cambio de política?",
+      "options": [
+        "Repentinamente degradados a súbditos de segunda categoría en su propia tierra natal.",
+        "Completamente indiferentes, sin ninguna reacción emocional.",
+        "Agradecidos por perder el acceso que antes tenían."
       ],
-      "solution": [
-        "Determinados",
-        "cargos",
-        "fueron",
-        "ocupados",
-        "preferentemente",
-        "por",
-        "peninsulares,",
-        "aunque",
-        "los",
-        "criollos",
-        "también",
-        "formaban",
-        "parte",
-        "de",
-        "las",
-        "élites."
-      ],
-      "english": "Certain positions were preferentially occupied by peninsulares, although criollos were also part of the elites.",
-      "teaches": [
-        "elites"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-razaclasepoder-02.ex06",
-      "type": "sentence-order",
+      "type": "sentence-builder",
       "category": "grammar",
-      "sentences": [
-        "La sociedad se hizo más diversa.",
-        "Surgieron nuevas identidades.",
-        "Las jerarquías sociales continuaron existiendo."
-      ],
-      "solution": [
-        0,
-        1,
-        2
-      ],
-      "teaches": [
-        "elites"
-      ]
+      "tiles": ["Los", "puestos", "más", "importantes", "fueron", "reservados", "casi", "exclusivamente", "para", "peninsulares", "recién", "llegados."],
+      "solution": ["Los", "puestos", "más", "importantes", "fueron", "reservados", "casi", "exclusivamente", "para", "peninsulares", "recién", "llegados."],
+      "english": "The most important posts were reserved almost exclusively for newly arrived peninsulares.",
+      "teaches": ["voz-pasiva-peninsulares-criollos"]
     },
     {
       "id": "b1-razaclasepoder-02.ex07",
-      "type": "multiple-choice",
-      "category": "vocabulary",
-      "question": "¿Cuál término pertenece directamente al tema de esta lección?",
-      "options": [
-        "peninsular",
-        "aeropuerto",
-        "receta"
+      "type": "dialogue-complete",
+      "category": "reading",
+      "prompt": [
+        { "speaker": "Marta", "text": "¿Por qué fue este cambio tan diferente de la exclusión criolla de siglos anteriores?" },
+        { "speaker": "Pablo", "text": "_____" }
       ],
-      "correct": 0,
-      "teaches": [
-        "elites"
-      ]
+      "options": [
+        "Porque el resentimiento se generó de forma aguda en apenas dos o tres generaciones, en lugar de acumularse lentamente durante siglos.",
+        "Porque en realidad no representó ningún cambio respecto a la situación anterior.",
+        "Porque afectó únicamente a los peninsulares, no a los criollos."
+      ],
+      "correct": 0
     },
     {
       "id": "b1-razaclasepoder-02.ex08",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Qué caracteriza peninsulares y criollos?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Determinados cargos fueron ocupados preferentemente por peninsulares, aunque los criollos también formaban parte de las élites.",
-        "Porque no existían diferencias sociales.",
-        "No tuvo ninguna consecuencia."
-      ],
-      "correct": 0,
-      "teaches": [
-        "elites"
-      ]
-    },
-    {
-      "id": "b1-razaclasepoder-02.ex09",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Los criollos también _____ parte de las élites. (formar)",
-      "answer": "formaban",
-      "teaches": [
-        "elites"
-      ]
-    },
-    {
-      "id": "b1-razaclasepoder-02.ex10",
       "type": "listening-choice",
       "category": "listening",
-      "sentence": "Los criollos acumulaban riqueza en algunas regiones, pero no siempre tenían el mismo acceso a los cargos políticos.",
+      "sentence": "Este resentimiento agudo terminaría siendo uno de los ingredientes más inmediatos del sentimiento criollo distante.",
       "options": [
-        "Criollos accumulated wealth in some regions, but they did not always have the same access to political positions.",
-        "The statement is unrelated.",
-        "The opposite happened."
+        "This acute resentment would end up being one of the most immediate ingredients of growing criollo distance from the crown.",
+        "This resentment had no lasting effect on criollo attitudes.",
+        "Criollos remained completely loyal to the crown throughout this period."
       ],
-      "correct": 0,
-      "teaches": [
-        "elites"
-      ]
-    },
-    {
-      "id": "b1-razaclasepoder-02.ex11",
-      "type": "listening-choice",
-      "category": "listening",
-      "sentence": "La distinción entre peninsulares y criollos generó tensiones que después serían importantes para los movimientos políticos.",
-      "options": [
-        "The distinction between peninsulares and criollos generated tensions that later became important for political movements.",
-        "The statement is unrelated.",
-        "The opposite happened."
-      ],
-      "correct": 0,
-      "teaches": [
-        "elites"
-      ]
-    },
-    {
-      "id": "b1-razaclasepoder-02.ex12",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿La sociedad colonial era completamente homogénea?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "No, porque existían diferencias de origen, riqueza, posición y acceso al poder, aunque variaban según la región.",
-        "Sí, porque todas las personas ocupaban la misma posición.",
-        "Sí, porque no existían jerarquías."
-      ],
-      "correct": 0,
-      "teaches": [
-        "elites"
-      ]
-    },
-    {
-      "id": "b1-razaclasepoder-02.ex13",
-      "type": "multiple-choice",
-      "category": "dialogue",
-      "question": "¿Qué explicación es más precisa?",
-      "options": [
-        "Las categorías sociales podían influir en las oportunidades, pero no determinaban por sí solas toda la experiencia de una persona.",
-        "El origen explicaba absolutamente todos los aspectos de la vida.",
-        "Las categorías sociales no tenían ningún efecto."
-      ],
-      "correct": 0,
-      "teaches": [
-        "elites"
-      ]
-    },
-    {
-      "id": "b1-razaclasepoder-02.ex14",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Por qué es importante distinguir entre diversidad y desigualdad?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Porque una sociedad puede hacerse más diversa mientras mantiene jerarquías que distribuyen el poder de forma desigual.",
-        "Porque diversidad y desigualdad significan exactamente lo mismo.",
-        "Porque una sociedad diversa no puede tener diferencias económicas."
-      ],
-      "correct": 0,
-      "teaches": [
-        "elites"
-      ]
-    },
-    {
-      "id": "b1-razaclasepoder-02.ex15",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Explain one feature of colonial social hierarchy using two connected clauses.",
-          "answer": "Determinados cargos fueron ocupados preferentemente por peninsulares, aunque los criollos también formaban parte de las élites."
-        },
-        {
-          "prompt": "Add a qualification or consequence.",
-          "answer": "Las élites coloniales no eran un grupo completamente homogéneo, porque existían diferencias de origen, riqueza y acceso al poder."
-        }
-      ],
-      "teaches": [
-        "elites"
-      ]
-    },
-    {
-      "id": "b1-razaclasepoder-02.ex16",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Write a short explanation connecting social hierarchy with an opportunity or consequence.",
-          "answer": "La distinción entre peninsulares y criollos generó tensiones que después serían importantes para los movimientos políticos."
-        }
-      ],
-      "teaches": [
-        "elites"
-      ]
+      "correct": 0
     }
   ]
 }
