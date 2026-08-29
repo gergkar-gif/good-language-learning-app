@@ -194,7 +194,19 @@ const HungarianMorphology = (function () {
         ['ba', 'ill'], ['be', 'ill'],
         ['ra', 'sub'], ['re', 'sub'],
         ['ig', 'ter'],
-        ['on', 'sup'], ['en', 'sup'], ['ön', 'sup'],
+        // Superessive's own vowel-final-stem variant — bare "-n", no
+        // linking o/e/ö needed since the stem already ends in a vowel
+        // ("hétfő" -> "hétfőn", "szerda" -> "szerdán", the latter via the
+        // stem's own low-vowel lengthening — resolveNominal()'s existing
+        // delengthen() fallback already handles that once "n" alone is a
+        // real candidate suffix). Same shape as accusative's own bare "t"
+        // just below. Checked for false-positive risk the same way the
+        // "-i" suffix was and rejected for (see this file's own "Known
+        // gaps" note on that) — bare "-n" only coincidentally collides
+        // with an unrelated existing headword for 32 of ~7600 vowel-final
+        // nominal dictionary entries (0.4%), nothing like "-i"'s 83%, so
+        // it's safe as an ordinary strip-and-validate candidate.
+        ['on', 'sup'], ['en', 'sup'], ['ön', 'sup'], ['n', 'sup'],
         ['at', 'acc'], ['ot', 'acc'], ['et', 'acc'], ['öt', 'acc'], ['t', 'acc']
     ]
         // Instrumental (-val/-vel) and translative (-vá/-vé) assimilate
