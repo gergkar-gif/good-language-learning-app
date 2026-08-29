@@ -1078,7 +1078,10 @@ const HungarianMorphology = (function () {
             if (remainder === null) continue;
             let sense = verbSense(dictionary[remainder]);
             let lemma = remainder;
-            if (!sense) {
+            // Guard against the "ik" self-reconstruction case — see the
+            // matching guard in analyze()'s own VERB_SUFFIXES loop below
+            // for the full explanation.
+            if (!sense && remainder + 'ik' !== word) {
                 sense = verbSense(dictionary[remainder + 'ik']);
                 lemma = remainder + 'ik';
             }
@@ -1488,8 +1491,22 @@ const HungarianMorphology = (function () {
             if (remainderSense) {
                 addFromLemma(remainder, remainderSense, label);
             }
+            // Guard against the one suffix in this table that IS itself
+            // "ik" (present definite 3pl's own front-harmony ending):
+            // for any -ik verb's bare lemma, stripping literal "ik" and
+            // then re-appending "ik" for the fallback below reconstructs
+            // the EXACT original word — not a genuine "stem + ik" finding
+            // at all, just an accidental round-trip through a suffix that
+            // happens to equal the fallback string. Left unguarded, this
+            // fabricated a bogus "3rd person plural" reading for the bare
+            // citation form of every -ik verb in the dictionary (dolgozik,
+            // alszik, történik, nyugszik, ...) — caught 2026-08-29 (ninth
+            // pass) while investigating whether Lexicon.js could safely
+            // run this alongside a direct dictionary hit; every -ik verb
+            // headword tripped it, since analyze() had simply never been
+            // exercised on an already-a-headword bare -ik verb before.
             const ikForm = remainder + 'ik';
-            const ikSense = verbSense(dictionary[ikForm]);
+            const ikSense = ikForm !== word ? verbSense(dictionary[ikForm]) : null;
             if (ikSense) {
                 addFromLemma(ikForm, ikSense, label);
             }
@@ -1517,7 +1534,7 @@ const HungarianMorphology = (function () {
                 // isn't a headword itself, but peeling "-kod" too leaves
                 // "osztoz", whose "-ik" form "osztozik" is).
                 const freqStem = stripFrequentative(remainder);
-                if (freqStem) {
+                if (freqStem && remainder + 'ik' !== word) {
                     const freqSense = verbSense(dictionary[freqStem]) || verbSense(dictionary[freqStem + 'ik']);
                     if (freqSense) {
                         addFrequentativeVerb(remainder + 'ik', freqSense, label);
@@ -1539,10 +1556,12 @@ const HungarianMorphology = (function () {
         // genuine sz-final -ik verb at all).
         for (const c of decodeTReplacedImperative(word)) {
             const label = [TENSE_LABELS.imp, PERSON_LABELS[c.person][c.number]].join(', ');
+            if (c.lemma === word) continue; // no real transformation happened - see the "ik" guard's own comment above
             const sense = verbSense(dictionary[c.lemma]);
             if (sense) addFromLemma(c.lemma, sense, label);
-            const ikSense = verbSense(dictionary[c.lemma + 'ik']);
-            if (ikSense) addFromLemma(c.lemma + 'ik', ikSense, label);
+            const ikForm = c.lemma + 'ik';
+            const ikSense = ikForm !== word ? verbSense(dictionary[ikForm]) : null;
+            if (ikSense) addFromLemma(ikForm, ikSense, label);
         }
 
         // 1c. present-tense DEFINITE forms of a genuine sz-final stem
@@ -1552,10 +1571,12 @@ const HungarianMorphology = (function () {
         // definite endings instead of imperative's.
         for (const c of decodeSzDigraphPresentDefinite(word)) {
             const label = [TENSE_LABELS.pres, PERSON_LABELS[c.person][c.number]].join(', ');
+            if (c.lemma === word) continue;
             const sense = verbSense(dictionary[c.lemma]);
             if (sense) addFromLemma(c.lemma, sense, label);
-            const ikSense = verbSense(dictionary[c.lemma + 'ik']);
-            if (ikSense) addFromLemma(c.lemma + 'ik', ikSense, label);
+            const ikForm = c.lemma + 'ik';
+            const ikSense = ikForm !== word ? verbSense(dictionary[ikForm]) : null;
+            if (ikSense) addFromLemma(ikForm, ikSense, label);
         }
 
         // 2. case suffix, optionally stacked over a possessive/plural form
@@ -2670,16 +2691,51 @@ const HungarianMorphology = (function () {
 //     headword ("fess" the adjective "stylish", "lásd"/"nézze" as fixed
 //     interjections) will only ever show that unrelated reading in the
 //     Reader, never the verb one, even though analyze() itself decodes
-//     the verb reading correctly when called directly (confirmed live
-//     this pass: "kérje"/"kérjétek"/"kérjék"/"nézzék"/"tartsd"/"fizesd"/
-//     "válaszd"/"tartsam"/"szeressem"/"válassz"/"érts"/"bánts" all showed
-//     correctly through the real Reader; only the three coincidental-
-//     collision words didn't). This is an existing, general Lexicon
-//     architecture choice that predates this file's own work and applies
-//     to any suffix-stripping result, not something specific to the
-//     imperative — flagged here since it's newly OBSERVABLE now that
-//     imperative coverage produces more short, word-like forms likely to
-//     collide, not because this file caused it.
+//     the verb reading correctly when called directly. This is an
+//     existing, general Lexicon architecture choice that predates this
+//     file's own work and applies to any suffix-stripping result, not
+//     something specific to the imperative.
+//     **Investigated 2026-08-29 (ninth pass), left unchanged on purpose**:
+//     tried having Lexicon merge analyze()'s results in ALONGSIDE a
+//     direct hit instead of skipping analyze() entirely. Measured impact
+//     first, not just implemented it: ran analyze() against a ~1900-word
+//     sample of real dictionary headwords (words that already resolve on
+//     their own) to see how often it would ALSO produce an extra reading
+//     if merging were unconditional. Result: ~30% of the time — and most
+//     of that is not the narrow "coincidental collision" case above, it's
+//     two much noisier sources: (1) the compound-split last-resort (see
+//     analyze()'s own comment on it) firing on real, ordinary single
+//     words that just happen to be spellable as two shorter dictionary
+//     words glued together ("rendszer" "system" -> "rend"+"szer",
+//     "könyvtár" "library" -> "könyv"+"tár", "vámpír" "vampire" ->
+//     "vámpír" split as unrelated words) — correct only in a loose
+//     etymological sense, not a reading a learner tapping "system" is
+//     served well by; (2) CASE_SUFFIXES/POSSESSIVE_SUFFIXES matching a
+//     very short remainder that resolves as SOME dictionary word but
+//     isn't a plausible parse of the original ("aba" "a type of cloth"
+//     -> "a" the article + illative "-ba", i.e. claiming "aba" secretly
+//     means "into the" — articles/pronouns are in CASEABLE_POS for
+//     legitimate cases like "abban" but the same door lets in this kind
+//     of noise on short strings). Separately fixed and kept regardless
+//     (see the "ik" self-reconstruction guard in the main VERB_SUFFIXES
+//     loop and in ladder() above): a real bug this same investigation
+//     surfaced, where stripping the literal suffix "ik" and re-appending
+//     "ik" for the -ik-verb fallback reconstructs the ORIGINAL word for
+//     any -ik verb's own bare citation form, fabricating a bogus
+//     "3rd person plural" self-reading (currently dormant in production,
+//     since Lexicon never calls analyze() on a word that's already a
+//     direct hit — but a real defect regardless, and exactly the kind of
+//     thing an unconditional merge would have made newly visible). A
+//     genuine (not spurious) reading DOES show up plenty in that same
+//     30% — "font" "pound" also decoding as "fon" "to spin" + past tense
+//     is real Hungarian homophony, not a bug — but distinguishing that
+//     from the compound-split/short-remainder noise above isn't
+//     something the merge itself can do; it would need its own filtering
+//     (e.g. suppressing compound-split whenever a direct hit already
+//     exists, and/or excluding article/pronoun types from the generic
+//     case-suffix match) designed and verified as its own piece of work,
+//     not folded into a one-line architecture flip. Left as the existing
+//     direct-hit-wins behavior rather than shipped at this noise level.
 //   - all of this was cross-checked via WebSearch snippets rather than
 //     reading a full external reference document straight through (every
 //     linguistics site's own page stayed blocked via WebFetch all
