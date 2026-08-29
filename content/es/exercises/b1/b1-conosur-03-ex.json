@@ -6,281 +6,102 @@
       "type": "matching",
       "category": "vocabulary",
       "pairs": [
-        [
-          "dictadura cívico-militar",
-          "civil-military dictatorship"
-        ],
-        [
-          "censura",
-          "censorship"
-        ],
-        [
-          "preso político",
-          "political prisoner"
-        ]
-      ],
-      "teaches": [
-        "cono-sur-03"
+        ["el autogolpe", "self-coup"],
+        ["la militarización", "militarization"],
+        ["el preso", "prisoner"],
+        ["la tasa", "rate"]
+      ]
+    },
+    {
+      "id": "b1-conosur-03.ex01b",
+      "type": "matching",
+      "category": "vocabulary",
+      "pairs": [
+        ["someter", "to submit, put to (a vote)"],
+        ["la ciudadanía", "citizenry"],
+        ["culminar", "to culminate"],
+        ["inesperado", "unexpected"]
       ]
     },
     {
       "id": "b1-conosur-03.ex02",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Qué oración describe la censura?",
+      "category": "reading",
+      "question": "¿Qué hizo el presidente Bordaberry el 27 de junio de 1973?",
       "options": [
-        "La censura limitaba la prensa, mientras el régimen restringía la actividad política.",
-        "La censura ampliaba los medios independientes.",
-        "La censura liberaba a los presos políticos."
+        "Disolvió el Congreso uruguayo con el respaldo de las fuerzas armadas, en un \"autogolpe\".",
+        "Convocó nuevas elecciones presidenciales anticipadas.",
+        "Renunció a la presidencia entregando el poder a un gobierno civil."
       ],
-      "correct": 0,
-      "teaches": [
-        "cono-sur-03"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-conosur-03.ex03",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "La ___ restringía la actividad política, mientras la sociedad buscaba espacios de participación.",
-      "answer": "dictadura cívico-militar",
-      "teaches": [
-        "cono-sur-03"
-      ]
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Qué papel jugaron los Tupamaros antes del golpe de 1973?",
+      "options": [
+        "Su violencia política sirvió de pretexto para una progresiva militarización del Estado, aunque ya estaban prácticamente derrotados hacia 1972.",
+        "Apoyaron activamente al gobierno militar tras el golpe.",
+        "Nunca existieron como movimiento guerrillero en Uruguay."
+      ],
+      "correct": 0
     },
     {
       "id": "b1-conosur-03.ex04",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "La ___ limitaba la prensa, aunque algunos medios intentaban informar.",
-      "answer": "censura",
-      "teaches": [
-        "cono-sur-03"
-      ]
+      "sentence": "Uruguay, ___ su parte, vivió un episodio poco frecuente entre las dictaduras de la región. (por)",
+      "answer": "por",
+      "teaches": ["por-su-parte-introducir-un-nuevo-caso-dentro-de-una-comparacion"]
     },
     {
       "id": "b1-conosur-03.ex05",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "El ___ permanecía encarcelado, mientras su familia reclamaba información.",
-      "answer": "preso político",
-      "teaches": [
-        "cono-sur-03"
-      ]
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Qué ocurrió en el plebiscito de noviembre de 1980?",
+      "options": [
+        "La ciudadanía rechazó la nueva constitución redactada por el régimen, con más del cincuenta y siete por ciento de los votos.",
+        "La ciudadanía aprobó fácilmente la nueva constitución del régimen.",
+        "El plebiscito fue cancelado antes de celebrarse."
+      ],
+      "correct": 0
     },
     {
       "id": "b1-conosur-03.ex06",
       "type": "sentence-builder",
       "category": "grammar",
-      "tiles": [
-        "El",
-        "régimen",
-        "restringía",
-        "las",
-        "libertades",
-        "políticas,",
-        "aunque",
-        "algunas",
-        "instituciones",
-        "funcionaban."
-      ],
-      "solution": [
-        "El",
-        "régimen",
-        "restringía",
-        "las",
-        "libertades",
-        "políticas,",
-        "aunque",
-        "algunas",
-        "instituciones",
-        "funcionaban."
-      ],
-      "english": "The regime restricted political freedoms although some institutions continued to function.",
-      "teaches": [
-        "cono-sur-03"
-      ]
+      "tiles": ["Los", "Tupamaros,", "por", "su", "parte,", "ya", "estaban", "prácticamente", "derrotados", "hacia", "1972."],
+      "solution": ["Los", "Tupamaros,", "por", "su", "parte,", "ya", "estaban", "prácticamente", "derrotados", "hacia", "1972."],
+      "english": "The Tupamaros, for their part, were already practically defeated by 1972.",
+      "teaches": ["por-su-parte-introducir-un-nuevo-caso-dentro-de-una-comparacion"]
     },
     {
       "id": "b1-conosur-03.ex07",
-      "type": "sentence-order",
-      "category": "grammar",
-      "sentences": [
-        "La represión se extendió. [Repression spread.]",
-        "Muchas familias buscaban información. [Many families searched for information.]",
-        "Por eso, el exilio se convirtió en una experiencia común. [Therefore, exile became a common experience.]"
+      "type": "dialogue-complete",
+      "category": "reading",
+      "prompt": [
+        { "speaker": "Carolina", "text": "¿Qué provocó esta derrota electoral inesperada del régimen en 1980?" },
+        { "speaker": "Fructuoso", "text": "_____" }
       ],
-      "solution": [
-        0,
-        1,
-        2
+      "options": [
+        "Inició un largo proceso negociado de transición que culminaría con la elección de Sanguinetti en 1984.",
+        "El régimen se mantuvo exactamente igual sin ningún cambio.",
+        "Provocó una nueva ola de represión aún más severa que las anteriores."
       ],
-      "teaches": [
-        "cono-sur-03"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-conosur-03.ex08",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Por qué fue importante este proceso?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Porque cambió las instituciones, aunque la sociedad siguiera buscando formas de participación. [Because it changed institutions, although society continued seeking ways to participate.]",
-        "Porque no tuvo consecuencias. [Because it had no consequences.]",
-        "Porque terminó inmediatamente todos los conflictos. [Because it immediately ended all conflicts.]"
-      ],
-      "correct": 0,
-      "teaches": [
-        "cono-sur-03"
-      ]
-    },
-    {
-      "id": "b1-conosur-03.ex09",
       "type": "listening-choice",
       "category": "listening",
-      "sentence": "La dictadura cívico-militar restringía la política, mientras la censura afectaba a la prensa.",
-      "teaches": [
-        "cono-sur-03"
-      ],
+      "sentence": "Uruguay llegó a tener una de las tasas más altas de presos políticos por habitante de todo el mundo.",
       "options": [
-        "La dictadura cívico-militar restringía la política, mientras la censura afectaba a la prensa.",
-        "El proceso no tuvo ninguna consecuencia histórica.",
-        "La democracia desapareció por completo."
+        "Uruguay came to have one of the highest rates of political prisoners per capita in the world.",
+        "Uruguay never held any political prisoners during this period.",
+        "Uruguay's rate of political prisoners was among the lowest in the region."
       ],
       "correct": 0
-    },
-    {
-      "id": "b1-conosur-03.ex10",
-      "type": "listening-choice",
-      "category": "listening",
-      "sentence": "Los presos políticos permanecían encarcelados, aunque sus familias exigían información.",
-      "teaches": [
-        "cono-sur-03"
-      ],
-      "options": [
-        "Los presos políticos permanecían encarcelados, aunque sus familias exigían información.",
-        "El proceso no tuvo ninguna consecuencia histórica.",
-        "La democracia desapareció por completo."
-      ],
-      "correct": 0
-    },
-    {
-      "id": "b1-conosur-03.ex11",
-      "type": "dictation",
-      "category": "listening",
-      "sentence": "La oposición se organizaba desde el exterior, buscando mantener sus redes.",
-      "teaches": [
-        "cono-sur-03"
-      ]
-    },
-    {
-      "id": "b1-conosur-03.ex12",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Cómo afectó la censura a la sociedad?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "La censura limitaba la prensa, mientras la sociedad buscaba otras formas de información.",
-        "No tuvo consecuencias, porque todo continuó igual.",
-        "No se puede relacionar con la historia del país."
-      ],
-      "correct": 0,
-      "teaches": [
-        "cono-sur-03"
-      ]
-    },
-    {
-      "id": "b1-conosur-03.ex13",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Quiénes eran los presos políticos?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Eran personas encarceladas por motivos políticos, aunque las autoridades las presentaran de otra manera.",
-        "No tuvo consecuencias, porque todo continuó igual.",
-        "No se puede relacionar con la historia del país."
-      ],
-      "correct": 0,
-      "teaches": [
-        "cono-sur-03"
-      ]
-    },
-    {
-      "id": "b1-conosur-03.ex14",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Cómo actuaba la oposición?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "La oposición se organizaba desde el exterior, buscando mantener sus redes.",
-        "No tuvo consecuencias, porque todo continuó igual.",
-        "No se puede relacionar con la historia del país."
-      ],
-      "correct": 0,
-      "teaches": [
-        "cono-sur-03"
-      ]
-    },
-    {
-      "id": "b1-conosur-03.ex15",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Explica cómo la censura afectó la vida pública. [Explain how censorship affected public life.]",
-          "answer": "La censura limitaba la prensa, mientras la sociedad buscaba otras formas de información."
-        }
-      ],
-      "teaches": [
-        "cono-sur-03"
-      ]
-    },
-    {
-      "id": "b1-conosur-03.ex16",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Describe la situación de los presos políticos. [Describe the situation of political prisoners.]",
-          "answer": "Los presos políticos permanecían encarcelados, mientras sus familias reclamaban información y apoyo."
-        }
-      ],
-      "teaches": [
-        "cono-sur-03"
-      ]
     }
   ]
 }

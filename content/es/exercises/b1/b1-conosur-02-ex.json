@@ -6,281 +6,102 @@
       "type": "matching",
       "category": "vocabulary",
       "pairs": [
-        [
-          "desaparecido",
-          "disappeared person"
-        ],
-        [
-          "represión",
-          "repression"
-        ],
-        [
-          "exilio",
-          "exile"
-        ]
-      ],
-      "teaches": [
-        "cono-sur-02"
+        ["sucederse", "to follow one another"],
+        ["de facto", "de facto"],
+        ["desplazar", "to displace, push out"],
+        ["la cúpula", "leadership, top brass"]
+      ]
+    },
+    {
+      "id": "b1-conosur-02.ex01b",
+      "type": "matching",
+      "category": "vocabulary",
+      "pairs": [
+        ["deteriorarse", "to deteriorate"],
+        ["reemplazar", "to replace"],
+        ["la salida", "exit, way out"],
+        ["unificado", "unified"]
       ]
     },
     {
       "id": "b1-conosur-02.ex02",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Qué relación aparece en el texto histórico?",
+      "category": "reading",
+      "question": "¿Cuántas juntas y presidentes de facto se sucedieron en Argentina entre 1976 y 1983?",
       "options": [
-        "La represión produjo desaparecidos, mientras muchas familias buscaban información.",
-        "El exilio terminó la represión inmediatamente.",
-        "La censura amplió la libertad de prensa."
+        "Cuatro juntas y cinco presidentes de facto distintos.",
+        "Una sola junta que gobernó sin ningún cambio.",
+        "Ninguna junta; un solo presidente civil gobernó todo el periodo."
       ],
-      "correct": 0,
-      "teaches": [
-        "cono-sur-02"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-conosur-02.ex03",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Muchas familias buscaban información sobre un ___.",
-      "answer": "desaparecido",
-      "teaches": [
-        "cono-sur-02"
-      ]
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Qué le ocurrió a Roberto Eduardo Viola tras asumir la presidencia en 1981?",
+      "options": [
+        "Permaneció en el cargo apenas nueve meses antes de ser desplazado por presiones dentro de la cúpula militar.",
+        "Gobernó durante toda la década sin ninguna interrupción.",
+        "Nunca llegó a asumir realmente la presidencia."
+      ],
+      "correct": 0
     },
     {
       "id": "b1-conosur-02.ex04",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "La ___ afectó a miles de personas, aunque las autoridades negaban parte de ella.",
-      "answer": "represión",
-      "teaches": [
-        "cono-sur-02"
-      ]
+      "sentence": "Galtieri asumió el poder; ___ seguido, ordenó la invasión de las islas Malvinas. (acto)",
+      "answer": "acto",
+      "teaches": ["acto-seguido-lo-que-ocurre-inmediatamente-despues"]
     },
     {
       "id": "b1-conosur-02.ex05",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "El ___ obligó a muchas personas a vivir fuera de su país.",
-      "answer": "exilio",
-      "teaches": [
-        "cono-sur-02"
-      ]
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Qué buscaba Galtieri al ordenar la invasión de las Malvinas en 1982?",
+      "options": [
+        "Desviar la atención de una crisis económica y social cada vez más profunda.",
+        "Cumplir con un acuerdo firmado previamente con el Reino Unido.",
+        "Responder a una invasión británica previa del territorio argentino."
+      ],
+      "correct": 0
     },
     {
       "id": "b1-conosur-02.ex06",
       "type": "sentence-builder",
       "category": "grammar",
-      "tiles": [
-        "El",
-        "régimen",
-        "restringía",
-        "las",
-        "libertades",
-        "políticas,",
-        "aunque",
-        "algunas",
-        "instituciones",
-        "funcionaban."
-      ],
-      "solution": [
-        "El",
-        "régimen",
-        "restringía",
-        "las",
-        "libertades",
-        "políticas,",
-        "aunque",
-        "algunas",
-        "instituciones",
-        "funcionaban."
-      ],
-      "english": "The regime restricted political freedoms although some institutions continued to function.",
-      "teaches": [
-        "cono-sur-02"
-      ]
+      "tiles": ["Tras", "la", "derrota,", "Galtieri", "fue", "reemplazado,", "acto", "seguido,", "por", "Reynaldo", "Bignone."],
+      "solution": ["Tras", "la", "derrota,", "Galtieri", "fue", "reemplazado,", "acto", "seguido,", "por", "Reynaldo", "Bignone."],
+      "english": "After the defeat, Galtieri was replaced, right after, by Reynaldo Bignone.",
+      "teaches": ["acto-seguido-lo-que-ocurre-inmediatamente-despues"]
     },
     {
       "id": "b1-conosur-02.ex07",
-      "type": "sentence-order",
-      "category": "grammar",
-      "sentences": [
-        "La represión se extendió. [Repression spread.]",
-        "Muchas familias buscaban información. [Many families searched for information.]",
-        "Por eso, el exilio se convirtió en una experiencia común. [Therefore, exile became a common experience.]"
+      "type": "dialogue-complete",
+      "category": "reading",
+      "prompt": [
+        { "speaker": "Carolina", "text": "¿Cuál era el único objetivo declarado de Reynaldo Bignone?" },
+        { "speaker": "Fructuoso", "text": "_____" }
       ],
-      "solution": [
-        0,
-        1,
-        2
+      "options": [
+        "Organizar una salida ordenada del poder militar hacia un gobierno civil.",
+        "Continuar indefinidamente el régimen militar sin ningún cambio.",
+        "Relanzar una nueva ofensiva militar en el Atlántico Sur."
       ],
-      "teaches": [
-        "cono-sur-02"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-conosur-02.ex08",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Por qué fue importante este proceso?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Porque cambió las instituciones, aunque la sociedad siguiera buscando formas de participación. [Because it changed institutions, although society continued seeking ways to participate.]",
-        "Porque no tuvo consecuencias. [Because it had no consequences.]",
-        "Porque terminó inmediatamente todos los conflictos. [Because it immediately ended all conflicts.]"
-      ],
-      "correct": 0,
-      "teaches": [
-        "cono-sur-02"
-      ]
-    },
-    {
-      "id": "b1-conosur-02.ex09",
       "type": "listening-choice",
       "category": "listening",
-      "sentence": "Se produjeron desapariciones, mientras las familias buscaban respuestas.",
-      "teaches": [
-        "cono-sur-02"
-      ],
+      "sentence": "Esta rápida sucesión de comandantes revela que la dictadura argentina estuvo marcada por profundas divisiones internas.",
       "options": [
-        "Se produjeron desapariciones, mientras las familias buscaban respuestas.",
-        "El proceso no tuvo ninguna consecuencia histórica.",
-        "La democracia desapareció por completo."
+        "This rapid succession of commanders reveals that the Argentine dictatorship was marked by deep internal divisions.",
+        "The Argentine dictatorship was a single, perfectly unified regime throughout.",
+        "Only one commander ever led the Argentine military government."
       ],
       "correct": 0
-    },
-    {
-      "id": "b1-conosur-02.ex10",
-      "type": "listening-choice",
-      "category": "listening",
-      "sentence": "La represión obligó a muchas personas al exilio, aunque algunas intentaron permanecer en el país.",
-      "teaches": [
-        "cono-sur-02"
-      ],
-      "options": [
-        "La represión obligó a muchas personas al exilio, aunque algunas intentaron permanecer en el país.",
-        "El proceso no tuvo ninguna consecuencia histórica.",
-        "La democracia desapareció por completo."
-      ],
-      "correct": 0
-    },
-    {
-      "id": "b1-conosur-02.ex11",
-      "type": "dictation",
-      "category": "listening",
-      "sentence": "Se investigaron casos después, mientras las víctimas reclamaban justicia.",
-      "teaches": [
-        "cono-sur-02"
-      ]
-    },
-    {
-      "id": "b1-conosur-02.ex12",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Qué ocurrió con muchas familias?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Muchas familias buscaban a personas desaparecidas, mientras reclamaban información y justicia.",
-        "No tuvo consecuencias, porque todo continuó igual.",
-        "No se puede relacionar con la historia del país."
-      ],
-      "correct": 0,
-      "teaches": [
-        "cono-sur-02"
-      ]
-    },
-    {
-      "id": "b1-conosur-02.ex13",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Por qué algunas personas fueron al exilio?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "El exilio ofrecía una salida, aunque implicaba separarse de familiares y del país.",
-        "No tuvo consecuencias, porque todo continuó igual.",
-        "No se puede relacionar con la historia del país."
-      ],
-      "correct": 0,
-      "teaches": [
-        "cono-sur-02"
-      ]
-    },
-    {
-      "id": "b1-conosur-02.ex14",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Cómo se describió la represión?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "La represión produjo desapariciones y persecución, mientras las autoridades negaban parte de los hechos.",
-        "No tuvo consecuencias, porque todo continuó igual.",
-        "No se puede relacionar con la historia del país."
-      ],
-      "correct": 0,
-      "teaches": [
-        "cono-sur-02"
-      ]
-    },
-    {
-      "id": "b1-conosur-02.ex15",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Explica cómo la represión afectó a las familias. [Explain how repression affected families.]",
-          "answer": "La represión produjo desapariciones, mientras muchas familias buscaban información sobre sus seres queridos."
-        }
-      ],
-      "teaches": [
-        "cono-sur-02"
-      ]
-    },
-    {
-      "id": "b1-conosur-02.ex16",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Explica la relación entre represión y exilio. [Explain the relationship between repression and exile.]",
-          "answer": "La represión obligó a muchas personas al exilio, aunque algunas intentaron permanecer en el país."
-        }
-      ],
-      "teaches": [
-        "cono-sur-02"
-      ]
     }
   ]
 }

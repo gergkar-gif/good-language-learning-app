@@ -6,343 +6,102 @@
       "type": "matching",
       "category": "vocabulary",
       "pairs": [
-        [
-          "transición",
-          "transition"
-        ],
-        [
-          "memoria histórica",
-          "historical memory"
-        ],
-        [
-          "amnistía",
-          "amnesty"
-        ]
-      ],
-      "teaches": [
-        "cono-sur-05"
+        ["penal", "criminal (adj., legal)"],
+        ["la comisión", "commission"],
+        ["ejecutado", "executed person"],
+        ["ampliar", "to expand"]
+      ]
+    },
+    {
+      "id": "b1-conosur-05.ex01b",
+      "type": "matching",
+      "category": "vocabulary",
+      "pairs": [
+        ["singular", "singular, unique"],
+        ["ratificar", "to ratify"],
+        ["declarar", "to declare"],
+        ["la reapertura", "reopening"]
       ]
     },
     {
       "id": "b1-conosur-05.ex02",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Qué caracteriza la transición democrática?",
+      "category": "reading",
+      "question": "¿Qué camino eligió Argentina, en tanto que enfoque inicial, frente al legado de la dictadura?",
       "options": [
-        "Se inició una transición, aunque algunas cuestiones de justicia quedaron abiertas.",
-        "La transición eliminó inmediatamente todos los debates sobre memoria.",
-        "La transición impidió cualquier investigación posterior."
+        "Juicios penales tempranos contra los propios comandantes.",
+        "Una amnistía general aprobada por referéndum popular.",
+        "No adoptó ningún tipo de proceso de justicia."
       ],
-      "correct": 0,
-      "teaches": [
-        "cono-sur-05"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-conosur-05.ex03",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "La ___ democrática comenzó después del final de la dictadura, aunque quedaron cuestiones pendientes.",
-      "answer": "transición",
-      "teaches": [
-        "cono-sur-05"
-      ]
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Qué documentó la Comisión Valech en 2004?",
+      "options": [
+        "Decenas de miles de casos de prisión política y tortura, ampliando el registro oficial de víctimas.",
+        "Únicamente los casos de ejecutados documentados por la Comisión Rettig en 1991.",
+        "Ningún caso adicional; confirmó que no hubo tortura durante la dictadura."
+      ],
+      "correct": 0
     },
     {
       "id": "b1-conosur-05.ex04",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "La ___ sigue siendo objeto de debate, porque las sociedades interpretan el pasado de maneras distintas.",
-      "answer": "memoria histórica",
-      "teaches": [
-        "cono-sur-05"
-      ]
+      "sentence": "Argentina optó por juicios tempranos, en ___ que Chile prefirió inicialmente comisiones de la verdad. (tanto)",
+      "answer": "tanto",
+      "teaches": ["en-tanto-que-matizar-una-comparacion-entre-dos-casos"]
     },
     {
       "id": "b1-conosur-05.ex05",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Se aprobaron leyes de ___ en algunos países, aunque las víctimas siguieron reclamando justicia.",
-      "answer": "amnistía",
-      "teaches": [
-        "cono-sur-05"
-      ]
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Qué ocurrió con la Ley de Caducidad uruguaya en los referéndums de 1989 y 2009?",
+      "options": [
+        "La ciudadanía la ratificó sorprendentemente en ambas ocasiones.",
+        "La ciudadanía la rechazó en las dos ocasiones.",
+        "Nunca se celebró ningún referéndum sobre esta ley."
+      ],
+      "correct": 0
     },
     {
       "id": "b1-conosur-05.ex06",
       "type": "sentence-builder",
       "category": "grammar",
-      "tiles": [
-        "El",
-        "régimen",
-        "restringía",
-        "las",
-        "libertades",
-        "políticas,",
-        "aunque",
-        "algunas",
-        "instituciones",
-        "funcionaban."
-      ],
-      "solution": [
-        "El",
-        "régimen",
-        "restringía",
-        "las",
-        "libertades",
-        "políticas,",
-        "aunque",
-        "algunas",
-        "instituciones",
-        "funcionaban."
-      ],
-      "english": "The regime restricted political freedoms although some institutions continued to function.",
-      "teaches": [
-        "cono-sur-05"
-      ]
+      "tiles": ["Uruguay,", "en", "tanto", "que", "caso", "singular", "dentro", "de", "la", "región,", "vivió", "un", "patrón", "distinto."],
+      "solution": ["Uruguay,", "en", "tanto", "que", "caso", "singular", "dentro", "de", "la", "región,", "vivió", "un", "patrón", "distinto."],
+      "english": "Uruguay, as a singular case within the region, experienced a different pattern.",
+      "teaches": ["en-tanto-que-matizar-una-comparacion-entre-dos-casos"]
     },
     {
       "id": "b1-conosur-05.ex07",
-      "type": "sentence-order",
-      "category": "grammar",
-      "sentences": [
-        "La represión se extendió. [Repression spread.]",
-        "Muchas familias buscaban información. [Many families searched for information.]",
-        "Por eso, el exilio se convirtió en una experiencia común. [Therefore, exile became a common experience.]"
+      "type": "dialogue-complete",
+      "category": "reading",
+      "prompt": [
+        { "speaker": "Carolina", "text": "¿Se mantuvo la Ley de Caducidad uruguaya sin ningún cambio después de estos referéndums?" },
+        { "speaker": "Fructuoso", "text": "_____" }
       ],
-      "solution": [
-        0,
-        1,
-        2
+      "options": [
+        "No, la Corte Suprema terminó declarándola parcialmente inconstitucional en 2011, permitiendo la reapertura de varios casos.",
+        "Sí, se mantuvo exactamente igual hasta el día de hoy sin ningún cambio.",
+        "No, fue anulada inmediatamente después del primer referéndum de 1989."
       ],
-      "teaches": [
-        "cono-sur-05"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-conosur-05.ex08",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Por qué fue importante este proceso?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Porque cambió las instituciones, aunque la sociedad siguiera buscando formas de participación. [Because it changed institutions, although society continued seeking ways to participate.]",
-        "Porque no tuvo consecuencias. [Because it had no consequences.]",
-        "Porque terminó inmediatamente todos los conflictos. [Because it immediately ended all conflicts.]"
-      ],
-      "correct": 0,
-      "teaches": [
-        "cono-sur-05"
-      ]
-    },
-    {
-      "id": "b1-conosur-05.ex09",
       "type": "listening-choice",
       "category": "listening",
-      "sentence": "Se inició una transición democrática, aunque quedaron preguntas sobre justicia.",
-      "teaches": [
-        "cono-sur-05"
-      ],
+      "sentence": "Estos tres caminos tan distintos muestran que no existió una única manera de procesar el legado de estas dictaduras.",
       "options": [
-        "Se inició una transición democrática, aunque quedaron preguntas sobre justicia.",
-        "El proceso no tuvo ninguna consecuencia histórica.",
-        "La democracia desapareció por completo."
+        "These three very different paths show that there was no single way to process the legacy of these dictatorships.",
+        "All three countries followed exactly the same approach to justice.",
+        "None of these three countries ever addressed the dictatorship's legacy."
       ],
       "correct": 0
-    },
-    {
-      "id": "b1-conosur-05.ex10",
-      "type": "listening-choice",
-      "category": "listening",
-      "sentence": "Se aprobaron leyes de amnistía, mientras las organizaciones de víctimas seguían reclamando.",
-      "teaches": [
-        "cono-sur-05"
-      ],
-      "options": [
-        "Se aprobaron leyes de amnistía, mientras las organizaciones de víctimas seguían reclamando.",
-        "El proceso no tuvo ninguna consecuencia histórica.",
-        "La democracia desapareció por completo."
-      ],
-      "correct": 0
-    },
-    {
-      "id": "b1-conosur-05.ex11",
-      "type": "dictation",
-      "category": "listening",
-      "sentence": "La memoria histórica sigue presente, porque el pasado continúa influyendo en el debate público.",
-      "teaches": [
-        "cono-sur-05"
-      ]
-    },
-    {
-      "id": "b1-conosur-05.ex12",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Qué cambió con la transición?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Se inició una transición democrática, aunque quedaron preguntas sobre justicia y responsabilidad.",
-        "No tuvo consecuencias, porque todo continuó igual.",
-        "No se puede relacionar con la historia del país."
-      ],
-      "correct": 0,
-      "teaches": [
-        "cono-sur-05"
-      ]
-    },
-    {
-      "id": "b1-conosur-05.ex13",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Por qué sigue siendo importante la memoria histórica?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "La memoria histórica sigue influyendo en el debate, porque las sociedades todavía discuten cómo recordar el pasado.",
-        "No tuvo consecuencias, porque todo continuó igual.",
-        "No se puede relacionar con la historia del país."
-      ],
-      "correct": 0,
-      "teaches": [
-        "cono-sur-05"
-      ]
-    },
-    {
-      "id": "b1-conosur-05.ex14",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Cómo se debatió la amnistía?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "La amnistía protegió a algunas personas de procesos judiciales, aunque las víctimas siguieron reclamando justicia.",
-        "No tuvo consecuencias, porque todo continuó igual.",
-        "No se puede relacionar con la historia del país."
-      ],
-      "correct": 0,
-      "teaches": [
-        "cono-sur-05"
-      ]
-    },
-    {
-      "id": "b1-conosur-05.ex15",
-      "type": "multiple-choice",
-      "category": "reading",
-      "question": "¿Cuál es la idea principal del texto?",
-      "options": [
-        "Las dictaduras del Cono Sur compartieron formas de represión, aunque cada país tuviera su propio contexto.",
-        "Todos los países vivieron exactamente la misma experiencia.",
-        "La democracia se mantuvo intacta durante todo el periodo."
-      ],
-      "correct": 0
-    },
-    {
-      "id": "b1-conosur-05.ex16",
-      "type": "multiple-choice",
-      "category": "reading",
-      "question": "¿Qué papel tuvo la Operación Cóndor?",
-      "options": [
-        "Permitió coordinar la persecución entre varios países, por lo que la represión adquirió una dimensión regional.",
-        "Fue un programa económico sin relación con la política.",
-        "Fue una organización creada para defender a los exiliados."
-      ],
-      "correct": 0
-    },
-    {
-      "id": "b1-conosur-05.ex17",
-      "type": "multiple-choice",
-      "category": "reading",
-      "question": "¿Qué ocurrió durante la transición?",
-      "options": [
-        "Se inició la democratización, aunque quedaron debates sobre justicia y amnistía.",
-        "Todos los conflictos desaparecieron inmediatamente.",
-        "La memoria histórica dejó de ser relevante."
-      ],
-      "correct": 0
-    },
-    {
-      "id": "b1-conosur-05.ex18",
-      "type": "multiple-choice",
-      "category": "reading",
-      "question": "¿Qué conclusión encaja mejor?",
-      "options": [
-        "La memoria histórica sigue siendo debatida, porque las sociedades todavía discuten justicia y reconciliación.",
-        "El pasado ya no influye en la democracia.",
-        "Las dictaduras no dejaron consecuencias sociales."
-      ],
-      "correct": 0
-    },
-    {
-      "id": "b1-conosur-05.ex19",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Explica por qué la memoria histórica sigue siendo relevante. [Explain why historical memory remains relevant.]",
-          "answer": "La memoria histórica sigue siendo relevante, porque las sociedades todavía debaten cómo combinar justicia, reconciliación y democracia."
-        }
-      ],
-      "teaches": [
-        "cono-sur-05"
-      ]
-    },
-    {
-      "id": "b1-conosur-05.ex20",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Explica la relación entre transición y amnistía. [Explain the relationship between transition and amnesty.]",
-          "answer": "Se inició una transición democrática, aunque en algunos países se aprobaron leyes de amnistía que siguieron siendo discutidas."
-        }
-      ],
-      "teaches": [
-        "cono-sur-05"
-      ]
-    },
-    {
-      "id": "b1-conosur-05.ex21",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Resume el legado de las dictaduras del Cono Sur. [Summarise the legacy of the Southern Cone dictatorships.]",
-          "answer": "Las dictaduras dejaron una memoria histórica compleja, mientras las democracias posteriores intentaban combinar justicia, reconciliación y garantías institucionales."
-        }
-      ],
-      "teaches": [
-        "cono-sur-05"
-      ]
     }
   ]
 }
