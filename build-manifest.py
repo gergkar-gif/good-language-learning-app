@@ -482,6 +482,9 @@ LANG_UNIT_TITLES = {
             "Hobbies & Free Time",
             "Friends & Making Plans",
         ],
+        "a2": [
+            "Daily Life & Routines",
+        ],
     },
 }
 
@@ -515,7 +518,7 @@ def auto_group_units(lang, level_id, level_path):
         position = block_index + 1
         chunk = plain[start:start + 5]
         stems = [stem for _, stem in chunk]
-        consolidation_stem = f"{level_id}-{chunk[-1][0]}-consolidation"
+        consolidation_stem = f"{chunk[-1][1]}-consolidation"
         if (level_path / f"{consolidation_stem}.json").exists():
             stems.append(consolidation_stem)
         lessons = [e for e in
