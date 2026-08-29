@@ -353,30 +353,72 @@ const HungarianMorphology = (function () {
         ['zunk', 'imp', 1, 'pl'], ['zünk', 'imp', 1, 'pl'],
         ['zatok', 'imp', 2, 'pl'], ['zetek', 'imp', 2, 'pl'],
         ['zanak', 'imp', 3, 'pl'], ['zenek', 'imp', 3, 'pl'],
-        ['zak', 'imp', 1, 'sg'], ['zek', 'imp', 1, 'sg'], ['z', 'imp', 2, 'sg']
-        // "-ít"-suffixed stems (tanít, javít, gyógyít, ...) need NO extra
-        // rows here: unlike s/sz/z stems, "-ít" verbs don't assimilate at
-        // all — the imperative is just the bare stem + the SAME plain "s"
-        // endings above, with the "t" left untouched ("taníts", not
-        // "taníss" or "tanícs") — so the 's'/'son'/'sunk'/... rows just
-        // above already decode "tanítson" -> "tanít" correctly by
-        // stripping only their own literal suffix, no separate entry
-        // needed. (An earlier version of this table had redundant, and
-        // for 2sg actively wrong, "ts"-prefixed rows here — caught before
-        // shipping by checking "taníts" minus "ts" would leave "taní",
-        // not the real headword "tanít".)
+        ['zak', 'imp', 1, 'sg'], ['zek', 'imp', 1, 'sg'], ['z', 'imp', 2, 'sg'],
+        // "-ít"-suffixed stems (tanít, javít, gyógyít, ...) and t-final
+        // stems preceded by a SONORANT (ért, tart, bánt, ... — reusing
+        // PAST_TYPE_I_SONORANTS' r/l/n/ny/j/ly, same extrapolation
+        // _imperativeMarker's own comment flags) need NO extra rows
+        // here either: unlike s/z stems, these don't assimilate at
+        // all — the imperative is just the bare stem (with its own "t"
+        // untouched) + the SAME plain "s" endings above ("taníts",
+        // "tarts", not "taníss"/"tarss") — so the 's'/'son'/'sunk'/...
+        // rows just above already decode "tanítson"/"tartson" -> the
+        // real headword by stripping only their own literal suffix, no
+        // separate entry needed. (An earlier version of this table had
+        // redundant, and for 2sg actively wrong, "ts"-prefixed rows
+        // here — caught before shipping by checking "taníts" minus "ts"
+        // would leave "taní", not the real headword "tanít".)
         //
-        // Genuinely NOT covered by this table (declined rather than
-        // guessed — see conjugate()'s own comment on why): single-t-after-
-        // vowel stems OUTSIDE the "-ít" class (fizet, nevet, siet, ...),
-        // whose imperative replaces the stem's own "t" with a doubled "ss"
-        // ("fizess", not "fizets") — this isn't a suffix STRIP at all
-        // (the stem's last letter itself changes), and t-after-CONSONANT
-        // stems (ért, választ, ...), where two conflicting patterns were
-        // found in memory this session ("érts" keeping the t vs.
-        // "válassz" dropping it) with no way to verify which — rather
-        // than risk teaching either guess as confirmed Hungarian, both
-        // classes are left undecoded.
+        // -- imperative, DEFINITE (2026-08-29 follow-up — see
+        // _conjugateImperativeDefinite's own comment for the full
+        // derivation) — 2sg takes a SINGULAR (non-doubled) version of
+        // whatever marker the stem would otherwise double: bare "-d" for
+        // a regular or plain-sibilant stem ("várd"/"olvasd"/"nézd"/
+        // "mondd" — the sibilant classes still leave one copy of their
+        // own final consonant in place, same as everywhere else in this
+        // table), but "-sd" for the "-ít"/sonorant-t class specifically,
+        // which keeps its own unassimilated "t" ("tartsd", not "tartd" —
+        // an easy trap, since it LOOKS like it should pattern with
+        // "mondd"'s bare-d but doesn't; caught by this follow-up's own
+        // external check after first shipping the wrong "tartd" guess).
+        ['jam', 'imp', 1, 'sg'], ['jem', 'imp', 1, 'sg'],
+        ['d', 'imp', 2, 'sg'], ['sd', 'imp', 2, 'sg'],
+        ['ja', 'imp', 3, 'sg'], ['je', 'imp', 3, 'sg'],
+        ['juk', 'imp', 1, 'pl'], ['jük', 'imp', 1, 'pl'],
+        ['játok', 'imp', 2, 'pl'], ['jétek', 'imp', 2, 'pl'],
+        ['ják', 'imp', 3, 'pl'], ['jék', 'imp', 3, 'pl'],
+        // Same sibilant-gemination logic as indefinite above, just with
+        // the definite endings' own vowel — leaves one copy of the
+        // stem's own final s/z in the remainder either way ("olvassa"
+        // minus "sa" -> "olvas"; "nézze" minus "ze" -> "néz"). Also
+        // covers the "-ít"/sonorant-t class for free, same as indefinite.
+        ['sam', 'imp', 1, 'sg'], ['sem', 'imp', 1, 'sg'],
+        ['sa', 'imp', 3, 'sg'], ['se', 'imp', 3, 'sg'],
+        ['suk', 'imp', 1, 'pl'], ['sük', 'imp', 1, 'pl'],
+        ['sátok', 'imp', 2, 'pl'], ['sétek', 'imp', 2, 'pl'],
+        ['sák', 'imp', 3, 'pl'], ['sék', 'imp', 3, 'pl'],
+        ['zam', 'imp', 1, 'sg'], ['zem', 'imp', 1, 'sg'],
+        ['za', 'imp', 3, 'sg'], ['ze', 'imp', 3, 'sg'],
+        ['zuk', 'imp', 1, 'pl'], ['zük', 'imp', 1, 'pl'],
+        ['zátok', 'imp', 2, 'pl'], ['zétek', 'imp', 2, 'pl'],
+        ['zák', 'imp', 3, 'pl'], ['zék', 'imp', 3, 'pl']
+        //
+        // Genuinely NOT covered by plain suffix-stripping — decoded
+        // instead by _decodeTReplacedImperative() below, called
+        // separately from analyze() itself, since these need the
+        // remainder's tail RECONSTRUCTED (a "t" put back), not just
+        // accepted-or-rejected as-is: single-t-after-vowel stems OUTSIDE
+        // the "-ít"/sonorant class (fizet, nevet, siet, lát, ...), whose
+        // imperative replaces the stem's own "t" with a doubled "ss"
+        // ("fizess", not "fizets"), and t-after-SIBILANT stems (választ,
+        // fest, ...), whose imperative drops the "t" and geminates the
+        // sibilant instead ("válassz", "fess") — both cross-checked
+        // externally this follow-up (see _imperativeMarker's own
+        // comment for sources). Still declined entirely, in both
+        // directions: the "sz" digraph on its own (a genuine sz-final
+        // stem's imperative, not one whose "sz" came from an absorbed
+        // "t") — the most common sz-final verbs (eszik, iszik) are
+        // already covered via IRREGULAR_VERBS, so this is a narrow gap.
     ])
     .sort((a, b) => b[0].length - a[0].length);
 
@@ -1038,6 +1080,74 @@ const HungarianMorphology = (function () {
         return empty;
     }
 
+    // Decodes the two imperative t-final classes _imperativeMarker's own
+    // comment describes as needing "the remainder's tail reconstructed",
+    // not just accepted-or-rejected: t-after-vowel stems (fizet -> the
+    // "t" replaced by doubled "ss") and t-after-sibilant stems (választ
+    // -> the "t" dropped, the sibilant doubled instead). Both classes
+    // leave a word whose ending literally isn't a valid suffix of the
+    // real headword — no strip of it can ever land back on "fizet" or
+    // "választ" — so unlike everything else in this file, this doesn't
+    // try suffixes from a table; it tries STRIPPING the marker+ending
+    // combination, then PUTTING A "t" (and, for the sibilant case, the
+    // sibilant that "t" replaced) BACK before checking the dictionary.
+    //
+    // AFTER_MARKER lists what comes after the doubled letters for every
+    // cell this covers, independent of which doubling produced them
+    // (mirrors the "rest" pieces _conjugateImperativeDefinite computes,
+    // plus indefinite's own endings) — GEMINATIONS lists every doubled
+    // spelling this session found real Hungarian producing and what to
+    // reconstruct in its place. Trying every (ending, doubling) pair
+    // against real dictionary data is exactly this file's usual
+    // "generate candidates, keep whichever resolves" approach; it's just
+    // that resolving here means transforming the remainder, not merely
+    // accepting it.
+    const T_REPLACED_AFTER_MARKER = [
+        // [afterMarker, person, number, definite]
+        ['', 2, 'sg', false],
+        ['ak', 1, 'sg', false], ['ek', 1, 'sg', false],
+        ['on', 3, 'sg', false], ['en', 3, 'sg', false], ['ön', 3, 'sg', false],
+        ['unk', 1, 'pl', false], ['ünk', 1, 'pl', false],
+        ['atok', 2, 'pl', false], ['etek', 2, 'pl', false],
+        ['anak', 3, 'pl', false], ['enek', 3, 'pl', false],
+        ['am', 1, 'sg', true], ['em', 1, 'sg', true],
+        ['a', 3, 'sg', true], ['e', 3, 'sg', true],
+        ['uk', 1, 'pl', true], ['ük', 1, 'pl', true],
+        ['átok', 2, 'pl', true], ['étek', 2, 'pl', true],
+        ['ák', 3, 'pl', true], ['ék', 3, 'pl', true]
+    ];
+    // [doubledSpelling, reconstructedTail] — "ss" is genuinely ambiguous
+    // between the vowel-preceded-t class (reconstructs as bare "t") and
+    // the s-preceded-t class (reconstructs as "st"), so both are tried;
+    // whichever one resolves against the dictionary wins, same as every
+    // other genuine ambiguity in this file.
+    const T_REPLACED_GEMINATIONS = [['ss', 't'], ['ss', 'st'], ['zz', 'zt'], ['ssz', 'szt']];
+    // Definite 2sg is its own special case, not covered by the loop
+    // below: _singularizeMarker's own comment explains why it takes a
+    // SINGULAR marker rather than doubling like every other cell, so the
+    // reconstruction here tries putting "t" back after only ONE copy of
+    // "s"/"z" (not two) — "fizesd" -> "fizet" (single "s" removed,
+    // replaced by "t"), "válaszd" -> "választ" (nothing removed at all;
+    // the "sz" was never doubled at this cell to begin with, so "t" is
+    // simply appended after it).
+    const T_REPLACED_2SG_DEFINITE = [['sd', 't'], ['sd', 'st'], ['zd', 'zt'], ['szd', 'szt']];
+    function decodeTReplacedImperative(word) {
+        const candidates = [];
+        for (const [afterMarker, person, number, definite] of T_REPLACED_AFTER_MARKER) {
+            for (const [doubled, tail] of T_REPLACED_GEMINATIONS) {
+                const remainder = strip(word, doubled + afterMarker);
+                if (remainder === null) continue;
+                candidates.push({ lemma: remainder + tail, person: person, number: number, definite: definite });
+            }
+        }
+        for (const [suffix, tail] of T_REPLACED_2SG_DEFINITE) {
+            const remainder = strip(word, suffix);
+            if (remainder === null) continue;
+            candidates.push({ lemma: remainder + tail, person: 2, number: 'sg', definite: true });
+        }
+        return candidates;
+    }
+
     /**
      * Try to resolve a Hungarian surface form the dictionary and static
      * word-index didn't recognise directly. dictionary and wordIndex are
@@ -1210,6 +1320,18 @@ const HungarianMorphology = (function () {
             }
         }
 
+        // 1b. imperative forms of a t-final stem whose "t" was replaced
+        // or absorbed during assimilation ("fizess" -> "fizet",
+        // "válassz" -> "választ") — see decodeTReplacedImperative()'s
+        // own comment for why this needs its own reconstruction step
+        // rather than a plain suffix-table row like everything above.
+        for (const c of decodeTReplacedImperative(word)) {
+            const sense = verbSense(dictionary[c.lemma]);
+            if (!sense) continue;
+            const label = [TENSE_LABELS.imp, PERSON_LABELS[c.person][c.number]].join(', ');
+            addFromLemma(c.lemma, sense, label);
+        }
+
         // 2. case suffix, optionally stacked over a possessive/plural form
         for (const [suffix, caseCode] of CASE_SUFFIXES) {
             const remainder = strip(word, suffix);
@@ -1310,28 +1432,43 @@ const HungarianMorphology = (function () {
     // word-index.json. So this does need real vowel-harmony logic.
     //
     // Scope: present + past indicative, plus conditional and imperative
-    // (2026-08-29 follow-up — Hungarian has no separate subjunctive; it
-    // reuses the imperative form for subjunctive-like clauses, e.g. "azt
-    // akarom, hogy menjen" = "I want him to go" using the imperative
-    // "menjen"), all indefinite + definite except imperative definite
-    // (not modelled at all — see _conjugateImperativeIndefinite's own
-    // comment). Past tense's linking-vowel rule and the definite endings
-    // (2026-08-20 follow-up) were researched against external Hungarian-
-    // grammar references; conditional/imperative (2026-08-29) could NOT
-    // be — this session's network egress was blocked for every
-    // linguistics reference site tried (Wiktionary, Wikipedia,
-    // cooljugator.com, several Hungarian-grammar blogs), so that follow-
-    // up instead cross-checked itself against this repo's OWN already-
-    // vetted content/hu/grammar cards (szeretnék/szeretnél/szeretne/
-    // szeretnétek, menj, maradjon, beszéljen) and one live grep hit
-    // (jöjjön) — real, human-reviewed Hungarian, just narrower coverage
-    // than an external grammar reference would have given. Combined with
-    // how much of the present-tense indefinite logic above turned out to
-    // need fixing even after "high confidence" from memory alone, treat
-    // the conditional/imperative additions as a good-faith derivation
-    // worth a native-speaker spot-check, not a fully sourced one — see
-    // _conjugateConditionalIndefinite/_conjugateImperativeIndefinite's
-    // own comments for exactly what's covered vs. deliberately declined.
+    // (2026-08-29, in two follow-up passes — Hungarian has no separate
+    // subjunctive; it reuses the imperative form for subjunctive-like
+    // clauses, e.g. "azt akarom, hogy menjen" = "I want him to go" using
+    // the imperative "menjen"), indefinite + definite for both moods.
+    //
+    // The first pass had no external access at all (every linguistics
+    // reference site tried — Wiktionary, Wikipedia, cooljugator.com,
+    // several Hungarian-grammar blogs — was blocked by this session's
+    // network egress) and leaned on this repo's own vetted content/hu/
+    // grammar cards plus one live grep hit; it also declined imperative
+    // definite conjugation entirely and every t-final stem outside the
+    // "-ít" derivational class, having found conflicting half-remembered
+    // patterns it couldn't verify. A second follow-up (still 2026-08-29)
+    // got search-engine access (WebFetch to the actual reference pages
+    // stayed blocked throughout, but WebSearch's own snippets — quoting
+    // an academic paper on teaching the Hungarian imperative to
+    // foreigners, and Rounds' "Hungarian: An Essential Grammar" among
+    // others — carried enough real conjugated forms to work from) and
+    // used it to fill in both of those gaps: the full t-final
+    // classification (see _imperativeMarker's own comment) and the full
+    // imperative DEFINITE paradigm (see _conjugateImperativeDefinite's
+    // own comment) — including catching and fixing two mistakes an
+    // unverified first guess had made (imperative definite 2sg using the
+    // WRONG, doubled marker; front-harmony's 3sg/2pl/3pl wrongly assumed
+    // to reuse present indicative's own endings when real Hungarian uses
+    // a different, uniformly "j"-initial set instead) via round-trip
+    // testing against real, externally-attested forms, not just internal
+    // self-consistency. What's STILL declined after both passes — the
+    // "sz" digraph's imperative gemination specifically — is narrower
+    // than what shipped after the first pass, not broader; see the
+    // "Known gaps" note at the end of this file for the precise
+    // remaining scope. Given how much of even the present-tense
+    // indefinite logic above turned out to need fixing despite "high
+    // confidence" from memory alone, and that this whole area only had
+    // search-snippet access rather than a full source document to read
+    // straight through, treat all of this — not just the parts admitted
+    // above — as worth an eventual native-speaker spot-check.
 
     const BACK_VOWELS = 'aáoóuú';
     const FRONT_ROUNDED_VOWELS = 'öőüű';
@@ -1712,37 +1849,98 @@ const HungarianMorphology = (function () {
         return null;
     }
 
-    // ---- IMPERATIVE, INDEFINITE ----
-    // Marker is "j" for most stems, assimilating into a doubled copy of
-    // the stem's own final letter for s/z-final stems ("olvas" ->
-    // "olvass-", "néz" -> "nézz-"), same gemination mechanic
-    // _conjugatePresentDefinite already uses for definite present's own
-    // "j"-initial endings. Unlike every other mood/tense here, "j"
-    // attaches to ANY stem directly with NO linking vowel EVER, even a
-    // pre-existing consonant cluster ("küldj", not "küldej") — see the
-    // "küldj"/"maradj" cross-check in MOOD_SUFFIXES's own comment above.
-    // Endings harmonize back/front 2-way (like conditional) for every
-    // person except 3sg, which keeps present tense's own 3-way -on/-en/
-    // -ön grade — cross-checked against "maradjon"/"beszéljen" (already
-    // in content/hu/grammar) and "jöjjön" (found live in content/hu).
+    // ---- IMPERATIVE marker computation (shared by indefinite + definite) ----
+    // (2026-08-29, refined follow-up — the original version of this file
+    // declined every t-final stem outside the "-ít" class, having found
+    // two conflicting half-remembered patterns with no way to verify
+    // which; a later pass got external access and resolved it, cross-
+    // checked against multiple independent sources: a Hungarian-for-
+    // foreigners academic paper (Durst, "A magyar felszólító mód
+    // tanítása külföldieknek", Szeged) giving "ért" -> "érts" and "tart"
+    // -> "tartsam", a search-engine snippet quoting "fizet" -> "fizess"/
+    // "fizessek"/"fizessen", and another quoting "választ" -> "válassz").
     //
-    // Declined (returns null) rather than guessed, so nothing is
-    // generated that the Reader's own analyze() couldn't read back:
-    //   - the "sz" digraph specifically (a genuine sz-final stem's "j"
-    //     geminates as an inserted "s" before the existing "sz", giving
-    //     "...ssz" — not decodable by plain suffix-stripping the way
-    //     plain s/z-final stems are, so not generated either)
-    //   - any stem ending in "t" OUTSIDE the "-ít" derivational class
-    //     (fizet, nevet, siet, ért, választ, ...) — "-ít" verbs keep
-    //     their "t" and just add "s" ("taníts", not "tanícs"), a
-    //     structurally-detectable, confidently-regular subclass; every
-    //     OTHER t-final stem was a genuine source of conflicting
-    //     half-remembered patterns this session (t-after-vowel replacing
-    //     "t" with a doubled "ss" vs. t-after-consonant either keeping or
-    //     dropping the "t", with no way to verify which this session —
-    //     see MOOD_SUFFIXES's own note) — rather than risk teaching a
-    //     wrong guess as confirmed Hungarian, the whole class beyond
-    //     "-ít" is left ungenerated.
+    // The "j" marker assimilates into the stem's own final consonant(s)
+    // in four different ways depending on what the stem ends in:
+    //   - a sibilant (s/z; the "sz" digraph is its own case, see below):
+    //     "j" geminates into a doubled copy of that consonant, digraph-
+    //     aware the same way _conjugatePresentDefinite's own sibilant
+    //     assimilation already is ("olvas" -> "olvass-", "néz" -> "nézz-")
+    //   - "t" preceded by a SONORANT (r/l/n/ny/j/ly — reusing
+    //     PAST_TYPE_I_SONORANTS from the past-tense classifier above,
+    //     which this session's external check didn't directly re-verify
+    //     for this new purpose but which "tart"/"ért" both fit) OR by
+    //     the "-ít" derivational suffix specifically (tanít, javít, ...):
+    //     the stem is left completely unchanged (its own "t" stays) and
+    //     a bare "s" is appended ("tart" -> "tarts-", "tanít" ->
+    //     "taníts-")
+    //   - "t" preceded by a SIBILANT (választ, fest, ...): the "t" is
+    //     dropped and the PRECEDING sibilant geminates instead, same
+    //     digraph-aware doubling as the plain-sibilant case above, just
+    //     computed one letter further back ("választ" -> "válassz-",
+    //     "fest" -> "fess-")
+    //   - "t" preceded by any OTHER vowel (fizet, lát, nevet, siet, ...):
+    //     the "t" is dropped and replaced outright with a doubled "ss"
+    //     ("fizet" -> "fizess-", "lát" -> "láss-")
+    // Declined (returns null) rather than guessed: the "sz" digraph
+    // specifically (a genuine sz-final stem's "j" geminates as an
+    // inserted "s" before the existing "sz", giving "...ssz" — the most
+    // common sz-final verbs, eszik/iszik, are already covered via
+    // IRREGULAR_VERBS, so this is a narrow remaining gap).
+    //
+    // Returns { base, marker } — base is the stem to actually attach an
+    // ending to (the original stem, unless the sibilant-preceded-"t"
+    // case shortened it by dropping the "t"), or null if undecidable.
+    function _imperativeMarker(stem) {
+        if (stem.endsWith('ít')) return { base: stem, marker: 's' };
+        if (stem.endsWith('sz')) return null; // sz-digraph gemination — declined
+        if (stem.endsWith('t')) {
+            const before = stem.slice(0, -1);
+            const beforeUnit = _finalConsonantUnit(before);
+            if (beforeUnit && PAST_TYPE_I_SONORANTS.includes(beforeUnit)) {
+                return { base: stem, marker: 's' }; // sonorant-preceded: keep "t", add "s"
+            }
+            if (beforeUnit && _isSibilantFinal(before)) {
+                // sibilant-preceded: drop "t", double the sibilant instead
+                const geminated = beforeUnit.length === 1 ? beforeUnit + beforeUnit : beforeUnit[0] + beforeUnit;
+                return { base: before.slice(0, -beforeUnit.length), marker: geminated };
+            }
+            return { base: before, marker: 'ss' }; // vowel-preceded: "t" replaced by doubled "ss"
+        }
+        if (_isSibilantFinal(stem)) {
+            const unit = _finalConsonantUnit(stem);
+            return { base: stem.slice(0, -unit.length), marker: unit + unit };
+        }
+        return { base: stem, marker: 'j' };
+    }
+
+    // Imperative definite 2sg specifically uses a SINGULAR (non-doubled)
+    // version of _imperativeMarker's own marker, not the doubled form
+    // every other cell does — a correction this follow-up's OWN external
+    // check caught after first assuming (wrongly) that 2sg definite never
+    // touches the stem at all: "fizesd" (from "fizet"), not "fizessd" or
+    // "fizetd", and "tartsd" (from "tart"), not "tartd" — both confirmed
+    // by search-engine snippets. Regular stems (marker "j") still take
+    // NO marker at all here ("várd"/"olvasd"/"nézd"/"mondd" all confirmed
+    // with nothing inserted before the "d") — "j" is the one marker this
+    // cell drops outright rather than singularizing.
+    function _singularizeMarker(marker) {
+        if (marker === 'j') return '';
+        if (marker === 'ss' || marker === 'zz') return marker.charAt(0);
+        if (marker === 'ssz') return 'sz';
+        return marker; // already singular ("s", from the "-ít"/sonorant-t class)
+    }
+
+    // ---- IMPERATIVE, INDEFINITE ----
+    // Unlike every other mood/tense here, "j" (or whatever it assimilates
+    // into, see _imperativeMarker above) attaches to ANY stem directly
+    // with NO linking vowel EVER, even a pre-existing consonant cluster
+    // ("küldj", not "küldej") — see the "küldj"/"maradj" cross-check in
+    // MOOD_SUFFIXES's own comment above. Endings harmonize back/front
+    // 2-way (like conditional) for every person except 3sg, which keeps
+    // present tense's own 3-way -on/-en/-ön grade — cross-checked against
+    // "maradjon"/"beszéljen" (already in content/hu/grammar) and
+    // "jöjjön" (found live in content/hu).
     function _conjugateImperativeIndefinite(lemma, person, number) {
         const isIkVerb = lemma.endsWith('ik');
         const stem = isIkVerb ? lemma.slice(0, -2) : lemma;
@@ -1750,26 +1948,87 @@ const HungarianMorphology = (function () {
         if (harmony === null) return null;
         const front = harmony !== 'back';
 
-        let marker;
-        if (stem.endsWith('ít')) {
-            marker = 's'; // "t"+"j" -> "ts", written as bare "s" after the retained "t"
-        } else if (stem.endsWith('t')) {
-            return null; // other t-final stems — declined, see function comment
-        } else if (stem.endsWith('sz')) {
-            return null; // sz-digraph gemination — declined, see function comment
-        } else if (_isSibilantFinal(stem)) {
-            marker = _finalConsonantUnit(stem); // double the stem's own final letter (s or z)
-        } else {
-            marker = 'j';
-        }
+        const m = _imperativeMarker(stem);
+        if (!m) return null;
+        const { base, marker } = m;
 
-        if (person === 2 && number === 'sg') return stem + marker;
-        if (person === 1 && number === 'sg') return stem + marker + (front ? 'ek' : 'ak');
-        if (person === 3 && number === 'sg') return stem + marker + { back: 'on', 'front-unrounded': 'en', 'front-rounded': 'ön' }[harmony];
-        if (person === 1 && number === 'pl') return stem + marker + (front ? 'ünk' : 'unk');
-        if (person === 2 && number === 'pl') return stem + marker + (front ? 'etek' : 'atok');
-        if (person === 3 && number === 'pl') return stem + marker + (front ? 'enek' : 'anak');
+        if (person === 2 && number === 'sg') return base + marker;
+        if (person === 1 && number === 'sg') return base + marker + (front ? 'ek' : 'ak');
+        if (person === 3 && number === 'sg') return base + marker + { back: 'on', 'front-unrounded': 'en', 'front-rounded': 'ön' }[harmony];
+        if (person === 1 && number === 'pl') return base + marker + (front ? 'ünk' : 'unk');
+        if (person === 2 && number === 'pl') return base + marker + (front ? 'etek' : 'atok');
+        if (person === 3 && number === 'pl') return base + marker + (front ? 'enek' : 'anak');
         return null;
+    }
+
+    // ---- IMPERATIVE, DEFINITE ----
+    // 1sg and 2sg have their own dedicated endings, distinct from every
+    // other mood's definite pattern and from imperative's own indefinite
+    // endings:
+    //   - 1sg is "-jam"/"-jem" (2-way, invariant like conditional's own
+    //     1sg) — cross-checked against "várjam", "tartsam" and
+    //     "szeressem" (Rounds, "Hungarian: An Essential Grammar", via a
+    //     search-engine snippet quoting its conjugation table) — note
+    //     "tartsam"/"szeressem" both go through the SAME t-final
+    //     assimilation _imperativeMarker computes for indefinite, just
+    //     with "am"/"em" appended after the marker instead of a bare "j"
+    //   - 2sg is a bare "-d", with NO harmony variation and NO linking
+    //     vowel ever, attaching directly regardless of the stem's own
+    //     final consonant — cross-checked against "olvasd" (s-final),
+    //     "nézd" (z-final, from the common phrase "Nézd meg!") and
+    //     "mondd" (d-final — the doubled "dd" is just the stem's own "d"
+    //     plus this ending's "d" concatenating, not a special rule)
+    //
+    // 3sg/1pl/2pl/3pl: BACK harmony reuses present INDICATIVE's own
+    // definite endings verbatim ("ja"/"juk"/"játok"/"ják" — "várja" means
+    // both "he waits for it" and "let him wait for it", the same "j"-
+    // initial morpheme doing double duty, confirmed by a search-engine
+    // snippet quoting "olvassa"/"olvassuk" as BOTH the present-indicative
+    // and imperative-definite forms of "olvasni"). FRONT harmony does
+    // NOT reuse present indicative's own front endings, though —
+    // present's front 3sg/2pl/3pl ("-i"/"-itek"/"-ik") are non-"j"-
+    // initial, but imperative regularizes to a fully "j"-initial front
+    // set instead ("-je"/"-jétek"/"-jék") that present tense never uses
+    // at all: "nézze"/"kérje" (3sg), NOT "nézi"/"kéri" (which are the
+    // present-indicative forms of the same verbs) — cross-checked
+    // against two independent search-engine snippets ("nézze meg"/
+    // "kérje" for 3sg; "kérjétek"/"kérjék"/"nézzék" for 2pl/3pl). This
+    // also means, unlike back harmony, this function can never delegate
+    // to _conjugatePresentDefinite even for a fully regular front stem.
+    //
+    // Either way, present indicative's OWN definite conjugation does NOT
+    // apply _imperativeMarker's t-final assimilation ("tartja" stays
+    // "tartja" in the present tense — confirmed by memory, not an
+    // external source this session — but becomes "tartsa" in the
+    // imperative, per the "tartsam" evidence above), so this recomputes
+    // the ending itself regardless of harmony, applying the marker where
+    // one exists and stripping the ending's own leading "j" when it
+    // would otherwise double up with an already-assimilated marker.
+    function _conjugateImperativeDefinite(lemma, person, number) {
+        const isIkVerb = lemma.endsWith('ik');
+        const stem = isIkVerb ? lemma.slice(0, -2) : lemma;
+        const harmony = _harmonyClass(stem);
+        if (harmony === null) return null;
+        const front = harmony !== 'back';
+
+        const m = _imperativeMarker(stem);
+        if (!m) return null;
+        const { base, marker } = m;
+
+        if (person === 2 && number === 'sg') return base + _singularizeMarker(marker) + 'd';
+        if (person === 1 && number === 'sg') return base + marker + (front ? 'em' : 'am');
+
+        const ENDING = {
+            3: { sg: front ? 'je' : 'ja', pl: front ? 'jék' : 'ják' },
+            1: { pl: front ? 'jük' : 'juk' },
+            2: { pl: front ? 'jétek' : 'játok' }
+        };
+        const ending = ENDING[person] && ENDING[person][number];
+        if (ending === undefined) return null;
+
+        if (marker === 'j') return base + ending; // regular stem: no separate marker, present's own "j"-initial ending already carries it
+        const rest = ending.charAt(0) === 'j' ? ending.slice(1) : ending;
+        return base + marker + rest;
     }
 
     // IRREGULAR_VERBS' keys aren't tagged with definiteness — most entries
@@ -1906,13 +2165,8 @@ const HungarianMorphology = (function () {
         if (tense === 'cond') {
             return definite ? _conjugateConditionalDefinite(lemma, person, number) : _conjugateConditionalIndefinite(lemma, person, number);
         }
-        // imp: no definite generator exists (see _conjugateImperativeIndefinite's
-        // own comment) — a definite request declines rather than silently
-        // handing back the indefinite form as if it answered the question asked,
-        // same treatment _irregularForm's own cond/imp guard above already gives
-        // irregular lemmas.
         if (tense === 'imp') {
-            return definite ? null : _conjugateImperativeIndefinite(lemma, person, number);
+            return definite ? _conjugateImperativeDefinite(lemma, person, number) : _conjugateImperativeIndefinite(lemma, person, number);
         }
         return definite ? _conjugatePastDefinite(lemma, person, number) : _conjugatePastIndefinite(lemma, person, number);
     }
@@ -2019,43 +2273,72 @@ const HungarianMorphology = (function () {
 //     (_needsLinkingVowel) present tense already uses. The list itself is
 //     still only spot-checked per-consonant against "vár".
 //
-// Conditional and imperative moods (2026-08-29 follow-up, both analyze()
-// and conjugate() — see the "Scope" comment above conjugate() for why this
-// pass leaned on this repo's own vetted content instead of an external
-// grammar reference, and each generation function's own comment for its
-// exact coverage):
-//   - imperative DEFINITE conjugation isn't modelled at all (indefinite
-//     only, both directions) — genuinely didn't get to it this session;
-//     unlike conditional's definite forms (fully derived from the same
-//     "n"-marker logic as indefinite), imperative definite has its own
-//     endings this session never worked out
-//   - imperative declines every t-final stem except the "-ít" derivational
-//     class (tanít, javít, ...) — see _conjugateImperativeIndefinite's own
-//     comment for the two conflicting patterns half-remembered for
-//     t-after-consonant stems (ért, választ, ...) this session couldn't
-//     resolve without a source; t-after-vowel non-"-ít" stems (fizet,
-//     nevet, siet, ...) were more confidently recalled (the stem's "t"
-//     replaced by a doubled "ss", "fizess") but still declined here since
-//     it isn't a suffix strip analyze() could decode back, and shipping a
-//     generator whose own output the Reader can't read felt worse than not
-//     shipping it
-//   - imperative also declines the "sz" digraph specifically (a genuine
-//     sz-final stem geminates as an inserted "s" before the existing "sz",
-//     not decodable by this table's plain suffix-stripping) — a narrower
-//     gap since the most common sz-final verbs (eszik, iszik) are already
-//     covered via IRREGULAR_VERBS
-//   - IRREGULAR_VERBS' new conditional/imperative entries for the 11
-//     suppletive verbs are indefinite-only, even where vesz/tesz/hisz/visz
-//     genuinely have distinct definite forms in real Hungarian ("venném" =
-//     "I would buy it") — left out because front-harmony definite-3pl and
-//     indefinite-1sg are genuinely homophonous for these moods (see
-//     MOOD_SUFFIXES's own comment), and a flat surfaceForm->tag map can't
-//     hold two different tags under one key the way the regular suffix
-//     table can (multiple rows sharing a string); rather than pick a
-//     silently-arbitrary winner, both cells are simply not authored
-//   - none of this was cross-checked against an external Hungarian-grammar
-//     source (see the "Scope" comment above conjugate() for why) — a
-//     native-speaker spot-check of _conjugateConditionalIndefinite/
-//     _conjugateConditionalDefinite/_conjugateImperativeIndefinite's
-//     output across a spread of harmony classes and stem shapes would be
-//     worth doing before leaning on this as hard as present/past tense
+// Conditional and imperative moods (2026-08-29, two follow-up passes —
+// see the "Scope" comment above conjugate() for what each pass had access
+// to and fixed, and each generation function's own comment for its exact
+// coverage):
+//   - imperative DEFINITE conjugation IS now modelled (second pass) —
+//     1sg/3sg/1pl/2pl/3pl reuse the same t-final/sibilant assimilation
+//     _imperativeMarker computes for indefinite, plus their own dedicated
+//     endings; 2sg takes a SINGULAR version of that same marker via
+//     _singularizeMarker. The very first version of this second pass got
+//     2sg wrong twice before shipping — assumed no marker at all
+//     ("tartd"), then caught by an external check specifically for that
+//     cell and fixed to the real "tartsd" — and separately assumed
+//     front-harmony 3sg/2pl/3pl could reuse present indicative's own
+//     "i"/"itek"/"ik" endings, when real Hungarian actually regularizes
+//     imperative's front endings to their own uniformly "j"-initial set
+//     ("nézze"/"kérje", not "nézi"/"kéri" — those are present tense).
+//     Both mistakes were caught by cross-checking generated output
+//     against real, externally-sourced forms, not just internal round-
+//     trip self-consistency, which is exactly why that step mattered.
+//   - imperative's t-final classification is now the full 4-way split
+//     (see _imperativeMarker's own comment: "-ít"/sonorant-preceded keeps
+//     the stem's own "t" and adds "s"; sibilant-preceded drops the "t"
+//     and doubles the sibilant instead; every other vowel-preceded stem
+//     replaces "t" with a doubled "ss") rather than the first pass's
+//     "-ít" class only. The two harder classes (sibilant-preceded and
+//     vowel-preceded) needed genuinely new DECODE logic too, not just a
+//     table row — see decodeTReplacedImperative()'s own comment for why
+//     "fizess"/"válassz"-shaped words need their tail reconstructed
+//     rather than simply stripped.
+//   - still declined, narrower than before: the "sz" digraph specifically
+//     (a genuine sz-final stem geminates as an inserted "s" before the
+//     existing "sz", not decodable by this table's plain suffix-
+//     stripping, nor by decodeTReplacedImperative's reconstruction, which
+//     is for a DIFFERENT situation — an absorbed "t", not a bare sz-final
+//     stem with no "t" involved at all) — a narrow gap since the most
+//     common sz-final verbs (eszik, iszik) are already covered via
+//     IRREGULAR_VERBS
+//   - IRREGULAR_VERBS' conditional/imperative entries for the 11
+//     suppletive verbs are still indefinite-only, even where vesz/tesz/
+//     hisz/visz genuinely have distinct definite forms in real Hungarian
+//     ("venném" = "I would buy it") — left out because front-harmony
+//     definite-3pl and indefinite-1sg are genuinely homophonous for these
+//     moods (see MOOD_SUFFIXES's own comment), and a flat surfaceForm->tag
+//     map can't hold two different tags under one key the way the regular
+//     suffix table can (multiple rows sharing a string); rather than pick
+//     a silently-arbitrary winner, both cells are simply not authored
+//   - separately, and NOT specific to conditional/imperative: Lexicon.
+//     lookup() (engine/lexicon.js, not this file) tries a direct
+//     dictionary hit before ever calling this module's analyze(), and a
+//     direct hit wins outright with no merging — so a generated
+//     imperative form that happens to ALSO be an unrelated existing
+//     headword ("fess" the adjective "stylish", "lásd"/"nézze" as fixed
+//     interjections) will only ever show that unrelated reading in the
+//     Reader, never the verb one, even though analyze() itself decodes
+//     the verb reading correctly when called directly (confirmed live
+//     this pass: "kérje"/"kérjétek"/"kérjék"/"nézzék"/"tartsd"/"fizesd"/
+//     "válaszd"/"tartsam"/"szeressem"/"válassz"/"érts"/"bánts" all showed
+//     correctly through the real Reader; only the three coincidental-
+//     collision words didn't). This is an existing, general Lexicon
+//     architecture choice that predates this file's own work and applies
+//     to any suffix-stripping result, not something specific to the
+//     imperative — flagged here since it's newly OBSERVABLE now that
+//     imperative coverage produces more short, word-like forms likely to
+//     collide, not because this file caused it.
+//   - all of this was cross-checked via WebSearch snippets rather than
+//     reading a full external reference document straight through (every
+//     linguistics site's own page stayed blocked via WebFetch all
+//     session) — a native-speaker spot-check would still be worth doing
+//     before leaning on it as hard as present/past tense.
