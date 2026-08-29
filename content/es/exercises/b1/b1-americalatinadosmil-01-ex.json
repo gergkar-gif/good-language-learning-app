@@ -6,278 +6,102 @@
       "type": "matching",
       "category": "vocabulary",
       "pairs": [
-        [
-          "transformación",
-          "transformation"
-        ],
-        [
-          "cambio",
-          "change"
-        ],
-        [
-          "herencia",
-          "legacy / inheritance"
-        ],
-        [
-          "proceso",
-          "process"
-        ]
-      ],
-      "teaches": [
-        "formal-connectors"
+        ["el excoronel", "former colonel"],
+        ["fallido", "failed"],
+        ["desgastado", "worn down, discredited"],
+        ["generalizado", "widespread"]
+      ]
+    },
+    {
+      "id": "b1-americalatinadosmil-01.ex01b",
+      "type": "matching",
+      "category": "vocabulary",
+      "pairs": [
+        ["la convocatoria", "calling, convening"],
+        ["el referéndum", "referendum"],
+        ["el rumbo", "course, direction"],
+        ["el giro", "turn, shift"]
       ]
     },
     {
       "id": "b1-americalatinadosmil-01.ex02",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Qué afirmación encaja mejor con el tema?",
+      "category": "reading",
+      "question": "¿Qué ocurrió en diciembre de 1998 en Venezuela?",
       "options": [
-        "A raíz de las transformaciones del siglo XX, la región entró en el nuevo siglo con nuevas instituciones.",
-        "La región no experimentó cambios importantes.",
-        "Todos los países tuvieron exactamente el mismo desarrollo."
+        "El excoronel Hugo Chávez ganó las elecciones presidenciales tras haber liderado un golpe de Estado fallido seis años antes.",
+        "Se celebró un referéndum para prohibir las elecciones.",
+        "Ningún candidato se presentó a la presidencia."
       ],
-      "correct": 0,
-      "teaches": [
-        "formal-connectors"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-americalatinadosmil-01.ex03",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "El concepto de _____ aparece en el contexto estudiado. (transformación)",
-      "answer": "transformación",
-      "teaches": [
-        "formal-connectors"
-      ]
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Cómo se presentó Chávez en la campaña de 1998?",
+      "options": [
+        "Como una alternativa radical a los partidos tradicionales, desgastados por la crisis y la corrupción generalizada.",
+        "Como el candidato oficial del partido tradicional en el poder.",
+        "Como un empresario sin ninguna experiencia militar previa."
+      ],
+      "correct": 0
     },
     {
       "id": "b1-americalatinadosmil-01.ex04",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "El término _____ es central en esta lección. (cambio)",
-      "answer": "cambio",
-      "teaches": [
-        "formal-connectors"
-      ]
+      "sentence": "___ partir de febrero de 1999, Chávez impulsó una nueva Constituyente. (A)",
+      "answer": "A",
+      "teaches": ["a-partir-de-desde-un-momento-determinado-en-adelante"]
     },
     {
       "id": "b1-americalatinadosmil-01.ex05",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Una palabra clave de este tema es _____. (herencia)",
-      "answer": "herencia",
-      "teaches": [
-        "formal-connectors"
-      ]
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Qué impulsó Chávez a partir de su llegada a la presidencia?",
+      "options": [
+        "La convocatoria de una nueva Asamblea Nacional Constituyente que redactó una Constitución aprobada por referéndum en 1999.",
+        "La disolución total del Estado venezolano.",
+        "El regreso inmediato a la Constitución de 1961 sin ningún cambio."
+      ],
+      "correct": 0
     },
     {
       "id": "b1-americalatinadosmil-01.ex06",
-      "type": "fill-blank",
+      "type": "sentence-builder",
       "category": "grammar",
-      "sentence": "El concepto de _____ aparece en el contexto estudiado. (proceso)",
-      "answer": "proceso",
-      "teaches": [
-        "formal-connectors"
-      ]
+      "tiles": ["A", "partir", "de", "1999,", "la", "región", "tomó", "un", "nuevo", "rumbo", "político."],
+      "solution": ["A", "partir", "de", "1999,", "la", "región", "tomó", "un", "nuevo", "rumbo", "político."],
+      "english": "Starting in 1999, the region took a new political course.",
+      "teaches": ["a-partir-de-desde-un-momento-determinado-en-adelante"]
     },
     {
       "id": "b1-americalatinadosmil-01.ex07",
-      "type": "sentence-builder",
-      "category": "grammar",
-      "tiles": [
-        "A",
-        "raíz",
-        "de",
-        "las",
-        "transformaciones",
-        "del",
-        "siglo",
-        "XX,",
-        "la",
-        "región",
-        "entró",
-        "en",
-        "el",
-        "nuevo",
-        "siglo",
-        "con",
-        "nuevas",
-        "instituciones."
+      "type": "dialogue-complete",
+      "category": "reading",
+      "prompt": [
+        { "speaker": "Fructuoso", "text": "¿Qué señalaron algunos analistas ya desde 1999 sobre la victoria de Chávez?" },
+        { "speaker": "Carolina", "text": "_____" }
       ],
-      "solution": [
-        "A",
-        "raíz",
-        "de",
-        "las",
-        "transformaciones",
-        "del",
-        "siglo",
-        "XX,",
-        "la",
-        "región",
-        "entró",
-        "en",
-        "el",
-        "nuevo",
-        "siglo",
-        "con",
-        "nuevas",
-        "instituciones."
+      "options": [
+        "Que podía marcar el inicio de un giro político más amplio hacia gobiernos de izquierda en la región.",
+        "Que no tendría ningún efecto fuera de Venezuela.",
+        "Que confirmaba el éxito definitivo del modelo neoliberal."
       ],
-      "english": "As a result of the transformations of the twentieth century, the region entered the new century with new institutions.",
-      "teaches": [
-        "formal-connectors"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-americalatinadosmil-01.ex08",
-      "type": "sentence-order",
-      "category": "grammar",
-      "sentences": [
-        "A raíz de las transformaciones del siglo XX, la región entró en el nuevo siglo con nuevas instituciones.",
-        "A lo largo de las décadas, los países fueron modificando sus sistemas políticos y económicos.",
-        "Como consecuencia de estos procesos, algunas estructuras cambiaron, aunque otras continuaron existiendo."
-      ],
-      "solution": [
-        0,
-        1,
-        2
-      ],
-      "teaches": [
-        "formal-connectors"
-      ]
-    },
-    {
-      "id": "b1-americalatinadosmil-01.ex09",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Qué ejemplo utiliza correctamente la estructura de enfoque?",
-      "options": [
-        "A raíz de las transformaciones del siglo XX, la región entró en el nuevo siglo con nuevas instituciones.",
-        "A lo largo de las décadas, los países fueron modificando sus sistemas políticos y económicos.",
-        "Como consecuencia de estos procesos, algunas estructuras cambiaron, aunque otras continuaron existiendo."
-      ],
-      "correct": 0,
-      "teaches": [
-        "formal-connectors"
-      ]
-    },
-    {
-      "id": "b1-americalatinadosmil-01.ex10",
       "type": "listening-choice",
       "category": "listening",
-      "sentence": "A lo largo de las décadas, los países fueron modificando sus sistemas políticos y económicos.",
+      "sentence": "Una nueva etapa política, todavía por escribirse, comenzaba justo cuando el siglo XX llegaba a su fin.",
       "options": [
-        "Throughout the decades, countries changed their political and economic systems.",
-        "The opposite happened.",
-        "No information is given."
-      ],
-      "correct": 0,
-      "teaches": [
-        "formal-connectors"
-      ]
-    },
-    {
-      "id": "b1-americalatinadosmil-01.ex11",
-      "type": "listening-choice",
-      "category": "listening",
-      "sentence": "Como consecuencia de estos procesos, algunas estructuras cambiaron, aunque otras continuaron existiendo.",
-      "options": [
-        "As a consequence of these processes, some structures changed, although others continued to exist.",
-        "The statement is false.",
-        "The topic is unrelated."
-      ],
-      "correct": 0,
-      "teaches": [
-        "formal-connectors"
-      ]
-    },
-    {
-      "id": "b1-americalatinadosmil-01.ex12",
-      "type": "dictation",
-      "category": "listening",
-      "sentence": "A raíz de las transformaciones del siglo XX, la región entró en el nuevo siglo con nuevas instituciones.",
-      "teaches": [
-        "formal-connectors"
-      ]
-    },
-    {
-      "id": "b1-americalatinadosmil-01.ex13",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "teaches": [
-        "formal-connectors"
-      ],
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "A raíz de las transformaciones del siglo XX, la región entró en el nuevo siglo con nuevas instituciones."
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "A lo largo de las décadas, los países fueron modificando sus sistemas políticos y económicos.",
-        "No hubo ningún cambio en la región.",
-        "Todos los países vivieron exactamente el mismo proceso."
+        "A new political stage, still to be written, was beginning just as the twentieth century came to an end.",
+        "The region's political history had ended completely by 1999.",
+        "Nothing changed politically in the region after the Cold War."
       ],
       "correct": 0
-    },
-    {
-      "id": "b1-americalatinadosmil-01.ex14",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "teaches": [
-        "formal-connectors"
-      ],
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "Como consecuencia de estos procesos, algunas estructuras cambiaron, aunque otras continuaron existiendo."
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Aunque la región experimentó avances importantes, los resultados siguieron siendo desiguales.",
-        "El proceso fue completamente uniforme en toda la región.",
-        "No existieron consecuencias importantes."
-      ],
-      "correct": 0
-    },
-    {
-      "id": "b1-americalatinadosmil-01.ex15",
-      "type": "structured-writing",
-      "category": "writing",
-      "teaches": [
-        "formal-connectors"
-      ],
-      "template": [
-        {
-          "prompt": "Explica brevemente visión histórica a largo plazo y menciona una consecuencia.",
-          "answer": "A raíz de las transformaciones del siglo XX, la región entró en el nuevo siglo con nuevas instituciones. Como consecuencia de estos procesos, algunas estructuras cambiaron, aunque otras continuaron existiendo."
-        }
-      ]
-    },
-    {
-      "id": "b1-americalatinadosmil-01.ex16",
-      "type": "structured-writing",
-      "category": "writing",
-      "teaches": [
-        "formal-connectors"
-      ],
-      "template": [
-        {
-          "prompt": "¿Por qué el cambio regional sigue siendo complejo?",
-          "answer": "Aunque la región experimentó avances importantes, los resultados siguieron siendo desiguales."
-        }
-      ]
     }
   ]
 }
