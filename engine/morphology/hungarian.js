@@ -491,16 +491,20 @@ const HungarianMorphology = (function () {
         eszem: ['eszik', 'pres', 1, 'sg'], eszel: ['eszik', 'pres', 2, 'sg'],
         eszünk: ['eszik', 'pres', 1, 'pl'], esztek: ['eszik', 'pres', 2, 'pl'],
         esznek: ['eszik', 'pres', 3, 'pl'],
-        ettem: ['eszik', 'past', 1, 'sg'], ettél: ['eszik', 'past', 2, 'sg'],
-        evett: ['eszik', 'past', 3, 'sg'], ettünk: ['eszik', 'past', 1, 'pl'],
-        ettetek: ['eszik', 'past', 2, 'pl'], ettek: ['eszik', 'past', 3, 'pl'],
+        ettem: ['eszik', 'past', 1, 'sg'], ettél: ['eszik', 'past', 2, 'sg'], etted: ['eszik', 'past', 2, 'sg'],
+        evett: ['eszik', 'past', 3, 'sg'], ette: ['eszik', 'past', 3, 'sg'],
+        ettünk: ['eszik', 'past', 1, 'pl'], ettük: ['eszik', 'past', 1, 'pl'],
+        ettetek: ['eszik', 'past', 2, 'pl'], ettétek: ['eszik', 'past', 2, 'pl'],
+        ettek: ['eszik', 'past', 3, 'pl'], ették: ['eszik', 'past', 3, 'pl'],
 
         iszom: ['iszik', 'pres', 1, 'sg'], iszol: ['iszik', 'pres', 2, 'sg'],
         iszunk: ['iszik', 'pres', 1, 'pl'], isztok: ['iszik', 'pres', 2, 'pl'],
         isznak: ['iszik', 'pres', 3, 'pl'],
-        ittam: ['iszik', 'past', 1, 'sg'], ittál: ['iszik', 'past', 2, 'sg'],
-        ivott: ['iszik', 'past', 3, 'sg'], ittunk: ['iszik', 'past', 1, 'pl'],
-        ittatok: ['iszik', 'past', 2, 'pl'], ittak: ['iszik', 'past', 3, 'pl'],
+        ittam: ['iszik', 'past', 1, 'sg'], ittál: ['iszik', 'past', 2, 'sg'], ittad: ['iszik', 'past', 2, 'sg'],
+        ivott: ['iszik', 'past', 3, 'sg'], itta: ['iszik', 'past', 3, 'sg'],
+        ittunk: ['iszik', 'past', 1, 'pl'], ittuk: ['iszik', 'past', 1, 'pl'],
+        ittatok: ['iszik', 'past', 2, 'pl'], ittátok: ['iszik', 'past', 2, 'pl'],
+        ittak: ['iszik', 'past', 3, 'pl'], itták: ['iszik', 'past', 3, 'pl'],
 
         alszom: ['alszik', 'pres', 1, 'sg'], alszol: ['alszik', 'pres', 2, 'sg'],
         alszunk: ['alszik', 'pres', 1, 'pl'], alusztok: ['alszik', 'pres', 2, 'pl'],
@@ -2239,26 +2243,34 @@ const HungarianMorphology = (function () {
 
     // IRREGULAR_VERBS' keys aren't tagged with definiteness — most entries
     // don't need to be (van/megy/jön etc. are intransitive, no definite
-    // object to agree with), but vesz/tesz/hisz/visz's past tense lists
-    // BOTH an indefinite and a definite surface form under the SAME
-    // [lemma, tense, person, number] tag ("vettél" indefinite and "vetted"
-    // definite both tag as ['vesz','past',2,'sg']), since that ambiguity
-    // never mattered for decode (either one resolves to the same lemma).
-    // Generation has to pick one, so when more than one candidate matches,
-    // this disambiguates by the same definite personal-ending shapes
-    // _conjugatePastDefinite uses above.
+    // object to agree with), but the six transitive suppletive verbs'
+    // past tense lists BOTH an indefinite and a definite surface form
+    // under the SAME [lemma, tense, person, number] tag ("vettél"
+    // indefinite and "vetted" definite both tag as ['vesz','past',2,'sg'];
+    // "ittál"/"ittad" likewise for ['iszik','past',2,'sg']), since that
+    // ambiguity never mattered for decode (either one resolves to the
+    // same lemma). Generation has to pick one, so when more than one
+    // candidate matches, this disambiguates by the same definite personal-
+    // ending shapes _conjugatePastDefinite uses above. Both harmonies are
+    // listed per cell (front "ted"/"te"/"tétek"/"ték"/"tük" for vesz/tesz/
+    // hisz/visz/eszik, back "tad"/"ta"/"tátok"/"ták"/"tuk" for iszik,
+    // which is back-harmony in past tense despite its "i" — see
+    // BACK_HARMONY_NEUTRAL_STEMS above) since this hint has to work for
+    // every lemma that reaches it, not just the front-harmony ones it
+    // originally covered.
     const IRREGULAR_LEMMAS = new Set(Object.values(IRREGULAR_VERBS).map(tags => tags[0]));
     const IRREGULAR_DEFINITE_HINT = {
-        2: { sg: 'ted', pl: 'tétek' }, 3: { sg: 'te', pl: 'ték' }, 1: { pl: 'tük' }
+        2: { sg: ['ted', 'tad'], pl: ['tétek', 'tátok'] },
+        3: { sg: ['te', 'ta'], pl: ['ték', 'ták'] },
+        1: { pl: ['tük', 'tuk'] }
     };
-    // van/megy/jön/alszik are intransitive (no object to agree with, so
-    // "definite past" isn't a real thing for them, same as already-excluded
-    // present). eszik/iszik ARE transitive and DO have real, distinct
-    // definite past forms (ette, itta, ...) — but this table only carries
-    // their indefinite-shaped forms, so returning that single candidate for
-    // a definite request would silently hand back the wrong answer, same
-    // class of risk present tense already guards against for them.
-    const PAST_DEFINITE_EXCLUDED = new Set(['van', 'megy', 'jön', 'alszik', 'lesz', 'eszik', 'iszik']);
+    // van/megy/jön/alszik/lesz are intransitive (no object to agree with,
+    // so "definite past" isn't a real thing for them, same as already-
+    // excluded present). eszik/iszik are transitive and now have real
+    // definite past forms above (ette/itta/... — **fixed 2026-08-29,
+    // eighth pass**, see IRREGULAR_DEFINITE_HINT's own comment for why
+    // that needed a harmony-aware hint too, iszik being back-harmony).
+    const PAST_DEFINITE_EXCLUDED = new Set(['van', 'megy', 'jön', 'alszik', 'lesz']);
     function _irregularForm(lemma, tense, person, number, definite) {
         const candidates = Object.entries(IRREGULAR_VERBS)
             .filter(([, tags]) => tags[0] === lemma && tags[1] === tense && tags[2] === person && tags[3] === number);
@@ -2311,7 +2323,7 @@ const HungarianMorphology = (function () {
         }
 
         const hint = IRREGULAR_DEFINITE_HINT[person] && IRREGULAR_DEFINITE_HINT[person][number];
-        const defMatch = hint ? candidates.find(([form]) => form.endsWith(hint)) : null;
+        const defMatch = hint ? candidates.find(([form]) => hint.some(h => form.endsWith(h))) : null;
         if (definite) return defMatch ? defMatch[0] : null;
         const indefMatch = defMatch ? candidates.find(c => c[0] !== defMatch[0]) : candidates[0];
         return indefMatch ? indefMatch[0] : null;
@@ -2481,19 +2493,23 @@ const HungarianMorphology = (function () {
 //     captured exactly this distinction, so no new classification logic
 //     was needed — just applying the flag this function already computed
 //     to three more cells it wasn't using it for yet.
-//   - eszik/iszik have no past-tense DEFINITE forms in IRREGULAR_VERBS
-//     (only the shared indefinite-shaped ones) — same category of gap as
-//     vesz/tesz/hisz/visz already being explicitly disambiguated, just not
-//     done yet for these two (real forms would be "ette"/"itta" etc., not
-//     derivable from IRREGULAR_DEFINITE_HINT as-is since it only covers
-//     front-harmony endings and iszik's are back-harmony). **Partially
-//     fixed 2026-08-27**: conjugate() no longer hands back the indefinite-
-//     shaped form for a definite request (that was actively wrong, e.g.
-//     the driller presenting "evett" as the graded-correct definite
-//     answer) — PAST_DEFINITE_EXCLUDED in _irregularForm now returns null
-//     for eszik/iszik definite past instead, same as it already did for
-//     alszik/van/megy/jön, which are truly intransitive. The real definite
-//     forms still aren't authored; this only stops the wrong guess.
+//   - **fixed 2026-08-29 (eighth pass)**: eszik/iszik now have real
+//     past-tense DEFINITE forms in IRREGULAR_VERBS ("ette"/"itta" etc.,
+//     the same disambiguation pattern vesz/tesz/hisz/visz's past tense
+//     already used — both an indefinite and definite surface form under
+//     the same tag, picked apart by IRREGULAR_DEFINITE_HINT). That hint
+//     previously only covered front-harmony endings ("ted"/"te"/"tétek"/
+//     "ték"/"tük"), which would have silently failed for iszik's back-
+//     harmony forms ("tad"/"ta"/"tátok"/"ták"/"tuk") — fixed by making
+//     the hint harmony-aware (both variants checked per cell) rather than
+//     assuming every lemma that reaches it is front-harmony like the four
+//     it originally covered. Round-trip verified (24/24) and live-checked
+//     via Lexicon.lookup(); "ette" alone is one honest exception — it
+//     coincides with an existing unrelated dictionary headword (a
+//     standalone participle entry), so the real Reader shows that instead
+//     via the same direct-hit-wins-outright Lexicon.js behavior noted
+//     below, even though analyze() itself decodes "ette" correctly when
+//     called directly (confirmed by the same round-trip test).
 //   - the "-ad/-ed" past-tense lexical exception list (PAST_TYPE_I_LEXICAL:
 //     marad, ébred, fárad) is a hand-picked few, not the full closed set
 //   - _pastLinkingClass's Type-I sonorant list (r, l, n, ny, j, ly) is
