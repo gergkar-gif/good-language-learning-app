@@ -6,270 +6,100 @@
       "type": "matching",
       "category": "vocabulary",
       "pairs": [
-        [
-          "legado",
-          "legacy"
-        ],
-        [
-          "transformación",
-          "transformation"
-        ],
-        [
-          "perspectiva",
-          "perspective"
-        ]
-      ],
-      "teaches": [
-        "formal-synthesis"
+        ["cargar con", "to carry, bear the weight of"],
+        ["la herencia", "inheritance, legacy"],
+        ["de raíz", "from the root, thoroughly"],
+        ["de doble filo", "double-edged"]
+      ]
+    },
+    {
+      "id": "b1-legadosigloveinte-05.ex01b",
+      "type": "matching",
+      "category": "vocabulary",
+      "pairs": [
+        ["perpetuarse", "to perpetuate oneself"],
+        ["la brecha", "gap"],
+        ["arrastrar", "to drag along, carry over"],
+        ["pendiente", "pending, unresolved"]
       ]
     },
     {
       "id": "b1-legadosigloveinte-05.ex02",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Qué afirmación encaja mejor con el tema?",
+      "category": "reading",
+      "question": "¿Qué herencia cargaba América Latina hacia el año 2000, según el texto?",
       "options": [
-        "A lo largo del siglo, la transformación política fue profunda, aunque no eliminó las desigualdades estructurales.",
-        "El siglo XX no produjo cambios políticos.",
-        "Todos los países tuvieron la misma experiencia."
+        "Una herencia compleja de vías distintas hacia el cambio, constituciones de doble uso, experimentos sociales y una memoria en disputa.",
+        "Ninguna herencia relevante del siglo XX.",
+        "Un único modelo de desarrollo aceptado por todos los países."
       ],
-      "correct": 0,
-      "teaches": [
-        "formal-synthesis"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-legadosigloveinte-05.ex03",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Una palabra clave de este tema es _____. (legado)",
-      "answer": "legado",
-      "teaches": [
-        "formal-synthesis"
-      ]
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Qué demostraron los casos de Bolivia y Costa Rica?",
+      "options": [
+        "Que no existía una única fórmula para lograr un cambio duradero.",
+        "Que solo la revolución armada podía producir cambios reales.",
+        "Que ningún país logró cambiar nunca su Estado."
+      ],
+      "correct": 0
     },
     {
       "id": "b1-legadosigloveinte-05.ex04",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "El concepto de _____ aparece en el contexto estudiado. (transformación)",
-      "answer": "transformación",
-      "teaches": [
-        "formal-synthesis"
-      ]
+      "sentence": "En ___ cuentas, la reforma constitucional fue una herramienta de doble filo. (resumidas)",
+      "answer": "resumidas",
+      "teaches": ["en-resumidas-cuentas-en-sintesis-en-pocas-palabras"]
     },
     {
       "id": "b1-legadosigloveinte-05.ex05",
-      "type": "fill-blank",
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Qué no lograron, por sí solos, cerrar la brecha de desigualdad?",
+      "options": [
+        "Ni el crecimiento económico sostenido ni programas pioneros como Progresa.",
+        "Ningún factor influyó jamás en la desigualdad regional.",
+        "Solo la falta de crecimiento económico explicaba la desigualdad."
+      ],
+      "correct": 0
+    },
+    {
+      "id": "b1-legadosigloveinte-05.ex06",
+      "type": "sentence-builder",
       "category": "grammar",
-      "sentence": "El legado del siglo XX puede interpretarse desde ___s diferentes, según se prioricen los avances o los costes sociales.",
-      "answer": "perspectiva",
-      "teaches": [
-        "formal-synthesis"
-      ]
+      "tiles": ["En", "resumidas", "cuentas,", "la", "región", "aprendió", "muchas", "lecciones", "difíciles."],
+      "solution": ["En", "resumidas", "cuentas,", "la", "región", "aprendió", "muchas", "lecciones", "difíciles."],
+      "english": "In short, the region learned many difficult lessons.",
+      "teaches": ["en-resumidas-cuentas-en-sintesis-en-pocas-palabras"]
     },
     {
       "id": "b1-legadosigloveinte-05.ex07",
-      "type": "sentence-builder",
-      "category": "grammar",
-      "tiles": [
-        "A",
-        "lo",
-        "largo",
-        "del",
-        "siglo,",
-        "la",
-        "transformación",
-        "política",
-        "fue",
-        "profunda,",
-        "aunque",
-        "no",
-        "eliminó",
-        "las",
-        "desigualdades",
-        "estructurales."
+      "type": "dialogue-complete",
+      "category": "reading",
+      "prompt": [
+        { "speaker": "Carolina", "text": "¿Qué tareas quedaron pendientes para la región al entrar al nuevo milenio?" },
+        { "speaker": "Fructuoso", "text": "_____" }
       ],
-      "solution": [
-        "A",
-        "lo",
-        "largo",
-        "del",
-        "siglo,",
-        "la",
-        "transformación",
-        "política",
-        "fue",
-        "profunda,",
-        "aunque",
-        "no",
-        "eliminó",
-        "las",
-        "desigualdades",
-        "estructurales."
+      "options": [
+        "Resolver del todo la desigualdad, la fragilidad institucional y la memoria pendiente.",
+        "Ninguna tarea quedó pendiente después del siglo XX.",
+        "Solo la cuestión de las fronteras entre países."
       ],
-      "english": "Throughout the century, political transformation was profound, although it did not eliminate structural inequalities.",
-      "teaches": [
-        "formal-synthesis"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-legadosigloveinte-05.ex08",
-      "type": "sentence-order",
-      "category": "grammar",
-      "sentences": [
-        "A lo largo del siglo, la transformación política fue profunda, aunque no eliminó las desigualdades estructurales.",
-        "Como consecuencia de las distintas reformas, algunas instituciones adquirieron mayor estabilidad, pero persistieron problemas sociales.",
-        "El legado del siglo XX puede interpretarse desde perspectivas diferentes, según se prioricen los avances o los costes sociales."
-      ],
-      "solution": [
-        0,
-        1,
-        2
-      ],
-      "teaches": [
-        "formal-synthesis"
-      ]
-    },
-    {
-      "id": "b1-legadosigloveinte-05.ex09",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Qué ejemplo utiliza correctamente la estructura de enfoque?",
-      "options": [
-        "A lo largo del siglo, la transformación política fue profunda, aunque no eliminó las desigualdades estructurales.",
-        "Como consecuencia de las distintas reformas, algunas instituciones adquirieron mayor estabilidad, pero persistieron problemas sociales.",
-        "El legado del siglo XX puede interpretarse desde perspectivas diferentes, según se prioricen los avances o los costes sociales."
-      ],
-      "correct": 0,
-      "teaches": [
-        "formal-synthesis"
-      ]
-    },
-    {
-      "id": "b1-legadosigloveinte-05.ex10",
       "type": "listening-choice",
       "category": "listening",
-      "sentence": "Como consecuencia de las distintas reformas, algunas instituciones adquirieron mayor estabilidad, pero persistieron problemas sociales.",
+      "sentence": "\"Nunca Más\" se convertía en la fórmula compartida de una memoria que ningún país quería repetir.",
       "options": [
-        "As a consequence of the different reforms, some institutions became more stable, but social problems persisted.",
-        "The opposite happened.",
-        "No information is given."
-      ],
-      "correct": 0,
-      "teaches": [
-        "formal-synthesis"
-      ]
-    },
-    {
-      "id": "b1-legadosigloveinte-05.ex11",
-      "type": "listening-choice",
-      "category": "listening",
-      "sentence": "El legado del siglo XX puede interpretarse desde perspectivas diferentes, según se prioricen los avances o los costes sociales.",
-      "options": [
-        "The legacy of the twentieth century can be interpreted from different perspectives, depending on whether advances or social costs are prioritised.",
-        "The statement is false.",
-        "The topic is unrelated."
-      ],
-      "correct": 0,
-      "teaches": [
-        "formal-synthesis"
-      ]
-    },
-    {
-      "id": "b1-legadosigloveinte-05.ex12",
-      "type": "dictation",
-      "category": "listening",
-      "sentence": "A lo largo del siglo, la transformación política fue profunda, aunque no eliminó las desigualdades estructurales.",
-      "teaches": [
-        "formal-synthesis"
-      ]
-    },
-    {
-      "id": "b1-legadosigloveinte-05.ex13",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "teaches": [
-        "formal-synthesis"
-      ],
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "A lo largo del siglo, la transformación política fue profunda, aunque no eliminó las desigualdades estructurales."
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Como consecuencia de las distintas reformas, algunas instituciones adquirieron mayor estabilidad, pero persistieron problemas sociales.",
-        "No hubo ningún cambio en la región.",
-        "Todos los países vivieron exactamente el mismo proceso."
-      ],
-      "correct": 0
-    },
-    {
-      "id": "b1-legadosigloveinte-05.ex14",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "teaches": [
-        "formal-synthesis"
-      ],
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "El legado del siglo XX puede interpretarse desde perspectivas diferentes, según se prioricen los avances o los costes sociales."
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Aunque la región experimentó cambios importantes, algunas cuestiones del pasado siguen condicionando el presente.",
-        "El proceso fue completamente uniforme en toda la región.",
-        "No existieron consecuencias importantes."
-      ],
-      "correct": 0
-    },
-    {
-      "id": "b1-legadosigloveinte-05.ex15",
-      "type": "structured-writing",
-      "category": "writing",
-      "teaches": [
-        "formal-synthesis"
-      ],
-      "template": [
-        {
-          "prompt": "Explica brevemente síntesis e interpretación y menciona una consecuencia.",
-          "answer": "A lo largo del siglo, la transformación política fue profunda, aunque no eliminó las desigualdades estructurales. El legado del siglo XX puede interpretarse desde perspectivas diferentes, según se prioricen los avances o los costes sociales."
-        }
-      ]
-    },
-    {
-      "id": "b1-legadosigloveinte-05.ex16",
-      "type": "structured-writing",
-      "category": "writing",
-      "teaches": [
-        "formal-synthesis"
-      ],
-      "template": [
-        {
-          "prompt": "¿Por qué este legado es complejo?",
-          "answer": "Aunque la región experimentó cambios importantes, algunas cuestiones del pasado siguen condicionando el presente."
-        }
-      ]
-    },
-    {
-      "id": "b1-legadosigloveinte-05.ex17",
-      "type": "multiple-choice",
-      "category": "reading",
-      "question": "¿Qué elementos del siglo XX siguen influyendo en el presente?",
-      "options": [
-        "Los avances políticos e institucionales conviven con desigualdades y conflictos históricos que siguen condicionando el presente.",
-        "Nada cambió durante este período.",
-        "Los resultados fueron idénticos en todos los países."
+        "\"Nunca Más\" was becoming the shared formula for a memory no country wanted to repeat.",
+        "\"Nunca Más\" was a phrase used in only one single country.",
+        "No country ever adopted the phrase \"Nunca Más\"."
       ],
       "correct": 0
     }

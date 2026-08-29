@@ -6,270 +6,102 @@
       "type": "matching",
       "category": "vocabulary",
       "pairs": [
-        [
-          "revolución",
-          "revolution"
-        ],
-        [
-          "reforma",
-          "reform"
-        ],
-        [
-          "régimen",
-          "regime"
-        ],
-        [
-          "movimiento",
-          "movement"
-        ]
-      ],
-      "teaches": [
-        "formal-connectors"
+        ["derrocar", "to overthrow"],
+        ["anular", "to annul, nullify"],
+        ["decretar", "to decree"],
+        ["el sufragio", "suffrage"]
+      ]
+    },
+    {
+      "id": "b1-legadosigloveinte-01.ex01b",
+      "type": "matching",
+      "category": "vocabulary",
+      "pairs": [
+        ["la reforma agraria", "agrarian reform"],
+        ["disputado", "disputed, contested"],
+        ["la abolición", "abolition"],
+        ["duradero", "lasting"]
       ]
     },
     {
       "id": "b1-legadosigloveinte-01.ex02",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Qué afirmación encaja mejor con el tema?",
+      "category": "reading",
+      "question": "¿Qué hizo el MNR en Bolivia en abril de 1952?",
       "options": [
-        "A lo largo del siglo, distintos movimientos intentaron transformar sistemas políticos que consideraban injustos.",
-        "El siglo XX no produjo cambios políticos.",
-        "Todos los países tuvieron la misma experiencia."
+        "Derrocó a la junta militar que le había anulado su victoria electoral, dando inicio a la Revolución Nacional.",
+        "Perdió las elecciones y aceptó el resultado sin protestar.",
+        "Se disolvió como partido político."
       ],
-      "correct": 0,
-      "teaches": [
-        "formal-connectors"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-legadosigloveinte-01.ex03",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Una palabra clave de este tema es _____. (revolución)",
-      "answer": "revolución",
-      "teaches": [
-        "formal-connectors"
-      ]
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Qué decretó el nuevo gobierno del MNR?",
+      "options": [
+        "El sufragio universal, la nacionalización de las minas de estaño y, en 1953, una reforma agraria.",
+        "La restauración de la monarquía.",
+        "La privatización total de las minas de estaño."
+      ],
+      "correct": 0
     },
     {
       "id": "b1-legadosigloveinte-01.ex04",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A raíz de las ___s, algunas instituciones cambiaron, aunque los conflictos sociales continuaron.",
-      "answer": "reforma",
-      "teaches": [
-        "formal-connectors"
-      ]
+      "sentence": "___ que Bolivia optó por la revolución, Costa Rica tomó un camino distinto. (Mientras)",
+      "answer": "Mientras",
+      "teaches": ["mientras-que-en-cambio-en-contraste-con"]
     },
     {
       "id": "b1-legadosigloveinte-01.ex05",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "El concepto de _____ aparece en el contexto estudiado. (régimen)",
-      "answer": "régimen",
-      "teaches": [
-        "formal-connectors"
-      ]
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Qué aprobó la junta de Figueres en la Constitución de 1949 de Costa Rica?",
+      "options": [
+        "La abolición permanente del ejército y la extensión del voto a las mujeres.",
+        "La creación de un nuevo ejército permanente.",
+        "La eliminación del derecho al voto."
+      ],
+      "correct": 0
     },
     {
       "id": "b1-legadosigloveinte-01.ex06",
-      "type": "fill-blank",
+      "type": "sentence-builder",
       "category": "grammar",
-      "sentence": "El término _____ es central en esta lección. (movimiento)",
-      "answer": "movimiento",
-      "teaches": [
-        "formal-connectors"
-      ]
+      "tiles": ["Mientras", "que", "Bolivia", "nacionalizó", "las", "minas,", "Costa", "Rica", "abolió", "el", "ejército."],
+      "solution": ["Mientras", "que", "Bolivia", "nacionalizó", "las", "minas,", "Costa", "Rica", "abolió", "el", "ejército."],
+      "english": "Whereas Bolivia nationalized the mines, Costa Rica abolished the army.",
+      "teaches": ["mientras-que-en-cambio-en-contraste-con"]
     },
     {
       "id": "b1-legadosigloveinte-01.ex07",
-      "type": "sentence-builder",
-      "category": "grammar",
-      "tiles": [
-        "A",
-        "lo",
-        "largo",
-        "del",
-        "siglo,",
-        "distintos",
-        "movimientos",
-        "intentaron",
-        "transformar",
-        "sistemas",
-        "políticos",
-        "que",
-        "consideraban",
-        "injustos."
+      "type": "dialogue-complete",
+      "category": "reading",
+      "prompt": [
+        { "speaker": "Carolina", "text": "¿Qué diferencia hubo entre la transformación boliviana y la costarricense?" },
+        { "speaker": "Fructuoso", "text": "_____" }
       ],
-      "solution": [
-        "A",
-        "lo",
-        "largo",
-        "del",
-        "siglo,",
-        "distintos",
-        "movimientos",
-        "intentaron",
-        "transformar",
-        "sistemas",
-        "políticos",
-        "que",
-        "consideraban",
-        "injustos."
+      "options": [
+        "Bolivia transformó su economía mediante la nacionalización, mientras que Costa Rica transformó la propia naturaleza del Estado.",
+        "Ambos países hicieron exactamente lo mismo.",
+        "Ninguno de los dos países cambió nada en esa época."
       ],
-      "english": "Throughout the century, different movements tried to transform political systems they considered unjust.",
-      "teaches": [
-        "formal-connectors"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-legadosigloveinte-01.ex08",
-      "type": "sentence-order",
-      "category": "grammar",
-      "sentences": [
-        "A lo largo del siglo, distintos movimientos intentaron transformar sistemas políticos que consideraban injustos.",
-        "A raíz de las reformas, algunas instituciones cambiaron, aunque los conflictos sociales continuaron.",
-        "Como consecuencia de las revoluciones, determinadas relaciones de poder fueron modificadas de manera profunda."
-      ],
-      "solution": [
-        0,
-        1,
-        2
-      ],
-      "teaches": [
-        "formal-connectors"
-      ]
-    },
-    {
-      "id": "b1-legadosigloveinte-01.ex09",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Qué ejemplo utiliza correctamente la estructura de enfoque?",
-      "options": [
-        "A lo largo del siglo, distintos movimientos intentaron transformar sistemas políticos que consideraban injustos.",
-        "A raíz de las reformas, algunas instituciones cambiaron, aunque los conflictos sociales continuaron.",
-        "Como consecuencia de las revoluciones, determinadas relaciones de poder fueron modificadas de manera profunda."
-      ],
-      "correct": 0,
-      "teaches": [
-        "formal-connectors"
-      ]
-    },
-    {
-      "id": "b1-legadosigloveinte-01.ex10",
       "type": "listening-choice",
       "category": "listening",
-      "sentence": "A raíz de las reformas, algunas instituciones cambiaron, aunque los conflictos sociales continuaron.",
+      "sentence": "Figueres aprobó la abolición permanente del ejército costarricense en la Constitución de 1949.",
       "options": [
-        "As a result of the reforms, some institutions changed, although social conflicts continued.",
-        "The opposite happened.",
-        "No information is given."
-      ],
-      "correct": 0,
-      "teaches": [
-        "formal-connectors"
-      ]
-    },
-    {
-      "id": "b1-legadosigloveinte-01.ex11",
-      "type": "listening-choice",
-      "category": "listening",
-      "sentence": "Como consecuencia de las revoluciones, determinadas relaciones de poder fueron modificadas de manera profunda.",
-      "options": [
-        "As a consequence of the revolutions, certain power relations were profoundly changed.",
-        "The statement is false.",
-        "The topic is unrelated."
-      ],
-      "correct": 0,
-      "teaches": [
-        "formal-connectors"
-      ]
-    },
-    {
-      "id": "b1-legadosigloveinte-01.ex12",
-      "type": "dictation",
-      "category": "listening",
-      "sentence": "A lo largo del siglo, distintos movimientos intentaron transformar sistemas políticos que consideraban injustos.",
-      "teaches": [
-        "formal-connectors"
-      ]
-    },
-    {
-      "id": "b1-legadosigloveinte-01.ex13",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "teaches": [
-        "formal-connectors"
-      ],
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "A lo largo del siglo, distintos movimientos intentaron transformar sistemas políticos que consideraban injustos."
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "A raíz de las reformas, algunas instituciones cambiaron, aunque los conflictos sociales continuaron.",
-        "No hubo ningún cambio en la región.",
-        "Todos los países vivieron exactamente el mismo proceso."
+        "Figueres approved the permanent abolition of the Costa Rican army in the 1949 Constitution.",
+        "Figueres created a new national army in 1949.",
+        "The 1949 Constitution was never actually approved."
       ],
       "correct": 0
-    },
-    {
-      "id": "b1-legadosigloveinte-01.ex14",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "teaches": [
-        "formal-connectors"
-      ],
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "Como consecuencia de las revoluciones, determinadas relaciones de poder fueron modificadas de manera profunda."
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Aunque las reformas produjeron avances, no resolvieron todos los problemas que habían originado los conflictos.",
-        "El proceso fue completamente uniforme en toda la región.",
-        "No existieron consecuencias importantes."
-      ],
-      "correct": 0
-    },
-    {
-      "id": "b1-legadosigloveinte-01.ex15",
-      "type": "structured-writing",
-      "category": "writing",
-      "teaches": [
-        "formal-connectors"
-      ],
-      "template": [
-        {
-          "prompt": "Explica brevemente cambio político del siglo XX y menciona una consecuencia.",
-          "answer": "A lo largo del siglo, distintos movimientos intentaron transformar sistemas políticos que consideraban injustos. Como consecuencia de las revoluciones, determinadas relaciones de poder fueron modificadas de manera profunda."
-        }
-      ]
-    },
-    {
-      "id": "b1-legadosigloveinte-01.ex16",
-      "type": "structured-writing",
-      "category": "writing",
-      "teaches": [
-        "formal-connectors"
-      ],
-      "template": [
-        {
-          "prompt": "¿Por qué este legado es complejo?",
-          "answer": "Aunque las reformas produjeron avances, no resolvieron todos los problemas que habían originado los conflictos."
-        }
-      ]
     }
   ]
 }
