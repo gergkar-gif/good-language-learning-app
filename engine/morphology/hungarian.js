@@ -225,6 +225,26 @@ const HungarianMorphology = (function () {
         ['juk', 'pres', 1, 'pl'], ['jük', 'pres', 1, 'pl'],
         ['játok', 'pres', 2, 'pl'], ['itek', 'pres', 2, 'pl'],
         ['ják', 'pres', 3, 'pl'], ['ik', 'pres', 3, 'pl'],
+        // present definite, sibilant-assimilated (2026-08-29 follow-up):
+        // a plain s/z-final stem's leading "j" geminates into a second
+        // copy of that same consonant, same mechanic imperative's own
+        // sibilant assimilation uses (see _conjugatePresentDefinite's own
+        // comment) — "olvas" -> "olvassa"/"olvassuk"/"olvassátok"/
+        // "olvassák", "néz" -> "nézzük". Front 3sg/3pl/2pl ("i"/"ik"/
+        // "itek") never had a leading "j" to assimilate in the first
+        // place, so only back 2pl needs a row here, not a front one; 1pl
+        // is "jük" for every harmony, so both "suk"/"zuk" (back) and
+        // "sük"/"zük" (front) are needed. Stripping just the ending plus
+        // ONE copy of the doubled consonant correctly leaves the stem's
+        // OWN final s/z intact ("olvassa" minus "sa" -> "olvas"), unlike
+        // the genuine "sz"-digraph case below, which needs reconstruction
+        // instead because the stem's own final letter of a two-letter
+        // digraph is not the one immediately before the ending.
+        ['sa', 'pres', 3, 'sg'], ['za', 'pres', 3, 'sg'],
+        ['sák', 'pres', 3, 'pl'], ['zák', 'pres', 3, 'pl'],
+        ['suk', 'pres', 1, 'pl'], ['zuk', 'pres', 1, 'pl'],
+        ['sük', 'pres', 1, 'pl'], ['zük', 'pres', 1, 'pl'],
+        ['sátok', 'pres', 2, 'pl'], ['zátok', 'pres', 2, 'pl'],
         // past — -t-/-ott-/-ett-/-ött- + personal ending; 3sg has no
         // further ending beyond the tense marker itself. Consonant
         // clusters that can't take a bare -t- (stems already ending in a
@@ -1157,6 +1177,33 @@ const HungarianMorphology = (function () {
         return candidates;
     }
 
+    // Present-tense definite counterpart of the "sz" row in
+    // T_REPLACED_GEMINATIONS above — a genuine sz-final stem's present-
+    // definite endings that start with "j" (3sg/3pl/1pl/2pl's own "ja"/
+    // "ják"/"juk"+"jük"/"játok" — see _conjugatePresentDefinite's own
+    // comment) hit the exact same sandwiched-letter problem: "vesz" ->
+    // "vesszük" (1pl) buries the stem's own "z" between the inserted "s"
+    // and the ending, unreachable by plain suffix-stripping. Same fix:
+    // strip "sz"+ending (leaving one extra "s" on the remainder), then
+    // put the "z" back. Plain (non-digraph) s/z-final stems don't need
+    // this — "olvassa"/"nézzük" decode fine via ordinary VERB_SUFFIXES
+    // rows, since stripping just the ending plus ONE copy of a single-
+    // letter consonant leaves the stem's own final letter untouched.
+    const PRESENT_DEFINITE_SZ_TAILS = [
+        ['a', 3, 'sg'], ['ák', 3, 'pl'],
+        ['uk', 1, 'pl'], ['ük', 1, 'pl'],
+        ['átok', 2, 'pl']
+    ];
+    function decodeSzDigraphPresentDefinite(word) {
+        const candidates = [];
+        for (const [tail, person, number] of PRESENT_DEFINITE_SZ_TAILS) {
+            const remainder = strip(word, 'sz' + tail);
+            if (remainder === null) continue;
+            candidates.push({ lemma: remainder + 'z', person: person, number: number });
+        }
+        return candidates;
+    }
+
     /**
      * Try to resolve a Hungarian surface form the dictionary and static
      * word-index didn't recognise directly. dictionary and wordIndex are
@@ -1342,6 +1389,19 @@ const HungarianMorphology = (function () {
         // genuine sz-final -ik verb at all).
         for (const c of decodeTReplacedImperative(word)) {
             const label = [TENSE_LABELS.imp, PERSON_LABELS[c.person][c.number]].join(', ');
+            const sense = verbSense(dictionary[c.lemma]);
+            if (sense) addFromLemma(c.lemma, sense, label);
+            const ikSense = verbSense(dictionary[c.lemma + 'ik']);
+            if (ikSense) addFromLemma(c.lemma + 'ik', ikSense, label);
+        }
+
+        // 1c. present-tense DEFINITE forms of a genuine sz-final stem
+        // ("vesszük" -> "vesz") — see decodeSzDigraphPresentDefinite()'s
+        // own comment for why this needs the same strip-then-reconstruct
+        // treatment as 1b above, just for present tense's own "j"-initial
+        // definite endings instead of imperative's.
+        for (const c of decodeSzDigraphPresentDefinite(word)) {
+            const label = [TENSE_LABELS.pres, PERSON_LABELS[c.person][c.number]].join(', ');
             const sense = verbSense(dictionary[c.lemma]);
             if (sense) addFromLemma(c.lemma, sense, label);
             const ikSense = verbSense(dictionary[c.lemma + 'ik']);
@@ -2260,15 +2320,20 @@ const HungarianMorphology = (function () {
 // conjugate()'s gaps (2026-08-20 follow-up, present+past/definite+
 // indefinite generation — see the comment above conjugate() for what WAS
 // cross-checked and how):
-//   - sibilant-assimilated definite present forms ("olvassa", "mos+ja"
-//     with the leading j replaced by a geminated stem consonant) generate
-//     correctly but analyze() can't decode them back — the assimilation
-//     doesn't leave the stem as a clean prefix of the surface form for
-//     simple suffix-stripping to recover (see _conjugatePresentDefinite's
-//     own comment), so this is the one class of generated form this
-//     session couldn't round-trip-verify, only external-source-verify
-//     (olvassa/nézzük/vesszük/veszem-veszed-veszi-vesszük-veszitek-veszik
-//     all matched cooljugator.com exactly)
+//   - **fixed 2026-08-29 (fifth pass)**: sibilant-assimilated definite
+//     present forms ("olvassa", "mos+ja" with the leading j replaced by a
+//     geminated stem consonant) now decode. Plain (non-digraph) s/z-final
+//     stems ("olvassa"/"nézzük") got ordinary VERB_SUFFIXES rows, since
+//     stripping the ending plus one copy of a single-letter consonant
+//     leaves the stem's own final letter intact. Genuine sz-final stems
+//     ("vesszük" -> "vesz") needed the same strip-then-reconstruct
+//     treatment as imperative's own sz-digraph class (see
+//     decodeSzDigraphPresentDefinite's own comment) since the stem's own
+//     final letter of the digraph sits sandwiched between the inserted
+//     "s" and the ending, unreachable by plain stripping. Round-trip
+//     verified for olvas/néz/vesz/tanul/választ across the full definite
+//     paradigm; olvassa/nézzük/vesszük/veszem-veszed-veszi-vesszük-
+//     veszitek-veszik all independently matched cooljugator.com already.
 //   - definite past 2sg/1pl/2pl (-tad/-ted, -tuk/-tük, -tátok/-tétek)
 //     are generated bare for every stem, even Type III ("always linking")
 //     ones — neither source consulted documented a linking variant for
