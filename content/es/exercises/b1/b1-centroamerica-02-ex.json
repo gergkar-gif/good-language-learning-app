@@ -6,278 +6,102 @@
       "type": "matching",
       "category": "vocabulary",
       "pairs": [
-        [
-          "guerra civil",
-          "civil war"
-        ],
-        [
-          "guerrilla",
-          "guerrilla group"
-        ],
-        [
-          "acuerdo",
-          "agreement"
-        ]
-      ],
-      "teaches": [
-        "passive-voice"
+        ["el arzobispo", "archbishop"],
+        ["asesinar", "to assassinate"],
+        ["el francotirador", "sniper"],
+        ["obedecer", "to obey"]
+      ]
+    },
+    {
+      "id": "b1-centroamerica-02.ex01b",
+      "type": "matching",
+      "category": "vocabulary",
+      "pairs": [
+        ["violar", "to violate"],
+        ["la aldea", "village"],
+        ["la estimación", "estimate"],
+        ["enfrentar", "to pit against, confront"]
       ]
     },
     {
       "id": "b1-centroamerica-02.ex02",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Qué oración describe correctamente el hecho histórico?",
+      "category": "reading",
+      "question": "¿Qué ocurrió el 24 de marzo de 1980 en El Salvador?",
       "options": [
-        "En El Salvador, la población fue afectada por la violencia y muchas personas fueron desplazadas.",
-        "El conflicto no tuvo ninguna consecuencia política.",
-        "Todos los actores compartieron exactamente la misma posición."
+        "El arzobispo Óscar Romero fue asesinado por un francotirador mientras celebraba misa.",
+        "Se firmó el acuerdo de paz que puso fin a la guerra civil.",
+        "El Frente Farabundo Martí ganó las elecciones presidenciales."
       ],
-      "correct": 0,
-      "teaches": [
-        "passive-voice"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-centroamerica-02.ex03",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "En la historia de Centroamérica ___ cambios importantes en distintos momentos. (ocurrirse)",
-      "answer": "se produjeron",
-      "teaches": [
-        "passive-voice"
-      ]
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Qué había pedido Romero públicamente un día antes de su muerte?",
+      "options": [
+        "Que los soldados salvadoreños dejaran de obedecer órdenes que violaban derechos humanos básicos.",
+        "Que Estados Unidos aumentara su ayuda militar al ejército salvadoreño.",
+        "Que el Frente Farabundo Martí depusiera las armas de inmediato."
+      ],
+      "correct": 0
     },
     {
       "id": "b1-centroamerica-02.ex04",
-      "type": "sentence-builder",
+      "type": "fill-blank",
       "category": "grammar",
-      "tiles": [
-        "El",
-        "conflicto",
-        "cambió",
-        "la",
-        "sociedad",
-        "regional."
-      ],
-      "solution": [
-        "El",
-        "conflicto",
-        "cambió",
-        "la",
-        "sociedad",
-        "regional."
-      ],
-      "english": "The conflict changed regional society.",
-      "teaches": [
-        "passive-voice"
-      ]
+      "sentence": "___ cabo de casi dos años de guerra, el ejército mató a cientos de civiles en El Mozote. (al)",
+      "answer": "Al",
+      "teaches": ["al-cabo-de-el-tiempo-transcurrido"]
     },
     {
       "id": "b1-centroamerica-02.ex05",
-      "type": "sentence-order",
-      "category": "grammar",
-      "sentences": [
-        "El conflicto se prolongó durante años. [The conflict lasted for years.]",
-        "Muchas comunidades sufrieron sus consecuencias. [Many communities suffered its consequences.]",
-        "Por eso, la búsqueda de una solución ganó importancia. [Therefore, the search for a solution became more important.]"
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿A quiénes enfrentó el conflicto salvadoreño?",
+      "options": [
+        "Al ejército salvadoreño, respaldado por Estados Unidos, contra el Frente Farabundo Martí para la Liberación Nacional.",
+        "A dos facciones del propio ejército salvadoreño entre sí.",
+        "A El Salvador contra un país vecino en una guerra convencional."
       ],
-      "solution": [
-        0,
-        1,
-        2
-      ],
-      "teaches": [
-        "passive-voice"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-centroamerica-02.ex06",
-      "type": "multiple-choice",
+      "type": "sentence-builder",
       "category": "grammar",
-      "question": "¿Qué palabra es parte del vocabulario de esta lección?",
-      "options": [
-        "guerra civil",
-        "biblioteca",
-        "cafetería"
-      ],
-      "correct": 0,
-      "teaches": [
-        "passive-voice"
-      ]
+      "tiles": ["Al", "cabo", "de", "doce", "años", "de", "guerra,", "el", "conflicto", "había", "dejado", "setenta", "y", "cinco", "mil", "muertos."],
+      "solution": ["Al", "cabo", "de", "doce", "años", "de", "guerra,", "el", "conflicto", "había", "dejado", "setenta", "y", "cinco", "mil", "muertos."],
+      "english": "After twelve years of war, the conflict had left seventy-five thousand dead.",
+      "teaches": ["al-cabo-de-el-tiempo-transcurrido"]
     },
     {
       "id": "b1-centroamerica-02.ex07",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "El ___ cambió la situación política. (guerra civil)",
-      "answer": "guerra civil",
-      "teaches": [
-        "passive-voice"
-      ]
+      "type": "dialogue-complete",
+      "category": "reading",
+      "prompt": [
+        { "speaker": "Carolina", "text": "¿Qué ocurrió en la aldea de El Mozote en diciembre de 1981?" },
+        { "speaker": "Fructuoso", "text": "_____" }
+      ],
+      "options": [
+        "Unidades del ejército salvadoreño mataron a cientos de civiles, en uno de los episodios más documentados del conflicto.",
+        "Se celebró allí la firma oficial del acuerdo de paz.",
+        "No ocurrió ningún hecho relevante en esa aldea durante la guerra."
+      ],
+      "correct": 0
     },
     {
       "id": "b1-centroamerica-02.ex08",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Cómo se puede resumir este periodo?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "En El Salvador, la guerra civil enfrentó al gobierno y a la guerrilla, mientras muchas comunidades sufrían desplazamiento y violencia prolongada.",
-        "Fue un periodo sin cambios ni conflictos.",
-        "Todos los países tuvieron exactamente la misma experiencia."
-      ],
-      "correct": 0,
-      "teaches": [
-        "passive-voice"
-      ]
-    },
-    {
-      "id": "b1-centroamerica-02.ex09",
       "type": "listening-choice",
       "category": "listening",
-      "sentence": "En El Salvador, la guerra civil enfrentó al gobierno y a la guerrilla, mientras muchas comunidades sufrían desplazamiento y violencia prolongada.",
+      "sentence": "El conflicto había dejado unas setenta y cinco mil personas muertas en un país de apenas cinco millones de habitantes.",
       "options": [
-        "En El Salvador, la guerra civil enfrentó al gobierno y a la guerrilla, mientras muchas comunidades sufrían desplazamiento y violencia prolongada.",
-        "La situación fue completamente pacífica.",
-        "No hubo ningún cambio."
+        "The conflict had left some seventy-five thousand people dead in a country of barely five million inhabitants.",
+        "The conflict caused almost no casualties in El Salvador.",
+        "El Salvador had a population of over fifty million during this period."
       ],
-      "correct": 0,
-      "teaches": [
-        "passive-voice"
-      ]
-    },
-    {
-      "id": "b1-centroamerica-02.ex10",
-      "type": "listening-choice",
-      "category": "listening",
-      "sentence": "La guerra civil tuvo consecuencias importantes, porque el conflicto afectó a muchas personas.",
-      "options": [
-        "The civil war had important consequences because the conflict affected many people.",
-        "The conflict affected nobody.",
-        "There were no consequences."
-      ],
-      "correct": 0,
-      "teaches": [
-        "passive-voice"
-      ]
-    },
-    {
-      "id": "b1-centroamerica-02.ex11",
-      "type": "dictation",
-      "category": "listening",
-      "sentence": "En El Salvador, la población fue afectada por la violencia y muchas personas fueron desplazadas.",
-      "teaches": [
-        "passive-voice"
-      ]
-    },
-    {
-      "id": "b1-centroamerica-02.ex12",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Por qué es importante estudiar este conflicto?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Porque sus consecuencias afectaron a distintas comunidades y países.",
-        "Porque no tuvo ninguna consecuencia.",
-        "Porque fue completamente ajeno a la región."
-      ],
-      "correct": 0,
-      "teaches": [
-        "passive-voice"
-      ]
-    },
-    {
-      "id": "b1-centroamerica-02.ex13",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Qué cambió después del conflicto?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Cambió la situación política, aunque las consecuencias sociales continuaron.",
-        "No cambió nada.",
-        "Solo cambió el nombre del país."
-      ],
-      "correct": 0,
-      "teaches": [
-        "passive-voice"
-      ]
-    },
-    {
-      "id": "b1-centroamerica-02.ex14",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Qué relación hubo entre el conflicto y la población?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "La población sufrió consecuencias importantes mientras el conflicto continuaba.",
-        "La población no se vio afectada.",
-        "Solo participaron personas de otros continentes."
-      ],
-      "correct": 0,
-      "teaches": [
-        "passive-voice"
-      ]
-    },
-    {
-      "id": "b1-centroamerica-02.ex15",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Explica el acontecimiento principal de la lección y una consecuencia. [Explain the main event of the lesson and one consequence.]",
-          "answer": "En El Salvador, la guerra civil enfrentó al gobierno y a la guerrilla, mientras muchas comunidades sufrían desplazamiento y violencia prolongada."
-        }
-      ],
-      "teaches": [
-        "passive-voice"
-      ]
-    },
-    {
-      "id": "b1-centroamerica-02.ex16",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Resume la relación entre el conflicto y la población. [Summarise the relationship between the conflict and the population.]",
-          "answer": "En El Salvador, la población fue afectada por la violencia y muchas personas fueron desplazadas."
-        }
-      ],
-      "teaches": [
-        "passive-voice"
-      ]
+      "correct": 0
     }
   ]
 }

@@ -6,340 +6,102 @@
       "type": "matching",
       "category": "vocabulary",
       "pairs": [
-        [
-          "negociación",
-          "negotiation"
-        ],
-        [
-          "alto el fuego",
-          "ceasefire"
-        ],
-        [
-          "reconciliación",
-          "reconciliation"
-        ]
-      ],
-      "teaches": [
-        "passive-voice-legado"
+        ["celebrar", "to hold (an event)"],
+        ["el bloqueo", "blockade"],
+        ["entregar", "to hand over"],
+        ["la mediación", "mediation"]
+      ]
+    },
+    {
+      "id": "b1-centroamerica-05.ex01b",
+      "type": "matching",
+      "category": "vocabulary",
+      "pairs": [
+        ["atravesar", "to go through"],
+        ["el bando", "side, faction"],
+        ["alimentar", "to fuel, feed"],
+        ["el legado", "legacy"]
       ]
     },
     {
       "id": "b1-centroamerica-05.ex02",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Qué oración describe correctamente el hecho histórico?",
+      "category": "reading",
+      "question": "¿Qué ocurrió en Nicaragua en febrero de 1990?",
       "options": [
-        "Los acuerdos fueron negociados por distintos actores y permitieron avanzar hacia la reconciliación.",
-        "El conflicto no tuvo ninguna consecuencia política.",
-        "Todos los actores compartieron exactamente la misma posición."
+        "El gobierno sandinista celebró elecciones libres, perdió, y entregó el poder pacíficamente.",
+        "El gobierno sandinista canceló las elecciones previstas.",
+        "Los Contras ganaron una victoria militar decisiva."
       ],
-      "correct": 0,
-      "teaches": [
-        "passive-voice-legado"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-centroamerica-05.ex03",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "En la historia de Centroamérica ___ cambios importantes en distintos momentos. (ocurrirse)",
-      "answer": "se produjeron",
-      "teaches": [
-        "passive-voice-legado"
-      ]
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Qué se firmó en enero de 1992 en la Ciudad de México?",
+      "options": [
+        "Los Acuerdos de Paz de Chapultepec, poniendo fin a la guerra civil salvadoreña.",
+        "Los Acuerdos de Paz guatemaltecos.",
+        "Un tratado comercial entre Nicaragua y El Salvador."
+      ],
+      "correct": 0
     },
     {
       "id": "b1-centroamerica-05.ex04",
-      "type": "sentence-builder",
+      "type": "fill-blank",
       "category": "grammar",
-      "tiles": [
-        "El",
-        "conflicto",
-        "cambió",
-        "la",
-        "sociedad",
-        "regional."
-      ],
-      "solution": [
-        "El",
-        "conflicto",
-        "cambió",
-        "la",
-        "sociedad",
-        "regional."
-      ],
-      "english": "The conflict changed regional society.",
-      "teaches": [
-        "passive-voice-legado"
-      ]
+      "sentence": "Guatemala fue el último país en alcanzar la paz, no ___ antes atravesar treinta y seis años de conflicto. (sin)",
+      "answer": "sin",
+      "teaches": ["no-sin-antes-reconocer-un-paso-previo-necesario"]
     },
     {
       "id": "b1-centroamerica-05.ex05",
-      "type": "sentence-order",
-      "category": "grammar",
-      "sentences": [
-        "El conflicto se prolongó durante años. [The conflict lasted for years.]",
-        "Muchas comunidades sufrieron sus consecuencias. [Many communities suffered its consequences.]",
-        "Por eso, la búsqueda de una solución ganó importancia. [Therefore, the search for a solution became more important.]"
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Qué patrón compartieron estos tres procesos de paz?",
+      "options": [
+        "Ninguno terminó en una victoria militar clara de un bando sobre el otro, sino en negociaciones.",
+        "Los tres terminaron con la victoria militar total de un solo bando.",
+        "Ninguno de los tres conflictos llegó jamás a un acuerdo de paz."
       ],
-      "solution": [
-        0,
-        1,
-        2
-      ],
-      "teaches": [
-        "passive-voice-legado"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-centroamerica-05.ex06",
-      "type": "multiple-choice",
+      "type": "sentence-builder",
       "category": "grammar",
-      "question": "¿Qué palabra es parte del vocabulario de esta lección?",
-      "options": [
-        "negociación",
-        "biblioteca",
-        "cafetería"
-      ],
-      "correct": 0,
-      "teaches": [
-        "passive-voice-legado"
-      ]
+      "tiles": ["El", "gobierno", "aceptó", "celebrar", "elecciones,", "no", "sin", "antes", "enfrentar", "años", "de", "guerra."],
+      "solution": ["El", "gobierno", "aceptó", "celebrar", "elecciones,", "no", "sin", "antes", "enfrentar", "años", "de", "guerra."],
+      "english": "The government agreed to hold elections, not without first facing years of war.",
+      "teaches": ["no-sin-antes-reconocer-un-paso-previo-necesario"]
     },
     {
       "id": "b1-centroamerica-05.ex07",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "El ___ cambió la situación política. (negociación)",
-      "answer": "negociación",
-      "teaches": [
-        "passive-voice-legado"
-      ]
+      "type": "dialogue-complete",
+      "category": "reading",
+      "prompt": [
+        { "speaker": "Carolina", "text": "¿Resolvieron estos acuerdos de paz todos los problemas de la región?" },
+        { "speaker": "Fructuoso", "text": "_____" }
+      ],
+      "options": [
+        "No, no resolvieron por completo los problemas estructurales de pobreza y desigualdad que habían alimentado los conflictos.",
+        "Sí, eliminaron por completo todos los problemas sociales de Centroamérica.",
+        "Estos acuerdos nunca llegaron a firmarse realmente."
+      ],
+      "correct": 0
     },
     {
       "id": "b1-centroamerica-05.ex08",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Cómo se puede resumir este periodo?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Las negociaciones abrieron el camino a los Acuerdos de Paz, y varios conflictos terminaron mediante acuerdos que impulsaron la transición política y la reconciliación.",
-        "Fue un periodo sin cambios ni conflictos.",
-        "Todos los países tuvieron exactamente la misma experiencia."
-      ],
-      "correct": 0,
-      "teaches": [
-        "passive-voice-legado"
-      ]
-    },
-    {
-      "id": "b1-centroamerica-05.ex09",
-      "type": "multiple-choice",
-      "category": "reading",
-      "question": "¿Cuál es la idea principal del texto?",
-      "options": [
-        "Los Acuerdos de Paz buscaron cerrar conflictos mediante negociación y transición.",
-        "Los acuerdos no tuvieron importancia.",
-        "La paz fue imposible en todos los países."
-      ],
-      "correct": 0
-    },
-    {
-      "id": "b1-centroamerica-05.ex10",
-      "type": "multiple-choice",
-      "category": "reading",
-      "question": "¿Qué relación aparece entre negociación y paz?",
-      "options": [
-        "La negociación permitió avanzar hacia una salida política, aunque la reconciliación fue gradual.",
-        "La negociación evitó cualquier cambio.",
-        "La negociación solo afectó a otros continentes."
-      ],
-      "correct": 0
-    },
-    {
-      "id": "b1-centroamerica-05.ex11",
-      "type": "multiple-choice",
-      "category": "reading",
-      "question": "¿Qué conclusión encaja mejor?",
-      "options": [
-        "Los acuerdos no resolvieron todo de inmediato, pero ayudaron a transformar la política regional.",
-        "Los acuerdos no cambiaron nada.",
-        "Los conflictos continuaron exactamente igual en todos los países."
-      ],
-      "correct": 0
-    },
-    {
-      "id": "b1-centroamerica-05.ex12",
-      "type": "multiple-choice",
-      "category": "reading",
-      "question": "¿Qué elemento fue importante después de los acuerdos?",
-      "options": [
-        "La transición política, porque puso en marcha nuevas formas de participación.",
-        "La desaparición de toda discusión política.",
-        "El regreso inmediato de todas las personas desplazadas."
-      ],
-      "correct": 0
-    },
-    {
-      "id": "b1-centroamerica-05.ex13",
       "type": "listening-choice",
       "category": "listening",
-      "sentence": "Las negociaciones abrieron el camino a los Acuerdos de Paz, y varios conflictos terminaron mediante acuerdos que impulsaron la transición política y la reconciliación.",
+      "sentence": "El gobierno y la guerrilla firmaron finalmente los Acuerdos de Paz Firme y Duradera en diciembre de 1996.",
       "options": [
-        "Las negociaciones abrieron el camino a los Acuerdos de Paz, y varios conflictos terminaron mediante acuerdos que impulsaron la transición política y la reconciliación.",
-        "La situación fue completamente pacífica.",
-        "No hubo ningún cambio."
+        "The government and the guerrillas finally signed the Firm and Lasting Peace Accords in December 1996.",
+        "No peace agreement was ever signed in Guatemala.",
+        "The peace accords were signed in 1954, right after the coup."
       ],
-      "correct": 0,
-      "teaches": [
-        "passive-voice-legado"
-      ]
-    },
-    {
-      "id": "b1-centroamerica-05.ex14",
-      "type": "listening-choice",
-      "category": "listening",
-      "sentence": "La negociación tuvo consecuencias importantes, porque el conflicto afectó a muchas personas.",
-      "options": [
-        "The negotiation had important consequences because the conflict affected many people.",
-        "The conflict affected nobody.",
-        "There were no consequences."
-      ],
-      "correct": 0,
-      "teaches": [
-        "passive-voice-legado"
-      ]
-    },
-    {
-      "id": "b1-centroamerica-05.ex15",
-      "type": "dictation",
-      "category": "listening",
-      "sentence": "Los acuerdos fueron negociados por distintos actores y permitieron avanzar hacia la reconciliación.",
-      "teaches": [
-        "passive-voice-legado"
-      ]
-    },
-    {
-      "id": "b1-centroamerica-05.ex16",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Por qué es importante estudiar este conflicto?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Porque sus consecuencias afectaron a distintas comunidades y países.",
-        "Porque no tuvo ninguna consecuencia.",
-        "Porque fue completamente ajeno a la región."
-      ],
-      "correct": 0,
-      "teaches": [
-        "passive-voice-legado"
-      ]
-    },
-    {
-      "id": "b1-centroamerica-05.ex17",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Qué cambió después del conflicto?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Cambió la situación política, aunque las consecuencias sociales continuaron.",
-        "No cambió nada.",
-        "Solo cambió el nombre del país."
-      ],
-      "correct": 0,
-      "teaches": [
-        "passive-voice-legado"
-      ]
-    },
-    {
-      "id": "b1-centroamerica-05.ex18",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Qué relación hubo entre el conflicto y la población?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "La población sufrió consecuencias importantes mientras el conflicto continuaba.",
-        "La población no se vio afectada.",
-        "Solo participaron personas de otros continentes."
-      ],
-      "correct": 0,
-      "teaches": [
-        "passive-voice-legado"
-      ]
-    },
-    {
-      "id": "b1-centroamerica-05.ex19",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Explica el acontecimiento principal de la lección y una consecuencia. [Explain the main event of the lesson and one consequence.]",
-          "answer": "Las negociaciones abrieron el camino a los Acuerdos de Paz, y varios conflictos terminaron mediante acuerdos que impulsaron la transición política y la reconciliación."
-        }
-      ],
-      "teaches": [
-        "passive-voice-legado"
-      ]
-    },
-    {
-      "id": "b1-centroamerica-05.ex20",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Resume la relación entre el conflicto y la población. [Summarise the relationship between the conflict and the population.]",
-          "answer": "Los acuerdos fueron negociados por distintos actores y permitieron avanzar hacia la reconciliación."
-        }
-      ],
-      "teaches": [
-        "passive-voice-legado"
-      ]
-    },
-    {
-      "id": "b1-centroamerica-05.ex21",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Explica por qué los Acuerdos de Paz fueron importantes, usando dos cláusulas. [Explain why the Peace Accords were important, using two clauses.]",
-          "answer": "Las negociaciones abrieron el camino a los Acuerdos de Paz, y varios conflictos terminaron mediante acuerdos que impulsaron la transición política y la reconciliación."
-        }
-      ],
-      "teaches": [
-        "passive-voice-legado"
-      ]
+      "correct": 0
     }
   ]
 }
