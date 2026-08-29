@@ -245,7 +245,7 @@ late units should not require grammar Core/Latin America hasn't taught;
 they should read like a more demanding treatment of material the learner
 is, by that point, actually ready for.
 
-**Status as of 2026-08-28: Units 1-24 (all one hundred and twenty
+**Status as of 2026-08-28: Units 1-25 (all one hundred and twenty-five
 teaching lessons) rebuilt to this model** (`lesson.b1.precolombina.01-05`,
 `lesson.b1.civilizaciones.01-05`, `lesson.b1.llegadaeuropeos.01-05`,
 `lesson.b1.conquista.01-05`, `lesson.b1.sociedadcolonial.01-05`,
@@ -258,12 +258,13 @@ teaching lessons) rebuilt to this model** (`lesson.b1.precolombina.01-05`,
 `lesson.b1.nacionalismo.01-05`, `lesson.b1.grandepresion.01-05`,
 `lesson.b1.populismo.01-05`, `lesson.b1.industrializacion.01-05`,
 `lesson.b1.revolucioncubana.01-05`, `lesson.b1.guerrafria.01-05`,
-`lesson.b1.eeuu.01-05`, `lesson.b1.gobiernosmilitares.01-05` —
+`lesson.b1.eeuu.01-05`, `lesson.b1.gobiernosmilitares.01-05`,
+`lesson.b1.represionpolitica.01-05` —
 each with its own dedicated story, not a story shared across the unit;
 grammar, vocabulary, exercises and lesson-flow all rewritten in every
 lesson; see their files for a worked example of every rule above,
 including the one-story-per-lesson shape §7's Latin America override
-describes). All 12 other Latin America units still follow the original
+describes). All 11 other Latin America units still follow the original
 model and need the same rebuild. Treat this section, not the original
 text below it, as current — the grammar-extension-point list and the
 thematic-pairing table (§3a) are unaffected and still apply as written.
