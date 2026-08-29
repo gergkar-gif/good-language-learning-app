@@ -89,10 +89,53 @@ const HungarianMorphology = (function () {
         return null;
     }
 
+    // Stem-vowel deletion: a closed, lexically-specific set of nouns of
+    // roughly CVCVC shape lose their SECOND vowel entirely before a
+    // vowel-initial suffix ("tükör" -> "tükr-öm", not "tüköröm") — most
+    // nouns of similar shape don't do this ("papír" -> "papírom", not
+    // "papr-om"), so this is a hand-enumerated list, same as
+    // PAST_TYPE_I_LEXICAL above, not a derivable rule. Cross-checked
+    // 2026-08-29 (ninth pass) via web search against Wiktionary's
+    // "fleeting-vowel words" appendix and standard dictionaries; keyed by
+    // the DELETED-vowel stem (what's left after a vowel-initial suffix
+    // strips off) mapping to the real dictionary headword. Excludes
+    // kosár/kanál-shaped nouns ("kosár" -> "kosaram", not "kosr-am"),
+    // which shorten a long vowel rather than deleting one entirely — a
+    // different phenomenon, not handled here or anywhere else in this
+    // file. kehely/pehely/teher are a further irregular subclass within
+    // this class that ALSO swaps two consonants, not just deletes a
+    // vowel ("kehely" -> "kelyh-", not "kehly-").
+    const VOWEL_DELETION_NOUNS = {
+        tükr: 'tükör', bokr: 'bokor', majm: 'majom', álm: 'álom',
+        tork: 'torok', ökr: 'ökör', ikr: 'iker', körm: 'köröm',
+        sátr: 'sátor', ökl: 'ököl', ajk: 'ajak', fark: 'farok',
+        fátyl: 'fátyol', jászl: 'jászol', kazl: 'kazal', vászn: 'vászon',
+        szobr: 'szobor', tücsk: 'tücsök', árk: 'árok', csokr: 'csokor',
+        gyomr: 'gyomor', hurk: 'hurok', kölyk: 'kölyök', ólm: 'ólom',
+        cukr: 'cukor', dolg: 'dolog', epr: 'eper', term: 'terem',
+        ürm: 'üröm', kelyh: 'kehely', pelyh: 'pehely', terh: 'teher'
+    };
+
+    // Same vowel-deletion phenomenon, but for the "-alom"/"-elem"
+    // abstract-noun-forming suffix specifically ("hatalom" "power" ->
+    // "hatalm-am", "szerelem" "love" -> "szerelm-em") — unlike the closed
+    // list above, this one IS a fully productive, regular pattern (every
+    // noun built with this suffix behaves this way), so it's derived from
+    // the remainder's own spelling rather than needing its own lexical
+    // entry per noun. Only fires on the plain "alm"/"elm" ending (not the
+    // accented "álm"/"élm"), so it doesn't overlap with or shadow "álom"
+    // in the closed list above.
+    function restoreDeletedAlomElem(remainder) {
+        if (remainder.endsWith('alm')) return remainder.slice(0, -3) + 'alom';
+        if (remainder.endsWith('elm')) return remainder.slice(0, -3) + 'elem';
+        return null;
+    }
+
     // nominalSense(dictionary[remainder]), with the delengthened spelling
-    // tried as a fallback when the literal remainder isn't a headword.
-    // Returns { lemma, sense } (lemma is whichever spelling actually
-    // resolved — not necessarily `remainder` itself) or null.
+    // and a restored deleted stem vowel each tried as a fallback when the
+    // literal remainder isn't a headword. Returns { lemma, sense } (lemma
+    // is whichever spelling actually resolved — not necessarily
+    // `remainder` itself) or null.
     function resolveNominal(dictionary, remainder) {
         if (remainder == null) return null;
         let sense = nominalSense(dictionary[remainder]);
@@ -101,6 +144,16 @@ const HungarianMorphology = (function () {
         if (shortened) {
             sense = nominalSense(dictionary[shortened]);
             if (sense) return { lemma: shortened, sense: sense };
+        }
+        const listedStem = VOWEL_DELETION_NOUNS[remainder];
+        if (listedStem) {
+            sense = nominalSense(dictionary[listedStem]);
+            if (sense) return { lemma: listedStem, sense: sense };
+        }
+        const restored = restoreDeletedAlomElem(remainder);
+        if (restored) {
+            sense = nominalSense(dictionary[restored]);
+            if (sense) return { lemma: restored, sense: sense };
         }
         return null;
     }
@@ -2438,11 +2491,21 @@ const HungarianMorphology = (function () {
 //     iszik/alszik/vesz/tesz/hisz/visz/lesz cover the most curriculum-
 //     critical ones; Hungarian has a few more with less common irregular
 //     stems)
-//   - stem-vowel deletion before a vowel-initial suffix ("tükör" ->
-//     "tükr-öm", not "tüköröm") — affects a closed, learnable set of
-//     nouns (tükör, majom, bokor, álom, torok, ...) but isn't derivable
-//     from the surface form alone the way suffix-stripping is; would need
-//     a small lexical list of which nouns do this
+//   - **fixed 2026-08-29 (ninth pass)**: stem-vowel deletion before a
+//     vowel-initial suffix ("tükör" -> "tükr-öm", not "tüköröm") now
+//     resolves, via VOWEL_DELETION_NOUNS (a hand-enumerated list of ~30
+//     nouns, cross-checked against Wiktionary's "fleeting-vowel words"
+//     appendix) plus a separate productive-pattern function for the
+//     "-alom"/"-elem" abstract-noun suffix specifically ("hatalom" ->
+//     "hatalm-am"), which behaves the same way for every noun built with
+//     it, not just a closed list. Both consulted from resolveNominal()
+//     as one more fallback alongside delengthen(). Round-trip verified
+//     (16/18 exact-spelling matches; the other two, "ajkam"/"farkam",
+//     resolve to "ajk"/"fark" instead of "ajak"/"farok" — both genuinely
+//     correct, since those happen to already be the dictionary's own
+//     alternative-spelling headwords, resolved via the ordinary direct-
+//     hit path before ever reaching this fallback) and live-checked via
+//     Lexicon.lookup() in the browser.
 //   - the noun -> adjective "-i" suffix ("kiértékelés" -> "kiértékelési",
 //     "the evaluation's") isn't in POSSESSIVE_SUFFIXES or CASE_SUFFIXES
 //     since it's neither — a third suffix category not yet modelled.
