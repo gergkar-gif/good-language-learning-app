@@ -6,252 +6,102 @@
       "type": "matching",
       "category": "vocabulary",
       "pairs": [
-        [
-          "justicia",
-          "justice"
-        ],
-        [
-          "responsabilidad",
-          "accountability / responsibility"
-        ],
-        [
-          "amnistía",
-          "amnesty"
-        ]
-      ],
-      "teaches": [
-        "se-impersonal"
+        ["perdonar", "to pardon, forgive"],
+        ["recíproco", "reciprocal, mutual"],
+        ["vigente", "in force, valid"],
+        ["la demanda", "lawsuit, legal claim"]
+      ]
+    },
+    {
+      "id": "b1-democratizacion-03.ex01b",
+      "type": "matching",
+      "category": "vocabulary",
+      "pairs": [
+        ["el procesamiento", "prosecution"],
+        ["la sentencia", "ruling, sentence"],
+        ["incompatible", "incompatible"],
+        ["intacto", "intact"]
       ]
     },
     {
       "id": "b1-democratizacion-03.ex02",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Qué afirmación encaja mejor con el tema?",
+      "category": "reading",
+      "question": "¿Qué hizo la Ley de Amnistía brasileña de 1979?",
       "options": [
-        "Se investigaron responsabilidades mientras la sociedad debatía cómo responder a los abusos.",
-        "La democracia eliminó todos los conflictos.",
-        "Las instituciones dejaron de existir."
+        "Perdonó de manera recíproca tanto a los opositores del régimen como a los agentes estatales responsables de la represión.",
+        "Solo perdonó a los opositores del régimen, sin incluir a los agentes estatales.",
+        "Ordenó juicios inmediatos contra todos los responsables de la represión."
       ],
-      "correct": 0,
-      "teaches": [
-        "se-impersonal"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-democratizacion-03.ex03",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "El concepto de _____ aparece en el contexto estudiado. (justicia)",
-      "answer": "justicia",
-      "teaches": [
-        "se-impersonal"
-      ]
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Qué confirmó el Supremo Tribunal Federal brasileño en 2010?",
+      "options": [
+        "La validez de la Ley de Amnistía, rechazando una demanda que buscaba reinterpretarla.",
+        "La invalidez total de la Ley de Amnistía.",
+        "Que la ley nunca había estado vigente en Brasil."
+      ],
+      "correct": 0
     },
     {
       "id": "b1-democratizacion-03.ex04",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "El término _____ es central en esta lección. (responsabilidad)",
-      "answer": "responsabilidad",
-      "teaches": [
-        "se-impersonal"
-      ]
+      "sentence": "El Estado brasileño ha hecho, en gran medida, caso ___ de esta sentencia internacional. (omiso)",
+      "answer": "omiso",
+      "teaches": ["hacer-caso-omiso-de-ignorar-deliberadamente-algo"]
     },
     {
       "id": "b1-democratizacion-03.ex05",
-      "type": "fill-blank",
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Qué determinó la Corte Interamericana de Derechos Humanos en el caso \"Gomes Lund\" en 2010?",
+      "options": [
+        "Que la Ley de Amnistía brasileña era incompatible con las obligaciones internacionales de Brasil.",
+        "Que la Ley de Amnistía era perfectamente compatible con el derecho internacional.",
+        "Que Brasil no tenía ninguna obligación internacional en materia de derechos humanos."
+      ],
+      "correct": 0
+    },
+    {
+      "id": "b1-democratizacion-03.ex06",
+      "type": "sentence-builder",
       "category": "grammar",
-      "sentence": "Una palabra clave de este tema es _____. (amnistía)",
-      "answer": "amnistía",
-      "teaches": [
-        "se-impersonal"
-      ]
+      "tiles": ["Brasil", "ha", "hecho", "caso", "omiso", "de", "la", "sentencia", "de", "la", "Corte", "Interamericana."],
+      "solution": ["Brasil", "ha", "hecho", "caso", "omiso", "de", "la", "sentencia", "de", "la", "Corte", "Interamericana."],
+      "english": "Brazil has disregarded the Inter-American Court's ruling.",
+      "teaches": ["hacer-caso-omiso-de-ignorar-deliberadamente-algo"]
     },
     {
       "id": "b1-democratizacion-03.ex07",
-      "type": "sentence-builder",
-      "category": "grammar",
-      "tiles": [
-        "Se",
-        "investigaron",
-        "responsabilidades",
-        "mientras",
-        "la",
-        "sociedad",
-        "debatía",
-        "cómo",
-        "responder",
-        "a",
-        "los",
-        "abusos."
+      "type": "dialogue-complete",
+      "category": "reading",
+      "prompt": [
+        { "speaker": "Carolina", "text": "¿Se mantiene la ley de amnistía brasileña exactamente igual que en 1979?" },
+        { "speaker": "Fructuoso", "text": "_____" }
       ],
-      "solution": [
-        "Se",
-        "investigaron",
-        "responsabilidades",
-        "mientras",
-        "la",
-        "sociedad",
-        "debatía",
-        "cómo",
-        "responder",
-        "a",
-        "los",
-        "abusos."
+      "options": [
+        "Sí, se ha mantenido prácticamente intacta a pesar de la resolución de la Corte Interamericana.",
+        "No, fue derogada por completo tras la sentencia de 2010.",
+        "No, nunca llegó a entrar en vigor realmente."
       ],
-      "english": "Responsibilities were investigated while society debated how to respond to abuses.",
-      "teaches": [
-        "se-impersonal"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-democratizacion-03.ex08",
-      "type": "sentence-order",
-      "category": "grammar",
-      "sentences": [
-        "Se investigaron responsabilidades mientras la sociedad debatía cómo responder a los abusos.",
-        "Se concedió una amnistía en algunos casos, aunque las víctimas siguieron reclamando justicia.",
-        "Se abrió el debate sobre la responsabilidad de quienes habían participado en la represión."
-      ],
-      "solution": [
-        0,
-        1,
-        2
-      ],
-      "teaches": [
-        "se-impersonal"
-      ]
-    },
-    {
-      "id": "b1-democratizacion-03.ex09",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Qué ejemplo utiliza correctamente la estructura de enfoque?",
-      "options": [
-        "Se investigaron responsabilidades mientras la sociedad debatía cómo responder a los abusos.",
-        "Se concedió una amnistía en algunos casos, aunque las víctimas siguieron reclamando justicia.",
-        "Se abrió el debate sobre la responsabilidad de quienes habían participado en la represión."
-      ],
-      "correct": 0,
-      "teaches": [
-        "se-impersonal"
-      ]
-    },
-    {
-      "id": "b1-democratizacion-03.ex10",
       "type": "listening-choice",
       "category": "listening",
-      "sentence": "Se concedió una amnistía en algunos casos, aunque las víctimas siguieron reclamando justicia.",
+      "sentence": "La relación entre justicia, memoria y reconciliación se resolvió de maneras profundamente distintas de un país a otro.",
       "options": [
-        "An amnesty was granted in some cases, although victims continued to demand justice.",
-        "The opposite happened.",
-        "No information is given."
-      ],
-      "correct": 0,
-      "teaches": [
-        "se-impersonal"
-      ]
-    },
-    {
-      "id": "b1-democratizacion-03.ex11",
-      "type": "listening-choice",
-      "category": "listening",
-      "sentence": "Se abrió el debate sobre la responsabilidad de quienes habían participado en la represión.",
-      "options": [
-        "A debate was opened about the responsibility of those who had participated in repression.",
-        "The statement is false.",
-        "The topic is unrelated."
-      ],
-      "correct": 0,
-      "teaches": [
-        "se-impersonal"
-      ]
-    },
-    {
-      "id": "b1-democratizacion-03.ex12",
-      "type": "dictation",
-      "category": "listening",
-      "sentence": "Se investigaron responsabilidades mientras la sociedad debatía cómo responder a los abusos.",
-      "teaches": [
-        "se-impersonal"
-      ]
-    },
-    {
-      "id": "b1-democratizacion-03.ex13",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "teaches": [
-        "se-impersonal"
-      ],
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "Se investigaron responsabilidades mientras la sociedad debatía cómo responder a los abusos."
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Se concedió una amnistía en algunos casos, aunque las víctimas siguieron reclamando justicia.",
-        "No hubo ningún cambio en la región.",
-        "Todos los países vivieron exactamente el mismo proceso."
+        "The relationship between justice, memory, and reconciliation was resolved in profoundly different ways from one country to another.",
+        "Every country in the region resolved this relationship in exactly the same way.",
+        "No country in the region ever addressed this relationship at all."
       ],
       "correct": 0
-    },
-    {
-      "id": "b1-democratizacion-03.ex14",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "teaches": [
-        "se-impersonal"
-      ],
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "Se abrió el debate sobre la responsabilidad de quienes habían participado en la represión."
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "En algunos países se buscó un equilibrio entre justicia y estabilidad, aunque el resultado fue discutido.",
-        "El proceso fue completamente uniforme en toda la región.",
-        "No existieron consecuencias importantes."
-      ],
-      "correct": 0
-    },
-    {
-      "id": "b1-democratizacion-03.ex15",
-      "type": "structured-writing",
-      "category": "writing",
-      "teaches": [
-        "se-impersonal"
-      ],
-      "template": [
-        {
-          "prompt": "Explica brevemente rendición de cuentas y menciona una dificultad o consecuencia.",
-          "answer": "Se investigaron responsabilidades mientras la sociedad debatía cómo responder a los abusos. Se abrió el debate sobre la responsabilidad de quienes habían participado en la represión."
-        }
-      ]
-    },
-    {
-      "id": "b1-democratizacion-03.ex16",
-      "type": "structured-writing",
-      "category": "writing",
-      "teaches": [
-        "se-impersonal"
-      ],
-      "template": [
-        {
-          "prompt": "¿Por qué este proceso fue complejo?",
-          "answer": "En algunos países se buscó un equilibrio entre justicia y estabilidad, aunque el resultado fue discutido."
-        }
-      ]
     }
   ]
 }

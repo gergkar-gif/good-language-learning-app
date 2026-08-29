@@ -6,252 +6,102 @@
       "type": "matching",
       "category": "vocabulary",
       "pairs": [
-        [
-          "constitución",
-          "constitution"
-        ],
-        [
-          "parlamento",
-          "parliament"
-        ],
-        [
-          "tribunal",
-          "court"
-        ]
-      ],
-      "teaches": [
-        "passive"
+        ["promulgar", "to enact, promulgate"],
+        ["la asamblea constituyente", "constituent assembly"],
+        ["modernizar", "to modernize"],
+        ["la reelección", "reelection"]
+      ]
+    },
+    {
+      "id": "b1-democratizacion-02.ex01b",
+      "type": "matching",
+      "category": "vocabulary",
+      "pairs": [
+        ["diseñar", "to design"],
+        ["la tentación", "temptation"],
+        ["sólido", "solid, sound"],
+        ["más allá de", "beyond"]
       ]
     },
     {
       "id": "b1-democratizacion-02.ex02",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Qué afirmación encaja mejor con el tema?",
+      "category": "reading",
+      "question": "¿Qué promulgó Brasil en 1988?",
       "options": [
-        "La constitución fue reformada para establecer reglas que limitaran el poder ejecutivo.",
-        "La democracia eliminó todos los conflictos.",
-        "Las instituciones dejaron de existir."
+        "Una nueva constitución, la \"Constitución Ciudadana\", con miras a garantizar amplios derechos sociales.",
+        "Un tratado de defensa con Argentina.",
+        "Una ley que prohibía cualquier reforma constitucional futura."
       ],
-      "correct": 0,
-      "teaches": [
-        "passive"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-democratizacion-02.ex03",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "La ___ fue reformada para establecer reglas que limitaran el poder ejecutivo.",
-      "answer": "constitución",
-      "teaches": [
-        "passive"
-      ]
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Qué convocó Colombia en 1991 y qué creó como resultado?",
+      "options": [
+        "Una asamblea constituyente que creó, entre otras instituciones, una Corte Constitucional independiente.",
+        "Un plebiscito para mantener sin cambios la constitución de 1886.",
+        "Una asamblea que decidió no crear ninguna institución nueva."
+      ],
+      "correct": 0
     },
     {
       "id": "b1-democratizacion-02.ex04",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "El ___ fue elegido mediante procedimientos que buscaban ampliar la representación.",
-      "answer": "parlamento",
-      "teaches": [
-        "passive"
-      ]
+      "sentence": "La nueva constitución paraguaya se diseñó ___ miras a impedir cualquier concentración excesiva de poder. (con)",
+      "answer": "con",
+      "teaches": ["con-miras-a-el-proposito-detras-de-una-accion"]
     },
     {
       "id": "b1-democratizacion-02.ex05",
-      "type": "fill-blank",
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Qué límite estableció la nueva constitución paraguaya de 1992?",
+      "options": [
+        "Límites estrictos a la reelección presidencial.",
+        "Ningún límite a la reelección presidencial.",
+        "La eliminación total de las elecciones presidenciales."
+      ],
+      "correct": 0
+    },
+    {
+      "id": "b1-democratizacion-02.ex06",
+      "type": "sentence-builder",
       "category": "grammar",
-      "sentence": "Los ___es fueron fortalecidos mientras se desarrollaban nuevas garantías jurídicas.",
-      "answer": "tribunal",
-      "teaches": [
-        "passive"
-      ]
+      "tiles": ["La", "región", "creó", "tribunales", "electorales", "independientes,", "con", "miras", "a", "garantizar", "elecciones", "limpias."],
+      "solution": ["La", "región", "creó", "tribunales", "electorales", "independientes,", "con", "miras", "a", "garantizar", "elecciones", "limpias."],
+      "english": "The region created independent electoral tribunals, with a view to guaranteeing clean elections.",
+      "teaches": ["con-miras-a-el-proposito-detras-de-una-accion"]
     },
     {
       "id": "b1-democratizacion-02.ex07",
-      "type": "sentence-builder",
-      "category": "grammar",
-      "tiles": [
-        "La",
-        "constitución",
-        "fue",
-        "reformada",
-        "para",
-        "establecer",
-        "reglas",
-        "que",
-        "limitaran",
-        "el",
-        "poder",
-        "ejecutivo."
+      "type": "dialogue-complete",
+      "category": "reading",
+      "prompt": [
+        { "speaker": "Carolina", "text": "¿Qué compartían estas nuevas cartas constitucionales, más allá de su contenido específico tan distinto?" },
+        { "speaker": "Fructuoso", "text": "_____" }
       ],
-      "solution": [
-        "La",
-        "constitución",
-        "fue",
-        "reformada",
-        "para",
-        "establecer",
-        "reglas",
-        "que",
-        "limitaran",
-        "el",
-        "poder",
-        "ejecutivo."
+      "options": [
+        "El mismo objetivo de fondo: construir instituciones sólidas capaces de resistir futuras tentaciones autoritarias.",
+        "Ningún objetivo en común; cada una perseguía fines completamente opuestos.",
+        "El objetivo de restaurar el gobierno militar en cada país."
       ],
-      "english": "The constitution was reformed to establish rules that limited executive power.",
-      "teaches": [
-        "passive"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-democratizacion-02.ex08",
-      "type": "sentence-order",
-      "category": "grammar",
-      "sentences": [
-        "La constitución fue reformada para establecer reglas que limitaran el poder ejecutivo.",
-        "El parlamento fue elegido mediante procedimientos que buscaban ampliar la representación.",
-        "Los tribunales fueron fortalecidos mientras se desarrollaban nuevas garantías jurídicas."
-      ],
-      "solution": [
-        0,
-        1,
-        2
-      ],
-      "teaches": [
-        "passive"
-      ]
-    },
-    {
-      "id": "b1-democratizacion-02.ex09",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Qué ejemplo utiliza correctamente la estructura de enfoque?",
-      "options": [
-        "La constitución fue reformada para establecer reglas que limitaran el poder ejecutivo.",
-        "El parlamento fue elegido mediante procedimientos que buscaban ampliar la representación.",
-        "Los tribunales fueron fortalecidos mientras se desarrollaban nuevas garantías jurídicas."
-      ],
-      "correct": 0,
-      "teaches": [
-        "passive"
-      ]
-    },
-    {
-      "id": "b1-democratizacion-02.ex10",
       "type": "listening-choice",
       "category": "listening",
-      "sentence": "El parlamento fue elegido mediante procedimientos que buscaban ampliar la representación.",
+      "sentence": "Décadas antes, este tipo de tribunal electoral independiente prácticamente no existía en la mayoría de los países.",
       "options": [
-        "Parliament was elected through procedures that sought to broaden representation.",
-        "The opposite happened.",
-        "No information is given."
-      ],
-      "correct": 0,
-      "teaches": [
-        "passive"
-      ]
-    },
-    {
-      "id": "b1-democratizacion-02.ex11",
-      "type": "listening-choice",
-      "category": "listening",
-      "sentence": "Los tribunales fueron fortalecidos mientras se desarrollaban nuevas garantías jurídicas.",
-      "options": [
-        "The courts were strengthened while new legal guarantees were being developed.",
-        "The statement is false.",
-        "The topic is unrelated."
-      ],
-      "correct": 0,
-      "teaches": [
-        "passive"
-      ]
-    },
-    {
-      "id": "b1-democratizacion-02.ex12",
-      "type": "dictation",
-      "category": "listening",
-      "sentence": "La constitución fue reformada para establecer reglas que limitaran el poder ejecutivo.",
-      "teaches": [
-        "passive"
-      ]
-    },
-    {
-      "id": "b1-democratizacion-02.ex13",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "teaches": [
-        "passive"
-      ],
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "La constitución fue reformada para establecer reglas que limitaran el poder ejecutivo."
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "El parlamento fue elegido mediante procedimientos que buscaban ampliar la representación.",
-        "No hubo ningún cambio en la región.",
-        "Todos los países vivieron exactamente el mismo proceso."
+        "Decades earlier, this kind of independent electoral tribunal barely existed in most countries.",
+        "Independent electoral tribunals had always existed throughout the region's history.",
+        "No country in the region ever created an electoral tribunal."
       ],
       "correct": 0
-    },
-    {
-      "id": "b1-democratizacion-02.ex14",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "teaches": [
-        "passive"
-      ],
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "Los tribunales fueron fortalecidos mientras se desarrollaban nuevas garantías jurídicas."
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Las instituciones fueron diseñadas para resolver conflictos que antes podían terminar fuera del marco legal.",
-        "El proceso fue completamente uniforme en toda la región.",
-        "No existieron consecuencias importantes."
-      ],
-      "correct": 0
-    },
-    {
-      "id": "b1-democratizacion-02.ex15",
-      "type": "structured-writing",
-      "category": "writing",
-      "teaches": [
-        "passive"
-      ],
-      "template": [
-        {
-          "prompt": "Explica brevemente instituciones democráticas y menciona una dificultad o consecuencia.",
-          "answer": "La constitución fue reformada para establecer reglas que limitaran el poder ejecutivo. Los tribunales fueron fortalecidos mientras se desarrollaban nuevas garantías jurídicas."
-        }
-      ]
-    },
-    {
-      "id": "b1-democratizacion-02.ex16",
-      "type": "structured-writing",
-      "category": "writing",
-      "teaches": [
-        "passive"
-      ],
-      "template": [
-        {
-          "prompt": "¿Por qué este proceso fue complejo?",
-          "answer": "Las instituciones fueron diseñadas para resolver conflictos que antes podían terminar fuera del marco legal."
-        }
-      ]
     }
   ]
 }

@@ -6,254 +6,102 @@
       "type": "matching",
       "category": "vocabulary",
       "pairs": [
-        [
-          "coalición",
-          "coalition"
-        ],
-        [
-          "oposición",
-          "opposition"
-        ],
-        [
-          "consenso",
-          "consensus"
-        ]
-      ],
-      "teaches": [
-        "gerundio"
+        ["huir", "to flee"],
+        ["la inmunidad", "immunity"],
+        ["designar", "to appoint, designate"],
+        ["el margen", "margin, room (for action)"]
+      ]
+    },
+    {
+      "id": "b1-democratizacion-04.ex01b",
+      "type": "matching",
+      "category": "vocabulary",
+      "pairs": [
+        ["retirar", "to withdraw"],
+        ["presupuestario", "budgetary"],
+        ["acumulado", "accumulated, pent-up"],
+        ["el rechazo", "rejection"]
       ]
     },
     {
       "id": "b1-democratizacion-04.ex02",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Qué afirmación encaja mejor con el tema?",
+      "category": "reading",
+      "question": "¿Qué hizo el presidente Jorge Serrano Elías el 25 de mayo de 1993?",
       "options": [
-        "Mientras negociaban un consenso, los partidos estaban construyendo una coalición que pudiera gobernar.",
-        "La democracia eliminó todos los conflictos.",
-        "Las instituciones dejaron de existir."
+        "Disolvió el Congreso y la Corte Suprema, suspendió la constitución, y anunció que gobernaría por decreto.",
+        "Convocó nuevas elecciones presidenciales anticipadas.",
+        "Renunció a la presidencia entregando el poder al Congreso."
       ],
-      "correct": 0,
-      "teaches": [
-        "gerundio"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-democratizacion-04.ex03",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Mientras negociaban un consenso, los partidos estaban construyendo una ___ que pudiera gobernar.",
-      "answer": "coalición",
-      "teaches": [
-        "gerundio"
-      ]
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Qué diferencia hubo entre el \"serranazo\" y el autogolpe uruguayo de 1973?",
+      "options": [
+        "Serrano actuó sin el respaldo firme de su propio ejército.",
+        "Ninguna diferencia; ambos golpes tuvieron exactamente el mismo resultado.",
+        "El ejército uruguayo se opuso al golpe, a diferencia del guatemalteco."
+      ],
+      "correct": 0
     },
     {
       "id": "b1-democratizacion-04.ex04",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Los gobiernos avanzaron buscando acuerdos, aunque la ___ rechazaba algunas propuestas.",
-      "answer": "oposición",
-      "teaches": [
-        "gerundio"
-      ]
+      "sentence": "Serrano actuó, ___ riesgo de un rechazo generalizado, sin el respaldo de su ejército. (so)",
+      "answer": "so",
+      "teaches": ["so-riesgo-de-aceptar-una-consecuencia-posible"]
     },
     {
       "id": "b1-democratizacion-04.ex05",
-      "type": "fill-blank",
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Qué ocurrió apenas seis días después del intento de autogolpe de Serrano?",
+      "options": [
+        "El ejército le retiró su apoyo y se vio obligado a huir del país.",
+        "Serrano consolidó completamente su control sobre el país.",
+        "El Congreso guatemalteco aprobó formalmente sus medidas."
+      ],
+      "correct": 0
+    },
+    {
+      "id": "b1-democratizacion-04.ex06",
+      "type": "sentence-builder",
       "category": "grammar",
-      "sentence": "La oposición fue creciendo mientras defendía posiciones que dificultaban el ___.",
-      "answer": "consenso",
-      "teaches": [
-        "gerundio"
-      ]
+      "tiles": ["Algunos", "líderes", "insistieron", "en", "su", "plan,", "so", "riesgo", "de", "perder", "el", "apoyo", "que", "conservaban."],
+      "solution": ["Algunos", "líderes", "insistieron", "en", "su", "plan,", "so", "riesgo", "de", "perder", "el", "apoyo", "que", "conservaban."],
+      "english": "Some leaders insisted on their plan, at the risk of losing the support they had.",
+      "teaches": ["so-riesgo-de-aceptar-una-consecuencia-posible"]
     },
     {
       "id": "b1-democratizacion-04.ex07",
-      "type": "sentence-builder",
-      "category": "grammar",
-      "tiles": [
-        "Mientras",
-        "negociaban",
-        "un",
-        "consenso,",
-        "los",
-        "partidos",
-        "estaban",
-        "construyendo",
-        "una",
-        "coalición",
-        "que",
-        "pudiera",
-        "gobernar."
+      "type": "dialogue-complete",
+      "category": "reading",
+      "prompt": [
+        { "speaker": "Carolina", "text": "¿Qué otras dificultades heredadas de las dictaduras enfrentaron estos nuevos gobiernos civiles?" },
+        { "speaker": "Fructuoso", "text": "_____" }
       ],
-      "solution": [
-        "Mientras",
-        "negociaban",
-        "un",
-        "consenso,",
-        "los",
-        "partidos",
-        "estaban",
-        "construyendo",
-        "una",
-        "coalición",
-        "que",
-        "pudiera",
-        "gobernar."
+      "options": [
+        "Constituciones que limitaban el poder civil, oficiales con inmunidad legal, y en algunos casos senadores designados por las fuerzas armadas.",
+        "Ninguna dificultad institucional; heredaron sistemas políticos perfectamente funcionales.",
+        "Únicamente dificultades relacionadas con la política exterior."
       ],
-      "english": "While negotiating a consensus, the parties were building a coalition that could govern.",
-      "teaches": [
-        "gerundio"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-democratizacion-04.ex08",
-      "type": "sentence-order",
-      "category": "grammar",
-      "sentences": [
-        "Mientras negociaban un consenso, los partidos estaban construyendo una coalición que pudiera gobernar.",
-        "Los gobiernos avanzaron buscando acuerdos, aunque la oposición rechazaba algunas propuestas.",
-        "La oposición fue creciendo mientras defendía posiciones que dificultaban el consenso."
-      ],
-      "solution": [
-        0,
-        1,
-        2
-      ],
-      "teaches": [
-        "gerundio"
-      ]
-    },
-    {
-      "id": "b1-democratizacion-04.ex09",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Qué ejemplo utiliza correctamente la estructura de enfoque?",
-      "options": [
-        "Mientras negociaban un consenso, los partidos estaban construyendo una coalición que pudiera gobernar.",
-        "Los gobiernos avanzaron buscando acuerdos, aunque la oposición rechazaba algunas propuestas.",
-        "La oposición fue creciendo mientras defendía posiciones que dificultaban el consenso."
-      ],
-      "correct": 0,
-      "teaches": [
-        "gerundio"
-      ]
-    },
-    {
-      "id": "b1-democratizacion-04.ex10",
       "type": "listening-choice",
       "category": "listening",
-      "sentence": "Los gobiernos avanzaron buscando acuerdos, aunque la oposición rechazaba algunas propuestas.",
+      "sentence": "Las restricciones económicas heredadas dejaban a estos gobiernos con márgenes de acción presupuestaria extremadamente limitados.",
       "options": [
-        "Governments moved forward seeking agreements, although the opposition rejected some proposals.",
-        "The opposite happened.",
-        "No information is given."
-      ],
-      "correct": 0,
-      "teaches": [
-        "gerundio"
-      ]
-    },
-    {
-      "id": "b1-democratizacion-04.ex11",
-      "type": "listening-choice",
-      "category": "listening",
-      "sentence": "La oposición fue creciendo mientras defendía posiciones que dificultaban el consenso.",
-      "options": [
-        "The opposition grew while defending positions that made consensus difficult.",
-        "The statement is false.",
-        "The topic is unrelated."
-      ],
-      "correct": 0,
-      "teaches": [
-        "gerundio"
-      ]
-    },
-    {
-      "id": "b1-democratizacion-04.ex12",
-      "type": "dictation",
-      "category": "listening",
-      "sentence": "Mientras negociaban un consenso, los partidos estaban construyendo una coalición que pudiera gobernar.",
-      "teaches": [
-        "gerundio"
-      ]
-    },
-    {
-      "id": "b1-democratizacion-04.ex13",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "teaches": [
-        "gerundio"
-      ],
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "Mientras negociaban un consenso, los partidos estaban construyendo una coalición que pudiera gobernar."
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Los gobiernos avanzaron buscando acuerdos, aunque la oposición rechazaba algunas propuestas.",
-        "No hubo ningún cambio en la región.",
-        "Todos los países vivieron exactamente el mismo proceso."
+        "The inherited economic restrictions left these governments with extremely limited room for budgetary action.",
+        "These governments inherited economies with no restrictions whatsoever.",
+        "Budgetary flexibility increased dramatically for these new governments."
       ],
       "correct": 0
-    },
-    {
-      "id": "b1-democratizacion-04.ex14",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "teaches": [
-        "gerundio"
-      ],
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "La oposición fue creciendo mientras defendía posiciones que dificultaban el consenso."
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Los partidos negociaban nuevas reglas intentando evitar una ruptura institucional.",
-        "El proceso fue completamente uniforme en toda la región.",
-        "No existieron consecuencias importantes."
-      ],
-      "correct": 0
-    },
-    {
-      "id": "b1-democratizacion-04.ex15",
-      "type": "structured-writing",
-      "category": "writing",
-      "teaches": [
-        "gerundio"
-      ],
-      "template": [
-        {
-          "prompt": "Explica brevemente retos políticos y menciona una dificultad o consecuencia.",
-          "answer": "Mientras negociaban un consenso, los partidos estaban construyendo una coalición que pudiera gobernar. La oposición fue creciendo mientras defendía posiciones que dificultaban el consenso."
-        }
-      ]
-    },
-    {
-      "id": "b1-democratizacion-04.ex16",
-      "type": "structured-writing",
-      "category": "writing",
-      "teaches": [
-        "gerundio"
-      ],
-      "template": [
-        {
-          "prompt": "¿Por qué este proceso fue complejo?",
-          "answer": "Los partidos negociaban nuevas reglas intentando evitar una ruptura institucional."
-        }
-      ]
     }
   ]
 }
