@@ -386,10 +386,20 @@ const Lexicon = (function () {
         }
 
         // Same idea for noun/adjective plural and gender forms: word-index
-        // only covers whatever lemmas its own source corpus carries, so
-        // reverse the (fully regular) inflection suffixes and accept
-        // whichever candidate is actually a real dictionary word.
-        if (!readings.length && typeof SpanishMorphology !== 'undefined') {
+        // only covers whatever lemmas its own source corpus carries, so a
+        // curated table entry can itself be incomplete — "buenas" maps
+        // only to the rare noun "buena" there, silently missing the far
+        // more common feminine-plural-adjective reading of "bueno". Rather
+        // than gating on "found nothing at all" (which "buena"/"buenas"
+        // both fail, keeping the gap alive), this runs whenever nothing
+        // ADJECTIVE has been found yet — safe to merge alongside whatever
+        // noun/verb readings already exist because analyzeWord()'s own
+        // gender reconstruction only trusts a candidate when it resolves
+        // as an ADJECTIVE itself: Spanish noun gender is lexical, not
+        // inflectional, so a coincidental o/a-shaped noun pair (casa
+        // "house" / caso "case") is never offered as a false alternate
+        // reading of the same word.
+        if (!readings.some(r => r.pos === 'adjective') && typeof SpanishMorphology !== 'undefined') {
             SpanishMorphology.analyzeWord(key, _dictionary).forEach(a => add(a.lemma, a.pos, describeWord(key, a.lemma)));
         }
 

@@ -897,13 +897,30 @@ a code read. 7 real findings, all fixed and re-verified live:
   word-index ("comanchero", "antiaborto") now resolves correctly in
   its plural form with no console errors, and existing lookups (casas,
   días, garbage input) are unaffected.
-  **Found, not fixed** (pre-existing, unrelated to this change): tapping
-  "buena" alone shows an obscure Wiktionary sense ("inheritance," a rare
-  noun) instead of the feminine of "bueno" ("good"), because "buena" is
-  already a direct dictionary headword in its own right — direct
-  headword hits are checked before any fallback runs, by design, so
-  this new code never gets a chance to add the far more likely reading
-  alongside it. Same architecture the verb fallback already accepted
-  (mirrors the existing pronoun-peel block's own `!readings.length`
-  guard). Would need either down-ranking rare senses or cross-linking
-  gender pairs at the dictionary-quality level — out of scope here.
+- [x] **Fixed "buena": tapping it showed an obscure Wiktionary sense
+  ("inheritance," a rare noun) instead of the feminine of "bueno"
+  ("good").** Root cause: "buena" is already a direct dictionary
+  headword in its own right (that rare noun sense), and direct-headword
+  hits were checked before any fallback ran — so `analyzeWord()` above
+  never got a chance to also offer "bueno"'s far more common
+  feminine-adjective reading alongside it. Same failure shape turned up
+  one step over on "buenas": `word-index.json` maps it only to "buena"
+  (a genuine but incomplete real-corpus fact), which blocked the
+  fallback there too even after the first fix.
+  **Fix**: in `engine/lexicon.js`'s `lookup()`, changed the
+  `analyzeWord()` fallback's guard from "nothing found yet" to "nothing
+  found yet, and nothing found so far is an adjective" — so it now runs
+  whenever a plausible adjective reading might still be missing,
+  regardless of what noun/verb readings a headword or table hit already
+  contributed. This is only safe to widen because of the "buena/caso"
+  fix directly above it: `analyzeWord()`'s gender-derived candidates are
+  restricted to accepting adjectives, so merging it in more liberally
+  can surface a missing "bueno" but can never invent a false "caso" for
+  "casa". Existing ranking (by real corpus frequency of the *reading's
+  own* lemma) then naturally sorts the common adjective above the rare
+  noun without needing any special-casing.
+  Live-tested via Playwright: "buena" and "buenas" both now lead with
+  "bueno (adjective)"; "casa", "casas", "pata" (a genuine noun gender
+  pair, unaffected since it already resolves via real word-index data),
+  "vez"/"veces", and garbage input are all unchanged, with no console
+  errors.

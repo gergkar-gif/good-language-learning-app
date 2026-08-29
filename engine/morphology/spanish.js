@@ -2507,31 +2507,45 @@ const SpanishMorphology = (function () {
         return out;
     }
 
+    // Returns { plural: Set, gender: Set } rather than one flat set because
+    // the two need different acceptance rules in analyzeWord(): pluralising
+    // is a live inflectional category for every noun and adjective, but
+    // grammatical gender is only a live category for ADJECTIVES (every
+    // adjective genuinely has both an -o and an -a form of the same word).
+    // For nouns, gender is a fixed lexical fact, not an inflection — "casa"
+    // (house) and "caso" (case) are two unrelated words that merely share
+    // the same o/a shape, not the same noun in two genders. Reconstructing
+    // "caso" as a candidate for "casa" and accepting it because it happens
+    // to also be a real dictionary noun would be a false reading, not a
+    // gap-filling one, so gender-derived candidates are only trusted when
+    // they land on an adjective.
     function candidateWordLemmas(form) {
-        const cands = new Set([form]);
+        const plural = new Set([form]);
         if (form.endsWith('s') && form.length > 2) {
-            cands.add(form.slice(0, -1));                 // café(s), casa(s), jefe(s), crisis(unchanged)
+            plural.add(form.slice(0, -1));                 // café(s), casa(s), jefe(s), crisis(unchanged)
         }
         if (form.endsWith('es') && form.length > 3) {
             const stem = form.slice(0, -2);
-            accentVariants(stem).forEach(v => cands.add(v));  // nación<-naciones, imagen<-imágenes
-            if (stem.endsWith('c')) cands.add(stem.slice(0, -1) + 'z');  // luz<-luces
+            accentVariants(stem).forEach(v => plural.add(v));  // nación<-naciones, imagen<-imágenes
+            if (stem.endsWith('c')) plural.add(stem.slice(0, -1) + 'z');  // luz<-luces
         }
         if (form.endsWith('ces') && form.length > 4) {
-            cands.add(form.slice(0, -3) + 'z');
+            plural.add(form.slice(0, -3) + 'z');
         }
-        // Gender: try o<->a on every candidate collected so far, plus
-        // stripping a trailing -a entirely (feminine -ora/-ona/-ina/-esa ->
-        // masculine -or/-ón/-ín/-és, with the same accent-placement guesswork).
-        Array.from(cands).forEach(c => {
+
+        // Gender: try o<->a on every plural-stage candidate, plus stripping
+        // a trailing -a entirely (feminine -ora/-ona/-ina/-esa -> masculine
+        // -or/-ón/-ín/-és, with the same accent-placement guesswork).
+        const gender = new Set();
+        plural.forEach(c => {
             if (c.endsWith('a')) {
-                cands.add(c.slice(0, -1) + 'o');
-                accentVariants(c.slice(0, -1)).forEach(v => cands.add(v));
+                gender.add(c.slice(0, -1) + 'o');
+                accentVariants(c.slice(0, -1)).forEach(v => gender.add(v));
             } else if (c.endsWith('o')) {
-                cands.add(c.slice(0, -1) + 'a');
+                gender.add(c.slice(0, -1) + 'a');
             }
         });
-        return cands;
+        return { plural: plural, gender: gender };
     }
 
     const WORD_POS = { noun: 'n', adjective: 'adj' };
@@ -2548,14 +2562,19 @@ const SpanishMorphology = (function () {
         const form = word.toLowerCase();
         const results = [];
         const seen = new Set();
-        candidateWordLemmas(form).forEach(lemma => {
+        const cands = candidateWordLemmas(form);
+        function tryLemma(lemma, adjectiveOnly) {
             if (lemma === form || seen.has(lemma)) return;
             const entry = dictionary[lemma];
-            const pos = entry && WORD_POS[entry.type];
+            if (!entry) return;
+            if (adjectiveOnly && entry.type !== 'adjective') return;
+            const pos = WORD_POS[entry.type];
             if (!pos) return;
             seen.add(lemma);
             results.push({ lemma: lemma, pos: pos });
-        });
+        }
+        cands.plural.forEach(lemma => tryLemma(lemma, false));
+        cands.gender.forEach(lemma => tryLemma(lemma, true));
         return results;
     }
 
