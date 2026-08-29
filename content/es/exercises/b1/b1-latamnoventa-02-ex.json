@@ -6,246 +6,102 @@
       "type": "matching",
       "category": "vocabulary",
       "pairs": [
-        [
-          "autogolpe",
-          "self-coup"
-        ],
-        [
-          "reforma",
-          "reform"
-        ],
-        [
-          "autoritarismo",
-          "authoritarianism"
-        ]
-      ],
-      "teaches": [
-        "passive"
+        ["el ingeniero agrónomo", "agricultural engineer"],
+        ["desconocido", "unknown"],
+        ["derrotar", "to defeat"],
+        ["investir", "to install (in office)"]
+      ]
+    },
+    {
+      "id": "b1-latamnoventa-02.ex01b",
+      "type": "matching",
+      "category": "vocabulary",
+      "pairs": [
+        ["el comandante", "commander"],
+        ["disolver", "to dissolve"],
+        ["el respaldo", "backing, support"],
+        ["sembrar", "to sow"]
       ]
     },
     {
       "id": "b1-latamnoventa-02.ex02",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Qué afirmación encaja mejor con el tema?",
+      "category": "reading",
+      "question": "¿Quién ganó las elecciones presidenciales peruanas de 1990?",
       "options": [
-        "Las instituciones fueron debilitadas después del autogolpe de 1992.",
-        "Todos los países tuvieron exactamente los mismos resultados.",
-        "Las reformas económicas no produjeron ningún debate."
+        "Alberto Fujimori, un ingeniero agrónomo prácticamente desconocido, que derrotó al favorito Mario Vargas Llosa.",
+        "Mario Vargas Llosa, tal como predecían todas las encuestas.",
+        "Ningún candidato obtuvo suficientes votos y no hubo elección."
       ],
-      "correct": 0,
-      "teaches": [
-        "passive"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-latamnoventa-02.ex03",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Las instituciones fueron debilitadas después del ___ de 1992.",
-      "answer": "autogolpe",
-      "teaches": [
-        "passive"
-      ]
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Qué fue el \"Fujishock\"?",
+      "options": [
+        "Un severo programa de ajuste que eliminó subsidios y controles de precios, de la mano del cual la economía terminó estabilizándose.",
+        "Un plan para aumentar los subsidios estatales.",
+        "El nombre de un partido político fundado por Fujimori."
+      ],
+      "correct": 0
     },
     {
       "id": "b1-latamnoventa-02.ex04",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Las ___s económicas fueron presentadas como una respuesta a una crisis que había reducido la estabilidad del país.",
-      "answer": "reforma",
-      "teaches": [
-        "passive"
-      ]
+      "sentence": "Fujimori disolvió el Congreso ___ la mano del comandante general del Ejército. (de)",
+      "answer": "de",
+      "teaches": ["de-la-mano-de-gracias-a-la-intervencion-de-alguien-o-algo"]
     },
     {
       "id": "b1-latamnoventa-02.ex05",
-      "type": "fill-blank",
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Qué ocurrió el 5 de abril de 1992?",
+      "options": [
+        "Fujimori disolvió, con el respaldo de las fuerzas armadas, el Congreso que lo había investido, en el llamado \"autogolpe\".",
+        "El Congreso peruano destituyó a Fujimori.",
+        "Se firmó un tratado de paz con Sendero Luminoso."
+      ],
+      "correct": 0
+    },
+    {
+      "id": "b1-latamnoventa-02.ex06",
+      "type": "sentence-builder",
       "category": "grammar",
-      "sentence": "El término _____ es central en esta lección. (autoritarismo)",
-      "answer": "autoritarismo",
-      "teaches": [
-        "passive"
-      ]
+      "tiles": ["Las", "autoridades", "capturaron", "a", "Guzmán", "de", "la", "mano", "de", "un", "operativo", "de", "inteligencia."],
+      "solution": ["Las", "autoridades", "capturaron", "a", "Guzmán", "de", "la", "mano", "de", "un", "operativo", "de", "inteligencia."],
+      "english": "Authorities captured Guzmán through an intelligence operation.",
+      "teaches": ["de-la-mano-de-gracias-a-la-intervencion-de-alguien-o-algo"]
     },
     {
       "id": "b1-latamnoventa-02.ex07",
-      "type": "sentence-builder",
-      "category": "grammar",
-      "tiles": [
-        "Las",
-        "instituciones",
-        "fueron",
-        "debilitadas",
-        "después",
-        "del",
-        "autogolpe",
-        "de",
-        "1992."
+      "type": "dialogue-complete",
+      "category": "reading",
+      "prompt": [
+        { "speaker": "Fructuoso", "text": "¿Qué pasó con Abimael Guzmán en septiembre de 1992?" },
+        { "speaker": "Carolina", "text": "_____" }
       ],
-      "solution": [
-        "Las",
-        "instituciones",
-        "fueron",
-        "debilitadas",
-        "después",
-        "del",
-        "autogolpe",
-        "de",
-        "1992."
+      "options": [
+        "Fue capturado por un exitoso operativo de inteligencia policial, un golpe decisivo contra Sendero Luminoso.",
+        "Se entregó voluntariamente a las autoridades meses antes.",
+        "Nunca fue identificado ni capturado."
       ],
-      "english": "Institutions were weakened after the 1992 self-coup.",
-      "teaches": [
-        "passive"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-latamnoventa-02.ex08",
-      "type": "sentence-order",
-      "category": "grammar",
-      "sentences": [
-        "Las instituciones fueron debilitadas después del autogolpe de 1992.",
-        "Las reformas económicas fueron presentadas como una respuesta a una crisis que había reducido la estabilidad del país.",
-        "El poder ejecutivo fue reforzado mientras el Congreso era disuelto."
-      ],
-      "solution": [
-        0,
-        1,
-        2
-      ],
-      "teaches": [
-        "passive"
-      ]
-    },
-    {
-      "id": "b1-latamnoventa-02.ex09",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Qué ejemplo utiliza correctamente la estructura de enfoque?",
-      "options": [
-        "Las instituciones fueron debilitadas después del autogolpe de 1992.",
-        "Las reformas económicas fueron presentadas como una respuesta a una crisis que había reducido la estabilidad del país.",
-        "El poder ejecutivo fue reforzado mientras el Congreso era disuelto."
-      ],
-      "correct": 0,
-      "teaches": [
-        "passive"
-      ]
-    },
-    {
-      "id": "b1-latamnoventa-02.ex10",
       "type": "listening-choice",
       "category": "listening",
-      "sentence": "Las reformas económicas fueron presentadas como una respuesta a una crisis que había reducido la estabilidad del país.",
+      "sentence": "Su gobierno terminaría, años después, envuelto en gravísimos escándalos de corrupción y violaciones de derechos humanos.",
       "options": [
-        "Economic reforms were presented as a response to a crisis that had reduced the country's stability.",
-        "The opposite happened.",
-        "No information is given."
-      ],
-      "correct": 0,
-      "teaches": [
-        "passive"
-      ]
-    },
-    {
-      "id": "b1-latamnoventa-02.ex11",
-      "type": "listening-choice",
-      "category": "listening",
-      "sentence": "El poder ejecutivo fue reforzado mientras el Congreso era disuelto.",
-      "options": [
-        "Executive power was strengthened while Congress was dissolved.",
-        "The statement is false.",
-        "The topic is unrelated."
-      ],
-      "correct": 0,
-      "teaches": [
-        "passive"
-      ]
-    },
-    {
-      "id": "b1-latamnoventa-02.ex12",
-      "type": "dictation",
-      "category": "listening",
-      "sentence": "Las instituciones fueron debilitadas después del autogolpe de 1992.",
-      "teaches": [
-        "passive"
-      ]
-    },
-    {
-      "id": "b1-latamnoventa-02.ex13",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "teaches": [
-        "passive"
-      ],
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "Las instituciones fueron debilitadas después del autogolpe de 1992."
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Las reformas económicas fueron presentadas como una respuesta a una crisis que había reducido la estabilidad del país.",
-        "No hubo ningún cambio en la región.",
-        "Todos los países vivieron exactamente el mismo proceso."
+        "His government would end up, years later, embroiled in extremely serious corruption and human-rights scandals.",
+        "His government never faced any scandal of any kind.",
+        "His government was praised internationally until its final day."
       ],
       "correct": 0
-    },
-    {
-      "id": "b1-latamnoventa-02.ex14",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "teaches": [
-        "passive"
-      ],
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "El poder ejecutivo fue reforzado mientras el Congreso era disuelto."
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Nuevas medidas fueron adoptadas para estabilizar la economía, aunque el gobierno fue criticado por su autoritarismo.",
-        "El proceso fue completamente uniforme en toda la región.",
-        "No existieron consecuencias importantes."
-      ],
-      "correct": 0
-    },
-    {
-      "id": "b1-latamnoventa-02.ex15",
-      "type": "structured-writing",
-      "category": "writing",
-      "teaches": [
-        "passive"
-      ],
-      "template": [
-        {
-          "prompt": "Explica brevemente Peru y menciona una consecuencia.",
-          "answer": "Las instituciones fueron debilitadas después del autogolpe de 1992. El poder ejecutivo fue reforzado mientras el Congreso era disuelto."
-        }
-      ]
-    },
-    {
-      "id": "b1-latamnoventa-02.ex16",
-      "type": "structured-writing",
-      "category": "writing",
-      "teaches": [
-        "passive"
-      ],
-      "template": [
-        {
-          "prompt": "¿Por qué los años noventa fueron una década de contrastes?",
-          "answer": "Nuevas medidas fueron adoptadas para estabilizar la economía, aunque el gobierno fue criticado por su autoritarismo."
-        }
-      ]
     }
   ]
 }
