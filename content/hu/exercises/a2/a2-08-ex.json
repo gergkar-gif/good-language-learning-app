@@ -1,0 +1,165 @@
+{
+  "lesson": "a2-08",
+  "exercises": [
+    {
+      "id": "a2-08-intro-1",
+      "type": "multiple-choice",
+      "category": "introduce",
+      "question": "Which means “appointment, time slot”?",
+      "options": ["időpont", "dátum", "hét"],
+      "correct": 0,
+      "teaches": ["appointments"]
+    },
+    {
+      "id": "a2-08-intro-2",
+      "type": "multiple-choice",
+      "category": "introduce",
+      "question": "Which means “free” (not busy)?",
+      "options": ["szabad", "foglalt", "korán"],
+      "correct": 0,
+      "teaches": ["appointments"]
+    },
+    {
+      "id": "a2-08-controlled-1",
+      "type": "matching",
+      "category": "controlled",
+      "pairs": [
+        ["időpont", "appointment"],
+        ["foglalt", "busy"],
+        ["szabad", "free"],
+        ["fogorvos", "dentist"]
+      ],
+      "teaches": ["appointments"]
+    },
+    {
+      "id": "a2-08-controlled-2",
+      "type": "fill-blank",
+      "category": "controlled",
+      "sentence": "Hétfőn reggel kilenc____ dolgozom.",
+      "answer": "kor",
+      "teaches": ["stacking-time"]
+    },
+    {
+      "id": "a2-08-controlled-3",
+      "type": "fill-blank",
+      "category": "controlled",
+      "sentence": "Van egy ____ a fogorvosnál pénteken.",
+      "answer": "időpontom",
+      "teaches": ["appointments"]
+    },
+    {
+      "id": "a2-08-controlled-4",
+      "type": "multiple-choice",
+      "category": "controlled",
+      "question": "Which means “Hungarian class”?",
+      "options": ["magyaróra", "magyarul", "magyarórakor"],
+      "correct": 0,
+      "teaches": ["appointments"]
+    },
+    {
+      "id": "a2-08-practice-1",
+      "type": "multiple-choice",
+      "category": "practice",
+      "question": "Which sentence means “On Tuesday evening at seven I have Hungarian class”?",
+      "options": ["Kedden este hétkor magyarórám van.", "Kedden hét óra van.", "Este keddkor magyarórám."],
+      "correct": 0,
+      "teaches": ["stacking-time"]
+    },
+    {
+      "id": "a2-08-practice-2",
+      "type": "matching",
+      "category": "practice",
+      "pairs": [
+        ["hétfőn reggel", "Monday morning"],
+        ["kedden este", "Tuesday evening"],
+        ["szabad vagy foglalt?", "free or busy?"],
+        ["fogorvosnál", "at the dentist's"]
+      ],
+      "teaches": ["stacking-time"]
+    },
+    {
+      "id": "a2-08-practice-3",
+      "type": "sentence-builder",
+      "category": "practice",
+      "tiles": ["Hétfőn", "reggel", "kilenckor", "dolgozom", "."],
+      "solution": ["Hétfőn", "reggel", "kilenckor", "dolgozom", "."],
+      "english": "On Monday morning at nine I work.",
+      "teaches": ["stacking-time"]
+    },
+    {
+      "id": "a2-08-practice-4",
+      "type": "sentence-builder",
+      "category": "practice",
+      "tiles": ["Van", "egy", "időpontom", "a", "fogorvosnál", "pénteken", "."],
+      "solution": ["Van", "egy", "időpontom", "a", "fogorvosnál", "pénteken", "."],
+      "english": "I have an appointment at the dentist's on Friday.",
+      "teaches": ["appointments"]
+    },
+    {
+      "id": "a2-08-dialogue-1",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        { "speaker": "Károly", "text": "Szabad vagy foglalt vagy csütörtökön?" },
+        { "speaker": "Meg", "text": "_____" }
+      ],
+      "options": ["Foglalt vagyok, van egy időpontom a fogorvosnál.", "Csütörtök vagyok."],
+      "correct": 0,
+      "teaches": ["appointments"]
+    },
+    {
+      "id": "a2-08-dialogue-2",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        { "speaker": "Meg", "text": "Mikor van a magyaróránk?" },
+        { "speaker": "Károly", "text": "_____" }
+      ],
+      "options": ["Kedden este hétkor.", "Fogorvosnál vagyok."],
+      "correct": 0,
+      "teaches": ["stacking-time"]
+    },
+    {
+      "id": "a2-08-writing-1",
+      "type": "structured-writing",
+      "category": "writing",
+      "template": [
+        {
+          "prompt": "Ask if someone is free or busy on Thursday.",
+          "answer": "Szabad vagy foglalt vagy csütörtökön?"
+        }
+      ],
+      "teaches": ["appointments"]
+    },
+    {
+      "id": "a2-08-writing-2",
+      "type": "structured-writing",
+      "category": "writing",
+      "template": [
+        {
+          "prompt": "Say you have Hungarian class on Tuesday evening at seven.",
+          "answer": "Kedden este hétkor magyarórám van."
+        }
+      ],
+      "teaches": ["stacking-time"]
+    },
+    {
+      "id": "a2-08-check-1",
+      "type": "multiple-choice",
+      "category": "check",
+      "question": "Which means “busy, taken”?",
+      "options": ["foglalt", "szabad", "időpont"],
+      "correct": 0,
+      "teaches": ["appointments"]
+    },
+    {
+      "id": "a2-08-check-2",
+      "type": "multiple-choice",
+      "category": "check",
+      "question": "Which means “dentist”?",
+      "options": ["fogorvos", "magyaróra", "időpont"],
+      "correct": 0,
+      "teaches": ["appointments"]
+    }
+  ]
+}
