@@ -2445,7 +2445,23 @@ const HungarianMorphology = (function () {
 //     a small lexical list of which nouns do this
 //   - the noun -> adjective "-i" suffix ("kiértékelés" -> "kiértékelési",
 //     "the evaluation's") isn't in POSSESSIVE_SUFFIXES or CASE_SUFFIXES
-//     since it's neither — a third suffix category not yet modelled
+//     since it's neither — a third suffix category not yet modelled.
+//     **Attempted and reverted 2026-08-29 (ninth pass)**: a naive decode-
+//     only "strip trailing i, validate against the dictionary" fallback
+//     (the same strip-and-validate pattern every other suffix category in
+//     this file uses) was tried, but a single letter is too weak a
+//     signal for that pattern to work — tested against ~2000 real
+//     dictionary nouns, it produced a spurious "noun + -i" reading for
+//     83% of them (e.g. "fai" from "fa" "tree", "kutyai" from "kutya"
+//     "dog" — neither is a real Hungarian word), because almost any noun
+//     plus "i" happens to also be a string this file can't otherwise
+//     rule out. Unlike CASE_SUFFIXES/POSSESSIVE_SUFFIXES's multi-letter
+//     strings, which are distinctive enough that a coincidental match is
+//     rare, "-i" alone can't be validated this way without either a real
+//     POS-tagged corpus or a closed lexical list of which nouns actually
+//     take it in practice — showing a wrong grammatical reading is worse
+//     than showing none, so this stays unimplemented rather than shipped
+//     at low precision.
 //   - low vowel lengthening (delengthen()/resolveNominal(), 2026-08-19
 //     follow-up) only tries ONE step back (á->a, é->e) on the immediate
 //     remainder — covers "intelligenciával" but not a lengthened stem
