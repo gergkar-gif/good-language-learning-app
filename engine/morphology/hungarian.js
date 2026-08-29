@@ -274,12 +274,24 @@ const HungarianMorphology = (function () {
         ['ottak', 'past', 3, 'pl'], ['ettek', 'past', 3, 'pl'], ['öttek', 'past', 3, 'pl'],
         // past, definite conjugation — 3sg/3pl get the same linking-vowel
         // treatment as indefinite above ("gyűjtötte", not "gyűjtte";
-        // "hamisították", not "hamisítták")
+        // "hamisították", not "hamisítták"). 2sg/1pl/2pl need it too for
+        // the SAME class of stem (a "-t"-final stem like "ért"/"fest"/
+        // "választ" needs the linking vowel through its ENTIRE past
+        // paradigm, not just the zero-ending 3sg the way an ordinary
+        // consonant-cluster stem like "küld"/"mond" does) — "értetted",
+        // not "értted"; "értettük", not "érttük" — cross-checked
+        // 2026-08-29 (seventh pass) via web search against cooljugator.com/
+        // Wiktionary/bab.la usage examples for "ért" (needs it) vs.
+        // "küld"/"mond" (control, stay bare, confirming it's the "-t"-
+        // final subclass specifically, not every cluster stem).
         ['tad', 'past', 2, 'sg'], ['ted', 'past', 2, 'sg'],
+        ['ottad', 'past', 2, 'sg'], ['etted', 'past', 2, 'sg'], ['ötted', 'past', 2, 'sg'],
         ['ta', 'past', 3, 'sg'], ['te', 'past', 3, 'sg'],
         ['otta', 'past', 3, 'sg'], ['ette', 'past', 3, 'sg'], ['ötte', 'past', 3, 'sg'],
         ['tuk', 'past', 1, 'pl'], ['tük', 'past', 1, 'pl'],
+        ['ottuk', 'past', 1, 'pl'], ['ettük', 'past', 1, 'pl'], ['öttük', 'past', 1, 'pl'],
         ['tátok', 'past', 2, 'pl'], ['tétek', 'past', 2, 'pl'],
+        ['ottátok', 'past', 2, 'pl'], ['ettétek', 'past', 2, 'pl'], ['öttétek', 'past', 2, 'pl'],
         ['ták', 'past', 3, 'pl'], ['ték', 'past', 3, 'pl'],
         ['ották', 'past', 3, 'pl'], ['ették', 'past', 3, 'pl'], ['ötték', 'past', 3, 'pl']
     ]
@@ -544,16 +556,16 @@ const HungarianMorphology = (function () {
         // n-initial ending naturally produces the doubled "nn" spelling
         // seen throughout (men+nék=mennék, en+nék=ennék, ...) — it's just
         // orthography, not a separate doubling rule to encode. Indefinite
-        // only, same scope present tense already keeps for these same
-        // lemmas: vesz/tesz/hisz/visz's conditional definite forms exist
-        // in real Hungarian (e.g. "venném" = "I would buy it") but are
-        // genuinely homophonous with OTHER cells for these same verbs
-        // (front-harmony definite-3pl and indefinite-1sg coincide, see the
-        // MOOD_SUFFIXES comment above) — a single flat surfaceForm->tag
-        // map can't hold two different tags under one key the way the
-        // regular suffix table can (multiple rows, same string), so
-        // rather than silently pick a wrong winner, definite forms for
-        // this whole group are left out here entirely.
+        // only here — vesz/tesz/hisz/visz/eszik/iszik's DEFINITE
+        // conditional forms (e.g. "venném" = "I would buy it") are now in
+        // IRREGULAR_VERBS_DEFINITE below instead, a separate table rather
+        // than more entries in this one, because front-harmony definite-
+        // 3pl is genuinely homophonous with THIS table's own indefinite-
+        // 1sg for five of these six verbs ("hinnék" is both "hisz"
+        // indefinite-1sg above and "hisz" definite-3pl) — one flat
+        // surfaceForm->tag object can't hold two different tags under the
+        // same key, so the definite forms live in their own object
+        // instead of collectively being left out.
         volnék: ['van', 'cond', 1, 'sg'], volnál: ['van', 'cond', 2, 'sg'],
         volna: ['van', 'cond', 3, 'sg'], volnánk: ['van', 'cond', 1, 'pl'],
         volnátok: ['van', 'cond', 2, 'pl'], volnának: ['van', 'cond', 3, 'pl'],
@@ -657,6 +669,68 @@ const HungarianMorphology = (function () {
         vigyek: ['visz', 'imp', 1, 'sg'], vigyél: ['visz', 'imp', 2, 'sg'],
         vigyen: ['visz', 'imp', 3, 'sg'], vigyünk: ['visz', 'imp', 1, 'pl'],
         vigyetek: ['visz', 'imp', 2, 'pl'], vigyenek: ['visz', 'imp', 3, 'pl']
+    };
+
+    // DEFINITE conditional/imperative forms of the six TRANSITIVE
+    // suppletive verbs (eszik/iszik/vesz/tesz/hisz/visz — van/megy/jön/
+    // alszik/lesz are intransitive, no object to agree with, same as
+    // their already-excluded definite present/past). Kept as its own
+    // table rather than more IRREGULAR_VERBS entries because conditional
+    // definite-3pl is genuinely homophonous with IRREGULAR_VERBS' own
+    // indefinite-1sg for five of these six verbs (front-harmony "hinnék"
+    // etc. — see the conditional block's own comment above) and a flat
+    // surfaceForm->tag object can't hold two different tags under one
+    // key. iszik is back-harmony (innám/innád/inná/innák, not inném/
+    // innéd/inné/innék) so it doesn't actually collide with anything,
+    // but lives here too for consistency with its five siblings.
+    //
+    // Verified (2026-08-29) via cross-checked web search against
+    // cooljugator.com/Wiktionary/myhunlang.com/betterhungarian.com,
+    // consistent across independent queries per verb:
+    //   - conditional 1pl/2pl are syncretic with indefinite, same
+    //     genuine Hungarian collapse regular verbs have (_irregularForm
+    //     delegates those two cells straight to the IRREGULAR_VERBS
+    //     indefinite candidate — no entries needed here for them)
+    //   - imperative has NO such syncretism — all six cells differ from
+    //     indefinite for every verb, including the well-known "-dd"
+    //     contraction at 2sg (edd/idd/vedd/tedd/hidd/vidd — not a
+    //     regular "-gyed" shape by analogy with the other persons)
+    const IRREGULAR_VERBS_DEFINITE = {
+        enném: ['eszik', 'cond', 1, 'sg'], ennéd: ['eszik', 'cond', 2, 'sg'],
+        enné: ['eszik', 'cond', 3, 'sg'], ennék: ['eszik', 'cond', 3, 'pl'],
+        egyem: ['eszik', 'imp', 1, 'sg'], edd: ['eszik', 'imp', 2, 'sg'],
+        egye: ['eszik', 'imp', 3, 'sg'], együk: ['eszik', 'imp', 1, 'pl'],
+        egyétek: ['eszik', 'imp', 2, 'pl'], egyék: ['eszik', 'imp', 3, 'pl'],
+
+        innám: ['iszik', 'cond', 1, 'sg'], innád: ['iszik', 'cond', 2, 'sg'],
+        inná: ['iszik', 'cond', 3, 'sg'], innák: ['iszik', 'cond', 3, 'pl'],
+        igyam: ['iszik', 'imp', 1, 'sg'], idd: ['iszik', 'imp', 2, 'sg'],
+        igya: ['iszik', 'imp', 3, 'sg'], igyuk: ['iszik', 'imp', 1, 'pl'],
+        igyátok: ['iszik', 'imp', 2, 'pl'], igyák: ['iszik', 'imp', 3, 'pl'],
+
+        venném: ['vesz', 'cond', 1, 'sg'], vennéd: ['vesz', 'cond', 2, 'sg'],
+        venné: ['vesz', 'cond', 3, 'sg'], vennék: ['vesz', 'cond', 3, 'pl'],
+        vegyem: ['vesz', 'imp', 1, 'sg'], vedd: ['vesz', 'imp', 2, 'sg'],
+        vegye: ['vesz', 'imp', 3, 'sg'], vegyük: ['vesz', 'imp', 1, 'pl'],
+        vegyétek: ['vesz', 'imp', 2, 'pl'], vegyék: ['vesz', 'imp', 3, 'pl'],
+
+        tenném: ['tesz', 'cond', 1, 'sg'], tennéd: ['tesz', 'cond', 2, 'sg'],
+        tenné: ['tesz', 'cond', 3, 'sg'], tennék: ['tesz', 'cond', 3, 'pl'],
+        tegyem: ['tesz', 'imp', 1, 'sg'], tedd: ['tesz', 'imp', 2, 'sg'],
+        tegye: ['tesz', 'imp', 3, 'sg'], tegyük: ['tesz', 'imp', 1, 'pl'],
+        tegyétek: ['tesz', 'imp', 2, 'pl'], tegyék: ['tesz', 'imp', 3, 'pl'],
+
+        hinném: ['hisz', 'cond', 1, 'sg'], hinnéd: ['hisz', 'cond', 2, 'sg'],
+        hinné: ['hisz', 'cond', 3, 'sg'], hinnék: ['hisz', 'cond', 3, 'pl'],
+        higgyem: ['hisz', 'imp', 1, 'sg'], hidd: ['hisz', 'imp', 2, 'sg'],
+        higgye: ['hisz', 'imp', 3, 'sg'], higgyük: ['hisz', 'imp', 1, 'pl'],
+        higgyétek: ['hisz', 'imp', 2, 'pl'], higgyék: ['hisz', 'imp', 3, 'pl'],
+
+        vinném: ['visz', 'cond', 1, 'sg'], vinnéd: ['visz', 'cond', 2, 'sg'],
+        vinné: ['visz', 'cond', 3, 'sg'], vinnék: ['visz', 'cond', 3, 'pl'],
+        vigyem: ['visz', 'imp', 1, 'sg'], vidd: ['visz', 'imp', 2, 'sg'],
+        vigye: ['visz', 'imp', 3, 'sg'], vigyük: ['visz', 'imp', 1, 'pl'],
+        vigyétek: ['visz', 'imp', 2, 'pl'], vigyék: ['visz', 'imp', 3, 'pl']
     };
 
     // Separable verbal prefixes — fully productive, and change a verb's
@@ -1271,17 +1345,36 @@ const HungarianMorphology = (function () {
         }
 
         // 0. suppletive verbs — checked first since these can't be
-        // reached by stripping a suffix off the dictionary lemma at all
+        // reached by stripping a suffix off the dictionary lemma at all.
+        // IRREGULAR_VERBS_DEFINITE is checked too, not instead — a
+        // handful of surface forms (e.g. "hinnék") are genuinely
+        // ambiguous between an indefinite-1sg reading in the first table
+        // and a definite-3pl reading in the second (see the second
+        // table's own comment), and both readings are real, so both are
+        // added rather than one silently winning.
         const irregular = IRREGULAR_VERBS[word];
         if (irregular) {
             const [lemma, tense, person, number] = irregular;
             addFromLemma(lemma, verbSense(dictionary[lemma]),
                 [TENSE_LABELS[tense], PERSON_LABELS[person][number]].join(', '));
-        } else {
+        }
+        const irregularDefinite = IRREGULAR_VERBS_DEFINITE[word];
+        if (irregularDefinite) {
+            const [lemma, tense, person, number] = irregularDefinite;
+            addFromLemma(lemma, verbSense(dictionary[lemma]),
+                [TENSE_LABELS[tense], PERSON_LABELS[person][number]].join(', '));
+        }
+        if (!irregular && !irregularDefinite) {
             const pfx = stripKnownPrefix(word);
             const stemIrregular = pfx && IRREGULAR_VERBS[pfx.stem];
             if (stemIrregular) {
                 const [baseLemma, tense, person, number] = stemIrregular;
+                addPrefixedVerb(pfx.prefix, pfx.sense, baseLemma,
+                    [TENSE_LABELS[tense], PERSON_LABELS[person][number]].join(', '));
+            }
+            const stemIrregularDefinite = pfx && IRREGULAR_VERBS_DEFINITE[pfx.stem];
+            if (stemIrregularDefinite) {
+                const [baseLemma, tense, person, number] = stemIrregularDefinite;
                 addPrefixedVerb(pfx.prefix, pfx.sense, baseLemma,
                     [TENSE_LABELS[tense], PERSON_LABELS[person][number]].join(', '));
             }
@@ -1847,11 +1940,36 @@ const HungarianMorphology = (function () {
         const harmony = _harmonyClass(stem);
         if (harmony === null) return null;
 
-        if (person === 2 && number === 'sg') return stem + { back: 'tad', 'front-unrounded': 'ted', 'front-rounded': 'ted' }[harmony];
-        if (person === 1 && number === 'pl') return stem + { back: 'tuk', 'front-unrounded': 'tük', 'front-rounded': 'tük' }[harmony];
-        if (person === 2 && number === 'pl') return stem + { back: 'tátok', 'front-unrounded': 'tétek', 'front-rounded': 'tétek' }[harmony];
-
+        // linking vowel + doubled "tt" (matching indefinite's own "always"
+        // class exactly, not just its 3sg/3pl cells) is needed here too
+        // for a stem whose past tense NEEDS the linking vowel in every
+        // person, not just the zero-ending 3sg — "ért" -> "értetted"/
+        // "értettük"/"értettétek", not "értted"/"érttük"/"érttétek". The
+        // ordinary Type III cluster case ("küld", "mond") stays bare here
+        // even though ITS own 3sg/3pl need linking below — the "always"
+        // class and "only-3sg-indefinite" class are different stems, not
+        // different cells of the same stem, so this is one flag, reused
+        // for every cell in this function, not something that varies
+        // person by person the way the 3sg/3pl-only linking distinction
+        // used to look like it might. Verified 2026-08-29 (seventh pass)
+        // via cross-checked web search (cooljugator.com/Wiktionary/bab.la
+        // usage examples) for "ért" (needs it), "küld"/"mond" (control,
+        // stay bare), and "vár" (control, single consonant, always bare).
         const linking = _pastLinkingClass(stem) === 'always';
+        const linkVowel = { back: 'o', 'front-unrounded': 'e', 'front-rounded': 'ö' }[harmony];
+        if (person === 2 && number === 'sg') {
+            const core = { back: 'ad', 'front-unrounded': 'ed', 'front-rounded': 'ed' }[harmony];
+            return linking ? stem + linkVowel + 'tt' + core : stem + 't' + core;
+        }
+        if (person === 1 && number === 'pl') {
+            const core = { back: 'uk', 'front-unrounded': 'ük', 'front-rounded': 'ük' }[harmony];
+            return linking ? stem + linkVowel + 'tt' + core : stem + 't' + core;
+        }
+        if (person === 2 && number === 'pl') {
+            const core = { back: 'átok', 'front-unrounded': 'étek', 'front-rounded': 'étek' }[harmony];
+            return linking ? stem + linkVowel + 'tt' + core : stem + 't' + core;
+        }
+
         if (person === 3 && number === 'sg') {
             return linking
                 ? stem + { back: 'otta', 'front-unrounded': 'ette', 'front-rounded': 'ötte' }[harmony]
@@ -2165,15 +2283,30 @@ const HungarianMorphology = (function () {
             // hisz/visz's genuinely-ambiguous cells reach the multi-candidate
             // branch below instead and aren't affected by this guard.
             if (tense === 'past' && definite && PAST_DEFINITE_EXCLUDED.has(lemma) && !(person === 1 && number === 'sg')) return null;
-            // CONDITIONAL/IMPERATIVE: IRREGULAR_VERBS carries indefinite-
-            // only entries for every lemma in both moods (see their own
-            // block comments above) — no 1sg exception either, since
-            // unlike present/past tense, this file's conditional/
+            // CONDITIONAL/IMPERATIVE: IRREGULAR_VERBS itself carries
+            // indefinite-only entries for every lemma in both moods (see
+            // their own block comments above) — no 1sg exception either,
+            // since unlike present/past tense, this file's conditional/
             // imperative generators produce genuinely DIFFERENT definite
             // vs. indefinite 1sg forms for regular verbs (nám vs. nék),
             // so there's no shared "same form either way" cell to spare
-            // from this guard.
-            if ((tense === 'cond' || tense === 'imp') && definite) return null;
+            // from this guard. A definite request for the six transitive
+            // suppletive verbs (eszik/iszik/vesz/tesz/hisz/visz) is
+            // answered from IRREGULAR_VERBS_DEFINITE instead — see its
+            // own comment for why that's a separate table rather than
+            // more entries here. Conditional 1pl/2pl are the one
+            // exception: syncretic with indefinite for these lemmas too
+            // (same rule regular verbs follow), so the indefinite
+            // candidate already found above IS the definite answer for
+            // those two cells — no separate table entry needed or made.
+            if ((tense === 'cond' || tense === 'imp') && definite) {
+                if (tense === 'cond' && (person === 1 || person === 2) && number === 'pl') {
+                    return candidates[0][0];
+                }
+                const defCandidates = Object.entries(IRREGULAR_VERBS_DEFINITE)
+                    .filter(([, tags]) => tags[0] === lemma && tags[1] === tense && tags[2] === person && tags[3] === number);
+                return defCandidates.length ? defCandidates[0][0] : null;
+            }
             return candidates[0][0];
         }
 
@@ -2334,11 +2467,20 @@ const HungarianMorphology = (function () {
 //     verified for olvas/néz/vesz/tanul/választ across the full definite
 //     paradigm; olvassa/nézzük/vesszük/veszem-veszed-veszi-vesszük-
 //     veszitek-veszik all independently matched cooljugator.com already.
-//   - definite past 2sg/1pl/2pl (-tad/-ted, -tuk/-tük, -tátok/-tétek)
-//     are generated bare for every stem, even Type III ("always linking")
-//     ones — neither source consulted documented a linking variant for
-//     these three cells the way they did for 3sg/3pl, but that could be
-//     the sources' own gap rather than Hungarian's; unconfirmed either way
+//   - **fixed 2026-08-29 (seventh pass)**: definite past 2sg/1pl/2pl
+//     needed the linking vowel too, but only for the "-t"-final subclass
+//     of Type III stems ("ért", "fest", "választ", ...), not every
+//     cluster-final stem — an ordinary cluster like "küld"/"mond" stays
+//     bare in every definite person (only its OWN indefinite 3sg needs
+//     linking, the zero-ending cell), while a "-t"-final stem needs it
+//     through the WHOLE past paradigm, definite and indefinite alike
+//     ("értetted", not "értted"). Cross-checked via web search against
+//     cooljugator.com/Wiktionary/bab.la usage examples for both classes
+//     plus a "vár" (single-consonant, always-bare) control; the existing
+//     _pastLinkingClass() 'always'-vs-'only-3sg-indefinite' split already
+//     captured exactly this distinction, so no new classification logic
+//     was needed — just applying the flag this function already computed
+//     to three more cells it wasn't using it for yet.
 //   - eszik/iszik have no past-tense DEFINITE forms in IRREGULAR_VERBS
 //     (only the shared indefinite-shaped ones) — same category of gap as
 //     vesz/tesz/hisz/visz already being explicitly disambiguated, just not
@@ -2412,15 +2554,19 @@ const HungarianMorphology = (function () {
 //     same -ik fallback the main suffix loop already does, since most
 //     sz-final verbs are -ik verbs whose bare stem isn't its own
 //     headword.
-//   - IRREGULAR_VERBS' conditional/imperative entries for the 11
-//     suppletive verbs are still indefinite-only, even where vesz/tesz/
-//     hisz/visz genuinely have distinct definite forms in real Hungarian
-//     ("venném" = "I would buy it") — left out because front-harmony
-//     definite-3pl and indefinite-1sg are genuinely homophonous for these
-//     moods (see MOOD_SUFFIXES's own comment), and a flat surfaceForm->tag
-//     map can't hold two different tags under one key the way the regular
-//     suffix table can (multiple rows sharing a string); rather than pick
-//     a silently-arbitrary winner, both cells are simply not authored
+//   - **fixed 2026-08-29 (sixth pass)**: the six TRANSITIVE suppletive
+//     verbs (eszik/iszik/vesz/tesz/hisz/visz — van/megy/jön/alszik/lesz
+//     stay indefinite-only, correctly, since they're intransitive) now
+//     have real definite conditional/imperative forms ("venném" = "I
+//     would buy it", "vedd" = "take it!"), in a new IRREGULAR_VERBS_
+//     DEFINITE table rather than more IRREGULAR_VERBS entries, since a
+//     flat surfaceForm->tag map can't hold two different tags under the
+//     same key and front-harmony definite-3pl/indefinite-1sg genuinely
+//     collide for five of the six ("hinnék" is both). Verified via
+//     cross-checked web search (cooljugator.com/Wiktionary/myhunlang.com/
+//     betterhungarian.com, independently converging per verb), round-trip
+//     tested (72/72), and live-checked in the browser via Lexicon.lookup()
+//     — including the genuine "hinnék" homophony surfacing both readings.
 //   - separately, and NOT specific to conditional/imperative: Lexicon.
 //     lookup() (engine/lexicon.js, not this file) tries a direct
 //     dictionary hit before ever calling this module's analyze(), and a
