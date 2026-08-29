@@ -15,9 +15,12 @@ on:
     branches: [master]
     paths:
       - 'content/**'
+      - 'imports/verbs/**'
       - 'build-manifest.py'
       - 'scripts/build_grammar_index.py'
       - 'scripts/build_translation_index.py'
+      - 'scripts/build_verb_index.py'
+      - 'scripts/build_verb_list.py'
       - 'scripts/validate-content.py'
       - '.github/workflows/sync-generated-content.yml'
   workflow_dispatch: {}
@@ -59,6 +62,11 @@ jobs:
         run: |
           python3 scripts/build_grammar_index.py
           python3 scripts/build_translation_index.py
+
+      - name: Regenerate Spanish verb index and verb list
+        run: |
+          python3 scripts/build_verb_index.py
+          python3 scripts/build_verb_list.py
 
       - name: Commit and push if anything changed
         run: |

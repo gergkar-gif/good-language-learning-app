@@ -819,3 +819,42 @@ a code read. 7 real findings, all fixed and re-verified live:
   present/imperfect/conditional/subjunctive forms with no console
   errors, and confirmed zero regression on existing word/verb-index/
   dictionary lookups ("casa", garbage input).
+
+- [x] **`generated/indexes/verb-index.json` / `imports/verbs/verb-list.js`
+  weren't covered by the CI sync workflow.** Both are generated from
+  `imports/verbs/*.json` (`scripts/build_verb_index.py` and `scripts/
+  build_verb_list.py`), but `sync-generated-content.yml` only watched
+  `content/**` — a change to the verb corpus wouldn't have regenerated
+  either file. Added `imports/verbs/**` plus both scripts to the
+  workflow's trigger paths and a step that runs them; verified both
+  regenerate byte-identical output against the current corpus (no diff),
+  so this doesn't force an unnecessary commit on the next push. Also
+  deleted `make_verb_list.py` at the repo root — a dead duplicate of
+  `scripts/build_verb_list.py` that referenced a nonexistent `verbos/`
+  directory (a leftover from before the `imports/verbs/` rename) and
+  wrote its output to the repo root instead of `imports/verbs/`; nothing
+  referenced it.
+
+- [x] **Investigated the "24 vocabulary entries with a conjugated lemma"
+  concern** (`content/es/vocabulary/**/*-voc.json`, `words[].lemma`
+  field) flagged during the Spanish-morphology-engine work. Found 27
+  `pos: "verb"` entries whose `lemma` isn't an infinitive (e.g.
+  "necesito"/"necesitas"/"necesita" each listed separately, "corta"/
+  "mezcla"/"lava" as kitchen-instruction imperatives, "hubiera" in a
+  hypotheticals lesson). On inspection this is **not a bug**: each is a
+  deliberate person- or mood-specific vocabulary item matching the
+  lesson's actual content (a kitchen-instructions lesson correctly
+  teaches the imperative "corta" -> "cut", not the infinitive "cortar" ->
+  "to cut"; a persons-drill lesson correctly teaches "necesito"/
+  "necesitas"/... as five separate cards). Also confirmed this data
+  never reaches the Reader/Lexicon at all — `content/es/vocabulary/**`
+  only feeds Decks/Word Bank via `build-manifest.py`, and is entirely
+  separate from `imports/dictionary/spanish-en.json` (the Wiktionary-
+  derived dictionary the Reader actually looks up against) — so it can't
+  cause the tap-to-dictionary confusion originally suspected. The field
+  name "lemma" is a slight misnomer for what's really "this card's
+  target-language word/phrase," but renaming it repo-wide is a
+  schema-wide change with no functional benefit, so left as is. No
+  content changes made; two likely false positives in the initial scan
+  ("encargarse de", "sonreír") were verb+preposition phrases and an
+  accented infinitive the detection regex didn't recognize, respectively.
