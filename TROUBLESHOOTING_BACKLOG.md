@@ -718,3 +718,48 @@ a code read. 7 real findings, all fixed and re-verified live:
 - [x] Exhaustive re-scan for the name-blank pattern (any fill-blank whose answer is a proper name): confirmed only the one instance already fixed (A1 U1 L2, "Soy ___.") exists anywhere in A1 — no further instances found.
 - [x] Exhaustive re-scan for duplicate options within a single exercise (beyond the café-unit "sí, ahora mismo" case already found): 3 more instances — "Queremos una botella de agua." listed twice in one multiple-choice item, all three options identically "diecinueve" in a numbers item, and "Está a la izquierda." listed twice in a directions dialogue. All fixed with distinct, plausible-but-wrong distractors.
 - [x] a1-03c-05's reading questions didn't match their attached story at all — see "Unit 3" reading-duplication entry above for the full fix.
+
+## HU Reader — morphology engine backlog
+
+- [ ] **Noun → adjective "-i" suffix decode ("iskola" → "iskolai") for
+  user-pasted/arbitrary text.** *(scoped 2026-08-29, not built — needs
+  network access this environment doesn't have)*. `engine/morphology/
+  hungarian.js`'s `resolveNominal()` has no fallback for this suffix: a
+  naive "strip the trailing 'i', check the dictionary" rule was tried and
+  rejected (83% false-positive rate against ~2000 real dictionary nouns —
+  neither word frequency nor stem length discriminates which nouns
+  actually take "-i" in practice, it's a pure per-word lexical fact).
+  Checked actual impact first: every "-i" adjective used anywhere in this
+  app's own `content/hu/` curriculum is already a direct dictionary
+  headword (imported from Wiktionary), so the Reader already resolves all
+  of them correctly today with zero gap — **but the Reader also accepts
+  arbitrary user-pasted text**, which isn't limited to curriculum
+  vocabulary, so an "-i" adjective outside what Wiktionary happened to
+  list as its own headword (confirmed real example: "kiértékelés" ->
+  "kiértékelési") will fail to resolve there.
+  Investigated `morphdb/morphdb.hu` (CC-BY 2.5, the original HunMorph/
+  Humor lexical resource) as a possible source of a verified allowlist —
+  it encodes "-i" as a productive grammar rule (`AFF_I`) inherited by
+  default across noun classes, not a hand-curated list, and its own
+  authors left the comment "# this causes a lot of trouble" directly
+  above that rule — so it doesn't give a shortcut either.
+  **Scoped fix**: run a real Hungarian corpus (Hungarian Wikipedia dump,
+  CC BY-SA 4.0) through HuSpaCy (`huspacy/huspacy`, a statistical
+  POS/morphology tagger trained on real usage, not a hand-written
+  grammar) as a one-time offline script (same pattern as `scripts/
+  import_hu_dictionary.py`), harvest every `noun + "i"` adjective/lemma
+  pair HuSpaCy actually tags in the corpus above a minimum occurrence
+  count, emit a `noun -> adjective` JSON table, and wire it into
+  `resolveNominal()` as a closed lookup fallback exactly like
+  `VOWEL_DELETION_NOUNS` — safe regardless of table size, since it's a
+  lookup, not a blanket rule.
+  **Blocked in this session specifically**: confirmed via direct network
+  probe that `pypi.org` is reachable (the `huspacy` package itself could
+  install) but `huggingface.co` (hosts HuSpaCy's actual model weights),
+  `dumps.wikimedia.org` (the corpus), and `hlt.bme.hu` (the alternative
+  SZTAKI Webcorpus 2.0) are all denied by this sandbox's egress proxy —
+  the same wall every external fetch hit all session. Needs to run
+  somewhere with open network access (local machine or CI), not here.
+  Revisit if a specific real word is reported failing for a user, or
+  when someone can run the corpus-harvesting script and hand back the
+  resulting JSON table to wire in.
