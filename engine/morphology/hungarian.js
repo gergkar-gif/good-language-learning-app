@@ -2545,7 +2545,32 @@ const HungarianMorphology = (function () {
 //     POS-tagged corpus or a closed lexical list of which nouns actually
 //     take it in practice — showing a wrong grammatical reading is worse
 //     than showing none, so this stays unimplemented rather than shipped
-//     at low precision.
+//     at low precision. Also tried word frequency (content/hu/indexes/
+//     frequency.json) and stem length as cheaper filters before giving
+//     up on a general rule — neither discriminates at all: whether a
+//     noun takes "-i" is a pure per-word lexical fact with no
+//     correlation to either ("hegy" does, "fa" doesn't, both are common
+//     2-4 letter words), so there's no shortcut around a verified list.
+//     **Checked against real impact before deciding to stop here**: every
+//     "-i" adjective actually used anywhere in this app's own content/hu/
+//     curriculum (60+ distinct words checked, from place-name demonyms
+//     like "budapesti"/"kínai" to relational nouns like "hegyi"/"falusi"/
+//     "reggeli") is ALREADY a direct dictionary headword of its own,
+//     imported straight from Wiktionary — meaning Lexicon.lookup()'s
+//     ordinary direct-hit path already resolves every one of them
+//     correctly today, with no decode gap in practice for this app's own
+//     content. The remaining gap is narrower than the "-i" suffix being
+//     unmodelled sounds: it's specifically words OUTSIDE the curriculum
+//     (an arbitrary pasted article, say) using an "-i" adjective
+//     Wiktionary didn't happen to list as its own headword ("kiértékelés"
+//     -> "kiértékelési" is one confirmed real example: the base noun and
+//     its unprefixed sibling "értékelés"/"értékelési" are both listed,
+//     but the prefixed noun's own "-i" form isn't). Decided 2026-08-29
+//     with the user: leave unimplemented rather than build a curated list
+//     against no confirmed live failure — revisit if a specific real word
+//     is found not resolving for a user, rather than speculatively
+//     covering more ground a fully productive, open-ended suffix can
+//     never be completely covered for anyway.
 //   - low vowel lengthening (delengthen()/resolveNominal(), 2026-08-19
 //     follow-up) only tries ONE step back (á->a, é->e) on the immediate
 //     remainder — covers "intelligenciával" but not a lengthened stem
