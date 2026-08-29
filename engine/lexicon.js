@@ -375,6 +375,16 @@ const Lexicon = (function () {
             }
         }
 
+        // Still nothing — the verb index only covers the ~650 verbs in our
+        // source corpus, but a reader can paste in ANY text. Fall back to
+        // algorithmic conjugation analysis (regular endings, orthographic
+        // and stem-vowel changes, irregular-root inheritance) so any verb
+        // that's actually in the dictionary still resolves, same idea as
+        // HungarianMorphology above.
+        if (!readings.length && typeof SpanishMorphology !== 'undefined') {
+            SpanishMorphology.analyze(key, _dictionary).forEach(a => add(a.lemma, 'verb', describeVerb(a)));
+        }
+
         // Rank the readings so the likeliest one leads. Proper nouns sink
         // to the bottom (Wiktionary carries many surnames and place names
         // that collide with ordinary vocabulary), then the more frequent

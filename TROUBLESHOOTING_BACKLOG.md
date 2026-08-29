@@ -767,3 +767,55 @@ a code read. 7 real findings, all fixed and re-verified live:
   Revisit if a specific real word is reported failing for a user, or
   when someone can run the corpus-harvesting script and hand back the
   resulting JSON table to wire in.
+
+## ES Reader — algorithmic conjugation fallback (2026-08-29)
+
+- [x] **Spanish verb resolution was a finite-table dead end for
+  user-pasted/arbitrary text.** Before this fix, `engine/lexicon.js`
+  resolved Spanish verb forms exclusively from `generated/indexes/
+  verb-index.json`, a precomputed table covering only the 656 verbs in
+  `imports/verbs/*.json` (Fred Jehle's corpus). Any verb outside that
+  set — including plenty of real dictionary verbs already imported from
+  Wiktionary, and literally anything a learner pastes into the Reader —
+  had zero conjugated forms in the table, so tap-to-dictionary silently
+  failed on it. This was architecturally different from Hungarian, which
+  already had `engine/morphology/hungarian.js` as a rule-based fallback;
+  Spanish had no equivalent.
+  **Fix**: built `engine/morphology/spanish.js`, mirroring
+  `HungarianMorphology`'s "reconstruct candidates, accept only what
+  resolves in the dictionary" approach. Given a tapped surface form, it
+  strips a candidate ending, reverses the deterministic orthographic
+  changes Spanish spelling requires (c/qu, g/gu, z/c, j/g, zc/c, ig/igu,
+  uy/u), and separately tries reversing a stressed-syllable stem change
+  (pienso -> pensar, pido -> pedir) since that's common but not
+  derivable from spelling alone — a wrong guess is simply filtered out
+  because the reconstructed lemma won't resolve as a real verb. It also
+  embeds full paradigms for the 22 core irregular verbs (ser, estar,
+  ir, tener, hacer, poder, poner, querer, saber, salir, traer, valer,
+  venir, ver, dar, caer, oír, decir, andar, caber, satisfacer) and 10
+  irregular past participles (abierto, cubierto, escrito, muerto,
+  resuelto, roto, vuelto, frito, impreso, provisto), both inheritable by
+  compounds (sostener, deshacer, descubrir, devolver, etc.) via a
+  reverse-index of known conjugated forms checked as a suffix of the
+  tapped form.
+  Wired into `engine/lexicon.js`'s `lookup()` as the last fallback,
+  after the existing dictionary/word-index/verb-index/pronoun-peel
+  checks — exactly where `HungarianMorphology.analyze()` is wired in for
+  Hungarian.
+  **Validated** against the full 656-verb / 30,575-distinct-surface-form
+  Jehle corpus as ground truth (built a Node test harness comparing
+  every real conjugated form against the algorithm's reconstruction):
+  **94.97% recall** (29,036/30,575). Remaining misses are two accepted,
+  documented gaps: (1) stress-accent shift on reflexive forms after
+  pronoun-suffix stripping (e.g. "acérca" -> "acercarse" imperative,
+  "acordándo" -> "acordarse" gerund) — the same `approx`-flagged
+  limitation `scripts/build_verb_index.py` already has for the static
+  table, not something the new engine regresses; (2) single-verb
+  spelling rarities where the infinitive itself carries a diaeresis or
+  irregular diphthong not covered by the general rules (argüir, agorar).
+  Live-tested via Playwright against the actual app (not just the
+  isolated test harness): confirmed a real dictionary verb absent from
+  the 656-verb table ("catar", "melgar") now resolves correctly across
+  present/imperfect/conditional/subjunctive forms with no console
+  errors, and confirmed zero regression on existing word/verb-index/
+  dictionary lookups ("casa", garbage input).
