@@ -385,6 +385,14 @@ const Lexicon = (function () {
             SpanishMorphology.analyze(key, _dictionary).forEach(a => add(a.lemma, 'verb', describeVerb(a)));
         }
 
+        // Same idea for noun/adjective plural and gender forms: word-index
+        // only covers whatever lemmas its own source corpus carries, so
+        // reverse the (fully regular) inflection suffixes and accept
+        // whichever candidate is actually a real dictionary word.
+        if (!readings.length && typeof SpanishMorphology !== 'undefined') {
+            SpanishMorphology.analyzeWord(key, _dictionary).forEach(a => add(a.lemma, a.pos, describeWord(key, a.lemma)));
+        }
+
         // Rank the readings so the likeliest one leads. Proper nouns sink
         // to the bottom (Wiktionary carries many surnames and place names
         // that collide with ordinary vocabulary), then the more frequent

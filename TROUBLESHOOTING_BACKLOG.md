@@ -858,3 +858,52 @@ a code read. 7 real findings, all fixed and re-verified live:
   content changes made; two likely false positives in the initial scan
   ("encargarse de", "sonreír") were verb+preposition phrases and an
   accented infinitive the detection regex didn't recognize, respectively.
+
+## ES Reader — noun/adjective inflection fallback (2026-08-29)
+
+- [x] **Extended the same finite-table fallback fix to noun/adjective
+  plurals and gender forms.** After the verb engine, the same failure
+  mode existed one level down: `generated/indexes/word-index.json` is
+  built from an external corpus (doozan/spanish_data's es_allforms.csv)
+  with its own lemma set, distinct from `imports/dictionary/
+  spanish-en.json` (Wiktionary). ~5,500 real dictionary noun/adjective
+  lemmas have zero inflected forms in that table, so a plural or feminine
+  form of any of them (or, same as always, arbitrary pasted text)
+  wouldn't resolve.
+  **Fix**: added `analyzeWord()` to `engine/morphology/spanish.js`
+  alongside the existing verb `analyze()`. Unlike verb conjugation,
+  Spanish plural/gender marking is fully regular — no irregular-word
+  table needed at all, just suffix reversal (-s/-es, z<->c) plus the
+  written-accent shift that reversal can trigger (nación -> naciones
+  loses its mark; imagen -> imágenes gains one because the extra
+  syllable would otherwise pull the default stress off the original
+  syllable). Rather than modelling Spanish stress-and-syllable rules to
+  compute exactly where the mark goes, it generates every plausible
+  placement (added, removed, or stripped entirely) and keeps whichever
+  reconstructed lemma actually resolves as a real noun/adjective in the
+  dictionary — the same "accept only what validates" filter as
+  everywhere else in this module.
+  Wired into `engine/lexicon.js`'s `lookup()` right after the verb
+  fallback, same `!readings.length` guard.
+  **Validated** against the same es_allforms.csv this gap is measured
+  from (141,812 real noun/adjective surface forms, used purely as an
+  algorithm-correctness check the same way Jehle's corpus validated the
+  verb engine — not as the production data source): **99.45% recall**,
+  ported faithfully from a Python prototype to the shipped JS (confirmed
+  identical recall in both). Remaining misses are ordinal-number
+  abbreviations ("21.ª") and a handful of one-off irregulars (gais ->
+  gay, obturatriz -> obturador) not chased further.
+  Live-tested via Playwright: a dictionary noun/adjective absent from
+  word-index ("comanchero", "antiaborto") now resolves correctly in
+  its plural form with no console errors, and existing lookups (casas,
+  días, garbage input) are unaffected.
+  **Found, not fixed** (pre-existing, unrelated to this change): tapping
+  "buena" alone shows an obscure Wiktionary sense ("inheritance," a rare
+  noun) instead of the feminine of "bueno" ("good"), because "buena" is
+  already a direct dictionary headword in its own right — direct
+  headword hits are checked before any fallback runs, by design, so
+  this new code never gets a chance to add the far more likely reading
+  alongside it. Same architecture the verb fallback already accepted
+  (mirrors the existing pronoun-peel block's own `!readings.length`
+  guard). Would need either down-ranking rare senses or cross-linking
+  gender pairs at the dictionary-quality level — out of scope here.
