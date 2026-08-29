@@ -164,19 +164,6 @@ const Decks = (function () {
         };
     }
 
-    // Where a card came from, in words. Cards saved before provenance was
-    // recorded have no source, and say so rather than guessing.
-    function originOf(source) {
-        if (!source) return '';
-        if (source === 'reading') return 'from reading';
-        const custom = myDecks.find(d => d.id === source);
-        if (custom) return 'from ' + custom.name;
-        const deck = (catalogue.decks || []).find(d => d.id === source);
-        if (deck) return 'from ' + deck.name;
-        if (source.indexOf('lesson:') === 0) return 'from lesson ' + source.slice(7);
-        return '';
-    }
-
     function byId(id) {
         if (id === 'mine') return myDeck();
         const custom = myDecks.find(deck => deck.id === id);
@@ -821,11 +808,6 @@ const Decks = (function () {
                 : (card.reviews || 0) >= 3 ? 'mastered'
                 : (card.reviews || 0) >= 1 ? 'learning'
                 : 'new';
-            // Origin is worth showing in My Deck, where words arrive from
-            // everywhere. In a lesson deck every word has the same origin, so
-            // printing it on each row would be noise.
-            const origin = deck.id === 'mine' ? originOf(word.source) : '';
-
             // A known word's row action is "Back to review" rather than the
             // usual delete — it isn't gone, it graduated, and pulling it
             // back into review is the one thing removeFromAllWords() (which
@@ -840,8 +822,7 @@ const Decks = (function () {
                 <li class="dk-word dk-word-${state.replace(' ', '-')}">
                     <span class="dk-word-es">${esc(withArticle(word.lemma))}${
                         typeof Speech !== 'undefined' ? Speech.button(word.lemma) : ''}</span>
-                    <span class="dk-word-en">${esc(word.translation)}${
-                        origin ? `<span class="dk-word-origin">${esc(origin)}</span>` : ''}</span>
+                    <span class="dk-word-en">${esc(word.translation)}</span>
                     <span class="dk-word-state">${state}</span>
                     ${rowAction}
                 </li>
