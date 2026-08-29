@@ -262,14 +262,130 @@ const HungarianMorphology = (function () {
         ['tátok', 'past', 2, 'pl'], ['tétek', 'past', 2, 'pl'],
         ['ták', 'past', 3, 'pl'], ['ték', 'past', 3, 'pl'],
         ['ották', 'past', 3, 'pl'], ['ették', 'past', 3, 'pl'], ['ötték', 'past', 3, 'pl']
-    ].sort((a, b) => b[0].length - a[0].length);
+    ]
+    // Conditional and imperative personal endings (2026-08-29 follow-up —
+    // see conjugate()'s own generation-side comment for the full
+    // derivation and confidence notes; this table only needs the literal
+    // strings, decoded by strip-and-validate like everything else here).
+    // Both moods harmonize back/front only (2-way, "a/e"), collapsing
+    // front-rounded into front-unrounded — unlike present/past tense's
+    // 3-way back/front-unrounded/front-rounded split for several cells
+    // (e.g. -ok/-ek/-ök) — EXCEPT imperative 3sg, which keeps the
+    // indicative's own 3-way -on/-en/-ön grade (cross-checked against
+    // "maradjon"/"beszéljen" already in content/hu/grammar, and "jöjjön"
+    // found live in content/hu — see IRREGULAR_VERBS below for jön's
+    // suppletive imperative stem). A linking vowel ("a" back / "e" front,
+    // same 2-way pattern) is needed before either marker on a
+    // cluster-final stem, same test as _needsLinkingVowel already uses
+    // for present tense — so both the bare and linking-vowel variant of
+    // every cell are listed here, exactly like VERB_SUFFIXES above
+    // already does for present/past.
+    //
+    // Conditional indefinite 1sg ("-nék") is invariant regardless of
+    // harmony — well-attested (cross-checked against content/hu/grammar's
+    // own "szeretnék"/"szeretnél"/"szeretne"/"szeretnétek" cards, all
+    // front-harmony, plus an independent back-harmony check against
+    // "várnék/várnál/várna/várnánk/várnátok/várnának"). Conditional
+    // definite 1pl/2pl are genuinely identical strings to indefinite
+    // (a real Hungarian syncretism, not a gap) so aren't repeated below.
+    // Front-harmony conditional indefinite-1sg and definite-3pl are ALSO
+    // genuinely homophonous in real Hungarian ("kérnék" = both "I would
+    // ask" and "they would ask it") — both readings are listed below on
+    // purpose, not a mistake.
+    .concat([
+        // -- conditional, indefinite --
+        ['nék', 'cond', 1, 'sg'],
+        ['anék', 'cond', 1, 'sg'], ['enék', 'cond', 1, 'sg'],
+        ['nál', 'cond', 2, 'sg'], ['nél', 'cond', 2, 'sg'],
+        ['anál', 'cond', 2, 'sg'], ['enél', 'cond', 2, 'sg'],
+        ['na', 'cond', 3, 'sg'], ['ne', 'cond', 3, 'sg'],
+        ['ana', 'cond', 3, 'sg'], ['ene', 'cond', 3, 'sg'],
+        ['nánk', 'cond', 1, 'pl'], ['nénk', 'cond', 1, 'pl'],
+        ['anánk', 'cond', 1, 'pl'], ['enénk', 'cond', 1, 'pl'],
+        ['nátok', 'cond', 2, 'pl'], ['nétek', 'cond', 2, 'pl'],
+        ['anátok', 'cond', 2, 'pl'], ['enétek', 'cond', 2, 'pl'],
+        ['nának', 'cond', 3, 'pl'], ['nének', 'cond', 3, 'pl'],
+        ['anának', 'cond', 3, 'pl'], ['enének', 'cond', 3, 'pl'],
+        // -- conditional, definite --
+        ['nám', 'cond', 1, 'sg'], ['ném', 'cond', 1, 'sg'],
+        ['anám', 'cond', 1, 'sg'], ['eném', 'cond', 1, 'sg'],
+        ['nád', 'cond', 2, 'sg'], ['néd', 'cond', 2, 'sg'],
+        ['anád', 'cond', 2, 'sg'], ['enéd', 'cond', 2, 'sg'],
+        ['ná', 'cond', 3, 'sg'], ['né', 'cond', 3, 'sg'],
+        ['aná', 'cond', 3, 'sg'], ['ené', 'cond', 3, 'sg'],
+        ['nák', 'cond', 3, 'pl'], ['nék', 'cond', 3, 'pl'],
+        ['anák', 'cond', 3, 'pl'], ['enék', 'cond', 3, 'pl'],
+        // -- imperative, indefinite (see conjugate()'s own comment for
+        // which stem classes this reliably covers vs declines) --
+        //
+        // Unlike the conditional's "n" marker just above, "j" attaches
+        // directly to a stem's final consonant with NO linking vowel
+        // ever, even when that stem is already cluster-final — confirmed
+        // by "küldj" (send!, from cluster-final "küld") behaving the same
+        // as "várj" (wait!, from single-consonant-final "vár"), both
+        // bare stem + j with nothing inserted between them. So, unlike
+        // every other suffix table in this file, there's no bare/linking-
+        // vowel pair to list per cell here — just one row each.
+        ['jak', 'imp', 1, 'sg'], ['jek', 'imp', 1, 'sg'],
+        ['j', 'imp', 2, 'sg'],
+        ['jon', 'imp', 3, 'sg'], ['jen', 'imp', 3, 'sg'], ['jön', 'imp', 3, 'sg'],
+        ['junk', 'imp', 1, 'pl'], ['jünk', 'imp', 1, 'pl'],
+        ['jatok', 'imp', 2, 'pl'], ['jetek', 'imp', 2, 'pl'],
+        ['janak', 'imp', 3, 'pl'], ['jenek', 'imp', 3, 'pl'],
+        // sibilant-final stems (s and z — see _isSibilantFinal, which
+        // also covers the "sz" digraph, NOT handled here; see the gap
+        // note below): "j" assimilates into a doubled copy of the stem's
+        // own final consonant ("olvas" -> "olvass-", "néz" -> "nézz-"),
+        // same gemination mechanic _conjugatePresentDefinite already uses
+        // for definite present's own "j"-initial endings. Because the
+        // doubled letter is just a literal extra copy of the stem's own
+        // final character, every cell — including 2sg, which for a
+        // regular non-sibilant stem is bare "-j" with no vowel at all
+        // ("Várj!") — decodes as plain suffix-stripping like everything
+        // else in this table: "olvass" minus "s" leaves "olvas", the
+        // real headword, no special-case code needed.
+        ['son', 'imp', 3, 'sg'], ['sen', 'imp', 3, 'sg'],
+        ['sunk', 'imp', 1, 'pl'], ['sünk', 'imp', 1, 'pl'],
+        ['satok', 'imp', 2, 'pl'], ['setek', 'imp', 2, 'pl'],
+        ['sanak', 'imp', 3, 'pl'], ['senek', 'imp', 3, 'pl'],
+        ['sak', 'imp', 1, 'sg'], ['sek', 'imp', 1, 'sg'], ['s', 'imp', 2, 'sg'],
+        ['zon', 'imp', 3, 'sg'], ['zen', 'imp', 3, 'sg'],
+        ['zunk', 'imp', 1, 'pl'], ['zünk', 'imp', 1, 'pl'],
+        ['zatok', 'imp', 2, 'pl'], ['zetek', 'imp', 2, 'pl'],
+        ['zanak', 'imp', 3, 'pl'], ['zenek', 'imp', 3, 'pl'],
+        ['zak', 'imp', 1, 'sg'], ['zek', 'imp', 1, 'sg'], ['z', 'imp', 2, 'sg']
+        // "-ít"-suffixed stems (tanít, javít, gyógyít, ...) need NO extra
+        // rows here: unlike s/sz/z stems, "-ít" verbs don't assimilate at
+        // all — the imperative is just the bare stem + the SAME plain "s"
+        // endings above, with the "t" left untouched ("taníts", not
+        // "taníss" or "tanícs") — so the 's'/'son'/'sunk'/... rows just
+        // above already decode "tanítson" -> "tanít" correctly by
+        // stripping only their own literal suffix, no separate entry
+        // needed. (An earlier version of this table had redundant, and
+        // for 2sg actively wrong, "ts"-prefixed rows here — caught before
+        // shipping by checking "taníts" minus "ts" would leave "taní",
+        // not the real headword "tanít".)
+        //
+        // Genuinely NOT covered by this table (declined rather than
+        // guessed — see conjugate()'s own comment on why): single-t-after-
+        // vowel stems OUTSIDE the "-ít" class (fizet, nevet, siet, ...),
+        // whose imperative replaces the stem's own "t" with a doubled "ss"
+        // ("fizess", not "fizets") — this isn't a suffix STRIP at all
+        // (the stem's last letter itself changes), and t-after-CONSONANT
+        // stems (ért, választ, ...), where two conflicting patterns were
+        // found in memory this session ("érts" keeping the t vs.
+        // "válassz" dropping it) with no way to verify which — rather
+        // than risk teaching either guess as confirmed Hungarian, both
+        // classes are left undecoded.
+    ])
+    .sort((a, b) => b[0].length - a[0].length);
 
     const PERSON_LABELS = {
         1: { sg: '1st person singular', pl: '1st person plural' },
         2: { sg: '2nd person singular', pl: '2nd person plural' },
         3: { sg: '3rd person singular', pl: '3rd person plural' }
     };
-    const TENSE_LABELS = { pres: 'Present', past: 'Past' };
+    const TENSE_LABELS = { pres: 'Present', past: 'Past', cond: 'Conditional', imp: 'Imperative' };
 
     // Suppletive verbs — their stem changes shape under conjugation in a
     // way no suffix strip can undo (van -> vagyok, not "vanok"). Too
@@ -356,7 +472,131 @@ const HungarianMorphology = (function () {
         // lesz ("to become") is intransitive — no definite conjugation
         lettem: ['lesz', 'past', 1, 'sg'], lettél: ['lesz', 'past', 2, 'sg'],
         lett: ['lesz', 'past', 3, 'sg'], lettünk: ['lesz', 'past', 1, 'pl'],
-        lettetek: ['lesz', 'past', 2, 'pl'], lettek: ['lesz', 'past', 3, 'pl']
+        lettetek: ['lesz', 'past', 2, 'pl'], lettek: ['lesz', 'past', 3, 'pl'],
+
+        // Conditional (2026-08-29 follow-up) — every suppletive verb above
+        // takes a THIRD stem here, distinct from both its present and past
+        // stems: drop "-ni" from the verb's infinitive (van's is "lenni",
+        // shared with lesz, but van itself uses its own historical "vol-"
+        // instead — "volna" being one of the most common words in the
+        // language) and attach the regular conditional endings from the
+        // MOOD_SUFFIXES table above. Concatenating that stem with an
+        // n-initial ending naturally produces the doubled "nn" spelling
+        // seen throughout (men+nék=mennék, en+nék=ennék, ...) — it's just
+        // orthography, not a separate doubling rule to encode. Indefinite
+        // only, same scope present tense already keeps for these same
+        // lemmas: vesz/tesz/hisz/visz's conditional definite forms exist
+        // in real Hungarian (e.g. "venném" = "I would buy it") but are
+        // genuinely homophonous with OTHER cells for these same verbs
+        // (front-harmony definite-3pl and indefinite-1sg coincide, see the
+        // MOOD_SUFFIXES comment above) — a single flat surfaceForm->tag
+        // map can't hold two different tags under one key the way the
+        // regular suffix table can (multiple rows, same string), so
+        // rather than silently pick a wrong winner, definite forms for
+        // this whole group are left out here entirely.
+        volnék: ['van', 'cond', 1, 'sg'], volnál: ['van', 'cond', 2, 'sg'],
+        volna: ['van', 'cond', 3, 'sg'], volnánk: ['van', 'cond', 1, 'pl'],
+        volnátok: ['van', 'cond', 2, 'pl'], volnának: ['van', 'cond', 3, 'pl'],
+
+        mennék: ['megy', 'cond', 1, 'sg'], mennél: ['megy', 'cond', 2, 'sg'],
+        menne: ['megy', 'cond', 3, 'sg'], mennénk: ['megy', 'cond', 1, 'pl'],
+        mennétek: ['megy', 'cond', 2, 'pl'], mennének: ['megy', 'cond', 3, 'pl'],
+
+        jönnék: ['jön', 'cond', 1, 'sg'], jönnél: ['jön', 'cond', 2, 'sg'],
+        jönne: ['jön', 'cond', 3, 'sg'], jönnénk: ['jön', 'cond', 1, 'pl'],
+        jönnétek: ['jön', 'cond', 2, 'pl'], jönnének: ['jön', 'cond', 3, 'pl'],
+
+        ennék: ['eszik', 'cond', 1, 'sg'], ennél: ['eszik', 'cond', 2, 'sg'],
+        enne: ['eszik', 'cond', 3, 'sg'], ennénk: ['eszik', 'cond', 1, 'pl'],
+        ennétek: ['eszik', 'cond', 2, 'pl'], ennének: ['eszik', 'cond', 3, 'pl'],
+
+        innék: ['iszik', 'cond', 1, 'sg'], innál: ['iszik', 'cond', 2, 'sg'],
+        inna: ['iszik', 'cond', 3, 'sg'], innánk: ['iszik', 'cond', 1, 'pl'],
+        innátok: ['iszik', 'cond', 2, 'pl'], innának: ['iszik', 'cond', 3, 'pl'],
+
+        // alszik's conditional stem "alud-" is the SAME stem its past
+        // tense already uses (aludtam etc. above) — not a coincidence,
+        // both are alszik's one non-present stem — but still needs its
+        // own entries here since "alud" alone isn't the dictionary
+        // headword "alszik", so plain suffix-stripping can't reach it.
+        aludnék: ['alszik', 'cond', 1, 'sg'], aludnál: ['alszik', 'cond', 2, 'sg'],
+        aludna: ['alszik', 'cond', 3, 'sg'], aludnánk: ['alszik', 'cond', 1, 'pl'],
+        aludnátok: ['alszik', 'cond', 2, 'pl'], aludnának: ['alszik', 'cond', 3, 'pl'],
+
+        lennék: ['lesz', 'cond', 1, 'sg'], lennél: ['lesz', 'cond', 2, 'sg'],
+        lenne: ['lesz', 'cond', 3, 'sg'], lennénk: ['lesz', 'cond', 1, 'pl'],
+        lennétek: ['lesz', 'cond', 2, 'pl'], lennének: ['lesz', 'cond', 3, 'pl'],
+
+        vennék: ['vesz', 'cond', 1, 'sg'], vennél: ['vesz', 'cond', 2, 'sg'],
+        venne: ['vesz', 'cond', 3, 'sg'], vennénk: ['vesz', 'cond', 1, 'pl'],
+        vennétek: ['vesz', 'cond', 2, 'pl'], vennének: ['vesz', 'cond', 3, 'pl'],
+
+        tennék: ['tesz', 'cond', 1, 'sg'], tennél: ['tesz', 'cond', 2, 'sg'],
+        tenne: ['tesz', 'cond', 3, 'sg'], tennénk: ['tesz', 'cond', 1, 'pl'],
+        tennétek: ['tesz', 'cond', 2, 'pl'], tennének: ['tesz', 'cond', 3, 'pl'],
+
+        hinnék: ['hisz', 'cond', 1, 'sg'], hinnél: ['hisz', 'cond', 2, 'sg'],
+        hinne: ['hisz', 'cond', 3, 'sg'], hinnénk: ['hisz', 'cond', 1, 'pl'],
+        hinnétek: ['hisz', 'cond', 2, 'pl'], hinnének: ['hisz', 'cond', 3, 'pl'],
+
+        vinnék: ['visz', 'cond', 1, 'sg'], vinnél: ['visz', 'cond', 2, 'sg'],
+        vinne: ['visz', 'cond', 3, 'sg'], vinnénk: ['visz', 'cond', 1, 'pl'],
+        vinnétek: ['visz', 'cond', 2, 'pl'], vinnének: ['visz', 'cond', 3, 'pl'],
+
+        // Imperative (2026-08-29 follow-up) — a FOURTH stem per verb again
+        // (van has none of its own at all: Hungarian has no direct "be!"
+        // command built on van — it borrows lesz's légy/legyen family for
+        // exactly that meaning, so van itself contributes no entries
+        // here). eszik/iszik/vesz/tesz/hisz/visz share an irregular 2sg
+        // shape too — an extra "-él"/"-ál" rather than the bare "-j"
+        // every regular verb takes (see MOOD_SUFFIXES above) — the same
+        // palatal-final stems (egy-, igy-, vegy-, tegy-, higgy-, vigy-)
+        // that can't cleanly take a bare "j" the way "vár"/"küld" can.
+        // légy (lesz, 2sg) is irregular even by THIS group's own pattern
+        // (not "legyél") — kept as its own entry rather than derived.
+        menjek: ['megy', 'imp', 1, 'sg'], menj: ['megy', 'imp', 2, 'sg'],
+        menjen: ['megy', 'imp', 3, 'sg'], menjünk: ['megy', 'imp', 1, 'pl'],
+        menjetek: ['megy', 'imp', 2, 'pl'], menjenek: ['megy', 'imp', 3, 'pl'],
+
+        jöjjek: ['jön', 'imp', 1, 'sg'], jöjj: ['jön', 'imp', 2, 'sg'],
+        jöjjön: ['jön', 'imp', 3, 'sg'], jöjjünk: ['jön', 'imp', 1, 'pl'],
+        jöjjetek: ['jön', 'imp', 2, 'pl'], jöjjenek: ['jön', 'imp', 3, 'pl'],
+
+        egyek: ['eszik', 'imp', 1, 'sg'], egyél: ['eszik', 'imp', 2, 'sg'],
+        egyen: ['eszik', 'imp', 3, 'sg'], együnk: ['eszik', 'imp', 1, 'pl'],
+        egyetek: ['eszik', 'imp', 2, 'pl'], egyenek: ['eszik', 'imp', 3, 'pl'],
+
+        igyak: ['iszik', 'imp', 1, 'sg'], igyál: ['iszik', 'imp', 2, 'sg'],
+        igyon: ['iszik', 'imp', 3, 'sg'], igyunk: ['iszik', 'imp', 1, 'pl'],
+        igyatok: ['iszik', 'imp', 2, 'pl'], igyanak: ['iszik', 'imp', 3, 'pl'],
+
+        // alszik's imperative is fully regular off its "alud-" stem (bare
+        // "-j", like any other single-consonant-after-vowel stem) — still
+        // needs explicit entries for the same reason its conditional does
+        // above ("alud" isn't the headword).
+        aludjak: ['alszik', 'imp', 1, 'sg'], aludj: ['alszik', 'imp', 2, 'sg'],
+        aludjon: ['alszik', 'imp', 3, 'sg'], aludjunk: ['alszik', 'imp', 1, 'pl'],
+        aludjatok: ['alszik', 'imp', 2, 'pl'], aludjanak: ['alszik', 'imp', 3, 'pl'],
+
+        legyek: ['lesz', 'imp', 1, 'sg'], légy: ['lesz', 'imp', 2, 'sg'],
+        legyen: ['lesz', 'imp', 3, 'sg'], legyünk: ['lesz', 'imp', 1, 'pl'],
+        legyetek: ['lesz', 'imp', 2, 'pl'], legyenek: ['lesz', 'imp', 3, 'pl'],
+
+        vegyek: ['vesz', 'imp', 1, 'sg'], vegyél: ['vesz', 'imp', 2, 'sg'],
+        vegyen: ['vesz', 'imp', 3, 'sg'], vegyünk: ['vesz', 'imp', 1, 'pl'],
+        vegyetek: ['vesz', 'imp', 2, 'pl'], vegyenek: ['vesz', 'imp', 3, 'pl'],
+
+        tegyek: ['tesz', 'imp', 1, 'sg'], tegyél: ['tesz', 'imp', 2, 'sg'],
+        tegyen: ['tesz', 'imp', 3, 'sg'], tegyünk: ['tesz', 'imp', 1, 'pl'],
+        tegyetek: ['tesz', 'imp', 2, 'pl'], tegyenek: ['tesz', 'imp', 3, 'pl'],
+
+        higgyek: ['hisz', 'imp', 1, 'sg'], higgyél: ['hisz', 'imp', 2, 'sg'],
+        higgyen: ['hisz', 'imp', 3, 'sg'], higgyünk: ['hisz', 'imp', 1, 'pl'],
+        higgyetek: ['hisz', 'imp', 2, 'pl'], higgyenek: ['hisz', 'imp', 3, 'pl'],
+
+        vigyek: ['visz', 'imp', 1, 'sg'], vigyél: ['visz', 'imp', 2, 'sg'],
+        vigyen: ['visz', 'imp', 3, 'sg'], vigyünk: ['visz', 'imp', 1, 'pl'],
+        vigyetek: ['visz', 'imp', 2, 'pl'], vigyenek: ['visz', 'imp', 3, 'pl']
     };
 
     // Separable verbal prefixes — fully productive, and change a verb's
@@ -1069,16 +1309,29 @@ const HungarianMorphology = (function () {
     // comment on why conjugated verb forms were deliberately left out of
     // word-index.json. So this does need real vowel-harmony logic.
     //
-    // Scope: present + past tense, indefinite + definite conjugation.
-    // Past tense's linking-vowel rule and the definite endings (2026-08-20
-    // follow-up) were researched against external Hungarian-grammar
-    // references rather than derived from memory alone, given how much of
-    // the present-tense indefinite logic above turned out to need fixing
-    // even after "high confidence" — see _pastLinkingClass and
-    // _conjugatePresentDefinite's own comments for what was verified and
-    // how. Still not modelled: any mood beyond present/past indicative
-    // (conditional, subjunctive/imperative), and a handful of documented
-    // gaps called out at each function below.
+    // Scope: present + past indicative, plus conditional and imperative
+    // (2026-08-29 follow-up — Hungarian has no separate subjunctive; it
+    // reuses the imperative form for subjunctive-like clauses, e.g. "azt
+    // akarom, hogy menjen" = "I want him to go" using the imperative
+    // "menjen"), all indefinite + definite except imperative definite
+    // (not modelled at all — see _conjugateImperativeIndefinite's own
+    // comment). Past tense's linking-vowel rule and the definite endings
+    // (2026-08-20 follow-up) were researched against external Hungarian-
+    // grammar references; conditional/imperative (2026-08-29) could NOT
+    // be — this session's network egress was blocked for every
+    // linguistics reference site tried (Wiktionary, Wikipedia,
+    // cooljugator.com, several Hungarian-grammar blogs), so that follow-
+    // up instead cross-checked itself against this repo's OWN already-
+    // vetted content/hu/grammar cards (szeretnék/szeretnél/szeretne/
+    // szeretnétek, menj, maradjon, beszéljen) and one live grep hit
+    // (jöjjön) — real, human-reviewed Hungarian, just narrower coverage
+    // than an external grammar reference would have given. Combined with
+    // how much of the present-tense indefinite logic above turned out to
+    // need fixing even after "high confidence" from memory alone, treat
+    // the conditional/imperative additions as a good-faith derivation
+    // worth a native-speaker spot-check, not a fully sourced one — see
+    // _conjugateConditionalIndefinite/_conjugateImperativeIndefinite's
+    // own comments for exactly what's covered vs. deliberately declined.
 
     const BACK_VOWELS = 'aáoóuú';
     const FRONT_ROUNDED_VOWELS = 'öőüű';
@@ -1399,6 +1652,126 @@ const HungarianMorphology = (function () {
         return null;
     }
 
+    // ---- CONDITIONAL, INDEFINITE (2026-08-29 follow-up) ----
+    // Marker is "n" + á/é + personal ending. Unlike present/past's 3-way
+    // back/front-unrounded/front-rounded split, both conditional and
+    // imperative harmonize back/front ONLY (2-way — front-rounded stems
+    // take the exact same endings as front-unrounded ones, e.g. "küld"'s
+    // conditional is "küldenék", not "küldönnék") — cross-checked against
+    // content/hu/grammar's own "szeretnék/szeretnél/szeretne/szeretnétek"
+    // cards (front) and an independent check against "várnék/várnál/
+    // várna/várnánk/várnátok/várnának" (back); see MOOD_SUFFIXES above for
+    // the full derivation this rests on. A cluster-final stem needs a
+    // linking vowel ("a" back / "e" front) before the "n", same test
+    // _needsLinkingVowel already makes for present tense's own -sz/-tok/
+    // -nak. 1sg's ending is invariant "-nék" regardless of harmony
+    // (várnék AND kérnék both end in é) — only ITS linking vowel, when
+    // needed, varies by harmony, not the marker itself.
+    function _conjugateConditionalIndefinite(lemma, person, number) {
+        const isIkVerb = lemma.endsWith('ik');
+        const stem = isIkVerb ? lemma.slice(0, -2) : lemma;
+        const harmony = _harmonyClass(stem);
+        if (harmony === null) return null;
+        const front = harmony !== 'back';
+        const link = _needsLinkingVowel(stem) ? (front ? 'e' : 'a') : '';
+
+        if (person === 1 && number === 'sg') return stem + link + 'nék';
+        if (person === 2 && number === 'sg') return stem + link + (front ? 'nél' : 'nál');
+        if (person === 3 && number === 'sg') return stem + link + (front ? 'ne' : 'na');
+        if (person === 1 && number === 'pl') return stem + link + (front ? 'nénk' : 'nánk');
+        if (person === 2 && number === 'pl') return stem + link + (front ? 'nétek' : 'nátok');
+        if (person === 3 && number === 'pl') return stem + link + (front ? 'nének' : 'nának');
+        return null;
+    }
+
+    // ---- CONDITIONAL, DEFINITE ----
+    // Same marker/linking-vowel rule as indefinite above. 1pl/2pl are a
+    // genuine Hungarian syncretism — the SAME surface form serves both
+    // definite and indefinite ("olvasnánk" = both "we would read" and
+    // "we would read it") — so those two cells just delegate to the
+    // indefinite generator rather than duplicate its logic.
+    function _conjugateConditionalDefinite(lemma, person, number) {
+        if ((person === 1 || person === 2) && number === 'pl') {
+            return _conjugateConditionalIndefinite(lemma, person, number);
+        }
+        const isIkVerb = lemma.endsWith('ik');
+        const stem = isIkVerb ? lemma.slice(0, -2) : lemma;
+        const harmony = _harmonyClass(stem);
+        if (harmony === null) return null;
+        const front = harmony !== 'back';
+        const link = _needsLinkingVowel(stem) ? (front ? 'e' : 'a') : '';
+
+        if (person === 1 && number === 'sg') return stem + link + (front ? 'ném' : 'nám');
+        if (person === 2 && number === 'sg') return stem + link + (front ? 'néd' : 'nád');
+        if (person === 3 && number === 'sg') return stem + link + (front ? 'né' : 'ná');
+        // Front-harmony definite 3pl ("kérnék") is genuinely homophonous
+        // with front-harmony indefinite 1sg — a real Hungarian syncretism
+        // (see MOOD_SUFFIXES's own comment), not a bug: both really do
+        // generate the identical string here.
+        if (person === 3 && number === 'pl') return stem + link + (front ? 'nék' : 'nák');
+        return null;
+    }
+
+    // ---- IMPERATIVE, INDEFINITE ----
+    // Marker is "j" for most stems, assimilating into a doubled copy of
+    // the stem's own final letter for s/z-final stems ("olvas" ->
+    // "olvass-", "néz" -> "nézz-"), same gemination mechanic
+    // _conjugatePresentDefinite already uses for definite present's own
+    // "j"-initial endings. Unlike every other mood/tense here, "j"
+    // attaches to ANY stem directly with NO linking vowel EVER, even a
+    // pre-existing consonant cluster ("küldj", not "küldej") — see the
+    // "küldj"/"maradj" cross-check in MOOD_SUFFIXES's own comment above.
+    // Endings harmonize back/front 2-way (like conditional) for every
+    // person except 3sg, which keeps present tense's own 3-way -on/-en/
+    // -ön grade — cross-checked against "maradjon"/"beszéljen" (already
+    // in content/hu/grammar) and "jöjjön" (found live in content/hu).
+    //
+    // Declined (returns null) rather than guessed, so nothing is
+    // generated that the Reader's own analyze() couldn't read back:
+    //   - the "sz" digraph specifically (a genuine sz-final stem's "j"
+    //     geminates as an inserted "s" before the existing "sz", giving
+    //     "...ssz" — not decodable by plain suffix-stripping the way
+    //     plain s/z-final stems are, so not generated either)
+    //   - any stem ending in "t" OUTSIDE the "-ít" derivational class
+    //     (fizet, nevet, siet, ért, választ, ...) — "-ít" verbs keep
+    //     their "t" and just add "s" ("taníts", not "tanícs"), a
+    //     structurally-detectable, confidently-regular subclass; every
+    //     OTHER t-final stem was a genuine source of conflicting
+    //     half-remembered patterns this session (t-after-vowel replacing
+    //     "t" with a doubled "ss" vs. t-after-consonant either keeping or
+    //     dropping the "t", with no way to verify which this session —
+    //     see MOOD_SUFFIXES's own note) — rather than risk teaching a
+    //     wrong guess as confirmed Hungarian, the whole class beyond
+    //     "-ít" is left ungenerated.
+    function _conjugateImperativeIndefinite(lemma, person, number) {
+        const isIkVerb = lemma.endsWith('ik');
+        const stem = isIkVerb ? lemma.slice(0, -2) : lemma;
+        const harmony = _harmonyClass(stem);
+        if (harmony === null) return null;
+        const front = harmony !== 'back';
+
+        let marker;
+        if (stem.endsWith('ít')) {
+            marker = 's'; // "t"+"j" -> "ts", written as bare "s" after the retained "t"
+        } else if (stem.endsWith('t')) {
+            return null; // other t-final stems — declined, see function comment
+        } else if (stem.endsWith('sz')) {
+            return null; // sz-digraph gemination — declined, see function comment
+        } else if (_isSibilantFinal(stem)) {
+            marker = _finalConsonantUnit(stem); // double the stem's own final letter (s or z)
+        } else {
+            marker = 'j';
+        }
+
+        if (person === 2 && number === 'sg') return stem + marker;
+        if (person === 1 && number === 'sg') return stem + marker + (front ? 'ek' : 'ak');
+        if (person === 3 && number === 'sg') return stem + marker + { back: 'on', 'front-unrounded': 'en', 'front-rounded': 'ön' }[harmony];
+        if (person === 1 && number === 'pl') return stem + marker + (front ? 'ünk' : 'unk');
+        if (person === 2 && number === 'pl') return stem + marker + (front ? 'etek' : 'atok');
+        if (person === 3 && number === 'pl') return stem + marker + (front ? 'enek' : 'anak');
+        return null;
+    }
+
     // IRREGULAR_VERBS' keys aren't tagged with definiteness — most entries
     // don't need to be (van/megy/jön etc. are intransitive, no definite
     // object to agree with), but vesz/tesz/hisz/visz's past tense lists
@@ -1445,6 +1818,15 @@ const HungarianMorphology = (function () {
             // hisz/visz's genuinely-ambiguous cells reach the multi-candidate
             // branch below instead and aren't affected by this guard.
             if (tense === 'past' && definite && PAST_DEFINITE_EXCLUDED.has(lemma) && !(person === 1 && number === 'sg')) return null;
+            // CONDITIONAL/IMPERATIVE: IRREGULAR_VERBS carries indefinite-
+            // only entries for every lemma in both moods (see their own
+            // block comments above) — no 1sg exception either, since
+            // unlike present/past tense, this file's conditional/
+            // imperative generators produce genuinely DIFFERENT definite
+            // vs. indefinite 1sg forms for regular verbs (nám vs. nék),
+            // so there's no shared "same form either way" cell to spare
+            // from this guard.
+            if ((tense === 'cond' || tense === 'imp') && definite) return null;
             return candidates[0][0];
         }
 
@@ -1478,7 +1860,7 @@ const HungarianMorphology = (function () {
         const person = (opts && opts.person) || 3;
         const number = (opts && opts.number) || 'sg';
         const definite = !!(opts && opts.definite);
-        if (tense !== 'pres' && tense !== 'past') return null;
+        if (tense !== 'pres' && tense !== 'past' && tense !== 'cond' && tense !== 'imp') return null;
 
         // Universal, true for every verb regardless of regularity: present
         // indefinite 3sg is just the bare lemma, no suffix at all. Checked
@@ -1505,8 +1887,32 @@ const HungarianMorphology = (function () {
         // rather than fitting the IRREGULAR_LEMMAS-gated check above.
         if (lemma === 'lesz' && tense === 'pres' && definite && !(person === 1 && number === 'sg')) return null;
 
+        // van has NO imperative of its own in real Hungarian at all — a
+        // direct "be!" command borrows lesz's légy/legyen family instead
+        // (see IRREGULAR_VERBS' own comment on this) — so IRREGULAR_VERBS
+        // has zero 'imp' entries for van, and _hasIrregularEntriesForTense
+        // above correctly returns false for it. Without this guard,
+        // dispatch would fall through to the regular generator below,
+        // which has no way to know "van" isn't a normal single-consonant
+        // stem and would fabricate non-words ("vanj", "vanjon", ...) —
+        // caught live by round-trip testing this follow-up against every
+        // irregular lemma, not just the ones with SOME entries for a
+        // tense (the failure mode the lesz guard above already covers).
+        if (lemma === 'van' && tense === 'imp') return null;
+
         if (tense === 'pres') {
             return definite ? _conjugatePresentDefinite(lemma, person, number) : _conjugatePresentIndefinite(lemma, person, number);
+        }
+        if (tense === 'cond') {
+            return definite ? _conjugateConditionalDefinite(lemma, person, number) : _conjugateConditionalIndefinite(lemma, person, number);
+        }
+        // imp: no definite generator exists (see _conjugateImperativeIndefinite's
+        // own comment) — a definite request declines rather than silently
+        // handing back the indefinite form as if it answered the question asked,
+        // same treatment _irregularForm's own cond/imp guard above already gives
+        // irregular lemmas.
+        if (tense === 'imp') {
+            return definite ? null : _conjugateImperativeIndefinite(lemma, person, number);
         }
         return definite ? _conjugatePastDefinite(lemma, person, number) : _conjugatePastIndefinite(lemma, person, number);
     }
@@ -1612,3 +2018,44 @@ const HungarianMorphology = (function () {
 //     Now gated on the same single-consonant-after-vowel test
 //     (_needsLinkingVowel) present tense already uses. The list itself is
 //     still only spot-checked per-consonant against "vár".
+//
+// Conditional and imperative moods (2026-08-29 follow-up, both analyze()
+// and conjugate() — see the "Scope" comment above conjugate() for why this
+// pass leaned on this repo's own vetted content instead of an external
+// grammar reference, and each generation function's own comment for its
+// exact coverage):
+//   - imperative DEFINITE conjugation isn't modelled at all (indefinite
+//     only, both directions) — genuinely didn't get to it this session;
+//     unlike conditional's definite forms (fully derived from the same
+//     "n"-marker logic as indefinite), imperative definite has its own
+//     endings this session never worked out
+//   - imperative declines every t-final stem except the "-ít" derivational
+//     class (tanít, javít, ...) — see _conjugateImperativeIndefinite's own
+//     comment for the two conflicting patterns half-remembered for
+//     t-after-consonant stems (ért, választ, ...) this session couldn't
+//     resolve without a source; t-after-vowel non-"-ít" stems (fizet,
+//     nevet, siet, ...) were more confidently recalled (the stem's "t"
+//     replaced by a doubled "ss", "fizess") but still declined here since
+//     it isn't a suffix strip analyze() could decode back, and shipping a
+//     generator whose own output the Reader can't read felt worse than not
+//     shipping it
+//   - imperative also declines the "sz" digraph specifically (a genuine
+//     sz-final stem geminates as an inserted "s" before the existing "sz",
+//     not decodable by this table's plain suffix-stripping) — a narrower
+//     gap since the most common sz-final verbs (eszik, iszik) are already
+//     covered via IRREGULAR_VERBS
+//   - IRREGULAR_VERBS' new conditional/imperative entries for the 11
+//     suppletive verbs are indefinite-only, even where vesz/tesz/hisz/visz
+//     genuinely have distinct definite forms in real Hungarian ("venném" =
+//     "I would buy it") — left out because front-harmony definite-3pl and
+//     indefinite-1sg are genuinely homophonous for these moods (see
+//     MOOD_SUFFIXES's own comment), and a flat surfaceForm->tag map can't
+//     hold two different tags under one key the way the regular suffix
+//     table can (multiple rows sharing a string); rather than pick a
+//     silently-arbitrary winner, both cells are simply not authored
+//   - none of this was cross-checked against an external Hungarian-grammar
+//     source (see the "Scope" comment above conjugate() for why) — a
+//     native-speaker spot-check of _conjugateConditionalIndefinite/
+//     _conjugateConditionalDefinite/_conjugateImperativeIndefinite's
+//     output across a spread of harmony classes and stem shapes would be
+//     worth doing before leaning on this as hard as present/past tense
