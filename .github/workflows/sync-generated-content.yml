@@ -41,6 +41,10 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install Python dependencies
+        run: pip install -r requirements-dev.txt
 
       # Real content errors (a JSON file that no longer matches its schema)
       # are a human/Claude problem to fix, not something the generators
