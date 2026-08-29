@@ -6,268 +6,102 @@
       "type": "matching",
       "category": "vocabulary",
       "pairs": [
-        [
-          "impago",
-          "default / non-payment"
-        ],
-        [
-          "refinanciación",
-          "refinancing"
-        ],
-        [
-          "tipos de interés",
-          "interest rates"
-        ]
-      ],
-      "teaches": [
-        "crisisdeuda-02"
+        ["elevar", "to raise"],
+        ["dispararse", "to shoot up, skyrocket"],
+        ["cumplir", "to fulfill, meet (an obligation)"],
+        ["anunciar", "to announce"]
+      ]
+    },
+    {
+      "id": "b1-crisisdeuda-02.ex01b",
+      "type": "matching",
+      "category": "vocabulary",
+      "pairs": [
+        ["señalar", "to point to, mark"],
+        ["provocar", "to trigger, provoke"],
+        ["reconocer", "to acknowledge"],
+        ["extenderse", "to spread"]
       ]
     },
     {
       "id": "b1-crisisdeuda-02.ex02",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Qué agravó la crisis?",
+      "category": "reading",
+      "question": "¿Qué hizo la Reserva Federal estadounidense a partir de 1979, bajo Paul Volcker?",
       "options": [
-        "Los tipos de interés aumentaron y el servicio de la deuda se volvió más costoso.",
-        "Los acreedores eliminaron todos los intereses.",
-        "La deuda dejó de existir."
+        "Elevó drásticamente las tasas de interés para controlar la inflación interna.",
+        "Redujo las tasas de interés para estimular la economía.",
+        "Eliminó por completo el sistema de tasas de interés."
       ],
-      "correct": 0,
-      "teaches": [
-        "crisisdeuda-02"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-crisisdeuda-02.ex03",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "El ___ describe la falta de pago de una obligación cuando debe cumplirse.",
-      "answer": "impago",
-      "teaches": [
-        "crisisdeuda-02"
-      ]
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Qué anunció Jesús Silva Herzog el 12 de agosto de 1982?",
+      "options": [
+        "Que México ya no podía cumplir con sus obligaciones de pago de deuda externa.",
+        "Que México había pagado por completo toda su deuda externa.",
+        "Que México se retiraba del sistema financiero internacional."
+      ],
+      "correct": 0
     },
     {
       "id": "b1-crisisdeuda-02.ex04",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "La ___ permitió renegociar obligaciones cuando el pago inmediato era difícil.",
-      "answer": "refinanciación",
-      "teaches": [
-        "crisisdeuda-02"
-      ]
+      "sentence": "El costo de la deuda se disparó, de un día ___ otro, sin ningún aviso previo. (para)",
+      "answer": "para",
+      "teaches": ["de-un-dia-para-otro-un-cambio-repentino"]
     },
     {
       "id": "b1-crisisdeuda-02.ex05",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Los ___ aumentaron y encarecieron el servicio de la deuda.",
-      "answer": "tipos de interés",
-      "teaches": [
-        "crisisdeuda-02"
-      ]
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Qué provocó el anuncio mexicano en los meses siguientes?",
+      "options": [
+        "Un efecto dominó: Brasil, Argentina, Chile, Perú y otros países reconocieron dificultades similares.",
+        "Ningún efecto en el resto de la región.",
+        "Una rápida recuperación económica regional."
+      ],
+      "correct": 0
     },
     {
       "id": "b1-crisisdeuda-02.ex06",
       "type": "sentence-builder",
       "category": "grammar",
-      "tiles": [
-        "La",
-        "deuda",
-        "fue",
-        "refinanciada",
-        "mientras",
-        "los",
-        "gobiernos",
-        "negociaban."
-      ],
-      "solution": [
-        "La",
-        "deuda",
-        "fue",
-        "refinanciada",
-        "mientras",
-        "los",
-        "gobiernos",
-        "negociaban."
-      ],
-      "english": "The debt was refinanced while governments negotiated.",
-      "teaches": [
-        "crisisdeuda-02"
-      ]
+      "tiles": ["De", "un", "día", "para", "otro,", "los", "bancos", "dejaron", "de", "otorgar", "nuevos", "créditos."],
+      "solution": ["De", "un", "día", "para", "otro,", "los", "bancos", "dejaron", "de", "otorgar", "nuevos", "créditos."],
+      "english": "Overnight, the banks stopped granting new loans.",
+      "teaches": ["de-un-dia-para-otro-un-cambio-repentino"]
     },
     {
       "id": "b1-crisisdeuda-02.ex07",
-      "type": "sentence-order",
-      "category": "grammar",
-      "sentences": [
-        "Los tipos de interés aumentaron. [Interest rates increased.]",
-        "El servicio se encareció. [Debt service became more expensive.]",
-        "Por eso, varios países buscaron refinanciación. [Therefore, several countries sought refinancing.]"
+      "type": "dialogue-complete",
+      "category": "reading",
+      "prompt": [
+        { "speaker": "Carolina", "text": "¿Reaccionaron los bancos internacionales otorgando aún más créditos tras el anuncio mexicano?" },
+        { "speaker": "Fructuoso", "text": "_____" }
       ],
-      "solution": [
-        0,
-        1,
-        2
+      "options": [
+        "No, al contrario, dejaron prácticamente de otorgar nuevos créditos, precipitando una escasez de capital.",
+        "Sí, aumentaron considerablemente los nuevos préstamos a la región.",
+        "No hubo ningún cambio en la política de préstamos de los bancos."
       ],
-      "teaches": [
-        "crisisdeuda-02"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-crisisdeuda-02.ex08",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Qué construcción refleja mejor el punto de enfoque de esta lección?",
-      "options": [
-        "La deuda fue refinanciada mientras los gobiernos negociaban.",
-        "La economía fue buena.",
-        "El país tenía una historia."
-      ],
-      "correct": 0,
-      "teaches": [
-        "crisisdeuda-02"
-      ]
-    },
-    {
-      "id": "b1-crisisdeuda-02.ex09",
       "type": "listening-choice",
       "category": "listening",
-      "sentence": "La deuda fue refinanciada mientras los gobiernos negociaban.",
+      "sentence": "En cuestión de meses, más de una decena de países latinoamericanos reconocieron dificultades similares a las de México.",
       "options": [
-        "The debt was refinanced while governments negotiated.",
-        "The opposite happened.",
-        "No information is given."
+        "Within months, more than a dozen Latin American countries acknowledged difficulties similar to Mexico's.",
+        "Only Mexico experienced any financial difficulty during this period.",
+        "The crisis remained confined to Mexico for the rest of the decade."
       ],
-      "correct": 0,
-      "teaches": [
-        "crisisdeuda-02"
-      ]
-    },
-    {
-      "id": "b1-crisisdeuda-02.ex10",
-      "type": "listening-choice",
-      "category": "listening",
-      "sentence": "Los tipos de interés aumentaron. [Interest rates increased.]",
-      "options": [
-        "Los tipos de interés aumentaron. [Interest rates increased.]",
-        "The statement is false.",
-        "The statement says nothing about the crisis."
-      ],
-      "correct": 0,
-      "teaches": [
-        "crisisdeuda-02"
-      ]
-    },
-    {
-      "id": "b1-crisisdeuda-02.ex11",
-      "type": "dictation",
-      "category": "listening",
-      "sentence": "La deuda fue refinanciada mientras los gobiernos negociaban.",
-      "teaches": [
-        "crisisdeuda-02"
-      ]
-    },
-    {
-      "id": "b1-crisisdeuda-02.ex12",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Qué relación presenta el texto?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "La deuda fue refinanciada mientras los gobiernos negociaban. [This answer reflects the historical relationship.]",
-        "No hubo ninguna relación. [There was no relationship.]",
-        "Todo ocurrió sin consecuencias. [Everything happened without consequences.]"
-      ],
-      "correct": 0,
-      "teaches": [
-        "crisisdeuda-02"
-      ]
-    },
-    {
-      "id": "b1-crisisdeuda-02.ex13",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Qué relación presenta el texto?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "La deuda fue refinanciada mientras los gobiernos negociaban. [This answer reflects the historical relationship.]",
-        "No hubo ninguna relación. [There was no relationship.]",
-        "Todo ocurrió sin consecuencias. [Everything happened without consequences.]"
-      ],
-      "correct": 0,
-      "teaches": [
-        "crisisdeuda-02"
-      ]
-    },
-    {
-      "id": "b1-crisisdeuda-02.ex14",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Qué relación presenta el texto?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "La deuda fue refinanciada mientras los gobiernos negociaban. [This answer reflects the historical relationship.]",
-        "No hubo ninguna relación. [There was no relationship.]",
-        "Todo ocurrió sin consecuencias. [Everything happened without consequences.]"
-      ],
-      "correct": 0,
-      "teaches": [
-        "crisisdeuda-02"
-      ]
-    },
-    {
-      "id": "b1-crisisdeuda-02.ex15",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Explica la idea principal de la lección. [Explain the main idea of the lesson.]",
-          "answer": "La deuda fue refinanciada mientras los gobiernos negociaban."
-        }
-      ],
-      "teaches": [
-        "crisisdeuda-02"
-      ]
-    },
-    {
-      "id": "b1-crisisdeuda-02.ex16",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Relaciona dos procesos históricos. [Relate two historical processes.]",
-          "answer": "La deuda fue refinanciada mientras los gobiernos negociaban. Sin embargo, los tipos de interés aumentaron. [interest rates increased.]"
-        }
-      ],
-      "teaches": [
-        "crisisdeuda-02"
-      ]
+      "correct": 0
     }
   ]
 }

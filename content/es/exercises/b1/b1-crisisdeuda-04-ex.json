@@ -6,268 +6,102 @@
       "type": "matching",
       "category": "vocabulary",
       "pairs": [
-        [
-          "desempleo",
-          "unemployment"
-        ],
-        [
-          "pobreza",
-          "poverty"
-        ],
-        [
-          "salario real",
-          "real wage"
-        ]
-      ],
-      "teaches": [
-        "crisisdeuda-04"
+        ["erosionar", "to erode"],
+        ["el poder adquisitivo", "purchasing power"],
+        ["el desempleo", "unemployment"],
+        ["ambulante", "street, wandering (vendor)"]
+      ]
+    },
+    {
+      "id": "b1-crisisdeuda-04.ex01b",
+      "type": "matching",
+      "category": "vocabulary",
+      "pairs": [
+        ["informal", "informal"],
+        ["la cifra", "figure, number"],
+        ["el disturbio", "riot, disturbance"],
+        ["el saqueo", "looting"]
       ]
     },
     {
       "id": "b1-crisisdeuda-04.ex02",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Qué consecuencia social aparece en el texto?",
+      "category": "reading",
+      "question": "¿Qué efecto tuvo la combinación de recortes al gasto público e inflación descontrolada?",
       "options": [
-        "El desempleo y la pobreza aumentaron en algunos contextos mientras el salario real perdía poder adquisitivo.",
-        "Todos los ingresos aumentaron.",
-        "Las diferencias sociales desaparecieron."
+        "Erosionó de forma dramática el poder adquisitivo real de los salarios de la mayoría de la población.",
+        "Aumentó significativamente el poder adquisitivo de todos los salarios.",
+        "No tuvo ningún efecto perceptible en los salarios reales."
       ],
-      "correct": 0,
-      "teaches": [
-        "crisisdeuda-04"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-crisisdeuda-04.ex03",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "El ___ aumentó en algunos países durante la crisis.",
-      "answer": "desempleo",
-      "teaches": [
-        "crisisdeuda-04"
-      ]
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Qué ocurrió con el sector informal de la economía durante estos años?",
+      "options": [
+        "Creció rápidamente, absorbiendo a millones de personas que ya no encontraban empleo formal.",
+        "Desapareció por completo debido a las nuevas políticas económicas.",
+        "Se mantuvo exactamente en el mismo tamaño de siempre."
+      ],
+      "correct": 0
     },
     {
       "id": "b1-crisisdeuda-04.ex04",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "La ___ aumentó cuando muchas familias perdieron ingresos o empleo.",
-      "answer": "pobreza",
-      "teaches": [
-        "crisisdeuda-04"
-      ]
+      "sentence": "Los recortes al gasto público, en ___ de la salud y la educación, agravaron la crisis social. (detrimento)",
+      "answer": "detrimento",
+      "teaches": ["en-detrimento-de-quien-o-que-sale-perjudicado"]
     },
     {
       "id": "b1-crisisdeuda-04.ex05",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "El ___ perdió poder adquisitivo, por lo que algunos hogares redujeron gastos.",
-      "answer": "salario real",
-      "teaches": [
-        "crisisdeuda-04"
-      ]
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Qué desencadenó el \"Caracazo\" en Venezuela en febrero de 1989?",
+      "options": [
+        "Un fuerte aumento del precio del transporte público, impuesto como parte de un nuevo programa de ajuste.",
+        "Una reducción del precio del transporte público.",
+        "Un golpe de Estado militar contra el gobierno venezolano."
+      ],
+      "correct": 0
     },
     {
       "id": "b1-crisisdeuda-04.ex06",
       "type": "sentence-builder",
       "category": "grammar",
-      "tiles": [
-        "Muchas",
-        "familias",
-        "afrontaban",
-        "el",
-        "desempleo,",
-        "reduciendo",
-        "sus",
-        "gastos."
-      ],
-      "solution": [
-        "Muchas",
-        "familias",
-        "afrontaban",
-        "el",
-        "desempleo,",
-        "reduciendo",
-        "sus",
-        "gastos."
-      ],
-      "english": "Many families faced unemployment, reducing their spending.",
-      "teaches": [
-        "crisisdeuda-04"
-      ]
+      "tiles": ["El", "aumento", "del", "transporte", "fue", "impuesto", "en", "detrimento", "de", "los", "sectores", "más", "pobres."],
+      "solution": ["El", "aumento", "del", "transporte", "fue", "impuesto", "en", "detrimento", "de", "los", "sectores", "más", "pobres."],
+      "english": "The transport price increase was imposed to the detriment of the poorest sectors.",
+      "teaches": ["en-detrimento-de-quien-o-que-sale-perjudicado"]
     },
     {
       "id": "b1-crisisdeuda-04.ex07",
-      "type": "sentence-order",
-      "category": "grammar",
-      "sentences": [
-        "El salario real cayó. [Real wages fell.]",
-        "Las familias redujeron gastos. [Families reduced spending.]",
-        "La presión aumentó. [Pressure increased.]"
+      "type": "dialogue-complete",
+      "category": "reading",
+      "prompt": [
+        { "speaker": "Carolina", "text": "¿Fue el Caracazo un episodio aislado, sin ninguna relación con el resto de la región?" },
+        { "speaker": "Fructuoso", "text": "_____" }
       ],
-      "solution": [
-        0,
-        1,
-        2
+      "options": [
+        "No, ilustró de manera dramática una tensión que se repetiría, con distinta intensidad, en buena parte de la región.",
+        "Sí, no tuvo absolutamente ninguna relación con la crisis de la deuda.",
+        "No, porque en realidad nunca ocurrió ningún disturbio en Venezuela."
       ],
-      "teaches": [
-        "crisisdeuda-04"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-crisisdeuda-04.ex08",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Qué construcción refleja mejor el punto de enfoque de esta lección?",
-      "options": [
-        "Muchas familias afrontaban el desempleo, reduciendo sus gastos.",
-        "La economía fue buena.",
-        "El país tenía una historia."
-      ],
-      "correct": 0,
-      "teaches": [
-        "crisisdeuda-04"
-      ]
-    },
-    {
-      "id": "b1-crisisdeuda-04.ex09",
       "type": "listening-choice",
       "category": "listening",
-      "sentence": "Muchas familias afrontaban el desempleo, reduciendo sus gastos.",
+      "sentence": "Hacia 1990, la proporción de latinoamericanos viviendo en condiciones de pobreza había crecido significativamente.",
       "options": [
-        "Many families faced unemployment, reducing their spending.",
-        "The opposite happened.",
-        "No information is given."
+        "By 1990, the proportion of Latin Americans living in poverty had grown significantly.",
+        "By 1990, poverty rates across the region had fallen sharply.",
+        "Poverty levels remained exactly the same throughout the 1980s."
       ],
-      "correct": 0,
-      "teaches": [
-        "crisisdeuda-04"
-      ]
-    },
-    {
-      "id": "b1-crisisdeuda-04.ex10",
-      "type": "listening-choice",
-      "category": "listening",
-      "sentence": "El salario real cayó. [Real wages fell.]",
-      "options": [
-        "El salario real cayó. [Real wages fell.]",
-        "The statement is false.",
-        "The statement says nothing about the crisis."
-      ],
-      "correct": 0,
-      "teaches": [
-        "crisisdeuda-04"
-      ]
-    },
-    {
-      "id": "b1-crisisdeuda-04.ex11",
-      "type": "dictation",
-      "category": "listening",
-      "sentence": "Muchas familias afrontaban el desempleo, reduciendo sus gastos.",
-      "teaches": [
-        "crisisdeuda-04"
-      ]
-    },
-    {
-      "id": "b1-crisisdeuda-04.ex12",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Qué relación presenta el texto?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Muchas familias afrontaban el desempleo, reduciendo sus gastos. [This answer reflects the historical relationship.]",
-        "No hubo ninguna relación. [There was no relationship.]",
-        "Todo ocurrió sin consecuencias. [Everything happened without consequences.]"
-      ],
-      "correct": 0,
-      "teaches": [
-        "crisisdeuda-04"
-      ]
-    },
-    {
-      "id": "b1-crisisdeuda-04.ex13",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Qué relación presenta el texto?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Muchas familias afrontaban el desempleo, reduciendo sus gastos. [This answer reflects the historical relationship.]",
-        "No hubo ninguna relación. [There was no relationship.]",
-        "Todo ocurrió sin consecuencias. [Everything happened without consequences.]"
-      ],
-      "correct": 0,
-      "teaches": [
-        "crisisdeuda-04"
-      ]
-    },
-    {
-      "id": "b1-crisisdeuda-04.ex14",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Qué relación presenta el texto?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Muchas familias afrontaban el desempleo, reduciendo sus gastos. [This answer reflects the historical relationship.]",
-        "No hubo ninguna relación. [There was no relationship.]",
-        "Todo ocurrió sin consecuencias. [Everything happened without consequences.]"
-      ],
-      "correct": 0,
-      "teaches": [
-        "crisisdeuda-04"
-      ]
-    },
-    {
-      "id": "b1-crisisdeuda-04.ex15",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Explica la idea principal de la lección. [Explain the main idea of the lesson.]",
-          "answer": "Muchas familias afrontaban el desempleo, reduciendo sus gastos."
-        }
-      ],
-      "teaches": [
-        "crisisdeuda-04"
-      ]
-    },
-    {
-      "id": "b1-crisisdeuda-04.ex16",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Relaciona dos procesos históricos. [Relate two historical processes.]",
-          "answer": "Muchas familias afrontaban el desempleo, reduciendo sus gastos. Sin embargo, el salario real cayó. [real wages fell.]"
-        }
-      ],
-      "teaches": [
-        "crisisdeuda-04"
-      ]
+      "correct": 0
     }
   ]
 }

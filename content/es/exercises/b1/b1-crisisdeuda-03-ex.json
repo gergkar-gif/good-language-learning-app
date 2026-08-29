@@ -6,270 +6,102 @@
       "type": "matching",
       "category": "vocabulary",
       "pairs": [
-        [
-          "austeridad",
-          "austerity"
-        ],
-        [
-          "ajuste",
-          "adjustment"
-        ],
-        [
-          "recorte",
-          "cut / cutback"
-        ]
-      ],
-      "teaches": [
-        "crisisdeuda-03"
+        ["recurrir", "to turn to, resort to"],
+        ["el recorte", "cut"],
+        ["el subsidio", "subsidy"],
+        ["devaluar", "to devalue"]
+      ]
+    },
+    {
+      "id": "b1-crisisdeuda-03.ex01b",
+      "type": "matching",
+      "category": "vocabulary",
+      "pairs": [
+        ["restaurar", "to restore"],
+        ["argumentar", "to argue"],
+        ["dictar", "to dictate"],
+        ["la soberanía", "sovereignty"]
       ]
     },
     {
       "id": "b1-crisisdeuda-03.ex02",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Qué buscaban las políticas de ajuste?",
+      "category": "reading",
+      "question": "¿A qué recurrieron la mayoría de los países latinoamericanos ante la imposibilidad de pagar su deuda?",
       "options": [
-        "Estabilizar las cuentas, aunque algunas medidas tuvieran costes sociales.",
-        "Aumentar el gasto sin cambiar nada.",
-        "Eliminar inmediatamente todas las obligaciones."
+        "Al Fondo Monetario Internacional, que ofrecía préstamos a cambio de aceptar programas de ajuste estructural.",
+        "A la cancelación unilateral de toda su deuda externa.",
+        "A la creación de una nueva moneda regional común."
       ],
-      "correct": 0,
-      "teaches": [
-        "crisisdeuda-03"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-crisisdeuda-03.ex03",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "La ___ buscaba contener el gasto y estabilizar las cuentas.",
-      "answer": "austeridad",
-      "teaches": [
-        "crisisdeuda-03"
-      ]
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Qué solían incluir estas condiciones económicas del FMI?",
+      "options": [
+        "Recortes en el gasto público, reducción de subsidios, devaluación de la moneda, y apertura comercial.",
+        "Un aumento generalizado del gasto público en todos los sectores.",
+        "La eliminación total de cualquier condición sobre los nuevos préstamos."
+      ],
+      "correct": 0
     },
     {
       "id": "b1-crisisdeuda-03.ex04",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Mediante el ___ se intentó reducir desequilibrios económicos.",
-      "answer": "ajuste",
-      "teaches": [
-        "crisisdeuda-03"
-      ]
+      "sentence": "El FMI ofrecía préstamos a ___ de que los gobiernos aceptaran ciertas condiciones. (cambio)",
+      "answer": "cambio",
+      "teaches": ["a-cambio-de-lo-que-se-pide-o-se-ofrece-por-algo"]
     },
     {
       "id": "b1-crisisdeuda-03.ex05",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Se aplicó un ___ del gasto público, aunque se intentó proteger algunos servicios.",
-      "answer": "recorte",
-      "teaches": [
-        "crisisdeuda-03"
-      ]
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Qué argumentaban los defensores de estas políticas de austeridad?",
+      "options": [
+        "Que eran necesarias para restaurar la estabilidad macroeconómica y recuperar la confianza de los inversores.",
+        "Que no tendrían ningún efecto en la economía de la región.",
+        "Que solo debían aplicarse a los países más ricos de la región."
+      ],
+      "correct": 0
     },
     {
       "id": "b1-crisisdeuda-03.ex06",
       "type": "sentence-builder",
       "category": "grammar",
-      "tiles": [
-        "Se",
-        "aplicaron",
-        "medidas",
-        "de",
-        "austeridad",
-        "mientras",
-        "se",
-        "negociaban",
-        "acuerdos."
-      ],
-      "solution": [
-        "Se",
-        "aplicaron",
-        "medidas",
-        "de",
-        "austeridad",
-        "mientras",
-        "se",
-        "negociaban",
-        "acuerdos."
-      ],
-      "english": "Austerity measures were applied while agreements were negotiated.",
-      "teaches": [
-        "crisisdeuda-03"
-      ]
+      "tiles": ["Muchos", "críticos", "consideraban", "que", "el", "precio,", "a", "cambio", "de", "estos", "préstamos,", "era", "demasiado", "alto."],
+      "solution": ["Muchos", "críticos", "consideraban", "que", "el", "precio,", "a", "cambio", "de", "estos", "préstamos,", "era", "demasiado", "alto."],
+      "english": "Many critics considered that the price, in exchange for these loans, was too high.",
+      "teaches": ["a-cambio-de-lo-que-se-pide-o-se-ofrece-por-algo"]
     },
     {
       "id": "b1-crisisdeuda-03.ex07",
-      "type": "sentence-order",
-      "category": "grammar",
-      "sentences": [
-        "Se redujo el gasto. [Spending was reduced.]",
-        "Se buscaba estabilizar las cuentas. [The aim was to stabilise the accounts.]",
-        "Sin embargo, las medidas fueron controvertidas. [However, the measures were controversial.]"
+      "type": "dialogue-complete",
+      "category": "reading",
+      "prompt": [
+        { "speaker": "Carolina", "text": "¿Qué denunciaban los críticos de estos programas de ajuste?" },
+        { "speaker": "Fructuoso", "text": "_____" }
       ],
-      "solution": [
-        0,
-        1,
-        2
+      "options": [
+        "Que representaban una pérdida significativa de soberanía económica nacional, ya que las decisiones se dictaban desde Washington.",
+        "Que estos programas no incluían ninguna condición real.",
+        "Que el FMI nunca exigió ninguna condición a cambio de sus préstamos."
       ],
-      "teaches": [
-        "crisisdeuda-03"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-crisisdeuda-03.ex08",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Qué construcción refleja mejor el punto de enfoque de esta lección?",
-      "options": [
-        "Se aplicaron medidas de austeridad mientras se negociaban acuerdos.",
-        "La economía fue buena.",
-        "El país tenía una historia."
-      ],
-      "correct": 0,
-      "teaches": [
-        "crisisdeuda-03"
-      ]
-    },
-    {
-      "id": "b1-crisisdeuda-03.ex09",
       "type": "listening-choice",
       "category": "listening",
-      "sentence": "Se aplicaron medidas de austeridad mientras se negociaban acuerdos.",
+      "sentence": "Este debate entre estabilización macroeconómica y soberanía nacional marcaría profundamente la política económica de toda una década.",
       "options": [
-        "Austerity measures were applied while agreements were negotiated.",
-        "The opposite happened.",
-        "No information is given."
+        "This debate between macroeconomic stabilization and national sovereignty would deeply shape economic policy for an entire decade.",
+        "This debate was resolved quickly and had no lasting influence.",
+        "No one in the region ever questioned these adjustment programs."
       ],
-      "correct": 0,
-      "teaches": [
-        "crisisdeuda-03"
-      ]
-    },
-    {
-      "id": "b1-crisisdeuda-03.ex10",
-      "type": "listening-choice",
-      "category": "listening",
-      "sentence": "Se redujo el gasto. [Spending was reduced.]",
-      "options": [
-        "Se redujo el gasto. [Spending was reduced.]",
-        "The statement is false.",
-        "The statement says nothing about the crisis."
-      ],
-      "correct": 0,
-      "teaches": [
-        "crisisdeuda-03"
-      ]
-    },
-    {
-      "id": "b1-crisisdeuda-03.ex11",
-      "type": "dictation",
-      "category": "listening",
-      "sentence": "Se aplicaron medidas de austeridad mientras se negociaban acuerdos.",
-      "teaches": [
-        "crisisdeuda-03"
-      ]
-    },
-    {
-      "id": "b1-crisisdeuda-03.ex12",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Qué relación presenta el texto?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Se aplicaron medidas de austeridad mientras se negociaban acuerdos. [This answer reflects the historical relationship.]",
-        "No hubo ninguna relación. [There was no relationship.]",
-        "Todo ocurrió sin consecuencias. [Everything happened without consequences.]"
-      ],
-      "correct": 0,
-      "teaches": [
-        "crisisdeuda-03"
-      ]
-    },
-    {
-      "id": "b1-crisisdeuda-03.ex13",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Qué relación presenta el texto?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Se aplicaron medidas de austeridad mientras se negociaban acuerdos. [This answer reflects the historical relationship.]",
-        "No hubo ninguna relación. [There was no relationship.]",
-        "Todo ocurrió sin consecuencias. [Everything happened without consequences.]"
-      ],
-      "correct": 0,
-      "teaches": [
-        "crisisdeuda-03"
-      ]
-    },
-    {
-      "id": "b1-crisisdeuda-03.ex14",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Qué relación presenta el texto?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Se aplicaron medidas de austeridad mientras se negociaban acuerdos. [This answer reflects the historical relationship.]",
-        "No hubo ninguna relación. [There was no relationship.]",
-        "Todo ocurrió sin consecuencias. [Everything happened without consequences.]"
-      ],
-      "correct": 0,
-      "teaches": [
-        "crisisdeuda-03"
-      ]
-    },
-    {
-      "id": "b1-crisisdeuda-03.ex15",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Explica la idea principal de la lección. [Explain the main idea of the lesson.]",
-          "answer": "Se aplicaron medidas de austeridad mientras se negociaban acuerdos."
-        }
-      ],
-      "teaches": [
-        "crisisdeuda-03"
-      ]
-    },
-    {
-      "id": "b1-crisisdeuda-03.ex16",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Relaciona dos procesos históricos. [Relate two historical processes.]",
-          "answer": "Se aplicaron medidas de austeridad mientras se negociaban acuerdos. Sin embargo, se redujo el gasto. [spending was reduced.]"
-        }
-      ],
-      "teaches": [
-        "crisisdeuda-03"
-      ]
+      "correct": 0
     }
   ]
 }

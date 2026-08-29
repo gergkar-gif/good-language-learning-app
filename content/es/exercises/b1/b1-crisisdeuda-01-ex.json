@@ -6,292 +6,102 @@
       "type": "matching",
       "category": "vocabulary",
       "pairs": [
-        [
-          "deuda externa",
-          "external debt"
-        ],
-        [
-          "préstamo",
-          "loan"
-        ],
-        [
-          "acreedor",
-          "creditor"
-        ],
-        [
-          "endeudarse",
-          "to become indebted"
-        ]
-      ],
-      "teaches": [
-        "crisisdeuda-01"
+        ["acumular", "to accumulate"],
+        ["depositar", "to deposit"],
+        ["colocar", "to place, invest"],
+        ["otorgar", "to grant"]
+      ]
+    },
+    {
+      "id": "b1-crisisdeuda-01.ex01b",
+      "type": "matching",
+      "category": "vocabulary",
+      "pairs": [
+        ["el interés", "interest"],
+        ["multiplicarse", "to multiply"],
+        ["destinar", "to allocate, earmark"],
+        ["expuesto", "exposed"]
       ]
     },
     {
       "id": "b1-crisisdeuda-01.ex02",
       "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Qué describe mejor el proceso histórico?",
+      "category": "reading",
+      "question": "¿Qué hicieron los países exportadores de petróleo tras las crisis de 1973 y 1979?",
       "options": [
-        "Los préstamos aumentaron en un contexto favorable, aunque crearon obligaciones futuras.",
-        "La deuda desapareció porque todos los préstamos fueron cancelados.",
-        "No existía crédito internacional."
+        "Acumularon enormes cantidades de dólares que depositaron en bancos internacionales.",
+        "Cancelaron toda su deuda externa de inmediato.",
+        "Dejaron de exportar petróleo por completo."
       ],
-      "correct": 0,
-      "teaches": [
-        "crisisdeuda-01"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-crisisdeuda-01.ex03",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Varios gobiernos aumentaron la ___ a raíz de la abundancia de crédito.",
-      "answer": "deuda externa",
-      "teaches": [
-        "crisisdeuda-01"
-      ]
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Qué clientes encontraron los bancos internacionales para colocar este exceso de capital?",
+      "options": [
+        "Gobiernos latinoamericanos, muchos de ellos regímenes militares con ambiciosos proyectos de industrialización.",
+        "Únicamente gobiernos europeos con economías ya muy desarrolladas.",
+        "Ningún gobierno estaba dispuesto a pedir préstamos en ese momento."
+      ],
+      "correct": 0
     },
     {
       "id": "b1-crisisdeuda-01.ex04",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Un ___ proporciona recursos que deben devolverse según unas condiciones.",
-      "answer": "préstamo",
-      "teaches": [
-        "crisisdeuda-01"
-      ]
+      "sentence": "Los bancos tenían un exceso de capital; en ___, buscaron nuevos clientes dispuestos a pedir préstamos. (consecuencia)",
+      "answer": "consecuencia",
+      "teaches": ["en-consecuencia-expresar-el-resultado-directo-de-algo"]
     },
     {
       "id": "b1-crisisdeuda-01.ex05",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "El ___ es quien presta los fondos, mientras el gobierno asume la obligación.",
-      "answer": "acreedor",
-      "teaches": [
-        "crisisdeuda-01"
-      ]
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "¿Cuánto se multiplicó la deuda externa total de la región entre 1975 y 1982?",
+      "options": [
+        "Pasó de unos setenta y cinco mil millones a más de trescientos mil millones de dólares.",
+        "Se mantuvo prácticamente igual durante todo el periodo.",
+        "Disminuyó considerablemente durante estos años."
+      ],
+      "correct": 0
     },
     {
       "id": "b1-crisisdeuda-01.ex06",
-      "type": "fill-blank",
+      "type": "sentence-builder",
       "category": "grammar",
-      "sentence": "Cuando un gobierno decide ___, acepta compromisos financieros futuros.",
-      "answer": "endeudarse",
-      "teaches": [
-        "crisisdeuda-01"
-      ]
+      "tiles": ["La", "deuda", "se", "multiplicó", "varias", "veces;", "en", "consecuencia,", "algunos", "países", "destinaban", "sus", "ingresos", "al", "pago", "de", "intereses."],
+      "solution": ["La", "deuda", "se", "multiplicó", "varias", "veces;", "en", "consecuencia,", "algunos", "países", "destinaban", "sus", "ingresos", "al", "pago", "de", "intereses."],
+      "english": "The debt multiplied several times over; as a consequence, some countries devoted their income to paying interest.",
+      "teaches": ["en-consecuencia-expresar-el-resultado-directo-de-algo"]
     },
     {
       "id": "b1-crisisdeuda-01.ex07",
-      "type": "sentence-builder",
-      "category": "grammar",
-      "tiles": [
-        "A",
-        "raíz",
-        "de",
-        "la",
-        "abundancia",
-        "de",
-        "crédito,",
-        "varios",
-        "gobiernos",
-        "aumentaron",
-        "la",
-        "deuda",
-        "externa."
+      "type": "dialogue-complete",
+      "category": "reading",
+      "prompt": [
+        { "speaker": "Carolina", "text": "¿Por qué no preocupaba tanto, en un principio, que los préstamos tuvieran tasas de interés variable?" },
+        { "speaker": "Fructuoso", "text": "_____" }
       ],
-      "solution": [
-        "A",
-        "raíz",
-        "de",
-        "la",
-        "abundancia",
-        "de",
-        "crédito,",
-        "varios",
-        "gobiernos",
-        "aumentaron",
-        "la",
-        "deuda",
-        "externa."
+      "options": [
+        "Porque esa característica parecía poco relevante mientras las tasas se mantuvieran bajas.",
+        "Porque las tasas variables eran, en realidad, siempre más bajas que las fijas.",
+        "Porque ningún préstamo de la época tenía tasas de interés variable."
       ],
-      "english": "As a result of abundant credit, several governments increased external debt.",
-      "teaches": [
-        "crisisdeuda-01"
-      ]
+      "correct": 0
     },
     {
       "id": "b1-crisisdeuda-01.ex08",
-      "type": "sentence-order",
-      "category": "grammar",
-      "sentences": [
-        "Los bancos ofrecían préstamos. [Banks offered loans.]",
-        "Los gobiernos aumentaban su endeudamiento. [Governments increased their borrowing.]",
-        "A raíz de ese proceso, la deuda creció. [As a result, debt grew.]"
-      ],
-      "solution": [
-        0,
-        1,
-        2
-      ],
-      "teaches": [
-        "crisisdeuda-01"
-      ]
-    },
-    {
-      "id": "b1-crisisdeuda-01.ex09",
-      "type": "multiple-choice",
-      "category": "grammar",
-      "question": "¿Qué construcción refleja mejor el punto de enfoque de esta lección?",
-      "options": [
-        "A raíz de la abundancia de crédito, varios gobiernos aumentaron la deuda externa.",
-        "La economía fue buena.",
-        "El país tenía una historia."
-      ],
-      "correct": 0,
-      "teaches": [
-        "crisisdeuda-01"
-      ]
-    },
-    {
-      "id": "b1-crisisdeuda-01.ex10",
       "type": "listening-choice",
       "category": "listening",
-      "sentence": "A raíz de la abundancia de crédito, varios gobiernos aumentaron la deuda externa.",
+      "sentence": "Esta combinación dejó a la región peligrosamente expuesta a cualquier cambio brusco en las condiciones financieras internacionales.",
       "options": [
-        "As a result of abundant credit, several governments increased external debt.",
-        "The opposite happened.",
-        "No information is given."
+        "This combination left the region dangerously exposed to any sudden change in international financial conditions.",
+        "This combination made the region completely immune to any international financial change.",
+        "International financial conditions had no effect on the region's economies."
       ],
-      "correct": 0,
-      "teaches": [
-        "crisisdeuda-01"
-      ]
-    },
-    {
-      "id": "b1-crisisdeuda-01.ex11",
-      "type": "listening-choice",
-      "category": "listening",
-      "sentence": "Los bancos ofrecían préstamos. [Banks offered loans.]",
-      "options": [
-        "Los bancos ofrecían préstamos. [Banks offered loans.]",
-        "The statement is false.",
-        "The statement says nothing about the crisis."
-      ],
-      "correct": 0,
-      "teaches": [
-        "crisisdeuda-01"
-      ]
-    },
-    {
-      "id": "b1-crisisdeuda-01.ex12",
-      "type": "dictation",
-      "category": "listening",
-      "sentence": "A raíz de la abundancia de crédito, varios gobiernos aumentaron la deuda externa.",
-      "teaches": [
-        "crisisdeuda-01"
-      ]
-    },
-    {
-      "id": "b1-crisisdeuda-01.ex13",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Qué relación presenta el texto?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "A raíz de la abundancia de crédito, varios gobiernos aumentaron la deuda externa. [This answer reflects the historical relationship.]",
-        "No hubo ninguna relación. [There was no relationship.]",
-        "Todo ocurrió sin consecuencias. [Everything happened without consequences.]"
-      ],
-      "correct": 0,
-      "teaches": [
-        "crisisdeuda-01"
-      ]
-    },
-    {
-      "id": "b1-crisisdeuda-01.ex14",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Qué relación presenta el texto?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "A raíz de la abundancia de crédito, varios gobiernos aumentaron la deuda externa. [This answer reflects the historical relationship.]",
-        "No hubo ninguna relación. [There was no relationship.]",
-        "Todo ocurrió sin consecuencias. [Everything happened without consequences.]"
-      ],
-      "correct": 0,
-      "teaches": [
-        "crisisdeuda-01"
-      ]
-    },
-    {
-      "id": "b1-crisisdeuda-01.ex15",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        {
-          "speaker": "A",
-          "text": "¿Qué relación presenta el texto?"
-        },
-        {
-          "speaker": "B",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "A raíz de la abundancia de crédito, varios gobiernos aumentaron la deuda externa. [This answer reflects the historical relationship.]",
-        "No hubo ninguna relación. [There was no relationship.]",
-        "Todo ocurrió sin consecuencias. [Everything happened without consequences.]"
-      ],
-      "correct": 0,
-      "teaches": [
-        "crisisdeuda-01"
-      ]
-    },
-    {
-      "id": "b1-crisisdeuda-01.ex16",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Explica la idea principal de la lección. [Explain the main idea of the lesson.]",
-          "answer": "A raíz de la abundancia de crédito, varios gobiernos aumentaron la deuda externa."
-        }
-      ],
-      "teaches": [
-        "crisisdeuda-01"
-      ]
-    },
-    {
-      "id": "b1-crisisdeuda-01.ex17",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Relaciona dos procesos históricos. [Relate two historical processes.]",
-          "answer": "A raíz de la abundancia de crédito, varios gobiernos aumentaron la deuda externa. Sin embargo, los bancos ofrecían préstamos. [banks offered loans.]"
-        }
-      ],
-      "teaches": [
-        "crisisdeuda-01"
-      ]
+      "correct": 0
     }
   ]
 }
