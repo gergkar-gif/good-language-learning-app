@@ -1,0 +1,70 @@
+name: Sync generated content
+
+# Every derived file the app actually reads at runtime — curriculum.json,
+# decks.json, each language's stories/manifest.json, grammar-index.json,
+# translation-index.json — is generated straight from content/**. Nothing
+# else ever kept them in sync automatically, so edits to a lesson, a unit's
+# line-up, or a reading could land on master without the derived files ever
+# catching up (this is exactly how ~250 Spanish readings and 99 Hungarian/
+# Spanish grammar summaries went stale and invisible in the app before this
+# workflow existed). This runs the same generators a contributor would run
+# by hand, and commits the result back automatically so master always
+# reflects the content that's actually on disk.
+on:
+  push:
+    branches: [master]
+    paths:
+      - 'content/**'
+      - 'build-manifest.py'
+      - 'scripts/build_grammar_index.py'
+      - 'scripts/build_translation_index.py'
+      - 'scripts/validate-content.py'
+      - '.github/workflows/sync-generated-content.yml'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-generated-content
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    # Guards against a push-triggered loop; belt-and-suspenders, since
+    # GITHUB_TOKEN pushes don't re-trigger push events by default anyway.
+    if: github.actor != 'github-actions[bot]'
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      # Real content errors (a JSON file that no longer matches its schema)
+      # are a human/Claude problem to fix, not something the generators
+      # below should paper over — fail loudly here instead of silently
+      # committing derived files built from broken source content.
+      - name: Validate content schemas
+        run: python3 scripts/validate-content.py
+
+      - name: Regenerate curriculum, decks, and story manifests
+        run: python3 build-manifest.py
+
+      - name: Regenerate grammar and translation indexes
+        run: |
+          python3 scripts/build_grammar_index.py
+          python3 scripts/build_translation_index.py
+
+      - name: Commit and push if anything changed
+        run: |
+          git config user.name "content-sync-bot"
+          git config user.email "actions@users.noreply.github.com"
+          if git diff --quiet; then
+            echo "Generated content already matches source — nothing to sync."
+          else
+            git add -A
+            git commit -m "Auto-sync generated content (curriculum, decks, manifests, indexes)"
+            git push
+          fi
