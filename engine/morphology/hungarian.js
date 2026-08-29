@@ -404,21 +404,19 @@ const HungarianMorphology = (function () {
         ['zák', 'imp', 3, 'pl'], ['zék', 'imp', 3, 'pl']
         //
         // Genuinely NOT covered by plain suffix-stripping — decoded
-        // instead by _decodeTReplacedImperative() below, called
+        // instead by decodeTReplacedImperative() below, called
         // separately from analyze() itself, since these need the
-        // remainder's tail RECONSTRUCTED (a "t" put back), not just
-        // accepted-or-rejected as-is: single-t-after-vowel stems OUTSIDE
-        // the "-ít"/sonorant class (fizet, nevet, siet, lát, ...), whose
-        // imperative replaces the stem's own "t" with a doubled "ss"
-        // ("fizess", not "fizets"), and t-after-SIBILANT stems (választ,
-        // fest, ...), whose imperative drops the "t" and geminates the
-        // sibilant instead ("válassz", "fess") — both cross-checked
-        // externally this follow-up (see _imperativeMarker's own
-        // comment for sources). Still declined entirely, in both
-        // directions: the "sz" digraph on its own (a genuine sz-final
-        // stem's imperative, not one whose "sz" came from an absorbed
-        // "t") — the most common sz-final verbs (eszik, iszik) are
-        // already covered via IRREGULAR_VERBS, so this is a narrow gap.
+        // remainder's tail RECONSTRUCTED (a "t" or "z" put back), not
+        // just accepted-or-rejected as-is: single-t-after-vowel stems
+        // OUTSIDE the "-ít"/sonorant class (fizet, nevet, siet, lát,
+        // ...), whose imperative replaces the stem's own "t" with a
+        // doubled "ss" ("fizess", not "fizets"); t-after-SIBILANT stems
+        // (választ, fest, ...), whose imperative drops the "t" and
+        // geminates the sibilant instead ("válassz", "fess"); and
+        // genuine sz-final stems (nyugszik, ...), whose imperative
+        // geminates as an inserted "s" before the stem's own "sz"
+        // ("nyugsszon") — all three cross-checked externally this
+        // follow-up (see _imperativeMarker's own comment for sources).
     ])
     .sort((a, b) => b[0].length - a[0].length);
 
@@ -1080,17 +1078,20 @@ const HungarianMorphology = (function () {
         return empty;
     }
 
-    // Decodes the two imperative t-final classes _imperativeMarker's own
-    // comment describes as needing "the remainder's tail reconstructed",
-    // not just accepted-or-rejected: t-after-vowel stems (fizet -> the
-    // "t" replaced by doubled "ss") and t-after-sibilant stems (választ
-    // -> the "t" dropped, the sibilant doubled instead). Both classes
-    // leave a word whose ending literally isn't a valid suffix of the
-    // real headword — no strip of it can ever land back on "fizet" or
-    // "választ" — so unlike everything else in this file, this doesn't
-    // try suffixes from a table; it tries STRIPPING the marker+ending
-    // combination, then PUTTING A "t" (and, for the sibilant case, the
-    // sibilant that "t" replaced) BACK before checking the dictionary.
+    // Decodes every imperative class _imperativeMarker's own comment
+    // describes as needing "the remainder's tail reconstructed", not
+    // just accepted-or-rejected: t-after-vowel stems (fizet -> the "t"
+    // replaced by doubled "ss"), t-after-sibilant stems (választ -> the
+    // "t" dropped, the sibilant doubled instead), and genuine sz-final
+    // stems (nyugszik -> "j" geminating as an inserted "s" before the
+    // stem's own "sz"). All three leave a word whose ending literally
+    // isn't a valid suffix of the real headword — no strip of it can
+    // ever land back on "fizet"/"választ"/"nyugszik" — so unlike
+    // everything else in this file, this doesn't try suffixes from a
+    // table; it tries STRIPPING the marker+ending combination, then
+    // PUTTING BACK whatever the marker had replaced or absorbed (a "t",
+    // the sibilant "t" replaced, or the "z" a doubled "s" swallowed)
+    // before checking the dictionary.
     //
     // AFTER_MARKER lists what comes after the doubled letters for every
     // cell this covers, independent of which doubling produced them
@@ -1120,8 +1121,16 @@ const HungarianMorphology = (function () {
     // between the vowel-preceded-t class (reconstructs as bare "t") and
     // the s-preceded-t class (reconstructs as "st"), so both are tried;
     // whichever one resolves against the dictionary wins, same as every
-    // other genuine ambiguity in this file.
-    const T_REPLACED_GEMINATIONS = [['ss', 't'], ['ss', 'st'], ['zz', 'zt'], ['ssz', 'szt']];
+    // other genuine ambiguity in this file. The last pair, ['sz','z'],
+    // isn't a "doubling" in the same sense as the others — it's a
+    // genuine sz-FINAL stem (no absorbed "t" at all), whose gemination
+    // ("s"+its own "sz") still can't be recovered by plain suffix-
+    // stripping the way a single-letter sibilant can: "nyugsszon" needs
+    // "sz"+"on" stripped (leaving "nyugs") and a "z" put back (not "t")
+    // to reach the real headword "nyugsz" — the same sandwiched-letter
+    // problem as the "t"-absorbing classes, just missing a "z" instead
+    // of a "t", so it rides along in this same reconstruction loop.
+    const T_REPLACED_GEMINATIONS = [['ss', 't'], ['ss', 'st'], ['zz', 'zt'], ['ssz', 'szt'], ['sz', 'z']];
     // Definite 2sg is its own special case, not covered by the loop
     // below: _singularizeMarker's own comment explains why it takes a
     // SINGULAR marker rather than doubling like every other cell, so the
@@ -1320,16 +1329,23 @@ const HungarianMorphology = (function () {
             }
         }
 
-        // 1b. imperative forms of a t-final stem whose "t" was replaced
-        // or absorbed during assimilation ("fizess" -> "fizet",
-        // "válassz" -> "választ") — see decodeTReplacedImperative()'s
-        // own comment for why this needs its own reconstruction step
-        // rather than a plain suffix-table row like everything above.
+        // 1b. imperative forms of a t-final or genuine-sz-final stem
+        // whose ending was replaced or absorbed during assimilation
+        // ("fizess" -> "fizet", "válassz" -> "választ", "nyugsszon" ->
+        // "nyugszik") — see decodeTReplacedImperative()'s own comment
+        // for why this needs its own reconstruction step rather than a
+        // plain suffix-table row like everything above. Tries the "-ik"
+        // form too, same as the main VERB_SUFFIXES loop above does for
+        // every other verb suffix — "nyugsz" isn't itself the headword,
+        // "nyugszik" is (caught live: the very first version of this
+        // reconstruction step forgot this and failed to decode any
+        // genuine sz-final -ik verb at all).
         for (const c of decodeTReplacedImperative(word)) {
-            const sense = verbSense(dictionary[c.lemma]);
-            if (!sense) continue;
             const label = [TENSE_LABELS.imp, PERSON_LABELS[c.person][c.number]].join(', ');
-            addFromLemma(c.lemma, sense, label);
+            const sense = verbSense(dictionary[c.lemma]);
+            if (sense) addFromLemma(c.lemma, sense, label);
+            const ikSense = verbSense(dictionary[c.lemma + 'ik']);
+            if (ikSense) addFromLemma(c.lemma + 'ik', ikSense, label);
         }
 
         // 2. case suffix, optionally stacked over a possessive/plural form
@@ -1862,10 +1878,13 @@ const HungarianMorphology = (function () {
     //
     // The "j" marker assimilates into the stem's own final consonant(s)
     // in four different ways depending on what the stem ends in:
-    //   - a sibilant (s/z; the "sz" digraph is its own case, see below):
-    //     "j" geminates into a doubled copy of that consonant, digraph-
-    //     aware the same way _conjugatePresentDefinite's own sibilant
-    //     assimilation already is ("olvas" -> "olvass-", "néz" -> "nézz-")
+    //   - a sibilant (s/z, OR the "sz" digraph — digraph-aware doubling,
+    //     "sz" geminating as "s"+"sz"="ssz", not the whole digraph
+    //     repeated): "j" geminates into a doubled copy, same mechanic
+    //     _conjugatePresentDefinite's own sibilant assimilation already
+    //     uses ("olvas" -> "olvass-", "néz" -> "nézz-", and a genuine
+    //     sz-final stem -> "...ssz-", covered as of 2026-08-29's third
+    //     follow-up — see this function's own history above)
     //   - "t" preceded by a SONORANT (r/l/n/ny/j/ly — reusing
     //     PAST_TYPE_I_SONORANTS from the past-tense classifier above,
     //     which this session's external check didn't directly re-verify
@@ -1882,18 +1901,15 @@ const HungarianMorphology = (function () {
     //   - "t" preceded by any OTHER vowel (fizet, lát, nevet, siet, ...):
     //     the "t" is dropped and replaced outright with a doubled "ss"
     //     ("fizet" -> "fizess-", "lát" -> "láss-")
-    // Declined (returns null) rather than guessed: the "sz" digraph
-    // specifically (a genuine sz-final stem's "j" geminates as an
-    // inserted "s" before the existing "sz", giving "...ssz" — the most
-    // common sz-final verbs, eszik/iszik, are already covered via
-    // IRREGULAR_VERBS, so this is a narrow remaining gap).
     //
     // Returns { base, marker } — base is the stem to actually attach an
-    // ending to (the original stem, unless the sibilant-preceded-"t"
-    // case shortened it by dropping the "t"), or null if undecidable.
+    // ending to (the original stem, unless a "t"-preceded-by-consonant
+    // case shortened it by dropping the "t"). Every stem-final-consonant
+    // shape this function branches on now resolves to a real marker —
+    // it never itself declines; callers still separately decline when
+    // _harmonyClass can't determine the stem's vowel harmony at all.
     function _imperativeMarker(stem) {
         if (stem.endsWith('ít')) return { base: stem, marker: 's' };
-        if (stem.endsWith('sz')) return null; // sz-digraph gemination — declined
         if (stem.endsWith('t')) {
             const before = stem.slice(0, -1);
             const beforeUnit = _finalConsonantUnit(before);
@@ -1908,8 +1924,20 @@ const HungarianMorphology = (function () {
             return { base: before, marker: 'ss' }; // vowel-preceded: "t" replaced by doubled "ss"
         }
         if (_isSibilantFinal(stem)) {
+            // Digraph-aware doubling ("sz" geminates as "s"+"sz" = "ssz",
+            // not the whole digraph repeated as "szsz") — same formula as
+            // the sibilant-preceded-"t" branch just above, and the same
+            // rule _conjugatePresentDefinite's own sibilant assimilation
+            // already uses. A genuine sz-final stem (not one with an
+            // absorbed "t") was declined here through 2026-08-29's second
+            // follow-up — this fixes a latent bug that branch was masking
+            // (the un-fixed formula below would have doubled the WHOLE
+            // digraph, "szsz", not "ssz", had a caller ever reached it for
+            // an sz-final stem) and lets sz-final stems flow through
+            // rather than being special-cased away.
             const unit = _finalConsonantUnit(stem);
-            return { base: stem.slice(0, -unit.length), marker: unit + unit };
+            const geminated = unit.length === 1 ? unit + unit : unit[0] + unit;
+            return { base: stem.slice(0, -unit.length), marker: geminated };
         }
         return { base: stem, marker: 'j' };
     }
@@ -2302,14 +2330,23 @@ const HungarianMorphology = (function () {
 //     table row — see decodeTReplacedImperative()'s own comment for why
 //     "fizess"/"válassz"-shaped words need their tail reconstructed
 //     rather than simply stripped.
-//   - still declined, narrower than before: the "sz" digraph specifically
-//     (a genuine sz-final stem geminates as an inserted "s" before the
-//     existing "sz", not decodable by this table's plain suffix-
-//     stripping, nor by decodeTReplacedImperative's reconstruction, which
-//     is for a DIFFERENT situation — an absorbed "t", not a bare sz-final
-//     stem with no "t" involved at all) — a narrow gap since the most
-//     common sz-final verbs (eszik, iszik) are already covered via
-//     IRREGULAR_VERBS
+//   - the "sz" digraph (2026-08-29, fourth pass): a genuine sz-final stem
+//     (e.g. nyugszik) geminates the same way as any other sibilant-final
+//     stem — "sz" -> "ssz" (digraph-aware: "s"+"sz", not the whole
+//     digraph repeated as "szsz") — handled by _imperativeMarker's
+//     generic sibilant branch like s/z stems always were. Decoding it is
+//     NOT plain suffix-stripping, though: the stem's own "z" ends up
+//     sandwiched between the inserted "s" and the ending (e.g.
+//     "nyugsszon"), unreachable by trailing-suffix removal alone — so it
+//     reuses decodeTReplacedImperative's reconstruction table (a
+//     ['sz','z'] row: strip "ssz"+ending, append back the "z") even
+//     though no "t" is involved, because the recoverability problem is
+//     the same shape as the absorbed-"t" classes. Also needed
+//     analyze()'s decodeTReplacedImperative call site to try the
+//     dictionary's "...ik" headword (e.g. "nyugsz" -> "nyugszik"), the
+//     same -ik fallback the main suffix loop already does, since most
+//     sz-final verbs are -ik verbs whose bare stem isn't its own
+//     headword.
 //   - IRREGULAR_VERBS' conditional/imperative entries for the 11
 //     suppletive verbs are still indefinite-only, even where vesz/tesz/
 //     hisz/visz genuinely have distinct definite forms in real Hungarian
