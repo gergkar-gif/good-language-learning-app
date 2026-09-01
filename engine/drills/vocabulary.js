@@ -49,8 +49,17 @@ const VocabularyDriller = (function () {
     let _phase = PHASE.SETTINGS;
     let _container = null;
 
+    // Canonical CEFR ordering for the level picker — only levels the course
+    // actually has lesson decks for are ever shown (see _load()), so this
+    // never hardcodes a language's highest level and silently drops it as
+    // new levels are added (found 2026-09-01: the picker only ever offered
+    // "All levels"/A1/A2, hardcoded, so a course's B1 words — real content,
+    // reachable only via "All levels" — had no dedicated filter option).
+    const CEFR_ORDER = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
+
     let _words = null;        // decks.json -> words { lemma: {en, pos} }
     let _wordLevels = null;   // lemma -> 'A1' | 'A2' | ... (from lesson decks)
+    let _levels = null;       // distinct levels this course's lesson decks use, CEFR order
     let _pairs = null;        // translation-index.json -> pairs[]
     let _contextIndex = null; // lemma -> [{ sentence, english, form, inflected }]
 
@@ -99,11 +108,14 @@ const VocabularyDriller = (function () {
         _words = deckData.words || {};
         _pairs = translationIndex.pairs || [];
         _wordLevels = {};
+        const seenLevels = new Set();
         (deckData.decks || []).filter(d => d.kind === 'lesson').forEach(d => {
+            if (d.level) seenLevels.add(d.level);
             (d.lemmas || []).forEach(lemma => {
                 if (!(lemma in _wordLevels)) _wordLevels[lemma] = d.level;
             });
         });
+        _levels = CEFR_ORDER.filter(l => seenLevels.has(l));
         _contextIndex = _buildContextIndex();
     }
 
@@ -378,8 +390,7 @@ const VocabularyDriller = (function () {
                     <label for="vd-level">Level</label>
                     <select id="vd-level" class="vb-select">
                         <option value="all">All levels</option>
-                        <option value="A1">A1</option>
-                        <option value="A2">A2</option>
+                        ${_levels.map(l => `<option value="${l}">${l}</option>`).join('')}
                     </select>
                 </div>
 
