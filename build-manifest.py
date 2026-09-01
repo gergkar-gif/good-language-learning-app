@@ -485,6 +485,9 @@ LANG_UNIT_TITLES = {
         "a2": [
             "Daily Life & Routines",
             "Time, Dates & Schedules",
+            "Family & Family Life",
+            "People & Personality",
+            "Friends & Relationships",
         ],
     },
 }

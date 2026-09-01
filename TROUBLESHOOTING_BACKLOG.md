@@ -924,3 +924,26 @@ a code read. 7 real findings, all fixed and re-verified live:
   pair, unaffected since it already resolves via real word-index data),
   "vez"/"veces", and garbage input are all unchanged, with no console
   errors.
+
+## HU Reader — infinitive forms don't resolve at all (found 2026-08-29)
+
+- [ ] **Tapping a Hungarian verb's infinitive (any verb) returns zero
+  readings.** Found while authoring A2 Unit 5's "making friends"
+  vocabulary: `Lexicon.lookup('barátkozni')` (infinitive of the new verb
+  `barátkozik`) came back empty. Not specific to that verb or to -ik
+  verbs — spot-checked across completely unrelated, long-established
+  verbs and the gap is total: `ismerkedni`, `zuhanyozni`, `reggelizni`,
+  `lakni`, `olvasni`, `főzni` (a mix of -ik and perfectly regular verbs,
+  several taught since A1) all return zero readings too. This means
+  `HungarianMorphology.analyze()` has no reconstruction path for the
+  infinitive suffix (-ni/-ani/-eni) at all, for any verb — a real,
+  general gap, not something introduced by this session's A2 content.
+  **Worked around, not fixed**, in what I authored: avoided using any
+  infinitive form as a REQUIRED-to-resolve exercise answer (grammar-file
+  prose examples still use infinitives naturally, e.g. "Szeretek
+  barátkozni", since those are receptive-only, not something the Reader
+  needs to resolve). Left for whoever next touches
+  `engine/morphology/hungarian.js` — likely a straightforward addition
+  once picked up (strip -ni/-ani/-eni, reverse the same orthographic
+  changes already handled for other suffixes, validate against the
+  dictionary), but out of scope for a content-authoring session.

@@ -118,9 +118,24 @@ work).
 
 ## Status
 
-Only Unit 1 is built (lessons + exercises + vocab + grammar + story,
-2026-08-29). Units 2-30 exist only as the thin title/theme/grammar
-sketch in `a2-curriculum-draft.json` — building each out is comparable
-in scope to the LatAm B1 unit-by-unit rebuild done earlier. This doc is
-the throughline to keep future units consistent with as they get built,
-whichever session builds them.
+Units 1-5 are built (lessons + exercises + vocab + grammar + story,
+2026-08-29) — introducing Károly's parents Gábor and Ildikó (Unit 3),
+and Meg's own colleague-turned-friend Petra plus her neighbor Tamás and
+new friend Zsófia (Units 4-5). Units 6-30 exist only as the thin
+title/theme/grammar sketch in `a2-curriculum-draft.json` — building
+each out is comparable in scope to the LatAm B1 unit-by-unit rebuild
+done earlier. This doc is the throughline to keep future units
+consistent with as they get built, whichever session builds them.
+
+Grammar actually taught so far, beyond `a2-curriculum-draft.json`'s
+sketch, for whoever builds Unit 6 next: months (all 12), ordinal
+numbers 1st-10th and dates with -án/-én, -tól/-től ... -ig extended
+from clock time to days/months plus mettől/meddig, -nál/-nél ("at
+someone's place"), the 3rd-person possessive suffix -a/-e/-ja/-je
+(including the fiú->fia irregular) and its plural-possessed -i form,
+the -s "having X" adjective suffix, the relative pronoun aki, olyan...
+mint comparison (real comparative -bb is still untaught, deliberately
+deferred per the curriculum draft), nem csak... hanem... is, keresztül,
+egymással, and the -kozik/-kedik reciprocal verb pattern (ismerkedik,
+barátkozik). Past tense is still untaught until Unit 23 — every example
+sentence across Units 1-5 stays present-tense only.
