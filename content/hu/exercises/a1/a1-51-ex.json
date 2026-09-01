@@ -45,10 +45,10 @@
       "id": "a1-51-intro-2",
       "type": "multiple-choice",
       "category": "introduce",
-      "question": "Which form means “to the kitchen”?",
+      "question": "Which form means “in the kitchen”?",
       "options": [
-        "a konyhába",
         "a konyhában",
+        "a konyhába",
         "a konyha"
       ],
       "correct": 0,
@@ -88,7 +88,7 @@
       "id": "a1-51-controlled-2",
       "type": "fill-blank",
       "category": "controlled",
-      "sentence": "A könyv a ____ van.",
+      "sentence": "A könyv a ____ van. (in the room)",
       "answer": "szobában",
       "teaches": [
         "location-with-ban-ben",
@@ -101,9 +101,9 @@
       "category": "controlled",
       "question": "Which is correct?",
       "options": [
-        "A táska az asztalon van.",
-        "A táska az asztalban van.",
-        "A táska asztal van."
+        "A táska a szobában van.",
+        "A táska a szobába van.",
+        "A táska szoba van."
       ],
       "correct": 0,
       "teaches": [
@@ -160,9 +160,9 @@
       "category": "practice",
       "question": "Which answer fits Hol van a táska?",
       "options": [
-        "Az asztalon van.",
-        "Az asztalba megy.",
-        "Az asztal."
+        "A szobában van.",
+        "A szobába megy.",
+        "A szoba."
       ],
       "correct": 0,
       "teaches": [
@@ -174,7 +174,7 @@
       "id": "a1-51-practice-3",
       "type": "fill-blank",
       "category": "practice",
-      "sentence": "Hol van a ____?",
+      "sentence": "Hol van a ____? (the bag)",
       "answer": "táska",
       "teaches": [
         "location-with-ban-ben",
@@ -263,7 +263,7 @@
       "prompt": [
         {
           "speaker": "Mariann",
-          "text": "Mit csinálsz?"
+          "text": "Hol van a táska?"
         },
         {
           "speaker": "Meg",
@@ -271,9 +271,9 @@
         }
       ],
       "options": [
-        "Az asztalon van.",
-        "Az asztalba megy.",
-        "Az asztal."
+        "A szobában van.",
+        "A szobába van.",
+        "A szoba."
       ],
       "correct": 0,
       "teaches": [
@@ -287,8 +287,8 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Write two short Hungarian sentences using Inside Places.",
-          "answer": "('szoba', 'room') ('konyha', 'kitchen'). ('fürdőszoba', 'bathroom') ('hálószoba', 'bedroom')."
+          "prompt": "Say \"The bag is in the kitchen.\" in Hungarian.",
+          "answer": "A táska a konyhában van."
         }
       ],
       "teaches": [
@@ -302,7 +302,7 @@
       "category": "writing",
       "template": [
         {
-          "prompt": "Write one short Hungarian response to a practical question from today's lesson.",
+          "prompt": "Say \"It's in the room.\" in Hungarian.",
           "answer": "A szobában van."
         }
       ],
