@@ -139,3 +139,46 @@ deferred per the curriculum draft), nem csak... hanem... is, keresztül,
 egymással, and the -kozik/-kedik reciprocal verb pattern (ismerkedik,
 barátkozik). Past tense is still untaught until Unit 23 — every example
 sentence across Units 1-5 stays present-tense only.
+
+## Grammar plan for Units 6-10 (built 2026-09-02, via 5 parallel sessions)
+
+Units 6-10 were built together, so the grammar had to be pre-allocated
+up front (one new grammar cluster per unit, no overlap, no forward
+reference) rather than discovered lesson by lesson:
+
+- **Unit 6 (Home & Housing)**: the surface locative case trio —
+  -on/-en/-ön ("on/at", superessive), -ra/-re ("onto", sublative),
+  -ról/-ről ("off of", delative). Completes Hungarian's three locative
+  trios alongside A1's -ban/-ben/-ba/-be/-ból/-ből ("in") and this same
+  unit's -nál/-nél/-tól/-től ("at [someone's]"/"from", already taught).
+  New vocab: furniture and rooms (bútor, polc, szekrény, fal, padló,
+  mennyezet, erkély, emelet, földszint, etc.) on top of A1's szoba/
+  konyha/fürdőszoba/hálószoba/nappali/ablak/ajtó. Plot: Meg and Károly
+  move into their own flat.
+- **Unit 7 (Neighbourhood & City)**: -hoz/-hez/-höz ("to/toward",
+  allative) — completes the at/to/from trio with A1-A2's -nál/-nél and
+  -tól/-től. New vocab: neighbourhood/city places (pékség, sarok,
+  negyed, szomszédság, etc.). Plot: settling into the neighbourhood.
+- **Unit 8 (Shopping & Prices)**: numbers 11 and up (flagged in
+  `a2-curriculum-draft.json` as needing to land early — this is that
+  landing point), -ért ("for/in exchange for", the price case), basic
+  quantity expressions. Comparison in the "Comparing Products" lesson
+  reuses A2 Unit 3's already-taught olyan... mint pattern — real
+  comparative -bb stays deliberately deferred (see below). Plot:
+  confidently shopping and comparing prices.
+- **Unit 9 (Food & Eating Habits)**: -szor/-szer/-ször ("times",
+  multiplicative numerals: egyszer, kétszer, háromszor...) for
+  frequency, plus definite-vs-indefinite object conjugation formalized
+  as an explicit taught grammar point (eszem levest vs. eszem a levest)
+  rather than the implicit exposure it's had since A1. Plot: adopts
+  Hungarian meal habits (Sunday family lunch).
+- **Unit 10 (Cooking)**: general imperative mood (all persons; A1 only
+  ever taught one irregular imperative, menj) and -val/-vel
+  ("with", instrumental) — both natural for recipe instructions. Every
+  imperative form used was verified live against the Lexicon/morphology
+  engine before landing, given Hungarian's imperative consonant-
+  assimilation rules (t+j→ts, d+j→gy, s+j→ss, sz+j→ssz, z+j→zz, etc.).
+  Plot: Károly's mother teaches Meg a family recipe (gulyás).
+
+Comparative -bb is still untaught after Unit 10 — still deliberately
+deferred for whoever builds Unit 11 onward.

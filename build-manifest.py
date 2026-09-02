@@ -488,6 +488,11 @@ LANG_UNIT_TITLES = {
             "Family & Family Life",
             "People & Personality",
             "Friends & Relationships",
+            "Home & Housing",
+            "Neighbourhood & City",
+            "Shopping & Prices",
+            "Food & Eating Habits",
+            "Cooking",
         ],
     },
 }
