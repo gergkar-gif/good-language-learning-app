@@ -661,6 +661,42 @@ track known bugs in existing content rather than things not yet built.
   (used for every XP-earning action, reviews included) still fires
   independently and was left alone — this adds a considered restatement
   in the close-of-lesson screen, not a replacement for the real-time one.
+- [x] XP is only ever a running total — no tiers, no moment where anything
+  happens. Feedback: "where are the levels, when does one level up."
+  Deliberately not called a "level" in the build, though — this app
+  already has one of those (A1/A2/B1/B2/C1, the CEFR course levels), and
+  reusing the word for an XP tier would make two unrelated things both
+  say "Level 4." Settled on **Rank** instead, cosmetic only (no unlocks).
+  **Built 2026-09-02**:
+  - `engine/xp.js`: `rankThreshold(rank)`/`rankForXP(xp)`/`getRank()`.
+    Escalating thresholds (100, 300, 600, 1000, 1500, 2100, 2800, 3600,
+    4500 for ranks 1-10 — `100 * n * (n+1) / 2`) rather than a flat "every
+    100 XP", so early ranks come in a couple of days at this file's own
+    "normal day ~30-100 XP" calibration and later ones take real
+    sustained effort — the count never turns into daily noise once totals
+    climb. Purely numeric ("Rank 4"), no named tiers.
+  - Shown in the three places XP already appeared: Home's header
+    (`updateXPHeader()`, now "Rank 4 · 1,234 XP" instead of bare XP),
+    Journey's XP card (Rank is now the headline reading with a progress
+    meter to the next one, reusing the card's own existing `meter()`
+    helper; raw XP total moves into the facts list alongside reviews/
+    stories rather than being dropped), and a rank-up line in the
+    lesson-complete screen, reusing the exact same plain-text treatment
+    as the milestone line built alongside it — `finishLesson()` captures
+    the rank just before `recordLessonCompleted()` awards this lesson's
+    XP, `renderLessonSummary()` compares it against the rank after, and
+    only announces "Rank up! You're now Rank N." when they actually
+    differ. Gated on `firstTime` the same way the milestone line is, so a
+    redo never shows a stale rank-up.
+  - Verified live via Playwright: seeded 90 XP (10 short of the Rank 2
+    threshold at 100) — Home read "Rank 1 · 90 XP", Journey's XP card
+    showed "Rank 1", a meter at 90%, and "90 / 100 XP to Rank 2". Finishing
+    a lesson (awards 20 XP, 90 → 110) correctly showed "Rank up! You're
+    now Rank 2." in the summary, and Home read "Rank 2 · 110 XP"
+    afterward. Redoing an already-completed lesson (no XP re-awarded)
+    showed no rank-up line and no XP stat, confirmed against
+    `localStorage`'s XP total staying unchanged at 90. No console/page
+    errors in any run.
 
 ## Interface & platform
 

@@ -1115,11 +1115,17 @@ async function finishLesson() {
         ? markLessonComplete(currentLesson.id)
         : true;
 
+    // Captured before recordLessonCompleted() awards this lesson's XP, so
+    // the summary can tell whether finishing THIS lesson is what pushed
+    // the rank over a threshold — recordLessonCompleted() already updates
+    // the shared xpData by the time renderLessonSummary() reads it.
+    const rankBefore = (typeof getRank === 'function') ? getRank().rank : null;
+
     if (typeof recordLessonCompleted === 'function') {
         recordLessonCompleted(firstTime);
     }
 
-    await renderLessonSummary(firstTime);
+    await renderLessonSummary(firstTime, rankBefore);
 }
 
 // Which of My Journey's milestones this exact completion just crossed —
@@ -1235,12 +1241,13 @@ function summaryStreakLine() {
 //
 // firstTime tells apart a real completion from a redo (finishLesson()
 // already knows this from markLessonComplete()'s own return value): XP was
-// only actually awarded on a first completion, and a milestone can only be
-// newly crossed once, so both are skipped on a redo rather than showing a
-// stale or zeroed stat. The words-just-learned section isn't gated the
-// same way — replaying a lesson to reinforce its vocabulary is a real
-// reason to revisit it, and the words taught don't change on a redo.
-async function renderLessonSummary(firstTime) {
+// only actually awarded on a first completion, and a milestone (or a rank,
+// via rankBefore — see finishLesson()) can only be newly crossed once, so
+// all three are skipped on a redo rather than showing a stale or zeroed
+// stat. The words-just-learned section isn't gated the same way —
+// replaying a lesson to reinforce its vocabulary is a real reason to
+// revisit it, and the words taught don't change on a redo.
+async function renderLessonSummary(firstTime, rankBefore) {
     const container = document.getElementById('lesson-content');
     if (!container) return;
 
@@ -1255,6 +1262,8 @@ async function renderLessonSummary(firstTime) {
 
     const words = await collectLessonVocabulary(currentLesson);
     const milestones = firstTime ? newlyReachedMilestones() : [];
+    const rankAfter = (typeof getRank === 'function') ? getRank().rank : null;
+    const rankedUp = firstTime && rankBefore != null && rankAfter != null && rankAfter > rankBefore;
 
     const statsHtml = (accuracy === null && !elapsed && !xpEarned) ? '' : `
         <div class="lsn-summary-stats">
@@ -1287,6 +1296,7 @@ async function renderLessonSummary(firstTime) {
             ${Art.svg('summit', 'lsn-summary-art')}
             ${statsHtml}
             ${summaryStreakLine()}
+            ${rankedUp ? `<p class="lsn-summary-milestone">Rank up! You're now Rank ${rankAfter}.</p>` : ''}
             ${summaryMilestonesHtml(milestones)}
             ${summaryWordsHtml(words)}
         </div>

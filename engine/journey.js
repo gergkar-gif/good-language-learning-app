@@ -243,10 +243,22 @@ const Journey = (function () {
         `);
     }
 
+    // Rank leads (it's the new headline reading of the same total XP this
+    // card always showed), with the raw number demoted into the facts list
+    // alongside reviews/stories rather than dropped — see engine/xp.js's
+    // getRank() for why this is deliberately not called a "level."
     function xpBlock(d) {
+        const rank = (typeof getRank === 'function') ? getRank() : null;
+        const headline = rank ? `
+            <p class="jr-big">Rank ${rank.rank}</p>
+            ${meter(rank.percent)}
+            <p class="jr-next">${rank.xpIntoRank} / ${rank.xpForNextRank} XP to Rank ${rank.rank + 1}</p>
+        ` : `<p class="jr-big">${d.totalXP.toLocaleString()}<span class="jr-of"> XP</span></p>`;
+
         return card('XP', 'Earned for reviews, reading and lessons.', `
-            <p class="jr-big">${d.totalXP.toLocaleString()}<span class="jr-of"> XP</span></p>
+            ${headline}
             <ul class="jr-facts">
+                <li><strong>${d.totalXP.toLocaleString()}</strong> XP earned</li>
                 <li><strong>${d.reviews}</strong> ${plural(d.reviews, 'review')} completed</li>
                 <li><strong>${d.storiesRead}</strong> ${plural(d.storiesRead, 'story', 'stories')} read</li>
             </ul>

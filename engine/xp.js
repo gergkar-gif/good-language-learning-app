@@ -110,6 +110,57 @@ function recordNewWord() {
 }
 
 // ============================================
+// RANK
+// ============================================
+// A cosmetic reading of the same XP total, not a second currency — nothing
+// unlocks at a rank, it's a different lens on the one honest number this
+// app already keeps. Escalating thresholds (100, 300, 600, 1000, 1500...)
+// rather than a flat "every 100 XP": early ranks come in a couple of days
+// at the normal-day pace this file's own calibration comment describes,
+// later ones take real sustained effort, so the count never turns into
+// daily noise once totals get large. Purely numeric ("Rank 4") rather than
+// named tiers — naming dozens of tiers would be more decoration than the
+// rest of this app allows itself, and the number already carries the
+// meaning on its own.
+//
+// Deliberately distinct from this app's other "level" — A1/A2/B1/B2/C1,
+// the CEFR course levels shown throughout Lessons. Those measure what a
+// learner knows; Rank measures how much they've shown up. Never call this
+// a "level" anywhere in the UI, for exactly that reason.
+const RANK_STEP = 100; // threshold(n) - threshold(n-1) grows by this each rank
+
+// XP total required to REACH a given rank. Rank 1 needs 0 — everyone
+// starts there. threshold(2) = 100, threshold(3) = 300, threshold(4) =
+// 600, threshold(5) = 1000 ...
+function rankThreshold(rank) {
+    const n = rank - 1;
+    return RANK_STEP * n * (n + 1) / 2;
+}
+
+function rankForXP(xp) {
+    let rank = 1;
+    while (rankThreshold(rank + 1) <= xp) rank++;
+    return rank;
+}
+
+// Everything a screen needs about the current rank in one call: the rank
+// itself, and how far into it the learner is, for a progress meter toward
+// the next one.
+function getRank() {
+    const xp = xpData.total;
+    const rank = rankForXP(xp);
+    const floor = rankThreshold(rank);
+    const ceiling = rankThreshold(rank + 1);
+    return {
+        rank: rank,
+        xp: xp,
+        xpIntoRank: xp - floor,
+        xpForNextRank: ceiling - floor,
+        percent: Math.round(((xp - floor) / (ceiling - floor)) * 100)
+    };
+}
+
+// ============================================
 // AWARDING
 // ============================================
 function awardXP(amount, source, reason) {
@@ -288,7 +339,7 @@ function getConsistency(windowDays) {
 // ============================================
 function updateXPHeader() {
     const xpEl = document.getElementById('header-xp');
-    if (xpEl) xpEl.textContent = xpData.total + ' XP';
+    if (xpEl) xpEl.textContent = `Rank ${getRank().rank} · ${xpData.total} XP`;
 
     const activities = getDailyActivities();
 
