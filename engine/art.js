@@ -86,8 +86,10 @@ const Art = (function () {
         //
         // Each node is a place the learner actually stood. The line runs in
         // from the left without one, because the beginning is not an
-        // achievement. The orange square stands off the last node rather
-        // than on it: a destination ahead, not a badge for what's done.
+        // achievement. A small pennant flies off the last node rather than
+        // sitting on it: a destination ahead, not a badge for what's done —
+        // the same notched-pennant shape as the bug-report flag icon, just
+        // scaled up and planted on its own pole.
         ascent: `
             <line class="ink-hair" x1="40" y1="86" x2="280" y2="86"/>
             <path class="ink-rule" d="M44 78C76 78 76 56 108 56C128 56 128 62 148 62C170 62 170 42 192 42C214 42 214 32 236 32"/>
@@ -95,8 +97,8 @@ const Art = (function () {
             <circle class="ink-solid" cx="148" cy="62" r="4"/>
             <circle class="ink-solid" cx="192" cy="42" r="4"/>
             <circle class="ink-solid" cx="236" cy="32" r="4"/>
-            <line class="ink-rule" x1="236" y1="32" x2="236" y2="14"/>
-            <rect class="accent-solid" x="228" y="4" width="16" height="16"/>
+            <line class="ink-rule" x1="236" y1="32" x2="236" y2="8"/>
+            <path class="accent-solid" d="M236 8 256 8 248 13.5 256 19 236 19Z"/>
         `,
 
         // Home — the door the whole app is named for. A threshold standing
@@ -184,14 +186,15 @@ const Art = (function () {
             <path class="ink-line" d="M7 4h11a1.5 1.5 0 0 1 1.5 1.5v13"/>
         `,
 
-        // My Journey — the winding climb, reduced to two bends and a square
+        // My Journey — the winding climb, reduced to two bends and a flagged
         // destination. The dip survives at illustration size but not at this
         // one, where it would read as a wobble in the stroke rather than as
-        // a setback.
+        // a setback. The flag is one closed triangle rather than the hero's
+        // notched pennant — a swallowtail notch would just blur out at this
+        // size, so the plain point is what actually reads as "flag" here.
         journey: `
             <path class="ink-line" d="M2.5 19.5c4 0 3.5-5.5 7-5.5s3-6 6.5-6"/>
-            <line class="ink-line" x1="16" y1="8" x2="16" y2="4"/>
-            <rect class="ink-line" x="13" y="1" width="6" height="6"/>
+            <path class="ink-line" d="M16 8V2l5 2.5Z"/>
         `,
 
         // Reader — an open book, the Library's shelf turned to face you.
