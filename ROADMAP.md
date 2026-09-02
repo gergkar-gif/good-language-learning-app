@@ -757,9 +757,12 @@ track known bugs in existing content rather than things not yet built.
   **Tier 1** (cheap, reuses data already shaped right — built
   **2026-09-02**), **Tier 2** (one new "word → lesson" reverse index would
   unlock three links: Decks→Lessons, Reader→Lessons, Workshop→Lessons —
-  scoped but not built), **Tier 3** (Reader↔Workshop and Decks/Workshop→
-  Reader — would need per-story word/grammar indexing that doesn't exist;
-  flagged, parked). Tier 1, built:
+  built **2026-09-02**, all three consumers wired in), **Tier 3**
+  (Reader↔Workshop and Decks/Workshop→Reader — would need per-story
+  word/grammar indexing that doesn't exist; flagged, then **scrapped by
+  decision, 2026-09-02** rather than left parked — Reader stays a
+  read-only pillar with no cross-links back into Workshop or forward
+  recommendations into specific stories). Tier 1, built:
   - **Workshop → Decks**: only the Vocabulary Driller fits this cleanly —
     checked Translation and Listening drillers first and found neither
     carries a `lemma` per exercise at all (`translation-index.json` is
