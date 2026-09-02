@@ -72,6 +72,7 @@ const VocabularyDriller = (function () {
     let _queueIndex = 0;
     let _seen = 0;
     let _correct = 0;
+    let _missed = []; // {lemma, translation, pos} for each distinct word missed this session
 
     let _timerInterval = null;
     let _endTime = 0;
@@ -351,13 +352,34 @@ const VocabularyDriller = (function () {
     // One random applicable type per word, so a session mixes all six
     // naturally instead of a fixed type dominating because it happens to
     // be tried first.
+    // The source word rides along on the built exercise as _word — none of
+    // the BUILDERS keep it (their output is GrammarRunner's own {kind,
+    // question, options, ...} shape), but the session loop needs the
+    // lemma/en/pos back to track a miss for the "add to a deck" link.
+    // GrammarRunner only reads the fields it knows about, so an extra one
+    // is harmless.
     function _buildExerciseFor(word) {
         const candidates = BUILDERS.map(fn => fn(word)).filter(Boolean);
-        return candidates.length ? _sample(candidates) : null;
+        if (!candidates.length) return null;
+        const exercise = _sample(candidates);
+        exercise._word = word;
+        return exercise;
     }
 
     function _buildPool(level) {
         return _wordList(level).map(_buildExerciseFor).filter(Boolean);
+    }
+
+    // A pool built directly from caller-supplied words (Decks' review
+    // summary, when a session leaves some words shaky) rather than from
+    // decks.json's curriculum table via _wordList() — a custom My Deck
+    // word wouldn't be in that table at all, so this takes the
+    // {lemma, translation, pos} shape Decks already hands around instead
+    // of requiring the word to be a known curriculum lemma.
+    function _buildPoolFromWords(words) {
+        return words
+            .map(w => _buildExerciseFor({ lemma: w.lemma, en: w.translation, pos: w.pos }))
+            .filter(Boolean);
     }
 
     function _takeN(pool, n) {
@@ -442,6 +464,7 @@ const VocabularyDriller = (function () {
         const pool = _buildPool(_level);
         _seen = 0;
         _correct = 0;
+        _missed = [];
 
         if (!pool.length) {
             _phase = PHASE.SETTINGS;
@@ -462,6 +485,35 @@ const VocabularyDriller = (function () {
             _timerInterval = setInterval(_tick, 250);
         }
 
+        _queueIndex = 0;
+        _phase = PHASE.SESSION;
+        _renderSession();
+    }
+
+    // Entry point for a scoped session (Decks' review summary's "Practice
+    // these words" link) — skips the level/count settings entirely and
+    // just runs through the given words once, in Count mode so the
+    // session has a real end rather than looping the same handful of
+    // words on a timer.
+    function _startSessionFromWords(words) {
+        const pool = _buildPoolFromWords(words);
+        _seen = 0;
+        _correct = 0;
+        _missed = [];
+
+        if (!pool.length) {
+            _phase = PHASE.SETTINGS;
+            _container.innerHTML = `
+                <div class="gd-empty">No example sentences for these words yet.</div>
+                <button class="vbtn vbtn-secondary" data-action="change-settings">Change settings</button>
+            `;
+            _container.querySelector('[data-action="change-settings"]').addEventListener('click', _abortSession);
+            return;
+        }
+
+        _mode = MODE.COUNT;
+        _queue = _shuffled(pool);
+        _questionCount = _queue.length;
         _queueIndex = 0;
         _phase = PHASE.SESSION;
         _renderSession();
@@ -492,11 +544,17 @@ const VocabularyDriller = (function () {
         _container.querySelector('[data-action="change-settings"]').addEventListener('click', _abortSession);
 
         const exerciseRoot = _container.querySelector('.gd-exercise');
+        const currentWord = _queue[_queueIndex]._word;
+
         GrammarRunner.render(exerciseRoot, {
             exercise: _queue[_queueIndex],
             onResult: correct => {
                 _seen++;
-                if (correct) _correct++;
+                if (correct) {
+                    _correct++;
+                } else if (currentWord && !_missed.some(w => w.lemma === currentWord.lemma)) {
+                    _missed.push({ lemma: currentWord.lemma, translation: currentWord.en, pos: currentWord.pos });
+                }
                 const score = _container.querySelector('.gd-hud-score');
                 if (score) score.textContent = _scoreLabel();
             },
@@ -547,6 +605,11 @@ const VocabularyDriller = (function () {
                         <span class="vspeed-stat-value">${accuracy}%</span>
                     </div>
                 </div>
+                ${_missed.length ? `
+                    <button class="vbtn vbtn-secondary vbtn-block" data-action="add-missed">
+                        Add ${_missed.length} missed ${_missed.length === 1 ? 'word' : 'words'} to a deck
+                    </button>
+                ` : ''}
                 <div class="vspeed-results-actions">
                     <button class="vbtn vbtn-primary" data-action="play-again">Play Again</button>
                     <button class="vbtn vbtn-secondary" data-action="change-settings">Change Settings</button>
@@ -556,6 +619,13 @@ const VocabularyDriller = (function () {
 
         _container.querySelector('[data-action="play-again"]').addEventListener('click', _startSession);
         _container.querySelector('[data-action="change-settings"]').addEventListener('click', _abortSession);
+
+        const addMissedBtn = _container.querySelector('[data-action="add-missed"]');
+        if (addMissedBtn) {
+            addMissedBtn.addEventListener('click', () => {
+                if (typeof Decks !== 'undefined') Decks.openBulkAddPicker(_missed);
+            });
+        }
     }
 
     function _abortSession() {
@@ -567,13 +637,23 @@ const VocabularyDriller = (function () {
     // ================================================================
     //  PUBLIC API
     // ================================================================
-    async function render(root) {
+    // `options.words`, when given, skips the settings screen and launches
+    // straight into a session over exactly those words — used by Decks'
+    // review summary. Same firstTime-style guard as GrammarDriller's own
+    // `options.skill`: only takes effect from the settings phase, so a
+    // driller resumed mid-session (e.g. navigating back to Workshop)
+    // shows what was already in progress instead.
+    async function render(root, options) {
         _container = root;
 
         if (_phase === PHASE.SETTINGS) {
             _container.innerHTML = `<div class="gd-loading">Loading…</div>`;
             await _load();
-            _renderSettings();
+            if (options && options.words && options.words.length) {
+                _startSessionFromWords(options.words);
+            } else {
+                _renderSettings();
+            }
         } else if (_phase === PHASE.SESSION) {
             _renderSession();
         } else {

@@ -749,6 +749,57 @@ track known bugs in existing content rather than things not yet built.
     grammar drill on their pattern, or a weak drill session suggesting
     adding its words to a deck). Flagged in the original discussion as
     needing its own scoping pass.
+- [x] Scoped and built the cross-link idea above, across all four pillars
+  (Lessons/Decks/Workshop/Reader), not just Workshop-Decks. Scoping first
+  found what already existed (Lessons→Decks, Lessons→Workshop,
+  Reader→Decks, Lessons↔Reader — all built earlier this session or
+  before), then organized what didn't into three tiers by cost:
+  **Tier 1** (cheap, reuses data already shaped right — built
+  **2026-09-02**), **Tier 2** (one new "word → lesson" reverse index would
+  unlock three links: Decks→Lessons, Reader→Lessons, Workshop→Lessons —
+  scoped but not built), **Tier 3** (Reader↔Workshop and Decks/Workshop→
+  Reader — would need per-story word/grammar indexing that doesn't exist;
+  flagged, parked). Tier 1, built:
+  - **Workshop → Decks**: only the Vocabulary Driller fits this cleanly —
+    checked Translation and Listening drillers first and found neither
+    carries a `lemma` per exercise at all (`translation-index.json` is
+    pure sentence pairs), so "missed words" isn't a coherent concept for
+    either; forcing it on would mean guessing at words from a wrong
+    sentence, not tracking an actual miss. Vocabulary Driller's exercises
+    already carry the source word throughout, just not on the object the
+    session loop sees (`_buildExerciseFor()`'s builders return
+    GrammarRunner-shaped `{kind, question, options, ...}` with the
+    originating word baked into the text but not kept as a field) — fixed
+    by attaching it as `exercise._word` before the exercise enters the
+    queue. The session loop now keeps a deduped `_missed[]`
+    (`{lemma, translation, pos}`, Decks' own bulk-add shape) alongside the
+    existing `_correct`/`_seen` counters, and the results screen gets an
+    "Add N missed words to a deck" button wired straight to
+    `Decks.openBulkAddPicker()` — no new mechanism, the same one Word
+    Bank, Library, and lesson-complete already use.
+  - **Decks → Workshop**: a review session already tracks
+    `reviewSessionStats`; it now also keeps a deduped list of words rated
+    "again". The review summary gets a "Practice N missed words" button
+    that closes the review session, switches to Workshop, and opens
+    Vocabulary Driller pre-scoped to exactly those words — same
+    `options`-skips-the-picker pattern `GrammarDriller` got for the
+    post-unit nudge, but built from caller-supplied `{lemma, translation,
+    pos}` objects (`_buildPoolFromWords()`) rather than looking words up
+    in `decks.json`'s curriculum table, since a missed word could be a
+    custom My Deck word that table doesn't know about at all.
+  - Verified live via Playwright, both directions: a Vocabulary Driller
+    session with every exercise forced wrong (via a temporary
+    `GrammarRunner.render` stub, removed after — the same debug-hook
+    pattern used elsewhere in this codebase, since faking "the right
+    answer" per real exercise type isn't the point of this test) produced
+    "0 correct · 10 wrong · 0%" and an "Add 10 missed words to a deck"
+    button that opened Decks' picker correctly titled "Add 10 words to a
+    deck". Seeding 3 due cards and rating two of them "again" showed
+    "Practice 2 missed words" on the review summary; clicking it switched
+    to the Workshop tab and landed directly on "Word 1 of 2" — no settings
+    screen — with a real in-context sentence for one of the two missed
+    words, and the review session closed cleanly behind it. No
+    console/page errors in either run.
 
 ## Interface & platform
 

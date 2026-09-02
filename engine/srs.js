@@ -431,6 +431,7 @@ function startReviewSession(lemmas, name) {
     reviewSessionStats = {
         total: 0, again: 0, hard: 0, good: 0, easy: 0,
         startedAt: Date.now(),
+        missed: [], // {lemma, translation, pos} for each distinct card rated "again" this session
         xpBefore: (typeof xpData !== 'undefined') ? xpData.total : 0,
         rankBefore: (typeof getRank === 'function') ? getRank().rank : null
     };
@@ -508,6 +509,8 @@ function renderReviewSessionSummary() {
         ? (getStreak() > 0 ? `${getStreak()}-day streak` : 'No streak yet')
         : '';
 
+    const missedCount = s.missed.length;
+
     summaryEl.innerHTML = `
         <p class="review-summary-eyebrow">Session complete</p>
         <h2 class="review-summary-title">Nice work.</h2>
@@ -515,9 +518,28 @@ function renderReviewSessionSummary() {
         ${streakText ? `<p class="review-summary-streak">${escFn(streakText)}</p>` : ''}
         ${rankedUp ? `<p class="review-summary-milestone">Rank up! You're now Rank ${rankAfter}.</p>` : ''}
         ${milestones.map(m => `<p class="review-summary-milestone">Milestone: ${escFn(m.label)}</p>`).join('')}
+        ${missedCount ? `
+            <button class="dk-secondary" data-action="practice-missed">
+                Practice ${missedCount} missed ${missedCount === 1 ? 'word' : 'words'}
+            </button>
+        ` : ''}
         <button class="dk-secondary" onclick="endReviewSession()">Done</button>
     `;
     summaryEl.style.display = 'block';
+
+    const practiseBtn = summaryEl.querySelector('[data-action="practice-missed"]');
+    if (practiseBtn) practiseBtn.addEventListener('click', () => practiceMissedFromReview(s.missed));
+}
+
+// The words rated "again" this session, straight into a Vocabulary
+// Driller session scoped to just them — closes the review session first
+// (same as Done would) so leaving Workshop later doesn't drop back into a
+// stale review screen, then switches tabs the same way Home's own
+// cross-tab links (goTab() in engine/home.js) do.
+function practiceMissedFromReview(words) {
+    endReviewSession();
+    showTab('drills', document.querySelector('.nav button[data-tab="drills"]'));
+    if (typeof Workshop !== 'undefined') Workshop.open('vocabulary', { words: words });
 }
 
 function endReviewSession() {
@@ -731,6 +753,13 @@ function rateCard(rating) {
     if (reviewSessionStats) {
         reviewSessionStats.total++;
         if (typeof reviewSessionStats[rating] === 'number') reviewSessionStats[rating]++;
+        if (rating === 'again' && !reviewSessionStats.missed.some(w => w.lemma === currentReviewCard.spanish)) {
+            reviewSessionStats.missed.push({
+                lemma: currentReviewCard.spanish,
+                translation: currentReviewCard.english,
+                pos: currentReviewCard.type
+            });
+        }
     }
 
     saveDeck();
