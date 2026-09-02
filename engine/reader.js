@@ -219,7 +219,19 @@ function _renderWordReadings(tappedWord, readings, phrase, ladder) {
     body.innerHTML = html;
 }
 
+// Identifies which call to showWord() is the most recent one, so an async
+// step resuming after the learner has since tapped another word (or a
+// phrase match has legitimately overwritten #popup-word's own text — see
+// _showLessonLink's own comment on why that DOM text isn't itself a safe
+// staleness check) can tell it's no longer the active tap. A plain
+// incrementing counter rather than comparing DOM text, since the DOM text
+// is not this function's alone to read back — other rendering (the
+// phrase branch in _renderWordReadings) legitimately changes it for its
+// own display purposes mid-flow.
+let _wordPopupTapId = 0;
+
 async function showWord(spanish, contextTokens, tokenIndex) {
+    const tapId = ++_wordPopupTapId;
     const popup = _ensureWordPopup();
     document.getElementById('popup-word').textContent = spanish;
     _setSpeakTarget(spanish);
@@ -230,7 +242,7 @@ async function showWord(spanish, contextTokens, tokenIndex) {
         document.getElementById('popup-body').innerHTML = '<p class="wp-empty">Loading dictionary…</p>';
         await Lexicon.load();
         // the learner may have closed the popup or tapped another word meanwhile
-        if (document.getElementById('popup-word').textContent !== spanish) return;
+        if (tapId !== _wordPopupTapId) return;
     }
 
     const phrase = Lexicon.findPhrase(contextTokens, tokenIndex);
@@ -269,7 +281,7 @@ async function showWord(spanish, contextTokens, tokenIndex) {
         btn.textContent = '+ Add to SRS Deck';
     }
 
-    _showLessonLink(cleanWord, spanish);
+    _showLessonLink(cleanWord, tapId);
 }
 
 // "Taught in Unit X · Lesson X.Y" — the Tier 2 word-lesson-index.json
@@ -280,8 +292,14 @@ async function showWord(spanish, contextTokens, tokenIndex) {
 // honest to say for those). A stale-tap guard mirrors the one showWord()
 // already uses around the dictionary load, since fetching the index is
 // itself async and the learner may have moved on to another word by the
-// time it resolves.
-async function _showLessonLink(lemma, tappedSpanish) {
+// time it resolves. Checked via showWord()'s tapId counter, not by
+// re-reading #popup-word's text — that text gets legitimately overwritten
+// to the matched phrase for a word that's part of one (see
+// _renderWordReadings' phrase branch), which used to make this guard
+// fire as "stale" for every such word even though the tap never changed,
+// permanently hiding a real, working lesson link (found via bug sweep,
+// 2026-09-02).
+async function _showLessonLink(lemma, tapId) {
     const linkBtn = document.getElementById('popup-lesson-link');
     if (!linkBtn) return;
     linkBtn.hidden = true;
@@ -292,7 +310,7 @@ async function _showLessonLink(lemma, tappedSpanish) {
     } catch (error) {
         return;
     }
-    if (document.getElementById('popup-word').textContent !== tappedSpanish) return;
+    if (tapId !== _wordPopupTapId) return;
 
     const lessonId = index && index.byLemma && index.byLemma[lemma];
     if (!lessonId) return;

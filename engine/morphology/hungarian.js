@@ -813,10 +813,19 @@ const HungarianMorphology = (function () {
     // stem in the conditional is also "len-"), so both lemmas are listed
     // for it. "megy"'s stem changes to "men-"; "jön" needs no entry here
     // since it's already regular ("jön" + "-ni" = "jönni", no linking
-    // vowel needed, decoded by the generic path below).
+    // vowel needed, decoded by the generic path below). "alszik"'s
+    // infinitive is regular off its own irregular non-present stem
+    // "alud-" (the same stem its past/conditional/imperative already use
+    // above — "aludtam", "aludnék", "aludj" — see those tables' own
+    // comments on why "alud" alone isn't the dictionary headword
+    // "alszik"): bare "-ni" needs no linking vowel here ("alud" ends in
+    // "d" after the vowel "u"), so only the irregular STEM needs listing,
+    // not a further irregular infinitive shape the way eszik/iszik's do.
+    // Taught vocabulary (A1 Unit 63) — found empty via Lexicon.lookup()
+    // during a bug sweep, 2026-09-02.
     const IRREGULAR_INFINITIVES = {
         lenni: ['van', 'lesz'], menni: ['megy'],
-        enni: ['eszik'], inni: ['iszik'],
+        enni: ['eszik'], inni: ['iszik'], aludni: ['alszik'],
         hinni: ['hisz'], vinni: ['visz'], venni: ['vesz'], tenni: ['tesz']
     };
 

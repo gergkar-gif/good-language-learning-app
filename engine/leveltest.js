@@ -123,18 +123,21 @@ const LevelTest = (function () {
             weakest: Object.keys(wrongBy).sort((a, b) => wrongBy[b] - wrongBy[a]),
             takenAt: new Date().toISOString()
         };
-        saveResult(test.level, result);
 
         // A score this high means the level's actual content was already
         // known walking in — credit the whole level, not just the test, so
         // the rest of the app (Continue, My Journey, the level's own
         // progress bar) treats it as done rather than showing every one of
         // its lessons as still to do. See markLevelComplete()'s own
-        // comment on why this carries no XP.
+        // comment on why this carries no XP. Computed before saveResult()
+        // below, not after — this field needs to be part of `result` before
+        // it gets JSON-stringified into localStorage, or the persisted copy
+        // would never carry it (found via bug sweep, 2026-09-02).
         if (jumpAhead && typeof markLevelComplete === 'function') {
             result.newlyCompletedLessons = markLevelComplete(test.level).length;
         }
 
+        saveResult(test.level, result);
         return result;
     }
 

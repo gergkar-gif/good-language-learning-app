@@ -21,6 +21,20 @@ let currentStepIndex = 0;
 let missedSteps = [];
 let originalStepCount = 0;
 
+// Which step INDICES have already been graded once this lesson sitting —
+// keyed by position in currentLesson.steps, not by stepState (a fresh
+// object every render, so it can't remember anything across a re-render
+// on its own). The Back button re-renders an earlier step fully
+// interactive, on purpose (a learner should be able to look at it again),
+// but re-answering it must not count as a second graded interaction:
+// without this, solveStep()/failStep() would double lessonStats, and for
+// a recycle-block step, double-update its SM-2 schedule for one real
+// review. A remediation redo is exempt from this by construction — it's
+// pushed onto a NEW index at the end of currentLesson.steps (see
+// nextLessonStep()), never the index it originally failed at, so it's
+// correctly treated as a fresh, gradable attempt.
+let gradedStepIndices = new Set();
+
 // Feeds the end-of-lesson summary screen. lessonStartTime is a wall-clock
 // timestamp so the elapsed time survives a tab switch mid-lesson the same
 // way progress does. lessonStats counts every graded interaction across the
@@ -94,7 +108,7 @@ async function loadLesson(lessonId) {
 // Every word the lesson teaches, in section order, de-duplicated by lemma.
 async function collectLessonVocabulary(lesson) {
     const words = [];
-    const seen = {};
+    const seen = Object.create(null); // no Object.prototype keys to collide with a real lemma
 
     for (const section of lesson.sections || []) {
         if (section.type !== 'vocabulary') continue;
@@ -253,6 +267,7 @@ async function startLesson(lessonId) {
     missedSteps = [];
     lessonStartTime = Date.now();
     lessonStats = { total: 0, correctFirstTry: 0 };
+    gradedStepIndices = new Set();
 
     // A lesson can be opened from the level list or from Home's continue
     // card, and closing it should put the learner back where they were rather
@@ -461,11 +476,19 @@ function solveStep(message) {
     setFeedback(true, message);
     showTranslation();
     updateFooterButton();
+    if (typeof Sound !== 'undefined') Sound.correct();
+
+    // A revisit via the Back button re-renders this same step index fully
+    // interactive (see gradedStepIndices' own comment) — the learner still
+    // gets to see it marked right/wrong again, but it must not count a
+    // second time toward lesson stats or a recycle item's SM-2 schedule.
+    if (gradedStepIndices.has(currentStepIndex)) return;
+    gradedStepIndices.add(currentStepIndex);
+
     noteRecycleResult(true);
     queueForRemediationIfMissed();
     lessonStats.total++;
     if (!stepState.wasMissed) lessonStats.correctFirstTry++;
-    if (typeof Sound !== 'undefined') Sound.correct();
 }
 
 // Records a wrong attempt. Returns true once the learner is out of tries,
@@ -492,6 +515,12 @@ function failStep(message) {
     stepState.gaveUp = true;
     showTranslation();
     updateFooterButton();
+
+    // Same revisit guard as solveStep() — see gradedStepIndices' own
+    // comment on why a Back-button redo mustn't double-count.
+    if (gradedStepIndices.has(currentStepIndex)) return true;
+    gradedStepIndices.add(currentStepIndex);
+
     noteRecycleResult(false);
     lessonStats.total++;
     return true;

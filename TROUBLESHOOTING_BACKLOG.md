@@ -992,3 +992,111 @@ Both verified by tracing the exact code paths and data flow (no live
 Playwright re-verification of this specific pair beyond the code trace,
 since both are narrow, mechanical string/guard fixes with no complex
 interaction to observe).
+
+## Second bug-sweep pass — progression, morphology, and lesson-delivery layers (found & fixed 2026-09-02)
+
+Three more read-only subagent sweeps (meta-progression: progress/xp/journey/
+leveltest/home/curriculum; word-lookup: lexicon/morphology/verbs/reader;
+lesson-delivery: lessons/curriculum/library/content-loader/recycle/init),
+run after the SRS/Decks pass above. Six more genuine bugs found, all fixed:
+
+- [x] **The Back button let a learner re-grade an already-solved lesson
+  step**, double-counting `lessonStats` and, for a recycle-block step,
+  double-updating its SM-2 schedule for one real review. `renderStep()`
+  builds a brand-new `stepState` object on every render (by design, so a
+  revisited step shows fresh and interactive rather than locked read-only),
+  but `noteRecycleResult()`'s own re-grade guard (`stepState.recycleNoted`)
+  lived on that same short-lived object, so it reset right along with
+  everything else on a revisit — the "shouldn't be graded twice for one
+  sitting" comment on that guard was aspirational, not actually enforced,
+  for the single most common way to see a step twice. **Fixed**: added
+  `gradedStepIndices`, a `Set` of step array-positions already graded this
+  lesson sitting, reset alongside `lessonStats`/`missedSteps` when a lesson
+  starts. `solveStep()`/`failStep()` now skip their stats/recycle/
+  remediation side effects (but still show the right/wrong feedback
+  normally) when `currentStepIndex` is already in that set. A remediation
+  redo is unaffected — it's pushed onto a NEW index at the end of
+  `currentLesson.steps`, never the index it originally failed at, so it's
+  still graded fresh as intended. Verified live: answered a real A1
+  lesson's first multiple-choice step correctly (`lessonStats.total: 1`),
+  advanced, hit Back, re-answered it correctly again — `total` stayed at 1
+  instead of becoming 2, while `stepState.solved` was still `true` (the
+  visible feedback is unchanged, only the double-counting is gone).
+- [x] **`HungarianMorphology.analyze()` still couldn't resolve "aludni"**
+  ("to sleep," taught A1 Unit 63 vocabulary) even after infinitive decoding
+  was added — `alszik` uses the same "irregular non-present stem, not the
+  dictionary headword" pattern this file already special-cases for its
+  past/conditional/imperative (`aludtam`, `aludnék`, `aludj`, ...) but was
+  missing from the new `IRREGULAR_INFINITIVES` table. **Fixed**: added
+  `aludni: ['alszik']`. Verified live: `Lexicon.lookup('aludni')` now
+  resolves to `alszik [Infinitive]: to sleep`.
+- [x] **The Reader's "Taught in Unit X · Lesson X.Y" cross-link silently
+  never appeared for any word that's part of a recognized multi-word
+  phrase** (e.g. tapping "mucho," taught A1 Unit 1 vocabulary, inside
+  "mucho gusto"). `_showLessonLink()`'s stale-tap guard compared
+  `#popup-word`'s current text against the originally-tapped word — but
+  `_renderWordReadings()`'s phrase branch legitimately overwrites
+  `#popup-word` to the matched phrase's own text ("mucho gusto") for
+  display, so the guard read that as "the tap went stale" for every
+  phrase-matched word, even though nothing changed. **Fixed**: replaced
+  the DOM-text comparison with a plain incrementing `_wordPopupTapId`
+  counter captured once per `showWord()` call, immune to any other
+  function's legitimate DOM writes. Verified live: tapping "mucho" as part
+  of "mucho gusto" now shows both the phrase translation AND "Taught in
+  Unit 1 · Lesson 1.3."
+- [x] **A level test's `newlyCompletedLessons` count never survived a
+  reload** — `LevelTest.mark()` (engine/leveltest.js) computed it and set
+  it on the `result` object AFTER already calling `saveResult()`, which
+  JSON-stringifies `result` into localStorage — so the persisted copy was
+  always missing the field, even though the in-memory one (used for that
+  render) had it. Currently inert (nothing reads the field back yet), but
+  a real ordering bug waiting to bite the next feature that does.
+  **Fixed**: reordered so the field is set before `saveResult()` runs.
+  Verified live: scored 100% on the ES A1 test, and the persisted
+  `testResults` entry in localStorage now carries `newlyCompletedLessons: 120`.
+- [x] **A jump-ahead level test's bulk-completed lessons could tie on their
+  `completedAt` timestamp**, biasing `lastCompletedLessonId()`
+  (engine/home.js) — which breaks ties by picking whichever was inserted
+  *first* — toward the earliest lesson in the level rather than a
+  genuinely "most recent" one, contradicting what that function's name and
+  its callers (`nextStep()`'s scan anchor) assume. `markLevelComplete()`
+  stamped every lesson in a tight `forEach` with its own
+  `new Date().toISOString()` call, and a bulk write of dozens-to-hundreds
+  of lessons easily lands many of them in the same millisecond. Currently
+  masked in practice (`nextStep()`'s forward scan skips past an entire
+  completed level regardless of where it starts, and no unit in the
+  current curriculum has exactly one lesson, so nothing visibly
+  misbehaves today) but a real latent defect. **Fixed**: each lesson in
+  the bulk write now gets `baseTime + i` (curriculum order), guaranteeing
+  distinct, monotonically increasing timestamps instead of relying on
+  tie-break luck. Verified live: bulk-completing ES A1's 120 lessons
+  produced 120 distinct `completedAt` values, not fewer.
+- [x] **7 Spanish B1 `fill-blank` exercises across 6 files had 2-3 blanks
+  in their sentence but the renderer only ever shows one input box** —
+  `.replace(/_{2,}/, ...)` (no `/g` flag) only replaces the FIRST run of
+  underscores with the visible blank; any further blanks in the sentence
+  stayed as literal, un-rendered `__` text, and the single stored answer
+  (`"desde; hasta"`, `"tan ... como"`, `"decisión / dependerá"`, ...) could
+  never be typed into the one input that exists — these exercises were
+  unsolvable except by exhausting all 3 attempts and taking the reveal.
+  **Fixed** (content only, no engine change): split each into 2-3 separate
+  single-blank `fill-blank` items, each with the other blank(s) already
+  filled in with their correct literal answer and its own single stored
+  answer — `b1-08-03.ex07` → `ex07a`/`ex07b`, `b1-guerrafria-01.ex04` →
+  `ex04a`/`ex04b`, `b1-eeuu-01.ex04` → `ex04a`/`ex04b`, `b1-05-04.ex14` →
+  `ex14a`/`ex14b`, `b1-03-04.ex14` → `ex14a`/`ex14b`, `b1-03-05.ex03` →
+  `ex03a`/`ex03b`, `b1-03-05.ex17` → `ex17a`/`ex17b`/`ex17c`. Updated the
+  6 owning lessons' `exerciseRefs` to the new ids. Verified: a full
+  content-tree scan confirms zero dangling `exerciseRefs` anywhere in
+  ES or HU content (not just these 7); live-checked `b1-08-03.ex07a`
+  specifically — renders with exactly one blank, the other blank already
+  reads "hasta" as plain text, and typing "desde" grades correct.
+- [x] *(trivial hardening, not a live bug)* `collectLessonVocabulary()`
+  (engine/lessons.js) and `collectUnitVocabTopics()` (engine/curriculum.js)
+  used a plain `{}` as a lemma dedup set — if any Spanish/Hungarian lemma
+  were ever exactly `"constructor"`, `"toString"`, `"__proto__"`, etc., it
+  would read as already-seen (inherited from `Object.prototype`) before
+  ever being added, silently vanishing from vocabulary lists. No such
+  lemma exists in the corpus today, so this never actually fired — fixed
+  anyway (`Object.create(null)` instead) since it cost nothing and removes
+  a real, if currently dormant, hazard.

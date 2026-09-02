@@ -6,10 +6,22 @@
       "type": "matching",
       "category": "vocabulary",
       "pairs": [
-        ["la advertencia", "warning"],
-        ["oponerse", "to oppose"],
-        ["formular", "to formulate"],
-        ["transformarse", "to transform, become"]
+        [
+          "la advertencia",
+          "warning"
+        ],
+        [
+          "oponerse",
+          "to oppose"
+        ],
+        [
+          "formular",
+          "to formulate"
+        ],
+        [
+          "transformarse",
+          "to transform, become"
+        ]
       ]
     },
     {
@@ -17,10 +29,22 @@
       "type": "matching",
       "category": "vocabulary",
       "pairs": [
-        ["el vecino", "neighbor"],
-        ["la asimetría", "asymmetry"],
-        ["el mercado", "market"],
-        ["mutuamente", "mutually"]
+        [
+          "el vecino",
+          "neighbor"
+        ],
+        [
+          "la asimetría",
+          "asymmetry"
+        ],
+        [
+          "el mercado",
+          "market"
+        ],
+        [
+          "mutuamente",
+          "mutually"
+        ]
       ]
     },
     {
@@ -48,12 +72,24 @@
       "correct": 0
     },
     {
-      "id": "b1-eeuu-01.ex04",
+      "id": "b1-eeuu-01.ex04a",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Ningún país latinoamericano llegó a ser ___ poderoso económica y militarmente ___ Estados Unidos. (tan ... como)",
-      "answer": "tan ... como",
-      "teaches": ["tan-como-comparar-poder-y-tamano"]
+      "sentence": "Ningún país latinoamericano llegó a ser ___ poderoso económica y militarmente como Estados Unidos. (tan ... como)",
+      "answer": "tan",
+      "teaches": [
+        "tan-como-comparar-poder-y-tamano"
+      ]
+    },
+    {
+      "id": "b1-eeuu-01.ex04b",
+      "type": "fill-blank",
+      "category": "grammar",
+      "sentence": "Ningún país latinoamericano llegó a ser tan poderoso económica y militarmente ___ Estados Unidos. (tan ... como)",
+      "answer": "como",
+      "teaches": [
+        "tan-como-comparar-poder-y-tamano"
+      ]
     },
     {
       "id": "b1-eeuu-01.ex05",
@@ -71,18 +107,64 @@
       "id": "b1-eeuu-01.ex06",
       "type": "sentence-builder",
       "category": "grammar",
-      "tiles": ["Esta", "asimetría", "de", "poder", "no", "era", "tan", "simple", "como", "una", "relación", "entre", "un", "país", "fuerte", "y", "otros", "débiles."],
-      "solution": ["Esta", "asimetría", "de", "poder", "no", "era", "tan", "simple", "como", "una", "relación", "entre", "un", "país", "fuerte", "y", "otros", "débiles."],
+      "tiles": [
+        "Esta",
+        "asimetría",
+        "de",
+        "poder",
+        "no",
+        "era",
+        "tan",
+        "simple",
+        "como",
+        "una",
+        "relación",
+        "entre",
+        "un",
+        "país",
+        "fuerte",
+        "y",
+        "otros",
+        "débiles."
+      ],
+      "solution": [
+        "Esta",
+        "asimetría",
+        "de",
+        "poder",
+        "no",
+        "era",
+        "tan",
+        "simple",
+        "como",
+        "una",
+        "relación",
+        "entre",
+        "un",
+        "país",
+        "fuerte",
+        "y",
+        "otros",
+        "débiles."
+      ],
       "english": "This power asymmetry was not as simple as a relationship between one strong country and others that were weak.",
-      "teaches": ["tan-como-comparar-poder-y-tamano"]
+      "teaches": [
+        "tan-como-comparar-poder-y-tamano"
+      ]
     },
     {
       "id": "b1-eeuu-01.ex07",
       "type": "dialogue-complete",
       "category": "reading",
       "prompt": [
-        { "speaker": "Carolina", "text": "¿Qué examinaremos en las próximas lecciones sobre esta relación desigual pero necesaria?" },
-        { "speaker": "Fructuoso", "text": "_____" }
+        {
+          "speaker": "Carolina",
+          "text": "¿Qué examinaremos en las próximas lecciones sobre esta relación desigual pero necesaria?"
+        },
+        {
+          "speaker": "Fructuoso",
+          "text": "_____"
+        }
       ],
       "options": [
         "Algunos de sus episodios más significativos, desde las intervenciones militares directas hasta la dependencia económica estructural.",

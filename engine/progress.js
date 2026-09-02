@@ -61,9 +61,19 @@ function markLevelComplete(levelKey) {
     const progress = getProgress();
     const newlyCompleted = [];
 
-    lessons.forEach(l => {
+    // Each entry gets its own millisecond rather than one shared
+    // new Date().toISOString() call — a tight loop over dozens/hundreds
+    // of lessons can otherwise stamp many of them with the exact same
+    // millisecond, and lastCompletedLessonId() (engine/home.js) breaks a
+    // tie by picking whichever was inserted FIRST, i.e. the earliest
+    // lesson in the level — the opposite of "most recently completed."
+    // Spacing them out (curriculum order, so the level's last lesson
+    // reads as the latest) keeps that resolvable to a real answer instead
+    // of an accidental tie (found via bug sweep, 2026-09-02).
+    const baseTime = Date.now();
+    lessons.forEach((l, i) => {
         if (!progress[l.id]) {
-            progress[l.id] = { completedAt: new Date().toISOString(), viaLevelTest: true };
+            progress[l.id] = { completedAt: new Date(baseTime + i).toISOString(), viaLevelTest: true };
             newlyCompleted.push(l.id);
         }
     });

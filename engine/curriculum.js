@@ -606,7 +606,7 @@ async function grammarGuideHtml(level, unitId) {
 // an earlier lesson's group does not repeat under a later one.
 async function collectUnitVocabTopics(unit) {
     const topics = [];
-    const seen = {};
+    const seen = Object.create(null); // no Object.prototype keys to collide with a real lemma
     for (const lessonRef of unit.lessons || []) {
         const lesson = await loadLesson(lessonRef.id);
         if (!lesson) continue;
