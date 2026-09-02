@@ -38,6 +38,12 @@ const ListeningDriller = (function () {
     const TIMER_PRESETS = [1, 2, 3, 5];
     const DECOY_COUNT = 3;
     const WORD_RE = /\p{L}+/gu;
+    // Canonical CEFR ordering for the level picker — only levels the course
+    // actually has sentences for are shown (found 2026-09-01: this picker
+    // hardcoded A1/A2 only, so B1 — the majority of the Spanish course's
+    // translation-index sentences — was reachable only via "All levels",
+    // never as its own filter).
+    const CEFR_ORDER = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
 
     let _phase = PHASE.SETTINGS;
     let _container = null;
@@ -212,8 +218,7 @@ const ListeningDriller = (function () {
             return;
         }
 
-        const totalA1 = _pairs.filter(p => p.level === 'A1').length;
-        const totalA2 = _pairs.filter(p => p.level === 'A2').length;
+        const levels = CEFR_ORDER.filter(l => _pairs.some(p => p.level === l));
 
         _container.innerHTML = `
             <div class="gd-settings">
@@ -232,8 +237,9 @@ const ListeningDriller = (function () {
                     <label for="ld-level">Level</label>
                     <select id="ld-level" class="vb-select">
                         <option value="all">All levels (${_pairs.length} sentences)</option>
-                        <option value="A1">A1 (${totalA1} sentences)</option>
-                        <option value="A2">A2 (${totalA2} sentences)</option>
+                        ${levels.map(l => `
+                            <option value="${l}">${l} (${_pairs.filter(p => p.level === l).length} sentences)</option>
+                        `).join('')}
                     </select>
                 </div>
 

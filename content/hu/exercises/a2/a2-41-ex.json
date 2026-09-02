@@ -1,0 +1,165 @@
+{
+  "lesson": "a2-41",
+  "exercises": [
+    {
+      "id": "a2-41-intro-1",
+      "type": "multiple-choice",
+      "category": "introduce",
+      "question": "Which means “to eat”?",
+      "options": ["eszik", "iszik", "dolgozik"],
+      "correct": 0,
+      "teaches": ["eszik-iszik"]
+    },
+    {
+      "id": "a2-41-intro-2",
+      "type": "multiple-choice",
+      "category": "introduce",
+      "question": "Which means “to drink”?",
+      "options": ["iszik", "eszik", "alszik"],
+      "correct": 0,
+      "teaches": ["eszik-iszik"]
+    },
+    {
+      "id": "a2-41-controlled-1",
+      "type": "matching",
+      "category": "controlled",
+      "pairs": [
+        ["eszem", "I eat"],
+        ["iszom", "I drink"],
+        ["eszünk", "we eat"],
+        ["isznak", "they drink"]
+      ],
+      "teaches": ["eszik-iszik"]
+    },
+    {
+      "id": "a2-41-controlled-2",
+      "type": "fill-blank",
+      "category": "controlled",
+      "sentence": "Reggel kenyeret ____, és teát iszom.",
+      "answer": "eszem",
+      "teaches": ["eszik-iszik"]
+    },
+    {
+      "id": "a2-41-controlled-3",
+      "type": "fill-blank",
+      "category": "controlled",
+      "sentence": "Mit ____, és mit iszol ma? (eat)",
+      "answer": "eszel",
+      "teaches": ["eszik-iszik"]
+    },
+    {
+      "id": "a2-41-controlled-4",
+      "type": "multiple-choice",
+      "category": "controlled",
+      "question": "Which means “they drink”?",
+      "options": ["isznak", "esznek", "eszünk"],
+      "correct": 0,
+      "teaches": ["eszik-iszik"]
+    },
+    {
+      "id": "a2-41-practice-1",
+      "type": "matching",
+      "category": "practice",
+      "pairs": [
+        ["Sok ételt eszem naponta", "I eat a lot of food daily"],
+        ["Milyen ételt szeretsz leginkább?", "What kind of food do you like most?"],
+        ["Leginkább levest és salátát eszem", "I mostly eat soup and salad"],
+        ["Mit eszel és mit iszol ma?", "What are you eating and drinking today?"]
+      ],
+      "teaches": ["etel-vocab"]
+    },
+    {
+      "id": "a2-41-practice-2",
+      "type": "sentence-builder",
+      "category": "practice",
+      "tiles": ["Sok", "ételt", "eszem", "naponta", "."],
+      "solution": ["Sok", "ételt", "eszem", "naponta", "."],
+      "english": "I eat a lot of food daily.",
+      "teaches": ["etel-vocab"]
+    },
+    {
+      "id": "a2-41-practice-3",
+      "type": "sentence-builder",
+      "category": "practice",
+      "tiles": ["Milyen", "ételt", "szeretsz", "leginkább", "?"],
+      "solution": ["Milyen", "ételt", "szeretsz", "leginkább", "?"],
+      "english": "What kind of food do you like most?",
+      "teaches": ["etel-vocab"]
+    },
+    {
+      "id": "a2-41-practice-4",
+      "type": "sentence-builder",
+      "category": "practice",
+      "tiles": ["Reggel", "kenyeret", "eszem", "és", "teát", "iszom", "."],
+      "solution": ["Reggel", "kenyeret", "eszem", "és", "teát", "iszom", "."],
+      "english": "In the morning I eat bread and drink tea.",
+      "teaches": ["eszik-iszik"]
+    },
+    {
+      "id": "a2-41-dialogue-1",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        { "speaker": "Károly", "text": "Mit eszel és mit iszol reggel?" },
+        { "speaker": "Meg", "text": "_____" }
+      ],
+      "options": ["Kenyeret eszem és teát iszom.", "Kenyeret iszom és teát eszem."],
+      "correct": 0,
+      "teaches": ["eszik-iszik"]
+    },
+    {
+      "id": "a2-41-dialogue-2",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        { "speaker": "Meg", "text": "Milyen ételt szeretsz leginkább?" },
+        { "speaker": "Károly", "text": "_____" }
+      ],
+      "options": ["Leginkább levest és salátát eszem.", "Leginkább kávét eszem."],
+      "correct": 0,
+      "teaches": ["etel-vocab"]
+    },
+    {
+      "id": "a2-41-writing-1",
+      "type": "structured-writing",
+      "category": "writing",
+      "template": [
+        {
+          "prompt": "Say you eat a lot of food daily.",
+          "answer": "Sok ételt eszem naponta."
+        }
+      ],
+      "teaches": ["etel-vocab"]
+    },
+    {
+      "id": "a2-41-writing-2",
+      "type": "structured-writing",
+      "category": "writing",
+      "template": [
+        {
+          "prompt": "Ask what kind of food someone likes most.",
+          "answer": "Milyen ételt szeretsz leginkább?"
+        }
+      ],
+      "teaches": ["etel-vocab"]
+    },
+    {
+      "id": "a2-41-check-1",
+      "type": "multiple-choice",
+      "category": "check",
+      "question": "Which means “food, dish”?",
+      "options": ["étel", "hús", "saláta"],
+      "correct": 0,
+      "teaches": ["etel-vocab"]
+    },
+    {
+      "id": "a2-41-check-2",
+      "type": "multiple-choice",
+      "category": "check",
+      "question": "Which means “mostly, most of all”?",
+      "options": ["leginkább", "nagyon", "mindig"],
+      "correct": 0,
+      "teaches": ["etel-vocab"]
+    }
+  ]
+}

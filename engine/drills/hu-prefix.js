@@ -53,7 +53,13 @@ const HuPrefixDriller = (function () {
     // hitting exactly this pairing in the driller (2026-08-21). Keyed by
     // "prefix:bareLemma" since only this specific coincidence is wrong —
     // "fel-" pairs with other real bare verbs are unaffected.
-    const KNOWN_FALSE_PAIRS = new Set(['fel:ejt']);
+    // "kiabál" ("to shout") happens to start with "ki-" ("out") followed by
+    // "abál" ("to steam/parboil food") — both real dictionary headwords,
+    // but kiabál isn't derived from them (it's from kiált + the -bál
+    // frequentative, unrelated to abál). Found via a learner report
+    // (2026-09-01): the driller was showing kiabál's real "to shout" gloss
+    // as if it were built from ki- + abál, which reads as nonsense.
+    const KNOWN_FALSE_PAIRS = new Set(['fel:ejt', 'ki:abál']);
 
     // VERB_PREFIXES' own sense text is written for the Reader's tap-word
     // popup, where a qualifier reads fine alongside the whole surrounding
