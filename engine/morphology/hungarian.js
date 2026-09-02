@@ -522,7 +522,7 @@ const HungarianMorphology = (function () {
         2: { sg: '2nd person singular', pl: '2nd person plural' },
         3: { sg: '3rd person singular', pl: '3rd person plural' }
     };
-    const TENSE_LABELS = { pres: 'Present', past: 'Past', cond: 'Conditional', imp: 'Imperative' };
+    const TENSE_LABELS = { pres: 'Present', past: 'Past', cond: 'Conditional', imp: 'Imperative', inf: 'Infinitive' };
 
     // Suppletive verbs — their stem changes shape under conjugation in a
     // way no suffix strip can undo (van -> vagyok, not "vanok"). Too
@@ -800,6 +800,24 @@ const HungarianMorphology = (function () {
         vigyem: ['visz', 'imp', 1, 'sg'], vidd: ['visz', 'imp', 2, 'sg'],
         vigye: ['visz', 'imp', 3, 'sg'], vigyük: ['visz', 'imp', 1, 'pl'],
         vigyétek: ['visz', 'imp', 2, 'pl'], vigyék: ['visz', 'imp', 3, 'pl']
+    };
+
+    // Infinitive forms of the suppletive verbs above. Every OTHER verb's
+    // infinitive is decoded generically in analyze() below (strip
+    // -ni/-ani/-eni off the regular present/dictionary stem), but these
+    // few take a further irregular stem for the infinitive alone, distinct
+    // from both their present and past stems — "eszik"'s is "enni", not
+    // "eszni"; "hisz"/"visz"/"vesz"/"tesz" all drop their "-sz" and
+    // geminate the "n" the same way. "lenni" is genuinely shared by van
+    // and lesz (see the conditional-stem comment above, on why lesz's own
+    // stem in the conditional is also "len-"), so both lemmas are listed
+    // for it. "megy"'s stem changes to "men-"; "jön" needs no entry here
+    // since it's already regular ("jön" + "-ni" = "jönni", no linking
+    // vowel needed, decoded by the generic path below).
+    const IRREGULAR_INFINITIVES = {
+        lenni: ['van', 'lesz'], menni: ['megy'],
+        enni: ['eszik'], inni: ['iszik'],
+        hinni: ['hisz'], vinni: ['visz'], venni: ['vesz'], tenni: ['tesz']
     };
 
     // Separable verbal prefixes — fully productive, and change a verb's
@@ -1449,6 +1467,63 @@ const HungarianMorphology = (function () {
                 const [baseLemma, tense, person, number] = stemIrregularDefinite;
                 addPrefixedVerb(pfx.prefix, pfx.sense, baseLemma,
                     [TENSE_LABELS[tense], PERSON_LABELS[person][number]].join(', '));
+            }
+        }
+
+        // 0b. infinitive (-ni/-ani/-eni) — its own step, before the
+        // personal-conjugation loop below, since an infinitive carries no
+        // person/number and would never match a VERB_SUFFIXES row.
+        // IRREGULAR_INFINITIVES (and its prefixed forms, "megenni" etc.)
+        // are checked first for the handful of suppletive verbs; every
+        // other verb strips one of the three literal suffix spellings,
+        // longest-first, and validates the remainder against the
+        // dictionary directly — same strip-and-validate approach as
+        // CASE_SUFFIXES/VERB_SUFFIXES above, so a wrong candidate strip
+        // (e.g. trying "-ani" on a word that actually needs bare "-ni")
+        // simply fails to match anything and falls through to the next
+        // candidate rather than fabricating a non-word reading.
+        const irregularInf = IRREGULAR_INFINITIVES[word];
+        if (irregularInf) {
+            for (const lemma of irregularInf) {
+                addFromLemma(lemma, verbSense(dictionary[lemma]), TENSE_LABELS.inf);
+            }
+        } else {
+            const infPfx = stripKnownPrefix(word);
+            const pfxIrregularInf = infPfx && IRREGULAR_INFINITIVES[infPfx.stem];
+            if (pfxIrregularInf) {
+                for (const baseLemma of pfxIrregularInf) {
+                    addPrefixedVerb(infPfx.prefix, infPfx.sense, baseLemma, TENSE_LABELS.inf);
+                }
+            } else {
+                for (const infSuffix of ['ani', 'eni', 'ni']) {
+                    const remainder = strip(word, infSuffix);
+                    if (remainder === null) continue;
+                    const sense = verbSense(dictionary[remainder]);
+                    if (sense) { addFromLemma(remainder, sense, TENSE_LABELS.inf); break; }
+                    const ikForm = remainder + 'ik';
+                    const ikSense = verbSense(dictionary[ikForm]);
+                    if (ikSense) { addFromLemma(ikForm, ikSense, TENSE_LABELS.inf); break; }
+                    const pfx = stripKnownPrefix(remainder);
+                    if (pfx) {
+                        if (verbSense(dictionary[pfx.stem])) {
+                            addPrefixedVerb(pfx.prefix, pfx.sense, pfx.stem, TENSE_LABELS.inf);
+                            break;
+                        }
+                        const pfxIk = pfx.stem + 'ik';
+                        if (verbSense(dictionary[pfxIk])) {
+                            addPrefixedVerb(pfx.prefix, pfx.sense, pfxIk, TENSE_LABELS.inf);
+                            break;
+                        }
+                    }
+                    const freqStem = stripFrequentative(remainder);
+                    if (freqStem) {
+                        const freqSense = verbSense(dictionary[freqStem]) || verbSense(dictionary[freqStem + 'ik']);
+                        if (freqSense) {
+                            addFrequentativeVerb(remainder + 'ik', freqSense, TENSE_LABELS.inf);
+                            break;
+                        }
+                    }
+                }
             }
         }
 

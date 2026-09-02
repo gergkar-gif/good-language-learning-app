@@ -927,23 +927,31 @@ a code read. 7 real findings, all fixed and re-verified live:
 
 ## HU Reader — infinitive forms don't resolve at all (found 2026-08-29)
 
-- [ ] **Tapping a Hungarian verb's infinitive (any verb) returns zero
-  readings.** Found while authoring A2 Unit 5's "making friends"
-  vocabulary: `Lexicon.lookup('barátkozni')` (infinitive of the new verb
-  `barátkozik`) came back empty. Not specific to that verb or to -ik
-  verbs — spot-checked across completely unrelated, long-established
-  verbs and the gap is total: `ismerkedni`, `zuhanyozni`, `reggelizni`,
-  `lakni`, `olvasni`, `főzni` (a mix of -ik and perfectly regular verbs,
-  several taught since A1) all return zero readings too. This means
-  `HungarianMorphology.analyze()` has no reconstruction path for the
-  infinitive suffix (-ni/-ani/-eni) at all, for any verb — a real,
-  general gap, not something introduced by this session's A2 content.
-  **Worked around, not fixed**, in what I authored: avoided using any
-  infinitive form as a REQUIRED-to-resolve exercise answer (grammar-file
-  prose examples still use infinitives naturally, e.g. "Szeretek
-  barátkozni", since those are receptive-only, not something the Reader
-  needs to resolve). Left for whoever next touches
-  `engine/morphology/hungarian.js` — likely a straightforward addition
-  once picked up (strip -ni/-ani/-eni, reverse the same orthographic
-  changes already handled for other suffixes, validate against the
-  dictionary), but out of scope for a content-authoring session.
+- [x] **Built 2026-09-02.** Tapping a Hungarian verb's infinitive (any
+  verb) returned zero readings — `HungarianMorphology.analyze()` had no
+  reconstruction path for the infinitive suffix (-ni/-ani/-eni) at all.
+  Added a dedicated infinitive-decode step (`engine/morphology/hungarian.js`,
+  step "0b" in `analyze()`): tries the three literal suffix spellings
+  longest-first (`-ani`/`-eni` before bare `-ni`, so a genuine
+  linking-vowel stem like "mond" isn't mistaken for a bare-stem match)
+  and validates each candidate remainder against the dictionary directly
+  — the same strip-and-validate pattern already used throughout this
+  file, including its `-ik` fallback, known-prefix fallback, and
+  frequentative-tail fallback. Also added `IRREGULAR_INFINITIVES`, a
+  small table for the handful of suppletive verbs whose infinitive stem
+  isn't reachable by stripping the suffix at all (eszik→enni, iszik→inni,
+  van/lesz→lenni, megy→menni, hisz→hinni, visz→vinni, vesz→venni,
+  tesz→tenni), checked both bare and behind a known prefix (megenni,
+  meginni, ...).
+  Verified live via `Lexicon.lookup()` in a real page load: all seven
+  words originally reported here (`barátkozni`, `ismerkedni`,
+  `zuhanyozni`, `reggelizni`, `lakni`, `olvasni`, `főzni`) now resolve to
+  their correct lemma with an "Infinitive" analysis label, as do the
+  suppletive infinitives (`enni`, `inni`, `menni`, `lenni` — correctly
+  ambiguous between van/lesz, `hinni`, `vinni`, `venni`, `tenni`) and
+  their prefixed forms (`megenni`, `meginni`). Regression-checked a batch
+  of past-tense, possessive, and case-suffixed forms plus the three
+  genuinely-ambiguous verb/noun collisions this file already documents
+  ("élt", "nőtt", "örült") — all unchanged, and non-infinitive words that
+  happen to end in similar letters ("tanár", "kabin", "medence") produced
+  no false-positive infinitive readings.
