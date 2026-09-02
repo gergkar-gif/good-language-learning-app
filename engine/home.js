@@ -115,6 +115,125 @@ const Home = (function () {
         };
     }
 
+    // The lesson most recently marked complete, by timestamp — used only to
+    // detect whether the learner just closed out a whole unit, not to drive
+    // nextStep() (which already walks the curriculum in order regardless of
+    // what was done most recently).
+    function lastCompletedLessonId() {
+        const progress = (typeof getProgress === 'function') ? getProgress() : {};
+        let bestId = null, bestTime = -1;
+        Object.keys(progress).forEach(id => {
+            const t = Date.parse((progress[id] || {}).completedAt || '') || 0;
+            if (t > bestTime) { bestTime = t; bestId = id; }
+        });
+        return bestId;
+    }
+
+    // Which unit (and level) a lesson id belongs to, or null if the
+    // curriculum isn't loaded or the id isn't in it.
+    function unitFor(lessonId) {
+        const data = window._curriculumData;
+        if (!data || !data.levels || !lessonId) return null;
+
+        for (const levelKey of Object.keys(data.levels)) {
+            const units = data.levels[levelKey].units || [];
+            const unit = units.find(u => (u.lessons || []).some(l => l.id === lessonId));
+            if (unit) return { levelKey, unit };
+        }
+        return null;
+    }
+
+    // A unit's practice nudge, once resolved (practised or skipped), never
+    // comes back for that unit — a one-time "before you move on" beat, not
+    // a recurring interruption. Persisted per course, same as everything
+    // else keyed off Lang.key().
+    function dismissedUnitsKey() {
+        return Lang.key('unitPracticeDismissed');
+    }
+
+    function dismissedUnits() {
+        try {
+            return JSON.parse(localStorage.getItem(dismissedUnitsKey()) || '[]');
+        } catch (error) {
+            return [];
+        }
+    }
+
+    function dismissUnit(unitId) {
+        const list = dismissedUnits();
+        if (!list.includes(unitId)) {
+            list.push(unitId);
+            try { localStorage.setItem(dismissedUnitsKey(), JSON.stringify(list)); }
+            catch (error) { /* private browsing with storage disabled — the nudge just won't stay dismissed */ }
+        }
+    }
+
+    // The exact exercises-file path a lesson id resolves to — the same
+    // level/rest split loadLesson() uses in engine/lessons.js, applied to
+    // the "-ex.json" sibling every lesson's exercise-group sections point
+    // at, rather than fetching each lesson file just to read its own ref
+    // back out.
+    function exerciseRefFor(lessonId) {
+        const parts = lessonId.replace(/^lesson\./, '').split('.');
+        const level = parts[0];
+        const rest = parts.slice(1).join('-');
+        return `exercises/${level}/${level}-${rest}-ex.json`;
+    }
+
+    // The grammar concept a unit leans on most, read from the same
+    // teaches-tag index Workshop's Grammar Driller already builds its skill
+    // list from (content/<lang>/indexes/grammar-index.json) — no new
+    // content or index needed. Ties a unit to a skill by matching that
+    // skill's exercise refs against the unit's own lesson ids; the most
+    // frequent match wins. Returns null (not "mixed") when nothing matches,
+    // so the caller can decide not to offer a nudge with nothing behind it.
+    async function unitSkillFor(unit) {
+        if (typeof Content === 'undefined' || typeof Lang === 'undefined') return null;
+
+        let index;
+        try {
+            index = await Content.json(Lang.content('indexes/grammar-index.json'));
+        } catch (error) {
+            return null;
+        }
+
+        const refs = new Set((unit.lessons || []).map(l => exerciseRefFor(l.id)));
+        const counts = {};
+        Object.keys((index && index.bySkill) || {}).forEach(skill => {
+            index.bySkill[skill].forEach(entry => {
+                if (refs.has(entry.ref)) counts[skill] = (counts[skill] || 0) + 1;
+            });
+        });
+
+        const ranked = Object.keys(counts).sort((a, b) => counts[b] - counts[a]);
+        return ranked[0] || null;
+    }
+
+    // Home's post-unit practice beat: the last lesson completed was the
+    // last lesson in its unit, that unit hasn't already been resolved, and
+    // there's an actual grammar skill to point Workshop at. Any one of
+    // those failing means "no nudge" — this never blocks or delays the
+    // normal continue card, it only sometimes stands in front of it once.
+    async function practiceNudge() {
+        const lessonId = lastCompletedLessonId();
+        if (!lessonId) return null;
+
+        const found = unitFor(lessonId);
+        if (!found) return null;
+
+        const { levelKey, unit } = found;
+        const lessons = unit.lessons || [];
+        const last = lessons[lessons.length - 1];
+        if (!last || last.id !== lessonId) return null; // not the unit's last lesson
+
+        if (dismissedUnits().includes(unit.id)) return null;
+
+        const skill = await unitSkillFor(unit);
+        if (!skill) return null;
+
+        return { levelKey, unit, skill };
+    }
+
     // The next story to read: one at the level being studied if there is one,
     // otherwise the easiest thing left unread. Reaching over an unread A1
     // story to offer a B1 one is not what "read a story" should mean.
@@ -208,6 +327,28 @@ const Home = (function () {
                     <span class="hm-cta">${step.done ? 'Continue' : 'Begin'} →</span>
                 </span>
             </button>
+        `;
+    }
+
+    // Stands in the continue card's slot for exactly one visit after a unit
+    // ends — same dominant position, because this is the one moment a
+    // detour here is worth more than the default "keep going." Two real
+    // actions rather than one whole-row click (unlike continueCard's
+    // button), since "practise" and "not now" aren't the same weight.
+    function practiceNudgeCard(nudge) {
+        const title = nudge.unit.title || 'that unit';
+        return `
+            <section class="hm-continue hm-nudge">
+                <span class="hm-eyebrow">${esc(nudge.levelKey)} · Unit complete</span>
+                <span class="hm-continue-title">Practise before moving on?</span>
+                <span class="hm-continue-sub">A quick round on what "${esc(title)}" just taught,
+                    while it's still fresh.</span>
+                <span class="hm-continue-foot">
+                    <button class="hm-cta-btn" data-practice-unit="${esc(nudge.unit.id)}"
+                        data-skill="${esc(nudge.skill)}">Practise now →</button>
+                    <button class="dk-link-btn" data-skip-unit="${esc(nudge.unit.id)}">Not now</button>
+                </span>
+            </section>
         `;
     }
 
@@ -370,6 +511,23 @@ const Home = (function () {
 
             const go = e.target.closest('[data-go]');
             if (go) goTab(go.getAttribute('data-go'));
+
+            const practise = e.target.closest('[data-practice-unit]');
+            if (practise) {
+                dismissUnit(practise.getAttribute('data-practice-unit'));
+                goTab('drills');
+                if (typeof Workshop !== 'undefined') {
+                    Workshop.open('grammar', { skill: practise.getAttribute('data-skill') });
+                }
+                return;
+            }
+
+            const skip = e.target.closest('[data-skip-unit]');
+            if (skip) {
+                dismissUnit(skip.getAttribute('data-skip-unit'));
+                render();
+                return;
+            }
         });
 
         host.addEventListener('change', e => {
@@ -411,10 +569,11 @@ const Home = (function () {
         const deck = deckStanding();
         const totals = courseTotals();
         const reading = await nextStory(step ? step.level : null);
+        const nudge = await practiceNudge();
 
         host.innerHTML = `
             ${courseBlock()}
-            ${continueCard(step)}
+            ${nudge ? practiceNudgeCard(nudge) : continueCard(step)}
             <div class="hm-doors">
                 ${reviewDoor(deck)}
                 ${readDoor(reading)}

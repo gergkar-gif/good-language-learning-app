@@ -127,6 +127,7 @@ const Workshop = (function () {
     }
 
     let _active = null; // null | 'verbs' | 'grammar'
+    let _activeOptions = null; // passed through to the open driller's render(), e.g. { skill }
 
     function _esc(text) {
         const d = document.createElement('div');
@@ -185,7 +186,7 @@ const Workshop = (function () {
             Verbs.render();
         } else if (DRILLER_MODULES[driller.id]) {
             const container = document.getElementById(driller.containerId);
-            if (container) DRILLER_MODULES[driller.id].render(container);
+            if (container) DRILLER_MODULES[driller.id].render(container, _activeOptions);
         }
     }
 
@@ -207,13 +208,19 @@ const Workshop = (function () {
         _renderDriller(driller);
     }
 
-    function open(id) {
+    // `options` is opaque here — Workshop just carries it to whichever
+    // driller opens (e.g. `{ skill: 'location-with-ban-ben' }` for
+    // GrammarDriller, from Home's post-unit practice nudge). A driller that
+    // doesn't understand `options` just ignores the second render() arg.
+    function open(id, options) {
         _active = id;
+        _activeOptions = options || null;
         render();
     }
 
     function close() {
         _active = null;
+        _activeOptions = null;
         render();
     }
 

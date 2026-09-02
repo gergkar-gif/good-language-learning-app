@@ -412,13 +412,25 @@ const GrammarDriller = (function () {
     // ================================================================
     //  PUBLIC API
     // ================================================================
-    async function render(root) {
+    // `options.skill`, when given, skips the settings screen and launches
+    // straight into a session scoped to that skill — used by Home's
+    // post-unit practice nudge, which already knows which concept it wants
+    // drilled and shouldn't make the learner pick it again. Only takes
+    // effect from the settings phase: a driller resumed mid-session (e.g.
+    // navigating back to Workshop) ignores it and shows what was already in
+    // progress, same as opening this driller any other way.
+    async function render(root, options) {
         _container = root;
 
         if (_phase === PHASE.SETTINGS) {
             _container.innerHTML = `<div class="gd-loading">Loading…</div>`;
             await _load();
-            _renderSettings();
+            if (options && options.skill) {
+                _selectedModule = options.skill;
+                await _startSession();
+            } else {
+                _renderSettings();
+            }
         } else if (_phase === PHASE.SESSION) {
             _renderSession();
         } else {

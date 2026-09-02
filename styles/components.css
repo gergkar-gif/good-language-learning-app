@@ -2931,6 +2931,35 @@
   border-color: var(--border);
 }
 
+/* The practice nudge is a section with two real buttons in it, not one
+   whole-row click like the button version above — no hover affordance on
+   the card itself, only on the buttons it actually contains. */
+.hm-continue.hm-nudge {
+  cursor: default;
+}
+
+.hm-continue.hm-nudge:hover {
+  border-color: var(--border);
+}
+
+/* A button wearing .hm-cta's own look (the one accent-coloured call to
+   action on the screen) rather than the plain text span it usually is —
+   needed here because the nudge card holds two separate actions instead
+   of being one big clickable button. */
+.hm-cta-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent-dark);
+  cursor: pointer;
+}
+
+.hm-cta-btn:hover {
+  text-decoration: underline;
+}
+
 .hm-eyebrow {
   font-size: 12px;
   letter-spacing: .04em;

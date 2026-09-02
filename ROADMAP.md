@@ -552,6 +552,73 @@ track known bugs in existing content rather than things not yet built.
   Verb 8/8 with the combined tense+definiteness note. Zero malformed
   content in any sweep.
 
+## Cross-app flow
+
+- [x] The app's sections (Lessons, Library, Workshop, Decks, Journey) read
+  as six separate tools rather than one coherent whole — no interjection
+  ties them together, so a learner has to already know why Workshop exists
+  versus Decks versus Library. First concrete piece, from a brainstorm
+  session: after finishing a unit's last lesson, Home should surface a
+  Workshop practice round on what that unit just taught, instead of always
+  pointing straight at the next lesson. Feedback settled two open
+  questions: nudge, not a gate (never blocks progress, always skippable);
+  and unit-boundary only, not a raw lesson-count trigger (a count would
+  land mid-unit, before a concept is even fully taught — unit-end is the
+  moment the content is actually complete). **Built 2026-09-02**:
+  - `engine/home.js`'s new `practiceNudge()` detects "just finished a
+    unit" from `getProgress()`'s own `completedAt` timestamps (most
+    recently completed lesson, checked against whether it's the last
+    lesson in its unit's `lessons` array) — no new progress tracking
+    needed. Resolves the unit's grammar concept via the exact `teaches`
+    tags already authored on every exercise, matched against
+    `content/<lang>/indexes/grammar-index.json`'s `bySkill` map (the same
+    index Workshop's Grammar Driller already builds its skill list from) —
+    `exerciseRefFor()` derives each lesson's own exercise-file ref
+    directly from its id, the same level/rest split `loadLesson()` in
+    `engine/lessons.js` already uses, so no per-lesson file fetch is
+    needed just to find the ref back out. The most-frequent matching skill
+    wins; finding none means no nudge for that unit — silently falls back
+    to the normal continue card rather than showing a "practice" button
+    with nothing behind it.
+  - Resolved silently once (practised or skipped) via a small
+    `Lang.key('unitPracticeDismissed')`-backed set, so it's a one-time
+    beat, never a recurring interruption for the same unit.
+  - `GrammarDriller.render()` (`engine/drills/grammar.js`) gained an
+    `options.skill` parameter — only honoured from its settings phase, so
+    a driller resumed mid-session ignores it — that skips the skill-picker
+    screen and launches straight into a session on that exact skill.
+    `Workshop.open(id, options)` (`engine/workshop.js`) now threads an
+    opaque options object through to whichever driller opens.
+  - **Known real gap, not fixed here**: `grammar-index.json` only indexes
+    `category:"grammar"` exercises (81 of ~4,700 in Hungarian), while the
+    same `teaches` tags are authored far more broadly across
+    introduce/controlled/practice/etc. — so today's nudge only fires for
+    units whose grammar happens to include a dedicated grammar-category
+    exercise, which is a minority of units. Broadening either the index or
+    the Grammar Driller's own pool-building to pull from any category
+    would widen coverage a lot, but that's a change to what "Grammar
+    Driller" draws from across the whole app, not scoped to this pass.
+  - Verified live via Playwright for both courses: seeded a Hungarian
+    unit's progress (`unit.a1.05`, "Objects & Locations") and confirmed
+    the nudge card rendered with the correct title and a real resolved
+    skill (`van-and-nincs-there-is-there-isn-t`); clicking "Practise now"
+    switched to the Workshop tab and landed directly on "Question 1 of
+    10" with zero settings screen; returning to Home afterward showed the
+    nudge gone and the normal continue card in its place. Repeated for
+    Spanish (`unit.a1.01`, skill `ser-questions`), this time clicking "Not
+    now" — nudge disappeared without navigating away, and stayed gone
+    after a full page reload. No console/page errors in any run (the one
+    404 seen is `drills/grammar/a1-bank.json`, which doesn't exist for
+    Hungarian — a pre-existing, harmless fetch failure the driller already
+    catches, confirmed present on a baseline Grammar Driller visit with no
+    nudge involved at all).
+- [ ] Give the nav visible hierarchy — Lessons as the anchor, Library/
+  Workshop/Decks as ways to practice what it taught, Journey as the
+  record — rather than six flat, co-equal tabs.
+- [ ] Surface XP/streak feedback inside the lesson itself, not only on
+  Home's strip and as a sound effect — the moment it's earned currently
+  goes unmarked.
+
 ## Interface & platform
 
 - [ ] Interface increasingly bilingual as level rises, eventually
