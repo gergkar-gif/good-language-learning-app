@@ -25,6 +25,16 @@ const LevelTest = (function () {
     let order = {};         // question id -> shuffled options, fixed per sitting
     let marked = false;
 
+    // A learner who scores this high on a level's test knows the level, not
+    // just enough of it to be waved through — high enough above the 80%
+    // pass mark that a lucky guess or two on a 20+ question test can't
+    // cross it. Distinct from (and always at or above) passMark: the test
+    // content files don't carry this value because it isn't a property of
+    // the test, it's a product decision about how sure the app needs to be
+    // before it assumes a whole level's worth of lessons was already
+    // learned elsewhere.
+    const JUMP_AHEAD_MARK = 0.9;
+
     function resultsKey() {
         return Lang.key('testResults');
     }
@@ -102,16 +112,29 @@ const LevelTest = (function () {
         });
 
         const score = correct / test.questions.length;
+        const jumpAhead = score >= JUMP_AHEAD_MARK;
         const result = {
             level: test.level,
             correct: correct,
             total: test.questions.length,
             score: score,
             passed: score >= test.passMark,
+            jumpAhead: jumpAhead,
             weakest: Object.keys(wrongBy).sort((a, b) => wrongBy[b] - wrongBy[a]),
             takenAt: new Date().toISOString()
         };
         saveResult(test.level, result);
+
+        // A score this high means the level's actual content was already
+        // known walking in — credit the whole level, not just the test, so
+        // the rest of the app (Continue, My Journey, the level's own
+        // progress bar) treats it as done rather than showing every one of
+        // its lessons as still to do. See markLevelComplete()'s own
+        // comment on why this carries no XP.
+        if (jumpAhead && typeof markLevelComplete === 'function') {
+            result.newlyCompletedLessons = markLevelComplete(test.level).length;
+        }
+
         return result;
     }
 
@@ -154,7 +177,12 @@ const LevelTest = (function () {
         const percent = Math.round(result.score * 100);
         const next = { A1: 'A2', A2: 'B1', B1: 'B2', B2: 'C1' }[result.level];
 
-        const verdict = result.passed
+        const verdict = result.jumpAhead
+            ? `<p class="lt-verdict is-pass">${percent}% — that's ${
+                 result.level} known. Every lesson in the level is now
+                 marked complete, so you can move straight on to ${
+                 next || 'what comes next'}.</p>`
+            : result.passed
             ? `<p class="lt-verdict is-pass">${percent}% — you are ready for
                  ${next || 'what comes next'}.</p>`
             : `<p class="lt-verdict is-fail">${percent}% — not quite. ${

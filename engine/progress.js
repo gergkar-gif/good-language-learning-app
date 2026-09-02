@@ -43,6 +43,39 @@ function isLessonComplete(lessonId) {
     return !!getProgress()[lessonId];
 }
 
+// Bulk-completes every lesson in a level at once — used when a learner
+// tests out of a level via LevelTest's jump-ahead threshold rather than
+// working through each lesson individually. Batches the localStorage
+// write and the curriculum re-render into one each, unlike calling
+// markLessonComplete() lesson-by-lesson, since this can touch dozens of
+// lessons in a single call. Awards no XP: level tests have never carried
+// an XP reward (see engine/leveltest.js), and paying out a whole level's
+// worth of per-lesson XP for one test would reward the test itself
+// rather than the work XP is meant to measure. Returns the ids newly
+// marked complete, so the caller can report how many that actually was.
+function markLevelComplete(levelKey) {
+    const data = window._curriculumData;
+    if (!data || !data.levels || !data.levels[levelKey]) return [];
+
+    const lessons = (data.levels[levelKey].units || []).flatMap(u => u.lessons || []);
+    const progress = getProgress();
+    const newlyCompleted = [];
+
+    lessons.forEach(l => {
+        if (!progress[l.id]) {
+            progress[l.id] = { completedAt: new Date().toISOString(), viaLevelTest: true };
+            newlyCompleted.push(l.id);
+        }
+    });
+
+    if (newlyCompleted.length) {
+        saveProgress(progress);
+        if (typeof renderCurriculum === 'function') renderCurriculum();
+    }
+
+    return newlyCompleted;
+}
+
 function getLevelProgress(levelKey) {
     const data = window._curriculumData;
 
@@ -68,6 +101,7 @@ window.SpanishMastery.progress = {
     getProgress,
     saveProgress,
     markLessonComplete,
+    markLevelComplete,
     isLessonComplete,
     getLevelProgress
 };

@@ -925,6 +925,25 @@ track known bugs in existing content rather than things not yet built.
   and gain envelopes per sound), since literal listening isn't possible in
   this environment; toggling mute actually suppresses/restores node
   creation, not just the visible icon state.
-- [ ] Jump ahead: an end-of-level exam that, passed at 90%+, lets a
-  learner skip straight to the next level — the assumption being they
-  already know that level's content.
+- [x] **Built 2026-09-02.** Jump ahead: scoring 90%+ (`JUMP_AHEAD_MARK` in
+  `engine/leveltest.js`, distinct from and above the existing 80%
+  advisory `passMark`) on a level's test now bulk-marks every lesson in
+  that level complete (`markLevelComplete()`, new in
+  `engine/progress.js`), not just a pass record — the assumption being a
+  score that high means the level's actual content was already known,
+  not just enough of it to scrape by. Deliberately not a gate: nothing
+  stops a learner from testing at any time, same as before. Awards no
+  XP, matching how level tests have always worked (no XP mechanic exists
+  for taking one at all) — the goal is crediting the level's progress
+  bar, Continue, and My Journey's stats (words met, grammar points,
+  levelDone), not paying out a level's worth of per-lesson XP for one
+  test. The result screen names the level and says every lesson is now
+  marked complete rather than just "you are ready for the next level."
+  Verified live via Playwright: scoring 100% on the ES A1 test moved its
+  progress from 0/120 to 120/120 lessons complete, flipped
+  `Journey.collect().levelDone.A1` to true (with wordsMet/grammarDone
+  rising to match), and `Home.nextStep()` correctly recommended A2's
+  first lesson afterward instead of anything still inside A1; a
+  passing-but-sub-90% attempt (85%, 17/20) left the level's progress at
+  0/120 and showed the ordinary pass message, confirming the two
+  thresholds stay genuinely independent.
