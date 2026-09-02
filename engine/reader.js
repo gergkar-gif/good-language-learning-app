@@ -249,12 +249,16 @@ async function showWord(spanish, contextTokens, tokenIndex) {
     const capWarning = document.getElementById('popup-new-word-cap');
     const btn = document.getElementById('popup-add-btn');
     const alreadySaved = srsDeck.find(w => w.spanish === cleanWord);
+    const alreadyKnown = typeof isKnown === 'function' && isKnown(cleanWord);
     const atCap = !canAddNewWord();
 
     btn.classList.remove('is-saved', 'is-disabled');
     capWarning.style.display = 'none';
 
-    if (alreadySaved) {
+    if (alreadyKnown) {
+        btn.textContent = '✓ Already known';
+        btn.classList.add('is-saved');
+    } else if (alreadySaved) {
         btn.textContent = '✓ Already in deck';
         btn.classList.add('is-saved');
     } else if (atCap) {

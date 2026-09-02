@@ -160,6 +160,20 @@ track known bugs in existing content rather than things not yet built.
 
 ## Decks
 
+> **Standing design principle (2026-09-02):** Decks' UI is deliberately
+> plain — a straightforward place to review, no lesson cross-links, no
+> extra chrome. That is a *display* decision, not a data one. Keep
+> tracking (and keep expanding) metadata on what a learner is
+> learning, where, which words, which grammar concepts, which skills —
+> `progress.js`, `srs.js`'s `knownWords`/`srsDeck`, the word-lesson
+> index, Journey's grammar/word tallies, etc. — even where nothing in
+> the UI currently surfaces it. This is the data that will eventually
+> assess a learner's actual level, and it's what future features
+> (listening, speaking, and exercises personalized to what someone
+> genuinely knows rather than what unit they're nominally on) will need
+> to draw on. Don't strip a metadata source just because the feature
+> reading it today is minimal.
+
 - [x] Spanish decks: some verb definitions are overly verbose — needs a
   pass to tighten them. **Fixed 2026-08-27**: `short_gloss()` in
   `build-manifest.py` (and its JS twin `Lexicon.shortGloss()` in
@@ -213,6 +227,32 @@ track known bugs in existing content rather than things not yet built.
   fully completed a 5-word deck in 11 rounds (10 is the theoretical
   minimum — 2 passes × 5 words) via the same map-driven approach, with
   both question types and the wrong-answer requeue path exercised.
+- [x] Match should work through the whole deck/group being reviewed, not
+  stop after one small random sample. **Rebuilt 2026-09-02**: the
+  original Match dealt a single fixed 8-pair round from the deck and
+  ended there, however large the deck. `engine/decks/match.js` now keeps
+  a board of up to 8 pairs but treats it as a window over the WHOLE word
+  list passed in — matching a pair removes it and, if words remain,
+  pulls the next one in from the (already-shuffled) pool, reshuffling
+  the entire board (not just filling the vacated slot) so the new pair's
+  position isn't predictable from watching where the old one
+  disappeared, per feedback that an immediately-obvious replacement slot
+  would be too easy to game. A short flash (400ms, matching the existing
+  wrong-pair flash) shows a match before the refill so it still reads as
+  a match, not an instant swap. The session ends once every word has
+  been matched once; the header now also shows a running "N / total"
+  progress count next to the timer. Personal-best timing moved to a new
+  localStorage key (`...:stream:<deckId>`) rather than reusing the old
+  one, since the old best measured a different, incomparable thing (time
+  to clear one random 8-pair sample vs. time to clear the whole deck).
+- [x] Decks shouldn't carry the Tier 2 "which lesson taught this word"
+  cross-link — explicit feedback that it doesn't belong in what should
+  be a straightforward review place. **Removed 2026-09-02**: deleted the
+  link's rendering, its click handler, and `decks.js`'s own
+  `word-lesson-index.json` fetch (nothing else in the file used it) —
+  the underlying index and its cross-links in the Reader popup and
+  Workshop's Grammar Driller are untouched, this was Decks-only. Cleaned
+  up the now-dead `.dk-word-lesson-link` CSS rule.
 - [x] Deck word list should default to add order with an explicit sort
   option, and Shuffle shouldn't rearrange the list itself — it should be a
   Flashcards-only presentation toggle, "like the shuffle button on

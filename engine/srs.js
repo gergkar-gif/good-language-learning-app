@@ -287,11 +287,16 @@ function addToSRS() {
         type: currentWordPos || 'unknown'
     };
 
-    if (srsDeck.find(w => w.spanish === cleanWord)) {
+    // Known and reviewing are mutually exclusive (see the file header
+    // comment on knownWords above) — without this check, tapping an
+    // already-known word in the Reader and hitting "Add to SRS Deck"
+    // would push a second, independent card for the same lemma, since
+    // this only ever checked srsDeck, never knownWords.
+    if (srsDeck.find(w => w.spanish === cleanWord) || isKnown(cleanWord)) {
         closePopup();
         return;
     }
-    
+
     if (!canAddNewWord()) {
         closePopup();
         return;
@@ -708,10 +713,16 @@ function showAnswer() {
 // Same normalisation lessons.js/GrammarRunner use elsewhere: case,
 // whitespace and punctuation stripped, but accents checked directly
 // (2026-08-27) - "dia" no longer matches "día", matching the standard the
-// rest of the course now holds accents to for both languages.
+// rest of the course now holds accents to for both languages. Also strips
+// a trailing "…" — Lexicon.shortGloss() appends one when it caps a gloss
+// to its first 3 synonyms (e.g. "to take, to grab, to catch…"), and
+// without stripping it here a learner who types the complete, correct
+// last-shown synonym ("to catch") was marked wrong because the stored
+// expected answer still carried the ellipsis glued onto it.
 function srsNormalise(text) {
     return String(text || '').toLowerCase().trim()
         .replace(/[.,!?¡¿;:]/g, '')
+        .replace(/…$/, '')
         .normalize('NFC');
 }
 

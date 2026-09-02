@@ -955,3 +955,40 @@ a code read. 7 real findings, all fixed and re-verified live:
   ("élt", "nőtt", "örült") — all unchanged, and non-infinitive words that
   happen to end in similar letters ("tanár", "kabin", "medence") produced
   no false-positive infinitive readings.
+
+## SRS/Decks — bug sweep findings (found & fixed 2026-09-02)
+
+A proactive bug sweep (read-only subagent review of engine/srs.js,
+engine/decks.js, and the Workshop drillers, no prior report driving it)
+found two genuine, previously-undiscovered bugs, both fixed the same
+session:
+
+- [x] **`addToSRS()` (engine/srs.js) could add a second, duplicate SRS
+  card for a word already marked known**, breaking the app's own
+  known/reviewing mutual-exclusivity invariant (stated in `knownWords`'
+  file header comment: "the same word never sits in both"). Every other
+  entry point that can push a card into `srsDeck` — `Decks.addWordToDeck()`,
+  `Decks.reviewDeck()`, `Decks.statusOf()` — already guarded with
+  `isKnown()`; `addToSRS()` (the Reader popup's "+ Add to SRS Deck"
+  button) and `showWord()`'s button-state logic never did, only checking
+  `srsDeck` for an existing card. Concretely: mark a word known, then tap
+  it again while reading and hit "+ Add to SRS Deck" — a fresh, second,
+  independently-scheduled card appears for the same lemma, and "All my
+  words" (`Decks.myDeck()`) shows it twice with no dedup. **Fixed**: both
+  `addToSRS()`'s add-guard and `showWord()`'s button-state check now also
+  check `isKnown()`; the button reads "✓ Already known" (new state,
+  alongside the existing "✓ Already in deck") when it applies.
+- [x] **A correctly-typed Review answer could be marked wrong** when the
+  expected English gloss was long enough for `Lexicon.shortGloss()` to
+  truncate it — `shortGloss()` appends an ellipsis (`…`) directly onto
+  the last kept synonym with no separator (e.g. "to take, to grab, to
+  catch…"), and `srsNormalise()`/`englishAlternatives()` (engine/srs.js),
+  which grade a typed Review answer, stripped `.,!?¡¿;:` but never `…` —
+  so typing the complete, correct "to catch" didn't match the stored "to
+  catch…" and was graded wrong. **Fixed**: `srsNormalise()` now also
+  strips a trailing `…`.
+
+Both verified by tracing the exact code paths and data flow (no live
+Playwright re-verification of this specific pair beyond the code trace,
+since both are narrow, mechanical string/guard fixes with no complex
+interaction to observe).

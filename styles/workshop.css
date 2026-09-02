@@ -162,9 +162,10 @@
     cursor: pointer;
 }
 
-/* Tier 2 cross-link — same treatment as its Reader/Decks siblings
-   (.wp-lesson-link / .dk-word-lesson-link), just matching this driller's
-   own centred HUD width instead of theirs. */
+/* Tier 2 cross-link — same treatment as its Reader sibling
+   (.wp-lesson-link), just matching this driller's own centred HUD width
+   instead of theirs. Decks had the same link once too, but it was
+   removed 2026-09-02 — decks stayed a straightforward review place. */
 .gd-word-lesson-link {
     display: block;
     max-width: 480px;
