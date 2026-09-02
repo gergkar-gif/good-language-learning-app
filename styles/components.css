@@ -1871,6 +1871,15 @@
   display: none;
 }
 
+/* The Tier 2 "taught in Unit X · Lesson X.Y" cross-link — reuses
+   .dk-link-btn's plain-underlined-text look (the app's established quiet
+   meta-action treatment) but needs block layout to sit on its own line
+   here rather than inline. */
+.wp-lesson-link {
+  display: block;
+  margin: 4px 0 12px;
+}
+
 .wp-add {
   width: 100%;
   padding: 14px;
@@ -2705,6 +2714,18 @@
   text-transform: uppercase;
   color: var(--muted);
   white-space: nowrap;
+}
+
+/* The Tier 2 "which lesson taught this" cross-link. .dk-word's row is a
+   3-4 column grid (word / translation / state[/remove]) with no slot of
+   its own for a fifth thing, so this spans every column instead of
+   fighting for one — its own full-width line under the row rather than a
+   cramped extra column. */
+.dk-word-lesson-link {
+  grid-column: 1 / -1;
+  justify-self: start;
+  font-size: 12px;
+  margin-top: 2px;
 }
 
 /* A word not yet taken on is legible but plainly not part of your deck. */

@@ -39,38 +39,100 @@ const Home = (function () {
     // GATHERING
     // ----------------------------------------
 
-    // The next thing in the course: the first unfinished lesson, or — once a
-    // level's lessons are all done — the test that closes it. Levels are
-    // walked in order, so a half-finished A1 is never stepped over.
+    // The whole course, flattened into one ordered walk — every lesson, and
+    // a level-test placeholder right after each level's last lesson, in the
+    // same level→unit→lesson order the app has always used. nextStep()
+    // below walks this twice: once forward from wherever the learner
+    // actually left off, once from the very start as a fallback.
+    function courseWalk() {
+        const data = window._curriculumData;
+        if (!data || !data.levels) return [];
+        const order = (typeof LEVEL_ORDER !== 'undefined') ? LEVEL_ORDER : ['A1'];
+
+        const steps = [];
+        order.forEach(level => {
+            const entry = data.levels[level];
+            const units = (entry && entry.units) || [];
+            const lessons = units.flatMap(u => u.lessons || []);
+            if (!lessons.length) return;
+
+            lessons.forEach(lesson => {
+                // The unit's own title is more useful here than the level's —
+                // "Greetings & Introductions" says more than "Fundamentals".
+                const unit = units.find(u => (u.lessons || []).some(l => l.id === lesson.id));
+                steps.push({ kind: 'lesson', level, title: (unit && unit.title) || entry.title || '', lesson });
+            });
+            steps.push({ kind: 'test', level, title: entry.title || '' });
+        });
+        return steps;
+    }
+
+    function stepIsDone(step, progress) {
+        if (step.kind === 'lesson') return !!progress[step.lesson.id];
+        const result = (typeof LevelTest !== 'undefined') ? LevelTest.resultFor(step.level) : null;
+        return !!(result && result.passed);
+    }
+
+    function levelStats(level, progress) {
+        const data = window._curriculumData;
+        const entry = data && data.levels && data.levels[level];
+        const lessons = ((entry && entry.units) || []).flatMap(u => u.lessons || []);
+        return { done: lessons.filter(l => progress[l.id]).length, total: lessons.length };
+    }
+
+    function stepToResult(step, progress) {
+        const stats = levelStats(step.level, progress);
+        if (step.kind === 'test') {
+            const result = (typeof LevelTest !== 'undefined') ? LevelTest.resultFor(step.level) : null;
+            return { kind: 'test', level: step.level, title: step.title, result, done: stats.done, total: stats.total };
+        }
+        return { kind: 'lesson', level: step.level, title: step.title, lesson: step.lesson, done: stats.done, total: stats.total };
+    }
+
+    // The next thing to continue with. Follows the learner rather than the
+    // course's own order: it continues forward from wherever their most
+    // recently completed lesson actually sits, so clearing Unit 10 out of
+    // order recommends Unit 11 next, not a snap back to Unit 1 just because
+    // it's still the earliest unfinished thing overall. Only falls back to
+    // sweeping from the very start of the course — the old, order-only
+    // behaviour — once there's genuinely nothing left ahead, which is what
+    // keeps a real gap left behind (an earlier unit never finished) from
+    // being lost track of forever rather than just not being the default.
     function nextStep() {
         const data = window._curriculumData;
         if (!data || !data.levels) return null;
 
         const progress = (typeof getProgress === 'function') ? getProgress() : {};
-        const order = (typeof LEVEL_ORDER !== 'undefined') ? LEVEL_ORDER : ['A1'];
+        const steps = courseWalk();
+        if (!steps.length) return null;
 
-        for (let i = 0; i < order.length; i++) {
-            const level = order[i];
-            const entry = data.levels[level];
-            const units = (entry && entry.units) || [];
-            const lessons = units.flatMap(u => u.lessons || []);
-            if (!lessons.length) continue;
+        const lastId = lastCompletedLessonId();
+        const lastIndex = lastId ? steps.findIndex(s => s.kind === 'lesson' && s.lesson.id === lastId) : -1;
 
-            const done = lessons.filter(l => progress[l.id]).length;
-            const lesson = lessons.find(l => !progress[l.id]);
+        if (lastIndex !== -1) {
+            for (let i = lastIndex + 1; i < steps.length; i++) {
+                const step = steps[i];
+                if (stepIsDone(step, progress)) continue;
 
-            if (lesson) {
-                // The unit's own title is more useful here than the level's —
-                // "Greetings & Introductions" says more than "Fundamentals".
-                const unit = units.find(u => (u.lessons || []).some(l => l.id === lesson.id));
-                const title = (unit && unit.title) || entry.title || '';
-                return { kind: 'lesson', level, title, lesson, done, total: lessons.length };
+                // A level test only belongs here once the whole level is
+                // actually done — reaching it mid-forward-scan while an
+                // earlier lesson in the SAME level is still incomplete
+                // (behind the scan's start point, so never visited above)
+                // means there's a real gap to go back to first. Stop
+                // scanning forward and fall through to the sweep below,
+                // which will find that gap rather than offering the test
+                // prematurely.
+                if (step.kind === 'test') {
+                    const stats = levelStats(step.level, progress);
+                    if (stats.done < stats.total) break;
+                }
+
+                return stepToResult(step, progress);
             }
+        }
 
-            const result = (typeof LevelTest !== 'undefined') ? LevelTest.resultFor(level) : null;
-            if (!result || !result.passed) {
-                return { kind: 'test', level, title: entry.title || '', result, done, total: lessons.length };
-            }
+        for (let i = 0; i < steps.length; i++) {
+            if (!stepIsDone(steps[i], progress)) return stepToResult(steps[i], progress);
         }
 
         return null;    // every lesson finished and every test passed

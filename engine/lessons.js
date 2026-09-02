@@ -1179,6 +1179,33 @@ function lessonNumberLabel() {
     return `Unit ${unit.label} · Lesson ${unit.label}.${position}`;
 }
 
+// The general form of lessonNumberLabel() above — works for any lesson id,
+// not just the one currently open — for the Tier 2 cross-links (Reader's
+// word-tap popup, Decks' word-list rows) pointing a word back to the
+// lesson word-lesson-index.json says taught it. Searches every level since
+// the caller only has a lesson id, not which level it's in; returns null
+// (not a guess) when the curriculum index isn't loaded yet or the id
+// isn't in it.
+function lessonLabelFor(lessonId) {
+    const data = window._curriculumData;
+    if (!data || !data.levels || !lessonId) return null;
+
+    for (const levelKey of Object.keys(data.levels)) {
+        const units = (data.levels[levelKey].units || []);
+        const unit = units.find(u => (u.lessons || []).some(l => l.id === lessonId));
+        if (!unit) continue;
+
+        const position = unit.lessons.findIndex(l => l.id === lessonId) + 1;
+        const lesson = unit.lessons[position - 1];
+        return {
+            lessonId,
+            label: `Unit ${unit.label} · Lesson ${unit.label}.${position}`,
+            title: lesson.title || ''
+        };
+    }
+    return null;
+}
+
 // "4 min" rather than "4m 12s" — a learner checking how long a lesson took
 // wants a rough sense of it, not a stopwatch reading. Anything under a
 // minute still says "1 min" rather than "0 min", since "you took no time"

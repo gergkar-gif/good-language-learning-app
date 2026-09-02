@@ -38,6 +38,7 @@ const Decks = (function () {
     };
 
     let catalogue = null;      // decks.json, once fetched
+    let wordLessonIndex = null; // word-lesson-index.json's byLemma map, once fetched
     let myDecks = [];          // custom, learner-owned decks
     let openDeck = null;       // deck id being viewed, or null for the index
     let draft = null;          // deck under construction/edit in the editor, or null
@@ -53,6 +54,20 @@ const Decks = (function () {
         // Needed for withArticle() below — without it, article() finds no
         // gender data and every card silently falls back to the bare lemma.
         if (typeof Lexicon !== 'undefined') await Lexicon.load();
+
+        // Tier 2 cross-link data (which lesson taught a word, if any) —
+        // Content.json() caches by path itself, so calling this on every
+        // load() is cheap after the first; not folded into the
+        // catalogue-already-loaded early return below so it still resolves
+        // even if catalogue was somehow set without going through here.
+        if (!wordLessonIndex && typeof Content !== 'undefined') {
+            try {
+                wordLessonIndex = await Content.json(Lang.content('indexes/word-lesson-index.json'));
+            } catch (error) {
+                wordLessonIndex = { byLemma: {} };
+            }
+        }
+
         if (catalogue) return catalogue;
         try {
             const res = await fetch(Lang.content('decks/decks.json'));
@@ -838,12 +853,27 @@ const Decks = (function () {
                     : `<button class="dk-word-remove" data-remove-card="${esc(word.lemma)}"
                         aria-label="Remove ${esc(word.lemma)}">×</button>`;
 
+            // Tier 2 cross-link — only shown when the word is actually in
+            // word-lesson-index.json (see scripts/build_word_lesson_index.py);
+            // a frequency-deck word the curriculum never formally taught
+            // just doesn't get a line, rather than a link with nothing
+            // honest behind it. Resolved against the already-loaded
+            // curriculum data at render time (lessonLabelFor(), engine/
+            // lessons.js) rather than cached in the index itself, so a
+            // renamed lesson can never leave a stale title here.
+            const lessonId = wordLessonIndex && wordLessonIndex.byLemma && wordLessonIndex.byLemma[word.lemma];
+            const lessonInfo = lessonId && typeof lessonLabelFor === 'function' ? lessonLabelFor(lessonId) : null;
+            const lessonLink = lessonInfo
+                ? `<button class="dk-link-btn dk-word-lesson-link" data-open-lesson="${esc(lessonId)}">${esc(lessonInfo.label)}</button>`
+                : '';
+
             return `
                 <li class="dk-word dk-word-${state.replace(' ', '-')}">
                     <span class="dk-word-es">${esc(withArticle(word.lemma))}${
                         typeof Speech !== 'undefined' ? Speech.button(word.lemma) : ''}</span>
                     <span class="dk-word-en">${esc(word.translation)}</span>
                     <span class="dk-word-state">${state}</span>
+                    ${lessonLink}
                     ${rowAction}
                 </li>
             `;
@@ -1027,6 +1057,14 @@ const Decks = (function () {
         });
         host.querySelectorAll('[data-edit-deck]').forEach(el => {
             el.onclick = function () { openEditDeck(el.getAttribute('data-edit-deck')); };
+        });
+        // Tier 2 cross-link: jump straight into the lesson that taught this
+        // word, same as the Reader popup's equivalent link.
+        host.querySelectorAll('[data-open-lesson]').forEach(el => {
+            el.onclick = function (e) {
+                e.stopPropagation();
+                if (typeof startLesson === 'function') startLesson(el.getAttribute('data-open-lesson'));
+            };
         });
     }
 

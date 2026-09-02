@@ -800,6 +800,67 @@ track known bugs in existing content rather than things not yet built.
     screen — with a real in-context sentence for one of the two missed
     words, and the review session closed cleanly behind it. No
     console/page errors in either run.
+- [x] Two follow-ups from walking through what a learner's actual journey
+  looks like end to end: Home's "Continue" card doesn't track a learner
+  who deviates from course order (jump to Unit 10, clear it, and Continue
+  still says "Begin Unit 1" since that's the earliest gap overall — it has
+  no idea Unit 10 happened), and Tier 2 of the cross-link scoping (the
+  word→lesson reverse index) was still unbuilt. **Built 2026-09-02**:
+  - **`nextStep()` now follows the learner, not just course order.**
+    `engine/home.js` flattens the whole course into one ordered walk
+    (`courseWalk()` — every lesson, a level-test placeholder after each
+    level's lessons) and tries scanning FORWARD from wherever the
+    learner's most recently completed lesson sits (`lastCompletedLessonId()`,
+    already built for the post-unit nudge), only falling back to the old
+    sweep-from-the-very-start behaviour once there's nothing left ahead —
+    so a real gap left behind never gets permanently lost track of, it's
+    just not the default anymore. One real edge case found and handled
+    while building this: forward-scanning can reach a level's test
+    placeholder while an *earlier* lesson in that same level is still
+    incomplete (behind the scan's start point, so never visited) — fixed
+    by checking the whole level is actually done before offering its
+    test, otherwise falling through to the sweep instead of recommending
+    the test prematurely.
+  - **Tier 2 built**: `scripts/build_word_lesson_index.py`, a new
+    "which lesson taught this word" reverse index
+    (`content/<lang>/indexes/word-lesson-index.json`, `{"byLemma":
+    {lemma: lessonId}}`) — same minimal, resolve-the-title-at-render-time
+    shape as every other generated index in this repo. Walks
+    `curriculum.json`'s actual level→unit→lesson order rather than
+    globbing and sorting `vocabulary/*.json` filenames — Hungarian's
+    lesson numbers aren't zero-padded past 2 digits, so `a1-100` would
+    sort before `a1-99`, a real bug this avoids. First lesson in course
+    order wins when a word is taught more than once (checked: 138
+    Hungarian lemmas appear in 2+ vocabulary files). Coverage is honest,
+    not universal — 664/1,415 Hungarian words (~47%) and 2,201/2,823
+    Spanish words (~78%) in `decks.json`'s table resolve to a teaching
+    lesson; the rest are frequency-deck words never formally taught in
+    any lesson, and correctly get no link rather than a guessed one.
+    Wired into the two consumers scoped as the first slice (Workshop's
+    Vocabulary Driller left for later, per the original scoping — it's a
+    cheap add-on once the index exists, not a reason to hold up the
+    other two): the Reader's word-tap popup gets a new
+    `_showLessonLink()` ("Taught in Unit X · Lesson X.Y", straight into
+    `startLesson()`, hidden entirely when the word isn't in the index),
+    and Decks' word-list rows get the same link (`lessonLabelFor()`, a
+    new general-purpose sibling of `lessonNumberLabel()` in
+    `engine/lessons.js` — same numbering, just parameterized by lesson id
+    instead of hardcoded to the currently-open lesson). Deliberately not
+    on the SRS review card itself — reviewing is retrieval practice, and
+    an escape hatch back to "go look it up" mid-review undermines the
+    exercise.
+  - Verified live via Playwright: a fresh learner still gets Unit 1 (no
+    regression); clearing Unit 10 while Units 1-9 stay untouched correctly
+    shows Unit 11's first lesson as Continue, not Unit 1; marking 174 of
+    179 A1 lessons done (everything except Unit 1's 5) with the most
+    recent completion near the end of A1 correctly fell back to
+    recommending Unit 1's first lesson rather than the A1 level test.
+    Tapping "szia" in the Reader showed "Taught in Unit 1 · Lesson 1.1"
+    and clicking it opened that exact lesson; a nonsense/unindexed word
+    correctly showed no link. A test deck with one indexed word ("szia")
+    and one unindexed one showed the lesson link on only the indexed
+    row's line, and clicking it opened the lesson. No console/page errors
+    in any run.
 
 ## Interface & platform
 

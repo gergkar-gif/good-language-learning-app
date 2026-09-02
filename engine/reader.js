@@ -44,6 +44,7 @@ function _ensureWordPopup() {
                     <button class="wp-close" onclick="closePopup()" aria-label="Close">×</button>
                 </div>
                 <div id="popup-body"></div>
+                <button id="popup-lesson-link" class="dk-link-btn wp-lesson-link" hidden></button>
                 <p id="popup-new-word-cap" class="wp-cap">Daily new word limit reached (20/20)</p>
                 <div class="wp-actions">
                     <button id="popup-add-btn" class="wp-add" onclick="addToSRS()">+ Add to SRS Deck</button>
@@ -263,6 +264,44 @@ async function showWord(spanish, contextTokens, tokenIndex) {
     } else {
         btn.textContent = '+ Add to SRS Deck';
     }
+
+    _showLessonLink(cleanWord, spanish);
+}
+
+// "Taught in Unit X · Lesson X.Y" — the Tier 2 word-lesson-index.json
+// cross-link. Hidden by default; only shown when the tapped word's lemma
+// is actually in the index (see scripts/build_word_lesson_index.py — a
+// word tapped while reading is very often one the curriculum never
+// formally taught, e.g. a frequency-deck word, and this link has nothing
+// honest to say for those). A stale-tap guard mirrors the one showWord()
+// already uses around the dictionary load, since fetching the index is
+// itself async and the learner may have moved on to another word by the
+// time it resolves.
+async function _showLessonLink(lemma, tappedSpanish) {
+    const linkBtn = document.getElementById('popup-lesson-link');
+    if (!linkBtn) return;
+    linkBtn.hidden = true;
+
+    let index;
+    try {
+        index = await Content.json(Lang.content('indexes/word-lesson-index.json'));
+    } catch (error) {
+        return;
+    }
+    if (document.getElementById('popup-word').textContent !== tappedSpanish) return;
+
+    const lessonId = index && index.byLemma && index.byLemma[lemma];
+    if (!lessonId) return;
+
+    const info = (typeof lessonLabelFor === 'function') ? lessonLabelFor(lessonId) : null;
+    if (!info) return;
+
+    linkBtn.textContent = `Taught in ${info.label}`;
+    linkBtn.hidden = false;
+    linkBtn.onclick = () => {
+        closePopup();
+        if (typeof startLesson === 'function') startLesson(lessonId);
+    };
 }
 
 function closePopup() {
