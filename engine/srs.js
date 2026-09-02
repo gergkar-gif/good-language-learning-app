@@ -335,6 +335,14 @@ let currentReviewCard = null;
 let reviewScope = null;      // Set of lemmas, or null for everything
 let reviewScopeName = '';
 
+// What this one session actually did — reset per session by
+// startReviewSession(), read once by renderReviewSessionSummary() when the
+// queue empties. xpBefore/rankBefore are snapshots taken at the start so
+// the summary can say what THIS session earned/crossed, not the running
+// total — the same "before" pattern engine/lessons.js's finishLesson()
+// already uses for its own rank-up line.
+let reviewSessionStats = null;
+
 // Which side of the card shows first: 'es-en' is recognition (see Spanish,
 // recall the meaning), 'en-es' is production (see English, recall the
 // word). A study-style preference like XP and the streak (see the header
@@ -420,6 +428,12 @@ function toggleReviewDirection() {
 function startReviewSession(lemmas, name) {
     reviewScope = lemmas ? new Set(lemmas) : null;
     reviewScopeName = reviewScope ? (name || 'Deck') : '';
+    reviewSessionStats = {
+        total: 0, again: 0, hard: 0, good: 0, easy: 0,
+        startedAt: Date.now(),
+        xpBefore: (typeof xpData !== 'undefined') ? xpData.total : 0,
+        rankBefore: (typeof getRank === 'function') ? getRank().rank : null
+    };
 
     const banner = document.getElementById('review-scope');
     if (banner) {
@@ -435,9 +449,83 @@ function startReviewSession(lemmas, name) {
     showNextCard();
 }
 
+// The completion moment Decks review never had — Lessons and Workshop both
+// end a session on a real summary; this one just closed back to the deck
+// browser with nothing said about what was just done. Deliberately reuses
+// the same building blocks engine/lessons.js's renderLessonSummary()
+// established for the exact same moment elsewhere: accuracy from the
+// rating breakdown ("again" is the only rating that means "didn't know
+// it," so hard/good/easy all count as correct — the same idea SM-2 itself
+// already treats them by), XP actually earned this session (before/after
+// xpData.total, not derived from the rating counts, so it can't drift out
+// of sync with whatever awardXP() actually does), a streak line, a
+// rank-up line, and any Journey milestone this session happened to cross
+// — the same functions, same wording, so a review session and a lesson
+// announce the same kind of moment the same way.
+function renderReviewSessionSummary() {
+    const summaryEl = document.getElementById('review-summary');
+    if (!summaryEl) return;
+
+    const s = reviewSessionStats;
+    const correct = s.hard + s.good + s.easy;
+    const accuracy = Math.round((correct / s.total) * 100);
+    const elapsed = (typeof formatLessonElapsed === 'function')
+        ? formatLessonElapsed(Date.now() - s.startedAt) : null;
+    const xpEarned = (typeof xpData !== 'undefined') ? Math.max(0, xpData.total - s.xpBefore) : 0;
+
+    const rankAfter = (typeof getRank === 'function') ? getRank().rank : null;
+    const rankedUp = s.rankBefore != null && rankAfter != null && rankAfter > s.rankBefore;
+    const milestones = (typeof newlyReachedMilestones === 'function') ? newlyReachedMilestones() : [];
+
+    const escFn = (typeof esc === 'function') ? esc : (v => String(v == null ? '' : v));
+
+    const statsHtml = `
+        <div class="review-summary-stats">
+            <div class="review-summary-stat">
+                <div class="jr-big">${s.total}</div>
+                <div class="jr-of">${s.total === 1 ? 'card' : 'cards'}</div>
+            </div>
+            <div class="review-summary-stat">
+                <div class="jr-big">${accuracy}%</div>
+                <div class="jr-of">correct</div>
+            </div>
+            ${elapsed ? `
+                <div class="review-summary-stat">
+                    <div class="jr-big">${escFn(elapsed)}</div>
+                    <div class="jr-of">time</div>
+                </div>
+            ` : ''}
+            ${xpEarned ? `
+                <div class="review-summary-stat">
+                    <div class="jr-big">+${xpEarned}</div>
+                    <div class="jr-of">XP</div>
+                </div>
+            ` : ''}
+        </div>
+    `;
+
+    const streakText = (typeof getStreak === 'function')
+        ? (getStreak() > 0 ? `${getStreak()}-day streak` : 'No streak yet')
+        : '';
+
+    summaryEl.innerHTML = `
+        <p class="review-summary-eyebrow">Session complete</p>
+        <h2 class="review-summary-title">Nice work.</h2>
+        ${statsHtml}
+        ${streakText ? `<p class="review-summary-streak">${escFn(streakText)}</p>` : ''}
+        ${rankedUp ? `<p class="review-summary-milestone">Rank up! You're now Rank ${rankAfter}.</p>` : ''}
+        ${milestones.map(m => `<p class="review-summary-milestone">Milestone: ${escFn(m.label)}</p>`).join('')}
+        <button class="dk-secondary" onclick="endReviewSession()">Done</button>
+    `;
+    summaryEl.style.display = 'block';
+}
+
 function endReviewSession() {
     reviewScope = null;
     reviewScopeName = '';
+    reviewSessionStats = null;
+    const summaryEl = document.getElementById('review-summary');
+    if (summaryEl) summaryEl.style.display = 'none';
     const root = document.getElementById('review-session');
     if (root) root.classList.add('hidden');
     const browser = document.getElementById('decks-root');
@@ -487,16 +575,29 @@ function showNextCard() {
     const dueCards = getDueCards();
     const cardEl = document.getElementById('review-card');
     const emptyEl = document.getElementById('review-empty');
+    const summaryEl = document.getElementById('review-summary');
 
     if (dueCards.length === 0) {
         cardEl.style.display = 'none';
-        emptyEl.style.display = 'block';
         currentReviewCard = null;
+
+        // A session that actually reviewed something gets the real summary;
+        // opening Review with nothing due to begin with (reviewSessionStats
+        // never left zero) keeps the plain "All caught up!" panel, which is
+        // already the correct message for that case.
+        if (reviewSessionStats && reviewSessionStats.total > 0) {
+            if (emptyEl) emptyEl.style.display = 'none';
+            renderReviewSessionSummary();
+        } else {
+            if (summaryEl) summaryEl.style.display = 'none';
+            emptyEl.style.display = 'block';
+        }
         return;
     }
 
     cardEl.style.display = 'flex';
     emptyEl.style.display = 'none';
+    if (summaryEl) summaryEl.style.display = 'none';
 
     // Random pick, so the deck isn't drilled in the same order every session
     // (which trains recall by position rather than by meaning).
@@ -626,6 +727,11 @@ function rateCard(rating) {
 
     scheduleCard(currentReviewCard, rating, now);
     maybeGraduate(currentReviewCard);
+
+    if (reviewSessionStats) {
+        reviewSessionStats.total++;
+        if (typeof reviewSessionStats[rating] === 'number') reviewSessionStats[rating]++;
+    }
 
     saveDeck();
     updateReaderWordColors();

@@ -9,7 +9,7 @@
 
     <link rel="stylesheet" href="styles/base.css?v=2026-08-14c">
     <link rel="stylesheet" href="styles/geometry.css?v=2026-08-13d">
-    <link rel="stylesheet" href="styles/components.css?v=2026-09-02b">
+    <link rel="stylesheet" href="styles/components.css?v=2026-09-02c">
     <link rel="stylesheet" href="styles/layout.css?v=2026-08-25a">
     <link rel="stylesheet" href="styles/utilities.css?v=2026-08-13e">
     <link rel="stylesheet" href="styles/verbs.css?v=2026-08-18a">
@@ -118,13 +118,22 @@
                     <span id="dk-mode-type" class="dk-direction-label">Type</span>
                 </div>
 
-                <!-- Empty state -->
+                <!-- Empty state — reserved for opening Review with nothing due
+                     to begin with. A session that actually reviewed something
+                     shows #review-summary below instead; see showNextCard()
+                     in engine/srs.js for the branch. -->
                 <div id="review-empty" class="review-empty">
                     <div class="review-empty-icon"><span class="geo-circle geo-circle--outline geo--lg"></span></div>
                     <h3 class="review-empty-title">All caught up!</h3>
                     <p class="review-empty-text">No cards are due for review.</p>
                     <p class="review-empty-text">Read stories and tap words to add them to your deck.</p>
                 </div>
+
+                <!-- Session summary — built entirely in JS by
+                     renderReviewSessionSummary() (engine/srs.js), same
+                     pattern as the lesson-complete screen in
+                     engine/lessons.js. -->
+                <div id="review-summary" class="review-summary" style="display:none"></div>
 
                 <!-- Flashcard -->
                 <div id="review-card" class="review-card">
@@ -223,7 +232,7 @@
 <script src="engine/morphology/hungarian.js?v=2026-08-27c"></script>
 <script src="engine/morphology/spanish.js?v=2026-08-29c"></script>
 <script src="engine/lexicon.js?v=2026-08-19r"></script>
-<script src="engine/srs.js?v=2026-08-19d"></script>
+<script src="engine/srs.js?v=2026-09-02"></script>
 <script src="engine/content-loader.js?v=2026-08-09"></script>
 <script src="engine/ui.js?v=2026-08-09"></script>
 <script src="engine/art.js?v=2026-08-27b"></script>
@@ -274,7 +283,7 @@
 <script src="engine/leveltest.js?v=2026-08-09"></script>
 <script src="engine/decks/match.js?v=2026-08-27c"></script>
 <script src="engine/decks/learn.js?v=2026-08-27d"></script>
-<script src="engine/decks.js?v=2026-08-29"></script>
+<script src="engine/decks.js?v=2026-09-02"></script>
 <script src="engine/curriculum.js?v=2026-08-27b"></script>
 
 <!-- Engine: library (depends on Reader, Decks, Lexicon) -->

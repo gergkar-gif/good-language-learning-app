@@ -224,13 +224,33 @@ const Decks = (function () {
         const clean = String(lemma || '').toLowerCase().trim();
         if (!clean || deck.words.some(w => w.lemma === clean)) return false;
 
-        const known = Lexicon.define(clean);
-        deck.words.push({
-            lemma: clean,
-            translation: translation || (known && known.en) || '',
-            pos: pos || (known && known.type) || ''
-        });
+        const dictEntry = Lexicon.define(clean);
+        const finalTranslation = translation || (dictEntry && dictEntry.en) || '';
+        const finalPos = pos || (dictEntry && dictEntry.type) || '';
+
+        deck.words.push({ lemma: clean, translation: finalTranslation, pos: finalPos });
         saveMyDecks();
+
+        // Adding a word now activates it for review on the spot, the same
+        // way reviewDeck() already does for a whole deck at once — before
+        // this (2026-09-02), "Add to a deck" looked like it captured the
+        // word but didn't actually make it reviewable, due, or counted
+        // anywhere (Home's Review door, Journey's stats) until the deck
+        // was separately opened and reviewed later. Skipped for a word
+        // that's already graduated, same guard reviewDeck() itself uses,
+        // so this can't silently un-graduate a known word.
+        const alreadyGraduated = typeof isKnown === 'function' && isKnown(clean);
+        if (!cardFor(clean) && !alreadyGraduated) {
+            srsDeck.push(Object.assign({
+                spanish: clean,
+                english: finalTranslation || 'unknown',
+                type: finalPos || 'unknown',
+                source: deckId,
+                added: new Date().toISOString()
+            }, newCardSchedule()));
+            saveDeck();
+        }
+
         return true;
     }
 

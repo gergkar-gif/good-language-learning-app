@@ -697,6 +697,58 @@ track known bugs in existing content rather than things not yet built.
     showed no rank-up line and no XP stat, confirmed against
     `localStorage`'s XP total staying unchanged at 90. No console/page
     errors in any run.
+- [x] Decks and Workshop need to integrate into the flow, not just sit next
+  to it. Investigated first: found "Add to a deck" (Word Bank, Library,
+  and the lesson-complete button built earlier this session) only adds a
+  word to a deck's membership list — `addWordToDeck()` never created an
+  SRS card, so a just-added word wasn't due, reviewable, or counted
+  anywhere (Home's Review door, Journey's stats) until the deck was
+  separately opened and reviewed later. Also found Decks' own review
+  session had no completion screen at all — `endReviewSession()` just
+  closed back to the deck browser with nothing said, unlike Lessons'
+  rich summary or even Workshop's plain stat grid. **Built 2026-09-02**:
+  - `engine/decks.js`'s `addWordToDeck()` now activates a word for review
+    the moment it's added — a fresh, immediately-due SRS card, the same
+    thing `reviewDeck()` already does for a whole deck at once, and using
+    the same guard against silently un-graduating an already-known word.
+    This is the single choke point every "add to deck" caller already
+    goes through (Word Bank, Library's bulk-select, the lesson-complete
+    button), so all of them are fixed by the one change.
+  - `engine/srs.js` gained a real review-session summary
+    (`renderReviewSessionSummary()`, shown in a new `#review-summary`
+    slot in `index.html`), reusing the exact same building blocks
+    `renderLessonSummary()` established for lessons: cards reviewed,
+    accuracy (hard/good/easy count as correct, only "again" doesn't —
+    the same distinction SM-2 itself makes), time, XP actually earned
+    this session (before/after `xpData.total`, not derived from rating
+    counts, so it can't drift out of sync with whatever `awardXP()`
+    does), a streak line, a rank-up line, and any Journey milestone
+    crossed — literally the same functions and wording
+    `renderLessonSummary()` uses (`getRank()`, `getStreak()`,
+    `newlyReachedMilestones()`), since every one of them turned out to
+    already be a plain global, callable from any file. `showNextCard()`
+    now branches on whether the just-finished session actually reviewed
+    anything (`reviewSessionStats.total > 0`): a real session gets the
+    new summary, while opening Review with nothing due to begin with
+    keeps the existing "All caught up!" panel, which was already the
+    right message for that specific case.
+  - Verified live via Playwright: adding a word through the real
+    `Decks.openAddToDeckPicker()` flow correctly pushed a new card into
+    `srsDeck` with `nextReview` set to now, and Home's Review door
+    immediately read "1 word ready to come round again" — confirmed
+    same-turn, no separate visit needed. A 4-card review session (2
+    good, 1 easy, 1 again) produced "4 cards · 75% correct · 1 min · +7
+    XP" with a streak line, and "Done" returned cleanly to the deck
+    browser. Seeding 98 XP and rating one card "good" correctly showed
+    "Rank up! You're now Rank 2." in the summary. Clearing the deck and
+    opening Review again correctly fell back to the plain "All caught
+    up!" panel rather than an empty/broken summary. No console/page
+    errors in any run.
+  - Not attempted here — a bigger, separate design question: cross-linking
+    Workshop and Decks results directly (missed review words suggesting a
+    grammar drill on their pattern, or a weak drill session suggesting
+    adding its words to a deck). Flagged in the original discussion as
+    needing its own scoping pass.
 
 ## Interface & platform
 

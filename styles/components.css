@@ -1426,6 +1426,53 @@
   margin-bottom: 4px;
 }
 
+/* Session summary — same quiet "close of an activity" treatment as
+   .lsn-summary in engine/lessons.js, just under its own review- prefix
+   rather than reusing lsn- classes outside a lesson context. Reuses the
+   shared .jr-big/.jr-of stat primitives directly, same as that screen. */
+.review-summary {
+  text-align: center;
+  padding: 40px 20px 24px;
+}
+
+.review-summary-eyebrow {
+  font-size: 13px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+
+.review-summary-title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 30px;
+  color: var(--text);
+  margin: 6px 0 20px;
+}
+
+.review-summary-stats {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+}
+
+.review-summary-streak {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 14px;
+}
+
+.review-summary-milestone {
+  font-size: 14px;
+  color: var(--text);
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+.review-summary .dk-secondary {
+  margin-top: 24px;
+}
+
 /* Flashcard */
 
 /* .story-card, .review-stats and .review-card below all had the same
