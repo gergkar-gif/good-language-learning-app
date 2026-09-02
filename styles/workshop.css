@@ -162,6 +162,17 @@
     cursor: pointer;
 }
 
+/* Tier 2 cross-link — same treatment as its Reader/Decks siblings
+   (.wp-lesson-link / .dk-word-lesson-link), just matching this driller's
+   own centred HUD width instead of theirs. */
+.gd-word-lesson-link {
+    display: block;
+    max-width: 480px;
+    margin: -8px auto 16px;
+    padding: 0 16px;
+    text-align: left;
+}
+
 .gd-change-skill:hover {
     color: var(--primary);
 }

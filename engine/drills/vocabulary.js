@@ -62,6 +62,7 @@ const VocabularyDriller = (function () {
     let _levels = null;       // distinct levels this course's lesson decks use, CEFR order
     let _pairs = null;        // translation-index.json -> pairs[]
     let _contextIndex = null; // lemma -> [{ sentence, english, form, inflected }]
+    let _wordLessonIndex = null; // word-lesson-index.json's byLemma map — the Tier 2 cross-link
 
     let _mode = MODE.COUNT;
     let _level = 'all';
@@ -101,13 +102,15 @@ const VocabularyDriller = (function () {
     // ---- Data loading (once) ----
     async function _load() {
         if (_words && _pairs && _contextIndex) return;
-        const [deckData, translationIndex] = await Promise.all([
+        const [deckData, translationIndex, wordLessonIndex] = await Promise.all([
             Content.json(Lang.content('decks/decks.json')).catch(() => ({ words: {}, decks: [] })),
             Content.json(Lang.content('indexes/translation-index.json')).catch(() => ({ pairs: [] })),
+            Content.json(Lang.content('indexes/word-lesson-index.json')).catch(() => ({ byLemma: {} })),
             Lexicon.load()
         ]);
         _words = deckData.words || {};
         _pairs = translationIndex.pairs || [];
+        _wordLessonIndex = wordLessonIndex.byLemma || {};
         _wordLevels = {};
         const seenLevels = new Set();
         (deckData.decks || []).filter(d => d.kind === 'lesson').forEach(d => {
@@ -533,18 +536,40 @@ const VocabularyDriller = (function () {
     }
 
     function _renderSession() {
+        const currentWord = _queue[_queueIndex]._word;
+
+        // Tier 2 cross-link — same as the Reader popup and Decks' word-list
+        // rows, just placed here instead of fighting GrammarRunner's own
+        // append-don't-replace render lifecycle (its moreInfo/explanation
+        // panels get inserted into the exercise container at several points
+        // as an exercise is answered, so anything this module wants to add
+        // reliably has to live outside that container, not inside it).
+        // Shown up front rather than only after answering — it says where
+        // a word was taught, never what it means, so it gives nothing away.
+        const lessonId = currentWord && _wordLessonIndex ? _wordLessonIndex[currentWord.lemma] : null;
+        const lessonInfo = lessonId && typeof lessonLabelFor === 'function' ? lessonLabelFor(lessonId) : null;
+
         _container.innerHTML = `
             <div class="gd-hud">
                 <span class="gd-hud-score">${_scoreLabel()}</span>
                 ${_mode === MODE.TIMED ? `<span class="vspeed-timer-display">${_formatTime(_timeRemaining)}</span>` : ''}
                 <button class="gd-change-skill" data-action="change-settings">Change settings</button>
             </div>
+            ${lessonInfo ? `
+                <button class="dk-link-btn gd-word-lesson-link" data-open-lesson="${lessonId}">Taught in ${lessonInfo.label}</button>
+            ` : ''}
             <div class="gd-exercise"></div>
         `;
         _container.querySelector('[data-action="change-settings"]').addEventListener('click', _abortSession);
 
+        const lessonLinkBtn = _container.querySelector('[data-open-lesson]');
+        if (lessonLinkBtn) {
+            lessonLinkBtn.addEventListener('click', () => {
+                if (typeof startLesson === 'function') startLesson(lessonLinkBtn.getAttribute('data-open-lesson'));
+            });
+        }
+
         const exerciseRoot = _container.querySelector('.gd-exercise');
-        const currentWord = _queue[_queueIndex]._word;
 
         GrammarRunner.render(exerciseRoot, {
             exercise: _queue[_queueIndex],

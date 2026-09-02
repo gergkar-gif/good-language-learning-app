@@ -861,6 +861,34 @@ track known bugs in existing content rather than things not yet built.
     and one unindexed one showed the lesson link on only the indexed
     row's line, and clicking it opened the lesson. No console/page errors
     in any run.
+- [x] Wired the third Tier 2 consumer, deferred at the time: Workshop's
+  Vocabulary Driller. **Built 2026-09-02**. Didn't fit the existing
+  `moreInfo`/`explanation` slot `GrammarRunner` already has (the same one
+  Hungarian's case/prefix reference panels use) — that shape is
+  plain-text-only and gets inserted into the exercise container at
+  several points as an exercise is answered (append, not replace), so
+  anything this module wanted to add reliably needed to live outside
+  that container rather than fight its render lifecycle. Instead
+  `engine/drills/vocabulary.js`'s `_renderSession()` resolves the
+  current exercise's word against the same `word-lesson-index.json`
+  (loaded once in `_load()`, alongside the deck/translation data it
+  already fetches) and renders its own "Taught in Unit X · Lesson X.Y"
+  link — using `lessonLabelFor()`, the same general-purpose helper built
+  for the Reader/Decks versions — right below the HUD, shown up front
+  rather than gated behind answering, since it says where a word was
+  taught, never what it means. Verified live: a word both in the index
+  and with real example-sentence context ("kávé") correctly showed
+  "Taught in Unit 1 · Lesson 1.3" and opened that exact lesson; an
+  unindexed nonsense word correctly showed no link (and no exercise at
+  all — nothing to build one from); a word that IS in the index but has
+  no example-sentence content ("szia" — Vocabulary Driller needs a real
+  sentence to build any exercise, unlike the Reader/Decks links, which
+  don't) correctly built no exercise and so showed no link either,
+  rather than a link with nothing behind it. A real, non-scoped random
+  session's very first exercise also showed a correct lesson link
+  ("Taught in Unit 26 · Lesson 26.2"), confirming this isn't limited to
+  the missed-words-scoped entry point. No console/page errors in any
+  run.
 
 ## Interface & platform
 
