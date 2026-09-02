@@ -401,7 +401,7 @@ const Decks = (function () {
         if (draft.words.some(w => w.lemma === clean)) return;
         const known = Lexicon.define(clean);
         if (known) {
-            addWordToDraft(clean, known.en, known.type);
+            addWordToDraft(clean, Lexicon.shortGloss(known.en), known.type);
             return;
         }
         const translation = prompt(`"${clean}" isn't in the Parlour dictionary yet. What does it mean?`);
@@ -943,7 +943,7 @@ const Decks = (function () {
             return;
         }
 
-        const added = (typeof addKnownWord === 'function') && addKnownWord(raw, entry.en, entry.type, 'manual');
+        const added = (typeof addKnownWord === 'function') && addKnownWord(raw, Lexicon.shortGloss(entry.en), entry.type, 'manual');
         if (feedback) feedback.textContent = added ? `Added "${raw}."` : `"${raw}" is already known.`;
         input.value = '';
         render();

@@ -68,9 +68,33 @@ RARE_RE = re.compile(r"\brare\b", re.IGNORECASE)
 # the requested surface form's sense under this headword at all (mía has
 # only a military-historical noun sense; the possessive-pronoun sense lives
 # under mío and isn't cross-linked). Hand-fixed rather than left broken.
+#
+# haber/taco/mexicano/gustar/chica (bug reports #126-#128): the scoring
+# picked technically-real senses that are still bad for a learner — an
+# obscure "peg" sense of taco over the food, gender-agreement wording on
+# haber's perfect aspect that doesn't apply to Spanish at all (that's a
+# different Romance language's rule bleeding into this gloss), an
+# academic "compare mexiquense" aside, a multi-language cross-reference
+# dump on gustar, and an indirect "female equivalent of chico" phrasing
+# for chica where a direct gloss reads better.
 MANUAL_OVERRIDES = {
     "tranquilar": {"en": "to calm down", "type": "verb"},
     "mía": {"en": "mine (feminine)", "type": "pronoun"},
+    "haber": {
+        "en": "to have (auxiliary verb used with a past participle to form "
+              "the perfect tenses: he comido = I have eaten); impersonal "
+              "form 'hay' means 'there is/are'",
+        "type": "verb",
+    },
+    "taco": {"en": "taco (folded or rolled tortilla with a filling)", "type": "noun", "gender": "m"},
+    "mexicano": {"en": "Mexican", "type": "adjective"},
+    "gustar": {
+        "en": "to like, literally 'to please': the thing liked is the "
+              "subject and the person is the indirect object, e.g. "
+              "'me gusta' = 'I like it' (lit. 'it pleases me')",
+        "type": "verb",
+    },
+    "chica": {"en": "girl; young woman", "type": "noun", "gender": "f"},
 }
 
 
