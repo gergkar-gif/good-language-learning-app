@@ -325,5 +325,9 @@ const Journey = (function () {
         `;
     }
 
-    return { render, collect };
+    // MILESTONES is exposed so the lesson-complete screen (engine/lessons.js)
+    // can check "did finishing this lesson just cross one of these" without
+    // duplicating the list — same milestones, same test functions, one
+    // source of truth.
+    return { render, collect, MILESTONES };
 })();

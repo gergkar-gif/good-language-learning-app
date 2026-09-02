@@ -612,12 +612,55 @@ track known bugs in existing content rather than things not yet built.
     Hungarian — a pre-existing, harmless fetch failure the driller already
     catches, confirmed present on a baseline Grammar Driller visit with no
     nudge involved at all).
-- [ ] Give the nav visible hierarchy — Lessons as the anchor, Library/
-  Workshop/Decks as ways to practice what it taught, Journey as the
-  record — rather than six flat, co-equal tabs.
-- [ ] Surface XP/streak feedback inside the lesson itself, not only on
-  Home's strip and as a sound effect — the moment it's earned currently
-  goes unmarked.
+- [x] Lesson-complete should be the connective moment: the just-taught
+  words and any milestone crossed currently go unmentioned on the
+  "Congratulations!" screen, which was otherwise a dead end straight back
+  to whatever tab opened the lesson. **Built 2026-09-02**:
+  - `engine/lessons.js`'s `renderLessonSummary()` now also shows the
+    lesson's own vocabulary (via the already-existing
+    `collectLessonVocabulary()`) as a row of chips, with one "Add N to a
+    deck" button wired straight to `Decks.openBulkAddPicker()` — the same
+    call the Library's multi-select vocabulary view already uses, so this
+    needed no new Decks-side plumbing.
+  - Any of Journey's `MILESTONES` newly crossed by finishing this exact
+    lesson now shows as a plain line ("Milestone: 100 words met").
+    `Journey.MILESTONES` is now exposed alongside the already-public
+    `collect()` so the check reuses the same list and test functions
+    rather than duplicating them; a small `Lang.key('milestonesSeen')` set
+    (same pattern as the post-unit nudge's dismissed-units set) makes sure
+    a milestone is only ever announced once, not re-shown on a later visit
+    to Journey or a lesson redo.
+  - Both the words and milestone sections, along with the new XP/streak
+    stat below (see next item), only appear on a genuine first completion
+    — `finishLesson()` already knew this from `markLessonComplete()`'s own
+    return value, now threaded through to the summary as `firstTime`, so a
+    redo doesn't show a stale "+20 XP" or re-announce a milestone that
+    isn't newly true. The words themselves aren't gated the same way —
+    replaying a lesson to reinforce its vocabulary is a real reason to
+    revisit it.
+  - Verified live via Playwright (a temporary debug hook driving straight
+    to `finishLesson()`, removed after): a fresh Hungarian lesson 1
+    completion showed 80% accuracy, "1 min", "+20 XP", "No streak yet",
+    "Milestone: First lesson finished", and 5 correctly-labelled word
+    chips; clicking "Add 5 to a deck" opened Decks' picker correctly
+    titled "Add 5 words to a deck". Redoing the same lesson afterward
+    showed 100% accuracy and "1 min" but no XP stat and no milestone line,
+    while the same 5 word chips and a streak line were still present, as
+    designed. No console/page errors in either run.
+- [x] Surface XP/streak feedback inside the lesson itself, not only on
+  Home's strip and as a sound effect. **Built 2026-09-02**, folded into
+  the same lesson-complete pass above rather than as a separate feature:
+  a third stat (`+20 XP`, reading `GRAMMAR_XP` from `engine/xp.js`,
+  already a page-level global) joins accuracy and time in the summary's
+  existing stat row, and a streak line sits just below it, reusing the
+  exact wording Home's own header-streak already uses (`getStreak() > 0
+  ? streak + '-day streak' : 'No streak yet'`) rather than inventing a
+  second phrasing for the same fact — always shown, even at zero, since a
+  blank line there would read as "did I lose my streak?" rather than
+  "nothing to report." The existing global `showXPNotification()` toast
+  (used for every XP-earning action, reviews included) still fires
+  independently and was left alone — this adds a considered restatement
+  in the close-of-lesson screen, not a replacement for the real-time one.
 
 ## Interface & platform
 

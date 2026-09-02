@@ -1108,7 +1108,7 @@ function prevLessonStep() {
     renderStep();
 }
 
-function finishLesson() {
+async function finishLesson() {
     // Fixed reward: a long lesson isn't worth more than a short one, and
     // scaling by step count rewarded lesson length rather than learning.
     const firstTime = typeof markLessonComplete === 'function'
@@ -1119,7 +1119,37 @@ function finishLesson() {
         recordLessonCompleted(firstTime);
     }
 
-    renderLessonSummary();
+    await renderLessonSummary(firstTime);
+}
+
+// Which of My Journey's milestones this exact completion just crossed —
+// checked once, right after progress/XP are already updated for this
+// lesson, so Journey.collect() reflects it. A milestone only ever shows up
+// here once: a small seen-set (same Lang.key() pattern used elsewhere)
+// remembers which have already been shown, so re-completing a lesson or
+// simply visiting Journey later never re-announces the same one.
+function milestonesSeenKey() {
+    return Lang.key('milestonesSeen');
+}
+
+function newlyReachedMilestones() {
+    if (typeof Journey === 'undefined') return [];
+
+    const d = Journey.collect();
+    let seen = [];
+    try { seen = JSON.parse(localStorage.getItem(milestonesSeenKey()) || '[]'); }
+    catch (error) { seen = []; }
+
+    const reached = Journey.MILESTONES.filter(m => m.test(d) && !seen.includes(m.id));
+    if (reached.length) {
+        try {
+            localStorage.setItem(milestonesSeenKey(), JSON.stringify(seen.concat(reached.map(m => m.id))));
+        } catch (error) {
+            // Private browsing with storage disabled — the milestone still
+            // shows this once, it just risks showing again next time.
+        }
+    }
+    return reached;
 }
 
 // "Unit 1 · Lesson 1.5" — the same within-unit numbering the unit's own
@@ -1155,12 +1185,62 @@ function formatLessonElapsed(ms) {
     return minutes ? `${hours} hr ${minutes} min` : `${hours} hr`;
 }
 
+// The words this lesson taught, ready to hand straight to Decks — same
+// shape openBulkAddPicker() already expects (lemma/translation/pos), same
+// source the Word Bank's own per-word add button reads from, just
+// collected as a whole lesson instead of a whole unit.
+function summaryWordsHtml(words) {
+    if (!words.length) return '';
+
+    const withArticle = lemma => (typeof Lexicon !== 'undefined') ? Lexicon.withArticle(lemma) : lemma;
+    const chips = words.map(w => `
+        <span class="lsn-word-chip">${esc(withArticle(w.lemma))}${w.translation ? ' — ' + esc(w.translation) : ''}</span>
+    `).join('');
+
+    return `
+        <div class="lsn-summary-words">
+            <p class="lsn-summary-words-label">${words.length} new ${words.length === 1 ? 'word' : 'words'}</p>
+            <div class="lsn-word-chips">${chips}</div>
+            <button class="dk-secondary" data-add-lesson-words="1">Add ${words.length} to a deck</button>
+        </div>
+    `;
+}
+
+// A milestone crossed by finishing THIS lesson — rare, so it earns a line
+// of its own, but stays plain text rather than reaching for the accent:
+// the frontispiece above is already this screen's one accent element (see
+// engine/art.js's own rule that the accent never doubles up in one
+// composition).
+function summaryMilestonesHtml(milestones) {
+    if (!milestones.length) return '';
+    return milestones.map(m => `<p class="lsn-summary-milestone">Milestone: ${esc(m.label)}</p>`).join('');
+}
+
+// Same wording Home's header-streak already uses (updateXPHeader() in
+// engine/xp.js) — reused verbatim rather than inventing a second phrasing
+// for the same fact. Always shown, even at zero: a blank line here would
+// read as "did I lose my streak?", not as "nothing to report."
+function summaryStreakLine() {
+    if (typeof getStreak !== 'function') return '';
+    const streak = getStreak();
+    const text = streak > 0 ? `${streak}-day streak` : 'No streak yet';
+    return `<p class="lsn-summary-streak">${esc(text)}</p>`;
+}
+
 // The screen shown after the last step (and any remediation redo) instead
 // of returning straight to whatever tab the lesson was opened from — one
 // beat to register the lesson is actually done before moving on. Reuses
 // #lesson-content and the footer button rather than a separate overlay, so
 // it inherits the same layout the rest of the lesson already has.
-function renderLessonSummary() {
+//
+// firstTime tells apart a real completion from a redo (finishLesson()
+// already knows this from markLessonComplete()'s own return value): XP was
+// only actually awarded on a first completion, and a milestone can only be
+// newly crossed once, so both are skipped on a redo rather than showing a
+// stale or zeroed stat. The words-just-learned section isn't gated the
+// same way — replaying a lesson to reinforce its vocabulary is a real
+// reason to revisit it, and the words taught don't change on a redo.
+async function renderLessonSummary(firstTime) {
     const container = document.getElementById('lesson-content');
     if (!container) return;
 
@@ -1171,8 +1251,12 @@ function renderLessonSummary() {
         ? Math.round((lessonStats.correctFirstTry / lessonStats.total) * 100)
         : null;
     const numberLabel = lessonNumberLabel();
+    const xpEarned = (firstTime && typeof GRAMMAR_XP === 'number') ? GRAMMAR_XP : null;
 
-    const statsHtml = (accuracy === null && !elapsed) ? '' : `
+    const words = await collectLessonVocabulary(currentLesson);
+    const milestones = firstTime ? newlyReachedMilestones() : [];
+
+    const statsHtml = (accuracy === null && !elapsed && !xpEarned) ? '' : `
         <div class="lsn-summary-stats">
             ${accuracy === null ? '' : `
                 <div class="lsn-summary-stat">
@@ -1186,6 +1270,12 @@ function renderLessonSummary() {
                     <div class="jr-of">time</div>
                 </div>
             ` : ''}
+            ${xpEarned ? `
+                <div class="lsn-summary-stat">
+                    <div class="jr-big">+${xpEarned}</div>
+                    <div class="jr-of">XP</div>
+                </div>
+            ` : ''}
         </div>
     `;
 
@@ -1196,9 +1286,19 @@ function renderLessonSummary() {
             ${numberLabel ? `<p class="lsn-summary-lesson">${esc(numberLabel)} — ${esc(currentLesson.title || '')}</p>` : ''}
             ${Art.svg('summit', 'lsn-summary-art')}
             ${statsHtml}
+            ${summaryStreakLine()}
+            ${summaryMilestonesHtml(milestones)}
+            ${summaryWordsHtml(words)}
         </div>
     `;
     container.scrollIntoView({ block: 'start' });
+
+    const addWordsBtn = container.querySelector('[data-add-lesson-words]');
+    if (addWordsBtn) {
+        addWordsBtn.addEventListener('click', () => {
+            if (typeof Decks !== 'undefined') Decks.openBulkAddPicker(words);
+        });
+    }
 
     const backBtn = document.getElementById('lesson-back-btn');
     if (backBtn) backBtn.disabled = true;

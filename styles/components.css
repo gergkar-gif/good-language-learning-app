@@ -742,6 +742,48 @@
   margin-bottom: 2px;
 }
 
+.lsn-summary-streak {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 14px;
+}
+
+.lsn-summary-milestone {
+  font-size: 14px;
+  color: var(--text);
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+.lsn-summary-words {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+
+.lsn-summary-words-label {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+.lsn-word-chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.lsn-word-chip {
+  font-size: 13px;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 4px 10px;
+}
+
 /* Continue stays locked until a gated step is answered */
 .btn-primary:disabled,
 .btn-primary.is-locked {
