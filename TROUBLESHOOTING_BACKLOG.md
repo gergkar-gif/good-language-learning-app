@@ -430,7 +430,7 @@ step-specific entries at once.
 ### Unit 4, Lesson 5
 - [x] S9: "Carlos es un hombre alto y ….." answer "serio" — could be any adjective. **Fixed 2026-08-18** — see the Unit 3 multi-answer fix above.
 - [x] S10: same issue, recurring. **Fixed 2026-08-18**, same fix.
-- [ ] S17: reading is a third repeat of the same text — every unit needs a distinct reading. *(Fixed the confirmed instance of this — see "Unit 3" reading-duplication note below — but this specific U4L5 reference wasn't independently re-verified given the unit-numbering drift noted at the top of this file.)*
+- [x] S17: reading is a third repeat of the same text — every unit needs a distinct reading. **Independently re-verified 2026-09-03**: programmatically checked every ES A1 lesson's story assignment for any reading used by 3+ lessons — none exist. `a1-03.json` ("Los amigos de Meg") is still used by exactly 2 lessons (`lesson.a1.02.05` and `lesson.a1.03c.05`), which is the deliberate post-fix state described in the "Unit 3" note above (the third lesson got its own new story, `a1-21.json`, and this one's questions were rewritten to match rather than reassigning again). Re-read `a1-03c-05`'s 4 reading-comprehension questions against the story's actual current text line by line — all 4 correctly match (Daniela as the Spanish teacher, Lauren as calm/organized, Meg describing her twin sisters, Kaylee talking and joking). No remaining bug.
 
 ### Unit 5
 - [x] L2: uses "este"/"esta" without explaining them — double-check whether these were introduced earlier. **Confirmed real and fixed 2026-08-27**: searched every A1 vocabulary/grammar file for a dedicated este/esta explanation — there was none, anywhere in A1. Yet `a1-05-02-ex.json`'s own structured-writing exercise requires freely producing "Esta es mi madre."/"Este es mi padre." (tagged `teaches: possessives`, but that tag never covered este/esta), and `a1-05-03-possessives-tener-gr.json`'s grammar screen uses "Esta es mi madre." as an unexplained example. Added a new "Introducing someone: este / esta" section to `a1-05-02-possessives-gr.json` (the earliest lesson that needs it) explaining the masculine/feminine agreement pattern before the exercise that requires producing it. **Residual, lower-severity issue not fixed this pass**: `este`/`esta` also appear unglossed in five A1 *readings* (`a1-04.json`, `a1-11.json`, `a1-14.json`, `a1-16.json`, `a1-20.json`), one of which (`a1-04`) is read before this new grammar screen. Reading-only exposure to a word slightly ahead of its formal teaching point is a much softer issue than requiring production of it (tap-to-translate covers comprehension), and fixing it would mean rewriting several stories — left as a follow-up, not done here.
@@ -1181,24 +1181,76 @@ screen in the Hungarian course, not just the review units.
   land at genuinely different row positions, not aligned; a full 14-pair
   play-through completes normally with the new mechanic.
 
-## Multi-answer fill-blanks give no clue which answer is wanted (logged 2026-09-03)
+## Multi-answer fill-blanks give no clue which answer is wanted (logged 2026-09-03, scoped & fixed 2026-09-03)
 
-- [ ] **Logged from GitHub issue #129.** A fill-blank exercise with more
+- [x] **Logged from GitHub issue #129.** A fill-blank exercise with more
   than one acceptable answer (e.g. `"Mi ____?"` accepting either `"ez"`
   or `"az"`, "this"/"that") grades either one correctly, but the prompt
   itself gives no indication multiple answers exist or which one a
-  specific context wants — a learner who types a right answer that
-  isn't the one they were "supposed" to reach (because nothing in the
-  sentence pointed either way) has no way to know the exercise was
-  actually ambiguous by design rather than something they got wrong for
-  the wrong reason. User's own framing: "all these types of questions,
-  that take multiple answers should have a clue as to what to put as
-  the answer." This is a generator/content-authoring guideline (add a
-  disambiguating clause, an image, or context that forces one specific
-  answer whenever an exercise's `answers` array has more than one
-  entry), not a single-file fix — scope is every multi-answer fill-blank
-  across the existing content tree, plus a rule to apply going forward
-  for any new fill-blank exercises with more than one accepted answer.
+  specific context wants. User's own framing: "all these types of
+  questions, that take multiple answers should have a clue as to what
+  to put as the answer."
+
+  **Scoped before fixing**: programmatically counted every fill-blank
+  exercise across both languages whose `answers` field is an array with
+  more than one entry — only 35 total (25 ES, 10 HU), not the "whole
+  content tree" scale originally feared. Read every one in full context
+  (the rest of its lesson's exercises) to sort genuine bugs from
+  intentional design:
+
+  - **Genuinely broken, fixed** (8 items): `engine/lessons.js`'s own
+    `lessonCheckBlank` comment confirms multi-answer is meant to be the
+    exception ("most blanks have exactly one right answer"), so these
+    were accidental over-permissiveness, not design:
+    - HU `a1-57/58/59/60-practice-3` ("Hová ____ Károly?", accepting
+      `megy`/`jön` — "go"/"come", opposite directions): `jön` isn't
+      taught anywhere in any of these four lessons — every other
+      exercise in each file uses `megy` exclusively. Narrowed to
+      `['megy']`.
+    - HU `a1-46-controlled-2` ("Mi ____?", accepting `ez`/`az` —
+      "this"/"that" with no proximity context — this is the exact
+      example from issue #129's own investigation). Reworded to `"Mi
+      ____ itt?"` ("What is this **here**?"), narrowed to `['ez']`.
+    - HU `a1-20-practice-3` ("Hány éves ____?", accepting `vagy`/
+      `vagyok`): `vagy` (2nd person, "are") is the question form this
+      lesson teaches throughout (`intro-1`, `check-2`); `vagyok` (1st
+      person, "am") only ever appears in this lesson as part of the
+      *answer* ("Harminc éves vagyok"), never the question — accepting
+      it here was simply wrong, not an alternate valid phrasing.
+      Narrowed to `['vagy']`.
+    - ES `a1-01-01.ex06` ("Hasta ___.", accepting `luego`/`mañana`):
+      the same lesson's `ex07` already separately and correctly tests
+      `"Hasta mañana"` with its own disambiguating context ("you expect
+      to see the person tomorrow") — leaving this bare completion open
+      to both just duplicated that item ambiguously. Narrowed to
+      `['luego']`, the general-purpose farewell.
+    - HU `a1-01-practice-3` ("Kávé (coffee)? ____ , kávé.", accepting
+      `Igen`/`Nem`): the sentence itself didn't really work either way
+      — "Nem, kávé" ("No, coffee") reads as contradictory nonsense, not
+      a real declining reply. Reworded to `"Kávét kérsz? (Do you want
+      coffee?) ____."` — a genuine yes/no personal question, where
+      accepting both answers is now correct rather than accidental.
+
+  - **Left as-is, intentionally open production** (27 items): sentences
+    like "Quiero __ tomates." (any quantity 2-10), "Es un chico ___."
+    (any of 7 correctly-agreeing adjectives — already deliberately
+    fixed this way per this file's own Unit 3/4 entries above), "Yo __
+    en casa." (any plausible daily-activity verb), and "____ éves
+    vagyok." (any age) don't have one "correct" answer to hint at —
+    the exercise is testing whether the learner can produce *a*
+    grammatically valid completion, not recall one specific fact.
+    Adding a forcing clue to these would defeat their actual purpose
+    rather than fix a bug. This matches the judgment call already made
+    in issue #131's own investigation, which flagged the same shape
+    ("Sok/Néhány") as "pretty normal for vocabulary-choice items... not
+    actually broken."
+
+  Verified: `scripts/validate-content.py hu es` passes (2896 ES / 1401
+  HU, 0 failed); `stepState.acceptable = step.answers || [step.answer]`
+  in `engine/lessons.js` confirmed to handle single-item `answers`
+  arrays identically to a bare `answer` string, so none of the
+  narrowed-to-one-answer edits change how grading works, only what
+  counts as correct.
 
 ## Engine-wide bug sweep, round 3 (found & fixed 2026-09-03)
 
