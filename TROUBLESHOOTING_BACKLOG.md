@@ -1143,22 +1143,40 @@ screen in the Hungarian course, not just the review units.
   short per-lesson "grammar" blurb, a separate field entirely) neither one
   reads lesson section titles, so nothing downstream needed regenerating.
 
-## Deck Match: input unlocked in the same instant the board reorganized (found & fixed 2026-09-03)
+## Deck Match: full-board reshuffle on every match caused misclicks (found & fixed 2026-09-03)
 
 - [x] **A learner who tapped the next pair right as a match resolved could
-  have their tap land on the wrong tile.** `engine/decks/match.js`'s match
-  branch used to do `setTimeout(() => { _busy = false; _refill(a.uid); },
-  MATCH_FLASH_MS)` — unlocking input and reorganizing the board in the
-  same synchronous callback. A tap aimed at where a tile visually was,
-  timed to land right as the lock lifted, could execute after the board
-  had already reshuffled under it, hitting whatever new tile ended up in
-  that screen position instead. **Fixed**: split into three actual phases
-  — the match flash (`MATCH_FLASH_MS`, unchanged idea, 400ms→450ms), then
-  the reorganize itself happens while STILL locked (`_refill()` before
-  `_busy` clears, not after), then a new `SETTLE_MS` (250ms) beat once the
-  new layout is already painted and stable, only after which input
-  re-enables. Verified live: a click fired at 150ms (mid-flash) and one
-  at 600ms (board already reorganized, still in the settle buffer) both
-  correctly failed to register a selection; one at 800ms (past
-  450+250=700ms) correctly did. A full 10-pair play-through with the new
-  timing still completes normally end to end.
+  have their tap land on the wrong tile.** The stream/refill redesign
+  (2026-09-02, see above) reshuffled EVERY remaining tile into a fresh
+  random position on every match — deliberate, to keep the next pair
+  unguessable — but in practice it meant nothing a learner had already
+  located held still: a tap aimed at a tile's on-screen position, timed
+  to land right as the previous match resolved, could execute after the
+  board had already scrambled under it. A first attempt just added a
+  locked "settle" pause between the reorganize and input re-enabling
+  (`SETTLE_MS`), which closed the specific race but not the underlying
+  cause — the board still fully scrambled on every match, so a tap timed
+  even slightly wrong (or simply aimed from memory a beat too late) could
+  still miss. **Redesigned around Duolingo's own Match Madness mechanic**
+  instead: matched tiles disappear and the rest of the board holds its
+  exact position — nothing "reflows" except closing the two-tile gap the
+  match left. `engine/decks/match.js` now keeps two STABLE-order arrays
+  (`_lemmaTiles`/`_transTiles`, one per column) that persist across
+  matches rather than a single array rebuilt from scratch each time; a
+  match only ever splices its own two tiles out and, if the pool has a
+  word left, inserts one new pair — each half at its own independently
+  random index in its own column (so the new pair doesn't land on an
+  obviously-matching row, the one precaution kept from the original
+  "not immediately obvious" design goal). Every OTHER tile's position is
+  untouched. Rendering also moved from one CSS grid filled in interleaved
+  DOM order to two explicit `.dkm-col` containers, so column identity
+  (English always left, target language always right — a 2026-08-27 fix)
+  no longer depends on strict array interleaving surviving every splice.
+  The flash-then-lock-then-settle timing from the first attempt is kept
+  underneath this (matched tiles still fade visibly before removal, input
+  still stays locked through the change), just no longer covering for a
+  full reshuffle. Verified live: after a match, every other tile in both
+  columns keeps its exact prior relative order (checked by diffing the
+  full column list before/after); the newly-inserted pair's two halves
+  land at genuinely different row positions, not aligned; a full 14-pair
+  play-through completes normally with the new mechanic.

@@ -2252,9 +2252,23 @@
 }
 
 .dkm-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
   gap: 8px;
+  align-items: flex-start;
+}
+
+/* Each column is rendered from its own stable-order array (see
+   engine/decks/match.js) rather than one grid filled in DOM order, so a
+   tile's position never depends on where its opposite-column pair
+   happens to sit — English stays the left column, the target language
+   the right, exactly as before, but now a match only ever changes the
+   two tiles it touches instead of reflowing the whole grid. */
+.dkm-col {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+  min-width: 0;
 }
 
 .dkm-tile {

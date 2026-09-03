@@ -1,25 +1,32 @@
 // ============================================
 // DECK MATCH GAME
 // ============================================
-// Quizlet-style timed matching game. The board holds a fixed number of
-// pairs at once (BOARD_SIZE) rather than the whole deck — a hundred-word
-// deck would make an unplayably huge grid otherwise — but the SESSION
-// covers every word in the deck: matching a pair removes it and, if
-// words remain in the pool, pulls the next one onto the board in its
-// place. The whole board (not just the vacated slot) reshuffles when
-// that happens, so the new pair doesn't land somewhere a learner could
-// predict just from watching where the old one disappeared. Timed from
-// the first tap to the last pair of the whole session; the best time per
-// deck is remembered so a learner can chase their own record, the same
-// personal-best idea as the Verb Speed leaderboard
-// (engine/verbs/leaderboard.js) — not a multiplayer ranking, this app
-// has no accounts to compete against.
+// Duolingo Match Madness-style matching game. The board holds a fixed
+// number of pairs at once (BOARD_SIZE) rather than the whole deck — a
+// hundred-word deck would make an unplayably huge grid otherwise — but
+// the SESSION covers every word in the deck: matching a pair removes it
+// and, if words remain in the pool, brings the next one onto the board.
+// Each column (English / target language) keeps a STABLE order — a match
+// just removes its two tiles and inserts one new pair at a random spot in
+// each column, so every tile a learner hasn't matched yet stays right
+// where they last saw it (nothing "reflows" except closing the gap the
+// removed pair left). Timed from the first tap to the last pair of the
+// whole session; the best time per deck is remembered so a learner can
+// chase their own record, the same personal-best idea as the Verb Speed
+// leaderboard (engine/verbs/leaderboard.js) — not a multiplayer ranking,
+// this app has no accounts to compete against.
 //
-// Redesigned 2026-09-02 from an earlier version that dealt one fixed
-// 8-pair sample and ended there — feedback was that a "match" round
-// should work through everything a learner wants to review, the way
-// Quizlet's own Match keeps serving new pairs until the set is done,
-// not stop after one small random sample of it.
+// Redesigned 2026-09-03: the previous version reshuffled EVERY remaining
+// tile into a fresh random position on every match, on the theory that a
+// stable slot would make the next pair guessable. In practice this meant
+// a learner who tapped the next pair right as a match resolved could have
+// their tap land on the wrong tile — nothing they'd already located held
+// still. Told to look at how Duolingo's own Match Madness handles this:
+// matched cards disappear, the rest of the board holds its position, and
+// new cards enter without a full-board scramble. Kept the earlier
+// "not obviously the very last slot" precaution — the new pair still
+// lands at an independently random spot in each column, not stapled to
+// the end — while dropping the "reshuffle everything" behavior entirely.
 
 const DeckMatch = (function () {
     'use strict';
@@ -27,25 +34,25 @@ const DeckMatch = (function () {
     const BOARD_SIZE = 8; // pairs visible on the board at once (up to 16 tiles)
     const WRONG_FLASH_MS = 500;
     // How long a just-matched pair sits visibly "correct" (CSS fades it
-    // to opacity 0 over this same window) before the board reshuffles
-    // around its replacement — long enough to read as a match, short
-    // enough that a review session doesn't feel like it's stalling.
+    // to opacity 0 over this same window) before it's actually removed
+    // from the board — long enough to read as a match, short enough that
+    // a review session doesn't feel like it's stalling.
     const MATCH_FLASH_MS = 450;
-    // A further pause AFTER the board has already reorganized, before
+    // A further pause AFTER the new pair (if any) is inserted, before
     // input re-enables — see _tileClick()'s match branch for why this is
     // a separate step from MATCH_FLASH_MS rather than just a longer flash.
-    const SETTLE_MS = 250;
+    const SETTLE_MS = 200;
 
     let _container = null;
     let _deckId = null;
     let _words0 = []; // the full deck word list passed in — this session works through all of it
     let _totalWords = 0;
     let _pool = [];    // words not yet placed on the board, { uid, lemma, translation }
-    let _active = [];  // words currently occupying board slots
-    let _tiles = [];    // [{ id, uid, kind: 'lemma'|'translation', text, matched }]
+    let _lemmaTiles = [];  // stable-order column: [{ id, uid, text, matched }]
+    let _transTiles = [];  // stable-order column, same shape
     let _selected = [];  // up to 2 tile ids
     let _matchedTotal = 0; // pairs matched so far this whole session, not just the board
-    let _busy = false;   // true while a wrong pair's flash or a match's refill beat is showing
+    let _busy = false;   // true while a wrong pair's flash or a match's flash+insert beat is showing
     let _startTime = null;
     let _elapsedInterval = null;
     let _finished = false;
@@ -67,17 +74,31 @@ const DeckMatch = (function () {
         return copy;
     }
 
+    // Inserts at a random index rather than always at the end — a brand
+    // new pair landing on the exact same row in both columns (or always
+    // at the bottom of both) would give away which two tiles just
+    // arrived together. Each column gets its own independent random
+    // index, so the two halves of a new pair essentially never line up.
+    function _insertRandom(arr, item) {
+        const idx = Math.floor(Math.random() * (arr.length + 1));
+        arr.splice(idx, 0, item);
+    }
+
     function _withArticle(lemma) {
         return (typeof Lexicon !== 'undefined' && Lexicon.withArticle) ? Lexicon.withArticle(lemma) : lemma;
     }
 
     // ---- Personal-best persistence, per deck ----
     // ":stream" distinguishes this from any personal-best value a learner
-    // might have set under the old fixed-8-pair-sample version of this
-    // game — that measured a different thing (time to clear one small
-    // random sample) and isn't a fair comparison against this version's
-    // time (clearing the whole deck), so this starts its own record
-    // rather than silently inheriting a now-incomparable number.
+    // might have set under the original fixed-8-pair-sample version of
+    // this game — that measured a different thing (time to clear one
+    // small random sample) and isn't a fair comparison against this
+    // version's time (clearing the whole deck), so this keeps its own
+    // record rather than silently inheriting a now-incomparable number.
+    // The reshuffle-every-match version in between used this same key —
+    // its times are a reasonable comparison to this reflow version's
+    // (both measure "time to clear the whole deck"), so no further key
+    // change was needed for this redesign.
     function _bestKey() {
         return (typeof Lang !== 'undefined' ? Lang.key('deckMatchBest') : 'deckMatchBest') + ':stream:' + _deckId;
     }
@@ -106,7 +127,7 @@ const DeckMatch = (function () {
     function _startSession() {
         const shuffledAll = _shuffled(_words0).map((w, i) => ({ uid: i, lemma: w.lemma, translation: w.translation }));
         _totalWords = shuffledAll.length;
-        _active = shuffledAll.slice(0, BOARD_SIZE);
+        const active = shuffledAll.slice(0, BOARD_SIZE);
         _pool = shuffledAll.slice(BOARD_SIZE);
 
         _selected = [];
@@ -116,36 +137,16 @@ const DeckMatch = (function () {
         _finished = false;
         _finishMs = 0;
         if (_elapsedInterval) { clearInterval(_elapsedInterval); _elapsedInterval = null; }
-        _buildTiles();
-    }
 
-    // Rebuilds the tile grid from whatever's currently in _active — called
-    // both at session start and every time a match pulls a replacement in,
-    // so the board's layout is always freshly (independently, per column)
-    // shuffled rather than a new tile simply appearing wherever the old
-    // one was.
-    function _buildTiles() {
-        const lemmaTiles = _active.map(w =>
-            ({ id: 'l' + w.uid, uid: w.uid, kind: 'lemma', text: _withArticle(w.lemma), matched: false }));
-        const translationTiles = _active.map(w =>
-            ({ id: 't' + w.uid, uid: w.uid, kind: 'translation', text: w.translation || '—', matched: false }));
-        const shuffledLemma = _shuffled(lemmaTiles);
-        const shuffledTranslation = _shuffled(translationTiles);
-
-        // Two fixed columns rather than one board shuffled as a whole —
-        // .dkm-grid is a plain 2-column grid filled in DOM order, so
-        // interleaving lemma/translation here (each shuffled only within
-        // its own side) keeps English always in the left column and the
-        // target language always in the right (2026-08-27: "English
-        // should be in the left column"). Feedback: matching "which makes
-        // the quick matching quite annoying" when either language could
-        // land in either column and a learner had to scan the whole
-        // board rather than just their own side.
-        _tiles = [];
-        for (let i = 0; i < shuffledLemma.length; i++) {
-            _tiles.push(shuffledTranslation[i]);
-            _tiles.push(shuffledLemma[i]);
-        }
+        // Each column starts independently shuffled — matching still
+        // isn't guessable from position alone — but from here on each
+        // column's order is STABLE. A match only ever removes its own two
+        // tiles and inserts one new pair (see _refill()); nothing else
+        // in either column moves.
+        _lemmaTiles = _shuffled(active).map(w =>
+            ({ id: 'l' + w.uid, uid: w.uid, text: _withArticle(w.lemma), matched: false }));
+        _transTiles = _shuffled(active).map(w =>
+            ({ id: 't' + w.uid, uid: w.uid, text: w.translation || '—', matched: false }));
     }
 
     function _startTimerIfNeeded() {
@@ -165,22 +166,32 @@ const DeckMatch = (function () {
         _render();
     }
 
-    // Removes a just-matched pair from the board and, if the session
-    // isn't over, pulls the next word in from the pool and reshuffles the
-    // remaining board around it.
+    // Removes a just-matched pair and, if the session isn't over, inserts
+    // the next pool word into each column at its own random spot. Every
+    // OTHER tile in both columns keeps its exact existing order — the
+    // list just gets one shorter (or the same length, with the new pair
+    // taking the matched pair's place) rather than being rebuilt.
     function _refill(matchedUid) {
-        _active = _active.filter(w => w.uid !== matchedUid);
+        _lemmaTiles = _lemmaTiles.filter(t => t.uid !== matchedUid);
+        _transTiles = _transTiles.filter(t => t.uid !== matchedUid);
 
         if (_matchedTotal >= _totalWords) { _finish(); return; }
 
-        if (_pool.length) _active.push(_pool.shift());
-        _buildTiles();
+        if (_pool.length) {
+            const w = _pool.shift();
+            _insertRandom(_lemmaTiles, { id: 'l' + w.uid, uid: w.uid, text: _withArticle(w.lemma), matched: false });
+            _insertRandom(_transTiles, { id: 't' + w.uid, uid: w.uid, text: w.translation || '—', matched: false });
+        }
         _render();
+    }
+
+    function _findTile(tileId) {
+        return _lemmaTiles.find(t => t.id === tileId) || _transTiles.find(t => t.id === tileId);
     }
 
     function _tileClick(tileId) {
         if (_busy || _finished) return;
-        const tile = _tiles.find(t => t.id === tileId);
+        const tile = _findTile(tileId);
         if (!tile || tile.matched || _selected.includes(tileId)) return;
 
         _startTimerIfNeeded();
@@ -189,27 +200,27 @@ const DeckMatch = (function () {
         if (_selected.length < 2) { _render(); return; }
 
         const [aId, bId] = _selected;
-        const a = _tiles.find(t => t.id === aId);
-        const b = _tiles.find(t => t.id === bId);
-        const isMatch = a.uid === b.uid && a.kind !== b.kind;
+        const a = _findTile(aId);
+        const b = _findTile(bId);
+        // Each uid appears exactly once per column, so two different tile
+        // ids sharing a uid can only be one from each column already —
+        // no separate "different column" check needed.
+        const isMatch = a.uid === b.uid;
 
         if (isMatch) {
             a.matched = true;
             b.matched = true;
             _matchedTotal++;
             _selected = [];
-            _busy = true; // lock input for the whole flash + reorganize + settle sequence below
+            _busy = true; // lock input for the whole flash + remove/insert + settle sequence below
             _render();
             setTimeout(() => {
-                // Reorganizing while still "busy" (not the reverse — a
-                // learner tapping right as the previous match resolved
-                // used to have their tap land on whatever new tile ended
-                // up under their finger, since input unlocked in the same
-                // instant the board reshuffled). Only once the new layout
-                // is actually painted, and has sat still for its own
-                // SETTLE_MS beat, does input come back — so the first tap
-                // after a match always lands on the layout the learner
-                // can actually see, never one still mid-change.
+                // Removing/inserting while still "busy" (not the reverse
+                // — see this file's header comment on why a learner's tap
+                // landing right as the board changes used to go to the
+                // wrong tile). Only once the updated layout is actually
+                // painted, and has sat still for its own SETTLE_MS beat,
+                // does input come back.
                 _refill(a.uid);
                 setTimeout(() => { _busy = false; }, SETTLE_MS);
             }, MATCH_FLASH_MS);
@@ -283,7 +294,8 @@ const DeckMatch = (function () {
                 </div>
                 ${best !== null ? `<p class="dkm-best-line">Best: ${_formatSeconds(best)}</p>` : ''}
                 <div class="dkm-grid">
-                    ${_tiles.map(_tileHtml).join('')}
+                    <div class="dkm-col">${_transTiles.map(_tileHtml).join('')}</div>
+                    <div class="dkm-col">${_lemmaTiles.map(_tileHtml).join('')}</div>
                 </div>
             </div>
         `;
