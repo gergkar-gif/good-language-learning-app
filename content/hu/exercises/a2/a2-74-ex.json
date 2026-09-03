@@ -1,0 +1,168 @@
+{
+  "lesson": "a2-74",
+  "exercises": [
+    {
+      "id": "a2-74-intro-1",
+      "type": "multiple-choice",
+      "category": "introduce",
+      "question": "Which means \"to be late, to run late\"?",
+      "options": ["késik", "lekésik", "elromlik"],
+      "correct": 0,
+      "teaches": ["travel-problem-vocab"]
+    },
+    {
+      "id": "a2-74-intro-2",
+      "type": "multiple-choice",
+      "category": "introduce",
+      "question": "Which means \"problem\"?",
+      "options": ["probléma", "tele", "eltűnik"],
+      "correct": 0,
+      "teaches": ["travel-problem-vocab"]
+    },
+    {
+      "id": "a2-74-controlled-1",
+      "type": "matching",
+      "category": "controlled",
+      "pairs": [
+        ["késik", "to be late"],
+        ["lekésik", "to miss (a train)"],
+        ["tele", "full"],
+        ["elromlik", "to break down"]
+      ],
+      "teaches": ["travel-problem-vocab"]
+    },
+    {
+      "id": "a2-74-controlled-2",
+      "type": "matching",
+      "category": "controlled",
+      "pairs": [
+        ["eltűnik", "to disappear, to go missing"],
+        ["probléma", "problem"],
+        ["késik", "to be late"],
+        ["tele", "full"]
+      ],
+      "teaches": ["travel-problem-vocab"]
+    },
+    {
+      "id": "a2-74-controlled-3",
+      "type": "fill-blank",
+      "category": "controlled",
+      "sentence": "A vonat ____. (is late)",
+      "answer": "késik",
+      "teaches": ["travel-problem-vocab"]
+    },
+    {
+      "id": "a2-74-controlled-4",
+      "type": "fill-blank",
+      "category": "controlled",
+      "sentence": "____ van a vonat, nincs helyünk. (full)",
+      "answer": "tele",
+      "teaches": ["van-nincs-problem"]
+    },
+    {
+      "id": "a2-74-practice-1",
+      "type": "multiple-choice",
+      "category": "practice",
+      "question": "Which word means \"if\"?",
+      "options": ["ha", "mert", "hogy"],
+      "correct": 0,
+      "teaches": ["ha-akkor"]
+    },
+    {
+      "id": "a2-74-practice-2",
+      "type": "matching",
+      "category": "practice",
+      "pairs": [
+        ["Ha késik a vonat, várunk.", "If the train is late, we wait."],
+        ["Ha eltűnik a poggyászom, azonnal szólok valakinek.", "If my luggage goes missing, I'll tell someone right away."],
+        ["Tele van a vonat.", "The train is full."],
+        ["Van egy problémánk.", "We have a problem."]
+      ],
+      "teaches": ["ha-akkor", "van-nincs-problem"]
+    },
+    {
+      "id": "a2-74-practice-3",
+      "type": "sentence-builder",
+      "category": "practice",
+      "tiles": ["Ha", "késik", "a", "vonat", ",", "várunk", "."],
+      "solution": ["Ha", "késik", "a", "vonat", ",", "várunk", "."],
+      "english": "If the train is late, we wait.",
+      "teaches": ["ha-akkor"]
+    },
+    {
+      "id": "a2-74-practice-4",
+      "type": "sentence-builder",
+      "category": "practice",
+      "tiles": ["Sajnos", "tele", "van", "ez", "a", "vonat", "."],
+      "solution": ["Sajnos", "tele", "van", "ez", "a", "vonat", "."],
+      "english": "Unfortunately this train is full.",
+      "teaches": ["van-nincs-problem"]
+    },
+    {
+      "id": "a2-74-dialogue-1",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        { "speaker": "Meg", "text": "Mi a probléma?" },
+        { "speaker": "Károly", "text": "_____" }
+      ],
+      "options": ["Késik a repülő, és nincs helyünk a váróteremben.", "Két hétig maradunk."],
+      "correct": 0,
+      "teaches": ["travel-problem-vocab"]
+    },
+    {
+      "id": "a2-74-dialogue-2",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        { "speaker": "Ildikó", "text": "Mit csinálunk, ha lekésitek a csatlakozást?" },
+        { "speaker": "Meg", "text": "_____" }
+      ],
+      "options": ["Ha lekéssük, a következő vonattal megyünk.", "Nem találom az útlevelemet."],
+      "correct": 0,
+      "teaches": ["ha-akkor"]
+    },
+    {
+      "id": "a2-74-writing-1",
+      "type": "structured-writing",
+      "category": "writing",
+      "template": [
+        {
+          "prompt": "Say that if the train is late, you'll wait.",
+          "answer": "Ha késik a vonat, várok."
+        }
+      ],
+      "teaches": ["ha-akkor"]
+    },
+    {
+      "id": "a2-74-writing-2",
+      "type": "structured-writing",
+      "category": "writing",
+      "template": [
+        {
+          "prompt": "Say the train is full and you don't have a seat.",
+          "answer": "Tele van a vonat, nincs helyem."
+        }
+      ],
+      "teaches": ["van-nincs-problem"]
+    },
+    {
+      "id": "a2-74-check-1",
+      "type": "multiple-choice",
+      "category": "check",
+      "question": "Which means \"to disappear, to go missing\"?",
+      "options": ["eltűnik", "elromlik", "lekésik"],
+      "correct": 0,
+      "teaches": ["travel-problem-vocab"]
+    },
+    {
+      "id": "a2-74-check-2",
+      "type": "multiple-choice",
+      "category": "check",
+      "question": "\"Ha késik a vonat, akkor várunk.\" — what does this sentence mean?",
+      "options": ["If the train is late, then we wait.", "The train is late, so we don't wait.", "We wait because the train was late."],
+      "correct": 0,
+      "teaches": ["ha-akkor"]
+    }
+  ]
+}

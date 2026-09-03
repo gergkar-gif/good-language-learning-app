@@ -1,0 +1,168 @@
+{
+  "lesson": "a2-91",
+  "exercises": [
+    {
+      "id": "a2-91-intro-1",
+      "type": "multiple-choice",
+      "category": "introduce",
+      "question": "Which means \"teacher\"?",
+      "options": ["tanár", "diák", "vizsga"],
+      "correct": 0,
+      "teaches": ["school-vocab"]
+    },
+    {
+      "id": "a2-91-intro-2",
+      "type": "multiple-choice",
+      "category": "introduce",
+      "question": "Which means \"exam\"?",
+      "options": ["vizsga", "órarend", "kollégium"],
+      "correct": 0,
+      "teaches": ["school-vocab"]
+    },
+    {
+      "id": "a2-91-controlled-1",
+      "type": "matching",
+      "category": "controlled",
+      "pairs": [
+        ["tanár", "teacher"],
+        ["diák", "student, pupil"],
+        ["egyetemista", "university student"],
+        ["vizsga", "exam"]
+      ],
+      "teaches": ["school-vocab"]
+    },
+    {
+      "id": "a2-91-controlled-2",
+      "type": "matching",
+      "category": "controlled",
+      "pairs": [
+        ["órarend", "timetable, schedule"],
+        ["kollégium", "dormitory"],
+        ["tanár", "teacher"],
+        ["diák", "student, pupil"]
+      ],
+      "teaches": ["school-vocab"]
+    },
+    {
+      "id": "a2-91-controlled-3",
+      "type": "fill-blank",
+      "category": "controlled",
+      "sentence": "Ki tanítja ezt az órát? A ____ nagyon jó magyarul.",
+      "answer": "tanár",
+      "teaches": ["school-vocab"]
+    },
+    {
+      "id": "a2-91-controlled-4",
+      "type": "fill-blank",
+      "category": "controlled",
+      "sentence": "Nem otthon lakom, hanem egy ____. (dormitory)",
+      "answer": "kollégiumban",
+      "teaches": ["school-vocab"]
+    },
+    {
+      "id": "a2-91-practice-1",
+      "type": "multiple-choice",
+      "category": "practice",
+      "question": "Which pattern means someone attends a place regularly?",
+      "options": ["jár + -ba/-be/-ra/-re", "van + -ban/-ben", "megy + -tól/-től"],
+      "correct": 0,
+      "teaches": ["jar-iskolaba"]
+    },
+    {
+      "id": "a2-91-practice-2",
+      "type": "matching",
+      "category": "practice",
+      "pairs": [
+        ["Egyetemre járok.", "I attend university."],
+        ["A húgom iskolába jár.", "My younger sister attends school."],
+        ["2019 óta tanulok magyarul.", "I've been learning Hungarian since 2019."],
+        ["Szeptember óta egyetemre jár.", "He/she has been attending university since September."]
+      ],
+      "teaches": ["jar-iskolaba", "ota-since"]
+    },
+    {
+      "id": "a2-91-practice-3",
+      "type": "sentence-builder",
+      "category": "practice",
+      "tiles": ["Minden", "nap", "egyetemre", "járok", "."],
+      "solution": ["Minden", "nap", "egyetemre", "járok", "."],
+      "english": "I go to university every day.",
+      "teaches": ["jar-iskolaba"]
+    },
+    {
+      "id": "a2-91-practice-4",
+      "type": "sentence-builder",
+      "category": "practice",
+      "tiles": ["Szeptember", "óta", "egyetemista", "vagyok", "."],
+      "solution": ["Szeptember", "óta", "egyetemista", "vagyok", "."],
+      "english": "I've been a university student since September.",
+      "teaches": ["ota-since"]
+    },
+    {
+      "id": "a2-91-dialogue-1",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        { "speaker": "Petra", "text": "Hol tanulsz?" },
+        { "speaker": "Meg", "text": "_____" }
+      ],
+      "options": ["Egyetemre járok Budapesten.", "Ma nincs vizsgám."],
+      "correct": 0,
+      "teaches": ["jar-iskolaba"]
+    },
+    {
+      "id": "a2-91-dialogue-2",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        { "speaker": "Meg", "text": "Mióta tanulsz itt?" },
+        { "speaker": "Petra", "text": "_____" }
+      ],
+      "options": ["2021 óta.", "Egy tanár vagyok."],
+      "correct": 0,
+      "teaches": ["ota-since"]
+    },
+    {
+      "id": "a2-91-writing-1",
+      "type": "structured-writing",
+      "category": "writing",
+      "template": [
+        {
+          "prompt": "Say you've been attending university since 2020.",
+          "answer": "2020 óta egyetemre járok."
+        }
+      ],
+      "teaches": ["jar-iskolaba", "ota-since"]
+    },
+    {
+      "id": "a2-91-writing-2",
+      "type": "structured-writing",
+      "category": "writing",
+      "template": [
+        {
+          "prompt": "Say your teacher is very good.",
+          "answer": "A tanárom nagyon jó."
+        }
+      ],
+      "teaches": ["school-vocab"]
+    },
+    {
+      "id": "a2-91-check-1",
+      "type": "multiple-choice",
+      "category": "check",
+      "question": "Which means \"student, pupil\" (in general, at school)?",
+      "options": ["diák", "tanár", "kollégium"],
+      "correct": 0,
+      "teaches": ["school-vocab"]
+    },
+    {
+      "id": "a2-91-check-2",
+      "type": "multiple-choice",
+      "category": "check",
+      "question": "Which word correctly completes: \"2020 ____ egyetemre járok\" (\"Since 2020 I've attended university\")?",
+      "options": ["óta", "tól", "ban"],
+      "correct": 0,
+      "teaches": ["ota-since"]
+    }
+  ]
+}

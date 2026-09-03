@@ -1,0 +1,168 @@
+{
+  "lesson": "a2-92",
+  "exercises": [
+    {
+      "id": "a2-92-intro-1",
+      "type": "multiple-choice",
+      "category": "introduce",
+      "question": "Which means \"history\"?",
+      "options": ["történelem", "irodalom", "biológia"],
+      "correct": 0,
+      "teaches": ["subjects-vocab"]
+    },
+    {
+      "id": "a2-92-intro-2",
+      "type": "multiple-choice",
+      "category": "introduce",
+      "question": "Which means \"mathematics\"?",
+      "options": ["matematika", "testnevelés", "tantárgy"],
+      "correct": 0,
+      "teaches": ["subjects-vocab"]
+    },
+    {
+      "id": "a2-92-controlled-1",
+      "type": "matching",
+      "category": "controlled",
+      "pairs": [
+        ["tantárgy", "school subject"],
+        ["matematika", "mathematics"],
+        ["történelem", "history"],
+        ["irodalom", "literature"]
+      ],
+      "teaches": ["subjects-vocab"]
+    },
+    {
+      "id": "a2-92-controlled-2",
+      "type": "matching",
+      "category": "controlled",
+      "pairs": [
+        ["biológia", "biology"],
+        ["testnevelés", "physical education"],
+        ["matematika", "mathematics"],
+        ["történelem", "history"]
+      ],
+      "teaches": ["subjects-vocab"]
+    },
+    {
+      "id": "a2-92-controlled-3",
+      "type": "fill-blank",
+      "category": "controlled",
+      "sentence": "Hány ____ van ma az órarendeden?",
+      "answer": "tantárgy",
+      "teaches": ["subjects-vocab"]
+    },
+    {
+      "id": "a2-92-controlled-4",
+      "type": "fill-blank",
+      "category": "controlled",
+      "sentence": "Szeretem az állatokat, ezért a ____ a kedvenc tantárgyam.",
+      "answer": "biológia",
+      "teaches": ["subjects-vocab"]
+    },
+    {
+      "id": "a2-92-practice-1",
+      "type": "multiple-choice",
+      "category": "practice",
+      "question": "Which ending marks the subject you're good or bad at?",
+      "options": ["-ban/-ben", "-ra/-re", "-val/-vel"],
+      "correct": 0,
+      "teaches": ["jo-vmiben"]
+    },
+    {
+      "id": "a2-92-practice-2",
+      "type": "matching",
+      "category": "practice",
+      "pairs": [
+        ["Jó vagyok matematikában.", "I'm good at math."],
+        ["Rossz vagyok történelemben.", "I'm bad at history."],
+        ["Tanulom a történelmet a vizsgára.", "I'm studying the history material for the exam."],
+        ["Minden nap tanulok irodalmat.", "Every day I study literature."]
+      ],
+      "teaches": ["jo-vmiben", "tanul-definite"]
+    },
+    {
+      "id": "a2-92-practice-3",
+      "type": "sentence-builder",
+      "category": "practice",
+      "tiles": ["Nagyon", "jó", "vagyok", "biológiában", "."],
+      "solution": ["Nagyon", "jó", "vagyok", "biológiában", "."],
+      "english": "I'm very good at biology.",
+      "teaches": ["jo-vmiben"]
+    },
+    {
+      "id": "a2-92-practice-4",
+      "type": "sentence-builder",
+      "category": "practice",
+      "tiles": ["Ma", "este", "tanulom", "a", "matematikát", "."],
+      "solution": ["Ma", "este", "tanulom", "a", "matematikát", "."],
+      "english": "Tonight I'm studying the math material.",
+      "teaches": ["tanul-definite"]
+    },
+    {
+      "id": "a2-92-dialogue-1",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        { "speaker": "Tamás", "text": "Milyen tantárgyban vagy jó?" },
+        { "speaker": "Meg", "text": "_____" }
+      ],
+      "options": ["Nagyon jó vagyok irodalomban.", "Ma nincs órám."],
+      "correct": 0,
+      "teaches": ["jo-vmiben"]
+    },
+    {
+      "id": "a2-92-dialogue-2",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        { "speaker": "Meg", "text": "Mit tanulsz ma este?" },
+        { "speaker": "Tamás", "text": "_____" }
+      ],
+      "options": ["A történelmet tanulom a vizsgára.", "Rossz vagyok testnevelésben."],
+      "correct": 0,
+      "teaches": ["tanul-definite"]
+    },
+    {
+      "id": "a2-92-writing-1",
+      "type": "structured-writing",
+      "category": "writing",
+      "template": [
+        {
+          "prompt": "Say you're bad at math.",
+          "answer": "Rossz vagyok matematikában."
+        }
+      ],
+      "teaches": ["jo-vmiben"]
+    },
+    {
+      "id": "a2-92-writing-2",
+      "type": "structured-writing",
+      "category": "writing",
+      "template": [
+        {
+          "prompt": "Say tonight you're studying the literature material for the exam.",
+          "answer": "Ma este tanulom az irodalmat a vizsgára."
+        }
+      ],
+      "teaches": ["tanul-definite"]
+    },
+    {
+      "id": "a2-92-check-1",
+      "type": "multiple-choice",
+      "category": "check",
+      "question": "Which means \"physical education\"?",
+      "options": ["testnevelés", "tantárgy", "biológia"],
+      "correct": 0,
+      "teaches": ["subjects-vocab"]
+    },
+    {
+      "id": "a2-92-check-2",
+      "type": "multiple-choice",
+      "category": "check",
+      "question": "Which correctly uses the definite object for one specific piece of material?",
+      "options": ["Tanulom a matematikát a vizsgára.", "Tanulok a matematikát a vizsgára.", "Tanul matematikát a vizsgára én."],
+      "correct": 0,
+      "teaches": ["tanul-definite"]
+    }
+  ]
+}

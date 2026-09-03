@@ -1,0 +1,168 @@
+{
+  "lesson": "a2-84",
+  "exercises": [
+    {
+      "id": "a2-84-intro-1",
+      "type": "multiple-choice",
+      "category": "introduce",
+      "question": "Which means \"doctor\"?",
+      "options": ["orvos", "rendelő", "gyógyszer"],
+      "correct": 0,
+      "teaches": ["doctor-vocab"]
+    },
+    {
+      "id": "a2-84-intro-2",
+      "type": "multiple-choice",
+      "category": "introduce",
+      "question": "Which means \"medicine\"?",
+      "options": ["gyógyszer", "panasz", "vizsgál"],
+      "correct": 0,
+      "teaches": ["doctor-vocab"]
+    },
+    {
+      "id": "a2-84-controlled-1",
+      "type": "matching",
+      "category": "controlled",
+      "pairs": [
+        ["orvos", "doctor"],
+        ["rendelő", "doctor's office"],
+        ["vizsgál", "to examine"],
+        ["panasz", "complaint, ailment"]
+      ],
+      "teaches": ["doctor-vocab"]
+    },
+    {
+      "id": "a2-84-controlled-2",
+      "type": "matching",
+      "category": "controlled",
+      "pairs": [
+        ["gyógyszer", "medicine"],
+        ["felír", "to prescribe"],
+        ["orvos", "doctor"],
+        ["rendelő", "doctor's office"]
+      ],
+      "teaches": ["doctor-vocab"]
+    },
+    {
+      "id": "a2-84-controlled-3",
+      "type": "fill-blank",
+      "category": "controlled",
+      "sentence": "Mi a ____? (formal: complaint)",
+      "answer": "panasza",
+      "teaches": ["mi-a-panasza"]
+    },
+    {
+      "id": "a2-84-controlled-4",
+      "type": "fill-blank",
+      "category": "controlled",
+      "sentence": "Az orvos ____ nekem egy receptet. (prescribes)",
+      "answer": "felír",
+      "teaches": ["felir-prescribe"]
+    },
+    {
+      "id": "a2-84-practice-1",
+      "type": "multiple-choice",
+      "category": "practice",
+      "question": "Which is the formal way to ask \"What's the matter?\" at the doctor's?",
+      "options": ["Mi a panasza?", "Mi a baj?", "Mi a neved?"],
+      "correct": 0,
+      "teaches": ["mi-a-panasza"]
+    },
+    {
+      "id": "a2-84-practice-2",
+      "type": "matching",
+      "category": "practice",
+      "pairs": [
+        ["Mi a panasza?", "What's the matter (formal)?"],
+        ["Az orvos megvizsgál.", "The doctor examines (me)."],
+        ["Az orvos felír egy receptet.", "The doctor prescribes a prescription."],
+        ["A rendelőben várok.", "I'm waiting in the doctor's office."]
+      ],
+      "teaches": ["felir-prescribe"]
+    },
+    {
+      "id": "a2-84-practice-3",
+      "type": "sentence-builder",
+      "category": "practice",
+      "tiles": ["Az", "orvos", "felír", "nekem", "egy", "receptet", "."],
+      "solution": ["Az", "orvos", "felír", "nekem", "egy", "receptet", "."],
+      "english": "The doctor prescribes me a prescription.",
+      "teaches": ["felir-prescribe"]
+    },
+    {
+      "id": "a2-84-practice-4",
+      "type": "sentence-builder",
+      "category": "practice",
+      "tiles": ["Mi", "a", "panasza", "?"],
+      "solution": ["Mi", "a", "panasza", "?"],
+      "english": "What's the matter (formal)?",
+      "teaches": ["mi-a-panasza"]
+    },
+    {
+      "id": "a2-84-dialogue-1",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        { "speaker": "Orvos", "text": "Mi a panasza?" },
+        { "speaker": "Meg", "text": "_____" }
+      ],
+      "options": ["Két napja fáj a torkom, és lázam van.", "Nagyon szeretem a magyar konyhát."],
+      "correct": 0,
+      "teaches": ["mi-a-panasza"]
+    },
+    {
+      "id": "a2-84-dialogue-2",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        { "speaker": "Károly", "text": "Mit csinál az orvos a rendelőben?" },
+        { "speaker": "Ildikó", "text": "_____" }
+      ],
+      "options": ["Megvizsgál, és felír egy gyógyszert.", "Süt egy tortát."],
+      "correct": 0,
+      "teaches": ["doctor-vocab"]
+    },
+    {
+      "id": "a2-84-writing-1",
+      "type": "structured-writing",
+      "category": "writing",
+      "template": [
+        {
+          "prompt": "Ask, formally, what the matter is.",
+          "answer": "Mi a panasza?"
+        }
+      ],
+      "teaches": ["mi-a-panasza"]
+    },
+    {
+      "id": "a2-84-writing-2",
+      "type": "structured-writing",
+      "category": "writing",
+      "template": [
+        {
+          "prompt": "Say the doctor prescribes you medicine.",
+          "answer": "Az orvos felír nekem egy gyógyszert."
+        }
+      ],
+      "teaches": ["felir-prescribe"]
+    },
+    {
+      "id": "a2-84-check-1",
+      "type": "multiple-choice",
+      "category": "check",
+      "question": "Which means \"to examine\"?",
+      "options": ["vizsgál", "felír", "gyógyszer"],
+      "correct": 0,
+      "teaches": ["doctor-vocab"]
+    },
+    {
+      "id": "a2-84-check-2",
+      "type": "multiple-choice",
+      "category": "check",
+      "question": "Which means \"doctor's office\"?",
+      "options": ["rendelő", "panasz", "orvos"],
+      "correct": 0,
+      "teaches": ["doctor-vocab"]
+    }
+  ]
+}

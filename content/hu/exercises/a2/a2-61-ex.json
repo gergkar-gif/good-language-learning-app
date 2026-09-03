@@ -1,0 +1,162 @@
+{
+  "lesson": "a2-61",
+  "exercises": [
+    {
+      "id": "a2-61-intro-1",
+      "type": "multiple-choice",
+      "category": "introduce",
+      "question": "Which means \"sunny\"?",
+      "options": ["napos", "felhős", "szeles"],
+      "correct": 0,
+      "teaches": ["weather-vocab"]
+    },
+    {
+      "id": "a2-61-intro-2",
+      "type": "multiple-choice",
+      "category": "introduce",
+      "question": "Which means \"the sun is shining\"?",
+      "options": ["Süt a nap.", "Fúj a szél.", "Csúnya idő van."],
+      "correct": 0,
+      "teaches": ["sut-fuj"]
+    },
+    {
+      "id": "a2-61-controlled-1",
+      "type": "matching",
+      "category": "controlled",
+      "pairs": [
+        ["napos", "sunny"],
+        ["felhős", "cloudy"],
+        ["szeles", "windy"],
+        ["idő", "weather"]
+      ],
+      "teaches": ["weather-vocab"]
+    },
+    {
+      "id": "a2-61-controlled-2",
+      "type": "matching",
+      "category": "controlled",
+      "pairs": [
+        ["Süt a nap.", "The sun is shining."],
+        ["Fúj a szél.", "The wind is blowing."],
+        ["Szép idő van.", "The weather is nice."],
+        ["Csúnya idő van.", "The weather is bad."]
+      ],
+      "teaches": ["weather-vocab", "sut-fuj"]
+    },
+    {
+      "id": "a2-61-controlled-3",
+      "type": "fill-blank",
+      "category": "controlled",
+      "sentence": "Ma nagyon ____ van, fúj a szél.",
+      "answer": "szeles",
+      "teaches": ["weather-vocab"]
+    },
+    {
+      "id": "a2-61-controlled-4",
+      "type": "fill-blank",
+      "category": "controlled",
+      "sentence": "Nem felhős az ég ma, hanem ____ a nap. (shines)",
+      "answer": "süt",
+      "teaches": ["sut-fuj"]
+    },
+    {
+      "id": "a2-61-practice-1",
+      "type": "multiple-choice",
+      "category": "practice",
+      "question": "\"Fúj a szél.\" describes what?",
+      "options": ["the wind blowing", "the sun shining", "the sky being cloudy"],
+      "correct": 0,
+      "teaches": ["sut-fuj"]
+    },
+    {
+      "id": "a2-61-practice-2",
+      "type": "matching",
+      "category": "practice",
+      "pairs": [
+        ["Milyen az idő?", "What's the weather like?"],
+        ["Szép idő van.", "The weather is nice."],
+        ["Ma szeles idő van.", "Today it's windy."],
+        ["Fúj a szél és felhős az ég.", "The wind is blowing and the sky is cloudy."]
+      ],
+      "teaches": ["weather-vocab"]
+    },
+    {
+      "id": "a2-61-practice-3",
+      "type": "sentence-builder",
+      "category": "practice",
+      "tiles": ["Ma", "napos", "és", "szeles", "idő", "van", "."],
+      "solution": ["Ma", "napos", "és", "szeles", "idő", "van", "."],
+      "english": "Today the weather is sunny and windy.",
+      "teaches": ["weather-vocab"]
+    },
+    {
+      "id": "a2-61-practice-4",
+      "type": "sentence-builder",
+      "category": "practice",
+      "tiles": ["Erősen", "fúj", "a", "szél", "ma", "."],
+      "solution": ["Erősen", "fúj", "a", "szél", "ma", "."],
+      "english": "The wind is blowing hard today.",
+      "teaches": ["sut-fuj"]
+    },
+    {
+      "id": "a2-61-dialogue-1",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        { "speaker": "Meg", "text": "Milyen ma az idő?" },
+        { "speaker": "Károly", "text": "_____" }
+      ],
+      "options": ["Szép idő van, napos és szeles.", "Nincs sok időm ma."],
+      "correct": 0,
+      "teaches": ["weather-vocab"]
+    },
+    {
+      "id": "a2-61-dialogue-2",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        { "speaker": "Károly", "text": "Fúj a szél?" },
+        { "speaker": "Meg", "text": "_____" }
+      ],
+      "options": ["Igen, ma nagyon fúj.", "Két hagyma kell hozzá."],
+      "correct": 0,
+      "teaches": ["sut-fuj"]
+    },
+    {
+      "id": "a2-61-writing-1",
+      "type": "structured-writing",
+      "category": "writing",
+      "template": [
+        { "prompt": "Ask what the weather is like today.", "answer": "Milyen ma az idő?" }
+      ],
+      "teaches": ["weather-vocab"]
+    },
+    {
+      "id": "a2-61-writing-2",
+      "type": "structured-writing",
+      "category": "writing",
+      "template": [
+        { "prompt": "Say the sun is shining and it's windy.", "answer": "Süt a nap és szeles idő van." }
+      ],
+      "teaches": ["sut-fuj"]
+    },
+    {
+      "id": "a2-61-check-1",
+      "type": "multiple-choice",
+      "category": "check",
+      "question": "Which means \"windy\"?",
+      "options": ["szeles", "napos", "felhős"],
+      "correct": 0,
+      "teaches": ["weather-vocab"]
+    },
+    {
+      "id": "a2-61-check-2",
+      "type": "multiple-choice",
+      "category": "check",
+      "question": "Which sentence means \"The wind is blowing\"?",
+      "options": ["Fúj a szél.", "Süt a nap.", "Szép idő van."],
+      "correct": 0,
+      "teaches": ["sut-fuj"]
+    }
+  ]
+}

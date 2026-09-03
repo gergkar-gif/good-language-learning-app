@@ -1,0 +1,168 @@
+{
+  "lesson": "a2-72",
+  "exercises": [
+    {
+      "id": "a2-72-intro-1",
+      "type": "multiple-choice",
+      "category": "introduce",
+      "question": "Which means \"track, platform number\"?",
+      "options": ["vágány", "peron", "csatlakozás"],
+      "correct": 0,
+      "teaches": ["station-vocab"]
+    },
+    {
+      "id": "a2-72-intro-2",
+      "type": "multiple-choice",
+      "category": "introduce",
+      "question": "Which means \"connection, transfer\"?",
+      "options": ["csatlakozás", "helyjegy", "váróterem"],
+      "correct": 0,
+      "teaches": ["station-vocab"]
+    },
+    {
+      "id": "a2-72-controlled-1",
+      "type": "matching",
+      "category": "controlled",
+      "pairs": [
+        ["vágány", "track, platform number"],
+        ["peron", "platform"],
+        ["csatlakozás", "connection"],
+        ["helyjegy", "seat reservation"]
+      ],
+      "teaches": ["station-vocab"]
+    },
+    {
+      "id": "a2-72-controlled-2",
+      "type": "matching",
+      "category": "controlled",
+      "pairs": [
+        ["váróterem", "waiting room"],
+        ["oda-vissza", "round trip"],
+        ["vágány", "track, platform number"],
+        ["helyjegy", "seat reservation"]
+      ],
+      "teaches": ["station-vocab"]
+    },
+    {
+      "id": "a2-72-controlled-3",
+      "type": "fill-blank",
+      "category": "controlled",
+      "sentence": "A vonat Bécsből ____, és Rómába érkezik. (departs)",
+      "answer": "indul",
+      "teaches": ["indul-erkezik"]
+    },
+    {
+      "id": "a2-72-controlled-4",
+      "type": "fill-blank",
+      "category": "controlled",
+      "sentence": "A jegyem csak Győr____ szól. (as far as)",
+      "answer": "ig",
+      "teaches": ["ig-destination-limit"]
+    },
+    {
+      "id": "a2-72-practice-1",
+      "type": "multiple-choice",
+      "category": "practice",
+      "question": "Which verb pairs with -ba/-be to say where a train is arriving?",
+      "options": ["érkezik", "indul", "vár"],
+      "correct": 0,
+      "teaches": ["indul-erkezik"]
+    },
+    {
+      "id": "a2-72-practice-2",
+      "type": "matching",
+      "category": "practice",
+      "pairs": [
+        ["Mikor indul a vonat?", "When does the train depart?"],
+        ["Melyik vágányra érkezik?", "Which platform does it arrive at?"],
+        ["Meddig szól ez a jegy?", "How far does this ticket go?"],
+        ["A jegyem csak Győrig szól.", "My ticket is only valid as far as Győr."]
+      ],
+      "teaches": ["ig-destination-limit", "indul-erkezik"]
+    },
+    {
+      "id": "a2-72-practice-3",
+      "type": "sentence-builder",
+      "category": "practice",
+      "tiles": ["A", "vonat", "Bécsből", "indul", "."],
+      "solution": ["A", "vonat", "Bécsből", "indul", "."],
+      "english": "The train departs from Vienna.",
+      "teaches": ["indul-erkezik"]
+    },
+    {
+      "id": "a2-72-practice-4",
+      "type": "sentence-builder",
+      "category": "practice",
+      "tiles": ["A", "jegyem", "csak", "Győrig", "szól", "."],
+      "solution": ["A", "jegyem", "csak", "Győrig", "szól", "."],
+      "english": "My ticket is only valid as far as Győr.",
+      "teaches": ["ig-destination-limit"]
+    },
+    {
+      "id": "a2-72-dialogue-1",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        { "speaker": "Meg", "text": "Melyik vágányról indul a vonat Bécsbe?" },
+        { "speaker": "Károly", "text": "_____" }
+      ],
+      "options": ["A négyes vágányról.", "Két hétig maradunk."],
+      "correct": 0,
+      "teaches": ["indul-erkezik", "station-vocab"]
+    },
+    {
+      "id": "a2-72-dialogue-2",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        { "speaker": "Ildikó", "text": "Meddig szól a jegyed?" },
+        { "speaker": "Meg", "text": "_____" }
+      ],
+      "options": ["Csak Győrig.", "A váróteremben vagyok."],
+      "correct": 0,
+      "teaches": ["ig-destination-limit"]
+    },
+    {
+      "id": "a2-72-writing-1",
+      "type": "structured-writing",
+      "category": "writing",
+      "template": [
+        {
+          "prompt": "Say the train departs from Vienna and arrives in Rome.",
+          "answer": "A vonat Bécsből indul, és Rómába érkezik."
+        }
+      ],
+      "teaches": ["indul-erkezik"]
+    },
+    {
+      "id": "a2-72-writing-2",
+      "type": "structured-writing",
+      "category": "writing",
+      "template": [
+        {
+          "prompt": "Ask which platform the train departs from.",
+          "answer": "Melyik vágányról indul a vonat?"
+        }
+      ],
+      "teaches": ["station-vocab", "indul-erkezik"]
+    },
+    {
+      "id": "a2-72-check-1",
+      "type": "multiple-choice",
+      "category": "check",
+      "question": "Which means \"waiting room\"?",
+      "options": ["váróterem", "peron", "helyjegy"],
+      "correct": 0,
+      "teaches": ["station-vocab"]
+    },
+    {
+      "id": "a2-72-check-2",
+      "type": "multiple-choice",
+      "category": "check",
+      "question": "Meddig szól ez a jegy? — what is being asked?",
+      "options": ["How far does this ticket go?", "How much did this ticket cost?", "Where can I buy this ticket?"],
+      "correct": 0,
+      "teaches": ["ig-destination-limit"]
+    }
+  ]
+}
