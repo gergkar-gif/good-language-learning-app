@@ -30,7 +30,11 @@ const DeckMatch = (function () {
     // to opacity 0 over this same window) before the board reshuffles
     // around its replacement — long enough to read as a match, short
     // enough that a review session doesn't feel like it's stalling.
-    const MATCH_FLASH_MS = 400;
+    const MATCH_FLASH_MS = 450;
+    // A further pause AFTER the board has already reorganized, before
+    // input re-enables — see _tileClick()'s match branch for why this is
+    // a separate step from MATCH_FLASH_MS rather than just a longer flash.
+    const SETTLE_MS = 250;
 
     let _container = null;
     let _deckId = null;
@@ -194,9 +198,21 @@ const DeckMatch = (function () {
             b.matched = true;
             _matchedTotal++;
             _selected = [];
-            _busy = true; // lock input during the flash+refill beat
+            _busy = true; // lock input for the whole flash + reorganize + settle sequence below
             _render();
-            setTimeout(() => { _busy = false; _refill(a.uid); }, MATCH_FLASH_MS);
+            setTimeout(() => {
+                // Reorganizing while still "busy" (not the reverse — a
+                // learner tapping right as the previous match resolved
+                // used to have their tap land on whatever new tile ended
+                // up under their finger, since input unlocked in the same
+                // instant the board reshuffled). Only once the new layout
+                // is actually painted, and has sat still for its own
+                // SETTLE_MS beat, does input come back — so the first tap
+                // after a match always lands on the layout the learner
+                // can actually see, never one still mid-change.
+                _refill(a.uid);
+                setTimeout(() => { _busy = false; }, SETTLE_MS);
+            }, MATCH_FLASH_MS);
         } else {
             _busy = true;
             _render(); // show both as "wrong" briefly

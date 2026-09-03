@@ -1142,3 +1142,23 @@ screen in the Hungarian course, not just the review units.
   Grammar Driller) and `build-manifest.py` (feeding curriculum.json's own
   short per-lesson "grammar" blurb, a separate field entirely) neither one
   reads lesson section titles, so nothing downstream needed regenerating.
+
+## Deck Match: input unlocked in the same instant the board reorganized (found & fixed 2026-09-03)
+
+- [x] **A learner who tapped the next pair right as a match resolved could
+  have their tap land on the wrong tile.** `engine/decks/match.js`'s match
+  branch used to do `setTimeout(() => { _busy = false; _refill(a.uid); },
+  MATCH_FLASH_MS)` — unlocking input and reorganizing the board in the
+  same synchronous callback. A tap aimed at where a tile visually was,
+  timed to land right as the lock lifted, could execute after the board
+  had already reshuffled under it, hitting whatever new tile ended up in
+  that screen position instead. **Fixed**: split into three actual phases
+  — the match flash (`MATCH_FLASH_MS`, unchanged idea, 400ms→450ms), then
+  the reorganize itself happens while STILL locked (`_refill()` before
+  `_busy` clears, not after), then a new `SETTLE_MS` (250ms) beat once the
+  new layout is already painted and stable, only after which input
+  re-enables. Verified live: a click fired at 150ms (mid-flash) and one
+  at 600ms (board already reorganized, still in the settle buffer) both
+  correctly failed to register a selection; one at 800ms (past
+  450+250=700ms) correctly did. A full 10-pair play-through with the new
+  timing still completes normally end to end.
