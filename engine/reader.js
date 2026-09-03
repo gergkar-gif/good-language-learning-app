@@ -81,7 +81,11 @@ function _hungarianBreakdownHtml(primary, ladder) {
     if (!ladder || !ladder.chain || ladder.chain.length < 2) return '';
     const chain = ladder.chain;
     const lemmaStep = chain[0];
-    const contextual = chain[chain.length - 1].translation;
+    // Same redundant-parenthetical stripping as the plain-reading path
+    // below (see Lexicon.stripExplanatoryClauses' own comment) — the
+    // breakdown's raw translation text comes from the same dictionary
+    // sense strings, so it carries the same Wiktionary-style boilerplate.
+    const contextual = Lexicon.stripExplanatoryClauses(chain[chain.length - 1].translation);
     const chainText = chain.map(s => Reader.escapeHtml(s.form)).join(' → ');
 
     const breakdown = ladder.breakdown || [];
@@ -107,7 +111,7 @@ function _hungarianBreakdownHtml(primary, ladder) {
         <p class="wp-contextual">${Reader.escapeHtml(contextual)}</p>
         <div class="wp-lemma-block">
             <p class="wp-lemma-pos">${Reader.escapeHtml(lemmaStep.form)}${primary.pos ? ' · ' + Reader.escapeHtml(primary.pos) : ''}</p>
-            <p class="wp-lemma-gloss">${Reader.escapeHtml(lemmaStep.translation)}</p>
+            <p class="wp-lemma-gloss">${Reader.escapeHtml(Lexicon.stripExplanatoryClauses(lemmaStep.translation))}</p>
         </div>
         <p class="wp-chain">${chainText}</p>
         <div class="wp-suffixes">${rows}</div>
@@ -127,12 +131,12 @@ function _compoundSplitHtml(primary) {
     const parts = primary.compoundParts.map(p => `
         <div class="wp-compound-part">
             <span class="wp-compound-form">${Reader.escapeHtml(p.form)}</span>
-            <span class="wp-compound-gloss">${Reader.escapeHtml(p.translation)}</span>
+            <span class="wp-compound-gloss">${Reader.escapeHtml(Lexicon.stripExplanatoryClauses(p.translation))}</span>
         </div>
     `).join('');
     return `
         <div class="wp-compound">${parts}</div>
-        <p class="wp-meaning">${Reader.escapeHtml(primary.translation)}</p>
+        <p class="wp-meaning">${Reader.escapeHtml(Lexicon.stripExplanatoryClauses(primary.translation))}</p>
         <div class="wp-why">
             <p class="wp-why-q">Literal translation</p>
             <p class="wp-why-a">“${Reader.escapeHtml(primary.lemma)}” isn’t in the dictionary yet — this combines its two parts word-by-word, which may not match the real meaning.</p>
@@ -152,7 +156,7 @@ function _renderWordReadings(tappedWord, readings, phrase, ladder) {
         _setSpeakTarget(phrase.phrase);
         analysisEl.textContent = ['expression', phrase.pos].filter(Boolean).join(' · ');
         phraseHtml =
-            `<p class="wp-meaning">${Reader.escapeHtml(phrase.translation)}</p>` +
+            `<p class="wp-meaning">${Reader.escapeHtml(Lexicon.stripExplanatoryClauses(phrase.translation))}</p>` +
             `<p class="wp-lemma">You tapped <strong>${Reader.escapeHtml(tappedWord)}</strong>, part of this expression.</p>`;
     }
 
@@ -191,7 +195,15 @@ function _renderWordReadings(tappedWord, readings, phrase, ladder) {
         // — a learner taps a word to find out what it means, not to read
         // its grammatical parse first. "from <lemma>" and the parse itself
         // (pos/gender/tense-mood-person) follow underneath, smaller.
-        html += `<p class="wp-contextual">${Reader.escapeHtml(primary.translation || '— no translation available —')}</p>`;
+        // The full gloss is kept deliberately (see Lexicon.shortGloss's own
+        // comment) — a learner who tapped a word has room for detail. What
+        // isn't kept is the redundant Wiktionary-style explanatory clause
+        // ("cinema, movie theater (building where movies are shown to an
+        // audience)"), which restates the synonym list rather than adding
+        // to it — Lexicon.stripExplanatoryClauses() strips only that,
+        // never truncating or capping the synonyms themselves.
+        const gloss = Lexicon.stripExplanatoryClauses(primary.translation);
+        html += `<p class="wp-contextual">${Reader.escapeHtml(gloss || '— no translation available —')}</p>`;
         if (primary.lemma.toLowerCase() !== String(tappedWord).toLowerCase()) {
             html += `<p class="wp-lemma">from <strong>${Reader.escapeHtml(primary.lemma)}</strong></p>`;
         }
@@ -210,7 +222,7 @@ function _renderWordReadings(tappedWord, readings, phrase, ladder) {
                     <div class="wp-alt-lemma">${Reader.escapeHtml(r.lemma)}
                         <span class="wp-alt-meta">${Reader.escapeHtml(meta)}</span>
                     </div>
-                    <div class="wp-alt-en">${Reader.escapeHtml(r.translation || '—')}</div>
+                    <div class="wp-alt-en">${Reader.escapeHtml(Lexicon.stripExplanatoryClauses(r.translation) || '—')}</div>
                 </div>
             `;
         });
@@ -402,6 +414,7 @@ window.Reader = {
     get storiesBasePath() { return Lang.content('stories/'); },
     stories: [],
     currentStory: null,
+    _storyLoadId: 0,
 
     init() {
         this.renderLibrary();
@@ -554,8 +567,16 @@ window.Reader = {
 
         console.log('Reader: loading story', storyId, 'from', storyMeta.path);
 
+        // Content.story() has no in-flight de-dup, so two taps on different
+        // story cards race on the network, not on tap order — without this
+        // guard, whichever fetch happened to resolve LAST won, even if it
+        // was the story the learner tapped first and had already moved on
+        // from, silently showing (and marking currentStoryId as) the wrong
+        // book.
+        const loadId = ++this._storyLoadId;
         try {
             const story = await Content.story(storyMeta.path);
+            if (loadId !== this._storyLoadId) return;
             // The manifest id is what read-state is keyed on; the story file
             // itself doesn't necessarily carry the same id.
             this.currentStoryId = storyId;

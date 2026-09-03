@@ -2301,7 +2301,16 @@ const SpanishMorphology = (function () {
             const gerundEnd = cls === 'ar' ? 'ando' : 'iendo';
             if (form.endsWith(gerundEnd) && form.length > gerundEnd.length) {
                 const rawStem = form.slice(0, form.length - gerundEnd.length);
-                orthographicReversals(rawStem, 'a_o').forEach(s1 => out.add(s1 + cls));
+                // -ir stem-changing verbs mute their stem vowel in the
+                // gerund too (pedir -> pidiendo, dormir -> durmiendo), the
+                // same reversal the finite/imperative loops above already
+                // apply — without it, every stem-changing -ir verb's
+                // gerund (a very common form) never reconstructed to its
+                // real lemma at all ("pidiendo" only ever produced the
+                // non-word candidate "pidir", never "pedir").
+                orthographicReversals(rawStem, 'a_o').forEach(s1 => {
+                    stemVowelReversals(s1).forEach(s2 => out.add(s2 + cls));
+                });
                 out.add(rawStem + cls);
             }
             const participleEnd = cls === 'ar' ? 'ado' : 'ido';

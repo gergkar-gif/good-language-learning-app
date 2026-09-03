@@ -35,6 +35,15 @@ const LEVEL_ORDER = ['A1', 'A2', 'B1', 'B2', 'C1'];
 let openLevel = null;
 let openUnit = null;
 
+// Bumped at the start of every renderCurriculum() call. grammarGuideHtml()/
+// wordBankHtml() can each take a real fetch round-trip, so a slower render
+// started first can still resolve after a faster one started later (e.g. a
+// learner opens a Grammar Guide, then immediately backs out and opens a
+// different unit's Word Bank before the guide's fetches land) — without this,
+// the stale render's innerHTML write lands last and silently replaces the
+// screen the learner actually asked for.
+let curriculumRenderToken = 0;
+
 // The unit whose Grammar Guide is open, or null. A fourth, deeper screen
 // than openUnit rather than a sibling of it — closing it goes back to that
 // unit's lesson list, not up to the unit list.
@@ -96,6 +105,8 @@ async function loadCurriculumData() {
 }
 
 async function renderCurriculum() {
+    const renderToken = ++curriculumRenderToken;
+
     if (!window._curriculumData) {
         window._curriculumData = await loadCurriculumData();
     }
@@ -103,12 +114,18 @@ async function renderCurriculum() {
     const root = document.getElementById('learn-content');
     if (!root) return;
 
-    root.innerHTML = !openLevel ? levelListHtml()
+    const html = !openLevel ? levelListHtml()
         : !openUnit ? unitListHtml(openLevel)
         : openGrammarGuideUnit ? await grammarGuideHtml(openLevel, openGrammarGuideUnit)
         : openWordBankUnit ? await wordBankHtml(openLevel, openWordBankUnit)
         : unitDetailHtml(openLevel, openUnit);
 
+    // A newer call already started (and may have already rendered) while the
+    // awaits above were in flight — applying this one now would overwrite
+    // the screen the learner actually navigated to with a stale one.
+    if (renderToken !== curriculumRenderToken) return;
+
+    root.innerHTML = html;
     attachCurriculumEvents(root);
 
     // The unit path and the unit's lesson list both mark the learner's next

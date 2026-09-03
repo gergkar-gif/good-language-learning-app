@@ -94,7 +94,7 @@ const Decks = (function () {
     // that is due. Counted rather than stored, so adding a card anywhere in
     // the app is reflected everywhere without bookkeeping.
     function statusOf(deck) {
-        let inDeck = 0, due = 0, mastered = 0, eligible = 0;
+        let inDeck = 0, due = 0, mastered = 0, eligible = 0, cardsInDeck = 0;
         const now = new Date();
         const words = wordsOf(deck);
 
@@ -107,17 +107,25 @@ const Decks = (function () {
             // fresh card, silently un-graduating it the moment someone
             // clicks Review on a deck (very possibly "All my words" itself,
             // now that My Dictionary lives inside it) that happens to
-            // contain it.
-            if (word.known || (typeof isKnown === 'function' && isKnown(word.lemma))) return;
+            // contain it. It still counts toward `inDeck`/`mastered`,
+            // though — graduating is further than merely mastered, not an
+            // absence, and deckCard()'s "X in your deck" / percent meter
+            // would otherwise call a fully graduated deck "none added yet".
+            if (word.known || (typeof isKnown === 'function' && isKnown(word.lemma))) {
+                inDeck++;
+                mastered++;
+                return;
+            }
             eligible++;
             const card = cardFor(word.lemma);
             if (!card) return;
             inDeck++;
+            cardsInDeck++;
             if ((card.reviews || 0) >= 3) mastered++;
             if (!card.nextReview || new Date(card.nextReview) <= now) due++;
         });
 
-        const missing = eligible - inDeck;
+        const missing = eligible - cardsInDeck;
         return {
             total: words.length,
             inDeck: inDeck,

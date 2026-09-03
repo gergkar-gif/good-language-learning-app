@@ -802,6 +802,20 @@ const HungarianMorphology = (function () {
         vigyétek: ['visz', 'imp', 2, 'pl'], vigyék: ['visz', 'imp', 3, 'pl']
     };
 
+    // "mentek" is genuinely homophonous in real Hungarian between "megy"'s
+    // OWN present-2pl ("ti mentek" = "you (pl.) go", already IRREGULAR_VERBS'
+    // entry above) and its past-3pl ("ők mentek" = "they went") — same kind
+    // of real collision as the front-harmony conditional/definite pairs
+    // documented above IRREGULAR_VERBS_DEFINITE, and for the same reason
+    // (one flat surfaceForm->tag object can't hold two tags under one key)
+    // the second reading lives in its own table, checked alongside the
+    // other two rather than folded into either. Found via bug sweep,
+    // 2026-09-03: past-3pl of "menni" was entirely unresolvable before this,
+    // since the key it would have needed was already taken.
+    const IRREGULAR_VERBS_ALT = {
+        mentek: ['megy', 'past', 3, 'pl']
+    };
+
     // Infinitive forms of the suppletive verbs above. Every OTHER verb's
     // infinitive is decoded generically in analyze() below (strip
     // -ni/-ani/-eni off the regular present/dictionary stem), but these
@@ -1463,7 +1477,13 @@ const HungarianMorphology = (function () {
             addFromLemma(lemma, verbSense(dictionary[lemma]),
                 [TENSE_LABELS[tense], PERSON_LABELS[person][number]].join(', '));
         }
-        if (!irregular && !irregularDefinite) {
+        const irregularAlt = IRREGULAR_VERBS_ALT[word];
+        if (irregularAlt) {
+            const [lemma, tense, person, number] = irregularAlt;
+            addFromLemma(lemma, verbSense(dictionary[lemma]),
+                [TENSE_LABELS[tense], PERSON_LABELS[person][number]].join(', '));
+        }
+        if (!irregular && !irregularDefinite && !irregularAlt) {
             const pfx = stripKnownPrefix(word);
             const stemIrregular = pfx && IRREGULAR_VERBS[pfx.stem];
             if (stemIrregular) {
@@ -1474,6 +1494,12 @@ const HungarianMorphology = (function () {
             const stemIrregularDefinite = pfx && IRREGULAR_VERBS_DEFINITE[pfx.stem];
             if (stemIrregularDefinite) {
                 const [baseLemma, tense, person, number] = stemIrregularDefinite;
+                addPrefixedVerb(pfx.prefix, pfx.sense, baseLemma,
+                    [TENSE_LABELS[tense], PERSON_LABELS[person][number]].join(', '));
+            }
+            const stemIrregularAlt = pfx && IRREGULAR_VERBS_ALT[pfx.stem];
+            if (stemIrregularAlt) {
+                const [baseLemma, tense, person, number] = stemIrregularAlt;
                 addPrefixedVerb(pfx.prefix, pfx.sense, baseLemma,
                     [TENSE_LABELS[tense], PERSON_LABELS[person][number]].join(', '));
             }
@@ -1653,6 +1679,17 @@ const HungarianMorphology = (function () {
         for (const c of decodeTReplacedImperative(word)) {
             const label = [TENSE_LABELS.imp, PERSON_LABELS[c.person][c.number]].join(', ');
             if (c.lemma === word) continue; // no real transformation happened - see the "ik" guard's own comment above
+            // A suppletive verb's imperative comes from its own irregular
+            // stem (IRREGULAR_VERBS/IRREGULAR_VERBS_DEFINITE, checked in
+            // step 0 above), never this generic reconstruction — but for
+            // the transitive sz-digraph ones (vesz/tesz/hisz/visz/iszik),
+            // the ['sz','z'] gemination row above coincidentally also
+            // matches their PRESENT-definite "j"-initial forms ("vesszük"
+            // IS "we buy it", never "let's buy it!", which is "vegyük"
+            // instead — see decodeSzDigraphPresentDefinite just below).
+            // Without this guard every one of those collided, showing a
+            // fabricated imperative reading alongside the real present one.
+            if (IRREGULAR_LEMMAS.has(c.lemma) || IRREGULAR_LEMMAS.has(c.lemma + 'ik')) continue;
             const sense = verbSense(dictionary[c.lemma]);
             if (sense) addFromLemma(c.lemma, sense, label);
             const ikForm = c.lemma + 'ik';
@@ -2442,7 +2479,11 @@ const HungarianMorphology = (function () {
     // that needed a harmony-aware hint too, iszik being back-harmony).
     const PAST_DEFINITE_EXCLUDED = new Set(['van', 'megy', 'jön', 'alszik', 'lesz']);
     function _irregularForm(lemma, tense, person, number, definite) {
-        const candidates = Object.entries(IRREGULAR_VERBS)
+        // IRREGULAR_VERBS_ALT holds cells whose surface form collides with
+        // an already-used key elsewhere in IRREGULAR_VERBS (see its own
+        // comment, e.g. "mentek") — merged in here too so generation finds
+        // them the same way decode (analyze()) already does.
+        const candidates = Object.entries(IRREGULAR_VERBS).concat(Object.entries(IRREGULAR_VERBS_ALT))
             .filter(([, tags]) => tags[0] === lemma && tags[1] === tense && tags[2] === person && tags[3] === number);
         if (!candidates.length) return null; // known-irregular stem, but this cell isn't covered - don't guess
 

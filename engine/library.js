@@ -291,28 +291,35 @@ const Library = (function () {
     }
 
     async function saveText(andRead) {
-        const title = (textDraft.title || '').trim();
+        // Captured once, up front: Lexicon.load() below can suspend this
+        // function while the learner cancels the editor (textDraft -> null)
+        // or opens a different text (textDraft -> a different draft object)
+        // — reading the module-level textDraft again after that await would
+        // silently save the wrong text, or crash on a null one.
+        const draft = textDraft;
+        const title = (draft.title || '').trim();
         if (!title) { alert('Give the text a title first.'); return; }
-        if (!textDraft.text.trim()) { alert('Paste some text first.'); return; }
+        if (!draft.text.trim()) { alert('Paste some text first.'); return; }
 
-        if (!textDraft.analysis) {
+        if (!draft.analysis) {
             if (typeof Lexicon !== 'undefined' && !Lexicon.isLoaded()) await Lexicon.load();
-            textDraft.analysis = analyseText(textDraft.text);
+            if (textDraft !== draft) return;
+            draft.analysis = analyseText(draft.text);
         }
 
         const now = new Date().toISOString();
-        let id = textDraft.id;
+        let id = draft.id;
         if (id) {
             const t = getMyText(id);
             t.title = title;
-            t.text = textDraft.text;
-            t.analysis = textDraft.analysis;
+            t.text = draft.text;
+            t.analysis = draft.analysis;
             t.modified = now;
         } else {
             id = genTextId();
             myTexts.push({
-                id: id, title: title, text: textDraft.text,
-                created: now, modified: now, analysis: textDraft.analysis
+                id: id, title: title, text: draft.text,
+                created: now, modified: now, analysis: draft.analysis
             });
         }
         saveMyTexts();

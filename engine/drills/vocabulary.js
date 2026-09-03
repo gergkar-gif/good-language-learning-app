@@ -205,9 +205,19 @@ const VocabularyDriller = (function () {
     }
 
     // Same idea, but the decoys are Spanish words (for "which word fits the
-    // blank" rather than "what does the word mean").
-    function _pickWordDecoys(word, n) {
-        let candidates = Object.keys(_words).filter(l => CONTENT_POS.has(_words[l].pos) && l !== word.lemma);
+    // blank" rather than "what does the word mean"). Excludes by spelling
+    // against `form` (the correct answer as it actually appears in the
+    // blanked sentence — often inflected), not just by lemma: a candidate
+    // lemma can coincide with another word's inflected surface form (a
+    // cross-POS homograph like "como", both the adverb "as/like" and a
+    // conjugated form of "comer") — same "exclude by displayed value, not
+    // key" fix _pickTranslationDecoys already applies via its `en` check.
+    // Unguarded, that let a decoy render with the exact same text as the
+    // correct option, so clicking either "como" gave a different result
+    // for what looked like the identical answer.
+    function _pickWordDecoys(word, form, n) {
+        let candidates = Object.keys(_words)
+            .filter(l => CONTENT_POS.has(_words[l].pos) && l !== word.lemma && l.toLowerCase() !== form.toLowerCase());
         const narrowed = candidates.filter(l => _words[l].pos === word.pos);
         if (narrowed.length >= n) candidates = narrowed;
         return _shuffled(candidates).slice(0, n);
@@ -322,7 +332,7 @@ const VocabularyDriller = (function () {
         const m = _sample(matches);
         const blanked = _blankSentence(m.sentence, m.form);
         if (!blanked) return null;
-        const options = _shuffled([m.form, ..._pickWordDecoys(word, DECOY_COUNT)]);
+        const options = _shuffled([m.form, ..._pickWordDecoys(word, m.form, DECOY_COUNT)]);
         return {
             kind: 'multiple-choice',
             question: blanked,

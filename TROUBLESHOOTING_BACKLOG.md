@@ -1180,3 +1180,119 @@ screen in the Hungarian course, not just the review units.
   full column list before/after); the newly-inserted pair's two halves
   land at genuinely different row positions, not aligned; a full 14-pair
   play-through completes normally with the new mechanic.
+
+## Multi-answer fill-blanks give no clue which answer is wanted (logged 2026-09-03)
+
+- [ ] **Logged from GitHub issue #129.** A fill-blank exercise with more
+  than one acceptable answer (e.g. `"Mi ____?"` accepting either `"ez"`
+  or `"az"`, "this"/"that") grades either one correctly, but the prompt
+  itself gives no indication multiple answers exist or which one a
+  specific context wants — a learner who types a right answer that
+  isn't the one they were "supposed" to reach (because nothing in the
+  sentence pointed either way) has no way to know the exercise was
+  actually ambiguous by design rather than something they got wrong for
+  the wrong reason. User's own framing: "all these types of questions,
+  that take multiple answers should have a clue as to what to put as
+  the answer." This is a generator/content-authoring guideline (add a
+  disambiguating clause, an image, or context that forces one specific
+  answer whenever an exercise's `answers` array has more than one
+  entry), not a single-file fix — scope is every multi-answer fill-blank
+  across the existing content tree, plus a rule to apply going forward
+  for any new fill-blank exercises with more than one accepted answer.
+
+## Engine-wide bug sweep, round 3 (found & fixed 2026-09-03)
+
+- [x] **`engine/decks.js` `statusOf()`** — a blanket early-return for
+  known/graduated words skipped them from every counter, not just the
+  ones its own comment justified excluding them from; `inDeck`/`mastered`
+  undercounted so a fully-graduated deck showed "0 mastered." Fixed:
+  known words now count toward `inDeck`/`mastered`, with a separate
+  `cardsInDeck` counter keeping `missing`/`ready`/`due` unchanged.
+- [x] **`engine/drills/vocabulary.js` `_pickWordDecoys()`** — decoys were
+  excluded only by dictionary lemma, never by the actual surface text
+  shown as the correct answer, so a decoy lemma could coincide with
+  another word's inflected form (Spanish "como" is both the adverb and a
+  conjugated form of "comer") — two visually-identical buttons, only one
+  credited as correct. Fixed by also excluding on the correct answer's
+  surface form, matching the pattern already used elsewhere in the file.
+- [x] **`engine/morphology/hungarian.js`** — two fixes. (1) "mentek" is
+  genuinely homophonous between megy's own present-2pl and its past-3pl;
+  the second reading was entirely unresolvable since its key was already
+  taken in `IRREGULAR_VERBS`, fixed via a new `IRREGULAR_VERBS_ALT` table
+  checked alongside it in both decode and generation. (2) the sz-digraph
+  imperative reconstruction (for verbs like nyugszik) also matched the
+  present-definite "j"-initial forms of the six suppletive sz-final verbs
+  (vesz/tesz/hisz/visz/eszik/iszik), fabricating a wrong imperative
+  reading alongside the correct present one (e.g. "vesszük" ["we buy
+  it"] also showing a fake "let's buy it" reading, whose real imperative
+  is "vegyük"). Fixed by skipping that reconstruction for suppletive
+  lemmas, whose imperative is already covered elsewhere.
+- [x] **`engine/morphology/spanish.js`** — gerund-candidate reconstruction
+  applied orthographic reversals but never stem-vowel reversals, so
+  gerunds of any -ir stem-changing verb outside the precomputed verb
+  index never resolved to their real lemma ("pidiendo" → nothing, never
+  "pedir"). Fixed by composing the same stem-vowel reversal already used
+  in the finite/imperative branches.
+- [x] **`engine/library.js` `saveText()`** — read/wrote the module-level
+  `textDraft` both before and after an `await Lexicon.load()`; cancelling
+  the editor or switching texts mid-save either crashed or silently
+  saved stale data onto the wrong draft. Fixed by capturing the draft
+  once up front and re-checking after the await, mirroring the guard
+  `runAnalysis()` already had.
+- [x] **`engine/reader.js` `Reader.loadStory()`** — no in-flight
+  de-duplication on `Content.story()`; two story taps in quick
+  succession raced on network timing, not tap order, so the slower
+  fetch could win and silently show/mark-current the wrong book. Fixed
+  with a `_storyLoadId` counter, same technique as the earlier
+  `_wordPopupTapId` fix.
+- [x] **`engine/curriculum.js` `renderCurriculum()`** — async (awaits
+  real fetches for Grammar Guide/Word Bank content) but every caller
+  invokes it fire-and-forget with no de-duplication; a fast navigation
+  away and back could let a slower, stale render finish last and
+  silently overwrite the screen with outdated content. Fixed with a
+  `curriculumRenderToken` counter that skips the DOM write if a newer
+  call has since started.
+- [x] **`engine/verbs.js` `switchMode()`** — switching from Speed mode to
+  Table mode never reset the Speed timer, unlike the tense-select and
+  vosotros-toggle handlers a few lines above; the timer kept ticking
+  against a stale container reference and, on expiry, silently logged an
+  abandoned session's accuracy to the personal-best leaderboard. Fixed
+  by calling `VerbsSpeed.reset()` in `switchMode()`, matching the
+  existing pattern.
+
+## Reader word-popup showed raw Wiktionary-style boilerplate (found & fixed 2026-09-03)
+
+- [x] **Logged from GitHub issue #133 ("check mozi's dictionary entry -
+  too verbose").** The bulk-imported HU-EN dictionary
+  (`imports/dictionary/hungarian-en.json`, ~29k entries) carries
+  Wiktionary-style encyclopedic explanations in ~7,600 entries — e.g.
+  "mozi" glossed as "cinema, movie theater (building where movies are
+  shown to an audience)," where the parenthetical restates the synonym
+  list rather than adding to it. `Lexicon.shortGloss()` already strips
+  this for Decks/SRS cards, but the Reader popup deliberately shows the
+  *full* gloss instead (see the comment above `shortGloss()`) — "a
+  learner who just tapped a word has room for the detail." Swapping the
+  Reader popup to `shortGloss()` outright would have fought that design
+  intent, since it also truncates length and caps synonym count. Added
+  `Lexicon.stripExplanatoryClauses()` instead: strips only the
+  parenthetical/bracket boilerplate, keeps every synonym and
+  semicolon-joined sense intact. Wired into all four places
+  `engine/reader.js`'s word popup shows dictionary text: the plain
+  reading fallback, the Hungarian suffix-breakdown block (the actual
+  path "moziba" hits, via its illative-case decomposition), the
+  compound-guess block, and the multi-word-phrase block. Verified live:
+  tapping "moziba" in `story.a2.unit01` now shows "cinema, movie
+  theater" instead of the full encyclopedic sentence, in both the
+  contextual line and the lemma-gloss block.
+- [ ] **GitHub issue #132 ("'m' shouldn't be in the dictionary as a
+  separate entry")** — investigated but could not reproduce: none of
+  `story.a2.unit01`'s 35 words produce "m" as a `Lexicon.lookup()`
+  reading, `reader.js`'s `WORD_CHARS` tokenizer correctly covers every
+  Hungarian diacritic (no stray split), English narration isn't tappable
+  at all, and `word-index.json` has no entry mapping to lemma "m." Did
+  find that the dictionary has ~205 abbreviation/unit-symbol entries
+  like "m" (SI meter) — but many of the same shape (db, ft, h, am, p)
+  are genuine, commonly-used Hungarian shorthand, so filtering all short
+  entries indiscriminately would risk removing real vocabulary rather
+  than fixing the report. Left open pending a repro detail (which word
+  was actually tapped, or was "m" searched/encountered some other way).

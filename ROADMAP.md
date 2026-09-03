@@ -987,3 +987,21 @@ track known bugs in existing content rather than things not yet built.
   passing-but-sub-90% attempt (85%, 17/20) left the level's progress at
   0/120 and showed the ordinary pass message, confirming the two
   thresholds stay genuinely independent.
+
+## Level test
+
+- [ ] **Restructure level tests to mix question formats, not just multiple
+  choice.** Logged 2026-09-03 from GitHub issue #131 — user's own spec:
+  20 multiple-choice questions (each with exactly one grammatically
+  correct option, no ambiguous ones — see the same issue's investigation
+  for one confirmed instance, `a1-test.json`'s `possessive-suffix`
+  question, where `telefonja/telefon/telefonom` are all valid Hungarian
+  with no disambiguating context), 20 "production" questions where the
+  sentence itself makes clear what's needed (a hint or forcing context,
+  not open-ended recall), and 10 harder tricky/translation questions.
+  `engine/leveltest.js` currently only knows how to render multiple-choice
+  — supporting production-style answers (fill-blank or free-typed, graded
+  like `engine/lessons.js` already does for regular lessons) is an engine
+  change, not just a content rewrite of the test JSON files. Scope
+  touches every level's test file (`content/<lang>/tests/*.json`), not
+  just HU A1.

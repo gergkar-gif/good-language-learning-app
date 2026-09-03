@@ -133,6 +133,21 @@ const Lexicon = (function () {
         return first;
     }
 
+    // Strips only the same redundant Wiktionary-style explanatory
+    // parenthetical/bracket clauses shortGloss() does (e.g. "cinema, movie
+    // theater (building where movies are shown to an audience)" -> "cinema,
+    // movie theater") — but, unlike shortGloss(), keeps every semicolon-
+    // joined sense and never truncates or caps synonym count. For the
+    // Reader popup specifically: its "full gloss" design intent (see the
+    // comment above shortGloss) is about not losing genuine detail, not
+    // about preserving encyclopedic restatement that adds nothing a
+    // synonym list didn't already say.
+    function stripExplanatoryClauses(text) {
+        let out = stripBalanced(String(text || ''), '(', ')');
+        out = stripBalanced(out, '[', ']');
+        return out.replace(/\s+/g, ' ').replace(/^[\s,]+|[\s,]+$/g, '');
+    }
+
     function normalise(word) {
         return String(word || '').toLowerCase().replace(/[.,!?¡¿;:"'()]/g, '').trim();
     }
@@ -584,6 +599,6 @@ const Lexicon = (function () {
         load: load, lookup: lookup, isLoaded: isLoaded, article: article,
         withArticle: withArticle, frequencyRank: frequencyRank,
         define: define, findPhrase: findPhrase, search: search,
-        shortGloss: shortGloss
+        shortGloss: shortGloss, stripExplanatoryClauses: stripExplanatoryClauses
     };
 })();

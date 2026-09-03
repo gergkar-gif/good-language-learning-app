@@ -253,6 +253,12 @@ const Verbs = (function () {
     function switchMode(mode) {
         if (_state.mode === mode) return;
         _state.mode = mode;
+        // Leaving Speed mode mid-session (same as the tense/vosotros
+        // handlers below) must stop its timer — otherwise it keeps
+        // ticking against a container this module no longer renders into,
+        // and silently records an abandoned session to the leaderboard
+        // once it runs out.
+        VerbsSpeed.reset();
         _render();
     }
 
