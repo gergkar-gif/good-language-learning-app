@@ -1,0 +1,124 @@
+{
+  "lesson": "a2-70-consolidation",
+  "exercises": [
+    {
+      "id": "a2-70-consolidation-1",
+      "type": "multiple-choice",
+      "category": "recognize",
+      "question": "Which means \"pass, season ticket\"?",
+      "options": ["bérlet", "jegy", "megálló"],
+      "correct": 0,
+      "teaches": ["ticket-vocab"]
+    },
+    {
+      "id": "a2-70-consolidation-2",
+      "type": "multiple-choice",
+      "category": "recognize",
+      "question": "Which means \"to transfer, to change lines\"?",
+      "options": ["átszáll", "felszáll", "leszáll"],
+      "correct": 0,
+      "teaches": ["atszall-vonal"]
+    },
+    {
+      "id": "a2-70-consolidation-3",
+      "type": "multiple-choice",
+      "category": "recognize",
+      "question": "Which means \"timetable\"?",
+      "options": ["menetrend", "vonal", "irány"],
+      "correct": 0,
+      "teaches": ["indul-erkezik"]
+    },
+    {
+      "id": "a2-70-consolidation-4",
+      "type": "matching",
+      "category": "recall",
+      "pairs": [
+        ["hányas", "which number"],
+        ["vonal", "line"],
+        ["végállomás", "terminus"],
+        ["érvényes", "valid"]
+      ],
+      "teaches": ["hanyas"]
+    },
+    {
+      "id": "a2-70-consolidation-5",
+      "type": "matching",
+      "category": "recall",
+      "pairs": [
+        ["indul", "to depart"],
+        ["érkezik", "to arrive"],
+        ["késik", "to be late"],
+        ["eljut", "to get to, to reach"]
+      ],
+      "teaches": ["indul-erkezik"]
+    },
+    {
+      "id": "a2-70-consolidation-6",
+      "type": "fill-blank",
+      "category": "recall",
+      "sentence": "A busz tíz ____ jön. (every ten minutes)",
+      "answer": "percenként",
+      "teaches": ["nkent"]
+    },
+    {
+      "id": "a2-70-consolidation-7",
+      "type": "dialogue-complete",
+      "category": "context",
+      "prompt": [
+        { "speaker": "Ildikó", "text": "Hányas villamossal jutok el a pályaudvarra?" },
+        { "speaker": "Meg", "text": "_____" }
+      ],
+      "options": ["A négyessel, de a Deák térnél át kell szállnod a metróra.", "Egy hónapra érvényes a bérletem."],
+      "correct": 0,
+      "teaches": ["eljut-hogyan"]
+    },
+    {
+      "id": "a2-70-consolidation-8",
+      "type": "dialogue-complete",
+      "category": "context",
+      "prompt": [
+        { "speaker": "Tamás", "text": "Van bérleted, vagy jegyet váltasz?" },
+        { "speaker": "Károly", "text": "_____" }
+      ],
+      "options": ["Nincs bérletem, az automatánál veszek jegyet.", "Előbb felszállok, aztán leszállok."],
+      "correct": 0,
+      "teaches": ["ticket-vocab"]
+    },
+    {
+      "id": "a2-70-consolidation-9",
+      "type": "sentence-builder",
+      "category": "context",
+      "tiles": ["Előbb", "jegyet", "kell", "váltani", ",", "aztán", "fel", "lehet", "szállni", "."],
+      "solution": ["Előbb", "jegyet", "kell", "váltani", ",", "aztán", "fel", "lehet", "szállni", "."],
+      "english": "First you have to buy a ticket, then you can get on.",
+      "teaches": ["elobb-aztan-vegul"]
+    },
+    {
+      "id": "a2-70-consolidation-10",
+      "type": "structured-writing",
+      "category": "produce",
+      "template": [
+        { "prompt": "Say the tram comes every ten minutes.", "answer": "A villamos tíz percenként jön." }
+      ],
+      "teaches": ["nkent"]
+    },
+    {
+      "id": "a2-70-consolidation-11",
+      "type": "structured-writing",
+      "category": "produce",
+      "template": [
+        { "prompt": "Ask how you get to the airport.", "answer": "Hogyan jutok el a repülőtérre?" }
+      ],
+      "teaches": ["eljut-hogyan"]
+    },
+    {
+      "id": "a2-70-consolidation-12",
+      "type": "structured-writing",
+      "category": "produce",
+      "template": [
+        { "prompt": "Say you transfer onto tram number 3 at Deák Square.", "answer": "A Deák térnél átszállok a hármas villamosra." }
+      ],
+      "teaches": ["atszall-vonal"]
+    }
+  ]
+}

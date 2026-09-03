@@ -1,0 +1,168 @@
+{
+  "lesson": "a2-60",
+  "exercises": [
+    {
+      "id": "a2-60-intro-1",
+      "type": "multiple-choice",
+      "category": "introduce",
+      "question": "Which means \"party\"?",
+      "options": ["buli", "esemény", "fesztivál"],
+      "correct": 0,
+      "teaches": ["goingout-vocab"]
+    },
+    {
+      "id": "a2-60-intro-2",
+      "type": "multiple-choice",
+      "category": "introduce",
+      "question": "Which means \"to suggest\"?",
+      "options": ["javasol", "csatlakozik", "szórakozik"],
+      "correct": 0,
+      "teaches": ["goingout-vocab"]
+    },
+    {
+      "id": "a2-60-controlled-1",
+      "type": "matching",
+      "category": "controlled",
+      "pairs": [
+        ["szórakozik", "to have fun, to go out"],
+        ["buli", "party"],
+        ["csatlakozik", "to join"],
+        ["javasol", "to suggest"]
+      ],
+      "teaches": ["goingout-vocab"]
+    },
+    {
+      "id": "a2-60-controlled-2",
+      "type": "matching",
+      "category": "controlled",
+      "pairs": [
+        ["Mit szólsz hozzá?", "What do you say to it?"],
+        ["Javaslok egy bulit.", "I suggest a party."],
+        ["Van kedved eljönni?", "Do you feel like coming?"],
+        ["sajnos", "unfortunately"]
+      ],
+      "teaches": ["mit-szolsz"]
+    },
+    {
+      "id": "a2-60-controlled-3",
+      "type": "fill-blank",
+      "category": "controlled",
+      "sentence": "Javaslok egy bulit. Mit szólsz ____? (to it)",
+      "answer": "hozzá",
+      "teaches": ["mit-szolsz"]
+    },
+    {
+      "id": "a2-60-controlled-4",
+      "type": "fill-blank",
+      "category": "controlled",
+      "sentence": "____ nem tudok jönni. (unfortunately)",
+      "answer": "Sajnos",
+      "teaches": ["sajnos-decline"]
+    },
+    {
+      "id": "a2-60-practice-1",
+      "type": "multiple-choice",
+      "category": "practice",
+      "question": "Which word literally means \"to it\" in Mit szólsz hozzá?",
+      "options": ["hozzá", "neked", "arra"],
+      "correct": 0,
+      "teaches": ["mit-szolsz"]
+    },
+    {
+      "id": "a2-60-practice-2",
+      "type": "matching",
+      "category": "practice",
+      "pairs": [
+        ["sajnos nem tudok jönni", "unfortunately I can't come"],
+        ["sajnos nincs időm", "unfortunately I don't have time"],
+        ["majd legközelebb", "maybe next time"],
+        ["Sajnos nincs időm ma este.", "Unfortunately I don't have time tonight."]
+      ],
+      "teaches": ["sajnos-decline"]
+    },
+    {
+      "id": "a2-60-practice-3",
+      "type": "sentence-builder",
+      "category": "practice",
+      "tiles": ["Van", "kedved", "csatlakozni", "hozzánk", "?"],
+      "solution": ["Van", "kedved", "csatlakozni", "hozzánk", "?"],
+      "english": "Do you feel like joining us?",
+      "teaches": ["mit-szolsz"]
+    },
+    {
+      "id": "a2-60-practice-4",
+      "type": "sentence-builder",
+      "category": "practice",
+      "tiles": ["Sajnos", "nincs", "időm", "ma", "este", "."],
+      "solution": ["Sajnos", "nincs", "időm", "ma", "este", "."],
+      "english": "Unfortunately I don't have time tonight.",
+      "teaches": ["sajnos-decline"]
+    },
+    {
+      "id": "a2-60-dialogue-1",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        { "speaker": "Ildikó", "text": "Javaslok egy bulit szombaton. Mit szólsz hozzá?" },
+        { "speaker": "Meg", "text": "_____" }
+      ],
+      "options": ["Szuper ötlet, szívesen csatlakozom!", "Sajnos ma nyitva van a múzeum."],
+      "correct": 0,
+      "teaches": ["mit-szolsz"]
+    },
+    {
+      "id": "a2-60-dialogue-2",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        { "speaker": "Károly", "text": "Van kedved eljönni ma este?" },
+        { "speaker": "Ildikó", "text": "_____" }
+      ],
+      "options": ["Sajnos nincs időm ma este, de majd legközelebb!", "Igen, imádom a rajzfilmeket."],
+      "correct": 0,
+      "teaches": ["sajnos-decline"]
+    },
+    {
+      "id": "a2-60-writing-1",
+      "type": "structured-writing",
+      "category": "writing",
+      "template": [
+        {
+          "prompt": "Suggest a party and ask what they think.",
+          "answer": "Javaslok egy bulit. Mit szólsz hozzá?"
+        }
+      ],
+      "teaches": ["mit-szolsz"]
+    },
+    {
+      "id": "a2-60-writing-2",
+      "type": "structured-writing",
+      "category": "writing",
+      "template": [
+        {
+          "prompt": "Politely say you can't come because you don't have time.",
+          "answer": "Sajnos nem tudok jönni, mert nincs időm."
+        }
+      ],
+      "teaches": ["sajnos-decline"]
+    },
+    {
+      "id": "a2-60-check-1",
+      "type": "multiple-choice",
+      "category": "check",
+      "question": "Which means \"to join\"?",
+      "options": ["csatlakozik", "javasol", "szórakozik"],
+      "correct": 0,
+      "teaches": ["goingout-vocab"]
+    },
+    {
+      "id": "a2-60-check-2",
+      "type": "multiple-choice",
+      "category": "check",
+      "question": "Which word softens a \"no\" and usually comes with a reason?",
+      "options": ["sajnos", "szerintem", "attól függ"],
+      "correct": 0,
+      "teaches": ["sajnos-decline"]
+    }
+  ]
+}
