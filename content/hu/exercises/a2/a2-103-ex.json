@@ -1,0 +1,168 @@
+{
+  "lesson": "a2-103",
+  "exercises": [
+    {
+      "id": "a2-103-intro-1",
+      "type": "multiple-choice",
+      "category": "introduce",
+      "question": "Which means \"working hours\"?",
+      "options": ["munkaidő", "szünet", "túlóra"],
+      "correct": 0,
+      "teaches": ["munkaido-vocab"]
+    },
+    {
+      "id": "a2-103-intro-2",
+      "type": "multiple-choice",
+      "category": "introduce",
+      "question": "Which means \"break\"?",
+      "options": ["szünet", "túlóra", "fárasztó"],
+      "correct": 0,
+      "teaches": ["munkaido-vocab"]
+    },
+    {
+      "id": "a2-103-controlled-1",
+      "type": "matching",
+      "category": "controlled",
+      "pairs": [
+        ["munkaidő", "working hours"],
+        ["szünet", "break"],
+        ["túlóra", "overtime"],
+        ["kezdődik", "to start, to begin"]
+      ],
+      "teaches": ["munkaido-vocab", "kezdodik-vegzodik"]
+    },
+    {
+      "id": "a2-103-controlled-2",
+      "type": "matching",
+      "category": "controlled",
+      "pairs": [
+        ["végződik", "to end, to finish"],
+        ["fárasztó", "tiring"],
+        ["munkaidő", "working hours"],
+        ["szünet", "break"]
+      ],
+      "teaches": ["munkaido-vocab", "kezdodik-vegzodik"]
+    },
+    {
+      "id": "a2-103-controlled-3",
+      "type": "fill-blank",
+      "category": "controlled",
+      "sentence": "A munkaidőm reggel nyolckor ____. (starts)",
+      "answer": "kezdődik",
+      "teaches": ["kezdodik-vegzodik"]
+    },
+    {
+      "id": "a2-103-controlled-4",
+      "type": "fill-blank",
+      "category": "controlled",
+      "sentence": "A munkaidőm délután ötkor ____. (ends)",
+      "answer": "végződik",
+      "teaches": ["kezdodik-vegzodik"]
+    },
+    {
+      "id": "a2-103-practice-1",
+      "type": "multiple-choice",
+      "category": "practice",
+      "question": "Which correctly answers \"Hány órát dolgozol?\"?",
+      "options": ["Nyolc órát dolgozom.", "Nyolc óra dolgozom.", "Nyolc órán dolgozom."],
+      "correct": 0,
+      "teaches": ["orat-duration"]
+    },
+    {
+      "id": "a2-103-practice-2",
+      "type": "matching",
+      "category": "practice",
+      "pairs": [
+        ["Hány órát dolgozol?", "How many hours do you work?"],
+        ["Nyolc órát dolgozom.", "I work eight hours."],
+        ["Mikor kezdődik a munkaidőd?", "When do your working hours start?"],
+        ["Reggel kilenckor.", "At nine in the morning."]
+      ],
+      "teaches": ["orat-duration", "kezdodik-vegzodik"]
+    },
+    {
+      "id": "a2-103-practice-3",
+      "type": "sentence-builder",
+      "category": "practice",
+      "tiles": ["Nyolc", "órát", "dolgozom", "naponta", "."],
+      "solution": ["Nyolc", "órát", "dolgozom", "naponta", "."],
+      "english": "I work eight hours per day.",
+      "teaches": ["orat-duration"]
+    },
+    {
+      "id": "a2-103-practice-4",
+      "type": "sentence-builder",
+      "category": "practice",
+      "tiles": ["A", "munkaidőm", "kilenckor", "kezdődik", "."],
+      "solution": ["A", "munkaidőm", "kilenckor", "kezdődik", "."],
+      "english": "My working hours start at nine.",
+      "teaches": ["kezdodik-vegzodik"]
+    },
+    {
+      "id": "a2-103-dialogue-1",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        { "speaker": "Meg", "text": "Mikor kezdődik a munkaidőd?" },
+        { "speaker": "Petra", "text": "_____" }
+      ],
+      "options": ["Reggel kilenckor kezdődik.", "Nagyon fárasztó volt a hét."],
+      "correct": 0,
+      "teaches": ["kezdodik-vegzodik"]
+    },
+    {
+      "id": "a2-103-dialogue-2",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        { "speaker": "Petra", "text": "Hány órát dolgozol naponta?" },
+        { "speaker": "Meg", "text": "_____" }
+      ],
+      "options": ["Nyolc órát dolgozom.", "Egy iskolában dolgozom."],
+      "correct": 0,
+      "teaches": ["orat-duration"]
+    },
+    {
+      "id": "a2-103-writing-1",
+      "type": "structured-writing",
+      "category": "writing",
+      "template": [
+        {
+          "prompt": "Say your working hours start at nine in the morning.",
+          "answer": "A munkaidőm reggel kilenckor kezdődik."
+        }
+      ],
+      "teaches": ["kezdodik-vegzodik"]
+    },
+    {
+      "id": "a2-103-writing-2",
+      "type": "structured-writing",
+      "category": "writing",
+      "template": [
+        {
+          "prompt": "Say you work eight hours a day.",
+          "answer": "Nyolc órát dolgozom naponta."
+        }
+      ],
+      "teaches": ["orat-duration"]
+    },
+    {
+      "id": "a2-103-check-1",
+      "type": "multiple-choice",
+      "category": "check",
+      "question": "Which verb means \"to end, to finish\" for working hours?",
+      "options": ["végződik", "kezdődik", "dolgozik"],
+      "correct": 0,
+      "teaches": ["kezdodik-vegzodik"]
+    },
+    {
+      "id": "a2-103-check-2",
+      "type": "multiple-choice",
+      "category": "check",
+      "question": "Which means \"overtime\"?",
+      "options": ["túlóra", "szünet", "munkaidő"],
+      "correct": 0,
+      "teaches": ["munkaido-vocab"]
+    }
+  ]
+}

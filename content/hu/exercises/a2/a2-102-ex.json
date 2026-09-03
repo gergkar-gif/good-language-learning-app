@@ -1,0 +1,168 @@
+{
+  "lesson": "a2-102",
+  "exercises": [
+    {
+      "id": "a2-102-intro-1",
+      "type": "multiple-choice",
+      "category": "introduce",
+      "question": "Which means \"office\"?",
+      "options": ["iroda", "bolt", "kórház"],
+      "correct": 0,
+      "teaches": ["munkahely-vocab"]
+    },
+    {
+      "id": "a2-102-intro-2",
+      "type": "multiple-choice",
+      "category": "introduce",
+      "question": "Which means \"factory\"?",
+      "options": ["gyár", "cég", "üzletember"],
+      "correct": 0,
+      "teaches": ["munkahely-vocab"]
+    },
+    {
+      "id": "a2-102-controlled-1",
+      "type": "matching",
+      "category": "controlled",
+      "pairs": [
+        ["iroda", "office"],
+        ["bolt", "shop, store"],
+        ["kórház", "hospital"],
+        ["gyár", "factory"]
+      ],
+      "teaches": ["munkahely-vocab"]
+    },
+    {
+      "id": "a2-102-controlled-2",
+      "type": "matching",
+      "category": "controlled",
+      "pairs": [
+        ["cég", "company, firm"],
+        ["üzletember", "businessperson"],
+        ["iroda", "office"],
+        ["kórház", "hospital"]
+      ],
+      "teaches": ["munkahely-vocab"]
+    },
+    {
+      "id": "a2-102-controlled-3",
+      "type": "fill-blank",
+      "category": "controlled",
+      "sentence": "Zsófia orvos, ezért egy ____ dolgozik. (hospital)",
+      "answer": "kórházban",
+      "teaches": ["hol-dolgozol"]
+    },
+    {
+      "id": "a2-102-controlled-4",
+      "type": "fill-blank",
+      "category": "controlled",
+      "sentence": "Anna eladó, ezért egy ____ dolgozik. (shop)",
+      "answer": "boltban",
+      "teaches": ["hol-dolgozol"]
+    },
+    {
+      "id": "a2-102-practice-1",
+      "type": "multiple-choice",
+      "category": "practice",
+      "question": "Which case do most workplace nouns take after dolgozik?",
+      "options": ["-ban/-ben", "-ra/-re", "-tól/-től"],
+      "correct": 0,
+      "teaches": ["hol-dolgozol"]
+    },
+    {
+      "id": "a2-102-practice-2",
+      "type": "matching",
+      "category": "practice",
+      "pairs": [
+        ["Hol dolgozol?", "Where do you work?"],
+        ["Egy irodában dolgozom.", "I work in an office."],
+        ["Kinél dolgozol?", "Who do you work for?"],
+        ["Egy cégnél dolgozom.", "I work for a company."]
+      ],
+      "teaches": ["hol-dolgozol", "kinel-dolgozol"]
+    },
+    {
+      "id": "a2-102-practice-3",
+      "type": "sentence-builder",
+      "category": "practice",
+      "tiles": ["Egy", "irodában", "dolgozom", "."],
+      "solution": ["Egy", "irodában", "dolgozom", "."],
+      "english": "I work in an office.",
+      "teaches": ["hol-dolgozol"]
+    },
+    {
+      "id": "a2-102-practice-4",
+      "type": "sentence-builder",
+      "category": "practice",
+      "tiles": ["Kinél", "dolgozol", "?"],
+      "solution": ["Kinél", "dolgozol", "?"],
+      "english": "Who do you work for?",
+      "teaches": ["kinel-dolgozol"]
+    },
+    {
+      "id": "a2-102-dialogue-1",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        { "speaker": "Petra", "text": "Hol dolgozol?" },
+        { "speaker": "Meg", "text": "_____" }
+      ],
+      "options": ["Egy iskolában dolgozom.", "Reggel nyolckor kezdek dolgozni."],
+      "correct": 0,
+      "teaches": ["hol-dolgozol"]
+    },
+    {
+      "id": "a2-102-dialogue-2",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        { "speaker": "Meg", "text": "Kinél dolgozol?" },
+        { "speaker": "Károly", "text": "_____" }
+      ],
+      "options": ["Egy nagy cégnél dolgozom.", "Reggel nyolckor kezdek dolgozni."],
+      "correct": 0,
+      "teaches": ["kinel-dolgozol"]
+    },
+    {
+      "id": "a2-102-writing-1",
+      "type": "structured-writing",
+      "category": "writing",
+      "template": [
+        {
+          "prompt": "Say you work in an office.",
+          "answer": "Egy irodában dolgozom."
+        }
+      ],
+      "teaches": ["hol-dolgozol"]
+    },
+    {
+      "id": "a2-102-writing-2",
+      "type": "structured-writing",
+      "category": "writing",
+      "template": [
+        {
+          "prompt": "Say you work for a big company.",
+          "answer": "Egy nagy cégnél dolgozom."
+        }
+      ],
+      "teaches": ["kinel-dolgozol"]
+    },
+    {
+      "id": "a2-102-check-1",
+      "type": "multiple-choice",
+      "category": "check",
+      "question": "Which suffix names your employer, not the physical place you work?",
+      "options": ["-nál/-nél", "-ban/-ben", "-ra/-re"],
+      "correct": 0,
+      "teaches": ["kinel-dolgozol"]
+    },
+    {
+      "id": "a2-102-check-2",
+      "type": "multiple-choice",
+      "category": "check",
+      "question": "Which means \"hospital\"?",
+      "options": ["kórház", "gyár", "cég"],
+      "correct": 0,
+      "teaches": ["munkahely-vocab"]
+    }
+  ]
+}

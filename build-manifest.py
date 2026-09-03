@@ -503,6 +503,11 @@ LANG_UNIT_TITLES = {
             "Healthy Living & Advice",
             "School & Language Learning",
             "Review 1: Life, Leisure & Health",
+            "Work & Professions",
+            "Verb Prefixes",
+            "Ability, Possibility & Permission",
+            "Talking About the Past I",
+            "Talking About the Past II",
         ],
     },
 }

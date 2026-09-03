@@ -1348,3 +1348,37 @@ screen in the Hungarian course, not just the review units.
   entries indiscriminately would risk removing real vocabulary rather
   than fixing the report. Left open pending a repro detail (which word
   was actually tapped, or was "m" searched/encountered some other way).
+
+## Lexicon direct-hit still shadowed irregular verb readings for homonyms (found & fixed 2026-09-03)
+
+- [x] While writing readings for HU A2 units 24-25 (past tense), live-tested
+  every past-tense form the stories use against `Lexicon.lookup()` and
+  found "ment" — one of the single most common words in the language,
+  megy's irregular past tense ("went") — resolved to only two unrelated
+  senses ("to rescue"/"exempt", a genuine dictionary headword for a
+  different verb spelled the same) and never surfaced the "went" reading
+  at all. Root cause: `engine/lexicon.js`'s `if (!directHit && ...)`
+  gate around the `HungarianMorphology.analyze()` call still fully
+  skipped morphological analysis whenever the tapped word was ALSO a
+  literal dictionary headword — the exact "direct-hit-wins-outright"
+  problem task #69 fixed earlier this session for one code path, but
+  this second gate (on the *primary* `_dictionary[key]` hit, not the
+  word-index case) was left as originally designed, with a comment
+  explicitly defending the skip as "strong, reliable evidence." That
+  reasoning breaks down for exactly this shape of collision: a real
+  dictionary headword and a real irregular-verb form can be spelled
+  identically for entirely unrelated words, and each is equally "strong
+  evidence." Confirmed via `imports/dictionary/hungarian-en.json`: "ment"
+  really is its own headword (the verb "menteni," to rescue), so this
+  wasn't a data error, just an architectural gap.
+  **Fix**: removed the `!directHit &&` condition — `analyze()` now runs
+  unconditionally and merges its results in via the same dedup/rank
+  logic already used (and already proven safe, per that code's own
+  comment citing "nőtt", "élt", "örült" as resolved same-lemma
+  collisions) for the weaker word-index case just below it. Verified
+  live: "ment" now correctly ranks `megy` past-3sg as its primary
+  reading, with "to rescue"/"exempt" following as alternates; spot-
+  checked a dozen other common direct-hit words (és, van, kávé, iskola,
+  mozi, élt, örült, igen, nőtt, lakom, volt, gyors) for regressions —
+  none found, same readings and ranking as before, just with any
+  genuinely competing morphological reading now able to surface too.

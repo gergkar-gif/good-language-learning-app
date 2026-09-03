@@ -280,13 +280,16 @@ const Lexicon = (function () {
             readings.push(reading);
         }
 
-        // "The tapped word IS a dictionary headword" is strong, reliable
-        // evidence, so a hit here skips analyze() below entirely (same as
-        // before) — but a word-index hit is weaker: that index only ever
-        // comes from a noun/adjective's own declension table, so it can
-        // never see a competing verb reading of the SAME surface form even
-        // when one exists ("élt" is indexed as "él" the noun "edge" +
-        // accusative, but is also "él" the verb "to live" + past tense).
+        // "The tapped word IS a dictionary headword" used to make analyze()
+        // below skip entirely on a direct hit — but a headword can itself
+        // collide with an irregular verb form of a completely different
+        // word ("ment" is both the dictionary headword for "ment" [to
+        // rescue] and megy's irregular past tense "went"), and skipping
+        // analyze() meant that second, equally real reading never
+        // surfaced at all. Same merge-don't-exclude approach as the
+        // word-index case just below now applies here too — see that
+        // block's own comment on why a same-lemma collision there stays
+        // safe under the final rank-based sort.
         const directHit = !!_dictionary[key];
         // Every sense of the headword, not just the first — a bare tap on
         // "kormány" should offer "government" as an alternate reading
@@ -307,7 +310,7 @@ const Lexicon = (function () {
         // reading is already in `readings` before a same-lemma word-index
         // case reading could contest the tie — resolved every such
         // collision found while building this ("nőtt", "élt", "örült").
-        if (!directHit && typeof HungarianMorphology !== 'undefined') {
+        if (typeof HungarianMorphology !== 'undefined') {
             HungarianMorphology.analyze(key, _dictionary, _wordIndex)
                 .forEach(r => add(r.lemma, { type: r.pos, en: r.translation }, r.analysis, r.compoundParts));
         }

@@ -1,0 +1,169 @@
+{
+  "lesson": "a2-122",
+  "exercises": [
+    {
+      "id": "a2-122-intro-1",
+      "type": "multiple-choice",
+      "category": "introduce",
+      "question": "Which means \"to see\"?",
+      "options": ["lát", "talál", "kap"],
+      "correct": 0,
+      "teaches": ["lat-vocab"]
+    },
+    {
+      "id": "a2-122-intro-2",
+      "type": "multiple-choice",
+      "category": "introduce",
+      "question": "Which means \"by chance, accidentally\"?",
+      "options": ["véletlenül", "régen", "utoljára"],
+      "correct": 0,
+      "teaches": ["talalkozik-vocab"]
+    },
+    {
+      "id": "a2-122-controlled-1",
+      "type": "matching",
+      "category": "controlled",
+      "pairs": [
+        ["lát", "to see"],
+        ["meglát", "to catch sight of, spot"],
+        ["véletlenül", "by chance, accidentally"],
+        ["régen", "a long time ago"],
+        ["utoljára", "last time"]
+      ],
+      "teaches": ["lat-vocab", "talalkozik-vocab"]
+    },
+    {
+      "id": "a2-122-controlled-2",
+      "type": "matching",
+      "category": "controlled",
+      "pairs": [
+        ["találkoztam", "I met (someone)"],
+        ["találkoztál", "you met (someone)"],
+        ["találkozott", "he/she met (someone)"],
+        ["Kivel találkoztál?", "Who did you meet?"]
+      ],
+      "teaches": ["talalkozik-past"]
+    },
+    {
+      "id": "a2-122-controlled-3",
+      "type": "fill-blank",
+      "category": "controlled",
+      "sentence": "Tegnap véletlenül ____ Tamással a piacon. (I met)",
+      "answer": "találkoztam",
+      "teaches": ["talalkozik-past"]
+    },
+    {
+      "id": "a2-122-controlled-4",
+      "type": "fill-blank",
+      "category": "controlled",
+      "sentence": "____ találkoztál ma? (Who...with)",
+      "answer": "Kivel",
+      "teaches": ["talalkozik-past"]
+    },
+    {
+      "id": "a2-122-practice-1",
+      "type": "multiple-choice",
+      "category": "practice",
+      "question": "Which sentence correctly means \"I met (with) Károly\"?",
+      "options": ["Találkoztam Károllyal.", "Találkoztam Károlyt.", "Láttam Károlyt."],
+      "correct": 0,
+      "teaches": ["talalkozik-past"]
+    },
+    {
+      "id": "a2-122-practice-2",
+      "type": "matching",
+      "category": "practice",
+      "pairs": [
+        ["láttam", "I saw (something) / I saw it"],
+        ["láttad", "you saw it (specific)"],
+        ["látott", "he/she saw (something)"],
+        ["látta", "he/she saw it (specific)"]
+      ],
+      "teaches": ["lat-past-indefinite", "lat-past-definite"]
+    },
+    {
+      "id": "a2-122-practice-3",
+      "type": "sentence-builder",
+      "category": "practice",
+      "tiles": ["Kivel", "találkoztál", "ma", "?"],
+      "solution": ["Kivel", "találkoztál", "ma", "?"],
+      "english": "Who did you meet today?",
+      "teaches": ["talalkozik-past"]
+    },
+    {
+      "id": "a2-122-practice-4",
+      "type": "sentence-builder",
+      "category": "practice",
+      "tiles": ["Láttam", "egy", "szép", "kabátot", "a", "kirakatban", "."],
+      "solution": ["Láttam", "egy", "szép", "kabátot", "a", "kirakatban", "."],
+      "english": "I saw a nice coat in the shop window.",
+      "teaches": ["lat-past-indefinite"]
+    },
+    {
+      "id": "a2-122-dialogue-1",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        { "speaker": "Petra", "text": "Kivel találkoztál tegnap?" },
+        { "speaker": "Meg", "text": "_____" }
+      ],
+      "options": ["Véletlenül találkoztam Tamással a piacon.", "Vettem egy szép kabátot."],
+      "correct": 0,
+      "teaches": ["talalkozik-past"]
+    },
+    {
+      "id": "a2-122-dialogue-2",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        { "speaker": "Károly", "text": "Láttad a filmet, amiről meséltem?" },
+        { "speaker": "Meg", "text": "_____" }
+      ],
+      "options": ["Igen, láttam, nagyon érdekes volt.", "Igen, megvettem a boltban."],
+      "correct": 0,
+      "teaches": ["lat-past-definite"]
+    },
+    {
+      "id": "a2-122-writing-1",
+      "type": "structured-writing",
+      "category": "writing",
+      "template": [
+        {
+          "prompt": "Say you accidentally met Tamás at the market.",
+          "answer": "Véletlenül találkoztam Tamással a piacon."
+        }
+      ],
+      "teaches": ["talalkozik-past"]
+    },
+    {
+      "id": "a2-122-writing-2",
+      "type": "structured-writing",
+      "category": "writing",
+      "template": [
+        {
+          "prompt": "Ask who they met today.",
+          "answer": "Kivel találkoztál ma?"
+        }
+      ],
+      "teaches": ["talalkozik-past"]
+    },
+    {
+      "id": "a2-122-check-1",
+      "type": "multiple-choice",
+      "category": "check",
+      "question": "Which case does találkozik always use for the person you meet?",
+      "options": ["-val/-vel", "accusative -t", "dative -nak/-nek"],
+      "correct": 0,
+      "teaches": ["talalkozik-past"]
+    },
+    {
+      "id": "a2-122-check-2",
+      "type": "multiple-choice",
+      "category": "check",
+      "question": "What does láttad mean?",
+      "options": ["you saw it (the specific one)", "you saw (something)", "you will see it"],
+      "correct": 0,
+      "teaches": ["lat-past-definite"]
+    }
+  ]
+}

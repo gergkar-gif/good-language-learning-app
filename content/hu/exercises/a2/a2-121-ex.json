@@ -1,0 +1,171 @@
+{
+  "lesson": "a2-121",
+  "exercises": [
+    {
+      "id": "a2-121-intro-1",
+      "type": "multiple-choice",
+      "category": "introduce",
+      "question": "Which means \"to buy\"?",
+      "options": ["vesz", "lát", "talál"],
+      "correct": 0,
+      "teaches": ["vesz-vocab"]
+    },
+    {
+      "id": "a2-121-intro-2",
+      "type": "multiple-choice",
+      "category": "introduce",
+      "question": "Which means \"shop window\"?",
+      "options": ["kirakat", "bolt", "piac"],
+      "correct": 0,
+      "teaches": ["shopping-vocab"]
+    },
+    {
+      "id": "a2-121-controlled-1",
+      "type": "matching",
+      "category": "controlled",
+      "pairs": [
+        ["vesz", "to buy"],
+        ["megvesz", "to buy (something specific)"],
+        ["felvesz", "to put on (clothing)"],
+        ["kirakat", "shop window"],
+        ["sor", "line, queue"]
+      ],
+      "teaches": ["vesz-vocab", "shopping-vocab"]
+    },
+    {
+      "id": "a2-121-controlled-2",
+      "type": "matching",
+      "category": "controlled",
+      "pairs": [
+        ["vettem", "I bought (something)"],
+        ["megvettem", "I bought it (the specific thing)"],
+        ["vettél", "you bought (something)"],
+        ["vetted", "you bought it"]
+      ],
+      "teaches": ["vesz-past-indefinite", "vesz-past-definite"]
+    },
+    {
+      "id": "a2-121-controlled-3",
+      "type": "fill-blank",
+      "category": "controlled",
+      "sentence": "Tegnap egy szép kabátot ____ a boltban. (I bought)",
+      "answer": "vettem",
+      "teaches": ["vesz-past-indefinite"]
+    },
+    {
+      "id": "a2-121-controlled-4",
+      "type": "fill-blank",
+      "category": "controlled",
+      "sentence": "____ a kabátot, amit a kirakatban láttál. (I bought it, specifically)",
+      "answer": "Megvettem",
+      "teaches": ["vesz-past-definite"]
+    },
+    {
+      "id": "a2-121-practice-1",
+      "type": "multiple-choice",
+      "category": "practice",
+      "question": "Which sentence means \"I bought the coat\" (the specific one you saw)?",
+      "options": ["Megvettem a kabátot.", "Vettem egy kabátot.", "Felvettem a kabátot."],
+      "correct": 0,
+      "teaches": ["vesz-past-definite"]
+    },
+    {
+      "id": "a2-121-practice-2",
+      "type": "matching",
+      "category": "practice",
+      "pairs": [
+        ["vett", "he/she bought (something)"],
+        ["vette", "he/she bought it"],
+        ["vettünk", "we bought (something)"],
+        ["vettük", "we bought it"],
+        ["vettetek", "you all bought (something)"],
+        ["vettétek", "you all bought it"]
+      ],
+      "teaches": ["vesz-past-indefinite", "vesz-past-definite"]
+    },
+    {
+      "id": "a2-121-practice-3",
+      "type": "sentence-builder",
+      "category": "practice",
+      "tiles": ["Végül", "megvettem", "a", "drága", "ajándékot", "."],
+      "solution": ["Végül", "megvettem", "a", "drága", "ajándékot", "."],
+      "english": "In the end I bought the expensive gift.",
+      "teaches": ["vesz-past-definite"]
+    },
+    {
+      "id": "a2-121-practice-4",
+      "type": "sentence-builder",
+      "category": "practice",
+      "tiles": ["Mit", "vettél", "a", "boltban", "?"],
+      "solution": ["Mit", "vettél", "a", "boltban", "?"],
+      "english": "What did you buy at the store?",
+      "teaches": ["vesz-past-indefinite"]
+    },
+    {
+      "id": "a2-121-dialogue-1",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        { "speaker": "Károly", "text": "Mit vettél ma?" },
+        { "speaker": "Meg", "text": "_____" }
+      ],
+      "options": ["Vettem egy szép kabátot a boltban.", "Este találkozom Petrával."],
+      "correct": 0,
+      "teaches": ["vesz-past-indefinite"]
+    },
+    {
+      "id": "a2-121-dialogue-2",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        { "speaker": "Meg", "text": "Végül megvetted a kabátot, amit a kirakatban láttál?" },
+        { "speaker": "Károly", "text": "_____" }
+      ],
+      "options": ["Igen, végül megvettem.", "Igen, csak megnéztem."],
+      "correct": 0,
+      "teaches": ["vesz-past-definite"]
+    },
+    {
+      "id": "a2-121-writing-1",
+      "type": "structured-writing",
+      "category": "writing",
+      "template": [
+        {
+          "prompt": "Say you bought a beautiful gift for Ildikó.",
+          "answer": "Vettem egy szép ajándékot Ildikónak."
+        }
+      ],
+      "teaches": ["vesz-past-indefinite"]
+    },
+    {
+      "id": "a2-121-writing-2",
+      "type": "structured-writing",
+      "category": "writing",
+      "template": [
+        {
+          "prompt": "Say you finally bought the coat you saw in the shop window.",
+          "answer": "Végül megvettem a kabátot, amit a kirakatban láttam."
+        }
+      ],
+      "teaches": ["vesz-past-definite"]
+    },
+    {
+      "id": "a2-121-check-1",
+      "type": "multiple-choice",
+      "category": "check",
+      "question": "Which is correct for \"I bought it\" (one specific coat you both know about)?",
+      "options": ["Megvettem.", "Vettem.", "Veszek."],
+      "correct": 0,
+      "teaches": ["vesz-past-definite"]
+    },
+    {
+      "id": "a2-121-check-2",
+      "type": "multiple-choice",
+      "category": "check",
+      "question": "What does vette mean?",
+      "options": ["he/she bought it (the specific one)", "he/she is buying something", "he/she will buy something"],
+      "correct": 0,
+      "teaches": ["vesz-past-definite"]
+    }
+  ]
+}

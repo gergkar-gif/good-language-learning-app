@@ -1,0 +1,133 @@
+{
+  "lesson": "a2-105-consolidation",
+  "exercises": [
+    {
+      "id": "a2-105-consolidation-1",
+      "type": "multiple-choice",
+      "category": "recognize",
+      "question": "Which means \"engineer\"?",
+      "options": ["mérnök", "orvos", "eladó"],
+      "correct": 0,
+      "teaches": ["foglalkozas-vocab"]
+    },
+    {
+      "id": "a2-105-consolidation-2",
+      "type": "multiple-choice",
+      "category": "recognize",
+      "question": "Which means \"colleague, coworker\"?",
+      "options": ["munkatárs", "főnök", "csapat"],
+      "correct": 0,
+      "teaches": ["munkatars-vocab"]
+    },
+    {
+      "id": "a2-105-consolidation-3",
+      "type": "multiple-choice",
+      "category": "recognize",
+      "question": "Which means \"report\"?",
+      "options": ["jelentés", "megbeszélés", "feladat"],
+      "correct": 0,
+      "teaches": ["munka-feladat-vocab"]
+    },
+    {
+      "id": "a2-105-consolidation-4",
+      "type": "matching",
+      "category": "recall",
+      "pairs": [
+        ["tanár", "teacher"],
+        ["iroda", "office"],
+        ["munkaidő", "working hours"],
+        ["főnök", "boss"]
+      ],
+      "teaches": ["foglalkozas-vocab", "munkahely-vocab", "munkaido-vocab", "munkatars-vocab"]
+    },
+    {
+      "id": "a2-105-consolidation-5",
+      "type": "matching",
+      "category": "recall",
+      "pairs": [
+        ["szünet", "break"],
+        ["túlóra", "overtime"],
+        ["jelentés", "report"],
+        ["cég", "company, firm"]
+      ],
+      "teaches": ["munkaido-vocab", "munka-feladat-vocab", "munkahely-vocab"]
+    },
+    {
+      "id": "a2-105-consolidation-6",
+      "type": "fill-blank",
+      "category": "recall",
+      "sentence": "Mérnök vagyok, egy ____ dolgozom. (company)",
+      "answer": "cégnél",
+      "teaches": ["kinel-dolgozol"]
+    },
+    {
+      "id": "a2-105-consolidation-7",
+      "type": "dialogue-complete",
+      "category": "context",
+      "prompt": [
+        { "speaker": "Petra", "text": "Mi a foglalkozásod?" },
+        { "speaker": "Meg", "text": "_____" }
+      ],
+      "options": ["Tanár vagyok, egy iskolában dolgozom.", "Nagyon fárasztó volt a hét."],
+      "correct": 0,
+      "teaches": ["x-vagyok", "hol-dolgozol"]
+    },
+    {
+      "id": "a2-105-consolidation-8",
+      "type": "dialogue-complete",
+      "category": "context",
+      "prompt": [
+        { "speaker": "Meg", "text": "Bemutatom a munkatársamat, Petrát." },
+        { "speaker": "Tamás", "text": "_____" }
+      ],
+      "options": ["Szia, Petra! Hogy vagy?", "Kilenctől ötig dolgozom."],
+      "correct": 0,
+      "teaches": ["acc-poss"]
+    },
+    {
+      "id": "a2-105-consolidation-9",
+      "type": "sentence-builder",
+      "category": "context",
+      "tiles": ["Kell", "egy", "jelentést", "írnom", "."],
+      "solution": ["Kell", "egy", "jelentést", "írnom", "."],
+      "english": "I have to write a report.",
+      "teaches": ["kell-szemelyes-infinitivus"]
+    },
+    {
+      "id": "a2-105-consolidation-10",
+      "type": "structured-writing",
+      "category": "produce",
+      "template": [
+        {
+          "prompt": "Say you are a doctor and you work in a hospital.",
+          "answer": "Orvos vagyok, egy kórházban dolgozom."
+        }
+      ],
+      "teaches": ["x-vagyok", "hol-dolgozol"]
+    },
+    {
+      "id": "a2-105-consolidation-11",
+      "type": "structured-writing",
+      "category": "produce",
+      "template": [
+        {
+          "prompt": "Say your working hours start at nine and end at five.",
+          "answer": "A munkaidőm kilenckor kezdődik, és ötkor végződik."
+        }
+      ],
+      "teaches": ["kezdodik-vegzodik"]
+    },
+    {
+      "id": "a2-105-consolidation-12",
+      "type": "structured-writing",
+      "category": "produce",
+      "template": [
+        {
+          "prompt": "Say you have to work overtime today.",
+          "answer": "Ma kell túlóráznom."
+        }
+      ],
+      "teaches": ["kell-szemelyes-infinitivus"]
+    }
+  ]
+}

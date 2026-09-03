@@ -1,0 +1,167 @@
+{
+  "lesson": "a2-116",
+  "exercises": [
+    {
+      "id": "a2-116-intro-1",
+      "type": "multiple-choice",
+      "category": "introduce",
+      "question": "Which means \"yesterday\"?",
+      "options": ["tegnap", "holnap", "ma"],
+      "correct": 0,
+      "teaches": ["tegnap-time-words"]
+    },
+    {
+      "id": "a2-116-intro-2",
+      "type": "multiple-choice",
+      "category": "introduce",
+      "question": "Which means \"all day\"?",
+      "options": ["egész nap", "minden nap", "egész éjjel"],
+      "correct": 0,
+      "teaches": ["tegnap-time-words"]
+    },
+    {
+      "id": "a2-116-controlled-1",
+      "type": "matching",
+      "category": "controlled",
+      "pairs": [
+        ["tegnap", "yesterday"],
+        ["tegnap reggel", "yesterday morning"],
+        ["tegnap este", "yesterday evening"],
+        ["egész nap", "all day"]
+      ],
+      "teaches": ["tegnap-time-words"]
+    },
+    {
+      "id": "a2-116-controlled-2",
+      "type": "matching",
+      "category": "controlled",
+      "pairs": [
+        ["dolgoztam", "I worked"],
+        ["tanultál", "you studied"],
+        ["olvasott", "he/she read"],
+        ["néztünk", "we watched"]
+      ],
+      "teaches": ["past-tense-indefinite"]
+    },
+    {
+      "id": "a2-116-controlled-3",
+      "type": "fill-blank",
+      "category": "controlled",
+      "sentence": "Tegnap sokat ____. (I worked)",
+      "answer": "dolgoztam",
+      "teaches": ["past-tense-indefinite"]
+    },
+    {
+      "id": "a2-116-controlled-4",
+      "type": "fill-blank",
+      "category": "controlled",
+      "sentence": "Tegnap este Károly filmet ____. (watched)",
+      "answer": "nézett",
+      "teaches": ["past-tense-indefinite"]
+    },
+    {
+      "id": "a2-116-practice-1",
+      "type": "multiple-choice",
+      "category": "practice",
+      "question": "Which ending is correct for dolgozik in the past, 3rd person singular (\"he/she worked\")?",
+      "options": ["dolgozott", "dolgozt", "dolgozom"],
+      "correct": 0,
+      "teaches": ["past-tense-indefinite"]
+    },
+    {
+      "id": "a2-116-practice-2",
+      "type": "matching",
+      "category": "practice",
+      "pairs": [
+        ["Tegnap sokat dolgoztam.", "I worked a lot yesterday."],
+        ["Tegnap este filmet néztünk.", "We watched a film yesterday evening."],
+        ["Egész nap otthon tanultak.", "They studied at home all day."],
+        ["Tegnap reggel könyvet olvastál.", "You read a book yesterday morning."]
+      ],
+      "teaches": ["past-tense-indefinite", "tegnap-time-words"]
+    },
+    {
+      "id": "a2-116-practice-3",
+      "type": "sentence-builder",
+      "category": "practice",
+      "tiles": ["Tegnap", "este", "filmet", "néztem", "."],
+      "solution": ["Tegnap", "este", "filmet", "néztem", "."],
+      "english": "I watched a film yesterday evening.",
+      "teaches": ["past-tense-indefinite"]
+    },
+    {
+      "id": "a2-116-practice-4",
+      "type": "sentence-builder",
+      "category": "practice",
+      "tiles": ["Egész", "nap", "otthon", "tanultunk", "."],
+      "solution": ["Egész", "nap", "otthon", "tanultunk", "."],
+      "english": "We studied at home all day.",
+      "teaches": ["past-tense-indefinite"]
+    },
+    {
+      "id": "a2-116-dialogue-1",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        { "speaker": "Petra", "text": "Dolgoztál tegnap?" },
+        { "speaker": "Meg", "text": "_____" }
+      ],
+      "options": ["Igen, egész nap dolgoztam.", "Nem, holnap dolgozom."],
+      "correct": 0,
+      "teaches": ["past-tense-indefinite"]
+    },
+    {
+      "id": "a2-116-dialogue-2",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        { "speaker": "Károly", "text": "Mit néztél tegnap este?" },
+        { "speaker": "Meg", "text": "_____" }
+      ],
+      "options": ["Egy filmet néztem.", "Tegnap reggel."],
+      "correct": 0,
+      "teaches": ["past-tense-indefinite"]
+    },
+    {
+      "id": "a2-116-writing-1",
+      "type": "structured-writing",
+      "category": "writing",
+      "template": [
+        {
+          "prompt": "Say you worked a lot yesterday.",
+          "answer": "Tegnap sokat dolgoztam."
+        }
+      ],
+      "teaches": ["past-tense-indefinite"]
+    },
+    {
+      "id": "a2-116-writing-2",
+      "type": "structured-writing",
+      "category": "writing",
+      "template": [
+        {
+          "prompt": "Say you and a friend studied at home all day.",
+          "answer": "Egész nap otthon tanultunk."
+        }
+      ],
+      "teaches": ["past-tense-indefinite", "tegnap-time-words"]
+    },
+    {
+      "id": "a2-116-check-1",
+      "type": "multiple-choice",
+      "category": "check",
+      "question": "Which is the correct past tense of olvas for \"he/she read\"?",
+      "options": ["olvasott", "olvas", "olvasni"],
+      "correct": 0,
+      "teaches": ["past-tense-indefinite"]
+    },
+    {
+      "id": "a2-116-check-2",
+      "type": "fill-blank",
+      "category": "check",
+      "sentence": "Tegnap este Anna sokat ____. (worked)",
+      "answer": "dolgozott",
+      "teaches": ["past-tense-indefinite"]
+    }
+  ]
+}

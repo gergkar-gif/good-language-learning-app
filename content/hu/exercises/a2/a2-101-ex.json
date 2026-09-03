@@ -1,0 +1,168 @@
+{
+  "lesson": "a2-101",
+  "exercises": [
+    {
+      "id": "a2-101-intro-1",
+      "type": "multiple-choice",
+      "category": "introduce",
+      "question": "Which means \"teacher\"?",
+      "options": ["tanár", "orvos", "mérnök"],
+      "correct": 0,
+      "teaches": ["foglalkozas-vocab"]
+    },
+    {
+      "id": "a2-101-intro-2",
+      "type": "multiple-choice",
+      "category": "introduce",
+      "question": "Which means \"engineer\"?",
+      "options": ["mérnök", "eladó", "szakács"],
+      "correct": 0,
+      "teaches": ["foglalkozas-vocab"]
+    },
+    {
+      "id": "a2-101-controlled-1",
+      "type": "matching",
+      "category": "controlled",
+      "pairs": [
+        ["tanár", "teacher"],
+        ["orvos", "doctor"],
+        ["mérnök", "engineer"],
+        ["eladó", "salesperson, shop assistant"]
+      ],
+      "teaches": ["foglalkozas-vocab"]
+    },
+    {
+      "id": "a2-101-controlled-2",
+      "type": "matching",
+      "category": "controlled",
+      "pairs": [
+        ["szakács", "cook, chef"],
+        ["foglalkozás", "profession, occupation"],
+        ["tanár", "teacher"],
+        ["orvos", "doctor"]
+      ],
+      "teaches": ["foglalkozas-vocab"]
+    },
+    {
+      "id": "a2-101-controlled-3",
+      "type": "fill-blank",
+      "category": "controlled",
+      "sentence": "Kórházban dolgozom, mert ____ vagyok.",
+      "answer": "orvos",
+      "teaches": ["foglalkozas-vocab"]
+    },
+    {
+      "id": "a2-101-controlled-4",
+      "type": "fill-blank",
+      "category": "controlled",
+      "sentence": "Nem otthon főzök, hanem egy étteremben, mert ____ vagyok.",
+      "answer": "szakács",
+      "teaches": ["foglalkozas-vocab"]
+    },
+    {
+      "id": "a2-101-practice-1",
+      "type": "multiple-choice",
+      "category": "practice",
+      "question": "Which correctly says \"I am a teacher\"?",
+      "options": ["Tanár vagyok.", "Egy tanár vagyok.", "Vagyok tanár."],
+      "correct": 0,
+      "teaches": ["x-vagyok"]
+    },
+    {
+      "id": "a2-101-practice-2",
+      "type": "matching",
+      "category": "practice",
+      "pairs": [
+        ["Tanár vagyok.", "I am a teacher."],
+        ["Károly mérnök.", "Károly is an engineer."],
+        ["Mi a foglalkozásod?", "What's your profession?"],
+        ["A foglalkozásom orvos.", "My profession is doctor."]
+      ],
+      "teaches": ["x-vagyok", "mi-a-foglalkozasod"]
+    },
+    {
+      "id": "a2-101-practice-3",
+      "type": "sentence-builder",
+      "category": "practice",
+      "tiles": ["Én", "mérnök", "vagyok", "."],
+      "solution": ["Én", "mérnök", "vagyok", "."],
+      "english": "I am an engineer.",
+      "teaches": ["x-vagyok"]
+    },
+    {
+      "id": "a2-101-practice-4",
+      "type": "sentence-builder",
+      "category": "practice",
+      "tiles": ["Mi", "a", "foglalkozásod", "?"],
+      "solution": ["Mi", "a", "foglalkozásod", "?"],
+      "english": "What's your profession?",
+      "teaches": ["mi-a-foglalkozasod"]
+    },
+    {
+      "id": "a2-101-dialogue-1",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        { "speaker": "Petra", "text": "Mi a foglalkozásod?" },
+        { "speaker": "Meg", "text": "_____" }
+      ],
+      "options": ["Tanár vagyok, egy iskolában dolgozom.", "Ma nincs vizsgám."],
+      "correct": 0,
+      "teaches": ["mi-a-foglalkozasod", "x-vagyok"]
+    },
+    {
+      "id": "a2-101-dialogue-2",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        { "speaker": "Meg", "text": "Károlynak mi a foglalkozása?" },
+        { "speaker": "Petra", "text": "_____" }
+      ],
+      "options": ["Károly mérnök.", "Károly egy irodában van."],
+      "correct": 0,
+      "teaches": ["mi-a-foglalkozasod"]
+    },
+    {
+      "id": "a2-101-writing-1",
+      "type": "structured-writing",
+      "category": "writing",
+      "template": [
+        {
+          "prompt": "Say you are a doctor.",
+          "answer": "Orvos vagyok."
+        }
+      ],
+      "teaches": ["x-vagyok"]
+    },
+    {
+      "id": "a2-101-writing-2",
+      "type": "structured-writing",
+      "category": "writing",
+      "template": [
+        {
+          "prompt": "Ask someone what their profession is.",
+          "answer": "Mi a foglalkozásod?"
+        }
+      ],
+      "teaches": ["mi-a-foglalkozasod"]
+    },
+    {
+      "id": "a2-101-check-1",
+      "type": "multiple-choice",
+      "category": "check",
+      "question": "Which correctly says \"Károly is an engineer\"?",
+      "options": ["Károly mérnök.", "Károly van mérnök.", "Károly egy mérnök."],
+      "correct": 0,
+      "teaches": ["x-vagyok"]
+    },
+    {
+      "id": "a2-101-check-2",
+      "type": "multiple-choice",
+      "category": "check",
+      "question": "Which means \"salesperson, shop assistant\"?",
+      "options": ["eladó", "szakács", "orvos"],
+      "correct": 0,
+      "teaches": ["foglalkozas-vocab"]
+    }
+  ]
+}
