@@ -1100,3 +1100,45 @@ run after the SRS/Decks pass above. Six more genuine bugs found, all fixed:
   lemma exists in the corpus today, so this never actually fired — fixed
   anyway (`Object.create(null)` instead) since it cost nothing and removes
   a real, if currently dormant, hazard.
+
+## HU grammar screens showed "Grammar 1"/"Grammar 2" instead of their real title (found & fixed 2026-09-02)
+
+Asked to check that A1's (and A2's) review-unit grammar screens weren't
+generic placeholders. They were — and so was almost every OTHER grammar
+screen in the Hungarian course, not just the review units.
+
+- [x] **`stepRenderers['grammar']` (engine/lessons.js:177) uses
+  `section.title || grammar.title`** — the lesson's own section title
+  wins if set, falling back to the referenced grammar file's own title
+  only if the section left it blank. That fallback design is fine; the
+  problem is what the content actually did with it: 373 of 402 HU grammar
+  sections (93%, across 187 lesson files — essentially the whole course,
+  not just the review units) had `"title": "Grammar 1"` or
+  `"title": "Grammar 2"` explicitly set, permanently shadowing whatever
+  real title the referenced file had. And every one of those referenced
+  files *did* have a real, specific, already-well-authored title sitting
+  there unused — e.g. `a1-46-a-gr.json`'s title is "Foundations review",
+  `a2-47-a-gr.json`'s is `-val/-vel: "With" Something`, `a1-121-a-gr.json`'s
+  is "Asking for Things: the Accusative -t" — a learner just never saw any
+  of it, only "Grammar 1" / "Grammar 2" as the screen header, lesson after
+  lesson, for the entire course. Checked the Spanish course for the same
+  pattern: zero instances — this was HU-only, and total, not a partial
+  gap.
+  **Fixed**: verified every one of the 373 referenced grammar files has a
+  real, non-generic `title` (checked programmatically — 0 missing files,
+  0 also-generic titles) before touching anything, then deleted the
+  redundant `"title": "Grammar N"` override from all 373 sections across
+  187 lesson files, letting the existing fallback surface each file's own
+  real title. No engine change needed — `stepRenderers['grammar']`'s
+  fallback already did the right thing, it just never got the chance to
+  run. Verified live across three different cases: `lesson.a1.04` (a
+  regular lesson, "Yes/No Questions" / "Nem"), `lesson.a1.100` (the last
+  lesson of A1's unit-20 review, "Integrated Review of A1" / "Future
+  Plans and Reflection"), and `lesson.a2.47` (A2, `-val/-vel: "With"
+  Something` / "Cooking Tools with -val/-vel") — all now show their real
+  titles instead of "Grammar 1"/"Grammar 2". `validate-content.py hu`
+  still passes clean (1121/1121) — `title` was never a required schema
+  field. Confirmed `scripts/build_grammar_index.py` (feeding the Workshop
+  Grammar Driller) and `build-manifest.py` (feeding curriculum.json's own
+  short per-lesson "grammar" blurb, a separate field entirely) neither one
+  reads lesson section titles, so nothing downstream needed regenerating.
