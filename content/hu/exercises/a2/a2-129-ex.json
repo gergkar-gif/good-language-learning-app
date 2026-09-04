@@ -1,0 +1,166 @@
+{
+  "lesson": "a2-129",
+  "exercises": [
+    {
+      "id": "a2-129-intro-1",
+      "type": "multiple-choice",
+      "category": "introduce",
+      "question": "Which phrase means \"all of a sudden\"?",
+      "options": ["egyszer csak", "aztán", "utána"],
+      "correct": 0,
+      "teaches": ["egyszer-csak-vocab"]
+    },
+    {
+      "id": "a2-129-intro-2",
+      "type": "multiple-choice",
+      "category": "introduce",
+      "question": "Which means \"unexpectedly\"?",
+      "options": ["váratlanul", "szerencsére", "hirtelen"],
+      "correct": 0,
+      "teaches": ["varatlanul-vocab"]
+    },
+    {
+      "id": "a2-129-controlled-1",
+      "type": "matching",
+      "category": "controlled",
+      "pairs": [
+        ["egyszer csak", "all of a sudden"],
+        ["váratlanul", "unexpectedly"],
+        ["mond", "to say"],
+        ["elkezd", "to start (something)"],
+        ["véletlenül", "by chance, accidentally"]
+      ],
+      "teaches": ["egyszer-csak-vocab", "varatlanul-vocab", "mond-vocab"]
+    },
+    {
+      "id": "a2-129-controlled-2",
+      "type": "fill-blank",
+      "category": "controlled",
+      "sentence": "Sétáltunk a parkban, amikor ____ elkezdett esni. (all of a sudden)",
+      "answer": "egyszer csak",
+      "teaches": ["egyszer-csak-vocab"]
+    },
+    {
+      "id": "a2-129-controlled-3",
+      "type": "fill-blank",
+      "category": "controlled",
+      "sentence": "____ megláttuk Tamást a piacon. (Unexpectedly)",
+      "answer": "Váratlanul",
+      "teaches": ["varatlanul-vocab"]
+    },
+    {
+      "id": "a2-129-controlled-4",
+      "type": "fill-blank",
+      "category": "controlled",
+      "sentence": "Petra azt ____, hogy vicces volt a történet. (said)",
+      "answer": "mondta",
+      "teaches": ["mond-past"]
+    },
+    {
+      "id": "a2-129-practice-1",
+      "type": "multiple-choice",
+      "category": "practice",
+      "question": "Which means \"I said that I was late\"?",
+      "options": ["Azt mondtam, hogy elkéstem.", "Azt mondtam, hogy éhes vagyok.", "Nem mondtam semmit."],
+      "correct": 0,
+      "teaches": ["mond-past"]
+    },
+    {
+      "id": "a2-129-practice-2",
+      "type": "matching",
+      "category": "practice",
+      "pairs": [
+        ["mondtam", "I said"],
+        ["mondtad", "you said (it)"],
+        ["mondta", "he/she said (it)"],
+        ["mondtunk", "we said"],
+        ["mondtak", "they said"]
+      ],
+      "teaches": ["mond-past"]
+    },
+    {
+      "id": "a2-129-practice-3",
+      "type": "sentence-builder",
+      "category": "practice",
+      "tiles": ["Hirtelen", "elkezdett", "esni", ",", "ezért", "mindenki", "hazament", "."],
+      "solution": ["Hirtelen", "elkezdett", "esni", ",", "ezért", "mindenki", "hazament", "."],
+      "english": "Suddenly it started to rain, so everyone went home.",
+      "teaches": ["egyszer-csak-vocab"]
+    },
+    {
+      "id": "a2-129-practice-4",
+      "type": "sentence-builder",
+      "category": "practice",
+      "tiles": ["Petra", "azt", "mondta", ",", "hogy", "vicces", "volt", "a", "történet", "."],
+      "solution": ["Petra", "azt", "mondta", ",", "hogy", "vicces", "volt", "a", "történet", "."],
+      "english": "Petra said that the story was funny.",
+      "teaches": ["mond-past"]
+    },
+    {
+      "id": "a2-129-dialogue-1",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        { "speaker": "Károly", "text": "Mi történt a parkban?" },
+        { "speaker": "Meg", "text": "_____" }
+      ],
+      "options": ["Sétáltunk, amikor egyszer csak elkezdett esni.", "Sétáltunk, és nagyon szép volt az idő."],
+      "correct": 0,
+      "teaches": ["egyszer-csak-vocab"]
+    },
+    {
+      "id": "a2-129-dialogue-2",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        { "speaker": "Meg", "text": "Mit mondott Petra a történetről?" },
+        { "speaker": "Károly", "text": "_____" }
+      ],
+      "options": ["Azt mondta, hogy nagyon vicces volt.", "Azt mondta, hogy nagyon unalmas volt."],
+      "correct": 0,
+      "teaches": ["mond-past"]
+    },
+    {
+      "id": "a2-129-writing-1",
+      "type": "structured-writing",
+      "category": "writing",
+      "template": [
+        {
+          "prompt": "Say that suddenly it started to rain, so everyone went home.",
+          "answer": "Hirtelen elkezdett esni, ezért mindenki hazament."
+        }
+      ],
+      "teaches": ["egyszer-csak-vocab"]
+    },
+    {
+      "id": "a2-129-writing-2",
+      "type": "structured-writing",
+      "category": "writing",
+      "template": [
+        {
+          "prompt": "Say that Petra said the story was very funny.",
+          "answer": "Petra azt mondta, hogy nagyon vicces volt a történet."
+        }
+      ],
+      "teaches": ["mond-past"]
+    },
+    {
+      "id": "a2-129-check-1",
+      "type": "multiple-choice",
+      "category": "check",
+      "question": "What does egyszer csak mean?",
+      "options": ["all of a sudden", "usually", "never"],
+      "correct": 0,
+      "teaches": ["egyszer-csak-vocab"]
+    },
+    {
+      "id": "a2-129-check-2",
+      "type": "multiple-choice",
+      "category": "check",
+      "question": "Which word points forward to a hogy-clause when reporting speech?",
+      "options": ["azt", "hogy", "mert"],
+      "correct": 0,
+      "teaches": ["mond-past"]
+    }
+  ]
+}

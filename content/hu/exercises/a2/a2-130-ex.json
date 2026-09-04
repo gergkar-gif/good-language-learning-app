@@ -1,0 +1,161 @@
+{
+  "lesson": "a2-130",
+  "exercises": [
+    {
+      "id": "a2-130-intro-1",
+      "type": "multiple-choice",
+      "category": "introduce",
+      "question": "Which means \"the end (of something)\"?",
+      "options": ["vége", "eleje", "közepe"],
+      "correct": 0,
+      "teaches": ["eleje-vege-vocab"]
+    },
+    {
+      "id": "a2-130-intro-2",
+      "type": "multiple-choice",
+      "category": "introduce",
+      "question": "Which means \"happily\"?",
+      "options": ["boldogan", "gyorsan", "hirtelen"],
+      "correct": 0,
+      "teaches": ["boldogan-vocab"]
+    },
+    {
+      "id": "a2-130-controlled-1",
+      "type": "matching",
+      "category": "controlled",
+      "pairs": [
+        ["eleje", "the beginning (of something)"],
+        ["vége", "the end (of something)"],
+        ["boldogan", "happily"],
+        ["amikor", "when"],
+        ["egyszer csak", "all of a sudden"]
+      ],
+      "teaches": ["eleje-vege-vocab", "boldogan-vocab"]
+    },
+    {
+      "id": "a2-130-controlled-2",
+      "type": "fill-blank",
+      "category": "controlled",
+      "sentence": "A történet ____ Bécsbe utaztunk. (At the beginning)",
+      "answer": "elején",
+      "teaches": ["eleje-vege-vocab"]
+    },
+    {
+      "id": "a2-130-controlled-3",
+      "type": "fill-blank",
+      "category": "controlled",
+      "sentence": "A történet ____ mindenki nagyot nevetett. (at the end)",
+      "answer": "végén",
+      "teaches": ["eleje-vege-vocab"]
+    },
+    {
+      "id": "a2-130-controlled-4",
+      "type": "fill-blank",
+      "category": "controlled",
+      "sentence": "A végén ____ mentünk haza. (happily)",
+      "answer": "boldogan",
+      "teaches": ["boldogan-vocab"]
+    },
+    {
+      "id": "a2-130-practice-1",
+      "type": "multiple-choice",
+      "category": "practice",
+      "question": "Which sentence means \"At the beginning it was raining, but in the end the weather was gorgeous\"?",
+      "options": ["Az elején esett az eső, de a végén gyönyörű volt az idő.", "Az elején gyönyörű volt az idő, de a végén esett az eső.", "Egész nap esett az eső."],
+      "correct": 0,
+      "teaches": ["eleje-vege-vocab"]
+    },
+    {
+      "id": "a2-130-practice-2",
+      "type": "sentence-order",
+      "category": "practice",
+      "sentences": ["Az elején Bécsbe utaztunk Károllyal.", "Amikor sétáltunk a városban, egyszer csak elkezdett esni.", "A végén boldogan hazamentünk."],
+      "solution": [0, 1, 2],
+      "teaches": ["eleje-vege-vocab"]
+    },
+    {
+      "id": "a2-130-practice-3",
+      "type": "sentence-builder",
+      "category": "practice",
+      "tiles": ["A", "történet", "végén", "mindenki", "nagyot", "nevetett", "."],
+      "solution": ["A", "történet", "végén", "mindenki", "nagyot", "nevetett", "."],
+      "english": "At the end of the story, everyone laughed heartily.",
+      "teaches": ["eleje-vege-vocab"]
+    },
+    {
+      "id": "a2-130-practice-4",
+      "type": "sentence-builder",
+      "category": "practice",
+      "tiles": ["Károly", "azt", "mondta", ",", "hogy", "ez", "volt", "egy", "nagyon", "vicces", "történet", "."],
+      "solution": ["Károly", "azt", "mondta", ",", "hogy", "ez", "volt", "egy", "nagyon", "vicces", "történet", "."],
+      "english": "Károly said that this was a very funny story.",
+      "teaches": ["mond-past"]
+    },
+    {
+      "id": "a2-130-dialogue-1",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        { "speaker": "Petra", "text": "Mesélj a bécsi utatokról!" },
+        { "speaker": "Meg", "text": "_____" }
+      ],
+      "options": ["Az elején esett az eső, de a végén gyönyörű volt az idő.", "Sosem voltam még Bécsben."],
+      "correct": 0,
+      "teaches": ["eleje-vege-vocab"]
+    },
+    {
+      "id": "a2-130-dialogue-2",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        { "speaker": "Meg", "text": "Hogyan végződött a történet?" },
+        { "speaker": "Károly", "text": "_____" }
+      ],
+      "options": ["A végén boldogan hazamentünk.", "A végén nagyon fáradt voltam."],
+      "correct": 0,
+      "teaches": ["boldogan-vocab"]
+    },
+    {
+      "id": "a2-130-writing-1",
+      "type": "structured-writing",
+      "category": "writing",
+      "template": [
+        {
+          "prompt": "Say that at the beginning you traveled to Vienna with Károly.",
+          "answer": "Az elején Bécsbe utaztunk Károllyal."
+        }
+      ],
+      "teaches": ["eleje-vege-vocab"]
+    },
+    {
+      "id": "a2-130-writing-2",
+      "type": "structured-writing",
+      "category": "writing",
+      "template": [
+        {
+          "prompt": "Say that in the end, everyone went home happily.",
+          "answer": "A végén mindenki boldogan hazament."
+        }
+      ],
+      "teaches": ["boldogan-vocab"]
+    },
+    {
+      "id": "a2-130-check-1",
+      "type": "multiple-choice",
+      "category": "check",
+      "question": "What do elején and végén build from?",
+      "options": ["eleje and vége with the superessive case", "the present tense endings", "the plural suffix"],
+      "correct": 0,
+      "teaches": ["eleje-vege-vocab"]
+    },
+    {
+      "id": "a2-130-check-2",
+      "type": "multiple-choice",
+      "category": "check",
+      "question": "Which word means \"happily\"?",
+      "options": ["boldogan", "szomorúan", "gyorsan"],
+      "correct": 0,
+      "teaches": ["boldogan-vocab"]
+    }
+  ]
+}

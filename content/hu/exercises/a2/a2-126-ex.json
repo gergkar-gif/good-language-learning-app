@@ -1,0 +1,166 @@
+{
+  "lesson": "a2-126",
+  "exercises": [
+    {
+      "id": "a2-126-intro-1",
+      "type": "multiple-choice",
+      "category": "introduce",
+      "question": "Which means \"to lose (something)\"?",
+      "options": ["elveszít", "elad", "eltesz"],
+      "correct": 0,
+      "teaches": ["elveszit-vocab"]
+    },
+    {
+      "id": "a2-126-intro-2",
+      "type": "multiple-choice",
+      "category": "introduce",
+      "question": "Which means \"luckily, fortunately\"?",
+      "options": ["szerencsére", "sajnos", "hirtelen"],
+      "correct": 0,
+      "teaches": ["szerencsere-vocab"]
+    },
+    {
+      "id": "a2-126-controlled-1",
+      "type": "matching",
+      "category": "controlled",
+      "pairs": [
+        ["elkésik", "to be late (and miss out)"],
+        ["elveszít", "to lose (something)"],
+        ["szerencsére", "luckily, fortunately"],
+        ["elromlik", "to break down"],
+        ["eltűnik", "to disappear, go missing"]
+      ],
+      "teaches": ["elkesik-vocab", "elveszit-vocab", "szerencsere-vocab"]
+    },
+    {
+      "id": "a2-126-controlled-2",
+      "type": "fill-blank",
+      "category": "controlled",
+      "sentence": "Ma reggel ____ a munkából. (I was late)",
+      "answer": "elkéstem",
+      "teaches": ["elkesik-past"]
+    },
+    {
+      "id": "a2-126-controlled-3",
+      "type": "fill-blank",
+      "category": "controlled",
+      "sentence": "Elveszítettem a kulcsomat, de ____ megtaláltam. (luckily)",
+      "answer": "szerencsére",
+      "teaches": ["szerencsere-vocab"]
+    },
+    {
+      "id": "a2-126-controlled-4",
+      "type": "fill-blank",
+      "category": "controlled",
+      "sentence": "Sajnos ____ az autóm. (broke down)",
+      "answer": "elromlott",
+      "teaches": ["elromlik-past"]
+    },
+    {
+      "id": "a2-126-practice-1",
+      "type": "multiple-choice",
+      "category": "practice",
+      "question": "Which sentence means \"I lost my key\"?",
+      "options": ["Elveszítettem a kulcsomat.", "Megtaláltam a kulcsomat.", "Elvittem a kulcsomat."],
+      "correct": 0,
+      "teaches": ["elveszit-past-indefinite"]
+    },
+    {
+      "id": "a2-126-practice-2",
+      "type": "matching",
+      "category": "practice",
+      "pairs": [
+        ["elkéstem", "I was late"],
+        ["elkésett", "he/she was late"],
+        ["elveszítettem", "I lost it"],
+        ["elveszítette", "he/she lost it"],
+        ["eltűnt", "it disappeared"]
+      ],
+      "teaches": ["elkesik-past", "elveszit-past-indefinite", "elveszit-past-definite"]
+    },
+    {
+      "id": "a2-126-practice-3",
+      "type": "sentence-builder",
+      "category": "practice",
+      "tiles": ["Sajnos", "elromlott", "az", "autóm", "."],
+      "solution": ["Sajnos", "elromlott", "az", "autóm", "."],
+      "english": "Unfortunately my car broke down.",
+      "teaches": ["elromlik-past"]
+    },
+    {
+      "id": "a2-126-practice-4",
+      "type": "sentence-builder",
+      "category": "practice",
+      "tiles": ["Szerencsére", "utána", "megtaláltam", "a", "kulcsomat", "."],
+      "solution": ["Szerencsére", "utána", "megtaláltam", "a", "kulcsomat", "."],
+      "english": "Luckily, afterward I found my key.",
+      "teaches": ["szerencsere-vocab"]
+    },
+    {
+      "id": "a2-126-dialogue-1",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        { "speaker": "Petra", "text": "Elkéstél ma reggel?" },
+        { "speaker": "Meg", "text": "_____" }
+      ],
+      "options": ["Igen, elromlott az autóm, ezért elkéstem.", "Nem, korán felébredtem."],
+      "correct": 0,
+      "teaches": ["elkesik-past"]
+    },
+    {
+      "id": "a2-126-dialogue-2",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        { "speaker": "Károly", "text": "Hol van a kulcsod?" },
+        { "speaker": "Meg", "text": "_____" }
+      ],
+      "options": ["Sajnos elveszítettem, de szerencsére megtaláltam.", "A boltban vettem egy újat."],
+      "correct": 0,
+      "teaches": ["elveszit-past-indefinite"]
+    },
+    {
+      "id": "a2-126-writing-1",
+      "type": "structured-writing",
+      "category": "writing",
+      "template": [
+        {
+          "prompt": "Say your car broke down this morning, so you were late for work.",
+          "answer": "Ma reggel elromlott az autóm, ezért elkéstem a munkából."
+        }
+      ],
+      "teaches": ["elkesik-past"]
+    },
+    {
+      "id": "a2-126-writing-2",
+      "type": "structured-writing",
+      "category": "writing",
+      "template": [
+        {
+          "prompt": "Say you lost your key, but luckily you found it later.",
+          "answer": "Elveszítettem a kulcsomat, de szerencsére később megtaláltam."
+        }
+      ],
+      "teaches": ["elveszit-past-indefinite"]
+    },
+    {
+      "id": "a2-126-check-1",
+      "type": "multiple-choice",
+      "category": "check",
+      "question": "What does elkéstem mean?",
+      "options": ["I was late (and missed something)", "I lost something", "I found something"],
+      "correct": 0,
+      "teaches": ["elkesik-past"]
+    },
+    {
+      "id": "a2-126-check-2",
+      "type": "multiple-choice",
+      "category": "check",
+      "question": "Which word means the opposite of sajnos in a story?",
+      "options": ["szerencsére", "aztán", "hirtelen"],
+      "correct": 0,
+      "teaches": ["szerencsere-vocab"]
+    }
+  ]
+}

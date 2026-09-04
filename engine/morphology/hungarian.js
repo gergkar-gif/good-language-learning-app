@@ -2026,7 +2026,7 @@ const HungarianMorphology = (function () {
     // otherwise land in Type II ("adott", for the unrelated verb "ad" "to
     // give") — a lexical fact about which verbs carry that suffix, not
     // something derivable from the surface letters alone. Not exhaustive.
-    const PAST_TYPE_I_LEXICAL = ['marad', 'ébred', 'fárad'];
+    const PAST_TYPE_I_LEXICAL = ['marad', 'ébred', 'fárad', 'ijed'];
     function _pastLinkingClass(stem) {
         if (PAST_TYPE_I_LEXICAL.includes(stem)) return 'never';
         const unit = _finalConsonantUnit(stem);
