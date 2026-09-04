@@ -1,0 +1,168 @@
+{
+  "lesson": "a2-154",
+  "exercises": [
+    {
+      "id": "a2-154-intro-1",
+      "type": "multiple-choice",
+      "category": "introduce",
+      "question": "Which means \"to cancel\"?",
+      "options": ["lemond", "módosít", "foglal"],
+      "correct": 0,
+      "teaches": ["appointment-vocab"]
+    },
+    {
+      "id": "a2-154-intro-2",
+      "type": "multiple-choice",
+      "category": "introduce",
+      "question": "Which means \"urgent\"?",
+      "options": ["sürgős", "gyors", "hibás"],
+      "correct": 0,
+      "teaches": ["appointment-vocab"]
+    },
+    {
+      "id": "a2-154-controlled-1",
+      "type": "matching",
+      "category": "controlled",
+      "pairs": [
+        ["módosít", "to modify, to change"],
+        ["lemond", "to cancel"],
+        ["telefonál", "to phone, to call"],
+        ["hívás", "a call"]
+      ],
+      "teaches": ["appointment-vocab"]
+    },
+    {
+      "id": "a2-154-controlled-2",
+      "type": "matching",
+      "category": "controlled",
+      "pairs": [
+        ["sürgős", "urgent"],
+        ["fog", "future auxiliary: will"],
+        ["időpont", "appointment, time slot"],
+        ["foglal", "to book, to reserve"]
+      ],
+      "teaches": ["appointment-vocab", "fog-jovo"]
+    },
+    {
+      "id": "a2-154-controlled-3",
+      "type": "fill-blank",
+      "category": "controlled",
+      "sentence": "Holnap ____ telefonálni az orvosnak. (I will)",
+      "answer": "fogok",
+      "teaches": ["fog-jovo"]
+    },
+    {
+      "id": "a2-154-controlled-4",
+      "type": "fill-blank",
+      "category": "controlled",
+      "sentence": "Szeretnék egy időpontot ____, mert beteg vagyok. (to cancel)",
+      "answer": "lemondani",
+      "teaches": ["idopontot-modositani"]
+    },
+    {
+      "id": "a2-154-practice-1",
+      "type": "multiple-choice",
+      "category": "practice",
+      "question": "Which sentence uses the future tense with fog?",
+      "options": ["Holnap fogok hívni.", "Holnap hívok.", "Tegnap hívtam."],
+      "correct": 0,
+      "teaches": ["fog-jovo"]
+    },
+    {
+      "id": "a2-154-practice-2",
+      "type": "matching",
+      "category": "practice",
+      "pairs": [
+        ["Szeretnék egy időpontot foglalni.", "I'd like to book an appointment."],
+        ["Szeretnék módosítani egy időpontot.", "I'd like to change an appointment."],
+        ["Szeretnék lemondani egy időpontot.", "I'd like to cancel an appointment."],
+        ["Holnap fogok hívni.", "Tomorrow I will call."]
+      ],
+      "teaches": ["idopontot-modositani", "fog-jovo"]
+    },
+    {
+      "id": "a2-154-practice-3",
+      "type": "sentence-builder",
+      "category": "practice",
+      "tiles": ["Károly", "fog", "hívni", "holnap", "."],
+      "solution": ["Károly", "fog", "hívni", "holnap", "."],
+      "english": "Károly will call tomorrow.",
+      "teaches": ["fog-jovo"]
+    },
+    {
+      "id": "a2-154-practice-4",
+      "type": "sentence-builder",
+      "category": "practice",
+      "tiles": ["Szeretnék", "módosítani", "egy", "időpontot", "."],
+      "solution": ["Szeretnék", "módosítani", "egy", "időpontot", "."],
+      "english": "I'd like to change an appointment.",
+      "teaches": ["idopontot-modositani"]
+    },
+    {
+      "id": "a2-154-dialogue-1",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        { "speaker": "Recepciós", "text": "Miben tudunk segíteni?" },
+        { "speaker": "Meg", "text": "_____" }
+      ],
+      "options": ["Szeretnék egy időpontot módosítani.", "Nagyon elégedett vagyok a szolgáltatással."],
+      "correct": 0,
+      "teaches": ["idopontot-modositani"]
+    },
+    {
+      "id": "a2-154-dialogue-2",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        { "speaker": "Meg", "text": "Mikor fog hívni a fogorvos?" },
+        { "speaker": "Károly", "text": "_____" }
+      ],
+      "options": ["Holnap reggel fog hívni.", "Tegnap hívott."],
+      "correct": 0,
+      "teaches": ["fog-jovo"]
+    },
+    {
+      "id": "a2-154-writing-1",
+      "type": "structured-writing",
+      "category": "writing",
+      "template": [
+        {
+          "prompt": "Say Károly will call tomorrow.",
+          "answer": "Károly fog hívni holnap."
+        }
+      ],
+      "teaches": ["fog-jovo"]
+    },
+    {
+      "id": "a2-154-writing-2",
+      "type": "structured-writing",
+      "category": "writing",
+      "template": [
+        {
+          "prompt": "Say you'd like to cancel an appointment because you're sick.",
+          "answer": "Szeretnék lemondani egy időpontot, mert beteg vagyok."
+        }
+      ],
+      "teaches": ["idopontot-modositani"]
+    },
+    {
+      "id": "a2-154-check-1",
+      "type": "multiple-choice",
+      "category": "check",
+      "question": "Which correctly completes: \"Holnap ____ telefonálni.\" (\"Tomorrow I will call.\")?",
+      "options": ["fogok", "fogsz", "fog"],
+      "correct": 0,
+      "teaches": ["fog-jovo"]
+    },
+    {
+      "id": "a2-154-check-2",
+      "type": "multiple-choice",
+      "category": "check",
+      "question": "Which means \"to modify, to change\"?",
+      "options": ["módosít", "lemond", "foglal"],
+      "correct": 0,
+      "teaches": ["appointment-vocab"]
+    }
+  ]
+}

@@ -1,0 +1,137 @@
+{
+  "lesson": "a2-155-consolidation",
+  "exercises": [
+    {
+      "id": "a2-155-consolidation-1",
+      "type": "multiple-choice",
+      "category": "recognize",
+      "question": "Which reports the moment something broke, rather than an ongoing state?",
+      "options": ["elromlott", "nem működik", "hiányzik"],
+      "correct": 0,
+      "teaches": ["problem-report"]
+    },
+    {
+      "id": "a2-155-consolidation-2",
+      "type": "multiple-choice",
+      "category": "recognize",
+      "question": "Which politely asks a stranger, formally, \"could you help\"?",
+      "options": ["Tudna segíteni?", "Tudsz segíteni?", "Segítek."],
+      "correct": 0,
+      "teaches": ["tudna-segiteni"]
+    },
+    {
+      "id": "a2-155-consolidation-3",
+      "type": "multiple-choice",
+      "category": "recognize",
+      "question": "Which word means \"that's why, therefore\", linking a problem to what you do next?",
+      "options": ["ezért", "mert", "hogy"],
+      "correct": 0,
+      "teaches": ["ezert-linking"]
+    },
+    {
+      "id": "a2-155-consolidation-4",
+      "type": "matching",
+      "category": "recall",
+      "pairs": [
+        ["hiányzik", "is missing"],
+        ["szükségem van", "I need"],
+        ["szeretnék reklamálni", "I'd like to complain"],
+        ["megoldódott", "it got solved"]
+      ],
+      "teaches": ["hianyzik", "szuksegem-van", "szeretnek-reklamalni", "megold-megoldodik"]
+    },
+    {
+      "id": "a2-155-consolidation-5",
+      "type": "matching",
+      "category": "recall",
+      "pairs": [
+        ["fog hívni", "will call"],
+        ["időpontot módosítani", "to change an appointment"],
+        ["lehet cserélni", "can it be exchanged"],
+        ["kérek egy visszatérítést", "I'd like a refund"]
+      ],
+      "teaches": ["fog-jovo", "idopontot-modositani", "lehet-cserelni"]
+    },
+    {
+      "id": "a2-155-consolidation-6",
+      "type": "fill-blank",
+      "category": "recall",
+      "sentence": "Elromlott a töltőm, ____ szükségem van egy másikra. (that's why)",
+      "answer": "ezért",
+      "teaches": ["ezert-linking"]
+    },
+    {
+      "id": "a2-155-consolidation-7",
+      "type": "sentence-order",
+      "category": "context",
+      "sentences": [
+        "Nem működik a klíma a szobában.",
+        "Ezért szeretnék reklamálni.",
+        "Tudna segíteni?",
+        "Végül gyorsan megoldódott a probléma."
+      ],
+      "solution": [0, 1, 2, 3],
+      "teaches": ["problem-report", "ezert-linking", "tudna-segiteni", "megold-megoldodik"]
+    },
+    {
+      "id": "a2-155-consolidation-8",
+      "type": "dialogue-complete",
+      "category": "context",
+      "prompt": [
+        { "speaker": "Károly", "text": "Mi történt a lakással?" },
+        { "speaker": "Meg", "text": "_____" }
+      ],
+      "options": ["Elromlott a fűtés, ezért fogok telefonálni.", "Holnap fogok főzni."],
+      "correct": 0,
+      "teaches": ["problem-report", "ezert-linking", "fog-jovo"]
+    },
+    {
+      "id": "a2-155-consolidation-9",
+      "type": "dialogue-complete",
+      "category": "context",
+      "prompt": [
+        { "speaker": "Eladó", "text": "Mi a probléma a termékkel?" },
+        { "speaker": "Meg", "text": "_____" }
+      ],
+      "options": ["A probléma az, hogy hibás, ezért kérek egy visszatérítést.", "Nagyon elégedett vagyok a termékkel."],
+      "correct": 0,
+      "teaches": ["szeretnek-reklamalni", "lehet-cserelni", "ezert-linking"]
+    },
+    {
+      "id": "a2-155-consolidation-10",
+      "type": "structured-writing",
+      "category": "produce",
+      "template": [
+        {
+          "prompt": "Say your key is missing, that's why you need help.",
+          "answer": "Hiányzik a kulcsom, ezért szükségem van segítségre."
+        }
+      ],
+      "teaches": ["hianyzik", "szuksegem-van", "ezert-linking"]
+    },
+    {
+      "id": "a2-155-consolidation-11",
+      "type": "structured-writing",
+      "category": "produce",
+      "template": [
+        {
+          "prompt": "Say you'd like to cancel an appointment because you're sick, and that the receptionist will call tomorrow.",
+          "answer": "Szeretnék lemondani egy időpontot, mert beteg vagyok, és a recepciós fog hívni holnap."
+        }
+      ],
+      "teaches": ["idopontot-modositani", "fog-jovo"]
+    },
+    {
+      "id": "a2-155-consolidation-12",
+      "type": "structured-writing",
+      "category": "produce",
+      "template": [
+        {
+          "prompt": "Say the wifi doesn't work, that's why you'd like to complain, and in the end the problem got solved.",
+          "answer": "Nem működik a wifi, ezért szeretnék reklamálni, és végül megoldódott a probléma."
+        }
+      ],
+      "teaches": ["problem-report", "szeretnek-reklamalni", "ezert-linking", "megold-megoldodik"]
+    }
+  ]
+}

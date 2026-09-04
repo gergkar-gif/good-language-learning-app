@@ -1,0 +1,162 @@
+{
+  "lesson": "a2-138",
+  "exercises": [
+    {
+      "id": "a2-138-intro-1",
+      "type": "multiple-choice",
+      "category": "introduce",
+      "question": "Which means \"to warn\"?",
+      "options": ["figyelmeztet", "javasol", "tanácsol"],
+      "correct": 0,
+      "teaches": ["advice-vocab"]
+    },
+    {
+      "id": "a2-138-intro-2",
+      "type": "multiple-choice",
+      "category": "introduce",
+      "question": "Which phrase means \"you should\", aimed at one specific person?",
+      "options": ["Neked kellene", "Kellene", "Nekem kellene"],
+      "correct": 0,
+      "teaches": ["directed-kellene"]
+    },
+    {
+      "id": "a2-138-controlled-1",
+      "type": "matching",
+      "category": "controlled",
+      "pairs": [
+        ["nekem kellene", "I should"],
+        ["neked kellene", "you should"],
+        ["neki kellene", "he/she should"],
+        ["nekünk kellene", "we should"]
+      ],
+      "teaches": ["directed-kellene"]
+    },
+    {
+      "id": "a2-138-controlled-2",
+      "type": "matching",
+      "category": "controlled",
+      "pairs": [
+        ["figyelmeztet", "to warn"],
+        ["időben", "in time, on time"],
+        ["óvatos", "careful"],
+        ["aggódik", "to worry"]
+      ],
+      "teaches": ["advice-vocab"]
+    },
+    {
+      "id": "a2-138-controlled-3",
+      "type": "fill-blank",
+      "category": "controlled",
+      "sentence": "____ kellene többet pihenni. Fáradtnak tűnsz. (you)",
+      "answer": "Neked",
+      "teaches": ["directed-kellene"]
+    },
+    {
+      "id": "a2-138-controlled-4",
+      "type": "fill-blank",
+      "category": "controlled",
+      "sentence": "Ő beteg, ____ kellene orvoshoz menni. (he/she)",
+      "answer": "Neki",
+      "teaches": ["directed-kellene"]
+    },
+    {
+      "id": "a2-138-practice-1",
+      "type": "multiple-choice",
+      "category": "practice",
+      "question": "Which is the 2nd-person conditional of pihen (\"to rest\")?",
+      "options": ["pihennél", "pihensz", "pihentél"],
+      "correct": 0,
+      "teaches": ["2sg-conditional-advice"]
+    },
+    {
+      "id": "a2-138-practice-2",
+      "type": "matching",
+      "category": "practice",
+      "pairs": [
+        ["pihennél", "you would rest"],
+        ["sportolnál", "you would exercise"],
+        ["aludnál", "you would sleep"],
+        ["ennél", "you would eat"]
+      ],
+      "teaches": ["2sg-conditional-advice"]
+    },
+    {
+      "id": "a2-138-practice-3",
+      "type": "sentence-builder",
+      "category": "practice",
+      "tiles": ["Pihennél", "egy", "kicsit", "?"],
+      "solution": ["Pihennél", "egy", "kicsit", "?"],
+      "english": "Would you rest a little?",
+      "teaches": ["2sg-conditional-advice"]
+    },
+    {
+      "id": "a2-138-practice-4",
+      "type": "sentence-builder",
+      "category": "practice",
+      "tiles": ["Aggódom", ",", "légy", "óvatos", "!"],
+      "solution": ["Aggódom", ",", "légy", "óvatos", "!"],
+      "english": "I'm worried, be careful!",
+      "teaches": ["advice-vocab"]
+    },
+    {
+      "id": "a2-138-dialogue-1",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        { "speaker": "Ildikó", "text": "Nagyon fáradtnak tűnsz mostanában." },
+        { "speaker": "Meg", "text": "_____" }
+      ],
+      "options": ["Igazad van, nekem kellene többet pihenni.", "Igazad van, neked kellene többet pihenni."],
+      "correct": 0,
+      "teaches": ["directed-kellene"]
+    },
+    {
+      "id": "a2-138-dialogue-2",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        { "speaker": "Károly", "text": "Egész nap ülök az irodában, és fáj a hátam." },
+        { "speaker": "Meg", "text": "_____" }
+      ],
+      "options": ["Sportolnál többet? Az jó lenne.", "Sportoltam tegnap."],
+      "correct": 0,
+      "teaches": ["2sg-conditional-advice"]
+    },
+    {
+      "id": "a2-138-writing-1",
+      "type": "structured-writing",
+      "category": "writing",
+      "template": [
+        { "prompt": "Say that you (Meg, about herself) should rest more.", "answer": "Nekem kellene többet pihenni." }
+      ],
+      "teaches": ["directed-kellene"]
+    },
+    {
+      "id": "a2-138-writing-2",
+      "type": "structured-writing",
+      "category": "writing",
+      "template": [
+        { "prompt": "Ask a friend (informally) if they would rest a little.", "answer": "Pihennél egy kicsit?" }
+      ],
+      "teaches": ["2sg-conditional-advice"]
+    },
+    {
+      "id": "a2-138-check-1",
+      "type": "multiple-choice",
+      "category": "check",
+      "question": "Which correctly says \"You should go to the doctor\" (informal you)?",
+      "options": ["Neked kellene orvoshoz menni.", "Nekem kellene orvoshoz menni.", "Neki kellene orvoshoz menni."],
+      "correct": 0,
+      "teaches": ["directed-kellene"]
+    },
+    {
+      "id": "a2-138-check-2",
+      "type": "multiple-choice",
+      "category": "check",
+      "question": "Which is the 2nd-person conditional (\"you would...\") of enni (\"to eat\")?",
+      "options": ["ennél", "eszel", "ettél"],
+      "correct": 0,
+      "teaches": ["2sg-conditional-advice"]
+    }
+  ]
+}

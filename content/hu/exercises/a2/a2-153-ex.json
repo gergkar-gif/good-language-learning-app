@@ -1,0 +1,168 @@
+{
+  "lesson": "a2-153",
+  "exercises": [
+    {
+      "id": "a2-153-intro-1",
+      "type": "multiple-choice",
+      "category": "introduce",
+      "question": "Which means \"refund\"?",
+      "options": ["visszatérítés", "csere", "minőség"],
+      "correct": 0,
+      "teaches": ["complaint-vocab"]
+    },
+    {
+      "id": "a2-153-intro-2",
+      "type": "multiple-choice",
+      "category": "introduce",
+      "question": "Which means \"dissatisfied\"?",
+      "options": ["elégedetlen", "elégedett", "hibás"],
+      "correct": 0,
+      "teaches": ["complaint-vocab"]
+    },
+    {
+      "id": "a2-153-controlled-1",
+      "type": "matching",
+      "category": "controlled",
+      "pairs": [
+        ["visszatérítés", "refund"],
+        ["csere", "exchange, replacement"],
+        ["cserél", "to exchange, to swap"],
+        ["minőség", "quality"]
+      ],
+      "teaches": ["complaint-vocab"]
+    },
+    {
+      "id": "a2-153-controlled-2",
+      "type": "matching",
+      "category": "controlled",
+      "pairs": [
+        ["elégedetlen", "dissatisfied"],
+        ["reklamál", "to complain"],
+        ["hibás", "broken, faulty"],
+        ["panasz", "complaint"]
+      ],
+      "teaches": ["complaint-vocab"]
+    },
+    {
+      "id": "a2-153-controlled-3",
+      "type": "fill-blank",
+      "category": "controlled",
+      "sentence": "Szeretnék ____, mert hibás a termék. (to complain)",
+      "answer": "reklamálni",
+      "teaches": ["szeretnek-reklamalni"]
+    },
+    {
+      "id": "a2-153-controlled-4",
+      "type": "fill-blank",
+      "category": "controlled",
+      "sentence": "Nem vagyok elégedett, ezért kérek egy ____. (refund)",
+      "answer": "visszatérítést",
+      "teaches": ["lehet-cserelni"]
+    },
+    {
+      "id": "a2-153-practice-1",
+      "type": "multiple-choice",
+      "category": "practice",
+      "question": "Which asks whether something can be exchanged, in general?",
+      "options": ["Lehet cserélni?", "Kérek egy cserét.", "Elégedett vagyok."],
+      "correct": 0,
+      "teaches": ["lehet-cserelni"]
+    },
+    {
+      "id": "a2-153-practice-2",
+      "type": "matching",
+      "category": "practice",
+      "pairs": [
+        ["Szeretnék reklamálni.", "I'd like to make a complaint."],
+        ["A probléma az, hogy...", "The problem is that..."],
+        ["Lehet cserélni?", "Can it be exchanged?"],
+        ["Kérek egy visszatérítést.", "I'd like a refund."]
+      ],
+      "teaches": ["szeretnek-reklamalni", "lehet-cserelni"]
+    },
+    {
+      "id": "a2-153-practice-3",
+      "type": "sentence-builder",
+      "category": "practice",
+      "tiles": ["Szeretnék", "reklamálni,", "mert", "piszkos", "volt", "a", "szoba", "."],
+      "solution": ["Szeretnék", "reklamálni,", "mert", "piszkos", "volt", "a", "szoba", "."],
+      "english": "I'd like to complain, because the room was dirty.",
+      "teaches": ["szeretnek-reklamalni"]
+    },
+    {
+      "id": "a2-153-practice-4",
+      "type": "sentence-builder",
+      "category": "practice",
+      "tiles": ["Lehet", "cserélni", "a", "terméket", "?"],
+      "solution": ["Lehet", "cserélni", "a", "terméket", "?"],
+      "english": "Can the product be exchanged?",
+      "teaches": ["lehet-cserelni"]
+    },
+    {
+      "id": "a2-153-dialogue-1",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        { "speaker": "Meg", "text": "Szeretnék reklamálni, mert nem működik a termék." },
+        { "speaker": "Eladó", "text": "_____" }
+      ],
+      "options": ["Sajnálom, lehet cserélni vagy visszatérítést kérni.", "Nagyon elégedett vagyok a termékkel."],
+      "correct": 0,
+      "teaches": ["lehet-cserelni"]
+    },
+    {
+      "id": "a2-153-dialogue-2",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        { "speaker": "Eladó", "text": "Mi a probléma a termékkel?" },
+        { "speaker": "Meg", "text": "_____" }
+      ],
+      "options": ["A probléma az, hogy hibás a minősége.", "Nagyon jó a minősége."],
+      "correct": 0,
+      "teaches": ["complaint-vocab"]
+    },
+    {
+      "id": "a2-153-writing-1",
+      "type": "structured-writing",
+      "category": "writing",
+      "template": [
+        {
+          "prompt": "Say you'd like to complain because the product is faulty.",
+          "answer": "Szeretnék reklamálni, mert hibás a termék."
+        }
+      ],
+      "teaches": ["szeretnek-reklamalni"]
+    },
+    {
+      "id": "a2-153-writing-2",
+      "type": "structured-writing",
+      "category": "writing",
+      "template": [
+        {
+          "prompt": "Ask if it's possible to exchange it, then say you'd like a refund.",
+          "answer": "Lehet cserélni? Kérek egy visszatérítést."
+        }
+      ],
+      "teaches": ["lehet-cserelni"]
+    },
+    {
+      "id": "a2-153-check-1",
+      "type": "multiple-choice",
+      "category": "check",
+      "question": "Which means \"quality\"?",
+      "options": ["minőség", "csere", "panasz"],
+      "correct": 0,
+      "teaches": ["complaint-vocab"]
+    },
+    {
+      "id": "a2-153-check-2",
+      "type": "multiple-choice",
+      "category": "check",
+      "question": "Which correctly completes: \"Nem vagyok elégedett, ____ kérek egy cserét.\" (\"...so I'd like an exchange.\")?",
+      "options": ["ezért", "mert", "hogy"],
+      "correct": 0,
+      "teaches": ["lehet-cserelni"]
+    }
+  ]
+}

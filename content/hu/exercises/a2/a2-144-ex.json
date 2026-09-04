@@ -1,0 +1,168 @@
+{
+  "lesson": "a2-144",
+  "exercises": [
+    {
+      "id": "a2-144-intro-1",
+      "type": "multiple-choice",
+      "category": "introduce",
+      "question": "Which means \"to agree\"?",
+      "options": ["egyetért", "összehasonlít", "hisz"],
+      "correct": 0,
+      "teaches": ["agreement-vocab"]
+    },
+    {
+      "id": "a2-144-intro-2",
+      "type": "multiple-choice",
+      "category": "introduce",
+      "question": "Which means \"true, right\"?",
+      "options": ["igaz", "jó", "szép"],
+      "correct": 0,
+      "teaches": ["agreement-vocab"]
+    },
+    {
+      "id": "a2-144-controlled-1",
+      "type": "matching",
+      "category": "controlled",
+      "pairs": [
+        ["egyetért", "to agree"],
+        ["igaz", "true, right"],
+        ["persze", "of course"],
+        ["szerintem is", "I think so too"]
+      ],
+      "teaches": ["agreement-vocab"]
+    },
+    {
+      "id": "a2-144-controlled-2",
+      "type": "matching",
+      "category": "controlled",
+      "pairs": [
+        ["szerintem nem", "I don't think so"],
+        ["Egyetértek Károllyal.", "I agree with Károly."],
+        ["Nem értek egyet.", "I don't agree."],
+        ["Egyetértesz velem?", "Do you agree with me?"]
+      ],
+      "teaches": ["egyetert-val-vel", "nem-ertek-egyet"]
+    },
+    {
+      "id": "a2-144-controlled-3",
+      "type": "fill-blank",
+      "category": "controlled",
+      "sentence": "____ Károllyal, a másik szálloda jobb. (I agree)",
+      "answer": "Egyetértek",
+      "teaches": ["egyetert-val-vel"]
+    },
+    {
+      "id": "a2-144-controlled-4",
+      "type": "fill-blank",
+      "category": "controlled",
+      "sentence": "Nem ____ egyet veled. (I don't agree with you)",
+      "answer": "értek",
+      "teaches": ["nem-ertek-egyet"]
+    },
+    {
+      "id": "a2-144-practice-1",
+      "type": "multiple-choice",
+      "category": "practice",
+      "question": "How does egyetértek change under negation, the same way bemegyek becomes nem megyek be?",
+      "options": ["Nem értek egyet.", "Nem egyetértek.", "Egyetértek nem."],
+      "correct": 0,
+      "teaches": ["nem-ertek-egyet"]
+    },
+    {
+      "id": "a2-144-practice-2",
+      "type": "matching",
+      "category": "practice",
+      "pairs": [
+        ["Nem értek egyet veled, szerintem a másik terv jobb.", "I don't agree with you, in my opinion the other plan is better."],
+        ["Szerintem finom volt a vacsora. Szerintem is!", "In my opinion dinner was tasty. I think so too!"],
+        ["Igazad van.", "You're right."],
+        ["Egyetértesz velem?", "Do you agree with me?"]
+      ],
+      "teaches": ["egyetert-val-vel", "nem-ertek-egyet"]
+    },
+    {
+      "id": "a2-144-practice-3",
+      "type": "sentence-builder",
+      "category": "practice",
+      "tiles": ["Nem", "értek", "egyet", "veled", "."],
+      "solution": ["Nem", "értek", "egyet", "veled", "."],
+      "english": "I don't agree with you.",
+      "teaches": ["nem-ertek-egyet"]
+    },
+    {
+      "id": "a2-144-practice-4",
+      "type": "sentence-builder",
+      "category": "practice",
+      "tiles": ["Egyetértek", ",", "ez", "jó", "ötlet", "."],
+      "solution": ["Egyetértek", ",", "ez", "jó", "ötlet", "."],
+      "english": "I agree, this is a good idea.",
+      "teaches": ["egyetert-val-vel"]
+    },
+    {
+      "id": "a2-144-dialogue-1",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        { "speaker": "Zsófia", "text": "Szerintem ez a legjobb megoldás. Te mit gondolsz?" },
+        { "speaker": "Meg", "text": "_____" }
+      ],
+      "options": ["Szerintem is, egyetértek.", "Két éjszakára foglaltam szobát."],
+      "correct": 0,
+      "teaches": ["egyetert-val-vel"]
+    },
+    {
+      "id": "a2-144-dialogue-2",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        { "speaker": "Tamás", "text": "Szerintem a busz gyorsabb, mint a vonat." },
+        { "speaker": "Meg", "text": "_____" }
+      ],
+      "options": ["Nem értek egyet, szerintem a vonat gyorsabb.", "Holnap egyetemre megyek."],
+      "correct": 0,
+      "teaches": ["nem-ertek-egyet"]
+    },
+    {
+      "id": "a2-144-writing-1",
+      "type": "structured-writing",
+      "category": "writing",
+      "template": [
+        {
+          "prompt": "Say you agree with Károly.",
+          "answer": "Egyetértek Károllyal."
+        }
+      ],
+      "teaches": ["egyetert-val-vel"]
+    },
+    {
+      "id": "a2-144-writing-2",
+      "type": "structured-writing",
+      "category": "writing",
+      "template": [
+        {
+          "prompt": "Say you don't agree, and you think the other plan is better.",
+          "answer": "Nem értek egyet, szerintem a másik terv jobb."
+        }
+      ],
+      "teaches": ["nem-ertek-egyet"]
+    },
+    {
+      "id": "a2-144-check-1",
+      "type": "multiple-choice",
+      "category": "check",
+      "question": "Which sentence means \"I don't agree\"?",
+      "options": ["Nem értek egyet.", "Nem egyetértek.", "Egyetértek nem."],
+      "correct": 0,
+      "teaches": ["nem-ertek-egyet"]
+    },
+    {
+      "id": "a2-144-check-2",
+      "type": "multiple-choice",
+      "category": "check",
+      "question": "Which means \"I think so too\"?",
+      "options": ["Szerintem is", "Szerintem nem", "Igazad van"],
+      "correct": 0,
+      "teaches": ["agreement-vocab"]
+    }
+  ]
+}

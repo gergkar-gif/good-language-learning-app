@@ -1,0 +1,168 @@
+{
+  "lesson": "a2-142",
+  "exercises": [
+    {
+      "id": "a2-142-intro-1",
+      "type": "multiple-choice",
+      "category": "introduce",
+      "question": "Which means \"rather, preferably\"?",
+      "options": ["inkább", "jobban", "mindegy"],
+      "correct": 0,
+      "teaches": ["preference-vocab"]
+    },
+    {
+      "id": "a2-142-intro-2",
+      "type": "multiple-choice",
+      "category": "introduce",
+      "question": "Which means \"it doesn't matter, all the same\"?",
+      "options": ["mindegy", "kedvenc", "talán"],
+      "correct": 0,
+      "teaches": ["preference-vocab"]
+    },
+    {
+      "id": "a2-142-controlled-1",
+      "type": "matching",
+      "category": "controlled",
+      "pairs": [
+        ["inkább", "rather, preferably"],
+        ["jobban", "better"],
+        ["mindegy", "it doesn't matter, all the same"],
+        ["tea", "tea"]
+      ],
+      "teaches": ["preference-vocab"]
+    },
+    {
+      "id": "a2-142-controlled-2",
+      "type": "matching",
+      "category": "controlled",
+      "pairs": [
+        ["Jobban szeretem a teát.", "I like tea better."],
+        ["Inkább kávét iszom.", "I'd rather drink coffee."],
+        ["Nekem mindegy.", "It's all the same to me."],
+        ["kávé", "coffee"]
+      ],
+      "teaches": ["inkabb-rather", "jobban-szeretem"]
+    },
+    {
+      "id": "a2-142-controlled-3",
+      "type": "fill-blank",
+      "category": "controlled",
+      "sentence": "____ teát iszom, mint kávét. (I'd rather)",
+      "answer": "Inkább",
+      "teaches": ["inkabb-rather"]
+    },
+    {
+      "id": "a2-142-controlled-4",
+      "type": "fill-blank",
+      "category": "controlled",
+      "sentence": "____ szeretem a teát, mint a kávét. (I like ... better)",
+      "answer": "Jobban",
+      "teaches": ["jobban-szeretem"]
+    },
+    {
+      "id": "a2-142-practice-1",
+      "type": "multiple-choice",
+      "category": "practice",
+      "question": "Which word goes right in front of the verb to say what you'd rather do?",
+      "options": ["inkább", "jobban", "mindegy"],
+      "correct": 0,
+      "teaches": ["inkabb-rather"]
+    },
+    {
+      "id": "a2-142-practice-2",
+      "type": "matching",
+      "category": "practice",
+      "pairs": [
+        ["Inkább gyalog megyek, mint busszal.", "I'd rather walk than take the bus."],
+        ["Jobban szeretem a magyar konyhát, mint az olaszt.", "I like Hungarian cuisine better than Italian."],
+        ["Nekem mindegy, tea vagy kávé.", "It's all the same to me, tea or coffee."],
+        ["Ma este inkább itthon vacsorázunk.", "Tonight we'd rather have dinner at home."]
+      ],
+      "teaches": ["inkabb-rather", "jobban-szeretem"]
+    },
+    {
+      "id": "a2-142-practice-3",
+      "type": "sentence-builder",
+      "category": "practice",
+      "tiles": ["Inkább", "teát", "iszom", ",", "mint", "kávét", "."],
+      "solution": ["Inkább", "teát", "iszom", ",", "mint", "kávét", "."],
+      "english": "I'd rather drink tea than coffee.",
+      "teaches": ["inkabb-rather"]
+    },
+    {
+      "id": "a2-142-practice-4",
+      "type": "sentence-builder",
+      "category": "practice",
+      "tiles": ["Jobban", "szeretem", "a", "nyarat", ",", "mint", "a", "telet", "."],
+      "solution": ["Jobban", "szeretem", "a", "nyarat", ",", "mint", "a", "telet", "."],
+      "english": "I like summer better than winter.",
+      "teaches": ["jobban-szeretem"]
+    },
+    {
+      "id": "a2-142-dialogue-1",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        { "speaker": "Károly", "text": "Teát vagy kávét kérsz?" },
+        { "speaker": "Meg", "text": "_____" }
+      ],
+      "options": ["Inkább teát kérek.", "Két éjszakára foglaltam szobát."],
+      "correct": 0,
+      "teaches": ["inkabb-rather"]
+    },
+    {
+      "id": "a2-142-dialogue-2",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        { "speaker": "Zsófia", "text": "Mit szeretsz jobban, a nyarat vagy a telet?" },
+        { "speaker": "Meg", "text": "_____" }
+      ],
+      "options": ["Jobban szeretem a nyarat, mint a telet.", "Szeptember óta egyetemre járok."],
+      "correct": 0,
+      "teaches": ["jobban-szeretem"]
+    },
+    {
+      "id": "a2-142-writing-1",
+      "type": "structured-writing",
+      "category": "writing",
+      "template": [
+        {
+          "prompt": "Say you'd rather stay home tonight.",
+          "answer": "Ma este inkább itthon maradok."
+        }
+      ],
+      "teaches": ["inkabb-rather"]
+    },
+    {
+      "id": "a2-142-writing-2",
+      "type": "structured-writing",
+      "category": "writing",
+      "template": [
+        {
+          "prompt": "Say you like Hungarian cuisine better than Italian.",
+          "answer": "Jobban szeretem a magyar konyhát, mint az olaszt."
+        }
+      ],
+      "teaches": ["jobban-szeretem"]
+    },
+    {
+      "id": "a2-142-check-1",
+      "type": "multiple-choice",
+      "category": "check",
+      "question": "Which sentence means \"I'd rather walk than take the bus\"?",
+      "options": ["Inkább gyalog megyek, mint busszal.", "Jobban szeretem a buszt, mint a vonatot.", "Szerintem a busz jobb."],
+      "correct": 0,
+      "teaches": ["inkabb-rather"]
+    },
+    {
+      "id": "a2-142-check-2",
+      "type": "multiple-choice",
+      "category": "check",
+      "question": "Which word means \"it doesn't matter, all the same\"?",
+      "options": ["mindegy", "inkább", "jobban"],
+      "correct": 0,
+      "teaches": ["preference-vocab"]
+    }
+  ]
+}

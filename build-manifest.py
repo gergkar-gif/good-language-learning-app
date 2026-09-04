@@ -508,6 +508,13 @@ LANG_UNIT_TITLES = {
             "Ability, Possibility & Permission",
             "Talking About the Past I",
             "Talking About the Past II",
+            "Telling Stories",
+            "Future Plans",
+            "Suggestions & Conditional",
+            "Opinions, Preferences & Comparisons",
+            "Review 2: Work, Past & Opinions",
+            "Problems, Requests & Everyday Communication",
+            "Living in Hungarian",
         ],
     },
 }
