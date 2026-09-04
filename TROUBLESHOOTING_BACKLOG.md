@@ -1382,3 +1382,44 @@ screen in the Hungarian course, not just the review units.
   mozi, élt, örült, igen, nőtt, lakom, volt, gyors) for regressions —
   none found, same readings and ranking as before, just with any
   genuinely competing morphological reading now able to surface too.
+
+## Lesson loads took 10-30s deep into a course (found & fixed 2026-09-04)
+
+- [x] Reported: "What's Next" and lesson loads in general were slow,
+  10-30s in the worst case. Root cause: `engine/recycle.js`'s
+  `collectRecyclePool()` rebuilds the SRS-style recycle block on every
+  lesson load by re-fetching *every* previously-completed lesson's full
+  JSON plus every referenced exercise-group file — and did so with a
+  sequential `for...of` + `await` loop, one fetch at a time, with no
+  lesson-level cache. Deep into a course (hundreds of completed
+  lessons) this meant hundreds of sequential round trips before the
+  lesson could render at all.
+  **Fix, attempt 1**: added a `recycle.js`-local lesson-JSON cache
+  (safe — this module only ever reads `.sections`, never mutates the
+  lesson object the way `startLesson()` does) and switched both fetch
+  loops (lessons, then their exercise-group files) to `Promise.all`.
+  **Bug found while verifying attempt 1**: instrumented request
+  counting showed the "fixed" version issuing *more* total requests
+  than the original (1997 vs the original's 600), all for the same 600
+  unique files — a classic cache-race. Both the new lesson cache and
+  the pre-existing `loadContent()` path cache in `engine/lessons.js`
+  checked-then-set across an `await` boundary (`if (cache[key]) return
+  cache[key]` ... `await fetch()` ... `cache[key] = data`); sequential
+  code never triggered this because the cache was always populated
+  before a second reference to the same file was ever reached, but
+  `Promise.all` fires concurrent callers for the same file before any
+  of them has resolved, so each one sees an empty cache and fires its
+  own duplicate fetch. Net effect: parallelizing without fixing this
+  made the no-latency local case *slower* (6.1s vs the original 1.8s),
+  not faster.
+  **Fix, attempt 2**: both caches now store the in-flight *promise*
+  itself, written synchronously before any `await`, so concurrent
+  callers for the same key all await the one real fetch. Verified:
+  request count dropped back to 600 total (== 600 unique, zero
+  duplicates); recycle exercises still render correctly (spot-checked
+  the actual picks against real earlier lessons); local no-latency load
+  time improved to ~1.2s (was 1.8s); under 50ms/request injected
+  latency with 299 completed lessons marked, load time dropped from
+  ~34.4s to ~1.7s — a ~20x improvement under conditions resembling the
+  reported real-world slowdown (unlike bare localhost, which has near-
+  zero latency and doesn't reproduce the symptom on its own).
