@@ -17,6 +17,7 @@ const TranslationDriller = (function () {
     const PHASE = { SETTINGS: 1, SESSION: 2, RESULTS: 3 };
     const MODE = { COUNT: 'count', TIMED: 'timed' };
     const DIRECTION = { ES_EN: 'es-en', EN_ES: 'en-es', MIXED: 'mixed' };
+    const TRACK = { CORE: 'core', LATAM: 'latam' };
     const COUNT_OPTIONS = [5, 10, 15, 20, 30];
     const TIMER_PRESETS = [1, 2, 3, 5];
 
@@ -29,6 +30,13 @@ const TranslationDriller = (function () {
     let _direction = DIRECTION.ES_EN;
     let _level = 'all';
     let _topic = 'all';
+    // Only meaningful where a level actually has more than one track (today,
+    // just ES B1's core-grammar vs. LatAm-history dual track) — sentences
+    // with no `track` field are always treated as "core" (see
+    // scripts/build_translation_index.py), so this never hides content on a
+    // single-track level; the tab itself only renders when the current
+    // level pool actually contains a second track, per _hasLatam() below.
+    let _track = TRACK.CORE;
     let _questionCount = 10;
     let _timerMinutes = 2;
 
@@ -72,21 +80,37 @@ const TranslationDriller = (function () {
         return level === 'all' ? _pairs : _pairs.filter(p => p.level === level);
     }
 
-    function _poolFor(level, topic) {
-        const byLevel = _byLevel(level);
-        return topic === 'all' ? byLevel : byLevel.filter(p => p.topic === topic);
+    // Any pair with no `track` is single-track content and always counts as
+    // "core" — only a dual-track level's LatAm pairs are ever excluded here.
+    function _byTrack(pairs, track) {
+        return pairs.filter(p => (p.track || TRACK.CORE) === track);
     }
 
-    // Distinct topics among this level's pairs, alphabetical, with counts —
-    // scoped to the level so switching level always shows a topic list
-    // that's actually browsable (the full cross-level set is 100+, one
-    // level's worth is usually a few dozen). Pairs without a derived topic
-    // (a handful of irregular filenames — see build_translation_index.py)
-    // aren't lost, they're just not filterable by topic; "All topics"
-    // still includes them.
-    function _topicsFor(level) {
+    // Whether the given level's pool actually contains a second track —
+    // the Core/LatAm tab only renders when this is true, so single-track
+    // levels (currently everything but B1) never show an irrelevant split.
+    function _hasLatam(level) {
+        return _byLevel(level).some(p => p.track === TRACK.LATAM);
+    }
+
+    function _poolFor(level, topic, track) {
+        let pool = _byLevel(level);
+        if (_hasLatam(level)) pool = _byTrack(pool, track);
+        return topic === 'all' ? pool : pool.filter(p => p.topic === topic);
+    }
+
+    // Distinct topics among this level+track's pairs, alphabetical, with
+    // counts — scoped the same way the level itself is, so switching level
+    // or track always shows a topic list that's actually browsable (the
+    // full cross-level set is 100+, one level's worth is usually a few
+    // dozen). Pairs without a derived topic (a handful of irregular
+    // filenames — see build_translation_index.py) aren't lost, they're
+    // just not filterable by topic; "All topics" still includes them.
+    function _topicsFor(level, track) {
+        let pool = _byLevel(level);
+        if (_hasLatam(level)) pool = _byTrack(pool, track);
         const counts = new Map();
-        _byLevel(level).forEach(p => {
+        pool.forEach(p => {
             if (!p.topic) return;
             counts.set(p.topic, (counts.get(p.topic) || 0) + 1);
         });
@@ -117,11 +141,13 @@ const TranslationDriller = (function () {
         const totalA1 = _pairs.filter(p => p.level === 'A1').length;
         const totalA2 = _pairs.filter(p => p.level === 'A2').length;
         const totalB1 = _pairs.filter(p => p.level === 'B1').length;
-        const topics = _topicsFor(_level);
+        const hasLatam = _hasLatam(_level);
+        const topics = _topicsFor(_level, _track);
         // The level select above can leave _topic pointing at a topic that
-        // doesn't exist at the newly-chosen level (e.g. picking A1 right
-        // after selecting a B1-only topic) — fall back to "All topics"
-        // rather than silently filtering to nothing.
+        // doesn't exist at the newly-chosen level/track (e.g. picking A1
+        // right after selecting a B1-only topic, or switching Core -> LatAm
+        // on B1) — fall back to "All topics" rather than silently filtering
+        // to nothing.
         if (_topic !== 'all' && !topics.some(([name]) => name === _topic)) _topic = 'all';
 
         _container.innerHTML = `
@@ -153,6 +179,18 @@ const TranslationDriller = (function () {
                         <option value="B1">B1 (${totalB1} sentences)</option>
                     </select>
                 </div>
+
+                ${hasLatam ? `
+                    <div class="gd-setting">
+                        <label>Track</label>
+                        <div class="vb-mode-switcher" role="tablist">
+                            <button class="vb-mode-btn${_track === TRACK.CORE ? ' active' : ''}"
+                                data-track="${TRACK.CORE}" role="tab" aria-selected="${_track === TRACK.CORE}">Core</button>
+                            <button class="vb-mode-btn${_track === TRACK.LATAM ? ' active' : ''}"
+                                data-track="${TRACK.LATAM}" role="tab" aria-selected="${_track === TRACK.LATAM}">Latin America</button>
+                        </div>
+                    </div>
+                ` : ''}
 
                 <div class="gd-setting">
                     <label for="td-topic">Topic</label>
@@ -199,9 +237,16 @@ const TranslationDriller = (function () {
         const levelSelect = _container.querySelector('#td-level');
         levelSelect.value = _level;
         // Full re-render, not just updating _level, since the topic list
-        // below is scoped to whichever level is selected — picking a new
-        // level needs to refresh which topics are even offered.
+        // below is scoped to whichever level is selected, and the Track tab
+        // itself only appears for a level that actually has a second track
+        // — picking a new level needs to refresh both.
         levelSelect.addEventListener('change', e => { _level = e.target.value; _renderSettings(); });
+
+        _container.querySelectorAll('[data-track]').forEach(btn => {
+            // Full re-render, same reason as the level select above: the
+            // topic list is scoped to the current track too.
+            btn.addEventListener('click', () => { _track = btn.dataset.track; _renderSettings(); });
+        });
 
         const topicSelect = _container.querySelector('#td-topic');
         topicSelect.value = _topic;
@@ -220,7 +265,7 @@ const TranslationDriller = (function () {
     //  RENDERING — Session
     // ================================================================
     function _startSession() {
-        const pool = _poolFor(_level, _topic);
+        const pool = _poolFor(_level, _topic, _track);
         _seen = 0;
         _correct = 0;
 

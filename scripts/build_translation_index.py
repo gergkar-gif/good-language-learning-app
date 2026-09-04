@@ -13,7 +13,19 @@ Two sources, both already authored for other purposes:
     skipped).
 
 Output: content/<lang>/indexes/translation-index.json
-    { "pairs": [ { spanish, english, level, source, topic? }, ... ] }
+    { "pairs": [ { spanish, english, level, source, topic?, track? }, ... ] }
+
+`track` (added 2026-09-04, for the Translation Driller's dual-track split)
+is only ever set to "core" or "latam", and only for B1 -- the one level
+that's dual-track today (ES B1's cultural-history LatAm track runs
+alongside its regular grammar-progression "core" track, each numbered 1-36
+independently). It's derived the same way `topic` is: a slug filename
+(B1's LatAm units) means "latam", a numeric unit/lesson filename means
+"core". Every other level has no dual track, so its pairs simply carry no
+`track` key at all -- the driller treats "no track" as "core" rather than
+requiring every non-dual-track course to be retrofitted with the field.
+The pattern (a per-pair `track`, absent unless a level genuinely has more
+than one) is meant to be reused as-is for any future dual-track content.
 
 `level` is the a1/a2/... directory each file already lives in -- content is
 organised one directory per level, so no per-file field to read.
@@ -180,6 +192,21 @@ def _topic_for(stem, level, by_unit_num, by_lesson_num):
     return None
 
 
+def _track_for(stem, level):
+    """"latam" for B1's slug-named cultural-history files, "core" for B1's
+    numeric-unit files, None everywhere else -- only B1 is dual-track today.
+    A1 also has a handful of slug filenames (see SLUG_TOPIC_LABELS' "8 A1
+    entries"), but those are just A1's own topic-naming convention, not a
+    second track, so this deliberately only fires for B1."""
+    if level != "B1":
+        return None
+    if _SLUG_RE.match(stem):
+        return "latam"
+    if _UNIT_RE.match(stem) or _LESSON_ACROSS_LEVEL_RE.match(stem):
+        return "core"
+    return None
+
+
 def from_grammar(grammar_dir, by_unit_num, by_lesson_num):
     pairs = []
     for f in sorted(grammar_dir.glob("*/*.json")):
@@ -189,6 +216,7 @@ def from_grammar(grammar_dir, by_unit_num, by_lesson_num):
         except (json.JSONDecodeError, OSError):
             continue
         topic = _topic_for(f.stem, level, by_unit_num, by_lesson_num)
+        track = _track_for(f.stem, level)
         for section in data.get("sections", []):
             if section.get("type") != "examples":
                 continue
@@ -199,6 +227,8 @@ def from_grammar(grammar_dir, by_unit_num, by_lesson_num):
                     pair = {"spanish": spanish, "english": english, "level": level, "source": "grammar"}
                     if topic:
                         pair["topic"] = topic
+                    if track:
+                        pair["track"] = track
                     pairs.append(pair)
     return pairs
 
@@ -212,6 +242,7 @@ def from_exercises(exercises_dir, by_unit_num, by_lesson_num):
         except (json.JSONDecodeError, OSError):
             continue
         topic = _topic_for(f.stem, level, by_unit_num, by_lesson_num)
+        track = _track_for(f.stem, level)
         for ex in data.get("exercises", []):
             if ex.get("type") != "sentence-builder":
                 continue
@@ -221,6 +252,8 @@ def from_exercises(exercises_dir, by_unit_num, by_lesson_num):
                 pair = {"spanish": _join_tiles(solution), "english": english, "level": level, "source": "exercises"}
                 if topic:
                     pair["topic"] = topic
+                if track:
+                    pair["track"] = track
                 pairs.append(pair)
     return pairs
 
@@ -252,11 +285,17 @@ def main():
             by_level[p["level"]] = by_level.get(p["level"], 0) + 1
         with_topic = sum(1 for p in pairs if p.get("topic"))
         topic_count = len({p["topic"] for p in pairs if p.get("topic")})
+        by_track = {}
+        for p in pairs:
+            if p.get("track"):
+                by_track[p["track"]] = by_track.get(p["track"], 0) + 1
 
         raw_size = output_file.stat().st_size
         print(f"[{lang}] Pairs total:  {len(pairs)}")
         print(f"[{lang}] By level:     {dict(sorted(by_level.items()))}")
         print(f"[{lang}] With topic:   {with_topic}/{len(pairs)} ({topic_count} distinct topics)")
+        if by_track:
+            print(f"[{lang}] By track:     {dict(sorted(by_track.items()))}")
         print(f"[{lang}] Output:       {output_file} ({raw_size:,} bytes)")
 
 
