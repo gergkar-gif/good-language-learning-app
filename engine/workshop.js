@@ -170,7 +170,11 @@ const Workshop = (function () {
         if (back) back.addEventListener('click', close);
     }
 
-    function _renderDriller(driller) {
+    // Every driller except Verbs (which predates this shape and manages its
+    // own container directly) shares one render(container, options) shape —
+    // shared with _stopActiveDriller() below, so the id-to-module mapping
+    // lives in exactly one place.
+    function _moduleFor(id) {
         const DRILLER_MODULES = {
             grammar: typeof GrammarDriller !== 'undefined' ? GrammarDriller : null,
             translation: typeof TranslationDriller !== 'undefined' ? TranslationDriller : null,
@@ -181,13 +185,31 @@ const Workshop = (function () {
             'hu-prefix': typeof HuPrefixDriller !== 'undefined' ? HuPrefixDriller : null,
             'hu-morphology': typeof HuMorphologyDriller !== 'undefined' ? HuMorphologyDriller : null
         };
+        return DRILLER_MODULES[id] || null;
+    }
 
+    function _renderDriller(driller) {
         if (driller.id === 'verbs' && typeof Verbs !== 'undefined') {
             Verbs.render();
-        } else if (DRILLER_MODULES[driller.id]) {
+        } else if (_moduleFor(driller.id)) {
             const container = document.getElementById(driller.containerId);
-            if (container) DRILLER_MODULES[driller.id].render(container, _activeOptions);
+            if (container) _moduleFor(driller.id).render(container, _activeOptions);
         }
+    }
+
+    // Stops whatever the currently-open driller is doing (chiefly: a
+    // Timed-mode setInterval) before Workshop switches away from it —
+    // closing a driller, whether via its own back button or by leaving the
+    // Workshop tab entirely, used to only swap out the DOM, leaving that
+    // timer running forever against a container that no longer exists.
+    function _stopActiveDriller() {
+        if (!_active) return;
+        if (_active === 'verbs') {
+            if (typeof VerbsSpeed !== 'undefined') VerbsSpeed.reset();
+            return;
+        }
+        const mod = _moduleFor(_active);
+        if (mod && typeof mod.stop === 'function') mod.stop();
     }
 
     function render() {
@@ -219,6 +241,7 @@ const Workshop = (function () {
     }
 
     function close() {
+        _stopActiveDriller();
         _active = null;
         _activeOptions = null;
         render();

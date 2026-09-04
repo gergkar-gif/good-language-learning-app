@@ -4,7 +4,29 @@
 
 const LEVELS = ['a1', 'a2', 'b1', 'b2', 'c1'];
 
+// A Workshop driller's Timed-mode timer, an in-progress lesson, or an open
+// story used to just get hidden by the blanket .tab-hiding below, not
+// actually stopped — a driller's setInterval kept ticking against a
+// container that no longer existed, and the abandoned lesson/story stayed
+// resumable in memory even though nothing on screen suggested it. Each
+// teardown here is a plain, idempotent state reset that doesn't itself
+// navigate anywhere, so calling it from inside showTab() can't recurse.
+function teardownTab(tabId) {
+    if (tabId === 'drills' && typeof Workshop !== 'undefined') {
+        Workshop.close();
+    } else if (tabId === 'lesson-screen' && typeof teardownLesson === 'function') {
+        teardownLesson();
+    } else if (tabId === 'reader' && typeof Reader !== 'undefined' && Reader.currentStoryId) {
+        Reader.closeStory();
+    }
+}
+
 function showTab(tabName, button) {
+    const previousTab = document.querySelector('.tab:not(.hidden)');
+    if (previousTab && previousTab.id !== tabName) {
+        teardownTab(previousTab.id);
+    }
+
     document.querySelectorAll('.tab').forEach(tab => tab.classList.add('hidden'));
     const tab = document.getElementById(tabName);
     if (tab) tab.classList.remove('hidden');

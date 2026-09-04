@@ -296,7 +296,23 @@ async function startLesson(lessonId) {
     renderStep();
 }
 
+// Pure state reset — no DOM/tab navigation — so it's safe to call from
+// anywhere a lesson is being abandoned, including from showTab() when the
+// learner leaves via the main nav instead of the lesson's own close button.
+// closeLesson() below calls this too, then handles the navigation part.
+function teardownLesson() {
+    currentLesson = null;
+    currentStepIndex = 0;
+    missedSteps = [];
+    originalStepCount = 0;
+    gradedStepIndices = new Set();
+    lessonStartTime = null;
+    lessonStats = { total: 0, correctFirstTry: 0 };
+    stepState = {};
+}
+
 function closeLesson() {
+    teardownLesson();
     document.getElementById('lesson-screen').classList.add('hidden');
 
     // Through showTab rather than by hand, so the section is re-rendered on

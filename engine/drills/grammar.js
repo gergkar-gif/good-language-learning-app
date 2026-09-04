@@ -438,5 +438,15 @@ const GrammarDriller = (function () {
         }
     }
 
-    return { render };
+    // Called when the learner leaves this driller mid-session via the main
+    // nav rather than its own "change settings"/finish controls — without
+    // this, a Timed-mode session's setInterval keeps ticking forever
+    // against a container that's already been torn down. Idempotent: safe
+    // to call even when no timer is running.
+    function stop() {
+        if (_timerInterval) { clearInterval(_timerInterval); _timerInterval = null; }
+        _phase = PHASE.SETTINGS;
+    }
+
+    return { render, stop };
 })();
