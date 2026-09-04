@@ -51,11 +51,16 @@ let lessonReturnTab = 'learn';
 // per-step interaction state, reset on every renderStep()
 let stepState = {};
 
-// cache so the same content file is not fetched twice
+// Cache keyed by path, holding the in-flight/settled promise itself rather
+// than only the resolved value — recycle.js now requests many of these
+// concurrently via Promise.all, and several sections across different
+// lessons can share the same exercise-group file. Caching the promise
+// synchronously (before any await) means every concurrent caller for the
+// same path awaits the one real fetch instead of each seeing an empty
+// cache and firing its own duplicate request.
 const contentCache = {};
 
-async function loadContent(path) {
-    if (contentCache[path]) return contentCache[path];
+async function fetchContent(path) {
     const fullPath = Lang.content(path);
     // One retry before giving up: a transient fetch blip (flaky mobile
     // connection, a cold service worker) on the FIRST reference to a file
@@ -67,9 +72,7 @@ async function loadContent(path) {
         try {
             const response = await fetch(fullPath);
             if (!response.ok) throw new Error('Content not found: ' + fullPath);
-            const data = await response.json();
-            contentCache[path] = data;
-            return data;
+            return await response.json();
         } catch (error) {
             if (attempt === 0) continue;
             console.warn('Content missing, using placeholder:', path);
@@ -77,6 +80,13 @@ async function loadContent(path) {
     }
     // Return a safe placeholder so the lesson doesn't crash
     return { title: 'Coming soon', sections: [], words: [], lines: [], exercises: [], cards: [] };
+}
+
+function loadContent(path) {
+    if (!(path in contentCache)) {
+        contentCache[path] = fetchContent(path);
+    }
+    return contentCache[path];
 }
 
 async function loadLesson(lessonId) {

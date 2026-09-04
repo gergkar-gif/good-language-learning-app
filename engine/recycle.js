@@ -63,23 +63,61 @@ async function collectRecyclePool(lesson) {
     return pool;
 }
 
+// loadLesson() itself is deliberately uncached — startLesson() mutates the
+// object it returns (attaches a fresh `.steps` array built from that
+// lesson's own current progress/recycle picks), so sharing one cached copy
+// across calls would leak one screen's steps into another. This module
+// never touches `.steps`, only ever reads `.sections`, so it's safe to
+// cache the raw JSON here on its own — and it needs to: without this, every
+// lesson load re-fetched every previously-completed lesson from scratch to
+// rebuild the pool, which scales with total lessons completed and was
+// measured taking 10-30s deep into a course with hundreds of lessons.
+// Caches the promise itself, not just its resolved value — the lessons
+// below are now fetched concurrently via Promise.all, and the "previous
+// level" and "current level" batches can reference the same lesson id
+// across calls. Populating the cache synchronously, before any await,
+// means concurrent callers for the same id all await one real fetch
+// instead of each seeing an empty cache and firing its own.
+const _lessonJsonCache = {};
+function _loadLessonCached(lessonId) {
+    if (!(lessonId in _lessonJsonCache)) {
+        _lessonJsonCache[lessonId] = loadLesson(lessonId);
+    }
+    return _lessonJsonCache[lessonId];
+}
+
 async function addRecycleExercises(pool, lessonEntries) {
-    for (const entry of lessonEntries) {
-        const earlierLesson = await loadLesson(entry.id);
+    // One await per lesson, all in flight together, rather than one at a
+    // time — loadContent()'s own contentCache already makes any exercise
+    // file's second fetch free, so the only real cost left after the lesson
+    // cache above is network latency, which parallelizing collapses from
+    // "sum of every round trip" to "the one slowest round trip."
+    const lessons = await Promise.all(lessonEntries.map(entry => _loadLessonCached(entry.id)));
+
+    const exerciseGroupSections = [];
+    for (const earlierLesson of lessons) {
         if (!earlierLesson) continue;
-
         for (const section of earlierLesson.sections || []) {
-            if (section.type !== 'exercise-group') continue;
-            const file = await loadContent(section.ref);
-            const byId = {};
-            (file.exercises || []).forEach(ex => { byId[ex.id] = ex; });
-
-            for (const id of section.exerciseRefs || []) {
-                const ex = byId[id];
-                if (ex && ex.teaches && ex.teaches.length) pool.push(ex);
-            }
+            if (section.type === 'exercise-group') exerciseGroupSections.push(section);
         }
     }
+
+    // Same reasoning as the lessons above: a cold cache (first lesson of a
+    // fresh page load) means every one of these is a real network fetch,
+    // and there can be hundreds by the time a course is mostly complete —
+    // fire them all at once rather than one at a time.
+    const files = await Promise.all(exerciseGroupSections.map(section => loadContent(section.ref)));
+
+    exerciseGroupSections.forEach((section, i) => {
+        const file = files[i];
+        const byId = {};
+        (file.exercises || []).forEach(ex => { byId[ex.id] = ex; });
+
+        for (const id of section.exerciseRefs || []) {
+            const ex = byId[id];
+            if (ex && ex.teaches && ex.teaches.length) pool.push(ex);
+        }
+    });
 }
 
 // Due cards first, then whichever have been seen least — so a course still
