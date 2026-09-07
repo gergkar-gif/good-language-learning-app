@@ -191,8 +191,11 @@ async function initialiseApp() {
     _attachLessonClose();
     _attachSoundToggle();
 
-    // Verbs module
-    if (typeof Verbs !== 'undefined') {
+    // Verbs module — imports/verbs/verb-list.js is Spanish-only content with
+    // no language scoping (same reason Workshop's own DRILLERS list gates
+    // the Verb Driller card to langs: ['es']), so initialising it under any
+    // other course fetches Spanish verb data nobody can reach and fails.
+    if (typeof Verbs !== 'undefined' && (typeof Lang === 'undefined' || Lang.code() === 'es')) {
         Verbs.init();
     }
 
