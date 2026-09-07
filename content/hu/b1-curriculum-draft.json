@@ -1,0 +1,891 @@
+{
+  "level": "B1",
+  "title": "Hungarian B1",
+  "description": "Dual-track B1: a Core grammar-and-topics track, plus a Citizenship track covering the Hungarian history, constitution, symbols and civic knowledge tested in the honosítási vizsga (simplified-naturalization citizenship interview). Same shape as the Spanish course's Core/LatAm-history split — see ROADMAP.md's 'Hungarian: introduce Hungarian cultural material at B1-B2 (for the citizenship exam)' note.",
+  "notes": [
+    "Each unit gets 5 regular lessons (as listed) plus 1 consolidation lesson, matching the A1/A2 pattern.",
+    "Content pipeline: Core units should use numeric filenames (b1-core-01-01 style, or whatever numbering convention lessons.js's HU path expects) so build_translation_index.py's numeric-unit lookup registers them as 'core'. Citizenship units should use SLUG filenames (e.g. b1-honfoglalas-01) exactly like LatAm's Spanish units do, so the existing dual-track machinery (scripts/build_translation_index.py's _track_for(), SLUG_TOPIC_LABELS) picks them up the same way — that script currently hardcodes track values 'core'/'latam' for ES B1 only, so it needs a small extension (a per-language track-name mapping, or simply reusing 'latam' as the internal track id with a language-appropriate display label) before HU B1 content lands. engine/drills/translation.js's TRACK enum and tab labels ('Core'/'Latin America') will need the same generalization to show 'Citizenship' under HU.",
+    "Citizenship-track units are a chronological history sweep (mirroring LatAm's chronological structure) ending in four dedicated civic units (constitution, government, holidays/symbols, being a citizen) — this maps directly onto what the actual honosítási interview tests: basic Hungarian history, the Alaptörvény, and national symbols/holidays.",
+    "Grammar in the Citizenship track's exercises/grammar files should reuse Core's already-introduced structures wherever possible (same pattern LatAm follows against ES's Core) rather than teaching new grammar of its own — its job is vocabulary, cultural content and reading practice, not a second grammar syllabus.",
+    "HU A2 already ends at 'Living in Hungarian' (past tense, future, conditional, storytelling, opinions/comparisons, problems/requests) — Core's early B1 units deepen and extend that rather than re-teaching it from scratch."
+  ],
+  "tracks": {
+    "core": {
+      "title": "Core",
+      "hungarian": "Alaptanterv",
+      "units": [
+        {
+          "id": 1,
+          "title": "Telling a Longer Story",
+          "hungarian": "Egy hosszabb történet elmesélése",
+          "lessons": [
+            "Setting a Scene",
+            "One Thing Led to Another",
+            "The Turning Point",
+            "How It Ended",
+            "Telling It Well"
+          ]
+        },
+        {
+          "id": 2,
+          "title": "Experiences & Memories",
+          "hungarian": "Élmények és emlékek",
+          "lessons": [
+            "Have You Ever...?",
+            "My First Time",
+            "A Memory That Stayed With Me",
+            "Looking Back",
+            "Comparing Experiences"
+          ]
+        },
+        {
+          "id": 3,
+          "title": "Plans & Ambitions",
+          "hungarian": "Tervek és ambíciók",
+          "lessons": [
+            "Where I See Myself",
+            "I Wish I Could...",
+            "Steps Toward a Goal",
+            "What Might Stop Me",
+            "My Five-Year Plan"
+          ]
+        },
+        {
+          "id": 4,
+          "title": "Giving Advice",
+          "hungarian": "Tanácsadás",
+          "lessons": [
+            "If I Were You",
+            "You'd Better...",
+            "Weighing Two Options",
+            "Gentle Warnings",
+            "Talking Someone Through a Problem"
+          ]
+        },
+        {
+          "id": 5,
+          "title": "Relationships",
+          "hungarian": "Kapcsolatok",
+          "lessons": [
+            "How We Get Along",
+            "Falling Out and Making Up",
+            "Supporting Each Other",
+            "Describing a Friendship",
+            "What Makes a Relationship Work"
+          ]
+        },
+        {
+          "id": 6,
+          "title": "Work & Professional Life",
+          "hungarian": "Munka és szakmai élet",
+          "lessons": [
+            "A Typical Workday, in Detail",
+            "Responsibilities & Tasks Done",
+            "Applying for a Job",
+            "Office Life",
+            "Talking About My Career"
+          ]
+        },
+        {
+          "id": 7,
+          "title": "Education & Learning",
+          "hungarian": "Oktatás és tanulás",
+          "lessons": [
+            "The Hungarian School System",
+            "Why I'm Learning This",
+            "Studying Effectively",
+            "Exams & Results",
+            "Lifelong Learning"
+          ]
+        },
+        {
+          "id": 8,
+          "title": "Travel & Mobility",
+          "hungarian": "Utazás és mobilitás",
+          "lessons": [
+            "Getting There",
+            "Through, Across, Toward",
+            "Until When, From When",
+            "When Travel Goes Wrong",
+            "Planning a Trip"
+          ]
+        },
+        {
+          "id": 9,
+          "title": "Health & Wellbeing",
+          "hungarian": "Egészség és jóllét",
+          "lessons": [
+            "One Should...",
+            "It's Not Allowed To...",
+            "At the Doctor's, in Detail",
+            "Stress & Balance",
+            "Giving Health Advice"
+          ]
+        },
+        {
+          "id": 10,
+          "title": "Home & Housing",
+          "hungarian": "Otthon és lakhatás",
+          "lessons": [
+            "Turning a House Into a Home",
+            "The Place I Live In",
+            "Renting & Moving",
+            "Describing Where Something Is",
+            "My Ideal Home, Explained"
+          ]
+        },
+        {
+          "id": 11,
+          "title": "Cities & Communities",
+          "hungarian": "Városok és közösségek",
+          "lessons": [
+            "A Place That Has Everything",
+            "What Makes a Neighbourhood",
+            "Comparing City & Countryside",
+            "A Place I'd Recommend",
+            "Describing My Community"
+          ]
+        },
+        {
+          "id": 12,
+          "title": "Food & Lifestyle",
+          "hungarian": "Étkezés és életmód",
+          "lessons": [
+            "How a Dish Gets Made",
+            "Eating Habits",
+            "A Recipe, Step by Step",
+            "Food & Identity",
+            "Describing a Meal Out"
+          ]
+        },
+        {
+          "id": 13,
+          "title": "Media & Information",
+          "hungarian": "Média és információ",
+          "lessons": [
+            "According to the News",
+            "She Said That...",
+            "Is It True?",
+            "Following a Story",
+            "Summarizing What You Heard"
+          ]
+        },
+        {
+          "id": 14,
+          "title": "Technology & Communication",
+          "hungarian": "Technológia és kommunikáció",
+          "lessons": [
+            "What's About to Change",
+            "Staying in Touch",
+            "The Upsides & Downsides",
+            "Explaining How an App Works",
+            "Technology in Daily Life"
+          ]
+        },
+        {
+          "id": 15,
+          "title": "Culture & Entertainment",
+          "hungarian": "Kultúra és szórakozás",
+          "lessons": [
+            "The More, the Better",
+            "Recommending Something",
+            "A Film or Show, Reviewed",
+            "Hungarian Culture Today",
+            "Talking About Taste"
+          ]
+        },
+        {
+          "id": 16,
+          "title": "The Environment",
+          "hungarian": "Környezet",
+          "lessons": [
+            "One Has To...",
+            "Cause & Effect",
+            "A Problem, Explained",
+            "What's Being Done",
+            "My Own Habits"
+          ]
+        },
+        {
+          "id": 17,
+          "title": "Society & Inequality",
+          "hungarian": "Társadalom és egyenlőtlenség",
+          "lessons": [
+            "Talked About As...",
+            "Different Groups, Different Lives",
+            "Fair & Unfair",
+            "A Social Issue, Explained",
+            "Where I Stand"
+          ]
+        },
+        {
+          "id": 18,
+          "title": "Politics & Public Life",
+          "hungarian": "Politika és közélet",
+          "lessons": [
+            "Even Though...",
+            "How Decisions Get Made",
+            "A Public Debate",
+            "Rights & Responsibilities, Revisited",
+            "Talking About Current Events"
+          ]
+        },
+        {
+          "id": 19,
+          "title": "Money & the Economy",
+          "hungarian": "Pénz és gazdaság",
+          "lessons": [
+            "Prices, Percentages & Change",
+            "Saving & Spending",
+            "A Purchase Gone Wrong",
+            "How the Economy Affects Me",
+            "Talking About Money Sensibly"
+          ]
+        },
+        {
+          "id": 20,
+          "title": "Problems & Solutions",
+          "hungarian": "Problémák és megoldások",
+          "lessons": [
+            "If It Had Happened Differently",
+            "What Should Have Been Done",
+            "Finding a Way Through",
+            "Learning From a Mistake",
+            "Explaining a Solution"
+          ]
+        },
+        {
+          "id": 21,
+          "title": "Opinions & Arguments",
+          "hungarian": "Vélemények és érvek",
+          "lessons": [
+            "Supposedly...",
+            "I'm Sure That... / It's Possible That...",
+            "Backing Up an Opinion",
+            "Agreeing, Up to a Point",
+            "A Structured Argument"
+          ]
+        },
+        {
+          "id": 22,
+          "title": "Possibilities & Predictions",
+          "hungarian": "Lehetőségek és jóslatok",
+          "lessons": [
+            "It Might Be That...",
+            "What's Likely to Happen",
+            "Predicting an Outcome",
+            "Weighing Likelihoods",
+            "Talking About an Uncertain Future"
+          ]
+        },
+        {
+          "id": 23,
+          "title": "Making Decisions",
+          "hungarian": "Döntéshozatal",
+          "lessons": [
+            "So That...",
+            "Comparing Options Properly",
+            "Making the Call",
+            "Explaining Why I Chose This",
+            "A Decision I'm Glad I Made"
+          ]
+        },
+        {
+          "id": 24,
+          "title": "Explaining How Things Work",
+          "hungarian": "Hogyan működik?",
+          "lessons": [
+            "It Gets Done Like This",
+            "Step by Step",
+            "What Happens If...",
+            "Explaining a Process to Someone",
+            "How a System Works"
+          ]
+        },
+        {
+          "id": 25,
+          "title": "Change & Development",
+          "hungarian": "Változás és fejlődés",
+          "lessons": [
+            "Becoming Something New",
+            "Then and Now",
+            "A Place That Changed",
+            "Personal Growth",
+            "Describing a Transformation"
+          ]
+        },
+        {
+          "id": 26,
+          "title": "Work, Ambition & Balance",
+          "hungarian": "Munka, ambíció és egyensúly",
+          "lessons": [
+            "Doing Two Things at Once",
+            "Ambition & Its Costs",
+            "Finding Balance",
+            "A Career Turning Point",
+            "What Success Means to Me"
+          ]
+        },
+        {
+          "id": 27,
+          "title": "Social Life & Communication",
+          "hungarian": "Társasági élet és kommunikáció",
+          "lessons": [
+            "Talking to Each Other",
+            "Misunderstandings",
+            "Making Plans With a Group",
+            "Small Talk, Levelled Up",
+            "Staying Connected"
+          ]
+        },
+        {
+          "id": 28,
+          "title": "Rules, Rights & Responsibilities",
+          "hungarian": "Szabályok, jogok és kötelezettségek",
+          "lessons": [
+            "What's Required",
+            "What's Forbidden",
+            "Rights, Explained",
+            "A Rule & Its Reason",
+            "Responsibilities at Work and at Home"
+          ]
+        },
+        {
+          "id": 29,
+          "title": "Migration & Identity",
+          "hungarian": "Migráció és identitás",
+          "lessons": [
+            "Because of, In Spite of",
+            "Leaving & Arriving",
+            "Belonging to Two Places",
+            "An Identity Story",
+            "What Home Means"
+          ]
+        },
+        {
+          "id": 30,
+          "title": "Culture, Language & Society",
+          "hungarian": "Kultúra, nyelv és társadalom",
+          "lessons": [
+            "The Person Who... / The Thing That...",
+            "Language & Identity",
+            "A Tradition, Explained",
+            "Comparing Two Cultures",
+            "What Culture Means to Me"
+          ]
+        },
+        {
+          "id": 31,
+          "title": "The Future of Society",
+          "hungarian": "A társadalom jövője",
+          "lessons": [
+            "What's to Come",
+            "Trends I've Noticed",
+            "A Bold Prediction",
+            "Hopes & Concerns",
+            "Imagining Twenty Years From Now"
+          ]
+        },
+        {
+          "id": 32,
+          "title": "Connecting Ideas",
+          "hungarian": "Gondolatok összekapcsolása",
+          "lessons": [
+            "Therefore, However, In Addition",
+            "Building a Paragraph",
+            "Contrasting Two Ideas",
+            "Cause, Result, Concession",
+            "Writing With Flow"
+          ]
+        },
+        {
+          "id": 33,
+          "title": "Reported Speech",
+          "hungarian": "Függő beszéd",
+          "lessons": [
+            "She Said That...",
+            "He Asked Whether...",
+            "Reporting a Question",
+            "Reporting a Request",
+            "Retelling a Conversation"
+          ]
+        },
+        {
+          "id": 34,
+          "title": "Complex Opinions",
+          "hungarian": "Összetett vélemények",
+          "lessons": [
+            "I Think That... Because...",
+            "On the One Hand, On the Other",
+            "Nuance & Qualification",
+            "Defending a Position",
+            "A Balanced Opinion"
+          ]
+        },
+        {
+          "id": 35,
+          "title": "Hypotheticals & Possibilities",
+          "hungarian": "Feltételezések és lehetőségek",
+          "lessons": [
+            "If It Had Been Different",
+            "What I Would Have Done",
+            "An Alternate Version of Events",
+            "Regrets & What-Ifs",
+            "Imagining a Different Past"
+          ]
+        },
+        {
+          "id": 36,
+          "title": "Independent Hungarian",
+          "hungarian": "Önálló magyar nyelvhasználat",
+          "lessons": [
+            "Putting It All Together",
+            "A Real Conversation",
+            "Handling the Unexpected",
+            "Reading Between the Lines",
+            "Where I Go From Here"
+          ]
+        }
+      ]
+    },
+    "citizenship": {
+      "title": "Citizenship",
+      "hungarian": "Honosítás",
+      "description": "A chronological sweep of Hungarian history plus dedicated civic units (constitution, government, symbols, holidays) — matches what the honosítási vizsga interview actually tests. Reuses Core's grammar rather than teaching its own; content filenames should be slug-based (e.g. b1-honfoglalas-01) like LatAm's Spanish units, not numeric, so the existing dual-track detection in scripts/build_translation_index.py picks them up correctly once extended for a third track name.",
+      "units": [
+        {
+          "id": 1,
+          "title": "Hungary Today: Land & Symbols",
+          "hungarian": "Magyarország ma: az ország és jelképei",
+          "lessons": [
+            "Where Hungary Is",
+            "Counties, Rivers & Cities",
+            "The Flag & the Coat of Arms",
+            "Neighbouring Countries",
+            "A First Overview"
+          ]
+        },
+        {
+          "id": 2,
+          "title": "The Carpathian Basin Before the Magyars",
+          "hungarian": "A Kárpát-medence a magyarok előtt",
+          "lessons": [
+            "Early Peoples of the Basin",
+            "The Roman Province of Pannonia",
+            "The Great Migrations",
+            "Who Lived Here Before",
+            "Setting the Scene for 895"
+          ]
+        },
+        {
+          "id": 3,
+          "title": "The Honfoglalás (895)",
+          "hungarian": "A honfoglalás (895)",
+          "lessons": [
+            "Why the Magyar Tribes Migrated West",
+            "Crossing the Carpathians",
+            "Árpád & the Seven Tribes",
+            "Settling the Basin",
+            "The Honfoglalás in National Memory"
+          ]
+        },
+        {
+          "id": 4,
+          "title": "Saint Stephen & the Founding of the State (1000)",
+          "hungarian": "Szent István és az államalapítás (1000)",
+          "lessons": [
+            "Prince Géza & the Turn to Christianity",
+            "István's Coronation",
+            "Building a Christian Kingdom",
+            "Saint Stephen's Legacy",
+            "The Holy Crown"
+          ]
+        },
+        {
+          "id": 5,
+          "title": "The Árpád Dynasty",
+          "hungarian": "Az Árpád-ház",
+          "lessons": [
+            "Kings of the Árpád Line",
+            "The Golden Bull (1222)",
+            "Consolidating the Kingdom",
+            "Church & State",
+            "The End of the Árpád Line"
+          ]
+        },
+        {
+          "id": 6,
+          "title": "The Mongol Invasion (1241–42)",
+          "hungarian": "A tatárjárás (1241–42)",
+          "lessons": [
+            "The Mongols Arrive",
+            "The Battle of Mohi",
+            "A Kingdom Devastated",
+            "Béla IV & the Rebuilding",
+            "The Stone Castles"
+          ]
+        },
+        {
+          "id": 7,
+          "title": "The Angevin & Later Medieval Kings",
+          "hungarian": "Az Anjouk és a középkori királyok",
+          "lessons": [
+            "Charles Robert & Louis the Great",
+            "Hungary as a Regional Power",
+            "Sigismund of Luxembourg",
+            "The Ottoman Threat Begins",
+            "János Hunyadi & the Defence of the South"
+          ]
+        },
+        {
+          "id": 8,
+          "title": "Matthias Corvinus & the Renaissance Court",
+          "hungarian": "Mátyás király és a reneszánsz udvar",
+          "lessons": [
+            "The Election of Matthias",
+            "The Black Army",
+            "A Renaissance Court in Buda",
+            "Justice & Good Government",
+            "\"King Matthias Is Dead, Justice Has Perished\""
+          ]
+        },
+        {
+          "id": 9,
+          "title": "The Battle of Mohács (1526)",
+          "hungarian": "A mohácsi csata (1526)",
+          "lessons": [
+            "A Kingdom Weakened",
+            "The Ottoman Advance",
+            "The Battle Itself",
+            "The Death of a King",
+            "Why Mohács Still Matters"
+          ]
+        },
+        {
+          "id": 10,
+          "title": "Three Parts of Hungary",
+          "hungarian": "A three-felé szakadt ország",
+          "lessons": [
+            "Habsburg Royal Hungary",
+            "Ottoman Hungary",
+            "The Principality of Transylvania",
+            "Life Under Three Rulers",
+            "A Divided Century"
+          ]
+        },
+        {
+          "id": 11,
+          "title": "Transylvania's Golden Age",
+          "hungarian": "Erdély aranykora",
+          "lessons": [
+            "An Independent Principality",
+            "Religious Tolerance",
+            "Gábor Bethlen",
+            "Transylvania & Europe",
+            "A Different Kind of Hungary"
+          ]
+        },
+        {
+          "id": 12,
+          "title": "Driving Out the Ottomans",
+          "hungarian": "A török kiűzése",
+          "lessons": [
+            "The Siege of Buda (1686)",
+            "The Habsburgs Reconquer Hungary",
+            "The Cost of Liberation",
+            "A New Ruler, Old Resentments",
+            "Hungary Under Habsburg Rule"
+          ]
+        },
+        {
+          "id": 13,
+          "title": "Rákóczi's War of Independence (1703–11)",
+          "hungarian": "A Rákóczi-szabadságharc (1703–11)",
+          "lessons": [
+            "Ferenc Rákóczi II",
+            "The Kurucok Rise Up",
+            "Years of War",
+            "The Peace of Szatmár",
+            "\"Cursed Be Who Abandons It\""
+          ]
+        },
+        {
+          "id": 14,
+          "title": "The 18th Century: Rebuilding",
+          "hungarian": "A 18. század: újjáépítés",
+          "lessons": [
+            "Repopulating the Country",
+            "Maria Theresa & Hungary",
+            "Enlightenment Reforms",
+            "Joseph II's Controversial Rule",
+            "A Country Recovering"
+          ]
+        },
+        {
+          "id": 15,
+          "title": "The Reform Age",
+          "hungarian": "A reformkor",
+          "lessons": [
+            "István Széchenyi, \"the Greatest Hungarian\"",
+            "Modernizing a Country",
+            "Lajos Kossuth's Rise",
+            "Language, Culture & National Feeling",
+            "A Country on the Eve of Revolution"
+          ]
+        },
+        {
+          "id": 16,
+          "title": "The 1848–49 Revolution",
+          "hungarian": "Az 1848–49-es forradalom",
+          "lessons": [
+            "March 15, 1848",
+            "The Twelve Points",
+            "Declaring Independence",
+            "The War of Independence",
+            "Defeat at Világos"
+          ]
+        },
+        {
+          "id": 17,
+          "title": "Kossuth, Petőfi & the National Cause",
+          "hungarian": "Kossuth, Petőfi és a nemzeti ügy",
+          "lessons": [
+            "Lajos Kossuth in Exile",
+            "Sándor Petőfi, Poet of the Revolution",
+            "The Nemzeti Dal",
+            "Symbols of 1848",
+            "Why March 15 Is a National Holiday"
+          ]
+        },
+        {
+          "id": 18,
+          "title": "The Compromise of 1867",
+          "hungarian": "A kiegyezés (1867)",
+          "lessons": [
+            "After Defeat, a New Path",
+            "Ferenc Deák's Compromise",
+            "Franz Joseph, King of Hungary",
+            "A Dual Monarchy",
+            "What the Compromise Changed"
+          ]
+        },
+        {
+          "id": 19,
+          "title": "Austria-Hungary",
+          "hungarian": "Az Osztrák–Magyar Monarchia",
+          "lessons": [
+            "Two States, One Ruler",
+            "Budapest Becomes a Metropolis",
+            "Economic Growth & Its Limits",
+            "A Multi-Ethnic Empire",
+            "Life at the Turn of the Century"
+          ]
+        },
+        {
+          "id": 20,
+          "title": "World War I & Collapse",
+          "hungarian": "Az első világháború és a széthullás",
+          "lessons": [
+            "Hungary Goes to War",
+            "The Home Front",
+            "Defeat & Disintegration",
+            "Revolution in Budapest",
+            "A Monarchy Ends"
+          ]
+        },
+        {
+          "id": 21,
+          "title": "The Treaty of Trianon (1920)",
+          "hungarian": "A trianoni békeszerződés (1920)",
+          "lessons": [
+            "Negotiating the Peace",
+            "What Trianon Changed",
+            "Hungarians Beyond the Border",
+            "National Trauma & Memory",
+            "June 4th, a Day of National Unity"
+          ]
+        },
+        {
+          "id": 22,
+          "title": "The Interwar Years",
+          "hungarian": "A két világháború közötti időszak",
+          "lessons": [
+            "Miklós Horthy & the Regency",
+            "Rebuilding After Trianon",
+            "Society in the 1920s–30s",
+            "Hungary's International Position",
+            "Drifting Toward War"
+          ]
+        },
+        {
+          "id": 23,
+          "title": "Hungary in World War II",
+          "hungarian": "Magyarország a második világháborúban",
+          "lessons": [
+            "Entering the War",
+            "The Eastern Front",
+            "German Occupation, 1944",
+            "The Siege of Budapest",
+            "A Country in Ruins"
+          ]
+        },
+        {
+          "id": 24,
+          "title": "The Holocaust in Hungary",
+          "hungarian": "A holokauszt Magyarországon",
+          "lessons": [
+            "Hungary's Jewish Communities",
+            "Deportations in 1944",
+            "Those Who Helped",
+            "Remembering the Victims",
+            "Why This Is Never Forgotten"
+          ]
+        },
+        {
+          "id": 25,
+          "title": "The Communist Takeover",
+          "hungarian": "A kommunista hatalomátvétel",
+          "lessons": [
+            "Liberation & Occupation",
+            "Salami Tactics",
+            "One-Party Rule",
+            "Mátyás Rákosi's Hungary",
+            "A New Kind of Power"
+          ]
+        },
+        {
+          "id": 26,
+          "title": "Life Under Communism",
+          "hungarian": "Az élet a kommunizmus alatt",
+          "lessons": [
+            "The Planned Economy",
+            "Collectivization",
+            "Surveillance & Control",
+            "Everyday Life",
+            "Cracks in the System"
+          ]
+        },
+        {
+          "id": 27,
+          "title": "The 1956 Revolution",
+          "hungarian": "Az 1956-os forradalom",
+          "lessons": [
+            "October 23, 1956",
+            "Twelve Days of Revolution",
+            "Imre Nagy",
+            "Soviet Intervention",
+            "Why October 23 Is a National Holiday"
+          ]
+        },
+        {
+          "id": 28,
+          "title": "Reprisals & the Kádár Era",
+          "hungarian": "A megtorlás és a Kádár-korszak",
+          "lessons": [
+            "After the Revolution",
+            "János Kádár Takes Power",
+            "\"Goulash Communism\"",
+            "The Happiest Barrack",
+            "Quiet Resistance"
+          ]
+        },
+        {
+          "id": 29,
+          "title": "Toward the Fall of Communism",
+          "hungarian": "Út a rendszerváltás felé",
+          "lessons": [
+            "Economic Strain in the 1980s",
+            "Opening the Border, 1989",
+            "Reburying Imre Nagy",
+            "The Round Table Talks",
+            "A Peaceful Transition"
+          ]
+        },
+        {
+          "id": 30,
+          "title": "The Republic Declared (1989)",
+          "hungarian": "A köztársaság kikiáltása (1989)",
+          "lessons": [
+            "October 23, 1989",
+            "A New Constitution",
+            "The First Free Elections",
+            "Leaving the Soviet Sphere",
+            "Building a Democracy"
+          ]
+        },
+        {
+          "id": 31,
+          "title": "Hungary Joins NATO & the EU",
+          "hungarian": "Magyarország a NATO-ban és az EU-ban",
+          "lessons": [
+            "Joining NATO, 1999",
+            "The Path to EU Membership",
+            "May 1, 2004",
+            "What EU Membership Means",
+            "Hungary's Place in Europe"
+          ]
+        },
+        {
+          "id": 32,
+          "title": "The Constitution: Alaptörvény",
+          "hungarian": "Az Alaptörvény",
+          "lessons": [
+            "What a Constitution Is For",
+            "The National Avowal",
+            "Fundamental Rights",
+            "The State, in Outline",
+            "Key Articles to Know"
+          ]
+        },
+        {
+          "id": 33,
+          "title": "Government & Institutions Today",
+          "hungarian": "A mai kormányzati intézmények",
+          "lessons": [
+            "The National Assembly",
+            "The President of the Republic",
+            "The Government & the Prime Minister",
+            "The Courts & the Constitutional Court",
+            "How a Law Is Made"
+          ]
+        },
+        {
+          "id": 34,
+          "title": "National Symbols",
+          "hungarian": "Nemzeti jelképek",
+          "lessons": [
+            "The Flag, Explained",
+            "The Coat of Arms & the Holy Crown",
+            "The Himnusz",
+            "The Szózat",
+            "When & How Symbols Are Used"
+          ]
+        },
+        {
+          "id": 35,
+          "title": "National Holidays & Remembrance Days",
+          "hungarian": "Nemzeti ünnepek és emléknapok",
+          "lessons": [
+            "March 15",
+            "August 20, Saint Stephen's Day",
+            "October 23",
+            "Other Remembrance Days",
+            "How Hungarians Mark These Days"
+          ]
+        },
+        {
+          "id": 36,
+          "title": "Being a Citizen",
+          "hungarian": "Állampolgárként",
+          "lessons": [
+            "Rights of a Hungarian Citizen",
+            "Duties & Responsibilities",
+            "Notable Hungarians Worth Knowing",
+            "Hungary in the World Today",
+            "Putting It All Together"
+          ]
+        }
+      ]
+    }
+  }
+}

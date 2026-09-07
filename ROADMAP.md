@@ -11,6 +11,20 @@ track known bugs in existing content rather than things not yet built.
   originals as exists for Hungarian, up to A1 level.
 - [ ] Hungarian: introduce Hungarian cultural material at B1-B2 (for the
   citizenship exam), similar to the LatAm course's dual-track structure.
+  **Curriculum drafted 2026-09-07**: `content/hu/b1-curriculum-draft.json`
+  lays out HU B1 as Core (36 units, deepening/extending A2's grammar —
+  participles, more cases, postpositions, reported speech, hypotheticals —
+  across the same thematic spread as ES's B1 Core) plus a Citizenship
+  track (36 units, a chronological Hungarian-history sweep from the
+  honfoglalás to EU accession, ending in four civic units — the
+  Alaptörvény, government institutions, national symbols, holidays —
+  covering what the honosítási vizsga interview actually tests). Content
+  itself is not yet built; the draft's own `notes` field flags that
+  `scripts/build_translation_index.py`'s `_track_for()` and
+  `engine/drills/translation.js`'s TRACK enum currently hardcode
+  ES-B1-specific 'core'/'latam' track names and tab labels, and need a
+  small generalization before HU B1 content can plug into the existing
+  dual-track machinery.
 - [x] Word Bank: same idea as Grammar Guide, but for vocabulary — a
   per-unit collection of the ~15-20 new words the unit introduces.
   **Built 2026-08-27**: `wordBankHtml()` in `engine/curriculum.js` is a
