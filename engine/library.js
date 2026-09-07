@@ -149,8 +149,11 @@ const Library = (function () {
     // ----------------------------------------
     // Same character set Reader.makeClickable() tokenizes on, so a word
     // counted here is exactly a word that becomes tappable in the reading
-    // view — no separate notion of "word" to keep in sync.
-    const WORD_RE = /[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ]+/g;
+    // view — no separate notion of "word" to keep in sync. ö/ő/ű were
+    // missing here, which split a word like "felöltözöm" into fragments
+    // at each ö, leaking single-letter tokens (e.g. a trailing "m") into
+    // the new-word list.
+    const WORD_RE = /[a-zA-ZáéíóúÁÉÍÓÚñÑüÜöÖőŐűŰ]+/g;
     function tokenizeWords(text) {
         return (text || '').match(WORD_RE) || [];
     }
