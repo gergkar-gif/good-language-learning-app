@@ -6,7 +6,7 @@
     "Each unit gets 5 regular lessons (as listed) plus 1 consolidation lesson, matching the A1/A2 pattern.",
     "Content pipeline: Core units should use numeric filenames (b1-core-01-01 style, or whatever numbering convention lessons.js's HU path expects) so build_translation_index.py's numeric-unit lookup registers them as 'core'. Citizenship units should use SLUG filenames (e.g. b1-honfoglalas-01) exactly like LatAm's Spanish units do, so the existing dual-track machinery (scripts/build_translation_index.py's _track_for(), SLUG_TOPIC_LABELS) picks them up the same way — that script currently hardcodes track values 'core'/'latam' for ES B1 only, so it needs a small extension (a per-language track-name mapping, or simply reusing 'latam' as the internal track id with a language-appropriate display label) before HU B1 content lands. engine/drills/translation.js's TRACK enum and tab labels ('Core'/'Latin America') will need the same generalization to show 'Citizenship' under HU.",
     "Citizenship-track units are a chronological history sweep (mirroring LatAm's chronological structure) ending in four dedicated civic units (constitution, government, holidays/symbols, being a citizen) — this maps directly onto what the actual honosítási interview tests: basic Hungarian history, the Alaptörvény, and national symbols/holidays.",
-    "Grammar in the Citizenship track's exercises/grammar files should reuse Core's already-introduced structures wherever possible (same pattern LatAm follows against ES's Core) rather than teaching new grammar of its own — its job is vocabulary, cultural content and reading practice, not a second grammar syllabus.",
+    "Grammar pairing (checked directly against ES B1 before drafting this): the two tracks are NOT a strict 1:1 grammar match — Core unit 1 teaches the preterite specifically, while LatAm unit 1 teaches 'formal connectors' instead. Each LatAm lesson's grammar point is chosen to fit whatever construction best narrates that historical content (e.g. b1-economiacolonial-03 teaches the gerund because it fits \"the expansion of plantations\"; b1-revolucioncubana-02 teaches \"acabar por + infinitivo\" because it fits how a revolution concluded), while staying at the same overall B1 complexity and roughly tracking Core's pacing. Every unit below now carries its own `grammar` field on this same principle: Citizenship unit N's point is chosen to fit that historical/civic topic naturally, not cloned from Core unit N, though the two arcs are levelled to land on comparably complex structures around the same position in the sequence.",
     "HU A2 already ends at 'Living in Hungarian' (past tense, future, conditional, storytelling, opinions/comparisons, problems/requests) — Core's early B1 units deepen and extend that rather than re-teaching it from scratch."
   ],
   "tracks": {
@@ -18,6 +18,7 @@
           "id": 1,
           "title": "Telling a Longer Story",
           "hungarian": "Egy hosszabb történet elmesélése",
+          "grammar": "Complex narrative past: miután/mielőtt + past tense clauses, multi-clause sequencing",
           "lessons": [
             "Setting a Scene",
             "One Thing Led to Another",
@@ -30,6 +31,7 @@
           "id": 2,
           "title": "Experiences & Memories",
           "hungarian": "Élmények és emlékek",
+          "grammar": "Experiential aspect (már/még soha), past participle as adjective (elkészített étel)",
           "lessons": [
             "Have You Ever...?",
             "My First Time",
@@ -42,6 +44,7 @@
           "id": 3,
           "title": "Plans & Ambitions",
           "hungarian": "Tervek és ambíciók",
+          "grammar": "szeretném, ha + conditional in wish-clauses; azért, hogy + -jon/-jen purpose clauses",
           "lessons": [
             "Where I See Myself",
             "I Wish I Could...",
@@ -54,6 +57,7 @@
           "id": 4,
           "title": "Giving Advice",
           "hungarian": "Tanácsadás",
+          "grammar": "Layered hypothetical advice (ha én lennél a helyedben); -hat/-het as softened suggestion",
           "lessons": [
             "If I Were You",
             "You'd Better...",
@@ -66,6 +70,7 @@
           "id": 5,
           "title": "Relationships",
           "hungarian": "Kapcsolatok",
+          "grammar": "Reciprocal egymást; reflexive verbs deepened; annak ellenére, hogy (concession) introduced",
           "lessons": [
             "How We Get Along",
             "Falling Out and Making Up",
@@ -78,6 +83,7 @@
           "id": 6,
           "title": "Work & Professional Life",
           "hungarian": "Munka és szakmai élet",
+          "grammar": "Present participle as adjective (-ó/-ő: dolgozó emberek); passive-avoidance -ódik/-ődik introduced",
           "lessons": [
             "A Typical Workday, in Detail",
             "Responsibilities & Tasks Done",
@@ -90,6 +96,7 @@
           "id": 7,
           "title": "Education & Learning",
           "hungarian": "Oktatás és tanulás",
+          "grammar": "-hat/-het potential deepened (formal permission/capability); azért, hogy reinforced",
           "lessons": [
             "The Hungarian School System",
             "Why I'm Learning This",
@@ -102,6 +109,7 @@
           "id": 8,
           "title": "Travel & Mobility",
           "hungarian": "Utazás és mobilitás",
+          "grammar": "Postpositions of motion: keresztül, át, felé, felől; terminative case -ig",
           "lessons": [
             "Getting There",
             "Through, Across, Toward",
@@ -114,6 +122,7 @@
           "id": 9,
           "title": "Health & Wellbeing",
           "hungarian": "Egészség és jóllét",
+          "grammar": "Impersonal general-subject constructions (az ember); full kell/lehet/szabad/tilos paradigm",
           "lessons": [
             "One Should...",
             "It's Not Allowed To...",
@@ -126,6 +135,7 @@
           "id": 10,
           "title": "Home & Housing",
           "hungarian": "Otthon és lakhatás",
+          "grammar": "Translative case -vá/-vé (átalakítani valamivé); relative clause ami introduced",
           "lessons": [
             "Turning a House Into a Home",
             "The Place I Live In",
@@ -138,6 +148,7 @@
           "id": 11,
           "title": "Cities & Communities",
           "hungarian": "Városok és közösségek",
+          "grammar": "Relative clauses aki/ami/amely deepened; embedded descriptive clauses",
           "lessons": [
             "A Place That Has Everything",
             "What Makes a Neighbourhood",
@@ -150,6 +161,7 @@
           "id": 12,
           "title": "Food & Lifestyle",
           "hungarian": "Étkezés és életmód",
+          "grammar": "Mediopassive -ódik/-ődik deepened (elkészül, megsül, összetörik)",
           "lessons": [
             "How a Dish Gets Made",
             "Eating Habits",
@@ -162,6 +174,7 @@
           "id": 13,
           "title": "Media & Information",
           "hungarian": "Média és információ",
+          "grammar": "Reported speech: azt mondta, hogy + statement clauses",
           "lessons": [
             "According to the News",
             "She Said That...",
@@ -174,6 +187,7 @@
           "id": 14,
           "title": "Technology & Communication",
           "hungarian": "Technológia és kommunikáció",
+          "grammar": "Future/obligatory participle -andó/-endő (elvégzendő feladat)",
           "lessons": [
             "What's About to Change",
             "Staying in Touch",
@@ -186,6 +200,7 @@
           "id": 15,
           "title": "Culture & Entertainment",
           "hungarian": "Kultúra és szórakozás",
+          "grammar": "minél...annál correlative comparative; superlative deepened",
           "lessons": [
             "The More, the Better",
             "Recommending Something",
@@ -198,6 +213,7 @@
           "id": 16,
           "title": "The Environment",
           "hungarian": "Környezet",
+          "grammar": "Cause/result connectors: ezért, emiatt, aminek következtében",
           "lessons": [
             "One Has To...",
             "Cause & Effect",
@@ -210,6 +226,7 @@
           "id": 17,
           "title": "Society & Inequality",
           "hungarian": "Társadalom és egyenlőtlenség",
+          "grammar": "Essive-formal case -ként (mint/-ként = \"as\"); distributive -nként",
           "lessons": [
             "Talked About As...",
             "Different Groups, Different Lives",
@@ -222,6 +239,7 @@
           "id": 18,
           "title": "Politics & Public Life",
           "hungarian": "Politika és közélet",
+          "grammar": "Concessive connectors: annak ellenére, hogy / bár / hiába",
           "lessons": [
             "Even Though...",
             "How Decisions Get Made",
@@ -234,6 +252,7 @@
           "id": 19,
           "title": "Money & the Economy",
           "hungarian": "Pénz és gazdaság",
+          "grammar": "Numerals, fractions & percentages; quantity comparison (annyi...mint)",
           "lessons": [
             "Prices, Percentages & Change",
             "Saving & Spending",
@@ -246,6 +265,7 @@
           "id": 20,
           "title": "Problems & Solutions",
           "hungarian": "Problémák és megoldások",
+          "grammar": "Past conditional volna introduced (ha ezt tettem volna...)",
           "lessons": [
             "If It Had Happened Differently",
             "What Should Have Been Done",
@@ -258,6 +278,7 @@
           "id": 21,
           "title": "Opinions & Arguments",
           "hungarian": "Vélemények és érvek",
+          "grammar": "Modal/evidential particles: állítólag, biztosan, valószínűleg",
           "lessons": [
             "Supposedly...",
             "I'm Sure That... / It's Possible That...",
@@ -270,6 +291,7 @@
           "id": 22,
           "title": "Possibilities & Predictions",
           "hungarian": "Lehetőségek és jóslatok",
+          "grammar": "lehet, hogy + indicative; epistemic layering (az lehet, hogy...)",
           "lessons": [
             "It Might Be That...",
             "What's Likely to Happen",
@@ -282,6 +304,7 @@
           "id": 23,
           "title": "Making Decisions",
           "hungarian": "Döntéshozatal",
+          "grammar": "azért, hogy purpose clauses with embedded -jon/-jen forms, deepened",
           "lessons": [
             "So That...",
             "Comparing Options Properly",
@@ -294,6 +317,7 @@
           "id": 24,
           "title": "Explaining How Things Work",
           "hungarian": "Hogyan működik?",
+          "grammar": "-ódik/-ődik mediopassive fully deepened; impersonal \"how it works\" register",
           "lessons": [
             "It Gets Done Like This",
             "Step by Step",
@@ -306,6 +330,7 @@
           "id": 25,
           "title": "Change & Development",
           "hungarian": "Változás és fejlődés",
+          "grammar": "Translative -vá/-vé deepened (fejlődővé válik, gazdaggá lesz)",
           "lessons": [
             "Becoming Something New",
             "Then and Now",
@@ -318,6 +343,7 @@
           "id": 26,
           "title": "Work, Ambition & Balance",
           "hungarian": "Munka, ambíció és egyensúly",
+          "grammar": "Adverbial participle -va/-ve (dolgozva tanul, sietve elment)",
           "lessons": [
             "Doing Two Things at Once",
             "Ambition & Its Costs",
@@ -330,6 +356,7 @@
           "id": 27,
           "title": "Social Life & Communication",
           "hungarian": "Társasági élet és kommunikáció",
+          "grammar": "Reflexive/reciprocal review combined with complex conjunctions",
           "lessons": [
             "Talking to Each Other",
             "Misunderstandings",
@@ -342,6 +369,7 @@
           "id": 28,
           "title": "Rules, Rights & Responsibilities",
           "hungarian": "Szabályok, jogok és kötelezettségek",
+          "grammar": "kell/szabad/tilos/kötelező full register; kötelező + infinitive",
           "lessons": [
             "What's Required",
             "What's Forbidden",
@@ -354,6 +382,7 @@
           "id": 29,
           "title": "Migration & Identity",
           "hungarian": "Migráció és identitás",
+          "grammar": "Postpositions miatt, ellenére, közben, deepened",
           "lessons": [
             "Because of, In Spite of",
             "Leaving & Arriving",
@@ -366,6 +395,7 @@
           "id": 30,
           "title": "Culture, Language & Society",
           "hungarian": "Kultúra, nyelv és társadalom",
+          "grammar": "Chained relative clauses (aki/ami/amely) inside longer sentences",
           "lessons": [
             "The Person Who... / The Thing That...",
             "Language & Identity",
@@ -378,6 +408,7 @@
           "id": 31,
           "title": "The Future of Society",
           "hungarian": "A társadalom jövője",
+          "grammar": "Future participle -andó/-endő deepened; predictive register",
           "lessons": [
             "What's to Come",
             "Trends I've Noticed",
@@ -390,6 +421,7 @@
           "id": 32,
           "title": "Connecting Ideas",
           "hungarian": "Gondolatok összekapcsolása",
+          "grammar": "Full discourse-connector toolkit: tehát, azonban, ennek ellenére, ráadásul, mindazonáltal",
           "lessons": [
             "Therefore, However, In Addition",
             "Building a Paragraph",
@@ -402,6 +434,7 @@
           "id": 33,
           "title": "Reported Speech",
           "hungarian": "Függő beszéd",
+          "grammar": "Full reported speech: indirect statements/questions (vajon), indirect commands (-jon/-jen)",
           "lessons": [
             "She Said That...",
             "He Asked Whether...",
@@ -414,6 +447,7 @@
           "id": 34,
           "title": "Complex Opinions",
           "hungarian": "Összetett vélemények",
+          "grammar": "Nested opinion clauses (azt gondolom, hogy... mert...); concession-in-opinion (bár...mégis)",
           "lessons": [
             "I Think That... Because...",
             "On the One Hand, On the Other",
@@ -426,6 +460,7 @@
           "id": 35,
           "title": "Hypotheticals & Possibilities",
           "hungarian": "Feltételezések és lehetőségek",
+          "grammar": "Past conditional volna fully deepened: ha... lett volna, akkor... volna",
           "lessons": [
             "If It Had Been Different",
             "What I Would Have Done",
@@ -438,6 +473,7 @@
           "id": 36,
           "title": "Independent Hungarian",
           "hungarian": "Önálló magyar nyelvhasználat",
+          "grammar": "Review & synthesis of B1 structures — no new grammar, capstone unit",
           "lessons": [
             "Putting It All Together",
             "A Real Conversation",
@@ -457,6 +493,7 @@
           "id": 1,
           "title": "Hungary Today: Land & Symbols",
           "hungarian": "Magyarország ma: az ország és jelképei",
+          "grammar": "Existential van/vannak + locative postpositions review (foundational, descriptive present)",
           "lessons": [
             "Where Hungary Is",
             "Counties, Rivers & Cities",
@@ -469,6 +506,7 @@
           "id": 2,
           "title": "The Carpathian Basin Before the Magyars",
           "hungarian": "A Kárpát-medence a magyarok előtt",
+          "grammar": "Multi-subject past narration; míg (\"while\") clauses",
           "lessons": [
             "Early Peoples of the Basin",
             "The Roman Province of Pannonia",
@@ -481,6 +519,7 @@
           "id": 3,
           "title": "The Honfoglalás (895)",
           "hungarian": "A honfoglalás (895)",
+          "grammar": "Sequencing past narration deepened: miután/mielőtt reinforced against a real migration story",
           "lessons": [
             "Why the Magyar Tribes Migrated West",
             "Crossing the Carpathians",
@@ -493,6 +532,7 @@
           "id": 4,
           "title": "Saint Stephen & the Founding of the State (1000)",
           "hungarian": "Szent István és az államalapítás (1000)",
+          "grammar": "Participle-as-adjective reinforced via titles (megkoronázott király — \"the crowned king\")",
           "lessons": [
             "Prince Géza & the Turn to Christianity",
             "István's Coronation",
@@ -505,6 +545,7 @@
           "id": 5,
           "title": "The Árpád Dynasty",
           "hungarian": "Az Árpád-ház",
+          "grammar": "Relative clause aki for listing rulers and events in sequence",
           "lessons": [
             "Kings of the Árpád Line",
             "The Golden Bull (1222)",
@@ -517,6 +558,7 @@
           "id": 6,
           "title": "The Mongol Invasion (1241–42)",
           "hungarian": "A tatárjárás (1241–42)",
+          "grammar": "Mediopassive/passive-avoidance for describing destruction (elpusztul, leromboltatik-type forms)",
           "lessons": [
             "The Mongols Arrive",
             "The Battle of Mohi",
@@ -529,6 +571,7 @@
           "id": 7,
           "title": "The Angevin & Later Medieval Kings",
           "hungarian": "Az Anjouk és a középkori királyok",
+          "grammar": "Reported-speech-lite for traditional/legendary accounts (azt mondják, hogy...)",
           "lessons": [
             "Charles Robert & Louis the Great",
             "Hungary as a Regional Power",
@@ -541,6 +584,7 @@
           "id": 8,
           "title": "Matthias Corvinus & the Renaissance Court",
           "hungarian": "Mátyás király és a reneszánsz udvar",
+          "grammar": "Superlative + minél...annál, describing Matthias's court and reforms",
           "lessons": [
             "The Election of Matthias",
             "The Black Army",
@@ -553,6 +597,7 @@
           "id": 9,
           "title": "The Battle of Mohács (1526)",
           "hungarian": "A mohácsi csata (1526)",
+          "grammar": "Cause/result connectors (ezért, emiatt) explaining the defeat at Mohács and its consequences",
           "lessons": [
             "A Kingdom Weakened",
             "The Ottoman Advance",
@@ -565,6 +610,7 @@
           "id": 10,
           "title": "Three Parts of Hungary",
           "hungarian": "A three-felé szakadt ország",
+          "grammar": "Translative -vá/-vé for a country \"split into three\" (három részre szakadt)",
           "lessons": [
             "Habsburg Royal Hungary",
             "Ottoman Hungary",
@@ -577,6 +623,7 @@
           "id": 11,
           "title": "Transylvania's Golden Age",
           "hungarian": "Erdély aranykora",
+          "grammar": "Essive-formal -ként (mint önálló fejedelemség — \"as an independent principality\")",
           "lessons": [
             "An Independent Principality",
             "Religious Tolerance",
@@ -589,6 +636,7 @@
           "id": 12,
           "title": "Driving Out the Ottomans",
           "hungarian": "A török kiűzése",
+          "grammar": "Purpose clauses azért, hogy, explaining why campaigns were launched",
           "lessons": [
             "The Siege of Buda (1686)",
             "The Habsburgs Reconquer Hungary",
@@ -601,6 +649,7 @@
           "id": 13,
           "title": "Rákóczi's War of Independence (1703–11)",
           "hungarian": "A Rákóczi-szabadságharc (1703–11)",
+          "grammar": "Past conditional volna introduced via a famous \"what might have been\" moment",
           "lessons": [
             "Ferenc Rákóczi II",
             "The Kurucok Rise Up",
@@ -613,6 +662,7 @@
           "id": 14,
           "title": "The 18th Century: Rebuilding",
           "hungarian": "A 18. század: újjáépítés",
+          "grammar": "Postpositions által, révén (\"by means of\", \"through\") for describing rebuilding efforts",
           "lessons": [
             "Repopulating the Country",
             "Maria Theresa & Hungary",
@@ -625,6 +675,7 @@
           "id": 15,
           "title": "The Reform Age",
           "hungarian": "A reformkor",
+          "grammar": "Modal/evidential particles (állítólag) applied to opinions about the reformers",
           "lessons": [
             "István Széchenyi, \"the Greatest Hungarian\"",
             "Modernizing a Country",
@@ -637,6 +688,7 @@
           "id": 16,
           "title": "The 1848–49 Revolution",
           "hungarian": "Az 1848–49-es forradalom",
+          "grammar": "Reported speech deepened: quoting Petőfi's and Kossuth's own words",
           "lessons": [
             "March 15, 1848",
             "The Twelve Points",
@@ -649,6 +701,7 @@
           "id": 17,
           "title": "Kossuth, Petőfi & the National Cause",
           "hungarian": "Kossuth, Petőfi és a nemzeti ügy",
+          "grammar": "Adverbial participle -va/-ve (harcolva, énekelve) narrating the revolution in motion",
           "lessons": [
             "Lajos Kossuth in Exile",
             "Sándor Petőfi, Poet of the Revolution",
@@ -661,6 +714,7 @@
           "id": 18,
           "title": "The Compromise of 1867",
           "hungarian": "A kiegyezés (1867)",
+          "grammar": "Concessive annak ellenére, hogy, explaining a compromise reached despite defeat",
           "lessons": [
             "After Defeat, a New Path",
             "Ferenc Deák's Compromise",
@@ -673,6 +727,7 @@
           "id": 19,
           "title": "Austria-Hungary",
           "hungarian": "Az Osztrák–Magyar Monarchia",
+          "grammar": "Numerals & quantity comparison, describing population and economic growth",
           "lessons": [
             "Two States, One Ruler",
             "Budapest Becomes a Metropolis",
@@ -685,6 +740,7 @@
           "id": 20,
           "title": "World War I & Collapse",
           "hungarian": "Az első világháború és a széthullás",
+          "grammar": "Past conditional volna deepened: an alternate-history reflection on 1918",
           "lessons": [
             "Hungary Goes to War",
             "The Home Front",
@@ -697,6 +753,7 @@
           "id": 21,
           "title": "The Treaty of Trianon (1920)",
           "hungarian": "A trianoni békeszerződés (1920)",
+          "grammar": "Cause/result + emotional-register connectors (emiatt, ennek következtében) for Trianon",
           "lessons": [
             "Negotiating the Peace",
             "What Trianon Changed",
@@ -709,6 +766,7 @@
           "id": 22,
           "title": "The Interwar Years",
           "hungarian": "A két világháború közötti időszak",
+          "grammar": "Future/obligatory participle -andó/-endő (megoldandó problémák — \"problems to be solved\")",
           "lessons": [
             "Miklós Horthy & the Regency",
             "Rebuilding After Trianon",
@@ -721,6 +779,7 @@
           "id": 23,
           "title": "Hungary in World War II",
           "hungarian": "Magyarország a második világháborúban",
+          "grammar": "Combined complex subordination (multiple clause types in one sentence)",
           "lessons": [
             "Entering the War",
             "The Eastern Front",
@@ -733,6 +792,7 @@
           "id": 24,
           "title": "The Holocaust in Hungary",
           "hungarian": "A holokauszt Magyarországon",
+          "grammar": "Deepened passive-avoidance/impersonal register for a respectful, agentless account",
           "lessons": [
             "Hungary's Jewish Communities",
             "Deportations in 1944",
@@ -745,6 +805,7 @@
           "id": 25,
           "title": "The Communist Takeover",
           "hungarian": "A kommunista hatalomátvétel",
+          "grammar": "Mediopassive + impersonal constructions describing state control and its effects",
           "lessons": [
             "Liberation & Occupation",
             "Salami Tactics",
@@ -757,6 +818,7 @@
           "id": 26,
           "title": "Life Under Communism",
           "hungarian": "Az élet a kommunizmus alatt",
+          "grammar": "Comparison (annyi...mint, sokkal...mint) contrasting life before/after 1945",
           "lessons": [
             "The Planned Economy",
             "Collectivization",
@@ -769,6 +831,7 @@
           "id": 27,
           "title": "The 1956 Revolution",
           "hungarian": "Az 1956-os forradalom",
+          "grammar": "Reported speech applied to quoting radio broadcasts and demands from 1956",
           "lessons": [
             "October 23, 1956",
             "Twelve Days of Revolution",
@@ -781,6 +844,7 @@
           "id": 28,
           "title": "Reprisals & the Kádár Era",
           "hungarian": "A megtorlás és a Kádár-korszak",
+          "grammar": "Concessive deepened: hiába, bár...mégis, on reprisals and quiet resistance",
           "lessons": [
             "After the Revolution",
             "János Kádár Takes Power",
@@ -793,6 +857,7 @@
           "id": 29,
           "title": "Toward the Fall of Communism",
           "hungarian": "Út a rendszerváltás felé",
+          "grammar": "Predictive/future register (hamarosan, várhatóan) narrating the approach of 1989",
           "lessons": [
             "Economic Strain in the 1980s",
             "Opening the Border, 1989",
@@ -805,6 +870,7 @@
           "id": 30,
           "title": "The Republic Declared (1989)",
           "hungarian": "A köztársaság kikiáltása (1989)",
+          "grammar": "Full discourse-connector toolkit review (tehát, azonban, ennek ellenére) on the new republic",
           "lessons": [
             "October 23, 1989",
             "A New Constitution",
@@ -817,6 +883,7 @@
           "id": 31,
           "title": "Hungary Joins NATO & the EU",
           "hungarian": "Magyarország a NATO-ban és az EU-ban",
+          "grammar": "Purpose/result clauses deepened (annak érdekében, hogy), on joining NATO and the EU",
           "lessons": [
             "Joining NATO, 1999",
             "The Path to EU Membership",
@@ -829,6 +896,7 @@
           "id": 32,
           "title": "The Constitution: Alaptörvény",
           "hungarian": "Az Alaptörvény",
+          "grammar": "Formal/legal register: kell/lehet/tilos in a legal context; -andó/-endő reinforced for the Alaptörvény",
           "lessons": [
             "What a Constitution Is For",
             "The National Avowal",
@@ -841,6 +909,7 @@
           "id": 33,
           "title": "Government & Institutions Today",
           "hungarian": "A mai kormányzati intézmények",
+          "grammar": "Relative clauses deepened for describing institutions and how a law is made",
           "lessons": [
             "The National Assembly",
             "The President of the Republic",
@@ -853,6 +922,7 @@
           "id": 34,
           "title": "National Symbols",
           "hungarian": "Nemzeti jelképek",
+          "grammar": "Descriptive present + essive -ként reinforced, describing each national symbol",
           "lessons": [
             "The Flag, Explained",
             "The Coat of Arms & the Holy Crown",
@@ -865,6 +935,7 @@
           "id": 35,
           "title": "National Holidays & Remembrance Days",
           "hungarian": "Nemzeti ünnepek és emléknapok",
+          "grammar": "Reported speech + civic register review, on how holidays are marked and spoken about",
           "lessons": [
             "March 15",
             "August 20, Saint Stephen's Day",
@@ -877,6 +948,7 @@
           "id": 36,
           "title": "Being a Citizen",
           "hungarian": "Állampolgárként",
+          "grammar": "Full synthesis/review — capstone unit, matching Core's own final review",
           "lessons": [
             "Rights of a Hungarian Citizen",
             "Duties & Responsibilities",
