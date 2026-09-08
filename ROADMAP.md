@@ -172,6 +172,18 @@ track known bugs in existing content rather than things not yet built.
   "vivir") now shows "to live; to be alive" first, "verb · Present,
   Indicative, 3rd person singular" below it.
 
+- [ ] Library navigation: the reading list is growing too big to browse
+  comfortably as a flat collapsed-by-level list (each CEFR level shows
+  every story grouped only by type/shelf — Original/Classics/World).
+  Flagged 2026-09-08 while adding a second "original" story per ES B1
+  Core unit (the invented narrative kept for the library alongside a new
+  classics adaptation, rather than deleted) — B1 alone is about to carry
+  well over 250 stories once HU B1's Citizenship track's per-lesson
+  serialized readings land too. Needs real design thought before
+  building (search? filter by grammar point/unit/author? a compact list
+  view instead of full cards?) — saved here for future tinkering, not
+  scoped or built yet.
+
 ## Decks
 
 > **Standing design principle (2026-09-02):** Decks' UI is deliberately
