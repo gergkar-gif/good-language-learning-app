@@ -1,0 +1,169 @@
+{
+  "lesson": "b1-03-04",
+  "exercises": [
+    {
+      "id": "b1-03-04-intro-1",
+      "type": "multiple-choice",
+      "category": "introduce",
+      "question": "Which phrase means \"so that, in order that\" and introduces a purpose clause?",
+      "options": ["azért, hogy", "azóta, hogy", "ezért, hogy"],
+      "correct": 0,
+      "teaches": ["azert-hogy-purpose"]
+    },
+    {
+      "id": "b1-03-04-intro-2",
+      "type": "multiple-choice",
+      "category": "introduce",
+      "question": "Which word means \"so that... doesn't\" and already contains a negative?",
+      "options": ["nehogy", "nem hogy", "sehogy"],
+      "correct": 0,
+      "teaches": ["nehogy-purpose"]
+    },
+    {
+      "id": "b1-03-04-controlled-1",
+      "type": "matching",
+      "category": "controlled",
+      "pairs": [
+        ["akadály", "obstacle"],
+        ["nehézség", "difficulty"],
+        ["kockázat", "risk"],
+        ["kétség", "doubt"]
+      ],
+      "teaches": ["azert-hogy-purpose", "nehogy-purpose"]
+    },
+    {
+      "id": "b1-03-04-controlled-2",
+      "type": "fill-blank",
+      "category": "controlled",
+      "sentence": "Korán kelek, azért, hogy ____ a vonatot. (I catch)",
+      "answer": "elérjem",
+      "teaches": ["azert-hogy-purpose"]
+    },
+    {
+      "id": "b1-03-04-controlled-3",
+      "type": "fill-blank",
+      "category": "controlled",
+      "sentence": "Kétszer ellenőrzöm a jegyzeteimet, ____ hibázzak a vizsgán. (so that I don't)",
+      "answer": "nehogy",
+      "teaches": ["nehogy-purpose"]
+    },
+    {
+      "id": "b1-03-04-controlled-4",
+      "type": "multiple-choice",
+      "category": "controlled",
+      "question": "Alaposan megtervezem a napomat, ____ elveszítsem az időmet.",
+      "options": ["nehogy", "azért, hogy", "mielőtt"],
+      "correct": 0,
+      "teaches": ["nehogy-purpose"]
+    },
+    {
+      "id": "b1-03-04-practice-1",
+      "type": "sentence-builder",
+      "category": "practice",
+      "tiles": ["Sokat", "gyakorlok", ",", "azért", ",", "hogy", "fejlődjön", "a", "magyar", "tudásom", "."],
+      "solution": ["Sokat", "gyakorlok", ",", "azért", ",", "hogy", "fejlődjön", "a", "magyar", "tudásom", "."],
+      "english": "I practice a lot so that my Hungarian improves.",
+      "teaches": ["azert-hogy-purpose"]
+    },
+    {
+      "id": "b1-03-04-practice-2",
+      "type": "sentence-builder",
+      "category": "practice",
+      "tiles": ["Alaposan", "megtervezem", "a", "napomat", ",", "nehogy", "elveszítsem", "az", "időmet", "."],
+      "solution": ["Alaposan", "megtervezem", "a", "napomat", ",", "nehogy", "elveszítsem", "az", "időmet", "."],
+      "english": "I plan my day carefully so that I don't waste my time.",
+      "teaches": ["nehogy-purpose"]
+    },
+    {
+      "id": "b1-03-04-practice-3",
+      "type": "substitution",
+      "category": "practice",
+      "base_sentence": "Spórolok, azért, hogy megvalósuljon az álmom.",
+      "base_word": "megvalósuljon",
+      "base_gloss": "I save money so that my dream comes true.",
+      "options": [
+        { "word": "sikerül", "inflected": "sikerüljön", "sentence": "Spórolok, azért, hogy sikerüljön az álmom.", "gloss": "succeeds" },
+        { "word": "fejlődik", "inflected": "fejlődjön", "sentence": "Spórolok, azért, hogy fejlődjön az álmom.", "gloss": "develops" }
+      ],
+      "teaches": ["azert-hogy-purpose"]
+    },
+    {
+      "id": "b1-03-04-practice-4",
+      "type": "multiple-choice",
+      "category": "practice",
+      "question": "Which sentence correctly avoids double-negating a nehogy-clause?",
+      "options": [
+        "Nehogy elfelejtsem a tervet.",
+        "Nehogy ne felejtsem el a tervet.",
+        "Nehogy nem felejtsem el a tervet."
+      ],
+      "correct": 0,
+      "teaches": ["nehogy-purpose"]
+    },
+    {
+      "id": "b1-03-04-dialogue-1",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        { "speaker": "Petra", "text": "Mi lehet a legnagyobb akadály a terved útjában?" },
+        { "speaker": "Meg", "text": "_____" }
+      ],
+      "options": ["A legnagyobb nehézség az időhiány és néha a saját kétségeim.", "Semmi sem állhat a tervem útjába."],
+      "correct": 0,
+      "teaches": ["azert-hogy-purpose"]
+    },
+    {
+      "id": "b1-03-04-dialogue-2",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        { "speaker": "Károly", "text": "Miért ellenőrzöd mindig kétszer a munkádat?" },
+        { "speaker": "Meg", "text": "_____" }
+      ],
+      "options": ["Nehogy hibázzak, mert nagy kockázat lenne egy hiba.", "Azért, mert szeretem a hibákat."],
+      "correct": 0,
+      "teaches": ["nehogy-purpose"]
+    },
+    {
+      "id": "b1-03-04-writing-1",
+      "type": "structured-writing",
+      "category": "writing",
+      "template": [
+        {
+          "prompt": "Say you work hard so that your project succeeds.",
+          "answer": "Azért dolgozom keményen, hogy sikerüljön a projektem."
+        }
+      ],
+      "teaches": ["azert-hogy-purpose"]
+    },
+    {
+      "id": "b1-03-04-writing-2",
+      "type": "structured-writing",
+      "category": "writing",
+      "template": [
+        {
+          "prompt": "Say you check your notes twice so that you don't make a mistake on the exam.",
+          "answer": "Kétszer ellenőrzöm a jegyzeteimet, nehogy hibázzak a vizsgán."
+        }
+      ],
+      "teaches": ["nehogy-purpose"]
+    },
+    {
+      "id": "b1-03-04-check-1",
+      "type": "multiple-choice",
+      "category": "check",
+      "question": "Which word can carry the purpose clause after the main verb, split from hogy later in the sentence?",
+      "options": ["azért", "hogy", "nehogy"],
+      "correct": 0,
+      "teaches": ["azert-hogy-purpose"]
+    },
+    {
+      "id": "b1-03-04-check-2",
+      "type": "fill-blank",
+      "category": "check",
+      "sentence": "Korán indulok, ____ elkéssek a megbeszélésről. (so that I'm not)",
+      "answer": "nehogy",
+      "teaches": ["nehogy-purpose"]
+    }
+  ]
+}

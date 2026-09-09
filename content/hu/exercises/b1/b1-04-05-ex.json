@@ -1,0 +1,215 @@
+{
+  "lesson": "b1-04-05",
+  "exercises": [
+    {
+      "id": "b1-04-05-intro-1",
+      "type": "multiple-choice",
+      "category": "introduce",
+      "question": "Which verb means \"to talk someone OUT OF doing something\"?",
+      "options": ["lebeszél", "rábeszél", "meggyőz"],
+      "correct": 0,
+      "teaches": ["advice-synthesis"]
+    },
+    {
+      "id": "b1-04-05-intro-2",
+      "type": "multiple-choice",
+      "category": "introduce",
+      "question": "Which verb means \"to talk someone INTO doing something\"?",
+      "options": ["rábeszél", "lebeszél", "bátorít"],
+      "correct": 0,
+      "teaches": ["advice-synthesis"]
+    },
+    {
+      "id": "b1-04-05-controlled-1",
+      "type": "matching",
+      "category": "controlled",
+      "pairs": [
+        ["rábeszél", "to talk into"],
+        ["lebeszél", "to talk out of"],
+        ["meggyőz", "to convince"],
+        ["bátorít", "to encourage"]
+      ],
+      "teaches": ["advice-synthesis"]
+    },
+    {
+      "id": "b1-04-05-controlled-2",
+      "type": "fill-blank",
+      "category": "controlled",
+      "sentence": "A jegyző ____ a fiatal hivatalnokot arról, hogy még egyszer ilyet tegyen. (talked out of)",
+      "answer": "lebeszélte",
+      "teaches": ["advice-synthesis"]
+    },
+    {
+      "id": "b1-04-05-controlled-3",
+      "type": "fill-blank",
+      "category": "controlled",
+      "sentence": "Fábián úr nyugodt hangja ____ az asszonyt, hogy nincs miért aggódnia. (convinced)",
+      "answer": "meggyőzte",
+      "teaches": ["advice-synthesis"]
+    },
+    {
+      "id": "b1-04-05-controlled-4",
+      "type": "multiple-choice",
+      "category": "controlled",
+      "question": "Amikor elköszönt, még egyszer ____: „Menjen csak haza nyugodtan.” (encouraged her)",
+      "options": ["bátorította", "lebeszélte", "rábeszélte"],
+      "correct": 0,
+      "teaches": ["advice-synthesis"]
+    },
+    {
+      "id": "b1-04-05-practice-1",
+      "type": "sentence-builder",
+      "category": "practice",
+      "tiles": ["A", "helyedben", "én", "először", "mérlegelném", "az", "előnyöket", "és", "a", "hátrányokat", "."],
+      "solution": ["A", "helyedben", "én", "először", "mérlegelném", "az", "előnyöket", "és", "a", "hátrányokat", "."],
+      "english": "In your place, I'd weigh the advantages and disadvantages first.",
+      "teaches": ["advice-synthesis"]
+    },
+    {
+      "id": "b1-04-05-practice-2",
+      "type": "sentence-order",
+      "category": "practice",
+      "sentences": [
+        "Szerintem most tanácstalan vagy, de ez nem baj.",
+        "A helyedben én először mérlegelném az előnyöket és a hátrányokat.",
+        "Egyrészt biztonságosabb maradni, másrészt izgalmasabb lenne váltani.",
+        "Nehogy siess a döntéssel — előbb beszélhetnél egy tanácsadóval is."
+      ],
+      "solution": [0, 1, 2, 3],
+      "teaches": ["advice-synthesis"]
+    },
+    {
+      "id": "b1-04-05-practice-3",
+      "type": "substitution",
+      "category": "practice",
+      "base_sentence": "Nehogy siess a döntéssel — előbb beszélhetnél egy tanácsadóval is.",
+      "base_word": "tanácsadóval",
+      "base_gloss": "Don't rush the decision — you could talk to an advisor first, too.",
+      "options": [
+        { "word": "barát", "inflected": "baráttal", "sentence": "Nehogy siess a döntéssel — előbb beszélhetnél egy baráttal is.", "gloss": "friend" },
+        { "word": "szülő", "inflected": "szülővel", "sentence": "Nehogy siess a döntéssel — előbb beszélhetnél egy szülővel is.", "gloss": "parent" }
+      ],
+      "teaches": ["advice-synthesis"]
+    },
+    {
+      "id": "b1-04-05-practice-4",
+      "type": "multiple-choice",
+      "category": "practice",
+      "question": "Which sentence best sums up the pragmatic point of Hungarian advice-giving language in this unit?",
+      "options": [
+        "Egyik eszköz sem dönt a másik ember helyett — a végső döntés mindig az övé marad.",
+        "Minden tanács egyben parancs is.",
+        "A jó tanácsadó mindig eldönti helyetted a dolgot."
+      ],
+      "correct": 0,
+      "teaches": ["advice-synthesis"]
+    },
+    {
+      "id": "b1-04-05-dialogue-1",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        { "speaker": "Petra", "text": "Nem tudom, elfogadjam-e az ajánlatot. Teljesen tanácstalan vagyok." },
+        { "speaker": "Meg", "text": "_____" }
+      ],
+      "options": [
+        "A helyedben én mérlegelném az előnyöket és a hátrányokat, mielőtt döntesz.",
+        "A helyedben te már döntöttél."
+      ],
+      "correct": 0,
+      "teaches": ["advice-synthesis"]
+    },
+    {
+      "id": "b1-04-05-dialogue-2",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        { "speaker": "Károly", "text": "Azt hiszem, lemondom a találkozót — úgyis csak kockázatos lenne elmenni." },
+        { "speaker": "Anna", "text": "_____" }
+      ],
+      "options": [
+        "Nehogy siess a döntéssel — beszélhetnél még egy barátoddal is.",
+        "Jó, akkor biztos ez a legjobb döntés."
+      ],
+      "correct": 0,
+      "teaches": ["advice-synthesis"]
+    },
+    {
+      "id": "b1-04-05-writing-1",
+      "type": "structured-writing",
+      "category": "writing",
+      "template": [
+        {
+          "prompt": "Say that in your friend's place, you'd weigh the advantages and disadvantages first.",
+          "answer": "A helyedben én először mérlegelném az előnyöket és a hátrányokat."
+        }
+      ],
+      "teaches": ["advice-synthesis"]
+    },
+    {
+      "id": "b1-04-05-writing-2",
+      "type": "structured-writing",
+      "category": "writing",
+      "template": [
+        {
+          "prompt": "Say that the notary talked the young clerk out of sending such a letter again.",
+          "answer": "A jegyző lebeszélte a fiatal hivatalnokot arról, hogy még egyszer ilyet tegyen."
+        }
+      ],
+      "teaches": ["advice-synthesis"]
+    },
+    {
+      "id": "b1-04-05-check-1",
+      "type": "multiple-choice",
+      "category": "check",
+      "question": "Which verb would you use to describe convincing someone with calm, confident words?",
+      "options": ["meggyőz", "lebeszél", "rábeszél"],
+      "correct": 0,
+      "teaches": ["advice-synthesis"]
+    },
+    {
+      "id": "b1-04-05-check-2",
+      "type": "fill-blank",
+      "category": "check",
+      "sentence": "A barátom ____ engem, hogy próbáljam ki az új éttermet. (talked me into)",
+      "answer": "rábeszélt",
+      "teaches": ["advice-synthesis"]
+    },
+    {
+      "id": "b1-04-05-reading-1",
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "Miért kapott levelet Bede Jánosné az adóhivataltól?",
+      "options": [
+        "Mert a lánya régi tartozását akarták behajtani.",
+        "Mert nyert egy lottón.",
+        "Mert új házat akart venni."
+      ],
+      "correct": 0
+    },
+    {
+      "id": "b1-04-05-reading-2",
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "Mit tanácsolt Fábián úr az asszonynak?",
+      "options": [
+        "Hogy ne is válaszoljon a hivatalnak, ő majd elintézi.",
+        "Hogy azonnal fizesse ki a teljes összeget.",
+        "Hogy forduljon bírósághoz."
+      ],
+      "correct": 0
+    },
+    {
+      "id": "b1-04-05-reading-3",
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "Mit üzent Fábián úr a fiatal hivatalnoknak?",
+      "options": [
+        "Hogy legközelebb alaposabban nézzen utána, mielőtt ilyen levelet küld.",
+        "Hogy küldjön még több ilyen levelet.",
+        "Hogy mondja el mindenkinek a történetet."
+      ],
+      "correct": 0
+    }
+  ]
+}

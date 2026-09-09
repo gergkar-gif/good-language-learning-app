@@ -1,0 +1,172 @@
+{
+  "lesson": "b1-04-03",
+  "exercises": [
+    {
+      "id": "b1-04-03-intro-1",
+      "type": "multiple-choice",
+      "category": "introduce",
+      "question": "Which pair of words means \"on one hand... on the other hand...\"?",
+      "options": ["egyrészt... másrészt...", "vagy... vagy...", "sem... sem..."],
+      "correct": 0,
+      "teaches": ["egyreszt-masreszt"]
+    },
+    {
+      "id": "b1-04-03-intro-2",
+      "type": "multiple-choice",
+      "category": "introduce",
+      "question": "Which pattern lets you gently state you'd rather choose one option than another?",
+      "options": ["inkább... mint... + conditional", "kell... hogy...", "már... mint..."],
+      "correct": 0,
+      "teaches": ["inkabb-mint-suggestion"]
+    },
+    {
+      "id": "b1-04-03-controlled-1",
+      "type": "matching",
+      "category": "controlled",
+      "pairs": [
+        ["előny", "advantage"],
+        ["hátrány", "disadvantage"],
+        ["mérlegel", "to weigh up"],
+        ["viszont", "however"]
+      ],
+      "teaches": ["egyreszt-masreszt", "inkabb-mint-suggestion"]
+    },
+    {
+      "id": "b1-04-03-controlled-2",
+      "type": "fill-blank",
+      "category": "controlled",
+      "sentence": "____ olcsóbb a vonat, másrészt tovább tart az út. (on one hand)",
+      "answer": "Egyrészt",
+      "teaches": ["egyreszt-masreszt"]
+    },
+    {
+      "id": "b1-04-03-controlled-3",
+      "type": "fill-blank",
+      "category": "controlled",
+      "sentence": "Én ____ a biztonságos utat választanám, mint a gyorsabbat. (rather)",
+      "answer": "inkább",
+      "teaches": ["inkabb-mint-suggestion"]
+    },
+    {
+      "id": "b1-04-03-controlled-4",
+      "type": "multiple-choice",
+      "category": "controlled",
+      "question": "Ennek a munkának egyrészt sok ____ van, másrészt komoly hátrányai is. (advantage)",
+      "options": ["előnye", "hátránya", "kockázata"],
+      "correct": 0,
+      "teaches": ["egyreszt-masreszt"]
+    },
+    {
+      "id": "b1-04-03-practice-1",
+      "type": "sentence-builder",
+      "category": "practice",
+      "tiles": ["Egyrészt", "olcsóbb", "a", "vonat", ",", "másrészt", "tovább", "tart", "az", "út", "."],
+      "solution": ["Egyrészt", "olcsóbb", "a", "vonat", ",", "másrészt", "tovább", "tart", "az", "út", "."],
+      "english": "On one hand the train is cheaper; on the other hand, the trip takes longer.",
+      "teaches": ["egyreszt-masreszt"]
+    },
+    {
+      "id": "b1-04-03-practice-2",
+      "type": "sentence-builder",
+      "category": "practice",
+      "tiles": ["Én", "inkább", "a", "biztonságos", "utat", "választanám", ",", "mint", "a", "gyorsabbat", "."],
+      "solution": ["Én", "inkább", "a", "biztonságos", "utat", "választanám", ",", "mint", "a", "gyorsabbat", "."],
+      "english": "I would rather choose the safe route than the faster one.",
+      "teaches": ["inkabb-mint-suggestion"]
+    },
+    {
+      "id": "b1-04-03-practice-3",
+      "type": "substitution",
+      "category": "practice",
+      "base_sentence": "Egyrészt szeretnék elköltözni, másrészt félek a változástól.",
+      "base_word": "elköltözni",
+      "base_gloss": "On one hand I'd like to move, on the other hand I'm afraid of the change.",
+      "options": [
+        { "word": "vált", "inflected": "váltani", "sentence": "Egyrészt szeretnék váltani, másrészt félek a változástól.", "gloss": "switch, change" },
+        { "word": "utazik", "inflected": "utazni", "sentence": "Egyrészt szeretnék utazni, másrészt félek a változástól.", "gloss": "travel" }
+      ],
+      "teaches": ["egyreszt-masreszt"]
+    },
+    {
+      "id": "b1-04-03-practice-4",
+      "type": "multiple-choice",
+      "category": "practice",
+      "question": "Which sentence correctly states a gentle preference between two options?",
+      "options": [
+        "A te helyedben inkább várnék egy kicsit, mint azonnal döntenék.",
+        "A te helyedben te inkább vársz.",
+        "A te helyedben inkább vártál."
+      ],
+      "correct": 0,
+      "teaches": ["inkabb-mint-suggestion"]
+    },
+    {
+      "id": "b1-04-03-dialogue-1",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        { "speaker": "Petra", "text": "Melyik állást fogadjam el — a biztosat vagy az izgalmasabbat?" },
+        { "speaker": "Meg", "text": "_____" }
+      ],
+      "options": [
+        "Egyrészt a biztos állás nyugodtabb, másrészt az izgalmasabb sokkal érdekesebb lenne.",
+        "A biztos állás mindig jobb, nincs mit mérlegelni."
+      ],
+      "correct": 0,
+      "teaches": ["egyreszt-masreszt"]
+    },
+    {
+      "id": "b1-04-03-dialogue-2",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        { "speaker": "Károly", "text": "Melyik utat válasszuk, a rövidebbet vagy a szebbet?" },
+        { "speaker": "Anna", "text": "_____" }
+      ],
+      "options": ["Én inkább a szebb utat választanám, mint a rövidebbet.", "Én már választottam a rövidebb utat."],
+      "correct": 0,
+      "teaches": ["inkabb-mint-suggestion"]
+    },
+    {
+      "id": "b1-04-03-writing-1",
+      "type": "structured-writing",
+      "category": "writing",
+      "template": [
+        {
+          "prompt": "Say that on one hand the train is cheaper, on the other hand the trip takes longer.",
+          "answer": "Egyrészt olcsóbb a vonat, másrészt tovább tart az út."
+        }
+      ],
+      "teaches": ["egyreszt-masreszt"]
+    },
+    {
+      "id": "b1-04-03-writing-2",
+      "type": "structured-writing",
+      "category": "writing",
+      "template": [
+        {
+          "prompt": "Say that you would rather wait a bit than decide right away.",
+          "answer": "Inkább várnék egy kicsit, mint azonnal döntenék."
+        }
+      ],
+      "teaches": ["inkabb-mint-suggestion"]
+    },
+    {
+      "id": "b1-04-03-check-1",
+      "type": "multiple-choice",
+      "category": "check",
+      "question": "Which word always needs its partner (egyrészt or másrészt) to make sense?",
+      "options": ["másrészt", "viszont", "mérlegel"],
+      "correct": 0,
+      "teaches": ["egyreszt-masreszt"]
+    },
+    {
+      "id": "b1-04-03-check-2",
+      "type": "fill-blank",
+      "category": "check",
+      "sentence": "A te helyedben ____ várnék egy kicsit, mint azonnal döntenék. (rather)",
+      "answer": "inkább",
+      "teaches": ["inkabb-mint-suggestion"]
+    }
+  ]
+}

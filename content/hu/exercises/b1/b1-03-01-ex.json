@@ -1,0 +1,169 @@
+{
+  "lesson": "b1-03-01",
+  "exercises": [
+    {
+      "id": "b1-03-01-intro-1",
+      "type": "multiple-choice",
+      "category": "introduce",
+      "question": "Which word means \"I would like\" and points forward to one specific, definite thing?",
+      "options": ["szeretném", "szeretnék", "szeretek"],
+      "correct": 0,
+      "teaches": ["szeretnem-def-indef"]
+    },
+    {
+      "id": "b1-03-01-intro-2",
+      "type": "multiple-choice",
+      "category": "introduce",
+      "question": "Which pattern means \"I wish X would happen\"?",
+      "options": ["szeretném, ha + conditional", "szeretnék + infinitive", "szeretem, hogy + present"],
+      "correct": 0,
+      "teaches": ["szeretnem-ha-wish"]
+    },
+    {
+      "id": "b1-03-01-controlled-1",
+      "type": "matching",
+      "category": "controlled",
+      "pairs": [
+        ["elképzel", "to imagine"],
+        ["jövőkép", "vision of the future"],
+        ["önbizalom", "self-confidence"],
+        ["céltudatos", "purposeful, goal-oriented"]
+      ],
+      "teaches": ["szeretnem-def-indef", "szeretnem-ha-wish"]
+    },
+    {
+      "id": "b1-03-01-controlled-2",
+      "type": "fill-blank",
+      "category": "controlled",
+      "sentence": "Szeretnék egy jobb állást, de ezt az állást ____ igazán. (would like)",
+      "answer": "szeretném",
+      "teaches": ["szeretnem-def-indef"]
+    },
+    {
+      "id": "b1-03-01-controlled-3",
+      "type": "fill-blank",
+      "category": "controlled",
+      "sentence": "Szeretném, ha ____ a tervem. (it would succeed)",
+      "answer": "sikerülne",
+      "teaches": ["szeretnem-ha-wish"]
+    },
+    {
+      "id": "b1-03-01-controlled-4",
+      "type": "multiple-choice",
+      "category": "controlled",
+      "question": "Szeretném ____ az álmom.",
+      "options": ["ha megvalósulna", "hogy megvalósul", "megvalósul"],
+      "correct": 0,
+      "teaches": ["szeretnem-ha-wish"]
+    },
+    {
+      "id": "b1-03-01-practice-1",
+      "type": "sentence-builder",
+      "category": "practice",
+      "tiles": ["Szeretném", ",", "ha", "lenne", "időm", "mindenre", "."],
+      "solution": ["Szeretném", ",", "ha", "lenne", "időm", "mindenre", "."],
+      "english": "I wish I had time for everything.",
+      "teaches": ["szeretnem-ha-wish"]
+    },
+    {
+      "id": "b1-03-01-practice-2",
+      "type": "sentence-builder",
+      "category": "practice",
+      "tiles": ["Már", "most", "elképzelem", ",", "milyen", "lesz", "az", "életem", "öt", "év", "múlva", "."],
+      "solution": ["Már", "most", "elképzelem", ",", "milyen", "lesz", "az", "életem", "öt", "év", "múlva", "."],
+      "english": "I'm already imagining what my life will be like in five years.",
+      "teaches": ["szeretnem-def-indef"]
+    },
+    {
+      "id": "b1-03-01-practice-3",
+      "type": "substitution",
+      "category": "practice",
+      "base_sentence": "Szeretném, ha sikerülne a tervem.",
+      "base_word": "sikerülne",
+      "base_gloss": "I wish my plan would succeed.",
+      "options": [
+        { "word": "megvalósul", "inflected": "megvalósulna", "sentence": "Szeretném, ha megvalósulna a tervem.", "gloss": "would come true" },
+        { "word": "fejlődik", "inflected": "fejlődne", "sentence": "Szeretném, ha fejlődne a tervem.", "gloss": "would develop" }
+      ],
+      "teaches": ["szeretnem-ha-wish"]
+    },
+    {
+      "id": "b1-03-01-practice-4",
+      "type": "multiple-choice",
+      "category": "practice",
+      "question": "Which sentence correctly wishes for a specific, definite outcome?",
+      "options": [
+        "Szeretném, ha sikerülne a tervem.",
+        "Szeretnék, ha sikerülne a tervem.",
+        "Szeretem, ha sikerülne a tervem."
+      ],
+      "correct": 0,
+      "teaches": ["szeretnem-def-indef"]
+    },
+    {
+      "id": "b1-03-01-dialogue-1",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        { "speaker": "Petra", "text": "Hogyan képzeled el magad öt év múlva?" },
+        { "speaker": "Anna", "text": "_____" }
+      ],
+      "options": ["Céltudatos és önbizalommal teli embernek látom magam.", "Nem szeretem elképzelni a jövőt."],
+      "correct": 0,
+      "teaches": ["szeretnem-def-indef"]
+    },
+    {
+      "id": "b1-03-01-dialogue-2",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        { "speaker": "Károly", "text": "Mit szeretnél elérni a jövőben?" },
+        { "speaker": "Anna", "text": "_____" }
+      ],
+      "options": ["Szeretném, ha sikerülne saját vállalkozást indítanom.", "Tegnap indítottam egy vállalkozást."],
+      "correct": 0,
+      "teaches": ["szeretnem-ha-wish"]
+    },
+    {
+      "id": "b1-03-01-writing-1",
+      "type": "structured-writing",
+      "category": "writing",
+      "template": [
+        {
+          "prompt": "Say you wish your plan would succeed.",
+          "answer": "Szeretném, ha sikerülne a tervem."
+        }
+      ],
+      "teaches": ["szeretnem-ha-wish"]
+    },
+    {
+      "id": "b1-03-01-writing-2",
+      "type": "structured-writing",
+      "category": "writing",
+      "template": [
+        {
+          "prompt": "Say that you often imagine your vision of the future.",
+          "answer": "Gyakran elképzelem a jövőképemet."
+        }
+      ],
+      "teaches": ["szeretnem-def-indef"]
+    },
+    {
+      "id": "b1-03-01-check-1",
+      "type": "multiple-choice",
+      "category": "check",
+      "question": "Which sentence means \"I wish life were easier\"?",
+      "options": ["Szeretném, ha könnyebb lenne az élet.", "Szeretnék könnyebb életet.", "Az élet könnyebb lesz."],
+      "correct": 0,
+      "teaches": ["szeretnem-ha-wish"]
+    },
+    {
+      "id": "b1-03-01-check-2",
+      "type": "fill-blank",
+      "category": "check",
+      "sentence": "____ ezt az állást, nagyon jó lehetőség. (I would like)",
+      "answer": "szeretném",
+      "teaches": ["szeretnem-def-indef"]
+    }
+  ]
+}

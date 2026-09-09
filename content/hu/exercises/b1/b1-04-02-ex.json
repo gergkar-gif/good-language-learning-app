@@ -1,0 +1,173 @@
+{
+  "lesson": "b1-04-02",
+  "exercises": [
+    {
+      "id": "b1-04-02-intro-1",
+      "type": "multiple-choice",
+      "category": "introduce",
+      "question": "Which phrase means \"you could try it\" — a gentle suggestion rather than a command?",
+      "options": ["Kipróbálhatnád.", "Próbáld ki!", "Kipróbálod?"],
+      "correct": 0,
+      "teaches": ["hat-het-suggestion"]
+    },
+    {
+      "id": "b1-04-02-intro-2",
+      "type": "multiple-choice",
+      "category": "introduce",
+      "question": "Which pattern means \"it would be better if...\", close to English \"you'd better\"?",
+      "options": ["Jobb lenne, ha...", "Sokkal jobb, mint...", "Legjobb, hogy..."],
+      "correct": 0,
+      "teaches": ["jobb-lenne-ha"]
+    },
+    {
+      "id": "b1-04-02-controlled-1",
+      "type": "matching",
+      "category": "controlled",
+      "pairs": [
+        ["átgondol", "to think through"],
+        ["habozik", "to hesitate"],
+        ["mielőbb", "as soon as possible"],
+        ["elhalaszt", "to postpone"]
+      ],
+      "teaches": ["hat-het-suggestion", "jobb-lenne-ha"]
+    },
+    {
+      "id": "b1-04-02-controlled-2",
+      "type": "fill-blank",
+      "category": "controlled",
+      "sentence": "____ egy kicsit, mielőtt döntesz. (You could wait)",
+      "answer": "Várhatnál",
+      "teaches": ["hat-het-suggestion"]
+    },
+    {
+      "id": "b1-04-02-controlled-3",
+      "type": "fill-blank",
+      "category": "controlled",
+      "sentence": "Jobb lenne, ha ____ egy kicsit. (you rested)",
+      "answer": "pihennél",
+      "teaches": ["jobb-lenne-ha"]
+    },
+    {
+      "id": "b1-04-02-controlled-4",
+      "type": "multiple-choice",
+      "category": "controlled",
+      "question": "What does \"Kérhetnél tanácsot egy szakértőtől\" suggest?",
+      "options": [
+        "A gentle suggestion that you could ask an expert for advice.",
+        "A command to ask an expert immediately.",
+        "A statement that you already asked an expert."
+      ],
+      "correct": 0,
+      "teaches": ["hat-het-suggestion"]
+    },
+    {
+      "id": "b1-04-02-practice-1",
+      "type": "sentence-builder",
+      "category": "practice",
+      "tiles": ["Beszélhetnél", "vele", "erről", "."],
+      "solution": ["Beszélhetnél", "vele", "erről", "."],
+      "english": "You could talk to him/her about this.",
+      "teaches": ["hat-het-suggestion"]
+    },
+    {
+      "id": "b1-04-02-practice-2",
+      "type": "sentence-builder",
+      "category": "practice",
+      "tiles": ["Jobb", "lenne", ",", "ha", "elmondanád", "neki", "az", "igazat", "."],
+      "solution": ["Jobb", "lenne", ",", "ha", "elmondanád", "neki", "az", "igazat", "."],
+      "english": "It would be better if you told him/her the truth.",
+      "teaches": ["jobb-lenne-ha"]
+    },
+    {
+      "id": "b1-04-02-practice-3",
+      "type": "substitution",
+      "category": "practice",
+      "base_sentence": "Beszélhetnél vele erről.",
+      "base_word": "vele",
+      "base_gloss": "You could talk to him/her about this.",
+      "options": [
+        { "word": "ők", "inflected": "velük", "sentence": "Beszélhetnél velük erről.", "gloss": "them" },
+        { "word": "én", "inflected": "velem", "sentence": "Beszélhetnél velem erről.", "gloss": "me" }
+      ],
+      "teaches": ["hat-het-suggestion"]
+    },
+    {
+      "id": "b1-04-02-practice-4",
+      "type": "multiple-choice",
+      "category": "practice",
+      "question": "Which sentence is a warm suggestion rather than a flat command?",
+      "options": ["Kipróbálhatnád ezt a receptet.", "Próbáld ki ezt a receptet!", "Kipróbálod ezt a receptet?"],
+      "correct": 0,
+      "teaches": ["hat-het-suggestion"]
+    },
+    {
+      "id": "b1-04-02-dialogue-1",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        { "speaker": "Petra", "text": "Nagyon fáradt vagyok, de még sok a dolgom." },
+        { "speaker": "Meg", "text": "_____" }
+      ],
+      "options": ["Jobb lenne, ha inkább pihennél egy kicsit.", "Jobb, hogy fáradt vagy."],
+      "correct": 0,
+      "teaches": ["jobb-lenne-ha"]
+    },
+    {
+      "id": "b1-04-02-dialogue-2",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        { "speaker": "Károly", "text": "Nem tudom, hogyan oldjam meg ezt a problémát." },
+        { "speaker": "Anna", "text": "_____" }
+      ],
+      "options": ["Kérhetnél tanácsot egy szakértőtől.", "Megoldottad már a problémát."],
+      "correct": 0,
+      "teaches": ["hat-het-suggestion"]
+    },
+    {
+      "id": "b1-04-02-writing-1",
+      "type": "structured-writing",
+      "category": "writing",
+      "template": [
+        {
+          "prompt": "Say that you could ask an expert for advice.",
+          "answer": "Kérhetnél tanácsot egy szakértőtől."
+        }
+      ],
+      "teaches": ["hat-het-suggestion"]
+    },
+    {
+      "id": "b1-04-02-writing-2",
+      "type": "structured-writing",
+      "category": "writing",
+      "template": [
+        {
+          "prompt": "Say it would be better if you (plural) left earlier.",
+          "answer": "Jobb lenne, ha korábban indulnátok."
+        }
+      ],
+      "teaches": ["jobb-lenne-ha"]
+    },
+    {
+      "id": "b1-04-02-check-1",
+      "type": "multiple-choice",
+      "category": "check",
+      "question": "What does -hat/-het + conditional add to a suggestion, compared to a plain imperative?",
+      "options": [
+        "It softens it into an optional idea, not a command.",
+        "It makes it more urgent.",
+        "It turns it into a question about the past."
+      ],
+      "correct": 0,
+      "teaches": ["hat-het-suggestion"]
+    },
+    {
+      "id": "b1-04-02-check-2",
+      "type": "fill-blank",
+      "category": "check",
+      "sentence": "Jobb lenne, ha ____ neki az igazat. (you told)",
+      "answer": "elmondanád",
+      "teaches": ["jobb-lenne-ha"]
+    }
+  ]
+}
