@@ -11,11 +11,12 @@ BASE_LESSONS = Path("content")
 CATEGORIES = ["original", "classics", "world"]
 SKIP_FILENAMES = {"manifest.json", "lessons-manifest.json"}
 
-def build_stories(lang="es"):
+def build_stories(lang="es", ref_to_unit=None):
     stories = []
     lang_path = BASE_STORIES / lang / "stories"
     if not lang_path.exists():
         return stories
+    ref_to_unit = ref_to_unit or {}
 
     for cat in CATEGORIES:
         cat_path = lang_path / cat
@@ -42,6 +43,13 @@ def build_stories(lang="es"):
                 file_type = "classics"
             story_type = file_type if file_type in CATEGORIES else cat
 
+            # A lesson's own `story` section ref is relative to
+            # content/{lang}/ ("stories/classics/b1/..."), one directory up
+            # from this file's own `path` below (relative to
+            # content/{lang}/stories/) -- prefix it back on to look up.
+            rel_path = f.relative_to(lang_path).as_posix()
+            unit = ref_to_unit.get("stories/" + rel_path)
+
             stories.append({
                 "id": data.get("id", f"story.{cat}.{f.stem}"),
                 "title": data.get("title", f.stem),
@@ -51,11 +59,19 @@ def build_stories(lang="es"):
                 "source": story_type,
                 # relative to content/{lang}/stories/, matching what
                 # Content.story() fetches: content/{lang}/stories/${path}
-                "path": f.relative_to(lang_path).as_posix(),
+                "path": rel_path,
                 "estimatedMinutes": data.get("estimatedMinutes"),
                 "characters": data.get("characters", []),
-                "location": data.get("location")
+                "location": data.get("location"),
+                # Which unit this story is taught in, for the reader's
+                # "this is the reading for Level X, Unit Y" line -- None
+                # for a story no lesson currently links to (e.g. an old
+                # original kept in the library after a classics rewrite).
+                # See _story_unit_index()/_apply_story_unit_families().
+                "unit": unit
             })
+
+    _apply_story_unit_families(stories)
     return stories
 
 LEVEL_META = {
@@ -897,6 +913,93 @@ def _lesson_id_to_unit(curriculum):
     return index
 
 
+_FAMILY_SUFFIX_RE = re.compile(r"\.\d+$")
+
+
+def _story_unit_index(lang, curriculum):
+    """story ref path (as it appears in a lesson's `story` section, e.g.
+    'stories/classics/b1/b1-01-janosvitez.json') -> {id, title, label,
+    level}, so the reader can show "this is the reading for Level X, Unit
+    Y" the same way a classics reading already shows its source. Derived
+    by finding which lesson actually embeds each story (its `story`
+    section `ref`), then resolving that lesson to its unit via
+    _lesson_id_to_unit() -- one more read of the same lesson files
+    build_curriculum() already walked, not a new source of truth.
+
+    A world-type "combined" story (see content/*/stories/world/*.json's own
+    convention) is never itself embedded in a lesson -- only its five
+    per-lesson segments are -- so it would never resolve this way on its
+    own. It shares an id "family" with those segments instead (segment ids
+    end in '.01'..'.05', the combined id has no such suffix), so once any
+    family member resolves via direct lesson linkage, every other member
+    of that family borrows the same unit."""
+    lesson_unit = _lesson_id_to_unit(curriculum)
+    ref_to_unit = {}
+    lang_path = BASE_LESSONS / lang
+    lessons_dir = lang_path / "lessons"
+    if not lessons_dir.exists():
+        return ref_to_unit
+
+    for level_dir in sorted(p for p in lessons_dir.iterdir() if p.is_dir()):
+        for f in sorted(level_dir.glob("*.json")):
+            if f.name in SKIP_FILENAMES or f.stat().st_size == 0:
+                continue
+            try:
+                data = json.loads(f.read_text(encoding="utf-8"))
+            except json.JSONDecodeError:
+                continue
+            unit = lesson_unit.get(data.get("id"))
+            if not unit:
+                continue
+            for section in data.get("sections", []):
+                if section.get("type") == "story" and section.get("ref"):
+                    ref_to_unit[section["ref"]] = unit
+    return ref_to_unit
+
+
+def _apply_story_unit_families(stories):
+    """Second pass over an already-built stories list: for any story with
+    no resolved unit, borrow one from another story that shares its id
+    family (see _story_unit_index's docstring) and did resolve. Mutates
+    each story dict's "unit" key in place.
+
+    Restricted to type "world" stories on both sides: that's the only
+    category where a combined story and its five per-lesson segments are
+    genuinely siblings sharing one unit. A classics/original reading is
+    always its own single story with no such family, and its id can
+    reduce to something far too generic once the trailing ".NN" is
+    stripped (e.g. "story.b1.01" -> "story.b1", which is a prefix of
+    nearly every other B1 story id) -- applying this to non-world stories
+    was matching completely unrelated readings to whatever unit happened
+    to iterate first.
+
+    Exact family match first (fast, covers almost everything), then a
+    hyphen-insensitive prefix fallback for the handful of older units
+    where a combined story's own slug drifted from its segments' slug —
+    e.g. segments "story.b1.represionpolitica.01".."05" (family
+    "story.b1.represionpolitica") vs their combined sibling's own id
+    "story.b1.represion-politica": same slug, one extra hyphen."""
+    world = [s for s in stories if s.get("type") == "world"]
+
+    family_unit = {}
+    for s in world:
+        if s.get("unit"):
+            family_unit.setdefault(_FAMILY_SUFFIX_RE.sub("", s["id"]), s["unit"])
+
+    unresolved = [s for s in world if not s.get("unit")]
+    for s in unresolved:
+        fam = _FAMILY_SUFFIX_RE.sub("", s["id"])
+        if fam in family_unit:
+            s["unit"] = family_unit[fam]
+            continue
+        fam_norm = fam.replace("-", "")
+        for rid_fam, unit in family_unit.items():
+            rid_fam_norm = rid_fam.replace("-", "")
+            if rid_fam_norm and fam_norm.startswith(rid_fam_norm):
+                s["unit"] = unit
+                break
+
+
 def build_decks(lang="es", curriculum=None):
     """Every deck the Decks tab can offer, built from content that already
     exists rather than maintained by hand.
@@ -1126,21 +1229,11 @@ def validate_lessons(lang="es"):
 def main():
     generated = datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
 
-    # Build stories manifest for each language that actually has a stories folder
-    for lang in ["es", "fr", "hu"]:
-        stories_dir = BASE_STORIES / lang / "stories"
-        if not stories_dir.exists():
-            print(f"Skipping stories manifest for {lang}: no {stories_dir} folder yet")
-            continue
-        stories = build_stories(lang)
-        with open(stories_dir / "manifest.json", "w", encoding='utf-8') as f:
-            json.dump({"generated": generated, "stories": stories}, f, indent=2, ensure_ascii=False)
-        print(f"Stories manifest for {lang}: {len(stories)} stories")
-
-    # Build curriculum.json for each language — this is what the Learn tab
-    # actually reads (engine/curriculum.js, engine/init.js), generated
+    # Build curriculum.json for each language first — this is what the Learn
+    # tab actually reads (engine/curriculum.js, engine/init.js), generated
     # directly from each lesson file rather than hand-maintained separately.
-    # Kept around per language so the decks pass below can group by the same
+    # Kept around so both the stories pass below (which unit is a reading
+    # taught in?) and the decks pass further down can group by the same
     # units without rebuilding the curriculum a second time.
     curricula = {}
     for lang in ["es", "fr", "hu"]:
@@ -1159,6 +1252,19 @@ def main():
         total_units = sum(len(lvl['units']) for lvl in curriculum['levels'].values())
         total_lessons = sum(len(u['lessons']) for lvl in curriculum['levels'].values() for u in lvl['units'])
         print(f"Curriculum for {lang}: {total_lessons} lessons in {total_units} units across {len(curriculum['levels'])} levels")
+
+    # Build stories manifest for each language that actually has a stories folder
+    for lang in ["es", "fr", "hu"]:
+        stories_dir = BASE_STORIES / lang / "stories"
+        if not stories_dir.exists():
+            print(f"Skipping stories manifest for {lang}: no {stories_dir} folder yet")
+            continue
+        ref_to_unit = _story_unit_index(lang, curricula.get(lang))
+        stories = build_stories(lang, ref_to_unit)
+        with open(stories_dir / "manifest.json", "w", encoding='utf-8') as f:
+            json.dump({"generated": generated, "stories": stories}, f, indent=2, ensure_ascii=False)
+        with_unit = sum(1 for s in stories if s.get("unit"))
+        print(f"Stories manifest for {lang}: {len(stories)} stories ({with_unit} with a resolved unit)")
 
     # Decks: named word lists over the single card store
     for lang in ["es", "fr", "hu"]:

@@ -239,14 +239,41 @@ track known bugs in existing content rather than things not yet built.
     author. Both already render correctly (no line / no "by" clause)
     under the `story.work` guard, no content fixes needed. Verified
     live across ES (with and without author) and HU (János vitéz).
-  - **Original/world** stories ("this is the reading for Level A1,
-    Unit 4: Family"): still not built. Needs a lesson→unit lookup a
-    story object doesn't carry today (`level` + `lesson` position
-    within a unit isn't enough to name the unit) — `curriculum.json`'s
-    lesson entries don't carry a story ref either, so resolving this
-    means either searching lesson files for a matching `story.ref` at
-    render time, or adding a unit id onto the story schema itself when
-    a story is wired to one. Left for a future pass.
+  - **Original/world** stories: "This is the reading for Level A1,
+    Unit 1: Greetings & Introductions" (or "This is a Level B1
+    reading" when no lesson currently links the story) — **built
+    2026-09-09**, same day as originally logged. Resolved at
+    build time, not render time: `build-manifest.py` now builds
+    curriculum.json *before* the stories manifest (previously the
+    other way around) and threads it through a new
+    `_story_unit_index()`, which walks every lesson file's `story`
+    section `ref` and resolves it to a unit via the existing
+    `_lesson_id_to_unit()` (already used by decks). Each story's
+    manifest entry gets a `unit: {id, title, label, level}` field
+    (`null` when no lesson links it). `Reader.loadStory()` carries
+    that field onto the loaded story object (the story file itself
+    has no idea what unit it's in); `renderStory()` picks classics
+    attribution, the unit line, or the level-only fallback, in that
+    order. A world-type "combined" reading is never itself embedded
+    in a lesson (only its 5 segments are), so it borrows its unit from
+    whichever segment resolves directly, matched by a shared story-id
+    family (segment ids end `.01`..`.05`, the combined id doesn't) —
+    with a hyphen-insensitive fallback for a couple of older units
+    where the combined file's own slug had drifted from its segments'
+    (`represionpolitica` vs `represion-politica`). That family-borrow
+    pass is deliberately restricted to `type: "world"` stories only:
+    an early version applied it everywhere and silently mismatched
+    plain classics/original readings to unrelated units, because an id
+    like `story.b1.01` reduces to the far-too-generic family
+    `story.b1` once its own `.NN` suffix strips off — worth remembering
+    if this logic is ever touched again. Verified live across both
+    languages: an A1 original resolves its unit correctly, an old
+    unlinked B1 original correctly falls back to level-only, and both
+    a world segment and its combined sibling resolve to the same unit
+    (including the two former naming-drift cases). Coverage: 292/331
+    ES stories resolve a unit, 97/99 HU — the rest are readings no
+    lesson currently links to (old kept-but-unlinked originals, a
+    handful of standalone classics), which is expected, not a bug.
 
 ## Decks
 

@@ -665,6 +665,12 @@ window.Reader = {
             // The manifest id is what read-state is keyed on; the story file
             // itself doesn't necessarily carry the same id.
             this.currentStoryId = storyId;
+            // Which unit this reading is taught in lives only on the
+            // manifest entry (build-manifest.py resolves it from which
+            // lesson's story section actually references this file) — the
+            // story file itself has no idea. Carried onto the loaded story
+            // purely for renderStory()'s attribution line.
+            story.unit = storyMeta.unit;
             this.currentStory = story;
             this.renderStory(story);
         } catch (e) {
@@ -731,13 +737,24 @@ window.Reader = {
 
         // Classics carry real source/author/work fields (see
         // story.schema.json) that were, until now, only ever used to build
-        // this line — never shown to the reader. Anything else (original,
-        // world) has no attribution to give.
+        // this line — never shown to the reader. Original/world readings
+        // instead get which unit they're taught in — `story.unit`, set by
+        // loadStory() from the manifest entry (build-manifest.py resolves
+        // it from whichever lesson's story section actually references
+        // this file; a few older readings no lesson links to fall back to
+        // just naming the level, per ROADMAP's note on this).
         const isClassic = story.type === 'classic' || story.type === 'classics';
         if (isClassic && story.work) {
             html += '<p class="story-attribution">Adapted from <em>' + self.escapeHtml(story.work) + '</em>' +
                 (story.author ? ' by ' + self.escapeHtml(story.author) : '') +
             '</p>';
+        } else if (!isClassic && story.unit) {
+            html += '<p class="story-attribution">This is the reading for Level ' +
+                self.escapeHtml(story.level) + ', Unit ' + self.escapeHtml(String(story.unit.label)) +
+                ': ' + self.escapeHtml(story.unit.title) +
+            '</p>';
+        } else if (!isClassic) {
+            html += '<p class="story-attribution">This is a Level ' + self.escapeHtml(story.level) + ' reading.</p>';
         }
 
         // Reading XP is for finishing a text, so it needs an explicit end —
