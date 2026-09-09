@@ -1,0 +1,169 @@
+{
+  "lesson": "b1-02-01",
+  "exercises": [
+    {
+      "id": "b1-02-01-intro-1",
+      "type": "multiple-choice",
+      "category": "introduce",
+      "question": "Which word means \"already, ever\" and signals an experience, not a specific event?",
+      "options": ["már", "tegnap", "holnap"],
+      "correct": 0,
+      "teaches": ["mar-experiential"]
+    },
+    {
+      "id": "b1-02-01-intro-2",
+      "type": "multiple-choice",
+      "category": "introduce",
+      "question": "Which phrase means \"never yet\"?",
+      "options": ["még soha nem", "már nem", "most nem"],
+      "correct": 0,
+      "teaches": ["meg-soha-nem-past"]
+    },
+    {
+      "id": "b1-02-01-controlled-1",
+      "type": "matching",
+      "category": "controlled",
+      "pairs": [
+        ["már", "already, ever"],
+        ["még soha nem", "never yet"],
+        ["valaha", "ever"],
+        ["sosem", "never"]
+      ],
+      "teaches": ["mar-experiential", "meg-soha-nem-past"]
+    },
+    {
+      "id": "b1-02-01-controlled-2",
+      "type": "fill-blank",
+      "category": "controlled",
+      "sentence": "Jártál ____ Japánban? (ever)",
+      "answer": "már",
+      "teaches": ["mar-experiential"]
+    },
+    {
+      "id": "b1-02-01-controlled-3",
+      "type": "fill-blank",
+      "category": "controlled",
+      "sentence": "Még ____ nem jártam Japánban. (never)",
+      "answer": "soha",
+      "teaches": ["meg-soha-nem-past"]
+    },
+    {
+      "id": "b1-02-01-controlled-4",
+      "type": "multiple-choice",
+      "category": "controlled",
+      "question": "Próbáltál ____ szusit?",
+      "options": ["már", "tegnap", "holnap"],
+      "correct": 0,
+      "teaches": ["mar-experiential"]
+    },
+    {
+      "id": "b1-02-01-practice-1",
+      "type": "sentence-builder",
+      "category": "practice",
+      "tiles": ["Már", "jártam", "Londonban", "."],
+      "solution": ["Már", "jártam", "Londonban", "."],
+      "english": "I've already been to London.",
+      "teaches": ["mar-experiential"]
+    },
+    {
+      "id": "b1-02-01-practice-2",
+      "type": "sentence-builder",
+      "category": "practice",
+      "tiles": ["Még", "soha", "nem", "jártam", "Japánban", "."],
+      "solution": ["Még", "soha", "nem", "jártam", "Japánban", "."],
+      "english": "I've never yet been to Japan.",
+      "teaches": ["meg-soha-nem-past"]
+    },
+    {
+      "id": "b1-02-01-practice-3",
+      "type": "substitution",
+      "category": "practice",
+      "base_sentence": "Már ettem kaviárt.",
+      "base_word": "kaviárt",
+      "base_gloss": "I've already eaten caviar.",
+      "options": [
+        { "word": "szusi", "inflected": "szusit", "sentence": "Már ettem szusit.", "gloss": "sushi" },
+        { "word": "osztriga", "inflected": "osztrigát", "sentence": "Már ettem osztrigát.", "gloss": "oyster" }
+      ],
+      "teaches": ["mar-experiential"]
+    },
+    {
+      "id": "b1-02-01-practice-4",
+      "type": "multiple-choice",
+      "category": "practice",
+      "question": "Which sentence describes a general experience, not one specific past event?",
+      "options": [
+        "Már jártam Párizsban.",
+        "Tegnap Párizsba mentem.",
+        "Holnap Párizsba megyek."
+      ],
+      "correct": 0,
+      "teaches": ["mar-experiential"]
+    },
+    {
+      "id": "b1-02-01-dialogue-1",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        { "speaker": "Petra", "text": "Jártál már Japánban?" },
+        { "speaker": "Anna", "text": "_____" }
+      ],
+      "options": ["Igen, már jártam Japánban, kétszer is.", "Holnap megyek Japánba."],
+      "correct": 0,
+      "teaches": ["mar-experiential"]
+    },
+    {
+      "id": "b1-02-01-dialogue-2",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        { "speaker": "Károly", "text": "Próbáltál már szörfözni?" },
+        { "speaker": "Anna", "text": "_____" }
+      ],
+      "options": ["Nem, még soha nem próbáltam.", "Igen, tegnap szörföztem."],
+      "correct": 0,
+      "teaches": ["meg-soha-nem-past"]
+    },
+    {
+      "id": "b1-02-01-writing-1",
+      "type": "structured-writing",
+      "category": "writing",
+      "template": [
+        {
+          "prompt": "Say that you've already been to London.",
+          "answer": "Már voltam Londonban."
+        }
+      ],
+      "teaches": ["mar-experiential"]
+    },
+    {
+      "id": "b1-02-01-writing-2",
+      "type": "structured-writing",
+      "category": "writing",
+      "template": [
+        {
+          "prompt": "Say that you've never yet tried out surfing.",
+          "answer": "Még soha nem próbáltam ki a szörfözést."
+        }
+      ],
+      "teaches": ["meg-soha-nem-past"]
+    },
+    {
+      "id": "b1-02-01-check-1",
+      "type": "multiple-choice",
+      "category": "check",
+      "question": "Which sentence means \"Have you ever tried sushi?\"",
+      "options": ["Próbáltál már szusit?", "Próbálsz szusit?", "Próbáltál szusit tegnap?"],
+      "correct": 0,
+      "teaches": ["mar-experiential"]
+    },
+    {
+      "id": "b1-02-01-check-2",
+      "type": "fill-blank",
+      "category": "check",
+      "sentence": "Még ____ nem próbáltam ki a szörfözést. (never)",
+      "answer": "soha",
+      "teaches": ["meg-soha-nem-past"]
+    }
+  ]
+}

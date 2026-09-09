@@ -1,0 +1,169 @@
+{
+  "lesson": "b1-02-04",
+  "exercises": [
+    {
+      "id": "b1-02-04-intro-1",
+      "type": "multiple-choice",
+      "category": "introduce",
+      "question": "Which word means \"since then\"?",
+      "options": ["azóta", "azelőtt", "korábban"],
+      "correct": 0,
+      "teaches": ["looking-back-framing"]
+    },
+    {
+      "id": "b1-02-04-intro-2",
+      "type": "multiple-choice",
+      "category": "introduce",
+      "question": "Which word means \"to look back\"?",
+      "options": ["visszatekint", "előretekint", "körülnéz"],
+      "correct": 0,
+      "teaches": ["visszatekint-case-government"]
+    },
+    {
+      "id": "b1-02-04-controlled-1",
+      "type": "matching",
+      "category": "controlled",
+      "pairs": [
+        ["azelőtt", "before that"],
+        ["azóta", "since then"],
+        ["megváltozik", "to change"],
+        ["érett", "mature"]
+      ],
+      "teaches": ["looking-back-framing"]
+    },
+    {
+      "id": "b1-02-04-controlled-2",
+      "type": "fill-blank",
+      "category": "controlled",
+      "sentence": "____ féltem az új helyzetektől. (Before that)",
+      "answer": "Azelőtt",
+      "teaches": ["looking-back-framing"]
+    },
+    {
+      "id": "b1-02-04-controlled-3",
+      "type": "fill-blank",
+      "category": "controlled",
+      "sentence": "Sokat ____ a városunk az elmúlt tíz évben. (has changed)",
+      "answer": "megváltozott",
+      "teaches": ["looking-back-framing"]
+    },
+    {
+      "id": "b1-02-04-controlled-4",
+      "type": "multiple-choice",
+      "category": "controlled",
+      "question": "Ha visszatekintek az elmúlt évek____, sokat változtam. (onto)",
+      "options": ["re", "t", "ben"],
+      "correct": 0,
+      "teaches": ["visszatekint-case-government"]
+    },
+    {
+      "id": "b1-02-04-practice-1",
+      "type": "sentence-builder",
+      "category": "practice",
+      "tiles": ["Azelőtt", "féltem", "az", "új", "helyzetektől", ",", "azóta", "sokat", "változtam", "."],
+      "solution": ["Azelőtt", "féltem", "az", "új", "helyzetektől", ",", "azóta", "sokat", "változtam", "."],
+      "english": "Before, I was afraid of new situations; since then, I've changed a lot.",
+      "teaches": ["looking-back-framing"]
+    },
+    {
+      "id": "b1-02-04-practice-2",
+      "type": "sentence-builder",
+      "category": "practice",
+      "tiles": ["Ha", "visszatekintek", "az", "elmúlt", "évekre", ",", "azt", "látom", ",", "hogy", "sokat", "változtam", "."],
+      "solution": ["Ha", "visszatekintek", "az", "elmúlt", "évekre", ",", "azt", "látom", ",", "hogy", "sokat", "változtam", "."],
+      "english": "Looking back at the past years, I see that I've changed a lot.",
+      "teaches": ["visszatekint-case-government"]
+    },
+    {
+      "id": "b1-02-04-practice-3",
+      "type": "substitution",
+      "category": "practice",
+      "base_sentence": "Sokat megváltozott a városunk az elmúlt tíz évben.",
+      "base_word": "megváltozott",
+      "base_gloss": "Our city has changed a lot over the last ten years.",
+      "options": [
+        { "word": "fejlődik", "inflected": "fejlődött", "sentence": "Sokat fejlődött a városunk az elmúlt tíz évben.", "gloss": "developed" },
+        { "word": "nő", "inflected": "nőtt", "sentence": "Sokat nőtt a városunk az elmúlt tíz évben.", "gloss": "grew" }
+      ],
+      "teaches": ["looking-back-framing"]
+    },
+    {
+      "id": "b1-02-04-practice-4",
+      "type": "multiple-choice",
+      "category": "practice",
+      "question": "Which sentence correctly uses visszatekint with its case ending?",
+      "options": [
+        "Ha visszatekintek az elmúlt évekre, sokat változtam.",
+        "Ha visszatekintek az elmúlt éveket, sokat változtam.",
+        "Ha visszatekintek az elmúlt években, sokat változtam."
+      ],
+      "correct": 0,
+      "teaches": ["visszatekint-case-government"]
+    },
+    {
+      "id": "b1-02-04-dialogue-1",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        { "speaker": "Petra", "text": "Mennyit változtál az elmúlt években?" },
+        { "speaker": "Anna", "text": "_____" }
+      ],
+      "options": ["Nagyon sokat, ma már sokkal érettebb vagyok, mint azelőtt.", "Holnap fogok változni."],
+      "correct": 0,
+      "teaches": ["looking-back-framing"]
+    },
+    {
+      "id": "b1-02-04-dialogue-2",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        { "speaker": "Károly", "text": "Milyen volt az élet azelőtt?" },
+        { "speaker": "Anna", "text": "_____" }
+      ],
+      "options": ["Ha visszatekintek rá, egészen más volt.", "Holnap visszatekintek rá."],
+      "correct": 0,
+      "teaches": ["visszatekint-case-government"]
+    },
+    {
+      "id": "b1-02-04-writing-1",
+      "type": "structured-writing",
+      "category": "writing",
+      "template": [
+        {
+          "prompt": "Say that before that, you were afraid of new situations.",
+          "answer": "Azelőtt féltem az új helyzetektől."
+        }
+      ],
+      "teaches": ["looking-back-framing"]
+    },
+    {
+      "id": "b1-02-04-writing-2",
+      "type": "structured-writing",
+      "category": "writing",
+      "template": [
+        {
+          "prompt": "Say that looking back at the past years, you see that you've changed a lot.",
+          "answer": "Ha visszatekintek az elmúlt évekre, azt látom, hogy sokat változtam."
+        }
+      ],
+      "teaches": ["visszatekint-case-government"]
+    },
+    {
+      "id": "b1-02-04-check-1",
+      "type": "multiple-choice",
+      "category": "check",
+      "question": "Which word points back to before the change you're currently discussing?",
+      "options": ["azelőtt", "azután", "mindig"],
+      "correct": 0,
+      "teaches": ["looking-back-framing"]
+    },
+    {
+      "id": "b1-02-04-check-2",
+      "type": "fill-blank",
+      "category": "check",
+      "sentence": "Sokkal ____ lettem, mint azelőtt voltam. (more mature)",
+      "answer": "érettebb",
+      "teaches": ["looking-back-framing"]
+    }
+  ]
+}
