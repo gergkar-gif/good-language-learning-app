@@ -481,6 +481,18 @@ window.Reader = {
                     return;
                 }
 
+                const shelfToggle = e.target.closest('[data-shelf-toggle]');
+                if (shelfToggle) {
+                    const shelfId = shelfToggle.getAttribute('data-shelf-toggle');
+                    const body = document.getElementById('story-shelf-body-' + shelfId);
+                    const arrow = document.getElementById('story-shelf-arrow-' + shelfId);
+                    if (!body) return;
+                    const nowOpen = body.classList.toggle('hidden') === false;
+                    shelfToggle.setAttribute('aria-expanded', String(nowOpen));
+                    if (arrow) arrow.textContent = nowOpen ? '▼' : '▶';
+                    return;
+                }
+
                 const card = e.target.closest('.story-card');
                 if (!card) return;
                 const storyId = card.getAttribute('data-story-id');
@@ -577,12 +589,23 @@ window.Reader = {
 
                 types.forEach(function(type) {
                     const group = roomStories.filter(s => (s.type || s.source || 'original') === type);
+                    const shelfId = levelId + '-' + type;
+                    // Shelves start expanded (unlike rooms) — opening a room
+                    // is already the deliberate step that says "let me look
+                    // in here"; collapsing is for putting away a shelf you've
+                    // decided you don't want, not the default first view.
                     html += '<div class="story-shelf">' +
-                        '<h4 class="story-shelf-title">' +
-                            self.escapeHtml(STORY_TYPE_LABELS[type] || type) +
-                        '</h4>' +
-                        '<div class="story-grid" data-room="' + levelId + '">' +
-                            group.map(story => self.buildStoryCardHtml(story, readIds)).join('') +
+                        '<button class="story-shelf-header" data-shelf-toggle="' + shelfId + '" aria-expanded="true">' +
+                            '<h4 class="story-shelf-title">' +
+                                self.escapeHtml(STORY_TYPE_LABELS[type] || type) +
+                                ' <span class="story-shelf-count">(' + group.length + ')</span>' +
+                            '</h4>' +
+                            '<span class="story-shelf-arrow" id="story-shelf-arrow-' + shelfId + '">▼</span>' +
+                        '</button>' +
+                        '<div class="story-shelf-body" id="story-shelf-body-' + shelfId + '">' +
+                            '<div class="story-grid" data-room="' + levelId + '">' +
+                                group.map(story => self.buildStoryCardHtml(story, readIds)).join('') +
+                            '</div>' +
                         '</div>' +
                     '</div>';
                 });

@@ -216,11 +216,43 @@
   margin-bottom: 20px;
 }
 
+.story-shelf-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 4px 0 8px;
+  cursor: pointer;
+}
+
+.story-shelf-header:hover .story-shelf-title {
+  color: var(--text);
+}
+
 .story-shelf-title {
   color: var(--muted);
   font-size: .85em;
   font-weight: 600;
-  margin: 4px 0 8px;
+  margin: 0;
+}
+
+.story-shelf-count {
+  font-weight: 400;
+  opacity: .8;
+}
+
+.story-shelf-arrow {
+  font-size: .75em;
+  color: var(--secondary);
+  flex-shrink: 0;
+  margin-left: 12px;
+}
+
+.story-shelf-body.hidden {
+  display: none;
 }
 
 /* Story library — book cards */
