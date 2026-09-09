@@ -172,17 +172,37 @@ track known bugs in existing content rather than things not yet built.
   "vivir") now shows "to live; to be alive" first, "verb · Present,
   Indicative, 3rd person singular" below it.
 
-- [ ] Library navigation: the reading list is growing too big to browse
+- [x] Library navigation: the reading list is growing too big to browse
   comfortably as a flat collapsed-by-level list (each CEFR level shows
   every story grouped only by type/shelf — Original/Classics/World).
   Flagged 2026-09-08 while adding a second "original" story per ES B1
   Core unit (the invented narrative kept for the library alongside a new
-  classics adaptation, rather than deleted) — B1 alone is about to carry
+  classics adaptation, rather than deleted) — B1 alone was about to carry
   well over 250 stories once HU B1's Citizenship track's per-lesson
-  serialized readings land too. Needs real design thought before
-  building (search? filter by grammar point/unit/author? a compact list
-  view instead of full cards?) — saved here for future tinkering, not
-  scoped or built yet.
+  serialized readings land too.
+  **Investigated and fixed 2026-09-09**: the real problem turned out not
+  to be scale in the abstract, but that the World shelf was showing 216
+  cards for what are really 36 readings — each unit's serialized story
+  has 5 short per-lesson fragments (meant to surface automatically
+  inside their own lesson, never independently browsed) plus one
+  "combined" version built specifically for standalone Library reading
+  (see content/es/stories/world/b1/*.json's own schema). Both were being
+  listed as separate cards. `engine/reader.js`'s `buildLibraryUI()` now
+  filters every room through a new `_isBrowsableStory()` — scoped to
+  `type === 'world'` and a trailing-numeric id, since other shelves use
+  a similar-looking id ("story.b1.12") to mean something else entirely
+  (a plain per-unit story, not a fragment) — dropping B1's World shelf
+  from 216 to 36 cards and the room total from 280 to 100. Fragments
+  are untouched otherwise: still fully readable through their lesson,
+  still mark read normally. Also added a per-room title search (only
+  once a room exceeds 15 cards, so small rooms are unchanged) that
+  hides non-matching cards and any shelf left fully empty by the filter.
+  Verified live: World shelf and room counts match exactly; a fragment
+  (`lesson.b1.precolombina.01`) still renders correctly through its own
+  lesson; HU's rooms (no `world`-type content yet) are unaffected. This
+  scales forward too — HU B1's Citizenship track will add its own wave
+  of per-lesson fragments in the same shape, already handled by the
+  type-'world' filter above.
 
 ## Decks
 
