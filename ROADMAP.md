@@ -204,6 +204,36 @@ track known bugs in existing content rather than things not yet built.
   of per-lesson fragments in the same shape, already handled by the
   type-'world' filter above.
 
+- [ ] Library search should eventually go beyond per-room title matching
+  (the 2026-09-09 fix above) to a topic/keyword search across the whole
+  library — a learner at B1 who wants something about "technology" or
+  "phone" should get every matching reading back regardless of which
+  room or shelf it lives in, not just titles that literally contain the
+  word. Flagged 2026-09-09 by the user as a later-tinkering item, not
+  requested to build now. Would need some kind of topic tagging per
+  story (stories already carry a `vocabularyTopics[]` field per the
+  schema — worth checking whether that's populated widely enough to
+  search against, or whether it'd need backfilling / a separate
+  freetext index) plus a library-wide (not per-room) search UI, since
+  today's search box only filters cards already visible inside one
+  open room.
+
+- [ ] Every reading should carry a short attribution/context line at
+  the very bottom of the story. Flagged 2026-09-09 by the user as a
+  later-tinkering item, not requested to build now. Two cases:
+  - **Original** stories: something like "This is the reading for
+    Level A1, Unit 4: Family" — i.e. which level/unit it belongs to
+    (most originals are wired into one lesson's `story.ref`; a few
+    kept-but-unlinked ones, like ES B1's old originals kept in the
+    library after the 2026-09-09 classics rewrite, would just show
+    their level).
+  - **Classics**: "Adapted from *[work]* by [author]" — the schema
+    already carries `source`/`author`/`work` fields on classics
+    entries (see the ES B1 rewrite's author/work pairing table), so
+    this is mostly a rendering task in the story-reading view rather
+    than new data — worth checking coverage on older classics/HU
+    content before building, in case some are missing those fields.
+
 ## Decks
 
 > **Standing design principle (2026-09-02):** Decks' UI is deliberately
