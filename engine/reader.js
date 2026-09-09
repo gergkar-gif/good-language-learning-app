@@ -391,6 +391,27 @@ const STORY_TYPE_LABELS = {
 // matches the Learn tab, which shows all levels up front.
 const CEFR_LEVELS = ['A1', 'A2', 'B1', 'B2', 'C1'];
 
+// A room only gets a search box once it has more cards than this — see
+// buildLibraryUI().
+const SEARCH_THRESHOLD = 15;
+
+// A 'world' story comes in two shapes: one short segment per lesson of its
+// unit (id ends in a numeric suffix, e.g. "story.b1.americalatinadosmil.03")
+// plus one "combined" version pulling all of them together for standalone
+// reading (no numeric suffix — see scripts/build_translation_index.py's
+// docstring and content/es/stories/world/b1/*.json for the schema). The
+// segments are meant to surface automatically inside their own lesson, not
+// to be discovered independently — showing all of them as separate Library
+// cards inflated ES B1's World shelf to 216 entries for what are really 36
+// readings. Filtering to the combined version only is scoped to type
+// 'world' specifically because other shelves (classics, original) also use
+// a trailing-number id ("story.b1.12") that means something different there
+// — a plain per-unit story, not a fragment of a larger one.
+function _isBrowsableStory(story) {
+    if (story.type !== 'world') return true;
+    return !/\.\d+$/.test(story.id);
+}
+
 // Deterministic disc mark per story, so the same book always looks the
 // same instead of reshuffling on every render. Switched 2026-08-14 from
 // four flat navy-shade backgrounds + one shared book glyph to the same
@@ -465,6 +486,29 @@ window.Reader = {
                 const storyId = card.getAttribute('data-story-id');
                 if (storyId) self.loadStory(storyId);
             });
+
+            libraryEl.addEventListener('input', function(e) {
+                const search = e.target.closest('[data-room-search]');
+                if (!search) return;
+                const levelId = search.getAttribute('data-room-search');
+                const query = search.value.trim().toLowerCase();
+                const grid = document.querySelector('.story-grid[data-room="' + levelId + '"]');
+                const body = grid ? grid.closest('.reading-room-body') : null;
+                if (!body) return;
+
+                body.querySelectorAll('.story-card').forEach(function(c) {
+                    const title = c.getAttribute('data-title') || '';
+                    const matches = query.length === 0 || title.includes(query);
+                    c.classList.toggle('hidden', !matches);
+                });
+                // A shelf with every card hidden by the filter shouldn't
+                // still show its own header — nothing left under it to look at.
+                body.querySelectorAll('.story-shelf').forEach(function(shelf) {
+                    const anyVisible = Array.from(shelf.querySelectorAll('.story-card'))
+                        .some(c => !c.classList.contains('hidden'));
+                    shelf.classList.toggle('hidden', !anyVisible);
+                });
+            });
         } catch (e) {
             libraryEl.innerHTML = '<p class="text-muted">No stories found. Run build-manifest.py</p>';
             console.error('Reader: failed to load manifest', e);
@@ -491,7 +535,12 @@ window.Reader = {
         let html = '';
 
         levels.forEach(function(level) {
-            const roomStories = byLevel[level] || [];
+            // Fragments (see _isBrowsableStory) are excluded up front so
+            // every count, shelf, and the room/read tally below all agree —
+            // a fragment's own read-state still gets set (finishing a
+            // lesson's embedded segment marks it read the normal way), it's
+            // only browsing it directly from the Library that's hidden.
+            const roomStories = (byLevel[level] || []).filter(_isBrowsableStory);
             const readCount = roomStories.filter(s => readIds.includes(s.id)).length;
             const levelId = level.toLowerCase().replace(/[^a-z0-9]/g, '-');
 
@@ -510,6 +559,18 @@ window.Reader = {
             if (!roomStories.length) {
                 html += '<p class="text-muted reading-room-empty">No stories at this level yet.</p>';
             } else {
+                // A search box only earns its place once a room has enough
+                // cards that scanning them by eye stops being the faster
+                // option — below that it would just be one more thing on
+                // screen for a handful of cards.
+                if (roomStories.length > SEARCH_THRESHOLD) {
+                    html += '<div class="reading-room-search">' +
+                        '<input type="search" class="reading-room-search-input" ' +
+                            'data-room-search="' + levelId + '" ' +
+                            'placeholder="Search titles…" aria-label="Search ' + self.escapeHtml(level) + ' stories">' +
+                    '</div>';
+                }
+
                 // Within a room, stories are always split into shelves by type
                 // (original / classics / world) — whichever are available.
                 const types = Array.from(new Set(roomStories.map(s => s.type || s.source || 'original')));
@@ -520,7 +581,7 @@ window.Reader = {
                         '<h4 class="story-shelf-title">' +
                             self.escapeHtml(STORY_TYPE_LABELS[type] || type) +
                         '</h4>' +
-                        '<div class="story-grid">' +
+                        '<div class="story-grid" data-room="' + levelId + '">' +
                             group.map(story => self.buildStoryCardHtml(story, readIds)).join('') +
                         '</div>' +
                     '</div>';
@@ -542,7 +603,8 @@ window.Reader = {
             ? story.estimatedMinutes + ' min'
             : '';
 
-        return '<button class="story-card" data-story-id="' + this.escapeHtml(story.id) + '">' +
+        return '<button class="story-card" data-story-id="' + this.escapeHtml(story.id) + '" ' +
+            'data-title="' + this.escapeHtml((story.title || '').toLowerCase()) + '">' +
             '<div class="story-card-cover">' +
                 art +
                 (isRead ? '<span class="story-card-read-badge" title="Read">✓</span>' : '') +

@@ -185,6 +185,32 @@
   padding: 4px 0 8px;
 }
 
+/* Only rendered once a room passes SEARCH_THRESHOLD in reader.js —
+   filters that room's own cards by title as you type. */
+.reading-room-search {
+  margin: 0 0 16px;
+}
+
+.reading-room-search-input {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: .95rem;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+  color: var(--text);
+}
+
+.reading-room-search-input:hover {
+  border-color: var(--primary-mid);
+}
+
+.reading-room-search-input:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 1px;
+  border-color: var(--primary);
+}
+
 /* Library — shelves (one per story type within a room) */
 .story-shelf {
   margin-bottom: 20px;
