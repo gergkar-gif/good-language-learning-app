@@ -1,0 +1,169 @@
+{
+  "lesson": "b1-01-04",
+  "exercises": [
+    {
+      "id": "b1-01-04-intro-1",
+      "type": "multiple-choice",
+      "category": "introduce",
+      "question": "Which word means \"result, outcome\"?",
+      "options": ["eredmény", "kudarc", "tanulság"],
+      "correct": 0,
+      "teaches": ["narrative-result-connectors"]
+    },
+    {
+      "id": "b1-01-04-intro-2",
+      "type": "multiple-choice",
+      "category": "introduce",
+      "question": "Which word means \"to close, to conclude\"?",
+      "options": ["lezár", "kinyit", "elkezd"],
+      "correct": 0,
+      "teaches": ["narrative-result-connectors"]
+    },
+    {
+      "id": "b1-01-04-controlled-1",
+      "type": "matching",
+      "category": "controlled",
+      "pairs": [
+        ["eredmény", "result, outcome"],
+        ["lezár", "to close, to conclude"],
+        ["tanulság", "moral, lesson learned"],
+        ["kudarc", "failure"]
+      ],
+      "teaches": ["narrative-result-connectors"]
+    },
+    {
+      "id": "b1-01-04-controlled-2",
+      "type": "fill-blank",
+      "category": "controlled",
+      "sentence": "Az ____ az volt, hogy mindenki elkésett. (result)",
+      "answer": "eredmény",
+      "teaches": ["narrative-result-connectors"]
+    },
+    {
+      "id": "b1-01-04-controlled-3",
+      "type": "fill-blank",
+      "category": "controlled",
+      "sentence": "Egy közös vacsorával ____ le a napot. (we closed)",
+      "answer": "zártuk",
+      "teaches": ["narrative-result-connectors"]
+    },
+    {
+      "id": "b1-01-04-controlled-4",
+      "type": "multiple-choice",
+      "category": "controlled",
+      "question": "Rájöttem, hogy ez nem kudarc volt, csak egy ____.",
+      "options": ["tanulság", "eredmény", "fordulópont"],
+      "correct": 0,
+      "teaches": ["multi-clause-narrative"]
+    },
+    {
+      "id": "b1-01-04-practice-1",
+      "type": "sentence-builder",
+      "category": "practice",
+      "tiles": ["Sokáig", "kerestük", "az", "utat", ",", "végül", "egy", "helyi", "asszony", "eligazított", "minket", "."],
+      "solution": ["Sokáig", "kerestük", "az", "utat", ",", "végül", "egy", "helyi", "asszony", "eligazított", "minket", "."],
+      "english": "We looked for the way for a long time; in the end, a local woman set us straight.",
+      "teaches": ["narrative-result-connectors"]
+    },
+    {
+      "id": "b1-01-04-practice-2",
+      "type": "sentence-builder",
+      "category": "practice",
+      "tiles": ["Mielőtt", "lezártuk", "a", "napot", ",", "még", "megbeszéltük", ",", "mi", "volt", "a", "tanulság", "."],
+      "solution": ["Mielőtt", "lezártuk", "a", "napot", ",", "még", "megbeszéltük", ",", "mi", "volt", "a", "tanulság", "."],
+      "english": "Before we closed out the day, we still talked over what the lesson was.",
+      "teaches": ["multi-clause-narrative"]
+    },
+    {
+      "id": "b1-01-04-practice-3",
+      "type": "substitution",
+      "category": "practice",
+      "base_sentence": "Az eredmény az lett, hogy három órát késtünk.",
+      "base_word": "Az eredmény",
+      "base_gloss": "The result was that we ended up three hours late.",
+      "options": [
+        { "word": "kudarc", "inflected": "A kudarc", "sentence": "A kudarc az lett, hogy három órát késtünk.", "gloss": "the failure" },
+        { "word": "tanulság", "inflected": "A tanulság", "sentence": "A tanulság az lett, hogy legközelebb korábban indulunk.", "gloss": "the lesson" }
+      ],
+      "teaches": ["narrative-result-connectors"]
+    },
+    {
+      "id": "b1-01-04-practice-4",
+      "type": "multiple-choice",
+      "category": "practice",
+      "question": "Which sentence names a story's outcome, not one of its events?",
+      "options": [
+        "Az eredmény az volt, hogy mindenki elkésett.",
+        "Reggel korán felkeltünk.",
+        "Miután megérkeztünk, elmentünk sétálni."
+      ],
+      "correct": 0,
+      "teaches": ["narrative-result-connectors"]
+    },
+    {
+      "id": "b1-01-04-dialogue-1",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        { "speaker": "Petra", "text": "Hogyan végződött a projekt?" },
+        { "speaker": "Meg", "text": "_____" }
+      ],
+      "options": ["Az eredmény az lett, hogy mindenki elégedett volt.", "A projekt holnap kezdődik."],
+      "correct": 0,
+      "teaches": ["narrative-result-connectors"]
+    },
+    {
+      "id": "b1-01-04-dialogue-2",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        { "speaker": "Károly", "text": "Kudarc volt a kirándulás?" },
+        { "speaker": "Meg", "text": "_____" }
+      ],
+      "options": ["Nem, nem volt kudarc, inkább egy jó tanulság.", "Igen, holnap megint elmegyünk."],
+      "correct": 0,
+      "teaches": ["multi-clause-narrative"]
+    },
+    {
+      "id": "b1-01-04-writing-1",
+      "type": "structured-writing",
+      "category": "writing",
+      "template": [
+        {
+          "prompt": "Say that the result was that everyone was late.",
+          "answer": "Az eredmény az volt, hogy mindenki elkésett."
+        }
+      ],
+      "teaches": ["narrative-result-connectors"]
+    },
+    {
+      "id": "b1-01-04-writing-2",
+      "type": "structured-writing",
+      "category": "writing",
+      "template": [
+        {
+          "prompt": "Say that after everyone went home, you realized this wasn't a failure, just a lesson.",
+          "answer": "Miután mindenki hazament, rájöttem, hogy ez nem kudarc volt, csak egy tanulság."
+        }
+      ],
+      "teaches": ["multi-clause-narrative"]
+    },
+    {
+      "id": "b1-01-04-check-1",
+      "type": "multiple-choice",
+      "category": "check",
+      "question": "Which phrase steps outside the story to comment on what the events added up to?",
+      "options": ["Az eredmény az volt, hogy...", "Miután megérkeztünk...", "Mielőtt elindultunk..."],
+      "correct": 0,
+      "teaches": ["narrative-result-connectors"]
+    },
+    {
+      "id": "b1-01-04-check-2",
+      "type": "fill-blank",
+      "category": "check",
+      "sentence": "Ez nem volt ____, csak egy fontos tanulság. (failure)",
+      "answer": "kudarc",
+      "teaches": ["multi-clause-narrative"]
+    }
+  ]
+}
