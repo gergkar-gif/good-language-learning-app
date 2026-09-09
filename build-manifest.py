@@ -440,6 +440,13 @@ LANG_UNIT_TABLES = {
              ["b1-orszagma-01", "b1-orszagma-02", "b1-orszagma-03",
               "b1-orszagma-04", "b1-orszagma-05", "b1-orszagma-consolidation"],
              "citizenship"),
+            ("Experiences & Memories",
+             ["b1-02-01", "b1-02-02", "b1-02-03", "b1-02-04", "b1-02-05", "b1-02-consolidation"],
+             "core"),
+            ("The Carpathian Basin Before the Magyars",
+             ["b1-karpatmedence-01", "b1-karpatmedence-02", "b1-karpatmedence-03",
+              "b1-karpatmedence-04", "b1-karpatmedence-05", "b1-karpatmedence-consolidation"],
+             "citizenship"),
         ],
     },
 }
