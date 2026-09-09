@@ -218,21 +218,35 @@ track known bugs in existing content rather than things not yet built.
   today's search box only filters cards already visible inside one
   open room.
 
-- [ ] Every reading should carry a short attribution/context line at
+- [x] Every reading should carry a short attribution/context line at
   the very bottom of the story. Flagged 2026-09-09 by the user as a
-  later-tinkering item, not requested to build now. Two cases:
-  - **Original** stories: something like "This is the reading for
-    Level A1, Unit 4: Family" — i.e. which level/unit it belongs to
-    (most originals are wired into one lesson's `story.ref`; a few
-    kept-but-unlinked ones, like ES B1's old originals kept in the
-    library after the 2026-09-09 classics rewrite, would just show
-    their level).
-  - **Classics**: "Adapted from *[work]* by [author]" — the schema
-    already carries `source`/`author`/`work` fields on classics
-    entries (see the ES B1 rewrite's author/work pairing table), so
-    this is mostly a rendering task in the story-reading view rather
-    than new data — worth checking coverage on older classics/HU
-    content before building, in case some are missing those fields.
+  later-tinkering item, not requested to build right away — then
+  asked for shortly after, once ES/HU classics content existed with
+  real unused `author`/`work` data. Two cases:
+  - **Classics**: "Adapted from *[work]* by [author]" — **built
+    2026-09-09**. `Reader.renderStory()` in `engine/reader.js` now
+    appends a `.story-attribution` line (italic, muted, separated by
+    a top border, styled in `styles/components.css`) whenever
+    `story.type` is `classic`/`classics` and `story.work` is set;
+    `author` is optional (renders "Adapted from *Las mil y una
+    noches*" alone when absent, matching that file's real data — a
+    folk-tale collection has no single author). Checked every classics
+    file across both languages (55 total) for missing fields first:
+    two gaps found, neither a real bug — ES B1's `b1-36.json` is a
+    deliberate no-single-source capstone (`type: classic` but no
+    `work`, by design, per its own `source` field), and
+    `b1-02.json`'s "Las mil y una noches" genuinely has no single
+    author. Both already render correctly (no line / no "by" clause)
+    under the `story.work` guard, no content fixes needed. Verified
+    live across ES (with and without author) and HU (János vitéz).
+  - **Original/world** stories ("this is the reading for Level A1,
+    Unit 4: Family"): still not built. Needs a lesson→unit lookup a
+    story object doesn't carry today (`level` + `lesson` position
+    within a unit isn't enough to name the unit) — `curriculum.json`'s
+    lesson entries don't carry a story ref either, so resolving this
+    means either searching lesson files for a matching `story.ref` at
+    render time, or adding a unit id onto the story schema itself when
+    a story is wired to one. Left for a future pass.
 
 ## Decks
 

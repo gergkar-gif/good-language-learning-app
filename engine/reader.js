@@ -729,6 +729,17 @@ window.Reader = {
 
         html += '</div>';
 
+        // Classics carry real source/author/work fields (see
+        // story.schema.json) that were, until now, only ever used to build
+        // this line — never shown to the reader. Anything else (original,
+        // world) has no attribution to give.
+        const isClassic = story.type === 'classic' || story.type === 'classics';
+        if (isClassic && story.work) {
+            html += '<p class="story-attribution">Adapted from <em>' + self.escapeHtml(story.work) + '</em>' +
+                (story.author ? ' by ' + self.escapeHtml(story.author) : '') +
+            '</p>';
+        }
+
         // Reading XP is for finishing a text, so it needs an explicit end —
         // opening a story says nothing about having read it.
         const alreadyRead = hasReadStory(this.currentStoryId);

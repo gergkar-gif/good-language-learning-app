@@ -350,6 +350,19 @@
 
 /* Story reading view */
 
+.story-attribution {
+  font-size: .85em;
+  font-style: italic;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+  margin: 20px 0 0;
+}
+
+.story-attribution em {
+  font-style: italic;
+}
+
 .story-finish {
   display: flex;
   justify-content: center;
