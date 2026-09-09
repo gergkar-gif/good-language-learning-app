@@ -15,17 +15,20 @@ Two sources, both already authored for other purposes:
 Output: content/<lang>/indexes/translation-index.json
     { "pairs": [ { spanish, english, level, source, topic?, track? }, ... ] }
 
-`track` (added 2026-09-04, for the Translation Driller's dual-track split)
-is only ever set to "core" or "latam", and only for B1 -- the one level
-that's dual-track today (ES B1's cultural-history LatAm track runs
-alongside its regular grammar-progression "core" track, each numbered 1-36
-independently). It's derived the same way `topic` is: a slug filename
-(B1's LatAm units) means "latam", a numeric unit/lesson filename means
-"core". Every other level has no dual track, so its pairs simply carry no
-`track` key at all -- the driller treats "no track" as "core" rather than
-requiring every non-dual-track course to be retrofitted with the field.
-The pattern (a per-pair `track`, absent unless a level genuinely has more
-than one) is meant to be reused as-is for any future dual-track content.
+`track` (added 2026-09-04, for the Translation Driller's dual-track split;
+generalized across languages 2026-09-09) is only ever set to "core" or the
+language's own second-track name (see _SLUG_TRACK_NAME), and only for B1 --
+the one level that's dual-track today. ES B1 pairs its regular
+grammar-progression "core" track with a cultural-history "latam" track; HU
+B1 pairs the same "core" shape with a citizenship-exam "citizenship" track
+-- each numbered 1-36 independently within its language. It's derived the
+same way `topic` is: a slug filename means the language's second-track
+name, a numeric unit/lesson filename means "core". Every other level has no
+dual track, so its pairs simply carry no `track` key at all -- the driller
+treats "no track" as "core" rather than requiring every non-dual-track
+course to be retrofitted with the field. The pattern (a per-pair `track`,
+absent unless a level genuinely has more than one) is meant to be reused
+as-is for any future dual-track content.
 
 `level` is the a1/a2/... directory each file already lives in -- content is
 organised one directory per level, so no per-file field to read.
@@ -192,22 +195,35 @@ def _topic_for(stem, level, by_unit_num, by_lesson_num):
     return None
 
 
-def _track_for(stem, level):
-    """"latam" for B1's slug-named cultural-history files, "core" for B1's
-    numeric-unit files, None everywhere else -- only B1 is dual-track today.
-    A1 also has a handful of slug filenames (see SLUG_TOPIC_LABELS' "8 A1
-    entries"), but those are just A1's own topic-naming convention, not a
-    second track, so this deliberately only fires for B1."""
+# Each dual-track level's second (slug-named) track, keyed by language --
+# ES B1 pairs its grammar-progression "core" track with a cultural-history
+# "latam" track; HU B1 pairs the same "core" shape with a citizenship-exam
+# "citizenship" track (chronological history + civics, same slug-filename
+# convention as LatAm). A language with no dual-track content simply has no
+# entry here, and _track_for returns None for it same as for non-B1 levels.
+_SLUG_TRACK_NAME = {
+    "es": "latam",
+    "hu": "citizenship",
+}
+
+
+def _track_for(stem, level, lang):
+    """The slug-named second track's own name (see _SLUG_TRACK_NAME) for B1's
+    slug-named files, "core" for B1's numeric-unit files, None everywhere
+    else -- only B1 is dual-track today. A1 also has a handful of slug
+    filenames (see SLUG_TOPIC_LABELS' "8 A1 entries"), but those are just
+    A1's own topic-naming convention, not a second track, so this
+    deliberately only fires for B1."""
     if level != "B1":
         return None
     if _SLUG_RE.match(stem):
-        return "latam"
+        return _SLUG_TRACK_NAME.get(lang)
     if _UNIT_RE.match(stem) or _LESSON_ACROSS_LEVEL_RE.match(stem):
         return "core"
     return None
 
 
-def from_grammar(grammar_dir, by_unit_num, by_lesson_num):
+def from_grammar(grammar_dir, by_unit_num, by_lesson_num, lang):
     pairs = []
     for f in sorted(grammar_dir.glob("*/*.json")):
         level = f.parent.name.upper()
@@ -216,7 +232,7 @@ def from_grammar(grammar_dir, by_unit_num, by_lesson_num):
         except (json.JSONDecodeError, OSError):
             continue
         topic = _topic_for(f.stem, level, by_unit_num, by_lesson_num)
-        track = _track_for(f.stem, level)
+        track = _track_for(f.stem, level, lang)
         for section in data.get("sections", []):
             if section.get("type") != "examples":
                 continue
@@ -233,7 +249,7 @@ def from_grammar(grammar_dir, by_unit_num, by_lesson_num):
     return pairs
 
 
-def from_exercises(exercises_dir, by_unit_num, by_lesson_num):
+def from_exercises(exercises_dir, by_unit_num, by_lesson_num, lang):
     pairs = []
     for f in sorted(exercises_dir.glob("*/*.json")):
         level = f.parent.name.upper()
@@ -242,7 +258,7 @@ def from_exercises(exercises_dir, by_unit_num, by_lesson_num):
         except (json.JSONDecodeError, OSError):
             continue
         topic = _topic_for(f.stem, level, by_unit_num, by_lesson_num)
-        track = _track_for(f.stem, level)
+        track = _track_for(f.stem, level, lang)
         for ex in data.get("exercises", []):
             if ex.get("type") != "sentence-builder":
                 continue
@@ -270,8 +286,8 @@ def main():
 
         by_unit_num, by_lesson_num = _load_curriculum_lookups(lang)
         pairs = (
-            from_grammar(grammar_dir, by_unit_num, by_lesson_num)
-            + from_exercises(exercises_dir, by_unit_num, by_lesson_num)
+            from_grammar(grammar_dir, by_unit_num, by_lesson_num, lang)
+            + from_exercises(exercises_dir, by_unit_num, by_lesson_num, lang)
         )
 
         output_dir = Path(f"content/{lang}/indexes")

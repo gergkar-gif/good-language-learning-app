@@ -413,23 +413,58 @@ UNIT_TABLES = {
 # language now gets its own table, keyed by lang first.
 LANG_UNIT_TABLES = {
     "es": UNIT_TABLES,
-    # Hungarian has no entry here on purpose — its lessons are plain
-    # numbered files (a1-06, a1-07, ...) with no word-slug ids and no
+    # Hungarian A1/A2 have no entry here on purpose — their lessons are
+    # plain numbered files (a1-06, a1-07, ...) with no word-slug ids and no
     # multi-track split, so auto_group_units() below derives the grouping
     # directly from the files on disk instead of a hand-maintained stems
     # list. See LANG_UNIT_TITLES for the one thing that still needs a
     # manual entry per unit.
+    #
+    # HU B1 *does* need an entry, same reason ES B1 does: it runs two
+    # parallel tracks (Core Hungarian, the grammar progression; Citizenship,
+    # a Hungarian-language history/civics course mirroring ES's LatAm
+    # track — see content/hu/b1-curriculum-draft.json) that auto_group_units
+    # can't tell apart. Core reuses ES B1 Core's exact stem shape
+    # (b1-NN-LL / b1-NN-consolidation); Citizenship reuses LatAm's slug
+    # shape (b1-<slug>-LL / b1-<slug>-consolidation) with a Hungarian-topic
+    # slug per unit. Extend this table one unit at a time as HU B1 content
+    # actually lands — an entry for a unit that doesn't exist on disk yet
+    # would just produce an empty unit, not an error, so keep it in sync
+    # with real content rather than pre-filling all 36.
+    "hu": {
+        "b1": [
+            ("Telling a Longer Story",
+             ["b1-01-01", "b1-01-02", "b1-01-03", "b1-01-04", "b1-01-05", "b1-01-consolidation"],
+             "core"),
+            ("Hungary Today: Land & Symbols",
+             ["b1-orszagma-01", "b1-orszagma-02", "b1-orszagma-03",
+              "b1-orszagma-04", "b1-orszagma-05", "b1-orszagma-consolidation"],
+             "citizenship"),
+        ],
+    },
 }
 
 # Track metadata for levels that run more than one — id, display title, and
-# the order tracks should render in the Learn tab. A level absent here (or a
-# unit table entry with no third element) is single-track, and the Learn tab
-# falls back to today's flat unit list.
+# the order tracks should render in the Learn tab. Keyed by language first,
+# same reasoning as LANG_UNIT_TABLES below: a level absent for this language
+# (or a unit table entry with no third element) is single-track, and the
+# Learn tab falls back to today's flat unit list. Before 2026-09-09 this was
+# keyed by level_id alone, which meant a future language's own B1 dual-track
+# would have silently inherited Spanish's "Core Spanish"/"Latin America"
+# labels — caught while scoping HU B1's Core/Citizenship tracks.
 LEVEL_TRACKS = {
-    "b1": [
-        {"id": "core", "title": "Core Spanish"},
-        {"id": "latam", "title": "Latin America"},
-    ],
+    "es": {
+        "b1": [
+            {"id": "core", "title": "Core Spanish"},
+            {"id": "latam", "title": "Latin America"},
+        ],
+    },
+    "hu": {
+        "b1": [
+            {"id": "core", "title": "Core Hungarian"},
+            {"id": "citizenship", "title": "Citizenship"},
+        ],
+    },
 }
 
 # Unit titles, in order, for a lang/level using auto_group_units() (no
@@ -700,8 +735,9 @@ def build_curriculum(lang="es"):
             "description": meta["description"],
             "units": units
         }
-        if level_id in LEVEL_TRACKS:
-            level_entry["tracks"] = LEVEL_TRACKS[level_id]
+        lang_tracks = LEVEL_TRACKS.get(lang, {})
+        if level_id in lang_tracks:
+            level_entry["tracks"] = lang_tracks[level_id]
         levels[level_id.upper()] = level_entry
 
     curr_meta = CURRICULUM_META.get(lang, {

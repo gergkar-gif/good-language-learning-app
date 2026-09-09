@@ -17,7 +17,14 @@ const TranslationDriller = (function () {
     const PHASE = { SETTINGS: 1, SESSION: 2, RESULTS: 3 };
     const MODE = { COUNT: 'count', TIMED: 'timed' };
     const DIRECTION = { ES_EN: 'es-en', EN_ES: 'en-es', MIXED: 'mixed' };
-    const TRACK = { CORE: 'core', LATAM: 'latam' };
+    // Only "core" is a fixed id — a dual-track level's second track is
+    // whatever scripts/build_translation_index.py labelled it for this
+    // course (ES B1: "latam", HU B1: "citizenship"), read straight off the
+    // data rather than hardcoded here (see _secondTrack()). Display labels
+    // for known second tracks live in TRACK_LABELS; an unrecognised one
+    // still works, just title-cased as a reasonable fallback.
+    const TRACK = { CORE: 'core' };
+    const TRACK_LABELS = { latam: 'Latin America', citizenship: 'Citizenship' };
     const COUNT_OPTIONS = [5, 10, 15, 20, 30];
     const TIMER_PRESETS = [1, 2, 3, 5];
 
@@ -31,11 +38,12 @@ const TranslationDriller = (function () {
     let _level = 'all';
     let _topic = 'all';
     // Only meaningful where a level actually has more than one track (today,
-    // just ES B1's core-grammar vs. LatAm-history dual track) — sentences
-    // with no `track` field are always treated as "core" (see
-    // scripts/build_translation_index.py), so this never hides content on a
-    // single-track level; the tab itself only renders when the current
-    // level pool actually contains a second track, per _hasLatam() below.
+    // ES B1's core-grammar vs. LatAm-history track, and HU B1's core-grammar
+    // vs. citizenship-exam track) — sentences with no `track` field are
+    // always treated as "core" (see scripts/build_translation_index.py), so
+    // this never hides content on a single-track level; the tab itself only
+    // renders when the current level pool actually contains a second track,
+    // per _secondTrack() below.
     let _track = TRACK.CORE;
     let _questionCount = 10;
     let _timerMinutes = 2;
@@ -86,16 +94,24 @@ const TranslationDriller = (function () {
         return pairs.filter(p => (p.track || TRACK.CORE) === track);
     }
 
-    // Whether the given level's pool actually contains a second track —
-    // the Core/LatAm tab only renders when this is true, so single-track
-    // levels (currently everything but B1) never show an irrelevant split.
-    function _hasLatam(level) {
-        return _byLevel(level).some(p => p.track === TRACK.LATAM);
+    // The given level's second track id, if it has one (e.g. "latam" for ES
+    // B1, "citizenship" for HU B1) — read off the data itself rather than
+    // hardcoded per language, since track ids already come out of
+    // build_translation_index.py language-scoped and never collide. Returns
+    // null for a single-track level (currently everything but B1), which is
+    // also when the Core/second-track tab stays hidden.
+    function _secondTrack(level) {
+        const pair = _byLevel(level).find(p => p.track && p.track !== TRACK.CORE);
+        return pair ? pair.track : null;
+    }
+
+    function _trackLabel(track) {
+        return TRACK_LABELS[track] || (track.charAt(0).toUpperCase() + track.slice(1));
     }
 
     function _poolFor(level, topic, track) {
         let pool = _byLevel(level);
-        if (_hasLatam(level)) pool = _byTrack(pool, track);
+        if (_secondTrack(level)) pool = _byTrack(pool, track);
         return topic === 'all' ? pool : pool.filter(p => p.topic === topic);
     }
 
@@ -108,7 +124,7 @@ const TranslationDriller = (function () {
     // just not filterable by topic; "All topics" still includes them.
     function _topicsFor(level, track) {
         let pool = _byLevel(level);
-        if (_hasLatam(level)) pool = _byTrack(pool, track);
+        if (_secondTrack(level)) pool = _byTrack(pool, track);
         const counts = new Map();
         pool.forEach(p => {
             if (!p.topic) return;
@@ -141,13 +157,13 @@ const TranslationDriller = (function () {
         const totalA1 = _pairs.filter(p => p.level === 'A1').length;
         const totalA2 = _pairs.filter(p => p.level === 'A2').length;
         const totalB1 = _pairs.filter(p => p.level === 'B1').length;
-        const hasLatam = _hasLatam(_level);
+        const secondTrack = _secondTrack(_level);
         const topics = _topicsFor(_level, _track);
         // The level select above can leave _topic pointing at a topic that
         // doesn't exist at the newly-chosen level/track (e.g. picking A1
-        // right after selecting a B1-only topic, or switching Core -> LatAm
-        // on B1) — fall back to "All topics" rather than silently filtering
-        // to nothing.
+        // right after selecting a B1-only topic, or switching Core -> the
+        // second track on B1) — fall back to "All topics" rather than
+        // silently filtering to nothing.
         if (_topic !== 'all' && !topics.some(([name]) => name === _topic)) _topic = 'all';
 
         _container.innerHTML = `
@@ -180,14 +196,14 @@ const TranslationDriller = (function () {
                     </select>
                 </div>
 
-                ${hasLatam ? `
+                ${secondTrack ? `
                     <div class="gd-setting">
                         <label>Track</label>
                         <div class="vb-mode-switcher" role="tablist">
                             <button class="vb-mode-btn${_track === TRACK.CORE ? ' active' : ''}"
                                 data-track="${TRACK.CORE}" role="tab" aria-selected="${_track === TRACK.CORE}">Core</button>
-                            <button class="vb-mode-btn${_track === TRACK.LATAM ? ' active' : ''}"
-                                data-track="${TRACK.LATAM}" role="tab" aria-selected="${_track === TRACK.LATAM}">Latin America</button>
+                            <button class="vb-mode-btn${_track === secondTrack ? ' active' : ''}"
+                                data-track="${secondTrack}" role="tab" aria-selected="${_track === secondTrack}">${_esc(_trackLabel(secondTrack))}</button>
                         </div>
                     </div>
                 ` : ''}
