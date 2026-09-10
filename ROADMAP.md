@@ -116,21 +116,51 @@ track known bugs in existing content rather than things not yet built.
   own due-date signal, just not surfaced as a Workshop card yet) —
   scoped to grammar only for this first pass.
 
-- [ ] "Mini-games" in Workshop — short-format sessions using the same
+- [x] "Mini-games" in Workshop — short-format sessions using the same
   driller engines (Grammar/Vocabulary/etc.), a handful of questions
   with no settings screen, meant to be quick rather than a full
-  driller session. Requested 2026-09-10 alongside the Recommended
-  Drill work above, specifically to slot in **between lessons**:
-  offered right after finishing a lesson, scoped to what that lesson
-  just taught, for a learner "in a rush" who wants a quick reinforcement
-  rather than committing to a full Workshop session. Not built —
-  natural next step once Recommended Drill (above) existed to establish
-  the skill-scoping mechanism this would reuse; a lesson-complete quick
-  card offering "Reinforce (2 min)" would call the same
-  `Workshop.open('grammar', { skill })` path with a fixed, short
-  question count and no settings screen, using `unitSkillFor()`/the
-  lesson's own `teaches` tags for scope. Sizing this as its own task
-  rather than folding it into the same pass as Recommended Drill.
+  driller session, slotted in **between lessons**: offered right after
+  finishing a lesson, scoped to what that lesson just taught, for a
+  learner "in a rush" who wants a quick reinforcement rather than
+  committing to a full Workshop session. Requested 2026-09-10 alongside
+  the Recommended Drill work above. **Built 2026-09-10** as "Quick
+  Reinforce" on the lesson-complete screen (`engine/lessons.js`'s
+  `renderLessonSummary()`), reusing the exact scoping mechanism
+  Recommended Drill established rather than a separate mini-game
+  engine:
+  - **Grammar**: new `Recommend.lessonSkillFor(lessonId)` — the same
+    ref-matching `unitSkillFor()` does, narrowed to one lesson's own
+    exercise file instead of every lesson in its unit, so the offer is
+    exactly what this lesson taught, not its unit-mates too.
+    `GrammarDriller`'s `render(root, options)` gained an `options.count`
+    (alongside the existing `options.skill`) that forces Count mode at
+    that exact number regardless of whatever was last picked in
+    Settings — without it, a stale "30" left over from an earlier full
+    session would silently turn a 5-question "quick" reinforce into a
+    30-question one. Fixed at 5 questions
+    (`QUICK_REINFORCE_COUNT`).
+  - **Vocabulary**: no engine change needed at all —
+    `VocabularyDriller`'s `options.words` path (already built
+    2026-08-27 for Decks' "practice missed words" link) already runs
+    through exactly the given word list once and stops, which is
+    already the right shape for a mini-game. The lesson-complete
+    screen already computes this lesson's own new words for the "Add
+    to a deck" chips, so "Quick Reinforce" just hands that same list
+    to `Workshop.open('vocabulary', { words })`.
+  - Both offers are independent and honest about absence, same pattern
+    as the words-chips section right above them: no grammar button
+    when the lesson has no grammar-tagged exercises (a pure-vocabulary
+    lesson), no vocabulary button when it introduced no new words.
+    Clicking either tears down the finished lesson (same as "Done")
+    and lands on Workshop with the driller already open and running —
+    the learner chose to keep practicing, not to leave.
+  - Verified live via Playwright: finishing a lesson with both
+    grammar and vocabulary shows "Grammar (5 questions)" and
+    "Vocabulary (10 words)" buttons; the grammar button correctly
+    launches straight into "Question 1 of 5" scoped to the lesson's
+    real skill ("greetings"); the vocabulary button correctly launches
+    into a scoped session ("Taught in Unit 1 · Lesson 1.1"). No
+    console/page errors in either run.
 
 - [ ] In the various Workshop drillers, show an English translation and an
   explanation of why that's the right response at the bottom of each

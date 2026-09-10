@@ -855,6 +855,28 @@
   padding: 4px 10px;
 }
 
+/* "Quick Reinforce" — see summaryReinforceHtml() in engine/lessons.js.
+   Same hairline-divider language as .lsn-summary-words above it, so the
+   two read as siblings rather than one being an afterthought. */
+.lsn-summary-reinforce {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+
+.lsn-summary-reinforce-label {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+.lsn-summary-reinforce-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
 /* Continue stays locked until a gated step is answered */
 .btn-primary:disabled,
 .btn-primary.is-locked {

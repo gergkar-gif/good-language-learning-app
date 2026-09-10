@@ -321,6 +321,18 @@ function closeLesson() {
     showTab(lessonReturnTab, document.querySelector('.nav button[data-tab="' + lessonReturnTab + '"]'));
 }
 
+// The lesson-complete screen's "Quick Reinforce" buttons (see
+// summaryReinforceHtml()) — same teardown as Done/closeLesson, but landing
+// on Workshop with a driller already open and scoped, instead of wherever
+// the lesson was originally opened from. The learner chose to keep
+// practicing, not to leave.
+function _openReinforce(drillerId, options) {
+    teardownLesson();
+    document.getElementById('lesson-screen').classList.add('hidden');
+    showTab('drills', document.querySelector('.nav button[data-tab="drills"]'));
+    if (typeof Workshop !== 'undefined') Workshop.open(drillerId, options);
+}
+
 // ============================================
 // HELPERS
 // ============================================
@@ -1294,6 +1306,40 @@ function summaryWordsHtml(words) {
     `;
 }
 
+// "Quick Reinforce" — a short Workshop session (same driller engines, no
+// settings screen, a handful of questions) scoped to exactly what this
+// lesson just taught, offered right here rather than only ever reachable
+// by navigating to Workshop and picking a skill/word list manually. Two
+// independent offers, either or both may be absent: grammarSkill is null
+// for a lesson with no grammar-tagged exercises (e.g. a pure-vocabulary
+// lesson), and words is empty for a lesson that introduced none. Reuses
+// the exact scoping options GrammarDriller/VocabularyDriller already
+// understand (see engine/recommend.js and engine/workshop.js's
+// "Recommended for you" card) rather than a separate mini-game engine.
+const QUICK_REINFORCE_COUNT = 5;
+
+function summaryReinforceHtml(grammarSkill, words) {
+    if (!grammarSkill && !words.length) return '';
+
+    return `
+        <div class="lsn-summary-reinforce">
+            <p class="lsn-summary-reinforce-label">In a rush? Quick reinforce:</p>
+            <div class="lsn-summary-reinforce-actions">
+                ${grammarSkill ? `
+                    <button class="dk-secondary" data-reinforce-grammar="${esc(grammarSkill)}">
+                        Grammar (${QUICK_REINFORCE_COUNT} questions)
+                    </button>
+                ` : ''}
+                ${words.length ? `
+                    <button class="dk-secondary" data-reinforce-vocab="1">
+                        Vocabulary (${words.length} ${words.length === 1 ? 'word' : 'words'})
+                    </button>
+                ` : ''}
+            </div>
+        </div>
+    `;
+}
+
 // A milestone crossed by finishing THIS lesson — rare, so it earns a line
 // of its own, but stays plain text rather than reaching for the accent:
 // the frontispiece above is already this screen's one accent element (see
@@ -1343,6 +1389,9 @@ async function renderLessonSummary(firstTime, rankBefore) {
     const xpEarned = (firstTime && typeof GRAMMAR_XP === 'number') ? GRAMMAR_XP : null;
 
     const words = await collectLessonVocabulary(currentLesson);
+    const grammarSkill = (typeof Recommend !== 'undefined' && currentLesson && currentLesson.id)
+        ? await Recommend.lessonSkillFor(currentLesson.id)
+        : null;
     const milestones = firstTime ? newlyReachedMilestones() : [];
     const rankAfter = (typeof getRank === 'function') ? getRank().rank : null;
     const rankedUp = firstTime && rankBefore != null && rankAfter != null && rankAfter > rankBefore;
@@ -1381,6 +1430,7 @@ async function renderLessonSummary(firstTime, rankBefore) {
             ${rankedUp ? `<p class="lsn-summary-milestone">Rank up! You're now Rank ${rankAfter}.</p>` : ''}
             ${summaryMilestonesHtml(milestones)}
             ${summaryWordsHtml(words)}
+            ${summaryReinforceHtml(grammarSkill, words)}
         </div>
     `;
     container.scrollIntoView({ block: 'start' });
@@ -1389,6 +1439,20 @@ async function renderLessonSummary(firstTime, rankBefore) {
     if (addWordsBtn) {
         addWordsBtn.addEventListener('click', () => {
             if (typeof Decks !== 'undefined') Decks.openBulkAddPicker(words);
+        });
+    }
+
+    const reinforceGrammarBtn = container.querySelector('[data-reinforce-grammar]');
+    if (reinforceGrammarBtn) {
+        reinforceGrammarBtn.addEventListener('click', () => {
+            _openReinforce('grammar', { skill: reinforceGrammarBtn.getAttribute('data-reinforce-grammar'), count: QUICK_REINFORCE_COUNT });
+        });
+    }
+
+    const reinforceVocabBtn = container.querySelector('[data-reinforce-vocab]');
+    if (reinforceVocabBtn) {
+        reinforceVocabBtn.addEventListener('click', () => {
+            _openReinforce('vocabulary', { words: words });
         });
     }
 

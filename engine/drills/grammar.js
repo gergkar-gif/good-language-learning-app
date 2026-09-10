@@ -414,11 +414,17 @@ const GrammarDriller = (function () {
     // ================================================================
     // `options.skill`, when given, skips the settings screen and launches
     // straight into a session scoped to that skill — used by Home's
-    // post-unit practice nudge, which already knows which concept it wants
-    // drilled and shouldn't make the learner pick it again. Only takes
-    // effect from the settings phase: a driller resumed mid-session (e.g.
-    // navigating back to Workshop) ignores it and shows what was already in
-    // progress, same as opening this driller any other way.
+    // post-unit practice nudge and Workshop's "Recommended for you" card,
+    // which already know which concept they want drilled and shouldn't
+    // make the learner pick it again. `options.count`, alongside `skill`,
+    // forces Count mode at that exact question count regardless of
+    // whatever was last selected in Settings — used by the lesson-complete
+    // screen's "Quick Reinforce" mini-game (engine/lessons.js), where a
+    // handful of questions is the whole point and a stale "30" left over
+    // from an earlier full session would defeat it. Both only take effect
+    // from the settings phase: a driller resumed mid-session (e.g.
+    // navigating back to Workshop) ignores them and shows what was already
+    // in progress, same as opening this driller any other way.
     async function render(root, options) {
         _container = root;
 
@@ -427,6 +433,10 @@ const GrammarDriller = (function () {
             await _load();
             if (options && options.skill) {
                 _selectedModule = options.skill;
+                if (options.count) {
+                    _mode = MODE.COUNT;
+                    _questionCount = options.count;
+                }
                 await _startSession();
             } else {
                 _renderSettings();

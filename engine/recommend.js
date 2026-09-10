@@ -94,6 +94,27 @@ const Recommend = (function () {
         return ranked[0] || null;
     }
 
+    // The grammar concept ONE lesson teaches, not a whole unit — for the
+    // lesson-complete screen's "Quick Reinforce" mini-game, which should
+    // scope to exactly what was just taught, not the other lessons in the
+    // same unit unitSkillFor() would also pull in. Same ref-matching idea,
+    // narrowed to a single lesson's own exercise file.
+    async function lessonSkillFor(lessonId) {
+        const index = await _grammarIndex();
+        if (!index) return null;
+
+        const ref = exerciseRefFor(lessonId);
+        const counts = {};
+        Object.keys(index.bySkill || {}).forEach(skill => {
+            index.bySkill[skill].forEach(entry => {
+                if (entry.ref === ref) counts[skill] = (counts[skill] || 0) + 1;
+            });
+        });
+
+        const ranked = Object.keys(counts).sort((a, b) => counts[b] - counts[a]);
+        return ranked[0] || null;
+    }
+
     // The skill with the worst average ease among skills that actually
     // carry review history — exercises the learner has met before
     // (through a lesson's own recycle block) and struggled with, not
@@ -144,6 +165,7 @@ const Recommend = (function () {
         recommend: recommend,
         weakestSkill: weakestSkill,
         unitSkillFor: unitSkillFor,
+        lessonSkillFor: lessonSkillFor,
         unitFor: unitFor,
         lastCompletedLessonId: lastCompletedLessonId,
         exerciseRefFor: exerciseRefFor
