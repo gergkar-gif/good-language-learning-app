@@ -395,25 +395,44 @@ const Home = (function () {
     // for this once it already knows that bigger nudge isn't showing (see
     // render()), so the learner is never offered two "go practise"
     // prompts in the same slot.
+    //
+    // Grammar and vocabulary are resolved independently, same as
+    // Recommend.recommend() itself: grammar always comes from Recommend
+    // (weak skill, or this lesson/unit's own concept as a fallback).
+    // Vocabulary prefers Recommend's weak-word signal (real review
+    // history, low ease) over this lesson's own new words — the same
+    // weak-beats-recent priority the grammar half already has — and only
+    // falls back to "what this lesson just taught" once there isn't
+    // enough review history yet for anything to count as weak.
     async function miniGameNudge() {
         const lessonId = (typeof Recommend !== 'undefined') ? Recommend.lastCompletedLessonId() : null;
         if (!lessonId || miniGameDismissed(lessonId)) return null;
 
         const rec = (typeof Recommend !== 'undefined') ? await Recommend.recommend() : null;
 
-        let words = [];
-        if (typeof loadLesson === 'function' && typeof collectLessonVocabulary === 'function') {
+        let words = (rec && rec.words.length) ? rec.words : [];
+        let wordsReason = words.length ? 'weak' : null;
+        if (!words.length && typeof loadLesson === 'function' && typeof collectLessonVocabulary === 'function') {
             const lesson = await loadLesson(lessonId);
             if (lesson) words = await collectLessonVocabulary(lesson);
+            wordsReason = words.length ? 'recent' : null;
         }
 
-        if (!rec && !words.length) return null;
-        return { lessonId, skill: rec ? rec.skill : null, reason: rec ? rec.reason : null, words };
+        const skill = rec ? rec.skill : null;
+        if (!skill && !words.length) return null;
+        return {
+            lessonId,
+            skill,
+            skillReason: rec ? rec.skillReason : null,
+            words,
+            wordsReason
+        };
     }
 
     function miniGameCard(mini) {
-        const blurb = mini.reason === 'weak'
-            ? "You've been shaky on this — a quick pass would help it stick."
+        const anyWeak = mini.skillReason === 'weak' || mini.wordsReason === 'weak';
+        const blurb = anyWeak
+            ? "You've been shaky on some of this — a quick pass would help it stick."
             : "Reinforce what you just learned, while it's still fresh.";
         const count = (typeof QUICK_REINFORCE_COUNT === 'number') ? QUICK_REINFORCE_COUNT : 5;
         return `

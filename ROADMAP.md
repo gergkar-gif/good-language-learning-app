@@ -188,15 +188,41 @@ track known bugs in existing content rather than things not yet built.
     session running; returning to Home afterward correctly shows the
     ordinary Continue card instead (resolved, not re-offered). No
     console/page errors.
-  - **Not done**: the "what does the learner know" engine
-    (`engine/recommend.js`) still only covers grammar for the main
-    course — no equivalent weak/recent signal feeds Vocabulary's
-    mini-game beyond "what this lesson just taught" (vocabulary's
-    actual mastery signal, per-word SRS ease/due-dates, exists in
-    `engine/srs.js` but isn't threaded into `Recommend` yet), and the
-    HU-specific drillers (suffix/prefix/morphology/verb) have no
-    signal or mini-game offer at all. Both are natural extensions of
-    the same architecture, not attempted in this pass.
+  - **Vocabulary weak signal added 2026-09-10**: new
+    `Recommend.weakestWords()` reads straight off `engine/srs.js`'s
+    `srsDeck` — each card already carries its own SM-2 `ease`/`reviews`
+    (no index to cross-reference the way grammar's `weakestSkill()`
+    needs, since a word's schedule lives on the card itself), sorted by
+    ease and capped to 8. `recommend()` now resolves grammar and
+    vocabulary independently rather than one combined pick — either,
+    both, or neither can be present, each with its own `weak`/`recent`
+    reason — so every consumer needed updating from a single `{skill,
+    reason}` to `{skill, skillReason, words, wordsReason}`:
+    `_recommendationHtml()` in `engine/workshop.js` went from one
+    whole-card button to a shared blurb over up to two independent
+    action buttons (mirroring the shape Home's mini-game card and the
+    lesson-complete screen already used), and Home's `miniGameNudge()`
+    now prefers `Recommend`'s weak words over "this lesson's own new
+    words" — the same weak-beats-recent priority the grammar half
+    already had — falling back to the lesson's words only once there
+    isn't enough review history yet for anything to count as weak.
+    Verified live: a fabricated low-ease word history with no grammar
+    signal correctly shows only a "Vocabulary (4)" button on Workshop's
+    card with weak-specific copy; fabricating both weak grammar and
+    weak vocabulary together correctly shows both buttons
+    simultaneously on both Workshop's card and Home's mini-game card,
+    each independently launching a correctly-scoped session. (One
+    false alarm during testing, worth recording: a scripted repro that
+    visited Workshop *before* starting a lesson appeared to make Home's
+    card vanish — turned out to be `lessonReturnTab` correctly sending
+    "Done" back to Workshop, since that was the active tab when the
+    lesson started, not a bug in the new code. Confirmed by checking
+    `getProgress()` directly and by polling render() with temporary
+    logging.)
+  - **Still not done**: the HU-specific drillers (suffix/prefix/
+    morphology/verb) have no weak/recent signal or mini-game offer at
+    all — a natural extension of the same architecture, not attempted
+    in this pass.
 
 - [ ] In the various Workshop drillers, show an English translation and an
   explanation of why that's the right response at the bottom of each

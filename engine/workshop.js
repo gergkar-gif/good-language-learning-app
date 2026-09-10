@@ -145,18 +145,34 @@ const Workshop = (function () {
         return String(id || '').replace(/[-_]+/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
     }
 
+    // Grammar and vocabulary are independent halves (see engine/recommend.js)
+    // — either, both, or neither can have something to suggest, so this
+    // renders up to two action buttons under one shared blurb rather than
+    // the single whole-card button it used to be when there was only ever
+    // one thing to recommend.
     function _recommendationHtml(rec) {
-        if (!rec) return '';
-        const label = _humanizeSkill(rec.skill);
-        const blurb = rec.reason === 'weak'
-            ? `You've been shaky on <strong>${_esc(label)}</strong> — a quick pass would help it stick.`
-            : `Fresh from your last lesson: <strong>${_esc(label)}</strong>. Reinforce it while it's recent.`;
+        if (!rec || (!rec.skill && !rec.words.length)) return '';
+        const anyWeak = rec.skillReason === 'weak' || rec.wordsReason === 'weak';
+        const blurb = anyWeak
+            ? "You've been shaky on some of this — a quick pass would help it stick."
+            : "Fresh from your last lesson — reinforce it while it's recent.";
         return `
-            <button class="wk-recommend" data-recommend-skill="${_esc(rec.skill)}">
+            <div class="wk-recommend">
                 <span class="wk-recommend-eyebrow">Recommended for you</span>
-                <span class="wk-recommend-body">${blurb}</span>
-                <span class="wk-recommend-cta">Start →</span>
-            </button>
+                <span class="wk-recommend-body">${_esc(blurb)}</span>
+                <div class="wk-recommend-actions">
+                    ${rec.skill ? `
+                        <button class="wk-recommend-btn" data-recommend-skill="${_esc(rec.skill)}">
+                            Grammar: ${_esc(_humanizeSkill(rec.skill))} →
+                        </button>
+                    ` : ''}
+                    ${rec.words.length ? `
+                        <button class="wk-recommend-btn" data-recommend-vocab="1">
+                            Vocabulary (${rec.words.length}) →
+                        </button>
+                    ` : ''}
+                </div>
+            </div>
         `;
     }
 
@@ -189,10 +205,9 @@ const Workshop = (function () {
         root.querySelectorAll('[data-driller]').forEach(btn => {
             btn.addEventListener('click', () => open(btn.dataset.driller));
         });
-        const rec = root.querySelector('[data-recommend-skill]');
-        if (rec) {
-            rec.addEventListener('click', () => open('grammar', { skill: rec.getAttribute('data-recommend-skill') }));
-        }
+        // The recommendation card itself is patched in later, by
+        // _loadRecommendation() — it doesn't exist in `root` yet at this
+        // point, so its own buttons are wired there instead.
     }
 
     function _attachActiveEvents(root) {
@@ -258,8 +273,19 @@ const Workshop = (function () {
             const target = document.getElementById('drills-root');
             if (!target || target !== root || _active) return;
             root.insertAdjacentHTML('afterbegin', _recommendationHtml(rec));
-            const btn = root.querySelector('[data-recommend-skill]');
-            if (btn) btn.addEventListener('click', () => open('grammar', { skill: btn.getAttribute('data-recommend-skill') }));
+
+            const grammarBtn = root.querySelector('[data-recommend-skill]');
+            if (grammarBtn) {
+                grammarBtn.addEventListener('click', () => open('grammar', { skill: grammarBtn.getAttribute('data-recommend-skill') }));
+            }
+            // rec.words is closed over here rather than round-tripped through
+            // a data attribute — a word list doesn't serialise cleanly into
+            // one, and this handler is only ever wired against this exact
+            // rec anyway.
+            const vocabBtn = root.querySelector('[data-recommend-vocab]');
+            if (vocabBtn) {
+                vocabBtn.addEventListener('click', () => open('vocabulary', { words: rec.words }));
+            }
         }).catch(() => {});
     }
 
