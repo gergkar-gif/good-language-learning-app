@@ -1296,6 +1296,113 @@ track known bugs in existing content rather than things not yet built.
   the missed-words-scoped entry point. No console/page errors in any
   run.
 
+## Learner model & personalized path (architecture initiative)
+
+User's own 7-step plan, logged 2026-09-10, meant to supersede/reframe the
+ad-hoc `Recommend` work in Cross-app flow above into one coherent system.
+**Explicit ordering from the user: cloud persistence is step 7, only after
+the rest works locally** — build the learner model and recommendation
+logic first, then treat cloud sync as a pure persistence/replication
+problem instead of solving "what does the learner know" and "how do two
+devices agree on it" at the same time. None of the 7 steps are started
+yet; `Recommend` (weak/recent grammar+vocabulary signal, described above)
+is the closest existing piece and a natural seed for steps 1-2, not a
+replacement for them.
+
+1. **Learner Path — "Where am I?"** One reliable source of truth for
+   current level/unit/lesson, completed vs. incomplete work, the next
+   curriculum step, and last-activity timestamp (kept separate from
+   curriculum position — finishing something isn't the same as touching
+   the app). Today this is scattered: `getProgress()` in `engine/progress.js`
+   tracks completion, but "next step" logic is duplicated across
+   `engine/home.js`'s `practiceNudge()`/`miniGameNudge()` and
+   `Recommend.lastCompletedLessonId()`/`unitFor()`.
+2. **Learner Model / Brainmap.** Track what the learner actually *knows*,
+   not just what they completed: grammar skills, vocabulary, exercise
+   evidence, weak/developing/strong areas, prerequisites/dependencies,
+   review needs. Mostly hidden from the learner. `Recommend.weakestSkill()`/
+   `weakestWords()` are a first, narrow slice of this (SM-2 ease from
+   `recycle.js`/`srs.js`) — the real model needs to fold in level-test
+   results, reading/listening exercises, and prerequisite relationships
+   none of today's code tracks.
+3. **Recommendation Engine.** Path + learner model → one strong
+   recommendation ("Continue Lesson 4.3"), with occasional secondary
+   recommendations ("Practise adjective agreement"). The system decides;
+   the learner isn't navigating a decision tree. This is where the
+   queued "next recommended activity button after a mini-game" and "wire
+   the HU-specific drillers (suffix/prefix/morphology/verb) into the
+   mini-game signal, not just grammar+vocabulary" work belongs — both are
+   pieces of this engine, not standalone features, so build them as part
+   of this step rather than bolted onto the current ad-hoc `Recommend`
+   module.
+4. **Simplify the Home experience.** Reduce "here are 12 things you can
+   do" down to a clear hierarchy: Recommended next step (primary action)
+   → Optional reinforcement (secondary) → Explore (vocabulary, grammar,
+   reading, Workshop, Decks — freedom preserved, but the app has a clear
+   opinion about what to do next).
+5. **Time-Based Sessions** (optional mode). Learner picks a time budget —
+   10/15/20/30/45/60 minutes — and the app builds a finite session out of
+   curriculum position, knowledge gaps, reviews due, and priorities, with
+   a clear start and end. No countdown timer (time is a planning
+   constraint, not a productivity metric). Completing a session does not
+   advance the curriculum unless the actual lesson work was done. The
+   normal recommended path stays the default; this is an alternative
+   entry point, not a replacement. Depends on steps 1-3 existing first.
+6. **Make everything feed the same Learner Model.** Lessons, drills, SRS,
+   Workshop, level tests, reading/listening exercises should all become
+   evidence about the learner over time, rather than isolated features
+   each with their own local state.
+7. **Cloud Persistence — last, not first.** Once the above works locally,
+   cloud sync becomes "learner state + learner model → cloud → another
+   device," a straightforward persistence/replication problem, instead of
+   simultaneously inventing the state model and figuring out how to
+   replicate it. Supersedes the earlier plan (see Cross-app flow /
+   general notes) to design the Cloudflare Worker + D1 sync layer
+   immediately — that design work is deferred until steps 1-6 exist to
+   sync.
+
+- [ ] **Modularity: adding lessons/exercise types without a full rewrite** —
+  user's standing concern, answered from investigation 2026-09-10: the
+  content architecture already supports both asks cheaply, as long as
+  additions stay purely additive.
+  - **Adding lessons to an existing unit**: `content/<lang>/curriculum/curriculum.json`
+    holds each unit as `{id, label, title, lessons: [...]}` — a plain
+    array of `{id, label, title, grammar, ...}` entries. Inserting new
+    lessons is an array edit (new lesson JSON file(s) with unique ids +
+    a new entry in the unit's `lessons` array), not a rewrite — this is
+    exactly the pattern already used all session to build out HU A2 units
+    incrementally. The real cost is regenerating the derived indexes
+    (`grammar-index.json`, `translation-index.json`, `decks.json`,
+    `stories/manifest.json` via `build-manifest.py`) afterward, not
+    touching unrelated lessons.
+  - **Adding a new exercise type (e.g. voice recognition)**: `engine/lessons.js`'s
+    `stepRenderers` is a plain object keyed by step `type` and dispatched
+    dynamically (`stepRenderers[part.type](part)`) — a new type is one
+    new key/function, and every existing renderer is untouched.
+    `content/<lang>/schemas/exercises.schema.json` defines each exercise
+    kind as a `oneOf` branch (`matching`, `multipleChoice`, `fillBlank`,
+    `sentenceBuilder`, `sentenceOrder`, ...) — adding a kind means adding
+    one more branch to that `oneOf`, additive to the schema, not a
+    restructure. To retrofit the new type into *earlier* lessons: author
+    new exercise JSON entries (or convert selected existing ones) rather
+    than restructuring the lesson files — the id/`teaches`-tag system
+    that recycle/`Recommend` already lean on doesn't care when an
+    exercise was authored, only its tags.
+  - **The actual risk to watch**: this modularity holds only as long as
+    new step/exercise types stay additive (never require every existing
+    renderer or schema branch to also change) — worth keeping as an
+    explicit constraint when the voice-recognition exercise type gets
+    designed, not just an accident of today's code.
+
+- [ ] **Future feature: practice real CEFR exams.** Source or generate
+  actual CEFR-level exams (A1-C1) per language, let a learner attempt one
+  inside the app, and return a graded response — closer to "take the real
+  test" than the existing internal level-test (`engine/leveltest.js`,
+  see Level test section below), which estimates placement rather than
+  simulating an actual exam. Logged 2026-09-10, not scoped or started —
+  needs research into what's licensable/generatable per level before any
+  design work.
+
 ## Interface & platform
 
 - [ ] Interface increasingly bilingual as level rises, eventually
