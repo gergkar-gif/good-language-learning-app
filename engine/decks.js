@@ -768,6 +768,9 @@ const Decks = (function () {
             ? getDay(getTodayString()).reviewsDone : 0;
 
         return `
+            <p class="dk-explainer">Your decks use spaced repetition, so you can learn
+                vocabulary with ease — either through pre-existing Parlour decks or by
+                building your own.</p>
             <div class="dk-top">
                 <div class="dk-stats-row">
                     <div class="dk-stat">

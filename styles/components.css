@@ -2162,6 +2162,56 @@
   margin-top: 10px;
 }
 
+/* Every stat on this screen is counted from something the learner did, so
+   every stat also gets somewhere to go do more of it — these three make
+   that clickable without dressing it up as a button bar. */
+.jr-row-clickable {
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+  margin: 0 -8px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.jr-row-clickable:hover {
+  background: var(--bg-alt, var(--border));
+}
+
+.jr-next-link {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  font-size: 13px;
+  color: var(--primary);
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  cursor: pointer;
+}
+
+.jr-big-link {
+  display: block;
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 0;
+  text-align: left;
+  cursor: pointer;
+}
+
+.jr-fact-link {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: var(--border);
+}
+
 .jr-empty {
   font-size: 14px;
   color: var(--muted);
@@ -2249,6 +2299,13 @@
    The tab is a browser first and a flashcard second. A deck is a way of
    choosing what to study — the schedule underneath stays single, so these
    are windows onto one pile rather than separate piles. */
+
+.dk-explainer {
+  font-style: italic;
+  color: var(--muted);
+  margin: 0 0 16px;
+  line-height: 1.5;
+}
 
 .dk-top {
   display: flex;

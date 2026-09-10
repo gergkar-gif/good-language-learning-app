@@ -47,7 +47,7 @@ function _ensureWordPopup() {
                 <button id="popup-lesson-link" class="dk-link-btn wp-lesson-link" hidden></button>
                 <p id="popup-new-word-cap" class="wp-cap">Daily new word limit reached (20/20)</p>
                 <div class="wp-actions">
-                    <button id="popup-add-btn" class="wp-add" onclick="addToSRS()">+ Add to SRS Deck</button>
+                    <button id="popup-add-btn" class="wp-add" onclick="addToSRS()">+ Add to My Words</button>
                     <button id="popup-add-to-deck-btn" class="wp-add-to-deck" onclick="openWordDeckPicker()">+ Add to deck</button>
                 </div>
             </div>
@@ -290,7 +290,7 @@ async function showWord(spanish, contextTokens, tokenIndex) {
         btn.classList.add('is-disabled');
         capWarning.style.display = 'block';
     } else {
-        btn.textContent = '+ Add to SRS Deck';
+        btn.textContent = '+ Add to My Words';
     }
 
     _showLessonLink(cleanWord, tapId);

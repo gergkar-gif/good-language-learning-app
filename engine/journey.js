@@ -84,7 +84,7 @@ const Journey = (function () {
 
                 // Review lessons carry no grammar of their own.
                 if (lesson.grammar && lesson.grammar !== 'Consolidation') {
-                    grammarAll.push({ label: lesson.grammar, lesson: lesson.label, done: complete });
+                    grammarAll.push({ label: lesson.grammar, lesson: lesson.label, lessonId: lesson.id, done: complete });
                     if (complete) grammarDone.push(lesson.grammar);
                 }
 
@@ -175,7 +175,7 @@ const Journey = (function () {
         const rows = Object.keys(d.levels).map(key => {
             const level = d.levels[key];
             return `
-                <li class="jr-row">
+                <li class="jr-row jr-row-clickable" data-jr-level="${esc(key)}">
                     <span class="jr-row-label">${esc(key)} · ${esc(level.title)}</span>
                     <span class="jr-row-meter">${meter(level.percent)}</span>
                     <span class="jr-row-value">${level.done} / ${level.total}</span>
@@ -194,36 +194,57 @@ const Journey = (function () {
     function grammarBlock(d) {
         const pending = d.grammarAll.filter(g => !g.done).slice(0, 3);
         const next = pending.length
-            ? `<p class="jr-next">Next: ${pending.map(g => esc(g.label)).join(' · ')}</p>`
+            ? `<p class="jr-next">Next:
+                ${pending.map(g => `<button class="jr-next-link" data-jr-lesson="${esc(g.lessonId)}">${esc(g.label)}</button>`).join(' · ')}
+               </p>`
             : '<p class="jr-next">Every grammar point in the course is covered.</p>';
 
         return card('Grammar', 'Points taught by the lessons you have finished.', `
-            <p class="jr-big">${d.grammarDone}<span class="jr-of"> of ${d.grammarTotal}</span></p>
-            ${meter(d.grammarTotal ? (d.grammarDone / d.grammarTotal) * 100 : 0)}
+            <button class="jr-big-link" data-jr-drill="grammar">
+                <p class="jr-big">${d.grammarDone}<span class="jr-of"> of ${d.grammarTotal}</span></p>
+                ${meter(d.grammarTotal ? (d.grammarDone / d.grammarTotal) * 100 : 0)}
+            </button>
             ${next}
         `);
     }
 
     function vocabularyBlock(d) {
         return card('Vocabulary', 'Words the course has introduced to you.', `
-            <p class="jr-big">${d.wordsMet}<span class="jr-of"> of ${d.wordsTotal}</span></p>
-            ${meter(d.wordsTotal ? (d.wordsMet / d.wordsTotal) * 100 : 0)}
+            <button class="jr-big-link" data-jr-drill="vocabulary">
+                <p class="jr-big">${d.wordsMet}<span class="jr-of"> of ${d.wordsTotal}</span></p>
+                ${meter(d.wordsTotal ? (d.wordsMet / d.wordsTotal) * 100 : 0)}
+            </button>
             <ul class="jr-facts">
-                <li><strong>${d.deckSize}</strong> in your review deck</li>
+                <li><button class="jr-fact-link" data-jr-tab="review"><strong>${d.deckSize}</strong> in your review deck</button></li>
                 <li><strong>${d.deckMastered}</strong> reviewed three times or more</li>
                 <li><strong>${d.newWordsLearned}</strong> learned through review</li>
-                <li><strong>${d.storiesRead}</strong>${d.storiesTotal ? ' of ' + d.storiesTotal : ''} stories read</li>
+                <li><button class="jr-fact-link" data-jr-tab="reader"><strong>${d.storiesRead}</strong>${d.storiesTotal ? ' of ' + d.storiesTotal : ''} stories read</button></li>
             </ul>
         `);
     }
+
+    // Only skills with somewhere to actually go get a click target — Writing
+    // and Dialogue have no dedicated Workshop driller yet (their practice
+    // lives inside lessons only), so those two rows stay inert rather than
+    // linking to something that doesn't exist.
+    const SKILL_DESTINATIONS = {
+        reading: { tab: 'reader' },
+        listening: { drill: 'listening' },
+        grammar: { drill: 'grammar' },
+        vocab: { drill: 'vocabulary' }
+    };
 
     function skillsBlock(d) {
         const rows = SKILLS.map(skill => {
             const done = d.doneSkills[skill.from] || 0;
             const total = d.totalSkills[skill.from] || 0;
             if (!total) return '';
+            const dest = SKILL_DESTINATIONS[skill.key];
+            const attrs = dest
+                ? (dest.tab ? `data-jr-tab="${esc(dest.tab)}"` : `data-jr-drill="${esc(dest.drill)}"`)
+                : '';
             return `
-                <li class="jr-row">
+                <li class="jr-row${dest ? ' jr-row-clickable' : ''}" ${attrs}>
                     <span class="jr-row-label">${esc(skill.label)}</span>
                     <span class="jr-row-meter">${meter((done / total) * 100)}</span>
                     <span class="jr-row-value">${done} / ${total}</span>
@@ -335,6 +356,49 @@ const Journey = (function () {
                 ${milestonesBlock(d)}
             </div>
         `;
+        _wireClicks(host);
+    }
+
+    // Every stat here is counted from something the learner did — so every
+    // stat also gets somewhere to go do more of it. One delegated listener
+    // (guarded the same way engine/curriculum.js guards its own root
+    // listener) rather than per-row handlers, since the whole grid is
+    // rebuilt on every render().
+    function _wireClicks(host) {
+        if (host.dataset.wired) return;
+        host.dataset.wired = '1';
+
+        host.addEventListener('click', e => {
+            const level = e.target.closest('[data-jr-level]');
+            if (level) {
+                openLevel = level.getAttribute('data-jr-level');
+                openUnit = null;
+                showTab('learn', document.querySelector('.nav button[data-tab="learn"]'));
+                return;
+            }
+
+            const lesson = e.target.closest('[data-jr-lesson]');
+            if (lesson) {
+                const lessonId = lesson.getAttribute('data-jr-lesson');
+                if (lessonId && typeof startLesson === 'function') startLesson(lessonId);
+                return;
+            }
+
+            const tab = e.target.closest('[data-jr-tab]');
+            if (tab) {
+                const tabId = tab.getAttribute('data-jr-tab');
+                showTab(tabId, document.querySelector('.nav button[data-tab="' + tabId + '"]'));
+                return;
+            }
+
+            const drill = e.target.closest('[data-jr-drill]');
+            if (drill) {
+                const drillId = drill.getAttribute('data-jr-drill');
+                showTab('drills', document.querySelector('.nav button[data-tab="drills"]'));
+                if (typeof Workshop !== 'undefined') Workshop.open(drillId);
+                return;
+            }
+        });
     }
 
     // MILESTONES is exposed so the lesson-complete screen (engine/lessons.js)
