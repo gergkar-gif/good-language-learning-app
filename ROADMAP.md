@@ -224,6 +224,36 @@ track known bugs in existing content rather than things not yet built.
     all — a natural extension of the same architecture, not attempted
     in this pass.
 
+- [ ] Grammar screens: italicize target-language words/phrases inside
+  `text`/`tip` prose (Hungarian or Spanish, wherever it appears bare in
+  otherwise-English explanatory text), so it reads visually distinct from
+  the English scaffolding around it. **CSS-only half built and shipped
+  2026-09-10**: `examples`/`table` sections already render their
+  target-language side in italics via `.lsn-grammar .lsn-es` (new
+  `<div class="lsn-grammar">` wrapper in `stepRenderers.grammar()`, CSS
+  in `styles/components.css`) — zero content changes needed, ~1,350
+  examples + ~510 table sections across both languages benefited
+  instantly. **Content retrofit (manual `*asterisk*` markup in `text`/
+  `tip` `content` fields, since `escMd()` already converts that to
+  `<em>`) is partial**: piloted and verified live on HU A1 Unit 1 (8
+  files), then scaled via 10 parallel background agents across the
+  remaining 1,366 grammar files — all 10 hit a session rate limit
+  mid-run (resets 5:10am UTC) before finishing. Recovered by auditing
+  the working tree file-by-file against each agent's assigned batch:
+  141 files had real, verified-correct edits (all valid JSON, spot-
+  checked against the wrapping convention) — ES A1 (46/102), ES A2
+  (35/100), HU A1 second half (60/148) — committed and pushed. The
+  other 7 batches (ES B1 all three chunks, HU A1 first half, HU A2 both
+  chunks, HU B1 — 1,225 files) have zero edits; two of those agents had
+  described pivoting mid-run from the instructed manual per-file
+  approach to writing an automated Hungarian-token-detection script
+  (a risk flagged during dispatch, since distinguishing bare Hungarian
+  from English inside free prose needs real judgment a heuristic would
+  get wrong) — confirmed neither actually wrote anything to disk before
+  failing, so no bad edits leaked in. **Remaining scope**: 1,225 files
+  across ES B1 / HU A1 (first half) / HU A2 / HU B1 still need the same
+  manual retrofit.
+
 - [ ] In the various Workshop drillers, show an English translation and an
   explanation of why that's the right response at the bottom of each
   exercise. **Partially fixed 2026-08-27** — audited every driller first:
