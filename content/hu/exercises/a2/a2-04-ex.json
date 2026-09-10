@@ -50,6 +50,18 @@
     },
     {
       "id": "a2-04-controlled-4",
+      "type": "matching",
+      "category": "controlled",
+      "pairs": [
+        ["naponta", "daily"],
+        ["hetente", "weekly"],
+        ["havonta", "monthly"],
+        ["évente", "yearly"]
+      ],
+      "teaches": ["every-day-nta"]
+    },
+    {
+      "id": "a2-04-controlled-5",
       "type": "fill-blank",
       "category": "controlled",
       "sentence": "____ egyszer moziba megyek.",
@@ -67,18 +79,6 @@
     },
     {
       "id": "a2-04-practice-2",
-      "type": "matching",
-      "category": "practice",
-      "pairs": [
-        ["naponta", "daily"],
-        ["hetente", "weekly"],
-        ["havonta", "monthly"],
-        ["évente", "yearly"]
-      ],
-      "teaches": ["every-day-nta"]
-    },
-    {
-      "id": "a2-04-practice-3",
       "type": "sentence-builder",
       "category": "practice",
       "tiles": ["Hetente", "kétszer", "sportolok", "."],
@@ -87,7 +87,7 @@
       "teaches": ["how-many-times-szor"]
     },
     {
-      "id": "a2-04-practice-4",
+      "id": "a2-04-practice-3",
       "type": "sentence-builder",
       "category": "practice",
       "tiles": ["Naponta", "reggelizem", "."],
