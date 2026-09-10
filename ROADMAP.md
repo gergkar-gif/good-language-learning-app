@@ -161,6 +161,42 @@ track known bugs in existing content rather than things not yet built.
     real skill ("greetings"); the vocabulary button correctly launches
     into a scoped session ("Taught in Unit 1 · Lesson 1.1"). No
     console/page errors in either run.
+  - **Extended to Home 2026-09-10**: the lesson-complete screen offers
+    the mini-game once, right after finishing — but a learner who taps
+    "Done" instead never sees it again for that lesson. Home's "what's
+    next" slot now carries the same offer forward: a new
+    `miniGameNudge()` in `engine/home.js` (mirroring the existing
+    post-unit `practiceNudge()` right above it) checks
+    `Recommend.lastCompletedLessonId()` and, when the learner hasn't
+    already resolved it, calls the exact same `Recommend.recommend()`
+    signal Workshop's card and the lesson-complete buttons use, plus
+    that lesson's own vocabulary (`loadLesson()` +
+    `collectLessonVocabulary()`) for the vocabulary half. Renders as a
+    "Play a mini-game?" card in the Continue-card slot, worded
+    differently depending on `reason` ("You've been shaky on this" vs
+    "Reinforce what you just learned"), with a "Not now" that resolves
+    it the same once-per-lesson way `practiceNudge()`'s "Not now"
+    already resolves per unit (`miniGameDismissed`/`dismissMiniGame`,
+    keyed by lesson id in `localStorage`, same pattern as
+    `dismissedUnits`). Deliberately mutually exclusive with the
+    post-unit nudge — `render()` only asks for a mini-game offer when
+    that bigger, rarer nudge isn't already showing, so the learner is
+    never offered two "go practise" prompts in the same slot. Verified
+    live: the card appears on Home right after finishing a lesson with
+    both a real "Grammar (5 questions)" and "Vocabulary (10)" button;
+    clicking either correctly opens Workshop with a scoped mini-game
+    session running; returning to Home afterward correctly shows the
+    ordinary Continue card instead (resolved, not re-offered). No
+    console/page errors.
+  - **Not done**: the "what does the learner know" engine
+    (`engine/recommend.js`) still only covers grammar for the main
+    course — no equivalent weak/recent signal feeds Vocabulary's
+    mini-game beyond "what this lesson just taught" (vocabulary's
+    actual mastery signal, per-word SRS ease/due-dates, exists in
+    `engine/srs.js` but isn't threaded into `Recommend` yet), and the
+    HU-specific drillers (suffix/prefix/morphology/verb) have no
+    signal or mini-game offer at all. Both are natural extensions of
+    the same architecture, not attempted in this pass.
 
 - [ ] In the various Workshop drillers, show an English translation and an
   explanation of why that's the right response at the bottom of each

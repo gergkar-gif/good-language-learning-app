@@ -358,6 +358,84 @@ const Home = (function () {
         `;
     }
 
+    // Home's per-lesson counterpart to the post-unit practice nudge above:
+    // a "Quick Reinforce" mini-game offered after ANY lesson, not just a
+    // unit's last one — same engine/recommend.js signal that also drives
+    // Workshop's "Recommended for you" card and the lesson-complete
+    // screen's own Quick Reinforce buttons (engine/lessons.js), so all
+    // three surfaces agree on what's worth practicing rather than each
+    // guessing separately. Resolved (played or skipped) the same
+    // once-per-lesson way the unit nudge resolves per unit, so it doesn't
+    // keep asking about a lesson the learner already answered.
+    function miniGameDismissedKey() {
+        return Lang.key('miniGameDismissed');
+    }
+
+    function miniGameDismissed(lessonId) {
+        try {
+            const seen = JSON.parse(localStorage.getItem(miniGameDismissedKey()) || '{}');
+            return !!seen[lessonId];
+        } catch (error) {
+            return false;
+        }
+    }
+
+    function dismissMiniGame(lessonId) {
+        try {
+            const seen = JSON.parse(localStorage.getItem(miniGameDismissedKey()) || '{}');
+            seen[lessonId] = true;
+            localStorage.setItem(miniGameDismissedKey(), JSON.stringify(seen));
+        } catch (error) {
+            // Private browsing with storage disabled — the card just won't
+            // stay dismissed, same tradeoff the unit nudge already accepts.
+        }
+    }
+
+    // Never stands alongside the post-unit nudge — the caller only asks
+    // for this once it already knows that bigger nudge isn't showing (see
+    // render()), so the learner is never offered two "go practise"
+    // prompts in the same slot.
+    async function miniGameNudge() {
+        const lessonId = (typeof Recommend !== 'undefined') ? Recommend.lastCompletedLessonId() : null;
+        if (!lessonId || miniGameDismissed(lessonId)) return null;
+
+        const rec = (typeof Recommend !== 'undefined') ? await Recommend.recommend() : null;
+
+        let words = [];
+        if (typeof loadLesson === 'function' && typeof collectLessonVocabulary === 'function') {
+            const lesson = await loadLesson(lessonId);
+            if (lesson) words = await collectLessonVocabulary(lesson);
+        }
+
+        if (!rec && !words.length) return null;
+        return { lessonId, skill: rec ? rec.skill : null, reason: rec ? rec.reason : null, words };
+    }
+
+    function miniGameCard(mini) {
+        const blurb = mini.reason === 'weak'
+            ? "You've been shaky on this — a quick pass would help it stick."
+            : "Reinforce what you just learned, while it's still fresh.";
+        const count = (typeof QUICK_REINFORCE_COUNT === 'number') ? QUICK_REINFORCE_COUNT : 5;
+        return `
+            <section class="hm-continue hm-nudge">
+                <span class="hm-eyebrow">Quick reinforce</span>
+                <span class="hm-continue-title">Play a mini-game?</span>
+                <span class="hm-continue-sub">${esc(blurb)}</span>
+                <span class="hm-continue-foot">
+                    ${mini.skill ? `
+                        <button class="hm-cta-btn" data-mini-game-grammar="${esc(mini.skill)}"
+                            data-mini-game-lesson="${esc(mini.lessonId)}">Grammar (${count} questions) →</button>
+                    ` : ''}
+                    ${mini.words.length ? `
+                        <button class="hm-cta-btn" data-mini-game-vocab="1"
+                            data-mini-game-lesson="${esc(mini.lessonId)}">Vocabulary (${mini.words.length}) →</button>
+                    ` : ''}
+                    <button class="dk-link-btn" data-skip-mini-game="${esc(mini.lessonId)}">Not now</button>
+                </span>
+            </section>
+        `;
+    }
+
     // A door: one line of what is behind it, and the number that decides
     // whether it is worth opening.
     function door(config) {
@@ -534,6 +612,40 @@ const Home = (function () {
                 render();
                 return;
             }
+
+            const miniGrammar = e.target.closest('[data-mini-game-grammar]');
+            if (miniGrammar) {
+                dismissMiniGame(miniGrammar.getAttribute('data-mini-game-lesson'));
+                goTab('drills');
+                if (typeof Workshop !== 'undefined') {
+                    Workshop.open('grammar', {
+                        skill: miniGrammar.getAttribute('data-mini-game-grammar'),
+                        count: (typeof QUICK_REINFORCE_COUNT === 'number') ? QUICK_REINFORCE_COUNT : 5
+                    });
+                }
+                return;
+            }
+
+            const miniVocab = e.target.closest('[data-mini-game-vocab]');
+            if (miniVocab) {
+                const lessonId = miniVocab.getAttribute('data-mini-game-lesson');
+                dismissMiniGame(lessonId);
+                (async () => {
+                    const lesson = (typeof loadLesson === 'function') ? await loadLesson(lessonId) : null;
+                    const words = (lesson && typeof collectLessonVocabulary === 'function')
+                        ? await collectLessonVocabulary(lesson) : [];
+                    goTab('drills');
+                    if (typeof Workshop !== 'undefined') Workshop.open('vocabulary', { words: words });
+                })();
+                return;
+            }
+
+            const skipMini = e.target.closest('[data-skip-mini-game]');
+            if (skipMini) {
+                dismissMiniGame(skipMini.getAttribute('data-skip-mini-game'));
+                render();
+                return;
+            }
         });
 
         host.addEventListener('change', e => {
@@ -576,10 +688,11 @@ const Home = (function () {
         const totals = courseTotals();
         const reading = await nextStory(step ? step.level : null);
         const nudge = await practiceNudge();
+        const mini = nudge ? null : await miniGameNudge();
 
         host.innerHTML = `
             ${courseBlock()}
-            ${nudge ? practiceNudgeCard(nudge) : continueCard(step)}
+            ${nudge ? practiceNudgeCard(nudge) : (mini ? miniGameCard(mini) : continueCard(step))}
             <div class="hm-doors">
                 ${reviewDoor(deck)}
                 ${readDoor(reading)}
