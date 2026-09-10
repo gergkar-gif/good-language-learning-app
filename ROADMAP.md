@@ -18,13 +18,22 @@ track known bugs in existing content rather than things not yet built.
   track (36 units, a chronological Hungarian-history sweep from the
   honfoglalás to EU accession, ending in four civic units — the
   Alaptörvény, government institutions, national symbols, holidays —
-  covering what the honosítási vizsga interview actually tests). Content
-  itself is not yet built; the draft's own `notes` field flags that
-  `scripts/build_translation_index.py`'s `_track_for()` and
-  `engine/drills/translation.js`'s TRACK enum currently hardcode
-  ES-B1-specific 'core'/'latam' track names and tab labels, and need a
-  small generalization before HU B1 content can plug into the existing
-  dual-track machinery.
+  covering what the honosítási vizsga interview actually tests).
+  **Dual-track machinery generalized 2026-09-09**: the draft's own
+  hardcoded-track-names blocker is fixed — `_track_for()`,
+  `engine/drills/translation.js`'s TRACK enum, and `build-manifest.py`'s
+  `LEVEL_TRACKS` are all language-keyed now, not ES-B1-specific; HU B1
+  plugs into the same dual-track UI (tabs, translation drills, decks) ES
+  B1 already used. **Units 1-5 of 36 built 2026-09-09/10, both tracks**
+  (60 lessons total): Core covers "Telling a Longer Story" through
+  "Relationships"; Citizenship covers "Hungary Today: Land & Symbols"
+  through "The Árpád Dynasty" (honfoglalás-era history so far). Core's
+  reading policy switched from invented originals to real classics
+  (Petőfi, Móricz, Jókai, Mikszáth) partway through, matching ES B1
+  Core's existing policy — see the Library / dictionary section's
+  attribution-line and four-shelf entries, which this content exercised.
+  Remaining: 31 more units per track (6-36), continuing the history
+  sweep through to EU accession and the four civic units.
 - [x] Word Bank: same idea as Grammar Guide, but for vocabulary — a
   per-unit collection of the ~15-20 new words the unit introduces.
   **Built 2026-08-27**: `wordBankHtml()` in `engine/curriculum.js` is a
