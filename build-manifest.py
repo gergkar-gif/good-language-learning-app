@@ -8,7 +8,7 @@ ROOT = Path(".")
 BASE_STORIES = Path("content")
 BASE_LESSONS = Path("content")
 
-CATEGORIES = ["original", "classics", "world"]
+CATEGORIES = ["original", "classics", "world", "current"]
 SKIP_FILENAMES = {"manifest.json", "lessons-manifest.json"}
 
 def build_stories(lang="es", ref_to_unit=None):

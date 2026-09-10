@@ -28,12 +28,12 @@
     "order": { "type": "integer", "minimum": 0, "description": "Sort position within its shelf." },
     "type": {
       "type": "string",
-      "enum": ["original", "classic", "classics", "world"],
-      "description": "Informational only — the manifest takes the shelf from the directory the story sits in, never from this field, so the two cannot disagree in the UI. Note the classics shelf is spelled 'classics' as a directory but 'classic' inside all ten of its files; both are accepted here."
+      "enum": ["original", "classic", "classics", "world", "current"],
+      "description": "Informational only — the manifest takes the shelf from the directory the story sits in, never from this field, so the two cannot disagree in the UI. Note the classics shelf is spelled 'classics' as a directory but 'classic' inside all ten of its files; both are accepted here. 'current' is the fourth shelf: readings adapted from a real Wikipedia or news article, simplified to the story's level — see source/author/work below."
     },
     "category": {
       "type": "string",
-      "enum": ["original", "classic", "classics", "world"],
+      "enum": ["original", "classic", "classics", "world", "current"],
       "description": "Legacy alias for type, present in one file. Prefer type."
     },
     "estimatedMinutes": { "type": "integer", "minimum": 1, "description": "Shown on the story card." },
@@ -46,9 +46,10 @@
       "description": "Grammar points the story exercises."
     },
     "vocabularyTopics": { "type": "array", "items": { "type": "string" } },
-    "source": { "type": "string", "description": "Classics only: where the text came from." },
-    "author": { "type": "string", "description": "Classics only." },
-    "work": { "type": "string", "description": "Classics only: the original work." },
+    "source": { "type": "string", "description": "Classics and current-events only: where the text came from (e.g. the original author's name for classics, or a publication/site name like 'Wikipedia' for current-events)." },
+    "author": { "type": "string", "description": "Classics and current-events only." },
+    "work": { "type": "string", "description": "Classics and current-events only: the original work, or the source article's title." },
+    "sourceUrl": { "type": "string", "description": "Current-events only: link to the original Wikipedia/news article being adapted. Not currently rendered, kept for provenance." },
     "text": {
       "type": "string",
       "description": "Fallback for a story with no paragraphs. The reader renders it as a single narration block."

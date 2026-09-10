@@ -275,6 +275,51 @@ track known bugs in existing content rather than things not yet built.
     lesson currently links to (old kept-but-unlinked originals, a
     handful of standalone classics), which is expected, not a bug.
 
+- [x] Library should have a fourth shelf, alongside Original/Classics/
+  World: readings adapted from a real Wikipedia or news article,
+  simplified to the story's level. Flagged 2026-09-10 by the user
+  (voice-to-text, garbled) — clarified via AskUserQuestion that the
+  existing three shelves keep their current sourcing unchanged
+  (Original and World stay app-composed narrative, Classics stays
+  adapted-in-own-words from real public-domain literature), and this
+  is a genuinely new, separate fourth category, not a retrofit of
+  World. **Built 2026-09-10**: `type: "current"` added to
+  `story.schema.json` (both languages) alongside `original`/`classic`/
+  `classics`/`world`; `source`/`author`/`work` descriptions widened
+  from "classics only" to "classics and current-events" (same fields,
+  reused — `source` now doubles as the publication/site name, e.g.
+  "Wikipedia", rather than always the original author); added an
+  optional `sourceUrl` field (not rendered, kept for provenance).
+  `build-manifest.py`'s `CATEGORIES` gained `"current"`; no other
+  manifest logic needed changing since shelving already reads the
+  file's own `type` (or its folder, `content/{lang}/stories/current/
+  {level}/`) generically. `engine/reader.js`'s `STORY_TYPE_LABELS`
+  gained `current: 'Current Events'` — the shelf itself needed no new
+  code, `buildLibraryUI()` already derives shelves dynamically from
+  whatever `type` values are present. Extended the classics
+  attribution line in `renderStory()` to also cover `current`: same
+  "Adapted from *[work]*" shape, but prefixed with the source
+  publication when set ("Adapted from Wikipedia: *[work]*") since a
+  reference-work citation reads oddly styled as if it were a novel.
+  Seeded one example story per language to prove the pipeline
+  end-to-end rather than mass-producing content on an ambiguous,
+  voice-transcribed instruction: `content/es/stories/current/a2/
+  a2-01-sagradafamilia.json` (Barcelona's Sagrada Família, its
+  Gaudí-death-centenary 2026 completion target) and `content/hu/
+  stories/current/a2/a2-01-ligetbudapest.json` (Budapest's Liget
+  Budapest museum project) — both real, factual, non-political,
+  written as an original-prose retelling (not close paraphrase) with
+  a Wikipedia citation, deliberately avoiding verbatim-close use of
+  copyrighted news prose. Verified live: the "Current Events" shelf
+  renders correctly in both languages' A2 room, separate from the
+  other shelves, and each story's attribution line reads correctly
+  ("Adapted from Wikipedia: *Sagrada Família*" / "...*Városliget /
+  Liget Budapest*"), no console errors. Not done: broader
+  buildout (more topics, more levels/units) — that needs the user's
+  own topic/level direction per reading, and real per-article
+  copyright judgment call each time, so it's left for a future ask
+  rather than generated speculatively here.
+
 ## Decks
 
 > **Standing design principle (2026-09-02):** Decks' UI is deliberately
