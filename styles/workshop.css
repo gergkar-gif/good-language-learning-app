@@ -9,6 +9,55 @@
     margin: 0 auto;
 }
 
+/* One suggested driller session, ahead of the picker list — patched in
+   asynchronously once engine/recommend.js resolves (see Workshop.render()),
+   so it can appear a beat after the picker itself rather than blocking it.
+   Same bordered-card language as Home's .hm-continue, since both answer
+   the same question ("what should I do right now?"). */
+.wk-recommend {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto 20px;
+    text-align: left;
+    background: var(--bg);
+    border: 1px solid var(--accent-dark);
+    border-radius: var(--radius-sm);
+    padding: 16px 18px;
+    cursor: pointer;
+    transition: border-color var(--dur-fast) var(--ease-standard);
+}
+
+.wk-recommend:hover {
+    border-color: var(--primary);
+}
+
+.wk-recommend-eyebrow {
+    font-size: 12px;
+    letter-spacing: .04em;
+    color: var(--accent-dark);
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.wk-recommend-body {
+    font-size: 15px;
+    color: var(--text);
+    line-height: 1.4;
+}
+
+.wk-recommend-body strong {
+    color: var(--text);
+}
+
+.wk-recommend-cta {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent-dark);
+    margin-top: 10px;
+}
+
 /* Open rows divided by hairlines, matching the Lessons list — see the note
    on .level-card in styles/layout.css. */
 .wk-card {

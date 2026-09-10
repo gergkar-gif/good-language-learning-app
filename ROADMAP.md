@@ -62,6 +62,76 @@ track known bugs in existing content rather than things not yet built.
 
 ## Workshop
 
+- [x] Workshop should have a "Recommended drill" — a Kwiziq-style system
+  that maps what the learner knows and always suggests what to practice
+  next, rather than a flat menu of drillers with no sense of where the
+  learner actually stands. Requested 2026-09-10 alongside two related
+  asks (Journey stats clickable, SRS language removed — see Library /
+  dictionary and Interface & platform) and a "mini-games between lessons"
+  idea, logged separately below. **Built 2026-09-10**, as an MVP scoped
+  to grammar (vocabulary already has an equivalent signal via the
+  existing per-word SRS due-dates surfaced on Decks/Home). New
+  `engine/recommend.js` (`Recommend`) ranks two signals: **weak** — a
+  grammar skill with real review history (via the SM-2 schedule
+  `engine/recycle.js` already keeps for in-lesson recycle blocks,
+  keyed by exercise id) whose average `ease` is low, i.e. exercises
+  tagged with that skill keep getting marked wrong or hard; **recent**
+  — when no skill yet has enough history (⩾2 reviewed exercises) to
+  call "weak" rather than "barely seen," falls back to whatever
+  grammar concept the most recently completed lesson's unit leaned on
+  most, so a brand-new learner still gets "practice what you just
+  learned" instead of nothing. Both resolve to a `grammar-index.json`
+  skill id — the same id `GrammarDriller`'s existing `{ skill }` option
+  already understands (built 2026-08-27 for Home's post-unit practice
+  nudge), so a recommendation is directly launchable via
+  `Workshop.open('grammar', { skill })`. Extracted `unitSkillFor`/
+  `unitFor`/`lastCompletedLessonId`/`exerciseRefFor` out of
+  `engine/home.js`'s private nudge logic into this shared module (one
+  source of truth) rather than duplicating them — `home.js`'s
+  `practiceNudge()` now calls `Recommend.*` instead of its own copies,
+  with no behavior change to the nudge itself. Workshop's driller
+  picker (`engine/workshop.js`) renders instantly as before, then
+  patches in a `.wk-recommend` card once `Recommend.recommend()`
+  resolves — deliberately not blocking the picker on it, since
+  `grammar-index.json` can be several hundred KB on a content-heavy
+  course. A raw skill id has no curated display title outside
+  `GrammarDriller`'s own private bank data, so the card humanizes it
+  (hyphens to spaces, title-case) rather than reaching into that
+  module — good enough for a one-line blurb; a few longer/compound
+  skill ids read a little awkwardly this way (e.g. one HU id
+  humanizes to "...Isn T" from a hyphen standing in for an apostrophe
+  at authoring time), a known minor cosmetic gap, not fixed here.
+  Verified live via Playwright on both languages: a fabricated
+  low-ease recycle-schedule card for a real skill correctly produces
+  "You've been shaky on `<skill>` — a quick pass would help it stick,"
+  a fresh learner with one completed lesson and no review history
+  correctly produces "Fresh from your last lesson: `<skill>`. Reinforce
+  it while it's recent," clicking either correctly opens Workshop's
+  Grammar Driller pre-scoped to that skill and launches straight into
+  a session (no settings screen), and a lesson with no grammar-tagged
+  exercises at all correctly recommends nothing rather than guessing.
+  No console/page errors in any run. Not done: the same weak/recent
+  signal for the language-specific HU drillers (suffix/prefix/
+  morphology/verb) or for vocabulary specifically (it already has its
+  own due-date signal, just not surfaced as a Workshop card yet) —
+  scoped to grammar only for this first pass.
+
+- [ ] "Mini-games" in Workshop — short-format sessions using the same
+  driller engines (Grammar/Vocabulary/etc.), a handful of questions
+  with no settings screen, meant to be quick rather than a full
+  driller session. Requested 2026-09-10 alongside the Recommended
+  Drill work above, specifically to slot in **between lessons**:
+  offered right after finishing a lesson, scoped to what that lesson
+  just taught, for a learner "in a rush" who wants a quick reinforcement
+  rather than committing to a full Workshop session. Not built —
+  natural next step once Recommended Drill (above) existed to establish
+  the skill-scoping mechanism this would reuse; a lesson-complete quick
+  card offering "Reinforce (2 min)" would call the same
+  `Workshop.open('grammar', { skill })` path with a fixed, short
+  question count and no settings screen, using `unitSkillFor()`/the
+  lesson's own `teaches` tags for scope. Sizing this as its own task
+  rather than folding it into the same pass as Recommended Drill.
+
 - [ ] In the various Workshop drillers, show an English translation and an
   explanation of why that's the right response at the bottom of each
   exercise. **Partially fixed 2026-08-27** — audited every driller first:

@@ -135,8 +135,34 @@ const Workshop = (function () {
         return d.innerHTML;
     }
 
-    function _pickerHtml() {
+    // A raw skill id ("location-with-ban-ben", "subjuntivo-deseos") has no
+    // curated display title outside GrammarDriller's own bank data, which
+    // is private to that module — rather than reach into it, this just
+    // turns hyphens into spaces and title-cases. Good enough for a one-line
+    // recommendation; GrammarDriller's own settings screen still shows the
+    // real bank title once the session is open.
+    function _humanizeSkill(id) {
+        return String(id || '').replace(/[-_]+/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+    }
+
+    function _recommendationHtml(rec) {
+        if (!rec) return '';
+        const label = _humanizeSkill(rec.skill);
+        const blurb = rec.reason === 'weak'
+            ? `You've been shaky on <strong>${_esc(label)}</strong> — a quick pass would help it stick.`
+            : `Fresh from your last lesson: <strong>${_esc(label)}</strong>. Reinforce it while it's recent.`;
         return `
+            <button class="wk-recommend" data-recommend-skill="${_esc(rec.skill)}">
+                <span class="wk-recommend-eyebrow">Recommended for you</span>
+                <span class="wk-recommend-body">${blurb}</span>
+                <span class="wk-recommend-cta">Start →</span>
+            </button>
+        `;
+    }
+
+    function _pickerHtml(recommendation) {
+        return `
+            ${_recommendationHtml(recommendation)}
             <div class="wk-picker">
                 ${DRILLERS.filter(_available).map(d => `
                     <button class="wk-card" data-driller="${d.id}">
@@ -163,6 +189,10 @@ const Workshop = (function () {
         root.querySelectorAll('[data-driller]').forEach(btn => {
             btn.addEventListener('click', () => open(btn.dataset.driller));
         });
+        const rec = root.querySelector('[data-recommend-skill]');
+        if (rec) {
+            rec.addEventListener('click', () => open('grammar', { skill: rec.getAttribute('data-recommend-skill') }));
+        }
     }
 
     function _attachActiveEvents(root) {
@@ -212,13 +242,36 @@ const Workshop = (function () {
         if (mod && typeof mod.stop === 'function') mod.stop();
     }
 
+    // The picker itself renders synchronously, same as always — the
+    // "Recommended for you" card is fetched separately afterwards and
+    // patched in once ready (grammar-index.json can be several hundred KB
+    // on a course with a lot of content; blocking the whole picker on it
+    // would turn opening Workshop into a wait). _pickerToken guards against
+    // patching a stale picker if the learner has already navigated away or
+    // opened a driller by the time the fetch resolves.
+    let _pickerToken = 0;
+
+    function _loadRecommendation(root, token) {
+        if (typeof Recommend === 'undefined') return;
+        Recommend.recommend().then(rec => {
+            if (!rec || token !== _pickerToken) return;
+            const target = document.getElementById('drills-root');
+            if (!target || target !== root || _active) return;
+            root.insertAdjacentHTML('afterbegin', _recommendationHtml(rec));
+            const btn = root.querySelector('[data-recommend-skill]');
+            if (btn) btn.addEventListener('click', () => open('grammar', { skill: btn.getAttribute('data-recommend-skill') }));
+        }).catch(() => {});
+    }
+
     function render() {
         const root = document.getElementById('drills-root');
         if (!root) return;
 
         if (!_active) {
-            root.innerHTML = _pickerHtml();
+            _pickerToken++;
+            root.innerHTML = _pickerHtml(null);
             _attachPickerEvents(root);
+            _loadRecommendation(root, _pickerToken);
             return;
         }
 
