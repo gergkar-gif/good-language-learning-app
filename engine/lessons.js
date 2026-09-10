@@ -634,9 +634,15 @@ const stepRenderers = {
 
     // A whole grammar concept on one screen. Only presentational parts are
     // rendered — an exercise belongs in an exercise-group, not in here.
+    // Wrapped in .lsn-grammar so styles/components.css can italicize target-
+    // language text (the examples/table target-language column, plus any
+    // *word* markup in text/tip prose — see escMd()) without touching the
+    // shared .lsn-es class every other lesson step also uses; grammar
+    // screens are the one place a Hungarian/Spanish word needs to visually
+    // stand apart from the English explaining it.
     grammar(step) {
         const allowed = ['text', 'table', 'examples', 'tip', 'external-link'];
-        return (step.parts || [])
+        const body = (step.parts || [])
             .filter(part => allowed.indexOf(part.type) !== -1)
             .map(part => {
                 const heading = part.title && part.title !== step.title
@@ -645,6 +651,7 @@ const stepRenderers = {
                 return heading + stepRenderers[part.type](part);
             })
             .join('');
+        return `<div class="lsn-grammar">${body}</div>`;
     },
 
     text(step) {

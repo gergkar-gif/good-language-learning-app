@@ -1013,6 +1013,18 @@
   color: var(--primary);
 }
 
+/* Grammar screens only (see stepRenderers.grammar() in engine/lessons.js):
+   the target-language side of an example pair, and a table's first
+   column, both set apart in italics from the English explaining them —
+   the same distinction *word* markup gives inline prose via escMd(). Not
+   applied to .lsn-es/.lsn-table generally, since those are shared by
+   dialogue, vocabulary and matching steps that were never part of this
+   ask. */
+.lsn-grammar .lsn-es,
+.lsn-grammar .lsn-table td:first-child strong {
+  font-style: italic;
+}
+
 .lsn-en {
   color: var(--text);
   opacity: .75;
