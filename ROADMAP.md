@@ -74,6 +74,24 @@ this list directly rather than relying on a tool-specific todo list.
 
 ## Content & curriculum
 
+- [ ] Evaluate importing exercises from Todo-Claro (todo-claro.com), a
+  Spanish-exercise site. Flagged 2026-09-11 — `imports/todo_claro_complete_catalogue_308-exercises.zip`
+  is sitting in the repo already. **Checked what's actually in it**: it's
+  a *catalogue inventory*, not scraped exercise content — `manifest.json`
+  states 308 slots across grammar (135)/vocabulary (118)/situations (35)/
+  culture (20), spanning A1/A2-C1/C2, but its own `important_limitations`
+  says individual exercise pages were mostly not fetched — `exercise_type`/
+  `title`/`instructions`/`items`/`answer_key` are null for most entries
+  until page-level extraction happens. `schema.json` does already include
+  a `parlour_mapping` field (intended to map each entry to an existing
+  Parlour exercise type) and a `known_source_mechanics` list (gap-fill,
+  multiple-choice, matching, crossword, memo-quiz, mixed-up sentences).
+  Before treating this as an import task: (1) the real content-extraction
+  work (fetching the actual 308 pages) hasn't been done yet — this zip
+  alone isn't importable content; (2) it's scraped from a third-party
+  site, so check todo-claro.com's terms/licensing before reproducing any
+  of its content in this app, not just whether the data is structured
+  well enough to map.
 - [ ] Integrate the same English-Spanish dual-language reading setup with
   originals as exists for Hungarian, up to A1 level.
 - [ ] Hungarian: introduce Hungarian cultural material at B1-B2 (for the
