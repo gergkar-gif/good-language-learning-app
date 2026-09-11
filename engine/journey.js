@@ -335,6 +335,52 @@ const Journey = (function () {
             `<ul class="jr-milestones">${items}</ul>`);
     }
 
+    // Step 7 of the learner-model roadmap: cloud backup/restore, folded
+    // into Journey rather than a new tab — this is the "multi-user
+    // support" moment profile-section-plan deferred a standalone Settings
+    // screen to. Last-write-wins on purpose: two explicit, clearly-
+    // labeled actions rather than an automatic merge, so the learner
+    // always knows which direction is about to overwrite which.
+    function accountBlock() {
+        const loggedIn = (typeof Sync !== 'undefined') && Sync.isLoggedIn();
+        const body = loggedIn ? `
+            <p class="jr-account-email">${esc(Sync.email())}</p>
+            <div class="jr-account-actions">
+                <button class="dk-secondary" data-sync-backup="1">Back up now</button>
+                <button class="dk-secondary" data-sync-restore="1">Restore from cloud</button>
+            </div>
+            <p class="jr-account-status" id="jr-account-status"></p>
+            <button class="jr-account-logout" data-sync-logout="1">Log out</button>
+        ` : `
+            <p class="jr-account-blurb">Back up your progress so it isn't stuck on one device.</p>
+            <div class="jr-account-login">
+                <input type="email" id="jr-account-email-input" class="dk-editor-input"
+                    placeholder="you@example.com" maxlength="254">
+                <button class="dk-secondary" data-sync-request-link="1">Send me a login link</button>
+            </div>
+            <p class="jr-account-status" id="jr-account-status"></p>
+        `;
+        return card('Account', loggedIn ? 'Synced across devices' : 'Not signed in', body);
+    }
+
+    // Fetches the cloud's last-backup time without touching local data,
+    // once render() has already drawn the (synchronous) card — patched in
+    // afterward rather than making render() itself async, since nothing
+    // else in this file needs to await a network call to draw correctly.
+    async function _refreshAccountStatus(host) {
+        if (typeof Sync === 'undefined' || !Sync.isLoggedIn()) return;
+        const statusEl = host.querySelector('#jr-account-status');
+        if (!statusEl) return;
+        try {
+            const data = await Sync.status();
+            statusEl.textContent = data && data.updatedAt
+                ? 'Last backed up ' + new Date(data.updatedAt).toLocaleString() + '.'
+                : 'No backup yet.';
+        } catch (error) {
+            statusEl.textContent = 'Could not reach the cloud right now.';
+        }
+    }
+
     // ----------------------------------------
     // RENDER
     // ----------------------------------------
@@ -354,9 +400,11 @@ const Journey = (function () {
                 ${streakBlock(d)}
                 ${activityBlock(d)}
                 ${milestonesBlock(d)}
+                ${accountBlock()}
             </div>
         `;
         _wireClicks(host);
+        _refreshAccountStatus(host);
     }
 
     // Every stat here is counted from something the learner did — so every
@@ -396,6 +444,46 @@ const Journey = (function () {
                 const drillId = drill.getAttribute('data-jr-drill');
                 showTab('drills', document.querySelector('.nav button[data-tab="drills"]'));
                 if (typeof Workshop !== 'undefined') Workshop.open(drillId);
+                return;
+            }
+
+            if (e.target.closest('[data-sync-request-link]')) {
+                const input = host.querySelector('#jr-account-email-input');
+                const statusEl = host.querySelector('#jr-account-status');
+                const value = input ? input.value.trim() : '';
+                if (!value) {
+                    if (statusEl) statusEl.textContent = 'Enter an email first.';
+                    return;
+                }
+                if (statusEl) statusEl.textContent = 'Sending…';
+                Sync.requestLink(value)
+                    .then(() => { if (statusEl) statusEl.textContent = 'Check your email for a link.'; })
+                    .catch(error => { if (statusEl) statusEl.textContent = error.message || 'Something went wrong.'; });
+                return;
+            }
+
+            if (e.target.closest('[data-sync-backup]')) {
+                const statusEl = host.querySelector('#jr-account-status');
+                if (statusEl) statusEl.textContent = 'Backing up…';
+                Sync.backup()
+                    .then(() => { if (statusEl) statusEl.textContent = 'Backed up just now.'; })
+                    .catch(error => { if (statusEl) statusEl.textContent = error.message || 'Backup failed.'; });
+                return;
+            }
+
+            if (e.target.closest('[data-sync-restore]')) {
+                const statusEl = host.querySelector('#jr-account-status');
+                if (statusEl) statusEl.textContent = 'Restoring…';
+                // Sync.restore() reloads the page on success — status only
+                // ever shows up on the failure path.
+                Sync.restore()
+                    .catch(error => { if (statusEl) statusEl.textContent = error.message || 'Restore failed.'; });
+                return;
+            }
+
+            if (e.target.closest('[data-sync-logout]')) {
+                Sync.logout();
+                render();
                 return;
             }
         });

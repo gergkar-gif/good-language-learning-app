@@ -2280,6 +2280,51 @@
 
 .jr-milestone.is-reached { color: var(--text); }
 
+/* ---- Journey: Account (step 7, cloud backup/restore) ---- */
+.jr-account-blurb {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.jr-account-login {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.jr-account-login .dk-editor-input { flex: 1 1 160px; }
+
+.jr-account-email {
+  font-size: 15px;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.jr-account-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.jr-account-status {
+  font-size: 13px;
+  color: var(--muted);
+  min-height: 1.2em;
+  margin: 8px 0;
+}
+
+.jr-account-logout {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 13px;
+  color: var(--muted);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 .jr-tick {
   flex: 0 0 20px;
   height: 20px;

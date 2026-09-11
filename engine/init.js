@@ -164,6 +164,13 @@ function _attachNavEvents() {
 // --------------------------------------------
 
 async function initialiseApp() {
+    // A magic-link email lands back here as ?verify=<token> — exchange it
+    // for a session before anything else, so My Journey's Account card
+    // already reads as signed-in the moment the learner arrives.
+    if (typeof Sync !== 'undefined') {
+        try { await Sync.completeVerify(); } catch (error) { /* offline — the link stays usable */ }
+    }
+
     loadDeck();
     loadKnownWords();
     loadXP();
