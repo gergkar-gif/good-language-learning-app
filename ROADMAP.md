@@ -5,6 +5,73 @@ brain-dump. Not prioritized or sequenced — a parking lot, distinct from
 `TROUBLESHOOTING_BACKLOG.md` and `HUNGARIAN_A1_CONTENT_BACKLOG.md`, which
 track known bugs in existing content rather than things not yet built.
 
+## Standing architecture principles
+
+**Core First, Enhancement Second.** Set 2026-09-10 as a permanent
+constraint on all future work, not a one-off feature:
+
+- The core learning experience — lessons, vocabulary, grammar, exercises,
+  SRS, progress, XP, local saving, and (once built) cloud sync — must
+  always work, regardless of device quality or connection speed. Keep it
+  lightweight: no large frameworks, no heavy assets, no animations or
+  constant network requests as *dependencies* of the core.
+- Cloud syncing (see step 7 below) must happen automatically in the
+  background and never make the interface wait for the server. Local
+  state updates immediately; the app should stay usable offline, with
+  changes synced once connectivity returns.
+- Progressive enhancement: richer animations, media, interactive
+  elements, and other demanding features are optional layers that load
+  only when the device/browser/network can support them — and must
+  never become dependencies of the core. If an enhancement fails or
+  can't load, basic functionality continues normally.
+- Avoid turning Parlour into a large, heavy modern web app just to add
+  accounts/cloud storage. Keep the existing lightweight vanilla
+  architecture wherever possible.
+
+**2026-09-10 audit against this principle**: the app already aligns
+closely — no framework, no bundler, no CDN dependency, ~1.1MB of plain
+`engine/*.js`, everything persisted as small direct localStorage writes
+(see `engine/progress.js`, `engine/xp.js`, `engine/srs.js`). Concrete
+gaps: no service worker yet, so a cold load still needs the network for
+the HTML/JS/content shell (no offline capability today); and there's no
+formal "core vs. enhancement" boundary written down anywhere — it's
+implicit in how things were built rather than an enforced rule. A
+service-worker app-shell is the natural first concrete step whenever
+that gets picked up.
+
+## Current priority queue
+
+Active work, in dependency order, as of 2026-09-11 — supersedes any
+in-session task tracker, which doesn't persist between sessions. Update
+this list directly rather than relying on a tool-specific todo list.
+
+1. **Learner Path** — single source of truth for level/unit/lesson
+   position, completion state, and last-activity timestamp. See
+   "Learner model & personalized path" below (step 1).
+2. **Learner Model / Brainmap** — evidence-based knowledge tracking.
+   Blocked by 1. (step 2 below).
+3. **Recommendation Engine** — one strong + secondary recommendation.
+   Blocked by 2. Absorbs "next recommended activity after a mini-game"
+   and "wire the HU-specific drillers into the mini-game signal" as
+   pieces of this engine (step 3 below).
+4. **Simplify Home experience hierarchy** — blocked by 3 (step 4 below).
+5. **Time-Based Sessions** — blocked by 3, can run in parallel with 4
+   (step 5 below).
+6. **Unify all activity types as evidence** feeding the Learner Model —
+   no hard blocker, but naturally follows 1-3 (step 6 below).
+7. **Cloud persistence** (Cloudflare Worker + D1) — blocked by 3, 4, and
+   6. Explicitly last per the user's own ordering (step 7 below).
+8. **Italics content retrofit** — paused 2026-09-10 at the user's
+   request (background agents burn credits fast); 282/1366 grammar
+   files done (ES A1/A2 partial, HU A1 partial) and pushed. Resume only
+   when asked — remaining batch file lists are session-scratchpad-local
+   and will need rebuilding from scratch in a future session (diff
+   `content/*/grammar/**/*.json` against what's already italicized to
+   find the true remainder).
+9. **Future feature, unscoped**: CEFR real-exam practice mode (source or
+   generate actual exams, graded response) — see Grammar reference /
+   Level test area for where this would eventually live.
+
 ## Content & curriculum
 
 - [ ] Integrate the same English-Spanish dual-language reading setup with
@@ -1356,10 +1423,36 @@ replacement for them.
    cloud sync becomes "learner state + learner model → cloud → another
    device," a straightforward persistence/replication problem, instead of
    simultaneously inventing the state model and figuring out how to
-   replicate it. Supersedes the earlier plan (see Cross-app flow /
-   general notes) to design the Cloudflare Worker + D1 sync layer
-   immediately — that design work is deferred until steps 1-6 exist to
-   sync.
+   replicate it. Design work deferred until steps 1-6 exist to sync, but
+   the backend is already decided (2026-09-10) so it doesn't need
+   revisiting later: **Cloudflare Worker + D1**, chosen over Supabase/
+   Firebase after comparing free-tier limits — D1 covers this app's scale
+   indefinitely (5GB storage, 5M row-reads/day, no auto-pause-after-
+   inactivity, unlike Supabase's free tier) and reuses the exact Worker
+   pattern already proven in this repo (`cloudflare-worker/bug-report-proxy.js`,
+   see `BUG_REPORT_SETUP.md`). Planned shape once steps 1-6 are ready to
+   build on:
+   - Magic-link email auth (no passwords, no client SDK — plain `fetch()`
+     calls from vanilla JS, matching the app's existing lightweight
+     architecture — see the Core-First/Enhancement-Second principles
+     below).
+   - A new thin `engine/sync.js` that `progress.js`, `xp.js`, and `srs.js`
+     write through instead of touching `localStorage` directly — today
+     each of those three modules independently reads/writes its own
+     localStorage key (`progressKey()`, `'spanishApp_xp'`,
+     `Lang.key('srsDeck')`/`Lang.key('knownWords')`) with no shared
+     abstraction; the sync layer needs to sit underneath all three
+     without those modules growing their own cloud logic.
+   - Local-first writes (localStorage updates immediately, UI never
+     waits on the network) with a background sync queue.
+   - Per-record merge, not whole-blob overwrite — a phone and a laptop
+     need to reconcile (e.g. union completed-lesson sets, keep the
+     higher SRS review count per card) rather than one device's full
+     state clobbering the other's on next sync.
+   - Curriculum/content stays out of this entirely — only mutable user
+     state (progress, XP, SRS card state, known words, preferences)
+     goes through the sync layer; lesson/grammar/exercise content stays
+     purely local static files, as it already is.
 
 - [ ] **Modularity: adding lessons/exercise types without a full rewrite** —
   user's standing concern, answered from investigation 2026-09-10: the
