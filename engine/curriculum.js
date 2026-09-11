@@ -78,6 +78,45 @@ function unitById(levelData, unitId) {
     return (levelData.units || []).find(u => u.id === unitId) || null;
 }
 
+// The unit index a screen showing `level`'s units should mark "current".
+// Defers to the learner's actual canonical position (LearnerPath.nextStep())
+// when that position is in THIS level — this is what makes this screen
+// agree with Home's Continue card after a skip or a level-test-out, since
+// both now read from the same source. Falls back to this level's own
+// first-incomplete unit only when the canonical position is somewhere else
+// entirely (a different level, or nothing left to do here) — there's no
+// single meaningful "current" unit inside a level the learner isn't
+// actively on, so the old per-level heuristic is still the reasonable
+// thing to show there.
+function currentUnitIndexFor(level, units, progress) {
+    const next = (typeof LearnerPath !== 'undefined') ? LearnerPath.nextStep() : null;
+    if (next && next.level === level) {
+        const unitId = next.kind === 'lesson'
+            ? ((LearnerPath.unitFor(next.lesson.id) || {}).unit || {}).id
+            : (units.length ? units[units.length - 1].id : null); // level-test step: level is done, its last unit reads as "current"
+        const idx = unitId ? units.findIndex(u => u.id === unitId) : -1;
+        if (idx !== -1) return idx;
+    }
+    const firstOpenIndex = units.findIndex(u => progressStats(u.lessons || [], progress).percent < 100);
+    return firstOpenIndex === -1 ? units.length - 1 : firstOpenIndex;
+}
+
+// Same idea as currentUnitIndexFor(), for dualTrackPathHtml()'s interleaved
+// `rows` array ({unit, ti, ...}) rather than a flat `units` array — kept as
+// a sibling rather than genericizing one helper over two shapes.
+function currentRowIndexFor(level, rows, progress) {
+    const next = (typeof LearnerPath !== 'undefined') ? LearnerPath.nextStep() : null;
+    if (next && next.level === level) {
+        const unitId = next.kind === 'lesson'
+            ? ((LearnerPath.unitFor(next.lesson.id) || {}).unit || {}).id
+            : (rows.length ? rows[rows.length - 1].unit.id : null);
+        const idx = unitId ? rows.findIndex(r => r.unit.id === unitId) : -1;
+        if (idx !== -1) return idx;
+    }
+    const firstOpen = rows.findIndex(r => progressStats(r.unit.lessons || [], progress).percent < 100);
+    return firstOpen === -1 ? rows.length - 1 : firstOpen;
+}
+
 // The chosen course may have no content yet — content/hu exists as an empty
 // folder — and a 404 here used to reject with a JSON parse error that killed
 // startup before anything rendered, leaving a blank page that a reload could
@@ -271,11 +310,11 @@ function unitPathHtml(level, units, progress) {
     const capY = 14;
     const pathD = serpentineD(points, NORM, capY);
 
-    // "Current" is the first unit not yet finished — the one the path is
-    // visibly leading to. Everything before it is done; everything after is
+    // "Current" is wherever the learner's canonical path (LearnerPath) says
+    // they actually are, falling back to the first unfinished unit when
+    // that's elsewhere. Everything before it is done; everything after is
     // upcoming. Clicking any of them still works the same as before.
-    const firstOpenIndex = units.findIndex(u => progressStats(u.lessons || [], progress).percent < 100);
-    const currentIndex = firstOpenIndex === -1 ? units.length - 1 : firstOpenIndex;
+    const currentIndex = currentUnitIndexFor(level, units, progress);
 
     const nodes = units.map((unit, i) => {
         const stats = progressStats(unit.lessons || [], progress);
@@ -378,8 +417,7 @@ function dualTrackPathHtml(level, data, units, progress) {
         return `<path class="dtp-line dtp-line--t${ti}" d="${curveThrough(pts)}"/>`;
     }).join('');
 
-    const firstOpen = rows.findIndex(r => progressStats(r.unit.lessons || [], progress).percent < 100);
-    const currentRow = firstOpen === -1 ? rows.length - 1 : firstOpen;
+    const currentRow = currentRowIndexFor(level, rows, progress);
 
     const nodes = rows.map((r, i) => {
         const stats = progressStats(r.unit.lessons || [], progress);
@@ -476,9 +514,16 @@ function unitListHtml(level) {
     `;
 }
 
-function lessonRowsHtml(lessons, progress, unitLabel) {
-    // The first unfinished lesson is the one to pick up next.
-    const currentIndex = lessons.findIndex(l => !progress[l.id]);
+function lessonRowsHtml(lessons, progress, unitLabel, level) {
+    // The first unfinished lesson is the one to pick up next, unless the
+    // learner's canonical position (LearnerPath) points at a lesson inside
+    // THIS unit specifically — same reasoning as currentUnitIndexFor()
+    // above, applied one level deeper.
+    const next = (typeof LearnerPath !== 'undefined') ? LearnerPath.nextStep() : null;
+    const pathIndex = (next && next.kind === 'lesson' && next.level === level)
+        ? lessons.findIndex(l => l.id === next.lesson.id)
+        : -1;
+    const currentIndex = pathIndex !== -1 ? pathIndex : lessons.findIndex(l => !progress[l.id]);
 
     return lessons.map((lesson, i) => {
         const done = !!progress[lesson.id];
@@ -547,7 +592,7 @@ function unitDetailHtml(level, unitId) {
 
             ${lessons.length
                 ? `<h3 class="ud-section">Unit path</h3>
-                   <ol class="ud-lessons">${lessonRowsHtml(lessons, progress, unit.label)}</ol>`
+                   <ol class="ud-lessons">${lessonRowsHtml(lessons, progress, unit.label, level)}</ol>`
                 : '<p class="text-muted level-empty">No lessons in this unit yet.</p>'}
         </div>
     `;

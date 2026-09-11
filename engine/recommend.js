@@ -55,31 +55,6 @@ const Recommend = (function () {
         return `exercises/${level}/${level}-${rest}-ex.json`;
     }
 
-    // Which unit (and level) a lesson id belongs to, or null if the
-    // curriculum isn't loaded or the id isn't in it.
-    function unitFor(lessonId) {
-        const data = window._curriculumData;
-        if (!data || !data.levels || !lessonId) return null;
-
-        for (const levelKey of Object.keys(data.levels)) {
-            const units = data.levels[levelKey].units || [];
-            const unit = units.find(u => (u.lessons || []).some(l => l.id === lessonId));
-            if (unit) return { levelKey, unit };
-        }
-        return null;
-    }
-
-    // The lesson most recently marked complete, by timestamp.
-    function lastCompletedLessonId() {
-        const progress = (typeof getProgress === 'function') ? getProgress() : {};
-        let bestId = null, bestTime = -1;
-        Object.keys(progress).forEach(id => {
-            const t = Date.parse((progress[id] || {}).completedAt || '') || 0;
-            if (t > bestTime) { bestTime = t; bestId = id; }
-        });
-        return bestId;
-    }
-
     async function _grammarIndex() {
         if (typeof Content === 'undefined' || typeof Lang === 'undefined') return null;
         try {
@@ -195,8 +170,8 @@ const Recommend = (function () {
         let unit = null, levelKey = null;
 
         if (!skill) {
-            const lessonId = lastCompletedLessonId();
-            const found = lessonId ? unitFor(lessonId) : null;
+            const lessonId = LearnerPath.lastCompletedLessonId();
+            const found = lessonId ? LearnerPath.unitFor(lessonId) : null;
             if (found) {
                 skill = await unitSkillFor(found.unit);
                 if (skill) {
@@ -220,8 +195,6 @@ const Recommend = (function () {
         weakestWords: weakestWords,
         unitSkillFor: unitSkillFor,
         lessonSkillFor: lessonSkillFor,
-        unitFor: unitFor,
-        lastCompletedLessonId: lastCompletedLessonId,
         exerciseRefFor: exerciseRefFor
     };
 })();
