@@ -91,7 +91,27 @@ this list directly rather than relying on a tool-specific todo list.
   alone isn't importable content; (2) it's scraped from a third-party
   site, so check todo-claro.com's terms/licensing before reproducing any
   of its content in this app, not just whether the data is structured
-  well enough to map.
+  well enough to map. **Update 2026-09-11**: more batches have since
+  landed in `imports/` — `todo_claro_parlour_batch01-02.zip` and
+  `spanish_unicorn_parlour_batch01-05.zip` (a second source, not
+  discussed above) — not yet inspected; check whether these are actual
+  extracted exercise content (unlike the catalogue-only zip above) before
+  scoping the import work.
+- [ ] Exercises must stay modular enough that new content can be added
+  to an existing lesson/unit retroactively, without special-casing.
+  Requested 2026-09-11, in the context of the Todo-Claro/Spanish Unicorn
+  import batches above — whatever pipeline drops new exercises into
+  `content/*/exercises/**/*.json` should produce exercises indistinguishable
+  from hand-authored ones to every downstream consumer (grammar-index
+  generation, `engine/recycle.js`'s pool collection, curriculum exercise
+  counts, `validate-content.py`). Worth checking against as part of
+  scoping any import: can a new exercise be appended to an
+  already-shipped lesson's exercise-group file and have it show up
+  correctly everywhere (recycle pool, Grammar Guide counts, Journey
+  skill tallies) without a broader regeneration step, the same way step
+  6 below ("Unify all activity types as evidence") just made sure every
+  `teaches`-tagged exercise feeds evidence the moment it's ever
+  completed, not just when re-selected later.
 - [ ] Integrate the same English-Spanish dual-language reading setup with
   originals as exists for Hungarian, up to A1 level.
 - [ ] Hungarian: introduce Hungarian cultural material at B1-B2 (for the
@@ -1489,6 +1509,16 @@ replacement for them.
    advance the curriculum unless the actual lesson work was done. The
    normal recommended path stays the default; this is an alternative
    entry point, not a replacement. Depends on steps 1-3 existing first.
+   **Built 2026-09-11** (`engine/studyPlan.js`/`engine/studyPlanRunner.js`).
+   **To revisit** (flagged 2026-09-11, "tinker on time-based session" —
+   no specific complaint yet, just a general "spend more time on this"
+   note): the time-to-activity-count heuristics
+   (`SEC_PER_REVIEW`/`SEC_PER_GRAMMAR_Q`/`SEC_PER_VOCAB_WORD`/
+   `DEFAULT_LESSON_MINUTES`/`TEST_MINUTES` in `engine/studyPlan.js`) were
+   built as best-judgment defaults, explicitly flagged at the time as
+   "worth confirming against real usage... before shipping" — a good
+   place to start once there's a specific thing about the feature that
+   feels off after actually using it a few times.
 6. **Make everything feed the same Learner Model.** Lessons, drills, SRS,
    Workshop, level tests, reading/listening exercises should all become
    evidence about the learner over time, rather than isolated features
