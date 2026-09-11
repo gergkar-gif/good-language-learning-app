@@ -145,33 +145,39 @@ const Workshop = (function () {
         return String(id || '').replace(/[-_]+/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
     }
 
-    // Grammar and vocabulary are independent halves (see engine/recommend.js)
-    // — either, both, or neither can have something to suggest, so this
-    // renders up to two action buttons under one shared blurb rather than
-    // the single whole-card button it used to be when there was only ever
-    // one thing to recommend.
-    function _recommendationHtml(rec) {
-        if (!rec || (!rec.skill && !rec.words.length)) return '';
-        const anyWeak = rec.skillReason === 'weak' || rec.wordsReason === 'weak';
+    // Grammar, vocabulary, and now any weak driller (see
+    // engine/recommendationEngine.js) are independent candidates — any
+    // subset can have something to suggest, so this renders up to three
+    // action buttons under one shared blurb.
+    function _recommendationHtml(secondary) {
+        if (!secondary || !secondary.length) return '';
+        const anyWeak = secondary.some(c => c.reason === 'weak');
         const blurb = anyWeak
             ? "You've been shaky on some of this — a quick pass would help it stick."
             : "Fresh from your last lesson — reinforce it while it's recent.";
+        const buttons = secondary.map(c => {
+            if (c.kind === 'grammar') {
+                return `<button class="wk-recommend-btn" data-recommend-skill="${_esc(c.skill)}">
+                    Grammar: ${_esc(_humanizeSkill(c.skill))} →
+                </button>`;
+            }
+            if (c.kind === 'vocabulary') {
+                return `<button class="wk-recommend-btn" data-recommend-vocab="1">
+                    Vocabulary (${c.words.length}) →
+                </button>`;
+            }
+            if (c.kind === 'driller') {
+                return `<button class="wk-recommend-btn" data-recommend-driller="${_esc(c.drillerId)}">
+                    ${_esc(c.title)} →
+                </button>`;
+            }
+            return '';
+        }).join('');
         return `
             <div class="wk-recommend">
                 <span class="wk-recommend-eyebrow">Recommended for you</span>
                 <span class="wk-recommend-body">${_esc(blurb)}</span>
-                <div class="wk-recommend-actions">
-                    ${rec.skill ? `
-                        <button class="wk-recommend-btn" data-recommend-skill="${_esc(rec.skill)}">
-                            Grammar: ${_esc(_humanizeSkill(rec.skill))} →
-                        </button>
-                    ` : ''}
-                    ${rec.words.length ? `
-                        <button class="wk-recommend-btn" data-recommend-vocab="1">
-                            Vocabulary (${rec.words.length}) →
-                        </button>
-                    ` : ''}
-                </div>
+                <div class="wk-recommend-actions">${buttons}</div>
             </div>
         `;
     }
@@ -267,24 +273,29 @@ const Workshop = (function () {
     let _pickerToken = 0;
 
     function _loadRecommendation(root, token) {
-        if (typeof Recommend === 'undefined') return;
-        Recommend.recommend().then(rec => {
-            if (!rec || token !== _pickerToken) return;
+        if (typeof RecommendationEngine === 'undefined') return;
+        RecommendationEngine.recommend().then(rec => {
+            if (!rec || !rec.secondary.length || token !== _pickerToken) return;
             const target = document.getElementById('drills-root');
             if (!target || target !== root || _active) return;
-            root.insertAdjacentHTML('afterbegin', _recommendationHtml(rec));
+            root.insertAdjacentHTML('afterbegin', _recommendationHtml(rec.secondary));
 
             const grammarBtn = root.querySelector('[data-recommend-skill]');
             if (grammarBtn) {
                 grammarBtn.addEventListener('click', () => open('grammar', { skill: grammarBtn.getAttribute('data-recommend-skill') }));
             }
-            // rec.words is closed over here rather than round-tripped through
-            // a data attribute — a word list doesn't serialise cleanly into
+            // The word list is closed over here rather than round-tripped
+            // through a data attribute — it doesn't serialise cleanly into
             // one, and this handler is only ever wired against this exact
             // rec anyway.
             const vocabBtn = root.querySelector('[data-recommend-vocab]');
             if (vocabBtn) {
-                vocabBtn.addEventListener('click', () => open('vocabulary', { words: rec.words }));
+                const vocabCandidate = rec.secondary.find(c => c.kind === 'vocabulary');
+                vocabBtn.addEventListener('click', () => open('vocabulary', { words: vocabCandidate.words }));
+            }
+            const drillerBtn = root.querySelector('[data-recommend-driller]');
+            if (drillerBtn) {
+                drillerBtn.addEventListener('click', () => open(drillerBtn.getAttribute('data-recommend-driller')));
             }
         }).catch(() => {});
     }
