@@ -45,22 +45,25 @@ Active work, in dependency order, as of 2026-09-11 — supersedes any
 in-session task tracker, which doesn't persist between sessions. Update
 this list directly rather than relying on a tool-specific todo list.
 
-1. **Learner Path** — single source of truth for level/unit/lesson
-   position, completion state, and last-activity timestamp. See
-   "Learner model & personalized path" below (step 1).
-2. **Learner Model / Brainmap** — evidence-based knowledge tracking.
-   Blocked by 1. (step 2 below).
-3. **Recommendation Engine** — one strong + secondary recommendation.
-   Blocked by 2. Absorbs "next recommended activity after a mini-game"
-   and "wire the HU-specific drillers into the mini-game signal" as
-   pieces of this engine (step 3 below).
-4. **Simplify Home experience hierarchy** — blocked by 3 (step 4 below).
-5. **Time-Based Sessions** — blocked by 3, can run in parallel with 4
-   (step 5 below).
-6. **Unify all activity types as evidence** feeding the Learner Model —
-   no hard blocker, but naturally follows 1-3 (step 6 below).
-7. **Cloud persistence** (Cloudflare Worker + D1) — blocked by 3, 4, and
-   6. Explicitly last per the user's own ordering (step 7 below).
+1. ~~**Learner Path**~~ — **Done.** Single source of truth for
+   level/unit/lesson position, completion state, and last-activity
+   timestamp. See "Learner model & personalized path" below (step 1).
+2. ~~**Learner Model / Brainmap**~~ — **Done.** Evidence-based knowledge
+   tracking (step 2 below).
+3. ~~**Recommendation Engine**~~ — **Done.** One strong + secondary
+   recommendation (step 3 below).
+4. ~~**Simplify Home experience hierarchy**~~ — **Done** (step 4 below).
+5. ~~**Time-Based Sessions**~~ — **Done** (step 5 below). Heuristic
+   constants flagged for later tuning — see "Current priority queue"
+   → step 5's own note.
+6. ~~**Unify all activity types as evidence**~~ — **Done 2026-09-11**
+   (step 6 below): fixed the "recycle lottery" (a first-encounter
+   exercise now counts as evidence immediately, not only if later
+   redrawn into a recycle block) and folded `DrillHistory` into
+   `LearnerModel` as `weakDrillers()`.
+7. **Cloud persistence** (Cloudflare Worker + D1) — the only step left
+   in this initiative. Explicitly last per the user's own ordering
+   (step 7 below). Not started.
 8. **Italics content retrofit** — paused 2026-09-10 at the user's
    request (background agents burn credits fast); 282/1366 grammar
    files done (ES A1/A2 partial, HU A1 partial) and pushed. Resume only
