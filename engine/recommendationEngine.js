@@ -38,6 +38,25 @@ const RecommendationEngine = (function () {
         return String(id || '').replace(/[-_]+/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
     }
 
+    // A `secondary` candidate's button label — shared by Home's own
+    // secondary tier and Workshop's "Recommended for you" card, so the two
+    // surfaces can't drift on how a candidate reads.
+    function secondaryLabel(candidate) {
+        if (candidate.kind === 'grammar') return `Grammar: ${humanizeSkill(candidate.skill)}`;
+        if (candidate.kind === 'vocabulary') return `Vocabulary (${candidate.words.length})`;
+        if (candidate.kind === 'driller') return candidate.title;
+        return '';
+    }
+
+    // Launches a `secondary` candidate — same shared surface as above, so
+    // both callers route identically.
+    function openSecondary(candidate) {
+        if (!candidate || typeof Workshop === 'undefined') return;
+        if (candidate.kind === 'grammar') Workshop.open('grammar', { skill: candidate.skill });
+        else if (candidate.kind === 'vocabulary') Workshop.open('vocabulary', { words: candidate.words });
+        else if (candidate.kind === 'driller') Workshop.open(candidate.drillerId);
+    }
+
     // ----------------------------------------
     // DISMISSAL STATE (moved from engine/home.js)
     // ----------------------------------------
@@ -352,6 +371,8 @@ const RecommendationEngine = (function () {
         recommend,
         mountNextAction,
         dismissUnit,
-        dismissMiniGame
+        dismissMiniGame,
+        secondaryLabel,
+        openSecondary
     };
 })();

@@ -318,6 +318,37 @@ const Home = (function () {
         });
     }
 
+    // Tier 2: RecommendationEngine's secondary candidates (weak/recent
+    // grammar, weak vocabulary, a struggling driller), surfaced on Home for
+    // the first time — Workshop's own picker has shown these since step 3,
+    // but Home never did. Deliberately quiet: no accent colour (the
+    // continue/nudge card above is the one accent-bearing thing on the
+    // screen, per this file's own design — see styles/components.css),
+    // plain text buttons, one small muted eyebrow so a new second card
+    // doesn't read as unexplained. Renders nothing at all when there's
+    // nothing to suggest — same "either, both, or neither" honesty already
+    // built into Recommend/LearnerModel/RecommendationEngine.
+    function secondaryList(secondary) {
+        if (!secondary || !secondary.length) return '';
+        const items = secondary.map(c => {
+            const attr = c.kind === 'vocabulary' ? 'data-secondary-vocab="1"'
+                : c.kind === 'driller' ? `data-secondary-driller="${esc(c.drillerId)}"`
+                : `data-secondary-grammar="${esc(c.skill)}"`;
+            return `
+                <button class="hm-secondary-btn" ${attr}>
+                    ${esc(RecommendationEngine.secondaryLabel(c))} →
+                </button>
+            `;
+        }).join('');
+
+        return `
+            <section class="hm-secondary">
+                <span class="hm-secondary-eyebrow">Also worth practising</span>
+                <div class="hm-secondary-list">${items}</div>
+            </section>
+        `;
+    }
+
     // Today's three activities and the streak they keep. The ids are the ones
     // updateXPHeader() writes to, so this markup is filled in after painting
     // rather than built here.
@@ -441,6 +472,36 @@ const Home = (function () {
                 render();
                 return;
             }
+
+            const secGrammar = e.target.closest('[data-secondary-grammar]');
+            if (secGrammar) {
+                goTab('drills');
+                RecommendationEngine.openSecondary({ kind: 'grammar', skill: secGrammar.getAttribute('data-secondary-grammar') });
+                return;
+            }
+
+            const secDriller = e.target.closest('[data-secondary-driller]');
+            if (secDriller) {
+                goTab('drills');
+                RecommendationEngine.openSecondary({ kind: 'driller', drillerId: secDriller.getAttribute('data-secondary-driller') });
+                return;
+            }
+
+            // Vocabulary's word list doesn't serialise cleanly into a data
+            // attribute — same reasoning engine/workshop.js's own secondary
+            // wiring already documents — so this recomputes the
+            // recommendation fresh rather than caching rec.secondary across
+            // the render/click boundary, keeping this file's "no state of
+            // its own" rule intact.
+            if (e.target.closest('[data-secondary-vocab]')) {
+                goTab('drills');
+                (async () => {
+                    const rec = await RecommendationEngine.recommend();
+                    const candidate = rec.secondary.find(c => c.kind === 'vocabulary');
+                    RecommendationEngine.openSecondary(candidate);
+                })();
+                return;
+            }
         });
 
         host.addEventListener('change', e => {
@@ -489,6 +550,7 @@ const Home = (function () {
             ${rec.primary.kind === 'unit-nudge' ? practiceNudgeCard(rec.primary)
                 : rec.primary.kind === 'mini-game' ? miniGameCard(rec.primary)
                 : continueCard(rec.primary.step)}
+            ${secondaryList(rec.secondary)}
             <div class="hm-doors">
                 ${reviewDoor(deck)}
                 ${readDoor(reading)}
