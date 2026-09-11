@@ -1423,3 +1423,61 @@ screen in the Hungarian course, not just the review units.
   ~34.4s to ~1.7s — a ~20x improvement under conditions resembling the
   reported real-world slowdown (unlike bare localhost, which has near-
   zero latency and doesn't reproduce the symptom on its own).
+
+## Workshop → Grammar Driller: multi-answer fill-blanks are unanswerable, show "undefined" (logged 2026-09-11, not yet fixed)
+
+- [ ] **Reported via live screenshots** (ergkar-gif.github.io, production):
+  practicing the "Present Tense" skill in Workshop's Grammar Driller,
+  several fill-blank questions ("Ustedes ___ español.", "Nosotros ___
+  por la mañana.", "Tú ___ español.") render with no way to answer
+  correctly — every attempt is marked wrong and the revealed "correct"
+  answer literally reads `undefined`.
+
+  **Root cause found**: these three exercises (`a1.06.02.ex15`,
+  `a1.06.02.ex06`, `a1.06.02.ex04` in `content/es/exercises/a1/a1-06-02-ex.json`)
+  are genuine multi-answer fill-blanks — they use the `answers: [...]`
+  array field (multiple acceptable conjugations), not a single `answer`
+  string. That's the exact mechanism the "Multi-answer fill-blanks give
+  no clue which answer is wanted" entry above scoped and fixed on
+  2026-09-03 (GitHub issue #129) — `engine/lessons.js`'s
+  `stepState.acceptable = step.answers || [step.answer]` correctly
+  supports it, so these exercises grade fine inside a normal lesson.
+
+  **The gap**: Workshop's Grammar Driller is a *separate* code path that
+  reads the same lesson-exercise files but was never updated to match.
+  `engine/drills/grammar.js`'s `_normaliseLessonExercise()` (the
+  `'fill-blank'` case) still does `answer: ex.answer` — singular, no
+  fallback to `ex.answers`. `engine/drills/grammar-runner.js`'s
+  `_renderFillBlank()` then grades against `ex.answer` and displays it
+  literally as the revealed answer, so on any of these items `ex.answer`
+  is `undefined` end to end: grading always fails (nothing typed can
+  equal the string `"undefined"`) and the reveal text/input both show
+  `undefined`. The 2026-09-03 fix's own verification step only checked
+  `engine/lessons.js` + `validate-content.py` — it didn't check this
+  parallel driller path, so the regression shipped unnoticed.
+
+  **Scope**: 35 exercises total content-wide use the `answers[]` array
+  form (confirmed by scanning every `fill-blank` exercise in
+  `content/es/exercises/**` and `content/hu/exercises/**`) — any of
+  these hit via Workshop's Grammar Driller (skill-scoped practice or
+  "Mixed") is affected, not just the three in the screenshots:
+  `a1-01-01.ex06`, `a1-03-05.ex08`/`ex11`, `a1-03c-01-g02`,
+  `a1-03c-05-g02`/`g03`, `a1-03c-consolidation-g03`/`g04`/`g06`,
+  `a1.06.01.ex04`/`ex05`/`ex15`, `a1.06.02.ex04`/`ex06`/`ex15`,
+  `a1.06.03.ex06`/`ex15`, `a1.06.04.ex07`/`ex15`, `a1.06.05.ex06`/`ex07`,
+  `a1.06.06.ex04`, `a1.08.02.ex04`, `a1.08.05.ex06` (ES); `a1-01-practice-3`,
+  `a1-04-practice-1`, `a1-20-consolidation-11`, `a1-20-controlled-2`,
+  `a1-20-practice-3`, `a1-46-controlled-2`, `a1-57/58/59/60-practice-3`,
+  `a2-108-controlled-3` (HU).
+
+  **Not fixed yet** — likely fix: make `_normaliseLessonExercise()`'s
+  `'fill-blank'` case mirror `engine/lessons.js`'s own pattern
+  (`answer: ex.answer || (ex.answers && ex.answers[0])`, plus an
+  `acceptable: ex.answers || [ex.answer]` field), and update
+  `grammar-runner.js`'s `_renderFillBlank()` to grade against
+  `ex.acceptable` instead of the single `ex.answer`, same as
+  `engine/lessons.js`'s `stepState.acceptable` already does. Should also
+  re-check `engine/drills/hu-verb.js`/`hu-morphology.js`/`hu-prefix.js`/
+  `hu-suffix.js`/`vocabulary.js` (all also match `'fill-blank'` per a
+  repo-wide grep) for the same single-`answer` assumption, since any of
+  them pulling from lesson-exercise files could have the identical gap.
