@@ -6,12 +6,11 @@
 // several heuristics that could drift apart. Two independent halves —
 // grammar and vocabulary — each ranking the same two signals:
 //
-//   1. Weak — real review history (grammar: the SM-2 schedule
-//      engine/recycle.js already keeps for in-lesson recycle blocks,
-//      keyed by exercise id; vocabulary: the SM-2 schedule engine/srs.js
-//      already keeps per word in the deck) whose average ease is low —
-//      exercises/words that keep getting marked wrong or hard. This is
-//      the Kwiziq-style "you're shaky here" signal, for either half.
+//   1. Weak — engine/learnerModel.js's weakSkills()/weakWords(), the
+//      Kwiziq-style "you're shaky here" signal for either half (grammar:
+//      recycle-schedule ease folded with level-test misses; vocabulary:
+//      srsDeck ease). Recommend no longer computes this itself — it only
+//      picks the single top candidate from LearnerModel's ranked list.
 //   2. Recent — no weak signal exists yet for grammar (a new learner, or
 //      one who hasn't hit enough recycle blocks for any skill to carry
 //      real history), so fall back to whatever grammar concept the most
@@ -32,19 +31,6 @@
 
 const Recommend = (function () {
     'use strict';
-
-    // Skills with fewer than this many reviewed exercises don't carry
-    // enough signal to call "weak" rather than "barely seen yet" — one
-    // wrong answer on one exercise shouldn't brand a whole skill.
-    const MIN_REVIEWED = 2;
-
-    // Same idea for vocabulary: fewer than this many reviewed words in
-    // the deck isn't enough to single any of them out as "weak" rather
-    // than just new. A deck's words are already individually scheduled
-    // (no skill-grouping needed the way grammar exercises are), so this
-    // gates the whole signal rather than a per-word count.
-    const MIN_REVIEWED_WORDS = 3;
-    const WEAK_WORDS_LIMIT = 8;
 
     // The exact exercises-file path a lesson id resolves to — same
     // level/rest split loadLesson() uses in engine/lessons.js.
@@ -107,54 +93,6 @@ const Recommend = (function () {
         return ranked[0] || null;
     }
 
-    // The skill with the worst average ease among skills that actually
-    // carry review history — exercises the learner has met before
-    // (through a lesson's own recycle block) and struggled with, not
-    // just anything untested. Returns null rather than guessing when
-    // nothing has enough history yet.
-    async function weakestSkill() {
-        if (typeof loadRecycleSchedule !== 'function') return null;
-        const index = await _grammarIndex();
-        if (!index) return null;
-        const schedule = loadRecycleSchedule();
-
-        let worst = null;
-        Object.keys(index.bySkill || {}).forEach(skill => {
-            let totalEase = 0, seen = 0;
-            (index.bySkill[skill] || []).forEach(entry => {
-                const cardEntry = schedule[entry.id];
-                if (cardEntry && cardEntry.reviews > 0) {
-                    seen++;
-                    totalEase += cardEntry.ease;
-                }
-            });
-            if (seen >= MIN_REVIEWED) {
-                const avgEase = totalEase / seen;
-                if (!worst || avgEase < worst.avgEase) worst = { skill, avgEase, seen };
-            }
-        });
-        return worst ? worst.skill : null;
-    }
-
-    // The words with the worst average ease among those with real review
-    // history — vocabulary's counterpart to weakestSkill(), reading
-    // straight off engine/srs.js's srsDeck rather than cross-referencing
-    // an index the way grammar has to, since each card already carries
-    // its own ease/reviews. Returns [] (not a guess) below the review-
-    // count floor, same honesty rule weakestSkill() follows.
-    function weakestWords(limit) {
-        if (typeof srsDeck === 'undefined' || !Array.isArray(srsDeck)) return [];
-
-        const reviewed = srsDeck.filter(card => card.reviews > 0 && typeof card.ease === 'number');
-        if (reviewed.length < MIN_REVIEWED_WORDS) return [];
-
-        return reviewed
-            .slice()
-            .sort((a, b) => a.ease - b.ease)
-            .slice(0, limit || WEAK_WORDS_LIMIT)
-            .map(card => ({ lemma: card.spanish, translation: card.english, pos: card.type }));
-    }
-
     // The single best thing to suggest right now, for grammar and
     // vocabulary independently — either half can be present, absent, or
     // both, so a caller (Workshop's card, Home's nudges) can offer
@@ -165,7 +103,8 @@ const Recommend = (function () {
     // progress yet, no curriculum loaded) — a caller checking `if (!rec)`
     // still works exactly as before this had a vocabulary half.
     async function recommend() {
-        let skill = await weakestSkill();
+        const topSkill = (await LearnerModel.weakSkills(1))[0];
+        let skill = topSkill ? topSkill.skillId : null;
         let skillReason = skill ? 'weak' : null;
         let unit = null, levelKey = null;
 
@@ -182,7 +121,7 @@ const Recommend = (function () {
             }
         }
 
-        const words = weakestWords();
+        const words = LearnerModel.weakWords().map(w => ({ lemma: w.lemma, translation: w.translation, pos: w.pos }));
         const wordsReason = words.length ? 'weak' : null;
 
         if (!skill && !words.length) return null;
@@ -191,8 +130,6 @@ const Recommend = (function () {
 
     return {
         recommend: recommend,
-        weakestSkill: weakestSkill,
-        weakestWords: weakestWords,
         unitSkillFor: unitSkillFor,
         lessonSkillFor: lessonSkillFor,
         exerciseRefFor: exerciseRefFor
