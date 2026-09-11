@@ -61,9 +61,14 @@ this list directly rather than relying on a tool-specific todo list.
    exercise now counts as evidence immediately, not only if later
    redrawn into a recycle block) and folded `DrillHistory` into
    `LearnerModel` as `weakDrillers()`.
-7. **Cloud persistence** (Cloudflare Worker + D1) — the only step left
-   in this initiative. Explicitly last per the user's own ordering
-   (step 7 below). Not started.
+7. **Cloud persistence** (Cloudflare Worker + D1) — the last step of
+   this initiative (step 7 below). **Code built and pushed 2026-09-11**
+   (`engine/sync.js`, `cloudflare-worker/sync-worker.js` + schema, My
+   Journey's new Account card) — **not yet deployed/live**: needs a new
+   D1 database, a new Worker, and a Resend account, all manual dashboard
+   steps documented in `CLOUD_SYNC_SETUP.md`. That's the actual remaining
+   work — walk through the setup doc together, then smoke-test with a
+   real email.
 8. **Italics content retrofit** — paused 2026-09-10 at the user's
    request (background agents burn credits fast); 282/1366 grammar
    files done (ES A1/A2 partial, HU A1 partial) and pushed. Resume only
@@ -1560,6 +1565,20 @@ replacement for them.
      state (progress, XP, SRS card state, known words, preferences)
      goes through the sync layer; lesson/grammar/exercise content stays
      purely local static files, as it already is.
+
+   **Built 2026-09-11, deliberately smaller than the shape above** —
+   scoped down with the user before building, not a silent deviation:
+   whole-snapshot **backup/restore on two explicit buttons**
+   (`engine/sync.js`, My Journey's Account card), not a background sync
+   queue with local-first writes, and **last-write-wins**, not the
+   per-record merge described above — confirmed most real usage is a
+   single primary device, so a smart per-field merge (keep the higher
+   SRS review count per card, union completed-lesson sets, etc.) is a
+   real future need, not a v1 one. Curriculum/content-stays-local held
+   exactly as planned — only learner state syncs. Code is written and
+   pushed; **the Cloudflare/D1/Resend infrastructure itself isn't
+   deployed yet** — see the "Current priority queue" entry above and
+   `CLOUD_SYNC_SETUP.md` for what's left.
 
 - [ ] **Modularity: adding lessons/exercise types without a full rewrite** —
   user's standing concern, answered from investigation 2026-09-10: the
