@@ -17,10 +17,12 @@
 // `secondary` is a flat list of driller-launchable candidates: grammar
 // (weak/recent skill), vocabulary (weak words) — both absorbed from
 // engine/recommend.js's old recommend(), which owned this decision before
-// this module existed — and now a generic `driller` candidate for any of
-// the seven drillers engine/drillHistory.js tracks (Verb Speed,
-// Translation, Listening, and the four Hungarian-specific drillers), which
-// had no competence signal of any kind before this step.
+// this module existed — and a generic `driller` candidate for any of the
+// seven drillers engine/drillHistory.js tracks (Verb Speed, Translation,
+// Listening, and the four Hungarian-specific drillers). Since step 6, the
+// driller-tracking metadata itself lives in engine/learnerModel.js
+// (weakDrillers()) alongside weakSkills()/weakWords() — this module only
+// ranks/presents it, same as the other two.
 //
 // Also owns the shared "what's next" action every driller's results screen
 // mounts (mountNextAction()) — the roadmap's other named gap: every
@@ -200,68 +202,17 @@ const RecommendationEngine = (function () {
     }
 
     // ----------------------------------------
-    // DRILLER SIGNAL (new — engine/drillHistory.js + curriculum-unlock)
+    // DRILLER SIGNAL
     // ----------------------------------------
-    // Every driller lacking a real competence signal today, mapped to the
-    // curriculum lesson that gates its relevance — populated only where a
-    // driller's own source comments state a real milestone, not fabricated
-    // for the rest. Grammar and Vocabulary aren't listed here: they already
-    // have LearnerModel's richer SM-2-based signal.
-    const DRILLER_UNLOCK = {
-        'hu-suffix': 'lesson.a1.22',      // matches hu-suffix.js's own "Unit 5" (plural) comment
-        'hu-prefix': 'lesson.a2.01',      // driller's own comment: full prefix system is an A2 topic
-        'hu-morphology': 'lesson.a1.51'   // matches hu-suffix.js's "Unit 11+" (case) comment
-        // hu-verb, verbs, translation, listening: no gate — none of these
-        // four's own header comments state a curriculum-scoping rationale;
-        // relevance for them is accuracy-history only.
-    };
-
-    const DRILLER_TITLES = {
-        verbs: 'Verb Driller',
-        translation: 'Translation Driller',
-        listening: 'Listening Driller',
-        'hu-suffix': 'Suffix Driller',
-        'hu-prefix': 'Prefix Driller',
-        'hu-morphology': 'Morphology Driller',
-        'hu-verb': 'Verb Driller'
-    };
-
-    const TRACKED_DRILLERS = Object.keys(DRILLER_TITLES);
-
-    // Mirrors workshop.js's own DRILLERS[].langs / _available() filter —
-    // `verbs` is Spanish-only, the hu-* drillers are Hungarian-only.
-    function _drillerAvailable(id) {
-        if (id === 'verbs') return (typeof Lang !== 'undefined') && Lang.code() === 'es';
-        if (id.indexOf('hu-') === 0) return (typeof Lang !== 'undefined') && Lang.code() === 'hu';
-        return true;
-    }
-
-    function _drillerUnlocked(id) {
-        const anchor = DRILLER_UNLOCK[id];
-        if (!anchor) return true;
-        return (typeof LearnerPath !== 'undefined') ? LearnerPath.isComplete(anchor) : true;
-    }
-
-    // A driller becomes eligible once BOTH curriculum-unlocked (or ungated)
-    // AND its accuracy history classifies weak — unlocked-but-never-tried
-    // stays silent, consistent with LearnerModel.weakSkills()'s own
-    // underpowered-data rule.
+    // The driller-classification metadata (which drillers to track, their
+    // curriculum-unlock gates, availability by language) moved to
+    // engine/learnerModel.js in step 6, alongside grammar/vocabulary's
+    // weakSkills()/weakWords() — this module only ranks/presents what
+    // LearnerModel already found weak, the same way it already does for
+    // grammar and vocabulary via _grammarVocabCandidate().
     function _drillerCandidates() {
-        const candidates = [];
-        TRACKED_DRILLERS.forEach(id => {
-            if (!_drillerAvailable(id) || !_drillerUnlocked(id)) return;
-            const cls = (typeof DrillHistory !== 'undefined') ? DrillHistory.classify(id) : { state: null };
-            if (cls.state === 'weak') {
-                candidates.push({
-                    kind: 'driller',
-                    drillerId: id,
-                    title: DRILLER_TITLES[id],
-                    reason: 'weak',
-                    avgAccuracy: cls.avgAccuracy
-                });
-            }
-        });
-        return candidates;
+        if (typeof LearnerModel === 'undefined') return [];
+        return LearnerModel.weakDrillers().map(c => Object.assign({ kind: 'driller', reason: 'weak' }, c));
     }
 
     // ----------------------------------------

@@ -575,13 +575,16 @@ function queueForRemediationIfMissed() {
     missedSteps.push(stepState.sourceStep);
 }
 
-// A recycle step's outcome feeds straight back into its own SM-2 schedule —
-// solved clean is "good", solved only after burning every attempt is
-// "again", same distinction the vocabulary deck's rating buttons make.
+// Every teaches-tagged exercise's outcome feeds its own SM-2 schedule, not
+// just recycle-block repeats — a skill's first-ever encounter is evidence
+// too, and used to be silently discarded unless that exact exercise later
+// got redrawn into some future lesson's recycle pool. Solved clean is
+// "good", solved only after burning every attempt is "again", same
+// distinction the vocabulary deck's rating buttons make.
 function noteRecycleResult(success) {
     if (stepState.recycleNoted) return;
     const step = currentLesson.steps[currentStepIndex];
-    if (!step || !step.isRecycle || !step.id) return;
+    if (!step || !step.id || !step.teaches || !step.teaches.length) return;
     stepState.recycleNoted = true;
     if (typeof Recycle !== 'undefined') Recycle.record(step.id, success ? 'good' : 'again');
 }
