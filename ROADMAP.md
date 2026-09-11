@@ -101,6 +101,39 @@ this list directly rather than relying on a tool-specific todo list.
   attribution-line and four-shelf entries, which this content exercised.
   Remaining: 31 more units per track (6-36), continuing the history
   sweep through to EU accession and the four civic units.
+- [ ] HU B1 Citizenship track: 40 new words per unit is too many.
+  Requested 2026-09-11 — user's own framing: "20 should be the upper
+  limit (and still try to keep the reading and other stuff relatively
+  easy, B1-friendly)." Confirmed against the curriculum data: each of
+  the 5 built units (`unit.b1.citizenship.01-05`) carries exactly 40
+  new words (8 per teaching lesson × 5 teaching lessons + 1
+  consolidation lesson). Applies going forward to units 6-36, not yet
+  built; whether to also trim the already-built 5 units' word counts
+  down to the new limit is undecided — raise it before continuing this
+  track.
+- [ ] HU A1 "First Sounds, First Words" (`lesson.a1.01`, "Learning to
+  Read Hungarian") — the vowel/consonant pronunciation demonstrations
+  currently rely on the same browser TTS voice (`hu-HU`, via
+  `engine/speech.js`) as every other Hungarian audio in the app.
+  Requested 2026-09-11: source real human-recorded audio for
+  Hungarian's vowels/consonants specifically for this lesson, since
+  the short/long vowel pairs (a/á, e/é, ö/ő, ü/ű) and digraphs
+  (gy/ny/ty/sz/zs/cs) are exactly the sounds a synthetic voice is
+  least reliable on and a learner most needs to hear correctly the
+  first time. Check whether a usable public source (recordings meant
+  for pronunciation teaching, not just any Hungarian audio) exists
+  first; if not, the user has offered to record the sound set
+  themselves. Related: the SRS "listen to a card" idea below would
+  reuse whatever audio-attachment mechanism this ends up building.
+- [ ] ES B1: the new-vocabulary screen doesn't appear — a lesson goes
+  straight from review into grammar and exercises with no vocabulary
+  step shown in between. Reported 2026-09-11, not yet investigated;
+  check whether this is a real per-lesson content gap (no `vocabulary`
+  section authored) or a rendering/ordering bug in the lesson-step
+  pipeline (`engine/lessons.js`) — the "Standard lesson progression
+  should be review → new grammar → lesson vocabulary → exercises" fix
+  in `TROUBLESHOOTING_BACKLOG.md` (2026-08-18) covered A1 specifically,
+  so B1 may never have gotten the same pass.
 - [x] Word Bank: same idea as Grammar Guide, but for vocabulary — a
   per-unit collection of the ~15-20 new words the unit introduces.
   **Built 2026-08-27**: `wordBankHtml()` in `engine/curriculum.js` is a
@@ -129,6 +162,17 @@ this list directly rather than relying on a tool-specific todo list.
 
 ## Workshop
 
+- [ ] Grammar Driller needs a broader audit — in Spanish, some fill-blank
+  exercises give away the answer within the exercise's own clue text.
+  Reported 2026-09-11. Note this exact shape was already investigated
+  once (`TROUBLESHOOTING_BACKLOG.md`, 2026-08-19) but that pass only
+  covered the dedicated bank file (`content/es/drills/grammar/a1-bank.json`,
+  600 items) and found no real instances — it never checked the much
+  larger set of lesson-exercise fill-blanks the driller also pulls in
+  via `engine/drills/grammar.js`'s `_resolveLessonEntries()` (the same
+  parallel-path gap behind the "multi-answer fill-blanks show
+  'undefined'" bug logged the same day). The re-audit should cover
+  that lesson-exercise path too, not just the bank.
 - [x] Workshop should have a "Recommended drill" — a Kwiziq-style system
   that maps what the learner knows and always suggests what to practice
   next, rather than a flat menu of drillers with no sense of where the
@@ -603,6 +647,18 @@ this list directly rather than relying on a tool-specific todo list.
 > genuinely knows rather than what unit they're nominally on) will need
 > to draw on. Don't strip a metadata source just because the feature
 > reading it today is minimal.
+
+- [ ] SRS review cards should be listenable — a way to hear how the word
+  a learner is being tested on is actually pronounced. Requested
+  2026-09-11. Confirmed gap: `engine/srs.js`'s `renderCard()` sets the
+  front/back text directly and has no audio affordance at all, unlike
+  Decks' own word lists and the Library reader, which already show a
+  `Speech.button()` next to a word. Likely the same shared
+  `Speech.button()`/`Speech.speak()` mechanism, added to the review
+  card screen — straightforward for Spanish (existing TTS voice); for
+  Hungarian this should share whatever comes out of the "First Sounds,
+  First Words" real-audio sourcing idea above, if that ends up
+  attaching recorded audio per word rather than relying on `hu-HU` TTS.
 
 - [x] Spanish decks: some verb definitions are overly verbose — needs a
   pass to tighten them. **Fixed 2026-08-27**: `short_gloss()` in
