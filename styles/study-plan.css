@@ -1,0 +1,124 @@
+/* ============================================
+   TIME-BASED SESSIONS — budget picker + plan checklist
+   ============================================
+   Step 5 of the Learner model roadmap initiative. Deliberately plain: no
+   accent colour, no progress bar, no countdown anywhere here — the budget
+   only sizes the plan once, up front (see engine/studyPlan.js's own header
+   comment on why this isn't a "Timed"-mode race). The .wp-overlay/.wp-sheet
+   shell (styles/components.css) is reused as-is for the picker; only the
+   minute-grid and the in-screen checklist/completion content are new. */
+
+.sp-budget-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.sp-budget-btn {
+    padding: 14px 8px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+    cursor: pointer;
+}
+
+.sp-budget-btn:hover {
+    border-color: var(--primary-mid);
+    color: var(--primary-mid);
+}
+
+.sp-checklist,
+.sp-complete {
+    display: flex;
+    flex-direction: column;
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 24px 20px;
+}
+
+.sp-checklist-eyebrow,
+.sp-complete-eyebrow {
+    font-size: 12px;
+    letter-spacing: .04em;
+    color: var(--muted);
+    margin-bottom: 8px;
+}
+
+.sp-item-list {
+    list-style: none;
+    margin: 0 0 16px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.sp-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 4px;
+    border-bottom: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 15px;
+}
+
+.sp-item-check {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.sp-item-current {
+    color: var(--text);
+    font-weight: 600;
+}
+
+.sp-item-current .sp-item-check {
+    border-color: var(--primary-mid);
+    color: var(--primary-mid);
+}
+
+.sp-item-done {
+    color: var(--muted);
+    text-decoration: line-through;
+}
+
+.sp-item-done .sp-item-check {
+    border-color: var(--success);
+    color: var(--success);
+}
+
+.sp-skipped {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.4;
+    margin: 0 0 16px;
+}
+
+.sp-checklist .btn-primary,
+.sp-complete .btn-primary {
+    margin-bottom: 10px;
+}
+
+.sp-complete-title {
+    font-size: 24px;
+    color: var(--primary);
+    margin: 0 0 12px;
+}
+
+.sp-complete-summary {
+    font-size: 15px;
+    color: var(--text);
+    margin: 0 0 20px;
+}

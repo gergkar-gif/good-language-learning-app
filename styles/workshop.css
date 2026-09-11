@@ -66,6 +66,51 @@
     text-decoration: underline;
 }
 
+/* Shared "what's next" action mounted at the end of every driller's
+   results screen, and (since 2026-09-11) lessons.js's/srs.js's own
+   completion summaries too — see RecommendationEngine.mountNextAction() in
+   engine/recommendationEngine.js. Same bordered-card language as
+   .wk-recommend above (both answer "what should I do right now?"), but
+   sits at the END of a screen the learner is about to leave rather than
+   the top of one they just entered. */
+.wk-next-action {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 480px;
+    margin: 20px auto 0;
+    text-align: center;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+}
+
+.wk-next-eyebrow {
+    font-size: 12px;
+    letter-spacing: .04em;
+    color: var(--muted);
+    margin-bottom: 6px;
+}
+
+.wk-next-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--accent-dark);
+    cursor: pointer;
+}
+
+.wk-next-btn:hover {
+    text-decoration: underline;
+}
+
+.wk-next-sub {
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 4px;
+}
+
 /* Open rows divided by hairlines, matching the Lessons list — see the note
    on .level-card in styles/layout.css. */
 .wk-card {

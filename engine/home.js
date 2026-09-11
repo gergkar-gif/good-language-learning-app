@@ -318,6 +318,18 @@ const Home = (function () {
         });
     }
 
+    // Step 5 of the Learner model roadmap initiative: an alternative entry
+    // point, not a replacement for the recommendation above — "here's what
+    // to do next" stays the default; this is "here's what fits in the time
+    // I actually have." See engine/studyPlan.js / engine/studyPlanRunner.js.
+    function studyPlanDoor() {
+        return door({
+            icon: 'clock', title: 'Time-based session',
+            sub: 'Fit study into the time you have.',
+            data: { 'open-study-plan': '1' }
+        });
+    }
+
     // Tier 2: RecommendationEngine's secondary candidates (weak/recent
     // grammar, weak vocabulary, a struggling driller), surfaced on Home for
     // the first time — Workshop's own picker has shown these since step 3,
@@ -502,6 +514,11 @@ const Home = (function () {
                 })();
                 return;
             }
+
+            if (e.target.closest('[data-open-study-plan]')) {
+                if (typeof StudyPlanRunner !== 'undefined') StudyPlanRunner.openBudgetPicker();
+                return;
+            }
         });
 
         host.addEventListener('change', e => {
@@ -555,6 +572,7 @@ const Home = (function () {
                 ${reviewDoor(deck)}
                 ${readDoor(reading)}
                 ${practiseDoor()}
+                ${studyPlanDoor()}
             </div>
             ${todayStrip()}
             ${progressLine(totals)}

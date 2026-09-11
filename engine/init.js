@@ -18,6 +18,8 @@ function teardownTab(tabId) {
         teardownLesson();
     } else if (tabId === 'reader' && typeof Reader !== 'undefined' && Reader.currentStoryId) {
         Reader.closeStory();
+    } else if (tabId === 'study-plan-screen' && typeof StudyPlanRunner !== 'undefined') {
+        StudyPlanRunner.teardown();
     }
 }
 
@@ -74,6 +76,15 @@ function showTab(tabName, button) {
     // be wrong is the moment you walk in.
     if (tabName === 'journey' && typeof Journey !== 'undefined') {
         Journey.render();
+    }
+
+    // Re-checked on every entry rather than relying solely on an explicit
+    // advance signal: a lesson plan item's own "Done" button returns here
+    // through closeLesson()'s generic lessonReturnTab, with no StudyPlan
+    // awareness of its own — onEnter() reconciles the queue against real
+    // curriculum state (LearnerPath.isComplete) whenever that happens.
+    if (tabName === 'study-plan-screen' && typeof StudyPlanRunner !== 'undefined') {
+        StudyPlanRunner.onEnter();
     }
 }
 

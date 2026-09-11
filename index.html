@@ -13,7 +13,8 @@
     <link rel="stylesheet" href="styles/layout.css?v=2026-08-25a">
     <link rel="stylesheet" href="styles/utilities.css?v=2026-08-13e">
     <link rel="stylesheet" href="styles/verbs.css?v=2026-08-18a">
-    <link rel="stylesheet" href="styles/workshop.css?v=2026-09-10b">
+    <link rel="stylesheet" href="styles/workshop.css?v=2026-09-11a">
+    <link rel="stylesheet" href="styles/study-plan.css?v=2026-09-11a">
 </head>
 <body>
 
@@ -218,6 +219,14 @@
             </div>
         </section>
 
+        <!-- Time-based session (Learner model roadmap, step 5) — an
+             alternative entry point from Home, not a standing nav tab, same
+             convention as #lesson-screen/#leveltest above. All content is
+             rendered dynamically by engine/studyPlanRunner.js. -->
+        <section id="study-plan-screen" class="tab hidden">
+            <div id="study-plan-activity"></div>
+        </section>
+
     </main>
 
 </div>
@@ -232,10 +241,10 @@
 <script src="engine/morphology/hungarian.js?v=2026-09-04"></script>
 <script src="engine/morphology/spanish.js?v=2026-09-03"></script>
 <script src="engine/lexicon.js?v=2026-09-03a"></script>
-<script src="engine/srs.js?v=2026-09-02b"></script>
+<script src="engine/srs.js?v=2026-09-11a"></script>
 <script src="engine/content-loader.js?v=2026-08-09"></script>
 <script src="engine/ui.js?v=2026-08-09"></script>
-<script src="engine/art.js?v=2026-08-27b"></script>
+<script src="engine/art.js?v=2026-09-11a"></script>
 <script src="engine/sound.js?v=2026-08-27a"></script>
 <script src="engine/geo.js?v=2026-08-13d"></script>
 <script src="engine/page-header.js?v=2026-08-18a"></script>
@@ -281,28 +290,38 @@
 <script src="engine/workshop.js?v=2026-09-11c"></script>
 
 <!-- Engine: lessons, progress, curriculum -->
-<script src="engine/lessons.js?v=2026-09-11"></script>
+<script src="engine/lessons.js?v=2026-09-11a"></script>
 <script src="engine/progress.js?v=2026-09-02b"></script>
 <script src="engine/learnerPath.js?v=2026-09-11"></script>
 <script src="engine/recycle.js?v=2026-09-04"></script>
 <script src="engine/leveltest.js?v=2026-09-11"></script>
 <script src="engine/learnerModel.js?v=2026-09-11"></script>
 <script src="engine/recommend.js?v=2026-09-11b"></script>
-<script src="engine/recommendationEngine.js?v=2026-09-11c"></script>
+<script src="engine/recommendationEngine.js?v=2026-09-11d"></script>
+
+<!-- Engine: time-based sessions (step 5) — depends on LearnerPath,
+     LearnerModel, RecommendationEngine, all loaded above -->
+<script src="engine/studyPlan.js?v=2026-09-11a"></script>
+
 <script src="engine/journey.js?v=2026-09-10"></script>
 <script src="engine/decks/match.js?v=2026-09-03b"></script>
 <script src="engine/decks/learn.js?v=2026-08-27d"></script>
 <script src="engine/decks.js?v=2026-09-10"></script>
+
+<!-- Engine: time-based session screen — depends on StudyPlan, GrammarDriller,
+     VocabularyDriller, Decks, LevelTest, all loaded above -->
+<script src="engine/studyPlanRunner.js?v=2026-09-11a"></script>
+
 <script src="engine/curriculum.js?v=2026-09-11"></script>
 
 <!-- Engine: library (depends on Reader, Decks, Lexicon) -->
 <script src="engine/library.js?v=2026-09-04"></script>
 
 <!-- Engine: home (reads from every module above) -->
-<script src="engine/home.js?v=2026-09-11c"></script>
+<script src="engine/home.js?v=2026-09-11d"></script>
 
 <!-- Engine: bootstrap (loads last) -->
-<script src="engine/init.js?v=2026-09-04b"></script>
+<script src="engine/init.js?v=2026-09-11a"></script>
 
 <!-- Engine: bug report (independent floating overlay, loads anywhere after Art) -->
 <script src="engine/bugreport.js?v=2026-08-25a"></script>

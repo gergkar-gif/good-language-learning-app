@@ -349,6 +349,16 @@ const RecommendationEngine = (function () {
     // rather than assumed away.
     async function mountNextAction(container, options) {
         if (!container) return;
+
+        // Step 5 (Time-Based Sessions): while a StudyPlan is in progress,
+        // every driller/lesson/review results screen's "what's next" should
+        // point back into the plan's own queue, not a fresh, unrelated
+        // generic recommendation.
+        if (typeof StudyPlan !== 'undefined' && StudyPlan.isActive()) {
+            if (typeof StudyPlanRunner !== 'undefined') StudyPlanRunner.mountNextAction(container);
+            return;
+        }
+
         const opts = options || {};
         let rec;
         try {
@@ -373,6 +383,7 @@ const RecommendationEngine = (function () {
         dismissUnit,
         dismissMiniGame,
         secondaryLabel,
-        openSecondary
+        openSecondary,
+        grammarVocabCandidate: _grammarVocabCandidate
     };
 })();

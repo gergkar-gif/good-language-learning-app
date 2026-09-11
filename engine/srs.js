@@ -534,6 +534,8 @@ function renderReviewSessionSummary() {
 
     const practiseBtn = summaryEl.querySelector('[data-action="practice-missed"]');
     if (practiseBtn) practiseBtn.addEventListener('click', () => practiceMissedFromReview(s.missed));
+
+    if (typeof RecommendationEngine !== 'undefined') RecommendationEngine.mountNextAction(summaryEl);
 }
 
 // The words rated "again" this session, straight into a Vocabulary

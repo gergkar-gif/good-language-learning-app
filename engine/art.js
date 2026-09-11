@@ -211,6 +211,13 @@ const Art = (function () {
             <line class="ink-line" x1="10" y1="9" x2="10" y2="20"/>
         `,
 
+        // Time-based session — a clock face, the one icon in this set that
+        // names a constraint rather than a place or activity.
+        clock: `
+            <circle class="ink-line" cx="12" cy="12" r="9"/>
+            <path class="ink-line" d="M12 7v5l4 2"/>
+        `,
+
         // Word Bank — a label tag, the mark of one word held for reference.
         wordBank: `
             <path class="ink-line" d="M3 12 12 3h7a2 2 0 0 1 2 2v7L12 21 3 12Z"/>

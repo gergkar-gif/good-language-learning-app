@@ -1464,6 +1464,8 @@ async function renderLessonSummary(firstTime, rankBefore) {
         });
     }
 
+    if (typeof RecommendationEngine !== 'undefined') RecommendationEngine.mountNextAction(container);
+
     const backBtn = document.getElementById('lesson-back-btn');
     if (backBtn) backBtn.disabled = true;
 
