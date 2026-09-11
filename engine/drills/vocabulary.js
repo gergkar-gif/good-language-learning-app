@@ -661,6 +661,8 @@ const VocabularyDriller = (function () {
                 if (typeof Decks !== 'undefined') Decks.openBulkAddPicker(_missed);
             });
         }
+
+        if (typeof RecommendationEngine !== 'undefined') RecommendationEngine.mountNextAction(_container);
     }
 
     function _abortSession() {

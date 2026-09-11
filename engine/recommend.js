@@ -1,50 +1,18 @@
 // ============================================
-// RECOMMEND — "what should this learner practice right now"
+// RECOMMEND — grammar-skill lookup primitives
 // ============================================
-// One shared signal, consumed by Home's post-unit nudge, Home's per-lesson
-// mini-game nudge, and Workshop's "Recommended for you" card, rather than
-// several heuristics that could drift apart. Two independent halves —
-// grammar and vocabulary — each ranking the same two signals:
-//
-//   1. Weak — real review history (grammar: the SM-2 schedule
-//      engine/recycle.js already keeps for in-lesson recycle blocks,
-//      keyed by exercise id; vocabulary: the SM-2 schedule engine/srs.js
-//      already keeps per word in the deck) whose average ease is low —
-//      exercises/words that keep getting marked wrong or hard. This is
-//      the Kwiziq-style "you're shaky here" signal, for either half.
-//   2. Recent — no weak signal exists yet for grammar (a new learner, or
-//      one who hasn't hit enough recycle blocks for any skill to carry
-//      real history), so fall back to whatever grammar concept the most
-//      recently completed lesson's unit leaned on most — "practice what
-//      you just learned" instead of recommending nothing. Vocabulary has
-//      no equivalent "recent" fallback here — a caller that also knows
-//      which lesson just finished (Home, the lesson-complete screen) can
-//      fall back to that lesson's own new words itself; Recommend only
-//      owns the weak-word signal, the one every caller would otherwise
-//      duplicate.
-//
-// The grammar half resolves to a grammar-index.json skill id — the same
-// id GrammarDriller's `{ skill }` option already understands — so it's
-// always directly launchable via Workshop.open('grammar', { skill }).
-// The vocabulary half resolves to a list of words in the exact
-// { lemma, translation, pos } shape VocabularyDriller's `{ words }`
-// option already understands.
+// Low-level "given a unit/lesson, which grammar-index skill does it teach"
+// helpers, reused independently by engine/home.js's post-unit practice
+// nudge and engine/lessons.js's lesson-complete labeling — a different
+// purpose (labeling a specific unit/lesson) than ranking a recommendation.
+// The actual "what should this learner practice right now" decision (weak/
+// recent grammar skill, weak vocabulary words) moved to
+// engine/recommendationEngine.js as part of the Learner model &
+// personalized path roadmap initiative's step 3 — see that file's header
+// comment.
 
 const Recommend = (function () {
     'use strict';
-
-    // Skills with fewer than this many reviewed exercises don't carry
-    // enough signal to call "weak" rather than "barely seen yet" — one
-    // wrong answer on one exercise shouldn't brand a whole skill.
-    const MIN_REVIEWED = 2;
-
-    // Same idea for vocabulary: fewer than this many reviewed words in
-    // the deck isn't enough to single any of them out as "weak" rather
-    // than just new. A deck's words are already individually scheduled
-    // (no skill-grouping needed the way grammar exercises are), so this
-    // gates the whole signal rather than a per-word count.
-    const MIN_REVIEWED_WORDS = 3;
-    const WEAK_WORDS_LIMIT = 8;
 
     // The exact exercises-file path a lesson id resolves to — same
     // level/rest split loadLesson() uses in engine/lessons.js.
@@ -53,31 +21,6 @@ const Recommend = (function () {
         const level = parts[0];
         const rest = parts.slice(1).join('-');
         return `exercises/${level}/${level}-${rest}-ex.json`;
-    }
-
-    // Which unit (and level) a lesson id belongs to, or null if the
-    // curriculum isn't loaded or the id isn't in it.
-    function unitFor(lessonId) {
-        const data = window._curriculumData;
-        if (!data || !data.levels || !lessonId) return null;
-
-        for (const levelKey of Object.keys(data.levels)) {
-            const units = data.levels[levelKey].units || [];
-            const unit = units.find(u => (u.lessons || []).some(l => l.id === lessonId));
-            if (unit) return { levelKey, unit };
-        }
-        return null;
-    }
-
-    // The lesson most recently marked complete, by timestamp.
-    function lastCompletedLessonId() {
-        const progress = (typeof getProgress === 'function') ? getProgress() : {};
-        let bestId = null, bestTime = -1;
-        Object.keys(progress).forEach(id => {
-            const t = Date.parse((progress[id] || {}).completedAt || '') || 0;
-            if (t > bestTime) { bestTime = t; bestId = id; }
-        });
-        return bestId;
     }
 
     async function _grammarIndex() {
@@ -132,96 +75,9 @@ const Recommend = (function () {
         return ranked[0] || null;
     }
 
-    // The skill with the worst average ease among skills that actually
-    // carry review history — exercises the learner has met before
-    // (through a lesson's own recycle block) and struggled with, not
-    // just anything untested. Returns null rather than guessing when
-    // nothing has enough history yet.
-    async function weakestSkill() {
-        if (typeof loadRecycleSchedule !== 'function') return null;
-        const index = await _grammarIndex();
-        if (!index) return null;
-        const schedule = loadRecycleSchedule();
-
-        let worst = null;
-        Object.keys(index.bySkill || {}).forEach(skill => {
-            let totalEase = 0, seen = 0;
-            (index.bySkill[skill] || []).forEach(entry => {
-                const cardEntry = schedule[entry.id];
-                if (cardEntry && cardEntry.reviews > 0) {
-                    seen++;
-                    totalEase += cardEntry.ease;
-                }
-            });
-            if (seen >= MIN_REVIEWED) {
-                const avgEase = totalEase / seen;
-                if (!worst || avgEase < worst.avgEase) worst = { skill, avgEase, seen };
-            }
-        });
-        return worst ? worst.skill : null;
-    }
-
-    // The words with the worst average ease among those with real review
-    // history — vocabulary's counterpart to weakestSkill(), reading
-    // straight off engine/srs.js's srsDeck rather than cross-referencing
-    // an index the way grammar has to, since each card already carries
-    // its own ease/reviews. Returns [] (not a guess) below the review-
-    // count floor, same honesty rule weakestSkill() follows.
-    function weakestWords(limit) {
-        if (typeof srsDeck === 'undefined' || !Array.isArray(srsDeck)) return [];
-
-        const reviewed = srsDeck.filter(card => card.reviews > 0 && typeof card.ease === 'number');
-        if (reviewed.length < MIN_REVIEWED_WORDS) return [];
-
-        return reviewed
-            .slice()
-            .sort((a, b) => a.ease - b.ease)
-            .slice(0, limit || WEAK_WORDS_LIMIT)
-            .map(card => ({ lemma: card.spanish, translation: card.english, pos: card.type }));
-    }
-
-    // The single best thing to suggest right now, for grammar and
-    // vocabulary independently — either half can be present, absent, or
-    // both, so a caller (Workshop's card, Home's nudges) can offer
-    // whichever exist rather than forcing one combined pick. `reason` on
-    // each half says why, so a caller can word its card differently
-    // ("you've been shaky on..." vs "practice what you just learned...").
-    // Returns null only when NEITHER half has anything to suggest (no
-    // progress yet, no curriculum loaded) — a caller checking `if (!rec)`
-    // still works exactly as before this had a vocabulary half.
-    async function recommend() {
-        let skill = await weakestSkill();
-        let skillReason = skill ? 'weak' : null;
-        let unit = null, levelKey = null;
-
-        if (!skill) {
-            const lessonId = lastCompletedLessonId();
-            const found = lessonId ? unitFor(lessonId) : null;
-            if (found) {
-                skill = await unitSkillFor(found.unit);
-                if (skill) {
-                    skillReason = 'recent';
-                    unit = found.unit;
-                    levelKey = found.levelKey;
-                }
-            }
-        }
-
-        const words = weakestWords();
-        const wordsReason = words.length ? 'weak' : null;
-
-        if (!skill && !words.length) return null;
-        return { skill, skillReason, words, wordsReason, unit, levelKey };
-    }
-
     return {
-        recommend: recommend,
-        weakestSkill: weakestSkill,
-        weakestWords: weakestWords,
         unitSkillFor: unitSkillFor,
         lessonSkillFor: lessonSkillFor,
-        unitFor: unitFor,
-        lastCompletedLessonId: lastCompletedLessonId,
         exerciseRefFor: exerciseRefFor
     };
 })();

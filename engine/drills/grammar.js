@@ -401,6 +401,8 @@ const GrammarDriller = (function () {
 
         _container.querySelector('[data-action="play-again"]').addEventListener('click', _startSession);
         _container.querySelector('[data-action="change-settings"]').addEventListener('click', _abortSession);
+
+        if (typeof RecommendationEngine !== 'undefined') RecommendationEngine.mountNextAction(_container);
     }
 
     function _abortSession() {

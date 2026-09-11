@@ -276,6 +276,10 @@ const VerbsSpeed = (function () {
         var isNewBest = !!newBest && (!previousBest || newBest.accuracy > previousBest.accuracy ||
             (newBest.accuracy === previousBest.accuracy && newBest.correct > previousBest.correct));
 
+        if (typeof DrillHistory !== 'undefined') {
+            DrillHistory.record('verbs', { correct: stats.correct, wrong: stats.wrong });
+        }
+
         _renderResults(newBest, isNewBest && (stats.correct + stats.wrong) > 0);
     }
 
@@ -336,6 +340,10 @@ const VerbsSpeed = (function () {
             _phase = PHASE.SETTINGS;
             render(_container);
         });
+
+        if (typeof RecommendationEngine !== 'undefined') {
+            RecommendationEngine.mountNextAction(area, { excludeDrillerId: 'verbs' });
+        }
     }
 
     // ================================================================

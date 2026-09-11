@@ -388,6 +388,9 @@ const HuPrefixDriller = (function () {
     function _finishSession() {
         if (_timerInterval) { clearInterval(_timerInterval); _timerInterval = null; }
         _phase = PHASE.RESULTS;
+        if (typeof DrillHistory !== 'undefined') {
+            DrillHistory.record('hu-prefix', { correct: _correct, wrong: _seen - _correct });
+        }
         _renderResults();
     }
 
@@ -420,6 +423,10 @@ const HuPrefixDriller = (function () {
 
         _container.querySelector('[data-action="play-again"]').addEventListener('click', _startSession);
         _container.querySelector('[data-action="change-settings"]').addEventListener('click', _abortSession);
+
+        if (typeof RecommendationEngine !== 'undefined') {
+            RecommendationEngine.mountNextAction(_container, { excludeDrillerId: 'hu-prefix' });
+        }
     }
 
     function _abortSession() {

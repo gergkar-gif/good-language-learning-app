@@ -135,43 +135,31 @@ const Workshop = (function () {
         return d.innerHTML;
     }
 
-    // A raw skill id ("location-with-ban-ben", "subjuntivo-deseos") has no
-    // curated display title outside GrammarDriller's own bank data, which
-    // is private to that module — rather than reach into it, this just
-    // turns hyphens into spaces and title-cases. Good enough for a one-line
-    // recommendation; GrammarDriller's own settings screen still shows the
-    // real bank title once the session is open.
-    function _humanizeSkill(id) {
-        return String(id || '').replace(/[-_]+/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
-    }
-
-    // Grammar and vocabulary are independent halves (see engine/recommend.js)
-    // — either, both, or neither can have something to suggest, so this
-    // renders up to two action buttons under one shared blurb rather than
-    // the single whole-card button it used to be when there was only ever
-    // one thing to recommend.
-    function _recommendationHtml(rec) {
-        if (!rec || (!rec.skill && !rec.words.length)) return '';
-        const anyWeak = rec.skillReason === 'weak' || rec.wordsReason === 'weak';
+    // Grammar, vocabulary, and now any weak driller (see
+    // engine/recommendationEngine.js) are independent candidates — any
+    // subset can have something to suggest, so this renders up to three
+    // action buttons under one shared blurb. Labels come from
+    // RecommendationEngine.secondaryLabel() — shared with Home's own
+    // secondary tier, so the two surfaces can't drift on how a candidate
+    // reads. Each button carries its own index in the secondary array
+    // (data-recommend-index) so _loadRecommendation() can route it via
+    // RecommendationEngine.openSecondary() without re-deriving the kind.
+    function _recommendationHtml(secondary) {
+        if (!secondary || !secondary.length) return '';
+        const anyWeak = secondary.some(c => c.reason === 'weak');
         const blurb = anyWeak
             ? "You've been shaky on some of this — a quick pass would help it stick."
             : "Fresh from your last lesson — reinforce it while it's recent.";
+        const buttons = secondary.map((c, i) => `
+            <button class="wk-recommend-btn" data-recommend-index="${i}">
+                ${_esc(RecommendationEngine.secondaryLabel(c))} →
+            </button>
+        `).join('');
         return `
             <div class="wk-recommend">
                 <span class="wk-recommend-eyebrow">Recommended for you</span>
                 <span class="wk-recommend-body">${_esc(blurb)}</span>
-                <div class="wk-recommend-actions">
-                    ${rec.skill ? `
-                        <button class="wk-recommend-btn" data-recommend-skill="${_esc(rec.skill)}">
-                            Grammar: ${_esc(_humanizeSkill(rec.skill))} →
-                        </button>
-                    ` : ''}
-                    ${rec.words.length ? `
-                        <button class="wk-recommend-btn" data-recommend-vocab="1">
-                            Vocabulary (${rec.words.length}) →
-                        </button>
-                    ` : ''}
-                </div>
+                <div class="wk-recommend-actions">${buttons}</div>
             </div>
         `;
     }
@@ -267,25 +255,21 @@ const Workshop = (function () {
     let _pickerToken = 0;
 
     function _loadRecommendation(root, token) {
-        if (typeof Recommend === 'undefined') return;
-        Recommend.recommend().then(rec => {
-            if (!rec || token !== _pickerToken) return;
+        if (typeof RecommendationEngine === 'undefined') return;
+        RecommendationEngine.recommend().then(rec => {
+            if (!rec || !rec.secondary.length || token !== _pickerToken) return;
             const target = document.getElementById('drills-root');
             if (!target || target !== root || _active) return;
-            root.insertAdjacentHTML('afterbegin', _recommendationHtml(rec));
+            root.insertAdjacentHTML('afterbegin', _recommendationHtml(rec.secondary));
 
-            const grammarBtn = root.querySelector('[data-recommend-skill]');
-            if (grammarBtn) {
-                grammarBtn.addEventListener('click', () => open('grammar', { skill: grammarBtn.getAttribute('data-recommend-skill') }));
-            }
-            // rec.words is closed over here rather than round-tripped through
-            // a data attribute — a word list doesn't serialise cleanly into
-            // one, and this handler is only ever wired against this exact
-            // rec anyway.
-            const vocabBtn = root.querySelector('[data-recommend-vocab]');
-            if (vocabBtn) {
-                vocabBtn.addEventListener('click', () => open('vocabulary', { words: rec.words }));
-            }
+            // Each button's own candidate is closed over via its index
+            // rather than round-tripped through data attributes — a word
+            // list doesn't serialise cleanly into one, and every button
+            // here is only ever wired against this exact rec anyway.
+            root.querySelectorAll('[data-recommend-index]').forEach(btn => {
+                const candidate = rec.secondary[Number(btn.getAttribute('data-recommend-index'))];
+                btn.addEventListener('click', () => RecommendationEngine.openSecondary(candidate));
+            });
         }).catch(() => {});
     }
 

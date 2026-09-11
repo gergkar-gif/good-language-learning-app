@@ -39,105 +39,6 @@ const Home = (function () {
     // GATHERING
     // ----------------------------------------
 
-    // The whole course, flattened into one ordered walk — every lesson, and
-    // a level-test placeholder right after each level's last lesson, in the
-    // same level→unit→lesson order the app has always used. nextStep()
-    // below walks this twice: once forward from wherever the learner
-    // actually left off, once from the very start as a fallback.
-    function courseWalk() {
-        const data = window._curriculumData;
-        if (!data || !data.levels) return [];
-        const order = (typeof LEVEL_ORDER !== 'undefined') ? LEVEL_ORDER : ['A1'];
-
-        const steps = [];
-        order.forEach(level => {
-            const entry = data.levels[level];
-            const units = (entry && entry.units) || [];
-            const lessons = units.flatMap(u => u.lessons || []);
-            if (!lessons.length) return;
-
-            lessons.forEach(lesson => {
-                // The unit's own title is more useful here than the level's —
-                // "Greetings & Introductions" says more than "Fundamentals".
-                const unit = units.find(u => (u.lessons || []).some(l => l.id === lesson.id));
-                steps.push({ kind: 'lesson', level, title: (unit && unit.title) || entry.title || '', lesson });
-            });
-            steps.push({ kind: 'test', level, title: entry.title || '' });
-        });
-        return steps;
-    }
-
-    function stepIsDone(step, progress) {
-        if (step.kind === 'lesson') return !!progress[step.lesson.id];
-        const result = (typeof LevelTest !== 'undefined') ? LevelTest.resultFor(step.level) : null;
-        return !!(result && result.passed);
-    }
-
-    function levelStats(level, progress) {
-        const data = window._curriculumData;
-        const entry = data && data.levels && data.levels[level];
-        const lessons = ((entry && entry.units) || []).flatMap(u => u.lessons || []);
-        return { done: lessons.filter(l => progress[l.id]).length, total: lessons.length };
-    }
-
-    function stepToResult(step, progress) {
-        const stats = levelStats(step.level, progress);
-        if (step.kind === 'test') {
-            const result = (typeof LevelTest !== 'undefined') ? LevelTest.resultFor(step.level) : null;
-            return { kind: 'test', level: step.level, title: step.title, result, done: stats.done, total: stats.total };
-        }
-        return { kind: 'lesson', level: step.level, title: step.title, lesson: step.lesson, done: stats.done, total: stats.total };
-    }
-
-    // The next thing to continue with. Follows the learner rather than the
-    // course's own order: it continues forward from wherever their most
-    // recently completed lesson actually sits, so clearing Unit 10 out of
-    // order recommends Unit 11 next, not a snap back to Unit 1 just because
-    // it's still the earliest unfinished thing overall. Only falls back to
-    // sweeping from the very start of the course — the old, order-only
-    // behaviour — once there's genuinely nothing left ahead, which is what
-    // keeps a real gap left behind (an earlier unit never finished) from
-    // being lost track of forever rather than just not being the default.
-    function nextStep() {
-        const data = window._curriculumData;
-        if (!data || !data.levels) return null;
-
-        const progress = (typeof getProgress === 'function') ? getProgress() : {};
-        const steps = courseWalk();
-        if (!steps.length) return null;
-
-        const lastId = lastCompletedLessonId();
-        const lastIndex = lastId ? steps.findIndex(s => s.kind === 'lesson' && s.lesson.id === lastId) : -1;
-
-        if (lastIndex !== -1) {
-            for (let i = lastIndex + 1; i < steps.length; i++) {
-                const step = steps[i];
-                if (stepIsDone(step, progress)) continue;
-
-                // A level test only belongs here once the whole level is
-                // actually done — reaching it mid-forward-scan while an
-                // earlier lesson in the SAME level is still incomplete
-                // (behind the scan's start point, so never visited above)
-                // means there's a real gap to go back to first. Stop
-                // scanning forward and fall through to the sweep below,
-                // which will find that gap rather than offering the test
-                // prematurely.
-                if (step.kind === 'test') {
-                    const stats = levelStats(step.level, progress);
-                    if (stats.done < stats.total) break;
-                }
-
-                return stepToResult(step, progress);
-            }
-        }
-
-        for (let i = 0; i < steps.length; i++) {
-            if (!stepIsDone(steps[i], progress)) return stepToResult(steps[i], progress);
-        }
-
-        return null;    // every lesson finished and every test passed
-    }
-
     function courseTotals() {
         const data = window._curriculumData;
         const progress = (typeof getProgress === 'function') ? getProgress() : {};
@@ -177,68 +78,14 @@ const Home = (function () {
         };
     }
 
-    // The lesson most recently marked complete, and which unit/level it
-    // belongs to — used only to detect whether the learner just closed out
-    // a whole unit, not to drive nextStep() (which already walks the
-    // curriculum in order regardless of what was done most recently). Both
-    // now live in engine/recommend.js, shared with Workshop's "Recommended
-    // for you" card rather than kept as a private copy here.
-    const lastCompletedLessonId = Recommend.lastCompletedLessonId;
-    const unitFor = Recommend.unitFor;
-
-    // A unit's practice nudge, once resolved (practised or skipped), never
-    // comes back for that unit — a one-time "before you move on" beat, not
-    // a recurring interruption. Persisted per course, same as everything
-    // else keyed off Lang.key().
-    function dismissedUnitsKey() {
-        return Lang.key('unitPracticeDismissed');
-    }
-
-    function dismissedUnits() {
-        try {
-            return JSON.parse(localStorage.getItem(dismissedUnitsKey()) || '[]');
-        } catch (error) {
-            return [];
-        }
-    }
-
-    function dismissUnit(unitId) {
-        const list = dismissedUnits();
-        if (!list.includes(unitId)) {
-            list.push(unitId);
-            try { localStorage.setItem(dismissedUnitsKey(), JSON.stringify(list)); }
-            catch (error) { /* private browsing with storage disabled — the nudge just won't stay dismissed */ }
-        }
-    }
-
-    // The grammar concept a unit leans on most — also shared via
-    // engine/recommend.js now (see its own comment for how the match works).
-    const unitSkillFor = Recommend.unitSkillFor;
-
-    // Home's post-unit practice beat: the last lesson completed was the
-    // last lesson in its unit, that unit hasn't already been resolved, and
-    // there's an actual grammar skill to point Workshop at. Any one of
-    // those failing means "no nudge" — this never blocks or delays the
-    // normal continue card, it only sometimes stands in front of it once.
-    async function practiceNudge() {
-        const lessonId = lastCompletedLessonId();
-        if (!lessonId) return null;
-
-        const found = unitFor(lessonId);
-        if (!found) return null;
-
-        const { levelKey, unit } = found;
-        const lessons = unit.lessons || [];
-        const last = lessons[lessons.length - 1];
-        if (!last || last.id !== lessonId) return null; // not the unit's last lesson
-
-        if (dismissedUnits().includes(unit.id)) return null;
-
-        const skill = await unitSkillFor(unit);
-        if (!skill) return null;
-
-        return { levelKey, unit, skill };
-    }
+    // The post-unit practice nudge and the per-lesson mini-game offer are
+    // both computed by engine/recommendationEngine.js now, alongside the
+    // plain continue card — one RecommendationEngine.recommend() call in
+    // render() below replaces what used to be three separate calls here.
+    // dismissUnit()/dismissMiniGame() stay as thin delegates since Home's
+    // own click handlers below still need to call them directly.
+    const dismissUnit = RecommendationEngine.dismissUnit;
+    const dismissMiniGame = RecommendationEngine.dismissMiniGame;
 
     // The next story to read: one at the level being studied if there is one,
     // otherwise the easiest thing left unread. Reaching over an unread A1
@@ -358,77 +205,6 @@ const Home = (function () {
         `;
     }
 
-    // Home's per-lesson counterpart to the post-unit practice nudge above:
-    // a "Quick Reinforce" mini-game offered after ANY lesson, not just a
-    // unit's last one — same engine/recommend.js signal that also drives
-    // Workshop's "Recommended for you" card and the lesson-complete
-    // screen's own Quick Reinforce buttons (engine/lessons.js), so all
-    // three surfaces agree on what's worth practicing rather than each
-    // guessing separately. Resolved (played or skipped) the same
-    // once-per-lesson way the unit nudge resolves per unit, so it doesn't
-    // keep asking about a lesson the learner already answered.
-    function miniGameDismissedKey() {
-        return Lang.key('miniGameDismissed');
-    }
-
-    function miniGameDismissed(lessonId) {
-        try {
-            const seen = JSON.parse(localStorage.getItem(miniGameDismissedKey()) || '{}');
-            return !!seen[lessonId];
-        } catch (error) {
-            return false;
-        }
-    }
-
-    function dismissMiniGame(lessonId) {
-        try {
-            const seen = JSON.parse(localStorage.getItem(miniGameDismissedKey()) || '{}');
-            seen[lessonId] = true;
-            localStorage.setItem(miniGameDismissedKey(), JSON.stringify(seen));
-        } catch (error) {
-            // Private browsing with storage disabled — the card just won't
-            // stay dismissed, same tradeoff the unit nudge already accepts.
-        }
-    }
-
-    // Never stands alongside the post-unit nudge — the caller only asks
-    // for this once it already knows that bigger nudge isn't showing (see
-    // render()), so the learner is never offered two "go practise"
-    // prompts in the same slot.
-    //
-    // Grammar and vocabulary are resolved independently, same as
-    // Recommend.recommend() itself: grammar always comes from Recommend
-    // (weak skill, or this lesson/unit's own concept as a fallback).
-    // Vocabulary prefers Recommend's weak-word signal (real review
-    // history, low ease) over this lesson's own new words — the same
-    // weak-beats-recent priority the grammar half already has — and only
-    // falls back to "what this lesson just taught" once there isn't
-    // enough review history yet for anything to count as weak.
-    async function miniGameNudge() {
-        const lessonId = (typeof Recommend !== 'undefined') ? Recommend.lastCompletedLessonId() : null;
-        if (!lessonId || miniGameDismissed(lessonId)) return null;
-
-        const rec = (typeof Recommend !== 'undefined') ? await Recommend.recommend() : null;
-
-        let words = (rec && rec.words.length) ? rec.words : [];
-        let wordsReason = words.length ? 'weak' : null;
-        if (!words.length && typeof loadLesson === 'function' && typeof collectLessonVocabulary === 'function') {
-            const lesson = await loadLesson(lessonId);
-            if (lesson) words = await collectLessonVocabulary(lesson);
-            wordsReason = words.length ? 'recent' : null;
-        }
-
-        const skill = rec ? rec.skill : null;
-        if (!skill && !words.length) return null;
-        return {
-            lessonId,
-            skill,
-            skillReason: rec ? rec.skillReason : null,
-            words,
-            wordsReason
-        };
-    }
-
     function miniGameCard(mini) {
         const anyWeak = mini.skillReason === 'weak' || mini.wordsReason === 'weak';
         const blurb = anyWeak
@@ -540,6 +316,37 @@ const Home = (function () {
             sub: 'Conjugation tables and speed drills.',
             data: { go: 'drills' }
         });
+    }
+
+    // Tier 2: RecommendationEngine's secondary candidates (weak/recent
+    // grammar, weak vocabulary, a struggling driller), surfaced on Home for
+    // the first time — Workshop's own picker has shown these since step 3,
+    // but Home never did. Deliberately quiet: no accent colour (the
+    // continue/nudge card above is the one accent-bearing thing on the
+    // screen, per this file's own design — see styles/components.css),
+    // plain text buttons, one small muted eyebrow so a new second card
+    // doesn't read as unexplained. Renders nothing at all when there's
+    // nothing to suggest — same "either, both, or neither" honesty already
+    // built into Recommend/LearnerModel/RecommendationEngine.
+    function secondaryList(secondary) {
+        if (!secondary || !secondary.length) return '';
+        const items = secondary.map(c => {
+            const attr = c.kind === 'vocabulary' ? 'data-secondary-vocab="1"'
+                : c.kind === 'driller' ? `data-secondary-driller="${esc(c.drillerId)}"`
+                : `data-secondary-grammar="${esc(c.skill)}"`;
+            return `
+                <button class="hm-secondary-btn" ${attr}>
+                    ${esc(RecommendationEngine.secondaryLabel(c))} →
+                </button>
+            `;
+        }).join('');
+
+        return `
+            <section class="hm-secondary">
+                <span class="hm-secondary-eyebrow">Also worth practising</span>
+                <div class="hm-secondary-list">${items}</div>
+            </section>
+        `;
     }
 
     // Today's three activities and the streak they keep. The ids are the ones
@@ -665,6 +472,36 @@ const Home = (function () {
                 render();
                 return;
             }
+
+            const secGrammar = e.target.closest('[data-secondary-grammar]');
+            if (secGrammar) {
+                goTab('drills');
+                RecommendationEngine.openSecondary({ kind: 'grammar', skill: secGrammar.getAttribute('data-secondary-grammar') });
+                return;
+            }
+
+            const secDriller = e.target.closest('[data-secondary-driller]');
+            if (secDriller) {
+                goTab('drills');
+                RecommendationEngine.openSecondary({ kind: 'driller', drillerId: secDriller.getAttribute('data-secondary-driller') });
+                return;
+            }
+
+            // Vocabulary's word list doesn't serialise cleanly into a data
+            // attribute — same reasoning engine/workshop.js's own secondary
+            // wiring already documents — so this recomputes the
+            // recommendation fresh rather than caching rec.secondary across
+            // the render/click boundary, keeping this file's "no state of
+            // its own" rule intact.
+            if (e.target.closest('[data-secondary-vocab]')) {
+                goTab('drills');
+                (async () => {
+                    const rec = await RecommendationEngine.recommend();
+                    const candidate = rec.secondary.find(c => c.kind === 'vocabulary');
+                    RecommendationEngine.openSecondary(candidate);
+                })();
+                return;
+            }
         });
 
         host.addEventListener('change', e => {
@@ -702,16 +539,18 @@ const Home = (function () {
         const host = document.getElementById('home-root');
         if (!host) return;
 
-        const step = nextStep();
+        const step = LearnerPath.nextStep();
         const deck = deckStanding();
         const totals = courseTotals();
         const reading = await nextStory(step ? step.level : null);
-        const nudge = await practiceNudge();
-        const mini = nudge ? null : await miniGameNudge();
+        const rec = await RecommendationEngine.recommend();
 
         host.innerHTML = `
             ${courseBlock()}
-            ${nudge ? practiceNudgeCard(nudge) : (mini ? miniGameCard(mini) : continueCard(step))}
+            ${rec.primary.kind === 'unit-nudge' ? practiceNudgeCard(rec.primary)
+                : rec.primary.kind === 'mini-game' ? miniGameCard(rec.primary)
+                : continueCard(rec.primary.step)}
+            ${secondaryList(rec.secondary)}
             <div class="hm-doors">
                 ${reviewDoor(deck)}
                 ${readDoor(reading)}
@@ -731,5 +570,5 @@ const Home = (function () {
         }
     }
 
-    return { render, greeting, nextStep };
+    return { render, greeting, nextStep: LearnerPath.nextStep };
 })();

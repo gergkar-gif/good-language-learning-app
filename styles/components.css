@@ -3183,10 +3183,12 @@
 /* ============================================
    HOME
    ============================================
-   One dominant object, three doors, where today stands, and how far the
-   course has come — in that order, and nothing else. The screen exists to be
-   left quickly, so hierarchy does the work: a serif title and a meter mark
-   the thing to continue, and everything under it is a single line of sans. */
+   Three tiers, in order: one dominant recommendation (the app's opinion —
+   serif title, a meter, the screen's one accent colour), an optional quiet
+   line of other things worth practising (no accent, easy to skip), then
+   three doors, where today stands, and how far the course has come. The
+   screen exists to be left quickly, so hierarchy does the work rather than
+   labels — everything under the recommendation is a single line of sans. */
 
 /* ---- Continue: the dominant object ---- */
 
@@ -3309,6 +3311,47 @@
   display: block;
   height: 100%;
   background: var(--primary);
+}
+
+/* ---- Secondary: optional reinforcement, deliberately quiet ---- */
+/* No accent colour here — the continue/nudge card above is the one
+   accent-bearing thing on the screen, and this tier needs to read as
+   obviously subordinate to it, not as a second recommendation. */
+
+.hm-secondary {
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+  margin-bottom: 16px;
+}
+
+.hm-secondary-eyebrow {
+  display: block;
+  font-size: 12px;
+  letter-spacing: .04em;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.hm-secondary-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.hm-secondary-btn {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 14px;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.hm-secondary-btn:hover {
+  color: var(--primary-mid);
 }
 
 /* ---- Doors ---- */

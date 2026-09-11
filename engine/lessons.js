@@ -272,6 +272,7 @@ async function startLesson(lessonId) {
     }
 
     currentLesson = lesson;
+    if (typeof LearnerPath !== 'undefined') LearnerPath.touchActivity();
     currentStepIndex = 0;
     originalStepCount = lesson.steps.length;
     missedSteps = [];
