@@ -105,21 +105,36 @@ this list directly rather than relying on a tool-specific todo list.
   discussed above) — not yet inspected; check whether these are actual
   extracted exercise content (unlike the catalogue-only zip above) before
   scoping the import work.
-- [ ] Exercises must stay modular enough that new content can be added
+- [x] Exercises must stay modular enough that new content can be added
   to an existing lesson/unit retroactively, without special-casing.
   Requested 2026-09-11, in the context of the Todo-Claro/Spanish Unicorn
-  import batches above — whatever pipeline drops new exercises into
-  `content/*/exercises/**/*.json` should produce exercises indistinguishable
-  from hand-authored ones to every downstream consumer (grammar-index
-  generation, `engine/recycle.js`'s pool collection, curriculum exercise
-  counts, `validate-content.py`). Worth checking against as part of
-  scoping any import: can a new exercise be appended to an
-  already-shipped lesson's exercise-group file and have it show up
-  correctly everywhere (recycle pool, Grammar Guide counts, Journey
-  skill tallies) without a broader regeneration step, the same way step
-  6 below ("Unify all activity types as evidence") just made sure every
-  `teaches`-tagged exercise feeds evidence the moment it's ever
-  completed, not just when re-selected later.
+  import batches above. **Checked 2026-09-12 — already true, confirmed
+  by reading the actual pipeline (not just in theory: this session's own
+  B1 vocabulary-reorder edit to 180 content files exercised this exact
+  path twice and both auto-synced correctly)**:
+  - `engine/recycle.js` needs **no build step at all** — it reads a
+    lesson's exercise-group file live at runtime, so a new
+    `teaches`-tagged exercise is poolable the moment it exists.
+  - `grammar-index.json` is fully derived by
+    `scripts/build_grammar_index.py`, which globs every
+    `content/<lang>/exercises/*/*.json` file directly — nothing
+    hand-maintained to keep in sync.
+  - Journey's per-lesson counts (`curriculum.json`'s `exercises`/`newWords`)
+    are derived the same way, by `build-manifest.py`'s
+    `lesson_teaching_counts()`, counting straight from each lesson's
+    real exercise-group `exerciseRefs`.
+  - All three regenerate automatically via
+    `.github/workflows/sync-generated-content.yml` on any push touching
+    `content/**`, which **validates schemas first and fails loudly**
+    (`scripts/validate-content.py`) rather than silently committing
+    something broken from bad new content.
+  The actual constraint for the import work: a new exercise just needs
+  to match `exercises.schema.json` (a valid `category`, and if it should
+  feed recycle/evidence, a `teaches` array reusing the **same slug
+  vocabulary already used elsewhere** — e.g. `"ser"`, not `"ser-verb"` —
+  since that consistency is what lets a later lesson's recycle block
+  find it). That's a content-authoring discipline point for whatever
+  converts the import batches, not a code gap.
 - [ ] Integrate the same English-Spanish dual-language reading setup with
   originals as exists for Hungarian, up to A1 level.
 - [ ] Hungarian: introduce Hungarian cultural material at B1-B2 (for the
