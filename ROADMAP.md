@@ -246,19 +246,23 @@ this list directly rather than relying on a tool-specific todo list.
 
 ## Workshop
 
-- [ ] Grammar Driller needs a broader audit — in Spanish, some fill-blank
+- [x] Grammar Driller needs a broader audit — in Spanish, some fill-blank
   exercises give away the answer within the exercise's own clue text.
-  Reported 2026-09-11. Note this exact shape was already investigated
-  once (`TROUBLESHOOTING_BACKLOG.md`, 2026-08-19) but that pass only
-  covered the dedicated bank file (`content/es/drills/grammar/a1-bank.json`,
-  600 items) and found no real instances — it never checked the much
-  larger set of lesson-exercise fill-blanks the driller also pulls in
-  via `engine/drills/grammar.js`'s `_resolveLessonEntries()`. The
-  re-audit should cover that lesson-exercise path too, not just the
-  bank. **Note**: the *other* bug this same lesson-exercise path had —
-  multi-answer fill-blanks showing "undefined" — is fixed as of
-  2026-09-12 (see `TROUBLESHOOTING_BACKLOG.md`); this "answer given away
-  in the clue" audit is a separate, still-open concern.
+  Reported 2026-09-11, **audited and fixed 2026-09-12**: covered the
+  path the 2026-08-19 pass missed — all 2,426 lesson-exercise
+  fill-blanks (`content/es/exercises/**`), not just the dedicated bank
+  file that pass already cleared. Found and fixed 19 real instances,
+  all in B1 content: 16 where a parenthetical hint was the exact,
+  unmodified answer (no grammar challenge at all — different from the
+  legitimate `(infinitivo)` convention, where the hint is a base form
+  still requiring correct inflection); 1 recurrence of the pre-existing
+  "ser + invariant adjective" bug class from 2026-08-18 that this
+  lesson happened to miss; 2 where the answer reappeared verbatim later
+  in the same sentence; and a correlative-pair case (`ya sea ... ya
+  sea`) fixed by varying one occurrence to the equally natural `ya`.
+  Full writeup with every case's reasoning (including which candidates
+  were deliberately left alone as legitimate design) in
+  `TROUBLESHOOTING_BACKLOG.md`.
 - [x] Workshop should have a "Recommended drill" — a Kwiziq-style system
   that maps what the learner knows and always suggests what to practice
   next, rather than a flat menu of drillers with no sense of where the

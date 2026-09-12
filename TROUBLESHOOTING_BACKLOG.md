@@ -1486,3 +1486,76 @@ screen in the Hungarian course, not just the review units.
   content: either acceptable answer now grades correct, a wrong answer
   reveals a real word instead of "undefined", and a plain single-answer
   exercise still grades exactly as before.
+
+## Grammar Driller re-audit: answer given away in the clue, lesson-exercise path (logged 2026-09-11, fixed 2026-09-12)
+
+- [x] The 2026-08-19 pass above only checked the dedicated bank
+  (`content/es/drills/grammar/a1-bank.json`, 600 items) and found no
+  real instances. It never checked the much larger set of
+  lesson-exercise fill-blanks the driller also pulls in via
+  `engine/drills/grammar.js`'s `_resolveLessonEntries()`. This pass
+  covers that path: all 2,426 ES fill-blank exercises across
+  `content/es/exercises/**`.
+
+  **Method**: a Python scan (accent-stripped, whole-word matching)
+  flagging any exercise where the answer word(s) reappear in the
+  sentence's own visible text — with the scan excluding both
+  `(parenthetical hints)` and `[English bracket translations]` before
+  matching, since Spanish/English cognates (`conclusión`/`conclusion`,
+  `error`/`error`) collide after accent-stripping and are just the
+  gloss, not a leak. First pass without that bracket exclusion produced
+  false positives on exactly those cognates; re-run after fixing the
+  scan gave a clean, accurate list. Every flagged candidate was then
+  read in context and judged individually, not auto-fixed — common
+  function words recurring coincidentally (que/una/con/por) and one
+  intentionally-paired contrastive construction (confirmed via its own
+  `teaches` tag) were left alone as correct as-is.
+
+  **19 real instances found, all in B1 content, three root causes**:
+  1. **Redundant literal hint** (16 files) — a `(word)` parenthetical
+     hint that *was* the exact, unmodified answer, giving zero grammar
+     challenge. Different from the legitimate `(infinitivo)` scaffolding
+     convention, where the hint is a base form the learner must still
+     inflect correctly. Fixed by removing the hint (the sentence context
+     alone was already sufficient): `b1-05-04`, `b1-06-consolidation`,
+     `b1-15-02`, `b1-17-05`, `b1-21-05`, `b1-34-02`,
+     `b1-centroamerica-01`, `b1-grandepresion-05`, `b1-guerrafria-02`,
+     `b1-industrializacion-04`, `b1-revolucioncubana-03` (hint only —
+     its "cada vez menos"/"cada vez más" sentence contrast is
+     intentional, left as-is), `b1-neoliberalismo-02`
+     (`" en ___ privadas..."`, was `"en manos del Estado. (manos)"`).
+  2. **"Ser + invariant adjective" test-design flaw** (1 instance) — a
+     recurrence of the 2026-08-18 pattern above (answer guessable from
+     category alone with zero disambiguating context): `a1-03c-02-g03`
+     ("Carlos es joven. Ana también es ____." → answer "joven" was the
+     only word that could possibly fit). Rewritten to test the actual
+     targeted skill (adjective agreement) instead: "Carlos es rubio. Ana
+     es rubi__." → "a".
+  3. **Answer repeated verbatim later in the same sentence** (2 files) —
+     `b1-03-05.ex17a` ("Mi __ es clara: quiero alcanzar la meta..." →
+     answer "meta" reappeared right after the blank) reworded to
+     "...quiero alcanzarla aunque el recorrido sea largo." `b1-09-consolidation.ex07`
+     kept its legitimate `(dormir)` infinitive hint but had the
+     conjugated answer "duermo" spelled out via context elsewhere in the
+     original sentence; reworded the surrounding sentence, hint kept.
+  4. **Correlative-pair structural leak** (1 file, 2 exercises) —
+     `b1-guerrafria-01.ex04a`/`ex04b` test `ya sea ... ya sea` ("either…
+     or…") as two separate blanks in the same sentence; each one's blank
+     could be inferred from the other, already-filled-in occurrence.
+     Fixed by varying one occurrence to the equally natural `ya` (native
+     Spanish accepts either form in this construction), removing the
+     mirror-image giveaway while keeping the taught structure intact.
+
+  **Self-inflicted follow-up bug, caught before push**: the fix script
+  used `json.dump(..., indent=2)` after loading+editing, which
+  reformats the *entire* file (compact single-line arrays exploded
+  across many lines) — 6 files ballooned into 84-106 line diffs for a
+  1-2 line content change. Caught via `git diff --stat` before pushing.
+  Fixed by reverting those 6 files' formatting and reapplying the exact
+  same content fix via precise raw-text `str.replace(old, new, 1)`
+  instead of JSON re-serialization, in a separate follow-up commit.
+
+  **Verified**: `validate-content.py` clean both before and after
+  (2921/2921); two of the fixes spot-checked live in the browser
+  (rubio/rubia grading correctly; the neoliberalismo "manos" exercise
+  renders the reworded sentence correctly), zero console errors.
