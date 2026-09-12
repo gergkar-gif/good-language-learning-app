@@ -1424,9 +1424,9 @@ screen in the Hungarian course, not just the review units.
   reported real-world slowdown (unlike bare localhost, which has near-
   zero latency and doesn't reproduce the symptom on its own).
 
-## Workshop → Grammar Driller: multi-answer fill-blanks are unanswerable, show "undefined" (logged 2026-09-11, not yet fixed)
+## Workshop → Grammar Driller: multi-answer fill-blanks are unanswerable, show "undefined" (logged 2026-09-11, fixed 2026-09-12)
 
-- [ ] **Reported via live screenshots** (ergkar-gif.github.io, production):
+- [x] **Reported via live screenshots** (ergkar-gif.github.io, production):
   practicing the "Present Tense" skill in Workshop's Grammar Driller,
   several fill-blank questions ("Ustedes ___ español.", "Nosotros ___
   por la mañana.", "Tú ___ español.") render with no way to answer
@@ -1470,14 +1470,19 @@ screen in the Hungarian course, not just the review units.
   `a1-20-practice-3`, `a1-46-controlled-2`, `a1-57/58/59/60-practice-3`,
   `a2-108-controlled-3` (HU).
 
-  **Not fixed yet** — likely fix: make `_normaliseLessonExercise()`'s
-  `'fill-blank'` case mirror `engine/lessons.js`'s own pattern
-  (`answer: ex.answer || (ex.answers && ex.answers[0])`, plus an
-  `acceptable: ex.answers || [ex.answer]` field), and update
-  `grammar-runner.js`'s `_renderFillBlank()` to grade against
-  `ex.acceptable` instead of the single `ex.answer`, same as
-  `engine/lessons.js`'s `stepState.acceptable` already does. Should also
-  re-check `engine/drills/hu-verb.js`/`hu-morphology.js`/`hu-prefix.js`/
-  `hu-suffix.js`/`vocabulary.js` (all also match `'fill-blank'` per a
-  repo-wide grep) for the same single-`answer` assumption, since any of
-  them pulling from lesson-exercise files could have the identical gap.
+  **Fixed 2026-09-12**, exactly the suggested fix:
+  `_normaliseLessonExercise()`'s `'fill-blank'` case now mirrors
+  `engine/lessons.js`'s own pattern (`answer: ex.answer || (ex.answers && ex.answers[0])`,
+  plus an `acceptable: ex.answers || [ex.answer]` field), and
+  `grammar-runner.js`'s `_renderFillBlank()` grades against
+  `ex.acceptable` instead of the single `ex.answer`. Also checked
+  `engine/drills/hu-verb.js`/`hu-morphology.js`/`hu-prefix.js`/
+  `hu-suffix.js`/`vocabulary.js` as suggested — none of the five are
+  affected: each generates its own single-answer fill-blanks internally
+  (never reads raw `answers[]` content), so the shared renderer's new
+  `ex.acceptable || [ex.answer]` fallback is a no-op for all of them,
+  confirmed by reading each file rather than assuming. Verified live via
+  `GrammarRunner.render()` called directly with the exact reported
+  content: either acceptable answer now grades correct, a wrong answer
+  reveals a real word instead of "undefined", and a plain single-answer
+  exercise still grades exactly as before.

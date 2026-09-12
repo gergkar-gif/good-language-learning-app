@@ -171,15 +171,24 @@ this list directly rather than relying on a tool-specific todo list.
   first; if not, the user has offered to record the sound set
   themselves. Related: the SRS "listen to a card" idea below would
   reuse whatever audio-attachment mechanism this ends up building.
-- [ ] ES B1: the new-vocabulary screen doesn't appear — a lesson goes
+- [x] ES B1: the new-vocabulary screen doesn't appear — a lesson goes
   straight from review into grammar and exercises with no vocabulary
-  step shown in between. Reported 2026-09-11, not yet investigated;
-  check whether this is a real per-lesson content gap (no `vocabulary`
-  section authored) or a rendering/ordering bug in the lesson-step
-  pipeline (`engine/lessons.js`) — the "Standard lesson progression
-  should be review → new grammar → lesson vocabulary → exercises" fix
-  in `TROUBLESHOOTING_BACKLOG.md` (2026-08-18) covered A1 specifically,
-  so B1 may never have gotten the same pass.
+  step shown in between. **Investigated and fixed 2026-09-12**: not a
+  content gap — every non-consolidation B1 lesson (360 total, Core +
+  LatAm) already had a `vocabulary` section. It was a pure ordering bug,
+  but only in **B1 Core** (all 36 units, 180 lessons): `vocabulary` sat
+  after the unit's first "Practice" exercise-group instead of right
+  after `grammar`, so a learner saw review → grammar → straight into
+  exercises, with vocabulary only surfacing later — easy to read as
+  missing entirely. Confirmed **B1 LatAm's 180 lessons are correctly
+  untouched**: they put vocabulary *before* grammar on purpose, the
+  deliberate story-first template from the 2026-08-28 LatAm rebuild
+  (uniform across all 36 named units, not a bug). Fixed via a script
+  that moves the one `vocabulary` section element in each of the 180
+  Core lesson files to right after `grammar` — no wording/exercise
+  content touched. `validate-content.py`: 2921/2921 passing. Verified
+  live: B1 Core now shows grammar → vocabulary → exercises; B1 LatAm's
+  story → vocabulary → grammar order is unchanged.
 - [x] Word Bank: same idea as Grammar Guide, but for vocabulary — a
   per-unit collection of the ~15-20 new words the unit introduces.
   **Built 2026-08-27**: `wordBankHtml()` in `engine/curriculum.js` is a
@@ -215,10 +224,12 @@ this list directly rather than relying on a tool-specific todo list.
   covered the dedicated bank file (`content/es/drills/grammar/a1-bank.json`,
   600 items) and found no real instances — it never checked the much
   larger set of lesson-exercise fill-blanks the driller also pulls in
-  via `engine/drills/grammar.js`'s `_resolveLessonEntries()` (the same
-  parallel-path gap behind the "multi-answer fill-blanks show
-  'undefined'" bug logged the same day). The re-audit should cover
-  that lesson-exercise path too, not just the bank.
+  via `engine/drills/grammar.js`'s `_resolveLessonEntries()`. The
+  re-audit should cover that lesson-exercise path too, not just the
+  bank. **Note**: the *other* bug this same lesson-exercise path had —
+  multi-answer fill-blanks showing "undefined" — is fixed as of
+  2026-09-12 (see `TROUBLESHOOTING_BACKLOG.md`); this "answer given away
+  in the clue" audit is a separate, still-open concern.
 - [x] Workshop should have a "Recommended drill" — a Kwiziq-style system
   that maps what the learner knows and always suggests what to practice
   next, rather than a flat menu of drillers with no sense of where the
