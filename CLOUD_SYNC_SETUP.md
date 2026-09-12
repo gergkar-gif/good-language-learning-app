@@ -25,8 +25,13 @@ That last part is why this also needs a free [Resend](https://resend.com)
 account: Cloudflare's own outbound email sending is gated to their paid
 Workers plan, so a magic-link email has to go through a separate
 transactional-email API. Resend's free tier (3,000 emails/month) covers
-this comfortably, and its no-signup-needed `onboarding@resend.dev` sender
-means no domain/DNS setup is needed to get started.
+this comfortably. Resend's own sandbox sender (`onboarding@resend.dev`)
+only delivers to the Resend account's own email, which is enough to
+smoke-test the flow but not for anyone else to sign in — sending to
+arbitrary emails needs a verified domain, which is why the domain
+`parlour.me.uk` was registered and verified in Resend (a handful of DNS
+records, added in Cloudflare's own DNS panel since that's also where the
+domain was bought).
 
 ## One-time setup (~20 minutes)
 
@@ -43,7 +48,10 @@ database inside it.
    and run it. This creates the two tables (`magic_links`, `users`).
 3. **Create a Resend account** at [resend.com](https://resend.com) (no
    card needed for the free tier). Dashboard → **API Keys** → **Create API
-   Key** → copy it.
+   Key** → copy it. Also add and verify a domain (**Domains** → **Add
+   Domain**) — the DNS records it asks for go in Cloudflare's DNS panel
+   for that domain; make sure any CNAME it gives you is set to **DNS
+   only** (grey cloud), not proxied.
 4. **Create the Worker.** Dashboard → **Workers & Pages** → **Create** →
    **Create Worker**. Name it `parlour-sync` (or anything), **Deploy** to
    scaffold it.
@@ -71,20 +79,15 @@ That's it — My Journey's Account card will start working from then on.
 
 ## Trying it out
 
-1. Open the app, go to **My Journey**, scroll to **Account**, enter your
-   email, **Send me a login link**.
-2. Check your inbox (and spam folder — `onboarding@resend.dev` is a
-   generic sender until a custom domain is added later) for an email from
-   "Parlour," click the link.
+1. Open the app, go to **My Journey**, scroll to **Account**, enter any
+   email address, **Send me a login link**.
+2. Check that inbox (and spam folder) for an email from "Parlour," click
+   the link.
 3. You should land back in the app signed in. **Back up now**, then
    (optionally, to prove it round-trips) clear the site's local storage
    and **Restore from cloud**.
 
-## Known limitation to revisit later
-
-Because sending real email from a Cloudflare Worker requires a paid plan
-without a verified sending domain, and Resend's free `onboarding@resend.dev`
-sender only works reliably for testing — if this ever needs to work for
-more than a couple of people, the next step is verifying a real domain
-with Resend (a few DNS records) so email deliverability doesn't depend on
-a shared, generic sending address.
+Since `parlour.me.uk` is verified in Resend, this now works for any real
+email address, not just the Resend account's own — as long as the
+Worker's `RESEND_FROM` has been updated to an address on that domain
+(e.g. `noreply@parlour.me.uk`) and re-deployed.

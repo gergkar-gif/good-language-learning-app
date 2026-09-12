@@ -23,7 +23,7 @@ const ALLOWED_ORIGINS = [
 const TOKEN_TTL_MS = 10 * 60 * 1000;        // magic-link token: 10 minutes
 const SESSION_TTL_SECONDS = 30 * 24 * 60 * 60; // session token: 30 days
 const MAX_LINKS_PER_HOUR = 3;
-const RESEND_FROM = 'Parlour <onboarding@resend.dev>';
+const RESEND_FROM = 'Parlour <noreply@parlour.me.uk>';
 
 function corsHeaders(origin) {
     if (!ALLOWED_ORIGINS.includes(origin)) return null;
