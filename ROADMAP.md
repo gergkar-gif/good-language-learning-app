@@ -206,6 +206,27 @@ this list directly rather than relying on a tool-specific todo list.
   in-app per CC BY-SA's attribution requirement. The SRS "listen to a
   card" idea below can reuse this same `audioButton`/`audioMap`
   mechanism when it's built, rather than inventing a second one.
+  **Follow-up fix, same day**: the sourced recordings are whole words
+  (no isolated-phoneme recordings exist publicly — most consonants
+  can't be cleanly recorded outside a syllable), so attaching them to
+  the *bare* letter/digraph cells meant clicking "a" or "gy" played a
+  whole unrelated word with no indication why. Fixed by moving every
+  real-audio mapping onto the word column only (where the word being
+  played is the word actually shown) and reverting the "All seven
+  pairs" table plus the bare digraph column back to plain TTS.
+- [ ] HU A1 isolated vowel/consonant recordings — now that the mismatch
+  above is fixed, the "All seven pairs" table and the bare digraph
+  column are back to TTS for exactly the reason the original request
+  cared about (synthetic voices are least reliable on these sounds).
+  **User will record these themselves**: true isolated single-sound
+  clips for all 14 vowel targets and the 10 consonant digraphs/letters
+  (no public source has these — every real recording found is a whole
+  word). Once recorded, wire them in the same way the word-column audio
+  already works — `table()`'s `audioMap` (cell text -> recording URL)
+  needs no further engine changes, just add the files under
+  `content/hu/audio/letters/` and reference them from the "All seven
+  pairs" table's `audioMap` (currently absent) and the consonant
+  table's digraph-column entries (currently absent, per the fix above).
 - [x] ES B1: the new-vocabulary screen doesn't appear — a lesson goes
   straight from review into grammar and exercises with no vocabulary
   step shown in between. **Investigated and fixed 2026-09-12**: not a
