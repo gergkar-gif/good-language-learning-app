@@ -82,7 +82,7 @@ this list directly rather than relying on a tool-specific todo list.
 
 ## Content & curriculum
 
-- [ ] Evaluate importing exercises from Todo-Claro (todo-claro.com), a
+- [x] Evaluate importing exercises from Todo-Claro (todo-claro.com), a
   Spanish-exercise site. Flagged 2026-09-11 — `imports/todo_claro_complete_catalogue_308-exercises.zip`
   is sitting in the repo already. **Checked what's actually in it**: it's
   a *catalogue inventory*, not scraped exercise content — `manifest.json`
@@ -99,12 +99,26 @@ this list directly rather than relying on a tool-specific todo list.
   alone isn't importable content; (2) it's scraped from a third-party
   site, so check todo-claro.com's terms/licensing before reproducing any
   of its content in this app, not just whether the data is structured
-  well enough to map. **Update 2026-09-11**: more batches have since
-  landed in `imports/` — `todo_claro_parlour_batch01-02.zip` and
-  `spanish_unicorn_parlour_batch01-05.zip` (a second source, not
-  discussed above) — not yet inspected; check whether these are actual
-  extracted exercise content (unlike the catalogue-only zip above) before
-  scoping the import work.
+  well enough to map. **Inspected 2026-09-12, decided not to proceed
+  this route**: two more source zips landed
+  (`todo_claro_parlour_batch01-02.zip`, `spanish_unicorn_parlour_batch01-05.zip`,
+  a second site) — these ARE actual per-exercise extractions (88 records
+  total), not catalogue-only, but quality is a real mixed bag despite
+  both manifests claiming "Parlour-style" fields: roughly half are
+  genuinely usable (real sentences, real answers, e.g. a 14-item
+  present-tense conjugation set), the rest are incomplete stubs (a
+  "fill-blank" with no actual sentence, just a prose context + answer; a
+  multiple-choice with no distractor options at all, just a rule
+  summary; a "reading-comprehension" that's one line of description with
+  no text or questions). None are schema-valid as-is, and several use
+  invented type names (`synonym-matching`, `crossword`,
+  `sentence-transformation`, `number-conversion`, etc.) that don't exist
+  in Parlour's real exercise schema. Copyright also still unresolved —
+  Todo-Claro's own manifest says wording is "paraphrased" but mechanics/
+  answers are retained from the source, which isn't a license clearance.
+  **User's call: not worth it via this route ("clearly chatgpt can't be
+  trusted with this") — will source new content normally instead.** The
+  `imports/*.zip` files are left in the repo, untracked, not deleted.
 - [x] Exercises must stay modular enough that new content can be added
   to an existing lesson/unit retroactively, without special-casing.
   Requested 2026-09-11, in the context of the Todo-Claro/Spanish Unicorn
