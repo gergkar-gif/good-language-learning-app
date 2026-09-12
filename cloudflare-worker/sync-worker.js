@@ -181,6 +181,10 @@ async function handleRequestLink(request, env, cors) {
     try {
         await sendMagicLinkEmail(email, link, env);
     } catch (error) {
+        // Logged so the real Resend failure reason is visible in the
+        // Worker's Logs tab — the client only ever sees the generic
+        // message below, never Resend's raw response.
+        console.error('sendMagicLinkEmail failed:', error.message);
         return json({ error: 'Could not send email' }, 502, cors);
     }
 
