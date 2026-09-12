@@ -220,6 +220,12 @@ async function initialiseApp() {
     if (typeof updateReaderWordColors === 'function') {
         updateReaderWordColors();
     }
+
+    // A one-time, friendly invite to back up progress — after everything
+    // else has rendered, so it never delays or competes with the actual
+    // app content. No-ops on its own if already signed in or already
+    // shown once on this device.
+    if (typeof Sync !== 'undefined') Sync.maybeShowFirstVisitPrompt();
 }
 
 document.addEventListener('DOMContentLoaded', initialiseApp);

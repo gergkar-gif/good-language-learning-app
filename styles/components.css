@@ -2325,6 +2325,19 @@
   cursor: pointer;
 }
 
+/* ---- First-visit sync prompt (engine/sync.js) — reuses .wp-overlay/
+   .wp-sheet and the .jr-account-* rules above for its body ---- */
+.sync-prompt-sheet .jr-account-logout {
+  display: block;
+  margin-top: 14px;
+}
+
+.sync-prompt-title {
+  font-size: 20px;
+  color: var(--text);
+  margin: 0;
+}
+
 .jr-tick {
   flex: 0 0 20px;
   height: 20px;

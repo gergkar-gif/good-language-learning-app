@@ -27,6 +27,12 @@ const Sync = (function () {
 
     const TOKEN_STORAGE_KEY = 'syncToken';
     const EMAIL_STORAGE_KEY = 'syncEmail';
+    const FIRST_VISIT_PROMPT_KEY = 'syncPromptSeen';
+
+    function esc(value) {
+        return (typeof UI !== 'undefined' && UI.escape)
+            ? UI.escape(value) : String(value == null ? '' : value);
+    }
 
     // Per-course stores worth backing up — everything that represents real
     // learner progress. Deliberately excludes device/UI preferences
@@ -66,6 +72,111 @@ const Sync = (function () {
             localStorage.removeItem(TOKEN_STORAGE_KEY);
             localStorage.removeItem(EMAIL_STORAGE_KEY);
         } catch (error) { /* private browsing — nothing to clear */ }
+    }
+
+    // ----------------------------------------
+    // FIRST-VISIT PROMPT
+    // ----------------------------------------
+    // A one-time, friendly invite to back up progress — shown once ever
+    // per device, whether the learner signs up or dismisses it. Reachable
+    // afterward via My Journey's own Account card either way, so
+    // dismissing here loses nothing, just stops the one-time ask from
+    // repeating. Same wp-overlay/wp-sheet body-level pattern used
+    // elsewhere (e.g. engine/decks.js's add-to-deck picker).
+    function ensurePromptHost() {
+        let el = document.getElementById('sync-first-visit-prompt');
+        if (el) return el;
+        el = document.createElement('div');
+        el.id = 'sync-first-visit-prompt';
+        document.body.appendChild(el);
+        return el;
+    }
+
+    function closeFirstVisitPrompt() {
+        const el = document.getElementById('sync-first-visit-prompt');
+        if (el) el.innerHTML = '';
+    }
+
+    function _promptFormHtml() {
+        return `
+            <div class="wp-overlay" id="sync-prompt-overlay">
+                <div class="wp-sheet sync-prompt-sheet">
+                    <div class="wp-header">
+                        <h2 class="sync-prompt-title">Keep your progress safe</h2>
+                        <button class="wp-close" data-sync-prompt-close="1" aria-label="Close">×</button>
+                    </div>
+                    <p class="jr-account-blurb">Enter your email and we'll send you a link —
+                        no password, and you won't need to log in again.</p>
+                    <div class="jr-account-login">
+                        <input type="email" id="sync-prompt-email-input" class="dk-editor-input"
+                            placeholder="you@example.com" maxlength="254">
+                        <button class="dk-secondary" data-sync-prompt-send="1">Send me a link</button>
+                    </div>
+                    <p class="jr-account-status" id="sync-prompt-status"></p>
+                    <button class="jr-account-logout" data-sync-prompt-close="1">Not now</button>
+                </div>
+            </div>
+        `;
+    }
+
+    function _promptConfirmationHtml(sentEmail) {
+        return `
+            <div class="wp-overlay" id="sync-prompt-overlay">
+                <div class="wp-sheet sync-prompt-sheet">
+                    <div class="wp-header">
+                        <h2 class="sync-prompt-title">Check your email</h2>
+                        <button class="wp-close" data-sync-prompt-close="1" aria-label="Close">×</button>
+                    </div>
+                    <p class="jr-account-blurb">We sent a link to ${esc(sentEmail)}. Tap it and
+                        you're all set — no password, no need to log in again.</p>
+                    <button class="dk-secondary" data-sync-prompt-close="1">Got it</button>
+                </div>
+            </div>
+        `;
+    }
+
+    function maybeShowFirstVisitPrompt() {
+        if (isLoggedIn()) return;
+        try {
+            if (localStorage.getItem(FIRST_VISIT_PROMPT_KEY)) return;
+            localStorage.setItem(FIRST_VISIT_PROMPT_KEY, '1');
+        } catch (error) {
+            return; // private browsing with storage disabled — nothing to persist the ask against
+        }
+
+        const host = ensurePromptHost();
+        host.innerHTML = _promptFormHtml();
+
+        host.querySelectorAll('[data-sync-prompt-close]').forEach(el => {
+            el.addEventListener('click', closeFirstVisitPrompt);
+        });
+        const overlay = document.getElementById('sync-prompt-overlay');
+        if (overlay) overlay.addEventListener('click', e => { if (e.target === overlay) closeFirstVisitPrompt(); });
+
+        const sendBtn = host.querySelector('[data-sync-prompt-send]');
+        if (sendBtn) {
+            sendBtn.addEventListener('click', () => {
+                const input = host.querySelector('#sync-prompt-email-input');
+                const statusEl = host.querySelector('#sync-prompt-status');
+                const value = input ? input.value.trim() : '';
+                if (!value) {
+                    if (statusEl) statusEl.textContent = 'Enter an email first.';
+                    return;
+                }
+                if (statusEl) statusEl.textContent = 'Sending…';
+                requestLink(value)
+                    .then(() => { host.innerHTML = _promptConfirmationHtml(value); wireClose(); })
+                    .catch(error => { if (statusEl) statusEl.textContent = error.message || 'Something went wrong.'; });
+            });
+        }
+
+        function wireClose() {
+            host.querySelectorAll('[data-sync-prompt-close]').forEach(el => {
+                el.addEventListener('click', closeFirstVisitPrompt);
+            });
+            const ov = document.getElementById('sync-prompt-overlay');
+            if (ov) ov.addEventListener('click', e => { if (e.target === ov) closeFirstVisitPrompt(); });
+        }
     }
 
     async function requestLink(userEmail) {
@@ -209,6 +320,7 @@ const Sync = (function () {
 
     return {
         isLoggedIn, email, logout, requestLink, completeVerify,
-        gatherSnapshot, applySnapshot, backup, restore, status
+        gatherSnapshot, applySnapshot, backup, restore, status,
+        maybeShowFirstVisitPrompt
     };
 })();
