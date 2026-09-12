@@ -734,17 +734,22 @@ this list directly rather than relying on a tool-specific todo list.
 > to draw on. Don't strip a metadata source just because the feature
 > reading it today is minimal.
 
-- [ ] SRS review cards should be listenable — a way to hear how the word
+- [x] SRS review cards should be listenable — a way to hear how the word
   a learner is being tested on is actually pronounced. Requested
-  2026-09-11. Confirmed gap: `engine/srs.js`'s `renderCard()` sets the
-  front/back text directly and has no audio affordance at all, unlike
-  Decks' own word lists and the Library reader, which already show a
-  `Speech.button()` next to a word. Likely the same shared
-  `Speech.button()`/`Speech.speak()` mechanism, added to the review
-  card screen — straightforward for Spanish (existing TTS voice); for
-  Hungarian this should share whatever comes out of the "First Sounds,
-  First Words" real-audio sourcing idea above, if that ends up
-  attaching recorded audio per word rather than relying on `hu-HU` TTS.
+  2026-09-11, **built 2026-09-12**: exactly the anticipated fix —
+  `Speech.button()` (the same mechanism Decks' word lists and the
+  Library popup already use, carrying its own delegated click listener)
+  dropped into whichever of `#review-front`/`#review-back` is currently
+  showing the Spanish word. Works for both review directions: when
+  English shows first, the button sits on the back side, which already
+  stays hidden until reveal — so it can't leak the answer before a
+  self-graded/typed attempt. Sized to 18px to match the card's large
+  28px word. Still TTS-based for both languages (`es-MX`/`hu-HU`
+  voices) — will automatically pick up real recorded Hungarian audio
+  if/when the "First Sounds, First Words" audio-sourcing idea above
+  ever attaches per-word recordings instead of `hu-HU` TTS, since it
+  goes through this same `Speech.speak()` call. Verified live in both
+  directions.
 
 - [x] Spanish decks: some verb definitions are overly verbose — needs a
   pass to tighten them. **Fixed 2026-08-27**: `short_gloss()` in
