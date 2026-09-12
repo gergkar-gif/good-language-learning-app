@@ -236,7 +236,12 @@ const GrammarRunner = (function () {
         input.addEventListener('keydown', e => { if (e.key === 'Enter') _doCheck(); });
 
         _onCheck(() => {
-            const ok = _normalise(input.value) === _normalise(ex.answer);
+            // ex.acceptable carries the full list for a multi-answer
+            // fill-blank; ex.answer stays the single displayed/revealed
+            // value either way — same split engine/lessons.js's own
+            // stepState.acceptable/stepState.answer already uses.
+            const acceptable = ex.acceptable || [ex.answer];
+            const ok = acceptable.some(a => _normalise(input.value) === _normalise(a));
             input.classList.toggle('gd-correct', ok);
             input.classList.toggle('gd-wrong', !ok);
             if (!ok) input.value = ex.answer;

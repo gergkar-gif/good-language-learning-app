@@ -112,7 +112,18 @@ const GrammarDriller = (function () {
             case 'dialogue-complete':
                 return { kind: 'dialogue-complete', prompt: ex.prompt, options: ex.options, correct: ex.correct };
             case 'fill-blank':
-                return { kind: 'fill-blank', sentence: ex.sentence, answer: ex.answer };
+                // A handful of fill-blanks accept more than one conjugation
+                // (answers[] instead of a single answer) — engine/lessons.js's
+                // own stepState.acceptable already handles this for a normal
+                // lesson; this driller reads the same content files but never
+                // picked up the same fallback, so answer came through
+                // undefined for every one of these and could never be solved.
+                return {
+                    kind: 'fill-blank',
+                    sentence: ex.sentence,
+                    answer: ex.answer || (ex.answers && ex.answers[0]),
+                    acceptable: ex.answers || [ex.answer]
+                };
             case 'sentence-builder':
                 return { kind: 'sentence-builder', tiles: ex.tiles, solution: ex.solution, english: ex.english };
             case 'sentence-order':
