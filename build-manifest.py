@@ -484,6 +484,13 @@ LANG_UNIT_TABLES = {
              ["b1-arpadhaz-01", "b1-arpadhaz-02", "b1-arpadhaz-03",
               "b1-arpadhaz-04", "b1-arpadhaz-05", "b1-arpadhaz-consolidation"],
              "citizenship"),
+            ("Work & Professional Life",
+             ["b1-06-01", "b1-06-02", "b1-06-03", "b1-06-04", "b1-06-05", "b1-06-consolidation"],
+             "core"),
+            ("The Mongol Invasion (1241–42)",
+             ["b1-tatarjaras-01", "b1-tatarjaras-02", "b1-tatarjaras-03",
+              "b1-tatarjaras-04", "b1-tatarjaras-05", "b1-tatarjaras-consolidation"],
+             "citizenship"),
         ],
     },
 }
