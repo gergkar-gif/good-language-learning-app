@@ -146,10 +146,38 @@ const Speech = (function () {
         return `<button class="speak-btn" data-speak="${escaped}" type="button" aria-label="${label || 'Listen'}">${mark}</button>`;
     }
 
+    // A handful of sounds (so far: Hungarian's letter/digraph pronunciation
+    // demonstrations) are real human recordings rather than TTS — synthetic
+    // voices are least reliable on exactly the sounds a learner most needs
+    // to hear right the first time. Same button markup as button() above so
+    // it's visually identical; the only difference is what a click does.
+    // Unlike button(), this never depends on a TTS voice being installed.
+    let currentAudio = null;
+    function playFile(url) {
+        if (currentAudio) currentAudio.pause();
+        currentAudio = new Audio(url);
+        currentAudio.play().catch(error => console.warn('Speech: failed to play', url, error));
+    }
+
+    function audioButton(url, label) {
+        if (!url) return '';
+        const escaped = String(url).replace(/&/g, '&amp;').replace(/"/g, '&quot;')
+            .replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        const mark = (typeof Art !== 'undefined') ? Art.icon('listening') : '';
+        return `<button class="speak-btn" data-audio-src="${escaped}" type="button" aria-label="${label || 'Listen'}">${mark}</button>`;
+    }
+
     // One delegated listener rather than a handler per button: lesson steps
     // re-render constantly, and rebinding on every render is how listeners
     // end up doubled.
     document.addEventListener('click', event => {
+        const audioBtn = event.target.closest && event.target.closest('[data-audio-src]');
+        if (audioBtn) {
+            event.preventDefault();
+            event.stopPropagation();
+            playFile(audioBtn.getAttribute('data-audio-src'));
+            return;
+        }
         const btn = event.target.closest && event.target.closest('[data-speak]');
         if (!btn) return;
         event.preventDefault();
@@ -159,5 +187,5 @@ const Speech = (function () {
 
     init();
 
-    return { speak, button, available, sayable };
+    return { speak, button, audioButton, available, sayable };
 })();

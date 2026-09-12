@@ -377,6 +377,14 @@ function say(text) {
     return (typeof Speech !== 'undefined') ? Speech.button(text) : '';
 }
 
+// A real recording beats TTS whenever content supplies one for this exact
+// cell value — see table()'s audioMap. Falls back to the normal TTS button
+// when there's no recording for this specific text.
+function sayOrPlay(text, audioUrl) {
+    if (audioUrl && typeof Speech !== 'undefined') return Speech.audioButton(audioUrl, text);
+    return say(text);
+}
+
 function shuffled(list) {
     const copy = list.slice();
     for (let i = copy.length - 1; i > 0; i--) {
@@ -675,17 +683,21 @@ const stepRenderers = {
     // row 1 the actual word demonstrating it — needs row 1 audible too, but
     // "is this a letter" isn't reliably detectable from the string alone, so
     // content opts in explicitly with `"bothAudible": true` on the section
-    // rather than guessing.
+    // rather than guessing. `audioMap` (optional) maps an exact cell string
+    // to a real recording's URL — content that can source one (so far just
+    // Hungarian's letter-sound tables) gets a human voice instead of TTS,
+    // cell by cell, with TTS as the fallback for any cell not in the map.
     table(step) {
         const PRONOUN_RE = /^(yo|tú|usted|él|ella|nosotros|nosotras|vosotros|vosotras|ustedes|ellos|ellas)(\s*\/\s*(yo|tú|usted|él|ella|nosotros|nosotras|vosotros|vosotras|ustedes|ellos|ellas))*$/i;
+        const audioMap = step.audioMap || {};
         return `
             <table class="lsn-table">
                 ${(step.rows || []).map(row => {
                     const isConjugation = step.bothAudible || PRONOUN_RE.test((row[0] || '').trim());
                     return `
                     <tr>
-                        <td><strong>${esc(row[0])}</strong>${say(row[0])}</td>
-                        <td>${esc(row[1])}${isConjugation ? say(row[1]) : ''}</td>
+                        <td><strong>${esc(row[0])}</strong>${sayOrPlay(row[0], audioMap[row[0]])}</td>
+                        <td>${esc(row[1])}${isConjugation ? sayOrPlay(row[1], audioMap[row[1]]) : ''}</td>
                     </tr>
                 `;
                 }).join('')}

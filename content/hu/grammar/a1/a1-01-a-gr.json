@@ -11,6 +11,21 @@
       "type": "table",
       "title": "All seven pairs",
       "bothAudible": true,
+      "audioMap": {
+        "a": "content/hu/audio/letters/vowel-a-short.mp3",
+        "á": "content/hu/audio/letters/vowel-a-long.mp3",
+        "e": "content/hu/audio/letters/vowel-e-short.mp3",
+        "é": "content/hu/audio/letters/vowel-e-long.mp3",
+        "í": "content/hu/audio/letters/vowel-i-long.mp3",
+        "o": "content/hu/audio/letters/vowel-o-short.mp3",
+        "ó": "content/hu/audio/letters/vowel-o-long.mp3",
+        "ö": "content/hu/audio/letters/vowel-oumlaut-short.mp3",
+        "ő": "content/hu/audio/letters/vowel-oumlaut-long.mp3",
+        "u": "content/hu/audio/letters/vowel-u-short.mp3",
+        "ú": "content/hu/audio/letters/vowel-u-long.mp3",
+        "ü": "content/hu/audio/letters/vowel-uumlaut-short.mp3",
+        "ű": "content/hu/audio/letters/vowel-uumlaut-long.mp3"
+      },
       "rows": [
         ["a", "á"],
         ["e", "é"],
@@ -25,6 +40,17 @@
       "type": "table",
       "title": "Sound examples",
       "bothAudible": true,
+      "audioMap": {
+        "á": "content/hu/audio/letters/vowel-a-long.mp3",
+        "é": "content/hu/audio/letters/vowel-e-long.mp3",
+        "í": "content/hu/audio/letters/vowel-i-long.mp3",
+        "ó": "content/hu/audio/letters/vowel-o-long.mp3",
+        "ő": "content/hu/audio/letters/vowel-oumlaut-long.mp3",
+        "ú": "content/hu/audio/letters/vowel-u-long.mp3",
+        "ű": "content/hu/audio/letters/vowel-uumlaut-long.mp3",
+        "kút": "content/hu/audio/letters/vowel-u-long.mp3",
+        "tűz": "content/hu/audio/letters/vowel-uumlaut-long.mp3"
+      },
       "rows": [
         ["á", "ház"],
         ["é", "kávé"],
@@ -38,6 +64,10 @@
     {
       "type": "tip",
       "content": "Those accent marks aren't decoration — *kor* (\"age\") and *kór* (\"illness\") are different words. Hungarians hear vowel length the way English speakers hear the difference between \"bit\" and \"beat.\" Treat every *á*/*é*/*í*/*ó*/*ő*/*ú*/*ű* as its own letter, not a typo waiting to be ignored."
+    },
+    {
+      "type": "tip",
+      "content": "Most of the sounds above are real human recordings, not synthetic speech — sourced from Wikimedia Commons (recorded by contributor Panda10, licensed CC BY-SA)."
     }
   ]
 }

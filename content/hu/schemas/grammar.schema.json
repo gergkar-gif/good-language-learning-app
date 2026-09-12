@@ -66,6 +66,11 @@
           "type": "boolean",
           "description": "Gives both columns a listen button instead of just the first, for letter-to-word or pair-to-pair phonetic tables where both sides are worth hearing."
         },
+        "audioMap": {
+          "type": "object",
+          "description": "Optional: exact cell text -> a real recording's URL, for cells where content has sourced actual human audio instead of relying on TTS. A cell whose text isn't a key here still gets the normal TTS listen button (subject to bothAudible/pronoun rules) - this only ever upgrades specific cells, never removes a button.",
+          "additionalProperties": { "type": "string", "minLength": 1 }
+        },
         "rows": {
           "type": "array",
           "minItems": 1,
