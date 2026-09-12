@@ -19,6 +19,7 @@ const LABEL = 'bug-report';
 // origins here (e.g. a custom domain) if the site ever moves.
 const ALLOWED_ORIGINS = [
     'https://gergkar-gif.github.io',
+    'https://parlour.me.uk',
     'http://localhost:8131'
 ];
 

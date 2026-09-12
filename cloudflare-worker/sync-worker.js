@@ -17,6 +17,7 @@
 
 const ALLOWED_ORIGINS = [
     'https://gergkar-gif.github.io',
+    'https://parlour.me.uk',
     'http://localhost:8131'
 ];
 
@@ -176,7 +177,7 @@ async function handleRequestLink(request, env, cors) {
         'INSERT INTO magic_links (token_hash, email, expires_at, used) VALUES (?, ?, ?, 0)'
     ).bind(tokenHash, email, expiresAt).run();
 
-    const link = 'https://gergkar-gif.github.io/good-language-learning-app/?verify=' + encodeURIComponent(rawToken);
+    const link = 'https://parlour.me.uk/?verify=' + encodeURIComponent(rawToken);
 
     try {
         await sendMagicLinkEmail(email, link, env);
