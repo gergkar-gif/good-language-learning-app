@@ -1622,6 +1622,14 @@
   line-height: 1.2;
 }
 
+/* Sized up to match the card's large word, same scaling .wp-speak already
+   does for the Library word-popup's headword. */
+.review-card-word .speak-btn,
+.review-card-translation .speak-btn {
+  font-size: 18px;
+  padding-left: 8px;
+}
+
 .review-card-back {
   display: none;
   width: 100%;

@@ -662,8 +662,22 @@ function renderCard() {
     // isn't a noun with a known simple gender.
     const spanishDisplay = Lexicon.withArticle(currentReviewCard.spanish);
     const englishFirst = reviewDirection === 'en-es';
-    document.getElementById('review-front').textContent = englishFirst ? displayEnglish : spanishDisplay;
-    document.getElementById('review-back').textContent = englishFirst ? spanishDisplay : displayEnglish;
+
+    // Listenable, same Speech.button()/data-speak mechanism Decks' own word
+    // lists and the Library popup already use — no separate click wiring
+    // needed, the button carries its own delegated listener. Attached to
+    // whichever side is actually showing the Spanish word: when English
+    // shows first, that's #review-back, which stays hidden (display:none on
+    // #review-answer) until the learner reveals it anyway, so the audio
+    // can't leak the answer before a typed/self-graded attempt.
+    const spanishHtml = esc(spanishDisplay) + (typeof Speech !== 'undefined' ? Speech.button(currentReviewCard.spanish) : '');
+    if (englishFirst) {
+        document.getElementById('review-front').textContent = displayEnglish;
+        document.getElementById('review-back').innerHTML = spanishHtml;
+    } else {
+        document.getElementById('review-front').innerHTML = spanishHtml;
+        document.getElementById('review-back').textContent = displayEnglish;
+    }
     document.getElementById('review-context').textContent = displayType ? `(${displayType})` : '';
     reviewExpectedSpanish = currentReviewCard.spanish;
     reviewExpectedEnglish = displayEnglish;
