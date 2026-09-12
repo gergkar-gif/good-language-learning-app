@@ -186,20 +186,26 @@ this list directly rather than relying on a tool-specific todo list.
   built; whether to also trim the already-built 5 units' word counts
   down to the new limit is undecided — raise it before continuing this
   track.
-- [ ] HU A1 "First Sounds, First Words" (`lesson.a1.01`, "Learning to
+- [x] HU A1 "First Sounds, First Words" (`lesson.a1.01`, "Learning to
   Read Hungarian") — the vowel/consonant pronunciation demonstrations
-  currently rely on the same browser TTS voice (`hu-HU`, via
-  `engine/speech.js`) as every other Hungarian audio in the app.
-  Requested 2026-09-11: source real human-recorded audio for
-  Hungarian's vowels/consonants specifically for this lesson, since
-  the short/long vowel pairs (a/á, e/é, ö/ő, ü/ű) and digraphs
-  (gy/ny/ty/sz/zs/cs) are exactly the sounds a synthetic voice is
-  least reliable on and a learner most needs to hear correctly the
-  first time. Check whether a usable public source (recordings meant
-  for pronunciation teaching, not just any Hungarian audio) exists
-  first; if not, the user has offered to record the sound set
-  themselves. Related: the SRS "listen to a card" idea below would
-  reuse whatever audio-attachment mechanism this ends up building.
+  relied on the same browser TTS voice (`hu-HU`) as every other
+  Hungarian audio in the app. Requested 2026-09-11, **built
+  2026-09-12**: a usable public source existed after all — Wikimedia
+  Commons' single-speaker recordings from the "Hungarian phonology"
+  Wikipedia article (CC BY-SA, contributor Panda10) — so the user's
+  own recording offer wasn't needed. Covers 13 of 14 vowel targets
+  (all but short *i*, no recording exists for it) and all 10 consonant
+  digraphs, including *ly* correctly reusing the */j/* recording since
+  that's what it's actually pronounced as today. `engine/speech.js`
+  gained `audioButton()`/`playFile()` alongside the existing TTS
+  `button()`; `table()`'s new optional `audioMap` field (cell text ->
+  recording URL) upgrades specific cells to real audio, cell by cell,
+  with every other cell keeping its normal TTS button exactly as
+  before — additive and backward-compatible, verified live that
+  Spanish and other Hungarian grammar tables are unaffected. Credited
+  in-app per CC BY-SA's attribution requirement. The SRS "listen to a
+  card" idea below can reuse this same `audioButton`/`audioMap`
+  mechanism when it's built, rather than inventing a second one.
 - [x] ES B1: the new-vocabulary screen doesn't appear — a lesson goes
   straight from review into grammar and exercises with no vocabulary
   step shown in between. **Investigated and fixed 2026-09-12**: not a
