@@ -97,10 +97,12 @@ const TranslationRunner = (function () {
 
         const exercise = options.exercise;
 
+        const placeholder = exercise.placeholder || 'Type your translation';
+
         _container.innerHTML = `
             <p class="td-source-label">${_escapeHtml(exercise.promptLabel)}</p>
             <p class="td-source">${_escapeHtml(exercise.prompt)}</p>
-            <input class="td-input" type="text" placeholder="Type your translation"
+            <input class="td-input" type="text" placeholder="${_escapeHtml(placeholder)}"
                 autocomplete="off" autocapitalize="off" spellcheck="false">
             ${typeof UI !== 'undefined' && UI.diacriticsBarHtml ? UI.diacriticsBarHtml('.td-input') : ''}
             <div class="td-model-wrap"></div>

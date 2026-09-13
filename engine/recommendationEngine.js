@@ -318,17 +318,18 @@ const RecommendationEngine = (function () {
             });
         }
 
-        // Candidate 8: Sentence Translation (intermediate or >= 10 lessons)
+        // Candidate 8: Fast Translation (intermediate or >= 10 lessons)
         if (completedCount >= 10 || currentLevel !== 'A1') {
             const isWeak = weakDrillerIds.has('translation');
+            const targetLang = (typeof Lang !== 'undefined') ? Lang.name() : 'the target language';
             candidates.push({
                 drillerId: 'translation',
-                title: 'Sentence Translation',
-                buttonLabel: 'Translation (5 sentences)',
-                blurb: "Translate 5 real-world sentences to connect grammar and vocabulary.",
+                title: 'Fast Translation',
+                buttonLabel: 'Fast Translation (5 sentences)',
+                blurb: `Translate 5 rapid sentences, alternating between English and ${targetLang}.`,
                 reason: isWeak ? 'weak' : 'variety',
                 priority: isWeak ? 88 : 35,
-                options: { autoStart: true, count: 5, level: currentLevel.toLowerCase() }
+                options: { autoStart: true, count: 5, level: currentLevel.toLowerCase(), direction: 'alternate' }
             });
         }
 

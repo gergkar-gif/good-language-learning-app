@@ -16,7 +16,7 @@ const TranslationDriller = (function () {
 
     const PHASE = { SETTINGS: 1, SESSION: 2, RESULTS: 3 };
     const MODE = { COUNT: 'count', TIMED: 'timed' };
-    const DIRECTION = { ES_EN: 'es-en', EN_ES: 'en-es', MIXED: 'mixed' };
+    const DIRECTION = { ALTERNATE: 'alternate', EN_ES: 'en-es', ES_EN: 'es-en', MIXED: 'mixed' };
     // Only "core" is a fixed id — a dual-track level's second track is
     // whatever scripts/build_translation_index.py labelled it for this
     // course (ES B1: "latam", HU B1: "citizenship"), read straight off the
@@ -34,7 +34,7 @@ const TranslationDriller = (function () {
     let _pairs = null; // content/<lang>/indexes/translation-index.json -> pairs[]
 
     let _mode = MODE.COUNT;
-    let _direction = DIRECTION.ES_EN;
+    let _direction = DIRECTION.ALTERNATE;
     let _level = 'all';
     let _topic = 'all';
     // Only meaningful where a level actually has more than one track (today,
@@ -85,7 +85,9 @@ const TranslationDriller = (function () {
     }
 
     function _byLevel(level) {
-        return level === 'all' ? _pairs : _pairs.filter(p => p.level === level);
+        if (!level || level === 'all') return _pairs;
+        const target = level.toUpperCase();
+        return _pairs.filter(p => p.level && p.level.toUpperCase() === target);
     }
 
     // Any pair with no `track` is single-track content and always counts as
@@ -134,20 +136,38 @@ const TranslationDriller = (function () {
     }
 
     // ---- Normalisation: a pair + direction -> TranslationRunner's shape ----
-    function _normalisePair(pair) {
-        const dir = _direction === DIRECTION.MIXED
-            ? (Math.random() < 0.5 ? DIRECTION.ES_EN : DIRECTION.EN_ES)
-            : _direction;
+    function _normalisePair(pair, index) {
+        let dir = _direction;
+        if (dir === DIRECTION.MIXED) {
+            dir = Math.random() < 0.5 ? DIRECTION.EN_ES : DIRECTION.ES_EN;
+        } else if (dir === DIRECTION.ALTERNATE) {
+            // Alternates: even index -> English to Target Language; odd index -> Target Language to English
+            dir = (typeof index === 'number' && index % 2 === 1) ? DIRECTION.ES_EN : DIRECTION.EN_ES;
+        }
+
+        const langName = (typeof Lang !== 'undefined') ? Lang.name() : 'Target Language';
 
         return dir === DIRECTION.ES_EN
-            ? { prompt: pair.spanish, model: pair.english, promptLabel: Lang.name() }
-            : { prompt: pair.english, model: pair.spanish, promptLabel: 'English' };
+            ? {
+                prompt: pair.spanish,
+                model: pair.english,
+                promptLabel: `${langName} → English`,
+                direction: 'es-en',
+                placeholder: 'Translate to English…'
+            }
+            : {
+                prompt: pair.english,
+                model: pair.spanish,
+                promptLabel: `English → ${langName}`,
+                direction: 'en-es',
+                placeholder: `Translate to ${langName}…`
+            };
     }
 
     function _takeN(pool, n) {
         const out = [];
         while (out.length < n) out.push(..._shuffled(pool));
-        return out.slice(0, n).map(_normalisePair);
+        return out.slice(0, n).map((pair, index) => _normalisePair(pair, index));
     }
 
     // ================================================================
@@ -180,9 +200,10 @@ const TranslationDriller = (function () {
                 <div class="gd-setting">
                     <label for="td-direction">Direction</label>
                     <select id="td-direction" class="vb-select">
-                        <option value="${DIRECTION.ES_EN}">${Lang.name()} → English</option>
+                        <option value="${DIRECTION.ALTERNATE}">Alternating (English ↔ ${Lang.name()})</option>
                         <option value="${DIRECTION.EN_ES}">English → ${Lang.name()}</option>
-                        <option value="${DIRECTION.MIXED}">Mixed</option>
+                        <option value="${DIRECTION.ES_EN}">${Lang.name()} → English</option>
+                        <option value="${DIRECTION.MIXED}">Mixed (Random)</option>
                     </select>
                 </div>
 
@@ -298,7 +319,7 @@ const TranslationDriller = (function () {
         if (_mode === MODE.COUNT) {
             _queue = _takeN(pool, _questionCount);
         } else {
-            _queue = _shuffled(pool).map(_normalisePair);
+            _queue = _shuffled(pool).map((pair, index) => _normalisePair(pair, index));
             _timeRemaining = _timerMinutes * 60;
             _endTime = Date.now() + _timeRemaining * 1000;
             _timerInterval = setInterval(_tick, 250);
@@ -368,7 +389,9 @@ const TranslationDriller = (function () {
 
         _queueIndex++;
         if (_queueIndex >= _queue.length) {
-            _queue = _shuffled(_queue);
+            const pool = _poolFor(_level, _topic, _track);
+            const offset = _seen;
+            _queue = _shuffled(pool).map((pair, index) => _normalisePair(pair, offset + index));
             _queueIndex = 0;
         }
         _renderSession();
@@ -453,8 +476,8 @@ const TranslationDriller = (function () {
                     _mode = MODE.COUNT;
                     _questionCount = options.count;
                 }
-                if (options.level) _selectedLevel = options.level;
-                if (options.direction) _selectedDirection = options.direction;
+                if (options.level) _level = options.level;
+                _direction = options.direction || DIRECTION.ALTERNATE;
                 _startSession();
             } else {
                 _renderSettings();

@@ -240,7 +240,8 @@ async function initialiseApp() {
         const duration = parseInt(searchParams.get('duration') || '60', 10);
         const mode = searchParams.get('mode') || (minigameParam === 'verbs' ? 'speed' : undefined);
         const skill = searchParams.get('skill') || undefined;
-        Workshop.open(minigameParam, { autoStart: true, count, duration, mode, skill });
+        const direction = searchParams.get('direction') || (minigameParam === 'translation' ? 'alternate' : undefined);
+        Workshop.open(minigameParam, { autoStart: true, count, duration, mode, skill, direction });
     }
 }
 
