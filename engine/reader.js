@@ -54,6 +54,20 @@ function _ensureWordPopup() {
         </div>
     `;
     document.body.appendChild(popup);
+
+    // Backdrop click dismisses popup
+    popup.querySelector('#popup-overlay').addEventListener('click', e => {
+        if (e.target.id === 'popup-overlay') closePopup();
+    });
+
+    // Escape key dismisses popup
+    window.addEventListener('keydown', e => {
+        if (e.key === 'Escape') {
+            const p = document.getElementById('word-popup');
+            if (p && p.style.display === 'block') closePopup();
+        }
+    });
+
     return popup;
 }
 
@@ -453,6 +467,67 @@ window.Reader = {
         return this.stories;
     },
 
+    // Typography & font-size scaling controls (85% to 150%)
+    FONT_SCALES: [85, 100, 115, 130, 150],
+
+    getFontScale() {
+        try {
+            const val = parseInt(localStorage.getItem('parlour_reader_font_scale'), 10);
+            if (this.FONT_SCALES.includes(val)) return val;
+        } catch (e) {}
+        return 100;
+    },
+
+    setFontScale(scale) {
+        try { localStorage.setItem('parlour_reader_font_scale', String(scale)); } catch (e) {}
+        this.applyFontScale(scale);
+    },
+
+    applyFontScale(scale, container) {
+        const root = container || document.getElementById('reader-content');
+        if (!root) return;
+        const body = root.querySelector('.story-body');
+        if (body) {
+            body.style.fontSize = (scale / 100 * 1.125) + 'rem';
+            body.style.lineHeight = scale >= 130 ? '1.75' : '1.6';
+        }
+        const indicator = root.querySelector('#reader-font-indicator');
+        if (indicator) indicator.textContent = scale + '%';
+        const downBtn = root.querySelector('#reader-font-down');
+        const upBtn = root.querySelector('#reader-font-up');
+        if (downBtn) downBtn.disabled = scale <= this.FONT_SCALES[0];
+        if (upBtn) upBtn.disabled = scale >= this.FONT_SCALES[this.FONT_SCALES.length - 1];
+    },
+
+    stepFontScale(direction) {
+        const current = this.getFontScale();
+        const idx = this.FONT_SCALES.indexOf(current);
+        const nextIdx = idx + direction;
+        if (nextIdx >= 0 && nextIdx < this.FONT_SCALES.length) {
+            this.setFontScale(this.FONT_SCALES[nextIdx]);
+        }
+    },
+
+    _wireScrollProgress() {
+        const onScroll = () => {
+            const bar = document.getElementById('story-scroll-bar');
+            const storyBody = document.querySelector('.story-body');
+            if (!bar || !storyBody) return;
+            const rect = storyBody.getBoundingClientRect();
+            const total = rect.height;
+            const scrolled = Math.max(0, -rect.top);
+            const maxScroll = Math.max(1, total - window.innerHeight * 0.5);
+            const pct = Math.min(100, Math.max(0, (scrolled / maxScroll) * 100));
+            bar.style.width = pct + '%';
+        };
+        if (window._storyScrollListener) {
+            window.removeEventListener('scroll', window._storyScrollListener);
+        }
+        window._storyScrollListener = onScroll;
+        window.addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
+    },
+
     async renderLibrary() {
         const libraryEl = document.getElementById('reader-library');
         if (!libraryEl) {
@@ -470,6 +545,17 @@ window.Reader = {
             // story), but this listener on the container itself survives that.
             const self = this;
             libraryEl.addEventListener('click', function(e) {
+                const clearBtn = e.target.closest('#library-search-clear');
+                if (clearBtn) {
+                    const input = document.getElementById('library-universal-search');
+                    if (input) {
+                        input.value = '';
+                        input.focus();
+                    }
+                    self._filterUniversalSearch('', libraryEl);
+                    return;
+                }
+
                 const roomToggle = e.target.closest('[data-room-toggle]');
                 if (roomToggle) {
                     const levelId = roomToggle.getAttribute('data-room-toggle');
@@ -501,6 +587,12 @@ window.Reader = {
             });
 
             libraryEl.addEventListener('input', function(e) {
+                const universalInput = e.target.closest('#library-universal-search');
+                if (universalInput) {
+                    self._filterUniversalSearch(universalInput.value, libraryEl);
+                    return;
+                }
+
                 const search = e.target.closest('[data-room-search]');
                 if (!search) return;
                 const levelId = search.getAttribute('data-room-search');
@@ -528,6 +620,79 @@ window.Reader = {
         }
     },
 
+    _filterUniversalSearch(query, libraryEl) {
+        const q = (query || '').trim().toLowerCase();
+        const clearBtn = document.getElementById('library-search-clear');
+        const summary = document.getElementById('library-search-summary');
+        if (clearBtn) clearBtn.classList.toggle('hidden', !q);
+
+        const rooms = libraryEl.querySelectorAll('.reading-room');
+
+        if (!q) {
+            if (summary) {
+                summary.classList.add('hidden');
+                summary.innerHTML = '';
+            }
+            rooms.forEach(room => {
+                room.classList.remove('hidden');
+                const roomToggle = room.querySelector('[data-room-toggle]');
+                const levelId = roomToggle ? roomToggle.getAttribute('data-room-toggle') : null;
+                const body = levelId ? document.getElementById('reading-room-body-' + levelId) : null;
+                const arrow = levelId ? document.getElementById('reading-room-arrow-' + levelId) : null;
+                if (body) body.classList.add('hidden');
+                if (roomToggle) roomToggle.setAttribute('aria-expanded', 'false');
+                if (arrow) arrow.textContent = '▶';
+
+                room.querySelectorAll('.story-shelf').forEach(shelf => shelf.classList.remove('hidden'));
+                room.querySelectorAll('.story-card').forEach(card => card.classList.remove('hidden'));
+            });
+            return;
+        }
+
+        let matchCount = 0;
+        rooms.forEach(room => {
+            let roomMatches = 0;
+            room.querySelectorAll('.story-shelf').forEach(shelf => {
+                let shelfMatches = 0;
+                shelf.querySelectorAll('.story-card').forEach(card => {
+                    const title = card.getAttribute('data-title') || '';
+                    const author = card.getAttribute('data-author') || '';
+                    const level = card.getAttribute('data-level') || '';
+                    const matches = title.includes(q) || author.includes(q) || level === q;
+                    card.classList.toggle('hidden', !matches);
+                    if (matches) {
+                        shelfMatches++;
+                        roomMatches++;
+                        matchCount++;
+                    }
+                });
+                shelf.classList.toggle('hidden', shelfMatches === 0);
+            });
+
+            const roomHasMatches = roomMatches > 0;
+            room.classList.toggle('hidden', !roomHasMatches);
+
+            if (roomHasMatches) {
+                const roomToggle = room.querySelector('[data-room-toggle]');
+                const levelId = roomToggle ? roomToggle.getAttribute('data-room-toggle') : null;
+                const body = levelId ? document.getElementById('reading-room-body-' + levelId) : null;
+                const arrow = levelId ? document.getElementById('reading-room-arrow-' + levelId) : null;
+                if (body) body.classList.remove('hidden');
+                if (roomToggle) roomToggle.setAttribute('aria-expanded', 'true');
+                if (arrow) arrow.textContent = '▼';
+            }
+        });
+
+        if (summary) {
+            summary.classList.remove('hidden');
+            if (matchCount > 0) {
+                summary.innerHTML = `<p class="library-search-count">Found <strong>${matchCount}</strong> reading${matchCount === 1 ? '' : 's'} matching "${this.escapeHtml(query)}"</p>`;
+            } else {
+                summary.innerHTML = `<p class="library-search-empty">No stories matching "${this.escapeHtml(query)}". Try another word or author.</p>`;
+            }
+        }
+    },
+
     buildLibraryUI(container) {
         const self = this;
         const readIds = getReadStoryIds();
@@ -545,7 +710,19 @@ window.Reader = {
         const extraLevels = Object.keys(byLevel).filter(l => !CEFR_LEVELS.includes(l)).sort();
         const levels = CEFR_LEVELS.concat(extraLevels);
 
-        let html = '';
+        let html = `
+            <div class="library-search-bar">
+                <div class="library-search-wrap">
+                    <span class="library-search-icon" aria-hidden="true">${typeof Art !== 'undefined' ? Art.icon('decks') : '🔍'}</span>
+                    <input type="search" id="library-universal-search" class="library-search-input"
+                           placeholder="Search all stories, topics, authors, or levels..."
+                           autocomplete="off" autocapitalize="off" spellcheck="false"
+                           aria-label="Search stories">
+                    <button type="button" id="library-search-clear" class="library-search-clear hidden" aria-label="Clear search">×</button>
+                </div>
+                <div id="library-search-summary" class="library-search-summary hidden"></div>
+            </div>
+        `;
 
         levels.forEach(function(level) {
             // Fragments (see _isBrowsableStory) are excluded up front so
@@ -628,7 +805,9 @@ window.Reader = {
             : '';
 
         return '<button class="story-card" data-story-id="' + this.escapeHtml(story.id) + '" ' +
-            'data-title="' + this.escapeHtml((story.title || '').toLowerCase()) + '">' +
+            'data-title="' + this.escapeHtml((story.title || '').toLowerCase()) + '" ' +
+            'data-author="' + this.escapeHtml((story.author || '').toLowerCase()) + '" ' +
+            'data-level="' + this.escapeHtml((story.level || '').toLowerCase()) + '">' +
             '<div class="story-card-cover">' +
                 art +
                 (isRead ? '<span class="story-card-read-badge" title="Read">✓</span>' : '') +
@@ -693,13 +872,26 @@ window.Reader = {
                 (Library.isSaved(this.currentStoryId) ? '● Saved' : '○ Save') + '</button>'
             : '';
 
+        const fontControlsHtml = `
+            <div class="story-font-controls" role="group" aria-label="Adjust font size">
+                <button type="button" class="btn-font-scale" id="reader-font-down" title="Smaller text" aria-label="Smaller text">A−</button>
+                <span class="story-font-indicator" id="reader-font-indicator">100%</span>
+                <button type="button" class="btn-font-scale" id="reader-font-up" title="Larger text" aria-label="Larger text">A+</button>
+            </div>
+        `;
+
         let html = '<div class="story-header">' +
-            '<h3 class="story-title">' + this.escapeHtml(story.title) + '</h3>' +
-            '<span class="story-level-badge">' + this.escapeHtml(story.level) + '</span>' +
-            '<span class="story-header-actions">' + saveBtnHtml +
+            '<div class="story-header-left">' +
+                '<h3 class="story-title">' + this.escapeHtml(story.title) + '</h3>' +
+                '<span class="story-level-badge">' + this.escapeHtml(story.level) + '</span>' +
+            '</div>' +
+            '<div class="story-header-actions">' +
+                fontControlsHtml +
+                saveBtnHtml +
                 '<button class="btn-back" id="reader-back-btn">&larr; Back</button>' +
-            '</span>' +
-        '</div>';
+            '</div>' +
+        '</div>' +
+        '<div class="story-scroll-track" aria-hidden="true"><div class="story-scroll-bar" id="story-scroll-bar"></div></div>';
 
         html += '<div class="story-body">';
 
@@ -775,6 +967,13 @@ window.Reader = {
         '</div>';
 
         container.innerHTML = html;
+
+        this.applyFontScale(this.getFontScale(), container);
+        const downBtn = document.getElementById('reader-font-down');
+        if (downBtn) downBtn.addEventListener('click', () => self.stepFontScale(-1));
+        const upBtn = document.getElementById('reader-font-up');
+        if (upBtn) upBtn.addEventListener('click', () => self.stepFontScale(1));
+        this._wireScrollProgress();
 
         // Back button
         const backBtn = document.getElementById('reader-back-btn');
@@ -974,6 +1173,11 @@ window.Reader = {
     },
 
     closeStory() {
+        if (window._storyScrollListener) {
+            window.removeEventListener('scroll', window._storyScrollListener);
+            window._storyScrollListener = null;
+        }
+
         const contentEl = document.getElementById('reader-content');
         if (contentEl) {
             contentEl.innerHTML = '';

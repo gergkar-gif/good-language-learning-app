@@ -314,6 +314,7 @@ const StudyPlanRunner = (function () {
         document.querySelectorAll('.tab').forEach(tab => tab.classList.add('hidden'));
         const scr = screenEl();
         if (scr) scr.classList.remove('hidden');
+        document.body.classList.add('in-lesson');
         document.querySelectorAll('.nav button').forEach(btn => btn.classList.remove('active'));
         renderChecklist();
     }
@@ -327,6 +328,7 @@ const StudyPlanRunner = (function () {
     // Workshop.close() gives its own drillers but reached directly since
     // Workshop's own _active never sees a driller embedded here.
     function teardown() {
+        document.body.classList.remove('in-lesson');
         if (_embeddedDriller && typeof _embeddedDriller.stop === 'function') _embeddedDriller.stop();
         _embeddedDriller = null;
         if (_leavingForReview) {

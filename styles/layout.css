@@ -3,6 +3,7 @@
 ============================================ */
 
 .app {
+  width: 100%;
   max-width: 500px;
   margin: 0 auto;
   min-height: 100vh;
@@ -18,7 +19,7 @@
   flex-direction: column;
   /* The header used to supply its own padding. Now that it is part of the
      page, the shell insets everything to one consistent margin. */
-  padding: 0 20px;
+  padding: 0 16px;
 }
 
 /* ---- Page header ---- */
@@ -238,21 +239,24 @@
 
 /* ---- Navigation ---- */
 
-/* A tab bar, not a row of pills. Six sections set side by side as text
-   overflow 460px — the widest the shell ever is — and wrapping the nav onto
-   two rows costs more height than stacking each label under its mark. Equal
-   columns also mean adding a seventh section changes nothing here. */
+/* A tab bar on mobile, a constructivist sidebar on desktop. */
 
 .nav {
   display: flex;
-  gap: 2px;
-  padding: 8px 0;
   background: var(--bg);
-  border-bottom: 1px solid var(--border);
-  position: sticky;
-  top: 0;
-  z-index: 10;
+  z-index: 100;
   margin-bottom: 0;
+}
+
+.nav-brand,
+.nav-footer {
+  display: none;
+}
+
+.nav-items {
+  display: flex;
+  width: 100%;
+  gap: 2px;
 }
 
 .nav button {
@@ -277,9 +281,8 @@
   color: var(--text);
 }
 
-/* The selected mark: a thin line growing in under the tab. Shape and
-   colour carry the state, not a filled pill — see the visual-overhaul
-   spec, section 10. */
+/* The selected mark: a thin line growing in under the tab on mobile/tablet,
+   or along the left edge on the desktop sidebar. */
 .nav button::after {
   content: "";
   position: absolute;
@@ -296,8 +299,6 @@
   transform: translateX(-50%) scaleX(1);
 }
 
-/* Fixed rather than the 1.25em the icon defaults to: at an 11px label that
-   would come out at fourteen pixels and the mark would vanish. */
 .nav button .icon {
   width: 22px;
   height: 22px;
@@ -311,21 +312,34 @@
   white-space: nowrap;
 }
 
-/* The icon takes the button's colour, so the selected tab's mark turns white
-   with its label rather than staying navy on navy. */
 .nav button .icon .ink-line,
 .nav button .icon .ink-rule { stroke: currentColor; }
 .nav button .icon .ink-solid { fill: currentColor; }
 
-/* Orange marks exactly one tab at a time — icon and label both take
-   accent-dark, which is the text-safe orange (see base.css), so the label
-   stays readable rather than merely vivid. */
 .nav button.active {
   color: var(--accent-dark);
 }
 
-@media (max-width: 420px) {
+/* ---- Mobile viewport: Bottom Navigation Bar (<640px) ---- */
+@media (max-width: 639px) {
+  .nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: auto;
+    border-top: 1px solid var(--border);
+    border-bottom: none;
+    padding: 6px 4px calc(6px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .nav-items {
+    justify-content: space-around;
+    gap: 0;
+  }
+
   .nav button {
+    padding: 4px 2px 6px;
     font-size: 10px;
     gap: 3px;
   }
@@ -334,6 +348,242 @@
     width: 20px;
     height: 20px;
   }
+
+  .content {
+    padding-bottom: calc(72px + env(safe-area-inset-bottom, 0px));
+  }
+}
+
+/* ---- Tablet viewport: Clean Centered Layout (640px – 1023px) ---- */
+@media (min-width: 640px) and (max-width: 1023px) {
+  .app {
+    max-width: 680px;
+    padding: 0 24px;
+  }
+
+  .nav {
+    position: sticky;
+    top: 0;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-items {
+    gap: 4px;
+  }
+
+  .content {
+    padding-bottom: 40px;
+  }
+}
+
+/* ---- Desktop viewport: Constructivist Sidebar Layout (≥1024px) ---- */
+@media (min-width: 1024px) {
+  .app {
+    max-width: 1180px;
+    padding: 0 40px;
+    display: grid;
+    grid-template-columns: 240px minmax(0, 1fr);
+    column-gap: 60px;
+    grid-template-areas:
+      "sidebar header"
+      "sidebar content";
+    min-height: 100dvh;
+  }
+
+  .page-header {
+    grid-area: header;
+    max-width: 740px;
+    width: 100%;
+    margin: 0;
+    padding-top: 36px;
+  }
+
+  .content {
+    grid-area: content;
+    max-width: 740px;
+    width: 100%;
+    margin: 0;
+    padding-bottom: 64px;
+  }
+
+  .nav {
+    grid-area: sidebar;
+    position: sticky;
+    top: 0;
+    height: 100dvh;
+    max-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    border-right: 1px solid var(--border);
+    border-bottom: none;
+    border-top: none;
+    padding: 36px 24px 28px 0;
+    background: var(--bg);
+    z-index: 10;
+  }
+
+  .nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 36px;
+    padding-left: 12px;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .nav-brand-mark {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+  }
+
+  .nav-brand-icon {
+    width: 28px;
+    height: 28px;
+    display: block;
+  }
+
+  .nav-brand-icon .brand-tile {
+    fill: var(--primary);
+  }
+
+  .nav-brand-icon .brand-door {
+    fill: none;
+    stroke: var(--bg);
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .nav-brand-icon .brand-knob {
+    fill: var(--accent);
+  }
+
+  .nav-brand-name {
+    font-family: var(--font-display);
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--text);
+    letter-spacing: -0.01em;
+  }
+
+  .nav-items {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+  }
+
+  .nav button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 14px;
+    padding: 11px 16px;
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+    font-weight: 500;
+    width: 100%;
+    text-align: left;
+    color: var(--secondary);
+    transition: background var(--dur-fast) var(--ease-standard), color var(--dur-fast) var(--ease-standard);
+  }
+
+  .nav button:hover {
+    background: rgba(16, 42, 71, 0.04);
+    color: var(--text);
+  }
+
+  .nav button.active {
+    background: rgba(16, 42, 71, 0.06);
+    color: var(--accent-dark);
+    font-weight: 600;
+  }
+
+  .nav button .icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+  }
+
+  .nav-label {
+    font-size: 14px;
+  }
+
+  .nav button::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    bottom: auto;
+    width: 3px;
+    height: 60%;
+    background: var(--accent-dark);
+    border-radius: 2px;
+    transform: translateY(-50%) scaleY(0);
+    transition: transform var(--dur-base) var(--ease-standard);
+  }
+
+  .nav button.active::after {
+    transform: translateY(-50%) scaleY(1);
+  }
+
+  .nav-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: auto;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+    padding-left: 12px;
+  }
+
+  .nav-footer-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .nav-footer-streak {
+    font-size: 12px;
+    color: var(--muted);
+    font-weight: 500;
+  }
+
+  .nav-footer-xp {
+    font-size: 13px;
+    color: var(--text);
+    font-weight: 600;
+  }
+}
+
+/* ---- In-Lesson Focused Workspace (All viewports) ---- */
+body.in-lesson .nav {
+  display: none !important;
+}
+
+body.in-lesson .page-header {
+  display: none !important;
+}
+
+body.in-lesson .app {
+  display: flex !important;
+  max-width: 680px !important;
+  margin: 0 auto !important;
+  padding: 0 20px !important;
+}
+
+body.in-lesson .content {
+  padding-bottom: 0 !important;
+  max-width: 100% !important;
 }
 
 /* ---- Main content ---- */

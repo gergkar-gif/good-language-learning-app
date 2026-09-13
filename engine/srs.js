@@ -699,6 +699,15 @@ function renderCard() {
     updateReviewStats();
     updateDirectionToggle();
     updateModeToggle();
+
+    const cardEl = document.getElementById('review-card');
+    if (cardEl) {
+        cardEl.style.transform = '';
+        cardEl.style.opacity = '';
+        cardEl.style.transition = '';
+        cardEl.style.borderColor = '';
+        initCardGestures();
+    }
 }
 
 // The intervals are per-card now, so the buttons can't carry fixed labels.
@@ -724,6 +733,105 @@ function revealAnswer() {
 
 function showAnswer() {
     revealAnswer();
+}
+
+function initCardGestures() {
+    const cardEl = document.getElementById('review-card');
+    if (!cardEl || cardEl._gesturesBound) return;
+    cardEl._gesturesBound = true;
+
+    let startX = 0, startY = 0, currentX = 0, currentY = 0;
+    let isTracking = false;
+    let isDragging = false;
+
+    cardEl.addEventListener('touchstart', (e) => {
+        if (!currentReviewCard) return;
+        if (e.target.closest('button') || e.target.closest('input')) return;
+        const t = e.touches[0];
+        startX = t.clientX;
+        startY = t.clientY;
+        currentX = startX;
+        currentY = startY;
+        isTracking = true;
+        isDragging = false;
+        cardEl.style.transition = 'none';
+    }, { passive: true });
+
+    cardEl.addEventListener('touchmove', (e) => {
+        if (!isTracking) return;
+        const t = e.touches[0];
+        currentX = t.clientX;
+        currentY = t.clientY;
+        const dx = currentX - startX;
+        const dy = currentY - startY;
+
+        if (!isDragging && Math.abs(dx) > 10 && Math.abs(dx) > Math.abs(dy)) {
+            isDragging = true;
+        }
+
+        if (isDragging) {
+            const rotate = dx / 16;
+            cardEl.style.transform = `translateX(${dx}px) rotate(${rotate}deg)`;
+
+            if (dx < -30) {
+                cardEl.style.borderColor = 'var(--danger)';
+            } else if (dx > 30) {
+                cardEl.style.borderColor = 'var(--success)';
+            } else {
+                cardEl.style.borderColor = 'var(--border)';
+            }
+        }
+    }, { passive: true });
+
+    const finishGesture = () => {
+        if (!isTracking) return;
+        const dx = currentX - startX;
+        const dy = currentY - startY;
+        const answerShown = document.getElementById('review-answer').style.display === 'block';
+
+        if (isDragging) {
+            const threshold = Math.min(90, window.innerWidth * 0.22);
+            if (dx < -threshold && answerShown) {
+                // Swipe Left -> "Again"
+                cardEl.style.transition = 'transform 0.2s ease-out, opacity 0.2s ease-out';
+                cardEl.style.transform = 'translateX(-120vw) rotate(-25deg)';
+                cardEl.style.opacity = '0';
+                setTimeout(() => {
+                    rateCard('again');
+                }, 200);
+            } else if (dx > threshold && answerShown) {
+                // Swipe Right -> "Good"
+                cardEl.style.transition = 'transform 0.2s ease-out, opacity 0.2s ease-out';
+                cardEl.style.transform = 'translateX(120vw) rotate(25deg)';
+                cardEl.style.opacity = '0';
+                setTimeout(() => {
+                    rateCard('good');
+                }, 200);
+            } else if (Math.abs(dx) > threshold && !answerShown && reviewMode !== 'type') {
+                // Dragged past threshold when answer not shown -> reveal answer and snap back
+                showAnswer();
+                cardEl.style.transition = 'transform 0.2s ease, border-color 0.2s ease';
+                cardEl.style.transform = 'translateX(0) rotate(0deg)';
+                cardEl.style.borderColor = 'var(--border)';
+            } else {
+                // Snap back
+                cardEl.style.transition = 'transform 0.2s ease, border-color 0.2s ease';
+                cardEl.style.transform = 'translateX(0) rotate(0deg)';
+                cardEl.style.borderColor = 'var(--border)';
+            }
+        } else if (Math.abs(dx) < 10 && Math.abs(dy) < 10) {
+            // Tap on card body: flip/reveal answer if not already revealed
+            if (!answerShown && reviewMode !== 'type') {
+                showAnswer();
+            }
+        }
+
+        isTracking = false;
+        isDragging = false;
+    };
+
+    cardEl.addEventListener('touchend', finishGesture);
+    cardEl.addEventListener('touchcancel', finishGesture);
 }
 
 // Same normalisation lessons.js/GrammarRunner use elsewhere: case,
@@ -793,3 +901,29 @@ function rateCard(rating) {
     updateReaderWordColors();
     showNextCard();
 }
+
+// Desktop keyboard flow for review session
+window.addEventListener('keydown', (e) => {
+    const session = document.getElementById('review-session');
+    if (!session || session.classList.contains('hidden') || session.style.display === 'none') return;
+    if (!currentReviewCard) return;
+
+    // Don't intercept when user is typing in an input or textarea
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+
+    const answerShown = document.getElementById('review-answer').style.display === 'block';
+
+    if (e.key === ' ' || e.key === 'Enter') {
+        e.preventDefault();
+        if (!answerShown) {
+            showAnswer();
+        } else {
+            rateCard('good');
+        }
+    } else if (answerShown) {
+        if (e.key === '1') { e.preventDefault(); rateCard('again'); }
+        else if (e.key === '2') { e.preventDefault(); rateCard('hard'); }
+        else if (e.key === '3') { e.preventDefault(); rateCard('good'); }
+        else if (e.key === '4') { e.preventDefault(); rateCard('easy'); }
+    }
+});

@@ -569,13 +569,26 @@ const Library = (function () {
         if (!container) return;
 
         const level = t.analysis && t.analysis.level ? t.analysis.level : 'Unassessed';
+        const fontControlsHtml = `
+            <div class="story-font-controls" role="group" aria-label="Adjust font size">
+                <button type="button" class="btn-font-scale" id="reader-font-down" title="Smaller text" aria-label="Smaller text">A−</button>
+                <span class="story-font-indicator" id="reader-font-indicator">100%</span>
+                <button type="button" class="btn-font-scale" id="reader-font-up" title="Larger text" aria-label="Larger text">A+</button>
+            </div>
+        `;
+
         let html = '<div class="story-header">' +
-            '<h3 class="story-title">' + esc(t.title) + '</h3>' +
-            '<span class="story-level-badge">' + esc(level) + '</span>' +
-            '<span class="story-header-actions">' +
+            '<div class="story-header-left">' +
+                '<h3 class="story-title">' + esc(t.title) + '</h3>' +
+                '<span class="story-level-badge">' + esc(level) + '</span>' +
+            '</div>' +
+            '<div class="story-header-actions">' +
+                fontControlsHtml +
                 '<button class="btn-back" data-mytext-back="1">&larr; Back</button>' +
-            '</span>' +
-        '</div><div class="story-body">';
+            '</div>' +
+        '</div>' +
+        '<div class="story-scroll-track" aria-hidden="true"><div class="story-scroll-bar" id="story-scroll-bar"></div></div>' +
+        '<div class="story-body">';
 
         const paragraphs = splitParagraphs(t.text);
         if (paragraphs.length) {
@@ -590,11 +603,24 @@ const Library = (function () {
         const backBtn = container.querySelector('[data-mytext-back]');
         if (backBtn) backBtn.onclick = closeMyText;
 
+        if (typeof Reader !== 'undefined') {
+            Reader.applyFontScale(Reader.getFontScale(), container);
+            const downBtn = container.querySelector('#reader-font-down');
+            if (downBtn) downBtn.addEventListener('click', () => Reader.stepFontScale(-1));
+            const upBtn = container.querySelector('#reader-font-up');
+            if (upBtn) upBtn.addEventListener('click', () => Reader.stepFontScale(1));
+            if (typeof Reader._wireScrollProgress === 'function') Reader._wireScrollProgress();
+        }
+
         showReading();
         if (typeof updateReaderWordColors === 'function') updateReaderWordColors();
     }
 
     function closeMyText() {
+        if (window._storyScrollListener) {
+            window.removeEventListener('scroll', window._storyScrollListener);
+            window._storyScrollListener = null;
+        }
         const container = document.getElementById('reader-content');
         if (container) {
             container.innerHTML = '';

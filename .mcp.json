@@ -30,6 +30,16 @@
       "env": {
         "FIRECRAWL_API_KEY": "${FIRECRAWL_API_KEY}"
       }
+    },
+    "local-llm": {
+      "type": "stdio",
+      "command": "node",
+      "args": [
+        "tools/local-llm-mcp/index.js"
+      ],
+      "env": {
+        "OLLAMA_MODEL": "qwen2.5:3b-instruct"
+      }
     }
   }
 }

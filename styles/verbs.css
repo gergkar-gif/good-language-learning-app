@@ -97,6 +97,16 @@
     outline-offset: 1px;
 }
 
+[data-theme="dark"] .vb-select {
+    background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23F5F1E8'/%3E%3C/svg%3E");
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .vb-select {
+        background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23F5F1E8'/%3E%3C/svg%3E");
+    }
+}
+
 /* Toggle row */
 .vb-setting-row {
     flex-direction: row;
@@ -377,57 +387,65 @@
 
 /* Results screen */
 .vspeed-results {
+    max-width: 480px;
+    margin: 0 auto;
     text-align: center;
 }
 
 .vspeed-results-title {
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: var(--primary, #1B4B5A);
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text);
     margin-bottom: 20px;
 }
 
 .vspeed-new-best {
     font-size: 0.85rem;
     font-weight: 600;
-    color: var(--success, #4CAF50);
+    color: var(--success);
     margin: -12px 0 20px;
 }
 
 .vspeed-results-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 12px;
+    gap: 10px;
     margin-bottom: 24px;
 }
 
 .vspeed-stat {
-    background: none;
-    border-bottom: 1px solid var(--border);
-    padding: 16px 12px;
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 14px 12px;
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 4px;
 }
 
 .vspeed-stat-label {
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     font-weight: 600;
-    color: var(--muted, #7A7A7A);
+    color: var(--muted);
     text-transform: uppercase;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.05em;
 }
 
 .vspeed-stat-value {
-    font-size: 1.3rem;
-    font-weight: 800;
-    color: var(--text, #2E2A26);
+    font-family: var(--font-mono, monospace);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--primary);
 }
 
 .vspeed-results-actions {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    max-width: 360px;
+    margin: 0 auto;
 }
 
 .vspeed-results-actions .vbtn {

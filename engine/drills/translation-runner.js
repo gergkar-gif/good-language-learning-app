@@ -34,8 +34,29 @@ const TranslationRunner = (function () {
         if (_solved) return;
         _solved = true;
         const nextBtn = _container.querySelector('[data-action="next"]');
-        if (nextBtn) nextBtn.classList.remove('hidden');
+        if (nextBtn) {
+            nextBtn.classList.remove('hidden');
+            try { nextBtn.focus(); } catch (e) {}
+        }
         if (_onResult) _onResult(correct);
+    }
+
+    let _windowKeydownWired = false;
+    function _wireEnter() {
+        if (_windowKeydownWired) return;
+        _windowKeydownWired = true;
+        window.addEventListener('keydown', e => {
+            if (!_container || !document.body.contains(_container)) return;
+            if (_container.offsetParent === null && _container.offsetWidth === 0 && _container.offsetHeight === 0) return;
+            if (e.key === 'Enter') {
+                const nextBtn = _container.querySelector('[data-action="next"]:not(.hidden)');
+                if (nextBtn && !nextBtn.disabled) {
+                    e.preventDefault();
+                    nextBtn.click();
+                    return;
+                }
+            }
+        });
     }
 
     function _reveal(exercise) {
@@ -81,6 +102,7 @@ const TranslationRunner = (function () {
             <p class="td-source">${_escapeHtml(exercise.prompt)}</p>
             <input class="td-input" type="text" placeholder="Type your translation"
                 autocomplete="off" autocapitalize="off" spellcheck="false">
+            ${typeof UI !== 'undefined' && UI.diacriticsBarHtml ? UI.diacriticsBarHtml('.td-input') : ''}
             <div class="td-model-wrap"></div>
             <div class="gd-actions">
                 <button class="vbtn vbtn-primary" data-action="check">Check</button>
@@ -93,6 +115,7 @@ const TranslationRunner = (function () {
         });
         _container.querySelector('[data-action="check"]').addEventListener('click', () => _reveal(exercise));
         _container.querySelector('[data-action="next"]').addEventListener('click', () => _onNext());
+        _wireEnter();
     }
 
     return { render };

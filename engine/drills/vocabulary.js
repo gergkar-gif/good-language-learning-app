@@ -545,6 +545,15 @@ const VocabularyDriller = (function () {
         return _mode === MODE.COUNT ? `${base} · Word ${_queueIndex + 1} of ${_queue.length}` : base;
     }
 
+    function _progressPercent() {
+        if (_mode === MODE.COUNT) {
+            return Math.min(100, Math.round((_queueIndex / Math.max(1, _queue.length)) * 100));
+        }
+        const total = _timerMinutes * 60;
+        const elapsed = Math.max(0, total - _timeRemaining);
+        return Math.min(100, Math.round((elapsed / Math.max(1, total)) * 100));
+    }
+
     function _renderSession() {
         const currentWord = _queue[_queueIndex]._word;
 
@@ -560,10 +569,13 @@ const VocabularyDriller = (function () {
         const lessonInfo = lessonId && typeof lessonLabelFor === 'function' ? lessonLabelFor(lessonId) : null;
 
         _container.innerHTML = `
+            <div class="driller-progress-track" aria-hidden="true">
+                <div class="driller-progress-bar" style="width: ${_progressPercent()}%"></div>
+            </div>
             <div class="gd-hud">
                 <span class="gd-hud-score">${_scoreLabel()}</span>
                 ${_mode === MODE.TIMED ? `<span class="vspeed-timer-display">${_formatTime(_timeRemaining)}</span>` : ''}
-                <button class="gd-change-skill" data-action="change-settings">Change settings</button>
+                <button class="gd-change-skill" data-action="change-settings">← Settings</button>
             </div>
             ${lessonInfo ? `
                 <button class="dk-link-btn gd-word-lesson-link" data-open-lesson="${lessonId}">Taught in ${lessonInfo.label}</button>
@@ -592,6 +604,8 @@ const VocabularyDriller = (function () {
                 }
                 const score = _container.querySelector('.gd-hud-score');
                 if (score) score.textContent = _scoreLabel();
+                const bar = _container.querySelector('.driller-progress-bar');
+                if (bar) bar.style.width = _progressPercent() + '%';
             },
             onNext: _nextExercise
         });
@@ -639,6 +653,10 @@ const VocabularyDriller = (function () {
                         <span class="vspeed-stat-label">Accuracy</span>
                         <span class="vspeed-stat-value">${accuracy}%</span>
                     </div>
+                    <div class="vspeed-stat">
+                        <span class="vspeed-stat-label">Total</span>
+                        <span class="vspeed-stat-value">${_seen}</span>
+                    </div>
                 </div>
                 ${_missed.length ? `
                     <button class="vbtn vbtn-secondary vbtn-block" data-action="add-missed">
@@ -646,14 +664,17 @@ const VocabularyDriller = (function () {
                     </button>
                 ` : ''}
                 <div class="vspeed-results-actions">
-                    <button class="vbtn vbtn-primary" data-action="play-again">Play Again</button>
+                    <button class="vbtn vbtn-primary" data-action="play-again">Practice Again</button>
                     <button class="vbtn vbtn-secondary" data-action="change-settings">Change Settings</button>
+                    <button class="vbtn vbtn-secondary" data-action="exit-workshop">Back to Workshop</button>
                 </div>
             </div>
         `;
 
         _container.querySelector('[data-action="play-again"]').addEventListener('click', _startSession);
         _container.querySelector('[data-action="change-settings"]').addEventListener('click', _abortSession);
+        const exitBtn = _container.querySelector('[data-action="exit-workshop"]');
+        if (exitBtn) exitBtn.addEventListener('click', () => { if (typeof Workshop !== 'undefined') Workshop.close(); });
 
         const addMissedBtn = _container.querySelector('[data-action="add-missed"]');
         if (addMissedBtn) {

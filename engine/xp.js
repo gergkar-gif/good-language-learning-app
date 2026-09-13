@@ -380,4 +380,13 @@ function updateXPHeader() {
         streakEl.textContent = parts.join(' · ');
         streakEl.style.color = streak > 0 ? 'var(--text)' : 'var(--muted)';
     }
+
+    const navXpEl = document.getElementById('nav-xp');
+    if (navXpEl) navXpEl.textContent = `Rank ${getRank().rank} · ${xpData.total} XP`;
+
+    const navStreakEl = document.getElementById('nav-streak');
+    if (navStreakEl) {
+        const streak = getStreak();
+        navStreakEl.textContent = streak > 0 ? `${streak}-day streak` : 'No streak yet';
+    }
 }

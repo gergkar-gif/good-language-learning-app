@@ -34,8 +34,11 @@ function showTab(tabName, button) {
     if (tab) tab.classList.remove('hidden');
 
     document.querySelectorAll('.nav button').forEach(btn => btn.classList.remove('active'));
-    if (!button && window.event) button = window.event.target;
-    if (button) button.classList.add('active');
+    const activeBtn = (button && button.matches && button.matches('.nav button[data-tab]'))
+        ? button
+        : (button && button.closest ? button.closest('.nav button[data-tab]') : null)
+        || document.querySelector('.nav button[data-tab="' + tabName + '"]');
+    if (activeBtn) activeBtn.classList.add('active');
 
     // The header is contextual — it names the room you just walked into.
     if (typeof PageHeader !== 'undefined') PageHeader.show(tabName);

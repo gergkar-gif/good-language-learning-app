@@ -89,7 +89,10 @@ const ListeningRunner = (function () {
         const checkBtn = _container.querySelector('[data-action="check"]');
         const nextBtn = _container.querySelector('[data-action="next"]');
         if (checkBtn) checkBtn.classList.add('hidden');
-        if (nextBtn) nextBtn.classList.remove('hidden');
+        if (nextBtn) {
+            nextBtn.classList.remove('hidden');
+            try { nextBtn.focus(); } catch (e) {}
+        }
         if (_onResult) _onResult(correct);
     }
 
@@ -100,7 +103,7 @@ const ListeningRunner = (function () {
             <p class="gd-question">${_esc(ex.promptText)}</p>
             <div class="gd-options">
                 ${pick.options.map((option, i) => `
-                    <button class="gd-option" data-index="${i}">${_esc(option)}</button>
+                    <button class="gd-option" data-index="${i}"><span class="lsn-key-hint">${i + 1}</span>${_esc(option)}</button>
                 `).join('')}
             </div>
         `;
@@ -130,6 +133,7 @@ const ListeningRunner = (function () {
         _container.querySelector('.lr-answer').innerHTML = `
             <input class="gd-input" type="text" placeholder="Type what you heard"
                 autocomplete="off" autocapitalize="off" spellcheck="false">
+            ${typeof UI !== 'undefined' && UI.diacriticsBarHtml ? UI.diacriticsBarHtml('.gd-input') : ''}
         `;
         const input = _container.querySelector('.gd-input');
         input.addEventListener('keydown', e => { if (e.key === 'Enter') _doCheck(); });
@@ -148,6 +152,7 @@ const ListeningRunner = (function () {
             <p class="gd-question">${_esc(ex.sentence).replace(/_{2,}/, '<span class="gd-blank">?</span>')}</p>
             <input class="gd-input" type="text" placeholder="Type the missing word"
                 autocomplete="off" autocapitalize="off" spellcheck="false">
+            ${typeof UI !== 'undefined' && UI.diacriticsBarHtml ? UI.diacriticsBarHtml('.gd-input') : ''}
         `;
         const input = _container.querySelector('.gd-input');
         input.addEventListener('keydown', e => { if (e.key === 'Enter') _doCheck(); });
@@ -228,15 +233,59 @@ const ListeningRunner = (function () {
     // Text inputs already wire Enter directly where they're rendered.
     // _container is the same node across exercises in one session (only its
     // innerHTML is replaced), so this is wired once rather than per exercise.
+    let _windowKeydownWired = false;
     function _wireEnterToCheck() {
-        if (_container.dataset.enterWired) return;
-        _container.dataset.enterWired = '1';
-        _container.addEventListener('keydown', e => {
-            if (e.key !== 'Enter' || !e.target.classList.contains('gd-option')) return;
-            const checkBtn = _container.querySelector('[data-action="check"]');
-            if (checkBtn && !checkBtn.disabled) {
-                e.preventDefault();
-                checkBtn.click();
+        if (_windowKeydownWired) return;
+        _windowKeydownWired = true;
+
+        window.addEventListener('keydown', e => {
+            if (!_container || !document.body.contains(_container)) return;
+            if (_container.offsetParent === null && _container.offsetWidth === 0 && _container.offsetHeight === 0) return;
+
+            const isInput = e.target && (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA');
+
+            if (e.key === 'Enter') {
+                const nextBtn = _container.querySelector('[data-action="next"]:not(.hidden)');
+                const checkBtn = _container.querySelector('[data-action="check"]:not(.hidden)');
+                if (nextBtn && !nextBtn.disabled) {
+                    e.preventDefault();
+                    nextBtn.click();
+                    return;
+                }
+                if (checkBtn && !checkBtn.disabled) {
+                    e.preventDefault();
+                    checkBtn.click();
+                    return;
+                }
+                return;
+            }
+
+            if (isInput) return;
+
+            let digit = null;
+            if (e.key >= '1' && e.key <= '4') {
+                digit = parseInt(e.key, 10);
+            } else if (e.code && e.code.startsWith('Numpad') && e.code.length === 7) {
+                const val = parseInt(e.code.replace('Numpad', ''), 10);
+                if (val >= 1 && val <= 4) digit = val;
+            }
+
+            if (digit !== null) {
+                const opts = _container.querySelectorAll('.gd-option');
+                if (opts && opts[digit - 1]) {
+                    e.preventDefault();
+                    opts[digit - 1].click();
+                    return;
+                }
+            }
+
+            if (e.key === 'p' || e.key === 'P' || e.key === 'r' || e.key === 'R') {
+                const playBtn = _container.querySelector('.lr-play-btn, [data-action="play"]');
+                if (playBtn) {
+                    e.preventDefault();
+                    playBtn.click();
+                    return;
+                }
             }
         });
     }

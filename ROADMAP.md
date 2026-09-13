@@ -79,6 +79,56 @@ this list directly rather than relying on a tool-specific todo list.
 9. **Future feature, unscoped**: CEFR real-exam practice mode (source or
    generate actual exams, graded response) — see Grammar reference /
    Level test area for where this would eventually live.
+10. **UI/UX Overhaul Initiative (7-Phase Roadmap)** — Sequenced 2026-09-12
+    to elevate Parlour's interaction ergonomics, responsive layout, and
+    aesthetic fidelity:
+    - [x] **Phase 1: Visual Identity & CSS Cleanliness** — **Done 2026-09-12**:
+      Purged legacy `.card` `background: var(--surface)` and heavy borders;
+      eliminated `.br-flag-btn` box shadow (last shadow in the codebase);
+      standardized open cream rows on `var(--bg)` with `1px solid var(--border)`
+      hairlines and `--dur-fast` transitions.
+    - [x] **Phase 2: Responsive Shell & Navigation Architecture** — **Done 2026-09-12**:
+      Desktop Constructivist sidebar (≥1024px) with brand mark and pinned XP/streak;
+      mobile bottom tab bar (<640px) with safe-area insets; tablet centered container
+      (640px–1023px); in-lesson clean screen mode (`body.in-lesson`) across all viewports.
+    - [x] **Phase 3: Exercise Ergonomics & Desktop Keyboard Flow** — **Done 2026-09-12**:
+      Added desktop hotkeys `1`–`4` with subtle monospace key badges for choices;
+      global diacritic helper toolbar (`UI.diacriticsBarHtml`) across lessons and
+      all drill runners for `es`, `hu`, and `fr`; and intelligent character-level
+      error diffing (`generateAnswerDiff`) with accent-specific feedback.
+    - [x] **Phase 4: Library & Reader Experience Polish** — **Done 2026-09-12**:
+      Added typography/font-size scaling controls (85% to 150%) persisted in localStorage
+      with dynamic line-height across both Parlour stories and My Texts reading views;
+      integrated reading scroll progress indicator track and bar;
+      added instant universal search filtering across all rooms, shelves, titles, authors, and levels
+      with match counter and clear button;
+      refined word popup (`.wp-sheet`) with desktop modal centering, hairline borders, and mobile
+      safe-area bottom padding.
+    - [x] **Phase 5: Decks & SRS Organization & Gestures** — **Done 2026-09-12**:
+      Organized massive unit deck catalogues into collapsible CEFR level sub-accordions (A1, A2, B1, B2, C1)
+      with level badge indicators and deck counts;
+      added instant universal search filtering across titles, topics, preview words, and CEFR levels
+      with auto-expanding matched accordions and clear button;
+      implemented fluid mobile touch swipe gestures on flashcard review (swipe left for Again, swipe right
+      for Good, tap to reveal answer) with dynamic rotation, color-tinted feedback, and exit animations;
+      added desktop review hotkeys (`1` Again, `2` Hard, `3` Good, `4` Easy, Space/Enter for Show/Good)
+      with visible monospace `.review-rate-hint` badges.
+    - [x] **Phase 6: Workshop & Driller Visual Unification** — **Done 2026-09-12**:
+      Standardized `.driller-progress-track` and `.driller-progress-bar` across all 9 workshop drillers
+      (`grammar.js`, `translation.js`, `listening.js`, `vocabulary.js`, `verbs/speed.js`, `hu-verb.js`,
+      `hu-suffix.js`, `hu-prefix.js`, `hu-morphology.js`);
+      standardized session HUD (`.gd-hud`, `.gd-hud-score`, `.gd-change-skill` `← Settings`);
+      standardized 4-metric results grid (`.vspeed-results`, `.vspeed-stat`) and unified 3-button post-drill
+      action loop ("Practice Again", "Change Settings", "Back to Workshop" via `Workshop.close()`), preserving
+      driller-specific actions (e.g. Vocabulary's "Add missed words to a deck").
+    - [x] **Phase 7: Dark / Low-Light Reading Theme** — **Implemented 2026-09-12**:
+      Inverted Constructivist palette (`[data-theme="dark"]` and `@media (prefers-color-scheme: dark)`)
+      with midnight navy ground (`#0C1B2B`), warm cream structure & typography (`#F5F1E8`), crisp 1px hairlines,
+      and vibrant warm orange focal accent (`#FF5A26`);
+      immediate anti-FOUC initialization in `<head>`;
+      standalone `engine/theme.js` with `'system' | 'light' | 'dark'` options and `localStorage` persistence;
+      interactive Appearance card in My Journey tab;
+      quick-toggle theme buttons in desktop sidebar and page header.
 
 ## Content & curriculum
 

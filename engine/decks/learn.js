@@ -269,6 +269,7 @@ const DeckLearn = (function () {
                 <p class="dkl-question">${_escapeHtml(promptText)}</p>
                 <input class="dkl-input" type="text" placeholder="${_escapeHtml(placeholder)}"
                     autocomplete="off" autocapitalize="off" spellcheck="false">
+                ${typeof UI !== 'undefined' && UI.diacriticsBarHtml ? UI.diacriticsBarHtml('.dkl-input') : ''}
                 <p class="dkl-feedback" aria-live="polite"></p>
                 <div class="dkl-actions">
                     <button class="btn-primary" data-learn-check="1">Check</button>

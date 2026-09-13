@@ -272,6 +272,30 @@ const Art = (function () {
         flag: `
             <line class="ink-line" x1="6" y1="21" x2="6" y2="3"/>
             <path class="accent-solid" d="M6 4 19 4 15 8 19 12 6 12Z"/>
+        `,
+
+        // Theme: Light mode (clean, minimalist radiant disc with hairlines)
+        themeLight: `
+            <circle class="ink-line" cx="12" cy="12" r="4"/>
+            <line class="ink-line" x1="12" y1="2" x2="12" y2="4.5"/>
+            <line class="ink-line" x1="12" y1="19.5" x2="12" y2="22"/>
+            <line class="ink-line" x1="2" y1="12" x2="4.5" y2="12"/>
+            <line class="ink-line" x1="19.5" y1="12" x2="22" y2="12"/>
+            <line class="ink-line" x1="4.93" y1="4.93" x2="6.7" y2="6.7"/>
+            <line class="ink-line" x1="17.3" y1="17.3" x2="19.07" y2="19.07"/>
+            <line class="ink-line" x1="4.93" y1="19.07" x2="6.7" y2="17.3"/>
+            <line class="ink-line" x1="17.3" y1="6.7" x2="19.07" y2="4.93"/>
+        `,
+
+        // Theme: Dark mode (clean, minimalist geometric crescent)
+        themeDark: `
+            <path class="ink-line" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/>
+        `,
+
+        // Theme: System / Contrast (bisected circle: half outline, half solid ink)
+        themeSystem: `
+            <circle class="ink-line" cx="12" cy="12" r="9"/>
+            <path class="ink-solid" d="M12 3v18a9 9 0 0 0 0-18Z"/>
         `
     };
 

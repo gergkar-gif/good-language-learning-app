@@ -16,13 +16,14 @@
 
 .sp-budget-btn {
     padding: 14px 8px;
-    background: var(--surface);
+    background: var(--bg);
     border: 1px solid var(--border);
     border-radius: var(--radius-sm);
     font-size: 15px;
     font-weight: 600;
     color: var(--text);
     cursor: pointer;
+    transition: border-color var(--dur-fast) var(--ease-standard), color var(--dur-fast) var(--ease-standard);
 }
 
 .sp-budget-btn:hover {

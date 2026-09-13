@@ -8,7 +8,8 @@
    the identity, not colour variety. No gradients anywhere. */
 :root {
   --bg: #F5F1E8;
-  --surface: #FFFFFF;
+  --surface: var(--bg);
+  --bg-surface: var(--bg);
 
   /* Deep navy is the one structural colour: text, headings, lines, icons,
      active/inactive geometric forms. It reads almost as black at normal
@@ -58,6 +59,7 @@
      reads as an architectural line rather than a card boundary. */
   --border: rgba(16, 42, 71, 0.18);
   --border-light: rgba(16, 42, 71, 0.10);
+  --border-subtle: rgba(16, 42, 71, 0.08);
 
   /* Added 2026-08-14 (visual identity v2) — a warm sand tone, one step
      darker than --bg, used as the second tone in two-tone illustrations
@@ -112,6 +114,213 @@
   --dur-base: 280ms;
   --dur-slow: 450ms;
   --ease-standard: cubic-bezier(.4, 0, .2, 1);
+}
+
+/* ============================================
+   DARK / LOW-LIGHT THEME (Phase 7)
+   Inverted Constructivist Palette:
+   Deep midnight navy as the open ground, warm cream as
+   structure & text, and vivid warm orange as focal accent.
+   Hairlines in crisp low-opacity cream. No drop shadows.
+============================================ */
+
+[data-theme="dark"] {
+  --bg: #0C1B2B;
+  --surface: #12253B;
+  --bg-surface: #12253B;
+
+  --primary: #F5F1E8;
+  --primary-dark: #FFFFFF;
+  --primary-mid: #D3CDC1;
+  --secondary: #90A2B8;
+
+  --text: #F5F1E8;
+  --muted: #8E9FAA;
+
+  --accent: #FF5A26;
+  --accent-dark: #FF7B52;
+  --accent-bg: rgba(233, 75, 22, 0.16);
+
+  --danger: #FF6650;
+  --danger-bg: rgba(178, 58, 34, 0.18);
+
+  --success: #3DB36E;
+  --success-bg: rgba(47, 122, 77, 0.18);
+
+  --border: rgba(245, 241, 232, 0.15);
+  --border-light: rgba(245, 241, 232, 0.09);
+  --border-subtle: rgba(245, 241, 232, 0.06);
+
+  --wash: #1E3A5A;
+  --shadow: 0 1px 3px rgba(0, 0, 0, .3);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0C1B2B;
+    --surface: #12253B;
+    --bg-surface: #12253B;
+
+    --primary: #F5F1E8;
+    --primary-dark: #FFFFFF;
+    --primary-mid: #D3CDC1;
+    --secondary: #90A2B8;
+
+    --text: #F5F1E8;
+    --muted: #8E9FAA;
+
+    --accent: #FF5A26;
+    --accent-dark: #FF7B52;
+    --accent-bg: rgba(233, 75, 22, 0.16);
+
+    --danger: #FF6650;
+    --danger-bg: rgba(178, 58, 34, 0.18);
+
+    --success: #3DB36E;
+    --success-bg: rgba(47, 122, 77, 0.18);
+
+    --border: rgba(245, 241, 232, 0.15);
+    --border-light: rgba(245, 241, 232, 0.09);
+    --border-subtle: rgba(245, 241, 232, 0.06);
+
+    --wash: #1E3A5A;
+    --shadow: 0 1px 3px rgba(0, 0, 0, .3);
+  }
+}
+
+/* In dark mode, primary solid buttons and level badges invert to warm cream with navy text */
+[data-theme="dark"] .btn-primary,
+[data-theme="dark"] .vbtn-primary,
+[data-theme="dark"] .br-primary,
+[data-theme="dark"] .review-show-btn,
+[data-theme="dark"] .lsn-check:not(.lsn-secondary),
+[data-theme="dark"] .lsn-play,
+[data-theme="dark"] .lr-play-btn,
+[data-theme="dark"] .wp-add:not(.is-saved):not(.is-disabled),
+[data-theme="dark"] .dk-level-badge,
+[data-theme="dark"] .story-level-badge,
+[data-theme="dark"] .story-card-badge,
+[data-theme="dark"] .jr-theme-tag {
+  background: var(--primary);
+  color: var(--bg);
+}
+
+[data-theme="dark"] .btn-primary:hover,
+[data-theme="dark"] .vbtn-primary:hover,
+[data-theme="dark"] .br-primary:hover,
+[data-theme="dark"] .review-show-btn:hover,
+[data-theme="dark"] .lsn-check:not(.lsn-secondary):hover,
+[data-theme="dark"] .lsn-play:hover,
+[data-theme="dark"] .lr-play-btn:hover,
+[data-theme="dark"] .wp-add:not(.is-saved):not(.is-disabled):hover {
+  background: #E5DFD4;
+  color: var(--bg);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .btn-primary,
+  :root:not([data-theme="light"]) .vbtn-primary,
+  :root:not([data-theme="light"]) .br-primary,
+  :root:not([data-theme="light"]) .review-show-btn,
+  :root:not([data-theme="light"]) .lsn-check:not(.lsn-secondary),
+  :root:not([data-theme="light"]) .lsn-play,
+  :root:not([data-theme="light"]) .lr-play-btn,
+  :root:not([data-theme="light"]) .wp-add:not(.is-saved):not(.is-disabled),
+  :root:not([data-theme="light"]) .dk-level-badge,
+  :root:not([data-theme="light"]) .story-level-badge,
+  :root:not([data-theme="light"]) .story-card-badge,
+  :root:not([data-theme="light"]) .jr-theme-tag {
+    background: var(--primary);
+    color: var(--bg);
+  }
+
+  :root:not([data-theme="light"]) .btn-primary:hover,
+  :root:not([data-theme="light"]) .vbtn-primary:hover,
+  :root:not([data-theme="light"]) .br-primary:hover,
+  :root:not([data-theme="light"]) .review-show-btn:hover,
+  :root:not([data-theme="light"]) .lsn-check:not(.lsn-secondary):hover,
+  :root:not([data-theme="light"]) .lsn-play:hover,
+  :root:not([data-theme="light"]) .lr-play-btn:hover,
+  :root:not([data-theme="light"]) .wp-add:not(.is-saved):not(.is-disabled):hover {
+    background: #E5DFD4;
+    color: var(--bg);
+  }
+}
+
+/* Smooth transition when switching themes */
+body, .nav, .page-header, .wp-sheet, .lsn-option, .gd-option, .vspeed-stat {
+  transition: background-color var(--dur-fast) var(--ease-standard),
+              color var(--dur-fast) var(--ease-standard),
+              border-color var(--dur-fast) var(--ease-standard);
+}
+
+/* ---- Theme Toggle Buttons ---- */
+.theme-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-size: 15px;
+  cursor: pointer;
+  transition: border-color var(--dur-fast) var(--ease-standard),
+              background var(--dur-fast) var(--ease-standard),
+              transform var(--dur-fast) var(--ease-standard);
+}
+
+.theme-toggle-btn:hover {
+  border-color: var(--primary);
+  transform: translateY(-1px);
+}
+
+.nav-theme-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 6px 4px;
+  border-radius: var(--radius-sm);
+  background: none;
+  border: 1px solid transparent;
+  color: var(--muted);
+  font-size: 13px;
+  cursor: pointer;
+  margin-top: 6px;
+  transition: color var(--dur-fast) var(--ease-standard),
+              border-color var(--dur-fast) var(--ease-standard);
+}
+
+.nav-theme-btn:hover {
+  color: var(--text);
+}
+
+.theme-toggle-btn .theme-toggle-icon,
+.nav-theme-btn .theme-toggle-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-toggle-btn .theme-toggle-icon svg,
+.theme-toggle-btn .theme-toggle-icon .art,
+.nav-theme-btn .theme-toggle-icon svg,
+.nav-theme-btn .theme-toggle-icon .art {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+
+.theme-toggle-icon .ink-line,
+.theme-toggle-icon .ink-rule {
+  stroke: currentColor;
+}
+
+.theme-toggle-icon .ink-solid {
+  fill: currentColor;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -170,4 +379,9 @@ input {
   0%   { opacity: 1; transform: translateX(-50%) translateY(0); }
   80%  { opacity: 1; transform: translateX(-50%) translateY(-10px); }
   100% { opacity: 0; transform: translateX(-50%) translateY(-30px); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.98); }
+  to   { opacity: 1; transform: scale(1); }
 }

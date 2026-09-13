@@ -363,6 +363,34 @@ const Journey = (function () {
         return card('Account', loggedIn ? 'Synced across devices' : 'Not signed in', body);
     }
 
+    function appearanceBlock() {
+        const currentPref = (typeof Theme !== 'undefined') ? Theme.getPreference() : 'system';
+        const iconSystem = (typeof Art !== 'undefined') ? Art.icon('themeSystem') : '';
+        const iconLight = (typeof Art !== 'undefined') ? Art.icon('themeLight') : '';
+        const iconDark = (typeof Art !== 'undefined') ? Art.icon('themeDark') : '';
+        const body = `
+            <div class="jr-theme-switcher" role="radiogroup" aria-label="Appearance theme">
+                <button type="button" class="jr-theme-option${currentPref === 'system' ? ' active' : ''}"
+                    data-theme-choice="system" role="radio" aria-checked="${currentPref === 'system'}">
+                    <span class="jr-theme-icon" aria-hidden="true">${iconSystem}</span>
+                    <span class="jr-theme-label">System</span>
+                </button>
+                <button type="button" class="jr-theme-option${currentPref === 'light' ? ' active' : ''}"
+                    data-theme-choice="light" role="radio" aria-checked="${currentPref === 'light'}">
+                    <span class="jr-theme-icon" aria-hidden="true">${iconLight}</span>
+                    <span class="jr-theme-label">Light</span>
+                </button>
+                <button type="button" class="jr-theme-option${currentPref === 'dark' ? ' active' : ''}"
+                    data-theme-choice="dark" role="radio" aria-checked="${currentPref === 'dark'}">
+                    <span class="jr-theme-icon" aria-hidden="true">${iconDark}</span>
+                    <span class="jr-theme-label">Dark</span>
+                </button>
+            </div>
+            <p class="jr-theme-hint">Constructivist low-light palette for night reading, or warm open cream.</p>
+        `;
+        return card('Appearance', 'Theme & visual mode', body);
+    }
+
     // Fetches the cloud's last-backup time without touching local data,
     // once render() has already drawn the (synchronous) card — patched in
     // afterward rather than making render() itself async, since nothing
@@ -400,6 +428,7 @@ const Journey = (function () {
                 ${streakBlock(d)}
                 ${activityBlock(d)}
                 ${milestonesBlock(d)}
+                ${appearanceBlock()}
                 ${accountBlock()}
             </div>
         `;
@@ -484,6 +513,15 @@ const Journey = (function () {
             if (e.target.closest('[data-sync-logout]')) {
                 Sync.logout();
                 render();
+                return;
+            }
+
+            const themeBtn = e.target.closest('[data-theme-choice]');
+            if (themeBtn) {
+                const choice = themeBtn.getAttribute('data-theme-choice');
+                if (choice && typeof Theme !== 'undefined') {
+                    Theme.set(choice);
+                }
                 return;
             }
         });

@@ -288,6 +288,7 @@ async function startLesson(lessonId) {
 
     document.querySelectorAll('.tab').forEach(tab => tab.classList.add('hidden'));
     document.getElementById('lesson-screen').classList.remove('hidden');
+    document.body.classList.add('in-lesson');
 
     document.getElementById('lesson-title').textContent = currentLesson.title;
     const subtitle = document.getElementById('lesson-subtitle');
@@ -302,6 +303,7 @@ async function startLesson(lessonId) {
 // learner leaves via the main nav instead of the lesson's own close button.
 // closeLesson() below calls this too, then handles the navigation part.
 function teardownLesson() {
+    document.body.classList.remove('in-lesson');
     currentLesson = null;
     currentStepIndex = 0;
     missedSteps = [];
@@ -442,8 +444,115 @@ function normalise(text) {
     return value.normalize('NFC');
 }
 
+function baseChar(c) {
+    return String(c || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+}
+
+// Computes a granular character-level diff between the user's attempt and
+// the acceptable answer(s). Accents are separated from typos so learners
+// missing an accent get an actionable, pinpoint hint.
+function generateAnswerDiff(userRaw, acceptableList) {
+    const user = String(userRaw || '').trim();
+    if (!user) return null;
+
+    const list = Array.isArray(acceptableList) ? acceptableList : [acceptableList];
+    if (!list.length) return null;
+
+    // Find the closest candidate in acceptable list based on LCS length
+    let bestCandidate = list[0];
+    let bestLcs = -1;
+    let bestDp = null;
+
+    for (const cand of list) {
+        const expected = String(cand || '').trim();
+        const m = user.length;
+        const n = expected.length;
+        const dp = Array.from({ length: m + 1 }, () => Array(n + 1).fill(0));
+        for (let i = 1; i <= m; i++) {
+            for (let j = 1; j <= n; j++) {
+                if (baseChar(user[i - 1]) === baseChar(expected[j - 1])) {
+                    dp[i][j] = dp[i - 1][j - 1] + 1;
+                } else {
+                    dp[i][j] = Math.max(dp[i - 1][j], dp[i][j - 1]);
+                }
+            }
+        }
+        if (dp[m][n] > bestLcs) {
+            bestLcs = dp[m][n];
+            bestCandidate = expected;
+            bestDp = dp;
+        }
+    }
+
+    const expected = bestCandidate;
+    const m = user.length;
+    const n = expected.length;
+    const dp = bestDp;
+
+    const lcsLen = dp[m][n];
+    const maxLen = Math.max(m, n);
+    // Don't show diff for completely dissimilar or trivial strings
+    if (lcsLen < 2 && maxLen > 3) return null;
+    if (lcsLen / maxLen < 0.35) return null;
+
+    let i = m, j = n;
+    const ops = [];
+    let onlyAccents = true;
+    while (i > 0 || j > 0) {
+        if (i > 0 && j > 0 && baseChar(user[i - 1]) === baseChar(expected[j - 1])) {
+            if (user[i - 1] === expected[j - 1]) {
+                ops.unshift({ t: 'eq', text: user[i - 1] });
+            } else {
+                ops.unshift({ t: 'accent', text: user[i - 1], exp: expected[j - 1] });
+            }
+            i--; j--;
+        } else if (i > 0 && (j === 0 || dp[i - 1][j] >= dp[i][j - 1])) {
+            ops.unshift({ t: 'del', text: user[i - 1] });
+            onlyAccents = false;
+            i--;
+        } else {
+            ops.unshift({ t: 'ins', text: expected[j - 1] });
+            onlyAccents = false;
+            j--;
+        }
+    }
+
+    // Merge consecutive insertions and deletions
+    const merged = [];
+    for (const op of ops) {
+        const last = merged[merged.length - 1];
+        if (last && last.t === op.t && op.t !== 'accent') {
+            last.text += op.text;
+        } else {
+            merged.push({ ...op });
+        }
+    }
+
+    let html = '';
+    const accentList = [];
+    for (const op of merged) {
+        if (op.t === 'eq') {
+            html += esc(op.text);
+        } else if (op.t === 'accent') {
+            accentList.push(`${op.text} → ${op.exp}`);
+            html += `<span class="lsn-diff-accent">${esc(op.text)}<span class="lsn-diff-accent-hint">${esc(op.exp)}</span></span>`;
+        } else if (op.t === 'del') {
+            html += `<del class="lsn-diff-del">${esc(op.text)}</del>`;
+        } else if (op.t === 'ins') {
+            html += `<ins class="lsn-diff-ins">${esc(op.text)}</ins>`;
+        }
+    }
+
+    return {
+        onlyAccents,
+        accentList,
+        html,
+        expected
+    };
+}
+
 function feedbackHtml() {
-    return '<p id="step-feedback" class="lsn-feedback"></p><p id="step-translation" class="lsn-en"></p>';
+    return '<p id="step-feedback" class="lsn-feedback"></p><div id="step-diff" class="lsn-diff" style="display:none;"></div><p id="step-translation" class="lsn-en"></p>';
 }
 
 // Shown once the answer is settled (solved or revealed after 3 tries), so a
@@ -521,6 +630,8 @@ function updateFooterButton() {
 function solveStep(message) {
     stepState.solved = true;
     setFeedback(true, message);
+    const diffEl = document.getElementById('step-diff');
+    if (diffEl) { diffEl.innerHTML = ''; diffEl.style.display = 'none'; }
     showTranslation();
     updateFooterButton();
     if (typeof Sound !== 'undefined') Sound.correct();
@@ -807,7 +918,7 @@ const stepRenderers = {
             <p class="lsn-question">${escMd(step.question)}</p>
             <div class="lsn-options">
                 ${pick.options.map((option, i) => `
-                    <button class="lsn-option" onclick="lessonSelectOption(this, ${i})">${escMd(option)}</button>
+                    <button class="lsn-option" onclick="lessonSelectOption(this, ${i})"><span class="lsn-key-hint">${i + 1}</span><span class="lsn-option-text">${escMd(option)}</span></button>
                 `).join('')}
             </div>
             ${feedbackHtml()}
@@ -831,7 +942,7 @@ const stepRenderers = {
             <p class="lsn-question">Choose the missing line:</p>
             <div class="lsn-options">
                 ${pick.options.map((option, i) => `
-                    <button class="lsn-option" onclick="lessonSelectOption(this, ${i})">${escMd(option)}</button>
+                    <button class="lsn-option" onclick="lessonSelectOption(this, ${i})"><span class="lsn-key-hint">${i + 1}</span><span class="lsn-option-text">${escMd(option)}</span></button>
                 `).join('')}
             </div>
             ${feedbackHtml()}
@@ -855,7 +966,7 @@ const stepRenderers = {
             </div>
             <div class="lsn-options">
                 ${pick.options.map((option, i) => `
-                    <button class="lsn-option" onclick="lessonSelectOption(this, ${i})">${escMd(option)}</button>
+                    <button class="lsn-option" onclick="lessonSelectOption(this, ${i})"><span class="lsn-key-hint">${i + 1}</span><span class="lsn-option-text">${escMd(option)}</span></button>
                 `).join('')}
             </div>
             ${feedbackHtml()}
@@ -877,7 +988,8 @@ const stepRenderers = {
                 ${(typeof Speech === 'undefined' || !Speech.available())
                     ? `<p class="lsn-hint">No ${esc(Lang.name())} voice found on this device — you can still answer after 3 tries.</p>` : ''}
             </div>
-            <input id="blank-input" class="lsn-input" type="text" placeholder="Type what you hear">
+            <input id="blank-input" class="lsn-input" type="text" placeholder="Type what you hear" autocomplete="off" autocapitalize="off" spellcheck="false">
+            ${typeof UI !== 'undefined' && UI.diacriticsBarHtml ? UI.diacriticsBarHtml('#blank-input') : ''}
             ${feedbackHtml()}
         `;
     },
@@ -916,7 +1028,8 @@ const stepRenderers = {
         stepState.checkFn = 'lessonCheckBlank';
         return `
             <p class="lsn-question">${escMd(step.sentence).replace(/_{2,}/, '<span class="lsn-blank">?</span>')}</p>
-            <input id="blank-input" class="lsn-input" type="text" placeholder="Type the missing word">
+            <input id="blank-input" class="lsn-input" type="text" placeholder="Type the missing word" autocomplete="off" autocapitalize="off" spellcheck="false">
+            ${typeof UI !== 'undefined' && UI.diacriticsBarHtml ? UI.diacriticsBarHtml('#blank-input') : ''}
             ${feedbackHtml()}
         `;
     },
@@ -979,11 +1092,12 @@ const stepRenderers = {
 
         return `
             <p class="lsn-question">Complete each line in ${esc(Lang.name())}.</p>
+            ${typeof UI !== 'undefined' && UI.diacriticsBarHtml ? UI.diacriticsBarHtml('.lsn-input') : ''}
             ${stepState.lines.map((line, i) => `
                 <div class="lsn-write-row">
                     <div class="lsn-en">${esc(line.prompt)}</div>
                     <input class="lsn-input" type="text" placeholder="Your sentence"
-                        data-write="${i}" oninput="lessonCheckWriting()">
+                        data-write="${i}" oninput="lessonCheckWriting()" autocomplete="off" autocapitalize="off" spellcheck="false">
                     ${line.answer ? `
                         <div class="lsn-model" data-model="${i}">
                             <span class="lsn-model-label">One way to say it</span>
@@ -1104,21 +1218,59 @@ const stepRenderers = {
 // currently does (Check or Continue). Everything else (Reset, checkboxes)
 // already does the right thing on Enter natively, so this leaves those alone.
 function _wireLessonEnterToCheck() {
-    const container = document.getElementById('lesson-content');
-    if (!container || container.dataset.enterWired) return;
-    container.dataset.enterWired = '1';
+    if (window._lessonKeyboardWired) return;
+    window._lessonKeyboardWired = true;
 
-    container.addEventListener('keydown', e => {
-        if (e.key !== 'Enter') return;
+    window.addEventListener('keydown', e => {
+        const lessonScreen = document.getElementById('lesson-screen');
+        if (!lessonScreen || lessonScreen.classList.contains('hidden')) return;
+
         const target = e.target;
-        const isTextInput = target.tagName === 'INPUT' && target.type === 'text';
-        const isAnswer = target.classList.contains('lsn-option') || target.classList.contains('lsn-tile');
-        if (!isTextInput && !isAnswer) return;
+        const isTextInput = target && (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.isContentEditable);
 
-        const btn = document.getElementById('lesson-next-btn');
-        if (btn && !btn.disabled) {
-            e.preventDefault();
-            btn.click();
+        // 1. Enter key: triggers footer button (Check or Continue)
+        if (e.key === 'Enter') {
+            const btn = document.getElementById('lesson-next-btn');
+            if (btn && !btn.disabled) {
+                e.preventDefault();
+                btn.click();
+            }
+            return;
+        }
+
+        // Never intercept keyboard shortcuts when the user is actively typing in a text field
+        if (isTextInput) return;
+
+        // 2. Hotkeys '1' - '4' (and Numpad 1 - 4): select multiple choice / dialogue options
+        let digit = null;
+        if (e.key >= '1' && e.key <= '4') {
+            digit = parseInt(e.key, 10);
+        } else if (e.code && e.code.startsWith('Numpad') && e.code.length === 7) {
+            const val = parseInt(e.code.replace('Numpad', ''), 10);
+            if (val >= 1 && val <= 4) digit = val;
+        }
+
+        if (digit !== null) {
+            const container = document.getElementById('lesson-content');
+            if (container) {
+                const options = container.querySelectorAll('.lsn-options .lsn-option:not([disabled])');
+                if (options && options.length >= digit) {
+                    e.preventDefault();
+                    options[digit - 1].click();
+                    return;
+                }
+            }
+        }
+
+        // 3. Audio replay hotkey: 'p' or 'r'
+        if (e.key === 'p' || e.key === 'P' || e.key === 'r' || e.key === 'R') {
+            const container = document.getElementById('lesson-content');
+            const playBtn = container ? container.querySelector('.lsn-play') : null;
+            if (playBtn) {
+                e.preventDefault();
+                playBtn.click();
+                return;
+            }
         }
     });
 }
@@ -1610,16 +1762,36 @@ function lessonCheckBlank() {
     input.classList.toggle('correct', ok);
     input.classList.toggle('wrong', !ok);
 
+    const diffContainer = document.getElementById('step-diff');
+
     if (ok) {
+        if (diffContainer) { diffContainer.innerHTML = ''; diffContainer.style.display = 'none'; }
         solveStep('✓ Correct!');
         return;
     }
 
-    if (failStep('✗ Try again.')) {
+    const diff = generateAnswerDiff(input.value, acceptable);
+
+    let failMsg = '✗ Try again.';
+    if (diff && diff.onlyAccents && diff.accentList.length) {
+        failMsg = `✗ Watch your accents (${diff.accentList.join(', ')}).`;
+    }
+
+    if (failStep(failMsg)) {
+        if (diffContainer) { diffContainer.innerHTML = ''; diffContainer.style.display = 'none'; }
         input.value = stepState.answer;
         input.classList.remove('wrong');
         input.classList.add('correct');
         setFeedback(false, 'The answer was "' + stepState.answer + '" — continue when you are ready.');
+    } else {
+        if (diffContainer && diff) {
+            const label = diff.onlyAccents ? 'Accents:' : 'Check:';
+            diffContainer.innerHTML = `<span class="lsn-diff-label">${label}</span> <span class="lsn-diff-content">${diff.html}</span>`;
+            diffContainer.style.display = 'flex';
+        } else if (diffContainer) {
+            diffContainer.innerHTML = '';
+            diffContainer.style.display = 'none';
+        }
     }
 }
 

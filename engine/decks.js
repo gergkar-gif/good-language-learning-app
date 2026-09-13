@@ -37,6 +37,16 @@ const Decks = (function () {
         }
     };
 
+    const CEFR_LEVELS = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
+    const LEVEL_TITLES = {
+        A1: 'Beginner',
+        A2: 'Elementary',
+        B1: 'Intermediate',
+        B2: 'Upper Intermediate',
+        C1: 'Advanced',
+        C2: 'Mastery'
+    };
+
     let catalogue = null;      // decks.json, once fetched
     let myDecks = [];          // custom, learner-owned decks
     let openDeck = null;       // deck id being viewed, or null for the index
@@ -696,7 +706,11 @@ const Decks = (function () {
         const preview = wordsOf(deck).slice(0, 5).map(w => withArticle(w.lemma)).join(' · ');
 
         return `
-            <button class="dk-card" data-open-deck="${esc(deck.id)}">
+            <button class="dk-card" data-open-deck="${esc(deck.id)}"
+                    data-name="${esc((deck.name || '').toLowerCase())}"
+                    data-level="${esc((deck.level || '').toLowerCase())}"
+                    data-kind="${esc((deck.kind || '').toLowerCase())}"
+                    data-preview="${esc((preview || '').toLowerCase())}">
                 <span class="dk-card-top">
                     ${deck.label ? `<span class="dk-num">${esc(deck.label)}</span>` : ''}
                     <span class="dk-name">${esc(deck.name)}</span>
@@ -734,8 +748,50 @@ const Decks = (function () {
         const groups = KIND_ORDER.map(kind => {
             const group = decks.filter(deck => deck.kind === kind);
             if (!group.length) return '';
+
+            let contentHtml = '';
+            if (kind === 'lesson') {
+                const byLevel = {};
+                group.forEach(deck => {
+                    const lvl = (deck.level || 'A1').toUpperCase();
+                    if (!byLevel[lvl]) byLevel[lvl] = [];
+                    byLevel[lvl].push(deck);
+                });
+
+                const presentLevels = CEFR_LEVELS.filter(l => byLevel[l] && byLevel[l].length);
+                Object.keys(byLevel).forEach(l => {
+                    if (!presentLevels.includes(l)) presentLevels.push(l);
+                });
+
+                const levelAccordions = presentLevels.map(lvl => {
+                    const lvlDecks = byLevel[lvl];
+                    return `
+                        <div class="dk-level-group" data-level-container="${esc(lvl)}">
+                            <button class="dk-level-header" data-level-toggle="${esc(lvl)}" aria-expanded="false">
+                                <span class="dk-level-info">
+                                    <span class="dk-level-badge">${esc(lvl)}</span>
+                                    <span class="dk-level-title">${esc(LEVEL_TITLES[lvl] || lvl)}</span>
+                                    <span class="dk-level-count">${lvlDecks.length} ${lvlDecks.length === 1 ? 'deck' : 'decks'}</span>
+                                </span>
+                                <span class="dk-group-arrow" id="dk-level-arrow-${esc(lvl)}" aria-hidden="true">▶</span>
+                            </button>
+                            <div class="dk-level-body hidden" id="dk-level-body-${esc(lvl)}">
+                                <div class="dk-grid">${lvlDecks.map(deckCard).join('')}</div>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+
+                contentHtml = `<p class="dk-group-blurb">${KIND_BLURB[kind]}</p>${levelAccordions}`;
+            } else {
+                contentHtml = `
+                    <p class="dk-group-blurb">${KIND_BLURB[kind]}</p>
+                    <div class="dk-grid">${group.map(deckCard).join('')}</div>
+                `;
+            }
+
             return `
-                <section class="dk-group">
+                <section class="dk-group" data-kind-group="${esc(kind)}">
                     <button class="dk-group-header" data-group-toggle="${kind}" aria-expanded="false">
                         <span>
                             <span class="dk-group-title">${esc(KIND_LABEL[kind])}</span>
@@ -744,8 +800,7 @@ const Decks = (function () {
                         <span class="dk-group-arrow" id="dk-group-arrow-${kind}" aria-hidden="true">▶</span>
                     </button>
                     <div class="dk-group-body hidden" id="dk-group-body-${kind}">
-                        <p class="dk-group-blurb">${KIND_BLURB[kind]}</p>
-                        <div class="dk-grid">${group.map(deckCard).join('')}</div>
+                        ${contentHtml}
                     </div>
                 </section>
             `;
@@ -756,6 +811,94 @@ const Decks = (function () {
                 their words to a deck of your own.</p>
             ${groups || '<p class="dk-empty">No decks for this course yet.</p>'}
         `;
+    }
+
+    function filterDecksSearch(query, host) {
+        const q = (query || '').trim().toLowerCase();
+        const clearBtn = host.querySelector('#dk-search-clear');
+        const summary = host.querySelector('#dk-search-summary');
+        if (clearBtn) clearBtn.classList.toggle('hidden', !q);
+
+        const cards = host.querySelectorAll('.dk-card');
+
+        if (!q) {
+            if (summary) {
+                summary.classList.add('hidden');
+                summary.innerHTML = '';
+            }
+            cards.forEach(c => c.classList.remove('hidden'));
+            host.querySelectorAll('.dk-level-group').forEach(lg => lg.classList.remove('hidden'));
+            host.querySelectorAll('.dk-group').forEach(g => {
+                g.classList.remove('hidden');
+                const kind = g.getAttribute('data-kind-group');
+                const body = document.getElementById('dk-group-body-' + kind);
+                const arrow = document.getElementById('dk-group-arrow-' + kind);
+                const header = g.querySelector('[data-group-toggle]');
+                if (body) body.classList.add('hidden');
+                if (header) header.setAttribute('aria-expanded', 'false');
+                if (arrow) arrow.textContent = '▶';
+            });
+            host.querySelectorAll('[data-level-container]').forEach(lc => {
+                const lvl = lc.getAttribute('data-level-container');
+                const body = document.getElementById('dk-level-body-' + lvl);
+                const arrow = document.getElementById('dk-level-arrow-' + lvl);
+                const header = lc.querySelector('[data-level-toggle]');
+                if (body) body.classList.add('hidden');
+                if (header) header.setAttribute('aria-expanded', 'false');
+                if (arrow) arrow.textContent = '▶';
+            });
+            return;
+        }
+
+        let matchCount = 0;
+        cards.forEach(card => {
+            const name = card.getAttribute('data-name') || '';
+            const level = card.getAttribute('data-level') || '';
+            const kind = card.getAttribute('data-kind') || '';
+            const preview = card.getAttribute('data-preview') || '';
+            const matches = name.includes(q) || level === q || kind.includes(q) || preview.includes(q);
+            card.classList.toggle('hidden', !matches);
+            if (matches) matchCount++;
+        });
+
+        // Update level groups
+        host.querySelectorAll('.dk-level-group').forEach(lg => {
+            const visibleInLevel = lg.querySelectorAll('.dk-card:not(.hidden)').length;
+            lg.classList.toggle('hidden', visibleInLevel === 0);
+            if (visibleInLevel > 0) {
+                const lvl = lg.getAttribute('data-level-container');
+                const body = document.getElementById('dk-level-body-' + lvl);
+                const arrow = document.getElementById('dk-level-arrow-' + lvl);
+                const header = lg.querySelector('[data-level-toggle]');
+                if (body) body.classList.remove('hidden');
+                if (header) header.setAttribute('aria-expanded', 'true');
+                if (arrow) arrow.textContent = '▼';
+            }
+        });
+
+        // Update kind groups
+        host.querySelectorAll('.dk-group').forEach(g => {
+            const visibleInGroup = g.querySelectorAll('.dk-card:not(.hidden)').length;
+            g.classList.toggle('hidden', visibleInGroup === 0);
+            if (visibleInGroup > 0) {
+                const kind = g.getAttribute('data-kind-group');
+                const body = document.getElementById('dk-group-body-' + kind);
+                const arrow = document.getElementById('dk-group-arrow-' + kind);
+                const header = g.querySelector('[data-group-toggle]');
+                if (body) body.classList.remove('hidden');
+                if (header) header.setAttribute('aria-expanded', 'true');
+                if (arrow) arrow.textContent = '▼';
+            }
+        });
+
+        if (summary) {
+            summary.classList.remove('hidden');
+            if (matchCount > 0) {
+                summary.innerHTML = `<p class="dk-search-count">Found <strong>${matchCount}</strong> deck${matchCount === 1 ? '' : 's'} matching "${esc(query)}"</p>`;
+            } else {
+                summary.innerHTML = `<p class="dk-search-empty">No decks matching "${esc(query)}". Try another topic, title, or level.</p>`;
+            }
+        }
     }
 
     function indexHtml() {
@@ -793,6 +936,17 @@ const Decks = (function () {
                     </button>
                     <button data-open-deck="mine" class="dk-secondary">All my words</button>
                 </div>
+            </div>
+            <div class="dk-search-bar">
+                <div class="dk-search-wrap">
+                    <span class="dk-search-icon" aria-hidden="true">${typeof Art !== 'undefined' ? Art.icon('decks') : '🔍'}</span>
+                    <input type="search" id="dk-universal-search" class="dk-search-input"
+                           placeholder="Search decks by title, topic, level, or words..."
+                           autocomplete="off" autocapitalize="off" spellcheck="false"
+                           aria-label="Search decks">
+                    <button type="button" id="dk-search-clear" class="dk-search-clear hidden" aria-label="Clear search">×</button>
+                </div>
+                <div id="dk-search-summary" class="dk-search-summary hidden"></div>
             </div>
             <nav class="lt-subnav" id="dk-subnav">
                 <button class="lt-subnav-btn${activeSection === 'mine' ? ' active' : ''}"
@@ -999,6 +1153,34 @@ const Decks = (function () {
                 if (arrow) arrow.textContent = nowOpen ? '▼' : '▶';
             };
         });
+        host.querySelectorAll('[data-level-toggle]').forEach(el => {
+            el.onclick = function (e) {
+                e.stopPropagation();
+                const lvl = el.getAttribute('data-level-toggle');
+                const body = document.getElementById('dk-level-body-' + lvl);
+                const arrow = document.getElementById('dk-level-arrow-' + lvl);
+                if (!body) return;
+                const nowOpen = body.classList.toggle('hidden') === false;
+                el.setAttribute('aria-expanded', String(nowOpen));
+                if (arrow) arrow.textContent = nowOpen ? '▼' : '▶';
+            };
+        });
+        {
+            const searchInput = host.querySelector('#dk-universal-search');
+            if (searchInput) {
+                searchInput.oninput = () => filterDecksSearch(searchInput.value, host);
+            }
+            const clearBtn = host.querySelector('#dk-search-clear');
+            if (clearBtn) {
+                clearBtn.onclick = () => {
+                    if (searchInput) {
+                        searchInput.value = '';
+                        searchInput.focus();
+                    }
+                    filterDecksSearch('', host);
+                };
+            }
+        }
         host.querySelectorAll('[data-open-deck]').forEach(el => {
             el.onclick = function () { openDeck = el.getAttribute('data-open-deck'); sortOrder = 'natural'; studyMode = null; render(); };
         });

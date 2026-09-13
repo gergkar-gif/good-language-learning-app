@@ -118,6 +118,11 @@ const VerbsSpeed = (function () {
             _timeRemaining = remaining;
             var el = _container.querySelector('.vspeed-timer-display');
             if (el) el.textContent = _formatTime(remaining);
+            var total = _timerMinutes * 60;
+            var elapsed = Math.max(0, total - remaining);
+            var pct = Math.min(100, Math.round((elapsed / Math.max(1, total)) * 100));
+            var bar = _container.querySelector('.driller-progress-bar');
+            if (bar) bar.style.width = pct + '%';
             if (remaining <= 0) _endSession();
         }, 250);
 
@@ -328,8 +333,9 @@ const VerbsSpeed = (function () {
             +     '</div>'
             +   '</div>'
             +   '<div class="vspeed-results-actions">'
-            +     '<button class="vbtn vbtn-primary" data-action="play-again">Play Again</button>'
+            +     '<button class="vbtn vbtn-primary" data-action="play-again">Practice Again</button>'
             +     '<button class="vbtn vbtn-secondary" data-action="change-settings">Change Settings</button>'
+            +     '<button class="vbtn vbtn-secondary" data-action="exit-workshop">Back to Workshop</button>'
             +   '</div>'
             + '</div>';
 
@@ -340,6 +346,12 @@ const VerbsSpeed = (function () {
             _phase = PHASE.SETTINGS;
             render(_container);
         });
+        var exitBtn = area.querySelector('[data-action="exit-workshop"]');
+        if (exitBtn) {
+            exitBtn.addEventListener('click', function () {
+                if (typeof Workshop !== 'undefined') Workshop.close();
+            });
+        }
 
         if (typeof RecommendationEngine !== 'undefined') {
             RecommendationEngine.mountNextAction(area, { excludeDrillerId: 'verbs' });
@@ -351,6 +363,9 @@ const VerbsSpeed = (function () {
     // ================================================================
     function _renderPlaying(root) {
         root.innerHTML = ''
+            + '<div class="driller-progress-track" aria-hidden="true">'
+            +   '<div class="driller-progress-bar" style="width: 0%"></div>'
+            + '</div>'
             + '<div class="vspeed-play-area">'
             +   '<div class="vspeed-hud">'
             +     '<div class="vspeed-timer-display">' + _formatTime(_timeRemaining) + '</div>'

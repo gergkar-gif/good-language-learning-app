@@ -7,14 +7,27 @@
     <meta name="description" content="Parlour is your home for meaningful language learning. Learn with lessons. Read stories. Practise with purpose. Remember what matters.">
     <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
 
-    <link rel="stylesheet" href="styles/base.css?v=2026-08-14c">
+    <link rel="stylesheet" href="styles/base.css?v=2026-09-13">
     <link rel="stylesheet" href="styles/geometry.css?v=2026-08-13d">
-    <link rel="stylesheet" href="styles/components.css?v=2026-09-12a">
-    <link rel="stylesheet" href="styles/layout.css?v=2026-08-25a">
+    <link rel="stylesheet" href="styles/components.css?v=2026-09-13">
+    <link rel="stylesheet" href="styles/layout.css?v=2026-09-12b">
     <link rel="stylesheet" href="styles/utilities.css?v=2026-08-13e">
-    <link rel="stylesheet" href="styles/verbs.css?v=2026-08-18a">
-    <link rel="stylesheet" href="styles/workshop.css?v=2026-09-11a">
-    <link rel="stylesheet" href="styles/study-plan.css?v=2026-09-11a">
+    <link rel="stylesheet" href="styles/verbs.css?v=2026-09-12f">
+    <link rel="stylesheet" href="styles/workshop.css?v=2026-09-12c">
+    <link rel="stylesheet" href="styles/study-plan.css?v=2026-09-12b">
+    <script>
+    (function() {
+        try {
+            var p = localStorage.getItem('parlour_theme') || 'system';
+            var d = p === 'dark' || (p === 'system' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+            if (d) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            } else if (p === 'light') {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        } catch(e) {}
+    })();
+    </script>
 </head>
 <body>
 
@@ -25,13 +38,31 @@
 
     <!-- Labels match the page headers. The data-tab ids stay as they are —
          they key showTab, PageHeader and the tab sections. -->
-    <nav class="nav">
-        <button class="active" data-tab="home" data-icon="home">Home</button>
-        <button data-tab="learn" data-icon="lessons">Lessons</button>
-        <button data-tab="reader" data-icon="library">Library</button>
-        <button data-tab="drills" data-icon="workshop">Workshop</button>
-        <button data-tab="review" data-icon="decks">Decks</button>
-        <button data-tab="journey" data-icon="journey">Journey</button>
+    <nav class="nav" id="main-nav">
+        <div class="nav-brand" onclick="showTab('home')">
+            <span class="nav-brand-mark" aria-hidden="true">
+                <svg viewBox="0 0 24 24" class="nav-brand-icon"><rect width="24" height="24" rx="5" class="brand-tile"/><rect x="4" y="3" width="16" height="18" class="brand-door"/><path d="M4 3 12 6v15l-8-3Z" class="brand-door"/><circle cx="10" cy="12" r="1.1" class="brand-knob"/></svg>
+            </span>
+            <span class="nav-brand-name">Parlour</span>
+        </div>
+        <div class="nav-items">
+            <button class="active" data-tab="home" data-icon="home">Home</button>
+            <button data-tab="learn" data-icon="lessons">Lessons</button>
+            <button data-tab="reader" data-icon="library">Library</button>
+            <button data-tab="drills" data-icon="workshop">Workshop</button>
+            <button data-tab="review" data-icon="decks">Decks</button>
+            <button data-tab="journey" data-icon="journey">Journey</button>
+        </div>
+        <div class="nav-footer">
+            <div class="nav-footer-stats">
+                <div class="nav-footer-streak" id="nav-streak"></div>
+                <div class="nav-footer-xp" id="nav-xp"></div>
+            </div>
+            <button type="button" class="nav-theme-btn" id="nav-theme-toggle" aria-label="Toggle dark/light theme" title="Toggle dark/light theme">
+                <span class="theme-toggle-icon" aria-hidden="true"></span>
+                <span class="nav-theme-label">Dark theme</span>
+            </button>
+        </div>
     </nav>
 
     <main class="content">
@@ -165,18 +196,22 @@
                         <button class="review-rate review-rate-again" onclick="rateCard('again')">
                             <span class="review-rate-label">Again</span>
                             <span class="review-rate-time">1m</span>
+                            <span class="review-rate-hint" aria-hidden="true">1</span>
                         </button>
                         <button class="review-rate review-rate-hard" onclick="rateCard('hard')">
                             <span class="review-rate-label">Hard</span>
                             <span class="review-rate-time">1d</span>
+                            <span class="review-rate-hint" aria-hidden="true">2</span>
                         </button>
                         <button class="review-rate review-rate-good" onclick="rateCard('good')">
                             <span class="review-rate-label">Good</span>
                             <span class="review-rate-time">1d</span>
+                            <span class="review-rate-hint" aria-hidden="true">3</span>
                         </button>
                         <button class="review-rate review-rate-easy" onclick="rateCard('easy')">
                             <span class="review-rate-label">Easy</span>
                             <span class="review-rate-time">4d</span>
+                            <span class="review-rate-hint" aria-hidden="true">4</span>
                         </button>
                     </div>
                 </div>
@@ -236,22 +271,23 @@
 
 <!-- Engine: core utilities (no deps) -->
 <!-- Must load first: everything below reads paths and storage keys from it. -->
+<script src="engine/theme.js?v=2026-09-12"></script>
 <script src="engine/lang.js?v=2026-08-15a"></script>
 <script src="engine/xp.js?v=2026-09-02"></script>
 <script src="engine/morphology/hungarian.js?v=2026-09-04"></script>
 <script src="engine/morphology/spanish.js?v=2026-09-03"></script>
 <script src="engine/lexicon.js?v=2026-09-03a"></script>
-<script src="engine/srs.js?v=2026-09-12a"></script>
+<script src="engine/srs.js?v=2026-09-12b"></script>
 <script src="engine/content-loader.js?v=2026-08-09"></script>
-<script src="engine/ui.js?v=2026-08-09"></script>
+<script src="engine/ui.js?v=2026-09-12"></script>
 <script src="engine/art.js?v=2026-09-11a"></script>
 <script src="engine/sound.js?v=2026-08-27a"></script>
 <script src="engine/geo.js?v=2026-08-13d"></script>
-<script src="engine/page-header.js?v=2026-08-18a"></script>
+<script src="engine/page-header.js?v=2026-09-13"></script>
 <script src="engine/speech.js?v=2026-09-12"></script>
 
 <!-- Engine: reader (depends on Content) -->
-<script src="engine/reader.js?v=2026-09-09f"></script>
+<script src="engine/reader.js?v=2026-09-12"></script>
 
 <!-- Engine: driller session-accuracy signal (only depends on Lang) — loaded
      before every driller that writes to it: verbs/speed, translation,
@@ -262,35 +298,35 @@
 <script src="engine/verbs/stats.js?v=2026-08-09"></script>
 <script src="engine/verbs/leaderboard.js?v=2026-08-27a"></script>
 <script src="engine/verbs/table.js?v=2026-08-09"></script>
-<script src="engine/verbs/speed.js?v=2026-09-11b"></script>
+<script src="engine/verbs/speed.js?v=2026-09-12c"></script>
 <script src="engine/verbs.js?v=2026-09-03"></script>
 
 <!-- Engine: grammar driller submodules (order matters) -->
-<script src="engine/drills/grammar-runner.js?v=2026-09-12"></script>
-<script src="engine/drills/grammar.js?v=2026-09-12"></script>
+<script src="engine/drills/grammar-runner.js?v=2026-09-12b"></script>
+<script src="engine/drills/grammar.js?v=2026-09-12c"></script>
 
 <!-- Engine: translation driller submodules -->
-<script src="engine/drills/translation-runner.js?v=2026-08-13"></script>
-<script src="engine/drills/translation.js?v=2026-09-11b"></script>
+<script src="engine/drills/translation-runner.js?v=2026-09-12"></script>
+<script src="engine/drills/translation.js?v=2026-09-12c"></script>
 
 <!-- Engine: vocabulary driller (reuses GrammarRunner, loaded above) -->
-<script src="engine/drills/vocabulary.js?v=2026-09-11b"></script>
+<script src="engine/drills/vocabulary.js?v=2026-09-12c"></script>
 
 <!-- Engine: listening driller submodules (depends on Speech, loaded earlier) -->
-<script src="engine/drills/listening-runner.js?v=2026-08-15a"></script>
-<script src="engine/drills/listening.js?v=2026-09-11b"></script>
+<script src="engine/drills/listening-runner.js?v=2026-09-12"></script>
+<script src="engine/drills/listening.js?v=2026-09-12c"></script>
 
 <!-- Engine: Hungarian-specific drillers (depend on HungarianMorphology, Lexicon, GrammarRunner, all loaded earlier) -->
-<script src="engine/drills/hu-suffix.js?v=2026-09-11b"></script>
-<script src="engine/drills/hu-prefix.js?v=2026-09-11b"></script>
-<script src="engine/drills/hu-morphology.js?v=2026-09-11b"></script>
-<script src="engine/drills/hu-verb.js?v=2026-09-11b"></script>
+<script src="engine/drills/hu-suffix.js?v=2026-09-12c"></script>
+<script src="engine/drills/hu-prefix.js?v=2026-09-12c"></script>
+<script src="engine/drills/hu-morphology.js?v=2026-09-12c"></script>
+<script src="engine/drills/hu-verb.js?v=2026-09-12c"></script>
 
 <!-- Engine: workshop shell (depends on Verbs, GrammarDriller, TranslationDriller, VocabularyDriller, ListeningDriller, Hu*Driller) -->
 <script src="engine/workshop.js?v=2026-09-11c"></script>
 
 <!-- Engine: lessons, progress, curriculum -->
-<script src="engine/lessons.js?v=2026-09-12"></script>
+<script src="engine/lessons.js?v=2026-09-12b"></script>
 <script src="engine/progress.js?v=2026-09-02b"></script>
 <script src="engine/learnerPath.js?v=2026-09-11"></script>
 <script src="engine/recycle.js?v=2026-09-04"></script>
@@ -303,10 +339,10 @@
      LearnerModel, RecommendationEngine, all loaded above -->
 <script src="engine/studyPlan.js?v=2026-09-11a"></script>
 
-<script src="engine/journey.js?v=2026-09-11"></script>
+<script src="engine/journey.js?v=2026-09-12f"></script>
 <script src="engine/decks/match.js?v=2026-09-03b"></script>
-<script src="engine/decks/learn.js?v=2026-08-27d"></script>
-<script src="engine/decks.js?v=2026-09-10"></script>
+<script src="engine/decks/learn.js?v=2026-09-12"></script>
+<script src="engine/decks.js?v=2026-09-12"></script>
 
 <!-- Engine: time-based session screen — depends on StudyPlan, GrammarDriller,
      VocabularyDriller, Decks, LevelTest, all loaded above -->
@@ -315,7 +351,7 @@
 <script src="engine/curriculum.js?v=2026-09-11"></script>
 
 <!-- Engine: library (depends on Reader, Decks, Lexicon) -->
-<script src="engine/library.js?v=2026-09-04"></script>
+<script src="engine/library.js?v=2026-09-12"></script>
 
 <!-- Engine: home (reads from every module above) -->
 <script src="engine/home.js?v=2026-09-11d"></script>
