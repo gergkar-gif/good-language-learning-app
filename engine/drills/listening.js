@@ -92,7 +92,10 @@ const ListeningDriller = (function () {
     }
 
     function _poolFor(level) {
-        return level === 'all' ? _pairs : _pairs.filter(p => p.level === level);
+        if (!level || level === 'all') return _pairs;
+        const target = level.toUpperCase();
+        const filtered = _pairs.filter(p => p.level && p.level.toUpperCase() === target);
+        return filtered.length ? filtered : _pairs;
     }
 
     // ---- Exercise builders — one per type in PARLOUR_LISTENING_SPEC.md §2 ----
@@ -193,15 +196,14 @@ const ListeningDriller = (function () {
         return candidates.length ? candidates[Math.floor(Math.random() * candidates.length)] : null;
     }
 
-    function _buildPool(level) {
-        const pool = _poolFor(level);
-        return pool.map(pair => _buildExerciseFor(pair, pool)).filter(Boolean);
-    }
-
     function _takeN(pool, n) {
+        const shuffled = _shuffled(pool);
         const out = [];
-        while (out.length < n) out.push(..._shuffled(pool));
-        return out.slice(0, n);
+        for (let i = 0; i < shuffled.length && out.length < n; i++) {
+            const ex = _buildExerciseFor(shuffled[i], pool);
+            if (ex) out.push(ex);
+        }
+        return out;
     }
 
     // ================================================================
@@ -288,7 +290,7 @@ const ListeningDriller = (function () {
     //  RENDERING — Session
     // ================================================================
     function _startSession() {
-        const pool = _buildPool(_level);
+        const pool = _poolFor(_level);
         _seen = 0;
         _correct = 0;
 
@@ -302,10 +304,20 @@ const ListeningDriller = (function () {
             return;
         }
 
-        if (_mode === MODE.COUNT) {
-            _queue = _takeN(pool, _questionCount);
-        } else {
-            _queue = _shuffled(pool);
+        const count = (_mode === MODE.COUNT) ? _questionCount : Math.min(30, pool.length);
+        _queue = _takeN(pool, count);
+
+        if (!_queue.length) {
+            _phase = PHASE.SETTINGS;
+            _container.innerHTML = `
+                <div class="gd-empty">No listening items found for this level yet.</div>
+                <button class="vbtn vbtn-secondary" data-action="change-settings">Change settings</button>
+            `;
+            _container.querySelector('[data-action="change-settings"]').addEventListener('click', _abortSession);
+            return;
+        }
+
+        if (_mode === MODE.TIMED) {
             _timeRemaining = _timerMinutes * 60;
             _endTime = Date.now() + _timeRemaining * 1000;
             _timerInterval = setInterval(_tick, 250);
@@ -375,7 +387,8 @@ const ListeningDriller = (function () {
 
         _queueIndex++;
         if (_queueIndex >= _queue.length) {
-            _queue = _shuffled(_queue);
+            const pool = _poolFor(_level);
+            _queue = _takeN(pool, Math.min(30, pool.length));
             _queueIndex = 0;
         }
         _renderSession();

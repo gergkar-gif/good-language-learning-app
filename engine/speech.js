@@ -89,7 +89,8 @@ const Speech = (function () {
     }
 
     function available() {
-        return !!(synth && voice);
+        if (!voice && synth) voice = pickVoice();
+        return !!synth;
     }
 
     // What is on screen is not always what should be said. Tables write
@@ -108,7 +109,8 @@ const Speech = (function () {
     }
 
     function speak(text, options) {
-        if (!available()) return false;
+        if (!synth) return false;
+        if (!voice) voice = pickVoice();
         const said = sayable(text);
         if (!said) return false;
 
@@ -122,12 +124,14 @@ const Speech = (function () {
         // when the list is rebuilt — and assigning it then throws. The lang
         // tag alone still steers the engine to the right language, so fall
         // back to that rather than losing the click.
-        try {
-            utterance.voice = voice;
-        } catch (error) {
-            console.warn('Speech: voice unavailable, falling back to lang', error);
+        if (voice) {
+            try {
+                utterance.voice = voice;
+            } catch (error) {
+                console.warn('Speech: voice unavailable, falling back to lang', error);
+            }
         }
-        utterance.lang = voice.lang || preferred()[0];
+        utterance.lang = (voice && voice.lang) || preferred()[0];
         // A shade under natural pace. Beginners lose word boundaries at 1.0.
         utterance.rate = (options && options.rate) || 0.9;
         synth.speak(utterance);
