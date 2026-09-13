@@ -73,6 +73,36 @@
    .wk-recommend above (both answer "what should I do right now?"), but
    sits at the END of a screen the learner is about to leave rather than
    the top of one they just entered. */
+.wk-next-action-slot {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 6px;
+}
+
+.wk-next-action-slot .wk-next-sub {
+    margin-top: 6px;
+    margin-bottom: 4px;
+}
+
+.wk-next-primary-btn {
+    width: 100%;
+    padding: 12px 18px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: var(--radius-sm, 6px);
+    border: none;
+    cursor: pointer;
+    background: var(--primary, #1B4B5A);
+    color: #fff;
+    transition: background var(--dur-fast) var(--ease-standard), filter var(--dur-fast);
+}
+
+.wk-next-primary-btn:hover {
+    filter: brightness(1.1);
+}
+
 .wk-next-action {
     display: flex;
     flex-direction: column;
@@ -109,6 +139,15 @@
     font-size: 13px;
     color: var(--muted);
     margin-top: 4px;
+}
+
+@media (max-width: 639px) {
+    .wk-next-action {
+        padding-bottom: calc(32px + env(safe-area-inset-bottom, 0px));
+    }
+    #drills-root {
+        padding-bottom: calc(48px + env(safe-area-inset-bottom, 0px));
+    }
 }
 
 /* Open rows divided by hairlines, matching the Lessons list — see the note

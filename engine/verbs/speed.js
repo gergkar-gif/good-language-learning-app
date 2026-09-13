@@ -385,11 +385,20 @@ const VerbsSpeed = (function () {
      */
     function render(root, options) {
         _container    = root;
-        _tense        = options.tense || 'indicativo.presente';
-        _tenseLabel   = options.tenseLabel || '';
-        _tenseOptions = options.tenseOptions || [];
-        _persons      = options.persons || [];
-        _verbList     = options.verbList || [];
+        _tense        = (options && options.tense) || 'indicativo.presente';
+        _tenseLabel   = (options && options.tenseLabel) || '';
+        _tenseOptions = (options && options.tenseOptions) || [];
+        _persons      = (options && options.persons) || [];
+        _verbList     = (options && options.verbList) || [];
+
+        if (options && options.duration) {
+            _timerMinutes = Math.max(1, Math.round(options.duration / 60));
+        }
+
+        if (_phase === PHASE.SETTINGS && options && options.autoStart) {
+            _startSession();
+            return;
+        }
 
         switch (_phase) {
             case PHASE.SETTINGS: _renderSettings(root);  break;

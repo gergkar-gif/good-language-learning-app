@@ -709,6 +709,13 @@ const VocabularyDriller = (function () {
             await _load();
             if (options && options.words && options.words.length) {
                 _startSessionFromWords(options.words);
+            } else if (options && options.autoStart) {
+                const words = (typeof LearnerModel !== 'undefined') ? LearnerModel.weakWords() : [];
+                if (words.length) {
+                    _startSessionFromWords(words.slice(0, options.count || 6));
+                } else {
+                    _renderSettings();
+                }
             } else {
                 _renderSettings();
             }

@@ -390,6 +390,13 @@
     max-width: 480px;
     margin: 0 auto;
     text-align: center;
+    padding-bottom: 24px;
+}
+
+@media (max-width: 639px) {
+    .vspeed-results {
+        padding-bottom: calc(48px + env(safe-area-inset-bottom, 0px));
+    }
 }
 
 .vspeed-results-title {

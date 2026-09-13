@@ -223,7 +223,7 @@ const Workshop = (function () {
 
     function _renderDriller(driller) {
         if (driller.id === 'verbs' && typeof Verbs !== 'undefined') {
-            Verbs.render();
+            Verbs.render(_activeOptions);
         } else if (_moduleFor(driller.id)) {
             const container = document.getElementById(driller.containerId);
             if (container) _moduleFor(driller.id).render(container, _activeOptions);

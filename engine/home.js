@@ -86,6 +86,7 @@ const Home = (function () {
     // own click handlers below still need to call them directly.
     const dismissUnit = RecommendationEngine.dismissUnit;
     const dismissMiniGame = RecommendationEngine.dismissMiniGame;
+    let _currentPrimaryRec = null;
 
     // The next story to read: one at the level being studied if there is one,
     // otherwise the easiest thing left unread. Reaching over an unread A1
@@ -206,24 +207,21 @@ const Home = (function () {
     }
 
     function miniGameCard(mini) {
-        const anyWeak = mini.skillReason === 'weak' || mini.wordsReason === 'weak';
-        const blurb = anyWeak
-            ? "You've been shaky on some of this — a quick pass would help it stick."
-            : "Reinforce what you just learned, while it's still fresh.";
-        const count = (typeof QUICK_REINFORCE_COUNT === 'number') ? QUICK_REINFORCE_COUNT : 5;
+        const blurb = mini.blurb || "Reinforce what you just learned, while it's still fresh.";
+        const title = mini.challengeTitle || 'Play a mini-game?';
+        const primaryLabel = mini.buttonLabel || (mini.skill ? `Grammar (${QUICK_REINFORCE_COUNT} questions)` : 'Quick challenge');
+
         return `
             <section class="hm-continue hm-nudge">
-                <span class="hm-eyebrow">Quick reinforce</span>
-                <span class="hm-continue-title">Play a mini-game?</span>
+                <span class="hm-eyebrow">Quick challenge</span>
+                <span class="hm-continue-title">${esc(title)}</span>
                 <span class="hm-continue-sub">${esc(blurb)}</span>
                 <span class="hm-continue-foot">
-                    ${mini.skill ? `
-                        <button class="hm-cta-btn" data-mini-game-grammar="${esc(mini.skill)}"
-                            data-mini-game-lesson="${esc(mini.lessonId)}">Grammar (${count} questions) →</button>
-                    ` : ''}
-                    ${mini.words.length ? `
-                        <button class="hm-cta-btn" data-mini-game-vocab="1"
-                            data-mini-game-lesson="${esc(mini.lessonId)}">Vocabulary (${mini.words.length}) →</button>
+                    <button class="hm-cta-btn" data-mini-game-primary="1"
+                        data-mini-game-lesson="${esc(mini.lessonId)}">${esc(primaryLabel)} →</button>
+                    ${mini.alt ? `
+                        <button class="hm-cta-btn" data-mini-game-alt="1"
+                            data-mini-game-lesson="${esc(mini.lessonId)}">${esc(mini.alt.buttonLabel)} →</button>
                     ` : ''}
                     <button class="dk-link-btn" data-skip-mini-game="${esc(mini.lessonId)}">Not now</button>
                 </span>
@@ -472,6 +470,28 @@ const Home = (function () {
                 return;
             }
 
+            const miniPrimary = e.target.closest('[data-mini-game-primary]');
+            if (miniPrimary) {
+                const lessonId = miniPrimary.getAttribute('data-mini-game-lesson');
+                dismissMiniGame(lessonId);
+                goTab('drills');
+                if (_currentPrimaryRec && _currentPrimaryRec.kind === 'mini-game' && typeof Workshop !== 'undefined') {
+                    Workshop.open(_currentPrimaryRec.drillerId, _currentPrimaryRec.options);
+                }
+                return;
+            }
+
+            const miniAlt = e.target.closest('[data-mini-game-alt]');
+            if (miniAlt) {
+                const lessonId = miniAlt.getAttribute('data-mini-game-lesson');
+                dismissMiniGame(lessonId);
+                goTab('drills');
+                if (_currentPrimaryRec && _currentPrimaryRec.kind === 'mini-game' && _currentPrimaryRec.alt && typeof Workshop !== 'undefined') {
+                    Workshop.open(_currentPrimaryRec.alt.drillerId, _currentPrimaryRec.alt.options);
+                }
+                return;
+            }
+
             const miniGrammar = e.target.closest('[data-mini-game-grammar]');
             if (miniGrammar) {
                 dismissMiniGame(miniGrammar.getAttribute('data-mini-game-lesson'));
@@ -582,6 +602,7 @@ const Home = (function () {
         const totals = courseTotals();
         const reading = await nextStory(step ? step.level : null);
         const rec = await RecommendationEngine.recommend();
+        _currentPrimaryRec = rec ? rec.primary : null;
 
         host.innerHTML = `
             ${courseBlock()}

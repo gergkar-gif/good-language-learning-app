@@ -422,13 +422,21 @@ const HuMorphologyDriller = (function () {
     // ================================================================
     //  PUBLIC API
     // ================================================================
-    async function render(root) {
+    async function render(root, options) {
         _container = root;
 
         if (_phase === PHASE.SETTINGS) {
             _container.innerHTML = `<div class="gd-loading">Loading…</div>`;
             await _load();
-            _renderSettings();
+            if (options && (options.autoStart || options.count)) {
+                if (options.count) {
+                    _mode = MODE.COUNT;
+                    _questionCount = options.count;
+                }
+                _startSession();
+            } else {
+                _renderSettings();
+            }
         } else if (_phase === PHASE.SESSION) {
             _renderSession();
         } else {

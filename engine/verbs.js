@@ -21,6 +21,7 @@ const Verbs = (function () {
     var PERSONS_WITH_VOSOTROS   = ['yo', 'tu', 'ud', 'nosotros', 'vosotros', 'uds'];
 
     // ---- Module state (single owner) ----
+    var _activeRenderOptions = null;
     var _state = {
         mode:            'table',
         tense:           'indicativo.presente',
@@ -196,13 +197,18 @@ const Verbs = (function () {
                 onNext:     function () { Verbs.nextVerb(); }
             });
         } else {
-            VerbsSpeed.render(container, {
+            var speedOpts = {
                 tense:        _state.tense,
                 tenseLabel:   _getTenseLabel(),
                 tenseOptions: REAL_TENSES,
                 persons:      _getPersons(),
                 verbList:     _state.verbList
-            });
+            };
+            if (_activeRenderOptions) {
+                if (_activeRenderOptions.duration) speedOpts.duration = _activeRenderOptions.duration;
+                if (_activeRenderOptions.autoStart) speedOpts.autoStart = _activeRenderOptions.autoStart;
+            }
+            VerbsSpeed.render(container, speedOpts);
         }
     }
 
@@ -245,7 +251,11 @@ const Verbs = (function () {
     }
 
     /** Re-render the current state (call when the tab becomes visible). */
-    function render() {
+    function render(options) {
+        _activeRenderOptions = options || null;
+        if (options && options.mode) {
+            _state.mode = options.mode;
+        }
         _render();
     }
 

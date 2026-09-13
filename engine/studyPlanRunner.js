@@ -175,12 +175,28 @@ const StudyPlanRunner = (function () {
     // navigates back.
     function mountNextAction(container) {
         if (!container) return;
-        container.insertAdjacentHTML('beforeend', `
-            <div class="wk-next-action">
-                <span class="wk-next-eyebrow">Your time-based session</span>
-                <button class="wk-next-btn" data-sp-next="1">Back to your plan →</button>
-            </div>
-        `);
+        const actionsEl = container.querySelector('.vspeed-results-actions');
+        if (actionsEl) {
+            const playAgainBtn = actionsEl.querySelector('[data-action="play-again"]');
+            if (playAgainBtn) {
+                playAgainBtn.classList.remove('vbtn-primary');
+                playAgainBtn.classList.add('vbtn-secondary');
+            }
+            const slot = document.createElement('div');
+            slot.className = 'wk-next-action-slot';
+            slot.innerHTML = `
+                <button class="vbtn vbtn-primary wk-next-primary-btn" data-sp-next="1">Back to your plan →</button>
+                <span class="wk-next-sub">Time-based session in progress</span>
+            `;
+            actionsEl.insertAdjacentElement('afterbegin', slot);
+        } else {
+            container.insertAdjacentHTML('beforeend', `
+                <div class="wk-next-action">
+                    <span class="wk-next-eyebrow">Your time-based session</span>
+                    <button class="vbtn vbtn-primary wk-next-primary-btn" data-sp-next="1">Back to your plan →</button>
+                </div>
+            `);
+        }
         const btn = container.querySelector('[data-sp-next]');
         if (btn) {
             btn.addEventListener('click', () => {

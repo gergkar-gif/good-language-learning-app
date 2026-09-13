@@ -173,31 +173,220 @@ const RecommendationEngine = (function () {
         return { levelKey, unit, skill };
     }
 
-    // Home's per-lesson counterpart: a "Quick Reinforce" mini-game offered
-    // after any lesson, not just a unit's last one. Never computed if a
-    // practice nudge already applies — the caller checks that first.
+    // Home's per-lesson counterpart: a quick mini-game challenge offered
+    // after a lesson. Varied dynamically across all 9 Workshop drillers
+    // depending on the learner's previous knowledge (weaknesses first, then
+    // curriculum-unlocked variety).
     async function _miniGameNudge() {
         const lessonId = LearnerPath.lastCompletedLessonId();
         if (!lessonId || miniGameDismissed(lessonId)) return null;
 
-        const rec = await _grammarVocabCandidate();
+        const lang = (typeof Lang !== 'undefined') ? Lang.code() : 'es';
+        const completedCount = (typeof LearnerPath !== 'undefined' && LearnerPath.completedCount)
+            ? LearnerPath.completedCount() : 0;
+        const currentLevel = (typeof LearnerPath !== 'undefined' && LearnerPath.currentLevel)
+            ? LearnerPath.currentLevel() : 'A1';
 
-        let words = (rec && rec.words.length) ? rec.words : [];
-        let wordsReason = words.length ? 'weak' : null;
-        if (!words.length && typeof loadLesson === 'function' && typeof collectLessonVocabulary === 'function') {
-            const lesson = await loadLesson(lessonId);
-            if (lesson) words = await collectLessonVocabulary(lesson);
-            wordsReason = words.length ? 'recent' : null;
+        // 1. Weakness signals from LearnerModel
+        const weakSkillsList = (typeof LearnerModel !== 'undefined') ? await LearnerModel.weakSkills(1) : [];
+        const topWeakSkill = weakSkillsList[0] ? weakSkillsList[0].skillId : null;
+
+        const weakWordsList = (typeof LearnerModel !== 'undefined') ? LearnerModel.weakWords() : [];
+        const weakDrillersList = (typeof LearnerModel !== 'undefined') ? LearnerModel.weakDrillers() : [];
+        const weakDrillerIds = new Set(weakDrillersList.map(d => d.drillerId));
+
+        // 2. Recent lesson content
+        let recentSkill = null;
+        let recentWords = [];
+        const found = LearnerPath.unitFor(lessonId);
+        if (found) {
+            recentSkill = await Recommend.unitSkillFor(found.unit);
+        }
+        if (typeof loadLesson === 'function' && typeof collectLessonVocabulary === 'function') {
+            try {
+                const lesson = await loadLesson(lessonId);
+                if (lesson) recentWords = await collectLessonVocabulary(lesson);
+            } catch (err) {}
         }
 
-        const skill = rec ? rec.skill : null;
-        if (!skill && !words.length) return null;
+        const candidates = [];
+
+        // Candidate 1: Targeted Grammar
+        const effectiveSkill = topWeakSkill || recentSkill;
+        if (effectiveSkill) {
+            const isWeak = !!topWeakSkill;
+            candidates.push({
+                drillerId: 'grammar',
+                title: 'Targeted Grammar',
+                buttonLabel: `Grammar: ${humanizeSkill(effectiveSkill)} (5 questions)`,
+                blurb: isWeak
+                    ? "You've been shaky on this grammar concept — a quick pass will lock it in."
+                    : "Reinforce the grammar you just learned, while it's fresh.",
+                reason: isWeak ? 'weak' : 'fresh',
+                priority: isWeak ? 100 : 50,
+                options: { skill: effectiveSkill, count: 5, autoStart: true }
+            });
+        }
+
+        // Candidate 2: Vocabulary Recall
+        const effectiveWords = (weakWordsList.length >= 3)
+            ? weakWordsList.map(w => ({ lemma: w.lemma, translation: w.translation, pos: w.pos }))
+            : recentWords;
+        if (effectiveWords && effectiveWords.length > 0) {
+            const isWeak = weakWordsList.length >= 3;
+            const chosenWords = effectiveWords.slice(0, 6);
+            candidates.push({
+                drillerId: 'vocabulary',
+                title: isWeak ? 'Tricky Words' : 'Vocabulary Recall',
+                buttonLabel: `Vocabulary (${chosenWords.length} words)`,
+                blurb: isWeak
+                    ? "A few words need a quick refresh before they fade."
+                    : "Test your recall of newly introduced words.",
+                reason: isWeak ? 'weak' : 'fresh',
+                priority: isWeak ? 95 : 45,
+                options: { words: chosenWords, autoStart: true }
+            });
+        }
+
+        // Candidate 3: Spanish Verb Speed Sprint (60s)
+        if (lang === 'es' && completedCount >= 3) {
+            const isWeak = weakDrillerIds.has('verbs');
+            candidates.push({
+                drillerId: 'verbs',
+                title: 'Verb Speed Sprint',
+                buttonLabel: 'Verb Speed Sprint (60s)',
+                blurb: "A fast-paced 60-second sprint to sharpen your conjugation reflex.",
+                reason: isWeak ? 'weak' : 'variety',
+                priority: isWeak ? 90 : 42,
+                options: { mode: 'speed', autoStart: true, duration: 60 }
+            });
+        }
+
+        // Candidate 4: Hungarian Suffix Sprint
+        if (lang === 'hu' && (completedCount >= 15 || LearnerPath.isComplete('lesson.a1.22'))) {
+            const isWeak = weakDrillerIds.has('hu-suffix');
+            candidates.push({
+                drillerId: 'hu-suffix',
+                title: 'Suffix Sprint',
+                buttonLabel: 'Suffix Sprint (5 questions)',
+                blurb: "Practice plurals, possession, and case endings with quick feedback.",
+                reason: isWeak ? 'weak' : 'variety',
+                priority: isWeak ? 90 : 42,
+                options: { autoStart: true, count: 5 }
+            });
+        }
+
+        // Candidate 5: Hungarian Prefix Sprint
+        if (lang === 'hu' && (currentLevel !== 'A1' || LearnerPath.isComplete('lesson.a2.01'))) {
+            const isWeak = weakDrillerIds.has('hu-prefix');
+            candidates.push({
+                drillerId: 'hu-prefix',
+                title: 'Prefix Sprint',
+                buttonLabel: 'Prefix Sprint (5 questions)',
+                blurb: "Master verbal prefixes and directional shifts in 5 quick questions.",
+                reason: isWeak ? 'weak' : 'variety',
+                priority: isWeak ? 90 : 40,
+                options: { autoStart: true, count: 5 }
+            });
+        }
+
+        // Candidate 6: Hungarian Verb Driller
+        if (lang === 'hu' && completedCount >= 8) {
+            const isWeak = weakDrillerIds.has('hu-verb');
+            candidates.push({
+                drillerId: 'hu-verb',
+                title: 'Hungarian Verbs',
+                buttonLabel: 'Verb Forms (5 questions)',
+                blurb: "Test definite and indefinite conjugations across Hungarian stems.",
+                reason: isWeak ? 'weak' : 'variety',
+                priority: isWeak ? 90 : 38,
+                options: { autoStart: true, count: 5 }
+            });
+        }
+
+        // Candidate 7: Hungarian Morphology Driller
+        if (lang === 'hu' && (completedCount >= 25 || LearnerPath.isComplete('lesson.a1.51'))) {
+            const isWeak = weakDrillerIds.has('hu-morphology');
+            candidates.push({
+                drillerId: 'hu-morphology',
+                title: 'Morphology Puzzle',
+                buttonLabel: 'Morphology (5 questions)',
+                blurb: "Deconstruct complex agglutinative words into root and affixes.",
+                reason: isWeak ? 'weak' : 'variety',
+                priority: isWeak ? 90 : 36,
+                options: { autoStart: true, count: 5 }
+            });
+        }
+
+        // Candidate 8: Sentence Translation (intermediate or >= 10 lessons)
+        if (completedCount >= 10 || currentLevel !== 'A1') {
+            const isWeak = weakDrillerIds.has('translation');
+            candidates.push({
+                drillerId: 'translation',
+                title: 'Sentence Translation',
+                buttonLabel: 'Translation (5 sentences)',
+                blurb: "Translate 5 real-world sentences to connect grammar and vocabulary.",
+                reason: isWeak ? 'weak' : 'variety',
+                priority: isWeak ? 88 : 35,
+                options: { autoStart: true, count: 5, level: currentLevel.toLowerCase() }
+            });
+        }
+
+        // Candidate 9: Listening / Audio Decode
+        if (completedCount >= 5) {
+            const isWeak = weakDrillerIds.has('listening');
+            candidates.push({
+                drillerId: 'listening',
+                title: 'Audio Decode',
+                buttonLabel: 'Audio Decode (5 questions)',
+                blurb: "Tune your ear to native speech with 5 rapid audio clips.",
+                reason: isWeak ? 'weak' : 'variety',
+                priority: isWeak ? 88 : 35,
+                options: { autoStart: true, count: 5, level: currentLevel.toLowerCase() }
+            });
+        }
+
+        if (!candidates.length) return null;
+
+        // Selection:
+        // If there are weak candidates (priority >= 80), pick the highest priority weak candidate.
+        // If all are non-weak, rotate through candidates using lessonId hash for variety.
+        const weakCandidates = candidates.filter(c => c.priority >= 80);
+        let primaryCandidate, altCandidate;
+
+        if (weakCandidates.length > 0) {
+            weakCandidates.sort((a, b) => b.priority - a.priority);
+            primaryCandidate = weakCandidates[0];
+            const others = candidates.filter(c => c.drillerId !== primaryCandidate.drillerId);
+            altCandidate = others.length ? others[0] : null;
+        } else {
+            let hash = 0;
+            for (let i = 0; i < lessonId.length; i++) {
+                hash = (hash * 31 + lessonId.charCodeAt(i)) >>> 0;
+            }
+            const idx = hash % candidates.length;
+            primaryCandidate = candidates[idx];
+            altCandidate = candidates[(idx + 1) % candidates.length];
+        }
+
         return {
             lessonId,
-            skill,
-            skillReason: rec ? rec.skillReason : null,
-            words,
-            wordsReason
+            challengeTitle: primaryCandidate.title,
+            drillerId: primaryCandidate.drillerId,
+            buttonLabel: primaryCandidate.buttonLabel,
+            blurb: primaryCandidate.blurb,
+            reason: primaryCandidate.reason,
+            options: primaryCandidate.options,
+            skill: primaryCandidate.drillerId === 'grammar' ? primaryCandidate.options.skill : null,
+            skillReason: primaryCandidate.drillerId === 'grammar' ? primaryCandidate.reason : null,
+            words: primaryCandidate.drillerId === 'vocabulary' ? primaryCandidate.options.words : [],
+            wordsReason: primaryCandidate.drillerId === 'vocabulary' ? primaryCandidate.reason : null,
+            alt: altCandidate ? {
+                drillerId: altCandidate.drillerId,
+                title: altCandidate.title,
+                buttonLabel: altCandidate.buttonLabel,
+                options: altCandidate.options
+            } : null
         };
     }
 
@@ -242,36 +431,49 @@ const RecommendationEngine = (function () {
     // PIECE C: SHARED "WHAT'S NEXT" RESULTS-SCREEN ACTION
     // ----------------------------------------
 
-    function _nextActionHtml(primary) {
-        let title, sub;
+    function _nextActionInfo(primary) {
+        let title, sub, cta;
         if (primary.kind === 'continue') {
-            if (!primary.step) return ''; // course finished — nothing to suggest
-            title = primary.step.kind === 'test'
-                ? `${primary.step.level} level test`
-                : primary.step.lesson.title;
-            sub = 'Keep going with your course';
+            if (!primary.step) return null; // course finished
+            if (primary.step.kind === 'test') {
+                title = `${primary.step.level} level test`;
+                cta = `Take ${primary.step.level} test`;
+                sub = 'Course checkpoint · 80% to move on';
+            } else {
+                title = primary.step.lesson.title;
+                cta = `Next: ${primary.step.lesson.title}`;
+                sub = 'Continue your course';
+            }
         } else if (primary.kind === 'unit-nudge') {
             title = `Practise: ${humanizeSkill(primary.skill)}`;
+            cta = title;
             sub = `A quick round on what "${primary.unit.title || 'that unit'}" just taught`;
         } else if (primary.kind === 'mini-game') {
-            title = primary.skill
-                ? `Grammar: ${humanizeSkill(primary.skill)}`
-                : `Vocabulary (${primary.words.length})`;
-            sub = "Reinforce what you just learned";
+            title = primary.challengeTitle || (primary.skill ? `Grammar: ${humanizeSkill(primary.skill)}` : 'Quick Challenge');
+            cta = primary.buttonLabel || title;
+            sub = primary.blurb || "Reinforce what you just learned";
         } else {
-            return '';
+            return null;
         }
+
+        return { title, cta, sub };
+    }
+
+    function _nextActionHtml(primary) {
+        const info = _nextActionInfo(primary);
+        if (!info) return '';
 
         return `
             <div class="wk-next-action">
                 <span class="wk-next-eyebrow">What's next?</span>
-                <button class="wk-next-btn" data-next-action="1">${esc(title)} →</button>
-                <span class="wk-next-sub">${esc(sub)}</span>
+                <button class="vbtn vbtn-primary wk-next-primary-btn" data-next-action="1">${esc(info.cta)} →</button>
+                <span class="wk-next-sub">${esc(info.sub)}</span>
             </div>
         `;
     }
 
     function _routeTo(primary) {
+        if (typeof Workshop !== 'undefined') Workshop.close();
         if (primary.kind === 'continue') {
             if (!primary.step) return;
             if (primary.step.kind === 'test') {
@@ -281,23 +483,18 @@ const RecommendationEngine = (function () {
             }
         } else if (primary.kind === 'unit-nudge') {
             dismissUnit(primary.unit.id);
-            if (typeof Workshop !== 'undefined') Workshop.open('grammar', { skill: primary.skill });
+            if (typeof Workshop !== 'undefined') Workshop.open('grammar', { skill: primary.skill, autoStart: true });
         } else if (primary.kind === 'mini-game') {
             dismissMiniGame(primary.lessonId);
-            if (primary.skill && typeof Workshop !== 'undefined') {
-                const count = (typeof QUICK_REINFORCE_COUNT === 'number') ? QUICK_REINFORCE_COUNT : 5;
-                Workshop.open('grammar', { skill: primary.skill, count });
-            } else if (primary.words && primary.words.length && typeof Workshop !== 'undefined') {
-                Workshop.open('vocabulary', { words: primary.words });
+            if (typeof Workshop !== 'undefined') {
+                Workshop.open(primary.drillerId, primary.options);
             }
         }
     }
 
-    // Mounted at the end of any driller's results screen. `options.excludeDrillerId`
-    // stops a driller recommending re-entry into itself — a no-op under
-    // today's shape (primary never resolves to a driller candidate, only
-    // secondary does) but kept as a real guard in case that ever changes,
-    // rather than assumed away.
+    // Mounted on results screens. When a results actions container (.vspeed-results-actions)
+    // is present, the Next Activity is mounted at the TOP as the primary forward action,
+    // and "Practice Again" is demoted to secondary.
     async function mountNextAction(container, options) {
         if (!container) return;
 
@@ -319,6 +516,30 @@ const RecommendationEngine = (function () {
         }
         if (!rec || !rec.primary) return;
         if (rec.primary.kind === 'driller' && rec.primary.drillerId === opts.excludeDrillerId) return;
+
+        const info = _nextActionInfo(rec.primary);
+        if (!info) return;
+
+        const actionsEl = container.querySelector('.vspeed-results-actions');
+        if (actionsEl) {
+            const playAgainBtn = actionsEl.querySelector('[data-action="play-again"]');
+            if (playAgainBtn) {
+                playAgainBtn.classList.remove('vbtn-primary');
+                playAgainBtn.classList.add('vbtn-secondary');
+            }
+
+            const slot = document.createElement('div');
+            slot.className = 'wk-next-action-slot';
+            slot.innerHTML = `
+                <button class="vbtn vbtn-primary wk-next-primary-btn" data-next-action="1">${esc(info.cta)} →</button>
+                <span class="wk-next-sub">${esc(info.sub)}</span>
+            `;
+            actionsEl.insertAdjacentElement('afterbegin', slot);
+
+            const btn = slot.querySelector('[data-next-action]');
+            if (btn) btn.addEventListener('click', () => _routeTo(rec.primary));
+            return;
+        }
 
         const html = _nextActionHtml(rec.primary);
         if (!html) return;
