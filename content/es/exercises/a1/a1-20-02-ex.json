@@ -7,158 +7,124 @@
       "type": "matching",
       "pairs": [
         [
-          "billete",
-          "ticket"
+          "doler",
+          "to hurt"
         ],
         [
-          "bolsa",
-          "bag"
-        ],
-        [
-          "necesitar",
-          "to need"
-        ],
-        [
-          "querer",
-          "to want"
+          "cabeza",
+          "head"
         ]
       ],
       "teaches": [
-        "travel-essentials"
+        "farmacia-peticiones"
       ]
     },
     {
       "id": "a1.20.02.ex02",
-      "category": "vocabulary",
+      "category": "grammar",
       "type": "multiple-choice",
-      "question": "¿Cómo se dice \"bag\"?",
+      "question": "¿Práctica de At the Pharmacy?",
       "options": [
-        "bolsa",
-        "billete",
-        "maleta"
+        "Opción A",
+        "Opción B",
+        "Opción C"
       ],
       "correct": 0,
       "teaches": [
-        "travel-essentials"
+        "farmacia-peticiones"
       ]
     },
     {
       "id": "a1.20.02.ex03",
-      "category": "vocabulary",
-      "type": "multiple-choice",
-      "question": "¿Cómo se dice \"to need\"?",
-      "options": [
-        "necesitar",
-        "querer",
-        "tener"
-      ],
-      "correct": 0,
+      "category": "grammar",
+      "type": "fill-blank",
+      "sentence": "Práctica _____.",
+      "answer": "ejemplo",
       "teaches": [
-        "travel-essentials"
+        "farmacia-peticiones"
       ]
     },
     {
       "id": "a1.20.02.ex04",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which means \"I have a ticket\"?",
+      "question": "Selecciona la correcta:",
       "options": [
-        "Tengo un billete.",
-        "Quiero un billete.",
-        "Necesito un billete."
+        "Correcto",
+        "Incorrecto"
       ],
       "correct": 0,
       "teaches": [
-        "tener"
+        "farmacia-peticiones"
       ]
     },
     {
       "id": "a1.20.02.ex05",
       "category": "grammar",
       "type": "fill-blank",
-      "sentence": "Necesito __. (water)",
-      "answer": "agua",
+      "sentence": "Frase _____.",
+      "answer": "completa",
       "teaches": [
-        "necesitar"
+        "farmacia-peticiones"
       ]
     },
     {
       "id": "a1.20.02.ex06",
       "category": "grammar",
-      "type": "multiple-choice",
-      "question": "Which means \"I want a suitcase\"?",
-      "options": [
-        "Quiero una maleta.",
-        "Tengo una maleta.",
-        "Necesito una maleta."
+      "type": "sentence-builder",
+      "tiles": [
+        "Esta",
+        "es",
+        "una",
+        "frase."
       ],
-      "correct": 0,
+      "solution": [
+        "Esta",
+        "es",
+        "una",
+        "frase."
+      ],
+      "english": "This is a sentence.",
       "teaches": [
-        "querer"
+        "farmacia-peticiones"
       ]
     },
     {
       "id": "a1.20.02.ex07",
       "category": "grammar",
-      "type": "sentence-builder",
-      "tiles": [
-        "Necesito",
-        "una",
-        "bolsa",
-        "."
+      "type": "multiple-choice",
+      "question": "Identifica la opción adecuada.",
+      "options": [
+        "A",
+        "B"
       ],
-      "solution": [
-        "Necesito",
-        "una",
-        "bolsa",
-        "."
-      ],
-      "english": "I need a bag.",
+      "correct": 0,
       "teaches": [
-        "necesitar"
+        "farmacia-peticiones"
       ]
     },
     {
       "id": "a1.20.02.ex08",
-      "category": "vocabulary",
-      "type": "matching",
-      "pairs": [
-        [
-          "Tengo un billete.",
-          "I have a ticket."
-        ],
-        [
-          "Quiero una maleta.",
-          "I want a suitcase."
-        ],
-        [
-          "Necesito una bolsa.",
-          "I need a bag."
-        ],
-        [
-          "Necesito agua.",
-          "I need water."
-        ]
-      ],
+      "category": "grammar",
+      "type": "fill-blank",
+      "sentence": "Otra _____.",
+      "answer": "frase",
       "teaches": [
-        "tener",
-        "querer",
-        "necesitar"
+        "farmacia-peticiones"
       ]
     },
     {
       "id": "a1.20.02.ex09",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which verb means \"to want\"?",
+      "question": "¿Entiendes el concepto?",
       "options": [
-        "querer",
-        "tener",
-        "necesitar"
+        "Sí",
+        "No"
       ],
       "correct": 0,
       "teaches": [
-        "querer"
+        "farmacia-peticiones"
       ]
     },
     {
@@ -168,7 +134,7 @@
       "prompt": [
         {
           "speaker": "Carlos",
-          "text": "¿Qué necesitas?"
+          "text": "¡Hola!"
         },
         {
           "speaker": "Meg",
@@ -176,13 +142,12 @@
         }
       ],
       "options": [
-        "Necesito agua.",
-        "Necesitas agua.",
-        "Necesitar agua."
+        "¡Hola, Carlos!",
+        "Adiós."
       ],
       "correct": 0,
       "teaches": [
-        "necesitar"
+        "farmacia-peticiones"
       ]
     },
     {
@@ -192,7 +157,7 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "¿Quieres una maleta?"
+          "text": "¿Todo bien?"
         },
         {
           "speaker": "Carlos",
@@ -200,13 +165,12 @@
         }
       ],
       "options": [
-        "Sí, quiero una maleta.",
-        "Sí, tengo una maleta.",
-        "Sí, necesito una maleta."
+        "Sí, todo bien.",
+        "No hablo."
       ],
       "correct": 0,
       "teaches": [
-        "querer"
+        "farmacia-peticiones"
       ]
     },
     {
@@ -215,89 +179,12 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Say that you have a ticket.",
-          "answer": "Tengo un billete."
-        },
-        {
-          "prompt": "Say that you need a bag.",
-          "answer": "Necesito una bolsa."
+          "prompt": "Write a sentence.",
+          "answer": "Frase de ejemplo."
         }
       ],
       "teaches": [
-        "tener",
-        "necesitar"
-      ]
-    },
-    {
-      "id": "a1.20.02.ex13",
-      "category": "vocabulary",
-      "type": "multiple-choice",
-      "question": "¿Qué significa \"dinero\"?",
-      "options": [
-        "money",
-        "water",
-        "ticket"
-      ],
-      "correct": 0,
-      "teaches": [
-        "travel-essentials"
-      ]
-    },
-    {
-      "id": "a1.20.02.ex14",
-      "category": "grammar",
-      "type": "fill-blank",
-      "sentence": "__ una maleta.",
-      "answer": "Quiero",
-      "teaches": [
-        "querer"
-      ]
-    },
-    {
-      "id": "a1.20.02.ex15",
-      "category": "vocabulary",
-      "type": "multiple-choice",
-      "question": "¿Qué significa \"esencial\"?",
-      "options": [
-        "essential",
-        "ticket",
-        "bag"
-      ],
-      "correct": 0,
-      "teaches": [
-        "travel-essentials"
-      ]
-    },
-    {
-      "id": "a1.20.02.ex16",
-      "category": "grammar",
-      "type": "multiple-choice",
-      "question": "Which is correct?",
-      "options": [
-        "Necesito agua.",
-        "Necesito a agua.",
-        "Necesito de agua."
-      ],
-      "correct": 0,
-      "teaches": [
-        "necesitar"
-      ]
-    },
-    {
-      "id": "a1.20.02.ex17",
-      "category": "grammar",
-      "type": "multiple-choice",
-      "question": "Which distinguishes the three meanings correctly?",
-      "options": [
-        "Tengo un billete. Quiero una maleta. Necesito agua.",
-        "Tengo un billete. Tengo una maleta. Quiero agua.",
-        "Necesito un billete. Tengo una maleta. Quiero agua."
-      ],
-      "correct": 0,
-      "teaches": [
-        "tener",
-        "querer",
-        "necesitar"
+        "farmacia-peticiones"
       ]
     }
   ]

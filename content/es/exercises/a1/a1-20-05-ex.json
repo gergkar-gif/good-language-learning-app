@@ -7,157 +7,124 @@
       "type": "matching",
       "pairs": [
         [
-          "viaje",
-          "trip"
+          "doler",
+          "to hurt"
         ],
         [
-          "tren",
-          "train"
-        ],
-        [
-          "estación",
-          "station"
-        ],
-        [
-          "documentos",
-          "documents"
+          "cabeza",
+          "head"
         ]
       ],
       "teaches": [
-        "integrated-travel"
+        "salud-integrado"
       ]
     },
     {
       "id": "a1.20.05.ex02",
-      "category": "vocabulary",
+      "category": "grammar",
       "type": "multiple-choice",
-      "question": "¿Cómo se dice \"trip\"?",
+      "question": "¿Práctica de Taking Care of Yourself?",
       "options": [
-        "viaje",
-        "tren",
-        "estación"
+        "Opción A",
+        "Opción B",
+        "Opción C"
       ],
       "correct": 0,
       "teaches": [
-        "integrated-travel"
+        "salud-integrado"
       ]
     },
     {
       "id": "a1.20.05.ex03",
-      "category": "vocabulary",
-      "type": "multiple-choice",
-      "question": "¿Cómo se dice \"documents\"?",
-      "options": [
-        "documentos",
-        "billetes",
-        "maletas"
-      ],
-      "correct": 0,
+      "category": "grammar",
+      "type": "fill-blank",
+      "sentence": "Práctica _____.",
+      "answer": "ejemplo",
       "teaches": [
-        "integrated-travel"
+        "salud-integrado"
       ]
     },
     {
       "id": "a1.20.05.ex04",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which means \"I have to go to the station\"?",
+      "question": "Selecciona la correcta:",
       "options": [
-        "Tengo que ir a la estación.",
-        "Tengo ir a la estación.",
-        "Voy que ir a la estación."
+        "Correcto",
+        "Incorrecto"
       ],
       "correct": 0,
       "teaches": [
-        "integrated-travel"
+        "salud-integrado"
       ]
     },
     {
       "id": "a1.20.05.ex05",
       "category": "grammar",
-      "type": "multiple-choice",
-      "question": "Which means \"I need my ticket\"?",
-      "options": [
-        "Necesito mi billete.",
-        "Tengo mi billete.",
-        "Quiero mi billete."
-      ],
-      "correct": 0,
+      "type": "fill-blank",
+      "sentence": "Frase _____.",
+      "answer": "completa",
       "teaches": [
-        "integrated-travel"
+        "salud-integrado"
       ]
     },
     {
       "id": "a1.20.05.ex06",
       "category": "grammar",
-      "type": "fill-blank",
-      "sentence": "Voy a __ el tren.",
-      "answer": "tomar",
+      "type": "sentence-builder",
+      "tiles": [
+        "Esta",
+        "es",
+        "una",
+        "frase."
+      ],
+      "solution": [
+        "Esta",
+        "es",
+        "una",
+        "frase."
+      ],
+      "english": "This is a sentence.",
       "teaches": [
-        "integrated-travel"
+        "salud-integrado"
       ]
     },
     {
       "id": "a1.20.05.ex07",
       "category": "grammar",
-      "type": "sentence-builder",
-      "tiles": [
-        "Necesito",
-        "mi",
-        "billete",
-        "."
+      "type": "multiple-choice",
+      "question": "Identifica la opción adecuada.",
+      "options": [
+        "A",
+        "B"
       ],
-      "solution": [
-        "Necesito",
-        "mi",
-        "billete",
-        "."
-      ],
-      "english": "I need my ticket.",
+      "correct": 0,
       "teaches": [
-        "integrated-travel"
+        "salud-integrado"
       ]
     },
     {
       "id": "a1.20.05.ex08",
-      "category": "vocabulary",
-      "type": "matching",
-      "pairs": [
-        [
-          "Tengo que ir a la estación.",
-          "I have to go to the station."
-        ],
-        [
-          "Necesito mi billete.",
-          "I need my ticket."
-        ],
-        [
-          "Voy a tomar el tren.",
-          "I am going to take the train."
-        ],
-        [
-          "Vamos a viajar hoy.",
-          "We are going to travel today."
-        ]
-      ],
+      "category": "grammar",
+      "type": "fill-blank",
+      "sentence": "Otra _____.",
+      "answer": "frase",
       "teaches": [
-        "integrated-travel"
+        "salud-integrado"
       ]
     },
     {
       "id": "a1.20.05.ex09",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Which combines obligation and movement?",
+      "question": "¿Entiendes el concepto?",
       "options": [
-        "Tengo que ir a la estación.",
-        "Tengo ir a la estación.",
-        "Voy que ir a la estación."
+        "Sí",
+        "No"
       ],
       "correct": 0,
       "teaches": [
-        "integrated-travel",
-        "tener-que"
+        "salud-integrado"
       ]
     },
     {
@@ -167,7 +134,7 @@
       "prompt": [
         {
           "speaker": "Carlos",
-          "text": "¿Qué necesitas?"
+          "text": "¡Hola!"
         },
         {
           "speaker": "Meg",
@@ -175,14 +142,12 @@
         }
       ],
       "options": [
-        "Necesito mi billete.",
-        "Necesitas mi billete.",
-        "Necesitar mi billete."
+        "¡Hola, Carlos!",
+        "Adiós."
       ],
       "correct": 0,
       "teaches": [
-        "integrated-travel",
-        "necesitar"
+        "salud-integrado"
       ]
     },
     {
@@ -192,7 +157,7 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "¿Adónde vas?"
+          "text": "¿Todo bien?"
         },
         {
           "speaker": "Carlos",
@@ -200,151 +165,26 @@
         }
       ],
       "options": [
-        "Voy a la estación.",
-        "Voy la estación.",
-        "Voy a estación."
+        "Sí, todo bien.",
+        "No hablo."
       ],
       "correct": 0,
       "teaches": [
-        "integrated-travel",
-        "movement"
+        "salud-integrado"
       ]
     },
     {
       "id": "a1.20.05.ex12",
-      "category": "dialogue",
-      "type": "dialogue-complete",
-      "prompt": [
-        {
-          "speaker": "Carlos",
-          "text": "¿Qué vas a hacer?"
-        },
-        {
-          "speaker": "Meg",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Voy a tomar el tren.",
-        "Voy tomar el tren.",
-        "Voy a tomo el tren."
-      ],
-      "correct": 0,
-      "teaches": [
-        "integrated-travel",
-        "ir-a-infinitive"
-      ]
-    },
-    {
-      "id": "a1.20.05.ex13",
       "category": "writing",
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Say that you need your ticket.",
-          "answer": "Necesito mi billete."
-        },
-        {
-          "prompt": "Say that you have to go to the station.",
-          "answer": "Tengo que ir a la estación."
-        },
-        {
-          "prompt": "Say that you are going to take the train.",
-          "answer": "Voy a tomar el tren."
+          "prompt": "Write a sentence.",
+          "answer": "Frase de ejemplo."
         }
       ],
       "teaches": [
-        "integrated-travel"
-      ]
-    },
-    {
-      "id": "a1.20.05.ex14",
-      "category": "grammar",
-      "type": "multiple-choice",
-      "question": "Which combines tener que with ir?",
-      "options": [
-        "Tengo que ir a la estación.",
-        "Tengo ir a la estación.",
-        "Voy que ir a la estación."
-      ],
-      "correct": 0,
-      "teaches": [
-        "integrated-travel"
-      ]
-    },
-    {
-      "id": "a1.20.05.ex15",
-      "category": "grammar",
-      "type": "multiple-choice",
-      "question": "Which combines necesitar with a travel essential?",
-      "options": [
-        "Necesito mi billete.",
-        "Necesito a mi billete.",
-        "Necesito de mi billete."
-      ],
-      "correct": 0,
-      "teaches": [
-        "integrated-travel"
-      ]
-    },
-    {
-      "id": "a1.20.05.ex16",
-      "category": "grammar",
-      "type": "multiple-choice",
-      "question": "Which expresses movement to a place?",
-      "options": [
-        "Voy a la estación.",
-        "Voy a tomar el tren.",
-        "Voy a viajar mañana."
-      ],
-      "correct": 0,
-      "teaches": [
-        "movement"
-      ]
-    },
-    {
-      "id": "a1.20.05.ex17",
-      "category": "grammar",
-      "type": "multiple-choice",
-      "question": "Which expresses a future action?",
-      "options": [
-        "Voy a tomar el tren.",
-        "Voy a la estación.",
-        "Estoy en la estación."
-      ],
-      "correct": 0,
-      "teaches": [
-        "ir-a-infinitive"
-      ]
-    },
-    {
-      "id": "a1.20.05.ex18",
-      "category": "grammar",
-      "type": "multiple-choice",
-      "question": "Which combines obligation, movement and destination?",
-      "options": [
-        "Tengo que ir a la estación.",
-        "Tengo que voy a la estación.",
-        "Voy que ir a la estación."
-      ],
-      "correct": 0,
-      "teaches": [
-        "integrated-travel"
-      ]
-    },
-    {
-      "id": "a1.20.05.ex19",
-      "category": "grammar",
-      "type": "multiple-choice",
-      "question": "Which is a natural travel statement?",
-      "options": [
-        "Necesito mi billete y voy a tomar el tren.",
-        "Necesito mi billete y voy tomar el tren.",
-        "Necesito mi billete y voy a tomo el tren."
-      ],
-      "correct": 0,
-      "teaches": [
-        "integrated-travel"
+        "salud-integrado"
       ]
     }
   ]
