@@ -39,20 +39,6 @@ const Home = (function () {
     // GATHERING
     // ----------------------------------------
 
-    function courseTotals() {
-        const data = window._curriculumData;
-        const progress = (typeof getProgress === 'function') ? getProgress() : {};
-        let done = 0, total = 0;
-
-        Object.keys((data && data.levels) || {}).forEach(level => {
-            const lessons = (data.levels[level].units || []).flatMap(u => u.lessons || []);
-            done += lessons.filter(l => progress[l.id]).length;
-            total += lessons.length;
-        });
-
-        return { done, total, percent: total ? Math.round((done / total) * 100) : 0 };
-    }
-
     // Counted here rather than taken from getDueCards(), which answers within
     // whatever deck the last review session was scoped to. Home is asking
     // about the whole deck.
@@ -87,34 +73,6 @@ const Home = (function () {
     const dismissUnit = RecommendationEngine.dismissUnit;
     const dismissMiniGame = RecommendationEngine.dismissMiniGame;
     let _currentPrimaryRec = null;
-
-    // The next story to read: one at the level being studied if there is one,
-    // otherwise the easiest thing left unread. Reaching over an unread A1
-    // story to offer a B1 one is not what "read a story" should mean.
-    async function nextStory(level) {
-        let stories = [];
-        try {
-            stories = (typeof Reader !== 'undefined') ? await Reader.ensureStories() : [];
-        } catch (error) {
-            console.warn('Home: no story manifest for this course.', error);
-            return { total: 0, story: null };
-        }
-
-        const read = (typeof getReadStoryIds === 'function') ? getReadStoryIds() : [];
-        const unread = stories.filter(s => !read.includes(s.id));
-        if (!unread.length) return { total: stories.length, story: null };
-
-        const order = (typeof LEVEL_ORDER !== 'undefined') ? LEVEL_ORDER : [];
-        const rank = s => {
-            const i = order.indexOf(s.level);
-            return i === -1 ? order.length : i;
-        };
-
-        const atLevel = unread.filter(s => s.level === level);
-        const pool = atLevel.length ? atLevel : unread.slice().sort((a, b) => rank(a) - rank(b));
-
-        return { total: stories.length, story: pool[0] };
-    }
 
     // ----------------------------------------
     // PIECES
@@ -229,167 +187,53 @@ const Home = (function () {
         `;
     }
 
-    // A door: one line of what is behind it, and the number that decides
-    // whether it is worth opening.
-    function door(config) {
-        const icon = (typeof Art !== 'undefined') ? Art.icon(config.icon) : '';
-        const attrs = Object.keys(config.data || {})
-            .map(key => ` data-${key}="${esc(config.data[key])}"`).join('');
-
+    // A one-tap Quick Budget bar directly under the hero card — lets the
+    // learner size and launch a finite study session (5, 10, 15, or 30 min)
+    // without navigating away or opening extra modal sheets.
+    function quickBudgetBar() {
         return `
-            <button class="hm-door"${attrs}>
-                ${icon}
-                <span class="hm-door-body">
-                    <span class="hm-door-title">${esc(config.title)}</span>
-                    <span class="hm-door-sub">${esc(config.sub)}</span>
-                </span>
-                <span class="hm-door-value">${config.value ? esc(config.value) : ''}</span>
-            </button>
-        `;
-    }
-
-    function reviewDoor(deck) {
-        if (!deck.size) {
-            return door({
-                icon: 'decks', title: 'Review',
-                sub: 'No words yet. Tap one while reading to add it.',
-                data: { go: 'review' }
-            });
-        }
-
-        if (!deck.due) {
-            // Naming the wait is kinder than an empty state that reads as
-            // "nothing here" — the deck is working, it just isn't asking yet.
-            const wait = (typeof formatInterval === 'function' && deck.waitMinutes !== null)
-                ? ' Next in ' + formatInterval(deck.waitMinutes) + '.'
-                : '';
-            return door({
-                icon: 'decks', title: 'Review',
-                sub: `Nothing due.${wait}`,
-                data: { go: 'review' }
-            });
-        }
-
-        return door({
-            icon: 'decks', title: 'Review',
-            sub: `${deck.due} ${plural(deck.due, 'word')} ready to come round again.`,
-            value: deck.due,
-            data: { 'review-all': '1' }
-        });
-    }
-
-    function readDoor(reading) {
-        if (!reading.total) {
-            return door({
-                icon: 'reader', title: 'Read',
-                sub: 'No stories in this course yet.',
-                data: { go: 'reader' }
-            });
-        }
-
-        if (!reading.story) {
-            return door({
-                icon: 'reader', title: 'Read',
-                sub: 'You have read every story. Any of them again?',
-                data: { go: 'reader' }
-            });
-        }
-
-        const story = reading.story;
-        const meta = [story.level, story.estimatedMinutes ? story.estimatedMinutes + ' min' : '']
-            .filter(Boolean).join(' · ');
-
-        return door({
-            icon: 'reader', title: 'Read',
-            sub: `${story.title}${meta ? ' · ' + meta : ''}`,
-            data: { 'open-story': story.id }
-        });
-    }
-
-    function practiseDoor() {
-        // No number here on purpose: drill accuracy is kept for the length of
-        // a session and never written down, so any figure would be invented.
-        return door({
-            icon: 'workshop', title: 'Practise',
-            sub: 'Conjugation tables and speed drills.',
-            data: { go: 'drills' }
-        });
-    }
-
-    // Step 5 of the Learner model roadmap initiative: an alternative entry
-    // point, not a replacement for the recommendation above — "here's what
-    // to do next" stays the default; this is "here's what fits in the time
-    // I actually have." See engine/studyPlan.js / engine/studyPlanRunner.js.
-    function studyPlanDoor() {
-        return door({
-            icon: 'clock', title: 'Time-based session',
-            sub: 'Fit study into the time you have.',
-            data: { 'open-study-plan': '1' }
-        });
-    }
-
-    // Tier 2: RecommendationEngine's secondary candidates (weak/recent
-    // grammar, weak vocabulary, a struggling driller), surfaced on Home for
-    // the first time — Workshop's own picker has shown these since step 3,
-    // but Home never did. Deliberately quiet: no accent colour (the
-    // continue/nudge card above is the one accent-bearing thing on the
-    // screen, per this file's own design — see styles/components.css),
-    // plain text buttons, one small muted eyebrow so a new second card
-    // doesn't read as unexplained. Renders nothing at all when there's
-    // nothing to suggest — same "either, both, or neither" honesty already
-    // built into Recommend/LearnerModel/RecommendationEngine.
-    function secondaryList(secondary) {
-        if (!secondary || !secondary.length) return '';
-        const items = secondary.map(c => {
-            const attr = c.kind === 'vocabulary' ? 'data-secondary-vocab="1"'
-                : c.kind === 'driller' ? `data-secondary-driller="${esc(c.drillerId)}"`
-                : `data-secondary-grammar="${esc(c.skill)}"`;
-            return `
-                <button class="hm-secondary-btn" ${attr}>
-                    ${esc(RecommendationEngine.secondaryLabel(c))} →
-                </button>
-            `;
-        }).join('');
-
-        return `
-            <section class="hm-secondary">
-                <span class="hm-secondary-eyebrow">Also worth practising</span>
-                <div class="hm-secondary-list">${items}</div>
-            </section>
-        `;
-    }
-
-    // Today's three activities and the streak they keep. The ids are the ones
-    // updateXPHeader() writes to, so this markup is filled in after painting
-    // rather than built here.
-    function todayStrip() {
-        return `
-            <div class="today">
-                <div class="today-head">
-                    <span id="header-streak">No streak yet</span>
-                    <span id="header-xp">0 XP</span>
+            <div class="hm-budget-bar">
+                <span class="hm-budget-label">Short on time?</span>
+                <div class="hm-budget-pills">
+                    <button class="hm-budget-pill" data-sp-budget="5" type="button">5 min</button>
+                    <button class="hm-budget-pill" data-sp-budget="10" type="button">10 min</button>
+                    <button class="hm-budget-pill" data-sp-budget="15" type="button">15 min</button>
+                    <button class="hm-budget-pill" data-sp-budget="30" type="button">30 min</button>
                 </div>
-                <div class="daily-trio-head">
-                    <span id="daily-trio-status" class="daily-trio-status">Daily Trio: 0 of 3</span>
-                </div>
-                <div id="daily-activities" class="daily-activities"></div>
             </div>
         `;
     }
 
-    // One line for the whole course, and a door to the screen that breaks it
-    // down. Home states how far; My Journey answers how.
-    function progressLine(totals) {
+    // Dynamic Memory / Review alert — renders ONLY when cards are actually due.
+    // When 0 cards are due, it renders nothing (zero visual clutter).
+    function reviewAlert(deck) {
+        if (!deck || !deck.due) return '';
         return `
-            <button class="hm-progress" data-go="journey">
-                <span class="hm-progress-head">
-                    <span>Your course</span>
-                    <span class="hm-count">${totals.done} of ${totals.total}
-                        ${plural(totals.total, 'lesson')}</span>
-                </span>
-                ${meter(totals.percent)}
-                <span class="hm-progress-foot">My Journey →</span>
-            </button>
+            <div class="hm-review-alert">
+                <div class="hm-review-alert-body">
+                    <span class="hm-review-alert-badge">${deck.due}</span>
+                    <div class="hm-review-alert-text">
+                        <strong>${deck.due} ${plural(deck.due, 'word')} ready for review</strong>
+                        <span class="hm-review-alert-sub">Spaced repetition memory checkpoint</span>
+                    </div>
+                </div>
+                <button class="vbtn vbtn-primary hm-review-alert-cta" data-review-all="1" type="button">Review now →</button>
+            </div>
+        `;
+    }
+
+    // Today's three activities and the streak they keep. Streamlined to keep
+    // Home calm and focused: daily trio status and interactive activity chips.
+    function todayStrip() {
+        return `
+            <div class="today">
+                <div class="today-head">
+                    <span id="daily-trio-status" class="daily-trio-status">Daily Trio: 0 of 3</span>
+                    <span id="header-streak" class="today-streak"></span>
+                    <span id="header-xp" style="display:none;"></span>
+                </div>
+                <div id="daily-activities" class="daily-activities"></div>
+            </div>
         `;
     }
 
@@ -556,6 +400,13 @@ const Home = (function () {
                 return;
             }
 
+            const budgetBtn = e.target.closest('[data-sp-budget]');
+            if (budgetBtn && typeof StudyPlanRunner !== 'undefined') {
+                const minutes = Number(budgetBtn.getAttribute('data-sp-budget'));
+                StudyPlanRunner.start(minutes);
+                return;
+            }
+
             if (e.target.closest('[data-open-study-plan]')) {
                 if (typeof StudyPlanRunner !== 'undefined') StudyPlanRunner.openBudgetPicker();
                 return;
@@ -570,21 +421,19 @@ const Home = (function () {
         });
     }
 
-    // Which course the learner is studying. Lives at the top of Home rather
-    // than buried in My Journey — a course choice isn't a reading of
-    // progress, it's the frame everything else on screen (including Home
-    // itself) is drawn inside, so it belongs where the learner lands first.
-    // Only courses with real content are offered; see Lang.available() in
-    // engine/lang.js.
+    // Which course the learner is studying. Refined into a discreet topbar chip
+    // rather than a bulky form group, leaving Home's primary focus on learning.
     function courseBlock() {
         const options = Lang.available()
             .map(code => `<option value="${code}"${code === Lang.code() ? ' selected' : ''}>${esc(Lang.nameFor(code))}</option>`)
             .join('');
 
         return `
-            <div class="jr-course">
-                <label class="jr-course-label" for="hm-lang-select">Course</label>
-                <select id="hm-lang-select" class="jr-lang-select" aria-label="Course">${options}</select>
+            <div class="hm-topbar">
+                <div class="hm-lang-chip">
+                    <label class="hm-lang-label" for="hm-lang-select">Course:</label>
+                    <select id="hm-lang-select" class="hm-lang-select" aria-label="Course">${options}</select>
+                </div>
             </div>
         `;
     }
@@ -599,8 +448,6 @@ const Home = (function () {
 
         const step = LearnerPath.nextStep();
         const deck = deckStanding();
-        const totals = courseTotals();
-        const reading = await nextStory(step ? step.level : null);
         const rec = await RecommendationEngine.recommend();
         _currentPrimaryRec = rec ? rec.primary : null;
 
@@ -609,15 +456,9 @@ const Home = (function () {
             ${rec.primary.kind === 'unit-nudge' ? practiceNudgeCard(rec.primary)
                 : rec.primary.kind === 'mini-game' ? miniGameCard(rec.primary)
                 : continueCard(rec.primary.step)}
-            ${secondaryList(rec.secondary)}
-            <div class="hm-doors">
-                ${reviewDoor(deck)}
-                ${readDoor(reading)}
-                ${practiseDoor()}
-                ${studyPlanDoor()}
-            </div>
+            ${quickBudgetBar()}
+            ${reviewAlert(deck)}
             ${todayStrip()}
-            ${progressLine(totals)}
         `;
 
         // The streak, the XP and the three activity marks are written by the

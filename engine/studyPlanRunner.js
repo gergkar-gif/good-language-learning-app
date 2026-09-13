@@ -354,5 +354,10 @@ const StudyPlanRunner = (function () {
         }
     }
 
-    return { open, openBudgetPicker, mountNextAction, onEnter, teardown };
+    async function start(minutes) {
+        await StudyPlan.build(minutes);
+        open();
+    }
+
+    return { open, start, openBudgetPicker, mountNextAction, onEnter, teardown };
 })();
