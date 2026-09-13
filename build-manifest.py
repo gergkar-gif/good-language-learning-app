@@ -106,6 +106,8 @@ UNIT_TABLES = {
         ("Describing People", ["a1-03c-01", "a1-03c-02", "a1-03c-03", "a1-03c-04", "a1-03c-05", "a1-03c-consolidation"]),
         ("Family", ["a1-05-01", "a1-05-02", "a1-05-03", "a1-05-04", "a1-05-05", "a1-05-consolidation"]),
         ("Daily Routine", ["a1-06-01", "a1-06-02", "a1-06-03", "a1-06-04", "a1-06-05", "a1-06-consolidation"]),
+        # "a1-reflexive" — Dedicated unit for reflexive pronouns, hygiene, and daily routine sequencing
+        ("Daily Routine: Reflexive Verbs", ["a1-reflexive-01", "a1-reflexive-02", "a1-reflexive-03", "a1-reflexive-04", "a1-reflexive-05", "a1-reflexive-consolidation"]),
         ("At Home", ["a1-07-01", "a1-07-02", "a1-07-03", "a1-07-04", "a1-07-05", "a1-07-consolidation"]),
         ("At the Supermarket", ["a1-08-01", "a1-08-02", "a1-08-03", "a1-08-04", "a1-08-05", "a1-08-consolidation"]),
         # "a1-cafe", not "a1-09" — old lesson slot 9 is Kitchen (still
