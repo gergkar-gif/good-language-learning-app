@@ -128,6 +128,8 @@ UNIT_TABLES = {
         ("Weather", ["a1-weather-01", "a1-weather-02", "a1-weather-03", "a1-weather-04", "a1-weather-05", "a1-weather-consolidation"]),
         # "a1-work", not "a1-16" — a1-16 is Health's old slot.
         ("Work & Obligations", ["a1-work-01", "a1-work-02", "a1-work-03", "a1-work-04", "a1-work-05", "a1-work-consolidation"]),
+        # "a1-continuous" — Dedicated unit for present continuous (estar + gerundio)
+        ("What Are You Doing? (Present Continuous)", ["a1-continuous-01", "a1-continuous-02", "a1-continuous-03", "a1-continuous-04", "a1-continuous-05", "a1-continuous-consolidation"]),
         # "a1-health", not "a1-17" — a1-17 is Future Plans' old slot.
         ("Health", ["a1-health-01", "a1-health-02", "a1-health-03", "a1-health-04", "a1-health-05", "a1-health-consolidation"]),
         # "a1-gustar" — Dedicated unit for the gustar construction, encantar, and interesar
