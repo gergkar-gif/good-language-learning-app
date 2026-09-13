@@ -7,124 +7,160 @@
       "type": "matching",
       "pairs": [
         [
-          "doler",
-          "to hurt"
+          "maleta",
+          "suitcase"
         ],
         [
-          "cabeza",
-          "head"
+          "documentos",
+          "documents"
+        ],
+        [
+          "billete",
+          "ticket"
+        ],
+        [
+          "preparar",
+          "to prepare"
         ]
       ],
       "teaches": [
-        "doler-construccion"
+        "travel-preparations"
       ]
     },
     {
       "id": "a1.20.01.ex02",
-      "category": "grammar",
+      "category": "vocabulary",
       "type": "multiple-choice",
-      "question": "¿Práctica de What Hurts??",
+      "question": "¿Cómo se dice \"suitcase\"?",
       "options": [
-        "Opción A",
-        "Opción B",
-        "Opción C"
+        "maleta",
+        "billete",
+        "documentos"
       ],
       "correct": 0,
       "teaches": [
-        "doler-construccion"
+        "travel-preparations"
       ]
     },
     {
       "id": "a1.20.01.ex03",
-      "category": "grammar",
-      "type": "fill-blank",
-      "sentence": "Práctica _____.",
-      "answer": "ejemplo",
+      "category": "vocabulary",
+      "type": "multiple-choice",
+      "question": "¿Cómo se dice \"ticket\"?",
+      "options": [
+        "billete",
+        "maleta",
+        "viaje"
+      ],
+      "correct": 0,
       "teaches": [
-        "doler-construccion"
+        "travel-preparations"
       ]
     },
     {
       "id": "a1.20.01.ex04",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Selecciona la correcta:",
+      "question": "Which means \"I have to prepare the suitcase\"?",
       "options": [
-        "Correcto",
-        "Incorrecto"
+        "Tengo que preparar la maleta.",
+        "Tengo preparar la maleta.",
+        "Voy a preparo la maleta."
       ],
       "correct": 0,
       "teaches": [
-        "doler-construccion"
+        "tener-que"
       ]
     },
     {
       "id": "a1.20.01.ex05",
       "category": "grammar",
       "type": "fill-blank",
-      "sentence": "Frase _____.",
-      "answer": "completa",
+      "sentence": "Tengo que __ mis documentos.",
+      "answer": "preparar",
       "teaches": [
-        "doler-construccion"
+        "tener-que"
       ]
     },
     {
       "id": "a1.20.01.ex06",
       "category": "grammar",
-      "type": "sentence-builder",
-      "tiles": [
-        "Esta",
-        "es",
-        "una",
-        "frase."
+      "type": "multiple-choice",
+      "question": "Which means \"I prepare my documents\"?",
+      "options": [
+        "Preparo mis documentos.",
+        "Preparar mis documentos.",
+        "Prepara mis documentos."
       ],
-      "solution": [
-        "Esta",
-        "es",
-        "una",
-        "frase."
-      ],
-      "english": "This is a sentence.",
+      "correct": 0,
       "teaches": [
-        "doler-construccion"
+        "present-tense"
       ]
     },
     {
       "id": "a1.20.01.ex07",
       "category": "grammar",
-      "type": "multiple-choice",
-      "question": "Identifica la opción adecuada.",
-      "options": [
-        "A",
-        "B"
+      "type": "sentence-builder",
+      "tiles": [
+        "Tengo",
+        "que",
+        "preparar",
+        "la",
+        "maleta",
+        "."
       ],
-      "correct": 0,
+      "solution": [
+        "Tengo",
+        "que",
+        "preparar",
+        "la",
+        "maleta",
+        "."
+      ],
+      "english": "I have to prepare the suitcase.",
       "teaches": [
-        "doler-construccion"
+        "tener-que"
       ]
     },
     {
       "id": "a1.20.01.ex08",
-      "category": "grammar",
-      "type": "fill-blank",
-      "sentence": "Otra _____.",
-      "answer": "frase",
+      "category": "vocabulary",
+      "type": "matching",
+      "pairs": [
+        [
+          "Tengo que preparar la maleta.",
+          "I have to prepare the suitcase."
+        ],
+        [
+          "Preparo mis documentos.",
+          "I prepare my documents."
+        ],
+        [
+          "Tengo que comprar agua.",
+          "I have to buy water."
+        ],
+        [
+          "Compruebo el billete.",
+          "I check the ticket."
+        ]
+      ],
       "teaches": [
-        "doler-construccion"
+        "travel-preparations"
       ]
     },
     {
       "id": "a1.20.01.ex09",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "¿Entiendes el concepto?",
+      "question": "Which expresses a personal obligation?",
       "options": [
-        "Sí",
-        "No"
+        "Tengo que comprar agua.",
+        "Compro agua.",
+        "Voy a comprar agua."
       ],
       "correct": 0,
       "teaches": [
-        "doler-construccion"
+        "tener-que"
       ]
     },
     {
@@ -134,7 +170,7 @@
       "prompt": [
         {
           "speaker": "Carlos",
-          "text": "¡Hola!"
+          "text": "¿Qué tienes que hacer antes del viaje?"
         },
         {
           "speaker": "Meg",
@@ -142,12 +178,13 @@
         }
       ],
       "options": [
-        "¡Hola, Carlos!",
-        "Adiós."
+        "Tengo que preparar la maleta.",
+        "Tengo preparar la maleta.",
+        "Tengo que preparo la maleta."
       ],
       "correct": 0,
       "teaches": [
-        "doler-construccion"
+        "tener-que"
       ]
     },
     {
@@ -157,7 +194,7 @@
       "prompt": [
         {
           "speaker": "Meg",
-          "text": "¿Todo bien?"
+          "text": "¿Tienes tus documentos?"
         },
         {
           "speaker": "Carlos",
@@ -165,12 +202,13 @@
         }
       ],
       "options": [
-        "Sí, todo bien.",
-        "No hablo."
+        "Sí, tengo mis documentos.",
+        "Sí, tengo que mis documentos.",
+        "Sí, voy a mis documentos."
       ],
       "correct": 0,
       "teaches": [
-        "doler-construccion"
+        "tener"
       ]
     },
     {
@@ -179,12 +217,72 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Write a sentence.",
-          "answer": "Frase de ejemplo."
+          "prompt": "Say that you have to prepare the suitcase.",
+          "answer": "Tengo que preparar la maleta."
+        },
+        {
+          "prompt": "Say that you prepare your documents.",
+          "answer": "Preparo mis documentos."
         }
       ],
       "teaches": [
-        "doler-construccion"
+        "tener-que",
+        "present-tense"
+      ]
+    },
+    {
+      "id": "a1.20.01.ex13",
+      "category": "vocabulary",
+      "type": "multiple-choice",
+      "question": "¿Qué significa \"comprobar\"?",
+      "options": [
+        "to check",
+        "to prepare",
+        "to travel"
+      ],
+      "correct": 0,
+      "teaches": [
+        "travel-preparations"
+      ]
+    },
+    {
+      "id": "a1.20.01.ex14",
+      "category": "grammar",
+      "type": "fill-blank",
+      "sentence": "__ el billete.",
+      "answer": "Compruebo",
+      "teaches": [
+        "present-tense"
+      ]
+    },
+    {
+      "id": "a1.20.01.ex15",
+      "category": "vocabulary",
+      "type": "multiple-choice",
+      "question": "¿Qué significa \"documentos\"?",
+      "options": [
+        "documents",
+        "tickets",
+        "bags"
+      ],
+      "correct": 0,
+      "teaches": [
+        "travel-preparations"
+      ]
+    },
+    {
+      "id": "a1.20.01.ex16",
+      "category": "grammar",
+      "type": "multiple-choice",
+      "question": "Which is correct?",
+      "options": [
+        "Tengo que comprar agua.",
+        "Tengo comprar agua.",
+        "Tengo que compro agua."
+      ],
+      "correct": 0,
+      "teaches": [
+        "tener-que"
       ]
     }
   ]

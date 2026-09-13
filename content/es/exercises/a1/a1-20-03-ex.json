@@ -7,124 +7,162 @@
       "type": "matching",
       "pairs": [
         [
-          "doler",
-          "to hurt"
+          "estación",
+          "station"
         ],
         [
-          "cabeza",
-          "head"
+          "tren",
+          "train"
+        ],
+        [
+          "andén",
+          "platform"
+        ],
+        [
+          "destino",
+          "destination"
         ]
       ],
       "teaches": [
-        "consejos-salud-deber"
+        "station"
       ]
     },
     {
       "id": "a1.20.03.ex02",
-      "category": "grammar",
+      "category": "vocabulary",
       "type": "multiple-choice",
-      "question": "¿Práctica de You Should Rest?",
+      "question": "¿Cómo se dice \"station\"?",
       "options": [
-        "Opción A",
-        "Opción B",
-        "Opción C"
+        "estación",
+        "andén",
+        "tren"
       ],
       "correct": 0,
       "teaches": [
-        "consejos-salud-deber"
+        "station"
       ]
     },
     {
       "id": "a1.20.03.ex03",
-      "category": "grammar",
-      "type": "fill-blank",
-      "sentence": "Práctica _____.",
-      "answer": "ejemplo",
+      "category": "vocabulary",
+      "type": "multiple-choice",
+      "question": "¿Qué significa \"andén\"?",
+      "options": [
+        "platform",
+        "station",
+        "destination"
+      ],
+      "correct": 0,
       "teaches": [
-        "consejos-salud-deber"
+        "station"
       ]
     },
     {
       "id": "a1.20.03.ex04",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "Selecciona la correcta:",
+      "question": "Which means \"Where is the station?\"",
       "options": [
-        "Correcto",
-        "Incorrecto"
+        "¿Dónde está la estación?",
+        "¿Dónde es la estación?",
+        "¿Dónde hay la estación?"
       ],
       "correct": 0,
       "teaches": [
-        "consejos-salud-deber"
+        "questions"
       ]
     },
     {
       "id": "a1.20.03.ex05",
       "category": "grammar",
       "type": "fill-blank",
-      "sentence": "Frase _____.",
-      "answer": "completa",
+      "sentence": "¿Dónde __ el tren?",
+      "answer": "está",
       "teaches": [
-        "consejos-salud-deber"
+        "questions",
+        "estar"
       ]
     },
     {
       "id": "a1.20.03.ex06",
       "category": "grammar",
-      "type": "sentence-builder",
-      "tiles": [
-        "Esta",
-        "es",
-        "una",
-        "frase."
+      "type": "multiple-choice",
+      "question": "Which means \"What time does the train leave?\"",
+      "options": [
+        "¿A qué hora sale el tren?",
+        "¿A qué hora salgo el tren?",
+        "¿Qué hora está el tren?"
       ],
-      "solution": [
-        "Esta",
-        "es",
-        "una",
-        "frase."
-      ],
-      "english": "This is a sentence.",
+      "correct": 0,
       "teaches": [
-        "consejos-salud-deber"
+        "questions",
+        "time"
       ]
     },
     {
       "id": "a1.20.03.ex07",
       "category": "grammar",
-      "type": "multiple-choice",
-      "question": "Identifica la opción adecuada.",
-      "options": [
-        "A",
-        "B"
+      "type": "sentence-builder",
+      "tiles": [
+        "¿Dónde",
+        "está",
+        "la",
+        "estación",
+        "?"
       ],
-      "correct": 0,
+      "solution": [
+        "¿Dónde",
+        "está",
+        "la",
+        "estación",
+        "?"
+      ],
+      "english": "Where is the station?",
       "teaches": [
-        "consejos-salud-deber"
+        "questions",
+        "estar"
       ]
     },
     {
       "id": "a1.20.03.ex08",
-      "category": "grammar",
-      "type": "fill-blank",
-      "sentence": "Otra _____.",
-      "answer": "frase",
+      "category": "vocabulary",
+      "type": "matching",
+      "pairs": [
+        [
+          "¿Dónde está la estación?",
+          "Where is the station?"
+        ],
+        [
+          "¿Dónde está el tren?",
+          "Where is the train?"
+        ],
+        [
+          "¿A qué hora sale el tren?",
+          "What time does the train leave?"
+        ],
+        [
+          "¿Dónde está el andén tres?",
+          "Where is platform three?"
+        ]
+      ],
       "teaches": [
-        "consejos-salud-deber"
+        "station",
+        "questions"
       ]
     },
     {
       "id": "a1.20.03.ex09",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "¿Entiendes el concepto?",
+      "question": "Which question asks about a location?",
       "options": [
-        "Sí",
-        "No"
+        "¿Dónde está el tren?",
+        "¿A qué hora sale el tren?",
+        "¿Qué quieres?"
       ],
       "correct": 0,
       "teaches": [
-        "consejos-salud-deber"
+        "questions"
       ]
     },
     {
@@ -133,21 +171,23 @@
       "type": "dialogue-complete",
       "prompt": [
         {
-          "speaker": "Carlos",
-          "text": "¡Hola!"
+          "speaker": "Viajero",
+          "text": "Perdón, ¿dónde está el andén tres?"
         },
         {
-          "speaker": "Meg",
+          "speaker": "Empleado",
           "text": "_____"
         }
       ],
       "options": [
-        "¡Hola, Carlos!",
-        "Adiós."
+        "Está allí.",
+        "Es allí.",
+        "Hay allí."
       ],
       "correct": 0,
       "teaches": [
-        "consejos-salud-deber"
+        "questions",
+        "estar"
       ]
     },
     {
@@ -156,21 +196,23 @@
       "type": "dialogue-complete",
       "prompt": [
         {
-          "speaker": "Meg",
-          "text": "¿Todo bien?"
+          "speaker": "Viajero",
+          "text": "¿A qué hora sale el tren?"
         },
         {
-          "speaker": "Carlos",
+          "speaker": "Empleado",
           "text": "_____"
         }
       ],
       "options": [
-        "Sí, todo bien.",
-        "No hablo."
+        "Sale a las ocho.",
+        "Está a las ocho.",
+        "Es a las ocho."
       ],
       "correct": 0,
       "teaches": [
-        "consejos-salud-deber"
+        "questions",
+        "time"
       ]
     },
     {
@@ -179,12 +221,90 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Write a sentence.",
-          "answer": "Frase de ejemplo."
+          "prompt": "Ask where the station is.",
+          "answer": "¿Dónde está la estación?"
+        },
+        {
+          "prompt": "Ask what time the train leaves.",
+          "answer": "¿A qué hora sale el tren?"
         }
       ],
       "teaches": [
-        "consejos-salud-deber"
+        "questions",
+        "time"
+      ]
+    },
+    {
+      "id": "a1.20.03.ex13",
+      "category": "vocabulary",
+      "type": "multiple-choice",
+      "question": "¿Qué significa \"destino\"?",
+      "options": [
+        "destination",
+        "station",
+        "platform"
+      ],
+      "correct": 0,
+      "teaches": [
+        "station"
+      ]
+    },
+    {
+      "id": "a1.20.03.ex14",
+      "category": "grammar",
+      "type": "fill-blank",
+      "sentence": "¿Dónde __ el andén tres?",
+      "answer": "está",
+      "teaches": [
+        "questions",
+        "estar"
+      ]
+    },
+    {
+      "id": "a1.20.03.ex15",
+      "category": "vocabulary",
+      "type": "multiple-choice",
+      "question": "¿Qué significa \"horario\"?",
+      "options": [
+        "timetable",
+        "ticket",
+        "station"
+      ],
+      "correct": 0,
+      "teaches": [
+        "station"
+      ]
+    },
+    {
+      "id": "a1.20.03.ex16",
+      "category": "grammar",
+      "type": "multiple-choice",
+      "question": "Which is correct?",
+      "options": [
+        "¿Dónde está el tren?",
+        "¿Dónde es el tren?",
+        "¿Dónde hay el tren?"
+      ],
+      "correct": 0,
+      "teaches": [
+        "questions",
+        "estar"
+      ]
+    },
+    {
+      "id": "a1.20.03.ex17",
+      "category": "grammar",
+      "type": "multiple-choice",
+      "question": "Which is a natural station question?",
+      "options": [
+        "¿A qué hora sale el tren?",
+        "¿A qué hora salgo el tren?",
+        "¿Qué hora está el tren?"
+      ],
+      "correct": 0,
+      "teaches": [
+        "questions",
+        "time"
       ]
     }
   ]

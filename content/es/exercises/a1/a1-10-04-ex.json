@@ -7,184 +7,308 @@
       "type": "matching",
       "pairs": [
         [
-          "este",
-          "this (m)"
+          "el viaje",
+          "trip"
         ],
         [
-          "esta",
-          "this (f)"
+          "la tradición",
+          "tradition"
+        ],
+        [
+          "la pared",
+          "wall"
+        ],
+        [
+          "el mapa",
+          "map"
         ]
       ],
       "teaches": [
-        "demostrativos-preferencias"
+        "age-dates"
       ]
     },
     {
       "id": "a1.10.04.ex02",
       "category": "grammar",
       "type": "multiple-choice",
-      "question": "¿Práctica de I Prefer This One?",
+      "question": "¿Cuál combina la edad y la fecha correctamente?",
       "options": [
-        "Opción A",
-        "Opción B",
-        "Opción C"
+        "Tengo veinticinco años y mi cumpleaños es el doce de mayo.",
+        "Soy veinticinco años y mi cumpleaños es en doce de mayo.",
+        "Tengo el doce de mayo y mi cumpleaños es veinticinco años."
       ],
       "correct": 0,
       "teaches": [
-        "demostrativos-preferencias"
+        "age-dates"
       ]
     },
     {
       "id": "a1.10.04.ex03",
       "category": "grammar",
       "type": "fill-blank",
-      "sentence": "Práctica _____.",
-      "answer": "ejemplo",
+      "sentence": "Cada país _____ (tener) tradiciones diferentes.",
+      "answer": "tiene",
       "teaches": [
-        "demostrativos-preferencias"
+        "age-dates"
       ]
     },
     {
       "id": "a1.10.04.ex04",
       "category": "grammar",
-      "type": "multiple-choice",
-      "question": "Selecciona la correcta:",
-      "options": [
-        "Correcto",
-        "Incorrecto"
+      "type": "sentence-builder",
+      "tiles": [
+        "El",
+        "próximo",
+        "mes",
+        "hacemos",
+        "un",
+        "viaje"
       ],
-      "correct": 0,
+      "solution": [
+        "El",
+        "próximo",
+        "mes",
+        "hacemos",
+        "un",
+        "viaje"
+      ],
+      "english": "Next month we're taking a trip.",
       "teaches": [
-        "demostrativos-preferencias"
+        "age-dates"
       ]
     },
     {
       "id": "a1.10.04.ex05",
       "category": "grammar",
-      "type": "fill-blank",
-      "sentence": "Frase _____.",
-      "answer": "completa",
+      "type": "multiple-choice",
       "teaches": [
-        "demostrativos-preferencias"
-      ]
+        "age-dates"
+      ],
+      "question": "Which sentence starts this exchange?",
+      "options": [
+        "Tengo veinticinco años.",
+        "Mi cumpleaños es el doce de mayo.",
+        "El próximo mes hacemos un viaje.",
+        "Cada país tiene tradiciones diferentes."
+      ],
+      "correct": 0
     },
     {
       "id": "a1.10.04.ex06",
-      "category": "grammar",
-      "type": "sentence-builder",
-      "tiles": [
-        "Esta",
-        "es",
-        "una",
-        "frase."
+      "category": "dialogue",
+      "type": "dialogue-complete",
+      "prompt": [
+        {
+          "speaker": "Daniela",
+          "text": "¿Vas a viajar para tu cumpleaños?"
+        },
+        {
+          "speaker": "Carlos",
+          "text": "_____"
+        }
       ],
-      "solution": [
-        "Esta",
-        "es",
-        "una",
-        "frase."
+      "options": [
+        "Voy a viajar a Ninh Bình.",
+        "Tengo veinticinco años.",
+        "Es un cuaderno especial."
       ],
-      "english": "This is a sentence.",
+      "correct": 0,
       "teaches": [
-        "demostrativos-preferencias"
+        "age-dates"
       ]
     },
     {
       "id": "a1.10.04.ex07",
-      "category": "grammar",
-      "type": "multiple-choice",
-      "question": "Identifica la opción adecuada.",
-      "options": [
-        "A",
-        "B"
-      ],
-      "correct": 0,
-      "teaches": [
-        "demostrativos-preferencias"
-      ]
-    },
-    {
-      "id": "a1.10.04.ex08",
-      "category": "grammar",
-      "type": "fill-blank",
-      "sentence": "Otra _____.",
-      "answer": "frase",
-      "teaches": [
-        "demostrativos-preferencias"
-      ]
-    },
-    {
-      "id": "a1.10.04.ex09",
-      "category": "grammar",
-      "type": "multiple-choice",
-      "question": "¿Entiendes el concepto?",
-      "options": [
-        "Sí",
-        "No"
-      ],
-      "correct": 0,
-      "teaches": [
-        "demostrativos-preferencias"
-      ]
-    },
-    {
-      "id": "a1.10.04.ex10",
-      "category": "dialogue",
-      "type": "dialogue-complete",
-      "prompt": [
-        {
-          "speaker": "Carlos",
-          "text": "¡Hola!"
-        },
-        {
-          "speaker": "Meg",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "¡Hola, Carlos!",
-        "Adiós."
-      ],
-      "correct": 0,
-      "teaches": [
-        "demostrativos-preferencias"
-      ]
-    },
-    {
-      "id": "a1.10.04.ex11",
-      "category": "dialogue",
-      "type": "dialogue-complete",
-      "prompt": [
-        {
-          "speaker": "Meg",
-          "text": "¿Todo bien?"
-        },
-        {
-          "speaker": "Carlos",
-          "text": "_____"
-        }
-      ],
-      "options": [
-        "Sí, todo bien.",
-        "No hablo."
-      ],
-      "correct": 0,
-      "teaches": [
-        "demostrativos-preferencias"
-      ]
-    },
-    {
-      "id": "a1.10.04.ex12",
       "category": "writing",
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Write a sentence.",
-          "answer": "Frase de ejemplo."
+          "prompt": "Say how old you are.",
+          "answer": "Tengo veinticinco años."
+        },
+        {
+          "prompt": "Say when your birthday is.",
+          "answer": "Mi cumpleaños es el doce de mayo."
+        },
+        {
+          "prompt": "Say each country has different traditions.",
+          "answer": "Cada país tiene tradiciones diferentes."
+        },
+        {
+          "prompt": "Say next month you are taking a trip.",
+          "answer": "El próximo mes hacemos un viaje."
+        },
+        {
+          "prompt": "Say there is a map of Vietnam on the wall.",
+          "answer": "Hay un mapa de Vietnam en la pared."
         }
       ],
       "teaches": [
-        "demostrativos-preferencias"
+        "age-dates"
+      ]
+    },
+    {
+      "id": "a1.10.04.ex08",
+      "category": "vocabulary",
+      "type": "multiple-choice",
+      "question": "¿Cómo se dice \"but\"?",
+      "options": [
+        "pero",
+        "con",
+        "sin"
+      ],
+      "correct": 0,
+      "teaches": [
+        "connectors"
+      ]
+    },
+    {
+      "id": "a1.10.04.ex09",
+      "category": "vocabulary",
+      "type": "multiple-choice",
+      "question": "¿Cómo se dice \"without\"?",
+      "options": [
+        "sin",
+        "con",
+        "pero"
+      ],
+      "correct": 0,
+      "teaches": [
+        "connectors"
+      ]
+    },
+    {
+      "id": "a1.10.04.ex10",
+      "category": "grammar",
+      "type": "fill-blank",
+      "sentence": "Hay un pastel, _____ no hay velas.",
+      "answer": "pero",
+      "teaches": [
+        "connectors"
+      ]
+    },
+    {
+      "id": "a1.10.04.ex11",
+      "category": "grammar",
+      "type": "fill-blank",
+      "sentence": "Hacemos el viaje _____ Daniela.",
+      "answer": "con",
+      "teaches": [
+        "connectors"
+      ]
+    },
+    {
+      "id": "a1.10.04.ex12",
+      "category": "grammar",
+      "type": "multiple-choice",
+      "question": "¿Cuál significa \"without a present\"?",
+      "options": [
+        "sin regalo",
+        "con regalo",
+        "pero regalo"
+      ],
+      "correct": 0,
+      "teaches": [
+        "connectors"
+      ]
+    },
+    {
+      "id": "a1.10.04.ex13",
+      "category": "vocabulary",
+      "type": "matching",
+      "pairs": [
+        [
+          "pero",
+          "but"
+        ],
+        [
+          "con",
+          "with"
+        ],
+        [
+          "sin",
+          "without"
+        ]
+      ],
+      "teaches": [
+        "connectors"
+      ]
+    },
+    {
+      "id": "a1.10.04.ex14",
+      "category": "grammar",
+      "type": "sentence-builder",
+      "tiles": [
+        "Hacemos",
+        "el",
+        "viaje",
+        "con",
+        "Daniela"
+      ],
+      "solution": [
+        "Hacemos",
+        "el",
+        "viaje",
+        "con",
+        "Daniela"
+      ],
+      "english": "We're taking the trip with Daniela.",
+      "teaches": [
+        "connectors"
+      ]
+    },
+    {
+      "id": "a1.10.04.ex15",
+      "category": "dialogue",
+      "type": "dialogue-complete",
+      "prompt": [
+        {
+          "speaker": "Carlos",
+          "text": "¿Tienes un mapa?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "No, voy sin mapa.",
+        "Sí, tengo veinte años.",
+        "El viaje es especial."
+      ],
+      "correct": 0,
+      "teaches": [
+        "connectors"
+      ]
+    },
+    {
+      "id": "a1.10.04.ex16",
+      "category": "grammar",
+      "type": "multiple-choice",
+      "question": "Which sentence means \"I want to travel, but I don't have a map.\"?",
+      "options": [
+        "Quiero viajar, pero no tengo mapa.",
+        "Quiero viajar, con no tengo mapa.",
+        "Quiero viajar, sin tengo mapa."
+      ],
+      "correct": 0,
+      "teaches": [
+        "connectors"
+      ]
+    },
+    {
+      "id": "a1.10.04.ex17",
+      "category": "grammar",
+      "type": "multiple-choice",
+      "question": "¿Cuál significa \"with Daniela\"?",
+      "options": [
+        "con Daniela",
+        "sin Daniela",
+        "pero Daniela"
+      ],
+      "correct": 0,
+      "teaches": [
+        "connectors"
       ]
     }
   ]
