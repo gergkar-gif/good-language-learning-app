@@ -71,7 +71,7 @@ const Theme = (function () {
             btn.setAttribute('title', 'Switch to ' + label.toLowerCase());
             btn.setAttribute('aria-label', 'Switch to ' + label.toLowerCase());
             const iconEl = btn.querySelector('.theme-toggle-icon');
-            if (iconEl) iconEl.innerHTML = iconSvg;
+            if (iconEl && iconSvg) iconEl.innerHTML = iconSvg;
             const labelEl = btn.querySelector('.nav-theme-label');
             if (labelEl) labelEl.textContent = label;
         });

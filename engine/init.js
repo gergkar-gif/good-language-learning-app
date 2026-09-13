@@ -153,6 +153,7 @@ function _drawNavIcons() {
         btn.innerHTML = Art.icon(btn.dataset.icon) +
             '<span class="nav-label">' + label + '</span>';
     });
+    if (typeof Theme !== 'undefined') Theme.apply();
 }
 
 function _attachNavEvents() {
