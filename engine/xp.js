@@ -219,21 +219,12 @@ function recordLessonCompleted(isFirstTime) {
 }
 
 function showXPNotification(amount, reason) {
+    if (typeof document === 'undefined' || !document.body) return;
     const notif = document.createElement('div');
-    notif.textContent = (amount > 0 ? '+' : '') + amount + ' XP — ' + reason;
-    notif.style.cssText = `
-        position: fixed;
-        top: 80px;
-        left: 50%;
-        transform: translateX(-50%);
-        background: var(--primary);
-        color: white;
-        padding: 10px 20px;
-        border-radius: 20px;
-        font-weight: bold;
-        z-index: 1000;
-        animation: fadeUp 2s ease-out forwards;
-    `;
+    notif.className = 'xp-toast';
+    const sign = amount > 0 ? '+' : '';
+    const cleanReason = String(reason == null ? '' : reason);
+    notif.innerHTML = `<strong>${sign}${amount} XP</strong><span class="xp-toast-sep">·</span><span>${cleanReason}</span>`;
     document.body.appendChild(notif);
     setTimeout(() => notif.remove(), 2000);
 }

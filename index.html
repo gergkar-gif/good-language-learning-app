@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,9 +7,9 @@
     <meta name="description" content="Parlour is your home for meaningful language learning. Learn with lessons. Read stories. Practise with purpose. Remember what matters.">
     <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
 
-    <link rel="stylesheet" href="styles/base.css?v=2026-09-13b">
+    <link rel="stylesheet" href="styles/base.css?v=2026-09-13c">
     <link rel="stylesheet" href="styles/geometry.css?v=2026-08-13d">
-    <link rel="stylesheet" href="styles/components.css?v=2026-09-13c">
+    <link rel="stylesheet" href="styles/components.css?v=2026-09-13d">
     <link rel="stylesheet" href="styles/layout.css?v=2026-09-13c">
     <link rel="stylesheet" href="styles/utilities.css?v=2026-08-13e">
     <link rel="stylesheet" href="styles/verbs.css?v=2026-09-12f">
@@ -36,7 +36,7 @@
     <!-- Contextual, rendered per section by engine/page-header.js -->
     <header class="page-header" id="page-header"></header>
 
-    <!-- Labels match the page headers. The data-tab ids stay as they are —
+    <!-- Labels match the page headers. The data-tab ids stay as they are â€”
          they key showTab, PageHeader and the tab sections. -->
     <nav class="nav" id="main-nav">
         <div class="nav-brand" onclick="showTab('home')">
@@ -78,7 +78,7 @@
 
         <section id="reader" class="tab hidden">
             <div id="reader-root">
-                <!-- Parlour | Saved | My Texts — engine/library.js owns switching -->
+                <!-- Parlour | Saved | My Texts â€” engine/library.js owns switching -->
                 <nav class="lt-subnav" id="lib-subnav">
                     <button class="lt-subnav-btn active" data-lib-tab="parlour">Parlour</button>
                     <button class="lt-subnav-btn" data-lib-tab="saved">Saved</button>
@@ -106,7 +106,7 @@
 
                 <!-- Review session, scoped to whichever deck was chosen -->
                 <div id="review-session" class="hidden">
-                    <button class="dk-back" onclick="endReviewSession()">← All decks</button>
+                    <button class="dk-back" onclick="endReviewSession()">â† All decks</button>
                     <p id="review-scope" class="dk-scope"></p>
 
                 <!-- Today's three activities used to sit here as a stopgap.
@@ -137,7 +137,7 @@
                 </div>
 
                 <!-- Flip (self-rated recall) vs Type (typed recall, still
-                     self-rated after Check reveals whether you got it) — a
+                     self-rated after Check reveals whether you got it) â€” a
                      study-style preference, same as direction above. -->
                 <div class="dk-direction">
                     <span id="dk-mode-flip" class="dk-direction-label">Flip</span>
@@ -150,7 +150,7 @@
                     <span id="dk-mode-type" class="dk-direction-label">Type</span>
                 </div>
 
-                <!-- Empty state — reserved for opening Review with nothing due
+                <!-- Empty state â€” reserved for opening Review with nothing due
                      to begin with. A session that actually reviewed something
                      shows #review-summary below instead; see showNextCard()
                      in engine/srs.js for the branch. -->
@@ -161,7 +161,7 @@
                     <p class="review-empty-text">Read stories and tap words to add them to your deck.</p>
                 </div>
 
-                <!-- Session summary — built entirely in JS by
+                <!-- Session summary â€” built entirely in JS by
                      renderReviewSessionSummary() (engine/srs.js), same
                      pattern as the lesson-complete screen in
                      engine/lessons.js. -->
@@ -182,7 +182,7 @@
 
                     <!-- Type mode: an input + Check stands in for Show Answer.
                          Checking still just reveals the card back and rating
-                         buttons below — grading stays self-rated. -->
+                         buttons below â€” grading stays self-rated. -->
                     <div id="review-type-input" class="review-type-input hidden">
                         <input id="review-type-field" class="review-input" type="text"
                             placeholder="Type your answer" autocomplete="off" autocapitalize="off" spellcheck="false"
@@ -233,7 +233,7 @@
             <div id="lesson-root">
 
                 <div class="lesson-header">
-                    <button id="lesson-close-btn">←</button>
+                    <button id="lesson-close-btn">â†</button>
 
                     <div>
                         <h2 id="lesson-title"></h2>
@@ -248,13 +248,13 @@
 
                 <div class="lesson-footer">
                     <button class="btn-back" id="lesson-back-btn" onclick="prevLessonStep()">&larr; Back</button>
-                    <button class="btn-primary" id="lesson-next-btn">Continue →</button>
+                    <button class="btn-primary" id="lesson-next-btn">Continue â†’</button>
                 </div>
 
             </div>
         </section>
 
-        <!-- Time-based session (Learner model roadmap, step 5) — an
+        <!-- Time-based session (Learner model roadmap, step 5) â€” an
              alternative entry point from Home, not a standing nav tab, same
              convention as #lesson-screen/#leveltest above. All content is
              rendered dynamically by engine/studyPlanRunner.js. -->
@@ -272,7 +272,7 @@
 <!-- Engine: core utilities (no deps) -->
 <!-- Must load first: everything below reads paths and storage keys from it. -->
 <script src="engine/lang.js?v=2026-08-15a"></script>
-<script src="engine/xp.js?v=2026-09-13"></script>
+<script src="engine/xp.js?v=2026-09-13b"></script>
 <script src="engine/morphology/hungarian.js?v=2026-09-04"></script>
 <script src="engine/morphology/spanish.js?v=2026-09-03"></script>
 <script src="engine/lexicon.js?v=2026-09-13"></script>
@@ -289,7 +289,7 @@
 <!-- Engine: reader (depends on Content) -->
 <script src="engine/reader.js?v=2026-09-12"></script>
 
-<!-- Engine: driller session-accuracy signal (only depends on Lang) — loaded
+<!-- Engine: driller session-accuracy signal (only depends on Lang) â€” loaded
      before every driller that writes to it: verbs/speed, translation,
      listening, and the four Hungarian-specific drillers below -->
 <script src="engine/drillHistory.js?v=2026-09-13"></script>
@@ -335,16 +335,16 @@
 <script src="engine/recommend.js?v=2026-09-11b"></script>
 <script src="engine/recommendationEngine.js?v=2026-09-11e"></script>
 
-<!-- Engine: time-based sessions (step 5) — depends on LearnerPath,
+<!-- Engine: time-based sessions (step 5) â€” depends on LearnerPath,
      LearnerModel, RecommendationEngine, all loaded above -->
 <script src="engine/studyPlan.js?v=2026-09-11a"></script>
 
-<script src="engine/journey.js?v=2026-09-13b"></script>
+<script src="engine/journey.js?v=2026-09-13c"></script>
 <script src="engine/decks/match.js?v=2026-09-03b"></script>
 <script src="engine/decks/learn.js?v=2026-09-12"></script>
 <script src="engine/decks.js?v=2026-09-13"></script>
 
-<!-- Engine: time-based session screen — depends on StudyPlan, GrammarDriller,
+<!-- Engine: time-based session screen â€” depends on StudyPlan, GrammarDriller,
      VocabularyDriller, Decks, LevelTest, all loaded above -->
 <script src="engine/studyPlanRunner.js?v=2026-09-13b"></script>
 
@@ -356,7 +356,7 @@
 <!-- Engine: home (reads from every module above) -->
 <script src="engine/home.js?v=2026-09-13b"></script>
 
-<!-- Engine: cloud sync (step 7 — reads Lang, called by init's boot and Journey's Account card) -->
+<!-- Engine: cloud sync (step 7 â€” reads Lang, called by init's boot and Journey's Account card) -->
 <script src="engine/sync.js?v=2026-09-13"></script>
 
 <!-- Engine: bootstrap (loads last) -->
@@ -367,3 +367,5 @@
 
 </body>
 </html>
+
+
