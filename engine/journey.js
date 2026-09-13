@@ -20,11 +20,20 @@ const Journey = (function () {
         { id: 'first-lesson',  label: 'First lesson finished',    test: d => d.lessonsComplete >= 1 },
         { id: 'first-story',   label: 'First story read',         test: d => d.storiesRead >= 1 },
         { id: 'words-100',     label: '100 words met',            test: d => d.wordsMet >= 100 },
+        { id: 'words-250',     label: '250 words met',            test: d => d.wordsMet >= 250 },
+        { id: 'words-500',     label: '500 words met (A1 threshold)', test: d => d.wordsMet >= 500 },
+        { id: 'words-1000',    label: '1,000 words met (A2 threshold)', test: d => d.wordsMet >= 1000 },
         { id: 'deck-50',       label: '50 words in your deck',    test: d => d.deckSize >= 50 },
+        { id: 'mastered-50',   label: '50 words mastered in SRS', test: d => d.deckMastered >= 50 },
+        { id: 'mastered-150',  label: '150 words mastered in SRS', test: d => d.deckMastered >= 150 },
         { id: 'grammar-10',    label: '10 grammar points',        test: d => d.grammarDone >= 10 },
         { id: 'reviews-100',   label: '100 reviews completed',    test: d => d.reviews >= 100 },
         { id: 'streak-7',      label: 'A week without missing',   test: d => d.bestStreak >= 7 },
-        { id: 'level-a1',      label: 'A1 complete',              test: d => d.levelDone.A1 }
+        { id: 'streak-30',     label: 'A month of consistency',   test: d => d.bestStreak >= 30 },
+        { id: 'level-a1',      label: 'A1 complete',              test: d => !!d.levelDone.A1 },
+        { id: 'test-a1',       label: 'A1 Level Test passed',     test: d => !!(d.levelTests && d.levelTests.A1 && d.levelTests.A1.passed) },
+        { id: 'test-a2',       label: 'A2 Level Test passed',     test: d => !!(d.levelTests && d.levelTests.A2 && d.levelTests.A2.passed) },
+        { id: 'test-b1',       label: 'B1 Level Test passed',     test: d => !!(d.levelTests && d.levelTests.B1 && d.levelTests.B1.passed) }
     ];
 
     // Categories a lesson's exercises fall into, mapped to the skill each one
@@ -96,8 +105,17 @@ const Journey = (function () {
             });
         });
 
+        const levelTests = {};
+        if (typeof LevelTest !== 'undefined' && typeof LEVEL_ORDER !== 'undefined') {
+            LEVEL_ORDER.forEach(lvl => {
+                const res = LevelTest.resultFor(lvl);
+                if (res) levelTests[lvl] = res;
+            });
+        }
+
         return {
             levels: levels,
+            levelTests: levelTests,
             lessonsComplete: lessonsComplete,
             lessonsTotal: lessonsTotal,
             levelDone: Object.keys(levels).reduce((acc, k) => {
@@ -130,7 +148,7 @@ const Journey = (function () {
     // getStreak() only reports the run ending today. The longest run ever is a
     // different and more encouraging number once a streak has been broken.
     function bestStreak() {
-        if (typeof xpData === 'undefined' || !xpData.history) return 0;
+        if (typeof xpData === 'undefined' || !xpData.history) return (typeof getImportedStreak === 'function') ? getImportedStreak() : 0;
         const days = Object.keys(xpData.history).filter(d => isStreakDay(d)).sort();
         let best = 0, run = 0, previous = null;
 
@@ -140,7 +158,9 @@ const Journey = (function () {
             best = Math.max(best, run);
             previous = day;
         });
-        return best;
+        const current = (typeof getStreak === 'function') ? getStreak() : 0;
+        const imported = (typeof getImportedStreak === 'function') ? getImportedStreak() : 0;
+        return Math.max(best, current, imported);
     }
 
     // ----------------------------------------
@@ -209,15 +229,27 @@ const Journey = (function () {
     }
 
     function vocabularyBlock(d) {
+        let horizonText = '';
+        if (d.wordsMet < 250) {
+            horizonText = `${d.wordsMet} / 250 words to Basic Phrases`;
+        } else if (d.wordsMet < 500) {
+            horizonText = `${d.wordsMet} / 500 words to A1 Reading Horizon`;
+        } else if (d.wordsMet < 1000) {
+            horizonText = `${d.wordsMet} / 1,000 words to A2 Reading Horizon`;
+        } else {
+            horizonText = `${d.wordsMet} words met · Beyond A2 Reading Horizon`;
+        }
+
         return card('Vocabulary', 'Words the course has introduced to you.', `
             <button class="jr-big-link" data-jr-drill="vocabulary">
                 <p class="jr-big">${d.wordsMet}<span class="jr-of"> of ${d.wordsTotal}</span></p>
                 ${meter(d.wordsTotal ? (d.wordsMet / d.wordsTotal) * 100 : 0)}
             </button>
+            <p class="jr-next">${horizonText}</p>
             <ul class="jr-facts">
-                <li><button class="jr-fact-link" data-jr-tab="review"><strong>${d.deckSize}</strong> in your review deck</button></li>
-                <li><strong>${d.deckMastered}</strong> reviewed three times or more</li>
-                <li><strong>${d.newWordsLearned}</strong> learned through review</li>
+                <li><button class="jr-fact-link" data-jr-tab="review"><strong>${d.deckSize}</strong> in active SRS review</button></li>
+                <li><strong>${d.deckMastered}</strong> mastered (retained across reviews)</li>
+                <li><strong>${d.newWordsLearned}</strong> acquired through review</li>
                 <li><button class="jr-fact-link" data-jr-tab="reader"><strong>${d.storiesRead}</strong>${d.storiesTotal ? ' of ' + d.storiesTotal : ''} stories read</button></li>
             </ul>
         `);
@@ -290,12 +322,19 @@ const Journey = (function () {
         const current = d.streak
             ? `${d.streak} day${d.streak === 1 ? '' : 's'}`
             : 'Not started';
+        const imported = (typeof getImportedStreak === 'function') ? getImportedStreak() : 0;
         return card('Streak', 'Two of the three daily activities keeps it alive.', `
             <p class="jr-big">${esc(current)}</p>
             <ul class="jr-facts">
                 <li><strong>${d.bestStreak}</strong> days at your longest</li>
                 <li><strong>${d.perfectDays}</strong> days with all three done</li>
+                ${imported ? `<li><strong>${imported}</strong> days imported from previous app</li>` : ''}
             </ul>
+            <div class="jr-streak-actions">
+                <button class="dk-secondary jr-import-btn" data-jr-import-streak="1">
+                    ${imported ? 'Update imported streak' : 'Import streak from another app'}
+                </button>
+            </div>
         `);
     }
 
@@ -436,6 +475,94 @@ const Journey = (function () {
         _refreshAccountStatus(host);
     }
 
+    function showImportStreakModal() {
+        const existing = document.getElementById('streak-import-overlay');
+        if (existing) existing.remove();
+
+        const currentImported = (typeof getImportedStreak === 'function') ? getImportedStreak() : 0;
+
+        const overlay = document.createElement('div');
+        overlay.id = 'streak-import-overlay';
+        overlay.className = 'wp-overlay';
+        overlay.innerHTML = `
+            <div class="wp-sheet sync-prompt-sheet">
+                <div class="wp-header">
+                    <h2 class="sync-prompt-title">Import your streak</h2>
+                    <button class="wp-close" data-streak-modal-close="1" aria-label="Close">×</button>
+                </div>
+                <p class="jr-account-blurb">Switching from Duolingo or another app? Bring your existing streak over so your daily momentum continues uninterrupted.</p>
+                <div class="jr-account-login">
+                    <input type="number" id="streak-modal-input" class="dk-editor-input"
+                        placeholder="e.g. 45" min="0" max="9999" value="${currentImported || ''}">
+                    <button class="dk-secondary" id="streak-modal-save">Save streak</button>
+                </div>
+                <p class="jr-account-status" id="streak-modal-status"></p>
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-top:8px;">
+                    <button class="jr-account-logout" data-streak-modal-close="1">Cancel</button>
+                    ${currentImported > 0 ? '<button class="jr-account-logout" id="streak-modal-clear" style="color:var(--muted);">Clear imported streak</button>' : ''}
+                </div>
+            </div>
+        `;
+
+        document.body.appendChild(overlay);
+
+        const input = overlay.querySelector('#streak-modal-input');
+        const saveBtn = overlay.querySelector('#streak-modal-save');
+        const clearBtn = overlay.querySelector('#streak-modal-clear');
+        const statusEl = overlay.querySelector('#streak-modal-status');
+
+        function close() {
+            overlay.remove();
+        }
+
+        overlay.querySelectorAll('[data-streak-modal-close]').forEach(btn => {
+            btn.addEventListener('click', close);
+        });
+
+        overlay.addEventListener('click', e => {
+            if (e.target === overlay) close();
+        });
+
+        if (clearBtn) {
+            clearBtn.addEventListener('click', () => {
+                if (typeof importStreak === 'function') {
+                    importStreak(0);
+                    if (typeof updateXPHeader === 'function') updateXPHeader();
+                    render();
+                    close();
+                }
+            });
+        }
+
+        saveBtn.addEventListener('click', () => {
+            const raw = input.value.trim();
+            const val = parseInt(raw, 10);
+            if (raw === '' || isNaN(val) || val < 0) {
+                if (statusEl) statusEl.textContent = 'Please enter a valid number of days (0 or more).';
+                return;
+            }
+            if (typeof importStreak === 'function') {
+                importStreak(val);
+                if (typeof updateXPHeader === 'function') updateXPHeader();
+                render();
+                close();
+            } else {
+                if (statusEl) statusEl.textContent = 'Unable to save streak.';
+            }
+        });
+
+        input.addEventListener('keydown', e => {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                saveBtn.click();
+            } else if (e.key === 'Escape') {
+                close();
+            }
+        });
+
+        setTimeout(() => { if (input) input.focus(); }, 50);
+    }
+
     // Every stat here is counted from something the learner did — so every
     // stat also gets somewhere to go do more of it. One delegated listener
     // (guarded the same way engine/curriculum.js guards its own root
@@ -446,6 +573,11 @@ const Journey = (function () {
         host.dataset.wired = '1';
 
         host.addEventListener('click', e => {
+            if (e.target.closest('[data-jr-import-streak]')) {
+                showImportStreakModal();
+                return;
+            }
+
             const level = e.target.closest('[data-jr-level]');
             if (level) {
                 openLevel = level.getAttribute('data-jr-level');

@@ -795,8 +795,26 @@ window.Reader = {
         container.innerHTML = html;
     },
 
+    isStoryWithinReach(story, readIds) {
+        if (!story || (readIds && readIds.includes(story.id))) return false;
+        const progress = (typeof getProgress === 'function') ? getProgress() : {};
+        if (story.unit && story.unit.id) {
+            const data = window._curriculumData;
+            if (data && data.levels) {
+                for (const lvl of Object.keys(data.levels)) {
+                    const unit = (data.levels[lvl].units || []).find(u => u.id === story.unit.id);
+                    if (unit && unit.lessons && unit.lessons.length > 0) {
+                        return unit.lessons.every(l => progress[l.id]);
+                    }
+                }
+            }
+        }
+        return false;
+    },
+
     buildStoryCardHtml(story, readIds) {
         const isRead = readIds.includes(story.id);
+        const withinReach = this.isStoryWithinReach(story, readIds);
         const art = (typeof pathArt === 'function')
             ? pathArt(coverArtIndexFor(story.id), 'story-card-cover-icon')
             : '';
@@ -818,6 +836,7 @@ window.Reader = {
                     '<span class="story-card-badge">' + this.escapeHtml(story.level || '') +
                         (minutes ? ' · ' + minutes : '') +
                     '</span>' +
+                    (withinReach ? '<span class="story-card-reach-badge">Within Reach</span>' : '') +
                 '</div>' +
             '</div>' +
         '</button>';

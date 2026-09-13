@@ -371,6 +371,9 @@ const Home = (function () {
                     <span id="header-streak">No streak yet</span>
                     <span id="header-xp">0 XP</span>
                 </div>
+                <div class="daily-trio-head">
+                    <span id="daily-trio-status" class="daily-trio-status">Daily Trio: 0 of 3</span>
+                </div>
                 <div id="daily-activities" class="daily-activities"></div>
             </div>
         `;
@@ -433,6 +436,24 @@ const Home = (function () {
 
             const go = e.target.closest('[data-go]');
             if (go) goTab(go.getAttribute('data-go'));
+
+            const trio = e.target.closest('[data-trio-activity]');
+            if (trio) {
+                const act = trio.getAttribute('data-trio-activity');
+                if (act === 'review') {
+                    goTab('review');
+                } else if (act === 'reading') {
+                    goTab('reader');
+                } else if (act === 'learn') {
+                    const next = (typeof LearnerPath !== 'undefined') ? LearnerPath.nextStep() : null;
+                    if (next && next.kind === 'lesson' && typeof startLesson === 'function') {
+                        startLesson(next.lesson.id);
+                    } else {
+                        goTab('lessons');
+                    }
+                }
+                return;
+            }
 
             const practise = e.target.closest('[data-practice-unit]');
             if (practise) {

@@ -1498,11 +1498,14 @@ function summaryReinforceHtml(grammarSkill, words) {
 
     return `
         <div class="lsn-summary-reinforce">
-            <p class="lsn-summary-reinforce-label">In a rush? Quick reinforce:</p>
+            <p class="lsn-summary-reinforce-label">Reinforce what you learned:</p>
             <div class="lsn-summary-reinforce-actions">
                 ${grammarSkill ? `
+                    <button class="dk-secondary" data-drill-grammar="${esc(grammarSkill)}">
+                        Practice in Workshop →
+                    </button>
                     <button class="dk-secondary" data-reinforce-grammar="${esc(grammarSkill)}">
-                        Grammar (${QUICK_REINFORCE_COUNT} questions)
+                        Quick Reinforce (${QUICK_REINFORCE_COUNT} questions)
                     </button>
                 ` : ''}
                 ${words.length ? `
@@ -1614,6 +1617,13 @@ async function renderLessonSummary(firstTime, rankBefore) {
     if (addWordsBtn) {
         addWordsBtn.addEventListener('click', () => {
             if (typeof Decks !== 'undefined') Decks.openBulkAddPicker(words);
+        });
+    }
+
+    const drillGrammarBtn = container.querySelector('[data-drill-grammar]');
+    if (drillGrammarBtn) {
+        drillGrammarBtn.addEventListener('click', () => {
+            _openReinforce('grammar', { skill: drillGrammarBtn.getAttribute('data-drill-grammar') });
         });
     }
 

@@ -609,12 +609,16 @@ async function collectUnitGrammarTopics(unit) {
     for (const lessonRef of unit.lessons || []) {
         const lesson = await loadLesson(lessonRef.id);
         if (!lesson) continue;
+        const skill = (typeof Recommend !== 'undefined')
+            ? await Recommend.lessonSkillFor(lessonRef.id)
+            : null;
         for (const section of lesson.sections || []) {
             if (section.type !== 'grammar' || !section.ref) continue;
             const grammar = await loadContent(section.ref);
             topics.push({
                 title: grammar.title || section.title || 'Grammar',
-                parts: grammar.sections || []
+                parts: grammar.sections || [],
+                skill: skill
             });
         }
     }
@@ -639,7 +643,10 @@ async function grammarGuideHtml(level, unitId) {
         <li class="gg-topic">
             <span class="gg-topic-num">${i + 1}</span>
             <div class="gg-topic-body">
-                <h4 class="gg-topic-title">${UI.escape(topic.title)}</h4>
+                <div class="gg-topic-header">
+                    <h4 class="gg-topic-title">${UI.escape(topic.title)}</h4>
+                    ${topic.skill ? `<button class="gg-drill-btn" data-drill-skill="${UI.escape(topic.skill)}" title="Practice in Workshop">Drill →</button>` : ''}
+                </div>
                 ${stepRenderers.grammar({ title: topic.title, parts: topic.parts })}
             </div>
         </li>
@@ -795,6 +802,18 @@ function attachCurriculumEvents(root) {
         if (e.target.closest('[data-close-grammar-guide]')) {
             openGrammarGuideUnit = null;
             renderCurriculum();
+            return;
+        }
+
+        const drillBtn = e.target.closest('[data-drill-skill]');
+        if (drillBtn) {
+            const skill = drillBtn.getAttribute('data-drill-skill');
+            if (typeof showTab === 'function') {
+                showTab('drills', document.querySelector('.nav button[data-tab="drills"]'));
+            }
+            if (typeof Workshop !== 'undefined') {
+                Workshop.open('grammar', { skill: skill });
+            }
             return;
         }
 

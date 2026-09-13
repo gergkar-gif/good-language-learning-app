@@ -296,6 +296,18 @@ const Art = (function () {
         themeSystem: `
             <circle class="ink-line" cx="12" cy="12" r="9"/>
             <path class="ink-solid" d="M12 3v18a9 9 0 0 0 0-18Z"/>
+        `,
+
+        // Check — minimalist stroked checkmark
+        check: `
+            <polyline class="ink-line" points="4 12 9 17 20 6"/>
+        `,
+
+        // Alert / Warning — minimalist circle with hairline indicator
+        alert: `
+            <circle class="ink-line" cx="12" cy="12" r="9"/>
+            <line class="ink-line" x1="12" y1="8" x2="12" y2="12"/>
+            <circle class="ink-solid" cx="12" cy="16" r="1"/>
         `
     };
 

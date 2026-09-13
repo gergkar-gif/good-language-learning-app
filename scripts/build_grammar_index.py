@@ -52,6 +52,78 @@ def build_index(exercises_dir):
     return by_skill, stats
 
 
+def resolve_titles(lang, by_skill):
+    titles = {}
+
+    # 1. Curated titles from content/<lang>/indexes/grammar-titles.json
+    curated_path = Path(f"content/{lang}/indexes/grammar-titles.json")
+    if curated_path.is_file():
+        try:
+            titles.update(json.loads(curated_path.read_text(encoding="utf-8")))
+        except Exception:
+            pass
+
+    # 2. Bank module titles from content/<lang>/drills/grammar/a1-bank.json
+    bank_path = Path(f"content/{lang}/drills/grammar/a1-bank.json")
+    if bank_path.is_file():
+        try:
+            bank_data = json.loads(bank_path.read_text(encoding="utf-8"))
+            for m in bank_data.get("modules", []):
+                mid = m.get("id")
+                mtitle = m.get("title")
+                if mid and mtitle and mid not in titles:
+                    titles[mid] = mtitle
+        except Exception:
+            pass
+
+    # 3. Scan grammar files in content/<lang>/grammar/**/*.json
+    grammar_dir = Path(f"content/{lang}/grammar")
+    if grammar_dir.is_dir():
+        grammar_slug_map = {}
+        for gf in grammar_dir.rglob("*.json"):
+            try:
+                gd = json.loads(gf.read_text(encoding="utf-8"))
+                gtitle = gd.get("title")
+                if not gtitle:
+                    continue
+                stem = gf.stem.replace("-gr", "")
+                grammar_slug_map[stem] = gtitle
+            except Exception:
+                continue
+
+        for skill in by_skill:
+            if skill in titles:
+                continue
+            for stem, gtitle in grammar_slug_map.items():
+                if stem == skill or stem.endswith(f"-{skill}") or f"-{skill}-" in stem:
+                    titles[skill] = gtitle
+                    break
+
+    # 4. Clean formatting fallback
+    minor_words = {"a", "an", "and", "as", "at", "but", "by", "for", "in", "nor", "of", "on", "or", "so", "the", "to", "up", "vs", "yet", "with"}
+    for skill in by_skill:
+        if skill not in titles:
+            text = (skill.replace("-isn-t", " isn't")
+                         .replace("-aren-t", " aren't")
+                         .replace("-don-t", " don't")
+                         .replace("-doesn-t", " doesn't")
+                         .replace("-won-t", " won't")
+                         .replace("-can-t", " can't")
+                         .replace("-s-", "'s ")
+                         .replace("-s", "'s"))
+            words = text.split("-")
+            formatted = []
+            for i, w in enumerate(words):
+                w_lower = w.lower()
+                if i > 0 and w_lower in minor_words:
+                    formatted.append(w_lower)
+                else:
+                    formatted.append(w.capitalize())
+            titles[skill] = " ".join(formatted)
+
+    return titles
+
+
 def main():
     langs = sys.argv[1:] or ["es", "hu"]
 
@@ -62,12 +134,13 @@ def main():
             continue
 
         by_skill, stats = build_index(exercises_dir)
+        titles = resolve_titles(lang, by_skill)
 
         output_dir = Path(f"content/{lang}/indexes")
         output_file = output_dir / "grammar-index.json"
         output_dir.mkdir(parents=True, exist_ok=True)
         with open(output_file, "w", encoding="utf-8") as f:
-            json.dump({"bySkill": by_skill}, f, ensure_ascii=False, separators=(",", ":"))
+            json.dump({"bySkill": by_skill, "titles": titles}, f, ensure_ascii=False, separators=(",", ":"))
 
         raw_size = output_file.stat().st_size
 

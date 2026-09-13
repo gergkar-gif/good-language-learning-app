@@ -51,6 +51,7 @@ const GrammarDriller = (function () {
     let _timerInterval = null;
     let _endTime = 0;
     let _timeRemaining = 0;
+    let _activeSelectCleanup = null;
 
     // ---- Helpers ----
     function _escapeHtml(text) {
@@ -90,8 +91,139 @@ const GrammarDriller = (function () {
     }
 
     function _lessonPoolSize(moduleId) {
-        const entries = _index.bySkill[_lessonSkillFor(moduleId)];
+        const skillKey = _lessonSkillFor(moduleId);
+        const entries = (_index && _index.bySkill && (_index.bySkill[skillKey] || _index.bySkill[moduleId])) || [];
         return entries ? entries.length : 0;
+    }
+
+    function _formatFallbackTitle(skillId) {
+        if (!skillId) return '';
+        const text = skillId
+            .replace(/-isn-t\b/g, " isn't")
+            .replace(/-aren-t\b/g, " aren't")
+            .replace(/-don-t\b/g, " don't")
+            .replace(/-doesn-t\b/g, " doesn't")
+            .replace(/-won-t\b/g, " won't")
+            .replace(/-can-t\b/g, " can't")
+            .replace(/-s-([a-z])/g, "'s $1")
+            .replace(/-s\b/g, "'s");
+        const minorWords = new Set(['a', 'an', 'and', 'as', 'at', 'but', 'by', 'for', 'in', 'nor', 'of', 'on', 'or', 'so', 'the', 'to', 'up', 'vs', 'yet', 'with']);
+        return text.split('-').map((w, i) => {
+            const wLower = w.toLowerCase();
+            if (i > 0 && minorWords.has(wLower)) return wLower;
+            return w.charAt(0).toUpperCase() + w.slice(1);
+        }).join(' ');
+    }
+
+    function _getAvailableModules() {
+        if (_bank && _bank.modules && _bank.modules.length > 0) {
+            return _bank.modules.slice().sort((a, b) => a.title.localeCompare(b.title));
+        }
+        if (_index && _index.bySkill) {
+            return Object.keys(_index.bySkill).map(skillId => {
+                const title = (_index.titles && _index.titles[skillId]) || _formatFallbackTitle(skillId);
+                return {
+                    id: skillId,
+                    title: title,
+                    exercise_count: 0
+                };
+            }).sort((a, b) => a.title.localeCompare(b.title));
+        }
+        return [];
+    }
+
+    function _getLearnedSkillIds() {
+        const progress = (typeof getProgress === 'function') ? getProgress() : {};
+        const completedLessonIds = Object.keys(progress).filter(id => progress[id]);
+        if (!completedLessonIds.length) return new Set();
+
+        const learned = new Set();
+        const curriculum = window._curriculumData;
+
+        if (_index && _index.bySkill) {
+            const completedRefs = new Set();
+            const completedPrefixes = new Set();
+            completedLessonIds.forEach(id => {
+                const cleaned = id.replace(/^lesson\./, '');
+                const parts = cleaned.split('.');
+                const level = parts[0];
+                const rest = parts.slice(1).join('-');
+                completedRefs.add(`exercises/${level}/${level}-${rest}-ex.json`);
+                completedPrefixes.add(cleaned.replace(/\./g, '-'));
+            });
+
+            Object.keys(_index.bySkill).forEach(skill => {
+                const entries = _index.bySkill[skill] || [];
+                const hasCompleted = entries.some(e => {
+                    if (completedRefs.has(e.ref)) return true;
+                    for (const pfx of completedPrefixes) {
+                        if (e.id && e.id.indexOf(pfx) !== -1) return true;
+                    }
+                    return false;
+                });
+                if (hasCompleted) learned.add(skill);
+            });
+        }
+
+        if (curriculum && curriculum.levels) {
+            const completedGrammarTitles = new Set();
+            Object.keys(curriculum.levels).forEach(level => {
+                const units = curriculum.levels[level].units || [];
+                units.forEach(u => {
+                    (u.lessons || []).forEach(l => {
+                        if (progress[l.id] && l.grammar && l.grammar !== 'Consolidation') {
+                            completedGrammarTitles.add(l.grammar.toLowerCase().trim());
+                        }
+                    });
+                });
+            });
+
+            if (_bank && _bank.modules) {
+                _bank.modules.forEach(m => {
+                    const titleLower = (m.title || '').toLowerCase().trim();
+                    for (const gTitle of completedGrammarTitles) {
+                        if (titleLower.includes(gTitle) || gTitle.includes(titleLower)) {
+                            learned.add(m.id);
+                            learned.add(_lessonSkillFor(m.id));
+                        }
+                    }
+                });
+            }
+        }
+
+        return learned;
+    }
+
+    function _competenceBadgeHtml(moduleId, isLearned) {
+        if (typeof DrillHistory !== 'undefined') {
+            const cls = DrillHistory.classify('grammar:' + moduleId);
+            if (cls && cls.state === 'strong') {
+                const icon = (typeof Art !== 'undefined') ? Art.icon('check') : '';
+                return `<span class="gd-badge-status gd-status-practiced" title="Practiced">${icon} practiced</span>`;
+            }
+            if (cls && cls.state === 'weak') {
+                const icon = (typeof Art !== 'undefined') ? Art.icon('alert') : '';
+                return `<span class="gd-badge-status gd-status-review" title="Needs review">${icon} needs review</span>`;
+            }
+            if (cls && cls.state === 'developing') {
+                return '<span class="gd-badge-status gd-status-developing">developing</span>';
+            }
+        }
+        if (isLearned) {
+            return '<span class="gd-badge-new"><i>new</i></span>';
+        }
+        return '';
+    }
+
+    function _competenceBadgeText(moduleId, isLearned) {
+        if (typeof DrillHistory !== 'undefined') {
+            const cls = DrillHistory.classify('grammar:' + moduleId);
+            if (cls && cls.state === 'strong') return ' [practiced]';
+            if (cls && cls.state === 'weak') return ' [needs review]';
+            if (cls && cls.state === 'developing') return ' [developing]';
+        }
+        if (isLearned) return ' [new]';
+        return '';
     }
 
     // ---- Normalisation: raw content shapes -> GrammarRunner's shapes ----
@@ -112,12 +244,6 @@ const GrammarDriller = (function () {
             case 'dialogue-complete':
                 return { kind: 'dialogue-complete', prompt: ex.prompt, options: ex.options, correct: ex.correct };
             case 'fill-blank':
-                // A handful of fill-blanks accept more than one conjugation
-                // (answers[] instead of a single answer) — engine/lessons.js's
-                // own stepState.acceptable already handles this for a normal
-                // lesson; this driller reads the same content files but never
-                // picked up the same fallback, so answer came through
-                // undefined for every one of these and could never be solved.
                 return {
                     kind: 'fill-blank',
                     sentence: ex.sentence,
@@ -136,8 +262,6 @@ const GrammarDriller = (function () {
     }
 
     // Fetches every lesson exercise file a set of index entries points at
-    // (each once, via Content's own cache) and resolves each entry to its
-    // actual exercise object.
     async function _resolveLessonEntries(entries) {
         const refs = [...new Set(entries.map(e => e.ref))];
         const files = await Promise.all(refs.map(ref =>
@@ -149,9 +273,9 @@ const GrammarDriller = (function () {
         const resolved = [];
         const seenIds = new Set();
         for (const entry of entries) {
-            if (seenIds.has(entry.id)) continue; // same exercise, more than one matching teaches tag
+            if (seenIds.has(entry.id)) continue;
             const file = byRef[entry.ref];
-            const ex = (file.exercises || []).find(e => e.id === entry.id);
+            const ex = (file && file.exercises || []).find(e => e.id === entry.id);
             if (!ex) continue;
             const normalised = _normaliseLessonExercise(ex);
             if (normalised) { resolved.push(normalised); seenIds.add(entry.id); }
@@ -159,15 +283,6 @@ const GrammarDriller = (function () {
         return resolved;
     }
 
-    // "Mixed" flattens every skill's lesson-exercise entries — 7000+ of them
-    // across 550+ skills, pointing at 650+ distinct exercise files — even
-    // though a session only ever needs a few dozen questions at most. Fetching
-    // every one of those files up front (_resolveLessonEntries did exactly
-    // that) was the "10 random exercises takes a while to load" report: the
-    // pool-building cost scaled with the whole course, not the session size.
-    // Deduping by exercise id, shuffling, then stopping once enough distinct
-    // files are queued keeps the fetch count bounded while still leaving far
-    // more variety than any single session (30 questions, max) can use.
     const MIXED_FILE_CAP = 40;
 
     function _sampleMixedEntries(entries) {
@@ -190,17 +305,35 @@ const GrammarDriller = (function () {
     }
 
     // Every normalised exercise available for a skill (or every skill, for
-    // "mixed"), in random order. Count mode samples from this with
-    // _takeN(); Timed mode uses it as-is and reshuffles when it runs out.
+    // "mixed" or "mixed-learned"), in random order.
     async function _buildPool(moduleId) {
-        let bankItems, lessonEntries;
+        let bankItems = [], lessonEntries = [];
 
-        if (moduleId === 'mixed') {
-            bankItems = _bank.items;
-            lessonEntries = _sampleMixedEntries(Object.values(_index.bySkill).flat());
+        if (moduleId === 'mixed-learned') {
+            const learnedIds = _getLearnedSkillIds();
+            const availableModules = _getAvailableModules();
+            const learnedModules = availableModules.filter(m =>
+                learnedIds.has(m.id) || learnedIds.has(_lessonSkillFor(m.id))
+            );
+            const learnedSet = new Set(learnedModules.map(m => m.id));
+
+            bankItems = (_bank && _bank.items ? _bank.items : []).filter(i => learnedSet.has(i.module));
+
+            const entries = [];
+            learnedModules.forEach(m => {
+                const skillKey = _lessonSkillFor(m.id);
+                if (_index && _index.bySkill) {
+                    if (_index.bySkill[skillKey]) entries.push(..._index.bySkill[skillKey]);
+                    if (_index.bySkill[m.id] && m.id !== skillKey) entries.push(..._index.bySkill[m.id]);
+                }
+            });
+            lessonEntries = _sampleMixedEntries(entries);
+        } else if (moduleId === 'mixed') {
+            bankItems = (_bank && _bank.items) || [];
+            lessonEntries = _sampleMixedEntries(Object.values((_index && _index.bySkill) || {}).flat());
         } else {
-            bankItems = _bank.items.filter(i => i.module === moduleId);
-            lessonEntries = _index.bySkill[_lessonSkillFor(moduleId)] || [];
+            bankItems = (_bank && _bank.items || []).filter(i => i.module === moduleId);
+            lessonEntries = (_index && _index.bySkill && (_index.bySkill[_lessonSkillFor(moduleId)] || _index.bySkill[moduleId])) || [];
         }
 
         const lessonExercises = await _resolveLessonEntries(lessonEntries);
@@ -208,8 +341,7 @@ const GrammarDriller = (function () {
         return _shuffled(pool);
     }
 
-    // Exactly n items, cycling the (shuffled) pool if it's smaller than n —
-    // a 4-item module can still support "20 questions", it just repeats.
+    // Exactly n items, cycling the (shuffled) pool if it's smaller than n
     function _takeN(pool, n) {
         const out = [];
         while (out.length < n) out.push(..._shuffled(pool));
@@ -220,12 +352,115 @@ const GrammarDriller = (function () {
     //  RENDERING — Settings
     // ================================================================
     function _renderSettings() {
-        const modules = (_bank.modules || []).slice().sort((a, b) => a.title.localeCompare(b.title));
-        // Bank items plus every lesson exercise across every skill — for a
-        // course with no hand-authored bank yet (e.g. Hungarian), this is
-        // the whole count, not "0+ items" implying the pool is empty when
-        // it isn't.
-        const totalItems = _bank.items.length + Object.values(_index.bySkill).flat().length;
+        if (_activeSelectCleanup) {
+            _activeSelectCleanup();
+            _activeSelectCleanup = null;
+        }
+
+        const modules = _getAvailableModules();
+        const learnedSkillIds = _getLearnedSkillIds();
+        const learnedModules = modules.filter(m =>
+            learnedSkillIds.has(m.id) || learnedSkillIds.has(_lessonSkillFor(m.id))
+        );
+
+        const totalItems = (_bank ? _bank.items.length : 0) + Object.values((_index && _index.bySkill) || {}).flat().length;
+        const learnedItems = learnedModules.reduce((acc, m) => acc + (m.exercise_count || 0) + _lessonPoolSize(m.id), 0);
+
+        if (_selectedModule === 'mixed' && learnedModules.length > 0) {
+            _selectedModule = 'mixed-learned';
+        }
+
+        const renderSelectOption = (m, isLearned) => {
+            const count = (m.exercise_count || 0) + _lessonPoolSize(m.id);
+            const badge = _competenceBadgeText(m.id, isLearned);
+            return `<option value="${_escapeHtml(m.id)}">${_escapeHtml(m.title)} (${count})${badge}</option>`;
+        };
+
+        let skillOptionsHtml = '';
+        if (learnedModules.length > 0) {
+            skillOptionsHtml += `<option value="mixed-learned">Mixed — My Learned Skills (${learnedItems}+ items)</option>`;
+        }
+        skillOptionsHtml += `<option value="mixed">Mixed — All Skills (${totalItems}+ items)</option>`;
+
+        if (learnedModules.length > 0) {
+            skillOptionsHtml += `
+                <optgroup label="My Skills (from lessons)">
+                    ${learnedModules.map(m => renderSelectOption(m, true)).join('')}
+                </optgroup>
+                <optgroup label="All Skills">
+                    ${modules.map(m => renderSelectOption(m, learnedSkillIds.has(m.id) || learnedSkillIds.has(_lessonSkillFor(m.id)))).join('')}
+                </optgroup>
+            `;
+        } else {
+            skillOptionsHtml += `
+                <optgroup label="All Skills">
+                    ${modules.map(m => renderSelectOption(m, false)).join('')}
+                </optgroup>
+            `;
+        }
+
+        let listItemsHtml = '';
+        if (learnedModules.length > 0) {
+            listItemsHtml += `
+                <button type="button" class="gd-skill-item${_selectedModule === 'mixed-learned' ? ' is-selected' : ''}" data-skill-id="mixed-learned" role="option" aria-selected="${_selectedModule === 'mixed-learned'}">
+                    <span class="gd-skill-item-title">Mixed — My Learned Skills <span class="gd-skill-item-count">(${learnedItems}+ items)</span></span>
+                </button>
+            `;
+        }
+        listItemsHtml += `
+            <button type="button" class="gd-skill-item${_selectedModule === 'mixed' ? ' is-selected' : ''}" data-skill-id="mixed" role="option" aria-selected="${_selectedModule === 'mixed'}">
+                <span class="gd-skill-item-title">Mixed — All Skills <span class="gd-skill-item-count">(${totalItems}+ items)</span></span>
+            </button>
+        `;
+
+        if (learnedModules.length > 0) {
+            listItemsHtml += `
+                <div class="gd-skill-group-head" data-group="learned">
+                    ${(typeof Art !== 'undefined') ? Art.icon('grammar') : ''}
+                    <span>My Skills (from lessons)</span>
+                </div>
+                ${learnedModules.map(m => {
+                    const count = (m.exercise_count || 0) + _lessonPoolSize(m.id);
+                    const badge = _competenceBadgeHtml(m.id, true);
+                    return `
+                        <button type="button" class="gd-skill-item${_selectedModule === m.id ? ' is-selected' : ''}" data-skill-id="${_escapeHtml(m.id)}" data-group="learned" role="option" aria-selected="${_selectedModule === m.id}">
+                            <span class="gd-skill-item-title">${_escapeHtml(m.title)} <span class="gd-skill-item-count">(${count})</span></span>
+                            ${badge}
+                        </button>
+                    `;
+                }).join('')}
+                <div class="gd-skill-group-head" data-group="all">
+                    <span>All Skills</span>
+                </div>
+                ${modules.map(m => {
+                    const count = (m.exercise_count || 0) + _lessonPoolSize(m.id);
+                    const isLearned = learnedSkillIds.has(m.id) || learnedSkillIds.has(_lessonSkillFor(m.id));
+                    const badge = _competenceBadgeHtml(m.id, isLearned);
+                    return `
+                        <button type="button" class="gd-skill-item${_selectedModule === m.id ? ' is-selected' : ''}" data-skill-id="${_escapeHtml(m.id)}" data-group="all" role="option" aria-selected="${_selectedModule === m.id}">
+                            <span class="gd-skill-item-title">${_escapeHtml(m.title)} <span class="gd-skill-item-count">(${count})</span></span>
+                            ${badge}
+                        </button>
+                    `;
+                }).join('')}
+            `;
+        } else {
+            listItemsHtml += `
+                <div class="gd-skill-group-head" data-group="all">
+                    <span>All Skills</span>
+                </div>
+                ${modules.map(m => {
+                    const count = (m.exercise_count || 0) + _lessonPoolSize(m.id);
+                    const badge = _competenceBadgeHtml(m.id, false);
+                    return `
+                        <button type="button" class="gd-skill-item${_selectedModule === m.id ? ' is-selected' : ''}" data-skill-id="${_escapeHtml(m.id)}" data-group="all" role="option" aria-selected="${_selectedModule === m.id}">
+                            <span class="gd-skill-item-title">${_escapeHtml(m.title)} <span class="gd-skill-item-count">(${count})</span></span>
+                            ${badge}
+                        </button>
+                    `;
+                }).join('')}
+            `;
+        }
 
         _container.innerHTML = `
             <div class="gd-settings">
@@ -239,13 +474,26 @@ const GrammarDriller = (function () {
                 </div>
 
                 <div class="gd-setting">
-                    <label for="gd-skill">Skill</label>
-                    <select id="gd-skill" class="vb-select">
-                        <option value="mixed">Mixed — all skills (${totalItems}+ items)</option>
-                        ${modules.map(m => {
-                            const count = m.exercise_count + _lessonPoolSize(m.id);
-                            return `<option value="${_escapeHtml(m.id)}">${_escapeHtml(m.title)} (${count})</option>`;
-                        }).join('')}
+                    <label id="gd-skill-label" for="gd-skill-trigger">Skill</label>
+                    <div class="gd-custom-select" id="gd-custom-select">
+                        <button type="button" class="gd-select-trigger" id="gd-skill-trigger" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="gd-skill-label gd-skill-trigger">
+                            <span class="gd-trigger-main">
+                                <span class="gd-trigger-title" id="gd-trigger-title"></span>
+                            </span>
+                            <span class="gd-trigger-badge" id="gd-trigger-badge"></span>
+                            <span class="gd-trigger-arrow" aria-hidden="true"></span>
+                        </button>
+                        <div class="gd-select-panel" id="gd-select-panel" hidden>
+                            <div class="gd-search-wrap">
+                                <input type="search" id="gd-skill-filter" class="gd-skill-filter" placeholder="Filter skills…" autocomplete="off" />
+                            </div>
+                            <div class="gd-skill-list" id="gd-skill-list" role="listbox" tabindex="0">
+                                ${listItemsHtml}
+                            </div>
+                        </div>
+                    </div>
+                    <select id="gd-skill" class="vb-select" style="display:none;" aria-hidden="true">
+                        ${skillOptionsHtml}
                     </select>
                 </div>
 
@@ -277,9 +525,146 @@ const GrammarDriller = (function () {
             btn.addEventListener('click', () => { _mode = btn.dataset.mode; _renderSettings(); });
         });
 
-        const skillSelect = _container.querySelector('#gd-skill');
-        skillSelect.value = _selectedModule;
-        skillSelect.addEventListener('change', e => { _selectedModule = e.target.value; });
+        const customSelect = _container.querySelector('#gd-custom-select');
+        const trigger = _container.querySelector('#gd-skill-trigger');
+        const triggerTitle = _container.querySelector('#gd-trigger-title');
+        const triggerBadge = _container.querySelector('#gd-trigger-badge');
+        const panel = _container.querySelector('#gd-select-panel');
+        const filterInput = _container.querySelector('#gd-skill-filter');
+        const listEl = _container.querySelector('#gd-skill-list');
+        const fallbackSelect = _container.querySelector('#gd-skill');
+
+        function _getModuleDisplay(id) {
+            if (id === 'mixed-learned') {
+                return { title: `Mixed — My Learned Skills (${learnedItems}+ items)`, badge: '' };
+            }
+            if (id === 'mixed') {
+                return { title: `Mixed — All Skills (${totalItems}+ items)`, badge: '' };
+            }
+            const found = modules.find(m => m.id === id);
+            if (found) {
+                const count = (found.exercise_count || 0) + _lessonPoolSize(found.id);
+                const isLearned = learnedSkillIds.has(found.id) || learnedSkillIds.has(_lessonSkillFor(found.id));
+                return {
+                    title: `${found.title} (${count})`,
+                    badge: _competenceBadgeHtml(found.id, isLearned)
+                };
+            }
+            return { title: id, badge: '' };
+        }
+
+        function updateTrigger() {
+            const disp = _getModuleDisplay(_selectedModule);
+            triggerTitle.textContent = disp.title;
+            triggerBadge.innerHTML = disp.badge;
+        }
+
+        if (fallbackSelect.querySelector(`option[value="${_selectedModule}"]`)) {
+            fallbackSelect.value = _selectedModule;
+        } else if (fallbackSelect.options.length > 0) {
+            _selectedModule = fallbackSelect.value;
+        }
+        updateTrigger();
+
+        function openPanel() {
+            trigger.setAttribute('aria-expanded', 'true');
+            panel.removeAttribute('hidden');
+            filterInput.value = '';
+            filterItems('');
+            setTimeout(() => { if (filterInput) filterInput.focus(); }, 50);
+
+            const selEl = listEl.querySelector(`.gd-skill-item[data-skill-id="${_selectedModule}"]`);
+            if (selEl) selEl.scrollIntoView({ block: 'nearest' });
+        }
+
+        function closePanel() {
+            trigger.setAttribute('aria-expanded', 'false');
+            panel.setAttribute('hidden', '');
+        }
+
+        trigger.addEventListener('click', e => {
+            e.stopPropagation();
+            const isOpen = trigger.getAttribute('aria-expanded') === 'true';
+            if (isOpen) closePanel();
+            else openPanel();
+        });
+
+        function filterItems(query) {
+            const q = query.toLowerCase().trim();
+            const items = listEl.querySelectorAll('.gd-skill-item');
+            let visibleCount = 0;
+
+            items.forEach(item => {
+                const text = item.textContent.toLowerCase();
+                const matches = !q || text.includes(q);
+                item.style.display = matches ? 'flex' : 'none';
+                if (matches) visibleCount++;
+            });
+
+            const groupHeads = listEl.querySelectorAll('.gd-skill-group-head');
+            groupHeads.forEach(head => {
+                const group = head.getAttribute('data-group');
+                const groupItems = listEl.querySelectorAll(`.gd-skill-item[data-group="${group}"]`);
+                const hasVisible = Array.from(groupItems).some(i => i.style.display !== 'none');
+                head.style.display = hasVisible ? 'flex' : 'none';
+            });
+
+            let emptyEl = listEl.querySelector('.gd-skill-empty');
+            if (visibleCount === 0) {
+                if (!emptyEl) {
+                    emptyEl = document.createElement('div');
+                    emptyEl.className = 'gd-skill-empty';
+                    emptyEl.textContent = 'No matching skills found.';
+                    listEl.appendChild(emptyEl);
+                }
+                emptyEl.style.display = 'block';
+            } else if (emptyEl) {
+                emptyEl.style.display = 'none';
+            }
+        }
+
+        filterInput.addEventListener('input', () => {
+            filterItems(filterInput.value);
+        });
+
+        listEl.addEventListener('click', e => {
+            const btn = e.target.closest('.gd-skill-item');
+            if (!btn) return;
+            const skillId = btn.getAttribute('data-skill-id');
+            if (skillId) {
+                _selectedModule = skillId;
+                if (fallbackSelect) fallbackSelect.value = skillId;
+                listEl.querySelectorAll('.gd-skill-item').forEach(el => {
+                    const isSel = el.getAttribute('data-skill-id') === skillId;
+                    el.classList.toggle('is-selected', isSel);
+                    el.setAttribute('aria-selected', isSel ? 'true' : 'false');
+                });
+                updateTrigger();
+                closePanel();
+                trigger.focus();
+            }
+        });
+
+        const handleDocClick = e => {
+            if (!customSelect.contains(e.target)) {
+                closePanel();
+            }
+        };
+
+        const handleKeyDown = e => {
+            if (e.key === 'Escape' && trigger.getAttribute('aria-expanded') === 'true') {
+                closePanel();
+                trigger.focus();
+            }
+        };
+
+        document.addEventListener('click', handleDocClick);
+        document.addEventListener('keydown', handleKeyDown);
+
+        _activeSelectCleanup = () => {
+            document.removeEventListener('click', handleDocClick);
+            document.removeEventListener('keydown', handleKeyDown);
+        };
 
         const countSelect = _container.querySelector('#gd-count');
         if (countSelect) countSelect.addEventListener('change', e => { _questionCount = Number(e.target.value); });
@@ -287,7 +672,13 @@ const GrammarDriller = (function () {
         const timerSelect = _container.querySelector('#gd-timer');
         if (timerSelect) timerSelect.addEventListener('change', e => { _timerMinutes = Number(e.target.value); });
 
-        _container.querySelector('[data-action="start"]').addEventListener('click', _startSession);
+        _container.querySelector('[data-action="start"]').addEventListener('click', () => {
+            if (_activeSelectCleanup) {
+                _activeSelectCleanup();
+                _activeSelectCleanup = null;
+            }
+            _startSession();
+        });
     }
 
     // ================================================================
@@ -393,6 +784,12 @@ const GrammarDriller = (function () {
     // ================================================================
     function _finishSession() {
         if (_timerInterval) { clearInterval(_timerInterval); _timerInterval = null; }
+        if (typeof DrillHistory !== 'undefined' && _seen > 0) {
+            DrillHistory.record('grammar:' + _selectedModule, {
+                correct: _correct,
+                wrong: _seen - _correct
+            });
+        }
         _phase = PHASE.RESULTS;
         _renderResults();
     }
@@ -489,6 +886,7 @@ const GrammarDriller = (function () {
     // to call even when no timer is running.
     function stop() {
         if (_timerInterval) { clearInterval(_timerInterval); _timerInterval = null; }
+        if (_activeSelectCleanup) { _activeSelectCleanup(); _activeSelectCleanup = null; }
         _phase = PHASE.SETTINGS;
     }
 

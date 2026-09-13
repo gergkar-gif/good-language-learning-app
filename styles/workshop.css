@@ -235,6 +235,238 @@
     margin: -8px 0 16px;
 }
 
+.gd-custom-select {
+    position: relative;
+    width: 100%;
+}
+
+.gd-select-trigger {
+    width: 100%;
+    min-height: 48px;
+    padding: 10px 14px;
+    background: var(--bg);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-sm);
+    color: var(--text);
+    font-family: inherit;
+    font-size: 1rem;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    cursor: pointer;
+    transition: border-color 0.15s ease;
+}
+
+.gd-select-trigger:hover {
+    border-color: var(--primary-mid);
+}
+
+.gd-select-trigger:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 1px;
+}
+
+.gd-trigger-main {
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.gd-trigger-title {
+    font-weight: 500;
+}
+
+.gd-trigger-badge {
+    flex: 0 0 auto;
+}
+
+.gd-trigger-arrow {
+    flex: 0 0 auto;
+    width: 10px;
+    height: 6px;
+    background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23102A47'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: transform 0.2s ease;
+}
+
+[data-theme="dark"] .gd-trigger-arrow,
+:root:not([data-theme="light"]) .gd-trigger-arrow {
+    background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23F5F1E8'/%3E%3C/svg%3E");
+}
+
+.gd-select-trigger[aria-expanded="true"] .gd-trigger-arrow {
+    transform: rotate(180deg);
+}
+
+.gd-select-panel {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    right: 0;
+    background: var(--bg);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-sm);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    z-index: 50;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.gd-select-panel[hidden] {
+    display: none;
+}
+
+.gd-search-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.gd-skill-filter {
+    width: 100%;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    background: var(--surface, var(--bg));
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    color: var(--text);
+    outline: none;
+    transition: border-color 0.15s ease;
+}
+
+.gd-skill-filter:focus {
+    border-color: var(--primary);
+}
+
+.gd-skill-list {
+    max-height: 240px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.gd-skill-group-head {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--muted);
+    padding: 8px 10px 4px;
+    border-top: 1px solid var(--border-subtle, var(--border));
+    margin-top: 4px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.gd-skill-group-head:first-child {
+    border-top: none;
+    margin-top: 0;
+    padding-top: 4px;
+}
+
+.gd-skill-group-head .art.icon {
+    width: 14px;
+    height: 14px;
+}
+
+.gd-skill-item {
+    width: 100%;
+    padding: 8px 10px;
+    background: none;
+    border: none;
+    border-radius: var(--radius-sm);
+    color: var(--text);
+    font-family: inherit;
+    font-size: 13px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    cursor: pointer;
+    transition: background 0.12s ease;
+}
+
+.gd-skill-item:hover {
+    background: var(--border);
+}
+
+.gd-skill-item.is-selected {
+    background: var(--wash);
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.gd-skill-item-title {
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.gd-skill-item-count {
+    color: var(--muted);
+    font-weight: 400;
+    font-size: 12px;
+    margin-left: 4px;
+}
+
+.gd-skill-item.is-selected .gd-skill-item-count {
+    color: var(--primary-mid, var(--primary));
+}
+
+.gd-badge-new {
+    font-size: 11px;
+    color: var(--primary);
+    font-style: italic;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+}
+
+.gd-badge-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+}
+
+.gd-badge-status .art.icon {
+    width: 12px;
+    height: 12px;
+}
+
+.gd-badge-status.gd-status-practiced {
+    color: var(--text);
+}
+
+.gd-badge-status.gd-status-review {
+    color: var(--primary);
+}
+
+.gd-badge-status.gd-status-developing {
+    color: var(--muted);
+}
+
+.gd-skill-empty {
+    padding: 16px 10px;
+    font-size: 13px;
+    color: var(--muted);
+    text-align: center;
+}
+
 /* ---- Standardized Session HUD & Progress ---- */
 .driller-progress-track {
     width: 100%;

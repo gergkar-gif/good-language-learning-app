@@ -11,7 +11,9 @@ let xpData = {
     //           storiesDone, lessonsDone }
     history: {},
     // date -> words added that day, which is what the cap below limits
-    dailyNewWords: {}
+    dailyNewWords: {},
+    // Imported streak from previous app (e.g. Duolingo)
+    importedStreak: null
 };
 
 const NEW_WORDS_DAILY_CAP = 20;
@@ -69,7 +71,8 @@ function loadXP() {
     xpData = {
         total: parsed.total || 0,
         history: {},
-        dailyNewWords: parsed.dailyNewWords || {}
+        dailyNewWords: parsed.dailyNewWords || {},
+        importedStreak: parsed.importedStreak || null
     };
 
     // The first version stored a bare XP number per day. Keep the total and
@@ -265,6 +268,23 @@ function isStreakDay(dateStr) {
     return getDailyActivities(dateStr).keepsStreak;
 }
 
+function getImportedStreak() {
+    return (xpData && xpData.importedStreak && typeof xpData.importedStreak.days === 'number')
+        ? xpData.importedStreak.days
+        : 0;
+}
+
+function importStreak(days) {
+    const count = parseInt(days, 10);
+    if (isNaN(count) || count < 0) return false;
+    xpData.importedStreak = {
+        days: count,
+        importedAt: getTodayString()
+    };
+    saveXP();
+    return true;
+}
+
 function getStreak() {
     const today = new Date();
     // A day still in progress shouldn't read as a broken streak, so if today
@@ -278,6 +298,19 @@ function getStreak() {
         if (!isStreakDay(dateString(day))) break;
         streak++;
         offset++;
+    }
+
+    const imported = getImportedStreak();
+    if (imported > 0 && xpData.importedStreak) {
+        const importedDate = xpData.importedStreak.importedAt || xpData.importedStreak.date;
+        const todayStr = dateString(today);
+        // If imported today, give full credit immediately so switching friction is zero;
+        // if after import day, maintain imported streak as long as Parlour habit is active.
+        if (importedDate === todayStr) {
+            streak += imported;
+        } else if (streak > 0) {
+            streak += imported;
+        }
     }
 
     return streak;
@@ -343,6 +376,17 @@ function updateXPHeader() {
 
     const activities = getDailyActivities();
 
+    const trioStatusEl = document.getElementById('daily-trio-status');
+    if (trioStatusEl) {
+        if (activities.perfect) {
+            trioStatusEl.textContent = 'Daily Trio complete · Perfect day';
+        } else if (activities.keepsStreak) {
+            trioStatusEl.textContent = 'Daily Trio: 2 of 3 complete · Streak preserved';
+        } else {
+            trioStatusEl.textContent = `Daily Trio: ${activities.completed} of 3 complete · 2 needed for streak`;
+        }
+    }
+
     const listEl = document.getElementById('daily-activities');
     if (listEl) {
         listEl.innerHTML = activities.list.map(activity => {
@@ -353,11 +397,11 @@ function updateXPHeader() {
                 : '✗';
             const iconHtml = (typeof Art !== 'undefined') ? Art.icon(activity.icon) : '';
             return `
-                <span class="daily-activity${activity.done ? ' is-done' : ''}">
+                <button class="daily-activity${activity.done ? ' is-done' : ''}" data-trio-activity="${activity.key}" type="button">
                     <span class="daily-activity-icon">${iconHtml}</span>
                     <span class="daily-activity-label">${activity.label}</span>
                     <span class="daily-activity-mark">${mark}</span>
-                </span>
+                </button>
             `;
         }).join('');
     }

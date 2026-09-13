@@ -435,6 +435,19 @@
   font-weight: 600;
 }
 
+.story-card-reach-badge {
+  display: inline-block;
+  background: var(--wash);
+  color: var(--primary);
+  border: 1px solid var(--border);
+  padding: 2px 7px;
+  border-radius: var(--radius-pill);
+  font-size: .8em;
+  font-weight: 600;
+  margin-left: 6px;
+  letter-spacing: .02em;
+}
+
 /* Story reading view */
 
 .story-attribution {
@@ -2553,6 +2566,17 @@
 .jr-facts strong {
   color: var(--text);
   font-variant-numeric: tabular-nums;
+}
+
+.jr-streak-actions {
+  margin-top: 14px;
+}
+
+.jr-import-btn {
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 13px;
+  text-align: center;
 }
 
 .jr-next {

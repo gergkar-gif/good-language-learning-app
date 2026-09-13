@@ -195,11 +195,22 @@
   color: var(--muted);
 }
 
+.daily-trio-head {
+  margin-top: 8px;
+}
+
+.daily-trio-status {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+}
+
 .daily-activities {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-top: 10px;
+  margin-top: 8px;
 }
 
 .daily-activity {
@@ -210,9 +221,18 @@
   border-radius: var(--radius-sm);
   border: 1px solid var(--border);
   background: var(--bg);
+  font-family: inherit;
   font-size: 13px;
   line-height: 1.4;
   color: var(--muted);
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+
+.daily-activity:hover {
+  border-color: var(--primary-mid);
+  color: var(--text);
 }
 
 .daily-activity.is-done {
@@ -1504,14 +1524,40 @@ body.in-lesson .content {
   color: var(--primary);
 }
 
-.gg-topic-body { min-width: 0; }
+.gg-topic-body { flex: 1; min-width: 0; }
+
+.gg-topic-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 4px;
+}
 
 .gg-topic-title {
   font-family: var(--font-display);
   font-size: 16px;
   font-weight: 400;
   color: var(--text);
-  margin: 0 0 4px;
+  margin: 0;
+}
+
+.gg-drill-btn {
+  font-size: 12px;
+  padding: 3px 9px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--primary);
+  cursor: pointer;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: all 0.15s ease;
+}
+
+.gg-drill-btn:hover {
+  background: var(--wash);
+  border-color: var(--primary);
 }
 
 /* .level-hero, .level-detail-head/-titles/-progress, .progress-ring(-label)
