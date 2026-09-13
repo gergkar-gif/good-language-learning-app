@@ -16,6 +16,18 @@
 - Maximum 5 worked examples.
 - Link to the relevant Lingolia page.
 - Do not explain grammar that has not yet been introduced.
+- **Italicize embedded Spanish in `text`/`tip` prose.** These sections are
+  English explanatory prose; any bare Spanish word or short phrase already
+  appearing in that prose must be wrapped in `*asterisks*` (e.g. "*hay* is
+  impersonal", "use *ir a* + infinitive") — the app renders `*x*` as `<em>x</em>`.
+  Never invent or translate a word to have something to wrap; if a sentence
+  has no Spanish in it, leave it untouched. Never wrap English (including
+  English grammar terminology like "subjunctive" or "definite object") and
+  never touch `examples`/`table` sections — those already render in italics
+  automatically via CSS and re-wrapping them would double up the styling.
+  This does not apply to a `text` section that is itself written entirely in
+  Spanish (e.g. a B1 historical reading passage) — there is no "embedded"
+  word to isolate when the whole passage is the target language.
 
 ---
 

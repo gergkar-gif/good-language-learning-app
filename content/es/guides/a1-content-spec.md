@@ -21,6 +21,11 @@ against rules that were never meant for them.
 - Maximum 300 words of prose per file
 - 3–5 worked examples per file
 - 1 Lingolia reference per file, as the **last** part of the file
+- Every bare Spanish word or phrase inside a `text`/`tip` part's prose must
+  be wrapped in `*asterisks*` (`*hay*`, `*ir a* + infinitive`) — see
+  `editorial-style-guide.md`'s Grammar section for the full rule. Don't wrap
+  `examples`/`table` content (already italicized by CSS) and don't invent a
+  Spanish word to wrap where the sentence is pure English.
 
 The reference is written as a closing sentence, not a bare link. Give the
 `external-link` part a `topic` that completes "Read more about ___ on

@@ -293,6 +293,10 @@ after the story per the model above:
   source (a museum, archive or reference work) rather than defaulting to
   Lingolia, which has nothing relevant to link to for this track
 
+Since this `text` part is English framing (not a Spanish narrative passage),
+it follows the italics rule in §5: any bare Spanish word or construction
+named in it (`*se pasiva*`, `*a raíz de*`) gets wrapped in `*asterisks*`.
+
 **The Focus screen also carries one grammar-extension point per unit.**
 Core's B1 sequence is built around personal narration and everyday
 functions and never needs the structures formal historical writing leans
@@ -432,6 +436,14 @@ One file per teaching lesson (lessons 01–05; consolidation has none).
 - 3–5 worked examples (`examples` part)
 - one `external-link` recommended, not mandatory (a missing one is a
   warning, not a failure — same as the existing A1 rule)
+- Every bare Spanish word or phrase in a `text`/`tip` part's English prose
+  must be wrapped in `*asterisks*` (`*se pasiva*`, `*a raíz de*`, `*lo que*`)
+  — see `editorial-style-guide.md`'s Grammar section for the full rule. This
+  includes Spanish grammar terminology being discussed as a mechanism
+  (`*se*`, `*ser*`), not just vocabulary. Don't wrap `examples`/`table`
+  content, and don't touch a `text` part that is itself a Spanish narrative
+  passage rather than English framing (see §3.0) — there's nothing
+  "embedded" to isolate there.
 - one concept per file. A unit whose grammar needs more room than one
   700-word-lesson screen can comfortably hold should be split the way A1
   splits an overloaded lesson into parts (`a1-content-spec.md` §4b) —

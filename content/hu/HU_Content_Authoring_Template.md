@@ -155,6 +155,21 @@ dropped — no error, just a missing chunk of the screen.
 **Soft convention:** keep prose to roughly 300 words total across `text`
 parts — this is a mobile screen, not a grammar reference page.
 
+**Italicize embedded Hungarian.** `text` and `tip` parts are English
+explanatory prose — any bare Hungarian word or short phrase already
+appearing in that prose must be wrapped in `*asterisks*` (e.g. "*Hol*?
+asks where", "*dolgozik* is an *-ik* verb", "*Kell még valami*?"), which
+the app renders as `<em>` at display time. Recognize Hungarian by its
+accented vowels (á é í ó ö ő ú ü ű), the digraphs gy/ny/ty/sz/zs/cs/dzs, or
+a case/possessive/verb ending you've already introduced — including short
+2–3 letter words (*Hol*, *itt*, *ott*, *és*, *Van*, *Ki*), which are easy
+to skip but just as much a target-language word as anything longer. Never
+invent or translate a word just to have something to wrap — if a sentence
+is pure English, leave it untouched. Never wrap English (including English
+grammar terminology like "infinitive" or "definite object"), and never
+touch `examples`/`table` parts — those already render in italics
+automatically via CSS.
+
 ---
 
 ## 4. Exercises file (`exercises/a1/a1-NN-ex.json`)
