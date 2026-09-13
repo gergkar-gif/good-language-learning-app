@@ -138,6 +138,8 @@ UNIT_TABLES = {
         ("What Do You Like? (Gustar)", ["a1-gustar-01", "a1-gustar-02", "a1-gustar-03", "a1-gustar-04", "a1-gustar-05", "a1-gustar-consolidation"]),
         # "a1-hobbies", not "a1-18" — a1-18 was Review 1's old slot.
         ("Hobbies & Free Time", ["a1-hobbies-01", "a1-hobbies-02", "a1-hobbies-03", "a1-hobbies-04", "a1-hobbies-05", "a1-hobbies-consolidation"]),
+        # "a1-abilities" — Dedicated unit for skills, abilities, saber vs conocer, and personal 'a'
+        ("Skills & Abilities: Poder & Saber", ["a1-abilities-01", "a1-abilities-02", "a1-abilities-03", "a1-abilities-04", "a1-abilities-05", "a1-abilities-consolidation"]),
         # "a1-future", not "a1-19" — a1-19 was Review 2's old slot.
         ("Future Plans", ["a1-future-01", "a1-future-02", "a1-future-03", "a1-future-04", "a1-future-05", "a1-future-consolidation"]),
         # Old Review 1/2/Final are fully retired now — their readings live on,
