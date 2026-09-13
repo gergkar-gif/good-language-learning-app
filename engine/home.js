@@ -214,7 +214,7 @@ const Home = (function () {
                     <span class="hm-review-alert-badge">${deck.due}</span>
                     <div class="hm-review-alert-text">
                         <strong>${deck.due} ${plural(deck.due, 'word')} ready for review</strong>
-                        <span class="hm-review-alert-sub">Spaced repetition memory checkpoint</span>
+                        <span class="hm-review-alert-sub">Scheduled memory review</span>
                     </div>
                 </div>
                 <button class="vbtn vbtn-primary hm-review-alert-cta" data-review-all="1" type="button">Review now →</button>

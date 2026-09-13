@@ -24,8 +24,8 @@ const Journey = (function () {
         { id: 'words-500',     label: '500 words met (A1 threshold)', test: d => d.wordsMet >= 500 },
         { id: 'words-1000',    label: '1,000 words met (A2 threshold)', test: d => d.wordsMet >= 1000 },
         { id: 'deck-50',       label: '50 words in your deck',    test: d => d.deckSize >= 50 },
-        { id: 'mastered-50',   label: '50 words mastered in SRS', test: d => d.deckMastered >= 50 },
-        { id: 'mastered-150',  label: '150 words mastered in SRS', test: d => d.deckMastered >= 150 },
+        { id: 'mastered-50',   label: '50 words mastered',        test: d => d.deckMastered >= 50 },
+        { id: 'mastered-150',  label: '150 words mastered',       test: d => d.deckMastered >= 150 },
         { id: 'grammar-10',    label: '10 grammar points',        test: d => d.grammarDone >= 10 },
         { id: 'reviews-100',   label: '100 reviews completed',    test: d => d.reviews >= 100 },
         { id: 'streak-7',      label: 'A week without missing',   test: d => d.bestStreak >= 7 },
@@ -247,7 +247,7 @@ const Journey = (function () {
             </button>
             <p class="jr-next">${horizonText}</p>
             <ul class="jr-facts">
-                <li><button class="jr-fact-link" data-jr-tab="review"><strong>${d.deckSize}</strong> in active SRS review</button></li>
+                <li><button class="jr-fact-link" data-jr-tab="review"><strong>${d.deckSize}</strong> in active review</button></li>
                 <li><strong>${d.deckMastered}</strong> mastered (retained across reviews)</li>
                 <li><strong>${d.newWordsLearned}</strong> acquired through review</li>
                 <li><button class="jr-fact-link" data-jr-tab="reader"><strong>${d.storiesRead}</strong>${d.storiesTotal ? ' of ' + d.storiesTotal : ''} stories read</button></li>
