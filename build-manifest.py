@@ -126,6 +126,8 @@ UNIT_TABLES = {
         ("Work & Obligations", ["a1-work-01", "a1-work-02", "a1-work-03", "a1-work-04", "a1-work-05", "a1-work-consolidation"]),
         # "a1-health", not "a1-17" — a1-17 is Future Plans' old slot.
         ("Health", ["a1-health-01", "a1-health-02", "a1-health-03", "a1-health-04", "a1-health-05", "a1-health-consolidation"]),
+        # "a1-gustar" — Dedicated unit for the gustar construction, encantar, and interesar
+        ("What Do You Like? (Gustar)", ["a1-gustar-01", "a1-gustar-02", "a1-gustar-03", "a1-gustar-04", "a1-gustar-05", "a1-gustar-consolidation"]),
         # "a1-hobbies", not "a1-18" — a1-18 was Review 1's old slot.
         ("Hobbies & Free Time", ["a1-hobbies-01", "a1-hobbies-02", "a1-hobbies-03", "a1-hobbies-04", "a1-hobbies-05", "a1-hobbies-consolidation"]),
         # "a1-future", not "a1-19" — a1-19 was Review 2's old slot.
