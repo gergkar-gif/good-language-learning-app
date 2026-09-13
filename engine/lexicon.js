@@ -349,7 +349,28 @@ const Lexicon = (function () {
             if (sense || !_dictionary[a.lemma]) add(a.lemma, sense, HungarianMorphology.describe(a));
         });
 
-        readings.sort((a, b) => rankOf(a) - rankOf(b));
+        // A reading whose lemma is a strict prefix of the tapped word was
+        // reached by stripping a case/possessive/verb suffix off the
+        // ORIGINAL surface form — a guess, validated only by the remainder
+        // happening to also be a real word. Ranking that guess purely by
+        // the guessed lemma's own frequency, with no regard for whether an
+        // untouched match (a direct dictionary hit, or a same-length
+        // irregular-table lookup) also exists, let a short, very common
+        // lemma silently outrank the actual word being looked up: "nagyon"
+        // ("very") is itself a dictionary headword, but stripping its
+        // superessive "-on" leaves "nagy" ("big") — a real, nominal word,
+        // and far more frequent (rank 29) than "nagyon" (rank 46) — so the
+        // spurious "big" reading was sorting ahead of the correct "very"
+        // one. Demoting every truncated reading below every untouched one
+        // (frequency still breaks ties within each group) fixes that
+        // without touching genuine homography between two full-length
+        // matches ("ment" as "to rescue" vs. "megy"'s irregular past tense
+        // "went" — neither is a truncation of "ment", so both stay ranked
+        // by frequency exactly as before).
+        function isTruncated(r) {
+            return key.length > r.lemma.length && key.indexOf(r.lemma) === 0;
+        }
+        readings.sort((a, b) => (isTruncated(a) - isTruncated(b)) || (rankOf(a) - rankOf(b)));
         // Pinned to the reading that actually won ranking — see ladder()'s
         // own comment on why ("lakom" is ambiguous between "lakik" the verb
         // and "lak" + possessive, and the ladder must agree with whichever

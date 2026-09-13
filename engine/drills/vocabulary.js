@@ -389,8 +389,22 @@ const VocabularyDriller = (function () {
     // word wouldn't be in that table at all, so this takes the
     // {lemma, translation, pos} shape Decks already hands around instead
     // of requiring the word to be a known curriculum lemma.
+    //
+    // Still filtered to CONTENT_POS, same as _wordList() — a caller-
+    // supplied word can be anything a learner put in My Decks, including
+    // a pronoun/preposition/conjunction picked up from a grammar lesson
+    // ("ki" = "who", reviewed here after a low SRS ease flagged it as a
+    // weak word). Skipping this filter let one of those become a driller
+    // target with a context sentence pulled from _contextIndex[lemma] —
+    // which, since the index files sentences by lemma only, mixes in any
+    // OTHER sense sharing that exact spelling ("ki" is also the separable
+    // verb-prefix "out", as in "kipróbál" split apart: "nem próbáltam
+    // ki") — so the exercise could ask what "ki" means in a sentence
+    // where it isn't the pronoun at all, and mark "who" as correct
+    // regardless (found via bug report: 2026-09-13).
     function _buildPoolFromWords(words) {
         return words
+            .filter(w => CONTENT_POS.has(w.pos))
             .map(w => _buildExerciseFor({ lemma: w.lemma, en: w.translation, pos: w.pos }))
             .filter(Boolean);
     }
