@@ -340,17 +340,20 @@
   color: var(--accent-dark);
 }
 
-/* ---- Mobile viewport: Bottom Navigation Bar (<640px) ---- */
+/* ---- Mobile viewport: Sticky Top Navigation Bar (<640px) ---- */
 @media (max-width: 639px) {
   .nav {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    top: auto;
-    border-top: 1px solid var(--border);
-    border-bottom: none;
-    padding: 6px 4px calc(6px + env(safe-area-inset-bottom, 0px));
+    position: sticky;
+    top: 0;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    border-top: none;
+    border-bottom: 1px solid var(--border);
+    margin: 0 -16px 8px;
+    padding: 6px 8px 8px;
+    background: var(--bg);
+    z-index: 100;
   }
 
   .nav-items {
@@ -359,8 +362,8 @@
   }
 
   .nav button {
-    padding: 4px 2px 6px;
-    font-size: 10px;
+    padding: 4px 1px 6px;
+    font-size: 10.5px;
     gap: 3px;
   }
 
@@ -370,7 +373,7 @@
   }
 
   .content {
-    padding-bottom: calc(96px + env(safe-area-inset-bottom, 0px));
+    padding-bottom: calc(48px + env(safe-area-inset-bottom, 0px));
   }
 }
 
