@@ -474,7 +474,11 @@ const VocabularyDriller = (function () {
     //  RENDERING — Session
     // ================================================================
     function _startSession() {
-        const pool = _buildPool(_level);
+        let pool = _buildPool(_level);
+        if (!pool.length && _level !== 'all') {
+            _level = 'all';
+            pool = _buildPool('all');
+        }
         _seen = 0;
         _correct = 0;
         _missed = [];
@@ -704,17 +708,38 @@ const VocabularyDriller = (function () {
     async function render(root, options) {
         _container = root;
 
+        if (options && (options.autoStart || options.words || options.count)) {
+            if (_timerInterval) { clearInterval(_timerInterval); _timerInterval = null; }
+            _phase = PHASE.SETTINGS;
+        }
+
         if (_phase === PHASE.SETTINGS) {
             _container.innerHTML = `<div class="gd-loading">Loading…</div>`;
             await _load();
             if (options && options.words && options.words.length) {
                 _startSessionFromWords(options.words);
-            } else if (options && options.autoStart) {
-                const words = (typeof LearnerModel !== 'undefined') ? LearnerModel.weakWords() : [];
-                if (words.length) {
-                    _startSessionFromWords(words.slice(0, options.count || 6));
+            } else if (options && (options.autoStart || options.count)) {
+                if (options.count) {
+                    _questionCount = options.count;
+                    _mode = MODE.COUNT;
+                }
+                if (options.level) _level = options.level;
+
+                const weakWords = (typeof LearnerModel !== 'undefined') ? LearnerModel.weakWords() : [];
+                const weakPool = weakWords.length ? _buildPoolFromWords(weakWords.slice(0, _questionCount)) : [];
+
+                if (weakPool.length) {
+                    _seen = 0;
+                    _correct = 0;
+                    _missed = [];
+                    _mode = MODE.COUNT;
+                    _queue = _shuffled(weakPool);
+                    _questionCount = _queue.length;
+                    _queueIndex = 0;
+                    _phase = PHASE.SESSION;
+                    _renderSession();
                 } else {
-                    _renderSettings();
+                    _startSession();
                 }
             } else {
                 _renderSettings();

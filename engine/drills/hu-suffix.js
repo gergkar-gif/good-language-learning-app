@@ -518,6 +518,11 @@ const HuSuffixDriller = (function () {
     async function render(root, options) {
         _container = root;
 
+        if (options && (options.autoStart || options.count)) {
+            if (_timerInterval) { clearInterval(_timerInterval); _timerInterval = null; }
+            _phase = PHASE.SETTINGS;
+        }
+
         if (_phase === PHASE.SETTINGS) {
             _container.innerHTML = `<div class="gd-loading">Loading…</div>`;
             await _load();

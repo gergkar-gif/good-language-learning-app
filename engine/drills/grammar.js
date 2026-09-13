@@ -859,11 +859,31 @@ const GrammarDriller = (function () {
     async function render(root, options) {
         _container = root;
 
+        if (options && (options.skill || options.autoStart)) {
+            if (_timerInterval) { clearInterval(_timerInterval); _timerInterval = null; }
+            _phase = PHASE.SETTINGS;
+        }
+
         if (_phase === PHASE.SETTINGS) {
             _container.innerHTML = `<div class="gd-loading">Loading…</div>`;
             await _load();
-            if (options && options.skill) {
-                _selectedModule = options.skill;
+            if (options && (options.skill || options.autoStart)) {
+                if (options.skill) {
+                    _selectedModule = options.skill;
+                } else {
+                    const weak = (typeof LearnerModel !== 'undefined') ? LearnerModel.weakSkills(1) : [];
+                    if (weak.length && weak[0].skillId) {
+                        _selectedModule = weak[0].skillId;
+                    } else {
+                        const learned = Array.from(_getLearnedSkillIds());
+                        if (learned.length) {
+                            _selectedModule = learned[0];
+                        } else {
+                            const modules = _getAvailableModules();
+                            if (modules.length) _selectedModule = modules[0].id;
+                        }
+                    }
+                }
                 if (options.count) {
                     _mode = MODE.COUNT;
                     _questionCount = options.count;
