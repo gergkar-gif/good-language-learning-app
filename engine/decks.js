@@ -305,7 +305,7 @@ const Decks = (function () {
     // different act with its own built-in judgment call, and doesn't call
     // canAddNewWord()/recordNewWord() at all, so it neither gets blocked by
     // that cap nor eats into it for the Reader's sake either.
-    function reviewDeck(id) {
+    function reviewDeck(id, options) {
         const deck = id === 'all' ? null : byId(id);
         if (deck) {
             wordsOf(deck).forEach(word => {
@@ -325,7 +325,8 @@ const Decks = (function () {
             saveDeck();
         }
         startReviewSession(deck ? wordsOf(deck).map(w => w.lemma) : null,
-                           deck ? deck.name : 'All decks');
+                           deck ? deck.name : 'All decks',
+                           options);
     }
 
     // ----------------------------------------

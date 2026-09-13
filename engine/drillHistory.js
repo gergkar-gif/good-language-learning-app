@@ -62,6 +62,9 @@ const DrillHistory = (function () {
         const history = [entry, ...all(drillerId)].slice(0, MAX_SESSIONS);
         try {
             localStorage.setItem(storageKey(drillerId), JSON.stringify(history));
+            if (typeof Sync !== 'undefined' && Sync.scheduleAutoSave) {
+                Sync.scheduleAutoSave();
+            }
         } catch (error) {
             // Private browsing with storage disabled — the signal just won't
             // persist this session, same tradeoff other stores accept.

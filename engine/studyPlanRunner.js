@@ -155,14 +155,12 @@ const StudyPlanRunner = (function () {
             // changing engine/leveltest.js's own hardcoded return.
             LevelTest.open(item.level);
         } else if (item.kind === 'review') {
-            // Reviews are not truncated to the estimated count — once
-            // started, the existing whole-due-deck review flow runs to its
-            // own natural end, same as a lesson does. Consistent with the
-            // roadmap's own "no countdown, time is a planning constraint"
-            // framing: the budget only sizes what gets queued up front.
+            // Respect the time-based budget: only review the budgeted count
+            // of words (e.g. 9 words for 5 min) so the learner is never trapped
+            // in a large backlog during a finite micro-session.
             _leavingForReview = true;
             goTab('review');
-            if (typeof Decks !== 'undefined') Decks.reviewDeck('all');
+            if (typeof Decks !== 'undefined') Decks.reviewDeck('all', { limit: item.count });
         }
     }
 

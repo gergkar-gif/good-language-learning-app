@@ -30,6 +30,9 @@ function loadDeck() {
 function saveDeck() {
     localStorage.setItem(Lang.key('srsDeck'), JSON.stringify(srsDeck));
     updateSRSCounter();
+    if (typeof Sync !== 'undefined' && Sync.scheduleAutoSave) {
+        Sync.scheduleAutoSave();
+    }
 }
 
 // ============================================
@@ -55,6 +58,9 @@ function loadKnownWords() {
 
 function saveKnownWords() {
     localStorage.setItem(Lang.key('knownWords'), JSON.stringify(knownWords));
+    if (typeof Sync !== 'undefined' && Sync.scheduleAutoSave) {
+        Sync.scheduleAutoSave();
+    }
 }
 
 function isKnown(lemma) {
@@ -347,6 +353,7 @@ let reviewScopeName = '';
 // total — the same "before" pattern engine/lessons.js's finishLesson()
 // already uses for its own rank-up line.
 let reviewSessionStats = null;
+let reviewLimit = null;
 
 // Which side of the card shows first: 'es-en' is recognition (see Spanish,
 // recall the meaning), 'en-es' is production (see English, recall the
@@ -430,22 +437,37 @@ function toggleReviewDirection() {
     if (currentReviewCard) renderCard();
 }
 
-function startReviewSession(lemmas, name) {
+function updateReviewBanner() {
+    const banner = document.getElementById('review-scope');
+    if (!banner) return;
+    if (reviewLimit) {
+        const current = (reviewSessionStats ? reviewSessionStats.total : 0) + 1;
+        const scopePrefix = reviewScope ? reviewScopeName + ' · ' : '';
+        banner.textContent = `${scopePrefix}Card ${Math.min(current, reviewLimit)} of ${reviewLimit}`;
+        banner.style.display = 'block';
+    } else if (reviewScope) {
+        banner.textContent = 'Reviewing: ' + reviewScopeName;
+        banner.style.display = 'block';
+    } else {
+        banner.textContent = '';
+        banner.style.display = 'none';
+    }
+}
+
+function startReviewSession(lemmas, name, options) {
     reviewScope = lemmas ? new Set(lemmas) : null;
     reviewScopeName = reviewScope ? (name || 'Deck') : '';
+    reviewLimit = (options && typeof options.limit === 'number' && options.limit > 0) ? options.limit : null;
     reviewSessionStats = {
         total: 0, again: 0, hard: 0, good: 0, easy: 0,
         startedAt: Date.now(),
         missed: [], // {lemma, translation, pos} for each distinct card rated "again" this session
         xpBefore: (typeof xpData !== 'undefined') ? xpData.total : 0,
-        rankBefore: (typeof getRank === 'function') ? getRank().rank : null
+        rankBefore: (typeof getRank === 'function') ? getRank().rank : null,
+        limit: reviewLimit
     };
 
-    const banner = document.getElementById('review-scope');
-    if (banner) {
-        banner.textContent = reviewScope ? 'Reviewing: ' + reviewScopeName : '';
-        banner.style.display = reviewScope ? 'block' : 'none';
-    }
+    updateReviewBanner();
 
     const root = document.getElementById('review-session');
     if (root) root.classList.remove('hidden');
@@ -536,6 +558,7 @@ function renderReviewSessionSummary() {
     if (practiseBtn) practiseBtn.addEventListener('click', () => practiceMissedFromReview(s.missed));
 
     if (typeof RecommendationEngine !== 'undefined') RecommendationEngine.mountNextAction(summaryEl);
+    if (typeof Sync !== 'undefined' && Sync.scheduleAutoSave) Sync.scheduleAutoSave();
 }
 
 // The words rated "again" this session, straight into a Vocabulary
@@ -552,6 +575,7 @@ function practiceMissedFromReview(words) {
 function endReviewSession() {
     reviewScope = null;
     reviewScopeName = '';
+    reviewLimit = null;
     reviewSessionStats = null;
     const summaryEl = document.getElementById('review-summary');
     if (summaryEl) summaryEl.style.display = 'none';
@@ -567,8 +591,16 @@ function inScope(card) {
 }
 
 function getDueCards() {
-    const now = new Date();
-    return srsDeck.filter(card => inScope(card) && new Date(card.nextReview) <= now);
+    const now = Date.now();
+    return srsDeck.filter(card => {
+        if (!inScope(card)) return false;
+        if (!card.nextReview) return true;
+        return new Date(card.nextReview).getTime() <= now;
+    }).sort((a, b) => {
+        const aTime = a.nextReview ? new Date(a.nextReview).getTime() : 0;
+        const bTime = b.nextReview ? new Date(b.nextReview).getTime() : 0;
+        return aTime - bTime;
+    });
 }
 
 function getNewCards() {
@@ -589,25 +621,39 @@ function updateReviewStats() {
     const due = document.getElementById('due-count');
     const fresh = document.getElementById('new-count');
     const total = document.getElementById('total-count');
-    if (due) due.textContent = getDueCards().length;
+    if (due) {
+        due.textContent = reviewLimit
+            ? Math.max(0, reviewLimit - (reviewSessionStats ? reviewSessionStats.total : 0))
+            : getDueCards().length;
+    }
     if (fresh) fresh.textContent = getNewCards().length;
     if (total) {
-        total.textContent = reviewScope
-            ? srsDeck.filter(inScope).length
-            : srsDeck.length;
+        total.textContent = reviewLimit
+            ? reviewLimit
+            : (reviewScope ? srsDeck.filter(inScope).length : srsDeck.length);
     }
 }
 
 function showNextCard() {
     updateDirectionToggle();
 
-    const dueCards = getDueCards();
     const cardEl = document.getElementById('review-card');
     const emptyEl = document.getElementById('review-empty');
     const summaryEl = document.getElementById('review-summary');
 
+    // If session has a limit (e.g. timed micro-session) and it is reached:
+    if (reviewLimit && reviewSessionStats && reviewSessionStats.total >= reviewLimit) {
+        if (cardEl) cardEl.style.display = 'none';
+        currentReviewCard = null;
+        if (emptyEl) emptyEl.style.display = 'none';
+        renderReviewSessionSummary();
+        return;
+    }
+
+    const dueCards = getDueCards();
+
     if (dueCards.length === 0) {
-        cardEl.style.display = 'none';
+        if (cardEl) cardEl.style.display = 'none';
         currentReviewCard = null;
 
         // A session that actually reviewed something gets the real summary;
@@ -619,18 +665,20 @@ function showNextCard() {
             renderReviewSessionSummary();
         } else {
             if (summaryEl) summaryEl.style.display = 'none';
-            emptyEl.style.display = 'block';
+            if (emptyEl) emptyEl.style.display = 'block';
         }
         return;
     }
 
-    cardEl.style.display = 'flex';
-    emptyEl.style.display = 'none';
+    updateReviewBanner();
+
+    if (cardEl) cardEl.style.display = 'flex';
+    if (emptyEl) emptyEl.style.display = 'none';
     if (summaryEl) summaryEl.style.display = 'none';
 
-    // Random pick, so the deck isn't drilled in the same order every session
-    // (which trains recall by position rather than by meaning).
-    currentReviewCard = shuffled(dueCards)[0];
+    // Pick from the most urgent cards. If reviewLimit is set, pick from the top slice
+    const pool = (reviewLimit && dueCards.length > reviewLimit) ? dueCards.slice(0, reviewLimit) : dueCards;
+    currentReviewCard = shuffled(pool)[0];
     normalizeCard(currentReviewCard);
 
     renderCard();

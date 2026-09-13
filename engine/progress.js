@@ -17,6 +17,9 @@ function getProgress() {
 
 function saveProgress(progress) {
     localStorage.setItem(progressKey(), JSON.stringify(progress));
+    if (typeof Sync !== 'undefined' && Sync.scheduleAutoSave) {
+        Sync.scheduleAutoSave();
+    }
 }
 
 // Returns true only on the first completion. XP is awarded by the caller

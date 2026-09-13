@@ -214,6 +214,20 @@ const Sync = (function () {
             const data = await res.json();
             localStorage.setItem(TOKEN_STORAGE_KEY, data.token);
             localStorage.setItem(EMAIL_STORAGE_KEY, data.email);
+
+            // If logging in on a new device with empty progress, automatically restore cloud backup
+            const progressKey = (typeof Lang !== 'undefined' && Lang.key) ? Lang.key('progress') : 'es:progress';
+            const progressRaw = localStorage.getItem(progressKey);
+            if (!progressRaw || progressRaw === '{}') {
+                try {
+                    const cloudData = await status();
+                    if (cloudData && cloudData.state) {
+                        applySnapshot(cloudData.state);
+                    }
+                } catch (err) {
+                    console.warn('Sync: initial auto-restore skipped', err);
+                }
+            }
         } catch (error) {
             // Offline or the worker is unreachable — the learner can just
             // request a fresh link; nothing else to do here.
@@ -318,9 +332,63 @@ const Sync = (function () {
         location.reload();
     }
 
+    // ----------------------------------------
+    // AUTOMATIC BACKGROUND SYNC
+    // ----------------------------------------
+    let _autoSaveTimer = null;
+    let _isSaving = false;
+    let _lastSavedAt = null;
+
+    function scheduleAutoSave() {
+        if (!isLoggedIn()) return;
+        if (_autoSaveTimer) clearTimeout(_autoSaveTimer);
+        _autoSaveTimer = setTimeout(() => {
+            performAutoSave();
+        }, 2500);
+    }
+
+    async function performAutoSave() {
+        if (!isLoggedIn() || _isSaving) return;
+        _isSaving = true;
+        try {
+            const data = await backup();
+            _lastSavedAt = (data && data.updatedAt) ? new Date(data.updatedAt).getTime() : Date.now();
+            if (typeof window !== 'undefined' && typeof window.dispatchEvent === 'function') {
+                window.dispatchEvent(new CustomEvent('sync-saved', { detail: { timestamp: _lastSavedAt } }));
+            }
+        } catch (error) {
+            console.warn('Sync: background auto-save failed', error);
+        } finally {
+            _isSaving = false;
+        }
+    }
+
+    function lastSavedAt() {
+        return _lastSavedAt;
+    }
+
+    // Flush pending auto-saves when the user switches tabs or navigates away
+    if (typeof document !== 'undefined') {
+        document.addEventListener('visibilitychange', () => {
+            if (document.visibilityState === 'hidden' && isLoggedIn() && _autoSaveTimer) {
+                clearTimeout(_autoSaveTimer);
+                _autoSaveTimer = null;
+                performAutoSave();
+            }
+        });
+        window.addEventListener('pagehide', () => {
+            if (isLoggedIn() && _autoSaveTimer) {
+                clearTimeout(_autoSaveTimer);
+                _autoSaveTimer = null;
+                performAutoSave();
+            }
+        });
+    }
+
     return {
         isLoggedIn, email, logout, requestLink, completeVerify,
         gatherSnapshot, applySnapshot, backup, restore, status,
-        maybeShowFirstVisitPrompt
+        maybeShowFirstVisitPrompt, scheduleAutoSave, performAutoSave,
+        lastSavedAt
     };
 })();

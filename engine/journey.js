@@ -384,6 +384,7 @@ const Journey = (function () {
         const loggedIn = (typeof Sync !== 'undefined') && Sync.isLoggedIn();
         const body = loggedIn ? `
             <p class="jr-account-email">${esc(Sync.email())}</p>
+            <p class="jr-account-sub" style="font-size:12px; color:var(--muted); margin: 4px 0 12px;">Automatic cloud saving active. Progress syncs automatically as you study.</p>
             <div class="jr-account-actions">
                 <button class="dk-secondary" data-sync-backup="1">Back up now</button>
                 <button class="dk-secondary" data-sync-restore="1">Restore from cloud</button>
@@ -441,7 +442,7 @@ const Journey = (function () {
         try {
             const data = await Sync.status();
             statusEl.textContent = data && data.updatedAt
-                ? 'Last backed up ' + new Date(data.updatedAt).toLocaleString() + '.'
+                ? 'Cloud backup: ' + new Date(data.updatedAt).toLocaleString() + ' · Up to date'
                 : 'No backup yet.';
         } catch (error) {
             statusEl.textContent = 'Could not reach the cloud right now.';

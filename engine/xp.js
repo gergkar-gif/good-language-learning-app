@@ -89,6 +89,9 @@ function loadXP() {
 function saveXP() {
     localStorage.setItem('spanishApp_xp', JSON.stringify(xpData));
     updateXPHeader();
+    if (typeof Sync !== 'undefined' && Sync.scheduleAutoSave) {
+        Sync.scheduleAutoSave();
+    }
 }
 
 // ============================================
