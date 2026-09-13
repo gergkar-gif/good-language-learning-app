@@ -431,46 +431,6 @@ const Journey = (function () {
         return card('Appearance', 'Theme & visual mode', body);
     }
 
-    // A plain-text credits card. No dynamic data — purely static disclosure
-    // so that users can see what open data the app is built on and how the
-    // content was made. Mirrors CREDITS.md in the repo root.
-    function creditsBlock() {
-        return card('About & Credits', 'Open data sources and content disclosure', `
-            <ul class="jr-facts jr-credits-list">
-                <li>
-                    <strong>Content</strong> — Lessons, grammar, stories, and exercises
-                    were co-produced with AI assistance (ChatGPT &amp; Claude) under the
-                    direction of the project author.
-                </li>
-                <li>
-                    <strong>Spanish verbs</strong> — Conjugation data by
-                    <a class="jr-link" href="https://github.com/miko3k/verbos" target="_blank" rel="noopener">miko3k/verbos</a>
-                    (Fred Jehle). Licence: CC BY-NC-SA 3.0.
-                </li>
-                <li>
-                    <strong>Spanish dictionary &amp; frequency</strong> — Word data from
-                    <a class="jr-link" href="https://github.com/doozan/spanish_data" target="_blank" rel="noopener">doozan/spanish_data</a>,
-                    derived from Spanish Wiktionary. Licence: CC BY 4.0.
-                </li>
-                <li>
-                    <strong>Hungarian dictionary</strong> — Word data from
-                    <a class="jr-link" href="https://kaikki.org/dictionary/Hungarian/" target="_blank" rel="noopener">kaikki.org</a>,
-                    derived from English Wiktionary. Licence: CC BY-SA 4.0 + GFDL.
-                </li>
-                <li>
-                    <strong>Classic stories</strong> — Simplified adaptations of public-domain
-                    works by Cervantes, Quiroga, Kafka, Melville, and others. Original texts
-                    are in the public domain; adaptations are original to Parlour.
-                </li>
-                <li>
-                    <strong>Full credits</strong> — See
-                    <a class="jr-link" href="https://github.com/gergkar-gif/good-language-learning-app/blob/master/CREDITS.md" target="_blank" rel="noopener">CREDITS.md</a>
-                    in the repository for the complete list with licence links.
-                </li>
-            </ul>
-        `);
-    }
-
     // Fetches the cloud's last-backup time without touching local data,
     // once render() has already drawn the (synchronous) card — patched in
     // afterward rather than making render() itself async, since nothing
@@ -510,7 +470,6 @@ const Journey = (function () {
                 ${milestonesBlock(d)}
                 ${appearanceBlock()}
                 ${accountBlock()}
-                ${creditsBlock()}
             </div>
         `;
         _wireClicks(host);
