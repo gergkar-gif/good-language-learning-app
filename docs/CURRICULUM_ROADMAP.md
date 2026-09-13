@@ -97,3 +97,16 @@ The Imperfecto is the second pillar of Spanish past-tense narration. Currently a
 - [ ] Update `content/es/tests/a1-test.json`: Add questions testing `gustar`, reflexives, demonstratives, continuous, `doler`, and `poder/saber`.
 - [ ] Update `content/es/tests/a2-test.json`: Add questions testing Imperfecto, Imperativo, Indirect Objects, Conditional, and Subjunctive.
 - [ ] Update `content/hu/tests/a1-test.json` & `a2-test.json`: Align questions with newly integrated case paradigms.
+
+---
+
+## 💡 Strategic & Product Ideas [TO-BE-DONE LATER]
+
+*Most of these are product/design-level ideas. No priority order — capture for future sprints.*
+
+- [ ] **Reverse-engineer competitor apps for feature ideas** — systematically audit apps like Duolingo, Babbel, Clozemaster, Conjuguemos, Busuu etc. for UX patterns, exercise types, and engagement hooks worth adapting.
+- [ ] **Listening comprehension feature** — adapt the Conjuguemos model to support longer audio passages with comprehension exercises. Focus on extended listening at A2–B1 level (paragraphs, short dialogues) rather than single-sentence dictation.
+- [ ] **Cyberpunk hero page load animation** — on page load, the hero section "powers up" element by element (think a machine booting, cyberpunk aesthetic). Stagger reveals of logo, tagline, CTA buttons, stat cards, etc.
+- [ ] **User-configurable feature visibility (especially Workshop)** — let users choose which modules/features are shown in their dashboard. Too many options at once creates friction; a simple onboarding toggle or settings page can hide unused sections.
+- [ ] **IP / attribution audit for content-engine resources** — review all third-party content used (word lists, texts, images, audio). Where Creative Commons material is used, add a dedicated acknowledgments page or footer alongside AI-use disclosure.
+- [ ] **Language expansion roadmap** — finish Spanish & Hungarian content → V4 release milestone → Eastern European languages (e.g. Polish, Czech, Romanian) → Vietnamese.
