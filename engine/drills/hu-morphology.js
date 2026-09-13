@@ -100,6 +100,7 @@ const HuMorphologyDriller = (function () {
 
         const seen = new Set();
         for (const form in wordIndex) {
+            if (_stacked.length >= 150 && _single.length >= 150) break;
             const tag = wordIndex[form][0];
             if (!tag || (tag.pos !== 'noun' && tag.pos !== 'adjective')) continue;
             const rank = Lexicon.frequencyRank(tag.lemma);
@@ -111,7 +112,11 @@ const HuMorphologyDriller = (function () {
             if (!result.chain.length) continue;
 
             const entry = { word: form, chain: result.chain, breakdown: result.breakdown };
-            (result.breakdown.length >= 2 ? _stacked : _single).push(entry);
+            if (result.breakdown.length >= 2) {
+                if (_stacked.length < 150) _stacked.push(entry);
+            } else {
+                if (_single.length < 150) _single.push(entry);
+            }
         }
     }
 
@@ -192,13 +197,21 @@ const HuMorphologyDriller = (function () {
         return candidates.length ? _sample(candidates) : null;
     }
 
-    function _buildPool() {
+    function _buildPool(targetCount) {
         // Weight toward stacked forms (the genuinely multi-step ones) but
         // keep some single-suffix items in the mix — a session that's only
         // ever three-layer words is a harder driller than the settings
         // screen promises.
         const source = _stacked.concat(_shuffled(_single).slice(0, Math.max(_stacked.length, 50)));
-        return _shuffled(source).slice(0, 400).map(e => _buildExerciseFor(e, source)).filter(Boolean);
+        if (!source || !source.length) return [];
+        const limit = targetCount || 400;
+        const shuffled = _shuffled(source);
+        const out = [];
+        for (let i = 0; i < shuffled.length && out.length < limit; i++) {
+            const ex = _buildExerciseFor(shuffled[i], source);
+            if (ex) out.push(ex);
+        }
+        return out;
     }
 
     function _takeN(pool, n) {
@@ -266,7 +279,8 @@ const HuMorphologyDriller = (function () {
     //  RENDERING — Session
     // ================================================================
     function _startSession() {
-        const pool = _buildPool();
+        const targetCount = _mode === MODE.COUNT ? _questionCount : 60;
+        const pool = _buildPool(targetCount);
         _seen = 0;
         _correct = 0;
 

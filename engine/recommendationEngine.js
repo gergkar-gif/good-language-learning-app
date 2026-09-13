@@ -56,7 +56,7 @@ const RecommendationEngine = (function () {
         if (!candidate || typeof Workshop === 'undefined') return;
         if (candidate.kind === 'grammar') Workshop.open('grammar', { skill: candidate.skill });
         else if (candidate.kind === 'vocabulary') Workshop.open('vocabulary', { words: candidate.words });
-        else if (candidate.kind === 'driller') Workshop.open(candidate.drillerId);
+        else if (candidate.kind === 'driller') Workshop.open(candidate.drillerId, candidate.options);
     }
 
     // ----------------------------------------

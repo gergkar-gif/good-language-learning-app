@@ -168,6 +168,23 @@ function _attachNavEvents() {
 // --------------------------------------------
 
 async function initialiseApp() {
+    // Deep-link or course switch via query parameters e.g. ?minigame=hu-suffix or ?lang=hu
+    const searchParams = new URLSearchParams(location.search);
+    const langParam = searchParams.get('lang');
+    const minigameParam = searchParams.get('minigame') || searchParams.get('driller');
+
+    if (typeof Lang !== 'undefined') {
+        if (langParam && Lang.available().includes(langParam)) {
+            Lang.set(langParam);
+        } else if (minigameParam) {
+            if (minigameParam.startsWith('hu-') && Lang.code() !== 'hu') {
+                Lang.set('hu');
+            } else if (minigameParam === 'verbs' && Lang.code() !== 'es') {
+                Lang.set('es');
+            }
+        }
+    }
+
     // A magic-link email lands back here as ?verify=<token> — exchange it
     // for a session before anything else, so My Journey's Account card
     // already reads as signed-in the moment the learner arrives.
@@ -232,8 +249,6 @@ async function initialiseApp() {
     if (typeof Sync !== 'undefined') Sync.maybeShowFirstVisitPrompt();
 
     // Deep-link to a minigame/driller via query parameter e.g. ?minigame=verbs
-    const searchParams = new URLSearchParams(location.search);
-    const minigameParam = searchParams.get('minigame') || searchParams.get('driller');
     if (minigameParam && typeof Workshop !== 'undefined') {
         showTab('drills');
         const count = parseInt(searchParams.get('count') || '5', 10);

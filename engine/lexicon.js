@@ -52,10 +52,23 @@ const Lexicon = (function () {
         '2-plural': '2nd person plural', '3-plural': '3rd person plural'
     };
 
+    document.addEventListener('language-changed', () => {
+        _verbIndex = null;
+        _wordIndex = null;
+        _dictionary = null;
+        _frequency = null;
+        _loadPromise = null;
+        _lang = null;
+    });
+
     function load() {
-        if (_loadPromise) return _loadPromise;
+        if (_loadPromise && _lang === Lang.code()) return _loadPromise;
 
         _lang = Lang.code();
+        _verbIndex = null;
+        _wordIndex = null;
+        _dictionary = null;
+        _frequency = null;
         const sources = _lang === 'hu'
             ? [
                 Promise.resolve({}),   // no separate verb index — see file header

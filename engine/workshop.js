@@ -298,6 +298,10 @@ const Workshop = (function () {
     // GrammarDriller, from Home's post-unit practice nudge). A driller that
     // doesn't understand `options` just ignores the second render() arg.
     function open(id, options) {
+        const driller = DRILLERS.find(d => d.id === id);
+        if (driller && driller.langs && typeof Lang !== 'undefined' && !driller.langs.includes(Lang.code())) {
+            Lang.set(driller.langs[0]);
+        }
         _active = id;
         _activeOptions = options || null;
         render();

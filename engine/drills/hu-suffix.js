@@ -276,9 +276,17 @@ const HuSuffixDriller = (function () {
         return _buildMultipleChoice(entry) || _buildFillBlank(entry);
     }
 
-    function _buildPool(type) {
+    function _buildPool(type, targetCount) {
         const pool = _poolFor(type);
-        return _shuffled(pool).slice(0, 400).map(_buildExerciseFor).filter(Boolean);
+        if (!pool || !pool.length) return [];
+        const limit = targetCount || 400;
+        const shuffled = _shuffled(pool);
+        const out = [];
+        for (let i = 0; i < shuffled.length && out.length < limit; i++) {
+            const ex = _buildExerciseFor(shuffled[i]);
+            if (ex) out.push(ex);
+        }
+        return out;
     }
 
     function _takeN(pool, n) {
@@ -359,7 +367,8 @@ const HuSuffixDriller = (function () {
     //  RENDERING — Session
     // ================================================================
     function _startSession() {
-        const pool = _buildPool(_type);
+        const targetCount = _mode === MODE.COUNT ? _questionCount : 60;
+        const pool = _buildPool(_type, targetCount);
         _seen = 0;
         _correct = 0;
 

@@ -233,9 +233,17 @@ const HuPrefixDriller = (function () {
         return _sample(candidates);
     }
 
-    function _buildPool() {
+    function _buildPool(targetCount) {
         const pool = _pairs;
-        return _shuffled(pool).slice(0, 300).map(p => _buildExerciseFor(p, pool)).filter(Boolean);
+        if (!pool || !pool.length) return [];
+        const limit = targetCount || 300;
+        const shuffled = _shuffled(pool);
+        const out = [];
+        for (let i = 0; i < shuffled.length && out.length < limit; i++) {
+            const ex = _buildExerciseFor(shuffled[i], pool);
+            if (ex) out.push(ex);
+        }
+        return out;
     }
 
     function _takeN(pool, n) {
@@ -303,7 +311,8 @@ const HuPrefixDriller = (function () {
     //  RENDERING — Session
     // ================================================================
     function _startSession() {
-        const pool = _buildPool();
+        const targetCount = _mode === MODE.COUNT ? _questionCount : 60;
+        const pool = _buildPool(targetCount);
         _seen = 0;
         _correct = 0;
 
