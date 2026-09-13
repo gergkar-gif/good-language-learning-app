@@ -110,6 +110,8 @@ UNIT_TABLES = {
         ("Daily Routine: Reflexive Verbs", ["a1-reflexive-01", "a1-reflexive-02", "a1-reflexive-03", "a1-reflexive-04", "a1-reflexive-05", "a1-reflexive-consolidation"]),
         ("At Home", ["a1-07-01", "a1-07-02", "a1-07-03", "a1-07-04", "a1-07-05", "a1-07-consolidation"]),
         ("At the Supermarket", ["a1-08-01", "a1-08-02", "a1-08-03", "a1-08-04", "a1-08-05", "a1-08-consolidation"]),
+        # "a1-demonstrative" — Dedicated unit for demonstrative adjectives & pronouns (este, ese, aquel, esto, eso)
+        ("Demonstratives: This, That, and Over There", ["a1-demonstrative-01", "a1-demonstrative-02", "a1-demonstrative-03", "a1-demonstrative-04", "a1-demonstrative-05", "a1-demonstrative-consolidation"]),
         # "a1-cafe", not "a1-09" — old lesson slot 9 is Kitchen (still
         # unsplit), and a1-09 would collide with it the moment Kitchen's own
         # split arrives.
