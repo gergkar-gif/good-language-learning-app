@@ -230,6 +230,18 @@ async function initialiseApp() {
     // app content. No-ops on its own if already signed in or already
     // shown once on this device.
     if (typeof Sync !== 'undefined') Sync.maybeShowFirstVisitPrompt();
+
+    // Deep-link to a minigame/driller via query parameter e.g. ?minigame=verbs
+    const searchParams = new URLSearchParams(location.search);
+    const minigameParam = searchParams.get('minigame') || searchParams.get('driller');
+    if (minigameParam && typeof Workshop !== 'undefined') {
+        showTab('drills');
+        const count = parseInt(searchParams.get('count') || '5', 10);
+        const duration = parseInt(searchParams.get('duration') || '60', 10);
+        const mode = searchParams.get('mode') || (minigameParam === 'verbs' ? 'speed' : undefined);
+        const skill = searchParams.get('skill') || undefined;
+        Workshop.open(minigameParam, { autoStart: true, count, duration, mode, skill });
+    }
 }
 
-document.addEventListener('DOMContentLoaded', initialiseApp);
+document.addEventListener('DOMContentLoaded', initialiseApp);
