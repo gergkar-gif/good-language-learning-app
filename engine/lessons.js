@@ -1643,17 +1643,9 @@ function formatLessonElapsed(ms) {
 // collected as a whole lesson instead of a whole unit.
 function summaryWordsHtml(words) {
     if (!words.length) return '';
-
-    const withArticle = lemma => (typeof Lexicon !== 'undefined') ? Lexicon.withArticle(lemma) : lemma;
-    const chips = words.map(w => `
-        <span class="lsn-word-chip">${esc(withArticle(w.lemma))}${w.translation ? ' — ' + esc(w.translation) : ''}</span>
-    `).join('');
-
     return `
         <div class="lsn-summary-words">
             <p class="lsn-summary-words-label">${words.length} new ${words.length === 1 ? 'word' : 'words'}</p>
-            <div class="lsn-word-chips">${chips}</div>
-            <button class="dk-secondary" data-add-lesson-words="1">Add ${words.length} to a deck</button>
         </div>
     `;
 }
@@ -1695,17 +1687,17 @@ function summaryReinforceHtml(grammarSkill, words, level) {
                 ` : ''}
                 ${words.length >= 4 && typeof DeckMatch !== 'undefined' ? `
                     <button class="dk-secondary" data-reinforce-match="1" title="Timed matching game with lesson vocabulary">
-                        ⚡ Match Game (${Math.min(words.length, 12)} pairs)
+                        Match Game (${Math.min(words.length, 12)} pairs)
                     </button>
                 ` : ''}
                 ${hasVoice ? `
                     <button class="dk-secondary" data-reinforce-listening="1" title="Practice listening to spoken sentences">
-                        🎧 Listening (${QUICK_REINFORCE_COUNT} questions)
+                        Listening (${QUICK_REINFORCE_COUNT} questions)
                     </button>
                 ` : ''}
                 ${hasSpeechInput ? `
                     <button class="dk-secondary" data-reinforce-speaking="1" title="Speak sentences out loud">
-                        🎙 Speaking (${QUICK_REINFORCE_COUNT} sentences)
+                        Speaking (${QUICK_REINFORCE_COUNT} sentences)
                     </button>
                 ` : ''}
             </div>
@@ -2420,8 +2412,8 @@ function lessonCheckSpeaking() {
     if (revealEl) {
         revealEl.classList.remove('hidden');
         const userAudioUrl = stepState.userAudioUrl || (typeof SpeechInput !== 'undefined' ? SpeechInput.getRecordedAudioUrl() : null);
-        const listenIcon = (typeof Art !== 'undefined') ? Art.icon('listening') : '🔊';
-        const micIcon = (typeof Art !== 'undefined') ? Art.icon('mic') : '🎙';
+        const listenIcon = (typeof Art !== 'undefined') ? Art.icon('listening') : '';
+        const micIcon = (typeof Art !== 'undefined') ? Art.icon('mic') : '';
 
         revealEl.innerHTML = `
             ${evalResult.words && evalResult.words.length ? `

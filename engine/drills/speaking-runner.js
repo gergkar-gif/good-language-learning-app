@@ -192,7 +192,7 @@ const SpeakingRunner = (function () {
             playUserBtn.className = 'sp-audio-compare-btn sp-btn-user';
             playUserBtn.setAttribute('data-action', 'play-user');
             playUserBtn.setAttribute('aria-label', 'Listen to your recording');
-            const icon = (typeof Art !== 'undefined') ? Art.icon('mic') : '🎙';
+            const icon = (typeof Art !== 'undefined') ? Art.icon('mic') : '';
             playUserBtn.innerHTML = `${icon}<span>Your Voice</span>`;
             playUserBtn.addEventListener('click', _playUserAudio);
             compareBar.appendChild(playUserBtn);
