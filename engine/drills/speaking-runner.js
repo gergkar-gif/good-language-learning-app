@@ -220,7 +220,7 @@ const SpeakingRunner = (function () {
         const liveText = _container.querySelector('.sp-live-transcript');
 
         if (micBtn) micBtn.classList.add('sp-recording');
-        if (micLabel) micLabel.textContent = 'Listening... Speak now';
+        if (micLabel) micLabel.textContent = 'Listening... (tap when done)';
         if (liveText) {
             liveText.textContent = '...';
             liveText.classList.remove('hidden');

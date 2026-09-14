@@ -198,6 +198,9 @@ const SpeakingDriller = (function () {
 
         _container.innerHTML = `
             <div class="sp-settings">
+                <h2 class="gd-title">Speaking Driller</h2>
+                <p class="gd-hint">Practise pronunciation and speak ${(typeof Lang !== 'undefined') ? Lang.name() : 'the language'} out loud.</p>
+
                 <div class="wk-config-group">
                     <label class="wk-config-label">Level</label>
                     <div class="wk-pill-row">

@@ -81,6 +81,7 @@ const SpeechInput = (function () {
 
     let _finishTimeout = null;
     let _meterInterval = null;
+    let _maxDurationTimeout = null;
     let _onFinalCallback = null;
     let _accumulatedFinal = '';
     let _currentInterim = '';
@@ -93,6 +94,10 @@ const SpeechInput = (function () {
         if (_meterInterval) {
             clearInterval(_meterInterval);
             _meterInterval = null;
+        }
+        if (_maxDurationTimeout) {
+            clearTimeout(_maxDurationTimeout);
+            _maxDurationTimeout = null;
         }
     }
 
@@ -198,6 +203,13 @@ const SpeechInput = (function () {
         _onFinalCallback = onFinal;
         _onAudioReadyCallback = options.onAudioReady || null;
 
+        // Safety cap: maximum 25s per recording session
+        _maxDurationTimeout = setTimeout(() => {
+            if (_isListening) {
+                stopListening();
+            }
+        }, 25000);
+
         // 1. Primary: SpeechRecognition Engine (started synchronously within user gesture)
         if (isRecognitionSupported()) {
             try {
@@ -242,11 +254,12 @@ const SpeechInput = (function () {
                         }
                     }
 
-                    // Reset silence debounce: when learner finishes speaking and pauses 1.3s, finalize
+                    // Reset silence debounce: give language learners 2.8s of breathing room
+                    // so hesitations and pauses ("um, uh, mhh") between words don't cut off their answer.
                     if (_finishTimeout) clearTimeout(_finishTimeout);
                     _finishTimeout = setTimeout(() => {
                         stopListening();
-                    }, 1300);
+                    }, 2800);
                 };
 
                 recognition.onerror = event => {
@@ -282,8 +295,18 @@ const SpeechInput = (function () {
                 };
 
                 recognition.onend = () => {
-                    _cleanupTimers();
                     if (_isListening) {
+                        // If learner paused and silence debounce hasn't expired yet,
+                        // attempt to resume recognition so they can continue speaking.
+                        if (_finishTimeout) {
+                            try {
+                                recognition.start();
+                                return;
+                            } catch (e) {
+                                // If browser forbids restarting without user gesture, stop cleanly
+                            }
+                        }
+                        _cleanupTimers();
                         stopListening();
                     }
                 };

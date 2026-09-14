@@ -2217,7 +2217,7 @@ function lessonToggleSpeaking(btn) {
     _lessonSpeakingRecording = true;
     if (btn) btn.classList.add('sp-recording');
     const statusEl = document.getElementById('lesson-mic-status');
-    if (statusEl) statusEl.textContent = 'Listening... Speak now';
+    if (statusEl) statusEl.textContent = 'Listening... (tap when done)';
     const liveEl = document.getElementById('lesson-live-transcript');
     if (liveEl) {
         liveEl.textContent = '...';
