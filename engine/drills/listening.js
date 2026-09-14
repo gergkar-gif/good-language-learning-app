@@ -49,6 +49,7 @@ const ListeningDriller = (function () {
     let _container = null;
 
     let _pairs = null; // content/<lang>/indexes/translation-index.json -> pairs[]
+    let _loadedLang = null;
 
     let _mode = MODE.COUNT;
     let _level = 'all';
@@ -84,12 +85,18 @@ const ListeningDriller = (function () {
         return (text.match(/\S+/g) || []).length;
     }
 
-    // ---- Data loading (once) ----
+    // ---- Data loading (per language) ----
     async function _load() {
-        if (_pairs) return;
+        if (_pairs && _loadedLang === Lang.code()) return;
         const index = await Content.json(Lang.content('indexes/translation-index.json')).catch(() => ({ pairs: [] }));
         _pairs = index.pairs || [];
+        _loadedLang = Lang.code();
     }
+
+    document.addEventListener('language-changed', () => {
+        _pairs = null;
+        _loadedLang = null;
+    });
 
     function _poolFor(level) {
         if (!level || level === 'all') return _pairs;

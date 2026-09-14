@@ -53,14 +53,14 @@ const Workshop = (function () {
             id: 'listening',
             icon: 'listening',
             title: 'Listening Driller',
-            sub: `Decode spoken ${(typeof Lang !== 'undefined') ? Lang.name() : 'the language'}, by ear.`,
+            sub: () => `Decode spoken ${(typeof Lang !== 'undefined') ? Lang.name() : 'the language'}, by ear.`,
             containerId: 'listening-driller-root'
         },
         {
             id: 'speaking',
             icon: 'speaking',
             title: 'Speaking Driller',
-            sub: `Practise pronunciation and speak ${(typeof Lang !== 'undefined') ? Lang.name() : 'the language'} out loud.`,
+            sub: () => `Practise pronunciation and speak ${(typeof Lang !== 'undefined') ? Lang.name() : 'the language'} out loud.`,
             containerId: 'speaking-driller-root'
         },
         {
@@ -182,7 +182,7 @@ const Workshop = (function () {
                         ${_drillerIcon(d.icon)}
                         <span class="wk-card-body">
                             <span class="wk-card-title">${_esc(d.title)}</span>
-                            <span class="wk-card-sub">${_esc(d.sub)}</span>
+                            <span class="wk-card-sub">${_esc(typeof d.sub === 'function' ? d.sub() : d.sub)}</span>
                         </span>
                         <span class="wk-card-arrow geo-triangle" aria-hidden="true"></span>
                     </button>
@@ -333,6 +333,12 @@ const Workshop = (function () {
         const driller = DRILLERS.find(d => d.id === _active);
         return driller ? { id: driller.id, title: driller.title } : null;
     }
+
+    document.addEventListener('language-changed', () => {
+        if (!_active) {
+            render();
+        }
+    });
 
     return { render, open, close, activeDriller };
 })();

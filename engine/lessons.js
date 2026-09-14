@@ -142,6 +142,45 @@ async function buildSteps(lesson) {
     if (!Array.isArray(lesson.sections)) return [];
 
     const steps = [];
+    const speakingCandidates = [];
+    const seenSpeaking = new Set();
+
+    function addSpeakingCandidate(spanish, english, priority = 1) {
+        if (!spanish || !english) return;
+        const cleanEs = String(spanish).replace(/\([^)]*\)/g, '').trim();
+        const cleanEn = String(english).replace(/\([^)]*\)/g, '').trim();
+        if (cleanEs.length < 2 || seenSpeaking.has(cleanEs.toLowerCase())) return;
+        seenSpeaking.add(cleanEs.toLowerCase());
+        speakingCandidates.push({ spanish: cleanEs, english: cleanEn, priority });
+    }
+
+    function injectSpeakingSteps() {
+        if (steps.some(s => s.type === 'speaking') || !speakingCandidates.length) return;
+        speakingCandidates.sort((a, b) => b.priority - a.priority);
+        const cand1 = speakingCandidates[0];
+        const cand2 = speakingCandidates[1] || speakingCandidates[0];
+        const langName = typeof Lang !== 'undefined' ? Lang.name() : 'Spanish';
+
+        steps.push({
+            type: 'speaking',
+            title: 'Speaking Practice 1/2',
+            mode: 'read-repeat',
+            sentence: cand1.spanish,
+            spanish: cand1.spanish,
+            english: cand1.english,
+            prompt: `Listen and repeat this out loud in ${langName}:`
+        });
+
+        steps.push({
+            type: 'speaking',
+            title: 'Speaking Practice 2/2',
+            mode: 'prompt-speak',
+            sentence: cand2.spanish,
+            spanish: cand2.spanish,
+            english: cand2.english,
+            prompt: `Translate and say this out loud in ${langName}:`
+        });
+    }
 
     for (const section of lesson.sections) {
         try {
@@ -182,19 +221,35 @@ async function buildSteps(lesson) {
                 // a screen each produced a run of near-empty pages that all
                 // carried the same heading.
                 const grammar = await loadContent(section.ref);
+                const parts = grammar.sections || [];
+                parts.forEach(part => {
+                    if (part.type === 'examples' && Array.isArray(part.items)) {
+                        part.items.forEach(it => {
+                            if (it.spanish && it.english) addSpeakingCandidate(it.spanish, it.english, 3);
+                        });
+                    } else if (part.type === 'table' && Array.isArray(part.rows)) {
+                        part.rows.forEach(r => {
+                            if (r[0] && r[1]) addSpeakingCandidate(r[0], r[1], 2);
+                        });
+                    }
+                });
                 steps.push({
                     type: 'grammar',
                     title: section.title || grammar.title,
-                    parts: grammar.sections || []
+                    parts: parts
                 });
             }
 
             else if (section.type === 'vocabulary') {
                 const vocab = await loadContent(section.ref);
+                const words = vocab.words || [];
+                words.forEach(w => {
+                    if (w.lemma && w.translation) addSpeakingCandidate(w.lemma, w.translation, 1);
+                });
                 steps.push({
                     type: 'vocabulary',
                     title: section.title || vocab.title || 'Vocabulary',
-                    words: vocab.words || []
+                    words: words
                 });
             }
 
@@ -219,6 +274,12 @@ async function buildSteps(lesson) {
                         console.warn('Exercise not found:', id);
                         return;
                     }
+                    if (exercise.sentence && (exercise.english || exercise.translation)) {
+                        const clean = exercise.sentence.replace(/_{2,}/g, exercise.answer || '');
+                        addSpeakingCandidate(clean, exercise.english || exercise.translation, 2);
+                    } else if (exercise.spanish && exercise.english) {
+                        addSpeakingCandidate(exercise.spanish, exercise.english, 2);
+                    }
                     steps.push(Object.assign({}, exercise, {
                         title: !section.title ? 'Exercise'
                             : ids.length > 1 ? section.title + ' ' + (i + 1) + '/' + ids.length
@@ -228,6 +289,9 @@ async function buildSteps(lesson) {
             }
 
             else if (section.type === 'srs') {
+                // Before Add to Review, inject the 2 dedicated speaking steps!
+                injectSpeakingSteps();
+
                 // Cards are the lesson's own vocabulary — there is no second
                 // word list to keep in sync, and the learner picks which of
                 // them are worth reviewing.
@@ -239,6 +303,7 @@ async function buildSteps(lesson) {
             }
 
             else if (section.type === 'checklist') {
+                injectSpeakingSteps();
                 steps.push({
                     type: 'checklist',
                     title: section.title || 'Can you do this?',
@@ -253,6 +318,9 @@ async function buildSteps(lesson) {
             console.error('Failed to expand section', section, error);
         }
     }
+
+    // Safety fallback: ensure speaking steps are injected even if lesson has no SRS or checklist
+    injectSpeakingSteps();
 
     return steps;
 }
@@ -982,13 +1050,18 @@ const stepRenderers = {
         stepState.translation = step.english || step.translation || '';
         stepState.checkFn = 'lessonCheckBlank';
         return `
-            <p class="lsn-question">Listen and type what you hear.</p>
+            <p class="lsn-question">Listen and type or speak what you hear.</p>
             <div class="lsn-listen">
                 <button class="lsn-play" onclick="lessonPlayAudio()" aria-label="Play audio">${Art.icon('listening')} Play</button>
                 ${(typeof Speech === 'undefined' || !Speech.available())
                     ? `<p class="lsn-hint">No ${esc(Lang.name())} voice found on this device — you can still answer after 3 tries.</p>` : ''}
             </div>
-            <input id="blank-input" class="lsn-input" type="text" placeholder="Type what you hear" autocomplete="off" autocapitalize="off" spellcheck="false">
+            <div class="lsn-input-with-mic">
+                <input id="blank-input" class="lsn-input" type="text" placeholder="Type or speak what you hear" autocomplete="off" autocapitalize="off" spellcheck="false">
+                <button type="button" class="lsn-mic-addon" onclick="lessonInlineVoiceInput('#blank-input', this)" aria-label="Speak to type" title="Speak to type">
+                    ${typeof Art !== 'undefined' ? Art.icon('mic') : '🎙'}
+                </button>
+            </div>
             ${typeof UI !== 'undefined' && UI.diacriticsBarHtml ? UI.diacriticsBarHtml('#blank-input') : ''}
             ${feedbackHtml()}
         `;
@@ -1028,7 +1101,12 @@ const stepRenderers = {
         stepState.checkFn = 'lessonCheckBlank';
         return `
             <p class="lsn-question">${escMd(step.sentence).replace(/_{2,}/, '<span class="lsn-blank">?</span>')}</p>
-            <input id="blank-input" class="lsn-input" type="text" placeholder="Type the missing word" autocomplete="off" autocapitalize="off" spellcheck="false">
+            <div class="lsn-input-with-mic">
+                <input id="blank-input" class="lsn-input" type="text" placeholder="Type or speak the missing word" autocomplete="off" autocapitalize="off" spellcheck="false">
+                <button type="button" class="lsn-mic-addon" onclick="lessonInlineVoiceInput('#blank-input', this)" aria-label="Speak to type" title="Speak to type">
+                    ${typeof Art !== 'undefined' ? Art.icon('mic') : '🎙'}
+                </button>
+            </div>
             ${typeof UI !== 'undefined' && UI.diacriticsBarHtml ? UI.diacriticsBarHtml('#blank-input') : ''}
             ${feedbackHtml()}
         `;
@@ -1147,22 +1225,49 @@ const stepRenderers = {
         gateStep();
         stepState.target = step.sentence || step.spanish || '';
         stepState.english = step.english || step.translation || '';
+        stepState.mode = step.mode || 'read-repeat';
         stepState.checkFn = 'lessonCheckSpeaking';
 
+        const isSnoozed = typeof SpeechInput !== 'undefined' && SpeechInput.isCantSpeakNow();
+        if (isSnoozed) {
+            enableCheck();
+        }
+
+        const isPromptSpeak = stepState.mode === 'prompt-speak';
         const target = stepState.target;
         const english = stepState.english;
         const safeTarget = esc(target).replace(/'/g, "\\'");
+        const langName = typeof Lang !== 'undefined' ? Lang.name() : 'Spanish';
 
         return `
-            <p class="lsn-question">${esc(step.prompt || 'Speak this sentence in Spanish:')}</p>
-            <div class="sp-lesson-card">
-                <div class="sp-target-lead">
-                    <p class="sp-es-text">${esc(target)}</p>
-                    <button type="button" class="sp-listen-btn" onclick="Speech.speak('${safeTarget}')" aria-label="Listen">
-                        ${typeof Art !== 'undefined' ? Art.icon('listening') : '🔊'} Listen
-                    </button>
+            <p class="lsn-question">${esc(step.prompt || (isPromptSpeak ? `Translate and say this out loud in ${langName}:` : `Listen and repeat this out loud in ${langName}:`))}</p>
+            ${isSnoozed ? `
+                <div class="sp-snoozed-banner" style="background:var(--surface); border:1px dashed var(--border); padding:10px 14px; margin-bottom:14px; display:flex; align-items:center; justify-content:space-between; gap:10px;">
+                    <span style="font-size:0.88rem; color:var(--text-muted, #687787);">Speaking practice is currently snoozed.</span>
+                    <button type="button" class="btn-secondary" onclick="lessonResumeSpeaking()" style="padding:4px 10px; font-size:0.82rem;">Turn on</button>
                 </div>
-                ${english ? `<p class="sp-en-sub">${esc(english)}</p>` : ''}
+            ` : ''}
+            <div class="sp-lesson-card">
+                ${isPromptSpeak ? `
+                    <p class="sp-en-prompt" style="font-size:1.3rem; font-weight:700; color:var(--navy, #102A47); margin:0 0 6px 0;">${esc(english)}</p>
+                    <p class="sp-hint-text" style="font-size:0.88rem; color:var(--text-muted, #687787); margin:0;">Say the translation in ${esc(langName)}</p>
+                    <div id="sp-prompt-target-reveal" class="hidden" style="margin-top:14px; padding-top:12px; border-top:1px solid var(--border);">
+                        <div class="sp-target-lead">
+                            <p class="sp-es-text">${esc(target)}</p>
+                            <button type="button" class="sp-listen-btn" onclick="Speech.speak('${safeTarget}')" aria-label="Listen">
+                                ${typeof Art !== 'undefined' ? Art.icon('listening') : '🔊'} Listen
+                            </button>
+                        </div>
+                    </div>
+                ` : `
+                    <div class="sp-target-lead">
+                        <p class="sp-es-text">${esc(target)}</p>
+                        <button type="button" class="sp-listen-btn" onclick="Speech.speak('${safeTarget}')" aria-label="Listen">
+                            ${typeof Art !== 'undefined' ? Art.icon('listening') : '🔊'} Listen
+                        </button>
+                    </div>
+                    ${english ? `<p class="sp-en-sub">${esc(english)}</p>` : ''}
+                `}
             </div>
             <div class="sp-mic-section">
                 <button type="button" class="sp-mic-btn" id="lesson-mic-btn" onclick="lessonToggleSpeaking(this)" aria-label="Record speech">
@@ -2135,6 +2240,11 @@ function lessonCheckSpeaking() {
         evalResult = SpeechInput.evaluate(target, transcript);
     }
 
+    const targetRevealEl = document.getElementById('sp-prompt-target-reveal');
+    if (targetRevealEl) {
+        targetRevealEl.classList.remove('hidden');
+    }
+
     const revealEl = document.getElementById('lesson-sp-reveal');
     if (revealEl && evalResult.words && evalResult.words.length) {
         revealEl.classList.remove('hidden');
@@ -2158,6 +2268,13 @@ function lessonCheckSpeaking() {
     }
 }
 
+function lessonResumeSpeaking() {
+    if (typeof SpeechInput !== 'undefined') {
+        SpeechInput.resumeSpeaking();
+    }
+    renderStep(currentStepIndex);
+}
+
 function lessonSkipSpeaking() {
     if (stepState.solved) return;
     if (typeof SpeechInput !== 'undefined') {
@@ -2165,6 +2282,47 @@ function lessonSkipSpeaking() {
     }
     setFeedback(true, 'Speaking snoozed for 30 minutes.');
     solveStep('Skipped (Speaking snoozed)');
+}
+
+let _inlineVoiceActive = false;
+
+function lessonInlineVoiceInput(selector, btn) {
+    if (typeof SpeechInput === 'undefined' || !SpeechInput.isSupported()) {
+        if (typeof showToast === 'function') showToast('Voice recognition is not supported in this browser.');
+        else alert('Voice recognition is not supported in this browser.');
+        return;
+    }
+
+    const input = document.querySelector(selector);
+    if (!input) return;
+
+    if (_inlineVoiceActive) {
+        SpeechInput.stopListening();
+        _inlineVoiceActive = false;
+        if (btn) btn.classList.remove('is-recording');
+        return;
+    }
+
+    _inlineVoiceActive = true;
+    if (btn) btn.classList.add('is-recording');
+
+    SpeechInput.startListening({
+        onInterim: interim => {
+            input.value = interim;
+            input.dispatchEvent(new Event('input', { bubbles: true }));
+        },
+        onFinal: transcript => {
+            _inlineVoiceActive = false;
+            if (btn) btn.classList.remove('is-recording');
+            input.value = transcript;
+            input.dispatchEvent(new Event('input', { bubbles: true }));
+            input.focus();
+        },
+        onError: err => {
+            _inlineVoiceActive = false;
+            if (btn) btn.classList.remove('is-recording');
+        }
+    });
 }
 
 // Legacy quiz handler — kept for old HTML lessons. Green for correct, same

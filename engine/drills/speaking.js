@@ -64,12 +64,20 @@ const SpeakingDriller = (function () {
         return (m < 10 ? '0' : '') + m + ':' + (s < 10 ? '0' : '') + s;
     }
 
+    let _loadedLang = null;
+
     // ---- Load Pairs ----
     async function _load() {
-        if (_pairs) return;
+        if (_pairs && _loadedLang === Lang.code()) return;
         const index = await Content.json(Lang.content('indexes/translation-index.json')).catch(() => ({ pairs: [] }));
         _pairs = (index.pairs || []).filter(p => p.spanish && p.english);
+        _loadedLang = Lang.code();
     }
+
+    document.addEventListener('language-changed', () => {
+        _pairs = null;
+        _loadedLang = null;
+    });
 
     function _poolFor(level) {
         if (!level || level === 'all') return _pairs;

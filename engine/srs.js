@@ -734,7 +734,17 @@ function renderCard() {
     document.getElementById('rating-buttons').style.display = 'none';
 
     const typeMode = reviewMode === 'type';
+    const flipActions = document.getElementById('review-flip-actions');
+    if (flipActions) flipActions.style.display = typeMode ? 'none' : 'flex';
     document.getElementById('show-answer-btn').style.display = typeMode ? 'none' : 'block';
+    const speakFeedback = document.getElementById('review-speak-feedback');
+    if (speakFeedback) {
+        speakFeedback.innerHTML = '';
+        speakFeedback.classList.add('hidden');
+    }
+    const speakBtn = document.getElementById('review-speak-btn');
+    if (speakBtn) speakBtn.classList.remove('is-recording');
+
     document.getElementById('review-type-input').classList.toggle('hidden', !typeMode);
     const field = document.getElementById('review-type-field');
     if (field) {
@@ -774,6 +784,8 @@ function updateRatingLabels() {
 // straight from a tap, type mode reaches it after grading what was typed.
 function revealAnswer() {
     document.getElementById('review-answer').style.display = 'block';
+    const flipActions = document.getElementById('review-flip-actions');
+    if (flipActions) flipActions.style.display = 'none';
     document.getElementById('show-answer-btn').style.display = 'none';
     document.getElementById('review-type-input').classList.add('hidden');
     document.getElementById('rating-buttons').style.display = 'flex';
@@ -781,6 +793,68 @@ function revealAnswer() {
 
 function showAnswer() {
     revealAnswer();
+}
+
+let _reviewSpeakingActive = false;
+
+function reviewSpeakWord(btn) {
+    if (!currentReviewCard) return;
+    if (typeof SpeechInput === 'undefined' || !SpeechInput.isSupported()) {
+        if (typeof showToast === 'function') showToast('Voice recognition is not supported in this browser.');
+        else alert('Voice recognition is not supported in this browser.');
+        return;
+    }
+
+    const feedbackEl = document.getElementById('review-speak-feedback');
+
+    if (_reviewSpeakingActive) {
+        SpeechInput.stopListening();
+        _reviewSpeakingActive = false;
+        if (btn) btn.classList.remove('is-recording');
+        if (feedbackEl) feedbackEl.classList.add('hidden');
+        return;
+    }
+
+    _reviewSpeakingActive = true;
+    if (btn) btn.classList.add('is-recording');
+    if (feedbackEl) {
+        feedbackEl.textContent = 'Listening... Say the word';
+        feedbackEl.className = 'review-speak-feedback';
+        feedbackEl.classList.remove('hidden');
+    }
+
+    const isEnFirst = reviewDirection === 'en-es';
+    const target = isEnFirst ? currentReviewCard.spanish : (currentReviewCard.spanish || currentReviewCard.english);
+
+    SpeechInput.startListening({
+        onInterim: interim => {
+            if (feedbackEl) feedbackEl.textContent = interim;
+        },
+        onFinal: transcript => {
+            _reviewSpeakingActive = false;
+            if (btn) btn.classList.remove('is-recording');
+            const evalResult = SpeechInput.evaluate(target, transcript);
+            if (feedbackEl) {
+                const safeTrans = (typeof esc === 'function' ? esc(transcript) : transcript);
+                if (evalResult.isCorrect) {
+                    feedbackEl.className = 'review-speak-feedback is-correct';
+                    feedbackEl.innerHTML = `✓ "${safeTrans}" (${evalResult.accuracy}%)`;
+                } else {
+                    feedbackEl.className = 'review-speak-feedback is-wrong';
+                    feedbackEl.innerHTML = `✗ Heard "${safeTrans}" (${evalResult.accuracy}%)`;
+                }
+            }
+            showAnswer();
+        },
+        onError: err => {
+            _reviewSpeakingActive = false;
+            if (btn) btn.classList.remove('is-recording');
+            if (feedbackEl) {
+                feedbackEl.className = 'review-speak-feedback is-wrong';
+                feedbackEl.textContent = 'Could not hear clearly. Tap Show Answer or try again.';
+            }
+        }
+    });
 }
 
 function initCardGestures() {

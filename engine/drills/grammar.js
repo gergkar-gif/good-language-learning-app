@@ -75,16 +75,25 @@ const GrammarDriller = (function () {
         return (m < 10 ? '0' : '') + m + ':' + (s < 10 ? '0' : '') + s;
     }
 
-    // ---- Data loading (once) ----
+    let _loadedLang = null;
+
+    // ---- Data loading (per language) ----
     async function _load() {
-        if (_index && _bank) return;
+        if (_index && _bank && _loadedLang === Lang.code()) return;
         const [index, bank] = await Promise.all([
             Content.json(Lang.content('indexes/grammar-index.json')).catch(() => ({ bySkill: {} })),
             Content.json(Lang.content('drills/grammar/a1-bank.json')).catch(() => ({ modules: [], items: [] }))
         ]);
         _index = index;
         _bank = bank;
+        _loadedLang = Lang.code();
     }
+
+    document.addEventListener('language-changed', () => {
+        _index = null;
+        _bank = null;
+        _loadedLang = null;
+    });
 
     function _lessonSkillFor(moduleId) {
         return moduleId.replace(/_/g, '-');

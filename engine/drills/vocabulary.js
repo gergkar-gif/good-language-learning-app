@@ -99,9 +99,11 @@ const VocabularyDriller = (function () {
         return (m < 10 ? '0' : '') + m + ':' + (s < 10 ? '0' : '') + s;
     }
 
-    // ---- Data loading (once) ----
+    let _loadedLang = null;
+
+    // ---- Data loading (per language) ----
     async function _load() {
-        if (_words && _pairs && _contextIndex) return;
+        if (_words && _pairs && _contextIndex && _loadedLang === Lang.code()) return;
         const [deckData, translationIndex, wordLessonIndex] = await Promise.all([
             Content.json(Lang.content('decks/decks.json')).catch(() => ({ words: {}, decks: [] })),
             Content.json(Lang.content('indexes/translation-index.json')).catch(() => ({ pairs: [] })),
@@ -121,7 +123,15 @@ const VocabularyDriller = (function () {
         });
         _levels = CEFR_ORDER.filter(l => seenLevels.has(l));
         _contextIndex = _buildContextIndex();
+        _loadedLang = Lang.code();
     }
+
+    document.addEventListener('language-changed', () => {
+        _words = null;
+        _pairs = null;
+        _contextIndex = null;
+        _loadedLang = null;
+    });
 
     // One pass over the sentence corpus, resolving every token to a lemma
     // the same way a tapped word in the Reader would be. Built once and

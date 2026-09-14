@@ -46,3 +46,7 @@ const Content = {
     }
 
 };
+
+document.addEventListener('language-changed', () => {
+    Content.clearCache();
+});

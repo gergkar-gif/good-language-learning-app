@@ -77,12 +77,20 @@ const TranslationDriller = (function () {
         return (typeof UI !== 'undefined' && UI.escape) ? UI.escape(text) : String(text == null ? '' : text);
     }
 
-    // ---- Data loading (once) ----
+    let _loadedLang = null;
+
+    // ---- Data loading (per language) ----
     async function _load() {
-        if (_pairs) return;
+        if (_pairs && _loadedLang === Lang.code()) return;
         const index = await Content.json(Lang.content('indexes/translation-index.json')).catch(() => ({ pairs: [] }));
         _pairs = index.pairs || [];
+        _loadedLang = Lang.code();
     }
+
+    document.addEventListener('language-changed', () => {
+        _pairs = null;
+        _loadedLang = null;
+    });
 
     function _byLevel(level) {
         if (!level || level === 'all') return _pairs;

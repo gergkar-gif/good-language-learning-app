@@ -267,8 +267,13 @@ const DeckLearn = (function () {
                 </div>
                 ${_progressHtml()}
                 <p class="dkl-question">${_escapeHtml(promptText)}</p>
-                <input class="dkl-input" type="text" placeholder="${_escapeHtml(placeholder)}"
-                    autocomplete="off" autocapitalize="off" spellcheck="false">
+                <div class="lsn-input-with-mic">
+                    <input class="dkl-input" type="text" placeholder="${_escapeHtml(placeholder)}"
+                        autocomplete="off" autocapitalize="off" spellcheck="false">
+                    <button type="button" class="lsn-mic-addon" onclick="typeof lessonInlineVoiceInput === 'function' && lessonInlineVoiceInput('.dkl-input', this)" aria-label="Speak to type" title="Speak to type">
+                        ${typeof Art !== 'undefined' ? Art.icon('mic') : '🎙'}
+                    </button>
+                </div>
                 ${typeof UI !== 'undefined' && UI.diacriticsBarHtml ? UI.diacriticsBarHtml('.dkl-input') : ''}
                 <p class="dkl-feedback" aria-live="polite"></p>
                 <div class="dkl-actions">

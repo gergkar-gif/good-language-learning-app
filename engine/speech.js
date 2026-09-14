@@ -82,15 +82,33 @@ const Speech = (function () {
             });
         }
 
+        // Listen for language changes across the app so switching from Spanish to Hungarian
+        // or French re-picks the matching TTS voice instead of holding onto the old one.
+        document.addEventListener('language-changed', () => {
+            voice = pickVoice();
+            report();
+        });
+
         // Only conclude a voice is missing after the list has had a moment to
         // arrive — saying so immediately would be wrong on most Chrome loads.
         if (voice) report();
         else setTimeout(() => { if (!voice) report(); }, 1500);
     }
 
+    function _voiceMatchesLanguage(v) {
+        if (!v) return false;
+        const wanted = preferred();
+        const base = wanted[wanted.length - 1].split('-')[0].toLowerCase();
+        return (v.lang || '').toLowerCase().startsWith(base);
+    }
+
     function available() {
-        if (!voice && synth) voice = pickVoice();
-        return !!synth;
+        if (synth) {
+            if (!voice || !_voiceMatchesLanguage(voice)) {
+                voice = pickVoice();
+            }
+        }
+        return !!voice;
     }
 
     // What is on screen is not always what should be said. Tables write
@@ -110,7 +128,9 @@ const Speech = (function () {
 
     function speak(text, options) {
         if (!synth) return false;
-        if (!voice) voice = pickVoice();
+        if (!voice || !_voiceMatchesLanguage(voice)) {
+            voice = pickVoice();
+        }
         const said = sayable(text);
         if (!said) return false;
 
