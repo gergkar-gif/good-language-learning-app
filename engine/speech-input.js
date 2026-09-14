@@ -6,35 +6,38 @@
 //
 // Designed to fix the core flaws of automated language speaking apps:
 // 1. Transparent word-by-word breakdown (matched vs missed) rather than a black box.
-// 2. Dual audio replay: compare recorded learner voice side-by-side with native TTS.
-// 3. Resilient fuzzy matching that doesn't fail users on minor ASR transcription quirks.
+// 2. Resilient speech recognition that doesn't fail users on minor ASR transcription quirks.
+// 3. 2.8s automatic silence commit: learners take their time without needing to tap done.
 // 4. Graceful fallback to self-evaluation when speech recognition is unavailable.
 // 5. One-tap "Can't speak right now" preference to bypass voice drills when in public.
 
 const SpeechInput = (function () {
     'use strict';
 
-    const RecognitionConstructor = window.SpeechRecognition || window.webkitSpeechRecognition || null;
+    function _getRecognitionClass() {
+        if (typeof window === 'undefined') return null;
+        return window.SpeechRecognition || window.webkitSpeechRecognition || null;
+    }
+
     let _activeRecognition = null;
     let _mediaStream = null;
     let _mediaRecorder = null;
     let _recordedChunks = [];
     let _recordedAudioBlob = null;
     let _recordedAudioUrl = null;
-    let _audioContext = null;
-    let _analyser = null;
-    let _animFrameId = null;
     let _isListening = false;
+    let _hasSpoken = false;
+    let _listenStartTime = 0;
 
     const CANT_SPEAK_KEY = 'parlour_cant_speak_until';
 
     // ---- Browser Support & State ----
     function isRecognitionSupported() {
-        return !!RecognitionConstructor;
+        return !!_getRecognitionClass();
     }
 
     function isRecordingSupported() {
-        return !!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia && window.MediaRecorder);
+        return !!(typeof navigator !== 'undefined' && navigator.mediaDevices && navigator.mediaDevices.getUserMedia && window.MediaRecorder);
     }
 
     function canSpeakNow() {
@@ -59,7 +62,7 @@ const SpeechInput = (function () {
         } catch (e) {}
     }
 
-    // Language code mapper (e.g. 'es' -> 'es-ES' or 'es-MX', 'hu' -> 'hu-HU')
+    // Language code mapper (e.g. 'es' -> 'es-ES', 'hu' -> 'hu-HU')
     function getSpeechLang() {
         if (typeof Lang !== 'undefined') {
             const code = Lang.code();
@@ -81,8 +84,10 @@ const SpeechInput = (function () {
 
     let _finishTimeout = null;
     let _meterInterval = null;
+    let _initialSilenceTimeout = null;
     let _maxDurationTimeout = null;
     let _onFinalCallback = null;
+    let _onAudioReadyCallback = null;
     let _accumulatedFinal = '';
     let _currentInterim = '';
 
@@ -90,6 +95,10 @@ const SpeechInput = (function () {
         if (_finishTimeout) {
             clearTimeout(_finishTimeout);
             _finishTimeout = null;
+        }
+        if (_initialSilenceTimeout) {
+            clearTimeout(_initialSilenceTimeout);
+            _initialSilenceTimeout = null;
         }
         if (_meterInterval) {
             clearInterval(_meterInterval);
@@ -110,30 +119,14 @@ const SpeechInput = (function () {
         }
     }
 
-    // Stop audio meter animation and release audio context
-    function _stopStream() {
-        _cleanupTimers();
-        if (_animFrameId) {
-            cancelAnimationFrame(_animFrameId);
-            _animFrameId = null;
-        }
-        if (_audioContext && _audioContext.state !== 'closed') {
-            try { _audioContext.close(); } catch (e) {}
-            _audioContext = null;
-        }
-        _analyser = null;
-    }
-
-    // Capture microphone audio for user playback
-    function _startRecordingStream(options = {}) {
+    // Fallback: capture audio stream when SpeechRecognition is NOT available (e.g. Firefox)
+    function _startRecordingFallback(options = {}) {
         if (!isRecordingSupported()) return;
 
         navigator.mediaDevices.getUserMedia({ audio: true, video: false })
             .then(stream => {
                 if (!_isListening) {
-                    stream.getTracks().forEach(t => {
-                        try { t.stop(); } catch (e) {}
-                    });
+                    stream.getTracks().forEach(t => { try { t.stop(); } catch (e) {} });
                     return;
                 }
                 _mediaStream = stream;
@@ -172,17 +165,14 @@ const SpeechInput = (function () {
                 _mediaRecorder.start(100);
             })
             .catch(err => {
-                console.warn('SpeechInput: audio recording capture stream unavailable:', err);
-                if (!isRecognitionSupported()) {
-                    _isListening = false;
-                    const onError = options.onError || (() => {});
-                    onError('permission-denied');
-                }
+                console.warn('SpeechInput: fallback audio recording unavailable:', err);
+                _isListening = false;
+                const onError = options.onError || (() => {});
+                onError('permission-denied');
             });
     }
 
     // ---- Start Voice Capture & Recognition ----
-    // MUST call recognition.start() synchronously within user gesture (tap/click handler) on iOS Safari
     function startListening(options = {}) {
         if (_isListening) {
             stopListening();
@@ -193,7 +183,9 @@ const SpeechInput = (function () {
         _recordedChunks = [];
         _accumulatedFinal = '';
         _currentInterim = '';
+        _hasSpoken = false;
         _isListening = true;
+        _listenStartTime = Date.now();
 
         const lang = options.lang || getSpeechLang();
         const onInterim = options.onInterim || (() => {});
@@ -203,29 +195,43 @@ const SpeechInput = (function () {
         _onFinalCallback = onFinal;
         _onAudioReadyCallback = options.onAudioReady || null;
 
-        // Safety cap: maximum 25s per recording session
+        // Allow up to 10s for learner to start speaking before timing out
+        _initialSilenceTimeout = setTimeout(() => {
+            if (_isListening && !_hasSpoken) {
+                stopListening();
+                onError('no-speech');
+            }
+        }, 10000);
+
+        // Safety cap: maximum 30s per recording session
         _maxDurationTimeout = setTimeout(() => {
             if (_isListening) {
                 stopListening();
             }
-        }, 25000);
+        }, 30000);
 
-        // 1. Primary: SpeechRecognition Engine (started synchronously within user gesture)
-        if (isRecognitionSupported()) {
+        const RecognitionClass = _getRecognitionClass();
+
+        // 1. Primary: Native SpeechRecognition Engine
+        if (RecognitionClass) {
             try {
-                const recognition = new RecognitionConstructor();
+                const recognition = new RecognitionClass();
                 recognition.lang = lang;
-                // continuous: true prevents mobile engines from aborting after the first syllable or brief pause
-                recognition.continuous = true;
+
+                // WebKit on iOS fails if continuous: true; Chrome desktop works well with continuous: true
+                const isIOS = typeof navigator !== 'undefined' && (/iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1));
+                recognition.continuous = !isIOS;
                 recognition.interimResults = true;
                 recognition.maxAlternatives = 1;
 
                 if (onAudioLevel) {
-                    let levelSim = 0.05;
+                    let simAngle = 0;
                     _meterInterval = setInterval(() => {
                         if (!_isListening) return;
-                        levelSim = Math.max(0.05, levelSim * 0.88);
-                        onAudioLevel(levelSim);
+                        simAngle += 0.2;
+                        // Ambient breathing wave while waiting, showing mic is hot
+                        const basePulse = _hasSpoken ? 0.35 : 0.12 + Math.sin(simAngle) * 0.08;
+                        onAudioLevel(basePulse);
                     }, 80);
                 }
 
@@ -234,12 +240,17 @@ const SpeechInput = (function () {
                 };
 
                 recognition.onresult = event => {
+                    if (!_isListening) return;
+
                     let interim = '';
                     for (let i = event.resultIndex; i < event.results.length; ++i) {
                         const item = event.results[i];
                         if (item && item[0]) {
                             if (item.isFinal) {
-                                _accumulatedFinal += (_accumulatedFinal ? ' ' : '') + item[0].transcript;
+                                const text = item[0].transcript.trim();
+                                if (text) {
+                                    _accumulatedFinal += (_accumulatedFinal ? ' ' : '') + text;
+                                }
                             } else {
                                 interim += item[0].transcript;
                             }
@@ -247,27 +258,43 @@ const SpeechInput = (function () {
                     }
                     _currentInterim = interim;
                     const combined = (_accumulatedFinal + ' ' + _currentInterim).trim();
+
                     if (combined) {
+                        _hasSpoken = true;
+                        if (_initialSilenceTimeout) {
+                            clearTimeout(_initialSilenceTimeout);
+                            _initialSilenceTimeout = null;
+                        }
+
                         onInterim(combined);
                         if (onAudioLevel) {
-                            onAudioLevel(0.4 + Math.random() * 0.5);
+                            onAudioLevel(0.5 + Math.random() * 0.45);
                         }
-                    }
 
-                    // Reset silence debounce: give language learners 2.8s of breathing room
-                    // so hesitations and pauses ("um, uh, mhh") between words don't cut off their answer.
-                    if (_finishTimeout) clearTimeout(_finishTimeout);
-                    _finishTimeout = setTimeout(() => {
-                        stopListening();
-                    }, 2800);
+                        // Silence buffer: automatically finish and evaluate 2.8s after learner stops speaking
+                        if (_finishTimeout) clearTimeout(_finishTimeout);
+                        _finishTimeout = setTimeout(() => {
+                            stopListening();
+                        }, 2800);
+                    }
                 };
 
                 recognition.onerror = event => {
                     console.warn('SpeechInput recognition error:', event.error);
                     const combined = (_accumulatedFinal + ' ' + _currentInterim).trim();
+
                     if (event.error === 'no-speech') {
+                        // If learner already spoke, silence means they are done
                         if (combined) {
-                            stopListening();
+                            if (!_finishTimeout) {
+                                _finishTimeout = setTimeout(() => {
+                                    stopListening();
+                                }, 1200);
+                            }
+                            return;
+                        }
+                        // If learner hasn't spoken yet and still within initial 10s grace period, keep waiting
+                        if (Date.now() - _listenStartTime < 10000) {
                             return;
                         }
                         _isListening = false;
@@ -278,11 +305,17 @@ const SpeechInput = (function () {
                         _cleanupTimers();
                         onError('permission-denied');
                     } else if (event.error === 'aborted') {
+                        if (combined && _isListening) {
+                            stopListening();
+                        }
+                    } else if (event.error === 'network') {
+                        if (combined) {
+                            stopListening();
+                            return;
+                        }
                         _isListening = false;
                         _cleanupTimers();
-                    } else if (event.error === 'audio-capture') {
-                        console.warn('SpeechInput: audio-capture issue; falling back to recorded audio');
-                        stopListening();
+                        onError('network');
                     } else {
                         if (combined) {
                             stopListening();
@@ -295,34 +328,41 @@ const SpeechInput = (function () {
                 };
 
                 recognition.onend = () => {
-                    if (_isListening) {
-                        // If learner paused and silence debounce hasn't expired yet,
-                        // attempt to resume recognition so they can continue speaking.
-                        if (_finishTimeout) {
-                            try {
-                                recognition.start();
-                                return;
-                            } catch (e) {
-                                // If browser forbids restarting without user gesture, stop cleanly
+                    if (!_isListening) return;
+
+                    // If still active, seamlessly restart recognition (especially on iOS Safari where continuous=false)
+                    // so pauses between phrases are not truncated before the 2.8s timer expires
+                    try {
+                        recognition.start();
+                    } catch (e) {
+                        if (_hasSpoken) {
+                            if (!_finishTimeout) {
+                                _finishTimeout = setTimeout(() => {
+                                    stopListening();
+                                }, 1000);
                             }
                         }
-                        _cleanupTimers();
-                        stopListening();
                     }
                 };
 
                 _activeRecognition = recognition;
                 recognition.start();
             } catch (e) {
-                console.warn('SpeechInput: recognition.start() threw; falling back to recorder', e);
+                console.warn('SpeechInput: recognition.start() threw:', e);
                 _activeRecognition = null;
+                // If native recognition threw, fallback to recording if possible
+                if (isRecordingSupported()) {
+                    _startRecordingFallback(options);
+                } else {
+                    _isListening = false;
+                    onError('not-supported');
+                }
             }
-        }
-
-        // 2. Capture microphone audio stream so user can listen back to their recording
-        if (isRecordingSupported()) {
-            _startRecordingStream(options);
-        } else if (!isRecognitionSupported()) {
+        } else if (isRecordingSupported()) {
+            // Fallback for browsers without Web Speech API (e.g. Firefox)
+            _startRecordingFallback(options);
+            onError('not-supported');
+        } else {
             _isListening = false;
             onError('not-supported');
         }
@@ -338,7 +378,7 @@ const SpeechInput = (function () {
         _currentInterim = '';
 
         if (_activeRecognition) {
-            try { _activeRecognition.stop(); } catch (e) {}
+            try { _activeRecognition.abort(); } catch (e) {}
             _activeRecognition = null;
         }
 
@@ -347,8 +387,6 @@ const SpeechInput = (function () {
         } else {
             _stopTracks();
         }
-
-        _stopStream();
 
         if (finalText && _onFinalCallback) {
             const cb = _onFinalCallback;

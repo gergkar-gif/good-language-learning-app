@@ -940,7 +940,11 @@ function reviewSpeakWord(btn) {
             if (btn) btn.classList.remove('is-recording');
             if (feedbackEl) {
                 feedbackEl.className = 'review-speak-feedback is-wrong';
-                feedbackEl.textContent = 'Could not hear clearly. Tap Show Answer or try again.';
+                if (err === 'permission-denied') {
+                    feedbackEl.textContent = 'Microphone permission was denied. Please allow microphone access in browser settings.';
+                } else {
+                    feedbackEl.textContent = 'Could not hear clearly. Tap Show Answer or try again.';
+                }
             }
         }
     });

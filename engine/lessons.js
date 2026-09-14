@@ -2288,7 +2288,7 @@ function lessonToggleSpeaking(btn) {
     _lessonSpeakingRecording = true;
     if (btn) btn.classList.add('sp-recording');
     const statusEl = document.getElementById('lesson-mic-status');
-    if (statusEl) statusEl.textContent = 'Listening... (tap when done)';
+    if (statusEl) statusEl.textContent = 'Listening...';
     const liveEl = document.getElementById('lesson-live-transcript');
     if (liveEl) {
         liveEl.textContent = '...';
@@ -2317,7 +2317,13 @@ function lessonToggleSpeaking(btn) {
                 _lessonSpeakingRecording = false;
                 if (btn) btn.classList.remove('sp-recording');
                 if (statusEl) statusEl.textContent = 'Tap to speak';
-                setFeedback(false, 'Could not hear clearly. Try again or skip.');
+                if (err === 'permission-denied') {
+                    setFeedback(false, 'Microphone permission was denied. Please allow microphone access in your browser settings.');
+                } else if (err === 'no-speech') {
+                    setFeedback(false, 'No voice heard. Did you speak into the microphone?');
+                } else {
+                    setFeedback(false, 'Could not hear clearly. Try again or skip.');
+                }
                 enableCheck();
             }
         });

@@ -220,7 +220,7 @@ const SpeakingRunner = (function () {
         const liveText = _container.querySelector('.sp-live-transcript');
 
         if (micBtn) micBtn.classList.add('sp-recording');
-        if (micLabel) micLabel.textContent = 'Listening... (tap when done)';
+        if (micLabel) micLabel.textContent = 'Listening...';
         if (liveText) {
             liveText.textContent = '...';
             liveText.classList.remove('hidden');
@@ -251,7 +251,10 @@ const SpeakingRunner = (function () {
                 _stopRecording();
 
                 // If recognition failed or not supported, offer self-eval
-                if (!SpeechInput.isRecognitionSupported() || err === 'recognition-failed' || err === 'no-speech') {
+                if (err === 'permission-denied') {
+                    _setFeedback(false, 'Microphone permission was denied. Please allow microphone access in your browser settings.');
+                    _offerSelfEvaluation('Microphone permission denied.');
+                } else if (!SpeechInput.isRecognitionSupported() || err === 'recognition-failed' || err === 'no-speech') {
                     _offerSelfEvaluation(err === 'no-speech' ? 'No voice heard. Did you speak into the microphone?' : null);
                 } else {
                     _setFeedback(false, 'Microphone error. You can try again or skip.');
