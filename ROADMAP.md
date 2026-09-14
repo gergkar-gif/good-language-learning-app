@@ -129,6 +129,30 @@ this list directly rather than relying on a tool-specific todo list.
       standalone `engine/theme.js` with `'system' | 'light' | 'dark'` options and `localStorage` persistence;
       interactive Appearance card in My Journey tab;
       quick-toggle theme buttons in desktop sidebar and page header.
+11. **Speaking Function & Pronunciation Engine Initiative** — **Built & deployed 2026-09-14**:
+    - **Core Speech Recognition & Evaluation Engine** (`engine/speech-input.js`):
+      - Browser-native Speech-to-Text (`SpeechRecognition` / `webkitSpeechRecognition`) with multi-language mapping (`es-ES`, `hu-HU`).
+      - Transparent word-by-word evaluation tagging (`matched` vs `missed`) with diacritic, casing, and punctuation leniency via normalized Levenshtein token distance.
+      - Sound energy visualizer and live interim transcription bubble.
+      - Self-evaluation fallback mode for quiet rooms or unsupported browsers (e.g. desktop Firefox).
+      - One-tap "Can't speak right now" preference to snooze speaking exercises for 30 minutes.
+    - **Curriculum & Lesson Integration** (`engine/lessons.js`):
+      - Two dedicated speaking step types: `read-repeat` (listen to model pronunciation and repeat) and `prompt-speak` (translate prompt into target language and say it out loud).
+      - Injected 2 dedicated speaking practice steps into every curriculum lesson generated from the lesson's target vocabulary and grammar structures.
+    - **Workshop Speaking Driller** (`engine/drills/speaking.js`, `engine/drills/speaking-runner.js`):
+      - Dedicated Workshop speaking module with CEFR level selector (A1–C1), topic filters, and mode toggles (`Prompt & Speak`, `Read & Repeat`, `Mixed`).
+      - Integrated model audio replay, mic waveform animation, and comprehensive evaluation breakdowns.
+    - **SRS Flashcard Speaking Integration** (`engine/srs.js`):
+      - Voice response mode on flashcard reviews with immediate accuracy feedback.
+    - **Dual Audio Replay & Model Comparison**:
+      - Side-by-side comparison bar across Lessons, Workshop, and SRS:
+        `[🔊 Model Voice]` plays the native model pronunciation, while `[🎙 Your Voice]` replays the learner's actual recorded speech clip.
+      - Mutual audio interruption, live `Playing...` active state, and dark-mode styling.
+    - **Mobile-Proof Engineering & Learner Hesitation Debounce**:
+      - Fixed iOS Safari user gesture expiration by invoking `recognition.start()` strictly synchronously within the tap event handler.
+      - Solved hardware mic contention on mobile devices by running non-blocking background `MediaRecorder` audio buffering alongside native STT.
+      - Extended silence debounce from 1.3s to **2.8 seconds** with automatic pause resumption on native mobile `onend` to accommodate learner hesitations ("um, uh, mhh") and thinking pauses.
+      - Added safety session ceiling (25 seconds) and asset version cache-busting (`scripts/stamp-assets.py`).
 
 ## Content & curriculum
 
@@ -1752,7 +1776,16 @@ replacement for them.
 
 - [ ] Interface increasingly bilingual as level rises, eventually
   Spanish/Hungarian interface by B2.
-- [ ] Dark/light mode.
+- [x] **Dark/light mode.** Built & deployed 2026-09-12: Constructivist inverted palette (`[data-theme="dark"]`), `engine/theme.js`, appearance settings in My Journey, and desktop header quick-toggles.
+- [x] **Speaking exercises & pronunciation evaluation.** Built & deployed 2026-09-14:
+  - Speech-to-text recognition via Web Speech API (`engine/speech-input.js`) with multi-language support (`es-ES`, `hu-HU`).
+  - Word-by-word accuracy breakdown (green/red pills for matched vs. missed words) with diacritic-lenient fuzzy phonetic alignment.
+  - Dedicated speaking steps in lessons (`read-repeat` and `prompt-speak`).
+  - Workshop Speaking Driller (`engine/drills/speaking.js`, `engine/drills/speaking-runner.js`).
+  - Voice answers in SRS flashcard reviews (`engine/srs.js`).
+  - Dual audio comparison bar: listen to native model voice and listen back to your own voice recording.
+  - Mobile-proof gesture activation on iOS Safari, non-blocking MediaRecorder capture, and learner-friendly 2.8s hesitation leeway.
+  - One-tap "Can't speak right now" snooze preference.
 - [ ] Browser extension: add words to your deck from anywhere on the web.
   - [ ] Same idea, one click: import an article/email/any text straight
     into the Reader.
