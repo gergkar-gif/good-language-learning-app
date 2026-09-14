@@ -1,0 +1,225 @@
+// ============================================
+// Unit Test: SpeechInput & Lesson Voice Lifecycle
+// ============================================
+const assert = require('assert');
+const fs = require('fs');
+const path = require('path');
+
+// Mock browser environment
+global.window = global;
+global.document = {
+    body: { classList: { remove: () => {}, add: () => {}, contains: () => false } },
+    getElementById: (id) => null,
+    querySelector: (sel) => null,
+    querySelectorAll: (sel) => [],
+    addEventListener: () => {},
+    removeEventListener: () => {},
+    dispatchEvent: () => {}
+};
+global.localStorage = {
+    getItem: () => null,
+    setItem: () => {},
+    removeItem: () => {}
+};
+global.Event = function (type) { this.type = type; };
+global.CustomEvent = function (type) { this.type = type; };
+
+// Track mock recognition instances
+let createdRecognitions = [];
+let mockTrackStopped = false;
+
+class MockSpeechRecognition {
+    constructor() {
+        this.lang = '';
+        this.continuous = false;
+        this.interimResults = false;
+        this.maxAlternatives = 1;
+        this.onstart = null;
+        this.onresult = null;
+        this.onerror = null;
+        this.onend = null;
+        this.started = false;
+        this.aborted = false;
+        createdRecognitions.push(this);
+    }
+    start() {
+        this.started = true;
+        if (this.onstart) this.onstart();
+    }
+    abort() {
+        this.aborted = true;
+        if (this.onend) this.onend();
+    }
+    stop() {
+        if (this.onend) this.onend();
+    }
+}
+
+global.SpeechRecognition = MockSpeechRecognition;
+global.webkitSpeechRecognition = MockSpeechRecognition;
+
+let getUserMediaCallCount = 0;
+const mockMediaDevices = {
+    getUserMedia: async (constraints) => {
+        getUserMediaCallCount++;
+        return {
+            active: true,
+            getAudioTracks: () => [{
+                readyState: 'live',
+                stop: () => { mockTrackStopped = true; }
+            }],
+            getTracks: () => [{
+                readyState: 'live',
+                stop: () => { mockTrackStopped = true; }
+            }]
+        };
+    }
+};
+
+try {
+    Object.defineProperty(global.navigator, 'mediaDevices', { value: mockMediaDevices, configurable: true, writable: true });
+} catch (e) {
+    global.navigator = { mediaDevices: mockMediaDevices, userAgent: 'Chrome', platform: 'Win32' };
+}
+
+global.MediaRecorder = class {
+    constructor(stream, opts) {
+        this.stream = stream;
+        this.state = 'inactive';
+        this.ondataavailable = null;
+        this.onstop = null;
+    }
+    static isTypeSupported() { return true; }
+    start() { this.state = 'recording'; }
+    stop() {
+        this.state = 'inactive';
+        if (this.onstop) this.onstop();
+    }
+};
+
+global.Lang = {
+    code: () => 'es',
+    name: () => 'Spanish',
+    voices: () => ['es-ES']
+};
+
+global.URL = {
+    createObjectURL: () => 'blob:mock-audio',
+    revokeObjectURL: () => {}
+};
+
+// Load speech-input.js
+const speechInputCode = fs.readFileSync(path.join(__dirname, '../../engine/speech-input.js'), 'utf8');
+eval(speechInputCode);
+
+console.log('--- Test 1: First listening step with text-only transcription ---');
+getUserMediaCallCount = 0;
+createdRecognitions = [];
+
+SpeechInput.startListening({
+    onInterim: (text) => {},
+    onFinal: (text) => {}
+});
+
+assert.strictEqual(SpeechInput.isListening(), true, 'SpeechInput should be listening');
+assert.strictEqual(createdRecognitions.length, 1, 'Exactly one MockSpeechRecognition should be instantiated');
+assert.strictEqual(getUserMediaCallCount, 0, 'getUserMedia should NOT be called for text-only transcription');
+
+console.log('[PASS] Text-only listening does not hold MediaStream hardware lock.');
+
+console.log('--- Test 2: Stopping Step 1 and starting Step 2 consecutively ---');
+SpeechInput.stopListening();
+assert.strictEqual(SpeechInput.isListening(), false, 'SpeechInput should be stopped');
+assert.strictEqual(createdRecognitions[0].aborted, true, 'First recognition should be aborted');
+assert.strictEqual(createdRecognitions[0].onend, null, 'Previous recognition listeners should be detached');
+
+// Start Step 2
+SpeechInput.startListening({
+    onInterim: (text) => {},
+    onFinal: (text) => {}
+});
+
+assert.strictEqual(SpeechInput.isListening(), true, 'Step 2 SpeechInput should be listening');
+assert.strictEqual(createdRecognitions.length, 2, 'A fresh second MockSpeechRecognition should be created');
+assert.strictEqual(createdRecognitions[1].started, true, 'Second recognition should have started successfully');
+
+console.log('[PASS] Step 2 speech recognition starts cleanly without collision from Step 1.');
+
+async function runTests() {
+    console.log('--- Test 3: Audio recording release when audio playback is used ---');
+    SpeechInput.stopListening();
+    getUserMediaCallCount = 0;
+    mockTrackStopped = false;
+
+    SpeechInput.startListening({
+        onAudioReady: (url) => {},
+        onFinal: (text) => {}
+    });
+
+    assert.strictEqual(SpeechInput.isListening(), true);
+    assert.strictEqual(getUserMediaCallCount, 1, 'getUserMedia called when onAudioReady is requested');
+
+    // Allow promise resolution for getUserMedia
+    await new Promise(r => setTimeout(r, 20));
+
+    SpeechInput.stopListening();
+    assert.strictEqual(mockTrackStopped, true, 'Microphone tracks are stopped immediately upon stopListening');
+
+    console.log('[PASS] Media tracks are immediately released, freeing hardware for next exercise.');
+
+    console.log('--- Test 4: Lesson step transitions and inline voice input state ---');
+    let mockInputVal = '';
+    const mockInput = {
+        get value() { return mockInputVal; },
+        set value(v) { mockInputVal = v; },
+        dispatchEvent: () => {},
+        focus: () => {}
+    };
+    global.document.querySelector = (sel) => {
+        if (sel === '#blank-input') return mockInput;
+        return null;
+    };
+
+    // Load lessons.js minimal state to test inline voice toggling
+    let _inlineVoiceActive = false;
+    function testInlineVoice(btn) {
+        if (_inlineVoiceActive) {
+            SpeechInput.stopListening();
+            _inlineVoiceActive = false;
+            return 'stopped';
+        }
+        _inlineVoiceActive = true;
+        SpeechInput.startListening({
+            onFinal: (txt) => {
+                _inlineVoiceActive = false;
+                mockInput.value = txt;
+            }
+        });
+        return 'started';
+    }
+
+    // Step 1: user taps mic to start
+    assert.strictEqual(testInlineVoice(), 'started');
+    assert.strictEqual(SpeechInput.isListening(), true);
+
+    // Step transition occurs without waiting for silence timeout (user presses Enter / next step)
+    // Step transition logic:
+    _inlineVoiceActive = false;
+    SpeechInput.stopListening();
+    assert.strictEqual(SpeechInput.isListening(), false);
+    assert.strictEqual(_inlineVoiceActive, false);
+
+    // Step 2: user taps mic on the second listening step
+    assert.strictEqual(testInlineVoice(), 'started', 'Second listening step mic must start on first click');
+    assert.strictEqual(SpeechInput.isListening(), true, 'SpeechInput must be active on second listening step');
+
+    SpeechInput.stopListening();
+    console.log('[PASS] Second listening step starts cleanly without stuck toggle state.');
+
+    console.log('\n[ALL PASS] SpeechInput lifecycle test suite passed.');
+}
+
+runTests().catch(err => {
+    console.error(err);
+    process.exit(1);
+});

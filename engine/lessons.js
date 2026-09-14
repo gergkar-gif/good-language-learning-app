@@ -433,6 +433,7 @@ function teardownLesson() {
         SpeechInput.stopListening();
         SpeechInput.releaseStream();
     }
+    _inlineVoiceActive = false;
     _lessonSpeakingRecording = false;
     const lessonFooter = document.querySelector('#lesson-screen .lesson-footer');
     if (lessonFooter) lessonFooter.style.display = '';
@@ -1484,6 +1485,12 @@ function _wireLessonEnterToCheck() {
 }
 
 function renderStep() {
+    if (_inlineVoiceActive || _lessonSpeakingRecording) {
+        _inlineVoiceActive = false;
+        _lessonSpeakingRecording = false;
+        if (typeof SpeechInput !== 'undefined') SpeechInput.stopListening();
+    }
+
     const step = currentLesson.steps[currentStepIndex];
     const container = document.getElementById('lesson-content');
 
@@ -1521,10 +1528,11 @@ function renderStep() {
 function nextLessonStep() {
     if (stepState.gated && !stepState.solved) return;
 
+    _inlineVoiceActive = false;
+    _lessonSpeakingRecording = false;
     if (typeof SpeechInput !== 'undefined') {
         SpeechInput.stopListening();
     }
-    _lessonSpeakingRecording = false;
 
     // The srs step used to need its own "Save" tap before Continue did
     // anything useful — easy to miss, since Continue itself was already
@@ -1565,10 +1573,11 @@ function nextLessonStep() {
 // with renderStep() itself, which already treats every step as stateless.
 function prevLessonStep() {
     if (currentStepIndex <= 0) return;
+    _inlineVoiceActive = false;
+    _lessonSpeakingRecording = false;
     if (typeof SpeechInput !== 'undefined') {
         SpeechInput.stopListening();
     }
-    _lessonSpeakingRecording = false;
     currentStepIndex--;
     renderStep();
 }
@@ -2079,6 +2088,20 @@ function lessonCheckBlank() {
 }
 
 function lessonPlayAudio() {
+    if (_inlineVoiceActive) {
+        _inlineVoiceActive = false;
+        if (typeof SpeechInput !== 'undefined') SpeechInput.stopListening();
+        const micBtn = document.querySelector('.lsn-mic-addon.is-recording');
+        if (micBtn) micBtn.classList.remove('is-recording');
+    }
+    if (_lessonSpeakingRecording) {
+        _lessonSpeakingRecording = false;
+        if (typeof SpeechInput !== 'undefined') SpeechInput.stopListening();
+        const micBtn = document.getElementById('lesson-mic-btn');
+        if (micBtn) micBtn.classList.remove('sp-recording');
+        const statusEl = document.getElementById('lesson-mic-status');
+        if (statusEl) statusEl.textContent = 'Tap to speak';
+    }
     if (typeof Speech !== 'undefined') Speech.speak(stepState.audio);
 }
 
@@ -2318,6 +2341,11 @@ let _lessonSpeakingRecording = false;
 
 function lessonToggleSpeaking(btn) {
     if (stepState.solved) return;
+
+    if (typeof Speech !== 'undefined' && typeof window.speechSynthesis !== 'undefined') {
+        window.speechSynthesis.cancel();
+    }
+
     if (_lessonSpeakingRecording) {
         _lessonSpeakingRecording = false;
         if (typeof SpeechInput !== 'undefined') SpeechInput.stopListening();
@@ -2529,6 +2557,10 @@ function lessonInlineVoiceInput(selector, btn) {
         return;
     }
 
+    if (typeof Speech !== 'undefined' && typeof window.speechSynthesis !== 'undefined') {
+        window.speechSynthesis.cancel();
+    }
+
     const input = document.querySelector(selector);
     if (!input) return;
 
@@ -2550,9 +2582,11 @@ function lessonInlineVoiceInput(selector, btn) {
         onFinal: transcript => {
             _inlineVoiceActive = false;
             if (btn) btn.classList.remove('is-recording');
-            input.value = transcript;
-            input.dispatchEvent(new Event('input', { bubbles: true }));
-            input.focus();
+            if (transcript) {
+                input.value = transcript;
+                input.dispatchEvent(new Event('input', { bubbles: true }));
+            }
+            try { input.focus(); } catch (e) {}
         },
         onError: err => {
             _inlineVoiceActive = false;

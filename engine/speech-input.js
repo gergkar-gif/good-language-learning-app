@@ -37,7 +37,7 @@ const SpeechInput = (function () {
     }
 
     function isRecordingSupported() {
-        return !!(typeof navigator !== 'undefined' && navigator.mediaDevices && navigator.mediaDevices.getUserMedia && window.MediaRecorder);
+        return !!(typeof navigator !== 'undefined' && navigator.mediaDevices && navigator.mediaDevices.getUserMedia && (typeof MediaRecorder !== 'undefined' || (typeof window !== 'undefined' && window.MediaRecorder)));
     }
 
     function canSpeakNow() {
@@ -122,6 +122,10 @@ const SpeechInput = (function () {
 
     function _stopTracks() {
         _clearStreamIdleTimer();
+        if (_mediaRecorder && _mediaRecorder.state !== 'inactive') {
+            try { _mediaRecorder.stop(); } catch (e) {}
+        }
+        _mediaRecorder = null;
         if (_mediaStream) {
             _mediaStream.getTracks().forEach(track => {
                 try { track.stop(); } catch (e) {}
@@ -132,6 +136,19 @@ const SpeechInput = (function () {
 
     function releaseStream() {
         _stopTracks();
+    }
+
+    function _cleanupRecognition() {
+        if (_activeRecognition) {
+            try {
+                _activeRecognition.onstart = null;
+                _activeRecognition.onresult = null;
+                _activeRecognition.onerror = null;
+                _activeRecognition.onend = null;
+                _activeRecognition.abort();
+            } catch (e) {}
+            _activeRecognition = null;
+        }
     }
 
     // Capture audio stream for user playback and unsupported browser fallback
@@ -181,11 +198,6 @@ const SpeechInput = (function () {
                     if (options.onAudioReady) options.onAudioReady(_recordedAudioUrl);
                     if (_onAudioReadyCallback) _onAudioReadyCallback(_recordedAudioUrl);
                 }
-                // Keep stream warm for consecutive exercises; release after 45s of silence/inactivity
-                _clearStreamIdleTimer();
-                _streamIdleTimer = setTimeout(() => {
-                    if (!_isListening) _stopTracks();
-                }, 45000);
             };
 
             try {
@@ -223,6 +235,9 @@ const SpeechInput = (function () {
     function startListening(options = {}) {
         if (_isListening) {
             stopListening();
+        } else {
+            _cleanupRecognition();
+            _stopTracks();
         }
 
         _cleanAudioUrl();
@@ -354,12 +369,10 @@ const SpeechInput = (function () {
                             if (Date.now() - _listenStartTime < (manualStop ? 30000 : 10000)) {
                                 return;
                             }
-                            _isListening = false;
-                            _cleanupTimers();
+                            stopListening();
                             onError('no-speech');
                         } else if (event.error === 'not-allowed' || event.error === 'service-not-allowed') {
-                            _isListening = false;
-                            _cleanupTimers();
+                            stopListening();
                             onError('permission-denied');
                         } else if (event.error === 'aborted') {
                             if (combined && _isListening) {
@@ -370,22 +383,20 @@ const SpeechInput = (function () {
                                 stopListening();
                                 return;
                             }
-                            _isListening = false;
-                            _cleanupTimers();
+                            stopListening();
                             onError('network');
                         } else {
                             if (combined) {
                                 stopListening();
                                 return;
                             }
-                            _isListening = false;
-                            _cleanupTimers();
+                            stopListening();
                             onError(event.error || 'recognition-failed');
                         }
                     };
 
                     recognition.onend = () => {
-                        if (!_isListening) return;
+                        if (!_isListening || _activeRecognition !== recognition) return;
 
                         // Create a fresh instance if user is still actively speaking or within silence buffer
                         // (iOS Safari continuous=false closes on pause; reusing an ended instance throws InvalidStateError)
@@ -414,38 +425,32 @@ const SpeechInput = (function () {
         }
 
         // 2. Microphone audio recording for user playback and unsupported browser fallback
-        if (isRecordingSupported()) {
+        // Only spin up getUserMedia when audio playback is actually requested or when native STT is unsupported
+        const needsAudioRecording = !!options.onAudioReady || !RecognitionClass;
+        if (isRecordingSupported() && needsAudioRecording) {
             _startRecordingStream(options);
-        } else if (!_activeRecognition) {
+        } else if (!RecognitionClass && !isRecordingSupported()) {
             _isListening = false;
             onError('not-supported');
         }
     }
 
     function stopListening() {
-        if (!_isListening) return;
+        const wasListening = _isListening;
         _isListening = false;
         _cleanupTimers();
+        _cleanupRecognition();
+
+        if (_mediaRecorder && _mediaRecorder.state !== 'inactive') {
+            try { _mediaRecorder.stop(); } catch (e) {}
+        }
+        _stopTracks();
 
         const finalText = (_accumulatedFinal + ' ' + _currentInterim).trim();
         _accumulatedFinal = '';
         _currentInterim = '';
 
-        if (_activeRecognition) {
-            try { _activeRecognition.abort(); } catch (e) {}
-            _activeRecognition = null;
-        }
-
-        if (_mediaRecorder && _mediaRecorder.state !== 'inactive') {
-            try { _mediaRecorder.stop(); } catch (e) {}
-        } else {
-            _clearStreamIdleTimer();
-            _streamIdleTimer = setTimeout(() => {
-                if (!_isListening) _stopTracks();
-            }, 45000);
-        }
-
-        if (_onFinalCallback) {
+        if (wasListening && _onFinalCallback) {
             const cb = _onFinalCallback;
             _onFinalCallback = null;
             cb(finalText || '');
