@@ -96,18 +96,21 @@ const SpeechInput = (function () {
         }
     }
 
-    // Stop audio meter animation and release audio stream tracks
-    function _stopStream() {
-        _cleanupTimers();
-        if (_animFrameId) {
-            cancelAnimationFrame(_animFrameId);
-            _animFrameId = null;
-        }
+    function _stopTracks() {
         if (_mediaStream) {
             _mediaStream.getTracks().forEach(track => {
                 try { track.stop(); } catch (e) {}
             });
             _mediaStream = null;
+        }
+    }
+
+    // Stop audio meter animation and release audio context
+    function _stopStream() {
+        _cleanupTimers();
+        if (_animFrameId) {
+            cancelAnimationFrame(_animFrameId);
+            _animFrameId = null;
         }
         if (_audioContext && _audioContext.state !== 'closed') {
             try { _audioContext.close(); } catch (e) {}
@@ -116,77 +119,65 @@ const SpeechInput = (function () {
         _analyser = null;
     }
 
-    // Fallback audio recorder for browsers without SpeechRecognition (e.g. desktop Firefox)
-    function _startMediaRecorderFallback(options) {
-        const onError = options.onError || (() => {});
-        const onAudioLevel = options.onAudioLevel || null;
-
-        if (!isRecordingSupported()) {
-            _isListening = false;
-            onError('not-supported');
-            return;
-        }
+    // Capture microphone audio for user playback
+    function _startRecordingStream(options = {}) {
+        if (!isRecordingSupported()) return;
 
         navigator.mediaDevices.getUserMedia({ audio: true, video: false })
             .then(stream => {
                 if (!_isListening) {
-                    stream.getTracks().forEach(t => t.stop());
+                    stream.getTracks().forEach(t => {
+                        try { t.stop(); } catch (e) {}
+                    });
                     return;
                 }
                 _mediaStream = stream;
 
-                if (onAudioLevel && (window.AudioContext || window.webkitAudioContext)) {
-                    try {
-                        const AudioContextClass = window.AudioContext || window.webkitAudioContext;
-                        _audioContext = new AudioContextClass();
-                        const source = _audioContext.createMediaStreamSource(_mediaStream);
-                        _analyser = _audioContext.createAnalyser();
-                        _analyser.fftSize = 64;
-                        source.connect(_analyser);
-
-                        const dataArray = new Uint8Array(_analyser.frequencyBinCount);
-                        const updateMeter = () => {
-                            if (!_isListening || !_analyser) return;
-                            _analyser.getByteFrequencyData(dataArray);
-                            let sum = 0;
-                            for (let i = 0; i < dataArray.length; i++) sum += dataArray[i];
-                            onAudioLevel(Math.min(1, (sum / dataArray.length) / 128));
-                            _animFrameId = requestAnimationFrame(updateMeter);
-                        };
-                        updateMeter();
-                    } catch (err) {}
-                }
-
-                let mimeType = 'audio/webm';
+                let mimeType = '';
                 if (window.MediaRecorder && typeof MediaRecorder.isTypeSupported === 'function') {
-                    if (!MediaRecorder.isTypeSupported('audio/webm')) {
-                        if (MediaRecorder.isTypeSupported('audio/mp4')) mimeType = 'audio/mp4';
-                        else if (MediaRecorder.isTypeSupported('audio/aac')) mimeType = 'audio/aac';
-                        else mimeType = '';
-                    }
+                    if (MediaRecorder.isTypeSupported('audio/webm;codecs=opus')) mimeType = 'audio/webm;codecs=opus';
+                    else if (MediaRecorder.isTypeSupported('audio/webm')) mimeType = 'audio/webm';
+                    else if (MediaRecorder.isTypeSupported('audio/mp4')) mimeType = 'audio/mp4';
+                    else if (MediaRecorder.isTypeSupported('audio/aac')) mimeType = 'audio/aac';
                 }
 
-                _mediaRecorder = mimeType ? new MediaRecorder(_mediaStream, { mimeType }) : new MediaRecorder(_mediaStream);
+                try {
+                    _mediaRecorder = mimeType ? new MediaRecorder(stream, { mimeType }) : new MediaRecorder(stream);
+                } catch (e) {
+                    _mediaRecorder = new MediaRecorder(stream);
+                }
+
+                _recordedChunks = [];
                 _mediaRecorder.ondataavailable = e => {
                     if (e.data && e.data.size > 0) _recordedChunks.push(e.data);
                 };
+
                 _mediaRecorder.onstop = () => {
                     if (_recordedChunks.length > 0) {
-                        _recordedAudioBlob = new Blob(_recordedChunks, { type: _mediaRecorder.mimeType || 'audio/webm' });
+                        _cleanAudioUrl();
+                        const type = (_mediaRecorder && _mediaRecorder.mimeType) || mimeType || 'audio/webm';
+                        _recordedAudioBlob = new Blob(_recordedChunks, { type });
                         _recordedAudioUrl = URL.createObjectURL(_recordedAudioBlob);
                         if (options.onAudioReady) options.onAudioReady(_recordedAudioUrl);
+                        if (_onAudioReadyCallback) _onAudioReadyCallback(_recordedAudioUrl);
                     }
+                    _stopTracks();
                 };
-                _mediaRecorder.start();
+
+                _mediaRecorder.start(100);
             })
             .catch(err => {
-                _isListening = false;
-                onError('permission-denied');
+                console.warn('SpeechInput: audio recording capture stream unavailable:', err);
+                if (!isRecognitionSupported()) {
+                    _isListening = false;
+                    const onError = options.onError || (() => {});
+                    onError('permission-denied');
+                }
             });
     }
 
     // ---- Start Voice Capture & Recognition ----
-    // MUST be called synchronously within user gesture (tap/click handler) on iOS Safari
+    // MUST call recognition.start() synchronously within user gesture (tap/click handler) on iOS Safari
     function startListening(options = {}) {
         if (_isListening) {
             stopListening();
@@ -205,14 +196,14 @@ const SpeechInput = (function () {
         const onError = options.onError || (() => {});
         const onAudioLevel = options.onAudioLevel || null;
         _onFinalCallback = onFinal;
+        _onAudioReadyCallback = options.onAudioReady || null;
 
-        // 1. Primary: SpeechRecognition Engine
-        // Runs standalone WITHOUT concurrent getUserMedia to prevent mobile mic contention and iOS gesture expiry
+        // 1. Primary: SpeechRecognition Engine (started synchronously within user gesture)
         if (isRecognitionSupported()) {
             try {
                 const recognition = new RecognitionConstructor();
                 recognition.lang = lang;
-                // continuous: true prevents Android & iOS from aborting after the first syllable or brief pause
+                // continuous: true prevents mobile engines from aborting after the first syllable or brief pause
                 recognition.continuous = true;
                 recognition.interimResults = true;
                 recognition.maxAlternatives = 1;
@@ -276,6 +267,9 @@ const SpeechInput = (function () {
                     } else if (event.error === 'aborted') {
                         _isListening = false;
                         _cleanupTimers();
+                    } else if (event.error === 'audio-capture') {
+                        console.warn('SpeechInput: audio-capture issue; falling back to recorded audio');
+                        stopListening();
                     } else {
                         if (combined) {
                             stopListening();
@@ -295,17 +289,20 @@ const SpeechInput = (function () {
                 };
 
                 _activeRecognition = recognition;
-                // Start synchronously within user gesture
                 recognition.start();
-                return;
             } catch (e) {
                 console.warn('SpeechInput: recognition.start() threw; falling back to recorder', e);
                 _activeRecognition = null;
             }
         }
 
-        // 2. Fallback for browsers without SpeechRecognition (Firefox desktop, etc.)
-        _startMediaRecorderFallback(options);
+        // 2. Capture microphone audio stream so user can listen back to their recording
+        if (isRecordingSupported()) {
+            _startRecordingStream(options);
+        } else if (!isRecognitionSupported()) {
+            _isListening = false;
+            onError('not-supported');
+        }
     }
 
     function stopListening() {
@@ -324,6 +321,8 @@ const SpeechInput = (function () {
 
         if (_mediaRecorder && _mediaRecorder.state !== 'inactive') {
             try { _mediaRecorder.stop(); } catch (e) {}
+        } else {
+            _stopTracks();
         }
 
         _stopStream();

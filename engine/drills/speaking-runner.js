@@ -107,26 +107,92 @@ const SpeakingRunner = (function () {
         `;
 
         // Wire audio compare buttons
-        const playModelBtn = revealEl.querySelector('[data-action="play-model"]');
+        _attachAudioCompareEvents(revealEl);
+    }
+
+    function _attachAudioCompareEvents(parent) {
+        const playModelBtn = parent.querySelector('[data-action="play-model"]');
         if (playModelBtn) {
-            playModelBtn.addEventListener('click', () => {
-                if (typeof Speech !== 'undefined') {
-                    Speech.speak(_exercise.spanish);
-                }
-            });
+            playModelBtn.addEventListener('click', _playModelAudio);
         }
 
-        const playUserBtn = revealEl.querySelector('[data-action="play-user"]');
+        const playUserBtn = parent.querySelector('[data-action="play-user"]');
         if (playUserBtn) {
-            playUserBtn.addEventListener('click', () => {
-                if (_userAudioUrl) {
-                    if (_userAudioPlayer) {
-                        _userAudioPlayer.pause();
-                    }
-                    _userAudioPlayer = new Audio(_userAudioUrl);
-                    _userAudioPlayer.play().catch(e => console.warn('Could not play user audio', e));
-                }
+            playUserBtn.addEventListener('click', _playUserAudio);
+        }
+    }
+
+    function _playModelAudio() {
+        if (_userAudioPlayer) {
+            _userAudioPlayer.pause();
+            _userAudioPlayer = null;
+            const btn = _container ? _container.querySelector('[data-action="play-user"]') : null;
+            if (btn) {
+                btn.classList.remove('is-playing');
+                const span = btn.querySelector('span');
+                if (span) span.textContent = 'Your Voice';
+            }
+        }
+        if (typeof Speech !== 'undefined') {
+            Speech.speak(_exercise.spanish);
+        }
+    }
+
+    function _playUserAudio() {
+        if (!_userAudioUrl) return;
+        if (typeof Speech !== 'undefined' && typeof window.speechSynthesis !== 'undefined') {
+            window.speechSynthesis.cancel();
+        }
+        if (_userAudioPlayer) {
+            _userAudioPlayer.pause();
+            _userAudioPlayer = null;
+        }
+
+        const btn = _container ? _container.querySelector('[data-action="play-user"]') : null;
+        const span = btn ? btn.querySelector('span') : null;
+
+        try {
+            _userAudioPlayer = new Audio(_userAudioUrl);
+            if (btn) btn.classList.add('is-playing');
+            if (span) span.textContent = 'Playing...';
+
+            _userAudioPlayer.onended = () => {
+                if (btn) btn.classList.remove('is-playing');
+                if (span) span.textContent = 'Your Voice';
+                _userAudioPlayer = null;
+            };
+
+            _userAudioPlayer.onerror = () => {
+                if (btn) btn.classList.remove('is-playing');
+                if (span) span.textContent = 'Your Voice';
+                _userAudioPlayer = null;
+            };
+
+            _userAudioPlayer.play().catch(e => {
+                console.warn('Could not play user audio', e);
+                if (btn) btn.classList.remove('is-playing');
+                if (span) span.textContent = 'Your Voice';
             });
+        } catch (e) {
+            console.warn('Audio player init error', e);
+        }
+    }
+
+    function _updateUserAudioButton() {
+        if (!_container || !_userAudioUrl) return;
+        const compareBar = _container.querySelector('.sp-compare-bar');
+        if (!compareBar) return;
+        let playUserBtn = compareBar.querySelector('[data-action="play-user"]');
+        if (!playUserBtn) {
+            playUserBtn = document.createElement('button');
+            playUserBtn.type = 'button';
+            playUserBtn.className = 'sp-audio-compare-btn sp-btn-user';
+            playUserBtn.setAttribute('data-action', 'play-user');
+            playUserBtn.setAttribute('aria-label', 'Listen to your recording');
+            const icon = (typeof Art !== 'undefined') ? Art.icon('mic') : '🎙';
+            playUserBtn.innerHTML = `${icon}<span>Your Voice</span>`;
+            playUserBtn.addEventListener('click', _playUserAudio);
+            compareBar.appendChild(playUserBtn);
         }
     }
 
@@ -172,6 +238,7 @@ const SpeakingRunner = (function () {
             },
             onAudioReady: url => {
                 _userAudioUrl = url;
+                _updateUserAudioButton();
             },
             onAudioLevel: level => {
                 const meterBar = _container.querySelector('.sp-meter-fill');

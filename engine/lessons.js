@@ -384,6 +384,10 @@ function teardownLesson() {
     gradedStepIndices = new Set();
     lessonStartTime = null;
     lessonStats = { total: 0, correctFirstTry: 0 };
+    if (typeof _lessonUserAudioPlayer !== 'undefined' && _lessonUserAudioPlayer) {
+        try { _lessonUserAudioPlayer.pause(); } catch (e) {}
+        _lessonUserAudioPlayer = null;
+    }
     stepState = {};
 }
 
@@ -2234,6 +2238,10 @@ function lessonToggleSpeaking(btn) {
                 enableCheck();
                 lessonCheckSpeaking();
             },
+            onAudioReady: url => {
+                stepState.userAudioUrl = url;
+                _updateLessonCompareAudio();
+            },
             onError: err => {
                 _lessonSpeakingRecording = false;
                 if (btn) btn.classList.remove('sp-recording');
@@ -2242,6 +2250,73 @@ function lessonToggleSpeaking(btn) {
                 enableCheck();
             }
         });
+    }
+}
+
+let _lessonUserAudioPlayer = null;
+
+function _updateLessonCompareAudio() {
+    const btn = document.getElementById('lesson-btn-user-audio');
+    if (btn && stepState.userAudioUrl) {
+        btn.classList.remove('hidden');
+    }
+}
+
+function lessonPlayModelAudio() {
+    if (_lessonUserAudioPlayer) {
+        try { _lessonUserAudioPlayer.pause(); } catch (e) {}
+        _lessonUserAudioPlayer = null;
+        const btn = document.getElementById('lesson-btn-user-audio');
+        const label = document.getElementById('lesson-user-audio-label');
+        if (btn) btn.classList.remove('is-playing');
+        if (label) label.textContent = 'Your Voice';
+    }
+
+    const target = stepState.target || '';
+    if (target && typeof Speech !== 'undefined') {
+        Speech.speak(target);
+    }
+}
+
+function lessonPlayUserAudio() {
+    const url = stepState.userAudioUrl || (typeof SpeechInput !== 'undefined' ? SpeechInput.getRecordedAudioUrl() : null);
+    if (!url) return;
+
+    if (typeof Speech !== 'undefined' && typeof window.speechSynthesis !== 'undefined') {
+        window.speechSynthesis.cancel();
+    }
+    if (_lessonUserAudioPlayer) {
+        try { _lessonUserAudioPlayer.pause(); } catch (e) {}
+        _lessonUserAudioPlayer = null;
+    }
+
+    const btn = document.getElementById('lesson-btn-user-audio');
+    const label = document.getElementById('lesson-user-audio-label');
+
+    try {
+        _lessonUserAudioPlayer = new Audio(url);
+        if (btn) btn.classList.add('is-playing');
+        if (label) label.textContent = 'Playing...';
+
+        _lessonUserAudioPlayer.onended = () => {
+            if (btn) btn.classList.remove('is-playing');
+            if (label) label.textContent = 'Your Voice';
+            _lessonUserAudioPlayer = null;
+        };
+
+        _lessonUserAudioPlayer.onerror = () => {
+            if (btn) btn.classList.remove('is-playing');
+            if (label) label.textContent = 'Your Voice';
+            _lessonUserAudioPlayer = null;
+        };
+
+        _lessonUserAudioPlayer.play().catch(e => {
+            console.warn('Lesson audio playback error:', e);
+            if (btn) btn.classList.remove('is-playing');
+            if (label) label.textContent = 'Your Voice';
+        });
+    } catch (e) {
+        console.warn('Lesson audio init error:', e);
     }
 }
 
@@ -2261,15 +2336,31 @@ function lessonCheckSpeaking() {
     }
 
     const revealEl = document.getElementById('lesson-sp-reveal');
-    if (revealEl && evalResult.words && evalResult.words.length) {
+    if (revealEl) {
         revealEl.classList.remove('hidden');
+        const userAudioUrl = stepState.userAudioUrl || (typeof SpeechInput !== 'undefined' ? SpeechInput.getRecordedAudioUrl() : null);
+        const listenIcon = (typeof Art !== 'undefined') ? Art.icon('listening') : '🔊';
+        const micIcon = (typeof Art !== 'undefined') ? Art.icon('mic') : '🎙';
+
         revealEl.innerHTML = `
-            <div class="sp-word-breakdown">
-                ${evalResult.words.map(w => `
-                    <span class="sp-word-pill ${w.status === 'matched' ? 'sp-word-matched' : 'sp-word-missed'}">
-                        ${esc(w.word)}
-                    </span>
-                `).join('')}
+            ${evalResult.words && evalResult.words.length ? `
+                <div class="sp-word-breakdown">
+                    ${evalResult.words.map(w => `
+                        <span class="sp-word-pill ${w.status === 'matched' ? 'sp-word-matched' : 'sp-word-missed'}">
+                            ${esc(w.word)}
+                        </span>
+                    `).join('')}
+                </div>
+            ` : ''}
+            <div class="sp-compare-bar">
+                <button type="button" class="sp-audio-compare-btn sp-btn-model" onclick="lessonPlayModelAudio()" aria-label="Listen to model voice">
+                    ${listenIcon}
+                    <span>Model Voice</span>
+                </button>
+                <button type="button" class="sp-audio-compare-btn sp-btn-user ${userAudioUrl ? '' : 'hidden'}" id="lesson-btn-user-audio" onclick="lessonPlayUserAudio()" aria-label="Listen to your recording">
+                    ${micIcon}
+                    <span id="lesson-user-audio-label">Your Voice</span>
+                </button>
             </div>
         `;
     }

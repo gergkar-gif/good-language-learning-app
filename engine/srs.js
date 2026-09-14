@@ -796,6 +796,44 @@ function showAnswer() {
 }
 
 let _reviewSpeakingActive = false;
+let _reviewUserAudioUrl = null;
+let _reviewAudioPlayer = null;
+
+function reviewPlayUserAudio() {
+    const url = _reviewUserAudioUrl || (typeof SpeechInput !== 'undefined' ? SpeechInput.getRecordedAudioUrl() : null);
+    if (!url) return;
+
+    if (typeof Speech !== 'undefined' && typeof window.speechSynthesis !== 'undefined') {
+        window.speechSynthesis.cancel();
+    }
+    if (_reviewAudioPlayer) {
+        try { _reviewAudioPlayer.pause(); } catch (e) {}
+        _reviewAudioPlayer = null;
+    }
+
+    const btn = document.querySelector('.review-speak-replay-btn');
+    try {
+        _reviewAudioPlayer = new Audio(url);
+        if (btn) btn.classList.add('is-playing');
+
+        _reviewAudioPlayer.onended = () => {
+            if (btn) btn.classList.remove('is-playing');
+            _reviewAudioPlayer = null;
+        };
+
+        _reviewAudioPlayer.onerror = () => {
+            if (btn) btn.classList.remove('is-playing');
+            _reviewAudioPlayer = null;
+        };
+
+        _reviewAudioPlayer.play().catch(e => {
+            console.warn('SRS playback error:', e);
+            if (btn) btn.classList.remove('is-playing');
+        });
+    } catch (e) {
+        console.warn('SRS audio init error:', e);
+    }
+}
 
 function reviewSpeakWord(btn) {
     if (!currentReviewCard) return;
@@ -815,6 +853,7 @@ function reviewSpeakWord(btn) {
         return;
     }
 
+    _reviewUserAudioUrl = null;
     _reviewSpeakingActive = true;
     if (btn) btn.classList.add('is-recording');
     if (feedbackEl) {
@@ -830,18 +869,24 @@ function reviewSpeakWord(btn) {
         onInterim: interim => {
             if (feedbackEl) feedbackEl.textContent = interim;
         },
+        onAudioReady: url => {
+            _reviewUserAudioUrl = url;
+            const replayBtn = document.querySelector('.review-speak-replay-btn');
+            if (replayBtn) replayBtn.classList.remove('hidden');
+        },
         onFinal: transcript => {
             _reviewSpeakingActive = false;
             if (btn) btn.classList.remove('is-recording');
             const evalResult = SpeechInput.evaluate(target, transcript);
             if (feedbackEl) {
                 const safeTrans = (typeof esc === 'function' ? esc(transcript) : transcript);
+                const replayBtnHtml = `<button type="button" class="review-speak-replay-btn ${_reviewUserAudioUrl ? '' : 'hidden'}" onclick="reviewPlayUserAudio()" aria-label="Listen to your recording">🎙 Hear yourself</button>`;
                 if (evalResult.isCorrect) {
                     feedbackEl.className = 'review-speak-feedback is-correct';
-                    feedbackEl.innerHTML = `✓ "${safeTrans}" (${evalResult.accuracy}%)`;
+                    feedbackEl.innerHTML = `✓ "${safeTrans}" (${evalResult.accuracy}%) ${replayBtnHtml}`;
                 } else {
                     feedbackEl.className = 'review-speak-feedback is-wrong';
-                    feedbackEl.innerHTML = `✗ Heard "${safeTrans}" (${evalResult.accuracy}%)`;
+                    feedbackEl.innerHTML = `✗ Heard "${safeTrans}" (${evalResult.accuracy}%) ${replayBtnHtml}`;
                 }
             }
             showAnswer();
