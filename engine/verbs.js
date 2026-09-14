@@ -56,9 +56,13 @@ const Verbs = (function () {
     }
 
     function _escapeHtml(text) {
-        var d = document.createElement('div');
-        d.textContent = text;
-        return d.innerHTML;
+        return (typeof UI !== 'undefined' && UI.escape)
+            ? UI.escape(text)
+            : String(text == null ? '' : text)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;');
     }
 
     /**

@@ -81,9 +81,13 @@ const DeckLearn = (function () {
     let _solved = false; // true once the current question has been checked, before Next
 
     function _escapeHtml(text) {
-        const d = document.createElement('div');
-        d.textContent = text;
-        return d.innerHTML;
+        return (typeof UI !== 'undefined' && UI.escape)
+            ? UI.escape(text)
+            : String(text == null ? '' : text)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;');
     }
 
     function _shuffled(list) {

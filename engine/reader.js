@@ -620,7 +620,6 @@ window.Reader = {
 
         try {
             await this.ensureStories();
-            console.log('Reader: loaded', this.stories.length, 'stories from manifest');
             this.buildLibraryUI(libraryEl);
 
             // Event delegation, attached once — buildLibraryUI() replaces the
@@ -1206,11 +1205,9 @@ window.Reader = {
     async loadStory(storyId) {
         const storyMeta = this.stories.find(s => s.id === storyId);
         if (!storyMeta) {
-            console.error('Story not found in manifest:', storyId);
+            console.error('Reader: unknown story id', storyId);
             return;
         }
-
-        console.log('Reader: loading story', storyId, 'from', storyMeta.path);
 
         // Content.story() has no in-flight de-dup, so two taps on different
         // story cards race on the network, not on tap order — without this
@@ -1424,9 +1421,13 @@ window.Reader = {
     },
 
     escapeHtml(text) {
-        const div = document.createElement('div');
-        div.textContent = text;
-        return div.innerHTML;
+        return (typeof UI !== 'undefined' && UI.escape)
+            ? UI.escape(text)
+            : String(text == null ? '' : text)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;');
     },
 
     // Content words only — a full story's plain-text analysis also resolves

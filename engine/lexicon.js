@@ -88,11 +88,6 @@ const Lexicon = (function () {
             _wordIndex = words;
             _dictionary = dict;
             _frequency = new Map(freq.map((lemma, i) => [lemma, i]));
-            console.log('Lexicon loaded (' + _lang + '):',
-                Object.keys(verbs).length, 'verb forms,',
-                Object.keys(words).length, 'word forms,',
-                Object.keys(dict).length, 'dictionary entries,',
-                _frequency.size, 'ranked lemmas');
         }).catch(err => {
             console.error('Lexicon failed to load:', err);
             _verbIndex = _verbIndex || {};
