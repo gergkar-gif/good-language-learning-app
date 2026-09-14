@@ -1012,6 +1012,13 @@
   justify-content: center;
   gap: 48px;
   margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 480px) {
+  .lsn-summary-stats {
+    gap: 20px;
+  }
 }
 
 .lsn-summary-stat .jr-big {
@@ -2079,6 +2086,13 @@
   display: flex;
   justify-content: center;
   gap: 48px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 480px) {
+  .review-summary-stats {
+    gap: 20px;
+  }
 }
 
 .review-summary-streak {

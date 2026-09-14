@@ -1764,9 +1764,21 @@
 }
 
 .sp-results {
+    width: 100%;
     max-width: 480px;
     margin: 0 auto;
     text-align: center;
+    padding: 16px 0 32px;
+    box-sizing: border-box;
+}
+
+@media (max-width: 480px) {
+    .sp-results-score {
+        font-size: 44px;
+    }
+    .sp-results-lead {
+        font-size: 15px;
+    }
 }
 
 .sp-results-hero {
@@ -1862,6 +1874,19 @@
     max-width: 760px;
     margin: 0 auto;
     padding: 16px 20px 48px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+@media (max-width: 639px) {
+    .sp-driller-wrap {
+        padding: 12px 0 36px;
+    }
+}
+
+#sp-studio-body .sp-driller-wrap {
+    padding-left: 0;
+    padding-right: 0;
 }
 
 .sp-setup-head {
@@ -1886,7 +1911,7 @@
 
 .sp-prompt-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
     gap: 16px;
     margin-top: 16px;
 }
@@ -1905,6 +1930,16 @@
     box-shadow: none;
     transition: border-color var(--dur-fast) var(--ease-standard),
                 background var(--dur-fast) var(--ease-standard);
+}
+
+@media (max-width: 639px) {
+    .sp-prompt-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    .sp-prompt-grid .wk-card {
+        padding: 14px 16px;
+    }
 }
 
 .sp-prompt-grid .wk-card:hover {
@@ -1999,6 +2034,27 @@
     min-height: 38px;
     padding: 6px 14px;
     font-size: 13.5px;
+}
+
+@media (max-width: 480px) {
+    .sp-writing-header {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .sp-header-info {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    .sp-actions-bar .sp-submit-btn {
+        width: 100%;
+        text-align: center;
+    }
+    .sp-task-card {
+        padding: 16px 14px;
+    }
+    .sp-writing-textarea {
+        padding: 14px 12px;
+    }
 }
 
 .sp-task-card {
@@ -2211,6 +2267,21 @@
     border-color: var(--border);
 }
 
+@media (max-width: 639px) {
+    .sp-results-score-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px 16px;
+        gap: 14px;
+    }
+    .sp-score-circle {
+        margin: 0 auto;
+    }
+    .sp-score-title {
+        font-size: 1.15rem;
+    }
+}
+
 .sp-score-circle {
     width: 80px;
     height: 80px;
@@ -2256,6 +2327,16 @@
     grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
     gap: 12px;
     margin-bottom: 24px;
+}
+
+@media (max-width: 480px) {
+    .sp-dimensions-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+    .sp-dim-card {
+        padding: 10px 12px;
+    }
 }
 
 .sp-dim-card {
@@ -2306,8 +2387,14 @@
     margin-bottom: 24px;
 }
 
-@media (max-width: 600px) {
-    .sp-feedback-cols { grid-template-columns: 1fr; }
+@media (max-width: 639px) {
+    .sp-feedback-cols {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    .sp-feedback-col {
+        padding: 14px 16px;
+    }
 }
 
 .sp-feedback-col {
@@ -2436,6 +2523,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
     margin-bottom: 6px;
 }
 
@@ -2477,6 +2566,8 @@
     font-style: italic;
     font-size: 13.5px;
     color: var(--danger);
+    word-break: break-word;
+    overflow-wrap: break-word;
 }
 
 .sp-error-expl {
@@ -2484,6 +2575,8 @@
     font-size: 13px;
     color: var(--text);
     line-height: 1.45;
+    word-break: break-word;
+    overflow-wrap: break-word;
 }
 
 .sp-local-metrics {
@@ -2500,6 +2593,14 @@
     color: var(--text);
 }
 
+@media (max-width: 639px) {
+    .sp-local-metrics {
+        gap: 8px 14px;
+        font-size: 12px;
+        justify-content: space-between;
+    }
+}
+
 /* ============================================
    SPEAKING STUDIO & EXTENDED ORAL PRODUCTION
    ============================================ */
@@ -2508,6 +2609,14 @@
     max-width: 640px;
     margin: 0 auto;
     padding: 8px 16px 32px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+@media (max-width: 639px) {
+    .sp-studio-wrap {
+        padding: 8px 0 32px;
+    }
 }
 
 .sp-studio-nav {
@@ -2573,6 +2682,27 @@
     align-items: center;
     flex-wrap: wrap;
     gap: 12px;
+}
+
+@media (max-width: 480px) {
+    .sp-prod-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+    .sp-prod-timer-box {
+        justify-content: space-between;
+        width: 100%;
+    }
+    .sp-prod-timer-bar {
+        flex: 1;
+        max-width: 160px;
+    }
+    .sp-studio-tab {
+        padding: 8px 12px;
+        font-size: 13px;
+        gap: 6px;
+    }
 }
 
 .sp-btn-link {
@@ -2775,6 +2905,18 @@
     min-width: 200px;
 }
 
+@media (max-width: 639px) {
+    .sp-prod-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .sp-finish-btn,
+    .sp-prod-actions .vbtn {
+        width: 100%;
+        min-width: 0;
+    }
+}
+
 /* Review Screen */
 .sp-prod-review-wrap {
     display: flex;
@@ -2822,6 +2964,8 @@
 
 .sp-own-voice-player {
     width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
     height: 40px;
     outline: none;
     border-radius: 4px;
@@ -2889,6 +3033,18 @@
 .sp-grade-btn {
     flex: 1.5;
     min-width: 220px;
+}
+
+@media (max-width: 639px) {
+    .sp-prod-review-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .sp-grade-btn,
+    .sp-prod-review-actions .vbtn {
+        width: 100%;
+        min-width: 0;
+    }
 }
 
 /* Audio replay on results screen */

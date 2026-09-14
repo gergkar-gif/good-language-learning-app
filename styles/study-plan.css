@@ -38,6 +38,15 @@
     max-width: 480px;
     margin: 0 auto;
     padding: 24px 20px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+@media (max-width: 639px) {
+    .sp-checklist,
+    .sp-complete {
+        padding: 20px 0;
+    }
 }
 
 .sp-checklist-eyebrow,

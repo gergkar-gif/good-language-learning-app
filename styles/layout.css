@@ -20,6 +20,8 @@
   /* The header used to supply its own padding. Now that it is part of the
      page, the shell insets everything to one consistent margin. */
   padding: 0 16px;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 /* ---- Page header ---- */
