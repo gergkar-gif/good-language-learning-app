@@ -28,20 +28,20 @@ constraint on all future work, not a one-off feature:
   accounts/cloud storage. Keep the existing lightweight vanilla
   architecture wherever possible.
 
+**Roadmap Logging Discipline.** Set 2026-09-14 as a mandatory routine:
+Every new feature, architectural enhancement, content addition, and meaningful fix must be logged directly in `ROADMAP.md` upon completion. No completed work should remain undocumented or unacknowledged in the roadmap.
+
 **2026-09-10 audit against this principle**: the app already aligns
 closely — no framework, no bundler, no CDN dependency, ~1.1MB of plain
 `engine/*.js`, everything persisted as small direct localStorage writes
-(see `engine/progress.js`, `engine/xp.js`, `engine/srs.js`). Concrete
-gaps: no service worker yet, so a cold load still needs the network for
-the HTML/JS/content shell (no offline capability today); and there's no
-formal "core vs. enhancement" boundary written down anywhere — it's
-implicit in how things were built rather than an enforced rule. A
-service-worker app-shell is the natural first concrete step whenever
-that gets picked up.
+(see `engine/progress.js`, `engine/xp.js`, `engine/srs.js`). Completed
+2026-09-14: Service Worker (`sw.js`) and PWA manifest (`manifest.webmanifest`)
+precache the entire app shell and cache visited content, making the core app
+100% usable offline.
 
 ## Current priority queue
 
-Active work, in dependency order, as of 2026-09-11 — supersedes any
+Active work, in dependency order, as of 2026-09-14 — supersedes any
 in-session task tracker, which doesn't persist between sessions. Update
 this list directly rather than relying on a tool-specific todo list.
 
@@ -61,14 +61,11 @@ this list directly rather than relying on a tool-specific todo list.
    exercise now counts as evidence immediately, not only if later
    redrawn into a recycle block) and folded `DrillHistory` into
    `LearnerModel` as `weakDrillers()`.
-7. **Cloud persistence** (Cloudflare Worker + D1) — the last step of
-   this initiative (step 7 below). **Code built and pushed 2026-09-11**
-   (`engine/sync.js`, `cloudflare-worker/sync-worker.js` + schema, My
-   Journey's new Account card) — **not yet deployed/live**: needs a new
-   D1 database, a new Worker, and a Resend account, all manual dashboard
-   steps documented in `CLOUD_SYNC_SETUP.md`. That's the actual remaining
-   work — walk through the setup doc together, then smoke-test with a
-   real email.
+7. ~~**Cloud persistence**~~ (Cloudflare Worker + D1) — **Deployed & Live 2026-09-14**:
+   Cloudflare Worker deployed at `https://parlour-sync.gergkar.workers.dev`,
+   D1 database schema (`magic_links`, `users`) installed and verified, CORS
+   controls active, and magic-link passwordless email login dispatched via
+   Resend. Client integration live in My Journey's Account card (`engine/sync.js`).
 8. **Italics content retrofit** — paused 2026-09-10 at the user's
    request (background agents burn credits fast); 282/1366 grammar
    files done (ES A1/A2 partial, HU A1 partial) and pushed. Resume only
@@ -146,13 +143,37 @@ this list directly rather than relying on a tool-specific todo list.
       - Voice response mode on flashcard reviews with immediate accuracy feedback.
     - **Dual Audio Replay & Model Comparison**:
       - Side-by-side comparison bar across Lessons, Workshop, and SRS:
-        `[🔊 Model Voice]` plays the native model pronunciation, while `[🎙 Your Voice]` replays the learner's actual recorded speech clip.
+        `[Model Voice]` plays the native model pronunciation, while `[Your Voice]` replays the learner's actual recorded speech clip.
       - Mutual audio interruption, live `Playing...` active state, and dark-mode styling.
     - **Mobile-Proof Engineering & Learner Hesitation Debounce**:
       - Fixed iOS Safari user gesture expiration by invoking `recognition.start()` strictly synchronously within the tap event handler.
       - Solved hardware mic contention on mobile devices by running non-blocking background `MediaRecorder` audio buffering alongside native STT.
       - Extended silence debounce from 1.3s to **2.8 seconds** with automatic pause resumption on native mobile `onend` to accommodate learner hesitations ("um, uh, mhh") and thinking pauses.
       - Added safety session ceiling (25 seconds) and asset version cache-busting (`scripts/stamp-assets.py`).
+12. **Writing & Speaking Studios, CEFR Grader Engine & Oral Leniency** — **Built & deployed 2026-09-14**:
+    - **Dual Grading Engine** (`engine/grader/`): deterministic zero-dependency `LocalGrader` for instant local rubric scoring + optional `GraderEngine` for Cloudflare AI / Anthropic LLM feedback.
+    - **Writing Studio** (`WritingDriller` in `engine/drills/writing.js`): open-ended free-text written production with topic/level selection, prompt suggestions, and structured CEFR assessments.
+    - **Speaking Studio** (`SpeakingStudio` in `engine/drills/speaking.js`): unstructured speaking production practice with prompt generation, live microphone transcription, and audio playback.
+    - **Oral Modality Calibration** (`engine/grader/grader-prompt.js`): calibrated prompts and local metrics to accommodate oral speech traits (pauses, filler words, transcript capitalization/punctuation artifacts).
+    - **Manual Speech Transcript Editing**: allows learners to edit the raw speech recognition transcription before submission on unstructured speaking tasks.
+    - **Instant Auto-Stop on 100% Target Match**: automatically stops recording the exact instant target speech matches 100%, removing manual mic clicks.
+    - **Mobile Hardware Contention & Lifecycle Hardening**: eliminated MediaStream audio track hardware locks on non-audio steps, and resolved Android single-shot continuous listening conflicts.
+13. **CEFR "Can-Do" Checklist Competencies Integration** — **Built & deployed 2026-09-14**:
+    - Extracted and indexed official CEFR competency descriptors in `content/es/indexes/competencies-index.json`.
+    - Wired competencies directly into `LearnerModel` (`recordCompetencyEvidence`, `getCompetencyCoverage`), Post-Lesson Summary screen (`renderLessonSummary`), My Journey mastery stats, Level Tests, and Studio prompts.
+14. **Library: Dual-Card Recommended Reading & Deep Bilingual Topic Search** — **Built & deployed 2026-09-14**:
+    - **Dual-Card Recommendation Banner ("Pick Your Pace")**: Pinned at the top of Library tab (`.lib-recs-container`), computing a Comfortable Read ($i+0$, fluency consolidation) and a Challenging Read ($i+1$, lexical stretch / authentic narrative) based on LearnerPath level and unread status.
+    - **Deep Bilingual Topic Search**: Universal topic matching across English and Spanish (`BILINGUAL_TOPIC_SYNONYMS`) covering titles, authors, levels, unit titles, summaries, topic tags, and paragraph keywords.
+    - **Manifest Keyword Indexing**: `build-manifest.py` automatically extracts up to 80 thematic keywords from story paragraphs for offline instant search.
+    - **Word-Boundary Matching**: queries $\le 4$ chars enforce word boundaries, avoiding substring false positives.
+15. **Offline Support & Progressive Web App (PWA)** — **Built & deployed 2026-09-14**:
+    - **Service Worker** (`sw.js`): Precaches 82 core application shell assets (HTML, 8 stylesheets, core engine scripts, base curriculum and story manifests).
+    - **Dynamic Content Caching**: Network-first caching for visited lessons, grammar explanations, and readings (`/content/`).
+    - **Web App Manifest** (`manifest.webmanifest`): Standalone PWA installation on mobile and desktop with Constructivist branding.
+    - **Network-Only Bypass**: Explicitly bypasses Cloudflare sync endpoints and external AI APIs.
+    - **Offline Connectivity Status**: Floating status banner (`.offline-banner`) notifies users when operating offline.
+16. **Decks Importer (Anki, Quizlet, CSV)** — **Built & deployed 2026-09-14**:
+    - Auto-detects delimiters (tab, comma, semicolon, dash, colon), strips HTML tags, handles quotes, and validates lemmas against Lexicon dictionary.
 
 ## Content & curriculum
 
@@ -744,19 +765,13 @@ this list directly rather than relying on a tool-specific todo list.
   of per-lesson fragments in the same shape, already handled by the
   type-'world' filter above.
 
-- [ ] Library search should eventually go beyond per-room title matching
-  (the 2026-09-09 fix above) to a topic/keyword search across the whole
-  library — a learner at B1 who wants something about "technology" or
-  "phone" should get every matching reading back regardless of which
-  room or shelf it lives in, not just titles that literally contain the
-  word. Flagged 2026-09-09 by the user as a later-tinkering item, not
-  requested to build now. Would need some kind of topic tagging per
-  story (stories already carry a `vocabularyTopics[]` field per the
-  schema — worth checking whether that's populated widely enough to
-  search against, or whether it'd need backfilling / a separate
-  freetext index) plus a library-wide (not per-room) search UI, since
-  today's search box only filters cards already visible inside one
-  open room.
+- [x] **Library topic search & Recommended Reading banner** — **Built & deployed 2026-09-14**:
+  Replaced simple per-room title filtering with universal deep topic search and dual-card recommendation.
+  - `build-manifest.py` extracts summaries, descriptions, topics, and up to 80 thematic keywords directly from story paragraphs into `stories/manifest.json`.
+  - `Reader._filterUniversalSearch()` expands English/Spanish topic synonyms (`BILINGUAL_TOPIC_SYNONYMS`) across titles, authors, summaries, unit titles, and keywords with whole-word boundary protection for short terms ($\le 4$ chars).
+  - Matched cards display `.story-card-topic-match` badges ("Topic match" or "Unit topic").
+  - Pinned dual-card recommendation banner ("Pick Your Pace") at top of Library tab provides Comfortable ($i+0$, fluency consolidation) and Challenging ($i+1$, lexical stretch / authentic narrative) reads based on LearnerPath position and unread status.
+  - Clean search bar: no topic chips or fillers under search bar, preserving minimal aesthetic.
 
 - [x] Every reading should carry a short attribution/context line at
   the very bottom of the story. Flagged 2026-09-09 by the user as a
@@ -1826,12 +1841,13 @@ replacement for them.
 - [x] **Full Listening & Speaking cross-app integration.** Built & deployed 2026-09-14:
   - **Timed Sessions (`StudyPlan` & `StudyPlanRunner`)**: Wired `listening` (`ListeningDriller`) and `speaking` (`SpeakingDriller`) into the time-budget allocation algorithm and study-plan screen runner.
   - **Reviews (SRS Flashcards & Decks in `engine/srs.js`)**: Added an "Audio-First / Listening" review direction (`audio-en`) where the card front plays native audio without revealing text, testing auditory recall before revealing spelling and translation, with clickable direction toggles.
-  - **Post-Lesson Summary Screen (`engine/lessons.js`)**: Added quick 1-tap listening (`[🎧 Listening (5 questions)]`) and speaking (`[🎙 Speaking (5 sentences)]`) practice buttons to `renderLessonSummary()` for immediate reinforcement right after finishing a lesson.
+  - **Post-Lesson Summary Screen (`engine/lessons.js`)**: Added quick 1-tap listening (`[Listening (5 questions)]`) and speaking (`[Speaking (5 sentences)]`) practice buttons to `renderLessonSummary()` for immediate reinforcement right after finishing a lesson.
   - **Learner Model & Drill History**: Added `speaking` driller tracking to `LearnerModel.weakDrillers()` and `DrillHistory.record()` upon speaking driller completion.
 - [ ] Browser extension: add words to your deck from anywhere on the web.
-  - [ ] Same idea, one click: import an article/email/any text straight
-    into the Reader.
-- [ ] Small AI agent for discussion/writing practice.
+  - [x] **Import an article/email/any text straight into the Reader ("My Texts")** — **Built & live**:
+    Learners can paste, type, or import any custom target-language text via the "My Texts" shelf in the Library (`engine/library.js`). Custom texts are saved locally and render with Parlour's interactive dictionary word popups, morphology breakdown, and "+ Add to SRS Deck" actions.
+- [x] **Discussion & writing practice studio ("Writing Studio" & "Speaking Studio")** — **Built & deployed 2026-09-14**:
+    Integrated CEFR-aligned open-ended production studios into Workshop (`WritingDriller` in `engine/drills/writing.js` and `SpeakingStudio` in `engine/drills/speaking.js`) with deterministic local rubric scoring (`LocalGrader`) and optional cloud LLM feedback (`GraderEngine`). Real-time mic recording, manual transcript editing, and oral leniency.
 - [x] End-of-lesson summary screen ("well done, you finished"). **Built 2026-08-27** — see TROUBLESHOOTING_BACKLOG.md's "Lesson-complete summary card" entry for detail.
 - [x] Audio: small sound effects for right answer, wrong answer, finishing
   a lesson, etc. **Built 2026-08-27**, then redesigned same day on
