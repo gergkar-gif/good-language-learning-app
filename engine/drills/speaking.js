@@ -189,6 +189,11 @@ const SpeakingDriller = (function () {
             XP.award(earnedXP, 'speaking-driller');
         }
 
+        // Record accuracy into DrillHistory
+        if (typeof DrillHistory !== 'undefined' && _seen > 0) {
+            DrillHistory.record('speaking', { correct: _correct, wrong: _seen - _correct });
+        }
+
         _renderResults();
     }
 
@@ -409,7 +414,7 @@ const SpeakingDriller = (function () {
         if (typeof RecommendationEngine !== 'undefined' && typeof RecommendationEngine.mountNextAction === 'function') {
             const slot = document.getElementById('sp-next-action-slot');
             if (slot) {
-                RecommendationEngine.mountNextAction(slot, 'speaking');
+                RecommendationEngine.mountNextAction(slot, { excludeDrillerId: 'speaking' });
             }
         }
     }
@@ -421,6 +426,16 @@ const SpeakingDriller = (function () {
 
         if (options && options.level) {
             _level = options.level;
+        }
+        if (options && options.count) {
+            _questionCount = options.count;
+            _mode = MODE.COUNT;
+        }
+
+        if (options && options.autoStart) {
+            _phase = PHASE.SESSION;
+            _startSession();
+            return;
         }
 
         _phase = PHASE.SETTINGS;

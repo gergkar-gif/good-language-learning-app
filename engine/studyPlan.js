@@ -33,6 +33,8 @@ const StudyPlan = (function () {
     const SEC_PER_REVIEW = 20;
     const SEC_PER_GRAMMAR_Q = 30;
     const SEC_PER_VOCAB_WORD = 25;
+    const SEC_PER_LISTENING_Q = 35;
+    const SEC_PER_SPEAKING_Q = 35;
     const DEFAULT_LESSON_MINUTES = 10; // fallback when estimatedMinutes is null (100% of HU, ~38% of ES)
     const LESSON_GRACE_MINUTES = 2;    // estimate slop tolerance, not a hard wall
     const TEST_MINUTES = 18;           // a level test is one indivisible block
@@ -115,7 +117,34 @@ const StudyPlan = (function () {
             remaining -= half;
         }
 
-        // 4. Leftover — top up reviews with whatever's left of the backlog.
+        // 4. Listening & Speaking practice — auditory and oral production.
+        // If the learner has remaining time (>= 2.5 min), allocate listening
+        // and speaking practice to create a truly well-rounded session.
+        const canListen = typeof Speech !== 'undefined' && Speech.available();
+        const canSpeak = (typeof SpeechInput !== 'undefined' && SpeechInput.isSupported()) || (typeof Speech !== 'undefined' && Speech.available());
+        const curLevel = (typeof LearnerPath !== 'undefined' && LearnerPath.currentLevel)
+            ? LearnerPath.currentLevel().toLowerCase()
+            : 'all';
+
+        const weakDrillerList = (typeof LearnerModel !== 'undefined') ? LearnerModel.weakDrillers() : [];
+        const isListeningWeak = weakDrillerList.some(d => d.drillerId === 'listening');
+        const isSpeakingWeak = weakDrillerList.some(d => d.drillerId === 'speaking');
+
+        if (remaining >= 2.5 && canListen) {
+            const listeningMinutes = (remaining >= 5 || isListeningWeak) ? Math.min(3, remaining / 2) : Math.min(2.5, remaining);
+            const count = Math.max(5, Math.round(listeningMinutes * 60 / SEC_PER_LISTENING_Q));
+            items.push({ kind: 'listening', count, level: curLevel });
+            remaining -= (count * SEC_PER_LISTENING_Q) / 60;
+        }
+
+        if (remaining >= 2.5 && canSpeak) {
+            const speakingMinutes = Math.min(3, remaining);
+            const count = Math.max(5, Math.round(speakingMinutes * 60 / SEC_PER_SPEAKING_Q));
+            items.push({ kind: 'speaking', count, level: curLevel });
+            remaining -= (count * SEC_PER_SPEAKING_Q) / 60;
+        }
+
+        // 5. Leftover — top up reviews with whatever's left of the backlog.
         const dueRemaining = due.length - firstPassCount;
         if (remaining > 1 && dueRemaining > 0) {
             const topUp = Math.min(dueRemaining, Math.floor(remaining * 60 / SEC_PER_REVIEW));

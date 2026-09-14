@@ -364,7 +364,12 @@ let reviewLimit = null;
 const REVIEW_DIRECTION_KEY = 'app_reviewDirection';
 let reviewDirection = 'es-en';
 try {
-    reviewDirection = localStorage.getItem(REVIEW_DIRECTION_KEY) === 'en-es' ? 'en-es' : 'es-en';
+    const saved = localStorage.getItem(REVIEW_DIRECTION_KEY);
+    if (saved === 'en-es' || saved === 'audio-en') {
+        reviewDirection = saved;
+    } else {
+        reviewDirection = 'es-en';
+    }
 } catch (error) {
     // Private browsing with storage disabled: the default is fine.
 }
@@ -411,20 +416,38 @@ function updateDirectionToggle() {
     const btn = document.getElementById('dk-direction-toggle');
     const esLabel = document.getElementById('dk-direction-es');
     const enLabel = document.getElementById('dk-direction-en');
-    const englishFirst = reviewDirection === 'en-es';
+    const audioLabel = document.getElementById('dk-direction-audio');
 
     if (btn) {
-        btn.setAttribute('aria-checked', String(englishFirst));
+        btn.setAttribute('data-direction', reviewDirection);
+        btn.setAttribute('aria-checked', reviewDirection !== 'es-en' ? 'true' : 'false');
     }
     if (esLabel) {
         esLabel.textContent = (typeof Lang !== 'undefined') ? Lang.name() : 'Spanish';
-        esLabel.classList.toggle('dk-direction-active', !englishFirst);
+        esLabel.classList.toggle('dk-direction-active', reviewDirection === 'es-en');
     }
-    if (enLabel) enLabel.classList.toggle('dk-direction-active', englishFirst);
+    if (enLabel) enLabel.classList.toggle('dk-direction-active', reviewDirection === 'en-es');
+    if (audioLabel) audioLabel.classList.toggle('dk-direction-active', reviewDirection === 'audio-en');
+}
+
+function setReviewDirection(dir) {
+    if (reviewDirection === dir) return;
+    reviewDirection = dir;
+    try {
+        localStorage.setItem(REVIEW_DIRECTION_KEY, reviewDirection);
+    } catch (error) {
+        // Private browsing with storage disabled: the preference just won't
+        // survive a reload.
+    }
+    updateDirectionToggle();
+    if (currentReviewCard) renderCard();
 }
 
 function toggleReviewDirection() {
-    reviewDirection = reviewDirection === 'es-en' ? 'en-es' : 'es-en';
+    if (reviewDirection === 'es-en') reviewDirection = 'en-es';
+    else if (reviewDirection === 'en-es') reviewDirection = 'audio-en';
+    else reviewDirection = 'es-en';
+
     try {
         localStorage.setItem(REVIEW_DIRECTION_KEY, reviewDirection);
     } catch (error) {
@@ -709,6 +732,7 @@ function renderCard() {
     // show it (Lexicon.withArticle) — silently a no-op for anything that
     // isn't a noun with a known simple gender.
     const spanishDisplay = Lexicon.withArticle(currentReviewCard.spanish);
+    const isAudioFirst = reviewDirection === 'audio-en';
     const englishFirst = reviewDirection === 'en-es';
 
     // Listenable, same Speech.button()/data-speak mechanism Decks' own word
@@ -719,14 +743,34 @@ function renderCard() {
     // #review-answer) until the learner reveals it anyway, so the audio
     // can't leak the answer before a typed/self-graded attempt.
     const spanishHtml = esc(spanishDisplay) + (typeof Speech !== 'undefined' ? Speech.button(currentReviewCard.spanish) : '');
-    if (englishFirst) {
+    if (isAudioFirst) {
+        const audioFrontHtml = `
+            <div class="review-audio-prompt">
+                <button type="button" class="btn-audio-prompt" onclick="if (typeof Speech !== 'undefined') Speech.speak(reviewExpectedSpanish);" aria-label="Listen">
+                    <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+                    <span class="audio-prompt-text">Tap to hear word 🔊</span>
+                </button>
+            </div>
+        `;
+        document.getElementById('review-front').innerHTML = audioFrontHtml;
+        document.getElementById('review-back').innerHTML = `
+            <div class="review-audio-revealed-es">${spanishHtml}</div>
+            <div class="review-audio-revealed-en">${esc(displayEnglish)}</div>
+        `;
+        document.getElementById('review-context').textContent = '(listening)';
+        // Auto-play audio once when card appears if sound is available
+        if (typeof Speech !== 'undefined' && Speech.available()) {
+            Speech.speak(currentReviewCard.spanish);
+        }
+    } else if (englishFirst) {
         document.getElementById('review-front').textContent = displayEnglish;
         document.getElementById('review-back').innerHTML = spanishHtml;
+        document.getElementById('review-context').textContent = displayType ? `(${displayType})` : '';
     } else {
         document.getElementById('review-front').innerHTML = spanishHtml;
         document.getElementById('review-back').textContent = displayEnglish;
+        document.getElementById('review-context').textContent = displayType ? `(${displayType})` : '';
     }
-    document.getElementById('review-context').textContent = displayType ? `(${displayType})` : '';
     reviewExpectedSpanish = currentReviewCard.spanish;
     reviewExpectedEnglish = displayEnglish;
 
@@ -1029,11 +1073,17 @@ function checkTypedAnswer() {
     const field = document.getElementById('review-type-field');
     if (!field) return;
 
+    const isAudio = reviewDirection === 'audio-en';
     const englishFirst = reviewDirection === 'en-es';
     const typed = srsNormalise(field.value);
-    const ok = englishFirst
-        ? typed === srsNormalise(reviewExpectedSpanish)
-        : englishAlternatives(reviewExpectedEnglish).includes(typed);
+    let ok = false;
+    if (isAudio) {
+        ok = englishAlternatives(reviewExpectedEnglish).includes(typed) || typed === srsNormalise(reviewExpectedSpanish);
+    } else if (englishFirst) {
+        ok = typed === srsNormalise(reviewExpectedSpanish);
+    } else {
+        ok = englishAlternatives(reviewExpectedEnglish).includes(typed);
+    }
 
     field.classList.toggle('correct', ok);
     field.classList.toggle('wrong', !ok);

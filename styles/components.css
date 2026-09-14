@@ -1957,11 +1957,68 @@
 .dk-direction-label {
   font-size: 13px;
   color: var(--muted);
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.15s ease;
+}
+
+.dk-direction-label:hover {
+  color: var(--text);
 }
 
 .dk-direction-label.dk-direction-active {
   color: var(--text);
   font-weight: 700;
+}
+
+/* Audio-first review card styles */
+.review-audio-prompt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 0;
+}
+
+.btn-audio-prompt {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: var(--surface, #fff);
+  border: 2px solid var(--border, #e0e0e0);
+  border-radius: 24px;
+  padding: 12px 24px;
+  cursor: pointer;
+  color: var(--primary, #0070f3);
+  font-family: inherit;
+  transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+}
+
+.btn-audio-prompt:hover {
+  border-color: var(--primary, #0070f3);
+  transform: scale(1.03);
+}
+
+.btn-audio-prompt svg {
+  fill: currentColor;
+}
+
+.audio-prompt-text {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text, #111);
+}
+
+.review-audio-revealed-es {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: var(--text, #111);
+}
+
+.review-audio-revealed-en {
+  font-size: 16px;
+  color: var(--muted, #666);
 }
 
 /* The switch itself is .geo-toggle (styles/geometry.css) — navy circle for

@@ -1651,8 +1651,11 @@ function summaryWordsHtml(words) {
 // "Recommended for you" card) rather than a separate mini-game engine.
 const QUICK_REINFORCE_COUNT = 5;
 
-function summaryReinforceHtml(grammarSkill, words) {
-    if (!grammarSkill && !words.length) return '';
+function summaryReinforceHtml(grammarSkill, words, level) {
+    const hasVoice = typeof Speech !== 'undefined' && Speech.available();
+    const hasSpeechInput = (typeof SpeechInput !== 'undefined' && SpeechInput.isSupported()) || hasVoice;
+
+    if (!grammarSkill && !words.length && !hasVoice && !hasSpeechInput) return '';
 
     return `
         <div class="lsn-summary-reinforce">
@@ -1663,12 +1666,22 @@ function summaryReinforceHtml(grammarSkill, words) {
                         Practice in Workshop →
                     </button>
                     <button class="dk-secondary" data-reinforce-grammar="${esc(grammarSkill)}">
-                        Quick Reinforce (${QUICK_REINFORCE_COUNT} questions)
+                        Quick Grammar (${QUICK_REINFORCE_COUNT} questions)
                     </button>
                 ` : ''}
                 ${words.length ? `
                     <button class="dk-secondary" data-reinforce-vocab="1">
                         Vocabulary (${words.length} ${words.length === 1 ? 'word' : 'words'})
+                    </button>
+                ` : ''}
+                ${hasVoice ? `
+                    <button class="dk-secondary" data-reinforce-listening="1" title="Practice listening to spoken sentences">
+                        🎧 Listening (${QUICK_REINFORCE_COUNT} questions)
+                    </button>
+                ` : ''}
+                ${hasSpeechInput ? `
+                    <button class="dk-secondary" data-reinforce-speaking="1" title="Speak sentences out loud">
+                        🎙 Speaking (${QUICK_REINFORCE_COUNT} sentences)
                     </button>
                 ` : ''}
             </div>
@@ -1766,7 +1779,7 @@ async function renderLessonSummary(firstTime, rankBefore) {
             ${rankedUp ? `<p class="lsn-summary-milestone">Rank up! You're now Rank ${rankAfter}.</p>` : ''}
             ${summaryMilestonesHtml(milestones)}
             ${summaryWordsHtml(words)}
-            ${summaryReinforceHtml(grammarSkill, words)}
+            ${summaryReinforceHtml(grammarSkill, words, currentLesson ? currentLesson.level : null)}
         </div>
     `;
     const summaryScrollParent = container.closest('.content') || document.querySelector('.content');
@@ -1798,6 +1811,22 @@ async function renderLessonSummary(firstTime, rankBefore) {
     if (reinforceVocabBtn) {
         reinforceVocabBtn.addEventListener('click', () => {
             _openReinforce('vocabulary', { words: words });
+        });
+    }
+
+    const reinforceListeningBtn = container.querySelector('[data-reinforce-listening]');
+    if (reinforceListeningBtn) {
+        reinforceListeningBtn.addEventListener('click', () => {
+            const lvl = (currentLesson && currentLesson.level) ? currentLesson.level : null;
+            _openReinforce('listening', { count: QUICK_REINFORCE_COUNT, autoStart: true, level: lvl });
+        });
+    }
+
+    const reinforceSpeakingBtn = container.querySelector('[data-reinforce-speaking]');
+    if (reinforceSpeakingBtn) {
+        reinforceSpeakingBtn.addEventListener('click', () => {
+            const lvl = (currentLesson && currentLesson.level) ? currentLesson.level : null;
+            _openReinforce('speaking', { count: QUICK_REINFORCE_COUNT, autoStart: true, level: lvl });
         });
     }
 

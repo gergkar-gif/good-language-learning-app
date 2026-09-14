@@ -305,6 +305,7 @@ const LearnerModel = (function () {
         verbs: 'Verb Driller',
         translation: 'Translation Driller',
         listening: 'Listening Driller',
+        speaking: 'Speaking Driller',
         'hu-suffix': 'Suffix Driller',
         'hu-prefix': 'Prefix Driller',
         'hu-morphology': 'Morphology Driller',

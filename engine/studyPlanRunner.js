@@ -73,6 +73,8 @@ const StudyPlanRunner = (function () {
         if (item.kind === 'test') return `${item.level} level test`;
         if (item.kind === 'grammar') return `Grammar: ${humanize(item.skill)} — ${item.count} ${item.count === 1 ? 'question' : 'questions'}`;
         if (item.kind === 'vocabulary') return `Vocabulary — ${item.words.length} ${item.words.length === 1 ? 'word' : 'words'}`;
+        if (item.kind === 'listening') return `Listening — ${item.count} ${item.count === 1 ? 'question' : 'questions'}`;
+        if (item.kind === 'speaking') return `Speaking — ${item.count} ${item.count === 1 ? 'sentence' : 'sentences'}`;
         return '';
     }
 
@@ -144,6 +146,16 @@ const StudyPlanRunner = (function () {
             host.innerHTML = '<div id="study-plan-driller"></div>';
             VocabularyDriller.render(document.getElementById('study-plan-driller'), { words: item.words });
             _embeddedDriller = VocabularyDriller;
+        } else if (item.kind === 'listening' && typeof ListeningDriller !== 'undefined') {
+            const host = activityHost();
+            host.innerHTML = '<div id="study-plan-driller"></div>';
+            ListeningDriller.render(document.getElementById('study-plan-driller'), { count: item.count || 5, level: item.level, autoStart: true });
+            _embeddedDriller = ListeningDriller;
+        } else if (item.kind === 'speaking' && typeof SpeakingDriller !== 'undefined') {
+            const host = activityHost();
+            host.innerHTML = '<div id="study-plan-driller"></div>';
+            SpeakingDriller.render(document.getElementById('study-plan-driller'), { count: item.count || 5, level: item.level, autoStart: true });
+            _embeddedDriller = SpeakingDriller;
         } else if (item.kind === 'lesson' && typeof startLesson === 'function') {
             startLesson(item.lessonId);
         } else if (item.kind === 'test' && typeof LevelTest !== 'undefined') {
@@ -167,17 +179,17 @@ const StudyPlanRunner = (function () {
     // Called by RecommendationEngine.mountNextAction() whenever StudyPlan
     // is active, instead of it computing a fresh generic recommendation.
     // The one thing every item kind needs on its own results/summary
-    // screen: a way back into this one. Embedded items (grammar/vocabulary)
+    // screen: a way back into this one. Embedded items (grammar/vocabulary/listening/speaking)
     // never actually left #study-plan-screen, so this just re-renders in
     // place; review's own summary lives on the #review tab and genuinely
     // navigates back.
     function mountNextAction(container) {
         if (!container) return;
-        const actionsEl = container.querySelector('.vspeed-results-actions');
+        const actionsEl = container.querySelector('.vspeed-results-actions') || container.querySelector('.sp-results-actions');
         if (actionsEl) {
-            const playAgainBtn = actionsEl.querySelector('[data-action="play-again"]');
+            const playAgainBtn = actionsEl.querySelector('[data-action="play-again"]') || actionsEl.querySelector('[data-action="practice-again"]');
             if (playAgainBtn) {
-                playAgainBtn.classList.remove('vbtn-primary');
+                playAgainBtn.classList.remove('vbtn-primary', 'sp-start-btn');
                 playAgainBtn.classList.add('vbtn-secondary');
             }
             const slot = document.createElement('div');

@@ -1786,6 +1786,11 @@ replacement for them.
   - Dual audio comparison bar: listen to native model voice and listen back to your own voice recording.
   - Mobile-proof gesture activation on iOS Safari, non-blocking MediaRecorder capture, and learner-friendly 2.8s hesitation leeway.
   - One-tap "Can't speak right now" snooze preference.
+- [x] **Full Listening & Speaking cross-app integration.** Built & deployed 2026-09-14:
+  - **Timed Sessions (`StudyPlan` & `StudyPlanRunner`)**: Wired `listening` (`ListeningDriller`) and `speaking` (`SpeakingDriller`) into the time-budget allocation algorithm and study-plan screen runner.
+  - **Reviews (SRS Flashcards & Decks in `engine/srs.js`)**: Added an "Audio-First / Listening" review direction (`audio-en`) where the card front plays native audio without revealing text, testing auditory recall before revealing spelling and translation, with clickable direction toggles.
+  - **Post-Lesson Summary Screen (`engine/lessons.js`)**: Added quick 1-tap listening (`[🎧 Listening (5 questions)]`) and speaking (`[🎙 Speaking (5 sentences)]`) practice buttons to `renderLessonSummary()` for immediate reinforcement right after finishing a lesson.
+  - **Learner Model & Drill History**: Added `speaking` driller tracking to `LearnerModel.weakDrillers()` and `DrillHistory.record()` upon speaking driller completion.
 - [ ] Browser extension: add words to your deck from anywhere on the web.
   - [ ] Same idea, one click: import an article/email/any text straight
     into the Reader.
