@@ -269,6 +269,55 @@ async function initialiseApp() {
         const direction = searchParams.get('direction') || (minigameParam === 'translation' ? 'alternate' : undefined);
         Workshop.open(minigameParam, { autoStart: true, count, duration, mode, skill, direction });
     }
+
+    // Register Service Worker for offline PWA capabilities
+    _initServiceWorker();
+}
+
+function _initServiceWorker() {
+    if (typeof window === 'undefined' || !('serviceWorker' in navigator)) return;
+
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js').then(reg => {
+            console.log('Parlour: ServiceWorker registered successfully, scope:', reg.scope);
+
+            reg.addEventListener('updatefound', () => {
+                const newWorker = reg.installing;
+                if (!newWorker) return;
+                newWorker.addEventListener('statechange', () => {
+                    if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                        console.log('Parlour: New content available; will apply on refresh.');
+                    }
+                });
+            });
+        }).catch(err => {
+            console.warn('Parlour: ServiceWorker registration skipped/failed:', err);
+        });
+    });
+
+    function updateOnlineStatus() {
+        const isOffline = !navigator.onLine;
+        document.body.classList.toggle('is-offline', isOffline);
+        let indicator = document.getElementById('offline-indicator');
+        if (isOffline) {
+            if (!indicator) {
+                indicator = document.createElement('div');
+                indicator.id = 'offline-indicator';
+                indicator.className = 'offline-banner';
+                indicator.textContent = 'Working offline — your progress will be saved locally.';
+                document.body.appendChild(indicator);
+            }
+            indicator.classList.remove('hidden');
+        } else if (indicator) {
+            indicator.classList.add('hidden');
+        }
+    }
+
+    window.addEventListener('online', updateOnlineStatus);
+    window.addEventListener('offline', updateOnlineStatus);
+    if (!navigator.onLine) {
+        updateOnlineStatus();
+    }
 }
 
 document.addEventListener('DOMContentLoaded', initialiseApp);
