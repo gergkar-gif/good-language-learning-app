@@ -181,7 +181,7 @@
                     <div id="review-flip-actions" class="review-flip-actions">
                         <button id="show-answer-btn" class="review-show-btn" onclick="showAnswer()">Show Answer</button>
                         <button type="button" id="review-speak-btn" class="review-speak-btn" onclick="reviewSpeakWord(this)" title="Say the word out loud" aria-label="Speak answer">
-                            <span class="review-speak-icon">🎙</span>
+                            <span class="review-speak-icon"><svg class="art icon" viewBox="0 0 24 24" role="presentation" aria-hidden="true" focusable="false"><rect class="ink-line" x="9" y="3" width="6" height="11" rx="3"/><path class="ink-line" d="M5 10a7 7 0 0 0 14 0"/><line class="ink-line" x1="12" y1="17" x2="12" y2="21"/><line class="ink-line" x1="8" y1="21" x2="16" y2="21"/></svg></span>
                             <span class="review-speak-label">Speak</span>
                         </button>
                     </div>
@@ -196,7 +196,7 @@
                                 placeholder="Type or speak answer" autocomplete="off" autocapitalize="off" spellcheck="false"
                                 onkeydown="if(event.key==='Enter')checkTypedAnswer()">
                             <button type="button" class="lsn-mic-addon" onclick="typeof lessonInlineVoiceInput === 'function' && lessonInlineVoiceInput('#review-type-field', this)" aria-label="Speak to type" title="Speak to type">
-                                🎙
+                                <svg class="art icon" viewBox="0 0 24 24" role="presentation" aria-hidden="true" focusable="false"><rect class="ink-line" x="9" y="3" width="6" height="11" rx="3"/><path class="ink-line" d="M5 10a7 7 0 0 0 14 0"/><line class="ink-line" x1="12" y1="17" x2="12" y2="21"/><line class="ink-line" x1="8" y1="21" x2="16" y2="21"/></svg>
                             </button>
                         </div>
                         <button class="review-show-btn" onclick="checkTypedAnswer()">Check</button>

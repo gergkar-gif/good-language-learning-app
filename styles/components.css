@@ -1658,7 +1658,8 @@
   stroke: currentColor;
 }
 
-.lsn-mic-addon.is-listening {
+.lsn-mic-addon.is-listening,
+.lsn-mic-addon.is-recording {
   color: var(--accent);
   border-color: var(--accent);
   background: rgba(224, 113, 72, 0.15);

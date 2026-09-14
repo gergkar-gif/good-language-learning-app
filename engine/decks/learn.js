@@ -271,7 +271,7 @@ const DeckLearn = (function () {
                     <input class="dkl-input" type="text" placeholder="${_escapeHtml(placeholder)}"
                         autocomplete="off" autocapitalize="off" spellcheck="false">
                     <button type="button" class="lsn-mic-addon" onclick="typeof lessonInlineVoiceInput === 'function' && lessonInlineVoiceInput('.dkl-input', this)" aria-label="Speak to type" title="Speak to type">
-                        ${typeof Art !== 'undefined' ? Art.icon('mic') : '🎙'}
+                        ${typeof Art !== 'undefined' ? Art.icon('mic') : ''}
                     </button>
                 </div>
                 ${typeof UI !== 'undefined' && UI.diacriticsBarHtml ? UI.diacriticsBarHtml('.dkl-input') : ''}

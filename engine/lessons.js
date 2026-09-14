@@ -1070,7 +1070,7 @@ const stepRenderers = {
             <div class="lsn-input-with-mic">
                 <input id="blank-input" class="lsn-input" type="text" placeholder="Type or speak what you hear" autocomplete="off" autocapitalize="off" spellcheck="false">
                 <button type="button" class="lsn-mic-addon" onclick="lessonInlineVoiceInput('#blank-input', this)" aria-label="Speak to type" title="Speak to type">
-                    ${typeof Art !== 'undefined' ? Art.icon('mic') : '🎙'}
+                    ${typeof Art !== 'undefined' ? Art.icon('mic') : ''}
                 </button>
             </div>
             ${typeof UI !== 'undefined' && UI.diacriticsBarHtml ? UI.diacriticsBarHtml('#blank-input') : ''}
@@ -1115,7 +1115,7 @@ const stepRenderers = {
             <div class="lsn-input-with-mic">
                 <input id="blank-input" class="lsn-input" type="text" placeholder="Type or speak the missing word" autocomplete="off" autocapitalize="off" spellcheck="false">
                 <button type="button" class="lsn-mic-addon" onclick="lessonInlineVoiceInput('#blank-input', this)" aria-label="Speak to type" title="Speak to type">
-                    ${typeof Art !== 'undefined' ? Art.icon('mic') : '🎙'}
+                    ${typeof Art !== 'undefined' ? Art.icon('mic') : ''}
                 </button>
             </div>
             ${typeof UI !== 'undefined' && UI.diacriticsBarHtml ? UI.diacriticsBarHtml('#blank-input') : ''}
@@ -1266,7 +1266,7 @@ const stepRenderers = {
                         <div class="sp-target-lead">
                             <p class="sp-es-text">${esc(target)}</p>
                             <button type="button" class="sp-listen-btn" onclick="Speech.speak('${safeTarget}')" aria-label="Listen">
-                                ${typeof Art !== 'undefined' ? Art.icon('listening') : '🔊'} Listen
+                                ${typeof Art !== 'undefined' ? Art.icon('listening') : ''} Listen
                             </button>
                         </div>
                     </div>
@@ -1274,7 +1274,7 @@ const stepRenderers = {
                     <div class="sp-target-lead">
                         <p class="sp-es-text">${esc(target)}</p>
                         <button type="button" class="sp-listen-btn" onclick="Speech.speak('${safeTarget}')" aria-label="Listen">
-                            ${typeof Art !== 'undefined' ? Art.icon('listening') : '🔊'} Listen
+                            ${typeof Art !== 'undefined' ? Art.icon('listening') : ''} Listen
                         </button>
                     </div>
                     ${english ? `<p class="sp-en-sub">${esc(english)}</p>` : ''}
@@ -1282,7 +1282,7 @@ const stepRenderers = {
             </div>
             <div class="sp-mic-section">
                 <button type="button" class="sp-mic-btn" id="lesson-mic-btn" onclick="lessonToggleSpeaking(this)" aria-label="Record speech">
-                    <span class="sp-mic-icon-wrap">${typeof Art !== 'undefined' ? Art.icon('speaking') : '🎙'}</span>
+                    <span class="sp-mic-icon-wrap">${typeof Art !== 'undefined' ? Art.icon('speaking') : ''}</span>
                 </button>
                 <span class="sp-mic-status" id="lesson-mic-status">Tap to speak</span>
                 <div class="sp-live-transcript hidden" id="lesson-live-transcript" aria-live="polite"></div>

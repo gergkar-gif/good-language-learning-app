@@ -249,7 +249,7 @@ const SpeakingRunner = (function () {
                         <div class="sp-target-lead">
                             <p class="sp-es-text">${_esc(exercise.spanish)}</p>
                             <button type="button" class="sp-listen-btn" data-action="listen-lead" aria-label="Listen to model pronunciation">
-                                ${typeof Art !== 'undefined' ? Art.icon('listening') : '🔊'} Listen
+                                ${typeof Art !== 'undefined' ? Art.icon('listening') : ''} Listen
                             </button>
                         </div>
                         <p class="sp-en-sub">${_esc(exercise.english)}</p>
@@ -260,7 +260,7 @@ const SpeakingRunner = (function () {
                 <div class="sp-mic-section">
                     <button type="button" class="sp-mic-btn" data-action="toggle-mic" aria-label="Start recording speech">
                         <span class="sp-mic-icon-wrap">
-                            ${typeof Art !== 'undefined' ? Art.icon('speaking') : '<span class="sp-mic-glyph">🎙</span>'}
+                            ${typeof Art !== 'undefined' ? Art.icon('speaking') : ''}
                         </span>
                     </button>
                     <span class="sp-mic-status">Tap to speak</span>

@@ -1538,6 +1538,20 @@
     border-color: rgba(233, 75, 22, 0.4);
 }
 
+[data-theme="dark"] .sp-eval-good,
+:root:not([data-theme="light"]) .sp-eval-good {
+    background: var(--success-bg);
+    color: var(--success);
+    border-color: rgba(82, 163, 116, 0.4);
+}
+
+[data-theme="dark"] .sp-eval-retry,
+:root:not([data-theme="light"]) .sp-eval-retry {
+    background: rgba(224, 113, 72, 0.15);
+    color: var(--accent);
+    border-color: rgba(224, 113, 72, 0.4);
+}
+
 /* Driller Shell & Results */
 .sp-settings {
     max-width: 480px;

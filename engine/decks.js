@@ -940,7 +940,7 @@ const Decks = (function () {
             </div>
             <div class="dk-search-bar">
                 <div class="dk-search-wrap">
-                    <span class="dk-search-icon" aria-hidden="true">${typeof Art !== 'undefined' ? Art.icon('decks') : '🔍'}</span>
+                    <span class="dk-search-icon" aria-hidden="true">${typeof Art !== 'undefined' ? Art.icon('decks') : ''}</span>
                     <input type="search" id="dk-universal-search" class="dk-search-input"
                            placeholder="Search decks by title, topic, level, or words..."
                            autocomplete="off" autocapitalize="off" spellcheck="false"

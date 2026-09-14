@@ -713,7 +713,7 @@ window.Reader = {
         let html = `
             <div class="library-search-bar">
                 <div class="library-search-wrap">
-                    <span class="library-search-icon" aria-hidden="true">${typeof Art !== 'undefined' ? Art.icon('decks') : '🔍'}</span>
+                    <span class="library-search-icon" aria-hidden="true">${typeof Art !== 'undefined' ? Art.icon('decks') : ''}</span>
                     <input type="search" id="library-universal-search" class="library-search-input"
                            placeholder="Search all stories, topics, authors, or levels..."
                            autocomplete="off" autocapitalize="off" spellcheck="false"
