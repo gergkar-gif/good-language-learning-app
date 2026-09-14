@@ -250,6 +250,7 @@ const SpeechInput = (function () {
         _listenStartTime = Date.now();
 
         const lang = options.lang || getSpeechLang();
+        const target = options.target || null;
         const onInterim = options.onInterim || (() => {});
         const onFinal = options.onFinal || (() => {});
         const onError = options.onError || (() => {});
@@ -336,6 +337,16 @@ const SpeechInput = (function () {
                             onInterim(combined);
                             if (onAudioLevel) {
                                 onAudioLevel(0.5 + Math.random() * 0.45);
+                            }
+
+                            // Auto-stop recording immediately if learner hits 100% accuracy on target
+                            if (target) {
+                                const targetList = Array.isArray(target) ? target : [target];
+                                const fullMatch = targetList.some(tgt => isFullTargetMatch(tgt, combined));
+                                if (fullMatch) {
+                                    stopListening();
+                                    return;
+                                }
                             }
 
                             // Silence buffer: automatically finish 2.8s after learner stops speaking (in auto mode only)
@@ -583,6 +594,24 @@ const SpeechInput = (function () {
         };
     }
 
+    // Determine if candidate speech has cleanly and fully matched the target (100% words matched)
+    function isFullTargetMatch(targetSentence, candidateTranscript) {
+        if (!targetSentence || !candidateTranscript) return false;
+        const targetTokens = tokenize(targetSentence);
+        const recTokens = tokenize(candidateTranscript);
+        if (!targetTokens.length || !recTokens.length) return false;
+
+        // Ensure learner didn't just speak a long rambling sentence that happened to contain the target words
+        const maxTokens = targetTokens.length <= 2
+            ? targetTokens.length + 1
+            : targetTokens.length + Math.max(2, Math.floor(targetTokens.length * 0.35));
+
+        if (recTokens.length > maxTokens) return false;
+
+        const evalResult = evaluate(targetSentence, candidateTranscript);
+        return evalResult.accuracy >= 100 && evalResult.matchedCount === targetTokens.length;
+    }
+
     return {
         isRecognitionSupported,
         isRecordingSupported,
@@ -598,6 +627,7 @@ const SpeechInput = (function () {
         releaseStream,
         getRecordedAudioUrl,
         evaluate,
+        isFullTargetMatch,
         normalizeForSpeech
     };
 })();

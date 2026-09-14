@@ -2367,6 +2367,7 @@ function lessonToggleSpeaking(btn) {
 
     if (typeof SpeechInput !== 'undefined') {
         SpeechInput.startListening({
+            target: stepState.target || '',
             onInterim: interim => {
                 if (liveEl) liveEl.textContent = interim;
             },
@@ -2574,7 +2575,12 @@ function lessonInlineVoiceInput(selector, btn) {
     _inlineVoiceActive = true;
     if (btn) btn.classList.add('is-recording');
 
+    const target = (typeof stepState !== 'undefined')
+        ? (stepState.acceptable || (stepState.answer ? [stepState.answer] : null))
+        : null;
+
     SpeechInput.startListening({
+        target: target,
         onInterim: interim => {
             input.value = interim;
             input.dispatchEvent(new Event('input', { bubbles: true }));

@@ -216,6 +216,43 @@ async function runTests() {
     SpeechInput.stopListening();
     console.log('[PASS] Second listening step starts cleanly without stuck toggle state.');
 
+    console.log('--- Test 5: Auto-stop recording on 100% target match ---');
+    // Verify isFullTargetMatch
+    assert.strictEqual(SpeechInput.isFullTargetMatch('Buenos días', 'buenos dias'), true, 'Exact normalized match should be 100%');
+    assert.strictEqual(SpeechInput.isFullTargetMatch('Si elegimos esta opción', 'si elegimos esta opcion'), true);
+    assert.strictEqual(SpeechInput.isFullTargetMatch('Buenos días', 'buenos'), false, 'Partial utterance is not 100%');
+    assert.strictEqual(SpeechInput.isFullTargetMatch('Hola', 'hola amigo que tal como estas hoy en tu casa'), false, 'Rambling phrase should not auto-match');
+
+    // Test startListening with target and auto-stop on simulated recognition result
+    let finalReceived = '';
+    SpeechInput.startListening({
+        target: 'Buenos días',
+        onFinal: (txt) => {
+            finalReceived = txt;
+        }
+    });
+    assert.strictEqual(SpeechInput.isListening(), true);
+
+    const activeRec = createdRecognitions[createdRecognitions.length - 1];
+    assert.ok(activeRec, 'Mock recognition instance must exist');
+
+    // 1. Partial interim speech: should NOT stop
+    activeRec.onresult({
+        resultIndex: 0,
+        results: [[{ transcript: 'Buenos', isFinal: false }]]
+    });
+    assert.strictEqual(SpeechInput.isListening(), true, 'Partial match should keep recording active');
+
+    // 2. Full match speech (100%): should automatically stop recording!
+    activeRec.onresult({
+        resultIndex: 0,
+        results: [[{ transcript: 'Buenos días', isFinal: true }]]
+    });
+    assert.strictEqual(SpeechInput.isListening(), false, '100% match should automatically stop recording');
+    assert.strictEqual(finalReceived, 'Buenos días', 'onFinal should receive the 100% matched transcript');
+
+    console.log('[PASS] Recording automatically stops the moment learner gets 100% match without clicking mic.');
+
     console.log('\n[ALL PASS] SpeechInput lifecycle test suite passed.');
 }
 

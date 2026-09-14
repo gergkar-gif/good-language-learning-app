@@ -230,6 +230,7 @@ const SpeakingRunner = (function () {
         }
 
         SpeechInput.startListening({
+            target: _exercise.spanish || _exercise.sentence || '',
             onInterim: interim => {
                 if (liveText) liveText.textContent = interim;
             },

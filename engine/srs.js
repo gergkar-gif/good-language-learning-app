@@ -910,6 +910,7 @@ function reviewSpeakWord(btn) {
     const target = isEnFirst ? currentReviewCard.spanish : (currentReviewCard.spanish || currentReviewCard.english);
 
     SpeechInput.startListening({
+        target: target,
         onInterim: interim => {
             if (feedbackEl) feedbackEl.textContent = interim;
         },
