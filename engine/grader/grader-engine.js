@@ -102,10 +102,11 @@
             const taskInstructions = context.taskInstructions || 'Complete the task appropriately in the target language.';
             const targetSkills = context.targetSkills || [];
             const language = context.language || (typeof Lang !== 'undefined' ? Lang.code() : 'es');
+            const modality = context.modality || (context.isSpeaking || (taskType && String(taskType).toLowerCase().includes('oral')) ? 'oral' : 'written');
 
             // 1. Instant deterministic local analysis
             const localStats = LocalGrader
-                ? LocalGrader.analyze(productionText, { cefrLevel })
+                ? LocalGrader.analyze(productionText, { cefrLevel, modality })
                 : { wordCount: productionText.split(/\s+/).length, targetWordCountMet: true };
 
             // 2. Perform AI formative evaluation
@@ -117,6 +118,7 @@
                     targetSkills,
                     learnerProduction: productionText,
                     language,
+                    modality,
                     retryCount
                 });
 
@@ -127,7 +129,8 @@
                     evaluatedAt: new Date().toISOString(),
                     cefrLevel,
                     taskType,
-                    language
+                    language,
+                    modality
                 };
 
                 return aiResult;
@@ -151,6 +154,7 @@
                 targetSkills,
                 learnerProduction,
                 language,
+                modality,
                 retryCount
             } = params;
 
@@ -160,7 +164,7 @@
                 taskInstructions,
                 targetSkills,
                 learnerProduction,
-                { language }
+                { language, modality, taskType }
             );
 
             if (retryCount > 0) {
@@ -204,6 +208,7 @@
                         targetSkills,
                         learnerProduction,
                         language,
+                        modality,
                         prompt
                     });
                 }

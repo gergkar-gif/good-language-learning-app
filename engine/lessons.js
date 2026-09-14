@@ -44,6 +44,7 @@ let gradedStepIndices = new Set();
 // many of those never failed on the way there. See solveStep()/failStep().
 let lessonStartTime = null;
 let lessonStats = { total: 0, correctFirstTry: 0 };
+let lastLessonChecklist = null;
 
 // The tab the lesson was opened from, so closing it goes back there.
 let lessonReturnTab = 'learn';
@@ -422,6 +423,7 @@ function teardownLesson() {
     gradedStepIndices = new Set();
     lessonStartTime = null;
     lessonStats = { total: 0, correctFirstTry: 0 };
+    lastLessonChecklist = null;
     if (typeof _lessonUserAudioPlayer !== 'undefined' && _lessonUserAudioPlayer) {
         try { _lessonUserAudioPlayer.pause(); } catch (e) {}
         _lessonUserAudioPlayer = null;
@@ -1541,6 +1543,9 @@ function nextLessonStep() {
     if (stepState.sourceStep && stepState.sourceStep.type === 'srs') {
         lessonSaveSrsChoices();
     }
+    if (stepState.sourceStep && stepState.sourceStep.type === 'checklist') {
+        lessonSaveChecklistChoices();
+    }
 
     currentStepIndex++;
 
@@ -1795,6 +1800,56 @@ function summaryStreakLine() {
 // stat. The words-just-learned section isn't gated the same way —
 // replaying a lesson to reinforce its vocabulary is a real reason to
 // revisit it, and the words taught don't change on a redo.
+function summaryGoalsHtml(checklistResults) {
+    const list = checklistResults || (
+        currentLesson && currentLesson.id && typeof LearnerModel !== 'undefined'
+            ? LearnerModel.competenciesForLesson(currentLesson.id)
+            : []
+    );
+    if (!list || !list.length) return '';
+
+    const unverified = list.filter(item => !item.checked || item.state !== 'verified');
+    const total = list.length;
+
+    if (unverified.length === 0) {
+        return `
+            <div class="lsn-summary-goals lsn-summary-goals-achieved">
+                <p class="lsn-summary-goals-badge">
+                    <span class="lsn-goal-check-icon"><svg class="sp-verified-svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg></span> All ${total} lesson ${total === 1 ? 'goal' : 'goals'} achieved
+                </p>
+            </div>
+        `;
+    }
+
+    return `
+        <div class="lsn-summary-goals lsn-summary-goals-remediation">
+            <p class="lsn-summary-goals-title">Goals to lock down:</p>
+            <div class="lsn-summary-goals-list">
+                ${unverified.map(item => {
+                    const badgeClass = item.state === 'confidence-gap' ? 'lsn-goal-badge-gap' : 'lsn-goal-badge-review';
+                    const badgeText = item.state === 'confidence-gap' ? 'Confidence Gap' : 'Needs Practice';
+                    return `
+                        <div class="lsn-goal-item">
+                            <div class="lsn-goal-header">
+                                <span class="lsn-goal-text">"${esc(item.text)}"</span>
+                                <span class="lsn-goal-badge ${badgeClass}">${badgeText}</span>
+                            </div>
+                            <div class="lsn-goal-actions">
+                                <button type="button" class="dk-secondary lsn-goal-action-btn" data-remediate-practice="${esc(item.text)}">
+                                    Quick 3-Question Practice
+                                </button>
+                                <button type="button" class="dk-secondary lsn-goal-action-btn" data-remediate-speaking="${esc(item.text)}">
+                                    Practice in Speaking Studio →
+                                </button>
+                            </div>
+                        </div>
+                    `;
+                }).join('')}
+            </div>
+        </div>
+    `;
+}
+
 async function renderLessonSummary(firstTime, rankBefore) {
     const container = document.getElementById('lesson-content');
     if (!container) return;
@@ -1849,6 +1904,7 @@ async function renderLessonSummary(firstTime, rankBefore) {
             ${summaryStreakLine()}
             ${rankedUp ? `<p class="lsn-summary-milestone">Rank up! You're now Rank ${rankAfter}.</p>` : ''}
             ${summaryMilestonesHtml(milestones)}
+            ${summaryGoalsHtml(lastLessonChecklist)}
             ${summaryWordsHtml(words)}
             ${summaryReinforceHtml(grammarSkill, words, currentLesson ? currentLesson.level : null)}
         </div>
@@ -1856,6 +1912,30 @@ async function renderLessonSummary(firstTime, rankBefore) {
     const summaryScrollParent = container.closest('.content') || document.querySelector('.content');
     if (summaryScrollParent) summaryScrollParent.scrollTop = 0;
     else window.scrollTo(0, 0);
+
+    const remPracticeBtns = container.querySelectorAll('[data-remediate-practice]');
+    remPracticeBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            if (grammarSkill) {
+                _openReinforce('grammar', { skill: grammarSkill, count: 3 });
+            } else if (words && words.length) {
+                _openReinforce('vocabulary', { words: words.slice(0, 3) });
+            } else {
+                _openReinforce('speaking', { count: 3 });
+            }
+        });
+    });
+
+    const remSpeakingBtns = container.querySelectorAll('[data-remediate-speaking]');
+    remSpeakingBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const goalText = btn.getAttribute('data-remediate-speaking');
+            _openReinforce('speaking', {
+                targetCompetency: goalText,
+                level: currentLesson ? currentLesson.level : 'A1'
+            });
+        });
+    });
 
     const addWordsBtn = container.querySelector('[data-add-lesson-words]');
     if (addWordsBtn) {
@@ -2308,6 +2388,35 @@ function lessonDeckId() {
     }
 
     return 'lesson:' + currentLesson.id.replace(/^lesson\./, '').split('.').join('-');
+}
+
+function lessonSaveChecklistChoices() {
+    const container = document.getElementById('lesson-content');
+    if (!container || !stepState.sourceStep) return;
+    const inputs = container.querySelectorAll('.lsn-check-item input[type="checkbox"]');
+    const items = (stepState.sourceStep.items || []).map((text, i) => {
+        const input = inputs[i];
+        return {
+            text: text,
+            checked: input ? !!input.checked : false
+        };
+    });
+
+    const acc = lessonStats.total > 0
+        ? Math.round((lessonStats.correctFirstTry / lessonStats.total) * 100)
+        : 100;
+
+    const recorded = items.map(item => ({
+        text: item.text,
+        checked: item.checked,
+        exerciseAccuracy: acc
+    }));
+
+    lastLessonChecklist = recorded;
+
+    if (currentLesson && currentLesson.id && typeof LearnerModel !== 'undefined' && typeof LearnerModel.recordCompetencies === 'function') {
+        LearnerModel.recordCompetencies(currentLesson.id, recorded);
+    }
 }
 
 function lessonSaveSrsChoices() {

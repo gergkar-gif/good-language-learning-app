@@ -24,6 +24,7 @@ const LevelTest = (function () {
     let answers = {};       // question id -> chosen option text
     let order = {};         // question id -> shuffled options, fixed per sitting
     let marked = false;
+    let diagnosticDismissed = false;
 
     // A learner who scores this high on a level's test knows the level, not
     // just enough of it to be waved through — high enough above the 80%
@@ -224,6 +225,82 @@ const LevelTest = (function () {
         const answered = Object.keys(answers).filter(k => answers[k]).length;
         const previous = resultFor(level);
 
+        // Pre-test readiness diagnostic
+        if (!diagnosticDismissed && !marked && typeof LearnerModel !== 'undefined' && typeof LearnerModel.unverifiedCompetencies === 'function') {
+            let stats = null;
+            let unverified = [];
+            try {
+                stats = await LearnerModel.competencyStats(level);
+                unverified = await LearnerModel.unverifiedCompetencies(level);
+            } catch (e) {}
+
+            if (unverified.length > 0 && stats && stats.total > 0) {
+                host.innerHTML = `
+                    <button class="dk-back" data-close-test="1">← Back to lessons</button>
+                    <div class="lt-readiness-card">
+                        <div class="lt-readiness-head">
+                            <span class="sp-level-pill">${esc(level)} Diagnostic</span>
+                            <h2 class="lt-readiness-title">${esc(level)} Readiness Check</h2>
+                            <p class="lt-readiness-sub">
+                                <strong>${stats.verified}</strong> of <strong>${stats.total}</strong> syllabus competencies verified (${stats.percent}%).
+                            </p>
+                        </div>
+                        <div class="lt-readiness-body">
+                            <p class="lt-readiness-alert">
+                                You have <strong>${unverified.length}</strong> unchecked or developing ${unverified.length === 1 ? 'goal' : 'goals'} in ${esc(level)}:
+                            </p>
+                            <ul class="lt-readiness-list">
+                                ${unverified.slice(0, 6).map(c => `
+                                    <li class="lt-readiness-item">
+                                        <div class="lt-readiness-item-main">
+                                            <span class="lt-readiness-unit">${esc(c.unitTitle || ('Unit ' + c.unitLabel))}</span>
+                                            <span class="lt-readiness-text">"${esc(c.text)}"</span>
+                                        </div>
+                                        <span class="cando-badge ${c.state === 'confidence-gap' ? 'cando-badge-gap' : 'cando-badge-review'}">
+                                            ${c.state === 'confidence-gap' ? 'Confidence Gap' : 'Needs Practice'}
+                                        </span>
+                                    </li>
+                                `).join('')}
+                                ${unverified.length > 6 ? `<li class="lt-readiness-more">+${unverified.length - 6} more unverified competencies</li>` : ''}
+                            </ul>
+                        </div>
+                        <div class="lt-readiness-actions">
+                            <button type="button" class="vbtn vbtn-secondary lt-action-btn" data-lt-review-goals="1">
+                                Review in Can-Do Passport →
+                            </button>
+                            <button type="button" class="vbtn vbtn-primary lt-action-btn" data-lt-proceed-test="1">
+                                Proceed to Test →
+                            </button>
+                        </div>
+                    </div>
+                `;
+
+                const proceedBtn = host.querySelector('[data-lt-proceed-test]');
+                if (proceedBtn) {
+                    proceedBtn.addEventListener('click', () => {
+                        diagnosticDismissed = true;
+                        render(level);
+                    });
+                }
+
+                const reviewBtn = host.querySelector('[data-lt-review-goals]');
+                if (reviewBtn) {
+                    reviewBtn.addEventListener('click', () => {
+                        showTab('journey', document.querySelector('.nav button[data-tab="journey"]'));
+                    });
+                }
+
+                const backBtn = host.querySelector('[data-close-test]');
+                if (backBtn) {
+                    backBtn.addEventListener('click', () => {
+                        showTab('learn', document.querySelector('[data-tab="learn"]'));
+                    });
+                }
+
+                return;
+            }
+        }
+
         host.innerHTML = `
             <button class="dk-back" data-close-test="1">← Back to lessons</button>
             <div class="lt-head">
@@ -272,6 +349,7 @@ const LevelTest = (function () {
     }
 
     function open(level) {
+        diagnosticDismissed = false;
         document.querySelectorAll('.tab').forEach(tab => tab.classList.add('hidden'));
         document.getElementById('leveltest').classList.remove('hidden');
         if (typeof PageHeader !== 'undefined') PageHeader.render({

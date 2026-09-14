@@ -4900,3 +4900,457 @@
   color: var(--terracotta, #E94B16);
 }
 
+
+/* ================================================================
+   CEFR COMPETENCY & CAN-DO PORTFOLIO STYLES
+   ================================================================ */
+
+/* 1. Post-Lesson Summary Goals & Remediation */
+.lsn-summary-goals {
+  width: 100%;
+  margin: 16px 0;
+  box-sizing: border-box;
+}
+
+.lsn-summary-goals-achieved {
+  padding: 12px 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm, 2px);
+  text-align: center;
+}
+
+.lsn-summary-goals-badge {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--success);
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lsn-goal-check-icon {
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.lsn-summary-goals-remediation {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm, 2px);
+  padding: 16px;
+  text-align: left;
+}
+
+.lsn-summary-goals-title {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 12px 0;
+}
+
+.lsn-summary-goals-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.lsn-goal-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px 14px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm, 2px);
+}
+
+.lsn-goal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.lsn-goal-text {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.4;
+}
+
+.lsn-goal-badge {
+  font-size: 11px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 2px 7px;
+  border-radius: var(--radius-sm, 2px);
+  border: 1px solid currentColor;
+}
+
+.lsn-goal-badge-gap {
+  color: var(--primary);
+  border-color: var(--primary);
+  background: rgba(16, 42, 71, 0.06);
+}
+
+[data-theme="dark"] .lsn-goal-badge-gap,
+:root:not([data-theme="light"]) .lsn-goal-badge-gap {
+  color: var(--text);
+  border-color: var(--text);
+  background: rgba(245, 241, 232, 0.08);
+}
+
+.lsn-goal-badge-review {
+  color: var(--accent-dark);
+  border-color: var(--accent);
+  background: rgba(233, 75, 22, 0.08);
+}
+
+[data-theme="dark"] .lsn-goal-badge-review,
+:root:not([data-theme="light"]) .lsn-goal-badge-review {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: rgba(233, 75, 22, 0.15);
+}
+
+.lsn-goal-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.lsn-goal-action-btn {
+  font-size: 12.5px;
+  padding: 6px 12px;
+  min-height: 32px;
+}
+
+@media (max-width: 480px) {
+  .lsn-goal-actions {
+    flex-direction: column;
+  }
+  .lsn-goal-action-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* 2. My Journey Can-Do Portfolio Block & Modal */
+.jr-cando-chips {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.jr-cando-chip {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm, 2px);
+  background: var(--surface);
+  color: var(--text);
+}
+
+.jr-cando-chip.chip-verified {
+  border-color: var(--success);
+  color: var(--success);
+}
+
+.jr-cando-chip.chip-gap {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+[data-theme="dark"] .jr-cando-chip.chip-gap,
+:root:not([data-theme="light"]) .jr-cando-chip.chip-gap {
+  border-color: var(--text);
+  color: var(--text);
+}
+
+.jr-cando-chip.chip-review {
+  border-color: var(--accent);
+  color: var(--accent-dark);
+}
+
+[data-theme="dark"] .jr-cando-chip.chip-review,
+:root:not([data-theme="light"]) .jr-cando-chip.chip-review {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.cando-portfolio-sheet {
+  max-width: 720px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.cando-scroll-body {
+  overflow-y: auto;
+  max-height: calc(90vh - 160px);
+  padding-right: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cando-unit-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cando-unit-title {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--primary);
+  margin: 0;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+}
+
+.cando-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cando-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm, 2px);
+  flex-wrap: wrap;
+}
+
+.cando-row-main {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  min-width: 200px;
+}
+
+.cando-row-text {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.4;
+}
+
+.cando-row-meta {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.cando-row-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cando-badge {
+  font-size: 10.5px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 2px 7px;
+  border-radius: var(--radius-sm, 2px);
+  border: 1px solid currentColor;
+  white-space: nowrap;
+}
+
+.cando-badge-verified {
+  color: var(--success);
+  border-color: var(--success);
+}
+
+.cando-badge-gap {
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+[data-theme="dark"] .cando-badge-gap,
+:root:not([data-theme="light"]) .cando-badge-gap {
+  color: var(--text);
+  border-color: var(--text);
+}
+
+.cando-badge-review {
+  color: var(--accent-dark);
+  border-color: var(--accent);
+}
+
+[data-theme="dark"] .cando-badge-review,
+:root:not([data-theme="light"]) .cando-badge-review {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.cando-badge-upcoming {
+  color: var(--muted);
+  border-color: var(--border);
+}
+
+.cando-btn {
+  font-size: 12px;
+  padding: 4px 10px;
+  min-height: 28px;
+}
+
+/* 3. Studio Verified Banners & Competency Prompt Cards */
+.sp-card-competency {
+  border-left: 3px solid var(--accent);
+}
+
+.sp-competency-verified-banner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  background: rgba(46, 125, 50, 0.08);
+  border: 1px solid var(--success);
+  border-radius: var(--radius-sm, 2px);
+  margin-bottom: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--success);
+}
+
+.sp-verified-check {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* 4. Level Test Readiness Diagnostic */
+.lt-readiness-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm, 2px);
+  padding: 24px;
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.lt-readiness-head {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.lt-readiness-title {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin: 0;
+  line-height: 1.25;
+}
+
+.lt-readiness-sub {
+  font-size: 14px;
+  color: var(--muted);
+  margin: 0;
+}
+
+.lt-readiness-alert {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0 0 10px 0;
+}
+
+.lt-readiness-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.lt-readiness-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm, 2px);
+  flex-wrap: wrap;
+}
+
+.lt-readiness-item-main {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  min-width: 200px;
+}
+
+.lt-readiness-unit {
+  font-size: 11px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
+.lt-readiness-text {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.4;
+}
+
+.lt-readiness-more {
+  font-size: 12.5px;
+  color: var(--muted);
+  font-style: italic;
+  padding-left: 4px;
+}
+
+.lt-readiness-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.lt-action-btn {
+  flex: 1;
+  min-width: 180px;
+  text-align: center;
+  justify-content: center;
+}
+
+@media (max-width: 639px) {
+  .lt-readiness-actions {
+    flex-direction: column;
+  }
+  .lt-action-btn {
+    width: 100%;
+    min-width: 0;
+  }
+}

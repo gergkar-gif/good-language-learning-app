@@ -113,7 +113,27 @@ const Journey = (function () {
             });
         }
 
+        let candoStats = { total: 0, verified: 0, confidenceGap: 0, blindspot: 0, deficit: 0, decayed: 0 };
+        if (typeof LearnerModel !== 'undefined' && typeof LearnerModel.allCompetencies === 'function') {
+            const all = LearnerModel.allCompetencies();
+            Object.keys(all).forEach(k => {
+                const rec = all[k];
+                if (rec.state === 'verified') {
+                    const days = rec.verifiedAt ? (Date.now() - rec.verifiedAt) / (1000 * 3600 * 24) : 0;
+                    if (days > 30) candoStats.decayed++;
+                    else candoStats.verified++;
+                } else if (rec.state === 'confidence-gap') {
+                    candoStats.confidenceGap++;
+                } else if (rec.state === 'blindspot') {
+                    candoStats.blindspot++;
+                } else if (rec.state === 'deficit') {
+                    candoStats.deficit++;
+                }
+            });
+        }
+
         return {
+            candoStats: candoStats,
             levels: levels,
             levelTests: levelTests,
             lessonsComplete: lessonsComplete,
@@ -189,6 +209,27 @@ const Journey = (function () {
                 ${body}
             </section>
         `;
+    }
+
+    function canDoPortfolioBlock(d) {
+        const stats = d.candoStats || { verified: 0, confidenceGap: 0, blindspot: 0, deficit: 0, decayed: 0 };
+        const needsReview = (stats.blindspot || 0) + (stats.deficit || 0) + (stats.decayed || 0);
+
+        return card('CEFR Can-Do Passport', 'Real-world competencies demonstrated across your journey.', `
+            <button class="jr-big-link" data-jr-cando-open="1">
+                <p class="jr-big">${stats.verified}<span class="jr-of"> verified</span></p>
+            </button>
+            <div class="jr-cando-chips">
+                <span class="jr-cando-chip chip-verified">${stats.verified} Verified</span>
+                ${stats.confidenceGap > 0 ? `<span class="jr-cando-chip chip-gap">${stats.confidenceGap} Confidence Gap</span>` : ''}
+                ${needsReview > 0 ? `<span class="jr-cando-chip chip-review">${needsReview} Needs Review</span>` : ''}
+            </div>
+            <div class="jr-streak-actions" style="margin-top:14px;">
+                <button class="dk-secondary jr-import-btn" data-jr-cando-open="1">
+                    Open Can-Do Portfolio →
+                </button>
+            </div>
+        `);
     }
 
     function curriculumBlock(d) {
@@ -461,6 +502,7 @@ const Journey = (function () {
         host.innerHTML = `
             <div class="jr-grid">
                 ${curriculumBlock(d)}
+                ${canDoPortfolioBlock(d)}
                 ${grammarBlock(d)}
                 ${vocabularyBlock(d)}
                 ${skillsBlock(d)}
@@ -474,6 +516,164 @@ const Journey = (function () {
         `;
         _wireClicks(host);
         _refreshAccountStatus(host);
+    }
+
+    async function showCanDoPassportModal(initialLevel) {
+        const existing = document.getElementById('cando-passport-overlay');
+        if (existing) existing.remove();
+
+        let activeLvl = initialLevel || 'All';
+        const overlay = document.createElement('div');
+        overlay.id = 'cando-passport-overlay';
+        overlay.className = 'wp-overlay';
+
+        let index = [];
+        if (typeof LearnerModel !== 'undefined' && typeof LearnerModel.loadCompetenciesIndex === 'function') {
+            index = await LearnerModel.loadCompetenciesIndex();
+        }
+
+        const store = (typeof LearnerModel !== 'undefined' && typeof LearnerModel.allCompetencies === 'function')
+            ? LearnerModel.allCompetencies()
+            : {};
+
+        function renderContent() {
+            const filtered = activeLvl === 'All'
+                ? index
+                : index.filter(c => (c.level || '').toUpperCase() === activeLvl.toUpperCase());
+
+            // Group by level and unit
+            const grouped = {};
+            filtered.forEach(c => {
+                const uKey = (c.level || 'A1') + ' · Unit ' + (c.unitLabel || '1') + ': ' + (c.unitTitle || 'General');
+                if (!grouped[uKey]) grouped[uKey] = [];
+                grouped[uKey].push(c);
+            });
+
+            const unitKeys = Object.keys(grouped);
+
+            const levels = ['All', 'A1', 'A2', 'B1', 'B2'];
+            const tabsHtml = levels.map(lvl => `
+                <button type="button" class="sp-studio-tab ${activeLvl === lvl ? 'active' : ''}" data-cando-lvl="${lvl}">
+                    ${lvl}
+                </button>
+            `).join('');
+
+            const unitsHtml = unitKeys.length === 0
+                ? '<p class="dk-empty" style="padding:24px 0;">No competencies loaded for this level.</p>'
+                : unitKeys.map(uKey => {
+                    const items = grouped[uKey];
+                    const rowsHtml = items.map(item => {
+                        const rec = store[item.text];
+                        let badgeClass = 'cando-badge-upcoming';
+                        let badgeText = 'Upcoming';
+                        if (rec) {
+                            if (rec.state === 'verified') {
+                                const days = rec.verifiedAt ? (Date.now() - rec.verifiedAt) / (1000 * 3600 * 24) : 0;
+                                if (days > 30) {
+                                    badgeClass = 'cando-badge-review';
+                                    badgeText = 'Needs Review';
+                                } else {
+                                    badgeClass = 'cando-badge-verified';
+                                    badgeText = 'Verified';
+                                }
+                            } else if (rec.state === 'confidence-gap') {
+                                badgeClass = 'cando-badge-gap';
+                                badgeText = 'Confidence Gap';
+                            } else {
+                                badgeClass = 'cando-badge-review';
+                                badgeText = 'Needs Practice';
+                            }
+                        }
+
+                        return `
+                            <li class="cando-row" data-cando-item="${esc(item.text)}" data-lesson-id="${esc(item.lessonId)}">
+                                <div class="cando-row-main">
+                                    <span class="cando-row-text">"${esc(item.text)}"</span>
+                                    <span class="cando-row-meta">${esc(item.lessonTitle || item.lessonId)}</span>
+                                </div>
+                                <div class="cando-row-actions">
+                                    <span class="cando-badge ${badgeClass}">${badgeText}</span>
+                                    <button type="button" class="dk-secondary cando-btn" data-action-speaking="${esc(item.text)}" title="Practice in Speaking Studio">
+                                        Speak
+                                    </button>
+                                    <button type="button" class="dk-secondary cando-btn" data-action-writing="${esc(item.text)}" title="Practice in Writing Studio">
+                                        Write
+                                    </button>
+                                </div>
+                            </li>
+                        `;
+                    }).join('');
+
+                    return `
+                        <div class="cando-unit-group">
+                            <h4 class="cando-unit-title">${esc(uKey)}</h4>
+                            <ul class="cando-list">${rowsHtml}</ul>
+                        </div>
+                    `;
+                }).join('');
+
+            overlay.innerHTML = `
+                <div class="wp-sheet cando-portfolio-sheet">
+                    <div class="wp-header">
+                        <div>
+                            <h2 class="sync-prompt-title">CEFR Can-Do Passport</h2>
+                            <p class="sp-setup-sub" style="font-size:13px; margin:2px 0 0 0;">
+                                Competency Portfolio — syllabus capabilities and live verification states.
+                            </p>
+                        </div>
+                        <button class="wp-close" data-cando-modal-close="1" aria-label="Close">×</button>
+                    </div>
+
+                    <div class="sp-studio-nav" style="margin:16px 0 12px 0;">
+                        ${tabsHtml}
+                    </div>
+
+                    <div class="cando-scroll-body">
+                        ${unitsHtml}
+                    </div>
+                </div>
+            `;
+
+            // Wire tabs
+            overlay.querySelectorAll('[data-cando-lvl]').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    activeLvl = btn.getAttribute('data-cando-lvl');
+                    renderContent();
+                });
+            });
+
+            // Wire close
+            overlay.querySelectorAll('[data-cando-modal-close]').forEach(btn => {
+                btn.addEventListener('click', () => overlay.remove());
+            });
+
+            // Wire Speaking action
+            overlay.querySelectorAll('[data-action-speaking]').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const text = btn.getAttribute('data-action-speaking');
+                    overlay.remove();
+                    showTab('drills', document.querySelector('.nav button[data-tab="drills"]'));
+                    if (typeof Workshop !== 'undefined') {
+                        Workshop.open('speaking', { targetCompetency: text });
+                    }
+                });
+            });
+
+            // Wire Writing action
+            overlay.querySelectorAll('[data-action-writing]').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const text = btn.getAttribute('data-action-writing');
+                    overlay.remove();
+                    showTab('drills', document.querySelector('.nav button[data-tab="drills"]'));
+                    if (typeof Workshop !== 'undefined') {
+                        Workshop.open('writing', { targetCompetency: text });
+                    }
+                });
+            });
+        }
+
+        renderContent();
+        document.body.appendChild(overlay);
     }
 
     function showImportStreakModal() {
@@ -576,6 +776,11 @@ const Journey = (function () {
         host.addEventListener('click', e => {
             if (e.target.closest('[data-jr-import-streak]')) {
                 showImportStreakModal();
+                return;
+            }
+
+            if (e.target.closest('[data-jr-cando-open]')) {
+                showCanDoPassportModal();
                 return;
             }
 

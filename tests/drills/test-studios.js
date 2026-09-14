@@ -99,10 +99,24 @@ async function testOralGrading() {
     };
 
     console.log('Testing GraderEngine with oral production context...');
+    grader._callAiGrader = async (params) => {
+        assert.strictEqual(params.modality, 'oral', 'Modality should be passed as oral to _callAiGrader');
+        return {
+            overallScore: 82,
+            taskCompletion: 0.85,
+            dimensions: { grammar: 0.8, vocabulary: 0.85, coherence: 0.8, complexity: 0.75, naturalness: 0.85 },
+            errors: [],
+            demonstratedSkills: [{ skillId: 'oral_expression', confidence: 0.85 }],
+            weakSkills: [],
+            feedback: { strengths: ['Good flow'], priorities: ['Keep practicing'] }
+        };
+    };
+
     const result = await grader.grade(speechProduction, context);
     assert(typeof result.overallScore === 'number', 'overallScore must be a number');
     assert(result.overallScore >= 0 && result.overallScore <= 100, 'overallScore must be 0-100');
     assert(result.dimensions, 'dimensions must exist');
+    assert.strictEqual(result.meta && result.meta.modality, 'oral', 'Result metadata must record oral modality');
     console.log(`[PASS] Oral grading completed with score: ${result.overallScore}/100.`);
 
     // 5. Test Multiple Errors per Category in GraderSchema

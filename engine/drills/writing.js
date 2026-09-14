@@ -122,9 +122,16 @@ const WritingDriller = (function () {
     // RENDER SCREENS (COMPOSITION)
     // ----------------------------------------
 
-    function _renderPromptSelect(body) {
+    async function _renderPromptSelect(body) {
         const langName = (typeof Lang !== 'undefined') ? Lang.name() : 'the target language';
         const prompts = _promptsData || [];
+
+        let unverifiedList = [];
+        if (typeof LearnerModel !== 'undefined' && typeof LearnerModel.unverifiedCompetencies === 'function') {
+            try {
+                unverifiedList = await LearnerModel.unverifiedCompetencies();
+            } catch (e) { unverifiedList = []; }
+        }
 
         let promptsHtml = '';
         if (prompts.length > 0) {
@@ -147,6 +154,26 @@ const WritingDriller = (function () {
                     <p class="sp-setup-sub">Write open-ended texts in ${langName} and receive CEFR-aligned formative feedback.</p>
                 </div>
 
+                ${unverifiedList.length > 0 ? `
+                    <div class="sp-unverified-section" style="margin-bottom: 24px;">
+                        <h3 class="sp-section-heading" style="margin-bottom: 12px; font-size: 15px; color: var(--accent-dark);">
+                            Target Unverified Goals (${unverifiedList.length})
+                        </h3>
+                        <div class="sp-prompt-grid">
+                            ${unverifiedList.slice(0, 3).map(c => `
+                                <div class="wk-card sp-card-clickable sp-card-competency" data-select-comp="${_esc(c.text)}">
+                                    <div class="sp-prompt-card-head">
+                                        <span class="sp-level-pill">${_esc(c.level || 'A1')}</span>
+                                        <span class="sp-words-target">Can-Do Goal</span>
+                                    </div>
+                                    <h3 class="wk-card-title">${_esc(c.text)}</h3>
+                                    <p class="wk-card-sub">${_esc(c.reason || 'Practice and demonstrate this capability in writing.')}</p>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                ` : ''}
+
                 <div class="sp-prompt-grid">
                     ${promptsHtml}
                     <div class="wk-card sp-card-clickable sp-card-custom" data-select-custom="1">
@@ -159,6 +186,24 @@ const WritingDriller = (function () {
                 </div>
             </div>
         `;
+
+        body.querySelectorAll('[data-select-comp]').forEach(el => {
+            el.addEventListener('click', () => {
+                const text = el.getAttribute('data-select-comp');
+                const found = unverifiedList.find(c => c.text === text);
+                _selectedPrompt = {
+                    id: 'comp_' + Date.now(),
+                    title: text.length > 40 ? text.slice(0, 37) + '...' : text,
+                    cefrLevel: (found && found.level) || 'A1',
+                    targetWords: 35,
+                    prompt: `Write a short text or dialogue demonstrating this ability: "${text}". Use natural expressions, complete sentences, and relevant vocabulary.`,
+                    targetCompetency: text
+                };
+                _draftText = '';
+                _phase = PHASE.WRITING;
+                _renderActiveTab();
+            });
+        });
 
         body.querySelectorAll('[data-select-prompt]').forEach(el => {
             el.addEventListener('click', () => {
@@ -325,6 +370,11 @@ const WritingDriller = (function () {
             if (typeof LearnerModel !== 'undefined' && LearnerModel.recordAssessment) {
                 LearnerModel.recordAssessment(result, context);
             }
+            if (p.targetCompetency && (result.overallScore || 0) >= 75) {
+                if (typeof LearnerModel !== 'undefined' && typeof LearnerModel.verifyCompetency === 'function') {
+                    LearnerModel.verifyCompetency(p.targetCompetency, result.overallScore, 'writing-studio');
+                }
+            }
 
             // Award XP
             if (typeof XP !== 'undefined') {
@@ -419,6 +469,13 @@ const WritingDriller = (function () {
                     </div>
                 </div>
 
+                ${p.targetCompetency && score >= 75 ? `
+                    <div class="sp-competency-verified-banner">
+                        <span class="sp-verified-check"><svg class="sp-verified-svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                        <span>Demonstrated &amp; Verified: "${_esc(p.targetCompetency)}"</span>
+                    </div>
+                ` : ''}
+
                 <div class="sp-dimensions-grid">
                     ${Object.entries(dims).map(([dim, val]) => `
                         <div class="sp-dim-card">
@@ -480,6 +537,22 @@ const WritingDriller = (function () {
     async function render(container, options = {}) {
         _container = container;
         await _loadPrompts();
+
+        if (options && options.targetCompetency) {
+            _activeStudioTab = STUDIO_TAB.COMPOSITION;
+            _selectedPrompt = {
+                id: 'comp_' + Date.now(),
+                title: options.targetCompetency.length > 40 ? options.targetCompetency.slice(0, 37) + '...' : options.targetCompetency,
+                cefrLevel: options.level || 'A1',
+                targetWords: 35,
+                prompt: `Write a short text or dialogue demonstrating this ability: "${options.targetCompetency}". Use natural expressions, complete sentences, and relevant vocabulary.`,
+                targetCompetency: options.targetCompetency
+            };
+            _draftText = '';
+            _phase = PHASE.WRITING;
+            _renderStudioShell();
+            return;
+        }
 
         if (options && options.activeTab) {
             _activeStudioTab = (options.activeTab === 'translation' || options.activeTab === 'translate')

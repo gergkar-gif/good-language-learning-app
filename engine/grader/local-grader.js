@@ -94,7 +94,8 @@
             lengthFeedback = `Text exceeds recommended maximum for ${cefrLevel} (${target.max} words).`;
         }
 
-        // Structural checks
+        // Structural checks (irrelevant for oral transcripts produced by ASR)
+        const isOral = opts.modality === 'oral';
         const startsWithCapital = /^\p{Lu}/u.test(text);
         const endsWithPunctuation = /[.!?]$/.test(text);
 
@@ -109,7 +110,12 @@
             targetRange: target,
             targetWordCountMet,
             lengthFeedback,
-            structuralChecks: {
+            structuralChecks: isOral ? {
+                startsWithCapital: true,
+                endsWithPunctuation: true,
+                hasMultipleParagraphs: false,
+                isOral: true
+            } : {
                 startsWithCapital,
                 endsWithPunctuation,
                 hasMultipleParagraphs: paragraphCount > 1

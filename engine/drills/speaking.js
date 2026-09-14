@@ -515,9 +515,16 @@ const SpeakingDriller = (function () {
     // PART 2: VERBAL PRODUCTION (5-MINUTE EXTENDED ORAL STUDIO)
     // ============================================
 
-    function _renderProdPromptSelect(body) {
+    async function _renderProdPromptSelect(body) {
         const langName = (typeof Lang !== 'undefined') ? Lang.name() : 'the language';
         const prompts = _prodPrompts || [];
+
+        let unverifiedList = [];
+        if (typeof LearnerModel !== 'undefined' && typeof LearnerModel.unverifiedCompetencies === 'function') {
+            try {
+                unverifiedList = await LearnerModel.unverifiedCompetencies();
+            } catch (e) { unverifiedList = []; }
+        }
 
         let promptsHtml = '';
         if (prompts.length > 0) {
@@ -540,6 +547,26 @@ const SpeakingDriller = (function () {
                     <p class="sp-setup-sub">Speak freely or pick a topic. Record up to 5 minutes out loud, listen to your own voice, and receive CEFR-aligned formative feedback.</p>
                 </div>
 
+                ${unverifiedList.length > 0 ? `
+                    <div class="sp-unverified-section" style="margin-bottom: 24px;">
+                        <h3 class="sp-section-heading" style="margin-bottom: 12px; font-size: 15px; color: var(--accent-dark);">
+                            Target Unverified Goals (${unverifiedList.length})
+                        </h3>
+                        <div class="sp-prompt-grid">
+                            ${unverifiedList.slice(0, 3).map(c => `
+                                <div class="wk-card sp-card-clickable sp-card-competency" data-select-prod-comp="${_esc(c.text)}">
+                                    <div class="sp-prompt-card-head">
+                                        <span class="sp-level-pill">${_esc(c.level || 'A1')}</span>
+                                        <span class="sp-words-target">Can-Do Goal</span>
+                                    </div>
+                                    <h3 class="wk-card-title">${_esc(c.text)}</h3>
+                                    <p class="wk-card-sub">${_esc(c.reason || 'Record 1-2 minutes demonstrating this ability out loud.')}</p>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                ` : ''}
+
                 <div class="sp-prompt-grid">
                     <div class="wk-card sp-card-clickable sp-card-custom" data-select-prod-custom="1">
                         <div class="sp-prompt-card-head">
@@ -553,6 +580,21 @@ const SpeakingDriller = (function () {
                 </div>
             </div>
         `;
+
+        body.querySelectorAll('[data-select-prod-comp]').forEach(el => {
+            el.addEventListener('click', () => {
+                const text = el.getAttribute('data-select-prod-comp');
+                const found = unverifiedList.find(c => c.text === text);
+                _selectedProdPrompt = {
+                    id: 'comp_' + Date.now(),
+                    title: text.length > 40 ? text.slice(0, 37) + '...' : text,
+                    cefrLevel: (found && found.level) || 'A1',
+                    prompt: `Speak for 1-2 minutes demonstrating this ability: "${text}". Speak clearly and use natural expressions.`,
+                    targetCompetency: text
+                };
+                _startProdRecording();
+            });
+        });
 
         body.querySelectorAll('[data-select-prod-prompt]').forEach(el => {
             el.addEventListener('click', () => {
@@ -607,11 +649,6 @@ const SpeakingDriller = (function () {
                 maxDurationMs: 300000,
                 onInterim: (text) => {
                     _prodTranscript = text;
-                    const readout = document.querySelector('.sp-prod-live-transcript');
-                    if (readout) {
-                        readout.textContent = text;
-                        readout.classList.remove('sp-empty-transcript');
-                    }
                     const wordCountEl = document.querySelector('.sp-prod-word-count');
                     if (wordCountEl) {
                         const words = text.trim() ? text.trim().split(/\s+/).length : 0;
@@ -620,6 +657,11 @@ const SpeakingDriller = (function () {
                 },
                 onFinal: (text) => {
                     if (text) _prodTranscript = text;
+                    const wordCountEl = document.querySelector('.sp-prod-word-count');
+                    if (wordCountEl) {
+                        const words = _prodTranscript.trim() ? _prodTranscript.trim().split(/\s+/).length : 0;
+                        wordCountEl.textContent = `${words} words captured`;
+                    }
                 },
                 onAudioReady: (audioUrl) => {
                     _prodAudioUrl = audioUrl;
@@ -686,11 +728,8 @@ const SpeakingDriller = (function () {
                     <span class="sp-prod-word-count">0 words captured</span>
                 </div>
 
-                <div class="sp-prod-transcript-container">
-                    <div class="sp-prod-transcript-header">Real-time Speech Recognition</div>
-                    <div class="sp-prod-live-transcript sp-empty-transcript">
-                        Start speaking — your words will appear here in real time...
-                    </div>
+                <div class="sp-prod-quiet-hint">
+                    Transcribing your speech in the background — you can review and edit your words after speaking.
                 </div>
 
                 <div class="sp-prod-actions">
@@ -756,10 +795,10 @@ const SpeakingDriller = (function () {
 
                 <div class="sp-prod-edit-card">
                     <label class="sp-edit-label" for="sp-transcript-input">
-                        Transcribed Speech
-                        <span class="sp-edit-hint">Speech-to-text preview — tweak any misheard words or punctuation if needed:</span>
+                        Transcribed Speech (Honour System)
+                        <span class="sp-edit-hint">Speech-to-text preview — feel free to fix any words misheard by the microphone before submitting:</span>
                     </label>
-                    <textarea id="sp-transcript-input" class="sp-transcript-input" rows="7" placeholder="Type or adjust your spoken text...">${_esc(_prodTranscript)}</textarea>
+                    <textarea id="sp-transcript-input" class="sp-transcript-input" rows="7" placeholder="Your transcribed words will appear here...">${_esc(_prodTranscript)}</textarea>
                 </div>
 
                 <div class="sp-prod-review-actions">
@@ -853,6 +892,11 @@ const SpeakingDriller = (function () {
                 const isPass = (result.overallScore || 0) >= 60;
                 LearnerModel.recordProduction(p.targetSkills, isPass, result.overallScore || 0, 'oral');
             }
+            if (p.targetCompetency && (result.overallScore || 0) >= 75) {
+                if (typeof LearnerModel !== 'undefined' && typeof LearnerModel.verifyCompetency === 'function') {
+                    LearnerModel.verifyCompetency(p.targetCompetency, result.overallScore, 'speaking-studio');
+                }
+            }
             if (typeof XP !== 'undefined' && XP.award) {
                 const earnedXP = Math.max(10, Math.round((result.overallScore || 70) / 5));
                 XP.award(earnedXP, 'speaking-studio');
@@ -941,6 +985,13 @@ const SpeakingDriller = (function () {
                         <p class="sp-score-sub">${_esc(p.title || 'Verbal Production')} · CEFR ${_esc(p.cefrLevel || 'B1')}</p>
                     </div>
                 </div>
+
+                ${p.targetCompetency && score >= 75 ? `
+                    <div class="sp-competency-verified-banner">
+                        <span class="sp-verified-check"><svg class="sp-verified-svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                        <span>Demonstrated &amp; Verified: "${_esc(p.targetCompetency)}"</span>
+                    </div>
+                ` : ''}
 
                 ${audioUrl ? `
                     <div class="sp-prod-audio-replay-card">
@@ -1037,6 +1088,21 @@ const SpeakingDriller = (function () {
         if (options && options.count) {
             _questionCount = options.count;
             _mode = MODE.COUNT;
+        }
+
+        if (options && options.targetCompetency) {
+            _activeStudioTab = STUDIO_TAB.PRODUCTION;
+            _selectedProdPrompt = {
+                id: 'comp_' + Date.now(),
+                title: options.targetCompetency.length > 40 ? options.targetCompetency.slice(0, 37) + '...' : options.targetCompetency,
+                cefrLevel: options.level || 'A1',
+                prompt: `Speak for 1-2 minutes demonstrating this ability: "${options.targetCompetency}". Speak clearly, naturally, and use complete sentences.`,
+                targetCompetency: options.targetCompetency
+            };
+            _prodPhase = PROD_PHASE.RECORDING;
+            _renderStudioShell();
+            _startProdRecording();
+            return;
         }
 
         if (options && options.autoStart) {

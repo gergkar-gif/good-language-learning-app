@@ -625,6 +625,239 @@ const LearnerModel = (function () {
         return { ready: missing.length === 0, missing };
     }
 
+    // ----------------------------------------
+    // CEFR CAN-DO COMPETENCIES & METACOGNITIVE CALIBRATION
+    // ----------------------------------------
+    // Tracks self-efficacy ("I can...") vs objective exercise performance.
+    // Classifies each competency into four pedagogical states:
+    // 1. 'verified' (Verified Mastery): checked === true && accuracy >= 75%
+    // 2. 'confidence-gap': checked === false && accuracy >= 75%
+    // 3. 'blindspot': checked === true && accuracy < 75%
+    // 4. 'deficit': checked === false && accuracy < 75%
+    // In addition, if verified > 30 days ago with no recent practice, it is flagged as 'decayed'.
+
+    let _competenciesIndexCache = null;
+    let _competenciesIndexCourse = null;
+
+    async function loadCompetenciesIndex() {
+        const course = (typeof Lang !== 'undefined') ? Lang.key('') : '';
+        if (_competenciesIndexCache && _competenciesIndexCourse === course) {
+            return _competenciesIndexCache;
+        }
+        if (typeof Content === 'undefined' || typeof Lang === 'undefined') return [];
+        try {
+            _competenciesIndexCache = await Content.json(Lang.content('indexes/competencies-index.json')) || [];
+        } catch (e) {
+            _competenciesIndexCache = [];
+        }
+        _competenciesIndexCourse = course;
+        return _competenciesIndexCache;
+    }
+
+    function _competencyKey() {
+        return (typeof Lang !== 'undefined') ? Lang.key('competencyRecords') : 'competencyRecords';
+    }
+
+    function _loadCompetencies() {
+        try {
+            return JSON.parse(localStorage.getItem(_competencyKey()) || '{}');
+        } catch (e) {
+            return {};
+        }
+    }
+
+    function _saveCompetencies(data) {
+        try {
+            localStorage.setItem(_competencyKey(), JSON.stringify(data));
+        } catch (e) {}
+    }
+
+    /**
+     * Records checklist competencies evaluated at the end of a lesson.
+     * items: Array of { text: string, checked: boolean, exerciseAccuracy: number }
+     */
+    function recordCompetencies(lessonId, items) {
+        if (!lessonId || !Array.isArray(items) || !items.length) return;
+        const store = _loadCompetencies();
+        const now = Date.now();
+
+        items.forEach(item => {
+            if (!item || !item.text) return;
+            const text = item.text.trim();
+            const checked = !!item.checked;
+            const accuracy = typeof item.exerciseAccuracy === 'number' ? item.exerciseAccuracy : 100;
+
+            let state;
+            if (checked && accuracy >= 75) {
+                state = 'verified';
+            } else if (!checked && accuracy >= 75) {
+                state = 'confidence-gap';
+            } else if (checked && accuracy < 75) {
+                state = 'blindspot';
+            } else {
+                state = 'deficit';
+            }
+
+            const existing = store[text] || {};
+            store[text] = {
+                text,
+                lessonId,
+                checked,
+                exerciseAccuracy: accuracy,
+                state,
+                timestamp: now,
+                verifiedAt: state === 'verified' ? now : (existing.verifiedAt || null),
+                source: 'lesson-checklist'
+            };
+        });
+
+        _saveCompetencies(store);
+    }
+
+    /**
+     * Verifies a competency statement (e.g. from Writing or Speaking Studio when score >= 75)
+     */
+    function verifyCompetency(textOrId, score, source) {
+        if (!textOrId) return;
+        const store = _loadCompetencies();
+        const now = Date.now();
+        const text = textOrId.trim();
+
+        const existing = store[text] || {};
+        store[text] = {
+            ...existing,
+            text,
+            checked: true,
+            exerciseAccuracy: typeof score === 'number' ? Math.round(score) : (existing.exerciseAccuracy || 85),
+            state: 'verified',
+            verifiedAt: now,
+            timestamp: now,
+            source: source || 'studio-assessment'
+        };
+
+        _saveCompetencies(store);
+        return store[text];
+    }
+
+    function getCompetency(text) {
+        if (!text) return null;
+        const store = _loadCompetencies();
+        const rec = store[text.trim()];
+        if (!rec) return null;
+
+        // Check 30-day decay for verified items
+        if (rec.state === 'verified' && rec.verifiedAt) {
+            const daysSince = (Date.now() - rec.verifiedAt) / (1000 * 60 * 60 * 24);
+            if (daysSince > 30) {
+                return { ...rec, state: 'decayed', isDecayed: true };
+            }
+        }
+        return rec;
+    }
+
+    function allCompetencies() {
+        return _loadCompetencies();
+    }
+
+    function competenciesForLesson(lessonId) {
+        if (!lessonId) return [];
+        const store = _loadCompetencies();
+        const results = [];
+        Object.keys(store).forEach(k => {
+            if (store[k].lessonId === lessonId) {
+                results.push(store[k]);
+            }
+        });
+        return results;
+    }
+
+    /**
+     * Returns unverified competencies for a given level or all levels.
+     * Unverified includes: 'confidence-gap', 'blindspot', 'deficit', 'decayed', or unchecked items.
+     */
+    async function unverifiedCompetencies(level) {
+        const index = await loadCompetenciesIndex();
+        const store = _loadCompetencies();
+        const now = Date.now();
+
+        const filtered = level ? index.filter(c => (c.level || '').toUpperCase() === level.toUpperCase()) : index;
+        const results = [];
+
+        filtered.forEach(comp => {
+            const rec = store[comp.text];
+            if (!rec) {
+                // Not yet evaluated or unchecked in lesson
+                return;
+            }
+            if (rec.state === 'verified' && rec.verifiedAt) {
+                const daysSince = (now - rec.verifiedAt) / (1000 * 60 * 60 * 24);
+                if (daysSince > 30) {
+                    results.push({ ...comp, ...rec, state: 'decayed', reason: 'Needs review (practiced > 30 days ago)' });
+                }
+            } else if (rec.state !== 'verified') {
+                let reason = 'Needs practice';
+                if (rec.state === 'confidence-gap') reason = 'Confidence gap (performed well, but felt uncertain)';
+                else if (rec.state === 'blindspot') reason = 'Needs review (struggled during exercises)';
+                else if (rec.state === 'deficit') reason = 'Immediate priority (struggled and left unchecked)';
+
+                results.push({ ...comp, ...rec, reason });
+            }
+        });
+
+        return results;
+    }
+
+    /**
+     * Calculates competency statistics for a level:
+     * { total, verified, confidenceGap, blindspot, deficit, decayed, upcoming, percent }
+     */
+    async function competencyStats(level) {
+        const index = await loadCompetenciesIndex();
+        const store = _loadCompetencies();
+        const now = Date.now();
+
+        const filtered = level ? index.filter(c => (c.level || '').toUpperCase() === level.toUpperCase()) : index;
+        const total = filtered.length;
+
+        let verified = 0, confidenceGap = 0, blindspot = 0, deficit = 0, decayed = 0, upcoming = 0;
+
+        filtered.forEach(comp => {
+            const rec = store[comp.text];
+            if (!rec) {
+                upcoming++;
+            } else if (rec.state === 'verified') {
+                const daysSince = rec.verifiedAt ? (now - rec.verifiedAt) / (1000 * 60 * 60 * 24) : 0;
+                if (daysSince > 30) {
+                    decayed++;
+                } else {
+                    verified++;
+                }
+            } else if (rec.state === 'confidence-gap') {
+                confidenceGap++;
+            } else if (rec.state === 'blindspot') {
+                blindspot++;
+            } else if (rec.state === 'deficit') {
+                deficit++;
+            } else {
+                upcoming++;
+            }
+        });
+
+        const percent = total > 0 ? Math.round((verified / total) * 100) : 0;
+
+        return {
+            total,
+            verified,
+            confidenceGap,
+            blindspot,
+            deficit,
+            decayed,
+            upcoming,
+            unverified: total - verified,
+            percent
+        };
+    }
+
     return {
         skillState,
         wordState,
@@ -637,6 +870,14 @@ const LearnerModel = (function () {
         recordAssessment,
         productionState,
         weakProductionSkills,
-        assessmentHistory
+        assessmentHistory,
+        recordCompetencies,
+        verifyCompetency,
+        getCompetency,
+        allCompetencies,
+        competenciesForLesson,
+        unverifiedCompetencies,
+        competencyStats,
+        loadCompetenciesIndex
     };
 })();

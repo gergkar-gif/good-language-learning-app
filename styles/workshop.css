@@ -2854,6 +2854,24 @@
     font-family: var(--font-mono, monospace);
 }
 
+.sp-prod-quiet-hint {
+    text-align: center;
+    font-size: 13px;
+    color: var(--muted);
+    padding: 12px 18px;
+    background: rgba(0, 0, 0, 0.02);
+    border-radius: var(--radius-md, 6px);
+    border: 1px dashed var(--border);
+    margin: 8px 0;
+    line-height: 1.45;
+}
+
+[data-theme="dark"] .sp-prod-quiet-hint,
+:root:not([data-theme="light"]) .sp-prod-quiet-hint {
+    background: rgba(255, 255, 255, 0.03);
+    border-color: var(--border);
+}
+
 /* Transcript container */
 .sp-prod-transcript-container {
     background: var(--surface, #fff);
