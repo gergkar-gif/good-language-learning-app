@@ -242,20 +242,23 @@ const SpeechInput = (function () {
         _onFinalCallback = onFinal;
         _onAudioReadyCallback = options.onAudioReady || null;
 
-        // Allow up to 10s for learner to start speaking before timing out
+        const manualStop = !!options.manualStop;
+        const maxDurationMs = options.maxDurationMs || (manualStop ? 300000 : 30000);
+
+        // Allow learner to read prompt/prepare before speaking (30s in manual mode, 10s in quick drills)
         _initialSilenceTimeout = setTimeout(() => {
-            if (_isListening && !_hasSpoken) {
+            if (_isListening && !_hasSpoken && !manualStop) {
                 stopListening();
                 onError('no-speech');
             }
-        }, 10000);
+        }, manualStop ? 30000 : 10000);
 
-        // Safety cap: maximum 30s per recording session
+        // Safety cap: default 30s for quick drills, up to 5 minutes (300s) for extended verbal production
         _maxDurationTimeout = setTimeout(() => {
             if (_isListening) {
                 stopListening();
             }
-        }, 30000);
+        }, maxDurationMs);
 
         if (onAudioLevel) {
             let simAngle = 0;
@@ -320,11 +323,13 @@ const SpeechInput = (function () {
                                 onAudioLevel(0.5 + Math.random() * 0.45);
                             }
 
-                            // Silence buffer: automatically finish and evaluate 2.8s after learner stops speaking
-                            if (_finishTimeout) clearTimeout(_finishTimeout);
-                            _finishTimeout = setTimeout(() => {
-                                stopListening();
-                            }, 2800);
+                            // Silence buffer: automatically finish 2.8s after learner stops speaking (in auto mode only)
+                            if (!manualStop) {
+                                if (_finishTimeout) clearTimeout(_finishTimeout);
+                                _finishTimeout = setTimeout(() => {
+                                    stopListening();
+                                }, 2800);
+                            }
                         }
                     };
 
@@ -333,7 +338,10 @@ const SpeechInput = (function () {
                         const combined = (_accumulatedFinal + ' ' + _currentInterim).trim();
 
                         if (event.error === 'no-speech') {
-                            // If learner already spoke, silence means they are done
+                            // In manual mode, silence between sentences is normal; keep listening
+                            if (manualStop) return;
+
+                            // If learner already spoke in auto mode, silence means they are done
                             if (combined) {
                                 if (!_finishTimeout) {
                                     _finishTimeout = setTimeout(() => {
@@ -342,8 +350,8 @@ const SpeechInput = (function () {
                                 }
                                 return;
                             }
-                            // If learner hasn't spoken yet and still within initial 10s grace period, keep waiting
-                            if (Date.now() - _listenStartTime < 10000) {
+                            // If learner hasn't spoken yet and still within initial grace period, keep waiting
+                            if (Date.now() - _listenStartTime < (manualStop ? 30000 : 10000)) {
                                 return;
                             }
                             _isListening = false;
@@ -437,10 +445,10 @@ const SpeechInput = (function () {
             }, 45000);
         }
 
-        if (finalText && _onFinalCallback) {
+        if (_onFinalCallback) {
             const cb = _onFinalCallback;
             _onFinalCallback = null;
-            cb(finalText);
+            cb(finalText || '');
         }
     }
 

@@ -1,21 +1,33 @@
 // ============================================
-// SPEAKING DRILLER
+// SPEAKING STUDIO
 // ============================================
-// Practice pronunciation and spoken recall out loud using curriculum-aligned
-// sentences from translation-index.json.
+// Complete oral practice hub for Parlour:
 //
-// Features:
-// - Read & Repeat (Shadowing) and Prompt & Speak (Oral Production)
-// - Real-time speech recognition and automatic accuracy scoring
-// - Word-by-word visual breakdown
-// - Comparative dual-playback (Model vs User)
-// - Supports CEFR level filtering (All, A1, A2, B1...)
-// - Count mode (5, 10, 15, 20) and Timed mode (1, 2, 3, 5 min)
-// - Results screen with XP award and recommendation engine integration
+// 1. Sentence Drills:
+//    - Read & Repeat (Shadowing) and Prompt & Speak (Oral Production)
+//    - Real-time speech recognition and automatic accuracy scoring
+//    - Word-by-word visual breakdown
+//    - Comparative dual-playback (Model vs User)
+//    - CEFR filtering, count mode (5, 10, 15, 20) and timed mode (1, 2, 3, 5 min)
+//
+// 2. Verbal Production (5-minute open oral studio):
+//    - Longer-form spoken production on CEFR-aligned topics (or free speaking)
+//    - Live microphone capture (up to 5 minutes) with audio level visualizer
+//    - Real-time speech-to-text transcript streaming
+//    - User voice playback ("Listen to your own voice")
+//    - Transcript review & edit before submission
+//    - AI Formative evaluation via GraderEngine (fluency, coherence, vocabulary, grammar)
+//    - Oral evidence ingestion into LearnerModel with modality: 'oral'
 
 const SpeakingDriller = (function () {
     'use strict';
 
+    // ---- Studio Modes ----
+    const STUDIO_TAB = { DRILLS: 'drills', PRODUCTION: 'production' };
+    let _activeStudioTab = STUDIO_TAB.DRILLS;
+    let _container = null;
+
+    // ---- Sentence Drills State ----
     const PHASE = { SETTINGS: 1, SESSION: 2, RESULTS: 3 };
     const MODE = { COUNT: 'count', TIMED: 'timed' };
     const DRILL_TYPE = { ALL: 'all', READ_REPEAT: 'read-repeat', PROMPT_SPEAK: 'prompt-speak' };
@@ -24,15 +36,12 @@ const SpeakingDriller = (function () {
     const CEFR_ORDER = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
 
     let _phase = PHASE.SETTINGS;
-    let _container = null;
     let _pairs = null;
-
     let _mode = MODE.COUNT;
     let _drillType = DRILL_TYPE.ALL;
     let _level = 'all';
     let _questionCount = 10;
     let _timerMinutes = 2;
-
     let _skill = null;
 
     let _queue = [];
@@ -44,10 +53,24 @@ const SpeakingDriller = (function () {
     let _timerInterval = null;
     let _endTime = 0;
     let _timeRemaining = 0;
+    let _loadedLang = null;
+
+    // ---- Verbal Production State ----
+    const PROD_PHASE = { PROMPT_SELECT: 1, RECORDING: 2, REVIEW: 3, ASSESSING: 4, RESULTS: 5 };
+    let _prodPhase = PROD_PHASE.PROMPT_SELECT;
+    let _prodPrompts = null;
+    let _prodLoadedLang = null;
+    let _selectedProdPrompt = null;
+    let _prodTranscript = '';
+    let _prodAudioUrl = null;
+    let _prodElapsedSeconds = 0;
+    let _prodTimerInterval = null;
+    let _prodAssessmentResult = null;
 
     function _esc(text) {
+        if (typeof UI !== 'undefined' && UI.escape) return UI.escape(text);
         const d = document.createElement('div');
-        d.textContent = text;
+        d.textContent = String(text == null ? '' : text);
         return d.innerHTML;
     }
 
@@ -66,9 +89,10 @@ const SpeakingDriller = (function () {
         return (m < 10 ? '0' : '') + m + ':' + (s < 10 ? '0' : '') + s;
     }
 
-    let _loadedLang = null;
+    // ============================================
+    // DATA LOADING
+    // ============================================
 
-    // ---- Load Pairs ----
     async function _load() {
         if (_pairs && _loadedLang === Lang.code()) return;
         const index = await Content.json(Lang.content('indexes/translation-index.json')).catch(() => ({ pairs: [] }));
@@ -76,10 +100,81 @@ const SpeakingDriller = (function () {
         _loadedLang = Lang.code();
     }
 
+    async function _loadProdPrompts() {
+        const lang = (typeof Lang !== 'undefined') ? Lang.code() : 'es';
+        if (_prodPrompts && _prodLoadedLang === lang) return;
+        try {
+            const data = await Content.json(Lang.content('writing-prompts.json'));
+            _prodPrompts = (data && data.prompts) ? data.prompts : [];
+            _prodLoadedLang = lang;
+        } catch (e) {
+            _prodPrompts = [];
+        }
+    }
+
     document.addEventListener('language-changed', () => {
         _pairs = null;
         _loadedLang = null;
+        _prodPrompts = null;
+        _prodLoadedLang = null;
     });
+
+    // ============================================
+    // TOP-LEVEL STUDIO SHELL & SWITCHER
+    // ============================================
+
+    function _renderStudioShell() {
+        if (!_container) return;
+
+        const langName = (typeof Lang !== 'undefined') ? Lang.name() : 'the language';
+
+        _container.innerHTML = `
+            <div class="sp-studio-wrap">
+                <div class="sp-studio-nav" role="tablist">
+                    <button type="button" class="sp-studio-tab ${_activeStudioTab === STUDIO_TAB.DRILLS ? 'active' : ''}" data-studio-tab="drills" role="tab" aria-selected="${_activeStudioTab === STUDIO_TAB.DRILLS}">
+                        🎙️ Sentence Drills
+                    </button>
+                    <button type="button" class="sp-studio-tab ${_activeStudioTab === STUDIO_TAB.PRODUCTION ? 'active' : ''}" data-studio-tab="production" role="tab" aria-selected="${_activeStudioTab === STUDIO_TAB.PRODUCTION}">
+                        🗣️ Verbal Production (5 min)
+                    </button>
+                </div>
+                <div class="sp-studio-body" id="sp-studio-body"></div>
+            </div>
+        `;
+
+        _container.querySelectorAll('[data-studio-tab]').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const target = btn.getAttribute('data-studio-tab');
+                if (target === _activeStudioTab) return;
+                stop();
+                _activeStudioTab = target;
+                _renderStudioShell();
+            });
+        });
+
+        _renderActiveTab();
+    }
+
+    function _renderActiveTab() {
+        const body = document.getElementById('sp-studio-body');
+        if (!body) return;
+
+        if (_activeStudioTab === STUDIO_TAB.DRILLS) {
+            if (_phase === PHASE.SETTINGS) _renderSettings(body);
+            else if (_phase === PHASE.SESSION) _renderSession(body);
+            else if (_phase === PHASE.RESULTS) _renderResults(body);
+        } else {
+            if (_prodPhase === PROD_PHASE.PROMPT_SELECT) _renderProdPromptSelect(body);
+            else if (_prodPhase === PROD_PHASE.RECORDING) _renderProdRecording(body);
+            else if (_prodPhase === PROD_PHASE.REVIEW) _renderProdReview(body);
+            else if (_prodPhase === PROD_PHASE.ASSESSING) _renderProdAssessing(body);
+            else if (_prodPhase === PROD_PHASE.RESULTS) _renderProdResults(body);
+        }
+    }
+
+    // ============================================
+    // PART 1: SENTENCE DRILLS IMPLEMENTATION
+    // ============================================
 
     function _poolFor(level, skill) {
         let pool = _pairs || [];
@@ -102,7 +197,6 @@ const SpeakingDriller = (function () {
         return CEFR_ORDER.filter(lvl => seen.has(lvl));
     }
 
-    // ---- Build Queue ----
     function _buildQueue() {
         const pool = _poolFor(_level, _skill);
         const shuffled = _shuffled(pool);
@@ -112,7 +206,6 @@ const SpeakingDriller = (function () {
         _queue = selected.map((pair, idx) => {
             let kind = _drillType;
             if (kind === DRILL_TYPE.ALL) {
-                // Alternate between Read & Repeat and Prompt & Speak
                 kind = (idx % 2 === 0) ? DRILL_TYPE.READ_REPEAT : DRILL_TYPE.PROMPT_SPEAK;
             }
             return {
@@ -132,7 +225,6 @@ const SpeakingDriller = (function () {
         _recap = [];
     }
 
-    // ---- Timer Handling ----
     function _startTimer() {
         _stopTimer();
         _timeRemaining = _timerMinutes * 60;
@@ -141,7 +233,7 @@ const SpeakingDriller = (function () {
         _timerInterval = setInterval(() => {
             const left = Math.max(0, Math.round((_endTime - Date.now()) / 1000));
             _timeRemaining = left;
-            const display = _container.querySelector('.sp-timer-display');
+            const display = document.querySelector('.sp-timer-display');
             if (display) display.textContent = _formatTime(left);
 
             if (left <= 0) {
@@ -158,18 +250,10 @@ const SpeakingDriller = (function () {
         }
     }
 
-    function stop() {
-        _stopTimer();
-        if (typeof SpeechInput !== 'undefined') {
-            SpeechInput.stopListening();
-        }
-    }
-
-    // ---- Session Lifecycle ----
     function _startSession() {
         _buildQueue();
         _phase = PHASE.SESSION;
-        _renderSession();
+        _renderActiveTab();
         if (_mode === MODE.TIMED) {
             _startTimer();
         }
@@ -182,7 +266,6 @@ const SpeakingDriller = (function () {
             return;
         }
         if (_mode === MODE.TIMED && _queueIndex >= _queue.length) {
-            // Refill queue if running out of items in timed mode
             _buildQueue();
         }
         _renderSessionItem();
@@ -192,28 +275,26 @@ const SpeakingDriller = (function () {
         _stopTimer();
         _phase = PHASE.RESULTS;
 
-        // Award XP
         const earnedXP = _correct * 3;
         if (earnedXP > 0 && typeof XP !== 'undefined' && typeof XP.award === 'function') {
             XP.award(earnedXP, 'speaking-driller');
         }
 
-        // Record accuracy into DrillHistory
         if (typeof DrillHistory !== 'undefined' && _seen > 0) {
             DrillHistory.record('speaking', { correct: _correct, wrong: _seen - _correct });
         }
 
-        _renderResults();
+        _renderActiveTab();
     }
 
-    // ---- UI: Settings Screen ----
-    function _renderSettings() {
+    function _renderSettings(body) {
         const levels = _availableLevels();
+        const langName = (typeof Lang !== 'undefined') ? Lang.name() : 'the language';
 
-        _container.innerHTML = `
+        body.innerHTML = `
             <div class="sp-settings">
-                <h2 class="gd-title">Speaking Driller</h2>
-                <p class="gd-hint">Practise pronunciation and speak ${(typeof Lang !== 'undefined') ? Lang.name() : 'the language'} out loud.</p>
+                <h2 class="gd-title">Sentence Speaking Drills</h2>
+                <p class="gd-hint">Practise pronunciation, shadowing, and spoken recall in ${langName}.</p>
 
                 <div class="wk-config-group">
                     <label class="wk-config-label">Level</label>
@@ -270,54 +351,53 @@ const SpeakingDriller = (function () {
             </div>
         `;
 
-        _attachSettingsEvents();
+        _attachSettingsEvents(body);
     }
 
-    function _attachSettingsEvents() {
-        _container.querySelectorAll('[data-level]').forEach(btn => {
+    function _attachSettingsEvents(body) {
+        body.querySelectorAll('[data-level]').forEach(btn => {
             btn.addEventListener('click', () => {
                 _level = btn.getAttribute('data-level');
-                _renderSettings();
+                _renderSettings(body);
             });
         });
 
-        _container.querySelectorAll('[data-type]').forEach(btn => {
+        body.querySelectorAll('[data-type]').forEach(btn => {
             btn.addEventListener('click', () => {
                 _drillType = btn.getAttribute('data-type');
-                _renderSettings();
+                _renderSettings(body);
             });
         });
 
-        _container.querySelectorAll('[data-mode]').forEach(btn => {
+        body.querySelectorAll('[data-mode]').forEach(btn => {
             btn.addEventListener('click', () => {
                 _mode = btn.getAttribute('data-mode');
-                _renderSettings();
+                _renderSettings(body);
             });
         });
 
-        _container.querySelectorAll('[data-count]').forEach(btn => {
+        body.querySelectorAll('[data-count]').forEach(btn => {
             btn.addEventListener('click', () => {
                 _questionCount = parseInt(btn.getAttribute('data-count'), 10);
-                _renderSettings();
+                _renderSettings(body);
             });
         });
 
-        _container.querySelectorAll('[data-minutes]').forEach(btn => {
+        body.querySelectorAll('[data-minutes]').forEach(btn => {
             btn.addEventListener('click', () => {
                 _timerMinutes = parseInt(btn.getAttribute('data-minutes'), 10);
-                _renderSettings();
+                _renderSettings(body);
             });
         });
 
-        const startBtn = _container.querySelector('[data-action="start-session"]');
+        const startBtn = body.querySelector('[data-action="start-session"]');
         if (startBtn) {
             startBtn.addEventListener('click', _startSession);
         }
     }
 
-    // ---- UI: Session Screen ----
-    function _renderSession() {
-        _container.innerHTML = `
+    function _renderSession(body) {
+        body.innerHTML = `
             <div class="sp-session-shell">
                 <div class="sp-session-header">
                     <div class="sp-session-progress">
@@ -333,7 +413,7 @@ const SpeakingDriller = (function () {
             </div>
         `;
 
-        const quitBtn = _container.querySelector('[data-action="quit-session"]');
+        const quitBtn = body.querySelector('[data-action="quit-session"]');
         if (quitBtn) {
             quitBtn.addEventListener('click', () => {
                 _finishSession();
@@ -353,8 +433,7 @@ const SpeakingDriller = (function () {
             return;
         }
 
-        // Update progress count
-        const progressEl = _container.querySelector('.sp-progress-text');
+        const progressEl = document.querySelector('.sp-progress-text');
         if (progressEl && _mode === MODE.COUNT) {
             progressEl.textContent = `Sentence ${_queueIndex + 1} of ${_queue.length}`;
         }
@@ -371,7 +450,7 @@ const SpeakingDriller = (function () {
                 if (!evalResult || !evalResult.isSnoozed) {
                     if (current.skillIds && typeof LearnerModel !== 'undefined' && typeof LearnerModel.recordProduction === 'function') {
                         const acc = (evalResult && typeof evalResult.accuracy === 'number') ? evalResult.accuracy : (isCorrect ? 100 : 0);
-                        LearnerModel.recordProduction(current.skillIds, isCorrect, acc);
+                        LearnerModel.recordProduction(current.skillIds, isCorrect, acc, 'oral');
                     }
                 }
             },
@@ -381,12 +460,11 @@ const SpeakingDriller = (function () {
         });
     }
 
-    // ---- UI: Results Screen ----
-    function _renderResults() {
+    function _renderResults(body) {
         const accuracy = _seen > 0 ? Math.round((_correct / _seen) * 100) : 0;
         const earnedXP = _correct * 3;
 
-        _container.innerHTML = `
+        body.innerHTML = `
             <div class="sp-results">
                 <div class="sp-results-hero">
                     <div class="sp-results-score">${accuracy}%</div>
@@ -417,15 +495,14 @@ const SpeakingDriller = (function () {
             </div>
         `;
 
-        const retryBtn = _container.querySelector('[data-action="practice-again"]');
+        const retryBtn = body.querySelector('[data-action="practice-again"]');
         if (retryBtn) {
             retryBtn.addEventListener('click', () => {
                 _phase = PHASE.SETTINGS;
-                _renderSettings();
+                _renderActiveTab();
             });
         }
 
-        // Mount recommendation engine next action
         if (typeof RecommendationEngine !== 'undefined' && typeof RecommendationEngine.mountNextAction === 'function') {
             const slot = document.getElementById('sp-next-action-slot');
             if (slot) {
@@ -434,10 +511,492 @@ const SpeakingDriller = (function () {
         }
     }
 
-    // ---- Main Driller Mount ----
+    // ============================================
+    // PART 2: VERBAL PRODUCTION (5-MINUTE EXTENDED ORAL STUDIO)
+    // ============================================
+
+    function _renderProdPromptSelect(body) {
+        const langName = (typeof Lang !== 'undefined') ? Lang.name() : 'the language';
+        const prompts = _prodPrompts || [];
+
+        let promptsHtml = '';
+        if (prompts.length > 0) {
+            promptsHtml = prompts.map(p => `
+                <div class="wk-card sp-card-clickable" data-select-prod-prompt="${_esc(p.id)}">
+                    <div class="sp-prompt-card-head">
+                        <span class="sp-level-pill">${_esc(p.cefrLevel || 'B1')}</span>
+                        <span class="sp-words-target">Spoken · ~1-3 min</span>
+                    </div>
+                    <h3 class="wk-card-title">${_esc(p.title)}</h3>
+                    <p class="wk-card-sub">${_esc(p.prompt.slice(0, 115))}...</p>
+                </div>
+            `).join('');
+        }
+
+        body.innerHTML = `
+            <div class="sp-driller-wrap">
+                <div class="sp-setup-head">
+                    <h2 class="sp-setup-title">Verbal Production Studio</h2>
+                    <p class="sp-setup-sub">Speak freely or pick a topic. Record up to 5 minutes out loud, listen to your own voice, and receive CEFR-aligned formative feedback.</p>
+                </div>
+
+                <div class="sp-prompt-grid">
+                    <div class="wk-card sp-card-clickable sp-card-custom" data-select-prod-custom="1">
+                        <div class="sp-prompt-card-head">
+                            <span class="sp-level-pill">Free Topic</span>
+                            <span class="sp-words-target">Max 5 min</span>
+                        </div>
+                        <h3 class="wk-card-title">Free Speaking</h3>
+                        <p class="wk-card-sub">Speak freely about your day, opinions, or any topic of choice in ${langName}.</p>
+                    </div>
+                    ${promptsHtml}
+                </div>
+            </div>
+        `;
+
+        body.querySelectorAll('[data-select-prod-prompt]').forEach(el => {
+            el.addEventListener('click', () => {
+                const pid = el.getAttribute('data-select-prod-prompt');
+                _selectedProdPrompt = prompts.find(p => p.id === pid) || null;
+                _startProdRecording();
+            });
+        });
+
+        const customBtn = body.querySelector('[data-select-prod-custom]');
+        if (customBtn) {
+            customBtn.addEventListener('click', () => {
+                _selectedProdPrompt = {
+                    id: 'custom_spoken',
+                    title: 'Free Speaking',
+                    cefrLevel: 'B1',
+                    prompt: `Speak freely about any topic of your choice in ${langName}. Focus on expression, continuity, and vocabulary range.`,
+                    targetSkills: ['extended_speech', 'fluency', 'communicative_effectiveness']
+                };
+                _startProdRecording();
+            });
+        }
+    }
+
+    function _startProdRecording() {
+        _prodTranscript = '';
+        _prodAudioUrl = null;
+        _prodElapsedSeconds = 0;
+        _prodPhase = PROD_PHASE.RECORDING;
+        _renderActiveTab();
+
+        if (_prodTimerInterval) clearInterval(_prodTimerInterval);
+        _prodTimerInterval = setInterval(() => {
+            _prodElapsedSeconds++;
+            const timerEl = document.querySelector('.sp-prod-timer-text');
+            const fillEl = document.querySelector('.sp-prod-timer-fill');
+            if (timerEl) {
+                timerEl.textContent = `${_formatTime(_prodElapsedSeconds)} / 05:00`;
+            }
+            if (fillEl) {
+                const pct = Math.min(100, (_prodElapsedSeconds / 300) * 100);
+                fillEl.style.width = pct + '%';
+            }
+            if (_prodElapsedSeconds >= 300) {
+                _finishProdRecording();
+            }
+        }, 1000);
+
+        if (typeof SpeechInput !== 'undefined') {
+            SpeechInput.startListening({
+                manualStop: true,
+                maxDurationMs: 300000,
+                onInterim: (text) => {
+                    _prodTranscript = text;
+                    const readout = document.querySelector('.sp-prod-live-transcript');
+                    if (readout) {
+                        readout.textContent = text;
+                        readout.classList.remove('sp-empty-transcript');
+                    }
+                    const wordCountEl = document.querySelector('.sp-prod-word-count');
+                    if (wordCountEl) {
+                        const words = text.trim() ? text.trim().split(/\s+/).length : 0;
+                        wordCountEl.textContent = `${words} words captured`;
+                    }
+                },
+                onFinal: (text) => {
+                    if (text) _prodTranscript = text;
+                },
+                onAudioReady: (audioUrl) => {
+                    _prodAudioUrl = audioUrl;
+                },
+                onAudioLevel: (level) => {
+                    const ring = document.querySelector('.sp-mic-pulse-ring');
+                    if (ring) {
+                        const scale = 1 + (level * 0.45);
+                        ring.style.transform = `scale(${scale.toFixed(2)})`;
+                        ring.style.opacity = Math.min(1, 0.4 + level).toFixed(2);
+                    }
+                },
+                onError: (err) => {
+                    console.warn('SpeechInput oral error:', err);
+                }
+            });
+        }
+    }
+
+    function _finishProdRecording() {
+        if (_prodTimerInterval) {
+            clearInterval(_prodTimerInterval);
+            _prodTimerInterval = null;
+        }
+        if (typeof SpeechInput !== 'undefined') {
+            SpeechInput.stopListening();
+            _prodAudioUrl = SpeechInput.getRecordedAudioUrl();
+        }
+        _prodPhase = PROD_PHASE.REVIEW;
+        _renderActiveTab();
+    }
+
+    function _renderProdRecording(body) {
+        const p = _selectedProdPrompt || {};
+        const langName = (typeof Lang !== 'undefined') ? Lang.name() : 'the language';
+
+        body.innerHTML = `
+            <div class="sp-driller-wrap sp-prod-recording-wrap">
+                <div class="sp-prod-header">
+                    <button type="button" class="sp-btn-link" data-action="back-prompts">← Choose another topic</button>
+                    <div class="sp-prod-timer-box">
+                        <div class="sp-prod-timer-bar"><div class="sp-prod-timer-fill" style="width: 0%"></div></div>
+                        <span class="sp-prod-timer-text">00:00 / 05:00</span>
+                    </div>
+                </div>
+
+                <div class="sp-prod-prompt-banner">
+                    <span class="sp-level-pill">${_esc(p.cefrLevel || 'B1')}</span>
+                    <h3 class="sp-prod-prompt-title">${_esc(p.title || 'Verbal Production')}</h3>
+                    <p class="sp-prod-prompt-desc">${_esc(p.prompt || '')}</p>
+                </div>
+
+                <div class="sp-prod-stage">
+                    <div class="sp-mic-pulse-container">
+                        <div class="sp-mic-pulse-ring"></div>
+                        <div class="sp-mic-pulse-center">🎙️</div>
+                    </div>
+                    <div class="sp-prod-status-line">
+                        <span class="sp-recording-dot"></span>
+                        <span>Recording live... Speak naturally in ${langName}</span>
+                    </div>
+                    <span class="sp-prod-word-count">0 words captured</span>
+                </div>
+
+                <div class="sp-prod-transcript-container">
+                    <div class="sp-prod-transcript-header">Real-time Speech Recognition</div>
+                    <div class="sp-prod-live-transcript sp-empty-transcript">
+                        Start speaking — your words will appear here in real time...
+                    </div>
+                </div>
+
+                <div class="sp-prod-actions">
+                    <button type="button" class="vbtn vbtn-primary sp-finish-btn" data-action="finish-recording">
+                        ⏹️ Finish Speaking & Review
+                    </button>
+                    <button type="button" class="vbtn vbtn-secondary" data-action="restart-recording">
+                        🔄 Restart
+                    </button>
+                </div>
+            </div>
+        `;
+
+        const backBtn = body.querySelector('[data-action="back-prompts"]');
+        if (backBtn) {
+            backBtn.addEventListener('click', () => {
+                stop();
+                _prodPhase = PROD_PHASE.PROMPT_SELECT;
+                _renderActiveTab();
+            });
+        }
+
+        const finishBtn = body.querySelector('[data-action="finish-recording"]');
+        if (finishBtn) {
+            finishBtn.addEventListener('click', _finishProdRecording);
+        }
+
+        const restartBtn = body.querySelector('[data-action="restart-recording"]');
+        if (restartBtn) {
+            restartBtn.addEventListener('click', () => {
+                stop();
+                _startProdRecording();
+            });
+        }
+    }
+
+    function _renderProdReview(body) {
+        const p = _selectedProdPrompt || {};
+        const audioUrl = _prodAudioUrl || (typeof SpeechInput !== 'undefined' ? SpeechInput.getRecordedAudioUrl() : null);
+        const words = _prodTranscript.trim() ? _prodTranscript.trim().split(/\s+/).length : 0;
+        const durationStr = _formatTime(_prodElapsedSeconds);
+
+        body.innerHTML = `
+            <div class="sp-driller-wrap sp-prod-review-wrap">
+                <div class="sp-setup-head">
+                    <h2 class="sp-setup-title">Review Your Spoken Production</h2>
+                    <p class="sp-setup-sub">Listen back to your recording and verify the transcribed text before submitting for CEFR evaluation.</p>
+                </div>
+
+                <div class="sp-prod-audio-card">
+                    <div class="sp-audio-card-head">
+                        <span class="sp-audio-icon">🔊</span>
+                        <div class="sp-audio-meta">
+                            <h4>Listen To Your Own Voice</h4>
+                            <p>${durationStr} recording · ${words} words</p>
+                        </div>
+                    </div>
+                    ${audioUrl ? `
+                        <audio controls class="sp-own-voice-player" src="${audioUrl}"></audio>
+                    ` : `
+                        <p class="sp-audio-empty-note">Audio recording playback unavailable on this browser/session.</p>
+                    `}
+                </div>
+
+                <div class="sp-prod-edit-card">
+                    <label class="sp-edit-label" for="sp-transcript-input">
+                        Transcribed Speech
+                        <span class="sp-edit-hint">Speech-to-text preview — tweak any misheard words or punctuation if needed:</span>
+                    </label>
+                    <textarea id="sp-transcript-input" class="sp-transcript-input" rows="7" placeholder="Type or adjust your spoken text...">${_esc(_prodTranscript)}</textarea>
+                </div>
+
+                <div class="sp-prod-review-actions">
+                    <button type="button" class="vbtn vbtn-primary sp-grade-btn" data-action="submit-grading">
+                        🧠 Grade My Spoken Production
+                    </button>
+                    <button type="button" class="vbtn vbtn-secondary" data-action="re-record">
+                        🎙️ Re-record
+                    </button>
+                    <button type="button" class="vbtn vbtn-secondary" data-action="back-prompts">
+                        Back to Topics
+                    </button>
+                </div>
+            </div>
+        `;
+
+        const submitBtn = body.querySelector('[data-action="submit-grading"]');
+        if (submitBtn) {
+            submitBtn.addEventListener('click', () => {
+                const textarea = body.querySelector('#sp-transcript-input');
+                const text = textarea ? textarea.value.trim() : _prodTranscript.trim();
+                if (!text) {
+                    alert('Please speak or enter some text before submitting.');
+                    return;
+                }
+                _submitProdForGrading(text);
+            });
+        }
+
+        const reRecordBtn = body.querySelector('[data-action="re-record"]');
+        if (reRecordBtn) {
+            reRecordBtn.addEventListener('click', () => {
+                _startProdRecording();
+            });
+        }
+
+        const backBtn = body.querySelector('[data-action="back-prompts"]');
+        if (backBtn) {
+            backBtn.addEventListener('click', () => {
+                _prodPhase = PROD_PHASE.PROMPT_SELECT;
+                _renderActiveTab();
+            });
+        }
+    }
+
+    function _renderProdAssessing(body) {
+        body.innerHTML = `
+            <div class="sp-driller-wrap sp-assessing-wrap">
+                <div class="sp-assessing-card">
+                    <div class="sp-spinner"></div>
+                    <h3 class="sp-assessing-title">Evaluating Spoken Production</h3>
+                    <p class="sp-assessing-sub">Analyzing fluency, coherence, grammatical accuracy, and lexical range against CEFR standards...</p>
+                </div>
+            </div>
+        `;
+    }
+
+    async function _submitProdForGrading(text) {
+        _prodTranscript = text;
+        _prodPhase = PROD_PHASE.ASSESSING;
+        _renderActiveTab();
+
+        const p = _selectedProdPrompt || {};
+        const lang = (typeof Lang !== 'undefined') ? Lang.code() : 'es';
+
+        let engine = null;
+        if (typeof GraderEngine !== 'undefined') {
+            engine = new GraderEngine();
+        } else if (typeof ParlourGrader !== 'undefined' && ParlourGrader.GraderEngine) {
+            engine = new ParlourGrader.GraderEngine();
+        }
+
+        try {
+            const context = {
+                cefrLevel: p.cefrLevel || 'B1',
+                taskType: 'oral_production',
+                taskInstructions: p.prompt || 'Spoken production task.',
+                targetSkills: p.targetSkills || ['fluency', 'oral_expression', 'sentence_structure'],
+                language: lang,
+                modality: 'oral',
+                title: p.title || 'Verbal Production'
+            };
+
+            const result = await engine.grade(text, context);
+            _prodAssessmentResult = result;
+
+            if (typeof LearnerModel !== 'undefined' && LearnerModel.recordAssessment) {
+                LearnerModel.recordAssessment(result, context);
+            }
+            if (p.targetSkills && typeof LearnerModel !== 'undefined' && LearnerModel.recordProduction) {
+                const isPass = (result.overallScore || 0) >= 60;
+                LearnerModel.recordProduction(p.targetSkills, isPass, result.overallScore || 0, 'oral');
+            }
+            if (typeof XP !== 'undefined' && XP.award) {
+                const earnedXP = Math.max(10, Math.round((result.overallScore || 70) / 5));
+                XP.award(earnedXP, 'speaking-studio');
+            }
+
+            _prodPhase = PROD_PHASE.RESULTS;
+            _renderActiveTab();
+        } catch (error) {
+            console.error('Oral assessment grading failed:', error);
+            alert('Could not complete oral evaluation: ' + error.message);
+            _prodPhase = PROD_PHASE.REVIEW;
+            _renderActiveTab();
+        }
+    }
+
+    function _renderProdResults(body) {
+        if (!body || !_prodAssessmentResult) return;
+        const res = _prodAssessmentResult;
+        const p = _selectedProdPrompt || {};
+        const score = res.overallScore || 0;
+        const dims = res.dimensions || {};
+        const errors = res.errors || [];
+        const strengths = (res.feedback && res.feedback.strengths) || [];
+        const priorities = (res.feedback && res.feedback.priorities) || [];
+        const stats = res.localStats || {};
+        const audioUrl = _prodAudioUrl || (typeof SpeechInput !== 'undefined' ? SpeechInput.getRecordedAudioUrl() : null);
+
+        let scoreColor = 'var(--success)';
+        if (score < 60) scoreColor = 'var(--danger)';
+        else if (score < 80) scoreColor = 'var(--accent)';
+
+        const errorsHtml = errors.length ? `
+            <div class="sp-results-section">
+                <h4 class="sp-section-heading">Detailed Observations (${errors.length})</h4>
+                <div class="sp-errors-list">
+                    ${errors.map(err => `
+                        <div class="sp-error-card sp-severity-${_esc(err.severity)}">
+                            <div class="sp-error-head">
+                                <span class="sp-error-cat">${_esc(err.category || 'expression')}</span>
+                                ${err.skillId ? `<span class="sp-skill-tag">${_esc(err.skillId)}</span>` : ''}
+                            </div>
+                            <p class="sp-error-quote">"${_esc(err.text)}"</p>
+                            <p class="sp-error-expl">${_esc(err.explanation)}</p>
+                        </div>
+                    `).join('')}
+                </div>
+            </div>
+        ` : '';
+
+        body.innerHTML = `
+            <div class="sp-driller-wrap sp-results-wrap">
+                <div class="sp-results-score-card">
+                    <div class="sp-score-circle" style="border-color: ${scoreColor}">
+                        <span class="sp-score-num">${score}</span>
+                        <span class="sp-score-max">/100</span>
+                    </div>
+                    <div class="sp-score-meta">
+                        <h3 class="sp-score-title">${score >= 80 ? 'Strong Oral Production' : (score >= 60 ? 'Competent Oral Production' : 'Developing Oral Competence')}</h3>
+                        <p class="sp-score-sub">${_esc(p.title || 'Verbal Production')} · CEFR ${_esc(p.cefrLevel || 'B1')}</p>
+                    </div>
+                </div>
+
+                ${audioUrl ? `
+                    <div class="sp-prod-audio-replay-card">
+                        <span class="sp-replay-label">Your Spoken Recording:</span>
+                        <audio controls class="sp-own-voice-player" src="${audioUrl}"></audio>
+                    </div>
+                ` : ''}
+
+                <div class="sp-dimensions-grid">
+                    ${Object.entries(dims).map(([dim, val]) => `
+                        <div class="sp-dim-card">
+                            <span class="sp-dim-name">${_esc(dim.charAt(0).toUpperCase() + dim.slice(1))}</span>
+                            <div class="sp-dim-bar"><div class="sp-dim-fill" style="width: ${Math.round(val * 100)}%"></div></div>
+                            <span class="sp-dim-val">${Math.round(val * 100)}%</span>
+                        </div>
+                    `).join('')}
+                </div>
+
+                <div class="sp-feedback-cols">
+                    <div class="sp-feedback-col sp-strengths">
+                        <h4>Oral Strengths</h4>
+                        <ul>${strengths.map(s => `<li>${_esc(s)}</li>`).join('')}</ul>
+                    </div>
+                    <div class="sp-feedback-col sp-priorities">
+                        <h4>Improvement Priorities</h4>
+                        <ul>${priorities.map(pr => `<li>${_esc(pr)}</li>`).join('')}</ul>
+                    </div>
+                </div>
+
+                ${errorsHtml}
+
+                <div class="sp-local-metrics">
+                    <span><strong>${stats.wordCount || (_prodTranscript.trim().split(/\s+/).length)}</strong> words</span>
+                    <span><strong>${_formatTime(_prodElapsedSeconds)}</strong> speaking duration</span>
+                    <span><strong>CEFR ${_esc(p.cefrLevel || 'B1')}</strong> target level</span>
+                </div>
+
+                <div class="vspeed-results-actions" style="margin-top: 2rem;">
+                    <button class="vbtn vbtn-secondary" data-action="speak-again">Speak Another Topic</button>
+                </div>
+            </div>
+        `;
+
+        const againBtn = body.querySelector('[data-action="speak-again"]');
+        if (againBtn) {
+            againBtn.addEventListener('click', () => {
+                _prodPhase = PROD_PHASE.PROMPT_SELECT;
+                _selectedProdPrompt = null;
+                _prodAssessmentResult = null;
+                _renderActiveTab();
+            });
+        }
+
+        if (typeof RecommendationEngine !== 'undefined') {
+            const actionsEl = body.querySelector('.vspeed-results-actions');
+            if (actionsEl) {
+                RecommendationEngine.mountNextAction(actionsEl, { excludeDrillerId: 'speaking' });
+            }
+        }
+    }
+
+    // ============================================
+    // MAIN ENTRY POINT & LIFECYCLE
+    // ============================================
+
+    function stop() {
+        _stopTimer();
+        if (_prodTimerInterval) {
+            clearInterval(_prodTimerInterval);
+            _prodTimerInterval = null;
+        }
+        if (typeof SpeechInput !== 'undefined') {
+            SpeechInput.stopListening();
+        }
+    }
+
     async function render(container, options = {}) {
         _container = container;
         await _load();
+        await _loadProdPrompts();
+
+        if (options && options.activeTab) {
+            _activeStudioTab = options.activeTab;
+        }
 
         if (options && options.level) {
             _level = options.level;
@@ -453,13 +1012,16 @@ const SpeakingDriller = (function () {
         }
 
         if (options && options.autoStart) {
+            _activeStudioTab = STUDIO_TAB.DRILLS;
             _phase = PHASE.SESSION;
+            _renderStudioShell();
             _startSession();
             return;
         }
 
         _phase = PHASE.SETTINGS;
-        _renderSettings();
+        _prodPhase = PROD_PHASE.PROMPT_SELECT;
+        _renderStudioShell();
     }
 
     return {
@@ -470,5 +1032,5 @@ const SpeakingDriller = (function () {
 
 if (typeof window !== 'undefined') {
     window.SpeakingDriller = SpeakingDriller;
+    window.SpeakingStudio = SpeakingDriller; // alias for clarity
 }
-

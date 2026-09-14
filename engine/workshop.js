@@ -59,8 +59,8 @@ const Workshop = (function () {
         {
             id: 'speaking',
             icon: 'speaking',
-            title: 'Speaking Driller',
-            sub: () => `Practise pronunciation and speak ${(typeof Lang !== 'undefined') ? Lang.name() : 'the language'} out loud.`,
+            title: 'Speaking Studio',
+            sub: () => `Practise pronunciation, shadowing, and open-ended oral production.`,
             containerId: 'speaking-driller-root'
         },
         {
@@ -71,35 +71,11 @@ const Workshop = (function () {
             containerId: 'writing-driller-root'
         },
         {
-            id: 'hu-verb',
-            icon: 'hu-verb',
-            title: 'Verb Driller',
-            sub: 'Decode and produce Hungarian verb forms.',
-            containerId: 'hu-verb-driller-root',
-            langs: ['hu']
-        },
-        {
-            id: 'hu-suffix',
-            icon: 'hu-suffix',
-            title: 'Suffix Driller',
-            sub: 'Plurals, possession, and case — attach the right ending.',
-            containerId: 'hu-suffix-driller-root',
-            langs: ['hu']
-        },
-        {
-            id: 'hu-prefix',
-            icon: 'hu-prefix',
-            title: 'Prefix Driller',
-            sub: 'Verb prefixes — meaning and construction.',
-            containerId: 'hu-prefix-driller-root',
-            langs: ['hu']
-        },
-        {
-            id: 'hu-morphology',
+            id: 'hu-verb-studio',
             icon: 'hu-morphology',
-            title: 'Morphology Driller',
-            sub: 'Take Hungarian words apart, and put them back together.',
-            containerId: 'hu-morphology-driller-root',
+            title: 'Verb & Morphology Studio',
+            sub: 'Conjugation, verbal prefixes, suffixes, and word decomposition.',
+            containerId: 'hu-verb-studio-root',
             langs: ['hu']
         }
     ];
@@ -233,6 +209,7 @@ const Workshop = (function () {
             listening: typeof ListeningDriller !== 'undefined' ? ListeningDriller : null,
             speaking: typeof SpeakingDriller !== 'undefined' ? SpeakingDriller : null,
             writing: typeof WritingDriller !== 'undefined' ? WritingDriller : null,
+            'hu-verb-studio': typeof HuVerbStudio !== 'undefined' ? HuVerbStudio : null,
             'hu-verb': typeof HuVerbDriller !== 'undefined' ? HuVerbDriller : null,
             'hu-suffix': typeof HuSuffixDriller !== 'undefined' ? HuSuffixDriller : null,
             'hu-prefix': typeof HuPrefixDriller !== 'undefined' ? HuPrefixDriller : null,
@@ -318,6 +295,17 @@ const Workshop = (function () {
     // GrammarDriller, from Home's post-unit practice nudge). A driller that
     // doesn't understand `options` just ignores the second render() arg.
     function open(id, options) {
+        // Transparent routing for Hungarian sub-drillers into the unified Verb & Morphology Studio
+        if (id === 'hu-verb' || id === 'hu-suffix' || id === 'hu-prefix' || id === 'hu-morphology') {
+            if (typeof Lang !== 'undefined' && Lang.code() !== 'hu') {
+                Lang.set('hu');
+            }
+            _active = 'hu-verb-studio';
+            _activeOptions = Object.assign({ activeTab: id }, options);
+            render();
+            return;
+        }
+
         const driller = DRILLERS.find(d => d.id === id);
         if (driller && driller.langs && typeof Lang !== 'undefined' && !driller.langs.includes(Lang.code())) {
             Lang.set(driller.langs[0]);
@@ -352,3 +340,10 @@ const Workshop = (function () {
 
     return { render, open, close, activeDriller };
 })();
+
+if (typeof window !== 'undefined') {
+    window.Workshop = Workshop;
+}
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = Workshop;
+}

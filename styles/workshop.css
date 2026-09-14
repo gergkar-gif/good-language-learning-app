@@ -2417,3 +2417,445 @@
 .sp-local-metrics strong {
     color: var(--text);
 }
+
+/* ============================================
+   SPEAKING STUDIO & EXTENDED ORAL PRODUCTION
+   ============================================ */
+
+.sp-studio-wrap {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 8px 16px 32px;
+}
+
+.sp-studio-nav {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid var(--border-light);
+    padding-bottom: 10px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.sp-studio-tab {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--muted);
+    background: none;
+    border: 1px solid transparent;
+    border-radius: var(--radius-md, 6px);
+    cursor: pointer;
+    transition: all var(--dur-fast) var(--ease-standard);
+    white-space: nowrap;
+}
+
+.sp-studio-tab:hover {
+    color: var(--text);
+    background: var(--bg-hover, rgba(0,0,0,0.03));
+}
+
+.sp-studio-tab.active {
+    color: var(--accent-dark, var(--accent));
+    background: var(--surface, #fff);
+    border-color: var(--border);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+[data-theme="dark"] .sp-studio-tab.active,
+:root:not([data-theme="light"]) .sp-studio-tab.active {
+    background: var(--surface);
+    border-color: var(--border);
+    color: var(--accent);
+}
+
+.sp-tab-icon {
+    font-size: 16px;
+    line-height: 1;
+}
+
+/* Recording Screen */
+.sp-prod-recording-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sp-prod-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.sp-btn-link {
+    background: none;
+    border: none;
+    color: var(--primary-mid, var(--accent));
+    font-size: 13.5px;
+    cursor: pointer;
+    padding: 0;
+    text-decoration: underline;
+}
+
+.sp-btn-link:hover {
+    color: var(--primary, var(--accent-dark));
+}
+
+.sp-prod-timer-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sp-prod-timer-bar {
+    width: 120px;
+    height: 8px;
+    background: var(--border-light);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.sp-prod-timer-fill {
+    height: 100%;
+    background: var(--accent);
+    transition: width 1s linear;
+}
+
+.sp-prod-timer-text {
+    font-family: var(--font-mono, monospace);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.sp-prod-prompt-banner {
+    background: var(--surface, #fff);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md, 6px);
+    padding: 16px 18px;
+}
+
+[data-theme="dark"] .sp-prod-prompt-banner,
+:root:not([data-theme="light"]) .sp-prod-prompt-banner {
+    background: var(--surface);
+    border-color: var(--border);
+}
+
+.sp-prod-prompt-title {
+    margin: 8px 0 6px;
+    font-size: 18px;
+    font-family: var(--font-display);
+    color: var(--text);
+}
+
+.sp-prod-prompt-desc {
+    margin: 0;
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.45;
+}
+
+/* Mic Stage & Pulse */
+.sp-prod-stage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 16px;
+    background: var(--surface, #fff);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md, 6px);
+    gap: 14px;
+}
+
+[data-theme="dark"] .sp-prod-stage,
+:root:not([data-theme="light"]) .sp-prod-stage {
+    background: var(--surface);
+    border-color: var(--border);
+}
+
+.sp-mic-pulse-container {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sp-mic-pulse-ring {
+    position: absolute;
+    inset: -6px;
+    border-radius: 50%;
+    background: rgba(230, 81, 0, 0.2);
+    transform: scale(1);
+    opacity: 0.5;
+    transition: transform 0.1s ease-out, opacity 0.1s ease-out;
+    pointer-events: none;
+}
+
+.sp-mic-pulse-center {
+    position: relative;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: #fff;
+    font-size: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(230, 81, 0, 0.3);
+}
+
+.sp-prod-status-line {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13.5px;
+    font-weight: 500;
+    color: var(--text);
+}
+
+.sp-recording-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--danger, #d32f2f);
+    animation: spDotPulse 1.5s infinite;
+}
+
+@keyframes spDotPulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.3; transform: scale(0.85); }
+}
+
+.sp-prod-word-count {
+    font-size: 12.5px;
+    color: var(--muted);
+    font-family: var(--font-mono, monospace);
+}
+
+/* Transcript container */
+.sp-prod-transcript-container {
+    background: var(--surface, #fff);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md, 6px);
+    overflow: hidden;
+}
+
+[data-theme="dark"] .sp-prod-transcript-container,
+:root:not([data-theme="light"]) .sp-prod-transcript-container {
+    background: var(--surface);
+    border-color: var(--border);
+}
+
+.sp-prod-transcript-header {
+    padding: 10px 14px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--muted);
+    background: rgba(0,0,0,0.02);
+    border-bottom: 1px solid var(--border-light);
+}
+
+.sp-prod-live-transcript {
+    padding: 14px 16px;
+    min-height: 90px;
+    max-height: 180px;
+    overflow-y: auto;
+    font-size: 14.5px;
+    line-height: 1.5;
+    color: var(--text);
+}
+
+.sp-prod-live-transcript.sp-empty-transcript {
+    font-style: italic;
+    color: var(--muted);
+}
+
+.sp-prod-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.sp-finish-btn {
+    flex: 1;
+    min-width: 200px;
+}
+
+/* Review Screen */
+.sp-prod-review-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sp-prod-audio-card {
+    background: var(--surface, #fff);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md, 6px);
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+[data-theme="dark"] .sp-prod-audio-card,
+:root:not([data-theme="light"]) .sp-prod-audio-card {
+    background: var(--surface);
+    border-color: var(--border);
+}
+
+.sp-audio-card-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.sp-audio-icon {
+    font-size: 24px;
+}
+
+.sp-audio-meta h4 {
+    margin: 0 0 2px 0;
+    font-size: 15px;
+    color: var(--text);
+}
+
+.sp-audio-meta p {
+    margin: 0;
+    font-size: 12.5px;
+    color: var(--muted);
+}
+
+.sp-own-voice-player {
+    width: 100%;
+    height: 40px;
+    outline: none;
+    border-radius: 4px;
+}
+
+.sp-audio-empty-note {
+    font-size: 13px;
+    font-style: italic;
+    color: var(--muted);
+    margin: 4px 0;
+}
+
+.sp-prod-edit-card {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.sp-edit-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.sp-edit-hint {
+    font-size: 12.5px;
+    font-weight: 400;
+    color: var(--muted);
+}
+
+.sp-transcript-input {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 14.5px;
+    line-height: 1.5;
+    color: var(--text);
+    background: var(--surface, #fff);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md, 6px);
+    resize: vertical;
+    outline: none;
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+.sp-transcript-input:focus {
+    border-color: var(--accent);
+}
+
+[data-theme="dark"] .sp-transcript-input,
+:root:not([data-theme="light"]) .sp-transcript-input {
+    background: var(--surface);
+    border-color: var(--border);
+}
+
+.sp-prod-review-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.sp-grade-btn {
+    flex: 1.5;
+    min-width: 220px;
+}
+
+/* Audio replay on results screen */
+.sp-prod-audio-replay-card {
+    background: var(--surface, #fff);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md, 6px);
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 18px;
+}
+
+[data-theme="dark"] .sp-prod-audio-replay-card,
+:root:not([data-theme="light"]) .sp-prod-audio-replay-card {
+    background: var(--surface);
+    border-color: var(--border);
+}
+
+.sp-replay-label {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+}
+
+/* ============================================
+   HUNGARIAN VERB & MORPHOLOGY STUDIO
+   ============================================ */
+
+.hu-verb-studio-wrap {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 8px 16px 32px;
+}
+
+.hu-studio-nav {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--border-light);
+    padding-bottom: 10px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.hu-studio-body {
+    min-height: 300px;
+}
+
