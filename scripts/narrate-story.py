@@ -2,39 +2,108 @@
 """
 narrate-story.py — AI-aware story narration & pedagogical annotation generator for Parlour.
 
+Uses state-of-the-art Neural TTS (edge-tts) for authentic human pronunciation,
+multi-speaker voice casting, CEFR pacing, and mixed-language story support.
+
 Workflow:
 1. Reads story JSON.
-2. Analyzes text structure: dialogue, speakers, CEFR pacing, natural pauses, emphasis, phonetics.
+2. Analyzes text structure: dialogue, speakers, CEFR pacing, pauses, emphasis, phonetics.
 3. Generates pedagogical annotations: target vocabulary, comprehension check questions.
-4. Synthesizes multi-speaker audio with precise paragraph-level timestamp alignment.
+4. Synthesizes multi-speaker neural audio with precise paragraph-level timestamp alignment.
 5. Injects narration metadata into the story JSON file.
-6. Stores the audio asset in content/<lang>/stories/audio/<story-id>.[mp3|wav].
+6. Stores the audio asset in content/<lang>/stories/audio/<story-id>.mp3.
 """
 
 import argparse
+import asyncio
 import json
 import os
 import re
-import subprocess
 import sys
-import tempfile
-import wave
 from pathlib import Path
+
+if sys.platform == "win32":
+    try:
+        sys.stdout.reconfigure(encoding='utf-8', errors='replace')
+        sys.stderr.reconfigure(encoding='utf-8', errors='replace')
+    except Exception:
+        pass
+
+try:
+    import edge_tts
+    HAS_EDGE_TTS = True
+except ImportError:
+    HAS_EDGE_TTS = False
 
 # CEFR Pacing Profiles
 CEFR_PACING = {
-    "A1": {"speedMultiplier": 0.82, "rate_wpm": 115, "style": "deliberate, warm, articulate"},
-    "A2": {"speedMultiplier": 0.88, "rate_wpm": 130, "style": "measured, clear, conversational"},
-    "B1": {"speedMultiplier": 0.95, "rate_wpm": 145, "style": "natural, expressive"},
-    "B2": {"speedMultiplier": 1.00, "rate_wpm": 160, "style": "fluent, authentic cadence"},
-    "C1": {"speedMultiplier": 1.00, "rate_wpm": 170, "style": "native tempo, rich nuances"}
+    "A1": {"speedMultiplier": 0.88, "rate_str": "-12%", "rate_wpm": 115, "style": "deliberate, warm, articulate"},
+    "A2": {"speedMultiplier": 0.94, "rate_str": "-6%",  "rate_wpm": 130, "style": "measured, clear, conversational"},
+    "B1": {"speedMultiplier": 1.00, "rate_str": "+0%",  "rate_wpm": 145, "style": "natural, expressive"},
+    "B2": {"speedMultiplier": 1.04, "rate_str": "+4%",  "rate_wpm": 160, "style": "fluent, authentic cadence"},
+    "C1": {"speedMultiplier": 1.06, "rate_str": "+6%",  "rate_wpm": 170, "style": "native tempo, rich nuances"}
 }
 
-def analyze_story_text(story_data):
+# Neural Voice Casting Catalog
+NEURAL_VOICES = {
+    "es": {
+        "narrator": "es-ES-ElviraNeural",     # Warm, articulate storytelling guide
+        "female": "es-ES-XimenaNeural",       # Clear, natural female dialogue (e.g. Meg, Ana)
+        "male": "es-ES-AlvaroNeural"          # Natural male dialogue (e.g. Carlos, Juan)
+    },
+    "hu": {
+        "narrator": "hu-HU-NoemiNeural",      # Native Hungarian female storyteller
+        "female": "hu-HU-NoemiNeural",        # Hungarian female dialogue
+        "male": "hu-HU-TamasNeural"           # Hungarian male dialogue (e.g. Károly)
+    },
+    "en": {
+        "narrator": "en-US-EmmaNeural",       # Clear, warm English scaffolding narrator
+        "female": "en-US-EmmaNeural",         # English female dialogue
+        "male": "en-US-BrianNeural"           # English male dialogue
+    }
+}
+
+KNOWN_PHONETICS = {
+    # Spanish
+    "Hanói": {"ipa": "xaˈnoj", "note": "Stress on the final syllable"},
+    "Sudáfrica": {"ipa": "suˈða.fɾi.ka", "note": "Antepenultimate accent on -dá-"},
+    "Hungría": {"ipa": "uŋˈɡɾi.a", "note": "Silent initial H, hiatus on -í-"},
+    "español": {"ipa": "es.paˈɲol", "note": "Palatal nasal ñ"},
+    "Buenos días": {"ipa": "ˈbwe.noz ˈði.as", "note": "Soft intervocalic d"},
+    # Hungarian
+    "Budapest": {"ipa": "ˈbudɒpɛʃt", "note": "s is pronounced 'sh' (/ʃ/), a is short open back vowel (/ɒ/)"},
+    "Károly": {"ipa": "ˈkaːroj", "note": "Stress strictly on first syllable, ly pronounced /j/"},
+    "Szia": {"ipa": "ˈsiɒ", "note": "Informal greeting ('hi/hello')"},
+    "könyv": {"ipa": "ˈkøɲv", "note": "ö is front rounded /ø/, ny is palatal /ɲ/"},
+    "kávé": {"ipa": "ˈkaːveː", "note": "Long á and long é vowels"},
+    "víz": {"ipa": "ˈviːz", "note": "Long vowel í"},
+    "ház": {"ipa": "ˈhaːz", "note": "Long vowel á"}
+}
+
+def detect_course_lang(story_path, story_data):
+    """Detects primary course language from path or story data."""
+    p_str = str(story_path).replace("\\", "/")
+    if "/hu/" in p_str:
+        return "hu"
+    if "/es/" in p_str:
+        return "es"
+    return "es"
+
+def get_speaker_voice(speaker, lang, course_lang):
+    """Assigns an authentic neural voice based on speaker name, paragraph language, and role."""
+    lang_voices = NEURAL_VOICES.get(lang, NEURAL_VOICES.get(course_lang, NEURAL_VOICES["es"]))
+    if speaker == "Narrator":
+        return lang_voices["narrator"]
+    female_names = ["Meg", "Ana", "Elena", "María", "Carmen", "Kati", "Zsuzsa", "Eszter", "Emma"]
+    gender = "female" if speaker in female_names else "male"
+    return lang_voices.get(gender, lang_voices["narrator"])
+
+def analyze_story_text(story_data, course_lang="es"):
     """
     Analyzes story text to derive:
     - Speaker profiles
     - Pacing and timing cues
+    - Segment language tags
     - Pronunciation notes
     - Pedagogical vocabulary & comprehension questions
     """
@@ -43,7 +112,7 @@ def analyze_story_text(story_data):
     paragraphs = story_data.get("paragraphs", [])
     characters = story_data.get("characters", [])
     
-    # Identify speakers
+    # Identify speakers with role and tone
     speakers = {
         "Narrator": {
             "role": "narrator",
@@ -52,21 +121,12 @@ def analyze_story_text(story_data):
         }
     }
     for char in characters:
+        is_female = char in ["Meg", "Ana", "Elena", "María", "Carmen", "Kati", "Zsuzsa", "Eszter", "Emma"]
         speakers[char] = {
             "role": "character",
-            "gender": "female" if char in ["Meg", "Ana", "Elena", "María", "Carmen"] else "male",
+            "gender": "female" if is_female else "male",
             "tone": "conversational, expressive"
         }
-
-    # Generate pronunciation notes for notable names/words
-    pronunciations_by_word = {}
-    known_phonetics = {
-        "Hanói": {"ipa": "xaˈnoj", "note": "Stress on the final syllable"},
-        "Sudáfrica": {"ipa": "suˈða.fɾi.ka", "note": "Antepenultimate accent on -dá-"},
-        "Hungría": {"ipa": "uŋˈɡɾi.a", "note": "Silent initial H, hiatus on -í-"},
-        "español": {"ipa": "es.paˈɲol", "note": "Palatal nasal ñ"},
-        "Buenos días": {"ipa": "ˈbwe.noz ˈði.as", "note": "Soft intervocalic d"}
-    }
 
     segments = []
     current_time = 0.0
@@ -75,12 +135,13 @@ def analyze_story_text(story_data):
         text = p.get("text", "")
         p_type = p.get("type", "narration")
         speaker = p.get("speaker", "Narrator") if p_type == "dialogue" else "Narrator"
+        para_lang = p.get("lang") or course_lang
         
-        # Word count & estimated speaking time (rate adjusted by CEFR)
+        # Word count & estimated speaking time
         words = text.split()
         word_count = len(words)
-        wpm = pacing["rate_wpm"]
-        # Base duration in seconds + small pause at paragraph boundary
+        # English scaffolding paragraphs use natural ~145 wpm
+        wpm = 145 if para_lang == "en" else pacing["rate_wpm"]
         duration = max(1.6, round((word_count / wpm) * 60.0, 2))
         
         cues = []
@@ -89,10 +150,10 @@ def analyze_story_text(story_data):
         if "!" in text or "¡" in text:
             cues.append({"type": "emphasis", "level": "strong"})
         if "," in text:
-            cues.append({"type": "pause", "durationMs": 300, "reason": "clause-boundary"})
+            cues.append({"type": "pause", "durationMs": 250, "reason": "clause-boundary"})
         
         pron_list = []
-        for word, info in known_phonetics.items():
+        for word, info in KNOWN_PHONETICS.items():
             if re.search(r'\b' + re.escape(word) + r'\b', text, re.IGNORECASE):
                 pron_list.append({"word": word, "ipa": info["ipa"], "note": info["note"]})
 
@@ -101,23 +162,65 @@ def analyze_story_text(story_data):
             "startTime": round(current_time, 2),
             "endTime": round(current_time + duration, 2),
             "speaker": speaker,
+            "lang": para_lang,
             "cues": cues,
             "pronunciations": pron_list
         })
-        current_time += duration + 0.35  # Natural pause between paragraphs
+        current_time += duration
 
     total_duration = round(current_time, 2)
 
-    # Derive key vocabulary & comprehension check questions
-    vocabulary_topics = story_data.get("vocabularyTopics", [])
+    # Key vocabulary & comprehension questions
     grammar_topics = story_data.get("grammar", [])
-    
-    # Context-aware comprehension questions based on story details
-    comprehension_questions = []
     title = story_data.get("title", "")
     summary = story_data.get("summary", "")
 
-    if "Meg" in characters and "Carlos" in characters:
+    if course_lang == "hu":
+        key_vocab = [
+            {"lemma": "könyv", "pos": "noun", "cefr": "A1", "gloss": "book"},
+            {"lemma": "telefon", "pos": "noun", "cefr": "A1", "gloss": "telephone"},
+            {"lemma": "ház", "pos": "noun", "cefr": "A1", "gloss": "house"}
+        ]
+        comprehension_questions = [
+            {
+                "question": "Hol van Meg és Károly?",
+                "options": [
+                    "Budapesten",
+                    "Londonban",
+                    "Bécsben",
+                    "Madridban"
+                ],
+                "correctIndex": 0,
+                "explanation": "Meg Budapesten van Károllyal (Meg is in Budapest with Károly)."
+            },
+            {
+                "question": "Mi van az asztalon?",
+                "options": [
+                    "Egy könyv és egy telefon",
+                    "Egy autó és egy kulcs",
+                    "Egy kutya és egy macska",
+                    "Csak egy pohár tej"
+                ],
+                "correctIndex": 0,
+                "explanation": "Károly rámutat egy könyvre és egy telefonra az asztalon (Ez egy könyv, az egy telefon)."
+            },
+            {
+                "question": "Milyen nyelven beszélnek a párbeszédekben?",
+                "options": [
+                    "Magyarul",
+                    "Spanyolul",
+                    "Németül",
+                    "Olaszul"
+                ],
+                "correctIndex": 0,
+                "explanation": "Meg magyarul gyakorolja az alapvető szavakat Károllyal."
+            }
+        ]
+    elif "Meg" in characters and "Carlos" in characters:
+        key_vocab = [
+            {"lemma": "conocer", "pos": "verb", "cefr": level, "gloss": "to meet / get to know"},
+            {"lemma": "intercambio", "pos": "noun", "cefr": level, "gloss": "exchange"}
+        ]
         comprehension_questions = [
             {
                 "question": "¿Dónde se encuentran Carlos y Meg?",
@@ -144,35 +247,35 @@ def analyze_story_text(story_data):
             {
                 "question": "¿Por qué están allí los dos?",
                 "options": [
+                    "Para practicar español en un intercambio de idiomas",
                     "Para comer tacos únicamente",
                     "Para trabajar como camareros",
-                    "Para practicar español en un intercambio de idiomas",
                     "Para viajar a Hungría"
                 ],
-                "correctIndex": 2,
+                "correctIndex": 0,
                 "explanation": "Los dos estudian el idioma y asisten al intercambio de idiomas."
             }
         ]
     else:
+        key_vocab = [
+            {"lemma": "historia", "pos": "noun", "cefr": level, "gloss": "story"}
+        ]
         comprehension_questions = [
             {
                 "question": f"¿Cuál es el tema principal de «{title}»?",
                 "options": [
-                    summary if summary else f"Una historia en nivel {level}",
+                    summary if summary else f"Una lectura en nivel {level}",
                     "Una discusión sobre gramática",
                     "Una receta de cocina tradicional",
                     "Una carta formal de negocios"
                 ],
                 "correctIndex": 0,
-                "explanation": "El texto desarrolla los eventos resumidos en la narración."
+                "explanation": "El texto desarrolla los eventos descritos en la narración."
             }
         ]
 
     pedagogical = {
-        "keyVocabulary": [
-            {"lemma": "conocer", "pos": "verb", "cefr": level, "gloss": "to meet / get to know"},
-            {"lemma": "intercambio", "pos": "noun", "cefr": level, "gloss": "exchange"}
-        ],
+        "keyVocabulary": key_vocab,
         "targetGrammar": grammar_topics,
         "comprehensionQuestions": comprehension_questions
     }
@@ -185,89 +288,87 @@ def analyze_story_text(story_data):
         "pedagogical": pedagogical
     }
 
-def synthesize_audio_sapi(story_data, output_wav_path):
+async def synthesize_story_neural(story_data, output_mp3_path, course_lang="es"):
     """
-    Synthesizes story paragraphs into a unified audio file using Windows SAPI/SpeechSynthesizer,
-    measuring exact paragraph durations.
+    Synthesizes story paragraphs into an authentic multi-voice MP3 using Neural TTS,
+    extracting precise millisecond sentence boundaries.
     """
+    if not HAS_EDGE_TTS:
+        print("[WARN] edge-tts is not installed; skipping audio synthesis.")
+        return None, 0.0
+
+    level = story_data.get("level", "A1").upper()
+    pacing = CEFR_PACING.get(level, CEFR_PACING["A1"])
     paragraphs = story_data.get("paragraphs", [])
     if not paragraphs:
         return None, 0.0
 
-    temp_files = []
-    segments = []
+    all_audio = bytearray()
+    real_segments = []
     current_time = 0.0
 
-    try:
-        with tempfile.TemporaryDirectory() as tmpdir:
-            for idx, p in enumerate(paragraphs):
-                text = p.get("text", "")
-                p_type = p.get("type", "narration")
-                speaker = p.get("speaker", "Narrator") if p_type == "dialogue" else "Narrator"
-                
-                # Sanitize text for speech script
-                safe_text = text.replace("'", "''").replace('"', '""')
-                tmp_wav = os.path.join(tmpdir, f"seg_{idx}.wav")
-                
-                ps_script = f"""
-Add-Type -AssemblyName System.Speech
-$synth = New-Object System.Speech.Synthesis.SpeechSynthesizer
-$synth.SetOutputToWaveFile('{tmp_wav}')
-$synth.Speak('{safe_text}')
-$synth.Dispose()
-"""
-                ps_path = os.path.join(tmpdir, f"synth_{idx}.ps1")
-                with open(ps_path, "w", encoding="utf-8") as f:
-                    f.write(ps_script)
+    print(f"[NEURAL-TTS] Synthesizing {len(paragraphs)} paragraphs (CEFR: {level})...")
 
-                subprocess.run(
-                    ["powershell", "-ExecutionPolicy", "Bypass", "-File", ps_path],
-                    check=True,
-                    capture_output=True
-                )
+    for idx, p in enumerate(paragraphs):
+        text = p.get("text", "").strip()
+        if not text:
+            continue
 
-                # Measure actual audio duration from the generated WAV
-                duration = 0.0
-                if os.path.exists(tmp_wav):
-                    with wave.open(tmp_wav, "rb") as wf:
-                        frames = wf.getnframes()
-                        rate = wf.getframerate()
-                        duration = round(frames / float(rate), 2)
-                    temp_files.append(tmp_wav)
-                else:
-                    duration = max(1.5, len(text.split()) * 0.4)
+        p_type = p.get("type", "narration")
+        speaker = p.get("speaker", "Narrator") if p_type == "dialogue" else "Narrator"
+        para_lang = p.get("lang") or course_lang
 
-                segments.append({
-                    "paraIndex": idx,
-                    "startTime": round(current_time, 2),
-                    "endTime": round(current_time + duration, 2),
-                    "speaker": speaker
-                })
-                current_time += duration + 0.25
+        # Select neural voice & pacing rate
+        voice = get_speaker_voice(speaker, para_lang, course_lang)
+        rate_str = "+0%" if para_lang == "en" else pacing["rate_str"]
 
-            # Merge all segment WAVs into single master WAV
-            if temp_files:
-                os.makedirs(os.path.dirname(output_wav_path), exist_ok=True)
-                with wave.open(temp_files[0], "rb") as first_wf:
-                    params = first_wf.getparams()
+        comm = edge_tts.Communicate(text, voice, rate=rate_str)
+        dur = 0.0
+        seg_audio = bytearray()
 
-                with wave.open(output_wav_path, "wb") as out_wf:
-                    out_wf.setparams(params)
-                    # Add 200ms silence between segments
-                    silence_frames = int(params.framerate * 0.2)
-                    silence_data = b'\x00' * (silence_frames * params.nchannels * params.sampwidth)
+        try:
+            async for chunk in comm.stream():
+                if chunk["type"] == "audio":
+                    seg_audio.extend(chunk["data"])
+                elif chunk["type"] == "SentenceBoundary":
+                    offset_s = chunk["offset"] / 10_000_000.0
+                    duration_s = chunk["duration"] / 10_000_000.0
+                    dur = max(dur, offset_s + duration_s)
+        except Exception as e:
+            print(f"[ERROR] Synthesis failed on paragraph {idx}: {e}")
 
-                    for wav_file in temp_files:
-                        with wave.open(wav_file, "rb") as in_wf:
-                            out_wf.writeframes(in_wf.readframes(in_wf.getnframes()))
-                        out_wf.writeframes(silence_data)
-                print(f"[SUCCESS] Synthesized {len(temp_files)} audio segments -> {output_wav_path}")
-            
-            return segments, round(current_time, 2)
+        # Fallback to byte-length estimation if duration was not emitted
+        if dur <= 0.0:
+            dur = max(1.5, round(len(seg_audio) / 6000.0, 2))
 
-    except Exception as err:
-        print(f"[WARN] SAPI synthesis fallback due to: {err}")
-        return None, 0.0
+        start_time = round(current_time, 2)
+        end_time = round(current_time + dur, 2)
+
+        real_segments.append({
+            "paraIndex": idx,
+            "startTime": start_time,
+            "endTime": end_time,
+            "speaker": speaker,
+            "lang": para_lang,
+            "voice": voice
+        })
+
+        all_audio.extend(seg_audio)
+        current_time = end_time
+
+        speaker_label = f"{speaker} ({voice.split('-')[-1].replace('Neural', '')})"
+        print(f"  [P{idx:02d}] {speaker_label:20s} [{para_lang}] {start_time:5.2f}s -> {end_time:5.2f}s | {text[:38]}...")
+
+    # Write master MP3 file
+    os.makedirs(os.path.dirname(output_mp3_path), exist_ok=True)
+    with open(output_mp3_path, "wb") as f:
+        f.write(all_audio)
+
+    total_duration = round(current_time, 2)
+    file_size_kb = len(all_audio) / 1024.0
+    print(f"[SUCCESS] Neural audio synthesized -> {output_mp3_path} ({file_size_kb:.1f} KB, {total_duration}s)")
+
+    return real_segments, total_duration
 
 def process_story(story_path, dry_run=False, synthesize=True):
     path = Path(story_path)
@@ -279,28 +380,40 @@ def process_story(story_path, dry_run=False, synthesize=True):
         story_data = json.load(f)
 
     story_id = story_data.get("id", path.stem)
-    print(f"=== Processing Story: {story_data.get('title')} ({story_id}) ===")
+    course_lang = detect_course_lang(path, story_data)
+    print(f"=== Processing Story: {story_data.get('title')} ({story_id}) [{course_lang.upper()}] ===")
 
     # Step 1: AI text analysis & pedagogical annotations
-    analysis = analyze_story_text(story_data)
+    analysis = analyze_story_text(story_data, course_lang=course_lang)
 
-    # Determine audio destination: content/es/stories/audio/<story-id>.wav
-    audio_dir = Path("content/es/stories/audio")
-    audio_rel = f"audio/{story_id}.wav"
-    audio_file_path = audio_dir / f"{story_id}.wav"
+    # Audio destination: content/<lang>/stories/audio/<story-id>.mp3
+    audio_dir = Path(f"content/{course_lang}/stories/audio")
+    audio_rel = f"audio/{story_id}.mp3"
+    audio_file_path = audio_dir / f"{story_id}.mp3"
 
-    # Step 2: Synthesis (if enabled and on supported platform)
-    if synthesize and not dry_run and sys.platform == "win32":
-        print("[SYNTHESIS] Invoking multi-speaker speech synthesizer...")
-        real_segments, measured_duration = synthesize_audio_sapi(story_data, str(audio_file_path))
+    # Step 2: Synthesis with Neural TTS
+    if synthesize and not dry_run and HAS_EDGE_TTS:
+        real_segments, measured_duration = asyncio.run(
+            synthesize_story_neural(story_data, str(audio_file_path), course_lang=course_lang)
+        )
         if real_segments:
-            # Reconcile timings with real measured audio durations
+            # Reconcile segment timings and assign exact boundaries
             for seg in analysis["segments"]:
                 match = next((s for s in real_segments if s["paraIndex"] == seg["paraIndex"]), None)
                 if match:
                     seg["startTime"] = match["startTime"]
                     seg["endTime"] = match["endTime"]
+                    seg["lang"] = match["lang"]
             analysis["durationSeconds"] = measured_duration
+
+        # Clean up any legacy .wav file if present
+        wav_path = audio_dir / f"{story_id}.wav"
+        if wav_path.exists():
+            try:
+                wav_path.unlink()
+                print(f"[CLEANUP] Removed legacy uncompressed WAV: {wav_path}")
+            except Exception:
+                pass
 
     narration_block = {
         "audioFile": audio_rel,
@@ -334,3 +447,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

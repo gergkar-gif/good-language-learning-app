@@ -142,6 +142,7 @@
               "startTime": { "type": "number", "minimum": 0 },
               "endTime": { "type": "number", "minimum": 0 },
               "speaker": { "type": "string" },
+              "lang": { "type": "string", "description": "Language of this paragraph segment (e.g. 'es', 'hu', 'en')." },
               "cues": {
                 "type": "array",
                 "items": { "type": "object" }
