@@ -58,6 +58,9 @@ const DeckMatch = (function () {
     let _finished = false;
     let _finishMs = 0;
     let _onExit = null;
+    let _onComplete = null;
+    let _exitLabel = null;
+    let _timeLimitSeconds = null;
 
     function _escapeHtml(text) {
         const d = document.createElement('div');
@@ -154,16 +157,27 @@ const DeckMatch = (function () {
         _startTime = Date.now();
         _elapsedInterval = setInterval(() => {
             const el = _container && _container.querySelector('.dkm-timer');
-            if (el) el.textContent = _formatSeconds(Date.now() - _startTime);
+            if (_timeLimitSeconds) {
+                const remainingSec = Math.max(0, _timeLimitSeconds - (Date.now() - _startTime) / 1000);
+                if (el) el.textContent = remainingSec.toFixed(1) + 's';
+                if (remainingSec <= 0) {
+                    _finish();
+                }
+            } else {
+                if (el) el.textContent = _formatSeconds(Date.now() - _startTime);
+            }
         }, 100);
     }
 
     function _finish() {
         _finished = true;
-        _finishMs = Date.now() - _startTime;
+        _finishMs = Date.now() - (_startTime || Date.now());
         if (_elapsedInterval) { clearInterval(_elapsedInterval); _elapsedInterval = null; }
         _recordBest(_finishMs);
         _render();
+        if (typeof _onComplete === 'function') {
+            _onComplete({ matched: _matchedTotal, total: _totalWords, timeMs: _finishMs });
+        }
     }
 
     // Removes a just-matched pair and, if the session isn't over, inserts
@@ -252,10 +266,12 @@ const DeckMatch = (function () {
     function _render() {
         if (!_container) return;
 
+        const exitText = _exitLabel || 'Back to deck';
+
         if (!_words0.length) {
             _container.innerHTML = `
                 <div class="dkm">
-                    <button class="dk-back" data-match-exit="1">← Back to deck</button>
+                    <button class="dk-back" data-match-exit="1">← ${_escapeHtml(exitText)}</button>
                     <p class="dk-empty">Not enough words to play a matching round yet.</p>
                 </div>
             `;
@@ -268,31 +284,35 @@ const DeckMatch = (function () {
             const isNewBest = best === _finishMs;
             _container.innerHTML = `
                 <div class="dkm">
-                    <button class="dk-back" data-match-exit="1">← Back to deck</button>
+                    <button class="dk-back" data-match-exit="1">← ${_escapeHtml(exitText)}</button>
                     <div class="dkm-done">
                         <p class="dkm-done-time">${_formatSeconds(_finishMs)}</p>
-                        <p class="dkm-done-count">${_totalWords} word${_totalWords === 1 ? '' : 's'} matched</p>
-                        ${isNewBest ? '<p class="dkm-new-best">New personal best!</p>' : (best !== null ? `<p class="dkm-best">Best: ${_formatSeconds(best)}</p>` : '')}
+                        <p class="dkm-done-count">${_matchedTotal} / ${_totalWords} word${_totalWords === 1 ? '' : 's'} matched</p>
+                        ${isNewBest && !_timeLimitSeconds ? '<p class="dkm-new-best">New personal best!</p>' : (best !== null && !_timeLimitSeconds ? `<p class="dkm-best">Best: ${_formatSeconds(best)}</p>` : '')}
                         <div class="dkm-done-actions">
                             <button class="btn-primary" data-match-restart="1">Play again</button>
-                            <button class="dk-secondary" data-match-exit="1">Back to deck</button>
+                            <button class="dk-secondary" data-match-exit="1">${_escapeHtml(exitText)}</button>
                         </div>
                     </div>
                 </div>
             `;
             _wire();
+            if (typeof RecommendationEngine !== 'undefined') {
+                RecommendationEngine.mountNextAction(_container, { excludeDrillerId: 'match' });
+            }
             return;
         }
 
         const best = _bestMs();
+        const timerVal = _timeLimitSeconds ? _timeLimitSeconds + '.0s' : (_startTime ? _formatSeconds(Date.now() - _startTime) : '0.0s');
         _container.innerHTML = `
             <div class="dkm">
                 <div class="dkm-head">
-                    <button class="dk-back" data-match-exit="1">← Back to deck</button>
+                    <button class="dk-back" data-match-exit="1">← ${_escapeHtml(exitText)}</button>
                     <span class="dkm-progress">${_matchedTotal} / ${_totalWords}</span>
-                    <span class="dkm-timer">${_startTime ? _formatSeconds(Date.now() - _startTime) : '0.0s'}</span>
+                    <span class="dkm-timer">${timerVal}</span>
                 </div>
-                ${best !== null ? `<p class="dkm-best-line">Best: ${_formatSeconds(best)}</p>` : ''}
+                ${best !== null && !_timeLimitSeconds ? `<p class="dkm-best-line">Best: ${_formatSeconds(best)}</p>` : ''}
                 <div class="dkm-grid">
                     <div class="dkm-col">${_transTiles.map(_tileHtml).join('')}</div>
                     <div class="dkm-col">${_lemmaTiles.map(_tileHtml).join('')}</div>
@@ -303,8 +323,10 @@ const DeckMatch = (function () {
     }
 
     function _wire() {
-        const exitBtn = _container.querySelector('[data-match-exit]');
-        if (exitBtn) exitBtn.onclick = () => { if (_elapsedInterval) clearInterval(_elapsedInterval); if (_onExit) _onExit(); };
+        const exitBtns = _container.querySelectorAll('[data-match-exit]');
+        exitBtns.forEach(btn => {
+            btn.onclick = () => { if (_elapsedInterval) clearInterval(_elapsedInterval); if (_onExit) _onExit(); };
+        });
 
         const restartBtn = _container.querySelector('[data-match-restart]');
         if (restartBtn) restartBtn.onclick = () => { _startSession(); _render(); };
@@ -316,16 +338,32 @@ const DeckMatch = (function () {
 
     /**
      * @param {HTMLElement} root
-     * @param {{ words: {lemma:string, translation:string}[], deckId: string, onExit: function }} options
+     * @param {{ words: {lemma:string, translation:string}[], deckId: string, limit: number, timeLimit: number, exitLabel: string, onExit: function, onComplete: function }} options
      */
     function render(root, options) {
         _container = root;
         _deckId = (options && options.deckId) || 'unknown';
-        _words0 = ((options && options.words) || []).filter(w => w && w.lemma);
+        const rawWords = ((options && options.words) || []).filter(w => w && (w.lemma || w.spanish));
+        _words0 = rawWords.map(w => ({
+            lemma: w.lemma || w.spanish,
+            translation: w.translation || w.english || '—'
+        }));
+        if (options && options.limit && options.limit > 0) {
+            _words0 = _words0.slice(0, options.limit);
+        }
+        _timeLimitSeconds = (options && options.timeLimit) ? Number(options.timeLimit) : null;
+        _exitLabel = (options && options.exitLabel) || null;
         _onExit = (options && options.onExit) || function () {};
+        _onComplete = (options && options.onComplete) || null;
         _startSession();
         _render();
     }
 
-    return { render };
+    function stop() {
+        if (_elapsedInterval) { clearInterval(_elapsedInterval); _elapsedInterval = null; }
+        _busy = false;
+        _finished = false;
+    }
+
+    return { render, stop };
 })();

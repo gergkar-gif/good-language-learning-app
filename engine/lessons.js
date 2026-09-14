@@ -182,6 +182,8 @@ async function buildSteps(lesson) {
         });
     }
 
+    let checklistStep = null;
+
     for (const section of lesson.sections) {
         try {
             if (section.type === 'goal') {
@@ -303,12 +305,11 @@ async function buildSteps(lesson) {
             }
 
             else if (section.type === 'checklist') {
-                injectSpeakingSteps();
-                steps.push({
+                checklistStep = {
                     type: 'checklist',
                     title: section.title || 'Can you do this?',
                     items: section.items || []
-                });
+                };
             }
 
             else {
@@ -319,8 +320,13 @@ async function buildSteps(lesson) {
         }
     }
 
-    // Safety fallback: ensure speaking steps are injected even if lesson has no SRS or checklist
+    // Safety fallback: ensure speaking steps are injected even if lesson has no SRS
     injectSpeakingSteps();
+
+    // "I can do this" / checklist should ALWAYS be the last screen of the lesson, right before results.
+    if (checklistStep) {
+        steps.push(checklistStep);
+    }
 
     return steps;
 }
@@ -388,6 +394,11 @@ function teardownLesson() {
         try { _lessonUserAudioPlayer.pause(); } catch (e) {}
         _lessonUserAudioPlayer = null;
     }
+    if (typeof DeckMatch !== 'undefined' && typeof DeckMatch.stop === 'function') {
+        DeckMatch.stop();
+    }
+    const lessonFooter = document.querySelector('#lesson-screen .lesson-footer');
+    if (lessonFooter) lessonFooter.style.display = '';
     stepState = {};
 }
 
@@ -1478,17 +1489,21 @@ function nextLessonStep() {
     }
 
     currentStepIndex++;
+
+    // "I can do this" / checklist should ALWAYS be the last screen before results.
+    // If the next step is the checklist, but we still have missed exercises to remediate,
+    // remediate the missed exercises first before presenting the self-evaluation checklist!
     if (currentStepIndex < currentLesson.steps.length) {
+        const nextStep = currentLesson.steps[currentStepIndex];
+        if (nextStep && nextStep.type === 'checklist' && missedSteps.length > 0) {
+            currentLesson.steps.splice(currentStepIndex, 0, missedSteps.shift());
+        }
         renderStep();
         return;
     }
 
     // Reached the end of the regular steps — work through anything missed
-    // on its first try before actually finishing, one at a time, so it's
-    // the last thing the learner sees rather than the first thing they
-    // forget. Re-queues itself (via queueForRemediationIfMissed()) if this
-    // attempt is missed too, so a step keeps coming back until it's solved
-    // clean or the 3-try reveal kicks in.
+    // on its first try before actually finishing, one at a time.
     if (missedSteps.length) {
         currentLesson.steps.push(missedSteps.shift());
         renderStep();
@@ -1674,6 +1689,11 @@ function summaryReinforceHtml(grammarSkill, words, level) {
                         Vocabulary (${words.length} ${words.length === 1 ? 'word' : 'words'})
                     </button>
                 ` : ''}
+                ${words.length >= 4 && typeof DeckMatch !== 'undefined' ? `
+                    <button class="dk-secondary" data-reinforce-match="1" title="Timed matching game with lesson vocabulary">
+                        ⚡ Match Game (${Math.min(words.length, 12)} pairs)
+                    </button>
+                ` : ''}
                 ${hasVoice ? `
                     <button class="dk-secondary" data-reinforce-listening="1" title="Practice listening to spoken sentences">
                         🎧 Listening (${QUICK_REINFORCE_COUNT} questions)
@@ -1827,6 +1847,28 @@ async function renderLessonSummary(firstTime, rankBefore) {
         reinforceSpeakingBtn.addEventListener('click', () => {
             const lvl = (currentLesson && currentLesson.level) ? currentLesson.level : null;
             _openReinforce('speaking', { count: QUICK_REINFORCE_COUNT, autoStart: true, level: lvl });
+        });
+    }
+
+    const reinforceMatchBtn = container.querySelector('[data-reinforce-match]');
+    if (reinforceMatchBtn) {
+        reinforceMatchBtn.addEventListener('click', () => {
+            const footer = document.querySelector('#lesson-screen .lesson-footer');
+            if (footer) footer.style.display = 'none';
+            const matchCount = Math.min(words.length, 12);
+            const matchWords = words.slice(0, matchCount);
+            const timeLimit = Math.min(120, matchCount * 8);
+            DeckMatch.render(container, {
+                words: matchWords,
+                deckId: (currentLesson && currentLesson.id) ? currentLesson.id : 'lesson-reinforce',
+                limit: matchCount,
+                timeLimit: timeLimit,
+                exitLabel: 'Back to summary',
+                onExit: () => {
+                    if (footer) footer.style.display = '';
+                    renderLessonSummary(firstTime, rankBefore);
+                }
+            });
         });
     }
 

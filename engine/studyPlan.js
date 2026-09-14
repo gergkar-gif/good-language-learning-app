@@ -35,6 +35,7 @@ const StudyPlan = (function () {
     const SEC_PER_VOCAB_WORD = 25;
     const SEC_PER_LISTENING_Q = 35;
     const SEC_PER_SPEAKING_Q = 35;
+    const SEC_PER_MATCH_PAIR = 8;
     const DEFAULT_LESSON_MINUTES = 10; // fallback when estimatedMinutes is null (100% of HU, ~38% of ES)
     const LESSON_GRACE_MINUTES = 2;    // estimate slop tolerance, not a hard wall
     const TEST_MINUTES = 18;           // a level test is one indivisible block
@@ -144,7 +145,31 @@ const StudyPlan = (function () {
             remaining -= (count * SEC_PER_SPEAKING_Q) / 60;
         }
 
-        // 5. Leftover — top up reviews with whatever's left of the backlog.
+        // 5. Match Game — rapid visual pairing of deck and vocabulary words.
+        if (remaining >= 1.5 && typeof DeckMatch !== 'undefined') {
+            let matchPool = [];
+            if (typeof LearnerModel !== 'undefined') {
+                const weakW = await LearnerModel.weakWords(12);
+                if (weakW && weakW.length >= 4) matchPool = weakW;
+            }
+            if (matchPool.length < 4 && typeof srsDeck !== 'undefined' && srsDeck.length >= 4) {
+                matchPool = srsDeck.slice(0, 12).map(c => ({ lemma: c.spanish, translation: c.english }));
+            }
+            if (matchPool.length >= 4) {
+                const matchCount = Math.min(matchPool.length, Math.max(6, Math.round(remaining * 60 / SEC_PER_MATCH_PAIR)));
+                const matchItems = matchPool.slice(0, matchCount);
+                const timeSec = Math.min(120, matchItems.length * SEC_PER_MATCH_PAIR);
+                items.push({
+                    kind: 'match',
+                    words: matchItems,
+                    count: matchItems.length,
+                    timeLimit: timeSec
+                });
+                remaining -= (timeSec / 60);
+            }
+        }
+
+        // 6. Leftover — top up reviews with whatever's left of the backlog.
         const dueRemaining = due.length - firstPassCount;
         if (remaining > 1 && dueRemaining > 0) {
             const topUp = Math.min(dueRemaining, Math.floor(remaining * 60 / SEC_PER_REVIEW));
