@@ -132,10 +132,10 @@ const SpeakingDriller = (function () {
             <div class="sp-studio-wrap">
                 <div class="sp-studio-nav" role="tablist">
                     <button type="button" class="sp-studio-tab ${_activeStudioTab === STUDIO_TAB.DRILLS ? 'active' : ''}" data-studio-tab="drills" role="tab" aria-selected="${_activeStudioTab === STUDIO_TAB.DRILLS}">
-                        🎙️ Sentence Drills
+                        Sentence Drills
                     </button>
                     <button type="button" class="sp-studio-tab ${_activeStudioTab === STUDIO_TAB.PRODUCTION ? 'active' : ''}" data-studio-tab="production" role="tab" aria-selected="${_activeStudioTab === STUDIO_TAB.PRODUCTION}">
-                        🗣️ Verbal Production (5 min)
+                        Verbal Production (5 min)
                     </button>
                 </div>
                 <div class="sp-studio-body" id="sp-studio-body"></div>
@@ -675,7 +675,9 @@ const SpeakingDriller = (function () {
                 <div class="sp-prod-stage">
                     <div class="sp-mic-pulse-container">
                         <div class="sp-mic-pulse-ring"></div>
-                        <div class="sp-mic-pulse-center">🎙️</div>
+                        <div class="sp-mic-pulse-center">
+                            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="22"></line></svg>
+                        </div>
                     </div>
                     <div class="sp-prod-status-line">
                         <span class="sp-recording-dot"></span>
@@ -693,10 +695,10 @@ const SpeakingDriller = (function () {
 
                 <div class="sp-prod-actions">
                     <button type="button" class="vbtn vbtn-primary sp-finish-btn" data-action="finish-recording">
-                        ⏹️ Finish Speaking & Review
+                        Finish Speaking & Review
                     </button>
                     <button type="button" class="vbtn vbtn-secondary" data-action="restart-recording">
-                        🔄 Restart
+                        Restart
                     </button>
                 </div>
             </div>
@@ -740,7 +742,6 @@ const SpeakingDriller = (function () {
 
                 <div class="sp-prod-audio-card">
                     <div class="sp-audio-card-head">
-                        <span class="sp-audio-icon">🔊</span>
                         <div class="sp-audio-meta">
                             <h4>Listen To Your Own Voice</h4>
                             <p>${durationStr} recording · ${words} words</p>
@@ -763,10 +764,10 @@ const SpeakingDriller = (function () {
 
                 <div class="sp-prod-review-actions">
                     <button type="button" class="vbtn vbtn-primary sp-grade-btn" data-action="submit-grading">
-                        🧠 Grade My Spoken Production
+                        Grade My Spoken Production
                     </button>
                     <button type="button" class="vbtn vbtn-secondary" data-action="re-record">
-                        🎙️ Re-record
+                        Re-record
                     </button>
                     <button type="button" class="vbtn vbtn-secondary" data-action="back-prompts">
                         Back to Topics

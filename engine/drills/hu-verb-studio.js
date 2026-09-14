@@ -14,10 +14,10 @@ const HuVerbStudio = (function () {
     'use strict';
 
     const TABS = [
-        { id: 'verb', label: 'Conjugation', icon: '⚡', desc: 'Present/past tense, definite & indefinite forms' },
-        { id: 'suffix', label: 'Suffixes', icon: '🧩', desc: 'Plurals, possession, and case endings' },
-        { id: 'prefix', label: 'Prefixes', icon: '🎯', desc: 'Verbal prefixes and directional meanings' },
-        { id: 'morphology', label: 'Decomposition', icon: '🔬', desc: 'Word analysis and morphological synthesis' }
+        { id: 'verb', label: 'Conjugation', desc: 'Present/past tense, definite & indefinite forms' },
+        { id: 'suffix', label: 'Suffixes', desc: 'Plurals, possession, and case endings' },
+        { id: 'prefix', label: 'Prefixes', desc: 'Verbal prefixes and directional meanings' },
+        { id: 'morphology', label: 'Decomposition', desc: 'Word analysis and morphological synthesis' }
     ];
 
     let _container = null;
@@ -73,7 +73,7 @@ const HuVerbStudio = (function () {
                 <div class="sp-studio-nav hu-studio-nav" role="tablist">
                     ${TABS.map(tab => `
                         <button type="button" class="sp-studio-tab ${_activeTabId === tab.id ? 'active' : ''}" data-hu-tab="${tab.id}" role="tab" aria-selected="${_activeTabId === tab.id}">
-                            <span class="sp-tab-icon">${tab.icon}</span> ${tab.label}
+                            ${tab.label}
                         </button>
                     `).join('')}
                 </div>
