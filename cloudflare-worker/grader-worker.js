@@ -14,7 +14,11 @@ const ALLOWED_ORIGINS = [
     'http://localhost:8131'
 ];
 
-const DEFAULT_MODEL = '@cf/meta/llama-3.3-70b-instruct';
+const CANDIDATE_MODELS = [
+    '@cf/meta/llama-3.3-70b-instruct-fp8-fast',
+    '@cf/meta/llama-3.1-8b-instruct-fast',
+    '@cf/meta/llama-3.1-8b-instruct'
+];
 
 function corsHeaders(origin) {
     if (!ALLOWED_ORIGINS.includes(origin)) return null;
@@ -75,35 +79,50 @@ export default {
 
         // Check if Cloudflare Workers AI is available in environment
         if (env && env.AI) {
-            try {
-                const model = env.GRADER_MODEL || DEFAULT_MODEL;
-                const aiResult = await env.AI.run(model, {
-                    messages,
-                    temperature: 0,
-                    max_tokens: 3000
-                });
+            const modelsToTry = [];
+            if (payload.model && payload.model !== 'auto') modelsToTry.push(payload.model);
+            if (env.GRADER_MODEL) modelsToTry.push(env.GRADER_MODEL);
+            modelsToTry.push(...CANDIDATE_MODELS);
 
-                const content = aiResult.response || aiResult.content || '';
-                return json({
-                    choices: [
-                        {
-                            message: {
-                                role: 'assistant',
-                                content: content
-                            }
-                        }
-                    ]
-                }, 200, cors);
-            } catch (aiError) {
-                // If quota exhausted (rate limit / daily neurons exceeded)
-                if (String(aiError).includes('quota') || String(aiError).includes('limit') || String(aiError).includes('429')) {
+            let lastAiError = null;
+            for (const m of [...new Set(modelsToTry)]) {
+                try {
+                    const aiResult = await env.AI.run(m, {
+                        messages,
+                        temperature: 0,
+                        max_tokens: 3000
+                    });
+
+                    const content = aiResult.response || aiResult.content || '';
                     return json({
-                        error: 'Daily AI grading quota exceeded. Local deterministic assessment remains active.',
-                        code: 'QUOTA_EXHAUSTED'
-                    }, 429, cors);
+                        model: m,
+                        choices: [
+                            {
+                                message: {
+                                    role: 'assistant',
+                                    content: content
+                                }
+                            }
+                        ]
+                    }, 200, cors);
+                } catch (aiError) {
+                    lastAiError = aiError;
+                    // If quota exhausted (rate limit / daily neurons exceeded)
+                    if (String(aiError).includes('quota') || String(aiError).includes('limit') || String(aiError).includes('429')) {
+                        return json({
+                            error: 'Daily AI grading quota exceeded. Local deterministic assessment remains active.',
+                            code: 'QUOTA_EXHAUSTED'
+                        }, 429, cors);
+                    }
+                    // If model doesn't exist, try next candidate model
+                    if (String(aiError).includes('5007') || String(aiError).includes('No such model')) {
+                        continue;
+                    }
+                    return json({ error: 'Workers AI inference failed', details: String(aiError) }, 500, cors);
                 }
-                return json({ error: 'Workers AI inference failed', details: String(aiError) }, 500, cors);
             }
+
+            return json({ error: 'Workers AI inference failed', details: String(lastAiError) }, 500, cors);
         }
 
         // Fallback: If AI Gateway or Upstream OpenAI endpoint is configured in env
