@@ -442,7 +442,90 @@ function coverArtIndexFor(id) {
     return hash;
 }
 
+const BILINGUAL_TOPIC_SYNONYMS = {
+    // Technology
+    technology: ['tecnologia', 'digital', 'internet', 'dispositivo', 'pantalla', 'conexion', 'ordenador', 'computadora', 'telefono', 'movil', 'red', 'redes', 'tech', 'technológia', 'számítógép', 'telefon', 'internet'],
+    tecnologia: ['technology', 'digital', 'internet', 'dispositivo', 'pantalla', 'conexion', 'ordenador', 'computadora', 'telefono', 'movil', 'red', 'redes', 'tech'],
+    digital: ['technology', 'tecnologia', 'internet', 'virtual', 'online'],
+    internet: ['technology', 'tecnologia', 'red', 'online', 'web', 'conexion'],
+    
+    // Travel & Transport
+    travel: ['viaje', 'viajar', 'turismo', 'destino', 'hotel', 'tren', 'avion', 'vuelo', 'aeropuerto', 'estacion', 'ciudad', 'pais', 'utazás', 'repülő', 'vonat'],
+    viaje: ['travel', 'trip', 'turismo', 'destino', 'hotel', 'tren', 'avion', 'vuelo', 'ciudad'],
+    turismo: ['tourism', 'travel', 'viaje', 'hotel', 'visita', 'guia'],
+    transport: ['transporte', 'tren', 'metro', 'autobus', 'bus', 'coche', 'auto', 'bicicleta'],
+    transporte: ['transport', 'tren', 'metro', 'autobus', 'bus', 'coche', 'auto', 'bicicleta'],
+
+    // Food & Dining
+    food: ['comida', 'cocina', 'restaurante', 'plato', 'receta', 'ingrediente', 'cena', 'almuerzo', 'desayuno', 'vino', 'cafe', 'étel', 'étterem', 'főzés'],
+    comida: ['food', 'cocina', 'restaurante', 'plato', 'receta', 'cena', 'almuerzo', 'desayuno'],
+    cooking: ['cocina', 'cocinar', 'receta', 'plato', 'ingrediente', 'gastronomia'],
+    cocina: ['cooking', 'food', 'kitchen', 'receta', 'plato', 'gastronomia'],
+    restaurant: ['restaurante', 'bar', 'cafeteria', 'menu', 'camarero', 'mesa'],
+    restaurante: ['restaurant', 'bar', 'cafeteria', 'menu', 'camarero', 'mesa'],
+
+    // Work & Career
+    work: ['trabajo', 'empleo', 'oficina', 'carrera', 'profesion', 'negocio', 'empresa', 'jefe', 'colega', 'munka', 'karrier', 'iroda'],
+    trabajo: ['work', 'job', 'empleo', 'oficina', 'carrera', 'profesion', 'negocio', 'empresa'],
+    business: ['negocios', 'empresa', 'economia', 'comercio', 'mercado', 'trabajo'],
+    negocio: ['business', 'empresa', 'comercio', 'economia', 'mercado'],
+
+    // Family & Relationships
+    family: ['familia', 'padres', 'madre', 'padre', 'hijo', 'hija', 'hermano', 'hermana', 'abuelo', 'abuela', 'amigo', 'relacion', 'család', 'barát'],
+    familia: ['family', 'padres', 'madre', 'padre', 'hijo', 'hermano', 'abuelo', 'pariente'],
+    friendship: ['amistad', 'amigos', 'amigo', 'amiga', 'companero'],
+    amistad: ['friendship', 'amigo', 'amiga', 'relacion'],
+
+    // Health & Body
+    health: ['salud', 'medico', 'hospital', 'enfermedad', 'cuerpo', 'ejercicio', 'mente', 'bienestar', 'egészség', 'orvos'],
+    salud: ['health', 'medico', 'hospital', 'medicina', 'bienestar', 'cuerpo'],
+
+    // Nature, Environment & Weather
+    nature: ['naturaleza', 'medioambiente', 'bosque', 'montana', 'rio', 'mar', 'playa', 'arbol', 'animal', 'clima', 'tiempo', 'természet', 'erdő'],
+    naturaleza: ['nature', 'medioambiente', 'bosque', 'montana', 'rio', 'mar', 'animal', 'clima'],
+    weather: ['tiempo', 'clima', 'lluvia', 'sol', 'calor', 'frio', 'nieve', 'viento'],
+    clima: ['weather', 'climate', 'tiempo', 'temperatura', 'medioambiente'],
+
+    // Culture, Art & History
+    history: ['historia', 'historico', 'pasado', 'siglo', 'antiguo', 'guerra', 'revolucion', 'történelem'],
+    historia: ['history', 'historico', 'pasado', 'siglo', 'antiguo', 'cultura', 'memoria'],
+    culture: ['cultura', 'tradicion', 'costumbre', 'arte', 'musica', 'literatura', 'fiesta', 'kód', 'kultúra'],
+    cultura: ['culture', 'tradicion', 'arte', 'musica', 'literatura', 'costumbre'],
+    art: ['arte', 'pintura', 'museo', 'artista', 'cuadro', 'escultura', 'művészet'],
+    arte: ['art', 'pintura', 'museo', 'artista', 'escultura'],
+    music: ['musica', 'cancion', 'concierto', 'instrumento', 'guitarra', 'zene'],
+    musica: ['music', 'cancion', 'concierto', 'instrumento', 'guitarra']
+};
+
+function _normSearch(str) {
+    if (!str) return '';
+    return String(str)
+        .toLowerCase()
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .replace(/[^\w\s]/g, ' ')
+        .replace(/\s+/g, ' ')
+        .trim();
+}
+
+function _matchesTerm(haystack, term) {
+    if (!haystack || !term) return false;
+    const hNorm = _normSearch(haystack);
+    const tNorm = _normSearch(term);
+    if (!hNorm || !tNorm) return false;
+
+    // For short terms (<= 4 chars, like "red" or "food"), enforce word-boundary matching
+    // to avoid substring false positives (e.g. "red" matching inside "ingredientes")
+    if (tNorm.length <= 4) {
+        const regex = new RegExp(`(^|\\s)${tNorm}(\\s|$)`, 'i');
+        return regex.test(hNorm);
+    }
+    return hNorm.includes(tNorm);
+}
+
 window.Reader = {
+    _normSearch: _normSearch,
+    _matchesTerm: _matchesTerm,
     // Resolved on every read rather than captured at load. The course can
     // change after this file runs — startup falls back to the default when
     // the chosen one has no content — and a value frozen here would leave the
@@ -580,6 +663,13 @@ window.Reader = {
                     return;
                 }
 
+                const recCard = e.target.closest('[data-rec-story]');
+                if (recCard) {
+                    const storyId = recCard.getAttribute('data-rec-story');
+                    if (storyId) self.loadStory(storyId);
+                    return;
+                }
+
                 const card = e.target.closest('.story-card');
                 if (!card) return;
                 const storyId = card.getAttribute('data-story-id');
@@ -626,6 +716,11 @@ window.Reader = {
         const summary = document.getElementById('library-search-summary');
         if (clearBtn) clearBtn.classList.toggle('hidden', !q);
 
+        const recsContainer = libraryEl.querySelector('.lib-recs-container');
+        if (recsContainer) {
+            recsContainer.classList.toggle('hidden', !!q);
+        }
+
         const rooms = libraryEl.querySelectorAll('.reading-room');
 
         if (!q) {
@@ -644,23 +739,128 @@ window.Reader = {
                 if (arrow) arrow.textContent = '▶';
 
                 room.querySelectorAll('.story-shelf').forEach(shelf => shelf.classList.remove('hidden'));
-                room.querySelectorAll('.story-card').forEach(card => card.classList.remove('hidden'));
+                room.querySelectorAll('.story-card').forEach(card => {
+                    card.classList.remove('hidden');
+                    const matchTag = card.querySelector('.story-card-topic-match');
+                    if (matchTag) matchTag.remove();
+                });
             });
             return;
         }
 
+        const qNorm = _normSearch(q);
+        const searchTerms = new Set([qNorm]);
+        if (BILINGUAL_TOPIC_SYNONYMS[q]) {
+            BILINGUAL_TOPIC_SYNONYMS[q].forEach(syn => searchTerms.add(_normSearch(syn)));
+        }
+        if (BILINGUAL_TOPIC_SYNONYMS[qNorm]) {
+            BILINGUAL_TOPIC_SYNONYMS[qNorm].forEach(syn => searchTerms.add(_normSearch(syn)));
+        }
+        for (const [k, v] of Object.entries(BILINGUAL_TOPIC_SYNONYMS)) {
+            const kNorm = _normSearch(k);
+            if (kNorm === qNorm || v.some(syn => _normSearch(syn) === qNorm)) {
+                searchTerms.add(kNorm);
+                v.forEach(syn => searchTerms.add(_normSearch(syn)));
+            }
+        }
+
+        const self = this;
         let matchCount = 0;
         rooms.forEach(room => {
             let roomMatches = 0;
             room.querySelectorAll('.story-shelf').forEach(shelf => {
                 let shelfMatches = 0;
                 shelf.querySelectorAll('.story-card').forEach(card => {
-                    const title = card.getAttribute('data-title') || '';
-                    const author = card.getAttribute('data-author') || '';
-                    const level = card.getAttribute('data-level') || '';
-                    const matches = title.includes(q) || author.includes(q) || level === q;
-                    card.classList.toggle('hidden', !matches);
-                    if (matches) {
+                    const storyId = card.getAttribute('data-story-id');
+                    const story = self.stories ? self.stories.find(s => s.id === storyId) : null;
+
+                    let isMatch = false;
+                    let matchTagText = null;
+
+                    if (story) {
+                        const titleNorm = _normSearch(story.title);
+                        const authorNorm = _normSearch(story.author);
+                        const levelNorm = _normSearch(story.level);
+                        const unitNorm = story.unit ? _normSearch(story.unit.title) : '';
+                        const summaryNorm = _normSearch(story.summary);
+
+                        // 1. Direct title/author/level match
+                        if (titleNorm.includes(qNorm)) {
+                            isMatch = true;
+                        } else if (authorNorm && authorNorm.includes(qNorm)) {
+                            isMatch = true;
+                        } else if (levelNorm === qNorm) {
+                            isMatch = true;
+                        } else if (unitNorm && unitNorm.includes(qNorm)) {
+                            isMatch = true;
+                            matchTagText = 'Unit topic';
+                        } else {
+                            // 2. Topic tags / vocabulary topics
+                            const topicsList = (story.topics || []);
+                            for (const tp of topicsList) {
+                                const tpNorm = _normSearch(tp);
+                                for (const term of searchTerms) {
+                                    if (_matchesTerm(tpNorm, term)) {
+                                        isMatch = true;
+                                        matchTagText = 'Topic match';
+                                        break;
+                                    }
+                                }
+                                if (isMatch) break;
+                            }
+
+                            // 3. Story summary match
+                            if (!isMatch && summaryNorm) {
+                                for (const term of searchTerms) {
+                                    if (_matchesTerm(summaryNorm, term)) {
+                                        isMatch = true;
+                                        matchTagText = 'Topic match';
+                                        break;
+                                    }
+                                }
+                            }
+
+                            // 4. Keywords match from story text
+                            if (!isMatch && story.keywords && story.keywords.length) {
+                                for (const kw of story.keywords) {
+                                    const kwNorm = _normSearch(kw);
+                                    for (const term of searchTerms) {
+                                        if (_matchesTerm(kwNorm, term)) {
+                                            isMatch = true;
+                                            matchTagText = 'Topic match';
+                                            break;
+                                        }
+                                    }
+                                    if (isMatch) break;
+                                }
+                            }
+                        }
+                    } else {
+                        // Fallback to DOM attributes
+                        const title = card.getAttribute('data-title') || '';
+                        const author = card.getAttribute('data-author') || '';
+                        const level = card.getAttribute('data-level') || '';
+                        isMatch = title.includes(q) || author.includes(q) || level === q;
+                    }
+
+                    card.classList.toggle('hidden', !isMatch);
+                    const existingTag = card.querySelector('.story-card-topic-match');
+                    if (isMatch && matchTagText) {
+                        if (!existingTag) {
+                            const newTag = document.createElement('span');
+                            newTag.className = 'story-card-topic-match';
+                            newTag.classList.add('story-card-topic-match');
+                            newTag.textContent = matchTagText;
+                            const target = card.querySelector('.story-card-meta') || card;
+                            target.appendChild(newTag);
+                        } else {
+                            existingTag.textContent = matchTagText;
+                        }
+                    } else if (existingTag) {
+                        existingTag.remove();
+                    }
+
+                    if (isMatch) {
                         shelfMatches++;
                         roomMatches++;
                         matchCount++;
@@ -688,9 +888,168 @@ window.Reader = {
             if (matchCount > 0) {
                 summary.innerHTML = `<p class="library-search-count">Found <strong>${matchCount}</strong> reading${matchCount === 1 ? '' : 's'} matching "${this.escapeHtml(query)}"</p>`;
             } else {
-                summary.innerHTML = `<p class="library-search-empty">No stories matching "${this.escapeHtml(query)}". Try another word or author.</p>`;
+                summary.innerHTML = `<p class="library-search-empty">No stories matching "${this.escapeHtml(query)}". Try another topic, word, or author.</p>`;
             }
         }
+    },
+
+    getRecommendations() {
+        if (!this.stories || !this.stories.length) return null;
+
+        const readIds = (typeof getReadStoryIds === 'function') ? getReadStoryIds() : [];
+        const browsable = this.stories.filter(_isBrowsableStory);
+        if (!browsable.length) return null;
+
+        const currentLvl = (typeof LearnerPath !== 'undefined' && typeof LearnerPath.currentLevel === 'function')
+            ? (LearnerPath.currentLevel() || 'A1').toUpperCase()
+            : 'A1';
+
+        const unread = browsable.filter(s => !readIds.includes(s.id));
+        const pool = unread.length > 0 ? unread : browsable;
+
+        // 1. SELECT COMFORTABLE READ (i + 0, fluency, completed units or accessible consolidation)
+        let comfortable = null;
+        let comfortableReason = '';
+
+        // Priority 1A: An unread story with withinReach (unit just completed!)
+        const withinReachStory = pool.find(s => this.isStoryWithinReach(s, readIds));
+        if (withinReachStory) {
+            comfortable = withinReachStory;
+            comfortableReason = withinReachStory.unit && withinReachStory.unit.title
+                ? `Builds on your completed "${withinReachStory.unit.title}" unit`
+                : 'Consolidates vocabulary and patterns from your completed lessons';
+        }
+
+        // Priority 1B: An unread story in the current level from a lower/equal unit
+        if (!comfortable) {
+            const currentLevelStories = pool.filter(s => (s.level || '').toUpperCase() === currentLvl);
+            if (currentLevelStories.length > 0) {
+                // Prefer shorter duration (2-4 min)
+                comfortable = currentLevelStories.slice().sort((a, b) => (a.estimatedMinutes || 3) - (b.estimatedMinutes || 3))[0];
+                comfortableReason = `Reinforces ${currentLvl} vocabulary at a comfortable pace`;
+            }
+        }
+
+        // Priority 1C: If learner is in A2/B1/etc., look at previous level
+        if (!comfortable) {
+            const lvlIdx = CEFR_LEVELS.indexOf(currentLvl);
+            if (lvlIdx > 0) {
+                const prevLvl = CEFR_LEVELS[lvlIdx - 1];
+                const prevLevelStories = pool.filter(s => (s.level || '').toUpperCase() === prevLvl);
+                if (prevLevelStories.length > 0) {
+                    comfortable = prevLevelStories[0];
+                    comfortableReason = `Smooth, confidence-building consolidation in ${prevLvl}`;
+                }
+            }
+        }
+
+        // Fallback for comfortable
+        if (!comfortable) {
+            comfortable = pool[0];
+            comfortableReason = 'Accessible reading practice tailored for your level';
+        }
+
+        // 2. SELECT CHALLENGING READ (i + 1, stretch vocabulary, literary or upper level)
+        let challenging = null;
+        let challengingReason = '';
+
+        const remainingPool = pool.filter(s => s.id !== comfortable.id);
+        const searchPool = remainingPool.length > 0 ? remainingPool : browsable;
+
+        // Target level: next level if available, or current level
+        const lvlIdx = CEFR_LEVELS.indexOf(currentLvl);
+        const nextLvl = (lvlIdx >= 0 && lvlIdx < CEFR_LEVELS.length - 1) ? CEFR_LEVELS[lvlIdx + 1] : currentLvl;
+
+        // Priority 2A: Unread story in next level (e.g. A2 if learner is A1)
+        if (nextLvl !== currentLvl) {
+            const nextLvlStories = searchPool.filter(s => (s.level || '').toUpperCase() === nextLvl);
+            if (nextLvlStories.length > 0) {
+                challenging = nextLvlStories[0];
+                challengingReason = `Step up into ${nextLvl} with stretch vocabulary and new sentence structures`;
+            }
+        }
+
+        // Priority 2B: Classics or longer world stories (>= 5 min) in current level
+        if (!challenging) {
+            const richStories = searchPool.filter(s => (s.level || '').toUpperCase() === currentLvl && (s.type === 'classics' || (s.estimatedMinutes || 0) >= 5));
+            if (richStories.length > 0) {
+                challenging = richStories[0];
+                challengingReason = `Deeper authentic narrative with richer sentence structures`;
+            }
+        }
+
+        // Priority 2C: Longest unread story
+        if (!challenging) {
+            challenging = searchPool.slice().sort((a, b) => (b.estimatedMinutes || 3) - (a.estimatedMinutes || 3))[0];
+            challengingReason = `Expands your lexical range and reading stamina`;
+        }
+
+        if (!challenging) {
+            challenging = comfortable;
+            challengingReason = 'Stretch your comprehension with authentic reading';
+        }
+
+        return {
+            comfortable: {
+                story: comfortable,
+                reason: comfortableReason
+            },
+            challenging: {
+                story: challenging,
+                reason: challengingReason
+            }
+        };
+    },
+
+    buildRecommendationsHtml() {
+        const recs = this.getRecommendations();
+        if (!recs || !recs.comfortable || !recs.challenging) return '';
+
+        const comf = recs.comfortable.story;
+        const comfReason = recs.comfortable.reason;
+        const chall = recs.challenging.story;
+        const challReason = recs.challenging.reason;
+
+        const comfMin = comf.estimatedMinutes ? `${comf.estimatedMinutes} min` : '';
+        const challMin = chall.estimatedMinutes ? `${chall.estimatedMinutes} min` : '';
+
+        return `
+            <div class="lib-recs-container">
+                <div class="lib-recs-header">
+                    <h3 class="lib-recs-heading">Recommended For You</h3>
+                    <span class="lib-recs-sub">Personalized based on your learning journey</span>
+                </div>
+                <div class="lib-recs-grid">
+                    <div class="lib-rec-card lib-rec-comfortable" data-rec-story="${this.escapeHtml(comf.id)}">
+                        <div class="lib-rec-top">
+                            <span class="lib-rec-badge badge-comfortable">Comfortable Read</span>
+                            <span class="lib-rec-meta">${this.escapeHtml(comf.level || '')}${comfMin ? ' · ' + comfMin : ''}</span>
+                        </div>
+                        <h4 class="lib-rec-title">${this.escapeHtml(comf.title)}</h4>
+                        <p class="lib-rec-reason">${this.escapeHtml(comfReason)}</p>
+                        <div class="lib-rec-action">
+                            <button type="button" class="vbtn vbtn-primary lib-rec-btn" data-rec-story="${this.escapeHtml(comf.id)}">
+                                Read Now →
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="lib-rec-card lib-rec-challenging" data-rec-story="${this.escapeHtml(chall.id)}">
+                        <div class="lib-rec-top">
+                            <span class="lib-rec-badge badge-challenging">Challenging Read</span>
+                            <span class="lib-rec-meta">${this.escapeHtml(chall.level || '')}${challMin ? ' · ' + challMin : ''}</span>
+                        </div>
+                        <h4 class="lib-rec-title">${this.escapeHtml(chall.title)}</h4>
+                        <p class="lib-rec-reason">${this.escapeHtml(challReason)}</p>
+                        <div class="lib-rec-action">
+                            <button type="button" class="vbtn vbtn-secondary lib-rec-btn" data-rec-story="${this.escapeHtml(chall.id)}">
+                                Read Now →
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
     },
 
     buildLibraryUI(container) {
@@ -710,7 +1069,9 @@ window.Reader = {
         const extraLevels = Object.keys(byLevel).filter(l => !CEFR_LEVELS.includes(l)).sort();
         const levels = CEFR_LEVELS.concat(extraLevels);
 
-        let html = `
+        const recsHtml = self.buildRecommendationsHtml();
+
+        let html = recsHtml + `
             <div class="library-search-bar">
                 <div class="library-search-wrap">
                     <span class="library-search-icon" aria-hidden="true">${typeof Art !== 'undefined' ? Art.icon('decks') : ''}</span>
@@ -1251,9 +1612,15 @@ document.addEventListener('click', function (e) {
             console.error('Reader object missing');
         }
     }
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', start);
-    } else {
-        start();
+    if (typeof document !== 'undefined' && document.readyState) {
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', start);
+        } else {
+            start();
+        }
     }
 })();
+
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = window.Reader;
+}

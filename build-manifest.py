@@ -50,7 +50,44 @@ def build_stories(lang="es", ref_to_unit=None):
             rel_path = f.relative_to(lang_path).as_posix()
             unit = ref_to_unit.get("stories/" + rel_path)
 
-            stories.append({
+            summary = data.get("summary") or data.get("description") or ""
+            author = data.get("author") or ""
+            work = data.get("work") or ""
+
+            raw_topics = data.get("vocabularyTopics", []) + data.get("topics", []) + data.get("grammar", []) + data.get("tags", [])
+            clean_topics = []
+            seen_topics = set()
+            for t in raw_topics:
+                if isinstance(t, str) and t.strip():
+                    t_str = t.strip()
+                    if t_str.lower() not in seen_topics:
+                        seen_topics.add(t_str.lower())
+                        clean_topics.append(t_str)
+
+            # Extract distinct thematic keywords from paragraphs
+            paras = data.get("paragraphs", [])
+            para_texts = [p.get("text", "") for p in paras if isinstance(p, dict)]
+            if not para_texts and "text" in data and isinstance(data["text"], str):
+                para_texts = [data["text"]]
+            full_text = " ".join(para_texts)
+
+            words = re.findall(r'[\wáéíóúüñöüóőúűí]+', full_text.lower(), re.UNICODE)
+            stop_words = {
+                'para', 'como', 'pero', 'este', 'esta', 'estos', 'estas', 'todo', 'toda',
+                'todos', 'todas', 'sobre', 'entre', 'hacer', 'tener', 'estar', 'cuando',
+                'donde', 'porque', 'aunque', 'después', 'despues', 'también', 'tambien',
+                'hogy', 'volt', 'nem', 'mint', 'vagy', 'csak', 'mert', 'után', 'utan', 'pedig'
+            }
+            keywords = []
+            seen_kw = set()
+            for w in words:
+                if len(w) >= 4 and w not in stop_words and w not in seen_kw:
+                    seen_kw.add(w)
+                    keywords.append(w)
+                    if len(keywords) >= 80:
+                        break
+
+            entry = {
                 "id": data.get("id", f"story.{cat}.{f.stem}"),
                 "title": data.get("title", f.stem),
                 "level": data.get("level", "Unknown"),
@@ -69,7 +106,19 @@ def build_stories(lang="es", ref_to_unit=None):
                 # original kept in the library after a classics rewrite).
                 # See _story_unit_index()/_apply_story_unit_families().
                 "unit": unit
-            })
+            }
+            if summary:
+                entry["summary"] = summary
+            if author:
+                entry["author"] = author
+            if work:
+                entry["work"] = work
+            if clean_topics:
+                entry["topics"] = clean_topics
+            if keywords:
+                entry["keywords"] = keywords
+
+            stories.append(entry)
 
     _apply_story_unit_families(stories)
     return stories
