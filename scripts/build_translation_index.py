@@ -223,7 +223,35 @@ def _track_for(stem, level, lang):
     return None
 
 
-def from_grammar(grammar_dir, by_unit_num, by_lesson_num, lang):
+def _load_known_skills(lang):
+    path = Path(f"content/{lang}/indexes/grammar-index.json")
+    if not path.is_file():
+        return set()
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+        return set(data.get("bySkill", {}).keys())
+    except (json.JSONDecodeError, OSError):
+        return set()
+
+
+def _skills_for_grammar(stem, known_skills):
+    if not known_skills:
+        return []
+    clean = stem.replace("-gr", "")
+    if clean in known_skills:
+        return [clean]
+    parts = clean.split("-")
+    if len(parts) >= 4:
+        suffix = "-".join(parts[3:])
+        if suffix in known_skills:
+            return [suffix]
+    matches = [s for s in known_skills if clean.endswith(f"-{s}")]
+    if matches:
+        return [max(matches, key=len)]
+    return []
+
+
+def from_grammar(grammar_dir, by_unit_num, by_lesson_num, lang, known_skills):
     pairs = []
     for f in sorted(grammar_dir.glob("*/*.json")):
         level = f.parent.name.upper()
@@ -233,14 +261,24 @@ def from_grammar(grammar_dir, by_unit_num, by_lesson_num, lang):
             continue
         topic = _topic_for(f.stem, level, by_unit_num, by_lesson_num)
         track = _track_for(f.stem, level, lang)
+        skills = _skills_for_grammar(f.stem, known_skills)
+        base_id = data.get("id") or f.stem
         for section in data.get("sections", []):
             if section.get("type") != "examples":
                 continue
-            for item in section.get("items", []):
+            for idx, item in enumerate(section.get("items", [])):
                 spanish = item.get("spanish")
                 english = item.get("english")
                 if spanish and english:
-                    pair = {"spanish": spanish, "english": english, "level": level, "source": "grammar"}
+                    pair = {
+                        "id": f"{base_id}#{idx}",
+                        "spanish": spanish,
+                        "english": english,
+                        "level": level,
+                        "source": "grammar"
+                    }
+                    if skills:
+                        pair["skillIds"] = skills
                     if topic:
                         pair["topic"] = topic
                     if track:
@@ -265,7 +303,18 @@ def from_exercises(exercises_dir, by_unit_num, by_lesson_num, lang):
             english = ex.get("english")
             solution = ex.get("solution")
             if english and solution:
-                pair = {"spanish": _join_tiles(solution), "english": english, "level": level, "source": "exercises"}
+                pair = {
+                    "spanish": _join_tiles(solution),
+                    "english": english,
+                    "level": level,
+                    "source": "exercises"
+                }
+                ex_id = ex.get("id")
+                if ex_id:
+                    pair["id"] = ex_id
+                teaches = ex.get("teaches")
+                if teaches:
+                    pair["skillIds"] = teaches
                 if topic:
                     pair["topic"] = topic
                 if track:
@@ -285,8 +334,9 @@ def main():
             continue
 
         by_unit_num, by_lesson_num = _load_curriculum_lookups(lang)
+        known_skills = _load_known_skills(lang)
         pairs = (
-            from_grammar(grammar_dir, by_unit_num, by_lesson_num, lang)
+            from_grammar(grammar_dir, by_unit_num, by_lesson_num, lang, known_skills)
             + from_exercises(exercises_dir, by_unit_num, by_lesson_num, lang)
         )
 

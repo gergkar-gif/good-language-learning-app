@@ -46,6 +46,7 @@ const RecommendationEngine = (function () {
     function secondaryLabel(candidate) {
         if (candidate.kind === 'grammar') return `Grammar: ${humanizeSkill(candidate.skill)}`;
         if (candidate.kind === 'vocabulary') return `Vocabulary (${candidate.words.length})`;
+        if (candidate.kind === 'speaking') return candidate.skill ? `Speaking: ${humanizeSkill(candidate.skill)}` : 'Speaking Practice';
         if (candidate.kind === 'driller') return candidate.title;
         return '';
     }
@@ -56,6 +57,7 @@ const RecommendationEngine = (function () {
         if (!candidate || typeof Workshop === 'undefined') return;
         if (candidate.kind === 'grammar') Workshop.open('grammar', { skill: candidate.skill });
         else if (candidate.kind === 'vocabulary') Workshop.open('vocabulary', { words: candidate.words });
+        else if (candidate.kind === 'speaking') Workshop.open('speaking', { skill: candidate.skill, autoStart: true });
         else if (candidate.kind === 'driller') Workshop.open(candidate.drillerId, candidate.options);
     }
 
@@ -194,6 +196,10 @@ const RecommendationEngine = (function () {
         const weakWordsList = (typeof LearnerModel !== 'undefined') ? LearnerModel.weakWords() : [];
         const weakDrillersList = (typeof LearnerModel !== 'undefined') ? LearnerModel.weakDrillers() : [];
         const weakDrillerIds = new Set(weakDrillersList.map(d => d.drillerId));
+
+        const weakProductionList = (typeof LearnerModel !== 'undefined' && LearnerModel.weakProductionSkills)
+            ? LearnerModel.weakProductionSkills(1) : [];
+        const topWeakProduction = weakProductionList[0] ? weakProductionList[0].skillId : null;
 
         // 2. Recent lesson content
         let recentSkill = null;
@@ -347,6 +353,26 @@ const RecommendationEngine = (function () {
             });
         }
 
+        // Candidate 10: Speaking Driller (Oral production)
+        const canSpeak = (typeof SpeechInput !== 'undefined' && SpeechInput.isSupported()) || (typeof Speech !== 'undefined' && Speech.available());
+        if (canSpeak && completedCount >= 2) {
+            const isWeak = !!topWeakProduction || weakDrillerIds.has('speaking');
+            const targetSkill = topWeakProduction || (isWeak ? null : effectiveSkill);
+            candidates.push({
+                drillerId: 'speaking',
+                title: isWeak ? 'Oral Recall Challenge' : 'Speak Out Loud',
+                buttonLabel: targetSkill
+                    ? `Speaking: ${humanizeSkill(targetSkill)} (5 sentences)`
+                    : 'Speaking Sprint (5 sentences)',
+                blurb: isWeak
+                    ? "Turn written recall into active oral fluency with quick spoken production."
+                    : "Speak sentences aloud to build real-time speech reflexes.",
+                reason: isWeak ? 'weak' : 'variety',
+                priority: isWeak ? 92 : 44,
+                options: { autoStart: true, count: 5, level: currentLevel.toLowerCase(), skill: targetSkill || undefined }
+            });
+        }
+
         if (!candidates.length) return null;
 
         // Selection:
@@ -423,7 +449,16 @@ const RecommendationEngine = (function () {
         const secondary = [];
         if (gv && gv.skill) secondary.push({ kind: 'grammar', skill: gv.skill, reason: gv.skillReason });
         if (gv && gv.words.length) secondary.push({ kind: 'vocabulary', words: gv.words, reason: gv.wordsReason });
-        _drillerCandidates().forEach(c => secondary.push(c));
+        if (typeof LearnerModel !== 'undefined' && LearnerModel.weakProductionSkills) {
+            const weakProd = LearnerModel.weakProductionSkills(1);
+            if (weakProd && weakProd.length > 0) {
+                secondary.push({ kind: 'speaking', skill: weakProd[0].skillId, reason: 'weak' });
+            }
+        }
+        _drillerCandidates().forEach(c => {
+            if (c.drillerId === 'speaking' && secondary.some(s => s.kind === 'speaking')) return;
+            secondary.push(c);
+        });
 
         return { primary, secondary: secondary.slice(0, 3) };
     }

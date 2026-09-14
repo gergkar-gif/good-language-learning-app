@@ -110,7 +110,18 @@ const SpeechInput = (function () {
         }
     }
 
+    let _sessionToken = 0;
+    let _streamIdleTimer = null;
+
+    function _clearStreamIdleTimer() {
+        if (_streamIdleTimer) {
+            clearTimeout(_streamIdleTimer);
+            _streamIdleTimer = null;
+        }
+    }
+
     function _stopTracks() {
+        _clearStreamIdleTimer();
         if (_mediaStream) {
             _mediaStream.getTracks().forEach(track => {
                 try { track.stop(); } catch (e) {}
@@ -119,64 +130,84 @@ const SpeechInput = (function () {
         }
     }
 
+    function releaseStream() {
+        _stopTracks();
+    }
+
     // Capture audio stream for user playback and unsupported browser fallback
     function _startRecordingStream(options = {}) {
         if (!isRecordingSupported()) return;
 
-        navigator.mediaDevices.getUserMedia({ audio: true, video: false })
-            .then(stream => {
-                if (!_isListening) {
-                    stream.getTracks().forEach(t => { try { t.stop(); } catch (e) {} });
+        _clearStreamIdleTimer();
+        const currentToken = ++_sessionToken;
+
+        function _setupRecorder(stream) {
+            if (!_isListening || currentToken !== _sessionToken) return;
+            _mediaStream = stream;
+
+            let mimeType = '';
+            if (window.MediaRecorder && typeof MediaRecorder.isTypeSupported === 'function') {
+                if (MediaRecorder.isTypeSupported('audio/webm;codecs=opus')) mimeType = 'audio/webm;codecs=opus';
+                else if (MediaRecorder.isTypeSupported('audio/webm')) mimeType = 'audio/webm';
+                else if (MediaRecorder.isTypeSupported('audio/mp4')) mimeType = 'audio/mp4';
+                else if (MediaRecorder.isTypeSupported('audio/aac')) mimeType = 'audio/aac';
+            }
+
+            try {
+                _mediaRecorder = mimeType ? new MediaRecorder(stream, { mimeType }) : new MediaRecorder(stream);
+            } catch (e) {
+                try {
+                    _mediaRecorder = new MediaRecorder(stream);
+                } catch (e2) {
+                    console.warn('SpeechInput: MediaRecorder initialization failed:', e2);
+                    _mediaRecorder = null;
                     return;
                 }
-                _mediaStream = stream;
+            }
 
-                let mimeType = '';
-                if (window.MediaRecorder && typeof MediaRecorder.isTypeSupported === 'function') {
-                    if (MediaRecorder.isTypeSupported('audio/webm;codecs=opus')) mimeType = 'audio/webm;codecs=opus';
-                    else if (MediaRecorder.isTypeSupported('audio/webm')) mimeType = 'audio/webm';
-                    else if (MediaRecorder.isTypeSupported('audio/mp4')) mimeType = 'audio/mp4';
-                    else if (MediaRecorder.isTypeSupported('audio/aac')) mimeType = 'audio/aac';
+            _recordedChunks = [];
+            _mediaRecorder.ondataavailable = e => {
+                if (currentToken === _sessionToken && e.data && e.data.size > 0) {
+                    _recordedChunks.push(e.data);
                 }
+            };
 
+            _mediaRecorder.onstop = () => {
+                if (currentToken === _sessionToken && _recordedChunks.length > 0) {
+                    _cleanAudioUrl();
+                    const type = (_mediaRecorder && _mediaRecorder.mimeType) || mimeType || 'audio/webm';
+                    _recordedAudioBlob = new Blob(_recordedChunks, { type });
+                    _recordedAudioUrl = URL.createObjectURL(_recordedAudioBlob);
+                    if (options.onAudioReady) options.onAudioReady(_recordedAudioUrl);
+                    if (_onAudioReadyCallback) _onAudioReadyCallback(_recordedAudioUrl);
+                }
+                // Keep stream warm for consecutive exercises; release after 45s of silence/inactivity
+                _clearStreamIdleTimer();
+                _streamIdleTimer = setTimeout(() => {
+                    if (!_isListening) _stopTracks();
+                }, 45000);
+            };
+
+            try {
+                _mediaRecorder.start(100);
+            } catch (e) {
                 try {
-                    _mediaRecorder = mimeType ? new MediaRecorder(stream, { mimeType }) : new MediaRecorder(stream);
-                } catch (e) {
-                    try {
-                        _mediaRecorder = new MediaRecorder(stream);
-                    } catch (e2) {
-                        console.warn('SpeechInput: MediaRecorder initialization failed:', e2);
-                        _mediaRecorder = null;
-                        return;
-                    }
+                    _mediaRecorder.start();
+                } catch (e2) {
+                    console.warn('SpeechInput: mediaRecorder.start failed:', e2);
                 }
+            }
+        }
 
-                _recordedChunks = [];
-                _mediaRecorder.ondataavailable = e => {
-                    if (e.data && e.data.size > 0) _recordedChunks.push(e.data);
-                };
+        // Reuse warm stream if still active and has live audio tracks
+        if (_mediaStream && _mediaStream.active && _mediaStream.getAudioTracks().some(t => t.readyState === 'live')) {
+            _setupRecorder(_mediaStream);
+            return;
+        }
 
-                _mediaRecorder.onstop = () => {
-                    if (_recordedChunks.length > 0) {
-                        _cleanAudioUrl();
-                        const type = (_mediaRecorder && _mediaRecorder.mimeType) || mimeType || 'audio/webm';
-                        _recordedAudioBlob = new Blob(_recordedChunks, { type });
-                        _recordedAudioUrl = URL.createObjectURL(_recordedAudioBlob);
-                        if (options.onAudioReady) options.onAudioReady(_recordedAudioUrl);
-                        if (_onAudioReadyCallback) _onAudioReadyCallback(_recordedAudioUrl);
-                    }
-                    _stopTracks();
-                };
-
-                try {
-                    _mediaRecorder.start(100);
-                } catch (e) {
-                    try {
-                        _mediaRecorder.start();
-                    } catch (e2) {
-                        console.warn('SpeechInput: mediaRecorder.start failed:', e2);
-                    }
-                }
+        navigator.mediaDevices.getUserMedia({ audio: true, video: false })
+            .then(stream => {
+                _setupRecorder(stream);
             })
             .catch(err => {
                 console.warn('SpeechInput: audio recording stream unavailable:', err);
@@ -400,7 +431,10 @@ const SpeechInput = (function () {
         if (_mediaRecorder && _mediaRecorder.state !== 'inactive') {
             try { _mediaRecorder.stop(); } catch (e) {}
         } else {
-            _stopTracks();
+            _clearStreamIdleTimer();
+            _streamIdleTimer = setTimeout(() => {
+                if (!_isListening) _stopTracks();
+            }, 45000);
         }
 
         if (finalText && _onFinalCallback) {
@@ -547,6 +581,8 @@ const SpeechInput = (function () {
         resumeSpeaking: resetCantSpeakNow,
         startListening,
         stopListening,
+        isListening: () => _isListening,
+        releaseStream,
         getRecordedAudioUrl,
         evaluate,
         normalizeForSpeech

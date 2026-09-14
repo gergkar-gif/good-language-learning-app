@@ -74,7 +74,7 @@ const StudyPlanRunner = (function () {
         if (item.kind === 'grammar') return `Grammar: ${humanize(item.skill)} — ${item.count} ${item.count === 1 ? 'question' : 'questions'}`;
         if (item.kind === 'vocabulary') return `Vocabulary — ${item.words.length} ${item.words.length === 1 ? 'word' : 'words'}`;
         if (item.kind === 'listening') return `Listening — ${item.count} ${item.count === 1 ? 'question' : 'questions'}`;
-        if (item.kind === 'speaking') return `Speaking — ${item.count} ${item.count === 1 ? 'sentence' : 'sentences'}`;
+        if (item.kind === 'speaking') return item.skill ? `Speaking: ${humanize(item.skill)} — ${item.count} ${item.count === 1 ? 'sentence' : 'sentences'}` : `Speaking — ${item.count} ${item.count === 1 ? 'sentence' : 'sentences'}`;
         if (item.kind === 'match') return `Match Game — ${item.words.length} pairs`;
         return '';
     }
@@ -155,7 +155,7 @@ const StudyPlanRunner = (function () {
         } else if (item.kind === 'speaking' && typeof SpeakingDriller !== 'undefined') {
             const host = activityHost();
             host.innerHTML = '<div id="study-plan-driller"></div>';
-            SpeakingDriller.render(document.getElementById('study-plan-driller'), { count: item.count || 5, level: item.level, autoStart: true });
+            SpeakingDriller.render(document.getElementById('study-plan-driller'), { count: item.count || 5, level: item.level, skill: item.skill, autoStart: true });
             _embeddedDriller = SpeakingDriller;
         } else if (item.kind === 'match' && typeof DeckMatch !== 'undefined') {
             const host = activityHost();

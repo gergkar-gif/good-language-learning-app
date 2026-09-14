@@ -139,9 +139,20 @@ const StudyPlan = (function () {
         }
 
         if (remaining >= 2.5 && canSpeak) {
-            const speakingMinutes = Math.min(3, remaining);
+            const speakingMinutes = (remaining >= 5 || isSpeakingWeak) ? Math.min(3, remaining) : Math.min(2.5, remaining);
             const count = Math.max(5, Math.round(speakingMinutes * 60 / SEC_PER_SPEAKING_Q));
-            items.push({ kind: 'speaking', count, level: curLevel });
+            let targetSkill = null;
+            if (typeof LearnerModel !== 'undefined' && LearnerModel.weakProductionSkills) {
+                const weakProd = LearnerModel.weakProductionSkills(1);
+                if (weakProd && weakProd.length > 0) {
+                    targetSkill = weakProd[0].skillId;
+                }
+            }
+            const speakingItem = { kind: 'speaking', count, level: curLevel };
+            if (targetSkill) {
+                speakingItem.skill = targetSkill;
+            }
+            items.push(speakingItem);
             remaining -= (count * SEC_PER_SPEAKING_Q) / 60;
         }
 

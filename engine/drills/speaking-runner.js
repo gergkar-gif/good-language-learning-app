@@ -50,7 +50,7 @@ const SpeakingRunner = (function () {
             nextBtn.classList.remove('hidden');
             try { nextBtn.focus(); } catch (e) {}
         }
-        if (_onResult) _onResult(correct);
+        if (_onResult) _onResult(correct, _evalResult);
     }
 
     // Reveals full model sentence, word breakdown, and dual audio comparison
@@ -428,7 +428,8 @@ const SpeakingRunner = (function () {
             cantSpeakBtn.addEventListener('click', () => {
                 SpeechInput.setCantSpeakNow(30);
                 _setFeedback(true, 'Speaking snoozed for 30 minutes.');
-                _reveal({ isCorrect: true, accuracy: 100, words: [], transcript: '(Skipped)' });
+                _evalResult = { isCorrect: true, accuracy: 100, isSnoozed: true, words: [], transcript: '(Skipped)' };
+                _reveal(_evalResult);
                 _resolve(true);
             });
         }

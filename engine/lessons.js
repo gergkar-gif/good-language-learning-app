@@ -122,15 +122,31 @@ async function collectLessonVocabulary(lesson) {
 
     for (const section of lesson.sections || []) {
         if (section.type !== 'vocabulary') continue;
-        const vocab = await loadContent(section.ref);
-        for (const word of vocab.words || []) {
-            if (!word || !word.lemma || seen[word.lemma]) continue;
-            seen[word.lemma] = true;
-            words.push({
-                lemma: word.lemma,
-                translation: word.translation || '',
-                pos: word.pos || 'unknown'
-            });
+        if (section.ref) {
+            const vocab = await loadContent(section.ref);
+            for (const word of vocab.words || []) {
+                if (!word || !word.lemma || seen[word.lemma]) continue;
+                seen[word.lemma] = true;
+                words.push({
+                    lemma: word.lemma,
+                    translation: word.translation || '',
+                    pos: word.pos || 'unknown'
+                });
+            }
+        } else if (Array.isArray(section.items)) {
+            for (const item of section.items) {
+                const parts = String(item).split(/\s*[—–-]\s*/);
+                const lemma = (parts[0] || '').trim();
+                const trans = (parts[1] || '').trim();
+                if (lemma && !seen[lemma]) {
+                    seen[lemma] = true;
+                    words.push({
+                        lemma: lemma,
+                        translation: trans,
+                        pos: 'unknown'
+                    });
+                }
+            }
         }
     }
 
@@ -145,13 +161,13 @@ async function buildSteps(lesson) {
     const speakingCandidates = [];
     const seenSpeaking = new Set();
 
-    function addSpeakingCandidate(spanish, english, priority = 1) {
+    function addSpeakingCandidate(spanish, english, priority = 1, skillIds = null) {
         if (!spanish || !english) return;
         const cleanEs = String(spanish).replace(/\([^)]*\)/g, '').trim();
         const cleanEn = String(english).replace(/\([^)]*\)/g, '').trim();
         if (cleanEs.length < 2 || seenSpeaking.has(cleanEs.toLowerCase())) return;
         seenSpeaking.add(cleanEs.toLowerCase());
-        speakingCandidates.push({ spanish: cleanEs, english: cleanEn, priority });
+        speakingCandidates.push({ spanish: cleanEs, english: cleanEn, priority, skillIds });
     }
 
     function injectSpeakingSteps() {
@@ -168,6 +184,7 @@ async function buildSteps(lesson) {
             sentence: cand1.spanish,
             spanish: cand1.spanish,
             english: cand1.english,
+            skillIds: cand1.skillIds,
             prompt: `Listen and repeat this out loud in ${langName}:`
         });
 
@@ -178,6 +195,7 @@ async function buildSteps(lesson) {
             sentence: cand2.spanish,
             spanish: cand2.spanish,
             english: cand2.english,
+            skillIds: cand2.skillIds,
             prompt: `Translate and say this out loud in ${langName}:`
         });
     }
@@ -243,14 +261,28 @@ async function buildSteps(lesson) {
             }
 
             else if (section.type === 'vocabulary') {
-                const vocab = await loadContent(section.ref);
-                const words = vocab.words || [];
+                let words = [];
+                let vocabTitle = 'Vocabulary';
+                if (section.ref) {
+                    const vocab = await loadContent(section.ref);
+                    words = vocab.words || [];
+                    vocabTitle = vocab.title || vocabTitle;
+                } else if (Array.isArray(section.items)) {
+                    words = section.items.map(item => {
+                        const parts = String(item).split(/\s*[—–-]\s*/);
+                        return {
+                            lemma: (parts[0] || '').trim(),
+                            translation: (parts[1] || '').trim(),
+                            pos: 'unknown'
+                        };
+                    });
+                }
                 words.forEach(w => {
                     if (w.lemma && w.translation) addSpeakingCandidate(w.lemma, w.translation, 1);
                 });
                 steps.push({
                     type: 'vocabulary',
-                    title: section.title || vocab.title || 'Vocabulary',
+                    title: section.title || vocabTitle,
                     words: words
                 });
             }
@@ -278,9 +310,9 @@ async function buildSteps(lesson) {
                     }
                     if (exercise.sentence && (exercise.english || exercise.translation)) {
                         const clean = exercise.sentence.replace(/_{2,}/g, exercise.answer || '');
-                        addSpeakingCandidate(clean, exercise.english || exercise.translation, 2);
+                        addSpeakingCandidate(clean, exercise.english || exercise.translation, 2, exercise.teaches);
                     } else if (exercise.spanish && exercise.english) {
-                        addSpeakingCandidate(exercise.spanish, exercise.english, 2);
+                        addSpeakingCandidate(exercise.spanish, exercise.english, 2, exercise.teaches);
                     }
                     steps.push(Object.assign({}, exercise, {
                         title: !section.title ? 'Exercise'
@@ -397,6 +429,11 @@ function teardownLesson() {
     if (typeof DeckMatch !== 'undefined' && typeof DeckMatch.stop === 'function') {
         DeckMatch.stop();
     }
+    if (typeof SpeechInput !== 'undefined') {
+        SpeechInput.stopListening();
+        SpeechInput.releaseStream();
+    }
+    _lessonSpeakingRecording = false;
     const lessonFooter = document.querySelector('#lesson-screen .lesson-footer');
     if (lessonFooter) lessonFooter.style.display = '';
     stepState = {};
@@ -1484,6 +1521,11 @@ function renderStep() {
 function nextLessonStep() {
     if (stepState.gated && !stepState.solved) return;
 
+    if (typeof SpeechInput !== 'undefined') {
+        SpeechInput.stopListening();
+    }
+    _lessonSpeakingRecording = false;
+
     // The srs step used to need its own "Save" tap before Continue did
     // anything useful — easy to miss, since Continue itself was already
     // enabled, so a learner could leave the choices on screen unsaved.
@@ -1523,6 +1565,10 @@ function nextLessonStep() {
 // with renderStep() itself, which already treats every step as stateless.
 function prevLessonStep() {
     if (currentStepIndex <= 0) return;
+    if (typeof SpeechInput !== 'undefined') {
+        SpeechInput.stopListening();
+    }
+    _lessonSpeakingRecording = false;
     currentStepIndex--;
     renderStep();
 }
@@ -2436,6 +2482,17 @@ function lessonCheckSpeaking() {
                 </button>
             </div>
         `;
+    }
+
+    if (typeof LearnerModel !== 'undefined' && typeof LearnerModel.recordProduction === 'function') {
+        const skills = (stepState.sourceStep && stepState.sourceStep.skillIds) || null;
+        if (skills && skills.length) {
+            LearnerModel.recordProduction(skills, evalResult.isCorrect, evalResult.accuracy);
+        } else if (currentLesson && currentLesson.id && typeof Recommend !== 'undefined' && typeof Recommend.lessonSkillFor === 'function') {
+            Recommend.lessonSkillFor(currentLesson.id).then(skill => {
+                if (skill) LearnerModel.recordProduction([skill], evalResult.isCorrect, evalResult.accuracy);
+            }).catch(() => {});
+        }
     }
 
     if (evalResult.isCorrect) {

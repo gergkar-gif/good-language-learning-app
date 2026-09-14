@@ -153,7 +153,10 @@ const LearnerModel = (function () {
             state = levelTestFlagged ? downgrade(base) : base;
         }
 
-        return { skillId, state, recycle, levelTestFlagged };
+        const production = productionState(skillId);
+        const productionWeak = !!(production && production.state === 'weak');
+
+        return { skillId, state, recycle, levelTestFlagged, production, productionWeak };
     }
 
     // The skills with real trouble signal, worst first — replaces
@@ -345,6 +348,112 @@ const LearnerModel = (function () {
     }
 
     // ----------------------------------------
+    // ORAL PRODUCTION EVIDENCE (Speaking Driller & Lesson Speaking)
+    // ----------------------------------------
+    // Tracks oral recall and spoken production per skill.
+    // Unlike written recognition exercises (graded on SM-2 ease via recycleSchedule),
+    // oral production measures whether the learner can retrieve and pronounce
+    // the structure out loud when prompted.
+    //
+    // Honesty principles:
+    // - A single speaking miss NEVER downgrades an established written skill card.
+    // - Requires >= 2 spoken attempts before classifying as weak (<60%) or strong (>=80%).
+    // - Surfaced via productionState(skillId) and weakProductionSkills() to identify
+    //   where written recognition is ahead of oral recall.
+
+    function _productionKey() {
+        return (typeof Lang !== 'undefined') ? Lang.key('productionEvidence') : 'productionEvidence';
+    }
+
+    function _loadProduction() {
+        try {
+            return JSON.parse(localStorage.getItem(_productionKey()) || '{}');
+        } catch (e) {
+            return {};
+        }
+    }
+
+    function _saveProduction(data) {
+        try {
+            localStorage.setItem(_productionKey(), JSON.stringify(data));
+        } catch (e) {}
+    }
+
+    function recordProduction(skillIds, isCorrect, accuracy) {
+        if (!skillIds) return;
+        const list = Array.isArray(skillIds) ? skillIds : [skillIds];
+        if (!list.length) return;
+
+        const store = _loadProduction();
+        const score = typeof accuracy === 'number' ? Math.max(0, Math.min(100, Math.round(accuracy))) : (isCorrect ? 100 : 0);
+        let changed = false;
+
+        list.forEach(skillId => {
+            if (!skillId) return;
+            const entry = store[skillId] || { attempts: 0, correct: 0, avgAccuracy: 0, lastSeen: null };
+            entry.attempts++;
+            if (isCorrect) entry.correct++;
+            entry.avgAccuracy = Math.round(((entry.avgAccuracy * (entry.attempts - 1)) + score) / entry.attempts);
+            entry.lastSeen = new Date().toISOString();
+            store[skillId] = entry;
+            changed = true;
+        });
+
+        if (changed) {
+            _saveProduction(store);
+        }
+    }
+
+    function productionState(skillId) {
+        if (!skillId) return null;
+        const store = _loadProduction();
+        const entry = store[skillId];
+        if (!entry || !entry.attempts) return null;
+
+        let state;
+        if (entry.attempts < 2) {
+            state = 'underpowered';
+        } else if (entry.avgAccuracy < 60) {
+            state = 'weak';
+        } else if (entry.avgAccuracy < 80) {
+            state = 'developing';
+        } else {
+            state = 'strong';
+        }
+
+        return {
+            skillId,
+            attempts: entry.attempts,
+            correct: entry.correct,
+            avgAccuracy: entry.avgAccuracy,
+            accuracy: entry.avgAccuracy,
+            lastSeen: entry.lastSeen,
+            state
+        };
+    }
+
+    async function weakProductionSkills(limit) {
+        const store = _loadProduction();
+        const candidates = [];
+
+        for (const skillId of Object.keys(store)) {
+            const entry = store[skillId];
+            if (!entry || entry.attempts < 2 || entry.avgAccuracy >= 60) continue;
+            candidates.push({
+                skillId,
+                attempts: entry.attempts,
+                correct: entry.correct,
+                avgAccuracy: entry.avgAccuracy,
+                lastSeen: entry.lastSeen,
+                state: 'weak'
+            });
+        }
+
+        candidates.sort((a, b) => a.avgAccuracy - b.avgAccuracy);
+        return candidates.slice(0, limit || candidates.length);
+    }
+
+    // ----------------------------------------
     // PREREQUISITES
     // ----------------------------------------
 
@@ -383,6 +492,9 @@ const LearnerModel = (function () {
         weakWords,
         weakDrillers,
         prerequisitesFor,
-        isReady
+        isReady,
+        recordProduction,
+        productionState,
+        weakProductionSkills
     };
 })();

@@ -33,6 +33,8 @@ const SpeakingDriller = (function () {
     let _questionCount = 10;
     let _timerMinutes = 2;
 
+    let _skill = null;
+
     let _queue = [];
     let _queueIndex = 0;
     let _seen = 0;
@@ -79,11 +81,16 @@ const SpeakingDriller = (function () {
         _loadedLang = null;
     });
 
-    function _poolFor(level) {
-        if (!level || level === 'all') return _pairs;
+    function _poolFor(level, skill) {
+        let pool = _pairs || [];
+        if (skill) {
+            const skillFiltered = pool.filter(p => p.skillIds && p.skillIds.includes(skill));
+            if (skillFiltered.length) pool = skillFiltered;
+        }
+        if (!level || level === 'all') return pool;
         const target = level.toUpperCase();
-        const filtered = _pairs.filter(p => p.level && p.level.toUpperCase() === target);
-        return filtered.length ? filtered : _pairs;
+        const filtered = pool.filter(p => p.level && p.level.toUpperCase() === target);
+        return filtered.length ? filtered : pool;
     }
 
     function _availableLevels() {
@@ -97,7 +104,7 @@ const SpeakingDriller = (function () {
 
     // ---- Build Queue ----
     function _buildQueue() {
-        const pool = _poolFor(_level);
+        const pool = _poolFor(_level, _skill);
         const shuffled = _shuffled(pool);
         const count = _mode === MODE.COUNT ? _questionCount : 40;
         const selected = shuffled.slice(0, count);
@@ -109,11 +116,13 @@ const SpeakingDriller = (function () {
                 kind = (idx % 2 === 0) ? DRILL_TYPE.READ_REPEAT : DRILL_TYPE.PROMPT_SPEAK;
             }
             return {
+                id: pair.id,
                 kind,
                 spanish: pair.spanish,
                 english: pair.english,
                 level: pair.level,
-                topic: pair.topic
+                topic: pair.topic,
+                skillIds: pair.skillIds
             };
         });
 
@@ -351,7 +360,7 @@ const SpeakingDriller = (function () {
         }
 
         SpeakingRunner.render(mount, current, {
-            onResult: isCorrect => {
+            onResult: (isCorrect, evalResult) => {
                 _seen++;
                 if (isCorrect) _correct++;
                 _recap.push({
@@ -359,6 +368,12 @@ const SpeakingDriller = (function () {
                     english: current.english,
                     isCorrect
                 });
+                if (!evalResult || !evalResult.isSnoozed) {
+                    if (current.skillIds && typeof LearnerModel !== 'undefined' && typeof LearnerModel.recordProduction === 'function') {
+                        const acc = (evalResult && typeof evalResult.accuracy === 'number') ? evalResult.accuracy : (isCorrect ? 100 : 0);
+                        LearnerModel.recordProduction(current.skillIds, isCorrect, acc);
+                    }
+                }
             },
             onNext: () => {
                 _nextItem();
@@ -426,6 +441,11 @@ const SpeakingDriller = (function () {
 
         if (options && options.level) {
             _level = options.level;
+        }
+        if (options && options.skill) {
+            _skill = options.skill;
+        } else {
+            _skill = null;
         }
         if (options && options.count) {
             _questionCount = options.count;
