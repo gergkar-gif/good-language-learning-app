@@ -9,6 +9,24 @@
     margin: 0 auto;
 }
 
+.wk-section-heading {
+    display: block;
+    max-width: 480px;
+    margin: 28px auto 8px;
+    padding-bottom: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    border-bottom: 1px solid var(--border-light);
+    width: 100%;
+}
+
+.wk-section-heading:first-of-type {
+    margin-top: 4px;
+}
+
 /* One or two suggested mini-game sessions (grammar and/or vocabulary —
    see engine/recommend.js), ahead of the picker list — patched in
    asynchronously once Recommend.recommend() resolves (see

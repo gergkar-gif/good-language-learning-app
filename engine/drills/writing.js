@@ -1,12 +1,23 @@
 // ============================================
 // WRITING STUDIO DRILLER
 // ============================================
-// Longer-form open-ended production driller with CEFR formative assessment.
-// Evaluates writing against curriculum standards, provides multi-dimensional
-// feedback, and feeds production evidence into the Learner Model.
+// Complete written production hub for Parlour:
+//
+// 1. Composition Studio:
+//    - Longer-form open-ended production driller with CEFR formative assessment.
+//    - Evaluates writing against curriculum standards, provides multi-dimensional
+//      feedback, and feeds production evidence into the Learner Model.
+//
+// 2. Sentence Translation:
+//    - Bidirectional sentence translation practice drawn from curriculum pairs.
+//    - Timed and count modes, level filters, dual-track support.
 
 const WritingDriller = (function () {
     'use strict';
+
+    const STUDIO_TAB = { COMPOSITION: 'composition', TRANSLATION: 'translation' };
+    let _activeStudioTab = STUDIO_TAB.COMPOSITION;
+    let _subOptions = null;
 
     const PHASE = { PROMPT_SELECT: 1, WRITING: 2, ASSESSING: 3, RESULTS: 4 };
 
@@ -55,11 +66,63 @@ const WritingDriller = (function () {
     }
 
     // ----------------------------------------
-    // RENDER SCREENS
+    // STUDIO SHELL & SWITCHER
     // ----------------------------------------
 
-    function _renderPromptSelect() {
+    function _renderStudioShell() {
         if (!_container) return;
+
+        _container.innerHTML = `
+            <div class="sp-studio-wrap">
+                <div class="sp-studio-nav" role="tablist">
+                    <button type="button" class="sp-studio-tab ${_activeStudioTab === STUDIO_TAB.COMPOSITION ? 'active' : ''}" data-studio-tab="composition" role="tab" aria-selected="${_activeStudioTab === STUDIO_TAB.COMPOSITION}">
+                        Composition Studio
+                    </button>
+                    <button type="button" class="sp-studio-tab ${_activeStudioTab === STUDIO_TAB.TRANSLATION ? 'active' : ''}" data-studio-tab="translation" role="tab" aria-selected="${_activeStudioTab === STUDIO_TAB.TRANSLATION}">
+                        Sentence Translation
+                    </button>
+                </div>
+                <div class="sp-studio-body" id="wr-studio-body"></div>
+            </div>
+        `;
+
+        _container.querySelectorAll('[data-studio-tab]').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const target = btn.getAttribute('data-studio-tab');
+                if (target === _activeStudioTab) return;
+                stop();
+                _activeStudioTab = target;
+                _subOptions = null;
+                _renderStudioShell();
+            });
+        });
+
+        _renderActiveTab();
+    }
+
+    function _renderActiveTab() {
+        const body = document.getElementById('wr-studio-body');
+        if (!body) return;
+
+        if (_activeStudioTab === STUDIO_TAB.TRANSLATION) {
+            if (typeof TranslationDriller !== 'undefined') {
+                TranslationDriller.render(body, _subOptions);
+            } else {
+                body.innerHTML = '<div class="gd-loading">Loading Translation Driller…</div>';
+            }
+        } else {
+            if (_phase === PHASE.PROMPT_SELECT) _renderPromptSelect(body);
+            else if (_phase === PHASE.WRITING) _renderWriting(body);
+            else if (_phase === PHASE.ASSESSING) _renderAssessing(body);
+            else if (_phase === PHASE.RESULTS) _renderResults(body);
+        }
+    }
+
+    // ----------------------------------------
+    // RENDER SCREENS (COMPOSITION)
+    // ----------------------------------------
+
+    function _renderPromptSelect(body) {
         const langName = (typeof Lang !== 'undefined') ? Lang.name() : 'the target language';
         const prompts = _promptsData || [];
 
@@ -77,10 +140,10 @@ const WritingDriller = (function () {
             `).join('');
         }
 
-        _container.innerHTML = `
+        body.innerHTML = `
             <div class="sp-driller-wrap">
                 <div class="sp-setup-head">
-                    <h2 class="sp-setup-title">Writing Studio</h2>
+                    <h2 class="sp-setup-title">Composition Studio</h2>
                     <p class="sp-setup-sub">Write open-ended texts in ${langName} and receive CEFR-aligned formative feedback.</p>
                 </div>
 
@@ -97,7 +160,7 @@ const WritingDriller = (function () {
             </div>
         `;
 
-        _container.querySelectorAll('[data-select-prompt]').forEach(el => {
+        body.querySelectorAll('[data-select-prompt]').forEach(el => {
             el.addEventListener('click', () => {
                 const id = el.getAttribute('data-select-prompt');
                 const found = (_promptsData || []).find(p => p.id === id);
@@ -105,12 +168,12 @@ const WritingDriller = (function () {
                     _selectedPrompt = found;
                     _draftText = localStorage.getItem(_draftKey(found.id)) || '';
                     _phase = PHASE.WRITING;
-                    _renderWriting();
+                    _renderActiveTab();
                 }
             });
         });
 
-        const customBtn = _container.querySelector('[data-select-custom]');
+        const customBtn = body.querySelector('[data-select-custom]');
         if (customBtn) {
             customBtn.addEventListener('click', () => {
                 _selectedPrompt = {
@@ -126,13 +189,13 @@ const WritingDriller = (function () {
                 };
                 _draftText = localStorage.getItem(_draftKey('custom')) || '';
                 _phase = PHASE.WRITING;
-                _renderWriting();
+                _renderActiveTab();
             });
         }
     }
 
-    function _renderWriting() {
-        if (!_container || !_selectedPrompt) return;
+    function _renderWriting(body) {
+        if (!_selectedPrompt) return;
         const p = _selectedPrompt;
 
         const skillsPills = (p.targetSkills || []).map(s => {
@@ -140,7 +203,7 @@ const WritingDriller = (function () {
             return `<span class="sp-skill-pill">${_esc(label)}</span>`;
         }).join('');
 
-        _container.innerHTML = `
+        body.innerHTML = `
             <div class="sp-driller-wrap sp-writing-wrap">
                 <div class="sp-writing-header">
                     <button class="vbtn vbtn-secondary sp-back-btn" data-action="back-prompts">← Back</button>
@@ -150,93 +213,96 @@ const WritingDriller = (function () {
                     </div>
                 </div>
 
-                <div class="sp-task-card">
-                    <h3 class="sp-task-title">${_esc(p.title)}</h3>
-                    <p class="sp-task-prompt">${_esc(p.prompt)}</p>
-                    ${skillsPills ? `<div class="sp-skills-row">${skillsPills}</div>` : ''}
+                <div class="sp-prompt-detail-card">
+                    <h3 class="sp-prompt-detail-title">${_esc(p.title)}</h3>
+                    <p class="sp-prompt-detail-desc">${_esc(p.prompt)}</p>
+                    ${skillsPills ? `<div class="sp-prompt-skills">${skillsPills}</div>` : ''}
                 </div>
 
-                <div class="sp-editor-box">
-                    <textarea class="sp-writing-textarea" placeholder="Type your response here in the target language...">${_esc(_draftText)}</textarea>
-                    <div class="sp-editor-status">
-                        <div class="sp-counter-group">
-                            <span class="sp-word-counter"><strong>0</strong> words</span>
-                            <span class="sp-sentence-counter">0 sentences</span>
+                <div class="sp-editor-area">
+                    <textarea class="sp-writing-textarea" placeholder="Start writing here..." rows="12">${_esc(_draftText)}</textarea>
+                    <div class="sp-editor-footer">
+                        <div class="sp-counter-box">
+                            <span class="sp-word-count">0 words</span>
+                            <span class="sp-sentence-count">· 0 sentences</span>
                         </div>
-                        <div class="sp-meter-bar">
-                            <div class="sp-meter-fill" style="width: 0%"></div>
+                        <div class="sp-editor-actions">
+                            <button class="vbtn vbtn-secondary" data-action="clear-draft">Clear</button>
+                            <button class="vbtn vbtn-primary" data-action="submit-grade">Submit for Evaluation</button>
                         </div>
                     </div>
                 </div>
-
-                <div class="sp-actions-bar">
-                    <button class="vbtn vbtn-primary sp-submit-btn" data-action="submit-writing">Submit for Assessment →</button>
-                </div>
             </div>
         `;
 
-        const textarea = _container.querySelector('.sp-writing-textarea');
-        const wordCounter = _container.querySelector('.sp-word-counter strong');
-        const sentenceCounter = _container.querySelector('.sp-sentence-counter');
-        const meterFill = _container.querySelector('.sp-meter-fill');
-        const backBtn = _container.querySelector('[data-action="back-prompts"]');
-        const submitBtn = _container.querySelector('[data-action="submit-writing"]');
+        const textarea = body.querySelector('.sp-writing-textarea');
+        const countEl = body.querySelector('.sp-word-count');
+        const sentEl = body.querySelector('.sp-sentence-count');
 
-        function updateStats() {
-            const val = textarea.value;
-            _draftText = val;
-            try { localStorage.setItem(_draftKey(p.id), val); } catch (e) {}
+        function _updateCounts() {
+            const val = textarea.value.trim();
+            const words = val ? val.split(/\s+/).length : 0;
+            const sentences = val ? (val.match(/[.!?]+(?:\s+|$)/g) || []).length : 0;
+            countEl.textContent = `${words} words`;
+            sentEl.textContent = `· ${sentences} sentence${sentences === 1 ? '' : 's'}`;
 
-            const words = val.trim() ? (val.match(/[\p{L}\p{N}]+(?:['-][\p{L}\p{N}]+)*/gu) || []) : [];
-            const count = words.length;
-            wordCounter.textContent = count;
-
-            const sentences = val.trim().split(/(?<=[.!?¿¡])\s+|\n+/).filter(s => s.trim().length > 0);
-            sentenceCounter.textContent = `${sentences.length} ${sentences.length === 1 ? 'sentence' : 'sentences'}`;
-
-            const pct = Math.min(100, Math.round((count / (p.targetWords || 150)) * 100));
-            meterFill.style.width = pct + '%';
-            if (count >= (p.minWords || 30)) {
-                meterFill.classList.add('is-ready');
-            } else {
-                meterFill.classList.remove('is-ready');
-            }
+            // Save draft
+            _draftText = textarea.value;
+            try {
+                localStorage.setItem(_draftKey(p.id), _draftText);
+            } catch (e) {}
         }
 
-        textarea.addEventListener('input', updateStats);
-        updateStats();
+        textarea.addEventListener('input', _updateCounts);
+        _updateCounts();
 
-        backBtn.addEventListener('click', () => {
-            _phase = PHASE.PROMPT_SELECT;
-            _renderPromptSelect();
-        });
+        const backBtn = body.querySelector('[data-action="back-prompts"]');
+        if (backBtn) {
+            backBtn.addEventListener('click', () => {
+                _phase = PHASE.PROMPT_SELECT;
+                _renderActiveTab();
+            });
+        }
 
-        submitBtn.addEventListener('click', async () => {
-            const text = textarea.value.trim();
-            if (!text || text.split(/\s+/).length < 5) {
-                alert('Please write at least a few sentences before submitting.');
-                return;
-            }
-            _phase = PHASE.ASSESSING;
-            _renderAssessing();
-            await _runAssessment(text);
-        });
+        const clearBtn = body.querySelector('[data-action="clear-draft"]');
+        if (clearBtn) {
+            clearBtn.addEventListener('click', () => {
+                if (confirm('Clear your current draft?')) {
+                    textarea.value = '';
+                    _updateCounts();
+                }
+            });
+        }
+
+        const submitBtn = body.querySelector('[data-action="submit-grade"]');
+        if (submitBtn) {
+            submitBtn.addEventListener('click', () => {
+                const text = textarea.value.trim();
+                if (!text) {
+                    alert('Please write something before submitting.');
+                    return;
+                }
+                _submitForGrading(text);
+            });
+        }
     }
 
-    function _renderAssessing() {
-        if (!_container) return;
-        _container.innerHTML = `
+    function _renderAssessing(body) {
+        body.innerHTML = `
             <div class="sp-driller-wrap sp-assessing-wrap">
-                <div class="sp-spinner-box">
-                    <div class="sp-pulsing-circle"></div>
-                    <h3>Evaluating Your Writing</h3>
-                    <p class="sp-assessing-sub">Analyzing task completion, grammar control, vocabulary, coherence, and complexity against CEFR standards...</p>
+                <div class="sp-assessing-card">
+                    <div class="sp-spinner"></div>
+                    <h3 class="sp-assessing-title">Grading Your Submission</h3>
+                    <p class="sp-assessing-sub">Evaluating CEFR level, grammar, vocabulary precision, and structural coherence...</p>
                 </div>
             </div>
         `;
     }
 
-    async function _runAssessment(text) {
+    async function _submitForGrading(text) {
+        _phase = PHASE.ASSESSING;
+        _renderActiveTab();
+
         const engine = _getEngine();
         const p = _selectedPrompt;
         const lang = (typeof Lang !== 'undefined') ? Lang.code() : 'es';
@@ -270,17 +336,17 @@ const WritingDriller = (function () {
             try { localStorage.removeItem(_draftKey(p.id)); } catch (e) {}
 
             _phase = PHASE.RESULTS;
-            _renderResults();
+            _renderActiveTab();
         } catch (error) {
             console.error('Assessment failed:', error);
             alert('Could not complete evaluation: ' + error.message);
             _phase = PHASE.WRITING;
-            _renderWriting();
+            _renderActiveTab();
         }
     }
 
-    function _renderResults() {
-        if (!_container || !_assessmentResult) return;
+    function _renderResults(body) {
+        if (!_assessmentResult) return;
         const res = _assessmentResult;
         const p = _selectedPrompt || {};
         const score = res.overallScore || 0;
@@ -312,7 +378,7 @@ const WritingDriller = (function () {
             </div>
         ` : '';
 
-        _container.innerHTML = `
+        body.innerHTML = `
             <div class="sp-driller-wrap sp-results-wrap">
                 <div class="sp-results-score-card">
                     <div class="sp-score-circle" style="border-color: ${scoreColor}">
@@ -342,7 +408,7 @@ const WritingDriller = (function () {
                     </div>
                     <div class="sp-feedback-col sp-priorities">
                         <h4>Focus Priorities</h4>
-                        <ul>${priorities.map(p => `<li>${_esc(p)}</li>`).join('')}</ul>
+                        <ul>${priorities.map(pr => `<li>${_esc(pr)}</li>`).join('')}</ul>
                     </div>
                 </div>
 
@@ -360,19 +426,19 @@ const WritingDriller = (function () {
             </div>
         `;
 
-        const againBtn = _container.querySelector('[data-action="write-again"]');
+        const againBtn = body.querySelector('[data-action="write-again"]');
         if (againBtn) {
             againBtn.addEventListener('click', () => {
                 _phase = PHASE.PROMPT_SELECT;
                 _selectedPrompt = null;
                 _assessmentResult = null;
-                _renderPromptSelect();
+                _renderActiveTab();
             });
         }
 
         // Mount RecommendationEngine Next Action
         if (typeof RecommendationEngine !== 'undefined') {
-            const actionsEl = _container.querySelector('.vspeed-results-actions');
+            const actionsEl = body.querySelector('.vspeed-results-actions');
             if (actionsEl) {
                 RecommendationEngine.mountNextAction(actionsEl, { excludeDrillerId: 'writing' });
             }
@@ -383,15 +449,25 @@ const WritingDriller = (function () {
     // PUBLIC API
     // ----------------------------------------
 
-    async function render(container, options) {
+    async function render(container, options = {}) {
         _container = container;
         await _loadPrompts();
+
+        if (options && options.activeTab) {
+            _activeStudioTab = (options.activeTab === 'translation' || options.activeTab === 'translate')
+                ? STUDIO_TAB.TRANSLATION
+                : STUDIO_TAB.COMPOSITION;
+        }
+        _subOptions = options;
+
         _phase = PHASE.PROMPT_SELECT;
-        _renderPromptSelect();
+        _renderStudioShell();
     }
 
     function stop() {
-        _container = null;
+        if (_activeStudioTab === STUDIO_TAB.TRANSLATION && typeof TranslationDriller !== 'undefined') {
+            try { TranslationDriller.stop(); } catch (e) {}
+        }
     }
 
     return {
@@ -402,4 +478,9 @@ const WritingDriller = (function () {
 
 if (typeof window !== 'undefined') {
     window.WritingDriller = WritingDriller;
+    window.WritingStudio = WritingDriller; // alias for clarity
 }
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = WritingDriller;
+}
+

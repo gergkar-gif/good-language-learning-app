@@ -50,15 +50,29 @@ assert(typeof SpeakingDriller.render === 'function', 'SpeakingDriller must expor
 assert(typeof SpeakingDriller.stop === 'function', 'SpeakingDriller must export stop()');
 console.log('[PASS] SpeakingStudio module structure verified.');
 
-// 3. Test Workshop Routing for Hungarian Studio
+// 3. Test WritingDriller / WritingStudio
+require('../../engine/drills/writing.js');
+assert(typeof WritingDriller !== 'undefined', 'WritingDriller must be defined');
+assert(typeof WritingStudio !== 'undefined', 'WritingStudio alias must be defined');
+assert(typeof WritingDriller.render === 'function', 'WritingDriller must export render()');
+assert(typeof WritingDriller.stop === 'function', 'WritingDriller must export stop()');
+console.log('[PASS] WritingStudio module structure verified.');
+
+// 4. Test Workshop Routing & Order
 require('../../engine/workshop.js');
 assert(typeof Workshop !== 'undefined', 'Workshop must be defined');
 
 // Verify active driller before and after routing
 Workshop.open('hu-verb');
-const active = Workshop.activeDriller();
+let active = Workshop.activeDriller();
 assert(active && active.id === 'hu-verb-studio', `Workshop.open('hu-verb') must route to hu-verb-studio, got ${active ? active.id : 'null'}`);
 console.log('[PASS] Workshop legacy hu-verb routing to hu-verb-studio verified.');
+
+Workshop.open('translation');
+active = Workshop.activeDriller();
+assert(active && active.id === 'writing', `Workshop.open('translation') must route to writing, got ${active ? active.id : 'null'}`);
+console.log('[PASS] Workshop legacy translation routing to writing verified.');
+
 
 // 4. Test GraderEngine with Oral Modality Context
 const { GraderEngine } = require('../../engine/grader');

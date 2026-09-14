@@ -21,54 +21,29 @@ const Workshop = (function () {
     // engine/verbs/ gets the rewrite multi-language-plan already calls for.
     const DRILLERS = [
         {
-            id: 'verbs',
-            icon: 'verbs',
-            title: 'Verb Driller',
-            sub: 'Conjugation tables and speed drills.',
-            containerId: 'verb-driller-root',
-            langs: ['es']
-        },
-        {
-            id: 'grammar',
-            icon: 'grammar',
-            title: 'Grammar Driller',
-            sub: 'Practice by skill, drawn from every lesson.',
-            containerId: 'grammar-driller-root'
-        },
-        {
-            id: 'translation',
-            icon: 'translation',
-            title: 'Translation Driller',
-            sub: 'Translate real sentences, either direction.',
-            containerId: 'translation-driller-root'
-        },
-        {
-            id: 'vocabulary',
-            icon: 'vocabulary',
-            title: 'Vocabulary Driller',
-            sub: 'Meaning and context, drawn from every word taught.',
-            containerId: 'vocabulary-driller-root'
-        },
-        {
-            id: 'listening',
-            icon: 'listening',
-            title: 'Listening Driller',
-            sub: () => `Decode spoken ${(typeof Lang !== 'undefined') ? Lang.name() : 'the language'}, by ear.`,
-            containerId: 'listening-driller-root'
-        },
-        {
             id: 'speaking',
             icon: 'speaking',
             title: 'Speaking Studio',
             sub: () => `Practise pronunciation, shadowing, and open-ended oral production.`,
-            containerId: 'speaking-driller-root'
+            containerId: 'speaking-driller-root',
+            category: 'studios'
         },
         {
             id: 'writing',
             icon: 'writing',
             title: 'Writing Studio',
-            sub: () => `Compose open-ended texts in ${(typeof Lang !== 'undefined') ? Lang.name() : 'the language'} with CEFR grading.`,
-            containerId: 'writing-driller-root'
+            sub: () => `Sentence translation and open-ended composition with CEFR grading.`,
+            containerId: 'writing-driller-root',
+            category: 'studios'
+        },
+        {
+            id: 'verbs',
+            icon: 'verbs',
+            title: 'Verb Driller',
+            sub: 'Conjugation tables and speed drills.',
+            containerId: 'verb-driller-root',
+            langs: ['es'],
+            category: 'foundations'
         },
         {
             id: 'hu-verb-studio',
@@ -76,7 +51,32 @@ const Workshop = (function () {
             title: 'Verb & Morphology Studio',
             sub: 'Conjugation, verbal prefixes, suffixes, and word decomposition.',
             containerId: 'hu-verb-studio-root',
-            langs: ['hu']
+            langs: ['hu'],
+            category: 'foundations'
+        },
+        {
+            id: 'listening',
+            icon: 'listening',
+            title: 'Listening Driller',
+            sub: () => `Decode spoken ${(typeof Lang !== 'undefined') ? Lang.name() : 'the language'}, by ear.`,
+            containerId: 'listening-driller-root',
+            category: 'foundations'
+        },
+        {
+            id: 'grammar',
+            icon: 'grammar',
+            title: 'Grammar Driller',
+            sub: 'Practice by skill, drawn from every lesson.',
+            containerId: 'grammar-driller-root',
+            category: 'foundations'
+        },
+        {
+            id: 'vocabulary',
+            icon: 'vocabulary',
+            title: 'Vocabulary Driller',
+            sub: 'Meaning and context, drawn from every word taught.',
+            containerId: 'vocabulary-driller-root',
+            category: 'foundations'
         }
     ];
 
@@ -158,23 +158,41 @@ const Workshop = (function () {
         `;
     }
 
+    function _renderCards(items) {
+        return items.map(d => `
+            <button class="wk-card" data-driller="${d.id}">
+                ${_drillerIcon(d.icon)}
+                <span class="wk-card-body">
+                    <span class="wk-card-title">${_esc(d.title)}</span>
+                    <span class="wk-card-sub">${_esc(typeof d.sub === 'function' ? d.sub() : d.sub)}</span>
+                </span>
+                <span class="wk-card-arrow geo-triangle" aria-hidden="true"></span>
+            </button>
+        `).join('');
+    }
+
     function _pickerHtml(recommendation) {
+        const available = DRILLERS.filter(_available);
+        const studios = available.filter(d => d.category === 'studios');
+        const foundations = available.filter(d => d.category === 'foundations');
+
         return `
             ${_recommendationHtml(recommendation)}
-            <div class="wk-picker">
-                ${DRILLERS.filter(_available).map(d => `
-                    <button class="wk-card" data-driller="${d.id}">
-                        ${_drillerIcon(d.icon)}
-                        <span class="wk-card-body">
-                            <span class="wk-card-title">${_esc(d.title)}</span>
-                            <span class="wk-card-sub">${_esc(typeof d.sub === 'function' ? d.sub() : d.sub)}</span>
-                        </span>
-                        <span class="wk-card-arrow geo-triangle" aria-hidden="true"></span>
-                    </button>
-                `).join('')}
-            </div>
+            ${studios.length ? `
+                <div class="wk-section-heading">Studios</div>
+                <div class="wk-picker">
+                    ${_renderCards(studios)}
+                </div>
+            ` : ''}
+            ${foundations.length ? `
+                <div class="wk-section-heading">Foundations</div>
+                <div class="wk-picker">
+                    ${_renderCards(foundations)}
+                </div>
+            ` : ''}
         `;
     }
+
 
     function _activeHtml(driller) {
         return `
@@ -305,6 +323,15 @@ const Workshop = (function () {
             render();
             return;
         }
+
+        // Transparent routing for Translation driller into Writing Studio
+        if (id === 'translation') {
+            _active = 'writing';
+            _activeOptions = Object.assign({ activeTab: 'translation' }, options);
+            render();
+            return;
+        }
+
 
         const driller = DRILLERS.find(d => d.id === id);
         if (driller && driller.langs && typeof Lang !== 'undefined' && !driller.langs.includes(Lang.code())) {
