@@ -1,0 +1,379 @@
+// ============================================
+// SPEAKING RUNNER
+// ============================================
+// Renders and manages one speaking exercise:
+// - Pronunciation & Shadowing (Read & Repeat): Listen to model, speak, see word-by-word match
+// - Oral Production (Prompt & Speak): Prompted in English, formulate and speak in Spanish
+// - Real-time microphone capture with live visual meter
+// - Word-by-word diagnostic feedback (matched vs mispronounced words)
+// - Dual audio playback: Listen to native TTS vs your own recorded voice
+// - "Can't speak right now" quick skip
+
+const SpeakingRunner = (function () {
+    'use strict';
+
+    let _container = null;
+    let _exercise = null;
+    let _onResult = null;
+    let _onNext = null;
+    let _solved = false;
+    let _isRecording = false;
+    let _userAudioUrl = null;
+    let _evalResult = null;
+    let _userAudioPlayer = null;
+
+    function _esc(text) {
+        const d = document.createElement('div');
+        d.textContent = text;
+        return d.innerHTML;
+    }
+
+    function _setFeedback(ok, message) {
+        const el = _container.querySelector('.sp-feedback');
+        if (!el) return;
+        el.textContent = message;
+        el.className = 'sp-feedback ' + (ok ? 'sp-feedback-correct' : 'sp-feedback-wrong');
+    }
+
+    function _resolve(correct) {
+        if (_solved) return;
+        _solved = true;
+
+        if (_isRecording) {
+            _stopRecording();
+        }
+
+        const actionBtns = _container.querySelector('.sp-actions');
+        const nextBtn = _container.querySelector('[data-action="next"]');
+        if (actionBtns) actionBtns.classList.add('hidden');
+        if (nextBtn) {
+            nextBtn.classList.remove('hidden');
+            try { nextBtn.focus(); } catch (e) {}
+        }
+        if (_onResult) _onResult(correct);
+    }
+
+    // Reveals full model sentence, word breakdown, and dual audio comparison
+    function _reveal(evalResult) {
+        const revealEl = _container.querySelector('.sp-reveal');
+        if (!revealEl) return;
+        revealEl.classList.remove('hidden');
+
+        const isPromptSpeak = _exercise.kind === 'prompt-speak';
+
+        // Word-by-word pills breakdown
+        let wordsHtml = '';
+        if (evalResult && evalResult.words && evalResult.words.length) {
+            wordsHtml = `
+                <div class="sp-word-breakdown" aria-label="Word pronunciation breakdown">
+                    ${evalResult.words.map(w => `
+                        <span class="sp-word-pill ${w.status === 'matched' ? 'sp-word-matched' : 'sp-word-missed'}"
+                              title="${w.status === 'matched' ? 'Clearly recognized' : 'Mispronounced or omitted'}">
+                            ${_esc(w.word)}
+                        </span>
+                    `).join('')}
+                </div>
+            `;
+        }
+
+        // Dual audio comparison: Native Model vs User Voice
+        const hasUserAudio = !!_userAudioUrl;
+        const compareHtml = `
+            <div class="sp-compare-bar">
+                <button type="button" class="sp-audio-compare-btn sp-btn-model" data-action="play-model">
+                    ${typeof Art !== 'undefined' ? Art.icon('listening') : ''}
+                    <span>Model Voice</span>
+                </button>
+                ${hasUserAudio ? `
+                    <button type="button" class="sp-audio-compare-btn sp-btn-user" data-action="play-user">
+                        ${typeof Art !== 'undefined' ? Art.icon('mic') : ''}
+                        <span>Your Voice</span>
+                    </button>
+                ` : ''}
+            </div>
+        `;
+
+        revealEl.innerHTML = `
+            ${isPromptSpeak ? `
+                <div class="sp-target-text">
+                    <p class="sp-es-lead">${_esc(_exercise.spanish)}</p>
+                </div>
+            ` : ''}
+            ${wordsHtml}
+            ${evalResult && evalResult.transcript ? `
+                <p class="sp-transcript-note">Heard: <em>"${_esc(evalResult.transcript)}"</em></p>
+            ` : ''}
+            ${compareHtml}
+        `;
+
+        // Wire audio compare buttons
+        const playModelBtn = revealEl.querySelector('[data-action="play-model"]');
+        if (playModelBtn) {
+            playModelBtn.addEventListener('click', () => {
+                if (typeof Speech !== 'undefined') {
+                    Speech.speak(_exercise.spanish);
+                }
+            });
+        }
+
+        const playUserBtn = revealEl.querySelector('[data-action="play-user"]');
+        if (playUserBtn) {
+            playUserBtn.addEventListener('click', () => {
+                if (_userAudioUrl) {
+                    if (_userAudioPlayer) {
+                        _userAudioPlayer.pause();
+                    }
+                    _userAudioPlayer = new Audio(_userAudioUrl);
+                    _userAudioPlayer.play().catch(e => console.warn('Could not play user audio', e));
+                }
+            });
+        }
+    }
+
+    // Handles result calculation and finish state
+    function _finishEvaluation(evalResult) {
+        _evalResult = evalResult;
+        const ok = evalResult.isCorrect;
+        const scoreStr = evalResult.accuracy !== undefined ? ` (${evalResult.accuracy}%)` : '';
+        const msg = ok
+            ? (evalResult.accuracy >= 90 ? `✓ Excellent!${scoreStr}` : `✓ Good job!${scoreStr}`)
+            : `✗ Not quite clear${scoreStr}. Try listening to the model.`;
+
+        _setFeedback(ok, msg);
+        _reveal(evalResult);
+        _resolve(ok);
+    }
+
+    // Start voice recording and STT
+    function _startRecording() {
+        if (_solved || _isRecording) return;
+        _isRecording = true;
+
+        const micBtn = _container.querySelector('.sp-mic-btn');
+        const micLabel = _container.querySelector('.sp-mic-status');
+        const liveText = _container.querySelector('.sp-live-transcript');
+
+        if (micBtn) micBtn.classList.add('sp-recording');
+        if (micLabel) micLabel.textContent = 'Listening... Speak now';
+        if (liveText) {
+            liveText.textContent = '...';
+            liveText.classList.remove('hidden');
+        }
+
+        SpeechInput.startListening({
+            onInterim: interim => {
+                if (liveText) liveText.textContent = interim;
+            },
+            onFinal: transcript => {
+                if (liveText) liveText.textContent = transcript;
+                _stopRecording();
+                const evalResult = SpeechInput.evaluate(_exercise.spanish, transcript);
+                _finishEvaluation(evalResult);
+            },
+            onAudioReady: url => {
+                _userAudioUrl = url;
+            },
+            onAudioLevel: level => {
+                const meterBar = _container.querySelector('.sp-meter-fill');
+                if (meterBar) {
+                    meterBar.style.transform = `scaleX(${Math.max(0.05, level)})`;
+                }
+            },
+            onError: err => {
+                console.warn('SpeakingRunner error:', err);
+                _stopRecording();
+
+                // If recognition failed or not supported, offer self-eval
+                if (!SpeechInput.isRecognitionSupported() || err === 'recognition-failed' || err === 'no-speech') {
+                    _offerSelfEvaluation(err === 'no-speech' ? 'No voice heard. Did you speak into the microphone?' : null);
+                } else {
+                    _setFeedback(false, 'Microphone error. You can try again or skip.');
+                }
+            }
+        });
+    }
+
+    // Stop recording manually
+    function _stopRecording() {
+        if (!_isRecording) return;
+        _isRecording = false;
+
+        const micBtn = _container.querySelector('.sp-mic-btn');
+        const micLabel = _container.querySelector('.sp-mic-status');
+        const meterBar = _container.querySelector('.sp-meter-fill');
+
+        if (micBtn) micBtn.classList.remove('sp-recording');
+        if (micLabel) micLabel.textContent = 'Tap to speak';
+        if (meterBar) meterBar.style.transform = 'scaleX(0)';
+
+        SpeechInput.stopListening();
+    }
+
+    // Fallback self-evaluation mode for unsupported browsers or quiet rooms
+    function _offerSelfEvaluation(customMsg) {
+        const selfEvalEl = _container.querySelector('.sp-self-eval');
+        if (!selfEvalEl) return;
+        selfEvalEl.classList.remove('hidden');
+
+        const liveText = _container.querySelector('.sp-live-transcript');
+        if (liveText) liveText.classList.add('hidden');
+
+        if (customMsg) {
+            _setFeedback(false, customMsg);
+        }
+    }
+
+    // ---- Render Exercise ----
+    function render(container, exercise, options = {}) {
+        _container = container;
+        _exercise = exercise; // { kind, spanish, english, level, topic }
+        _onResult = options.onResult || null;
+        _onNext = options.onNext || null;
+        _solved = false;
+        _isRecording = false;
+        _userAudioUrl = null;
+        _evalResult = null;
+
+        const isPromptSpeak = exercise.kind === 'prompt-speak';
+        const hasSTT = SpeechInput.isRecognitionSupported();
+
+        _container.innerHTML = `
+            <div class="sp-runner">
+                <div class="sp-prompt-card">
+                    <span class="sp-eyebrow">${isPromptSpeak ? 'Prompt & Speak' : 'Read & Repeat'}</span>
+
+                    ${isPromptSpeak ? `
+                        <p class="sp-en-prompt">${_esc(exercise.english)}</p>
+                        <p class="sp-instruction">Translate and say this out loud in Spanish:</p>
+                    ` : `
+                        <div class="sp-target-lead">
+                            <p class="sp-es-text">${_esc(exercise.spanish)}</p>
+                            <button type="button" class="sp-listen-btn" data-action="listen-lead" aria-label="Listen to model pronunciation">
+                                ${typeof Art !== 'undefined' ? Art.icon('listening') : '🔊'} Listen
+                            </button>
+                        </div>
+                        <p class="sp-en-sub">${_esc(exercise.english)}</p>
+                    `}
+                </div>
+
+                <!-- Microphone Interaction Area -->
+                <div class="sp-mic-section">
+                    <button type="button" class="sp-mic-btn" data-action="toggle-mic" aria-label="Start recording speech">
+                        <span class="sp-mic-icon-wrap">
+                            ${typeof Art !== 'undefined' ? Art.icon('speaking') : '<span class="sp-mic-glyph">🎙</span>'}
+                        </span>
+                    </button>
+                    <span class="sp-mic-status">Tap to speak</span>
+
+                    <!-- Sound energy visualizer -->
+                    <div class="sp-meter-track" aria-hidden="true">
+                        <div class="sp-meter-fill"></div>
+                    </div>
+
+                    <!-- Live transcription bubble -->
+                    <div class="sp-live-transcript hidden" aria-live="polite"></div>
+                </div>
+
+                <!-- Self-evaluation fallback (shown if STT unavailable or manual check requested) -->
+                <div class="sp-self-eval hidden">
+                    <p class="sp-self-eval-prompt">How did it sound compared to the model?</p>
+                    <div class="sp-self-eval-actions">
+                        <button type="button" class="sp-eval-btn sp-eval-good" data-action="eval-good">✓ Sounded Good</button>
+                        <button type="button" class="sp-eval-btn sp-eval-retry" data-action="eval-retry">✗ Try Again</button>
+                    </div>
+                </div>
+
+                <!-- Post-answer reveal & diagnostic -->
+                <div class="sp-reveal hidden"></div>
+
+                <!-- Feedback row -->
+                <div class="sp-feedback"></div>
+
+                <!-- Footer Action Buttons -->
+                <div class="sp-footer">
+                    <div class="sp-actions">
+                        <button type="button" class="sp-cant-speak-btn" data-action="cant-speak">
+                            Can't speak right now
+                        </button>
+                    </div>
+                    <button type="button" class="sp-next-btn hidden" data-action="next">
+                        Continue →
+                    </button>
+                </div>
+            </div>
+        `;
+
+        _attachEvents();
+    }
+
+    function _attachEvents() {
+        // 1. Model Audio button
+        const listenBtn = _container.querySelector('[data-action="listen-lead"]');
+        if (listenBtn) {
+            listenBtn.addEventListener('click', () => {
+                if (typeof Speech !== 'undefined') {
+                    Speech.speak(_exercise.spanish);
+                }
+            });
+        }
+
+        // 2. Mic toggle button
+        const micBtn = _container.querySelector('[data-action="toggle-mic"]');
+        if (micBtn) {
+            micBtn.addEventListener('click', () => {
+                if (_isRecording) {
+                    _stopRecording();
+                } else {
+                    _startRecording();
+                }
+            });
+        }
+
+        // 3. Self-evaluation buttons
+        const evalGood = _container.querySelector('[data-action="eval-good"]');
+        if (evalGood) {
+            evalGood.addEventListener('click', () => {
+                _finishEvaluation({ isCorrect: true, accuracy: 100, words: [], transcript: '(Self-evaluated)' });
+            });
+        }
+
+        const evalRetry = _container.querySelector('[data-action="eval-retry"]');
+        if (evalRetry) {
+            evalRetry.addEventListener('click', () => {
+                _finishEvaluation({ isCorrect: false, accuracy: 50, words: [], transcript: '(Self-evaluated)' });
+            });
+        }
+
+        // 4. "Can't speak right now" button
+        const cantSpeakBtn = _container.querySelector('[data-action="cant-speak"]');
+        if (cantSpeakBtn) {
+            cantSpeakBtn.addEventListener('click', () => {
+                SpeechInput.setCantSpeakNow(30);
+                _setFeedback(true, 'Speaking snoozed for 30 minutes.');
+                _reveal({ isCorrect: true, accuracy: 100, words: [], transcript: '(Skipped)' });
+                _resolve(true);
+            });
+        }
+
+        // 5. Next button
+        const nextBtn = _container.querySelector('[data-action="next"]');
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                if (_userAudioPlayer) {
+                    _userAudioPlayer.pause();
+                    _userAudioPlayer = null;
+                }
+                if (_onNext) _onNext();
+            });
+        }
+    }
+
+    return {
+        render
+    };
+})();
+
+if (typeof window !== 'undefined') {
+    window.SpeakingRunner = SpeakingRunner;
+}
+

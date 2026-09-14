@@ -1143,6 +1143,42 @@ const stepRenderers = {
         `;
     },
 
+    speaking(step) {
+        gateStep();
+        stepState.target = step.sentence || step.spanish || '';
+        stepState.english = step.english || step.translation || '';
+        stepState.checkFn = 'lessonCheckSpeaking';
+
+        const target = stepState.target;
+        const english = stepState.english;
+        const safeTarget = esc(target).replace(/'/g, "\\'");
+
+        return `
+            <p class="lsn-question">${esc(step.prompt || 'Speak this sentence in Spanish:')}</p>
+            <div class="sp-lesson-card">
+                <div class="sp-target-lead">
+                    <p class="sp-es-text">${esc(target)}</p>
+                    <button type="button" class="sp-listen-btn" onclick="Speech.speak('${safeTarget}')" aria-label="Listen">
+                        ${typeof Art !== 'undefined' ? Art.icon('listening') : '🔊'} Listen
+                    </button>
+                </div>
+                ${english ? `<p class="sp-en-sub">${esc(english)}</p>` : ''}
+            </div>
+            <div class="sp-mic-section">
+                <button type="button" class="sp-mic-btn" id="lesson-mic-btn" onclick="lessonToggleSpeaking(this)" aria-label="Record speech">
+                    <span class="sp-mic-icon-wrap">${typeof Art !== 'undefined' ? Art.icon('speaking') : '🎙'}</span>
+                </button>
+                <span class="sp-mic-status" id="lesson-mic-status">Tap to speak</span>
+                <div class="sp-live-transcript hidden" id="lesson-live-transcript" aria-live="polite"></div>
+            </div>
+            <div class="sp-reveal hidden" id="lesson-sp-reveal"></div>
+            ${feedbackHtml()}
+            <div style="text-align: center; margin-top: 12px;">
+                <button type="button" class="sp-cant-speak-btn" onclick="lessonSkipSpeaking()">Can't speak right now</button>
+            </div>
+        `;
+    },
+
     // Every word the lesson taught, each sorted into review or known — never
     // silently. Defaulting an unresolved choice to "known" would let one fast
     // click through a lesson quietly mark words the learner hasn't actually
@@ -2039,6 +2075,96 @@ function lessonSaveSrsChoices() {
 
     saveDeck();
     if (typeof updateReaderWordColors === 'function') updateReaderWordColors();
+}
+
+let _lessonSpeakingRecording = false;
+
+function lessonToggleSpeaking(btn) {
+    if (stepState.solved) return;
+    if (_lessonSpeakingRecording) {
+        _lessonSpeakingRecording = false;
+        if (typeof SpeechInput !== 'undefined') SpeechInput.stopListening();
+        const statusEl = document.getElementById('lesson-mic-status');
+        if (statusEl) statusEl.textContent = 'Tap to speak';
+        if (btn) btn.classList.remove('sp-recording');
+        return;
+    }
+
+    _lessonSpeakingRecording = true;
+    if (btn) btn.classList.add('sp-recording');
+    const statusEl = document.getElementById('lesson-mic-status');
+    if (statusEl) statusEl.textContent = 'Listening... Speak now';
+    const liveEl = document.getElementById('lesson-live-transcript');
+    if (liveEl) {
+        liveEl.textContent = '...';
+        liveEl.classList.remove('hidden');
+    }
+
+    if (typeof SpeechInput !== 'undefined') {
+        SpeechInput.startListening({
+            onInterim: interim => {
+                if (liveEl) liveEl.textContent = interim;
+            },
+            onFinal: transcript => {
+                _lessonSpeakingRecording = false;
+                if (btn) btn.classList.remove('sp-recording');
+                if (statusEl) statusEl.textContent = 'Tap to speak';
+                if (liveEl) liveEl.textContent = transcript;
+                stepState.transcript = transcript;
+                enableCheck();
+                lessonCheckSpeaking();
+            },
+            onError: err => {
+                _lessonSpeakingRecording = false;
+                if (btn) btn.classList.remove('sp-recording');
+                if (statusEl) statusEl.textContent = 'Tap to speak';
+                setFeedback(false, 'Could not hear clearly. Try again or skip.');
+                enableCheck();
+            }
+        });
+    }
+}
+
+function lessonCheckSpeaking() {
+    if (stepState.solved) return;
+    const target = stepState.target || '';
+    const transcript = stepState.transcript || '';
+
+    let evalResult = { isCorrect: true, accuracy: 100, words: [] };
+    if (typeof SpeechInput !== 'undefined') {
+        evalResult = SpeechInput.evaluate(target, transcript);
+    }
+
+    const revealEl = document.getElementById('lesson-sp-reveal');
+    if (revealEl && evalResult.words && evalResult.words.length) {
+        revealEl.classList.remove('hidden');
+        revealEl.innerHTML = `
+            <div class="sp-word-breakdown">
+                ${evalResult.words.map(w => `
+                    <span class="sp-word-pill ${w.status === 'matched' ? 'sp-word-matched' : 'sp-word-missed'}">
+                        ${esc(w.word)}
+                    </span>
+                `).join('')}
+            </div>
+        `;
+    }
+
+    if (evalResult.isCorrect) {
+        solveStep(`✓ Spoken clearly! (${evalResult.accuracy}%)`);
+    } else {
+        if (failStep(`✗ Accuracy ${evalResult.accuracy}%. Try again or continue.`)) {
+            setFeedback(false, `Keep practicing: listen to the model above.`);
+        }
+    }
+}
+
+function lessonSkipSpeaking() {
+    if (stepState.solved) return;
+    if (typeof SpeechInput !== 'undefined') {
+        SpeechInput.setCantSpeakNow(30);
+    }
+    setFeedback(true, 'Speaking snoozed for 30 minutes.');
+    solveStep('Skipped (Speaking snoozed)');
 }
 
 // Legacy quiz handler — kept for old HTML lessons. Green for correct, same

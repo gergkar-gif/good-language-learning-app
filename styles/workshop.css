@@ -1068,3 +1068,505 @@
     border-left: 3px solid var(--primary-mid);
     background: var(--bg);
 }
+
+/* ============================================
+   SPEAKING DRILLER & EXERCISE STYLES
+   ============================================ */
+
+.sp-runner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.sp-prompt-card,
+.sp-lesson-card {
+    width: 100%;
+    background: var(--bg-card, var(--bg, #F5F1E8));
+    border: 1px solid var(--border, #D8D2C5);
+    border-radius: var(--radius-sm, 4px);
+    padding: 18px 20px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.sp-eyebrow {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    color: var(--accent-dark, #E94B16);
+    margin-bottom: 8px;
+}
+
+.sp-target-lead {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 6px;
+}
+
+.sp-es-text,
+.sp-es-lead {
+    font-family: var(--font-display, Georgia, serif);
+    font-size: 20px;
+    line-height: 1.35;
+    color: var(--text, #102A47);
+    margin: 0;
+    font-weight: 600;
+}
+
+.sp-en-prompt {
+    font-family: var(--font-display, Georgia, serif);
+    font-size: 19px;
+    line-height: 1.35;
+    color: var(--text, #102A47);
+    margin: 0 0 8px 0;
+}
+
+.sp-instruction {
+    font-size: 13px;
+    color: var(--muted, #687787);
+    margin: 0;
+}
+
+.sp-en-sub {
+    font-size: 14px;
+    color: var(--muted, #687787);
+    margin: 4px 0 0 0;
+}
+
+.sp-listen-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: none;
+    border: 1px solid var(--border, #D8D2C5);
+    border-radius: var(--radius-sm, 4px);
+    padding: 6px 10px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text, #102A47);
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: background var(--dur-fast, 0.15s), border-color var(--dur-fast, 0.15s);
+}
+
+.sp-listen-btn:hover {
+    border-color: var(--text, #102A47);
+    background: var(--wash, rgba(16, 42, 71, 0.04));
+}
+
+.sp-listen-btn svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* Mic Interaction Area */
+.sp-mic-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 12px 0 20px;
+    width: 100%;
+}
+
+.sp-mic-btn {
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    background: var(--bg-card, #F5F1E8);
+    border: 2px solid var(--primary, #102A47);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    outline: none;
+    transition: transform var(--dur-fast, 0.15s), border-color var(--dur-fast, 0.15s), box-shadow var(--dur-fast, 0.15s);
+}
+
+.sp-mic-btn:hover {
+    transform: scale(1.04);
+}
+
+.sp-mic-btn.sp-recording {
+    border-color: var(--accent-dark, #E94B16);
+    background: var(--wash-accent, rgba(233, 75, 22, 0.08));
+    animation: sp-pulse 1.4s infinite ease-in-out;
+}
+
+@keyframes sp-pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(233, 75, 22, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 14px rgba(233, 75, 22, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(233, 75, 22, 0);
+    }
+}
+
+.sp-mic-icon-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sp-mic-icon-wrap svg {
+    width: 28px;
+    height: 28px;
+}
+
+.sp-mic-status {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--muted, #687787);
+    margin-top: 10px;
+}
+
+/* Audio Level Meter */
+.sp-meter-track {
+    width: 120px;
+    height: 4px;
+    background: var(--border, #D8D2C5);
+    border-radius: 2px;
+    margin-top: 8px;
+    overflow: hidden;
+}
+
+.sp-meter-fill {
+    width: 100%;
+    height: 100%;
+    background: var(--accent-dark, #E94B16);
+    transform-origin: left center;
+    transform: scaleX(0);
+    transition: transform 0.05s linear;
+}
+
+.sp-live-transcript {
+    margin-top: 12px;
+    padding: 8px 14px;
+    background: var(--wash, rgba(16, 42, 71, 0.05));
+    border-radius: var(--radius-sm, 4px);
+    font-size: 14px;
+    color: var(--text, #102A47);
+    font-style: italic;
+    max-width: 90%;
+}
+
+/* Word-by-word Breakdown Pills */
+.sp-word-breakdown {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    margin: 14px 0 10px;
+}
+
+.sp-word-pill {
+    display: inline-block;
+    padding: 4px 9px;
+    border-radius: 3px;
+    font-size: 15px;
+    font-weight: 500;
+    border: 1px solid transparent;
+}
+
+.sp-word-matched {
+    background: rgba(46, 125, 50, 0.12);
+    border-color: rgba(46, 125, 50, 0.35);
+    color: #1b5e20;
+}
+
+[data-theme="dark"] .sp-word-matched {
+    background: rgba(76, 175, 80, 0.2);
+    border-color: rgba(76, 175, 80, 0.5);
+    color: #81c784;
+}
+
+.sp-word-missed {
+    background: rgba(233, 75, 22, 0.12);
+    border-color: rgba(233, 75, 22, 0.35);
+    color: #c62828;
+}
+
+[data-theme="dark"] .sp-word-missed {
+    background: rgba(233, 75, 22, 0.25);
+    border-color: rgba(233, 75, 22, 0.5);
+    color: #ff8a65;
+}
+
+.sp-transcript-note {
+    font-size: 13px;
+    color: var(--muted, #687787);
+    margin: 6px 0 12px;
+}
+
+/* Audio Compare Bar */
+.sp-compare-bar {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin: 14px 0;
+}
+
+.sp-audio-compare-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    border: 1px solid var(--border, #D8D2C5);
+    border-radius: var(--radius-sm, 4px);
+    background: var(--bg, #F5F1E8);
+    color: var(--text, #102A47);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background var(--dur-fast, 0.15s), border-color var(--dur-fast, 0.15s);
+}
+
+.sp-audio-compare-btn:hover {
+    border-color: var(--text, #102A47);
+    background: var(--wash, rgba(16, 42, 71, 0.04));
+}
+
+.sp-audio-compare-btn svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* Feedback & Controls */
+.sp-feedback {
+    min-height: 24px;
+    margin: 10px 0 16px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.sp-feedback-correct {
+    color: var(--success, #2E7D32);
+}
+
+.sp-feedback-wrong {
+    color: var(--accent-dark, #E94B16);
+}
+
+.sp-cant-speak-btn {
+    background: none;
+    border: none;
+    color: var(--muted, #687787);
+    font-size: 13px;
+    text-decoration: underline;
+    cursor: pointer;
+    padding: 4px 8px;
+}
+
+.sp-cant-speak-btn:hover {
+    color: var(--text, #102A47);
+}
+
+.sp-next-btn,
+.sp-start-btn {
+    width: 100%;
+    max-width: 480px;
+    padding: 13px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: var(--radius-sm, 4px);
+    border: none;
+    cursor: pointer;
+    background: var(--primary, #102A47);
+    color: #fff;
+    transition: opacity var(--dur-fast, 0.15s);
+}
+
+.sp-next-btn:hover,
+.sp-start-btn:hover {
+    opacity: 0.92;
+}
+
+/* Self-evaluation Fallback */
+.sp-self-eval {
+    background: var(--wash, rgba(16, 42, 71, 0.04));
+    border: 1px dashed var(--border, #D8D2C5);
+    border-radius: var(--radius-sm, 4px);
+    padding: 14px 16px;
+    margin: 10px 0 16px;
+    width: 100%;
+}
+
+.sp-self-eval-prompt {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text, #102A47);
+    margin: 0 0 10px 0;
+}
+
+.sp-self-eval-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+
+.sp-eval-btn {
+    padding: 8px 16px;
+    border-radius: var(--radius-sm, 4px);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+
+.sp-eval-good {
+    background: rgba(46, 125, 50, 0.15);
+    color: #1b5e20;
+    border-color: rgba(46, 125, 50, 0.4);
+}
+
+.sp-eval-retry {
+    background: rgba(233, 75, 22, 0.12);
+    color: #c62828;
+    border-color: rgba(233, 75, 22, 0.4);
+}
+
+/* Driller Shell & Results */
+.sp-settings {
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+.sp-settings-start {
+    margin-top: 24px;
+}
+
+.sp-session-shell {
+    max-width: 480px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.sp-session-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border, #D8D2C5);
+}
+
+.sp-progress-text,
+.sp-timer-display {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--muted, #687787);
+}
+
+.sp-session-quit {
+    background: none;
+    border: none;
+    font-size: 13px;
+    color: var(--muted, #687787);
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.sp-results {
+    max-width: 480px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.sp-results-hero {
+    margin-bottom: 24px;
+}
+
+.sp-results-score {
+    font-family: var(--font-display, Georgia, serif);
+    font-size: 54px;
+    font-weight: 700;
+    color: var(--primary, #102A47);
+    line-height: 1;
+    margin-bottom: 8px;
+}
+
+.sp-results-lead {
+    font-size: 16px;
+    color: var(--text, #102A47);
+    margin: 0 0 6px 0;
+}
+
+.sp-results-xp {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--accent-dark, #E94B16);
+    background: var(--wash-accent, rgba(233, 75, 22, 0.08));
+    padding: 3px 10px;
+    border-radius: 12px;
+}
+
+.sp-recap-list {
+    text-align: left;
+    margin-bottom: 24px;
+}
+
+.sp-recap-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--muted, #687787);
+    text-transform: uppercase;
+    letter-spacing: .04em;
+    margin: 0 0 12px 0;
+}
+
+.sp-recap-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border, #D8D2C5);
+}
+
+.sp-recap-indicator {
+    font-weight: 700;
+    font-size: 14px;
+    width: 18px;
+    flex-shrink: 0;
+}
+
+.sp-recap-ok .sp-recap-indicator {
+    color: var(--success, #2E7D32);
+}
+
+.sp-recap-miss .sp-recap-indicator {
+    color: var(--accent-dark, #E94B16);
+}
+
+.sp-recap-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.sp-recap-es {
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--text, #102A47);
+}
+
+.sp-recap-en {
+    font-size: 13px;
+    color: var(--muted, #687787);
+}
+
+.sp-results-actions {
+    margin-bottom: 16px;
+}
+

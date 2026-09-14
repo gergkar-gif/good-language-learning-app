@@ -224,6 +224,21 @@ const Art = (function () {
             <circle class="ink-solid" cx="16" cy="8" r="1.5"/>
         `,
 
+        // Speaking — microphone capsule on a cradle with an accent voice beacon
+        speaking: `
+            <rect class="ink-line" x="9" y="3" width="6" height="11" rx="3"/>
+            <path class="ink-line" d="M5 10a7 7 0 0 0 14 0"/>
+            <line class="ink-line" x1="12" y1="17" x2="12" y2="21"/>
+            <line class="ink-line" x1="8" y1="21" x2="16" y2="21"/>
+            <circle class="accent-solid" cx="19" cy="5" r="1.5"/>
+        `,
+        mic: `
+            <rect class="ink-line" x="9" y="3" width="6" height="11" rx="3"/>
+            <path class="ink-line" d="M5 10a7 7 0 0 0 14 0"/>
+            <line class="ink-line" x1="12" y1="17" x2="12" y2="21"/>
+            <line class="ink-line" x1="8" y1="21" x2="16" y2="21"/>
+        `,
+
         // Listening — sound, drawn as the levels of a waveform.
         listening: `
             <line class="ink-line" x1="4" y1="10" x2="4" y2="14"/>
