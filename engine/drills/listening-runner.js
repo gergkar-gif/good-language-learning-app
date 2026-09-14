@@ -70,8 +70,10 @@ const ListeningRunner = (function () {
     // any Spanish text before that point.
     function _reveal(ex) {
         const el = _container.querySelector('.lr-reveal');
+        if (!el) return;
         el.classList.remove('hidden');
         el.innerHTML = `
+            <div class="lr-reveal-label">Transcript</div>
             <p class="lr-transcript">${_esc(ex.transcript)}</p>
             <p class="lr-translation">${_esc(ex.translation)}</p>
         `;
@@ -195,9 +197,26 @@ const ListeningRunner = (function () {
         _played    = false;
         _checkFn   = null;
 
+        const instruction = _exercise.kind === 'listen-type'
+            ? 'Listen to the audio and type what you hear'
+            : _exercise.kind === 'listen-missing-word'
+            ? 'Listen to the audio and fill in the missing word'
+            : 'Listen to the audio and choose what it means';
+
+        const listenIcon = (typeof Art !== 'undefined') ? Art.icon('listening') : '';
+
         _container.innerHTML = `
-            <div class="lr-audio">
-                <button class="lr-play-btn" data-action="play">▶ Play</button>
+            <div class="lr-stage">
+                <div class="lr-stage-meta">
+                    <span class="lr-stage-badge">Listening drill</span>
+                    <span class="lr-stage-sub">${instruction}</span>
+                </div>
+                <div class="lr-audio-wrap">
+                    <button class="lr-play-btn" data-action="play" aria-label="Play audio">
+                        <span class="lr-play-icon">${listenIcon}</span>
+                        <span class="lr-play-label">Play audio</span>
+                    </button>
+                </div>
             </div>
             <div class="lr-answer hidden"></div>
             <div class="lr-reveal hidden"></div>
@@ -220,7 +239,8 @@ const ListeningRunner = (function () {
                 _played = true;
                 _container.querySelector('.lr-answer').classList.remove('hidden');
             }
-            playBtn.textContent = '↻ Replay';
+            const label = playBtn.querySelector('.lr-play-label');
+            if (label) label.textContent = 'Replay audio';
         });
 
         _container.querySelector('[data-action="check"]').addEventListener('click', _doCheck);

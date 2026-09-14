@@ -79,8 +79,26 @@ const SpeechInput = (function () {
         _recordedAudioBlob = null;
     }
 
+    let _finishTimeout = null;
+    let _meterInterval = null;
+    let _onFinalCallback = null;
+    let _accumulatedFinal = '';
+    let _currentInterim = '';
+
+    function _cleanupTimers() {
+        if (_finishTimeout) {
+            clearTimeout(_finishTimeout);
+            _finishTimeout = null;
+        }
+        if (_meterInterval) {
+            clearInterval(_meterInterval);
+            _meterInterval = null;
+        }
+    }
+
     // Stop audio meter animation and release audio stream tracks
     function _stopStream() {
+        _cleanupTimers();
         if (_animFrameId) {
             cancelAnimationFrame(_animFrameId);
             _animFrameId = null;
@@ -98,14 +116,87 @@ const SpeechInput = (function () {
         _analyser = null;
     }
 
+    // Fallback audio recorder for browsers without SpeechRecognition (e.g. desktop Firefox)
+    function _startMediaRecorderFallback(options) {
+        const onError = options.onError || (() => {});
+        const onAudioLevel = options.onAudioLevel || null;
+
+        if (!isRecordingSupported()) {
+            _isListening = false;
+            onError('not-supported');
+            return;
+        }
+
+        navigator.mediaDevices.getUserMedia({ audio: true, video: false })
+            .then(stream => {
+                if (!_isListening) {
+                    stream.getTracks().forEach(t => t.stop());
+                    return;
+                }
+                _mediaStream = stream;
+
+                if (onAudioLevel && (window.AudioContext || window.webkitAudioContext)) {
+                    try {
+                        const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+                        _audioContext = new AudioContextClass();
+                        const source = _audioContext.createMediaStreamSource(_mediaStream);
+                        _analyser = _audioContext.createAnalyser();
+                        _analyser.fftSize = 64;
+                        source.connect(_analyser);
+
+                        const dataArray = new Uint8Array(_analyser.frequencyBinCount);
+                        const updateMeter = () => {
+                            if (!_isListening || !_analyser) return;
+                            _analyser.getByteFrequencyData(dataArray);
+                            let sum = 0;
+                            for (let i = 0; i < dataArray.length; i++) sum += dataArray[i];
+                            onAudioLevel(Math.min(1, (sum / dataArray.length) / 128));
+                            _animFrameId = requestAnimationFrame(updateMeter);
+                        };
+                        updateMeter();
+                    } catch (err) {}
+                }
+
+                let mimeType = 'audio/webm';
+                if (window.MediaRecorder && typeof MediaRecorder.isTypeSupported === 'function') {
+                    if (!MediaRecorder.isTypeSupported('audio/webm')) {
+                        if (MediaRecorder.isTypeSupported('audio/mp4')) mimeType = 'audio/mp4';
+                        else if (MediaRecorder.isTypeSupported('audio/aac')) mimeType = 'audio/aac';
+                        else mimeType = '';
+                    }
+                }
+
+                _mediaRecorder = mimeType ? new MediaRecorder(_mediaStream, { mimeType }) : new MediaRecorder(_mediaStream);
+                _mediaRecorder.ondataavailable = e => {
+                    if (e.data && e.data.size > 0) _recordedChunks.push(e.data);
+                };
+                _mediaRecorder.onstop = () => {
+                    if (_recordedChunks.length > 0) {
+                        _recordedAudioBlob = new Blob(_recordedChunks, { type: _mediaRecorder.mimeType || 'audio/webm' });
+                        _recordedAudioUrl = URL.createObjectURL(_recordedAudioBlob);
+                        if (options.onAudioReady) options.onAudioReady(_recordedAudioUrl);
+                    }
+                };
+                _mediaRecorder.start();
+            })
+            .catch(err => {
+                _isListening = false;
+                onError('permission-denied');
+            });
+    }
+
     // ---- Start Voice Capture & Recognition ----
-    async function startListening(options = {}) {
+    // MUST be called synchronously within user gesture (tap/click handler) on iOS Safari
+    function startListening(options = {}) {
         if (_isListening) {
             stopListening();
         }
 
         _cleanAudioUrl();
+        _cleanupTimers();
         _recordedChunks = [];
+        _accumulatedFinal = '';
+        _currentInterim = '';
         _isListening = true;
 
         const lang = options.lang || getSpeechLang();
@@ -113,120 +204,118 @@ const SpeechInput = (function () {
         const onFinal = options.onFinal || (() => {});
         const onError = options.onError || (() => {});
         const onAudioLevel = options.onAudioLevel || null;
+        _onFinalCallback = onFinal;
 
-        // 1. Microphone stream & MediaRecorder for voice playback and level meter
-        if (isRecordingSupported()) {
-            try {
-                _mediaStream = await navigator.mediaDevices.getUserMedia({ audio: true, video: false });
-
-                // Audio level analyzer for the Constructivist waveform visualizer
-                if (onAudioLevel && (window.AudioContext || window.webkitAudioContext)) {
-                    const AudioContextClass = window.AudioContext || window.webkitAudioContext;
-                    _audioContext = new AudioContextClass();
-                    const source = _audioContext.createMediaStreamSource(_mediaStream);
-                    _analyser = _audioContext.createAnalyser();
-                    _analyser.fftSize = 64;
-                    source.connect(_analyser);
-
-                    const dataArray = new Uint8Array(_analyser.frequencyBinCount);
-                    const updateMeter = () => {
-                        if (!_isListening || !_analyser) return;
-                        _analyser.getByteFrequencyData(dataArray);
-                        let sum = 0;
-                        for (let i = 0; i < dataArray.length; i++) {
-                            sum += dataArray[i];
-                        }
-                        const avg = sum / dataArray.length;
-                        const norm = Math.min(1, avg / 128); // 0.0 to 1.0
-                        onAudioLevel(norm);
-                        _animFrameId = requestAnimationFrame(updateMeter);
-                    };
-                    updateMeter();
-                }
-
-                // MediaRecorder to capture audio snippet
-                _mediaRecorder = new MediaRecorder(_mediaStream);
-                _mediaRecorder.ondataavailable = e => {
-                    if (e.data && e.data.size > 0) {
-                        _recordedChunks.push(e.data);
-                    }
-                };
-                _mediaRecorder.onstop = () => {
-                    if (_recordedChunks.length > 0) {
-                        _recordedAudioBlob = new Blob(_recordedChunks, { type: _mediaRecorder.mimeType || 'audio/webm' });
-                        _recordedAudioUrl = URL.createObjectURL(_recordedAudioBlob);
-                        if (options.onAudioReady) {
-                            options.onAudioReady(_recordedAudioUrl);
-                        }
-                    }
-                };
-                _mediaRecorder.start();
-            } catch (err) {
-                console.warn('SpeechInput: microphone capture failed or denied:', err);
-                if (!isRecognitionSupported()) {
-                    _isListening = false;
-                    onError('mic-permission-denied');
-                    return;
-                }
-            }
-        }
-
-        // 2. SpeechRecognition Engine
+        // 1. Primary: SpeechRecognition Engine
+        // Runs standalone WITHOUT concurrent getUserMedia to prevent mobile mic contention and iOS gesture expiry
         if (isRecognitionSupported()) {
             try {
                 const recognition = new RecognitionConstructor();
                 recognition.lang = lang;
-                recognition.continuous = false;
+                // continuous: true prevents Android & iOS from aborting after the first syllable or brief pause
+                recognition.continuous = true;
                 recognition.interimResults = true;
-                recognition.maxAlternatives = 2;
+                recognition.maxAlternatives = 1;
 
-                let finalTranscript = '';
+                if (onAudioLevel) {
+                    let levelSim = 0.05;
+                    _meterInterval = setInterval(() => {
+                        if (!_isListening) return;
+                        levelSim = Math.max(0.05, levelSim * 0.88);
+                        onAudioLevel(levelSim);
+                    }, 80);
+                }
+
+                recognition.onstart = () => {
+                    _isListening = true;
+                };
 
                 recognition.onresult = event => {
                     let interim = '';
                     for (let i = event.resultIndex; i < event.results.length; ++i) {
-                        const transcript = event.results[i][0].transcript;
-                        if (event.results[i].isFinal) {
-                            finalTranscript += transcript;
-                        } else {
-                            interim += transcript;
+                        const item = event.results[i];
+                        if (item && item[0]) {
+                            if (item.isFinal) {
+                                _accumulatedFinal += (_accumulatedFinal ? ' ' : '') + item[0].transcript;
+                            } else {
+                                interim += item[0].transcript;
+                            }
                         }
                     }
-                    if (interim) {
-                        onInterim(interim);
+                    _currentInterim = interim;
+                    const combined = (_accumulatedFinal + ' ' + _currentInterim).trim();
+                    if (combined) {
+                        onInterim(combined);
+                        if (onAudioLevel) {
+                            onAudioLevel(0.4 + Math.random() * 0.5);
+                        }
                     }
-                    if (finalTranscript) {
-                        onFinal(finalTranscript.trim());
-                    }
+
+                    // Reset silence debounce: when learner finishes speaking and pauses 1.3s, finalize
+                    if (_finishTimeout) clearTimeout(_finishTimeout);
+                    _finishTimeout = setTimeout(() => {
+                        stopListening();
+                    }, 1300);
                 };
 
                 recognition.onerror = event => {
                     console.warn('SpeechInput recognition error:', event.error);
-                    if (event.error !== 'no-speech' && event.error !== 'aborted') {
-                        onError(event.error);
+                    const combined = (_accumulatedFinal + ' ' + _currentInterim).trim();
+                    if (event.error === 'no-speech') {
+                        if (combined) {
+                            stopListening();
+                            return;
+                        }
+                        _isListening = false;
+                        _cleanupTimers();
+                        onError('no-speech');
+                    } else if (event.error === 'not-allowed' || event.error === 'service-not-allowed') {
+                        _isListening = false;
+                        _cleanupTimers();
+                        onError('permission-denied');
+                    } else if (event.error === 'aborted') {
+                        _isListening = false;
+                        _cleanupTimers();
+                    } else {
+                        if (combined) {
+                            stopListening();
+                            return;
+                        }
+                        _isListening = false;
+                        _cleanupTimers();
+                        onError(event.error || 'recognition-failed');
                     }
                 };
 
                 recognition.onend = () => {
-                    stopListening();
+                    _cleanupTimers();
+                    if (_isListening) {
+                        stopListening();
+                    }
                 };
 
                 _activeRecognition = recognition;
+                // Start synchronously within user gesture
                 recognition.start();
+                return;
             } catch (e) {
-                console.error('SpeechInput: failed to start speech recognition', e);
-                onError('recognition-failed');
-                stopListening();
+                console.warn('SpeechInput: recognition.start() threw; falling back to recorder', e);
+                _activeRecognition = null;
             }
-        } else {
-            // Self-evaluation mode: no STT available, but MediaRecorder records audio
-            console.info('SpeechInput: SpeechRecognition not available; running in self-eval recording mode.');
         }
+
+        // 2. Fallback for browsers without SpeechRecognition (Firefox desktop, etc.)
+        _startMediaRecorderFallback(options);
     }
 
     function stopListening() {
         if (!_isListening) return;
         _isListening = false;
+        _cleanupTimers();
+
+        const finalText = (_accumulatedFinal + ' ' + _currentInterim).trim();
+        _accumulatedFinal = '';
+        _currentInterim = '';
 
         if (_activeRecognition) {
             try { _activeRecognition.stop(); } catch (e) {}
@@ -238,6 +327,12 @@ const SpeechInput = (function () {
         }
 
         _stopStream();
+
+        if (finalText && _onFinalCallback) {
+            const cb = _onFinalCallback;
+            _onFinalCallback = null;
+            cb(finalText);
+        }
     }
 
     function getRecordedAudioUrl() {
@@ -369,9 +464,12 @@ const SpeechInput = (function () {
     return {
         isRecognitionSupported,
         isRecordingSupported,
+        isSupported: () => isRecognitionSupported() || isRecordingSupported(),
         canSpeakNow,
+        isCantSpeakNow: () => !canSpeakNow(),
         setCantSpeakNow,
         resetCantSpeakNow,
+        resumeSpeaking: resetCantSpeakNow,
         startListening,
         stopListening,
         getRecordedAudioUrl,

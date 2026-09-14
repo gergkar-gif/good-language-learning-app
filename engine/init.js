@@ -101,7 +101,18 @@ function showTab(tabName, button) {
 
 function _attachLessonClose() {
     const btn = document.getElementById('lesson-close-btn');
-    if (btn) btn.addEventListener('click', closeLesson);
+    if (btn) btn.addEventListener('click', () => closeLesson());
+
+    // Clean browser history navigation: when in a lesson, pressing the browser's
+    // back button (or Android/iOS back gesture) cleanly closes the lesson back to
+    // the previous tab, without navigating away from the web app.
+    window.addEventListener('popstate', e => {
+        const isLessonOpen = document.body.classList.contains('in-lesson') ||
+            (document.getElementById('lesson-screen') && !document.getElementById('lesson-screen').classList.contains('hidden'));
+        if (isLessonOpen && typeof closeLesson === 'function') {
+            closeLesson({ fromPopstate: true });
+        }
+    });
 
     // The Continue button is not bound here: renderStep() sets its onclick
     // every step, because the last step has to call finishLesson instead. A

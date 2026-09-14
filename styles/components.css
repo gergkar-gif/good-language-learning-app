@@ -909,6 +909,36 @@
 
 .lesson-sound-btn .icon .ink-line { stroke: currentColor; }
 
+.lesson-close-btn {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+  transition: color var(--dur-fast) var(--ease-standard),
+              border-color var(--dur-fast) var(--ease-standard),
+              background var(--dur-fast) var(--ease-standard);
+}
+
+.lesson-close-btn:hover {
+  color: var(--primary);
+  border-color: var(--primary-mid);
+  background: rgba(16, 42, 71, 0.04);
+}
+
+[data-theme="dark"] .lesson-close-btn:hover,
+:root:not([data-theme="light"]) .lesson-close-btn:hover {
+  background: rgba(245, 241, 232, 0.08);
+}
+
 .lsn-title {
   font-family: var(--font-display);
   font-weight: 400;
@@ -1581,6 +1611,73 @@
   border-bottom-color: var(--danger);
 }
 
+.lsn-input-with-mic {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.lsn-input-with-mic .lsn-input {
+  padding-right: 44px;
+}
+
+.lsn-mic-addon {
+  position: absolute;
+  right: 4px;
+  bottom: 8px;
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--muted);
+  cursor: pointer;
+  outline: none;
+  transition: color var(--dur-fast) var(--ease-standard),
+              border-color var(--dur-fast) var(--ease-standard),
+              background var(--dur-fast) var(--ease-standard);
+}
+
+.lsn-mic-addon:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: rgba(224, 113, 72, 0.08);
+}
+
+.lsn-mic-addon .icon {
+  width: 18px;
+  height: 18px;
+}
+
+.lsn-mic-addon .icon .ink-line,
+.lsn-mic-addon .icon .ink-rule {
+  stroke: currentColor;
+}
+
+.lsn-mic-addon.is-listening {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: rgba(224, 113, 72, 0.15);
+}
+
+[data-theme="dark"] .lsn-mic-addon,
+:root:not([data-theme="light"]) .lsn-mic-addon {
+  background: transparent;
+  border-color: rgba(245, 241, 232, 0.2);
+  color: var(--muted);
+}
+
+[data-theme="dark"] .lsn-mic-addon:hover,
+:root:not([data-theme="light"]) .lsn-mic-addon:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(224, 113, 72, 0.12);
+}
+
 .lsn-write-row {
   margin-bottom: 12px;
 }
@@ -1616,13 +1713,33 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 14px 20px;
-  border: none;
+  padding: 12px 20px;
+  border: 1px solid transparent;
   border-radius: var(--radius-sm);
   background: var(--primary);
   color: #fff;
-  font-size: 16px;
+  font-size: 15px;
+  font-weight: 600;
   cursor: pointer;
+  transition: background var(--dur-fast), border-color var(--dur-fast), transform var(--dur-fast);
+}
+
+.lsn-play:hover {
+  background: var(--primary-dark);
+}
+
+[data-theme="dark"] .lsn-play,
+:root:not([data-theme="light"]) .lsn-play {
+  background: #152B42;
+  border-color: rgba(245, 241, 232, 0.2);
+  color: #F5F1E8;
+}
+
+[data-theme="dark"] .lsn-play:hover,
+:root:not([data-theme="light"]) .lsn-play:hover {
+  background: #1B3550;
+  border-color: var(--accent);
+  color: #F5F1E8;
 }
 
 /* White on navy here, so the icon takes the button's own colour rather
@@ -1746,6 +1863,20 @@
   background: rgba(233, 75, 22, 0.1);
   border-color: var(--accent-dark);
   color: var(--accent-dark);
+}
+
+[data-theme="dark"] .lsn-diacritic-btn,
+:root:not([data-theme="light"]) .lsn-diacritic-btn {
+  background: transparent;
+  border-color: rgba(245, 241, 232, 0.15);
+  color: var(--text);
+}
+
+[data-theme="dark"] .lsn-diacritic-btn:hover,
+:root:not([data-theme="light"]) .lsn-diacritic-btn:hover {
+  background: rgba(245, 241, 232, 0.08);
+  border-color: rgba(245, 241, 232, 0.35);
+  color: var(--primary);
 }
 
 .lsn-checklist {

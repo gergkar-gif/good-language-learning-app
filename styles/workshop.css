@@ -979,25 +979,94 @@
    answer controls (.lr-answer, reused .gd-* classes) stay hidden until it's
    been pressed at least once. */
 
-.lr-audio {
+.lr-stage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px 20px 22px;
+    margin-bottom: 24px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: rgba(16, 42, 71, 0.02);
+    text-align: center;
+    transition: background var(--dur-fast), border-color var(--dur-fast);
+}
+
+.lr-stage-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 16px;
+}
+
+.lr-stage-badge {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.lr-stage-sub {
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.lr-audio-wrap {
     display: flex;
     justify-content: center;
-    margin-bottom: 20px;
 }
 
 .lr-play-btn {
-    padding: 16px 32px;
-    font-size: 1.1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 26px;
+    font-size: 15px;
     font-weight: 600;
+    letter-spacing: 0.01em;
     background: var(--primary);
     color: #fff;
-    border: none;
+    border: 1px solid transparent;
     border-radius: var(--radius-sm);
     cursor: pointer;
+    transition: transform var(--dur-fast), background var(--dur-fast), border-color var(--dur-fast);
 }
 
 .lr-play-btn:hover {
     background: var(--primary-dark);
+    transform: translateY(-1px);
+}
+
+.lr-play-btn .icon {
+    width: 20px;
+    height: 20px;
+}
+
+.lr-play-btn .icon .ink-line,
+.lr-play-btn .icon .ink-rule {
+    stroke: currentColor;
+}
+
+[data-theme="dark"] .lr-stage,
+:root:not([data-theme="light"]) .lr-stage {
+    background: rgba(245, 241, 232, 0.03);
+    border-color: var(--border);
+}
+
+[data-theme="dark"] .lr-play-btn,
+:root:not([data-theme="light"]) .lr-play-btn {
+    background: #152B42;
+    border-color: rgba(245, 241, 232, 0.2);
+    color: #F5F1E8;
+}
+
+[data-theme="dark"] .lr-play-btn:hover,
+:root:not([data-theme="light"]) .lr-play-btn:hover {
+    background: #1B3550;
+    border-color: var(--accent);
+    color: #F5F1E8;
 }
 
 .lr-answer {
@@ -1012,21 +1081,41 @@
    exercise kind, even the choice types where no Spanish text appeared
    anywhere before this point. */
 .lr-reveal {
-    background: var(--bg);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
     border-radius: var(--radius-sm);
-    padding: 12px 14px;
-    margin-bottom: 8px;
+    padding: 14px 18px;
+    margin: 16px 0;
+    background: rgba(16, 42, 71, 0.03);
+}
+
+[data-theme="dark"] .lr-reveal,
+:root:not([data-theme="light"]) .lr-reveal {
+    background: rgba(245, 241, 232, 0.04);
+}
+
+.lr-reveal-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 6px;
 }
 
 .lr-transcript {
-    font-size: 1.05rem;
-    color: var(--primary);
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    color: var(--text);
     margin-bottom: 4px;
+    line-height: 1.4;
 }
 
 .lr-translation {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     color: var(--muted);
+    font-style: italic;
+    line-height: 1.4;
 }
 
 @media (min-width: 600px) {
@@ -1212,6 +1301,18 @@
     100% {
         box-shadow: 0 0 0 0 rgba(233, 75, 22, 0);
     }
+}
+
+[data-theme="dark"] .sp-mic-btn,
+:root:not([data-theme="light"]) .sp-mic-btn {
+    background: #152B42;
+    border-color: rgba(245, 241, 232, 0.3);
+    color: #F5F1E8;
+}
+
+[data-theme="dark"] .sp-mic-btn .icon .ink-line,
+:root:not([data-theme="light"]) .sp-mic-btn .icon .ink-line {
+    stroke: currentColor;
 }
 
 .sp-mic-icon-wrap {

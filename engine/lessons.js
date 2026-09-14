@@ -358,6 +358,11 @@ async function startLesson(lessonId) {
     document.getElementById('lesson-screen').classList.remove('hidden');
     document.body.classList.add('in-lesson');
 
+    // Push browser history state so browser Back button returns cleanly instead of leaving the app
+    if (typeof history !== 'undefined' && history.pushState) {
+        history.pushState({ parlourModal: 'lesson', lessonId }, '');
+    }
+
     document.getElementById('lesson-title').textContent = currentLesson.title;
     const subtitle = document.getElementById('lesson-subtitle');
     const levelMark = (typeof levelIcon === 'function') ? levelIcon(currentLesson.level, 'level-icon--sm') : '';
@@ -382,9 +387,15 @@ function teardownLesson() {
     stepState = {};
 }
 
-function closeLesson() {
+function closeLesson(options) {
     teardownLesson();
     document.getElementById('lesson-screen').classList.add('hidden');
+
+    // If closed via on-screen button (not popstate event) and history state was pushed, pop it
+    const fromPop = options && options.fromPopstate;
+    if (!fromPop && typeof history !== 'undefined' && history.state && history.state.parlourModal === 'lesson') {
+        history.back();
+    }
 
     // Through showTab rather than by hand, so the section is re-rendered on
     // the way in: a lesson just finished is the moment its level list and
@@ -1439,7 +1450,9 @@ function renderStep() {
     }
 
     container.innerHTML = html;
-    container.scrollIntoView({ block: 'start' });
+    const scrollParent = container.closest('.content') || document.querySelector('.content');
+    if (scrollParent) scrollParent.scrollTop = 0;
+    else window.scrollTo(0, 0);
 
     if (typeof updateReaderWordColors === 'function') updateReaderWordColors();
 
@@ -1752,7 +1765,9 @@ async function renderLessonSummary(firstTime, rankBefore) {
             ${summaryReinforceHtml(grammarSkill, words)}
         </div>
     `;
-    container.scrollIntoView({ block: 'start' });
+    const summaryScrollParent = container.closest('.content') || document.querySelector('.content');
+    if (summaryScrollParent) summaryScrollParent.scrollTop = 0;
+    else window.scrollTo(0, 0);
 
     const addWordsBtn = container.querySelector('[data-add-lesson-words]');
     if (addWordsBtn) {
