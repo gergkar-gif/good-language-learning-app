@@ -3828,6 +3828,145 @@
 
 .dk-picker-manual:hover { border-color: var(--primary); color: var(--primary); }
 
+/* ----- Deck importer ----- */
+.dk-index-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.dk-dropzone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+  border: 2px dashed var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+  cursor: pointer;
+  transition: all var(--dur-fast) var(--ease-standard);
+  text-align: center;
+}
+
+.dk-dropzone:hover,
+.dk-dropzone.drag-active {
+  border-color: var(--primary);
+  background: var(--surface);
+}
+
+.dk-dropzone-text {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.dk-dropzone-text strong {
+  color: var(--text);
+}
+
+.dk-import-controls {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 14px 0 18px;
+}
+
+.dk-import-ctrl-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.dk-swap-btn {
+  padding: 8px 14px;
+  font-size: 13.5px;
+  cursor: pointer;
+}
+
+.dk-import-preview-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.dk-import-preview-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.dk-import-match-summary {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--primary);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  padding: 2px 9px;
+}
+
+.dk-import-table-wrap {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  overflow-x: auto;
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.dk-import-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+  text-align: left;
+}
+
+.dk-import-table th {
+  background: var(--bg);
+  padding: 8px 12px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.dk-import-table td {
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border-light, #eee);
+  color: var(--text);
+}
+
+.dk-import-table tr:last-child td {
+  border-bottom: none;
+}
+
+.dk-status-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 7px;
+  border-radius: 4px;
+}
+
+.dk-status-tag.tag-match {
+  background: rgba(46, 125, 50, 0.12);
+  color: #2e7d32;
+}
+
+.dk-status-tag.tag-custom {
+  background: rgba(0, 0, 0, 0.05);
+  color: var(--muted);
+}
+
+
 /* ----- "Add to deck" overlay (reused wp-overlay/wp-sheet chrome) ----- */
 
 .dk-picker-sheet { max-width: 420px; }

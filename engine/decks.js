@@ -51,7 +51,9 @@ const Decks = (function () {
     let myDecks = [];          // custom, learner-owned decks
     let openDeck = null;       // deck id being viewed, or null for the index
     let draft = null;          // deck under construction/edit in the editor, or null
+    let importDraft = null;    // deck import wizard draft, or null
     let activeSection = 'mine'; // 'mine' or 'parlour' — which top-level tab is showing
+
     let sortOrder = 'natural'; // 'natural' | 'alphabetical' — how the open deck's word list is displayed. Shuffling is a per-mode concern (Match/Learn already randomize their own round), never something that reorders the list itself.
     let studyMode = null;      // null | 'match' | 'learn' — which study mode (if any) is open over the current deck
 
@@ -549,6 +551,397 @@ const Decks = (function () {
     }
 
     // ----------------------------------------
+    // IMPORTER — import from Quizlet, Anki, Memrise, CSV, TSV
+    // ----------------------------------------
+    function openImportDeck() {
+        draft = null;
+        importDraft = {
+            name: '',
+            rawText: '',
+            flipped: false,
+            delimiter: 'auto',
+            words: []
+        };
+        if (typeof Lexicon !== 'undefined') Lexicon.load();
+        render();
+    }
+
+    function closeImport() {
+        importDraft = null;
+        render();
+    }
+
+    function _cleanImportField(val) {
+        if (!val) return '';
+        return String(val)
+            .replace(/^["']|["']$/g, '') // strip surrounding quotes
+            .replace(/<[^>]*>/g, ' ')     // strip HTML tags (e.g. from Anki rich text)
+            .replace(/&nbsp;/gi, ' ')
+            .replace(/\s+/g, ' ')
+            .trim();
+    }
+
+    function _splitCsvLine(line) {
+        const result = [];
+        let current = '';
+        let inQuotes = false;
+        for (let i = 0; i < line.length; i++) {
+            const ch = line[i];
+            if (ch === '"') {
+                inQuotes = !inQuotes;
+            } else if (ch === ',' && !inQuotes) {
+                result.push(current);
+                current = '';
+            } else {
+                current += ch;
+            }
+        }
+        result.push(current);
+        return result;
+    }
+
+    function parseImportLines(rawText, options = {}) {
+        if (!rawText || typeof rawText !== 'string') return [];
+        const flipped = !!options.flipped;
+        const delimiterOpt = options.delimiter || 'auto';
+
+        const lines = rawText.split(/\r?\n/);
+        const parsed = [];
+
+        for (const rawLine of lines) {
+            const line = rawLine.trim();
+            // Ignore empty lines and Anki/metadata headers starting with #
+            if (!line || line.startsWith('#')) continue;
+
+            let parts = null;
+            if (delimiterOpt === 'tab' || (delimiterOpt === 'auto' && line.includes('\t'))) {
+                parts = line.split('\t');
+            } else if (delimiterOpt === 'semicolon' || (delimiterOpt === 'auto' && line.includes(';'))) {
+                parts = line.split(';');
+            } else if (delimiterOpt === 'comma' || (delimiterOpt === 'auto' && line.includes(','))) {
+                parts = _splitCsvLine(line);
+            } else if (delimiterOpt === 'auto' && (line.includes(' — ') || line.includes(' - '))) {
+                parts = line.split(/\s+[—\-]\s+/);
+            } else if (delimiterOpt === 'auto' && line.includes(' : ')) {
+                parts = line.split(/\s+:\s+/);
+            } else {
+                // Multi-space fallback
+                const wsParts = line.split(/\s{2,}|\t/);
+                if (wsParts.length >= 2) parts = wsParts;
+            }
+
+            if (!parts || parts.length < 2) continue;
+
+            const col1 = _cleanImportField(parts[0]);
+            const col2 = _cleanImportField(parts[1]);
+
+            const targetWord = flipped ? col2 : col1;
+            const translation = flipped ? col1 : col2;
+
+            if (!targetWord) continue;
+
+            const cleanLemma = targetWord.toLowerCase().trim();
+            const dictEntry = (typeof Lexicon !== 'undefined' && Lexicon.isLoaded()) ? Lexicon.define(cleanLemma) : null;
+
+            parsed.push({
+                lemma: cleanLemma,
+                translation: translation || (dictEntry ? Lexicon.shortGloss(dictEntry.en) : ''),
+                pos: (dictEntry && dictEntry.type) || '',
+                inLexicon: !!dictEntry
+            });
+        }
+
+        return parsed;
+    }
+
+    function saveImport() {
+        if (!importDraft) return;
+        const name = (importDraft.name || '').trim();
+        if (!name) {
+            alert('Please give the deck a name first.');
+            return;
+        }
+
+        const words = importDraft.words || [];
+        if (!words.length) {
+            alert('No valid words found to import.');
+            return;
+        }
+
+        // Deduplicate words
+        const seen = new Set();
+        const cleanWords = [];
+        for (const w of words) {
+            const clean = String(w.lemma || '').toLowerCase().trim();
+            if (clean && !seen.has(clean)) {
+                seen.add(clean);
+                cleanWords.push({
+                    lemma: clean,
+                    translation: w.translation || '',
+                    pos: w.pos || ''
+                });
+            }
+        }
+
+        const newId = genId();
+        const newDeck = {
+            id: newId,
+            kind: 'custom',
+            name: name,
+            description: `Imported (${cleanWords.length} words)`,
+            created: new Date().toISOString(),
+            words: cleanWords
+        };
+
+        myDecks.push(newDeck);
+        saveMyDecks();
+
+        importDraft = null;
+        openDeck = newId;
+        render();
+    }
+
+    function importHtml() {
+        const words = importDraft.words || [];
+        const matchedCount = words.filter(w => w.inLexicon).length;
+        const langName = typeof Lang !== 'undefined' ? Lang.name() : 'Target';
+
+        return `
+            <button class="dk-back" data-import-cancel="1">← My Decks</button>
+            <div class="dk-editor dk-importer">
+                <h3 class="dk-editor-title">Import deck</h3>
+                <p class="dk-scope" style="margin-top: -4px; margin-bottom: 14px;">
+                    Import vocabulary sets from Quizlet, Anki text exports, Memrise CSVs, or spreadsheets.
+                </p>
+
+                <label class="dk-editor-label" for="dk-import-name">Deck Name</label>
+                <input id="dk-import-name" class="dk-editor-input" type="text"
+                    placeholder="e.g. Travel essentials" value="${esc(importDraft.name)}" maxlength="60">
+
+                <div class="dk-import-sources">
+                    <label class="dk-editor-label">File upload</label>
+                    <div class="dk-dropzone" id="dk-dropzone">
+                        <span class="dk-dropzone-text">Drop a <strong>.txt</strong>, <strong>.tsv</strong>, or <strong>.csv</strong> file here, or click to browse</span>
+                        <input type="file" id="dk-file-input" accept=".txt,.tsv,.csv,.text" style="display:none">
+                    </div>
+
+                    <label class="dk-editor-label" for="dk-import-textarea" style="margin-top: 14px;">Or paste card list</label>
+                    <textarea id="dk-import-textarea" class="dk-editor-input dk-editor-textarea" style="min-height: 120px; font-family: monospace; font-size: 13px;"
+                        placeholder="perro&#9;dog&#10;gato&#9;cat&#10;casa&#9;house">${esc(importDraft.rawText)}</textarea>
+                </div>
+
+                <div class="dk-import-controls">
+                    <div class="dk-import-ctrl-item">
+                        <label class="dk-editor-label" for="dk-import-delimiter">Delimiter</label>
+                        <select id="dk-import-delimiter" class="dk-editor-input" style="width: auto; padding: 6px 10px;">
+                            <option value="auto" ${importDraft.delimiter === 'auto' ? 'selected' : ''}>Auto-detect (Tab, Comma, Semicolon, Dash)</option>
+                            <option value="tab" ${importDraft.delimiter === 'tab' ? 'selected' : ''}>Tab (Quizlet / Anki default)</option>
+                            <option value="comma" ${importDraft.delimiter === 'comma' ? 'selected' : ''}>Comma (CSV)</option>
+                            <option value="semicolon" ${importDraft.delimiter === 'semicolon' ? 'selected' : ''}>Semicolon (;)</option>
+                        </select>
+                    </div>
+
+                    <button type="button" class="dk-secondary dk-swap-btn" data-import-swap="1">
+                        Swap Columns ⇄ (Front / Back)
+                    </button>
+                </div>
+
+                <div class="dk-import-preview-section">
+                    <div id="dk-import-preview-container">
+                        ${words.length ? `
+                            <div class="dk-import-preview-header">
+                                <span class="dk-editor-label" style="margin:0;">Preview (${words.length} ${words.length === 1 ? 'word' : 'words'} detected)</span>
+                                <span class="dk-import-match-summary">
+                                    ${matchedCount} of ${words.length} found in Parlour dictionary
+                                </span>
+                            </div>
+                            <div class="dk-import-table-wrap">
+                                <table class="dk-import-table">
+                                    <thead>
+                                        <tr>
+                                            <th>${importDraft.flipped ? 'Translation' : `${langName} Word`}</th>
+                                            <th>${importDraft.flipped ? `${langName} Word` : 'Translation'}</th>
+                                            <th>Dictionary Match</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        ${words.slice(0, 50).map(w => `
+                                            <tr>
+                                                <td class="dk-import-word"><strong>${esc(w.lemma)}</strong></td>
+                                                <td class="dk-import-trans">${esc(w.translation)}</td>
+                                                <td class="dk-import-status">
+                                                    ${w.inLexicon 
+                                                        ? `<span class="dk-status-tag tag-match">✓ Lexicon (${esc(w.pos || 'word')})</span>` 
+                                                        : `<span class="dk-status-tag tag-custom">Custom word</span>`}
+                                                </td>
+                                            </tr>
+                                        `).join('')}
+                                    </tbody>
+                                </table>
+                                ${words.length > 50 ? `<p class="dk-meta" style="margin-top: 8px;">…and ${words.length - 50} more words</p>` : ''}
+                            </div>
+                        ` : `
+                            <div class="dk-empty" style="padding: 24px 0;">Paste or drop words above to see a preview.</div>
+                        `}
+                    </div>
+                </div>
+
+                <div class="dk-actions dk-editor-actions" style="margin-top: 24px;">
+                    <button class="btn-primary" data-import-save="1" ${words.length ? '' : 'disabled'}>
+                        Import ${words.length ? `${words.length} words to My Decks` : 'Deck'}
+                    </button>
+                    <button class="dk-secondary" data-import-cancel="1">Cancel</button>
+                </div>
+            </div>
+        `;
+    }
+
+    function _refreshImportPreview(host) {
+        const previewWrap = host.querySelector('#dk-import-preview-container');
+        const saveBtn = host.querySelector('[data-import-save]');
+        if (!previewWrap || !importDraft) return;
+
+        const words = importDraft.words || [];
+        const matchedCount = words.filter(w => w.inLexicon).length;
+        const langName = typeof Lang !== 'undefined' ? Lang.name() : 'Target';
+
+        if (saveBtn) {
+            saveBtn.disabled = words.length === 0;
+            saveBtn.textContent = words.length
+                ? `Import ${words.length} ${words.length === 1 ? 'word' : 'words'} to My Decks`
+                : 'Import Deck';
+        }
+
+        if (!words.length) {
+            previewWrap.innerHTML = '<div class="dk-empty" style="padding: 24px 0;">Paste or drop words above to see a preview.</div>';
+            return;
+        }
+
+        previewWrap.innerHTML = `
+            <div class="dk-import-preview-header">
+                <span class="dk-editor-label" style="margin:0;">Preview (${words.length} ${words.length === 1 ? 'word' : 'words'} detected)</span>
+                <span class="dk-import-match-summary">
+                    ${matchedCount} of ${words.length} found in Parlour dictionary
+                </span>
+            </div>
+            <div class="dk-import-table-wrap">
+                <table class="dk-import-table">
+                    <thead>
+                        <tr>
+                            <th>${importDraft.flipped ? 'Translation' : `${langName} Word`}</th>
+                            <th>${importDraft.flipped ? `${langName} Word` : 'Translation'}</th>
+                            <th>Dictionary Match</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${words.slice(0, 50).map(w => `
+                            <tr>
+                                <td class="dk-import-word"><strong>${esc(w.lemma)}</strong></td>
+                                <td class="dk-import-trans">${esc(w.translation)}</td>
+                                <td class="dk-import-status">
+                                    ${w.inLexicon 
+                                        ? `<span class="dk-status-tag tag-match">✓ Lexicon (${esc(w.pos || 'word')})</span>` 
+                                        : `<span class="dk-status-tag tag-custom">Custom word</span>`}
+                                </td>
+                            </tr>
+                        `).join('')}
+                    </tbody>
+                </table>
+                ${words.length > 50 ? `<p class="dk-meta" style="margin-top: 8px;">…and ${words.length - 50} more words</p>` : ''}
+            </div>
+        `;
+    }
+
+    function wireImport(host) {
+        const nameInput = document.getElementById('dk-import-name');
+        const textArea = document.getElementById('dk-import-textarea');
+        const delimiterSelect = document.getElementById('dk-import-delimiter');
+        const dropzone = document.getElementById('dk-dropzone');
+        const fileInput = document.getElementById('dk-file-input');
+        const swapBtn = host.querySelector('[data-import-swap]');
+        const cancelBtn = host.querySelectorAll('[data-import-cancel]');
+        const saveBtn = host.querySelector('[data-import-save]');
+
+        if (nameInput) {
+            nameInput.oninput = e => { importDraft.name = e.target.value; };
+        }
+
+        let debounceTimer = null;
+        function updateParsed(reRender = false) {
+            if (!importDraft) return;
+            importDraft.rawText = textArea ? textArea.value : '';
+            importDraft.delimiter = delimiterSelect ? delimiterSelect.value : 'auto';
+            importDraft.words = parseImportLines(importDraft.rawText, {
+                flipped: importDraft.flipped,
+                delimiter: importDraft.delimiter
+            });
+            if (reRender) {
+                render();
+            } else {
+                _refreshImportPreview(host);
+            }
+        }
+
+        if (textArea) {
+            textArea.oninput = () => {
+                clearTimeout(debounceTimer);
+                debounceTimer = setTimeout(() => updateParsed(false), 200);
+            };
+        }
+
+        if (delimiterSelect) {
+            delimiterSelect.onchange = () => updateParsed(false);
+        }
+
+        if (swapBtn) {
+            swapBtn.onclick = () => {
+                importDraft.flipped = !importDraft.flipped;
+                updateParsed(true);
+            };
+        }
+
+        if (dropzone && fileInput) {
+            dropzone.onclick = () => fileInput.click();
+            dropzone.ondragover = e => {
+                e.preventDefault();
+                dropzone.classList.add('drag-active');
+            };
+            dropzone.ondragleave = () => dropzone.classList.remove('drag-active');
+            dropzone.ondrop = e => {
+                e.preventDefault();
+                dropzone.classList.remove('drag-active');
+                if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+                    _handleImportFile(e.dataTransfer.files[0]);
+                }
+            };
+            fileInput.onchange = () => {
+                if (fileInput.files && fileInput.files[0]) {
+                    _handleImportFile(fileInput.files[0]);
+                }
+            };
+        }
+
+        function _handleImportFile(file) {
+            const reader = new FileReader();
+            reader.onload = evt => {
+                const text = evt.target.result || '';
+                if (!importDraft.name.trim()) {
+                    const cleanName = file.name.replace(/\.[^/.]+$/, '').replace(/[_\-]+/g, ' ');
+                    importDraft.name = cleanName.charAt(0).toUpperCase() + cleanName.slice(1);
+                    if (nameInput) nameInput.value = importDraft.name;
+                }
+                if (textArea) textArea.value = text;
+                updateParsed(true);
+            };
+            reader.readAsText(file);
+        }
+
+        cancelBtn.forEach(btn => { btn.onclick = closeImport; });
+        if (saveBtn) saveBtn.onclick = saveImport;
+    }
+
+
+    // ----------------------------------------
     // PICKER — "Add to deck" from anywhere a word appears
     // ----------------------------------------
     // A standalone overlay, independent of the Decks tab's own render cycle,
@@ -736,13 +1129,17 @@ const Decks = (function () {
         return `
             <div class="lt-index-head">
                 <p class="dk-group-blurb">Your own collections. Add any word, from anywhere in Parlour.</p>
-                <button class="dk-secondary dk-create-btn" data-create-deck="1">+ Create deck</button>
+                <div class="dk-index-actions">
+                    <button class="dk-secondary dk-create-btn" data-import-deck="1">Import deck</button>
+                    <button class="dk-secondary dk-create-btn" data-create-deck="1">+ Create deck</button>
+                </div>
             </div>
             ${decks.length
                 ? `<div class="dk-grid">${decks.map(deckCard).join('')}</div>`
-                : '<p class="dk-empty">No decks yet. Create one to start collecting words.</p>'}
+                : '<p class="dk-empty">No decks yet. Create or import one to start collecting words.</p>'}
         `;
     }
+
 
     function parlourDecksSectionHtml() {
         const decks = catalogue.decks || [];
@@ -1104,6 +1501,12 @@ const Decks = (function () {
 
         await load();
 
+        if (importDraft) {
+            host.innerHTML = importHtml();
+            wireImport(host);
+            return;
+        }
+
         if (draft) {
             host.innerHTML = editorHtml();
             wireEditor(host);
@@ -1217,6 +1620,9 @@ const Decks = (function () {
         host.querySelectorAll('[data-create-deck]').forEach(el => {
             el.onclick = function () { openCreateDeck(); };
         });
+        host.querySelectorAll('[data-import-deck]').forEach(el => {
+            el.onclick = function () { openImportDeck(); };
+        });
         host.querySelectorAll('[data-dk-tab]').forEach(el => {
             el.onclick = function () { activeSection = el.getAttribute('data-dk-tab'); render(); };
         });
@@ -1227,6 +1633,15 @@ const Decks = (function () {
 
     return {
         render, load, statusOf, myDeck, reviewDeck,
-        openAddToDeckPicker, openBulkAddPicker, allMyDeckLemmas
+        openAddToDeckPicker, openBulkAddPicker, allMyDeckLemmas,
+        openImportDeck, parseImportLines
     };
 })();
+
+if (typeof window !== 'undefined') {
+    window.Decks = Decks;
+}
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = Decks;
+}
+
