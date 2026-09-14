@@ -94,6 +94,20 @@ of six that is four matchings and two fill-blanks does not qualify. Available
 types are in `a1-exercises.md`; the machine-readable list is
 `content/es/schemas/exercises.schema.json`.
 
+**`fill-blank` hints.** When a blank is genuinely unrecoverable without a
+nudge (the missing word can't be inferred from the sentence alone — a
+brand-new noun, an ambiguous verb person/tense, a fixed register choice),
+append a short parenthetical hint to the end of `sentence`, e.g. `"Ayer __
+en el festival. (bailar)"` or `"¿Y ___? (and you?)"`. Don't add one just
+because a blank is hard — only when it's genuinely unguessable; most
+blanks shouldn't have one. **This is scheduled to change**: a dedicated
+`hint` field is planned (see `ROADMAP.md` → Workshop →  "Fill-blank
+exercises should carry a real, typed `hint` field") so the hint can render
+styled and distinct from the sentence instead of being silently part of
+the same string. Once that field exists in `exercises.schema.json`, use it
+instead of the trailing-parenthetical convention — this note will be
+updated at that point.
+
 Practice draws on the vocabulary that is formally presented in the next
 section, so those six exercises are the learner's first contact with the
 words.

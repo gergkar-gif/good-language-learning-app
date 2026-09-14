@@ -532,7 +532,12 @@ with only one possible completion) needs a parenthetical hint baked into
 correct answer is unrecoverable from context. This was missed across
 `a2-17-01` through `a2-17-consolidation` and only caught when a learner hit
 it in the Grammar Driller; check for it explicitly at B1's volume rather
-than relying on a later audit to catch it again.
+than relying on a later audit to catch it again. **This baked-in-string
+convention is scheduled to be replaced** by a dedicated `hint` field (see
+`ROADMAP.md` → Workshop → "Fill-blank exercises should carry a real, typed
+`hint` field") so it can render styled and separate from the sentence.
+Once that field lands in `exercises.schema.json`, use it instead — this
+note will be updated at that point.
 
 **`teaches` slugs must match across units, not just be internally
 consistent within one file.** `generated/indexes/grammar-index.json` (built

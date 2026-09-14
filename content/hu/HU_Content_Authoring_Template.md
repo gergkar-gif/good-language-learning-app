@@ -213,6 +213,17 @@ accent-stripping to make two different words match**; write blanks where the
 accent doesn't change the word's identity, or accept the ambiguity
 deliberately.
 
+**`fill-blank` hints:** when a blank is genuinely unrecoverable without a
+nudge — a brand-new word, an ambiguous case/person choice, a fixed register
+pick — append a short parenthetical hint to the end of `sentence`, e.g.
+`"Az utcán látok egy ____. (bird)"`. Only when truly unguessable; most
+blanks shouldn't have one. **This is scheduled to change**: a dedicated
+`hint` field is planned (see `ROADMAP.md` → Workshop → "Fill-blank
+exercises should carry a real, typed `hint` field") so it renders styled
+and separate from the sentence instead of being silently part of the same
+string. Once that field exists in `exercises.schema.json`, use it instead
+— this note will be updated at that point.
+
 ---
 
 ## 5. Vocabulary file (`vocabulary/a1/a1-NN-voc.json`)

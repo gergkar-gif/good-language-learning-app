@@ -364,6 +364,43 @@ this list directly rather than relying on a tool-specific todo list.
   Full writeup with every case's reasoning (including which candidates
   were deliberately left alone as legitimate design) in
   `TROUBLESHOOTING_BACKLOG.md`.
+- [ ] Fill-blank exercises should carry a real, typed `hint` field instead
+  of baking the hint into the `sentence` string as a trailing
+  parenthetical (`"Az utcán látok egy ___. (bird)"`). Requested
+  2026-09-14, prompted by wanting the hint to render visually distinct
+  (small-caps + italic) after the sentence — which the current baked-in
+  approach can't do cleanly, since the renderer has no way to know where
+  the sentence ends and the hint begins. **Scoped, not built**: this is
+  bigger than it first looked — the trailing-`(...)` convention isn't
+  limited to the known verb-tense-hint cases above; it's the *universal*
+  fill-blank hint mechanism across the whole corpus, both languages, all
+  levels. Precise count at scoping time: **563 ES exercises / 334
+  files**, **816 HU exercises / 353 files** (~1,379 exercises, ~680
+  files total) — pronoun hints, register hints (`(informal)`), full
+  English glosses (`(and you?)`, `(you're welcome)`), not just
+  `(infinitivo)`/`(pronoun)`. Plan when picked up:
+  1. Add optional `"hint": {"type": "string"}` to the `fill-blank` type
+     in both `content/es/schemas/exercises.schema.json` and
+     `content/hu/schemas/exercises.schema.json`.
+  2. Write a migration script (surgical raw-text edits, never a full
+     `json.load`/`json.dump` round-trip — that would reformat every
+     array in every file it touches, the same risk already documented
+     in `scripts/add_fillblank_hints.py`'s own header comment) that
+     strips the trailing parenthetical out of `sentence` into the new
+     `hint` field for all ~1,379 exercises.
+  3. `engine/lessons.js`'s `'fill-blank'(step)` renderer: render
+     `step.hint` as its own element after the question `<p>`, instead of
+     it being silently part of the same plain paragraph.
+  4. New CSS class in `styles/components.css` (small-caps + italic — no
+     `font-variant: small-caps` exists anywhere in the codebase yet).
+  5. Check every other consumer of a fill-blank's `sentence` field
+     (Workshop's Grammar Driller/recycle, any TTS/audio path) for a
+     silent assumption that the hint is baked in.
+  6. Full `validate-content.py` + line-by-line diff review before
+     committing, same rigor as the italics retrofit.
+  This is a scripted-migration task, not a content-authoring one — not a
+  fit for `jco`/Haiku delegation the way the italics retrofit was; the
+  extraction is mechanical, not judgment-based.
 - [x] Workshop should have a "Recommended drill" — a Kwiziq-style system
   that maps what the learner knows and always suggests what to practice
   next, rather than a flat menu of drillers with no sense of where the
