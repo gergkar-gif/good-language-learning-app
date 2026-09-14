@@ -1,0 +1,66 @@
+{
+  "language": "hu",
+  "prompts": [
+    {
+      "id": "hu-a1-intro",
+      "cefrLevel": "A1",
+      "taskType": "personal_introduction",
+      "title": "Bemutatkozás és a lakásom",
+      "prompt": "Írj egy rövid bemutatkozást magadról és a lakásodról vagy szobádról. Mondd el a neved, honnan származol, és írd le röviden a környezetedet.",
+      "minWords": 30,
+      "targetWords": 50,
+      "maxWords": 90,
+      "targetSkills": [
+        { "id": "ez-az-this-that", "description": "Mutató névmások (ez, az) helyes használata" },
+        { "id": "van-and-nincs-there-is-there-isn-t", "description": "Létige és tagadása (van, nincs) állításban és leírásban" },
+        { "id": "ban-ben-in", "description": "Helyhatározóragok (-ban/-ben) helyes illesztése" }
+      ]
+    },
+    {
+      "id": "hu-a2-holiday",
+      "cefrLevel": "A2",
+      "taskType": "past_experience",
+      "title": "Egy emlékezetes hétvége",
+      "prompt": "Írj egy levelet egy barátodnak egy emlékezetes hétvégéről vagy kirándulásról. Meséld el, hol voltál, kivel utaztál, és mit csináltatok.",
+      "minWords": 60,
+      "targetWords": 100,
+      "maxWords": 160,
+      "targetSkills": [
+        { "id": "van-possessive-to-have", "description": "Birtokos szerkezetek használata" },
+        { "id": "plural-nouns-k", "description": "Többes szám képzése és egyeztetése" },
+        { "id": "itt-ott-here-there", "description": "Helyhatározók és irányok kifejezése" }
+      ]
+    },
+    {
+      "id": "hu-b1-review",
+      "cefrLevel": "B1",
+      "taskType": "review_and_opinion",
+      "title": "Könyv- vagy filmértékelés",
+      "prompt": "Írj egy ismertetőt egy filmről vagy könyvről, amit nemrég láttál vagy olvastál. Foglald össze röviden a cselekményt, emeld ki az előnyeit és a hátrányait, és indokold meg, hogy miért ajánlod másoknak.",
+      "minWords": 120,
+      "targetWords": 160,
+      "maxWords": 240,
+      "targetSkills": [
+        { "id": "aki-vonatkozoi-mellekmondat", "description": "Vonatkozó mellékmondatok szerkesztése (aki, amely)" },
+        { "id": "ahol-amikor", "description": "Idő- és helyhatározói mellékmondatok fűzése" },
+        { "id": "synthesis", "description": "Összefüggő szövegalkotás és logikus tagolás" }
+      ]
+    },
+    {
+      "id": "hu-b2-debate",
+      "cefrLevel": "B2",
+      "taskType": "written_argument",
+      "title": "Vita: Autómentes belváros",
+      "prompt": "A te városodban az önkormányzat vitatja, hogy korlátozzák-e a magánautók használatát a belvárosban. Írj egy cikket a helyi újság számára, amelyben bemutatod a fő előnyöket és hátrányokat ezen intézkedéssel kapcsolatban, és elmondod a saját véleményed.",
+      "minWords": 180,
+      "targetWords": 250,
+      "maxWords": 350,
+      "targetSkills": [
+        { "id": "vélemény_kifejezése", "description": "Árnyalt véleménykifejtés B2 szinten" },
+        { "id": "érvelés", "description": "Logikus érvelés és ellenérvek bemutatása" },
+        { "id": "kontraszt_kötőszavak", "description": "Ellentétes és megengedő kötőszavak (azonban, mindazonáltal, bár)" },
+        { "id": "összetett_mondatszerkezetek", "description": "Összetett mondatok helyes szintaxisa és szórendje" }
+      ]
+    }
+  ]
+}

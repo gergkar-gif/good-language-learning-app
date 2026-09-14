@@ -379,22 +379,66 @@ const LearnerModel = (function () {
         } catch (e) {}
     }
 
-    function recordProduction(skillIds, isCorrect, accuracy) {
+    function _assessmentKey() {
+        return (typeof Lang !== 'undefined') ? Lang.key('assessmentHistory') : 'assessmentHistory';
+    }
+
+    function _loadAssessments() {
+        try {
+            return JSON.parse(localStorage.getItem(_assessmentKey()) || '[]');
+        } catch (e) {
+            return [];
+        }
+    }
+
+    function _saveAssessments(list) {
+        try {
+            localStorage.setItem(_assessmentKey(), JSON.stringify(list.slice(0, 20)));
+        } catch (e) {}
+    }
+
+    function recordProduction(skillIds, isCorrect, accuracy, modality) {
         if (!skillIds) return;
         const list = Array.isArray(skillIds) ? skillIds : [skillIds];
         if (!list.length) return;
 
         const store = _loadProduction();
         const score = typeof accuracy === 'number' ? Math.max(0, Math.min(100, Math.round(accuracy))) : (isCorrect ? 100 : 0);
+        const modKey = (modality === 'written' || modality === 'written-production') ? 'written' : 'oral';
         let changed = false;
 
         list.forEach(skillId => {
             if (!skillId) return;
-            const entry = store[skillId] || { attempts: 0, correct: 0, avgAccuracy: 0, lastSeen: null };
+            const entry = store[skillId] || {
+                attempts: 0,
+                correct: 0,
+                avgAccuracy: 0,
+                lastSeen: null,
+                modalities: {
+                    oral: { attempts: 0, correct: 0, avgAccuracy: 0, lastSeen: null },
+                    written: { attempts: 0, correct: 0, avgAccuracy: 0, lastSeen: null }
+                }
+            };
+            if (!entry.modalities) {
+                entry.modalities = {
+                    oral: { attempts: entry.attempts, correct: entry.correct, avgAccuracy: entry.avgAccuracy, lastSeen: entry.lastSeen },
+                    written: { attempts: 0, correct: 0, avgAccuracy: 0, lastSeen: null }
+                };
+            }
+
+            // Aggregate stats
             entry.attempts++;
             if (isCorrect) entry.correct++;
             entry.avgAccuracy = Math.round(((entry.avgAccuracy * (entry.attempts - 1)) + score) / entry.attempts);
             entry.lastSeen = new Date().toISOString();
+
+            // Modality-specific stats
+            const mEntry = entry.modalities[modKey] || (entry.modalities[modKey] = { attempts: 0, correct: 0, avgAccuracy: 0, lastSeen: null });
+            mEntry.attempts++;
+            if (isCorrect) mEntry.correct++;
+            mEntry.avgAccuracy = Math.round(((mEntry.avgAccuracy * (mEntry.attempts - 1)) + score) / mEntry.attempts);
+            mEntry.lastSeen = entry.lastSeen;
+
             store[skillId] = entry;
             changed = true;
         });
@@ -404,22 +448,95 @@ const LearnerModel = (function () {
         }
     }
 
+    /**
+     * Ingests a structured assessment from GraderEngine into the Learner Model.
+     * Maps demonstrated skills (positive evidence) and weak skills/errors (formative negative evidence)
+     * using canonical Parlour skill IDs.
+     */
+    function recordAssessment(assessment, context) {
+        if (!assessment || typeof assessment !== 'object') return;
+        const ctx = context || {};
+        const modality = (ctx.modality === 'oral' || ctx.modality === 'oral-production' || ctx.isSpeaking) ? 'oral' : 'written';
+
+        // 1. Demonstrated skills -> positive production evidence
+        if (Array.isArray(assessment.demonstratedSkills)) {
+            assessment.demonstratedSkills.forEach(item => {
+                const sId = typeof item === 'string' ? item : item.skillId;
+                if (!sId) return;
+                const conf = (item && typeof item.confidence === 'number') ? item.confidence : 0.85;
+                const acc = Math.round(conf * 100);
+                recordProduction(sId, true, acc, modality);
+            });
+        }
+
+        // 2. Weak skills -> formative weakness evidence
+        if (Array.isArray(assessment.weakSkills)) {
+            assessment.weakSkills.forEach(item => {
+                const sId = typeof item === 'string' ? item : item.skillId;
+                if (!sId) return;
+                const grammarDim = assessment.dimensions ? assessment.dimensions.grammar : 0.5;
+                const acc = Math.round(grammarDim * 100);
+                recordProduction(sId, false, acc, modality);
+            });
+        }
+
+        // 3. Concrete errors mapped to skill IDs
+        if (Array.isArray(assessment.errors)) {
+            assessment.errors.forEach(err => {
+                if (!err || !err.skillId) return;
+                const penalty = err.severity === 'major' ? 30 : 50;
+                recordProduction(err.skillId, false, penalty, modality);
+            });
+        }
+
+        // 4. Save assessment history snapshot (retaining last 20)
+        const history = _loadAssessments();
+        const snapshot = {
+            id: 'assm_' + Date.now(),
+            timestamp: new Date().toISOString(),
+            overallScore: assessment.overallScore,
+            taskCompletion: assessment.taskCompletion,
+            dimensions: assessment.dimensions,
+            modality,
+            cefrLevel: ctx.cefrLevel || assessment.cefrLevel || 'B2',
+            taskType: ctx.taskType || 'extended_production',
+            title: ctx.title || ctx.promptTitle || 'Writing Production',
+            errorsCount: (assessment.errors || []).length,
+            demonstratedCount: (assessment.demonstratedSkills || []).length,
+            weakCount: (assessment.weakSkills || []).length,
+            localStats: assessment.localStats || null
+        };
+        history.unshift(snapshot);
+        _saveAssessments(history);
+
+        return snapshot;
+    }
+
+    function assessmentHistory(limit) {
+        const list = _loadAssessments();
+        return typeof limit === 'number' ? list.slice(0, limit) : list;
+    }
+
     function productionState(skillId) {
         if (!skillId) return null;
         const store = _loadProduction();
         const entry = store[skillId];
         if (!entry || !entry.attempts) return null;
 
-        let state;
-        if (entry.attempts < 2) {
-            state = 'underpowered';
-        } else if (entry.avgAccuracy < 60) {
-            state = 'weak';
-        } else if (entry.avgAccuracy < 80) {
-            state = 'developing';
-        } else {
-            state = 'strong';
+        function calcState(attempts, avgAccuracy) {
+            if (!attempts || attempts < 2) return 'underpowered';
+            if (avgAccuracy < 60) return 'weak';
+            if (avgAccuracy < 80) return 'developing';
+            return 'strong';
         }
+
+        const state = calcState(entry.attempts, entry.avgAccuracy);
+        const oralState = entry.modalities && entry.modalities.oral
+            ? calcState(entry.modalities.oral.attempts, entry.modalities.oral.avgAccuracy)
+            : 'not-yet-seen';
+        const writtenState = entry.modalities && entry.modalities.written
+            ? calcState(entry.modalities.written.attempts, entry.modalities.written.avgAccuracy)
+            : 'not-yet-seen';
 
         return {
             skillId,
@@ -428,25 +545,48 @@ const LearnerModel = (function () {
             avgAccuracy: entry.avgAccuracy,
             accuracy: entry.avgAccuracy,
             lastSeen: entry.lastSeen,
-            state
+            state,
+            modalities: entry.modalities || {
+                oral: { attempts: entry.attempts, correct: entry.correct, avgAccuracy: entry.avgAccuracy, lastSeen: entry.lastSeen },
+                written: { attempts: 0, correct: 0, avgAccuracy: 0, lastSeen: null }
+            },
+            oralState,
+            writtenState
         };
     }
 
-    async function weakProductionSkills(limit) {
+    async function weakProductionSkills(limit, modality) {
         const store = _loadProduction();
         const candidates = [];
+        const targetMod = (modality === 'written' || modality === 'oral') ? modality : null;
 
         for (const skillId of Object.keys(store)) {
             const entry = store[skillId];
-            if (!entry || entry.attempts < 2 || entry.avgAccuracy >= 60) continue;
-            candidates.push({
-                skillId,
-                attempts: entry.attempts,
-                correct: entry.correct,
-                avgAccuracy: entry.avgAccuracy,
-                lastSeen: entry.lastSeen,
-                state: 'weak'
-            });
+            if (!entry) continue;
+
+            if (targetMod && entry.modalities && entry.modalities[targetMod]) {
+                const m = entry.modalities[targetMod];
+                if (m.attempts < 2 || m.avgAccuracy >= 60) continue;
+                candidates.push({
+                    skillId,
+                    attempts: m.attempts,
+                    correct: m.correct,
+                    avgAccuracy: m.avgAccuracy,
+                    lastSeen: m.lastSeen,
+                    modality: targetMod,
+                    state: 'weak'
+                });
+            } else {
+                if (entry.attempts < 2 || entry.avgAccuracy >= 60) continue;
+                candidates.push({
+                    skillId,
+                    attempts: entry.attempts,
+                    correct: entry.correct,
+                    avgAccuracy: entry.avgAccuracy,
+                    lastSeen: entry.lastSeen,
+                    state: 'weak'
+                });
+            }
         }
 
         candidates.sort((a, b) => a.avgAccuracy - b.avgAccuracy);
@@ -494,7 +634,9 @@ const LearnerModel = (function () {
         prerequisitesFor,
         isReady,
         recordProduction,
+        recordAssessment,
         productionState,
-        weakProductionSkills
+        weakProductionSkills,
+        assessmentHistory
     };
 })();

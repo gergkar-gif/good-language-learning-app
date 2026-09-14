@@ -64,6 +64,13 @@ const Workshop = (function () {
             containerId: 'speaking-driller-root'
         },
         {
+            id: 'writing',
+            icon: 'writing',
+            title: 'Writing Studio',
+            sub: () => `Compose open-ended texts in ${(typeof Lang !== 'undefined') ? Lang.name() : 'the language'} with CEFR grading.`,
+            containerId: 'writing-driller-root'
+        },
+        {
             id: 'hu-verb',
             icon: 'hu-verb',
             title: 'Verb Driller',
@@ -119,6 +126,8 @@ const Workshop = (function () {
         listening: '<circle cx="50" cy="50" r="42" class="ps-wash"/><rect x="28" y="40" width="8" height="20" class="ps-ink"/><rect x="46" y="26" width="8" height="48" class="ps-ink"/><rect x="64" y="40" width="8" height="20" class="ps-accent"/>',
         // a microphone capsule with a projection beacon — oral production
         speaking: '<circle cx="50" cy="50" r="42" class="ps-wash"/><rect x="42" y="22" width="16" height="28" rx="8" class="ps-ink"/><path d="M34 40a16 16 0 0 0 32 0" class="ps-ink" fill="none" stroke="currentColor" stroke-width="4"/><line x1="50" y1="56" x2="50" y2="72" class="ps-ink" stroke="currentColor" stroke-width="4"/><line x1="38" y1="72" x2="62" y2="72" class="ps-ink" stroke="currentColor" stroke-width="4"/><circle cx="72" cy="28" r="6" class="ps-accent"/>',
+        // a quill and manuscript — written production
+        writing: '<circle cx="50" cy="50" r="42" class="ps-wash"/><path d="M30 70 L65 35 L75 45 L40 80 L25 85 Z" class="ps-ink"/><line x1="60" y1="40" x2="70" y2="50" class="ps-wash" stroke="currentColor" stroke-width="2"/><circle cx="75" cy="25" r="5" class="ps-accent"/>',
         // a root block with a smaller piece attached at its edge — a
         // suffix/case ending joining onto a stem
         'hu-suffix': '<circle cx="50" cy="50" r="42" class="ps-wash"/><rect x="20" y="34" width="36" height="32" class="ps-ink"/><rect x="56" y="42" width="20" height="16" class="ps-accent"/>',
@@ -223,6 +232,7 @@ const Workshop = (function () {
             vocabulary: typeof VocabularyDriller !== 'undefined' ? VocabularyDriller : null,
             listening: typeof ListeningDriller !== 'undefined' ? ListeningDriller : null,
             speaking: typeof SpeakingDriller !== 'undefined' ? SpeakingDriller : null,
+            writing: typeof WritingDriller !== 'undefined' ? WritingDriller : null,
             'hu-verb': typeof HuVerbDriller !== 'undefined' ? HuVerbDriller : null,
             'hu-suffix': typeof HuSuffixDriller !== 'undefined' ? HuSuffixDriller : null,
             'hu-prefix': typeof HuPrefixDriller !== 'undefined' ? HuPrefixDriller : null,

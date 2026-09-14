@@ -43,7 +43,7 @@ const Sync = (function () {
         'progress', 'srsDeck', 'knownWords', 'recycleSchedule', 'testResults',
         'readStories', 'savedReadings', 'myTexts', 'myDecks',
         'verbSpeedScores', 'unitPracticeDismissed', 'miniGameDismissed',
-        'milestonesSeen', 'lastActivity'
+        'milestonesSeen', 'lastActivity', 'productionEvidence', 'assessmentHistory'
     ];
     // Per-course, but with a variable suffix (one key per deck/driller) —
     // matched by prefix instead of an exact name.

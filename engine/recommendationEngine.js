@@ -47,6 +47,7 @@ const RecommendationEngine = (function () {
         if (candidate.kind === 'grammar') return `Grammar: ${humanizeSkill(candidate.skill)}`;
         if (candidate.kind === 'vocabulary') return `Vocabulary (${candidate.words.length})`;
         if (candidate.kind === 'speaking') return candidate.skill ? `Speaking: ${humanizeSkill(candidate.skill)}` : 'Speaking Practice';
+        if (candidate.kind === 'writing') return candidate.title || 'Writing Studio';
         if (candidate.kind === 'driller') return candidate.title;
         return '';
     }
@@ -58,6 +59,7 @@ const RecommendationEngine = (function () {
         if (candidate.kind === 'grammar') Workshop.open('grammar', { skill: candidate.skill });
         else if (candidate.kind === 'vocabulary') Workshop.open('vocabulary', { words: candidate.words });
         else if (candidate.kind === 'speaking') Workshop.open('speaking', { skill: candidate.skill, autoStart: true });
+        else if (candidate.kind === 'writing') Workshop.open('writing', candidate.options);
         else if (candidate.kind === 'driller') Workshop.open(candidate.drillerId, candidate.options);
     }
 
@@ -450,13 +452,19 @@ const RecommendationEngine = (function () {
         if (gv && gv.skill) secondary.push({ kind: 'grammar', skill: gv.skill, reason: gv.skillReason });
         if (gv && gv.words.length) secondary.push({ kind: 'vocabulary', words: gv.words, reason: gv.wordsReason });
         if (typeof LearnerModel !== 'undefined' && LearnerModel.weakProductionSkills) {
-            const weakProd = LearnerModel.weakProductionSkills(1);
+            const weakProd = await LearnerModel.weakProductionSkills(1);
             if (weakProd && weakProd.length > 0) {
-                secondary.push({ kind: 'speaking', skill: weakProd[0].skillId, reason: 'weak' });
+                const p = weakProd[0];
+                if (p.modality === 'written') {
+                    secondary.push({ kind: 'writing', title: `Writing: ${humanizeSkill(p.skillId)}`, reason: 'weak' });
+                } else {
+                    secondary.push({ kind: 'speaking', skill: p.skillId, reason: 'weak' });
+                }
             }
         }
         _drillerCandidates().forEach(c => {
             if (c.drillerId === 'speaking' && secondary.some(s => s.kind === 'speaking')) return;
+            if (c.drillerId === 'writing' && secondary.some(s => s.kind === 'writing')) return;
             secondary.push(c);
         });
 
