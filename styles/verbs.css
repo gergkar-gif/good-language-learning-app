@@ -122,14 +122,19 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 14px 24px;
+    padding: 12px 24px;
+    border: 1px solid transparent;
+    border-radius: var(--radius-sm, 2px);
+    font-family: inherit;
     font-size: 1rem;
     font-weight: 600;
-    border-radius: var(--radius-sm);
-    border: none;
     cursor: pointer;
     min-height: 48px;
-    transition: opacity 0.15s, transform 0.1s;
+    text-decoration: none;
+    transition: background var(--dur-fast, 0.15s) var(--ease-standard, ease),
+                border-color var(--dur-fast, 0.15s) var(--ease-standard, ease),
+                color var(--dur-fast, 0.15s) var(--ease-standard, ease),
+                transform 0.1s;
 }
 
 .vbtn:active {
@@ -143,18 +148,59 @@
 }
 
 .vbtn:focus-visible {
-    outline: 2px solid var(--primary, #1B4B5A);
+    outline: 2px solid var(--primary);
     outline-offset: 2px;
 }
 
 .vbtn-primary {
-    background: var(--primary, #1B4B5A);
-    color: #fff;
+    background: var(--primary);
+    color: var(--bg);
+    border-color: var(--primary);
+}
+
+.vbtn-primary:hover {
+    background: var(--primary-dark);
+    border-color: var(--primary-dark);
 }
 
 .vbtn-secondary {
-    background: var(--secondary, #8FB4BA);
-    color: #fff;
+    background: transparent;
+    color: var(--text);
+    border-color: var(--border);
+}
+
+.vbtn-secondary:hover {
+    background: rgba(16, 42, 71, 0.06);
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+[data-theme="dark"] .vbtn-primary,
+:root:not([data-theme="light"]) .vbtn-primary {
+    background: var(--primary);
+    color: var(--bg);
+    border-color: var(--primary);
+}
+
+[data-theme="dark"] .vbtn-primary:hover,
+:root:not([data-theme="light"]) .vbtn-primary:hover {
+    background: #E5DFD4;
+    border-color: #E5DFD4;
+    color: var(--bg);
+}
+
+[data-theme="dark"] .vbtn-secondary,
+:root:not([data-theme="light"]) .vbtn-secondary {
+    background: rgba(245, 241, 232, 0.05);
+    color: var(--text);
+    border-color: var(--border);
+}
+
+[data-theme="dark"] .vbtn-secondary:hover,
+:root:not([data-theme="light"]) .vbtn-secondary:hover {
+    background: rgba(245, 241, 232, 0.12);
+    border-color: var(--primary);
+    color: var(--primary);
 }
 
 .vbtn-block {
@@ -193,9 +239,9 @@
     display: inline-block;
     margin-top: 8px;
     padding: 4px 12px;
-    border-radius: 999px;
-    background: var(--secondary, #8FB4BA);
-    color: #fff;
+    border-radius: var(--radius-sm, 2px);
+    background: var(--primary);
+    color: var(--bg);
     font-size: 0.8rem;
     font-weight: 600;
 }

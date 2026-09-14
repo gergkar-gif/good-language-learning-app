@@ -141,8 +141,8 @@
   --accent-dark: #E88B68;
   --accent-bg: rgba(224, 113, 72, 0.16);
 
-  --danger: #E25F45;
-  --danger-bg: rgba(226, 95, 69, 0.16);
+  --danger: #E87A63;
+  --danger-bg: rgba(232, 122, 99, 0.16);
 
   --success: #52A374;
   --success-bg: rgba(82, 163, 116, 0.16);
@@ -173,8 +173,8 @@
     --accent-dark: #E88B68;
     --accent-bg: rgba(224, 113, 72, 0.16);
 
-    --danger: #E25F45;
-    --danger-bg: rgba(226, 95, 69, 0.16);
+    --danger: #E87A63;
+    --danger-bg: rgba(232, 122, 99, 0.16);
 
     --success: #52A374;
     --success-bg: rgba(82, 163, 116, 0.16);
@@ -202,7 +202,9 @@
 [data-theme="dark"] .dk-level-badge,
 [data-theme="dark"] .story-level-badge,
 [data-theme="dark"] .story-card-badge,
-[data-theme="dark"] .jr-theme-tag {
+[data-theme="dark"] .jr-theme-tag,
+[data-theme="dark"] .sp-level-pill,
+[data-theme="dark"] .vtable-tense {
   background: var(--primary);
   color: var(--bg);
 }
@@ -235,7 +237,9 @@
   :root:not([data-theme="light"]) .dk-level-badge,
   :root:not([data-theme="light"]) .story-level-badge,
   :root:not([data-theme="light"]) .story-card-badge,
-  :root:not([data-theme="light"]) .jr-theme-tag {
+  :root:not([data-theme="light"]) .jr-theme-tag,
+  :root:not([data-theme="light"]) .sp-level-pill,
+  :root:not([data-theme="light"]) .vtable-tense {
     background: var(--primary);
     color: var(--bg);
   }

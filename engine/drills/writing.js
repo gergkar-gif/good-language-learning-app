@@ -290,9 +290,9 @@ const WritingDriller = (function () {
         const priorities = (res.feedback && res.feedback.priorities) || [];
         const stats = res.localStats || {};
 
-        let scoreColor = '#2e7d32'; // green
-        if (score < 60) scoreColor = '#c62828'; // red
-        else if (score < 80) scoreColor = '#f57c00'; // amber
+        let scoreColor = 'var(--success)';
+        if (score < 60) scoreColor = 'var(--danger)';
+        else if (score < 80) scoreColor = 'var(--accent)';
 
         const errorsHtml = errors.length ? `
             <div class="sp-results-section">
