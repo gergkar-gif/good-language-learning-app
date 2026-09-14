@@ -77,19 +77,17 @@ const SpeakingRunner = (function () {
         }
 
         // Dual audio comparison: Native Model vs User Voice
-        const hasUserAudio = !!_userAudioUrl;
+        const userUrl = _userAudioUrl || (typeof SpeechInput !== 'undefined' && SpeechInput.getRecordedAudioUrl ? SpeechInput.getRecordedAudioUrl() : null);
         const compareHtml = `
             <div class="sp-compare-bar">
                 <button type="button" class="sp-audio-compare-btn sp-btn-model" data-action="play-model">
                     ${typeof Art !== 'undefined' ? Art.icon('listening') : ''}
                     <span>Model Voice</span>
                 </button>
-                ${hasUserAudio ? `
-                    <button type="button" class="sp-audio-compare-btn sp-btn-user" data-action="play-user">
-                        ${typeof Art !== 'undefined' ? Art.icon('mic') : ''}
-                        <span>Your Voice</span>
-                    </button>
-                ` : ''}
+                <button type="button" class="sp-audio-compare-btn sp-btn-user ${userUrl ? '' : 'hidden'}" data-action="play-user" aria-label="Listen to your recording">
+                    ${typeof Art !== 'undefined' ? Art.icon('mic') : ''}
+                    <span>Your Voice</span>
+                </button>
             </div>
         `;
 
@@ -139,7 +137,8 @@ const SpeakingRunner = (function () {
     }
 
     function _playUserAudio() {
-        if (!_userAudioUrl) return;
+        const url = _userAudioUrl || (typeof SpeechInput !== 'undefined' && SpeechInput.getRecordedAudioUrl ? SpeechInput.getRecordedAudioUrl() : null);
+        if (!url) return;
         if (typeof Speech !== 'undefined' && typeof window.speechSynthesis !== 'undefined') {
             window.speechSynthesis.cancel();
         }
@@ -152,7 +151,7 @@ const SpeakingRunner = (function () {
         const span = btn ? btn.querySelector('span') : null;
 
         try {
-            _userAudioPlayer = new Audio(_userAudioUrl);
+            _userAudioPlayer = new Audio(url);
             if (btn) btn.classList.add('is-playing');
             if (span) span.textContent = 'Playing...';
 
@@ -179,11 +178,15 @@ const SpeakingRunner = (function () {
     }
 
     function _updateUserAudioButton() {
-        if (!_container || !_userAudioUrl) return;
+        if (!_container) return;
+        const userUrl = _userAudioUrl || (typeof SpeechInput !== 'undefined' && SpeechInput.getRecordedAudioUrl ? SpeechInput.getRecordedAudioUrl() : null);
+        if (!userUrl) return;
         const compareBar = _container.querySelector('.sp-compare-bar');
         if (!compareBar) return;
         let playUserBtn = compareBar.querySelector('[data-action="play-user"]');
-        if (!playUserBtn) {
+        if (playUserBtn) {
+            playUserBtn.classList.remove('hidden');
+        } else {
             playUserBtn = document.createElement('button');
             playUserBtn.type = 'button';
             playUserBtn.className = 'sp-audio-compare-btn sp-btn-user';
@@ -306,6 +309,11 @@ const SpeakingRunner = (function () {
 
         const isPromptSpeak = exercise.kind === 'prompt-speak';
         const hasSTT = SpeechInput.isRecognitionSupported();
+        const langName = (typeof Lang !== 'undefined') ? Lang.name() : 'the target language';
+        let instruction = exercise.prompt || `Translate and say this out loud in ${langName}:`;
+        if (typeof Lang !== 'undefined' && Lang.code() !== 'es') {
+            instruction = instruction.replace(/in Spanish/gi, `in ${langName}`);
+        }
 
         _container.innerHTML = `
             <div class="sp-runner">
@@ -314,7 +322,7 @@ const SpeakingRunner = (function () {
 
                     ${isPromptSpeak ? `
                         <p class="sp-en-prompt">${_esc(exercise.english)}</p>
-                        <p class="sp-instruction">Translate and say this out loud in Spanish:</p>
+                        <p class="sp-instruction">${_esc(instruction)}</p>
                     ` : `
                         <div class="sp-target-lead">
                             <p class="sp-es-text">${_esc(exercise.spanish)}</p>

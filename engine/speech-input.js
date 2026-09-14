@@ -119,8 +119,8 @@ const SpeechInput = (function () {
         }
     }
 
-    // Fallback: capture audio stream when SpeechRecognition is NOT available (e.g. Firefox)
-    function _startRecordingFallback(options = {}) {
+    // Capture audio stream for user playback and unsupported browser fallback
+    function _startRecordingStream(options = {}) {
         if (!isRecordingSupported()) return;
 
         navigator.mediaDevices.getUserMedia({ audio: true, video: false })
@@ -142,7 +142,13 @@ const SpeechInput = (function () {
                 try {
                     _mediaRecorder = mimeType ? new MediaRecorder(stream, { mimeType }) : new MediaRecorder(stream);
                 } catch (e) {
-                    _mediaRecorder = new MediaRecorder(stream);
+                    try {
+                        _mediaRecorder = new MediaRecorder(stream);
+                    } catch (e2) {
+                        console.warn('SpeechInput: MediaRecorder initialization failed:', e2);
+                        _mediaRecorder = null;
+                        return;
+                    }
                 }
 
                 _recordedChunks = [];
@@ -162,13 +168,23 @@ const SpeechInput = (function () {
                     _stopTracks();
                 };
 
-                _mediaRecorder.start(100);
+                try {
+                    _mediaRecorder.start(100);
+                } catch (e) {
+                    try {
+                        _mediaRecorder.start();
+                    } catch (e2) {
+                        console.warn('SpeechInput: mediaRecorder.start failed:', e2);
+                    }
+                }
             })
             .catch(err => {
-                console.warn('SpeechInput: fallback audio recording unavailable:', err);
-                _isListening = false;
-                const onError = options.onError || (() => {});
-                onError('permission-denied');
+                console.warn('SpeechInput: audio recording stream unavailable:', err);
+                if (!isRecognitionSupported() || !_activeRecognition) {
+                    _isListening = false;
+                    const onError = options.onError || (() => {});
+                    onError('permission-denied');
+                }
             });
     }
 
@@ -210,159 +226,158 @@ const SpeechInput = (function () {
             }
         }, 30000);
 
+        if (onAudioLevel) {
+            let simAngle = 0;
+            _meterInterval = setInterval(() => {
+                if (!_isListening) return;
+                simAngle += 0.2;
+                // Ambient breathing wave while waiting, showing mic is hot
+                const basePulse = _hasSpoken ? 0.35 : 0.12 + Math.sin(simAngle) * 0.08;
+                onAudioLevel(basePulse);
+            }, 80);
+        }
+
         const RecognitionClass = _getRecognitionClass();
 
         // 1. Primary: Native SpeechRecognition Engine
         if (RecognitionClass) {
-            try {
-                const recognition = new RecognitionClass();
-                recognition.lang = lang;
+            function _startRecognitionInstance() {
+                if (!_isListening) return;
+                try {
+                    const recognition = new RecognitionClass();
+                    recognition.lang = lang;
 
-                // WebKit on iOS fails if continuous: true; Chrome desktop works well with continuous: true
-                const isIOS = typeof navigator !== 'undefined' && (/iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1));
-                recognition.continuous = !isIOS;
-                recognition.interimResults = true;
-                recognition.maxAlternatives = 1;
+                    // WebKit on iOS fails if continuous: true; Chrome desktop works well with continuous: true
+                    const isIOS = typeof navigator !== 'undefined' && (/iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1));
+                    recognition.continuous = !isIOS;
+                    recognition.interimResults = true;
+                    recognition.maxAlternatives = 1;
 
-                if (onAudioLevel) {
-                    let simAngle = 0;
-                    _meterInterval = setInterval(() => {
+                    recognition.onstart = () => {
+                        _isListening = true;
+                    };
+
+                    recognition.onresult = event => {
                         if (!_isListening) return;
-                        simAngle += 0.2;
-                        // Ambient breathing wave while waiting, showing mic is hot
-                        const basePulse = _hasSpoken ? 0.35 : 0.12 + Math.sin(simAngle) * 0.08;
-                        onAudioLevel(basePulse);
-                    }, 80);
-                }
 
-                recognition.onstart = () => {
-                    _isListening = true;
-                };
-
-                recognition.onresult = event => {
-                    if (!_isListening) return;
-
-                    let interim = '';
-                    for (let i = event.resultIndex; i < event.results.length; ++i) {
-                        const item = event.results[i];
-                        if (item && item[0]) {
-                            if (item.isFinal) {
-                                const text = item[0].transcript.trim();
-                                if (text) {
-                                    _accumulatedFinal += (_accumulatedFinal ? ' ' : '') + text;
+                        let interim = '';
+                        for (let i = event.resultIndex; i < event.results.length; ++i) {
+                            const item = event.results[i];
+                            if (item && item[0]) {
+                                if (item.isFinal) {
+                                    const text = item[0].transcript.trim();
+                                    if (text) {
+                                        _accumulatedFinal += (_accumulatedFinal ? ' ' : '') + text;
+                                    }
+                                } else {
+                                    interim += item[0].transcript;
                                 }
-                            } else {
-                                interim += item[0].transcript;
                             }
                         }
-                    }
-                    _currentInterim = interim;
-                    const combined = (_accumulatedFinal + ' ' + _currentInterim).trim();
+                        _currentInterim = interim;
+                        const combined = (_accumulatedFinal + ' ' + _currentInterim).trim();
 
-                    if (combined) {
-                        _hasSpoken = true;
-                        if (_initialSilenceTimeout) {
-                            clearTimeout(_initialSilenceTimeout);
-                            _initialSilenceTimeout = null;
-                        }
-
-                        onInterim(combined);
-                        if (onAudioLevel) {
-                            onAudioLevel(0.5 + Math.random() * 0.45);
-                        }
-
-                        // Silence buffer: automatically finish and evaluate 2.8s after learner stops speaking
-                        if (_finishTimeout) clearTimeout(_finishTimeout);
-                        _finishTimeout = setTimeout(() => {
-                            stopListening();
-                        }, 2800);
-                    }
-                };
-
-                recognition.onerror = event => {
-                    console.warn('SpeechInput recognition error:', event.error);
-                    const combined = (_accumulatedFinal + ' ' + _currentInterim).trim();
-
-                    if (event.error === 'no-speech') {
-                        // If learner already spoke, silence means they are done
                         if (combined) {
-                            if (!_finishTimeout) {
-                                _finishTimeout = setTimeout(() => {
-                                    stopListening();
-                                }, 1200);
+                            _hasSpoken = true;
+                            if (_initialSilenceTimeout) {
+                                clearTimeout(_initialSilenceTimeout);
+                                _initialSilenceTimeout = null;
                             }
-                            return;
-                        }
-                        // If learner hasn't spoken yet and still within initial 10s grace period, keep waiting
-                        if (Date.now() - _listenStartTime < 10000) {
-                            return;
-                        }
-                        _isListening = false;
-                        _cleanupTimers();
-                        onError('no-speech');
-                    } else if (event.error === 'not-allowed' || event.error === 'service-not-allowed') {
-                        _isListening = false;
-                        _cleanupTimers();
-                        onError('permission-denied');
-                    } else if (event.error === 'aborted') {
-                        if (combined && _isListening) {
-                            stopListening();
-                        }
-                    } else if (event.error === 'network') {
-                        if (combined) {
-                            stopListening();
-                            return;
-                        }
-                        _isListening = false;
-                        _cleanupTimers();
-                        onError('network');
-                    } else {
-                        if (combined) {
-                            stopListening();
-                            return;
-                        }
-                        _isListening = false;
-                        _cleanupTimers();
-                        onError(event.error || 'recognition-failed');
-                    }
-                };
 
-                recognition.onend = () => {
-                    if (!_isListening) return;
+                            onInterim(combined);
+                            if (onAudioLevel) {
+                                onAudioLevel(0.5 + Math.random() * 0.45);
+                            }
 
-                    // If still active, seamlessly restart recognition (especially on iOS Safari where continuous=false)
-                    // so pauses between phrases are not truncated before the 2.8s timer expires
-                    try {
-                        recognition.start();
-                    } catch (e) {
-                        if (_hasSpoken) {
-                            if (!_finishTimeout) {
-                                _finishTimeout = setTimeout(() => {
-                                    stopListening();
-                                }, 1000);
+                            // Silence buffer: automatically finish and evaluate 2.8s after learner stops speaking
+                            if (_finishTimeout) clearTimeout(_finishTimeout);
+                            _finishTimeout = setTimeout(() => {
+                                stopListening();
+                            }, 2800);
+                        }
+                    };
+
+                    recognition.onerror = event => {
+                        console.warn('SpeechInput recognition error:', event.error);
+                        const combined = (_accumulatedFinal + ' ' + _currentInterim).trim();
+
+                        if (event.error === 'no-speech') {
+                            // If learner already spoke, silence means they are done
+                            if (combined) {
+                                if (!_finishTimeout) {
+                                    _finishTimeout = setTimeout(() => {
+                                        stopListening();
+                                    }, 1200);
+                                }
+                                return;
+                            }
+                            // If learner hasn't spoken yet and still within initial 10s grace period, keep waiting
+                            if (Date.now() - _listenStartTime < 10000) {
+                                return;
+                            }
+                            _isListening = false;
+                            _cleanupTimers();
+                            onError('no-speech');
+                        } else if (event.error === 'not-allowed' || event.error === 'service-not-allowed') {
+                            _isListening = false;
+                            _cleanupTimers();
+                            onError('permission-denied');
+                        } else if (event.error === 'aborted') {
+                            if (combined && _isListening) {
+                                stopListening();
+                            }
+                        } else if (event.error === 'network') {
+                            if (combined) {
+                                stopListening();
+                                return;
+                            }
+                            _isListening = false;
+                            _cleanupTimers();
+                            onError('network');
+                        } else {
+                            if (combined) {
+                                stopListening();
+                                return;
+                            }
+                            _isListening = false;
+                            _cleanupTimers();
+                            onError(event.error || 'recognition-failed');
+                        }
+                    };
+
+                    recognition.onend = () => {
+                        if (!_isListening) return;
+
+                        // Create a fresh instance if user is still actively speaking or within silence buffer
+                        // (iOS Safari continuous=false closes on pause; reusing an ended instance throws InvalidStateError)
+                        try {
+                            _startRecognitionInstance();
+                        } catch (e) {
+                            if (_hasSpoken) {
+                                if (!_finishTimeout) {
+                                    _finishTimeout = setTimeout(() => {
+                                        stopListening();
+                                    }, 1000);
+                                }
                             }
                         }
-                    }
-                };
+                    };
 
-                _activeRecognition = recognition;
-                recognition.start();
-            } catch (e) {
-                console.warn('SpeechInput: recognition.start() threw:', e);
-                _activeRecognition = null;
-                // If native recognition threw, fallback to recording if possible
-                if (isRecordingSupported()) {
-                    _startRecordingFallback(options);
-                } else {
-                    _isListening = false;
-                    onError('not-supported');
+                    _activeRecognition = recognition;
+                    recognition.start();
+                } catch (e) {
+                    console.warn('SpeechInput: recognition start threw:', e);
+                    _activeRecognition = null;
                 }
             }
-        } else if (isRecordingSupported()) {
-            // Fallback for browsers without Web Speech API (e.g. Firefox)
-            _startRecordingFallback(options);
-            onError('not-supported');
-        } else {
+
+            _startRecognitionInstance();
+        }
+
+        // 2. Microphone audio recording for user playback and unsupported browser fallback
+        if (isRecordingSupported()) {
+            _startRecordingStream(options);
+        } else if (!_activeRecognition) {
             _isListening = false;
             onError('not-supported');
         }

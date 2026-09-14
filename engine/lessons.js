@@ -1264,9 +1264,13 @@ const stepRenderers = {
         const english = stepState.english;
         const safeTarget = esc(target).replace(/'/g, "\\'");
         const langName = typeof Lang !== 'undefined' ? Lang.name() : 'Spanish';
+        let questionPrompt = step.prompt || (isPromptSpeak ? `Translate and say this out loud in ${langName}:` : `Listen and repeat this out loud in ${langName}:`);
+        if (typeof Lang !== 'undefined' && Lang.code() !== 'es') {
+            questionPrompt = questionPrompt.replace(/in Spanish/gi, `in ${langName}`);
+        }
 
         return `
-            <p class="lsn-question">${esc(step.prompt || (isPromptSpeak ? `Translate and say this out loud in ${langName}:` : `Listen and repeat this out loud in ${langName}:`))}</p>
+            <p class="lsn-question">${esc(questionPrompt)}</p>
             ${isSnoozed ? `
                 <div class="sp-snoozed-banner" style="background:var(--surface); border:1px dashed var(--border); padding:10px 14px; margin-bottom:14px; display:flex; align-items:center; justify-content:space-between; gap:10px;">
                     <span style="font-size:0.88rem; color:var(--text-muted, #687787);">Speaking practice is currently snoozed.</span>
