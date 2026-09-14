@@ -884,23 +884,50 @@ const SpeakingDriller = (function () {
         if (score < 60) scoreColor = 'var(--danger)';
         else if (score < 80) scoreColor = 'var(--accent)';
 
+        const catLabels = {
+            grammar: 'Grammar',
+            vocabulary: 'Vocabulary',
+            syntax: 'Syntax & Sentence Structure',
+            pronunciation: 'Pronunciation & Phrasing',
+            expression: 'Expression & Idiomatic Usage',
+            register: 'Register & Tone'
+        };
+
+        const groupedErrors = {};
+        for (const err of errors) {
+            const cat = (err.category || 'expression').toLowerCase();
+            if (!groupedErrors[cat]) groupedErrors[cat] = [];
+            groupedErrors[cat].push(err);
+        }
+
         const errorsHtml = errors.length ? `
             <div class="sp-results-section">
                 <h4 class="sp-section-heading">Detailed Observations (${errors.length})</h4>
-                <div class="sp-errors-list">
-                    ${errors.map(err => `
-                        <div class="sp-error-card sp-severity-${_esc(err.severity)}">
-                            <div class="sp-error-head">
-                                <span class="sp-error-cat">${_esc(err.category || 'expression')}</span>
-                                ${err.skillId ? `<span class="sp-skill-tag">${_esc(err.skillId)}</span>` : ''}
+                <div class="sp-error-groups">
+                    ${Object.entries(groupedErrors).map(([catKey, catErrors]) => `
+                        <div class="sp-error-group">
+                            <div class="sp-error-group-header">
+                                <span class="sp-error-group-title">${_esc(catLabels[catKey] || catKey.charAt(0).toUpperCase() + catKey.slice(1))}</span>
+                                <span class="sp-error-group-badge">${catErrors.length} ${catErrors.length === 1 ? 'observation' : 'observations'}</span>
                             </div>
-                            <p class="sp-error-quote">"${_esc(err.text)}"</p>
-                            <p class="sp-error-expl">${_esc(err.explanation)}</p>
+                            <div class="sp-errors-list">
+                                ${catErrors.map(err => `
+                                    <div class="sp-error-card sp-severity-${_esc(err.severity)}">
+                                        <div class="sp-error-head">
+                                            <span class="sp-severity-tag sp-severity-${_esc(err.severity)}">${_esc(err.severity)}</span>
+                                            ${err.skillId ? `<span class="sp-skill-tag">${_esc(err.skillId)}</span>` : ''}
+                                        </div>
+                                        <p class="sp-error-quote">"${_esc(err.text)}"</p>
+                                        <p class="sp-error-expl">${_esc(err.explanation)}</p>
+                                    </div>
+                                `).join('')}
+                            </div>
                         </div>
                     `).join('')}
                 </div>
             </div>
         ` : '';
+
 
         body.innerHTML = `
             <div class="sp-driller-wrap sp-results-wrap">

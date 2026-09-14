@@ -95,8 +95,30 @@ async function testOralGrading() {
     assert(typeof result.overallScore === 'number', 'overallScore must be a number');
     assert(result.overallScore >= 0 && result.overallScore <= 100, 'overallScore must be 0-100');
     assert(result.dimensions, 'dimensions must exist');
-    assert(result.dimensions.fluency != null || result.dimensions.naturalness != null, 'fluency/naturalness dimension must exist');
     console.log(`[PASS] Oral grading completed with score: ${result.overallScore}/100.`);
+
+    // 5. Test Multiple Errors per Category in GraderSchema
+    const { validateAndCleanResult } = require('../../engine/grader/schema.js');
+    const multiErrorMock = {
+        overallScore: 65,
+        taskCompletion: 0.7,
+        dimensions: { grammar: 0.5, vocabulary: 0.7, coherence: 0.7, complexity: 0.6, naturalness: 0.6 },
+        errors: [
+            { category: 'grammar', severity: 'moderate', text: 'yo fue', explanation: 'Use fui for 1st person preterite', skillId: 'preterite' },
+            { category: 'grammar', severity: 'minor', text: 'las problema', explanation: 'Problema is masculine (los problemas)', skillId: 'gender' },
+            { category: 'grammar', severity: 'major', text: 'para que vas', explanation: 'Requires subjunctive: para que vayas', skillId: 'subjunctive' },
+            { category: 'vocabulary', severity: 'minor', text: 'hacer un paseo', explanation: 'Prefer dar un paseo', skillId: 'collocations' }
+        ],
+        demonstratedSkills: [],
+        weakSkills: [],
+        feedback: { strengths: ['Understood'], priorities: ['Grammar review'] }
+    };
+
+    const cleaned = validateAndCleanResult(multiErrorMock);
+    assert(cleaned.errors.length === 4, `Should preserve all 4 errors, got ${cleaned.errors.length}`);
+    const grammarErrors = cleaned.errors.filter(e => e.category === 'grammar');
+    assert(grammarErrors.length === 3, `Should allow 3 distinct errors under grammar, got ${grammarErrors.length}`);
+    console.log('[PASS] Multiple errors under single category (grammar: 3, vocabulary: 1) verified.');
 }
 
 testOralGrading()

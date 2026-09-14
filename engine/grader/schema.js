@@ -90,7 +90,7 @@
                 explanation,
                 skillId
             });
-            if (errors.length >= 5) break; // enforce economy limit
+            if (errors.length >= 8) break; // allow up to 8 errors across categories
         }
 
         // Clean demonstrated and weak skills

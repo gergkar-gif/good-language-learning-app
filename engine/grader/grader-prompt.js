@@ -83,6 +83,7 @@ The overall score should broadly correspond to the weighted profile, but use pro
 
 ERRORS:
 Only include concrete, defensible errors or important limitations.
+You may include multiple distinct errors under the same category (e.g. several specific grammar errors or vocabulary choices) when supported by the learner's text.
 For each error:
 - category: "grammar" | "vocabulary" | "spelling" | "punctuation" | "register" | "syntax"
 - severity: "minor" | "moderate" | "major"
@@ -106,7 +107,7 @@ Return ONLY valid JSON. No Markdown fences. No introductory or trailing text.
 
 OUTPUT ECONOMY:
 - Keep each error explanation concise (1-2 sentences).
-- Maximum 5 errors.
+- Maximum 8 errors.
 - Maximum 3 demonstratedSkills.
 - Maximum 3 weakSkills.
 - Maximum 3 strengths and 3 priorities.
