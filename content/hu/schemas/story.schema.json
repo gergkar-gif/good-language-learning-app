@@ -58,6 +58,10 @@
       "type": "array",
       "minItems": 1,
       "items": { "$ref": "#/definitions/paragraph" }
+    },
+    "narration": {
+      "$ref": "#/definitions/narration",
+      "description": "Pre-generated AI-aware narration metadata and audio alignment."
     }
   },
 
@@ -96,6 +100,80 @@
           "then": { "required": ["speaker"] }
         }
       ]
+    },
+    "narration": {
+      "type": "object",
+      "required": ["audioFile"],
+      "additionalProperties": false,
+      "properties": {
+        "audioFile": {
+          "type": "string",
+          "description": "Relative path to pre-generated audio asset (e.g. audio/story.a1.01.mp3)."
+        },
+        "durationSeconds": { "type": "number", "minimum": 0 },
+        "pacing": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {
+            "targetCefr": { "type": "string" },
+            "speedMultiplier": { "type": "number" },
+            "style": { "type": "string" }
+          }
+        },
+        "speakers": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "role": { "type": "string" },
+              "gender": { "type": "string" },
+              "tone": { "type": "string" }
+            }
+          }
+        },
+        "segments": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["paraIndex", "startTime", "endTime"],
+            "additionalProperties": true,
+            "properties": {
+              "paraIndex": { "type": "integer", "minimum": 0 },
+              "startTime": { "type": "number", "minimum": 0 },
+              "endTime": { "type": "number", "minimum": 0 },
+              "speaker": { "type": "string" },
+              "cues": {
+                "type": "array",
+                "items": { "type": "object" }
+              },
+              "pronunciations": {
+                "type": "array",
+                "items": { "type": "object" }
+              }
+            }
+          }
+        },
+        "pedagogical": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {
+            "keyVocabulary": { "type": "array" },
+            "comprehensionQuestions": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["question", "options", "correctIndex"],
+                "properties": {
+                  "question": { "type": "string" },
+                  "options": { "type": "array", "items": { "type": "string" } },
+                  "correctIndex": { "type": "integer", "minimum": 0 },
+                  "explanation": { "type": "string" }
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
 

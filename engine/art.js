@@ -262,6 +262,13 @@ const Art = (function () {
             <line class="ink-line" x1="16" y1="9" x2="21" y2="14"/>
             <line class="ink-line" x1="21" y1="9" x2="16" y2="14"/>
         `,
+        play: `
+            <polygon class="ink-line" fill="currentColor" points="8 5, 19 12, 8 19"/>
+        `,
+        pause: `
+            <rect class="ink-line" fill="currentColor" x="6" y="5" width="4" height="14"/>
+            <rect class="ink-line" fill="currentColor" x="14" y="5" width="4" height="14"/>
+        `,
 
         // Settings — a dial with one mark, rather than a cog nobody can read
         // at this size.

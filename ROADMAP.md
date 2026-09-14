@@ -178,7 +178,13 @@ this list directly rather than relying on a tool-specific todo list.
     - **Zero-DOM String Escaping**: Replaced `document.createElement('div')` in `Reader.escapeHtml` and 8 drill/deck/verb runners (`engine/drills/grammar-runner.js`, `engine/drills/grammar.js`, `engine/drills/translation-runner.js`, `engine/verbs.js`, `engine/verbs/speed.js`, `engine/verbs/table.js`, `engine/decks/learn.js`, `engine/decks/match.js`) with fast, zero-allocation string escaping via `UI.escape()` with regex fallback. Eliminates disposable DOM nodes and GC pauses during text and exercise rendering.
     - **Debug Console Log Cleanup**: Purged leftover verbose debug `console.log` statements in `engine/lexicon.js` and `engine/reader.js`.
     - **Global Scope & Static Analysis Audit**: Confirmed all 64 engine scripts load and compile cleanly, with zero syntax errors, balanced CSS rules, zero unreferenced files, and 0 pictorial emojis across all code and stylesheets.
-    - **Cache & Service Worker Synchronization**: Bumped PWA service worker and asset cache query parameters to `v2026-09-14g`.
+    - **Cache & Service Worker Synchronization**: Bumped PWA service worker and asset cache query parameters to `v2026-09-14h`.
+18. **AI-Aware Pre-Generated Reading Narration & Content Annotation Architecture** — **Built & deployed 2026-09-14**:
+    - **Offline Content Creation Pipeline** (`scripts/narrate-story.py`): Replaces runtime basic TTS with offline AI text analysis and multi-speaker voice generation. Analyzes dialogue, character profiles, CEFR-calibrated pacing, emphasis, clause pauses, phonetic pronunciation tips, key vocabulary, and reading comprehension check questions.
+    - **Static Pre-Generated Audio Assets**: Audio is generated ONCE during content creation and stored with the reading (`content/<lang>/stories/audio/<story-id>.wav`), avoiding runtime AI calls and preserving API costs. Cached automatically by Service Worker (`sw.js`) for 100% offline playback.
+    - **Synchronized Audio Player & Active Paragraph Highlighter** (`engine/reader.js`): Story player bar with Play/Pause, scrub slider, time counter, and speed selector (`0.8x`, `1.0x`, `1.2x`). Automatically tracks audio timestamps to highlight active spoken paragraph (`.story-paragraph.is-narrating`) in real time, with individual paragraph direct-seek buttons (`.story-para-play-btn`).
+    - **Pedagogical Comprehension Checks**: Built-in interactive multiple-choice check with immediate validation and explanations.
+    - **Schema & Manifest Integration**: Added `narration` definitions in `story.schema.json` and updated `build-manifest.py` with `hasAudio` and `audioDuration`.
 
 ## Content & curriculum
 

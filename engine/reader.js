@@ -523,6 +523,162 @@ function _matchesTerm(haystack, term) {
     return hNorm.includes(tNorm);
 }
 
+// ============================================
+// STORY AUDIO PLAYER (AI Narration & Alignment)
+// ============================================
+const StoryAudioPlayer = {
+    audio: null,
+    story: null,
+    isPlaying: false,
+    speed: 1.0,
+    speeds: [0.8, 1.0, 1.2],
+
+    init(story, container) {
+        this.teardown();
+        if (!story || !story.narration || !story.narration.audioFile) return;
+
+        this.story = story;
+        const lang = (typeof Lang !== 'undefined') ? Lang.code() : 'es';
+        const audioPath = 'content/' + lang + '/stories/' + story.narration.audioFile;
+
+        if (typeof Audio !== 'undefined') {
+            this.audio = new Audio();
+            this.audio.src = audioPath;
+            this.audio.preload = 'metadata';
+        }
+        this.speed = (story.narration.pacing && story.narration.pacing.speedMultiplier)
+            ? (story.narration.pacing.speedMultiplier < 0.9 ? 0.8 : 1.0)
+            : 1.0;
+
+        const playBtn = document.getElementById('story-audio-play-btn');
+        const slider = document.getElementById('story-audio-slider');
+        const timeEl = document.getElementById('story-audio-time');
+        const speedBtn = document.getElementById('story-audio-speed-btn');
+
+        if (speedBtn) {
+            speedBtn.textContent = this.speed.toFixed(1) + '×';
+            speedBtn.addEventListener('click', () => {
+                const nextIdx = (this.speeds.indexOf(this.speed) + 1) % this.speeds.length;
+                this.speed = this.speeds[nextIdx];
+                if (this.audio) this.audio.playbackRate = this.speed;
+                speedBtn.textContent = this.speed.toFixed(1) + '×';
+            });
+        }
+
+        if (playBtn) {
+            playBtn.addEventListener('click', () => this.togglePlay());
+        }
+
+        if (slider) {
+            slider.addEventListener('input', (e) => {
+                if (this.audio && this.audio.duration) {
+                    const seekTime = (parseFloat(e.target.value) / 100) * this.audio.duration;
+                    this.audio.currentTime = seekTime;
+                }
+            });
+        }
+
+        if (this.audio) {
+            this.audio.playbackRate = this.speed;
+
+            this.audio.addEventListener('timeupdate', () => {
+                if (!this.audio) return;
+                const cur = this.audio.currentTime;
+                const dur = this.audio.duration || (this.story && this.story.narration && this.story.narration.durationSeconds) || 0;
+
+                if (slider && dur > 0) {
+                    slider.value = (cur / dur) * 100;
+                }
+                if (timeEl) {
+                    timeEl.textContent = this.formatTime(cur) + ' / ' + this.formatTime(dur);
+                }
+
+                this.updateHighlight(cur);
+            });
+
+            this.audio.addEventListener('ended', () => {
+                this.isPlaying = false;
+                this.updatePlayBtn();
+                this.clearHighlight();
+            });
+
+            this.audio.addEventListener('pause', () => {
+                this.isPlaying = false;
+                this.updatePlayBtn();
+            });
+
+            this.audio.addEventListener('play', () => {
+                this.isPlaying = true;
+                this.updatePlayBtn();
+            });
+        }
+    },
+
+    togglePlay() {
+        if (!this.audio) return;
+        if (this.audio.paused) {
+            this.audio.play().catch(e => console.warn('Audio playback failed:', e));
+        } else {
+            this.audio.pause();
+        }
+    },
+
+    seekTo(seconds) {
+        if (!this.audio) return;
+        this.audio.currentTime = seconds;
+        if (this.audio.paused) {
+            this.audio.play().catch(e => console.warn('Audio playback failed:', e));
+        }
+    },
+
+    updatePlayBtn() {
+        const btn = document.getElementById('story-audio-play-btn');
+        if (!btn || typeof Art === 'undefined') return;
+        btn.innerHTML = Art.icon(this.isPlaying ? 'pause' : 'play');
+        btn.setAttribute('aria-label', this.isPlaying ? 'Pause narration' : 'Play narration');
+    },
+
+    updateHighlight(curTime) {
+        if (!this.story || !this.story.narration || !this.story.narration.segments) return;
+        const seg = this.story.narration.segments.find(s => curTime >= s.startTime && curTime < s.endTime);
+        const allParas = document.querySelectorAll('.story-paragraph');
+        allParas.forEach(el => el.classList.remove('is-narrating'));
+
+        if (seg) {
+            const activeEl = document.querySelector(`.story-paragraph[data-para-index="${seg.paraIndex}"]`);
+            if (activeEl) {
+                activeEl.classList.add('is-narrating');
+            }
+        }
+    },
+
+    clearHighlight() {
+        document.querySelectorAll('.story-paragraph.is-narrating').forEach(el => el.classList.remove('is-narrating'));
+    },
+
+    formatTime(sec) {
+        const s = Math.floor(sec || 0);
+        const m = Math.floor(s / 60);
+        const rem = s % 60;
+        return m + ':' + (rem < 10 ? '0' : '') + rem;
+    },
+
+    teardown() {
+        if (this.audio) {
+            try {
+                this.audio.pause();
+                this.audio.src = '';
+            } catch (e) {}
+            this.audio = null;
+        }
+        this.story = null;
+        this.isPlaying = false;
+        this.clearHighlight();
+    }
+};
+
+window.StoryAudioPlayer = StoryAudioPlayer;
+
 window.Reader = {
     _normSearch: _normSearch,
     _matchesTerm: _matchesTerm,
@@ -1196,6 +1352,7 @@ window.Reader = {
                     '<span class="story-card-badge">' + this.escapeHtml(story.level || '') +
                         (minutes ? ' · ' + minutes : '') +
                     '</span>' +
+                    (story.hasAudio ? '<span class="story-card-audio-badge" title="Narration available">Audio</span>' : '') +
                     (withinReach ? '<span class="story-card-reach-badge">Within Reach</span>' : '') +
                 '</div>' +
             '</div>' +
@@ -1257,6 +1414,25 @@ window.Reader = {
             </div>
         `;
 
+        const hasNarration = !!(story.narration && story.narration.audioFile);
+        let audioBarHtml = '';
+        if (hasNarration) {
+            const dur = story.narration.durationSeconds || 0;
+            const durFormatted = StoryAudioPlayer.formatTime(dur);
+            audioBarHtml = `
+                <div class="story-audio-bar" id="story-audio-bar">
+                    <button type="button" class="story-audio-play-btn" id="story-audio-play-btn" aria-label="Play narration">
+                        ${Art.icon('play')}
+                    </button>
+                    <div class="story-audio-slider-wrap">
+                        <input type="range" class="story-audio-slider" id="story-audio-slider" min="0" max="100" value="0" step="0.1" aria-label="Audio scrub">
+                    </div>
+                    <span class="story-audio-time" id="story-audio-time">0:00 / ${durFormatted}</span>
+                    <button type="button" class="story-audio-speed-btn" id="story-audio-speed-btn" aria-label="Playback speed" title="Playback speed">1.0×</button>
+                </div>
+            `;
+        }
+
         let html = '<div class="story-header">' +
             '<div class="story-header-left">' +
                 '<h3 class="story-title">' + this.escapeHtml(story.title) + '</h3>' +
@@ -1268,7 +1444,8 @@ window.Reader = {
                 '<button class="btn-back" id="reader-back-btn">&larr; Back</button>' +
             '</div>' +
         '</div>' +
-        '<div class="story-scroll-track" aria-hidden="true"><div class="story-scroll-bar" id="story-scroll-bar"></div></div>';
+        '<div class="story-scroll-track" aria-hidden="true"><div class="story-scroll-bar" id="story-scroll-bar"></div></div>' +
+        audioBarHtml;
 
         html += '<div class="story-body">';
 
@@ -1291,7 +1468,18 @@ window.Reader = {
                 // language, matching every existing (monolingual) story.
                 const isTargetLanguage = !para.lang || (typeof Lang !== 'undefined' && para.lang === Lang.code());
                 const bodyHtml = isTargetLanguage ? self.makeClickable(para.text) : self.escapeHtml(para.text);
-                const speechHtml = isTargetLanguage ? Speech.button(para.text, 'Listen to this paragraph') : '';
+                
+                let speechHtml = '';
+                if (hasNarration && story.narration.segments) {
+                    const seg = story.narration.segments.find(s => s.paraIndex === idx);
+                    if (seg) {
+                        speechHtml = `<button type="button" class="story-para-play-btn speak-btn" data-seek="${seg.startTime}" aria-label="Listen from this paragraph" title="Listen from here">${Art.icon('listening')}</button>`;
+                    }
+                }
+                if (!speechHtml && isTargetLanguage) {
+                    speechHtml = Speech.button(para.text, 'Listen to this paragraph');
+                }
+
                 html += '<p class="' + paraClass + '" data-para-index="' + idx + '">' +
                     speakerHtml + bodyHtml + speechHtml +
                 '</p>';
@@ -1334,6 +1522,33 @@ window.Reader = {
             html += '<p class="story-attribution">This is a Level ' + self.escapeHtml(story.level) + ' reading.</p>';
         }
 
+        // Pedagogical comprehension check questions
+        let compHtml = '';
+        if (story.narration && story.narration.pedagogical && story.narration.pedagogical.comprehensionQuestions && story.narration.pedagogical.comprehensionQuestions.length) {
+            const qs = story.narration.pedagogical.comprehensionQuestions;
+            compHtml = '<div class="story-comprehension-block">' +
+                '<h4 class="story-comp-title">Comprehension Check</h4>' +
+                '<div class="story-comp-list">' +
+                    qs.map((q, qIdx) =>
+                        '<div class="story-comp-item" data-comp-idx="' + qIdx + '">' +
+                            '<p class="story-comp-q">' + self.escapeHtml(q.question) + '</p>' +
+                            '<div class="story-comp-options">' +
+                                q.options.map((opt, oIdx) =>
+                                    '<button type="button" class="story-comp-opt" data-q="' + qIdx + '" data-opt="' + oIdx + '" data-correct="' + q.correctIndex + '">' +
+                                        self.escapeHtml(opt) +
+                                    '</button>'
+                                ).join('') +
+                            '</div>' +
+                            '<div class="story-comp-explanation" id="comp-exp-' + qIdx + '" hidden>' +
+                                self.escapeHtml(q.explanation || '') +
+                            '</div>' +
+                        '</div>'
+                    ).join('') +
+                '</div>' +
+            '</div>';
+        }
+        html += compHtml;
+
         // Reading XP is for finishing a text, so it needs an explicit end —
         // opening a story says nothing about having read it.
         const alreadyRead = hasReadStory(this.currentStoryId);
@@ -1344,6 +1559,36 @@ window.Reader = {
         '</div>';
 
         container.innerHTML = html;
+
+        if (hasNarration) {
+            StoryAudioPlayer.init(story, container);
+            container.querySelectorAll('.story-para-play-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const seek = parseFloat(btn.getAttribute('data-seek') || 0);
+                    StoryAudioPlayer.seekTo(seek);
+                });
+            });
+        }
+
+        container.querySelectorAll('.story-comp-opt').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const qIdx = parseInt(btn.getAttribute('data-q'), 10);
+                const correctIdx = parseInt(btn.getAttribute('data-correct'), 10);
+                const itemEl = btn.closest('.story-comp-item');
+                if (!itemEl) return;
+
+                itemEl.querySelectorAll('.story-comp-opt').forEach(b => {
+                    b.disabled = true;
+                    const bOpt = parseInt(b.getAttribute('data-opt'), 10);
+                    if (bOpt === correctIdx) b.classList.add('is-correct');
+                    else if (b === btn) b.classList.add('is-incorrect');
+                });
+
+                const expEl = itemEl.querySelector('#comp-exp-' + qIdx);
+                if (expEl) expEl.hidden = false;
+            });
+        });
 
         this.applyFontScale(this.getFontScale(), container);
         const downBtn = document.getElementById('reader-font-down');
@@ -1554,6 +1799,8 @@ window.Reader = {
     },
 
     closeStory() {
+        StoryAudioPlayer.teardown();
+
         if (window._storyScrollListener) {
             window.removeEventListener('scroll', window._storyScrollListener);
             window._storyScrollListener = null;
