@@ -73,6 +73,14 @@ active = Workshop.activeDriller();
 assert(active && active.id === 'writing', `Workshop.open('translation') must route to writing, got ${active ? active.id : 'null'}`);
 console.log('[PASS] Workshop legacy translation routing to writing verified.');
 
+// Verify hu-verb-studio is categorized as 'studios'
+Workshop.close();
+Workshop.open('hu-verb-studio');
+const huStudio = Workshop.activeDriller();
+assert(huStudio && huStudio.id === 'hu-verb-studio', 'hu-verb-studio should open');
+console.log('[PASS] Verb & Morphology Studio opens successfully.');
+
+
 
 // 4. Test GraderEngine with Oral Modality Context
 const { GraderEngine } = require('../../engine/grader');

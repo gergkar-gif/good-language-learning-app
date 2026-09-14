@@ -37,6 +37,15 @@ const Workshop = (function () {
             category: 'studios'
         },
         {
+            id: 'hu-verb-studio',
+            icon: 'hu-morphology',
+            title: 'Verb & Morphology Studio',
+            sub: 'Conjugation, verbal prefixes, suffixes, and word decomposition.',
+            containerId: 'hu-verb-studio-root',
+            langs: ['hu'],
+            category: 'studios'
+        },
+        {
             id: 'verbs',
             icon: 'verbs',
             title: 'Verb Driller',
@@ -45,15 +54,7 @@ const Workshop = (function () {
             langs: ['es'],
             category: 'foundations'
         },
-        {
-            id: 'hu-verb-studio',
-            icon: 'hu-morphology',
-            title: 'Verb & Morphology Studio',
-            sub: 'Conjugation, verbal prefixes, suffixes, and word decomposition.',
-            containerId: 'hu-verb-studio-root',
-            langs: ['hu'],
-            category: 'foundations'
-        },
+
         {
             id: 'listening',
             icon: 'listening',
