@@ -940,6 +940,22 @@ function reviewSpeakWord(btn) {
             _reviewSpeakingActive = false;
             if (btn) btn.classList.remove('is-recording');
             if (feedbackEl) {
+                const currentText = feedbackEl.textContent && feedbackEl.textContent !== '...' ? feedbackEl.textContent.trim() : '';
+                if (currentText && !currentText.startsWith('Could not') && !currentText.startsWith('Microphone')) {
+                    const evalResult = SpeechInput.evaluate(target, currentText);
+                    const safeTrans = (typeof esc === 'function' ? esc(currentText) : currentText);
+                    const replayBtnHtml = `<button type="button" class="review-speak-replay-btn ${_reviewUserAudioUrl ? '' : 'hidden'}" onclick="reviewPlayUserAudio()" aria-label="Listen to your recording">${typeof Art !== 'undefined' ? Art.icon('listening') : ''} Hear yourself</button>`;
+                    if (evalResult.isCorrect) {
+                        feedbackEl.className = 'review-speak-feedback is-correct';
+                        feedbackEl.innerHTML = `✓ "${safeTrans}" (${evalResult.accuracy}%) ${replayBtnHtml}`;
+                    } else {
+                        feedbackEl.className = 'review-speak-feedback is-wrong';
+                        feedbackEl.innerHTML = `✗ Heard "${safeTrans}" (${evalResult.accuracy}%) ${replayBtnHtml}`;
+                    }
+                    showAnswer();
+                    return;
+                }
+
                 feedbackEl.className = 'review-speak-feedback is-wrong';
                 if (err === 'permission-denied') {
                     feedbackEl.textContent = 'Microphone permission was denied. Please allow microphone access in browser settings.';

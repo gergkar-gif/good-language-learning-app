@@ -253,6 +253,66 @@ async function runTests() {
 
     console.log('[PASS] Recording automatically stops the moment learner gets 100% match without clicking mic.');
 
+    console.log('--- Test 6: Android mobile speech lifecycle (speech + subsequent OS no-speech error) ---');
+    let androidFinal = '';
+    let androidError = null;
+    SpeechInput.startListening({
+        target: 'Hola amigo cómo estás',
+        onFinal: (txt) => {
+            androidFinal = txt;
+        },
+        onError: (err) => {
+            androidError = err;
+        }
+    });
+
+    const androidRec = createdRecognitions[createdRecognitions.length - 1];
+    assert.ok(androidRec, 'Android recognition instance must exist');
+
+    // Simulate Android single-shot interim speech (partial, not 100% match so auto-stop does not fire)
+    androidRec.onresult({
+        resultIndex: 0,
+        results: [[{ transcript: 'Hola amigo', isFinal: false }]]
+    });
+    assert.strictEqual(SpeechInput.isListening(), true, 'Partial match must keep listening');
+
+    // On Android, silence after speech emits onerror with 'no-speech'
+    androidRec.onerror({ error: 'no-speech' });
+
+    // Verify it committed the speech and DID NOT report an error!
+    assert.strictEqual(androidError, null, 'Spoken voice followed by silence must NEVER trigger an error');
+    assert.strictEqual(androidFinal, 'Hola amigo', 'Spoken voice followed by silence must successfully commit final transcript');
+    assert.strictEqual(SpeechInput.isListening(), false, 'SpeechInput must be stopped after committing');
+    console.log('[PASS] Android silence following speech commits transcript cleanly without error.');
+
+    console.log('--- Test 7: Android onend after speech commits without restarting loop ---');
+    let onendFinal = '';
+    let onendError = null;
+    const initialRecCount = createdRecognitions.length;
+    SpeechInput.startListening({
+        target: 'Buenos días',
+        onFinal: (txt) => {
+            onendFinal = txt;
+        },
+        onError: (err) => {
+            onendError = err;
+        }
+    });
+
+    const onendRec = createdRecognitions[createdRecognitions.length - 1];
+    onendRec.onresult({
+        resultIndex: 0,
+        results: [[{ transcript: 'Buenos', isFinal: false }]]
+    });
+
+    // Mobile recognition closes onend after utterance
+    onendRec.onend();
+
+    assert.strictEqual(onendError, null, 'onend after speech must not trigger error');
+    assert.strictEqual(onendFinal, 'Buenos', 'onend after speech must commit captured speech');
+    assert.strictEqual(createdRecognitions.length, initialRecCount + 1, 'Must NOT spin up new recognition instance when speech was already spoken');
+    console.log('[PASS] onend after speech commits immediately and avoids duplicate instance loops.');
+
     console.log('\n[ALL PASS] SpeechInput lifecycle test suite passed.');
 }
 

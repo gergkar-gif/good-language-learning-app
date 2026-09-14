@@ -2388,6 +2388,17 @@ function lessonToggleSpeaking(btn) {
                 _lessonSpeakingRecording = false;
                 if (btn) btn.classList.remove('sp-recording');
                 if (statusEl) statusEl.textContent = 'Tap to speak';
+
+                // Defensive guard: if user already spoke and transcript was captured,
+                // evaluate the captured speech rather than showing a spurious "No voice heard" error.
+                const currentText = stepState.transcript || (liveEl && liveEl.textContent && liveEl.textContent !== '...' ? liveEl.textContent.trim() : '');
+                if (currentText) {
+                    stepState.transcript = currentText;
+                    enableCheck();
+                    lessonCheckSpeaking();
+                    return;
+                }
+
                 if (err === 'permission-denied') {
                     setFeedback(false, 'Microphone permission was denied. Please allow microphone access in your browser settings.');
                 } else if (err === 'no-speech') {

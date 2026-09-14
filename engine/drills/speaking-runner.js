@@ -254,6 +254,15 @@ const SpeakingRunner = (function () {
                 console.warn('SpeakingRunner error:', err);
                 _stopRecording();
 
+                // Defensive guard: if user already spoke and text was captured, evaluate it
+                const liveTextEl = _container ? _container.querySelector('.sp-live-transcript') : null;
+                const liveText = liveTextEl ? liveTextEl.textContent.trim() : '';
+                if (liveText && liveText !== '...') {
+                    const evalResult = SpeechInput.evaluate(_exercise.spanish, liveText);
+                    _finishEvaluation(evalResult);
+                    return;
+                }
+
                 // If recognition failed or not supported, offer self-eval
                 if (err === 'permission-denied') {
                     _setFeedback(false, 'Microphone permission was denied. Please allow microphone access in your browser settings.');

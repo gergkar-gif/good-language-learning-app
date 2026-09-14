@@ -90,6 +90,7 @@ const SpeechInput = (function () {
     let _onAudioReadyCallback = null;
     let _accumulatedFinal = '';
     let _currentInterim = '';
+    let _bestTranscript = '';
 
     function _cleanupTimers() {
         if (_finishTimeout) {
@@ -245,6 +246,7 @@ const SpeechInput = (function () {
         _recordedChunks = [];
         _accumulatedFinal = '';
         _currentInterim = '';
+        _bestTranscript = '';
         _hasSpoken = false;
         _isListening = true;
         _listenStartTime = Date.now();
@@ -297,9 +299,13 @@ const SpeechInput = (function () {
                     const recognition = new RecognitionClass();
                     recognition.lang = lang;
 
-                    // WebKit on iOS fails if continuous: true; Chrome desktop works well with continuous: true
-                    const isIOS = typeof navigator !== 'undefined' && (/iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1));
-                    recognition.continuous = !isIOS;
+                    // Mobile browsers (both iOS WebKit and Android Chrome) require single-shot recognition (continuous: false).
+                    // Android Chrome does not support continuous: true reliably and aborts or fires premature no-speech errors.
+                    const isMobile = typeof navigator !== 'undefined' && (
+                        /iPad|iPhone|iPod|Android/i.test(navigator.userAgent) ||
+                        (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)
+                    );
+                    recognition.continuous = !isMobile;
                     recognition.interimResults = true;
                     recognition.maxAlternatives = 1;
 
@@ -329,6 +335,7 @@ const SpeechInput = (function () {
 
                         if (combined) {
                             _hasSpoken = true;
+                            _bestTranscript = combined;
                             if (_initialSilenceTimeout) {
                                 clearTimeout(_initialSilenceTimeout);
                                 _initialSilenceTimeout = null;
@@ -361,23 +368,20 @@ const SpeechInput = (function () {
 
                     recognition.onerror = event => {
                         console.warn('SpeechInput recognition error:', event.error);
-                        const combined = (_accumulatedFinal + ' ' + _currentInterim).trim();
+                        const combined = (_accumulatedFinal + ' ' + _currentInterim).trim() || _bestTranscript || '';
+
+                        // If the learner already spoke or a transcript was captured, any subsequent silence / no-speech
+                        // error from the OS simply marks the end of their speech — never report an error!
+                        if (_hasSpoken || combined) {
+                            stopListening();
+                            return;
+                        }
 
                         if (event.error === 'no-speech') {
-                            // In manual mode, silence between sentences is normal; keep listening
                             if (manualStop) return;
 
-                            // If learner already spoke in auto mode, silence means they are done
-                            if (combined) {
-                                if (!_finishTimeout) {
-                                    _finishTimeout = setTimeout(() => {
-                                        stopListening();
-                                    }, 1200);
-                                }
-                                return;
-                            }
                             // If learner hasn't spoken yet and still within initial grace period, keep waiting
-                            if (Date.now() - _listenStartTime < (manualStop ? 30000 : 10000)) {
+                            if (Date.now() - _listenStartTime < 10000) {
                                 return;
                             }
                             stopListening();
@@ -386,21 +390,11 @@ const SpeechInput = (function () {
                             stopListening();
                             onError('permission-denied');
                         } else if (event.error === 'aborted') {
-                            if (combined && _isListening) {
-                                stopListening();
-                            }
+                            stopListening();
                         } else if (event.error === 'network') {
-                            if (combined) {
-                                stopListening();
-                                return;
-                            }
                             stopListening();
                             onError('network');
                         } else {
-                            if (combined) {
-                                stopListening();
-                                return;
-                            }
                             stopListening();
                             onError(event.error || 'recognition-failed');
                         }
@@ -409,19 +403,27 @@ const SpeechInput = (function () {
                     recognition.onend = () => {
                         if (!_isListening || _activeRecognition !== recognition) return;
 
-                        // Create a fresh instance if user is still actively speaking or within silence buffer
-                        // (iOS Safari continuous=false closes on pause; reusing an ended instance throws InvalidStateError)
-                        try {
-                            _startRecognitionInstance();
-                        } catch (e) {
-                            if (_hasSpoken) {
-                                if (!_finishTimeout) {
-                                    _finishTimeout = setTimeout(() => {
-                                        stopListening();
-                                    }, 1000);
-                                }
+                        const combined = (_accumulatedFinal + ' ' + _currentInterim).trim() || _bestTranscript || '';
+
+                        // If learner already spoke, their utterance has completed — commit the answer immediately
+                        if (_hasSpoken || combined) {
+                            stopListening();
+                            return;
+                        }
+
+                        // If learner hasn't spoken yet and still within initial grace period, keep listening
+                        if (Date.now() - _listenStartTime < (manualStop ? 30000 : 10000)) {
+                            try {
+                                _startRecognitionInstance();
+                                return;
+                            } catch (e) {
+                                console.warn('SpeechInput: recognition restart threw:', e);
                             }
                         }
+
+                        // Grace period expired without speech
+                        stopListening();
+                        onError('no-speech');
                     };
 
                     _activeRecognition = recognition;
@@ -457,9 +459,10 @@ const SpeechInput = (function () {
         }
         _stopTracks();
 
-        const finalText = (_accumulatedFinal + ' ' + _currentInterim).trim();
+        const finalText = (_accumulatedFinal + ' ' + _currentInterim).trim() || _bestTranscript || '';
         _accumulatedFinal = '';
         _currentInterim = '';
+        _bestTranscript = '';
 
         if (wasListening && _onFinalCallback) {
             const cb = _onFinalCallback;
