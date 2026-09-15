@@ -255,6 +255,25 @@ const HungarianMorphology = (function () {
         ['juk', 3, 'pl', 'sg'], ['jük', 3, 'pl', 'sg'], ['uk', 3, 'pl', 'sg'], ['ük', 3, 'pl', 'sg']
     ].sort((a, b) => b[0].length - a[0].length);
 
+    // The bare (no "j") 3rd-person possessive suffixes above are only ever
+    // correct after a CONSONANT-final stem ("vár" -> "vára", "ház" ->
+    // "háza"/"házuk") — a vowel-final stem always takes the "j"-glide
+    // variant instead ("autó" -> "autója"/"autójuk", never "autóa"/
+    // "autóuk", which aren't real Hungarian words). Every other person/
+    // number's suffix starts with a consonant (m/d/nk/tok/tek/…), so
+    // there's no vowel-vowel hiatus and no such restriction — this
+    // ambiguity is unique to 3rd person, where the suffix itself starts
+    // with a vowel. Without this check, stripping e.g. bare "-a" from
+    // "millióa" (itself the remainder of "millióan" after a superessive
+    // "-n" strip) wrongly resolves to "millió" + "his/her" + "on", when
+    // "millióa" was never a real word to begin with — caught from a
+    // learner's bug report that "millióan" translated as nonsense.
+    const HUN_VOWELS = 'aáeéiíoóöőuúüű';
+    const BARE_3RD_POSSESSIVE_NO_J = { a: 1, e: 1, á: 1, é: 1, uk: 1, ük: 1 };
+    function endsInVowel(str) {
+        return !!str && HUN_VOWELS.indexOf(str.charAt(str.length - 1)) !== -1;
+    }
+
     const PLURAL_SUFFIXES = ['ak', 'ok', 'ek', 'ök', 'k'];
 
     // Present/past indefinite personal endings. A verb's dictionary lemma
@@ -1233,6 +1252,7 @@ const HungarianMorphology = (function () {
             // exactly what the resolved reading actually found.
             for (const [possSuffix, person, ownerNumber, possessedNumber] of POSSESSIVE_SUFFIXES) {
                 const deeper = strip(remainder, possSuffix);
+                if (BARE_3RD_POSSESSIVE_NO_J[possSuffix] && endsInVowel(deeper)) continue;
                 const deeperResolved = resolveNominal(dictionary, deeper);
                 if (!deeperResolved || !matches(deeperResolved.lemma)) continue;
                 const base = gloss(deeperResolved.sense);
@@ -1250,6 +1270,7 @@ const HungarianMorphology = (function () {
 
         for (const [suffix, person, ownerNumber, possessedNumber] of POSSESSIVE_SUFFIXES) {
             const remainder = strip(word, suffix);
+            if (BARE_3RD_POSSESSIVE_NO_J[suffix] && endsInVowel(remainder)) continue;
             const resolved = resolveNominal(dictionary, remainder);
             if (!resolved || !matches(resolved.lemma)) continue;
             const base = gloss(resolved.sense);
@@ -1734,6 +1755,7 @@ const HungarianMorphology = (function () {
             // pre-baked but "eredmény" the lemma still is)
             for (const [possSuffix, person, ownerNumber, possessedNumber] of POSSESSIVE_SUFFIXES) {
                 const deeper = strip(remainder, possSuffix);
+                if (BARE_3RD_POSSESSIVE_NO_J[possSuffix] && endsInVowel(deeper)) continue;
                 const deeperResolved = resolveNominal(dictionary, deeper);
                 if (deeperResolved) {
                     addFromLemma(deeperResolved.lemma, deeperResolved.sense,
@@ -1746,6 +1768,7 @@ const HungarianMorphology = (function () {
         // static index's frequency cutoff
         for (const [suffix, person, ownerNumber, possessedNumber] of POSSESSIVE_SUFFIXES) {
             const remainder = strip(word, suffix);
+            if (BARE_3RD_POSSESSIVE_NO_J[suffix] && endsInVowel(remainder)) continue;
             const resolved = resolveNominal(dictionary, remainder);
             if (!resolved) continue;
             addFromLemma(resolved.lemma, resolved.sense, describePossessive(person, ownerNumber, possessedNumber));

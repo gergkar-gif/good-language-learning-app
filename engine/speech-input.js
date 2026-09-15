@@ -493,8 +493,16 @@ const SpeechInput = (function () {
             .trim();
     }
 
+    // Splits on whitespace AND a colon between digits before anything else —
+    // speech recognition commonly transcribes a spoken time ("seis y media")
+    // as a compact "6:30", which has no whitespace at all. Without this, that
+    // whole "6:30" survives as one raw token whose normalized form (via
+    // normalizeForSpeech, which turns ":" into a space) becomes the two-word
+    // string "6 30" — never equal to a single target token like "seis", so
+    // isWordMatch's own number/digit tolerance below never gets a chance to
+    // apply and a correctly-spoken time reads as entirely missed.
     function tokenize(text) {
-        const rawTokens = String(text || '').trim().split(/\s+/).filter(Boolean);
+        const rawTokens = String(text || '').trim().replace(/(\d):(\d)/g, '$1 $2').split(/\s+/).filter(Boolean);
         return rawTokens.map(raw => ({
             raw,
             norm: normalizeForSpeech(raw)
