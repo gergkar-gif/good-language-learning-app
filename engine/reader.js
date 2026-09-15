@@ -524,108 +524,272 @@ function _matchesTerm(haystack, term) {
 }
 
 // ============================================
-// STORY AUDIO PLAYER (AI Narration & Alignment)
+// SUBSTACK-STYLE STORY AUDIO PLAYER (Online Google Cloud TTS / Neural)
 // ============================================
 const StoryAudioPlayer = {
-    audio: null,
     story: null,
+    paragraphs: [],
+    currentParaIndex: 0,
     isPlaying: false,
     speed: 1.0,
-    speeds: [0.8, 1.0, 1.2],
+    speeds: [0.8, 1.0, 1.2, 1.5],
+    audioCache: {},
+    activeAudio: null,
+    isOnline: (typeof navigator !== 'undefined' && typeof navigator.onLine === 'boolean') ? navigator.onLine : true,
+    ttsEndpoint: 'https://parlour-tts.gergkar.workers.dev/synthesize',
 
     init(story, container) {
         this.teardown();
-        if (!story || !story.narration || !story.narration.audioFile) return;
+        if (!story || !story.paragraphs || !story.paragraphs.length) return;
 
         this.story = story;
-        const lang = (typeof Lang !== 'undefined') ? Lang.code() : 'es';
-        const audioPath = 'content/' + lang + '/stories/' + story.narration.audioFile;
-
-        if (typeof Audio !== 'undefined') {
-            this.audio = new Audio();
-            this.audio.src = audioPath;
-            this.audio.preload = 'metadata';
-        }
+        this.paragraphs = story.paragraphs;
+        this.currentParaIndex = 0;
+        this.audioCache = {};
         this.speed = 1.0;
+
+        const playerEl = document.getElementById('story-substack-player');
+        if (!playerEl) return;
+
+        this.updateOnlineState();
+
+        this._onOnline = () => this.updateOnlineState();
+        this._onOffline = () => this.updateOnlineState();
+        window.addEventListener('online', this._onOnline);
+        window.addEventListener('offline', this._onOffline);
 
         const playBtn = document.getElementById('story-audio-play-btn');
         const slider = document.getElementById('story-audio-slider');
-        const timeEl = document.getElementById('story-audio-time');
         const speedBtn = document.getElementById('story-audio-speed-btn');
 
         if (speedBtn) {
             speedBtn.textContent = this.speed.toFixed(1) + '×';
-            speedBtn.addEventListener('click', () => {
+            speedBtn.onclick = () => {
                 const nextIdx = (this.speeds.indexOf(this.speed) + 1) % this.speeds.length;
                 this.speed = this.speeds[nextIdx];
-                if (this.audio) this.audio.playbackRate = this.speed;
+                if (this.activeAudio) this.activeAudio.playbackRate = this.speed;
                 speedBtn.textContent = this.speed.toFixed(1) + '×';
-            });
+            };
         }
 
         if (playBtn) {
-            playBtn.addEventListener('click', () => this.togglePlay());
+            playBtn.onclick = () => this.togglePlay();
         }
 
         if (slider) {
-            slider.addEventListener('input', (e) => {
-                if (this.audio && this.audio.duration) {
-                    const seekTime = (parseFloat(e.target.value) / 100) * this.audio.duration;
-                    this.audio.currentTime = seekTime;
-                }
+            slider.oninput = (e) => {
+                const targetIdx = Math.min(
+                    this.paragraphs.length - 1,
+                    Math.floor((parseFloat(e.target.value) / 100) * this.paragraphs.length)
+                );
+                this.playParagraph(targetIdx);
+            };
+        }
+
+        // Wire paragraph seek buttons
+        const root = container || document.getElementById('reader-content');
+        if (root) {
+            const seekBtns = root.querySelectorAll('.story-para-play-btn');
+            seekBtns.forEach(btn => {
+                btn.onclick = (e) => {
+                    e.stopPropagation();
+                    const pIdx = parseInt(btn.getAttribute('data-para-index'), 10);
+                    if (!isNaN(pIdx)) {
+                        this.playParagraph(pIdx);
+                    }
+                };
             });
         }
 
-        if (this.audio) {
-            this.audio.playbackRate = this.speed;
+        this.updateProgressUI();
+    },
 
-            this.audio.addEventListener('timeupdate', () => {
-                if (!this.audio) return;
-                const cur = this.audio.currentTime;
-                const dur = this.audio.duration || (this.story && this.story.narration && this.story.narration.durationSeconds) || 0;
+    updateOnlineState() {
+        this.isOnline = (typeof navigator !== 'undefined' && typeof navigator.onLine === 'boolean') ? navigator.onLine : true;
+        const playerEl = document.getElementById('story-substack-player');
+        if (!playerEl) return;
 
-                if (slider && dur > 0) {
-                    slider.value = (cur / dur) * 100;
-                }
-                if (timeEl) {
-                    timeEl.textContent = this.formatTime(cur) + ' / ' + this.formatTime(dur);
-                }
-
-                this.updateHighlight(cur);
-            });
-
-            this.audio.addEventListener('ended', () => {
-                this.isPlaying = false;
-                this.updatePlayBtn();
-                this.clearHighlight();
-            });
-
-            this.audio.addEventListener('pause', () => {
-                this.isPlaying = false;
-                this.updatePlayBtn();
-            });
-
-            this.audio.addEventListener('play', () => {
-                this.isPlaying = true;
-                this.updatePlayBtn();
-            });
+        if (this.isOnline) {
+            playerEl.classList.remove('is-offline');
+            playerEl.removeAttribute('hidden');
+        } else {
+            if (this.isPlaying) this.pause();
+            playerEl.classList.add('is-offline');
+            playerEl.setAttribute('hidden', '');
         }
     },
 
     togglePlay() {
-        if (!this.audio) return;
-        if (this.audio.paused) {
-            this.audio.play().catch(e => console.warn('Audio playback failed:', e));
+        if (!this.isOnline) return;
+        if (this.isPlaying) {
+            this.pause();
         } else {
-            this.audio.pause();
+            this.playParagraph(this.currentParaIndex);
         }
     },
 
-    seekTo(seconds) {
-        if (!this.audio) return;
-        this.audio.currentTime = seconds;
-        if (this.audio.paused) {
-            this.audio.play().catch(e => console.warn('Audio playback failed:', e));
+    pause() {
+        this.isPlaying = false;
+        if (this.activeAudio) {
+            this.activeAudio.pause();
+        }
+        if (typeof window.speechSynthesis !== 'undefined') {
+            window.speechSynthesis.cancel();
+        }
+        this.updatePlayBtn();
+    },
+
+    async playParagraph(idx) {
+        if (!this.isOnline || idx < 0 || idx >= this.paragraphs.length) {
+            this.finish();
+            return;
+        }
+
+        this.currentParaIndex = idx;
+        this.isPlaying = true;
+        this.updatePlayBtn();
+        this.updateHighlight(idx);
+        this.updateProgressUI();
+
+        const para = this.paragraphs[idx];
+        const speakerTag = document.getElementById('ssp-speaker-tag');
+        const courseLang = (typeof Lang !== 'undefined') ? Lang.code() : 'es';
+        const paraLang = para.lang || courseLang;
+        const speaker = para.speaker || 'Narrator';
+
+        if (speakerTag) {
+            const langLabel = paraLang === 'en' ? 'English Journey' : (paraLang === 'hu' ? 'Hungarian' : 'Spanish');
+            speakerTag.textContent = `${speaker} (${langLabel})`;
+        }
+
+        // Clean speech text with phonetic adaptation: Károly is pronounced Károy
+        let text = para.text || '';
+        text = text.replace(/\bKároly\b/g, 'Károy').replace(/\bKaroly\b/g, 'Károy');
+
+        try {
+            const audio = await this.getAudioForParagraph(idx, text, paraLang, speaker);
+            if (!this.isPlaying || this.currentParaIndex !== idx) return;
+
+            if (this.activeAudio) {
+                this.activeAudio.pause();
+            }
+
+            this.activeAudio = audio;
+            audio.playbackRate = this.speed;
+            audio.currentTime = 0;
+
+            audio.onended = () => {
+                if (this.isPlaying && this.currentParaIndex === idx) {
+                    this.playParagraph(idx + 1);
+                }
+            };
+
+            await audio.play();
+
+            // Pre-fetch next paragraph in background
+            if (idx + 1 < this.paragraphs.length) {
+                const nextPara = this.paragraphs[idx + 1];
+                let nextText = (nextPara.text || '').replace(/\bKároly\b/g, 'Károy').replace(/\bKaroly\b/g, 'Károy');
+                this.getAudioForParagraph(idx + 1, nextText, nextPara.lang || courseLang, nextPara.speaker || 'Narrator').catch(() => {});
+            }
+        } catch (err) {
+            console.warn('Online TTS stream unavailable; using browser speech fallback:', err);
+            this.fallbackSpeak(text, paraLang, idx);
+        }
+    },
+
+    async getAudioForParagraph(idx, text, lang, speaker) {
+        if (this.audioCache[idx]) return this.audioCache[idx];
+
+        let voiceName = 'es-ES-Studio-C';
+        let languageCode = 'es-ES';
+
+        if (lang === 'en') {
+            languageCode = 'en-US';
+            voiceName = (speaker === 'Carlos' || speaker === 'Károly') ? 'en-US-Journey-O' : 'en-US-Journey-F';
+        } else if (lang === 'hu') {
+            languageCode = 'hu-HU';
+            voiceName = 'hu-HU-Wavenet-A';
+        } else {
+            languageCode = 'es-ES';
+            voiceName = (speaker === 'Carlos' || speaker === 'Juan') ? 'es-ES-Neural2-B' : 'es-ES-Studio-C';
+        }
+
+        const endpoint = (typeof window !== 'undefined' && window.PARLOUR_TTS_ENDPOINT) ||
+                         localStorage.getItem('parlour_tts_endpoint') ||
+                         this.ttsEndpoint;
+
+        const res = await fetch(endpoint, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                text: text,
+                lang: lang,
+                languageCode: languageCode,
+                voiceName: voiceName,
+                speakingRate: 1.0,
+                pitch: 0.0
+            })
+        });
+
+        if (!res.ok) {
+            throw new Error(`TTS worker error: ${res.status}`);
+        }
+
+        const data = await res.json();
+        if (!data.audioContent) {
+            throw new Error('No audioContent in response');
+        }
+
+        const audio = new Audio('data:audio/mp3;base64,' + data.audioContent);
+        audio.preload = 'auto';
+        this.audioCache[idx] = audio;
+        return audio;
+    },
+
+    fallbackSpeak(text, lang, idx) {
+        if (typeof window.speechSynthesis === 'undefined') return;
+        window.speechSynthesis.cancel();
+
+        const utter = new SpeechSynthesisUtterance(text);
+        utter.lang = lang === 'en' ? 'en-US' : (lang === 'hu' ? 'hu-HU' : 'es-ES');
+        utter.rate = this.speed;
+
+        utter.onend = () => {
+            if (this.isPlaying && this.currentParaIndex === idx) {
+                this.playParagraph(idx + 1);
+            }
+        };
+
+        window.speechSynthesis.speak(utter);
+    },
+
+    updateHighlight(idx) {
+        document.querySelectorAll('.story-paragraph.is-narrating').forEach(el => el.classList.remove('is-narrating'));
+        const activeEl = document.querySelector(`.story-paragraph[data-para-index="${idx}"]`);
+        if (activeEl) {
+            activeEl.classList.add('is-narrating');
+            activeEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+    },
+
+    updateProgressUI() {
+        const slider = document.getElementById('story-audio-slider');
+        const curEl = document.getElementById('story-audio-time-cur');
+        const remEl = document.getElementById('story-audio-time-rem');
+
+        const total = this.paragraphs.length;
+        const cur = this.currentParaIndex + 1;
+
+        if (slider) {
+            slider.value = total > 1 ? (this.currentParaIndex / (total - 1)) * 100 : 0;
+        }
+        if (curEl) {
+            curEl.textContent = `${cur}/${total}`;
+        }
+        if (remEl) {
+            const rem = total - cur;
+            remEl.textContent = rem > 0 ? `-${rem} left` : 'Done';
         }
     },
 
@@ -633,25 +797,17 @@ const StoryAudioPlayer = {
         const btn = document.getElementById('story-audio-play-btn');
         if (!btn || typeof Art === 'undefined') return;
         btn.innerHTML = Art.icon(this.isPlaying ? 'pause' : 'play');
-        btn.setAttribute('aria-label', this.isPlaying ? 'Pause narration' : 'Play narration');
+        btn.setAttribute('aria-label', this.isPlaying ? 'Pause reading' : 'Play reading');
     },
 
-    updateHighlight(curTime) {
-        if (!this.story || !this.story.narration || !this.story.narration.segments) return;
-        const seg = this.story.narration.segments.find(s => curTime >= s.startTime && curTime < s.endTime);
-        const allParas = document.querySelectorAll('.story-paragraph');
-        allParas.forEach(el => el.classList.remove('is-narrating'));
-
-        if (seg) {
-            const activeEl = document.querySelector(`.story-paragraph[data-para-index="${seg.paraIndex}"]`);
-            if (activeEl) {
-                activeEl.classList.add('is-narrating');
-            }
-        }
-    },
-
-    clearHighlight() {
+    finish() {
+        this.isPlaying = false;
+        this.currentParaIndex = 0;
+        this.updatePlayBtn();
         document.querySelectorAll('.story-paragraph.is-narrating').forEach(el => el.classList.remove('is-narrating'));
+        const speakerTag = document.getElementById('ssp-speaker-tag');
+        if (speakerTag) speakerTag.textContent = 'Finished';
+        this.updateProgressUI();
     },
 
     formatTime(sec) {
@@ -661,17 +817,23 @@ const StoryAudioPlayer = {
         return m + ':' + (rem < 10 ? '0' : '') + rem;
     },
 
-    teardown() {
-        if (this.audio) {
-            try {
-                this.audio.pause();
-                this.audio.src = '';
-            } catch (e) {}
-            this.audio = null;
+    seekTo(sec) {
+        if (!this.story || !this.story.narration || !this.story.narration.segments) return;
+        const seg = this.story.narration.segments.find(s => sec >= s.startTime && sec < s.endTime);
+        if (seg && typeof seg.paraIndex === 'number') {
+            this.playParagraph(seg.paraIndex);
         }
+    },
+
+    teardown() {
+        this.pause();
+        this.audioCache = {};
+        this.activeAudio = null;
         this.story = null;
-        this.isPlaying = false;
-        this.clearHighlight();
+        this.paragraphs = [];
+        this.currentParaIndex = 0;
+        if (this._onOnline) window.removeEventListener('online', this._onOnline);
+        if (this._onOffline) window.removeEventListener('offline', this._onOffline);
     }
 };
 
@@ -1412,21 +1574,26 @@ window.Reader = {
             </div>
         `;
 
-        const hasNarration = !!(story.narration && story.narration.audioFile);
-        let audioBarHtml = '';
+        const hasNarration = !!(story.paragraphs && story.paragraphs.length);
+        const isOnline = (typeof navigator !== 'undefined' && typeof navigator.onLine === 'boolean') ? navigator.onLine : true;
+        let substackPlayerHtml = '';
         if (hasNarration) {
-            const dur = story.narration.durationSeconds || 0;
-            const durFormatted = StoryAudioPlayer.formatTime(dur);
-            audioBarHtml = `
-                <div class="story-audio-bar" id="story-audio-bar">
-                    <button type="button" class="story-audio-play-btn" id="story-audio-play-btn" aria-label="Play narration">
+            substackPlayerHtml = `
+                <div class="story-substack-player${isOnline ? '' : ' is-offline'}" id="story-substack-player"${isOnline ? '' : ' hidden'} role="region" aria-label="Audio Narration Player">
+                    <button type="button" class="ssp-play-btn" id="story-audio-play-btn" aria-label="Play reading">
                         ${Art.icon('play')}
                     </button>
-                    <div class="story-audio-slider-wrap">
-                        <input type="range" class="story-audio-slider" id="story-audio-slider" min="0" max="100" value="0" step="0.1" aria-label="Audio scrub">
+                    <div class="ssp-info">
+                        <div class="ssp-speaker" id="ssp-speaker-tag">Ready to read</div>
+                        <div class="ssp-slider-wrap">
+                            <input type="range" class="ssp-slider" id="story-audio-slider" min="0" max="100" value="0" step="1" aria-label="Paragraph progress">
+                        </div>
                     </div>
-                    <span class="story-audio-time" id="story-audio-time">0:00 / ${durFormatted}</span>
-                    <button type="button" class="story-audio-speed-btn" id="story-audio-speed-btn" aria-label="Playback speed" title="Playback speed">1.0×</button>
+                    <div class="ssp-meta">
+                        <span class="ssp-time-cur" id="story-audio-time-cur">1/${story.paragraphs.length}</span>
+                        <span class="ssp-time-rem" id="story-audio-time-rem"></span>
+                    </div>
+                    <button type="button" class="ssp-speed-btn" id="story-audio-speed-btn" aria-label="Playback speed" title="Playback speed">1.0×</button>
                 </div>
             `;
         }
@@ -1442,8 +1609,7 @@ window.Reader = {
                 '<button class="btn-back" id="reader-back-btn">&larr; Back</button>' +
             '</div>' +
         '</div>' +
-        '<div class="story-scroll-track" aria-hidden="true"><div class="story-scroll-bar" id="story-scroll-bar"></div></div>' +
-        audioBarHtml;
+        '<div class="story-scroll-track" aria-hidden="true"><div class="story-scroll-bar" id="story-scroll-bar"></div></div>';
 
         html += '<div class="story-body">';
 
@@ -1468,13 +1634,9 @@ window.Reader = {
                 const bodyHtml = isTargetLanguage ? self.makeClickable(para.text) : self.escapeHtml(para.text);
                 
                 let speechHtml = '';
-                if (hasNarration && story.narration.segments) {
-                    const seg = story.narration.segments.find(s => s.paraIndex === idx);
-                    if (seg) {
-                        speechHtml = `<button type="button" class="story-para-play-btn speak-btn" data-seek="${seg.startTime}" aria-label="Listen from this paragraph" title="Listen from here">${Art.icon('listening')}</button>`;
-                    }
-                }
-                if (!speechHtml && isTargetLanguage) {
+                if (hasNarration) {
+                    speechHtml = `<button type="button" class="story-para-play-btn speak-btn" data-para-index="${idx}" aria-label="Listen to this paragraph" title="Listen to this paragraph">${Art.icon('listening')}</button>`;
+                } else if (isTargetLanguage) {
                     speechHtml = Speech.button(para.text, 'Listen to this paragraph');
                 }
 
@@ -1556,17 +1718,12 @@ window.Reader = {
             '</button>' +
         '</div>';
 
+        html += substackPlayerHtml;
+
         container.innerHTML = html;
 
         if (hasNarration) {
             StoryAudioPlayer.init(story, container);
-            container.querySelectorAll('.story-para-play-btn').forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    const seek = parseFloat(btn.getAttribute('data-seek') || 0);
-                    StoryAudioPlayer.seekTo(seek);
-                });
-            });
         }
 
         container.querySelectorAll('.story-comp-opt').forEach(btn => {

@@ -117,7 +117,7 @@ def build_stories(lang="es", ref_to_unit=None):
                 entry["topics"] = clean_topics
             if keywords:
                 entry["keywords"] = keywords
-            if data.get("narration") and data["narration"].get("audioFile"):
+            if data.get("narration"):
                 entry["hasAudio"] = True
                 if data["narration"].get("durationSeconds"):
                     entry["audioDuration"] = data["narration"].get("durationSeconds")

@@ -116,7 +116,7 @@ const Speech = (function () {
     // arrows and dots are typography, not speech. Bracketed hints are the
     // exercise talking to the learner in English, so they go too.
     function sayable(text) {
-        return String(text || '')
+        let s = String(text || '')
             .replace(/\([^)]*\)/g, ' ')
             .replace(/[→·|]/g, ', ')
             .replace(/_{2,}/g, ' ')
@@ -124,6 +124,9 @@ const Speech = (function () {
             .replace(/\s+([,.;:!?])/g, '$1')
             .replace(/\s+/g, ' ')
             .trim();
+        // Hungarian phonetic adjustment: 'ly' represents /j/ (sounds like 'y')
+        s = s.replace(/\bKároly\b/g, 'Károy').replace(/\bKaroly\b/g, 'Károy');
+        return s;
     }
 
     function speak(text, options) {

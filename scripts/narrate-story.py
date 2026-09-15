@@ -322,7 +322,11 @@ async def synthesize_story_neural(story_data, output_mp3_path, course_lang="es")
         voice = get_speaker_voice(speaker, para_lang, course_lang)
         rate_str = "+0%" if para_lang == "en" else pacing["rate_str"]
 
-        comm = edge_tts.Communicate(text, voice, rate=rate_str)
+        # Phonetic adjustment: Károly is pronounced "Károy" (Hungarian ly = /j/)
+        synth_text = re.sub(r'\bKároly\b', 'Károy', text)
+        synth_text = re.sub(r'\bKaroly\b', 'Károy', synth_text)
+
+        comm = edge_tts.Communicate(synth_text, voice, rate=rate_str)
         dur = 0.0
         seg_audio = bytearray()
 

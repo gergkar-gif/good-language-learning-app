@@ -1,5 +1,5 @@
 // ==========================================================
-// Unit Tests: AI-Aware Story Narration & Alignment
+// Unit Tests: Online Substack-Style Story Narration & Alignment
 // ==========================================================
 const assert = require('assert');
 const fs = require('fs');
@@ -11,17 +11,17 @@ assert(fs.existsSync(storyPath), 'Story file must exist');
 
 const story = JSON.parse(fs.readFileSync(storyPath, 'utf8'));
 assert(story.narration, 'Story must contain narration block');
-assert(story.narration.audioFile, 'Narration must define audioFile');
 assert.strictEqual(typeof story.narration.durationSeconds, 'number', 'durationSeconds must be a number');
 assert(story.narration.durationSeconds > 0, 'durationSeconds must be positive');
-console.log('[PASS] Story JSON contains valid narration block with audioFile:', story.narration.audioFile);
+assert.strictEqual(story.narration.audioFile, undefined, 'Narration must not reference static disk audioFile');
+console.log('[PASS] Story JSON contains valid narration block with dynamic streaming config.');
 
-console.log('\n--- Test 2: Audio File Asset Verification on Disk ---');
-const audioDiskPath = path.join(__dirname, '../../content/es/stories', story.narration.audioFile);
-assert(fs.existsSync(audioDiskPath), `Audio file must exist at ${audioDiskPath}`);
-const stat = fs.statSync(audioDiskPath);
-assert(stat.size > 10000, `Audio file should be non-empty (size: ${stat.size} bytes)`);
-console.log(`[PASS] Audio file verified on disk: ${story.narration.audioFile} (${(stat.size / 1024).toFixed(1)} KB)`);
+console.log('\n--- Test 2: In-Memory / Cloudflare TTS Architecture (No Git Audio Bloat) ---');
+const esAudioDir = path.join(__dirname, '../../content/es/stories/audio');
+const huAudioDir = path.join(__dirname, '../../content/hu/stories/audio');
+assert(!fs.existsSync(esAudioDir), 'No static Spanish audio directory should exist in repo');
+assert(!fs.existsSync(huAudioDir), 'No static Hungarian audio directory should exist in repo');
+console.log('[PASS] Verified zero static audio files in repo (lightweight streaming architecture).');
 
 console.log('\n--- Test 3: Segment Alignment and Speaker Roles ---');
 assert(Array.isArray(story.narration.segments), 'Segments must be an array');
@@ -42,7 +42,6 @@ story.narration.segments.forEach((seg, i) => {
 console.log(`[PASS] Verified ${story.narration.segments.length} aligned narration segments.`);
 
 console.log('\n--- Test 4: Active Segment Resolution Algorithm ---');
-// Mock StoryAudioPlayer segment lookup
 function findActiveSegment(segments, time) {
     if (!segments || !segments.length) return null;
     return segments.find(s => time >= s.startTime && time < s.endTime) || null;
@@ -113,13 +112,8 @@ assert(fs.existsSync(huStoryPath), 'Hungarian story file must exist');
 
 const huStory = JSON.parse(fs.readFileSync(huStoryPath, 'utf8'));
 assert(huStory.narration, 'Hungarian story must contain narration block');
-assert(huStory.narration.audioFile, 'Hungarian narration must define audioFile');
+assert.strictEqual(huStory.narration.audioFile, undefined, 'Hungarian story must not reference static disk audioFile');
 assert.strictEqual(typeof huStory.narration.durationSeconds, 'number', 'durationSeconds must be a number');
-
-const huAudioPath = path.join(__dirname, '../../content/hu/stories', huStory.narration.audioFile);
-assert(fs.existsSync(huAudioPath), `Hungarian audio file must exist at ${huAudioPath}`);
-const huStat = fs.statSync(huAudioPath);
-assert(huStat.size > 10000, `Hungarian audio file should be non-empty (size: ${huStat.size} bytes)`);
 
 // Verify mixed language segment tags
 const huSegments = huStory.narration.segments;
@@ -138,6 +132,66 @@ assert(huManifestStory, 'Hungarian manifest must include story.a1.unit01');
 assert.strictEqual(huManifestStory.hasAudio, true, 'Hungarian manifest must flag hasAudio: true');
 console.log(`[PASS] Hungarian manifest integration confirmed: hasAudio=${huManifestStory.hasAudio}, duration=${huManifestStory.audioDuration}s.`);
 
+console.log('\n--- Test 10: Phonetic Digraph Adaptation: "Károly" -> "Károy" ---');
+// Speech synthesis phonetic transform rule
+function adaptSpeechPhonetics(text) {
+    return text.replace(/\bKároly\b/g, 'Károy').replace(/\bKaroly\b/g, 'Károy');
+}
+
+const originalDialogue = 'Károly belép a kávézóba, és Károly köszön.';
+const adaptedSpeech = adaptSpeechPhonetics(originalDialogue);
+assert.strictEqual(adaptedSpeech, 'Károy belép a kávézóba, és Károy köszön.');
+assert(!adaptedSpeech.includes('Károly'), 'Adapted text must not contain Károly');
+console.log('[PASS] Phonetic rule transforms Hungarian "Károly" to "Károy" for speech synthesis.');
+
+console.log('\n--- Test 11: StoryAudioPlayer Substack Engine & Default Normal Speed ---');
+// Mock minimal DOM and verify StoryAudioPlayer state machine
+global.window = {
+    addEventListener: () => {},
+    removeEventListener: () => {}
+};
+global.document = {
+    getElementById: (id) => ({
+        id,
+        classList: {
+            add: () => {},
+            remove: () => {}
+        },
+        setAttribute: () => {},
+        removeAttribute: () => {}
+    }),
+    querySelectorAll: () => [],
+    addEventListener: () => {},
+    removeEventListener: () => {}
+};
+global.navigator = { onLine: true };
+global.Art = { icon: () => '' };
+
+// Load reader engine module
+const readerCode = fs.readFileSync(path.join(__dirname, '../../engine/reader.js'), 'utf8');
+const vm = require('vm');
+const context = {
+    window: global.window,
+    document: global.document,
+    navigator: global.navigator,
+    console: console,
+    Art: global.Art,
+    Lang: { code: () => 'hu', content: (p) => p },
+    Lexicon: { isLoaded: () => true, lookup: () => ({ readings: [] }), stripExplanatoryClauses: (t) => t },
+    hasReadStory: () => false,
+    Speech: { button: () => '' }
+};
+vm.createContext(context);
+vm.runInContext(readerCode, context);
+
+const sap = context.window.StoryAudioPlayer;
+assert(sap, 'StoryAudioPlayer must be defined on window');
+assert.strictEqual(sap.speed, 1.0, 'Player must default strictly to normal 1.0x speed');
+assert.deepStrictEqual(Array.from(sap.speeds), [0.8, 1.0, 1.2, 1.5], 'Player speeds must support Substack cycle');
+assert.strictEqual(sap.isOnline, true, 'Online state must be recognized');
+
+console.log('[PASS] StoryAudioPlayer initialized with normal 1.0x default speed and Substack controls.');
+
 console.log('\n==========================================================');
-console.log('ALL AI NARRATION & METADATA TESTS PASSED [Zero Emojis Enforced]');
+console.log('ALL ONLINE SUBSTACK NARRATION & PHONETIC TESTS PASSED [Zero Emojis]');
 console.log('==========================================================');
