@@ -35,13 +35,13 @@ try:
 except ImportError:
     HAS_EDGE_TTS = False
 
-# CEFR Pacing Profiles
+# CEFR Pacing Profiles (Default to 100% natural, un-stretched native human tempo)
 CEFR_PACING = {
-    "A1": {"speedMultiplier": 0.88, "rate_str": "-12%", "rate_wpm": 115, "style": "deliberate, warm, articulate"},
-    "A2": {"speedMultiplier": 0.94, "rate_str": "-6%",  "rate_wpm": 130, "style": "measured, clear, conversational"},
-    "B1": {"speedMultiplier": 1.00, "rate_str": "+0%",  "rate_wpm": 145, "style": "natural, expressive"},
-    "B2": {"speedMultiplier": 1.04, "rate_str": "+4%",  "rate_wpm": 160, "style": "fluent, authentic cadence"},
-    "C1": {"speedMultiplier": 1.06, "rate_str": "+6%",  "rate_wpm": 170, "style": "native tempo, rich nuances"}
+    "A1": {"speedMultiplier": 1.00, "rate_str": "+0%", "rate_wpm": 140, "style": "natural, articulate"},
+    "A2": {"speedMultiplier": 1.00, "rate_str": "+0%", "rate_wpm": 145, "style": "natural, clear, conversational"},
+    "B1": {"speedMultiplier": 1.00, "rate_str": "+0%", "rate_wpm": 150, "style": "natural, expressive"},
+    "B2": {"speedMultiplier": 1.00, "rate_str": "+0%", "rate_wpm": 160, "style": "fluent, authentic cadence"},
+    "C1": {"speedMultiplier": 1.00, "rate_str": "+0%", "rate_wpm": 170, "style": "native tempo, rich nuances"}
 }
 
 # Neural Voice Casting Catalog
@@ -438,12 +438,28 @@ def process_story(story_path, dry_run=False, synthesize=True):
 
 def main():
     parser = argparse.ArgumentParser(description="Generate AI-aware reading narration and pedagogical metadata.")
-    parser.add_argument("file", help="Path to story JSON file")
+    parser.add_argument("file", nargs="?", default=None, help="Path to story JSON file")
+    parser.add_argument("--batch", help="Glob pattern or directory of story JSON files to narrate (e.g. content/es/stories/original/a1/*.json)")
     parser.add_argument("--dry-run", action="store_true", help="Print narration metadata without writing to file")
     parser.add_argument("--no-synth", action="store_true", help="Skip audio synthesis, generate metadata only")
     args = parser.parse_args()
 
-    process_story(args.file, dry_run=args.dry_run, synthesize=not args.no_synth)
+    files = []
+    if args.batch:
+        p = Path(args.batch)
+        if p.is_dir():
+            files = sorted(list(p.rglob("*.json")))
+        else:
+            files = sorted([Path(f) for f in Path(".").glob(args.batch)])
+    elif args.file:
+        files = [Path(args.file)]
+    else:
+        parser.print_help()
+        sys.exit(1)
+
+    print(f"Narrating {len(files)} story file(s)...")
+    for story_file in files:
+        process_story(str(story_file), dry_run=args.dry_run, synthesize=not args.no_synth)
 
 if __name__ == "__main__":
     main()

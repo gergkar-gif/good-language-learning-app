@@ -546,9 +546,7 @@ const StoryAudioPlayer = {
             this.audio.src = audioPath;
             this.audio.preload = 'metadata';
         }
-        this.speed = (story.narration.pacing && story.narration.pacing.speedMultiplier)
-            ? (story.narration.pacing.speedMultiplier < 0.9 ? 0.8 : 1.0)
-            : 1.0;
+        this.speed = 1.0;
 
         const playBtn = document.getElementById('story-audio-play-btn');
         const slider = document.getElementById('story-audio-slider');
