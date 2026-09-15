@@ -307,7 +307,17 @@ const Decks = (function () {
     // different act with its own built-in judgment call, and doesn't call
     // canAddNewWord()/recordNewWord() at all, so it neither gets blocked by
     // that cap nor eats into it for the Reader's sake either.
-    function reviewDeck(id, options) {
+    async function reviewDeck(id, options) {
+        // Same fix as load()'s own Lexicon.load() call above, for the same
+        // reason: without it, article() finds no gender data and every card
+        // in the session silently falls back to the bare lemma. This path
+        // needs its own await rather than relying on load() having already
+        // run — home.js's "Review all" quick action jumps straight here,
+        // deliberately skipping the deck browser (and the load() call that
+        // normally happens when opening it) to avoid asking "how many are
+        // waiting" twice.
+        if (typeof Lexicon !== 'undefined' && !Lexicon.isLoaded()) await Lexicon.load();
+
         const deck = id === 'all' ? null : byId(id);
         if (deck) {
             wordsOf(deck).forEach(word => {
