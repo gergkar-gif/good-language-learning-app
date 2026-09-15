@@ -903,7 +903,7 @@ const stepRenderers = {
             .filter(part => allowed.indexOf(part.type) !== -1)
             .map(part => {
                 const heading = part.title && part.title !== step.title
-                    ? `<h4 class="lsn-subtitle">${esc(part.title)}</h4>`
+                    ? `<h4 class="lsn-subtitle">${escMd(part.title)}</h4>`
                     : '';
                 return heading + stepRenderers[part.type](part);
             })
