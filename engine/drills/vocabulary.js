@@ -172,10 +172,28 @@ const VocabularyDriller = (function () {
     // from the same word list.
     const CONTENT_POS = new Set(['noun', 'verb', 'adjective', 'adverb']);
 
+    // A word whose first-taught lesson is on record but not yet completed
+    // hasn't actually been reached in the learner's own progress, even
+    // though it can sit earlier than other lessons they've already
+    // finished — the driller used to sample level-wide regardless of
+    // personal lesson progress, so a word taught in, say, lesson 120 could
+    // turn up in a session for someone only up to lesson 70 (bug report
+    // #151, 2026-09-16). word-lesson-index.json only covers vocabulary
+    // explicitly listed in a lesson's own vocab list, so a lemma with no
+    // entry there (met only in grammar examples or story content) is never
+    // gated: there's no "not yet taught" evidence for it, so excluding it
+    // would just shrink the pool for no real reason.
+    function _isReached(lemma) {
+        const lessonId = _wordLessonIndex[lemma];
+        if (!lessonId) return true;
+        return (typeof LearnerPath !== 'undefined') ? LearnerPath.isComplete(lessonId) : true;
+    }
+
     function _wordList(level) {
         return Object.keys(_words)
             .filter(lemma => CONTENT_POS.has(_words[lemma].pos))
             .filter(lemma => level === 'all' || _wordLevels[lemma] === level)
+            .filter(_isReached)
             .map(lemma => ({ lemma, en: _words[lemma].en, pos: _words[lemma].pos }));
     }
 
