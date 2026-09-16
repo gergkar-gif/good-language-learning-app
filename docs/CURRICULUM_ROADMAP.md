@@ -5,6 +5,38 @@
 
 ---
 
+## How units get wired in (as of 2026-09-16)
+
+Authoring a unit's lesson/grammar/exercise/vocabulary files is not enough
+on its own — a level's unit titles, ordering, and lesson-stem groupings
+are a separate, curated list, and a lesson file with nothing pointing at
+it is invisible to the Learn tab (this happened to the Phase 2 imperfecto
+content: it validated cleanly for a while before anyone wired it in).
+
+For a level that already has an explicit table (Spanish A1/A2/B1,
+Hungarian B1), add a new unit like this:
+
+1. Author and validate the lesson/grammar/exercise/vocabulary files as
+   usual (`python scripts/validate-content.py`).
+2. Append one entry to `content/<lang>/curriculum/units/<level>.json`:
+   `{"title": "...", "stems": ["<level>-<slug>-01", ..., "<level>-<slug>-consolidation"]}`
+   (add `"track": "core"` / `"latam"` / etc. only for a level that runs
+   more than one parallel track). Schema:
+   `content/<lang>/schemas/units.schema.json`.
+3. Run `python build-manifest.py` (or just push — `sync-generated-content.yml`
+   does this automatically for anything touching `content/**`) to
+   regenerate `curriculum.json`, `decks.json`, and the story/grammar
+   indexes.
+
+No `build-manifest.py` edit needed — before 2026-09-16 this table lived
+in a hardcoded Python dict there, which is exactly what made Phase 2's
+imperfecto units hard to wire in after the fact. A level with no such
+file (Hungarian A1/A2 today) instead auto-groups plain-numbered lesson
+files from disk (`auto_group_units()` in `build-manifest.py`) — nothing
+to hand-wire there either way.
+
+---
+
 ## 🟢 Phase 1: Spanish A1 Core Gaps [COMPLETED]
 
 | Unit ID | Unit Title | Key Grammatical / Functional Focus | Status |
@@ -18,19 +50,25 @@
 
 ---
 
-## ⏳ Phase 2: Spanish A2 — Pretérito Imperfecto [TO-BE-DONE LATER]
+## ✅ Phase 2: Spanish A2 — Pretérito Imperfecto [DONE 2026-09-16]
 
-The Imperfecto is the second pillar of Spanish past-tense narration. Currently absent at A2.
+The Imperfecto is the second pillar of Spanish past-tense narration.
 
-- [ ] **Unit 2.1: Pretérito Imperfecto I — Morphology & Habitual Past (`unit.a2.imperfecto1`)**
-  - **Focus**: Regular *-ar* endings (*-aba, -abas, -aba, -ábamos, -aban*), regular *-er/-ir* endings (*-ía, -ías, -ía, -íamos, -ían*).
-  - **The 3 Irregulars**: *ser → era*, *ir → iba*, *ver → veía*.
-  - **Context**: Childhood memories, repeated past habits with time markers (*siempre, normalmente, todos los días, cuando era niño*).
-  - **Story**: *Los recuerdos de Carlos*.
-- [ ] **Unit 2.2: Pretérito Imperfecto II — Contrast with Indefinido (`unit.a2.imperfecto2`)**
-  - **Focus**: Background scene-setting (Imperfecto) vs. interrupting/foreground events (Indefinido).
-  - **Patterns**: *Mientras + imperfecto, [indefinido]* (*Mientras caminaba, vi a Juan*), description of past states, feelings, weather, and time.
-  - **Story**: *Una tarde inesperada*.
+- [x] **Unit 21: The Imperfect Tense (`unit.a2.21`, stems `a2-imperfectobasico-*`)**
+  - Regular *-ar* endings, regular *-er/-ir* endings, the 3 irregulars
+    (*ser → era*, *ir → iba*, *ver → veía*), states/descriptions in the
+    past, childhood-memory context. Shipped as 5 lessons + consolidation,
+    not the originally-planned single unit — content grew during
+    authoring/migration.
+- [x] **Unit 22: Imperfect vs. Preterite (`unit.a2.22`, stems `a2-imperfectocontraste-*`)**
+  - Background (Imperfecto) vs. foreground events (Indefinido),
+    *mientras + imperfecto, [indefinido]*, weather/time/feelings in the
+    past, narrative structure. 5 lessons + consolidation.
+
+These landed as plain units 21/22 (appended after the existing 1-20),
+not slotted into the story's grammar sequence at the point this phase
+was originally scoped for — see "How units get wired in" below for why
+that's now just a JSON append rather than a `build-manifest.py` edit.
 
 ---
 
