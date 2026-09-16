@@ -1331,8 +1331,8 @@ const stepRenderers = {
             ` : ''}
             <div class="sp-lesson-card">
                 ${isPromptSpeak ? `
-                    <p class="sp-en-prompt" style="font-size:1.3rem; font-weight:700; color:var(--navy, #102A47); margin:0 0 6px 0;">${esc(english)}</p>
-                    <p class="sp-hint-text" style="font-size:0.88rem; color:var(--text-muted, #687787); margin:0;">Say the translation in ${esc(langName)}</p>
+                    <p class="sp-en-prompt" style="font-size:1.3rem; font-weight:700; margin:0 0 6px 0;">${esc(english)}</p>
+                    <p class="sp-instruction">Say the translation in ${esc(langName)}</p>
                     <div id="sp-prompt-target-reveal" class="hidden" style="margin-top:14px; padding-top:12px; border-top:1px solid var(--border);">
                         <div class="sp-target-lead">
                             <p class="sp-es-text">${esc(target)}</p>
