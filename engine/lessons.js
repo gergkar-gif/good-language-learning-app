@@ -1251,6 +1251,12 @@ const stepRenderers = {
                 </div>
             `).join('')}
             <p class="lsn-hint">There is more than one right answer. Write every line, then compare yours with the examples.</p>
+            <div class="lsn-writing-feedback hidden" id="lsn-writing-feedback">
+                ${(typeof navigator === 'undefined' || navigator.onLine) ? `
+                    <button type="button" class="dk-secondary" onclick="lessonGetWritingFeedback()">Get feedback</button>
+                ` : ''}
+                <div id="lsn-writing-feedback-result"></div>
+            </div>
             ${feedbackHtml()}
         `;
     },
@@ -2394,8 +2400,74 @@ function lessonRevealWriting() {
 
     document.querySelectorAll('[data-model]').forEach(el => el.classList.add('is-shown'));
 
+    const feedbackWrap = document.getElementById('lsn-writing-feedback');
+    if (feedbackWrap) feedbackWrap.classList.remove('hidden');
+
+    // This step is self-compared, never objectively graded, so there's no
+    // real right/wrong here -- but a completed attempt is still evidence
+    // the learner used this skill, same as every other teaches-tagged
+    // exercise's completion already feeds noteRecycleResult()'s SM-2
+    // schedule. This is the same fact reaching LearnerModel too, which
+    // that Recycle-only path never did.
+    const step = stepState.sourceStep;
+    if (step && step.teaches && step.teaches.length && typeof LearnerModel !== 'undefined' && typeof LearnerModel.recordProduction === 'function') {
+        LearnerModel.recordProduction(step.teaches, true, 100, 'written');
+    }
+
     // Inputs stay editable so the learner can correct their own sentence.
     solveStep('Compare your sentences with the examples, then continue.');
+}
+
+// On-demand only (never automatic): a 1-line prompt embedded in every
+// lesson can't afford to make the core lesson flow wait on a network/LLM
+// round-trip, so this is opt-in via the "Get feedback" button, which the
+// step's own renderer already hides when the learner is offline. Grades
+// the learner's own typed sentences against the step's own prompts,
+// through the same GraderEngine pipeline every other writing/speaking
+// production already uses.
+async function lessonGetWritingFeedback() {
+    const resultEl = document.getElementById('lsn-writing-feedback-result');
+    const btn = document.querySelector('#lsn-writing-feedback button');
+    if (!resultEl || typeof GraderEngine === 'undefined') return;
+
+    const inputs = Array.prototype.slice.call(document.querySelectorAll('[data-write]'));
+    const learnerText = inputs.map(inp => inp.value.trim()).filter(Boolean).join(' ');
+    if (!learnerText) return;
+
+    if (btn) btn.disabled = true;
+    resultEl.textContent = 'Getting feedback…';
+
+    const prompts = (stepState.lines || []).map(l => l.prompt).join(' / ');
+    const engine = new GraderEngine();
+
+    let result;
+    try {
+        result = await engine.grade(learnerText, {
+            cefrLevel: (currentLesson && currentLesson.level) || 'A1',
+            taskType: 'structured_writing',
+            taskInstructions: `Write sentences for: ${prompts}`,
+            targetSkills: (stepState.sourceStep && stepState.sourceStep.teaches) || [],
+            modality: 'written'
+        });
+    } catch (e) {
+        if (btn) btn.disabled = false;
+        resultEl.textContent = 'Could not get feedback right now. Try again.';
+        return;
+    }
+
+    const dims = result.dimensions || {};
+    const dimLabels = { grammar: 'Grammar', vocabulary: 'Vocabulary', coherence: 'Coherence', complexity: 'Complexity', naturalness: 'Naturalness' };
+    resultEl.innerHTML = `
+        <p class="lsn-writing-feedback-score">Overall: ${result.overallScore || 0}%</p>
+        <div class="sp-word-breakdown">
+            ${Object.keys(dims).map(key => `
+                <span class="sp-word-pill ${dims[key] >= 0.6 ? 'sp-word-matched' : 'sp-word-missed'}">
+                    ${esc(dimLabels[key] || key)}: ${Math.round((dims[key] || 0) * 100)}%
+                </span>
+            `).join('')}
+        </div>
+    `;
+    if (btn) btn.remove();
 }
 
 // Reveals one substitution option's resulting sentence; Continue unlocks
