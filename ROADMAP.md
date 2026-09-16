@@ -491,6 +491,18 @@ keeps its original gaps on purpose, so item numbers stay stable references.
       decks.js`, `engine/library.js`, `engine/workshop.js`). Checked for
       other visible (non-comment) instances of the same corruption
       elsewhere in `index.html`; found none.
+30. **Audit `imports/dictionary/*.json` for more corrupted glosses** —
+    flagged 2026-09-16, found while fixing #161. `imports/dictionary/
+    spanish-en.json` had 28 entries with a broken `smart inflection of
+    "X"` gloss template (see "Content & curriculum" below for the fix) —
+    found only by grepping for that one specific string, not a systematic
+    check. Both `imports/dictionary/spanish-en.json` (515k+ lines) and
+    its Hungarian counterpart are large third-party/generated imports
+    with no generation script in this repo to re-run and no schema
+    validator, so there's no way to rule out other corrupted or
+    templated-but-unfilled entries lurking elsewhere in either file
+    without a real audit (e.g. scanning for other suspicious fixed
+    phrases, sense entries that don't parse as plausible English, etc.).
 
 ## Content & curriculum
 
@@ -682,6 +694,27 @@ keeps its original gaps on purpose, so item numbers stay stable references.
   ("don't") that would break a naively-interpolated JS string. Verified
   live: 46/46 rows carry a working button, clicking one opens "Add 'hola'
   to a deck".
+- [x] **Bug-report sweep, 2026-09-16**: fixed a corrupted gloss template in
+  `imports/dictionary/spanish-en.json` — 28 entries (all conjugated/
+  reflexive verb forms, e.g. "eres", "estoy", "sé") literally read
+  `smart inflection of "X"` instead of a real definition (reported in
+  #161 as a confusing deck entry, "smart inflection of ser"). The
+  dictionary's own convention elsewhere is `<qualifier> form of X`
+  ("archaic form of", "nonstandard form of"), so "smart" was a stray
+  artifact of whatever produced this import, not intentional content.
+  Stripped it, leaving `inflection of "X"` (plus any existing
+  translation). See item 30 below — this file wasn't audited for other,
+  undiscovered instances of the same corruption.
+- [x] **Bug-report sweep, 2026-09-16**: fixed two Hungarian content bugs —
+  a dialogue exercise (`a2-07-dialogue-1`) answered "Hányadika van ma?"
+  ("What's the date today?") with the wrong grammatical form ("Október
+  elsején.", the *-án/-én* "on the Xth" form used for *mikor* questions,
+  not *hányadika ... van* ones — the lesson's own grammar draws this
+  exact distinction); corrected to "Október elseje van." (#169). Also
+  added a note to the "This Week, Last Week, Next Week" lesson's grammar
+  tip (`grammar/a2/a2-06-a-gr.json`) explaining why *héten*'s superessive
+  ending doesn't carry an "on" into the English translation, since the
+  original translations were correct but unexplained (#159).
 
 ## Workshop
 
@@ -1985,6 +2018,17 @@ keeps its original gaps on purpose, so item numbers stay stable references.
   ("Taught in Unit 26 · Lesson 26.2"), confirming this isn't limited to
   the missed-words-scoped entry point. No console/page errors in any
   run.
+- [x] **Vocabulary Driller now filters by curriculum progress** — **Fixed
+  2026-09-16** (#151). It previously sampled every content word at a
+  CEFR level regardless of which lessons the learner had personally
+  completed, so a word taught later in the curriculum could appear in a
+  session before the learner had reached it. `_wordList()`
+  (`engine/drills/vocabulary.js`) now drops any word whose first-taught
+  lesson (`word-lesson-index.json`) isn't yet marked complete via
+  `LearnerPath.isComplete()`. A word with no lesson-index entry at all
+  (met only in grammar examples or story content, not an explicit vocab
+  list — true for roughly half of HU content words) is left ungated,
+  since there's no "not yet taught" evidence for those either way.
 
 ## Learner model & personalized path (architecture initiative)
 
@@ -2010,6 +2054,16 @@ was not duplicated here.
   - Dual audio comparison bar: listen to native model voice and listen back to your own voice recording.
   - Mobile-proof gesture activation on iOS Safari, non-blocking MediaRecorder capture, and learner-friendly 2.8s hesitation leeway.
   - One-tap "Can't speak right now" snooze preference.
+  - **Fixed 2026-09-16** (#168): the auto-injected "Speaking Practice 2/2"
+    (`prompt-speak` mode) step's English prompt/hint text was unreadably
+    dark in dark mode — its inline styles referenced `var(--navy, ...)`
+    and `var(--text-muted, ...)`, neither an actual CSS variable defined
+    anywhere (only `--text`/`--muted` are, and those do flip for dark
+    mode), so both silently fell back to their light-mode-only hardcoded
+    colors on every render. Removed the broken overrides in favor of the
+    already-correctly-themed `.sp-en-prompt` and `.sp-instruction`
+    classes. Every lesson injects this step, so this was systemic, not
+    specific to the one lesson reported.
 - [x] **Full Listening & Speaking cross-app integration.** Built & deployed 2026-09-14:
   - **Timed Sessions (`StudyPlan` & `StudyPlanRunner`)**: Wired `listening` (`ListeningDriller`) and `speaking` (`SpeakingDriller`) into the time-budget allocation algorithm and study-plan screen runner.
   - **Reviews (SRS Flashcards & Decks in `engine/srs.js`)**: Added an "Audio-First / Listening" review direction (`audio-en`) where the card front plays native audio without revealing text, testing auditory recall before revealing spelling and translation, with clickable direction toggles.
