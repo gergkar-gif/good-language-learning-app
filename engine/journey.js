@@ -401,18 +401,32 @@ const Journey = (function () {
     }
 
     function milestonesBlock(d) {
-        const items = MILESTONES.map(m => {
-            const reached = !!m.test(d);
-            return `
-                <li class="jr-milestone${reached ? ' is-reached' : ''}">
-                    <span class="jr-tick" aria-hidden="true">${reached ? '✓' : ''}</span>
-                    <span>${esc(m.label)}</span>
-                </li>
-            `;
-        }).join('');
-        const count = MILESTONES.filter(m => m.test(d)).length;
-        return card('Milestones', `${count} of ${MILESTONES.length} reached.`,
-            `<ul class="jr-milestones">${items}</ul>`);
+        const withStatus = MILESTONES.map(m => ({ label: m.label, reached: !!m.test(d) }));
+        const itemHtml = m => `
+            <li class="jr-milestone${m.reached ? ' is-reached' : ''}">
+                <span class="jr-tick" aria-hidden="true">${m.reached ? '✓' : ''}</span>
+                <span>${esc(m.label)}</span>
+            </li>
+        `;
+        const count = withStatus.filter(m => m.reached).length;
+        // Sixteen milestones flat was a wall to scroll past for the two or
+        // three actually still ahead of you — show just the next few
+        // (already-reached ones are already summed up by the count line
+        // above) and put the full list, reached items included, behind the
+        // same collapsible pattern the Library uses for its rooms/shelves.
+        const upcoming = withStatus.filter(m => !m.reached).slice(0, 5);
+        const hasMore = withStatus.length > upcoming.length;
+
+        return card('Milestones', `${count} of ${MILESTONES.length} reached.`, `
+            <ul class="jr-milestones" id="jr-milestones-upcoming">${upcoming.map(itemHtml).join('')}</ul>
+            ${hasMore ? `
+                <button class="jr-milestones-toggle" data-jr-milestones-toggle="1" aria-expanded="false">
+                    <span>See all</span>
+                    <span class="jr-milestones-arrow" id="jr-milestones-arrow">▶</span>
+                </button>
+                <ul class="jr-milestones hidden" id="jr-milestones-all">${withStatus.map(itemHtml).join('')}</ul>
+            ` : ''}
+        `);
     }
 
     // Step 7 of the learner-model roadmap: cloud backup/restore, folded
@@ -774,6 +788,19 @@ const Journey = (function () {
         host.dataset.wired = '1';
 
         host.addEventListener('click', e => {
+            const milestonesToggle = e.target.closest('[data-jr-milestones-toggle]');
+            if (milestonesToggle) {
+                const upcomingEl = document.getElementById('jr-milestones-upcoming');
+                const allEl = document.getElementById('jr-milestones-all');
+                const arrow = document.getElementById('jr-milestones-arrow');
+                if (!allEl) return;
+                const nowOpen = allEl.classList.toggle('hidden') === false;
+                if (upcomingEl) upcomingEl.classList.toggle('hidden', nowOpen);
+                milestonesToggle.setAttribute('aria-expanded', String(nowOpen));
+                if (arrow) arrow.textContent = nowOpen ? '▼' : '▶';
+                return;
+            }
+
             if (e.target.closest('[data-jr-import-streak]')) {
                 showImportStreakModal();
                 return;

@@ -3383,6 +3383,31 @@
 
 .jr-milestone.is-reached { color: var(--text); }
 
+.jr-milestones-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: none;
+  border: none;
+  border-top: 1px solid var(--border);
+  margin-top: 6px;
+  padding: 8px 0 2px;
+  font-size: 13px;
+  color: var(--secondary);
+  cursor: pointer;
+  text-align: left;
+}
+
+.jr-milestones-toggle:hover { color: var(--primary-dark); }
+
+.jr-milestones-arrow {
+  font-size: .8em;
+  color: var(--secondary);
+}
+
+.jr-milestones.hidden { display: none; }
+
 /* ---- Journey: Account (step 7, cloud backup/restore) ---- */
 .jr-account-blurb {
   font-size: 14px;
