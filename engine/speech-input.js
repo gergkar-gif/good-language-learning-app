@@ -536,9 +536,21 @@ const SpeechInput = (function () {
         if (!targetNorm || !recNorm) return false;
         if (targetNorm === recNorm) return true;
 
-        // Number words vs digits tolerance (e.g. "dos" vs "2")
-        const numMap = { '1': 'uno', '2': 'dos', '3': 'tres', '4': 'cuatro', '5': 'cinco', '6': 'seis', '7': 'siete', '8': 'ocho', '9': 'nueve', '10': 'diez' };
-        if (numMap[recNorm] === targetNorm || numMap[targetNorm] === recNorm) return true;
+        // Number words vs digits tolerance (e.g. "dos" vs "2"); Hungarian
+        // words included alongside Spanish since spoken numbers rarely
+        // collide across the two languages. "ket" covers Hungarian "két",
+        // the form used before a noun, alongside the standalone "kettő".
+        const numMap = {
+            '1': ['uno', 'egy'], '2': ['dos', 'ketto', 'ket'], '3': ['tres', 'harom'],
+            '4': ['cuatro', 'negy'], '5': ['cinco', 'ot'], '6': ['seis', 'hat'],
+            '7': ['siete', 'het'], '8': ['ocho', 'nyolc'], '9': ['nueve', 'kilenc'],
+            '10': ['diez', 'tiz']
+        };
+        if ((numMap[recNorm] || []).includes(targetNorm) || (numMap[targetNorm] || []).includes(recNorm)) return true;
+
+        // Abbreviation equivalence (e.g. Hungarian "db" <-> "darab")
+        const abbrMap = { 'db': 'darab' };
+        if (abbrMap[recNorm] === targetNorm || abbrMap[targetNorm] === recNorm) return true;
 
         // Short words (<= 3 chars) need exact match
         if (targetNorm.length <= 3) return targetNorm === recNorm;
