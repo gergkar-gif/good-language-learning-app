@@ -32,16 +32,19 @@ const DeckMatch = (function () {
     'use strict';
 
     const BOARD_SIZE = 8; // pairs visible on the board at once (up to 16 tiles)
-    const WRONG_FLASH_MS = 500;
+    // Cut from 500/450/200ms (Quizlet-level fluidity was the ask; the old
+    // values left ~650ms of dead time after every correct match) down to
+    // just enough for the flash to register.
+    const WRONG_FLASH_MS = 200;
     // How long a just-matched pair sits visibly "correct" (CSS fades it
     // to opacity 0 over this same window) before it's actually removed
     // from the board — long enough to read as a match, short enough that
     // a review session doesn't feel like it's stalling.
-    const MATCH_FLASH_MS = 450;
+    const MATCH_FLASH_MS = 120;
     // A further pause AFTER the new pair (if any) is inserted, before
     // input re-enables — see _tileClick()'s match branch for why this is
     // a separate step from MATCH_FLASH_MS rather than just a longer flash.
-    const SETTLE_MS = 200;
+    const SETTLE_MS = 50;
 
     let _container = null;
     let _deckId = null;
