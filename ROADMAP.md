@@ -457,6 +457,40 @@ keeps its original gaps on purpose, so item numbers stay stable references.
     via ChatGPT and hand over a `.txt` file (matches their usual workflow
     for translation-style content — see the `translation-task-workflow
     -preference` note in memory). Waiting on that file; not started.
+29. **Hungarian CEFR Can-Do Passport loaded no skills; Decks review back
+    button showed garbled text** — **Fixed 2026-09-16.** Two unrelated
+    bugs, one report:
+    - `content/hu/indexes/competencies-index.json` (the file `engine/
+      learnerModel.js`'s `loadCompetenciesIndex()` reads) never existed —
+      only `content/es/...` did, so the Hungarian portfolio silently
+      degraded to an empty list (the loader already catches a fetch
+      failure and returns `[]`, so no crash, just nothing to show). Root
+      cause: this index was hand/one-off generated for Spanish only,
+      never added to any of the `scripts/build_*.py` family that
+      regenerates every other derived index. Added `scripts/
+      build_competencies_index.py`, which mechanically extracts each
+      lesson's `checklist`-step "I can..." items via curriculum.json
+      (same source data ES's file already came from — no new content to
+      author). Verified the ES output against the existing file before
+      trusting it for Hungarian: 0 field mismatches on 2,315 shared
+      entries; the only differences were 2 stale orphaned entries (lessons
+      no longer in curriculum.json) and 26 newer entries (the A2
+      imperfecto lessons from item 20/21 above, added after the existing
+      file was last generated) — so this run also quietly fixed ES's own
+      staleness. Generated `content/hu/indexes/competencies-index.json`
+      fresh: 1,114 items across A1/A2/B1. Verified live: Hungarian's
+      Can-Do Portfolio modal now lists real competencies grouped by unit
+      with working Speak/Write practice buttons, where it previously
+      showed nothing.
+    - `index.html`'s Decks review "← All decks" back button had been
+      triple-encoded mojibake (`â† All decks`, raw bytes
+      `\xc3\xa2\xe2\x80\xa0\xc2\x90`) since commit `084348cc5` (2026-09-13)
+      — predates this session, not something introduced here. Fixed with
+      a direct byte-level replacement back to a plain `←` character,
+      matching every other back button's style in the codebase (`engine/
+      decks.js`, `engine/library.js`, `engine/workshop.js`). Checked for
+      other visible (non-comment) instances of the same corruption
+      elsewhere in `index.html`; found none.
 
 ## Content & curriculum
 
