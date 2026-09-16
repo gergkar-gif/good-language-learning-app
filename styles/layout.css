@@ -1565,6 +1565,62 @@ body.in-lesson .content {
   border-color: var(--primary);
 }
 
+.gg-search-input {
+  width: 100%;
+  margin: 16px 0;
+  padding: 10px 14px;
+  font-size: 15px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md, 8px);
+  background: var(--bg);
+  color: var(--text);
+}
+
+.gg-search-results {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.gg-search-row {
+  border-bottom: 1px solid var(--border-light);
+}
+
+.gg-search-row:last-child { border-bottom: none; }
+
+.gg-search-result {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  width: 100%;
+  padding: 12px 4px;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+.gg-search-level {
+  flex: 0 0 auto;
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.gg-search-title {
+  flex: 1;
+  min-width: 0;
+  font-size: 15px;
+  color: var(--text);
+}
+
+.gg-search-unit {
+  flex: 0 0 auto;
+  font-size: 12px;
+  color: var(--muted);
+}
+
 /* .level-hero, .level-detail-head/-titles/-progress, .progress-ring(-label)
    and .lesson-row* all removed 2026-08-14 — superseded by .unit-path-head
    (level list) and .ud-* (unit detail) earlier the same day, and no longer

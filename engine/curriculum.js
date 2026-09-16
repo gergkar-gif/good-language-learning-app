@@ -54,6 +54,17 @@ let openGrammarGuideUnit = null;
 // "fourth screen" slot off a unit's detail view.
 let openWordBankUnit = null;
 
+// A course-wide search over every grammar topic, entered from the level
+// list rather than nested under one unit — the confirmed answer was
+// "global search across the whole course", not per-unit. Sits alongside
+// openLevel as a second top-level screen rather than a fifth depth level.
+let openGlobalGrammarGuide = false;
+
+// Built once per loaded curriculum (collectUnitGrammarTopics() already
+// caches its own fetches, but walking every unit in every level is still
+// real work worth not repeating on every keystroke or re-open).
+let _globalGrammarIndex = null;
+
 function levelIcon(level, extraClass) {
     return '<svg class="level-icon' + (extraClass ? ' ' + extraClass : '') + '" viewBox="0 0 100 100" aria-hidden="true">' +
         (LEVEL_ICONS[level] || LEVEL_ICONS.A1) + '</svg>';
@@ -153,7 +164,8 @@ async function renderCurriculum() {
     const root = document.getElementById('learn-content');
     if (!root) return;
 
-    const html = !openLevel ? levelListHtml()
+    const html = openGlobalGrammarGuide ? await globalGrammarGuideHtml()
+        : !openLevel ? levelListHtml()
         : !openUnit ? unitListHtml(openLevel)
         : openGrammarGuideUnit ? await grammarGuideHtml(openLevel, openGrammarGuideUnit)
         : openWordBankUnit ? await wordBankHtml(openLevel, openWordBankUnit)
@@ -206,7 +218,13 @@ function levelListHtml() {
     }).join('');
 
     // No heading here — the page header already says "Lessons".
-    return `<div class="level-list">${cards}</div>`;
+    return `
+        <div class="level-list">${cards}</div>
+        <button class="ud-grammar-guide-row" data-open-global-grammar-guide="1">
+            <span class="ud-grammar-guide-title">Search Grammar Guide</span>
+            <span class="ud-grammar-guide-arrow" aria-hidden="true">→</span>
+        </button>
+    `;
 }
 
 
@@ -669,6 +687,56 @@ async function grammarGuideHtml(level, unitId) {
     `;
 }
 
+// Same topics grammarGuideHtml() shows per-unit, but pre-walked at build
+// time (scripts/build_grammar_guide_index.py) rather than live in the
+// browser: a full course runs to 100+ units, and collecting every one of
+// them the way collectUnitGrammarTopics() does for a single unit (a fetch
+// per lesson, then per grammar section) fanned out to hundreds of requests
+// and took over a minute cold. One prebuilt file, one fetch.
+async function buildGlobalGrammarIndex() {
+    if (_globalGrammarIndex) return _globalGrammarIndex;
+    _globalGrammarIndex = await Content.json(Lang.content('indexes/grammar-guide-index.json'));
+    return _globalGrammarIndex;
+}
+
+// A search box over the whole course's grammar rather than one unit's —
+// results are titles only (the full teaching content stays in the per-unit
+// guide, which a result opens straight into) so this stays light even once
+// every level's topics are indexed. Filtering reuses reader.js's
+// _normSearch()/_matchesTerm() (normalized, whole-word for short queries)
+// instead of a new implementation.
+async function globalGrammarGuideHtml() {
+    const topics = await buildGlobalGrammarIndex();
+
+    const rows = topics.map((topic, i) => `
+        <li class="gg-search-row" data-gg-search-title="${UI.escape(topic.title)}">
+            <button class="gg-search-result" data-goto-grammar-topic="${i}">
+                <span class="gg-search-level">${topic.level}</span>
+                <span class="gg-search-title">${UI.escape(topic.title)}</span>
+                <span class="gg-search-unit">${UI.escape(topic.unitTitle)}</span>
+            </button>
+        </li>
+    `).join('');
+
+    return `
+        <div class="grammar-guide gg-search" data-global="1">
+            <button class="level-back" data-close-global-grammar-guide="1">← Lessons</button>
+
+            <header class="ud-head">
+                <h2 class="ud-title">Search Grammar Guide</h2>
+                <p class="gg-subtitle">Every grammar topic across the whole course.</p>
+            </header>
+
+            <input type="text" class="gg-search-input" id="gg-search-input"
+                placeholder="Search grammar topics…" autocomplete="off">
+
+            ${topics.length
+                ? `<ul class="gg-search-results" id="gg-search-results">${rows}</ul>`
+                : '<p class="text-muted level-empty">No grammar topics found.</p>'}
+        </div>
+    `;
+}
+
 // Every word taught anywhere in the unit, grouped by the lesson vocabulary
 // section it comes from (using that file's own title, e.g. "Greetings"),
 // de-duplicated by lemma across the whole unit — a word already shown under
@@ -753,6 +821,37 @@ function attachCurriculumEvents(root) {
             openLevel = open.getAttribute('data-open-level');
             openUnit = null;
             renderCurriculum();
+            return;
+        }
+
+        if (e.target.closest('[data-open-global-grammar-guide]')) {
+            openGlobalGrammarGuide = true;
+            // The first build walks every unit in the course -- worth a
+            // word before the screen goes quiet for a few seconds, rather
+            // than leaving the level list on screen looking unresponsive.
+            if (!_globalGrammarIndex) {
+                root.innerHTML = '<p class="text-muted level-empty">Loading grammar guide...</p>';
+            }
+            renderCurriculum();
+            return;
+        }
+
+        if (e.target.closest('[data-close-global-grammar-guide]')) {
+            openGlobalGrammarGuide = false;
+            renderCurriculum();
+            return;
+        }
+
+        const gotoTopic = e.target.closest('[data-goto-grammar-topic]');
+        if (gotoTopic && _globalGrammarIndex) {
+            const topic = _globalGrammarIndex[Number(gotoTopic.getAttribute('data-goto-grammar-topic'))];
+            if (topic) {
+                openGlobalGrammarGuide = false;
+                openLevel = topic.level;
+                openUnit = topic.unitId;
+                openGrammarGuideUnit = topic.unitId;
+                renderCurriculum();
+            }
             return;
         }
 
@@ -848,5 +947,20 @@ function attachCurriculumEvents(root) {
         if (test && typeof LevelTest !== 'undefined') {
             LevelTest.open(test.getAttribute('data-open-test'));
         }
+    });
+
+    // Live filter for the global Grammar Guide search box — instant
+    // .hidden toggling on keystroke rather than re-rendering, same approach
+    // as the Library's search (reader.js's _filterUniversalSearch).
+    root.addEventListener('input', e => {
+        if (e.target.id !== 'gg-search-input') return;
+        const query = e.target.value;
+        const rows = root.querySelectorAll('.gg-search-row');
+        const matches = (title, q) => (typeof _matchesTerm === 'function') ? _matchesTerm(title, q) : title.toLowerCase().includes(q.toLowerCase());
+        rows.forEach(row => {
+            const title = row.getAttribute('data-gg-search-title') || '';
+            const visible = !query.trim() || matches(title, query);
+            row.classList.toggle('hidden', !visible);
+        });
     });
 }

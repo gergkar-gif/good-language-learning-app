@@ -2,7 +2,8 @@ name: Sync generated content
 
 # Every derived file the app actually reads at runtime — curriculum.json,
 # decks.json, each language's stories/manifest.json, grammar-index.json,
-# translation-index.json — is generated straight from content/**. Nothing
+# grammar-guide-index.json, translation-index.json — is generated straight
+# from content/**. Nothing
 # else ever kept them in sync automatically, so edits to a lesson, a unit's
 # line-up, or a reading could land on master without the derived files ever
 # catching up (this is exactly how ~250 Spanish readings and 99 Hungarian/
@@ -18,6 +19,7 @@ on:
       - 'imports/verbs/**'
       - 'build-manifest.py'
       - 'scripts/build_grammar_index.py'
+      - 'scripts/build_grammar_guide_index.py'
       - 'scripts/build_translation_index.py'
       - 'scripts/build_verb_index.py'
       - 'scripts/build_verb_list.py'
@@ -61,6 +63,7 @@ jobs:
       - name: Regenerate grammar and translation indexes
         run: |
           python3 scripts/build_grammar_index.py
+          python3 scripts/build_grammar_guide_index.py
           python3 scripts/build_translation_index.py
 
       - name: Regenerate Spanish verb index and verb list
