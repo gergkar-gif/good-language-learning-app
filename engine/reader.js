@@ -73,13 +73,17 @@ function _ensureWordPopup() {
 
 // The popup's speaker button is a fixed element rather than fresh markup, so
 // it is pointed at the current word instead of being re-rendered. It stays
-// hidden on a device with no voice for this course's language.
+// hidden only when neither cloud nor device speech can run.
 function _setSpeakTarget(text) {
     const btn = document.getElementById('popup-speak');
     if (!btn) return;
-    const ok = typeof Speech !== 'undefined' && Speech.available() && text;
+    const ok = typeof ParlourTTS !== 'undefined' && ParlourTTS.available() && text;
     btn.hidden = !ok;
-    if (ok) btn.setAttribute('data-speak', Speech.sayable(text));
+    if (ok) {
+        const said = (typeof Speech !== 'undefined') ? Speech.sayable(text) : text;
+        btn.setAttribute('data-tts-text', said);
+        btn.setAttribute('data-tts-type', 'vocabulary');
+    }
 }
 
 // Rich breakdown for a stacked Hungarian form: the contextual meaning
@@ -526,17 +530,44 @@ function _matchesTerm(haystack, term) {
 // ============================================
 // SUBSTACK-STYLE STORY AUDIO PLAYER (Online Google Cloud TTS / Neural)
 // ============================================
+
+// Gender-matched Chirp3-HD voice pools a story's characters are assigned
+// from, one each, so two characters of the same gender still sound like two
+// different people rather than both defaulting to "the male voice". Kept
+// separate from tts-worker.js's narrator/vocabulary/instruction/example
+// voices so a character never sounds like the narrator or the app itself.
+const CHARACTER_VOICE_POOL = {
+    male: ['Orus', 'Puck', 'Charon', 'Fenrir', 'Umbriel', 'Algieba'],
+    female: ['Kore', 'Aoede', 'Leda', 'Zephyr', 'Callirrhoe', 'Autonoe']
+};
+
+// One voice per named character, assigned once per story so "Meg" keeps the
+// same voice in every paragraph. Narrator isn't in story.characters and
+// keeps its own fixed voice (tts-worker.js's narrator default) — there's
+// only ever one narrator, so it doesn't need a pool.
+function assignCharacterVoices(story) {
+    const speakers = (story.narration && story.narration.speakers) || {};
+    const used = { male: 0, female: 0 };
+    const assigned = {};
+    (story.characters || []).forEach(name => {
+        const gender = speakers[name] && speakers[name].gender;
+        if (gender !== 'male' && gender !== 'female') return;
+        const pool = CHARACTER_VOICE_POOL[gender];
+        assigned[name] = pool[used[gender] % pool.length];
+        used[gender]++;
+    });
+    return assigned;
+}
+
 const StoryAudioPlayer = {
     story: null,
     paragraphs: [],
+    characterVoices: {},
     currentParaIndex: 0,
     isPlaying: false,
     speed: 1.0,
     speeds: [0.8, 1.0, 1.2, 1.5],
-    audioCache: {},
-    activeAudio: null,
     isOnline: (typeof navigator !== 'undefined' && typeof navigator.onLine === 'boolean') ? navigator.onLine : true,
-    ttsEndpoint: 'https://parlour-tts.gergkar.workers.dev/synthesize',
 
     init(story, container) {
         this.teardown();
@@ -544,8 +575,8 @@ const StoryAudioPlayer = {
 
         this.story = story;
         this.paragraphs = story.paragraphs;
+        this.characterVoices = assignCharacterVoices(story);
         this.currentParaIndex = 0;
-        this.audioCache = {};
         this.speed = 1.0;
 
         const playerEl = document.getElementById('story-substack-player');
@@ -567,7 +598,7 @@ const StoryAudioPlayer = {
             speedBtn.onclick = () => {
                 const nextIdx = (this.speeds.indexOf(this.speed) + 1) % this.speeds.length;
                 this.speed = this.speeds[nextIdx];
-                if (this.activeAudio) this.activeAudio.playbackRate = this.speed;
+                ParlourTTS.setRate(this.speed);
                 speedBtn.textContent = this.speed.toFixed(1) + '×';
             };
         }
@@ -630,12 +661,7 @@ const StoryAudioPlayer = {
 
     pause() {
         this.isPlaying = false;
-        if (this.activeAudio) {
-            this.activeAudio.pause();
-        }
-        if (typeof window.speechSynthesis !== 'undefined') {
-            window.speechSynthesis.cancel();
-        }
+        ParlourTTS.stop();
         this.updatePlayBtn();
     },
 
@@ -656,112 +682,35 @@ const StoryAudioPlayer = {
         const courseLang = (typeof Lang !== 'undefined') ? Lang.code() : 'es';
         const paraLang = para.lang || courseLang;
         const speaker = para.speaker || 'Narrator';
+        // Each character's voice was assigned once in init() (gender-matched,
+        // distinct per character) — Narrator isn't in that map and falls
+        // through to the worker's fixed narrator voice instead.
+        const character = this.characterVoices[speaker];
 
         if (speakerTag) {
-            const langLabel = paraLang === 'en' ? 'English Journey' : (paraLang === 'hu' ? 'Hungarian' : 'Spanish');
+            const langLabel = paraLang === 'en' ? 'English' : (paraLang === 'hu' ? 'Hungarian' : 'Spanish');
             speakerTag.textContent = `${speaker} (${langLabel})`;
         }
 
-        // Clean speech text with phonetic adaptation: Károly is pronounced Károy
-        let text = para.text || '';
-        text = text.replace(/\bKároly\b/g, 'Károy').replace(/\bKaroly\b/g, 'Károy');
+        const text = para.text || '';
 
-        try {
-            const audio = await this.getAudioForParagraph(idx, text, paraLang, speaker);
-            if (!this.isPlaying || this.currentParaIndex !== idx) return;
-
-            if (this.activeAudio) {
-                this.activeAudio.pause();
-            }
-
-            this.activeAudio = audio;
-            audio.playbackRate = this.speed;
-            audio.currentTime = 0;
-
-            audio.onended = () => {
+        const played = await ParlourTTS.speak({
+            text,
+            language: paraLang,
+            type: 'story',
+            character,
+            speed: this.speed,
+            onEnded: () => {
                 if (this.isPlaying && this.currentParaIndex === idx) {
                     this.playParagraph(idx + 1);
                 }
-            };
-
-            await audio.play();
-
-            // Pre-fetch next paragraph in background
-            if (idx + 1 < this.paragraphs.length) {
-                const nextPara = this.paragraphs[idx + 1];
-                let nextText = (nextPara.text || '').replace(/\bKároly\b/g, 'Károy').replace(/\bKaroly\b/g, 'Károy');
-                this.getAudioForParagraph(idx + 1, nextText, nextPara.lang || courseLang, nextPara.speaker || 'Narrator').catch(() => {});
             }
-        } catch (err) {
-            console.warn('Online TTS stream unavailable; using browser speech fallback:', err);
-            this.fallbackSpeak(text, paraLang, idx);
-        }
-    },
-
-    async getAudioForParagraph(idx, text, lang, speaker) {
-        if (this.audioCache[idx]) return this.audioCache[idx];
-
-        let voiceName = 'es-ES-Studio-C';
-        let languageCode = 'es-ES';
-
-        if (lang === 'en') {
-            languageCode = 'en-US';
-            voiceName = (speaker === 'Carlos' || speaker === 'Károly') ? 'en-US-Journey-O' : 'en-US-Journey-F';
-        } else if (lang === 'hu') {
-            languageCode = 'hu-HU';
-            voiceName = 'hu-HU-Wavenet-A';
-        } else {
-            languageCode = 'es-ES';
-            voiceName = (speaker === 'Carlos' || speaker === 'Juan') ? 'es-ES-Neural2-B' : 'es-ES-Studio-C';
-        }
-
-        const endpoint = (typeof window !== 'undefined' && window.PARLOUR_TTS_ENDPOINT) ||
-                         localStorage.getItem('parlour_tts_endpoint') ||
-                         this.ttsEndpoint;
-
-        const res = await fetch(endpoint, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                text: text,
-                lang: lang,
-                languageCode: languageCode,
-                voiceName: voiceName,
-                speakingRate: 1.0,
-                pitch: 0.0
-            })
         });
+        if (!this.isPlaying || this.currentParaIndex !== idx) return;
 
-        if (!res.ok) {
-            throw new Error(`TTS worker error: ${res.status}`);
+        if (!played) {
+            this.finish();
         }
-
-        const data = await res.json();
-        if (!data.audioContent) {
-            throw new Error('No audioContent in response');
-        }
-
-        const audio = new Audio('data:audio/mp3;base64,' + data.audioContent);
-        audio.preload = 'auto';
-        this.audioCache[idx] = audio;
-        return audio;
-    },
-
-    fallbackSpeak(text, lang, idx) {
-        if (typeof window.speechSynthesis === 'undefined') return;
-        window.speechSynthesis.cancel();
-
-        const utter = new SpeechSynthesisUtterance(text);
-        utter.lang = lang === 'en' ? 'en-US' : (lang === 'hu' ? 'hu-HU' : 'es-ES');
-        utter.rate = this.speed;
-
-        utter.onend = () => {
-            if (this.isPlaying && this.currentParaIndex === idx) {
-                this.playParagraph(idx + 1);
-            }
-        };
-
-        window.speechSynthesis.speak(utter);
     },
 
     updateHighlight(idx) {
@@ -827,8 +776,6 @@ const StoryAudioPlayer = {
 
     teardown() {
         this.pause();
-        this.audioCache = {};
-        this.activeAudio = null;
         this.story = null;
         this.paragraphs = [];
         this.currentParaIndex = 0;
@@ -1637,7 +1584,7 @@ window.Reader = {
                 if (hasNarration) {
                     speechHtml = `<button type="button" class="story-para-play-btn speak-btn" data-para-index="${idx}" aria-label="Listen to this paragraph" title="Listen to this paragraph">${Art.icon('listening')}</button>`;
                 } else if (isTargetLanguage) {
-                    speechHtml = Speech.button(para.text, 'Listen to this paragraph');
+                    speechHtml = (typeof ParlourTTS !== 'undefined') ? ParlourTTS.button(para.text, { type: 'story', label: 'Listen to this paragraph' }) : '';
                 }
 
                 html += '<p class="' + paraClass + '" data-para-index="' + idx + '">' +
@@ -1647,7 +1594,7 @@ window.Reader = {
         } else if (story.text) {
             // Fallback: single text field
             html += '<p class="story-paragraph narration">' +
-                self.makeClickable(story.text) + Speech.button(story.text, 'Listen') +
+                self.makeClickable(story.text) + (typeof ParlourTTS !== 'undefined' ? ParlourTTS.button(story.text, { type: 'story' }) : '') +
             '</p>';
         }
 

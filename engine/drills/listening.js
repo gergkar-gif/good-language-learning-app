@@ -7,12 +7,13 @@
 // PARLOUR_LISTENING_SPEC.md §4's "the existing curriculum should provide
 // much of the initial controlled content".
 //
-// Audio is speechSynthesis via engine/speech.js — no audio files, no
-// pipeline (spec §3, §13: "TTS can be used where appropriate", "do not
-// build... long-form authentic listening infrastructure" for v1). A course
-// with no installed voice can't run this driller at all (there is nothing
-// to test without audio), so the settings screen gates on Speech.available()
-// the same way Speech itself hides its buttons rather than mispronouncing.
+// Audio goes through engine/tts.js's ParlourTTS (cloud TTS, falling back to
+// device speechSynthesis offline) — no audio files, no pipeline (spec §3,
+// §13: "TTS can be used where appropriate", "do not build... long-form
+// authentic listening infrastructure" for v1). The settings screen gates on
+// ParlourTTS.available() (online, or a device voice as fallback) rather than
+// requiring a device voice outright, so this driller works purely from the
+// cloud provider on a device with no voice installed.
 //
 // Same shell as engine/drills/translation.js — settings -> session ->
 // results, Count/Timed modes — but rendering goes to ListeningRunner
@@ -217,12 +218,13 @@ const ListeningDriller = (function () {
     //  RENDERING — Settings
     // ================================================================
     function _renderSettings() {
-        if (!Speech.available()) {
+        if (!ParlourTTS.available()) {
             _container.innerHTML = `
                 <h2 class="gd-title">Listening Driller</h2>
-                <div class="gd-empty">This browser has no ${typeof Lang !== 'undefined' ? Lang.name() : 'course'}
-                    voice installed, so there's nothing to listen to yet. Add one in your device's
-                    language/speech settings and reopen this driller.</div>
+                <div class="gd-empty">There's no audio available right now — you're offline and this
+                    browser has no ${typeof Lang !== 'undefined' ? Lang.name() : 'course'} voice installed.
+                    Reconnect, or add a device voice in your language/speech settings, then reopen
+                    this driller.</div>
             `;
             return;
         }

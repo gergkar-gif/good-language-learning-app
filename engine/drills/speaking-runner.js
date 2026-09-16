@@ -131,16 +131,16 @@ const SpeakingRunner = (function () {
                 if (span) span.textContent = 'Your Voice';
             }
         }
-        if (typeof Speech !== 'undefined') {
-            Speech.speak(_exercise.spanish);
+        if (typeof ParlourTTS !== 'undefined') {
+            ParlourTTS.speak({ text: _exercise.spanish, type: 'pronunciation' });
         }
     }
 
     function _playUserAudio() {
         const url = _userAudioUrl || (typeof SpeechInput !== 'undefined' && SpeechInput.getRecordedAudioUrl ? SpeechInput.getRecordedAudioUrl() : null);
         if (!url) return;
-        if (typeof Speech !== 'undefined' && typeof window.speechSynthesis !== 'undefined') {
-            window.speechSynthesis.cancel();
+        if (typeof ParlourTTS !== 'undefined') {
+            ParlourTTS.stop();
         }
         if (_userAudioPlayer) {
             _userAudioPlayer.pause();
@@ -399,8 +399,8 @@ const SpeakingRunner = (function () {
         const listenBtn = _container.querySelector('[data-action="listen-lead"]');
         if (listenBtn) {
             listenBtn.addEventListener('click', () => {
-                if (typeof Speech !== 'undefined') {
-                    Speech.speak(_exercise.spanish);
+                if (typeof ParlourTTS !== 'undefined') {
+                    ParlourTTS.speak({ text: _exercise.spanish, type: 'pronunciation' });
                 }
             });
         }

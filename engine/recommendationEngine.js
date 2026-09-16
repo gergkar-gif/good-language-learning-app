@@ -382,7 +382,7 @@ const RecommendationEngine = (function () {
         }
 
         // Candidate 10: Speaking Driller (Oral production)
-        const canSpeak = (typeof SpeechInput !== 'undefined' && SpeechInput.isSupported()) || (typeof Speech !== 'undefined' && Speech.available());
+        const canSpeak = (typeof SpeechInput !== 'undefined' && SpeechInput.isSupported()) || (typeof ParlourTTS !== 'undefined' && ParlourTTS.available());
         if (canSpeak && completedCount >= 2) {
             const isWeak = !!topWeakProduction || weakDrillerIds.has('speaking');
             const targetSkill = topWeakProduction || (isWeak ? null : effectiveSkill);

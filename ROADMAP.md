@@ -189,24 +189,37 @@ this list directly rather than relying on a tool-specific todo list.
     - **Pedagogical Comprehension Checks**: Built-in interactive multiple-choice check with immediate validation and explanations.
     - **Schema & Manifest Integration**: Added `narration` definitions in `story.schema.json` with optional `audioFile`, and updated `build-manifest.py` so `hasAudio` is based on narration structure and paragraphs rather than local disk audio presence. Verified with 11 automated unit tests in `tests/reader/test-story-narration.js`.
 19. **"Listen to your own voice" unavailable on iPad/iPhone** — flagged
-    2026-09-16, to investigate after the current batch-fix pass. Item 11's
-    "Solved hardware mic contention on mobile devices" claim above is not
-    the full picture: `engine/speech-input.js`'s `isMobileDevice`/
-    `canRecordConcurrently` gate (in `startListening()`) deliberately skips
+    2026-09-16, **attempted fix same day, needs real-device confirmation.**
+    Item 11's "Solved hardware mic contention on mobile devices" claim was
+    not the full picture: `engine/speech-input.js`'s `isMobileDevice`/
+    `canRecordConcurrently` gate (in `startListening()`) deliberately skipped
     `getUserMedia`/`MediaRecorder` entirely on iOS (`canRecordConcurrently
     = !isMobileDevice`), running speech recognition alone to avoid real
-    OS-level mic contention with `webkitSpeechRecognition`. This means
+    OS-level mic contention with `webkitSpeechRecognition`. This meant
     Speaking Studio's audio-playback compare feature ("Your Voice" in
-    Sentence Drills, "Listen To Your Own Voice" in Verbal Production) has
-    never actually worked on iPad/iPhone — the on-screen fallback message
-    ("Audio recording playback unavailable on this browser/session") is
-    accurate but reads like a bug rather than an explained platform
-    limitation. Two directions worth considering when this is picked back
-    up: (a) a lighter-touch message that names the platform limitation
-    explicitly instead of sounding broken, or (b) a real fix — e.g.
-    recording sequentially after recognition finishes rather than
-    concurrently, which would need its own UX pass (an extra step) and
-    isn't a small change.
+    Sentence Drills, "Listen To Your Own Voice" in Verbal Production) never
+    actually worked on iPad/iPhone.
+    - **Fix**: removed the `canRecordConcurrently` gate — recording is now
+      attempted on every platform whenever `onAudioReady` is requested, not
+      just desktop. `tests/speech/test-speech-lifecycle.js` test 8 updated
+      to assert `getUserMedia` *is* called on a mobile UA (previously
+      asserted the opposite). Verified live in-browser with a mobile UA:
+      `getUserMedia` fires and `SpeechInput.isListening()` stays true
+      concurrently — matches the unit test. Cannot verify the actual
+      hardware-contention question from here (no physical device, and the
+      Browser pane's mobile emulation doesn't reproduce real iOS/Android mic
+      behavior) — this is a real-device test, not proven safe yet. If it
+      turns out concurrent capture genuinely does starve recognition on some
+      phones, the existing onerror/onend restart logic already recovers
+      from a stray no-speech/aborted error without losing the learner's
+      turn, so the likely failure mode is "still no playback," not "broken
+      recognition."
+    - **Message fix, same day**: the fallback text in `engine/drills/
+      speaking.js` ("Audio recording playback unavailable on this
+      browser/session") no longer names a platform — since recording is
+      attempted everywhere now, a miss is a one-off, not a category — reads
+      "Your recording wasn't captured for playback this time — your answer
+      was still recognised and graded normally."
 20. ~~**Batch fix/feature pass — Lessons, Decks, Speaking/Writing, Workshop,
     Reader, Journey**~~ — **Done 2026-09-16.** An 18-item punch list across
     four phases, each landed as its own commit:
@@ -306,6 +319,107 @@ this list directly rather than relying on a tool-specific todo list.
     possibly not matching what's actually taught per unit — not
     independently verified, would need reading all 32 units' grammar
     files.
+23. **`ParlourTTS` engine abstraction (`engine/tts.js`)** — **Built and
+    live 2026-09-16.** Content -> `ParlourTTS.speak({text, language, type,
+    voiceName, gender, speed, onEnded})` -> provider -> audio, so no caller
+    talks to a TTS provider directly. Cloud-first (Google Cloud TTS via
+    `cloudflare-worker/tts-worker.js`), falling back automatically to
+    device `speechSynthesis` (`engine/speech.js`'s `Speech` module) when
+    offline, the worker errors, or no API key is configured — verified live
+    in-browser (Library story reader and Workshop's Listening Driller both
+    correctly attempt cloud, catch the failure, and fall back to device
+    speech with auto-advance intact). Session-cached per
+    `language::voiceName::text` so repeat playback is free.
+    - Undoes an uncommitted regression from between 2026-09-15 and
+      2026-09-16 that had replaced item 18's real Google Cloud TTS call in
+      `tts-worker.js` with a reverse-engineered, unofficial Microsoft
+      Translator endpoint (hardcoded HMAC key pulled from the Android app).
+      Worker now calls `texttospeech.googleapis.com` directly again, using
+      Chirp3-HD voices (Google's newest natural-narration tier, and the
+      only one covering both Spanish *and* Hungarian at that quality —
+      Studio and Neural2 don't have Hungarian voices). Free tier is 1M
+      chars/month; Parlour's own estimated spoken-content corpus is a
+      one-time synthesis in the low single-digit millions of characters,
+      cached forever after. Needs a GCP project + billing account (card on
+      file, but $0 expected) and `wrangler secret put GOOGLE_TTS_API_KEY`
+      on the worker before cloud playback actually works — until then it
+      falls back to device speech automatically, nothing breaks.
+    - **GCP + Cloudflare setup completed and verified live 2026-09-16**:
+      `parlour-tts` GCP project, billing account, Text-to-Speech API
+      enabled, API key restricted to that one API, `GOOGLE_TTS_API_KEY`
+      deployed as a Cloudflare Worker secret. `/health` reports
+      `hasApiKey: true` and a real story played through Chirp3-HD end to
+      end with zero fallback warnings.
+    - **Purposeful voices by content type, same day**: `tts-worker.js`'s
+      `SHORT_VOICE` map picks by an explicit per-character voice first (see
+      below), else `gender` (`male` -> Orus, `female` -> Kore), else `type`
+      (`vocabulary`/`listening`/`pronunciation` -> Iapetus for clarity,
+      `instruction` -> Achird for a distinct "app voice", `example` ->
+      Despina, `narrator`/`reading` -> Sulafat), else the narrator default.
+      Voice names are shared across the Chirp3-HD bank per language, so the
+      same semantic map works for es/hu/en without per-language tuning.
+    - **Distinct voice per named character, same day**: a story's dialogue
+      no longer collapses every male character onto one voice and every
+      female character onto another. `reader.js`'s `assignCharacterVoices()`
+      reads each story's own `narration.speakers[name].gender` and hands
+      out one voice per character from a 6-deep gender-matched pool (Orus,
+      Puck, Charon, Fenrir, Umbriel, Algieba for male; Kore, Aoede, Leda,
+      Zephyr, Callirrhoe, Autonoe for female), assigned once per story load
+      so "Meg" keeps the same voice in every line. Worker's `character`
+      param (a short voice name) takes priority over `gender`/`type`.
+    - **All three leftovers resolved 2026-09-16**:
+      1. All ~15 remaining `Speech.speak()`/`Speech.button()`/
+         `Speech.available()` call sites (decks, lessons, library, SRS,
+         speaking runner, studyPlan, recommendationEngine) migrated to
+         `ParlourTTS` — added `ParlourTTS.available()` (online, or a device
+         voice as fallback) and `ParlourTTS.button()` (same drop-in markup
+         ergonomics as `Speech.button()`, own `[data-tts-text]` delegated
+         click listener so it doesn't collide with `Speech`'s
+         `[data-speak]` one) to make the swap mechanical. Verified live:
+         Decks word list, a lesson's vowel-sound table, and the SRS review
+         card all speak through the cloud provider with no fallback
+         warnings. Found and fixed a related latent bug along the way:
+         Speaking Studio's "play my own recording" only ever cancelled
+         `speechSynthesis`, not a still-playing cloud audio clip — now
+         calls `ParlourTTS.stop()`, which covers both.
+      2. `listening.js`'s settings screen now gates on `ParlourTTS
+         .available()` instead of `Speech.available()`, so the driller
+         works from the cloud provider alone on a device with no voice
+         installed. Same fix applied to the two other places that decide
+         whether to *recommend* Listening/Speaking activities at all
+         (`studyPlan.js`'s time-based session builder, `recommendation
+         Engine.js`'s Home candidates) — otherwise migrating the driller
+         itself would have been undercut by recommendation logic still
+         hiding it from cloud-only users.
+      3. `scripts/narrate-story.py` no longer synthesizes audio at all —
+         removed the `edge-tts` dependency, `synthesize_story_neural()`,
+         and the `audioFile` field it wrote into `narration`, along with
+         the now-dead `--no-synth` flag. It only ever generates the
+         timing/pedagogical metadata now (word-count-based paragraph
+         timing, comprehension questions, `speakers[name].gender` for the
+         voice assignment above) — verified with `--dry-run` against the
+         real content and the existing 11-test narration suite still
+         passing unchanged.
+24. **SRS/Decks review card: audio/mic UI stripped back down** — **Built
+    2026-09-16.** The card had accumulated three overlapping audio
+    affordances: a `ParlourTTS.button()` listen icon, a separate
+    audio-first review direction (`reviewDirection === 'audio-en'`, its own
+    front/back layout and auto-play), and a self-recording "Speak" button
+    (`reviewSpeakWord()` — records via `SpeechInput`, evaluates pronunciation,
+    offers a "Hear yourself" replay). User's call: "too many things for an
+    SRS card... all I want is on the target language side to have a little
+    microphone icon... click and listen to the word. That's all. Like in a
+    Quizlet card." Removed the audio-first direction (now a plain two-way
+    Spanish/English toggle) and the self-recording/evaluation flow entirely
+    (`reviewSpeakWord`, `reviewPlayUserAudio`, their state, the `#review
+    -speak-btn`/`#review-speak-feedback` markup, `.review-speak-*`/
+    `.review-audio-*`/`.btn-audio-prompt` CSS) — kept only the one listen
+    icon next to the Spanish word. Pronunciation self-recording still exists
+    in Speaking Driller, which already covers that use case separately;
+    nothing was lost, just de-duplicated off the review card. Verified live:
+    Flip and Type modes, Show Answer, rating buttons, and the two-way
+    direction toggle all work with no console errors and no orphaned
+    references to the removed markup/classes anywhere in the codebase.
 
 ## Content & curriculum
 

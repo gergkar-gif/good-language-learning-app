@@ -1489,46 +1489,6 @@
     color: var(--accent);
 }
 
-/* SRS Review Speech Replay Button */
-.review-speak-replay-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    margin-left: 8px;
-    padding: 3px 8px;
-    font-size: 11px;
-    font-weight: 600;
-    border-radius: var(--radius-sm);
-    border: 1px solid var(--border);
-    background: var(--bg);
-    color: var(--primary);
-    cursor: pointer;
-    vertical-align: middle;
-    transition: background var(--dur-fast), border-color var(--dur-fast);
-}
-
-.review-speak-replay-btn:hover {
-    border-color: var(--primary);
-}
-
-.review-speak-replay-btn.is-playing {
-    border-color: var(--accent);
-    color: var(--accent);
-}
-
-[data-theme="dark"] .review-speak-replay-btn,
-:root:not([data-theme="light"]) .review-speak-replay-btn {
-    background: #152B42;
-    border-color: rgba(245, 241, 232, 0.2);
-    color: #F5F1E8;
-}
-
-[data-theme="dark"] .review-speak-replay-btn:hover,
-:root:not([data-theme="light"]) .review-speak-replay-btn:hover {
-    background: #1B3550;
-    border-color: var(--accent);
-}
-
 /* Feedback & Controls */
 .sp-feedback {
     min-height: 24px;

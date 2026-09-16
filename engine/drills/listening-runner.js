@@ -232,7 +232,7 @@ const ListeningRunner = (function () {
 
         const playBtn = _container.querySelector('[data-action="play"]');
         playBtn.addEventListener('click', () => {
-            Speech.speak(_exercise.audio);
+            ParlourTTS.speak({ text: _exercise.audio, type: 'listening' });
             // Unlimited replay, never penalised (spec §3) — this only fires
             // the reveal-the-answer-controls step once.
             if (!_played) {

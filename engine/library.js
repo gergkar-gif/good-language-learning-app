@@ -598,7 +598,7 @@ const Library = (function () {
         if (paragraphs.length) {
             paragraphs.forEach(p => {
                 html += '<p class="story-paragraph narration">' + Reader.makeClickable(p) +
-                    (typeof Speech !== 'undefined' ? Speech.button(p, 'Listen to this paragraph') : '') + '</p>';
+                    (typeof ParlourTTS !== 'undefined' ? ParlourTTS.button(p, { type: 'reading', label: 'Listen to this paragraph' }) : '') + '</p>';
             });
         }
         html += '</div>';

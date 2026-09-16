@@ -365,11 +365,7 @@ const REVIEW_DIRECTION_KEY = 'app_reviewDirection';
 let reviewDirection = 'es-en';
 try {
     const saved = localStorage.getItem(REVIEW_DIRECTION_KEY);
-    if (saved === 'en-es' || saved === 'audio-en') {
-        reviewDirection = saved;
-    } else {
-        reviewDirection = 'es-en';
-    }
+    reviewDirection = saved === 'en-es' ? saved : 'es-en';
 } catch (error) {
     // Private browsing with storage disabled: the default is fine.
 }
@@ -416,7 +412,6 @@ function updateDirectionToggle() {
     const btn = document.getElementById('dk-direction-toggle');
     const esLabel = document.getElementById('dk-direction-es');
     const enLabel = document.getElementById('dk-direction-en');
-    const audioLabel = document.getElementById('dk-direction-audio');
 
     if (btn) {
         btn.setAttribute('data-direction', reviewDirection);
@@ -427,10 +422,6 @@ function updateDirectionToggle() {
         esLabel.classList.toggle('dk-direction-active', reviewDirection === 'es-en');
     }
     if (enLabel) enLabel.classList.toggle('dk-direction-active', reviewDirection === 'en-es');
-    if (audioLabel) audioLabel.classList.toggle('dk-direction-active', reviewDirection === 'audio-en');
-
-    const audioBadge = document.getElementById('review-audio-mode-badge');
-    if (audioBadge) audioBadge.classList.toggle('hidden', reviewDirection !== 'audio-en');
 }
 
 function setReviewDirection(dir) {
@@ -447,9 +438,7 @@ function setReviewDirection(dir) {
 }
 
 function toggleReviewDirection() {
-    if (reviewDirection === 'es-en') reviewDirection = 'en-es';
-    else if (reviewDirection === 'en-es') reviewDirection = 'audio-en';
-    else reviewDirection = 'es-en';
+    reviewDirection = reviewDirection === 'es-en' ? 'en-es' : 'es-en';
 
     try {
         localStorage.setItem(REVIEW_DIRECTION_KEY, reviewDirection);
@@ -746,37 +735,17 @@ function renderCard() {
     // show it (Lexicon.withArticle) — silently a no-op for anything that
     // isn't a noun with a known simple gender.
     const spanishDisplay = Lexicon.withArticle(currentReviewCard.spanish);
-    const isAudioFirst = reviewDirection === 'audio-en';
     const englishFirst = reviewDirection === 'en-es';
 
-    // Listenable, same Speech.button()/data-speak mechanism Decks' own word
-    // lists and the Library popup already use — no separate click wiring
-    // needed, the button carries its own delegated listener. Attached to
-    // whichever side is actually showing the Spanish word: when English
+    // Listenable, same ParlourTTS.button()/data-tts-text mechanism Decks' own
+    // word lists and the Library popup already use — no separate click
+    // wiring needed, the button carries its own delegated listener. Attached
+    // to whichever side is actually showing the Spanish word: when English
     // shows first, that's #review-back, which stays hidden (display:none on
     // #review-answer) until the learner reveals it anyway, so the audio
     // can't leak the answer before a typed/self-graded attempt.
-    const spanishHtml = esc(spanishDisplay) + (typeof Speech !== 'undefined' ? Speech.button(currentReviewCard.spanish) : '');
-    if (isAudioFirst) {
-        const audioFrontHtml = `
-            <div class="review-audio-prompt">
-                <button type="button" class="btn-audio-prompt" onclick="if (typeof Speech !== 'undefined') Speech.speak(reviewExpectedSpanish);" aria-label="Listen">
-                    <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
-                    <span class="audio-prompt-text">Tap to hear word</span>
-                </button>
-            </div>
-        `;
-        document.getElementById('review-front').innerHTML = audioFrontHtml;
-        document.getElementById('review-back').innerHTML = `
-            <div class="review-audio-revealed-es">${spanishHtml}</div>
-            <div class="review-audio-revealed-en">${esc(displayEnglish)}</div>
-        `;
-        document.getElementById('review-context').textContent = '(listening)';
-        // Auto-play audio once when card appears if sound is available
-        if (typeof Speech !== 'undefined' && Speech.available()) {
-            Speech.speak(currentReviewCard.spanish);
-        }
-    } else if (englishFirst) {
+    const spanishHtml = esc(spanishDisplay) + (typeof ParlourTTS !== 'undefined' ? ParlourTTS.button(currentReviewCard.spanish, { type: 'vocabulary' }) : '');
+    if (englishFirst) {
         document.getElementById('review-front').textContent = displayEnglish;
         document.getElementById('review-back').innerHTML = spanishHtml;
         document.getElementById('review-context').textContent = displayType ? `(${displayType})` : '';
@@ -795,13 +764,6 @@ function renderCard() {
     const flipActions = document.getElementById('review-flip-actions');
     if (flipActions) flipActions.style.display = typeMode ? 'none' : 'flex';
     document.getElementById('show-answer-btn').style.display = typeMode ? 'none' : 'block';
-    const speakFeedback = document.getElementById('review-speak-feedback');
-    if (speakFeedback) {
-        speakFeedback.innerHTML = '';
-        speakFeedback.classList.add('hidden');
-    }
-    const speakBtn = document.getElementById('review-speak-btn');
-    if (speakBtn) speakBtn.classList.remove('is-recording');
 
     document.getElementById('review-type-input').classList.toggle('hidden', !typeMode);
     const field = document.getElementById('review-type-field');
@@ -855,134 +817,6 @@ function revealAnswer() {
 
 function showAnswer() {
     revealAnswer();
-}
-
-let _reviewSpeakingActive = false;
-let _reviewUserAudioUrl = null;
-let _reviewAudioPlayer = null;
-
-function reviewPlayUserAudio() {
-    const url = _reviewUserAudioUrl || (typeof SpeechInput !== 'undefined' ? SpeechInput.getRecordedAudioUrl() : null);
-    if (!url) return;
-
-    if (typeof Speech !== 'undefined' && typeof window.speechSynthesis !== 'undefined') {
-        window.speechSynthesis.cancel();
-    }
-    if (_reviewAudioPlayer) {
-        try { _reviewAudioPlayer.pause(); } catch (e) {}
-        _reviewAudioPlayer = null;
-    }
-
-    const btn = document.querySelector('.review-speak-replay-btn');
-    try {
-        _reviewAudioPlayer = new Audio(url);
-        if (btn) btn.classList.add('is-playing');
-
-        _reviewAudioPlayer.onended = () => {
-            if (btn) btn.classList.remove('is-playing');
-            _reviewAudioPlayer = null;
-        };
-
-        _reviewAudioPlayer.onerror = () => {
-            if (btn) btn.classList.remove('is-playing');
-            _reviewAudioPlayer = null;
-        };
-
-        _reviewAudioPlayer.play().catch(e => {
-            console.warn('SRS playback error:', e);
-            if (btn) btn.classList.remove('is-playing');
-        });
-    } catch (e) {
-        console.warn('SRS audio init error:', e);
-    }
-}
-
-function reviewSpeakWord(btn) {
-    if (!currentReviewCard) return;
-    if (typeof SpeechInput === 'undefined' || !SpeechInput.isSupported()) {
-        if (typeof showToast === 'function') showToast('Voice recognition is not supported in this browser.');
-        else alert('Voice recognition is not supported in this browser.');
-        return;
-    }
-
-    const feedbackEl = document.getElementById('review-speak-feedback');
-
-    if (_reviewSpeakingActive) {
-        SpeechInput.stopListening();
-        _reviewSpeakingActive = false;
-        if (btn) btn.classList.remove('is-recording');
-        if (feedbackEl) feedbackEl.classList.add('hidden');
-        return;
-    }
-
-    _reviewUserAudioUrl = null;
-    _reviewSpeakingActive = true;
-    if (btn) btn.classList.add('is-recording');
-    if (feedbackEl) {
-        feedbackEl.textContent = 'Listening... Say the word';
-        feedbackEl.className = 'review-speak-feedback';
-        feedbackEl.classList.remove('hidden');
-    }
-
-    const isEnFirst = reviewDirection === 'en-es';
-    const target = isEnFirst ? currentReviewCard.spanish : (currentReviewCard.spanish || currentReviewCard.english);
-
-    SpeechInput.startListening({
-        target: target,
-        onInterim: interim => {
-            if (feedbackEl) feedbackEl.textContent = interim;
-        },
-        onAudioReady: url => {
-            _reviewUserAudioUrl = url;
-            const replayBtn = document.querySelector('.review-speak-replay-btn');
-            if (replayBtn) replayBtn.classList.remove('hidden');
-        },
-        onFinal: transcript => {
-            _reviewSpeakingActive = false;
-            if (btn) btn.classList.remove('is-recording');
-            const evalResult = SpeechInput.evaluate(target, transcript);
-            if (feedbackEl) {
-                const safeTrans = (typeof esc === 'function' ? esc(transcript) : transcript);
-                const replayBtnHtml = `<button type="button" class="review-speak-replay-btn ${_reviewUserAudioUrl ? '' : 'hidden'}" onclick="reviewPlayUserAudio()" aria-label="Listen to your recording">${typeof Art !== 'undefined' ? Art.icon('listening') : ''} Hear yourself</button>`;
-                if (evalResult.isCorrect) {
-                    feedbackEl.className = 'review-speak-feedback is-correct';
-                    feedbackEl.innerHTML = `✓ "${safeTrans}" (${evalResult.accuracy}%) ${replayBtnHtml}`;
-                } else {
-                    feedbackEl.className = 'review-speak-feedback is-wrong';
-                    feedbackEl.innerHTML = `✗ Heard "${safeTrans}" (${evalResult.accuracy}%) ${replayBtnHtml}`;
-                }
-            }
-            showAnswer();
-        },
-        onError: err => {
-            _reviewSpeakingActive = false;
-            if (btn) btn.classList.remove('is-recording');
-            if (feedbackEl) {
-                const currentText = feedbackEl.textContent && feedbackEl.textContent !== '...' ? feedbackEl.textContent.trim() : '';
-                if (currentText && !currentText.startsWith('Could not') && !currentText.startsWith('Microphone')) {
-                    const evalResult = SpeechInput.evaluate(target, currentText);
-                    const safeTrans = (typeof esc === 'function' ? esc(currentText) : currentText);
-                    const replayBtnHtml = `<button type="button" class="review-speak-replay-btn ${_reviewUserAudioUrl ? '' : 'hidden'}" onclick="reviewPlayUserAudio()" aria-label="Listen to your recording">${typeof Art !== 'undefined' ? Art.icon('listening') : ''} Hear yourself</button>`;
-                    if (evalResult.isCorrect) {
-                        feedbackEl.className = 'review-speak-feedback is-correct';
-                        feedbackEl.innerHTML = `✓ "${safeTrans}" (${evalResult.accuracy}%) ${replayBtnHtml}`;
-                    } else {
-                        feedbackEl.className = 'review-speak-feedback is-wrong';
-                        feedbackEl.innerHTML = `✗ Heard "${safeTrans}" (${evalResult.accuracy}%) ${replayBtnHtml}`;
-                    }
-                    showAnswer();
-                    return;
-                }
-
-                feedbackEl.className = 'review-speak-feedback is-wrong';
-                if (err === 'permission-denied') {
-                    feedbackEl.textContent = 'Microphone permission was denied. Please allow microphone access in browser settings.';
-                } else {
-                    feedbackEl.textContent = 'Could not hear clearly. Tap Show Answer or try again.';
-                }
-            }
-        }
-    });
 }
 
 function initCardGestures() {
@@ -1112,17 +946,11 @@ function checkTypedAnswer() {
     const field = document.getElementById('review-type-field');
     if (!field) return;
 
-    const isAudio = reviewDirection === 'audio-en';
     const englishFirst = reviewDirection === 'en-es';
     const typed = srsNormalise(field.value);
-    let ok = false;
-    if (isAudio) {
-        ok = englishAlternatives(reviewExpectedEnglish).includes(typed) || typed === srsNormalise(reviewExpectedSpanish);
-    } else if (englishFirst) {
-        ok = typed === srsNormalise(reviewExpectedSpanish);
-    } else {
-        ok = englishAlternatives(reviewExpectedEnglish).includes(typed);
-    }
+    const ok = englishFirst
+        ? typed === srsNormalise(reviewExpectedSpanish)
+        : englishAlternatives(reviewExpectedEnglish).includes(typed);
 
     field.classList.toggle('correct', ok);
     field.classList.toggle('wrong', !ok);

@@ -157,6 +157,9 @@ const Speech = (function () {
         utterance.lang = (voice && voice.lang) || preferred()[0];
         // A shade under natural pace. Beginners lose word boundaries at 1.0.
         utterance.rate = (options && options.rate) || 0.9;
+        if (options && typeof options.onEnd === 'function') {
+            utterance.onend = options.onEnd;
+        }
         synth.speak(utterance);
         return true;
     }

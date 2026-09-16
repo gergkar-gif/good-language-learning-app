@@ -507,10 +507,10 @@ function highlightWord(sentence, word) {
         + esc(text.slice(idx + word.length));
 }
 
-// A listen button for a piece of Spanish. Returns '' when the device has no
-// Spanish voice, so every caller can add it without a guard.
+// A listen button for a piece of Spanish. Returns '' only when neither cloud
+// nor device speech can run, so every caller can add it without a guard.
 function say(text) {
-    return (typeof Speech !== 'undefined') ? Speech.button(text) : '';
+    return (typeof ParlourTTS !== 'undefined') ? ParlourTTS.button(text) : '';
 }
 
 // A real recording beats TTS whenever content supplies one for this exact
@@ -1095,8 +1095,8 @@ const stepRenderers = {
             <p class="lsn-question">Listen and choose what it means.</p>
             <div class="lsn-listen">
                 <button class="lsn-play" onclick="lessonPlayAudio()" aria-label="Play audio">${Art.icon('listening')} Play</button>
-                ${(typeof Speech === 'undefined' || !Speech.available())
-                    ? `<p class="lsn-hint">No ${esc(Lang.name())} voice found on this device — you can still answer after 3 tries.</p>` : ''}
+                ${(typeof ParlourTTS === 'undefined' || !ParlourTTS.available())
+                    ? `<p class="lsn-hint">No audio available right now — you can still answer after 3 tries.</p>` : ''}
             </div>
             <div class="lsn-options">
                 ${pick.options.map((option, i) => `
@@ -1119,8 +1119,8 @@ const stepRenderers = {
             <p class="lsn-question">Listen and type or speak what you hear.</p>
             <div class="lsn-listen">
                 <button class="lsn-play" onclick="lessonPlayAudio()" aria-label="Play audio">${Art.icon('listening')} Play</button>
-                ${(typeof Speech === 'undefined' || !Speech.available())
-                    ? `<p class="lsn-hint">No ${esc(Lang.name())} voice found on this device — you can still answer after 3 tries.</p>` : ''}
+                ${(typeof ParlourTTS === 'undefined' || !ParlourTTS.available())
+                    ? `<p class="lsn-hint">No audio available right now — you can still answer after 3 tries.</p>` : ''}
             </div>
             <div class="lsn-input-with-mic">
                 <input id="blank-input" class="lsn-input" type="text" placeholder="Type or speak what you hear" autocomplete="off" autocapitalize="off" spellcheck="false">
@@ -1336,7 +1336,7 @@ const stepRenderers = {
                     <div id="sp-prompt-target-reveal" class="hidden" style="margin-top:14px; padding-top:12px; border-top:1px solid var(--border);">
                         <div class="sp-target-lead">
                             <p class="sp-es-text">${esc(target)}</p>
-                            <button type="button" class="sp-listen-btn" onclick="Speech.speak('${safeTarget}')" aria-label="Listen">
+                            <button type="button" class="sp-listen-btn" onclick="ParlourTTS.speak({text: '${safeTarget}', type: 'pronunciation'})" aria-label="Listen">
                                 ${typeof Art !== 'undefined' ? Art.icon('listening') : ''} Listen
                             </button>
                         </div>
@@ -1344,7 +1344,7 @@ const stepRenderers = {
                 ` : `
                     <div class="sp-target-lead">
                         <p class="sp-es-text">${esc(target)}</p>
-                        <button type="button" class="sp-listen-btn" onclick="Speech.speak('${safeTarget}')" aria-label="Listen">
+                        <button type="button" class="sp-listen-btn" onclick="ParlourTTS.speak({text: '${safeTarget}', type: 'pronunciation'})" aria-label="Listen">
                             ${typeof Art !== 'undefined' ? Art.icon('listening') : ''} Listen
                         </button>
                     </div>
@@ -1735,7 +1735,7 @@ function summaryWordsHtml(words) {
 const QUICK_REINFORCE_COUNT = 5;
 
 function summaryReinforceHtml(grammarSkill, words, level) {
-    const hasVoice = typeof Speech !== 'undefined' && Speech.available();
+    const hasVoice = typeof ParlourTTS !== 'undefined' && ParlourTTS.available();
     const hasSpeechInput = (typeof SpeechInput !== 'undefined' && SpeechInput.isSupported()) || hasVoice;
 
     if (!grammarSkill && !words.length && !hasVoice && !hasSpeechInput) return '';
@@ -2248,7 +2248,7 @@ function lessonPlayAudio() {
         const statusEl = document.getElementById('lesson-mic-status');
         if (statusEl) statusEl.textContent = 'Tap to speak';
     }
-    if (typeof Speech !== 'undefined') Speech.speak(stepState.audio);
+    if (typeof ParlourTTS !== 'undefined') ParlourTTS.speak({ text: stepState.audio, type: 'listening' });
 }
 
 // ---- Sentence builder ----
@@ -2676,8 +2676,8 @@ function lessonPlayModelAudio() {
     }
 
     const target = stepState.target || '';
-    if (target && typeof Speech !== 'undefined') {
-        Speech.speak(target);
+    if (target && typeof ParlourTTS !== 'undefined') {
+        ParlourTTS.speak({ text: target, type: 'pronunciation' });
     }
 }
 

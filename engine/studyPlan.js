@@ -121,8 +121,8 @@ const StudyPlan = (function () {
         // 4. Listening & Speaking practice — auditory and oral production.
         // If the learner has remaining time (>= 2.5 min), allocate listening
         // and speaking practice to create a truly well-rounded session.
-        const canListen = typeof Speech !== 'undefined' && Speech.available();
-        const canSpeak = (typeof SpeechInput !== 'undefined' && SpeechInput.isSupported()) || (typeof Speech !== 'undefined' && Speech.available());
+        const canListen = typeof ParlourTTS !== 'undefined' && ParlourTTS.available();
+        const canSpeak = (typeof SpeechInput !== 'undefined' && SpeechInput.isSupported()) || (typeof ParlourTTS !== 'undefined' && ParlourTTS.available());
         const curLevel = (typeof LearnerPath !== 'undefined' && LearnerPath.currentLevel)
             ? LearnerPath.currentLevel().toLowerCase()
             : 'all';

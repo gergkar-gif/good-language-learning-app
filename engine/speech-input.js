@@ -469,15 +469,14 @@ const SpeechInput = (function () {
         }
 
         // 2. Microphone audio recording for user playback and unsupported browser fallback
-        // Only spin up getUserMedia when audio playback is requested on desktop, or when native STT is unsupported.
-        // On mobile devices (Android / iOS), getUserMedia causes hardware contention with webkitSpeechRecognition
-        // at the OS level, starving speech recognition of audio samples and causing false "no-speech" failures.
-        const isMobileDevice = typeof navigator !== 'undefined' && (
-            /iPad|iPhone|iPod|Android/i.test(navigator.userAgent) ||
-            (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)
-        );
-        const canRecordConcurrently = !isMobileDevice;
-        const needsAudioRecording = !RecognitionClass || (!!options.onAudioReady && canRecordConcurrently);
+        // Only spin up getUserMedia when audio playback is requested, or when native STT is
+        // unsupported. This used to be skipped entirely on mobile (Android/iOS) on the theory
+        // that getUserMedia causes hardware contention with webkitSpeechRecognition at the OS
+        // level — but that meant "listen to your own recording" never worked on a phone at
+        // all. Now attempted on every platform; if concurrent capture does starve recognition
+        // on some device, the existing onerror/onend restart logic above already recovers from
+        // a stray no-speech/aborted error without losing the learner's turn.
+        const needsAudioRecording = !RecognitionClass || !!options.onAudioReady;
         if (isRecordingSupported() && needsAudioRecording) {
             _startRecordingStream(options);
         } else if (!RecognitionClass && !isRecordingSupported()) {

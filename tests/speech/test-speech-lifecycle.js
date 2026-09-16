@@ -313,7 +313,7 @@ async function runTests() {
     assert.strictEqual(createdRecognitions.length, initialRecCount + 1, 'Must NOT spin up new recognition instance when speech was already spoken');
     console.log('[PASS] onend after speech commits immediately and avoids duplicate instance loops.');
 
-    console.log('--- Test 8: Mobile platform hardware contention prevention ---');
+    console.log('--- Test 8: Mobile platforms record concurrently with SpeechRecognition ---');
     // Set userAgent to Android via defineProperty (Node.js navigator.userAgent is a prototype getter)
     Object.defineProperty(global.navigator, 'userAgent', {
         value: 'Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 Chrome/120.0.0.0 Mobile Safari/537.36',
@@ -327,10 +327,15 @@ async function runTests() {
         onFinal: () => {}
     });
 
-    assert.strictEqual(getUserMediaCallCount, 0, 'On mobile devices, getUserMedia must NOT be called concurrently with SpeechRecognition');
+    // "Listen to your own recording" only works if the recording actually
+    // gets captured — mobile used to skip getUserMedia entirely to avoid
+    // theoretical hardware contention with SpeechRecognition, which meant
+    // that feature never worked on a phone at all. Now attempted on every
+    // platform; a real device test decides whether it stays this way.
+    assert.strictEqual(getUserMediaCallCount, 1, 'On mobile devices, getUserMedia must be called alongside SpeechRecognition so recording playback works');
     assert.strictEqual(SpeechInput.isListening(), true, 'Speech recognition should still be active');
     SpeechInput.stopListening();
-    console.log('[PASS] Mobile platforms prevent microphone contention by giving SpeechRecognition exclusive hardware access.');
+    console.log('[PASS] Mobile platforms record audio for playback alongside SpeechRecognition.');
 
     console.log('\n[ALL PASS] SpeechInput lifecycle test suite passed.');
 }

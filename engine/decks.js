@@ -1415,7 +1415,7 @@ const Decks = (function () {
             return `
                 <li class="dk-word dk-word-${state.replace(' ', '-')}">
                     <span class="dk-word-es">${esc(withArticle(word.lemma))}${
-                        typeof Speech !== 'undefined' ? Speech.button(word.lemma) : ''}</span>
+                        typeof ParlourTTS !== 'undefined' ? ParlourTTS.button(word.lemma, { type: 'vocabulary' }) : ''}</span>
                     <span class="dk-word-en">${esc(word.translation)}</span>
                     <span class="dk-word-state">${state}</span>
                     ${rowAction}

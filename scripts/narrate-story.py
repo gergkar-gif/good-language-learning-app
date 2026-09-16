@@ -2,22 +2,21 @@
 """
 narrate-story.py — AI-aware story narration & pedagogical annotation generator for Parlour.
 
-Uses state-of-the-art Neural TTS (edge-tts) for authentic human pronunciation,
-multi-speaker voice casting, CEFR pacing, and mixed-language story support.
+Metadata only, no audio synthesis: actual playback goes through ParlourTTS
+(engine/tts.js -> cloudflare-worker/tts-worker.js -> Google Cloud TTS) live in
+the app, not a pre-generated file, so this script never produces one — no
+Neural TTS dependency, nothing written to content/<lang>/stories/audio/.
 
 Workflow:
 1. Reads story JSON.
 2. Analyzes text structure: dialogue, speakers, CEFR pacing, pauses, emphasis, phonetics.
 3. Generates pedagogical annotations: target vocabulary, comprehension check questions.
-4. Synthesizes multi-speaker neural audio with precise paragraph-level timestamp alignment.
+4. Estimates paragraph-level timing from word count and CEFR pacing (not measured audio).
 5. Injects narration metadata into the story JSON file.
-6. Stores the audio asset in content/<lang>/stories/audio/<story-id>.mp3.
 """
 
 import argparse
-import asyncio
 import json
-import os
 import re
 import sys
 from pathlib import Path
@@ -29,12 +28,6 @@ if sys.platform == "win32":
     except Exception:
         pass
 
-try:
-    import edge_tts
-    HAS_EDGE_TTS = True
-except ImportError:
-    HAS_EDGE_TTS = False
-
 # CEFR Pacing Profiles (Default to 100% natural, un-stretched native human tempo)
 CEFR_PACING = {
     "A1": {"speedMultiplier": 1.00, "rate_str": "+0%", "rate_wpm": 140, "style": "natural, articulate"},
@@ -42,25 +35,6 @@ CEFR_PACING = {
     "B1": {"speedMultiplier": 1.00, "rate_str": "+0%", "rate_wpm": 150, "style": "natural, expressive"},
     "B2": {"speedMultiplier": 1.00, "rate_str": "+0%", "rate_wpm": 160, "style": "fluent, authentic cadence"},
     "C1": {"speedMultiplier": 1.00, "rate_str": "+0%", "rate_wpm": 170, "style": "native tempo, rich nuances"}
-}
-
-# Neural Voice Casting Catalog
-NEURAL_VOICES = {
-    "es": {
-        "narrator": "es-ES-ElviraNeural",     # Warm, articulate storytelling guide
-        "female": "es-ES-XimenaNeural",       # Clear, natural female dialogue (e.g. Meg, Ana)
-        "male": "es-ES-AlvaroNeural"          # Natural male dialogue (e.g. Carlos, Juan)
-    },
-    "hu": {
-        "narrator": "hu-HU-NoemiNeural",      # Native Hungarian female storyteller
-        "female": "hu-HU-NoemiNeural",        # Hungarian female dialogue
-        "male": "hu-HU-TamasNeural"           # Hungarian male dialogue (e.g. Károly)
-    },
-    "en": {
-        "narrator": "en-US-EmmaNeural",       # Clear, warm English scaffolding narrator
-        "female": "en-US-EmmaNeural",         # English female dialogue
-        "male": "en-US-BrianNeural"           # English male dialogue
-    }
 }
 
 KNOWN_PHONETICS = {
@@ -89,15 +63,6 @@ def detect_course_lang(story_path, story_data):
         return "es"
     return "es"
 
-def get_speaker_voice(speaker, lang, course_lang):
-    """Assigns an authentic neural voice based on speaker name, paragraph language, and role."""
-    lang_voices = NEURAL_VOICES.get(lang, NEURAL_VOICES.get(course_lang, NEURAL_VOICES["es"]))
-    if speaker == "Narrator":
-        return lang_voices["narrator"]
-    female_names = ["Meg", "Ana", "Elena", "María", "Carmen", "Kati", "Zsuzsa", "Eszter", "Emma"]
-    gender = "female" if speaker in female_names else "male"
-    return lang_voices.get(gender, lang_voices["narrator"])
-
 def analyze_story_text(story_data, course_lang="es"):
     """
     Analyzes story text to derive:
@@ -111,8 +76,12 @@ def analyze_story_text(story_data, course_lang="es"):
     pacing = CEFR_PACING.get(level, CEFR_PACING["A1"])
     paragraphs = story_data.get("paragraphs", [])
     characters = story_data.get("characters", [])
-    
-    # Identify speakers with role and tone
+
+    # Identify speakers with role and tone. Gender is guessed from a fixed
+    # name list — reader.js's ParlourTTS voice assignment reads this field,
+    # so a character name outside this list gets miscategorised as male;
+    # authoring a real per-character gender in the story JSON instead would
+    # fix that, but isn't done here.
     speakers = {
         "Narrator": {
             "role": "narrator",
@@ -136,14 +105,14 @@ def analyze_story_text(story_data, course_lang="es"):
         p_type = p.get("type", "narration")
         speaker = p.get("speaker", "Narrator") if p_type == "dialogue" else "Narrator"
         para_lang = p.get("lang") or course_lang
-        
+
         # Word count & estimated speaking time
         words = text.split()
         word_count = len(words)
         # English scaffolding paragraphs use natural ~145 wpm
         wpm = 145 if para_lang == "en" else pacing["rate_wpm"]
         duration = max(1.6, round((word_count / wpm) * 60.0, 2))
-        
+
         cues = []
         if "?" in text or "¿" in text:
             cues.append({"type": "intonation", "contour": "rising-interrogative"})
@@ -151,7 +120,7 @@ def analyze_story_text(story_data, course_lang="es"):
             cues.append({"type": "emphasis", "level": "strong"})
         if "," in text:
             cues.append({"type": "pause", "durationMs": 250, "reason": "clause-boundary"})
-        
+
         pron_list = []
         for word, info in KNOWN_PHONETICS.items():
             if re.search(r'\b' + re.escape(word) + r'\b', text, re.IGNORECASE):
@@ -288,93 +257,7 @@ def analyze_story_text(story_data, course_lang="es"):
         "pedagogical": pedagogical
     }
 
-async def synthesize_story_neural(story_data, output_mp3_path, course_lang="es"):
-    """
-    Synthesizes story paragraphs into an authentic multi-voice MP3 using Neural TTS,
-    extracting precise millisecond sentence boundaries.
-    """
-    if not HAS_EDGE_TTS:
-        print("[WARN] edge-tts is not installed; skipping audio synthesis.")
-        return None, 0.0
-
-    level = story_data.get("level", "A1").upper()
-    pacing = CEFR_PACING.get(level, CEFR_PACING["A1"])
-    paragraphs = story_data.get("paragraphs", [])
-    if not paragraphs:
-        return None, 0.0
-
-    all_audio = bytearray()
-    real_segments = []
-    current_time = 0.0
-
-    print(f"[NEURAL-TTS] Synthesizing {len(paragraphs)} paragraphs (CEFR: {level})...")
-
-    for idx, p in enumerate(paragraphs):
-        text = p.get("text", "").strip()
-        if not text:
-            continue
-
-        p_type = p.get("type", "narration")
-        speaker = p.get("speaker", "Narrator") if p_type == "dialogue" else "Narrator"
-        para_lang = p.get("lang") or course_lang
-
-        # Select neural voice & pacing rate
-        voice = get_speaker_voice(speaker, para_lang, course_lang)
-        rate_str = "+0%" if para_lang == "en" else pacing["rate_str"]
-
-        # Phonetic adjustment: Károly is pronounced "Károy" (Hungarian ly = /j/)
-        synth_text = re.sub(r'\bKároly\b', 'Károy', text)
-        synth_text = re.sub(r'\bKaroly\b', 'Károy', synth_text)
-
-        comm = edge_tts.Communicate(synth_text, voice, rate=rate_str)
-        dur = 0.0
-        seg_audio = bytearray()
-
-        try:
-            async for chunk in comm.stream():
-                if chunk["type"] == "audio":
-                    seg_audio.extend(chunk["data"])
-                elif chunk["type"] == "SentenceBoundary":
-                    offset_s = chunk["offset"] / 10_000_000.0
-                    duration_s = chunk["duration"] / 10_000_000.0
-                    dur = max(dur, offset_s + duration_s)
-        except Exception as e:
-            print(f"[ERROR] Synthesis failed on paragraph {idx}: {e}")
-
-        # Fallback to byte-length estimation if duration was not emitted
-        if dur <= 0.0:
-            dur = max(1.5, round(len(seg_audio) / 6000.0, 2))
-
-        start_time = round(current_time, 2)
-        end_time = round(current_time + dur, 2)
-
-        real_segments.append({
-            "paraIndex": idx,
-            "startTime": start_time,
-            "endTime": end_time,
-            "speaker": speaker,
-            "lang": para_lang,
-            "voice": voice
-        })
-
-        all_audio.extend(seg_audio)
-        current_time = end_time
-
-        speaker_label = f"{speaker} ({voice.split('-')[-1].replace('Neural', '')})"
-        print(f"  [P{idx:02d}] {speaker_label:20s} [{para_lang}] {start_time:5.2f}s -> {end_time:5.2f}s | {text[:38]}...")
-
-    # Write master MP3 file
-    os.makedirs(os.path.dirname(output_mp3_path), exist_ok=True)
-    with open(output_mp3_path, "wb") as f:
-        f.write(all_audio)
-
-    total_duration = round(current_time, 2)
-    file_size_kb = len(all_audio) / 1024.0
-    print(f"[SUCCESS] Neural audio synthesized -> {output_mp3_path} ({file_size_kb:.1f} KB, {total_duration}s)")
-
-    return real_segments, total_duration
-
-def process_story(story_path, dry_run=False, synthesize=True):
+def process_story(story_path, dry_run=False):
     path = Path(story_path)
     if not path.exists():
         print(f"[ERROR] Story file not found: {story_path}")
@@ -387,40 +270,9 @@ def process_story(story_path, dry_run=False, synthesize=True):
     course_lang = detect_course_lang(path, story_data)
     print(f"=== Processing Story: {story_data.get('title')} ({story_id}) [{course_lang.upper()}] ===")
 
-    # Step 1: AI text analysis & pedagogical annotations
     analysis = analyze_story_text(story_data, course_lang=course_lang)
 
-    # Audio destination: content/<lang>/stories/audio/<story-id>.mp3
-    audio_dir = Path(f"content/{course_lang}/stories/audio")
-    audio_rel = f"audio/{story_id}.mp3"
-    audio_file_path = audio_dir / f"{story_id}.mp3"
-
-    # Step 2: Synthesis with Neural TTS
-    if synthesize and not dry_run and HAS_EDGE_TTS:
-        real_segments, measured_duration = asyncio.run(
-            synthesize_story_neural(story_data, str(audio_file_path), course_lang=course_lang)
-        )
-        if real_segments:
-            # Reconcile segment timings and assign exact boundaries
-            for seg in analysis["segments"]:
-                match = next((s for s in real_segments if s["paraIndex"] == seg["paraIndex"]), None)
-                if match:
-                    seg["startTime"] = match["startTime"]
-                    seg["endTime"] = match["endTime"]
-                    seg["lang"] = match["lang"]
-            analysis["durationSeconds"] = measured_duration
-
-        # Clean up any legacy .wav file if present
-        wav_path = audio_dir / f"{story_id}.wav"
-        if wav_path.exists():
-            try:
-                wav_path.unlink()
-                print(f"[CLEANUP] Removed legacy uncompressed WAV: {wav_path}")
-            except Exception:
-                pass
-
     narration_block = {
-        "audioFile": audio_rel,
         "durationSeconds": analysis["durationSeconds"],
         "pacing": analysis["pacing"],
         "speakers": analysis["speakers"],
@@ -433,7 +285,7 @@ def process_story(story_path, dry_run=False, synthesize=True):
     if not dry_run:
         with open(path, "w", encoding="utf-8") as f:
             json.dump(story_data, f, ensure_ascii=False, indent=2)
-        print(f"[SUCCESS] Updated story with AI narration metadata: {path}")
+        print(f"[SUCCESS] Updated story with narration metadata: {path}")
     else:
         print("[DRY-RUN] Narration metadata preview:")
         print(json.dumps(narration_block, indent=2, ensure_ascii=False))
@@ -441,11 +293,10 @@ def process_story(story_path, dry_run=False, synthesize=True):
     return narration_block
 
 def main():
-    parser = argparse.ArgumentParser(description="Generate AI-aware reading narration and pedagogical metadata.")
+    parser = argparse.ArgumentParser(description="Generate story narration timing and pedagogical metadata.")
     parser.add_argument("file", nargs="?", default=None, help="Path to story JSON file")
     parser.add_argument("--batch", help="Glob pattern or directory of story JSON files to narrate (e.g. content/es/stories/original/a1/*.json)")
     parser.add_argument("--dry-run", action="store_true", help="Print narration metadata without writing to file")
-    parser.add_argument("--no-synth", action="store_true", help="Skip audio synthesis, generate metadata only")
     args = parser.parse_args()
 
     files = []
@@ -463,8 +314,7 @@ def main():
 
     print(f"Narrating {len(files)} story file(s)...")
     for story_file in files:
-        process_story(str(story_file), dry_run=args.dry_run, synthesize=not args.no_synth)
+        process_story(str(story_file), dry_run=args.dry_run)
 
 if __name__ == "__main__":
     main()
-

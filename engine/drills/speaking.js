@@ -898,7 +898,7 @@ const SpeakingDriller = (function () {
                     ${audioUrl ? `
                         <audio controls class="sp-own-voice-player" src="${audioUrl}"></audio>
                     ` : `
-                        <p class="sp-audio-empty-note">Audio recording playback unavailable on this browser/session.</p>
+                        <p class="sp-audio-empty-note">Your recording wasn't captured for playback this time — your answer was still recognised and graded normally.</p>
                     `}
                 </div>
 
