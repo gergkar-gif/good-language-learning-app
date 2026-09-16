@@ -140,432 +140,33 @@ CURRICULUM_META = {
     "hu": {"id": "curriculum.hungarian.a1-c1", "title": "Hungarian"}
 }
 
-# Level -> Unit -> Lesson. Explicit rather than inferred from filenames,
-# because the mapping is a curriculum decision (which topic sits where, and
-# in what order) and reads as one here rather than being reverse-engineered
-# from a naming convention. Each entry is the unit title and the lesson file
-# stems it owns, in teaching order.
-#
-# Unit 1 is the only unit actually split into several lessons so far — every
-# other unit still wraps the one pre-restructure lesson file it always had,
-# just reordered and retitled to its approved position. Splitting those into
-# their own 4-6 lesson sets happens unit by unit as that content is authored;
-# nothing else here changes when it does.
-UNIT_TABLES = {
-    "a1": [
-        ("Greetings & Introductions", ["a1-01-01", "a1-01-02", "a1-01-03", "a1-01-04", "a1-01-05", "a1-01-consolidation"]),
-        ("Meeting Someone New", ["a1-02-01", "a1-02-02", "a1-02-03", "a1-02-04", "a1-02-05", "a1-02-consolidation"]),
-        ("Naming Things", ["a1-03-01", "a1-03-02", "a1-03-03", "a1-03-04", "a1-03-05", "a1-03-consolidation"]),
-        ("Describing People", ["a1-03c-01", "a1-03c-02", "a1-03c-03", "a1-03c-04", "a1-03c-05", "a1-03c-consolidation"]),
-        ("Family", ["a1-05-01", "a1-05-02", "a1-05-03", "a1-05-04", "a1-05-05", "a1-05-consolidation"]),
-        ("Daily Routine", ["a1-06-01", "a1-06-02", "a1-06-03", "a1-06-04", "a1-06-05", "a1-06-consolidation"]),
-        # "a1-reflexive" — Dedicated unit for reflexive pronouns, hygiene, and daily routine sequencing
-        ("Daily Routine: Reflexive Verbs", ["a1-reflexive-01", "a1-reflexive-02", "a1-reflexive-03", "a1-reflexive-04", "a1-reflexive-05", "a1-reflexive-consolidation"]),
-        ("At Home", ["a1-07-01", "a1-07-02", "a1-07-03", "a1-07-04", "a1-07-05", "a1-07-consolidation"]),
-        ("At the Supermarket", ["a1-08-01", "a1-08-02", "a1-08-03", "a1-08-04", "a1-08-05", "a1-08-consolidation"]),
-        # "a1-demonstrative" — Dedicated unit for demonstrative adjectives & pronouns (este, ese, aquel, esto, eso)
-        ("Demonstratives: This, That, and Over There", ["a1-demonstrative-01", "a1-demonstrative-02", "a1-demonstrative-03", "a1-demonstrative-04", "a1-demonstrative-05", "a1-demonstrative-consolidation"]),
-        # "a1-cafe", not "a1-09" — old lesson slot 9 is Kitchen (still
-        # unsplit), and a1-09 would collide with it the moment Kitchen's own
-        # split arrives.
-        ("Ordering at a Café", ["a1-cafe-01", "a1-cafe-02", "a1-cafe-03", "a1-cafe-04", "a1-cafe-05", "a1-cafe-consolidation"]),
-        ("Birthdays & Celebrations", ["a1-10-01", "a1-10-02", "a1-10-03", "a1-10-04", "a1-10-05", "a1-10-consolidation"]),
-        # "a1-kitchen", not "a1-11" — a1-11 is Hobbies' old slot (still
-        # unsplit), same reasoning as the Café rename above.
-        ("In the Kitchen", ["a1-kitchen-01", "a1-kitchen-02", "a1-kitchen-03", "a1-kitchen-04", "a1-kitchen-05", "a1-kitchen-consolidation"]),
-        ("Numbers, Time & Schedules", ["a1-12-01", "a1-12-02", "a1-12-03", "a1-12-04", "a1-12-05", "a1-12-consolidation"]),
-        ("Around Town", ["a1-04-01", "a1-04-02", "a1-04-03", "a1-04-04", "a1-04-05", "a1-04-consolidation"]),
-        # "a1-directions", not "a1-14" — a1-14 is Weather's old slot.
-        ("Directions", ["a1-directions-01", "a1-directions-02", "a1-directions-03", "a1-directions-04", "a1-directions-05", "a1-directions-consolidation"]),
-        # "a1-weather", not "a1-15" — a1-15 is Work & Obligations' old slot.
-        ("Weather", ["a1-weather-01", "a1-weather-02", "a1-weather-03", "a1-weather-04", "a1-weather-05", "a1-weather-consolidation"]),
-        # "a1-work", not "a1-16" — a1-16 is Health's old slot.
-        ("Work & Obligations", ["a1-work-01", "a1-work-02", "a1-work-03", "a1-work-04", "a1-work-05", "a1-work-consolidation"]),
-        # "a1-continuous" — Dedicated unit for present continuous (estar + gerundio)
-        ("What Are You Doing? (Present Continuous)", ["a1-continuous-01", "a1-continuous-02", "a1-continuous-03", "a1-continuous-04", "a1-continuous-05", "a1-continuous-consolidation"]),
-        # "a1-health", not "a1-17" — a1-17 is Future Plans' old slot.
-        ("Health", ["a1-health-01", "a1-health-02", "a1-health-03", "a1-health-04", "a1-health-05", "a1-health-consolidation"]),
-        # "a1-doler" — Dedicated unit for physical pain & the verb doler (me duele / me duelen)
-        ("What Hurts? (The Verb Doler)", ["a1-doler-01", "a1-doler-02", "a1-doler-03", "a1-doler-04", "a1-doler-05", "a1-doler-consolidation"]),
-        # "a1-gustar" — Dedicated unit for the gustar construction, encantar, and interesar
-        ("What Do You Like? (Gustar)", ["a1-gustar-01", "a1-gustar-02", "a1-gustar-03", "a1-gustar-04", "a1-gustar-05", "a1-gustar-consolidation"]),
-        # "a1-hobbies", not "a1-18" — a1-18 was Review 1's old slot.
-        ("Hobbies & Free Time", ["a1-hobbies-01", "a1-hobbies-02", "a1-hobbies-03", "a1-hobbies-04", "a1-hobbies-05", "a1-hobbies-consolidation"]),
-        # "a1-abilities" — Dedicated unit for skills, abilities, saber vs conocer, and personal 'a'
-        ("Skills & Abilities: Poder & Saber", ["a1-abilities-01", "a1-abilities-02", "a1-abilities-03", "a1-abilities-04", "a1-abilities-05", "a1-abilities-consolidation"]),
-        # "a1-future", not "a1-19" — a1-19 was Review 2's old slot.
-        ("Future Plans", ["a1-future-01", "a1-future-02", "a1-future-03", "a1-future-04", "a1-future-05", "a1-future-consolidation"]),
-        # Old Review 1/2/Final are fully retired now — their readings live on,
-        # reused by lessons 20.4 (a1-19's reflection scene) and 20.5 (a1-20's
-        # dating-decision resolution). a1-18's reading has no home in the new
-        # unit and sits unused rather than deleted.
-        ("Travel & Getting Away", ["a1-20-01", "a1-20-02", "a1-20-03", "a1-20-04", "a1-20-05", "a1-20-consolidation"]),
-    ],
-    "a2": [
-        ("Talking About Your Trip", ["a2-01-01", "a2-01-02", "a2-01-03", "a2-01-04", "a2-01-05", "a2-01-consolidation"]),
-        ("Talking About What You Have Done", ["a2-02-01", "a2-02-02", "a2-02-03", "a2-02-04", "a2-02-05", "a2-02-consolidation"]),
-        ("Talking About a Day Out", ["a2-03-01", "a2-03-02", "a2-03-03", "a2-03-04", "a2-03-05", "a2-03-consolidation"]),
-        ("Following Instructions", ["a2-04-01", "a2-04-02", "a2-04-03", "a2-04-04", "a2-04-05", "a2-04-consolidation"]),
-        ("Giving Reasons and Opinions", ["a2-05-01", "a2-05-02", "a2-05-03", "a2-05-04", "a2-05-05", "a2-05-consolidation"]),
-        ("Comparing Trips and Memories", ["a2-06-01", "a2-06-02", "a2-06-03", "a2-06-04", "a2-06-05", "a2-06-consolidation"]),
-        ("Talking About How Long", ["a2-07-01", "a2-07-02", "a2-07-03", "a2-07-04", "a2-07-05", "a2-07-consolidation"]),
-        ("Making and Responding to Invitations", ["a2-08-01", "a2-08-02", "a2-08-03", "a2-08-04", "a2-08-05", "a2-08-consolidation"]),
-        ("Talking About Experiences", ["a2-09-01", "a2-09-02", "a2-09-03", "a2-09-04", "a2-09-05", "a2-09-consolidation"]),
-        ("Keeping in Touch", ["a2-10-01", "a2-10-02", "a2-10-03", "a2-10-04", "a2-10-05", "a2-10-consolidation"]),
-        ("Talking About What Happened", ["a2-11-01", "a2-11-02", "a2-11-03", "a2-11-04", "a2-11-05", "a2-11-consolidation"]),
-        ("Giving and Receiving Things", ["a2-12-01", "a2-12-02", "a2-12-03", "a2-12-04", "a2-12-05", "a2-12-consolidation"]),
-        ("Describing Events in Time", ["a2-13-01", "a2-13-02", "a2-13-03", "a2-13-04", "a2-13-05", "a2-13-consolidation"]),
-        ("Asking About What Happened", ["a2-14-01", "a2-14-02", "a2-14-03", "a2-14-04", "a2-14-05", "a2-14-consolidation"]),
-        ("Explaining What Happened", ["a2-15-01", "a2-15-02", "a2-15-03", "a2-15-04", "a2-15-05", "a2-15-consolidation"]),
-        ("Talking About Plans", ["a2-16-01", "a2-16-02", "a2-16-03", "a2-16-04", "a2-16-05", "a2-16-consolidation"]),
-        ("Reviewing A2 Experiences", ["a2-17-01", "a2-17-02", "a2-17-03", "a2-17-04", "a2-17-05", "a2-17-consolidation"]),
-        ("Talking About Travel and Goodbyes", ["a2-18-01", "a2-18-02", "a2-18-03", "a2-18-04", "a2-18-05", "a2-18-consolidation"]),
-        ("Talking About the Future", ["a2-19-01", "a2-19-02", "a2-19-03", "a2-19-04", "a2-19-05", "a2-19-consolidation"]),
-        ("Looking Back and Moving Forward", ["a2-20-01", "a2-20-02", "a2-20-03", "a2-20-04", "a2-20-05", "a2-20-consolidation"]),
-        ("The Imperfect Tense", ["a2-imperfectobasico-01", "a2-imperfectobasico-02", "a2-imperfectobasico-03", "a2-imperfectobasico-04", "a2-imperfectobasico-05", "a2-imperfectobasico-consolidation"]),
-        ("Imperfect vs. Preterite", ["a2-imperfectocontraste-01", "a2-imperfectocontraste-02", "a2-imperfectocontraste-03", "a2-imperfectocontraste-04", "a2-imperfectocontraste-05", "a2-imperfectocontraste-consolidation"]),
-    ],
-    # B1 runs two parallel tracks — Core Spanish (the language progression)
-    # and Latin America (a Spanish-language history course) — that appear
-    # side by side in the Learn tab and are numbered independently within
-    # their own track. A table entry here is (title, stems, track); a1/a2
-    # entries above stay 2-tuples and are read as a single implicit track,
-    # so nothing about them changes. See content/es/guides/b1-content-spec.md
-    # section 1a for why Latin America units use a word slug (here,
-    # "precolombina") instead of a number in their lesson-file stems.
-    "b1": [
-        ("Telling Stories",
-         ["b1-01-01", "b1-01-02", "b1-01-03", "b1-01-04", "b1-01-05", "b1-01-consolidation"],
-         "core"),
-        ("Experiences & Memories",
-         ["b1-02-01", "b1-02-02", "b1-02-03", "b1-02-04", "b1-02-05", "b1-02-consolidation"],
-         "core"),
-        ("Plans & Ambitions",
-         ["b1-03-01", "b1-03-02", "b1-03-03", "b1-03-04", "b1-03-05", "b1-03-consolidation"],
-         "core"),
-        ("Giving Advice",
-         ["b1-04-01", "b1-04-02", "b1-04-03", "b1-04-04", "b1-04-05", "b1-04-consolidation"],
-         "core"),
-        ("Relationships",
-         ["b1-05-01", "b1-05-02", "b1-05-03", "b1-05-04", "b1-05-05", "b1-05-consolidation"],
-         "core"),
-        ("Work & Professional Life",
-         ["b1-06-01", "b1-06-02", "b1-06-03", "b1-06-04", "b1-06-05", "b1-06-consolidation"],
-         "core"),
-        ("Education & Learning",
-         ["b1-07-01", "b1-07-02", "b1-07-03", "b1-07-04", "b1-07-05", "b1-07-consolidation"],
-         "core"),
-        ("Travel & Mobility",
-         ["b1-08-01", "b1-08-02", "b1-08-03", "b1-08-04", "b1-08-05", "b1-08-consolidation"],
-         "core"),
-        ("Health & Wellbeing",
-         ["b1-09-01", "b1-09-02", "b1-09-03", "b1-09-04", "b1-09-05", "b1-09-consolidation"],
-         "core"),
-        ("Home & Housing",
-         ["b1-10-01", "b1-10-02", "b1-10-03", "b1-10-04", "b1-10-05", "b1-10-consolidation"],
-         "core"),
-        ("Cities & Communities",
-         ["b1-11-01", "b1-11-02", "b1-11-03", "b1-11-04", "b1-11-05", "b1-11-consolidation"],
-         "core"),
-        ("Food & Lifestyle",
-         ["b1-12-01", "b1-12-02", "b1-12-03", "b1-12-04", "b1-12-05", "b1-12-consolidation"],
-         "core"),
-        ("Media & Information",
-         ["b1-13-01", "b1-13-02", "b1-13-03", "b1-13-04", "b1-13-05", "b1-13-consolidation"],
-         "core"),
-        ("Technology & Communication",
-         ["b1-14-01", "b1-14-02", "b1-14-03", "b1-14-04", "b1-14-05", "b1-14-consolidation"],
-         "core"),
-        ("Culture & Entertainment",
-         ["b1-15-01", "b1-15-02", "b1-15-03", "b1-15-04", "b1-15-05", "b1-15-consolidation"],
-         "core"),
-        ("The Environment",
-         ["b1-16-01", "b1-16-02", "b1-16-03", "b1-16-04", "b1-16-05", "b1-16-consolidation"],
-         "core"),
-        ("Society & Inequality",
-         ["b1-17-01", "b1-17-02", "b1-17-03", "b1-17-04", "b1-17-05", "b1-17-consolidation"],
-         "core"),
-        ("Politics & Public Life",
-         ["b1-18-01", "b1-18-02", "b1-18-03", "b1-18-04", "b1-18-05", "b1-18-consolidation"],
-         "core"),
-        ("Money & the Economy",
-         ["b1-19-01", "b1-19-02", "b1-19-03", "b1-19-04", "b1-19-05", "b1-19-consolidation"],
-         "core"),
-        ("Problems & Solutions",
-         ["b1-20-01", "b1-20-02", "b1-20-03", "b1-20-04", "b1-20-05", "b1-20-consolidation"],
-         "core"),
-        ("Opinions & Arguments",
-         ["b1-21-01", "b1-21-02", "b1-21-03", "b1-21-04", "b1-21-05", "b1-21-consolidation"],
-         "core"),
-        ("Possibilities & Predictions",
-         ["b1-22-01", "b1-22-02", "b1-22-03", "b1-22-04", "b1-22-05", "b1-22-consolidation"],
-         "core"),
-        ("Making Decisions",
-         ["b1-23-01", "b1-23-02", "b1-23-03", "b1-23-04", "b1-23-05", "b1-23-consolidation"],
-         "core"),
-        ("Explaining How Things Work",
-         ["b1-24-01", "b1-24-02", "b1-24-03", "b1-24-04", "b1-24-05", "b1-24-consolidation"],
-         "core"),
-        ("Change & Development",
-         ["b1-25-01", "b1-25-02", "b1-25-03", "b1-25-04", "b1-25-05", "b1-25-consolidation"],
-         "core"),
-        ("Work, Ambition & Balance",
-         ["b1-26-01", "b1-26-02", "b1-26-03", "b1-26-04", "b1-26-05", "b1-26-consolidation"],
-         "core"),
-        ("Social Life & Communication",
-         ["b1-27-01", "b1-27-02", "b1-27-03", "b1-27-04", "b1-27-05", "b1-27-consolidation"],
-         "core"),
-        ("Rules, Rights & Responsibilities",
-         ["b1-28-01", "b1-28-02", "b1-28-03", "b1-28-04", "b1-28-05", "b1-28-consolidation"],
-         "core"),
-        ("Migration & Identity",
-         ["b1-29-01", "b1-29-02", "b1-29-03", "b1-29-04", "b1-29-05", "b1-29-consolidation"],
-         "core"),
-        ("Culture, Language & Society",
-         ["b1-30-01", "b1-30-02", "b1-30-03", "b1-30-04", "b1-30-05", "b1-30-consolidation"],
-         "core"),
-        ("The Future of Society",
-         ["b1-31-01", "b1-31-02", "b1-31-03", "b1-31-04", "b1-31-05", "b1-31-consolidation"],
-         "core"),
-        ("Connecting Ideas",
-         ["b1-32-01", "b1-32-02", "b1-32-03", "b1-32-04", "b1-32-05", "b1-32-consolidation"],
-         "core"),
-        ("Reported Speech",
-         ["b1-33-01", "b1-33-02", "b1-33-03", "b1-33-04", "b1-33-05", "b1-33-consolidation"],
-         "core"),
-        ("Complex Opinions",
-         ["b1-34-01", "b1-34-02", "b1-34-03", "b1-34-04", "b1-34-05", "b1-34-consolidation"],
-         "core"),
-        ("Hypotheticals & Possibilities",
-         ["b1-35-01", "b1-35-02", "b1-35-03", "b1-35-04", "b1-35-05", "b1-35-consolidation"],
-         "core"),
-        ("Independent Spanish",
-         ["b1-36-01", "b1-36-02", "b1-36-03", "b1-36-04", "b1-36-05", "b1-36-consolidation"],
-         "core"),
-        ("Pre-Columbian America",
-         ["b1-precolombina-01", "b1-precolombina-02", "b1-precolombina-03",
-          "b1-precolombina-04", "b1-precolombina-05", "b1-precolombina-consolidation"],
-         "latam"),
-        ("Indigenous Civilizations",
-         ["b1-civilizaciones-01", "b1-civilizaciones-02", "b1-civilizaciones-03",
-          "b1-civilizaciones-04", "b1-civilizaciones-05", "b1-civilizaciones-consolidation"],
-         "latam"),
-        ("The Arrival of the Europeans",
-         ["b1-llegadaeuropeos-01", "b1-llegadaeuropeos-02", "b1-llegadaeuropeos-03",
-          "b1-llegadaeuropeos-04", "b1-llegadaeuropeos-05", "b1-llegadaeuropeos-consolidation"],
-         "latam"),
-        ("The Conquest",
-         ["b1-conquista-01", "b1-conquista-02", "b1-conquista-03",
-          "b1-conquista-04", "b1-conquista-05", "b1-conquista-consolidation"],
-         "latam"),
-        ("Colonial Society",
-         ["b1-sociedadcolonial-01", "b1-sociedadcolonial-02", "b1-sociedadcolonial-03",
-          "b1-sociedadcolonial-04", "b1-sociedadcolonial-05", "b1-sociedadcolonial-consolidation"],
-         "latam"),
-        ("Colonial Economy",
-         ["b1-economiacolonial-01", "b1-economiacolonial-02", "b1-economiacolonial-03",
-          "b1-economiacolonial-04", "b1-economiacolonial-05", "b1-economiacolonial-consolidation"],
-         "latam"),
-        ("Race, Class & Power",
-         ["b1-razaclasepoder-01", "b1-razaclasepoder-02", "b1-razaclasepoder-03",
-          "b1-razaclasepoder-04", "b1-razaclasepoder-05", "b1-razaclasepoder-consolidation"],
-         "latam"),
-        ("Independence",
-         ["b1-independencia-01", "b1-independencia-02", "b1-independencia-03",
-          "b1-independencia-04", "b1-independencia-05", "b1-independencia-consolidation"],
-         "latam"),
-        ("The New Republics",
-         ["b1-nuevasrepublicas-01", "b1-nuevasrepublicas-02", "b1-nuevasrepublicas-03",
-          "b1-nuevasrepublicas-04", "b1-nuevasrepublicas-05", "b1-nuevasrepublicas-consolidation"],
-         "latam"),
-        ("Caudillismo",
-         ["b1-caudillismo-01", "b1-caudillismo-02", "b1-caudillismo-03",
-          "b1-caudillismo-04", "b1-caudillismo-05", "b1-caudillismo-consolidation"],
-         "latam"),
-        ("Nation & Nationalism",
-         ["b1-nacionnacionalismo-01", "b1-nacionnacionalismo-02", "b1-nacionnacionalismo-03",
-          "b1-nacionnacionalismo-04", "b1-nacionnacionalismo-05", "b1-nacionnacionalismo-consolidation"],
-         "latam"),
-        ("Liberalism & Modernization",
-         ["b1-liberalismomodernizacion-01", "b1-liberalismomodernizacion-02", "b1-liberalismomodernizacion-03",
-          "b1-liberalismomodernizacion-04", "b1-liberalismomodernizacion-05", "b1-liberalismomodernizacion-consolidation"],
-         "latam"),
-        ("Export Economies",
-         ["b1-economiasexportacion-01", "b1-economiasexportacion-02", "b1-economiasexportacion-03",
-          "b1-economiasexportacion-04", "b1-economiasexportacion-05", "b1-economiasexportacion-consolidation"],
-         "latam"),
-        ("Social Change",
-         ["b1-cambiosocial-01", "b1-cambiosocial-02", "b1-cambiosocial-03",
-          "b1-cambiosocial-04", "b1-cambiosocial-05", "b1-cambiosocial-consolidation"],
-         "latam"),
-        ("Revolution",
-         ["b1-revolucion-01", "b1-revolucion-02", "b1-revolucion-03",
-          "b1-revolucion-04", "b1-revolucion-05", "b1-revolucion-consolidation"],
-         "latam"),
-        ("The Mexican Revolution",
-         ["b1-revolucionmexicana-01", "b1-revolucionmexicana-02", "b1-revolucionmexicana-03",
-          "b1-revolucionmexicana-04", "b1-revolucionmexicana-05", "b1-revolucionmexicana-consolidation"],
-         "latam"),
-        ("Nationalism & the State",
-         ["b1-nacionalismo-01", "b1-nacionalismo-02", "b1-nacionalismo-03",
-          "b1-nacionalismo-04", "b1-nacionalismo-05", "b1-nacionalismo-consolidation"],
-         "latam"),
-        ("The Great Depression",
-         ["b1-grandepresion-01", "b1-grandepresion-02", "b1-grandepresion-03",
-          "b1-grandepresion-04", "b1-grandepresion-05", "b1-grandepresion-consolidation"],
-         "latam"),
-        ("Populism",
-         ["b1-populismo-01", "b1-populismo-02", "b1-populismo-03",
-          "b1-populismo-04", "b1-populismo-05", "b1-populismo-consolidation"],
-         "latam"),
-        ("Industrialization",
-         ["b1-industrializacion-01", "b1-industrializacion-02", "b1-industrializacion-03",
-          "b1-industrializacion-04", "b1-industrializacion-05", "b1-industrializacion-consolidation"],
-         "latam"),
-        ("The Cuban Revolution",
-         ["b1-revolucioncubana-01", "b1-revolucioncubana-02", "b1-revolucioncubana-03",
-          "b1-revolucioncubana-04", "b1-revolucioncubana-05", "b1-revolucioncubana-consolidation"],
-         "latam"),
-        ("The Cold War",
-         ["b1-guerrafria-01", "b1-guerrafria-02", "b1-guerrafria-03",
-          "b1-guerrafria-04", "b1-guerrafria-05", "b1-guerrafria-consolidation"],
-         "latam"),
-        ("The United States & Latin America",
-         ["b1-eeuu-01", "b1-eeuu-02", "b1-eeuu-03",
-          "b1-eeuu-04", "b1-eeuu-05", "b1-eeuu-consolidation"],
-         "latam"),
-        ("Military Governments",
-         ["b1-gobiernosmilitares-01", "b1-gobiernosmilitares-02", "b1-gobiernosmilitares-03",
-          "b1-gobiernosmilitares-04", "b1-gobiernosmilitares-05", "b1-gobiernosmilitares-consolidation"],
-         "latam"),
-        ("Political Repression",
-         ["b1-represionpolitica-01", "b1-represionpolitica-02", "b1-represionpolitica-03",
-          "b1-represionpolitica-04", "b1-represionpolitica-05", "b1-represionpolitica-consolidation"],
-         "latam"),
-        ("Central America: Revolution & Conflict",
-         ["b1-centroamerica-01", "b1-centroamerica-02", "b1-centroamerica-03",
-          "b1-centroamerica-04", "b1-centroamerica-05", "b1-centroamerica-consolidation"],
-         "latam"),
-        ("The Southern Cone Dictatorships",
-         ["b1-conosur-01", "b1-conosur-02", "b1-conosur-03",
-          "b1-conosur-04", "b1-conosur-05", "b1-conosur-consolidation"],
-         "latam"),
-        ("The Debt Crisis",
-         ["b1-crisisdeuda-01", "b1-crisisdeuda-02", "b1-crisisdeuda-03",
-          "b1-crisisdeuda-04", "b1-crisisdeuda-05", "b1-crisisdeuda-consolidation"],
-         "latam"),
-        ("Neoliberalism",
-         ["b1-neoliberalismo-01", "b1-neoliberalismo-02", "b1-neoliberalismo-03",
-          "b1-neoliberalismo-04", "b1-neoliberalismo-05", "b1-neoliberalismo-consolidation"],
-         "latam"),
-        ("Democratization",
-         ["b1-democratizacion-01", "b1-democratizacion-02", "b1-democratizacion-03",
-          "b1-democratizacion-04", "b1-democratizacion-05", "b1-democratizacion-consolidation"],
-         "latam"),
-        ("Indigenous Movements",
-         ["b1-movimientosindigenas-01", "b1-movimientosindigenas-02", "b1-movimientosindigenas-03",
-          "b1-movimientosindigenas-04", "b1-movimientosindigenas-05", "b1-movimientosindigenas-consolidation"],
-         "latam"),
-        ("Regional Integration",
-         ["b1-integracionregional-01", "b1-integracionregional-02", "b1-integracionregional-03",
-          "b1-integracionregional-04", "b1-integracionregional-05", "b1-integracionregional-consolidation"],
-         "latam"),
-        ("The End of the Cold War",
-         ["b1-finalguerrafria-01", "b1-finalguerrafria-02", "b1-finalguerrafria-03",
-          "b1-finalguerrafria-04", "b1-finalguerrafria-05", "b1-finalguerrafria-consolidation"],
-         "latam"),
-        ("Latin America in the 1990s",
-         ["b1-latamnoventa-01", "b1-latamnoventa-02", "b1-latamnoventa-03",
-          "b1-latamnoventa-04", "b1-latamnoventa-05", "b1-latamnoventa-consolidation"],
-         "latam"),
-        ("The Legacy of the 20th Century",
-         ["b1-legadosigloveinte-01", "b1-legadosigloveinte-02", "b1-legadosigloveinte-03",
-          "b1-legadosigloveinte-04", "b1-legadosigloveinte-05", "b1-legadosigloveinte-consolidation"],
-         "latam"),
-        ("Latin America Toward 2000",
-         ["b1-americalatinadosmil-01", "b1-americalatinadosmil-02", "b1-americalatinadosmil-03",
-          "b1-americalatinadosmil-04", "b1-americalatinadosmil-05", "b1-americalatinadosmil-consolidation"],
-         "latam"),
-    ],
-}
+# Level -> Unit -> Lesson. A level's unit titles, ordering, and lesson-stem
+# grouping are a curriculum decision (which topic sits where) that can't be
+# derived from lesson filenames alone, so it lives in
+# content/<lang>/curriculum/units/<level>.json (schema:
+# content/<lang>/schemas/units.schema.json) -- one file per level that has
+# an explicit table, an ordered array of {title, stems, track?}. Adding a
+# unit to an already-tabled level means appending one entry to that JSON
+# file; no code change needed. A level with no such file falls back to
+# auto_group_units() below (plain-numbered lesson files, e.g. Hungarian
+# A1/A2, where the grouping really can be derived from disk).
+def load_unit_table(lang, level_id):
+    """A level's unit table, in order, or None if this lang/level has no
+    content/<lang>/curriculum/units/<level_id>.json -- build_curriculum()
+    falls back to auto_group_units() in that case."""
+    path = Path(f"content/{lang}/curriculum/units/{level_id}.json")
+    if not path.is_file():
+        return None
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return None
 
-# UNIT_TABLES above is Spanish's. table = UNIT_TABLES.get(level_id) used to
-# ignore language entirely, so a Hungarian a1 with no entry would have
-# silently tried to apply Spanish's a1 table (looking for stems like
-# a1-01-01, which don't exist in content/hu) and produced empty units. Each
-# language now gets its own table, keyed by lang first.
-LANG_UNIT_TABLES = {
-    "es": UNIT_TABLES,
-    # Hungarian A1/A2 have no entry here on purpose — their lessons are
-    # plain numbered files (a1-06, a1-07, ...) with no word-slug ids and no
-    # multi-track split, so auto_group_units() below derives the grouping
-    # directly from the files on disk instead of a hand-maintained stems
-    # list. See LANG_UNIT_TITLES for the one thing that still needs a
-    # manual entry per unit.
-    #
-    # HU B1 *does* need an entry, same reason ES B1 does: it runs two
-    # parallel tracks (Core Hungarian, the grammar progression; Citizenship,
-    # a Hungarian-language history/civics course mirroring ES's LatAm
-    # track — see content/hu/b1-curriculum-draft.json) that auto_group_units
-    # can't tell apart. Core reuses ES B1 Core's exact stem shape
-    # (b1-NN-LL / b1-NN-consolidation); Citizenship reuses LatAm's slug
-    # shape (b1-<slug>-LL / b1-<slug>-consolidation) with a Hungarian-topic
-    # slug per unit. Extend this table one unit at a time as HU B1 content
-    # actually lands — an entry for a unit that doesn't exist on disk yet
-    # would just produce an empty unit, not an error, so keep it in sync
-    # with real content rather than pre-filling all 36.
-    "hu": {
-        "b1": [
-            ("Telling a Longer Story",
-             ["b1-01-01", "b1-01-02", "b1-01-03", "b1-01-04", "b1-01-05", "b1-01-consolidation"],
-             "core"),
-            ("Hungary Today: Land & Symbols",
-             ["b1-orszagma-01", "b1-orszagma-02", "b1-orszagma-03",
-              "b1-orszagma-04", "b1-orszagma-05", "b1-orszagma-consolidation"],
-             "citizenship"),
-            ("Experiences & Memories",
-             ["b1-02-01", "b1-02-02", "b1-02-03", "b1-02-04", "b1-02-05", "b1-02-consolidation"],
-             "core"),
-            ("The Carpathian Basin Before the Magyars",
-             ["b1-karpatmedence-01", "b1-karpatmedence-02", "b1-karpatmedence-03",
-              "b1-karpatmedence-04", "b1-karpatmedence-05", "b1-karpatmedence-consolidation"],
-             "citizenship"),
-            ("Plans & Ambitions",
-             ["b1-03-01", "b1-03-02", "b1-03-03", "b1-03-04", "b1-03-05", "b1-03-consolidation"],
-             "core"),
-            ("The Honfoglalás (895)",
-             ["b1-honfoglalas-01", "b1-honfoglalas-02", "b1-honfoglalas-03",
-              "b1-honfoglalas-04", "b1-honfoglalas-05", "b1-honfoglalas-consolidation"],
-             "citizenship"),
-            ("Giving Advice",
-             ["b1-04-01", "b1-04-02", "b1-04-03", "b1-04-04", "b1-04-05", "b1-04-consolidation"],
-             "core"),
-            ("Saint Stephen & the Founding of the State (1000)",
-             ["b1-istvankiraly-01", "b1-istvankiraly-02", "b1-istvankiraly-03",
-              "b1-istvankiraly-04", "b1-istvankiraly-05", "b1-istvankiraly-consolidation"],
-             "citizenship"),
-            ("Relationships",
-             ["b1-05-01", "b1-05-02", "b1-05-03", "b1-05-04", "b1-05-05", "b1-05-consolidation"],
-             "core"),
-            ("The Árpád Dynasty",
-             ["b1-arpadhaz-01", "b1-arpadhaz-02", "b1-arpadhaz-03",
-              "b1-arpadhaz-04", "b1-arpadhaz-05", "b1-arpadhaz-consolidation"],
-             "citizenship"),
-            ("Work & Professional Life",
-             ["b1-06-01", "b1-06-02", "b1-06-03", "b1-06-04", "b1-06-05", "b1-06-consolidation"],
-             "core"),
-            ("The Mongol Invasion (1241–42)",
-             ["b1-tatarjaras-01", "b1-tatarjaras-02", "b1-tatarjaras-03",
-              "b1-tatarjaras-04", "b1-tatarjaras-05", "b1-tatarjaras-consolidation"],
-             "citizenship"),
-        ],
-    },
-}
 
 # Track metadata for levels that run more than one — id, display title, and
 # the order tracks should render in the Learn tab. Keyed by language first,
-# same reasoning as LANG_UNIT_TABLES below: a level absent for this language
-# (or a unit table entry with no third element) is single-track, and the
+# same reasoning as the unit tables above: a level absent for this language
+# (or a unit table entry with no "track") is single-track, and the
 # Learn tab falls back to today's flat unit list. Before 2026-09-09 this was
 # keyed by level_id alone, which meant a future language's own B1 dual-track
 # would have silently inherited Spanish's "Core Spanish"/"Latin America"
@@ -586,7 +187,7 @@ LEVEL_TRACKS = {
 }
 
 # Unit titles, in order, for a lang/level using auto_group_units() (no
-# LANG_UNIT_TABLES entry). This is the ONE thing auto-grouping can't derive
+# content/<lang>/curriculum/units/<level>.json). This is the ONE thing auto-grouping can't derive
 # from the files themselves — a unit's thematic name ("Greetings & Basic
 # Interaction") only ever existed in that content package's own
 # UNIT_N_MANIFEST.json, which isn't part of the committed repo. Add one
@@ -674,8 +275,8 @@ LANG_UNIT_TITLES = {
 
 
 def auto_group_units(lang, level_id, level_path):
-    """Fallback for a lang/level with no LANG_UNIT_TABLES entry: groups
-    plain-numbered lesson files (a1-06, a1-07, ... — no word-slug ids, no
+    """Fallback for a lang/level with no content/<lang>/curriculum/units/<level>.json:
+    groups plain-numbered lesson files (a1-06, a1-07, ... — no word-slug ids, no
     multi-track split) into blocks of 5 in numeric order, folding in a
     trailing "{lastlesson}-consolidation" file for that block when one
     exists on disk. Titles come from LANG_UNIT_TITLES by position; running
@@ -683,7 +284,7 @@ def auto_group_units(lang, level_id, level_path):
     dropping the unit. Returns None (not a real fallback) if no lesson in
     this level matches the plain-numbered pattern at all — a word-slug-id
     level should never have reached here, since every level using those
-    already has a LANG_UNIT_TABLES entry, but this keeps that assumption
+    already has an explicit units.json, but this keeps that assumption
     from silently producing an empty curriculum if it's ever wrong."""
     plain = []
     for f in sorted(level_path.glob(f"{level_id}-*.json")):
@@ -791,11 +392,11 @@ def build_curriculum(lang="es"):
     straight from each lesson's own JSON file — lesson files are the single
     source of truth; curriculum.json is a generated index over them.
 
-    Level -> Unit -> Lesson. A level with an entry in UNIT_TABLES is built
-    from that table, in the order given. A level without one (nothing past
-    A1 has content yet) falls back to one unit per lesson file, in filename
-    order, so the shape stays the same everywhere even before a level has a
-    real unit plan."""
+    Level -> Unit -> Lesson. A level with a content/<lang>/curriculum/units/<level>.json
+    is built from that table, in the order given. A level without one falls
+    back to auto_group_units(), or to one unit per lesson file in filename
+    order if even that doesn't apply, so the shape stays the same everywhere
+    even before a level has a real unit plan."""
     lang_path = BASE_LESSONS / lang / "lessons"
     if not lang_path.exists():
         return None
@@ -806,14 +407,14 @@ def build_curriculum(lang="es"):
         units = []
 
         if level_path.exists():
-            table = LANG_UNIT_TABLES.get(lang, {}).get(level_id)
+            table = load_unit_table(lang, level_id)
             if table:
                 # Position is counted per track, not across the whole table,
                 # so two tracks each start their own unit numbering at 1
                 # rather than interleaving into a single shared sequence.
                 track_position = {}
                 for entry in table:
-                    title, stems, track = entry if len(entry) == 3 else (*entry, None)
+                    title, stems, track = entry["title"], entry["stems"], entry.get("track")
                     track_position[track] = track_position.get(track, 0) + 1
                     position = track_position[track]
                     lessons = [e for e in

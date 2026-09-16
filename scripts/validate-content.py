@@ -42,6 +42,7 @@ TARGETS = {
     "story": "stories/**/*.json",
     "drill-bank": "drills/*/*.json",
     "test": "tests/*.json",
+    "units": "curriculum/units/*.json",
 }
 
 SKIP = {"manifest.json", "lessons-manifest.json"}
