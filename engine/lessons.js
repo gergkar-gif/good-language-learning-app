@@ -2457,6 +2457,7 @@ async function lessonGetWritingFeedback() {
 
     const dims = result.dimensions || {};
     const dimLabels = { grammar: 'Grammar', vocabulary: 'Vocabulary', coherence: 'Coherence', complexity: 'Complexity', naturalness: 'Naturalness' };
+    const tip = _graderOneLineTip(result);
     resultEl.innerHTML = `
         <p class="lsn-writing-feedback-score">Overall: ${result.overallScore || 0}%</p>
         <div class="sp-word-breakdown">
@@ -2466,8 +2467,25 @@ async function lessonGetWritingFeedback() {
                 </span>
             `).join('')}
         </div>
+        ${tip ? `<p class="lsn-hint">${esc(tip)}</p>` : ''}
     `;
     if (btn) btn.remove();
+}
+
+// One-sentence coaching tip pulled from the grader's own qualitative
+// feedback — the same data Writing/Speaking Studio already renders in full
+// (errors[].explanation, feedback.strengths/priorities), condensed to the
+// single line these in-lesson checkpoints have room for. Priorities are
+// written to be specific and actionable ("use X instead of Y"), so they
+// read better as the one tip than a raw error quote or a bare strength.
+function _graderOneLineTip(result) {
+    const priorities = (result.feedback && result.feedback.priorities) || [];
+    if (priorities.length) return priorities[0];
+    const errors = result.errors || [];
+    if (errors.length && errors[0].explanation) return errors[0].explanation;
+    const strengths = (result.feedback && result.feedback.strengths) || [];
+    if (strengths.length) return strengths[0];
+    return '';
 }
 
 // Reveals one substitution option's resulting sentence; Continue unlocks
@@ -2845,6 +2863,7 @@ async function _lessonCheckSpeakingCEFR() {
         const listenIcon = (typeof Art !== 'undefined') ? Art.icon('listening') : '';
         const micIcon = (typeof Art !== 'undefined') ? Art.icon('mic') : '';
         const dims = result.dimensions || {};
+        const tip = _graderOneLineTip(result);
 
         revealEl.innerHTML = `
             <div class="sp-word-breakdown">
@@ -2854,6 +2873,7 @@ async function _lessonCheckSpeakingCEFR() {
                     </span>
                 `).join('')}
             </div>
+            ${tip ? `<p class="lsn-hint">${esc(tip)}</p>` : ''}
             <div class="sp-compare-bar">
                 <button type="button" class="sp-audio-compare-btn sp-btn-model" onclick="lessonPlayModelAudio()" aria-label="Listen to model voice">
                     ${listenIcon}

@@ -627,8 +627,9 @@ const SpeakingDriller = (function () {
                     id: 'comp_' + Date.now(),
                     title: text.length > 40 ? text.slice(0, 37) + '...' : text,
                     cefrLevel: (found && found.level) || 'A1',
-                    prompt: `Speak for 1-2 minutes demonstrating this ability: "${text}". Speak clearly and use natural expressions.`,
-                    targetCompetency: text
+                    prompt: `Demonstrate this ability out loud: "${text}". Speak clearly and naturally — however much the task itself calls for.`,
+                    targetCompetency: text,
+                    taskCompletionPrimary: true
                 };
                 _prodMaxSeconds = 300;
                 _startProdRecording();
@@ -985,7 +986,8 @@ const SpeakingDriller = (function () {
                 cefrLevel: p.cefrLevel || 'B1',
                 taskType: 'oral_production',
                 taskInstructions: p.prompt || 'Spoken production task.',
-                targetSkills: p.targetSkills || ['fluency', 'oral_expression', 'sentence_structure'],
+                targetSkills: p.targetSkills || ['fluency', 'oral_expression'],
+                taskCompletionPrimary: !!p.taskCompletionPrimary,
                 language: lang,
                 modality: 'oral',
                 title: p.title || 'Verbal Production'
@@ -1205,8 +1207,9 @@ const SpeakingDriller = (function () {
                 id: 'comp_' + Date.now(),
                 title: options.targetCompetency.length > 40 ? options.targetCompetency.slice(0, 37) + '...' : options.targetCompetency,
                 cefrLevel: options.level || 'A1',
-                prompt: `Speak for 1-2 minutes demonstrating this ability: "${options.targetCompetency}". Speak clearly, naturally, and use complete sentences.`,
-                targetCompetency: options.targetCompetency
+                prompt: `Demonstrate this ability out loud: "${options.targetCompetency}". Speak clearly and naturally — however much the task itself calls for.`,
+                targetCompetency: options.targetCompetency,
+                taskCompletionPrimary: true
             };
             _prodPhase = PROD_PHASE.RECORDING;
             _renderStudioShell();

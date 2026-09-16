@@ -21,3 +21,20 @@ session knowing about, update ROADMAP.md before ending the session:
 
 Do this as part of finishing the work, not as an afterthought — a commit
 message is not a substitute for the roadmap staying readable on its own.
+
+## Archive finished queue items to ACHIEVED.md
+
+[ACHIEVED.md](ACHIEVED.md) holds completed work moved out of ROADMAP.md's
+"Current priority queue", so the active document doesn't grow forever
+(split 2026-09-16, at 2,161 lines). When you strike through a queue item
+as done, move its full entry to ACHIEVED.md in the same edit — don't leave
+it sitting in the active queue. Keep its original item number (don't
+renumber the items that stay behind; gaps in the numbering are expected
+and fine, since the numbers are stable references other entries may cite).
+This only applies to "Current priority queue" — the dated topic sections
+(Content & curriculum, Workshop, Decks, etc.) stay as-is; they're living
+documentation of how a feature evolved, not a queue to drain.
+
+If moving an item leaves a dangling "see item N above"/"step N below"
+reference elsewhere in ROADMAP.md, fix it to point at ACHIEVED.md instead
+of leaving it broken.

@@ -88,6 +88,9 @@ For overallScore (0-100), use this conceptual weighting calibrated for oral prod
 - Complexity: 10%
 
 The overall score should broadly correspond to the weighted profile, but use professional judgement when a dimension is unusually important to the task.
+${opts.taskCompletionPrimary ? `
+TASK-COMPLETION-PRIMARY MODE:
+This is a concrete, bounded can-do check (e.g. "count to 10", "state your name and where you're from", "list the days of the week") rather than an open-ended fluency topic. Ignore the weighting above; task completion now dominates. If the learner's spoken production correctly and completely conveys everything the task asked for, score 85-100 even if the response is a brief list, a single phrase, or otherwise not full-sentence prose — a task that only calls for an enumeration or a short factual answer must not be penalised for lacking length, complexity, or grammatical elaboration the task never asked for. Only reduce the score for content that is missing, wrong, or unintelligible.` : ''}
 
 ERRORS:
 Only include concrete, defensible spoken errors that impair intelligibility or break grammatical agreement.
@@ -212,6 +215,9 @@ For overallScore (0-100), use this conceptual weighting:
 - Naturalness: 10%
 
 The overall score should broadly correspond to the weighted profile, but use professional judgement when a dimension is unusually important to the task.
+${opts.taskCompletionPrimary ? `
+TASK-COMPLETION-PRIMARY MODE:
+This is a concrete, bounded can-do check (e.g. "list the days of the week", "reserve a hotel room with a window and two separate beds") rather than an open-ended fluency topic. Ignore the weighting above; task completion now dominates. If the learner's production correctly and completely conveys everything the task asked for, score 85-100 even if the response is short or structurally simple — a task with a bounded, concrete requirement must not be penalised for lacking length, complexity, or grammatical elaboration the task never asked for. Only reduce the score for content that is missing, wrong, or unintelligible.` : ''}
 
 ERRORS:
 Only include concrete, defensible errors or important limitations.

@@ -543,12 +543,27 @@ const VocabularyDriller = (function () {
         _missed = [];
 
         if (!pool.length) {
+            // This is a scoped request (Decks' "Practice these words", or a
+            // Time-Based Session vocabulary item) — the caller isn't the
+            // driller's own settings screen, so dropping the learner into
+            // the generic level/count picker here would abandon whatever
+            // they actually asked for with no way back to it. Offer a real
+            // next step instead: mountNextAction already knows how to
+            // return to a StudyPlan session in progress, or fall back to a
+            // fresh recommendation otherwise — same mechanism a completed
+            // session's results screen already uses.
             _phase = PHASE.SETTINGS;
             _container.innerHTML = `
-                <div class="gd-empty">No example sentences for these words yet.</div>
-                <button class="vbtn vbtn-secondary" data-action="change-settings">Change settings</button>
+                <div class="gd-empty">These words don't have example sentences yet, so there's nothing to build a context exercise from.</div>
+                <div class="vspeed-results-actions">
+                    <button class="vbtn vbtn-secondary" data-action="change-settings">Practice other words instead</button>
+                    <button class="vbtn vbtn-secondary" data-action="exit-workshop">Back to Workshop</button>
+                </div>
             `;
             _container.querySelector('[data-action="change-settings"]').addEventListener('click', _abortSession);
+            const exitBtn = _container.querySelector('[data-action="exit-workshop"]');
+            if (exitBtn) exitBtn.addEventListener('click', () => { if (typeof Workshop !== 'undefined') Workshop.close(); });
+            if (typeof RecommendationEngine !== 'undefined') RecommendationEngine.mountNextAction(_container);
             return;
         }
 

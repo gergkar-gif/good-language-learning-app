@@ -103,6 +103,7 @@
             const targetSkills = context.targetSkills || [];
             const language = context.language || (typeof Lang !== 'undefined' ? Lang.code() : 'es');
             const modality = context.modality || (context.isSpeaking || (taskType && String(taskType).toLowerCase().includes('oral')) ? 'oral' : 'written');
+            const taskCompletionPrimary = !!context.taskCompletionPrimary;
 
             // 1. Instant deterministic local analysis
             const localStats = LocalGrader
@@ -119,6 +120,7 @@
                     learnerProduction: productionText,
                     language,
                     modality,
+                    taskCompletionPrimary,
                     retryCount
                 });
 
@@ -155,6 +157,7 @@
                 learnerProduction,
                 language,
                 modality,
+                taskCompletionPrimary,
                 retryCount
             } = params;
 
@@ -164,7 +167,7 @@
                 taskInstructions,
                 targetSkills,
                 learnerProduction,
-                { language, modality, taskType }
+                { language, modality, taskType, taskCompletionPrimary }
             );
 
             if (retryCount > 0) {

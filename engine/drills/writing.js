@@ -231,8 +231,9 @@ const WritingDriller = (function () {
                     title: text.length > 40 ? text.slice(0, 37) + '...' : text,
                     cefrLevel: (found && found.level) || 'A1',
                     targetWords: 35,
-                    prompt: `Write a short text or dialogue demonstrating this ability: "${text}". Use natural expressions, complete sentences, and relevant vocabulary.`,
-                    targetCompetency: text
+                    prompt: `Demonstrate this ability in writing: "${text}". Write clearly and naturally — however much the task itself calls for.`,
+                    targetCompetency: text,
+                    taskCompletionPrimary: true
                 };
                 _draftText = '';
                 _phase = PHASE.WRITING;
@@ -462,6 +463,7 @@ const WritingDriller = (function () {
                 taskType: p.taskType || 'written_production',
                 taskInstructions: p.prompt || '',
                 targetSkills: p.targetSkills || [],
+                taskCompletionPrimary: !!p.taskCompletionPrimary,
                 language: lang,
                 modality: 'written-production',
                 title: p.title || 'Writing Production'
@@ -649,8 +651,9 @@ const WritingDriller = (function () {
                 title: options.targetCompetency.length > 40 ? options.targetCompetency.slice(0, 37) + '...' : options.targetCompetency,
                 cefrLevel: options.level || 'A1',
                 targetWords: 35,
-                prompt: `Write a short text or dialogue demonstrating this ability: "${options.targetCompetency}". Use natural expressions, complete sentences, and relevant vocabulary.`,
-                targetCompetency: options.targetCompetency
+                prompt: `Demonstrate this ability in writing: "${options.targetCompetency}". Write clearly and naturally — however much the task itself calls for.`,
+                targetCompetency: options.targetCompetency,
+                taskCompletionPrimary: true
             };
             _draftText = '';
             _phase = PHASE.WRITING;

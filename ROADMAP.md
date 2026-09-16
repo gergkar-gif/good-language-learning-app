@@ -5,6 +5,11 @@ brain-dump. Not prioritized or sequenced — a parking lot, distinct from
 `TROUBLESHOOTING_BACKLOG.md` and `HUNGARIAN_A1_CONTENT_BACKLOG.md`, which
 track known bugs in existing content rather than things not yet built.
 
+Completed work is archived out to `ACHIEVED.md` once it's done, so this
+file stays readable as the active plan rather than growing forever — see
+that file's own header for the exact rule. Nothing needed from here to
+work there is lost; it's just moved.
+
 ## Standing architecture principles
 
 **Core First, Enhancement Second.** Set 2026-09-10 as a permanent
@@ -15,7 +20,7 @@ constraint on all future work, not a one-off feature:
   always work, regardless of device quality or connection speed. Keep it
   lightweight: no large frameworks, no heavy assets, no animations or
   constant network requests as *dependencies* of the core.
-- Cloud syncing (see step 7 below) must happen automatically in the
+- Cloud syncing (see ACHIEVED.md's learner-model step 7) must happen automatically in the
   background and never make the interface wait for the server. Local
   state updates immediately; the app should stay usable offline, with
   changes synced once connectivity returns.
@@ -39,39 +44,45 @@ closely — no framework, no bundler, no CDN dependency, ~1.1MB of plain
 precache the entire app shell and cache visited content, making the core app
 100% usable offline.
 
+**Modularity: adding lessons/exercise types without a full rewrite** —
+user's standing concern, answered from investigation 2026-09-10: the
+content architecture already supports both asks cheaply, as long as
+additions stay purely additive.
+- **Adding lessons to an existing unit**: `content/<lang>/curriculum/curriculum.json`
+  holds each unit as `{id, label, title, lessons: [...]}` — a plain
+  array of `{id, label, title, grammar, ...}` entries. Inserting new
+  lessons is an array edit (new lesson JSON file(s) with unique ids +
+  a new entry in the unit's `lessons` array), not a rewrite. The real
+  cost is regenerating the derived indexes (`grammar-index.json`,
+  `translation-index.json`, `decks.json`, `stories/manifest.json` via
+  `build-manifest.py`) afterward, not touching unrelated lessons.
+- **Adding a new exercise type (e.g. voice recognition)**: `engine/lessons.js`'s
+  `stepRenderers` is a plain object keyed by step `type` and dispatched
+  dynamically (`stepRenderers[part.type](part)`) — a new type is one
+  new key/function, and every existing renderer is untouched.
+  `content/<lang>/schemas/exercises.schema.json` defines each exercise
+  kind as a `oneOf` branch (`matching`, `multipleChoice`, `fillBlank`,
+  `sentenceBuilder`, `sentenceOrder`, ...) — adding a kind means adding
+  one more branch to that `oneOf`, additive to the schema, not a
+  restructure. To retrofit the new type into *earlier* lessons: author
+  new exercise JSON entries (or convert selected existing ones) rather
+  than restructuring the lesson files — the id/`teaches`-tag system
+  that recycle/`Recommend` already lean on doesn't care when an
+  exercise was authored, only its tags.
+- **The actual risk to watch**: this modularity holds only as long as
+  new step/exercise types stay additive (never require every existing
+  renderer or schema branch to also change) — worth keeping as an
+  explicit constraint when the voice-recognition exercise type gets
+  designed, not just an accident of today's code.
+
 ## Current priority queue
 
 Active work, in dependency order, as of 2026-09-16 — supersedes any
 in-session task tracker, which doesn't persist between sessions. Update
 this list directly rather than relying on a tool-specific todo list.
+Items 1-8, 20, and 21 shipped and moved to `ACHIEVED.md` — numbering below
+keeps its original gaps on purpose, so item numbers stay stable references.
 
-1. ~~**Learner Path**~~ — **Done.** Single source of truth for
-   level/unit/lesson position, completion state, and last-activity
-   timestamp. See "Learner model & personalized path" below (step 1).
-2. ~~**Learner Model / Brainmap**~~ — **Done.** Evidence-based knowledge
-   tracking (step 2 below).
-3. ~~**Recommendation Engine**~~ — **Done.** One strong + secondary
-   recommendation (step 3 below).
-4. ~~**Simplify Home experience hierarchy**~~ — **Done** (step 4 below).
-5. ~~**Time-Based Sessions**~~ — **Done** (step 5 below). Heuristic
-   constants flagged for later tuning — see "Current priority queue"
-   → step 5's own note.
-6. ~~**Unify all activity types as evidence**~~ — **Done 2026-09-11**
-   (step 6 below): fixed the "recycle lottery" (a first-encounter
-   exercise now counts as evidence immediately, not only if later
-   redrawn into a recycle block) and folded `DrillHistory` into
-   `LearnerModel` as `weakDrillers()`.
-7. ~~**Cloud persistence**~~ (Cloudflare Worker + D1) — **Deployed & Live 2026-09-14**:
-   Cloudflare Worker deployed at `https://parlour-sync.gergkar.workers.dev`,
-   D1 database schema (`magic_links`, `users`) installed and verified, CORS
-   controls active, and magic-link passwordless email login dispatched via
-   Resend. Client integration live in My Journey's Account card (`engine/sync.js`).
-8. ~~**Italics content retrofit**~~ — **Done 2026-09-13.** Paused
-   2026-09-10 partway (282/1366 files), resumed and completed: all
-   ~1,366 grammar files across both languages/levels retrofitted
-   (ES B1, HU A1 remainder, HU A2, HU B1 — commits `749012e2` through
-   `bb79846d`), convention documented in the content style guides
-   (`3a12155e`).
 9. **Future feature, unscoped**: CEFR real-exam practice mode (source or
    generate actual exams, graded response) — see Grammar reference /
    Level test area for where this would eventually live.
@@ -220,61 +231,6 @@ this list directly rather than relying on a tool-specific todo list.
       attempted everywhere now, a miss is a one-off, not a category — reads
       "Your recording wasn't captured for playback this time — your answer
       was still recognised and graded normally."
-20. ~~**Batch fix/feature pass — Lessons, Decks, Speaking/Writing, Workshop,
-    Reader, Journey**~~ — **Done 2026-09-16.** An 18-item punch list across
-    four phases, each landed as its own commit:
-    - Phase 1 (crashes): `enableCheck` ReferenceError killing structured
-      speaking's auto-grade; end-of-lesson summary crash on close-during-
-      render; Decks Review-all race + stale `currentReviewCard`; HU
-      Workshop grammar-title formatting (now consults
-      `grammar-titles.json` first, keyed by resolved path so a runtime
-      course switch can't serve a stale language's cache).
-    - Phase 2 (grading): Hungarian number/abbreviation leniency in
-      `read-repeat`; `prompt-speak` now routes through CEFR `GraderEngine`
-      instead of word-match; Verbal Production no longer cuts a recording
-      short when native speech recognition ends its session mid-way
-      (manual mode now restarts recognition instead of committing early).
-    - Phase 3 (polish): Decks Match lockout cut from ~650ms to ~150-200ms;
-      typed review auto-grades instead of requiring manual self-rating;
-      Reader voice-button rest-state contrast bumped in both themes;
-      Journey's Milestones collapsed to next-5 + "See all"; review
-      sessions in `reviewDirection='audio-en'` now show a persistent
-      "Audio mode" badge.
-    - Phase 4 (bigger features): the 48 migrated A2 imperfecto lessons
-      (see item above) wired into `build-manifest.py`'s `UNIT_TABLES` as
-      units 21/22 — previously validating cleanly but invisible to the
-      Learn tab; a course-wide Grammar Guide search (backed by a new
-      prebuilt `indexes/grammar-guide-index.json`, after a live per-unit
-      walk proved too slow at 100+ units — see
-      `scripts/build_grammar_guide_index.py`), later made more
-      discoverable (top of Learn tab, top of every level, linked from
-      every per-unit guide); end-of-lesson summary split into a stats
-      screen and a "what's next" reinforcement screen; a CEFR level-filter
-      added to Writing/Speaking Studio's topic cards; a genuinely new
-      "Set Your Own Task" flow letting a learner author their own one-line
-      task + word/time limit for free writing/speaking, graded against
-      exactly that task; `structured-writing` lesson steps now feed
-      `LearnerModel` (were invisible to it before) plus an optional
-      on-demand "Get feedback" button (no "AI" wording, hidden when
-      `!navigator.onLine`).
-    - Found and flagged along the way: 5 grammar files with single-
-      character titles in A1 unit 02 (fixed same session, see commits
-      `4a32e229`/`f71cf085`); the iOS audio-playback gap logged as item 19
-      above.
-21. ~~**Unit tables moved from Python code to JSON content**~~ — **Done
-    2026-09-16.** Wiring the two new A2 imperfecto units into the
-    curriculum (item above) meant editing a hardcoded `UNIT_TABLES` dict in
-    `build-manifest.py` — a code change for a content-authoring decision.
-    Moved each level's table (ES A1/A2/B1, HU B1) to
-    `content/<lang>/curriculum/units/<level>.json`, an ordered array of
-    `{title, stems, track?}`, schema-validated
-    (`content/<lang>/schemas/units.schema.json`) like every other content
-    file. Adding a unit to an already-tabled level is now appending one
-    JSON object — no Python edit, no dev session required. Also added a
-    project `CLAUDE.md` instructing sessions to keep this roadmap current,
-    since nothing does that automatically. Verified `curriculum.json` is
-    byte-for-byte identical to before the refactor (both languages,
-    timestamp aside) — a pure data-location move, not a behavior change.
 22. **Full guide/planning-doc staleness audit — IN PROGRESS, paused
     2026-09-16.** A full audit (6 parallel research passes) across every
     guide/planning doc in both languages found widespread drift between
@@ -420,6 +376,87 @@ this list directly rather than relying on a tool-specific todo list.
     Flip and Type modes, Show Answer, rating buttons, and the two-way
     direction toggle all work with no console errors and no orphaned
     references to the removed markup/classes anywhere in the codebase.
+25. **AI-grading fixes: natural-language tips surfaced, task-completion
+    grading for can-do checks** — **Built 2026-09-16.** Two related grader
+    fixes from a user feedback batch:
+    - **Lesson-end writing/speaking feedback was numbers-only.** The AI
+      grader (`engine/grader/grader-prompt.js`) already returns a
+      natural-language coaching tip (`feedback.priorities`/
+      `errors[].explanation`) — Writing/Speaking Studio already renders it,
+      but the two in-lesson checkpoints (`lessonGetWritingFeedback()`,
+      `_lessonCheckSpeakingCEFR()` in `engine/lessons.js`) only showed
+      percentage-pill dimension scores and threw the qualitative feedback
+      away. Added `_graderOneLineTip()`, a small picker (priority →
+      error explanation → strength, first available) rendered as one
+      `.lsn-hint` line under the pills in both places.
+    - **Grader too harsh on can-do checks.** A learner asked to "count from
+      1 to 10" and did exactly that got marked down for "not using full
+      sentences" — traced to `engine/drills/speaking.js`'s competency-check
+      flow (`journey.js`'s "unverified competencies" nudge, and the Studio's
+      own "Target Unverified Goals" card) hardcoding "...and use complete
+      sentences" into the TASK text sent to the grader, regardless of
+      whether the competency was an enumeration/list-style can-do or an
+      open topic — plus defaulting `targetSkills` to include
+      `sentence_structure` for every competency check. Removed both. Added
+      a new `taskCompletionPrimary` flag (threaded `speaking.js`/
+      `writing.js` → `context` → `grader-engine.js` → `grader-prompt.js`),
+      set `true` only for competency-derived prompts in both Studios: when
+      set, the prompt tells the model to ignore the normal dimension
+      weighting and score 85-100 for a production that correctly and
+      completely fulfils a concrete, bounded task, however short or
+      grammatically simple — reserving deductions for content that's
+      actually missing, wrong, or unintelligible. Verified by generating
+      prompts with the flag on/off and confirming the new instructions
+      appear/disappear and "complete sentences" no longer appears in any
+      generated prompt; existing `tests/grader/test-oral-grader.js` suite
+      still passes unchanged. The AI's actual grading behavior with the new
+      instructions can't be unit-tested (inherent to LLM grading) — worth
+      a real-usage spot-check.
+26. **Vocabulary Driller: scoped session dead-end fixed** — **Built
+    2026-09-16.** Launching the driller pre-scoped to a specific word list
+    (Decks' "Practice these words" link, or a Time-Based Session vocabulary
+    item) whose words all lack example-sentence context (all 6 exercise
+    types in `engine/drills/vocabulary.js` require one) hit a real dead
+    end: "No example sentences for these words yet" with only a "Change
+    settings" button that dropped the learner into the driller's own
+    generic level/count picker, disconnected from wherever they'd actually
+    come from. Reworded the message, and the button now also mounts
+    `RecommendationEngine.mountNextAction()` (the same "what's next"
+    mechanism a completed session's results screen already uses — returns
+    to a Time-Based Session in progress, or a fresh recommendation
+    otherwise) plus a "Back to Workshop" option. **Not fixed, and much
+    bigger than the trigger suggested**: the underlying cause is a
+    systemic content gap, not a UI bug — an investigation estimated
+    ~54% of Spanish and ~63% of Hungarian deck words have no sentence
+    in the corpus the driller can build an exercise from, plus ~40
+    Spanish deck entries keyed to a surface form (`soy`, `alto/alta`)
+    that can never match even when a qualifying sentence exists, due to a
+    lemma-resolution mismatch. Worth its own scoped pass — content
+    generation/backfill, not a code fix.
+27. **Time-Based Sessions should always include a quick speaking prompt**
+    — investigated 2026-09-16, not built. User wants every timed session
+    to include one lightweight open speaking prompt ("speak for one
+    minute about your day") to get people talking, not just review/
+    grammar/vocab/listening. Current state: `engine/studyPlan.js` already
+    sometimes includes speaking (`canSpeak` gate, `remaining >= 2.5` min
+    left after everything else), but always launches full Sentence-Drills
+    mode (~3 min minimum), never a quick open prompt. The pieces already
+    exist separately — an open "Free Speaking" prompt, a 1-minute time
+    preset (`CUSTOM_TIME_OPTIONS`), and a programmatic auto-launch pattern
+    (the `targetCompetency` shortcut in `speaking.js`) — just never
+    combined. Two possible scopes: (a) small — make the existing
+    inclusion less conditional; (b) medium — wire the existing pieces into
+    a genuine auto-launched "speak for 1 min about your day" mode (new
+    `studyPlan.js` item variant + a `SpeakingDriller` option to auto-jump
+    into recording with a fixed casual prompt and a short time cap, no new
+    UI screens needed).
+28. **Writing/Speaking Studio topic prompts sourced from real exam
+    topics** — user wants topic *prompts* (not a full exam-simulation
+    mode — that's the separate item 9 above) modeled on real CEFR exam
+    topics rather than internally invented ones. User will source these
+    via ChatGPT and hand over a `.txt` file (matches their usual workflow
+    for translation-style content — see the `translation-task-workflow
+    -preference` note in memory). Waiting on that file; not started.
 
 ## Content & curriculum
 
@@ -834,7 +871,7 @@ this list directly rather than relying on a tool-specific todo list.
   `text`/`tip` prose (Hungarian or Spanish, wherever it appears bare in
   otherwise-English explanatory text), so it reads visually distinct from
   the English scaffolding around it.~~ — **Done 2026-09-13** (see
-  "Current priority queue" item 8 above for the final completion date;
+  ACHIEVED.md's item 8 for the final completion date;
   the history below is kept for the recovery-process detail). **CSS-only half built and shipped
   2026-09-10**: `examples`/`table` sections already render their
   target-language side in italics via `.lsn-grammar .lsn-es` (new
@@ -860,7 +897,7 @@ this list directly rather than relying on a tool-specific todo list.
   get wrong) — confirmed neither actually wrote anything to disk before
   failing, so no bad edits leaked in. The remaining 1,225 files (ES B1 /
   HU A1 first half / HU A2 / HU B1) were finished in a later session —
-  see item 8 above.
+  see ACHIEVED.md's item 8.
 
 - [ ] In the various Workshop drillers, show an English translation and an
   explanation of why that's the right response at the bottom of each
@@ -1917,160 +1954,13 @@ this list directly rather than relying on a tool-specific todo list.
 
 ## Learner model & personalized path (architecture initiative)
 
-User's own 7-step plan, logged 2026-09-10, meant to supersede/reframe the
-ad-hoc `Recommend` work in Cross-app flow above into one coherent system.
-**Explicit ordering from the user: cloud persistence is step 7, only after
-the rest works locally** — build the learner model and recommendation
-logic first, then treat cloud sync as a pure persistence/replication
-problem instead of solving "what does the learner know" and "how do two
-devices agree on it" at the same time. None of the 7 steps are started
-yet; `Recommend` (weak/recent grammar+vocabulary signal, described above)
-is the closest existing piece and a natural seed for steps 1-2, not a
-replacement for them.
-
-1. **Learner Path — "Where am I?"** One reliable source of truth for
-   current level/unit/lesson, completed vs. incomplete work, the next
-   curriculum step, and last-activity timestamp (kept separate from
-   curriculum position — finishing something isn't the same as touching
-   the app). Today this is scattered: `getProgress()` in `engine/progress.js`
-   tracks completion, but "next step" logic is duplicated across
-   `engine/home.js`'s `practiceNudge()`/`miniGameNudge()` and
-   `Recommend.lastCompletedLessonId()`/`unitFor()`.
-2. **Learner Model / Brainmap.** Track what the learner actually *knows*,
-   not just what they completed: grammar skills, vocabulary, exercise
-   evidence, weak/developing/strong areas, prerequisites/dependencies,
-   review needs. Mostly hidden from the learner. `Recommend.weakestSkill()`/
-   `weakestWords()` are a first, narrow slice of this (SM-2 ease from
-   `recycle.js`/`srs.js`) — the real model needs to fold in level-test
-   results, reading/listening exercises, and prerequisite relationships
-   none of today's code tracks.
-3. **Recommendation Engine.** Path + learner model → one strong
-   recommendation ("Continue Lesson 4.3"), with occasional secondary
-   recommendations ("Practise adjective agreement"). The system decides;
-   the learner isn't navigating a decision tree. This is where the
-   queued "next recommended activity button after a mini-game" and "wire
-   the HU-specific drillers (suffix/prefix/morphology/verb) into the
-   mini-game signal, not just grammar+vocabulary" work belongs — both are
-   pieces of this engine, not standalone features, so build them as part
-   of this step rather than bolted onto the current ad-hoc `Recommend`
-   module.
-4. **Simplify the Home experience.** Reduce "here are 12 things you can
-   do" down to a clear hierarchy: Recommended next step (primary action)
-   → Optional reinforcement (secondary) → Explore (vocabulary, grammar,
-   reading, Workshop, Decks — freedom preserved, but the app has a clear
-   opinion about what to do next).
-5. **Time-Based Sessions** (optional mode). Learner picks a time budget —
-   10/15/20/30/45/60 minutes — and the app builds a finite session out of
-   curriculum position, knowledge gaps, reviews due, and priorities, with
-   a clear start and end. No countdown timer (time is a planning
-   constraint, not a productivity metric). Completing a session does not
-   advance the curriculum unless the actual lesson work was done. The
-   normal recommended path stays the default; this is an alternative
-   entry point, not a replacement. Depends on steps 1-3 existing first.
-   **Built 2026-09-11** (`engine/studyPlan.js`/`engine/studyPlanRunner.js`).
-   **To revisit** (flagged 2026-09-11, "tinker on time-based session" —
-   no specific complaint yet, just a general "spend more time on this"
-   note): the time-to-activity-count heuristics
-   (`SEC_PER_REVIEW`/`SEC_PER_GRAMMAR_Q`/`SEC_PER_VOCAB_WORD`/
-   `DEFAULT_LESSON_MINUTES`/`TEST_MINUTES` in `engine/studyPlan.js`) were
-   built as best-judgment defaults, explicitly flagged at the time as
-   "worth confirming against real usage... before shipping" — a good
-   place to start once there's a specific thing about the feature that
-   feels off after actually using it a few times.
-6. **Make everything feed the same Learner Model.** Lessons, drills, SRS,
-   Workshop, level tests, reading/listening exercises should all become
-   evidence about the learner over time, rather than isolated features
-   each with their own local state.
-7. **Cloud Persistence — last, not first.** Once the above works locally,
-   cloud sync becomes "learner state + learner model → cloud → another
-   device," a straightforward persistence/replication problem, instead of
-   simultaneously inventing the state model and figuring out how to
-   replicate it. Design work deferred until steps 1-6 exist to sync, but
-   the backend is already decided (2026-09-10) so it doesn't need
-   revisiting later: **Cloudflare Worker + D1**, chosen over Supabase/
-   Firebase after comparing free-tier limits — D1 covers this app's scale
-   indefinitely (5GB storage, 5M row-reads/day, no auto-pause-after-
-   inactivity, unlike Supabase's free tier) and reuses the exact Worker
-   pattern already proven in this repo (`cloudflare-worker/bug-report-proxy.js`,
-   see `BUG_REPORT_SETUP.md`). Planned shape once steps 1-6 are ready to
-   build on:
-   - Magic-link email auth (no passwords, no client SDK — plain `fetch()`
-     calls from vanilla JS, matching the app's existing lightweight
-     architecture — see the Core-First/Enhancement-Second principles
-     below).
-   - A new thin `engine/sync.js` that `progress.js`, `xp.js`, and `srs.js`
-     write through instead of touching `localStorage` directly — today
-     each of those three modules independently reads/writes its own
-     localStorage key (`progressKey()`, `'spanishApp_xp'`,
-     `Lang.key('srsDeck')`/`Lang.key('knownWords')`) with no shared
-     abstraction; the sync layer needs to sit underneath all three
-     without those modules growing their own cloud logic.
-   - Local-first writes (localStorage updates immediately, UI never
-     waits on the network) with a background sync queue.
-   - Per-record merge, not whole-blob overwrite — a phone and a laptop
-     need to reconcile (e.g. union completed-lesson sets, keep the
-     higher SRS review count per card) rather than one device's full
-     state clobbering the other's on next sync.
-   - Curriculum/content stays out of this entirely — only mutable user
-     state (progress, XP, SRS card state, known words, preferences)
-     goes through the sync layer; lesson/grammar/exercise content stays
-     purely local static files, as it already is.
-
-   **Built 2026-09-11, deliberately smaller than the shape above** —
-   scoped down with the user before building, not a silent deviation:
-   whole-snapshot **backup/restore on two explicit buttons**
-   (`engine/sync.js`, My Journey's Account card), not a background sync
-   queue with local-first writes, and **last-write-wins**, not the
-   per-record merge described above — confirmed most real usage is a
-   single primary device, so a smart per-field merge (keep the higher
-   SRS review count per card, union completed-lesson sets, etc.) is a
-   real future need, not a v1 one. Curriculum/content-stays-local held
-   exactly as planned — only learner state syncs. Code is written and
-   pushed; **the Cloudflare/D1/Resend infrastructure itself isn't
-   deployed yet** — see the "Current priority queue" entry above and
-   `CLOUD_SYNC_SETUP.md` for what's left.
-
-- [ ] **Modularity: adding lessons/exercise types without a full rewrite** —
-  user's standing concern, answered from investigation 2026-09-10: the
-  content architecture already supports both asks cheaply, as long as
-  additions stay purely additive.
-  - **Adding lessons to an existing unit**: `content/<lang>/curriculum/curriculum.json`
-    holds each unit as `{id, label, title, lessons: [...]}` — a plain
-    array of `{id, label, title, grammar, ...}` entries. Inserting new
-    lessons is an array edit (new lesson JSON file(s) with unique ids +
-    a new entry in the unit's `lessons` array), not a rewrite — this is
-    exactly the pattern already used all session to build out HU A2 units
-    incrementally. The real cost is regenerating the derived indexes
-    (`grammar-index.json`, `translation-index.json`, `decks.json`,
-    `stories/manifest.json` via `build-manifest.py`) afterward, not
-    touching unrelated lessons.
-  - **Adding a new exercise type (e.g. voice recognition)**: `engine/lessons.js`'s
-    `stepRenderers` is a plain object keyed by step `type` and dispatched
-    dynamically (`stepRenderers[part.type](part)`) — a new type is one
-    new key/function, and every existing renderer is untouched.
-    `content/<lang>/schemas/exercises.schema.json` defines each exercise
-    kind as a `oneOf` branch (`matching`, `multipleChoice`, `fillBlank`,
-    `sentenceBuilder`, `sentenceOrder`, ...) — adding a kind means adding
-    one more branch to that `oneOf`, additive to the schema, not a
-    restructure. To retrofit the new type into *earlier* lessons: author
-    new exercise JSON entries (or convert selected existing ones) rather
-    than restructuring the lesson files — the id/`teaches`-tag system
-    that recycle/`Recommend` already lean on doesn't care when an
-    exercise was authored, only its tags.
-  - **The actual risk to watch**: this modularity holds only as long as
-    new step/exercise types stay additive (never require every existing
-    renderer or schema branch to also change) — worth keeping as an
-    explicit constraint when the voice-recognition exercise type gets
-    designed, not just an accident of today's code.
-
-- [ ] **Future feature: practice real CEFR exams.** Source or generate
-  actual CEFR-level exams (A1-C1) per language, let a learner attempt one
-  inside the app, and return a graded response — closer to "take the real
-  test" than the existing internal level-test (`engine/leveltest.js`,
-  see Level test section below), which estimates placement rather than
-  simulating an actual exam. Logged 2026-09-10, not scoped or started —
-  needs research into what's licensable/generatable per level before any
-  design work.
+User's own 7-step plan, logged 2026-09-10 — all 7 steps done. Full detail
+(including the deliberately-scoped-down cloud-sync shape) moved to
+ACHIEVED.md; "Current priority queue" items 1-7 are the short version.
+The modularity investigation that used to close this section moved up to
+"Standing architecture principles"; the real-exam-practice idea that used
+to close it is the same item as "Current priority queue" item 9, so it
+was not duplicated here.
 
 ## Interface & platform
 
