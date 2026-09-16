@@ -189,6 +189,25 @@ this list directly rather than relying on a tool-specific todo list.
     - **Hungarian Phonetic Digraph Adaptation ("Károly" -> "Károy")**: Adapted speech synthesis inputs across `engine/reader.js`, `engine/speech.js`, and offline generation tools to replace the Hungarian name `Károly` with `Károy` (reflecting the Hungarian `ly` = `/j/` digraph pronounced like English "y") for speech synthesis, while keeping proper visible orthography (`Károly`) intact on screen.
     - **Pedagogical Comprehension Checks**: Built-in interactive multiple-choice check with immediate validation and explanations.
     - **Schema & Manifest Integration**: Added `narration` definitions in `story.schema.json` with optional `audioFile`, and updated `build-manifest.py` so `hasAudio` is based on narration structure and paragraphs rather than local disk audio presence. Verified with 11 automated unit tests in `tests/reader/test-story-narration.js`.
+19. **"Listen to your own voice" unavailable on iPad/iPhone** — flagged
+    2026-09-16, to investigate after the current batch-fix pass. Item 11's
+    "Solved hardware mic contention on mobile devices" claim above is not
+    the full picture: `engine/speech-input.js`'s `isMobileDevice`/
+    `canRecordConcurrently` gate (in `startListening()`) deliberately skips
+    `getUserMedia`/`MediaRecorder` entirely on iOS (`canRecordConcurrently
+    = !isMobileDevice`), running speech recognition alone to avoid real
+    OS-level mic contention with `webkitSpeechRecognition`. This means
+    Speaking Studio's audio-playback compare feature ("Your Voice" in
+    Sentence Drills, "Listen To Your Own Voice" in Verbal Production) has
+    never actually worked on iPad/iPhone — the on-screen fallback message
+    ("Audio recording playback unavailable on this browser/session") is
+    accurate but reads like a bug rather than an explained platform
+    limitation. Two directions worth considering when this is picked back
+    up: (a) a lighter-touch message that names the platform limitation
+    explicitly instead of sounding broken, or (b) a real fix — e.g.
+    recording sequentially after recognition finishes rather than
+    concurrently, which would need its own UX pass (an extra step) and
+    isn't a small change.
 
 ## Content & curriculum
 
