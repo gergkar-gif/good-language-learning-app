@@ -1856,6 +1856,11 @@ function summaryGoalsHtml(checklistResults) {
     `;
 }
 
+// Split into two screens: this one is the celebration/stats recap, the
+// second (renderLessonSummaryNext(), reached via its own "Continue")
+// carries the "what's next" reinforcement offers. Split rather than one
+// long scroll so the result (accuracy, streak, goals) reads as its own
+// moment before the app starts asking for more practice.
 async function renderLessonSummary(firstTime, rankBefore) {
     const container = document.getElementById('lesson-content');
     if (!container) return;
@@ -1884,6 +1889,11 @@ async function renderLessonSummary(firstTime, rankBefore) {
     const milestones = firstTime ? newlyReachedMilestones() : [];
     const rankAfter = (typeof getRank === 'function') ? getRank().rank : null;
     const rankedUp = firstTime && rankBefore != null && rankAfter != null && rankAfter > rankBefore;
+
+    // Reused unchanged by renderLessonSummaryNext() below and by the Match
+    // Game's onExit -- computed once here rather than re-awaited on every
+    // screen transition or return trip from the embedded mini-game.
+    _lessonSummaryCtx = { lesson, words, grammarSkill, firstTime, rankBefore };
 
     const statsHtml = (accuracy === null && !elapsed && !xpEarned) ? '' : `
         <div class="lsn-summary-stats">
@@ -1920,7 +1930,6 @@ async function renderLessonSummary(firstTime, rankBefore) {
             ${summaryMilestonesHtml(milestones)}
             ${summaryGoalsHtml(lastLessonChecklist)}
             ${summaryWordsHtml(words)}
-            ${summaryReinforceHtml(grammarSkill, words, lesson.level)}
         </div>
     `;
     const summaryScrollParent = container.closest('.content') || document.querySelector('.content');
@@ -1957,6 +1966,45 @@ async function renderLessonSummary(firstTime, rankBefore) {
             if (typeof Decks !== 'undefined') Decks.openBulkAddPicker(words);
         });
     }
+
+    const backBtn = document.getElementById('lesson-back-btn');
+    if (backBtn) backBtn.disabled = true;
+
+    const nextBtn = document.getElementById('lesson-next-btn');
+    if (nextBtn) {
+        nextBtn.textContent = 'Continue →';
+        nextBtn.disabled = false;
+        nextBtn.classList.remove('is-locked');
+        nextBtn.onclick = renderLessonSummaryNext;
+    }
+}
+
+// Set by renderLessonSummary() just before it renders screen 1; read by
+// this function and by the Match Game's onExit so returning from either
+// doesn't need to re-await collectLessonVocabulary()/lessonSkillFor() a
+// second time for data that hasn't changed.
+let _lessonSummaryCtx = null;
+
+// Screen 2 of the lesson-complete flow: the reinforcement offers
+// (summaryReinforceHtml, RecommendationEngine's next-action card) that used
+// to sit at the bottom of one long summary. "Done" lives here now instead
+// of on screen 1, since this is the actual last stop before leaving the
+// lesson.
+function renderLessonSummaryNext() {
+    const container = document.getElementById('lesson-content');
+    const ctx = _lessonSummaryCtx;
+    if (!container || !ctx) return;
+    const { lesson, words, grammarSkill, firstTime, rankBefore } = ctx;
+
+    container.innerHTML = `
+        <div class="lsn-summary">
+            <p class="lsn-summary-eyebrow">What's next</p>
+            ${summaryReinforceHtml(grammarSkill, words, lesson.level)}
+        </div>
+    `;
+    const summaryScrollParent = container.closest('.content') || document.querySelector('.content');
+    if (summaryScrollParent) summaryScrollParent.scrollTop = 0;
+    else window.scrollTo(0, 0);
 
     const drillGrammarBtn = container.querySelector('[data-drill-grammar]');
     if (drillGrammarBtn) {
@@ -2009,7 +2057,7 @@ async function renderLessonSummary(firstTime, rankBefore) {
                 exitLabel: 'Back to summary',
                 onExit: () => {
                     if (footer) footer.style.display = '';
-                    renderLessonSummary(firstTime, rankBefore);
+                    renderLessonSummaryNext();
                 }
             });
         });
