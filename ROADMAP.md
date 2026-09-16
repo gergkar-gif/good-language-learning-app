@@ -249,6 +249,20 @@ this list directly rather than relying on a tool-specific todo list.
       character titles in A1 unit 02 (fixed same session, see commits
       `4a32e229`/`f71cf085`); the iOS audio-playback gap logged as item 19
       above.
+21. ~~**Unit tables moved from Python code to JSON content**~~ — **Done
+    2026-09-16.** Wiring the two new A2 imperfecto units into the
+    curriculum (item above) meant editing a hardcoded `UNIT_TABLES` dict in
+    `build-manifest.py` — a code change for a content-authoring decision.
+    Moved each level's table (ES A1/A2/B1, HU B1) to
+    `content/<lang>/curriculum/units/<level>.json`, an ordered array of
+    `{title, stems, track?}`, schema-validated
+    (`content/<lang>/schemas/units.schema.json`) like every other content
+    file. Adding a unit to an already-tabled level is now appending one
+    JSON object — no Python edit, no dev session required. Also added a
+    project `CLAUDE.md` instructing sessions to keep this roadmap current,
+    since nothing does that automatically. Verified `curriculum.json` is
+    byte-for-byte identical to before the refactor (both languages,
+    timestamp aside) — a pure data-location move, not a behavior change.
 
 ## Content & curriculum
 
