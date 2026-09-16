@@ -1500,6 +1500,22 @@ body.in-lesson .content {
   color: var(--muted);
 }
 
+.gg-search-all-link {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 0;
+  background: none;
+  border: none;
+  font-size: 13px;
+  color: var(--primary);
+  cursor: pointer;
+  text-align: left;
+}
+
+.gg-search-all-link:hover {
+  color: var(--primary-dark);
+}
+
 .gg-topics {
   list-style: none;
   padding: 0;

@@ -219,11 +219,11 @@ function levelListHtml() {
 
     // No heading here — the page header already says "Lessons".
     return `
-        <div class="level-list">${cards}</div>
         <button class="ud-grammar-guide-row" data-open-global-grammar-guide="1">
             <span class="ud-grammar-guide-title">Search Grammar Guide</span>
             <span class="ud-grammar-guide-arrow" aria-hidden="true">→</span>
         </button>
+        <div class="level-list">${cards}</div>
     `;
 }
 
@@ -521,10 +521,18 @@ function unitListHtml(level) {
         </button>
     `;
 
+    const searchRowHtml = `
+        <button class="ud-grammar-guide-row" data-open-global-grammar-guide="1">
+            <span class="ud-grammar-guide-title">Search Grammar Guide</span>
+            <span class="ud-grammar-guide-arrow" aria-hidden="true">→</span>
+        </button>
+    `;
+
     return `
         <div class="unit-list-view" data-level="${level}">
             <button class="level-back" data-close-level="1">← All levels</button>
             ${headHtml}
+            ${searchRowHtml}
             ${units.length
                 ? `${unitsHtml}${summaryHtml}${testRow}`
                 : '<p class="text-muted level-empty">No units at this level yet.</p>'}
@@ -677,6 +685,7 @@ async function grammarGuideHtml(level, unitId) {
             <header class="ud-head">
                 <h2 class="ud-title">Grammar Guide</h2>
                 ${subtitle ? `<p class="gg-subtitle">${subtitle}</p>` : ''}
+                <button type="button" class="gg-search-all-link" data-open-global-grammar-guide="1">Search grammar across the whole course →</button>
             </header>
 
             ${topics.length
