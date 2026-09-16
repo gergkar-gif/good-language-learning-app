@@ -721,6 +721,11 @@ function showNextCard() {
 let reviewExpectedSpanish = '';
 let reviewExpectedEnglish = '';
 
+// Type mode's objective grade for the current card, set by
+// checkTypedAnswer() and consumed by continueTypedReview() -- null means
+// "not graded yet" (still typing / card just rendered).
+let typedAnswerCorrect = null;
+
 // Draws currentReviewCard in whichever direction reviewDirection currently
 // asks for. Split out from showNextCard() so toggling the direction
 // mid-review can redraw the same card instead of skipping to a new one.
@@ -800,8 +805,12 @@ function renderCard() {
     if (field) {
         field.value = '';
         field.classList.remove('correct', 'wrong');
+        field.disabled = false;
         if (typeMode) field.focus();
     }
+    typedAnswerCorrect = null;
+    const continueBtn = document.getElementById('review-type-continue-btn');
+    if (continueBtn) continueBtn.classList.add('hidden');
 
     updateRatingLabels();
     updateReviewStats();
@@ -1096,7 +1105,7 @@ function englishAlternatives(text) {
 }
 
 function checkTypedAnswer() {
-    if (!currentReviewCard) return;
+    if (!currentReviewCard || typedAnswerCorrect !== null) return;
     const field = document.getElementById('review-type-field');
     if (!field) return;
 
@@ -1114,7 +1123,29 @@ function checkTypedAnswer() {
 
     field.classList.toggle('correct', ok);
     field.classList.toggle('wrong', !ok);
-    revealAnswer();
+    // Disabling drops focus off the field, so a following Enter/Space
+    // reaches the window-level keydown handler below instead of
+    // re-triggering this field's own "Enter checks" listener.
+    field.disabled = true;
+    typedAnswerCorrect = ok;
+    revealTypedResult();
+}
+
+// Type mode already knows objectively whether the typed answer matched, so
+// it grades itself via continueTypedReview() instead of also asking the
+// learner to self-rate Again/Hard/Good/Easy on top of that -- tap-based
+// flip review keeps the manual rating buttons untouched (see revealAnswer).
+function revealTypedResult() {
+    document.getElementById('review-answer').style.display = 'block';
+    document.getElementById('review-type-input').classList.add('hidden');
+    document.getElementById('rating-buttons').style.display = 'none';
+    const continueBtn = document.getElementById('review-type-continue-btn');
+    if (continueBtn) continueBtn.classList.remove('hidden');
+}
+
+function continueTypedReview() {
+    if (typedAnswerCorrect === null) return;
+    rateCard(typedAnswerCorrect ? 'good' : 'again');
 }
 
 function rateCard(rating) {
@@ -1161,10 +1192,12 @@ window.addEventListener('keydown', (e) => {
         e.preventDefault();
         if (!answerShown) {
             showAnswer();
+        } else if (reviewMode === 'type') {
+            continueTypedReview();
         } else {
             rateCard('good');
         }
-    } else if (answerShown) {
+    } else if (answerShown && reviewMode !== 'type') {
         if (e.key === '1') { e.preventDefault(); rateCard('again'); }
         else if (e.key === '2') { e.preventDefault(); rateCard('hard'); }
         else if (e.key === '3') { e.preventDefault(); rateCard('good'); }

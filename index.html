@@ -194,8 +194,9 @@
                     <div id="review-speak-feedback" class="review-speak-feedback hidden"></div>
 
                     <!-- Type mode: an input + Check stands in for Show Answer.
-                         Checking still just reveals the card back and rating
-                         buttons below — grading stays self-rated. -->
+                         Checking grades itself against the expected answer
+                         and reveals the card back; review-type-continue-btn
+                         (not the manual rating buttons) advances from there. -->
                     <div id="review-type-input" class="review-type-input hidden">
                         <div class="lsn-input-with-mic">
                             <input id="review-type-field" class="review-input" type="text"
@@ -207,6 +208,7 @@
                         </div>
                         <button class="review-show-btn" onclick="checkTypedAnswer()">Check</button>
                     </div>
+                    <button id="review-type-continue-btn" class="review-show-btn hidden" onclick="continueTypedReview()">Continue</button>
 
                     <!-- Times are placeholders: updateRatingLabels() rewrites
                          them per card, since intervals now depend on the card. -->
