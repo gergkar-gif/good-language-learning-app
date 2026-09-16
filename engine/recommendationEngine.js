@@ -36,8 +36,34 @@ const RecommendationEngine = (function () {
             ? UI.escape(value) : String(value == null ? '' : value);
     }
 
+    // A curated title map exists for Hungarian skill ids
+    // (content/hu/indexes/grammar-titles.json, e.g. "ban-ben-in" ->
+    // "-ban / -ben — In") specifically because the blind hyphen-to-space
+    // regex below can't know a suffix should keep its leading dash or that
+    // "in"/"to" etc. are prepositions, not words to title-case ("Ban Ben
+    // In"). Spanish has no equivalent file, so that fetch fails (404) and
+    // resolves to {}. Keyed by the resolved path (not a single flat
+    // variable) so switching course language at runtime — no reload —
+    // can't keep serving whichever language's map happened to load first;
+    // humanizeSkill() re-resolves the current path on every call, cheap
+    // since it's just a string join, not a fetch.
+    const _grammarTitlesCache = {};
+
+    async function _ensureGrammarTitles() {
+        if (typeof Content === 'undefined' || typeof Lang === 'undefined') return {};
+        const path = Lang.content('indexes/grammar-titles.json');
+        if (!_grammarTitlesCache[path]) {
+            _grammarTitlesCache[path] = await Content.json(path).catch(() => ({}));
+        }
+        return _grammarTitlesCache[path];
+    }
+
     function humanizeSkill(id) {
-        return String(id || '').replace(/[-_]+/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+        const key = String(id || '');
+        const path = (typeof Lang !== 'undefined') ? Lang.content('indexes/grammar-titles.json') : null;
+        const titles = path ? _grammarTitlesCache[path] : null;
+        if (titles && titles[key]) return titles[key];
+        return key.replace(/[-_]+/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
     }
 
     // A `secondary` candidate's button label — shared by Home's own
@@ -438,6 +464,11 @@ const RecommendationEngine = (function () {
     // ----------------------------------------
 
     async function recommend() {
+        // Warmed up here so it's ready by the time any caller downstream
+        // computes a label via secondaryLabel()/humanizeSkill() -- every
+        // real recommendation is produced through this function first.
+        await _ensureGrammarTitles();
+
         const nudge = await _practiceNudge();
         const mini = nudge ? null : await _miniGameNudge();
         const step = (typeof LearnerPath !== 'undefined') ? LearnerPath.nextStep() : null;
