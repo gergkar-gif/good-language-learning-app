@@ -1,44 +1,57 @@
 # A1 Vocabulary Themes
 
-Rewritten 2026-08-07 to match each lesson's actual story (`vocabularyTopics` field in `content/es/stories/original/a1`). Word-count targets are unchanged from the previous version of this document — only the theme labels moved, to describe what's really in each story.
+Regenerated 2026-09-16 directly from `content/es/vocabulary/a1/*.json`
+(132 files) — the previous version described 20 sequential lessons with
+provisional word-count targets; A1 is now 26 units of 6 lessons each
+(156 lessons, 803 words shipped across every vocabulary file). Theme
+below is each unit's *first* lesson's vocabulary theme (a unit's later
+lessons often add their own more specific theme — this is a
+representative label, not the full picture).
 
-| Lesson | Theme | Target New Words |
-|---------|-------|-----------------:|
-| 1 | Greetings, names, countries | 10 |
-| 2 | Café, food, drinks | 10 |
-| 3 | Friends, nationalities, adjectives | 12 |
-| 3a | — of which: friends, introductions | 4 |
-| 3b | — of which: people, family, languages | 4 |
-| 3c | — of which: nationalities, adjectives | 4 |
-| 4 | City, places | 12 |
-| 5 | Family | 15 |
-| 6 | Daily routine, work | 15 |
-| 7 | House, rooms, furniture | 18 |
-| 8 | Supermarket, shopping, money | 18 |
-| 9 | Kitchen, ingredients, cooking | 20 |
-| 10 | Birthdays, gifts, celebrations | 19 |
-| 11 | Hobbies and sports | 20 |
-| 12 | Numbers, time, quantities | 20 |
-| 13 | Transport and directions | 20 |
-| 14 | Weather and seasons | 20 |
-| 15 | Work and obligations | 20 |
-| 16 | Body and health | 20 |
-| 17 | Travel and holidays | 20 |
-| 18 | Mixed review | 0 |
-| 19 | Mixed review | 0 |
-| 20 | Final review | 0 |
+| Unit | Title | Theme (first lesson) | New Words (unit total) | Running Total |
+|------|-------|------------------------|---------------------------:|----------------:|
+| 1 | Greetings & Introductions | Basic greetings | 46 | 46 |
+| 2 | Meeting Someone New | Meeting someone new | 21 | 67 |
+| 3 | Naming Things | Naming things: indefinite articles | 30 | 97 |
+| 4 | Describing People | Describing people | 20 | 117 |
+| 5 | Family | Immediate family | 21 | 138 |
+| 6 | Daily Routine | Basic daily activities | 29 | 167 |
+| 7 | Daily Routine: Reflexive Verbs | Waking up and washing | 40 | 207 |
+| 8 | At Home | Rooms in the home | 26 | 233 |
+| 9 | At the Supermarket | Food and shopping | 26 | 259 |
+| 10 | Demonstratives: This, That, and Over There | Nearby demonstratives | 40 | 299 |
+| 11 | Ordering at a Café | Drinks | 25 | 324 |
+| 12 | Birthdays & Celebrations | Birthdays & celebrations | 55 | 379 |
+| 13 | In the Kitchen | The kitchen | 26 | 405 |
+| 14 | Numbers, Time & Schedules | Numbers 1–20 | 24 | 429 |
+| 15 | Around Town | Existence and places | 30 | 459 |
+| 16 | Directions | Movement and location | 26 | 485 |
+| 17 | Weather | Basic weather | 26 | 511 |
+| 18 | Work & Obligations | Jobs and workplaces | 25 | 536 |
+| 19 | What Are You Doing? (Present Continuous) | Current actions (-ar) | 40 | 576 |
+| 20 | Health | Body and health | 28 | 604 |
+| 21 | What Hurts? (The Verb Doler) | Body parts and pain | 40 | 644 |
+| 22 | What Do You Like? (Gustar) | Things we like | 29 | 673 |
+| 23 | Hobbies & Free Time | Free-time activities | 26 | 699 |
+| 24 | Skills & Abilities: Poder & Saber | Ability and requests | 40 | 739 |
+| 25 | Future Plans | Future plans | 25 | 764 |
+| 26 | Travel & Getting Away | Travel preparations | 28 | 792 |
+
+The 792 running total above only counts words reachable by walking each
+lesson's own `vocabulary` section — 11 more words exist across all
+`content/es/vocabulary/a1/*.json` files (803 total) that aren't
+currently linked from any lesson. Not investigated further here; flag if
+regenerating this table and the gap should be tracked down.
 
 ---
 
 ## Total Core Vocabulary
 
-| Lessons | New Words |
-|----------|----------:|
-| 1-2 | 20 |
-| 3-4 | 24 |
-| 5-6 | 30 |
-| 7-8 | 36 |
-| 9-17 | 180 |
-| **Total** | **290** |
+| Units | New Words |
+|-------|----------:|
+| 1-26 | **792** (linked) / **803** (all vocabulary files) |
 
-> **TODO:** Replace the provisional targets above once the A1 Core 400 lexicon has been finalised. The final lesson distribution should total exactly **400 core words**. This is the authoritative per-lesson word-count source — `a1-content-spec.md`'s bucketed numbers were brought in line with this table on 2026-08-07; if the two ever disagree again, this document wins.
+This table is the authoritative current word-count source (regenerated
+from real files, not a hand-maintained target) — if `a1-content-spec.md`
+or any other guide states a different total, this one wins; update the
+other doc to match, not this one.
