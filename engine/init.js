@@ -23,7 +23,7 @@ function teardownTab(tabId) {
     }
 }
 
-function showTab(tabName, button) {
+function showTab(tabName, button, options) {
     const previousTab = document.querySelector('.tab:not(.hidden)');
     if (previousTab && previousTab.id !== tabName) {
         teardownTab(previousTab.id);
@@ -68,8 +68,13 @@ function showTab(tabName, button) {
 
     // Decks opens on the browser, not mid-session: arriving at a flashcard
     // you did not ask for is disorienting, and the point of the tab now is
-    // choosing what to study.
-    if (tabName === 'review' && typeof Decks !== 'undefined') {
+    // choosing what to study. Skipped when the caller is about to start a
+    // specific session immediately (Home's "Review all" quick action) --
+    // otherwise this fires an un-awaited Decks.render() that races the
+    // quick action's own reviewDeck() call, and whichever async chain
+    // resolves last silently wins the shared #decks-root/#review-session
+    // DOM, sometimes freezing on the deck browser instead of the session.
+    if (tabName === 'review' && typeof Decks !== 'undefined' && !(options && options.skipReviewReset)) {
         if (typeof endReviewSession === 'function') endReviewSession();
         else Decks.render();
     }

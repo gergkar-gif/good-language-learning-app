@@ -600,6 +600,12 @@ function endReviewSession() {
     reviewScopeName = '';
     reviewLimit = null;
     reviewSessionStats = null;
+    // rateCard() bails immediately when this is null (see its own guard) --
+    // resetting it here is what makes a swipe-gesture's delayed rateCard()
+    // setTimeout (srs.js's finishGesture, ~200ms) a safe no-op if the
+    // learner backs out of the session before that timeout fires, instead
+    // of mutating srsDeck / re-populating hidden review DOM after teardown.
+    currentReviewCard = null;
     const summaryEl = document.getElementById('review-summary');
     if (summaryEl) summaryEl.style.display = 'none';
     const root = document.getElementById('review-session');

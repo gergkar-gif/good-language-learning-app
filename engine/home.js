@@ -241,9 +241,9 @@ const Home = (function () {
     // ACTIONS
     // ----------------------------------------
 
-    function goTab(id) {
+    function goTab(id, options) {
         const button = document.querySelector('.nav button[data-tab="' + id + '"]');
-        if (typeof showTab === 'function') showTab(id, button);
+        if (typeof showTab === 'function') showTab(id, button, options);
     }
 
     function attach(host) {
@@ -264,7 +264,7 @@ const Home = (function () {
             // said how many were waiting, so the deck browser in between would
             // only ask the question a second time.
             if (e.target.closest('[data-review-all]')) {
-                goTab('review');
+                goTab('review', { skipReviewReset: true });
                 if (typeof Decks !== 'undefined') Decks.reviewDeck('all');
                 return;
             }
