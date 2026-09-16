@@ -2603,8 +2603,17 @@ function lessonPlayUserAudio() {
     }
 }
 
+// prompt-speak is open-ended (translate-and-say), so the word-match
+// pipeline below -- built for read-repeat's verbatim comparison -- makes
+// no sense for it; it goes through the same CEFR grader SpeakingStudio's
+// Verbal Production uses instead. read-repeat is untouched.
 function lessonCheckSpeaking() {
     if (stepState.solved) return;
+    if (stepState.mode === 'prompt-speak' && typeof GraderEngine !== 'undefined') {
+        _lessonCheckSpeakingCEFR();
+        return;
+    }
+
     const target = stepState.target || '';
     const transcript = stepState.transcript || '';
 
@@ -2663,6 +2672,98 @@ function lessonCheckSpeaking() {
         solveStep(`✓ Spoken clearly! (${evalResult.accuracy}%)`);
     } else {
         if (failStep(`✗ Accuracy ${evalResult.accuracy}%. Try again or continue.`)) {
+            setFeedback(false, `Keep practicing: listen to the model above.`);
+        }
+    }
+}
+
+const CEFR_DIMENSION_LABELS = { grammar: 'Grammar', vocabulary: 'Vocabulary', coherence: 'Coherence', complexity: 'Complexity', naturalness: 'Naturalness' };
+
+async function _lessonCheckSpeakingCEFR() {
+    const target = stepState.target || '';
+    const transcript = stepState.transcript || '';
+
+    const targetRevealEl = document.getElementById('sp-prompt-target-reveal');
+    if (targetRevealEl) targetRevealEl.classList.remove('hidden');
+
+    // Grading is a network/LLM round-trip; lock the button so a slow
+    // response can't be double-submitted. It's freed again the normal way,
+    // by the next recording's onFinal (same as the word-match path above).
+    stepState.checkDisabled = true;
+    updateFooterButton();
+    setFeedback(true, 'Grading your response…');
+
+    const lang = typeof Lang !== 'undefined' ? Lang.code() : 'es';
+    const langName = typeof Lang !== 'undefined' ? Lang.name() : 'Spanish';
+    const skills = (stepState.sourceStep && stepState.sourceStep.skillIds) || null;
+    const engine = new GraderEngine();
+
+    let result;
+    try {
+        result = await engine.grade(transcript, {
+            cefrLevel: (currentLesson && currentLesson.level) || 'A2',
+            taskType: 'oral_production',
+            taskInstructions: `Say in ${langName}: "${stepState.english || target}"`,
+            targetSkills: skills || [],
+            language: lang,
+            modality: 'oral',
+            title: 'Lesson speaking practice'
+        });
+    } catch (e) {
+        // GraderEngine.grade() already falls back gracefully on network
+        // failure; this only guards against something else going wrong.
+        stepState.checkDisabled = false;
+        updateFooterButton();
+        setFeedback(false, 'Could not grade right now. Try again.');
+        return;
+    }
+
+    const revealEl = document.getElementById('lesson-sp-reveal');
+    if (revealEl) {
+        revealEl.classList.remove('hidden');
+        const userAudioUrl = stepState.userAudioUrl || (typeof SpeechInput !== 'undefined' ? SpeechInput.getRecordedAudioUrl() : null);
+        const listenIcon = (typeof Art !== 'undefined') ? Art.icon('listening') : '';
+        const micIcon = (typeof Art !== 'undefined') ? Art.icon('mic') : '';
+        const dims = result.dimensions || {};
+
+        revealEl.innerHTML = `
+            <div class="sp-word-breakdown">
+                ${Object.keys(dims).map(key => `
+                    <span class="sp-word-pill ${dims[key] >= 0.6 ? 'sp-word-matched' : 'sp-word-missed'}">
+                        ${esc(CEFR_DIMENSION_LABELS[key] || key)}: ${Math.round((dims[key] || 0) * 100)}%
+                    </span>
+                `).join('')}
+            </div>
+            <div class="sp-compare-bar">
+                <button type="button" class="sp-audio-compare-btn sp-btn-model" onclick="lessonPlayModelAudio()" aria-label="Listen to model voice">
+                    ${listenIcon}
+                    <span>Model Voice</span>
+                </button>
+                <button type="button" class="sp-audio-compare-btn sp-btn-user ${userAudioUrl ? '' : 'hidden'}" id="lesson-btn-user-audio" onclick="lessonPlayUserAudio()" aria-label="Listen to your recording">
+                    ${micIcon}
+                    <span id="lesson-user-audio-label">Your Voice</span>
+                </button>
+            </div>
+        `;
+    }
+
+    const score = result.overallScore || 0;
+    const isPass = score >= 60;
+
+    if (typeof LearnerModel !== 'undefined' && typeof LearnerModel.recordProduction === 'function') {
+        if (skills && skills.length) {
+            LearnerModel.recordProduction(skills, isPass, score, 'oral');
+        } else if (currentLesson && currentLesson.id && typeof Recommend !== 'undefined' && typeof Recommend.lessonSkillFor === 'function') {
+            Recommend.lessonSkillFor(currentLesson.id).then(skill => {
+                if (skill) LearnerModel.recordProduction([skill], isPass, score, 'oral');
+            }).catch(() => {});
+        }
+    }
+
+    if (isPass) {
+        solveStep(`✓ Nice! CEFR score ${score}%`);
+    } else {
+        if (failStep(`CEFR score ${score}%. Try again or continue.`)) {
             setFeedback(false, `Keep practicing: listen to the model above.`);
         }
     }
