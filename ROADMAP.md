@@ -41,7 +41,7 @@ precache the entire app shell and cache visited content, making the core app
 
 ## Current priority queue
 
-Active work, in dependency order, as of 2026-09-14 — supersedes any
+Active work, in dependency order, as of 2026-09-16 — supersedes any
 in-session task tracker, which doesn't persist between sessions. Update
 this list directly rather than relying on a tool-specific todo list.
 
@@ -66,13 +66,12 @@ this list directly rather than relying on a tool-specific todo list.
    D1 database schema (`magic_links`, `users`) installed and verified, CORS
    controls active, and magic-link passwordless email login dispatched via
    Resend. Client integration live in My Journey's Account card (`engine/sync.js`).
-8. **Italics content retrofit** — paused 2026-09-10 at the user's
-   request (background agents burn credits fast); 282/1366 grammar
-   files done (ES A1/A2 partial, HU A1 partial) and pushed. Resume only
-   when asked — remaining batch file lists are session-scratchpad-local
-   and will need rebuilding from scratch in a future session (diff
-   `content/*/grammar/**/*.json` against what's already italicized to
-   find the true remainder).
+8. ~~**Italics content retrofit**~~ — **Done 2026-09-13.** Paused
+   2026-09-10 partway (282/1366 files), resumed and completed: all
+   ~1,366 grammar files across both languages/levels retrofitted
+   (ES B1, HU A1 remainder, HU A2, HU B1 — commits `749012e2` through
+   `bb79846d`), convention documented in the content style guides
+   (`3a12155e`).
 9. **Future feature, unscoped**: CEFR real-exam practice mode (source or
    generate actual exams, graded response) — see Grammar reference /
    Level test area for where this would eventually live.
@@ -673,10 +672,12 @@ this list directly rather than relying on a tool-specific todo list.
     all — a natural extension of the same architecture, not attempted
     in this pass.
 
-- [ ] Grammar screens: italicize target-language words/phrases inside
+- [x] ~~Grammar screens: italicize target-language words/phrases inside
   `text`/`tip` prose (Hungarian or Spanish, wherever it appears bare in
   otherwise-English explanatory text), so it reads visually distinct from
-  the English scaffolding around it. **CSS-only half built and shipped
+  the English scaffolding around it.~~ — **Done 2026-09-13** (see
+  "Current priority queue" item 8 above for the final completion date;
+  the history below is kept for the recovery-process detail). **CSS-only half built and shipped
   2026-09-10**: `examples`/`table` sections already render their
   target-language side in italics via `.lsn-grammar .lsn-es` (new
   `<div class="lsn-grammar">` wrapper in `stepRenderers.grammar()`, CSS
@@ -699,9 +700,9 @@ this list directly rather than relying on a tool-specific todo list.
   (a risk flagged during dispatch, since distinguishing bare Hungarian
   from English inside free prose needs real judgment a heuristic would
   get wrong) — confirmed neither actually wrote anything to disk before
-  failing, so no bad edits leaked in. **Remaining scope**: 1,225 files
-  across ES B1 / HU A1 (first half) / HU A2 / HU B1 still need the same
-  manual retrofit.
+  failing, so no bad edits leaked in. The remaining 1,225 files (ES B1 /
+  HU A1 first half / HU A2 / HU B1) were finished in a later session —
+  see item 8 above.
 
 - [ ] In the various Workshop drillers, show an English translation and an
   explanation of why that's the right response at the bottom of each

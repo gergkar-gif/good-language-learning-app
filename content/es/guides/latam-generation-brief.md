@@ -1,5 +1,9 @@
 # Latin America unit generation brief
 
+**Status: all 36 Latin America units shipped as of 2026-08-29** (see
+`b1-content-spec.md` §3's own status note). Kept here for reference and
+for regenerating/revising an existing unit, not as an active build queue.
+
 A short, reusable brief for generating one Latin America unit's 23 content
 files (6 lessons, 6 exercise files, 5 grammar/Focus files, 5 vocabulary
 files, 1 story). Read this first — it points at the docs that carry the

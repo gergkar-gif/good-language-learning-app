@@ -1,5 +1,14 @@
 # Parlour Visual Overhaul Specification
 
+**Status**: implemented — the overhaul described here shipped starting
+2026-08-14 (commits `e7d84948`, `ecf06ef2`) with further phases (desktop
+sidebar, dark theme) landing 2026-09-13. §37's "Implementation Order"
+below reads as a forward build plan but is largely historical at this
+point; `design principles.md` is the newer authoritative reference for
+what's changed or been superseded since (cards/shadows, navigation).
+This doc is still accurate for the parts it describes that design
+principles.md doesn't override.
+
 ## 1. Purpose
 
 This document specifies the complete visual overhaul of **Parlour**, the language-learning application.

@@ -2,7 +2,9 @@
 
 ## General
 
-- Use Peninsular Spanish.
+- Use a neutral tú/ustedes variant — no vosotros, per `B1_GUIDE.md` §17's
+  documented convention (A1, A2, and Core B1 all use tú/ustedes only).
+  Peninsular vocabulary and register otherwise.
 - Use neutral, modern vocabulary.
 - Avoid slang unless the lesson specifically introduces it.
 - Prefer natural language over textbook language.
@@ -14,7 +16,9 @@
 - One primary grammar point per lesson.
 - Maximum 300 words of explanation.
 - Maximum 5 worked examples.
-- Link to the relevant Lingolia page.
+- Link to the relevant Lingolia page — Core track only. The Latin America
+  track has nothing relevant to link to; it names the actual source
+  instead, per `b1-content-spec.md` §3.0.
 - Do not explain grammar that has not yet been introduced.
 - **Italicize embedded Spanish in `text`/`tip` prose.** These sections are
   English explanatory prose; any bare Spanish word or short phrase already

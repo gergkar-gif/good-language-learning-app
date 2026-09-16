@@ -111,7 +111,7 @@ After teaching a verb conjugation pattern, provide a clear route into Workshop p
 - Keep the interface clean and restrained.
 - Avoid emoji-like lesson icons; use the established simple editorial/SVG visual language.
 - Do not add interface elements merely because another language-learning app has them.
-- Core navigation: **Learn → Library → Workshop → Decks → Journey**.
+- Core navigation: **Home → Lessons → Library → Workshop → Decks → Journey** ("Lessons" vs "Learn" is still an unsettled label — see `design principles.md`'s Navigation section).
 - Library is primarily for reading.
 - Workshop is for active manipulation and production.
 - Decks are for review.

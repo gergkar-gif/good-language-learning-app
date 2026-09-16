@@ -143,7 +143,7 @@ that's now just a JSON append rather than a `build-manifest.py` edit.
 *Most of these are product/design-level ideas. No priority order — capture for future sprints.*
 
 - [ ] **Reverse-engineer competitor apps for feature ideas** — systematically audit apps like Duolingo, Babbel, Clozemaster, Conjuguemos, Busuu etc. for UX patterns, exercise types, and engagement hooks worth adapting.
-- [ ] **Listening comprehension feature** — adapt the Conjuguemos model to support longer audio passages with comprehension exercises. Focus on extended listening at A2–B1 level (paragraphs, short dialogues) rather than single-sentence dictation.
+- [ ] **Listening Lab — extended audio-passage comprehension** — the existing Listening Driller (`engine/drills/listening.js`) is single-sentence/TTS-based only; this is a longer-form mode adapting the Conjuguemos model for paragraphs and short dialogues at A2–B1, not a from-scratch listening feature.
 - [ ] **Cyberpunk hero page load animation** — on page load, the hero section "powers up" element by element (think a machine booting, cyberpunk aesthetic). Stagger reveals of logo, tagline, CTA buttons, stat cards, etc.
 - [ ] **User-configurable feature visibility (especially Workshop)** — let users choose which modules/features are shown in their dashboard. Too many options at once creates friction; a simple onboarding toggle or settings page can hide unused sections.
 - [ ] **IP / attribution audit for content-engine resources** — review all third-party content used (word lists, texts, images, audio). Where Creative Commons material is used, add a dedicated acknowledgments page or footer alongside AI-use disclosure.

@@ -24,13 +24,18 @@ A2 is about Meg going from "settled and conversational" to "actually
 building an independent life in Hungary" — job, home, friends of her own,
 bureaucracy handled solo, cultural fluency, not just linguistic fluency.
 The throughline has a real causal spine, not just a checklist of
-milestones: Károly proposes at Unit 26 ("Future Plans"), which is what
-motivates her, at Units 29-30, to actually look into what marrying a
+milestones: Károly proposes at Unit 27 ("Future Plans"), which is what
+motivates her, at Units 31-32, to actually look into what marrying a
 Hungarian citizen means for her legal status and decide to start
 studying for the citizenship exam. The exam is a practical/relationship-
 driven decision, not an identity one — **Meg stays South African at
 heart throughout**; nothing in this arc has her "choosing" Hungary over
-where she's from (see Unit 28).
+where she's from (see Unit 29).
+
+(Unit numbers here are the actual shipped numbering — two review units,
+absent from this arc's own plot, were inserted at 20 and 30, shifting
+everything from "Work & Professions" onward by one or two positions
+relative to this doc's original draft numbering. See "Status" below.)
 
 ## Unit-by-unit plot
 
@@ -77,55 +82,52 @@ where she's from (see Unit 28).
 19. **School & Language Learning** — Reflects explicitly on her own
     Hungarian-learning journey; maybe helps a newer expat friend get
     started. Plants "language learning as an ongoing project."
-20. **Work & Professions** — Her job stabilizes — a raise or new
+**20. Review 1: Life, Leisure & Health** — no new plot; grammar/
+    communication review, matching how A1's consolidation lessons work.
+21. **Work & Professions** — Her job stabilizes — a raise or new
     responsibility. Building a career in Hungary, not just passing
     through.
-21. **Verb Prefixes** — An errands day (in and out of a dozen places).
+22. **Verb Prefixes** — An errands day (in and out of a dozen places).
     Grammar-driven theme, low-plot "logistics of daily life" unit.
-22. **Ability, Possibility & Permission** — Renews her residence permit at
+23. **Ability, Possibility & Permission** — Renews her residence permit at
     the immigration office. First real brush with Hungarian bureaucracy,
     handled solo.
-23. **Talking About the Past I** — The one-year anniversary of her move —
+24. **Talking About the Past I** — The one-year anniversary of her move —
     she looks back on how far she's come.
-24. **Talking About the Past II** — The group swaps stories from that
+25. **Talking About the Past II** — The group swaps stories from that
     first year (a funny early mistake of hers, retold with affection).
-25. **Telling Stories** — A storytelling evening with friends — she tells
+26. **Telling Stories** — A storytelling evening with friends — she tells
     a story fluently, unprompted. A fluency milestone.
-26. **Future Plans** — **Károly proposes.** They talk future plans as a
+27. **Future Plans** — **Károly proposes.** They talk future plans as a
     real "us" — the emotional turning point of the level.
-27. **Suggestions & Conditional** — The group plans the engagement
+28. **Suggestions & Conditional** — The group plans the engagement
     celebration together.
-28. **Opinions, Preferences & Comparisons** — Now engaged, she compares
+29. **Opinions, Preferences & Comparisons** — Now engaged, she compares
     life in Hungary and South Africa honestly — what she loves and misses
     about each — and lands somewhere truer: **she doesn't have to
     choose.** She's building a life in Hungary without becoming any less
     South African.
-29. **Problems, Requests & Everyday Communication** — Solves a real
+**30. Review 2: Work, Past & Opinions** — no new plot; grammar/
+    communication review, same reasoning as Unit 20.
+31. **Problems, Requests & Everyday Communication** — Solves a real
     bureaucratic problem alone at an office, and — prompted by the
     upcoming marriage — asks about what marrying a Hungarian citizen
     means for her status.
-30. **Living in Hungarian** — Capstone: she decides to start studying for
+32. **Living in Hungarian** — Capstone: she decides to start studying for
     the citizenship exam. Explicit narrative handoff into B1/B2's
     dual-track (see `ROADMAP.md`'s "Hungarian: introduce Hungarian
     cultural material at B1-B2" item).
 
-## Review units (31-33)
-
-No new plot — these are grammar/communication review, not narrative
-beats. If they get readings at all, they should recap/consolidate
-rather than advance the story (matching how A1's consolidation lessons
-work).
-
 ## Status
 
-Units 1-5 are built (lessons + exercises + vocab + grammar + story,
-2026-08-29) — introducing Károly's parents Gábor and Ildikó (Unit 3),
-and Meg's own colleague-turned-friend Petra plus her neighbor Tamás and
-new friend Zsófia (Units 4-5). Units 6-30 exist only as the thin
-title/theme/grammar sketch in `a2-curriculum-draft.json` — building
-each out is comparable in scope to the LatAm B1 unit-by-unit rebuild
-done earlier. This doc is the throughline to keep future units
-consistent with as they get built, whichever session builds them.
+**All 32 A2 units are built and live** (192 lessons total, verified
+against `content/hu/lessons/a2/` and the generated curriculum). Units
+1-5 were the first built (2026-08-29) — introducing Károly's parents
+Gábor and Ildikó (Unit 3), and Meg's own colleague-turned-friend Petra
+plus her neighbor Tamás and new friend Zsófia (Units 4-5). This doc is
+kept as the throughline reference for revising an existing unit's
+story, not as an active build queue — the "whoever builds Unit N next"
+framing throughout the rest of this file is now historical.
 
 Grammar actually taught so far, beyond `a2-curriculum-draft.json`'s
 sketch, for whoever builds Unit 6 next: months (all 12), ordinal

@@ -70,9 +70,16 @@ The canonical example of the row language. Each level is an open row: a two-tone
 
 ## Navigation
 
-- Target: a **desktop sidebar shell** — logo mark, nav list (Home, Lessons/Learn, Library, Workshop, Decks, Journey, Settings), streak pinned at the foot. **Not yet built** — deferred; the app stays a single ~500px column at all widths for now.
+- **Built 2026-09-13**: a desktop sidebar shell (≥1024px, `styles/layout.css`)
+  — logo mark, vertical nav list, streak/XP pinned at the foot
+  (`.nav-footer-streak`/`.nav-footer-xp`). Tablet (640-1023px) uses a
+  centered column; mobile (<640px) keeps a sticky **top** bar (not a
+  bottom bar), not the desktop shell.
 - The "Lessons" vs "Learn" nav label, and a possible future rename to "Study," are both unsettled and deliberately deferred — don't resolve either as part of this pass.
-- Mobile nav (bottom bar) is untouched by this reference set — no mobile mockups were shared.
+- Dark theme (`[data-theme="dark"]` in `styles/base.css`/`components.css`)
+  shipped alongside the desktop sidebar and is out of scope for this doc's
+  own palette/card sections above — see those files directly for dark-mode
+  tokens.
 
 ## Small components worth adopting
 
