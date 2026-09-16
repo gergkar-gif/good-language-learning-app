@@ -105,6 +105,8 @@ The following third-party services are used operationally. They are service prov
 | GitHub Issues API | In-app bug reporting |
 | Resend | Magic-link login emails for cloud sync |
 | Cloudflare Workers & D1 | Cloud sync backend |
+| Cloudflare Workers AI | CEFR formative grading (Writing/Speaking Studio) |
+| Google Cloud Text-to-Speech | Reader's spoken narration (Journey/Studio voices) |
 
 ---
 

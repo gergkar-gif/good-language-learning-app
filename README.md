@@ -4,7 +4,7 @@
 
 Learn with lessons. Read stories. Practise with purpose. Remember what matters.
 
-A modular, content-driven language curriculum (CEFR A1–C1). The Spanish course is DELE-aligned; Hungarian is planned.
+A modular, content-driven language curriculum (CEFR A1–C1). The Spanish and Hungarian courses are both live through B1, DELE-aligned for Spanish; B2/C1 content is not yet built for either.
 
 ## Philosophy
 
@@ -26,7 +26,11 @@ Then open `http://localhost:8131`.
 
 ## Folder Structure
 
-See `STRUCTURE.md` for the full directory map and ownership rules.
+`engine/` holds the reusable app logic, `content/<lang>/` holds one
+language's curriculum (lessons, grammar, exercises, vocabulary, stories),
+and `styles/` holds the CSS — see `content/es/schemas/README.md` for the
+content schemas and `docs/CURRICULUM_ROADMAP.md` for how a lesson becomes
+part of the Learn tab.
 
 ## Development
 
