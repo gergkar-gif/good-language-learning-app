@@ -222,6 +222,8 @@ UNIT_TABLES = {
         ("Talking About Travel and Goodbyes", ["a2-18-01", "a2-18-02", "a2-18-03", "a2-18-04", "a2-18-05", "a2-18-consolidation"]),
         ("Talking About the Future", ["a2-19-01", "a2-19-02", "a2-19-03", "a2-19-04", "a2-19-05", "a2-19-consolidation"]),
         ("Looking Back and Moving Forward", ["a2-20-01", "a2-20-02", "a2-20-03", "a2-20-04", "a2-20-05", "a2-20-consolidation"]),
+        ("The Imperfect Tense", ["a2-imperfectobasico-01", "a2-imperfectobasico-02", "a2-imperfectobasico-03", "a2-imperfectobasico-04", "a2-imperfectobasico-05", "a2-imperfectobasico-consolidation"]),
+        ("Imperfect vs. Preterite", ["a2-imperfectocontraste-01", "a2-imperfectocontraste-02", "a2-imperfectocontraste-03", "a2-imperfectocontraste-04", "a2-imperfectocontraste-05", "a2-imperfectocontraste-consolidation"]),
     ],
     # B1 runs two parallel tracks — Core Spanish (the language progression)
     # and Latin America (a Spanish-language history course) — that appear
