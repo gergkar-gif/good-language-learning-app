@@ -808,6 +808,35 @@ const LearnerModel = (function () {
     }
 
     /**
+     * Picks one can-do competency to use as a quick speaking prompt (Time-
+     * Based Sessions' guaranteed speaking slot — see engine/studyPlan.js).
+     * Prefers a genuinely unverified/weak one at the learner's level so the
+     * prompt is actually useful practice, not busywork; falls back to any
+     * competency from a lesson the learner has already completed (nothing
+     * ahead of where they are), at that level first, any level if the
+     * learner hasn't completed anything at this level yet. Returns null
+     * when there's truly nothing appropriate yet (e.g. a brand-new learner
+     * with zero completed lessons) — callers should skip the slot, not
+     * invent a placeholder prompt.
+     */
+    async function pickSpeakingPrompt(level) {
+        const unverified = await unverifiedCompetencies(level);
+        if (unverified.length) {
+            return unverified[Math.floor(Math.random() * unverified.length)];
+        }
+
+        const index = await loadCompetenciesIndex();
+        const completed = (typeof isLessonComplete === 'function')
+            ? index.filter(c => isLessonComplete(c.lessonId))
+            : [];
+        if (!completed.length) return null;
+
+        const atLevel = level ? completed.filter(c => (c.level || '').toUpperCase() === level.toUpperCase()) : completed;
+        const pool = atLevel.length ? atLevel : completed;
+        return pool[Math.floor(Math.random() * pool.length)];
+    }
+
+    /**
      * Calculates competency statistics for a level:
      * { total, verified, confidenceGap, blindspot, deficit, decayed, upcoming, percent }
      */
@@ -877,6 +906,7 @@ const LearnerModel = (function () {
         allCompetencies,
         competenciesForLesson,
         unverifiedCompetencies,
+        pickSpeakingPrompt,
         competencyStats,
         loadCompetenciesIndex
     };

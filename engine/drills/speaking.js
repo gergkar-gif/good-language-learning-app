@@ -145,7 +145,7 @@ const SpeakingDriller = (function () {
                         Sentence Drills
                     </button>
                     <button type="button" class="sp-studio-tab ${_activeStudioTab === STUDIO_TAB.PRODUCTION ? 'active' : ''}" data-studio-tab="production" role="tab" aria-selected="${_activeStudioTab === STUDIO_TAB.PRODUCTION}">
-                        Verbal Production (5 min)
+                        Verbal Production (${_prodMaxSeconds < 60 ? _prodMaxSeconds + 's' : Math.round(_prodMaxSeconds / 60) + ' min'})
                     </button>
                 </div>
                 <div class="sp-studio-body" id="sp-studio-body"></div>
@@ -1184,6 +1184,15 @@ const SpeakingDriller = (function () {
         await _load();
         await _loadProdPrompts();
 
+        // Reset to the default cap unless this render is about to set its
+        // own (targetCompetency below) — otherwise a short maxSeconds from
+        // an earlier quick-speaking prompt this page session would leak
+        // into the tab label/timer of an unrelated later normal entry into
+        // Verbal Production.
+        if (!(options && options.targetCompetency)) {
+            _prodMaxSeconds = 300;
+        }
+
         if (options && options.activeTab) {
             _activeStudioTab = options.activeTab;
         }
@@ -1211,6 +1220,12 @@ const SpeakingDriller = (function () {
                 targetCompetency: options.targetCompetency,
                 taskCompletionPrimary: true
             };
+            // Defaults to the full 5-minute cap (Journey's "unverified
+            // competencies" nudge, the Studio's own card) — Time-Based
+            // Sessions' guaranteed quick-speaking slot passes a short
+            // maxSeconds instead, since a can-do prompt like "greet
+            // someone" only needs a few seconds, not five minutes.
+            _prodMaxSeconds = options.maxSeconds || 300;
             _prodPhase = PROD_PHASE.RECORDING;
             _renderStudioShell();
             _startProdRecording();

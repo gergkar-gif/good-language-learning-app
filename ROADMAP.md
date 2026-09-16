@@ -434,22 +434,54 @@ keeps its original gaps on purpose, so item numbers stay stable references.
     lemma-resolution mismatch. Worth its own scoped pass — content
     generation/backfill, not a code fix.
 27. **Time-Based Sessions should always include a quick speaking prompt**
-    — investigated 2026-09-16, not built. User wants every timed session
-    to include one lightweight open speaking prompt ("speak for one
-    minute about your day") to get people talking, not just review/
-    grammar/vocab/listening. Current state: `engine/studyPlan.js` already
-    sometimes includes speaking (`canSpeak` gate, `remaining >= 2.5` min
-    left after everything else), but always launches full Sentence-Drills
-    mode (~3 min minimum), never a quick open prompt. The pieces already
-    exist separately — an open "Free Speaking" prompt, a 1-minute time
-    preset (`CUSTOM_TIME_OPTIONS`), and a programmatic auto-launch pattern
-    (the `targetCompetency` shortcut in `speaking.js`) — just never
-    combined. Two possible scopes: (a) small — make the existing
-    inclusion less conditional; (b) medium — wire the existing pieces into
-    a genuine auto-launched "speak for 1 min about your day" mode (new
-    `studyPlan.js` item variant + a `SpeakingDriller` option to auto-jump
-    into recording with a fixed casual prompt and a short time cap, no new
-    UI screens needed).
+    — **Built 2026-09-17.** Investigated 2026-09-16 as two scopes (small:
+    loosen the existing conditional inclusion; medium: a real
+    auto-launched quick-prompt mode) — built the medium version, refined
+    from the user's own suggestion to source prompts from the CEFR can-do
+    list (the same 1,114 HU / 2,341 ES items behind My Journey's Can-Do
+    Passport — see item 29's index-generation fix) rather than inventing
+    generic ones, since a can-do statement like "I can greet someone" is
+    both a real 30-second speaking task *and* already the exact shape
+    yesterday's `taskCompletionPrimary` grading fix (item 25) was built
+    for.
+    - `engine/learnerModel.js`'s new `pickSpeakingPrompt(level)`: prefers a
+      genuinely unverified/weak competency at the learner's level
+      (`unverifiedCompetencies()`, already existed), falls back to any
+      competency from an already-completed lesson (nothing ahead of where
+      the learner actually is) at that level, any level if none yet at
+      this one, and returns `null` — not a placeholder — when there's
+      truly nothing appropriate (e.g. a brand-new learner with zero
+      completed lessons). Verified all three paths live.
+    - `engine/studyPlan.js`: new guaranteed `speaking-cando` item, ~40
+      seconds, placed ahead of the budget-gated blocks so it survives a
+      tight session — added only when `canSpeak` and a prompt was
+      actually found; skipped outright otherwise, same "never pad with
+      invented busywork" rule the rest of the allocator already follows.
+      Coexists with (doesn't replace) the existing opportunistic longer
+      Sentence-Drills `speaking` block for when there's real budget left.
+    - `engine/drills/speaking.js`'s `targetCompetency` auto-launch
+      shortcut (already used by Journey's "unverified competencies"
+      nudge) now takes an optional `maxSeconds`, defaulting to the
+      existing 300s so that entry point is unchanged; the Studio tab
+      label ("Verbal Production (5 min)") is now computed from the actual
+      cap instead of hardcoded, reset to the default on every fresh
+      `render()` that isn't itself setting a custom cap, so a quick 40s
+      session's cap can't leak into an unrelated later normal one in the
+      same page session (caught live while testing, not theoretical).
+    - Verified end-to-end: a 30-minute plan now includes both `speaking-
+      cando` ("Quick speaking — 40s") and the longer `speaking` block; a
+      10-minute plan fully consumed by its lesson correctly omits it
+      rather than forcing it in. `engine/studyPlanRunner.js` routes the
+      new kind straight to `SpeakingDriller`'s recording screen, which
+      already returns to the plan queue via the existing
+      `RecommendationEngine.mountNextAction()` → `StudyPlanRunner
+      .mountNextAction()` path once graded.
+    - **Not done**: longer, CEFR-exam-style prompts ("talk about clothes
+      for 3 minutes," matching what an actual exam asks) — that's item 28,
+      still waiting on the user's ChatGPT-sourced topics file. The
+      `maxSeconds` plumbing built here is exactly what that will also
+      need (just a bigger number and a different prompt source), so no
+      rework expected when it lands.
 28. **Writing/Speaking Studio topic prompts sourced from real exam
     topics** — user wants topic *prompts* (not a full exam-simulation
     mode — that's the separate item 9 above) modeled on real CEFR exam

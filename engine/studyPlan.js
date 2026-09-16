@@ -127,6 +127,31 @@ const StudyPlan = (function () {
             ? LearnerPath.currentLevel().toLowerCase()
             : 'all';
 
+        // 4a. Guaranteed quick speaking prompt — a single CEFR can-do
+        // statement ("I can greet someone in Spanish"), not the fuller
+        // Sentence-Drills block below. User's ask: every timed session
+        // should get the learner actually talking, even a 5-minute one
+        // that has no room left for real drilling once review/lesson/
+        // grammar/vocab have claimed their share. Cheap (~40s) and placed
+        // ahead of the budget-gated blocks below so it survives a tight
+        // budget; skipped outright (not padded with a placeholder) when
+        // the learner hasn't completed enough to have any competency to
+        // practice yet, or when speech input isn't available at all.
+        const SPEAKING_PROMPT_SECONDS = 40;
+        if (canSpeak && remaining >= SPEAKING_PROMPT_SECONDS / 60 && typeof LearnerModel !== 'undefined' && LearnerModel.pickSpeakingPrompt) {
+            const prompt = await LearnerModel.pickSpeakingPrompt(curLevel);
+            if (prompt) {
+                items.push({
+                    kind: 'speaking-cando',
+                    text: prompt.text,
+                    level: prompt.level || curLevel,
+                    lessonId: prompt.lessonId,
+                    seconds: SPEAKING_PROMPT_SECONDS
+                });
+                remaining -= SPEAKING_PROMPT_SECONDS / 60;
+            }
+        }
+
         const weakDrillerList = (typeof LearnerModel !== 'undefined') ? LearnerModel.weakDrillers() : [];
         const isListeningWeak = weakDrillerList.some(d => d.drillerId === 'listening');
         const isSpeakingWeak = weakDrillerList.some(d => d.drillerId === 'speaking');
