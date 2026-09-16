@@ -101,16 +101,17 @@ const Art = (function () {
             <path class="accent-solid" d="M236 8 256 8 248 13.5 256 19 236 19Z"/>
         `,
 
-        // Home — the door the whole app is named for. A threshold standing
-        // open, an accent semicircle rising behind it — arrival, not
-        // departure. The accent dot sits where a handle would: the point at
-        // which you push it open.
+        // Home — the door the whole app is named for. Redrawn 2026-09-16 to
+        // match a reference: a full accent dome, a door split into a solid
+        // near leaf and an open one — unfilled rather than a seventh
+        // colour, so the cream page shows through where the door stands
+        // ajar — and the accent dot where a handle would be.
         threshold: `
-            <line class="ink-hair" x1="20" y1="86" x2="300" y2="86"/>
-            <path class="accent-solid" d="M110 86a40 40 0 0 1 80 0Z"/>
-            <rect class="ink-line" x="176" y="18" width="72" height="68"/>
-            <path class="ink-solid" d="M176 18 140 30v62l36-6Z"/>
-            <circle class="accent-solid" cx="168" cy="60" r="4"/>
+            <line class="ink-hair" x1="14" y1="86" x2="306" y2="86"/>
+            <path class="accent-solid" d="M204 86A46 46 0 0 1 296 86Z"/>
+            <rect class="ink-solid" x="224" y="40" width="26" height="46"/>
+            <rect class="ink-line" x="250" y="40" width="26" height="46"/>
+            <circle class="accent-solid" cx="245" cy="64" r="3"/>
         `,
 
         // Lesson complete — one climb just made, not the whole journey
