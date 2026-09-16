@@ -262,6 +262,50 @@ this list directly rather than relying on a tool-specific todo list.
     since nothing does that automatically. Verified `curriculum.json` is
     byte-for-byte identical to before the refactor (both languages,
     timestamp aside) — a pure data-location move, not a behavior change.
+22. **Full guide/planning-doc staleness audit — IN PROGRESS, paused
+    2026-09-16.** A full audit (6 parallel research passes) across every
+    guide/planning doc in both languages found widespread drift between
+    what these docs claim and what's actually shipped. Two batches of
+    mechanical fixes are done (see the "docs: fix staleness..." and
+    "docs: regenerate a1.md..." commits around this entry). **Remaining,
+    picking up where this paused:** the A1 Spanish guide set describes
+    an entirely obsolete 20-sequential-lesson structure — real A1 is 26
+    units × 6 lessons (156 total, 6 whole units missing from every doc
+    below). `a1.md` and `a1-vocabulary-themes.md` are done (regenerated
+    from `content/es/curriculum/units/a1.json` + real lesson/vocabulary
+    files — reuse that same ground-truth-extraction approach for the
+    rest). Still to regenerate, in roughly this priority order:
+    - `a1-grammar.md` — per-unit/per-lesson grammar table (mid-edit when
+      paused; real per-lesson `grammar` field values already spot-checked).
+    - `a1-learning-objectives.md` — per-unit objectives; extractable
+      directly from each lesson's own `goal`/`checklist.items` fields.
+    - `a1-progression-matrix.md` — 26-row table; correct the Classic/World
+      columns to "none shipped yet for A1" (confirmed: no
+      `content/es/stories/classics/a1/` or `.../world/a1/` exist).
+    - `a1-reading-plan.md` — story table (27 files, not 20 — includes 6
+      topic-named stories that exist but aren't linked from any lesson
+      yet, see `a1.md`'s own note on this); reconcile a Lesson-12 story
+      title conflict against `a1-story.md`.
+    - `a1-story.md` — per-unit story synopses; every story file already
+      carries a `summary` field, so this is extraction, not fresh writing.
+    - `a1-quality-checklist.md` — small fix, Reading section should say
+      "original story only" for all A1 (no classics/world yet).
+    - `a1-content-spec.md` — bigger prose rewrite: "lessons 1-17" framing
+      throughout, §4b split-lesson exercise counts, §4c review-lesson
+      structure (real structure is a per-unit consolidation lesson, not
+      3 end-of-level reviews).
+    - `a1-exercises.md` — "~9 exercises" distribution is wrong (real
+      lessons run 16-18, in Practice/Dialogue/Writing/Reading/Review
+      blocks); exercise-type catalogue is missing several types in
+      active use (`dialogue-complete`, `sentence-order`, `listening`,
+      `listening-choice`, `dictation`, `substitution`).
+    - `a1-lesson-template.md` — exercise-section skeleton needs the same
+      real block shape as the two items above.
+    Also not yet done: `content/hu/a2-curriculum-draft.json`'s
+    grammar_coverage block was self-flagged by `a2-story-arc-draft.md` as
+    possibly not matching what's actually taught per unit — not
+    independently verified, would need reading all 32 units' grammar
+    files.
 
 ## Content & curriculum
 
