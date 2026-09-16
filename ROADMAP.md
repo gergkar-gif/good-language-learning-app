@@ -208,6 +208,47 @@ this list directly rather than relying on a tool-specific todo list.
     recording sequentially after recognition finishes rather than
     concurrently, which would need its own UX pass (an extra step) and
     isn't a small change.
+20. ~~**Batch fix/feature pass — Lessons, Decks, Speaking/Writing, Workshop,
+    Reader, Journey**~~ — **Done 2026-09-16.** An 18-item punch list across
+    four phases, each landed as its own commit:
+    - Phase 1 (crashes): `enableCheck` ReferenceError killing structured
+      speaking's auto-grade; end-of-lesson summary crash on close-during-
+      render; Decks Review-all race + stale `currentReviewCard`; HU
+      Workshop grammar-title formatting (now consults
+      `grammar-titles.json` first, keyed by resolved path so a runtime
+      course switch can't serve a stale language's cache).
+    - Phase 2 (grading): Hungarian number/abbreviation leniency in
+      `read-repeat`; `prompt-speak` now routes through CEFR `GraderEngine`
+      instead of word-match; Verbal Production no longer cuts a recording
+      short when native speech recognition ends its session mid-way
+      (manual mode now restarts recognition instead of committing early).
+    - Phase 3 (polish): Decks Match lockout cut from ~650ms to ~150-200ms;
+      typed review auto-grades instead of requiring manual self-rating;
+      Reader voice-button rest-state contrast bumped in both themes;
+      Journey's Milestones collapsed to next-5 + "See all"; review
+      sessions in `reviewDirection='audio-en'` now show a persistent
+      "Audio mode" badge.
+    - Phase 4 (bigger features): the 48 migrated A2 imperfecto lessons
+      (see item above) wired into `build-manifest.py`'s `UNIT_TABLES` as
+      units 21/22 — previously validating cleanly but invisible to the
+      Learn tab; a course-wide Grammar Guide search (backed by a new
+      prebuilt `indexes/grammar-guide-index.json`, after a live per-unit
+      walk proved too slow at 100+ units — see
+      `scripts/build_grammar_guide_index.py`), later made more
+      discoverable (top of Learn tab, top of every level, linked from
+      every per-unit guide); end-of-lesson summary split into a stats
+      screen and a "what's next" reinforcement screen; a CEFR level-filter
+      added to Writing/Speaking Studio's topic cards; a genuinely new
+      "Set Your Own Task" flow letting a learner author their own one-line
+      task + word/time limit for free writing/speaking, graded against
+      exactly that task; `structured-writing` lesson steps now feed
+      `LearnerModel` (were invisible to it before) plus an optional
+      on-demand "Get feedback" button (no "AI" wording, hidden when
+      `!navigator.onLine`).
+    - Found and flagged along the way: 5 grammar files with single-
+      character titles in A1 unit 02 (fixed same session, see commits
+      `4a32e229`/`f71cf085`); the iOS audio-playback gap logged as item 19
+      above.
 
 ## Content & curriculum
 
