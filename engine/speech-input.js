@@ -369,6 +369,23 @@ const SpeechInput = (function () {
                     recognition.onerror = event => {
                         console.warn('SpeechInput recognition error:', event.error);
                         const combined = (_accumulatedFinal + ' ' + _currentInterim).trim() || _bestTranscript || '';
+                        const isFatal = event.error === 'not-allowed' || event.error === 'service-not-allowed';
+
+                        // Manual mode (Verbal Production, up to 5 minutes) only ends on
+                        // Finish or the max-duration timeout -- once the learner has
+                        // started speaking, a transient recognition error (aborted,
+                        // no-speech, network) is routine mid-session, not the end of
+                        // their turn. Restart instead of committing early (same as
+                        // onend below), or a long recording gets cut off at whatever
+                        // point the browser's recognition session happens to hiccup.
+                        if (manualStop && _hasSpoken && !isFatal) {
+                            try {
+                                _startRecognitionInstance();
+                                return;
+                            } catch (e) {
+                                console.warn('SpeechInput: recognition restart threw:', e);
+                            }
+                        }
 
                         // If the learner already spoke or a transcript was captured, any subsequent silence / no-speech
                         // error from the OS simply marks the end of their speech — never report an error!
@@ -404,6 +421,20 @@ const SpeechInput = (function () {
                         if (!_isListening || _activeRecognition !== recognition) return;
 
                         const combined = (_accumulatedFinal + ' ' + _currentInterim).trim() || _bestTranscript || '';
+
+                        // Manual mode only ends on Finish/max-duration -- native
+                        // recognition sessions commonly end on their own well before
+                        // then (most browsers cap a single continuous session at
+                        // roughly a minute, or end after a short pause), so this is
+                        // not "the learner is done." Restart instead of committing.
+                        if (manualStop && _hasSpoken) {
+                            try {
+                                _startRecognitionInstance();
+                                return;
+                            } catch (e) {
+                                console.warn('SpeechInput: recognition restart threw:', e);
+                            }
+                        }
 
                         // If learner already spoke, their utterance has completed — commit the answer immediately
                         if (_hasSpoken || combined) {
