@@ -1293,10 +1293,16 @@ const stepRenderers = {
         stepState.english = step.english || step.translation || '';
         stepState.mode = step.mode || 'read-repeat';
         stepState.checkFn = 'lessonCheckSpeaking';
+        // Disabled until a recording produces a transcript, otherwise the
+        // Check button is tappable (checkDisabled is falsy by default) the
+        // instant the step renders, before the learner has spoken at all.
+        stepState.checkDisabled = true;
 
         const isSnoozed = typeof SpeechInput !== 'undefined' && SpeechInput.isCantSpeakNow();
         if (isSnoozed) {
-            enableCheck();
+            // renderStep() calls updateFooterButton() right after this
+            // renderer returns, so setting the flag here is enough.
+            stepState.checkDisabled = false;
         }
 
         const isPromptSpeak = stepState.mode === 'prompt-speak';
@@ -2486,7 +2492,8 @@ function lessonToggleSpeaking(btn) {
                 if (statusEl) statusEl.textContent = 'Tap to speak';
                 if (liveEl) liveEl.textContent = transcript;
                 stepState.transcript = transcript;
-                enableCheck();
+                stepState.checkDisabled = false;
+                updateFooterButton();
                 lessonCheckSpeaking();
             },
             onAudioReady: url => {
@@ -2503,7 +2510,8 @@ function lessonToggleSpeaking(btn) {
                 const currentText = stepState.transcript || (liveEl && liveEl.textContent && liveEl.textContent !== '...' ? liveEl.textContent.trim() : '');
                 if (currentText) {
                     stepState.transcript = currentText;
-                    enableCheck();
+                    stepState.checkDisabled = false;
+                updateFooterButton();
                     lessonCheckSpeaking();
                     return;
                 }
@@ -2515,7 +2523,8 @@ function lessonToggleSpeaking(btn) {
                 } else {
                     setFeedback(false, 'Could not hear clearly. Try again or skip.');
                 }
-                enableCheck();
+                stepState.checkDisabled = false;
+                updateFooterButton();
             }
         });
     }
