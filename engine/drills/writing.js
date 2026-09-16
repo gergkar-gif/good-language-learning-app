@@ -26,6 +26,11 @@ const WritingDriller = (function () {
     let _promptsData = null;
     let _loadedLang = null;
     let _selectedPrompt = null;
+    // 'all' or a CEFR code -- filters the topic cards below without
+    // touching them individually (still full title+description cards, per
+    // the "unless it becomes too busy" caveat: today's handful of prompts
+    // isn't a wall of buttons yet, so this filter is the scalable part).
+    let _promptLevelFilter = 'all';
     let _draftText = '';
     let _assessmentResult = null;
     let _engine = null;
@@ -133,9 +138,28 @@ const WritingDriller = (function () {
             } catch (e) { unverifiedList = []; }
         }
 
+        const CEFR_ORDER = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
+        const availableLevels = Array.from(new Set(prompts.map(p => p.cefrLevel).filter(Boolean)))
+            .sort((a, b) => CEFR_ORDER.indexOf(a) - CEFR_ORDER.indexOf(b));
+        const filteredPrompts = _promptLevelFilter === 'all'
+            ? prompts
+            : prompts.filter(p => p.cefrLevel === _promptLevelFilter);
+
+        const levelFilterHtml = availableLevels.length > 1 ? `
+            <div class="wk-config-group">
+                <label class="wk-config-label">Level</label>
+                <div class="wk-pill-row">
+                    <button type="button" class="wk-pill ${_promptLevelFilter === 'all' ? 'active' : ''}" data-prompt-level-filter="all">All</button>
+                    ${availableLevels.map(lvl => `
+                        <button type="button" class="wk-pill ${_promptLevelFilter === lvl ? 'active' : ''}" data-prompt-level-filter="${_esc(lvl)}">${_esc(lvl)}</button>
+                    `).join('')}
+                </div>
+            </div>
+        ` : '';
+
         let promptsHtml = '';
-        if (prompts.length > 0) {
-            promptsHtml = prompts.map(p => `
+        if (filteredPrompts.length > 0) {
+            promptsHtml = filteredPrompts.map(p => `
                 <div class="wk-card sp-card-clickable" data-select-prompt="${_esc(p.id)}">
                     <div class="sp-prompt-card-head">
                         <span class="sp-level-pill">${_esc(p.cefrLevel)}</span>
@@ -174,6 +198,8 @@ const WritingDriller = (function () {
                     </div>
                 ` : ''}
 
+                ${levelFilterHtml}
+
                 <div class="sp-prompt-grid">
                     ${promptsHtml}
                     <div class="wk-card sp-card-clickable sp-card-custom" data-select-custom="1">
@@ -186,6 +212,13 @@ const WritingDriller = (function () {
                 </div>
             </div>
         `;
+
+        body.querySelectorAll('[data-prompt-level-filter]').forEach(el => {
+            el.addEventListener('click', () => {
+                _promptLevelFilter = el.getAttribute('data-prompt-level-filter');
+                _renderActiveTab();
+            });
+        });
 
         body.querySelectorAll('[data-select-comp]').forEach(el => {
             el.addEventListener('click', () => {

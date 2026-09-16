@@ -61,6 +61,10 @@ const SpeakingDriller = (function () {
     let _prodPrompts = null;
     let _prodLoadedLang = null;
     let _selectedProdPrompt = null;
+    // 'all' or a CEFR code -- see the identical field in WritingDriller for
+    // why this filters the topic cards rather than converting them to bare
+    // pills at today's low prompt count.
+    let _prodLevelFilter = 'all';
     let _prodTranscript = '';
     let _prodAudioUrl = null;
     let _prodElapsedSeconds = 0;
@@ -526,9 +530,27 @@ const SpeakingDriller = (function () {
             } catch (e) { unverifiedList = []; }
         }
 
+        const availableLevels = Array.from(new Set(prompts.map(p => p.cefrLevel || 'B1')))
+            .sort((a, b) => CEFR_ORDER.indexOf(a) - CEFR_ORDER.indexOf(b));
+        const filteredPrompts = _prodLevelFilter === 'all'
+            ? prompts
+            : prompts.filter(p => (p.cefrLevel || 'B1') === _prodLevelFilter);
+
+        const levelFilterHtml = availableLevels.length > 1 ? `
+            <div class="wk-config-group">
+                <label class="wk-config-label">Level</label>
+                <div class="wk-pill-row">
+                    <button type="button" class="wk-pill ${_prodLevelFilter === 'all' ? 'active' : ''}" data-prod-level-filter="all">All</button>
+                    ${availableLevels.map(lvl => `
+                        <button type="button" class="wk-pill ${_prodLevelFilter === lvl ? 'active' : ''}" data-prod-level-filter="${_esc(lvl)}">${_esc(lvl)}</button>
+                    `).join('')}
+                </div>
+            </div>
+        ` : '';
+
         let promptsHtml = '';
-        if (prompts.length > 0) {
-            promptsHtml = prompts.map(p => `
+        if (filteredPrompts.length > 0) {
+            promptsHtml = filteredPrompts.map(p => `
                 <div class="wk-card sp-card-clickable" data-select-prod-prompt="${_esc(p.id)}">
                     <div class="sp-prompt-card-head">
                         <span class="sp-level-pill">${_esc(p.cefrLevel || 'B1')}</span>
@@ -567,6 +589,8 @@ const SpeakingDriller = (function () {
                     </div>
                 ` : ''}
 
+                ${levelFilterHtml}
+
                 <div class="sp-prompt-grid">
                     <div class="wk-card sp-card-clickable sp-card-custom" data-select-prod-custom="1">
                         <div class="sp-prompt-card-head">
@@ -580,6 +604,13 @@ const SpeakingDriller = (function () {
                 </div>
             </div>
         `;
+
+        body.querySelectorAll('[data-prod-level-filter]').forEach(el => {
+            el.addEventListener('click', () => {
+                _prodLevelFilter = el.getAttribute('data-prod-level-filter');
+                _renderActiveTab();
+            });
+        });
 
         body.querySelectorAll('[data-select-prod-comp]').forEach(el => {
             el.addEventListener('click', () => {
