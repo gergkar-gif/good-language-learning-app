@@ -56,11 +56,17 @@ const SpeakingDriller = (function () {
     let _loadedLang = null;
 
     // ---- Verbal Production State ----
-    const PROD_PHASE = { PROMPT_SELECT: 1, RECORDING: 2, REVIEW: 3, ASSESSING: 4, RESULTS: 5 };
+    const PROD_PHASE = { PROMPT_SELECT: 1, RECORDING: 2, REVIEW: 3, ASSESSING: 4, RESULTS: 5, CUSTOM_TASK: 6 };
+    const CUSTOM_TIME_OPTIONS = [1, 2, 3, 5]; // minutes
     let _prodPhase = PROD_PHASE.PROMPT_SELECT;
     let _prodPrompts = null;
     let _prodLoadedLang = null;
     let _selectedProdPrompt = null;
+    // Recording ceiling in seconds -- 300 (5 min) for every curated/
+    // competency prompt, same as always; only the custom-task screen below
+    // overrides it to the learner's chosen limit.
+    let _prodMaxSeconds = 300;
+    let _customTaskMinutes = CUSTOM_TIME_OPTIONS[1];
     // 'all' or a CEFR code -- see the identical field in WritingDriller for
     // why this filters the topic cards rather than converting them to bare
     // pills at today's low prompt count.
@@ -169,6 +175,7 @@ const SpeakingDriller = (function () {
             else if (_phase === PHASE.RESULTS) _renderResults(body);
         } else {
             if (_prodPhase === PROD_PHASE.PROMPT_SELECT) _renderProdPromptSelect(body);
+            else if (_prodPhase === PROD_PHASE.CUSTOM_TASK) _renderProdCustomTask(body);
             else if (_prodPhase === PROD_PHASE.RECORDING) _renderProdRecording(body);
             else if (_prodPhase === PROD_PHASE.REVIEW) _renderProdReview(body);
             else if (_prodPhase === PROD_PHASE.ASSESSING) _renderProdAssessing(body);
@@ -623,6 +630,7 @@ const SpeakingDriller = (function () {
                     prompt: `Speak for 1-2 minutes demonstrating this ability: "${text}". Speak clearly and use natural expressions.`,
                     targetCompetency: text
                 };
+                _prodMaxSeconds = 300;
                 _startProdRecording();
             });
         });
@@ -631,6 +639,7 @@ const SpeakingDriller = (function () {
             el.addEventListener('click', () => {
                 const pid = el.getAttribute('data-select-prod-prompt');
                 _selectedProdPrompt = prompts.find(p => p.id === pid) || null;
+                _prodMaxSeconds = 300;
                 _startProdRecording();
             });
         });
@@ -638,16 +647,85 @@ const SpeakingDriller = (function () {
         const customBtn = body.querySelector('[data-select-prod-custom]');
         if (customBtn) {
             customBtn.addEventListener('click', () => {
-                _selectedProdPrompt = {
-                    id: 'custom_spoken',
-                    title: 'Free Speaking',
-                    cefrLevel: 'B1',
-                    prompt: `Speak freely about any topic of your choice in ${langName}. Focus on expression, continuity, and vocabulary range.`,
-                    targetSkills: ['extended_speech', 'fluency', 'communicative_effectiveness']
-                };
-                _startProdRecording();
+                _prodPhase = PROD_PHASE.CUSTOM_TASK;
+                _renderActiveTab();
             });
         }
+    }
+
+    // Same idea as WritingDriller's _renderCustomTask(): a learner-authored
+    // task plus an explicit time limit, in front of the same
+    // _startProdRecording()/GraderEngine.grade() pipeline every other
+    // prompt already uses.
+    function _renderProdCustomTask(body) {
+        const langName = (typeof Lang !== 'undefined') ? Lang.name() : 'the language';
+
+        body.innerHTML = `
+            <div class="sp-driller-wrap">
+                <button type="button" class="sp-btn-link" data-action="back-prompts">← Back</button>
+                <div class="sp-setup-head">
+                    <h2 class="sp-setup-title">Set Your Own Task</h2>
+                    <p class="sp-setup-sub">Describe what you want to talk about, and for how long. You'll be graded against exactly this.</p>
+                </div>
+
+                <div class="wk-config-group">
+                    <label class="wk-config-label" for="sp-custom-task-input">Task</label>
+                    <input type="text" id="sp-custom-task-input" class="review-input" style="width:100%;"
+                        placeholder="e.g. Describe your hobbies" maxlength="200">
+                </div>
+
+                <div class="wk-config-group">
+                    <label class="wk-config-label">Time Limit</label>
+                    <div class="wk-pill-row">
+                        ${CUSTOM_TIME_OPTIONS.map(mins => `
+                            <button type="button" class="wk-pill ${_customTaskMinutes === mins ? 'active' : ''}" data-custom-minutes="${mins}">${mins} min</button>
+                        `).join('')}
+                    </div>
+                </div>
+
+                <div class="sp-settings-start">
+                    <button type="button" class="sp-start-btn" data-action="start-custom-task" disabled>
+                        Start Speaking
+                    </button>
+                </div>
+            </div>
+        `;
+
+        const backBtn = body.querySelector('[data-action="back-prompts"]');
+        if (backBtn) {
+            backBtn.addEventListener('click', () => {
+                _prodPhase = PROD_PHASE.PROMPT_SELECT;
+                _renderActiveTab();
+            });
+        }
+
+        const input = body.querySelector('#sp-custom-task-input');
+        const startBtn = body.querySelector('[data-action="start-custom-task"]');
+        input.addEventListener('input', () => {
+            startBtn.disabled = !input.value.trim();
+        });
+        input.focus();
+
+        body.querySelectorAll('[data-custom-minutes]').forEach(el => {
+            el.addEventListener('click', () => {
+                _customTaskMinutes = Number(el.getAttribute('data-custom-minutes'));
+                body.querySelectorAll('[data-custom-minutes]').forEach(p => p.classList.toggle('active', Number(p.getAttribute('data-custom-minutes')) === _customTaskMinutes));
+            });
+        });
+
+        startBtn.addEventListener('click', () => {
+            const task = input.value.trim();
+            if (!task) return;
+            _selectedProdPrompt = {
+                id: 'custom-task-' + Date.now(),
+                title: task.length > 40 ? task.slice(0, 37) + '...' : task,
+                cefrLevel: 'B1',
+                prompt: `${task} (speak in ${langName})`,
+                targetSkills: ['extended_speech', 'fluency', 'communicative_effectiveness']
+            };
+            _prodMaxSeconds = _customTaskMinutes * 60;
+            _startProdRecording();
+        });
     }
 
     function _startProdRecording() {
@@ -663,13 +741,13 @@ const SpeakingDriller = (function () {
             const timerEl = document.querySelector('.sp-prod-timer-text');
             const fillEl = document.querySelector('.sp-prod-timer-fill');
             if (timerEl) {
-                timerEl.textContent = `${_formatTime(_prodElapsedSeconds)} / 05:00`;
+                timerEl.textContent = `${_formatTime(_prodElapsedSeconds)} / ${_formatTime(_prodMaxSeconds)}`;
             }
             if (fillEl) {
-                const pct = Math.min(100, (_prodElapsedSeconds / 300) * 100);
+                const pct = Math.min(100, (_prodElapsedSeconds / _prodMaxSeconds) * 100);
                 fillEl.style.width = pct + '%';
             }
-            if (_prodElapsedSeconds >= 300) {
+            if (_prodElapsedSeconds >= _prodMaxSeconds) {
                 _finishProdRecording();
             }
         }, 1000);
@@ -677,7 +755,7 @@ const SpeakingDriller = (function () {
         if (typeof SpeechInput !== 'undefined') {
             SpeechInput.startListening({
                 manualStop: true,
-                maxDurationMs: 300000,
+                maxDurationMs: _prodMaxSeconds * 1000,
                 onInterim: (text) => {
                     _prodTranscript = text;
                     const wordCountEl = document.querySelector('.sp-prod-word-count');
@@ -735,7 +813,7 @@ const SpeakingDriller = (function () {
                     <button type="button" class="sp-btn-link" data-action="back-prompts">← Choose another topic</button>
                     <div class="sp-prod-timer-box">
                         <div class="sp-prod-timer-bar"><div class="sp-prod-timer-fill" style="width: 0%"></div></div>
-                        <span class="sp-prod-timer-text">00:00 / 05:00</span>
+                        <span class="sp-prod-timer-text">00:00 / ${_formatTime(_prodMaxSeconds)}</span>
                     </div>
                 </div>
 

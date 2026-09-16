@@ -19,7 +19,8 @@ const WritingDriller = (function () {
     let _activeStudioTab = STUDIO_TAB.COMPOSITION;
     let _subOptions = null;
 
-    const PHASE = { PROMPT_SELECT: 1, WRITING: 2, ASSESSING: 3, RESULTS: 4 };
+    const PHASE = { PROMPT_SELECT: 1, WRITING: 2, ASSESSING: 3, RESULTS: 4, CUSTOM_TASK: 5 };
+    const CUSTOM_WORD_OPTIONS = [30, 50, 100, 150, 250];
 
     let _container = null;
     let _phase = PHASE.PROMPT_SELECT;
@@ -117,6 +118,7 @@ const WritingDriller = (function () {
             }
         } else {
             if (_phase === PHASE.PROMPT_SELECT) _renderPromptSelect(body);
+            else if (_phase === PHASE.CUSTOM_TASK) _renderCustomTask(body);
             else if (_phase === PHASE.WRITING) _renderWriting(body);
             else if (_phase === PHASE.ASSESSING) _renderAssessing(body);
             else if (_phase === PHASE.RESULTS) _renderResults(body);
@@ -206,8 +208,8 @@ const WritingDriller = (function () {
                         <div class="sp-prompt-card-head">
                             <span class="sp-level-pill">Free Topic</span>
                         </div>
-                        <h3 class="wk-card-title">Free Writing</h3>
-                        <p class="wk-card-sub">Write freely on any topic of your choice and receive detailed structural and language feedback.</p>
+                        <h3 class="wk-card-title">Set Your Own Task</h3>
+                        <p class="wk-card-sub">Write your own one-line task and word limit (e.g. "describe your hobbies in 100 words"), then get feedback against exactly that.</p>
                     </div>
                 </div>
             </div>
@@ -254,22 +256,91 @@ const WritingDriller = (function () {
         const customBtn = body.querySelector('[data-select-custom]');
         if (customBtn) {
             customBtn.addEventListener('click', () => {
-                _selectedPrompt = {
-                    id: 'custom-topic',
-                    cefrLevel: (typeof LearnerPath !== 'undefined' && LearnerPath.currentLevel) ? LearnerPath.currentLevel() : 'B2',
-                    taskType: 'free_writing',
-                    title: 'Free Writing Topic',
-                    prompt: 'Write on any topic of your choice in the target language. Focus on expressing clear, well-connected ideas.',
-                    minWords: 50,
-                    targetWords: 150,
-                    maxWords: 350,
-                    targetSkills: []
-                };
-                _draftText = localStorage.getItem(_draftKey('custom')) || '';
-                _phase = PHASE.WRITING;
+                _phase = PHASE.CUSTOM_TASK;
                 _renderActiveTab();
             });
         }
+    }
+
+    // A learner-authored task ("describe your hobbies in 100 words") plus
+    // an explicit word-count target, in front of the exact same writing
+    // screen / GraderEngine.grade() pipeline every other prompt already
+    // uses -- taskInstructions in _submitForGrading() is just p.prompt,
+    // so grading the learner's own task needs no change there at all.
+    let _customTaskWords = CUSTOM_WORD_OPTIONS[2];
+
+    function _renderCustomTask(body) {
+        body.innerHTML = `
+            <div class="sp-driller-wrap">
+                <button class="vbtn vbtn-secondary sp-back-btn" data-action="back-to-prompts">← Back</button>
+                <div class="sp-setup-head">
+                    <h2 class="sp-setup-title">Set Your Own Task</h2>
+                    <p class="sp-setup-sub">Describe what you want to write about, and how much. You'll be graded against exactly this.</p>
+                </div>
+
+                <div class="wk-config-group">
+                    <label class="wk-config-label" for="wr-custom-task-input">Task</label>
+                    <input type="text" id="wr-custom-task-input" class="review-input" style="width:100%;"
+                        placeholder="e.g. Describe your hobbies" maxlength="200">
+                </div>
+
+                <div class="wk-config-group">
+                    <label class="wk-config-label">Word Limit</label>
+                    <div class="wk-pill-row">
+                        ${CUSTOM_WORD_OPTIONS.map(n => `
+                            <button type="button" class="wk-pill ${_customTaskWords === n ? 'active' : ''}" data-custom-words="${n}">${n}</button>
+                        `).join('')}
+                    </div>
+                </div>
+
+                <div class="sp-settings-start">
+                    <button type="button" class="sp-start-btn" data-action="start-custom-task" disabled>
+                        Start Writing
+                    </button>
+                </div>
+            </div>
+        `;
+
+        const backBtn = body.querySelector('[data-action="back-to-prompts"]');
+        if (backBtn) {
+            backBtn.addEventListener('click', () => {
+                _phase = PHASE.PROMPT_SELECT;
+                _renderActiveTab();
+            });
+        }
+
+        const input = body.querySelector('#wr-custom-task-input');
+        const startBtn = body.querySelector('[data-action="start-custom-task"]');
+        input.addEventListener('input', () => {
+            startBtn.disabled = !input.value.trim();
+        });
+        input.focus();
+
+        body.querySelectorAll('[data-custom-words]').forEach(el => {
+            el.addEventListener('click', () => {
+                _customTaskWords = Number(el.getAttribute('data-custom-words'));
+                body.querySelectorAll('[data-custom-words]').forEach(p => p.classList.toggle('active', Number(p.getAttribute('data-custom-words')) === _customTaskWords));
+            });
+        });
+
+        startBtn.addEventListener('click', () => {
+            const task = input.value.trim();
+            if (!task) return;
+            _selectedPrompt = {
+                id: 'custom-task-' + Date.now(),
+                cefrLevel: (typeof LearnerPath !== 'undefined' && LearnerPath.currentLevel) ? LearnerPath.currentLevel() : 'B2',
+                taskType: 'free_writing',
+                title: task.length > 40 ? task.slice(0, 37) + '...' : task,
+                prompt: task,
+                minWords: Math.round(_customTaskWords * 0.5),
+                targetWords: _customTaskWords,
+                maxWords: Math.round(_customTaskWords * 2),
+                targetSkills: []
+            };
+            _draftText = '';
+            _phase = PHASE.WRITING;
+            _renderActiveTab();
+        });
     }
 
     function _renderWriting(body) {
