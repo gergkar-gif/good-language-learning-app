@@ -1860,6 +1860,14 @@ async function renderLessonSummary(firstTime, rankBefore) {
     const container = document.getElementById('lesson-content');
     if (!container) return;
 
+    // Captured once, up front: currentLesson is a mutable global that
+    // teardownLesson() nulls synchronously (e.g. the learner tapping close
+    // during the awaits below). Every reference in this function reads
+    // `lesson`, not the global, so a teardown mid-render can no longer
+    // throw on a null property read partway through.
+    const lesson = currentLesson;
+    if (!lesson) return;
+
     if (typeof Sound !== 'undefined') Sound.complete();
 
     const elapsed = lessonStartTime ? formatLessonElapsed(Date.now() - lessonStartTime) : null;
@@ -1869,9 +1877,9 @@ async function renderLessonSummary(firstTime, rankBefore) {
     const numberLabel = lessonNumberLabel();
     const xpEarned = (firstTime && typeof GRAMMAR_XP === 'number') ? GRAMMAR_XP : null;
 
-    const words = await collectLessonVocabulary(currentLesson);
-    const grammarSkill = (typeof Recommend !== 'undefined' && currentLesson && currentLesson.id)
-        ? await Recommend.lessonSkillFor(currentLesson.id)
+    const words = await collectLessonVocabulary(lesson);
+    const grammarSkill = (typeof Recommend !== 'undefined' && lesson.id)
+        ? await Recommend.lessonSkillFor(lesson.id)
         : null;
     const milestones = firstTime ? newlyReachedMilestones() : [];
     const rankAfter = (typeof getRank === 'function') ? getRank().rank : null;
@@ -1904,7 +1912,7 @@ async function renderLessonSummary(firstTime, rankBefore) {
         <div class="lsn-summary">
             <p class="lsn-summary-eyebrow">Lesson complete</p>
             <h2 class="lsn-summary-title">Congratulations!</h2>
-            ${numberLabel ? `<p class="lsn-summary-lesson">${esc(numberLabel)} — ${esc(currentLesson.title || '')}</p>` : ''}
+            ${numberLabel ? `<p class="lsn-summary-lesson">${esc(numberLabel)} — ${esc(lesson.title || '')}</p>` : ''}
             ${Art.svg('summit', 'lsn-summary-art')}
             ${statsHtml}
             ${summaryStreakLine()}
@@ -1912,7 +1920,7 @@ async function renderLessonSummary(firstTime, rankBefore) {
             ${summaryMilestonesHtml(milestones)}
             ${summaryGoalsHtml(lastLessonChecklist)}
             ${summaryWordsHtml(words)}
-            ${summaryReinforceHtml(grammarSkill, words, currentLesson ? currentLesson.level : null)}
+            ${summaryReinforceHtml(grammarSkill, words, lesson.level)}
         </div>
     `;
     const summaryScrollParent = container.closest('.content') || document.querySelector('.content');
@@ -1938,7 +1946,7 @@ async function renderLessonSummary(firstTime, rankBefore) {
             const goalText = btn.getAttribute('data-remediate-speaking');
             _openReinforce('speaking', {
                 targetCompetency: goalText,
-                level: currentLesson ? currentLesson.level : 'A1'
+                level: lesson.level || 'A1'
             });
         });
     });
@@ -1974,16 +1982,14 @@ async function renderLessonSummary(firstTime, rankBefore) {
     const reinforceListeningBtn = container.querySelector('[data-reinforce-listening]');
     if (reinforceListeningBtn) {
         reinforceListeningBtn.addEventListener('click', () => {
-            const lvl = (currentLesson && currentLesson.level) ? currentLesson.level : null;
-            _openReinforce('listening', { count: QUICK_REINFORCE_COUNT, autoStart: true, level: lvl });
+            _openReinforce('listening', { count: QUICK_REINFORCE_COUNT, autoStart: true, level: lesson.level || null });
         });
     }
 
     const reinforceSpeakingBtn = container.querySelector('[data-reinforce-speaking]');
     if (reinforceSpeakingBtn) {
         reinforceSpeakingBtn.addEventListener('click', () => {
-            const lvl = (currentLesson && currentLesson.level) ? currentLesson.level : null;
-            _openReinforce('speaking', { count: QUICK_REINFORCE_COUNT, autoStart: true, level: lvl });
+            _openReinforce('speaking', { count: QUICK_REINFORCE_COUNT, autoStart: true, level: lesson.level || null });
         });
     }
 
@@ -1997,7 +2003,7 @@ async function renderLessonSummary(firstTime, rankBefore) {
             const timeLimit = Math.min(120, matchCount * 8);
             DeckMatch.render(container, {
                 words: matchWords,
-                deckId: (currentLesson && currentLesson.id) ? currentLesson.id : 'lesson-reinforce',
+                deckId: lesson.id || 'lesson-reinforce',
                 limit: matchCount,
                 timeLimit: timeLimit,
                 exitLabel: 'Back to summary',
