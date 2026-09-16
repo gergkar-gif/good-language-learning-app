@@ -14,7 +14,7 @@
 
     <link rel="stylesheet" href="styles/base.css?v=2026-09-14h">
     <link rel="stylesheet" href="styles/geometry.css?v=2026-09-14h">
-    <link rel="stylesheet" href="styles/components.css?v=2026-09-16b">
+    <link rel="stylesheet" href="styles/components.css?v=2026-09-16c">
     <link rel="stylesheet" href="styles/layout.css?v=2026-09-14h">
     <link rel="stylesheet" href="styles/utilities.css?v=2026-09-14h">
     <link rel="stylesheet" href="styles/verbs.css?v=2026-09-14h">
@@ -113,6 +113,12 @@
                 <div id="review-session" class="hidden">
                     <button class="dk-back" onclick="endReviewSession()">â† All decks</button>
                     <p id="review-scope" class="dk-scope"></p>
+                    <!-- "Listening mode" is what learners call the
+                         reviewDirection='audio-en' toggle below -- there's no
+                         separate listening driller in Decks. Shown here so
+                         it's visible the whole session, not just inferred
+                         from the toggle's highlighted state. -->
+                    <span id="review-audio-mode-badge" class="review-audio-badge hidden">🔊 Audio mode</span>
 
                 <!-- Today's three activities used to sit here as a stopgap.
                      They belong on Home, which is the screen that asks what

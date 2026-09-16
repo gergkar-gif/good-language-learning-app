@@ -428,6 +428,9 @@ function updateDirectionToggle() {
     }
     if (enLabel) enLabel.classList.toggle('dk-direction-active', reviewDirection === 'en-es');
     if (audioLabel) audioLabel.classList.toggle('dk-direction-active', reviewDirection === 'audio-en');
+
+    const audioBadge = document.getElementById('review-audio-mode-badge');
+    if (audioBadge) audioBadge.classList.toggle('hidden', reviewDirection !== 'audio-en');
 }
 
 function setReviewDirection(dir) {
