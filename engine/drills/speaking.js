@@ -114,7 +114,7 @@ const SpeakingDriller = (function () {
         const lang = (typeof Lang !== 'undefined') ? Lang.code() : 'es';
         if (_prodPrompts && _prodLoadedLang === lang) return;
         try {
-            const data = await Content.json(Lang.content('writing-prompts.json'));
+            const data = await Content.json(Lang.content('speaking-prompts.json'));
             _prodPrompts = (data && data.prompts) ? data.prompts : [];
             _prodLoadedLang = lang;
         } catch (e) {
@@ -557,16 +557,21 @@ const SpeakingDriller = (function () {
 
         let promptsHtml = '';
         if (filteredPrompts.length > 0) {
-            promptsHtml = filteredPrompts.map(p => `
+            promptsHtml = filteredPrompts.map(p => {
+                const timeLabel = p.minSeconds
+                    ? `Spoken · ~${Math.round(p.minSeconds / 60)}-${Math.round(p.maxSeconds / 60)} min`
+                    : 'Spoken · ~1-3 min';
+                return `
                 <div class="wk-card sp-card-clickable" data-select-prod-prompt="${_esc(p.id)}">
                     <div class="sp-prompt-card-head">
                         <span class="sp-level-pill">${_esc(p.cefrLevel || 'B1')}</span>
-                        <span class="sp-words-target">Spoken · ~1-3 min</span>
+                        <span class="sp-words-target">${timeLabel}</span>
                     </div>
                     <h3 class="wk-card-title">${_esc(p.title)}</h3>
                     <p class="wk-card-sub">${_esc(p.prompt.slice(0, 115))}...</p>
                 </div>
-            `).join('');
+            `;
+            }).join('');
         }
 
         body.innerHTML = `
@@ -640,7 +645,7 @@ const SpeakingDriller = (function () {
             el.addEventListener('click', () => {
                 const pid = el.getAttribute('data-select-prod-prompt');
                 _selectedProdPrompt = prompts.find(p => p.id === pid) || null;
-                _prodMaxSeconds = 300;
+                _prodMaxSeconds = (_selectedProdPrompt && _selectedProdPrompt.maxSeconds) || 300;
                 _startProdRecording();
             });
         });
@@ -882,6 +887,13 @@ const SpeakingDriller = (function () {
         const words = _prodTranscript.trim() ? _prodTranscript.trim().split(/\s+/).length : 0;
         const durationStr = _formatTime(_prodElapsedSeconds);
 
+        // On some Android phones, live transcription and the recorder used
+        // for playback fight over the microphone — the recording plays back
+        // fine but the transcript never arrives. Without this, the honour-
+        // system box just looks blank and the learner reads it as the app
+        // failing to recognise them, when really it just needs typing.
+        const transcriptMissing = !!audioUrl && !_prodTranscript.trim();
+
         body.innerHTML = `
             <div class="sp-driller-wrap sp-prod-review-wrap">
                 <div class="sp-setup-head">
@@ -906,7 +918,10 @@ const SpeakingDriller = (function () {
                 <div class="sp-prod-edit-card">
                     <label class="sp-edit-label" for="sp-transcript-input">
                         Transcribed Speech (Honour System)
-                        <span class="sp-edit-hint">Speech-to-text preview — feel free to fix any words misheard by the microphone before submitting:</span>
+                        <span class="sp-edit-hint">${transcriptMissing
+                            ? 'Your recording came through fine, but the phone couldn\'t transcribe it automatically this time (this happens on some Android phones). Listen back above and type what you said — it still counts:'
+                            : 'Speech-to-text preview — feel free to fix any words misheard by the microphone before submitting:'
+                        }</span>
                     </label>
                     <textarea id="sp-transcript-input" class="sp-transcript-input" rows="7" placeholder="Your transcribed words will appear here...">${_esc(_prodTranscript)}</textarea>
                 </div>
@@ -925,13 +940,20 @@ const SpeakingDriller = (function () {
             </div>
         `;
 
+        if (transcriptMissing) {
+            const textarea = body.querySelector('#sp-transcript-input');
+            if (textarea) textarea.focus();
+        }
+
         const submitBtn = body.querySelector('[data-action="submit-grading"]');
         if (submitBtn) {
             submitBtn.addEventListener('click', () => {
                 const textarea = body.querySelector('#sp-transcript-input');
                 const text = textarea ? textarea.value.trim() : _prodTranscript.trim();
                 if (!text) {
-                    alert('Please speak or enter some text before submitting.');
+                    alert(audioUrl
+                        ? 'We heard your recording but couldn\'t transcribe it — type what you said in the box above before submitting.'
+                        : 'Please speak or enter some text before submitting.');
                     return;
                 }
                 _submitProdForGrading(text);

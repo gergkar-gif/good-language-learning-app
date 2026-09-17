@@ -2,52 +2,6 @@
   "language": "es",
   "prompts": [
     {
-      "id": "es-a1-intro",
-      "cefrLevel": "A1",
-      "taskType": "personal_introduction",
-      "title": "Presentación personal",
-      "prompt": "Escribe un breve texto presentándote: di tu nombre, de dónde eres, tu profesión o estudios, y describe brevemente tu personalidad o tu familia.",
-      "minWords": 30,
-      "targetWords": 50,
-      "maxWords": 90,
-      "targetSkills": [
-        { "id": "ser", "description": "Uso de ser para identidad, origen y profesiones" },
-        { "id": "estar", "description": "Uso de estar para estados y ubicaciones" },
-        { "id": "noun-gender", "description": "Concordancia de género en sustantivos y artículos" },
-        { "id": "adjective-agreement", "description": "Concordancia de número y género en adjetivos" }
-      ]
-    },
-    {
-      "id": "es-a2-holiday",
-      "cefrLevel": "A2",
-      "taskType": "past_experience",
-      "title": "Un viaje o fin de semana especial",
-      "prompt": "Escribe un correo electrónico a un amigo contándole sobre unas vacaciones o un fin de semana especial. Explica adónde fuiste, qué hiciste y qué tiempo hacía.",
-      "minWords": 60,
-      "targetWords": 100,
-      "maxWords": 160,
-      "targetSkills": [
-        { "id": "indefinido", "description": "Pretérito indefinido para acciones completadas en el pasado" },
-        { "id": "imperfecto", "description": "Pretérito imperfecto para descripciones y hábitos en el pasado" },
-        { "id": "gustar", "description": "Construcciones con gustar y verbos similares" }
-      ]
-    },
-    {
-      "id": "es-b1-review",
-      "cefrLevel": "B1",
-      "taskType": "review_and_opinion",
-      "title": "Reseña cultural y opinión",
-      "prompt": "Escribe una reseña de una película, serie o libro que hayas visto o leído recientemente. Resume el argumento sin desvelar el final, evalúa los aspectos positivos y negativos, y explica si lo recomiendas y por qué.",
-      "minWords": 120,
-      "targetWords": 160,
-      "maxWords": 240,
-      "targetSkills": [
-        { "id": "por-para", "description": "Diferenciación adecuada de por y para" },
-        { "id": "subjuntivo-presente", "description": "Subjuntivo presente en expresiones de opinión y recomendación" },
-        { "id": "connected-opinion-writing", "description": "Conectores de discurso para contrastar y justificar opiniones" }
-      ]
-    },
-    {
       "id": "es-b2-debate",
       "cefrLevel": "B2",
       "taskType": "written_argument",
@@ -57,12 +11,302 @@
       "targetWords": 250,
       "maxWords": 350,
       "targetSkills": [
-        { "id": "expressing_opinions", "description": "Formulación clara y matizada de opiniones" },
-        { "id": "argumentation", "description": "Desarrollo lógico de argumentos a favor y en contra" },
-        { "id": "contrast_connectors", "description": "Conectores de contraste y concesión (por un lado, no obstante, a pesar de)" },
-        { "id": "cause_and_consequence", "description": "Expresión de causa y consecuencia (dado que, por consiguiente, de ahí que)" },
-        { "id": "complex_sentence_construction", "description": "Subordinación adverbial y adjetiva adecuada al nivel B2" }
+        {
+          "id": "expressing_opinions",
+          "description": "Formulación clara y matizada de opiniones"
+        },
+        {
+          "id": "argumentation",
+          "description": "Desarrollo lógico de argumentos a favor y en contra"
+        },
+        {
+          "id": "contrast_connectors",
+          "description": "Conectores de contraste y concesión (por un lado, no obstante, a pesar de)"
+        },
+        {
+          "id": "cause_and_consequence",
+          "description": "Expresión de causa y consecuencia (dado que, por consiguiente, de ahí que)"
+        },
+        {
+          "id": "complex_sentence_construction",
+          "description": "Subordinación adverbial y adjetiva adecuada al nivel B2"
+        }
       ]
+    },
+    {
+      "id": "es-a1-w01",
+      "cefrLevel": "A1",
+      "taskType": "a_message_about_your_daily_routine",
+      "title": "A message about your daily routine",
+      "situation": "You have a new Spanish-speaking friend. Your friend wants to know what you usually do during the week.",
+      "task": "Write a short message to your friend.",
+      "points": [
+        "say what time you get up",
+        "say what you do during the day",
+        "say what you do in the evening",
+        "say what time you usually go to bed"
+      ],
+      "prompt": "Situation: You have a new Spanish-speaking friend. Your friend wants to know what you usually do during the week.\n\nTask: Write a short message to your friend. Include: say what time you get up; say what you do during the day; say what you do in the evening; say what time you usually go to bed.\n\nWrite approximately 40-50 words.",
+      "minWords": 40,
+      "targetWords": 45,
+      "maxWords": 50
+    },
+    {
+      "id": "es-a1-w02",
+      "cefrLevel": "A1",
+      "taskType": "an_invitation",
+      "title": "An invitation",
+      "situation": "You are having a small birthday celebration and want to invite a Spanish-speaking friend.",
+      "task": "Write a short invitation.",
+      "points": [
+        "say when the celebration is",
+        "say where it is",
+        "say what time it starts",
+        "ask your friend if they can come"
+      ],
+      "prompt": "Situation: You are having a small birthday celebration and want to invite a Spanish-speaking friend.\n\nTask: Write a short invitation. Include: say when the celebration is; say where it is; say what time it starts; ask your friend if they can come.\n\nWrite approximately 40-50 words.",
+      "minWords": 40,
+      "targetWords": 45,
+      "maxWords": 50
+    },
+    {
+      "id": "es-a1-w03",
+      "cefrLevel": "A1",
+      "taskType": "a_postcard_from_a_trip",
+      "title": "A postcard from a trip",
+      "situation": "You are on holiday in another city. Write a postcard to a friend.",
+      "task": "Write about your trip.",
+      "points": [
+        "say where you are",
+        "say what the weather is like",
+        "say what you are doing",
+        "say something about the place you are visiting"
+      ],
+      "prompt": "Situation: You are on holiday in another city. Write a postcard to a friend.\n\nTask: Write about your trip. Include: say where you are; say what the weather is like; say what you are doing; say something about the place you are visiting.\n\nWrite approximately 40-50 words.",
+      "minWords": 40,
+      "targetWords": 45,
+      "maxWords": 50
+    },
+    {
+      "id": "es-a1-w04",
+      "cefrLevel": "A1",
+      "taskType": "your_home",
+      "title": "Your home",
+      "situation": "A Spanish-speaking friend is interested in where you live.",
+      "task": "Write a short message describing your home.",
+      "points": [
+        "say where you live",
+        "describe your home",
+        "say which room you like most",
+        "explain why you like it"
+      ],
+      "prompt": "Situation: A Spanish-speaking friend is interested in where you live.\n\nTask: Write a short message describing your home. Include: say where you live; describe your home; say which room you like most; explain why you like it.\n\nWrite approximately 40-50 words.",
+      "minWords": 40,
+      "targetWords": 45,
+      "maxWords": 50
+    },
+    {
+      "id": "es-a1-w05",
+      "cefrLevel": "A1",
+      "taskType": "making_plans",
+      "title": "Making plans",
+      "situation": "You want to meet a Spanish-speaking friend at the weekend.",
+      "task": "Write a short message suggesting a plan.",
+      "points": [
+        "suggest a day",
+        "suggest a time",
+        "suggest a place to meet",
+        "say what you would like to do together"
+      ],
+      "prompt": "Situation: You want to meet a Spanish-speaking friend at the weekend.\n\nTask: Write a short message suggesting a plan. Include: suggest a day; suggest a time; suggest a place to meet; say what you would like to do together.\n\nWrite approximately 40-50 words.",
+      "minWords": 40,
+      "targetWords": 45,
+      "maxWords": 50
+    },
+    {
+      "id": "es-a2-w01",
+      "cefrLevel": "A2",
+      "taskType": "a_change_of_plans",
+      "title": "A change of plans",
+      "situation": "You arranged to meet a Spanish-speaking friend, but you cannot go at the agreed time.",
+      "task": "Write a message to your friend.",
+      "points": [
+        "explain why you cannot meet",
+        "apologise",
+        "suggest another day or time",
+        "suggest what you can do together"
+      ],
+      "prompt": "Situation: You arranged to meet a Spanish-speaking friend, but you cannot go at the agreed time.\n\nTask: Write a message to your friend. Include: explain why you cannot meet; apologise; suggest another day or time; suggest what you can do together.\n\nWrite approximately 80-100 words.",
+      "minWords": 80,
+      "targetWords": 90,
+      "maxWords": 100
+    },
+    {
+      "id": "es-a2-w02",
+      "cefrLevel": "A2",
+      "taskType": "a_weekend_trip",
+      "title": "A weekend trip",
+      "situation": "You have just returned from a weekend trip and want to tell a Spanish-speaking friend about it.",
+      "task": "Write an email about your trip.",
+      "points": [
+        "say where you went and who you went with",
+        "describe what you did",
+        "say what you liked most",
+        "mention one problem or unexpected event"
+      ],
+      "prompt": "Situation: You have just returned from a weekend trip and want to tell a Spanish-speaking friend about it.\n\nTask: Write an email about your trip. Include: say where you went and who you went with; describe what you did; say what you liked most; mention one problem or unexpected event.\n\nWrite approximately 80-100 words.",
+      "minWords": 80,
+      "targetWords": 90,
+      "maxWords": 100
+    },
+    {
+      "id": "es-a2-w03",
+      "cefrLevel": "A2",
+      "taskType": "a_problem_with_a_purchase",
+      "title": "A problem with a purchase",
+      "situation": "You bought something in a shop, but there is a problem with it.",
+      "task": "Write a message to the shop.",
+      "points": [
+        "explain what you bought and when",
+        "describe the problem",
+        "say what you would like the shop to do",
+        "ask when you can resolve the problem"
+      ],
+      "prompt": "Situation: You bought something in a shop, but there is a problem with it.\n\nTask: Write a message to the shop. Include: explain what you bought and when; describe the problem; say what you would like the shop to do; ask when you can resolve the problem.\n\nWrite approximately 80-100 words.",
+      "minWords": 80,
+      "targetWords": 90,
+      "maxWords": 100
+    },
+    {
+      "id": "es-a2-w04",
+      "cefrLevel": "A2",
+      "taskType": "advice_for_a_visitor",
+      "title": "Advice for a visitor",
+      "situation": "A Spanish-speaking friend is going to visit your town or city for the first time.",
+      "task": "Write an email giving your friend some advice.",
+      "points": [
+        "recommend two places to visit",
+        "suggest something to eat",
+        "explain how to travel around",
+        "suggest the best time to visit one of the places"
+      ],
+      "prompt": "Situation: A Spanish-speaking friend is going to visit your town or city for the first time.\n\nTask: Write an email giving your friend some advice. Include: recommend two places to visit; suggest something to eat; explain how to travel around; suggest the best time to visit one of the places.\n\nWrite approximately 80-100 words.",
+      "minWords": 80,
+      "targetWords": 90,
+      "maxWords": 100
+    },
+    {
+      "id": "es-a2-w05",
+      "cefrLevel": "A2",
+      "taskType": "a_new_hobby",
+      "title": "A new hobby",
+      "situation": "You have recently started a new hobby and want to tell a Spanish-speaking friend about it.",
+      "task": "Write an email about your new hobby.",
+      "points": [
+        "explain what the hobby is",
+        "say why you decided to try it",
+        "describe when and where you do it",
+        "say what you like or dislike about it",
+        "say whether you want to continue"
+      ],
+      "prompt": "Situation: You have recently started a new hobby and want to tell a Spanish-speaking friend about it.\n\nTask: Write an email about your new hobby. Include: explain what the hobby is; say why you decided to try it; describe when and where you do it; say what you like or dislike about it; say whether you want to continue.\n\nWrite approximately 80-100 words.",
+      "minWords": 80,
+      "targetWords": 90,
+      "maxWords": 100
+    },
+    {
+      "id": "es-b1-w01",
+      "cefrLevel": "B1",
+      "taskType": "an_experience_abroad",
+      "title": "An experience abroad",
+      "situation": "You are writing to a Spanish-speaking friend who has asked you about an important experience you had while living, studying or travelling abroad.",
+      "task": "Write an email to your friend.",
+      "points": [
+        "describe the experience",
+        "explain what happened",
+        "say what you liked or found difficult",
+        "explain what you learned from the experience",
+        "say whether you would recommend a similar experience"
+      ],
+      "prompt": "Situation: You are writing to a Spanish-speaking friend who has asked you about an important experience you had while living, studying or travelling abroad.\n\nTask: Write an email to your friend. Include: describe the experience; explain what happened; say what you liked or found difficult; explain what you learned from the experience; say whether you would recommend a similar experience.\n\nWrite approximately 120-150 words.",
+      "minWords": 120,
+      "targetWords": 135,
+      "maxWords": 150
+    },
+    {
+      "id": "es-b1-w02",
+      "cefrLevel": "B1",
+      "taskType": "a_change_in_your_town",
+      "title": "A change in your town",
+      "situation": "Your local council is asking residents for their opinions about a proposed change to your town or city, such as creating a pedestrian area, improving public transport or building a new sports centre.",
+      "task": "Write a short article or forum post giving your opinion.",
+      "points": [
+        "describe the proposed change",
+        "explain its advantages",
+        "mention at least one possible disadvantage",
+        "give your opinion",
+        "suggest one improvement or alternative"
+      ],
+      "prompt": "Situation: Your local council is asking residents for their opinions about a proposed change to your town or city, such as creating a pedestrian area, improving public transport or building a new sports centre.\n\nTask: Write a short article or forum post giving your opinion. Include: describe the proposed change; explain its advantages; mention at least one possible disadvantage; give your opinion; suggest one improvement or alternative.\n\nWrite approximately 120-150 words.",
+      "minWords": 120,
+      "targetWords": 135,
+      "maxWords": 150
+    },
+    {
+      "id": "es-b1-w03",
+      "cefrLevel": "B1",
+      "taskType": "a_problem_with_a_course_or_service",
+      "title": "A problem with a course or service",
+      "situation": "You recently took a language course, joined a sports club or used another service, but you were not satisfied with part of the experience.",
+      "task": "Write an email to the organisation.",
+      "points": [
+        "explain why you chose the service",
+        "describe what went wrong",
+        "explain how the problem affected you",
+        "suggest what the organisation should do",
+        "say whether you would use the service again"
+      ],
+      "prompt": "Situation: You recently took a language course, joined a sports club or used another service, but you were not satisfied with part of the experience.\n\nTask: Write an email to the organisation. Include: explain why you chose the service; describe what went wrong; explain how the problem affected you; suggest what the organisation should do; say whether you would use the service again.\n\nWrite approximately 120-150 words.",
+      "minWords": 120,
+      "targetWords": 135,
+      "maxWords": 150
+    },
+    {
+      "id": "es-b1-w04",
+      "cefrLevel": "B1",
+      "taskType": "a_recommendation",
+      "title": "A recommendation",
+      "situation": "A Spanish-speaking website is collecting articles about places that are worth visiting.",
+      "task": "Write an article recommending a place you know well.",
+      "points": [
+        "describe the place",
+        "explain what visitors can do there",
+        "recommend where or what they should eat",
+        "mention the best time to visit",
+        "explain why you recommend it"
+      ],
+      "prompt": "Situation: A Spanish-speaking website is collecting articles about places that are worth visiting.\n\nTask: Write an article recommending a place you know well. Include: describe the place; explain what visitors can do there; recommend where or what they should eat; mention the best time to visit; explain why you recommend it.\n\nWrite approximately 120-150 words.",
+      "minWords": 120,
+      "targetWords": 135,
+      "maxWords": 150
+    },
+    {
+      "id": "es-b1-w05",
+      "cefrLevel": "B1",
+      "taskType": "a_story_from_an_unexpected_event",
+      "title": "A story from an unexpected event",
+      "situation": "A magazine is publishing short stories about unexpected events that changed people's plans.",
+      "task": "\"When I arrived at the station, I immediately realised that something was wrong.\"",
+      "points": [
+        "explain what happened",
+        "describe how you reacted",
+        "include at least one unexpected event",
+        "explain how the situation ended"
+      ],
+      "prompt": "Situation: A magazine is publishing short stories about unexpected events that changed people's plans.\n\nTask: \"When I arrived at the station, I immediately realised that something was wrong.\" Include: explain what happened; describe how you reacted; include at least one unexpected event; explain how the situation ended.\n\nWrite approximately 120-150 words.",
+      "minWords": 120,
+      "targetWords": 135,
+      "maxWords": 150
     }
   ]
 }

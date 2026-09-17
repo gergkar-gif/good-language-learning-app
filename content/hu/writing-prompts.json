@@ -2,51 +2,6 @@
   "language": "hu",
   "prompts": [
     {
-      "id": "hu-a1-intro",
-      "cefrLevel": "A1",
-      "taskType": "personal_introduction",
-      "title": "Bemutatkozás és a lakásom",
-      "prompt": "Írj egy rövid bemutatkozást magadról és a lakásodról vagy szobádról. Mondd el a neved, honnan származol, és írd le röviden a környezetedet.",
-      "minWords": 30,
-      "targetWords": 50,
-      "maxWords": 90,
-      "targetSkills": [
-        { "id": "ez-az-this-that", "description": "Mutató névmások (ez, az) helyes használata" },
-        { "id": "van-and-nincs-there-is-there-isn-t", "description": "Létige és tagadása (van, nincs) állításban és leírásban" },
-        { "id": "ban-ben-in", "description": "Helyhatározóragok (-ban/-ben) helyes illesztése" }
-      ]
-    },
-    {
-      "id": "hu-a2-holiday",
-      "cefrLevel": "A2",
-      "taskType": "past_experience",
-      "title": "Egy emlékezetes hétvége",
-      "prompt": "Írj egy levelet egy barátodnak egy emlékezetes hétvégéről vagy kirándulásról. Meséld el, hol voltál, kivel utaztál, és mit csináltatok.",
-      "minWords": 60,
-      "targetWords": 100,
-      "maxWords": 160,
-      "targetSkills": [
-        { "id": "van-possessive-to-have", "description": "Birtokos szerkezetek használata" },
-        { "id": "plural-nouns-k", "description": "Többes szám képzése és egyeztetése" },
-        { "id": "itt-ott-here-there", "description": "Helyhatározók és irányok kifejezése" }
-      ]
-    },
-    {
-      "id": "hu-b1-review",
-      "cefrLevel": "B1",
-      "taskType": "review_and_opinion",
-      "title": "Könyv- vagy filmértékelés",
-      "prompt": "Írj egy ismertetőt egy filmről vagy könyvről, amit nemrég láttál vagy olvastál. Foglald össze röviden a cselekményt, emeld ki az előnyeit és a hátrányait, és indokold meg, hogy miért ajánlod másoknak.",
-      "minWords": 120,
-      "targetWords": 160,
-      "maxWords": 240,
-      "targetSkills": [
-        { "id": "aki-vonatkozoi-mellekmondat", "description": "Vonatkozó mellékmondatok szerkesztése (aki, amely)" },
-        { "id": "ahol-amikor", "description": "Idő- és helyhatározói mellékmondatok fűzése" },
-        { "id": "synthesis", "description": "Összefüggő szövegalkotás és logikus tagolás" }
-      ]
-    },
-    {
       "id": "hu-b2-debate",
       "cefrLevel": "B2",
       "taskType": "written_argument",
@@ -56,11 +11,300 @@
       "targetWords": 250,
       "maxWords": 350,
       "targetSkills": [
-        { "id": "vélemény_kifejezése", "description": "Árnyalt véleménykifejtés B2 szinten" },
-        { "id": "érvelés", "description": "Logikus érvelés és ellenérvek bemutatása" },
-        { "id": "kontraszt_kötőszavak", "description": "Ellentétes és megengedő kötőszavak (azonban, mindazonáltal, bár)" },
-        { "id": "összetett_mondatszerkezetek", "description": "Összetett mondatok helyes szintaxisa és szórendje" }
+        {
+          "id": "vélemény_kifejezése",
+          "description": "Árnyalt véleménykifejtés B2 szinten"
+        },
+        {
+          "id": "érvelés",
+          "description": "Logikus érvelés és ellenérvek bemutatása"
+        },
+        {
+          "id": "kontraszt_kötőszavak",
+          "description": "Ellentétes és megengedő kötőszavak (azonban, mindazonáltal, bár)"
+        },
+        {
+          "id": "összetett_mondatszerkezetek",
+          "description": "Összetett mondatok helyes szintaxisa és szórendje"
+        }
       ]
+    },
+    {
+      "id": "hu-a1-w01",
+      "cefrLevel": "A1",
+      "taskType": "bemutatkozo_uzenet",
+      "title": "Bemutatkozó üzenet",
+      "situation": "You have a new Hungarian-speaking friend who wants to know more about you.",
+      "task": "Write a short message.",
+      "points": [
+        "say your name and where you are from",
+        "say where you live",
+        "say what you do",
+        "mention two hobbies",
+        "ask your friend two simple questions"
+      ],
+      "prompt": "Situation: You have a new Hungarian-speaking friend who wants to know more about you.\n\nTask: Write a short message. Include: say your name and where you are from; say where you live; say what you do; mention two hobbies; ask your friend two simple questions.\n\nWrite approximately 40-50 words.",
+      "minWords": 40,
+      "targetWords": 45,
+      "maxWords": 50
+    },
+    {
+      "id": "hu-a1-w02",
+      "cefrLevel": "A1",
+      "taskType": "meghivas",
+      "title": "Meghívás",
+      "situation": "You are organising a small birthday celebration and want to invite a Hungarian-speaking friend.",
+      "task": "Write a short invitation.",
+      "points": [
+        "say what the occasion is",
+        "say when and where it will be",
+        "say what you are going to do",
+        "ask whether your friend can come"
+      ],
+      "prompt": "Situation: You are organising a small birthday celebration and want to invite a Hungarian-speaking friend.\n\nTask: Write a short invitation. Include: say what the occasion is; say when and where it will be; say what you are going to do; ask whether your friend can come.\n\nWrite approximately 40-50 words.",
+      "minWords": 40,
+      "targetWords": 45,
+      "maxWords": 50
+    },
+    {
+      "id": "hu-a1-w03",
+      "cefrLevel": "A1",
+      "taskType": "egy_napom",
+      "title": "Egy napom",
+      "situation": "A Hungarian-speaking friend asks what your normal day is like.",
+      "task": "Write a short message about your daily routine.",
+      "points": [
+        "when you get up",
+        "what you do in the morning",
+        "what you do during the day",
+        "what you do in the evening"
+      ],
+      "prompt": "Situation: A Hungarian-speaking friend asks what your normal day is like.\n\nTask: Write a short message about your daily routine. Include: when you get up; what you do in the morning; what you do during the day; what you do in the evening.\n\nWrite approximately 40-50 words.",
+      "minWords": 40,
+      "targetWords": 45,
+      "maxWords": 50
+    },
+    {
+      "id": "hu-a1-w04",
+      "cefrLevel": "A1",
+      "taskType": "az_otthonom",
+      "title": "Az otthonom",
+      "situation": "Your Hungarian-speaking friend wants to know where you live.",
+      "task": "Write a short description of your home.",
+      "points": [
+        "where you live",
+        "what your home is like",
+        "which rooms it has",
+        "which room you like best and why"
+      ],
+      "prompt": "Situation: Your Hungarian-speaking friend wants to know where you live.\n\nTask: Write a short description of your home. Include: where you live; what your home is like; which rooms it has; which room you like best and why.\n\nWrite approximately 40-50 words.",
+      "minWords": 40,
+      "targetWords": 45,
+      "maxWords": 50
+    },
+    {
+      "id": "hu-a1-w05",
+      "cefrLevel": "A1",
+      "taskType": "talalkozo",
+      "title": "Találkozó",
+      "situation": "You want to meet a Hungarian-speaking friend at the weekend.",
+      "task": "Write a short message suggesting a meeting.",
+      "points": [
+        "the day",
+        "the time",
+        "the meeting place",
+        "what you would like to do together"
+      ],
+      "prompt": "Situation: You want to meet a Hungarian-speaking friend at the weekend.\n\nTask: Write a short message suggesting a meeting. Include: the day; the time; the meeting place; what you would like to do together.\n\nWrite approximately 40-50 words.",
+      "minWords": 40,
+      "targetWords": 45,
+      "maxWords": 50
+    },
+    {
+      "id": "hu-a2-w01",
+      "cefrLevel": "A2",
+      "taskType": "valtozik_a_program",
+      "title": "Változik a program",
+      "situation": "You arranged to meet a Hungarian-speaking friend, but you cannot meet at the agreed time.",
+      "task": "Write a message to your friend.",
+      "points": [
+        "explain why you cannot meet",
+        "apologise",
+        "suggest another time",
+        "suggest what you can do together"
+      ],
+      "prompt": "Situation: You arranged to meet a Hungarian-speaking friend, but you cannot meet at the agreed time.\n\nTask: Write a message to your friend. Include: explain why you cannot meet; apologise; suggest another time; suggest what you can do together.\n\nWrite approximately 80-100 words.",
+      "minWords": 80,
+      "targetWords": 90,
+      "maxWords": 100
+    },
+    {
+      "id": "hu-a2-w02",
+      "cefrLevel": "A2",
+      "taskType": "hetvegi_kirandulas",
+      "title": "Hétvégi kirándulás",
+      "situation": "You have just returned from a weekend trip and want to tell a Hungarian-speaking friend about it.",
+      "task": "Write an email.",
+      "points": [
+        "where you went and who you went with",
+        "what you did",
+        "what you liked most",
+        "one problem or unexpected event"
+      ],
+      "prompt": "Situation: You have just returned from a weekend trip and want to tell a Hungarian-speaking friend about it.\n\nTask: Write an email. Include: where you went and who you went with; what you did; what you liked most; one problem or unexpected event.\n\nWrite approximately 80-100 words.",
+      "minWords": 80,
+      "targetWords": 90,
+      "maxWords": 100
+    },
+    {
+      "id": "hu-a2-w03",
+      "cefrLevel": "A2",
+      "taskType": "problema_egy_vasarlassal",
+      "title": "Probléma egy vásárlással",
+      "situation": "You bought something in a shop, but there is a problem with it.",
+      "task": "Write a message to the shop.",
+      "points": [
+        "what you bought and when",
+        "what the problem is",
+        "what you want the shop to do",
+        "when you can return or exchange the item"
+      ],
+      "prompt": "Situation: You bought something in a shop, but there is a problem with it.\n\nTask: Write a message to the shop. Include: what you bought and when; what the problem is; what you want the shop to do; when you can return or exchange the item.\n\nWrite approximately 80-100 words.",
+      "minWords": 80,
+      "targetWords": 90,
+      "maxWords": 100
+    },
+    {
+      "id": "hu-a2-w04",
+      "cefrLevel": "A2",
+      "taskType": "tanacs_egy_latogatonak",
+      "title": "Tanács egy látogatónak",
+      "situation": "A Hungarian-speaking friend is visiting your town or city for the first time.",
+      "task": "Write an email giving advice.",
+      "points": [
+        "two places to visit",
+        "something to eat or drink",
+        "how to travel around",
+        "the best time to visit one place",
+        "one practical piece of advice"
+      ],
+      "prompt": "Situation: A Hungarian-speaking friend is visiting your town or city for the first time.\n\nTask: Write an email giving advice. Include: two places to visit; something to eat or drink; how to travel around; the best time to visit one place; one practical piece of advice.\n\nWrite approximately 80-100 words.",
+      "minWords": 80,
+      "targetWords": 90,
+      "maxWords": 100
+    },
+    {
+      "id": "hu-a2-w05",
+      "cefrLevel": "A2",
+      "taskType": "uj_hobbi",
+      "title": "Új hobbi",
+      "situation": "You have recently started a new hobby and want to tell a Hungarian-speaking friend about it.",
+      "task": "Write an email.",
+      "points": [
+        "what the hobby is",
+        "why you started it",
+        "when and where you do it",
+        "what you like or dislike about it",
+        "whether you want to continue"
+      ],
+      "prompt": "Situation: You have recently started a new hobby and want to tell a Hungarian-speaking friend about it.\n\nTask: Write an email. Include: what the hobby is; why you started it; when and where you do it; what you like or dislike about it; whether you want to continue.\n\nWrite approximately 80-100 words.",
+      "minWords": 80,
+      "targetWords": 90,
+      "maxWords": 100
+    },
+    {
+      "id": "hu-b1-w01",
+      "cefrLevel": "B1",
+      "taskType": "kulfoldi_tapasztalat",
+      "title": "Külföldi tapasztalat",
+      "situation": "A Hungarian-speaking friend has asked you about an important experience you had while living, studying or travelling abroad.",
+      "task": "Write an email to your friend.",
+      "points": [
+        "what the experience was",
+        "what happened",
+        "what you liked or found difficult",
+        "what you learned from it",
+        "whether you would recommend a similar experience"
+      ],
+      "prompt": "Situation: A Hungarian-speaking friend has asked you about an important experience you had while living, studying or travelling abroad.\n\nTask: Write an email to your friend. Include: what the experience was; what happened; what you liked or found difficult; what you learned from it; whether you would recommend a similar experience.\n\nWrite approximately 120-150 words.",
+      "minWords": 120,
+      "targetWords": 135,
+      "maxWords": 150
+    },
+    {
+      "id": "hu-b1-w02",
+      "cefrLevel": "B1",
+      "taskType": "valtozas_a_varosban",
+      "title": "Változás a városban",
+      "situation": "Your local council is considering a change to your town or city, such as improving public transport, creating a pedestrian area or building a new sports centre.",
+      "task": "Write a short article or forum post giving your opinion.",
+      "points": [
+        "a description of the proposed change",
+        "its advantages",
+        "at least one possible disadvantage",
+        "your opinion",
+        "one suggestion for improvement or an alternative"
+      ],
+      "prompt": "Situation: Your local council is considering a change to your town or city, such as improving public transport, creating a pedestrian area or building a new sports centre.\n\nTask: Write a short article or forum post giving your opinion. Include: a description of the proposed change; its advantages; at least one possible disadvantage; your opinion; one suggestion for improvement or an alternative.\n\nWrite approximately 120-150 words.",
+      "minWords": 120,
+      "targetWords": 135,
+      "maxWords": 150
+    },
+    {
+      "id": "hu-b1-w03",
+      "cefrLevel": "B1",
+      "taskType": "panasz_egy_szolgaltatas_miatt",
+      "title": "Panasz egy szolgáltatás miatt",
+      "situation": "You recently took a course, joined a club or used another service, but you were not satisfied with part of the experience.",
+      "task": "Write an email to the organisation.",
+      "points": [
+        "why you chose the service",
+        "what went wrong",
+        "how the problem affected you",
+        "what the organisation should do",
+        "whether you would use the service again"
+      ],
+      "prompt": "Situation: You recently took a course, joined a club or used another service, but you were not satisfied with part of the experience.\n\nTask: Write an email to the organisation. Include: why you chose the service; what went wrong; how the problem affected you; what the organisation should do; whether you would use the service again.\n\nWrite approximately 120-150 words.",
+      "minWords": 120,
+      "targetWords": 135,
+      "maxWords": 150
+    },
+    {
+      "id": "hu-b1-w04",
+      "cefrLevel": "B1",
+      "taskType": "ajanlj_egy_helyet",
+      "title": "Ajánlj egy helyet!",
+      "situation": "A Hungarian-speaking website is collecting articles about places that are worth visiting.",
+      "task": "Write an article recommending a place you know well.",
+      "points": [
+        "a description of the place",
+        "what visitors can do there",
+        "what they should eat or see",
+        "the best time to visit",
+        "why you recommend it"
+      ],
+      "prompt": "Situation: A Hungarian-speaking website is collecting articles about places that are worth visiting.\n\nTask: Write an article recommending a place you know well. Include: a description of the place; what visitors can do there; what they should eat or see; the best time to visit; why you recommend it.\n\nWrite approximately 120-150 words.",
+      "minWords": 120,
+      "targetWords": 135,
+      "maxWords": 150
+    },
+    {
+      "id": "hu-b1-w05",
+      "cefrLevel": "B1",
+      "taskType": "egy_varatlan_esemeny",
+      "title": "Egy váratlan esemény",
+      "situation": "A magazine is publishing short stories about unexpected events that changed people's plans.",
+      "task": "„Amikor megérkeztem az állomásra, azonnal tudtam, hogy valami nincs rendben.”",
+      "points": [
+        "explain what happened",
+        "describe how you reacted",
+        "include an unexpected event",
+        "explain how the situation ended"
+      ],
+      "prompt": "Situation: A magazine is publishing short stories about unexpected events that changed people's plans.\n\nTask: „Amikor megérkeztem az állomásra, azonnal tudtam, hogy valami nincs rendben.” Include: explain what happened; describe how you reacted; include an unexpected event; explain how the situation ended.\n\nWrite approximately 120-150 words.",
+      "minWords": 120,
+      "targetWords": 135,
+      "maxWords": 150
     }
   ]
 }

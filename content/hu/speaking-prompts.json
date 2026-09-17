@@ -1,0 +1,296 @@
+{
+  "language": "hu",
+  "prompts": [
+    {
+      "id": "hu-a1-s01",
+      "cefrLevel": "A1",
+      "taskType": "bemutatkozas",
+      "title": "Bemutatkozás",
+      "situation": "You are meeting someone for the first time.",
+      "task": "Answer questions about yourself.",
+      "points": [
+        "your name and nationality",
+        "where you live",
+        "your work or studies",
+        "the languages you speak",
+        "your hobbies"
+      ],
+      "prompt": "Situation: You are meeting someone for the first time.\n\nTask: Answer questions about yourself. Include: your name and nationality; where you live; your work or studies; the languages you speak; your hobbies.\n\nSpeak for approximately 1-2 minutes.",
+      "minSeconds": 60,
+      "targetSeconds": 90,
+      "maxSeconds": 150
+    },
+    {
+      "id": "hu-a1-s02",
+      "cefrLevel": "A1",
+      "taskType": "a_csaladom",
+      "title": "A családom",
+      "situation": "You are showing someone a photograph of your family.",
+      "task": "Describe the people in the photograph.",
+      "points": [
+        "who they are",
+        "their names and ages",
+        "where they live",
+        "what they do",
+        "what you like doing together"
+      ],
+      "prompt": "Situation: You are showing someone a photograph of your family.\n\nTask: Describe the people in the photograph. Include: who they are; their names and ages; where they live; what they do; what you like doing together.\n\nSpeak for approximately 1-2 minutes.",
+      "minSeconds": 60,
+      "targetSeconds": 90,
+      "maxSeconds": 150
+    },
+    {
+      "id": "hu-a1-s03",
+      "cefrLevel": "A1",
+      "taskType": "a_kedvenc_helyem",
+      "title": "A kedvenc helyem",
+      "situation": "Someone asks you about your favourite place in your town or city.",
+      "task": "Describe the place.",
+      "points": [
+        "where it is",
+        "what it looks like",
+        "what you can do there",
+        "when you go there",
+        "why you like it"
+      ],
+      "prompt": "Situation: Someone asks you about your favourite place in your town or city.\n\nTask: Describe the place. Include: where it is; what it looks like; what you can do there; when you go there; why you like it.\n\nSpeak for approximately 1-2 minutes.",
+      "minSeconds": 60,
+      "targetSeconds": 90,
+      "maxSeconds": 150
+    },
+    {
+      "id": "hu-a1-s04",
+      "cefrLevel": "A1",
+      "taskType": "egy_atlagos_nap",
+      "title": "Egy átlagos nap",
+      "situation": "Your teacher asks you to describe a normal day.",
+      "task": "Describe your typical day.",
+      "points": [
+        "when you get up",
+        "your morning",
+        "your afternoon",
+        "your evening",
+        "what you enjoy most"
+      ],
+      "prompt": "Situation: Your teacher asks you to describe a normal day.\n\nTask: Describe your typical day. Include: when you get up; your morning; your afternoon; your evening; what you enjoy most.\n\nSpeak for approximately 1-2 minutes.",
+      "minSeconds": 60,
+      "targetSeconds": 90,
+      "maxSeconds": 150
+    },
+    {
+      "id": "hu-a1-s05",
+      "cefrLevel": "A1",
+      "taskType": "mit_csinaljunk_hetvegen",
+      "title": "Mit csináljunk hétvégén?",
+      "situation": "You and another person want to do something together at the weekend.",
+      "task": "Discuss possible activities and choose one. ====================",
+      "points": [
+        "what you like doing",
+        "what you do not like",
+        "when you are free",
+        "where you could go",
+        "which activity you prefer"
+      ],
+      "prompt": "Situation: You and another person want to do something together at the weekend.\n\nTask: Discuss possible activities and choose one. ==================== Include: what you like doing; what you do not like; when you are free; where you could go; which activity you prefer.\n\nSpeak for approximately 1-2 minutes.",
+      "minSeconds": 60,
+      "targetSeconds": 90,
+      "maxSeconds": 150
+    },
+    {
+      "id": "hu-a2-s01",
+      "cefrLevel": "A2",
+      "taskType": "egy_emlekezetes_nap",
+      "title": "Egy emlékezetes nap",
+      "situation": "A Hungarian-speaking friend asks you about a day you remember well.",
+      "task": "Tell your friend about it.",
+      "points": [
+        "when and where it happened",
+        "who you were with",
+        "what happened",
+        "how you felt",
+        "why you remember it"
+      ],
+      "prompt": "Situation: A Hungarian-speaking friend asks you about a day you remember well.\n\nTask: Tell your friend about it. Include: when and where it happened; who you were with; what happened; how you felt; why you remember it.\n\nSpeak for approximately 2 minutes.",
+      "minSeconds": 120,
+      "targetSeconds": 120,
+      "maxSeconds": 150
+    },
+    {
+      "id": "hu-a2-s02",
+      "cefrLevel": "A2",
+      "taskType": "kep_leirasa_es_tortenet",
+      "title": "Kép leírása és történet",
+      "situation": "You are given a photograph showing people in a public place.",
+      "task": "Describe the photograph and imagine what is happening.",
+      "points": [
+        "where the people are",
+        "what they are doing",
+        "what they might be saying",
+        "what happened before the photograph",
+        "what might happen afterwards"
+      ],
+      "prompt": "Situation: You are given a photograph showing people in a public place.\n\nTask: Describe the photograph and imagine what is happening. Include: where the people are; what they are doing; what they might be saying; what happened before the photograph; what might happen afterwards.\n\nSpeak for approximately 2 minutes.",
+      "minSeconds": 120,
+      "targetSeconds": 120,
+      "maxSeconds": 150
+    },
+    {
+      "id": "hu-a2-s03",
+      "cefrLevel": "A2",
+      "taskType": "tervezzunk_egy_napot",
+      "title": "Tervezzünk egy napot!",
+      "situation": "You and another person have a free day and want to spend it together.",
+      "task": "Discuss the possibilities and make a plan.",
+      "points": [
+        "where you could go",
+        "what you could do",
+        "how you could travel",
+        "how much time you have",
+        "which plan you prefer and why"
+      ],
+      "prompt": "Situation: You and another person have a free day and want to spend it together.\n\nTask: Discuss the possibilities and make a plan. Include: where you could go; what you could do; how you could travel; how much time you have; which plan you prefer and why.\n\nSpeak for approximately 2-3 minutes.",
+      "minSeconds": 120,
+      "targetSeconds": 150,
+      "maxSeconds": 210
+    },
+    {
+      "id": "hu-a2-s04",
+      "cefrLevel": "A2",
+      "taskType": "problema_utazas_kozben",
+      "title": "Probléma utazás közben",
+      "situation": "Imagine that you are travelling and something goes wrong.",
+      "task": "Explain the situation and say what you would do.",
+      "points": [
+        "you lose your luggage",
+        "you miss a train or bus",
+        "you lose your phone",
+        "you arrive at the wrong hotel",
+        "what happened",
+        "what you need",
+        "who you would ask for help",
+        "what you would do next"
+      ],
+      "prompt": "Situation: Imagine that you are travelling and something goes wrong.\n\nTask: Explain the situation and say what you would do. Include: you lose your luggage; you miss a train or bus; you lose your phone; you arrive at the wrong hotel; what happened; what you need; who you would ask for help; what you would do next.\n\nSpeak for approximately 2 minutes.",
+      "minSeconds": 120,
+      "targetSeconds": 120,
+      "maxSeconds": 150
+    },
+    {
+      "id": "hu-a2-s05",
+      "cefrLevel": "A2",
+      "taskType": "szabadido",
+      "title": "Szabadidő",
+      "situation": "You are discussing how to spend your free time.",
+      "task": "Compare two possible activities, such as staying at home or going out with friends. ====================",
+      "points": [
+        "what you can do",
+        "the advantages of each option",
+        "what you prefer",
+        "why you prefer it",
+        "what you normally do in your free time"
+      ],
+      "prompt": "Situation: You are discussing how to spend your free time.\n\nTask: Compare two possible activities, such as staying at home or going out with friends. ==================== Include: what you can do; the advantages of each option; what you prefer; why you prefer it; what you normally do in your free time.\n\nSpeak for approximately 2 minutes.",
+      "minSeconds": 120,
+      "targetSeconds": 120,
+      "maxSeconds": 150
+    },
+    {
+      "id": "hu-b1-s01",
+      "cefrLevel": "B1",
+      "taskType": "egy_fontos_elmeny",
+      "title": "Egy fontos élmény",
+      "situation": "The examiner asks you to talk about an experience that was important to you.",
+      "task": "Give a short presentation.",
+      "points": [
+        "what the experience was",
+        "when and where it happened",
+        "who was involved",
+        "what happened",
+        "why it was important",
+        "what you learned from it"
+      ],
+      "prompt": "Situation: The examiner asks you to talk about an experience that was important to you.\n\nTask: Give a short presentation. Include: what the experience was; when and where it happened; who was involved; what happened; why it was important; what you learned from it.\n\nSpeak for approximately 2-3 minutes.",
+      "minSeconds": 120,
+      "targetSeconds": 150,
+      "maxSeconds": 210
+    },
+    {
+      "id": "hu-b1-s02",
+      "cefrLevel": "B1",
+      "taskType": "nyaralas_megtervezese",
+      "title": "Nyaralás megtervezése",
+      "situation": "You and another person want to organise a holiday together. You have several possible options, such as a beach holiday, a city trip, a countryside trip or an activity holiday.",
+      "task": "Discuss the options and reach a decision. Agree on one option and explain your decision.",
+      "points": [
+        "the advantages of different options",
+        "possible disadvantages",
+        "cost",
+        "transport",
+        "activities",
+        "your personal preferences"
+      ],
+      "prompt": "Situation: You and another person want to organise a holiday together. You have several possible options, such as a beach holiday, a city trip, a countryside trip or an activity holiday.\n\nTask: Discuss the options and reach a decision. Agree on one option and explain your decision. Include: the advantages of different options; possible disadvantages; cost; transport; activities; your personal preferences.\n\nSpeak for approximately 3-4 minutes.",
+      "minSeconds": 180,
+      "targetSeconds": 210,
+      "maxSeconds": 270
+    },
+    {
+      "id": "hu-b1-s03",
+      "cefrLevel": "B1",
+      "taskType": "otthoni_munkavegzes",
+      "title": "Otthoni munkavégzés",
+      "situation": "You have been asked to discuss whether working from home is a good option for employees.",
+      "task": "Give your opinion and discuss the issue. Give reasons and examples.",
+      "points": [
+        "advantages for workers",
+        "possible disadvantages",
+        "productivity",
+        "communication and social interaction",
+        "your own experience or expectations"
+      ],
+      "prompt": "Situation: You have been asked to discuss whether working from home is a good option for employees.\n\nTask: Give your opinion and discuss the issue. Give reasons and examples. Include: advantages for workers; possible disadvantages; productivity; communication and social interaction; your own experience or expectations.\n\nSpeak for approximately 2-3 minutes.",
+      "minSeconds": 120,
+      "targetSeconds": 150,
+      "maxSeconds": 210
+    },
+    {
+      "id": "hu-b1-s04",
+      "cefrLevel": "B1",
+      "taskType": "egy_kozos_rendezveny",
+      "title": "Egy közös rendezvény",
+      "situation": "Your school, workplace or local community wants to organise an event to bring people together.",
+      "task": "Discuss how you would organise it. Work together to agree on a plan.",
+      "points": [
+        "what kind of event to organise",
+        "where and when it should take place",
+        "who should be invited",
+        "activities and entertainment",
+        "food and drink",
+        "how to advertise it"
+      ],
+      "prompt": "Situation: Your school, workplace or local community wants to organise an event to bring people together.\n\nTask: Discuss how you would organise it. Work together to agree on a plan. Include: what kind of event to organise; where and when it should take place; who should be invited; activities and entertainment; food and drink; how to advertise it.\n\nSpeak for approximately 3-4 minutes.",
+      "minSeconds": 180,
+      "targetSeconds": 210,
+      "maxSeconds": 270
+    },
+    {
+      "id": "hu-b1-s05",
+      "cefrLevel": "B1",
+      "taskType": "megoldas_egy_problemara",
+      "title": "Megoldás egy problémára",
+      "situation": "A group of young people in your city are having difficulty finding affordable ways to spend their free time.",
+      "task": "Discuss possible solutions. Explain which solutions could be useful and why. Respond to the other person's suggestions and reach an agreement.",
+      "points": [
+        "sports and fitness activities",
+        "cultural events",
+        "public spaces",
+        "clubs and community activities",
+        "online activities"
+      ],
+      "prompt": "Situation: A group of young people in your city are having difficulty finding affordable ways to spend their free time.\n\nTask: Discuss possible solutions. Explain which solutions could be useful and why. Respond to the other person's suggestions and reach an agreement. Include: sports and fitness activities; cultural events; public spaces; clubs and community activities; online activities.\n\nSpeak for approximately 3-4 minutes.",
+      "minSeconds": 180,
+      "targetSeconds": 210,
+      "maxSeconds": 270
+    }
+  ]
+}

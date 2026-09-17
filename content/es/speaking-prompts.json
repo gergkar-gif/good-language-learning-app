@@ -1,0 +1,295 @@
+{
+  "language": "es",
+  "prompts": [
+    {
+      "id": "es-a1-s01",
+      "cefrLevel": "A1",
+      "taskType": "personal_information",
+      "title": "Personal information",
+      "situation": "You are meeting a Spanish-speaking person for the first time.",
+      "task": "Answer questions about yourself.",
+      "points": [
+        "your name and where you are from",
+        "where you live",
+        "your work or studies",
+        "your languages",
+        "your hobbies"
+      ],
+      "prompt": "Situation: You are meeting a Spanish-speaking person for the first time.\n\nTask: Answer questions about yourself. Include: your name and where you are from; where you live; your work or studies; your languages; your hobbies.\n\nSpeak for approximately 1-2 minutes.",
+      "minSeconds": 60,
+      "targetSeconds": 90,
+      "maxSeconds": 150
+    },
+    {
+      "id": "es-a1-s02",
+      "cefrLevel": "A1",
+      "taskType": "describe_your_family",
+      "title": "Describe your family",
+      "situation": "You are showing a Spanish-speaking friend a photograph of your family.",
+      "task": "Describe the people in the photograph.",
+      "points": [
+        "who the people are",
+        "their names and ages",
+        "where they live",
+        "what they do",
+        "one thing you like doing with your family"
+      ],
+      "prompt": "Situation: You are showing a Spanish-speaking friend a photograph of your family.\n\nTask: Describe the people in the photograph. Include: who the people are; their names and ages; where they live; what they do; one thing you like doing with your family.\n\nSpeak for approximately 1-2 minutes.",
+      "minSeconds": 60,
+      "targetSeconds": 90,
+      "maxSeconds": 150
+    },
+    {
+      "id": "es-a1-s03",
+      "cefrLevel": "A1",
+      "taskType": "your_favourite_place",
+      "title": "Your favourite place",
+      "situation": "A Spanish-speaking friend asks you about your favourite place in your town or city.",
+      "task": "Describe the place.",
+      "points": [
+        "where it is",
+        "what it looks like",
+        "what you can do there",
+        "when you usually go there",
+        "why you like it"
+      ],
+      "prompt": "Situation: A Spanish-speaking friend asks you about your favourite place in your town or city.\n\nTask: Describe the place. Include: where it is; what it looks like; what you can do there; when you usually go there; why you like it.\n\nSpeak for approximately 1-2 minutes.",
+      "minSeconds": 60,
+      "targetSeconds": 90,
+      "maxSeconds": 150
+    },
+    {
+      "id": "es-a1-s04",
+      "cefrLevel": "A1",
+      "taskType": "a_typical_day",
+      "title": "A typical day",
+      "situation": "Your teacher asks you to describe a normal day in your life.",
+      "task": "Describe your typical day.",
+      "points": [
+        "when you get up",
+        "what you do in the morning",
+        "what you do during the afternoon",
+        "what you do in the evening",
+        "what you like most about your day"
+      ],
+      "prompt": "Situation: Your teacher asks you to describe a normal day in your life.\n\nTask: Describe your typical day. Include: when you get up; what you do in the morning; what you do during the afternoon; what you do in the evening; what you like most about your day.\n\nSpeak for approximately 1-2 minutes.",
+      "minSeconds": 60,
+      "targetSeconds": 90,
+      "maxSeconds": 150
+    },
+    {
+      "id": "es-a1-s05",
+      "cefrLevel": "A1",
+      "taskType": "choosing_an_activity",
+      "title": "Choosing an activity",
+      "situation": "You and another student want to do something together this weekend.",
+      "task": "Look at the available activities and discuss your choice. ====================",
+      "points": [
+        "what activities you like",
+        "what you do not like",
+        "when you are free",
+        "where you can go",
+        "which activity you would like to choose"
+      ],
+      "prompt": "Situation: You and another student want to do something together this weekend.\n\nTask: Look at the available activities and discuss your choice. ==================== Include: what activities you like; what you do not like; when you are free; where you can go; which activity you would like to choose.\n\nSpeak for approximately 1-2 minutes.",
+      "minSeconds": 60,
+      "targetSeconds": 90,
+      "maxSeconds": 150
+    },
+    {
+      "id": "es-a2-s01",
+      "cefrLevel": "A2",
+      "taskType": "a_memorable_day",
+      "title": "A memorable day",
+      "situation": "A Spanish-speaking friend asks you about a day you remember well.",
+      "task": "Tell your friend about the day.",
+      "points": [
+        "when and where it happened",
+        "who you were with",
+        "what happened",
+        "how you felt",
+        "why you remember the day"
+      ],
+      "prompt": "Situation: A Spanish-speaking friend asks you about a day you remember well.\n\nTask: Tell your friend about the day. Include: when and where it happened; who you were with; what happened; how you felt; why you remember the day.\n\nSpeak for approximately 2 minutes.",
+      "minSeconds": 120,
+      "targetSeconds": 120,
+      "maxSeconds": 150
+    },
+    {
+      "id": "es-a2-s02",
+      "cefrLevel": "A2",
+      "taskType": "describe_a_picture_and_tell_a_story",
+      "title": "Describe a picture and tell a story",
+      "situation": "You are given a photograph showing people in a public place.",
+      "task": "Describe the photograph and imagine what is happening.",
+      "points": [
+        "where the people are",
+        "what they are doing",
+        "what they might be saying",
+        "what happened before the photograph",
+        "what might happen afterwards"
+      ],
+      "prompt": "Situation: You are given a photograph showing people in a public place.\n\nTask: Describe the photograph and imagine what is happening. Include: where the people are; what they are doing; what they might be saying; what happened before the photograph; what might happen afterwards.\n\nSpeak for approximately 2 minutes.",
+      "minSeconds": 120,
+      "targetSeconds": 120,
+      "maxSeconds": 150
+    },
+    {
+      "id": "es-a2-s03",
+      "cefrLevel": "A2",
+      "taskType": "planning_a_day_out",
+      "title": "Planning a day out",
+      "situation": "You and another person want to spend a free day together.",
+      "task": "Discuss the possibilities and make a plan.",
+      "points": [
+        "where you could go",
+        "what you could do",
+        "how you could travel",
+        "how much time you have",
+        "which plan you prefer and why"
+      ],
+      "prompt": "Situation: You and another person want to spend a free day together.\n\nTask: Discuss the possibilities and make a plan. Include: where you could go; what you could do; how you could travel; how much time you have; which plan you prefer and why.\n\nSpeak for approximately 2 minutes.",
+      "minSeconds": 120,
+      "targetSeconds": 120,
+      "maxSeconds": 150
+    },
+    {
+      "id": "es-a2-s04",
+      "cefrLevel": "A2",
+      "taskType": "a_problem_while_travelling",
+      "title": "A problem while travelling",
+      "situation": "Imagine that you are travelling and something goes wrong.",
+      "task": "Explain the situation and say what you would do.",
+      "points": [
+        "losing your luggage",
+        "missing a train or bus",
+        "losing your phone",
+        "arriving at the wrong hotel",
+        "what happened",
+        "what you need",
+        "who you would ask for help",
+        "what you would do next"
+      ],
+      "prompt": "Situation: Imagine that you are travelling and something goes wrong.\n\nTask: Explain the situation and say what you would do. Include: losing your luggage; missing a train or bus; losing your phone; arriving at the wrong hotel; what happened; what you need; who you would ask for help; what you would do next.\n\nSpeak for approximately 2 minutes.",
+      "minSeconds": 120,
+      "targetSeconds": 120,
+      "maxSeconds": 150
+    },
+    {
+      "id": "es-a2-s05",
+      "cefrLevel": "A2",
+      "taskType": "comparing_two_ways_of_spending_free_time",
+      "title": "Comparing two ways of spending free time",
+      "situation": "You have two different options for your free time, for example staying at home or going out with friends.",
+      "task": "Compare the two options and explain your choice.",
+      "points": [
+        "what you can do in each situation",
+        "the advantages of each option",
+        "what you prefer",
+        "why you prefer it",
+        "what you normally do in your free time"
+      ],
+      "prompt": "Situation: You have two different options for your free time, for example staying at home or going out with friends.\n\nTask: Compare the two options and explain your choice. Include: what you can do in each situation; the advantages of each option; what you prefer; why you prefer it; what you normally do in your free time.\n\nSpeak for approximately 2 minutes.",
+      "minSeconds": 120,
+      "targetSeconds": 120,
+      "maxSeconds": 150
+    },
+    {
+      "id": "es-b1-s01",
+      "cefrLevel": "B1",
+      "taskType": "an_important_experience",
+      "title": "An important experience",
+      "situation": "Your examiner asks you to talk about an experience that was important to you.",
+      "task": "Give a short presentation.",
+      "points": [
+        "what the experience was",
+        "when and where it happened",
+        "who was involved",
+        "what happened",
+        "why the experience was important",
+        "what you learned from it"
+      ],
+      "prompt": "Situation: Your examiner asks you to talk about an experience that was important to you.\n\nTask: Give a short presentation. Include: what the experience was; when and where it happened; who was involved; what happened; why the experience was important; what you learned from it.\n\nSpeak for approximately 2-3 minutes.",
+      "minSeconds": 120,
+      "targetSeconds": 150,
+      "maxSeconds": 210
+    },
+    {
+      "id": "es-b1-s02",
+      "cefrLevel": "B1",
+      "taskType": "choosing_a_holiday",
+      "title": "Choosing a holiday",
+      "situation": "You and another person want to organise a holiday together. You have several possible options, such as a beach holiday, a city trip, a countryside trip or an activity holiday.",
+      "task": "Discuss the options and reach a decision.",
+      "points": [
+        "describe the advantages of different options",
+        "discuss possible disadvantages",
+        "consider cost, transport and activities",
+        "explain your preferences",
+        "agree on one option"
+      ],
+      "prompt": "Situation: You and another person want to organise a holiday together. You have several possible options, such as a beach holiday, a city trip, a countryside trip or an activity holiday.\n\nTask: Discuss the options and reach a decision. Include: describe the advantages of different options; discuss possible disadvantages; consider cost, transport and activities; explain your preferences; agree on one option.\n\nSpeak for approximately 3-4 minutes.",
+      "minSeconds": 180,
+      "targetSeconds": 210,
+      "maxSeconds": 270
+    },
+    {
+      "id": "es-b1-s03",
+      "cefrLevel": "B1",
+      "taskType": "the_advantages_and_disadvantages_of_work",
+      "title": "The advantages and disadvantages of working from home",
+      "situation": "You have been asked to discuss whether working from home is a good option for employees.",
+      "task": "Give your opinion and discuss the issue. Give reasons and examples to support your ideas.",
+      "points": [
+        "advantages for workers",
+        "possible disadvantages",
+        "effects on productivity",
+        "social interaction",
+        "your own experience or expectations"
+      ],
+      "prompt": "Situation: You have been asked to discuss whether working from home is a good option for employees.\n\nTask: Give your opinion and discuss the issue. Give reasons and examples to support your ideas. Include: advantages for workers; possible disadvantages; effects on productivity; social interaction; your own experience or expectations.\n\nSpeak for approximately 2-3 minutes.",
+      "minSeconds": 120,
+      "targetSeconds": 150,
+      "maxSeconds": 210
+    },
+    {
+      "id": "es-b1-s04",
+      "cefrLevel": "B1",
+      "taskType": "planning_an_event",
+      "title": "Planning an event",
+      "situation": "Your school, workplace or local community wants to organise an event to bring people together.",
+      "task": "Discuss how you would organise the event. Work together to agree on a plan.",
+      "points": [
+        "what kind of event to organise",
+        "where and when it should take place",
+        "who should be invited",
+        "activities and entertainment",
+        "food and drink",
+        "how to advertise it"
+      ],
+      "prompt": "Situation: Your school, workplace or local community wants to organise an event to bring people together.\n\nTask: Discuss how you would organise the event. Work together to agree on a plan. Include: what kind of event to organise; where and when it should take place; who should be invited; activities and entertainment; food and drink; how to advertise it.\n\nSpeak for approximately 3-4 minutes.",
+      "minSeconds": 180,
+      "targetSeconds": 210,
+      "maxSeconds": 270
+    },
+    {
+      "id": "es-b1-s05",
+      "cefrLevel": "B1",
+      "taskType": "a_problem_that_needs_a_solution",
+      "title": "A problem that needs a solution",
+      "situation": "Imagine that a group of students in your city are having difficulty finding affordable ways to spend their free time.",
+      "task": "Discuss possible solutions. Explain which solutions you think would be useful and why. Respond to the other person's suggestions and reach an agreement.",
+      "points": [
+        "sports and fitness activities",
+        "cultural events",
+        "public spaces",
+        "clubs and community activities",
+        "online activities"
+      ],
+      "prompt": "Situation: Imagine that a group of students in your city are having difficulty finding affordable ways to spend their free time.\n\nTask: Discuss possible solutions. Explain which solutions you think would be useful and why. Respond to the other person's suggestions and reach an agreement. Include: sports and fitness activities; cultural events; public spaces; clubs and community activities; online activities.\n\nSpeak for approximately 3-4 minutes.",
+      "minSeconds": 180,
+      "targetSeconds": 210,
+      "maxSeconds": 270
+    }
+  ]
+}
