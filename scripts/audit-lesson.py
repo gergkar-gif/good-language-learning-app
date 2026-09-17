@@ -65,7 +65,8 @@ HAS_LISTENING = {"a1": False, "a2": True, "b1": True}
 # from A1's design rather than deliberately choosing a different one.
 CONSOLIDATION_SHAPE = {"a1": "single", "a2": "split", "b1": "single"}
 
-MIN_PRACTICE_TYPES = {"a1": 5, "a2": 5, "b1": 6}
+MIN_PRACTICE_TYPES = {"a1": 4, "a2": 4, "b1": 6}
+MIN_LESSON_TYPES = {"a1": 5, "a2": 5, "b1": 6}
 MIN_REVIEW_TYPES = {"a1": 5, "a2": 5, "b1": 6}
 MIN_REVIEW_POINTS = {"a1": 8, "a2": 8, "b1": 6}
 GRAMMAR_MAX_WORDS = 300
@@ -458,6 +459,12 @@ def audit_teaching_lesson(level, unit, part, plan_entry, story_ref):
         if title == "Reading":
             tagged = [i for i in refs if i in all_ex and all_ex[i].get("teaches")]
             r.rule(not tagged, "reading exercises carry no teaches tag", str(tagged))
+
+    lesson_kinds = {all_ex[i]["type"] for i in used if i in all_ex}
+    min_lesson_types = MIN_LESSON_TYPES[level]
+    r.rule(len(lesson_kinds) >= min_lesson_types, f"lesson spans {min_lesson_types}+ distinct types across blocks",
+           f"{len(lesson_kinds)}: {sorted(lesson_kinds)}")
+
 
     if plan_entry:
         lo, hi = plan_entry["exercises"]

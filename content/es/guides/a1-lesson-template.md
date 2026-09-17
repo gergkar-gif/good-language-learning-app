@@ -83,7 +83,7 @@ whichever exercise types fit; see `a1-exercises.md` for the type catalogue.
 
 ## Practice
 
-(Must span 5+ distinct exercise types. Typically 8–16 exercises.)
+(Must span 4+ distinct exercise types. Typically 8–16 exercises.)
 
 ### Exercise 1
 Type:

@@ -91,7 +91,7 @@ checked structurally by the audit script in this order:
 
 | Block | Required when | What's checked |
 |-------|---------------|-----------------|
-| Practice | Always | Spans **5+ distinct exercise types** (a block that's four matchings and two fill-blanks does not qualify) |
+| Practice | Always | Spans **4+ distinct exercise types** (typically matching, multiple-choice, fill-blank, sentence-builder) |
 | Reading | Only on the lesson carrying the unit's story | Its exercises carry no `teaches` tag (they're about the story just read, not testing a recyclable point) |
 | Dialogue | Always | — |
 | Writing | Always | — |
