@@ -1139,8 +1139,7 @@ time. All 7 steps below are complete — matches "Completed queue items"
       the clitic-check doesn't chain with gerund-reduction
       (`llevándonos`), and the one already-documented `he`/`haber`
       collision case. **ES B1 is done.**
-
-19. ~~**"Listen to your own voice" unavailable on iPad/iPhone**~~ — **Confirmed working on real device 2026-09-17.** Fix (removing the `canRecordConcurrently` iOS gate in `engine/speech-input.js`) verified correct. See `ACHIEVED.md` for full history.
+19. ~~**"Listen to your own voice" unavailable on iPad/iPhone**~~ — **Confirmed working on real device 2026-09-17.** Fix (removing the `canRecordConcurrently` iOS gate in `engine/speech-input.js`) verified correct on iOS. On Android, real-device testing revealed that running `getUserMedia` concurrently locks the mic hardware at the Android OS audio HAL level, starving `SpeechRecognition` of audio samples (recording captured user audio, but recognition received silence and failed to recognize or grade). Resolved 2026-09-17 by gating concurrent `getUserMedia` to non-Android devices (`canRecordConcurrently = !isAndroid`), giving SpeechRecognition exclusive mic access on Android when native STT is available. Tested and passing across Android, iOS, and Desktop in `tests/speech/test-speech-lifecycle.js`.
 
 33. ~~**20 of 26 A1 consolidation lessons ship the wrong shape**~~ — **Fixed
     2026-09-17** (item 33). All 20 failing lessons corrected:

@@ -313,7 +313,7 @@ async function runTests() {
     assert.strictEqual(createdRecognitions.length, initialRecCount + 1, 'Must NOT spin up new recognition instance when speech was already spoken');
     console.log('[PASS] onend after speech commits immediately and avoids duplicate instance loops.');
 
-    console.log('--- Test 8: Mobile platforms record concurrently with SpeechRecognition ---');
+    console.log('--- Test 8: Android mic contention prevention (exclusive SpeechRecognition) ---');
     // Set userAgent to Android via defineProperty (Node.js navigator.userAgent is a prototype getter)
     Object.defineProperty(global.navigator, 'userAgent', {
         value: 'Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 Chrome/120.0.0.0 Mobile Safari/537.36',
@@ -327,15 +327,50 @@ async function runTests() {
         onFinal: () => {}
     });
 
-    // "Listen to your own recording" only works if the recording actually
-    // gets captured — mobile used to skip getUserMedia entirely to avoid
-    // theoretical hardware contention with SpeechRecognition, which meant
-    // that feature never worked on a phone at all. Now attempted on every
-    // platform; a real device test decides whether it stays this way.
-    assert.strictEqual(getUserMediaCallCount, 1, 'On mobile devices, getUserMedia must be called alongside SpeechRecognition so recording playback works');
+    // On Android, getUserMedia and SpeechRecognition cannot run concurrently without
+    // starving SpeechRecognition of audio samples at the OS level. SpeechRecognition must
+    // receive exclusive hardware mic access so speech is recognized and graded.
+    assert.strictEqual(getUserMediaCallCount, 0, 'On Android devices, getUserMedia must NOT be called concurrently with SpeechRecognition');
     assert.strictEqual(SpeechInput.isListening(), true, 'Speech recognition should still be active');
     SpeechInput.stopListening();
-    console.log('[PASS] Mobile platforms record audio for playback alongside SpeechRecognition.');
+    console.log('[PASS] Android prevents mic contention by giving SpeechRecognition exclusive access.');
+
+    console.log('--- Test 9: iOS concurrent recording alongside SpeechRecognition ---');
+    Object.defineProperty(global.navigator, 'userAgent', {
+        value: 'Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1',
+        configurable: true
+    });
+    getUserMediaCallCount = 0;
+
+    SpeechInput.startListening({
+        target: 'Hola',
+        onAudioReady: () => {},
+        onFinal: () => {}
+    });
+
+    // iOS WebKit handles audio sharing in-process, so concurrent recording works
+    assert.strictEqual(getUserMediaCallCount, 1, 'On iOS devices, getUserMedia runs concurrently with SpeechRecognition');
+    assert.strictEqual(SpeechInput.isListening(), true, 'Speech recognition should still be active');
+    SpeechInput.stopListening();
+    console.log('[PASS] iOS supports concurrent audio recording and speech recognition.');
+
+    console.log('--- Test 10: Desktop concurrent recording alongside SpeechRecognition ---');
+    Object.defineProperty(global.navigator, 'userAgent', {
+        value: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        configurable: true
+    });
+    getUserMediaCallCount = 0;
+
+    SpeechInput.startListening({
+        target: 'Hola',
+        onAudioReady: () => {},
+        onFinal: () => {}
+    });
+
+    assert.strictEqual(getUserMediaCallCount, 1, 'On desktop, getUserMedia runs concurrently with SpeechRecognition');
+    assert.strictEqual(SpeechInput.isListening(), true, 'Speech recognition should still be active');
+    SpeechInput.stopListening();
+    console.log('[PASS] Desktop supports concurrent audio recording and speech recognition.');
 
     console.log('\n[ALL PASS] SpeechInput lifecycle test suite passed.');
 }
