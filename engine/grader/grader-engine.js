@@ -36,7 +36,7 @@
             if (isNode) {
                 this.endpoint = opts.endpoint || process.env.GRADER_ENDPOINT || process.env.OMNIROUTE_URL || DEFAULT_LOCAL_ENDPOINT;
                 this.apiKey = opts.apiKey || process.env.GRADER_API_KEY || process.env.OMNIROUTE_API_KEY || 'parlour-local';
-                this.maxRetries = Number(opts.maxRetries || process.env.OMNIROUTE_MAX_RETRIES || 3);
+                this.maxRetries = Number(opts.maxRetries != null ? opts.maxRetries : (process.env.OMNIROUTE_MAX_RETRIES || 1));
                 this.timeout = Number(opts.timeout || process.env.OMNIROUTE_TIMEOUT || 35000);
                 this.model = opts.model || process.env.GRADER_MODEL || 'auto';
             } else {
@@ -46,7 +46,7 @@
 
                 this.endpoint = opts.endpoint || devOverride || DEFAULT_PROD_ENDPOINT;
                 this.apiKey = opts.apiKey || devKey || (this.isLocalDev() ? 'parlour-local' : null);
-                this.maxRetries = Number(opts.maxRetries || 3);
+                this.maxRetries = Number(opts.maxRetries != null ? opts.maxRetries : 1);
                 this.timeout = Number(opts.timeout || 35000);
                 this.model = opts.model || 'auto';
             }
@@ -171,7 +171,7 @@
             );
 
             if (retryCount > 0) {
-                prompt += `\n\nRETRY OUTPUT REQUIREMENT:\nThis is a retry after invalid model output. Return ONLY a compact, valid JSON object.\nDo not include Markdown fences or extra commentary. Keep all fields concise.`;
+                prompt += `\n\nRETRY OUTPUT REQUIREMENT:\nThis is a retry after invalid model output. Return ONLY a compact, valid JSON object.\nDo not include Markdown fences or extra commentary. Never use unescaped double quotes inside string values (use single quotes 'word' or backticks instead). Keep all fields concise.`;
             }
 
             const isChatCompletions = this.endpoint.endsWith('/chat/completions') || this.isLocalDev();
@@ -306,6 +306,16 @@
                 candidates.push(cleaned.slice(firstBrace, lastBrace + 1).replace(/,\s*([}\]])/g, '$1'));
             }
 
+            // Also generate repaired versions for unescaped quotes inside JSON string values
+            const repaired = [];
+            for (const cand of candidates) {
+                const fixed = this._repairUnescapedQuotes(cand);
+                if (fixed !== cand) {
+                    repaired.push(fixed);
+                }
+            }
+            candidates.push(...repaired);
+
             for (const cand of candidates) {
                 try {
                     return JSON.parse(cand);
@@ -313,6 +323,51 @@
             }
 
             throw new Error('Failed to parse grader JSON: no valid JSON object found');
+        }
+
+        /**
+         * Repairs unescaped internal double quotes within JSON string values
+         * (e.g. "explanation": "The verb "hacer" is irregular." -> "explanation": "The verb 'hacer' is irregular.")
+         */
+        _repairUnescapedQuotes(jsonStr) {
+            const lines = String(jsonStr || '').split(/\r?\n/);
+            const fixedLines = lines.map(line => {
+                // Match property line:  "key": "value..."
+                const propMatch = line.match(/^(\s*"[a-zA-Z0-9_]+"\s*:\s*")(.*)("(?:\s*,)?\s*)$/);
+                if (propMatch) {
+                    const prefix = propMatch[1];
+                    const middle = propMatch[2];
+                    const suffix = propMatch[3];
+                    const fixedMiddle = middle.replace(/(?<!\\)"/g, "'");
+                    return prefix + fixedMiddle + suffix;
+                }
+
+                // Match array string items on their own line:  "value..."
+                const arrayStrMatch = line.match(/^(\s*")(.*)("(?:\s*,)?\s*)$/);
+                if (arrayStrMatch) {
+                    const prefix = arrayStrMatch[1];
+                    const middle = arrayStrMatch[2];
+                    const suffix = arrayStrMatch[3];
+                    const fixedMiddle = middle.replace(/(?<!\\)"/g, "'");
+                    return prefix + fixedMiddle + suffix;
+                }
+
+                // Match single-line array with strings: "key": ["val1", "val2"...]
+                const inlineArrayMatch = line.match(/^(\s*"[a-zA-Z0-9_]+"\s*:\s*\[)(.*)(\](?:\s*,)?\s*)$/);
+                if (inlineArrayMatch) {
+                    const prefix = inlineArrayMatch[1];
+                    const content = inlineArrayMatch[2];
+                    const suffix = inlineArrayMatch[3];
+                    const fixedContent = content.replace(/"(.*?)"(?=\s*(?:,|$))/g, (m, inner) => {
+                        const fixedInner = inner.replace(/(?<!\\)"/g, "'");
+                        return `"${fixedInner}"`;
+                    });
+                    return prefix + fixedContent + suffix;
+                }
+
+                return line;
+            });
+            return fixedLines.join('\n');
         }
 
         _fallbackAssessment(productionText, cefrLevel, localStats, reason) {

@@ -25,6 +25,14 @@ async function testJsonRepair() {
     const parsed3 = engine._parseJson(trailingCommas);
     assert.strictEqual(parsed3.overallScore, 90, 'Should clean trailing commas');
     console.log('✓ Trailing comma repair');
+
+    // 4. Unescaped double quotes inside JSON string values
+    const unescapedQuotes = '{\n  "overallScore": 82,\n  "taskCompletion": 0.9,\n  "dimensions": {"grammar": 0.8, "vocabulary": 0.8, "coherence": 0.9, "complexity": 0.7, "naturalness": 0.9},\n  "errors": [\n    {\n      "category": "grammar",\n      "severity": "minor",\n      "text": "me llamo Juan",\n      "explanation": "In Spanish, the verb "llamar" is used with the preposition "a" when referring to oneself.",\n      "skillId": null\n    }\n  ],\n  "demonstratedSkills": [],\n  "weakSkills": [],\n  "feedback": {\n    "strengths": ["You said "bueno" naturally."],\n    "priorities": ["Practice more."]\n  }\n}';
+    const parsed4 = engine._parseJson(unescapedQuotes);
+    assert.strictEqual(parsed4.overallScore, 82, 'Should repair unescaped quotes');
+    assert.strictEqual(parsed4.errors[0].explanation, "In Spanish, the verb 'llamar' is used with the preposition 'a' when referring to oneself.", 'Should sanitize inner quotes to single quotes');
+    assert.strictEqual(parsed4.feedback.strengths[0], "You said 'bueno' naturally.", 'Should sanitize array inner quotes');
+    console.log('✓ Unescaped internal double quote repair in string values');
 }
 
 async function testSchemaSanitization() {

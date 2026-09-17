@@ -92,6 +92,8 @@ The overall score should broadly correspond to the weighted profile, but use pro
 CRITICAL SCALE RULE: overallScore is an INTEGER from 0 to 100 (a percentage-style grade, e.g. 45, 72, 91) — it is NOT on the same 0.0-1.0 scale as taskCompletion or the dimension scores. Never output overallScore as a decimal below 1.
 
 CRITICAL SHAPE RULE: every entry in demonstratedSkills and weakSkills MUST be an object of the exact form {"skillId": "...", "confidence": 0.0} — never a bare string. Do not output ["skill_name"]; always output [{"skillId": "skill_name", "confidence": 0.5}].
+
+CRITICAL JSON QUOTING RULE: Never use unescaped double quotes inside JSON string values (such as explanations, texts, strengths, or priorities). Always use single quotes ('word') or backticks for quoted words, phrases, grammatical terms, and corrections.
 ${opts.taskCompletionPrimary ? `
 TASK-COMPLETION-PRIMARY MODE:
 This is a concrete, bounded can-do check (e.g. "count to 10", "state your name and where you're from", "list the days of the week") rather than an open-ended fluency topic. Ignore the weighting above; task completion now dominates. If the learner's spoken production correctly and completely conveys everything the task asked for, score 85-100 even if the response is a brief list, a single phrase, or otherwise not full-sentence prose — a task that only calls for an enumeration or a short factual answer must not be penalised for lacking length, complexity, or grammatical elaboration the task never asked for. Only reduce the score for content that is missing, wrong, or unintelligible.` : ''}
@@ -223,6 +225,8 @@ The overall score should broadly correspond to the weighted profile, but use pro
 CRITICAL SCALE RULE: overallScore is an INTEGER from 0 to 100 (a percentage-style grade, e.g. 45, 72, 91) — it is NOT on the same 0.0-1.0 scale as taskCompletion or the dimension scores. Never output overallScore as a decimal below 1.
 
 CRITICAL SHAPE RULE: every entry in demonstratedSkills and weakSkills MUST be an object of the exact form {"skillId": "...", "confidence": 0.0} — never a bare string. Do not output ["skill_name"]; always output [{"skillId": "skill_name", "confidence": 0.5}].
+
+CRITICAL JSON QUOTING RULE: Never use unescaped double quotes inside JSON string values (such as explanations, texts, strengths, or priorities). Always use single quotes ('word') or backticks for quoted words, phrases, grammatical terms, and corrections.
 ${opts.taskCompletionPrimary ? `
 TASK-COMPLETION-PRIMARY MODE:
 This is a concrete, bounded can-do check (e.g. "list the days of the week", "reserve a hotel room with a window and two separate beds") rather than an open-ended fluency topic. Ignore the weighting above; task completion now dominates. If the learner's production correctly and completely conveys everything the task asked for, score 85-100 even if the response is short or structurally simple — a task with a bounded, concrete requirement must not be penalised for lacking length, complexity, or grammatical elaboration the task never asked for. Only reduce the score for content that is missing, wrong, or unintelligible.` : ''}

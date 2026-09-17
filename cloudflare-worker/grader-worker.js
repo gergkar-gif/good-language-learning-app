@@ -87,7 +87,7 @@ export default {
         } else if (payload.prompt) {
             prompt = payload.prompt;
             messages = [
-                { role: 'system', content: 'You are an expert CEFR-aligned language-learning grader. Return only valid JSON.' },
+                { role: 'system', content: 'You are an expert CEFR-aligned language-learning grader. Return only valid JSON. Never use unescaped double quotes inside JSON string values; use single quotes for quotes, words, or grammatical terms.' },
                 { role: 'user', content: prompt }
             ];
         } else {
