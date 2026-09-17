@@ -9,6 +9,26 @@ needs re-reading before starting new work; it's reference only.
 
 ## Completed queue items
 
+33. ~~**20 of 26 A1 consolidation lessons ship the wrong shape**~~ — **Done
+    2026-09-17.** Fixed all 20 failing A1 Spanish consolidation lessons to
+    conform to `scripts/audit-lesson.py`'s `"single"` shape:
+    - **Structural merge**: merged split Practice/Dialogue/Writing exercise-group
+      blocks into a single `"Review"` group in each lesson JSON, and removed
+      the empty `srs` block.
+    - **Goal/checklist alignment**: updated all goals and checklist items to
+      consistently start with `"I can ..."`, and made goal and checklist item
+      counts 1:1.
+    - **Exercise variety backfill**: added two schema-compliant `fill-blank`
+      exercises to each of the 12 consolidation exercise sets that only had 4
+      exercise types, bringing every Review block to 5+ distinct types.
+    - **Teaches-tag coverage**: re-tagged gustar consolidation exercises from
+      generic placeholder `"consolidation"` to 10 granular grammar tags; added
+      cumulative A1 crossover tags across 5 other consolidation exercise files
+      so all 6 lessons span 9–10 distinct teaches points (satisfying 8+).
+    - Validated schemas (`validate-content.py es` passes 3,308 files with 0
+      failures) and audit (`audit-lesson.py a1` passes 24/26 consolidation
+      lessons, with the remaining 2 being pre-existing Unit 1 scope checks).
+
 28. ~~**Writing/Speaking Studio topic prompts sourced from real exam
     topics**~~ — **Done 2026-09-17.** User supplied three ChatGPT-sourced
     `.txt` files (HU A1-B1, ES A1-A2, ES B1 — 60 exam-style tasks total,
