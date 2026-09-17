@@ -129,14 +129,17 @@ that's now just a JSON append rather than a `build-manifest.py` edit.
 
 ---
 
-## ⏳ Phase 7: Hungarian A2 — Advanced Grammar & Culture [TO-BE-DONE LATER]
+## ✅ Phase 7: Hungarian A2 — Advanced Grammar & Culture [DONE 2026-09-17]
 
-- [ ] **Unit 7.1: Change-of-State Cases (*-vá/-vé* Translative-Factitive)**
-  - **Focus**: *orvossá válik* (becomes a doctor), *széppé teszi* (makes it beautiful).
-- [ ] **Unit 7.2: Role / Capacity Case (*-ként* Essive-Formal)**
-  - **Focus**: *tanárként dolgozom* (I work as a teacher).
-- [ ] **Unit 7.3: Sociocultural Pragmatics (*Tetszikelés* & Hungarian Customs)**
-  - **Focus**: Deferential polite construction (*Hogy tetszik lenni?*), Hungarian Eastern name order (*Kovács Péter*), Name Days (*Névnap*), toasting etiquette (*Egészségedre!*).
+- [x] **Unit 35: Change of State: The Translative Case (`unit.a2.35`, stems `a2-171` to `a2-175` + `a2-175-consolidation`)**
+  - **Focus**: Translative-Factitive *-vá/-vé* morphology and consonant assimilation (*orvossá, széppé, fává, vízzé*), verbs of becoming (*válik*), verbs of making/transforming (*tesz*), natural state changes (*jéggé fagy, vízzé olvad*), and idioms (*valósággá válik, divattá válik, kővé dermed*). 5 lessons + consolidation.
+  - **Story**: *Az új műhely* (`a2-unit-35`).
+- [x] **Unit 36: Roles & Capacities: The Essive-Formal (`unit.a2.36`, stems `a2-176` to `a2-180` + `a2-180-consolidation`)**
+  - **Focus**: The invariant suffix *-ként*, professions (*tanárként, orvosként*), stages of life (*gyerekként, felnőttként*), function/purpose (*ajándékként, emlékként, megoldásként*), temporal & distributive rate adverbs (*időnként, helyenként, óránként, fejenként*), and contrast with *-nak/-nek* and nominative. 5 lessons + consolidation.
+  - **Story**: *Önkéntesként a táborban* (`a2-unit-36`).
+- [x] **Unit 37: Sociocultural Pragmatics & Customs (`unit.a2.37`, stems `a2-181` to `a2-185` + `a2-185-consolidation`)**
+  - **Focus**: Deferential politeness (*tetszikelés*: *Hogy tetszik lenni? Mit tetszik kérni?*), public formulas (*tessék, kérem, parancsoljon, legyen szíves*), Hungarian Eastern name order (*Kovács Péter*), honorifics (*tanár úr, doktornő, néni, bácsi, -né*), Name Days (*Névnap*, *Boldog névnapot!*), toasting etiquette (*Egészségedre!* with mandatory eye contact), and home visiting hospitality (guest slippers, gifts, *Jó étvágyat!*). 5 lessons + consolidation.
+  - **Story**: *Névnap a nagymamánál* (`a2-unit-37`).
 
 ---
 

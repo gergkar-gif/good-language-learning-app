@@ -274,6 +274,9 @@ LANG_UNIT_TITLES = {
             "Living in Hungarian",
             "Declined Pronouns: Internal & Surface Cases",
             "Declined Pronouns: Proximity & Motion",
+            "Change of State: The Translative Case",
+            "Roles & Capacities: The Essive-Formal",
+            "Sociocultural Pragmatics & Customs",
         ],
     },
 }
