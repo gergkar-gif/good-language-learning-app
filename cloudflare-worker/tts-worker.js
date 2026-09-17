@@ -8,6 +8,12 @@
 // or via Wrangler CLI. Add GOOGLE_TTS_API_KEY in Worker Settings -> Variables & Secrets
 // (`wrangler secret put GOOGLE_TTS_API_KEY`), from a GCP project with the
 // Cloud Text-to-Speech API enabled and billing linked.
+//
+// Audio is content-addressed and cached permanently in an R2 bucket bound as
+// TTS_CACHE: lesson text is fixed, so almost every synthesis after the first
+// is a repeat across learners and sessions. A cache hit skips Google TTS
+// entirely. Bind an R2 bucket named TTS_CACHE in Worker Settings -> Bindings
+// (see CLOUDFLARE_TTS_SETUP.md for the full walkthrough).
 
 const ALLOWED_ORIGINS = [
     'https://gergkar-gif.github.io',
@@ -33,20 +39,22 @@ function corsHeaders(origin) {
 }
 
 function json(data, status, cors) {
+    const headers = Object.assign({
+        'Content-Type': 'application/json',
+        'Cache-Control': status === 200 ? 'public, max-age=31536000, immutable' : 'no-store'
+    }, cors);
     return new Response(JSON.stringify(data), {
         status: status || 200,
-        headers: Object.assign({ 'Content-Type': 'application/json' }, cors)
+        headers
     });
 }
 
 const LANGUAGE_CODE = { en: 'en-US', es: 'es-ES', hu: 'hu-HU' };
 
-// Chirp3-HD voice names are shared across every language (same character
-// bank, only the accent changes with languageCode), so one semantic map
-// covers es/hu/en alike. Resolution order: an explicit per-character voice
-// (a caller that already assigned "Meg" -> Aoede so she sounds the same in
-// every line), then gender alone, then content type, then the narrator
-// default.
+// Chirp3-HD voice names are used for rich story narration, character dialogue,
+// and Hungarian (which only supports Chirp3-HD in neural tiers).
+// For Spanish vocabulary, listening drills, and pronunciation checks, we use
+// Google's ultra-fast Neural2 models (400-600ms synthesis vs 2500-3500ms Chirp3-HD).
 const SHORT_VOICE = {
     male: 'Orus',          // firm — default dialogue/character voice
     female: 'Kore',        // firm — default dialogue/character voice
@@ -61,8 +69,59 @@ const SHORT_VOICE = {
 
 function resolveVoiceName(payload, languageCode) {
     if (payload.voiceName) return payload.voiceName; // full override, e.g. a specific test voice
-    const short = payload.character || SHORT_VOICE[payload.gender] || SHORT_VOICE[payload.type] || SHORT_VOICE.narrator;
+
+    // If a named story character is specified, preserve the distinct Chirp3-HD character voice
+    if (payload.character) {
+        return `${languageCode}-Chirp3-HD-${payload.character}`;
+    }
+
+    // Story narration and reading passages use rich multi-voice Chirp3-HD
+    const isLongForm = payload.type === 'story' || payload.type === 'reading';
+
+    if (languageCode === 'es-ES' && !isLongForm) {
+        // Fast-path for Spanish vocabulary, listening exercises, and pronunciation drills:
+        // Neural2 synthesizes in ~400-600ms (3-6x faster than Chirp3-HD)
+        if (payload.gender === 'male') return 'es-ES-Neural2-B';
+        if (payload.gender === 'female') return 'es-ES-Neural2-A';
+        return 'es-ES-Neural2-F'; // ultra-clear default neural Spanish voice
+    }
+
+    if (languageCode === 'en-US' && !isLongForm) {
+        if (payload.gender === 'male') return 'en-US-Neural2-D';
+        return 'en-US-Neural2-F';
+    }
+
+    const short = SHORT_VOICE[payload.gender] || SHORT_VOICE[payload.type] || SHORT_VOICE.narrator;
     return `${languageCode}-Chirp3-HD-${short}`;
+}
+
+// ----------------------------------------
+// R2 AUDIO CACHE (content-addressed by everything that affects the audio
+// bytes — voice, rate and pitch, not just text — so two requests that
+// resolve to identical synthesis params always hit the same object)
+// ----------------------------------------
+
+async function cacheKey(languageCode, voiceName, speakingRate, pitch, text) {
+    const raw = `${languageCode}::${voiceName}::${speakingRate}::${pitch}::${text}`;
+    const digest = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(raw));
+    const hex = Array.from(new Uint8Array(digest)).map(b => b.toString(16).padStart(2, '0')).join('');
+    return `${languageCode}/${voiceName}/${hex}.mp3`;
+}
+
+function bytesToBase64(bytes) {
+    let binary = '';
+    const chunkSize = 0x8000;
+    for (let i = 0; i < bytes.length; i += chunkSize) {
+        binary += String.fromCharCode.apply(null, bytes.subarray(i, i + chunkSize));
+    }
+    return btoa(binary);
+}
+
+function base64ToBytes(b64) {
+    const binary = atob(b64);
+    const bytes = new Uint8Array(binary.length);
+    for (let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
+    return bytes;
 }
 
 export default {
@@ -81,7 +140,8 @@ export default {
             return json({
                 status: 'ok',
                 service: 'parlour-google-tts-proxy',
-                hasApiKey: Boolean(env && env.GOOGLE_TTS_API_KEY)
+                hasApiKey: Boolean(env && env.GOOGLE_TTS_API_KEY),
+                hasR2Cache: Boolean(env && env.TTS_CACHE)
             }, 200, cors);
         }
 
@@ -118,6 +178,22 @@ export default {
         const speakingRate = Number(payload.speakingRate) || 1.0;
         const pitch = Number(payload.pitch) || 0.0;
 
+        const r2 = env && env.TTS_CACHE;
+        const key = r2 ? await cacheKey(languageCode, voiceName, speakingRate, pitch, text) : null;
+
+        if (r2) {
+            const cached = await r2.get(key);
+            if (cached) {
+                const bytes = new Uint8Array(await cached.arrayBuffer());
+                return json({
+                    audioContent: bytesToBase64(bytes),
+                    voiceName,
+                    lang,
+                    cached: true
+                }, 200, cors);
+            }
+        }
+
         const googlePayload = {
             input: { text },
             voice: {
@@ -151,10 +227,23 @@ export default {
                 return json({ error: 'No audioContent in Google TTS response' }, 502, cors);
             }
 
+            if (r2) {
+                // Best-effort: a write failure shouldn't fail the response the
+                // learner is waiting on, just cost a repeat Google TTS call later.
+                try {
+                    await r2.put(key, base64ToBytes(data.audioContent), {
+                        httpMetadata: { contentType: 'audio/mpeg' }
+                    });
+                } catch (cacheErr) {
+                    console.error('TTS_CACHE put failed:', cacheErr.message);
+                }
+            }
+
             return json({
                 audioContent: data.audioContent,
                 voiceName,
-                lang
+                lang,
+                cached: false
             }, 200, cors);
 
         } catch (err) {

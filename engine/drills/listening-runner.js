@@ -230,9 +230,13 @@ const ListeningRunner = (function () {
         const renderer = renderers[_exercise.kind];
         if (renderer) renderer(_exercise);
 
+        if (_exercise && _exercise.audio && typeof ParlourTTS !== 'undefined' && ParlourTTS.preload) {
+            ParlourTTS.preload({ text: _exercise.audio, type: 'listening' });
+        }
+
         const playBtn = _container.querySelector('[data-action="play"]');
         playBtn.addEventListener('click', () => {
-            ParlourTTS.speak({ text: _exercise.audio, type: 'listening' });
+            ParlourTTS.speak({ text: _exercise.audio, type: 'listening', triggerBtn: playBtn });
             // Unlimited replay, never penalised (spec §3) — this only fires
             // the reveal-the-answer-controls step once.
             if (!_played) {

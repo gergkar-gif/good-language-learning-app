@@ -3107,6 +3107,30 @@
   opacity: 1;
 }
 
+@keyframes speak-pulse {
+  0%, 100% { opacity: 0.45; transform: scale(0.96); }
+  50% { opacity: 1; transform: scale(1.15); color: var(--primary, #1e3a8a); }
+}
+
+@keyframes speak-active {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.12); color: var(--primary, #1e3a8a); }
+}
+
+.speak-btn.is-loading,
+.lr-play-btn.is-loading {
+  opacity: 0.9;
+  animation: speak-pulse 0.8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.speak-btn.is-playing,
+.lr-play-btn.is-playing {
+  opacity: 1;
+  color: var(--primary, #1e3a8a);
+  animation: speak-active 1.2s ease-in-out infinite;
+}
+
 /* In the word popup the button belongs beside the headword, which is set
    much larger than body copy. */
 .wp-speak {

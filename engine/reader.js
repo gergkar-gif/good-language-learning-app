@@ -633,6 +633,25 @@ const StoryAudioPlayer = {
         }
 
         this.updateProgressUI();
+        this.preloadUpcoming(0);
+    },
+
+    preloadUpcoming(startIdx) {
+        if (!this.isOnline || typeof ParlourTTS === 'undefined' || !ParlourTTS.preload) return;
+        const courseLang = (typeof Lang !== 'undefined') ? Lang.code() : 'es';
+        for (let i = startIdx; i <= startIdx + 1 && i < this.paragraphs.length; i++) {
+            const p = this.paragraphs[i];
+            if (!p || !p.text) continue;
+            const pLang = p.lang || courseLang;
+            const spk = p.speaker || 'Narrator';
+            const charVoice = this.characterVoices[spk];
+            ParlourTTS.preload({
+                text: p.text,
+                language: pLang,
+                type: 'story',
+                character: charVoice
+            });
+        }
     },
 
     updateOnlineState() {
@@ -676,6 +695,10 @@ const StoryAudioPlayer = {
         this.updatePlayBtn();
         this.updateHighlight(idx);
         this.updateProgressUI();
+
+        // Speculatively preload the upcoming paragraph in the background so
+        // playback flows seamlessly without an awkward silence between paragraphs
+        this.preloadUpcoming(idx + 1);
 
         const para = this.paragraphs[idx];
         const speakerTag = document.getElementById('ssp-speaker-tag');
@@ -928,14 +951,20 @@ window.Reader = {
                 const recCard = e.target.closest('[data-rec-story]');
                 if (recCard) {
                     const storyId = recCard.getAttribute('data-rec-story');
-                    if (storyId) self.loadStory(storyId);
+                    if (storyId) {
+                        recCard.classList.add('is-loading');
+                        self.loadStory(storyId);
+                    }
                     return;
                 }
 
                 const card = e.target.closest('.story-card');
                 if (!card) return;
                 const storyId = card.getAttribute('data-story-id');
-                if (storyId) self.loadStory(storyId);
+                if (storyId) {
+                    card.classList.add('is-loading');
+                    self.loadStory(storyId);
+                }
             });
 
             libraryEl.addEventListener('input', function(e) {
@@ -1473,6 +1502,7 @@ window.Reader = {
             return;
         }
 
+        if (typeof UI !== 'undefined') UI.showLoading('Opening story…');
         // Content.story() has no in-flight de-dup, so two taps on different
         // story cards race on the network, not on tap order — without this
         // guard, whichever fetch happened to resolve LAST won, even if it
@@ -1497,6 +1527,8 @@ window.Reader = {
         } catch (e) {
             console.error('Reader: failed to load story file', storyMeta.path, e);
             alert('Failed to load story: ' + storyMeta.path);
+        } finally {
+            if (typeof UI !== 'undefined') UI.hideLoading();
         }
     },
 
@@ -1970,6 +2002,14 @@ document.addEventListener('click', function (e) {
         }
     }
 })();
+
+document.addEventListener('language-changed', () => {
+    if (window.Reader) {
+        window.Reader.stories = [];
+        window.Reader.currentStory = null;
+        window.Reader.currentStoryId = null;
+    }
+});
 
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = window.Reader;

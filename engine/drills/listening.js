@@ -374,6 +374,14 @@ const ListeningDriller = (function () {
         _container.querySelector('[data-action="change-settings"]').addEventListener('click', _abortSession);
 
         const exerciseRoot = _container.querySelector('.gd-exercise');
+        if (typeof ParlourTTS !== 'undefined' && ParlourTTS.preload) {
+            if (_queue[_queueIndex] && _queue[_queueIndex].audio) {
+                ParlourTTS.preload({ text: _queue[_queueIndex].audio, type: 'listening' });
+            }
+            if (_queue[_queueIndex + 1] && _queue[_queueIndex + 1].audio) {
+                ParlourTTS.preload({ text: _queue[_queueIndex + 1].audio, type: 'listening' });
+            }
+        }
         ListeningRunner.render(exerciseRoot, {
             exercise: _queue[_queueIndex],
             onResult: correct => {
