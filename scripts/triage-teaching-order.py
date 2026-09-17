@@ -49,6 +49,42 @@ ENGLISH_HINT = re.compile(r"\(([^)]+)\)")
 SQUARE_BRACKET_HINT = re.compile(r"\[([^\]]+)\]")
 SPANISH_MARKER = re.compile(r"[áéíóúñ¿¡]")
 SPANISH_ARTICLE = re.compile(r"^(el|la|los|las|un|una)\s")
+# Short, accent-free Spanish sentences ("Era abogado.") don't trip either
+# check above, so bracket_gloss() defaulted to guessing -- and guessed
+# wrong more than half the time (found 2026-09-17, b1-06-05.ex09: "He was
+# a copyist in a law office. [Era copista en una oficina de abogados.]"'s
+# sibling options "He was a lawyer. [Era abogado.]" had no marker on
+# either side, so the default silently kept the Spanish side and
+# discarded the English "lawyer"/"manager" as if THEY were the gloss).
+# These common function words settle most of the remaining ambiguous
+# cases without needing accents.
+SPANISH_WORDS = re.compile(
+    r"\b(era|fue|son|es|hay|que|para|con|muy|pero|porque|cuando|donde|"
+    r"como|si|no|se|su|sus|le|les|lo|los|las|del|al|más|también|puede|"
+    r"debe|tiene|está|están|estaba|vamos|voy|va)\b"
+)
+ENGLISH_WORDS = re.compile(
+    # "he" deliberately excluded: it collides with Spanish "he" (the
+    # present-perfect auxiliary, "he comido" = "I have eaten") badly
+    # enough to actively misfire rather than just miss (found 2026-09-17,
+    # b1-14-02.ex03 -- "he" sentence-initial in a present-perfect exercise
+    # made an otherwise all-Spanish sentence outscore its own English
+    # bracket, so bracket_gloss() kept the Spanish side and discarded it
+    # as if it were the gloss). Better to stay silent on this signal than
+    # be confidently wrong on an entire grammar topic's worth of exercises.
+    r"\b(the|was|were|is|are|she|they|we|you|it|his|her|their|this|"
+    r"that|with|for|because|when|where|how|if|not|can|could|would|"
+    r"should|must|going|will)\b"
+)
+
+
+def spanish_score(text):
+    t = text.lower()
+    return len(SPANISH_MARKER.findall(t)) + len(SPANISH_WORDS.findall(t)) + (2 if SPANISH_ARTICLE.match(t) else 0)
+
+
+def english_score(text):
+    return len(ENGLISH_WORDS.findall(text.lower()))
 
 
 def looks_spanish(text):
@@ -61,16 +97,31 @@ def bracket_gloss(text):
     bracket holds the English gloss and the main text is Spanish, but 573
     of B1's ~3,200 bracket pairs have it backwards -- English main text,
     [Spanish] in the bracket (found 2026-09-17, e.g. "The consequence of
-    trusting too easily. [La consecuencia de confiar demasiado.]"). Whichever
-    side doesn't look Spanish is treated as the gloss to discard."""
+    trusting too easily. [La consecuencia de confiar demasiado.]").
+    Whichever side scores more Spanish is the real content; the other side
+    is the gloss to discard. Short, accent-free sentences ("Era abogado.")
+    can score 0 on both sides -- found the same day, b1-06-05.ex09's
+    sibling options had no signal either way, so the old two-branch
+    version (spanish-or-not) silently defaulted to keeping the Spanish
+    side and discarding "lawyer"/"manager" as if THEY were the gloss.
+    When neither side scores, don't guess -- return nothing rather than
+    risk picking the wrong one."""
     m = SQUARE_BRACKET_HINT.search(text)
     if not m:
         return ""
     inner = m.group(1)
     outer = (text[: m.start()] + text[m.end():]).strip()
-    if looks_spanish(inner) and not looks_spanish(outer):
+    inner_es, outer_es = spanish_score(inner), spanish_score(outer)
+    if inner_es > outer_es:
         return outer
-    return inner
+    if outer_es > inner_es:
+        return inner
+    inner_en, outer_en = english_score(inner), english_score(outer)
+    if outer_en > inner_en:
+        return outer
+    if inner_en > outer_en:
+        return inner
+    return ""
 
 
 def is_meaning_check(ex):

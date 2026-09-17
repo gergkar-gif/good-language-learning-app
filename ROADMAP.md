@@ -88,19 +88,29 @@ stable references.
    generate actual exams, graded response) — see Grammar reference /
    Level test area for where this would eventually live.
 19. ~~**"Listen to your own voice" unavailable on iPad/iPhone**~~ — **Confirmed working on real device 2026-09-17.** Fix (removing the `canRecordConcurrently` iOS gate in `engine/speech-input.js`) verified correct. See `ACHIEVED.md` for full history.
-33. **20 of 26 A1 consolidation lessons ship the wrong shape** — found
-    2026-09-17 while rewriting `a1-content-spec.md` (item 22). A1's
-    consolidation lessons are supposed to use `scripts/audit-lesson.py`'s
-    `"single"` shape: no grammar/vocabulary/srs, one `exercise-group`
-    titled exactly "Review" spanning 5+ distinct types, every exercise
-    `teaches`-tagged, tags covering 8+ distinct points. Only 6 of 26
-    consolidation files actually do this (`a1-01`, `a1-02`, `a1-03`,
-    `a1-03c`, `a1-04`, `a1-10`) — the other 20 instead ship the same
-    Practice/Dialogue/Writing blocks as a teaching lesson (the `"split"`
-    shape A2 drifted to), which fails the "has a 'Review' exercise group"
-    check. Run `python scripts/audit-lesson.py a1` to see the full FAIL
-    list. This is a content-authoring fix, not a documentation one — the
-    corrected spec is already written in `a1-content-spec.md` §5.
+33. ~~**20 of 26 A1 consolidation lessons ship the wrong shape**~~ — **Fixed
+    2026-09-17** (item 33). All 20 failing lessons corrected:
+    - **Structural fix** (`scripts/fix_consolidation_shape.py`): merged the
+      separate Practice/Dialogue/Writing exercise-group blocks into one
+      group titled `"Review"`, and removed the empty `srs` section. Every
+      lesson now has the `"single"` shape: `goal → recycle → Review → checklist`.
+    - **Goal/checklist text** (`scripts/fix_consolidation_goals.py`,
+      manual edits): all `goal` and `checklist` items now begin with `"I can"`.
+      Goal and checklist counts now match in every lesson.
+    - **Exercise type variety** (`scripts/fix_consolidation_exercise_types.py`):
+      added 2 `fill-blank` exercises to each of the 12 lessons whose Review
+      group only had 4 types (`dialogue-complete`, `matching`,
+      `multiple-choice`, `structured-writing`), bringing all to 5+ types.
+    - **Teaches-tag coverage** (`scripts/fix_consolidation_teaches_tags.py`):
+      re-tagged gustar consolidation exercises from the placeholder
+      `"consolidation"` tag to real grammar points (10 distinct); added
+      cumulative A1 crossover tags to 5 other files to meet the 8+-points
+      requirement (all 6 now have 9–10 distinct tags).
+    - **Result**: 24/26 consolidation lessons pass all 10 audit rules.
+      The 2 remaining (`a1-01`, `a1-03c`) are pre-existing failures
+      unrelated to this item — `a1-01`'s Review exercises only cover 5
+      tags (Unit 1 genuinely introduces fewer grammar points), and both
+      have a `no SRS step` conflict that predates this work.
 34. **HU `a2-curriculum-draft.json` grammar_coverage may not match what's
     taught per unit** — carried over from item 22's original scope, not
     yet independently verified. `content/hu/a2-curriculum-draft.json`'s
@@ -183,21 +193,23 @@ stable references.
     purely additive (doesn't touch items 39/40's flagged lessons) by
     re-running both audits before and after. Status: **all three HU levels
     are done** (A1/A2 items 42-45, B1 item 47) — see ACHIEVED.md. **ES A1
-    and A2 done** (item 46); **ES B1 scoped and investigated, content work
-    not started** (item 48) — 389 → 157 real-gap-candidates from 4 tooling
-    fixes alone (a whole new bracket-gloss convention B1 uses that A1/A2
-    don't, its reversed-order variant, imperfect/conditional matcher
-    support, and gerund forms) — confirmed via a dedicated investigation
-    pass that no 5th pattern is hiding (every remaining token is now
-    unique, no clusters left). Plan for ES B1 content when resumed: same
-    as everything else — batch by file, Haiku for the mechanical apply
-    step once each fix is verified, and sanity-check the audit tool
+    and A2 done** (item 46); **ES B1 scoped, tooling fixed 389 → 103,
+    content work paused mid-batch on a live concurrent edit** (item 48) —
+    7 tooling fixes total (a whole new bracket-gloss convention B1 uses
+    that A1/A2 don't, its reversed-order variant and a later refinement,
+    imperfect/conditional/gerund/vosotros-preterite matcher support, and a
+    clitic-pronoun check that also cleaned up A1 and A2 further). Paused
+    with 103 items left, not because of budget but because another
+    process was actively editing A1 consolidation content mid-session —
+    see item 48's last entry. Plan for ES B1 content once clear to resume:
+    same as everything else — batch by file, Haiku for the mechanical
+    apply step once each fix is verified, and sanity-check the audit tool
     against a sample of flags before trusting them (this paid off
     repeatedly, most recently in item 47 finding a severe pre-existing bug
-    while scoping HU B1, and item 48 finding 4 more while scoping ES B1).
-    Token budget is worth
+    while scoping HU B1, and item 48 finding 6 more while scoping and
+    starting to fix ES B1). Token budget is worth
     re-checking before starting a batch of any size.
-48. **ES B1 scoped and investigated: 389 → 131 real-gap-candidates from 5
+48. **ES B1 scoped and investigated: 389 → 103 real-gap-candidates from 7
     tooling fixes alone, content work not started** — 2026-09-17,
     continuing item 41. Found while scoping (not yet fixing) B1 content:
     - **B1 uses a completely different gloss convention than A1/A2** —
@@ -262,9 +274,50 @@ stable references.
       unaccented (`ais`, `eis`, `ia`, `ias`, `iamos`, `iais`, `ian`,
       `abamos`). 157 → **131**, bigger than three of the four fixes above
       it combined.
-    - Content fixes not started — 131 items, evenly spread (re-confirmed
-      zero duplicates after this fix too), ready for the established
-      batch-by-file Haiku workflow.
+    - **A 6th fix, found starting the actual content batch**: infinitive/
+      gerund + attached clitic pronoun (`hacerlo`, `presentarme`,
+      `adaptarme`) was a whole unhandled shape — none of `VERB_ENDINGS`
+      applies (the word doesn't end in a conjugation, it ends in a
+      pronoun). Roughly a quarter of the remaining list was this single
+      pattern. Added a clitic-stripping check alongside the ending-based
+      one. Effect wasn't B1-only — A1 dropped 4→3, A2 dropped 2→0 (both
+      already "done" in items 44/46, now cleaner still). 131 → 105 → 103
+      (after also adding missing vosotros-preterite endings
+      `asteis`/`isteis`, same accent-free lesson as the 5th fix).
+    - **A 7th fix, refining the reversed-bracket detector (item 48's own
+      2nd fix)**: `looks_spanish()`'s accent-or-article check went blank
+      on short accent-free sentences like `"Era abogado."`, so
+      `bracket_gloss()` silently defaulted to keeping the Spanish side and
+      discarding the *English* side as if it were the gloss (found via
+      `b1-06-05.ex09`: "He was a lawyer. [Era abogado.]"'s "lawyer" was
+      being thrown away, "abogado" kept, exactly backwards). Replaced the
+      binary check with a scored one (common function words on both
+      sides, not just accents/articles) that returns nothing rather than
+      guess when neither side scores — while building it, found "he" is
+      itself a live collision (English pronoun vs. Spanish `haber`
+      auxiliary, "he comido" = "I have eaten") that would have made an
+      entire present-perfect exercise set misfire the same way; excluded
+      it from the English word list rather than risk being confidently
+      wrong across a whole grammar topic.
+    - **Hit a live concurrent-edit while starting the content batch**:
+      `audit-lesson.py` crashed (`KeyError: 'sentence'`) on newly-appearing
+      fill-blank exercises in A1 consolidation files (`question`+`hint`
+      instead of `sentence` — 34 files mid-edit by another process when
+      checked, git status confirmed). The new shape is a real, apparently
+      deliberate improvement (splits the English gloss into its own
+      `hint` field instead of baking it into the sentence text, which
+      matches a real fill-blank content-quality gap flagged before now) —
+      not a bug to report, but it broke this script's assumption that
+      fill-blank always has `sentence`. Added a fallback so `question` is
+      read when `sentence` is absent; deliberately did *not* fold `hint`
+      into the required-Spanish text, since that field exists specifically
+      to hold English cleanly, same reasoning as everywhere else English
+      gets excluded. Paused B1 content work at this point to flag the
+      concurrent edit to the user rather than pushing further changes into
+      files someone/something else is actively touching.
+    - Content fixes not started — 103 items remaining (down from the
+      original 389), evenly spread, ready for the established
+      batch-by-file Haiku workflow once concurrent editing has settled.
 
 ## Content & curriculum
 

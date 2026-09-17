@@ -107,7 +107,17 @@ def exercise_spanish(ex):
     if kind == "matching":
         return [pair[0] for pair in ex["pairs"]]
     if kind == "fill-blank":
-        return [ex["sentence"]] + (ex["answers"] if "answers" in ex else [ex["answer"]])
+        # Some fill-blank exercises now use "question" (+ a separate
+        # "hint" field for the English gloss) instead of "sentence" --
+        # found 2026-09-17 mid-session, a concurrent content-editing pass
+        # touching A1 consolidation files crashed this on KeyError before
+        # the fallback existed. "hint" isn't included here: it's already
+        # meant to be pure English (the gloss this new field split out of
+        # the old baked-in "(...)" convention specifically to fix), so
+        # including it would only reintroduce exactly the ambiguity this
+        # newer shape avoids.
+        stem = ex["sentence"] if "sentence" in ex else ex["question"]
+        return [stem] + (ex["answers"] if "answers" in ex else [ex["answer"]])
     if kind == "sentence-builder":
         return ex["tiles"]
     if kind == "dialogue-complete":
