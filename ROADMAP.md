@@ -692,6 +692,24 @@ stable references.
       `curriculum.json` does carry real `newWords`/`exercises` counts per
       lesson already (better plan data than Spanish A1 has), but nothing
       cross-checks lesson content against those counts yet.
+41. **Paused: working items 39/40's real-gap-candidate lists into actual
+    content fixes** — paused 2026-09-17, two independent reasons:
+    - **Waiting on Antigravity.** User is running a separate tool/agent
+      ("Antigravity") doing a big content-fill pass over existing ES/HU
+      content right now — starting the backfill here concurrently risks
+      both editing the same files. Ask the user whether that pass has
+      finished before touching any content.
+    - **Token budget.** Checked usage mid-conversation: already 56% of the
+      5-hour window and 61% of the weekly all-models cap (Pro plan).
+      ES's 626 + HU's 171 = 797 flagged items is too much to fix
+      one-round-trip-per-item without burning through both. Planned
+      approach once resumed: batch fixes **by file, not by flag** (most
+      flags on a unit cluster onto the same grammar-table file, so this
+      should turn ~800 flags into closer to 100-150 actual edits), use a
+      cheaper model (Haiku) for the mechanical "apply this exact edit"
+      step once each fix is verified and fully specified, and pilot a
+      small batch (~15-20 items) first to measure real cost-per-fix before
+      committing to the rest. Not started.
 
 ## Content & curriculum
 
