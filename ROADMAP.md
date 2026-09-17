@@ -80,9 +80,9 @@ additions stay purely additive.
 Active work, in dependency order, as of 2026-09-16 — supersedes any
 in-session task tracker, which doesn't persist between sessions. Update
 this list directly rather than relying on a tool-specific todo list.
-Items 1-8, 20, 21, and 22 shipped and moved to `ACHIEVED.md` — numbering
-below keeps its original gaps on purpose, so item numbers stay stable
-references.
+Items 1-8, 20, 21, 22, and 28 shipped and moved to `ACHIEVED.md` —
+numbering below keeps its original gaps on purpose, so item numbers stay
+stable references.
 
 9. **Future feature, unscoped**: CEFR real-exam practice mode (source or
    generate actual exams, graded response) — see Grammar reference /
@@ -471,13 +471,6 @@ references.
       `maxSeconds` plumbing built here is exactly what that will also
       need (just a bigger number and a different prompt source), so no
       rework expected when it lands.
-28. **Writing/Speaking Studio topic prompts sourced from real exam
-    topics** — user wants topic *prompts* (not a full exam-simulation
-    mode — that's the separate item 9 above) modeled on real CEFR exam
-    topics rather than internally invented ones. User will source these
-    via ChatGPT and hand over a `.txt` file (matches their usual workflow
-    for translation-style content — see the `translation-task-workflow
-    -preference` note in memory). Waiting on that file; not started.
 29. **Hungarian CEFR Can-Do Passport loaded no skills; Decks review back
     button showed garbled text** — **Fixed 2026-09-16.** Two unrelated
     bugs, one report:

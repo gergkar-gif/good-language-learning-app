@@ -2,30 +2,42 @@
 
 ## Original Story
 
-Rewritten 2026-08-07 to match `content/es/stories/original/a1` exactly (20 of 20 chapters exist and are written).
+Updated 2026-09-17 based on actual story files in `content/es/stories/original/a1/` and unit assignments in `a1.md`. The 27 total stories consist of 19 stories linked to units (shown below with unit numbers), plus 6 written but not yet linked (in the second table) — the remaining 7 units have no story wired in at all yet. Note: Unit 4 shares its story title with Unit 2; Unit 14's story is "El número del autobús" (not "Un paseo por Hanói" as the previous version incorrectly listed).
 
-| Lesson | Story |
-|---------|--------|
+| Unit | Story |
+|------|-------|
 | 1 | Carlos conoce a Meg |
-| 2 | Un café después de clase |
-| 3 | Los amigos de Meg |
-| 4 | Un sábado en Hanói |
+| 2 | Los amigos de Meg |
+| 3 | Cómo es cada uno |
+| 4 | Los amigos de Meg |
 | 5 | La familia de Carlos |
-| 6 | Una videollamada con Daniela |
-| 7 | El nuevo apartamento |
-| 8 | En el supermercado |
-| 9 | Una cena mexicana |
-| 10 | El cumpleaños de Meg |
-| 11 | Un fin de semana activo |
-| 12 | El número del autobús |
-| 13 | ¿Dónde está Kaylee? |
-| 14 | Un día de lluvia |
-| 15 | El primer día de trabajo |
-| 16 | La revisión del bebé |
-| 17 | Las vacaciones |
-| 18 | Una fiesta en familia |
-| 19 | Un último día en Hanói |
-| 20 | ¡Buen viaje! |
+| 8 | El nuevo apartamento |
+| 9 | En el supermercado |
+| 11 | Un café después de clase |
+| 12 | El cumpleaños de Meg |
+| 13 | Una cena mexicana |
+| 14 | El número del autobús |
+| 15 | Un sábado en Hanói |
+| 16 | ¿Dónde está Kaylee? |
+| 17 | Un día de lluvia |
+| 18 | El primer día de trabajo |
+| 20 | La revisión del bebé |
+| 23 | Un fin de semana activo |
+| 25 | Las vacaciones |
+| 26 | ¡Buen viaje! |
+
+### Written but not yet linked to a lesson
+
+These six stories exist as written files but are not currently referenced in any unit's lessons.
+
+| Unit | Story (File) |
+|------|--------------|
+| 7 (Reflexive Verbs) | Una mañana ocupada en Hanói |
+| 10 (Demonstratives) | De compras en el mercado de Hanói |
+| 19 (Present Continuous) | Una llamada telefónica en Hanói |
+| 21 (Doler) | Un dolor de cabeza en Hanói |
+| 22 (Gustar) | Las cosas que le gustan a Meg |
+| 24 (Poder/Saber) | Nuevas habilidades en Hanói |
 
 ---
 

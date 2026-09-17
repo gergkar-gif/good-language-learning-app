@@ -52,20 +52,7 @@ Every lesson must satisfy all of the following before it is considered complete.
 
 ## Reading
 
-### Lessons 1–9
-
-- [ ] Original story only.
-
-### Lesson 10
-
-- [ ] Original story.
-- [ ] Classic story.
-
-### Lessons 11–20
-
-- [ ] Original story.
-- [ ] Classic story.
-- [ ] World text.
+- [ ] Original story only (every A1 lesson with a story).
 
 ---
 

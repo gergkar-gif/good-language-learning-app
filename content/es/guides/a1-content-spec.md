@@ -1,26 +1,37 @@
 # A1 Content Specification
 
-This document defines the minimum content required for every A1 **teaching**
-lesson — lessons 1 to 17.
+This document defines the minimum content required for an A1 **teaching**
+lesson and for a unit's **consolidation** lesson.
 
-Lessons 18, 19 and 20 are **review lessons** and are deliberately out of scope.
-They introduce no new words and no new grammar, so almost none of the rules
-below apply to them: they need their own format, which has not been designed
-yet. `scripts/audit-lesson.py` skips them rather than reporting failures
-against rules that were never meant for them.
+**The real, enforced spec is `scripts/audit-lesson.py`, not this document.**
+This file explains the rules in prose; the script is what actually checks
+content and is the tie-breaker if the two ever disagree. Run
+`python scripts/audit-lesson.py a1` before trusting either.
 
-`content/es/lessons/a1/a1-01.json` is the reference implementation. It passes
-`scripts/audit-lesson.py`, `scripts/validate-content.py` and
-`build-manifest.py`, and later lessons should copy its shape.
+A1 is **26 units of 6 lesson files each** — five teaching lessons
+(`a1-01-01.json` … `a1-01-05.json`) and one consolidation
+(`a1-01-consolidation.json`) — 156 lessons total. Some unit slots are keyed
+by a word slug instead of a two-digit number where the number would collide
+with an old pre-restructure slot (e.g. `a1-cafe-01.json`, `a1-abilities-
+01.json`); see `a1.md` for the full unit list and which slug belongs to
+which unit. `content/es/lessons/a1/a1-01-01.json` is a reasonable structural
+example to copy, but "reference implementation" should not be assumed —
+check any candidate template against the audit script first, not just
+against this doc (several shipped units, including consolidations, do not
+currently pass — see the note under "Consolidation lessons" below).
 
 ---
 
 ## 1. Grammar
 
-- 1 grammar explanation **per concept** — a lesson teaching two things (Lesson 1 is greetings *and* `ser`) gets one file each, and the engine renders one screen per file
-- Maximum 300 words of prose per file
-- 3–5 worked examples per file
-- 1 Lingolia reference per file, as the **last** part of the file
+- 1 grammar explanation **per concept** — a lesson teaching two things gets
+  one file each, and the engine renders one screen per file
+- Maximum 300 words of prose per file (enforced: `GRAMMAR_MAX_WORDS`)
+- 3–5 worked examples per file, when an `examples` part is present (enforced:
+  `GRAMMAR_EXAMPLES`)
+- A Lingolia reference (`external-link` part) is expected as the last part of
+  the file; the script only warns if it's missing (e.g. a Latin America
+  focus screen may legitimately skip it)
 - Every bare Spanish word or phrase inside a `text`/`tip` part's prose must
   be wrapped in `*asterisks*` (`*hay*`, `*ir a* + infinitive`) — see
   `editorial-style-guide.md`'s Grammar section for the full rule. Don't wrap
@@ -42,35 +53,32 @@ Lingolia.", and only the site name is hyperlinked:
 
 ## 2. Core Vocabulary
 
-Exact per-lesson targets live in `a1-vocabulary-themes.md` (that document is authoritative). Roughly:
+Per-unit shipped totals live in `a1-vocabulary-themes.md` (that document is
+authoritative and regenerated from the real vocabulary files). Units range
+from 20 to 55 new words, spread across that unit's 5 teaching lessons — the
+audit script does **not** enforce a fixed per-lesson word count for A1
+(there is no A1 entry in its `PLAN_LOADERS`), so treat any specific
+lesson-by-lesson number as a rough planning guide, not a hard target.
 
-- Lesson 1–2: 10 words
-- Lesson 3–4: 12 words
-- Lesson 5–6: 15 words
-- Lesson 7–8: 18 words
-- Lesson 9–17: 20 words
-- Lesson 18–20: Review only
-
-Every word must come from the Core Lexicon.
+Every word must come from the Core Lexicon. Every new word must appear in
+that lesson's own exercises and in the unit's story (enforced — the audit
+script checks both).
 
 ---
 
 ## 3. Original Story
 
-Required.
+Required for the lesson that carries the unit's story — usually one lesson
+per unit, not all five (a unit's other lessons rely on the same story for
+word-coverage checking, via `unit_story_ref`'s fallback, but only the
+lesson with its own `story` section gets a "Reading" exercise block). Six
+units currently have no story wired into any lesson yet at all — see
+`a1.md`'s note on the "—" rows.
 
-Target length: **100–250 words**, flat across all of A1.
-
-Revised 2026-08-07. The previous version escalated the target across the level
-(100–150 rising to 400–600), but the twenty stories that exist range from 106
-to 225 words with no upward trend — lessons 13–17 are among the shortest. The
-escalating bands described a curriculum nobody had written, and holding the
-stories to them would have meant rewriting eleven of them and roughly
-quadrupling the last three. A1 texts stay short deliberately: a beginner
-reading tap-to-translate does not benefit from length.
-
-Length may grow again at A2 and above, where it should be set from the stories
-that actually get written.
+Target length: **100–250 words**, flat across all of A1. A1 texts stay
+short deliberately: a beginner reading tap-to-translate does not benefit
+from length. Length may grow again at A2 and above, where it should be set
+from the stories that actually get written.
 
 Only previously introduced grammar may be used.
 
@@ -78,21 +86,27 @@ Only previously introduced grammar may be used.
 
 ## 4. Exercises
 
-Exactly 15 exercises, grouped into four blocks. Revised 2026-08-07 from the
-previous 9; the blocks below are the `exercise-group` sections in the lesson
-file, in this order.
+A teaching lesson's exercises are grouped into `exercise-group` sections,
+checked structurally by the audit script in this order:
 
-| Block | Count | Where it sits |
-|-------|------:|---------------|
-| Practice | 6 | After the grammar screens, before the vocabulary list |
-| Reading | 4 | After the story |
-| Dialogue | 3 | After reading |
-| Writing | 2 | Last, before SRS |
+| Block | Required when | What's checked |
+|-------|---------------|-----------------|
+| Practice | Always | Spans **5+ distinct exercise types** (a block that's four matchings and two fill-blanks does not qualify) |
+| Reading | Only on the lesson carrying the unit's story | Its exercises carry no `teaches` tag (they're about the story just read, not testing a recyclable point) |
+| Dialogue | Always | — |
+| Writing | Always | — |
 
-The Practice block must span **at least 5 distinct exercise types** — a block
-of six that is four matchings and two fill-blanks does not qualify. Available
-types are in `a1-exercises.md`; the machine-readable list is
-`content/es/schemas/exercises.schema.json`.
+A1 has no Listening block — that was introduced at A2 (see
+`listening-plan` in project memory) and predates A1.
+
+**There is no fixed total or per-block count enforced for A1** (unlike A2
+and B1, which have a per-lesson plan document the script checks counts
+against). Shipped lessons currently run **12–19 exercises total**: Practice
+typically 8–16, Reading 1–5 (only on lessons that have one), Dialogue 2–4,
+Writing 1–3. Treat these as the current shape, not a target to hit exactly.
+
+Available exercise types are in `a1-exercises.md`; the machine-readable
+definitions are `content/es/schemas/exercises.schema.json`.
 
 **`fill-blank` hints.** When a blank is genuinely unrecoverable without a
 nudge (the missing word can't be inferred from the sentence alone — a
@@ -101,127 +115,64 @@ append a short parenthetical hint to the end of `sentence`, e.g. `"Ayer __
 en el festival. (bailar)"` or `"¿Y ___? (and you?)"`. Don't add one just
 because a blank is hard — only when it's genuinely unguessable; most
 blanks shouldn't have one. **This is scheduled to change**: a dedicated
-`hint` field is planned (see `ROADMAP.md` → Workshop →  "Fill-blank
+`hint` field is planned (see `ROADMAP.md` → Workshop → "Fill-blank
 exercises should carry a real, typed `hint` field") so the hint can render
 styled and distinct from the sentence instead of being silently part of
 the same string. Once that field exists in `exercises.schema.json`, use it
 instead of the trailing-parenthetical convention — this note will be
 updated at that point.
 
-Practice draws on the vocabulary that is formally presented in the next
-section, so those six exercises are the learner's first contact with the
-words.
+---
+
+## 5. Consolidation lessons
+
+Every unit's 6th lesson is a consolidation — no new grammar, no new
+vocabulary, nothing to add to SRS. The audit script enforces one specific
+shape for A1 (`CONSOLIDATION_SHAPE["a1"] == "single"`):
+
+- **No** `grammar`, `vocabulary`, or `srs` section.
+- Exactly one `exercise-group` titled exactly **"Review"**.
+- That group spans **5+ distinct exercise types**.
+- **Every** exercise in it carries a `teaches` tag (this is what makes a
+  review auditable — it's the only place grammar from Lesson 2 and Lesson
+  14 can turn up in consecutive exercises).
+- The union of `teaches` tags across the group covers **8+ distinct
+  points** — the check that a review actually ranges across the unit
+  instead of drilling one thing repeatedly.
+
+**Not yet true of every shipped consolidation.** As of this writing only 6
+of the 26 consolidation files (`a1-01`, `a1-02`, `a1-03`, `a1-03c`, `a1-04`,
+`a1-10`) actually use this "Review" shape. The other 20 instead ship the
+same Practice/Dialogue/Writing blocks as a teaching lesson (the shape A2
+drifted to, called `"split"` in the audit script) — which means they fail
+the "has a 'Review' exercise group" check. This is a real content gap, not
+a documentation question; it's tracked as its own roadmap item rather than
+fixed here.
 
 ---
 
-## 4b. Split lessons
+## 6. Classic Story & World Text
 
-A slot whose grammar is too much for one sitting is split into **parts** —
-`a1-03a`, `a1-03b`, `a1-03c` — added 2026-08-08, when Lesson 3 turned out to
-need three grammar screens (articles, `presentar`, `ser` + adjective) before a
-single exercise. Three short classes teach that better than one long one.
-
-The parts share the slot, so Lesson 4 is still Lesson 4: the lesson row number
-comes from the filename (`label` in `curriculum.json`), not from the row's
-position in the list.
-
-A part is a whole lesson — its own goals, one grammar screen, its own
-vocabulary and SRS step, its own checklist — but a shorter one:
-
-| Block | Per part | Where it sits |
-|-------|---------:|---------------|
-| Practice | 4 | After the grammar screen, before the vocabulary list |
-| Reading | 4 | **Only in the part that carries the story** |
-| Dialogue | 1 | After reading |
-| Writing | 1 | Last, before SRS |
-
-And across the unit:
-
-- The slot's word target is **split evenly** between the parts (Lesson 3: 12 → 4 + 4 + 4). Give each part the words its own grammar screen uses.
-- **Exactly one part carries the story**, normally the last, so the text is read once, when the learner knows all of the slot's words. The other parts' words must still appear in that story.
-- Practice spans **3+ distinct types** per part rather than 5, since a part has four exercises rather than six.
-- 2–4 checklist items per part, still one-to-one with its goals, still beginning "I can".
-- Each part gets its own row in `a1.md`, keyed `3a`, `3b`, `3c` — `audit-lesson.py` matches title, goal and grammar against it exactly as for a whole lesson.
-
----
-
-## 4c. Review lessons (18, 19, 20)
-
-Designed 2026-08-09. Lessons 18–20 teach no new words and no new grammar, so
-almost none of the teaching-lesson spec applies to them: there is no
-vocabulary target to hit, no grammar screen to write, and no new word to find
-in the story. They were skipped by the auditor until this shape existed.
-
-A review lesson has one job a teaching lesson cannot do: **show the learner
-what has decayed**. It ranges across a block of earlier lessons rather than
-drilling one point, and it is the only place where grammar from Lesson 2 and
-Lesson 14 can turn up in consecutive exercises.
-
-| Block | Count | Notes |
-|-------|------:|-------|
-| Story | 1 | The chapter for that lesson, 100–250 words like any other |
-| Reading | 4 | On the story, in English |
-| Recap | 8 | Mixed, drawn from across the block. **5+ distinct types** |
-| Dialogue | 2 | |
-| Writing | 2 | |
-
-Sixteen exercises, in this section order: goal → story → Reading → Recap →
-Dialogue → Writing → checklist.
-
-Differences from a teaching lesson, and why:
-
-- **No grammar screen.** Nothing is being taught. A recap screen would either repeat a screen the learner has already seen or become a new explanation, which is what the next level is for.
-- **No vocabulary section and no SRS step.** There are no new words to present or to offer. The block's words are already in the learner's decks, and Decks is where they are reviewed — a step offering "add 0 words to review" is worse than no step.
-- **Story comes first, not after the practice.** In a teaching lesson the story is the payoff for grammar just learned. Here it is the warm-up: it is written entirely in grammar the learner already has, so reading it is the first act of recall.
-- **Every Recap exercise carries `teaches`.** That is what makes the block auditable: the union of those tags across the lesson must cover **8 or more distinct points**, which is the check that a review actually ranges instead of drilling one thing eight times.
-
-Which lessons each review covers:
-
-| Review | Covers |
-|--------|--------|
-| 18 | Lessons 1–8 |
-| 19 | Lessons 9–14 |
-| 20 | Lessons 15–17, and a sweep of the level |
-
----
-
-## 5. Classic Story
-
-| Lessons | Required |
-|---------|----------|
-| 1–9 | No |
-| 10 | Yes |
-| 11–20 | Yes |
-
-Target length:
-
-100–300 words.
-
----
-
-## 6. World Text
-
-| Lessons | Required |
-|---------|----------|
-| 1–10 | No |
-| 11–20 | Yes |
-
-Target length:
-
-75–200 words.
+Not yet started for A1. `content/es/stories/classics/a1/` and
+`content/es/stories/world/a1/` don't exist — see `a1.md`'s Reading
+Progression section. Any per-lesson target here would be aspirational, so
+none is given; set real targets from the stories once they're actually
+planned.
 
 ---
 
 ## 7. SRS
 
-Every core vocabulary item is automatically added to the learner's SRS deck.
+Every core vocabulary item is automatically added to the learner's SRS deck
+via the lesson's `srs` section. Consolidation lessons have no `srs` section
+— there are no new words to offer, and the unit's words are already in the
+learner's deck.
 
 ---
 
 ## 8. Can-do Checklist
 
-Exactly four checklist items.
-
-Each must begin with:
-
-> I can...
+One checklist item per goal item (`goal.items` and `checklist.items` must be
+the same length — enforced). Each checklist item must literally start with
+**"I can"** (enforced). No fixed count is enforced, but shipped lessons
+typically carry 2–4.

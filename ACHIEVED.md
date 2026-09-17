@@ -9,6 +9,70 @@ needs re-reading before starting new work; it's reference only.
 
 ## Completed queue items
 
+28. ~~**Writing/Speaking Studio topic prompts sourced from real exam
+    topics**~~ — **Done 2026-09-17.** User supplied three ChatGPT-sourced
+    `.txt` files (HU A1-B1, ES A1-A2, ES B1 — 60 exam-style tasks total,
+    30 writing/30 speaking, split into Situation/Task/bullet-point-list/
+    word-or-time-target). Found on scoping that most of the work was
+    already done, uncommitted, in this working tree — apparently by a
+    concurrently-running agent: `scripts/import_cefr_exam_prompts.py`
+    (a complete parser for this exact format, both languages, both
+    modalities), `content/{es,hu}/speaking-prompts.json` (generated from
+    these same files — verified byte-for-byte identical to a fresh
+    re-run of the script), and `engine/drills/speaking.js` already
+    switched from reusing `writing-prompts.json` to its own dedicated
+    file. `writing-prompts.json` for both languages had the real prompts
+    merged in too (append-by-id, so the old internally-invented A1/A2/B1
+    prompts were still sitting alongside the new real-exam ones). Per
+    user's choice, removed those 3 old invented prompts per language
+    (kept the lone B2 one — no real-exam B2 source exists yet). Verified
+    live: `WritingDriller.render()` shows exactly the 5 real-exam prompts
+    per level (A1/A2/B1) plus the untouched B2 entry, for both `es` and
+    `hu`; a full prompt's Situation/Task/Include text renders correctly
+    on the writing screen. No code changes needed — `writing.js`'s
+    grading path already treats a missing `targetSkills` as `[]` and
+    degrades gracefully.
+22. ~~**Full guide/planning-doc staleness audit**~~ — **Done 2026-09-17.**
+    Paused 2026-09-16 after `a1.md` and `a1-vocabulary-themes.md` were
+    regenerated from `content/es/curriculum/units/a1.json` + real
+    lesson/vocabulary files, replacing the obsolete 20-sequential-lesson
+    framing with A1's real 26-units-×-6-lessons structure. Finished the
+    remaining seven A1 guide docs the same way, each read against real
+    content or `scripts/audit-lesson.py` (the actual enforced spec) rather
+    than the old prose:
+    - `a1-grammar.md`, `a1-learning-objectives.md`,
+      `a1-progression-matrix.md`, `a1-reading-plan.md`, `a1-story.md`,
+      `a1-quality-checklist.md` — mechanical extraction from
+      `content/es/curriculum/units/a1.json` and the real lesson/story
+      files, delegated to Haiku subagents and spot-checked.
+    - `a1-reading-plan.md` / `a1-story.md` also fixed a real factual
+      error: Unit 14's story is "El número del autobús" (Meg and Carlos
+      needing numbers for a museum trip), not the old "Un paseo por
+      Hanói" text, which didn't match any real story file. Both docs also
+      now correctly show 19 units with a linked story (not 20 — that
+      same off-by-one existed in `a1.md`'s own prose too and was fixed
+      there in this pass) plus the 6 written-but-unlinked topic stories.
+    - `a1-content-spec.md` and `a1-exercises.md` — rewritten by hand
+      (not delegated) against `scripts/audit-lesson.py` directly: dropped
+      the fictional §4b split-lesson-parts and §4c three-end-of-level-
+      review sections (confirmed dead architecture — 03a/03b merged into
+      one unit, 03c became its own independent unit, and there's no
+      lessons-18-19-20 review shape in the real files), replaced fixed
+      exercise-count claims ("exactly 15", "~9 exercises") with the real
+      observed ranges (12–19 total, Practice 8–16/Dialogue 2–4/Writing
+      1–3/Reading 1–5 when present), and documented all 11 schema-defined
+      exercise types (the old catalogue only listed 12 informally-named
+      ones and missed several in active use elsewhere in the app).
+    - `a1-lesson-template.md` — rewritten to match the real block shape
+      (Practice → Reading → Dialogue → Writing) instead of the old
+      per-category grouping with a fixed 9-exercise count.
+    - Found and logged as its own item rather than fixed here: 20 of 26
+      A1 consolidation lessons ship the wrong structural shape and fail
+      `audit-lesson.py` — see "Current priority queue" item 33.
+    - Not done in this pass, carried forward as its own item: HU
+      `a2-curriculum-draft.json`'s `grammar_coverage` staleness check —
+      see "Current priority queue" item 34.
+
 1. ~~**Learner Path**~~ — **Done.** Single source of truth for
    level/unit/lesson position, completion state, and last-activity
    timestamp. See "Learner model & personalized path" below (step 1).

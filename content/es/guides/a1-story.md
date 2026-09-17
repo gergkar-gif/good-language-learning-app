@@ -1,101 +1,130 @@
 # A1 Original Story Progression
 
-Rewritten 2026-08-07 to match the story chapters actually written in `content/es/stories/original/a1`. Previously this document described an intended storyline that the written chapters didn't follow (e.g. it had Andreas moving house at Lesson 5 and Kaylee arriving at Lesson 13 as a stranger — but the chapters that exist tell a different story). The chapters are the ground truth now; this is their accurate synopsis.
+Updated 2026-09-17 to cover all 26 A1 units. This document synopsizes the A1 story content — 19 units have an original story linked into lessons, and 6 additional stories exist for grammar-topic units not yet linked (the other 7 units have no story wired in at all yet). The 26-unit structure represents an expansion from the earlier 20-lesson format (see `a1.md` for the unit table).
 
-## Lesson 1 — Carlos conoce a Meg
-Carlos attends a Spanish meetup in Hanoi and meets Meg for the first time.
+Each synopsis is drawn from the story file's summary field, lightly rephrased for readability.
 
----
-
-## Lesson 2 — Un café después de clase
-After class, Carlos and Meg go for coffee and order food, chatting about learning Spanish.
+## Unit 1 — Carlos conoce a Meg
+Carlos attends a language exchange in a Mexican restaurant in Hanoi and meets Meg for the first time.
 
 ---
 
-## Lesson 3 — Los amigos de Meg
-Meg introduces Carlos to her friends at the language exchange: Daniela (their teacher), and her twin sisters Lauren and Kaylee.
+## Unit 2 — Los amigos de Meg
+Carlos meets Meg's friends at the language exchange: Daniela, a Spanish teacher from Chile, and her twin sisters Lauren and Kaylee. He makes new friends and learns about their backgrounds.
 
 ---
 
-## Lesson 4 — Un sábado en Hanói
-The group spends a Saturday exploring Hanoi together — a lake, a market, a bookshop — and each names their favourite spot.
+## Unit 3 — Cómo es cada uno
+Carlos calls home and describes his new friends to his sister Ana — Meg is friendly and kind, Daniela is tall and a Spanish teacher, and the twins Lauren and Kaylee are short and friendly, though Lauren is quiet and Kaylee is talkative.
 
 ---
 
-## Lesson 5 — La familia de Carlos
-Carlos and Meg video-call his family in Hungary. Meg meets his parents, his brother Andreas and his sister Ana.
+## Unit 4 — Los amigos de Meg
+Carlos meets Meg's friends at the language exchange, learning about who they are and making new connections within the group.
 
 ---
 
-## Lesson 6 — Una videollamada con Daniela
-Daniela organises a video call to practise Spanish, and the group compares their daily routines.
+## Unit 5 — La familia de Carlos
+Carlos and Meg video-call his family in Hungary. Meg meets his parents, his brother Andreas, and his sister Ana, and they chat about life in Hanoi.
 
 ---
 
-## Lesson 7 — El nuevo apartamento
-Friends visit Carlos and Meg's apartment and talk about the rooms and furniture.
+## Unit 8 — El nuevo apartamento
+The friends visit Carlos and Meg's apartment for the first time, exploring the rooms and furniture. They talk about the space and Carlos's living situation in Hanoi.
 
 ---
 
-## Lesson 8 — En el supermercado
-Carlos and his friends go to the supermarket, practising numbers, prices and shopping vocabulary.
+## Unit 9 — En el supermercado
+Carlos, Meg, and the group go shopping at the supermarket together, practicing numbers, prices, and shopping vocabulary while buying groceries for the week.
 
 ---
 
-## Lesson 9 — Una cena mexicana
-The friends cook a Mexican dinner together, practising kitchen vocabulary and simple instructions.
+## Unit 11 — Un café después de clase
+After their Spanish class, Carlos and Meg go to a café to relax and practice what they've learned. They order food and chatting about studying Spanish.
 
 ---
 
-## Lesson 10 — El cumpleaños de Meg
-The friends organise a small surprise for Meg's birthday and celebrate together.
+## Unit 12 — El cumpleaños de Meg
+The friends organize a surprise birthday party for Meg, decorating her apartment, bringing gifts, and celebrating together with cake and music.
 
 ---
 
-## Lesson 11 — Un fin de semana activo
-The group spends Saturday together, talking about their hobbies before heading to the park.
+## Unit 13 — Una cena mexicana
+The friends cook a Mexican dinner together at Carlos and Meg's apartment, practicing kitchen vocabulary and working as a team to prepare the meal.
 
 ---
 
-## Lesson 12 — Un paseo por Hanói
-Carlos shows his friends around some of his favourite spots in Hanoi.
+## Unit 14 — El número del autobús
+Meg and Carlos plan a visit to the museum and need numbers for everything — the opening time, which bus to take, how many stops, and their phone numbers in case they get separated.
 
 ---
 
-## Lesson 13 — ¿Dónde está Kaylee?
-Kaylee gets lost in central Hanoi and the group helps her find her way.
+## Unit 15 — Un sábado en Hanói
+The group spends a Saturday exploring Hanoi together, visiting a lake, a market, a bookshop, and other favorite spots, each naming their favorite place in the city.
 
 ---
 
-## Lesson 14 — Un día de lluvia
-Rain changes the group's plans, so they spend the afternoon in a café instead.
+## Unit 16 — ¿Dónde está Kaylee?
+Kaylee gets lost in central Hanoi, and her friends help guide her back by phone, giving her directions until she finds the café where they're waiting.
 
 ---
 
-## Lesson 15 — El primer día de trabajo
-Carlos starts a new job and tells his friends how his first day went.
+## Unit 17 — Un día de lluvia
+Heavy rain changes the group's plans for an outdoor picnic, so they spend the afternoon in a café instead, playing cards and telling stories while watching the rain outside.
 
 ---
 
-## Lesson 16 — La revisión del bebé
-Ana and Andreas take their baby for a routine medical check-up.
+## Unit 18 — El primer día de trabajo
+Carlos starts a new job in a Hanoi office and meets his colleagues and boss. Later he meets his friends to tell them how his first day went.
 
 ---
 
-## Lesson 17 — Las vacaciones
-The friends plan a trip together and talk about their holiday plans.
+## Unit 20 — La revisión del bebé
+Ana and Andreas take their baby to a health center for a routine check-up. Carlos and Meg accompany them and spend the afternoon together afterward.
 
 ---
 
-## Lesson 18 — Una fiesta en familia
-Friends and family gather to celebrate together and look back on the year.
+## Unit 23 — Un fin de semana activo
+The friends gather at a café and talk about their hobbies and free-time activities. They discover what they enjoy doing and decide to spend the afternoon together in the park.
 
 ---
 
-## Lesson 19 — Un último día en Hanói
-Before the holiday, the friends spend one last day visiting their favourite places in Hanoi.
+## Unit 25 — Las vacaciones
+The friends gather to plan a vacation trip. They discuss visiting Ninh Bình, arrange travel details, organize activities like photography and cycling, and make travel arrangements together.
 
 ---
 
-## Lesson 20 — ¡Buen viaje!
-The friends set off on their trip together, closing the first chapter of the story and setting up A2.
+## Unit 26 — ¡Buen viaje!
+The friends set off on their trip together, arriving at the train station with excitement. Carlos and Meg share a romantic moment as the train begins to move, closing the first chapter of their adventure.
+
+---
+
+## Written but not yet linked to a lesson
+
+### Una mañana ocupada en Hanói
+Meg wakes early in Hanoi and prepares for the day, showering and getting dressed. Carlos oversleeps and rushes to get ready, and they meet up to grab coffee before heading out for classes.
+
+---
+
+### De compras en el mercado de Hanói
+Carlos and Meg browse a traditional market in Hanoi, exploring handcrafted items, silk lanterns, embroidered bags, and Vietnamese water puppets. They practice using demonstratives to point out and describe items they admire.
+
+---
+
+### Una llamada telefónica en Hanói
+A sudden rainstorm surprises Meg and Carlos in different parts of Hanoi. While taking shelter, they coordinate by phone, each describing where they are and what they're doing as the weather unfolds around them.
+
+---
+
+### Un dolor de cabeza en Hanói
+After walking through temples and avenues in Hanoi's afternoon heat, Carlos develops a severe headache. Meg takes him to a traditional pharmacy where the pharmacist recommends remedies to help him recover.
+
+---
+
+### Las cosas que le gustan a Meg
+Carlos and Meg meet at a café in Hanoi and discover all the things they enjoy — Vietnamese coffee with condensed milk, history books, markets and photography, cooking for friends — and realize they have much in common.
+
+---
+
+### Nuevas habilidades en Hanói
+In a park in Hanoi, Carlos shows Meg his guitar and demonstrates traditional Spanish songs his grandfather taught him. Meg shares her language abilities in multiple languages, and they help each other practice while making plans with new friends.

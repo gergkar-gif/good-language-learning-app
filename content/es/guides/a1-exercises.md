@@ -1,158 +1,139 @@
 # A1 Exercise Catalogue
 
-## Exercise Types
+The canonical list of exercise types is `content/es/schemas/exercises.schema.json`
+— this is a readable mirror of it, not a separate source of truth. All 11
+schema types are documented below; not all of them are in use in A1 content
+today (A1 predates the Listening block, and a couple of types exist for
+other levels/languages only — noted per type).
 
-### Vocabulary
+## In use in A1 today
 
-#### 1. Multiple Choice
+### 1. Matching
 
-Choose the correct answer from 3–4 options.
+Tap a Spanish item, then its translation from a shuffled second column.
+Solved when every pair is matched; on failure the full pair list is
+revealed.
 
-**Used for**
-- Vocabulary
-- Grammar
-- Reading
-
----
-
-#### 2. Matching
-
-Match Spanish words with their English meanings.
-
----
-
-#### 3. Word Builder
-
-Unscramble letters to form a word.
-
-Example:
-
-```
-o h l a
-
-↓
-
-hola
+```json
+{ "type": "matching", "category": "vocabulary",
+  "pairs": [["hola", "hello"], ["adiós", "goodbye"]] }
 ```
 
 ---
 
-### Grammar
+### 2. Multiple Choice
 
-#### 4. Fill in the Blank
-
-Complete a sentence with the correct word or verb form.
-
-Example:
-
-```
-Yo _____ Carlos.
-
-soy
-```
+One question, one right option. On failure the correct option is
+highlighted. The most-used type across every A1 exercise category
+(vocabulary, grammar, reading, dialogue).
 
 ---
 
-#### 5. Sentence Builder
+### 3. Fill in the Blank (`fill-blank`)
 
-Arrange words into the correct order.
+Type the missing word into a sentence. Compared with punctuation stripped
+and case ignored, but accents are checked directly (`que` does not match
+`qué`). On failure the answer is filled in. See `a1-content-spec.md` §4 for
+the hint convention when a blank can't be inferred from context alone.
 
-Example:
-
-```
-Carlos
-
-soy
-
-Yo
-
-↓
-
-Yo soy Carlos.
+```json
+{ "type": "fill-blank", "sentence": "Yo _____ Carlos.", "answer": "soy" }
 ```
 
 ---
 
-#### 6. Error Correction *(A2+)*
+### 4. Sentence Builder (`sentence-builder`)
 
-Identify and correct the mistake.
+Assemble a sentence from shuffled word tiles. On failure the finished
+sentence is shown.
 
----
-
-### Reading
-
-#### 7. Reading Comprehension
-
-Answer questions based on a text.
-
----
-
-#### 8. Sentence Ordering
-
-Arrange events or dialogue into the correct order.
-
----
-
-#### 9. Paragraph Ordering *(B1+)*
-
-Arrange paragraphs into a logical sequence.
-
----
-
-### Dialogue
-
-#### 10. Complete the Dialogue
-
-Fill in the missing reply.
-
-Example:
-
-```
-Carlos:
-Hola.
-
-Meg:
-_____________
-
-A) Mucho gusto.
-B) Tengo veinte años.
-C) Está lloviendo.
+```json
+{ "type": "sentence-builder", "tiles": ["Carlos", "soy", "Yo"] }
 ```
 
 ---
 
-### Writing
+### 5. Complete the Dialogue (`dialogue-complete`)
 
-#### 11. Structured Writing
+An exchange with one line missing; pick the reply that fits from several
+options. On failure the correct option is highlighted.
 
-Complete a guided template.
-
-Example:
-
-```
-Hola.
-
-Me llamo ______.
-
-Soy de ______.
+```json
+{ "type": "dialogue-complete",
+  "prompt": [{ "speaker": "Carlos", "text": "Hola." }],
+  "options": ["Mucho gusto.", "Tengo veinte años.", "Está lloviendo."] }
 ```
 
 ---
 
-#### 12. Free Writing *(B1+)*
+### 6. Structured Writing (`structured-writing`)
 
-Write freely using the target grammar and vocabulary.
+Free writing against English prompts, one line per prompt. There's no
+single right answer, so nothing is auto-graded: once every line has text
+the learner presses Check and a model answer appears beneath each line to
+compare against.
+
+```json
+{ "type": "structured-writing",
+  "template": [{ "prompt": "Say hello.", "answer": "Hola." }] }
+```
 
 ---
 
-# A1 Lesson Distribution
+## In the schema, not yet (or not always) used in A1
 
-Every A1 lesson should contain approximately:
+### 7. Sentence Order (`sentence-order`)
 
-- 2 Vocabulary exercises
-- 2 Grammar exercises
-- 2 Reading exercises
-- 2 Dialogue exercises
-- 1 Writing exercise
+Put shuffled sentences into the correct sequence; on failure the correct
+order is listed. Used at A2/B1; no A1 content uses it yet.
 
-≈ 9 exercises total.
+---
+
+### 8. Listening Choice (`listening-choice`)
+
+Audio plays a Spanish sentence with no Spanish text on screen; the learner
+picks its meaning from English options (reuses the multiple-choice
+interaction). Belongs to the **Listening** exercise-group block, which A1
+doesn't have — introduced at A2 (see `listening-plan` in project memory).
+
+---
+
+### 9. Dictation
+
+Audio plays a Spanish sentence; the learner types what they heard. Checked
+the same way as `fill-blank`. Same Listening-block dependency as above —
+not present in A1.
+
+---
+
+### 10. Substitution
+
+Swap one word into a base sentence and see the resulting sentence — a
+pattern drill, not a graded question (same non-graded shape as
+`structured-writing`: tapping each option reveals its result, Continue
+unlocks once every option has been seen). Built specifically for
+Hungarian's case/agreement marking, where the swapped-in word needs its own
+already-inflected form supplied in the content (the engine never inflects
+Hungarian itself). **No Spanish content uses this type.**
+
+---
+
+### 11. Error Correction (`error-correction`)
+
+A Spanish sentence with one deliberate mistake; the learner retypes it
+correctly, checked the same way as `fill-blank`. **Not rendered by
+`engine/lessons.js` at all yet** — only Workshop's Grammar Driller supports
+it today. Do not reference this type from a lesson's `exercise-group` until
+`lessons.js` gains a renderer for it.
+
+---
+
+## Exercise blocks (how types are grouped in a lesson)
+
+A1 lessons don't group exercises by category the way this catalogue does —
+they group by `exercise-group` **block** (Practice, Reading, Dialogue,
+Writing), each block mixing whichever types fit. See `a1-content-spec.md`
+§4 for the real per-block rules (Practice must span 5+ distinct types;
+Reading only exists on the lesson carrying that unit's story) and real
+current exercise counts per block — this document no longer states a fixed
+lesson-wide exercise count, since none is enforced for A1.
