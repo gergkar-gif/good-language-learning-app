@@ -293,3 +293,675 @@ time. All 7 steps below are complete — matches "Completed queue items"
       first-ever full-corpus teaching-order result. A2/B1's actual
       teaching-order failures are new information (never surfaced
       before) — see ROADMAP.md's Current priority queue for what's next.
+
+10. ~~**UI/UX Overhaul Initiative (7-Phase Roadmap)**~~ — Sequenced 2026-09-12
+    to elevate Parlour's interaction ergonomics, responsive layout, and
+    aesthetic fidelity:
+    - [x] **Phase 1: Visual Identity & CSS Cleanliness** — **Done 2026-09-12**:
+      Purged legacy `.card` `background: var(--surface)` and heavy borders;
+      eliminated `.br-flag-btn` box shadow (last shadow in the codebase);
+      standardized open cream rows on `var(--bg)` with `1px solid var(--border)`
+      hairlines and `--dur-fast` transitions.
+    - [x] **Phase 2: Responsive Shell & Navigation Architecture** — **Done 2026-09-12**:
+      Desktop Constructivist sidebar (≥1024px) with brand mark and pinned XP/streak;
+      mobile bottom tab bar (<640px) with safe-area insets; tablet centered container
+      (640px–1023px); in-lesson clean screen mode (`body.in-lesson`) across all viewports.
+    - [x] **Phase 3: Exercise Ergonomics & Desktop Keyboard Flow** — **Done 2026-09-12**:
+      Added desktop hotkeys `1`–`4` with subtle monospace key badges for choices;
+      global diacritic helper toolbar (`UI.diacriticsBarHtml`) across lessons and
+      all drill runners for `es`, `hu`, and `fr`; and intelligent character-level
+      error diffing (`generateAnswerDiff`) with accent-specific feedback.
+    - [x] **Phase 4: Library & Reader Experience Polish** — **Done 2026-09-12**:
+      Added typography/font-size scaling controls (85% to 150%) persisted in localStorage
+      with dynamic line-height across both Parlour stories and My Texts reading views;
+      integrated reading scroll progress indicator track and bar;
+      added instant universal search filtering across all rooms, shelves, titles, authors, and levels
+      with match counter and clear button;
+      refined word popup (`.wp-sheet`) with desktop modal centering, hairline borders, and mobile
+      safe-area bottom padding.
+    - [x] **Phase 5: Decks & SRS Organization & Gestures** — **Done 2026-09-12**:
+      Organized massive unit deck catalogues into collapsible CEFR level sub-accordions (A1, A2, B1, B2, C1)
+      with level badge indicators and deck counts;
+      added instant universal search filtering across titles, topics, preview words, and CEFR levels
+      with auto-expanding matched accordions and clear button;
+      implemented fluid mobile touch swipe gestures on flashcard review (swipe left for Again, swipe right
+      for Good, tap to reveal answer) with dynamic rotation, color-tinted feedback, and exit animations;
+      added desktop review hotkeys (`1` Again, `2` Hard, `3` Good, `4` Easy, Space/Enter for Show/Good)
+      with visible monospace `.review-rate-hint` badges.
+    - [x] **Phase 6: Workshop & Driller Visual Unification** — **Done 2026-09-12**:
+      Standardized `.driller-progress-track` and `.driller-progress-bar` across all 9 workshop drillers
+      (`grammar.js`, `translation.js`, `listening.js`, `vocabulary.js`, `verbs/speed.js`, `hu-verb.js`,
+      `hu-suffix.js`, `hu-prefix.js`, `hu-morphology.js`);
+      standardized session HUD (`.gd-hud`, `.gd-hud-score`, `.gd-change-skill` `← Settings`);
+      standardized 4-metric results grid (`.vspeed-results`, `.vspeed-stat`) and unified 3-button post-drill
+      action loop ("Practice Again", "Change Settings", "Back to Workshop" via `Workshop.close()`), preserving
+      driller-specific actions (e.g. Vocabulary's "Add missed words to a deck").
+    - [x] **Phase 7: Dark / Low-Light Reading Theme** — **Implemented 2026-09-12**:
+      Inverted Constructivist palette (`[data-theme="dark"]` and `@media (prefers-color-scheme: dark)`)
+      with midnight navy ground (`#0C1B2B`), warm cream structure & typography (`#F5F1E8`), crisp 1px hairlines,
+      and vibrant warm orange focal accent (`#FF5A26`);
+      immediate anti-FOUC initialization in `<head>`;
+      standalone `engine/theme.js` with `'system' | 'light' | 'dark'` options and `localStorage` persistence;
+      interactive Appearance card in My Journey tab;
+      quick-toggle theme buttons in desktop sidebar and page header.
+
+11. ~~**Speaking Function & Pronunciation Engine Initiative**~~ — **Built & deployed 2026-09-14**:
+    - **Core Speech Recognition & Evaluation Engine** (`engine/speech-input.js`):
+      - Browser-native Speech-to-Text (`SpeechRecognition` / `webkitSpeechRecognition`) with multi-language mapping (`es-ES`, `hu-HU`).
+      - Transparent word-by-word evaluation tagging (`matched` vs `missed`) with diacritic, casing, and punctuation leniency via normalized Levenshtein token distance.
+      - Sound energy visualizer and live interim transcription bubble.
+      - Self-evaluation fallback mode for quiet rooms or unsupported browsers (e.g. desktop Firefox).
+      - One-tap "Can't speak right now" preference to snooze speaking exercises for 30 minutes.
+    - **Curriculum & Lesson Integration** (`engine/lessons.js`):
+      - Two dedicated speaking step types: `read-repeat` (listen to model pronunciation and repeat) and `prompt-speak` (translate prompt into target language and say it out loud).
+      - Injected 2 dedicated speaking practice steps into every curriculum lesson generated from the lesson's target vocabulary and grammar structures.
+    - **Workshop Speaking Driller** (`engine/drills/speaking.js`, `engine/drills/speaking-runner.js`):
+      - Dedicated Workshop speaking module with CEFR level selector (A1–C1), topic filters, and mode toggles (`Prompt & Speak`, `Read & Repeat`, `Mixed`).
+      - Integrated model audio replay, mic waveform animation, and comprehensive evaluation breakdowns.
+    - **SRS Flashcard Speaking Integration** (`engine/srs.js`):
+      - Voice response mode on flashcard reviews with immediate accuracy feedback.
+    - **Dual Audio Replay & Model Comparison**:
+      - Side-by-side comparison bar across Lessons, Workshop, and SRS:
+        `[Model Voice]` plays the native model pronunciation, while `[Your Voice]` replays the learner's actual recorded speech clip.
+      - Mutual audio interruption, live `Playing...` active state, and dark-mode styling.
+    - **Mobile-Proof Engineering & Learner Hesitation Debounce**:
+      - Fixed iOS Safari user gesture expiration by invoking `recognition.start()` strictly synchronously within the tap event handler.
+      - Solved hardware mic contention on mobile devices by running non-blocking background `MediaRecorder` audio buffering alongside native STT.
+      - Extended silence debounce from 1.3s to **2.8 seconds** with automatic pause resumption on native mobile `onend` to accommodate learner hesitations ("um, uh, mhh") and thinking pauses.
+      - Added safety session ceiling (25 seconds) and asset version cache-busting (`scripts/stamp-assets.py`).
+
+12. ~~**Writing & Speaking Studios, CEFR Grader Engine & Oral Leniency**~~ — **Built & deployed 2026-09-14**:
+    - **Dual Grading Engine** (`engine/grader/`): deterministic zero-dependency `LocalGrader` for instant local rubric scoring + optional `GraderEngine` for Cloudflare AI / Anthropic LLM feedback.
+    - **Writing Studio** (`WritingDriller` in `engine/drills/writing.js`): open-ended free-text written production with topic/level selection, prompt suggestions, and structured CEFR assessments.
+    - **Speaking Studio** (`SpeakingStudio` in `engine/drills/speaking.js`): unstructured speaking production practice with prompt generation, live microphone transcription, and audio playback.
+    - **Oral Modality Calibration** (`engine/grader/grader-prompt.js`): calibrated prompts and local metrics to accommodate oral speech traits (pauses, filler words, transcript capitalization/punctuation artifacts).
+    - **Manual Speech Transcript Editing**: allows learners to edit the raw speech recognition transcription before submission on unstructured speaking tasks.
+    - **Instant Auto-Stop on 100% Target Match**: automatically stops recording the exact instant target speech matches 100%, removing manual mic clicks.
+    - **Mobile Hardware Contention & Lifecycle Hardening**: eliminated MediaStream audio track hardware locks on non-audio steps, and resolved Android single-shot continuous listening conflicts.
+
+13. ~~**CEFR "Can-Do" Checklist Competencies Integration**~~ — **Built & deployed 2026-09-14**:
+    - Extracted and indexed official CEFR competency descriptors in `content/es/indexes/competencies-index.json`.
+    - Wired competencies directly into `LearnerModel` (`recordCompetencyEvidence`, `getCompetencyCoverage`), Post-Lesson Summary screen (`renderLessonSummary`), My Journey mastery stats, Level Tests, and Studio prompts.
+
+14. ~~**Library: Dual-Card Recommended Reading & Deep Bilingual Topic Search**~~ — **Built & deployed 2026-09-14**:
+    - **Dual-Card Recommendation Banner ("Pick Your Pace")**: Pinned at the top of Library tab (`.lib-recs-container`), computing a Comfortable Read ($i+0$, fluency consolidation) and a Challenging Read ($i+1$, lexical stretch / authentic narrative) based on LearnerPath level and unread status.
+    - **Deep Bilingual Topic Search**: Universal topic matching across English and Spanish (`BILINGUAL_TOPIC_SYNONYMS`) covering titles, authors, levels, unit titles, summaries, topic tags, and paragraph keywords.
+    - **Manifest Keyword Indexing**: `build-manifest.py` automatically extracts up to 80 thematic keywords from story paragraphs for offline instant search.
+    - **Word-Boundary Matching**: queries $\le 4$ chars enforce word boundaries, avoiding substring false positives.
+
+15. ~~**Offline Support & Progressive Web App (PWA)**~~ — **Built & deployed 2026-09-14**:
+    - **Service Worker** (`sw.js`): Precaches 82 core application shell assets (HTML, 8 stylesheets, core engine scripts, base curriculum and story manifests).
+    - **Dynamic Content Caching**: Network-first caching for visited lessons, grammar explanations, and readings (`/content/`).
+    - **Web App Manifest** (`manifest.webmanifest`): Standalone PWA installation on mobile and desktop with Constructivist branding.
+    - **Network-Only Bypass**: Explicitly bypasses Cloudflare sync endpoints and external AI APIs.
+    - **Offline Connectivity Status**: Floating status banner (`.offline-banner`) notifies users when operating offline.
+
+16. ~~**Decks Importer (Anki, Quizlet, CSV)**~~ — **Built & deployed 2026-09-14**:
+    - Auto-detects delimiters (tab, comma, semicolon, dash, colon), strips HTML tags, handles quotes, and validates lemmas against Lexicon dictionary.
+
+17. ~~**Codebase Health & Performance Audit (Zero-DOM Escaping & Engine Cleanup)**~~ — **Completed 2026-09-14**:
+    - **Zero-DOM String Escaping**: Replaced `document.createElement('div')` in `Reader.escapeHtml` and 8 drill/deck/verb runners (`engine/drills/grammar-runner.js`, `engine/drills/grammar.js`, `engine/drills/translation-runner.js`, `engine/verbs.js`, `engine/verbs/speed.js`, `engine/verbs/table.js`, `engine/decks/learn.js`, `engine/decks/match.js`) with fast, zero-allocation string escaping via `UI.escape()` with regex fallback. Eliminates disposable DOM nodes and GC pauses during text and exercise rendering.
+    - **Debug Console Log Cleanup**: Purged leftover verbose debug `console.log` statements in `engine/lexicon.js` and `engine/reader.js`.
+    - **Global Scope & Static Analysis Audit**: Confirmed all 64 engine scripts load and compile cleanly, with zero syntax errors, balanced CSS rules, zero unreferenced files, and 0 pictorial emojis across all code and stylesheets.
+    - **Cache & Service Worker Synchronization**: Bumped PWA service worker and asset cache query parameters to `v2026-09-14h`.
+
+18. ~~**Online Substack-Style Story Reading Player & Google Cloud TTS Architecture**~~ — **Built & deployed 2026-09-15**:
+    - **Substack-Style Reader UI** (`engine/reader.js`, `styles/components.css`): Floating bottom pill player (`.story-substack-player`) pinned above the bottom viewport, styled with Constructivist borders, subtle glassmorphism backdrop blur, and smooth transitions. Features a circular Play/Pause button, active speaker and language tags (`#ssp-speaker-tag`), paragraph scrubber slider, paragraph counter/remaining counter (`1/14`, `-13 left`), and speed toggles (`0.8×`, `1.0×`, `1.2×`, `1.5×`) defaulting strictly to natural **`1.0×`** speed.
+    - **Online-Only Graceful Visibility**: Adheres to the Core First, Enhancement Second architectural principle. Audio listening is strictly an online progressive enhancement: the player is hidden (`hidden` attribute and `.is-offline`) when disconnected (`!navigator.onLine`), and dynamically surfaces whenever internet connectivity is present. Paragraph audio buttons fall back gracefully to offline browser speech synthesis.
+    - **Zero Git Audio Bloat (In-Memory Streaming)**: Eliminated all static `.mp3` and `.wav` audio files from the repository and Git history. Audio is fetched and synthesized on demand per paragraph via in-memory `Audio` buffers with eager next-paragraph background pre-fetching, keeping the repository 100% lightweight code and text.
+    - **Cloudflare Worker TTS Proxy** (`cloudflare-worker/tts-worker.js`): Zero-dependency Cloudflare Worker proxy protecting the Google Cloud TTS API key in worker secrets. Handles CORS verification for production domains (`gergkar-gif.github.io`, `parlour.me.uk`, and `localhost`), mapping requests to Google Cloud Journey and Studio neural speech models.
+    - **Substack-Calibrated Voice Casting**: Uses Google Journey models (`en-US-Journey-F`, `en-US-Journey-O`) for rich conversational, podcast-quality English scaffolding narration, and Google Studio/Neural2 models (`es-ES-Studio-C`, `es-ES-Neural2-B`, `hu-HU-Wavenet-A`) for authentic Spanish and Hungarian dialogue.
+    - **Dual-Language Stories**: Fully supports Hungarian stories with English scaffolding narration and Hungarian dialogue. Detects paragraph `lang`, routing scaffolding to English Journey voices and Hungarian dialogue to native Hungarian voices with synchronized paragraph scrolling and active highlighting.
+    - **Hungarian Phonetic Digraph Adaptation ("Károly" -> "Károy")**: Adapted speech synthesis inputs across `engine/reader.js`, `engine/speech.js`, and offline generation tools to replace the Hungarian name `Károly` with `Károy` (reflecting the Hungarian `ly` = `/j/` digraph pronounced like English "y") for speech synthesis, while keeping proper visible orthography (`Károly`) intact on screen.
+    - **Pedagogical Comprehension Checks**: Built-in interactive multiple-choice check with immediate validation and explanations.
+    - **Schema & Manifest Integration**: Added `narration` definitions in `story.schema.json` with optional `audioFile`, and updated `build-manifest.py` so `hasAudio` is based on narration structure and paragraphs rather than local disk audio presence. Verified with 11 automated unit tests in `tests/reader/test-story-narration.js`.
+
+23. ~~**`ParlourTTS` engine abstraction (`engine/tts.js`)**~~ — **Built and
+    live 2026-09-16.** Content -> `ParlourTTS.speak({text, language, type,
+    voiceName, gender, speed, onEnded})` -> provider -> audio, so no caller
+    talks to a TTS provider directly. Cloud-first (Google Cloud TTS via
+    `cloudflare-worker/tts-worker.js`), falling back automatically to
+    device `speechSynthesis` (`engine/speech.js`'s `Speech` module) when
+    offline, the worker errors, or no API key is configured — verified live
+    in-browser (Library story reader and Workshop's Listening Driller both
+    correctly attempt cloud, catch the failure, and fall back to device
+    speech with auto-advance intact). Session-cached per
+    `language::voiceName::text` so repeat playback is free.
+    - Undoes an uncommitted regression from between 2026-09-15 and
+      2026-09-16 that had replaced item 18's real Google Cloud TTS call in
+      `tts-worker.js` with a reverse-engineered, unofficial Microsoft
+      Translator endpoint (hardcoded HMAC key pulled from the Android app).
+      Worker now calls `texttospeech.googleapis.com` directly again, using
+      Chirp3-HD voices (Google's newest natural-narration tier, and the
+      only one covering both Spanish *and* Hungarian at that quality —
+      Studio and Neural2 don't have Hungarian voices). Free tier is 1M
+      chars/month; Parlour's own estimated spoken-content corpus is a
+      one-time synthesis in the low single-digit millions of characters,
+      cached forever after. Needs a GCP project + billing account (card on
+      file, but $0 expected) and `wrangler secret put GOOGLE_TTS_API_KEY`
+      on the worker before cloud playback actually works — until then it
+      falls back to device speech automatically, nothing breaks.
+    - **GCP + Cloudflare setup completed and verified live 2026-09-16**:
+      `parlour-tts` GCP project, billing account, Text-to-Speech API
+      enabled, API key restricted to that one API, `GOOGLE_TTS_API_KEY`
+      deployed as a Cloudflare Worker secret. `/health` reports
+      `hasApiKey: true` and a real story played through Chirp3-HD end to
+      end with zero fallback warnings.
+    - **Purposeful voices by content type, same day**: `tts-worker.js`'s
+      `SHORT_VOICE` map picks by an explicit per-character voice first (see
+      below), else `gender` (`male` -> Orus, `female` -> Kore), else `type`
+      (`vocabulary`/`listening`/`pronunciation` -> Iapetus for clarity,
+      `instruction` -> Achird for a distinct "app voice", `example` ->
+      Despina, `narrator`/`reading` -> Sulafat), else the narrator default.
+      Voice names are shared across the Chirp3-HD bank per language, so the
+      same semantic map works for es/hu/en without per-language tuning.
+    - **Distinct voice per named character, same day**: a story's dialogue
+      no longer collapses every male character onto one voice and every
+      female character onto another. `reader.js`'s `assignCharacterVoices()`
+      reads each story's own `narration.speakers[name].gender` and hands
+      out one voice per character from a 6-deep gender-matched pool (Orus,
+      Puck, Charon, Fenrir, Umbriel, Algieba for male; Kore, Aoede, Leda,
+      Zephyr, Callirrhoe, Autonoe for female), assigned once per story load
+      so "Meg" keeps the same voice in every line. Worker's `character`
+      param (a short voice name) takes priority over `gender`/`type`.
+    - **All three leftovers resolved 2026-09-16**:
+      1. All ~15 remaining `Speech.speak()`/`Speech.button()`/
+         `Speech.available()` call sites (decks, lessons, library, SRS,
+         speaking runner, studyPlan, recommendationEngine) migrated to
+         `ParlourTTS` — added `ParlourTTS.available()` (online, or a device
+         voice as fallback) and `ParlourTTS.button()` (same drop-in markup
+         ergonomics as `Speech.button()`, own `[data-tts-text]` delegated
+         click listener so it doesn't collide with `Speech`'s
+         `[data-speak]` one) to make the swap mechanical. Verified live:
+         Decks word list, a lesson's vowel-sound table, and the SRS review
+         card all speak through the cloud provider with no fallback
+         warnings. Found and fixed a related latent bug along the way:
+         Speaking Studio's "play my own recording" only ever cancelled
+         `speechSynthesis`, not a still-playing cloud audio clip — now
+         calls `ParlourTTS.stop()`, which covers both.
+      2. `listening.js`'s settings screen now gates on `ParlourTTS
+         .available()` instead of `Speech.available()`, so the driller
+         works from the cloud provider alone on a device with no voice
+         installed. Same fix applied to the two other places that decide
+         whether to *recommend* Listening/Speaking activities at all
+         (`studyPlan.js`'s time-based session builder, `recommendation
+         Engine.js`'s Home candidates) — otherwise migrating the driller
+         itself would have been undercut by recommendation logic still
+         hiding it from cloud-only users.
+      3. `scripts/narrate-story.py` no longer synthesizes audio at all —
+         removed the `edge-tts` dependency, `synthesize_story_neural()`,
+         and the `audioFile` field it wrote into `narration`, along with
+         the now-dead `--no-synth` flag. It only ever generates the
+         timing/pedagogical metadata now (word-count-based paragraph
+         timing, comprehension questions, `speakers[name].gender` for the
+         voice assignment above) — verified with `--dry-run` against the
+         real content and the existing 11-test narration suite still
+         passing unchanged.
+    - **R2 audio cache added 2026-09-17**, prompted by a backend cost
+      review: `tts-worker.js`'s only cache was `ParlourTTS`'s in-memory
+      session cache (above), which meant every reload re-synthesized
+      identical lesson audio through Google TTS — pure waste, since lesson
+      text is fixed and near-all repeat traffic across learners/sessions.
+      Worker now content-addresses each synthesis (SHA-256 of
+      `languageCode::voiceName::speakingRate::pitch::text`) and checks an
+      R2 bucket bound as `TTS_CACHE` before calling Google; a miss writes
+      the MP3 to R2 after synthesis (best-effort — a write failure doesn't
+      fail the response, just costs a repeat Google call later). `/health`
+      now reports `hasR2Cache`. No client change needed — `engine/tts.js`
+      already just reads `audioContent` from the same JSON shape. Verified
+      live: `/health` returns `hasR2Cache: true` on the deployed worker.
+
+24. ~~**SRS/Decks review card: audio/mic UI stripped back down**~~ — **Built
+    2026-09-16.** The card had accumulated three overlapping audio
+    affordances: a `ParlourTTS.button()` listen icon, a separate
+    audio-first review direction (`reviewDirection === 'audio-en'`, its own
+    front/back layout and auto-play), and a self-recording "Speak" button
+    (`reviewSpeakWord()` — records via `SpeechInput`, evaluates pronunciation,
+    offers a "Hear yourself" replay). User's call: "too many things for an
+    SRS card... all I want is on the target language side to have a little
+    microphone icon... click and listen to the word. That's all. Like in a
+    Quizlet card." Removed the audio-first direction (now a plain two-way
+    Spanish/English toggle) and the self-recording/evaluation flow entirely
+    (`reviewSpeakWord`, `reviewPlayUserAudio`, their state, the `#review
+    -speak-btn`/`#review-speak-feedback` markup, `.review-speak-*`/
+    `.review-audio-*`/`.btn-audio-prompt` CSS) — kept only the one listen
+    icon next to the Spanish word. Pronunciation self-recording still exists
+    in Speaking Driller, which already covers that use case separately;
+    nothing was lost, just de-duplicated off the review card. Verified live:
+    Flip and Type modes, Show Answer, rating buttons, and the two-way
+    direction toggle all work with no console errors and no orphaned
+    references to the removed markup/classes anywhere in the codebase.
+
+25. ~~**AI-grading fixes: natural-language tips surfaced, task-completion
+    grading for can-do checks**~~ — **Built 2026-09-16.** Two related grader
+    fixes from a user feedback batch:
+    - **Lesson-end writing/speaking feedback was numbers-only.** The AI
+      grader (`engine/grader/grader-prompt.js`) already returns a
+      natural-language coaching tip (`feedback.priorities`/
+      `errors[].explanation`) — Writing/Speaking Studio already renders it,
+      but the two in-lesson checkpoints (`lessonGetWritingFeedback()`,
+      `_lessonCheckSpeakingCEFR()` in `engine/lessons.js`) only showed
+      percentage-pill dimension scores and threw the qualitative feedback
+      away. Added `_graderOneLineTip()`, a small picker (priority →
+      error explanation → strength, first available) rendered as one
+      `.lsn-hint` line under the pills in both places.
+    - **Grader too harsh on can-do checks.** A learner asked to "count from
+      1 to 10" and did exactly that got marked down for "not using full
+      sentences" — traced to `engine/drills/speaking.js`'s competency-check
+      flow (`journey.js`'s "unverified competencies" nudge, and the Studio's
+      own "Target Unverified Goals" card) hardcoding "...and use complete
+      sentences" into the TASK text sent to the grader, regardless of
+      whether the competency was an enumeration/list-style can-do or an
+      open topic — plus defaulting `targetSkills` to include
+      `sentence_structure` for every competency check. Removed both. Added
+      a new `taskCompletionPrimary` flag (threaded `speaking.js`/
+      `writing.js` → `context` → `grader-engine.js` → `grader-prompt.js`),
+      set `true` only for competency-derived prompts in both Studios: when
+      set, the prompt tells the model to ignore the normal dimension
+      weighting and score 85-100 for a production that correctly and
+      completely fulfils a concrete, bounded task, however short or
+      grammatically simple — reserving deductions for content that's
+      actually missing, wrong, or unintelligible. Verified by generating
+      prompts with the flag on/off and confirming the new instructions
+      appear/disappear and "complete sentences" no longer appears in any
+      generated prompt; existing `tests/grader/test-oral-grader.js` suite
+      still passes unchanged. The AI's actual grading behavior with the new
+      instructions can't be unit-tested (inherent to LLM grading) — worth
+      a real-usage spot-check.
+
+27. ~~**Time-Based Sessions should always include a quick speaking prompt**~~
+    — **Built 2026-09-17.** Investigated 2026-09-16 as two scopes (small:
+    loosen the existing conditional inclusion; medium: a real
+    auto-launched quick-prompt mode) — built the medium version, refined
+    from the user's own suggestion to source prompts from the CEFR can-do
+    list (the same 1,114 HU / 2,341 ES items behind My Journey's Can-Do
+    Passport — see item 29's index-generation fix) rather than inventing
+    generic ones, since a can-do statement like "I can greet someone" is
+    both a real 30-second speaking task *and* already the exact shape
+    yesterday's `taskCompletionPrimary` grading fix (item 25) was built
+    for.
+    - `engine/learnerModel.js`'s new `pickSpeakingPrompt(level)`: prefers a
+      genuinely unverified/weak competency at the learner's level
+      (`unverifiedCompetencies()`, already existed), falls back to any
+      competency from an already-completed lesson (nothing ahead of where
+      the learner actually is) at that level, any level if none yet at
+      this one, and returns `null` — not a placeholder — when there's
+      truly nothing appropriate (e.g. a brand-new learner with zero
+      completed lessons). Verified all three paths live.
+    - `engine/studyPlan.js`: new guaranteed `speaking-cando` item, ~40
+      seconds, placed ahead of the budget-gated blocks so it survives a
+      tight session — added only when `canSpeak` and a prompt was
+      actually found; skipped outright otherwise, same "never pad with
+      invented busywork" rule the rest of the allocator already follows.
+      Coexists with (doesn't replace) the existing opportunistic longer
+      Sentence-Drills `speaking` block for when there's real budget left.
+    - `engine/drills/speaking.js`'s `targetCompetency` auto-launch
+      shortcut (already used by Journey's "unverified competencies"
+      nudge) now takes an optional `maxSeconds`, defaulting to the
+      existing 300s so that entry point is unchanged; the Studio tab
+      label ("Verbal Production (5 min)") is now computed from the actual
+      cap instead of hardcoded, reset to the default on every fresh
+      `render()` that isn't itself setting a custom cap, so a quick 40s
+      session's cap can't leak into an unrelated later normal one in the
+      same page session (caught live while testing, not theoretical).
+    - Verified end-to-end: a 30-minute plan now includes both `speaking-
+      cando` ("Quick speaking — 40s") and the longer `speaking` block; a
+      10-minute plan fully consumed by its lesson correctly omits it
+      rather than forcing it in. `engine/studyPlanRunner.js` routes the
+      new kind straight to `SpeakingDriller`'s recording screen, which
+      already returns to the plan queue via the existing
+      `RecommendationEngine.mountNextAction()` → `StudyPlanRunner
+      .mountNextAction()` path once graded.
+    - **Not done**: longer, CEFR-exam-style prompts ("talk about clothes
+      for 3 minutes," matching what an actual exam asks) — that's item 28,
+      still waiting on the user's ChatGPT-sourced topics file. The
+      `maxSeconds` plumbing built here is exactly what that will also
+      need (just a bigger number and a different prompt source), so no
+      rework expected when it lands.
+
+29. ~~**Hungarian CEFR Can-Do Passport loaded no skills; Decks review back
+    button showed garbled text**~~ — **Fixed 2026-09-16.** Two unrelated
+    bugs, one report:
+    - `content/hu/indexes/competencies-index.json` (the file `engine/
+      learnerModel.js`'s `loadCompetenciesIndex()` reads) never existed —
+      only `content/es/...` did, so the Hungarian portfolio silently
+      degraded to an empty list (the loader already catches a fetch
+      failure and returns `[]`, so no crash, just nothing to show). Root
+      cause: this index was hand/one-off generated for Spanish only,
+      never added to any of the `scripts/build_*.py` family that
+      regenerates every other derived index. Added `scripts/
+      build_competencies_index.py`, which mechanically extracts each
+      lesson's `checklist`-step "I can..." items via curriculum.json
+      (same source data ES's file already came from — no new content to
+      author). Verified the ES output against the existing file before
+      trusting it for Hungarian: 0 field mismatches on 2,315 shared
+      entries; the only differences were 2 stale orphaned entries (lessons
+      no longer in curriculum.json) and 26 newer entries (the A2
+      imperfecto lessons from item 20/21 above, added after the existing
+      file was last generated) — so this run also quietly fixed ES's own
+      staleness. Generated `content/hu/indexes/competencies-index.json`
+      fresh: 1,114 items across A1/A2/B1. Verified live: Hungarian's
+      Can-Do Portfolio modal now lists real competencies grouped by unit
+      with working Speak/Write practice buttons, where it previously
+      showed nothing.
+    - `index.html`'s Decks review "← All decks" back button had been
+      triple-encoded mojibake (`â† All decks`, raw bytes
+      `\xc3\xa2\xe2\x80\xa0\xc2\x90`) since commit `084348cc5` (2026-09-13)
+      — predates this session, not something introduced here. Fixed with
+      a direct byte-level replacement back to a plain `←` character,
+      matching every other back button's style in the codebase (`engine/
+      decks.js`, `engine/library.js`, `engine/workshop.js`). Checked for
+      other visible (non-comment) instances of the same corruption
+      elsewhere in `index.html`; found none.
+
+31. ~~**Cloudflare Turnstile added to sign-in (`/auth/request-link`)**~~ —
+    built and verified live 2026-09-17, from the same backend cost/
+    security review as item 23's R2 cache. `sync-worker.js`'s only abuse
+    guard was "max 3 links per email per hour" in D1, which doesn't stop
+    a script hitting the endpoint with many distinct emails and burning
+    Resend's send quota (or getting the sending domain flagged). Client
+    (`engine/sync.js`) now mints an invisible Turnstile token before
+    calling `requestLink()`; the Worker verifies it against Cloudflare's
+    `siteverify` API (`verifyTurnstile()`) before touching D1 or Resend.
+    Designed to degrade to a no-op, not break sign-in, while unconfigured:
+    empty `TURNSTILE_SITE_KEY` client-side skips minting a token, and a
+    missing `TURNSTILE_SECRET_KEY` server-side skips verification — both
+    now set. **Setup gotcha hit during rollout:** the dashboard Secret was
+    first added as `TUSTILE_SECRET_KEY` (typo, missing "RN"), which — since
+    a missing/misnamed secret is the intentional "not configured yet"
+    no-op path — silently let every request through unverified rather than
+    erroring. Confirmed via `curl` with a deliberately bogus token: before
+    the fix, `429`/`502` (request reached D1/Resend, meaning verification
+    never ran); after renaming the secret, `403 Verification failed` as
+    expected. **Lesson: a bogus-token test, not just a missing-token test,
+    is what actually distinguishes "verification is running and rejecting"
+    from "verification isn't running at all"** — both look identical from
+    the missing-token case alone. Also found and fixed in passing: `JWT_
+    SECRET` and `RESEND_API_KEY` were stored as plain **Variable** type on
+    the Worker (plaintext-visible in the dashboard) rather than **Secret**
+    (encrypted-at-rest) — re-typed to Secret.
+
+32. ~~**AI grader switched off Llama 70B by default, ~4x cheaper per call**~~ —
+    built and verified live 2026-09-17, same backend cost review as items
+    23/31. `grader-worker.js` was trying `@cf/meta/llama-3.3-70b-instruct-
+    fp8-fast` **first on every single grading call**, not as an error
+    fallback — Cloudflare's own neuron pricing puts that model at ~6-8x the
+    per-token cost of an 8B-class model. Spent most of this item's time on
+    a real, evidence-based elimination round rather than guessing:
+    - Three Llama 8B-class candidates were tried and rejected, each with a
+      concrete, reproducible failure on the actual multi-field CEFR JSON
+      scoring prompt (not just weaker nuance): `llama-3.1-8b-instruct-fp8-
+      fast` returned `overallScore` and every dimension as `0` for a solid
+      A2 response, plus a manufactured grammar error on correct usage;
+      `llama-3.1-8b-instruct` (unquantized) turned out to be deprecated
+      server-side (Cloudflare error `5028`) and simply errors now;
+      `llama-3.1-8b-instruct-fp8` returned `overallScore` as a `0.0-1.0`
+      fraction (`0.6`) instead of the required `0-100` int, which
+      `engine/grader/schema.js`'s `clampNumber` would round straight down
+      to `1` — a learner who did well would have seen "1/100".
+    - `@cf/openai/gpt-oss-20b` was tried and abandoned without a full test:
+      it's a reasoning model that spends tokens on hidden chain-of-thought
+      before the visible answer, so it returned empty content once
+      `max_tokens` (below) was tightened — and its true per-call cost would
+      include that invisible reasoning anyway, likely erasing its sticker
+      price advantage.
+    - `@cf/mistralai/mistral-small-3.1-24b-instruct` (~4x cheaper than 70B
+      on output neurons) passed the same real-prompt spot-checks, but only
+      after fixing two root causes in `engine/grader/grader-prompt.js`
+      itself — **not model-specific, so this also hardens 70B and any
+      future cheaper model**: the required-JSON-shape example showed
+      `"overallScore": 0` sitting right next to `0.0-1.0` dimension fields
+      with nothing distinguishing its scale (a plausible reason every
+      failing 8B model got this wrong the same way), and the
+      `demonstratedSkills`/`weakSkills` object shape was only ever implied
+      by the example, never stated as a hard rule. Both are now explicit
+      "CRITICAL RULE" lines in both the written and oral prompt builders.
+      Verified with the real `buildGraderPrompt()` output (not a hand-
+      written test prompt) on both a strong A2 response (scored 72-78,
+      correctly-shaped skill objects, accurate non-hallucinated errors)
+      and a deliberately weak one (scored 20-25, confirming the score
+      tracks actual content rather than anchoring to the example's
+      placeholder number).
+    - `CANDIDATE_MODELS` is now `[mistral-small-3.1-24b-instruct, llama-3.3-
+      70b-instruct-fp8-fast]` — 70B remains a true fallback, only reached
+      if Mistral errors. Also fixed in passing: the fallback loop only
+      continued to the next candidate on error `5007`; a `5028`
+      (deprecation) hit during this session's testing instead hard-failed
+      the whole grading call, so the continue-condition now covers both.
+      `max_tokens` trimmed `3000` → `1500` (the prompt's own output-economy
+      rules already cap real responses far below either number, so this
+      only caps worst-case cost, no truncation risk).
+    - **Ship gotcha hit during rollout:** right after a `Deploy`, two
+      requests seconds apart returned two different models even with
+      identical (default) candidate settings — Cloudflare Worker deploys
+      take up to roughly a minute to fully propagate across edge
+      locations, so a request can transiently land on a PoP still running
+      the previous version. Re-tests a short while later were consistent.
+      Don't read a deploy as broken from one inconsistent request
+      immediately after clicking Deploy — retry a few times first.
+
+42. ~~**HU pilot: "Going Places" unit (a1.56-60) — fixed and verified**~~ —
+    resumed item 41, **done 2026-09-17**. Fixed lesson a1.56 (Haiku-applied
+    from fully-specified edits): added `mozi`/`étterem`/`múzeum`/`posta` to
+    its vocabulary file, added a `Hová mész?` worked example to its grammar
+    screen, reworded an off-topic dialogue opener (`Mit csinálsz?` → `Hová
+    mész?`) so it reinforces the lesson's actual grammar point instead of
+    an unrelated verb.
+    - **Bigger find while triaging a1.57-60**: every `structured-writing`
+      exercise in those lessons had a malformed `answer` field — a Python
+      tuple-repr string (`"('állomás', 'station') ('megálló', 'stop')..."`)
+      instead of a real sentence, which is why they'd shown up as apparent
+      English leaks the triage heuristic didn't recognize. Grepped the
+      whole HU exercise corpus for the same pattern: scoped to exactly
+      `a1-56` through `a1-75` (20 lessons, one broken exercise each), zero
+      elsewhere (not HU A2/B1, not ES). Sent the user a `.txt` for a1.57-60's
+      4 instances (real sentences need correct vowel harmony, not guessed);
+      user ran it through ChatGPT and returned real sentences, applied via
+      Haiku, verified valid JSON and no leftover `('` pattern. The other 15
+      lessons (a1.61-75) have the same bug, out of this pilot's scope — see
+      new item 43.
+    - **Real tooling bug found and fixed along the way**: re-auditing after
+      the content fixes still showed `útba` (a regular, correctly-taught
+      inflected form of `út`, "road") as untaught. Root cause was in
+      `scripts/audit-lesson-hu.py` itself, not content: `KnownWords`
+      bucketed known words by their first **3** characters for fast fuzzy
+      lookup, but a short root like `út` (2 chars) buckets under `"út"`
+      while its suffixed form `útba` buckets under `"útb"` — different
+      keys, so the fuzzy match never even ran. Changed the bucket key to 2
+      characters. Effect was much bigger than this one word: full-corpus
+      flag count dropped from 330 to **213** (real-gap-candidate 171 → 104)
+      — most of item 40's original count was this false-positive class,
+      not real gaps. `audit-lesson-hu.py`/`triage-teaching-order-hu.py`'s
+      numbers everywhere above (items 40/41) are now stale; 213/104 are
+      current as of this fix.
+    - Verified end-to-end: `audit-lesson-hu.py a1` shows zero remaining
+      flags for lessons a1.56-60 (one harmless leftover, an English gloss
+      `(to the road)` inside a1-60's sentence text, correctly excluded from
+      `real-gap-candidate` by the triage script).
+
+43. ~~**HU: same malformed-`answer` bug in 15 more A1 lessons (a1.61-75)**~~
+    — found 2026-09-17 while scoping item 42 (see ACHIEVED.md), **done**.
+    Same shape as that item's a1.57-60 fix, but spanned 3 different grammar
+    topics, not one uniform pattern: a1.61-65 teach 1st-person-singular
+    present tense verb conjugation (several irregular `-ik` verbs among
+    them, e.g. `enni`→`eszem`, `inni`→`iszom`), a1.66-70 teach negation
+    (`nem`) and question transformations, a1.71-75 teach daily-routine
+    present-tense language. Sent one `.txt` for all 15, grouped by grammar
+    topic; user ran it through ChatGPT.
+    - **Caught and fixed one real error in the ChatGPT reply before
+      applying**: exercise 63's `iszok` should be `iszom` (`inni` is an
+      irregular `-ik` verb, same pattern as `enni`→`eszem` which the reply
+      got right) — worth the sanity pass, not just apply-and-trust.
+    - Applied all 15 via Haiku (exact strings pre-verified, not asked to
+      judge). Re-auditing surfaced 3 new gaps the fix itself introduced —
+      several word-pair lists supplied only verbs or only nouns, so a
+      natural sentence needed a partner word the lesson never taught
+      (`víz`/`kenyér` for a1.63, `óra` — already taught two lessons later
+      in a1.75, reused here — for a1.73, `tartani` for a1.75). Added those
+      4 words to the respective lessons' vocabulary files.
+    - **Not fully clean, and that's expected, not a bug**: a1.63 still
+      flags `iszom` and `vizet` — both genuine Hungarian morphophonology
+      the bounded-prefix heuristic can't catch (suppletive stem for
+      `iszom`, vowel-length shortening `víz`→`vizet`), not something worth
+      chasing for two words. Full HU corpus: 330 → 213 (item 42's tooling
+      fix) → **209** (99 real-gap-candidate, 90 wrong-distractor-or-
+      english-option, 20 english-leak). The remaining ~99 real-gap-
+      candidates are pre-existing, unrelated to this item.
+
+44. ~~**HU: rest of a1.01-165's real-gap-candidates cleared, plus 3 more
+    triage-tool fixes**~~ — **done 2026-09-17**, continuing items 42/43.
+    Full HU corpus: 209 → **166** flags (real-gap-candidate 99 → 41; A1's
+    own real-gap-candidate count: 29 → 4).
+    - **3 more triage heuristic fixes**, same "find the pattern, don't fix
+      one word at a time" approach as items 42/43: (1) `"What does 'X'
+      mean?"` comprehension checks are deliberately all-English options —
+      281 such exercises exist across the whole HU corpus, none of which
+      the triage recognized as noise before this. (2) The wrong-distractor
+      check only applied to `multiple-choice`, not `dialogue-complete`,
+      which has the identical `options[]`/`correct` shape — missed e.g.
+      a1-11's unselected "Én itt lakom." (3) A real bug, not just a triage
+      gap: `hu_tokens()`'s proper-noun filter used the same fuzzy
+      `same_stem()` matcher as regular word comparison, so the pronoun
+      `maga` ("himself/herself") got silently swallowed as if it were a
+      form of `Magyarország` (shares "mag-") — meaning `maga` never
+      actually entered any lesson's known-vocabulary set anywhere it was
+      taught. Switched the proper-noun filter to strict `startswith`
+      (proper nouns only need to match their own suffixed forms, which is
+      always noun+suffix, so no fuzzy tolerance is needed or safe there).
+      This one fix alone dropped the full corpus by 43 (209→166) — bigger
+      than either content batch below.
+    - **~26 real vocabulary gaps fixed** across a1.01-165 (the rest of the
+      lessons items 42/43 didn't already cover): missing content words
+      used in exercises before being taught (`ők`, `kell`, `fontos`,
+      `film`, `leves`, `ebéd`, `mögött`/`között`, `tanár`, `történelem`,
+      `diák`, etc.) — applied via Haiku in one batch call across 23 files
+      after manually checking each flagged exercise's actual context first
+      (not applied blind). Also added `bécs` (Vienna) to `HU_PROPER_NOUNS`
+      — same proper-noun-not-taught issue as items 30/42's Spanish/HU
+      place-name lists.
+    - **Left deliberately unfixed (4 flags)**: `a1-01-practice-3`'s
+      "(Do you want coffee?)" gloss-supported warm-up sentence (by design,
+      not a gap); `a1-63`'s `vizet` (vowel-length shortening, víz→vizet);
+      `a1-112`'s `hozom` and `a1-152`'s `elvettem` (definite-conjugation
+      and irregular-past-tense forms respectively that don't share enough
+      surface prefix with their infinitives for the bounded heuristic to
+      catch) — all genuine Hungarian morphophonology, not tool bugs, not
+      worth chasing for single-word cases.
+
+45. ~~**HU A2 real-gap-candidates cleared, plus 2 more triage-tool fixes**~~
+    — **done 2026-09-17**, continuing items 40/42-44. A2's real-gap-
+    candidate count: 28 → 5 (all left deliberately, same morphophonology-
+    edge-case reasoning as item 44 — e.g. `víz`→`vizet`-style vowel
+    shortening in `úr`→`uram`, definite/indefinite conjugation divergence
+    in `úszni`→`úszom`).
+    - **2 more triage fixes before touching content, per item 44's own
+      advice**: (1) a `"(...)" ` gloss can sit inside an `options[]` entry
+      too, not just the `sentence`/`question` fields — e.g.
+      `"Virágcsokor (flower bouquet)"` — found via `a2-184-controlled-4`'s
+      `bouquet` false flag; 75 such option-embedded glosses exist across
+      the corpus, previously all invisible to the triage. (2) Two more
+      names needed adding to `HU_PROPER_NOUNS` (`gábor`, `kovács` — a
+      first name and the most common Hungarian surname, both used as
+      dialogue characters, e.g. "Kovács néven foglaltam szobát").
+    - **27 real vocabulary gaps fixed** across a2.52-185 via one Haiku
+      batch (18 files), each checked against its actual exercise context
+      first — same workflow as item 44, not applied blind. One fix
+      (`hát`, "back") resolved two separate lessons' flags at once since
+      a2-138's `hátam` is downstream of a2-85's `hátra` in teaching order.
+
+46. ~~**ES A1 and A2 real-gap-candidates cleared, plus 3 tooling fixes in
+    `audit-lesson.py` itself (not just the triage layer)**~~ — **done
+    2026-09-17**, continuing item 39/41. A1: 40 → 4 real-gap-candidates.
+    A2: 22 → 6. Same lesson as items 42-45: ported HU's triage-layer fixes
+    over first (meaning-check pattern, `dialogue-complete` wrong-distractor
+    detection — ES has 1,528 `dialogue-complete` exercises with a
+    `correct` field, far more than HU had — option-embedded glosses, one
+    proper noun `lucia`), which alone cut 731 → 707. But the bigger finds
+    this time were in `audit-lesson.py`'s own `matches()`/`teach_tokens()`,
+    not just the read-only triage script:
+    - **Grammar tables only ever read column 1, never column 2** —
+      `teach_tokens()`'s table handling did `spanish_tokens(row[0])` only.
+      Harmless for a `[spanish, english]` table, but conjugation tables
+      are `[pronoun, conjugated-form]` (e.g. `["nosotros", "trabajamos"]`)
+      — the entire point of the table, the actual verb forms, was never
+      registered as taught. Root cause of most of a1-06's "nosotros"/"tú"
+      form flags. Fixed by reading both columns (707 → 656).
+    - **`matches()` had no concept of verb conjugation at all** — its
+      only fuzzy logic stripped noun/adjective plural endings
+      (`es/os/as/s`). Added present-tense person-ending stripping that
+      reconstructs the infinitive and checks if *that's* already known
+      (a learner who knows `cocinar` can be expected to recognise
+      `cocinamos`) — the same productive-rule leniency `find_missing()`
+      already granted verbs elsewhere, extended to the teaching-order
+      check too (656 → 620). Then found A2 introduces past tense (preterite
+      + perfect) that the present-only ending list didn't cover at all
+      (`celebraron`, `tenido`, `preguntado`...) — extended the ending list
+      (620 → 574) — and a reflexive-infinitive gap (`alegró` needs to
+      reconstruct `alegrarse`, not `alegrar`) — added `-arse/-erse/-irse`
+      alongside `-ar/-er/-ir`.
+    - **Same short-root bucketing class of bug as HU's item 42-44 fixes**:
+      the noun/adjective stem-length threshold (`>=4`) missed `foto`→
+      `fotos` and `vela`→`velas` (3-char stems after stripping the
+      plural); the verb-root threshold (`>=3`) missed `leer`→`leo` (root
+      `le`, 2 chars). Lowered both by one.
+    - **~29 real vocabulary gaps fixed** across A1 (18 files, 24 entries)
+      and A2 (4 files, 5 entries) via two Haiku batches, each checked
+      against its actual exercise context first.
+    - **Left deliberately unfixed (10 flags: 4 A1, 6 A2)**: irregular
+      preterite stems (`hiciste`/`hicieron` from `hacer`, `estuvieron`
+      from `estar` — suppletive, no reconstructible pattern),
+      reflexive-infinitive-plus-clitic forms (`acostarme`, `despedirme`,
+      `marcharme`), one stem-changing verb (`muestras` from `mostrar`),
+      one by-design gloss-supported sentence, one ambiguous future/
+      subjunctive form (`lograran`) — all genuine Spanish morphology, same
+      category of exception already established for HU.
+    - Full ES corpus: 731 → 707 → 656 → 620 → 574 → **570** (real-gap-
+      candidate 626 → 399). B1 dropped from 537 to 389 as pure fallout
+      from the tooling fixes, before any B1-specific work started.
+
+47. ~~**HU B1 cleared, plus a severe proper-noun bug that silently affected
+    the entire session's earlier HU work**~~ — **done 2026-09-17**.
+    Scoped B1 first at the user's request (hypothesis: most of it is the
+    citizenship track) — confirmed directionally right but not the way
+    expected: citizenship-track lessons produced 70% of raw flags (26/37)
+    but only **2 of the 6 real gaps**; core track had proportionally more
+    real problems (4/11) despite far less raw noise. Citizenship lessons
+    are civics/history quizzes with English-option answers, which is
+    exactly the shape the triage already classifies as noise — the raw
+    flag count was measuring exercise *style*, not actual gaps.
+    - **The bug, found while investigating one of the 6 real gaps**:
+      `hu_tokens()`'s proper-noun filter (added item 42, fixed to strict
+      `startswith` in item 44) used plain prefix matching without a
+      length floor. Every other entry in `HU_PROPER_NOUNS` is 4+ characters,
+      but `meg` (the protagonist's name) is 3 -- and `meg-` is also
+      Hungarian's single most common verbal preverb, prefixing hundreds of
+      ordinary verbs (`megyek`, `megnéz`, `meggyőz`, `megvesz`...). Every
+      one of them was silently wiped to an empty token set for the entire
+      session, in both directions (never counted as taught, never counted
+      as required) -- which is why it mostly didn't change raw flag counts
+      when fixed (a word invisible on both sides of the check is
+      invisible to the check, not wrong in an obviously visible way).
+      318 distinct `meg`-prefixed words found across the whole HU corpus
+      grep'd for spot-checking. Fixed by requiring exact match instead of
+      prefix match for any proper noun under 4 characters.
+    - **Re-audited A1/A2 after the fix rather than assuming they still
+      held**: full corpus went 166 → 143 (net small, per the above), and
+      exactly one new real gap surfaced in A1 (`megyek`, previously
+      invisible) — checked its context and left it deliberately (an
+      incidental "I'm going, bye!" dialogue line seven lessons before the
+      unit that actually teaches "to go", not something the exercise
+      tests). A2's list was unaffected. B1's 6-item real-gap list (scoped
+      before the fix) was independently re-verified unchanged after it —
+      the fix's effect on B1 was invisible for the same reason.
+    - **6 real vocabulary gaps fixed**: `fábián` was a person's name, added
+      to `HU_PROPER_NOUNS` instead of vocab; `suli` (school, colloquial),
+      `óriási` (huge), `lép` (to step), `fekvés`/`konkrét` (location/
+      concrete — citizenship track), `zúdul` (to pour/swarm — citizenship
+      track) added via one Haiku batch across 5 files.
+    - **All three HU levels are now fully done.** Full corpus (raw flags):
+      166 → 143 (bug fix) → 137 (B1 fixes); real-gap-candidate: 41 → 16
+      (bug fix) → **10** (5 A1, 5 A2, 0 B1) — down from the original 330
+      raw / 171 real-gap-candidate this whole initiative (items 40/42-47)
+      started from. Remaining flags in all three levels are deliberately
+      accepted morphophonology edge cases, same category established in
+      items 42-46, not gaps.

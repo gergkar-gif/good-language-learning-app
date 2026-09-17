@@ -81,7 +81,8 @@ HU_PROPER_NOUNS = {
     "tisza", "misi", "károly", "horvátország", "birodalom", "carlos",
     "kaganátus", "géza", "balaton", "jancsi", "kálmán", "jánosné",
     "andrás", "petra", "aranybulla", "avar", "alföld", "ukrajna",
-    "szerbia", "dunántúl", "kossuth", "petőfi", "várhegy",
+    "szerbia", "dunántúl", "kossuth", "petőfi", "várhegy", "bécs",
+    "gábor", "kovács", "fábián",
 }
 
 
@@ -111,7 +112,34 @@ def same_stem(a, b):
 
 def hu_tokens(text):
     words = HU_WORD.findall((text or "").lower())
-    return {w for w in words if not any(same_stem(w, pn) for pn in HU_PROPER_NOUNS)}
+    # Strict startswith here, not the fuzzy same_stem() used elsewhere: a
+    # proper noun only needs to match its own *inflected* forms (budapest ->
+    # budapesten), which is always token = properNoun + suffix, so a plain
+    # prefix check is both sufficient and correct. Using same_stem's
+    # bounded-tolerance matching here was a real bug (found 2026-09-17):
+    # "maga" (a common pronoun, "himself/herself") shares just enough of its
+    # first few letters with "magyarország" that same_stem called them
+    # related, silently deleting "maga" from every lesson's known-vocabulary
+    # set -- meaning "magát" never resolved as known anywhere it was taught.
+    #
+    # Second bug, same shape, much bigger blast radius (found 2026-09-17):
+    # plain startswith() has the identical problem for very short proper
+    # nouns. "meg" (the protagonist's name, 3 chars) is also, coincidentally,
+    # Hungarian's single most common verbal preverb -- "meg-" prefixes
+    # hundreds of ordinary verbs (megyek, megnéz, meggyőz, megvesz...), all
+    # of which silently vanished from every lesson's known-vocabulary set
+    # for the entire session before this fix (318 distinct meg-prefixed
+    # words found across the corpus). Hungarian case suffixes only ever
+    # attach to the END of a name, never a prefix to the front, so
+    # startswith(pn) is only meaningful for real proper-noun matching when
+    # pn itself is long enough that a coincidental collision is implausible.
+    # Every other entry in HU_PROPER_NOUNS is 4+ chars; "meg" is the only
+    # 3-char one, so require exact equality for anything that short instead
+    # of prefix matching.
+    def is_proper_noun_form(word, pn):
+        return word == pn if len(pn) < 4 else word.startswith(pn)
+
+    return {w for w in words if not any(is_proper_noun_form(w, pn) for pn in HU_PROPER_NOUNS)}
 
 
 def load_units(level):
@@ -209,23 +237,28 @@ def teach_tokens(lesson, all_ex):
 
 
 class KnownWords:
-    """Words taught so far, bucketed by first-3-chars prefix so a fuzzy
-    same_stem() lookup doesn't have to scan the whole vocabulary."""
+    """Words taught so far, bucketed by first-2-chars prefix so a fuzzy
+    same_stem() lookup doesn't have to scan the whole vocabulary. 2 chars,
+    not 3: a short root (e.g. "út", "hely") and its suffixed form ("útba")
+    only reliably share that many characters -- bucketing by 3 silently
+    missed every short-root match (their word[:3] bucket key differs from
+    the suffixed form's, since the 3rd character is already suffix, not
+    root) until this was caught 2026-09-17 auditing lesson.a1.60."""
 
     def __init__(self):
         self._buckets = {}
 
     def add(self, word):
-        self._buckets.setdefault(word[:3], set()).add(word)
+        self._buckets.setdefault(word[:2], set()).add(word)
 
     def update(self, words):
         for w in words:
             self.add(w)
 
     def covers(self, token):
-        if token in self._buckets.get(token[:3], ()):
+        if token in self._buckets.get(token[:2], ()):
             return True
-        return any(same_stem(token, w) for w in self._buckets.get(token[:3], ()))
+        return any(same_stem(token, w) for w in self._buckets.get(token[:2], ()))
 
 
 def accumulate_known(level):

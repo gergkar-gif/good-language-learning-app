@@ -82,7 +82,7 @@ PROPER_NOUNS = {"carlos", "meg", "daniela", "lauren", "kaylee", "hungria",
                 "sudafrica", "espana", "hanoi", "ana", "mexico", "vietnam",
                 "ninh", "binh", "madrid", "colombia", "peru", "valencia",
                 "phileas", "fogg", "passepartout", "jo", "bartleby",
-                "rousseau", "odiseo", "itaca", "gregor", "york"}
+                "rousseau", "odiseo", "itaca", "gregor", "york", "lucia"}
 
 
 def norm(text):
@@ -124,6 +124,41 @@ def exercise_spanish(ex):
     return []
 
 
+VERB_ENDINGS = (
+    # All endings here must be accent-free: spanish_tokens()/norm() already
+    # strips accents from every token before matches() ever sees it (found
+    # 2026-09-17, scoping ES B1 -- "áis"/"éis"/"ía"-family below were
+    # written with accents and so could never match anything; every
+    # vosotros/imperfect/conditional form in B1 that happened to rely on
+    # them, e.g. "podéis"/"cambiaría", silently failed to reconstruct since
+    # the moment they were added).
+    #
+    # present tense
+    "amos", "emos", "imos", "ais", "eis", "is", "an", "en", "as", "es",
+    "a", "e", "o",
+    # preterite (found 2026-09-17, A2 introduces past tense and none of it
+    # matched -- "aron"/"ieron"/"aste"/"iste" are accent-free already;
+    # "ió" and accented "í" normalise to "io"/"i" the same way the rest of
+    # this module already strips accents before comparing)
+    "aron", "ieron", "aste", "iste", "io", "i", "asteis", "isteis",
+    # past participle (used with haber for the perfect tenses, e.g.
+    # "he tenido" -- "ado"/"ido" reduce straight to the infinitive)
+    "ado", "ido",
+    # imperfect -ar (found 2026-09-17, B1 introduces imperfect/conditional
+    # and neither matched at all): "trabajaba" strips to "trabaj" + "ar".
+    "aba", "abas", "abamos", "abais", "aban",
+    # imperfect -er/-ir and conditional (all verb classes) share the same
+    # endings, but reduce differently -- imperfect strips to a bare stem
+    # ("comía" -> "com" + "er"), conditional keeps the whole infinitive
+    # ("trabajaría" -> "trabajar" + "ía"). Both are handled below by trying
+    # the stripped root both with and without an appended -ar/-er/-ir.
+    "ia", "ias", "iamos", "iais", "ian",
+    # gerund (found 2026-09-17, scoping B1's remainder after the tense
+    # fixes above): "investigando" -> "investig" + "ar" = "investigar".
+    "ando", "iendo",
+)
+
+
 def matches(term, haystack):
     if not term:
         return False
@@ -133,7 +168,56 @@ def matches(term, haystack):
         return False
     stem = re.sub(r"(es|os|as|s)$", "", term)
     stem = re.sub(r"[oae]$", "", stem)
-    return len(stem) >= 4 and stem in haystack
+    # Threshold was 4 (found 2026-09-17 too strict for short-but-real
+    # lemmas: "foto"/"vela" minus their plural "s"/"as" leave a 3-char stem
+    # and never matched their own plural "fotos"/"velas"). 3 still guards
+    # against 1-2 char stems matching almost anything.
+    if len(stem) >= 3 and stem in haystack:
+        return True
+    # Regular present-tense conjugation (found 2026-09-17, a1-06's whole
+    # cluster of "nosotros"/"tú" forms like cocinamos/hablamos never
+    # matching): the noun/adjective suffix-stripping above doesn't touch
+    # verb person endings at all. Reconstruct the infinitive by stripping a
+    # present-tense ending and re-adding -ar/-er/-ir, then check if that
+    # infinitive itself is already known -- a learner who knows "cocinar"
+    # can be expected to recognise "cocinamos" as its own conjugation, the
+    # same productive-rule leniency find_missing() already grants verbs
+    # elsewhere, just extended to the teaching-order check too.
+    for ending in VERB_ENDINGS:
+        if term.endswith(ending):
+            root = term[: -len(ending)]
+            # 2, not 3: short -er/-ir infinitives like "leer" (root "le")
+            # and "ir" itself need it -- found 2026-09-17, "leo" never
+            # matching already-known "leer". Also try the reflexive
+            # infinitive form (-arse/-erse/-irse), not just -ar/-er/-ir --
+            # found the same day: "alegró" (she was glad) reduces to
+            # "alegr" + "ar" = "alegrar", but the vocabbed lemma is the
+            # reflexive "alegrarse".
+            if len(root) >= 2 and any(root + inf in haystack
+                                       for inf in ("ar", "er", "ir", "arse", "erse", "irse")):
+                return True
+            # Conditional keeps the whole infinitive before the ending
+            # ("trabajaría" -> root "trabajar", already a complete
+            # infinitive) -- check the stripped root directly too, not just
+            # root-plus-a-new-ending.
+            if root in haystack:
+                return True
+    # Infinitive/gerund/imperative with a clitic pronoun attached
+    # ("hacerlo", "presentarme", "adaptarme") -- found 2026-09-17, roughly
+    # a quarter of ES B1's remaining real-gap-candidates were this single
+    # shape. None of the VERB_ENDINGS above apply (the word doesn't end in
+    # a conjugation ending, it ends in a pronoun), so this needed its own
+    # check: strip the clitic and see if what's left is already a known
+    # infinitive, either as-is ("hacerlo" -> "hacer") or with "-se" added
+    # for a reflexive verb whose vocabbed lemma includes it
+    # ("adaptarme" -> "adaptar" + "se" = "adaptarse").
+    for clitic in ("selo", "sela", "selos", "selas", "nos", "los", "las",
+                   "me", "te", "se", "lo", "la", "le", "les", "os"):
+        if term.endswith(clitic):
+            root = term[: -len(clitic)]
+            if len(root) >= 2 and (root in haystack or root + "se" in haystack):
+                return True
+    return False
 
 
 def find_missing(words, haystack):
@@ -516,8 +600,23 @@ def teach_tokens(lesson, all_ex):
             found = set()
             for part in read(path).get("sections", []):
                 if part["type"] == "table":
+                    # Table column order isn't consistent across the corpus
+                    # (found 2026-09-17): some rows are [spanish, english]
+                    # ("primero"/"first"), some are [english, spanish]
+                    # ("I have a ticket."/"Tengo un billete."), and
+                    # conjugation tables are [pronoun, conjugated-form]
+                    # ("nosotros"/"trabajamos") -- reading only row[0] meant
+                    # a conjugation table's whole point, the actual verb
+                    # forms in column 2, was never registered as taught.
+                    # That single gap accounted for most of a1-06's
+                    # nosotros/tú-form "never taught" flags. Read both
+                    # columns; an English word landing in the known-Spanish
+                    # set from a [spanish, english] row is harmless noise,
+                    # not a new false negative, since it won't coincide with
+                    # real Spanish content.
                     for row in part.get("rows", []):
-                        found |= spanish_tokens(row[0])
+                        for cell in row[:2]:
+                            found |= spanish_tokens(cell)
                 elif part["type"] == "examples":
                     for item in part.get("items", []):
                         found |= spanish_tokens(item["spanish"])

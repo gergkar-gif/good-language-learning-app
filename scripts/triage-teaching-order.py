@@ -41,6 +41,50 @@ if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
 ENGLISH_HINT = re.compile(r"\(([^)]+)\)")
+# B1 content uses a completely different gloss convention than A1/A2's
+# parens -- a full-sentence English translation in square brackets, e.g.
+# "La pobreza puede aumentar debido al desempleo. [Poverty can increase due
+# to unemployment.]" (found 2026-09-17, scoping ES B1: 204 files / 4,320
+# instances of this pattern, the single largest source of B1's flags).
+SQUARE_BRACKET_HINT = re.compile(r"\[([^\]]+)\]")
+SPANISH_MARKER = re.compile(r"[áéíóúñ¿¡]")
+SPANISH_ARTICLE = re.compile(r"^(el|la|los|las|un|una)\s")
+
+
+def looks_spanish(text):
+    t = text.lower()
+    return bool(SPANISH_MARKER.search(t) or SPANISH_ARTICLE.match(t))
+
+
+def bracket_gloss(text):
+    """The non-Spanish side of a "main text [bracket]" pair. Normally the
+    bracket holds the English gloss and the main text is Spanish, but 573
+    of B1's ~3,200 bracket pairs have it backwards -- English main text,
+    [Spanish] in the bracket (found 2026-09-17, e.g. "The consequence of
+    trusting too easily. [La consecuencia de confiar demasiado.]"). Whichever
+    side doesn't look Spanish is treated as the gloss to discard."""
+    m = SQUARE_BRACKET_HINT.search(text)
+    if not m:
+        return ""
+    inner = m.group(1)
+    outer = (text[: m.start()] + text[m.end():]).strip()
+    if looks_spanish(inner) and not looks_spanish(outer):
+        return outer
+    return inner
+
+
+def is_meaning_check(ex):
+    """'What does X mean?' comprehension checks are entirely English options
+    by design (testing recognition of a Spanish word's meaning, not testing
+    Spanish) -- ported from the same fix in triage-teaching-order-hu.py
+    (found 2026-09-17), confirmed to also exist in ES content (31 such
+    questions). Deliberately narrow (startswith, or the quoted-sentence
+    dash-prefixed variant), not "contains 'What does' anywhere" -- see the
+    HU version's docstring for why a loose substring check is unsafe."""
+    q = ex.get("question", "")
+    if ex.get("type") != "multiple-choice":
+        return False
+    return q.startswith("What does") or "— What does" in q or "-- What does" in q
 
 
 def english_text(ex):
@@ -50,14 +94,62 @@ def english_text(ex):
         parts.append(ex["english"])
     if ex.get("type") == "multiple-choice" and "question" in ex:
         parts.append(ex["question"])
+    if is_meaning_check(ex):
+        parts += ex.get("options", [])
     for field in ("sentence", "question"):
         if field in ex:
             parts += ENGLISH_HINT.findall(ex[field])
+            parts.append(bracket_gloss(ex[field]))
+    # A "(...)" or "[...]" gloss can sit inside an option string too, not
+    # just sentence/question -- ported from the same HU fix (found
+    # 2026-09-17). Only pull the gloss part, not the whole option.
+    for o in ex.get("options", []):
+        if isinstance(o, str):
+            parts += ENGLISH_HINT.findall(o)
+            parts.append(bracket_gloss(o))
+    # sentence-order's "sentences" list (used for non-reading-category
+    # exercises, e.g. reordering opinion sentences) carries the same
+    # bracket-gloss convention and was never scanned at all before this.
+    for s in ex.get("sentences", []):
+        if isinstance(s, str):
+            parts.append(bracket_gloss(s))
+    # sentence-builder tiles and structured-writing template answers can
+    # carry a bracket gloss on the whole phrase too.
+    for t in ex.get("tiles", []):
+        if isinstance(t, str):
+            parts.append(bracket_gloss(t))
+    for line in ex.get("template", []):
+        if isinstance(line, dict) and isinstance(line.get("answer"), str):
+            parts.append(bracket_gloss(line["answer"]))
+    # dialogue-complete prompt lines
+    for line in ex.get("prompt", []):
+        if isinstance(line, dict) and isinstance(line.get("text"), str):
+            parts.append(bracket_gloss(line["text"]))
+    # matching pairs are normally [spanish, english], but 4 exercises store
+    # a handful of pairs backwards (found 2026-09-17, a1.10.01.ex13 /
+    # a1.10.02.ex13 flagging "balloon"/"colour" as unrecognised Spanish).
+    # Rather than assume an order, treat whichever side of a pair lacks any
+    # Spanish-specific character as the gloss, regardless of position.
+    if ex.get("type") == "matching":
+        for pair in ex.get("pairs", []):
+            if len(pair) != 2 or not all(isinstance(p, str) for p in pair):
+                continue
+            a, b = pair
+            if looks_spanish(a) and not looks_spanish(b):
+                parts.append(b)
+            elif looks_spanish(b) and not looks_spanish(a):
+                parts.append(a)
     return " ".join(parts)
 
 
 def correct_option_text(ex):
-    if ex.get("type") == "multiple-choice" and "correct" in ex and "options" in ex:
+    # dialogue-complete exercises have the same options[]/correct shape as
+    # multiple-choice -- ported from the same HU fix (found 2026-09-17,
+    # a1-11-dialogue-1/2's unselected wrong option flagging as a real gap).
+    # ES has 1,528 dialogue-complete exercises with a "correct" field, far
+    # more than HU had, so this fix matters more here. Keyed on the fields
+    # actually being present, not the type name.
+    if "correct" in ex and "options" in ex:
         try:
             return ex["options"][ex["correct"]]
         except (IndexError, TypeError):
@@ -68,7 +160,7 @@ def correct_option_text(ex):
 def classify_token(ex, token):
     if token in al.spanish_tokens(english_text(ex)):
         return "english-leak"
-    if ex.get("type") == "multiple-choice":
+    if "correct" in ex and "options" in ex:
         correct_tokens = al.spanish_tokens(correct_option_text(ex))
         all_tokens = set()
         for o in ex.get("options", []):
