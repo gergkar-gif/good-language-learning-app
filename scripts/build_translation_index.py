@@ -269,6 +269,14 @@ def from_grammar(grammar_dir, by_unit_num, by_lesson_num, lang, known_skills):
             for idx, item in enumerate(section.get("items", [])):
                 spanish = item.get("spanish")
                 english = item.get("english")
+                # A grammar screen's contrastive "before -> after" example
+                # (e.g. "Compre la flor -> La compre.") demonstrates a
+                # transformation for a reader looking at a table; read aloud
+                # or translated on its own by the Speaking/Translation
+                # Drillers, which reuse this same pool, it's neither a
+                # natural sentence nor answerable -- exclude it instead.
+                if spanish and "→" in spanish:
+                    continue
                 if spanish and english:
                     pair = {
                         "id": f"{base_id}#{idx}",
