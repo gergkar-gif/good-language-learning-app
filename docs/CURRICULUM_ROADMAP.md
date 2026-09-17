@@ -1,6 +1,6 @@
 # Parlour CEFR Curriculum Roadmap
 
-**Status**: Phase 1 (Spanish A1 Core Gaps) **COMPLETED** ✅  
+**Status**: Phases 1, 2, and 3 **COMPLETED** ✅  
 **Remaining Phases**: Scheduled as **TO-BE-DONE LATER** ⏳
 
 ---
@@ -72,17 +72,18 @@ that's now just a JSON append rather than a `build-manifest.py` edit.
 
 ---
 
-## ⏳ Phase 3: Spanish A2 — Imperativo & Clitic Pronouns [TO-BE-DONE LATER]
+## ✅ Phase 3: Spanish A2 — Imperativo & Clitic Pronouns [DONE 2026-09-17]
 
-- [ ] **Unit 3.1: Imperativo I — Affirmative Commands (`unit.a2.imperativo1`)**
+- [x] **Unit 23: Giving Instructions and Directions (`unit.a2.imperativoafirmativo`, stems `a2-imperativoafirmativo-*`)**
   - **Focus**: Regular *tú* imperatives (3rd person present), the 8 irregular *tú* imperatives (*ven, pon, sal, di, ten, haz, ve, sé*), formal *usted/ustedes* imperatives.
   - **Context**: Directions in a city, recipes, step-by-step instructions.
-  - **Story**: *Las instrucciones de la abuela*.
-- [ ] **Unit 3.2: Imperativo II — Negative Commands & Clitic Attachment (`unit.a2.imperativo2`)**
+  - **Story**: *Las instrucciones de la abuela* (`a2-original-imperativoafirmativo`).
+- [x] **Unit 24: Setting Rules and Warnings (`unit.a2.imperativonegativo`, stems `a2-imperativonegativo-*`)**
   - **Focus**: Negative *tú* commands (*no hables, no comas*), pronoun attachment to affirmative commands (*dime, siéntate, ponlo*) vs. placement before negative commands (*no me digas, no te sientes*). Accent shifts (*dímelo*).
-  - **Story**: *Las reglas del hostel*.
-- [ ] **Unit 3.3: Indirect Object & Combined Clitic Pronouns (`unit.a2.clitics`)**
+  - **Story**: *Las reglas del hostel* (`a2-original-imperativonegativo`).
+- [x] **Unit 25: Explaining Who and What: Pronouns (`unit.a2.pronombrescliticos`, stems `a2-pronombrescliticos-*`)**
   - **Focus**: Indirect object pronouns (*me, te, le, nos, les*) with verbs like *dar, decir, preguntar*, and combined double-object clitics (*se lo dije*, *le → se* rule).
+  - **Story**: *Un favor entre amigos* (`a2-original-pronombrescliticos`).
 
 ---
 
