@@ -1,12 +1,13 @@
 {
   "id": "test.a1",
   "level": "A1",
-  "title": "A1 level test",
-  "intro": "Thirty questions covering the whole of A1. Answer them all, then check — you will see your score and which topics to go back to. Eighty per cent is the mark for moving on.",
+  "title": "A1 Szintfelmérő Vizsga",
+  "intro": "Átfogó A1 szintfelmérő vizsga a mindennapi kommunikáció, alapvető esetek (-ban/-ben, -ba/-be, -ból/-ből, -ul/-ül), igei ragozás, írásbeli és szóbeli készségek ellenőrzésére. 80% szükséges a sikeres teljesítéshez.",
   "passMark": 0.8,
   "questions": [
     {
       "id": "vagyok-vagy",
+      "type": "dropdown",
       "sentence": "Károly vagyok. Te Meg _____?",
       "options": [
         "vagy",
@@ -20,7 +21,8 @@
     },
     {
       "id": "question-words",
-      "sentence": "_____ ez? Ez egy könyv.",
+      "type": "dropdown",
+      "sentence": "_____ ez? Ez egy finom kávé.",
       "options": [
         "Mi",
         "Ki",
@@ -33,7 +35,8 @@
     },
     {
       "id": "egy-article",
-      "sentence": "Ez _____ kávé.",
+      "type": "dropdown",
+      "sentence": "Ez _____ új könyv.",
       "options": [
         "egy",
         "az",
@@ -46,7 +49,8 @@
     },
     {
       "id": "negation-nem",
-      "sentence": "Ő _____ hangos, csendes.",
+      "type": "dropdown",
+      "sentence": "Ő _____ hangos, nagyon csendes.",
       "options": [
         "nem",
         "nincs",
@@ -58,342 +62,338 @@
       ]
     },
     {
-      "id": "ik-verb-dolgozik",
-      "sentence": "András dolgozik, én is _____.",
-      "options": [
-        "dolgozom",
-        "dolgozok",
-        "dolgozol"
+      "id": "nincs-hiany",
+      "type": "text-input",
+      "sentence": "A hűtőben _____ tej, el kell mennem a boltba.",
+      "answer": "nincs",
+      "altAnswers": [
+        "Nincs"
       ],
-      "correct": 0,
       "teaches": [
-        "ik-verb-dolgozik"
+        "nincs-negation"
       ]
     },
     {
-      "id": "clock-time",
-      "sentence": "Hány óra van? Öt _____ van.",
-      "options": [
-        "óra",
-        "perc",
-        "negyed"
+      "id": "tobbesszam-konyvek",
+      "type": "text-input",
+      "sentence": "Az asztalon sok új _____ vannak.",
+      "answer": "könyvek",
+      "altAnswers": [
+        "konyvek",
+        "Könyvek"
       ],
-      "correct": 0,
       "teaches": [
-        "clock-time"
+        "plural-nouns"
       ]
     },
     {
-      "id": "frequency-adverbs",
-      "sentence": "Én _____ reggel dolgozom, de néha otthon tanulok.",
+      "id": "ban-ben-helyhatarozo",
+      "type": "dropdown",
+      "sentence": "Carlos most egy csendes kávézó_____ olvas.",
       "options": [
-        "mindig",
-        "soha",
-        "ritkán"
+        "ban",
+        "ben",
+        "ba"
       ],
-      "correct": 0,
+      "correct": 1,
       "teaches": [
-        "frequency-adverbs"
+        "ban-ben-inessive"
       ]
     },
     {
-      "id": "plural-k",
-      "sentence": "A _____ itt vannak.",
+      "id": "ba-be-irany",
+      "type": "dropdown",
+      "sentence": "Délután a diákok mennek a könyvtár_____ tanulni.",
       "options": [
-        "barátok",
-        "barát",
-        "barátom"
+        "ba",
+        "be",
+        "ban"
       ],
       "correct": 0,
       "teaches": [
-        "plural-k"
+        "ba-be-illative"
       ]
     },
     {
-      "id": "locative-ban-ben",
-      "sentence": "Az ágy a _____ van.",
+      "id": "bol-bel-origin",
+      "type": "dropdown",
+      "sentence": "Carlos Magyarország_____ érkezett Vietnámba.",
       "options": [
-        "szobában",
-        "szoba",
-        "szobát"
+        "ról",
+        "ból",
+        "töl"
       ],
       "correct": 0,
       "teaches": [
-        "locative-ban-ben"
+        "bol-bel-elative"
       ]
     },
     {
-      "id": "milyen-adjective",
-      "sentence": "Milyen ő? Ő _____.",
+      "id": "bol-bel-varos",
+      "type": "text-input",
+      "sentence": "Meg London_____ jött, most Hanoiban lakik.",
+      "answer": "ból",
+      "altAnswers": [
+        "bol"
+      ],
+      "teaches": [
+        "origin-cases"
+      ]
+    },
+    {
+      "id": "essive-modal-nyelv",
+      "type": "text-input",
+      "sentence": "Én már egy kicsit beszélek magyar_____.",
+      "answer": "ul",
+      "altAnswers": [
+        "ul."
+      ],
+      "teaches": [
+        "essive-modal-case"
+      ]
+    },
+    {
+      "id": "essive-modal-angol",
+      "type": "dropdown",
+      "sentence": "Daniela és Meg angol_____ beszélgetnek.",
       "options": [
-        "magas",
-        "magasat",
-        "magasan"
+        "ul",
+        "ül",
+        "ban"
       ],
       "correct": 0,
       "teaches": [
-        "milyen-adjective"
+        "essive-modal-case"
       ]
     },
     {
-      "id": "plural-predicate-adjective",
-      "sentence": "Ő magas. Ők _____.",
+      "id": "postposition-elott",
+      "type": "dropdown",
+      "sentence": "Találkozzunk az egyetem _____ három órakor!",
       "options": [
-        "magasak",
-        "magas",
-        "magasok"
+        "előtt",
+        "után",
+        "mellett"
       ],
       "correct": 0,
       "teaches": [
-        "plural-predicate-adjective"
+        "postpositions-space"
       ]
     },
     {
-      "id": "possessive-suffix",
-      "sentence": "Péteré a telefon. A _____ az asztalon van.",
+      "id": "postposition-utan",
+      "type": "dropdown",
+      "sentence": "Az óra _____ bemegyünk a városközpontba.",
       "options": [
-        "telefonja",
-        "telefon",
-        "telefonom"
+        "után",
+        "előtt",
+        "alatt"
       ],
       "correct": 0,
       "teaches": [
-        "possessive-suffix"
+        "postpositions-time"
       ]
     },
     {
-      "id": "possessive-pronoun",
-      "sentence": "Kié az autó? Az autó az _____.",
+      "id": "szeret-infinitive",
+      "type": "text-input",
+      "sentence": "Hétvégén nagyon szeretek sokat _____.",
+      "answer": "aludni",
+      "altAnswers": [
+        "olvasni",
+        "pihenni"
+      ],
+      "teaches": [
+        "szeret-infinitive"
+      ]
+    },
+    {
+      "id": "alanyos-rag-1sg",
+      "type": "dropdown",
+      "sentence": "Én minden reggel hétkor _____ fel.",
+      "options": [
+        "kelek",
+        "kelsz",
+        "kel"
+      ],
+      "correct": 0,
+      "teaches": [
+        "present-indefinite-verbs"
+      ]
+    },
+    {
+      "id": "alanyos-rag-3pl",
+      "type": "dropdown",
+      "sentence": "A barátok a parkban sétál_____ és beszélgetnek.",
+      "options": [
+        "nak",
+        "nek",
+        "tok"
+      ],
+      "correct": 0,
+      "teaches": [
+        "present-indefinite-verbs"
+      ]
+    },
+    {
+      "id": "targy-t-acc",
+      "type": "text-input",
+      "sentence": "Kérek egy fekete kávé_____ és egy pohár vizet.",
+      "answer": "t",
+      "altAnswers": [
+        "-t"
+      ],
+      "teaches": [
+        "accusative-case"
+      ]
+    },
+    {
+      "id": "szam-egyes",
+      "type": "dropdown",
+      "sentence": "A teremben három _____ ül.",
+      "options": [
+        "diák",
+        "diákok",
+        "diáknak"
+      ],
+      "correct": 0,
+      "teaches": [
+        "numerals-singular-noun"
+      ]
+    },
+    {
+      "id": "birtokos-enyem",
+      "type": "dropdown",
+      "sentence": "Ez a táska nem az _____, hanem Lauráé.",
       "options": [
         "enyém",
-        "enyémet",
-        "enyéim"
+        "tied",
+        "övé"
       ],
       "correct": 0,
       "teaches": [
-        "possessive-pronoun"
+        "possessive-pronouns"
       ]
     },
     {
-      "id": "have-construction",
-      "sentence": "Nekik van egy _____.",
+      "id": "mennyibe-kerul",
+      "type": "choice",
+      "prompt": "A piacon gyümölcsöt vásárolsz, és meg akarod tudni az árat. Mit kérdezel?",
       "options": [
-        "autójuk",
-        "autója",
-        "autó"
+        "Mennyibe kerül egy kiló alma?",
+        "Hány órakor nyit a piac?",
+        "Kérsz egy kis teát?"
       ],
       "correct": 0,
       "teaches": [
-        "have-construction"
+        "shopping-phrases"
       ]
     },
     {
-      "id": "days-of-week",
-      "sentence": "_____ otthon vagyunk.",
+      "id": "udvarias-rendeles",
+      "type": "choice",
+      "prompt": "A pincér odalép az asztalodhoz. Hogyan rendelsz udvariasan egy ásványvizet?",
       "options": [
-        "Hétfőn",
-        "Hétfő",
-        "Hétfőben"
+        "Egy szénsavmentes ásványvizet kérek szépen.",
+        "Hol van az ásványvíz?",
+        "Köszönöm, viszontlátásra."
       ],
       "correct": 0,
       "teaches": [
-        "days-of-week"
+        "restaurant-politeness"
       ]
     },
     {
-      "id": "accusative-t",
-      "sentence": "Kérek egy _____.",
+      "id": "udvarias-udvozles",
+      "type": "choice",
+      "prompt": "Délután kettőkor belépsz egy üzletbe. Hogyan köszönsz a boltosnak?",
       "options": [
-        "kenyeret",
-        "kenyér",
-        "kenyért"
+        "Jó napot kívánok!",
+        "Jó reggelt kívánok!",
+        "Jó éjszakát!"
       ],
       "correct": 0,
       "teaches": [
-        "accusative-t"
+        "greetings"
       ]
     },
     {
-      "id": "postposition-mellett",
-      "sentence": "A bolt az iskola _____ van.",
+      "id": "ora-hany-ora",
+      "type": "dropdown",
+      "sentence": "Most pontosan fél kettő _____.",
       "options": [
-        "mellett",
-        "mellette",
-        "mellé"
-      ],
-      "correct": 0,
-      "teaches": [
-        "postposition-mellett"
-      ]
-    },
-    {
-      "id": "destination-ba-be",
-      "sentence": "_____ megyek.",
-      "options": [
-        "Az iskolába",
-        "Az iskolában",
-        "Az iskola"
-      ],
-      "correct": 0,
-      "teaches": [
-        "destination-ba-be"
-      ]
-    },
-    {
-      "id": "quantity-words",
-      "sentence": "Nem sok, csak _____ könyv van az asztalon.",
-      "options": [
-        "Néhány",
-        "Mind",
-        "Sok"
-      ],
-      "correct": 0,
-      "teaches": [
-        "quantity-words"
-      ]
-    },
-    {
-      "id": "feeling-adjectives",
-      "sentence": "Nem vagyok szomjas, de _____ vagyok.",
-      "options": [
-        "éhes",
-        "finom",
-        "kevés"
-      ],
-      "correct": 0,
-      "teaches": [
-        "feeling-adjectives"
-      ]
-    },
-    {
-      "id": "definite-article-a-az",
-      "sentence": "_____ könyv az asztalon van.",
-      "options": [
-        "A",
-        "Az",
-        "Egy"
-      ],
-      "correct": 0,
-      "teaches": [
-        "definite-article-a-az"
-      ]
-    },
-    {
-      "id": "linking-es",
-      "sentence": "Ő kedves _____ vicces.",
-      "options": [
-        "és",
-        "vagy",
-        "de"
-      ],
-      "correct": 0,
-      "teaches": [
-        "linking-es"
-      ]
-    },
-    {
-      "id": "szokott-habitual",
-      "sentence": "Reggel _____ futni.",
-      "options": [
-        "szokott",
         "van",
-        "alszik"
+        "vagyok",
+        "nincs"
       ],
       "correct": 0,
       "teaches": [
-        "szokott-habitual"
+        "telling-time"
       ]
     },
     {
-      "id": "fizet-paying",
-      "sentence": "Rendben. _____.",
+      "id": "nal-nel-adessive",
+      "type": "dropdown",
+      "sentence": "Ma este a nagymamám_____ vacsorázunk.",
       "options": [
-        "Fizetek",
-        "Kérek",
-        "Vagyok"
+        "nál",
+        "nél",
+        "hoz"
       ],
       "correct": 0,
       "teaches": [
-        "fizet-paying"
+        "nal-nel-adessive"
       ]
     },
     {
-      "id": "kell-impersonal",
-      "sentence": "_____ még valami?",
+      "id": "hoz-hez-allative",
+      "type": "dropdown",
+      "sentence": "Holnap elmegyek az orvos_____ vizsgálatra.",
       "options": [
-        "Kell",
-        "Van",
-        "Szeretne"
+        "hoz",
+        "hez",
+        "höz"
       ],
       "correct": 0,
       "teaches": [
-        "kell-impersonal"
-      ]
-    },
-    {
-      "id": "szeretnem-infinitive",
-      "sentence": "_____ felpróbálni a cipőt.",
-      "options": [
-        "Szeretném",
-        "Szeretek",
-        "Kérek"
-      ],
-      "correct": 0,
-      "teaches": [
-        "szeretnem-infinitive"
-      ]
-    },
-    {
-      "id": "megy-irregular",
-      "sentence": "Hova _____ most?",
-      "options": [
-        "mész",
-        "megyek",
-        "mennek"
-      ],
-      "correct": 0,
-      "teaches": [
-        "megy-irregular"
-      ]
-    },
-    {
-      "id": "szeretem-definite-object",
-      "sentence": "_____ a zenét.",
-      "options": [
-        "Szeretem",
-        "Szeretek",
-        "Szeret"
-      ],
-      "correct": 0,
-      "teaches": [
-        "szeretem-definite-object"
-      ]
-    },
-    {
-      "id": "plural-accusative-ket",
-      "sentence": "Szeretem a zenét és a _____.",
-      "options": [
-        "filmeket",
-        "film",
-        "filmek"
-      ],
-      "correct": 0,
-      "teaches": [
-        "plural-accusative-ket"
-      ]
-    },
-    {
-      "id": "time-kor-suffix",
-      "sentence": "Találkozzunk _____.",
-      "options": [
-        "hétkor",
-        "hét óra",
-        "héttől"
-      ],
-      "correct": 0,
-      "teaches": [
-        "time-kor-suffix"
+        "hoz-hez-allative"
       ]
     }
-  ]
+  ],
+  "writingTask": {
+    "id": "hu-a1-writing",
+    "title": "Magyarul tanulok",
+    "prompt": "Írj egy rövid bemutatkozó üzenetet (25–45 szó) a nyelviskola fórumára: írd le a neved, hol élsz, milyen nyelveket beszélsz, és mit szeretsz csinálni a szabadidődben!",
+    "context": "Használd a -ban/-ben, -ul/-ül eseteket és a szeretek + főnévi igenév szerkezetet.",
+    "minWords": 25,
+    "targetKeywords": [
+      "vagyok",
+      "magyarul",
+      "szeretek",
+      "élek"
+    ],
+    "teaches": [
+      "vagyok-vagy",
+      "essive-modal-case",
+      "szeret-infinitive",
+      "ban-ben-inessive"
+    ]
+  },
+  "speakingTask": {
+    "id": "hu-a1-speaking",
+    "title": "Bemutatkozás élőszóban",
+    "prompt": "Beszélj 20–35 másodpercig magadról: mondd el a neved, hol laksz most, milyen nyelven tanulsz és mit csinálsz hétvégén!",
+    "minSeconds": 15,
+    "targetKeywords": [
+      "hívnak",
+      "lakom",
+      "tanulok",
+      "hétvégén"
+    ],
+    "teaches": [
+      "self-introduction",
+      "basic-interaction",
+      "oral-production"
+    ]
+  }
 }

@@ -107,7 +107,7 @@ def exercise_spanish(ex):
     if kind == "matching":
         return [pair[0] for pair in ex["pairs"]]
     if kind == "fill-blank":
-        return [ex["sentence"], ex["answer"]]
+        return [ex["sentence"]] + (ex["answers"] if "answers" in ex else [ex["answer"]])
     if kind == "sentence-builder":
         return ex["tiles"]
     if kind == "dialogue-complete":

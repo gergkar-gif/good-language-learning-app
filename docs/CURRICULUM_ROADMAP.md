@@ -143,11 +143,30 @@ that's now just a JSON append rather than a `build-manifest.py` edit.
 
 ---
 
-## ⏳ Phase 8: Comprehensive CEFR Assessment Tests [TO-BE-DONE LATER]
+## ✅ Phase 8: Comprehensive CEFR Assessment Tests [DONE 2026-09-17]
 
-- [ ] Update `content/es/tests/a1-test.json`: Add questions testing `gustar`, reflexives, demonstratives, continuous, `doler`, and `poder/saber`.
-- [ ] Update `content/es/tests/a2-test.json`: Add questions testing Imperfecto, Imperativo, Indirect Objects, Conditional, and Subjunctive.
-- [ ] Update `content/hu/tests/a1-test.json` & `a2-test.json`: Align questions with newly integrated case paradigms.
+- [x] **Multi-Modal CEFR Test Architecture & Engine Upgrade (`engine/leveltest.js`, `styles/components.css`)**:
+  - Expanded test engine beyond simple dropdown cloze to authentic CEFR 3-part level assessments:
+    - **Part 1: Language in Context**: Contextual Cloze (`dropdown`), Active Recall Text-Input (`text-input`), and Pragmatic Communicative Choice (`choice`).
+    - **Part 2: Short Written Production (`writingTask`)**: Integrated writing prompt with target length meter, live keyword/target badge feedback, and CEFR rubric checks.
+    - **Part 3: Short Spoken Production (`speakingTask`)**: Live voice recording with SpeechRecognition live transcription, audio playback, and accessible typed/dictation fallback.
+  - Schema updated (`content/{es,hu}/schemas/test.schema.json`) supporting 20–40 items, `oneOf` question definitions, and optional productive tasks.
+- [x] **Update `content/es/tests/a1-test.json`**:
+  - 22 varied questions testing `ser/estar`, reflexives, `gustar`, demonstratives, time, prepositions, communicative dining/ordering, and greetings.
+  - Part 2 Writing Task: *Un día en mi vida* (min. 30 words with daily routine reflexives & preferences).
+  - Part 3 Speaking Task: *Presentación personal* (min. 15s oral introduction).
+- [x] **Update `content/es/tests/a2-test.json`**:
+  - 24 varied questions testing Pretérito Perfecto, Imperfecto morphology & narrative contrast, Imperativo (tú/formal, affirmative/negative, clitic placement), indirect objects, Condicional de cortesía, Subjuntivo presente, and direction giving.
+  - Part 2 Writing Task: *Un fin de semana inolvidable* (min. 45 words contrasting narrative pasts and giving recommendations).
+  - Part 3 Speaking Task: *Mensaje de voz con recomendaciones* (min. 20s voice message with practical travel advice).
+- [x] **Update `content/hu/tests/a1-test.json`**:
+  - 26 varied questions testing basic conjugation, Origin cases (*-ból/-ből*), Essive-modal language case (*-ul/-ül*), spatial/temporal postpositions (*előtt/után/mellett*), *szeret* + infinitive, indefinite conjugations, and public greetings/shopping.
+  - Part 2 Writing Task: *Magyarul tanulok* (min. 25 words introducing languages and daily habits).
+  - Part 3 Speaking Task: *Bemutatkozás élőszóban* (min. 15s oral introduction).
+- [x] **Create `content/hu/tests/a2-test.json`**:
+  - 26 varied questions testing inflected personal pronouns (*nálam, hozzánk, vele, nekem*), Translative-Factitive assimilation (*-vá/-vé, orvossá*), Essive-Formal (*-ként*), deferential *tetszik*, preverbs aspect & word order, definite vs indefinite conjugations, past tense, and cultural Name Day (*Névnap*) greetings & hospitality formulas.
+  - Part 2 Writing Task: *Köszönőlevél vendéglátásért vagy meghívó* (min. 40 words with inflected pronouns and gratitude).
+  - Part 3 Speaking Task: *Névnapi köszöntő és programajánló* (min. 20s spoken greeting and invitation).
 
 ---
 

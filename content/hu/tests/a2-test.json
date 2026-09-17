@@ -1,0 +1,394 @@
+{
+  "id": "test.a2",
+  "level": "A2",
+  "title": "A2 Szintfelmérő Vizsga",
+  "intro": "Átfogó CEFR A2 szintfelmérő vizsga a ragozott személyes névmások (nálam, hozzám, velem), a tárgyas és alanyi ragozás, az igekötők, az állapot- és eredményhatározók (-vá/-vé, -ként), valamint a pragmatikai helyzetek ellenőrzésére.",
+  "passMark": 0.8,
+  "questions": [
+    {
+      "id": "pronoun-adessive-nalam",
+      "type": "dropdown",
+      "sentence": "Ma este ná_____ alszik a barátom.",
+      "options": [
+        "lam",
+        "lad",
+        "la"
+      ],
+      "correct": 0,
+      "teaches": [
+        "inflected-pronouns-nalam"
+      ]
+    },
+    {
+      "id": "pronoun-allative-hozzank",
+      "type": "text-input",
+      "sentence": "Holnap este átjöttök _____ vacsorázni a lakásunkba?",
+      "answer": "hozzánk",
+      "altAnswers": [
+        "hozzank"
+      ],
+      "teaches": [
+        "inflected-pronouns-hozzam"
+      ]
+    },
+    {
+      "id": "pronoun-instrumental-vele",
+      "type": "dropdown",
+      "sentence": "Meg nagyon kedves lány, szívesen beszélgetek _____.",
+      "options": [
+        "vele",
+        "velem",
+        "velük"
+      ],
+      "correct": 0,
+      "teaches": [
+        "inflected-pronouns-velem"
+      ]
+    },
+    {
+      "id": "pronoun-dative-nekem",
+      "type": "text-input",
+      "sentence": "Nagyon tetszik _____ ez a magyar népdal.",
+      "answer": "nekem",
+      "altAnswers": [
+        "Nekem"
+      ],
+      "teaches": [
+        "inflected-pronouns-nekem"
+      ]
+    },
+    {
+      "id": "translative-va-ve-vowel",
+      "type": "dropdown",
+      "sentence": "A hideg idő miatt a tó vize jéggé és hideg_____ változott.",
+      "options": [
+        "vé",
+        "vá",
+        "vével"
+      ],
+      "correct": 0,
+      "teaches": [
+        "translative-case"
+      ]
+    },
+    {
+      "id": "translative-assimilation-orvos",
+      "type": "text-input",
+      "sentence": "Sokat tanult, és végül híres orvos_____ vált.",
+      "answer": "sá",
+      "altAnswers": [
+        "sa",
+        "orvossá"
+      ],
+      "teaches": [
+        "translative-assimilation"
+      ]
+    },
+    {
+      "id": "essive-formal-kent",
+      "type": "text-input",
+      "sentence": "Carlos egy évig önkéntes_____ dolgozott a kulturális központban.",
+      "answer": "ként",
+      "altAnswers": [
+        "kent"
+      ],
+      "teaches": [
+        "essive-formal-kent"
+      ]
+    },
+    {
+      "id": "polite-tetszik-infinitive",
+      "type": "dropdown",
+      "sentence": "Kovács néni, hova tetszik _____ a hétvégén?",
+      "options": [
+        "utazni",
+        "utazik",
+        "utazott"
+      ],
+      "correct": 0,
+      "teaches": [
+        "politeness-tetszik"
+      ]
+    },
+    {
+      "id": "tetszik-vs-szeret",
+      "type": "dropdown",
+      "sentence": "Nekem nagyon _____ ez a hanoi kávézó hangulata.",
+      "options": [
+        "tetszik",
+        "szeretem",
+        "akarok"
+      ],
+      "correct": 0,
+      "teaches": [
+        "tetszik-construction"
+      ]
+    },
+    {
+      "id": "pragmatics-tessek",
+      "type": "choice",
+      "prompt": "A postán a pult mögött álló ügyintéző feléd fordul, hogy sorra kerültél. Mit mond neked?",
+      "options": [
+        "Tessék, miben segíthetek?",
+        "Jó éjszakát kívánok!",
+        "Semmi baj, nem gond."
+      ],
+      "correct": 0,
+      "teaches": [
+        "pragmatics-tessek"
+      ]
+    },
+    {
+      "id": "igekoto-meg-befejezett",
+      "type": "dropdown",
+      "sentence": "Carlos már _____írta a házi feladatot, készen van.",
+      "options": [
+        "meg",
+        "el",
+        "fel"
+      ],
+      "correct": 0,
+      "teaches": [
+        "preverbs-aspect"
+      ]
+    },
+    {
+      "id": "igekoto-forditott-sorrend",
+      "type": "text-input",
+      "sentence": "Nem akarom most el_____ a levelet, majd csak holnap.",
+      "answer": "küldeni",
+      "altAnswers": [
+        "olvasni"
+      ],
+      "teaches": [
+        "preverb-word-order"
+      ]
+    },
+    {
+      "id": "targyas-rag-1sg-def",
+      "type": "dropdown",
+      "sentence": "Ismerem ezt a könyvet, és nagyon szerett_____ a történetét.",
+      "options": [
+        "em",
+        "ek",
+        "ük"
+      ],
+      "correct": 0,
+      "teaches": [
+        "definite-conjugation"
+      ]
+    },
+    {
+      "id": "targyas-vs-alanyi-ujsag",
+      "type": "dropdown",
+      "sentence": "Minden reggel olvas_____ egy érdekes cikket az újságban.",
+      "options": [
+        "ok",
+        "om",
+        "nak"
+      ],
+      "correct": 0,
+      "teaches": [
+        "definite-vs-indefinite"
+      ]
+    },
+    {
+      "id": "mult-ido-regular",
+      "type": "text-input",
+      "sentence": "Tegnap este sokáig _____ a vizsgára.",
+      "answer": "tanultam",
+      "altAnswers": [
+        "Tanultam"
+      ],
+      "teaches": [
+        "past-tense-regular"
+      ]
+    },
+    {
+      "id": "mult-ido-volt",
+      "type": "dropdown",
+      "sentence": "A múlt heti kirándulás fantasztikus _____.",
+      "options": [
+        "volt",
+        "lett",
+        "van"
+      ],
+      "correct": 0,
+      "teaches": [
+        "past-tense-volt"
+      ]
+    },
+    {
+      "id": "hasonlitas-mint",
+      "type": "dropdown",
+      "sentence": "Budapest nagyobb város, _____ Szeged.",
+      "options": [
+        "mint",
+        "hogy",
+        "mert"
+      ],
+      "correct": 0,
+      "teaches": [
+        "comparative-mint"
+      ]
+    },
+    {
+      "id": "felteteles-mod-szeretnek",
+      "type": "text-input",
+      "sentence": "Szeret_____ kérni egy csésze forró teát mézzel.",
+      "answer": "nék",
+      "altAnswers": [
+        "nek"
+      ],
+      "teaches": [
+        "conditional-politeness"
+      ]
+    },
+    {
+      "id": "kotozo-mert-azert",
+      "type": "dropdown",
+      "sentence": "Nem mentem el a koncertre, _____ nagyon fáradt voltam.",
+      "options": [
+        "mert",
+        "ezért",
+        "pedig"
+      ],
+      "correct": 0,
+      "teaches": [
+        "connectors-mert"
+      ]
+    },
+    {
+      "id": "nevnap-koszonto",
+      "type": "choice",
+      "prompt": "Magyar barátodnak névnapja van ma. Hogyan köszöntöd fel illendően?",
+      "options": [
+        "Nagyon boldog névnapot kívánok neked!",
+        "Részvétem a névnapod alkalmából!",
+        "Jó étvágyat a névnapodhoz!"
+      ],
+      "correct": 0,
+      "teaches": [
+        "cultural-name-days"
+      ]
+    },
+    {
+      "id": "vendeglatas-koszonet",
+      "type": "choice",
+      "prompt": "Egy finom családi ebéd után távozol a vendéglátóidtól. Mit illik mondani?",
+      "options": [
+        "Nagyon köszönöm a szíves vendéglátást és a finom ebédet!",
+        "Tessék azonnal megenni a maradékot!",
+        "Bocsánat, hogy itt voltam, viszlát."
+      ],
+      "correct": 0,
+      "teaches": [
+        "pragmatics-hospitality"
+      ]
+    },
+    {
+      "id": "orvosi-panasz",
+      "type": "dropdown",
+      "sentence": "Jó napot kívánok, doktor úr! Nagyon fáj a _____.",
+      "options": [
+        "torkom",
+        "torkomat",
+        "torkomban"
+      ],
+      "correct": 0,
+      "teaches": [
+        "health-vocabulary"
+      ]
+    },
+    {
+      "id": "utbaigazitas-fordulas",
+      "type": "dropdown",
+      "sentence": "Menjen egyenesen a lámpáig, majd forduljon _____ a sarkon!",
+      "options": [
+        "jobbra",
+        "jobban",
+        "jobbról"
+      ],
+      "correct": 0,
+      "teaches": [
+        "directions-giving"
+      ]
+    },
+    {
+      "id": "hatarozoi-igenev-va-ve",
+      "type": "dropdown",
+      "sentence": "Az ablak nyit_____ van, engedd be a friss levegőt!",
+      "options": [
+        "va",
+        "ve",
+        "ván"
+      ],
+      "correct": 0,
+      "teaches": [
+        "adverbial-participle"
+      ]
+    },
+    {
+      "id": "birtokos-szemelyjel-tobb-targyu",
+      "type": "dropdown",
+      "sentence": "Hol vannak a könyv_____? Nem találom őket.",
+      "options": [
+        "eim",
+        "em",
+        "emék"
+      ],
+      "correct": 0,
+      "teaches": [
+        "plural-possession"
+      ]
+    },
+    {
+      "id": "felszolitasszeru-keres",
+      "type": "text-input",
+      "sentence": "Kérlek, ne haragud_____ rám a késés miatt!",
+      "answer": "j",
+      "altAnswers": [
+        "haragudj"
+      ],
+      "teaches": [
+        "imperative-subjunctive"
+      ]
+    }
+  ],
+  "writingTask": {
+    "id": "hu-a2-writing",
+    "title": "Köszönőlevél vendéglátásért vagy meghívó",
+    "prompt": "Írj egy rövid levelet (40–65 szó) egy magyar barátodnak vagy ismerősödnek! Köszönd meg a múlt heti vendéglátást, írd le, mi tetszett a legjobban, és hívd meg őt hozzátok a következő hétvégére.",
+    "context": "Használj legalább két ragozott személyes névmást (pl. nálatok, hozzánk, velem) és a tetszett kifejezést.",
+    "minWords": 40,
+    "targetKeywords": [
+      "köszönöm",
+      "tetszett",
+      "hozzánk",
+      "hétvégén"
+    ],
+    "teaches": [
+      "inflected-pronouns",
+      "pragmatics-hospitality",
+      "past-tense",
+      "invitations"
+    ]
+  },
+  "speakingTask": {
+    "id": "hu-a2-speaking",
+    "title": "Névnapi köszöntő és programajánló",
+    "prompt": "Mondj fel egy 25–45 másodperces hangüzenetet: köszöntsd fel magyar barátodat a névnapján (vagy születésnapján), javasolj egy közös találkozót a héten, és mondd el, hová szeretnél menni vele!",
+    "minSeconds": 20,
+    "targetKeywords": [
+      "boldog",
+      "névnapot",
+      "velem",
+      "szeretnék"
+    ],
+    "teaches": [
+      "cultural-name-days",
+      "invitations",
+      "oral-production"
+    ]
+  }
+}

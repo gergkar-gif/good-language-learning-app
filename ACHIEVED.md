@@ -267,3 +267,29 @@ time. All 7 steps below are complete — matches "Completed queue items"
    exactly as planned — only learner state syncs. Cloudflare/D1/Resend
    infrastructure deployed and verified live 2026-09-14 (see "Completed
    queue items" item 7 above).
+
+35. ~~**`audit-lesson.py` crashes on multi-blank fill-blanks, silently
+    skipping A2/B1 teaching-order checks**~~ — found and **fixed
+    2026-09-17** while scoping a "perfect what's shipped" improvement
+    pass. `exercise_spanish()` assumed every `fill-blank` exercise had a
+    scalar `answer` field, but exercises with multiple blanks use
+    `answers` (a list) instead — at least `a1-01-01`, `a1-03-05`,
+    `a1-06-01` through `a1-06-04` do this. That threw `KeyError: 'answer'`
+    inside `check_teaching_order()`, which runs per-level *after* all
+    per-lesson structural checks print — so `python scripts/audit-lesson.py`
+    with no args always crashed partway through A1 and never reached
+    A2/B1 at all. Per-lesson structural checks (the FAIL/warn lines) ran
+    correctly when a level was passed explicitly (`a1`/`a2`/`b1`), so
+    those results were already trustworthy; only the cross-lesson
+    teaching-order pass was silently blind, for every level except
+    (partially) A1, for as long as the bug existed.
+    - **Fix**: `exercise_spanish()` now returns `[ex["sentence"]] +
+      (ex["answers"] if "answers" in ex else [ex["answer"]])` for
+      `fill-blank`, matching how other multi-value exercise types are
+      already handled.
+    - Verified: `python scripts/audit-lesson.py` (no args) now runs to
+      completion across A1/A2/B1 with no traceback — reports "616
+      lesson(s) need work, 731 exercise(s) test untaught Spanish" as its
+      first-ever full-corpus teaching-order result. A2/B1's actual
+      teaching-order failures are new information (never surfaced
+      before) — see ROADMAP.md's Current priority queue for what's next.

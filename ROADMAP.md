@@ -601,6 +601,97 @@ stable references.
       the previous version. Re-tests a short while later were consistent.
       Don't read a deploy as broken from one inconsistent request
       immediately after clicking Deploy — retry a few times first.
+36. **Exercise-type variety is narrow across nearly all A1/A2 lessons** —
+    found 2026-09-17 via `audit-lesson.py` (run per-level, before item 35's
+    fix in ACHIEVED.md worked around a crash that then blocked a no-args
+    run). 132/154 A1 lesson-parts and 132/174 A2 lesson-parts fail
+    "practice spans 5+ distinct types," using only 4 of the available
+    types (`fill-blank`, `matching`, `multiple-choice`, `sentence-builder`)
+    and never mixing in `dialogue-complete`, `sentence-order`,
+    `listening-choice`, `dictation`, or `structured-writing`. B1 doesn't
+    fail this rule (different content spec). This is the practice-diversity
+    bar the guide docs set but content generation apparently doesn't
+    enforce — needs a decision: backfill variety into existing lessons, or
+    treat "5+ types" as aspirational for new content only.
+37. **New vocabulary frequently never appears in its own unit's story** —
+    found 2026-09-17 via `audit-lesson.py`. 84/154 A1 lesson-parts (55%),
+    103/174 A2 lesson-parts (59%), and 109/288 B1 lesson-parts fail "every
+    new word appears in the unit's story" — the single largest-volume
+    content-quality gap found in this pass. A word taught as new vocabulary
+    that the learner never sees modeled in the unit's own narrative
+    undercuts the "story reinforces vocabulary" design the content spec
+    calls for. Worth a scoped backfill pass per level, starting with A1.
+38. **A2 lessons systemically show "2 goals vs 1 checklist item"** — found
+    2026-09-17 via `audit-lesson.py`. 123/174 A2 lesson-parts fail "goals
+    and checklist are one-to-one," always in the same 2-goals/1-checklist
+    shape — too consistent to be scattered authoring drift. Undecided:
+    either A2 lessons are genuinely missing a second checklist line (a real
+    content gap), or `guides/a2-lesson-guide.md` intentionally combines two
+    goals into one
+    checklist statement and the checker's 1:1 rule is wrong for this level.
+    Check the guide before batch-editing either lessons or the checker.
+39. **Teaching-order flags triaged: ~86% real, concentrated in B1** — item
+    35's fix unblocked `audit-lesson.py`'s teaching-order check for A2/B1
+    for the first time, surfacing 731 exercises that test Spanish never
+    shown on the unit's grammar/vocabulary/story screens — but that check
+    can't tell a real gap from an exercise's own English gloss text or a
+    deliberately-wrong multiple-choice distractor. Built `scripts/
+    triage-teaching-order.py` (read-only, doesn't touch content) to split
+    the 731 into `english-leak` (5, 1%), `wrong-distractor-only` (100,
+    14%), and `real-gap-candidate` (626, 86%) — this last bucket is what a
+    backfill pass should actually work from. By level: A1 47 real / 9
+    distractor / 2 leak, A2 42 real / 26 distractor / 0 leak, **B1 537
+    real / 65 distractor / 3 leak** — B1 is where the overwhelming
+    majority of real candidates sit, matching `b1-content-spec.md`'s
+    standing note that Latin America's word-slug-id units were never
+    cross-checked against the plan. The heuristic isn't perfect (e.g. an
+    English instruction word outside a `(...)` gloss, like "Complete the
+    greeting: Buenos ___.", still reads as an unrecognised Spanish token)
+    — it narrows the list, it doesn't replace reading each flagged
+    exercise before editing it. Not yet started: actually working the
+    real-gap-candidate list into content fixes.
+40. **Built Hungarian's first teaching-order checker — same noise pattern
+    as Spanish, smaller scale** — built 2026-09-17, prompted by "do we have
+    the same issue in Hungarian" after item 39. There was no HU equivalent
+    of `audit-lesson.py` at all before this — not a port, since HU differs
+    from Spanish in three real ways: (1) A1/A2 lessons are flat-numbered
+    per-file (`a1-01.json`) with no unit grouping in the filename, so unit/
+    lesson grouping comes from `curriculum/curriculum.json` instead of
+    parsing ids — B1 is grouped the same way for consistency, which also
+    picks up its citizenship-track units (`b1-orszagma-*` etc.) for free,
+    something Spanish's equivalent Latin America track still doesn't have;
+    (2) Hungarian's own diacritics (a/á, o/ő/ö, u/ú/ü) are separate letters,
+    not accent noise to strip, matching how [[hungarian-accent-sensitive-
+    grading]] already treats HU elsewhere; (3) agglutination means literal
+    substring matching almost never survives a suffix (ház -> házban ->
+    házamban), so word comparison uses a bounded shared-prefix heuristic
+    (`KnownWords.covers()` in `scripts/audit-lesson-hu.py`) instead of
+    requiring an exact match — approximate, not real morphological
+    analysis (that lives in `engine/hu-morphology.js`), tuned by hand
+    against sample output until it stopped either flagging nearly
+    everything or missing everything.
+    - Also needed its own proper-noun list (`HU_PROPER_NOUNS`) after the
+      first run flagged the protagonist's name and known place names
+      (Meg, Budapest, Kossuth, Petőfi, ...) as "untaught Hungarian" —
+      same category of fix Spanish's `audit-lesson.py` already made.
+    - Built `scripts/triage-teaching-order-hu.py` alongside it, same
+      classification as item 39's Spanish triage. **Confirms Hungarian has
+      the same noise sources**: a1-155's multiple-choice options
+      `["paprika", "chocolate", "tea"]` for a Hungarian-only question mix
+      in English distractors exactly like Spanish's wrong-answer-option
+      problem. Result: 330 total flags (145 A1, 110 A2, 75 B1) — 171 (52%)
+      real-gap-candidate, 130 (39%) wrong-distractor-or-english-option, 29
+      (9%) english-leak. Smaller absolute numbers than Spanish's 731, but
+      similar in kind: a mix of genuine gaps and checker noise, needing the
+      same "triage before fixing" caution.
+    - Not built: HU equivalents of Spanish's other structural rules (5+
+      exercise types, "I can" checklist phrasing, goals<->checklist 1:1,
+      consolidation shape) — HU consolidations use a Recognize/Recall/In
+      Context/Produce structure, not Spanish's single "Review" group, so
+      those rules need their own design, not a mechanical port.
+      `curriculum.json` does carry real `newWords`/`exercises` counts per
+      lesson already (better plan data than Spanish A1 has), but nothing
+      cross-checks lesson content against those counts yet.
 
 ## Content & curriculum
 
