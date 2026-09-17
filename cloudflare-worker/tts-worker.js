@@ -91,6 +91,13 @@ function resolveVoiceName(payload, languageCode) {
         return 'en-US-Neural2-F';
     }
 
+    // Hungarian: Enceladus (lower-tone male) for story/reading narration; other types use SHORT_VOICE table
+    if (languageCode === 'hu-HU') {
+        if (isLongForm || payload.type === 'narrator') return 'hu-HU-Chirp3-HD-Enceladus';
+        const short = SHORT_VOICE[payload.gender] || SHORT_VOICE[payload.type] || SHORT_VOICE.narrator;
+        return `hu-HU-Chirp3-HD-${short}`;
+    }
+
     const short = SHORT_VOICE[payload.gender] || SHORT_VOICE[payload.type] || SHORT_VOICE.narrator;
     return `${languageCode}-Chirp3-HD-${short}`;
 }
@@ -163,6 +170,22 @@ export default {
 
         // Phonetic adaptation for Hungarian: 'ly' sounds like 'y', so Károly is pronounced Károy.
         text = text.replace(/\bKároly\b/g, 'Károy').replace(/\bKaroly\b/g, 'Károy');
+
+        // Intonation fix: if text has no terminal punctuation, append '.' to enforce falling
+        // declarative cadence. Critical for Hungarian isolated vocabulary words (e.g. "kutya" → "kutya.")
+        // — without punctuation the neural model treats the word as an open clause and raises pitch.
+        if (!/[.!?…]$/.test(text)) {
+            text = text + '.';
+        }
+
+        // Hungarian Wh-question cadence: Hungarian Wh-questions (*ki, mi, hol...*) naturally use
+        // a falling tone. When '?' is sent to the model it produces an English-style high-rise
+        // on the final syllable which sounds unnatural. Replace the terminal '?' with '.' so the
+        // model uses falling declarative cadence.
+        const HU_WH_WORDS = /^(ki|mi|hol|mikor|miért|hogyan|mennyi|milyen|melyik|hova|honnan|merre|meddig|mettől|mióta|mire)\b/i;
+        if (languageCode === 'hu-HU' && text.endsWith('?') && HU_WH_WORDS.test(text)) {
+            text = text.slice(0, -1) + '.';
+        }
 
         const apiKey = (env && env.GOOGLE_TTS_API_KEY) || payload.apiKey;
         if (!apiKey) {
