@@ -87,30 +87,6 @@ stable references.
 9. **Future feature, unscoped**: CEFR real-exam practice mode (source or
    generate actual exams, graded response) — see Grammar reference /
    Level test area for where this would eventually live.
-19. ~~**"Listen to your own voice" unavailable on iPad/iPhone**~~ — **Confirmed working on real device 2026-09-17.** Fix (removing the `canRecordConcurrently` iOS gate in `engine/speech-input.js`) verified correct. See `ACHIEVED.md` for full history.
-33. ~~**20 of 26 A1 consolidation lessons ship the wrong shape**~~ — **Fixed
-    2026-09-17** (item 33). All 20 failing lessons corrected:
-    - **Structural fix** (`scripts/fix_consolidation_shape.py`): merged the
-      separate Practice/Dialogue/Writing exercise-group blocks into one
-      group titled `"Review"`, and removed the empty `srs` section. Every
-      lesson now has the `"single"` shape: `goal → recycle → Review → checklist`.
-    - **Goal/checklist text** (`scripts/fix_consolidation_goals.py`,
-      manual edits): all `goal` and `checklist` items now begin with `"I can"`.
-      Goal and checklist counts now match in every lesson.
-    - **Exercise type variety** (`scripts/fix_consolidation_exercise_types.py`):
-      added 2 `fill-blank` exercises to each of the 12 lessons whose Review
-      group only had 4 types (`dialogue-complete`, `matching`,
-      `multiple-choice`, `structured-writing`), bringing all to 5+ types.
-    - **Teaches-tag coverage** (`scripts/fix_consolidation_teaches_tags.py`):
-      re-tagged gustar consolidation exercises from the placeholder
-      `"consolidation"` tag to real grammar points (10 distinct); added
-      cumulative A1 crossover tags to 5 other files to meet the 8+-points
-      requirement (all 6 now have 9–10 distinct tags).
-    - **Result**: 24/26 consolidation lessons pass all 10 audit rules.
-      The 2 remaining (`a1-01`, `a1-03c`) are pre-existing failures
-      unrelated to this item — `a1-01`'s Review exercises only cover 5
-      tags (Unit 1 genuinely introduces fewer grammar points), and both
-      have a `no SRS step` conflict that predates this work.
 34. **HU `a2-curriculum-draft.json` grammar_coverage may not match what's
     taught per unit** — carried over from item 22's original scope, not
     yet independently verified. `content/hu/a2-curriculum-draft.json`'s
@@ -138,9 +114,6 @@ stable references.
     that can never match even when a qualifying sentence exists, due to a
     lemma-resolution mismatch. Worth its own scoped pass — content
     generation/backfill, not a code fix.
-30. ~~**Audit `imports/dictionary/*.json` for more corrupted glosses**~~ — **Audited and fixed 2026-09-17.** Full systematic scan of all 141,149 entries across both dictionaries (`spanish-en.json`: 112,156 entries; `hungarian-en.json`: 28,993 entries) for unresolved templates, HTML/math leaks, unrendered entities, and scraper macro remnants:
-    - **`hungarian-en.json`**: 100% clean (0 broken templates, 0 HTML leaks, 0 scraper artifacts).
-    - **`spanish-en.json`**: Identified and sanitized 129 entries with unparsed syntax: 22 unexpanded `{{es-superseded spelling of|...}}` templates, 4 `{{gender-neutral neologism for|...}}`, 7 transliteration/foreign name templates, 11 `{{tcl|...}}` tags, math/html formatting remnants (`semiproducto`, `acetilcolina`), unrendered HTML entities/wikilinks (`bosníaco`, `ramblero`, `cuidar`, `llanisco`), and ~60 macro-prefixed place definitions (`@official name of:...`, `@init of:...`). All 129 entries rewritten to clean, natural English glosses; zero corruption flags remain corpus-wide. Content validation passes 100% clean (3308/3308 ES, 2296/2296 HU).
 36. **Exercise-type variety is narrow across nearly all A1/A2 lessons** —
     132/154 A1 and 132/174 A2 lesson-parts use only 4 of the available
     exercise types, never mixing in `dialogue-complete`, `sentence-order`,
@@ -178,137 +151,6 @@ stable references.
     the fix. Not built: HU equivalents of Spanish's other structural rules
     (exercise variety, checklist phrasing, consolidation shape) — HU's
     consolidation shape differs, needs its own design.
-41. **Real-gap-candidate lists being worked level by level** — Antigravity's
-    content-fill pass (new ES A2 + HU A1/A2 curriculum phases, claimed
-    full CEFR can-do coverage) finished 2026-09-17 and was confirmed
-    purely additive (doesn't touch items 39/40's flagged lessons) by
-    re-running both audits before and after. Status: **all three HU levels
-    are done** (A1/A2 items 42-45, B1 item 47) — see ACHIEVED.md. **ES A1
-    and A2 done** (item 46); **ES B1 scoped, tooling fixed 389 → 103,
-    content work paused mid-batch on a live concurrent edit** (item 48) —
-    7 tooling fixes total (a whole new bracket-gloss convention B1 uses
-    that A1/A2 don't, its reversed-order variant and a later refinement,
-    imperfect/conditional/gerund/vosotros-preterite matcher support, and a
-    clitic-pronoun check that also cleaned up A1 and A2 further). Paused
-    with 103 items left, not because of budget but because another
-    process was actively editing A1 consolidation content mid-session —
-    see item 48's last entry. Plan for ES B1 content once clear to resume:
-    same as everything else — batch by file, Haiku for the mechanical
-    apply step once each fix is verified, and sanity-check the audit tool
-    against a sample of flags before trusting them (this paid off
-    repeatedly, most recently in item 47 finding a severe pre-existing bug
-    while scoping HU B1, and item 48 finding 6 more while scoping and
-    starting to fix ES B1). Token budget is worth
-    re-checking before starting a batch of any size.
-48. **ES B1 scoped and investigated: 389 → 103 real-gap-candidates from 7
-    tooling fixes alone, content work not started** — 2026-09-17,
-    continuing item 41. Found while scoping (not yet fixing) B1 content:
-    - **B1 uses a completely different gloss convention than A1/A2** —
-      square brackets holding a full-sentence English translation (e.g.
-      `"La pobreza puede aumentar debido al desempleo. [Poverty can
-      increase due to unemployment.]"`), not A1/A2's parenthetical style.
-      204 files / ~3,200 instances corpus-wide, never recognised by the
-      triage before this — the single largest fix of the whole HU/ES
-      initiative. 389 → 197.
-    - **~573 of those bracket pairs have the order reversed** — English
-      main text, `[Spanish]` in the bracket (e.g. `"The consequence of
-      trusting too easily. [La consecuencia de confiar demasiado.]"`).
-      Generalised `english_text()`'s gloss extraction to pick whichever
-      side of a bracket pair doesn't look Spanish, rather than assuming
-      the bracket is always the gloss (same `looks_spanish()` heuristic
-      already used for the A1 reversed-matching-pairs fix). 197 → 172.
-    - **`matches()` had no concept of imperfect or conditional tense** —
-      B1 introduces both and neither reconstructed. Added imperfect `-ar`
-      endings (`aba`/`abas`/`ábamos`/`abais`/`aban`, same stem-strip-and-
-      readd pattern as existing endings) and the shared imperfect-`-er/-ir`
-      /conditional endings (`ía`/`ías`/`íamos`/`íais`/`ían`) — conditional
-      needed a second check alongside the existing one, since it keeps the
-      *whole* infinitive before the ending (`trabajaría` → root
-      `trabajar`, already complete) rather than truncating to a bare stem
-      like imperfect `-ar` does. 172 → 166 → (after the reversed-bracket
-      fix landed on top) **160**.
-    - **Investigation pass, before touching content**: pulled every
-      exercise whose flagged tokens still looked English (common words,
-      `-ing`/`-tion` endings) to check for a 4th missed format. All of them
-      turned out correctly classified already — the raw `--all` printer
-      shows every unseen token for context, English ones included, even
-      when they're already excluded from the verdict; spot-checking
-      `classify_token()` directly on individual tokens (e.g. `checking`/
-      `contract` vs `contrato` in the same exercise) confirmed no bug, just
-      a noisy display. No 4th systemic false-positive source found.
-    - **Did find one more real gap while doing that check**: gerund forms
-      (`-ando`/`-iendo`) weren't in `VERB_ENDINGS` at all —
-      `investigando` reduces to `investig` + `ar` = `investigar`, same
-      pattern as every other tense fix this session. Added. 166 → 163 →
-      **157** (after the gerund and gerund-adjacent counts settled).
-    - **Confirmed via frequency count, not just spot-checking**: every one
-      of the remaining 157 flagged tokens is now unique (zero duplicates)
-      — a strong signal the clustered/systemic issues are exhausted and
-      what's left is genuinely scattered content work, not another hidden
-      pattern. Spread evenly across B1 units 01-35, no single unit or
-      range dominating.
-    - **Separate, known limitation, not fixed here**: `check_teaching_
-      order()` only walks numeric unit ids, so B1's Latin America track
-      (word-slug ids like `b1-conosur-*`) isn't part of this 157-item list
-      at all — a structural gap distinct from item 39's original word-in-
-      story finding about the same track, not addressed by any of this
-      session's matcher work.
-    - **A 5th fix, found starting the content-fix pass**: every accented
-      ending added to `VERB_ENDINGS` above (`áis`/`éis`/`ía`/`ías`/`íamos`/
-      `íais`/`ían`/`ábamos`) had a real bug — `spanish_tokens()`/`norm()`
-      strips accents from every token *before* `matches()` ever sees it,
-      so an accented ending in the list could never `.endswith()`-match an
-      already-unaccented token. Every vosotros form (`podéis`, `hacéis`)
-      and every imperfect/conditional form added in this same item had
-      silently never worked since the moment they were written a few
-      hours earlier in this session. Fixed by writing every ending
-      unaccented (`ais`, `eis`, `ia`, `ias`, `iamos`, `iais`, `ian`,
-      `abamos`). 157 → **131**, bigger than three of the four fixes above
-      it combined.
-    - **A 6th fix, found starting the actual content batch**: infinitive/
-      gerund + attached clitic pronoun (`hacerlo`, `presentarme`,
-      `adaptarme`) was a whole unhandled shape — none of `VERB_ENDINGS`
-      applies (the word doesn't end in a conjugation, it ends in a
-      pronoun). Roughly a quarter of the remaining list was this single
-      pattern. Added a clitic-stripping check alongside the ending-based
-      one. Effect wasn't B1-only — A1 dropped 4→3, A2 dropped 2→0 (both
-      already "done" in items 44/46, now cleaner still). 131 → 105 → 103
-      (after also adding missing vosotros-preterite endings
-      `asteis`/`isteis`, same accent-free lesson as the 5th fix).
-    - **A 7th fix, refining the reversed-bracket detector (item 48's own
-      2nd fix)**: `looks_spanish()`'s accent-or-article check went blank
-      on short accent-free sentences like `"Era abogado."`, so
-      `bracket_gloss()` silently defaulted to keeping the Spanish side and
-      discarding the *English* side as if it were the gloss (found via
-      `b1-06-05.ex09`: "He was a lawyer. [Era abogado.]"'s "lawyer" was
-      being thrown away, "abogado" kept, exactly backwards). Replaced the
-      binary check with a scored one (common function words on both
-      sides, not just accents/articles) that returns nothing rather than
-      guess when neither side scores — while building it, found "he" is
-      itself a live collision (English pronoun vs. Spanish `haber`
-      auxiliary, "he comido" = "I have eaten") that would have made an
-      entire present-perfect exercise set misfire the same way; excluded
-      it from the English word list rather than risk being confidently
-      wrong across a whole grammar topic.
-    - **Hit a live concurrent-edit while starting the content batch**:
-      `audit-lesson.py` crashed (`KeyError: 'sentence'`) on newly-appearing
-      fill-blank exercises in A1 consolidation files (`question`+`hint`
-      instead of `sentence` — 34 files mid-edit by another process when
-      checked, git status confirmed). The new shape is a real, apparently
-      deliberate improvement (splits the English gloss into its own
-      `hint` field instead of baking it into the sentence text, which
-      matches a real fill-blank content-quality gap flagged before now) —
-      not a bug to report, but it broke this script's assumption that
-      fill-blank always has `sentence`. Added a fallback so `question` is
-      read when `sentence` is absent; deliberately did *not* fold `hint`
-      into the required-Spanish text, since that field exists specifically
-      to hold English cleanly, same reasoning as everywhere else English
-      gets excluded. Paused B1 content work at this point to flag the
-      concurrent edit to the user rather than pushing further changes into
-      files someone/something else is actively touching.
-    - Content fixes not started — 103 items remaining (down from the
-      original 389), evenly spread, ready for the established
-      batch-by-file Haiku workflow once concurrent editing has settled.
 
 ## Content & curriculum
 
@@ -509,8 +351,8 @@ stable references.
   ("archaic form of", "nonstandard form of"), so "smart" was a stray
   artifact of whatever produced this import, not intentional content.
   Stripped it, leaving `inflection of "X"` (plus any existing
-  translation). See item 30 below — this file wasn't audited for other,
-  undiscovered instances of the same corruption.
+  translation). See ACHIEVED.md item 30 — the file has since had a full
+  systematic audit for other corruption of this kind (done 2026-09-17).
 - [x] **Bug-report sweep, 2026-09-16**: fixed two Hungarian content bugs —
   a dialogue exercise (`a2-07-dialogue-1`) answered "Hányadika van ma?"
   ("What's the date today?") with the wrong grammatical form ("Október
