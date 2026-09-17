@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — Parlour</title>
+    <meta name="description" content="What data Parlour collects and why.">
+    <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+    <style>
+        body {
+            font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+            max-width: 40rem;
+            margin: 0 auto;
+            padding: 2rem 1.25rem 4rem;
+            line-height: 1.6;
+            color: #1a1a1a;
+        }
+        h1 { font-size: 1.5rem; }
+        h2 { font-size: 1.1rem; margin-top: 2rem; }
+        a { color: #E65100; }
+        .back-link { display: inline-block; margin-bottom: 1.5rem; font-size: 0.9rem; }
+        footer { margin-top: 3rem; font-size: 0.85rem; color: #666; }
+        @media (prefers-color-scheme: dark) {
+            body { background: #16130f; color: #e8e2d8; }
+            a { color: #ff9d4d; }
+            footer { color: #999; }
+        }
+    </style>
+</head>
+<body>
+    <a class="back-link" href="index.html">&larr; Back to Parlour</a>
+    <h1>Privacy Policy</h1>
+    <p>Parlour is a personal language-learning app. This page explains what
+    data it collects and why. It's a small, independently run project, not
+    a company — so this policy is short and factual rather than legal
+    boilerplate.</p>
+
+    <h2>Account and cloud sync (optional)</h2>
+    <p>Signing in is optional and only needed if you want to back up your
+    progress or use it on another device. If you use it:</p>
+    <ul>
+        <li>You enter an <strong>email address</strong>, and we send you a
+        one-time sign-in link via <a href="https://resend.com" target="_blank" rel="noopener">Resend</a>,
+        our transactional email provider.</li>
+        <li>Once signed in, your <strong>learning progress</strong> (lesson
+        completion, spaced-repetition review data, XP, and similar in-app
+        state) can be backed up to and restored from our database.</li>
+        <li>Your email address and backed-up progress are stored in
+        <a href="https://developers.cloudflare.com/d1/" target="_blank" rel="noopener">Cloudflare D1</a>,
+        a database run by Cloudflare on our behalf.</li>
+    </ul>
+    <p>If you never use the Account feature, no email address or progress
+    data ever leaves your device — everything is stored locally in your
+    browser.</p>
+
+    <h2>Bot protection (Cloudflare Turnstile)</h2>
+    <p>The sign-in flow is protected by
+    <a href="https://www.cloudflare.com/products/turnstile/" target="_blank" rel="noopener">Cloudflare Turnstile</a>,
+    running in invisible mode, to prevent automated abuse of the login-link
+    email. Turnstile runs in your browser and shares certain signals (such
+    as your IP address and browser characteristics) with Cloudflare to
+    assess whether a request is coming from a bot. See Cloudflare's
+    <a href="https://www.cloudflare.com/turnstileprivacypolicy/" target="_blank" rel="noopener">Turnstile Privacy Policy Addendum</a>
+    for details of what Turnstile collects and how Cloudflare uses it.</p>
+
+    <h2>Text-to-speech audio</h2>
+    <p>Spoken audio for lessons, stories, and exercises is generated using
+    <a href="https://cloud.google.com/text-to-speech" target="_blank" rel="noopener">Google Cloud Text-to-Speech</a>,
+    called via our own server. The text sent for synthesis is app content
+    (words, sentences, story text) — never your email address or personal
+    information. Generated audio is cached locally in your browser so the
+    same text isn't re-synthesized every time.</p>
+
+    <h2>What we don't do</h2>
+    <p>Parlour has no advertising, no analytics or tracking scripts, and
+    does not sell or share your data with anyone beyond the service
+    providers named above, which exist solely to make the app work.</p>
+
+    <h2>Questions</h2>
+    <p>If you have questions about this policy or want your data deleted,
+    contact <a href="mailto:gergkar@gmail.com">gergkar@gmail.com</a>.</p>
+
+    <footer>Last updated 2026-09-17.</footer>
+</body>
+</html>
