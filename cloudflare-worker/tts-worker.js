@@ -191,6 +191,14 @@ export default {
             text = text.slice(0, -1) + '.';
         }
 
+        // Hungarian story comma cadence: in narrative readings, commas mark rhythmic clause
+        // boundaries (szólamhatárok). Appending a typographic em-dash after commas followed by
+        // whitespace provides a natural breathing pause so complex Hungarian sentences don't
+        // feel rushed. Only applies to long-form reading/story narration; preserves decimal numbers (e.g. 1,5).
+        if (languageCode === 'hu-HU' && (payload.type === 'story' || payload.type === 'reading' || payload.type === 'narrator')) {
+            text = text.replace(/,(\s+)(?![—–])/g, ', —$1');
+        }
+
         const apiKey = (env && env.GOOGLE_TTS_API_KEY) || payload.apiKey;
         if (!apiKey) {
             return json({

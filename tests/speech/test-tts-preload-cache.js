@@ -35,6 +35,34 @@ assert.strictEqual(resolveVoiceName({ type: 'reading' }, 'hu-HU'), 'hu-HU-Chirp3
 assert.strictEqual(resolveVoiceName({ type: 'narrator' }, 'hu-HU'), 'hu-HU-Chirp3-HD-Enceladus');
 console.log('[PASS] Worker voice resolution tiers verified.');
 
+// Test 1b: Story comma cadence normalization
+function normalizeStoryText(text, type, languageCode) {
+    if (!/[.!?…]$/.test(text)) text = text + '.';
+    const HU_WH_WORDS = /^(ki|mi|hol|mikor|miért|hogyan|mennyi|milyen|melyik|hova|honnan|merre|meddig|mettől|mióta|mire)\b/i;
+    if (languageCode === 'hu-HU' && text.endsWith('?') && HU_WH_WORDS.test(text)) {
+        text = text.slice(0, -1) + '.';
+    }
+    if (languageCode === 'hu-HU' && (type === 'story' || type === 'reading' || type === 'narrator')) {
+        text = text.replace(/,(\s+)(?![—–])/g, ', —$1');
+    }
+    return text;
+}
+assert.strictEqual(
+    normalizeStoryText('Réges-régen, egy faluban élt egy fiú, akit Jancsinak hívtak', 'story', 'hu-HU'),
+    'Réges-régen, — egy faluban élt egy fiú, — akit Jancsinak hívtak.'
+);
+// Decimal numbers like 1,5 must not get a dash inserted
+assert.strictEqual(
+    normalizeStoryText('1,5 liter tej volt', 'story', 'hu-HU'),
+    '1,5 liter tej volt.'
+);
+// Non-story Hungarian vocab words must not get dashes inserted at commas
+assert.strictEqual(
+    normalizeStoryText('alma, körte', 'vocabulary', 'hu-HU'),
+    'alma, körte.'
+);
+console.log('[PASS] Hungarian narrative comma cadence beat verified.');
+
 // Test 2: ParlourTTS preload and cache API in engine/tts.js
 console.log('\n--- Test 2: ParlourTTS Preload & Cache API ---');
 let fetchCount = 0;
