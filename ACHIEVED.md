@@ -766,6 +766,23 @@ time. All 7 steps below are complete — matches "Completed queue items"
       Don't read a deploy as broken from one inconsistent request
       immediately after clicking Deploy — retry a few times first.
 
+39. ~~**ES teaching-order flags triaged: 731 total, 86% real**~~ — **Done 2026-09-17.**
+    `scripts/triage-teaching-order.py` (built after item 35's crash fix unblocked
+    A2/B1 for the first time) classified flags into `real-gap-candidate` (626),
+    `wrong-distractor-only` (100), and `english-leak` (5). Resolved across levels
+    via items 46 (ES A1/A2) and 48 (ES B1), reducing 626 candidates down to 11
+    accepted irregular/clitic morphology edge cases across the entire 762-lesson
+    Spanish curriculum. See items 41, 46, and 48 for complete tooling and content
+    audit details.
+
+40. ~~**Hungarian teaching-order checker expansion**~~ — **Done 2026-09-17.**
+    Built Hungarian's first teaching-order checker (`scripts/audit-lesson-hu.py` +
+    `scripts/triage-teaching-order-hu.py`) with agglutination-aware bounded-prefix
+    stem matching, accent-sensitive tokenizing, and curriculum-based unit
+    grouping. Resolved across levels via items 42–45 (HU A1/A2) and 47 (HU B1),
+    reducing 171 real-gap candidates to 10 accepted morphophonology edge cases
+    across all Hungarian levels. See items 41, 42–45, and 47 for details.
+
 42. ~~**HU pilot: "Going Places" unit (a1.56-60) — fixed and verified**~~ —
     resumed item 41, **done 2026-09-17**. Fixed lesson a1.56 (Haiku-applied
     from fully-specified edits): added `mozi`/`étterem`/`múzeum`/`posta` to
