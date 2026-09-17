@@ -272,6 +272,8 @@ LANG_UNIT_TITLES = {
             "Review 2: Work, Past & Opinions",
             "Problems, Requests & Everyday Communication",
             "Living in Hungarian",
+            "Declined Pronouns: Internal & Surface Cases",
+            "Declined Pronouns: Proximity & Motion",
         ],
     },
 }

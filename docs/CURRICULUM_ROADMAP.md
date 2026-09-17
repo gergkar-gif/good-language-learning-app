@@ -118,12 +118,14 @@ that's now just a JSON append rather than a `build-manifest.py` edit.
 
 ---
 
-## ⏳ Phase 6: Hungarian A2 — Inflected Personal Pronouns [TO-BE-DONE LATER]
+## ✅ Phase 6: Hungarian A2 — Inflected Personal Pronouns [DONE 2026-09-17]
 
-- [ ] **Unit 6.1: Inflected Personal Pronouns I — Internal & External Cases (`unit.hu.pronouns1`)**
-  - **Focus**: Inessive (*bennem, benned, benne, bennünk, bennetek, bennük*), Superessive (*rajtam, rajtad, rajta, rajtunk, rajtatok, rajtuk*), Sublative (*rám, rád, rá, ránk, rátok, rájuk*).
-- [ ] **Unit 6.2: Inflected Personal Pronouns II — Approach & Proximity Cases (`unit.hu.pronouns2`)**
-  - **Focus**: Adessive (*nálam, nálad, nála, nálunk, nálatok, náluk* — "at my place"), Allative (*hozzám, hozzád, hozzá, hozzánk, hozzátok, hozzájuk* — "coming to me"), Ablative (*tőlem, tőled, tőle, tőlünk, tőletek, tőlük* — "from me").
+- [x] **Unit 33: Declined Pronouns: Internal & Surface Cases (`unit.a2.33`, stems `a2-161` to `a2-165` + `a2-165-consolidation`)**
+  - **Focus**: Inessive (*bennem, benned, benne, bennünk, bennetek, bennük*), Superessive (*rajtam, rajtad, rajta, rajtunk, rajtatok, rajtuk*), Sublative (*rám, rád, rá, ránk, rátok, rájuk*), governing verbs (*bízik, csalódik, segít, számít, múlik*). 5 lessons + consolidation.
+  - **Story**: *Egy fontos vizsga előtt* (`a2-unit-33`).
+- [x] **Unit 34: Declined Pronouns: Proximity & Motion (`unit.a2.34`, stems `a2-166` to `a2-170` + `a2-170-consolidation`)**
+  - **Focus**: Adessive (*nálam, nálad, nála, nálunk, nálatok, náluk* — "at my place"), Allative (*hozzám, hozzád, hozzá, hozzánk, hozzátok, hozzájuk* — "coming to me"), Ablative (*tőlem, tőled, tőle, tőlünk, tőletek, tőlük* — "from me"), Delative (*rólam, rólad, róla, rólunk, rólatok, róluk* — "about me"), hosting & visiting etiquette. 5 lessons + consolidation.
+  - **Story**: *Vendégség a barátoknál* (`a2-unit-34`).
 
 ---
 
