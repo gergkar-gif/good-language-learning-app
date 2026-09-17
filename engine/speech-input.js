@@ -291,6 +291,24 @@ const SpeechInput = (function () {
 
         const RecognitionClass = _getRecognitionClass();
 
+        // Mobile browsers (both iOS WebKit and Android Chrome) require single-shot recognition (continuous: false).
+        // Android Chrome does not support continuous: true reliably and aborts or fires premature no-speech errors.
+        // Also used below to sequence the mic-recording start after recognition (see "2. Microphone audio recording").
+        const isMobile = typeof navigator !== 'undefined' && (
+            /iPad|iPhone|iPod|Android/i.test(navigator.userAgent) ||
+            (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)
+        );
+
+        // On Android, requesting getUserMedia (for playback recording) at the
+        // same moment SpeechRecognition.start() requests the mic can starve
+        // recognition of the microphone entirely — the recording comes
+        // through fine but the transcript never arrives. Grading depends on
+        // the transcript, so recognition gets the mic uncontested first;
+        // recording (playback, lower priority) is deferred until recognition
+        // has actually claimed it, via this handoff. See "2. Microphone
+        // audio recording" below for where it's invoked.
+        let _onRecognitionClaimedMic = null;
+
         // 1. Primary: Native SpeechRecognition Engine
         if (RecognitionClass) {
             function _startRecognitionInstance() {
@@ -298,19 +316,17 @@ const SpeechInput = (function () {
                 try {
                     const recognition = new RecognitionClass();
                     recognition.lang = lang;
-
-                    // Mobile browsers (both iOS WebKit and Android Chrome) require single-shot recognition (continuous: false).
-                    // Android Chrome does not support continuous: true reliably and aborts or fires premature no-speech errors.
-                    const isMobile = typeof navigator !== 'undefined' && (
-                        /iPad|iPhone|iPod|Android/i.test(navigator.userAgent) ||
-                        (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)
-                    );
                     recognition.continuous = !isMobile;
                     recognition.interimResults = true;
                     recognition.maxAlternatives = 1;
 
                     recognition.onstart = () => {
                         _isListening = true;
+                        if (_onRecognitionClaimedMic) {
+                            const fn = _onRecognitionClaimedMic;
+                            _onRecognitionClaimedMic = null;
+                            fn();
+                        }
                     };
 
                     recognition.onresult = event => {
@@ -473,12 +489,25 @@ const SpeechInput = (function () {
         // unsupported. This used to be skipped entirely on mobile (Android/iOS) on the theory
         // that getUserMedia causes hardware contention with webkitSpeechRecognition at the OS
         // level — but that meant "listen to your own recording" never worked on a phone at
-        // all. Now attempted on every platform; if concurrent capture does starve recognition
-        // on some device, the existing onerror/onend restart logic above already recovers from
-        // a stray no-speech/aborted error without losing the learner's turn.
+        // all. Recognition is graded and comes first in priority, so on mobile (where the
+        // contention actually happens) recording is deferred until recognition's onstart
+        // confirms it has the mic, with a fallback timeout in case onstart never fires (e.g.
+        // recognition permission denied) so playback still isn't lost entirely. Desktop starts
+        // both immediately as before — contention hasn't been observed there.
         const needsAudioRecording = !RecognitionClass || !!options.onAudioReady;
         if (isRecordingSupported() && needsAudioRecording) {
-            _startRecordingStream(options);
+            if (RecognitionClass && isMobile) {
+                let started = false;
+                const beginRecording = () => {
+                    if (started || !_isListening) return;
+                    started = true;
+                    _startRecordingStream(options);
+                };
+                setTimeout(beginRecording, 600);
+                _onRecognitionClaimedMic = beginRecording;
+            } else {
+                _startRecordingStream(options);
+            }
         } else if (!RecognitionClass && !isRecordingSupported()) {
             _isListening = false;
             onError('not-supported');

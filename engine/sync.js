@@ -25,6 +25,14 @@ const Sync = (function () {
 
     const WORKER_URL = 'https://parlour-sync.gergkar.workers.dev';
 
+    // Public Turnstile site key (safe to ship client-side — it's the secret
+    // key, held only by the Worker, that actually matters). Empty until a
+    // Turnstile widget is created in the Cloudflare dashboard; while empty,
+    // getTurnstileToken() is a no-op and the Worker skips verification too
+    // (see TURNSTILE_SETUP.md), so requestLink() keeps working unprotected
+    // rather than breaking sign-in before the widget exists.
+    const TURNSTILE_SITE_KEY = '0x4AAAAAAE5nXnu8zfuPH7yB';
+
     const TOKEN_STORAGE_KEY = 'syncToken';
     const EMAIL_STORAGE_KEY = 'syncEmail';
     const FIRST_VISIT_PROMPT_KEY = 'syncPromptSeen';
@@ -179,11 +187,68 @@ const Sync = (function () {
         }
     }
 
+    // ----------------------------------------
+    // TURNSTILE (bot check before requestLink emails anyone)
+    // ----------------------------------------
+    // Invisible widget: no checkbox in the UI, just a token minted in the
+    // background and handed to the Worker, which verifies it with
+    // Cloudflare before sending the magic-link email. Loaded lazily — most
+    // visits never open the sign-in form, so there's no reason to fetch
+    // Cloudflare's script on every page load.
+    let _turnstileLoadPromise = null;
+    let _turnstileWidgetId = null;
+    let _turnstileResolve = null;
+    let _turnstileReject = null;
+
+    function _loadTurnstileScript() {
+        if (_turnstileLoadPromise) return _turnstileLoadPromise;
+        _turnstileLoadPromise = new Promise((resolve, reject) => {
+            if (window.turnstile) { resolve(window.turnstile); return; }
+            const script = document.createElement('script');
+            script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js';
+            script.async = true;
+            script.onload = () => resolve(window.turnstile);
+            script.onerror = () => reject(new Error('Could not load Turnstile'));
+            document.head.appendChild(script);
+        });
+        return _turnstileLoadPromise;
+    }
+
+    async function getTurnstileToken() {
+        if (!TURNSTILE_SITE_KEY) return null; // not configured yet — Worker skips verification too
+        const turnstile = await _loadTurnstileScript();
+        if (_turnstileWidgetId === null) {
+            const host = document.createElement('div');
+            host.style.display = 'none';
+            document.body.appendChild(host);
+            _turnstileWidgetId = turnstile.render(host, {
+                sitekey: TURNSTILE_SITE_KEY,
+                size: 'invisible',
+                callback: token => { if (_turnstileResolve) _turnstileResolve(token); },
+                'error-callback': () => { if (_turnstileReject) _turnstileReject(new Error('Verification failed')); }
+            });
+        }
+        return new Promise((resolve, reject) => {
+            _turnstileResolve = resolve;
+            _turnstileReject = reject;
+            turnstile.execute(_turnstileWidgetId);
+        });
+    }
+
     async function requestLink(userEmail) {
+        let turnstileToken = null;
+        try {
+            turnstileToken = await getTurnstileToken();
+        } catch (error) {
+            // Falls through with turnstileToken = null — the Worker rejects
+            // the request outright once TURNSTILE_SECRET_KEY is configured,
+            // same as a missing token, so nothing needs handling here.
+        }
+
         const res = await fetch(WORKER_URL + '/auth/request-link', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ email: userEmail })
+            body: JSON.stringify({ email: userEmail, turnstileToken })
         });
         if (!res.ok) {
             const body = await res.json().catch(() => ({}));

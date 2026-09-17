@@ -7,6 +7,24 @@
 // Deploy via Cloudflare dashboard (Workers & Pages -> Create -> paste this in)
 // or via wrangler. Runs on Cloudflare Workers AI free tier
 // (e.g. @cf/meta/llama-3.3-70b-instruct or @cf/meta/llama-3.1-8b-instruct).
+//
+// Model order, and the story behind it (2026-09-17 neuron-cost review):
+// three Llama 8B-class candidates (llama-3.1-8b-instruct-fp8-fast, the
+// unquantized llama-3.1-8b-instruct, llama-3.1-8b-instruct-fp8) were each
+// tried and rejected — one deprecated server-side, the other two produced
+// concrete broken output (overallScore as 0 or as a 0.0-1.0 fraction
+// instead of a 0-100 int, skill lists as bare strings instead of
+// {skillId, confidence} objects, manufactured errors on correct usage).
+// mistral-small-3.1-24b-instruct (~4x cheaper than 70B on output neurons)
+// passed the same real-prompt spot-checks once two root causes were fixed
+// in engine/grader/grader-prompt.js itself (not model-specific — this
+// helps every model, including 70B): the required-JSON-shape example had
+// "overallScore": 0 sitting next to 0.0-1.0 dimension fields with nothing
+// distinguishing its scale, and the skill-array shape was only shown in an
+// example, never stated as a hard rule. Both are now explicit CRITICAL
+// RULEs in the prompt. GRADER_MODEL env var can force a specific model
+// without a code change; the 5028/5007 fallback below drops to 70B if the
+// primary model ever errors or gets deprecated.
 
 const ALLOWED_ORIGINS = [
     'https://gergkar-gif.github.io',
@@ -15,9 +33,8 @@ const ALLOWED_ORIGINS = [
 ];
 
 const CANDIDATE_MODELS = [
-    '@cf/meta/llama-3.3-70b-instruct-fp8-fast',
-    '@cf/meta/llama-3.1-8b-instruct-fast',
-    '@cf/meta/llama-3.1-8b-instruct'
+    '@cf/mistralai/mistral-small-3.1-24b-instruct',
+    '@cf/meta/llama-3.3-70b-instruct-fp8-fast'
 ];
 
 function corsHeaders(origin) {
@@ -90,7 +107,7 @@ export default {
                     const aiResult = await env.AI.run(m, {
                         messages,
                         temperature: 0,
-                        max_tokens: 3000
+                        max_tokens: 1500
                     });
 
                     const content = aiResult.response || aiResult.content || '';
@@ -114,8 +131,12 @@ export default {
                             code: 'QUOTA_EXHAUSTED'
                         }, 429, cors);
                     }
-                    // If model doesn't exist, try next candidate model
-                    if (String(aiError).includes('5007') || String(aiError).includes('No such model')) {
+                    // If this model is unusable for reasons unrelated to the
+                    // grading request itself — doesn't exist (5007) or has
+                    // been deprecated (5028) — try the next candidate rather
+                    // than failing the whole grading call outright.
+                    if (String(aiError).includes('5007') || String(aiError).includes('5028') ||
+                        String(aiError).includes('No such model') || String(aiError).includes('deprecated')) {
                         continue;
                     }
                     return json({ error: 'Workers AI inference failed', details: String(aiError) }, 500, cors);

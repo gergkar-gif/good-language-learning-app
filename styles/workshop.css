@@ -2731,6 +2731,10 @@
     font-size: 14px;
     color: var(--muted);
     line-height: 1.45;
+    /* CEFR exam-style prompts compose Situation/Task/target as separate
+       paragraphs (blank-line-joined) — preserve those breaks instead of
+       collapsing the whole thing into one run-on line. */
+    white-space: pre-line;
 }
 
 /* Mic Stage & Pulse */

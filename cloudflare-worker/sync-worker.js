@@ -142,6 +142,29 @@ async function sendMagicLinkEmail(email, link, env) {
 }
 
 // ----------------------------------------
+// TURNSTILE (bot check ahead of sending a real email — see
+// TURNSTILE_SETUP.md). Verification is skipped entirely, not just
+// permissive, when TURNSTILE_SECRET_KEY isn't set: that's the "not
+// configured yet" state, matching engine/sync.js's client-side no-op when
+// TURNSTILE_SITE_KEY is empty, so request-link keeps working before the
+// widget exists rather than locking everyone out.
+// ----------------------------------------
+
+async function verifyTurnstile(token, env) {
+    if (!env.TURNSTILE_SECRET_KEY) return true;
+    if (!token) return false;
+
+    const res = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: `secret=${encodeURIComponent(env.TURNSTILE_SECRET_KEY)}&response=${encodeURIComponent(token)}`
+    });
+    if (!res.ok) return false;
+    const data = await res.json();
+    return Boolean(data.success);
+}
+
+// ----------------------------------------
 // ROUTES
 // ----------------------------------------
 
@@ -155,6 +178,11 @@ async function handleRequestLink(request, env, cors) {
     const email = typeof payload.email === 'string' ? payload.email.trim().toLowerCase() : '';
     if (!email || !email.includes('@') || email.length > 254) {
         return json({ error: 'Invalid email' }, 400, cors);
+    }
+
+    const verified = await verifyTurnstile(payload.turnstileToken, env);
+    if (!verified) {
+        return json({ error: 'Verification failed — please try again' }, 403, cors);
     }
 
     // Rate limit: at most MAX_LINKS_PER_HOUR requests per email per hour,
