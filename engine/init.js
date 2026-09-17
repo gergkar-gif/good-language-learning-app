@@ -242,6 +242,8 @@ async function initialiseApp() {
         }
     }
 
+    _hideBootScreen();
+
     // Lesson screen events
     _attachLessonClose();
     _attachSoundToggle();
@@ -277,6 +279,13 @@ async function initialiseApp() {
 
     // Register Service Worker for offline PWA capabilities
     _initServiceWorker();
+}
+
+function _hideBootScreen() {
+    const boot = document.getElementById('boot-screen');
+    if (!boot) return;
+    boot.classList.add('is-hidden');
+    boot.addEventListener('transitionend', () => boot.remove(), { once: true });
 }
 
 function _initServiceWorker() {
