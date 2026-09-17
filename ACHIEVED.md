@@ -9,6 +9,12 @@ needs re-reading before starting new work; it's reference only.
 
 ## Completed queue items
 
+34. ~~**HU `a2-curriculum-draft.json` grammar_coverage may not match what's taught per unit**~~ — **Done 2026-09-17.**
+    Comprehensive audit conducted across all 370 Hungarian A2 grammar files against the draft claims in `content/hu/a2-curriculum-draft.json`:
+    - **Reconciled 32 draft units to 37 live units**: `a2-curriculum-draft.json` originally stopped at Unit 32; synchronized units 33 to 37 (*Declined Pronouns: Internal & Surface*, *Declined Pronouns: Proximity & Motion*, *Translative Case (-vá/-vé)*, *Essive-Formal Case (-ként)*, and *Sociocultural Pragmatics & Customs*) matching `content/hu/curriculum/curriculum.json`.
+    - **Reconciled inaccurate/stale claims**: Updated `grammar_coverage` to document `-hat/-het` as an introductory 1-lesson preview (Unit 23) rather than a full paradigm; marked `akar` as integrated from A1; clarified possessive nominal suffixes vs deferred independent possessive pronouns (`enyém`); and clarified Topic & Focus word order (Unit 22 prefix splitting / Unit 33 focus).
+    - **Backfilled omitted taught grammar**: Added translative `-vá/-vé`, essive-formal `-ként`, distributive temporal suffixes `-nta/-nte` and `-nként`, and declined case-marked personal pronouns to `grammar_coverage`.
+
 33. ~~**20 of 26 A1 consolidation lessons ship the wrong shape**~~ — **Done
     2026-09-17.** Fixed all 20 failing A1 Spanish consolidation lessons to
     conform to `scripts/audit-lesson.py`'s `"single"` shape:
@@ -1163,3 +1169,49 @@ time. All 7 steps below are complete — matches "Completed queue items"
 30. ~~**Audit `imports/dictionary/*.json` for more corrupted glosses**~~ — **Audited and fixed 2026-09-17.** Full systematic scan of all 141,149 entries across both dictionaries (`spanish-en.json`: 112,156 entries; `hungarian-en.json`: 28,993 entries) for unresolved templates, HTML/math leaks, unrendered entities, and scraper macro remnants:
     - **`hungarian-en.json`**: 100% clean (0 broken templates, 0 HTML leaks, 0 scraper artifacts).
     - **`spanish-en.json`**: Identified and sanitized 129 entries with unparsed syntax: 22 unexpanded `{{es-superseded spelling of|...}}` templates, 4 `{{gender-neutral neologism for|...}}`, 7 transliteration/foreign name templates, 11 `{{tcl|...}}` tags, math/html formatting remnants (`semiproducto`, `acetilcolina`), unrendered HTML entities/wikilinks (`bosníaco`, `ramblero`, `cuidar`, `llanisco`), and ~60 macro-prefixed place definitions (`@official name of:...`, `@init of:...`). All 129 entries rewritten to clean, natural English glosses; zero corruption flags remain corpus-wide. Content validation passes 100% clean (3308/3308 ES, 2296/2296 HU).
+
+
+## Completed Roadmap Archive (Features & Subsystems Shipped)
+
+The following completed subsystem initiatives and milestones were previously tracked in `ROADMAP.md` and archived here upon completion:
+
+### Content & Curriculum Milestones
+- **Evaluate importing exercises from Todo-Claro / Spanish Unicorn** — Evaluated 2026-09-12. Third-party scrape catalogues analyzed; discarded due to low quality and unverified licensing. Proceeded with native content authoring.
+- **Exercise Modularity Architecture** — Confirmed 2026-09-12. Pipeline validates that new exercises can be added without rewrite; `recycle.js` pools exercises at runtime via `teaches` tags.
+- **Hungarian A1 "First Sounds, First Words" Fix** — Fixed 2026-09-02. Fixed non-standard section type causing blank render on lesson 1.1.
+- **Spanish B1 Vocabulary Screen Sequencing** — Fixed 2026-09-12. Reordered vocabulary section before first practice exercise group across all 36 units (180 lessons).
+- **Word Bank Feature** — Built 2026-08-27. Unit-level vocabulary browser added under Grammar Guide in unit detail views.
+- **Bug-Report Content Sweeps** — Fixed 2026-09-16. Repaired broken dictionary gloss templates and Hungarian translation drill bugs.
+
+### Workshop Subsystem Polish
+- **Grammar Driller Audit & Fixes** — Audited 2026-08-27. Fixed Spanish gap-fill punctuation hints, removed non-deterministic question options, and improved distractor selection.
+- **Workshop Recommended Drill** — Built 2026-08-27. Smart drill recommendation based on recent lesson performance and error rates.
+- **Workshop Mini-Games** — Built 2026-09-02. Lightweight short-format practice modes with score tracking and instant feedback.
+- **Grammar Screen Italicization** — Completed 2026-09-02. Italicized target-language words and clean typography across grammar explanations.
+- **Verb Drill Leaderboards & Scoring** — Built 2026-08-28. High-score tracking, streak counters, and accuracy calculation.
+- **Translation Driller by Topic** — Built 2026-08-27. Topic-filtered translation practice sessions across all CEFR levels.
+
+### Library & Dictionary Polish
+- **Word Translation Popup Sheets** — Refined 2026-09-12. Standardized `.wp-sheet` with desktop modal centering and mobile safe-area insets.
+- **Library Room & Shelf Navigation** — Built 2026-08-28. Hierarchical browsing across levels, rooms, and shelves.
+- **Library Topic Search & Recommended Reading** — Built 2026-09-14. Universal search across readings with context banner recommendations.
+- **Reading Attribution & Classics Sourcing** — Added 2026-09-10. Standardized attribution headers across authentic literary texts in Hungarian and Spanish.
+- **Fourth Library Shelf (Articles / Cultural Reads)** — Built 2026-09-10. Added contemporary non-fiction and cultural texts shelf.
+
+### Decks & SRS Subsystem Polish
+- **Listen to SRS Cards** — Built 2026-09-14. Speech synthesis audio playback on flashcard review.
+- **Quizlet-Style Study Modes (Review / Match / Learn)** — Built 2026-08-27. Full study mode switcher with dedicated mechanics for each mode.
+- **Learn Mode Small-Batch Pacing** — Built 2026-08-27. Step-by-step introduction of new words in bite-sized batches.
+- **SRS Hotkeys & Touch Gestures** — Built 2026-09-12. Added desktop keys `1`-`4` and fluid mobile swipe gestures (left = Again, right = Good).
+
+### Cross-App Flow & Integration
+- **Connective Lesson-Complete Screen** — Built 2026-08-27. Post-lesson action recommendations linking directly to relevant drills and deck reviews.
+- **In-Lesson XP & Streak Animations** — Built 2026-09-02. Immediate feedback badges and streak counters inside active sessions.
+- **Journey Deep Integration** — Built 2026-09-11. Unified progress tracking, XP history, and drill stats consolidated in My Journey.
+
+### Interface, Audio & Platform Architecture
+- **Boot Screen & Loading Overlay** — Built 2026-09-17. Minimalist `#boot-screen` and smooth loading spinner overlays on driller/lesson transitions.
+- **Constructivist Dark / Light Theme** — Built 2026-09-12. Inverted midnight navy / warm cream palette (`[data-theme="dark"]`) with quick-toggles.
+- **Speech Recognition & Pronunciation Studio** — Built 2026-09-14. Web Speech API evaluation engine with Speaking and Writing Studios.
+- **Offline PWA & Service Worker** — Built 2026-09-14. Complete asset caching and offline-ready service worker (`sw.js`).
+- **Language-Isolated Asset Loading** — Optimized 2026-09-14. Isolated dictionaries and indexes per language to eliminate unnecessary network/memory overhead.
