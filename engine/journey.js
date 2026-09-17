@@ -49,10 +49,14 @@ const Journey = (function () {
         { key: 'vocab',     label: 'Vocabulary', from: 'vocabulary' }
     ];
 
-    // Skills the app cannot honestly report on yet. Named rather than hidden,
-    // so the absence is legible as a plan rather than an oversight.
+    // Skills the app cannot honestly report on yet, for a learner with no
+    // evidence at all — named rather than hidden, so the absence is legible
+    // as a plan rather than an oversight. Speaking drops out of this list
+    // once LearnerModel.productionSummary('oral') has anything to show (see
+    // skillsBlock below); it isn't unmeasurable, just unmeasured until the
+    // learner actually speaks.
     const UNMEASURED = [
-        { label: 'Speaking', note: 'Not measured yet.' }
+        { key: 'speaking', label: 'Speaking', note: 'Not measured yet.' }
     ];
 
     // ----------------------------------------
@@ -132,8 +136,13 @@ const Journey = (function () {
             });
         }
 
+        const speakingProduction = (typeof LearnerModel !== 'undefined' && typeof LearnerModel.productionSummary === 'function')
+            ? LearnerModel.productionSummary('oral')
+            : null;
+
         return {
             candoStats: candoStats,
+            speakingProduction: speakingProduction,
             levels: levels,
             levelTests: levelTests,
             lessonsComplete: lessonsComplete,
@@ -325,7 +334,23 @@ const Journey = (function () {
             `;
         }).join('');
 
-        const unmeasured = UNMEASURED.map(skill => `
+        const sp = d.speakingProduction;
+        const speakingRow = sp
+            ? `
+                <li class="jr-row jr-row-clickable" data-jr-drill="speaking">
+                    <span class="jr-row-label">Speaking</span>
+                    <span class="jr-row-meter">${meter(sp.avgAccuracy)}</span>
+                    <span class="jr-row-value">${sp.avgAccuracy}% over ${sp.attempts} ${plural(sp.attempts, 'attempt')}</span>
+                </li>
+            `
+            : UNMEASURED.filter(skill => skill.key === 'speaking').map(skill => `
+                <li class="jr-row jr-row-muted">
+                    <span class="jr-row-label">${esc(skill.label)}</span>
+                    <span class="jr-row-note" colspan="2">${esc(skill.note)}</span>
+                </li>
+            `).join('');
+
+        const unmeasured = UNMEASURED.filter(skill => skill.key !== 'speaking').map(skill => `
             <li class="jr-row jr-row-muted">
                 <span class="jr-row-label">${esc(skill.label)}</span>
                 <span class="jr-row-note" colspan="2">${esc(skill.note)}</span>
@@ -333,7 +358,7 @@ const Journey = (function () {
         `).join('');
 
         return card('Skills', 'Exercises completed, by the skill they train.', `
-            <ul class="jr-list">${rows}${unmeasured}</ul>
+            <ul class="jr-list">${rows}${speakingRow}${unmeasured}</ul>
         `);
     }
 

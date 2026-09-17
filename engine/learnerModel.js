@@ -593,6 +593,41 @@ const LearnerModel = (function () {
         return candidates.slice(0, limit || candidates.length);
     }
 
+    /**
+     * Rolls every skill's per-modality production evidence into one number,
+     * for a screen that wants "how is the learner doing at X overall" rather
+     * than a skill-by-skill breakdown. Weighted by attempts, so one skill
+     * drilled 20 times doesn't get diluted by ten skills tried once each.
+     * Returns null when there's no evidence yet - callers should show an
+     * honest "not measured yet" rather than a misleading 0%.
+     */
+    function productionSummary(modality) {
+        const store = _loadProduction();
+        const targetMod = (modality === 'written' || modality === 'oral') ? modality : null;
+        let attempts = 0, correct = 0, weightedAccuracy = 0, lastSeen = null;
+
+        Object.keys(store).forEach(skillId => {
+            const entry = store[skillId];
+            if (!entry) return;
+            const source = (targetMod && entry.modalities && entry.modalities[targetMod])
+                ? entry.modalities[targetMod]
+                : (targetMod ? null : entry);
+            if (!source || !source.attempts) return;
+            attempts += source.attempts;
+            correct += source.correct;
+            weightedAccuracy += source.avgAccuracy * source.attempts;
+            if (!lastSeen || (source.lastSeen && source.lastSeen > lastSeen)) lastSeen = source.lastSeen;
+        });
+
+        if (!attempts) return null;
+        return {
+            attempts,
+            correct,
+            avgAccuracy: Math.round(weightedAccuracy / attempts),
+            lastSeen
+        };
+    }
+
     // ----------------------------------------
     // PREREQUISITES
     // ----------------------------------------
@@ -899,6 +934,7 @@ const LearnerModel = (function () {
         recordAssessment,
         productionState,
         weakProductionSkills,
+        productionSummary,
         assessmentHistory,
         recordCompetencies,
         verifyCompetency,
