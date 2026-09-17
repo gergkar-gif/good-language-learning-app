@@ -168,6 +168,10 @@ export default {
             return json({ error: 'Missing text in payload' }, 400, cors);
         }
 
+        // Resolve language early — normalization rules below depend on it.
+        const lang = payload.lang || 'es';
+        const languageCode = payload.languageCode || LANGUAGE_CODE[lang] || LANGUAGE_CODE.es;
+
         // Phonetic adaptation for Hungarian: 'ly' sounds like 'y', so Károly is pronounced Károy.
         text = text.replace(/\bKároly\b/g, 'Károy').replace(/\bKaroly\b/g, 'Károy');
 
@@ -195,8 +199,6 @@ export default {
             }, 500, cors);
         }
 
-        const lang = payload.lang || 'es';
-        const languageCode = payload.languageCode || LANGUAGE_CODE[lang] || LANGUAGE_CODE.es;
         const voiceName = resolveVoiceName(payload, languageCode);
         const speakingRate = Number(payload.speakingRate) || 1.0;
         const pitch = Number(payload.pitch) || 0.0;
