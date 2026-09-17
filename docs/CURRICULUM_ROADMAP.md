@@ -87,16 +87,20 @@ that's now just a JSON append rather than a `build-manifest.py` edit.
 
 ---
 
-## ⏳ Phase 4: Spanish A2 — Modality, Subjunctive & Pragmatics [TO-BE-DONE LATER]
+## ✅ Phase 4: Spanish A2 — Modality, Subjunctive & Pragmatics [DONE 2026-09-17]
 
-- [ ] **Unit 4.1: Condicional Simple — Politeness & Advice (`unit.a2.condicional`)**
-  - **Focus**: *-ría* endings for polite service requests (*me gustaría, ¿podría usted...?*) and giving advice (*deberías descansar, yo que tú tomaría agua*).
-- [ ] **Unit 4.2: Presente de Subjuntivo — Desires & Feelings (`unit.a2.subjuntivo`)**
-  - **Focus**: Introductory triggers at A2: desires (*quiero que vengas*), impersonal expressions (*es importante que estudies*), future time with *cuando* (*cuando llegues, llámame*).
-- [ ] **Unit 4.3: Verbal Periphrases & Discourse Connectors (`unit.a2.periphrases`)**
-  - **Focus**: *seguir + gerundio* (continuation), *empezar a + inf* (inception), *dejar de + inf* (cessation), connectors (*sin embargo, por lo tanto, aunque, además*).
-- [ ] **Unit 4.4: Thematic Domain — Education & Schooling (`unit.a2.education`)**
-  - **Focus**: School subjects, university, classroom items, studying and learning vocabulary.
+- [x] **Unit 26: Asking Politely and Giving Advice (`unit.a2.condicionalsimple`, stems `a2-condicionalsimple-*`)**
+  - **Focus**: *-ría* endings for polite service requests (*me gustaría, ¿podría usted...?*) and giving advice (*deberías descansar, yo en tu lugar estudiaría*). 5 lessons + consolidation.
+  - **Story**: *El dilema del café* (`a2-original-condicionalsimple`).
+- [x] **Unit 27: Expressing Wishes and Feelings (`unit.a2.subjuntivobasico`, stems `a2-subjuntivobasico-*`)**
+  - **Focus**: Introductory subjunctive triggers at A2: desires (*quiero que vengas*), feelings (*me alegra que estés aquí*), impersonal expressions (*es importante que estudies*), future time with *cuando* (*cuando llegues, llámame*). 5 lessons + consolidation.
+  - **Story**: *Deseos para el viaje* (`a2-original-subjuntivobasico`).
+- [x] **Unit 28: Connecting Ideas and Habits (`unit.a2.perifrasisverbales`, stems `a2-perifrasisverbales-*`)**
+  - **Focus**: Verbal periphrases (*empezar a + inf*, *dejar de + inf*, *seguir + gerundio*, *volver a + inf*, *llevar + tiempo + gerundio*) and discourse connectors (*sin embargo, por lo tanto, además, en primer lugar*). 5 lessons + consolidation.
+  - **Story**: *Nuevos hábitos en Valencia* (`a2-original-perifrasisverbales`).
+- [x] **Unit 29: Studying and School Life (`unit.a2.educacionyestudios`, stems `a2-educacionyestudios-*`)**
+  - **Focus**: School subjects, academic strengths/weaknesses (*se me da bien / me cuesta*), university life, exams and classroom interaction. 5 lessons + consolidation.
+  - **Story**: *El primer día en la facultad* (`a2-original-educacionyestudios`).
 
 ---
 
