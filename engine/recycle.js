@@ -47,17 +47,22 @@ async function collectRecyclePool(lesson) {
     const progress = (typeof getProgress === 'function') ? getProgress() : {};
     const pool = [];
 
-    const prevLevelKey = RECYCLE_LEVEL_ORDER[RECYCLE_LEVEL_ORDER.indexOf(levelKey) - 1];
-    const prevLevelData = prevLevelKey && data.levels[prevLevelKey];
-    if (prevLevelData) {
-        const prevLessons = (prevLevelData.units || []).flatMap(u => u.lessons || []);
-        await addRecycleExercises(pool, prevLessons.filter(l => progress[l.id]));
-    }
-
+    // Recent completed lessons first: 3 picks don't need scanning 40+ historical lessons
     const lessons = (levelData.units || []).flatMap(u => u.lessons || []);
     const index = lessons.findIndex(l => l.id === lesson.id);
     if (index > 0) {
-        await addRecycleExercises(pool, lessons.slice(0, index).filter(l => progress[l.id]));
+        const completedCurrent = lessons.slice(0, index).filter(l => progress[l.id]);
+        // Focus on the most recent 8 completed lessons in the level
+        await addRecycleExercises(pool, completedCurrent.slice(-8));
+    }
+
+    const prevLevelKey = RECYCLE_LEVEL_ORDER[RECYCLE_LEVEL_ORDER.indexOf(levelKey) - 1];
+    const prevLevelData = prevLevelKey && data.levels[prevLevelKey];
+    if (prevLevelData && pool.length < 15) {
+        const prevLessons = (prevLevelData.units || []).flatMap(u => u.lessons || []);
+        const completedPrev = prevLessons.filter(l => progress[l.id]);
+        // Top up with up to 5 most recent completed lessons from previous level if needed
+        await addRecycleExercises(pool, completedPrev.slice(-5));
     }
 
     return pool;

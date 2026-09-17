@@ -2,6 +2,11 @@
 // UI HELPERS
 // ============================================
 
+// Backs UI.showLoading()/hideLoading() — a short delay before the overlay
+// actually appears so a fast (cached) open doesn't flash it at all.
+let _actionLoaderTimer = null;
+let _actionLoaderCount = 0;
+
 const UI = {
 
     // Content is authored JSON rather than user input, but titles carry
@@ -89,6 +94,76 @@ const UI = {
                 ${chars.map(ch => `<button type="button" class="lsn-diacritic-btn" data-char="${ch}" tabindex="-1" aria-label="Insert ${ch}">${ch}</button>`).join('')}
             </div>
         `;
+    },
+
+    // A full-screen loading overlay for actions with a real network/parse
+    // delay (opening a lesson, opening a Workshop driller) — blocks input
+    // so a slow load doesn't invite the learner to tap around while it
+    // catches up, per user report. Shown after a short delay so a
+    // cache-warm open never flashes it, with an option for immediate display.
+    showLoading(message = 'Loading…', options = {}) {
+        _actionLoaderCount++;
+        const updateLabel = (text) => {
+            const label = document.querySelector('#action-loader .boot-label');
+            if (label) label.textContent = text || 'Loading…';
+        };
+
+        const ensureAndShow = () => {
+            let el = document.getElementById('action-loader');
+            if (!el) {
+                el = document.createElement('div');
+                el.id = 'action-loader';
+                el.setAttribute('role', 'status');
+                el.setAttribute('aria-live', 'polite');
+                el.innerHTML = `
+                    <svg class="boot-spinner" viewBox="0 0 100 100" aria-hidden="true">
+                        <circle cx="50" cy="50" r="40" class="ps-wash"/>
+                        <circle cx="50" cy="12" r="7" class="ps-accent"/>
+                    </svg>
+                    <p class="boot-label">${UI.escape(message || 'Loading…')}</p>
+                `;
+                document.body.appendChild(el);
+            } else {
+                updateLabel(message);
+            }
+            el.classList.add('is-visible');
+        };
+
+        if (options && options.immediate) {
+            if (_actionLoaderTimer) {
+                clearTimeout(_actionLoaderTimer);
+                _actionLoaderTimer = null;
+            }
+            ensureAndShow();
+        } else {
+            if (_actionLoaderTimer) {
+                updateLabel(message);
+                return;
+            }
+            _actionLoaderTimer = setTimeout(() => {
+                _actionLoaderTimer = null;
+                if (_actionLoaderCount > 0) {
+                    ensureAndShow();
+                }
+            }, 80);
+        }
+    },
+
+    hideLoading(force = false) {
+        if (force) {
+            _actionLoaderCount = 0;
+        } else {
+            _actionLoaderCount = Math.max(0, _actionLoaderCount - 1);
+        }
+        if (_actionLoaderCount === 0) {
+            if (_actionLoaderTimer) {
+                clearTimeout(_actionLoaderTimer);
+                _actionLoaderTimer = null;
+            }
+            const el = document.getElementById('action-loader');
+            if (el) el.classList.remove('is-visible');
+            document.querySelectorAll('.is-loading').forEach(node => node.classList.remove('is-loading'));
+        }
     }
 
 };

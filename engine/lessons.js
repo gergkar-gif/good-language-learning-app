@@ -203,6 +203,14 @@ async function buildSteps(lesson) {
 
     let checklistStep = null;
 
+    // Parallel pre-fetch of all section references to collapse serial waterfalls
+    const sectionRefs = (lesson.sections || [])
+        .filter(s => s && s.ref)
+        .map(s => s.ref);
+    if (sectionRefs.length) {
+        await Promise.all(sectionRefs.map(ref => loadContent(ref)));
+    }
+
     for (const section of lesson.sections) {
         try {
             if (section.type === 'goal') {
@@ -365,49 +373,58 @@ async function buildSteps(lesson) {
 }
 
 async function startLesson(lessonId) {
-    const lesson = await loadLesson(lessonId);
-    if (!lesson) {
-        alert('Lesson coming soon!');
-        return;
+    if (typeof UI !== 'undefined') UI.showLoading('Loading lesson…', { immediate: true });
+
+    try {
+        const lesson = await loadLesson(lessonId);
+        if (!lesson) {
+            alert('Lesson coming soon!');
+            return;
+        }
+
+        lesson.steps = await buildSteps(lesson);
+
+        if (!lesson.steps.length) {
+            alert('This lesson has no content yet.');
+            return;
+        }
+
+        currentLesson = lesson;
+        if (typeof LearnerPath !== 'undefined') LearnerPath.touchActivity();
+        currentStepIndex = 0;
+        originalStepCount = lesson.steps.length;
+        missedSteps = [];
+        lessonStartTime = Date.now();
+        lessonStats = { total: 0, correctFirstTry: 0 };
+        gradedStepIndices = new Set();
+
+        // A lesson can be opened from the level list or from Home's continue
+        // card, and closing it should put the learner back where they were rather
+        // than always on the level list.
+        const from = document.querySelector('.tab:not(.hidden)');
+        lessonReturnTab = (from && from.id !== 'lesson-screen') ? from.id : 'learn';
+
+        document.querySelectorAll('.tab').forEach(tab => tab.classList.add('hidden'));
+        document.getElementById('lesson-screen').classList.remove('hidden');
+        document.body.classList.add('in-lesson');
+
+        // Push browser history state so browser Back button returns cleanly instead of leaving the app
+        if (typeof history !== 'undefined' && history.pushState) {
+            history.pushState({ parlourModal: 'lesson', lessonId }, '');
+        }
+
+        document.getElementById('lesson-title').textContent = currentLesson.title;
+        const subtitle = document.getElementById('lesson-subtitle');
+        const levelMark = (typeof levelIcon === 'function') ? levelIcon(currentLesson.level, 'level-icon--sm') : '';
+        subtitle.innerHTML = levelMark + '<span>' + UI.escape(currentLesson.level) + '</span>';
+
+        renderStep();
+    } catch (err) {
+        console.error('Failed to start lesson:', lessonId, err);
+        alert('Could not load lesson. Please try again.');
+    } finally {
+        if (typeof UI !== 'undefined') UI.hideLoading();
     }
-
-    lesson.steps = await buildSteps(lesson);
-
-    if (!lesson.steps.length) {
-        alert('This lesson has no content yet.');
-        return;
-    }
-
-    currentLesson = lesson;
-    if (typeof LearnerPath !== 'undefined') LearnerPath.touchActivity();
-    currentStepIndex = 0;
-    originalStepCount = lesson.steps.length;
-    missedSteps = [];
-    lessonStartTime = Date.now();
-    lessonStats = { total: 0, correctFirstTry: 0 };
-    gradedStepIndices = new Set();
-
-    // A lesson can be opened from the level list or from Home's continue
-    // card, and closing it should put the learner back where they were rather
-    // than always on the level list.
-    const from = document.querySelector('.tab:not(.hidden)');
-    lessonReturnTab = (from && from.id !== 'lesson-screen') ? from.id : 'learn';
-
-    document.querySelectorAll('.tab').forEach(tab => tab.classList.add('hidden'));
-    document.getElementById('lesson-screen').classList.remove('hidden');
-    document.body.classList.add('in-lesson');
-
-    // Push browser history state so browser Back button returns cleanly instead of leaving the app
-    if (typeof history !== 'undefined' && history.pushState) {
-        history.pushState({ parlourModal: 'lesson', lessonId }, '');
-    }
-
-    document.getElementById('lesson-title').textContent = currentLesson.title;
-    const subtitle = document.getElementById('lesson-subtitle');
-    const levelMark = (typeof levelIcon === 'function') ? levelIcon(currentLesson.level, 'level-icon--sm') : '';
-    subtitle.innerHTML = levelMark + '<span>' + UI.escape(currentLesson.level) + '</span>';
-
-    renderStep();
 }
 
 // Pure state reset — no DOM/tab navigation — so it's safe to call from

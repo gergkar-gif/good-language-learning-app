@@ -348,16 +348,21 @@ const LevelTest = (function () {
         };
     }
 
-    function open(level) {
+    async function open(level) {
         diagnosticDismissed = false;
-        document.querySelectorAll('.tab').forEach(tab => tab.classList.add('hidden'));
-        document.getElementById('leveltest').classList.remove('hidden');
-        if (typeof PageHeader !== 'undefined') PageHeader.render({
-            title: level + ' level test',
-            subtitle: 'Twenty questions. Eighty per cent to move on.',
-            illustration: 'ascent'
-        });
-        render(level);
+        if (typeof UI !== 'undefined') UI.showLoading('Loading level test…');
+        try {
+            document.querySelectorAll('.tab').forEach(tab => tab.classList.add('hidden'));
+            document.getElementById('leveltest').classList.remove('hidden');
+            if (typeof PageHeader !== 'undefined') PageHeader.render({
+                title: level + ' level test',
+                subtitle: 'Twenty questions. Eighty per cent to move on.',
+                illustration: 'ascent'
+            });
+            await render(level);
+        } finally {
+            if (typeof UI !== 'undefined') UI.hideLoading();
+        }
     }
 
     return { open, render, resultFor };

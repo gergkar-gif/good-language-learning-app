@@ -250,12 +250,14 @@ const Home = (function () {
         host.addEventListener('click', e => {
             const start = e.target.closest('[data-start-lesson]');
             if (start && typeof startLesson === 'function') {
+                start.classList.add('is-loading');
                 startLesson(start.getAttribute('data-start-lesson'));
                 return;
             }
 
             const test = e.target.closest('[data-open-test]');
             if (test && typeof LevelTest !== 'undefined') {
+                test.classList.add('is-loading');
                 LevelTest.open(test.getAttribute('data-open-test'));
                 return;
             }
@@ -263,7 +265,9 @@ const Home = (function () {
             // Straight into a session over the whole deck — the door already
             // said how many were waiting, so the deck browser in between would
             // only ask the question a second time.
-            if (e.target.closest('[data-review-all]')) {
+            const reviewAll = e.target.closest('[data-review-all]');
+            if (reviewAll) {
+                reviewAll.classList.add('is-loading');
                 goTab('review', { skipReviewReset: true });
                 if (typeof Decks !== 'undefined') Decks.reviewDeck('all');
                 return;
@@ -271,6 +275,7 @@ const Home = (function () {
 
             const story = e.target.closest('[data-open-story]');
             if (story) {
+                story.classList.add('is-loading');
                 goTab('reader');
                 if (typeof Reader !== 'undefined') Reader.loadStory(story.getAttribute('data-open-story'));
                 return;
@@ -289,6 +294,7 @@ const Home = (function () {
                 } else if (act === 'learn') {
                     const next = (typeof LearnerPath !== 'undefined') ? LearnerPath.nextStep() : null;
                     if (next && next.kind === 'lesson' && typeof startLesson === 'function') {
+                        trio.classList.add('is-loading');
                         startLesson(next.lesson.id);
                     } else {
                         goTab('lessons');

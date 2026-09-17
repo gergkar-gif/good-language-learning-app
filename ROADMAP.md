@@ -80,8 +80,9 @@ additions stay purely additive.
 Active work, in dependency order, as of 2026-09-16 — supersedes any
 in-session task tracker, which doesn't persist between sessions. Update
 this list directly rather than relying on a tool-specific todo list.
-Items 1-8, 20, and 21 shipped and moved to `ACHIEVED.md` — numbering below
-keeps its original gaps on purpose, so item numbers stay stable references.
+Items 1-8, 20, 21, and 22 shipped and moved to `ACHIEVED.md` — numbering
+below keeps its original gaps on purpose, so item numbers stay stable
+references.
 
 9. **Future feature, unscoped**: CEFR real-exam practice mode (source or
    generate actual exams, graded response) — see Grammar reference /
@@ -231,50 +232,25 @@ keeps its original gaps on purpose, so item numbers stay stable references.
       attempted everywhere now, a miss is a one-off, not a category — reads
       "Your recording wasn't captured for playback this time — your answer
       was still recognised and graded normally."
-22. **Full guide/planning-doc staleness audit — IN PROGRESS, paused
-    2026-09-16.** A full audit (6 parallel research passes) across every
-    guide/planning doc in both languages found widespread drift between
-    what these docs claim and what's actually shipped. Two batches of
-    mechanical fixes are done (see the "docs: fix staleness..." and
-    "docs: regenerate a1.md..." commits around this entry). **Remaining,
-    picking up where this paused:** the A1 Spanish guide set describes
-    an entirely obsolete 20-sequential-lesson structure — real A1 is 26
-    units × 6 lessons (156 total, 6 whole units missing from every doc
-    below). `a1.md` and `a1-vocabulary-themes.md` are done (regenerated
-    from `content/es/curriculum/units/a1.json` + real lesson/vocabulary
-    files — reuse that same ground-truth-extraction approach for the
-    rest). Still to regenerate, in roughly this priority order:
-    - `a1-grammar.md` — per-unit/per-lesson grammar table (mid-edit when
-      paused; real per-lesson `grammar` field values already spot-checked).
-    - `a1-learning-objectives.md` — per-unit objectives; extractable
-      directly from each lesson's own `goal`/`checklist.items` fields.
-    - `a1-progression-matrix.md` — 26-row table; correct the Classic/World
-      columns to "none shipped yet for A1" (confirmed: no
-      `content/es/stories/classics/a1/` or `.../world/a1/` exist).
-    - `a1-reading-plan.md` — story table (27 files, not 20 — includes 6
-      topic-named stories that exist but aren't linked from any lesson
-      yet, see `a1.md`'s own note on this); reconcile a Lesson-12 story
-      title conflict against `a1-story.md`.
-    - `a1-story.md` — per-unit story synopses; every story file already
-      carries a `summary` field, so this is extraction, not fresh writing.
-    - `a1-quality-checklist.md` — small fix, Reading section should say
-      "original story only" for all A1 (no classics/world yet).
-    - `a1-content-spec.md` — bigger prose rewrite: "lessons 1-17" framing
-      throughout, §4b split-lesson exercise counts, §4c review-lesson
-      structure (real structure is a per-unit consolidation lesson, not
-      3 end-of-level reviews).
-    - `a1-exercises.md` — "~9 exercises" distribution is wrong (real
-      lessons run 16-18, in Practice/Dialogue/Writing/Reading/Review
-      blocks); exercise-type catalogue is missing several types in
-      active use (`dialogue-complete`, `sentence-order`, `listening`,
-      `listening-choice`, `dictation`, `substitution`).
-    - `a1-lesson-template.md` — exercise-section skeleton needs the same
-      real block shape as the two items above.
-    Also not yet done: `content/hu/a2-curriculum-draft.json`'s
-    grammar_coverage block was self-flagged by `a2-story-arc-draft.md` as
-    possibly not matching what's actually taught per unit — not
-    independently verified, would need reading all 32 units' grammar
-    files.
+33. **20 of 26 A1 consolidation lessons ship the wrong shape** — found
+    2026-09-17 while rewriting `a1-content-spec.md` (item 22). A1's
+    consolidation lessons are supposed to use `scripts/audit-lesson.py`'s
+    `"single"` shape: no grammar/vocabulary/srs, one `exercise-group`
+    titled exactly "Review" spanning 5+ distinct types, every exercise
+    `teaches`-tagged, tags covering 8+ distinct points. Only 6 of 26
+    consolidation files actually do this (`a1-01`, `a1-02`, `a1-03`,
+    `a1-03c`, `a1-04`, `a1-10`) — the other 20 instead ship the same
+    Practice/Dialogue/Writing blocks as a teaching lesson (the `"split"`
+    shape A2 drifted to), which fails the "has a 'Review' exercise group"
+    check. Run `python scripts/audit-lesson.py a1` to see the full FAIL
+    list. This is a content-authoring fix, not a documentation one — the
+    corrected spec is already written in `a1-content-spec.md` §5.
+34. **HU `a2-curriculum-draft.json` grammar_coverage may not match what's
+    taught per unit** — carried over from item 22's original scope, not
+    yet independently verified. `content/hu/a2-curriculum-draft.json`'s
+    `grammar_coverage` block was self-flagged by `a2-story-arc-draft.md`
+    as possibly stale; checking it properly means reading all 32 units'
+    grammar files against the block's claims. Not started.
 23. **`ParlourTTS` engine abstraction (`engine/tts.js`)** — **Built and
     live 2026-09-16.** Content -> `ParlourTTS.speak({text, language, type,
     voiceName, gender, speed, onEnded})` -> provider -> audio, so no caller
@@ -356,6 +332,19 @@ keeps its original gaps on purpose, so item numbers stay stable references.
          voice assignment above) — verified with `--dry-run` against the
          real content and the existing 11-test narration suite still
          passing unchanged.
+    - **R2 audio cache added 2026-09-17**, prompted by a backend cost
+      review: `tts-worker.js`'s only cache was `ParlourTTS`'s in-memory
+      session cache (above), which meant every reload re-synthesized
+      identical lesson audio through Google TTS — pure waste, since lesson
+      text is fixed and near-all repeat traffic across learners/sessions.
+      Worker now content-addresses each synthesis (SHA-256 of
+      `languageCode::voiceName::speakingRate::pitch::text`) and checks an
+      R2 bucket bound as `TTS_CACHE` before calling Google; a miss writes
+      the MP3 to R2 after synthesis (best-effort — a write failure doesn't
+      fail the response, just costs a repeat Google call later). `/health`
+      now reports `hasR2Cache`. No client change needed — `engine/tts.js`
+      already just reads `audioContent` from the same JSON shape. Verified
+      live: `/health` returns `hasR2Cache: true` on the deployed worker.
 24. **SRS/Decks review card: audio/mic UI stripped back down** — **Built
     2026-09-16.** The card had accumulated three overlapping audio
     affordances: a `ParlourTTS.button()` listen icon, a separate
@@ -535,6 +524,90 @@ keeps its original gaps on purpose, so item numbers stay stable references.
     templated-but-unfilled entries lurking elsewhere in either file
     without a real audit (e.g. scanning for other suspicious fixed
     phrases, sense entries that don't parse as plausible English, etc.).
+31. **Cloudflare Turnstile added to sign-in (`/auth/request-link`)** —
+    built and verified live 2026-09-17, from the same backend cost/
+    security review as item 23's R2 cache. `sync-worker.js`'s only abuse
+    guard was "max 3 links per email per hour" in D1, which doesn't stop
+    a script hitting the endpoint with many distinct emails and burning
+    Resend's send quota (or getting the sending domain flagged). Client
+    (`engine/sync.js`) now mints an invisible Turnstile token before
+    calling `requestLink()`; the Worker verifies it against Cloudflare's
+    `siteverify` API (`verifyTurnstile()`) before touching D1 or Resend.
+    Designed to degrade to a no-op, not break sign-in, while unconfigured:
+    empty `TURNSTILE_SITE_KEY` client-side skips minting a token, and a
+    missing `TURNSTILE_SECRET_KEY` server-side skips verification — both
+    now set. **Setup gotcha hit during rollout:** the dashboard Secret was
+    first added as `TUSTILE_SECRET_KEY` (typo, missing "RN"), which — since
+    a missing/misnamed secret is the intentional "not configured yet"
+    no-op path — silently let every request through unverified rather than
+    erroring. Confirmed via `curl` with a deliberately bogus token: before
+    the fix, `429`/`502` (request reached D1/Resend, meaning verification
+    never ran); after renaming the secret, `403 Verification failed` as
+    expected. **Lesson: a bogus-token test, not just a missing-token test,
+    is what actually distinguishes "verification is running and rejecting"
+    from "verification isn't running at all"** — both look identical from
+    the missing-token case alone. Also found and fixed in passing: `JWT_
+    SECRET` and `RESEND_API_KEY` were stored as plain **Variable** type on
+    the Worker (plaintext-visible in the dashboard) rather than **Secret**
+    (encrypted-at-rest) — re-typed to Secret.
+32. **AI grader switched off Llama 70B by default, ~4x cheaper per call** —
+    built and verified live 2026-09-17, same backend cost review as items
+    23/31. `grader-worker.js` was trying `@cf/meta/llama-3.3-70b-instruct-
+    fp8-fast` **first on every single grading call**, not as an error
+    fallback — Cloudflare's own neuron pricing puts that model at ~6-8x the
+    per-token cost of an 8B-class model. Spent most of this item's time on
+    a real, evidence-based elimination round rather than guessing:
+    - Three Llama 8B-class candidates were tried and rejected, each with a
+      concrete, reproducible failure on the actual multi-field CEFR JSON
+      scoring prompt (not just weaker nuance): `llama-3.1-8b-instruct-fp8-
+      fast` returned `overallScore` and every dimension as `0` for a solid
+      A2 response, plus a manufactured grammar error on correct usage;
+      `llama-3.1-8b-instruct` (unquantized) turned out to be deprecated
+      server-side (Cloudflare error `5028`) and simply errors now;
+      `llama-3.1-8b-instruct-fp8` returned `overallScore` as a `0.0-1.0`
+      fraction (`0.6`) instead of the required `0-100` int, which
+      `engine/grader/schema.js`'s `clampNumber` would round straight down
+      to `1` — a learner who did well would have seen "1/100".
+    - `@cf/openai/gpt-oss-20b` was tried and abandoned without a full test:
+      it's a reasoning model that spends tokens on hidden chain-of-thought
+      before the visible answer, so it returned empty content once
+      `max_tokens` (below) was tightened — and its true per-call cost would
+      include that invisible reasoning anyway, likely erasing its sticker
+      price advantage.
+    - `@cf/mistralai/mistral-small-3.1-24b-instruct` (~4x cheaper than 70B
+      on output neurons) passed the same real-prompt spot-checks, but only
+      after fixing two root causes in `engine/grader/grader-prompt.js`
+      itself — **not model-specific, so this also hardens 70B and any
+      future cheaper model**: the required-JSON-shape example showed
+      `"overallScore": 0` sitting right next to `0.0-1.0` dimension fields
+      with nothing distinguishing its scale (a plausible reason every
+      failing 8B model got this wrong the same way), and the
+      `demonstratedSkills`/`weakSkills` object shape was only ever implied
+      by the example, never stated as a hard rule. Both are now explicit
+      "CRITICAL RULE" lines in both the written and oral prompt builders.
+      Verified with the real `buildGraderPrompt()` output (not a hand-
+      written test prompt) on both a strong A2 response (scored 72-78,
+      correctly-shaped skill objects, accurate non-hallucinated errors)
+      and a deliberately weak one (scored 20-25, confirming the score
+      tracks actual content rather than anchoring to the example's
+      placeholder number).
+    - `CANDIDATE_MODELS` is now `[mistral-small-3.1-24b-instruct, llama-3.3-
+      70b-instruct-fp8-fast]` — 70B remains a true fallback, only reached
+      if Mistral errors. Also fixed in passing: the fallback loop only
+      continued to the next candidate on error `5007`; a `5028`
+      (deprecation) hit during this session's testing instead hard-failed
+      the whole grading call, so the continue-condition now covers both.
+      `max_tokens` trimmed `3000` → `1500` (the prompt's own output-economy
+      rules already cap real responses far below either number, so this
+      only caps worst-case cost, no truncation risk).
+    - **Ship gotcha hit during rollout:** right after a `Deploy`, two
+      requests seconds apart returned two different models even with
+      identical (default) candidate settings — Cloudflare Worker deploys
+      take up to roughly a minute to fully propagate across edge
+      locations, so a request can transiently land on a PoP still running
+      the previous version. Re-tests a short while later were consistent.
+      Don't read a deploy as broken from one inconsistent request
+      immediately after clicking Deploy — retry a few times first.
 
 ## Content & curriculum
 
@@ -2074,6 +2147,49 @@ was not duplicated here.
 
 ## Interface & platform
 
+- [x] **Boot/loading screen.** Built 2026-09-17: `#boot-screen` in
+  `index.html` is pure markup/CSS (no script dependency), shown from
+  first paint so it covers the blank white gap while stylesheets/scripts
+  load and `initialiseApp()` runs. One disc from the app's own art
+  language (`.ps-wash`/`.ps-accent`, same formula as `PATH_SHAPES` in
+  `engine/curriculum.js`) with the accent dot orbiting it, plus a muted
+  "Loading…" line — simplified same day from an initial version with
+  three spinning discs, a pulsing brand mark and a wordmark, which the
+  user found too busy. `prefers-reduced-motion` disables the spin.
+  `_hideBootScreen()` in `engine/init.js` fades it out and removes it
+  from the DOM once Home has rendered.
+  **Ship gotcha hit the same day:** the service worker's app-shell cache
+  (`sw.js`) is stale-while-revalidate with `ignoreSearch: true`, so it
+  matches cached JS/CSS by pathname only — a bumped `?v=` query string on
+  a `<script>`/`<link>` does **not** force a fresh fetch the way it does
+  for an uncached browser. Shipping the boot-screen HTML without also
+  bumping `CACHE_VERSION` in `sw.js` left some users on a stale cached
+  `engine/init.js` that never called `_hideBootScreen()` — the overlay
+  sat at `z-index: 9999` forever, silently eating every tap ("can't open
+  lessons"). Fixed by bumping `CACHE_VERSION`, which forces the SW to
+  drop old caches and re-precache everything on activate. **Any future
+  shell JS/CSS change needs a `CACHE_VERSION` bump in `sw.js`, not just
+  an `index.html` query-string bump** — the query string alone only
+  matters for a browser with no service worker installed.
+- [x] **Loading overlay for lesson/driller open.** Built 2026-09-17,
+  after the user clarified the actual pain point wasn't the initial
+  page load (the boot screen above) but that opening a lesson or a
+  Workshop driller has a real multi-second content-fetch delay with no
+  feedback, inviting "wildly clicking all over." `UI.showLoading()`/
+  `hideLoading()` (`engine/ui.js`) lazily create `#action-loader` — the
+  same single-disc/orbiting-dot/"Loading…" motif as the boot screen,
+  reused via the shared `.boot-spinner`/`.boot-label` classes — and show
+  it after a 150ms delay so a cache-warm open never flashes it. Wired at
+  the two chokepoints every lesson/driller open funnels through:
+  `startLesson()` in `engine/lessons.js` (covers curriculum.js, home.js,
+  journey.js, reader.js, recommendationEngine.js and
+  studyPlanRunner.js's call sites in one place) and `Workshop.open()` in
+  `engine/workshop.js` (covers every driller card, via a new
+  `_renderAndHideLoader()` wrapping each of `open()`'s three routing
+  branches). Verified live: overlay appears for a manually-delayed
+  `startLesson()`/`Workshop.open()` call and disappears once the screen
+  is actually ready; a normal (fast, cache-warm) open never shows it at
+  all.
 - [ ] Interface increasingly bilingual as level rises, eventually
   Spanish/Hungarian interface by B2.
 - [x] **Dark/light mode.** Built & deployed 2026-09-12: Constructivist inverted palette (`[data-theme="dark"]`), `engine/theme.js`, appearance settings in My Journey, and desktop header quick-toggles.
@@ -2096,6 +2212,32 @@ was not duplicated here.
     already-correctly-themed `.sp-en-prompt` and `.sp-instruction`
     classes. Every lesson injects this step, so this was systemic, not
     specific to the one lesson reported.
+  - **Fixed 2026-09-17** — Android report: Speaking Studio's Verbal
+    Production recorded audio fine (played back on review) but never
+    transcribed it, and submitting was blocked with a generic "Please
+    speak or enter some text" alert that read as the app rejecting a
+    real answer. Root cause: `engine/speech-input.js`'s `startListening()`
+    used to fire `SpeechRecognition.start()` and `getUserMedia()`
+    (for playback) in the same tick — on some Android devices the two
+    contend for the mic and recognition comes back empty while the
+    recording itself is fine. Per the user's explicit priority call
+    (recognition/grading first, playback second), recording on mobile
+    is now **sequenced behind recognition** rather than run concurrently:
+    a new `_onRecognitionClaimedMic` handoff only calls
+    `_startRecordingStream()` once `recognition.onstart` actually fires
+    (confirming recognition has the mic), with a 600ms fallback timeout
+    in case recognition never starts (denied permission, unsupported)
+    so playback isn't lost entirely in that case. Desktop is unaffected —
+    contention hasn't been observed there, so both still start together.
+    Verified with a fake `SpeechRecognition`/`getUserMedia` under a
+    spoofed Android UA: `getUserMedia()` fires only after `onstart`
+    (56ms after `start()` in the test), and still fires via the 600ms
+    fallback when `onstart` never comes. Real-device contention wasn't
+    reproducible in this sandbox (no physical Android hardware), so this
+    should be confirmed on the reporting device.
+    `_renderProdReview()` in `engine/drills/speaking.js` still carries
+    the 2026-09-17 messaging fallback below for whatever residual cases
+    still produce a recording with no transcript.
 - [x] **Full Listening & Speaking cross-app integration.** Built & deployed 2026-09-14:
   - **Timed Sessions (`StudyPlan` & `StudyPlanRunner`)**: Wired `listening` (`ListeningDriller`) and `speaking` (`SpeakingDriller`) into the time-budget allocation algorithm and study-plan screen runner.
   - **Reviews (SRS Flashcards & Decks in `engine/srs.js`)**: Added an "Audio-First / Listening" review direction (`audio-en`) where the card front plays native audio without revealing text, testing auditory recall before revealing spelling and translation, with clickable direction toggles.
@@ -2151,6 +2293,17 @@ was not duplicated here.
   passing-but-sub-90% attempt (85%, 17/20) left the level's progress at
   0/120 and showed the ordinary pass message, confirming the two
   thresholds stay genuinely independent.
+
+- [x] **Universal Loading Screens & Activity Performance Overhaul.** Built & verified 2026-09-17:
+  - **Instant Micro-Feedback & Dedicated Loaders**: Added `.is-loading` immediate click-acknowledgment states across lesson buttons, story cards, drills, and test action buttons.
+  - **Immediate Lesson Loading Screen**: `startLesson()` triggers `UI.showLoading('Loading lesson…', { immediate: true })` and holds `#action-loader` active with blocking pointer events until Step 1 is rendered into the DOM.
+  - **Fixed Workshop Driller Cancellation Bug**: `Workshop.open()` and `render()` now return promises from asynchronous sub-driller renders (`GrammarDriller`, `WritingDriller`, `HuVerbStudio`, etc.), preventing premature dismissal of `#action-loader`.
+  - **Extended Activity Coverage**: Added contextual loading overlays to `Reader.loadStory('Opening story…')`, `LevelTest.open('Loading level test…')`, `Decks.render('Loading decks…')`, and `StudyPlanRunner.launchItem()`.
+  - **Service Worker Stale-While-Revalidate**: Switched `/content/` handling in `sw.js` from Network-First to Stale-While-Revalidate (Cache-first with background revalidation), dropping repeat lesson/content open latency to near 0ms.
+  - **Parallelized Lesson Step Building**: Replaced sequential section loading in `engine/lessons.js` with `Promise.all` prefetching.
+  - **Optimized Recycle Pool Lookup**: Capped `engine/recycle.js` historical lesson scans to the most recent 8 completed lessons in the current level, eliminating massive 30–80 file fan-out.
+  - **Language-Isolated Asset Loading**: Ensured Hungarian sessions never load the 10.8 MB Spanish dictionary/indexes and vice versa, resetting caches on `language-changed`.
+  - Bumped `CACHE_VERSION` in `sw.js` to `v2026-09-17h` and query strings in `index.html`.
 
 ## Level test
 

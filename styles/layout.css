@@ -1646,3 +1646,90 @@ body.in-lesson .content {
 .level-empty {
   padding: 24px 12px;
 }
+
+/* Boot screen — shown from first paint until engine/init.js finishes the
+   initial render, then faded out and removed (see initialiseApp). One
+   disc from the app's own art language (.ps-wash/.ps-accent) with the
+   accent dot orbiting, rather than a generic spinner. */
+#boot-screen, #action-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  background: var(--bg);
+}
+
+#boot-screen {
+  display: flex;
+  transition: opacity var(--dur-slow) var(--ease-standard);
+}
+
+#boot-screen.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Shown by UI.showLoading()/hideLoading() while a lesson or Workshop
+   driller loads its content, so a slow fetch doesn't invite tapping
+   around the screen underneath while it catches up. */
+#action-loader {
+  display: none;
+  pointer-events: all;
+  cursor: wait;
+  user-select: none;
+}
+
+#action-loader.is-visible {
+  display: flex;
+}
+
+/* Instant micro-feedback on touched buttons / cards before or during loading */
+.is-loading,
+button.is-loading,
+.story-card.is-loading {
+  position: relative;
+  pointer-events: none !important;
+  opacity: 0.72;
+  transition: opacity var(--dur-fast, 120ms) ease;
+}
+
+.is-loading::after {
+  content: "";
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin-left: 8px;
+  vertical-align: middle;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: boot-spin 0.8s linear infinite;
+}
+
+.boot-spinner {
+  width: 56px;
+  height: 56px;
+  animation: boot-spin 1.4s linear infinite;
+}
+
+.boot-label {
+  margin: 0;
+  font-family: var(--font-ui);
+  font-size: 13px;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+}
+
+@keyframes boot-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .boot-spinner {
+    animation: none;
+  }
+}

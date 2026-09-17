@@ -882,6 +882,7 @@ function attachCurriculumEvents(root) {
             // A unit that is still one lesson has nothing to browse — go
             // straight to the lesson rather than a detail screen with one row.
             if (unit && unit.lessons && unit.lessons.length === 1) {
+                open.classList.add('is-loading');
                 startLesson(unit.lessons[0].id);
                 return;
             }
@@ -950,10 +951,14 @@ function attachCurriculumEvents(root) {
         }
 
         const start = e.target.closest('[data-start-lesson]');
-        if (start) startLesson(start.getAttribute('data-start-lesson'));
+        if (start) {
+            start.classList.add('is-loading');
+            startLesson(start.getAttribute('data-start-lesson'));
+        }
 
         const test = e.target.closest('[data-open-test]');
         if (test && typeof LevelTest !== 'undefined') {
+            test.classList.add('is-loading');
             LevelTest.open(test.getAttribute('data-open-test'));
         }
     });
@@ -973,3 +978,12 @@ function attachCurriculumEvents(root) {
         });
     });
 }
+
+document.addEventListener('language-changed', () => {
+    window._curriculumData = null;
+    openLevel = null;
+    openUnit = null;
+    openGrammarGuideUnit = null;
+    openWordBankUnit = null;
+    _globalGrammarIndex = null;
+});

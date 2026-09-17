@@ -136,28 +136,48 @@ const StudyPlanRunner = (function () {
     // LAUNCHING AN ITEM
     // ----------------------------------------
 
-    function launchItem(item) {
+    async function launchItem(item) {
         _embeddedDriller = null;
         if (item.kind === 'grammar' && typeof GrammarDriller !== 'undefined') {
             const host = activityHost();
             host.innerHTML = '<div id="study-plan-driller"></div>';
-            GrammarDriller.render(document.getElementById('study-plan-driller'), { skill: item.skill, count: item.count });
             _embeddedDriller = GrammarDriller;
+            if (typeof UI !== 'undefined') UI.showLoading('Preparing grammar practice…');
+            try {
+                await GrammarDriller.render(document.getElementById('study-plan-driller'), { skill: item.skill, count: item.count });
+            } finally {
+                if (typeof UI !== 'undefined') UI.hideLoading();
+            }
         } else if (item.kind === 'vocabulary' && typeof VocabularyDriller !== 'undefined') {
             const host = activityHost();
             host.innerHTML = '<div id="study-plan-driller"></div>';
-            VocabularyDriller.render(document.getElementById('study-plan-driller'), { words: item.words });
             _embeddedDriller = VocabularyDriller;
+            if (typeof UI !== 'undefined') UI.showLoading('Preparing vocabulary practice…');
+            try {
+                await VocabularyDriller.render(document.getElementById('study-plan-driller'), { words: item.words });
+            } finally {
+                if (typeof UI !== 'undefined') UI.hideLoading();
+            }
         } else if (item.kind === 'listening' && typeof ListeningDriller !== 'undefined') {
             const host = activityHost();
             host.innerHTML = '<div id="study-plan-driller"></div>';
-            ListeningDriller.render(document.getElementById('study-plan-driller'), { count: item.count || 5, level: item.level, autoStart: true });
             _embeddedDriller = ListeningDriller;
+            if (typeof UI !== 'undefined') UI.showLoading('Preparing listening practice…');
+            try {
+                await ListeningDriller.render(document.getElementById('study-plan-driller'), { count: item.count || 5, level: item.level, autoStart: true });
+            } finally {
+                if (typeof UI !== 'undefined') UI.hideLoading();
+            }
         } else if (item.kind === 'speaking' && typeof SpeakingDriller !== 'undefined') {
             const host = activityHost();
             host.innerHTML = '<div id="study-plan-driller"></div>';
-            SpeakingDriller.render(document.getElementById('study-plan-driller'), { count: item.count || 5, level: item.level, skill: item.skill, autoStart: true });
             _embeddedDriller = SpeakingDriller;
+            if (typeof UI !== 'undefined') UI.showLoading('Preparing speaking practice…');
+            try {
+                await SpeakingDriller.render(document.getElementById('study-plan-driller'), { count: item.count || 5, level: item.level, skill: item.skill, autoStart: true });
+            } finally {
+                if (typeof UI !== 'undefined') UI.hideLoading();
+            }
         } else if (item.kind === 'speaking-cando' && typeof SpeakingDriller !== 'undefined') {
             // A single CEFR can-do prompt, auto-launched straight into
             // recording (same shortcut Journey's "unverified competencies"
@@ -166,12 +186,17 @@ const StudyPlanRunner = (function () {
             // slot, not the budget-gated longer drill block.
             const host = activityHost();
             host.innerHTML = '<div id="study-plan-driller"></div>';
-            SpeakingDriller.render(document.getElementById('study-plan-driller'), {
-                targetCompetency: item.text,
-                level: item.level,
-                maxSeconds: item.seconds
-            });
             _embeddedDriller = SpeakingDriller;
+            if (typeof UI !== 'undefined') UI.showLoading('Preparing speaking prompt…');
+            try {
+                await SpeakingDriller.render(document.getElementById('study-plan-driller'), {
+                    targetCompetency: item.text,
+                    level: item.level,
+                    maxSeconds: item.seconds
+                });
+            } finally {
+                if (typeof UI !== 'undefined') UI.hideLoading();
+            }
         } else if (item.kind === 'match' && typeof DeckMatch !== 'undefined') {
             const host = activityHost();
             host.innerHTML = '<div id="study-plan-driller"></div>';

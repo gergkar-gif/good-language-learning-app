@@ -2,7 +2,7 @@
 // Parlour Service Worker (Offline Support & PWA App Shell)
 // ==========================================================
 
-const CACHE_VERSION = 'v2026-09-17a';
+const CACHE_VERSION = 'v2026-09-17h';
 const SHELL_CACHE_NAME = `parlour-shell-${CACHE_VERSION}`;
 const CONTENT_CACHE_NAME = `parlour-content-${CACHE_VERSION}`;
 
@@ -162,22 +162,21 @@ self.addEventListener('fetch', event => {
     }
 
     // B. Dynamic Content (lessons, grammar, stories, dictionary)
-    // Strategy: Network-First with Content-Cache Fallback
+    // Strategy: Stale-While-Revalidate (Instant response from cache, background refresh)
     if (url.pathname.includes('/content/')) {
         event.respondWith(
-            fetch(request).then(response => {
-                if (response && response.status === 200) {
-                    const responseClone = response.clone();
-                    caches.open(CONTENT_CACHE_NAME).then(cache => {
-                        cache.put(request, responseClone);
-                    });
-                }
-                return response;
-            }).catch(() => {
-                return caches.match(request, { ignoreSearch: true }).then(cached => {
-                    if (cached) return cached;
-                    return caches.match(request.url, { ignoreSearch: true });
-                });
+            caches.match(request, { ignoreSearch: true }).then(cachedResponse => {
+                const fetchPromise = fetch(request).then(networkResponse => {
+                    if (networkResponse && networkResponse.status === 200) {
+                        const clone = networkResponse.clone();
+                        caches.open(CONTENT_CACHE_NAME).then(cache => {
+                            cache.put(request, clone);
+                        });
+                    }
+                    return networkResponse;
+                }).catch(() => cachedResponse);
+
+                return cachedResponse || fetchPromise;
             })
         );
         return;

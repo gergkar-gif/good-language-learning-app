@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="styles/base.css?v=2026-09-14h">
     <link rel="stylesheet" href="styles/geometry.css?v=2026-09-14h">
     <link rel="stylesheet" href="styles/components.css?v=2026-09-16d">
-    <link rel="stylesheet" href="styles/layout.css?v=2026-09-16b">
+    <link rel="stylesheet" href="styles/layout.css?v=2026-09-17d">
     <link rel="stylesheet" href="styles/utilities.css?v=2026-09-14h">
     <link rel="stylesheet" href="styles/verbs.css?v=2026-09-14h">
     <link rel="stylesheet" href="styles/workshop.css?v=2026-09-14h">
@@ -35,6 +35,17 @@
     </script>
 </head>
 <body>
+
+<!-- Shown until engine/init.js finishes the first render, then faded and
+     removed. Pure markup/CSS, no script dependency, so it paints before any
+     of the app's own JS has run. -->
+<div id="boot-screen" role="presentation" aria-hidden="true">
+    <svg class="boot-spinner" viewBox="0 0 100 100" aria-hidden="true">
+        <circle cx="50" cy="50" r="40" class="ps-wash"/>
+        <circle cx="50" cy="12" r="7" class="ps-accent"/>
+    </svg>
+    <p class="boot-label">Loading…</p>
+</div>
 
 <div class="app">
 
@@ -293,7 +304,7 @@
 <script src="engine/lexicon.js?v=2026-09-14h"></script>
 <script src="engine/srs.js?v=2026-09-16e"></script>
 <script src="engine/content-loader.js?v=2026-09-14h"></script>
-<script src="engine/ui.js?v=2026-09-14h"></script>
+<script src="engine/ui.js?v=2026-09-17b"></script>
 <script src="engine/art.js?v=2026-09-16a"></script>
 <script src="engine/theme.js?v=2026-09-14h"></script>
 <script src="engine/sound.js?v=2026-09-14h"></script>
@@ -301,12 +312,12 @@
 <script src="engine/page-header.js?v=2026-09-14h"></script>
 <script src="engine/speech.js?v=2026-09-16a"></script>
 <script src="engine/tts.js?v=2026-09-16c"></script>
-<script src="engine/speech-input.js?v=2026-09-16d"></script>
+<script src="engine/speech-input.js?v=2026-09-17a"></script>
 
 <!-- Engine: reader (depends on Content) -->
-<script src="engine/reader.js?v=2026-09-16c"></script>
+<script src="engine/reader.js?v=2026-09-17a"></script>
 
-<!-- Engine: driller session-accuracy signal (only depends on Lang) â€” loaded
+<!-- Engine: driller session-accuracy signal (only depends on Lang) — loaded
      before every driller that writes to it: verbs/speed, translation,
      listening, and the four Hungarian-specific drillers below -->
 <script src="engine/drillHistory.js?v=2026-09-14h"></script>
@@ -335,11 +346,11 @@
 
 <!-- Engine: speaking driller submodules (depends on SpeechInput, loaded earlier) -->
 <script src="engine/drills/speaking-runner.js?v=2026-09-16c"></script>
-<script src="engine/drills/speaking.js?v=2026-09-17a"></script>
+<script src="engine/drills/speaking.js?v=2026-09-17b"></script>
 
 <!-- Engine: grader engine & writing studio (CEFR open-ended production) -->
 <script src="engine/grader/local-grader.js?v=2026-09-14h"></script>
-<script src="engine/grader/grader-prompt.js?v=2026-09-14h"></script>
+<script src="engine/grader/grader-prompt.js?v=2026-09-17a"></script>
 <script src="engine/grader/schema.js?v=2026-09-14h"></script>
 <script src="engine/grader/grader-engine.js?v=2026-09-14h"></script>
 <script src="engine/grader/index.js?v=2026-09-14h"></script>
@@ -353,14 +364,14 @@
 <script src="engine/drills/hu-verb-studio.js?v=2026-09-14h"></script>
 
 <!-- Engine: workshop shell (depends on Verbs, GrammarDriller, TranslationDriller, VocabularyDriller, ListeningDriller, Hu*Driller) -->
-<script src="engine/workshop.js?v=2026-09-14h"></script>
+<script src="engine/workshop.js?v=2026-09-17b"></script>
 
 <!-- Engine: lessons, progress, curriculum -->
-<script src="engine/lessons.js?v=2026-09-16g"></script>
+<script src="engine/lessons.js?v=2026-09-17b"></script>
 <script src="engine/progress.js?v=2026-09-14h"></script>
 <script src="engine/learnerPath.js?v=2026-09-14h"></script>
-<script src="engine/recycle.js?v=2026-09-14h"></script>
-<script src="engine/leveltest.js?v=2026-09-14h"></script>
+<script src="engine/recycle.js?v=2026-09-17a"></script>
+<script src="engine/leveltest.js?v=2026-09-17a"></script>
 <script src="engine/learnerModel.js?v=2026-09-17a"></script>
 <script src="engine/recommend.js?v=2026-09-14h"></script>
 <script src="engine/recommendationEngine.js?v=2026-09-16c"></script>
@@ -372,25 +383,25 @@
 <script src="engine/journey.js?v=2026-09-14h"></script>
 <script src="engine/decks/match.js?v=2026-09-14h"></script>
 <script src="engine/decks/learn.js?v=2026-09-14h"></script>
-<script src="engine/decks.js?v=2026-09-16c"></script>
+<script src="engine/decks.js?v=2026-09-17a"></script>
 
 <!-- Engine: time-based session screen â€” depends on StudyPlan, GrammarDriller,
      VocabularyDriller, Decks, LevelTest, all loaded above -->
-<script src="engine/studyPlanRunner.js?v=2026-09-17a"></script>
+<script src="engine/studyPlanRunner.js?v=2026-09-17b"></script>
 
-<script src="engine/curriculum.js?v=2026-09-14h"></script>
+<script src="engine/curriculum.js?v=2026-09-17a"></script>
 
 <!-- Engine: library (depends on Reader, Decks, Lexicon) -->
 <script src="engine/library.js?v=2026-09-16c"></script>
 
 <!-- Engine: home (reads from every module above) -->
-<script src="engine/home.js?v=2026-09-14h"></script>
+<script src="engine/home.js?v=2026-09-17a"></script>
 
 <!-- Engine: cloud sync (step 7 â€” reads Lang, called by init's boot and Journey's Account card) -->
-<script src="engine/sync.js?v=2026-09-14h"></script>
+<script src="engine/sync.js?v=2026-09-17a"></script>
 
 <!-- Engine: bootstrap (loads last) -->
-<script src="engine/init.js?v=2026-09-14h"></script>
+<script src="engine/init.js?v=2026-09-17a"></script>
 
 <!-- Engine: bug report (independent floating overlay, loads anywhere after Art) -->
 <script src="engine/bugreport.js?v=2026-09-14h"></script>

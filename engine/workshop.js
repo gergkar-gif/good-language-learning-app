@@ -239,10 +239,10 @@ const Workshop = (function () {
 
     function _renderDriller(driller) {
         if (driller.id === 'verbs' && typeof Verbs !== 'undefined') {
-            Verbs.render(_activeOptions);
+            return Verbs.render(_activeOptions);
         } else if (_moduleFor(driller.id)) {
             const container = document.getElementById(driller.containerId);
-            if (container) _moduleFor(driller.id).render(container, _activeOptions);
+            if (container) return _moduleFor(driller.id).render(container, _activeOptions);
         }
     }
 
@@ -306,13 +306,24 @@ const Workshop = (function () {
 
         root.innerHTML = _activeHtml(driller);
         _attachActiveEvents(root);
-        _renderDriller(driller);
+        return _renderDriller(driller);
     }
 
     // `options` is opaque here — Workshop just carries it to whichever
     // driller opens (e.g. `{ skill: 'location-with-ban-ben' }` for
     // GrammarDriller, from Home's post-unit practice nudge). A driller that
     // doesn't understand `options` just ignores the second render() arg.
+    // Several drillers fetch content in their own render() before they can
+    // draw anything, so open() shows a loading overlay across the gap
+    // (see UI.showLoading) rather than leaving the old screen tappable.
+    function _renderAndHideLoader(drillerTitle) {
+        const label = drillerTitle ? `Loading ${drillerTitle}…` : 'Loading…';
+        if (typeof UI !== 'undefined') UI.showLoading(label);
+        return Promise.resolve(render()).finally(() => {
+            if (typeof UI !== 'undefined') UI.hideLoading();
+        });
+    }
+
     function open(id, options) {
         // Transparent routing for Hungarian sub-drillers into the unified Verb & Morphology Studio
         if (id === 'hu-verb' || id === 'hu-suffix' || id === 'hu-prefix' || id === 'hu-morphology') {
@@ -321,16 +332,14 @@ const Workshop = (function () {
             }
             _active = 'hu-verb-studio';
             _activeOptions = Object.assign({ activeTab: id }, options);
-            render();
-            return;
+            return _renderAndHideLoader('Verb & Morphology Studio');
         }
 
         // Transparent routing for Translation driller into Writing Studio
         if (id === 'translation') {
             _active = 'writing';
             _activeOptions = Object.assign({ activeTab: 'translation' }, options);
-            render();
-            return;
+            return _renderAndHideLoader('Writing Studio');
         }
 
 
@@ -340,7 +349,7 @@ const Workshop = (function () {
         }
         _active = id;
         _activeOptions = options || null;
-        render();
+        return _renderAndHideLoader(driller ? driller.title : null);
     }
 
     function close() {

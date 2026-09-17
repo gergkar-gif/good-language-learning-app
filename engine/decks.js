@@ -57,6 +57,13 @@ const Decks = (function () {
     let sortOrder = 'natural'; // 'natural' | 'alphabetical' — how the open deck's word list is displayed. Shuffling is a per-mode concern (Match/Learn already randomize their own round), never something that reorders the list itself.
     let studyMode = null;      // null | 'match' | 'learn' — which study mode (if any) is open over the current deck
 
+    document.addEventListener('language-changed', () => {
+        catalogue = null;
+        openDeck = null;
+        draft = null;
+        importDraft = null;
+    });
+
     // ----------------------------------------
     // DATA — Parlour Decks (read-only catalogue)
     // ----------------------------------------
@@ -1509,7 +1516,14 @@ const Decks = (function () {
         const host = document.getElementById('decks-root');
         if (!host) return;
 
-        await load();
+        if (!catalogue && typeof UI !== 'undefined') {
+            UI.showLoading('Loading decks…');
+        }
+        try {
+            await load();
+        } finally {
+            if (typeof UI !== 'undefined') UI.hideLoading();
+        }
 
         if (importDraft) {
             host.innerHTML = importHtml();
