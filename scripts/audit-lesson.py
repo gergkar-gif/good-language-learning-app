@@ -82,7 +82,8 @@ PROPER_NOUNS = {"carlos", "meg", "daniela", "lauren", "kaylee", "hungria",
                 "sudafrica", "espana", "hanoi", "ana", "mexico", "vietnam",
                 "ninh", "binh", "madrid", "colombia", "peru", "valencia",
                 "phileas", "fogg", "passepartout", "jo", "bartleby",
-                "rousseau", "odiseo", "itaca", "gregor", "york", "lucia"}
+                "rousseau", "odiseo", "itaca", "gregor", "york", "lucia",
+                "ulises", "gulliver", "daniel"}
 
 
 def norm(text):

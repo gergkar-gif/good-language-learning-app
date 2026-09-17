@@ -61,7 +61,12 @@ SPANISH_ARTICLE = re.compile(r"^(el|la|los|las|un|una)\s")
 SPANISH_WORDS = re.compile(
     r"\b(era|fue|son|es|hay|que|para|con|muy|pero|porque|cuando|donde|"
     r"como|si|no|se|su|sus|le|les|lo|los|las|del|al|más|también|puede|"
-    r"debe|tiene|está|están|estaba|vamos|voy|va)\b"
+    r"debe|tiene|está|están|estaba|vamos|voy|va|un|una|unos|unas|"
+    # present-perfect "haber" forms -- "he" deliberately excluded, see
+    # ENGLISH_WORDS below (found 2026-09-17, b1-16-04.ex14: "han" was
+    # missing, so an all-Spanish sentence with no accents scored 0 and the
+    # English bracket never got excluded)
+    r"has|ha|hemos|han)\b"
 )
 ENGLISH_WORDS = re.compile(
     # "he" deliberately excluded: it collides with Spanish "he" (the
