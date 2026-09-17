@@ -235,6 +235,9 @@ LANG_UNIT_TITLES = {
             "Transport & Directions",
             "Hobbies & Free Time",
             "Friends & Making Plans",
+            "Coming from Places: Origin Cases",
+            "Languages & Manner: The Essive-Modal",
+            "Where Things Are: Postpositions",
         ],
         "a2": [
             "Daily Life & Routines",

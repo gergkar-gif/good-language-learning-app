@@ -104,14 +104,17 @@ that's now just a JSON append rather than a `build-manifest.py` edit.
 
 ---
 
-## ⏳ Phase 5: Hungarian A1 — Core Case Integrations [TO-BE-DONE LATER]
+## ✅ Phase 5: Hungarian A1 — Core Case Integrations [DONE 2026-09-17]
 
-- [ ] **Unit 5.1: Hungarian Elative (*-ból/-ből*) & Delative (*-ról/-ről*) Consolidation**
-  - **Focus**: Spatial origin cases: coming out of places (*a szobából*), coming off / speaking about (*Budapestről, a munkáról beszélünk*).
-- [ ] **Unit 5.2: Hungarian Essive-Modal (*-ul/-ül*)**
-  - **Focus**: Language adverbials (*magyarul, angolul, spanyolul*) with explicit vowel harmony rules.
-- [ ] **Unit 5.3: Postpositions (*alatt, felett, mellett, előtt, után*)**
-  - **Focus**: Core spatial and temporal postpositions used with bare nominative nouns.
+- [x] **Unit 31: Coming from Places: Origin Cases (`unit.a1.31`, stems `a1-151` to `a1-155` + `a1-155-consolidation`)**
+  - **Focus**: Elative case *-ból/-ből* (out of 3D enclosed spaces), delative case *-ról/-ről* (off surfaces and from Hungarian cities: *Budapestről, Szegedről*), delative for topics (*Miről beszélünk? A munkáról beszélek*), and 3-way source case contrast (*-ból/-ből, -ról/-ről, -tól/-től*). 5 lessons + consolidation.
+  - **Story**: *Honnan jöttök?* (`a1-unit-31`).
+- [x] **Unit 32: Languages & Manner: The Essive-Modal (`unit.a1.32`, stems `a1-156` to `a1-160` + `a1-160-consolidation`)**
+  - **Focus**: Essive-modal *-ul/-ül* for language adverbials (*magyarul, angolul, németül, spanyolul*), verbs of comprehension/learning (*tanul, ért, olvas, ír*), fluency and degree adverbs (*egy kicsit, jól, folyékonyan, már, még, csak*), and manner adverbs (*rosszul, egyedül, például*). 5 lessons + consolidation.
+  - **Story**: *Nyelvgyakorlás a kávézóban* (`a1-unit-32`).
+- [x] **Unit 33: Where Things Are: Postpositions (`unit.a1.33`, stems `a1-161` to `a1-165` + `a1-165-consolidation`)**
+  - **Focus**: Core postpositions with bare nominative nouns: *alatt* (under), *felett/fölött* (above), *mellett* (next to), *előtt* (in front of / before), *mögött* (behind), *között* (between/among), *után* (after in space/time), and *alatt* (during). 5 lessons + consolidation.
+  - **Story**: *Hol van a jegy?* (`a1-unit-33`).
 
 ---
 
