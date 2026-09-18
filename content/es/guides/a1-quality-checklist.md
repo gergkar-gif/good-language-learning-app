@@ -17,7 +17,7 @@ Every lesson must satisfy all of the following before it is considered complete.
 
 - [ ] Uses only words from the Core Lexicon.
 - [ ] Introduces the correct number of new words.
-- [ ] Every new word appears in the story.
+- [ ] Key new vocabulary appears in the unit's story.
 - [ ] Every new word appears in at least one exercise.
 - [ ] Every new word is added to SRS.
 

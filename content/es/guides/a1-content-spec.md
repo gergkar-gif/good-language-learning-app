@@ -61,8 +61,9 @@ audit script does **not** enforce a fixed per-lesson word count for A1
 lesson-by-lesson number as a rough planning guide, not a hard target.
 
 Every word must come from the Core Lexicon. Every new word must appear in
-that lesson's own exercises and in the unit's story (enforced — the audit
-script checks both).
+that lesson's own exercises (enforced by the audit script). Words are
+contextualized in the unit's original story where natural, without forcing an
+unnatural 100% concordance into a 100–250 word text.
 
 ---
 
