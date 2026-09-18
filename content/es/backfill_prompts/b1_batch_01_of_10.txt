@@ -1,0 +1,119 @@
+SYSTEM PROMPT / INSTRUCTIONS:
+You are an expert Spanish curriculum writer for a language learning application.
+Your task is to generate ONE natural example sentence for each of the Spanish vocabulary words below.
+
+RULES:
+1. LEVEL: Keep sentences at CEFR B1 level: subjunctive mood where natural (presente de subjuntivo), conditional, future, relative clauses, intermediate vocabulary.
+2. MINIMUM LENGTH: The Spanish sentence MUST contain at least 6 to 12 words (minimum 5 words strictly required). Do not write short fragments like 'Él es alto.'
+3. INFERABLE CONTEXT: The sentence must provide enough context that the meaning of the target word is clear and makes sense in context.
+4. USAGE: Use the target word naturally (conjugated or inflected form is welcome if it's a verb or adjective).
+5. TRANSLATION: Provide an accurate, natural English translation for the full sentence.
+6. OUTPUT FORMAT: Output ONLY a valid JSON array of objects, with NO markdown commentary. Each object must have:
+   {
+     "word": "<target word as listed>",
+     "spanish": "<full Spanish sentence>",
+     "english": "<full English translation>",
+     "level": "B1"
+   }
+
+VOCABULARY WORDS (100 words):
+- mensajero (noun): messenger
+- presenciar (verb): to witness
+- conmoverse (verb): to be moved
+- arriesgarse (verb): to take a risk
+- prudente (adjective): prudent / sensible
+- experto (noun): expert
+- alabar (verb): to praise
+- apoyarse (verb): to support one another / each other
+- sinceridad (noun): sincerity
+- reunirse (verb): to meet / get together
+- distanciarse (verb): to become distant / grow apart
+- reconciliarse (verb): to reconcile / make up
+- encargarse de (verb): to be in charge of
+- gestionar (verb): to manage
+- ascender (verb): to get promoted
+- candidato (noun): candidate
+- seleccionar (verb): to select
+- solicitud (noun): application
+- especificar (verb): to specify
+- realizar (verb): to carry out
+- aprendizaje (noun): learning
+- fracasar (verb): to fail
+- constancia (noun): consistency
+- afirmación (noun): statement
+- equipaje (noun): luggage
+- cancelar (verb): to cancel
+- desplazarse (verb): to get around / travel from place to place
+- inevitable (adjective): inevitable
+- malestar (noun): discomfort / feeling unwell
+- mareo (noun): dizziness
+- agotado (adjective): exhausted
+- prevenir (verb): to prevent
+- tratamiento (noun): treatment
+- inundar (verb): to flood
+- reparación (noun): repair
+- reformar (verb): to renovate
+- prioritario (adjective): priority
+- aportar (verb): to contribute
+- moderar (verb): to moderate / limit
+- planificación (noun): planning
+- alimentario (adjective): food-related
+- alimenticio (adjective): nutritional
+- resumir (verb): to summarize
+- confirmación (noun): confirmation
+- difundir (verb): to spread
+- misterioso (adjective): mysterious
+- contactar (verb): to contact
+- actualizar (verb): to update
+- pensamiento (noun): thought
+- protagonista (noun): protagonist
+- reseña (noun): review
+- impactar (verb): to have an impact
+- valoración (noun): assessment / evaluation
+- proporcionar (verb): to provide
+- debido a (noun): due to
+- ambiental (adjective): environmental
+- discrepar (verb): to disagree
+- servicio público (noun): public service
+- claridad (noun): clarity
+- arriesgar (verb): to risk
+- desencadenar (verb): to trigger
+- agravarse (verb): to get worse
+- empeorar (verb): to worsen
+- convincente (adjective): convincing
+- evaluar (verb): to evaluate
+- justificar (verb): to justify
+- previsión (noun): forecast / prediction
+- pronóstico (noun): forecast / prediction
+- científico (adjective): scientific
+- fallar (verb): to fail
+- criterio (noun): criterion
+- funcionamiento (noun): operation / functioning
+- evolucionar (verb): to evolve / develop
+- reflexionar (verb): to reflect
+- valorar (verb): to value
+- realización (noun): fulfilment
+- redefinir (verb): to redefine
+- confundir (verb): to confuse
+- indirectamente (adverb): indirectly
+- aclaración (noun): clarification
+- equilibrar (verb): to balance
+- emigrar (verb): to emigrate
+- arraigo (noun): rootedness
+- integrarse (verb): to integrate
+- integrado (adjective): integrated
+- valor (noun): value
+- enriquecer (verb): to enrich
+- incierto (adjective): uncertain
+- preparación (noun): preparation
+- finalidad (noun): purpose
+- comentario (noun): comment
+- asegurar (verb): to assure
+- pronombre (noun): pronoun
+- averiguar (verb): to find out
+- certeza (noun): certainty
+- matiz (noun): nuance
+- arrepentirse (verb): to regret
+- reto (noun): challenge
+- el excoronel (noun): former colonel
+- fallido (adjective): failed

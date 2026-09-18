@@ -331,14 +331,42 @@ def from_exercises(exercises_dir, by_unit_num, by_lesson_num, lang):
     return pairs
 
 
+def from_backfill(backfill_dir):
+    pairs = []
+    if not backfill_dir.is_dir():
+        return pairs
+    for f in sorted(backfill_dir.glob("*.json")):
+        try:
+            data = json.loads(f.read_text(encoding="utf-8"))
+            items = data if isinstance(data, list) else data.get("sentences", [])
+            for it in items:
+                sp = it.get("spanish")
+                en = it.get("english")
+                lvl = it.get("level", "A1").upper()
+                if sp and en:
+                    pair = {
+                        "spanish": sp,
+                        "english": en,
+                        "level": lvl,
+                        "source": "backfill"
+                    }
+                    if it.get("topic"):
+                        pair["topic"] = it["topic"]
+                    pairs.append(pair)
+        except (json.JSONDecodeError, OSError):
+            continue
+    return pairs
+
+
 def main():
     langs = sys.argv[1:] or ["es", "hu"]
 
     for lang in langs:
         grammar_dir = Path(f"content/{lang}/grammar")
         exercises_dir = Path(f"content/{lang}/exercises")
-        if not grammar_dir.is_dir() and not exercises_dir.is_dir():
-            print(f"[{lang}] no grammar/exercises dirs, skipping")
+        backfill_dir = Path(f"content/{lang}/backfill_sentences")
+        if not grammar_dir.is_dir() and not exercises_dir.is_dir() and not backfill_dir.is_dir():
+            print(f"[{lang}] no grammar/exercises/backfill dirs, skipping")
             continue
 
         by_unit_num, by_lesson_num = _load_curriculum_lookups(lang)
@@ -346,6 +374,7 @@ def main():
         pairs = (
             from_grammar(grammar_dir, by_unit_num, by_lesson_num, lang, known_skills)
             + from_exercises(exercises_dir, by_unit_num, by_lesson_num, lang)
+            + from_backfill(backfill_dir)
         )
 
         output_dir = Path(f"content/{lang}/indexes")
