@@ -107,31 +107,104 @@
     {
       "id": "a2.imperativoafirmativo.01.ex07",
       "category": "dialogue",
-      "type": "fill-blank",
-      "sentence": "—¿Qué hago con la carta? —_____ (leer) la primera página.",
-      "answer": "Lee",
+      "type": "dialogue-complete",
+      "prompt": [
+        {
+          "speaker": "Meg",
+          "text": "¿Qué hago con esta carta importante?"
+        },
+        {
+          "speaker": "Carlos",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Lee la primera página y escribe una respuesta.",
+        "Lees la primera página y escribes una respuesta.",
+        "Leyó la primera página y escribió una respuesta."
+      ],
+      "correct": 0,
       "teaches": [
-        "imperativo-afirmativo-regular"
+        "imperativo-afirmativo-regular",
+        "escribir"
       ]
     },
     {
       "id": "a2.imperativoafirmativo.01.ex08",
       "category": "dialogue",
-      "type": "fill-blank",
-      "sentence": "—Tengo calor. —Pues _____ (abrir) la ventana.",
-      "answer": "abre",
+      "type": "dialogue-complete",
+      "prompt": [
+        {
+          "speaker": "Carlos",
+          "text": "Tengo mucho calor en esta habitación."
+        },
+        {
+          "speaker": "Daniela",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Abre la ventana y descansa un momento.",
+        "Abres la ventana y descansas un momento.",
+        "Abrió la ventana y descansó un momento."
+      ],
+      "correct": 0,
       "teaches": [
-        "imperativo-afirmativo-regular"
+        "imperativo-afirmativo-regular",
+        "abrir"
       ]
     },
     {
       "id": "a2.imperativoafirmativo.01.ex09",
       "category": "writing",
-      "type": "fill-blank",
-      "sentence": "Carlos, _____ (esperar) aquí mientras compro el pan.",
-      "answer": "espera",
+      "type": "structured-writing",
+      "template": [
+        {
+          "prompt": "Tell a friend to speak slowly and listen.",
+          "answer": "Habla despacio y escucha con atención."
+        },
+        {
+          "prompt": "Tell a friend to wait here and eat something.",
+          "answer": "Espera aquí y come algo."
+        }
+      ],
       "teaches": [
-        "imperativo-afirmativo-regular"
+        "imperativo-afirmativo-regular",
+        "hablar",
+        "despacio",
+        "escuchar",
+        "esperar",
+        "comer"
+      ]
+    },
+    {
+      "id": "a2.imperativoafirmativo.01.ex10",
+      "category": "listening",
+      "type": "listening-choice",
+      "sentence": "Cierra la puerta y mira por la ventana.",
+      "options": [
+        "Close the door and look out the window.",
+        "Open the door and wait by the window.",
+        "He closed the door and looked outside.",
+        "Please close the window and look at the door."
+      ],
+      "correct": 0,
+      "teaches": [
+        "imperativo-afirmativo-regular",
+        "cerrar",
+        "mirar"
+      ]
+    },
+    {
+      "id": "a2.imperativoafirmativo.01.ex11",
+      "category": "listening",
+      "type": "dictation",
+      "sentence": "Pasa adelante y habla despacio, por favor.",
+      "teaches": [
+        "imperativo-afirmativo-regular",
+        "pasar",
+        "hablar",
+        "despacio"
       ]
     }
   ]

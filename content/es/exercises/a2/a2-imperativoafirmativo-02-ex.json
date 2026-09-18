@@ -105,31 +105,109 @@
     {
       "id": "a2.imperativoafirmativo.02.ex07",
       "category": "dialogue",
-      "type": "fill-blank",
-      "sentence": "—Tengo prisa. —Entonces _____ (salir) ya de casa.",
-      "answer": "sal",
+      "type": "dialogue-complete",
+      "prompt": [
+        {
+          "speaker": "Meg",
+          "text": "Tengo dudas sobre qué hacer ahora."
+        },
+        {
+          "speaker": "Carlos",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Ten cuidado y dime la verdad.",
+        "Tienes cuidado y me dices la verdad.",
+        "Tuvo cuidado y me dijo la verdad."
+      ],
+      "correct": 0,
       "teaches": [
-        "imperativo-afirmativo-irregular"
+        "imperativo-afirmativo-irregular",
+        "tener",
+        "cuidado",
+        "decir"
       ]
     },
     {
       "id": "a2.imperativoafirmativo.02.ex08",
       "category": "dialogue",
-      "type": "fill-blank",
-      "sentence": "—¿Qué le digo al profesor? —_____ (decir) lo que pasó.",
-      "answer": "Di",
+      "type": "dialogue-complete",
+      "prompt": [
+        {
+          "speaker": "Daniela",
+          "text": "¿A qué hora nos vemos en la plaza?"
+        },
+        {
+          "speaker": "Carlos",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Ven a las cinco y sal con tiempo de casa.",
+        "Vienes a las cinco y sales con tiempo de casa.",
+        "Vino a las cinco y salió con tiempo de casa."
+      ],
+      "correct": 0,
       "teaches": [
-        "imperativo-afirmativo-irregular"
+        "imperativo-afirmativo-irregular",
+        "venir",
+        "salir"
       ]
     },
     {
       "id": "a2.imperativoafirmativo.02.ex09",
       "category": "writing",
-      "type": "fill-blank",
-      "sentence": "Por favor, _____ (poner) las llaves en la entrada.",
-      "answer": "pon",
+      "type": "structured-writing",
+      "template": [
+        {
+          "prompt": "Tell someone to do their homework and be nice.",
+          "answer": "Haz tu tarea y sé amable con todos."
+        },
+        {
+          "prompt": "Tell someone to go now and put the books on the table.",
+          "answer": "Ve ahora y pon los libros en la mesa."
+        }
+      ],
       "teaches": [
-        "imperativo-afirmativo-irregular"
+        "imperativo-afirmativo-irregular",
+        "hacer",
+        "tarea",
+        "ser",
+        "ir",
+        "poner"
+      ]
+    },
+    {
+      "id": "a2.imperativoafirmativo.02.ex10",
+      "category": "listening",
+      "type": "listening-choice",
+      "sentence": "Ten cuidado en la calle y pon atención.",
+      "options": [
+        "Be careful on the street and pay attention.",
+        "He was careful when crossing the street.",
+        "Walk quickly and do not pay attention.",
+        "You are careful on the street today."
+      ],
+      "correct": 0,
+      "teaches": [
+        "imperativo-afirmativo-irregular",
+        "tener",
+        "cuidado",
+        "poner"
+      ]
+    },
+    {
+      "id": "a2.imperativoafirmativo.02.ex11",
+      "category": "listening",
+      "type": "dictation",
+      "sentence": "Ven aquí, haz tu tarea y sal temprano.",
+      "teaches": [
+        "imperativo-afirmativo-irregular",
+        "venir",
+        "hacer",
+        "tarea",
+        "salir"
       ]
     }
   ]

@@ -105,31 +105,109 @@
     {
       "id": "a2.imperativoafirmativo.03.ex07",
       "category": "dialogue",
-      "type": "fill-blank",
-      "sentence": "—Buenas tardes. —Buenas tardes, _____ (entrar) y siéntese.",
-      "answer": "entre",
+      "type": "dialogue-complete",
+      "prompt": [
+        {
+          "speaker": "Cliente",
+          "text": "Buenos días, ¿dónde puedo entregar mi solicitud?"
+        },
+        {
+          "speaker": "Empleado",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Pase adelante, tome asiento y firme aquí, por favor.",
+        "Pasa adelante, toma asiento y firma aquí, por favor.",
+        "Pasó adelante, tomó asiento y firmó aquí, por favor."
+      ],
+      "correct": 0,
       "teaches": [
-        "imperativo-formal-usted"
+        "imperativo-formal",
+        "adelante",
+        "tomar",
+        "asiento",
+        "firmar"
       ]
     },
     {
       "id": "a2.imperativoafirmativo.03.ex08",
       "category": "dialogue",
-      "type": "fill-blank",
-      "sentence": "—¿Dónde pongo el equipaje? —_____ (dejar) las maletas aquí.",
-      "answer": "Deje",
+      "type": "dialogue-complete",
+      "prompt": [
+        {
+          "speaker": "Carlos",
+          "text": "¿Necesita algo más, señor García?"
+        },
+        {
+          "speaker": "Señor García",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Entre a la oficina y espere un momento, sea tan amable.",
+        "Entra a la oficina y espera un momento, sé tan amable.",
+        "Entró a la oficina y esperó un momento, fue muy amable."
+      ],
+      "correct": 0,
       "teaches": [
-        "imperativo-formal-usted"
+        "imperativo-formal",
+        "entrar",
+        "esperar",
+        "amable"
       ]
     },
     {
       "id": "a2.imperativoafirmativo.03.ex09",
       "category": "writing",
-      "type": "fill-blank",
-      "sentence": "Señora Martínez, _____ (leer) las instrucciones antes de empezar.",
-      "answer": "lea",
+      "type": "structured-writing",
+      "template": [
+        {
+          "prompt": "Politely ask a customer (usted) to fill out the form and put their signature here.",
+          "answer": "Complete el formulario y ponga su firma aquí, por favor."
+        },
+        {
+          "prompt": "Politely ask visitors (ustedes) to take a seat and read the document.",
+          "answer": "Tomen asiento y lean el documento con calma."
+        }
+      ],
       "teaches": [
-        "imperativo-formal-usted"
+        "imperativo-formal",
+        "formulario",
+        "firma",
+        "documento",
+        "asiento"
+      ]
+    },
+    {
+      "id": "a2.imperativoafirmativo.03.ex10",
+      "category": "listening",
+      "type": "listening-choice",
+      "sentence": "Firme este documento al final de la página.",
+      "options": [
+        "Sign this document at the bottom of the page.",
+        "Read this document before signing tomorrow.",
+        "He signed the document at the bottom of the page.",
+        "Bring this document to the office later."
+      ],
+      "correct": 0,
+      "teaches": [
+        "imperativo-formal",
+        "firmar",
+        "documento"
+      ]
+    },
+    {
+      "id": "a2.imperativoafirmativo.03.ex11",
+      "category": "listening",
+      "type": "dictation",
+      "sentence": "Pase adelante, tome asiento y espere aquí.",
+      "teaches": [
+        "imperativo-formal",
+        "adelante",
+        "tomar",
+        "asiento",
+        "esperar"
       ]
     }
   ]

@@ -131,31 +131,116 @@
     {
       "id": "a2.imperativoafirmativo.05.ex09",
       "category": "dialogue",
-      "type": "fill-blank",
-      "sentence": "—¿Cuándo pongo las cebollas? —_____ (esperar) a que el aceite esté caliente.",
-      "answer": "Espera",
+      "type": "dialogue-complete",
+      "prompt": [
+        {
+          "speaker": "Meg",
+          "text": "¿Cómo preparo los ingredientes para la tortilla?"
+        },
+        {
+          "speaker": "Carlos",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Corta las patatas y calienta un poco de aceite en la sartén.",
+        "Cortas las patatas y calientas un poco de aceite en la sartén.",
+        "Cortó las patatas y calentó un poco de aceite en la sartén."
+      ],
+      "correct": 0,
       "teaches": [
-        "imperativo-recetas"
+        "recetas-imperativo",
+        "cortar",
+        "ingrediente",
+        "calentar",
+        "aceite",
+        "sarten"
       ]
     },
     {
       "id": "a2.imperativoafirmativo.05.ex10",
       "category": "dialogue",
-      "type": "fill-blank",
-      "sentence": "—¿Está listo el plato? —Sí, ya puedes _____ (servir) la comida.",
-      "answer": "servir",
+      "type": "dialogue-complete",
+      "prompt": [
+        {
+          "speaker": "Daniela",
+          "text": "¿Cuándo pongo los huevos batidos?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Mezcla bien todo, añade una pizca de sal y baja el fuego.",
+        "Mezclas bien todo, añades una pizca de sal y bajas el fuego.",
+        "Mezcló bien todo, añadió una pizca de sal y bajó el fuego."
+      ],
+      "correct": 0,
       "teaches": [
-        "imperativo-recetas"
+        "recetas-imperativo",
+        "mezclar",
+        "anadir",
+        "pizca",
+        "fuego"
       ]
     },
     {
       "id": "a2.imperativoafirmativo.05.ex11",
       "category": "writing",
-      "type": "fill-blank",
-      "sentence": "Antes de comer, _____ (probar) la salsa para verificar la sal.",
-      "answer": "prueba",
+      "type": "structured-writing",
+      "template": [
+        {
+          "prompt": "Give instructions to heat oil in the frying pan and add the ingredients.",
+          "answer": "Calienta el aceite en la sartén y añade los ingredientes."
+        },
+        {
+          "prompt": "Give instructions to mix with a pinch of salt and serve immediately.",
+          "answer": "Mezcla con una pizca de sal y sirve caliente."
+        }
+      ],
       "teaches": [
-        "imperativo-recetas"
+        "recetas-imperativo",
+        "calentar",
+        "aceite",
+        "sarten",
+        "anadir",
+        "ingrediente",
+        "mezclar",
+        "pizca",
+        "servir"
+      ]
+    },
+    {
+      "id": "a2.imperativoafirmativo.05.ex12",
+      "category": "listening",
+      "type": "listening-choice",
+      "sentence": "Calienta la sartén con un poco de aceite a fuego lento.",
+      "options": [
+        "Heat the frying pan with a little oil over low heat.",
+        "Wash the frying pan and turn off the heat.",
+        "He heated the pan with oil this morning.",
+        "Add the ingredients before heating the oil."
+      ],
+      "correct": 0,
+      "teaches": [
+        "recetas-imperativo",
+        "calentar",
+        "sarten",
+        "aceite",
+        "fuego"
+      ]
+    },
+    {
+      "id": "a2.imperativoafirmativo.05.ex13",
+      "category": "listening",
+      "type": "dictation",
+      "sentence": "Corta las verduras, añade sal y sirve el plato.",
+      "teaches": [
+        "recetas-imperativo",
+        "cortar",
+        "anadir",
+        "servir"
       ]
     }
   ]

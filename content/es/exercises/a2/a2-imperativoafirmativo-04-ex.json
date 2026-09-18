@@ -107,31 +107,119 @@
     {
       "id": "a2.imperativoafirmativo.04.ex07",
       "category": "dialogue",
-      "type": "fill-blank",
-      "sentence": "—Disculpe, ¿dónde está la estación? —_____ (caminar) dos cuadras hacia el norte.",
-      "answer": "Camine",
+      "type": "dialogue-complete",
+      "prompt": [
+        {
+          "speaker": "Turista",
+          "text": "Disculpe, ¿cómo llego a la plaza principal?"
+        },
+        {
+          "speaker": "Carlos",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Sigue recto dos calles y gira a la derecha en el semáforo.",
+        "Sigues recto dos calles y giras a la derecha en el semáforo.",
+        "Siguió recto dos calles y giró a la derecha en el semáforo."
+      ],
+      "correct": 0,
       "teaches": [
-        "imperativo-direcciones"
+        "direcciones-imperativo",
+        "seguir",
+        "recto",
+        "girar",
+        "derecha",
+        "semaforo"
       ]
     },
     {
       "id": "a2.imperativoafirmativo.04.ex08",
       "category": "dialogue",
-      "type": "fill-blank",
-      "sentence": "—¿Cómo llego al hotel? —_____ (bajar) por esta calle y lo verás.",
-      "answer": "Baja",
+      "type": "dialogue-complete",
+      "prompt": [
+        {
+          "speaker": "Meg",
+          "text": "¿Dónde está la estación de metro más cercana?"
+        },
+        {
+          "speaker": "Daniela",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Cruza el puente y dobla a la izquierda en la esquina.",
+        "Cruzas el puente y doblas a la izquierda en la esquina.",
+        "Cruzó el puente y dobló a la izquierda en la esquina."
+      ],
+      "correct": 0,
       "teaches": [
-        "imperativo-direcciones"
+        "direcciones-imperativo",
+        "cruzar",
+        "puente",
+        "doblar",
+        "izquierda",
+        "esquina"
       ]
     },
     {
       "id": "a2.imperativoafirmativo.04.ex09",
       "category": "writing",
-      "type": "fill-blank",
-      "sentence": "En la esquina del café, _____ (girar, tú) a la izquierda.",
-      "answer": "gira",
+      "type": "structured-writing",
+      "template": [
+        {
+          "prompt": "Give directions to go straight until the corner and turn left.",
+          "answer": "Sigue recto hasta la esquina y dobla a la izquierda."
+        },
+        {
+          "prompt": "Give directions to cross the street and turn right at the traffic light.",
+          "answer": "Cruza la calle y gira a la derecha en el semáforo."
+        }
+      ],
       "teaches": [
-        "imperativo-direcciones"
+        "direcciones-imperativo",
+        "seguir",
+        "recto",
+        "esquina",
+        "doblar",
+        "izquierda",
+        "cruzar",
+        "girar",
+        "derecha",
+        "semaforo"
+      ]
+    },
+    {
+      "id": "a2.imperativoafirmativo.04.ex10",
+      "category": "listening",
+      "type": "listening-choice",
+      "sentence": "Cruza el puente y sigue todo recto.",
+      "options": [
+        "Cross the bridge and go straight ahead.",
+        "Turn left before the bridge.",
+        "He crossed the bridge and turned right.",
+        "Wait at the traffic light near the bridge."
+      ],
+      "correct": 0,
+      "teaches": [
+        "direcciones-imperativo",
+        "cruzar",
+        "puente",
+        "seguir",
+        "recto"
+      ]
+    },
+    {
+      "id": "a2.imperativoafirmativo.04.ex11",
+      "category": "listening",
+      "type": "dictation",
+      "sentence": "Gira a la derecha en el semáforo y cruza la calle.",
+      "teaches": [
+        "direcciones-imperativo",
+        "girar",
+        "derecha",
+        "semaforo",
+        "cruzar"
       ]
     }
   ]
