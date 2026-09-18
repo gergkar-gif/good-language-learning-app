@@ -76,6 +76,7 @@ const SpeakingDriller = (function () {
     let _prodElapsedSeconds = 0;
     let _prodTimerInterval = null;
     let _prodAssessmentResult = null;
+    let _onExit = null;
 
     function _esc(text) {
         if (typeof UI !== 'undefined' && UI.escape) return UI.escape(text);
@@ -628,11 +629,23 @@ const SpeakingDriller = (function () {
             el.addEventListener('click', () => {
                 const text = el.getAttribute('data-select-prod-comp');
                 const found = unverifiedList.find(c => c.text === text);
+                const langName = (typeof Lang !== 'undefined') ? Lang.name() : 'the language';
+                const langCode = (typeof Lang !== 'undefined') ? Lang.code() : 'es';
+                const formatted = (typeof CanDoPrompt !== 'undefined')
+                    ? CanDoPrompt.formatPrompt(text, {
+                        language: langName,
+                        langCode: langCode,
+                        modality: 'oral',
+                        level: (found && found.level) || 'A1'
+                    })
+                    : null;
                 _selectedProdPrompt = {
                     id: 'comp_' + Date.now(),
-                    title: text.length > 40 ? text.slice(0, 37) + '...' : text,
+                    title: formatted ? formatted.title : (text.length > 35 ? text.slice(0, 32) + '...' : text),
+                    scenario: formatted ? formatted.scenario : '',
                     cefrLevel: (found && found.level) || 'A1',
-                    prompt: `Demonstrate this ability out loud: "${text}". Speak clearly and naturally — however much the task itself calls for.`,
+                    prompt: formatted ? formatted.prompt : `Demonstrate this ability out loud: "${text}". Speak clearly and naturally — however much the task itself calls for.`,
+                    cues: formatted ? formatted.cues : [],
                     targetCompetency: text,
                     taskCompletionPrimary: true
                 };
@@ -826,7 +839,16 @@ const SpeakingDriller = (function () {
                 <div class="sp-prod-prompt-banner">
                     <span class="sp-level-pill">${_esc(p.cefrLevel || 'B1')}</span>
                     <h3 class="sp-prod-prompt-title">${_esc(p.title || 'Verbal Production')}</h3>
+                    ${p.scenario ? `<p class="sp-prod-prompt-scenario" style="margin: 4px 0 8px 0; font-size: 0.9rem; color: var(--text-muted); font-style: italic;">${_esc(p.scenario)}</p>` : ''}
                     <p class="sp-prod-prompt-desc">${_esc(p.prompt || '')}</p>
+                    ${p.cues && p.cues.length ? `
+                        <div class="sp-prod-prompt-cues" style="margin-top: 10px; padding: 8px 12px; background: rgba(0,0,0,0.03); border-radius: 6px; text-align: left;">
+                            <span style="font-size: 0.75rem; text-transform: uppercase; font-weight: 700; color: var(--text-muted); letter-spacing: 0.04em; display: block; margin-bottom: 2px;">Points to include:</span>
+                            <ul style="margin: 2px 0 0 0; padding-left: 18px; font-size: 0.88rem; color: var(--text);">
+                                ${p.cues.map(c => `<li style="margin-bottom: 2px;">${_esc(c)}</li>`).join('')}
+                            </ul>
+                        </div>
+                    ` : ''}
                 </div>
 
                 <div class="sp-prod-stage">
@@ -1048,6 +1070,16 @@ const SpeakingDriller = (function () {
         }
     }
 
+    function _prodOneLineTip(result) {
+        const priorities = (result.feedback && result.feedback.priorities) || [];
+        if (priorities.length && priorities[0]) return priorities[0];
+        const errors = result.errors || [];
+        if (errors.length && errors[0].explanation) return errors[0].explanation;
+        const strengths = (result.feedback && result.feedback.strengths) || [];
+        if (strengths.length && strengths[0]) return strengths[0];
+        return 'Good oral effort! Keep practicing speaking out loud.';
+    }
+
     function _renderProdResults(body) {
         if (!body || !_prodAssessmentResult) return;
         const res = _prodAssessmentResult;
@@ -1063,6 +1095,86 @@ const SpeakingDriller = (function () {
         let scoreColor = 'var(--success)';
         if (score < 60) scoreColor = 'var(--danger)';
         else if (score < 80) scoreColor = 'var(--accent)';
+
+        const isShortProd = (_prodMaxSeconds <= 60) || !!p.taskCompletionPrimary;
+
+        if (isShortProd) {
+            const tip = _prodOneLineTip(res);
+            body.innerHTML = `
+                <div class="sp-driller-wrap sp-results-wrap">
+                    <div class="sp-results-score-card">
+                        <div class="sp-score-circle" style="border-color: ${scoreColor}">
+                            <span class="sp-score-num">${score}</span>
+                            <span class="sp-score-max">/100</span>
+                        </div>
+                        <div class="sp-score-meta">
+                            <h3 class="sp-score-title">${p.targetCompetency && score >= 75 ? 'Competency Verified' : (score >= 60 ? 'Competent Oral Production' : 'Developing Oral Practice')}</h3>
+                            <p class="sp-score-sub">${_esc(p.title || 'Verbal Production')} · CEFR ${_esc(p.cefrLevel || 'A1')}</p>
+                        </div>
+                    </div>
+
+                    ${p.targetCompetency && score >= 75 ? `
+                        <div class="sp-competency-verified-banner">
+                            <span class="sp-verified-check"><svg class="sp-verified-svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                            <span>Demonstrated &amp; Verified: "${_esc(p.targetCompetency)}"</span>
+                        </div>
+                    ` : ''}
+
+                    <div class="sp-challenge-feedback-card" style="background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 14px 18px; margin: 16px 0;">
+                        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
+                            <span style="font-weight: 700; font-size: 0.92rem; color: var(--text-heading);">Speaking Coach</span>
+                            <span class="cando-badge ${score >= 60 ? 'cando-badge-verified' : 'cando-badge-gap'}" style="font-size: 0.8rem;">${score}%</span>
+                        </div>
+                        <p style="margin: 0; font-size: 0.98rem; color: var(--text); line-height: 1.45;">${_esc(tip)}</p>
+                    </div>
+
+                    ${audioUrl ? `
+                        <div class="sp-prod-audio-replay-card">
+                            <span class="sp-replay-label">Your Spoken Recording:</span>
+                            <audio controls class="sp-own-voice-player" src="${audioUrl}"></audio>
+                        </div>
+                    ` : ''}
+
+                    ${_prodTranscript && _prodTranscript.trim() ? `
+                        <div class="sp-prod-transcript-preview" style="margin-top: 12px; padding: 10px 14px; background: rgba(0,0,0,0.03); border-radius: 8px; font-size: 0.92rem; color: var(--text);">
+                            <span style="font-size: 0.75rem; text-transform: uppercase; font-weight: 700; color: var(--text-muted); letter-spacing: 0.04em; display: block; margin-bottom: 4px;">What you said:</span>
+                            <p style="margin: 0; font-style: italic;">“${_esc(_prodTranscript.trim())}”</p>
+                        </div>
+                    ` : ''}
+
+                    <div class="sp-local-metrics" style="margin-top: 14px;">
+                        <span><strong>${stats.wordCount || (_prodTranscript.trim().split(/\s+/).length)}</strong> words</span>
+                        <span><strong>${_formatTime(_prodElapsedSeconds)}</strong> speaking duration</span>
+                        <span><strong>CEFR ${_esc(p.cefrLevel || 'A1')}</strong> target level</span>
+                    </div>
+
+                    <div class="vspeed-results-actions" style="margin-top: 1.5rem;">
+                        <button class="vbtn vbtn-secondary" data-action="speak-again">Try Again</button>
+                    </div>
+                </div>
+            `;
+
+            const againBtn = body.querySelector('[data-action="speak-again"]');
+            if (againBtn) {
+                againBtn.addEventListener('click', () => {
+                    _prodPhase = PROD_PHASE.RECORDING;
+                    _prodAssessmentResult = null;
+                    _prodElapsedSeconds = 0;
+                    _prodTranscript = '';
+                    _prodAudioUrl = null;
+                    _renderActiveTab();
+                    _startProdRecording();
+                });
+            }
+
+            if (typeof RecommendationEngine !== 'undefined') {
+                const actionsEl = body.querySelector('.vspeed-results-actions');
+                if (actionsEl) {
+                    RecommendationEngine.mountNextAction(actionsEl, { excludeDrillerId: 'speaking' });
+                }
+            }
+            return;
+        }
 
         const catLabels = {
             grammar: 'Grammar',
@@ -1206,6 +1318,7 @@ const SpeakingDriller = (function () {
 
     async function render(container, options = {}) {
         _container = container;
+        _onExit = (options && options.onExit) || null;
         await _load();
         await _loadProdPrompts();
 
@@ -1237,11 +1350,23 @@ const SpeakingDriller = (function () {
 
         if (options && options.targetCompetency) {
             _activeStudioTab = STUDIO_TAB.PRODUCTION;
+            const langName = (typeof Lang !== 'undefined') ? Lang.name() : 'the language';
+            const langCode = (typeof Lang !== 'undefined') ? Lang.code() : 'es';
+            const formatted = (typeof CanDoPrompt !== 'undefined')
+                ? CanDoPrompt.formatPrompt(options.targetCompetency, {
+                    language: langName,
+                    langCode: langCode,
+                    modality: 'oral',
+                    level: options.level || 'A1'
+                })
+                : null;
             _selectedProdPrompt = {
                 id: 'comp_' + Date.now(),
-                title: options.targetCompetency.length > 40 ? options.targetCompetency.slice(0, 37) + '...' : options.targetCompetency,
+                title: formatted ? formatted.title : (options.targetCompetency.length > 35 ? options.targetCompetency.slice(0, 32) + '...' : options.targetCompetency),
+                scenario: formatted ? formatted.scenario : '',
                 cefrLevel: options.level || 'A1',
-                prompt: `Demonstrate this ability out loud: "${options.targetCompetency}". Speak clearly and naturally — however much the task itself calls for.`,
+                prompt: formatted ? formatted.prompt : `Demonstrate this ability out loud: "${options.targetCompetency}". Speak clearly and naturally — however much the task itself calls for.`,
+                cues: formatted ? formatted.cues : [],
                 targetCompetency: options.targetCompetency,
                 taskCompletionPrimary: true
             };

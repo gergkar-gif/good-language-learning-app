@@ -247,15 +247,24 @@ async function buildSteps(lesson) {
             };
         } else {
             // Dynamic generation based on CEFR level and Can-Do item
+            const formatted = (typeof CanDoPrompt !== 'undefined')
+                ? CanDoPrompt.formatPrompt(primaryCanDo, {
+                    language: langName,
+                    langCode: (typeof Lang !== 'undefined' ? Lang.code() : 'es'),
+                    level: level,
+                    modality: 'oral'
+                })
+                : null;
+
             if (tier === 'tier1') {
                 const cand = (speakingCandidates && speakingCandidates[0]) || null;
                 challengeStep = {
                     type: 'challenge',
-                    title: 'Communicative Challenge: Put It Into Practice',
-                    scenario: `Put your ${langName} into action for this lesson's core goal.`,
-                    prompt: primaryCanDo.replace(/^I can\s+/i, 'Say this in ' + langName + ': ').replace(/\.$/, ''),
-                    cues: cand ? [`Use what you learned: "${cand.english}"`] : ['Express this clearly out loud'],
-                    target: cand ? cand.spanish : '',
+                    title: `Communicative Challenge: ${formatted ? formatted.title : 'Put It Into Practice'}`,
+                    scenario: (formatted && formatted.scenario) || `Put your ${langName} into action for this lesson's core goal.`,
+                    prompt: (formatted && formatted.prompt) || primaryCanDo.replace(/^I can\s+/i, 'Say this in ' + langName + ': ').replace(/\.$/, ''),
+                    cues: cand ? [`Use what you learned: "${cand.english}"`] : ((formatted && formatted.cues) || ['Express this clearly out loud']),
+                    target: cand ? (cand.spanish || cand.target || '') : '',
                     canDo: primaryCanDo,
                     level: level,
                     tier: 'tier1',
@@ -264,13 +273,12 @@ async function buildSteps(lesson) {
             } else if (tier === 'tier2') {
                 challengeStep = {
                     type: 'challenge',
-                    title: 'Communicative Challenge: Real-World Transaction',
-                    scenario: `You are in a practical everyday situation in ${langName}.`,
-                    prompt: primaryCanDo.replace(/^I can\s+/i, 'In ' + langName + ', perform this task: '),
-                    cues: [
-                        '1. Opening greeting & polite address',
-                        '2. State your request or description clearly',
-                        '3. Confirm or conclude the conversation'
+                    title: `Communicative Challenge: ${formatted ? formatted.title : 'Put It Into Practice'}`,
+                    scenario: (formatted && formatted.scenario) || `You are in a practical everyday situation in ${langName}.`,
+                    prompt: (formatted && formatted.prompt) || primaryCanDo.replace(/^I can\s+/i, 'In ' + langName + ', perform this task: '),
+                    cues: (formatted && formatted.cues && formatted.cues.length) ? formatted.cues : [
+                        'State your idea or request clearly',
+                        `Use what you learned in this lesson`
                     ],
                     canDo: primaryCanDo,
                     level: level,
@@ -280,10 +288,10 @@ async function buildSteps(lesson) {
             } else {
                 challengeStep = {
                     type: 'challenge',
-                    title: 'Communicative Challenge: In-Depth Production',
-                    scenario: `Express your ideas, narrate, and evaluate in connected ${langName}.`,
-                    prompt: primaryCanDo.replace(/^I can\s+/i, 'Discuss and explain: '),
-                    cues: [
+                    title: `Communicative Challenge: ${formatted ? formatted.title : 'In-Depth Production'}`,
+                    scenario: (formatted && formatted.scenario) || `Express your ideas, narrate, and evaluate in connected ${langName}.`,
+                    prompt: (formatted && formatted.prompt) || primaryCanDo.replace(/^I can\s+/i, 'Discuss and explain: '),
+                    cues: (formatted && formatted.cues && formatted.cues.length) ? formatted.cues : [
                         'Set the context or introduce the topic',
                         'Describe the details or analyze the situation',
                         'Share your conclusion, reaction, or recommendation'

@@ -55,6 +55,7 @@ const PRECACHE_ASSETS = [
     'engine/drills/vocabulary.js',
     'engine/drills/listening-runner.js',
     'engine/drills/listening.js',
+    'engine/canDoPrompt.js',
     'engine/drills/speaking-runner.js',
     'engine/drills/speaking.js',
     'engine/grader/local-grader.js',

@@ -226,12 +226,24 @@ const WritingDriller = (function () {
             el.addEventListener('click', () => {
                 const text = el.getAttribute('data-select-comp');
                 const found = unverifiedList.find(c => c.text === text);
+                const langName = (typeof Lang !== 'undefined') ? Lang.name() : 'the language';
+                const langCode = (typeof Lang !== 'undefined') ? Lang.code() : 'es';
+                const formatted = (typeof CanDoPrompt !== 'undefined')
+                    ? CanDoPrompt.formatPrompt(text, {
+                        language: langName,
+                        langCode: langCode,
+                        modality: 'written',
+                        level: (found && found.level) || 'A1'
+                    })
+                    : null;
                 _selectedPrompt = {
                     id: 'comp_' + Date.now(),
-                    title: text.length > 40 ? text.slice(0, 37) + '...' : text,
+                    title: formatted ? formatted.title : (text.length > 35 ? text.slice(0, 32) + '...' : text),
+                    scenario: formatted ? formatted.scenario : '',
                     cefrLevel: (found && found.level) || 'A1',
                     targetWords: 35,
-                    prompt: `Demonstrate this ability in writing: "${text}". Write clearly and naturally — however much the task itself calls for.`,
+                    prompt: formatted ? formatted.prompt : `Demonstrate this ability in writing: "${text}". Write clearly and naturally — however much the task itself calls for.`,
+                    cues: formatted ? formatted.cues : [],
                     targetCompetency: text,
                     taskCompletionPrimary: true
                 };
@@ -365,7 +377,16 @@ const WritingDriller = (function () {
 
                 <div class="sp-prompt-detail-card">
                     <h3 class="sp-prompt-detail-title">${_esc(p.title)}</h3>
+                    ${p.scenario ? `<p class="sp-prompt-detail-scenario" style="margin: 4px 0 8px 0; font-size: 0.9rem; color: var(--text-muted); font-style: italic;">${_esc(p.scenario)}</p>` : ''}
                     <p class="sp-prompt-detail-desc">${_esc(p.prompt)}</p>
+                    ${p.cues && p.cues.length ? `
+                        <div class="sp-prompt-cues" style="margin-top: 10px; padding: 8px 12px; background: rgba(0,0,0,0.03); border-radius: 6px; text-align: left;">
+                            <span style="font-size: 0.75rem; text-transform: uppercase; font-weight: 700; color: var(--text-muted); letter-spacing: 0.04em; display: block; margin-bottom: 2px;">Points to include:</span>
+                            <ul style="margin: 2px 0 0 0; padding-left: 18px; font-size: 0.88rem; color: var(--text);">
+                                ${p.cues.map(c => `<li style="margin-bottom: 2px;">${_esc(c)}</li>`).join('')}
+                            </ul>
+                        </div>
+                    ` : ''}
                     ${skillsPills ? `<div class="sp-prompt-skills">${skillsPills}</div>` : ''}
                 </div>
 
@@ -518,6 +539,80 @@ const WritingDriller = (function () {
         if (score < 60) scoreColor = 'var(--danger)';
         else if (score < 80) scoreColor = 'var(--accent)';
 
+        const isShortProd = !!p.taskCompletionPrimary;
+        if (isShortProd) {
+            const priorities = (res.feedback && res.feedback.priorities) || [];
+            const tip = (priorities.length && priorities[0])
+                ? priorities[0]
+                : (errors.length && errors[0].explanation)
+                    ? errors[0].explanation
+                    : ((res.feedback && res.feedback.strengths && res.feedback.strengths[0]) || 'Good writing effort! Keep practicing.');
+
+            body.innerHTML = `
+                <div class="sp-driller-wrap sp-results-wrap">
+                    <div class="sp-results-score-card">
+                        <div class="sp-score-circle" style="border-color: ${scoreColor}">
+                            <span class="sp-score-num">${score}</span>
+                            <span class="sp-score-max">/100</span>
+                        </div>
+                        <div class="sp-score-meta">
+                            <h3 class="sp-score-title">${p.targetCompetency && score >= 75 ? 'Competency Verified' : (score >= 60 ? 'Competent Written Production' : 'Developing Practice')}</h3>
+                            <p class="sp-score-sub">${_esc(p.title || 'Writing Production')} · CEFR ${_esc(p.cefrLevel || 'A1')}</p>
+                        </div>
+                    </div>
+
+                    ${p.targetCompetency && score >= 75 ? `
+                        <div class="sp-competency-verified-banner">
+                            <span class="sp-verified-check"><svg class="sp-verified-svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+                            <span>Demonstrated &amp; Verified: "${_esc(p.targetCompetency)}"</span>
+                        </div>
+                    ` : ''}
+
+                    <div class="sp-challenge-feedback-card" style="background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 14px 18px; margin: 16px 0;">
+                        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
+                            <span style="font-weight: 700; font-size: 0.92rem; color: var(--text-heading);">Writing Coach</span>
+                            <span class="cando-badge ${score >= 60 ? 'cando-badge-verified' : 'cando-badge-gap'}" style="font-size: 0.8rem;">${score}%</span>
+                        </div>
+                        <p style="margin: 0; font-size: 0.98rem; color: var(--text); line-height: 1.45;">${_esc(tip)}</p>
+                    </div>
+
+                    ${_draftText && _draftText.trim() ? `
+                        <div class="sp-prod-transcript-preview" style="margin-top: 12px; padding: 10px 14px; background: rgba(0,0,0,0.03); border-radius: 8px; font-size: 0.92rem; color: var(--text);">
+                            <span style="font-size: 0.75rem; text-transform: uppercase; font-weight: 700; color: var(--text-muted); letter-spacing: 0.04em; display: block; margin-bottom: 4px;">What you wrote:</span>
+                            <p style="margin: 0; font-style: italic;">“${_esc(_draftText.trim())}”</p>
+                        </div>
+                    ` : ''}
+
+                    <div class="sp-local-metrics" style="margin-top: 14px;">
+                        <span><strong>${stats.wordCount || 0}</strong> words</span>
+                        <span><strong>${stats.sentenceCount || 0}</strong> sentences</span>
+                        <span><strong>CEFR ${_esc(p.cefrLevel || 'A1')}</strong> target</span>
+                    </div>
+
+                    <div class="vspeed-results-actions" style="margin-top: 1.5rem;">
+                        <button class="vbtn vbtn-secondary" data-action="write-again">Try Again</button>
+                    </div>
+                </div>
+            `;
+
+            const againBtn = body.querySelector('[data-action="write-again"]');
+            if (againBtn) {
+                againBtn.addEventListener('click', () => {
+                    _phase = PHASE.WRITING;
+                    _assessmentResult = null;
+                    _renderActiveTab();
+                });
+            }
+
+            if (typeof RecommendationEngine !== 'undefined') {
+                const actionsEl = body.querySelector('.vspeed-results-actions');
+                if (actionsEl) {
+                    RecommendationEngine.mountNextAction(actionsEl, { excludeDrillerId: 'writing' });
+                }
+            }
+            return;
+        }
+
         const catLabels = {
             grammar: 'Grammar',
             vocabulary: 'Vocabulary',
@@ -648,12 +743,24 @@ const WritingDriller = (function () {
 
         if (options && options.targetCompetency) {
             _activeStudioTab = STUDIO_TAB.COMPOSITION;
+            const langName = (typeof Lang !== 'undefined') ? Lang.name() : 'the language';
+            const langCode = (typeof Lang !== 'undefined') ? Lang.code() : 'es';
+            const formatted = (typeof CanDoPrompt !== 'undefined')
+                ? CanDoPrompt.formatPrompt(options.targetCompetency, {
+                    language: langName,
+                    langCode: langCode,
+                    modality: 'written',
+                    level: options.level || 'A1'
+                })
+                : null;
             _selectedPrompt = {
                 id: 'comp_' + Date.now(),
-                title: options.targetCompetency.length > 40 ? options.targetCompetency.slice(0, 37) + '...' : options.targetCompetency,
+                title: formatted ? formatted.title : (options.targetCompetency.length > 35 ? options.targetCompetency.slice(0, 32) + '...' : options.targetCompetency),
+                scenario: formatted ? formatted.scenario : '',
                 cefrLevel: options.level || 'A1',
                 targetWords: 35,
-                prompt: `Demonstrate this ability in writing: "${options.targetCompetency}". Write clearly and naturally — however much the task itself calls for.`,
+                prompt: formatted ? formatted.prompt : `Demonstrate this ability in writing: "${options.targetCompetency}". Write clearly and naturally — however much the task itself calls for.`,
+                cues: formatted ? formatted.cues : [],
                 targetCompetency: options.targetCompetency,
                 taskCompletionPrimary: true
             };

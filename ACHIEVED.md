@@ -9,6 +9,22 @@ needs re-reading before starting new work; it's reference only.
 
 ## Completed queue items
 
+52. ~~**Natural Can-Do Production Prompts & 1-Sentence Coaching Feedback Norm**~~ — **Done 2026-09-18.**
+    Resolved awkward verbal/written production prompts derived from CEFR Can-Do descriptors and streamlined under-1-minute productions with a compact 1-sentence coaching feedback card:
+    - **Can-Do Prompt & Scaffolding Engine (`engine/canDoPrompt.js`)**: Replaced crude 37-char mid-word truncation (`options.targetCompetency.slice(0, 37) + '...'`) with topic-aware title extraction (e.g. *"At the Café"*, *"Months of the Year"* instead of *"I can complete a short at the café in..."*). Categorized descriptors into 4 typologies:
+      - *Enumeration & Inventory*: e.g. "I can name all twelve months and say which month something is in" prompts the learner to recite the 12 months in order and state an event or their birthday, with language-specific case/preposition cues (`-ban / -ben` in Hungarian, `en` in Spanish).
+      - *Situational Transactions*: e.g. "I can complete a short at the café interaction" provides setting and 3-part communicative dialogue cues (polite greeting, order e.g. *Kérek...*, and bill/closing).
+      - *Personal Monologue*: Daily routine, family, hobbies, town prompt for 2–3 connected sentences with concrete guidance points.
+      - *Functional Imperatives*: Converts generic "I can [action]..." statements into active imperative tasks.
+    - **1-Sentence Coaching Feedback Norm for Short (< 1 Min) Productions**: In `SpeakingDriller` (`engine/drills/speaking.js`) and `WritingDriller` (`engine/drills/writing.js`), tasks where `maxSeconds <= 60` or `taskCompletionPrimary` is active now render a compact coaching view instead of the bulky 5-dimension CEFR dashboard:
+      - Score badge (`88%`) & Verified Competency indicator.
+      - *Speaking / Writing Coach's Note*: Single prioritized, actionable coaching sentence pulled from formative grader output (`_prodOneLineTip`: priorities[0] → error explanation → strength).
+      - Audio recording replay player (`sp-own-voice-player`) to listen back to your recording.
+      - Spoken transcript preview (`"What you said:"`).
+      - Seamless navigation via `RecommendationEngine.mountNextAction()` returning directly into the session.
+    - **In-Lesson Dynamic Communicative Challenges (`engine/lessons.js`)**: Integrated `CanDoPrompt` into `injectCommunicativeChallenge()`. Tier 2 challenges now generate appropriate context and cues for enumeration, monologue, and transactional goals rather than forcing generic 3-bullet transactional cues onto every goal.
+    - **Test Coverage**: Added test suite in `tests/drills/test-cando-prompt.js`. All 5 test suites pass alongside `test-studios.js` and `test-challenge-tier.js`.
+
 51. ~~**Adversarial Full-App Audit: LevelTest Navigation Traps, Storage Resilience, Cross-Course Isolation & Input Tolerances**~~ — **Done 2026-09-18.**
     Conducted an adversarial, root-cause traced full-app QA audit across navigation, state isolation, storage crash risks, speech recognition, and input grading tolerance:
     - **Level Test Dead-End Trap & Navigation Polish**: B1 and B2 units previously rendered an active Level Test button leading to an unrecoverable blank screen when content test files did not exist (`b1-test.json`, `b2-test.json`), because `LevelTest.render()` rendered no back button and all app tabs remained hidden. Implemented `LevelTest.hasTest(level)` to display a clean disabled "Coming soon" state in `curriculum.js`. Updated `LevelTest.render()` to always render `<button class="dk-back" data-close-test="1">← Back</button>` and wire `closeTest()` if a test is missing. In addition, `LevelTest.open()` now records `openingTab` so learners returning from tests opened from Home or Study Plan return to their originating tab rather than hardcoded Lessons.
