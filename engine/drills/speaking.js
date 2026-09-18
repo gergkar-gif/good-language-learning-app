@@ -58,12 +58,19 @@ const SpeakingDriller = (function () {
     // ---- Verbal Production State ----
     const PROD_PHASE = { PROMPT_SELECT: 1, RECORDING: 2, REVIEW: 3, ASSESSING: 4, RESULTS: 5, CUSTOM_TASK: 6 };
     const CUSTOM_TIME_OPTIONS = [1, 2, 3, 5]; // minutes
+    // Below this cap a task is graded task-completion-primary and shown the
+    // one-line coaching result instead of the full CEFR dimensions/errors
+    // breakdown (see isShortProd in _renderProdResults) -- can-do checks
+    // ("say and ask the date") are bounded asks, not open-ended fluency
+    // topics, so they're scored and reported that way.
+    const SHORT_TASK_MAX_SECONDS = 60;
     let _prodPhase = PROD_PHASE.PROMPT_SELECT;
     let _prodPrompts = null;
     let _prodLoadedLang = null;
     let _selectedProdPrompt = null;
-    // Recording ceiling in seconds -- 300 (5 min) for every curated/
-    // competency prompt, same as always; only the custom-task screen below
+    // Recording ceiling in seconds -- 300 (5 min) for every curated topic
+    // and Free Speaking; can-do/competency prompts default to
+    // SHORT_TASK_MAX_SECONDS instead, and the custom-task screen below
     // overrides it to the learner's chosen limit.
     let _prodMaxSeconds = 300;
     let _customTaskMinutes = CUSTOM_TIME_OPTIONS[1];
@@ -649,7 +656,7 @@ const SpeakingDriller = (function () {
                     targetCompetency: text,
                     taskCompletionPrimary: true
                 };
-                _prodMaxSeconds = 300;
+                _prodMaxSeconds = SHORT_TASK_MAX_SECONDS;
                 _startProdRecording();
             });
         });
@@ -1028,12 +1035,17 @@ const SpeakingDriller = (function () {
         }
 
         try {
+            // Grade sub-minute tasks task-completion-primary regardless of
+            // whether the prompt itself was flagged can-do -- a short
+            // recording is a bounded ask by construction, not an
+            // open-ended fluency topic (see SHORT_TASK_MAX_SECONDS).
+            const isShortTask = _prodMaxSeconds <= SHORT_TASK_MAX_SECONDS || !!p.taskCompletionPrimary;
             const context = {
                 cefrLevel: p.cefrLevel || 'B1',
                 taskType: 'oral_production',
                 taskInstructions: p.prompt || 'Spoken production task.',
                 targetSkills: p.targetSkills || ['fluency', 'oral_expression'],
-                taskCompletionPrimary: !!p.taskCompletionPrimary,
+                taskCompletionPrimary: isShortTask,
                 language: lang,
                 modality: 'oral',
                 title: p.title || 'Verbal Production'
@@ -1070,14 +1082,42 @@ const SpeakingDriller = (function () {
         }
     }
 
-    function _prodOneLineTip(result) {
-        const priorities = (result.feedback && result.feedback.priorities) || [];
-        if (priorities.length && priorities[0]) return priorities[0];
-        const errors = result.errors || [];
-        if (errors.length && errors[0].explanation) return errors[0].explanation;
-        const strengths = (result.feedback && result.feedback.strengths) || [];
-        if (strengths.length && strengths[0]) return strengths[0];
-        return 'Good oral effort! Keep practicing speaking out loud.';
+    // "I can ask for a coffee" -> "ask for a coffee", for weaving the
+    // can-do statement into the coaching sentence below. Falls back to the
+    // prompt title for non-can-do short tasks (custom sub-minute tasks).
+    function _taskPhrase(prompt) {
+        if (!prompt) return null;
+        const raw = prompt.targetCompetency || prompt.title || null;
+        if (!raw) return null;
+        return raw.replace(/^i can\s+/i, '').replace(/\.\s*$/, '').trim() || null;
+    }
+
+    // Composes the short-task coaching line: a task-completion-first verdict
+    // ("Well done, you've successfully asked for a coffee!"), what was
+    // missed, and what to focus on next -- rather than a single feedback
+    // string pulled from whichever field happened to be non-empty.
+    function _prodOneLineTip(result, prompt) {
+        const score = result.overallScore || 0;
+        const completion = typeof result.taskCompletion === 'number' ? result.taskCompletion : (score / 100);
+        const priorities = ((result.feedback && result.feedback.priorities) || []).filter(Boolean);
+        const missed = (result.errors || []).map(e => e.explanation).filter(Boolean);
+        const strengths = ((result.feedback && result.feedback.strengths) || []).filter(Boolean);
+        const taskPhrase = _taskPhrase(prompt);
+
+        let opener;
+        if (completion >= 0.75) {
+            opener = taskPhrase ? `Well done — you successfully ${taskPhrase}!` : 'Well done — task completed!';
+        } else if (completion >= 0.4) {
+            opener = taskPhrase ? `Good attempt at ${taskPhrase} — you got most of it across.` : 'Good attempt — you got most of it across.';
+        } else {
+            opener = taskPhrase ? `Not quite there yet on ${taskPhrase}.` : 'Not quite there yet.';
+        }
+
+        const sentences = [opener];
+        if (missed.length) sentences.push(`You missed: ${missed.slice(0, 2).join('; ')}.`);
+        if (priorities.length) sentences.push(`Focus on ${priorities.slice(0, 2).join(' and ')}.`);
+        if (sentences.length === 1 && strengths.length) sentences.push(strengths[0]);
+        return sentences.join(' ');
     }
 
     function _renderProdResults(body) {
@@ -1096,10 +1136,10 @@ const SpeakingDriller = (function () {
         if (score < 60) scoreColor = 'var(--danger)';
         else if (score < 80) scoreColor = 'var(--accent)';
 
-        const isShortProd = (_prodMaxSeconds <= 60) || !!p.taskCompletionPrimary;
+        const isShortProd = (_prodMaxSeconds <= SHORT_TASK_MAX_SECONDS) || !!p.taskCompletionPrimary;
 
         if (isShortProd) {
-            const tip = _prodOneLineTip(res);
+            const tip = _prodOneLineTip(res, p);
             body.innerHTML = `
                 <div class="sp-driller-wrap sp-results-wrap">
                     <div class="sp-results-score-card">
@@ -1370,12 +1410,12 @@ const SpeakingDriller = (function () {
                 targetCompetency: options.targetCompetency,
                 taskCompletionPrimary: true
             };
-            // Defaults to the full 5-minute cap (Journey's "unverified
-            // competencies" nudge, the Studio's own card) — Time-Based
-            // Sessions' guaranteed quick-speaking slot passes a short
-            // maxSeconds instead, since a can-do prompt like "greet
-            // someone" only needs a few seconds, not five minutes.
-            _prodMaxSeconds = options.maxSeconds || 300;
+            // Defaults to SHORT_TASK_MAX_SECONDS (Journey's "unverified
+            // competencies" nudge, the Studio's own card) — a can-do prompt
+            // like "greet someone" is a bounded ask, not an open-ended
+            // fluency topic, so it stays short unless a caller (e.g.
+            // Time-Based Sessions) passes its own maxSeconds.
+            _prodMaxSeconds = options.maxSeconds || SHORT_TASK_MAX_SECONDS;
             _prodPhase = PROD_PHASE.RECORDING;
             _renderStudioShell();
             _startProdRecording();

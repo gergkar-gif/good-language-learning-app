@@ -524,6 +524,43 @@ const WritingDriller = (function () {
         }
     }
 
+    // "I can ask for a coffee" -> "ask for a coffee", for weaving the
+    // can-do statement into the coaching sentence below.
+    function _taskPhrase(prompt) {
+        if (!prompt) return null;
+        const raw = prompt.targetCompetency || prompt.title || null;
+        if (!raw) return null;
+        return raw.replace(/^i can\s+/i, '').replace(/\.\s*$/, '').trim() || null;
+    }
+
+    // Composes the short-task coaching line: a task-completion-first verdict
+    // ("Well done, you've successfully asked for a coffee!"), what was
+    // missed, and what to focus on next -- rather than a single feedback
+    // string pulled from whichever field happened to be non-empty.
+    function _shortTaskTip(result, prompt) {
+        const score = result.overallScore || 0;
+        const completion = typeof result.taskCompletion === 'number' ? result.taskCompletion : (score / 100);
+        const priorities = ((result.feedback && result.feedback.priorities) || []).filter(Boolean);
+        const missed = (result.errors || []).map(e => e.explanation).filter(Boolean);
+        const strengths = ((result.feedback && result.feedback.strengths) || []).filter(Boolean);
+        const taskPhrase = _taskPhrase(prompt);
+
+        let opener;
+        if (completion >= 0.75) {
+            opener = taskPhrase ? `Well done — you successfully ${taskPhrase}!` : 'Well done — task completed!';
+        } else if (completion >= 0.4) {
+            opener = taskPhrase ? `Good attempt at ${taskPhrase} — you got most of it across.` : 'Good attempt — you got most of it across.';
+        } else {
+            opener = taskPhrase ? `Not quite there yet on ${taskPhrase}.` : 'Not quite there yet.';
+        }
+
+        const sentences = [opener];
+        if (missed.length) sentences.push(`You missed: ${missed.slice(0, 2).join('; ')}.`);
+        if (priorities.length) sentences.push(`Focus on ${priorities.slice(0, 2).join(' and ')}.`);
+        if (sentences.length === 1 && strengths.length) sentences.push(strengths[0]);
+        return sentences.join(' ');
+    }
+
     function _renderResults(body) {
         if (!_assessmentResult) return;
         const res = _assessmentResult;
@@ -541,12 +578,7 @@ const WritingDriller = (function () {
 
         const isShortProd = !!p.taskCompletionPrimary;
         if (isShortProd) {
-            const priorities = (res.feedback && res.feedback.priorities) || [];
-            const tip = (priorities.length && priorities[0])
-                ? priorities[0]
-                : (errors.length && errors[0].explanation)
-                    ? errors[0].explanation
-                    : ((res.feedback && res.feedback.strengths && res.feedback.strengths[0]) || 'Good writing effort! Keep practicing.');
+            const tip = _shortTaskTip(res, p);
 
             body.innerHTML = `
                 <div class="sp-driller-wrap sp-results-wrap">
