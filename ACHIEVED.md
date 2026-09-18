@@ -9,6 +9,15 @@ needs re-reading before starting new work; it's reference only.
 
 ## Completed queue items
 
+49. ~~**Vocabulary Driller: surface-form, slash-adjective, and article-prefixed lemma matching**~~ — **Done 2026-09-18.**
+    Resolved the live runtime lemma matching gap in `VocabularyDriller` across Spanish and Hungarian:
+    - **Root cause investigated**: A comprehensive audit across all 2,882 Spanish content words revealed that 996 words (34.6%) previously returned 0 context occurrences because `_buildContextIndex()` indexed sentences solely under canonical dictionary lemmas (e.g. `ser`), while `_hasContext()` and exercise builders queried using raw deck keys (`soy`, `alto / alta`, `el perro`).
+    - **Dual-Key Context Indexing**: Updated `_buildContextIndex()` in `engine/drills/vocabulary.js` to index sentences under both their canonical dictionary lemma (`readings[0].lemma.toLowerCase()`) and their literal surface form (`token.toLowerCase()`). Handles multilingual pair keys (`spanish`, `hungarian`, `target`).
+    - **Intelligent Query Resolution Waterfall**: Implemented `_getOccurrences(word)` resolving deck entries across direct key matches, lowercase matching, slash-separated gender pairs (`alto / alta` -> `alto`, `alta`), article stripping (`el perro` -> `perro`), Lexicon lemma lookups, and Hungarian `-ni` infinitive stem resolution.
+    - **Decoy Shape Normalization**: Enhanced `_pickWordDecoys` to strip leading articles from distractors and match adjective gender endings, preventing malformed questions (e.g. `El el caballo corre`).
+    - **Context Coverage Surge**: Boosted Spanish context sentence matching from 65.4% (1,886 words) to 98.9% (2,850 words), recovering 964 words into rich contextual cloze, discrimination, and choice exercises.
+    - **Test Suite Added**: Authored `tests/drills/test-vocabulary-surface-matching.js` asserting surface forms, slash adjectives, and article nouns resolve with valid blanking and zero emojis.
+
 50. ~~**App-wide Reddit Critic Audit: Zero-Failure & Flow Resilience Pass**~~ — **Done 2026-09-18.**
     Comprehensive audit from the perspective of an obsessive, technically savvy language learner. Resolved all identified bugs, dead-ends, unhandled edge cases, and infinite loading risks across the engine:
     - **Boot Screen & Crash Prevention**: Guarded global DOM event listeners (`typeof document !== 'undefined'`) across `decks.js`, `content-loader.js`, `vocabulary.js`, and `ui.js`. Added a 6-second safety timeout and `try/catch` fallback around `loadCurriculumData()` in `init.js` with retry UI to prevent permanent boot hangs. Added `teardownTab('leveltest')`. Exported `window.XP` and module exports in `xp.js`, fixing silent 0 XP awards in Speaking and Writing studios.

@@ -143,22 +143,33 @@ const VocabularyDriller = (function () {
     function _buildContextIndex() {
         const index = {};
         _pairs.forEach(pair => {
-            const tokens = pair.spanish.match(WORD_RE) || [];
+            const sentence = pair.spanish || pair.hungarian || pair.target || '';
+            const tokens = sentence.match(WORD_RE) || [];
             if (tokens.length < MIN_CONTEXT_WORDS) return;
 
-            const seenLemmas = new Set(); // one entry per lemma per sentence
+            const seenKeys = new Set();
             tokens.forEach(token => {
-                const readings = Lexicon.lookup(token).readings;
-                if (!readings.length) return;
-                const lemma = readings[0].lemma.toLowerCase();
-                if (seenLemmas.has(lemma)) return;
-                seenLemmas.add(lemma);
+                const tokenLower = token.toLowerCase();
+                const readings = (typeof Lexicon !== 'undefined' && typeof Lexicon.lookup === 'function')
+                    ? Lexicon.lookup(token).readings
+                    : [];
+                const keysToIndex = new Set([tokenLower]);
+                if (readings && readings.length) {
+                    keysToIndex.add(readings[0].lemma.toLowerCase());
+                }
 
-                (index[lemma] || (index[lemma] = [])).push({
-                    sentence: pair.spanish,
-                    english: pair.english,
-                    form: token,
-                    inflected: token.toLowerCase() !== lemma
+                keysToIndex.forEach(key => {
+                    if (seenKeys.has(key)) return;
+                    seenKeys.add(key);
+
+                    (index[key] || (index[key] = [])).push({
+                        sentence: sentence,
+                        english: pair.english || pair.translation || '',
+                        form: token,
+                        inflected: (readings && readings.length)
+                            ? (tokenLower !== readings[0].lemma.toLowerCase())
+                            : false
+                    });
                 });
             });
         });
@@ -199,8 +210,81 @@ const VocabularyDriller = (function () {
             .map(lemma => ({ lemma, en: _words[lemma].en, pos: _words[lemma].pos }));
     }
 
+    // Intelligent context occurrence resolver: resolves deck keys through a
+    // multi-tier waterfall (direct token match, lowercase, slash-separated
+    // gender pairs, article stripping, and Lexicon lemma analysis) so surface
+    // forms ("soy", "alto / alta", "el gato") seamlessly match real sentences.
+    function _getOccurrences(word) {
+        if (!word || !_contextIndex) return [];
+        const raw = (typeof word === 'string') ? word : word.lemma;
+        if (!raw) return [];
+
+        // 1. Direct match
+        if (_contextIndex[raw] && _contextIndex[raw].length) return _contextIndex[raw];
+
+        // 2. Case-insensitive / lowercase match
+        const lower = raw.toLowerCase();
+        if (_contextIndex[lower] && _contextIndex[lower].length) return _contextIndex[lower];
+
+        // 3. Slash split (e.g. 'alto / alta' -> 'alto', 'alta')
+        if (raw.includes('/')) {
+            const parts = raw.split('/').map(s => s.trim().toLowerCase()).filter(Boolean);
+            const combined = [];
+            const seenSentences = new Set();
+            for (const p of parts) {
+                const subOcc = _contextIndex[p] || [];
+                for (const item of subOcc) {
+                    if (!seenSentences.has(item.sentence)) {
+                        seenSentences.add(item.sentence);
+                        combined.push(item);
+                    }
+                }
+            }
+            if (combined.length) return combined;
+        }
+
+        // 4. Article stripping (e.g. 'el perro' -> 'perro', 'la casa' -> 'casa')
+        const noArt = lower.replace(/^(el|la|los|las|un|una)\s+/i, '').trim();
+        if (noArt !== lower) {
+            if (_contextIndex[noArt] && _contextIndex[noArt].length) return _contextIndex[noArt];
+            if (typeof Lexicon !== 'undefined' && typeof Lexicon.lookup === 'function') {
+                const lk = Lexicon.lookup(noArt);
+                if (lk && lk.readings && lk.readings.length) {
+                    for (const r of lk.readings) {
+                        const lem = r.lemma.toLowerCase();
+                        if (_contextIndex[lem] && _contextIndex[lem].length) return _contextIndex[lem];
+                    }
+                }
+            }
+        }
+
+        // 5. Lexicon lemma lookup fallback (e.g. 'soy' -> 'ser', 'quiero' -> 'querer')
+        if (typeof Lexicon !== 'undefined' && typeof Lexicon.lookup === 'function') {
+            const lk = Lexicon.lookup(lower);
+            if (lk && lk.readings && lk.readings.length) {
+                for (const r of lk.readings) {
+                    const lem = r.lemma.toLowerCase();
+                    const lemmaOcc = _contextIndex[lem];
+                    if (lemmaOcc && lemmaOcc.length) {
+                        const exactFormMatches = lemmaOcc.filter(o => o.form.toLowerCase() === lower);
+                        if (exactFormMatches.length) return exactFormMatches;
+                        return lemmaOcc;
+                    }
+                }
+            }
+        }
+
+        // 6. Hungarian infinitive fallback (e.g. 'hozni' -> stem 'hoz')
+        if (lower.endsWith('ni')) {
+            const stem = lower.slice(0, -2);
+            if (_contextIndex[stem] && _contextIndex[stem].length) return _contextIndex[stem];
+        }
+
+        return [];
+    }
+
     function _hasContext(word) {
-        return !!(_contextIndex[word.lemma] && _contextIndex[word.lemma].length);
+        return _getOccurrences(word).length > 0;
     }
 
     // Unicode-aware word boundaries so an accented form (día, agotadas) is
@@ -246,11 +330,20 @@ const VocabularyDriller = (function () {
     // correct option, so clicking either "como" gave a different result
     // for what looked like the identical answer.
     function _pickWordDecoys(word, form, n) {
+        const formLower = form.toLowerCase();
         let candidates = Object.keys(_words)
-            .filter(l => CONTENT_POS.has(_words[l].pos) && l !== word.lemma && l.toLowerCase() !== form.toLowerCase());
+            .filter(l => CONTENT_POS.has(_words[l].pos) && l !== word.lemma && l.toLowerCase() !== formLower);
         const narrowed = candidates.filter(l => _words[l].pos === word.pos);
         if (narrowed.length >= n) candidates = narrowed;
-        return _shuffled(candidates).slice(0, n);
+        return _shuffled(candidates).slice(0, n).map(l => {
+            let clean = l;
+            if (clean.includes('/')) {
+                const parts = clean.split('/').map(p => p.trim());
+                clean = parts.find(p => p.slice(-1) === formLower.slice(-1)) || parts[0];
+            }
+            clean = clean.replace(/^(el|la|los|las|un|una)\s+/i, '').trim();
+            return clean;
+        });
     }
 
     // Some corpus sentences carry no terminal punctuation (fragments pulled
@@ -282,7 +375,7 @@ const VocabularyDriller = (function () {
     // 1. Contextual inference — the defining exercise: a real sentence, the
     // target word in it, plain multiple-choice decoys.
     function _buildInference(word) {
-        const matches = _contextIndex[word.lemma];
+        const matches = _getOccurrences(word);
         if (!matches || !matches.length) return null;
         const m = _sample(matches);
         const options = _shuffled([word.en, ..._pickTranslationDecoys(word, DECOY_COUNT, false)]);
@@ -301,7 +394,7 @@ const VocabularyDriller = (function () {
     // inflected form if that's what appeared), not the bare dictionary
     // lemma — "agotadas" for a sentence that actually says "agotadas".
     function _buildRecall(word) {
-        const matches = _contextIndex[word.lemma];
+        const matches = _getOccurrences(word);
         if (!matches || !matches.length) return null;
         const m = _sample(matches);
         const blanked = _blankSentence(m.sentence, m.form);
@@ -318,7 +411,7 @@ const VocabularyDriller = (function () {
     // drawn from the same part of speech, so they're plausible rather than
     // obviously-wrong.
     function _buildDiscrimination(word) {
-        const matches = _contextIndex[word.lemma];
+        const matches = _getOccurrences(word);
         if (!matches || !matches.length) return null;
         const m = _sample(matches);
         const options = _shuffled([word.en, ..._pickTranslationDecoys(word, DECOY_COUNT, true)]);
@@ -339,7 +432,7 @@ const VocabularyDriller = (function () {
     // different settings, which is most valuable exactly for the
     // genuinely polysemous words the spec calls out.
     function _buildRepeat(word) {
-        const matches = _contextIndex[word.lemma];
+        const matches = _getOccurrences(word);
         if (!matches || matches.length < 2) return null;
         const [a, b] = _shuffled(matches);
         const options = _shuffled([word.en, ..._pickTranslationDecoys(word, DECOY_COUNT, false)]);
@@ -357,7 +450,7 @@ const VocabularyDriller = (function () {
     // the learner picks the right Spanish word from same-part-of-speech
     // decoys (no English hint at all — the context alone has to carry it).
     function _buildChoice(word) {
-        const matches = _contextIndex[word.lemma];
+        const matches = _getOccurrences(word);
         if (!matches || !matches.length) return null;
         const m = _sample(matches);
         const blanked = _blankSentence(m.sentence, m.form);
@@ -377,7 +470,7 @@ const VocabularyDriller = (function () {
     // ("agotadas", not "agotado") — the point is recognising the word
     // despite the grammatical change.
     function _buildMorphological(word) {
-        const matches = (_contextIndex[word.lemma] || []).filter(m => m.inflected);
+        const matches = _getOccurrences(word).filter(m => m.inflected);
         if (!matches.length) return null;
         const m = _sample(matches);
         const options = _shuffled([word.en, ..._pickTranslationDecoys(word, DECOY_COUNT, true)]);
@@ -884,7 +977,8 @@ const VocabularyDriller = (function () {
     return {
         render, stop,
         // Expose for unit testing and headless verification
-        _buildPoolFromWords, _buildExerciseFor, _buildDirectDefinition, _buildReverseChoice, _buildReverseRecall
+        _buildPoolFromWords, _buildExerciseFor, _buildDirectDefinition, _buildReverseChoice, _buildReverseRecall,
+        _getOccurrences, _hasContext, _buildContextIndex, _load
     };
 })();
 
