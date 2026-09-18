@@ -11,11 +11,17 @@ let currentWordPos = null;
 function loadDeck() {
     const saved = localStorage.getItem(Lang.key('srsDeck'));
     if (saved) {
-        srsDeck = JSON.parse(saved);
+        try {
+            srsDeck = JSON.parse(saved);
+        } catch (error) {
+            console.warn('Corrupted srsDeck storage, resetting to empty:', error);
+            srsDeck = [];
+        }
+        if (!Array.isArray(srsDeck)) srsDeck = [];
         // Enrich cards that were added before dictionary loaded
         for (const card of srsDeck) {
             if (card.english === 'unknown' || !card.english) {
-                const entry = Lexicon.define(card.spanish);
+                const entry = (typeof Lexicon !== 'undefined' && typeof Lexicon.define === 'function') ? Lexicon.define(card.spanish) : null;
                 if (entry) {
                     card.english = entry.en;
                     card.type = entry.type;
@@ -23,6 +29,9 @@ function loadDeck() {
             }
             normalizeCard(card);
         }
+        updateSRSCounter();
+    } else {
+        srsDeck = [];
         updateSRSCounter();
     }
 }
@@ -945,9 +954,12 @@ function initCardGestures() {
 // last-shown synonym ("to catch") was marked wrong because the stored
 // expected answer still carried the ellipsis glued onto it.
 function srsNormalise(text) {
-    return String(text || '').toLowerCase().trim()
+    return String(text || '').toLowerCase()
+        .replace(/["'«»“”„—–\-]/g, ' ')
         .replace(/[.,!?¡¿;:]/g, '')
         .replace(/…$/, '')
+        .replace(/\s+/g, ' ')
+        .trim()
         .normalize('NFC');
 }
 
@@ -1047,6 +1059,7 @@ function rateCard(rating) {
 }
 
 // Desktop keyboard flow for review session
+if (typeof window !== 'undefined' && typeof window.addEventListener === 'function') {
 window.addEventListener('keydown', (e) => {
     const session = document.getElementById('review-session');
     if (!session || session.classList.contains('hidden') || session.style.display === 'none') return;
@@ -1073,3 +1086,29 @@ window.addEventListener('keydown', (e) => {
         else if (e.key === '4') { e.preventDefault(); rateCard('easy'); }
     }
 });
+}
+
+if (typeof document !== 'undefined') {
+    document.addEventListener('language-changed', () => {
+        loadDeck();
+        loadKnownWords();
+        currentReviewCard = null;
+        typedAnswerCorrect = null;
+        if (typeof updateReaderWordColors === 'function') {
+            updateReaderWordColors();
+        }
+    });
+}
+
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = {
+        loadDeck,
+        saveDeck,
+        loadKnownWords,
+        saveKnownWords,
+        srsNormalise,
+        englishAlternatives,
+        getDeck: () => srsDeck,
+        setDeck: (d) => { srsDeck = d; }
+    };
+}

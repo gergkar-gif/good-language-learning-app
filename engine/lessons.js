@@ -57,9 +57,15 @@ let stepState = {};
 // concurrently via Promise.all, and several sections across different
 // lessons can share the same exercise-group file. Caching the promise
 // synchronously (before any await) means every concurrent caller for the
-// same path awaits the one real fetch instead of each seeing an empty
-// cache and firing its own duplicate request.
 const contentCache = {};
+
+if (typeof document !== 'undefined') {
+    document.addEventListener('language-changed', () => {
+        for (const key of Object.keys(contentCache)) {
+            delete contentCache[key];
+        }
+    });
+}
 
 async function fetchContent(path) {
     const fullPath = Lang.content(path);
@@ -701,8 +707,10 @@ function shuffledOptions(options, correct) {
 function normalise(text) {
     const value = String(text || '')
         .toLowerCase()
-        .trim()
-        .replace(/[.,!?¡¿;:]/g, '');
+        .replace(/["'«»“”„—–\-]/g, ' ')
+        .replace(/[.,!?¡¿;:]/g, '')
+        .replace(/\s+/g, ' ')
+        .trim();
     // Normalise Unicode representation (NFC) so a precomposed accented
     // letter typed on one keyboard/IME matches a decomposed one from
     // another - this is normalisation of representation, not leniency;
@@ -2456,6 +2464,11 @@ function lessonCheckBlank() {
     const input = document.getElementById('blank-input');
     if (!input || stepState.solved) return;
 
+    if (!input.value.trim()) {
+        setFeedback(false, 'Type or speak an answer first.');
+        return;
+    }
+
     // Most blanks have exactly one right answer, but some genuinely accept
     // several (e.g. any of the story's characters completing "Soy ___.") —
     // stepState.acceptable carries the full list, stepState.answer stays the
@@ -3417,11 +3430,20 @@ function lessonInlineVoiceInput(selector, btn) {
     _inlineVoiceActive = true;
     if (btn) btn.classList.add('is-recording');
 
-    const target = (typeof stepState !== 'undefined')
-        ? (stepState.acceptable || (stepState.answer ? [stepState.answer] : null))
-        : null;
+    let target = null;
+    let speechLang = undefined;
+    if (selector === '#review-type-field') {
+        const isEnglishTarget = (typeof reviewDirection !== 'undefined' && reviewDirection === 'es-en');
+        speechLang = isEnglishTarget ? 'en-US' : (typeof Lang !== 'undefined' ? Lang.code() : 'es-ES');
+        target = isEnglishTarget
+            ? (typeof reviewExpectedEnglish !== 'undefined' ? reviewExpectedEnglish : null)
+            : (typeof reviewExpectedSpanish !== 'undefined' ? reviewExpectedSpanish : null);
+    } else if (typeof stepState !== 'undefined') {
+        target = (stepState.acceptable || (stepState.answer ? [stepState.answer] : null));
+    }
 
     SpeechInput.startListening({
+        lang: speechLang,
         target: target,
         onInterim: interim => {
             input.value = interim;
@@ -3463,4 +3485,13 @@ function checkLessonAnswer(btn, isCorrect) {
         document.getElementById('quiz-feedback').textContent = '✗ Not quite. Try again!';
         document.getElementById('quiz-feedback').style.color = 'var(--accent-dark)';
     }
+}
+
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = {
+        normalise,
+        baseChar,
+        generateAnswerDiff,
+        contentCache
+    };
 }

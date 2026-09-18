@@ -508,8 +508,11 @@ function unitListHtml(level) {
     // The test closes the level, so it sits after every unit rather than
     // inside one — and it reports its own state, because a passed level is
     // the one thing on this screen that is not simply "units finished".
+    const hasTest = (typeof LevelTest !== 'undefined' && typeof LevelTest.hasTest === 'function')
+        ? LevelTest.hasTest(level)
+        : (level === 'A1' || level === 'A2');
     const result = (typeof LevelTest !== 'undefined') ? LevelTest.resultFor(level) : null;
-    const testRow = `
+    const testRow = hasTest ? `
         <button class="level-test-row${result && result.passed ? ' is-passed' : ''}"
                 data-open-test="${level}">
             <span class="level-test-title">${level} level test</span>
@@ -519,6 +522,11 @@ function unitListHtml(level) {
                     : '20 questions · 80% to move on'
             }</span>
         </button>
+    ` : `
+        <div class="level-test-row is-disabled" aria-disabled="true" style="opacity: 0.6; cursor: default;">
+            <span class="level-test-title">${level} level test</span>
+            <span class="level-test-meta">Coming soon</span>
+        </div>
     `;
 
     const searchRowHtml = `

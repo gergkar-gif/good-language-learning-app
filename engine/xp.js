@@ -67,23 +67,28 @@ function loadXP() {
     const saved = localStorage.getItem('spanishApp_xp');
     if (!saved) return;
 
-    const parsed = JSON.parse(saved);
-    xpData = {
-        total: parsed.total || 0,
-        history: {},
-        dailyNewWords: parsed.dailyNewWords || {},
-        importedStreak: parsed.importedStreak || null
-    };
+    try {
+        const parsed = JSON.parse(saved);
+        if (!parsed || typeof parsed !== 'object') return;
+        xpData = {
+            total: parsed.total || 0,
+            history: {},
+            dailyNewWords: parsed.dailyNewWords || {},
+            importedStreak: parsed.importedStreak || null
+        };
 
-    // The first version stored a bare XP number per day. Keep the total and
-    // leave the breakdown at zero — it was never recorded, so inventing a
-    // split would be worse than admitting we don't have one.
-    Object.keys(parsed.history || {}).forEach(date => {
-        const value = parsed.history[date];
-        xpData.history[date] = typeof value === 'number'
-            ? Object.assign(emptyDay(), { total: value })
-            : Object.assign(emptyDay(), value);
-    });
+        // The first version stored a bare XP number per day. Keep the total and
+        // leave the breakdown at zero — it was never recorded, so inventing a
+        // split would be worse than admitting we don't have one.
+        Object.keys(parsed.history || {}).forEach(date => {
+            const value = parsed.history[date];
+            xpData.history[date] = typeof value === 'number'
+                ? Object.assign(emptyDay(), { total: value })
+                : Object.assign(emptyDay(), value);
+        });
+    } catch (error) {
+        console.warn('Corrupted XP storage, resetting to defaults:', error);
+    }
 }
 
 function saveXP() {

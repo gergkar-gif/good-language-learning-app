@@ -56,6 +56,12 @@ const PageHeader = {
 
         const art = Art.section(config.illustration);
         const actions = (config.actions || []).filter(Boolean);
+        const dark = (typeof Theme !== 'undefined' && typeof Theme.isDark === 'function') ? Theme.isDark() : false;
+        const themeIcon = (typeof Art !== 'undefined' && typeof Art.icon === 'function')
+            ? Art.icon(dark ? 'themeLight' : 'themeDark')
+            : '';
+        const mobileThemeToggle = `<button type="button" class="theme-toggle-btn mobile-theme-btn" aria-label="${dark ? 'Light theme' : 'Dark theme'}" title="${dark ? 'Light theme' : 'Dark theme'}"><span class="theme-toggle-icon" aria-hidden="true">${themeIcon}</span></button>`;
+        const allActions = [mobileThemeToggle, ...actions];
         const title = (typeof config.title === 'function') ? config.title() : config.title;
         const subtitle = (typeof config.subtitle === 'function') ? config.subtitle() : config.subtitle;
 
@@ -64,7 +70,7 @@ const PageHeader = {
                 <h1 class="page-header-title">${UI.escape(title)}</h1>
                 <p class="page-header-sub">${UI.escape(subtitle || '')}</p>
             </div>
-            ${actions.length ? `<div class="page-header-actions">${actions.join('')}</div>` : ''}
+            ${allActions.length ? `<div class="page-header-actions">${allActions.join('')}</div>` : ''}
             ${art ? `
                 <svg class="page-header-art" viewBox="0 0 320 100" preserveAspectRatio="xMidYMid meet"
                     role="presentation" aria-hidden="true" focusable="false">

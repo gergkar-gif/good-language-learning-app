@@ -34,6 +34,13 @@ const LevelTest = (function () {
     let marked = false;
     let diagnosticDismissed = false;
     let exitCallback = null;
+    let openingTab = 'learn';
+
+    function hasTest(level) {
+        if (!level || typeof level !== 'string') return false;
+        const norm = level.toUpperCase();
+        return norm === 'A1' || norm === 'A2';
+    }
 
     // A learner who scores this high on a level's test knows the level, not
     // just enough of it to be waved through — high enough above the 80%
@@ -441,7 +448,14 @@ const LevelTest = (function () {
             await load(level);
         }
         if (!test) {
-            host.innerHTML = '<p class="dk-empty">No test for this level yet.</p>';
+            host.innerHTML = `
+                <button class="dk-back" data-close-test="1">← Back</button>
+                <p class="dk-empty">No test for this level yet.</p>
+            `;
+            const backBtn = host.querySelector('[data-close-test]');
+            if (backBtn) backBtn.onclick = function () {
+                closeTest();
+            };
             return;
         }
 
@@ -692,7 +706,10 @@ const LevelTest = (function () {
             exitCallback = null;
             cb();
         } else {
-            showTab('learn', document.querySelector('[data-tab="learn"]'));
+            const targetTab = openingTab || 'learn';
+            if (typeof showTab === 'function') {
+                showTab(targetTab, document.querySelector(`[data-tab="${targetTab}"]`));
+            }
         }
     }
 
@@ -769,6 +786,12 @@ const LevelTest = (function () {
     async function open(level, options) {
         exitCallback = (options && typeof options.onExit === 'function') ? options.onExit : null;
         diagnosticDismissed = false;
+        try {
+            const currentTab = document.querySelector('.tab:not(.hidden)');
+            if (currentTab && currentTab.id && currentTab.id !== 'leveltest') {
+                openingTab = currentTab.id;
+            }
+        } catch (e) {}
         if (typeof UI !== 'undefined') UI.showLoading('Loading level test…');
         try {
             document.querySelectorAll('.tab').forEach(tab => tab.classList.add('hidden'));
@@ -784,5 +807,12 @@ const LevelTest = (function () {
         }
     }
 
-    return { open, render, resultFor, stop, close: closeTest };
+    return { open, render, resultFor, stop, close: closeTest, hasTest };
 })();
+
+if (typeof window !== 'undefined') {
+    window.LevelTest = LevelTest;
+}
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = LevelTest;
+}

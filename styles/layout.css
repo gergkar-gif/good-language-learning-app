@@ -62,6 +62,62 @@
   gap: 8px;
 }
 
+.mobile-theme-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  border-radius: var(--radius-sm);
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--secondary);
+  cursor: pointer;
+  transition: color var(--dur-fast) var(--ease-standard), background var(--dur-fast) var(--ease-standard), border-color var(--dur-fast) var(--ease-standard);
+}
+
+.mobile-theme-btn:hover {
+  color: var(--text);
+  border-color: var(--text);
+  background: rgba(16, 42, 71, 0.04);
+}
+
+[data-theme="dark"] .mobile-theme-btn:hover {
+  background: rgba(245, 241, 232, 0.06);
+}
+
+.mobile-theme-btn .theme-toggle-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+}
+
+.mobile-theme-btn .theme-toggle-icon svg,
+.mobile-theme-btn .theme-toggle-icon .art,
+.mobile-theme-btn .theme-toggle-icon .icon {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+
+.mobile-theme-btn .theme-toggle-icon .ink-line,
+.mobile-theme-btn .theme-toggle-icon .ink-rule {
+  stroke: currentColor;
+}
+
+.mobile-theme-btn .theme-toggle-icon .ink-solid {
+  fill: currentColor;
+}
+
+@media (min-width: 1024px) {
+  .mobile-theme-btn {
+    display: none !important;
+  }
+}
+
 /* A frontispiece, not a watermark: full strength but mostly empty, sitting
    under the title across the column. */
 .page-header-art {
