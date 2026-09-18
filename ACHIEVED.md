@@ -9,6 +9,14 @@ needs re-reading before starting new work; it's reference only.
 
 ## Completed queue items
 
+38. ~~**A2 lessons systemically show "2 goals vs 1 checklist item"**~~ — **Done 2026-09-18.**
+    Investigated the 123/174 mismatch pattern across A2 lessons. Scoping confirmed that `guides/a2-lesson-guide.md` does not prescribe goal/checklist structure; rather, an early generation artifact (commit `813cf6a8`) copied a single `"goal"` into the checklist while leaving a generic boilerplate Goal 2 in `goal.items` (along with trailing `..` typos in 99 lessons). Resolved via Option 1:
+    - **100 Numbered Teaching Lessons (`a2-01-01` to `a2-20-05`)**: Trimmed generic secondary boilerplate Goal 2 (*"Use the ... vocabulary from this lesson"* or repeated unit grammar lines), retaining Goal 1 as the single, focused lesson goal. Cleaned checklist items to strictly match Goal 1 and removed trailing double dots (`..` -> `.`).
+    - **20 Numbered Consolidation Lessons (`a2-01-consolidation` to `a2-20-consolidation`)**: Unified the two review goals into 1 matching review goal that directly mirrors the single synthesized checklist item.
+    - **3 Named Unit Mismatches**: Resolved 3:2 mismatches to 2:2 pairs in `a2-imperativonegativo-04`, `a2-perifrasisverbales-01`, and `a2-pronombrescliticos-05`.
+    - **Checklist Prefix Standardization**: Standardized 16 named unit checklist items that began with *"I know that..."*, *"I understand..."*, or *"My writing..."* to start with `"I can "` per the project-wide authoring standard.
+    - **Derived Indexes & Verification**: Rebuilt `competencies-index.json` (2,439 competencies cleanly indexed without typo artifacts), regenerated manifest (`build-manifest.py`), passed schema validation (`validate-content.py es`: 3,308 files), and verified zero failures for `goals and checklist are one-to-one` and `every checklist item begins "I can"` across all 174 A2 lessons via `scripts/audit-lesson.py a2`.
+
 37. ~~**New vocabulary frequently never appears in its own unit's story**~~ — **Done 2026-09-18.**
     Investigated the 55% (A1), 59% (A2), and 40% (B1) failure rates. Found this was an architectural audit mismatch rather than missing content:
     - **Curriculum design vs audit expectation**: A unit teaches 25–55 new words across its 5 lessons, but carries only one shared 100–250 word story (in Lesson 5). Expecting every single word from all 5 lessons to appear in a single short narrative is mathematically impossible without turning graded reader stories into unnatural word lists.
