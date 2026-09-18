@@ -155,6 +155,42 @@ def apply_gloss_override(lemma, pos, gloss):
             return replacement
     return gloss
 
+# Some lemmas have a real, accurate dictionary sense that Wiktionary's own
+# page ordering simply lists ahead of the sense a learner needs as the
+# default translation — not wrong information (unlike GLOSS_OVERRIDES above,
+# which corrects wording), just misordered. Every "dictionary[lemma][0]"
+# consumer (build-manifest.py's frequency-deck gloss picker, chiefly) always
+# takes whichever sense sorts first, so this decides which one that is. Each
+# entry moves the sense matching (pos, gloss prefix) — checked against the
+# ORIGINAL Wiktionary gloss, before GLOSS_OVERRIDES or short_gloss touch it —
+# to the front of that lemma's sense list.
+#
+# "forrás": the noun page lists "boiling" (the nominalised, rarely-used sense
+# of the verb forr) before "spring, source" and "source" — a learner tapping
+# "forrás" (as in "energia forrása", "megbízható forrás") needs "source", not
+# the boiling-water sense.
+# "mű": has a real adjective sense ("artificial") filed ahead of its far more
+# common noun senses ("work", "opus") — but that adjective sense is only
+# valid as the compound prefix "mű-" (művirág "artificial flower", műanyag
+# "plastic"), never as a standalone adjective the way the dictionary entry
+# implies. A bare "mű" means "a work" (irodalmi mű, zenemű), never
+# "artificial" on its own.
+PRIMARY_SENSE_OVERRIDES = [
+    ("forrás", "noun", "source"),
+    ("mű", "noun", "work, creation"),
+]
+
+
+def apply_primary_sense_override(dictionary):
+    for lemma, pos, prefix in PRIMARY_SENSE_OVERRIDES:
+        senses = dictionary.get(lemma)
+        if not senses:
+            continue
+        idx = next((i for i, s in enumerate(senses)
+                    if s["type"] == pos and s["en"].startswith(prefix)), None)
+        if idx:
+            senses.insert(0, senses.pop(idx))
+
 # Senses tagged like this are deprioritised but not dropped outright — a
 # rare/dated sense is still better than no dictionary entry. Also used
 # ACROSS competing POS entries for the same lemma (see build()'s
@@ -191,6 +227,23 @@ def download():
 
 # "verbal noun of alszik: sleep" -> "sleep" — see FORM_OF_EXCEPTION_TAGS.
 VERBAL_NOUN_PREFIX = re.compile(r"^verbal noun of [^:]+:\s*", re.I)
+
+# Some participle/verbal-noun pages carry a sense whose gloss is JUST this
+# heading ("present participle of vezet:", "verbal noun of felvesz:") with
+# nothing after the colon — Wiktionary's real definition for these lives on
+# a nested line that wiktextract doesn't fold into this sense's own
+# 'glosses', so there is no content here to extract (unlike the FORM_OF_TAG
+# exception case above, e.g. "verbal noun of alszik: sleep", where the
+# translation IS on this same line). These aren't reliably tagged
+# FORM_OF_TAG either, so they slip past that filter and were showing up
+# verbatim as a lemma's dictionary entry — "vezető" ("leader, guide")
+# glossed as literally "present participle of vezet:" in decks.json's
+# frequency deck, found 2026-09-18 alongside the forrás/mű sense-order bug.
+# Skipped outright rather than kept-but-deprioritised: unlike a rare/dated
+# real sense, this carries zero translatable information.
+BARE_FORM_HEADING = re.compile(
+    r"^(?:present|past|passive|adverbial|future)?\s*participle of\b.*:\s*$"
+    r"|^verbal noun of\b.*:\s*$", re.I)
 
 
 # How many distinct senses a single (lemma, pos) keeps at most — see
@@ -234,6 +287,8 @@ def all_glosses(senses, word=None):
         if not glosses:
             continue
         gloss = glosses[0]
+        if BARE_FORM_HEADING.match(gloss):
+            continue
         if FORM_OF_TAG in tags:
             if not (tags & FORM_OF_EXCEPTION_TAGS):
                 continue
@@ -423,6 +478,8 @@ def build():
             {"en": apply_gloss_override(key, s["type"], s["en"]), "type": s["type"]}
             for s in all_senses
         ]
+
+    apply_primary_sense_override(dictionary)
 
     return dictionary, word_index, stats
 
