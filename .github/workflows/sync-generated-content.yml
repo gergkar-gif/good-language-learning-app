@@ -80,5 +80,7 @@ jobs:
           else
             git add -A
             git commit -m "Auto-sync generated content (curriculum, decks, manifests, indexes)"
+            git pull --rebase origin master
             git push
           fi
+
