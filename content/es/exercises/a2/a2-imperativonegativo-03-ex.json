@@ -107,31 +107,111 @@
     {
       "id": "a2.imperativonegativo.03.ex07",
       "category": "dialogue",
-      "type": "fill-blank",
-      "sentence": "—¿Puedo sacar fotos con flash? —No señor, no _____ (usar) flash aquí.",
-      "answer": "use",
+      "type": "dialogue-complete",
+      "prompt": [
+        {
+          "speaker": "Conductor",
+          "text": "¿Puedo dejar mi coche aquí frente a la entrada?"
+        },
+        {
+          "speaker": "Guardia",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "No estacione aquí, señor; está prohibido aparcar frente a la puerta.",
+        "No estaciona aquí, señor; está prohibido aparcar frente a la puerta.",
+        "No estacionó aquí, señor; estaba prohibido aparcar frente a la puerta."
+      ],
+      "correct": 0,
       "teaches": [
-        "imperativo-negativo-formal"
+        "imperativo-negativo-formal",
+        "estacionar",
+        "prohibido",
+        "aparcar",
+        "puerta"
       ]
     },
     {
       "id": "a2.imperativonegativo.03.ex08",
       "category": "dialogue",
-      "type": "fill-blank",
-      "sentence": "—Disculpe la molestia. —No se _____ (preocupar), no pasa nada.",
-      "answer": "preocupe",
+      "type": "dialogue-complete",
+      "prompt": [
+        {
+          "speaker": "Visitante",
+          "text": "¿Podemos entrar a esta sala privada?"
+        },
+        {
+          "speaker": "Recepcionista",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "No pasen sin permiso y mantengan silencio en todo el edificio.",
+        "No pasan sin permiso y mantienen silencio en todo el edificio.",
+        "No pasaron sin permiso y mantuvieron silencio en todo el edificio."
+      ],
+      "correct": 0,
       "teaches": [
-        "imperativo-negativo-formal"
+        "imperativo-negativo-formal",
+        "pasar",
+        "permiso",
+        "silencio",
+        "edificio"
       ]
     },
     {
       "id": "a2.imperativonegativo.03.ex09",
       "category": "writing",
-      "type": "fill-blank",
-      "sentence": "Por favor, no _____ (hacer) ruido en los pasillos del hospital.",
-      "answer": "hagan",
+      "type": "structured-writing",
+      "template": [
+        {
+          "prompt": "Formulate a formal prohibition (usted): Do not smoke here; it is not permitted.",
+          "answer": "No fume aquí; no está permitido en este edificio."
+        },
+        {
+          "prompt": "Formulate a formal request to visitors (ustedes): Do not open this door without permission.",
+          "answer": "No abran esta puerta sin permiso previo."
+        }
+      ],
       "teaches": [
-        "imperativo-negativo-formal"
+        "imperativo-negativo-formal",
+        "fumar",
+        "permitido",
+        "edificio",
+        "puerta",
+        "permiso"
+      ]
+    },
+    {
+      "id": "a2.imperativonegativo.03.ex10",
+      "category": "listening",
+      "type": "listening-choice",
+      "sentence": "Por favor, no fumen dentro del edificio; está prohibido.",
+      "options": [
+        "Please do not smoke inside the building; it is prohibited.",
+        "Smoking is allowed outside the main building entrance.",
+        "They did not smoke inside the building yesterday.",
+        "Please do not park your car near the building."
+      ],
+      "correct": 0,
+      "teaches": [
+        "imperativo-negativo-formal",
+        "fumar",
+        "edificio",
+        "prohibido"
+      ]
+    },
+    {
+      "id": "a2.imperativonegativo.03.ex11",
+      "category": "listening",
+      "type": "dictation",
+      "sentence": "No aparque frente a la puerta sin permiso.",
+      "teaches": [
+        "imperativo-negativo-formal",
+        "aparcar",
+        "puerta",
+        "permiso"
       ]
     }
   ]

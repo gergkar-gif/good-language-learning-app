@@ -107,31 +107,107 @@
     {
       "id": "a2.imperativonegativo.02.ex07",
       "category": "dialogue",
-      "type": "fill-blank",
-      "sentence": "—¿Voy a la fiesta? —No, no _____ (ir), tienes examen mañana.",
-      "answer": "vayas",
+      "type": "dialogue-complete",
+      "prompt": [
+        {
+          "speaker": "Meg",
+          "text": "¿Debo contarle lo que pasó a Carlos?"
+        },
+        {
+          "speaker": "Daniela",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "No digas mentiras y no tengas miedo de la verdad.",
+        "No dices mentiras y no tienes miedo de la verdad.",
+        "No dijo mentiras y no tuvo miedo de la verdad."
+      ],
+      "correct": 0,
       "teaches": [
-        "imperativo-negativo-irregular"
+        "imperativo-negativo-irregular",
+        "mentira",
+        "miedo"
       ]
     },
     {
       "id": "a2.imperativonegativo.02.ex08",
       "category": "dialogue",
-      "type": "fill-blank",
-      "sentence": "—Tengo vergüenza. —¡No _____ (ser) tonto, habla con ella!",
-      "answer": "seas",
+      "type": "dialogue-complete",
+      "prompt": [
+        {
+          "speaker": "Carlos",
+          "text": "¿Está bien salir a caminar por el bosque ahora?"
+        },
+        {
+          "speaker": "Daniela",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "No vayas solo porque ya está oscuro y es peligroso.",
+        "No vas solo porque ya está oscuro y es peligroso.",
+        "No fue solo porque ya estaba oscuro y era peligroso."
+      ],
+      "correct": 0,
       "teaches": [
-        "imperativo-negativo-irregular"
+        "imperativo-negativo-irregular",
+        "solo",
+        "oscuro",
+        "peligroso"
       ]
     },
     {
       "id": "a2.imperativonegativo.02.ex09",
       "category": "writing",
-      "type": "fill-blank",
-      "sentence": "No _____ (poner) la música tan alta a estas horas.",
-      "answer": "pongas",
+      "type": "structured-writing",
+      "template": [
+        {
+          "prompt": "Tell a friend not to be shy and not to feel ashamed.",
+          "answer": "No seas tímido y no tengas vergüenza al hablar."
+        },
+        {
+          "prompt": "Tell a friend not to say anything to anyone until you are sure.",
+          "answer": "No digas nada a nadie hasta estar seguro."
+        }
+      ],
       "teaches": [
-        "imperativo-negativo-irregular"
+        "imperativo-negativo-irregular",
+        "timido",
+        "verguenza",
+        "nada",
+        "nadie",
+        "seguro"
+      ]
+    },
+    {
+      "id": "a2.imperativonegativo.02.ex10",
+      "category": "listening",
+      "type": "listening-choice",
+      "sentence": "No tengas miedo y no vayas por ese camino oscuro.",
+      "options": [
+        "Do not be afraid and do not go down that dark road.",
+        "He was afraid because the road was dark.",
+        "Do not walk fast on the sunny street.",
+        "We are not afraid of the dark road."
+      ],
+      "correct": 0,
+      "teaches": [
+        "imperativo-negativo-irregular",
+        "miedo",
+        "oscuro"
+      ]
+    },
+    {
+      "id": "a2.imperativonegativo.02.ex11",
+      "category": "listening",
+      "type": "dictation",
+      "sentence": "No seas tímido y no digas mentiras a nadie.",
+      "teaches": [
+        "imperativo-negativo-irregular",
+        "timido",
+        "mentira",
+        "nadie"
       ]
     }
   ]

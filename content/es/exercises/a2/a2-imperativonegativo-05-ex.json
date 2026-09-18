@@ -133,31 +133,116 @@
     {
       "id": "a2.imperativonegativo.05.ex09",
       "category": "dialogue",
-      "type": "fill-blank",
-      "sentence": "—¿Puedo usar la lavadora ahora? —No, no la _____ (usar) tan tarde, molesta a los vecinos.",
-      "answer": "uses",
+      "type": "dialogue-complete",
+      "prompt": [
+        {
+          "speaker": "Huésped",
+          "text": "¿Cuáles son las normas principales de este albergue?"
+        },
+        {
+          "speaker": "Recepcionista",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Respete las reglas comunes y no haga ruido después de las diez.",
+        "Respeta las reglas comunes y no haces ruido después de las diez.",
+        "Respetó las reglas comunes y no hizo ruido después de las diez."
+      ],
+      "correct": 0,
       "teaches": [
-        "imperativo-normas"
+        "reglas-advertencias",
+        "albergue",
+        "norma",
+        "regla",
+        "respetar",
+        "ruido"
       ]
     },
     {
       "id": "a2.imperativonegativo.05.ex10",
       "category": "dialogue",
-      "type": "fill-blank",
-      "sentence": "—¿Dónde pongo la basura? —_____ (tirar) la basura en el contenedor verde.",
-      "answer": "Tira",
+      "type": "dialogue-complete",
+      "prompt": [
+        {
+          "speaker": "Carlos",
+          "text": "¿Qué debemos hacer en la cocina compartida?"
+        },
+        {
+          "speaker": "Daniela",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "No dejes platos sucios en el fregadero; mantén todo limpio.",
+        "No dejas platos sucios en el fregadero; mantienes todo limpio.",
+        "No dejó platos sucios en el fregadero; mantuvo todo limpio."
+      ],
+      "correct": 0,
       "teaches": [
-        "imperativo-normas"
+        "reglas-advertencias",
+        "sucio",
+        "fregadero",
+        "limpio"
       ]
     },
     {
       "id": "a2.imperativonegativo.05.ex11",
       "category": "writing",
-      "type": "fill-blank",
-      "sentence": "Por favor, _____ (cerrar) bien la ventana cuando empiece a llover.",
-      "answer": "cierra",
+      "type": "structured-writing",
+      "template": [
+        {
+          "prompt": "Write a room rule: Turn off the lights when leaving the room; do not leave them on.",
+          "answer": "Apague las luces al salir de la habitación; no las deje encendidas."
+        },
+        {
+          "prompt": "Write a hostel rule: Respect other guests and keep the common areas clean.",
+          "answer": "Respete las normas del albergue y mantenga los espacios limpios."
+        }
+      ],
       "teaches": [
-        "imperativo-normas"
+        "reglas-advertencias",
+        "apagar",
+        "habitacion",
+        "encender",
+        "respetar",
+        "norma",
+        "albergue",
+        "limpio"
+      ]
+    },
+    {
+      "id": "a2.imperativonegativo.05.ex12",
+      "category": "listening",
+      "type": "listening-choice",
+      "sentence": "No dejes el fregadero sucio y apaga la luz de la habitación.",
+      "options": [
+        "Do not leave the sink dirty and turn off the room light.",
+        "Wash the dishes and leave the room light on.",
+        "He cleaned the sink before turning on the lamp.",
+        "Do not leave the room without your keys."
+      ],
+      "correct": 0,
+      "teaches": [
+        "reglas-advertencias",
+        "fregadero",
+        "sucio",
+        "apagar",
+        "habitacion"
+      ]
+    },
+    {
+      "id": "a2.imperativonegativo.05.ex13",
+      "category": "listening",
+      "type": "dictation",
+      "sentence": "Respeta las normas del albergue y mantén la habitación limpia.",
+      "teaches": [
+        "reglas-advertencias",
+        "respetar",
+        "norma",
+        "albergue",
+        "habitacion",
+        "limpio"
       ]
     }
   ]

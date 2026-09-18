@@ -107,31 +107,108 @@
     {
       "id": "a2.imperativonegativo.04.ex07",
       "category": "dialogue",
-      "type": "fill-blank",
-      "sentence": "—¿Me pongo el abrigo? —Sí, _____ (ponérselo, tú), hace frío.",
-      "answer": "póntelo",
+      "type": "dialogue-complete",
+      "prompt": [
+        {
+          "speaker": "Meg",
+          "text": "¿Debo marcharme de la reunión ahora mismo?"
+        },
+        {
+          "speaker": "Carlos",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "No te vayas todavía, quédate con nosotros unos minutos más.",
+        "No te vas todavía, te quedas con nosotros unos minutos más.",
+        "No te fue todavía, se quedó con nosotros unos minutos más."
+      ],
+      "correct": 0,
       "teaches": [
-        "posicion-pronombres-imperativo"
+        "pronombres-imperativo-posicion",
+        "irse",
+        "quedarse"
       ]
     },
     {
       "id": "a2.imperativonegativo.04.ex08",
       "category": "dialogue",
-      "type": "fill-blank",
-      "sentence": "—¿Le cuento el secreto? —No, ¡no se lo _____ (decir) a nadie!",
-      "answer": "digas",
+      "type": "dialogue-complete",
+      "prompt": [
+        {
+          "speaker": "Daniela",
+          "text": "¿Puedo sentarme en esa silla?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "No te sientes allí; el suelo está mojado alrededor.",
+        "No te sientas allí; el suelo está mojado alrededor.",
+        "No te sentó allí; el suelo estaba mojado alrededor."
+      ],
+      "correct": 0,
       "teaches": [
-        "posicion-pronombres-imperativo"
+        "pronombres-imperativo-posicion",
+        "sentarse",
+        "suelo",
+        "mojado"
       ]
     },
     {
       "id": "a2.imperativonegativo.04.ex09",
       "category": "writing",
-      "type": "fill-blank",
-      "sentence": "Si encuentras mi cartera, por favor _____ (traérmela, tú).",
-      "answer": "tráemela",
+      "type": "structured-writing",
+      "template": [
+        {
+          "prompt": "Tell a friend not to get up immediately (keep sitting).",
+          "answer": "No te levantes inmediatamente; quédate sentado."
+        },
+        {
+          "prompt": "Tell a friend not to stay quiet and not to hide secrets.",
+          "answer": "No te calles y no guardes ningún secreto."
+        }
+      ],
       "teaches": [
-        "posicion-pronombres-imperativo"
+        "pronombres-imperativo-posicion",
+        "levantarse",
+        "inmediatamente",
+        "quedarse",
+        "callarse",
+        "secreto",
+        "acento"
+      ]
+    },
+    {
+      "id": "a2.imperativonegativo.04.ex10",
+      "category": "listening",
+      "type": "listening-choice",
+      "sentence": "Ten cuidado y no te caigas, que el suelo está mojado.",
+      "options": [
+        "Be careful and do not fall, because the floor is wet.",
+        "The floor was wet and someone fell down.",
+        "Clean the floor immediately with water.",
+        "Be careful when you sit down on the chair."
+      ],
+      "correct": 0,
+      "teaches": [
+        "pronombres-imperativo-posicion",
+        "suelo",
+        "mojado"
+      ]
+    },
+    {
+      "id": "a2.imperativonegativo.04.ex11",
+      "category": "listening",
+      "type": "dictation",
+      "sentence": "No te vayas inmediatamente, quédate aquí conmigo.",
+      "teaches": [
+        "pronombres-imperativo-posicion",
+        "irse",
+        "inmediatamente",
+        "quedarse"
       ]
     }
   ]
