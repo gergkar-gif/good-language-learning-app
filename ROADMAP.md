@@ -9,7 +9,7 @@ Completed work is archived out to `ACHIEVED.md`.
 
 Active work in progress and prioritized backlog items:
 
-49. **Verify Vocabulary Driller surface-form lemma matching live** — Item 26's original note that ~40 Spanish deck entries keyed to a surface form (`soy`, `alto/alta`) fail lemma matching was not independently re-verified against the live Vocabulary Driller runtime when the underlying content gap was closed (see item 26 in `ACHIEVED.md`). A spot check on `soy` suggests surface-form keys already resolve fine since they match sentence tokens literally, but this wasn't confirmed in the browser. Worth a live-driller check if surface-form mismatches are still observed in practice.
+49. **Verify Vocabulary Driller surface-form lemma matching live** — Item 26's original note that ~40 Spanish deck entries keyed to a surface form (`soy`, `alto/alta`) fail lemma matching was not independently re-verified against the live Vocabulary Driller runtime when the underlying content gap was closed (see item 26 in `ACHIEVED.md`). With Item 50's direct definition/recall fallbacks now active in `VocabularyDriller`, these words never trigger abort screens or dead-ends regardless of sentence matching. Worth a live-driller spot check if surface-form context matching is still desired over direct recall.
 
 ---
 

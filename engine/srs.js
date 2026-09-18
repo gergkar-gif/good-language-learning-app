@@ -126,20 +126,21 @@ function maybeGraduate(card) {
 }
 
 function clearDeck() {
-    // Clears this course's deck. XP is not scoped by language — it records
-    // that the learner studied, not which course — so clearing it here wipes
-    // it for every course, which is what the button has always done. Known
-    // words are cleared alongside the deck they came from for the same
-    // reason — leaving them behind would be half a reset.
+    const course = (typeof Lang !== 'undefined' && Lang.name) ? Lang.name() : 'course';
+    if (!confirm(`Are you sure you want to reset your ${course} flashcards and known words? Your global XP and streak will be preserved.`)) {
+        return;
+    }
     localStorage.removeItem(Lang.key('srsDeck'));
     localStorage.removeItem(Lang.key('knownWords'));
-    localStorage.removeItem('spanishApp_xp');
     srsDeck = [];
     knownWords = [];
-    xpData = { total: 0, history: {}, dailyNewWords: {} };
+    sessionRelearningQueue = [];
     updateSRSCounter();
-    updateXPHeader();
-    alert('Deck & XP cleared!');
+    updateReviewStats();
+    if (typeof UI !== 'undefined' && UI.toast) {
+        UI.toast('Flashcard deck reset.', 'info');
+    }
+    endReviewSession();
 }
 
 // ============================================
@@ -338,6 +339,7 @@ function updateSRSCounter() {
 // SRS REVIEW SYSTEM
 // ============================================
 let currentReviewCard = null;
+let sessionRelearningQueue = [];
 
 // A review session can be scoped to one deck. The scope is a set of lemmas
 // rather than a copy of the cards, so rating a card still writes to the one
@@ -470,6 +472,7 @@ function updateReviewBanner() {
 }
 
 function startReviewSession(lemmas, name, options) {
+    sessionRelearningQueue = [];
     reviewScope = lemmas ? new Set(lemmas) : null;
     reviewScopeName = reviewScope ? (name || 'Deck') : '';
     reviewLimit = (options && typeof options.limit === 'number' && options.limit > 0) ? options.limit : null;
@@ -588,6 +591,7 @@ function practiceMissedFromReview(words) {
 }
 
 function endReviewSession() {
+    sessionRelearningQueue = [];
     reviewScope = null;
     reviewScopeName = '';
     reviewLimit = null;
@@ -642,10 +646,11 @@ function updateReviewStats() {
     const due = document.getElementById('due-count');
     const fresh = document.getElementById('new-count');
     const total = document.getElementById('total-count');
+    const remainingCount = getDueCards().length + sessionRelearningQueue.length;
     if (due) {
         due.textContent = reviewLimit
             ? Math.max(0, reviewLimit - (reviewSessionStats ? reviewSessionStats.total : 0))
-            : getDueCards().length;
+            : remainingCount;
     }
     if (fresh) fresh.textContent = getNewCards().length;
     if (total) {
@@ -673,7 +678,17 @@ function showNextCard() {
 
     const dueCards = getDueCards();
 
-    if (dueCards.length === 0) {
+    let nextCard = null;
+    if (dueCards.length > 0) {
+        // Pick from the most urgent cards. If reviewLimit is set, pick from the top slice
+        const pool = (reviewLimit && dueCards.length > reviewLimit) ? dueCards.slice(0, reviewLimit) : dueCards;
+        nextCard = shuffled(pool)[0];
+    } else if (sessionRelearningQueue.length > 0) {
+        // Cards that were rated "again" in this session but have not yet been recalled
+        nextCard = sessionRelearningQueue[0];
+    }
+
+    if (!nextCard) {
         if (cardEl) cardEl.style.display = 'none';
         currentReviewCard = null;
 
@@ -697,9 +712,7 @@ function showNextCard() {
     if (emptyEl) emptyEl.style.display = 'none';
     if (summaryEl) summaryEl.style.display = 'none';
 
-    // Pick from the most urgent cards. If reviewLimit is set, pick from the top slice
-    const pool = (reviewLimit && dueCards.length > reviewLimit) ? dueCards.slice(0, reviewLimit) : dueCards;
-    currentReviewCard = shuffled(pool)[0];
+    currentReviewCard = nextCard;
     normalizeCard(currentReviewCard);
 
     renderCard();
@@ -762,6 +775,14 @@ function renderCard() {
     document.getElementById('show-answer-btn').style.display = typeMode ? 'none' : 'block';
 
     document.getElementById('review-type-input').classList.toggle('hidden', !typeMode);
+    const diacriticsEl = document.getElementById('review-type-diacritics');
+    if (diacriticsEl) {
+        if (typeMode && typeof UI !== 'undefined' && UI.diacriticsBarHtml) {
+            diacriticsEl.innerHTML = UI.diacriticsBarHtml('#review-type-field');
+        } else {
+            diacriticsEl.innerHTML = '';
+        }
+    }
     const field = document.getElementById('review-type-field');
     if (field) {
         field.value = '';
@@ -944,9 +965,19 @@ function checkTypedAnswer() {
 
     const englishFirst = reviewDirection === 'en-es';
     const typed = srsNormalise(field.value);
-    const ok = englishFirst
-        ? typed === srsNormalise(reviewExpectedSpanish)
-        : englishAlternatives(reviewExpectedEnglish).includes(typed);
+    let ok = false;
+    if (englishFirst) {
+        const acceptableSpanish = new Set([srsNormalise(reviewExpectedSpanish)]);
+        if (typeof Lexicon !== 'undefined' && typeof Lexicon.withArticle === 'function') {
+            const withArt = Lexicon.withArticle(reviewExpectedSpanish);
+            if (withArt) acceptableSpanish.add(srsNormalise(withArt));
+        }
+        const strippedTyped = typed.replace(/^(el|la|los|las|un|una|unos|unas|a|az)\s+/i, '');
+        const strippedExpected = srsNormalise(reviewExpectedSpanish).replace(/^(el|la|los|las|un|una|unos|unas|a|az)\s+/i, '');
+        ok = acceptableSpanish.has(typed) || (strippedTyped.length > 0 && strippedTyped === strippedExpected);
+    } else {
+        ok = englishAlternatives(reviewExpectedEnglish).includes(typed);
+    }
 
     field.classList.toggle('correct', ok);
     field.classList.toggle('wrong', !ok);
@@ -986,6 +1017,17 @@ function rateCard(rating) {
 
     scheduleCard(currentReviewCard, rating, now);
     maybeGraduate(currentReviewCard);
+
+    if (rating === 'again') {
+        if (!sessionRelearningQueue.some(c => c.spanish === currentReviewCard.spanish)) {
+            sessionRelearningQueue.push(currentReviewCard);
+        } else {
+            sessionRelearningQueue = sessionRelearningQueue.filter(c => c.spanish !== currentReviewCard.spanish);
+            sessionRelearningQueue.push(currentReviewCard);
+        }
+    } else {
+        sessionRelearningQueue = sessionRelearningQueue.filter(c => c.spanish !== currentReviewCard.spanish);
+    }
 
     if (reviewSessionStats) {
         reviewSessionStats.total++;

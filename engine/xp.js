@@ -178,7 +178,8 @@ function awardXP(amount, source, reason) {
     xpData.total += amount;
 
     saveXP();
-    showXPNotification(amount, reason);
+    const displayReason = reason || (typeof source === 'string' ? source.replace(/[-_]/g, ' ') : 'Practice');
+    showXPNotification(amount, displayReason);
 }
 
 // Call before the card is rescheduled — "new" means it has no reviews yet.
@@ -427,4 +428,29 @@ function updateXPHeader() {
         const streak = getStreak();
         navStreakEl.textContent = streak > 0 ? `${streak}-day streak` : 'No streak yet';
     }
+}
+
+const XP = {
+    award: (amount, source, reason) => awardXP(amount, source, reason),
+    getRank,
+    getStreak,
+    updateHeader: updateXPHeader,
+    data: () => xpData
+};
+
+if (typeof window !== 'undefined') {
+    window.XP = XP;
+}
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = {
+        XP,
+        awardXP,
+        getRank,
+        getStreak,
+        updateXPHeader,
+        getDailyActivities,
+        loadXP,
+        saveXP,
+        xpData: () => xpData
+    };
 }

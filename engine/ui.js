@@ -70,6 +70,35 @@ const UI = {
         return `<span class="${cls}">${text}</span>`;
     },
 
+    toast(message, type = 'info', duration = 3000) {
+        if (typeof document === 'undefined' || !document.body) return null;
+        let container = document.getElementById('toast-container');
+        if (!container) {
+            container = document.createElement('div');
+            container.id = 'toast-container';
+            container.className = 'toast-container';
+            container.setAttribute('aria-live', 'polite');
+            document.body.appendChild(container);
+        }
+        const toastEl = document.createElement('div');
+        toastEl.className = `app-toast app-toast--${type}`;
+        toastEl.textContent = message;
+        container.appendChild(toastEl);
+        setTimeout(() => {
+            toastEl.classList.add('is-active');
+        }, 10);
+        const timer = setTimeout(() => {
+            toastEl.classList.remove('is-active');
+            setTimeout(() => { if (toastEl.parentNode) toastEl.remove(); }, 300);
+        }, duration);
+        toastEl.onclick = () => {
+            clearTimeout(timer);
+            toastEl.classList.remove('is-active');
+            setTimeout(() => { if (toastEl.parentNode) toastEl.remove(); }, 300);
+        };
+        return toastEl;
+    },
+
     empty(message) {
         return `
             <div class="card" style="text-align:center;opacity:.7">
@@ -138,14 +167,12 @@ const UI = {
         } else {
             if (_actionLoaderTimer) {
                 updateLabel(message);
-                return;
-            }
-            _actionLoaderTimer = setTimeout(() => {
-                _actionLoaderTimer = null;
-                if (_actionLoaderCount > 0) {
+            } else {
+                _actionLoaderTimer = setTimeout(() => {
+                    _actionLoaderTimer = null;
                     ensureAndShow();
-                }
-            }, 80);
+                }, 150);
+            }
         }
     },
 
@@ -162,46 +189,58 @@ const UI = {
             }
             const el = document.getElementById('action-loader');
             if (el) el.classList.remove('is-visible');
-            document.querySelectorAll('.is-loading').forEach(node => node.classList.remove('is-loading'));
+            if (typeof document !== 'undefined') {
+                document.querySelectorAll('.is-loading').forEach(node => node.classList.remove('is-loading'));
+            }
         }
     }
 
 };
 
-// Track the active/last-focused text input across the app so accent buttons know where to insert
-document.addEventListener('focusin', e => {
-    if (e.target && (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA')) {
-        window._lastFocusedInput = e.target;
-    }
-});
-
-// Delegate diacritic button clicks to insert character at current caret position without losing focus
-document.addEventListener('click', e => {
-    const btn = e.target.closest('.lsn-diacritic-btn');
-    if (!btn) return;
-    e.preventDefault();
-    const char = btn.dataset.char;
-    if (!char) return;
-
-    const bar = btn.closest('.lsn-diacritics');
-    const selector = bar ? bar.dataset.target : null;
-    let target = selector ? document.querySelector(selector) : null;
-    if (!target) {
-        if (document.activeElement && (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA')) {
-            target = document.activeElement;
-        } else if (window._lastFocusedInput && document.body.contains(window._lastFocusedInput)) {
-            target = window._lastFocusedInput;
-        } else if (bar) {
-            target = bar.parentElement.querySelector('input[type="text"], textarea');
+if (typeof document !== 'undefined') {
+    // Track the active/last-focused text input across the app so accent buttons know where to insert
+    document.addEventListener('focusin', e => {
+        if (e.target && (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA')) {
+            window._lastFocusedInput = e.target;
         }
-    }
-    if (!target) return;
+    });
 
-    const start = target.selectionStart ?? target.value.length;
-    const end = target.selectionEnd ?? target.value.length;
-    const val = target.value;
-    target.value = val.substring(0, start) + char + val.substring(end);
-    target.selectionStart = target.selectionEnd = start + char.length;
-    target.focus();
-    target.dispatchEvent(new Event('input', { bubbles: true }));
-});
+    // Delegate diacritic button clicks to insert character at current caret position without losing focus
+    document.addEventListener('click', e => {
+        const btn = e.target.closest('.lsn-diacritic-btn');
+        if (!btn) return;
+        e.preventDefault();
+        const char = btn.dataset.char;
+        if (!char) return;
+
+        const bar = btn.closest('.lsn-diacritics');
+        const selector = bar ? bar.dataset.target : null;
+        let target = selector ? document.querySelector(selector) : null;
+        if (!target) {
+            if (document.activeElement && (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA')) {
+                target = document.activeElement;
+            } else if (window._lastFocusedInput && document.body.contains(window._lastFocusedInput)) {
+                target = window._lastFocusedInput;
+            } else if (bar) {
+                target = bar.parentElement.querySelector('input[type="text"], textarea');
+            }
+        }
+        if (!target) return;
+
+        const start = target.selectionStart ?? target.value.length;
+        const end = target.selectionEnd ?? target.value.length;
+        const val = target.value;
+        target.value = val.substring(0, start) + char + val.substring(end);
+        target.selectionStart = target.selectionEnd = start + char.length;
+        target.focus();
+        target.dispatchEvent(new Event('input', { bubbles: true }));
+    });
+}
+
+if (typeof window !== 'undefined') {
+    window.UI = UI;
+    window.showToast = (msg, type) => UI.toast(msg, type || 'info');
+}
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = UI;
+}

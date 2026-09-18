@@ -57,12 +57,14 @@ const Decks = (function () {
     let sortOrder = 'natural'; // 'natural' | 'alphabetical' — how the open deck's word list is displayed. Shuffling is a per-mode concern (Match/Learn already randomize their own round), never something that reorders the list itself.
     let studyMode = null;      // null | 'match' | 'learn' — which study mode (if any) is open over the current deck
 
-    document.addEventListener('language-changed', () => {
-        catalogue = null;
-        openDeck = null;
-        draft = null;
-        importDraft = null;
-    });
+    if (typeof document !== 'undefined') {
+        document.addEventListener('language-changed', () => {
+            catalogue = null;
+            openDeck = null;
+            draft = null;
+            importDraft = null;
+        });
+    }
 
     // ----------------------------------------
     // DATA — Parlour Decks (read-only catalogue)
@@ -382,7 +384,8 @@ const Decks = (function () {
     function saveDraft() {
         const name = (draft.name || '').trim();
         if (!name) {
-            alert('Give the deck a name first.');
+            if (typeof UI !== 'undefined' && UI.toast) UI.toast('Give the deck a name first.', 'warning');
+            else alert('Give the deck a name first.');
             return;
         }
         const description = (draft.description || '').trim();
@@ -675,13 +678,15 @@ const Decks = (function () {
         if (!importDraft) return;
         const name = (importDraft.name || '').trim();
         if (!name) {
-            alert('Please give the deck a name first.');
+            if (typeof UI !== 'undefined' && UI.toast) UI.toast('Please give the deck a name first.', 'warning');
+            else alert('Please give the deck a name first.');
             return;
         }
 
         const words = importDraft.words || [];
         if (!words.length) {
-            alert('No valid words found to import.');
+            if (typeof UI !== 'undefined' && UI.toast) UI.toast('No valid words found to import.', 'warning');
+            else alert('No valid words found to import.');
             return;
         }
 

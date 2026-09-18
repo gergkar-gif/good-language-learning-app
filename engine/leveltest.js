@@ -29,9 +29,11 @@ const LevelTest = (function () {
     let isRecording = false; // Part 3 microphone recording flag
     let mediaRecorder = null;
     let audioChunks = [];
+    let activeStream = null;
     let recognition = null;
     let marked = false;
     let diagnosticDismissed = false;
+    let exitCallback = null;
 
     // A learner who scores this high on a level's test knows the level, not
     // just enough of it to be waved through — high enough above the 80%
@@ -513,9 +515,7 @@ const LevelTest = (function () {
 
                 const backBtn = host.querySelector('[data-close-test]');
                 if (backBtn) {
-                    backBtn.addEventListener('click', () => {
-                        showTab('learn', document.querySelector('[data-tab="learn"]'));
-                    });
+                    backBtn.addEventListener('click', closeTest);
                 }
 
                 return;
@@ -681,13 +681,25 @@ const LevelTest = (function () {
         };
         const back = host.querySelector('[data-close-test]');
         if (back) back.onclick = function () {
-            showTab('learn', document.querySelector('[data-tab="learn"]'));
+            closeTest();
         };
+    }
+
+    function closeTest() {
+        stop();
+        if (exitCallback) {
+            const cb = exitCallback;
+            exitCallback = null;
+            cb();
+        } else {
+            showTab('learn', document.querySelector('[data-tab="learn"]'));
+        }
     }
 
     async function startRecording(host) {
         try {
             const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+            activeStream = stream;
             audioChunks = [];
             mediaRecorder = new MediaRecorder(stream);
             mediaRecorder.ondataavailable = e => {
@@ -696,7 +708,10 @@ const LevelTest = (function () {
             mediaRecorder.onstop = () => {
                 const blob = new Blob(audioChunks, { type: 'audio/webm' });
                 speakingAudioUrl = URL.createObjectURL(blob);
-                stream.getTracks().forEach(t => t.stop());
+                if (activeStream) {
+                    try { activeStream.getTracks().forEach(t => t.stop()); } catch (e) {}
+                    activeStream = null;
+                }
                 render(test.level);
             };
             mediaRecorder.start();
@@ -723,22 +738,36 @@ const LevelTest = (function () {
             render(test.level);
         } catch (err) {
             console.warn('Microphone access unavailable:', err);
-            alert('Microphone access could not be started. You can type your spoken response directly into the transcript box.');
+            if (typeof UI !== 'undefined' && UI.toast) {
+                UI.toast('Microphone unavailable. You can type your response directly into the transcript box.', 'warning');
+            } else {
+                alert('Microphone access could not be started. You can type your spoken response directly into the transcript box.');
+            }
         }
     }
 
-    function stopRecording(host) {
+    function stop() {
         isRecording = false;
         if (mediaRecorder && mediaRecorder.state !== 'inactive') {
             try { mediaRecorder.stop(); } catch (e) {}
         }
+        if (activeStream) {
+            try { activeStream.getTracks().forEach(t => t.stop()); } catch (e) {}
+            activeStream = null;
+        }
         if (recognition) {
             try { recognition.stop(); } catch (e) {}
+            recognition = null;
         }
-        render(test.level);
     }
 
-    async function open(level) {
+    function stopRecording(host) {
+        stop();
+        if (test && test.level) render(test.level);
+    }
+
+    async function open(level, options) {
+        exitCallback = (options && typeof options.onExit === 'function') ? options.onExit : null;
         diagnosticDismissed = false;
         if (typeof UI !== 'undefined') UI.showLoading('Loading level test…');
         try {
@@ -755,5 +784,5 @@ const LevelTest = (function () {
         }
     }
 
-    return { open, render, resultFor };
+    return { open, render, resultFor, stop, close: closeTest };
 })();

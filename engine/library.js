@@ -285,7 +285,11 @@ const Library = (function () {
     }
 
     async function runAnalysis() {
-        if (!textDraft.text.trim()) { alert('Paste some text first.'); return; }
+        if (!textDraft.text.trim()) {
+            if (typeof UI !== 'undefined' && UI.toast) UI.toast('Paste some text first.', 'warning');
+            else alert('Paste some text first.');
+            return;
+        }
         if (typeof Lexicon !== 'undefined' && !Lexicon.isLoaded()) {
             const btn = document.querySelector('[data-text-analyse]');
             if (btn) { btn.disabled = true; btn.textContent = 'Analysing…'; }
@@ -305,8 +309,16 @@ const Library = (function () {
         // silently save the wrong text, or crash on a null one.
         const draft = textDraft;
         const title = (draft.title || '').trim();
-        if (!title) { alert('Give the text a title first.'); return; }
-        if (!draft.text.trim()) { alert('Paste some text first.'); return; }
+        if (!title) {
+            if (typeof UI !== 'undefined' && UI.toast) UI.toast('Give the text a title first.', 'warning');
+            else alert('Give the text a title first.');
+            return;
+        }
+        if (!draft.text.trim()) {
+            if (typeof UI !== 'undefined' && UI.toast) UI.toast('Paste some text first.', 'warning');
+            else alert('Paste some text first.');
+            return;
+        }
 
         if (!draft.analysis) {
             if (typeof Lexicon !== 'undefined' && !Lexicon.isLoaded()) await Lexicon.load();
@@ -411,7 +423,11 @@ const Library = (function () {
 
     function addSelectedVocabToDeck(host) {
         const checked = Array.from(host.querySelectorAll('[data-vocab-lemma]:checked'));
-        if (!checked.length) { alert('Check a word first.'); return; }
+        if (!checked.length) {
+            if (typeof UI !== 'undefined' && UI.toast) UI.toast('Check a word first.', 'warning');
+            else alert('Check a word first.');
+            return;
+        }
         const items = checked.map(el => ({
             lemma: el.getAttribute('data-vocab-lemma'),
             translation: el.getAttribute('data-vocab-en'),

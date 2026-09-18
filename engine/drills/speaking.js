@@ -951,9 +951,11 @@ const SpeakingDriller = (function () {
                 const textarea = body.querySelector('#sp-transcript-input');
                 const text = textarea ? textarea.value.trim() : _prodTranscript.trim();
                 if (!text) {
-                    alert(audioUrl
+                    const msg = audioUrl
                         ? 'We heard your recording but couldn\'t transcribe it — type what you said in the box above before submitting.'
-                        : 'Please speak or enter some text before submitting.');
+                        : 'Please speak or enter some text before submitting.';
+                    if (typeof UI !== 'undefined' && UI.toast) UI.toast(msg, 'warning');
+                    else alert(msg);
                     return;
                 }
                 _submitProdForGrading(text);
@@ -1039,7 +1041,8 @@ const SpeakingDriller = (function () {
             _renderActiveTab();
         } catch (error) {
             console.error('Oral assessment grading failed:', error);
-            alert('Could not complete oral evaluation: ' + error.message);
+            if (typeof UI !== 'undefined' && UI.toast) UI.toast('Could not complete oral evaluation: ' + error.message, 'error');
+            else alert('Could not complete oral evaluation: ' + error.message);
             _prodPhase = PROD_PHASE.REVIEW;
             _renderActiveTab();
         }

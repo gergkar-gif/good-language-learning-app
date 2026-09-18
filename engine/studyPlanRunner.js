@@ -213,13 +213,12 @@ const StudyPlanRunner = (function () {
         } else if (item.kind === 'lesson' && typeof startLesson === 'function') {
             startLesson(item.lessonId);
         } else if (item.kind === 'test' && typeof LevelTest !== 'undefined') {
-            // Known v1 limitation: LevelTest.open() always returns to the
-            // Lessons tab on its own exit, not back to this screen — a
-            // plan containing a test item ends here if the learner takes
-            // it. Rare in practice (only ever appears right at a level
-            // gate) and not something this module can fix without also
-            // changing engine/leveltest.js's own hardcoded return.
-            LevelTest.open(item.level);
+            LevelTest.open(item.level, {
+                onExit: () => {
+                    showTab('study-plan-screen');
+                    renderChecklist();
+                }
+            });
         } else if (item.kind === 'review') {
             // Respect the time-based budget: only review the budgeted count
             // of words (e.g. 9 words for 5 min) so the learner is never trapped

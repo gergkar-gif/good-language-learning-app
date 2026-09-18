@@ -340,9 +340,9 @@ def from_backfill(backfill_dir):
             data = json.loads(f.read_text(encoding="utf-8"))
             items = data if isinstance(data, list) else data.get("sentences", [])
             for it in items:
-                sp = it.get("spanish")
-                en = it.get("english")
-                lvl = it.get("level", "A1").upper()
+                sp = it.get("spanish") or it.get("hungarian") or it.get("target") or it.get("sentence")
+                en = it.get("english") or it.get("translation")
+                lvl = (it.get("level") or "A1").upper()
                 if sp and en:
                     pair = {
                         "spanish": sp,

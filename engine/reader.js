@@ -5,9 +5,45 @@
 // =============================================
 // READER WORD COLORING (Familiarity Ramp)
 // ============================================
+function cleanReaderWord(word) {
+    return String(word || '').toLowerCase()
+        .replace(/^[¿¡"“«»'‘(\[]+/, '')
+        .replace(/[.,!?:;)"”»'’\]]+$/, '')
+        .trim();
+}
+
 function getWordStatus(spanish) {
-    const clean = spanish.toLowerCase().replace(/[.,]/g, '');
-    const card = srsDeck.find(w => w.spanish === clean);
+    const clean = cleanReaderWord(spanish);
+    if (!clean) return 'unknown';
+
+    // 1. Check knownWords (graduated or declared known)
+    if (typeof isKnown === 'function' && isKnown(clean)) {
+        return 'mastered';
+    }
+    if (typeof knownWords !== 'undefined' && Array.isArray(knownWords)) {
+        if (knownWords.some(w => w.spanish === clean)) return 'mastered';
+    }
+
+    // 2. Check active SRS deck
+    let card = null;
+    if (typeof srsDeck !== 'undefined' && Array.isArray(srsDeck)) {
+        card = srsDeck.find(w => w.spanish === clean);
+    }
+
+    // 3. If not found, check via Lexicon lemma resolution
+    if (!card && typeof Lexicon !== 'undefined' && typeof Lexicon.lookup === 'function') {
+        const lookup = Lexicon.lookup(clean);
+        if (lookup && lookup.readings && lookup.readings.length > 0) {
+            const lemma = lookup.readings[0].lemma.toLowerCase();
+            if (typeof isKnown === 'function' && isKnown(lemma)) {
+                return 'mastered';
+            }
+            if (typeof srsDeck !== 'undefined' && Array.isArray(srsDeck)) {
+                card = srsDeck.find(w => w.spanish === lemma);
+            }
+        }
+    }
+
     if (!card) return 'unknown';
     if (card.reviews >= 3) return 'mastered';
     if (card.reviews >= 1) return 'known';
@@ -637,7 +673,7 @@ const StoryAudioPlayer = {
     },
 
     preloadUpcoming(startIdx) {
-        if (!this.isOnline || typeof ParlourTTS === 'undefined' || !ParlourTTS.preload) return;
+        if (typeof ParlourTTS === 'undefined' || !ParlourTTS.preload) return;
         const courseLang = (typeof Lang !== 'undefined') ? Lang.code() : 'es';
         for (let i = startIdx; i <= startIdx + 1 && i < this.paragraphs.length; i++) {
             const p = this.paragraphs[i];
@@ -658,19 +694,11 @@ const StoryAudioPlayer = {
         this.isOnline = (typeof navigator !== 'undefined' && typeof navigator.onLine === 'boolean') ? navigator.onLine : true;
         const playerEl = document.getElementById('story-substack-player');
         if (!playerEl) return;
-
-        if (this.isOnline) {
-            playerEl.classList.remove('is-offline');
-            playerEl.removeAttribute('hidden');
-        } else {
-            if (this.isPlaying) this.pause();
-            playerEl.classList.add('is-offline');
-            playerEl.setAttribute('hidden', '');
-        }
+        playerEl.classList.toggle('is-offline', !this.isOnline);
+        playerEl.removeAttribute('hidden');
     },
 
     togglePlay() {
-        if (!this.isOnline) return;
         if (this.isPlaying) {
             this.pause();
         } else {
@@ -685,7 +713,7 @@ const StoryAudioPlayer = {
     },
 
     async playParagraph(idx) {
-        if (!this.isOnline || idx < 0 || idx >= this.paragraphs.length) {
+        if (idx < 0 || idx >= this.paragraphs.length) {
             this.finish();
             return;
         }
@@ -1526,7 +1554,8 @@ window.Reader = {
             this.renderStory(story);
         } catch (e) {
             console.error('Reader: failed to load story file', storyMeta.path, e);
-            alert('Failed to load story: ' + storyMeta.path);
+            if (typeof UI !== 'undefined' && UI.toast) UI.toast('Failed to load story: ' + (storyMeta.title || storyMeta.path), 'error');
+            else alert('Failed to load story: ' + storyMeta.path);
         } finally {
             if (typeof UI !== 'undefined') UI.hideLoading();
         }

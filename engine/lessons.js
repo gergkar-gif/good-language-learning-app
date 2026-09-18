@@ -490,14 +490,16 @@ async function startLesson(lessonId) {
     try {
         const lesson = await loadLesson(lessonId);
         if (!lesson) {
-            alert('Lesson coming soon!');
+            if (typeof UI !== 'undefined' && UI.toast) UI.toast('Lesson coming soon!', 'info');
+            else alert('Lesson coming soon!');
             return;
         }
 
         lesson.steps = await buildSteps(lesson);
 
         if (!lesson.steps.length) {
-            alert('This lesson has no content yet.');
+            if (typeof UI !== 'undefined' && UI.toast) UI.toast('This lesson has no content yet.', 'info');
+            else alert('This lesson has no content yet.');
             return;
         }
 
@@ -533,7 +535,8 @@ async function startLesson(lessonId) {
         renderStep();
     } catch (err) {
         console.error('Failed to start lesson:', lessonId, err);
-        alert('Could not load lesson. Please try again.');
+        if (typeof UI !== 'undefined' && UI.toast) UI.toast('Could not load lesson. Please try again.', 'error');
+        else alert('Could not load lesson. Please try again.');
     } finally {
         if (typeof UI !== 'undefined') UI.hideLoading();
     }
@@ -3390,8 +3393,9 @@ function lessonSkipSpeaking() {
 let _inlineVoiceActive = false;
 
 function lessonInlineVoiceInput(selector, btn) {
-    if (typeof SpeechInput === 'undefined' || !SpeechInput.isSupported()) {
-        if (typeof showToast === 'function') showToast('Voice recognition is not supported in this browser.');
+    if (typeof SpeechInput === 'undefined' || !SpeechInput.isRecognitionSupported()) {
+        if (typeof showToast === 'function') showToast('Voice recognition is not supported in this browser.', 'warning');
+        else if (typeof UI !== 'undefined' && UI.toast) UI.toast('Voice recognition is not supported in this browser.', 'warning');
         else alert('Voice recognition is not supported in this browser.');
         return;
     }

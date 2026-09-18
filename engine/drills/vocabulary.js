@@ -126,12 +126,14 @@ const VocabularyDriller = (function () {
         _loadedLang = Lang.code();
     }
 
-    document.addEventListener('language-changed', () => {
-        _words = null;
-        _pairs = null;
-        _contextIndex = null;
-        _loadedLang = null;
-    });
+    if (typeof document !== 'undefined') {
+        document.addEventListener('language-changed', () => {
+            _words = null;
+            _pairs = null;
+            _contextIndex = null;
+            _loadedLang = null;
+        });
+    }
 
     // One pass over the sentence corpus, resolving every token to a lemma
     // the same way a tapped word in the Reader would be. Built once and
@@ -388,21 +390,81 @@ const VocabularyDriller = (function () {
         };
     }
 
+    // Direct recall fallback builders: used when a word lacks corpus sentences
+    // or when non-content words are supplied for review.
+    function _buildDirectDefinition(word) {
+        if (!word.en) return null;
+        let decoys = _pickTranslationDecoys(word, DECOY_COUNT, true);
+        if (decoys.length < DECOY_COUNT) {
+            decoys = _pickTranslationDecoys(word, DECOY_COUNT, false);
+        }
+        if (decoys.length === 0) return null;
+        const options = _shuffled([word.en, ...decoys]);
+        return {
+            kind: 'multiple-choice',
+            question: `What does "${word.lemma}" mean?`,
+            options,
+            correct: options.indexOf(word.en),
+            explanation: `${word.lemma}${word.pos ? ' (' + word.pos + ')' : ''}: ${word.en}`
+        };
+    }
+
+    function _buildReverseChoice(word) {
+        if (!word.en) return null;
+        const decoys = _pickWordDecoys(word, word.lemma, DECOY_COUNT);
+        if (decoys.length === 0) return null;
+        const options = _shuffled([word.lemma, ...decoys]);
+        return {
+            kind: 'multiple-choice',
+            question: `Which word means "${word.en}"?`,
+            options,
+            correct: options.indexOf(word.lemma),
+            explanation: `${word.lemma} = ${word.en}`
+        };
+    }
+
+    function _buildReverseRecall(word) {
+        if (!word.en) return null;
+        const langName = typeof Lang !== 'undefined' ? Lang.name() : 'target language';
+        const acceptable = [word.lemma];
+        if (typeof Lexicon !== 'undefined' && typeof Lexicon.withArticle === 'function') {
+            const art = Lexicon.withArticle(word.lemma);
+            if (art && art !== word.lemma) acceptable.push(art);
+        }
+        return {
+            kind: 'fill-blank',
+            sentence: `Translate to ${langName}: "${word.en}" (_____)`,
+            answer: word.lemma,
+            acceptable,
+            explanation: `${word.lemma} = ${word.en}`
+        };
+    }
+
     const BUILDERS = [_buildInference, _buildRecall, _buildDiscrimination, _buildRepeat, _buildChoice, _buildMorphological];
 
     // One random applicable type per word, so a session mixes all six
     // naturally instead of a fixed type dominating because it happens to
-    // be tried first.
-    // The source word rides along on the built exercise as _word — none of
-    // the BUILDERS keep it (their output is GrammarRunner's own {kind,
-    // question, options, ...} shape), but the session loop needs the
-    // lemma/en/pos back to track a miss for the "add to a deck" link.
-    // GrammarRunner only reads the fields it knows about, so an extra one
-    // is harmless.
+    // be tried first. If no sentence context exists for this word, falls back
+    // to direct definition or recall builders so words are never dropped.
     function _buildExerciseFor(word) {
-        const candidates = BUILDERS.map(fn => fn(word)).filter(Boolean);
-        if (!candidates.length) return null;
-        const exercise = _sample(candidates);
+        let candidates = [];
+        if (word.pos && CONTENT_POS.has(word.pos)) {
+            candidates = BUILDERS.map(fn => fn(word)).filter(Boolean);
+        }
+        let exercise = null;
+        if (candidates.length) {
+            exercise = _sample(candidates);
+        } else {
+            const fallbacks = [
+                _buildDirectDefinition(word),
+                _buildReverseChoice(word),
+                _buildReverseRecall(word)
+            ].filter(Boolean);
+            if (fallbacks.length) {
+                exercise = _sample(fallbacks);
+            }
+        }
+        if (!exercise) return null;
         exercise._word = word;
         return exercise;
     }
@@ -415,25 +477,26 @@ const VocabularyDriller = (function () {
     // summary, when a session leaves some words shaky) rather than from
     // decks.json's curriculum table via _wordList() — a custom My Deck
     // word wouldn't be in that table at all, so this takes the
-    // {lemma, translation, pos} shape Decks already hands around instead
-    // of requiring the word to be a known curriculum lemma.
-    //
-    // Still filtered to CONTENT_POS, same as _wordList() — a caller-
-    // supplied word can be anything a learner put in My Decks, including
-    // a pronoun/preposition/conjunction picked up from a grammar lesson
-    // ("ki" = "who", reviewed here after a low SRS ease flagged it as a
-    // weak word). Skipping this filter let one of those become a driller
-    // target with a context sentence pulled from _contextIndex[lemma] —
-    // which, since the index files sentences by lemma only, mixes in any
-    // OTHER sense sharing that exact spelling ("ki" is also the separable
-    // verb-prefix "out", as in "kipróbál" split apart: "nem próbáltam
-    // ki") — so the exercise could ask what "ki" means in a sentence
-    // where it isn't the pronoun at all, and mark "who" as correct
-    // regardless (found via bug report: 2026-09-13).
+    // {lemma, translation, pos} shape Decks already hands around.
+    // Words without corpus sentences gracefully fall back to direct recall.
     function _buildPoolFromWords(words) {
-        return words
-            .filter(w => CONTENT_POS.has(w.pos))
-            .map(w => _buildExerciseFor({ lemma: w.lemma, en: w.translation, pos: w.pos }))
+        return (words || [])
+            .map(w => {
+                const lemma = typeof w === 'string' ? w : (w.lemma || w.word);
+                if (!lemma) return null;
+                let en = (w && (w.translation || w.en)) || (_words && _words[lemma] && _words[lemma].en);
+                let pos = (w && w.pos) || (_words && _words[lemma] && _words[lemma].pos);
+                if (!en && typeof Lexicon !== 'undefined' && Lexicon.define) {
+                    const def = Lexicon.define(lemma);
+                    if (def) {
+                        en = def.en || def.translation;
+                        if (!pos) pos = def.type || def.pos;
+                    }
+                }
+                return { lemma, en: en || lemma, pos: pos || 'noun' };
+            })
+            .filter(Boolean)
+            .map(_buildExerciseFor)
             .filter(Boolean);
     }
 
@@ -818,5 +881,16 @@ const VocabularyDriller = (function () {
         _phase = PHASE.SETTINGS;
     }
 
-    return { render, stop };
+    return {
+        render, stop,
+        // Expose for unit testing and headless verification
+        _buildPoolFromWords, _buildExerciseFor, _buildDirectDefinition, _buildReverseChoice, _buildReverseRecall
+    };
 })();
+
+if (typeof window !== 'undefined') {
+    window.VocabularyDriller = VocabularyDriller;
+}
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = VocabularyDriller;
+}

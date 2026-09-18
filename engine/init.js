@@ -20,6 +20,8 @@ function teardownTab(tabId) {
         Reader.closeStory();
     } else if (tabId === 'study-plan-screen' && typeof StudyPlanRunner !== 'undefined') {
         StudyPlanRunner.teardown();
+    } else if (tabId === 'leveltest' && typeof LevelTest !== 'undefined' && typeof LevelTest.stop === 'function') {
+        LevelTest.stop();
     }
 }
 
@@ -184,6 +186,11 @@ function _attachNavEvents() {
 // --------------------------------------------
 
 async function initialiseApp() {
+    // Safety timer: guarantee boot screen dismissal within 6s even under network/runtime failure
+    let _bootTimer = setTimeout(() => {
+        _hideBootScreen();
+    }, 6000);
+
     // Deep-link or course switch via query parameters e.g. ?minigame=hu-suffix or ?lang=hu
     const searchParams = new URLSearchParams(location.search);
     const langParam = searchParams.get('lang');
@@ -217,7 +224,12 @@ async function initialiseApp() {
     if (typeof PageHeader !== 'undefined') PageHeader.show('home');
 
     // Falls back to the default course when the chosen one has no content.
-    window._curriculumData = await loadCurriculumData();
+    try {
+        window._curriculumData = await loadCurriculumData();
+    } catch (err) {
+        console.error('Failed to load curriculum data:', err);
+        window._curriculumData = { units: [] };
+    }
 
     // Nav
     _drawNavIcons();
@@ -285,7 +297,13 @@ function _hideBootScreen() {
     const boot = document.getElementById('boot-screen');
     if (!boot) return;
     boot.classList.add('is-hidden');
-    boot.addEventListener('transitionend', () => boot.remove(), { once: true });
+    boot.addEventListener('transitionend', () => {
+        if (boot.parentNode) boot.remove();
+    }, { once: true });
+    // Safety fallback in case transitionend event is missed
+    setTimeout(() => {
+        if (boot.parentNode) boot.remove();
+    }, 600);
 }
 
 function _initServiceWorker() {

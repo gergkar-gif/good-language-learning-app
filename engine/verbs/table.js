@@ -88,6 +88,7 @@ const VerbsTable = (function () {
             +   '<div class="vtable-tense">' + _escapeHtml(tenseLabel) + '</div>'
             + '</div>'
             + '<div class="vtable-body">' + rows + '</div>'
+            + (typeof UI !== 'undefined' && UI.diacriticsBarHtml ? UI.diacriticsBarHtml('.vtable-input') : '')
             + '<div class="vtable-actions">'
             +   '<button class="vbtn vbtn-primary" data-action="check">Check</button>'
             +   '<button class="vbtn vbtn-secondary" data-action="next" disabled>Next Verb</button>'

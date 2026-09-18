@@ -214,6 +214,7 @@ const VerbsSpeed = (function () {
             +     ' aria-label="Conjugation input">'
             +   '<button class="vbtn vbtn-primary" data-action="submit">Submit</button>'
             + '</div>'
+            + (typeof UI !== 'undefined' && UI.diacriticsBarHtml ? UI.diacriticsBarHtml('#vspeed-answer') : '')
             + '<div class="vspeed-feedback" aria-live="polite"></div>';
 
         // Focus the input

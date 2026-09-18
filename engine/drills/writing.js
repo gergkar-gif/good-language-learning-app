@@ -429,7 +429,8 @@ const WritingDriller = (function () {
             submitBtn.addEventListener('click', () => {
                 const text = textarea.value.trim();
                 if (!text) {
-                    alert('Please write something before submitting.');
+                    if (typeof UI !== 'undefined' && UI.toast) UI.toast('Please write something before submitting.', 'warning');
+                    else alert('Please write something before submitting.');
                     return;
                 }
                 _submitForGrading(text);
@@ -495,7 +496,8 @@ const WritingDriller = (function () {
             _renderActiveTab();
         } catch (error) {
             console.error('Assessment failed:', error);
-            alert('Could not complete evaluation: ' + error.message);
+            if (typeof UI !== 'undefined' && UI.toast) UI.toast('Could not complete evaluation: ' + error.message, 'error');
+            else alert('Could not complete evaluation: ' + error.message);
             _phase = PHASE.WRITING;
             _renderActiveTab();
         }
