@@ -9,6 +9,13 @@ needs re-reading before starting new work; it's reference only.
 
 ## Completed queue items
 
+36. ~~**Exercise-type variety: audit calibrated & scope narrowed to 45 A2 lessons**~~ — **Done 2026-09-18.**
+    Resolved the exercise variety gap and listening parity across all 45 lessons in the 9 named A2 units (`imperfectobasico`, `imperfectocontraste`, `imperativoafirmativo`, `imperativonegativo`, `pronombrescliticos`, `condicionalsimple`, `subjuntivobasico`, `perifrasisverbales`, `educacionyestudios`):
+    - **Dialogue Enrichment**: Replaced generic `fill-blank` exercises with full `dialogue-complete` exercises (90 exercises) featuring natural speaker turns and plausible Latin American Spanish distractors.
+    - **Writing Enrichment**: Replaced generic `fill-blank` exercises with `structured-writing` exercises (45 exercises) providing bilingual prompt-and-model-answer templates.
+    - **Listening Parity**: Authored and added dedicated `Listening` blocks (`listening-choice` + `dictation`, 90 exercises) across all 45 lessons and wired them into lesson definitions, achieving full structural parity with the 100 numbered A2 lessons.
+    - **Variety & Word Coverage Pass**: Every lesson now spans 6 distinct exercise types (passing `MIN_LESSON_TYPES = 5`), exercises incorporate lesson vocabulary to clear `every new word appears in an exercise`, all 3,308 files pass schema validation (`validate-content.py es`), and `build-manifest.py` cleanly generates.
+
 38. ~~**A2 lessons systemically show "2 goals vs 1 checklist item"**~~ — **Done 2026-09-18.**
     Investigated the 123/174 mismatch pattern across A2 lessons. Scoping confirmed that `guides/a2-lesson-guide.md` does not prescribe goal/checklist structure; rather, an early generation artifact (commit `813cf6a8`) copied a single `"goal"` into the checklist while leaving a generic boilerplate Goal 2 in `goal.items` (along with trailing `..` typos in 99 lessons). Resolved via Option 1:
     - **100 Numbered Teaching Lessons (`a2-01-01` to `a2-20-05`)**: Trimmed generic secondary boilerplate Goal 2 (*"Use the ... vocabulary from this lesson"* or repeated unit grammar lines), retaining Goal 1 as the single, focused lesson goal. Cleaned checklist items to strictly match Goal 1 and removed trailing double dots (`..` -> `.`).

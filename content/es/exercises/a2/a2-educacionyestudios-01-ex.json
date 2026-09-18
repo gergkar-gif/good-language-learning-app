@@ -107,31 +107,118 @@
     {
       "id": "a2.educacionyestudios.01.ex07",
       "category": "dialogue",
-      "type": "fill-blank",
-      "sentence": "—¿Qué estudias? —Estudio filología; me apasiona la _____ (literatura).",
-      "answer": "literatura",
+      "type": "dialogue-complete",
+      "prompt": [
+        {
+          "speaker": "Meg",
+          "text": "¿Cuál es tu asignatura favorita este año?"
+        },
+        {
+          "speaker": "Carlos",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Me apasiona la historia y la literatura, aunque son materias difíciles.",
+        "Me apasiona la historia y la literatura, aunque son materias fácil.",
+        "Me apasionó la historia y la literatura ayer en clase."
+      ],
+      "correct": 0,
       "teaches": [
-        "aptitud-academica"
+        "asignaturas-estudio",
+        "historia",
+        "literatura",
+        "materia",
+        "dificil"
       ]
     },
     {
       "id": "a2.educacionyestudios.01.ex08",
       "category": "dialogue",
-      "type": "fill-blank",
-      "sentence": "—¿Se te dan bien los números? —No, la verdad es que me _____ (costar).",
-      "answer": "cuestan",
+      "type": "dialogue-complete",
+      "prompt": [
+        {
+          "speaker": "Daniela",
+          "text": "¿Qué opinas de la clase de ciencias y matemáticas?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "La materia de ciencias es muy interesante, pero matemáticas no es fácil.",
+        "La materia de ciencias es muy fácil, pero matemáticas son fácil.",
+        "La materia de ciencias fue interesante el año que viene."
+      ],
+      "correct": 0,
       "teaches": [
-        "aptitud-academica"
+        "asignaturas-estudio",
+        "ciencias",
+        "matematicas",
+        "interesante",
+        "facil",
+        "materia"
       ]
     },
     {
       "id": "a2.educacionyestudios.01.ex09",
       "category": "writing",
-      "type": "fill-blank",
-      "sentence": "En la universidad, quiero especializarme en relaciones _____ (internacionales).",
-      "answer": "internacionales",
+      "type": "structured-writing",
+      "template": [
+        {
+          "prompt": "Say what subjects you study: I study language and history because they are interesting.",
+          "answer": "Estudio idiomas e historia porque son asignaturas interesantes."
+        },
+        {
+          "prompt": "Say that mathematics is difficult but science is easy for you.",
+          "answer": "Para mí las matemáticas son difíciles, pero la materia de ciencias es fácil."
+        }
+      ],
       "teaches": [
-        "aptitud-academica"
+        "asignaturas-estudio",
+        "idioma",
+        "historia",
+        "asignatura",
+        "interesante",
+        "matematicas",
+        "dificil",
+        "ciencias",
+        "materia",
+        "facil"
+      ]
+    },
+    {
+      "id": "a2.educacionyestudios.01.ex10",
+      "category": "listening",
+      "type": "listening-choice",
+      "sentence": "Esa materia de ciencias es interesante pero bastante difícil.",
+      "options": [
+        "That science subject is interesting but quite difficult.",
+        "The history class is easy and very fun.",
+        "He loves literature and studies languages at home.",
+        "We have mathematics homework for tomorrow."
+      ],
+      "correct": 0,
+      "teaches": [
+        "asignaturas-estudio",
+        "materia",
+        "ciencias",
+        "interesante",
+        "dificil"
+      ]
+    },
+    {
+      "id": "a2.educacionyestudios.01.ex11",
+      "category": "listening",
+      "type": "dictation",
+      "sentence": "Aprender un idioma es una asignatura interesante y fácil.",
+      "teaches": [
+        "asignaturas-estudio",
+        "idioma",
+        "asignatura",
+        "interesante",
+        "facil"
       ]
     }
   ]

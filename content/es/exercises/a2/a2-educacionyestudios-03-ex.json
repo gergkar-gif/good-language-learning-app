@@ -107,31 +107,118 @@
     {
       "id": "a2.educacionyestudios.03.ex07",
       "category": "dialogue",
-      "type": "fill-blank",
-      "sentence": "—¿Cómo te fue en el examen? —¡Genial, he _____ (aprobar) con un ocho!",
-      "answer": "aprobado",
+      "type": "dialogue-complete",
+      "prompt": [
+        {
+          "speaker": "Meg",
+          "text": "¿Cómo te fue en el examen parcial de historia?"
+        },
+        {
+          "speaker": "Carlos",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "¡Excelente! Logré aprobar con una nota sobresaliente.",
+        "¡Excelente! Logro aprobar con una nota sobresaliente.",
+        "¡Excelente! Aprobé pero voy a suspender el examen."
+      ],
+      "correct": 0,
       "teaches": [
-        "examenes-calificaciones"
+        "evaluaciones-calificaciones",
+        "examen",
+        "parcial",
+        "aprobar",
+        "nota",
+        "sobresaliente"
       ]
     },
     {
       "id": "a2.educacionyestudios.03.ex08",
       "category": "dialogue",
-      "type": "fill-blank",
-      "sentence": "—¿Estás nervioso por la prueba? —Sí, tengo miedo de _____ (suspender).",
-      "answer": "suspender",
+      "type": "dialogue-complete",
+      "prompt": [
+        {
+          "speaker": "Daniela",
+          "text": "¿Estás nervioso por el examen final de mañana?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Un poco nervioso; si llego a suspender o reprobar, tendré que repetir el curso.",
+        "Un poco nervioso; si llego a aprobar, tendré que repetir el curso.",
+        "Nada nervioso; el examen final fue cancelado ayer."
+      ],
+      "correct": 0,
       "teaches": [
-        "examenes-calificaciones"
+        "evaluaciones-calificaciones",
+        "nervioso",
+        "final",
+        "suspender",
+        "reprobar",
+        "repetir"
       ]
     },
     {
       "id": "a2.educacionyestudios.03.ex09",
       "category": "writing",
-      "type": "fill-blank",
-      "sentence": "Para aprobar, es necesario repasar los _____ (apuntes) todos los días.",
-      "answer": "apuntes",
+      "type": "structured-writing",
+      "template": [
+        {
+          "prompt": "State your evaluation result: I studied hard and got an outstanding grade on the final exam.",
+          "answer": "Estudié mucho y saqué una nota sobresaliente en el examen final."
+        },
+        {
+          "prompt": "State what happens if someone fails: If you fail the exam, you have to repeat the test.",
+          "answer": "Si un estudiante llega a suspender, debe repetir la evaluación."
+        }
+      ],
       "teaches": [
-        "examenes-calificaciones"
+        "evaluaciones-calificaciones",
+        "nota",
+        "sobresaliente",
+        "examen",
+        "final",
+        "suspender",
+        "repetir"
+      ]
+    },
+    {
+      "id": "a2.educacionyestudios.03.ex10",
+      "category": "listening",
+      "type": "listening-choice",
+      "sentence": "Estaba nervioso, pero logré aprobar el examen parcial con buena nota.",
+      "options": [
+        "I was nervous, but I managed to pass the midterm exam with a good grade.",
+        "I failed the final exam because I was too nervous.",
+        "He received an outstanding grade on his science project.",
+        "We have to repeat the midterm exam next week."
+      ],
+      "correct": 0,
+      "teaches": [
+        "evaluaciones-calificaciones",
+        "nervioso",
+        "aprobar",
+        "examen",
+        "parcial",
+        "nota"
+      ]
+    },
+    {
+      "id": "a2.educacionyestudios.03.ex11",
+      "category": "listening",
+      "type": "dictation",
+      "sentence": "Logró aprobar el examen final con una nota sobresaliente.",
+      "teaches": [
+        "evaluaciones-calificaciones",
+        "aprobar",
+        "examen",
+        "final",
+        "nota",
+        "sobresaliente"
       ]
     }
   ]

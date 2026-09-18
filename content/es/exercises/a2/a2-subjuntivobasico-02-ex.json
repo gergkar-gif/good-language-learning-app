@@ -107,31 +107,111 @@
     {
       "id": "a2.subjuntivobasico.02.ex07",
       "category": "dialogue",
-      "type": "fill-blank",
-      "sentence": "—¿Vienes a la tienda? —No, pero quiero que me _____ (comprar) pan.",
-      "answer": "compres",
+      "type": "dialogue-complete",
+      "prompt": [
+        {
+          "speaker": "Meg",
+          "text": "¿A qué hora comienza la reunión con los clientes?"
+        },
+        {
+          "speaker": "Carlos",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "A las diez; te pido que vengas temprano para preparar el informe.",
+        "A las diez; te pido que vienes temprano para preparar el informe.",
+        "A las diez; te pedí que vinieras temprano para preparar el informe."
+      ],
+      "correct": 0,
       "teaches": [
-        "dos-sujetos-subjuntivo"
+        "subjuntivo-deseo-influencia",
+        "reunion",
+        "pedir",
+        "temprano",
+        "informe"
       ]
     },
     {
       "id": "a2.subjuntivobasico.02.ex08",
       "category": "dialogue",
-      "type": "fill-blank",
-      "sentence": "—¿Qué te dijo tu madre? —Me pidió que _____ (llegar) temprano.",
-      "answer": "llegue",
+      "type": "dialogue-complete",
+      "prompt": [
+        {
+          "speaker": "Daniela",
+          "text": "¿Quieres que vayamos a almorzar por separado?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "No, prefiero que comamos juntos si tienes tiempo libre.",
+        "No, prefiero que comemos juntos si tienes tiempo libre.",
+        "No, preferí que comiéramos juntos si tenías tiempo libre."
+      ],
+      "correct": 0,
       "teaches": [
-        "dos-sujetos-subjuntivo"
+        "subjuntivo-deseo-influencia",
+        "preferir",
+        "juntos",
+        "tiempo"
       ]
     },
     {
       "id": "a2.subjuntivobasico.02.ex09",
       "category": "writing",
-      "type": "fill-blank",
-      "sentence": "El profesor no quiere que los estudiantes _____ (usar) el móvil en clase.",
-      "answer": "usen",
+      "type": "structured-writing",
+      "template": [
+        {
+          "prompt": "Ask a friend for help: I need you to accompany me to the office.",
+          "answer": "Necesito que me acompañes a la oficina esta mañana."
+        },
+        {
+          "prompt": "Ask someone politely for help: I ask that you help me with this task.",
+          "answer": "Te pido que me ayudes a revisar este informe."
+        }
+      ],
       "teaches": [
-        "dos-sujetos-subjuntivo"
+        "subjuntivo-deseo-influencia",
+        "necesitar",
+        "acompanar",
+        "pedir",
+        "ayudar",
+        "informe"
+      ]
+    },
+    {
+      "id": "a2.subjuntivobasico.02.ex10",
+      "category": "listening",
+      "type": "listening-choice",
+      "sentence": "Necesito que me acompañes a la reunión temprano.",
+      "options": [
+        "I need you to accompany me to the meeting early.",
+        "He accompanied me to the meeting yesterday morning.",
+        "We prefer to prepare the report together.",
+        "Please arrive on time for the meeting."
+      ],
+      "correct": 0,
+      "teaches": [
+        "subjuntivo-deseo-influencia",
+        "necesitar",
+        "acompanar",
+        "reunion",
+        "temprano"
+      ]
+    },
+    {
+      "id": "a2.subjuntivobasico.02.ex11",
+      "category": "listening",
+      "type": "dictation",
+      "sentence": "Prefiero que trabajemos juntos si tienes tiempo.",
+      "teaches": [
+        "subjuntivo-deseo-influencia",
+        "preferir",
+        "juntos",
+        "tiempo"
       ]
     }
   ]

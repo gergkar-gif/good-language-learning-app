@@ -107,31 +107,107 @@
     {
       "id": "a2.pronombrescliticos.01.ex07",
       "category": "dialogue",
-      "type": "fill-blank",
-      "sentence": "—¿Hablaste con tus padres? —Sí, _____ (a ellos) llamé anoche.",
-      "answer": "les",
+      "type": "dialogue-complete",
+      "prompt": [
+        {
+          "speaker": "Meg",
+          "text": "¿Qué le vas a dar a Carlos por su cumpleaños?"
+        },
+        {
+          "speaker": "Daniela",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Le voy a regalar un libro y le mando un mensaje.",
+        "Lo voy a regalar un libro y lo mando un mensaje.",
+        "La voy a regalar un libro y la mando un mensaje."
+      ],
+      "correct": 0,
       "teaches": [
-        "objeto-indirecto"
+        "objeto-indirecto",
+        "regalar",
+        "mandar",
+        "mensaje",
+        "dar"
       ]
     },
     {
       "id": "a2.pronombrescliticos.01.ex08",
       "category": "dialogue",
-      "type": "fill-blank",
-      "sentence": "—¿Quién te dio esa chaqueta? —Carlos _____ la regaló por mi cumpleaños.",
-      "answer": "me",
+      "type": "dialogue-complete",
+      "prompt": [
+        {
+          "speaker": "Carlos",
+          "text": "¿Pudiste hablar con el profesor sobre la tarea?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Sí, le pedí ayuda y él me explicó la lección con paciencia.",
+        "Sí, lo pedí ayuda y él me explicó la lección con paciencia.",
+        "Sí, la pedí ayuda y él me explicó la lección con paciencia."
+      ],
+      "correct": 0,
       "teaches": [
-        "objeto-indirecto"
+        "objeto-indirecto",
+        "pedir",
+        "explicar"
       ]
     },
     {
       "id": "a2.pronombrescliticos.01.ex09",
       "category": "writing",
-      "type": "fill-blank",
-      "sentence": "Siempre _____ (a él) pido consejo antes de tomar decisiones.",
-      "answer": "le",
+      "type": "structured-writing",
+      "template": [
+        {
+          "prompt": "Say that you lend money to your brother when he needs it.",
+          "answer": "Yo le presto dinero a mi hermano cuando lo necesita."
+        },
+        {
+          "prompt": "Say that they sent a gift and said thank you.",
+          "answer": "Ellos le enviaron un regalo y le dijeron muchas gracias."
+        }
+      ],
       "teaches": [
-        "objeto-indirecto"
+        "objeto-indirecto",
+        "prestar",
+        "enviar",
+        "regalo",
+        "decir"
+      ]
+    },
+    {
+      "id": "a2.pronombrescliticos.01.ex10",
+      "category": "listening",
+      "type": "listening-choice",
+      "sentence": "Yo le envié un mensaje a María con el regalo.",
+      "options": [
+        "I sent a message to María with the gift.",
+        "María sent me a message about the gift.",
+        "I gave María a book yesterday afternoon.",
+        "He wrote a message to his brother."
+      ],
+      "correct": 0,
+      "teaches": [
+        "objeto-indirecto",
+        "enviar",
+        "mensaje",
+        "regalo"
+      ]
+    },
+    {
+      "id": "a2.pronombrescliticos.01.ex11",
+      "category": "listening",
+      "type": "dictation",
+      "sentence": "El profesor nos explicó la lección y nos dio tiempo.",
+      "teaches": [
+        "objeto-indirecto",
+        "explicar",
+        "dar"
       ]
     }
   ]

@@ -109,31 +109,110 @@
     {
       "id": "a2.perifrasisverbales.01.ex07",
       "category": "dialogue",
-      "type": "fill-blank",
-      "sentence": "—¿Viste a Carlos? —Sí, _____ (volver) a encontrármelo en el mercado.",
-      "answer": "volví",
+      "type": "dialogue-complete",
+      "prompt": [
+        {
+          "speaker": "Meg",
+          "text": "¿Lograste cambiar tu rutina diaria este año?"
+        },
+        {
+          "speaker": "Carlos",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Sí, dejé de fumar y empecé a hacer ejercicio por las mañanas.",
+        "Sí, dejo de fumar y empiezo a hacer ejercicio por las mañanas.",
+        "Sí, dejaría de fumar y empezaría a hacer ejercicio por las mañanas."
+      ],
+      "correct": 0,
       "teaches": [
-        "perifrasis-infinitivo"
+        "perifrasis-infinitivo",
+        "rutina",
+        "dejar",
+        "empezar"
       ]
     },
     {
       "id": "a2.perifrasisverbales.01.ex08",
       "category": "dialogue",
-      "type": "fill-blank",
-      "sentence": "—¿Cuándo sale el autobús? —_____ (empezar) a embarcar en cinco minutos.",
-      "answer": "Empieza",
+      "type": "dialogue-complete",
+      "prompt": [
+        {
+          "speaker": "Daniela",
+          "text": "¿Cuándo vas a comenzar tus clases de guitarra otra vez?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Voy a volver a practicar la próxima semana; es una buena costumbre.",
+        "Voy a vuelvo a practicar la próxima semana; es una buena costumbre.",
+        "Volví a practicar la próxima semana; es una buena costumbre."
+      ],
+      "correct": 0,
       "teaches": [
-        "perifrasis-infinitivo"
+        "perifrasis-infinitivo",
+        "comenzar",
+        "volver",
+        "costumbre"
       ]
     },
     {
       "id": "a2.perifrasisverbales.01.ex09",
       "category": "writing",
-      "type": "fill-blank",
-      "sentence": "Para mejorar tu salud, _____ (dejar) de beber refrescos azucarados.",
-      "answer": "deja",
+      "type": "structured-writing",
+      "template": [
+        {
+          "prompt": "Say that you finished studying and started a new healthy habit.",
+          "answer": "Terminé de estudiar y empecé un hábito muy saludable."
+        },
+        {
+          "prompt": "Say that in your attempt to change, you made a big change in your routine.",
+          "answer": "En mi intento de mejorar, logré un gran cambio en mi rutina."
+        }
+      ],
       "teaches": [
-        "perifrasis-infinitivo"
+        "perifrasis-infinitivo",
+        "terminar",
+        "habito",
+        "intento",
+        "cambio",
+        "rutina"
+      ]
+    },
+    {
+      "id": "a2.perifrasisverbales.01.ex10",
+      "category": "listening",
+      "type": "listening-choice",
+      "sentence": "Dejé de comer azúcar y empecé a cuidar mi salud.",
+      "options": [
+        "I stopped eating sugar and started taking care of my health.",
+        "I continued eating sugar and ignored my health.",
+        "He wants to stop eating sugar next month.",
+        "We started buying sugar at the market."
+      ],
+      "correct": 0,
+      "teaches": [
+        "perifrasis-infinitivo",
+        "dejar",
+        "empezar"
+      ]
+    },
+    {
+      "id": "a2.perifrasisverbales.01.ex11",
+      "category": "listening",
+      "type": "dictation",
+      "sentence": "En mi intento de cambio, volví a comenzar una nueva rutina.",
+      "teaches": [
+        "perifrasis-infinitivo",
+        "intento",
+        "cambio",
+        "volver",
+        "comenzar",
+        "rutina"
       ]
     }
   ]

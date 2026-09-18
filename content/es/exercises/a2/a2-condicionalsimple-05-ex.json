@@ -133,31 +133,118 @@
     {
       "id": "a2.condicionalsimple.05.ex09",
       "category": "dialogue",
-      "type": "fill-blank",
-      "sentence": "—¿Irías solo de viaje? —No, _____ (preferir) viajar con amigos.",
-      "answer": "preferiría",
+      "type": "dialogue-complete",
+      "prompt": [
+        {
+          "speaker": "Meg",
+          "text": "¿Cuál sería tu viaje ideal por América Latina?"
+        },
+        {
+          "speaker": "Carlos",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Recorrería la montaña y la playa, disfrutando de la naturaleza y la cultura.",
+        "Recorro la montaña y la playa, disfrutando de la naturaleza y la cultura.",
+        "Recorrí la montaña y la playa, disfrutando de la naturaleza y la cultura."
+      ],
+      "correct": 0,
       "teaches": [
-        "condicional-planes"
+        "planes-ideales-condicional",
+        "recorrer",
+        "montana",
+        "playa",
+        "naturaleza",
+        "cultura"
       ]
     },
     {
       "id": "a2.condicionalsimple.05.ex10",
       "category": "dialogue",
-      "type": "fill-blank",
-      "sentence": "—¿Te gustaría acampar? —Sí, me _____ (parecer) una aventura genial.",
-      "answer": "parecería",
+      "type": "dialogue-complete",
+      "prompt": [
+        {
+          "speaker": "Daniela",
+          "text": "¿Qué te pareció la idea de hacer una expedición a la selva?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Sería una aventura maravillosa con paisajes inolvidables.",
+        "Es una aventura maravillosa con paisajes inolvidables.",
+        "Fue una aventura maravillosa con paisajes inolvidables."
+      ],
+      "correct": 0,
       "teaches": [
-        "condicional-planes"
+        "planes-ideales-condicional",
+        "aventura",
+        "maravilloso",
+        "paisaje",
+        "inolvidable"
       ]
     },
     {
       "id": "a2.condicionalsimple.05.ex11",
       "category": "writing",
-      "type": "fill-blank",
-      "sentence": "En las vacaciones de invierno, yo _____ (visitar) las montañas nevadas.",
-      "answer": "visitaría",
+      "type": "structured-writing",
+      "template": [
+        {
+          "prompt": "Describe your ideal travel experience: It would be an unforgettable experience.",
+          "answer": "Sería una experiencia inolvidable conocer su cultura y naturaleza."
+        },
+        {
+          "prompt": "Describe the landscape you would visit: I would explore wonderful mountain landscapes.",
+          "answer": "Recorrería paisajes maravillosos en la montaña y la playa."
+        }
+      ],
       "teaches": [
-        "condicional-planes"
+        "planes-ideales-condicional",
+        "experiencia",
+        "inolvidable",
+        "cultura",
+        "naturaleza",
+        "recorrer",
+        "paisaje",
+        "maravilloso",
+        "montana",
+        "playa"
+      ]
+    },
+    {
+      "id": "a2.condicionalsimple.05.ex12",
+      "category": "listening",
+      "type": "listening-choice",
+      "sentence": "Sería una aventura maravillosa recorrer estos paisajes naturales.",
+      "options": [
+        "It would be a wonderful adventure to explore these natural landscapes.",
+        "We had a wonderful adventure in the mountains last year.",
+        "He loves nature and prefers to visit quiet beaches.",
+        "I want to explore the city and learn about its culture."
+      ],
+      "correct": 0,
+      "teaches": [
+        "planes-ideales-condicional",
+        "aventura",
+        "maravilloso",
+        "recorrer",
+        "paisaje"
+      ]
+    },
+    {
+      "id": "a2.condicionalsimple.05.ex13",
+      "category": "listening",
+      "type": "dictation",
+      "sentence": "Disfrutar de la playa y la cultura sería una experiencia inolvidable.",
+      "teaches": [
+        "planes-ideales-condicional",
+        "playa",
+        "cultura",
+        "experiencia",
+        "inolvidable"
       ]
     }
   ]

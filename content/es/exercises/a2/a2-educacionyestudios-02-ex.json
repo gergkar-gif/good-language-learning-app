@@ -109,31 +109,111 @@
     {
       "id": "a2.educacionyestudios.02.ex07",
       "category": "dialogue",
-      "type": "fill-blank",
-      "sentence": "—¿Dónde está el profesor? —Está en su despacho de la _____ (facultad).",
-      "answer": "facultad",
+      "type": "dialogue-complete",
+      "prompt": [
+        {
+          "speaker": "Meg",
+          "text": "¿Dónde podemos estudiar con tranquilidad para el examen?"
+        },
+        {
+          "speaker": "Carlos",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Vamos a la biblioteca central; en el aula hay mucho ruido hoy.",
+        "Vamos al aula central; en la biblioteca hay mucho ruido hoy.",
+        "Fuimos a la biblioteca ayer por la tarde con el profesor."
+      ],
+      "correct": 0,
       "teaches": [
-        "vida-universitaria"
+        "vida-universitaria",
+        "biblioteca",
+        "aula"
       ]
     },
     {
       "id": "a2.educacionyestudios.02.ex08",
       "category": "dialogue",
-      "type": "fill-blank",
-      "sentence": "—¿Qué carrera estudias? —Estudio la _____ (carrera) de Derecho.",
-      "answer": "carrera",
+      "type": "dialogue-complete",
+      "prompt": [
+        {
+          "speaker": "Daniela",
+          "text": "¿Ya completaste el pago de la matrícula en la facultad?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Sí, y además solicité una beca para este nuevo semestre de la carrera.",
+        "Sí, y además solicitó una beca para este nuevo semestre de la carrera.",
+        "No, no solicito una beca para el semestre de la carrera."
+      ],
+      "correct": 0,
       "teaches": [
-        "vida-universitaria"
+        "vida-universitaria",
+        "matricula",
+        "facultad",
+        "beca",
+        "semestre",
+        "carrera"
       ]
     },
     {
       "id": "a2.educacionyestudios.02.ex09",
       "category": "writing",
-      "type": "fill-blank",
-      "sentence": "Los estudiantes revisaron sus _____ (calificaciones) en el portal digital.",
-      "answer": "calificaciones",
+      "type": "structured-writing",
+      "template": [
+        {
+          "prompt": "Describe your academic routine: The professor gave us the schedule in the classroom.",
+          "answer": "El profesor nos entregó el horario en el aula esta mañana."
+        },
+        {
+          "prompt": "Mention grades: I hope to get a good grade this semester in my degree.",
+          "answer": "Espero obtener una buena calificación este semestre en mi carrera."
+        }
+      ],
       "teaches": [
-        "vida-universitaria"
+        "vida-universitaria",
+        "profesor",
+        "horario",
+        "aula",
+        "calificacion",
+        "semestre",
+        "carrera"
+      ]
+    },
+    {
+      "id": "a2.educacionyestudios.02.ex10",
+      "category": "listening",
+      "type": "listening-choice",
+      "sentence": "Estudiamos en la biblioteca según el horario de la facultad.",
+      "options": [
+        "We study in the library according to the faculty schedule.",
+        "The professor arrived at the classroom on time.",
+        "He applied for a scholarship for the second semester.",
+        "My grades were posted on the university website."
+      ],
+      "correct": 0,
+      "teaches": [
+        "vida-universitaria",
+        "biblioteca",
+        "horario",
+        "facultad"
+      ]
+    },
+    {
+      "id": "a2.educacionyestudios.02.ex11",
+      "category": "listening",
+      "type": "dictation",
+      "sentence": "Recibí una beca para pagar la matrícula de mi carrera.",
+      "teaches": [
+        "vida-universitaria",
+        "beca",
+        "matricula",
+        "carrera"
       ]
     }
   ]

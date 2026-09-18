@@ -109,31 +109,108 @@
     {
       "id": "a2.perifrasisverbales.03.ex07",
       "category": "dialogue",
-      "type": "fill-blank",
-      "sentence": "—¿Te gustó la obra? —Sí, pero era larga; sin _____, los actores estuvieron increíbles.",
-      "answer": "embargo",
+      "type": "dialogue-complete",
+      "prompt": [
+        {
+          "speaker": "Meg",
+          "text": "¿Estás de acuerdo con el nuevo plan de la empresa?"
+        },
+        {
+          "speaker": "Carlos",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "El argumento es interesante; sin embargo, en mi opinión hay riesgos.",
+        "El argumento es interesante; además, en mi opinión hay riesgos.",
+        "El argumento es interesante; por lo tanto, en mi opinión no hay riesgos."
+      ],
+      "correct": 0,
       "teaches": [
-        "conectores-discurso"
+        "conectores-discurso",
+        "argumento",
+        "sin-embargo",
+        "opinion"
       ]
     },
     {
       "id": "a2.perifrasisverbales.03.ex08",
       "category": "dialogue",
-      "type": "fill-blank",
-      "sentence": "—¿Por qué no compraste el coche? —Era bonito, pero gastaba mucha gasolina; _____ eso no lo compré.",
-      "answer": "por",
+      "type": "dialogue-complete",
+      "prompt": [
+        {
+          "speaker": "Daniela",
+          "text": "¿Por qué decidieron cancelar la reunión de hoy?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Había varios motivos; además, como consecuencia faltaban muchos participantes.",
+        "Había varios motivos; aunque, como consecuencia faltaban muchos participantes.",
+        "Había varios motivos; en cambio, como consecuencia faltaban muchos participantes."
+      ],
+      "correct": 0,
       "teaches": [
-        "conectores-discurso"
+        "conectores-discurso",
+        "motivo",
+        "ademas",
+        "consecuencia"
       ]
     },
     {
       "id": "a2.perifrasisverbales.03.ex09",
       "category": "writing",
-      "type": "fill-blank",
-      "sentence": "Este curso es muy completo y, _____, incluye materiales de audio.",
-      "answer": "además",
+      "type": "structured-writing",
+      "template": [
+        {
+          "prompt": "Contrast two preferences: Carlos likes the beach; in contrast, Daniela prefers the mountains.",
+          "answer": "A Carlos le gusta la playa; en cambio, Daniela prefiere la montaña."
+        },
+        {
+          "prompt": "Connect cause and consequence: We studied a lot; therefore, we passed the test.",
+          "answer": "Estudiamos mucho; por lo tanto, aprobamos el examen sin problemas."
+        }
+      ],
       "teaches": [
-        "conectores-discurso"
+        "conectores-discurso",
+        "en-cambio",
+        "por-lo-tanto",
+        "por-eso",
+        "aunque"
+      ]
+    },
+    {
+      "id": "a2.perifrasisverbales.03.ex10",
+      "category": "listening",
+      "type": "listening-choice",
+      "sentence": "Tenía buenos motivos; sin embargo, su opinión causó sorpresa.",
+      "options": [
+        "He had good reasons; however, his opinion caused surprise.",
+        "He had no arguments and his opinion was rejected.",
+        "Therefore, his opinion changed after the meeting.",
+        "Besides, he agreed with all our arguments."
+      ],
+      "correct": 0,
+      "teaches": [
+        "conectores-discurso",
+        "motivo",
+        "sin-embargo",
+        "opinion"
+      ]
+    },
+    {
+      "id": "a2.perifrasisverbales.03.ex11",
+      "category": "listening",
+      "type": "dictation",
+      "sentence": "El argumento era claro; en cambio, la consecuencia fue inesperada.",
+      "teaches": [
+        "conectores-discurso",
+        "argumento",
+        "en-cambio",
+        "consecuencia"
       ]
     }
   ]

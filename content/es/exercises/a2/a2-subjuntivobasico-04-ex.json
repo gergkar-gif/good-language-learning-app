@@ -107,31 +107,119 @@
     {
       "id": "a2.subjuntivobasico.04.ex07",
       "category": "dialogue",
-      "type": "fill-blank",
-      "sentence": "—¿A qué hora nos vemos? —Cuando tú _____ (poder), me escribes.",
-      "answer": "puedas",
+      "type": "dialogue-complete",
+      "prompt": [
+        {
+          "speaker": "Meg",
+          "text": "¿Cuándo me vas a llamar para contarme las novedades?"
+        },
+        {
+          "speaker": "Carlos",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Cuando llegue al aeropuerto, te llamo y te doy la buena noticia.",
+        "Cuando llego al aeropuerto, te llamo y te doy la buena noticia.",
+        "Cuando llegué al aeropuerto, te llamé y te di la buena noticia."
+      ],
+      "correct": 0,
       "teaches": [
-        "cuando-subjuntivo"
+        "cuando-subjuntivo-futuro",
+        "cuando",
+        "llegar",
+        "aeropuerto",
+        "llamar",
+        "noticia"
       ]
     },
     {
       "id": "a2.subjuntivobasico.04.ex08",
       "category": "dialogue",
-      "type": "fill-blank",
-      "sentence": "—¿Cuándo comemos? —Cuando _____ (estar) lista la cena.",
-      "answer": "esté",
+      "type": "dialogue-complete",
+      "prompt": [
+        {
+          "speaker": "Daniela",
+          "text": "¿Nos vemos después de tu reunión?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Sí, cuando termine te aviso por mensaje para coordinar mi regreso.",
+        "Sí, cuando termino te aviso por mensaje para coordinar mi regreso.",
+        "Sí, cuando terminé te avisé por mensaje para coordinar mi regreso."
+      ],
+      "correct": 0,
       "teaches": [
-        "cuando-subjuntivo"
+        "cuando-subjuntivo-futuro",
+        "cuando",
+        "terminar",
+        "avisar",
+        "mensaje",
+        "regreso",
+        "despues"
       ]
     },
     {
       "id": "a2.subjuntivobasico.04.ex09",
       "category": "writing",
-      "type": "fill-blank",
-      "sentence": "Iremos al parque cuando _____ (parar) de llover.",
-      "answer": "pare",
+      "type": "structured-writing",
+      "template": [
+        {
+          "prompt": "Say: When I arrive at the hotel, I will send you a message.",
+          "answer": "Cuando llegue al hotel, te enviaré un mensaje."
+        },
+        {
+          "prompt": "Say: When we finish the project, we will tell you the news.",
+          "answer": "Cuando terminemos el proyecto, te avisaremos con la noticia."
+        }
+      ],
       "teaches": [
-        "cuando-subjuntivo"
+        "cuando-subjuntivo-futuro",
+        "cuando",
+        "llegar",
+        "mensaje",
+        "terminar",
+        "avisar",
+        "noticia"
+      ]
+    },
+    {
+      "id": "a2.subjuntivobasico.04.ex10",
+      "category": "listening",
+      "type": "listening-choice",
+      "sentence": "Cuando llegue al aeropuerto, te enviaré un mensaje con la noticia.",
+      "options": [
+        "When I arrive at the airport, I will send you a message with the news.",
+        "I arrived at the airport and sent a message with the news.",
+        "He called me from the airport after reading the message.",
+        "When we leave the airport, we will buy a newspaper."
+      ],
+      "correct": 0,
+      "teaches": [
+        "cuando-subjuntivo-futuro",
+        "cuando",
+        "llegar",
+        "aeropuerto",
+        "mensaje",
+        "noticia"
+      ]
+    },
+    {
+      "id": "a2.subjuntivobasico.04.ex11",
+      "category": "listening",
+      "type": "dictation",
+      "sentence": "Cuando termine, te voy a avisar después de mi regreso.",
+      "teaches": [
+        "cuando-subjuntivo-futuro",
+        "cuando",
+        "terminar",
+        "avisar",
+        "despues",
+        "regreso"
       ]
     }
   ]

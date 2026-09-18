@@ -133,31 +133,110 @@
     {
       "id": "a2.pronombrescliticos.05.ex09",
       "category": "dialogue",
-      "type": "fill-blank",
-      "sentence": "—¿Cuándo me devuelves la cámara? —Pienso _____ (devolvértela) este fin de semana.",
-      "answer": "devolvértela",
+      "type": "dialogue-complete",
+      "prompt": [
+        {
+          "speaker": "Meg",
+          "text": "¿Puedes devolverle la mochila a Carlos?"
+        },
+        {
+          "speaker": "Daniela",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Sí, quiero devolvérsela hoy y agradecerle su ayuda.",
+        "Sí, quiero devolverle hoy y agradecerle su ayuda.",
+        "Sí, quiero devolvértela hoy y agradecerle su ayuda."
+      ],
+      "correct": 0,
       "teaches": [
-        "pronombres-adjuncion"
+        "pronombres-infinitivo-gerundio",
+        "devolver",
+        "mochila",
+        "agradecer",
+        "ayudar"
       ]
     },
     {
       "id": "a2.pronombrescliticos.05.ex10",
       "category": "dialogue",
-      "type": "fill-blank",
-      "sentence": "—¿Le dijiste la hora a María? —No, voy a _____ (decírsela) por mensaje.",
-      "answer": "decírsela",
+      "type": "dialogue-complete",
+      "prompt": [
+        {
+          "speaker": "Carlos",
+          "text": "¿Necesitas ayuda para organizar los documentos?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Muchas gracias, estoy organizándolos ahora mismo; eres muy amable.",
+        "Muchas gracias, estoy organizándoles ahora mismo; eres muy amable.",
+        "Muchas gracias, estoy organizándolas ahora mismo; eres muy amable."
+      ],
+      "correct": 0,
       "teaches": [
-        "pronombres-adjuncion"
+        "pronombres-infinitivo-gerundio",
+        "necesitar",
+        "organizar",
+        "amable"
       ]
     },
     {
       "id": "a2.pronombrescliticos.05.ex11",
       "category": "writing",
-      "type": "fill-blank",
-      "sentence": "Si tienes una duda sobre el ejercicio, puedo _____ (explicártela) con gusto.",
-      "answer": "explicártela",
+      "type": "structured-writing",
+      "template": [
+        {
+          "prompt": "Say that you are grateful for their help: I want to thank you for the favor.",
+          "answer": "Estoy muy agradecido y quiero agradecerte este gran favor."
+        },
+        {
+          "prompt": "Say that you need to return it soon: I have to return it to you soon.",
+          "answer": "Tengo que devolvértelo muy pronto."
+        }
+      ],
       "teaches": [
-        "pronombres-adjuncion"
+        "pronombres-infinitivo-gerundio",
+        "agradecido",
+        "agradecer",
+        "favor",
+        "devolver",
+        "pronto"
+      ]
+    },
+    {
+      "id": "a2.pronombrescliticos.05.ex12",
+      "category": "listening",
+      "type": "listening-choice",
+      "sentence": "Quiero agradecerte tu amabilidad y devolverte la mochila.",
+      "options": [
+        "I want to thank you for your kindness and return your backpack.",
+        "Carlos returned my backpack yesterday at school.",
+        "Please organize the backpack before leaving.",
+        "He needs help returning the backpack to Carlos."
+      ],
+      "correct": 0,
+      "teaches": [
+        "pronombres-infinitivo-gerundio",
+        "agradecer",
+        "mochila",
+        "devolver"
+      ]
+    },
+    {
+      "id": "a2.pronombrescliticos.05.ex13",
+      "category": "listening",
+      "type": "dictation",
+      "sentence": "Fue un favor muy amable y estoy agradecido.",
+      "teaches": [
+        "pronombres-infinitivo-gerundio",
+        "favor",
+        "amable",
+        "agradecido"
       ]
     }
   ]

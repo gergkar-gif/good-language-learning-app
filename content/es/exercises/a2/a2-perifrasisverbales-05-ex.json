@@ -133,31 +133,116 @@
     {
       "id": "a2.perifrasisverbales.05.ex09",
       "category": "dialogue",
-      "type": "fill-blank",
-      "sentence": "—¿Te gusta vivir aquí? —Sí, ya me _____ (acostumbrar) al clima.",
-      "answer": "acostumbré",
+      "type": "dialogue-complete",
+      "prompt": [
+        {
+          "speaker": "Meg",
+          "text": "¿Cómo fue tu experiencia al comenzar en la nueva empresa?"
+        },
+        {
+          "speaker": "Carlos",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Al principio fue difícil, pero poco a poco logré adaptarme y progresar.",
+        "Al principio fue difícil, pero poco a poco logro adaptarme y progresar.",
+        "Al principio es difícil, pero poco a poco lograré adaptarme y progresar."
+      ],
+      "correct": 0,
       "teaches": [
-        "perifrasis-integracion"
+        "narrativa-compleja-perifrasis",
+        "experiencia",
+        "principio",
+        "poco-a-poco",
+        "adaptarse",
+        "progreso"
       ]
     },
     {
       "id": "a2.perifrasisverbales.05.ex10",
       "category": "dialogue",
-      "type": "fill-blank",
-      "sentence": "—¿Sigues cocinando paella los domingos? —Sí, _____ (seguir) haciéndolo.",
-      "answer": "sigo",
+      "type": "dialogue-complete",
+      "prompt": [
+        {
+          "speaker": "Daniela",
+          "text": "¿Estás contenta con tu decisión profesional?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Sí, fue una gran oportunidad y me acostumbré rápido para alcanzar mi meta.",
+        "Sí, es una gran oportunidad y me acostumbro rápido para alcanzar mi meta.",
+        "Sí, fue una gran oportunidad y me acostumbrará rápido para alcanzar mi meta."
+      ],
+      "correct": 0,
       "teaches": [
-        "perifrasis-integracion"
+        "narrativa-compleja-perifrasis",
+        "decision",
+        "profesional",
+        "oportunidad",
+        "acostumbrarse",
+        "meta"
       ]
     },
     {
       "id": "a2.perifrasisverbales.05.ex11",
       "category": "writing",
-      "type": "fill-blank",
-      "sentence": "Con paciencia y esfuerzo, todos logramos _____ (adaptarnos) a los cambios.",
-      "answer": "adaptarnos",
+      "type": "structured-writing",
+      "template": [
+        {
+          "prompt": "Narrate a work transition: At first it was hard, but little by little I made progress.",
+          "answer": "Al principio fue difícil, pero poco a poco vi un gran progreso."
+        },
+        {
+          "prompt": "Narrate reaching a goal: Thanks to this opportunity, I achieved my professional goal.",
+          "answer": "Gracias a esta oportunidad, alcancé mi meta profesional."
+        }
+      ],
       "teaches": [
-        "perifrasis-integracion"
+        "narrativa-compleja-perifrasis",
+        "principio",
+        "poco-a-poco",
+        "progreso",
+        "oportunidad",
+        "meta",
+        "profesional"
+      ]
+    },
+    {
+      "id": "a2.perifrasisverbales.05.ex12",
+      "category": "listening",
+      "type": "listening-choice",
+      "sentence": "Al principio tuve que adaptarme, pero fue una excelente oportunidad profesional.",
+      "options": [
+        "At first I had to adapt, but it was an excellent professional opportunity.",
+        "I decided to leave the job because it was not a good opportunity.",
+        "He adapted quickly and finished his training yesterday.",
+        "We are looking for professional opportunities in other cities."
+      ],
+      "correct": 0,
+      "teaches": [
+        "narrativa-compleja-perifrasis",
+        "principio",
+        "adaptarse",
+        "oportunidad",
+        "profesional"
+      ]
+    },
+    {
+      "id": "a2.perifrasisverbales.05.ex13",
+      "category": "listening",
+      "type": "dictation",
+      "sentence": "Poco a poco logré adaptarme a esta experiencia y alcancé mi meta.",
+      "teaches": [
+        "narrativa-compleja-perifrasis",
+        "poco-a-poco",
+        "adaptarse",
+        "experiencia",
+        "meta"
       ]
     }
   ]

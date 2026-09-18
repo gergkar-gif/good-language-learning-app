@@ -107,31 +107,108 @@
     {
       "id": "a2.pronombrescliticos.02.ex07",
       "category": "dialogue",
-      "type": "fill-blank",
-      "sentence": "—¿Tienes la dirección? —Sí, _____ tengo anotada en el móvil.",
-      "answer": "la",
+      "type": "dialogue-complete",
+      "prompt": [
+        {
+          "speaker": "Meg",
+          "text": "¿Recibiste el paquete que te envié por correo?"
+        },
+        {
+          "speaker": "Carlos",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Sí, lo recibí ayer y el cartero me lo trajo a casa.",
+        "Sí, le recibí ayer y el cartero me le trajo a casa.",
+        "Sí, la recibí ayer y el cartero me la trajo a casa."
+      ],
+      "correct": 0,
       "teaches": [
-        "contraste-directo-indirecto"
+        "contraste-directo-indirecto",
+        "paquete",
+        "correo",
+        "traer"
       ]
     },
     {
       "id": "a2.pronombrescliticos.02.ex08",
       "category": "dialogue",
-      "type": "fill-blank",
-      "sentence": "—¿Conoces a la hermana de Carlos? —No, no _____ conozco.",
-      "answer": "la",
+      "type": "dialogue-complete",
+      "prompt": [
+        {
+          "speaker": "Daniela",
+          "text": "¿Le diste la buena noticia a tu familia?"
+        },
+        {
+          "speaker": "Carlos",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Sí, les escribí una carta y les conté la noticia.",
+        "Sí, los escribí una carta y los conté la noticia.",
+        "Sí, las escribí una carta y las conté la noticia."
+      ],
+      "correct": 0,
       "teaches": [
-        "contraste-directo-indirecto"
+        "contraste-directo-indirecto",
+        "escribir",
+        "carta",
+        "noticia"
       ]
     },
     {
       "id": "a2.pronombrescliticos.02.ex09",
       "category": "writing",
-      "type": "fill-blank",
-      "sentence": "A Carlos _____ gusta la comida picante.",
-      "answer": "le",
+      "type": "structured-writing",
+      "template": [
+        {
+          "prompt": "Say that you buy the book and show it to your friend.",
+          "answer": "Compro el libro y se lo enseño a mi amigo."
+        },
+        {
+          "prompt": "Say that they sell fruit and take it to the market.",
+          "answer": "Ellos venden fruta y la llevan al mercado."
+        }
+      ],
       "teaches": [
-        "contraste-directo-indirecto"
+        "contraste-directo-indirecto",
+        "comprar",
+        "ensenar",
+        "vender",
+        "llevar"
+      ]
+    },
+    {
+      "id": "a2.pronombrescliticos.02.ex10",
+      "category": "listening",
+      "type": "listening-choice",
+      "sentence": "Carlos compró un paquete y me lo llevó a la oficina.",
+      "options": [
+        "Carlos bought a package and brought it to my office.",
+        "Carlos received a letter at his office.",
+        "I sold the package to Carlos yesterday.",
+        "Carlos wrote an email to his coworker."
+      ],
+      "correct": 0,
+      "teaches": [
+        "contraste-directo-indirecto",
+        "paquete",
+        "llevar",
+        "comprar"
+      ]
+    },
+    {
+      "id": "a2.pronombrescliticos.02.ex11",
+      "category": "listening",
+      "type": "dictation",
+      "sentence": "Te traje esta carta y te di la noticia.",
+      "teaches": [
+        "contraste-directo-indirecto",
+        "traer",
+        "carta",
+        "noticia"
       ]
     }
   ]

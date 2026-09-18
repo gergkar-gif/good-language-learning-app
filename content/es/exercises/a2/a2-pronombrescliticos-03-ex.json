@@ -107,31 +107,111 @@
     {
       "id": "a2.pronombrescliticos.03.ex07",
       "category": "dialogue",
-      "type": "fill-blank",
-      "sentence": "—¿Cuándo me devuelves los libros? —Mañana _____ los devuelvo.",
-      "answer": "te",
+      "type": "dialogue-complete",
+      "prompt": [
+        {
+          "speaker": "Meg",
+          "text": "¿Me puedes hacer un favor y prestarme tu reloj?"
+        },
+        {
+          "speaker": "Carlos",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Claro, te lo presto hoy y me lo devuelves mañana.",
+        "Claro, se lo presto hoy y me lo devuelves mañana.",
+        "Claro, te la presto hoy y me la devuelves mañana."
+      ],
+      "correct": 0,
       "teaches": [
-        "pronombres-dobles-orden"
+        "pronombres-dobles",
+        "favor",
+        "prestar",
+        "reloj",
+        "devolver"
       ]
     },
     {
       "id": "a2.pronombrescliticos.03.ex08",
       "category": "dialogue",
-      "type": "fill-blank",
-      "sentence": "—¿Viste la foto nueva? —Sí, Carlos me _____ enseñó esta mañana.",
-      "answer": "la",
+      "type": "dialogue-complete",
+      "prompt": [
+        {
+          "speaker": "Daniela",
+          "text": "¿Viste la foto de nuestro viaje a México?"
+        },
+        {
+          "speaker": "Carlos",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Sí, Meg me la enseñó ayer y me contó la verdad.",
+        "Sí, Meg me lo enseñó ayer y me contó la verdad.",
+        "Sí, Meg se la enseñó ayer y se contó la verdad."
+      ],
+      "correct": 0,
       "teaches": [
-        "pronombres-dobles-orden"
+        "pronombres-dobles",
+        "foto",
+        "ensenar",
+        "contar",
+        "verdad"
       ]
     },
     {
       "id": "a2.pronombrescliticos.03.ex09",
       "category": "writing",
-      "type": "fill-blank",
-      "sentence": "Mi amigo tenía dos entradas de cine y me _____ dio.",
-      "answer": "las",
+      "type": "structured-writing",
+      "template": [
+        {
+          "prompt": "Say that you promise them the truth: I promise it to you.",
+          "answer": "Te digo la verdad; te lo prometo."
+        },
+        {
+          "prompt": "Say that if you need money, I will lend it to you.",
+          "answer": "Si necesitas dinero, yo te lo presto con gusto."
+        }
+      ],
       "teaches": [
-        "pronombres-dobles-orden"
+        "pronombres-dobles",
+        "prometer",
+        "verdad",
+        "dinero",
+        "prestar"
+      ]
+    },
+    {
+      "id": "a2.pronombrescliticos.03.ex10",
+      "category": "listening",
+      "type": "listening-choice",
+      "sentence": "Carlos me pidió un favor y me prestó dinero.",
+      "options": [
+        "Carlos asked me for a favor and lent me money.",
+        "I gave Carlos money for his birthday.",
+        "Carlos returned my watch this morning.",
+        "We asked Carlos to take a picture."
+      ],
+      "correct": 0,
+      "teaches": [
+        "pronombres-dobles",
+        "favor",
+        "dinero",
+        "prestar"
+      ]
+    },
+    {
+      "id": "a2.pronombrescliticos.03.ex11",
+      "category": "listening",
+      "type": "dictation",
+      "sentence": "Te enseñé la foto y te devolví el reloj.",
+      "teaches": [
+        "pronombres-dobles",
+        "ensenar",
+        "foto",
+        "devolver",
+        "reloj"
       ]
     }
   ]

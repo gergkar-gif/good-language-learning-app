@@ -107,31 +107,110 @@
     {
       "id": "a2.subjuntivobasico.01.ex07",
       "category": "dialogue",
-      "type": "fill-blank",
-      "sentence": "—Tengo examen mañana. —¡Mucha suerte! Espero que _____ (aprobar, tú).",
-      "answer": "apruebes",
+      "type": "dialogue-complete",
+      "prompt": [
+        {
+          "speaker": "Meg",
+          "text": "¡Mañana empiezo mi nuevo trabajo en el hospital!"
+        },
+        {
+          "speaker": "Carlos",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "¡Ojalá tengas mucho éxito y seas muy feliz allí!",
+        "¡Ojalá tienes mucho éxito y eres muy feliz allí!",
+        "¡Ojalá tuviste mucho éxito y fuiste muy feliz allí!"
+      ],
+      "correct": 0,
       "teaches": [
-        "subjuntivo-morfologia"
+        "intro-subjuntivo-deseos",
+        "ojala",
+        "exito",
+        "feliz"
       ]
     },
     {
       "id": "a2.subjuntivobasico.01.ex08",
       "category": "dialogue",
-      "type": "fill-blank",
-      "sentence": "—Me voy a la cama. —Que _____ (descansar, tú) bien.",
-      "answer": "descanses",
+      "type": "dialogue-complete",
+      "prompt": [
+        {
+          "speaker": "Daniela",
+          "text": "Salgo de viaje para México en dos horas."
+        },
+        {
+          "speaker": "Carlos",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "¡Deseo que tengas un buen viaje y que regreses pronto!",
+        "¡Deseo que tienes un buen viaje y que regresas pronto!",
+        "¡Deseo que tuviste un buen viaje y que regresaste pronto!"
+      ],
+      "correct": 0,
       "teaches": [
-        "subjuntivo-morfologia"
+        "intro-subjuntivo-deseos",
+        "desear",
+        "viaje",
+        "pronto"
       ]
     },
     {
       "id": "a2.subjuntivobasico.01.ex09",
       "category": "writing",
-      "type": "fill-blank",
-      "sentence": "Mis padres quieren que yo _____ (estudiar) medicina.",
-      "answer": "estudie",
+      "type": "structured-writing",
+      "template": [
+        {
+          "prompt": "Wish someone luck: I hope that everything goes well and you have good luck.",
+          "answer": "Espero que todo salga bien y que tengas mucha suerte."
+        },
+        {
+          "prompt": "Express a wish for a friend: I want you to be happy in your new home.",
+          "answer": "Quiero que seas muy feliz en tu nueva casa."
+        }
+      ],
       "teaches": [
-        "subjuntivo-morfologia"
+        "intro-subjuntivo-deseos",
+        "esperar",
+        "bien",
+        "suerte",
+        "querer",
+        "feliz"
+      ]
+    },
+    {
+      "id": "a2.subjuntivobasico.01.ex10",
+      "category": "listening",
+      "type": "listening-choice",
+      "sentence": "Ojalá tengas un buen viaje y mucho éxito en tu proyecto.",
+      "options": [
+        "I hope you have a good trip and great success in your project.",
+        "You had a good trip and finished your project successfully.",
+        "He wishes to travel next month for a work project.",
+        "We want to celebrate your great success tonight."
+      ],
+      "correct": 0,
+      "teaches": [
+        "intro-subjuntivo-deseos",
+        "ojala",
+        "viaje",
+        "exito"
+      ]
+    },
+    {
+      "id": "a2.subjuntivobasico.01.ex11",
+      "category": "listening",
+      "type": "dictation",
+      "sentence": "Espero que estés bien y tengas buena suerte pronto.",
+      "teaches": [
+        "intro-subjuntivo-deseos",
+        "esperar",
+        "bien",
+        "suerte",
+        "pronto"
       ]
     }
   ]

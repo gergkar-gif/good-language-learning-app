@@ -133,31 +133,116 @@
     {
       "id": "a2.educacionyestudios.05.ex09",
       "category": "dialogue",
-      "type": "fill-blank",
-      "sentence": "—¿Cuándo te marchas a España? —El semestre de _____ (otoño) empieza en septiembre.",
-      "answer": "otoño",
+      "type": "dialogue-complete",
+      "prompt": [
+        {
+          "speaker": "Meg",
+          "text": "¿Vale la pena hacer un año de intercambio en el extranjero?"
+        },
+        {
+          "speaker": "Carlos",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Totalmente; es una experiencia que te ayuda a aprender el idioma y te abre la mente.",
+        "Totalmente; es una experiencia que te ayuda a aprender el idioma y te cierra la mente.",
+        "No vale la pena hacer un año de intercambio en el extranjero nunca."
+      ],
+      "correct": 0,
       "teaches": [
-        "educacion-intercambio"
+        "estudiar-extranjero-intercambio",
+        "intercambio",
+        "extranjero",
+        "experiencia",
+        "idioma",
+        "abrir",
+        "mente"
       ]
     },
     {
       "id": "a2.educacionyestudios.05.ex10",
       "category": "dialogue",
-      "type": "fill-blank",
-      "sentence": "—¿Dónde vas a vivir? —He reservado plaza en el colegio _____ (mayor).",
-      "answer": "mayor",
+      "type": "dialogue-complete",
+      "prompt": [
+        {
+          "speaker": "Daniela",
+          "text": "¿Cómo fue la convivencia en la residencia estudiantil?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Fue enriquecedora y pude convalidar todos los créditos de mis asignaturas.",
+        "Fue difícil porque no pude convalidar ningún crédito de mis asignaturas.",
+        "Fue cancelada la residencia estudiantil este año."
+      ],
+      "correct": 0,
       "teaches": [
-        "educacion-intercambio"
+        "estudiar-extranjero-intercambio",
+        "convivencia",
+        "residencia",
+        "convalidar",
+        "credito"
       ]
     },
     {
       "id": "a2.educacionyestudios.05.ex11",
       "category": "writing",
-      "type": "fill-blank",
-      "sentence": "Un intercambio universitario es una experiencia que te cambia la _____ (vida).",
-      "answer": "vida",
+      "type": "structured-writing",
+      "template": [
+        {
+          "prompt": "Describe the value of an exchange: Studying abroad is an experience that opens your mind.",
+          "answer": "Estudiar en el extranjero es una experiencia que te abre la mente."
+        },
+        {
+          "prompt": "Describe student housing: Living together in the residence allows you to practice the language.",
+          "answer": "La convivencia en la residencia te permite practicar el idioma cada día."
+        }
+      ],
       "teaches": [
-        "educacion-intercambio"
+        "estudiar-extranjero-intercambio",
+        "extranjero",
+        "experiencia",
+        "abrir",
+        "mente",
+        "convivencia",
+        "residencia",
+        "idioma"
+      ]
+    },
+    {
+      "id": "a2.educacionyestudios.05.ex12",
+      "category": "listening",
+      "type": "listening-choice",
+      "sentence": "Hacer un intercambio en el extranjero te permite abrir la mente.",
+      "options": [
+        "Doing an exchange abroad allows you to open your mind.",
+        "He returned from his exchange program last week.",
+        "We transferred all our university credits easily.",
+        "Living in a student residence can be challenging."
+      ],
+      "correct": 0,
+      "teaches": [
+        "estudiar-extranjero-intercambio",
+        "intercambio",
+        "extranjero",
+        "abrir",
+        "mente"
+      ]
+    },
+    {
+      "id": "a2.educacionyestudios.05.ex13",
+      "category": "listening",
+      "type": "dictation",
+      "sentence": "La convivencia en la residencia me ayudó a practicar el idioma.",
+      "teaches": [
+        "estudiar-extranjero-intercambio",
+        "convivencia",
+        "residencia",
+        "idioma"
       ]
     }
   ]

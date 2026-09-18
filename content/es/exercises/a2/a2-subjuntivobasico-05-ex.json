@@ -133,31 +133,110 @@
     {
       "id": "a2.subjuntivobasico.05.ex09",
       "category": "dialogue",
-      "type": "fill-blank",
-      "sentence": "—Ya me tengo que ir. —Qué pena que te _____ (marchar) tan pronto.",
-      "answer": "marches",
+      "type": "dialogue-complete",
+      "prompt": [
+        {
+          "speaker": "Meg",
+          "text": "¡Al fin pude venir a visitarte a Madrid!"
+        },
+        {
+          "speaker": "Carlos",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Me alegra mucho que estés aquí; es una maravilla verte tan contenta.",
+        "Me alegra mucho que estás aquí; es una maravilla verte tan contenta.",
+        "Me alegró mucho que estuviste aquí; fue una maravilla verte tan contenta."
+      ],
+      "correct": 0,
       "teaches": [
-        "subjuntivo-emociones"
+        "emociones-despedidas-subjuntivo",
+        "alegrar",
+        "maravilla",
+        "contento",
+        "alegria"
       ]
     },
     {
       "id": "a2.subjuntivobasico.05.ex10",
       "category": "dialogue",
-      "type": "fill-blank",
-      "sentence": "—He conseguido el trabajo. —¡Felicidades! Me alegra que todo _____ (salir) bien.",
-      "answer": "salga",
+      "type": "dialogue-complete",
+      "prompt": [
+        {
+          "speaker": "Daniela",
+          "text": "¿Cómo sigue tu hermano con la gripe?"
+        },
+        {
+          "speaker": "Carlos",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Siento mucho que siga enfermo y me da tristeza que tenga que guardar cama.",
+        "Siento mucho que sigue enfermo y me da tristeza que tiene que guardar cama.",
+        "Sentí mucho que siguió enfermo y me dio tristeza que tuvo que guardar cama."
+      ],
+      "correct": 0,
       "teaches": [
-        "subjuntivo-emociones"
+        "emociones-despedidas-subjuntivo",
+        "sentir",
+        "enfermo",
+        "tristeza"
       ]
     },
     {
       "id": "a2.subjuntivobasico.05.ex11",
       "category": "writing",
-      "type": "fill-blank",
-      "sentence": "Ojalá que todo te _____ (ir) genial en tu nuevo puesto.",
-      "answer": "vaya",
+      "type": "structured-writing",
+      "template": [
+        {
+          "prompt": "Express that you are sorry someone has to leave: I am sorry that you have to march off.",
+          "answer": "Siento mucha tristeza de que te tengas que marchar tan pronto."
+        },
+        {
+          "prompt": "Express emotion about a friend: It surprises me and bothers me that they did not tell you.",
+          "answer": "Me sorprende y me molesta que no te hayan avisado."
+        }
+      ],
       "teaches": [
-        "subjuntivo-emociones"
+        "emociones-despedidas-subjuntivo",
+        "sentir",
+        "tristeza",
+        "marchar",
+        "sorprender",
+        "molestar"
+      ]
+    },
+    {
+      "id": "a2.subjuntivobasico.05.ex12",
+      "category": "listening",
+      "type": "listening-choice",
+      "sentence": "Me alegra que estés contento y disfrutes de esta maravilla.",
+      "options": [
+        "I am glad you are happy and enjoying this wonderful thing.",
+        "He was happy because the trip was wonderful.",
+        "I am sad that you have to leave tomorrow morning.",
+        "It surprises me that you are not feeling well today."
+      ],
+      "correct": 0,
+      "teaches": [
+        "emociones-despedidas-subjuntivo",
+        "alegrar",
+        "contento",
+        "maravilla"
+      ]
+    },
+    {
+      "id": "a2.subjuntivobasico.05.ex13",
+      "category": "listening",
+      "type": "dictation",
+      "sentence": "Me da tristeza que estés enfermo y te tengas que marchar.",
+      "teaches": [
+        "emociones-despedidas-subjuntivo",
+        "tristeza",
+        "enfermo",
+        "marchar"
       ]
     }
   ]

@@ -107,31 +107,112 @@
     {
       "id": "a2.perifrasisverbales.02.ex07",
       "category": "dialogue",
-      "type": "fill-blank",
-      "sentence": "—¿Viste a María? —Sí, _____ (seguir) trabajando en el hospital.",
-      "answer": "sigue",
+      "type": "dialogue-complete",
+      "prompt": [
+        {
+          "speaker": "Meg",
+          "text": "¿Cuánto tiempo llevas viviendo en esta ciudad?"
+        },
+        {
+          "speaker": "Carlos",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Llevo un año viviendo aquí y todavía me encanta.",
+        "Llevo un año vivo aquí y todavía me encanta.",
+        "Llevé un año viviendo aquí y todavía me encanta."
+      ],
+      "correct": 0,
       "teaches": [
-        "perifrasis-continuidad"
+        "perifrasis-continuidad",
+        "llevar",
+        "tiempo",
+        "ano",
+        "todavia"
       ]
     },
     {
       "id": "a2.perifrasisverbales.02.ex08",
       "category": "dialogue",
-      "type": "fill-blank",
-      "sentence": "—¿Cuánto tiempo llevas aquí? —_____ (llevar) cuatro días.",
-      "answer": "Llevo",
+      "type": "dialogue-complete",
+      "prompt": [
+        {
+          "speaker": "Daniela",
+          "text": "¿Sigues en contacto con tus compañeros de la universidad?"
+        },
+        {
+          "speaker": "Carlos",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Sí, aún seguimos hablando por teléfono cada semana.",
+        "Sí, aún seguimos hablamos por teléfono cada semana.",
+        "Sí, aún seguimos hablar por teléfono cada semana."
+      ],
+      "correct": 0,
       "teaches": [
-        "perifrasis-continuidad"
+        "perifrasis-continuidad",
+        "seguir",
+        "contacto",
+        "aun",
+        "semana"
       ]
     },
     {
       "id": "a2.perifrasisverbales.02.ex09",
       "category": "writing",
-      "type": "fill-blank",
-      "sentence": "A pesar del frío, ellos _____ (seguir) jugando al fútbol en el parque.",
-      "answer": "siguen",
+      "type": "structured-writing",
+      "template": [
+        {
+          "prompt": "Say how long you have been studying: I have been studying Spanish for six months.",
+          "answer": "Llevo seis meses estudiando español y sigo practicando cada día."
+        },
+        {
+          "prompt": "Say that you are still waiting for an hour: I have been waiting for an hour.",
+          "answer": "Llevo una hora esperando y todavía no ha llegado."
+        }
+      ],
       "teaches": [
-        "perifrasis-continuidad"
+        "perifrasis-continuidad",
+        "llevar",
+        "mes",
+        "seguir",
+        "hora",
+        "todavia"
+      ]
+    },
+    {
+      "id": "a2.perifrasisverbales.02.ex10",
+      "category": "listening",
+      "type": "listening-choice",
+      "sentence": "Llevo un mes estudiando y sigo aprendiendo con entusiasmo.",
+      "options": [
+        "I have been studying for a month and I continue learning with enthusiasm.",
+        "I studied for a month last year.",
+        "I will study for one month next semester.",
+        "We have been living here for one week."
+      ],
+      "correct": 0,
+      "teaches": [
+        "perifrasis-continuidad",
+        "llevar",
+        "mes",
+        "seguir"
+      ]
+    },
+    {
+      "id": "a2.perifrasisverbales.02.ex11",
+      "category": "listening",
+      "type": "dictation",
+      "sentence": "Aún sigo en contacto con ellos desde hace un año.",
+      "teaches": [
+        "perifrasis-continuidad",
+        "aun",
+        "seguir",
+        "contacto",
+        "ano"
       ]
     }
   ]

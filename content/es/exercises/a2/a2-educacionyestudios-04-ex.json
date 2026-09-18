@@ -109,31 +109,112 @@
     {
       "id": "a2.educacionyestudios.04.ex07",
       "category": "dialogue",
-      "type": "fill-blank",
-      "sentence": "—¿Cómo estudias? —Hago un _____ (esquema) visual en una pizarra blanca.",
-      "answer": "esquema",
+      "type": "dialogue-complete",
+      "prompt": [
+        {
+          "speaker": "Meg",
+          "text": "¿Cómo te organizas para repasar antes de una prueba?"
+        },
+        {
+          "speaker": "Carlos",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Suelo subrayar las ideas clave y escribir un resumen en mi libreta.",
+        "Suelo subrayo las ideas clave y escribo un resumen en mi libreta.",
+        "Subrayé las ideas clave el mes que viene en mi libreta."
+      ],
+      "correct": 0,
       "teaches": [
-        "tecnicas-estudio"
+        "estrategias-estudio",
+        "repasar",
+        "subrayar",
+        "resumen",
+        "libreta"
       ]
     },
     {
       "id": "a2.educacionyestudios.04.ex08",
       "category": "dialogue",
-      "type": "fill-blank",
-      "sentence": "—¿Dónde encontraste esa cita? —La busqué en una _____ (fuente) académica fiable.",
-      "answer": "fuente",
+      "type": "dialogue-complete",
+      "prompt": [
+        {
+          "speaker": "Daniela",
+          "text": "¿Qué método utilizas para tu trabajo de investigación?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Hago un esquema con los apuntes y consulto fuentes fiables.",
+        "Hago un esquema con los apuntes y consulto fuentes falsas.",
+        "Hice un esquema cuando no tenía fuentes fiables."
+      ],
+      "correct": 0,
       "teaches": [
-        "tecnicas-estudio"
+        "estrategias-estudio",
+        "investigacion",
+        "esquema",
+        "apunte",
+        "fuente"
       ]
     },
     {
       "id": "a2.educacionyestudios.04.ex09",
       "category": "writing",
-      "type": "fill-blank",
-      "sentence": "Para estudiar bien, es fundamental tener un lugar tranquilo y buena _____ (concentración).",
-      "answer": "concentración",
+      "type": "structured-writing",
+      "template": [
+        {
+          "prompt": "Describe study strategies: To study well, I need concentration and a good memory.",
+          "answer": "Para estudiar bien, necesito buena memoria y mucha concentración."
+        },
+        {
+          "prompt": "Describe researching: I review my notes in the notebook and check reliable sources.",
+          "answer": "Repaso mis apuntes en la libreta y busco información en fuentes seguras."
+        }
+      ],
       "teaches": [
-        "tecnicas-estudio"
+        "estrategias-estudio",
+        "memoria",
+        "concentracion",
+        "repasar",
+        "apunte",
+        "libreta",
+        "fuente"
+      ]
+    },
+    {
+      "id": "a2.educacionyestudios.04.ex10",
+      "category": "listening",
+      "type": "listening-choice",
+      "sentence": "Hice un resumen en mi libreta para mi proyecto de investigación.",
+      "options": [
+        "I made a summary in my notebook for my research project.",
+        "He underlined the notes in his textbook.",
+        "We consulted online sources for the history exam.",
+        "She needs more concentration to review her notes."
+      ],
+      "correct": 0,
+      "teaches": [
+        "estrategias-estudio",
+        "resumen",
+        "libreta",
+        "investigacion"
+      ]
+    },
+    {
+      "id": "a2.educacionyestudios.04.ex11",
+      "category": "listening",
+      "type": "dictation",
+      "sentence": "Hago un esquema de los apuntes para mejorar mi memoria.",
+      "teaches": [
+        "estrategias-estudio",
+        "esquema",
+        "apunte",
+        "memoria"
       ]
     }
   ]

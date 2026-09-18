@@ -109,31 +109,110 @@
     {
       "id": "a2.condicionalsimple.03.ex07",
       "category": "dialogue",
-      "type": "fill-blank",
-      "sentence": "—Buenas noches. ¿Tienen mesa? —Sí, nos _____ (gustar) una mesa cerca de la ventana.",
-      "answer": "gustaría",
+      "type": "dialogue-complete",
+      "prompt": [
+        {
+          "speaker": "Cliente",
+          "text": "Buenas tardes, ¿nos traería la carta, por favor?"
+        },
+        {
+          "speaker": "Camarero",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Con mucho gusto, enseguida les traigo la carta y un poco de agua.",
+        "Con mucho gusto, les traje la carta y un poco de agua ayer.",
+        "No, no quiero traerles la carta ni el agua ahora."
+      ],
+      "correct": 0,
       "teaches": [
-        "condicional-cortesia"
+        "condicional-cortesia",
+        "camarero",
+        "carta",
+        "agua"
       ]
     },
     {
       "id": "a2.condicionalsimple.03.ex08",
       "category": "dialogue",
-      "type": "fill-blank",
-      "sentence": "—¿Desea algo más? —No gracias, solo _____ (querer, condicional) la cuenta.",
-      "answer": "querría",
+      "type": "dialogue-complete",
+      "prompt": [
+        {
+          "speaker": "Camarero",
+          "text": "¿Desean pedir algún plato especial hoy?"
+        },
+        {
+          "speaker": "Cliente",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Desearíamos probar el plato del día, si es tan amable.",
+        "Deseamos probar el plato del día ayer.",
+        "Deseé probar el plato del día mañana."
+      ],
+      "correct": 0,
       "teaches": [
-        "condicional-cortesia"
+        "condicional-cortesia",
+        "desear",
+        "probar",
+        "plato",
+        "amable"
       ]
     },
     {
       "id": "a2.condicionalsimple.03.ex09",
       "category": "writing",
-      "type": "fill-blank",
-      "sentence": "¿_____ (poder, usted) traerme un vaso de agua mineral?",
-      "answer": "Podría",
+      "type": "structured-writing",
+      "template": [
+        {
+          "prompt": "Politely ask to reserve a table for two: We would like to reserve a table.",
+          "answer": "Buenas tardes, desearíamos reservar una mesa para dos personas."
+        },
+        {
+          "prompt": "Politely ask the waiter for the bill: Could you bring us the bill, please?",
+          "answer": "¿Sería tan amable de traernos la cuenta, por favor?"
+        }
+      ],
       "teaches": [
-        "condicional-cortesia"
+        "condicional-cortesia",
+        "reservar",
+        "mesa",
+        "camarero",
+        "cuenta",
+        "amable"
+      ]
+    },
+    {
+      "id": "a2.condicionalsimple.03.ex10",
+      "category": "listening",
+      "type": "listening-choice",
+      "sentence": "¿Podría traernos la cuenta y un vaso de agua, por favor?",
+      "options": [
+        "Could you bring us the bill and a glass of water, please?",
+        "The waiter brought the bill and a bottle of wine.",
+        "Can we reserve a table near the window?",
+        "We would like to see the menu again."
+      ],
+      "correct": 0,
+      "teaches": [
+        "condicional-cortesia",
+        "cuenta",
+        "agua"
+      ]
+    },
+    {
+      "id": "a2.condicionalsimple.03.ex11",
+      "category": "listening",
+      "type": "dictation",
+      "sentence": "¿Podría reservar una mesa para probar este plato?",
+      "teaches": [
+        "condicional-cortesia",
+        "reservar",
+        "mesa",
+        "probar",
+        "plato"
       ]
     }
   ]
