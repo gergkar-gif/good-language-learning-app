@@ -33,6 +33,13 @@ assert.strictEqual(resolveVoiceName({ type: 'vocabulary' }, 'hu-HU'), 'hu-HU-Chi
 assert.strictEqual(resolveVoiceName({ type: 'story' }, 'hu-HU'), 'hu-HU-Chirp3-HD-Enceladus');
 assert.strictEqual(resolveVoiceName({ type: 'reading' }, 'hu-HU'), 'hu-HU-Chirp3-HD-Enceladus');
 assert.strictEqual(resolveVoiceName({ type: 'narrator' }, 'hu-HU'), 'hu-HU-Chirp3-HD-Enceladus');
+
+// Dialogue characters in stories respect gender and explicit character overrides
+assert.strictEqual(resolveVoiceName({ type: 'story', gender: 'female' }, 'hu-HU'), 'hu-HU-Chirp3-HD-Kore');
+assert.strictEqual(resolveVoiceName({ type: 'story', gender: 'male' }, 'hu-HU'), 'hu-HU-Chirp3-HD-Orus');
+assert.strictEqual(resolveVoiceName({ type: 'story', character: 'Aoede' }, 'hu-HU'), 'hu-HU-Chirp3-HD-Aoede');
+assert.strictEqual(resolveVoiceName({ type: 'story', gender: 'female' }, 'es-ES'), 'es-ES-Chirp3-HD-Kore');
+assert.strictEqual(resolveVoiceName({ type: 'story', gender: 'male' }, 'es-ES'), 'es-ES-Chirp3-HD-Orus');
 console.log('[PASS] Worker voice resolution tiers verified.');
 
 // Test 1b: Story comma cadence normalization

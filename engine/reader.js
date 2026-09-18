@@ -577,21 +577,82 @@ const CHARACTER_VOICE_POOL = {
     female: ['Kore', 'Aoede', 'Leda', 'Zephyr', 'Callirrhoe', 'Autonoe']
 };
 
+const COMMON_FEMALE_NAMES = new Set([
+    'meg', 'anna', 'elena', 'maría', 'maria', 'carmen', 'zsuzsa', 'kati', 'eszter', 'mariann',
+    'sofía', 'sofia', 'lucía', 'lucia', 'laura', 'marta', 'julia', 'sara', 'paula', 'clara',
+    'rosa', 'dóra', 'dora', 'bogi', 'judit', 'kinga', 'réka', 'reka', 'viki', 'nóra', 'nora',
+    'lili', 'zsófi', 'zsofi', 'emma', 'isabel', 'teresa', 'ana', 'eva', 'claudia', 'patricia',
+    'andrea', 'monica', 'mónica', 'alicia', 'pilar', 'rocío', 'rocio', 'beatriz', 'cristina',
+    'ángela', 'angela', 'valeria', 'camila', 'daniela', 'victoria', 'gabriela', 'martina',
+    'katalin', 'erzsébet', 'erzsebet', 'ági', 'agi', 'szilvia', 'anett', 'tünde', 'tunde',
+    'enikő', 'eniko', 'virág', 'virag', 'fanni', 'noémi', 'noemi', 'hanna', 'flóra', 'flora'
+]);
+
+const COMMON_MALE_NAMES = new Set([
+    'carlos', 'károly', 'karoly', 'andrás', 'andras', 'juan', 'pedro', 'tibor', 'dávid', 'david',
+    'miguel', 'josé', 'jose', 'manuel', 'alejandro', 'javier', 'daniel', 'luis', 'mateo', 'lucas',
+    'bence', 'balázs', 'balazs', 'márk', 'mark', 'péter', 'peter', 'tamás', 'tamas', 'zoltán', 'zoltan',
+    'gábor', 'gabor', 'attila', 'lászló', 'laszlo', 'istván', 'istvan', 'ádám', 'adam', 'levente',
+    'máté', 'mate', 'zsombor', 'antonio', 'francisco', 'pablo', 'jorge', 'alberto', 'diego', 'raúl',
+    'raul', 'enrique', 'sergio', 'fernando', 'mario', 'roberto', 'ángel', 'angel', 'marcos',
+    'béla', 'bela', 'jános', 'janos', 'sándor', 'sandor', 'ferenc', 'miklós', 'miklos', 'györgy',
+    'gyorgy', 'norbert', 'richárd', 'richard', 'roland', 'viktor', 'barna', 'barnabás', 'kristóf'
+]);
+
+function inferCharacterGender(name, speakersMeta, usedGenders) {
+    if (speakersMeta && speakersMeta[name] && (speakersMeta[name].gender === 'male' || speakersMeta[name].gender === 'female')) {
+        return speakersMeta[name].gender;
+    }
+    const clean = String(name || '').trim().toLowerCase();
+    if (COMMON_FEMALE_NAMES.has(clean)) return 'female';
+    if (COMMON_MALE_NAMES.has(clean)) return 'male';
+
+    // Heuristics based on common gendered words
+    if (/\b(madre|abuela|chica|mujer|tía|hija|anya|nagymama|lány|nő)\b/i.test(clean)) return 'female';
+    if (/\b(padre|abuelo|chico|hombre|tío|hijo|apa|nagypapa|fiú|férfi)\b/i.test(clean)) return 'male';
+
+    // Morphological suffix heuristic
+    if (clean.endsWith('a')) return 'female';
+    if (clean.endsWith('o')) return 'male';
+
+    // Fallback: alternate between male and female to maximize contrast within a story
+    return (usedGenders.female <= usedGenders.male) ? 'female' : 'male';
+}
+
 // One voice per named character, assigned once per story so "Meg" keeps the
 // same voice in every paragraph. Narrator isn't in story.characters and
 // keeps its own fixed voice (tts-worker.js's narrator default) — there's
 // only ever one narrator, so it doesn't need a pool.
 function assignCharacterVoices(story) {
-    const speakers = (story.narration && story.narration.speakers) || {};
+    const speakers = (story && story.narration && story.narration.speakers) || {};
     const used = { male: 0, female: 0 };
     const assigned = {};
-    (story.characters || []).forEach(name => {
-        const gender = speakers[name] && speakers[name].gender;
-        if (gender !== 'male' && gender !== 'female') return;
+    const genders = {};
+
+    // Collect characters from both story.characters and dialogue paragraphs
+    const names = [];
+    const seen = new Set();
+    const addName = (n) => {
+        const trimmed = (n || '').trim();
+        if (!trimmed || trimmed === 'Narrator' || seen.has(trimmed)) return;
+        seen.add(trimmed);
+        names.push(trimmed);
+    };
+
+    ((story && story.characters) || []).forEach(addName);
+    ((story && story.paragraphs) || []).forEach(p => {
+        if (p && p.speaker) addName(p.speaker);
+    });
+
+    names.forEach(name => {
+        const gender = inferCharacterGender(name, speakers, used);
         const pool = CHARACTER_VOICE_POOL[gender];
         assigned[name] = pool[used[gender] % pool.length];
+        genders[name] = gender;
         used[gender]++;
     });
+
+    assigned._genders = genders;
     return assigned;
 }
 
@@ -599,6 +660,7 @@ const StoryAudioPlayer = {
     story: null,
     paragraphs: [],
     characterVoices: {},
+    characterGenders: {},
     currentParaIndex: 0,
     isPlaying: false,
     speed: 1.0,
@@ -612,6 +674,7 @@ const StoryAudioPlayer = {
         this.story = story;
         this.paragraphs = story.paragraphs;
         this.characterVoices = assignCharacterVoices(story);
+        this.characterGenders = (this.characterVoices && this.characterVoices._genders) || {};
         this.currentParaIndex = 0;
         this.speed = 1.0;
 
@@ -680,12 +743,15 @@ const StoryAudioPlayer = {
             if (!p || !p.text) continue;
             const pLang = p.lang || courseLang;
             const spk = p.speaker || 'Narrator';
-            const charVoice = this.characterVoices[spk];
+            const isNarrator = !p.speaker || p.speaker === 'Narrator';
+            const charVoice = isNarrator ? undefined : this.characterVoices[spk];
+            const charGender = isNarrator ? undefined : (this.characterGenders && this.characterGenders[spk]);
             ParlourTTS.preload({
                 text: p.text,
                 language: pLang,
                 type: 'story',
-                character: charVoice
+                character: charVoice,
+                gender: charGender
             });
         }
     },
@@ -708,7 +774,7 @@ const StoryAudioPlayer = {
 
     pause() {
         this.isPlaying = false;
-        ParlourTTS.stop();
+        if (typeof ParlourTTS !== 'undefined') ParlourTTS.stop();
         this.updatePlayBtn();
     },
 
@@ -733,10 +799,12 @@ const StoryAudioPlayer = {
         const courseLang = (typeof Lang !== 'undefined') ? Lang.code() : 'es';
         const paraLang = para.lang || courseLang;
         const speaker = para.speaker || 'Narrator';
+        const isNarrator = !para.speaker || para.speaker === 'Narrator';
         // Each character's voice was assigned once in init() (gender-matched,
         // distinct per character) — Narrator isn't in that map and falls
         // through to the worker's fixed narrator voice instead.
-        const character = this.characterVoices[speaker];
+        const character = isNarrator ? undefined : this.characterVoices[speaker];
+        const gender = isNarrator ? undefined : (this.characterGenders && this.characterGenders[speaker]);
 
         if (speakerTag) {
             const langLabel = paraLang === 'en' ? 'English' : (paraLang === 'hu' ? 'Hungarian' : 'Spanish');
@@ -750,6 +818,7 @@ const StoryAudioPlayer = {
             language: paraLang,
             type: 'story',
             character,
+            gender,
             speed: this.speed,
             onEnded: () => {
                 if (this.isPlaying && this.currentParaIndex === idx) {
@@ -829,6 +898,8 @@ const StoryAudioPlayer = {
         this.pause();
         this.story = null;
         this.paragraphs = [];
+        this.characterVoices = {};
+        this.characterGenders = {};
         this.currentParaIndex = 0;
         if (this._onOnline) window.removeEventListener('online', this._onOnline);
         if (this._onOffline) window.removeEventListener('offline', this._onOffline);

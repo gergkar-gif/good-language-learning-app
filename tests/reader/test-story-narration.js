@@ -155,10 +155,12 @@ global.document = {
         id,
         classList: {
             add: () => {},
-            remove: () => {}
+            remove: () => {},
+            toggle: () => {}
         },
         setAttribute: () => {},
-        removeAttribute: () => {}
+        removeAttribute: () => {},
+        querySelectorAll: () => []
     }),
     querySelectorAll: () => [],
     addEventListener: () => {},
@@ -179,7 +181,8 @@ const context = {
     Lang: { code: () => 'hu', content: (p) => p },
     Lexicon: { isLoaded: () => true, lookup: () => ({ readings: [] }), stripExplanatoryClauses: (t) => t },
     hasReadStory: () => false,
-    Speech: { button: () => '' }
+    Speech: { button: () => '' },
+    ParlourTTS: { stop: () => {}, preload: () => {}, speak: () => Promise.resolve(true), setRate: () => {} }
 };
 vm.createContext(context);
 vm.runInContext(readerCode, context);
@@ -192,6 +195,35 @@ assert.strictEqual(sap.isOnline, true, 'Online state must be recognized');
 
 console.log('[PASS] StoryAudioPlayer initialized with normal 1.0x default speed and Substack controls.');
 
+console.log('\n--- Test 12: Resilient Character Voice Casting (Without narration.speakers) ---');
+const huStory2Path = path.join(__dirname, '../../content/hu/stories/original/a1/a1-unit-02.json');
+assert(fs.existsSync(huStory2Path), 'Hungarian unit 02 story must exist');
+const huStory2 = JSON.parse(fs.readFileSync(huStory2Path, 'utf8'));
+assert(!huStory2.narration || !huStory2.narration.speakers, 'Unit 02 story must have no narration.speakers block');
+
+sap.init(huStory2);
+const voices = sap.characterVoices;
+const genders = sap.characterGenders;
+
+assert(voices.Meg, 'Meg must have an assigned voice');
+assert(voices.Károly, 'Károly must have an assigned voice');
+assert(voices.Anna, 'Anna must have an assigned voice');
+assert(voices.András, 'András must have an assigned voice');
+assert(voices.Mariann, 'Mariann must have an assigned voice');
+
+// Meg, Anna, Mariann must be recognized as female; Károly, András as male
+assert.strictEqual(genders.Meg, 'female', 'Meg should be detected as female');
+assert.strictEqual(genders.Anna, 'female', 'Anna should be detected as female');
+assert.strictEqual(genders.Mariann, 'female', 'Mariann should be detected as female');
+assert.strictEqual(genders.Károly, 'male', 'Károly should be detected as male');
+assert.strictEqual(genders.András, 'male', 'András should be detected as male');
+
+// Distinct voice assignment within the same gender
+assert.notStrictEqual(voices.Meg, voices.Anna, 'Meg and Anna must have distinct female voices');
+assert.notStrictEqual(voices.Károly, voices.András, 'Károly and András must have distinct male voices');
+console.log(`[PASS] Verified distinct character casting: Meg=${voices.Meg}, Anna=${voices.Anna}, Mariann=${voices.Mariann}, Károly=${voices.Károly}, András=${voices.András}`);
+
 console.log('\n==========================================================');
 console.log('ALL ONLINE SUBSTACK NARRATION & PHONETIC TESTS PASSED [Zero Emojis]');
 console.log('==========================================================');
+

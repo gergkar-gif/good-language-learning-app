@@ -91,10 +91,13 @@ function resolveVoiceName(payload, languageCode) {
         return 'en-US-Neural2-F';
     }
 
-    // Hungarian: Enceladus (lower-tone male) for story/reading narration; other types use SHORT_VOICE table
+    // Hungarian: Enceladus (lower-tone male) for story/reading narration; dialogue characters and other types use SHORT_VOICE table
     if (languageCode === 'hu-HU') {
+        if (payload.gender && SHORT_VOICE[payload.gender]) {
+            return `hu-HU-Chirp3-HD-${SHORT_VOICE[payload.gender]}`;
+        }
         if (isLongForm || payload.type === 'narrator') return 'hu-HU-Chirp3-HD-Enceladus';
-        const short = SHORT_VOICE[payload.gender] || SHORT_VOICE[payload.type] || SHORT_VOICE.narrator;
+        const short = SHORT_VOICE[payload.type] || SHORT_VOICE.narrator;
         return `hu-HU-Chirp3-HD-${short}`;
     }
 
