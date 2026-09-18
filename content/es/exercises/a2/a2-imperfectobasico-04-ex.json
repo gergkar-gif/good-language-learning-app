@@ -80,13 +80,26 @@
     {
       "id": "a2.imperfectobasico.04.ex06",
       "category": "grammar",
-      "type": "error-correction",
-      "sentence": "En el mercado habían muchos productos frescos.",
-      "solution": "En el mercado había muchos productos frescos.",
-      "teaches": [
-        "estados"
+      "type": "sentence-builder",
+      "tiles": [
+        "en",
+        "la",
+        "ciudad",
+        "hacía",
+        "calor"
       ],
-      "explanation": "'Haber' in impersonal use is always singular: 'había', never 'habían'."
+      "solution": [
+        "en",
+        "la",
+        "ciudad",
+        "hacía",
+        "calor"
+      ],
+      "english": "in the city it was hot",
+      "teaches": [
+        "estados",
+        "hacia-calor"
+      ]
     },
     {
       "id": "a2.imperfectobasico.04.ex07",
@@ -94,12 +107,94 @@
       "type": "structured-writing",
       "template": [
         {
-          "prompt": "Describe el tiempo cuando eras niño/a (2 sentences using hacía / llovía).",
-          "answer": "Hacía mucho calor en verano. A veces llovía por las tardes."
+          "prompt": "Describe the weather when you were a child.",
+          "answer": "Hacía calor en verano y a veces llovía por las tardes."
         }
       ],
       "teaches": [
-        "estados"
+        "estados",
+        "hacia-calor"
+      ]
+    },
+    {
+      "id": "a2.imperfectobasico.04.ex08",
+      "category": "listening",
+      "type": "listening-choice",
+      "sentence": "La casa de mis abuelos era muy bonita y tenía un salón acogedor.",
+      "options": [
+        "My grandparents' house was very pretty and had a cozy living room.",
+        "My grandparents' house was small and cold in the winter.",
+        "The new apartment is pretty and very modern.",
+        "We bought a cozy house near the mountains."
+      ],
+      "correct": 0,
+      "teaches": [
+        "estados",
+        "tenia",
+        "acogedor"
+      ]
+    },
+    {
+      "id": "a2.imperfectobasico.04.ex09",
+      "category": "listening",
+      "type": "dictation",
+      "sentence": "Hacía frío y llovía mucho aquella noche.",
+      "teaches": [
+        "estados",
+        "hacia-frio",
+        "llovia"
+      ]
+    },
+    {
+      "id": "a2.imperfectobasico.04.ex10",
+      "category": "dialogue",
+      "type": "dialogue-complete",
+      "prompt": [
+        {
+          "speaker": "Carlos",
+          "text": "¿Cómo te sentías en tu primer día de trabajo?"
+        },
+        {
+          "speaker": "Daniela",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Me sentía muy nerviosa, pero la oficina parecía agradable.",
+        "Me sentí muy nerviosa, pero la oficina parecía agradable.",
+        "Me siento muy nerviosa, pero la oficina parecía agradable."
+      ],
+      "correct": 0,
+      "teaches": [
+        "estados",
+        "me-sentia",
+        "parecia"
+      ]
+    },
+    {
+      "id": "a2.imperfectobasico.04.ex11",
+      "category": "dialogue",
+      "type": "dialogue-complete",
+      "prompt": [
+        {
+          "speaker": "Meg",
+          "text": "¿Había mucha gente en la fiesta ayer?"
+        },
+        {
+          "speaker": "Carlos",
+          "text": "_____"
+        }
+      ],
+      "options": [
+        "Sí, había muchos amigos y todos querían bailar.",
+        "Sí, hubo muchos amigos y todos querían bailar.",
+        "Sí, hay muchos amigos y todos querían bailar."
+      ],
+      "correct": 0,
+      "teaches": [
+        "estados",
+        "habia",
+        "queria"
       ]
     }
   ]
