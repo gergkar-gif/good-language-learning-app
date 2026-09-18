@@ -90,6 +90,8 @@ def main():
     words = deck_data.get('words', {})
     missing_by_level = {}
 
+    es_article_re = re.compile(r'^(el|la|los|las)\s+')
+
     for word, info in words.items():
         if info.get('pos') not in CONTENT_POS:
             continue
@@ -98,12 +100,67 @@ def main():
             missing_by_level[lvl] = []
 
         w_clean = word.lower().strip()
+        if lang == 'es':
+            # decks.json stores many ES nouns with their article ("el
+            # cumpleaños"), but sentence tokens never contain that whole
+            # phrase as one token -- match against the noun alone too.
+            w_clean = es_article_re.sub('', w_clean)
         matched = False
+        # Multi-word dictionary keys (ES adverbial phrases like "a menudo",
+        # or a conjugated phrase used as the key like "me sentía") never
+        # appear verbatim as a single sentence token -- also try each
+        # content-bearing subword (skip short function words).
         parts = [p.strip() for p in re.split(r'[/,()]', w_clean) if p.strip()]
-        for p in parts:
+        space_parts = [sp for p in parts for sp in p.split(' ') if len(sp) >= 4]
+        for p in parts + space_parts:
             if p in context_lemmas or any(l in context_lemmas for l in get_lemmas(p)):
                 matched = True
                 break
+            # Agglutinative fallback: Hungarian (and some Spanish) surface
+            # forms attach suffixes/prefixes the lemma index doesn't cover
+            # (e.g. "farmer" -> "farmerom", "próbál" -> "felpróbálni").
+            # A two-way prefix check on longer words catches most of these
+            # without risking false matches on short/common words.
+            if len(p) >= 4 and any(
+                ct.startswith(p) or p.startswith(ct)
+                for ct in context_lemmas if len(ct) >= 4
+            ):
+                matched = True
+                break
+            # ES conjugation fallback: verb-index.json doesn't cover every
+            # regular conjugated form, but stripping the infinitive/
+            # reflexive ending and prefix-matching the stem catches most
+            # regular verbs the lemma index misses (e.g. "remar" -> "rem"
+            # matches "remaba"; "mojarse" -> "moj" matches "mojé").
+            if lang == 'es':
+                stem = re.sub(r'(arse|erse|irse|ar|er|ir)$', '', p)
+                if len(stem) >= 3 and any(
+                    ct.startswith(stem) for ct in context_lemmas if len(ct) >= 3
+                ):
+                    matched = True
+                    break
+            # HU infinitive fallback: same idea for Hungarian "-ni"
+            # infinitives, whose conjugated forms drop -ni and often
+            # change the stem's final consonant(s) (e.g. "ráérni" ->
+            # "ráér" matches "ráérsz"; "bújni" -> "búj" matches "bújik").
+            if lang == 'hu' and p.endswith('ni'):
+                stem = p[:-2]
+                if len(stem) >= 3 and any(
+                    ct.startswith(stem) for ct in context_lemmas if len(ct) >= 3
+                ):
+                    matched = True
+                    break
+            # HU "-ik" citation-form fallback: many dictionary headwords
+            # are the 3sg present ikes-verb form itself (e.g. "felöltözik",
+            # "kikapcsolódik"), but sentences use other conjugated forms
+            # ("felöltözött") -- strip -ik and prefix-match the stem.
+            if lang == 'hu' and p.endswith('ik'):
+                stem = p[:-2]
+                if len(stem) >= 3 and any(
+                    ct.startswith(stem) for ct in context_lemmas if len(ct) >= 3
+                ):
+                    matched = True
+                    break
 
         if not matched:
             missing_by_level[lvl].append({
@@ -120,10 +177,20 @@ def main():
     total_missing = sum(len(v) for v in missing_by_level.values())
     print(f"Total missing: {total_missing}")
 
+    lang_name = "Hungarian" if lang == "hu" else "Spanish"
+    target_key = "hungarian" if lang == "hu" else "spanish"
+
     level_instructions = {
-        'A1': "Keep sentences strictly at CEFR A1 level: present tense (presente de indicativo), simple subject-verb-object structures, basic everyday vocabulary.",
-        'A2': "Keep sentences at CEFR A2 level: preterite (pretérito indefinido) and imperfect (pretérito imperfecto) tenses, simple compound sentences with 'porque', 'cuando', 'pero'.",
-        'B1': "Keep sentences at CEFR B1 level: subjunctive mood where natural (presente de subjuntivo), conditional, future, relative clauses, intermediate vocabulary."
+        'es': {
+            'A1': "Keep sentences strictly at CEFR A1 level: present tense (presente de indicativo), simple subject-verb-object structures, basic everyday vocabulary.",
+            'A2': "Keep sentences at CEFR A2 level: preterite (pretérito indefinido) and imperfect (pretérito imperfecto) tenses, simple compound sentences with 'porque', 'cuando', 'pero'.",
+            'B1': "Keep sentences at CEFR B1 level: subjunctive mood where natural (presente de subjuntivo), conditional, future, relative clauses, intermediate vocabulary."
+        },
+        'hu': {
+            'A1': "Keep sentences strictly at CEFR A1 level: present tense (jelen idő), simple SVO/SOV, basic case endings (-ban/-ben, -ba/-be, -ból/-ből, -on/-en/-ön, -t accusative), basic everyday vocabulary.",
+            'A2': "Keep sentences at CEFR A2 level: past tense (múlt idő: -t/-tt), definite vs indefinite conjugation, compound sentences with 'mert', 'amikor', 'de', verbal prefixes (el-, meg-, be-, ki-).",
+            'B1': "Keep sentences at CEFR B1 level: conditional mood (feltételes mód: -na/-ne/-ná/-né), subjunctive/imperative (-jon/-jen), relative clauses with 'amely', 'aki', civic/cultural/abstract vocabulary."
+        }
     }
 
     BATCH_SIZE = 100
@@ -132,7 +199,8 @@ def main():
         items = missing_by_level[lvl]
         print(f"  Level {lvl}: {len(items)} words")
 
-        instr = level_instructions.get(lvl, f"Keep sentences natural and appropriate for level {lvl}.")
+        lang_guides = level_instructions.get(lang, {})
+        instr = lang_guides.get(lvl, f"Keep sentences natural and appropriate for CEFR level {lvl} in {lang_name}.")
 
         for batch_idx in range(0, len(items), BATCH_SIZE):
             chunk = items[batch_idx:batch_idx + BATCH_SIZE]
@@ -144,16 +212,16 @@ def main():
 
             with open(filepath, 'w', encoding='utf-8') as f:
                 f.write("SYSTEM PROMPT / INSTRUCTIONS:\n")
-                f.write("You are an expert Spanish curriculum writer for a language learning application.\n")
-                f.write("Your task is to generate ONE natural example sentence for each of the Spanish vocabulary words below.\n\n")
+                f.write(f"You are an expert {lang_name} curriculum writer for a language learning application.\n")
+                f.write(f"Your task is to generate ONE natural example sentence for each of the {lang_name} vocabulary words below.\n\n")
                 f.write("RULES:\n")
                 f.write(f"1. LEVEL: {instr}\n")
-                f.write("2. MINIMUM LENGTH: The Spanish sentence MUST contain at least 6 to 12 words (minimum 5 words strictly required). Do not write short fragments like 'Él es alto.'\n")
+                f.write(f"2. MINIMUM LENGTH: The {lang_name} sentence MUST contain at least 6 to 12 words (minimum 5 words strictly required). Do not write short fragments.\n")
                 f.write("3. INFERABLE CONTEXT: The sentence must provide enough context that the meaning of the target word is clear and makes sense in context.\n")
-                f.write("4. USAGE: Use the target word naturally (conjugated or inflected form is welcome if it's a verb or adjective).\n")
+                f.write("4. USAGE: Use the target word naturally (conjugated, inflected with cases, or derived form is welcome).\n")
                 f.write("5. TRANSLATION: Provide an accurate, natural English translation for the full sentence.\n")
                 f.write("6. OUTPUT FORMAT: Output ONLY a valid JSON array of objects, with NO markdown commentary. Each object must have:\n")
-                f.write('   {\n     "word": "<target word as listed>",\n     "spanish": "<full Spanish sentence>",\n     "english": "<full English translation>",\n     "level": "' + lvl + '"\n   }\n\n')
+                f.write('   {\n     "word": "<target word as listed>",\n     "' + target_key + '": "<full ' + lang_name + ' sentence>",\n     "english": "<full English translation>",\n     "level": "' + lvl + '"\n   }\n\n')
                 f.write(f"VOCABULARY WORDS ({len(chunk)} words):\n")
                 for it in chunk:
                     f.write(f"- {it['word']} ({it['pos']}): {it['en']}\n")

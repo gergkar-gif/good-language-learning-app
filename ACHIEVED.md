@@ -9,6 +9,15 @@ needs re-reading before starting new work; it's reference only.
 
 ## Completed queue items
 
+26. ~~**Vocabulary Driller: scoped session dead-end fixed**~~ — **Done 2026-09-18.**
+    The UI fallback for the dead-end (mounting `RecommendationEngine.mountNextAction()` + "Back to Workshop") had already shipped; this closes the systemic content gap that caused it. Backfilled missing example sentences for the Translation Driller / Vocabulary Driller Context-mode corpus:
+    - Generated ~2,450 new example sentences (Haiku subagents, one per originally-missing deck word) across `content/{es,hu}/backfill_sentences/*.json`, folded in via `scripts/build_translation_index.py`.
+    - Full grammar review pass, not just generation: per-file review agents found and fixed ~290 real errors in the Hungarian content (invented verb forms, wrong case government, definite/indefinite conjugation mismatches, a systemic `az`/`a` article-rule bug affecting 300+ sentences, one file with real õ/û mojibake) and ~10 in Spanish (gender agreement, a stray English word, a logic contradiction).
+    - `scripts/export_missing_vocab_sentences.py` (the missing-word detector itself) had two real bugs fixed: it falsely flagged ~88% of "still missing" Spanish words because `decks.json` stores nouns with their article (`"el cumpleaños"`), which can never match a single sentence token; and it under-recognized inflected/prefixed Hungarian conjugations against an incomplete lemma index. Both fixed with targeted matching fallbacks (article-stripping for ES; stem/agglutination heuristics for HU `-ni`/`-ik` forms).
+    - Closed the resulting smaller residual gap (44 ES + 92 HU words the fixed detector still flagged) with a second Haiku pass + review, then a final ChatGPT-generated pass for the last 54 Hungarian words.
+    - **Result**: Spanish corpus gap fully closed (0 missing, verified). Hungarian closed to a small irreducible detector residual (~21 words) caused by irregular verb stem alternation (e.g. `megy`→`ment-`) that regex heuristics can't resolve — confirmed by direct inspection that these words are in fact already covered with correct sentences.
+    - The original item's note about ~40 Spanish deck entries keyed to a surface form (`soy`, `alto/alta`) failing lemma matching in the live Driller was not independently re-verified this pass — tracked as a follow-up (see queue item 49 in `ROADMAP.md`).
+
 36. ~~**Exercise-type variety: audit calibrated & scope narrowed to 45 A2 lessons**~~ — **Done 2026-09-18.**
     Resolved the exercise variety gap and listening parity across all 45 lessons in the 9 named A2 units (`imperfectobasico`, `imperfectocontraste`, `imperativoafirmativo`, `imperativonegativo`, `pronombrescliticos`, `condicionalsimple`, `subjuntivobasico`, `perifrasisverbales`, `educacionyestudios`):
     - **Dialogue Enrichment**: Replaced generic `fill-blank` exercises with full `dialogue-complete` exercises (90 exercises) featuring natural speaker turns and plausible Latin American Spanish distractors.

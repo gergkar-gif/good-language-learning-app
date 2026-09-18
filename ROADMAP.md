@@ -9,7 +9,7 @@ Completed work is archived out to `ACHIEVED.md`.
 
 Active work in progress and prioritized backlog items:
 
-26. **Vocabulary Driller: scoped session dead-end fixed** — Launching the driller pre-scoped to a specific word list whose words lack example sentences hit a dead end: "No example sentences for these words yet". UI fallback reworded to mount `RecommendationEngine.mountNextAction()` + "Back to Workshop". However, a systemic content gap remains: ~54% of Spanish and ~63% of Hungarian deck words have no corpus sentence the driller can use, plus ~40 Spanish deck entries keyed to a surface form (`soy`, `alto/alta`) that fail lemma matching. Needs a scoped content generation/backfill pass.
+49. **Verify Vocabulary Driller surface-form lemma matching live** — Item 26's original note that ~40 Spanish deck entries keyed to a surface form (`soy`, `alto/alta`) fail lemma matching was not independently re-verified against the live Vocabulary Driller runtime when the underlying content gap was closed (see item 26 in `ACHIEVED.md`). A spot check on `soy` suggests surface-form keys already resolve fine since they match sentence tokens literally, but this wasn't confirmed in the browser. Worth a live-driller check if surface-form mismatches are still observed in practice.
 
 ---
 
