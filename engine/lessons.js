@@ -201,6 +201,100 @@ async function buildSteps(lesson) {
         });
     }
 
+    async function injectCommunicativeChallenge() {
+        if (steps.some(s => s.type === 'challenge')) return;
+        if (!checklistStep || !checklistStep.items || !checklistStep.items.length) return;
+
+        const primaryCanDo = checklistStep.items[0];
+        const level = (lesson && lesson.level) || 'A1';
+        const tier = (level === 'A1') ? 'tier1' : (level === 'A2') ? 'tier2' : 'tier3';
+        const langName = typeof Lang !== 'undefined' ? Lang.name() : 'Spanish';
+
+        // Check if curated challenges dictionary has a match
+        let curated = null;
+        try {
+            const challengeData = await loadContent('curriculum/challenges.json');
+            if (challengeData && challengeData.challenges) {
+                const stem = (lesson.id || '').replace(/^lesson\./, '').split('.').join('-');
+                curated = challengeData.challenges[stem];
+                if (!curated) {
+                    const keys = Object.keys(challengeData.challenges);
+                    const matchedKey = keys.find(k => stem.startsWith(k) || (lesson.title && lesson.title.toLowerCase().includes(k.split('-')[1] || '')));
+                    if (matchedKey) curated = challengeData.challenges[matchedKey];
+                }
+            }
+        } catch (e) {}
+
+        let challengeStep = null;
+        if (curated) {
+            challengeStep = {
+                type: 'challenge',
+                title: curated.title || 'Communicative Challenge',
+                scenario: curated.scenario || '',
+                prompt: curated.prompt || '',
+                cues: curated.cues || [],
+                target: curated.target || '',
+                canDo: curated.canDo || primaryCanDo,
+                level: curated.level || level,
+                tier: curated.tier || tier,
+                modality: curated.modality || 'oral'
+            };
+        } else {
+            // Dynamic generation based on CEFR level and Can-Do item
+            if (tier === 'tier1') {
+                const cand = (speakingCandidates && speakingCandidates[0]) || null;
+                challengeStep = {
+                    type: 'challenge',
+                    title: 'Communicative Challenge: Put It Into Practice',
+                    scenario: `Put your ${langName} into action for this lesson's core goal.`,
+                    prompt: primaryCanDo.replace(/^I can\s+/i, 'Say this in ' + langName + ': ').replace(/\.$/, ''),
+                    cues: cand ? [`Use what you learned: "${cand.english}"`] : ['Express this clearly out loud'],
+                    target: cand ? cand.spanish : '',
+                    canDo: primaryCanDo,
+                    level: level,
+                    tier: 'tier1',
+                    modality: 'oral'
+                };
+            } else if (tier === 'tier2') {
+                challengeStep = {
+                    type: 'challenge',
+                    title: 'Communicative Challenge: Real-World Transaction',
+                    scenario: `You are in a practical everyday situation in ${langName}.`,
+                    prompt: primaryCanDo.replace(/^I can\s+/i, 'In ' + langName + ', perform this task: '),
+                    cues: [
+                        '1. Opening greeting & polite address',
+                        '2. State your request or description clearly',
+                        '3. Confirm or conclude the conversation'
+                    ],
+                    canDo: primaryCanDo,
+                    level: level,
+                    tier: 'tier2',
+                    modality: 'oral'
+                };
+            } else {
+                challengeStep = {
+                    type: 'challenge',
+                    title: 'Communicative Challenge: In-Depth Production',
+                    scenario: `Express your ideas, narrate, and evaluate in connected ${langName}.`,
+                    prompt: primaryCanDo.replace(/^I can\s+/i, 'Discuss and explain: '),
+                    cues: [
+                        'Set the context or introduce the topic',
+                        'Describe the details or analyze the situation',
+                        'Share your conclusion, reaction, or recommendation'
+                    ],
+                    canDo: primaryCanDo,
+                    level: level,
+                    tier: 'tier3',
+                    modality: 'oral'
+                };
+            }
+        }
+
+        if (challengeStep) {
+            steps.push(challengeStep);
+        }
+    }
+
     let checklistStep = null;
 
     // Parallel pre-fetch of all section references to collapse serial waterfalls
@@ -345,6 +439,21 @@ async function buildSteps(lesson) {
                 });
             }
 
+            else if (section.type === 'challenge') {
+                steps.push({
+                    type: 'challenge',
+                    title: section.title || 'Communicative Challenge',
+                    scenario: section.scenario || '',
+                    prompt: section.prompt || '',
+                    cues: section.cues || [],
+                    target: section.target || '',
+                    canDo: section.canDo || section.canDoRef || '',
+                    level: lesson.level || 'A1',
+                    tier: section.tier || null,
+                    modality: section.modality || 'oral'
+                });
+            }
+
             else if (section.type === 'checklist') {
                 checklistStep = {
                     type: 'checklist',
@@ -363,6 +472,9 @@ async function buildSteps(lesson) {
 
     // Safety fallback: ensure speaking steps are injected even if lesson has no SRS
     injectSpeakingSteps();
+
+    // Inject progressive communicative challenge linked to CEFR Can-Do
+    await injectCommunicativeChallenge();
 
     // "I can do this" / checklist should ALWAYS be the last screen of the lesson, right before results.
     if (checklistStep) {
@@ -1246,13 +1358,61 @@ const stepRenderers = {
         // it we show a model answer once every line is written and let the
         // learner compare. Continue unlocks on that comparison.
         gateStep();
+        stepState.isComposition = !step.template || !step.template.length;
         stepState.lines = (step.template || []).map(line =>
             typeof line === 'string' ? { prompt: line, answer: '' } : line);
+        stepState.minWords = step.minWords || ((currentLesson && currentLesson.level && (currentLesson.level.startsWith('B') || currentLesson.level.startsWith('C'))) ? 15 : 6);
         stepState.checkFn = 'lessonRevealWriting';
         stepState.checkDisabled = true;
 
+        const langName = typeof Lang !== 'undefined' ? Lang.name() : 'Spanish';
+
+        if (stepState.isComposition) {
+            // Tier 3 / Open multi-sentence composition prompt
+            const cues = step.cues || step.points || [];
+            const prompt = step.prompt || step.instruction || 'Write a short text in ' + langName + '.';
+            const scenario = step.scenario || step.situation || '';
+            const modelAnswer = step.model || step.answer || '';
+
+            return `
+                <p class="lsn-question">Write in ${esc(langName)}.</p>
+                <div class="sp-lesson-card" style="padding:14px; border:1px solid var(--border); border-radius:8px; margin-bottom:12px; background:var(--surface);">
+                    ${scenario ? `<p style="font-size:0.92rem; color:var(--text-muted); margin:0 0 6px 0; font-style:italic;">${esc(scenario)}</p>` : ''}
+                    <p style="font-size:1.15rem; font-weight:700; color:var(--text-heading); margin:0 0 8px 0;">${esc(prompt)}</p>
+                    ${cues.length ? `
+                        <div style="background:rgba(0,0,0,0.03); border-radius:6px; padding:8px 12px; margin-top:8px;">
+                            <span style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.05em; font-weight:700; color:var(--text-muted);">Points to include:</span>
+                            <ul style="margin:4px 0 0 0; padding-left:18px; font-size:0.9rem; color:var(--text);">
+                                ${cues.map(c => `<li>${esc(c)}</li>`).join('')}
+                            </ul>
+                        </div>
+                    ` : ''}
+                </div>
+                <div class="lsn-composition-wrap" style="margin-bottom:10px;">
+                    <textarea class="lsn-input" data-write-composition="1" style="width:100%; min-height:90px; font-size:1rem; padding:10px; border-radius:8px;" placeholder="Write your response in ${esc(langName)}..." oninput="lessonCheckWriting()"></textarea>
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-top:4px;">
+                        <span id="lsn-comp-wordcount" style="font-size:0.8rem; color:var(--text-muted);">0/${stepState.minWords} words</span>
+                        ${typeof UI !== 'undefined' && UI.diacriticsBarHtml ? UI.diacriticsBarHtml('[data-write-composition]') : ''}
+                    </div>
+                </div>
+                ${modelAnswer ? `
+                    <div class="lsn-model hidden" data-model="comp" style="margin-top:12px; padding:12px; border-radius:8px; background:rgba(0,0,0,0.04);">
+                        <span class="lsn-model-label" style="display:block; margin-bottom:4px; font-weight:700;">Example Model Text</span>
+                        <span class="lsn-es" style="font-size:0.95rem; line-height:1.4;">${esc(modelAnswer)}</span>
+                    </div>
+                ` : ''}
+                <div class="lsn-writing-feedback hidden" id="lsn-writing-feedback">
+                    ${(typeof navigator === 'undefined' || navigator.onLine) ? `
+                        <button type="button" class="dk-secondary" onclick="lessonGetWritingFeedback()">Get coach feedback</button>
+                    ` : ''}
+                    <div id="lsn-writing-feedback-result"></div>
+                </div>
+                ${feedbackHtml()}
+            `;
+        }
+
         return `
-            <p class="lsn-question">Complete each line in ${esc(Lang.name())}.</p>
+            <p class="lsn-question">Complete each line in ${esc(langName)}.</p>
             ${typeof UI !== 'undefined' && UI.diacriticsBarHtml ? UI.diacriticsBarHtml('.lsn-input') : ''}
             ${stepState.lines.map((line, i) => `
                 <div class="lsn-write-row">
@@ -1270,7 +1430,7 @@ const stepRenderers = {
             <p class="lsn-hint">There is more than one right answer. Write every line, then compare yours with the examples.</p>
             <div class="lsn-writing-feedback hidden" id="lsn-writing-feedback">
                 ${(typeof navigator === 'undefined' || navigator.onLine) ? `
-                    <button type="button" class="dk-secondary" onclick="lessonGetWritingFeedback()">Get feedback</button>
+                    <button type="button" class="dk-secondary" onclick="lessonGetWritingFeedback()">Get coach feedback</button>
                 ` : ''}
                 <div id="lsn-writing-feedback-result"></div>
             </div>
@@ -1432,15 +1592,100 @@ const stepRenderers = {
         `;
     },
 
+    challenge(step) {
+        gateStep();
+        stepState.target = step.target || step.sentence || '';
+        stepState.prompt = step.prompt || '';
+        stepState.scenario = step.scenario || '';
+        stepState.cues = step.cues || [];
+        stepState.tier = step.tier || ((step.level === 'A1') ? 'tier1' : (step.level === 'A2') ? 'tier2' : 'tier3');
+        stepState.canDo = step.canDo || '';
+        stepState.checkFn = 'lessonCheckChallenge';
+        stepState.checkDisabled = true;
+
+        const isSnoozed = typeof SpeechInput !== 'undefined' && SpeechInput.isCantSpeakNow();
+        if (isSnoozed) {
+            stepState.checkDisabled = false;
+        }
+
+        const tierBadge = stepState.tier === 'tier1' ? 'Tier 1 • Guided Practice' : stepState.tier === 'tier2' ? 'Tier 2 • Situational Task' : 'Tier 3 • Extended Production';
+        const level = step.level || 'A1';
+        const langName = typeof Lang !== 'undefined' ? Lang.name() : 'Spanish';
+
+        return `
+            <div class="sp-challenge-header" style="margin-bottom:12px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px;">
+                <span class="cando-badge cando-badge-verified" style="font-size:0.75rem; padding:4px 8px; border-radius:4px; font-weight:700;">CEFR ${esc(level)} • ${esc(tierBadge)}</span>
+                ${stepState.canDo ? `<span style="font-size:0.82rem; color:var(--text-muted); font-style:italic;">Target: "${esc(stepState.canDo)}"</span>` : ''}
+            </div>
+
+            ${isSnoozed ? `
+                <div class="sp-snoozed-banner" style="background:var(--surface); border:1px dashed var(--border); padding:10px 14px; margin-bottom:14px; display:flex; align-items:center; justify-content:space-between; gap:10px;">
+                    <span style="font-size:0.88rem; color:var(--text-muted, #687787);">Speaking practice is currently snoozed. You can type your answer below.</span>
+                    <button type="button" class="btn-secondary" onclick="lessonResumeSpeaking()" style="padding:4px 10px; font-size:0.82rem;">Turn mic on</button>
+                </div>
+            ` : ''}
+
+            <div class="sp-lesson-card" style="padding:16px; border:1px solid var(--border); border-radius:10px; background:var(--card-bg, var(--surface));">
+                ${stepState.scenario ? `<p style="font-size:0.95rem; color:var(--text-muted); margin:0 0 8px 0; font-style:italic;">${esc(stepState.scenario)}</p>` : ''}
+                <p style="font-size:1.2rem; font-weight:700; color:var(--text-heading); margin:0 0 10px 0; line-height:1.35;">${esc(stepState.prompt)}</p>
+
+                ${stepState.cues && stepState.cues.length ? `
+                    <div style="background:rgba(0,0,0,0.03); border-radius:6px; padding:10px 14px; margin-top:10px;">
+                        <span style="font-size:0.78rem; text-transform:uppercase; letter-spacing:0.05em; font-weight:700; color:var(--text-muted);">Points to include:</span>
+                        <ul style="margin:6px 0 0 0; padding-left:20px; font-size:0.92rem; color:var(--text);">
+                            ${stepState.cues.map(c => `<li style="margin-bottom:4px;">${esc(c)}</li>`).join('')}
+                        </ul>
+                    </div>
+                ` : ''}
+            </div>
+
+            <div class="sp-mic-section" style="margin-top:16px;">
+                <button type="button" class="sp-mic-btn" id="lesson-mic-btn" onclick="lessonToggleSpeaking(this)" aria-label="Record speech">
+                    <span class="sp-mic-icon-wrap">${typeof Art !== 'undefined' ? Art.icon('speaking') : ''}</span>
+                </button>
+                <span class="sp-mic-status" id="lesson-mic-status">Tap to speak</span>
+                <div class="sp-live-transcript hidden" id="lesson-live-transcript" aria-live="polite"></div>
+            </div>
+
+            <div class="sp-challenge-alt-input" style="margin-top:12px; text-align:center;">
+                <details style="display:inline-block; text-align:left; font-size:0.85rem; color:var(--text-muted);">
+                    <summary style="cursor:pointer; user-select:none;">Or type your response</summary>
+                    <div style="margin-top:8px;">
+                        <textarea id="lesson-challenge-input" class="lsn-input" style="width:100%; min-height:60px; font-size:0.95rem; padding:8px; border-radius:6px;" placeholder="Type your response in ${esc(langName)}..." oninput="stepState.checkDisabled = false; updateFooterButton();"></textarea>
+                    </div>
+                </details>
+            </div>
+
+            <div class="sp-reveal hidden" id="lesson-challenge-reveal" style="margin-top:14px;"></div>
+            ${feedbackHtml()}
+            <div style="text-align: center; margin-top: 12px;">
+                <button type="button" class="sp-cant-speak-btn" onclick="lessonSkipSpeaking()">Can't speak right now</button>
+            </div>
+        `;
+    },
+
     checklist(step) {
+        const store = (typeof LearnerModel !== 'undefined' && typeof LearnerModel.allCompetencies === 'function')
+            ? LearnerModel.allCompetencies() : {};
         return `
             <div class="lsn-checklist">
-                ${(step.items || []).map((item, i) => `
-                    <label class="lsn-check-item">
-                        <input type="checkbox" data-check="${i}">
-                        <span>${esc(item)}</span>
-                    </label>
-                `).join('')}
+                ${(step.items || []).map((item, i) => {
+                    const rec = store[item];
+                    const isVerified = rec && (rec.state === 'verified');
+                    return `
+                        <label class="lsn-check-item" style="display:flex; align-items:center; justify-content:space-between; gap:10px;">
+                            <span style="display:flex; align-items:center; gap:8px;">
+                                <input type="checkbox" data-check="${i}" ${isVerified || (rec && rec.checked) ? 'checked' : ''}>
+                                <span>${esc(item)}</span>
+                            </span>
+                            ${isVerified ? `
+                                <span class="cando-badge cando-badge-verified" style="font-size:0.75rem; white-space:nowrap; display:inline-flex; align-items:center; gap:4px;">
+                                    ✓ Verified
+                                </span>
+                            ` : ''}
+                        </label>
+                    `;
+                }).join('')}
             </div>
         `;
     }
@@ -2402,6 +2647,24 @@ function revealOrder() {
 function lessonCheckWriting() {
     if (stepState.revealed) return;
 
+    if (stepState.isComposition) {
+        const textarea = document.querySelector('[data-write-composition]');
+        const text = textarea ? textarea.value.trim() : '';
+        const words = text ? text.split(/\s+/).filter(Boolean).length : 0;
+        const minWords = stepState.minWords || 6;
+        const wordCountEl = document.getElementById('lsn-comp-wordcount');
+        if (wordCountEl) {
+            wordCountEl.textContent = `${words}/${minWords} words`;
+            wordCountEl.style.color = words >= minWords ? 'var(--accent, #2b6cb0)' : 'var(--text-muted)';
+        }
+
+        const filled = words >= minWords;
+        stepState.checkDisabled = !filled;
+        updateFooterButton();
+        setFeedback(true, filled ? 'Ready — check your composition against the example.' : '');
+        return;
+    }
+
     const inputs = Array.prototype.slice.call(document.querySelectorAll('[data-write]'));
     const filled = inputs.length > 0 && inputs.every(input => input.value.trim().length > 0);
 
@@ -2415,6 +2678,7 @@ function lessonRevealWriting() {
     if (stepState.revealed) return;
     stepState.revealed = true;
 
+    document.querySelectorAll('[data-model]').forEach(el => el.classList.remove('hidden'));
     document.querySelectorAll('[data-model]').forEach(el => el.classList.add('is-shown'));
 
     const feedbackWrap = document.getElementById('lsn-writing-feedback');
@@ -2432,7 +2696,7 @@ function lessonRevealWriting() {
     }
 
     // Inputs stay editable so the learner can correct their own sentence.
-    solveStep('Compare your sentences with the examples, then continue.');
+    solveStep(stepState.isComposition ? 'Compare your writing with the example, then continue.' : 'Compare your sentences with the examples, then continue.');
 }
 
 // On-demand only (never automatic): a 1-line prompt embedded in every
@@ -2447,22 +2711,30 @@ async function lessonGetWritingFeedback() {
     const btn = document.querySelector('#lsn-writing-feedback button');
     if (!resultEl || typeof GraderEngine === 'undefined') return;
 
-    const inputs = Array.prototype.slice.call(document.querySelectorAll('[data-write]'));
-    const learnerText = inputs.map(inp => inp.value.trim()).filter(Boolean).join(' ');
+    let learnerText = '';
+    const compTextarea = document.querySelector('[data-write-composition]');
+    if (compTextarea) {
+        learnerText = compTextarea.value.trim();
+    } else {
+        const inputs = Array.prototype.slice.call(document.querySelectorAll('[data-write]'));
+        learnerText = inputs.map(inp => inp.value.trim()).filter(Boolean).join(' ');
+    }
     if (!learnerText) return;
 
     if (btn) btn.disabled = true;
     resultEl.textContent = 'Getting feedback…';
 
-    const prompts = (stepState.lines || []).map(l => l.prompt).join(' / ');
+    const prompts = (stepState.lines && stepState.lines.length)
+        ? stepState.lines.map(l => l.prompt).join(' / ')
+        : (stepState.sourceStep && (stepState.sourceStep.prompt || stepState.sourceStep.title)) || 'Writing practice';
     const engine = new GraderEngine();
 
     let result;
     try {
         result = await engine.grade(learnerText, {
             cefrLevel: (currentLesson && currentLesson.level) || 'A1',
-            taskType: 'structured_writing',
-            taskInstructions: `Write sentences for: ${prompts}`,
+            taskType: (stepState.lines && stepState.lines.length) ? 'structured_writing' : 'written_production',
+            taskInstructions: `Writing task: ${prompts}`,
             targetSkills: (stepState.sourceStep && stepState.sourceStep.teaches) || [],
             modality: 'written'
         });
@@ -2472,19 +2744,16 @@ async function lessonGetWritingFeedback() {
         return;
     }
 
-    const dims = result.dimensions || {};
-    const dimLabels = { grammar: 'Grammar', vocabulary: 'Vocabulary', coherence: 'Coherence', complexity: 'Complexity', naturalness: 'Naturalness' };
+    const score = result.overallScore || 0;
     const tip = _graderOneLineTip(result);
     resultEl.innerHTML = `
-        <p class="lsn-writing-feedback-score">Overall: ${result.overallScore || 0}%</p>
-        <div class="sp-word-breakdown">
-            ${Object.keys(dims).map(key => `
-                <span class="sp-word-pill ${dims[key] >= 0.6 ? 'sp-word-matched' : 'sp-word-missed'}">
-                    ${esc(dimLabels[key] || key)}: ${Math.round((dims[key] || 0) * 100)}%
-                </span>
-            `).join('')}
+        <div class="sp-challenge-feedback-card" style="background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:12px 16px; margin:10px 0;">
+            <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:6px;">
+                <span style="font-weight:700; font-size:0.9rem; color:var(--text-heading);">Writing Coach</span>
+                <span class="cando-badge ${score >= 60 ? 'cando-badge-verified' : 'cando-badge-gap'}" style="font-size:0.8rem;">${score}%</span>
+            </div>
+            ${tip ? `<p style="margin:0; font-size:0.95rem; color:var(--text); line-height:1.4;">${esc(tip)}</p>` : ''}
         </div>
-        ${tip ? `<p class="lsn-hint">${esc(tip)}</p>` : ''}
     `;
     if (btn) btn.remove();
 }
@@ -2655,7 +2924,11 @@ function lessonToggleSpeaking(btn) {
                 stepState.transcript = transcript;
                 stepState.checkDisabled = false;
                 updateFooterButton();
-                lessonCheckSpeaking();
+                if (stepState.checkFn === 'lessonCheckChallenge') {
+                    lessonCheckChallenge();
+                } else {
+                    lessonCheckSpeaking();
+                }
             },
             onAudioReady: url => {
                 stepState.userAudioUrl = url;
@@ -2672,8 +2945,12 @@ function lessonToggleSpeaking(btn) {
                 if (currentText) {
                     stepState.transcript = currentText;
                     stepState.checkDisabled = false;
-                updateFooterButton();
-                    lessonCheckSpeaking();
+                    updateFooterButton();
+                    if (stepState.checkFn === 'lessonCheckChallenge') {
+                        lessonCheckChallenge();
+                    } else {
+                        lessonCheckSpeaking();
+                    }
                     return;
                 }
 
@@ -2758,16 +3035,13 @@ function lessonPlayUserAudio() {
     }
 }
 
-// prompt-speak is open-ended (translate-and-say), so the word-match
-// pipeline below -- built for read-repeat's verbatim comparison -- makes
-// no sense for it; it goes through the same CEFR grader SpeakingStudio's
-// Verbal Production uses instead. read-repeat is untouched.
+// Single-sentence speaking exercises (both read-repeat shadowing and
+// prompt-speak translation) use the fast, local SpeechInput.evaluate()
+// engine from the workshop drill runner — giving immediate word-by-word
+// feedback and audio comparison without heavy CEFR dimension overhead.
+// (Multi-sentence open tasks can invoke _lessonCheckSpeakingCEFR).
 function lessonCheckSpeaking() {
     if (stepState.solved) return;
-    if (stepState.mode === 'prompt-speak' && typeof GraderEngine !== 'undefined') {
-        _lessonCheckSpeakingCEFR();
-        return;
-    }
 
     const target = stepState.target || '';
     const transcript = stepState.transcript || '';
@@ -2815,22 +3089,193 @@ function lessonCheckSpeaking() {
     if (typeof LearnerModel !== 'undefined' && typeof LearnerModel.recordProduction === 'function') {
         const skills = (stepState.sourceStep && stepState.sourceStep.skillIds) || null;
         if (skills && skills.length) {
-            LearnerModel.recordProduction(skills, evalResult.isCorrect, evalResult.accuracy);
+            LearnerModel.recordProduction(skills, evalResult.isCorrect, evalResult.accuracy, 'oral');
         } else if (currentLesson && currentLesson.id && typeof Recommend !== 'undefined' && typeof Recommend.lessonSkillFor === 'function') {
             Recommend.lessonSkillFor(currentLesson.id).then(skill => {
-                if (skill) LearnerModel.recordProduction([skill], evalResult.isCorrect, evalResult.accuracy);
+                if (skill) LearnerModel.recordProduction([skill], evalResult.isCorrect, evalResult.accuracy, 'oral');
             }).catch(() => {});
         }
     }
 
+    const isPrompt = stepState.mode === 'prompt-speak';
     if (evalResult.isCorrect) {
-        solveStep(`✓ Spoken clearly! (${evalResult.accuracy}%)`);
+        solveStep(`✓ ${isPrompt ? 'Translated & spoken clearly!' : 'Spoken clearly!'} (${evalResult.accuracy}%)`);
     } else {
         if (failStep(`✗ Accuracy ${evalResult.accuracy}%. Try again or continue.`)) {
             setFeedback(false, `Keep practicing: listen to the model above.`);
         }
     }
 }
+
+// Progressive CEFR Communicative Challenge Evaluator:
+// - Tier 1 (A1): Fast local word matching against target sentence (SpeechInput.evaluate)
+// - Tier 2 (A2): Situational multi-cue transaction evaluation
+// - Tier 3 (B1/B2): AI formative grading with a 1-sentence coaching feedback (strengths/priorities)
+// Automatically verifies the Can-Do competency in LearnerModel upon passing (>= 60%).
+async function lessonCheckChallenge() {
+    if (stepState.solved) return;
+
+    const transcript = (stepState.transcript || '').trim();
+    const typedInput = document.getElementById('lesson-challenge-input');
+    const typed = (typedInput ? typedInput.value : '').trim();
+    const userText = transcript || typed;
+
+    if (!userText) {
+        setFeedback(false, 'Please speak or type your response first.');
+        return;
+    }
+
+    const modality = transcript ? 'oral' : 'written';
+    const tier = stepState.tier || 'tier1';
+    const canDo = stepState.canDo || '';
+    const level = (currentLesson && currentLesson.level) || 'A1';
+    const lang = typeof Lang !== 'undefined' ? Lang.code() : 'es';
+    const langName = typeof Lang !== 'undefined' ? Lang.name() : 'Spanish';
+
+    stepState.checkDisabled = true;
+    updateFooterButton();
+    setFeedback(true, 'Evaluating your response…');
+
+    const revealEl = document.getElementById('lesson-challenge-reveal');
+    const userAudioUrl = stepState.userAudioUrl || (typeof SpeechInput !== 'undefined' ? SpeechInput.getRecordedAudioUrl() : null);
+    const listenIcon = (typeof Art !== 'undefined') ? Art.icon('listening') : '';
+    const micIcon = (typeof Art !== 'undefined') ? Art.icon('mic') : '';
+
+    if (tier === 'tier1') {
+        // Tier 1: Local word/speech evaluation
+        const target = stepState.target || '';
+        let evalResult = { isCorrect: true, accuracy: 100, words: [] };
+        if (target && typeof SpeechInput !== 'undefined') {
+            evalResult = SpeechInput.evaluate(target, userText);
+        } else {
+            const words = userText.split(/\s+/).filter(Boolean);
+            const ok = words.length >= 2;
+            evalResult = { isCorrect: ok, accuracy: ok ? 85 : 50, words: [] };
+        }
+
+        if (revealEl) {
+            revealEl.classList.remove('hidden');
+            revealEl.innerHTML = `
+                ${evalResult.words && evalResult.words.length ? `
+                    <div class="sp-word-breakdown">
+                        ${evalResult.words.map(w => `
+                            <span class="sp-word-pill ${w.status === 'matched' ? 'sp-word-matched' : 'sp-word-missed'}">
+                                ${esc(w.word)}
+                            </span>
+                        `).join('')}
+                    </div>
+                ` : ''}
+                ${target ? `
+                    <div style="margin-top:10px; padding:10px 14px; background:rgba(0,0,0,0.03); border-radius:6px;">
+                        <span style="font-size:0.75rem; text-transform:uppercase; color:var(--text-muted); font-weight:700;">Model Answer:</span>
+                        <p style="margin:4px 0 0 0; font-size:1.05rem; font-weight:600; color:var(--text-heading);">${esc(target)}</p>
+                    </div>
+                ` : ''}
+                <div class="sp-compare-bar" style="margin-top:10px;">
+                    ${target ? `
+                        <button type="button" class="sp-audio-compare-btn sp-btn-model" onclick="lessonPlayModelAudio()" aria-label="Listen to model voice">
+                            ${listenIcon}
+                            <span>Model Voice</span>
+                        </button>
+                    ` : ''}
+                    <button type="button" class="sp-audio-compare-btn sp-btn-user ${userAudioUrl ? '' : 'hidden'}" id="lesson-btn-user-audio" onclick="lessonPlayUserAudio()" aria-label="Listen to your recording">
+                        ${micIcon}
+                        <span id="lesson-user-audio-label">Your Voice</span>
+                    </button>
+                </div>
+            `;
+        }
+
+        const skills = (stepState.sourceStep && stepState.sourceStep.skillIds) || null;
+        if (typeof LearnerModel !== 'undefined' && typeof LearnerModel.recordProduction === 'function') {
+            if (skills && skills.length) {
+                LearnerModel.recordProduction(skills, evalResult.isCorrect, evalResult.accuracy, modality);
+            }
+        }
+
+        if (evalResult.isCorrect) {
+            if (canDo && typeof LearnerModel !== 'undefined' && typeof LearnerModel.verifyCompetency === 'function') {
+                LearnerModel.verifyCompetency(canDo, evalResult.accuracy, 'lesson-challenge', modality);
+            }
+            solveStep(`✓ Challenge complete! CEFR goal verified (${evalResult.accuracy}%)`);
+        } else {
+            if (failStep(`✗ Accuracy ${evalResult.accuracy}%. Try again or continue.`)) {
+                setFeedback(false, 'Keep practicing to master this goal.');
+            }
+        }
+    } else {
+        // Tier 2 (A2) & Tier 3 (B1/B2): Communicative evaluation with 1-sentence coaching feedback
+        let score = 75;
+        let tip = '';
+
+        if (typeof GraderEngine !== 'undefined' && (typeof navigator === 'undefined' || navigator.onLine)) {
+            try {
+                const engine = new GraderEngine();
+                const result = await engine.grade(userText, {
+                    cefrLevel: level,
+                    taskType: tier === 'tier2' ? 'structured_transaction' : 'oral_production',
+                    taskInstructions: stepState.prompt + (stepState.cues && stepState.cues.length ? ` Points: ${stepState.cues.join(', ')}` : ''),
+                    language: lang,
+                    modality: modality,
+                    title: 'Lesson Communicative Challenge'
+                });
+                score = result.overallScore || 75;
+                tip = _graderOneLineTip(result);
+            } catch (e) {
+                console.warn('GraderEngine challenge error:', e);
+                const words = userText.split(/\s+/).filter(Boolean).length;
+                score = words >= 5 ? 80 : 55;
+            }
+        } else {
+            // Local fallback
+            const words = userText.split(/\s+/).filter(Boolean).length;
+            const minWords = tier === 'tier2' ? 6 : 12;
+            score = words >= minWords ? 85 : Math.round((words / minWords) * 80);
+            tip = score >= 70 ? 'Great job formulating your response in context!' : 'Try to expand your answer with more details.';
+        }
+
+        if (revealEl) {
+            revealEl.classList.remove('hidden');
+            revealEl.innerHTML = `
+                <div class="sp-challenge-feedback-card" style="background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:12px 16px; margin:10px 0;">
+                    <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:6px;">
+                        <span style="font-weight:700; font-size:0.9rem; color:var(--text-heading);">Coach Feedback</span>
+                        <span class="cando-badge ${score >= 60 ? 'cando-badge-verified' : 'cando-badge-gap'}" style="font-size:0.8rem;">${score}%</span>
+                    </div>
+                    ${tip ? `<p style="margin:0; font-size:0.95rem; color:var(--text); line-height:1.4;">${esc(tip)}</p>` : ''}
+                </div>
+                ${userAudioUrl ? `
+                    <div class="sp-compare-bar" style="margin-top:8px;">
+                        <button type="button" class="sp-audio-compare-btn sp-btn-user" id="lesson-btn-user-audio" onclick="lessonPlayUserAudio()" aria-label="Listen to your recording">
+                            ${micIcon}
+                            <span id="lesson-user-audio-label">Your Voice</span>
+                        </button>
+                    </div>
+                ` : ''}
+            `;
+        }
+
+        const isPass = score >= 60;
+        const skills = (stepState.sourceStep && stepState.sourceStep.skillIds) || null;
+        if (typeof LearnerModel !== 'undefined' && typeof LearnerModel.recordProduction === 'function') {
+            if (skills && skills.length) {
+                LearnerModel.recordProduction(skills, isPass, score, modality);
+            }
+        }
+
+        if (isPass) {
+            if (canDo && typeof LearnerModel !== 'undefined' && typeof LearnerModel.verifyCompetency === 'function') {
+                LearnerModel.verifyCompetency(canDo, score, 'lesson-challenge', modality);
+            }
+            solveStep(`✓ ${tier === 'tier2' ? 'Transaction complete!' : 'Challenge passed!'} CEFR goal verified (${score}%)`);
+        } else {
+            if (failStep(`Score ${score}%. Try again or continue.`)) {
+                setFeedback(false, 'Review the cues above and try again.');
+            }
+        }
+    }
+}
+window.lessonCheckChallenge = lessonCheckChallenge;
 
 const CEFR_DIMENSION_LABELS = { grammar: 'Grammar', vocabulary: 'Vocabulary', coherence: 'Coherence', complexity: 'Complexity', naturalness: 'Naturalness' };
 

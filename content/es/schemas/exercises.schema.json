@@ -621,6 +621,11 @@
             ]
           ]
         },
+        "prompt": { "type": "string" },
+        "scenario": { "type": "string" },
+        "cues": { "type": "array", "items": { "type": "string" } },
+        "minWords": { "type": "integer" },
+        "model": { "type": "string" },
         "teaches": {
           "$ref": "#/definitions/baseFields/teaches"
         }

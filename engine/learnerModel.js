@@ -722,8 +722,12 @@ const LearnerModel = (function () {
             const checked = !!item.checked;
             const accuracy = typeof item.exerciseAccuracy === 'number' ? item.exerciseAccuracy : 100;
 
+            const existing = store[text] || {};
+
             let state;
-            if (checked && accuracy >= 75) {
+            if (existing.state === 'verified' && checked) {
+                state = 'verified';
+            } else if (checked && accuracy >= 75) {
                 state = 'verified';
             } else if (!checked && accuracy >= 75) {
                 state = 'confidence-gap';
@@ -733,16 +737,16 @@ const LearnerModel = (function () {
                 state = 'deficit';
             }
 
-            const existing = store[text] || {};
             store[text] = {
+                ...existing,
                 text,
-                lessonId,
+                lessonId: lessonId || existing.lessonId,
                 checked,
                 exerciseAccuracy: accuracy,
                 state,
                 timestamp: now,
-                verifiedAt: state === 'verified' ? now : (existing.verifiedAt || null),
-                source: 'lesson-checklist'
+                verifiedAt: state === 'verified' ? (existing.verifiedAt || now) : null,
+                source: existing.source || 'lesson-checklist'
             };
         });
 
@@ -752,7 +756,7 @@ const LearnerModel = (function () {
     /**
      * Verifies a competency statement (e.g. from Writing or Speaking Studio when score >= 75)
      */
-    function verifyCompetency(textOrId, score, source) {
+    function verifyCompetency(textOrId, score, source, modality) {
         if (!textOrId) return;
         const store = _loadCompetencies();
         const now = Date.now();
@@ -767,6 +771,7 @@ const LearnerModel = (function () {
             state: 'verified',
             verifiedAt: now,
             timestamp: now,
+            modality: modality || existing.modality || 'oral',
             source: source || 'studio-assessment'
         };
 

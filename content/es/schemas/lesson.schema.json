@@ -74,6 +74,7 @@
         { "$ref": "#/definitions/vocabularySection" },
         { "$ref": "#/definitions/storySection" },
         { "$ref": "#/definitions/srsSection" },
+        { "$ref": "#/definitions/challengeSection" },
         { "$ref": "#/definitions/checklistSection" }
       ]
     },
@@ -190,6 +191,26 @@
       "properties": {
         "type": { "const": "srs" },
         "title": { "type": "string", "default": "Add to Review" }
+      }
+    },
+
+    "challengeSection": {
+      "type": "object",
+      "description": "Progressive communicative challenge (A1 formulaic, A2 transactional, B1/B2 narrative/analytical) linking to CEFR Can-Do goals.",
+      "required": ["type"],
+      "additionalProperties": false,
+      "properties": {
+        "type": { "const": "challenge" },
+        "title": { "type": "string" },
+        "prompt": { "type": "string" },
+        "scenario": { "type": "string" },
+        "cues": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "target": { "type": "string" },
+        "canDoRef": { "type": "string" },
+        "modality": { "type": "string", "enum": ["oral", "written", "both"] }
       }
     },
 
