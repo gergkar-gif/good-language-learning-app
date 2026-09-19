@@ -212,7 +212,13 @@ const Library = (function () {
                 const r = readings[0];
                 const lemma = r.lemma.toLowerCase();
                 if (!lemmaMap.has(lemma)) {
-                    lemmaMap.set(lemma, { lemma: lemma, translation: r.translation, pos: r.pos });
+                    // Raw dictionary glosses can run to a full sentence (e.g.
+                    // "haber" spells out its auxiliary/impersonal uses) — fine
+                    // for the Reader's tap popup, which keeps full detail on
+                    // purpose (see Lexicon.shortGloss's own comment), but this
+                    // list is a compact SRS/deck-card view, so it gets the
+                    // same short gloss those cards use everywhere else.
+                    lemmaMap.set(lemma, { lemma: lemma, translation: Lexicon.shortGloss(r.translation), pos: r.pos });
                 }
             } else {
                 unrecognizedUnique++;
