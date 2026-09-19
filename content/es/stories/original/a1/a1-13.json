@@ -1,80 +1,310 @@
 {
-  "id": "a1-original-13",
+  "id": "story.a1.directions",
   "title": "¿Dónde está Kaylee?",
-  "lesson": 13,
   "level": "A1",
-  "order": 13,
+  "lesson": 5,
+  "order": 16,
   "type": "original",
-  "summary": "Kaylee se pierde en Hanói y sus amigos le ayudan a encontrar el camino.",
+  "summary": "Kaylee gets turned around in the Old Quarter and calls Carlos and Meg for directions to the cafe.",
+  "estimatedMinutes": 3,
   "characters": [
     "Carlos",
     "Meg",
-    "Daniela",
-    "Lauren",
     "Kaylee"
   ],
-  "location": "Centro de Hanói",
+  "location": "Calles de Hanói",
   "grammar": [
-    "direcciones",
-    "preposiciones de movimiento"
+    "dar y pedir direcciones",
+    "imperativos de movimiento (gira, sigue)"
   ],
   "vocabularyTopics": [
-    "Transporte",
-    "Direcciones"
+    "Direcciones",
+    "Calles",
+    "Orientación"
   ],
-  "estimatedMinutes": 4,
   "paragraphs": [
     {
-      "id": 1,
-      "text": "Los amigos quedan en una cafetería del centro de Hanói."
+      "type": "narration",
+      "lang": "en",
+      "text": "Meg and Carlos are waiting at a street corner café when Meg's phone rings."
     },
     {
-      "id": 2,
-      "text": "Carlos, Meg, Daniela y Lauren llegan primero, pero Kaylee no aparece."
+      "type": "dialogue",
+      "speaker": "Kaylee",
+      "text": "¡Hola, Meg! Estoy perdida en el barrio antiguo. ¿Dónde está la cafetería?"
     },
     {
-      "id": 3,
-      "text": "Carlos la llama por teléfono. «¿Dónde estás?»"
+      "type": "dialogue",
+      "speaker": "Meg",
+      "text": "No te preocupes, Kaylee. ¿Dónde estás ahora mismo?"
     },
     {
-      "id": 4,
-      "text": "«Estoy cerca de un banco y de una farmacia, pero no encuentro la cafetería», responde Kaylee."
+      "type": "dialogue",
+      "speaker": "Kaylee",
+      "text": "Estoy delante de una tienda de ropa y veo un semáforo en la esquina."
     },
     {
-      "id": 5,
-      "text": "Carlos abre el mapa del móvil."
+      "type": "narration",
+      "lang": "en",
+      "text": "Carlos takes the phone to guide her through the nearby streets."
     },
     {
-      "id": 6,
-      "text": "«Camina todo recto hasta el semáforo», le dice."
+      "type": "dialogue",
+      "speaker": "Carlos",
+      "text": "Kaylee, cruza el semáforo y sigue todo recto por esa calle durante dos minutos."
     },
     {
-      "id": 7,
-      "text": "«Después gira a la derecha y sigue dos calles.»"
+      "type": "dialogue",
+      "speaker": "Kaylee",
+      "text": "¿Y luego? ¿Giro a la derecha o a la izquierda?"
     },
     {
-      "id": 8,
-      "text": "«¿Hay un parque a la izquierda?», pregunta Kaylee."
+      "type": "dialogue",
+      "speaker": "Carlos",
+      "text": "Gira a la derecha en la primera esquina. Vas a ver una farmacia y nuestro café al lado."
     },
     {
-      "id": 9,
-      "text": "«Sí. Pasa el parque y cruza la calle. La cafetería está enfrente del museo.»"
+      "type": "dialogue",
+      "speaker": "Kaylee",
+      "text": "¡Ya veo el letrero verde! Ya estoy llegando. ¡Muchas gracias, Carlos!"
     },
     {
-      "id": 10,
-      "text": "Cinco minutos después, Kaylee llega con una gran sonrisa."
-    },
-    {
-      "id": 11,
-      "text": "«¡Por fin!», dice Meg. «Creemos que estás muy lejos.»"
-    },
-    {
-      "id": 12,
-      "text": "«Ahora ya conozco mejor la ciudad», responde Kaylee riendo."
-    },
-    {
-      "id": 13,
-      "text": "Todos entran en la cafetería y empiezan a planear el resto del día."
+      "type": "dialogue",
+      "speaker": "Carlos",
+      "text": "De nada, Kaylee. ¡Aquí te esperamos!"
     }
-  ]
+  ],
+  "narration": {
+    "durationSeconds": 50.19,
+    "pacing": {
+      "speedMultiplier": 1.0,
+      "rate_str": "+0%",
+      "rate_wpm": 140,
+      "style": "natural, articulate"
+    },
+    "speakers": {
+      "Narrator": {
+        "role": "narrator",
+        "gender": "neutral",
+        "tone": "clear, warm, steady storytelling guide"
+      },
+      "Carlos": {
+        "role": "character",
+        "gender": "male",
+        "tone": "conversational, expressive"
+      },
+      "Meg": {
+        "role": "character",
+        "gender": "female",
+        "tone": "conversational, expressive"
+      },
+      "Kaylee": {
+        "role": "character",
+        "gender": "male",
+        "tone": "conversational, expressive"
+      }
+    },
+    "segments": [
+      {
+        "paraIndex": 0,
+        "startTime": 0.0,
+        "endTime": 5.79,
+        "speaker": "Narrator",
+        "lang": "en",
+        "cues": [],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 1,
+        "startTime": 5.79,
+        "endTime": 10.93,
+        "speaker": "Kaylee",
+        "lang": "es",
+        "cues": [
+          {
+            "type": "intonation",
+            "contour": "rising-interrogative"
+          },
+          {
+            "type": "emphasis",
+            "level": "strong"
+          },
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 2,
+        "startTime": 10.93,
+        "endTime": 14.36,
+        "speaker": "Meg",
+        "lang": "es",
+        "cues": [
+          {
+            "type": "intonation",
+            "contour": "rising-interrogative"
+          },
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 3,
+        "startTime": 14.36,
+        "endTime": 20.36,
+        "speaker": "Kaylee",
+        "lang": "es",
+        "cues": [],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 4,
+        "startTime": 20.36,
+        "endTime": 24.91,
+        "speaker": "Narrator",
+        "lang": "en",
+        "cues": [],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 5,
+        "startTime": 24.91,
+        "endTime": 30.91,
+        "speaker": "Carlos",
+        "lang": "es",
+        "cues": [
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 6,
+        "startTime": 30.91,
+        "endTime": 35.2,
+        "speaker": "Kaylee",
+        "lang": "es",
+        "cues": [
+          {
+            "type": "intonation",
+            "contour": "rising-interrogative"
+          }
+        ],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 7,
+        "startTime": 35.2,
+        "endTime": 42.91,
+        "speaker": "Carlos",
+        "lang": "es",
+        "cues": [],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 8,
+        "startTime": 42.91,
+        "endTime": 47.62,
+        "speaker": "Kaylee",
+        "lang": "es",
+        "cues": [
+          {
+            "type": "emphasis",
+            "level": "strong"
+          },
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 9,
+        "startTime": 47.62,
+        "endTime": 50.19,
+        "speaker": "Carlos",
+        "lang": "es",
+        "cues": [
+          {
+            "type": "emphasis",
+            "level": "strong"
+          },
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
+        "pronunciations": []
+      }
+    ],
+    "pedagogical": {
+      "keyVocabulary": [
+        {
+          "lemma": "conocer",
+          "pos": "verb",
+          "cefr": "A1",
+          "gloss": "to meet / get to know"
+        },
+        {
+          "lemma": "intercambio",
+          "pos": "noun",
+          "cefr": "A1",
+          "gloss": "exchange"
+        }
+      ],
+      "targetGrammar": [
+        "dar y pedir direcciones",
+        "imperativos de movimiento (gira, sigue)"
+      ],
+      "comprehensionQuestions": [
+        {
+          "question": "¿Dónde se encuentran Carlos y Meg?",
+          "options": [
+            "En un restaurante mexicano",
+            "En la universidad de Hanói",
+            "En una estación de tren",
+            "En una fiesta en Madrid"
+          ],
+          "correctIndex": 0,
+          "explanation": "Carlos va a un restaurante mexicano por la mañana para practicar español."
+        },
+        {
+          "question": "¿De dónde es Meg?",
+          "options": [
+            "De Hungría",
+            "De Sudáfrica",
+            "De España",
+            "De México"
+          ],
+          "correctIndex": 1,
+          "explanation": "Meg responde explícitamente: 'Soy de Sudáfrica'."
+        },
+        {
+          "question": "¿Por qué están allí los dos?",
+          "options": [
+            "Para practicar español en un intercambio de idiomas",
+            "Para comer tacos únicamente",
+            "Para trabajar como camareros",
+            "Para viajar a Hungría"
+          ],
+          "correctIndex": 0,
+          "explanation": "Los dos estudian el idioma y asisten al intercambio de idiomas."
+        }
+      ]
+    }
+  }
 }

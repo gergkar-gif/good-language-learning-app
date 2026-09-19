@@ -19,23 +19,170 @@
   "paragraphs": [
     {
       "type": "narration",
-      "text": "A tatárjárás legfontosabb hadászati tapasztalata az volt, hogy a hagyományos földvárak és a védtelen városok könnyen elestek, a maroknyi kővár — mint az esztergomi fellegvár, Székesfehérvár vagy Pannonhalma — viszont sikeresen ellenállt az ostromnak."
+      "text": "A tatárjárás után a király és a nemesség megértette: új katonai védelemre és stratégiára van szükség."
     },
     {
       "type": "narration",
-      "text": "Béla király felismerte, hogy egy esetleges újabb mongol betörést csak modern kőerődítményekkel lehet kivédeni. Uralkodása második felében közel száz új kővár épült fel az ország stratégiai pontjain, a hegycsúcsokon és a folyók mentén."
+      "text": "A földből és fából épült régi várak helyett vastag falú, modern kővárak építésébe kezdtek a hegyeken."
     },
     {
       "type": "narration",
-      "text": "A király a Duna partján fekvő magas hegyen megalapította az új királyi székhelyet, Buda várát. A pest-budai polgárokat a hegyre költöztette, és kőfallal vette körül az új várost. Ezzel egy időben kiépült a visegrádi fellegvár és az alsóvár híres Salamon-tornya is."
+      "text": "IV. Béla király a budai hegyen új fellegvárat és palotát emelt, amely minden ostromnak képes volt ellenállni."
     },
     {
       "type": "narration",
-      "text": "Amikor 1285-ben egy kisebb tatár sereg valóban újra betört Magyarországra, a helyzet már teljesen más volt: a megerősített kővárak és a felkészült lovagok könnyedén visszaverték a támadókat, és a tatárok súlyos vereséget szenvedve vonultak vissza."
+      "text": "Országszerte több tucat megerősített erődítmény épült, amelyek biztonságos menedéket nyújtottak a lakosságnak."
     },
     {
       "type": "narration",
-      "text": "Tudtad? IV. Béla várépítési programjának köszönhető a mai Magyarország és a történelmi felvidéki területek legtöbb romantikus várromja, amelyek ma is meghatározzák a tájat."
+      "text": "Amikor a tatárok évtizedekkel később újra támadtak, a sziklaszilárd kővárak sikeresen megvédték a hazát."
     }
-  ]
+  ],
+  "narration": {
+    "durationSeconds": 30.0,
+    "pacing": {
+      "speedMultiplier": 1.0,
+      "rate_str": "+0%",
+      "rate_wpm": 150,
+      "style": "natural, expressive"
+    },
+    "speakers": {
+      "Narrator": {
+        "role": "narrator",
+        "gender": "neutral",
+        "tone": "clear, warm, steady storytelling guide"
+      }
+    },
+    "segments": [
+      {
+        "paraIndex": 0,
+        "startTime": 0.0,
+        "endTime": 6.4,
+        "speaker": "Narrator",
+        "lang": "hu",
+        "cues": [],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 1,
+        "startTime": 6.4,
+        "endTime": 12.8,
+        "speaker": "Narrator",
+        "lang": "hu",
+        "cues": [
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 2,
+        "startTime": 12.8,
+        "endTime": 19.6,
+        "speaker": "Narrator",
+        "lang": "hu",
+        "cues": [
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 3,
+        "startTime": 19.6,
+        "endTime": 24.4,
+        "speaker": "Narrator",
+        "lang": "hu",
+        "cues": [
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 4,
+        "startTime": 24.4,
+        "endTime": 30.0,
+        "speaker": "Narrator",
+        "lang": "hu",
+        "cues": [
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
+        "pronunciations": []
+      }
+    ],
+    "pedagogical": {
+      "keyVocabulary": [
+        {
+          "lemma": "könyv",
+          "pos": "noun",
+          "cefr": "A1",
+          "gloss": "book"
+        },
+        {
+          "lemma": "telefon",
+          "pos": "noun",
+          "cefr": "A1",
+          "gloss": "telephone"
+        },
+        {
+          "lemma": "ház",
+          "pos": "noun",
+          "cefr": "A1",
+          "gloss": "house"
+        }
+      ],
+      "targetGrammar": [
+        "defensive-fortifications"
+      ],
+      "comprehensionQuestions": [
+        {
+          "question": "Hol van Meg és Károly?",
+          "options": [
+            "Budapesten",
+            "Londonban",
+            "Bécsben",
+            "Madridban"
+          ],
+          "correctIndex": 0,
+          "explanation": "Meg Budapesten van Károllyal (Meg is in Budapest with Károly)."
+        },
+        {
+          "question": "Mi van az asztalon?",
+          "options": [
+            "Egy könyv és egy telefon",
+            "Egy autó és egy kulcs",
+            "Egy kutya és egy macska",
+            "Csak egy pohár tej"
+          ],
+          "correctIndex": 0,
+          "explanation": "Károly rámutat egy könyvre és egy telefonra az asztalon (Ez egy könyv, az egy telefon)."
+        },
+        {
+          "question": "Milyen nyelven beszélnek a párbeszédekben?",
+          "options": [
+            "Magyarul",
+            "Spanyolul",
+            "Németül",
+            "Olaszul"
+          ],
+          "correctIndex": 0,
+          "explanation": "Meg magyarul gyakorolja az alapvető szavakat Károllyal."
+        }
+      ]
+    }
+  }
 }

@@ -9,13 +9,167 @@
   "summary": "How the Magyar tribes gradually occupied the Carpathian Basin over several years, absorbing or displacing the peoples already there, and secured their new home at the Battle of Pozsony in 907.",
   "characters": [],
   "location": "Kárpát-medence",
-  "grammar": ["több szereplő és miután/mielőtt összekapcsolva"],
-  "vocabularyTopics": ["A medence birtokba vétele"],
+  "grammar": [
+    "több szereplő és miután/mielőtt összekapcsolva"
+  ],
+  "vocabularyTopics": [
+    "A medence birtokba vétele"
+  ],
   "paragraphs": [
-    { "type": "narration", "text": "Miután a magyar törzsek átkeltek a Kárpátokon, nem egyszerre foglalták el az egész medencét: a honfoglalás egy több éven át tartó folyamat volt, amely fokozatosan terjeszkedett a keleti és középső területektől nyugat felé." },
-    { "type": "narration", "text": "A magyarok elsőként a medence középső, síksági részét, a mai Alföldet szállták meg — ez a ritkán lakott, füves terület kiváló legelőt biztosított egy állattenyésztésre és lovas életmódra épülő nép számára." },
-    { "type": "narration", "text": "A Dunántúlon és a peremvidékeken élő szláv törzsek, valamint az egykori Avar Kaganátus túlélői részben ellenállást tanúsítottak, részben pedig fokozatosan behódoltak az új uralkodóknak, és adót fizettek a magyar törzseknek." },
-    { "type": "narration", "text": "Miután a magyarok 900 körül elfoglalták a Dunántúlt is, és legyőzték az ott élő szláv fejedelemségeket, a helyi lakosság idővel keveredett a betelepülő magyarokkal, és sokan átvették azok nyelvét és szokásait." },
-    { "type": "narration", "text": "A magyarok új hazájukat 907-ben, a pozsonyi csatában védték meg végérvényesen egy bajor sereg támadásától — ez a győzelem közel másfél évszázadra biztosította a törzsszövetség biztonságát a Kárpát-medencében." }
-  ]
+    {
+      "type": "narration",
+      "text": "A Kárpátokon való sikeres átkelés után a magyar törzsek fokozatosan elfoglalták az egész Kárpát-medencét."
+    },
+    {
+      "type": "narration",
+      "text": "A nép gyorsan terjeszkedik a termékeny vidéken: először a tágas Alföld zöld legelőit vették birtokba."
+    },
+    {
+      "type": "narration",
+      "text": "A magyarok hagyományos életformája a pásztorkodás és az állattenyésztés volt, amihez a síkság tökéletes feltételeket nyújtott."
+    },
+    {
+      "type": "narration",
+      "text": "A törzsek alig találkoztak fegyveres ellenállással a helyi lakosság részéről a Dunántúlon és északon."
+    },
+    {
+      "type": "narration",
+      "text": "A helyi szláv és avar népességgel békésen keveredik a magyarság, adót szednek, és közösen kezdték el művelni a földeket."
+    }
+  ],
+  "narration": {
+    "durationSeconds": 31.2,
+    "pacing": {
+      "speedMultiplier": 1.0,
+      "rate_str": "+0%",
+      "rate_wpm": 150,
+      "style": "natural, expressive"
+    },
+    "speakers": {
+      "Narrator": {
+        "role": "narrator",
+        "gender": "neutral",
+        "tone": "clear, warm, steady storytelling guide"
+      }
+    },
+    "segments": [
+      {
+        "paraIndex": 0,
+        "startTime": 0.0,
+        "endTime": 5.6,
+        "speaker": "Narrator",
+        "lang": "hu",
+        "cues": [],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 1,
+        "startTime": 5.6,
+        "endTime": 11.6,
+        "speaker": "Narrator",
+        "lang": "hu",
+        "cues": [],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 2,
+        "startTime": 11.6,
+        "endTime": 18.0,
+        "speaker": "Narrator",
+        "lang": "hu",
+        "cues": [
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 3,
+        "startTime": 18.0,
+        "endTime": 23.6,
+        "speaker": "Narrator",
+        "lang": "hu",
+        "cues": [],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 4,
+        "startTime": 23.6,
+        "endTime": 31.2,
+        "speaker": "Narrator",
+        "lang": "hu",
+        "cues": [
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
+        "pronunciations": []
+      }
+    ],
+    "pedagogical": {
+      "keyVocabulary": [
+        {
+          "lemma": "könyv",
+          "pos": "noun",
+          "cefr": "A1",
+          "gloss": "book"
+        },
+        {
+          "lemma": "telefon",
+          "pos": "noun",
+          "cefr": "A1",
+          "gloss": "telephone"
+        },
+        {
+          "lemma": "ház",
+          "pos": "noun",
+          "cefr": "A1",
+          "gloss": "house"
+        }
+      ],
+      "targetGrammar": [
+        "több szereplő és miután/mielőtt összekapcsolva"
+      ],
+      "comprehensionQuestions": [
+        {
+          "question": "Hol van Meg és Károly?",
+          "options": [
+            "Budapesten",
+            "Londonban",
+            "Bécsben",
+            "Madridban"
+          ],
+          "correctIndex": 0,
+          "explanation": "Meg Budapesten van Károllyal (Meg is in Budapest with Károly)."
+        },
+        {
+          "question": "Mi van az asztalon?",
+          "options": [
+            "Egy könyv és egy telefon",
+            "Egy autó és egy kulcs",
+            "Egy kutya és egy macska",
+            "Csak egy pohár tej"
+          ],
+          "correctIndex": 0,
+          "explanation": "Károly rámutat egy könyvre és egy telefonra az asztalon (Ez egy könyv, az egy telefon)."
+        },
+        {
+          "question": "Milyen nyelven beszélnek a párbeszédekben?",
+          "options": [
+            "Magyarul",
+            "Spanyolul",
+            "Németül",
+            "Olaszul"
+          ],
+          "correctIndex": 0,
+          "explanation": "Meg magyarul gyakorolja az alapvető szavakat Károllyal."
+        }
+      ]
+    }
+  }
 }

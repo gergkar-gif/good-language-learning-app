@@ -1,80 +1,274 @@
 {
-  "id": "a1-original-14",
+  "id": "story.a1.weather",
   "title": "Un día de lluvia",
-  "lesson": 14,
   "level": "A1",
-  "order": 14,
+  "lesson": 5,
+  "order": 17,
   "type": "original",
-  "summary": "La lluvia cambia los planes del grupo y pasan la tarde en una cafetería.",
+  "summary": "A sudden tropical downpour changes the friends' afternoon plans from a park walk to a cozy indoor gathering.",
+  "estimatedMinutes": 3,
   "characters": [
     "Carlos",
-    "Meg",
-    "Daniela",
-    "Lauren",
-    "Kaylee"
+    "Meg"
   ],
   "location": "Hanói",
   "grammar": [
-    "el tiempo",
-    "estaciones"
+    "el clima y el tiempo",
+    "hace calor / hace frío / llueve"
   ],
   "vocabularyTopics": [
     "El tiempo",
-    "Estaciones"
+    "Clima",
+    "Lluvia"
   ],
-  "estimatedMinutes": 4,
   "paragraphs": [
     {
-      "id": 1,
-      "text": "El domingo por la mañana, los amigos quieren hacer un pícnic en el parque."
+      "type": "narration",
+      "lang": "en",
+      "text": "Dark grey clouds gather quickly over Hanoi on Sunday afternoon. The wind begins to pick up."
     },
     {
-      "id": 2,
-      "text": "Cuando salen de casa, el cielo está muy gris."
+      "type": "dialogue",
+      "speaker": "Meg",
+      "text": "Carlos, mira el cielo. Está muy nublado y hace mucho viento."
     },
     {
-      "id": 3,
-      "text": "«Creo que va a llover», dice Meg."
+      "type": "dialogue",
+      "speaker": "Carlos",
+      "text": "Sí, hoy no podemos ir al parque. Ya empieza a llover fuerte afuera."
     },
     {
-      "id": 4,
-      "text": "Unos minutos después empieza a llover muy fuerte."
+      "type": "dialogue",
+      "speaker": "Meg",
+      "text": "Qué lástima, pero aquí adentro estamos secos y cómodos. ¿Hace frío o calor para ti?"
     },
     {
-      "id": 5,
-      "text": "Todos corren hasta una cafetería cercana."
+      "type": "dialogue",
+      "speaker": "Carlos",
+      "text": "La temperatura bajó con la lluvia, hace un poco de fresco. Preparo té caliente para los dos."
     },
     {
-      "id": 6,
-      "text": "Desde la ventana ven la lluvia caer sobre las calles de Hanói."
+      "type": "narration",
+      "lang": "en",
+      "text": "They sit by the window listening to the steady rhythm of rain falling on the trees."
     },
     {
-      "id": 7,
-      "text": "«En mi país hace mucho calor en esta época del año», comenta Daniela."
+      "type": "dialogue",
+      "speaker": "Meg",
+      "text": "El pronóstico del tiempo dice que mañana lunes vuelve el sol y el calor."
     },
     {
-      "id": 8,
-      "text": "Lauren dice que le gusta la lluvia porque es perfecta para leer un libro."
+      "type": "dialogue",
+      "speaker": "Carlos",
+      "text": "Excelente. Mientras tanto, nos quedamos en casa leyendo y descansando."
     },
     {
-      "id": 9,
-      "text": "Kaylee prefiere los días soleados para jugar al fútbol."
-    },
-    {
-      "id": 10,
-      "text": "Carlos pide chocolate caliente para todos."
-    },
-    {
-      "id": 11,
-      "text": "Mientras hablan, juegan a las cartas y cuentan historias divertidas."
-    },
-    {
-      "id": 12,
-      "text": "Por la tarde deja de llover y sale el sol otra vez."
-    },
-    {
-      "id": 13,
-      "text": "«Hoy no hacemos el pícnic», dice Meg, «pero es un día muy bonito.»"
+      "type": "dialogue",
+      "speaker": "Meg",
+      "text": "Una tarde de lluvia también tiene su encanto. ¡Salud con el té!"
     }
-  ]
+  ],
+  "narration": {
+    "durationSeconds": 52.67,
+    "pacing": {
+      "speedMultiplier": 1.0,
+      "rate_str": "+0%",
+      "rate_wpm": 140,
+      "style": "natural, articulate"
+    },
+    "speakers": {
+      "Narrator": {
+        "role": "narrator",
+        "gender": "neutral",
+        "tone": "clear, warm, steady storytelling guide"
+      },
+      "Carlos": {
+        "role": "character",
+        "gender": "male",
+        "tone": "conversational, expressive"
+      },
+      "Meg": {
+        "role": "character",
+        "gender": "female",
+        "tone": "conversational, expressive"
+      }
+    },
+    "segments": [
+      {
+        "paraIndex": 0,
+        "startTime": 0.0,
+        "endTime": 6.62,
+        "speaker": "Narrator",
+        "lang": "en",
+        "cues": [],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 1,
+        "startTime": 6.62,
+        "endTime": 11.33,
+        "speaker": "Meg",
+        "lang": "es",
+        "cues": [
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 2,
+        "startTime": 11.33,
+        "endTime": 16.9,
+        "speaker": "Carlos",
+        "lang": "es",
+        "cues": [
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 3,
+        "startTime": 16.9,
+        "endTime": 23.33,
+        "speaker": "Meg",
+        "lang": "es",
+        "cues": [
+          {
+            "type": "intonation",
+            "contour": "rising-interrogative"
+          },
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 4,
+        "startTime": 23.33,
+        "endTime": 30.62,
+        "speaker": "Carlos",
+        "lang": "es",
+        "cues": [
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 5,
+        "startTime": 30.62,
+        "endTime": 37.24,
+        "speaker": "Narrator",
+        "lang": "en",
+        "cues": [],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 6,
+        "startTime": 37.24,
+        "endTime": 43.24,
+        "speaker": "Meg",
+        "lang": "es",
+        "cues": [],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 7,
+        "startTime": 43.24,
+        "endTime": 47.53,
+        "speaker": "Carlos",
+        "lang": "es",
+        "cues": [
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 8,
+        "startTime": 47.53,
+        "endTime": 52.67,
+        "speaker": "Meg",
+        "lang": "es",
+        "cues": [
+          {
+            "type": "emphasis",
+            "level": "strong"
+          }
+        ],
+        "pronunciations": []
+      }
+    ],
+    "pedagogical": {
+      "keyVocabulary": [
+        {
+          "lemma": "conocer",
+          "pos": "verb",
+          "cefr": "A1",
+          "gloss": "to meet / get to know"
+        },
+        {
+          "lemma": "intercambio",
+          "pos": "noun",
+          "cefr": "A1",
+          "gloss": "exchange"
+        }
+      ],
+      "targetGrammar": [
+        "el clima y el tiempo",
+        "hace calor / hace frío / llueve"
+      ],
+      "comprehensionQuestions": [
+        {
+          "question": "¿Dónde se encuentran Carlos y Meg?",
+          "options": [
+            "En un restaurante mexicano",
+            "En la universidad de Hanói",
+            "En una estación de tren",
+            "En una fiesta en Madrid"
+          ],
+          "correctIndex": 0,
+          "explanation": "Carlos va a un restaurante mexicano por la mañana para practicar español."
+        },
+        {
+          "question": "¿De dónde es Meg?",
+          "options": [
+            "De Hungría",
+            "De Sudáfrica",
+            "De España",
+            "De México"
+          ],
+          "correctIndex": 1,
+          "explanation": "Meg responde explícitamente: 'Soy de Sudáfrica'."
+        },
+        {
+          "question": "¿Por qué están allí los dos?",
+          "options": [
+            "Para practicar español en un intercambio de idiomas",
+            "Para comer tacos únicamente",
+            "Para trabajar como camareros",
+            "Para viajar a Hungría"
+          ],
+          "correctIndex": 0,
+          "explanation": "Los dos estudian el idioma y asisten al intercambio de idiomas."
+        }
+      ]
+    }
+  }
 }

@@ -19,23 +19,170 @@
   "paragraphs": [
     {
       "type": "narration",
-      "text": "1242 tavaszán váratlan fordulat történt: a tatár seregek ugyanolyan hirtelen hagyták el az országot, ahogyan érkeztek. Batu kán a hírek szerint azért sietett vissza keletre, mert meghalt Ögödej nagykán, és részt akart venni az új birodalmi uralkodó megválasztásában."
+      "text": "1242 tavaszán a mongol sereg hirtelen kivonult az országból, és IV. Béla király azonnal visszatért elpusztult hazájába."
     },
     {
       "type": "narration",
-      "text": "Amikor IV. Béla visszatért, az ország romokban hevert. Egész vármegyék néptelenedtek el, az elvetetlen földeken nem volt gabona, és szörnyű éhínség tombolt. A király azonnal hozzálátott a hatalmas munkához, hogy talpra állítsa az államot."
+      "text": "A király nem vesztegette az időt, hanem azonnal megkezdte a romokban heverő királyság hatalmas újjáépítését."
     },
     {
       "type": "narration",
-      "text": "Béla teljesen megváltoztatta korábbi politikáját. Hatalmas birtokokat adományozott a hűséges nemeseknek azzal a szigorú feltétellel, hogy a földeken kővárakat kell építeniük és fegyveres lovagokat kell kiállítaniuk."
+      "text": "Új idegen telepeseket hívott be a szomszédos országokból, és letelepítette őket a kihalt városokba és falvakba."
     },
     {
       "type": "narration",
-      "text": "Az elnéptelenedett vidékekre külföldi telepeseket, főként német bányászokat és kézműveseket hívott be, és visszahívta az Alföldre a kunokat is. Mivel sikeresen talpra állította az összeomlott Magyarországot, a hálás utókor IV. Bélát „második honalapítónak” nevezi."
+      "text": "Bőséges birtokokat adományozott azoknak a nemeseknek, akik kővárat emeltek a határok védelmére."
     },
     {
       "type": "narration",
-      "text": "Tudtad? Béla király a tatárjárás idején tett fogadalmát betartva születendő kislányát, Margitot Istennek ajánlotta; a későbbi Szent Margit a Nyulak szigetén (ma Margitsziget) élt és imádkozott az ország békéjéért."
+      "text": "Hősies és áldozatos munkájáért a magyarok IV. Bélát a második honalapító néven tisztelik máig."
     }
-  ]
+  ],
+  "narration": {
+    "durationSeconds": 29.6,
+    "pacing": {
+      "speedMultiplier": 1.0,
+      "rate_str": "+0%",
+      "rate_wpm": 150,
+      "style": "natural, expressive"
+    },
+    "speakers": {
+      "Narrator": {
+        "role": "narrator",
+        "gender": "neutral",
+        "tone": "clear, warm, steady storytelling guide"
+      }
+    },
+    "segments": [
+      {
+        "paraIndex": 0,
+        "startTime": 0.0,
+        "endTime": 6.8,
+        "speaker": "Narrator",
+        "lang": "hu",
+        "cues": [
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 1,
+        "startTime": 6.8,
+        "endTime": 12.8,
+        "speaker": "Narrator",
+        "lang": "hu",
+        "cues": [
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 2,
+        "startTime": 12.8,
+        "endTime": 19.2,
+        "speaker": "Narrator",
+        "lang": "hu",
+        "cues": [
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 3,
+        "startTime": 19.2,
+        "endTime": 24.0,
+        "speaker": "Narrator",
+        "lang": "hu",
+        "cues": [
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 4,
+        "startTime": 24.0,
+        "endTime": 29.6,
+        "speaker": "Narrator",
+        "lang": "hu",
+        "cues": [],
+        "pronunciations": []
+      }
+    ],
+    "pedagogical": {
+      "keyVocabulary": [
+        {
+          "lemma": "könyv",
+          "pos": "noun",
+          "cefr": "A1",
+          "gloss": "book"
+        },
+        {
+          "lemma": "telefon",
+          "pos": "noun",
+          "cefr": "A1",
+          "gloss": "telephone"
+        },
+        {
+          "lemma": "ház",
+          "pos": "noun",
+          "cefr": "A1",
+          "gloss": "house"
+        }
+      ],
+      "targetGrammar": [
+        "rebuilding-settlement-verbs"
+      ],
+      "comprehensionQuestions": [
+        {
+          "question": "Hol van Meg és Károly?",
+          "options": [
+            "Budapesten",
+            "Londonban",
+            "Bécsben",
+            "Madridban"
+          ],
+          "correctIndex": 0,
+          "explanation": "Meg Budapesten van Károllyal (Meg is in Budapest with Károly)."
+        },
+        {
+          "question": "Mi van az asztalon?",
+          "options": [
+            "Egy könyv és egy telefon",
+            "Egy autó és egy kulcs",
+            "Egy kutya és egy macska",
+            "Csak egy pohár tej"
+          ],
+          "correctIndex": 0,
+          "explanation": "Károly rámutat egy könyvre és egy telefonra az asztalon (Ez egy könyv, az egy telefon)."
+        },
+        {
+          "question": "Milyen nyelven beszélnek a párbeszédekben?",
+          "options": [
+            "Magyarul",
+            "Spanyolul",
+            "Németül",
+            "Olaszul"
+          ],
+          "correctIndex": 0,
+          "explanation": "Meg magyarul gyakorolja az alapvető szavakat Károllyal."
+        }
+      ]
+    }
+  }
 }

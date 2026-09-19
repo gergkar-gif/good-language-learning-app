@@ -1,74 +1,274 @@
 {
-  "id": "a1-original-16",
-  "title": "La revisión del bebé",
-  "lesson": 16,
+  "id": "story.a1.health",
+  "title": "Cuidando la salud",
   "level": "A1",
-  "order": 16,
+  "lesson": 5,
+  "order": 20,
   "type": "original",
-  "summary": "Ana y Andreas llevan a su bebé al médico para una revisión rutinaria.",
+  "summary": "Carlos visits the neighborhood clinic when he feels run down with a sore throat and fever.",
+  "estimatedMinutes": 3,
   "characters": [
     "Carlos",
-    "Meg",
-    "Ana",
-    "Andreas"
+    "Meg"
   ],
-  "location": "Centro de salud en Hanói",
+  "location": "Centro médico en Hanói",
   "grammar": [
-    "expresiones con tener"
+    "expresar síntomas de salud",
+    "consejos médicos (descansar, beber agua)"
   ],
   "vocabularyTopics": [
+    "La salud",
     "El cuerpo",
-    "La salud"
+    "Síntomas"
   ],
-  "estimatedMinutes": 4,
   "paragraphs": [
     {
-      "id": 1,
-      "text": "Hoy Ana y Andreas llevan a su bebé al centro de salud para una revisión."
+      "type": "narration",
+      "lang": "en",
+      "text": "Carlos wakes up feeling tired with a dry cough and a headache. Meg comes over to check on him."
     },
     {
-      "id": 2,
-      "text": "Carlos y Meg los acompañan porque quieren ver al bebé."
+      "type": "dialogue",
+      "speaker": "Meg",
+      "text": "Carlos, no te ves bien hoy. ¿Cómo te sientes del cuerpo?"
     },
     {
-      "id": 3,
-      "text": "En la sala de espera hay muchas familias con niños pequeños."
+      "type": "dialogue",
+      "speaker": "Carlos",
+      "text": "Me siento bastante cansado y enfermo. Tengo dolor de cabeza, dolor de garganta y un poco de fiebre."
     },
     {
-      "id": 4,
-      "text": "El médico saluda a todos con una sonrisa y examina al bebé."
+      "type": "dialogue",
+      "speaker": "Meg",
+      "text": "Tienes los síntomas típicos de un resfriado o gripe. ¿Fuiste a la consulta del médico?"
     },
     {
-      "id": 5,
-      "text": "Escucha su corazón, mira sus ojos y revisa sus oídos."
+      "type": "dialogue",
+      "speaker": "Carlos",
+      "text": "Sí, fui temprano a la clínica. El médico me recetó esta medicina y me dijo que debo descansar."
     },
     {
-      "id": 6,
-      "text": "«Todo está muy bien», dice el médico. «El bebé está sano.»"
+      "type": "narration",
+      "lang": "en",
+      "text": "Meg sets a bottle of water and a bowl of warm broth on his side table."
     },
     {
-      "id": 7,
-      "text": "Ana sonríe. «¡Qué buena noticia!»"
+      "type": "dialogue",
+      "speaker": "Meg",
+      "text": "El agua y dormir muchas horas es la mejor medicina. Deja el trabajo por hoy."
     },
     {
-      "id": 8,
-      "text": "Mientras vuelven a casa, Meg dice: «Hoy tengo mucha hambre.»"
+      "type": "dialogue",
+      "speaker": "Carlos",
+      "text": "Tienes razón, Meg. Agradezco mucho que me cuides. Me tomo la medicina y voy a dormir."
     },
     {
-      "id": 9,
-      "text": "Carlos responde: «Yo también tengo sed. ¿Vamos a comer algo?»"
-    },
-    {
-      "id": 10,
-      "text": "Andreas ríe. «Después de esta mañana, todos tenemos un poco de sueño.»"
-    },
-    {
-      "id": 11,
-      "text": "Los cuatro entran en un pequeño restaurante cerca del parque."
-    },
-    {
-      "id": 12,
-      "text": "Hablan sobre la importancia de cuidar la salud y pasan una tarde tranquila juntos."
+      "type": "dialogue",
+      "speaker": "Meg",
+      "text": "Que te mejores pronto, amigo. Descansa."
     }
-  ]
+  ],
+  "narration": {
+    "durationSeconds": 56.9,
+    "pacing": {
+      "speedMultiplier": 1.0,
+      "rate_str": "+0%",
+      "rate_wpm": 140,
+      "style": "natural, articulate"
+    },
+    "speakers": {
+      "Narrator": {
+        "role": "narrator",
+        "gender": "neutral",
+        "tone": "clear, warm, steady storytelling guide"
+      },
+      "Carlos": {
+        "role": "character",
+        "gender": "male",
+        "tone": "conversational, expressive"
+      },
+      "Meg": {
+        "role": "character",
+        "gender": "female",
+        "tone": "conversational, expressive"
+      }
+    },
+    "segments": [
+      {
+        "paraIndex": 0,
+        "startTime": 0.0,
+        "endTime": 7.86,
+        "speaker": "Narrator",
+        "lang": "en",
+        "cues": [],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 1,
+        "startTime": 7.86,
+        "endTime": 12.57,
+        "speaker": "Meg",
+        "lang": "es",
+        "cues": [
+          {
+            "type": "intonation",
+            "contour": "rising-interrogative"
+          },
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 2,
+        "startTime": 12.57,
+        "endTime": 20.28,
+        "speaker": "Carlos",
+        "lang": "es",
+        "cues": [
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 3,
+        "startTime": 20.28,
+        "endTime": 26.71,
+        "speaker": "Meg",
+        "lang": "es",
+        "cues": [
+          {
+            "type": "intonation",
+            "contour": "rising-interrogative"
+          }
+        ],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 4,
+        "startTime": 26.71,
+        "endTime": 34.42,
+        "speaker": "Carlos",
+        "lang": "es",
+        "cues": [
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 5,
+        "startTime": 34.42,
+        "endTime": 41.04,
+        "speaker": "Narrator",
+        "lang": "en",
+        "cues": [],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 6,
+        "startTime": 41.04,
+        "endTime": 47.47,
+        "speaker": "Meg",
+        "lang": "es",
+        "cues": [],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 7,
+        "startTime": 47.47,
+        "endTime": 54.33,
+        "speaker": "Carlos",
+        "lang": "es",
+        "cues": [
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 8,
+        "startTime": 54.33,
+        "endTime": 56.9,
+        "speaker": "Meg",
+        "lang": "es",
+        "cues": [
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
+        "pronunciations": []
+      }
+    ],
+    "pedagogical": {
+      "keyVocabulary": [
+        {
+          "lemma": "conocer",
+          "pos": "verb",
+          "cefr": "A1",
+          "gloss": "to meet / get to know"
+        },
+        {
+          "lemma": "intercambio",
+          "pos": "noun",
+          "cefr": "A1",
+          "gloss": "exchange"
+        }
+      ],
+      "targetGrammar": [
+        "expresar síntomas de salud",
+        "consejos médicos (descansar, beber agua)"
+      ],
+      "comprehensionQuestions": [
+        {
+          "question": "¿Dónde se encuentran Carlos y Meg?",
+          "options": [
+            "En un restaurante mexicano",
+            "En la universidad de Hanói",
+            "En una estación de tren",
+            "En una fiesta en Madrid"
+          ],
+          "correctIndex": 0,
+          "explanation": "Carlos va a un restaurante mexicano por la mañana para practicar español."
+        },
+        {
+          "question": "¿De dónde es Meg?",
+          "options": [
+            "De Hungría",
+            "De Sudáfrica",
+            "De España",
+            "De México"
+          ],
+          "correctIndex": 1,
+          "explanation": "Meg responde explícitamente: 'Soy de Sudáfrica'."
+        },
+        {
+          "question": "¿Por qué están allí los dos?",
+          "options": [
+            "Para practicar español en un intercambio de idiomas",
+            "Para comer tacos únicamente",
+            "Para trabajar como camareros",
+            "Para viajar a Hungría"
+          ],
+          "correctIndex": 0,
+          "explanation": "Los dos estudian el idioma y asisten al intercambio de idiomas."
+        }
+      ]
+    }
+  }
 }

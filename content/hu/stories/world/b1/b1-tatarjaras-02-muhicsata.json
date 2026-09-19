@@ -19,23 +19,164 @@
   "paragraphs": [
     {
       "type": "narration",
-      "text": "1241 áprilisában IV. Béla király csapatai a Sajó folyó partján, Muhi falu mellett álltak meg, hogy feltartóztassák a mongol fősereget. A magyar sereg mintegy huszonötezer fős volt, és a folyón átívelő egyetlen hidat védte."
+      "text": "1241. április 11-e éjszakáján a Sajó folyó partján állt fel a királyi hadsereg a mongol sereggel szemben."
     },
     {
       "type": "narration",
-      "text": "A magyar katonák szekérvárat építettek: a szekereket láncokkal szorosan egymáshoz kötötték, és sáncokkal vették körül a tábort. Ez a taktika korábban hatásos védelmet nyújtott a nomád lovasok ellen, most azonban végzetes hibának bizonyult a túlzsúfoltság miatt."
+      "text": "A magyar katonák védelmi céllal egy szűk szekérvárat hoztak létre, de ez súlyos taktikai hibának bizonyult."
     },
     {
       "type": "narration",
-      "text": "Április 10-ről 11-re virradó éjjel Kálmán herceg és a templomos lovagok még visszaverték a tatárok híd elleni rohamát. Hajnalban azonban Batu kán hadvezére, Szubotáj titokban átkelt a folyó egy sekély gázlóján, és hátba támadta a magyar tábort."
+      "text": "A fürge tatár lovasok éjjel átkeltek a hídon, és teljesen bekerítették a magyar tábort. Nyílzápor zúdult a harcosokra."
     },
     {
       "type": "narration",
-      "text": "A katapultokkal és gyújtónyilakkal lőtt szekértáborban pánik tört ki. A magyar elit, köztük a két érsek, számos püspök és országbáró életét vesztette a mészárlásban. IV. Bélának hűséges vitézei segítségével az utolsó pillanatban sikerült kitörnie a gyűrűből és nyugat felé menekülnie."
+      "text": "A véres ütközet katasztrofális magyar vereséggel végződött. A hadsereg óriási veszteséget szenvedett, a főurak többsége elesett."
     },
     {
       "type": "narration",
-      "text": "Tudtad? A muhi csata az egyik legnagyobb emberveszteséggel járó ütközet volt a középkori magyar történelemben; az ország szinte teljes világi és egyházi vezetése elesett egyetlen nap alatt."
+      "text": "IV. Béla király csak a legbátrabb vitézei segítségével tudott elmenekülni a csatatérről. Az ország védtelen maradt."
     }
-  ]
+  ],
+  "narration": {
+    "durationSeconds": 33.2,
+    "pacing": {
+      "speedMultiplier": 1.0,
+      "rate_str": "+0%",
+      "rate_wpm": 150,
+      "style": "natural, expressive"
+    },
+    "speakers": {
+      "Narrator": {
+        "role": "narrator",
+        "gender": "neutral",
+        "tone": "clear, warm, steady storytelling guide"
+      }
+    },
+    "segments": [
+      {
+        "paraIndex": 0,
+        "startTime": 0.0,
+        "endTime": 6.8,
+        "speaker": "Narrator",
+        "lang": "hu",
+        "cues": [],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 1,
+        "startTime": 6.8,
+        "endTime": 13.2,
+        "speaker": "Narrator",
+        "lang": "hu",
+        "cues": [
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 2,
+        "startTime": 13.2,
+        "endTime": 20.4,
+        "speaker": "Narrator",
+        "lang": "hu",
+        "cues": [
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 3,
+        "startTime": 20.4,
+        "endTime": 26.8,
+        "speaker": "Narrator",
+        "lang": "hu",
+        "cues": [
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 4,
+        "startTime": 26.8,
+        "endTime": 33.2,
+        "speaker": "Narrator",
+        "lang": "hu",
+        "cues": [],
+        "pronunciations": []
+      }
+    ],
+    "pedagogical": {
+      "keyVocabulary": [
+        {
+          "lemma": "könyv",
+          "pos": "noun",
+          "cefr": "A1",
+          "gloss": "book"
+        },
+        {
+          "lemma": "telefon",
+          "pos": "noun",
+          "cefr": "A1",
+          "gloss": "telephone"
+        },
+        {
+          "lemma": "ház",
+          "pos": "noun",
+          "cefr": "A1",
+          "gloss": "house"
+        }
+      ],
+      "targetGrammar": [
+        "battle-verbs-clash-defeat"
+      ],
+      "comprehensionQuestions": [
+        {
+          "question": "Hol van Meg és Károly?",
+          "options": [
+            "Budapesten",
+            "Londonban",
+            "Bécsben",
+            "Madridban"
+          ],
+          "correctIndex": 0,
+          "explanation": "Meg Budapesten van Károllyal (Meg is in Budapest with Károly)."
+        },
+        {
+          "question": "Mi van az asztalon?",
+          "options": [
+            "Egy könyv és egy telefon",
+            "Egy autó és egy kulcs",
+            "Egy kutya és egy macska",
+            "Csak egy pohár tej"
+          ],
+          "correctIndex": 0,
+          "explanation": "Károly rámutat egy könyvre és egy telefonra az asztalon (Ez egy könyv, az egy telefon)."
+        },
+        {
+          "question": "Milyen nyelven beszélnek a párbeszédekben?",
+          "options": [
+            "Magyarul",
+            "Spanyolul",
+            "Németül",
+            "Olaszul"
+          ],
+          "correctIndex": 0,
+          "explanation": "Meg magyarul gyakorolja az alapvető szavakat Károllyal."
+        }
+      ]
+    }
+  }
 }

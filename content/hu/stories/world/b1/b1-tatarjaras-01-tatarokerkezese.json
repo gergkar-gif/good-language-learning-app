@@ -19,23 +19,164 @@
   "paragraphs": [
     {
       "type": "narration",
-      "text": "A 13. század elején a belső-ázsiai sztyeppéken Dzsingisz kán egyesítette a nomád törzseket, és hatalmas birodalmat hozott létre. Az európai népek kezdetben keveset tudtak a távoli veszedelemről, de az 1230-as évek végén a fenyegetés már közvetlenül elérte a Magyar Királyság határait."
+      "text": "1241 telén rettenetes hír érkezett keletről. A mongol és tatár hadsereg gyorsan közeledett a magyar határok felé."
     },
     {
       "type": "narration",
-      "text": "1235-ben Julianus barát, egy magyar domonkos szerzetes indult útnak keletre, hogy megkeresse a Magna Hungariában maradt ősmagyarokat. Julianus sikerrel járt, de hazatérve vészjósló hírt hozott: a mongol—tatár hadsereg nyugat felé nyomul, és már az orosz fejedelemségeket ostromolja."
+      "text": "A hírhozók kétségbeesve figyelmeztették a fiatal IV. Béla királyt a hatalmas külső fenyegetésre."
     },
     {
       "type": "narration",
-      "text": "IV. Béla király (1235–1270) komolyan vette a figyelmeztetést. Amikor a tatárok elől menekülő kunok bebocsátást kértek az országba, a király letelepítette őket az Alföldön, remélve, hogy harcosaik erősítik majd a magyar védelmet. A magyar nemesek azonban gyanakodva és ellenségesen fogadták az idegen életmódot folytató kunokat."
+      "text": "A tatárok elől menekülő kun harcosok már korábban beléptek az országba, menedéket kérve a királytól."
     },
     {
       "type": "narration",
-      "text": "1241 kora tavaszán Batu kán seregei áttörték a Kárpátok hágóit. A király hiába hordozta körül a véres kardot az országban a nemesi felkelés meghirdetésére: a bárók lassan gyülekeztek, és nem értették meg a közeledő veszély valódi nagyságát."
+      "text": "A király véres kardot küldött szét az országban, fegyverbe szólítva a népet, mert a tatárok bármelyik pillanatban betörhetnek."
     },
     {
       "type": "narration",
-      "text": "Tudtad? A középkori Európában a mongolokat tatároknak nevezték, mert a görög mitológia alvilágához, a Tartaroszhoz hasonlították a pusztító hadsereg kegyetlenségét."
+      "text": "Végül a tatár sereg áttörte a hágókat, és a pusztító vihar megállíthatatlanul zúdult a védtelen Magyarországra."
     }
-  ]
+  ],
+  "narration": {
+    "durationSeconds": 31.6,
+    "pacing": {
+      "speedMultiplier": 1.0,
+      "rate_str": "+0%",
+      "rate_wpm": 150,
+      "style": "natural, expressive"
+    },
+    "speakers": {
+      "Narrator": {
+        "role": "narrator",
+        "gender": "neutral",
+        "tone": "clear, warm, steady storytelling guide"
+      }
+    },
+    "segments": [
+      {
+        "paraIndex": 0,
+        "startTime": 0.0,
+        "endTime": 6.8,
+        "speaker": "Narrator",
+        "lang": "hu",
+        "cues": [],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 1,
+        "startTime": 6.8,
+        "endTime": 12.0,
+        "speaker": "Narrator",
+        "lang": "hu",
+        "cues": [],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 2,
+        "startTime": 12.0,
+        "endTime": 18.0,
+        "speaker": "Narrator",
+        "lang": "hu",
+        "cues": [
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 3,
+        "startTime": 18.0,
+        "endTime": 25.2,
+        "speaker": "Narrator",
+        "lang": "hu",
+        "cues": [
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 4,
+        "startTime": 25.2,
+        "endTime": 31.6,
+        "speaker": "Narrator",
+        "lang": "hu",
+        "cues": [
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
+        "pronunciations": []
+      }
+    ],
+    "pedagogical": {
+      "keyVocabulary": [
+        {
+          "lemma": "könyv",
+          "pos": "noun",
+          "cefr": "A1",
+          "gloss": "book"
+        },
+        {
+          "lemma": "telefon",
+          "pos": "noun",
+          "cefr": "A1",
+          "gloss": "telephone"
+        },
+        {
+          "lemma": "ház",
+          "pos": "noun",
+          "cefr": "A1",
+          "gloss": "house"
+        }
+      ],
+      "targetGrammar": [
+        "verbs-of-warning-and-threat"
+      ],
+      "comprehensionQuestions": [
+        {
+          "question": "Hol van Meg és Károly?",
+          "options": [
+            "Budapesten",
+            "Londonban",
+            "Bécsben",
+            "Madridban"
+          ],
+          "correctIndex": 0,
+          "explanation": "Meg Budapesten van Károllyal (Meg is in Budapest with Károly)."
+        },
+        {
+          "question": "Mi van az asztalon?",
+          "options": [
+            "Egy könyv és egy telefon",
+            "Egy autó és egy kulcs",
+            "Egy kutya és egy macska",
+            "Csak egy pohár tej"
+          ],
+          "correctIndex": 0,
+          "explanation": "Károly rámutat egy könyvre és egy telefonra az asztalon (Ez egy könyv, az egy telefon)."
+        },
+        {
+          "question": "Milyen nyelven beszélnek a párbeszédekben?",
+          "options": [
+            "Magyarul",
+            "Spanyolul",
+            "Németül",
+            "Olaszul"
+          ],
+          "correctIndex": 0,
+          "explanation": "Meg magyarul gyakorolja az alapvető szavakat Károllyal."
+        }
+      ]
+    }
+  }
 }

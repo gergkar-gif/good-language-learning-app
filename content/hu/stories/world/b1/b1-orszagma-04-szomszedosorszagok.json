@@ -9,13 +9,174 @@
   "summary": "Hungary's seven neighbours, roughly where each one lies, which are inside the EU and Schengen area, and why Hungarian minorities live across several of these borders today.",
   "characters": [],
   "location": "Magyarország",
-  "grammar": ["határos valamivel", "égtájak"],
-  "vocabularyTopics": ["Magyarország szomszédai"],
+  "grammar": [
+    "határos valamivel",
+    "égtájak"
+  ],
+  "vocabularyTopics": [
+    "Magyarország szomszédai"
+  ],
   "paragraphs": [
-    { "type": "narration", "text": "Magyarország hét országgal határos, ami Európában viszonylag soknak számít egy ekkora területű országhoz képest. A hét szomszéd nagy része az Európai Unió tagja is, de nem mindegyik." },
-    { "type": "narration", "text": "Északon Szlovákia határolja az országot, északkeleten pedig egy rövid, de fontos szakaszon Ukrajna. Ez utóbbi határ különösen fontossá vált 2022 óta, amikor Ukrajnában kitört a háború, és sok menekült érkezett rajta keresztül Magyarországra." },
-    { "type": "narration", "text": "Keleten és délkeleten Románia a legnagyobb szomszéd, hosszú, közös határral. Délen Szerbia és egy rövidebb szakaszon Horvátország következik, délnyugaton pedig ismét Horvátország, majd Szlovénia zárja a sort. Nyugaton végül Ausztria határolja az országot — ez volt történelmileg is az egyik legfontosabb határ." },
-    { "type": "narration", "text": "Az öt uniós tag szomszéd — Ausztria, Szlovákia, Szlovénia, Horvátország és Románia — ma már mind tagjai a schengeni övezetnek is, így a határátkelés köztük egyszerű, gyakran ellenőrzés nélküli. Szerbia és Ukrajna azonban nem uniós tagok, ott rendes határellenőrzés van." },
-    { "type": "narration", "text": "Tudtad? Az 1920-as trianoni békeszerződés után Magyarország elvesztette korábbi területének nagy részét, ezért a mai szomszédos országokban — főleg Romániában, Szlovákiában és Szerbiában — jelentős magyar kisebbség él. Erről egy későbbi leckében részletesebben is szó lesz." }
-  ]
+    {
+      "type": "narration",
+      "text": "Vegyünk a kezünkbe egy friss európai térképet. Mi tűnik fel azonnal Magyarország határainál?"
+    },
+    {
+      "type": "narration",
+      "text": "Magyarország hét szomszédos országgal határos. Ez a különleges helyzet élénk kulturális és gazdasági kapcsolatokat teremt."
+    },
+    {
+      "type": "narration",
+      "text": "Északon Szlovákia a szomszéd. Északkeleten Ukrajnával, keleten pedig Romániával érintkezik a magyar határ."
+    },
+    {
+      "type": "narration",
+      "text": "Dél felé haladva Szerbia, Horvátország és Szlovénia következik. Nyugaton Ausztria zárja a sort, amely hosszú évszázadokon át közös birodalmat alkotott Magyarországgal."
+    },
+    {
+      "type": "narration",
+      "text": "Egy honosítási beszélgetésen elengedhetetlen a szomszédok ismerete. A határon túli magyar közösségek miatt ezek a kapcsolatok ma is különösen fontosak."
+    }
+  ],
+  "narration": {
+    "durationSeconds": 32.8,
+    "pacing": {
+      "speedMultiplier": 1.0,
+      "rate_str": "+0%",
+      "rate_wpm": 150,
+      "style": "natural, expressive"
+    },
+    "speakers": {
+      "Narrator": {
+        "role": "narrator",
+        "gender": "neutral",
+        "tone": "clear, warm, steady storytelling guide"
+      }
+    },
+    "segments": [
+      {
+        "paraIndex": 0,
+        "startTime": 0.0,
+        "endTime": 5.2,
+        "speaker": "Narrator",
+        "lang": "hu",
+        "cues": [
+          {
+            "type": "intonation",
+            "contour": "rising-interrogative"
+          }
+        ],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 1,
+        "startTime": 5.2,
+        "endTime": 11.2,
+        "speaker": "Narrator",
+        "lang": "hu",
+        "cues": [],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 2,
+        "startTime": 11.2,
+        "endTime": 16.4,
+        "speaker": "Narrator",
+        "lang": "hu",
+        "cues": [
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 3,
+        "startTime": 16.4,
+        "endTime": 24.8,
+        "speaker": "Narrator",
+        "lang": "hu",
+        "cues": [
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 4,
+        "startTime": 24.8,
+        "endTime": 32.8,
+        "speaker": "Narrator",
+        "lang": "hu",
+        "cues": [],
+        "pronunciations": []
+      }
+    ],
+    "pedagogical": {
+      "keyVocabulary": [
+        {
+          "lemma": "könyv",
+          "pos": "noun",
+          "cefr": "A1",
+          "gloss": "book"
+        },
+        {
+          "lemma": "telefon",
+          "pos": "noun",
+          "cefr": "A1",
+          "gloss": "telephone"
+        },
+        {
+          "lemma": "ház",
+          "pos": "noun",
+          "cefr": "A1",
+          "gloss": "house"
+        }
+      ],
+      "targetGrammar": [
+        "határos valamivel",
+        "égtájak"
+      ],
+      "comprehensionQuestions": [
+        {
+          "question": "Hol van Meg és Károly?",
+          "options": [
+            "Budapesten",
+            "Londonban",
+            "Bécsben",
+            "Madridban"
+          ],
+          "correctIndex": 0,
+          "explanation": "Meg Budapesten van Károllyal (Meg is in Budapest with Károly)."
+        },
+        {
+          "question": "Mi van az asztalon?",
+          "options": [
+            "Egy könyv és egy telefon",
+            "Egy autó és egy kulcs",
+            "Egy kutya és egy macska",
+            "Csak egy pohár tej"
+          ],
+          "correctIndex": 0,
+          "explanation": "Károly rámutat egy könyvre és egy telefonra az asztalon (Ez egy könyv, az egy telefon)."
+        },
+        {
+          "question": "Milyen nyelven beszélnek a párbeszédekben?",
+          "options": [
+            "Magyarul",
+            "Spanyolul",
+            "Németül",
+            "Olaszul"
+          ],
+          "correctIndex": 0,
+          "explanation": "Meg magyarul gyakorolja az alapvető szavakat Károllyal."
+        }
+      ]
+    }
+  }
 }

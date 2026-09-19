@@ -19,23 +19,170 @@
   "paragraphs": [
     {
       "type": "narration",
-      "text": "A muhi vereség után Magyarország védtelen maradt. A tatár csapatok 1241 tavaszán és nyarán végigdúlták a Tiszántúlt és a Duna–Tisza közét: felégették a nyílt városokat, kirabolták a kolostorokat, és elhurcolták a lakosságot."
+      "text": "A muhi csata után soha nem látott pusztulás söpört végig a virágzó Magyar Királyság földjén."
     },
     {
       "type": "narration",
-      "text": "A Duna hónapokon át természetes védelmi vonalat jelentett, de az 1241/42-es szokatlanul kemény télen a folyó befagyott. A mongol lovasok átkeltek a jégen a Dunántúlra, és ott folytatták a pusztítást."
+      "text": "Számtalan falu és gazdag város felégett a támadásban, a gyönyörű templomok és paloták romba dőltek."
     },
     {
       "type": "narration",
-      "text": "Rogerius váradi kanonok, aki maga is tatár fogságba esett és csodával határos módon megszökött, Siralmas ének (Carmen Miserabile) című művében örökítette meg a borzalmakat: a felégetett falvakat, az erdőkben bujkáló éhező embereket és a mezőkön heverő temetetlen holtakat."
+      "text": "A rémült lakosság a sűrű erdőkbe, a Dunakanyar hegyeibe és a védett mocsarakba menekült menedéket keresni."
     },
     {
       "type": "narration",
-      "text": "Közben IV. Béla Ausztrián keresztül a dalmát tengerpartra menekült. A tatár előőrsök egészen az Adriai-tengerig üldözték, de Trau (Trogir) szigeterődítményét már nem tudták bevenni, mert nem rendelkeztek hajókkal."
+      "text": "Amikor a Duna vize télen teljesen befagyott, a mongol lovasok átkeltek a jégen, és a termés is teljesen megsemmisült."
     },
     {
       "type": "narration",
-      "text": "Tudtad? A becslések szerint a tatárjárás idején Magyarország lakosságának 15–20 százaléka — egyes források szerint akár fele — elpusztult vagy fogságba esett a harcok és az azokat követő éhínség és járványok miatt."
+      "text": "A pusztítás nyomán rettenetes éhínség tizedelte a túlélőket, de a magyar nemzet élni akarása nem tört meg."
     }
-  ]
+  ],
+  "narration": {
+    "durationSeconds": 32.8,
+    "pacing": {
+      "speedMultiplier": 1.0,
+      "rate_str": "+0%",
+      "rate_wpm": 150,
+      "style": "natural, expressive"
+    },
+    "speakers": {
+      "Narrator": {
+        "role": "narrator",
+        "gender": "neutral",
+        "tone": "clear, warm, steady storytelling guide"
+      }
+    },
+    "segments": [
+      {
+        "paraIndex": 0,
+        "startTime": 0.0,
+        "endTime": 6.0,
+        "speaker": "Narrator",
+        "lang": "hu",
+        "cues": [],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 1,
+        "startTime": 6.0,
+        "endTime": 12.0,
+        "speaker": "Narrator",
+        "lang": "hu",
+        "cues": [
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 2,
+        "startTime": 12.0,
+        "endTime": 18.4,
+        "speaker": "Narrator",
+        "lang": "hu",
+        "cues": [
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 3,
+        "startTime": 18.4,
+        "endTime": 26.0,
+        "speaker": "Narrator",
+        "lang": "hu",
+        "cues": [
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 4,
+        "startTime": 26.0,
+        "endTime": 32.8,
+        "speaker": "Narrator",
+        "lang": "hu",
+        "cues": [
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
+        "pronunciations": []
+      }
+    ],
+    "pedagogical": {
+      "keyVocabulary": [
+        {
+          "lemma": "könyv",
+          "pos": "noun",
+          "cefr": "A1",
+          "gloss": "book"
+        },
+        {
+          "lemma": "telefon",
+          "pos": "noun",
+          "cefr": "A1",
+          "gloss": "telephone"
+        },
+        {
+          "lemma": "ház",
+          "pos": "noun",
+          "cefr": "A1",
+          "gloss": "house"
+        }
+      ],
+      "targetGrammar": [
+        "mediopassive-destruction-verbs"
+      ],
+      "comprehensionQuestions": [
+        {
+          "question": "Hol van Meg és Károly?",
+          "options": [
+            "Budapesten",
+            "Londonban",
+            "Bécsben",
+            "Madridban"
+          ],
+          "correctIndex": 0,
+          "explanation": "Meg Budapesten van Károllyal (Meg is in Budapest with Károly)."
+        },
+        {
+          "question": "Mi van az asztalon?",
+          "options": [
+            "Egy könyv és egy telefon",
+            "Egy autó és egy kulcs",
+            "Egy kutya és egy macska",
+            "Csak egy pohár tej"
+          ],
+          "correctIndex": 0,
+          "explanation": "Károly rámutat egy könyvre és egy telefonra az asztalon (Ez egy könyv, az egy telefon)."
+        },
+        {
+          "question": "Milyen nyelven beszélnek a párbeszédekben?",
+          "options": [
+            "Magyarul",
+            "Spanyolul",
+            "Németül",
+            "Olaszul"
+          ],
+          "correctIndex": 0,
+          "explanation": "Meg magyarul gyakorolja az alapvető szavakat Károllyal."
+        }
+      ]
+    }
+  }
 }

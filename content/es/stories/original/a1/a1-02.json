@@ -1,95 +1,389 @@
 {
-  "id": "a1-original-02",
+  "id": "story.a1.cafe",
   "title": "Un café después de clase",
-  "lesson": 2,
   "level": "A1",
-  "order": 2,
+  "lesson": 5,
+  "order": 11,
   "type": "original",
-
-  "summary": "Después de su clase de español, Carlos y Meg van a un café y practican lo que han aprendido.",
-
+  "summary": "After Spanish class, Carlos and Meg visit a pleasant café in Hanoi to practice ordering food and drinks.",
+  "estimatedMinutes": 3,
   "characters": [
     "Carlos",
     "Meg"
   ],
-
-  "location": "Café",
-
+  "location": "Cafetería en Hanói",
   "grammar": [
+    "pedir en un café",
     "querer",
-    "tomar",
-    "comer",
-    "presente de indicativo"
+    "por favor y gracias"
   ],
-
   "vocabularyTopics": [
-    "Comida",
     "Bebidas",
+    "Comida rápida",
     "Cafetería"
   ],
-
-  "estimatedMinutes": 4,
-
   "paragraphs": [
     {
-      "id": 1,
-      "text": "Carlos y Meg van a una clase de español en Hanói. Después de la clase, los dos tienen hambre."
+      "type": "narration",
+      "lang": "en",
+      "text": "After their Spanish class, Carlos and Meg walk down the street to a quiet café near the lake."
     },
     {
-      "id": 2,
-      "text": "Meg sonríe y pregunta: «¿Quieres tomar un café?»"
+      "type": "dialogue",
+      "speaker": "Meg",
+      "text": "¡Qué buena clase hoy! ¿Quieres tomar un café o un té, Carlos?"
     },
     {
-      "id": 3,
-      "text": "Carlos responde: «Sí. También quiero comer algo.»"
+      "type": "dialogue",
+      "speaker": "Carlos",
+      "text": "Sí, quiero un café con leche. Tengo hambre también. ¿Miramos el menú?"
     },
     {
-      "id": 4,
-      "text": "Entran en un café pequeño. Hay muchas personas. Una mujer los saluda."
+      "type": "narration",
+      "lang": "en",
+      "text": "A friendly waiter approaches their table with two printed menus."
     },
     {
-      "id": 5,
-      "text": "«Buenas tardes. ¿Qué desean?», pregunta la camarera."
+      "type": "dialogue",
+      "speaker": "Carlos",
+      "text": "Buenas tardes. Por favor, ¿podemos ordenar?"
     },
     {
-      "id": 6,
-      "text": "Meg mira el menú. «Quiero un café con leche y un taco, por favor.»"
+      "type": "dialogue",
+      "speaker": "Meg",
+      "text": "Buenas tardes. Para mí, un té verde con limón, una ensalada fresca y un sándwich de pollo."
     },
     {
-      "id": 7,
-      "text": "Carlos dice: «Para mí, un café negro y dos tacos, por favor.»"
+      "type": "dialogue",
+      "speaker": "Carlos",
+      "text": "Y para mí, un café solo, una botella de agua mineral y un trozo de pastel de chocolate, por favor."
     },
     {
-      "id": 8,
-      "text": "La camarera escribe el pedido y vuelve unos minutos después con la comida."
+      "type": "dialogue",
+      "speaker": "Meg",
+      "text": "¿Quieres algún refresco o jugo también, Carlos?"
     },
     {
-      "id": 9,
-      "text": "«¡Qué rico!», dice Meg. Carlos prueba el café. «Está muy bueno.»"
+      "type": "dialogue",
+      "speaker": "Carlos",
+      "text": "No, gracias, eso es todo por ahora. Con el café y el agua está perfecto."
     },
     {
-      "id": 10,
-      "text": "Mientras comen, hablan un poco en español. Meg pregunta: «¿Te gusta estudiar español?»"
+      "type": "narration",
+      "lang": "en",
+      "text": "They enjoy their light lunch while practicing vocabulary. Before leaving, Carlos asks for the bill."
     },
     {
-      "id": 11,
-      "text": "Carlos responde: «Sí. Me gusta mucho. Es difícil, pero también es muy interesante.»"
+      "type": "dialogue",
+      "speaker": "Carlos",
+      "text": "Camarero, la cuenta, por favor."
     },
     {
-      "id": 12,
-      "text": "Meg dice: «A mí también me gusta. Quiero hablar español todos los días.»"
+      "type": "dialogue",
+      "speaker": "Meg",
+      "text": "Muchas gracias por invitar, Carlos. Una comida deliciosa."
     },
     {
-      "id": 13,
-      "text": "Cuando terminan, pagan la cuenta y salen del café."
-    },
-    {
-      "id": 14,
-      "text": "«Hasta la próxima clase», dice Meg."
-    },
-    {
-      "id": 15,
-      "text": "«Hasta luego», responde Carlos. Los dos vuelven a casa muy contentos."
+      "type": "dialogue",
+      "speaker": "Carlos",
+      "text": "De nada, Meg. ¡Hasta mañana en clase!"
     }
-  ]
+  ],
+  "narration": {
+    "durationSeconds": 64.51,
+    "pacing": {
+      "speedMultiplier": 1.0,
+      "rate_str": "+0%",
+      "rate_wpm": 140,
+      "style": "natural, articulate"
+    },
+    "speakers": {
+      "Narrator": {
+        "role": "narrator",
+        "gender": "neutral",
+        "tone": "clear, warm, steady storytelling guide"
+      },
+      "Carlos": {
+        "role": "character",
+        "gender": "male",
+        "tone": "conversational, expressive"
+      },
+      "Meg": {
+        "role": "character",
+        "gender": "female",
+        "tone": "conversational, expressive"
+      }
+    },
+    "segments": [
+      {
+        "paraIndex": 0,
+        "startTime": 0.0,
+        "endTime": 7.45,
+        "speaker": "Narrator",
+        "lang": "en",
+        "cues": [
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 1,
+        "startTime": 7.45,
+        "endTime": 12.59,
+        "speaker": "Meg",
+        "lang": "es",
+        "cues": [
+          {
+            "type": "intonation",
+            "contour": "rising-interrogative"
+          },
+          {
+            "type": "emphasis",
+            "level": "strong"
+          },
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 2,
+        "startTime": 12.59,
+        "endTime": 17.73,
+        "speaker": "Carlos",
+        "lang": "es",
+        "cues": [
+          {
+            "type": "intonation",
+            "contour": "rising-interrogative"
+          },
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 3,
+        "startTime": 17.73,
+        "endTime": 21.87,
+        "speaker": "Narrator",
+        "lang": "en",
+        "cues": [],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 4,
+        "startTime": 21.87,
+        "endTime": 24.44,
+        "speaker": "Carlos",
+        "lang": "es",
+        "cues": [
+          {
+            "type": "intonation",
+            "contour": "rising-interrogative"
+          },
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 5,
+        "startTime": 24.44,
+        "endTime": 31.73,
+        "speaker": "Meg",
+        "lang": "es",
+        "cues": [
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 6,
+        "startTime": 31.73,
+        "endTime": 40.3,
+        "speaker": "Carlos",
+        "lang": "es",
+        "cues": [
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 7,
+        "startTime": 40.3,
+        "endTime": 43.3,
+        "speaker": "Meg",
+        "lang": "es",
+        "cues": [
+          {
+            "type": "intonation",
+            "contour": "rising-interrogative"
+          },
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 8,
+        "startTime": 43.3,
+        "endTime": 49.73,
+        "speaker": "Carlos",
+        "lang": "es",
+        "cues": [
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 9,
+        "startTime": 49.73,
+        "endTime": 55.94,
+        "speaker": "Narrator",
+        "lang": "en",
+        "cues": [
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 10,
+        "startTime": 55.94,
+        "endTime": 58.08,
+        "speaker": "Carlos",
+        "lang": "es",
+        "cues": [
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 11,
+        "startTime": 58.08,
+        "endTime": 61.51,
+        "speaker": "Meg",
+        "lang": "es",
+        "cues": [
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 12,
+        "startTime": 61.51,
+        "endTime": 64.51,
+        "speaker": "Carlos",
+        "lang": "es",
+        "cues": [
+          {
+            "type": "emphasis",
+            "level": "strong"
+          },
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
+        "pronunciations": []
+      }
+    ],
+    "pedagogical": {
+      "keyVocabulary": [
+        {
+          "lemma": "conocer",
+          "pos": "verb",
+          "cefr": "A1",
+          "gloss": "to meet / get to know"
+        },
+        {
+          "lemma": "intercambio",
+          "pos": "noun",
+          "cefr": "A1",
+          "gloss": "exchange"
+        }
+      ],
+      "targetGrammar": [
+        "pedir en un café",
+        "querer",
+        "por favor y gracias"
+      ],
+      "comprehensionQuestions": [
+        {
+          "question": "¿Dónde se encuentran Carlos y Meg?",
+          "options": [
+            "En un restaurante mexicano",
+            "En la universidad de Hanói",
+            "En una estación de tren",
+            "En una fiesta en Madrid"
+          ],
+          "correctIndex": 0,
+          "explanation": "Carlos va a un restaurante mexicano por la mañana para practicar español."
+        },
+        {
+          "question": "¿De dónde es Meg?",
+          "options": [
+            "De Hungría",
+            "De Sudáfrica",
+            "De España",
+            "De México"
+          ],
+          "correctIndex": 1,
+          "explanation": "Meg responde explícitamente: 'Soy de Sudáfrica'."
+        },
+        {
+          "question": "¿Por qué están allí los dos?",
+          "options": [
+            "Para practicar español en un intercambio de idiomas",
+            "Para comer tacos únicamente",
+            "Para trabajar como camareros",
+            "Para viajar a Hungría"
+          ],
+          "correctIndex": 0,
+          "explanation": "Los dos estudian el idioma y asisten al intercambio de idiomas."
+        }
+      ]
+    }
+  }
 }

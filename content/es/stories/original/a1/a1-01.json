@@ -2,11 +2,11 @@
   "id": "story.a1.01",
   "title": "Carlos conoce a Meg",
   "level": "A1",
-  "type": "original",
-  "lesson": 1,
+  "lesson": 5,
   "order": 1,
-  "summary": "Carlos goes to a language exchange in a Mexican restaurant and meets Meg.",
-  "estimatedMinutes": 2,
+  "type": "original",
+  "summary": "Carlos arrives at a Mexican restaurant in Hanoi for a language exchange and meets Meg.",
+  "estimatedMinutes": 3,
   "characters": [
     "Carlos",
     "Meg"
@@ -24,68 +24,92 @@
   "paragraphs": [
     {
       "type": "narration",
-      "text": "Carlos vive en Hanói. Es de Hungría. Hoy es sábado y por la mañana va a un restaurante mexicano para practicar español."
+      "lang": "en",
+      "text": "Carlos is from Hungary, but he lives in Hanoi now. Today he arrives at a Mexican restaurant for a language exchange."
     },
     {
       "type": "narration",
-      "text": "En el restaurante hay una fiesta de tacos y un intercambio de idiomas. En una mesa hay una chica con un libro de español."
+      "lang": "en",
+      "text": "At a small table, a young woman looks up with a friendly smile."
     },
     {
       "type": "dialogue",
       "speaker": "Meg",
-      "text": "Buenos días."
+      "text": "¡Hola! Buenos días, señor. Buenas tardes si ya es tarde aquí."
     },
     {
       "type": "dialogue",
       "speaker": "Carlos",
-      "text": "Buenos días."
+      "text": "Buenos días. Por favor, ¿aquí es el intercambio de español?"
     },
     {
       "type": "dialogue",
       "speaker": "Meg",
-      "text": "Hola. Me llamo Meg. ¿Cómo te llamas?"
+      "text": "Sí, aquí es. Yo soy Meg. ¿Cómo te llamas? ¿Cuál es tu nombre?"
     },
     {
       "type": "dialogue",
       "speaker": "Carlos",
-      "text": "Hola. Me llamo Carlos. Mucho gusto."
+      "text": "Me llamo Carlos. Mucho gusto, Meg. Encantado de conocer a una persona tan amable."
     },
     {
       "type": "dialogue",
       "speaker": "Meg",
-      "text": "Mucho gusto. ¿De dónde eres?"
+      "text": "¡Mucho gusto, Carlos! Encantada. ¿De qué país eres? ¿De dónde eres?"
     },
     {
       "type": "dialogue",
       "speaker": "Carlos",
-      "text": "Soy de Hungría. ¿Y tú?"
+      "text": "Soy de Hungría. También soy nuevo aquí en la ciudad de Hanói, en Vietnam. ¿Y tú?"
     },
     {
       "type": "dialogue",
       "speaker": "Meg",
-      "text": "Soy de Sudáfrica."
+      "text": "Soy de Sudáfrica. No soy de España, pero me gusta mucho el español."
     },
     {
       "type": "narration",
-      "text": "Carlos y Meg hablan un poco en español. Los dos estudian el idioma y los dos practican mucho."
+      "lang": "en",
+      "text": "A friendly waiter arrives at the table to welcome them."
     },
     {
       "type": "dialogue",
       "speaker": "Carlos",
-      "text": "Adiós, Meg."
+      "text": "Muchas gracias, señor. Todo está muy bien."
     },
     {
       "type": "dialogue",
       "speaker": "Meg",
-      "text": "Hasta luego, Carlos."
+      "text": "¿Quién eres en Hanói, Carlos? ¿Eres chico estudiante o trabajas?"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Carlos",
+      "text": "Soy un chico estudiante. Ahora estudio español. ¿Y tú, chica?"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Meg",
+      "text": "Yo también soy estudiante. Primero practicamos un poco y después comemos tacos."
     },
     {
       "type": "narration",
-      "text": "Es el comienzo de una nueva amistad."
+      "lang": "en",
+      "text": "They spend a delightful hour talking and practicing together until evening falls."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Carlos",
+      "text": "Buenas noches, Meg. Muchas gracias por la conversación. ¡Hasta luego!"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Meg",
+      "text": "¡Hasta mañana, Carlos! Adiós y gracias."
     }
   ],
   "narration": {
-    "durationSeconds": 55.5,
+    "durationSeconds": 84.47,
     "pacing": {
       "speedMultiplier": 1.0,
       "rate_str": "+0%",
@@ -113,50 +137,50 @@
       {
         "paraIndex": 0,
         "startTime": 0.0,
-        "endTime": 9.05,
+        "endTime": 8.69,
         "speaker": "Narrator",
-        "lang": "es",
-        "cues": [],
-        "pronunciations": [
+        "lang": "en",
+        "cues": [
           {
-            "word": "Hanói",
-            "ipa": "xaˈnoj",
-            "note": "Stress on the final syllable"
-          },
-          {
-            "word": "Hungría",
-            "ipa": "uŋˈɡɾi.a",
-            "note": "Silent initial H, hiatus on -í-"
-          },
-          {
-            "word": "español",
-            "ipa": "es.paˈɲol",
-            "note": "Palatal nasal ñ"
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
           }
-        ]
+        ],
+        "pronunciations": []
       },
       {
         "paraIndex": 1,
-        "startTime": 9.05,
-        "endTime": 17.3,
+        "startTime": 8.69,
+        "endTime": 14.07,
         "speaker": "Narrator",
-        "lang": "es",
-        "cues": [],
-        "pronunciations": [
+        "lang": "en",
+        "cues": [
           {
-            "word": "español",
-            "ipa": "es.paˈɲol",
-            "note": "Palatal nasal ñ"
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
           }
-        ]
+        ],
+        "pronunciations": []
       },
       {
         "paraIndex": 2,
-        "startTime": 17.3,
-        "endTime": 19.29,
+        "startTime": 14.07,
+        "endTime": 18.78,
         "speaker": "Meg",
         "lang": "es",
-        "cues": [],
+        "cues": [
+          {
+            "type": "emphasis",
+            "level": "strong"
+          },
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
         "pronunciations": [
           {
             "word": "Buenos días",
@@ -167,12 +191,27 @@
       },
       {
         "paraIndex": 3,
-        "startTime": 19.29,
-        "endTime": 21.25,
+        "startTime": 18.78,
+        "endTime": 23.07,
         "speaker": "Carlos",
         "lang": "es",
-        "cues": [],
+        "cues": [
+          {
+            "type": "intonation",
+            "contour": "rising-interrogative"
+          },
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
         "pronunciations": [
+          {
+            "word": "español",
+            "ipa": "es.paˈɲol",
+            "note": "Palatal nasal ñ"
+          },
           {
             "word": "Buenos días",
             "ipa": "ˈbwe.noz ˈði.as",
@@ -182,54 +221,84 @@
       },
       {
         "paraIndex": 4,
-        "startTime": 21.25,
-        "endTime": 26.34,
+        "startTime": 23.07,
+        "endTime": 28.64,
         "speaker": "Meg",
         "lang": "es",
         "cues": [
           {
             "type": "intonation",
             "contour": "rising-interrogative"
+          },
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
           }
         ],
         "pronunciations": []
       },
       {
         "paraIndex": 5,
-        "startTime": 26.34,
-        "endTime": 31.43,
+        "startTime": 28.64,
+        "endTime": 34.64,
         "speaker": "Carlos",
         "lang": "es",
-        "cues": [],
+        "cues": [
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
         "pronunciations": []
       },
       {
         "paraIndex": 6,
-        "startTime": 31.43,
-        "endTime": 35.34,
+        "startTime": 34.64,
+        "endTime": 39.35,
         "speaker": "Meg",
         "lang": "es",
         "cues": [
           {
             "type": "intonation",
             "contour": "rising-interrogative"
+          },
+          {
+            "type": "emphasis",
+            "level": "strong"
+          },
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
           }
         ],
         "pronunciations": []
       },
       {
         "paraIndex": 7,
-        "startTime": 35.34,
-        "endTime": 38.77,
+        "startTime": 39.35,
+        "endTime": 46.21,
         "speaker": "Carlos",
         "lang": "es",
         "cues": [
           {
             "type": "intonation",
             "contour": "rising-interrogative"
+          },
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
           }
         ],
         "pronunciations": [
+          {
+            "word": "Hanói",
+            "ipa": "xaˈnoj",
+            "note": "Stress on the final syllable"
+          },
           {
             "word": "Hungría",
             "ipa": "uŋˈɡɾi.a",
@@ -239,27 +308,23 @@
       },
       {
         "paraIndex": 8,
-        "startTime": 38.77,
-        "endTime": 41.02,
+        "startTime": 46.21,
+        "endTime": 51.78,
         "speaker": "Meg",
         "lang": "es",
-        "cues": [],
+        "cues": [
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
         "pronunciations": [
           {
             "word": "Sudáfrica",
             "ipa": "suˈða.fɾi.ka",
             "note": "Antepenultimate accent on -dá-"
-          }
-        ]
-      },
-      {
-        "paraIndex": 9,
-        "startTime": 41.02,
-        "endTime": 47.9,
-        "speaker": "Narrator",
-        "lang": "es",
-        "cues": [],
-        "pronunciations": [
+          },
           {
             "word": "español",
             "ipa": "es.paˈɲol",
@@ -268,9 +333,18 @@
         ]
       },
       {
+        "paraIndex": 9,
+        "startTime": 51.78,
+        "endTime": 55.92,
+        "speaker": "Narrator",
+        "lang": "en",
+        "cues": [],
+        "pronunciations": []
+      },
+      {
         "paraIndex": 10,
-        "startTime": 47.9,
-        "endTime": 50.05,
+        "startTime": 55.92,
+        "endTime": 58.92,
         "speaker": "Carlos",
         "lang": "es",
         "cues": [
@@ -284,11 +358,83 @@
       },
       {
         "paraIndex": 11,
-        "startTime": 50.05,
-        "endTime": 52.49,
+        "startTime": 58.92,
+        "endTime": 63.21,
         "speaker": "Meg",
         "lang": "es",
         "cues": [
+          {
+            "type": "intonation",
+            "contour": "rising-interrogative"
+          },
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
+        "pronunciations": [
+          {
+            "word": "Hanói",
+            "ipa": "xaˈnoj",
+            "note": "Stress on the final syllable"
+          }
+        ]
+      },
+      {
+        "paraIndex": 12,
+        "startTime": 63.21,
+        "endTime": 67.5,
+        "speaker": "Carlos",
+        "lang": "es",
+        "cues": [
+          {
+            "type": "intonation",
+            "contour": "rising-interrogative"
+          },
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
+        "pronunciations": [
+          {
+            "word": "español",
+            "ipa": "es.paˈɲol",
+            "note": "Palatal nasal ñ"
+          }
+        ]
+      },
+      {
+        "paraIndex": 13,
+        "startTime": 67.5,
+        "endTime": 72.64,
+        "speaker": "Meg",
+        "lang": "es",
+        "cues": [],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 14,
+        "startTime": 72.64,
+        "endTime": 77.61,
+        "speaker": "Narrator",
+        "lang": "en",
+        "cues": [],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 15,
+        "startTime": 77.61,
+        "endTime": 81.9,
+        "speaker": "Carlos",
+        "lang": "es",
+        "cues": [
+          {
+            "type": "emphasis",
+            "level": "strong"
+          },
           {
             "type": "pause",
             "durationMs": 250,
@@ -298,12 +444,22 @@
         "pronunciations": []
       },
       {
-        "paraIndex": 12,
-        "startTime": 52.49,
-        "endTime": 55.5,
-        "speaker": "Narrator",
+        "paraIndex": 16,
+        "startTime": 81.9,
+        "endTime": 84.47,
+        "speaker": "Meg",
         "lang": "es",
-        "cues": [],
+        "cues": [
+          {
+            "type": "emphasis",
+            "level": "strong"
+          },
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
         "pronunciations": []
       }
     ],

@@ -9,13 +9,139 @@
   "summary": "Buenos Aires went from a muddy \"big village\" to a Paris-inspired metropolis in about two decades -- and it wasn't the only Latin American capital to remake itself almost overnight.",
   "characters": [],
   "location": "Buenos Aires y Ciudad de México",
-  "grammar": ["imperfecto: describir cómo era la ciudad antes"],
-  "vocabularyTopics": ["Nuevas ciudades"],
+  "grammar": [
+    "imperfecto: describir cómo era la ciudad antes"
+  ],
+  "vocabularyTopics": [
+    "Nuevas ciudades"
+  ],
   "paragraphs": [
-    { "type": "narration", "text": "Hasta bien entrada la década de 1870, Buenos Aires era, según la describían sus propios habitantes, poco más que una \"gran aldea\": las calles del centro no estaban pavimentadas, no existía todavía un sistema de alcantarillado adecuado, y buena parte de la ciudad carecía de alumbrado público confiable." },
-    { "type": "narration", "text": "Todo esto cambió con enorme rapidez a partir de 1880, cuando Buenos Aires se convirtió en capital federal y el auge exportador de carne y trigo llenó las arcas del Estado. El intendente Torcuato de Alvear, inspirado directamente en la remodelación de París que Haussmann había dirigido décadas antes, abrió grandes avenidas, construyó plazas y llenó la ciudad de edificios europeos." },
-    { "type": "narration", "text": "¿Sabías que, mientras esto ocurría en Buenos Aires, la Ciudad de México vivía una transformación bastante similar bajo el largo gobierno de Porfirio Díaz? El Paseo de la Reforma, una amplia avenida arbolada que unía el centro histórico con el Bosque de Chapultepec, se convirtió en el símbolo más visible de esta modernización urbana." },
-    { "type": "narration", "text": "Antes de estas reformas, ambas ciudades eran, en muchos sentidos, todavía coloniales en su trazado y en su apariencia; después de ellas, sus centros se parecían cada vez más a una capital europea, con tranvías, cafés elegantes y edificios de varios pisos que antes eran impensables." },
-    { "type": "narration", "text": "Sin embargo, esta modernización urbana tenía un límite muy claro: se concentraba casi exclusivamente en el centro y en algunos barrios nuevos para las clases altas, mientras que la periferia de estas mismas ciudades seguía careciendo, durante décadas más, de los servicios básicos que el centro ya disfrutaba." }
-  ]
+    {
+      "type": "narration",
+      "text": "Buenos Aires, 1900. La antigua aldea colonial se ha convertido en una metrópoli deslumbrante con avenidas monumentales."
+    },
+    {
+      "type": "narration",
+      "text": "El centro urbano cuenta con bulevares arbolados, alumbrado eléctrico moderno y un nuevo alcantarillado subterráneo."
+    },
+    {
+      "type": "narration",
+      "text": "El intendente de la capital ordena abrir amplias calles con adoquín pavimentado para imitar a París."
+    },
+    {
+      "type": "narration",
+      "text": "Pero al otro lado de las avenidas, la periferia obrera crece sin agua potable ni servicios básicos."
+    },
+    {
+      "type": "narration",
+      "text": "Las familias humildes habitan chozas precarias que suelen carecer por completo de higiene y luz natural."
+    }
+  ],
+  "narration": {
+    "durationSeconds": 32.4,
+    "pacing": {
+      "speedMultiplier": 1.0,
+      "rate_str": "+0%",
+      "rate_wpm": 150,
+      "style": "natural, expressive"
+    },
+    "speakers": {
+      "Narrator": {
+        "role": "narrator",
+        "gender": "neutral",
+        "tone": "clear, warm, steady storytelling guide"
+      }
+    },
+    "segments": [
+      {
+        "paraIndex": 0,
+        "startTime": 0.0,
+        "endTime": 6.8,
+        "speaker": "Narrator",
+        "lang": "es",
+        "cues": [
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 1,
+        "startTime": 6.8,
+        "endTime": 12.8,
+        "speaker": "Narrator",
+        "lang": "es",
+        "cues": [
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 2,
+        "startTime": 12.8,
+        "endTime": 19.2,
+        "speaker": "Narrator",
+        "lang": "es",
+        "cues": [],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 3,
+        "startTime": 19.2,
+        "endTime": 26.0,
+        "speaker": "Narrator",
+        "lang": "es",
+        "cues": [
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 4,
+        "startTime": 26.0,
+        "endTime": 32.4,
+        "speaker": "Narrator",
+        "lang": "es",
+        "cues": [],
+        "pronunciations": []
+      }
+    ],
+    "pedagogical": {
+      "keyVocabulary": [
+        {
+          "lemma": "historia",
+          "pos": "noun",
+          "cefr": "B1",
+          "gloss": "story"
+        }
+      ],
+      "targetGrammar": [
+        "imperfecto: describir cómo era la ciudad antes"
+      ],
+      "comprehensionQuestions": [
+        {
+          "question": "¿Cuál es el tema principal de «Nuevas ciudades»?",
+          "options": [
+            "Buenos Aires went from a muddy \"big village\" to a Paris-inspired metropolis in about two decades -- and it wasn't the only Latin American capital to remake itself almost overnight.",
+            "Una discusión sobre gramática",
+            "Una receta de cocina tradicional",
+            "Una carta formal de negocios"
+          ],
+          "correctIndex": 0,
+          "explanation": "El texto desarrolla los eventos descritos en la narración."
+        }
+      ]
+    }
+  }
 }

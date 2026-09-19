@@ -1,86 +1,298 @@
 {
-  "id": "a1-12",
+  "id": "story.a1.12",
   "title": "El número del autobús",
-  "lesson": 12,
   "level": "A1",
-  "order": 12,
+  "lesson": 5,
+  "order": 14,
   "type": "original",
-  "summary": "Meg y Carlos planean una visita al museo y necesitan números para todo: la hora, el autobús, las paradas y el teléfono.",
+  "summary": "Meg and Carlos check the bus timetable and ticket prices for their afternoon trip to the city museum.",
+  "estimatedMinutes": 3,
   "characters": [
     "Carlos",
     "Meg"
   ],
-  "location": "Hanói",
+  "location": "Estación de autobuses de Hanói",
   "grammar": [
-    "números hasta cien",
-    "la hora"
+    "la hora y números altos",
+    "preguntar horarios"
   ],
   "vocabularyTopics": [
-    "Los números",
-    "La hora",
-    "Las cantidades"
+    "Transporte",
+    "Horarios",
+    "Números"
   ],
-  "estimatedMinutes": 2,
   "paragraphs": [
     {
-      "id": 1,
-      "text": "Meg y Carlos quieren visitar el museo de Hanói. El museo abre a las nueve de la mañana y cierra a las cinco de la tarde."
+      "type": "narration",
+      "lang": "en",
+      "text": "On Saturday afternoon, Meg and Carlos arrive at the bus terminal to travel to the History Museum."
     },
     {
-      "id": 2,
-      "text": "«¿A qué hora quieres ir?», pregunta Meg."
+      "type": "dialogue",
+      "speaker": "Meg",
+      "text": "Carlos, ¿a qué hora sale nuestro autobús para el museo?"
     },
     {
-      "id": 3,
-      "text": "«A las diez», responde Carlos. «Así tenemos cuatro horas para ver todo.»"
+      "type": "dialogue",
+      "speaker": "Carlos",
+      "text": "Mira el panel de horarios. Sale a las tres y cuarto, en quince minutos."
     },
     {
-      "id": 4,
-      "text": "Carlos mira el mapa. El museo está lejos. Hay dos autobuses: el número doce y el número treinta."
+      "type": "dialogue",
+      "speaker": "Meg",
+      "text": "¿Y cuál es el número del autobús que va al centro histórico?"
     },
     {
-      "id": 5,
-      "text": "«El doce va al centro. Son quince paradas», dice Carlos."
+      "type": "dialogue",
+      "speaker": "Carlos",
+      "text": "Es el autobús número veintiséis. El billete cuesta treinta y cinco mil dongs, muy barato."
     },
     {
-      "id": 6,
-      "text": "«¿Y el treinta?», pregunta Meg."
+      "type": "narration",
+      "lang": "en",
+      "text": "A large yellow bus pulls up to platform number four right on schedule."
     },
     {
-      "id": 7,
-      "text": "«Solo ocho paradas, pero pasa cada veinte minutos.»"
+      "type": "dialogue",
+      "speaker": "Meg",
+      "text": "¡Allí viene el número veintiséis! Llega muy puntual."
     },
     {
-      "id": 8,
-      "text": "Meg cuenta el dinero. Tiene un billete de cincuenta mil y dos de diez mil."
+      "type": "dialogue",
+      "speaker": "Carlos",
+      "text": "Perfecto. Subimos temprano y tomamos dos asientos cerca de la ventana."
     },
     {
-      "id": 9,
-      "text": "«Es suficiente para los dos», dice."
+      "type": "dialogue",
+      "speaker": "Meg",
+      "text": "El viaje dura unos cuarenta minutos. Da tiempo de repasar nuestras notas de español."
     },
     {
-      "id": 10,
-      "text": "A las nueve y media salen de casa. En la parada hay mucha gente."
-    },
-    {
-      "id": 11,
-      "text": "«¿Cuál es tu número de teléfono? Si hay un problema, te llamo», dice Meg."
-    },
-    {
-      "id": 12,
-      "text": "«Cero nueve uno, dos tres cuatro, cinco seis siete ocho.»"
-    },
-    {
-      "id": 13,
-      "text": "Meg escribe el número. El autobús treinta llega a las nueve y cuarenta."
-    },
-    {
-      "id": 14,
-      "text": "«¡Perfecto! Llegamos a las diez en punto», dice Carlos."
-    },
-    {
-      "id": 15,
-      "text": "Los dos suben al autobús. Dentro hay veintidós personas y solo dos asientos libres."
+      "type": "dialogue",
+      "speaker": "Carlos",
+      "text": "Buena idea. ¡En marcha!"
     }
-  ]
+  ],
+  "narration": {
+    "durationSeconds": 50.12,
+    "pacing": {
+      "speedMultiplier": 1.0,
+      "rate_str": "+0%",
+      "rate_wpm": 140,
+      "style": "natural, articulate"
+    },
+    "speakers": {
+      "Narrator": {
+        "role": "narrator",
+        "gender": "neutral",
+        "tone": "clear, warm, steady storytelling guide"
+      },
+      "Carlos": {
+        "role": "character",
+        "gender": "male",
+        "tone": "conversational, expressive"
+      },
+      "Meg": {
+        "role": "character",
+        "gender": "female",
+        "tone": "conversational, expressive"
+      }
+    },
+    "segments": [
+      {
+        "paraIndex": 0,
+        "startTime": 0.0,
+        "endTime": 7.03,
+        "speaker": "Narrator",
+        "lang": "en",
+        "cues": [
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 1,
+        "startTime": 7.03,
+        "endTime": 11.32,
+        "speaker": "Meg",
+        "lang": "es",
+        "cues": [
+          {
+            "type": "intonation",
+            "contour": "rising-interrogative"
+          },
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 2,
+        "startTime": 11.32,
+        "endTime": 17.32,
+        "speaker": "Carlos",
+        "lang": "es",
+        "cues": [
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 3,
+        "startTime": 17.32,
+        "endTime": 22.46,
+        "speaker": "Meg",
+        "lang": "es",
+        "cues": [
+          {
+            "type": "intonation",
+            "contour": "rising-interrogative"
+          }
+        ],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 4,
+        "startTime": 22.46,
+        "endTime": 28.89,
+        "speaker": "Carlos",
+        "lang": "es",
+        "cues": [
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 5,
+        "startTime": 28.89,
+        "endTime": 34.27,
+        "speaker": "Narrator",
+        "lang": "en",
+        "cues": [],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 6,
+        "startTime": 34.27,
+        "endTime": 37.7,
+        "speaker": "Meg",
+        "lang": "es",
+        "cues": [
+          {
+            "type": "emphasis",
+            "level": "strong"
+          }
+        ],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 7,
+        "startTime": 37.7,
+        "endTime": 42.41,
+        "speaker": "Carlos",
+        "lang": "es",
+        "cues": [],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 8,
+        "startTime": 42.41,
+        "endTime": 48.41,
+        "speaker": "Meg",
+        "lang": "es",
+        "cues": [],
+        "pronunciations": [
+          {
+            "word": "español",
+            "ipa": "es.paˈɲol",
+            "note": "Palatal nasal ñ"
+          }
+        ]
+      },
+      {
+        "paraIndex": 9,
+        "startTime": 48.41,
+        "endTime": 50.12,
+        "speaker": "Carlos",
+        "lang": "es",
+        "cues": [
+          {
+            "type": "emphasis",
+            "level": "strong"
+          }
+        ],
+        "pronunciations": []
+      }
+    ],
+    "pedagogical": {
+      "keyVocabulary": [
+        {
+          "lemma": "conocer",
+          "pos": "verb",
+          "cefr": "A1",
+          "gloss": "to meet / get to know"
+        },
+        {
+          "lemma": "intercambio",
+          "pos": "noun",
+          "cefr": "A1",
+          "gloss": "exchange"
+        }
+      ],
+      "targetGrammar": [
+        "la hora y números altos",
+        "preguntar horarios"
+      ],
+      "comprehensionQuestions": [
+        {
+          "question": "¿Dónde se encuentran Carlos y Meg?",
+          "options": [
+            "En un restaurante mexicano",
+            "En la universidad de Hanói",
+            "En una estación de tren",
+            "En una fiesta en Madrid"
+          ],
+          "correctIndex": 0,
+          "explanation": "Carlos va a un restaurante mexicano por la mañana para practicar español."
+        },
+        {
+          "question": "¿De dónde es Meg?",
+          "options": [
+            "De Hungría",
+            "De Sudáfrica",
+            "De España",
+            "De México"
+          ],
+          "correctIndex": 1,
+          "explanation": "Meg responde explícitamente: 'Soy de Sudáfrica'."
+        },
+        {
+          "question": "¿Por qué están allí los dos?",
+          "options": [
+            "Para practicar español en un intercambio de idiomas",
+            "Para comer tacos únicamente",
+            "Para trabajar como camareros",
+            "Para viajar a Hungría"
+          ],
+          "correctIndex": 0,
+          "explanation": "Los dos estudian el idioma y asisten al intercambio de idiomas."
+        }
+      ]
+    }
+  }
 }

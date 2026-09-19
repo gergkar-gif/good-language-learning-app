@@ -9,13 +9,133 @@
   "summary": "How one mountain in the Andes funded a global empire: a mining boomtown that briefly rivaled London in population, a mercury process that poisoned its workers, and silver coins that circulated as far as Ming China.",
   "characters": [],
   "location": "Potosí y las minas coloniales",
-  "grammar": ["voz pasiva: extracción de plata y oro"],
-  "vocabularyTopics": ["Plata y oro"],
+  "grammar": [
+    "voz pasiva: extracción de plata y oro"
+  ],
+  "vocabularyTopics": [
+    "Plata y oro"
+  ],
   "paragraphs": [
-    { "type": "narration", "text": "En 1545 fue descubierto, en el actual territorio de Bolivia, el yacimiento de plata del Cerro Rico de Potosí, uno de los depósitos de plata más grandes jamás encontrados. Durante los siguientes dos siglos, enormes cantidades de plata fueron extraídas de esa montaña y enviadas, primero a España, y desde allí a buena parte del mundo conocido." },
-    { "type": "narration", "text": "El proceso, sin embargo, dependía de un sistema de trabajo forzado, la mita, adaptado de una institución incaica previa: cada comunidad indígena andina estaba obligada a enviar un porcentaje fijo de hombres a trabajar en las minas durante meses, en condiciones extremadamente duras. Fue precisamente ese trabajo, más que la enfermedad por sí sola, lo que causó un descenso demográfico particularmente severo en las regiones cercanas a Potosí." },
-    { "type": "narration", "text": "A partir de 1554, la producción de plata fue transformada por un nuevo método inventado por Bartolomé de Medina, el llamado 'proceso de patio': el mineral de plata de baja calidad, mezclado con mercurio procedente de las minas de Huancavelica, permitía extraer mucha más plata que antes. El mercurio, sin embargo, es altamente tóxico, y miles de trabajadores fueron envenenados lentamente a lo largo de los años, sufriendo temblores, pérdida de dientes y daños neurológicos irreversibles." },
-    { "type": "narration", "text": "¿Sabías que, en su momento de mayor auge, hacia 1610, la población de Potosí llegó a superar los cien mil habitantes, una cifra comparable a la de ciudades europeas como Londres o Madrid en esa misma época, a pesar de estar situada a más de cuatro mil metros de altitud, en pleno altiplano andino?" },
-    { "type": "narration", "text": "Gran parte de esa plata fue acuñada en monedas, los llamados 'reales de a ocho', que terminaron circulando mucho más allá del imperio español: a través del comercio del Galeón de Manila, cruzando el océano Pacífico, esas monedas de plata potosina fueron usadas incluso en mercados de la China Ming, convirtiéndose, en la práctica, en una de las primeras monedas verdaderamente globales de la historia." }
-  ]
+    {
+      "type": "narration",
+      "text": "Potosí, 1600. A más de cuatro mil metros de altura, el Cerro Rico albergaba el mayor yacimiento de plata del mundo conocido."
+    },
+    {
+      "type": "narration",
+      "text": "Miles de trabajadores eran forzados a extraer el mineral en túneles asfixiantes y oscuros donde no llegaba la luz del sol."
+    },
+    {
+      "type": "narration",
+      "text": "El mercurio utilizado en el beneficio de la plata era extremadamente tóxico y arruinaba la salud de los mineros en pocos años."
+    },
+    {
+      "type": "narration",
+      "text": "Cualquier temblor en la montaña provocaba derrumbes catastróficos que sepultaban a cuadrillas enteras bajo las rocas."
+    },
+    {
+      "type": "narration",
+      "text": "Durante el auge minero, la plata se usó para acuñar millones de monedas que comenzaron a circular por los mercados de todo el planeta."
+    }
+  ],
+  "narration": {
+    "durationSeconds": 42.0,
+    "pacing": {
+      "speedMultiplier": 1.0,
+      "rate_str": "+0%",
+      "rate_wpm": 150,
+      "style": "natural, expressive"
+    },
+    "speakers": {
+      "Narrator": {
+        "role": "narrator",
+        "gender": "neutral",
+        "tone": "clear, warm, steady storytelling guide"
+      }
+    },
+    "segments": [
+      {
+        "paraIndex": 0,
+        "startTime": 0.0,
+        "endTime": 8.8,
+        "speaker": "Narrator",
+        "lang": "es",
+        "cues": [
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 1,
+        "startTime": 8.8,
+        "endTime": 17.2,
+        "speaker": "Narrator",
+        "lang": "es",
+        "cues": [],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 2,
+        "startTime": 17.2,
+        "endTime": 26.0,
+        "speaker": "Narrator",
+        "lang": "es",
+        "cues": [],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 3,
+        "startTime": 26.0,
+        "endTime": 32.4,
+        "speaker": "Narrator",
+        "lang": "es",
+        "cues": [],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 4,
+        "startTime": 32.4,
+        "endTime": 42.0,
+        "speaker": "Narrator",
+        "lang": "es",
+        "cues": [
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
+        "pronunciations": []
+      }
+    ],
+    "pedagogical": {
+      "keyVocabulary": [
+        {
+          "lemma": "historia",
+          "pos": "noun",
+          "cefr": "B1",
+          "gloss": "story"
+        }
+      ],
+      "targetGrammar": [
+        "voz pasiva: extracción de plata y oro"
+      ],
+      "comprehensionQuestions": [
+        {
+          "question": "¿Cuál es el tema principal de «Plata y oro»?",
+          "options": [
+            "How one mountain in the Andes funded a global empire: a mining boomtown that briefly rivaled London in population, a mercury process that poisoned its workers, and silver coins that circulated as far as Ming China.",
+            "Una discusión sobre gramática",
+            "Una receta de cocina tradicional",
+            "Una carta formal de negocios"
+          ],
+          "correctIndex": 0,
+          "explanation": "El texto desarrolla los eventos descritos en la narración."
+        }
+      ]
+    }
+  }
 }

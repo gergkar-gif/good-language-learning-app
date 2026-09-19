@@ -1,90 +1,281 @@
 {
-  "id": "a1-original-04",
+  "id": "story.a1.04",
   "title": "Un sábado en Hanói",
-  "lesson": 4,
   "level": "A1",
-  "order": 4,
+  "lesson": 5,
+  "order": 15,
   "type": "original",
-  "summary": "Carlos, Meg y sus nuevos amigos pasan el sábado explorando Hanói y describiendo los lugares que visitan.",
+  "summary": "Carlos, Meg, and Daniela spend Saturday exploring the town, locating pharmacies, banks, and parks.",
+  "estimatedMinutes": 3,
   "characters": [
     "Carlos",
     "Meg",
-    "Daniela",
-    "Lauren",
-    "Kaylee"
+    "Daniela"
   ],
-  "location": "Hanói",
+  "location": "Centro de Hanói",
   "grammar": [
-    "hay",
-    "estar",
-    "lugares de la ciudad"
+    "lugares en la ciudad",
+    "ubicaciones urbanas"
   ],
   "vocabularyTopics": [
     "La ciudad",
-    "Lugares",
-    "Direcciones"
+    "Edificios públicos",
+    "Paseos"
   ],
-  "estimatedMinutes": 4,
   "paragraphs": [
     {
-      "id": 1,
-      "text": "Es sábado por la mañana. Carlos y Meg se encuentran con Daniela, Lauren y Kaylee en el centro de Hanói."
+      "type": "narration",
+      "lang": "en",
+      "text": "On a sunny Saturday morning, Carlos, Meg, and Daniela meet in the central square of Hanoi."
     },
     {
-      "id": 2,
-      "text": "Daniela sonríe. «Hoy no hay clase. Hoy vamos a conocer la ciudad.»"
+      "type": "dialogue",
+      "speaker": "Meg",
+      "text": "¡Qué bonita mañana para caminar por el centro de la ciudad!"
     },
     {
-      "id": 3,
-      "text": "Primero caminan hasta un lago. Hay muchas personas. Algunas corren y otras pasean con sus familias."
+      "type": "dialogue",
+      "speaker": "Carlos",
+      "text": "Sí. Antes de ir al parque, necesito pasar por el banco para sacar dinero."
     },
     {
-      "id": 4,
-      "text": "Kaylee mira alrededor. «¡Qué bonito! Hay muchos árboles.»"
+      "type": "dialogue",
+      "speaker": "Daniela",
+      "text": "El banco está muy cerca de aquí, al lado de la farmacia y enfrente del hotel grande."
     },
     {
-      "id": 5,
-      "text": "Lauren señala un café. «El café está al lado del lago. Podemos descansar allí.»"
+      "type": "narration",
+      "lang": "en",
+      "text": "They walk past bustling shops, cafés, and the city library."
     },
     {
-      "id": 6,
-      "text": "Después pasan por un mercado. Hay fruta, flores y muchas verduras."
+      "type": "dialogue",
+      "speaker": "Meg",
+      "text": "¿Y después del banco podemos visitar el museo y la biblioteca municipal?"
     },
     {
-      "id": 7,
-      "text": "Carlos pregunta: «¿Siempre hay tanta gente?»"
+      "type": "dialogue",
+      "speaker": "Daniela",
+      "text": "Por supuesto. El museo está detrás de la plaza mayor, a diez minutos a pie."
     },
     {
-      "id": 8,
-      "text": "Daniela responde: «Sí. Los sábados el mercado está muy lleno.»"
+      "type": "dialogue",
+      "speaker": "Carlos",
+      "text": "Y después almorzamos en un restaurante típico de este barrio tan hermoso."
     },
     {
-      "id": 9,
-      "text": "Más tarde entran en una librería. Meg encuentra un libro pequeño para estudiantes de español."
-    },
-    {
-      "id": 10,
-      "text": "«Creo que este libro es perfecto para nosotros», dice Meg."
-    },
-    {
-      "id": 11,
-      "text": "Carlos compra el libro y todos siguen caminando por el barrio antiguo."
-    },
-    {
-      "id": 12,
-      "text": "Cuando empieza a hacer calor, buscan un restaurante para almorzar."
-    },
-    {
-      "id": 13,
-      "text": "Mientras comen, Daniela hace una pregunta. «¿Cuál es su lugar favorito de Hanói?»"
-    },
-    {
-      "id": 14,
-      "text": "Cada uno tiene una respuesta diferente. Carlos dice que le gusta el lago. Meg prefiere el mercado. Lauren elige la librería y Kaylee dice que el restaurante es el mejor lugar."
-    },
-    {
-      "id": 15,
-      "text": "Todos se ríen. Es un sábado muy agradable y ya hacen planes para la próxima semana."
+      "type": "dialogue",
+      "speaker": "Meg",
+      "text": "Me encanta este plan. Conocer la ciudad a pie con buenos amigos es maravilloso."
     }
-  ]
+  ],
+  "narration": {
+    "durationSeconds": 51.47,
+    "pacing": {
+      "speedMultiplier": 1.0,
+      "rate_str": "+0%",
+      "rate_wpm": 140,
+      "style": "natural, articulate"
+    },
+    "speakers": {
+      "Narrator": {
+        "role": "narrator",
+        "gender": "neutral",
+        "tone": "clear, warm, steady storytelling guide"
+      },
+      "Carlos": {
+        "role": "character",
+        "gender": "male",
+        "tone": "conversational, expressive"
+      },
+      "Meg": {
+        "role": "character",
+        "gender": "female",
+        "tone": "conversational, expressive"
+      },
+      "Daniela": {
+        "role": "character",
+        "gender": "male",
+        "tone": "conversational, expressive"
+      }
+    },
+    "segments": [
+      {
+        "paraIndex": 0,
+        "startTime": 0.0,
+        "endTime": 6.62,
+        "speaker": "Narrator",
+        "lang": "en",
+        "cues": [
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 1,
+        "startTime": 6.62,
+        "endTime": 11.33,
+        "speaker": "Meg",
+        "lang": "es",
+        "cues": [
+          {
+            "type": "emphasis",
+            "level": "strong"
+          }
+        ],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 2,
+        "startTime": 11.33,
+        "endTime": 17.33,
+        "speaker": "Carlos",
+        "lang": "es",
+        "cues": [
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 3,
+        "startTime": 17.33,
+        "endTime": 24.62,
+        "speaker": "Daniela",
+        "lang": "es",
+        "cues": [
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 4,
+        "startTime": 24.62,
+        "endTime": 28.76,
+        "speaker": "Narrator",
+        "lang": "en",
+        "cues": [
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 5,
+        "startTime": 28.76,
+        "endTime": 33.9,
+        "speaker": "Meg",
+        "lang": "es",
+        "cues": [
+          {
+            "type": "intonation",
+            "contour": "rising-interrogative"
+          }
+        ],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 6,
+        "startTime": 33.9,
+        "endTime": 40.33,
+        "speaker": "Daniela",
+        "lang": "es",
+        "cues": [
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 7,
+        "startTime": 40.33,
+        "endTime": 45.47,
+        "speaker": "Carlos",
+        "lang": "es",
+        "cues": [],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 8,
+        "startTime": 45.47,
+        "endTime": 51.47,
+        "speaker": "Meg",
+        "lang": "es",
+        "cues": [],
+        "pronunciations": []
+      }
+    ],
+    "pedagogical": {
+      "keyVocabulary": [
+        {
+          "lemma": "conocer",
+          "pos": "verb",
+          "cefr": "A1",
+          "gloss": "to meet / get to know"
+        },
+        {
+          "lemma": "intercambio",
+          "pos": "noun",
+          "cefr": "A1",
+          "gloss": "exchange"
+        }
+      ],
+      "targetGrammar": [
+        "lugares en la ciudad",
+        "ubicaciones urbanas"
+      ],
+      "comprehensionQuestions": [
+        {
+          "question": "¿Dónde se encuentran Carlos y Meg?",
+          "options": [
+            "En un restaurante mexicano",
+            "En la universidad de Hanói",
+            "En una estación de tren",
+            "En una fiesta en Madrid"
+          ],
+          "correctIndex": 0,
+          "explanation": "Carlos va a un restaurante mexicano por la mañana para practicar español."
+        },
+        {
+          "question": "¿De dónde es Meg?",
+          "options": [
+            "De Hungría",
+            "De Sudáfrica",
+            "De España",
+            "De México"
+          ],
+          "correctIndex": 1,
+          "explanation": "Meg responde explícitamente: 'Soy de Sudáfrica'."
+        },
+        {
+          "question": "¿Por qué están allí los dos?",
+          "options": [
+            "Para practicar español en un intercambio de idiomas",
+            "Para comer tacos únicamente",
+            "Para trabajar como camareros",
+            "Para viajar a Hungría"
+          ],
+          "correctIndex": 0,
+          "explanation": "Los dos estudian el idioma y asisten al intercambio de idiomas."
+        }
+      ]
+    }
+  }
 }
