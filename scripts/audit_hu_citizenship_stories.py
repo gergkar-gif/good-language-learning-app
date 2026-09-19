@@ -3,7 +3,7 @@ sys.stdout.reconfigure(encoding='utf-8')
 from importlib.machinery import SourceFileLoader
 audit_mod = SourceFileLoader('audit', 'scripts/audit-reading-quality.py').load_module()
 
-units = ['anjouk', 'matyas', 'mohacs', 'haromresz', 'erdelyaranykora', 'torokkiuzese']
+units = ['anjouk', 'matyas', 'mohacs', 'haromresz', 'erdelyaranykora', 'torokkiuzese', 'rakoczi', 'mariaterezia', 'reformkor']
 for u in units:
     print(f'=== UNIT: b1-{u} ===')
     for i in range(1, 6):

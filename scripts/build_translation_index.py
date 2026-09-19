@@ -126,6 +126,9 @@ SLUG_TOPIC_LABELS = {
     "haromresz": "Three Parts of Hungary",
     "erdelyaranykora": "Transylvania's Golden Age",
     "torokkiuzese": "Driving Out the Ottomans",
+    "rakoczi": "Rákóczi's War of Independence (1703–11)",
+    "mariaterezia": "The 18th Century: Rebuilding",
+    "reformkor": "The Reform Age",
 }
 
 # Order matters: these are mutually exclusive by construction (slug requires
