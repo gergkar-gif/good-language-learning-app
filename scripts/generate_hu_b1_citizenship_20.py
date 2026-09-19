@@ -426,7 +426,7 @@ def build_unit_20_citizenship():
         "id": "story.b1.vilaghaboru.05",
         "lesson": 5,
         "order": 5,
-        "title": "A birodalom alkonya és a széthullás",
+        "title": "A birodalom alkonya és az összeomlás",
         "level": "B1",
         "type": "world",
         "estimatedMinutes": 6,
@@ -471,7 +471,7 @@ def build_unit_20_citizenship():
     # Combined story for consolidation
     story_combined = {
         "id": "story.b1.vilaghaboru.combined",
-        "title": "Az első világháború és a történelmi Magyarország széthullása",
+        "title": "Az első világháború és a történelmi Magyarország összeomlása",
         "level": "B1",
         "order": 20,
         "type": "world",
@@ -621,7 +621,7 @@ def build_unit_20_citizenship():
                 "category": "grammar",
                 "question": "Melyik állítás összegzi hitelesen az első világháború következményeit Magyarország számára?",
                 "options": [
-                    "A háborús vereség a Monarchia felbomlásához és a történelmi Magyarország széthullásához vezetett.",
+                    "A háborús vereség a Monarchia felbomlásához és a történelmi Magyarország összeomlásához vezetett.",
                     "Magyarország újabb területeket csatolt magához a Balkánon és Ausztriában.",
                     "A gazdaság gyorsabban virágzott a háború alatt, mint valaha a békeidőkben."
                 ],
@@ -691,7 +691,7 @@ def build_unit_20_citizenship():
         "02": ("A hátország terhei és a mindennapok", "The Home Front"),
         "03": ("Doberdó és az Isonzó pokla", "Defeat & The Carnage"),
         "04": ("Az őszirózsás forradalom (1918)", "Revolution in Budapest"),
-        "05": ("A birodalom felbomlása és a széthullás", "A Monarchy Ends")
+        "05": ("A birodalom felbomlása és az összeomlás", "A Monarchy Ends")
     }
 
     story_refs = {
@@ -746,7 +746,7 @@ def build_unit_20_citizenship():
 
     consolidation_obj = {
         "id": "lesson.b1.vilaghaboru-consolidation",
-        "title": "Összefoglalás: Az első világháború és a széthullás (World War I & Collapse Consolidation)",
+        "title": "Összefoglalás: Az első világháború és az összeomlás (World War I & Collapse Consolidation)",
         "level": "B1",
         "grammar": "Consolidation of World War I History, the 1918 Aster Revolution & Empire Collapse",
         "sections": [
