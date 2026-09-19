@@ -99,5 +99,49 @@ const container = {
     assert(container.innerHTML.includes('Conversation Scenarios'), 'Speaking studio must render Conversation Scenarios tab');
     console.log('[PASS] SpeakingStudio renders Conversation Scenarios tab successfully.');
     SpeakingDriller.stop();
+
+    console.log('\n--- Test 3: Zero Emojis in Scenarios Feature ---');
+    const speakingJsContent = fs.readFileSync(path.resolve(__dirname, '../../engine/drills/speaking.js'), 'utf8');
+    const lines = speakingJsContent.split('\n');
+    const emojiRegex = /[\u{1F300}-\u{1F9FF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}]/u;
+    const scenarioLinesWithEmojis = [];
+    lines.forEach((line, idx) => {
+        if (idx >= 1500 && idx <= 2350 && emojiRegex.test(line)) {
+            scenarioLinesWithEmojis.push({ line: idx + 1, text: line.trim() });
+        }
+    });
+    assert.strictEqual(scenarioLinesWithEmojis.length, 0, `Scenario code must contain zero emojis. Found: ${JSON.stringify(scenarioLinesWithEmojis)}`);
+    console.log('[PASS] Verified zero emojis in conversation scenarios code.');
+
+    console.log('\n--- Test 4: ParlourTTS.speak Signature & Invocation ---');
+    let ttsCallArgs = null;
+    global.ParlourTTS = {
+        speak: (opts) => {
+            ttsCallArgs = opts;
+            return Promise.resolve(true);
+        },
+        stop: () => {}
+    };
+
+    // Render a specific scenario with autoStartScenario
+    await SpeakingDriller.render(container, { scenarioId: 'es-a1-sc01-cafe', autoStartScenario: true });
+    assert(ttsCallArgs !== null, 'Starting scenario session must invoke ParlourTTS.speak');
+    assert.strictEqual(typeof ttsCallArgs, 'object', 'ParlourTTS.speak must be called with an options object');
+    assert(ttsCallArgs.text && ttsCallArgs.text.length > 0, 'ParlourTTS.speak must receive text property');
+    assert.strictEqual(ttsCallArgs.language, 'es', 'ParlourTTS.speak must receive correct language code');
+    assert.strictEqual(ttsCallArgs.type, 'dialogue', 'ParlourTTS.speak must specify dialogue type');
+    console.log('[PASS] Verified ParlourTTS.speak is invoked with proper options object { text, language, type: "dialogue" }.');
+
+    console.log('\n--- Test 5: Debrief Screen Simplification & Custom Audio Player ---');
+    const debriefCode = speakingJsContent.slice(speakingJsContent.indexOf('function _renderScenarioDebrief'), speakingJsContent.indexOf('function stop('));
+    assert(!debriefCode.includes('sp-dimensions-grid'), 'Scenario debrief must not contain sp-dimensions-grid');
+    assert(!debriefCode.includes('sp-dim-card'), 'Scenario debrief must not contain dimension score cards');
+    assert(debriefCode.includes('coachSentence'), 'Scenario debrief must compute single extended coach/examiner sentence');
+    assert(debriefCode.includes('_customAudioPlayerHtml'), 'Scenario debrief must invoke _customAudioPlayerHtml instead of raw browser audio controls');
+    assert(speakingJsContent.includes('sp-custom-player'), 'Speaking studio must define sp-custom-player');
+    assert(!debriefCode.includes('<audio controls'), 'Raw audio controls must be replaced with custom player in scenario debrief');
+    console.log('[PASS] Verified debrief screen does not render 5 dimensions grid and uses Parlour custom player.');
+
     console.log('\n[ALL PASS] All conversation scenario tests passed cleanly!');
 })();
+

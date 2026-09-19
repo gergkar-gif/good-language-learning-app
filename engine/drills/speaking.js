@@ -1532,7 +1532,7 @@ const SpeakingDriller = (function () {
                     <strong>Roleplay:</strong> ${_esc(s.roleplay ? s.roleplay.learnerRole : 'Learner')} ↔ ${_esc(s.roleplay ? s.roleplay.interlocutorRole : 'Partner')}
                 </p>
                 <p class="wk-card-sub">${_esc(s.situation || '')}</p>
-                ${s.targetCompetency ? `<div class="sp-scenario-comp-tag">🎯 ${_esc(s.targetCompetency)}</div>` : ''}
+                ${s.targetCompetency ? `<div class="sp-scenario-comp-tag"><svg class="sp-icon-svg" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg> <span>${_esc(s.targetCompetency)}</span></div>` : ''}
             </div>
         `).join('') : `
             <div class="sp-empty-state">
@@ -1637,6 +1637,147 @@ const SpeakingDriller = (function () {
         }
     }
 
+    function _speakInterlocutor(text, langCode, triggerBtn) {
+        const lang = langCode || ((typeof Lang !== 'undefined') ? Lang.code() : 'es');
+        if (!text) return;
+        if (typeof ParlourTTS !== 'undefined' && ParlourTTS.speak) {
+            ParlourTTS.speak({
+                text: text,
+                language: lang,
+                type: 'dialogue',
+                triggerBtn: triggerBtn || undefined
+            });
+        } else if (typeof Speech !== 'undefined' && Speech.speak) {
+            Speech.speak(text, lang);
+        }
+    }
+
+    function _customAudioPlayerHtml(audioUrl, extraClass = '') {
+        if (!audioUrl) return '';
+        return `
+            <div class="sp-custom-player ${extraClass}" data-audio-src="${_esc(audioUrl)}">
+                <button type="button" class="sp-player-toggle" aria-label="Play recording">
+                    <svg class="sp-player-play-icon" viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><polygon points="7,4 19,12 7,20"/></svg>
+                    <svg class="sp-player-pause-icon" viewBox="0 0 24 24" width="13" height="13" fill="currentColor" style="display:none;"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+                </button>
+                <div class="sp-player-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                    <div class="sp-player-fill" style="width: 0%;"></div>
+                </div>
+                <span class="sp-player-time">0:00</span>
+            </div>
+        `;
+    }
+
+    function _mountCustomAudioPlayers(root) {
+        if (!root || typeof window === 'undefined') return;
+        try {
+            const playerEls = root.querySelectorAll('.sp-custom-player[data-audio-src]');
+            if (!playerEls || !playerEls.forEach) return;
+            playerEls.forEach(playerEl => {
+                const src = playerEl.getAttribute('data-audio-src');
+                if (!src) return;
+
+                const toggleBtn = playerEl.querySelector('.sp-player-toggle');
+                const playIcon = playerEl.querySelector('.sp-player-play-icon');
+                const pauseIcon = playerEl.querySelector('.sp-player-pause-icon');
+                const track = playerEl.querySelector('.sp-player-track');
+                const fill = playerEl.querySelector('.sp-player-fill');
+                const timeEl = playerEl.querySelector('.sp-player-time');
+
+                let audio;
+                try {
+                    audio = new Audio(src);
+                } catch (err) {
+                    return;
+                }
+
+                const formatTime = (secs) => {
+                    if (isNaN(secs) || secs < 0) return '0:00';
+                    const m = Math.floor(secs / 60);
+                    const s = Math.floor(secs % 60);
+                    return `${m}:${s < 10 ? '0' : ''}${s}`;
+                };
+
+                const setPlayingState = (isPlaying) => {
+                    if (playIcon) playIcon.style.display = isPlaying ? 'none' : 'block';
+                    if (pauseIcon) pauseIcon.style.display = isPlaying ? 'block' : 'none';
+                    if (toggleBtn) toggleBtn.setAttribute('aria-label', isPlaying ? 'Pause recording' : 'Play recording');
+                };
+
+                if (audio.addEventListener) {
+                    audio.addEventListener('loadedmetadata', () => {
+                        if (timeEl && audio.duration) {
+                            timeEl.textContent = `0:00 / ${formatTime(audio.duration)}`;
+                        }
+                    });
+
+                    audio.addEventListener('timeupdate', () => {
+                        if (!audio.duration) return;
+                        const pct = (audio.currentTime / audio.duration) * 100;
+                        if (fill) fill.style.width = `${pct}%`;
+                        if (track) track.setAttribute('aria-valuenow', Math.round(pct));
+                        if (timeEl) {
+                            timeEl.textContent = `${formatTime(audio.currentTime)} / ${formatTime(audio.duration)}`;
+                        }
+                    });
+
+                    audio.addEventListener('ended', () => {
+                        setPlayingState(false);
+                        if (fill) fill.style.width = '0%';
+                        if (track) track.setAttribute('aria-valuenow', 0);
+                        if (timeEl) {
+                            timeEl.textContent = `0:00 / ${formatTime(audio.duration)}`;
+                        }
+                    });
+
+                    audio.addEventListener('pause', () => {
+                        setPlayingState(false);
+                    });
+
+                    audio.addEventListener('play', () => {
+                        setPlayingState(true);
+                    });
+                }
+
+                if (toggleBtn) {
+                    toggleBtn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        if (audio.paused) {
+                            if (typeof document !== 'undefined') {
+                                document.querySelectorAll('.sp-custom-player').forEach(p => {
+                                    if (p._audioInstance && p._audioInstance !== audio && !p._audioInstance.paused) {
+                                        p._audioInstance.pause();
+                                    }
+                                });
+                            }
+                            const playPromise = audio.play();
+                            if (playPromise && playPromise.catch) {
+                                playPromise.catch(err => console.warn('Custom player play failed:', err));
+                            }
+                        } else {
+                            audio.pause();
+                        }
+                    });
+                }
+
+                if (track) {
+                    track.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        if (!audio.duration) return;
+                        const rect = track.getBoundingClientRect ? track.getBoundingClientRect() : { left: 0, width: 100 };
+                        const clickX = (e.clientX || 0) - (rect.left || 0);
+                        const pct = Math.max(0, Math.min(1, clickX / (rect.width || 1)));
+                        audio.currentTime = pct * audio.duration;
+                    });
+                }
+
+                playerEl._audioInstance = audio;
+            });
+        } catch (e) {
+            console.warn('Could not mount custom audio players:', e);
+        }
+    }
+
     function _startScenarioSession() {
         _currentTurnIndex = 0;
         _completedTurns = [];
@@ -1648,15 +1789,13 @@ const SpeakingDriller = (function () {
         _playCurrentInterlocutorTTS();
     }
 
-    function _playCurrentInterlocutorTTS() {
+    function _playCurrentInterlocutorTTS(triggerBtn) {
         const s = _selectedScenario;
         if (!s || !s.turns || !s.turns[_currentTurnIndex]) return;
         const turn = s.turns[_currentTurnIndex];
         const lang = (typeof Lang !== 'undefined') ? Lang.code() : 'es';
         const textToSpeak = turn.interlocutorAudioText || turn.interlocutorPrompt;
-        if (typeof ParlourTTS !== 'undefined') {
-            ParlourTTS.speak(textToSpeak, { language: lang, type: 'dialogue' });
-        }
+        _speakInterlocutor(textToSpeak, lang, triggerBtn);
     }
 
     function _renderScenarioConversation(body) {
@@ -1688,19 +1827,21 @@ const SpeakingDriller = (function () {
                             <div class="sp-chat-bubble partner">
                                 <div class="sp-chat-header">
                                     <strong>${_esc(s.roleplay ? s.roleplay.interlocutorRole : 'Partner')}</strong>
-                                    <button type="button" class="sp-inline-replay" data-replay-text="${_esc(t.interlocutorPrompt)}">🔊</button>
+                                    <button type="button" class="sp-inline-replay" data-replay-text="${_esc(t.interlocutorPrompt)}" title="Listen again" aria-label="Listen again">
+                                        <svg class="sp-icon-svg" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                                    </button>
                                 </div>
                                 <div class="sp-chat-body">${_esc(t.interlocutorPrompt)}</div>
                             </div>
                             <div class="sp-chat-bubble learner">
                                 <div class="sp-chat-header">
                                     <strong>You</strong>
-                                    ${t.validation && t.validation.valid ? `<span class="sp-chat-check">✓</span>` : ''}
+                                    ${t.validation && t.validation.valid ? `<span class="sp-chat-check"><svg class="sp-icon-svg" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>` : ''}
                                 </div>
                                 <div class="sp-chat-body">${_esc(t.learnerTranscript)}</div>
                                 ${t.audioUrl ? `
-                                    <div style="margin-top: 4px;">
-                                        <audio controls src="${t.audioUrl}" style="height: 28px; width: 100%; max-width: 260px;"></audio>
+                                    <div style="margin-top: 6px;">
+                                        ${_customAudioPlayerHtml(t.audioUrl, 'sp-timeline-player')}
                                     </div>
                                 ` : ''}
                             </div>
@@ -1711,7 +1852,10 @@ const SpeakingDriller = (function () {
                         <div class="sp-chat-bubble partner current">
                             <div class="sp-chat-header">
                                 <strong>${_esc(s.roleplay ? s.roleplay.interlocutorRole : 'Partner')}</strong>
-                                <button type="button" class="sp-inline-replay" data-action="replay-active-tts" title="Listen again">🔊 Listen</button>
+                                <button type="button" class="sp-inline-replay" data-action="replay-active-tts" title="Listen again">
+                                    <svg class="sp-icon-svg" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+                                    <span>Listen</span>
+                                </button>
                             </div>
                             <div class="sp-chat-body" style="font-size: 1.05rem; font-weight: 500;">
                                 ${_esc(currentTurn.interlocutorPrompt || '')}
@@ -1733,7 +1877,10 @@ const SpeakingDriller = (function () {
 
                         ${(currentTurn.suggestedPhrases && currentTurn.suggestedPhrases.length) ? `
                             <details class="sp-phrases-drawer" style="margin-top: 8px; font-size: 0.85rem;">
-                                <summary style="cursor: pointer; color: var(--muted); font-weight: 500;">💡 Helpful phrase ideas</summary>
+                                <summary class="sp-phrases-summary">
+                                    <svg class="sp-icon-svg" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                                    <span>Suggested phrasing &amp; vocabulary</span>
+                                </summary>
                                 <ul style="margin: 6px 0 0; padding-left: 18px; color: var(--text);">
                                     ${currentTurn.suggestedPhrases.map(ph => `<li>${_esc(ph)}</li>`).join('')}
                                 </ul>
@@ -1744,7 +1891,8 @@ const SpeakingDriller = (function () {
                     ${_scenarioPhase === SCENARIO_PHASE.INTERLOCUTOR ? `
                         <div style="text-align: center;">
                             <button type="button" class="sp-scenario-record-cta" data-action="start-turn-record">
-                                🎙️ Tap to Speak
+                                <svg class="sp-icon-svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/></svg>
+                                <span>Record Spoken Turn</span>
                             </button>
                         </div>
                     ` : ''}
@@ -1752,15 +1900,16 @@ const SpeakingDriller = (function () {
                     ${isRecording ? `
                         <div class="sp-turn-recording-panel" style="text-align: center; padding: 16px; background: var(--bg-card, #f8f9fa); border-radius: var(--radius-md, 8px);">
                             <div class="sp-mic-visualizer" style="margin-bottom: 12px;">
-                                <div class="sp-mic-pulse-ring" style="width: 48px; height: 48px; border-radius: 50%; background: rgba(220, 53, 69, 0.2); margin: 0 auto; display: flex; align-items: center; justify-content: center;">
-                                    <span style="font-size: 1.5rem;">🎙️</span>
+                                <div class="sp-mic-pulse-ring" style="width: 48px; height: 48px; border-radius: 50%; background: rgba(220, 53, 69, 0.15); margin: 0 auto; display: flex; align-items: center; justify-content: center; color: #dc3545;">
+                                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/></svg>
                                 </div>
                             </div>
                             <div class="sp-turn-live-transcript" style="min-height: 48px; padding: 8px 12px; background: var(--surface, #fff); border: 1px solid var(--border, #eee); border-radius: 6px; margin-bottom: 12px; font-size: 1rem;">
                                 ${_esc(_scenarioTranscript || `Listening in ${langName}...`)}
                             </div>
                             <button type="button" class="sp-scenario-stop-btn" data-action="stop-turn-record">
-                                ⏹️ Stop & Review
+                                <svg class="sp-icon-svg" viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><rect x="5" y="5" width="14" height="14" rx="2"/></svg>
+                                <span>Stop &amp; Review</span>
                             </button>
                         </div>
                     ` : ''}
@@ -1771,13 +1920,16 @@ const SpeakingDriller = (function () {
                             <textarea class="sp-turn-edit-field" style="width: 100%; min-height: 60px; padding: 8px; font-size: 0.95rem; border: 1px solid var(--border, #ccc); border-radius: 6px; box-sizing: border-box;">${_esc(_scenarioTranscript)}</textarea>
 
                             ${_scenarioAudioUrl ? `
-                                <div style="margin: 10px 0;">
-                                    <audio controls src="${_scenarioAudioUrl}" style="width: 100%; height: 32px;"></audio>
+                                <div style="margin: 12px 0;">
+                                    ${_customAudioPlayerHtml(_scenarioAudioUrl, 'sp-review-player')}
                                 </div>
                             ` : ''}
 
                             <div style="display: flex; gap: 10px; margin-top: 12px; justify-content: flex-end;">
-                                <button type="button" class="wk-secondary-btn" data-action="rerecord-turn">🔄 Re-record</button>
+                                <button type="button" class="wk-secondary-btn" data-action="rerecord-turn">
+                                    <svg class="sp-icon-svg" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 4v6h6"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg>
+                                    <span>Re-record</span>
+                                </button>
                                 <button type="button" class="wk-primary-btn" data-action="submit-turn">Send Reply →</button>
                             </div>
                         </div>
@@ -1785,6 +1937,8 @@ const SpeakingDriller = (function () {
                 </div>
             </div>
         `;
+
+        _mountCustomAudioPlayers(body);
 
         const timelineEl = body.querySelector('#sp-chat-timeline');
         if (timelineEl) {
@@ -1804,16 +1958,14 @@ const SpeakingDriller = (function () {
         const replayActiveBtn = body.querySelector('[data-action="replay-active-tts"]');
         if (replayActiveBtn) {
             replayActiveBtn.addEventListener('click', () => {
-                _playCurrentInterlocutorTTS();
+                _playCurrentInterlocutorTTS(replayActiveBtn);
             });
         }
 
         body.querySelectorAll('[data-replay-text]').forEach(btn => {
             btn.addEventListener('click', () => {
                 const text = btn.getAttribute('data-replay-text');
-                if (typeof ParlourTTS !== 'undefined') {
-                    ParlourTTS.speak(text, { language: langCode, type: 'dialogue' });
-                }
+                _speakInterlocutor(text, langCode, btn);
             });
         });
 
@@ -2017,16 +2169,12 @@ const SpeakingDriller = (function () {
         const score = typeof result.overallScore === 'number' ? result.overallScore : 80;
         const isPass = score >= 60;
         const verified = score >= 75 && sc.targetCompetency;
-        const oneLine = result._prodOneLineTip ||
-            (result.priorities && result.priorities[0]) ||
+        const coachSentence = result.examinerFeedback ||
+            result._prodOneLineTip ||
+            (typeof _prodOneLineTip === 'function' ? _prodOneLineTip(result, sc) : null) ||
+            (result.feedback && result.feedback.strengths && result.feedback.strengths[0]) ||
             (result.strengths && result.strengths[0]) ||
             'Well done practicing this real-life conversational exchange!';
-
-        const dims = result.dimensionScores || result.dimensions || {};
-        const taskCompPct = Math.round((dims.taskCompletion != null ? dims.taskCompletion : 0.8) * 100);
-        const fluencyPct = Math.round((dims.fluency != null ? dims.fluency : 0.8) * 100);
-        const vocabPct = Math.round((dims.vocabulary != null ? dims.vocabulary : 0.8) * 100);
-        const grammarPct = Math.round((dims.grammar != null ? dims.grammar : 0.8) * 100);
 
         body.innerHTML = `
             <div class="sp-driller-wrap sp-scenario-debrief-wrap">
@@ -2044,35 +2192,18 @@ const SpeakingDriller = (function () {
                         <div class="sp-prod-results-meta">
                             <h3 class="sp-prod-results-title">${_esc(sc.title || 'Conversation Scenario')}</h3>
                             <p class="sp-prod-results-status">${isPass ? 'Roleplay Successfully Completed' : 'Needs Practice'}</p>
-                            ${verified ? `<span class="sp-competency-verified-tag">✓ Verified Competency</span>` : ''}
+                            ${verified ? `<span class="sp-competency-verified-tag"><svg class="sp-icon-svg" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> <span>Verified Competency</span></span>` : ''}
                         </div>
                     </div>
 
                     <div class="sp-coach-note-card">
                         <div class="sp-coach-note-header">
-                            <span class="sp-coach-avatar">💬</span>
+                            <span class="sp-coach-avatar">
+                                <svg class="sp-icon-svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                            </span>
                             <strong>Speaking Coach Note</strong>
                         </div>
-                        <p class="sp-coach-note-body">${_esc(oneLine)}</p>
-                    </div>
-
-                    <div class="sp-dimensions-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 12px; margin: 16px 0;">
-                        <div class="sp-dim-card" style="padding: 10px; background: var(--bg-card, #f8f9fa); border-radius: var(--radius-sm, 4px); text-align: center;">
-                            <div style="font-size: 0.75rem; color: var(--muted); text-transform: uppercase;">Task</div>
-                            <div style="font-size: 1.1rem; font-weight: 700;">${taskCompPct}%</div>
-                        </div>
-                        <div class="sp-dim-card" style="padding: 10px; background: var(--bg-card, #f8f9fa); border-radius: var(--radius-sm, 4px); text-align: center;">
-                            <div style="font-size: 0.75rem; color: var(--muted); text-transform: uppercase;">Fluency</div>
-                            <div style="font-size: 1.1rem; font-weight: 700;">${fluencyPct}%</div>
-                        </div>
-                        <div class="sp-dim-card" style="padding: 10px; background: var(--bg-card, #f8f9fa); border-radius: var(--radius-sm, 4px); text-align: center;">
-                            <div style="font-size: 0.75rem; color: var(--muted); text-transform: uppercase;">Vocabulary</div>
-                            <div style="font-size: 1.1rem; font-weight: 700;">${vocabPct}%</div>
-                        </div>
-                        <div class="sp-dim-card" style="padding: 10px; background: var(--bg-card, #f8f9fa); border-radius: var(--radius-sm, 4px); text-align: center;">
-                            <div style="font-size: 0.75rem; color: var(--muted); text-transform: uppercase;">Grammar</div>
-                            <div style="font-size: 1.1rem; font-weight: 700;">${grammarPct}%</div>
-                        </div>
+                        <p class="sp-coach-note-body">${_esc(coachSentence)}</p>
                     </div>
 
                     <div class="sp-debrief-replay-section" style="margin-top: 24px;">
@@ -2082,7 +2213,9 @@ const SpeakingDriller = (function () {
                                 <div class="sp-turn-replay-block" style="margin-bottom: 16px; padding: 12px; border: 1px solid var(--border-light, #eee); border-radius: var(--radius-md, 8px);">
                                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
                                         <strong style="font-size: 0.85rem; color: var(--muted);">${_esc(sc.roleplay ? sc.roleplay.interlocutorRole : 'Partner')}</strong>
-                                        <button type="button" class="sp-play-audio-btn" data-replay-tts-text="${_esc(t.interlocutorPrompt)}" style="background: none; border: none; cursor: pointer; font-size: 1rem;" title="Listen again">🔊</button>
+                                        <button type="button" class="sp-play-audio-btn" data-replay-tts-text="${_esc(t.interlocutorPrompt)}" style="background: none; border: none; cursor: pointer; display: inline-flex; align-items: center; color: var(--muted); padding: 2px 4px;" title="Listen again" aria-label="Listen again">
+                                            <svg class="sp-icon-svg" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+                                        </button>
                                     </div>
                                     <p style="margin: 0 0 10px; font-size: 0.95rem;">${_esc(t.interlocutorPrompt)}</p>
 
@@ -2091,8 +2224,8 @@ const SpeakingDriller = (function () {
                                     </div>
                                     <p style="margin: 0 0 8px; font-size: 0.95rem; font-style: italic;">"${_esc(t.learnerTranscript)}"</p>
                                     ${t.audioUrl ? `
-                                        <div style="margin-top: 6px;">
-                                            <audio controls src="${t.audioUrl}" style="height: 32px; width: 100%; max-width: 320px;"></audio>
+                                        <div style="margin-top: 8px;">
+                                            ${_customAudioPlayerHtml(t.audioUrl, 'sp-timeline-player')}
                                         </div>
                                     ` : ''}
                                 </div>
@@ -2108,6 +2241,8 @@ const SpeakingDriller = (function () {
                 </div>
             </div>
         `;
+
+        _mountCustomAudioPlayers(body);
 
         const backBtn = body.querySelector('[data-action="scenarios-list"]');
         if (backBtn) {
@@ -2130,9 +2265,7 @@ const SpeakingDriller = (function () {
             btn.addEventListener('click', () => {
                 const text = btn.getAttribute('data-replay-tts-text');
                 const lang = (typeof Lang !== 'undefined') ? Lang.code() : 'es';
-                if (typeof ParlourTTS !== 'undefined') {
-                    ParlourTTS.speak(text, { language: lang, type: 'dialogue' });
-                }
+                _speakInterlocutor(text, lang, btn);
             });
         });
 
@@ -2160,6 +2293,14 @@ const SpeakingDriller = (function () {
         if (typeof ParlourTTS !== 'undefined' && ParlourTTS.stop) {
             ParlourTTS.stop();
         }
+        if (typeof document !== 'undefined' && typeof document.querySelectorAll === 'function') {
+            document.querySelectorAll('.sp-custom-player').forEach(p => {
+                if (p._audioInstance) {
+                    p._audioInstance.pause();
+                    p._audioInstance = null;
+                }
+            });
+        }
     }
 
     async function render(container, options = {}) {
@@ -2183,6 +2324,11 @@ const SpeakingDriller = (function () {
             const found = (_scenarios || []).find(s => s.id === options.scenarioId);
             if (found) {
                 _selectedScenario = found;
+                if (options.autoStartScenario) {
+                    _renderStudioShell();
+                    _startScenarioSession();
+                    return;
+                }
                 _scenarioPhase = SCENARIO_PHASE.BRIEFING;
                 _renderStudioShell();
                 return;
