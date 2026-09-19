@@ -30,25 +30,26 @@
         const opts = options || {};
         const language = opts.language ? opts.language.toUpperCase() : 'THE TARGET LANGUAGE';
         const formattedSkills = formatSkills(targetSkills);
-        const isOral = opts.modality === 'oral' ||
+        const isConversation = opts.taskType === 'interactive_conversation' || taskType === 'interactive_conversation';
+        const isOral = isConversation || opts.modality === 'oral' ||
             (opts.taskType && String(opts.taskType).toLowerCase().includes('oral')) ||
             (taskType && String(taskType).toLowerCase().includes('oral'));
 
         if (isOral) {
             return `
-Grade the following learner spoken production as a CEFR-aligned formative oral assessment in ${language}.
+Grade the following learner spoken ${isConversation ? 'multi-turn dialogue' : 'production'} as a CEFR-aligned formative oral ${isConversation ? 'conversation' : ''} assessment in ${language}.
 
 CEFR level: ${cefrLevel}
-Task type: ${taskType} (Spoken / Oral Production)
-Modality: Spoken speech transcribed via automated speech recognition (ASR)
+Task type: ${isConversation ? 'Interactive Conversation Scenario (Oral Roleplay)' : `${taskType} (Spoken / Oral Production)`}
+Modality: ${isConversation ? 'Multi-turn spoken dialogue transcribed via automated speech recognition (ASR)' : 'Spoken speech transcribed via automated speech recognition (ASR)'}
 
-TASK:
+${isConversation ? 'SCENARIO & ROLEPLAY OBJECTIVES:' : 'TASK:'}
 ${taskInstructions}
 
 TARGET SKILLS:
 ${formattedSkills}
 
-LEARNER SPOKEN TRANSCRIPT:
+${isConversation ? 'CONVERSATION DIALOGUE TRANSCRIPT:' : 'LEARNER SPOKEN TRANSCRIPT:'}
 ${learnerProduction}
 
 IMPORTANT ORAL SCORING PRINCIPLES:

@@ -52,8 +52,12 @@ const ListeningDriller = (function () {
     let _pairs = null; // content/<lang>/indexes/translation-index.json -> pairs[]
     let _loadedLang = null;
 
+    const TRACK = { CORE: 'core' };
+    const TRACK_LABELS = { latam: 'Latin America', citizenship: 'Citizenship' };
+
     let _mode = MODE.COUNT;
     let _level = 'all';
+    let _track = TRACK.CORE;
     let _questionCount = 10;
     let _timerMinutes = 2;
 
@@ -99,11 +103,25 @@ const ListeningDriller = (function () {
         _loadedLang = null;
     });
 
-    function _poolFor(level) {
-        if (!level || level === 'all') return _pairs;
+    function _byLevel(level) {
+        if (!level || level === 'all') return _pairs || [];
         const target = level.toUpperCase();
-        const filtered = _pairs.filter(p => p.level && p.level.toUpperCase() === target);
-        return filtered.length ? filtered : _pairs;
+        return (_pairs || []).filter(p => p.level && p.level.toUpperCase() === target);
+    }
+
+    function _secondTrack(level) {
+        const pair = _byLevel(level).find(p => p.track && p.track !== TRACK.CORE);
+        return pair ? pair.track : null;
+    }
+
+    function _trackLabel(track) {
+        return TRACK_LABELS[track] || (track.charAt(0).toUpperCase() + track.slice(1));
+    }
+
+    function _poolFor(level, track) {
+        let pool = _byLevel(level);
+        if (_secondTrack(level)) pool = pool.filter(p => (p.track || TRACK.CORE) === track);
+        return pool.length ? pool : _pairs;
     }
 
     // ---- Exercise builders — one per type in PARLOUR_LISTENING_SPEC.md §2 ----
@@ -230,6 +248,8 @@ const ListeningDriller = (function () {
         }
 
         const levels = CEFR_ORDER.filter(l => _pairs.some(p => p.level === l));
+        const secondTrack = _secondTrack(_level);
+        if (_track !== TRACK.CORE && _track !== secondTrack) _track = TRACK.CORE;
 
         _container.innerHTML = `
             <div class="gd-settings">
@@ -253,6 +273,18 @@ const ListeningDriller = (function () {
                         `).join('')}
                     </select>
                 </div>
+
+                ${secondTrack ? `
+                    <div class="gd-setting">
+                        <label>Track</label>
+                        <div class="vb-mode-switcher" role="tablist">
+                            <button class="vb-mode-btn${_track === TRACK.CORE ? ' active' : ''}"
+                                data-track="${TRACK.CORE}" role="tab" aria-selected="${_track === TRACK.CORE}">Core</button>
+                            <button class="vb-mode-btn${_track === secondTrack ? ' active' : ''}"
+                                data-track="${secondTrack}" role="tab" aria-selected="${_track === secondTrack}">${_trackLabel(secondTrack)}</button>
+                        </div>
+                    </div>
+                ` : ''}
 
                 ${_mode === MODE.COUNT ? `
                     <div class="gd-setting">
@@ -282,9 +314,13 @@ const ListeningDriller = (function () {
             btn.addEventListener('click', () => { _mode = btn.dataset.mode; _renderSettings(); });
         });
 
+        _container.querySelectorAll('[data-track]').forEach(btn => {
+            btn.addEventListener('click', () => { _track = btn.dataset.track; _renderSettings(); });
+        });
+
         const levelSelect = _container.querySelector('#ld-level');
         levelSelect.value = _level;
-        levelSelect.addEventListener('change', e => { _level = e.target.value; });
+        levelSelect.addEventListener('change', e => { _level = e.target.value; _renderSettings(); });
 
         const countSelect = _container.querySelector('#ld-count');
         if (countSelect) countSelect.addEventListener('change', e => { _questionCount = Number(e.target.value); });
@@ -299,7 +335,7 @@ const ListeningDriller = (function () {
     //  RENDERING — Session
     // ================================================================
     function _startSession() {
-        const pool = _poolFor(_level);
+        const pool = _poolFor(_level, _track);
         _seen = 0;
         _correct = 0;
 
@@ -512,5 +548,5 @@ const ListeningDriller = (function () {
         _phase = PHASE.SETTINGS;
     }
 
-    return { render, stop };
+    return { render, stop, _secondTrack, _poolFor, _load };
 })();

@@ -123,8 +123,143 @@
         };
     }
 
+    /**
+     * Validate a single conversational turn transcript against turn criteria.
+     * Used for zero-latency turn-level feedback in Option B.
+     * @param {string} transcript - Speech-to-text transcript of learner's reply
+     * @param {object} criteria - { minWords, targetKeywords, requiredConcepts }
+     * @returns {object} { valid: boolean, wordCount: number, matchedKeywords: string[], feedback: string }
+     */
+    function validateTurn(transcript, criteria) {
+        const text = String(transcript || '').trim();
+        const words = tokenizeWords(text);
+        const crit = criteria || {};
+        const minWords = typeof crit.minWords === 'number' ? crit.minWords : 2;
+        const targetKeywords = Array.isArray(crit.targetKeywords) ? crit.targetKeywords : [];
+
+        // Normalise transcript for keyword matching (lowercase, accent-folding)
+        const normalisedText = text.toLowerCase()
+            .normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+
+        const matchedKeywords = [];
+        for (const kw of targetKeywords) {
+            const normKw = String(kw).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+            if (normalisedText.includes(normKw)) {
+                matchedKeywords.push(kw);
+            }
+        }
+
+        const hasMinWords = words.length >= minWords;
+        const matchedKeywordRequirement = targetKeywords.length === 0 || matchedKeywords.length > 0 || words.length >= (minWords + 3);
+        const valid = hasMinWords && matchedKeywordRequirement;
+
+        let feedback = 'Turn completed successfully.';
+        if (!hasMinWords) {
+            feedback = `Spoken response was very short (${words.length} word${words.length === 1 ? '' : 's'}). Try to speak in a full phrase or sentence.`;
+        } else if (!matchedKeywordRequirement) {
+            feedback = `Good attempt, but make sure to address the specific request in the prompt.`;
+        } else if (matchedKeywords.length > 0) {
+            feedback = `Understood! Good use of target terms: ${matchedKeywords.slice(0, 3).join(', ')}.`;
+        }
+
+        return {
+            valid,
+            wordCount: words.length,
+            matchedKeywords,
+            feedback
+        };
+    }
+
+    /**
+     * Complete deterministic evaluation of an entire conversation scenario (offline fallback).
+     * @param {Array} completedTurns - [{ turnIndex, interlocutorPrompt, learnerCue, learnerTranscript, validation }]
+     * @param {object} scenario - The scenario metadata { title, cefrLevel, targetSkills, roleplay }
+     * @returns {object} Schema-compliant evaluation object with overallScore, dimensions, and feedback
+     */
+    function gradeConversation(completedTurns, scenario) {
+        const turns = Array.isArray(completedTurns) ? completedTurns : [];
+        const sc = scenario || {};
+        const level = (sc.cefrLevel || 'A1').toUpperCase();
+
+        let totalWords = 0;
+        let validTurns = 0;
+        let allMatchedKeywords = [];
+
+        for (const t of turns) {
+            const words = tokenizeWords(t.learnerTranscript || '');
+            totalWords += words.length;
+            if (t.validation && t.validation.valid) {
+                validTurns++;
+            }
+            if (t.validation && Array.isArray(t.validation.matchedKeywords)) {
+                allMatchedKeywords = allMatchedKeywords.concat(t.validation.matchedKeywords);
+            }
+        }
+
+        const totalTurns = Math.max(1, turns.length);
+        const turnCompletionRate = validTurns / totalTurns;
+
+        let score = Math.round(50 + (turnCompletionRate * 35));
+        if (totalWords >= totalTurns * 5) score += 10;
+        else if (totalWords >= totalTurns * 3) score += 5;
+        score = Math.min(95, Math.max(40, score));
+
+        const taskComp = Math.round(turnCompletionRate * 10) / 10;
+        const fluency = Math.min(1.0, Math.round((0.6 + (totalWords / (totalTurns * 10)) * 0.4) * 10) / 10);
+        const vocabScore = Math.min(1.0, Math.round((0.6 + (allMatchedKeywords.length / Math.max(1, totalTurns * 1.5)) * 0.4) * 10) / 10);
+        const grammarScore = Math.min(1.0, Math.round((0.7 + (turnCompletionRate * 0.25)) * 10) / 10);
+
+        const targetSkills = Array.isArray(sc.targetSkills) ? sc.targetSkills : ['social_interaction', 'oral_fluency'];
+        const demonstratedSkills = targetSkills.map(s => ({
+            skillId: typeof s === 'string' ? s : (s.id || 'oral_skill'),
+            confidence: turnCompletionRate >= 0.8 ? 0.85 : 0.65
+        }));
+
+        const strengths = [
+            `Completed ${validTurns} of ${totalTurns} conversational turns with appropriate communicative intent.`,
+            `Demonstrated responsive conversational turn-taking in the role of ${sc.roleplay ? sc.roleplay.learnerRole : 'the speaker'}.`
+        ];
+        if (allMatchedKeywords.length > 0) {
+            strengths.push(`Used relevant situational vocabulary: ${[...new Set(allMatchedKeywords)].slice(0, 4).join(', ')}.`);
+        }
+
+        const priorities = [];
+        if (turnCompletionRate < 1.0) {
+            priorities.push(`Address each prompt's specific requirement directly to ensure complete communicative task achievement.`);
+        }
+        priorities.push(`Continue practicing spontaneous oral turn-taking with polite openers and situational formulas.`);
+
+        const oneLineCoachNote = turnCompletionRate >= 0.8
+            ? `Solid roleplay performance! You handled all the key transactions naturally and communicatively.`
+            : `Good conversational effort. Focus on providing complete, direct responses to each of the interlocutor's prompts.`;
+
+        return {
+            overallScore: score,
+            cefrLevel: level,
+            taskCompletion: taskComp,
+            dimensionScores: {
+                taskCompletion: taskComp,
+                fluency,
+                vocabulary: vocabScore,
+                grammar: grammarScore,
+                coherence: 0.8,
+                naturalness: 0.8
+            },
+            strengths,
+            priorities,
+            errors: [],
+            demonstratedSkills,
+            weakSkills: turnCompletionRate < 0.7 ? [{ skillId: targetSkills[0] || 'oral_interaction', confidence: 0.6 }] : [],
+            examinerFeedback: `In this ${level} oral roleplay (${sc.title || 'Conversation Scenario'}), the speaker completed ${validTurns}/${totalTurns} turns with an average of ${Math.round(totalWords / totalTurns)} words per turn. ${oneLineCoachNote}`,
+            _prodOneLineTip: oneLineCoachNote,
+            isOfflineFallback: true
+        };
+    }
+
     return {
         analyze,
+        validateTurn,
+        gradeConversation,
         tokenizeWords,
         tokenizeSentences,
         tokenizeParagraphs,

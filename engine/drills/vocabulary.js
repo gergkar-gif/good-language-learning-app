@@ -57,15 +57,21 @@ const VocabularyDriller = (function () {
     // reachable only via "All levels" — had no dedicated filter option).
     const CEFR_ORDER = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
 
+    const TRACK = { CORE: 'core' };
+    const TRACK_LABELS = { latam: 'Latin America', citizenship: 'Citizenship' };
+
     let _words = null;        // decks.json -> words { lemma: {en, pos} }
     let _wordLevels = null;   // lemma -> 'A1' | 'A2' | ... (from lesson decks)
+    let _wordTracks = null;   // lemma -> Set(['core', ...])
+    let _levelTracks = null;  // level -> Set(['core', ...])
     let _levels = null;       // distinct levels this course's lesson decks use, CEFR order
     let _pairs = null;        // translation-index.json -> pairs[]
-    let _contextIndex = null; // lemma -> [{ sentence, english, form, inflected }]
+    let _contextIndex = null; // lemma -> [{ sentence, english, form, inflected, track }]
     let _wordLessonIndex = null; // word-lesson-index.json's byLemma map — the Tier 2 cross-link
 
     let _mode = MODE.COUNT;
     let _level = 'all';
+    let _track = TRACK.CORE;
     let _questionCount = 10;
     let _timerMinutes = 2;
 
@@ -114,11 +120,21 @@ const VocabularyDriller = (function () {
         _pairs = translationIndex.pairs || [];
         _wordLessonIndex = wordLessonIndex.byLemma || {};
         _wordLevels = {};
+        _wordTracks = {};
+        _levelTracks = {};
         const seenLevels = new Set();
         (deckData.decks || []).filter(d => d.kind === 'lesson').forEach(d => {
-            if (d.level) seenLevels.add(d.level);
+            const deckTrack = d.track || TRACK.CORE;
+            if (d.level) {
+                seenLevels.add(d.level);
+                const normLvl = d.level.toUpperCase();
+                if (!_levelTracks[normLvl]) _levelTracks[normLvl] = new Set();
+                _levelTracks[normLvl].add(deckTrack);
+            }
             (d.lemmas || []).forEach(lemma => {
                 if (!(lemma in _wordLevels)) _wordLevels[lemma] = d.level;
+                if (!_wordTracks[lemma]) _wordTracks[lemma] = new Set();
+                _wordTracks[lemma].add(deckTrack);
             });
         });
         _levels = CEFR_ORDER.filter(l => seenLevels.has(l));
@@ -131,8 +147,36 @@ const VocabularyDriller = (function () {
             _words = null;
             _pairs = null;
             _contextIndex = null;
+            _wordLevels = null;
+            _wordTracks = null;
+            _levelTracks = null;
+            _levels = null;
+            _track = TRACK.CORE;
             _loadedLang = null;
         });
+    }
+
+    function _secondTrack(level) {
+        if (!_levelTracks) return null;
+        if (level && level !== 'all') {
+            const tracks = _levelTracks[level.toUpperCase()];
+            if (tracks) {
+                for (const t of tracks) {
+                    if (t !== TRACK.CORE) return t;
+                }
+            }
+            return null;
+        }
+        for (const lvl of Object.keys(_levelTracks)) {
+            for (const t of _levelTracks[lvl]) {
+                if (t !== TRACK.CORE) return t;
+            }
+        }
+        return null;
+    }
+
+    function _trackLabel(track) {
+        return TRACK_LABELS[track] || (track.charAt(0).toUpperCase() + track.slice(1));
     }
 
     // One pass over the sentence corpus, resolving every token to a lemma
@@ -168,7 +212,8 @@ const VocabularyDriller = (function () {
                         form: token,
                         inflected: (readings && readings.length)
                             ? (tokenLower !== readings[0].lemma.toLowerCase())
-                            : false
+                            : false,
+                        track: pair.track || TRACK.CORE
                     });
                 });
             });
@@ -202,10 +247,18 @@ const VocabularyDriller = (function () {
         return (typeof LearnerPath !== 'undefined') ? LearnerPath.isComplete(lessonId) : true;
     }
 
-    function _wordList(level) {
+    function _wordList(level, track) {
+        const activeTrack = track || _track || TRACK.CORE;
+        const hasSecond = _secondTrack(level);
         return Object.keys(_words)
             .filter(lemma => CONTENT_POS.has(_words[lemma].pos))
             .filter(lemma => level === 'all' || _wordLevels[lemma] === level)
+            .filter(lemma => {
+                if (!hasSecond) return true;
+                const tracks = _wordTracks && _wordTracks[lemma];
+                if (!tracks || !tracks.size) return activeTrack === TRACK.CORE;
+                return tracks.has(activeTrack);
+            })
             .filter(_isReached)
             .map(lemma => ({ lemma, en: _words[lemma].en, pos: _words[lemma].pos }));
     }
@@ -214,17 +267,27 @@ const VocabularyDriller = (function () {
     // multi-tier waterfall (direct token match, lowercase, slash-separated
     // gender pairs, article stripping, and Lexicon lemma analysis) so surface
     // forms ("soy", "alto / alta", "el gato") seamlessly match real sentences.
-    function _getOccurrences(word) {
+    function _getOccurrences(word, track) {
         if (!word || !_contextIndex) return [];
         const raw = (typeof word === 'string') ? word : word.lemma;
         if (!raw) return [];
 
+        function _filterByTrack(matches) {
+            if (!matches || !matches.length) return [];
+            const activeTrack = track || _track || TRACK.CORE;
+            if (activeTrack === TRACK.CORE) {
+                return matches.filter(m => !m.track || m.track === TRACK.CORE);
+            }
+            const trackMatches = matches.filter(m => m.track === activeTrack);
+            return trackMatches.length ? trackMatches : matches;
+        }
+
         // 1. Direct match
-        if (_contextIndex[raw] && _contextIndex[raw].length) return _contextIndex[raw];
+        if (_contextIndex[raw] && _contextIndex[raw].length) return _filterByTrack(_contextIndex[raw]);
 
         // 2. Case-insensitive / lowercase match
         const lower = raw.toLowerCase();
-        if (_contextIndex[lower] && _contextIndex[lower].length) return _contextIndex[lower];
+        if (_contextIndex[lower] && _contextIndex[lower].length) return _filterByTrack(_contextIndex[lower]);
 
         // 3. Slash split (e.g. 'alto / alta' -> 'alto', 'alta')
         if (raw.includes('/')) {
@@ -240,19 +303,19 @@ const VocabularyDriller = (function () {
                     }
                 }
             }
-            if (combined.length) return combined;
+            if (combined.length) return _filterByTrack(combined);
         }
 
         // 4. Article stripping (e.g. 'el perro' -> 'perro', 'la casa' -> 'casa')
         const noArt = lower.replace(/^(el|la|los|las|un|una)\s+/i, '').trim();
         if (noArt !== lower) {
-            if (_contextIndex[noArt] && _contextIndex[noArt].length) return _contextIndex[noArt];
+            if (_contextIndex[noArt] && _contextIndex[noArt].length) return _filterByTrack(_contextIndex[noArt]);
             if (typeof Lexicon !== 'undefined' && typeof Lexicon.lookup === 'function') {
                 const lk = Lexicon.lookup(noArt);
                 if (lk && lk.readings && lk.readings.length) {
                     for (const r of lk.readings) {
                         const lem = r.lemma.toLowerCase();
-                        if (_contextIndex[lem] && _contextIndex[lem].length) return _contextIndex[lem];
+                        if (_contextIndex[lem] && _contextIndex[lem].length) return _filterByTrack(_contextIndex[lem]);
                     }
                 }
             }
@@ -267,8 +330,8 @@ const VocabularyDriller = (function () {
                     const lemmaOcc = _contextIndex[lem];
                     if (lemmaOcc && lemmaOcc.length) {
                         const exactFormMatches = lemmaOcc.filter(o => o.form.toLowerCase() === lower);
-                        if (exactFormMatches.length) return exactFormMatches;
-                        return lemmaOcc;
+                        if (exactFormMatches.length) return _filterByTrack(exactFormMatches);
+                        return _filterByTrack(lemmaOcc);
                     }
                 }
             }
@@ -277,14 +340,14 @@ const VocabularyDriller = (function () {
         // 6. Hungarian infinitive fallback (e.g. 'hozni' -> stem 'hoz')
         if (lower.endsWith('ni')) {
             const stem = lower.slice(0, -2);
-            if (_contextIndex[stem] && _contextIndex[stem].length) return _contextIndex[stem];
+            if (_contextIndex[stem] && _contextIndex[stem].length) return _filterByTrack(_contextIndex[stem]);
         }
 
         return [];
     }
 
-    function _hasContext(word) {
-        return _getOccurrences(word).length > 0;
+    function _hasContext(word, track) {
+        return _getOccurrences(word, track).length > 0;
     }
 
     // Unicode-aware word boundaries so an accented form (día, agotadas) is
@@ -562,8 +625,8 @@ const VocabularyDriller = (function () {
         return exercise;
     }
 
-    function _buildPool(level) {
-        return _wordList(level).map(_buildExerciseFor).filter(Boolean);
+    function _buildPool(level, track) {
+        return _wordList(level, track).map(_buildExerciseFor).filter(Boolean);
     }
 
     // A pool built directly from caller-supplied words (Decks' review
@@ -603,7 +666,10 @@ const VocabularyDriller = (function () {
     //  RENDERING — Settings
     // ================================================================
     function _renderSettings() {
-        const available = _wordList(_level).filter(_hasContext).length;
+        const secondTrack = _secondTrack(_level);
+        if (!secondTrack && _track !== TRACK.CORE) _track = TRACK.CORE;
+
+        const available = _wordList(_level, _track).filter(w => _hasContext(w, _track)).length;
 
         _container.innerHTML = `
             <div class="gd-settings">
@@ -626,6 +692,18 @@ const VocabularyDriller = (function () {
                         ${_levels.map(l => `<option value="${l}">${l}</option>`).join('')}
                     </select>
                 </div>
+
+                ${secondTrack ? `
+                    <div class="gd-setting">
+                        <label>Track</label>
+                        <div class="vb-mode-switcher" role="tablist">
+                            <button class="vb-mode-btn${_track === TRACK.CORE ? ' active' : ''}"
+                                data-track="${TRACK.CORE}" role="tab" aria-selected="${_track === TRACK.CORE}">Core</button>
+                            <button class="vb-mode-btn${_track === secondTrack ? ' active' : ''}"
+                                data-track="${secondTrack}" role="tab" aria-selected="${_track === secondTrack}">${_trackLabel(secondTrack)}</button>
+                        </div>
+                    </div>
+                ` : ''}
 
                 ${_mode === MODE.COUNT ? `
                     <div class="gd-setting">
@@ -655,9 +733,17 @@ const VocabularyDriller = (function () {
             btn.addEventListener('click', () => { _mode = btn.dataset.mode; _renderSettings(); });
         });
 
+        _container.querySelectorAll('[data-track]').forEach(btn => {
+            btn.addEventListener('click', () => { _track = btn.dataset.track; _renderSettings(); });
+        });
+
         const levelSelect = _container.querySelector('#vd-level');
         levelSelect.value = _level;
-        levelSelect.addEventListener('change', e => { _level = e.target.value; _renderSettings(); });
+        levelSelect.addEventListener('change', e => {
+            _level = e.target.value;
+            if (!_secondTrack(_level)) _track = TRACK.CORE;
+            _renderSettings();
+        });
 
         const countSelect = _container.querySelector('#vd-count');
         if (countSelect) countSelect.addEventListener('change', e => { _questionCount = Number(e.target.value); });
@@ -672,10 +758,10 @@ const VocabularyDriller = (function () {
     //  RENDERING — Session
     // ================================================================
     function _startSession() {
-        let pool = _buildPool(_level);
+        let pool = _buildPool(_level, _track);
         if (!pool.length && _level !== 'all') {
             _level = 'all';
-            pool = _buildPool('all');
+            pool = _buildPool('all', _track);
         }
         _seen = 0;
         _correct = 0;
@@ -937,6 +1023,7 @@ const VocabularyDriller = (function () {
                     _mode = MODE.COUNT;
                 }
                 if (options.level) _level = options.level;
+                if (options.track) _track = options.track;
 
                 const weakWords = (typeof LearnerModel !== 'undefined') ? LearnerModel.weakWords() : [];
                 const weakPool = weakWords.length ? _buildPoolFromWords(weakWords.slice(0, _questionCount)) : [];
@@ -955,6 +1042,7 @@ const VocabularyDriller = (function () {
                     _startSession();
                 }
             } else {
+                if (options && options.track) _track = options.track;
                 _renderSettings();
             }
         } else if (_phase === PHASE.SESSION) {
@@ -978,7 +1066,7 @@ const VocabularyDriller = (function () {
         render, stop,
         // Expose for unit testing and headless verification
         _buildPoolFromWords, _buildExerciseFor, _buildDirectDefinition, _buildReverseChoice, _buildReverseRecall,
-        _getOccurrences, _hasContext, _buildContextIndex, _load
+        _getOccurrences, _hasContext, _buildContextIndex, _load, _secondTrack, _wordList
     };
 })();
 

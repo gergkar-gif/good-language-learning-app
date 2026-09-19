@@ -17,14 +17,10 @@ Candidate next items are listed in Section 2 below.
 Unscoped enhancements and candidate features:
 
 - **CEFR Real-Exam Practice Mode (Queue Item 9)**: Source or generate actual CEFR-aligned exams with graded responses (under Grammar reference / Level test area).
-- **Dual-Language Reading Setup (A1 Spanish)**: Integrate English-Spanish dual-language reading setup with originals, matching the setup in Hungarian.
 - **Hungarian B1/B2 Citizenship Track (Units 6–36)**: Complete remaining 31 units per track (Core + Citizenship history sweep through EU accession and 4 civic units: Alaptörvény, government institutions, national symbols, holidays). Units 1–5 built; draft in `content/hu/b1-curriculum-draft.json`.
-- **HU B1 Citizenship Track Word Count Trim**: 40 new words per unit across built units (`unit.b1.citizenship.01-05`) is too dense. Trim or pace vocabulary load across remaining units 6–36.
-- **Sentence-Builder / Sentence-Order Mini-Game**: Short-format drill runner using unscrambling mechanics for clause structure practice.
 - **Cloud Sync & Multi-Device Accounts**: Automatic background cloud sync (per learner-model step 7) preserving offline-first local storage without heavy frameworks.
 - **CEFR Level Diagnostic Test**: Diagnostic placement exam to assess learner proficiency upon initial app entry.
 - **Exam-Focused Writing & Speech Units**: Introduce new units that expressly teach writing, particular aspects of speech, and turns of phrase for exams.
-- **AI-Graded Scripted Conversation Scenarios**: Conversation-mimicking prompts where the learner speaks and input is graded by an AI worker (e.g., *"Hello, what can I help you with?"* → user speaks, AI assesses response in context of the prompt/scenario → next pre-written prompt → user reply; highly scripted scenarios reflecting standard oral exam tasks such as booking a hotel room, buying a train ticket, etc.).
 - **New App Sounds**: Audio effects and sound palette refresh.
 - **Cultural Track Recommendations**: Curated cultural recommendations integrated into the cultural track.
 - **Cultural Track Slang**: Slang and colloquial expressions on the cultural track.

@@ -591,7 +591,8 @@ def _lesson_id_to_unit(curriculum):
                     "id": unit["id"],
                     "title": unit["title"],
                     "label": unit["label"],
-                    "level": level_id
+                    "level": level_id,
+                    "track": unit.get("track", "core")
                 }
     return index
 
@@ -743,15 +744,16 @@ def build_decks(lang="es", curriculum=None):
             # still gets a deck of its own rather than being silently
             # dropped — same fallback shape, just scoped to that one lesson.
             if unit:
-                key, name, label, level = unit["id"], unit["title"], unit["label"], unit["level"]
+                key, name, label, level, track = unit["id"], unit["title"], unit["label"], unit["level"], unit.get("track", "core")
             else:
                 key = lesson_key
                 name = data.get("title", lesson_key)
                 label = lesson_key.split("-", 1)[-1]
                 level = level_dir.name.upper()
+                track = "citizenship" if (lang == "hu" and re.search(r"^[abc]\d-[a-z]+-", key)) else "core"
 
             if key not in by_unit:
-                by_unit[key] = {"name": name, "label": label, "level": level, "lemmas": [], "seen": set()}
+                by_unit[key] = {"name": name, "label": label, "level": level, "track": track, "lemmas": [], "seen": set()}
                 unit_order.append(key)
             bucket = by_unit[key]
             for lemma in lemmas:
@@ -772,6 +774,7 @@ def build_decks(lang="es", curriculum=None):
             "name": bucket["name"],
             "label": bucket["label"],
             "level": bucket["level"],
+            "track": bucket.get("track", "core"),
             "lemmas": bucket["lemmas"]
         })
 

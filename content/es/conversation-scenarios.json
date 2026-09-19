@@ -1,0 +1,245 @@
+{
+  "language": "es",
+  "scenarios": [
+    {
+      "id": "es-a1-sc01-cafe",
+      "cefrLevel": "A1",
+      "title": "En el Café",
+      "situation": "Estás en una cafetería en Madrid y quieres pedir algo de beber y comer, y luego pedir la cuenta.",
+      "roleplay": {
+        "interlocutorRole": "Camarero / Camarera",
+        "learnerRole": "Cliente",
+        "interlocutorVoice": "es-ES"
+      },
+      "targetCompetency": "I can order food and drink in a café and ask for the bill",
+      "targetSkills": ["ordering_food", "social_interaction", "numbers_and_prices"],
+      "turns": [
+        {
+          "turnIndex": 1,
+          "interlocutorPrompt": "¡Hola, buenas tardes! Bienvenido. ¿Qué le gustaría tomar?",
+          "interlocutorTranslation": "Hello, good afternoon! Welcome. What would you like to have?",
+          "learnerCue": "Saluda educadamente y pide un café con leche (o té) y un cruasán (o tostada).",
+          "suggestedPhrases": ["Buenas tardes, un café con leche, por favor.", "Quisiera un café y una tostada."],
+          "validationCriteria": {
+            "minWords": 3,
+            "targetKeywords": ["café", "té", "agua", "leche", "tostada", "cruasán", "por favor", "quisiera", "quiero"]
+          }
+        },
+        {
+          "turnIndex": 2,
+          "interlocutorPrompt": "Perfecto, un café con leche y una tostada. ¿Desea el café caliente o con hielo? ¿Y azúcar?",
+          "interlocutorTranslation": "Perfect, a white coffee and toast. Would you like the coffee hot or iced? And sugar?",
+          "learnerCue": "Responde cómo prefieres el café (caliente o frío) y si quieres azúcar o no.",
+          "suggestedPhrases": ["Caliente y con poco azúcar, por favor.", "Caliente y sin azúcar, gracias."],
+          "validationCriteria": {
+            "minWords": 2,
+            "targetKeywords": ["caliente", "frío", "hielo", "azúcar", "sin", "con", "gracias"]
+          }
+        },
+        {
+          "turnIndex": 3,
+          "interlocutorPrompt": "Aquí tiene su pedido. ¡Que lo disfrute! ¿Necesita algo más por ahora?",
+          "interlocutorTranslation": "Here is your order. Enjoy! Do you need anything else for now?",
+          "learnerCue": "Agradece y di que todo está bien, y pide la cuenta por favor.",
+          "suggestedPhrases": ["Muchas gracias, todo está muy bien. ¿Me trae la cuenta, por favor?", "Gracias, nada más. ¿Cuánto es?"],
+          "validationCriteria": {
+            "minWords": 3,
+            "targetKeywords": ["gracias", "cuenta", "cuánto", "nada más", "por favor", "cobrar"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "es-a1-sc02-hotel",
+      "cefrLevel": "A1",
+      "title": "Registro en el Hotel",
+      "situation": "Llegas a la recepción de un hotel en Salamanca sin reserva previa buscando una habitación.",
+      "roleplay": {
+        "interlocutorRole": "Recepcionista",
+        "learnerRole": "Huésped",
+        "interlocutorVoice": "es-ES"
+      },
+      "targetCompetency": "I can enquire about room availability and check into a hotel",
+      "targetSkills": ["hotel_checkin", "dates_and_duration", "enquiring_services"],
+      "turns": [
+        {
+          "turnIndex": 1,
+          "interlocutorPrompt": "¡Buenas noches! Bienvenido al Hotel San Martín. ¿Tiene una reserva con nosotros?",
+          "interlocutorTranslation": "Good evening! Welcome to Hotel San Martín. Do you have a reservation with us?",
+          "learnerCue": "Di que no tienes reserva, pero necesitas una habitación individual para dos noches.",
+          "suggestedPhrases": ["Buenas noches. No tengo reserva, pero necesito una habitación individual para dos noches."],
+          "validationCriteria": {
+            "minWords": 4,
+            "targetKeywords": ["no", "reserva", "habitación", "individual", "dos", "noches", "tengo", "necesito"]
+          }
+        },
+        {
+          "turnIndex": 2,
+          "interlocutorPrompt": "Sí, tenemos disponibilidad. Son sesenta euros por noche. ¿Desea incluir el desayuno buffet por ocho euros más?",
+          "interlocutorTranslation": "Yes, we have availability. It is sixty euros per night. Would you like to include the buffet breakfast for eight euros more?",
+          "learnerCue": "Acepta (o rechaza) el desayuno y pregunta si hay conexión wifi en la habitación.",
+          "suggestedPhrases": ["Sí, con desayuno por favor. ¿Hay wifi en la habitación?", "No, sin desayuno gracias. ¿Tienen wifi gratis?"],
+          "validationCriteria": {
+            "minWords": 3,
+            "targetKeywords": ["sí", "no", "desayuno", "wifi", "internet", "gratis", "habitación", "gracias", "favor"]
+          }
+        },
+        {
+          "turnIndex": 3,
+          "interlocutorPrompt": "El wifi es gratuito en todo el hotel. La contraseña está en su tarjeta llave. ¿Puede prestarme su pasaporte o documento de identidad para el registro?",
+          "interlocutorTranslation": "Wi-Fi is free throughout the hotel. The password is on your key card. Could you lend me your passport or ID card for check-in?",
+          "learnerCue": "Entrega tu pasaporte amablemente y pregunta a qué hora es el check-out o la salida.",
+          "suggestedPhrases": ["Aquí tiene mi pasaporte. ¿A qué hora es la salida mañana?", "Por supuesto, aquí está. ¿A qué hora es el check-out?"],
+          "validationCriteria": {
+            "minWords": 3,
+            "targetKeywords": ["aquí", "pasaporte", "documento", "tiene", "hora", "salida", "check-out", "gracias"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "es-a2-sc01-tren",
+      "cefrLevel": "A2",
+      "title": "Comprando un Billete de Tren",
+      "situation": "Estás en la taquilla de la estación de Atocha en Madrid y necesitas comprar un billete para viajar a Sevilla.",
+      "roleplay": {
+        "interlocutorRole": "Taquillero / Taquillera de Renfe",
+        "learnerRole": "Viajero",
+        "interlocutorVoice": "es-ES"
+      },
+      "targetCompetency": "I can buy a train ticket, enquire about schedules, and clarify journey details",
+      "targetSkills": ["travel_arrangements", "asking_timetable", "transactional_clarification"],
+      "turns": [
+        {
+          "turnIndex": 1,
+          "interlocutorPrompt": "Siguiente, por favor. Buenos días, ¿a dónde desea viajar?",
+          "interlocutorTranslation": "Next, please. Good morning, where do you wish to travel?",
+          "learnerCue": "Di que quieres comprar un billete de ida y vuelta para Sevilla para este fin de semana.",
+          "suggestedPhrases": ["Buenos días. Quisiera un billete de ida y vuelta a Sevilla para este fin de semana, por favor."],
+          "validationCriteria": {
+            "minWords": 4,
+            "targetKeywords": ["Sevilla", "billete", "ida", "vuelta", "viajar", "fin de semana", "quisiera", "tren"]
+          }
+        },
+        {
+          "turnIndex": 2,
+          "interlocutorPrompt": "Muy bien. El sábado por la mañana sale un tren de alta velocidad a las nueve y cuarto y otro a las once y media. ¿Cuál prefiere?",
+          "interlocutorTranslation": "Very well. On Saturday morning a high-speed train leaves at 9:15 and another at 11:30. Which do you prefer?",
+          "learnerCue": "Elige el tren de las nueve y cuarto y pregunta cuánto dura el viaje.",
+          "suggestedPhrases": ["Prefiero el de las nueve y cuarto. ¿Cuánto tiempo dura el viaje?", "El de las nueve y quince, por favor. ¿A qué hora llega a Sevilla?"],
+          "validationCriteria": {
+            "minWords": 3,
+            "targetKeywords": ["nueve", "cuarto", "once", "dura", "tiempo", "viaje", "llega", "horas", "prefiero"]
+          }
+        },
+        {
+          "turnIndex": 3,
+          "interlocutorPrompt": "El viaje dura aproximadamente dos horas y media. Son setenta y cinco euros en total. ¿Va a pagar con tarjeta o en efectivo?",
+          "interlocutorTranslation": "The trip lasts approximately two and a half hours. It is seventy-five euros in total. Will you pay by card or cash?",
+          "learnerCue": "Indica que pagarás con tarjeta y pregunta desde qué vía o andén sale el tren.",
+          "suggestedPhrases": ["Pagaré con tarjeta. ¿De qué andén o vía sale el tren?", "Con tarjeta, por favor. ¿Sabe cuál es la vía de salida?"],
+          "validationCriteria": {
+            "minWords": 3,
+            "targetKeywords": ["tarjeta", "efectivo", "vía", "andén", "sale", "tren", "pagar", "gracias"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "es-a2-sc02-direcciones",
+      "cefrLevel": "A2",
+      "title": "Pidiendo Direcciones en la Ciudad",
+      "situation": "Estás paseando por el centro de Valencia y estás buscando el Museo de Bellas Artes pero te has desorientado.",
+      "roleplay": {
+        "interlocutorRole": "Transeúnte local",
+        "learnerRole": "Turista",
+        "interlocutorVoice": "es-ES"
+      },
+      "targetCompetency": "I can ask for and understand directional guidance in a city",
+      "targetSkills": ["asking_directions", "spatial_orientation", "polite_enquiry"],
+      "turns": [
+        {
+          "turnIndex": 1,
+          "interlocutorPrompt": "Hola, disculpe, ¿le puedo ayudar en algo? Parece que está buscando algo en el mapa.",
+          "interlocutorTranslation": "Hello, excuse me, can I help you with something? It looks like you're looking for something on the map.",
+          "learnerCue": "Saluda amablemente y pregunta cómo se llega al Museo de Bellas Artes o si está muy lejos.",
+          "suggestedPhrases": ["¡Hola! Disculpe, ¿cómo puedo llegar al Museo de Bellas Artes? ¿Está muy lejos de aquí?"],
+          "validationCriteria": {
+            "minWords": 4,
+            "targetKeywords": ["museo", "llegar", "dónde", "lejos", "cerca", "bellas artes", "disculpe", "favor"]
+          }
+        },
+        {
+          "turnIndex": 2,
+          "interlocutorPrompt": "No está muy lejos, a unos diez minutos a pie. Debe seguir todo recto por esta calle hasta cruzar el puente sobre el río.",
+          "interlocutorTranslation": "It's not very far, about ten minutes on foot. You should continue straight ahead along this street until crossing the bridge over the river.",
+          "learnerCue": "Confirma la indicación y pregunta si debes girar a la derecha o a la izquierda después de cruzar el puente.",
+          "suggestedPhrases": ["Entiendo, cruzar el puente. Y después del puente, ¿debo girar a la derecha o a la izquierda?"],
+          "validationCriteria": {
+            "minWords": 3,
+            "targetKeywords": ["puente", "derecha", "izquierda", "girar", "doblar", "después", "recto"]
+          }
+        },
+        {
+          "turnIndex": 3,
+          "interlocutorPrompt": "Justo al cruzar el puente, gire a la derecha y verá los jardines y la entrada principal. ¡Es muy fácil!",
+          "interlocutorTranslation": "Right upon crossing the bridge, turn right and you will see the gardens and the main entrance. It's very easy!",
+          "learnerCue": "Agradece la ayuda con amabilidad y despídete deseándole un buen día.",
+          "suggestedPhrases": ["¡Muchísimas gracias por su ayuda! Que tenga un buen día.", "Perfecto, muchas gracias. ¡Hasta luego! Buen día."],
+          "validationCriteria": {
+            "minWords": 3,
+            "targetKeywords": ["gracias", "muchas", "ayuda", "buen día", "tenga", "hasta luego", "adiós"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "es-b1-sc01-medico",
+      "cefrLevel": "B1",
+      "title": "Consulta Médica",
+      "situation": "Estás de viaje en Buenos Aires y no te encuentras bien, por lo que acudes a una consulta médica para explicar tus síntomas.",
+      "roleplay": {
+        "interlocutorRole": "Médico / Doctora",
+        "learnerRole": "Paciente",
+        "interlocutorVoice": "es-AR"
+      },
+      "targetCompetency": "I can describe health symptoms, duration, and ask medical advice",
+      "targetSkills": ["describing_illness", "past_experience", "following_medical_advice"],
+      "turns": [
+        {
+          "turnIndex": 1,
+          "interlocutorPrompt": "Pase, por favor, tome asiento. Cuénteme, ¿qué síntomas tiene y desde cuándo se siente mal?",
+          "interlocutorTranslation": "Come in please, take a seat. Tell me, what symptoms do you have and since when have you been feeling unwell?",
+          "learnerCue": "Explica que tienes fiebre, dolor de cabeza y de garganta desde hace dos días.",
+          "suggestedPhrases": ["Buenos días, doctora. Desde hace dos días tengo fiebre alta, dolor de cabeza y me duele mucho la garganta al tragar."],
+          "validationCriteria": {
+            "minWords": 5,
+            "targetKeywords": ["fiebre", "dolor", "cabeza", "garganta", "días", "siento", "duele", "mal", "tengo"]
+          }
+        },
+        {
+          "turnIndex": 2,
+          "interlocutorPrompt": "Entiendo. Voy a examinarle la garganta y tomarle la temperatura... Sí, tiene la garganta bastante inflamada y 38 grados. ¿Tiene alguna alergia a medicamentos como la penicilina?",
+          "interlocutorTranslation": "I see. I will examine your throat and take your temperature... Yes, your throat is quite swollen and you have 38 degrees. Do you have any allergies to medications like penicillin?",
+          "learnerCue": "Responde que no tienes ninguna alergia conocida y pregunta si es necesario tomar antibióticos o solo analgésicos.",
+          "suggestedPhrases": ["No tengo ninguna alergia que yo sepa. ¿Cree que necesito antibióticos o será suficiente con analgésicos?"],
+          "validationCriteria": {
+            "minWords": 4,
+            "targetKeywords": ["no", "alergia", "penicilina", "antibiótico", "medicamento", "tomar", "analgésico", "pastillas"]
+          }
+        },
+        {
+          "turnIndex": 3,
+          "interlocutorPrompt": "Por ahora es un cuadro viral, así que le recetaré ibuprofeno cada ocho horas y mucho reposo. Si no mejora en cuarenta y ocho horas, vuelva a la clínica.",
+          "interlocutorTranslation": "For now it is viral, so I will prescribe ibuprofen every eight hours and plenty of rest. If you don't improve in forty-eight hours, return to the clinic.",
+          "learnerCue": "Aclara si debes tomar la medicación con las comidas y agradece las recomendaciones al médico.",
+          "suggestedPhrases": ["Comprendido. ¿Debo tomar el ibuprofeno antes o después de comer? Muchas gracias por su atención."],
+          "validationCriteria": {
+            "minWords": 4,
+            "targetKeywords": ["comida", "comer", "antes", "después", "gracias", "atención", "tomar", "ibuprofeno"]
+          }
+        }
+      ]
+    }
+  ]
+}

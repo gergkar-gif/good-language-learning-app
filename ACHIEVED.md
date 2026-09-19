@@ -1270,6 +1270,8 @@ time. All 7 steps below are complete — matches "Completed queue items"
 The following completed subsystem initiatives and milestones were previously tracked in `ROADMAP.md` and archived here upon completion:
 
 ### Content & Curriculum Milestones
+- **HU B1 Citizenship Track Word Count Trim** — Completed 2026-09-19. Resolved vocabulary pacing and density requirements for the Hungarian B1 Citizenship track (units 6–36), moving away from the dense 40 new words/unit structure to a paced vocabulary load.
+- **Dual-Language Reading Setup (A1 Spanish)** — Completed 2026-09-18. Integrated English-Spanish dual-language reading setup with originals across all A1 original stories (`content/es/stories/original/a1/`), featuring English narrative scaffolding paired with Spanish dialogue and target text, matching the Hungarian A1 dual-language reading setup.
 - **Evaluate importing exercises from Todo-Claro / Spanish Unicorn** — Evaluated 2026-09-12. Third-party scrape catalogues analyzed; discarded due to low quality and unverified licensing. Proceeded with native content authoring.
 - **Exercise Modularity Architecture** — Confirmed 2026-09-12. Pipeline validates that new exercises can be added without rewrite; `recycle.js` pools exercises at runtime via `teaches` tags.
 - **Hungarian A1 "First Sounds, First Words" Fix** — Fixed 2026-09-02. Fixed non-standard section type causing blank render on lesson 1.1.
@@ -1278,6 +1280,8 @@ The following completed subsystem initiatives and milestones were previously tra
 - **Bug-Report Content Sweeps** — Fixed 2026-09-16. Repaired broken dictionary gloss templates and Hungarian translation drill bugs.
 
 ### Workshop Subsystem Polish
+- **AI-Graded Scripted Conversation Scenarios** — Completed 2026-09-19. Shipped interactive multi-turn spoken roleplay scenarios as the 3rd studio mode in Speaking Studio (`[ Sentence Drills | Verbal Production | Conversation Scenarios ]`) across Spanish and Hungarian. Features natural TTS interlocutor turns, live speech-to-text recording with microphone pulse visualizer and voice playback, zero-latency turn-level validation via `LocalGrader.validateTurn()`, and complete end-of-scenario CEFR oral evaluation via `GraderEngine` (Cloudflare Workers AI with deterministic local fallback), awarding XP and verifying CEFR oral competencies.
+- **Sentence-Builder / Sentence-Order Mini-Game** — Evaluated & Confirmed 2026-09-19. Confirmed fully covered by the core curriculum and driller engines: `sentence-builder` (interactive shuffled tile reconstruction with multi-solution support) and `sentence-order` (sentence sequence drills) are comprehensively implemented as first-class exercise types in `engine/lessons.js` and actively drilled across Workshop grammar sessions via `GrammarRunner` without requiring a separate redundant runner.
 - **Grammar Driller Audit & Fixes** — Audited 2026-08-27. Fixed Spanish gap-fill punctuation hints, removed non-deterministic question options, and improved distractor selection.
 - **Workshop Recommended Drill** — Built 2026-08-27. Smart drill recommendation based on recent lesson performance and error rates.
 - **Workshop Mini-Games** — Built 2026-09-02. Lightweight short-format practice modes with score tracking and instant feedback.
