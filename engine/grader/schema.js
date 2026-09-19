@@ -100,19 +100,19 @@
         // Clean feedback
         const rawFeedback = (raw.feedback && typeof raw.feedback === 'object') ? raw.feedback : {};
         const strengths = Array.isArray(rawFeedback.strengths)
-            ? rawFeedback.strengths.filter(s => typeof s === 'string' && s.trim()).map(s => s.trim()).slice(0, 3)
+            ? rawFeedback.strengths.filter(s => typeof s === 'string' && s.trim()).map(s => s.trim().replace(/[.;,:!]+$/, '')).slice(0, 3)
             : [];
         const priorities = Array.isArray(rawFeedback.priorities)
-            ? rawFeedback.priorities.filter(p => typeof p === 'string' && p.trim()).map(p => p.trim()).slice(0, 3)
+            ? rawFeedback.priorities.filter(p => typeof p === 'string' && p.trim()).map(p => p.trim().replace(/[.;,:!]+$/, '')).slice(0, 3)
             : [];
 
         if (!strengths.length) {
-            strengths.push('Demonstrates communicative ability in the target language.');
+            strengths.push('Demonstrates communicative ability in the target language');
         }
         if (!priorities.length && errors.length) {
-            priorities.push(errors[0].explanation);
+            priorities.push((errors[0].explanation || '').replace(/[.;,:!]+$/, ''));
         } else if (!priorities.length) {
-            priorities.push('Continue expanding grammatical complexity and specialized vocabulary.');
+            priorities.push('Continue expanding grammatical complexity and specialized vocabulary');
         }
 
         return {

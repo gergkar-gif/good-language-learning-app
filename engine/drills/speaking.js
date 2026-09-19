@@ -1082,42 +1082,107 @@ const SpeakingDriller = (function () {
         }
     }
 
-    // "I can ask for a coffee" -> "ask for a coffee", for weaving the
-    // can-do statement into the coaching sentence below. Falls back to the
-    // prompt title for non-can-do short tasks (custom sub-minute tasks).
-    function _taskPhrase(prompt) {
-        if (!prompt) return null;
-        const raw = prompt.targetCompetency || prompt.title || null;
-        if (!raw) return null;
-        return raw.replace(/^i can\s+/i, '').replace(/\.\s*$/, '').trim() || null;
+    function _cleanFragment(str) {
+        if (!str || typeof str !== 'string') return '';
+        let s = str.trim();
+        if ((s.startsWith('"') && s.endsWith('"')) || 
+            (s.startsWith('“') && s.endsWith('”')) || 
+            (s.startsWith("'") && s.endsWith("'") && !s.slice(1, -1).includes("'"))) {
+            s = s.slice(1, -1).trim();
+        }
+        s = s.replace(/[.;,:!]+$/, '').trim();
+        return s;
     }
 
-    // Composes the short-task coaching line: a task-completion-first verdict
-    // ("Well done, you've successfully asked for a coffee!"), what was
-    // missed, and what to focus on next -- rather than a single feedback
-    // string pulled from whichever field happened to be non-empty.
+    function _lowerFirstChar(str) {
+        if (!str) return '';
+        if (/^[A-Z]{2,}\b/.test(str)) return str;
+        if (/^(Spanish|Hungarian|English|Castilian)\b/i.test(str)) return str;
+        return str.charAt(0).toLowerCase() + str.slice(1);
+    }
+
+    function _formatCoachingClause(raw) {
+        let text = _cleanFragment(raw);
+        if (!text) return '';
+
+        // Strip meta prefixes like "Remember to...", "Be sure to...", "Try to..."
+        text = text.replace(/^(please\s+)?(remember\s+to|be\s+sure\s+to|make\s+sure\s+to|ensure\s+you|try\s+to)\s+/i, '');
+        text = _cleanFragment(text);
+
+        // Standard action verbs (practice, review, use, conjugate, keep, watch, avoid, pay attention to, focus on, etc.)
+        const actionVerbPattern = /^(practice|review|use|conjugate|keep|watch|avoid|pay\s+attention|focus\s+on|apply|distinguish|work\s+on|include|add)\b/i;
+        if (actionVerbPattern.test(text)) {
+            return _lowerFirstChar(text);
+        }
+
+        // Grammar error explanations ("The verb 'tener' should be used...", "Gender agreement...")
+        if (/^the\s+(verb|noun|adjective|article|pronoun|preposition|phrase|word)\b/i.test(text) ||
+            /^(in\s+spanish|in\s+hungarian|gender\s+agreement|subject-verb\s+agreement|verb\s+tense)\b/i.test(text)) {
+            return 'note that ' + _lowerFirstChar(text);
+        }
+
+        return 'focus on ' + _lowerFirstChar(text);
+    }
+
+    // Composes a single, naturally flowing extended sentence for short task coaching:
+    // an opening completion appraisal connected smoothly to actionable coaching advice.
     function _prodOneLineTip(result, prompt) {
         const score = result.overallScore || 0;
         const completion = typeof result.taskCompletion === 'number' ? result.taskCompletion : (score / 100);
         const priorities = ((result.feedback && result.feedback.priorities) || []).filter(Boolean);
-        const missed = (result.errors || []).map(e => e.explanation).filter(Boolean);
+        const errors = (result.errors || []).map(e => e.explanation).filter(Boolean);
         const strengths = ((result.feedback && result.feedback.strengths) || []).filter(Boolean);
-        const taskPhrase = _taskPhrase(prompt);
 
         let opener;
-        if (completion >= 0.75) {
-            opener = taskPhrase ? `Well done — you successfully ${taskPhrase}!` : 'Well done — task completed!';
-        } else if (completion >= 0.4) {
-            opener = taskPhrase ? `Good attempt at ${taskPhrase} — you got most of it across.` : 'Good attempt — you got most of it across.';
+        if (completion >= 0.75 || score >= 75) {
+            opener = 'Well done — you got your message across';
+        } else if (completion >= 0.4 || score >= 50) {
+            opener = 'Good effort — you got most of it across';
         } else {
-            opener = taskPhrase ? `Not quite there yet on ${taskPhrase}.` : 'Not quite there yet.';
+            opener = 'Good start, but you didn\'t quite cover the prompt';
         }
 
-        const sentences = [opener];
-        if (missed.length) sentences.push(`You missed: ${missed.slice(0, 2).join('; ')}.`);
-        if (priorities.length) sentences.push(`Focus on ${priorities.slice(0, 2).join(' and ')}.`);
-        if (sentences.length === 1 && strengths.length) sentences.push(strengths[0]);
-        return sentences.join(' ');
+        // Gather up to 2 actionable priorities or error explanations
+        const rawSuggestions = [];
+        for (const p of priorities) {
+            if (rawSuggestions.length < 2 && p) rawSuggestions.push(p);
+        }
+        if (rawSuggestions.length < 2) {
+            for (const e of errors) {
+                if (rawSuggestions.length < 2 && e && !rawSuggestions.includes(e)) {
+                    rawSuggestions.push(e);
+                }
+            }
+        }
+
+        // If no suggestions, celebrate success with strength or clear delivery
+        if (rawSuggestions.length === 0) {
+            if (strengths.length) {
+                const cleanStrength = _cleanFragment(strengths[0]);
+                return `${opener} with ${_lowerFirstChar(cleanStrength)}!`;
+            }
+            return `${opener} with clear and accurate phrasing!`;
+        }
+
+        const clause1 = _formatCoachingClause(rawSuggestions[0]);
+        let combinedCoaching = clause1;
+
+        if (rawSuggestions.length > 1) {
+            let clause2 = _formatCoachingClause(rawSuggestions[1]);
+            if (clause2.startsWith('focus on ') && clause1.startsWith('focus on ')) {
+                clause2 = clause2.slice(9);
+            }
+            if (clause2.startsWith('note that ') && clause1.startsWith('note that ')) {
+                clause2 = clause2.slice(10);
+            }
+            combinedCoaching = `${clause1} and ${clause2}`;
+        }
+
+        if (combinedCoaching.startsWith('note that ')) {
+            return `${opener}, but ${combinedCoaching}.`;
+        }
+
+        return `${opener}; for next time, ${combinedCoaching}.`;
     }
 
     function _renderProdResults(body) {
@@ -1437,7 +1502,8 @@ const SpeakingDriller = (function () {
 
     return {
         render,
-        stop
+        stop,
+        _prodOneLineTip
     };
 })();
 

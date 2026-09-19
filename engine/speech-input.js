@@ -471,16 +471,17 @@ const SpeechInput = (function () {
         }
 
         // 2. Microphone audio recording for user playback and unsupported browser fallback
-        // On Android, getUserMedia and webkitSpeechRecognition cannot run concurrently:
-        // the Android OS audio HAL / AudioPolicy strictly allows only one active recording client,
-        // and getUserMedia locks the mic hardware, starving SpeechRecognition of audio samples.
-        // As a result, SpeechRecognition receives silence: audio is recorded into the blob,
-        // but no transcript is ever produced and recognition/grading fails completely.
-        // Therefore, on Android, SpeechRecognition gets exclusive microphone access whenever
-        // native STT is available. Audio recording for playback runs only when native STT is
-        // unsupported (fallback self-evaluation mode), or on iOS / desktop where concurrent
-        // capture is fully supported by the platform's audio subsystem.
-        const canRecordConcurrently = !isAndroid;
+        // On mobile devices (both iOS WebKit and Android), getUserMedia and webkitSpeechRecognition
+        // cannot run concurrently without microphone contention: the OS audio session / HAL strictly
+        // allows only one active recording client, and getUserMedia locks the hardware, starving
+        // SpeechRecognition of audio samples. As a result, SpeechRecognition receives silence:
+        // audio is recorded into the blob (and can be replayed), but no transcript is ever produced
+        // and speech recognition fails completely.
+        // Therefore, on mobile devices (iOS and Android), SpeechRecognition gets exclusive microphone
+        // access whenever native STT is available. Audio recording for playback runs only when native
+        // STT is unsupported (fallback self-evaluation mode), or on desktop where concurrent capture
+        // is fully supported by the platform's audio subsystem.
+        const canRecordConcurrently = !isMobile;
         const needsAudioRecording = !RecognitionClass || (!!options.onAudioReady && canRecordConcurrently);
         if (isRecordingSupported() && needsAudioRecording) {
             _startRecordingStream(options);

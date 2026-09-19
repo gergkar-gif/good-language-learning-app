@@ -120,6 +120,54 @@ SpeakingDriller.render(mockContainer, {
 }).then(() => {
     SpeakingDriller.stop();
     console.log('[PASS] SpeakingDriller correctly initializes with CanDoPrompt formatted prompt.');
+
+    console.log('--- Test 6: SpeakingDriller 1-Sentence Coaching Formatting ---');
+    const mockResultWithPriorities = {
+        overallScore: 82,
+        taskCompletion: 0.85,
+        feedback: {
+            priorities: ["Practice using the preterite tense.", "Remember to include polite expressions like 'por favor'."],
+            strengths: ["Good fluency and natural delivery."]
+        },
+        errors: []
+    };
+    const tip1 = SpeakingDriller._prodOneLineTip(mockResultWithPriorities, { title: 'Order at a café' });
+    console.log('Tip with priorities:', tip1);
+    assert(!tip1.includes('..'), 'Must not contain double periods');
+    assert(!tip1.includes('Focus on Practice'), 'Must not contain awkward capitalized concatenation');
+    assert(!tip1.includes('You missed:'), 'Must not contain raw error header');
+    assert.strictEqual((tip1.match(/\./g) || []).length, 1, 'Must contain exactly one period terminating the extended sentence');
+    assert(tip1.startsWith('Well done — you got your message across'), 'Should start with clean completion appraisal');
+    assert(tip1.includes('practice using the preterite tense and include polite expressions'), 'Should smoothly join action clauses');
+    console.log('[PASS] Tip with priorities formatted as one clean extended sentence.');
+
+    console.log('--- Test 7: SpeakingDriller & WritingDriller Error-Only and Flawless Cases ---');
+    require('../../engine/drills/writing.js');
+    const mockResultErrorOnly = {
+        overallScore: 65,
+        taskCompletion: 0.6,
+        feedback: { priorities: [] },
+        errors: [{ explanation: "The verb 'tener' should be used instead of 'ser' for age." }]
+    };
+    const tip2 = SpeakingDriller._prodOneLineTip(mockResultErrorOnly, { title: 'State your age' });
+    console.log('Tip with error explanation:', tip2);
+    assert(tip2.startsWith('Good effort — you got most of it across, but note that the verb \'tener\' should be used'), 'Should embed grammar explanation cleanly');
+    assert.strictEqual((tip2.match(/\./g) || []).length, 1, 'Must end with single period');
+
+    const mockResultFlawless = {
+        overallScore: 95,
+        taskCompletion: 1.0,
+        feedback: {
+            priorities: [],
+            strengths: ["Natural rhythm and rich conversational vocabulary."]
+        },
+        errors: []
+    };
+    const tip3 = WritingDriller._shortTaskTip(mockResultFlawless, { title: 'Introduce yourself' });
+    console.log('Flawless tip:', tip3);
+    assert(tip3.includes('with natural rhythm and rich conversational vocabulary!'), 'Should celebrate with strength');
+
+    console.log('[PASS] Single extended sentence coaching verified across Speaking and Writing drillers.');
     console.log('\n[ALL PASS] Can-Do Prompt & Scaffolding Test Suite passed.');
 }).catch((e) => {
     console.error('SpeakingDriller render error:', e);

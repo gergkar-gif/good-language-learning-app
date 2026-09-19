@@ -335,7 +335,7 @@ async function runTests() {
     SpeechInput.stopListening();
     console.log('[PASS] Android prevents mic contention by giving SpeechRecognition exclusive access.');
 
-    console.log('--- Test 9: iOS concurrent recording alongside SpeechRecognition ---');
+    console.log('--- Test 9: iOS mic contention prevention (exclusive SpeechRecognition) ---');
     Object.defineProperty(global.navigator, 'userAgent', {
         value: 'Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1',
         configurable: true
@@ -348,11 +348,12 @@ async function runTests() {
         onFinal: () => {}
     });
 
-    // iOS WebKit handles audio sharing in-process, so concurrent recording works
-    assert.strictEqual(getUserMediaCallCount, 1, 'On iOS devices, getUserMedia runs concurrently with SpeechRecognition');
+    // On iOS WebKit, getUserMedia locks the hardware audio session, starving SpeechRecognition.
+    // SpeechRecognition must receive exclusive microphone access.
+    assert.strictEqual(getUserMediaCallCount, 0, 'On iOS devices, getUserMedia must NOT be called concurrently with SpeechRecognition');
     assert.strictEqual(SpeechInput.isListening(), true, 'Speech recognition should still be active');
     SpeechInput.stopListening();
-    console.log('[PASS] iOS supports concurrent audio recording and speech recognition.');
+    console.log('[PASS] iOS prevents mic contention by giving SpeechRecognition exclusive access.');
 
     console.log('--- Test 10: Desktop concurrent recording alongside SpeechRecognition ---');
     Object.defineProperty(global.navigator, 'userAgent', {

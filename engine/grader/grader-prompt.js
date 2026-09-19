@@ -120,6 +120,7 @@ Do not mark a skill weak simply because it was not used.
 FEEDBACK:
 Give 2-3 concrete strengths and 2-3 actionable priorities focused on conversational speaking.
 Priorities should be based on actual spoken weaknesses found in the production, not generic advice.
+Keep each priority a concise, action-oriented phrase (e.g. 'Practice first-person preterite verb endings' or 'Remember adjective gender agreement') without trailing periods.
 
 Return ONLY valid JSON. No Markdown fences. No introductory or trailing text.
 
@@ -252,6 +253,7 @@ Do not mark a skill weak simply because it was not used.
 FEEDBACK:
 Give 2-3 concrete strengths and 2-3 actionable priorities.
 Priorities should be based on actual weaknesses found in the production, not generic advice.
+Keep each priority a concise, action-oriented phrase (e.g. 'Practice first-person preterite verb endings' or 'Remember adjective gender agreement') without trailing periods.
 
 Return ONLY valid JSON. No Markdown fences. No introductory or trailing text.
 
