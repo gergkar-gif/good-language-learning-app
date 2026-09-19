@@ -114,6 +114,18 @@ SLUG_TOPIC_LABELS = {
     "revolucioncubana": "The Cuban Revolution",
     "revolucionmexicana": "The Mexican Revolution",
     "sociedadcolonial": "Colonial Society",
+    "orszagma": "Hungary Today: Land & Symbols",
+    "karpatmedence": "The Carpathian Basin Before the Magyars",
+    "honfoglalas": "The Honfoglalás (895)",
+    "istvankiraly": "Saint Stephen & the Founding of the State (1000)",
+    "arpadhaz": "The Árpád Dynasty",
+    "tatarjaras": "The Mongol Invasion (1241–42)",
+    "anjouk": "The Angevin & Later Medieval Kings",
+    "matyas": "Matthias Corvinus & the Renaissance Court",
+    "mohacs": "The Battle of Mohács (1526)",
+    "haromresz": "Three Parts of Hungary",
+    "erdelyaranykora": "Transylvania's Golden Age",
+    "torokkiuzese": "Driving Out the Ottomans",
 }
 
 # Order matters: these are mutually exclusive by construction (slug requires
