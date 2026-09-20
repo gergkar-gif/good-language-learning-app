@@ -16,8 +16,6 @@ Candidate next items are listed in Section 2 below.
 
 Unscoped enhancements and candidate features:
 
-- **CEFR Real-Exam Practice Mode (Queue Item 9)**: Source or generate actual CEFR-aligned exams with graded responses (under Grammar reference / Level test area).
-- **Hungarian B1/B2 Citizenship Track (Units 6–36)**: Complete remaining 31 units per track (Core + Citizenship history sweep through EU accession and 4 civic units: Alaptörvény, government institutions, national symbols, holidays). Units 1–5 built; draft in `content/hu/b1-curriculum-draft.json`.
 - **Cloud Sync & Multi-Device Accounts**: Automatic background cloud sync (per learner-model step 7) preserving offline-first local storage without heavy frameworks.
 - **CEFR Level Diagnostic Test**: Diagnostic placement exam to assess learner proficiency upon initial app entry.
 - **Exam-Focused Writing & Speech Units**: Introduce new units that expressly teach writing, particular aspects of speech, and turns of phrase for exams.

@@ -9,6 +9,28 @@ needs re-reading before starting new work; it's reference only.
 
 ## Completed queue items
 
+54. ~~**CEFR Real-Exam Practice Mode & Multi-Modal End-of-Level Assessment (Queue Item 9)**~~ — **Done 2026-09-20.**
+    Designed, implemented, validated, and shipped the multi-modal CEFR level assessment engine (`engine/leveltest.js`) and authentic end-of-level exam content across Spanish and Hungarian:
+    - **Multi-Modal CEFR 3-Part Architecture**:
+      - *Part 1: Language in Context*: 20–28 questions combining contextual cloze dropdowns (`dropdown`), active-recall text inputs (`text-input`), and authentic communicative pragmatic choices (`choice`).
+      - *Part 2: Short Written Production (`writingTask`)*: Integrated writing prompt with live length meter, target keyword badges, and CEFR rubric evaluation.
+      - *Part 3: Short Spoken Production (`speakingTask`)*: Integrated speech-to-text recording, audio playback, and accessible typed/dictation fallback.
+    - **Exams Authored & Shipped**:
+      - Spanish A1 (`content/es/tests/a1-test.json`): 22 questions, *Un día en mi vida* writing task, *Presentación personal* oral task.
+      - Spanish A2 (`content/es/tests/a2-test.json`): 24 questions, *Un fin de semana inolvidable* writing task, *Mensaje de voz con recomendaciones* oral task.
+      - Hungarian A1 (`content/hu/tests/a1-test.json`): 26 questions, *Magyarul tanulok* writing task, *Bemutatkozás élőszóban* oral task.
+      - Hungarian A2 (`content/hu/tests/a2-test.json`): 26 questions, *Köszönőlevél vendéglátásért* writing task, *Névnapi köszöntő* oral task.
+      - Hungarian B1 (`content/hu/tests/b1-test.json`): 28 questions testing conditional present/past (*volna*), participles (*-ó/-ő, -t/-tt, -andó/-endő, -va/-ve, -ván/-vén*), potential suffix (*-hat/-het*), causative (*-tat/-tet*), frequentative (*-ogat/-eget*), reflexive verbs (*-kodik*), complex connectors (*bár, noha, holott*), indirect speech & indirect question particle (*-e*), preverb inversion & auxiliaries, and citizenship & administrative topics; *Hivatalos megkeresés és javaslattétel* writing task (min. 60 words); *Állásinterjú vagy szakmai tervek bemutatása* oral task (min. 30s).
+    - **Navigation & Engine Polish**: Implemented `LevelTest.hasTest(level)` to dynamically activate level tests per language, preventing dead-ends while rendering clean "Coming soon" indicators on unscoped levels; added diagnostic topic breakdowns on exam completion, retake functionality, and automatic jump-ahead level completion for scores >= 90%.
+
+53. ~~**Hungarian B1 Dual Track Curriculum: Complete 72 Units & 432 Lessons**~~ — **Done 2026-09-20.**
+    Authored, integrated, validated, and pushed all 36 dual unit-pairs for Hungarian B1 (72 units, 432 lessons total) in complete parity between the Core track and the Citizenship track:
+    - **Scope & Delivery**: 216 Core lessons (`b1-01` to `b1-36`) + 216 Citizenship lessons (`b1-orszagma` to `b1-allampolgarsag`), 3,024 exercises across 432 exercise files, 360 vocabulary files (~1,800 target words), and 510 grammar modules.
+    - **Dual Literature & World Story System**:
+      - 36 Hungarian classic literature adaptations for Core units (Petőfi, Mikszáth, Móricz, Kosztolányi, Karinthy, Babits, Szerb Antal, Gárdonyi Géza, etc.).
+      - 216 world stories for Citizenship units (180 episodic stories + 36 comprehensive compendiums) covering the entire sweep of Hungarian history, culture, institutions, constitution (*Alaptörvény*), and the citizenship oath.
+    - **Track Isolation & Verification**: All exercises and vocabulary rigorously partitioned between Core and Citizenship tracks with 0 contamination in `ListeningDriller`, `SpeakingStudio`, and `VocabularyDriller`. 100% schema validation (3,953 content files passed, 0 failed).
+
 52. ~~**Natural Can-Do Production Prompts & 1-Sentence Coaching Feedback Norm**~~ — **Done 2026-09-18.**
     Resolved awkward verbal/written production prompts derived from CEFR Can-Do descriptors and streamlined under-1-minute productions with a compact 1-sentence coaching feedback card:
     - **Can-Do Prompt & Scaffolding Engine (`engine/canDoPrompt.js`)**: Replaced crude 37-char mid-word truncation (`options.targetCompetency.slice(0, 37) + '...'`) with topic-aware title extraction (e.g. *"At the Café"*, *"Months of the Year"* instead of *"I can complete a short at the café in..."*). Categorized descriptors into 4 typologies:

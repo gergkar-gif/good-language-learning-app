@@ -1,7 +1,7 @@
 # Parlour CEFR Curriculum Roadmap
 
-**Status**: Phases 1, 2, and 3 **COMPLETED** ✅  
-**Remaining Phases**: Scheduled as **TO-BE-DONE LATER** ⏳
+**Status**: Phases 1 through 8 **COMPLETED** ✅  
+**Remaining Phases**: Strategic & Product Ideas scheduled as **TO-BE-DONE LATER** ⏳
 
 ---
 
