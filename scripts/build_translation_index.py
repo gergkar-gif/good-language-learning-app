@@ -146,6 +146,9 @@ SLUG_TOPIC_LABELS = {
     "alaptorveny": "The Constitution: Alaptörvény",
     "allamszervezet": "Government & Institutions Today",
     "onkormanyzat": "Local Governments & Public Administration",
+    "nemzetiertekek": "Hungarian Culture, Science & Heritage",
+    "magyarsag": "Hungarians Across the World & International Relations",
+    "allampolgarsag": "Being a Citizen: Rights, Duties & the Oath",
 }
 
 # Order matters: these are mutually exclusive by construction (slug requires
