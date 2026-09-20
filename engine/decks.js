@@ -1567,7 +1567,19 @@ const Decks = (function () {
             studyMode = null; // module missing/unknown — fall through to the deck screen rather than a blank one
         }
 
-        host.innerHTML = deck ? detailHtml(deck) : indexHtml();
+        const guideBanner = (!deck && typeof Guide !== 'undefined' && !Guide.hasSeen('decks'))
+            ? Guide.renderBannerHtml('decks')
+            : '';
+        host.innerHTML = deck ? detailHtml(deck) : (guideBanner + indexHtml());
+
+        host.querySelectorAll('[data-guide-dismiss]').forEach(el => {
+            el.onclick = function () {
+                const featureId = el.getAttribute('data-guide-dismiss');
+                if (typeof Guide !== 'undefined') Guide.markSeen(featureId);
+                const banner = el.closest('.pl-guide-banner');
+                if (banner) banner.remove();
+            };
+        });
 
         host.querySelectorAll('[data-open-match]').forEach(el => {
             el.onclick = function () { studyMode = 'match'; render(); };

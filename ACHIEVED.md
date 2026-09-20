@@ -9,6 +9,30 @@ needs re-reading before starting new work; it's reference only.
 
 ## Completed queue items
 
+56. ~~**Onboarding, Casual Philosophy & Encounter-Based Feature Guidance**~~ — **Done 2026-09-20.**
+    Designed, implemented, validated, and shipped the onboarding and feature guidance system (`engine/guide.js`):
+    - **Casual, Grounded Philosophy & Welcome Presentation**:
+      - Warm, human welcome: *"Parlour is for people who actually want to learn languages and cultures. A non-commercial project, we want to provide a place where you can learn, read, review, and practice — welcome!"*
+      - Enhanced Home onboarding card with target language selector, philosophy summary, "How Parlour works" modal trigger, and dual entry paths (*"Take placement test →"* vs. *"Start at Unit 1"*).
+    - **"How Parlour Works" Modal & Power Features Highlighted**:
+      - Accessible modal detailing the 6 rooms (Home, Lessons, Library, Decks, Workshop, Journey).
+      - Prominently highlights power features: streak import from Duolingo/other apps, Quizlet/Anki deck import, pasting custom articles in *My Texts* with tap-to-translate glosses, and the Speaking/Writing Studios.
+      - Accessible at any time via Home onboarding card or the understated "How Parlour works" link in the nav footer.
+    - **Contextual Encounter-Based Coach Notes**:
+      - Replaced intrusive upfront tutorials with non-blocking, ink-styled coach note banners that appear once when learners encounter a feature for the first time:
+        - `lesson`: First lesson entered (explains self-paced progression, zero-stress mistake redo pass).
+        - `reader`: First library visit (explains tap-to-translate glosses and *My Texts* pasting).
+        - `decks`: First review/decks visit (explains automated SRS collection and Quizlet/Anki importing).
+        - `workshop`: First workshop visit (explains targeted drillers, reference tables, and composition studios).
+        - `production`: First Speaking/Writing task (explains focus on communicative clarity and 1-sentence coaching).
+      - State persisted in `localStorage` (`parlour_guide_seen_<feature>`), animated dismissals.
+    - **Deferred Sync Email Prompt**:
+      - Updated `engine/sync.js` to defer the first-visit cloud sync email prompt until the learner has completed at least 1 lesson or earned XP, preventing early modal interruptions on visit #1.
+    - **Verification & PWA Shell**:
+      - 100% SVG line/wash iconography, zero emoji pictograms.
+      - Comprehensive automated test suite `tests/drills/test-onboarding-guide.js` (6 test suites passed).
+      - Precached via `sw.js` (cache version `v2026-09-20c`).
+
 55. ~~**CEFR Level Diagnostic Placement Test & Onboarding Ladder**~~ — **Done 2026-09-20.**
     Designed, authored, validated, and shipped the multi-tier adaptive placement diagnostic test engine (`engine/diagnostic.js`) and content across Spanish and Hungarian:
     - **Course-Agnostic Adaptive Ladder Architecture**:

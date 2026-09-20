@@ -546,6 +546,14 @@ async function startLesson(lessonId) {
         const levelMark = (typeof levelIcon === 'function') ? levelIcon(currentLesson.level, 'level-icon--sm') : '';
         subtitle.innerHTML = levelMark + '<span>' + UI.escape(currentLesson.level) + '</span>';
 
+        const guideSlot = document.getElementById('lesson-guide-slot');
+        if (guideSlot) {
+            guideSlot.innerHTML = '';
+            if (typeof Guide !== 'undefined' && !Guide.hasSeen('lesson')) {
+                Guide.attachBanner(guideSlot, 'lesson');
+            }
+        }
+
         renderStep();
     } catch (err) {
         console.error('Failed to start lesson:', lessonId, err);
@@ -561,6 +569,8 @@ async function startLesson(lessonId) {
 // learner leaves via the main nav instead of the lesson's own close button.
 // closeLesson() below calls this too, then handles the navigation part.
 function teardownLesson() {
+    const guideSlot = document.getElementById('lesson-guide-slot');
+    if (guideSlot) guideSlot.innerHTML = '';
     document.body.classList.remove('in-lesson');
     currentLesson = null;
     currentStepIndex = 0;

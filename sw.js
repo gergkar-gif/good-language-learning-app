@@ -2,7 +2,7 @@
 // Parlour Service Worker (Offline Support & PWA App Shell)
 // ==========================================================
 
-const CACHE_VERSION = 'v2026-09-20b';
+const CACHE_VERSION = 'v2026-09-20c';
 const SHELL_CACHE_NAME = `parlour-shell-${CACHE_VERSION}`;
 const CONTENT_CACHE_NAME = `parlour-content-${CACHE_VERSION}`;
 
@@ -87,6 +87,7 @@ const PRECACHE_ASSETS = [
     'engine/studyPlanRunner.js',
     'engine/curriculum.js',
     'engine/library.js',
+    'engine/guide.js',
     'engine/home.js',
     'engine/sync.js',
     'engine/init.js',

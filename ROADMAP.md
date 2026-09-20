@@ -24,7 +24,7 @@ Completed work is archived out to `ACHIEVED.md`.
 Unscoped enhancements and candidate features:
 
 - **Cloud Sync & Multi-Device Accounts**: Automatic background cloud sync (per learner-model step 7) preserving offline-first local storage without heavy frameworks.
-- **Onboarding & New-User Experience**: Discuss onboarding, introducing Parlour philosophy/methodology, and initial setup processes for new users.
+- **Onboarding & New-User Experience**: Shipped 2026-09-20 (casual philosophy, encounter-based coach notes, 6-room modal, power imports, deferred sync prompt — see ACHIEVED.md queue item 56).
 - **Exam-Focused Writing & Speech Units**: Introduce new units that expressly teach writing, particular aspects of speech, and turns of phrase for exams.
 - **New App Sounds**: Audio effects and sound palette refresh.
 - **Cultural Track Recommendations**: Curated cultural recommendations integrated into the cultural track.

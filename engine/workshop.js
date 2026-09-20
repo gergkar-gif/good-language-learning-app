@@ -176,8 +176,12 @@ const Workshop = (function () {
         const available = DRILLERS.filter(_available);
         const studios = available.filter(d => d.category === 'studios');
         const foundations = available.filter(d => d.category === 'foundations');
+        const guideBanner = (typeof Guide !== 'undefined' && !Guide.hasSeen('workshop'))
+            ? Guide.renderBannerHtml('workshop')
+            : '';
 
         return `
+            ${guideBanner}
             ${_recommendationHtml(recommendation)}
             ${studios.length ? `
                 <div class="wk-section-heading">Studios</div>
@@ -205,6 +209,14 @@ const Workshop = (function () {
     function _attachPickerEvents(root) {
         root.querySelectorAll('[data-driller]').forEach(btn => {
             btn.addEventListener('click', () => open(btn.dataset.driller));
+        });
+        root.querySelectorAll('[data-guide-dismiss]').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const featureId = btn.getAttribute('data-guide-dismiss');
+                if (typeof Guide !== 'undefined') Guide.markSeen(featureId);
+                const banner = btn.closest('.pl-guide-banner');
+                if (banner) banner.remove();
+            });
         });
         // The recommendation card itself is patched in later, by
         // _loadRecommendation() — it doesn't exist in `root` yet at this

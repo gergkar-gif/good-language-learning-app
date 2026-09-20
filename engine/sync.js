@@ -145,6 +145,14 @@ const Sync = (function () {
 
     function maybeShowFirstVisitPrompt() {
         if (isLoggedIn()) return;
+
+        // Defer until the learner has actual progress to protect (at least 1 lesson completed or XP earned).
+        // Never interrupt a brand new user on their very first visit before they even know what Parlour is.
+        const progress = (typeof getProgress === 'function') ? getProgress() : {};
+        const completedCount = Object.keys(progress).length;
+        const xp = (typeof xpData !== 'undefined' && xpData && xpData.xp) ? xpData.xp : 0;
+        if (completedCount === 0 && xp === 0) return;
+
         try {
             if (localStorage.getItem(FIRST_VISIT_PROMPT_KEY)) return;
             localStorage.setItem(FIRST_VISIT_PROMPT_KEY, '1');

@@ -78,7 +78,10 @@
                 <span class="theme-toggle-icon" aria-hidden="true"><svg class="art icon" viewBox="0 0 24 24" role="presentation" aria-hidden="true" focusable="false"><path class="ink-line" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg></span>
                 <span class="nav-theme-label">Dark theme</span>
             </button>
-            <a href="privacy.html" class="text-muted" style="font-size: 0.75rem; text-decoration: none;">Privacy</a>
+            <div class="nav-footer-links">
+                <button type="button" class="nav-guide-btn" onclick="if (typeof Guide !== 'undefined') Guide.openOverviewModal();">How Parlour works</button>
+                <a href="privacy.html" class="text-muted nav-privacy-link">Privacy</a>
+            </div>
         </div>
     </nav>
 
@@ -271,6 +274,7 @@
 
                 </div>
 
+                <div id="lesson-guide-slot"></div>
                 <div id="lesson-content"></div>
 
                 <div class="lesson-footer">
@@ -398,6 +402,9 @@
 
 <!-- Engine: library (depends on Reader, Decks, Lexicon) -->
 <script src="engine/library.js?v=2026-09-19"></script>
+
+<!-- Engine: guide & encounter coach (philosophy, room overviews, tips) -->
+<script src="engine/guide.js?v=2026-09-20a"></script>
 
 <!-- Engine: home (reads from every module above) -->
 <script src="engine/home.js?v=2026-09-17a"></script>

@@ -78,7 +78,12 @@ const WritingDriller = (function () {
     function _renderStudioShell() {
         if (!_container) return;
 
+        const guideBanner = (typeof Guide !== 'undefined' && !Guide.hasSeen('production'))
+            ? Guide.renderBannerHtml('production')
+            : '';
+
         _container.innerHTML = `
+            ${guideBanner}
             <div class="sp-studio-wrap">
                 <div class="sp-studio-nav" role="tablist">
                     <button type="button" class="sp-studio-tab ${_activeStudioTab === STUDIO_TAB.COMPOSITION ? 'active' : ''}" data-studio-tab="composition" role="tab" aria-selected="${_activeStudioTab === STUDIO_TAB.COMPOSITION}">
@@ -91,6 +96,15 @@ const WritingDriller = (function () {
                 <div class="sp-studio-body" id="wr-studio-body"></div>
             </div>
         `;
+
+        _container.querySelectorAll('[data-guide-dismiss]').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const featureId = btn.getAttribute('data-guide-dismiss');
+                if (typeof Guide !== 'undefined') Guide.markSeen(featureId);
+                const banner = btn.closest('.pl-guide-banner');
+                if (banner) banner.remove();
+            });
+        });
 
         _container.querySelectorAll('[data-studio-tab]').forEach(btn => {
             btn.addEventListener('click', () => {

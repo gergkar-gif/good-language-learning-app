@@ -1012,6 +1012,15 @@ window.Reader = {
             // story), but this listener on the container itself survives that.
             const self = this;
             libraryEl.addEventListener('click', function(e) {
+                const dismissBtn = e.target.closest('[data-guide-dismiss]');
+                if (dismissBtn) {
+                    const featureId = dismissBtn.getAttribute('data-guide-dismiss');
+                    if (typeof Guide !== 'undefined') Guide.markSeen(featureId);
+                    const banner = dismissBtn.closest('.pl-guide-banner');
+                    if (banner) banner.remove();
+                    return;
+                }
+
                 const clearBtn = e.target.closest('#library-search-clear');
                 if (clearBtn) {
                     const input = document.getElementById('library-universal-search');
@@ -1460,8 +1469,11 @@ window.Reader = {
         const levels = CEFR_LEVELS.concat(extraLevels);
 
         const recsHtml = self.buildRecommendationsHtml();
+        const guideBanner = (typeof Guide !== 'undefined' && !Guide.hasSeen('reader'))
+            ? Guide.renderBannerHtml('reader')
+            : '';
 
-        let html = recsHtml + `
+        let html = guideBanner + recsHtml + `
             <div class="library-search-bar">
                 <div class="library-search-wrap">
                     <span class="library-search-icon" aria-hidden="true">${typeof Art !== 'undefined' ? Art.icon('decks') : ''}</span>
