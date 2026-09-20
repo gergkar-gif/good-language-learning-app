@@ -13,17 +13,15 @@ Completed work is archived out to `ACHIEVED.md`.
    - **Authoring Norm**: When resuming, every unit must follow the established three-pillar standard: B1 level pedagogical clarity, 100% factual accuracy (aligned with Instituto Cervantes CCSE syllabus), and *The Rest Is History* (TRIH)-style engaging, humanized narrative storytelling with companion stories in `stories/world/b1/`.
    - `scripts/validate-content.py` maintains `SKIP_STEM_MARKERS = {"es-es": "-ccse-"}` for scaffolded stubs until all units are authored.
 
-2. **Peninsular Adaptations & Active *Vosotros* Practice (`content/es-es` A1/A2):**
-   - Active interactive *vosotros* exercises across A1 and A2 exercise files.
-   - Secondary Peninsular lexical adaptations (`ordenador`, `móvil`, `aparcar`, `patata`, `gafas`, `piso`).
-
 ---
 
 ## 2. Future Feature Ideas
 
 Unscoped enhancements and candidate features:
 
-- **Cloud Sync & Multi-Device Accounts**: Automatic background cloud sync (per learner-model step 7) preserving offline-first local storage without heavy frameworks.
+- **Google Sign-In & Multi-Device Sync**: Introduce 1-tap Google Sign-In alongside the email magic link. Enables fast login without waiting for email delivery, verifies email via OpenID Connect token in Cloudflare Worker, and maps seamlessly to the existing D1 SQL database and JWT session architecture.
+- **Automatic Background Cloud Sync**: Shipped 2026-09-20 (see ACHIEVED.md queue item 58).
+- **Peninsular Adaptations & Active *Vosotros* Practice**: Shipped 2026-09-20 (see ACHIEVED.md queue item 57).
 - **Onboarding & New-User Experience**: Shipped 2026-09-20 (casual philosophy, encounter-based coach notes, 6-room modal, power imports, deferred sync prompt — see ACHIEVED.md queue item 56).
 - **Exam-Focused Writing & Speech Units**: Introduce new units that expressly teach writing, particular aspects of speech, and turns of phrase for exams.
 - **New App Sounds**: Audio effects and sound palette refresh.

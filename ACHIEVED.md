@@ -9,6 +9,18 @@ needs re-reading before starting new work; it's reference only.
 
 ## Completed queue items
 
+58. ~~**Automatic Background Cloud Sync & Life-Cycle Auto-Save**~~ — **Done 2026-09-20.**
+    Implemented transparent background auto-sync in `engine/sync.js`:
+    - `Sync.scheduleAutoSave()` automatically schedules a debounced backup (2.5s) whenever learner state changes (progress updates in `engine/progress.js`, SRS cards and known words in `engine/srs.js`, drill sessions in `engine/drillHistory.js`, and XP awards in `engine/xp.js`).
+    - Life-cycle hooks: automatically flushes pending auto-saves via `visibilitychange` (state hidden) and `pagehide`, ensuring zero lost progress on tab switch or navigation.
+    - Emits `sync-saved` window events with timestamp on successful auto-save, preserving offline-first local storage without blocking the UI.
+
+57. ~~**Peninsular Adaptations & Active *Vosotros* Practice (`content/es-es` A1/A2)**~~ — **Done 2026-09-20.**
+    Authored and integrated interactive Peninsular Spanish adaptations and *vosotros* forms across European Spanish (`content/es-es`):
+    - Interactive *vosotros* conjugation and imperative exercises in A1 and A2 (`a1-05-01-ex.json`, `a1-06-02-ex.json`, `a1-06-03-ex.json`, `a1-reflexive-01-ex.json`, `a2-01-03-ex.json`, `a2-imperativonegativo-03-ex.json`).
+    - Peninsular lexical adaptations (`ordenador`, `móvil`, `aparcar`, `patata`, `gafas`, `piso`).
+    - Strict schema validation and full isolation from the `es-latam` corpus.
+
 56. ~~**Onboarding, Casual Philosophy & Encounter-Based Feature Guidance**~~ — **Done 2026-09-20.**
     Designed, implemented, validated, and shipped the onboarding and feature guidance system (`engine/guide.js`):
     - **Casual, Grounded Philosophy & Welcome Presentation**:
