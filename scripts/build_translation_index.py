@@ -145,6 +145,7 @@ SLUG_TOPIC_LABELS = {
     "nemzetiunnepek": "National Holidays & Remembrance Days",
     "alaptorveny": "The Constitution: Alaptörvény",
     "allamszervezet": "Government & Institutions Today",
+    "onkormanyzat": "Local Governments & Public Administration",
 }
 
 # Order matters: these are mutually exclusive by construction (slug requires
