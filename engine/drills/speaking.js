@@ -1342,22 +1342,33 @@ const SpeakingDriller = (function () {
                         <span><strong>CEFR ${_esc(p.cefrLevel || 'A1')}</strong> target level</span>
                     </div>
 
-                    <div class="vspeed-results-actions" style="margin-top: 1.5rem;">
-                        <button class="vbtn vbtn-secondary" data-action="speak-again">Try Again</button>
+                    <div class="vspeed-results-actions" style="margin-top: 1.5rem; display: flex; gap: 12px; flex-wrap: wrap;">
+                        <button type="button" class="vbtn vbtn-primary" data-action="practice-again">Practice Again</button>
+                        <button type="button" class="vbtn vbtn-secondary" data-action="speak-another">Choose Another Topic</button>
                     </div>
                 </div>
             `;
 
-            const againBtn = body.querySelector('[data-action="speak-again"]');
+            const againBtn = body.querySelector('[data-action="practice-again"]') || body.querySelector('[data-action="speak-again"]');
             if (againBtn) {
                 againBtn.addEventListener('click', () => {
-                    _prodPhase = PROD_PHASE.RECORDING;
+                    stop();
                     _prodAssessmentResult = null;
                     _prodElapsedSeconds = 0;
                     _prodTranscript = '';
                     _prodAudioUrl = null;
-                    _renderActiveTab();
                     _startProdRecording();
+                });
+            }
+
+            const anotherBtn = body.querySelector('[data-action="speak-another"]');
+            if (anotherBtn) {
+                anotherBtn.addEventListener('click', () => {
+                    stop();
+                    _prodPhase = PROD_PHASE.PROMPT_SELECT;
+                    _selectedProdPrompt = null;
+                    _prodAssessmentResult = null;
+                    _renderActiveTab();
                 });
             }
 
@@ -1471,15 +1482,29 @@ const SpeakingDriller = (function () {
                     <span><strong>CEFR ${_esc(p.cefrLevel || 'B1')}</strong> target level</span>
                 </div>
 
-                <div class="vspeed-results-actions" style="margin-top: 2rem;">
-                    <button class="vbtn vbtn-secondary" data-action="speak-again">Speak Another Topic</button>
+                <div class="vspeed-results-actions" style="margin-top: 2rem; display: flex; gap: 12px; flex-wrap: wrap;">
+                    <button type="button" class="vbtn vbtn-primary" data-action="practice-again">Practice Again</button>
+                    <button type="button" class="vbtn vbtn-secondary" data-action="speak-another">Choose Another Topic</button>
                 </div>
             </div>
         `;
 
-        const againBtn = body.querySelector('[data-action="speak-again"]');
+        const againBtn = body.querySelector('[data-action="practice-again"]') || body.querySelector('[data-action="speak-again"]');
         if (againBtn) {
             againBtn.addEventListener('click', () => {
+                stop();
+                _prodAssessmentResult = null;
+                _prodElapsedSeconds = 0;
+                _prodTranscript = '';
+                _prodAudioUrl = null;
+                _startProdRecording();
+            });
+        }
+
+        const anotherBtn = body.querySelector('[data-action="speak-another"]');
+        if (anotherBtn) {
+            anotherBtn.addEventListener('click', () => {
+                stop();
                 _prodPhase = PROD_PHASE.PROMPT_SELECT;
                 _selectedProdPrompt = null;
                 _prodAssessmentResult = null;

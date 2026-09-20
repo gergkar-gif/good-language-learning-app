@@ -141,6 +141,30 @@ async function testOralGrading() {
     const grammarErrors = cleaned.errors.filter(e => e.category === 'grammar');
     assert(grammarErrors.length === 3, `Should allow 3 distinct errors under grammar, got ${grammarErrors.length}`);
     console.log('[PASS] Multiple errors under single category (grammar: 3, vocabulary: 1) verified.');
+
+    // 6. Test Studio Production Redo Buttons in Source Files
+    const fs = require('fs');
+    const path = require('path');
+    const speakingSrc = fs.readFileSync(path.join(__dirname, '../../engine/drills/speaking.js'), 'utf8');
+    const writingSrc = fs.readFileSync(path.join(__dirname, '../../engine/drills/writing.js'), 'utf8');
+
+    assert(speakingSrc.includes('data-action="practice-again"') && speakingSrc.includes('data-action="speak-another"'),
+        'Speaking Studio results must provide both practice-again and speak-another actions');
+    assert(writingSrc.includes('data-action="practice-again"') && writingSrc.includes('data-action="write-another"'),
+        'Writing Studio results must provide both practice-again and write-another actions');
+    console.log('[PASS] Studio Production redo and topic switching actions verified in source.');
+
+    // 7. Test Font Norms in base.css and workshop.css
+    const baseCss = fs.readFileSync(path.join(__dirname, '../../styles/base.css'), 'utf8');
+    const workshopCss = fs.readFileSync(path.join(__dirname, '../../styles/workshop.css'), 'utf8');
+
+    assert(baseCss.includes('--font-body: var(--font-ui);') && baseCss.includes('--font-base: var(--font-ui);'),
+        'base.css must define fallback aliases for --font-body and --font-base');
+    assert(/textarea\s*\{\s*font:\s*inherit/m.test(baseCss),
+        'base.css must include textarea in font inheritance reset');
+    assert(workshopCss.includes('.sp-prod-title') && workshopCss.includes('.sp-turn-edit-field'),
+        'workshop.css must define .sp-prod-title and .sp-turn-edit-field styles');
+    console.log('[PASS] Typography norms and textarea font resets verified.');
 }
 
 testOralGrading()

@@ -98,6 +98,8 @@
   /* Inter, then the platform UI faces it was drawn to sit alongside. */
   --font-ui: Inter, 'Segoe UI Variable Text', -apple-system, BlinkMacSystemFont,
              'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-body: var(--font-ui);
+  --font-base: var(--font-ui);
 
   /* Spacing scale — 4px base, multiples of 4/8. Existing components keep
      their hand-tuned px values; this scale is for new geometric/composition
@@ -385,7 +387,8 @@ button {
 
 input,
 select,
-option {
+option,
+textarea {
   font: inherit;
 }
 

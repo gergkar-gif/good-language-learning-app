@@ -701,16 +701,27 @@ const WritingDriller = (function () {
                         <span><strong>CEFR ${_esc(p.cefrLevel || 'A1')}</strong> target</span>
                     </div>
 
-                    <div class="vspeed-results-actions" style="margin-top: 1.5rem;">
-                        <button class="vbtn vbtn-secondary" data-action="write-again">Try Again</button>
+                    <div class="vspeed-results-actions" style="margin-top: 1.5rem; display: flex; gap: 12px; flex-wrap: wrap;">
+                        <button type="button" class="vbtn vbtn-primary" data-action="practice-again">Revise &amp; Try Again</button>
+                        <button type="button" class="vbtn vbtn-secondary" data-action="write-another">Choose Another Topic</button>
                     </div>
                 </div>
             `;
 
-            const againBtn = body.querySelector('[data-action="write-again"]');
+            const againBtn = body.querySelector('[data-action="practice-again"]') || body.querySelector('[data-action="write-again"]');
             if (againBtn) {
                 againBtn.addEventListener('click', () => {
                     _phase = PHASE.WRITING;
+                    _assessmentResult = null;
+                    _renderActiveTab();
+                });
+            }
+
+            const anotherBtn = body.querySelector('[data-action="write-another"]');
+            if (anotherBtn) {
+                anotherBtn.addEventListener('click', () => {
+                    _phase = PHASE.PROMPT_SELECT;
+                    _selectedPrompt = null;
                     _assessmentResult = null;
                     _renderActiveTab();
                 });
@@ -820,15 +831,25 @@ const WritingDriller = (function () {
                     <span><strong>${stats.avgSentenceLength || 0}</strong> avg words/sentence</span>
                 </div>
 
-                <div class="vspeed-results-actions" style="margin-top: 2rem;">
-                    <button class="vbtn vbtn-secondary" data-action="write-again">Write Another Text</button>
+                <div class="vspeed-results-actions" style="margin-top: 2rem; display: flex; gap: 12px; flex-wrap: wrap;">
+                    <button type="button" class="vbtn vbtn-primary" data-action="practice-again">Revise &amp; Try Again</button>
+                    <button type="button" class="vbtn vbtn-secondary" data-action="write-another">Choose Another Topic</button>
                 </div>
             </div>
         `;
 
-        const againBtn = body.querySelector('[data-action="write-again"]');
+        const againBtn = body.querySelector('[data-action="practice-again"]');
         if (againBtn) {
             againBtn.addEventListener('click', () => {
+                _phase = PHASE.WRITING;
+                _assessmentResult = null;
+                _renderActiveTab();
+            });
+        }
+
+        const anotherBtn = body.querySelector('[data-action="write-another"]') || body.querySelector('[data-action="write-again"]');
+        if (anotherBtn) {
+            anotherBtn.addEventListener('click', () => {
                 _phase = PHASE.PROMPT_SELECT;
                 _selectedPrompt = null;
                 _assessmentResult = null;
