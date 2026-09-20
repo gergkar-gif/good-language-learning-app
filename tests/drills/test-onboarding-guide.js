@@ -95,4 +95,22 @@ const swCode = fs.readFileSync(path.join(__dirname, '../../sw.js'), 'utf8');
 assert(swCode.includes('engine/guide.js'), 'sw.js must precache engine/guide.js');
 console.log('[PASS] App shell and service worker integration verified.');
 
+// 7. Dark Mode Coach Notes & High-Contrast Tokens
+console.log('\n--- Test 7: Dark Mode Coach Notes Contrast & CSS Tokens ---');
+const baseCss = fs.readFileSync(path.join(__dirname, '../../styles/base.css'), 'utf8');
+assert(baseCss.includes('--card-bg: var(--surface)'), 'base.css dark theme must define --card-bg using --surface');
+assert(baseCss.includes('--bg-card: var(--surface)'), 'base.css dark theme must define --bg-card using --surface');
+assert(baseCss.includes('--text-muted:'), 'base.css must define --text-muted token');
+
+const compCss = fs.readFileSync(path.join(__dirname, '../../styles/components.css'), 'utf8');
+assert(compCss.includes('[data-theme="dark"] .pl-guide-banner'), 'components.css must define dark mode override for pl-guide-banner');
+assert(!compCss.includes('.pl-guide-banner {\n  display: flex;\n  align-items: flex-start;\n  gap: 14px;\n  padding: 14px 18px;\n  background: var(--card-bg, #fff);'), 'pl-guide-banner must not fallback to white (#fff) in dark mode');
+assert(compCss.includes('[data-theme="dark"] .pl-guide-banner-title'), 'components.css must define dark mode title contrast');
+assert(compCss.includes('[data-theme="dark"] .pl-guide-banner-body'), 'components.css must define dark mode body contrast');
+
+const wkCss = fs.readFileSync(path.join(__dirname, '../../styles/workshop.css'), 'utf8');
+assert(wkCss.includes('.sp-coach-note-card'), 'workshop.css must define .sp-coach-note-card');
+assert(wkCss.includes('[data-theme="dark"] .sp-coach-note-card'), 'workshop.css must define dark mode for .sp-coach-note-card');
+console.log('[PASS] Dark mode coach note contrast and CSS tokens verified.');
+
 console.log('\n=== All Onboarding & Guide Tests Passed! ===\n');

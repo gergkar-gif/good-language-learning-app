@@ -28,6 +28,9 @@
      several. */
   --text: var(--primary);
   --muted: #5A6B80;
+  --text-muted: var(--muted);
+  --card-bg: #FFFFFF;
+  --bg-card: #FFFFFF;
 
   /* Deep, saturated orange — the principal and only accent, meant to stay
      scarce. --accent is the vivid shape-fill version (3:1 bar, never carries
@@ -142,6 +145,9 @@
 
   --text: #F5F1E8;
   --muted: #8E9FAA;
+  --text-muted: #D3CDC1;
+  --card-bg: var(--surface);
+  --bg-card: var(--surface);
 
   --accent: #E07148;
   --accent-dark: #E88B68;
@@ -175,6 +181,9 @@
 
     --text: #F5F1E8;
     --muted: #8E9FAA;
+    --text-muted: #D3CDC1;
+    --card-bg: var(--surface);
+    --bg-card: var(--surface);
 
     --accent: #E07148;
     --accent-dark: #E88B68;

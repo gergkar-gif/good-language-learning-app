@@ -3438,4 +3438,56 @@
     stroke: var(--accent);
 }
 
+/* Speaking Coach & Diagnostic Note Card */
+.sp-coach-note-card {
+    background: var(--surface, #fff);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: var(--radius-md, 8px);
+    padding: 14px 18px;
+    margin: 16px 0;
+}
+
+.sp-coach-note-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.sp-coach-avatar {
+    display: inline-flex;
+    align-items: center;
+    color: var(--accent);
+}
+
+.sp-coach-note-body {
+    margin: 0;
+    font-size: 13.5px;
+    line-height: 1.5;
+    color: var(--text);
+    opacity: 0.92;
+}
+
+[data-theme="dark"] .sp-coach-note-card,
+:root:not([data-theme="light"]) .sp-coach-note-card {
+    background: var(--surface);
+    border-color: var(--border);
+    border-left-color: var(--accent);
+}
+
+[data-theme="dark"] .sp-coach-note-header,
+:root:not([data-theme="light"]) .sp-coach-note-header {
+    color: var(--primary-dark, #ffffff);
+}
+
+[data-theme="dark"] .sp-coach-note-body,
+:root:not([data-theme="light"]) .sp-coach-note-body {
+    color: var(--text);
+    opacity: 0.95;
+}
+
 

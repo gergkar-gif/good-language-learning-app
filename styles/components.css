@@ -6251,9 +6251,16 @@
 .hm-onboarding-blurb {
   font-size: 14px;
   line-height: 1.55;
-  color: var(--text-muted);
+  color: var(--text);
+  opacity: 0.92;
   margin: 6px 0 14px;
   max-width: 640px;
+}
+
+[data-theme="dark"] .hm-onboarding-blurb,
+:root:not([data-theme="light"]) .hm-onboarding-blurb {
+  color: var(--text);
+  opacity: 0.95;
 }
 
 /* Curriculum Top Actions */
@@ -6644,9 +6651,9 @@
   align-items: flex-start;
   gap: 14px;
   padding: 14px 18px;
-  background: var(--card-bg, #fff);
+  background: var(--surface);
   border: 1px solid var(--border);
-  border-left: 3px solid var(--accent);
+  border-left: 4px solid var(--accent);
   border-radius: var(--radius-md, 8px);
   box-shadow: var(--shadow-sm, 0 1px 3px rgba(0, 0, 0, 0.05));
   animation: plGuideFadeIn 0.25s ease-out;
@@ -6697,7 +6704,7 @@
   border: none;
   font-size: 18px;
   line-height: 1;
-  color: var(--muted, #888);
+  color: var(--muted);
   cursor: pointer;
   padding: 2px 6px;
   border-radius: var(--radius-sm, 4px);
@@ -6706,18 +6713,20 @@
 
 .pl-guide-dismiss-btn:hover {
   color: var(--text);
-  background: var(--wash, rgba(0, 0, 0, 0.05));
+  background: var(--wash);
 }
 
 .pl-guide-banner-body {
   font-size: 13.5px;
   line-height: 1.5;
-  color: var(--text-muted);
+  color: var(--text);
+  opacity: 0.92;
 }
 
 .pl-guide-banner-body strong {
   color: var(--text);
   font-weight: 600;
+  opacity: 1;
 }
 
 /* Modal styles */
@@ -6729,6 +6738,7 @@
   padding: 0;
   overflow: hidden;
   border-radius: var(--radius-lg, 12px);
+  background: var(--surface);
 }
 
 .pl-guide-modal-header {
@@ -6762,7 +6772,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: var(--muted, #888);
+  color: var(--muted);
   margin: 0 0 10px;
 }
 
@@ -6784,7 +6794,7 @@
 }
 
 .pl-guide-room-card {
-  background: var(--surface, rgba(0, 0, 0, 0.02));
+  background: var(--bg);
   border: 1px solid var(--border);
   border-radius: var(--radius-md, 8px);
   padding: 14px 16px;
@@ -6811,11 +6821,12 @@
   margin: 0;
   font-size: 13px;
   line-height: 1.45;
-  color: var(--text-muted);
+  color: var(--text);
+  opacity: 0.88;
 }
 
 .pl-guide-features-box {
-  background: var(--surface, rgba(0, 0, 0, 0.02));
+  background: var(--bg);
   border: 1px solid var(--border);
   border-radius: var(--radius-md, 8px);
   padding: 16px 18px;
@@ -6826,7 +6837,8 @@
   padding-left: 18px;
   font-size: 13.5px;
   line-height: 1.6;
-  color: var(--text-muted);
+  color: var(--text);
+  opacity: 0.92;
 }
 
 .pl-guide-bullets li {
@@ -6846,7 +6858,7 @@
   border-top: 1px solid var(--border);
   display: flex;
   justify-content: flex-end;
-  background: var(--card-bg, #fff);
+  background: var(--surface);
 }
 
 .pl-guide-primary-btn {
@@ -6863,6 +6875,98 @@
 
 .pl-guide-primary-btn:hover {
   opacity: 0.9;
+}
+
+/* Dark Mode Coach & Guide Overrides */
+[data-theme="dark"] .pl-guide-banner,
+:root:not([data-theme="light"]) .pl-guide-banner {
+  background: var(--surface);
+  border-color: var(--border);
+  border-left-color: var(--accent);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.28);
+}
+
+[data-theme="dark"] .pl-guide-banner-title,
+:root:not([data-theme="light"]) .pl-guide-banner-title {
+  color: var(--primary-dark, #ffffff);
+}
+
+[data-theme="dark"] .pl-guide-banner-body,
+:root:not([data-theme="light"]) .pl-guide-banner-body {
+  color: var(--text);
+  opacity: 0.95;
+}
+
+[data-theme="dark"] .pl-guide-banner-body strong,
+:root:not([data-theme="light"]) .pl-guide-banner-body strong {
+  color: var(--primary-dark, #ffffff);
+}
+
+[data-theme="dark"] .pl-guide-dismiss-btn,
+:root:not([data-theme="light"]) .pl-guide-dismiss-btn {
+  color: var(--secondary);
+}
+
+[data-theme="dark"] .pl-guide-dismiss-btn:hover,
+:root:not([data-theme="light"]) .pl-guide-dismiss-btn:hover {
+  color: var(--primary-dark, #ffffff);
+  background: var(--wash);
+}
+
+[data-theme="dark"] .pl-guide-modal,
+:root:not([data-theme="light"]) .pl-guide-modal {
+  background: var(--surface);
+  color: var(--text);
+}
+
+[data-theme="dark"] .pl-guide-title,
+:root:not([data-theme="light"]) .pl-guide-title {
+  color: var(--primary-dark, #ffffff);
+}
+
+[data-theme="dark"] .pl-guide-sec-title,
+:root:not([data-theme="light"]) .pl-guide-sec-title {
+  color: var(--secondary);
+}
+
+[data-theme="dark"] .pl-guide-room-card,
+:root:not([data-theme="light"]) .pl-guide-room-card {
+  background: var(--bg);
+  border-color: var(--border);
+}
+
+[data-theme="dark"] .pl-guide-room-card h4,
+:root:not([data-theme="light"]) .pl-guide-room-card h4 {
+  color: var(--primary-dark, #ffffff);
+}
+
+[data-theme="dark"] .pl-guide-room-card p,
+:root:not([data-theme="light"]) .pl-guide-room-card p {
+  color: var(--text);
+  opacity: 0.92;
+}
+
+[data-theme="dark"] .pl-guide-features-box,
+:root:not([data-theme="light"]) .pl-guide-features-box {
+  background: var(--bg);
+  border-color: var(--border);
+}
+
+[data-theme="dark"] .pl-guide-bullets,
+:root:not([data-theme="light"]) .pl-guide-bullets {
+  color: var(--text);
+  opacity: 0.95;
+}
+
+[data-theme="dark"] .pl-guide-bullets strong,
+:root:not([data-theme="light"]) .pl-guide-bullets strong {
+  color: var(--primary-dark, #ffffff);
+}
+
+[data-theme="dark"] .pl-guide-modal-footer,
+:root:not([data-theme="light"]) .pl-guide-modal-footer {
+  background: var(--surface);
+  border-top-color: var(--border);
 }
 
 .nav-footer-links {
