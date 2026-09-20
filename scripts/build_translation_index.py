@@ -129,6 +129,20 @@ SLUG_TOPIC_LABELS = {
     "rakoczi": "Rákóczi's War of Independence (1703–11)",
     "mariaterezia": "The 18th Century: Rebuilding",
     "reformkor": "The Reform Age",
+    "szabadsagharc": "The 1848–49 Revolution",
+    "kiegyezes": "The 1867 Compromise & Dualism",
+    "millennium": "The Millennium & Turn of the Century",
+    "elsovh": "World War I & the Revolutions",
+    "trianon": "The Treaty of Trianon (1920)",
+    "horthykorszak": "The Interwar Years",
+    "masodikvh": "World War II in Hungary",
+    "rakosikorszak": "The Communist Takeover & Rákosi Era",
+    "otvenhat": "The 1956 Revolution",
+    "kadarkorszak": "The Kádár Era & Goulash Communism",
+    "rendszervaltas": "The Regime Change: From Communism to Democracy",
+    "demokracia": "Modern Democratic Hungary & Euro-Atlantic Integration",
+    "nemzetijelkepek": "National Symbols",
+    "nemzetiunnepek": "National Holidays & Remembrance Days",
 }
 
 # Order matters: these are mutually exclusive by construction (slug requires
