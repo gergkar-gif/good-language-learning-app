@@ -12,12 +12,14 @@ of what is and isn't enforced.
 
     python scripts/validate-content.py            # all languages found
     python scripts/validate-content.py es         # one language
+    python scripts/validate-content.py --changed  # only files differing from origin/master
 
 Exits non-zero if anything fails, so it can gate a commit.
 """
 
 import glob
 import json
+import subprocess
 import sys
 from pathlib import Path
 
@@ -67,7 +69,15 @@ def load_schemas(lang_dir):
     return schemas
 
 
-def validate_language(lang):
+def changed_files(ref="origin/master"):
+    """Absolute paths of files that differ from `ref`, plus untracked ones."""
+    def git(*args):
+        out = subprocess.run(["git", *args], cwd=ROOT, capture_output=True, text=True, check=True).stdout
+        return {(ROOT / line).resolve() for line in out.splitlines() if line}
+    return git("diff", "--name-only", "--diff-filter=ACMR", ref) | git("ls-files", "--others", "--exclude-standard")
+
+
+def validate_language(lang, only=None):
     lang_dir = ROOT / "content" / lang
     if not (lang_dir / "schemas").exists():
         return 0, 0, []
@@ -86,6 +96,8 @@ def validate_language(lang):
         for path in sorted(glob.glob(str(lang_dir / pattern), recursive=True)):
             path = Path(path)
             if path.name in SKIP:
+                continue
+            if only is not None and path.resolve() not in only:
                 continue
             if skip_marker and skip_marker in path.stem:
                 skipped += 1
@@ -115,11 +127,16 @@ def validate_language(lang):
 
 
 def main():
-    langs = sys.argv[1:] or [p.name for p in (ROOT / "content").iterdir() if p.is_dir()]
+    args = sys.argv[1:]
+    only = None
+    if "--changed" in args:
+        args.remove("--changed")
+        only = changed_files()
+    langs = args or [p.name for p in (ROOT / "content").iterdir() if p.is_dir()]
 
     total_failed = 0
     for lang in sorted(langs):
-        passed, failed, failures = validate_language(lang)
+        passed, failed, failures = validate_language(lang, only)
         if passed == failed == 0:
             continue
 

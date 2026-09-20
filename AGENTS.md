@@ -1,0 +1,29 @@
+# Instructions for AI coding agents (Antigravity, Gemini, etc.)
+
+## Before every commit or push that touches `content/`
+
+Run the schema validator and fix every failure it reports:
+
+```
+python scripts/validate-content.py --changed
+```
+
+`--changed` checks only files that differ from `origin/master` (seconds).
+`python scripts/validate-content.py` checks everything (several minutes).
+
+Why: the "Sync generated content" GitHub workflow runs the same validator as
+its first step. If it fails, nothing is regenerated and the repo owner gets a
+failure email per push. A `pre-push` hook in `.githooks/` runs it for you
+(enable with `git config core.hooksPath .githooks`) — do not bypass it with
+`--no-verify`.
+
+## Content rules the validator enforces
+
+- Follow the schemas in `content/<lang>/schemas/`. Do not invent ids, fields
+  or shapes; copy an existing passing lesson as your template.
+- Lesson ids look like `lesson.b1.01.01`, levels are uppercase (`B1`),
+  vocabulary words use `lemma`, exercise files need a `lesson` field.
+- Do not commit empty stub lessons (`"sections": []`) or wire unfinished
+  lessons into `curriculum/units/*.json` — the app would show them as empty.
+- Do not hand-edit generated files (`curriculum.json`, `decks.json`,
+  `stories/manifest.json`, `indexes/*`); the workflow regenerates them.

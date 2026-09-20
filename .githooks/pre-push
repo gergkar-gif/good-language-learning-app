@@ -1,0 +1,18 @@
+#!/bin/sh
+# Blocks a push whose content files don't match their schemas — the same check
+# the "Sync generated content" GitHub workflow runs first, which otherwise
+# fails after the push and emails a failure. Only files that differ from
+# origin/master are checked, so this takes seconds, not minutes.
+#
+# Enable once per clone:  git config core.hooksPath .githooks
+# Bypass in an emergency: git push --no-verify
+
+PY=python
+command -v python >/dev/null 2>&1 || PY=python3
+
+echo "pre-push: validating changed content files..."
+if ! "$PY" scripts/validate-content.py --changed; then
+  echo ""
+  echo "pre-push: push blocked. Fix the schema errors above (or see AGENTS.md)."
+  exit 1
+fi
