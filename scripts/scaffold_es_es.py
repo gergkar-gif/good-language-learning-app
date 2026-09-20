@@ -179,11 +179,11 @@ def main():
             "grammar": "Estructuras impersonales con 'se'",
             "ccse_q": "España se constituye en un Estado social y democrático de Derecho.",
             "vocab": [
-                {"word": "constitución", "translation": "constitution", "pos": "noun", "gender": "f"},
-                {"word": "soberanía", "translation": "sovereignty", "pos": "noun", "gender": "f"},
-                {"word": "derecho", "translation": "law / right", "pos": "noun", "gender": "m"},
-                {"word": "democrático", "translation": "democratic", "pos": "adjective", "gender": "m"},
-                {"word": "monarquía", "translation": "monarchy", "pos": "noun", "gender": "f"}
+                {"lemma": "constitución", "translation": "constitution", "pos": "noun", "gender": "f"},
+                {"lemma": "soberanía", "translation": "sovereignty", "pos": "noun", "gender": "f"},
+                {"lemma": "derecho", "translation": "law / right", "pos": "noun", "gender": "m"},
+                {"lemma": "democrático", "translation": "democratic", "pos": "adjective", "gender": "m"},
+                {"lemma": "monarquía", "translation": "monarchy", "pos": "noun", "gender": "f"}
             ]
         },
         {
@@ -193,11 +193,11 @@ def main():
             "grammar": "Voz pasiva y oraciones subordinadas",
             "ccse_q": "La forma política del Estado español es la monarquía parlamentaria.",
             "vocab": [
-                {"word": "monarca", "translation": "monarch", "pos": "noun", "gender": "m"},
-                {"word": "parlamento", "translation": "parliament", "pos": "noun", "gender": "m"},
-                {"word": "jefe", "translation": "head / chief", "pos": "noun", "gender": "m"},
-                {"word": "sancionar", "translation": "to sanction / give royal assent", "pos": "verb"},
-                {"word": "reinar", "translation": "to reign", "pos": "verb"}
+                {"lemma": "monarca", "translation": "monarch", "pos": "noun", "gender": "m"},
+                {"lemma": "parlamento", "translation": "parliament", "pos": "noun", "gender": "m"},
+                {"lemma": "jefe", "translation": "head / chief", "pos": "noun", "gender": "m"},
+                {"lemma": "sancionar", "translation": "to sanction / give royal assent", "pos": "verb"},
+                {"lemma": "reinar", "translation": "to reign", "pos": "verb"}
             ]
         },
         {
@@ -207,11 +207,11 @@ def main():
             "grammar": "Uso del subjuntivo en expresiones de voluntad y mandato",
             "ccse_q": "La soberanía nacional reside en el pueblo español.",
             "vocab": [
-                {"word": "pueblo", "translation": "people / town", "pos": "noun", "gender": "m"},
-                {"word": "poder", "translation": "power", "pos": "noun", "gender": "m"},
-                {"word": "ciudadano", "translation": "citizen", "pos": "noun", "gender": "m"},
-                {"word": "voto", "translation": "vote", "pos": "noun", "gender": "m"},
-                {"word": "emanar", "translation": "to emanate / derive", "pos": "verb"}
+                {"lemma": "pueblo", "translation": "people / town", "pos": "noun", "gender": "m"},
+                {"lemma": "poder", "translation": "power", "pos": "noun", "gender": "m"},
+                {"lemma": "ciudadano", "translation": "citizen", "pos": "noun", "gender": "m"},
+                {"lemma": "voto", "translation": "vote", "pos": "noun", "gender": "m"},
+                {"lemma": "emanar", "translation": "to emanate / derive", "pos": "verb"}
             ]
         },
         {
@@ -221,11 +221,11 @@ def main():
             "grammar": "Concordancia de adjetivos gentilicios y geográficos",
             "ccse_q": "La capital del Estado es la villa de Madrid.",
             "vocab": [
-                {"word": "capital", "translation": "capital city", "pos": "noun", "gender": "f"},
-                {"word": "oficial", "translation": "official", "pos": "adjective"},
-                {"word": "castellano", "translation": "Castilian Spanish", "pos": "noun", "gender": "m"},
-                {"word": "bandera", "translation": "flag", "pos": "noun", "gender": "f"},
-                {"word": "escudo", "translation": "coat of arms", "pos": "noun", "gender": "m"}
+                {"lemma": "capital", "translation": "capital city", "pos": "noun", "gender": "f"},
+                {"lemma": "oficial", "translation": "official", "pos": "adjective"},
+                {"lemma": "castellano", "translation": "Castilian Spanish", "pos": "noun", "gender": "m"},
+                {"lemma": "bandera", "translation": "flag", "pos": "noun", "gender": "f"},
+                {"lemma": "escudo", "translation": "coat of arms", "pos": "noun", "gender": "m"}
             ]
         },
         {
@@ -235,11 +235,11 @@ def main():
             "grammar": "Conectores argumentativos y de causa",
             "ccse_q": "Los valores superiores del ordenamiento jurídico son la libertad, la justicia, la igualdad y el pluralismo político.",
             "vocab": [
-                {"word": "justicia", "translation": "justice", "pos": "noun", "gender": "f"},
-                {"word": "libertad", "translation": "freedom", "pos": "noun", "gender": "f"},
-                {"word": "igualdad", "translation": "equality", "pos": "noun", "gender": "f"},
-                {"word": "pluralismo", "translation": "pluralism", "pos": "noun", "gender": "m"},
-                {"word": "ordenamiento", "translation": "legal system / framework", "pos": "noun", "gender": "m"}
+                {"lemma": "justicia", "translation": "justice", "pos": "noun", "gender": "f"},
+                {"lemma": "libertad", "translation": "freedom", "pos": "noun", "gender": "f"},
+                {"lemma": "igualdad", "translation": "equality", "pos": "noun", "gender": "f"},
+                {"lemma": "pluralismo", "translation": "pluralism", "pos": "noun", "gender": "m"},
+                {"lemma": "ordenamiento", "translation": "legal system / framework", "pos": "noun", "gender": "m"}
             ]
         }
     ]
