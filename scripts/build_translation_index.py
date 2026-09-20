@@ -143,6 +143,8 @@ SLUG_TOPIC_LABELS = {
     "demokracia": "Modern Democratic Hungary & Euro-Atlantic Integration",
     "nemzetijelkepek": "National Symbols",
     "nemzetiunnepek": "National Holidays & Remembrance Days",
+    "alaptorveny": "The Constitution: Alaptörvény",
+    "allamszervezet": "Government & Institutions Today",
 }
 
 # Order matters: these are mutually exclusive by construction (slug requires
