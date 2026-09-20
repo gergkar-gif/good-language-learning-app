@@ -187,6 +187,23 @@ const Home = (function () {
         `;
     }
 
+    function onboardingWelcomeCard() {
+        return `
+            <section class="hm-continue hm-onboarding-card">
+                <div class="hm-onboarding-head">
+                    <span class="hm-eyebrow">Welcome to Parlour</span>
+                    <button class="hm-onboarding-dismiss-btn" data-dismiss-onboarding="1" title="Dismiss" aria-label="Dismiss">&times;</button>
+                </div>
+                <span class="hm-continue-title">Find your starting point</span>
+                <span class="hm-continue-sub">If you already know some of this language, take our quick 5-minute placement diagnostic to jump ahead. Starting fresh? Jump straight into Unit 1.</span>
+                <div class="hm-onboarding-actions">
+                    <button class="hm-onboarding-cta" data-open-diagnostic="1" type="button">Take placement test →</button>
+                    <button class="hm-onboarding-btn-secondary" data-start-unit-1="1" type="button">Start at Unit 1</button>
+                </div>
+            </section>
+        `;
+    }
+
     // A one-tap Quick Budget bar directly under the hero card — lets the
     // learner size and launch a finite study session (5, 10, 15, or 30 min)
     // without navigating away or opening extra modal sheets.
@@ -259,6 +276,34 @@ const Home = (function () {
             if (test && typeof LevelTest !== 'undefined') {
                 test.classList.add('is-loading');
                 LevelTest.open(test.getAttribute('data-open-test'));
+                return;
+            }
+
+            const diag = e.target.closest('[data-open-diagnostic]');
+            if (diag && typeof DiagnosticTest !== 'undefined') {
+                DiagnosticTest.open({
+                    onExit: () => render()
+                });
+                return;
+            }
+
+            const startUnit1 = e.target.closest('[data-start-unit-1]');
+            if (startUnit1) {
+                if (typeof DiagnosticTest !== 'undefined') DiagnosticTest.dismissOnboarding();
+                const next = (typeof LearnerPath !== 'undefined') ? LearnerPath.nextStep() : null;
+                if (next && next.kind === 'lesson' && typeof startLesson === 'function') {
+                    startUnit1.classList.add('is-loading');
+                    startLesson(next.lesson.id);
+                } else {
+                    render();
+                }
+                return;
+            }
+
+            const dismissOnboarding = e.target.closest('[data-dismiss-onboarding]');
+            if (dismissOnboarding) {
+                if (typeof DiagnosticTest !== 'undefined') DiagnosticTest.dismissOnboarding();
+                render();
                 return;
             }
 
@@ -457,8 +502,16 @@ const Home = (function () {
         const rec = await RecommendationEngine.recommend();
         _currentPrimaryRec = rec ? rec.primary : null;
 
+        const progress = (typeof getProgress === 'function') ? getProgress() : {};
+        const completedCount = Object.keys(progress).length;
+        const showOnboarding = completedCount === 0
+            && typeof DiagnosticTest !== 'undefined'
+            && !DiagnosticTest.hasTaken()
+            && !DiagnosticTest.isOnboardingDismissed();
+
         host.innerHTML = `
             ${courseBlock()}
+            ${showOnboarding ? onboardingWelcomeCard() : ''}
             ${rec.primary.kind === 'unit-nudge' ? practiceNudgeCard(rec.primary)
                 : rec.primary.kind === 'mini-game' ? miniGameCard(rec.primary)
                 : continueCard(rec.primary.step)}

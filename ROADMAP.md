@@ -17,7 +17,7 @@ Candidate next items are listed in Section 2 below.
 Unscoped enhancements and candidate features:
 
 - **Cloud Sync & Multi-Device Accounts**: Automatic background cloud sync (per learner-model step 7) preserving offline-first local storage without heavy frameworks.
-- **CEFR Level Diagnostic Test**: Diagnostic placement exam to assess learner proficiency upon initial app entry.
+- **Onboarding & New-User Experience**: Discuss onboarding, introducing Parlour philosophy/methodology, and initial setup processes for new users.
 - **Exam-Focused Writing & Speech Units**: Introduce new units that expressly teach writing, particular aspects of speech, and turns of phrase for exams.
 - **New App Sounds**: Audio effects and sound palette refresh.
 - **Cultural Track Recommendations**: Curated cultural recommendations integrated into the cultural track.

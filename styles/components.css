@@ -6070,3 +6070,460 @@
   border-color: var(--border, #2a415a);
 }
 
+/* ============================================
+   CEFR LEVEL DIAGNOSTIC TEST & ONBOARDING
+   ============================================ */
+
+/* Home Onboarding Welcome Card */
+.hm-onboarding-card {
+  border-left: 4px solid var(--accent);
+  background: var(--bg-card, var(--surface));
+  cursor: default;
+}
+
+.hm-onboarding-card:hover {
+  border-color: var(--accent);
+}
+
+.hm-onboarding-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.hm-onboarding-dismiss-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  line-height: 1;
+  color: var(--muted);
+  cursor: pointer;
+  padding: 0 4px;
+  border-radius: 4px;
+}
+
+.hm-onboarding-dismiss-btn:hover {
+  color: var(--text);
+}
+
+.hm-onboarding-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+
+.hm-onboarding-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  background: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius-sm, 4px);
+  cursor: pointer;
+  transition: opacity var(--dur-fast, 0.15s) ease;
+}
+
+.hm-onboarding-cta:hover {
+  opacity: 0.9;
+}
+
+.hm-onboarding-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text);
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm, 4px);
+  cursor: pointer;
+  transition: background var(--dur-fast, 0.15s) ease, border-color var(--dur-fast, 0.15s) ease;
+}
+
+.hm-onboarding-btn-secondary:hover {
+  background: var(--wash, rgba(0, 0, 0, 0.04));
+  border-color: var(--primary-mid, #888);
+}
+
+/* Curriculum Top Actions */
+.curriculum-top-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: var(--space-4, 16px);
+}
+
+.ud-diagnostic-row {
+  border-color: var(--border);
+}
+
+.ud-diagnostic-row:hover {
+  border-color: var(--accent);
+}
+
+/* Diagnostic Test Container */
+.diag-wrap {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 24px 16px 48px;
+}
+
+.diag-header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.diag-tier-status {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.diag-tier-pill {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 4px 10px;
+  background: var(--wash, #f0f0f0);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--text);
+}
+
+.diag-q-counter {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* Preface Card */
+.diag-preface-card,
+.diag-question-card,
+.diag-transition-card,
+.diag-debrief-card {
+  background: var(--bg-card, var(--surface));
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md, 8px);
+  padding: 28px 24px;
+}
+
+.diag-title {
+  font-family: var(--font-display);
+  font-size: 24px;
+  line-height: 1.25;
+  color: var(--text);
+  margin: 0 0 10px;
+}
+
+.diag-lead {
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--text);
+  margin: 0 0 20px;
+}
+
+/* Philosophy Callout */
+.diag-philosophy-callout {
+  background: var(--wash, #fbfbf9);
+  border-left: 3px solid var(--accent);
+  padding: 16px;
+  border-radius: 4px;
+  margin: 20px 0;
+}
+
+.diag-callout-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.diag-callout-text {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--text);
+  margin: 0;
+}
+
+.diag-preface-meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+  margin: 24px 0;
+  padding: 14px;
+  background: var(--wash, #f8f8f8);
+  border-radius: var(--radius-sm, 4px);
+  border: 1px solid var(--border);
+}
+
+.diag-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.diag-meta-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+}
+
+.diag-meta-val {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.diag-preface-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+
+.diag-btn-start {
+  flex: 1;
+  min-width: 200px;
+}
+
+.diag-btn-skip {
+  flex: 1;
+  min-width: 180px;
+}
+
+/* Testing View */
+.diag-tier-info {
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 14px;
+}
+
+.diag-tier-name {
+  font-family: var(--font-display);
+  font-size: 20px;
+  margin: 0 0 4px;
+  color: var(--text);
+}
+
+.diag-tier-sub {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0;
+}
+
+.diag-prompt-box {
+  margin: 20px 0;
+  padding: 20px;
+  background: var(--wash, #fcfcfb);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm, 4px);
+}
+
+.diag-sentence {
+  font-family: var(--font-display);
+  font-size: 20px;
+  line-height: 1.4;
+  color: var(--text);
+}
+
+.diag-blank {
+  color: var(--accent);
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.diag-options-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.diag-opt-btn {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  text-align: left;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm, 4px);
+  padding: 14px 18px;
+  font-size: 15px;
+  color: var(--text);
+  cursor: pointer;
+  transition: border-color var(--dur-fast, 0.15s) ease, background var(--dur-fast, 0.15s) ease;
+}
+
+.diag-opt-btn:hover {
+  border-color: var(--primary-mid, #888);
+  background: var(--wash, rgba(0, 0, 0, 0.02));
+}
+
+.diag-opt-btn.selected {
+  border-color: var(--accent);
+  background: var(--wash, rgba(0, 0, 0, 0.04));
+  font-weight: 600;
+}
+
+.diag-opt-letter {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+  flex-shrink: 0;
+}
+
+.diag-opt-btn.selected .diag-opt-letter {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.diag-opt-text {
+  flex: 1;
+}
+
+.diag-opt-check {
+  color: var(--accent);
+  font-weight: bold;
+}
+
+.diag-nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 24px;
+  gap: 12px;
+}
+
+/* Tier Transition View */
+.diag-transition-card {
+  text-align: center;
+  padding: 36px 24px;
+}
+
+.diag-transition-score {
+  font-size: 18px;
+  color: var(--accent);
+  margin: 16px 0;
+}
+
+/* Debrief View */
+.diag-verdict-banner {
+  text-align: center;
+  padding: 20px 16px;
+  background: var(--wash, #fbfbf9);
+  border-radius: var(--radius-sm, 4px);
+  border: 1px solid var(--border);
+  margin-bottom: 20px;
+}
+
+.diag-verdict-eyebrow {
+  display: block;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+.diag-verdict-title {
+  font-family: var(--font-display);
+  font-size: 28px;
+  color: var(--accent);
+  margin: 0 0 10px;
+}
+
+.diag-verdict-level-pill {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+}
+
+.diag-tiers-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.diag-tier-summary-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  background: var(--wash, #f8f8f8);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm, 4px);
+}
+
+.diag-tier-summary-item.passed {
+  border-left: 3px solid var(--accent);
+}
+
+.diag-tier-summary-item.developing {
+  border-left: 3px solid var(--border);
+}
+
+.diag-ts-left {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.diag-ts-desc {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.diag-ts-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.diag-ts-score {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.diag-ts-badge {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: var(--border);
+  color: var(--text);
+}
+
+.diag-tier-summary-item.passed .diag-ts-badge {
+  background: var(--accent);
+  color: #fff;
+}
+

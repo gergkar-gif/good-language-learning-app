@@ -9,6 +9,20 @@ needs re-reading before starting new work; it's reference only.
 
 ## Completed queue items
 
+55. ~~**CEFR Level Diagnostic Placement Test & Onboarding Ladder**~~ — **Done 2026-09-20.**
+    Designed, authored, validated, and shipped the multi-tier adaptive placement diagnostic test engine (`engine/diagnostic.js`) and content across Spanish and Hungarian:
+    - **Course-Agnostic Adaptive Ladder Architecture**:
+      - Deterministic multiple-choice ladder assessing core grammar, syntax, and communicative pragmatic comprehension across tiers (A1, A2, B1, and dynamically expandable to B2/C1 without engine rewrites).
+      - Passing threshold (66%) dynamically evaluates whether to advance to the next tier ladder or place immediately.
+    - **Pedagogical Communication-First Preface**:
+      - Prominently displays clear philosophical guidance: *"This is just a quick diagnostic test; mistakes are completely natural and possible, and you can retake it at any time... If you feel at all shaky on any fundamentals, we strongly encourage taking the lessons anyway. In Parlour, we do not learn a language merely to finish a course, but to actually be able to communicate with confidence."*
+    - **Auto Jump-Ahead & Non-Destructive Progression**:
+      - Accepting placement into e.g. A2 or B1 automatically marks preceding levels complete (`markLevelComplete(lvl)`), advancing the learner directly to the recommended unit while keeping all preceding lessons open for review.
+    - **New-User Onboarding & On-Demand Access**:
+      - Brand-new learners (0 completed lessons) receive a calm, unobtrusive welcome card on Home offering the choice between starting fresh at Unit 1 or taking the 5-minute placement test.
+      - Learners can take or retake the diagnostic test on demand from the top of the Learn/Curriculum tab.
+    - **Strict Constructivist Standard**: 100% SVG icons, zero emoji pictograms, fully responsive Parlour aesthetic. Authored Spanish (`content/es/tests/diagnostic-test.json`) and Hungarian (`content/hu/tests/diagnostic-test.json`) suites (18 questions each across 3 tiers). Precached via `sw.js` (cache version `v2026-09-20a`).
+
 54. ~~**CEFR Real-Exam Practice Mode & Multi-Modal End-of-Level Assessment (Queue Item 9)**~~ — **Done 2026-09-20.**
     Designed, implemented, validated, and shipped the multi-modal CEFR level assessment engine (`engine/leveltest.js`) and authentic end-of-level exam content across Spanish and Hungarian:
     - **Multi-Modal CEFR 3-Part Architecture**:

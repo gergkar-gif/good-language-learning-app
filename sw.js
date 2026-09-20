@@ -2,7 +2,7 @@
 // Parlour Service Worker (Offline Support & PWA App Shell)
 // ==========================================================
 
-const CACHE_VERSION = 'v2026-09-19c';
+const CACHE_VERSION = 'v2026-09-20a';
 const SHELL_CACHE_NAME = `parlour-shell-${CACHE_VERSION}`;
 const CONTENT_CACHE_NAME = `parlour-content-${CACHE_VERSION}`;
 
@@ -75,6 +75,7 @@ const PRECACHE_ASSETS = [
     'engine/learnerPath.js',
     'engine/recycle.js',
     'engine/leveltest.js',
+    'engine/diagnostic.js',
     'engine/learnerModel.js',
     'engine/recommend.js',
     'engine/recommendationEngine.js',
@@ -91,13 +92,15 @@ const PRECACHE_ASSETS = [
     'engine/init.js',
     'engine/bugreport.js',
 
-    // Core manifests
+    // Core manifests & tests
     'content/es/curriculum/curriculum.json',
     'content/hu/curriculum/curriculum.json',
     'content/es/stories/manifest.json',
     'content/hu/stories/manifest.json',
     'content/es/decks/decks.json',
-    'content/hu/decks/decks.json'
+    'content/hu/decks/decks.json',
+    'content/es/tests/diagnostic-test.json',
+    'content/hu/tests/diagnostic-test.json'
 ];
 
 // ----------------------------------------------------------

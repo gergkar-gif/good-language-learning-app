@@ -20,8 +20,9 @@ function teardownTab(tabId) {
         Reader.closeStory();
     } else if (tabId === 'study-plan-screen' && typeof StudyPlanRunner !== 'undefined') {
         StudyPlanRunner.teardown();
-    } else if (tabId === 'leveltest' && typeof LevelTest !== 'undefined' && typeof LevelTest.stop === 'function') {
-        LevelTest.stop();
+    } else if (tabId === 'leveltest') {
+        if (typeof LevelTest !== 'undefined' && typeof LevelTest.stop === 'function') LevelTest.stop();
+        if (typeof DiagnosticTest !== 'undefined' && typeof DiagnosticTest.stop === 'function') DiagnosticTest.stop();
     }
 }
 

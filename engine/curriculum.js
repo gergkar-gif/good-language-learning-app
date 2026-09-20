@@ -219,10 +219,16 @@ function levelListHtml() {
 
     // No heading here — the page header already says "Lessons".
     return `
-        <button class="ud-grammar-guide-row" data-open-global-grammar-guide="1">
-            <span class="ud-grammar-guide-title">Search Grammar Guide</span>
-            <span class="ud-grammar-guide-arrow" aria-hidden="true">→</span>
-        </button>
+        <div class="curriculum-top-actions">
+            <button class="ud-grammar-guide-row" data-open-global-grammar-guide="1">
+                <span class="ud-grammar-guide-title">Search Grammar Guide</span>
+                <span class="ud-grammar-guide-arrow" aria-hidden="true">→</span>
+            </button>
+            <button class="ud-grammar-guide-row ud-diagnostic-row" data-open-diagnostic="1">
+                <span class="ud-grammar-guide-title">Take Placement Diagnostic</span>
+                <span class="ud-grammar-guide-arrow" aria-hidden="true">→</span>
+            </button>
+        </div>
         <div class="level-list">${cards}</div>
     `;
 }
@@ -968,6 +974,15 @@ function attachCurriculumEvents(root) {
         if (test && typeof LevelTest !== 'undefined') {
             test.classList.add('is-loading');
             LevelTest.open(test.getAttribute('data-open-test'));
+            return;
+        }
+
+        const diag = e.target.closest('[data-open-diagnostic]');
+        if (diag && typeof DiagnosticTest !== 'undefined') {
+            DiagnosticTest.open({
+                onExit: () => renderCurriculum()
+            });
+            return;
         }
     });
 
