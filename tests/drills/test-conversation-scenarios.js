@@ -7,7 +7,9 @@ const path = require('path');
 
 console.log('\n--- Test 1: Content Schema & Seed Scenarios Verification ---');
 
-const esPath = path.resolve(__dirname, '../../content/es/conversation-scenarios.json');
+const esPath = fs.existsSync(path.resolve(__dirname, '../../content/es/conversation-scenarios.json'))
+    ? path.resolve(__dirname, '../../content/es/conversation-scenarios.json')
+    : path.resolve(__dirname, '../../content/es-latam/conversation-scenarios.json');
 const huPath = path.resolve(__dirname, '../../content/hu/conversation-scenarios.json');
 
 assert(fs.existsSync(esPath), 'Spanish conversation scenarios file must exist');
@@ -29,15 +31,29 @@ for (const sc of [...esData.scenarios, ...huData.scenarios]) {
     assert(sc.roleplay && sc.roleplay.learnerRole && sc.roleplay.interlocutorRole, `Scenario ${sc.id} missing roleplay definitions`);
     assert(Array.isArray(sc.turns) && sc.turns.length >= 2, `Scenario ${sc.id} must have at least 2 turns`);
 
+    // A1 and A2 scenarios should provide English descriptions for scaffolding
+    if (sc.cefrLevel === 'A1' || sc.cefrLevel === 'A2') {
+        assert(sc.titleEn, `A1/A2 Scenario ${sc.id} missing titleEn`);
+        assert(sc.situationEn, `A1/A2 Scenario ${sc.id} missing situationEn`);
+        assert(sc.roleplay.learnerRoleEn, `A1/A2 Scenario ${sc.id} missing roleplay.learnerRoleEn`);
+        assert(sc.roleplay.interlocutorRoleEn, `A1/A2 Scenario ${sc.id} missing roleplay.interlocutorRoleEn`);
+    }
+
     sc.turns.forEach((t, idx) => {
         assert(t.turnIndex === idx + 1, `Scenario ${sc.id} turn ${idx} index mismatch`);
         assert(t.interlocutorPrompt, `Scenario ${sc.id} turn ${idx} missing interlocutorPrompt`);
         assert(t.learnerCue, `Scenario ${sc.id} turn ${idx} missing learnerCue`);
+        if (sc.cefrLevel === 'A1' || sc.cefrLevel === 'A2') {
+            assert(t.learnerCueEn, `Scenario ${sc.id} turn ${idx} missing learnerCueEn`);
+        }
+        if (t.vocabularyHints) {
+            assert(Array.isArray(t.vocabularyHints), `Scenario ${sc.id} turn ${idx} vocabularyHints must be array`);
+        }
         assert(t.validationCriteria, `Scenario ${sc.id} turn ${idx} missing validationCriteria`);
         assert(typeof t.validationCriteria.minWords === 'number', `Scenario ${sc.id} turn ${idx} missing minWords`);
     });
 }
-console.log(`[PASS] Verified ${esData.scenarios.length} Spanish and ${huData.scenarios.length} Hungarian conversation scenarios.`);
+console.log(`[PASS] Verified ${esData.scenarios.length} Spanish and ${huData.scenarios.length} Hungarian conversation scenarios with A1/A2 English scaffolding.`);
 
 console.log('\n--- Test 2: SpeakingStudio Tab & Lifecycle ---');
 

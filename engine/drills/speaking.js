@@ -35,7 +35,7 @@ const SpeakingDriller = (function () {
     const TIMER_PRESETS = [1, 2, 3, 5];
     const CEFR_ORDER = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
     const TRACK = { CORE: 'core' };
-    const TRACK_LABELS = { latam: 'Latin America', citizenship: 'Citizenship' };
+    const TRACK_LABELS = { latam: 'Latin America', citizenship: 'Citizenship', cultura: 'Cultura y Ciudadanía' };
 
     let _phase = PHASE.SETTINGS;
     let _pairs = null;
@@ -101,6 +101,7 @@ const SpeakingDriller = (function () {
     let _scenarioAudioUrl = null;
     let _scenarioAssessmentResult = null;
     let _scenarioIsRecording = false;
+    let _returnTab = null;
 
     function _esc(text) {
         if (typeof UI !== 'undefined' && UI.escape) return UI.escape(text);
@@ -1486,9 +1487,10 @@ const SpeakingDriller = (function () {
     // ============================================
 
     /** Return the English version of a scenario/turn field when CEFR level is A1 or A2 and the *En field exists; otherwise return the original. */
-    function _scenarioText(obj, field) {
+    function _scenarioText(obj, field, scenarioContext) {
         if (!obj) return '';
-        const level = (_selectedScenario && _selectedScenario.cefrLevel) || '';
+        const sc = scenarioContext || _selectedScenario;
+        const level = (sc && sc.cefrLevel) || '';
         if ((level === 'A1' || level === 'A2') && obj[field + 'En']) {
             return obj[field + 'En'];
         }
@@ -1544,11 +1546,11 @@ const SpeakingDriller = (function () {
                     <span class="sp-level-pill">${_esc(s.cefrLevel || 'A1')}</span>
                     <span class="sp-turns-pill">${(s.turns || []).length} turns</span>
                 </div>
-                <h3 class="wk-card-title">${_esc(s.title || 'Scenario')}</h3>
+                <h3 class="wk-card-title">${_esc(_scenarioText(s, 'title', s) || 'Scenario')}</h3>
                 <p class="sp-scenario-roleplay-tag">
-                    <strong>Roleplay:</strong> ${_esc(s.roleplay ? s.roleplay.learnerRole : 'Learner')} ↔ ${_esc(s.roleplay ? s.roleplay.interlocutorRole : 'Partner')}
+                    <strong>Roleplay:</strong> ${_esc(s.roleplay ? _scenarioText(s.roleplay, 'learnerRole', s) : 'Learner')} ↔ ${_esc(s.roleplay ? _scenarioText(s.roleplay, 'interlocutorRole', s) : 'Partner')}
                 </p>
-                <p class="wk-card-sub">${_esc(s.situation || '')}</p>
+                <p class="wk-card-sub">${_esc(_scenarioText(s, 'situation', s) || '')}</p>
                 ${s.targetCompetency ? `<div class="sp-scenario-comp-tag"><svg class="sp-icon-svg" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg> <span>${_esc(s.targetCompetency)}</span></div>` : ''}
             </div>
         `).join('') : `
@@ -1600,22 +1602,22 @@ const SpeakingDriller = (function () {
         body.innerHTML = `
             <div class="sp-driller-wrap sp-scenario-briefing-wrap">
                 <div class="sp-prod-header">
-                    <button type="button" class="sp-btn-link" data-action="back-scenarios">← Choose another scenario</button>
+                    <button type="button" class="sp-btn-link" data-action="back-scenarios">← ${_returnTab === 'learn' ? 'Back to Lesson Unit' : _returnTab === 'home' ? 'Back to Home' : 'Choose another scenario'}</button>
                     <span class="sp-level-pill">${_esc(s.cefrLevel || 'A1')}</span>
                 </div>
 
                 <div class="sp-briefing-card">
-                    <h2 class="sp-briefing-title">${_esc(s.title || 'Scenario')}</h2>
-                    <p class="sp-briefing-situation">${_esc(s.situation || '')}</p>
+                    <h2 class="sp-briefing-title">${_esc(_scenarioText(s, 'title', s) || 'Scenario')}</h2>
+                    <p class="sp-briefing-situation">${_esc(_scenarioText(s, 'situation', s) || '')}</p>
 
                     <div class="sp-briefing-roles-box">
                         <div class="sp-role-row">
                             <span class="sp-role-badge learner">Your Role</span>
-                            <strong>${_esc(s.roleplay ? s.roleplay.learnerRole : 'Learner')}</strong>
+                            <strong>${_esc(s.roleplay ? _scenarioText(s.roleplay, 'learnerRole', s) : 'Learner')}</strong>
                         </div>
                         <div class="sp-role-row">
                             <span class="sp-role-badge partner">Partner</span>
-                            <strong>${_esc(s.roleplay ? s.roleplay.interlocutorRole : 'Partner')}</strong>
+                            <strong>${_esc(s.roleplay ? _scenarioText(s.roleplay, 'interlocutorRole', s) : 'Partner')}</strong>
                         </div>
                     </div>
 
@@ -1623,7 +1625,7 @@ const SpeakingDriller = (function () {
                         <h4 style="margin: 0 0 8px; font-size: 0.9rem; color: var(--muted); text-transform: uppercase;">Conversation Outline (${turnsCount} Turns)</h4>
                         <ol style="margin: 0; padding-left: 20px; font-size: 0.9rem; line-height: 1.5;">
                             ${(s.turns || []).map(t => `
-                                <li style="margin-bottom: 6px;">${_esc(t.learnerCue || '')}</li>
+                                <li style="margin-bottom: 6px;">${_esc(_scenarioText(t, 'learnerCue', s) || '')}</li>
                             `).join('')}
                         </ol>
                     </div>
@@ -1640,6 +1642,12 @@ const SpeakingDriller = (function () {
         const backBtn = body.querySelector('[data-action="back-scenarios"]');
         if (backBtn) {
             backBtn.addEventListener('click', () => {
+                if (_returnTab && typeof showTab === 'function') {
+                    const tabBtn = document.querySelector(`.nav button[data-tab="${_returnTab}"]`);
+                    showTab(_returnTab, tabBtn);
+                    _returnTab = null;
+                    return;
+                }
                 _scenarioPhase = SCENARIO_PHASE.SELECT;
                 _selectedScenario = null;
                 _renderActiveTab();
@@ -1834,7 +1842,7 @@ const SpeakingDriller = (function () {
                 </div>
 
                 <div class="sp-scenario-banner" style="margin-bottom: 16px; padding: 8px 12px; background: var(--bg-card, #f8f9fa); border-radius: var(--radius-sm, 6px); display: flex; justify-content: space-between; align-items: center;">
-                    <span style="font-weight: 600; font-size: 0.95rem;">${_esc(s.title || 'Conversation')}</span>
+                    <span style="font-weight: 600; font-size: 0.95rem;">${_esc(_scenarioText(s, 'title', s) || 'Conversation')}</span>
                     <span class="sp-level-pill">${_esc(s.cefrLevel || 'A1')}</span>
                 </div>
 
@@ -1843,16 +1851,16 @@ const SpeakingDriller = (function () {
                         <div class="sp-chat-turn-group">
                             <div class="sp-chat-bubble partner">
                                 <div class="sp-chat-header">
-                                    <strong>${_esc(s.roleplay ? s.roleplay.interlocutorRole : 'Partner')}</strong>
+                                    <strong>${_esc(s.roleplay ? _scenarioText(s.roleplay, 'interlocutorRole', s) : 'Partner')}</strong>
                                     <button type="button" class="sp-inline-replay" data-replay-text="${_esc(t.interlocutorPrompt)}" title="Listen again" aria-label="Listen again">
                                         <svg class="sp-icon-svg" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
                                     </button>
                                 </div>
-                                <div class="sp-chat-body">${_esc(t.interlocutorPrompt)}</div>
+                                <div class="sp-chat-body">${_clickableText(t.interlocutorPrompt)}</div>
                             </div>
                             <div class="sp-chat-bubble learner">
                                 <div class="sp-chat-header">
-                                    <strong>You</strong>
+                                    <strong>You (${_esc(s.roleplay ? _scenarioText(s.roleplay, 'learnerRole', s) : 'Learner')})</strong>
                                     ${t.validation && t.validation.valid ? `<span class="sp-chat-check"><svg class="sp-icon-svg" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>` : ''}
                                 </div>
                                 <div class="sp-chat-body">${_esc(t.learnerTranscript)}</div>
@@ -1868,14 +1876,14 @@ const SpeakingDriller = (function () {
                     <div class="sp-chat-turn-group active">
                         <div class="sp-chat-bubble partner current">
                             <div class="sp-chat-header">
-                                <strong>${_esc(s.roleplay ? s.roleplay.interlocutorRole : 'Partner')}</strong>
+                                <strong>${_esc(s.roleplay ? _scenarioText(s.roleplay, 'interlocutorRole', s) : 'Partner')}</strong>
                                 <button type="button" class="sp-inline-replay" data-action="replay-active-tts" title="Listen again">
                                     <svg class="sp-icon-svg" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
                                     <span>Listen</span>
                                 </button>
                             </div>
                             <div class="sp-chat-body" style="font-size: 1.05rem; font-weight: 500;">
-                                ${_esc(currentTurn.interlocutorPrompt || '')}
+                                ${_clickableText(currentTurn.interlocutorPrompt || '')}
                             </div>
                             ${currentTurn.interlocutorTranslation ? `
                                 <details class="sp-chat-trans-toggle" style="margin-top: 6px; font-size: 0.85rem; color: var(--muted);">
@@ -1890,16 +1898,16 @@ const SpeakingDriller = (function () {
                 <div class="sp-scenario-action-dock" style="margin-top: 20px;">
                     <div class="sp-turn-objective-card" style="padding: 12px 16px; background: var(--surface, #fff); border: 1px solid var(--border, #ddd); border-radius: var(--radius-md, 8px); margin-bottom: 16px;">
                         <div style="font-size: 0.8rem; text-transform: uppercase; font-weight: 700; color: var(--accent); margin-bottom: 4px;">Your Goal</div>
-                        <div style="font-size: 0.95rem; font-weight: 600; color: var(--text);">${_esc(currentTurn.learnerCue || '')}</div>
+                        <div style="font-size: 0.95rem; font-weight: 600; color: var(--text);">${_esc(_scenarioText(currentTurn, 'learnerCue', s) || '')}</div>
 
-                        ${(currentTurn.suggestedPhrases && currentTurn.suggestedPhrases.length) ? `
+                        ${((currentTurn.vocabularyHints && currentTurn.vocabularyHints.length) || (currentTurn.suggestedPhrases && currentTurn.suggestedPhrases.length)) ? `
                             <details class="sp-phrases-drawer" style="margin-top: 8px; font-size: 0.85rem;">
                                 <summary class="sp-phrases-summary">
                                     <svg class="sp-icon-svg" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
-                                    <span>Suggested phrasing &amp; vocabulary</span>
+                                    <span>Useful vocabulary</span>
                                 </summary>
                                 <ul style="margin: 6px 0 0; padding-left: 18px; color: var(--text);">
-                                    ${currentTurn.suggestedPhrases.map(ph => `<li>${_esc(ph)}</li>`).join('')}
+                                    ${(currentTurn.vocabularyHints || currentTurn.suggestedPhrases).map(item => `<li>${_esc(item)}</li>`).join('')}
                                 </ul>
                             </details>
                         ` : ''}
@@ -2229,15 +2237,15 @@ const SpeakingDriller = (function () {
                             ${_completedTurns.map((t, idx) => `
                                 <div class="sp-turn-replay-block" style="margin-bottom: 16px; padding: 12px; border: 1px solid var(--border-light, #eee); border-radius: var(--radius-md, 8px);">
                                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
-                                        <strong style="font-size: 0.85rem; color: var(--muted);">${_esc(sc.roleplay ? sc.roleplay.interlocutorRole : 'Partner')}</strong>
+                                        <strong style="font-size: 0.85rem; color: var(--muted);">${_esc(sc.roleplay ? _scenarioText(sc.roleplay, 'interlocutorRole', sc) : 'Partner')}</strong>
                                         <button type="button" class="sp-play-audio-btn" data-replay-tts-text="${_esc(t.interlocutorPrompt)}" style="background: none; border: none; cursor: pointer; display: inline-flex; align-items: center; color: var(--muted); padding: 2px 4px;" title="Listen again" aria-label="Listen again">
                                             <svg class="sp-icon-svg" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
                                         </button>
                                     </div>
-                                    <p style="margin: 0 0 10px; font-size: 0.95rem;">${_esc(t.interlocutorPrompt)}</p>
+                                    <p style="margin: 0 0 10px; font-size: 0.95rem;">${_clickableText(t.interlocutorPrompt)}</p>
 
                                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; padding-top: 8px; border-top: 1px dashed var(--border-light, #eee);">
-                                        <strong style="font-size: 0.85rem; color: var(--accent);">You (${_esc(sc.roleplay ? sc.roleplay.learnerRole : 'Learner')})</strong>
+                                        <strong style="font-size: 0.85rem; color: var(--accent);">You (${_esc(sc.roleplay ? _scenarioText(sc.roleplay, 'learnerRole', sc) : 'Learner')})</strong>
                                     </div>
                                     <p style="margin: 0 0 8px; font-size: 0.95rem; font-style: italic;">"${_esc(t.learnerTranscript)}"</p>
                                     ${t.audioUrl ? `
@@ -2252,7 +2260,7 @@ const SpeakingDriller = (function () {
 
                     <div class="vspeed-results-actions" style="margin-top: 24px; display: flex; gap: 12px; flex-wrap: wrap;">
                         <button type="button" class="wk-primary-btn" data-action="restart-scenario">Practice Again</button>
-                        <button type="button" class="wk-secondary-btn" data-action="scenarios-list">Choose Another Scenario</button>
+                        <button type="button" class="wk-secondary-btn" data-action="scenarios-list">${_returnTab === 'learn' ? 'Back to Lesson Unit' : _returnTab === 'home' ? 'Back to Home' : 'Choose Another Scenario'}</button>
                     </div>
                     <div id="sp-scenario-next-action-slot" style="margin-top: 16px;"></div>
                 </div>
@@ -2264,6 +2272,12 @@ const SpeakingDriller = (function () {
         const backBtn = body.querySelector('[data-action="scenarios-list"]');
         if (backBtn) {
             backBtn.addEventListener('click', () => {
+                if (_returnTab && typeof showTab === 'function') {
+                    const tabBtn = document.querySelector(`.nav button[data-tab="${_returnTab}"]`);
+                    showTab(_returnTab, tabBtn);
+                    _returnTab = null;
+                    return;
+                }
                 _scenarioPhase = SCENARIO_PHASE.SELECT;
                 _selectedScenario = null;
                 _scenarioAssessmentResult = null;
@@ -2323,6 +2337,7 @@ const SpeakingDriller = (function () {
     async function render(container, options = {}) {
         _container = container;
         _onExit = (options && options.onExit) || null;
+        _returnTab = (options && options.returnTab) || null;
         await _load();
         await _loadProdPrompts();
         await _loadScenarios();
