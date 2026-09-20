@@ -156,4 +156,11 @@ assert.deepStrictEqual(getPrecedingLevels('B1'), ['A1', 'A2']);
 assert.deepStrictEqual(getPrecedingLevels('B2'), ['A1', 'A2', 'B1']);
 console.log('[PASS] Preceding levels for jump-ahead calculated accurately');
 
+// 6. Language Selection Prior to Diagnostic
+const homeSource = fs.readFileSync(path.join(__dirname, '../../engine/home.js'), 'utf8');
+assert(homeSource.includes('data-switch-lang'), 'Home onboarding card must allow switching target language');
+assert(homeSource.includes('hm-onboarding-lang-picker'), 'Home onboarding card must render language choice chips');
+assert(engineSource.includes('data-diag-lang'), 'Diagnostic preface must render language switcher');
+console.log('[PASS] Language selection verified on Home Onboarding Card and Diagnostic Preface');
+
 console.log('\nAll CEFR Diagnostic Test Suite checks PASSED successfully!');

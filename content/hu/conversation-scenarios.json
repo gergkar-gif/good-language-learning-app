@@ -5,24 +5,46 @@
       "id": "hu-a1-sc01-kavezo",
       "cefrLevel": "A1",
       "title": "A Kávézóban",
+      "titleEn": "In the Café",
       "situation": "Egy budapesti kávézóban vagy. Rendelni szeretnél egy kávét és süteményt, majd fizetni.",
+      "situationEn": "You are in a café in Budapest. You would like to order a coffee and a pastry, and then pay.",
       "roleplay": {
         "interlocutorRole": "Pincér / Felszolgáló",
+        "interlocutorRoleEn": "Waiter / Server",
         "learnerRole": "Vendég",
+        "learnerRoleEn": "Guest / Customer",
         "interlocutorVoice": "hu-HU"
       },
       "targetCompetency": "I can order food and drink in a café and ask for the bill in Hungarian",
-      "targetSkills": ["ordering_food", "polite_requests", "paying_bill"],
+      "targetSkills": [
+        "ordering_food",
+        "polite_requests",
+        "paying_bill"
+      ],
       "turns": [
         {
           "turnIndex": 1,
           "interlocutorPrompt": "Jó napot kívánok! Mit hozhatok Önnek?",
           "interlocutorTranslation": "Good day! What can I bring you?",
           "learnerCue": "Köszönj udvariasan, és kérj egy tejeskávét (cappuccinót) és egy croissant-t.",
-          "suggestedPhrases": ["Jó napot kívánok! Egy tejeskávét és egy croissant-t kérek szépen."],
+          "learnerCueEn": "Greet politely, and ask for a white coffee (cappuccino) and a croissant.",
+          "vocabularyHints": [
+            "egy tejeskávét — a white coffee (accusative)",
+            "egy croissant-t — a croissant (accusative)",
+            "kérek szépen — I'd like, please",
+            "jó napot kívánok — good day (formal greeting)"
+          ],
           "validationCriteria": {
             "minWords": 3,
-            "targetKeywords": ["kávé", "tejeskávé", "cappuccino", "croissant", "kérek", "szépen", "jó napot"]
+            "targetKeywords": [
+              "kávé",
+              "tejeskávé",
+              "cappuccino",
+              "croissant",
+              "kérek",
+              "szépen",
+              "jó napot"
+            ]
           }
         },
         {
@@ -30,10 +52,25 @@
           "interlocutorPrompt": "Rendben van. Cukorral vagy cukor nélkül kéri a kávét? És hideg vagy meleg tejjel?",
           "interlocutorTranslation": "Alright. Do you take your coffee with sugar or without? And with cold or warm milk?",
           "learnerCue": "Mondd el, hogy cukor nélkül (vagy kevés cukorral) és meleg tejjel kéred.",
-          "suggestedPhrases": ["Cukor nélkül, de meleg tejjel kérem, köszönöm."],
+          "learnerCueEn": "Say that you would like it without sugar (or with a little sugar) and with warm milk.",
+          "vocabularyHints": [
+            "cukor nélkül — without sugar",
+            "kevés cukorral — with a little sugar",
+            "meleg tejjel — with warm milk",
+            "kérem — I would like it / I ask for it"
+          ],
           "validationCriteria": {
             "minWords": 2,
-            "targetKeywords": ["cukor", "nélkül", "cukorral", "meleg", "hideg", "tejjel", "kérem", "köszönöm"]
+            "targetKeywords": [
+              "cukor",
+              "nélkül",
+              "cukorral",
+              "meleg",
+              "hideg",
+              "tejjel",
+              "kérem",
+              "köszönöm"
+            ]
           }
         },
         {
@@ -41,10 +78,24 @@
           "interlocutorPrompt": "Parancsoljon, itt van a tejeskávé és a sütemény. Kér még valamit?",
           "interlocutorTranslation": "Here you are, here is the white coffee and the pastry. Would you like anything else?",
           "learnerCue": "Köszönd meg, mondd, hogy nem kérsz mást, és kérd a számlát (kártyával szeretnél fizetni).",
-          "suggestedPhrases": ["Köszönöm szépen, mást nem kérek. A számlát kérem, kártyával fizetnék."],
+          "learnerCueEn": "Thank them, say that you don't want anything else, and ask for the bill (you'd like to pay by card).",
+          "vocabularyHints": [
+            "köszönöm szépen — thank you very much",
+            "mást nem kérek — I don't want anything else",
+            "a számlát kérem — the bill, please",
+            "kártyával fizetnék — I would like to pay by card"
+          ],
           "validationCriteria": {
             "minWords": 3,
-            "targetKeywords": ["köszönöm", "számlát", "fizetni", "fizetnék", "kártyával", "készpénzzel", "nem"]
+            "targetKeywords": [
+              "köszönöm",
+              "számlát",
+              "fizetni",
+              "fizetnék",
+              "kártyával",
+              "készpénzzel",
+              "nem"
+            ]
           }
         }
       ]
@@ -53,24 +104,48 @@
       "id": "hu-a2-sc01-palyaudvar",
       "cefrLevel": "A2",
       "title": "A Pályaudvaron",
+      "titleEn": "At the Railway Station",
       "situation": "A budapesti Déli pályaudvaron vagy a jegypénztárnál, és Siófokra (Balaton) szeretnél vonatjegyet venni.",
+      "situationEn": "You are at the ticket counter in Budapest Déli railway station, and you would like to buy a train ticket to Siófok (Lake Balaton).",
       "roleplay": {
         "interlocutorRole": "Jegypénztáros",
+        "interlocutorRoleEn": "Ticket agent / Cashier",
         "learnerRole": "Utas",
+        "learnerRoleEn": "Passenger",
         "interlocutorVoice": "hu-HU"
       },
       "targetCompetency": "I can buy a train ticket, enquire about schedule and departure tracks",
-      "targetSkills": ["travel_arrangements", "asking_timetable", "numbers_and_times"],
+      "targetSkills": [
+        "travel_arrangements",
+        "asking_timetable",
+        "numbers_and_times"
+      ],
       "turns": [
         {
           "turnIndex": 1,
           "interlocutorPrompt": "Tessék, parancsoljon! Hova kéri a jegyet?",
           "interlocutorTranslation": "Yes please! Where would you like the ticket to?",
           "learnerCue": "Kérj egy retúr (oda-vissza) jegyet Siófokra a mai napra.",
-          "suggestedPhrases": ["Jó napot! Egy oda-vissza jegyet kérek Siófokra mára, kérem."],
+          "learnerCueEn": "Ask for a return (round-trip) ticket to Siófok for today.",
+          "vocabularyHints": [
+            "egy oda-vissza jegyet — a return ticket (accusative)",
+            "egy retúrjegyet — a return ticket (accusative)",
+            "Siófokra — to Siófok",
+            "mára — for today",
+            "kérek — I'd like / I ask for"
+          ],
           "validationCriteria": {
             "minWords": 4,
-            "targetKeywords": ["Siófok", "Siófokra", "jegy", "jegyet", "oda-vissza", "retúr", "kérek", "mára"]
+            "targetKeywords": [
+              "Siófok",
+              "Siófokra",
+              "jegy",
+              "jegyet",
+              "oda-vissza",
+              "retúr",
+              "kérek",
+              "mára"
+            ]
           }
         },
         {
@@ -78,10 +153,25 @@
           "interlocutorPrompt": "Van egy InterCity tíz óra húszkor és egy személyvonat tizenegykor. Az InterCityre helyjegy is kell. Melyikkel szeretne utazni?",
           "interlocutorTranslation": "There is an InterCity at 10:20 and a local train at 11:00. The InterCity also requires a seat reservation. Which one would you like to travel on?",
           "learnerCue": "Válaszd a tíz óra húszas járatot, és kérdezd meg, mikor érkezik Siófokra.",
-          "suggestedPhrases": ["A tíz óra húszas InterCityvel szeretnék utazni. Mikor érkezik meg Siófokra?"],
+          "learnerCueEn": "Choose the 10:20 service, and ask when it arrives in Siófok.",
+          "vocabularyHints": [
+            "a tíz óra húszas — the ten twenty (train)",
+            "InterCityvel — with InterCity",
+            "szeretnék utazni — I would like to travel",
+            "mikor érkezik meg — when does it arrive",
+            "Siófokra — to Siófok"
+          ],
           "validationCriteria": {
             "minWords": 3,
-            "targetKeywords": ["tíz", "húsz", "InterCity", "mikor", "érkezik", "menetidő", "szeretnék"]
+            "targetKeywords": [
+              "tíz",
+              "húsz",
+              "InterCity",
+              "mikor",
+              "érkezik",
+              "menetidő",
+              "szeretnék"
+            ]
           }
         },
         {
@@ -89,10 +179,24 @@
           "interlocutorPrompt": "Pontosan tizenegy óra harminckor érkezik. Összesen háromezer-ötszáz forint lesz. Készpénz vagy bankkártya?",
           "interlocutorTranslation": "It arrives at exactly 11:30. That will be 3,500 forints in total. Cash or bank card?",
           "learnerCue": "Mondd, hogy kártyával fizetsz, és kérdezd meg, hányas vágányról indul a vonat.",
-          "suggestedPhrases": ["Bankkártyával fizetek. Meg tudja mondani, melyik vágányról indul a vonat?"],
+          "learnerCueEn": "Say that you are paying by card, and ask which track the train departs from.",
+          "vocabularyHints": [
+            "bankkártyával fizetek — I am paying with bank card",
+            "meg tudja mondani — can you tell me",
+            "melyik vágányról — from which track",
+            "indul a vonat — does the train depart"
+          ],
           "validationCriteria": {
             "minWords": 3,
-            "targetKeywords": ["kártya", "bankkártya", "készpénz", "vágány", "vágányról", "indul", "köszönöm"]
+            "targetKeywords": [
+              "kártya",
+              "bankkártya",
+              "készpénz",
+              "vágány",
+              "vágányról",
+              "indul",
+              "köszönöm"
+            ]
           }
         }
       ]

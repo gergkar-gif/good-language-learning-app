@@ -1485,6 +1485,23 @@ const SpeakingDriller = (function () {
     // PART 3: CONVERSATION SCENARIOS (INTERACTIVE ROLEPLAYS)
     // ============================================
 
+    /** Return the English version of a scenario/turn field when CEFR level is A1 or A2 and the *En field exists; otherwise return the original. */
+    function _scenarioText(obj, field) {
+        if (!obj) return '';
+        const level = (_selectedScenario && _selectedScenario.cefrLevel) || '';
+        if ((level === 'A1' || level === 'A2') && obj[field + 'En']) {
+            return obj[field + 'En'];
+        }
+        return obj[field] || '';
+    }
+
+    /** Wrap target-language text in tappable word spans for dictionary lookup (if Reader is available). */
+    function _clickableText(text) {
+        if (!text) return '';
+        if (typeof Reader !== 'undefined' && Reader.makeClickable) return Reader.makeClickable(text);
+        return _esc(text);
+    }
+
     function _renderConversationScenarios(body) {
         if (_scenarioPhase === SCENARIO_PHASE.SELECT) {
             _renderScenarioSelect(body);

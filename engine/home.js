@@ -188,6 +188,16 @@ const Home = (function () {
     }
 
     function onboardingWelcomeCard() {
+        const currentCode = Lang.code();
+        const chips = Lang.available().map(code => {
+            const isSelected = code === currentCode;
+            return `
+                <button type="button" class="hm-lang-choice-btn ${isSelected ? 'is-active' : ''}" data-switch-lang="${esc(code)}" ${isSelected ? 'aria-pressed="true"' : 'aria-pressed="false"'}>
+                    ${esc(Lang.nameFor(code))}
+                </button>
+            `;
+        }).join('');
+
         return `
             <section class="hm-continue hm-onboarding-card">
                 <div class="hm-onboarding-head">
@@ -195,7 +205,15 @@ const Home = (function () {
                     <button class="hm-onboarding-dismiss-btn" data-dismiss-onboarding="1" title="Dismiss" aria-label="Dismiss">&times;</button>
                 </div>
                 <span class="hm-continue-title">Find your starting point</span>
-                <span class="hm-continue-sub">If you already know some of this language, take our quick 5-minute placement diagnostic to jump ahead. Starting fresh? Jump straight into Unit 1.</span>
+                <span class="hm-continue-sub">Select your target language, then take our quick 5-minute placement diagnostic or jump straight into Unit 1.</span>
+                
+                <div class="hm-onboarding-lang-picker">
+                    <span class="hm-onboarding-picker-label">I want to learn:</span>
+                    <div class="hm-onboarding-lang-chips">
+                        ${chips}
+                    </div>
+                </div>
+
                 <div class="hm-onboarding-actions">
                     <button class="hm-onboarding-cta" data-open-diagnostic="1" type="button">Take placement test →</button>
                     <button class="hm-onboarding-btn-secondary" data-start-unit-1="1" type="button">Start at Unit 1</button>
@@ -304,6 +322,16 @@ const Home = (function () {
             if (dismissOnboarding) {
                 if (typeof DiagnosticTest !== 'undefined') DiagnosticTest.dismissOnboarding();
                 render();
+                return;
+            }
+
+            const switchLang = e.target.closest('[data-switch-lang]');
+            if (switchLang) {
+                const code = switchLang.getAttribute('data-switch-lang');
+                if (code && code !== Lang.code()) {
+                    Lang.set(code);
+                    location.reload();
+                }
                 return;
             }
 
