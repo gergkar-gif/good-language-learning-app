@@ -14,7 +14,7 @@
 
     <link rel="stylesheet" href="styles/base.css?v=2026-09-20b">
     <link rel="stylesheet" href="styles/geometry.css?v=2026-09-14h">
-    <link rel="stylesheet" href="styles/components.css?v=2026-09-20b">
+    <link rel="stylesheet" href="styles/components.css?v=2026-09-20e">
     <link rel="stylesheet" href="styles/layout.css?v=2026-09-17d">
     <link rel="stylesheet" href="styles/utilities.css?v=2026-09-14h">
     <link rel="stylesheet" href="styles/verbs.css?v=2026-09-14h">
@@ -389,7 +389,7 @@
      LearnerModel, RecommendationEngine, all loaded above -->
 <script src="engine/studyPlan.js?v=2026-09-17a"></script>
 
-<script src="engine/journey.js?v=2026-09-14h"></script>
+<script src="engine/journey.js?v=2026-09-20e"></script>
 <script src="engine/decks/match.js?v=2026-09-14h"></script>
 <script src="engine/decks/learn.js?v=2026-09-14h"></script>
 <script src="engine/decks.js?v=2026-09-17a"></script>
@@ -409,8 +409,11 @@
 <!-- Engine: home (reads from every module above) -->
 <script src="engine/home.js?v=2026-09-17a"></script>
 
+<!-- Google Identity Services (async, non-blocking) -->
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+
 <!-- Engine: cloud sync (step 7 â€” reads Lang, called by init's boot and Journey's Account card) -->
-<script src="engine/sync.js?v=2026-09-17a"></script>
+<script src="engine/sync.js?v=2026-09-20e"></script>
 
 <!-- Engine: bootstrap (loads last) -->
 <script src="engine/init.js?v=2026-09-17a"></script>

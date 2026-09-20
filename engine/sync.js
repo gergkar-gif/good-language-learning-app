@@ -33,11 +33,9 @@ const Sync = (function () {
     // rather than breaking sign-in before the widget exists.
     const TURNSTILE_SITE_KEY = '0x4AAAAAAE5nXnu8zfuPH7yB';
 
-    // Public Google OAuth 2.0 Web Client ID. Empty until created in Google
-    // Cloud Console (see GOOGLE_SIGNIN_SETUP.md); while empty, Google
-    // Sign-In UI is omitted gracefully and the email magic link flow remains
-    // the active login method.
-    const GOOGLE_CLIENT_ID = '';
+    // Public Google OAuth 2.0 Web Client ID (safe to ship client-side — see
+    // GOOGLE_SIGNIN_SETUP.md). Enables 1-tap Google Sign-In button and prompt.
+    const GOOGLE_CLIENT_ID = '191870279923-7ed8193v1av9q5tpm9u1h046idqc6k7s.apps.googleusercontent.com';
 
     const TOKEN_STORAGE_KEY = 'syncToken';
     const EMAIL_STORAGE_KEY = 'syncEmail';
