@@ -149,12 +149,49 @@ SLUG_TOPIC_LABELS = {
     "nemzetiertekek": "Hungarian Culture, Science & Heritage",
     "magyarsag": "Hungarians Across the World & International Relations",
     "allampolgarsag": "Being a Citizen: Rights, Duties & the Oath",
+    # Spain CCSE Cultura y Ciudadanía topics
+    "ccse-constitucion": "The Spanish Constitution",
+    "ccse-monarquia": "The Monarchy & Head of State",
+    "ccse-cortes": "Cortes Generales: Congress & Senate",
+    "ccse-gobierno": "The Government & Administration",
+    "ccse-judicial": "Judicial Power & Constitutional Court",
+    "ccse-autonomias-inst": "Autonomous & Local Institutions",
+    "ccse-participacion": "Elections & Civic Participation",
+    "ccse-fuerzas-seguridad": "Armed Forces & Security",
+    "ccse-union-europea": "Spain in the European Union",
+    "ccse-simbolos": "National Symbols & Anthem",
+    "ccse-lenguas": "Spanish & Co-official Languages",
+    "ccse-instituto-cervantes": "Instituto Cervantes",
+    "ccse-derechos-fundamentales": "Fundamental Rights & Freedoms",
+    "ccse-igualdad-genero": "Gender Equality & Non-Discrimination",
+    "ccse-deberes-ciudadanos": "Citizens' Duties & Taxation",
+    "ccse-defensor-pueblo": "Constitutional Guarantees & Ombudsman",
+    "ccse-geografia-fisica": "Physical Geography",
+    "ccse-comunidades-norte": "Northern Communities",
+    "ccse-comunidades-mediterraneo": "Mediterranean Communities",
+    "ccse-comunidades-centro-sur": "Central, Southern & Canaries",
+    "ccse-ciudades-autonomas": "Autonomous Cities: Ceuta & Melilla",
+    "ccse-historia-antigua": "Early History: Hispania to Golden Age",
+    "ccse-historia-contemporanea": "Contemporary History & Democracy",
+    "ccse-literatura-letras": "Spanish Literature",
+    "ccse-arte-pintura": "Art & Painting: Velázquez, Goya, Picasso",
+    "ccse-musica-cine": "Music, Dance & Cinema",
+    "ccse-fiestas-tradiciones": "Festivals & Traditions",
+    "ccse-gastronomia": "Spanish Gastronomy",
+    "ccse-sanidad": "Healthcare System & Health Card",
+    "ccse-educacion": "Education System",
+    "ccse-empleo-seguridad-social": "Employment & Social Security",
+    "ccse-vivienda-padron": "Housing & City Registration (Padrón)",
+    "ccse-tramites-dni": "Documentation: DNI, NIE & Civil Registry",
+    "ccse-servicios-emergencias": "Emergency Services & 112",
+    "ccse-consumo-banca": "Consumer Rights & Banking",
+    "ccse-simulacro-examen": "CCSE Mock Exam Simulation",
 }
 
 # Order matters: these are mutually exclusive by construction (slug requires
 # letters where the numeric patterns require digits), but slug is tried
 # first regardless since it's the most specific match.
-_SLUG_RE = re.compile(r"^[abc]\d-([a-z]+)-(?:\d+|consolidation)")
+_SLUG_RE = re.compile(r"^[abc]\d-([a-z]+(?:-[a-z]+)*)-(?:\d+|consolidation)")
 _UNIT_RE = re.compile(r"^[abc]\d-(\d{2})-(?:\d{2}-|consolidation)")
 _LESSON_ACROSS_LEVEL_RE = re.compile(r"^[abc]\d-(\d+)-")
 
@@ -237,7 +274,8 @@ def _topic_for(stem, level, by_unit_num, by_lesson_num):
 # convention as LatAm). A language with no dual-track content simply has no
 # entry here, and _track_for returns None for it same as for non-B1 levels.
 _SLUG_TRACK_NAME = {
-    "es": "latam",
+    "es-latam": "latam",
+    "es-es": "cultura",
     "hu": "citizenship",
 }
 
@@ -394,7 +432,7 @@ def from_backfill(backfill_dir):
 
 
 def main():
-    langs = sys.argv[1:] or ["es", "hu"]
+    langs = sys.argv[1:] or ["es-latam", "es-es", "hu"]
 
     for lang in langs:
         grammar_dir = Path(f"content/{lang}/grammar")

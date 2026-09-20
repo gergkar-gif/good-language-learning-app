@@ -108,48 +108,81 @@ vm.runInThisContext(fs.readFileSync(path.resolve('engine/drills/vocabulary.js'),
     assert(coreOccurrences.every(o => (!o.track || o.track === 'core')), 'Core context queries must never return citizenship sentences');
     console.log(`[PASS] HU VocabularyDriller context isolation verified for "${sampleCitWord.lemma}"`);
 
-    console.log('\n--- Testing Spanish Track Isolation ---');
-    Lang.set('es');
+    console.log('\n--- Testing Spanish (Latin America) Track Isolation ---');
+    Lang.set('es-latam');
     document.dispatchEvent('language-changed');
 
-    // 1. ListeningDriller in ES
+    // 1. ListeningDriller in ES-LATAM
     await ListeningDriller._load();
-    assert.strictEqual(ListeningDriller._secondTrack('A1'), null, 'ES A1 should have no second track in ListeningDriller');
-    assert.strictEqual(ListeningDriller._secondTrack('B1'), 'latam', 'ES B1 second track should be "latam" in ListeningDriller');
+    assert.strictEqual(ListeningDriller._secondTrack('A1'), null, 'ES-LATAM A1 should have no second track in ListeningDriller');
+    assert.strictEqual(ListeningDriller._secondTrack('B1'), 'latam', 'ES-LATAM B1 second track should be "latam" in ListeningDriller');
     
     const esCoreListening = ListeningDriller._poolFor('B1', 'core');
     const esLatamListening = ListeningDriller._poolFor('B1', 'latam');
-    assert(esCoreListening.length > 0, 'ES B1 core listening pool should have items');
-    assert(esLatamListening.length > 0, 'ES B1 latam listening pool should have items');
-    assert(esCoreListening.every(p => (p.track || 'core') === 'core'), 'ES B1 core listening should only have core items');
-    assert(esLatamListening.every(p => p.track === 'latam'), 'ES B1 latam listening should only have latam items');
-    console.log(`[PASS] ES ListeningDriller: core=${esCoreListening.length}, latam=${esLatamListening.length}`);
+    assert(esCoreListening.length > 0, 'ES-LATAM B1 core listening pool should have items');
+    assert(esLatamListening.length > 0, 'ES-LATAM B1 latam listening pool should have items');
+    assert(esCoreListening.every(p => (p.track || 'core') === 'core'), 'ES-LATAM B1 core listening should only have core items');
+    assert(esLatamListening.every(p => p.track === 'latam'), 'ES-LATAM B1 latam listening should only have latam items');
+    console.log(`[PASS] ES-LATAM ListeningDriller: core=${esCoreListening.length}, latam=${esLatamListening.length}`);
 
-    // 2. SpeakingStudio in ES
+    // 2. SpeakingStudio in ES-LATAM
     await SpeakingStudio._load();
-    assert.strictEqual(SpeakingStudio._secondTrack('A1'), null, 'ES A1 should have no second track in SpeakingStudio');
-    assert.strictEqual(SpeakingStudio._secondTrack('B1'), 'latam', 'ES B1 second track should be "latam" in SpeakingStudio');
+    assert.strictEqual(SpeakingStudio._secondTrack('A1'), null, 'ES-LATAM A1 should have no second track in SpeakingStudio');
+    assert.strictEqual(SpeakingStudio._secondTrack('B1'), 'latam', 'ES-LATAM B1 second track should be "latam" in SpeakingStudio');
 
     const esCoreSpeaking = SpeakingStudio._poolFor('B1', 'repeat', 'core');
     const esLatamSpeaking = SpeakingStudio._poolFor('B1', 'repeat', 'latam');
-    assert(esCoreSpeaking.length > 0, 'ES B1 core speaking pool should have items');
-    assert(esLatamSpeaking.length > 0, 'ES B1 latam speaking pool should have items');
-    assert(esCoreSpeaking.every(p => (p.track || 'core') === 'core'), 'ES B1 core speaking should only have core items');
-    assert(esLatamSpeaking.every(p => p.track === 'latam'), 'ES B1 latam speaking should only have latam items');
-    console.log(`[PASS] ES SpeakingStudio: core=${esCoreSpeaking.length}, latam=${esLatamSpeaking.length}`);
+    assert(esCoreSpeaking.length > 0, 'ES-LATAM B1 core speaking pool should have items');
+    assert(esLatamSpeaking.length > 0, 'ES-LATAM B1 latam speaking pool should have items');
+    assert(esCoreSpeaking.every(p => (p.track || 'core') === 'core'), 'ES-LATAM B1 core speaking should only have core items');
+    assert(esLatamSpeaking.every(p => p.track === 'latam'), 'ES-LATAM B1 latam speaking should only have latam items');
+    console.log(`[PASS] ES-LATAM SpeakingStudio: core=${esCoreSpeaking.length}, latam=${esLatamSpeaking.length}`);
 
-    // 3. VocabularyDriller in ES
+    // 3. VocabularyDriller in ES-LATAM
     await VocabularyDriller._load();
-    assert.strictEqual(VocabularyDriller._secondTrack('A1'), null, 'ES A1 should have no second track in VocabularyDriller');
-    assert.strictEqual(VocabularyDriller._secondTrack('B1'), 'latam', 'ES B1 second track should be "latam" in VocabularyDriller');
+    assert.strictEqual(VocabularyDriller._secondTrack('A1'), null, 'ES-LATAM A1 should have no second track in VocabularyDriller');
+    assert.strictEqual(VocabularyDriller._secondTrack('B1'), 'latam', 'ES-LATAM B1 second track should be "latam" in VocabularyDriller');
 
     const esCoreWords = VocabularyDriller._wordList('B1', 'core');
     const esLatamWords = VocabularyDriller._wordList('B1', 'latam');
-    assert(esCoreWords.length > 0, 'ES B1 core vocabulary words should exist');
-    assert(esLatamWords.length > 0, 'ES B1 latam vocabulary words should exist');
-    console.log(`[PASS] ES VocabularyDriller word list: core=${esCoreWords.length}, latam=${esLatamWords.length}`);
+    assert(esCoreWords.length > 0, 'ES-LATAM B1 core vocabulary words should exist');
+    assert(esLatamWords.length > 0, 'ES-LATAM B1 latam vocabulary words should exist');
+    console.log(`[PASS] ES-LATAM VocabularyDriller word list: core=${esCoreWords.length}, latam=${esLatamWords.length}`);
 
-    console.log('\n[ALL PASS] Track isolation in ListeningDriller, SpeakingStudio, and VocabularyDriller verified!');
+    console.log('\n--- Testing Spanish (Spain) Track Isolation ---');
+    Lang.set('es-es');
+    document.dispatchEvent('language-changed');
+
+    // 1. ListeningDriller in ES-ES
+    await ListeningDriller._load();
+    assert.strictEqual(ListeningDriller._secondTrack('A1'), null, 'ES-ES A1 should have no second track in ListeningDriller');
+    assert.strictEqual(ListeningDriller._secondTrack('B1'), 'cultura', 'ES-ES B1 second track should be "cultura" in ListeningDriller');
+    
+    const esEsCoreListening = ListeningDriller._poolFor('B1', 'core');
+    assert(esEsCoreListening.length > 0, 'ES-ES B1 core listening pool should have items');
+    assert(esEsCoreListening.every(p => (p.track || 'core') === 'core'), 'ES-ES B1 core listening should only have core items');
+    console.log(`[PASS] ES-ES ListeningDriller: core=${esEsCoreListening.length}, secondTrack="cultura"`);
+
+    // 2. SpeakingStudio in ES-ES
+    await SpeakingStudio._load();
+    assert.strictEqual(SpeakingStudio._secondTrack('A1'), null, 'ES-ES A1 should have no second track in SpeakingStudio');
+    assert.strictEqual(SpeakingStudio._secondTrack('B1'), 'cultura', 'ES-ES B1 second track should be "cultura" in SpeakingStudio');
+
+    const esEsCoreSpeaking = SpeakingStudio._poolFor('B1', 'repeat', 'core');
+    assert(esEsCoreSpeaking.length > 0, 'ES-ES B1 core speaking pool should have items');
+    assert(esEsCoreSpeaking.every(p => (p.track || 'core') === 'core'), 'ES-ES B1 core speaking should only have core items');
+    console.log(`[PASS] ES-ES SpeakingStudio: core=${esEsCoreSpeaking.length}, secondTrack="cultura"`);
+
+    // 3. VocabularyDriller in ES-ES
+    await VocabularyDriller._load();
+    assert.strictEqual(VocabularyDriller._secondTrack('A1'), null, 'ES-ES A1 should have no second track in VocabularyDriller');
+    assert.strictEqual(VocabularyDriller._secondTrack('B1'), 'cultura', 'ES-ES B1 second track should be "cultura" in VocabularyDriller');
+
+    const esEsCoreWords = VocabularyDriller._wordList('B1', 'core');
+    assert(esEsCoreWords.length > 0, 'ES-ES B1 core vocabulary words should exist');
+    console.log(`[PASS] ES-ES VocabularyDriller word list: core=${esEsCoreWords.length}, secondTrack="cultura"`);
+
+    console.log('\n[ALL PASS] Track isolation in ListeningDriller, SpeakingStudio, and VocabularyDriller verified for all courses!');
 })().catch(err => {
     console.error(err);
     process.exit(1);

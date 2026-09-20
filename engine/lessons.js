@@ -1513,7 +1513,7 @@ const stepRenderers = {
         const safeTarget = esc(target).replace(/'/g, "\\'");
         const langName = typeof Lang !== 'undefined' ? Lang.name() : 'Spanish';
         let questionPrompt = step.prompt || (isPromptSpeak ? `Translate and say this out loud in ${langName}:` : `Listen and repeat this out loud in ${langName}:`);
-        if (typeof Lang !== 'undefined' && Lang.code() !== 'es') {
+        if (typeof Lang !== 'undefined' && !Lang.code().startsWith('es')) {
             questionPrompt = questionPrompt.replace(/in Spanish/gi, `in ${langName}`);
         }
 

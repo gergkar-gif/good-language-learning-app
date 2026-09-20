@@ -1,0 +1,70 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "vocabulary.schema.json",
+  "title": "Vocabulary file",
+  "description": "The words a lesson teaches. This is the single source for both the vocabulary screen and the SRS step — the srs section collects from here, so there is no parallel card list. Every word should be tied to a lesson goal and used by at least one exercise; a word nothing teaches does not belong here.",
+  "type": "object",
+  "required": ["id", "lesson", "title", "words"],
+  "additionalProperties": false,
+
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^vocab\\.(a1|a2|b1|b2|c1)\\.(\\d{2}[a-z]?|[a-z]+)(\\.(\\d{2}|consolidation))?$",
+      "examples": ["vocab.a1.01", "vocab.a1.01.01", "vocab.a1.cafe.01"]
+    },
+    "lesson": {
+      "type": "string",
+      "pattern": "^(a1|a2|b1|b2|c1)-(\\d{2}[a-z]?|[a-z]+)(-(\\d{2}|consolidation))?$",
+      "examples": ["a1-01", "a1-01-01", "a1-cafe-01"]
+    },
+    "title": { "type": "string", "minLength": 1 },
+    "theme": {
+      "type": "string",
+      "minLength": 1,
+      "description": "The vocabulary theme this lesson teaches, from guides/a1-vocabulary-themes.md. Groups words into a topic deck, so it is shared by every lesson covering that topic rather than being unique per lesson.",
+      "examples": ["City & places", "Body & health"]
+    },
+    "words": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/definitions/word" }
+    }
+  },
+
+  "definitions": {
+    "word": {
+      "type": "object",
+      "required": ["lemma", "translation", "pos"],
+      "additionalProperties": false,
+      "properties": {
+        "lemma": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Dictionary form, lower case, as it will be stored in the SRS deck. Multi-word expressions and questions are written out in full, including punctuation, because that is how the reader's phrase lookup finds them.",
+          "examples": ["hola", "me llamo", "¿de dónde eres?"]
+        },
+        "translation": { "type": "string", "minLength": 1 },
+        "pos": {
+          "type": "string",
+          "pattern": "^(noun|verb|adjective|adverb|pronoun|preposition|conjunction|article|interjection|expression|number|unknown)(/(noun|verb|adjective|adverb|pronoun|preposition|conjunction|article|interjection|expression|number))?$",
+          "description": "Use 'expression' for anything longer than a single word. A word that is genuinely two classes may join them with a slash, as in 'noun/adjective' for joven — but only where both readings are taught, since this string is shown to the learner verbatim on the card.",
+          "examples": ["noun", "expression", "noun/adjective"]
+        }
+      }
+    }
+  },
+
+  "examples": [
+    {
+      "id": "vocab.a1.01",
+      "lesson": "a1-01",
+      "title": "Greetings & Introductions",
+      "words": [
+        { "lemma": "hola", "translation": "hello", "pos": "interjection" },
+        { "lemma": "me llamo", "translation": "my name is", "pos": "expression" },
+        { "lemma": "¿de dónde eres?", "translation": "where are you from?", "pos": "expression" }
+      ]
+    }
+  ]
+}

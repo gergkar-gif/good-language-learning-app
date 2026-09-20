@@ -62,11 +62,12 @@ const SpeechInput = (function () {
         } catch (e) {}
     }
 
-    // Language code mapper (e.g. 'es' -> 'es-ES', 'hu' -> 'hu-HU')
+    // Language code mapper (e.g. 'es-latam' -> 'es-MX', 'es-es' -> 'es-ES', 'hu' -> 'hu-HU')
     function getSpeechLang() {
         if (typeof Lang !== 'undefined') {
             const code = Lang.code();
-            if (code === 'es') return 'es-ES';
+            if (code === 'es-latam' || code === 'es') return 'es-MX';
+            if (code === 'es-es') return 'es-ES';
             if (code === 'hu') return 'hu-HU';
             return code;
         }

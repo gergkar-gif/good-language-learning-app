@@ -320,7 +320,7 @@ const LearnerModel = (function () {
     // Mirrors workshop.js's own DRILLERS[].langs / _available() filter —
     // `verbs` is Spanish-only, the hu-* drillers are Hungarian-only.
     function _drillerAvailable(id) {
-        if (id === 'verbs') return (typeof Lang !== 'undefined') && Lang.code() === 'es';
+        if (id === 'verbs') return (typeof Lang !== 'undefined') && Lang.code().startsWith('es');
         if (id.indexOf('hu-') === 0) return (typeof Lang !== 'undefined') && Lang.code() === 'hu';
         return true;
     }

@@ -7,6 +7,7 @@
    the interface itself is the composition — geometry and typography carry
    the identity, not colour variety. No gradients anywhere. */
 :root {
+  color-scheme: light;
   --bg: #F5F1E8;
   --surface: var(--bg);
   --bg-surface: var(--bg);
@@ -124,7 +125,12 @@
    Hairlines in crisp low-opacity cream. No drop shadows.
 ============================================ */
 
+[data-theme="light"] {
+  color-scheme: light;
+}
+
 [data-theme="dark"] {
+  color-scheme: dark;
   --bg: #0C1B2B;
   --surface: #12253B;
   --bg-surface: #12253B;
@@ -157,6 +163,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
+    color-scheme: dark;
     --bg: #0C1B2B;
     --surface: #12253B;
     --bg-surface: #12253B;
@@ -367,8 +374,19 @@ button {
   border: none;
 }
 
-input {
+input,
+select,
+option {
   font: inherit;
+}
+
+select {
+  color-scheme: inherit;
+}
+
+option {
+  background-color: var(--surface);
+  color: var(--text);
 }
 
 /* One focus treatment for the whole app. Orange is otherwise rationed for

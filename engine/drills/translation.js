@@ -24,7 +24,7 @@ const TranslationDriller = (function () {
     // for known second tracks live in TRACK_LABELS; an unrecognised one
     // still works, just title-cased as a reasonable fallback.
     const TRACK = { CORE: 'core' };
-    const TRACK_LABELS = { latam: 'Latin America', citizenship: 'Citizenship' };
+    const TRACK_LABELS = { latam: 'Latin America', citizenship: 'Citizenship', cultura: 'Cultura y Ciudadanía' };
     const COUNT_OPTIONS = [5, 10, 15, 20, 30];
     const TIMER_PRESETS = [1, 2, 3, 5];
 

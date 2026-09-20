@@ -4817,7 +4817,8 @@
   transition: border-color var(--dur-fast) var(--ease-standard);
 }
 
-.hm-lang-chip:hover {
+.hm-lang-chip:hover,
+.hm-lang-chip:focus-within {
   border-color: var(--primary-mid);
 }
 
@@ -4839,6 +4840,11 @@
   cursor: pointer;
   outline: none;
   padding-right: 4px;
+}
+
+.hm-lang-select option {
+  background-color: var(--surface);
+  color: var(--text);
 }
 
 /* ---- Continue: the dominant object ---- */

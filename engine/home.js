@@ -149,6 +149,20 @@ const Home = (function () {
     // button), since "practise" and "not now" aren't the same weight.
     function practiceNudgeCard(nudge) {
         const title = nudge.unit.title || 'that unit';
+        if (nudge.scenario) {
+            return `
+                <section class="hm-continue hm-nudge">
+                    <span class="hm-eyebrow">${esc(nudge.levelKey)} · Unit Milestone</span>
+                    <span class="hm-continue-title">Put it into conversation</span>
+                    <span class="hm-continue-sub">Complete the oral roleplay "${esc(nudge.scenario.title)}" to put what "${esc(title)}" taught into active practice.</span>
+                    <span class="hm-continue-foot">
+                        <button class="hm-cta-btn" data-practice-scenario="${esc(nudge.scenario.id)}"
+                            data-unit-id="${esc(nudge.unit.id)}">Start roleplay →</button>
+                        <button class="dk-link-btn" data-skip-unit="${esc(nudge.unit.id)}">Not now</button>
+                    </span>
+                </section>
+            `;
+        }
         return `
             <section class="hm-continue hm-nudge">
                 <span class="hm-eyebrow">${esc(nudge.levelKey)} · Unit complete</span>
@@ -382,6 +396,18 @@ const Home = (function () {
                 goTab('drills');
                 if (typeof Workshop !== 'undefined') {
                     Workshop.open('grammar', { skill: practise.getAttribute('data-skill') });
+                }
+                return;
+            }
+
+            const practiseScenario = e.target.closest('[data-practice-scenario]');
+            if (practiseScenario) {
+                const unitId = practiseScenario.getAttribute('data-unit-id');
+                if (unitId) dismissUnit(unitId);
+                const scenarioId = practiseScenario.getAttribute('data-practice-scenario');
+                goTab('drills');
+                if (typeof Workshop !== 'undefined') {
+                    Workshop.open('speaking', { scenarioId: scenarioId, returnTab: 'home' });
                 }
                 return;
             }

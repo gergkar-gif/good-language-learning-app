@@ -45,7 +45,7 @@ TARGETS = {
     "units": "curriculum/units/*.json",
 }
 
-SKIP = {"manifest.json", "lessons-manifest.json"}
+SKIP = {"manifest.json", "lessons-manifest.json", "diagnostic-test.json"}
 
 
 def load_schemas(lang_dir):

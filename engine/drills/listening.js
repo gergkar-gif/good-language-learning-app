@@ -53,7 +53,7 @@ const ListeningDriller = (function () {
     let _loadedLang = null;
 
     const TRACK = { CORE: 'core' };
-    const TRACK_LABELS = { latam: 'Latin America', citizenship: 'Citizenship' };
+    const TRACK_LABELS = { latam: 'Latin America', citizenship: 'Citizenship', cultura: 'Cultura y Ciudadanía' };
 
     let _mode = MODE.COUNT;
     let _level = 'all';

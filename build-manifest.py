@@ -136,7 +136,8 @@ LEVEL_META = {
 }
 
 CURRICULUM_META = {
-    "es": {"id": "curriculum.spanish.dele-a1-c1", "title": "Spanish — DELE aligned"},
+    "es-latam": {"id": "curriculum.spanish-latam.dele-a1-c1", "title": "Spanish (Latin America) — DELE aligned"},
+    "es-es": {"id": "curriculum.spanish-spain.dele-a1-c1", "title": "Spanish (Spain) — DELE aligned"},
     "hu": {"id": "curriculum.hungarian.a1-c1", "title": "Hungarian"}
 }
 
@@ -167,15 +168,18 @@ def load_unit_table(lang, level_id):
 # the order tracks should render in the Learn tab. Keyed by language first,
 # same reasoning as the unit tables above: a level absent for this language
 # (or a unit table entry with no "track") is single-track, and the
-# Learn tab falls back to today's flat unit list. Before 2026-09-09 this was
-# keyed by level_id alone, which meant a future language's own B1 dual-track
-# would have silently inherited Spanish's "Core Spanish"/"Latin America"
-# labels — caught while scoping HU B1's Core/Citizenship tracks.
+# Learn tab falls back to today's flat unit list.
 LEVEL_TRACKS = {
-    "es": {
+    "es-latam": {
         "b1": [
             {"id": "core", "title": "Core Spanish"},
             {"id": "latam", "title": "Latin America"},
+        ],
+    },
+    "es-es": {
+        "b1": [
+            {"id": "core", "title": "Core Spanish"},
+            {"id": "cultura", "title": "Cultura y Ciudadanía"},
         ],
     },
     "hu": {
@@ -915,6 +919,8 @@ def validate_lessons(lang="es"):
 def main():
     generated = datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
 
+    LANGUAGES = ["es-latam", "es-es", "hu", "fr"]
+
     # Build curriculum.json for each language first — this is what the Learn
     # tab actually reads (engine/curriculum.js, engine/init.js), generated
     # directly from each lesson file rather than hand-maintained separately.
@@ -922,7 +928,7 @@ def main():
     # taught in?) and the decks pass further down can group by the same
     # units without rebuilding the curriculum a second time.
     curricula = {}
-    for lang in ["es", "fr", "hu"]:
+    for lang in LANGUAGES:
         lessons_dir = BASE_LESSONS / lang / "lessons"
         curriculum_dir = BASE_LESSONS / lang / "curriculum"
         if not lessons_dir.exists():
@@ -940,7 +946,7 @@ def main():
         print(f"Curriculum for {lang}: {total_lessons} lessons in {total_units} units across {len(curriculum['levels'])} levels")
 
     # Build stories manifest for each language that actually has a stories folder
-    for lang in ["es", "fr", "hu"]:
+    for lang in LANGUAGES:
         stories_dir = BASE_STORIES / lang / "stories"
         if not stories_dir.exists():
             print(f"Skipping stories manifest for {lang}: no {stories_dir} folder yet")
@@ -953,7 +959,7 @@ def main():
         print(f"Stories manifest for {lang}: {len(stories)} stories ({with_unit} with a resolved unit)")
 
     # Decks: named word lists over the single card store
-    for lang in ["es", "fr", "hu"]:
+    for lang in LANGUAGES:
         decks = build_decks(lang, curriculum=curricula.get(lang))
         if not decks:
             continue
@@ -971,7 +977,7 @@ def main():
     # Validate lesson content refs — broken refs fail silently in the app
     # (a "Coming soon" placeholder, no error), so surface them here instead.
     print()
-    for lang in ["es", "fr", "hu"]:
+    for lang in LANGUAGES:
         issues = validate_lessons(lang)
         if not issues:
             continue

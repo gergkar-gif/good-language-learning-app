@@ -58,7 +58,7 @@ const VocabularyDriller = (function () {
     const CEFR_ORDER = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
 
     const TRACK = { CORE: 'core' };
-    const TRACK_LABELS = { latam: 'Latin America', citizenship: 'Citizenship' };
+    const TRACK_LABELS = { latam: 'Latin America', citizenship: 'Citizenship', cultura: 'Cultura y Ciudadanía' };
 
     let _words = null;        // decks.json -> words { lemma: {en, pos} }
     let _wordLevels = null;   // lemma -> 'A1' | 'A2' | ... (from lesson decks)

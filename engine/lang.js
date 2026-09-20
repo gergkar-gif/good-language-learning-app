@@ -19,30 +19,33 @@
 const Lang = (function () {
     'use strict';
 
-    const DEFAULT = 'es';
+    const DEFAULT = 'es-latam';
     const SETTING_KEY = 'app_language';
 
-    // Voice tags per course, best first. Latin American Spanish leads because
-    // it is what the course's characters speak.
+    // Voice tags per course, best first.
     const VOICES = {
-        es: ['es-MX', 'es-US', 'es-419', 'es-CO', 'es-AR', 'es-ES', 'es'],
-        hu: ['hu-HU', 'hu'],
-        fr: ['fr-FR', 'fr-CA', 'fr']
+        'es-latam': ['es-MX', 'es-US', 'es-419', 'es-CO', 'es-AR', 'es-ES', 'es'],
+        'es-es':    ['es-ES', 'es'],
+        hu:         ['hu-HU', 'hu'],
+        fr:         ['fr-FR', 'fr-CA', 'fr']
     };
 
-    const NAMES = { es: 'Spanish', hu: 'Hungarian', fr: 'French' };
+    const NAMES = {
+        'es-latam': 'Spanish (Latin America)',
+        'es-es':    'Spanish (Spain)',
+        hu:         'Hungarian',
+        fr:         'French'
+    };
 
     // Courses with real content behind them — what the language picker
     // (My Journey) offers. content/fr is still an empty folder (scaffolded
-    // per multi-language-plan) so it stays out. content/hu has Unit 1 of
-    // A1 (5 lessons) as of 2026-08-15 — no lexicon yet, so tap-a-word
-    // translation won't resolve Hungarian's inflected forms, but the
-    // lessons, exercises and stories all render.
-    const AVAILABLE = ['es', 'hu'];
+    // per multi-language-plan) so it stays out.
+    const AVAILABLE = ['es-latam', 'es-es', 'hu'];
 
     let current = DEFAULT;
     try {
-        current = localStorage.getItem(SETTING_KEY) || DEFAULT;
+        const stored = localStorage.getItem(SETTING_KEY);
+        current = (stored === 'es') ? 'es-latam' : (stored || DEFAULT);
     } catch (error) {
         // Private browsing with storage disabled: the default is fine.
     }
@@ -85,21 +88,38 @@ const Lang = (function () {
         return `${current}:${name}`;
     }
 
-    // The keys below predate language scoping and hold the Spanish course's
-    // data. Copy each to its scoped name once, leaving the original in place
-    // so an older build of the app still finds it.
+    // Migrate older keys to course-scoped names without losing learner progress.
     function migrateLegacyKeys() {
-        const legacy = {
-            'spanishApp_srsDeck': 'es:srsDeck',
-            'spanishMastery_progress': 'es:progress',
-            'spanishApp_readStories': 'es:readStories'
-        };
         try {
+            // 1. Unscoped legacy keys -> es:
+            const legacy = {
+                'spanishApp_srsDeck': 'es:srsDeck',
+                'spanishMastery_progress': 'es:progress',
+                'spanishApp_readStories': 'es:readStories'
+            };
             for (const [from, to] of Object.entries(legacy)) {
                 const value = localStorage.getItem(from);
                 if (value !== null && localStorage.getItem(to) === null) {
                     localStorage.setItem(to, value);
                 }
+            }
+
+            // 2. es: -> es-latam:
+            const esToLatam = {
+                'es:srsDeck': 'es-latam:srsDeck',
+                'es:progress': 'es-latam:progress',
+                'es:readStories': 'es-latam:readStories'
+            };
+            for (const [from, to] of Object.entries(esToLatam)) {
+                const value = localStorage.getItem(from);
+                if (value !== null && localStorage.getItem(to) === null) {
+                    localStorage.setItem(to, value);
+                }
+            }
+
+            // 3. Stored language setting migration
+            if (localStorage.getItem(SETTING_KEY) === 'es') {
+                localStorage.setItem(SETTING_KEY, 'es-latam');
             }
         } catch (error) {
             console.warn('Language: could not migrate saved data', error);

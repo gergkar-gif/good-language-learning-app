@@ -1,0 +1,155 @@
+{
+  "language": "es",
+  "title": "Prueba de Diagnóstico de Nivel CEFR",
+  "intro": "Evaluación diagnóstica progresiva para determinar el nivel óptimo de inicio en español.",
+  "passRatio": 0.66,
+  "tiers": [
+    {
+      "level": "A1",
+      "name": "A1: Fundamentos Básicos",
+      "description": "Verbos regulares en presente, ser y estar, concordancia de género y número, preguntas básicas y cortesía.",
+      "questions": [
+        {
+          "id": "es-diag-a1-01",
+          "sentence": "Hola, me llamo Elena y _____ médica en un hospital de Valencia.",
+          "options": ["soy", "estoy", "tengo", "hago"],
+          "correct": 0,
+          "teaches": ["ser-profession"]
+        },
+        {
+          "id": "es-diag-a1-02",
+          "sentence": "¿Dónde _____ las llaves del coche? No las encuentro.",
+          "options": ["están", "son", "hay", "tienen"],
+          "correct": 0,
+          "teaches": ["estar-location"]
+        },
+        {
+          "id": "es-diag-a1-03",
+          "sentence": "Nosotros _____ español tres días a la semana en la academia.",
+          "options": ["estudiamos", "estudian", "estudio", "estudiar"],
+          "correct": 0,
+          "teaches": ["present-regular-ar"]
+        },
+        {
+          "id": "es-diag-a1-04",
+          "sentence": "Carmen vive en una casa muy _____ cerca de la playa.",
+          "options": ["blanca y bonita", "blanco y bonito", "blancas y bonitas", "blancos y bonitos"],
+          "correct": 0,
+          "teaches": ["gender-number-agreement"]
+        },
+        {
+          "id": "es-diag-a1-05",
+          "sentence": "¿_____ cuesta este diccionario de español?",
+          "options": ["Cuánto", "Cómo", "Quién", "Dónde"],
+          "correct": 0,
+          "teaches": ["question-words"]
+        },
+        {
+          "id": "es-diag-a1-06",
+          "sentence": "Por favor, camarero, ¿me _____ un vaso de agua mineral?",
+          "options": ["trae", "traen", "traigo", "traer"],
+          "correct": 0,
+          "teaches": ["polite-requests"]
+        }
+      ]
+    },
+    {
+      "level": "A2",
+      "name": "A2: Comunicación Elemental y Pasados",
+      "description": "Narración en pasado (indefinido vs. imperfecto), pronombres de objeto, imperativo afirmativo y perífrasis verbales.",
+      "questions": [
+        {
+          "id": "es-diag-a2-01",
+          "sentence": "Ayer Carlos no fue al trabajo porque _____ un fuerte dolor de cabeza.",
+          "options": ["tenía", "tuvo", "ha tenido", "tenga"],
+          "correct": 0,
+          "teaches": ["imperfecto-descriptions"]
+        },
+        {
+          "id": "es-diag-a2-02",
+          "sentence": "El año pasado mis amigos y yo _____ dos semanas por el sur de España.",
+          "options": ["viajamos", "viajábamos", "hemos viajado", "viajaríamos"],
+          "correct": 0,
+          "teaches": ["indefinido-completed-past"]
+        },
+        {
+          "id": "es-diag-a2-03",
+          "sentence": "¿Has llamado a tu madre? — Sí, _____ llamé esta mañana temprano.",
+          "options": ["la", "le", "lo", "se"],
+          "correct": 0,
+          "teaches": ["direct-object-pronouns"]
+        },
+        {
+          "id": "es-diag-a2-04",
+          "sentence": "Si no entiendes esta palabra, _____ en el diccionario.",
+          "options": ["búscala", "la busca", "no buscas", "buscando"],
+          "correct": 0,
+          "teaches": ["imperative-pronoun-clitic"]
+        },
+        {
+          "id": "es-diag-a2-05",
+          "sentence": "Para aprobar el examen de conducir, _____ practicar mucho más.",
+          "options": ["tienes que", "vas de", "acabas por", "tienes de"],
+          "correct": 0,
+          "teaches": ["modal-periphrasis"]
+        },
+        {
+          "id": "es-diag-a2-06",
+          "sentence": "A mi hermana y a mí nos _____ muchísimo las novelas de misterio.",
+          "options": ["gustan", "gusta", "gustamos", "gusten"],
+          "correct": 0,
+          "teaches": ["gustar-agreement"]
+        }
+      ]
+    },
+    {
+      "level": "B1",
+      "name": "B1: Uso Independiente y Subjuntivo",
+      "description": "Presente de subjuntivo con deseos y dudas, oraciones temporales de futuro, condicional de cortesía y conectores discursivos.",
+      "questions": [
+        {
+          "id": "es-diag-b1-01",
+          "sentence": "Espero que mañana no _____ mal tiempo durante la excursión a la montaña.",
+          "options": ["haga", "hace", "hizo", "haría"],
+          "correct": 0,
+          "teaches": ["subjuntivo-wishes"]
+        },
+        {
+          "id": "es-diag-b1-02",
+          "sentence": "Te llamaré por teléfono en cuanto _____ al hotel en Madrid.",
+          "options": ["llegue", "llego", "llegué", "llegaría"],
+          "correct": 0,
+          "teaches": ["subjuntivo-temporal-future"]
+        },
+        {
+          "id": "es-diag-b1-03",
+          "sentence": "¿_____ tan amable de cerrar la ventana? Entra mucho ruido de la calle.",
+          "options": ["Sería", "Sea", "Fue", "Es"],
+          "correct": 0,
+          "teaches": ["condicional-courtesy"]
+        },
+        {
+          "id": "es-diag-b1-04",
+          "sentence": "Estudió mucho durante semanas; _____, no logró superar la prueba final.",
+          "options": ["sin embargo", "porque", "para que", "a condición de"],
+          "correct": 0,
+          "teaches": ["discourse-connectors"]
+        },
+        {
+          "id": "es-diag-b1-05",
+          "sentence": "Este informe debe estar listo y entregado a la dirección _____ el viernes por la tarde.",
+          "options": ["para", "por", "en", "desde"],
+          "correct": 0,
+          "teaches": ["por-vs-para-deadlines"]
+        },
+        {
+          "id": "es-diag-b1-06",
+          "sentence": "No creo que Juan _____ la verdad sobre lo que ocurrió ayer.",
+          "options": ["diga", "dice", "dirá", "decía"],
+          "correct": 0,
+          "teaches": ["subjuntivo-doubt-negation"]
+        }
+      ]
+    }
+  ]
+}

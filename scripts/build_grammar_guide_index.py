@@ -76,7 +76,7 @@ def build_index(lang, curriculum):
 
 
 def main():
-    langs = sys.argv[1:] or ["es", "hu"]
+    langs = sys.argv[1:] or ["es-latam", "es-es", "hu"]
 
     for lang in langs:
         curriculum_path = Path(f"content/{lang}/curriculum/curriculum.json")

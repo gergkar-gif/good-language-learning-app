@@ -48,6 +48,27 @@ const RecommendationEngine = (function () {
     // humanizeSkill() re-resolves the current path on every call, cheap
     // since it's just a string join, not a fetch.
     const _grammarTitlesCache = {};
+    const _scenariosCache = {};
+
+    async function _loadScenariosForLang() {
+        if (typeof Content === 'undefined' || typeof Lang === 'undefined') return [];
+        const path = Lang.content('conversation-scenarios.json');
+        if (!_scenariosCache[path]) {
+            const data = await Content.json(path).catch(() => null);
+            _scenariosCache[path] = (data && data.scenarios) ? data.scenarios : [];
+        }
+        return _scenariosCache[path];
+    }
+
+    async function _scenarioForUnit(unitId) {
+        if (!unitId) return null;
+        try {
+            const scenarios = await _loadScenariosForLang();
+            return scenarios.find(s => (s.unitIds || []).includes(unitId)) || null;
+        } catch (e) {
+            return null;
+        }
+    }
 
     async function _ensureGrammarTitles() {
         if (typeof Content === 'undefined' || typeof Lang === 'undefined') return {};
@@ -182,7 +203,7 @@ const RecommendationEngine = (function () {
 
     // Home's post-unit practice beat: the last lesson completed was the
     // last lesson in its unit, that unit hasn't already been resolved, and
-    // there's an actual grammar skill to point Workshop at.
+    // there's an actual grammar skill or scenario to point at.
     async function _practiceNudge() {
         const lessonId = LearnerPath.lastCompletedLessonId();
         if (!lessonId) return null;
@@ -197,10 +218,15 @@ const RecommendationEngine = (function () {
 
         if (dismissedUnits().includes(unit.id)) return null;
 
+        const scenario = await _scenarioForUnit(unit.id);
+        if (scenario) {
+            return { levelKey, unit, scenario, kind: 'scenario' };
+        }
+
         const skill = await Recommend.unitSkillFor(unit);
         if (!skill) return null;
 
-        return { levelKey, unit, skill };
+        return { levelKey, unit, skill, kind: 'grammar' };
     }
 
     // Home's per-lesson counterpart: a quick mini-game challenge offered
@@ -245,6 +271,21 @@ const RecommendationEngine = (function () {
 
         const candidates = [];
 
+        // Candidate 0: Conversation Roleplay (if the lesson's unit matches a scenario)
+        const unitId = found ? found.unit.id : null;
+        const matchingScenario = await _scenarioForUnit(unitId);
+        if (matchingScenario) {
+            candidates.push({
+                drillerId: 'speaking',
+                title: 'Oral Roleplay',
+                buttonLabel: `Roleplay: ${matchingScenario.title}`,
+                blurb: `Put what you just learned into practice in a real-life dialogue: "${matchingScenario.title}".`,
+                reason: 'communicative_practice',
+                priority: 96,
+                options: { scenarioId: matchingScenario.id, returnTab: 'home' }
+            });
+        }
+
         // Candidate 1: Targeted Grammar
         const effectiveSkill = topWeakSkill || recentSkill;
         if (effectiveSkill) {
@@ -283,7 +324,7 @@ const RecommendationEngine = (function () {
         }
 
         // Candidate 3: Spanish Verb Speed Sprint (60s)
-        if (lang === 'es' && completedCount >= 3) {
+        if (lang.startsWith('es') && completedCount >= 3) {
             const isWeak = weakDrillerIds.has('verbs');
             candidates.push({
                 drillerId: 'verbs',
@@ -520,9 +561,15 @@ const RecommendationEngine = (function () {
                 sub = 'Continue your course';
             }
         } else if (primary.kind === 'unit-nudge') {
-            title = `Practise: ${humanizeSkill(primary.skill)}`;
-            cta = title;
-            sub = `A quick round on what "${primary.unit.title || 'that unit'}" just taught`;
+            if (primary.scenario) {
+                title = `Oral Roleplay: ${primary.scenario.title}`;
+                cta = `Start roleplay: ${primary.scenario.title}`;
+                sub = `Put "${primary.unit.title || 'that unit'}" into conversation`;
+            } else {
+                title = `Practise: ${humanizeSkill(primary.skill)}`;
+                cta = title;
+                sub = `A quick round on what "${primary.unit.title || 'that unit'}" just taught`;
+            }
         } else if (primary.kind === 'mini-game') {
             title = primary.challengeTitle || (primary.skill ? `Grammar: ${humanizeSkill(primary.skill)}` : 'Quick Challenge');
             cta = primary.buttonLabel || title;
@@ -558,7 +605,13 @@ const RecommendationEngine = (function () {
             }
         } else if (primary.kind === 'unit-nudge') {
             dismissUnit(primary.unit.id);
-            if (typeof Workshop !== 'undefined') Workshop.open('grammar', { skill: primary.skill, autoStart: true });
+            if (typeof Workshop !== 'undefined') {
+                if (primary.scenario) {
+                    Workshop.open('speaking', { scenarioId: primary.scenario.id, returnTab: 'home' });
+                } else {
+                    Workshop.open('grammar', { skill: primary.skill, autoStart: true });
+                }
+            }
         } else if (primary.kind === 'mini-game') {
             dismissMiniGame(primary.lessonId);
             if (typeof Workshop !== 'undefined') {
@@ -631,6 +684,16 @@ const RecommendationEngine = (function () {
         dismissMiniGame,
         secondaryLabel,
         openSecondary,
-        grammarVocabCandidate: _grammarVocabCandidate
+        grammarVocabCandidate: _grammarVocabCandidate,
+        _scenarioForUnit,
+        _practiceNudge,
+        _miniGameNudge
     };
 })();
+
+if (typeof window !== 'undefined') {
+    window.RecommendationEngine = RecommendationEngine;
+}
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = RecommendationEngine;
+}

@@ -65,6 +65,31 @@ let openGlobalGrammarGuide = false;
 // real work worth not repeating on every keystroke or re-open).
 let _globalGrammarIndex = null;
 
+let _scenariosIndex = null;
+let _scenariosIndexLang = null;
+
+async function _loadScenariosIndex() {
+    const lang = (typeof Lang !== 'undefined') ? Lang.code() : 'es';
+    if (_scenariosIndex && _scenariosIndexLang === lang) return _scenariosIndex;
+    try {
+        const path = (typeof Lang !== 'undefined')
+            ? Lang.content('conversation-scenarios.json')
+            : `content/${lang}/conversation-scenarios.json`;
+        const res = await fetch(path);
+        const data = res.ok ? await res.json() : null;
+        _scenariosIndex = (data && data.scenarios) ? data.scenarios : [];
+        _scenariosIndexLang = lang;
+    } catch (e) {
+        _scenariosIndex = [];
+    }
+    return _scenariosIndex;
+}
+
+function _scenarioForUnit(unitId) {
+    if (!_scenariosIndex || !unitId) return null;
+    return _scenariosIndex.find(s => (s.unitIds || []).includes(unitId)) || null;
+}
+
 function levelIcon(level, extraClass) {
     return '<svg class="level-icon' + (extraClass ? ' ' + extraClass : '') + '" viewBox="0 0 100 100" aria-hidden="true">' +
         (LEVEL_ICONS[level] || LEVEL_ICONS.A1) + '</svg>';
@@ -160,6 +185,7 @@ async function renderCurriculum() {
     if (!window._curriculumData) {
         window._curriculumData = await loadCurriculumData();
     }
+    await _loadScenariosIndex();
 
     const root = document.getElementById('learn-content');
     if (!root) return;
@@ -595,6 +621,7 @@ function unitDetailHtml(level, unitId) {
 
     const lessons = unit.lessons || [];
     const stats = progressStats(lessons, progress);
+    const scenario = _scenarioForUnit(unit.id);
 
     // Which track this unit belongs to, when the level runs more than one.
     const track = (data.tracks || []).find(t => t.id === unit.track);
@@ -627,6 +654,14 @@ function unitDetailHtml(level, unitId) {
                 <span class="ud-grammar-guide-title">Word Bank</span>
                 <span class="ud-grammar-guide-arrow" aria-hidden="true">→</span>
             </button>
+
+            ${scenario ? `
+            <button class="ud-grammar-guide-row ud-scenario-row" data-open-unit-scenario="${UI.escape(scenario.id)}">
+                ${(typeof Art !== 'undefined') ? Art.icon('speaking') : ''}
+                <span class="ud-grammar-guide-title">Oral Roleplay: ${UI.escape(scenario.title)}</span>
+                <span class="ud-grammar-guide-arrow" aria-hidden="true">→</span>
+            </button>
+            ` : ''}
 
             ${lessons.length ? `<div class="ud-dots">${dots}</div>` : ''}
 
@@ -977,6 +1012,18 @@ function attachCurriculumEvents(root) {
             return;
         }
 
+        const openScenario = e.target.closest('[data-open-unit-scenario]');
+        if (openScenario) {
+            const scenarioId = openScenario.getAttribute('data-open-unit-scenario');
+            if (typeof showTab === 'function') {
+                showTab('drills', document.querySelector('.nav button[data-tab="drills"]'));
+            }
+            if (typeof Workshop !== 'undefined') {
+                Workshop.open('speaking', { scenarioId: scenarioId, returnTab: 'learn' });
+            }
+            return;
+        }
+
         const diag = e.target.closest('[data-open-diagnostic]');
         if (diag && typeof DiagnosticTest !== 'undefined') {
             DiagnosticTest.open({
@@ -1009,4 +1056,6 @@ document.addEventListener('language-changed', () => {
     openGrammarGuideUnit = null;
     openWordBankUnit = null;
     _globalGrammarIndex = null;
+    _scenariosIndex = null;
+    _scenariosIndexLang = null;
 });

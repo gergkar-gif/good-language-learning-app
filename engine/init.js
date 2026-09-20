@@ -203,8 +203,8 @@ async function initialiseApp() {
         } else if (minigameParam) {
             if (minigameParam.startsWith('hu-') && Lang.code() !== 'hu') {
                 Lang.set('hu');
-            } else if (minigameParam === 'verbs' && Lang.code() !== 'es') {
-                Lang.set('es');
+            } else if (minigameParam === 'verbs' && !Lang.code().startsWith('es')) {
+                Lang.set(Lang.defaultCode());
             }
         }
     }
@@ -261,11 +261,11 @@ async function initialiseApp() {
     _attachLessonClose();
     _attachSoundToggle();
 
-    // Verbs module — imports/verbs/verb-list.js is Spanish-only content with
+    // Verbs module — imports/verbs/verb-list.js is Spanish content with
     // no language scoping (same reason Workshop's own DRILLERS list gates
-    // the Verb Driller card to langs: ['es']), so initialising it under any
-    // other course fetches Spanish verb data nobody can reach and fails.
-    if (typeof Verbs !== 'undefined' && (typeof Lang === 'undefined' || Lang.code() === 'es')) {
+    // the Verb Driller card to Spanish), so initialising it under any
+    // non-Spanish course fetches Spanish verb data nobody can reach and fails.
+    if (typeof Verbs !== 'undefined' && (typeof Lang === 'undefined' || Lang.code().startsWith('es'))) {
         Verbs.init();
     }
 

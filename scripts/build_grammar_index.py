@@ -125,7 +125,7 @@ def resolve_titles(lang, by_skill):
 
 
 def main():
-    langs = sys.argv[1:] or ["es", "hu"]
+    langs = sys.argv[1:] or ["es-latam", "es-es", "hu"]
 
     for lang in langs:
         exercises_dir = Path(f"content/{lang}/exercises")

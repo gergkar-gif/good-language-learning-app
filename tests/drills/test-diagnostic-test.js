@@ -23,7 +23,10 @@ const languages = ['es', 'hu'];
 const testData = {};
 
 for (const lang of languages) {
-    const filePath = path.join(__dirname, `../../content/${lang}/tests/diagnostic-test.json`);
+    let filePath = path.join(__dirname, `../../content/${lang}/tests/diagnostic-test.json`);
+    if (!fs.existsSync(filePath) && lang === 'es') {
+        filePath = path.join(__dirname, `../../content/es-latam/tests/diagnostic-test.json`);
+    }
     assert(fs.existsSync(filePath), `diagnostic-test.json must exist for ${lang}`);
     
     const content = JSON.parse(fs.readFileSync(filePath, 'utf8'));

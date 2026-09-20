@@ -105,7 +105,7 @@ def build_index(lang):
 
 
 def main():
-    langs = sys.argv[1:] or ["es", "hu"]
+    langs = sys.argv[1:] or ["es-latam", "es-es", "hu"]
 
     for lang in langs:
         if not Path(f"content/{lang}").is_dir():

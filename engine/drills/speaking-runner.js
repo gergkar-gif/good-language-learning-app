@@ -321,7 +321,7 @@ const SpeakingRunner = (function () {
         const hasSTT = SpeechInput.isRecognitionSupported();
         const langName = (typeof Lang !== 'undefined') ? Lang.name() : 'the target language';
         let instruction = exercise.prompt || `Translate and say this out loud in ${langName}:`;
-        if (typeof Lang !== 'undefined' && Lang.code() !== 'es') {
+        if (typeof Lang !== 'undefined' && !Lang.code().startsWith('es')) {
             instruction = instruction.replace(/in Spanish/gi, `in ${langName}`);
         }
 
