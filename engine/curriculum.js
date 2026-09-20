@@ -510,7 +510,7 @@ function unitListHtml(level) {
     // the one thing on this screen that is not simply "units finished".
     const hasTest = (typeof LevelTest !== 'undefined' && typeof LevelTest.hasTest === 'function')
         ? LevelTest.hasTest(level)
-        : (level === 'A1' || level === 'A2');
+        : (level === 'A1' || level === 'A2' || (level === 'B1' && ((typeof Lang !== 'undefined' && (Lang.current?.() === 'hu' || Lang.code?.() === 'hu')))));
     const result = (typeof LevelTest !== 'undefined') ? LevelTest.resultFor(level) : null;
     const testRow = hasTest ? `
         <button class="level-test-row${result && result.passed ? ' is-passed' : ''}"

@@ -1,0 +1,432 @@
+{
+  "id": "test.b1",
+  "level": "B1",
+  "title": "B1 Szintfelmérő Vizsga",
+  "intro": "Átfogó CEFR B1 szintfelmérő vizsga a feltételes mód (jelen és múlt idő, volna), a melléknévi és határozói igenevek (-ó/-ő, -t/-tt, -andó/-endő, -va/-ve, -ván/-vén), a ható, műveltető és visszaható igék, az összetett kötőszók (bár, noha, holott), a függő beszéd és a hivatalos/közéleti kommunikáció ellenőrzésére.",
+  "passMark": 0.8,
+  "questions": [
+    {
+      "id": "felteteles-jelen-alanyi",
+      "type": "dropdown",
+      "sentence": "Ha több szabadidőm lenne, sokkal többet utaz_____ külföldre.",
+      "options": [
+        "nék",
+        "nék volna",
+        "néknek"
+      ],
+      "correct": 0,
+      "teaches": [
+        "conditional-present-indefinite"
+      ]
+    },
+    {
+      "id": "felteteles-jelen-targyas",
+      "type": "dropdown",
+      "sentence": "Szívesen meg_____ a kiállítást, ha te is velem tartanál.",
+      "options": [
+        "nézném",
+        "néznem",
+        "néznélek"
+      ],
+      "correct": 0,
+      "teaches": [
+        "conditional-present-definite"
+      ]
+    },
+    {
+      "id": "felteteles-mult-volna",
+      "type": "text-input",
+      "sentence": "Ha tudtam volna a mai megbeszélésről, biztosan eljöttem _____.",
+      "answer": "volna",
+      "altAnswers": [
+        "Volna"
+      ],
+      "teaches": [
+        "conditional-past-volna"
+      ]
+    },
+    {
+      "id": "felteteles-mult-tagadas",
+      "type": "dropdown",
+      "sentence": "Ha nem esett volna az eső, nem maradtunk volna otthon, hanem _____ kirándulni.",
+      "options": [
+        "elmentünk volna",
+        "elmentünk",
+        "elmennénk"
+      ],
+      "correct": 0,
+      "teaches": [
+        "conditional-past-narrative"
+      ]
+    },
+    {
+      "id": "befejezett-melleknevi-igenev-t-tt",
+      "type": "dropdown",
+      "sentence": "Az elnök úr által aláír_____ szerződést azonnal továbbítottuk a pénzügyre.",
+      "options": [
+        "t",
+        "ó",
+        "andó"
+      ],
+      "correct": 0,
+      "teaches": [
+        "past-participle-t-tt"
+      ]
+    },
+    {
+      "id": "folyamatos-melleknevi-igenev-o-o",
+      "type": "text-input",
+      "sentence": "A terembe belépve észrevettük a sarkon áll_____ idős professzort.",
+      "answer": "ó",
+      "altAnswers": [
+        "o"
+      ],
+      "teaches": [
+        "present-participle-o-o"
+      ]
+    },
+    {
+      "id": "beallo-melleknevi-igenev-ando-endo",
+      "type": "dropdown",
+      "sentence": "Ez a hiba mielőbb megold_____ feladat a fejlesztőcsapat számára.",
+      "options": [
+        "andó",
+        "ó",
+        "ott"
+      ],
+      "correct": 0,
+      "teaches": [
+        "future-participle-ando-endo"
+      ]
+    },
+    {
+      "id": "hatarozoi-igenev-va-ve-allapot",
+      "type": "dropdown",
+      "sentence": "A tanácsterem ajtaját zár_____ találtuk, ezért kint várakoztunk.",
+      "options": [
+        "va",
+        "ve",
+        "ván"
+      ],
+      "correct": 0,
+      "teaches": [
+        "adverbial-participle-va-ve"
+      ]
+    },
+    {
+      "id": "hatarozoi-igenev-van-ven-irodalmi",
+      "type": "dropdown",
+      "sentence": "A feladatot sikeresen befejez_____, a bizottság visszavonult a döntéshozatalra.",
+      "options": [
+        "vén",
+        "ve",
+        "vő"
+      ],
+      "correct": 0,
+      "teaches": [
+        "adverbial-participle-van-ven"
+      ]
+    },
+    {
+      "id": "potential-suffix-hat-het",
+      "type": "text-input",
+      "sentence": "Elnézést, felte_____ egy kérdést az előadás témájával kapcsolatban?",
+      "answer": "hetek",
+      "altAnswers": [
+        "hetek-e",
+        "hetem"
+      ],
+      "teaches": [
+        "potential-suffix-hat-het"
+      ]
+    },
+    {
+      "id": "muvelteto-ige-at-et-tat-tet",
+      "type": "dropdown",
+      "sentence": "A lakásfelújítás során szakemberrel csinál_____ a villanyszerelést.",
+      "options": [
+        "tattuk",
+        "tuk",
+        "hatunk"
+      ],
+      "correct": 0,
+      "teaches": [
+        "causative-suffix-tat-tet"
+      ]
+    },
+    {
+      "id": "gyakorito-ige-ogat-eget",
+      "type": "dropdown",
+      "sentence": "Beszélgetés közben a régi családi fényképeket néz_____.",
+      "options": [
+        "egettük",
+        "tük",
+        "nénk"
+      ],
+      "correct": 0,
+      "teaches": [
+        "frequentative-suffix-ogat-eget"
+      ]
+    },
+    {
+      "id": "visszahato-oz-kodik",
+      "type": "dropdown",
+      "sentence": "Nem kell félned az interjútól, csak visel_____ természetesen!",
+      "options": [
+        "kedj",
+        "kedjél",
+        "kedsz"
+      ],
+      "correct": 0,
+      "teaches": [
+        "reflexive-verbs-kodik"
+      ]
+    },
+    {
+      "id": "kotozo-bar-noha",
+      "type": "dropdown",
+      "sentence": "Mindenki eljött a megbeszélésre, _____ kint heves vihar tombolt.",
+      "options": [
+        "bár",
+        "ezért",
+        "tehát"
+      ],
+      "correct": 0,
+      "teaches": [
+        "concessive-connectors-bar"
+      ]
+    },
+    {
+      "id": "kotozo-holott-jollehet",
+      "type": "choice",
+      "prompt": "Melyik kötőszó fejezi ki a leghangsúlyosabb ellentétet, szembeállítva az elvártat a valós tényekkel?",
+      "context": "Hivatalos munkahelyi értékelés és érvelés.",
+      "options": [
+        "holott",
+        "ezért",
+        "így",
+        "valamint"
+      ],
+      "correct": 0,
+      "teaches": [
+        "contrastive-connectors-holott"
+      ]
+    },
+    {
+      "id": "celhatarozo-hogy-felszolito",
+      "type": "text-input",
+      "sentence": "Korán keltem, hogy időben odaér_____ a reggeli vonathoz.",
+      "answer": "jek",
+      "altAnswers": [
+        "jek oda"
+      ],
+      "teaches": [
+        "purpose-clause-subjunctive"
+      ]
+    },
+    {
+      "id": "fuggobeszed-igeido-egyeztetes",
+      "type": "choice",
+      "prompt": "Hogyan közvetíted ezt helyesen magyar függő beszédben?",
+      "context": "Kovács úr tegnap reggel ezt mondta telefonon: »Holnap Budapestre utazom.«",
+      "options": [
+        "Kovács úr tegnap azt mondta, hogy ma Budapestre utazik.",
+        "Kovács úr tegnap azt mondta, hogy ma Budapestre utazott volna.",
+        "Kovács úr tegnap azt mondta, hogy tegnap Budapestre utazott."
+      ],
+      "correct": 0,
+      "teaches": [
+        "indirect-speech-tense-agreement"
+      ]
+    },
+    {
+      "id": "fuggobeszed-kerdes-e",
+      "type": "dropdown",
+      "sentence": "A titkárnő megkérdezte a látogatótól, hogy van-_____ időpontja a vizsgálatra.",
+      "options": [
+        "e",
+        "nem",
+        "vajon"
+      ],
+      "correct": 0,
+      "teaches": [
+        "indirect-question-particle-e"
+      ]
+    },
+    {
+      "id": "igekoto-valas-kell",
+      "type": "dropdown",
+      "sentence": "A hivatalos okmányokat legkésőbb hétfőig be _____ adnod az ügyfélszolgálaton.",
+      "options": [
+        "kell",
+        "fogod",
+        "lehet"
+      ],
+      "correct": 0,
+      "teaches": [
+        "preverb-separation-auxiliary"
+      ]
+    },
+    {
+      "id": "igekoto-valas-tagadas",
+      "type": "dropdown",
+      "sentence": "A várt csomag tegnap még nem érkezett _____, valószínűleg ma hozzák.",
+      "options": [
+        "meg",
+        "el",
+        "ki"
+      ],
+      "correct": 0,
+      "teaches": [
+        "preverb-separation-negation"
+      ]
+    },
+    {
+      "id": "vonatkozo-nevmas-amely-aki",
+      "type": "text-input",
+      "sentence": "Az a vállalat, _____ tavaly a legtöbb zöld innovációs díjat nyerte el, most új gyárat épít.",
+      "answer": "amely",
+      "altAnswers": [
+        "amelyik"
+      ],
+      "teaches": [
+        "relative-pronouns-amely"
+      ]
+    },
+    {
+      "id": "hivatalos-level-megszolitas",
+      "type": "choice",
+      "prompt": "Milyen megszólítással kezdődik a hivatalos levél?",
+      "context": "Hivatalos kérvényt nyújtasz be az önkormányzat polgármesteri hivatalához.",
+      "options": [
+        "Tisztelt Polgármesteri Hivatal! / Tisztelt Cím!",
+        "Szia Polgármester Úr!",
+        "Kedves Barátaim az Önkormányzatnál!"
+      ],
+      "correct": 0,
+      "teaches": [
+        "formal-register-salutations"
+      ]
+    },
+    {
+      "id": "hivatalos-level-lezaras",
+      "type": "text-input",
+      "sentence": "Várom megtisztelő válaszukat. Tisztelet_____, Kovács Péter.",
+      "answer": "tel",
+      "altAnswers": [
+        "tel:"
+      ],
+      "teaches": [
+        "formal-register-closings"
+      ]
+    },
+    {
+      "id": "pragmatika-velemeny-kifejezes",
+      "type": "choice",
+      "prompt": "Melyik fordulat a leginkább illő és udvarias B1 szinten?",
+      "context": "Munkahelyi vita során diplomatikusan és választékosan szeretnéd kifejezni ellenvéleményedet.",
+      "options": [
+        "Megértem az Ön álláspontját, másrészről viszont érdemes figyelembe vennünk a költségeket is.",
+        "Ez a javaslat teljesen rossz, hallgasson inkább rám!",
+        "Nincs igaza, fejezzük be ezt a vitát azonnal."
+      ],
+      "correct": 0,
+      "teaches": [
+        "polite-disagreement-nuanced-opinion"
+      ]
+    },
+    {
+      "id": "ugyintezes-lakasberlet",
+      "type": "dropdown",
+      "sentence": "A bérleti szerződés felmondása esetén a bérbeadó a két havi _____ köteles visszatéríteni.",
+      "options": [
+        "kauciót",
+        "számlát",
+        "kamatot"
+      ],
+      "correct": 0,
+      "teaches": [
+        "administrative-tenancy-vocabulary"
+      ]
+    },
+    {
+      "id": "egeszsegugy-tunetek",
+      "type": "dropdown",
+      "sentence": "A háziorvos alaposan megvizsgálta a pácienst, majd vérvételre és tüdő_____ utalta be.",
+      "options": [
+        "szűrésre",
+        "műtétre",
+        "fájdalomra"
+      ],
+      "correct": 0,
+      "teaches": [
+        "healthcare-consultation-vocabulary"
+      ]
+    },
+    {
+      "id": "allampolgarsagi-alapismeret",
+      "type": "dropdown",
+      "sentence": "Magyarország alaptörvénye kimondja, hogy a legfőbb népképviseleti szerv az _____.",
+      "options": [
+        "Országgyűlés",
+        "Kormányhivatal",
+        "Alkotmánybíróság"
+      ],
+      "correct": 0,
+      "teaches": [
+        "citizenship-civic-knowledge"
+      ]
+    },
+    {
+      "id": "elvonatkoztatott-fonevkepzo-sag-seg",
+      "type": "text-input",
+      "sentence": "A közösségi élet alapja a kölcsönös felelős_____ és tisztelet.",
+      "answer": "ség",
+      "altAnswers": [
+        "seg"
+      ],
+      "teaches": [
+        "abstract-nominalization-sag-seg"
+      ]
+    }
+  ],
+  "writingTask": {
+    "id": "hu-b1-writing",
+    "title": "Hivatalos megkeresés és javaslattétel",
+    "prompt": "Írj egy 60–90 szavas hivatalos levelet vagy e-mailt a lakóhelyed közösségi képviselőjének vagy a társasházi közös képviselőnek! Mutasd be a problémát (pl. szelektív hulladékgyűjtés hiánya, fűtési gondok vagy felújítási igény), fejtsd ki a következményeit, tegyél udvarias javaslatot a megoldásra feltételes módban, és kérj visszajelzést!",
+    "context": "Használj hivatalos megszólítást és lezárást, legalább egy feltételes mondatot (pl. lenne, tehetnénk, ha...), valamint ok-okozati vagy ellentétes kötőszót (pl. bár, ezért, noha).",
+    "minWords": 60,
+    "targetKeywords": [
+      "tisztelt",
+      "javasolnám",
+      "lenne",
+      "ezért",
+      "tisztelettel"
+    ],
+    "teaches": [
+      "formal-correspondence",
+      "conditional-mood",
+      "connectors-cause-concession",
+      "written-production"
+    ]
+  },
+  "speakingTask": {
+    "id": "hu-b1-speaking",
+    "title": "Állásinterjú vagy szakmai tervek bemutatása",
+    "prompt": "Mondj el egy 35–60 másodperces összefoglalót a szakmai tapasztalataidról és jövőbeli terveidről! Meséld el, milyen területen dolgoztál korábban, mit tanultál belőle, milyen céljaid lennének az elkövetkező években, és hogyan tudnád hasznosítani a magyar nyelvtudásodat!",
+    "minSeconds": 30,
+    "targetKeywords": [
+      "tapasztalat",
+      "szeretnék",
+      "dolgoztam",
+      "tervezem",
+      "hasznosítani"
+    ],
+    "teaches": [
+      "oral-production",
+      "professional-narrative",
+      "hypothetical-plans",
+      "fluency"
+    ]
+  }
+}

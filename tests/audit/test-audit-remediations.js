@@ -143,6 +143,7 @@ document.dispatchEvent(new CustomEvent('language-changed', { detail: 'hu' }));
 assert.strictEqual(Object.keys(Lessons.contentCache).length, 0, 'contentCache must be cleared on language-changed');
 assert.strictEqual(Srs.getDeck().length, 1, 'SRS deck should reload for new language');
 assert.strictEqual(Srs.getDeck()[0].spanish, 'kutya', 'SRS deck should load Hungarian cards');
+assert.strictEqual(LevelTest.hasTest('B1'), true, 'LevelTest.hasTest(B1) must be true when language is hu');
 console.log('[PASS] Language switch clears content cache and reloads language-scoped deck.');
 
 // ----------------------------------------

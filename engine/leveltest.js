@@ -39,7 +39,14 @@ const LevelTest = (function () {
     function hasTest(level) {
         if (!level || typeof level !== 'string') return false;
         const norm = level.toUpperCase();
-        return norm === 'A1' || norm === 'A2';
+        if (norm === 'A1' || norm === 'A2') return true;
+        if (norm === 'B1') {
+            const lang = (typeof Lang !== 'undefined' && typeof Lang.current === 'function')
+                ? Lang.current()
+                : ((typeof Lang !== 'undefined' && typeof Lang.code === 'function') ? Lang.code() : 'es');
+            return lang === 'hu';
+        }
+        return false;
     }
 
     // A learner who scores this high on a level's test knows the level, not

@@ -167,6 +167,10 @@ that's now just a JSON append rather than a `build-manifest.py` edit.
   - 26 varied questions testing inflected personal pronouns (*nálam, hozzánk, vele, nekem*), Translative-Factitive assimilation (*-vá/-vé, orvossá*), Essive-Formal (*-ként*), deferential *tetszik*, preverbs aspect & word order, definite vs indefinite conjugations, past tense, and cultural Name Day (*Névnap*) greetings & hospitality formulas.
   - Part 2 Writing Task: *Köszönőlevél vendéglátásért vagy meghívó* (min. 40 words with inflected pronouns and gratitude).
   - Part 3 Speaking Task: *Névnapi köszöntő és programajánló* (min. 20s spoken greeting and invitation).
+- [x] **Create `content/hu/tests/b1-test.json`**:
+  - 28 varied questions testing conditional mood (present/past *volna*), participles (*-ó/-ő, -t/-tt, -andó/-endő, -va/-ve, -ván/-vén*), potential suffix (*-hat/-het*), causative & frequentative morphology (*-tat/-tet, -ogat/-eget*), reflexive verbs (*-kodik*), complex connectors (*bár, noha, holott*), indirect speech & indirect question particle (*-e*), preverb inversion & auxiliaries, and citizenship & administrative topics.
+  - Part 2 Writing Task: *Hivatalos megkeresés és javaslattétel* (min. 60 words formal proposal/enquiry with conditional forms and connectors).
+  - Part 3 Speaking Task: *Állásinterjú vagy szakmai tervek bemutatása* (min. 30s spoken career overview and future plans).
 
 ---
 
