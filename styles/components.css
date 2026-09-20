@@ -3400,6 +3400,33 @@
   margin-bottom: 12px;
 }
 
+.jr-google-signin-container {
+  min-height: 42px;
+  display: flex;
+  align-items: center;
+  margin: 8px 0 10px;
+}
+
+.jr-account-divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 12px 0 14px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.jr-account-divider::before,
+.jr-account-divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.jr-account-divider span {
+  padding: 0 10px;
+}
+
 .jr-account-login {
   display: flex;
   gap: 8px;

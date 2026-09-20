@@ -462,6 +462,12 @@ const Journey = (function () {
     // always knows which direction is about to overwrite which.
     function accountBlock() {
         const loggedIn = (typeof Sync !== 'undefined') && Sync.isLoggedIn();
+        const googleAuthAvailable = (typeof Sync !== 'undefined') && Sync.isGoogleAuthAvailable && Sync.isGoogleAuthAvailable();
+        const googleSection = googleAuthAvailable ? `
+            <div id="jr-google-signin-btn" class="jr-google-signin-container"></div>
+            <div class="jr-account-divider"><span>or sign in with email</span></div>
+        ` : '';
+
         const body = loggedIn ? `
             <p class="jr-account-email">${esc(Sync.email())}</p>
             <p class="jr-account-sub" style="font-size:12px; color:var(--muted); margin: 4px 0 12px;">Automatic cloud saving active. Progress syncs automatically as you study.</p>
@@ -473,6 +479,7 @@ const Journey = (function () {
             <button class="jr-account-logout" data-sync-logout="1">Log out</button>
         ` : `
             <p class="jr-account-blurb">Back up your progress so it isn't stuck on one device.</p>
+            ${googleSection}
             <div class="jr-account-login">
                 <input type="email" id="jr-account-email-input" class="dk-editor-input"
                     placeholder="you@example.com" maxlength="254">
@@ -555,6 +562,22 @@ const Journey = (function () {
         `;
         _wireClicks(host);
         _refreshAccountStatus(host);
+
+        if (typeof Sync !== 'undefined' && !Sync.isLoggedIn() && Sync.isGoogleAuthAvailable && Sync.isGoogleAuthAvailable()) {
+            Sync.renderGoogleButton('jr-google-signin-btn', {
+                onStart: () => {
+                    const statusEl = host.querySelector('#jr-account-status');
+                    if (statusEl) statusEl.textContent = 'Signing in with Google\u2026';
+                },
+                onSuccess: () => {
+                    render();
+                },
+                onError: (err) => {
+                    const statusEl = host.querySelector('#jr-account-status');
+                    if (statusEl) statusEl.textContent = err.message || 'Google sign-in failed.';
+                }
+            });
+        }
     }
 
     async function showCanDoPassportModal(initialLevel) {

@@ -9,6 +9,14 @@ needs re-reading before starting new work; it's reference only.
 
 ## Completed queue items
 
+59. ~~**Google Sign-In & Multi-Device Cloud Sync**~~ — **Done 2026-09-20.**
+    Implemented 1-tap Google Sign-In alongside email magic links:
+    - **Cloudflare Worker Auth (`cloudflare-worker/sync-worker.js`)**: Added `/auth/google` POST endpoint that cryptographically verifies Google OpenID Connect ID tokens via Google's standard tokeninfo endpoint (zero external dependencies). Validates token audience, issuer (`accounts.google.com`), expiration, and verified email flag.
+    - **D1 SQL & Session Integration**: Maps verified Google email to existing D1 `users` table and issues HMAC-SHA256 signed JWT session tokens identical to magic link sessions. Learners signing in via either method with the same email seamlessly share cloud backups.
+    - **Client Engine (`engine/sync.js`)**: Added lazy loader for Google Identity Services SDK (`accounts.google.com/gsi/client`), `Sync.loginWithGoogle()`, `Sync.renderGoogleButton()`, `Sync.promptGoogleOneTap()`, and auto-restore of cloud backups for clean devices.
+    - **Journey & Onboarding UI (`engine/journey.js`, `styles/components.css`)**: Added Google Sign-In button container and divider in Journey Account card and first-visit prompt sheet, with automatic light/dark theme adaptation.
+    - **Documentation**: Authored step-by-step setup guide in `GOOGLE_SIGNIN_SETUP.md` and linked in `CLOUD_SYNC_SETUP.md`.
+
 58. ~~**Automatic Background Cloud Sync & Life-Cycle Auto-Save**~~ — **Done 2026-09-20.**
     Implemented transparent background auto-sync in `engine/sync.js`:
     - `Sync.scheduleAutoSave()` automatically schedules a debounced backup (2.5s) whenever learner state changes (progress updates in `engine/progress.js`, SRS cards and known words in `engine/srs.js`, drill sessions in `engine/drillHistory.js`, and XP awards in `engine/xp.js`).

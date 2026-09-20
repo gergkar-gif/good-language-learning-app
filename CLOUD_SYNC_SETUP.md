@@ -91,3 +91,9 @@ Since `parlour.me.uk` is verified in Resend, this now works for any real
 email address, not just the Resend account's own — as long as the
 Worker's `RESEND_FROM` has been updated to an address on that domain
 (e.g. `noreply@parlour.me.uk`) and re-deployed.
+
+## Google Sign-In (1-Tap Alternative)
+
+In addition to email magic links, Parlour supports 1-tap Google Sign-In.
+See [`GOOGLE_SIGNIN_SETUP.md`](GOOGLE_SIGNIN_SETUP.md) for instructions on creating
+the Google OAuth Web Client ID and enabling Google Sign-In in your Cloudflare Worker.

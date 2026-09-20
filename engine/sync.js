@@ -33,6 +33,12 @@ const Sync = (function () {
     // rather than breaking sign-in before the widget exists.
     const TURNSTILE_SITE_KEY = '0x4AAAAAAE5nXnu8zfuPH7yB';
 
+    // Public Google OAuth 2.0 Web Client ID. Empty until created in Google
+    // Cloud Console (see GOOGLE_SIGNIN_SETUP.md); while empty, Google
+    // Sign-In UI is omitted gracefully and the email magic link flow remains
+    // the active login method.
+    const GOOGLE_CLIENT_ID = '';
+
     const TOKEN_STORAGE_KEY = 'syncToken';
     const EMAIL_STORAGE_KEY = 'syncEmail';
     const FIRST_VISIT_PROMPT_KEY = 'syncPromptSeen';
@@ -106,15 +112,21 @@ const Sync = (function () {
     }
 
     function _promptFormHtml() {
+        const googleSection = isGoogleAuthAvailable() ? `
+            <div id="sync-prompt-google-btn" class="jr-google-signin-container"></div>
+            <div class="jr-account-divider"><span>or sign in with email</span></div>
+        ` : '';
+
         return `
             <div class="wp-overlay" id="sync-prompt-overlay">
                 <div class="wp-sheet sync-prompt-sheet">
                     <div class="wp-header">
                         <h2 class="sync-prompt-title">Keep your progress safe</h2>
-                        <button class="wp-close" data-sync-prompt-close="1" aria-label="Close">×</button>
+                        <button class="wp-close" data-sync-prompt-close="1" aria-label="Close">&times;</button>
                     </div>
-                    <p class="jr-account-blurb">Enter your email and we'll send you a link —
+                    <p class="jr-account-blurb">Sign in to sync your progress across devices &mdash;
                         no password, and you won't need to log in again.</p>
+                    ${googleSection}
                     <div class="jr-account-login">
                         <input type="email" id="sync-prompt-email-input" class="dk-editor-input"
                             placeholder="you@example.com" maxlength="254">
@@ -133,7 +145,7 @@ const Sync = (function () {
                 <div class="wp-sheet sync-prompt-sheet">
                     <div class="wp-header">
                         <h2 class="sync-prompt-title">Check your email</h2>
-                        <button class="wp-close" data-sync-prompt-close="1" aria-label="Close">×</button>
+                        <button class="wp-close" data-sync-prompt-close="1" aria-label="Close">&times;</button>
                     </div>
                     <p class="jr-account-blurb">We sent a link to ${esc(sentEmail)}. Tap it and
                         you're all set — no password, no need to log in again.</p>
@@ -168,6 +180,23 @@ const Sync = (function () {
         });
         const overlay = document.getElementById('sync-prompt-overlay');
         if (overlay) overlay.addEventListener('click', e => { if (e.target === overlay) closeFirstVisitPrompt(); });
+
+        if (isGoogleAuthAvailable()) {
+            renderGoogleButton('sync-prompt-google-btn', {
+                onStart: () => {
+                    const statusEl = host.querySelector('#sync-prompt-status');
+                    if (statusEl) statusEl.textContent = 'Signing in with Google\u2026';
+                },
+                onSuccess: () => {
+                    closeFirstVisitPrompt();
+                    location.reload();
+                },
+                onError: (err) => {
+                    const statusEl = host.querySelector('#sync-prompt-status');
+                    if (statusEl) statusEl.textContent = err.message || 'Google sign-in failed.';
+                }
+            });
+        }
 
         const sendBtn = host.querySelector('[data-sync-prompt-send]');
         if (sendBtn) {
@@ -261,6 +290,155 @@ const Sync = (function () {
         if (!res.ok) {
             const body = await res.json().catch(() => ({}));
             throw new Error(body.error || 'Could not send link');
+        }
+    }
+
+    // ----------------------------------------
+    // GOOGLE SIGN-IN (OpenID Connect / Google Identity Services)
+    // ----------------------------------------
+    let _gsiLoadPromise = null;
+
+    function isGoogleAuthAvailable() {
+        return Boolean(GOOGLE_CLIENT_ID);
+    }
+
+    function getGoogleClientId() {
+        return GOOGLE_CLIENT_ID;
+    }
+
+    function _loadGoogleScript() {
+        if (_gsiLoadPromise) return _gsiLoadPromise;
+        _gsiLoadPromise = new Promise((resolve, reject) => {
+            if (typeof window !== 'undefined' && window.google && window.google.accounts && window.google.accounts.id) {
+                resolve(window.google.accounts.id);
+                return;
+            }
+            if (typeof document === 'undefined') {
+                reject(new Error('Document not available'));
+                return;
+            }
+            const script = document.createElement('script');
+            script.src = 'https://accounts.google.com/gsi/client';
+            script.async = true;
+            script.defer = true;
+            script.onload = () => {
+                if (window.google && window.google.accounts && window.google.accounts.id) {
+                    resolve(window.google.accounts.id);
+                } else {
+                    reject(new Error('Google Identity Services SDK failed to initialize'));
+                }
+            };
+            script.onerror = () => reject(new Error('Could not load Google Sign-In SDK'));
+            document.head.appendChild(script);
+        });
+        return _gsiLoadPromise;
+    }
+
+    async function loginWithGoogle(credential) {
+        if (!credential) throw new Error('Missing Google credential');
+
+        const res = await fetch(WORKER_URL + '/auth/google', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ credential })
+        });
+
+        if (!res.ok) {
+            const body = await res.json().catch(() => ({}));
+            throw new Error(body.error || 'Google sign-in failed');
+        }
+
+        const data = await res.json();
+        localStorage.setItem(TOKEN_STORAGE_KEY, data.token);
+        localStorage.setItem(EMAIL_STORAGE_KEY, data.email);
+
+        // If logging in on a new device with empty progress, automatically restore cloud backup
+        const progressKey = (typeof Lang !== 'undefined' && Lang.key) ? Lang.key('progress') : 'es:progress';
+        const progressRaw = localStorage.getItem(progressKey);
+        if (!progressRaw || progressRaw === '{}') {
+            try {
+                const cloudData = await status();
+                if (cloudData && cloudData.state) {
+                    applySnapshot(cloudData.state);
+                }
+            } catch (err) {
+                console.warn('Sync: initial auto-restore skipped', err);
+            }
+        }
+
+        return data;
+    }
+
+    async function renderGoogleButton(target, options = {}) {
+        if (!GOOGLE_CLIENT_ID) return;
+        const container = (typeof target === 'string') ? document.getElementById(target) : target;
+        if (!container) return;
+
+        try {
+            const gsi = await _loadGoogleScript();
+            gsi.initialize({
+                client_id: GOOGLE_CLIENT_ID,
+                callback: async (response) => {
+                    if (!response || !response.credential) return;
+                    try {
+                        if (options.onStart) options.onStart();
+                        const result = await loginWithGoogle(response.credential);
+                        if (options.onSuccess) options.onSuccess(result);
+                        else location.reload();
+                    } catch (err) {
+                        if (options.onError) options.onError(err);
+                        else console.error('Google sign-in error:', err);
+                    }
+                },
+                auto_select: false,
+                cancel_on_tap_outside: true
+            });
+
+            const isDark = (typeof document !== 'undefined') &&
+                document.documentElement.getAttribute('data-theme') === 'dark';
+
+            const btnConfig = Object.assign({
+                type: 'standard',
+                shape: 'rectangular',
+                theme: isDark ? 'filled_black' : 'outline',
+                text: 'signin_with',
+                size: 'large',
+                logo_alignment: 'left',
+                width: options.width || 250
+            }, options.buttonConfig || {});
+
+            container.innerHTML = '';
+            gsi.renderButton(container, btnConfig);
+
+            if (options.enableOneTap) {
+                gsi.prompt(options.onPromptNotification);
+            }
+        } catch (error) {
+            console.warn('Google Sign-In initialization skipped or failed:', error.message || error);
+        }
+    }
+
+    async function promptGoogleOneTap(options = {}) {
+        if (!GOOGLE_CLIENT_ID || isLoggedIn()) return;
+        try {
+            const gsi = await _loadGoogleScript();
+            gsi.initialize({
+                client_id: GOOGLE_CLIENT_ID,
+                callback: async (response) => {
+                    if (!response || !response.credential) return;
+                    try {
+                        const result = await loginWithGoogle(response.credential);
+                        if (options.onSuccess) options.onSuccess(result);
+                        else location.reload();
+                    } catch (err) {
+                        if (options.onError) options.onError(err);
+                    }
+                },
+                cancel_on_tap_outside: true
+            });
+            gsi.prompt(options.onPromptNotification);
+        } catch (error) {
+            // Silently ignore One Tap failure
         }
     }
 
@@ -460,6 +638,8 @@ const Sync = (function () {
 
     return {
         isLoggedIn, email, logout, requestLink, completeVerify,
+        loginWithGoogle, renderGoogleButton, promptGoogleOneTap,
+        isGoogleAuthAvailable, getGoogleClientId,
         gatherSnapshot, applySnapshot, backup, restore, status,
         maybeShowFirstVisitPrompt, scheduleAutoSave, performAutoSave,
         lastSavedAt

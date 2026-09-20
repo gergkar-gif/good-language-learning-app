@@ -258,6 +258,76 @@ async function handleVerify(request, env, cors) {
     return json({ token: session, email: row.email }, 200, cors);
 }
 
+async function handleGoogleAuth(request, env, cors) {
+    let payload;
+    try {
+        payload = await request.json();
+    } catch (e) {
+        return json({ error: 'Bad request' }, 400, cors);
+    }
+
+    const credential = typeof payload.credential === 'string' ? payload.credential.trim() : '';
+    if (!credential) {
+        return json({ error: 'Missing credential' }, 400, cors);
+    }
+
+    // Verify Google ID token via Google's tokeninfo endpoint (zero external dependencies)
+    let tokenInfo;
+    try {
+        const verifyRes = await fetch(
+            'https://oauth2.googleapis.com/tokeninfo?id_token=' + encodeURIComponent(credential)
+        );
+        if (!verifyRes.ok) {
+            return json({ error: 'Invalid Google token' }, 401, cors);
+        }
+        tokenInfo = await verifyRes.json();
+    } catch (error) {
+        console.error('Google token verification failed:', error.message);
+        return json({ error: 'Failed to verify token with Google' }, 502, cors);
+    }
+
+    // Validate claims
+    if (env.GOOGLE_CLIENT_ID && tokenInfo.aud !== env.GOOGLE_CLIENT_ID) {
+        return json({ error: 'Invalid Google client ID' }, 401, cors);
+    }
+
+    const validIssuers = ['accounts.google.com', 'https://accounts.google.com'];
+    if (!validIssuers.includes(tokenInfo.iss)) {
+        return json({ error: 'Invalid token issuer' }, 401, cors);
+    }
+
+    if (tokenInfo.email_verified !== 'true' && tokenInfo.email_verified !== true) {
+        return json({ error: 'Google email is not verified' }, 401, cors);
+    }
+
+    const exp = Number(tokenInfo.exp);
+    if (isNaN(exp) || exp * 1000 < Date.now()) {
+        return json({ error: 'Google token has expired' }, 401, cors);
+    }
+
+    const email = typeof tokenInfo.email === 'string' ? tokenInfo.email.trim().toLowerCase() : '';
+    if (!email || !email.includes('@') || email.length > 254) {
+        return json({ error: 'Invalid email in Google token' }, 400, cors);
+    }
+
+    // Upsert or fetch existing user from D1 database
+    let user = await env.DB.prepare('SELECT * FROM users WHERE email = ?').bind(email).first();
+    if (!user) {
+        const id = randomToken();
+        await env.DB.prepare(
+            'INSERT INTO users (id, email, state_json, updated_at, created_at) VALUES (?, ?, NULL, NULL, ?)'
+        ).bind(id, email, Date.now()).run();
+        user = { id, email };
+    }
+
+    const session = await signSession(
+        { sub: user.id, email, exp: Date.now() + SESSION_TTL_SECONDS * 1000 },
+        env.JWT_SECRET
+    );
+
+    return json({ token: session, email }, 200, cors);
+}
+
 async function handleGetState(request, env, cors) {
     const session = await requireSession(request, env);
     if (!session) return json({ error: 'Not signed in' }, 401, cors);
@@ -308,6 +378,7 @@ export default {
 
         if (path === '/auth/request-link' && request.method === 'POST') return handleRequestLink(request, env, cors);
         if (path === '/auth/verify' && request.method === 'POST') return handleVerify(request, env, cors);
+        if (path === '/auth/google' && request.method === 'POST') return handleGoogleAuth(request, env, cors);
         if (path === '/sync/state' && request.method === 'GET') return handleGetState(request, env, cors);
         if (path === '/sync/state' && request.method === 'POST') return handlePostState(request, env, cors);
 

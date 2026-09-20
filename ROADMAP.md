@@ -19,7 +19,6 @@ Completed work is archived out to `ACHIEVED.md`.
 
 Unscoped enhancements and candidate features:
 
-- **Google Sign-In & Multi-Device Sync**: Introduce 1-tap Google Sign-In alongside the email magic link. Enables fast login without waiting for email delivery, verifies email via OpenID Connect token in Cloudflare Worker, and maps seamlessly to the existing D1 SQL database and JWT session architecture.
 - **Exam-Focused Writing & Speech Units**: Introduce new units that expressly teach writing, particular aspects of speech, and turns of phrase for exams.
 - **New App Sounds**: Audio effects and sound palette refresh.
 - **Cultural Track Recommendations**: Curated cultural recommendations integrated into the cultural track.
