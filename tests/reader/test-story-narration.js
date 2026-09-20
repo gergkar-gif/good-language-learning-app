@@ -6,7 +6,9 @@ const fs = require('fs');
 const path = require('path');
 
 console.log('--- Test 1: Story JSON Schema Validation with Narration Block ---');
-const storyPath = path.join(__dirname, '../../content/es/stories/original/a1/a1-01.json');
+const storyPath = fs.existsSync(path.join(__dirname, '../../content/es-es/stories/original/a1/a1-01.json'))
+    ? path.join(__dirname, '../../content/es-es/stories/original/a1/a1-01.json')
+    : path.join(__dirname, '../../content/es/stories/original/a1/a1-01.json');
 assert(fs.existsSync(storyPath), 'Story file must exist');
 
 const story = JSON.parse(fs.readFileSync(storyPath, 'utf8'));
@@ -17,7 +19,7 @@ assert.strictEqual(story.narration.audioFile, undefined, 'Narration must not ref
 console.log('[PASS] Story JSON contains valid narration block with dynamic streaming config.');
 
 console.log('\n--- Test 2: In-Memory / Cloudflare TTS Architecture (No Git Audio Bloat) ---');
-const esAudioDir = path.join(__dirname, '../../content/es/stories/audio');
+const esAudioDir = path.join(__dirname, '../../content/es-es/stories/audio');
 const huAudioDir = path.join(__dirname, '../../content/hu/stories/audio');
 assert(!fs.existsSync(esAudioDir), 'No static Spanish audio directory should exist in repo');
 assert(!fs.existsSync(huAudioDir), 'No static Hungarian audio directory should exist in repo');
@@ -92,7 +94,9 @@ ped.comprehensionQuestions.forEach((q, idx) => {
 console.log(`[PASS] Verified ${ped.comprehensionQuestions.length} comprehension questions with explanations.`);
 
 console.log('\n--- Test 7: Manifest Integration (hasAudio flag) ---');
-const manifestPath = path.join(__dirname, '../../content/es/stories/manifest.json');
+const manifestPath = fs.existsSync(path.join(__dirname, '../../content/es-es/stories/manifest.json'))
+    ? path.join(__dirname, '../../content/es-es/stories/manifest.json')
+    : path.join(__dirname, '../../content/es/stories/manifest.json');
 const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
 const manifestStory = manifest.stories.find(s => s.id === 'story.a1.01');
 assert(manifestStory, 'Manifest must include story.a1.01');

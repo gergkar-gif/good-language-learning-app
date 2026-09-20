@@ -573,7 +573,7 @@ function _matchesTerm(haystack, term) {
 // separate from tts-worker.js's narrator/vocabulary/instruction/example
 // voices so a character never sounds like the narrator or the app itself.
 const CHARACTER_VOICE_POOL = {
-    male: ['Orus', 'Puck', 'Charon', 'Fenrir', 'Umbriel', 'Algieba'],
+    male: ['Charon', 'Enceladus', 'Algieba', 'Achird', 'Algenib', 'Alnilam'],
     female: ['Kore', 'Aoede', 'Leda', 'Zephyr', 'Callirrhoe', 'Autonoe']
 };
 

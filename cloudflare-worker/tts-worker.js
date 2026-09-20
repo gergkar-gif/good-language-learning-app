@@ -56,7 +56,7 @@ const LANGUAGE_CODE = { en: 'en-US', es: 'es-ES', hu: 'hu-HU' };
 // For Spanish vocabulary, listening drills, and pronunciation checks, we use
 // Google's ultra-fast Neural2 models (400-600ms synthesis vs 2500-3500ms Chirp3-HD).
 const SHORT_VOICE = {
-    male: 'Orus',          // firm — default dialogue/character voice
+    male: 'Charon',        // firm, deep — default dialogue/character voice
     female: 'Kore',        // firm — default dialogue/character voice
     narrator: 'Sulafat',   // warm, steady — stories and long reading passages
     reading: 'Sulafat',
