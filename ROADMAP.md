@@ -5,19 +5,17 @@ Completed work is archived out to `ACHIEVED.md`.
 
 ---
 
-## 1. Immediate Priority Queue
+## 1. Active & Parked Priorities
 
-1. **Finish the Spain CCSE track (`content/es-es`, `*-ccse-*` files).** Added 2026-09-20 as an
-   unfinished scaffold: 210 of its 216 B1 lessons are empty stubs (`sections: []`) yet already wired
-   into `curriculum/units/b1.json`, so the Spain course shows empty lessons. The 6 lessons with content
-   (Constitución 01-05 + consolidation) use ids/fields the schemas reject (`lesson.b1.ccse.constitucion.01`,
-   lowercase `level`, `track`, vocab `word`/`gender` instead of `lemma`, exercise files without `lesson`).
-   The Sync generated content workflow was failing on every push because of this, so
-   `scripts/validate-content.py` now skips `-ccse-` files in `es-es` (`SKIP_STEM_MARKERS`) and prints the
-   skipped count. Remove that skip once the track is built to schema — or park the empty units out of the
-   curriculum until then.
+1. **Progressive Authoring of Spain CCSE Track (`content/es-es`, Units 3–36):**
+   - **Completed**: Unit 1 (*La Constitución Española de 1978*) and Unit 2 (*La Corona y la Jefatura del Estado*) are fully authored, schema-validated, and generating SRS decks and translation indexes.
+   - **Roadmapped / Parked for Future Cycles**: Units 3 through 36 (covering Cortes Generales, Gobierno, Poder Judicial, Organización Territorial, Derechos Fundamentales, Geografía, Historia, Cultura, y Sociedad Española).
+   - **Authoring Norm**: When resuming, every unit must follow the established three-pillar standard: B1 level pedagogical clarity, 100% factual accuracy (aligned with Instituto Cervantes CCSE syllabus), and *The Rest Is History* (TRIH)-style engaging, humanized narrative storytelling with companion stories in `stories/world/b1/`.
+   - `scripts/validate-content.py` maintains `SKIP_STEM_MARKERS = {"es-es": "-ccse-"}` for scaffolded stubs until all units are authored.
 
-Candidate next items are listed in Section 2 below.
+2. **Peninsular Adaptations & Active *Vosotros* Practice (`content/es-es` A1/A2):**
+   - Active interactive *vosotros* exercises across A1 and A2 exercise files.
+   - Secondary Peninsular lexical adaptations (`ordenador`, `móvil`, `aparcar`, `patata`, `gafas`, `piso`).
 
 ---
 
