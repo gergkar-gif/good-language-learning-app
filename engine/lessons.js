@@ -1091,16 +1091,26 @@ const stepRenderers = {
     // Hungarian's letter-sound tables) gets a human voice instead of TTS,
     // cell by cell, with TTS as the fallback for any cell not in the map.
     table(step) {
-        const PRONOUN_RE = /^(yo|tú|usted|él|ella|nosotros|nosotras|vosotros|vosotras|ustedes|ellos|ellas)(\s*\/\s*(yo|tú|usted|él|ella|nosotros|nosotras|vosotros|vosotras|ustedes|ellos|ellas))*$/i;
+        const PRONOUN_RE = /^(yo|tú|usted|él|ella|nosotros|nosotras|vosotros|vosotras|ustedes|ellos|ellas|én|te|ő|ön|mi|ti|ők|önök)(\s*\/\s*(yo|tú|usted|él|ella|nosotros|nosotras|vosotros|vosotras|ustedes|ellos|ellas|én|te|ő|ön|mi|ti|ők|önök))*$/i;
         const audioMap = step.audioMap || {};
         return `
             <table class="lsn-table">
                 ${(step.rows || []).map(row => {
-                    const isConjugation = step.bothAudible || PRONOUN_RE.test((row[0] || '').trim());
+                    const col0 = row[0] || '';
+                    const col1 = row[1] || '';
+                    const isConjugation = step.bothAudible || PRONOUN_RE.test(col0.trim());
+                    // If a table row was authored in [English, Target] order rather than standard [Target, English],
+                    // swap on render so the target language is primary, bold, and voiced, never the English gloss.
+                    const col0IsEnglish = !isConjugation && /^[a-z\s.,'?!-]*$/i.test(col0) && /\b(the|to|i|you|he|she|we|they|my|your|what|where|when|is|are|please|thank|good|hello|how|do|have|rest|drink|want)\b/i.test(col0);
+                    const primaryText = col0IsEnglish ? col1 : col0;
+                    const secondaryText = col0IsEnglish ? col0 : col1;
+                    const primaryAudio = sayOrPlay(primaryText, audioMap[primaryText]);
+                    const secondaryAudio = (isConjugation && !col0IsEnglish) ? sayOrPlay(col1, audioMap[col1]) : '';
+
                     return `
                     <tr>
-                        <td><strong>${esc(row[0])}</strong>${sayOrPlay(row[0], audioMap[row[0]])}</td>
-                        <td>${esc(row[1])}${isConjugation ? sayOrPlay(row[1], audioMap[row[1]]) : ''}</td>
+                        <td><strong>${esc(primaryText)}</strong>${primaryAudio}</td>
+                        <td>${esc(secondaryText)}${secondaryAudio}</td>
                     </tr>
                 `;
                 }).join('')}

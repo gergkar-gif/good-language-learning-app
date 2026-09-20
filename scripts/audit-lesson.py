@@ -46,7 +46,7 @@ import unicodedata
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-ES = ROOT / "content" / "es"
+ES = ROOT / "content" / "es-latam"
 
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -118,14 +118,15 @@ def exercise_spanish(ex):
         # the old baked-in "(...)" convention specifically to fix), so
         # including it would only reintroduce exactly the ambiguity this
         # newer shape avoids.
-        stem = ex["sentence"] if "sentence" in ex else ex["question"]
-        return [stem] + (ex["answers"] if "answers" in ex else [ex["answer"]])
+        stem = ex.get("sentence", ex.get("question", ""))
+        answers = ex.get("answers") or ([ex["answer"]] if "answer" in ex else [])
+        return ([stem] if stem else []) + answers
     if kind == "sentence-builder":
         return ex["tiles"]
     if kind == "dialogue-complete":
         return [line["text"] for line in ex["prompt"]] + ex["options"]
     if kind == "structured-writing":
-        return [line["answer"] for line in ex["template"]]
+        return [line["answer"] for line in ex.get("template", []) if "answer" in line]
     if kind == "sentence-order":
         return ex["sentences"] if ex.get("category") != "reading" else []
     if kind in ("listening-choice", "dictation"):
@@ -755,7 +756,21 @@ def resolve_targets(args):
 
 
 def main():
-    targets = resolve_targets(sys.argv[1:])
+    global ES
+    raw_args = sys.argv[1:]
+    args = []
+    i = 0
+    while i < len(raw_args):
+        if raw_args[i] == "--corpus" and i + 1 < len(raw_args):
+            ES = ROOT / "content" / raw_args[i + 1]
+            i += 2
+        elif raw_args[i].startswith("--corpus="):
+            ES = ROOT / "content" / raw_args[i].split("=", 1)[1]
+            i += 1
+        else:
+            args.append(raw_args[i])
+            i += 1
+    targets = resolve_targets(args)
 
     failed = 0
     all_order_issues = []
