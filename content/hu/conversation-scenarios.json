@@ -21,7 +21,10 @@
         "polite_requests",
         "paying_bill"
       ],
-      "unitIds": ["unit.a1.23", "unit.a1.24"],
+      "unitIds": [
+        "unit.a1.23",
+        "unit.a1.24"
+      ],
       "turns": [
         {
           "turnIndex": 1,
@@ -58,7 +61,7 @@
             "cukor nélkül — without sugar",
             "kevés cukorral — with a little sugar",
             "meleg tejjel — with warm milk",
-            "kérem — I would like it / I ask for it"
+            "kérem — please / I ask for it"
           ],
           "validationCriteria": {
             "minWords": 2,
@@ -79,10 +82,10 @@
           "interlocutorPrompt": "Parancsoljon, itt van a tejeskávé és a sütemény. Kér még valamit?",
           "interlocutorTranslation": "Here you are, here is the white coffee and the pastry. Would you like anything else?",
           "learnerCue": "Köszönd meg, mondd, hogy nem kérsz mást, és kérd a számlát (kártyával szeretnél fizetni).",
-          "learnerCueEn": "Thank them, say that you don't want anything else, and ask for the bill (you'd like to pay by card).",
+          "learnerCueEn": "Say thank you, mention that you don't need anything else, and ask for the bill (wishing to pay by card).",
           "vocabularyHints": [
             "köszönöm szépen — thank you very much",
-            "mást nem kérek — I don't want anything else",
+            "mást nem kérek — nothing else, thank you",
             "a számlát kérem — the bill, please",
             "kártyával fizetnék — I would like to pay by card"
           ],
@@ -102,39 +105,137 @@
       ]
     },
     {
+      "id": "hu-a1-sc02-bolt",
+      "cefrLevel": "A1",
+      "title": "A Boltban",
+      "titleEn": "At the Grocery Store",
+      "situation": "Egy élelmiszerboltban vásárolsz kenyeret és sajtot.",
+      "situationEn": "You are at a grocery shop buying bread and cheese.",
+      "roleplay": {
+        "interlocutorRole": "Eladó",
+        "interlocutorRoleEn": "Shop Assistant",
+        "learnerRole": "Vásárló",
+        "learnerRoleEn": "Customer",
+        "interlocutorVoice": "hu-HU"
+      },
+      "targetCompetency": "I can buy basic food items, state quantities, and pay in Hungarian",
+      "targetSkills": [
+        "food_shopping",
+        "numbers_and_prices",
+        "polite_requests"
+      ],
+      "unitIds": [
+        "unit.a1.08",
+        "unit.a1.09"
+      ],
+      "turns": [
+        {
+          "turnIndex": 1,
+          "interlocutorPrompt": "Jó napot! Miben segíthetek?",
+          "interlocutorTranslation": "Good day! How can I help you?",
+          "learnerCue": "Kérj egy fél kiló kenyeret és húsz deka sajtot.",
+          "learnerCueEn": "Ask for half a kilo of bread and 200g of cheese.",
+          "vocabularyHints": [
+            "fél kiló kenyér — half a kilo of bread",
+            "húsz deka sajt — 200g of cheese",
+            "kérek szépen — I'd like, please"
+          ],
+          "validationCriteria": {
+            "minWords": 3,
+            "targetKeywords": [
+              "kenyér",
+              "kenyeret",
+              "sajt",
+              "sajtot",
+              "kérek",
+              "deka",
+              "kiló"
+            ]
+          }
+        },
+        {
+          "turnIndex": 2,
+          "interlocutorPrompt": "Tessék, itt van. Kér még valamit esetleg?",
+          "interlocutorTranslation": "Here you go. Would you like anything else perhaps?",
+          "learnerCue": "Mondd, hogy nem kérsz mást, és kérdezd meg, mennyibe kerül.",
+          "learnerCueEn": "Say nothing else, and ask how much it costs.",
+          "vocabularyHints": [
+            "köszönöm, mást nem — thank you, nothing else",
+            "mennyibe kerül? — how much does it cost?",
+            "összesen — in total"
+          ],
+          "validationCriteria": {
+            "minWords": 2,
+            "targetKeywords": [
+              "mást",
+              "nem",
+              "mennyibe",
+              "kerül",
+              "köszönöm"
+            ]
+          }
+        },
+        {
+          "turnIndex": 3,
+          "interlocutorPrompt": "Összesen ezerkétszáz forint lesz. Kártyával vagy készpénzzel fizet?",
+          "interlocutorTranslation": "That will be 1,200 forints in total. Paying by card or cash?",
+          "learnerCue": "Mondd, hogy készpénzzel vagy kártyával fizetsz, és köszönd meg.",
+          "learnerCueEn": "State whether you are paying by cash or card, and say thank you.",
+          "vocabularyHints": [
+            "készpénzzel fizetek — I pay with cash",
+            "kártyával — by card",
+            "tessék, itt van — here you go",
+            "viszontlátásra — goodbye"
+          ],
+          "validationCriteria": {
+            "minWords": 2,
+            "targetKeywords": [
+              "kártya",
+              "készpénz",
+              "fizetek",
+              "köszönöm",
+              "tessék"
+            ]
+          }
+        }
+      ]
+    },
+    {
       "id": "hu-a2-sc01-palyaudvar",
       "cefrLevel": "A2",
       "title": "A Pályaudvaron",
-      "titleEn": "At the Railway Station",
+      "titleEn": "At the Train Station",
       "situation": "A budapesti Déli pályaudvaron vagy a jegypénztárnál, és Siófokra (Balaton) szeretnél vonatjegyet venni.",
-      "situationEn": "You are at the ticket counter in Budapest Déli railway station, and you would like to buy a train ticket to Siófok (Lake Balaton).",
+      "situationEn": "You are at the ticket counter of Déli station in Budapest, and you want to buy a train ticket to Siófok (Lake Balaton).",
       "roleplay": {
         "interlocutorRole": "Jegypénztáros",
-        "interlocutorRoleEn": "Ticket agent / Cashier",
+        "interlocutorRoleEn": "Ticket Clerk",
         "learnerRole": "Utas",
         "learnerRoleEn": "Passenger",
         "interlocutorVoice": "hu-HU"
       },
-      "targetCompetency": "I can buy a train ticket, enquire about schedule and departure tracks",
+      "targetCompetency": "I can buy a train ticket, enquire about schedule and departure tracks in Hungarian",
       "targetSkills": [
         "travel_arrangements",
         "asking_timetable",
         "numbers_and_times"
       ],
-      "unitIds": ["unit.a2.14", "unit.a2.15"],
+      "unitIds": [
+        "unit.a2.14",
+        "unit.a2.15"
+      ],
       "turns": [
         {
           "turnIndex": 1,
           "interlocutorPrompt": "Tessék, parancsoljon! Hova kéri a jegyet?",
           "interlocutorTranslation": "Yes please! Where would you like the ticket to?",
           "learnerCue": "Kérj egy retúr (oda-vissza) jegyet Siófokra a mai napra.",
-          "learnerCueEn": "Ask for a return (round-trip) ticket to Siófok for today.",
+          "learnerCueEn": "Ask for a round-trip ticket to Siófok for today.",
           "vocabularyHints": [
-            "egy oda-vissza jegyet — a return ticket (accusative)",
-            "egy retúrjegyet — a return ticket (accusative)",
+            "egy oda-vissza jegyet — a round-trip ticket (accusative)",
             "Siófokra — to Siófok",
             "mára — for today",
-            "kérek — I'd like / I ask for"
+            "kérek szépen — please"
           ],
           "validationCriteria": {
             "minWords": 4,
@@ -155,13 +256,12 @@
           "interlocutorPrompt": "Van egy InterCity tíz óra húszkor és egy személyvonat tizenegykor. Az InterCityre helyjegy is kell. Melyikkel szeretne utazni?",
           "interlocutorTranslation": "There is an InterCity at 10:20 and a local train at 11:00. The InterCity also requires a seat reservation. Which one would you like to travel on?",
           "learnerCue": "Válaszd a tíz óra húszas járatot, és kérdezd meg, mikor érkezik Siófokra.",
-          "learnerCueEn": "Choose the 10:20 service, and ask when it arrives in Siófok.",
+          "learnerCueEn": "Choose the 10:20 train, and ask what time it arrives in Siófok.",
           "vocabularyHints": [
-            "a tíz óra húszas — the ten twenty (train)",
-            "InterCityvel — with InterCity",
-            "szeretnék utazni — I would like to travel",
-            "mikor érkezik meg — when does it arrive",
-            "Siófokra — to Siófok"
+            "az InterCityvel szeretnék — I would like with the InterCity",
+            "tíz óra húszkor — at 10:20",
+            "Mikor érkezik meg? — When does it arrive?",
+            "mennyi a menetidő? — how long is the travel time?"
           ],
           "validationCriteria": {
             "minWords": 3,
@@ -181,12 +281,11 @@
           "interlocutorPrompt": "Pontosan tizenegy óra harminckor érkezik. Összesen háromezer-ötszáz forint lesz. Készpénz vagy bankkártya?",
           "interlocutorTranslation": "It arrives at exactly 11:30. That will be 3,500 forints in total. Cash or bank card?",
           "learnerCue": "Mondd, hogy kártyával fizetsz, és kérdezd meg, hányas vágányról indul a vonat.",
-          "learnerCueEn": "Say that you are paying by card, and ask which track the train departs from.",
+          "learnerCueEn": "Say that you will pay by card, and ask which track the train departs from.",
           "vocabularyHints": [
-            "bankkártyával fizetek — I am paying with bank card",
-            "meg tudja mondani — can you tell me",
-            "melyik vágányról — from which track",
-            "indul a vonat — does the train depart"
+            "bankkártyával fizetek — I pay by card",
+            "Hányas vágányról indul? — From which track does it depart?",
+            "köszönöm szépen — thank you very much"
           ],
           "validationCriteria": {
             "minWords": 3,
@@ -198,6 +297,102 @@
               "vágányról",
               "indul",
               "köszönöm"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "hu-a2-sc02-utbaigazitas",
+      "cefrLevel": "A2",
+      "title": "Útbaigazítás Kérése",
+      "titleEn": "Asking for Directions",
+      "situation": "A Deák téren vagy és keresed a Magyar Nemzeti Múzeumot.",
+      "situationEn": "You are at Deák Square and looking for the Hungarian National Museum.",
+      "roleplay": {
+        "interlocutorRole": "Helyi járókelő",
+        "interlocutorRoleEn": "Local passerby",
+        "learnerRole": "Turista",
+        "learnerRoleEn": "Tourist",
+        "interlocutorVoice": "hu-HU"
+      },
+      "targetCompetency": "I can ask for and understand directional directions in Hungarian",
+      "targetSkills": [
+        "asking_directions",
+        "spatial_orientation",
+        "polite_enquiry"
+      ],
+      "unitIds": [
+        "unit.a2.05",
+        "unit.a2.06"
+      ],
+      "turns": [
+        {
+          "turnIndex": 1,
+          "interlocutorPrompt": "Jó napot! Segíthetek valamiben?",
+          "interlocutorTranslation": "Good day! Can I help with something?",
+          "learnerCue": "Elnézést kérve kérdezd meg, merre van a Nemzeti Múzeum.",
+          "learnerCueEn": "Excuse yourself and ask which way the National Museum is.",
+          "vocabularyHints": [
+            "elnézést kívánok — excuse me",
+            "hol van a múzeum? — where is the museum?",
+            "merre kell menni? — which way should I go?",
+            "messze van? — is it far?"
+          ],
+          "validationCriteria": {
+            "minWords": 3,
+            "targetKeywords": [
+              "elnézést",
+              "múzeum",
+              "merre",
+              "hol",
+              "Nemzeti",
+              "menni"
+            ]
+          }
+        },
+        {
+          "turnIndex": 2,
+          "interlocutorPrompt": "Nincs messze, körülbelül tíz perc séta. Menjen egyenesen a Kálvin tér felé.",
+          "interlocutorTranslation": "It's not far, about a ten-minute walk. Go straight towards Kálvin Square.",
+          "learnerCue": "Kérdezd meg, hogy jobbra vagy balra kell-e fordulni a Kálvin téren.",
+          "learnerCueEn": "Ask whether you need to turn right or left at Kálvin Square.",
+          "vocabularyHints": [
+            "értem — I understand",
+            "jobbra vagy balra? — right or left?",
+            "kell fordulni — need to turn",
+            "a Kálvin téren — at Kálvin Square"
+          ],
+          "validationCriteria": {
+            "minWords": 3,
+            "targetKeywords": [
+              "jobbra",
+              "balra",
+              "fordulni",
+              "Kálvin",
+              "téren"
+            ]
+          }
+        },
+        {
+          "turnIndex": 3,
+          "interlocutorPrompt": "A Kálvin téren menjen kissé balra a Múzeum körútra, és a bal oldalon meglátja az épületet.",
+          "interlocutorTranslation": "At Kálvin Square go slightly to the left onto Múzeum Boulevard, and you will see the building on the left side.",
+          "learnerCue": "Köszönd meg a segítséget és kívánj szép napot.",
+          "learnerCueEn": "Thank them for the help and wish them a nice day.",
+          "vocabularyHints": [
+            "nagyon köszönöm a segítséget — thank you very much for the help",
+            "szép napot kívánok — have a nice day",
+            "viszontlátásra — goodbye"
+          ],
+          "validationCriteria": {
+            "minWords": 3,
+            "targetKeywords": [
+              "köszönöm",
+              "segítséget",
+              "szép",
+              "napot",
+              "viszontlátásra"
             ]
           }
         }
