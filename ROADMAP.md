@@ -29,6 +29,7 @@ Unscoped enhancements, UX refinements, and candidate features grouped by domain 
 
 ### Grammar & Reference
 - **Spanish Conjugation Tables Audit**: Follow up on user report (*"spanish conjuation tables - sometimes only"*): audit verb tables across lessons and Workshop reference to ensure full conjugation sets are consistently rendered, resolve any partial table displays, and verify TTS audio attachments.
+  - 2026-09-21: Fixed two in-app bug reports (`lesson.a1.reflexive.03`, `lesson.a1.reflexive.04`) where grammar tables with two target-language columns per row only had a listen button on column 0 — `engine/lessons.js`'s `Screens.table` only auto-voices column 1 when column 0 is a bare pronoun, and both tables instead paired two full conjugated forms or two full sentences. Fixed via the existing `"bothAudible": true` opt-in on the table section rather than a code change. The broader audit (checking other lessons/Workshop tables for the same pattern) is still open.
 
 ### Curriculum, Content & Extended Tracks
 - **Exam-Focused Writing & Speech Units**: Introduce new units that expressly teach writing, particular aspects of speech, and turns of phrase for exams.
