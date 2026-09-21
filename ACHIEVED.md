@@ -9,6 +9,21 @@ needs re-reading before starting new work; it's reference only.
 
 ## Completed queue items
 
+63. ~~**Spanish Conjugation Tables Audit, Peninsular Vosotros & Workshop Verb Driller Restoration**~~ — **Done 2026-09-21.**
+    Audited and repaired Spanish conjugation tables, drill references, and TTS audio integration across both European Spanish (`content/es-es`) and Latin American Spanish (`content/es-latam`):
+    - **Workshop Verb Driller Availability (`engine/workshop.js`)**: Corrected language matching in `_available(driller)` and expanded driller configuration to `['es', 'es-latam', 'es-es']`. Previously `Lang.code()` returning regional codes caused the entire Verb Driller tool to be hidden for Spanish learners in Workshop.
+    - **Workshop Conjugation Table Audio & Reveal Mode (`engine/verbs/table.js`, `styles/verbs.css`)**:
+      - Integrated `ParlourTTS.button()` audio playback for the infinitive title and each conjugated person row.
+      - Added speculative preloading for all paradigm forms upon table render.
+      - Added "Show Answers" reference reveal action so learners can inspect full paradigms immediately without having to complete typing drills.
+    - **Lesson Conjugation Table Pronoun Recognition & Audio (`engine/lessons.js`)**:
+      - Expanded `PRONOUN_RE` regex and cleaned input strings (`replace(/[*_()]/g, '')`) to recognize composite pronouns (`él/ella/ud.`, `nosotros/as`, `vosotros/as`, `(A mí)`, etc.).
+      - Ensured secondary cells in grammar conjugation tables are recognized as conjugated forms and properly rendered with target-language audio buttons.
+    - **Peninsular Vosotros Backfill in `content/es-es`**:
+      - Audited all curriculum grammar tables; identified 21 legacy 5-row tables across 17 A1/A2 lesson files in `content/es-es` that were missing the Peninsular *vosotros* paradigm.
+      - Added complete *vosotros* rows across regular and irregular paradigms (present, imperfect, conditional, reflexive, and auxiliary verbs).
+      - Validated all 17 touched files via `python scripts/validate-content.py --changed` with 0 errors.
+
 62. ~~**B1 Fill-in-the-Blank and Dictation English Translations Backfill**~~ — **Done 2026-09-21.**
     Backfilled natural English translations (`english`) for all 980 unique B1 fill-in-the-blank and dictation exercises across both `content/es-es` (697 exercises) and `content/es-latam` (980 exercises, Spain being a 100% subset of LatAm):
     - **Sentence Export**: Generated 5 human-readable `.txt` batch files (`b1_batch_1.txt` – `b1_batch_5.txt`, ~200 items each) with a ChatGPT prompt preamble for manual translation.

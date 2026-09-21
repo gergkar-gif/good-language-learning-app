@@ -223,10 +223,18 @@
 }
 
 .vtable-verb {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
     font-size: 1.6rem;
     font-weight: 800;
     color: var(--primary, #1B4B5A);
     letter-spacing: 0.02em;
+}
+
+.vtable-row .speak-btn {
+    flex-shrink: 0;
 }
 
 .vtable-meaning {

@@ -1091,21 +1091,23 @@ const stepRenderers = {
     // Hungarian's letter-sound tables) gets a human voice instead of TTS,
     // cell by cell, with TTS as the fallback for any cell not in the map.
     table(step) {
-        const PRONOUN_RE = /^(yo|tú|usted|él|ella|nosotros|nosotras|vosotros|vosotras|ustedes|ellos|ellas|én|te|ő|ön|mi|ti|ők|önök)(\s*\/\s*(yo|tú|usted|él|ella|nosotros|nosotras|vosotros|vosotras|ustedes|ellos|ellas|én|te|ő|ön|mi|ti|ők|önök))*$/i;
+        const PRONOUN_PART = '(yo|tú|tu|usted|ud\\.?|él|el|ella|nosotros|nosotras|nosotros/as|vosotros|vosotras|vosotros/as|ustedes|uds\\.?|ellos|ellas|én|te|ő|ön|mi|ti|ők|önök|a\\s+mí|a\\s+ti|a\\s+él|a\\s+ella|a\\s+usted)';
+        const PRONOUN_RE = new RegExp(`^${PRONOUN_PART}(\\s*[/,]\\s*${PRONOUN_PART})*$`, 'i');
         const audioMap = step.audioMap || {};
         return `
             <table class="lsn-table">
                 ${(step.rows || []).map(row => {
                     const col0 = row[0] || '';
                     const col1 = row[1] || '';
-                    const isConjugation = step.bothAudible || PRONOUN_RE.test(col0.trim());
+                    const cleanCol0 = col0.replace(/[*_()]/g, '').trim();
+                    const isConjugation = step.bothAudible || PRONOUN_RE.test(cleanCol0);
                     // If a table row was authored in [English, Target] order rather than standard [Target, English],
                     // swap on render so the target language is primary, bold, and voiced, never the English gloss.
                     const col0IsEnglish = !isConjugation && /^[a-z\s.,'?!-]*$/i.test(col0) && /\b(the|to|i|you|he|she|we|they|my|your|what|where|when|is|are|please|thank|good|hello|how|do|have|rest|drink|want)\b/i.test(col0);
                     const primaryText = col0IsEnglish ? col1 : col0;
                     const secondaryText = col0IsEnglish ? col0 : col1;
                     const primaryAudio = sayOrPlay(primaryText, audioMap[primaryText]);
-                    const secondaryAudio = (isConjugation && !col0IsEnglish) ? sayOrPlay(col1, audioMap[col1]) : '';
+                    const secondaryAudio = (isConjugation && !col0IsEnglish) ? sayOrPlay(secondaryText, audioMap[secondaryText]) : '';
 
                     return `
                     <tr>

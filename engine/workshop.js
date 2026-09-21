@@ -51,7 +51,7 @@ const Workshop = (function () {
             title: 'Verb Driller',
             sub: 'Conjugation tables and speed drills.',
             containerId: 'verb-driller-root',
-            langs: ['es'],
+            langs: ['es', 'es-latam', 'es-es'],
             category: 'foundations'
         },
 
@@ -82,7 +82,9 @@ const Workshop = (function () {
     ];
 
     function _available(driller) {
-        return !driller.langs || driller.langs.includes(Lang.code());
+        if (!driller.langs) return true;
+        const currentLang = typeof Lang !== 'undefined' ? Lang.code() : 'es-latam';
+        return driller.langs.some(l => l === currentLang || currentLang.startsWith(l + '-'));
     }
 
     // Each driller's own mark, two-tone in the same --wash/--ink/--accent

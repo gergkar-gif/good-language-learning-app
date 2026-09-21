@@ -52,13 +52,17 @@ const VerbsTable = (function () {
     // ---- Rendering ----
     function _buildHtml(verb, tenseLabel, meaning, persons, tenseData) {
         if (!verb) {
-            return '<div class="vtable-empty">Loading verb data\u2026</div>';
+            return '<div class="vtable-empty">Loading verb data…</div>';
         }
+
+        var verbAudio = (typeof ParlourTTS !== 'undefined')
+            ? ParlourTTS.button(verb.infinitivo, { type: 'vocabulary', label: 'Listen to ' + verb.infinitivo })
+            : (typeof Speech !== 'undefined' ? Speech.button(verb.infinitivo) : '');
 
         if (!tenseData) {
             return ''
                 + '<div class="vtable-header">'
-                +   '<div class="vtable-verb">' + _escapeHtml(verb.infinitivo.toUpperCase()) + '</div>'
+                +   '<div class="vtable-verb">' + _escapeHtml(verb.infinitivo.toUpperCase()) + verbAudio + '</div>'
                 +   (meaning ? '<div class="vtable-meaning">' + _escapeHtml(meaning) + '</div>' : '')
                 + '</div>'
                 + '<div class="vtable-empty">This tense is not available for this verb.</div>'
@@ -71,6 +75,9 @@ const VerbsTable = (function () {
         for (var i = 0; i < persons.length; i++) {
             var p = persons[i];
             var correct = tenseData[p] || '';
+            var rowAudio = (correct && typeof ParlourTTS !== 'undefined')
+                ? ParlourTTS.button(correct, { type: 'vocabulary', label: 'Listen to ' + correct })
+                : (correct && typeof Speech !== 'undefined' ? Speech.button(correct) : '');
             rows += ''
                 + '<div class="vtable-row">'
                 +   '<label class="vtable-label" for="vtable-' + p + '">' + PERSON_LABELS[p] + '</label>'
@@ -78,12 +85,13 @@ const VerbsTable = (function () {
                 +     ' autocomplete="off" autocapitalize="off" spellcheck="false"'
                 +     ' data-person="' + p + '" data-correct="' + _escapeHtml(correct) + '"'
                 +     ' aria-label="' + PERSON_LABELS[p] + '">'
+                +   rowAudio
                 + '</div>';
         }
 
         return ''
             + '<div class="vtable-header">'
-            +   '<div class="vtable-verb">' + _escapeHtml(verb.infinitivo.toUpperCase()) + '</div>'
+            +   '<div class="vtable-verb">' + _escapeHtml(verb.infinitivo.toUpperCase()) + verbAudio + '</div>'
             +   (meaning ? '<div class="vtable-meaning">' + _escapeHtml(meaning) + '</div>' : '')
             +   '<div class="vtable-tense">' + _escapeHtml(tenseLabel) + '</div>'
             + '</div>'
@@ -91,6 +99,7 @@ const VerbsTable = (function () {
             + (typeof UI !== 'undefined' && UI.diacriticsBarHtml ? UI.diacriticsBarHtml('.vtable-input') : '')
             + '<div class="vtable-actions">'
             +   '<button class="vbtn vbtn-primary" data-action="check">Check</button>'
+            +   '<button class="vbtn vbtn-secondary" data-action="reveal">Show Answers</button>'
             +   '<button class="vbtn vbtn-secondary" data-action="next" disabled>Next Verb</button>'
             + '</div>'
             + '<p class="vtable-feedback" aria-live="polite"></p>';
@@ -98,11 +107,13 @@ const VerbsTable = (function () {
 
     // ---- Event handling ----
     function _attachEvents(root) {
-        var checkBtn = root.querySelector('[data-action="check"]');
-        var nextBtn  = root.querySelector('[data-action="next"]');
+        var checkBtn  = root.querySelector('[data-action="check"]');
+        var revealBtn = root.querySelector('[data-action="reveal"]');
+        var nextBtn   = root.querySelector('[data-action="next"]');
 
-        if (checkBtn) checkBtn.addEventListener('click', _handleCheck);
-        if (nextBtn)  nextBtn.addEventListener('click', function () { _onNext(); });
+        if (checkBtn)  checkBtn.addEventListener('click', _handleCheck);
+        if (revealBtn) revealBtn.addEventListener('click', _handleReveal);
+        if (nextBtn)   nextBtn.addEventListener('click', function () { _onNext(); });
 
         // Enter key triggers check (desktop convenience, not required)
         var inputs = root.querySelectorAll('.vtable-input');
@@ -110,6 +121,31 @@ const VerbsTable = (function () {
             inputs[i].addEventListener('keydown', function (e) {
                 if (e.key === 'Enter') _handleCheck();
             });
+        }
+    }
+
+    function _handleReveal() {
+        var inputs = _container.querySelectorAll('.vtable-input');
+        for (var i = 0; i < inputs.length; i++) {
+            var input = inputs[i];
+            var correctAnswer = input.dataset.correct;
+            if (correctAnswer) {
+                input.value = correctAnswer;
+                input.classList.remove('vtable-wrong');
+                input.classList.add('vtable-correct');
+                input.readOnly = true;
+            }
+        }
+        _allCorrect = true;
+        var nextBtn = _container.querySelector('[data-action="next"]');
+        if (nextBtn) {
+            nextBtn.disabled = false;
+            nextBtn.focus();
+        }
+        var feedback = _container.querySelector('.vtable-feedback');
+        if (feedback) {
+            feedback.textContent = 'All forms revealed for reference.';
+            feedback.className = 'vtable-feedback vtable-feedback-success';
         }
     }
 
@@ -188,6 +224,16 @@ const VerbsTable = (function () {
 
         root.innerHTML = _buildHtml(verb, tenseLabel, meaning, _persons, tenseData);
         _attachEvents(root);
+
+        if (typeof ParlourTTS !== 'undefined' && ParlourTTS.preload && verb) {
+            ParlourTTS.preload({ text: verb.infinitivo, type: 'vocabulary' });
+            if (tenseData) {
+                for (var j = 0; j < _persons.length; j++) {
+                    var form = tenseData[_persons[j]];
+                    if (form) ParlourTTS.preload({ text: form, type: 'vocabulary' });
+                }
+            }
+        }
     }
 
     return { render: render };
