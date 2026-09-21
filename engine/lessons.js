@@ -1216,8 +1216,13 @@ const stepRenderers = {
         const pick = shuffledOptions(step.options, step.correct);
         stepState.correct = pick.correct;
         stepState.checkFn = 'lessonCheckChoice';
+        const isMulti = Array.isArray(step.correct) && step.correct.length > 1;
+        const multiHint = isMulti && !/more than one|multiple|either|any of|which two/i.test(step.question || '')
+            ? `<p class="lsn-multi-hint">(More than one answer is acceptable — pick any)</p>`
+            : '';
         return `
             <p class="lsn-question">${escMd(step.question)}</p>
+            ${multiHint}
             <div class="lsn-options">
                 ${pick.options.map((option, i) => `
                     <button class="lsn-option" onclick="lessonSelectOption(this, ${i})"><span class="lsn-key-hint">${i + 1}</span><span class="lsn-option-text">${escMd(option)}</span></button>
@@ -1232,6 +1237,7 @@ const stepRenderers = {
         const pick = shuffledOptions(step.options, step.correct);
         stepState.correct = pick.correct;
         stepState.checkFn = 'lessonCheckChoice';
+        const isMulti = Array.isArray(step.correct) && step.correct.length > 1;
         return `
             <div class="lsn-dialogue">
                 ${(step.prompt || []).map(line => `
@@ -1241,7 +1247,7 @@ const stepRenderers = {
                     </div>
                 `).join('')}
             </div>
-            <p class="lsn-question">Choose the missing line:</p>
+            <p class="lsn-question">Choose the missing line:${isMulti ? ' <span class="lsn-multi-hint">(more than one answer is acceptable — pick any)</span>' : ''}</p>
             <div class="lsn-options">
                 ${pick.options.map((option, i) => `
                     <button class="lsn-option" onclick="lessonSelectOption(this, ${i})"><span class="lsn-key-hint">${i + 1}</span><span class="lsn-option-text">${escMd(option)}</span></button>

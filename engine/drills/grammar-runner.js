@@ -151,8 +151,13 @@ const GrammarRunner = (function () {
 
     function _renderMultipleChoice(ex) {
         const pick = _shuffledOptions(ex.options, ex.correct);
+        const isMulti = Array.isArray(ex.correct) && ex.correct.length > 1;
+        const multiHint = isMulti && !/more than one|multiple|either|any of|which two/i.test(ex.question || '')
+            ? `<p class="gd-multi-hint">(More than one answer is acceptable — pick any)</p>`
+            : '';
         _container.innerHTML = `
             <p class="gd-question">${_escapeHtml(ex.question)}</p>
+            ${multiHint}
             <div class="gd-options">
                 ${pick.options.map((option, i) => `
                     <button class="gd-option" data-index="${i}"><span class="lsn-key-hint">${i + 1}</span>${_escapeHtml(option)}</button>
@@ -189,6 +194,7 @@ const GrammarRunner = (function () {
 
     function _renderDialogueComplete(ex) {
         const pick = _shuffledOptions(ex.options, ex.correct);
+        const isMulti = Array.isArray(ex.correct) && ex.correct.length > 1;
         _container.innerHTML = `
             <div class="gd-dialogue">
                 ${(ex.prompt || []).map(line => `
@@ -198,7 +204,7 @@ const GrammarRunner = (function () {
                     </div>
                 `).join('')}
             </div>
-            <p class="gd-question">Choose the missing line:</p>
+            <p class="gd-question">Choose the missing line:${isMulti ? ' <span class="gd-multi-hint">(more than one answer is acceptable — pick any)</span>' : ''}</p>
             <div class="gd-options">
                 ${pick.options.map((option, i) => `
                     <button class="gd-option" data-index="${i}"><span class="lsn-key-hint">${i + 1}</span>${_escapeHtml(option)}</button>
