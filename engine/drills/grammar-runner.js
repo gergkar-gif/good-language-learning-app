@@ -68,10 +68,11 @@ const GrammarRunner = (function () {
     }
 
     function _shuffledOptions(options, correct) {
-        const order = _shuffled(options.map((text, i) => ({ text, i })));
+        const order = _shuffled((options || []).map((text, i) => ({ text, i })));
+        const remap = i => order.findIndex(o => o.i === i);
         return {
             options: order.map(o => o.text),
-            correct: order.findIndex(o => o.i === correct)
+            correct: Array.isArray(correct) ? correct.map(remap) : remap(correct)
         };
     }
 
@@ -173,9 +174,10 @@ const GrammarRunner = (function () {
 
         _onCheck(() => {
             if (picked === null) { _setFeedback(false, 'Pick an answer first.'); return; }
-            const ok = picked === pick.correct;
+            const correctList = Array.isArray(pick.correct) ? pick.correct : [pick.correct];
+            const ok = correctList.includes(picked);
             _container.querySelectorAll('.gd-option').forEach((b, i) => {
-                if (i === pick.correct) b.classList.add('correct');
+                if (correctList.includes(i)) b.classList.add('correct');
                 else if (i === picked) b.classList.add('wrong');
             });
             _setFeedback(ok, ok ? '✓ Correct!' : '✗ Not quite.');
@@ -218,9 +220,10 @@ const GrammarRunner = (function () {
 
         _onCheck(() => {
             if (picked === null) { _setFeedback(false, 'Pick an answer first.'); return; }
-            const ok = picked === pick.correct;
+            const correctList = Array.isArray(pick.correct) ? pick.correct : [pick.correct];
+            const ok = correctList.includes(picked);
             _container.querySelectorAll('.gd-option').forEach((b, i) => {
-                if (i === pick.correct) b.classList.add('correct');
+                if (correctList.includes(i)) b.classList.add('correct');
                 else if (i === picked) b.classList.add('wrong');
             });
             _setFeedback(ok, ok ? '✓ Correct!' : '✗ Not quite.');

@@ -175,7 +175,7 @@ def exercise_hungarian(ex):
     if kind == "dialogue-complete":
         return [line["text"] for line in ex.get("prompt", [])] + ex.get("options", [])
     if kind == "structured-writing":
-        return [line["answer"] for line in ex.get("template", [])]
+        return [line["answer"] for line in ex.get("template", []) if "answer" in line]
     if kind == "sentence-order":
         return ex.get("sentences", []) if ex.get("category") != "reading" else []
     if kind in ("listening-choice", "dictation"):
