@@ -9,6 +9,13 @@ needs re-reading before starting new work; it's reference only.
 
 ## Completed queue items
 
+62. ~~**B1 Fill-in-the-Blank and Dictation English Translations Backfill**~~ — **Done 2026-09-21.**
+    Backfilled natural English translations (`english`) for all 980 unique B1 fill-in-the-blank and dictation exercises across both `content/es-es` (697 exercises) and `content/es-latam` (980 exercises, Spain being a 100% subset of LatAm):
+    - **Sentence Export**: Generated 5 human-readable `.txt` batch files (`b1_batch_1.txt` – `b1_batch_5.txt`, ~200 items each) with a ChatGPT prompt preamble for manual translation.
+    - **Translation Merge**: Injected ChatGPT-returned JSON translations via `scratch/merge_b1_translations.py` into 655 exercise files across both language variants.
+    - **Validation**: `python scripts/validate-content.py --changed` → `es-es: 216 passed, 0 failed; es-latam: 433 passed, 0 failed`. Manifests regenerated via `build-manifest.py`.
+    - **Coverage**: 100% English translation coverage now achieved across the entire existing Spanish curriculum (A1, A2, and B1 fill-blank, dictation, and sentence-builder).
+
 61. ~~**A1 & A2 Fill-in-the-Blank and Dictation English Translations Backfill**~~ — **Done 2026-09-21.**
     Backfilled, merged, and validated natural English translations (`english`) for all 1,109 A1 and A2 fill-in-the-blank and dictation exercises across both European Spanish (`content/es-es`) and Latin American Spanish (`content/es-latam`):
     - **Schema Updates (`content/es-es/schemas/exercises.schema.json`, `content/es-latam/schemas/exercises.schema.json`)**: Added optional `english` property definition to both `fillBlank` and `dictation` exercise types.

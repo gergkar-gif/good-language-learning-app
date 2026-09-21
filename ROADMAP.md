@@ -13,10 +13,7 @@ Completed work is archived out to `ACHIEVED.md`.
    - **Authoring Norm**: When resuming, every unit must follow the established three-pillar standard: B1 level pedagogical clarity, 100% factual accuracy (aligned with Instituto Cervantes CCSE syllabus), and *The Rest Is History* (TRIH)-style engaging, humanized narrative storytelling with companion stories in `stories/world/b1/`.
    - `scripts/validate-content.py` maintains `SKIP_STEM_MARKERS = {"es-es": "-ccse-"}` for scaffolded stubs until all units are authored.
 
-2. **Backfill English Translations for B1 Fill-in-the-Blank & Dictation Exercises (`content/es-es` & `content/es-latam`):**
-   - **Context**: A1 and A2 fill-blank and dictations (1,109 exercises) along with all B1 sentence-builders are 100% translated (completed 2026-09-21).
-   - **Remaining Scope**: 980 unique B1 exercises (738 fill-blank, 242 dictation) currently lack the `english` field (697 in `es-es`, 980 in `es-latam` where Spain is a 100% subset).
-   - **Action**: Run the batch extraction and translation pipeline to populate `"english"` across all 980 items, achieving 100% translation coverage across the entire existing Spanish curriculum. Once completed, promote `"english"` to `required` in `content/<lang>/schemas/exercises.schema.json`.
+
 
 ---
 
