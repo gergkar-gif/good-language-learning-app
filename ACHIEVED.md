@@ -9,6 +9,30 @@ needs re-reading before starting new work; it's reference only.
 
 ## Completed queue items
 
+65. ~~**Comprehensive Pedagogical Error Feedback & Post-Session Review Recaps across All Workshop Drills & Minigames**~~ — **Done 2026-09-21.**
+    Imbued all Workshop drillers and minigames with direct pedagogical teaching functions so learners always understand mistakes and see corrections immediately:
+    - **Verb Table Driller (`engine/verbs/table.js`, `styles/verbs.css`)**:
+      - Preserves learner's typed inputs on incorrect check rather than erasing/overwriting them.
+      - Renders inline `.vtable-correction` indicators (`Correct: <form>`) underneath each incorrect row.
+      - Enriches summary feedback (`✗ X of Y correct. Review the corrections shown above (person1, person2).`) and unblocks the Next Verb button so learners can either re-attempt or advance smoothly.
+    - **Listening Driller & Runner (`engine/drills/listening-runner.js`, `engine/drills/listening.js`)**:
+      - Replaced generic failure indicators with explicit contrastive corrections (`✗ Not quite. The correct answer is: "..."`, `✗ Not quite. You wrote "...". The correct answer is "..."`, `✗ Not quite. The missing word was "..."`).
+      - Preserves user typed input in dictation exercises and forwards detailed error payloads (`{ question, correct, user }`) to `onResult`.
+      - Renders a post-session `.gd-missed-recap` ("Review Missed Items") card with user response and model answer badges.
+    - **Translation Driller & Runner (`engine/drills/translation-runner.js`, `engine/drills/translation.js`)**:
+      - Added explicit pedagogical feedback (`✗ Marked for review — compare your attempt with the model: "..."`) on "Not quite".
+      - Captures user translation and reference model into `_missedDetails` and renders `.gd-missed-recap` on the results screen.
+    - **Hungarian Drillers (`hu-verb.js`, `hu-suffix.js`, `hu-prefix.js`, `hu-morphology.js`)**:
+      - Hooked into `GrammarRunner.render`'s `onResult(correct, details)` callback across all 4 Hungarian drillers.
+      - Captures question prompt, correct form, and user response for all missed items; displays `.gd-missed-recap` on the session results screen.
+    - **Verb Speed Driller (`engine/verbs/speed.js`)**:
+      - Immediate contrastive feedback: displays `✗ Correct: <answer> (you wrote: "<user>")` with extended review pause (1200ms) on wrong submissions before auto-advancing.
+      - Renders "Review Missed Conjugations" recap on session results with verb, tense, person, learner's answer, and correct form.
+    - **Deck Match Game (`engine/decks/match.js`, `styles/components.css`)**:
+      - Added live mismatch feedback banner (`.dkm-feedback`: `✗ "<word>" does not match "<word>"`).
+      - Tracks all mismatched and untimed words in `_missedWords`; renders a "Review Missed Pairs" recap with target word and translation on completion.
+    - **Automated Verification**: Authored `tests/drills/test-pedagogical-feedback.js` covering all 8 drillers/runners; all tests pass.
+
 64. ~~**CEFR Diagnostic Placement Test: 10-Question Hybrid with Active Production, 85% Pass Threshold & Screener Disclosures**~~ — **Done 2026-09-21.**
     Overhauled the CEFR Diagnostic Placement Test (`engine/diagnostic.js`, `styles/components.css`, content files) from a 6-question multiple-choice screener into a 10-question hybrid assessment per tier requiring active recall and an 85% mastery mark:
     - **10-Question Hybrid Structure Across Tiers (A1, A2, B1)**:

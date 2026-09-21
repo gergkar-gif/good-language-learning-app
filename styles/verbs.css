@@ -310,6 +310,17 @@
     color: var(--danger);
 }
 
+.vtable-correction {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--success);
+    background: var(--success-bg, rgba(47, 122, 77, 0.08));
+    padding: 2px 8px;
+    border-radius: var(--radius-sm, 3px);
+    white-space: nowrap;
+    margin-left: 4px;
+}
+
 .vtable-actions {
     display: flex;
     gap: 12px;

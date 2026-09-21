@@ -64,6 +64,9 @@ const DeckMatch = (function () {
     let _onComplete = null;
     let _exitLabel = null;
     let _timeLimitSeconds = null;
+    let _wordsByUid = {};
+    let _missedWords = new Map();
+    let _feedbackMsg = '';
 
     function _escapeHtml(text) {
         return (typeof UI !== 'undefined' && UI.escape)
@@ -136,6 +139,10 @@ const DeckMatch = (function () {
     // ---- Session setup ----
     function _startSession() {
         const shuffledAll = _shuffled(_words0).map((w, i) => ({ uid: i, lemma: w.lemma, translation: w.translation }));
+        _wordsByUid = {};
+        shuffledAll.forEach(w => { _wordsByUid[w.uid] = w; });
+        _missedWords = new Map();
+        _feedbackMsg = '';
         _totalWords = shuffledAll.length;
         const active = shuffledAll.slice(0, BOARD_SIZE);
         _pool = shuffledAll.slice(BOARD_SIZE);
@@ -180,6 +187,15 @@ const DeckMatch = (function () {
         _finished = true;
         _finishMs = Date.now() - (_startTime || Date.now());
         if (_elapsedInterval) { clearInterval(_elapsedInterval); _elapsedInterval = null; }
+
+        // Track remaining unmatched words if session ended before all were matched
+        _lemmaTiles.forEach(t => {
+            if (!t.matched && _wordsByUid[t.uid]) _missedWords.set(t.uid, _wordsByUid[t.uid]);
+        });
+        _pool.forEach(w => {
+            if (_wordsByUid[w.uid]) _missedWords.set(w.uid, _wordsByUid[w.uid]);
+        });
+
         _recordBest(_finishMs);
         _render();
         if (typeof _onComplete === 'function') {
@@ -218,7 +234,11 @@ const DeckMatch = (function () {
         _startTimerIfNeeded();
         _selected.push(tileId);
 
-        if (_selected.length < 2) { _render(); return; }
+        if (_selected.length < 2) {
+            _feedbackMsg = '';
+            _render();
+            return;
+        }
 
         const [aId, bId] = _selected;
         const a = _findTile(aId);
@@ -233,6 +253,7 @@ const DeckMatch = (function () {
             b.matched = true;
             _matchedTotal++;
             _selected = [];
+            _feedbackMsg = '';
             _busy = true; // lock input for the whole flash + remove/insert + settle sequence below
             _render();
             setTimeout(() => {
@@ -247,12 +268,15 @@ const DeckMatch = (function () {
             }, MATCH_FLASH_MS);
         } else {
             _busy = true;
+            if (_wordsByUid[a.uid]) _missedWords.set(a.uid, _wordsByUid[a.uid]);
+            if (_wordsByUid[b.uid]) _missedWords.set(b.uid, _wordsByUid[b.uid]);
+            _feedbackMsg = `✗ "${a.text}" does not match "${b.text}"`;
             _render(); // show both as "wrong" briefly
             setTimeout(() => {
                 _busy = false;
                 _selected = [];
                 _render();
-            }, WRONG_FLASH_MS);
+            }, Math.max(WRONG_FLASH_MS, 400));
         }
     }
 
@@ -296,6 +320,21 @@ const DeckMatch = (function () {
                         <p class="dkm-done-time">${_formatSeconds(_finishMs)}</p>
                         <p class="dkm-done-count">${_matchedTotal} / ${_totalWords} word${_totalWords === 1 ? '' : 's'} matched</p>
                         ${isNewBest && !_timeLimitSeconds ? '<p class="dkm-new-best">New personal best!</p>' : (best !== null && !_timeLimitSeconds ? `<p class="dkm-best">Best: ${_formatSeconds(best)}</p>` : '')}
+                        ${_missedWords.size ? `
+                            <div class="gd-missed-recap">
+                                <h4 class="gd-missed-title">Review Missed Pairs</h4>
+                                <div class="gd-missed-list">
+                                    ${Array.from(_missedWords.values()).map(w => `
+                                        <div class="gd-missed-card">
+                                            <div class="gd-missed-q">${_escapeHtml(_withArticle(w.lemma))}</div>
+                                            <div class="gd-missed-answers">
+                                                <div class="gd-missed-correct"><span class="gd-badge-correct">Meaning:</span> <strong>${_escapeHtml(w.translation)}</strong></div>
+                                            </div>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            </div>
+                        ` : ''}
                         <div class="dkm-done-actions">
                             <button class="btn-primary" data-match-restart="1">Play again</button>
                             <button class="dk-secondary" data-match-exit="1">${_escapeHtml(exitText)}</button>
@@ -320,6 +359,7 @@ const DeckMatch = (function () {
                     <span class="dkm-timer">${timerVal}</span>
                 </div>
                 ${best !== null && !_timeLimitSeconds ? `<p class="dkm-best-line">Best: ${_formatSeconds(best)}</p>` : ''}
+                <div class="dkm-feedback" aria-live="polite">${_escapeHtml(_feedbackMsg || '')}</div>
                 <div class="dkm-grid">
                     <div class="dkm-col">${_transTiles.map(_tileHtml).join('')}</div>
                     <div class="dkm-col">${_lemmaTiles.map(_tileHtml).join('')}</div>

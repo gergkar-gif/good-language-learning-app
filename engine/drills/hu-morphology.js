@@ -60,12 +60,23 @@ const HuMorphologyDriller = (function () {
     let _queueIndex = 0;
     let _seen = 0;
     let _correct = 0;
+    let _missedDetails = [];
 
     let _timerInterval = null;
     let _endTime = 0;
     let _timeRemaining = 0;
 
     // ---- Helpers ----
+    function _escapeHtml(text) {
+        return (typeof UI !== 'undefined' && UI.escape)
+            ? UI.escape(text)
+            : String(text == null ? '' : text)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;');
+    }
+
     function _shuffled(list) {
         const copy = list.slice();
         for (let i = copy.length - 1; i > 0; i--) {
@@ -283,6 +294,7 @@ const HuMorphologyDriller = (function () {
         const pool = _buildPool(targetCount);
         _seen = 0;
         _correct = 0;
+        _missedDetails = [];
 
         if (!pool.length) {
             _phase = PHASE.SETTINGS;
@@ -347,9 +359,18 @@ const HuMorphologyDriller = (function () {
         const exerciseRoot = _container.querySelector('.gd-exercise');
         GrammarRunner.render(exerciseRoot, {
             exercise: _queue[_queueIndex],
-            onResult: correct => {
+            onResult: (correct, details) => {
                 _seen++;
-                if (correct) _correct++;
+                if (correct) {
+                    _correct++;
+                } else {
+                    const ex = _queue[_queueIndex];
+                    _missedDetails.push({
+                        question: (details && details.question) || (ex ? ex.question || ex.sentence : 'Question'),
+                        correct: (details && details.correct) || (ex ? ex.answer || ex.solution : ''),
+                        user: (details && details.user) || ''
+                    });
+                }
                 const score = _container.querySelector('.gd-hud-score');
                 if (score) score.textContent = _scoreLabel();
                 const bar = _container.querySelector('.driller-progress-bar');
@@ -409,6 +430,22 @@ const HuMorphologyDriller = (function () {
                         <span class="vspeed-stat-value">${_seen}</span>
                     </div>
                 </div>
+                ${_missedDetails.length ? `
+                    <div class="gd-missed-recap">
+                        <h4 class="gd-missed-title">Review Missed Items</h4>
+                        <div class="gd-missed-list">
+                            ${_missedDetails.map(item => `
+                                <div class="gd-missed-card">
+                                    <div class="gd-missed-q">${_escapeHtml(item.question)}</div>
+                                    <div class="gd-missed-answers">
+                                        ${item.user ? `<div class="gd-missed-user"><span class="gd-badge-wrong">Your answer:</span> ${_escapeHtml(item.user)}</div>` : ''}
+                                        <div class="gd-missed-correct"><span class="gd-badge-correct">Correct:</span> <strong>${_escapeHtml(item.correct)}</strong></div>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                ` : ''}
                 <div class="vspeed-results-actions">
                     <button class="vbtn vbtn-primary" data-action="play-again">Practice Again</button>
                     <button class="vbtn vbtn-secondary" data-action="change-settings">Change Settings</button>

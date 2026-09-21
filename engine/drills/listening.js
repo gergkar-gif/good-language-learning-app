@@ -65,12 +65,23 @@ const ListeningDriller = (function () {
     let _queueIndex = 0;
     let _seen = 0;
     let _correct = 0;
+    let _missedDetails = [];
 
     let _timerInterval = null;
     let _endTime = 0;
     let _timeRemaining = 0;
 
     // ---- Helpers ----
+    function _esc(text) {
+        return (typeof UI !== 'undefined' && UI.escape)
+            ? UI.escape(text)
+            : String(text == null ? '' : text)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;');
+    }
+
     function _shuffled(list) {
         const copy = list.slice();
         for (let i = copy.length - 1; i > 0; i--) {
@@ -333,11 +344,11 @@ const ListeningDriller = (function () {
 
     // ================================================================
     //  RENDERING — Session
-    // ================================================================
     function _startSession() {
         const pool = _poolFor(_level, _track);
         _seen = 0;
         _correct = 0;
+        _missedDetails = [];
 
         if (!pool.length) {
             _phase = PHASE.SETTINGS;
@@ -420,9 +431,18 @@ const ListeningDriller = (function () {
         }
         ListeningRunner.render(exerciseRoot, {
             exercise: _queue[_queueIndex],
-            onResult: correct => {
+            onResult: (correct, details) => {
                 _seen++;
-                if (correct) _correct++;
+                if (correct) {
+                    _correct++;
+                } else {
+                    const cur = _queue[_queueIndex];
+                    _missedDetails.push({
+                        question: (details && details.question) || (cur ? cur.transcript || cur.audio : 'Question'),
+                        correct: (details && details.correct) || (cur ? cur.translation || cur.answer : ''),
+                        user: (details && details.user) || ''
+                    });
+                }
                 const score = _container.querySelector('.gd-hud-score');
                 if (score) score.textContent = _scoreLabel();
                 const bar = _container.querySelector('.driller-progress-bar');
@@ -483,6 +503,22 @@ const ListeningDriller = (function () {
                         <span class="vspeed-stat-value">${_seen}</span>
                     </div>
                 </div>
+                ${_missedDetails.length ? `
+                    <div class="gd-missed-recap">
+                        <h4 class="gd-missed-title">Review Missed Items</h4>
+                        <div class="gd-missed-list">
+                            ${_missedDetails.map(item => `
+                                <div class="gd-missed-card">
+                                    <div class="gd-missed-q">${_esc(item.question)}</div>
+                                    <div class="gd-missed-answers">
+                                        ${item.user ? `<div class="gd-missed-user"><span class="gd-badge-wrong">Your answer:</span> ${_esc(item.user)}</div>` : ''}
+                                        <div class="gd-missed-correct"><span class="gd-badge-correct">Correct:</span> <strong>${_esc(item.correct)}</strong></div>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                ` : ''}
                 <div class="vspeed-results-actions">
                     <button class="vbtn vbtn-primary" data-action="play-again">Practice Again</button>
                     <button class="vbtn vbtn-secondary" data-action="change-settings">Change Settings</button>

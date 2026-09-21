@@ -34,7 +34,7 @@ const TranslationRunner = (function () {
     // Next stays hidden until the learner has self-rated, not merely once
     // Check is pressed — Check only reveals the model translation, Got
     // it/Not quite is what actually resolves the exercise.
-    function _resolve(correct) {
+    function _resolve(correct, details = {}) {
         if (_solved) return;
         _solved = true;
         const nextBtn = _container.querySelector('[data-action="next"]');
@@ -42,7 +42,14 @@ const TranslationRunner = (function () {
             nextBtn.classList.remove('hidden');
             try { nextBtn.focus(); } catch (e) {}
         }
-        if (_onResult) _onResult(correct);
+        if (_onResult) _onResult(correct, details);
+    }
+
+    function _setFeedback(ok, message) {
+        const el = _container.querySelector('.gd-feedback');
+        if (!el) return;
+        el.textContent = message;
+        el.className = 'gd-feedback ' + (ok ? 'gd-feedback-correct' : 'gd-feedback-wrong');
     }
 
     let _windowKeydownWired = false;
@@ -80,11 +87,13 @@ const TranslationRunner = (function () {
 
         _container.querySelector('[data-action="got-it"]').addEventListener('click', () => {
             _container.querySelector('.td-self-rate').classList.add('td-rated');
-            _resolve(true);
+            _setFeedback(true, '✓ Good match with the model translation.');
+            _resolve(true, { question: exercise.prompt, correct: exercise.model, user: input.value });
         });
         _container.querySelector('[data-action="not-quite"]').addEventListener('click', () => {
             _container.querySelector('.td-self-rate').classList.add('td-rated');
-            _resolve(false);
+            _setFeedback(false, `✗ Marked for review — compare your attempt with the model: "${exercise.model}".`);
+            _resolve(false, { question: exercise.prompt, correct: exercise.model, user: input.value });
         });
     }
 
@@ -110,6 +119,7 @@ const TranslationRunner = (function () {
                 autocomplete="off" autocapitalize="off" spellcheck="false">
             ${typeof UI !== 'undefined' && UI.diacriticsBarHtml ? UI.diacriticsBarHtml('.td-input') : ''}
             <div class="td-model-wrap"></div>
+            <p class="gd-feedback" aria-live="polite"></p>
             <div class="gd-actions">
                 <button class="vbtn vbtn-primary" data-action="check">Check</button>
                 <button class="vbtn vbtn-secondary hidden" data-action="next">Next</button>

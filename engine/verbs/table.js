@@ -85,6 +85,7 @@ const VerbsTable = (function () {
                 +     ' autocomplete="off" autocapitalize="off" spellcheck="false"'
                 +     ' data-person="' + p + '" data-correct="' + _escapeHtml(correct) + '"'
                 +     ' aria-label="' + PERSON_LABELS[p] + '">'
+                +   '<span class="vtable-correction hidden" aria-live="polite"></span>'
                 +   rowAudio
                 + '</div>';
         }
@@ -125,15 +126,19 @@ const VerbsTable = (function () {
     }
 
     function _handleReveal() {
-        var inputs = _container.querySelectorAll('.vtable-input');
-        for (var i = 0; i < inputs.length; i++) {
-            var input = inputs[i];
+        var rows = _container.querySelectorAll('.vtable-row');
+        for (var i = 0; i < rows.length; i++) {
+            var row = rows[i];
+            var input = row.querySelector('.vtable-input');
+            var corr = row.querySelector('.vtable-correction');
+            if (!input) continue;
             var correctAnswer = input.dataset.correct;
             if (correctAnswer) {
                 input.value = correctAnswer;
                 input.classList.remove('vtable-wrong');
                 input.classList.add('vtable-correct');
                 input.readOnly = true;
+                if (corr) { corr.textContent = ''; corr.classList.add('hidden'); }
             }
         }
         _allCorrect = true;
@@ -153,12 +158,16 @@ const VerbsTable = (function () {
     function _handleCheck() {
         if (_allCorrect) return;
 
-        var inputs = _container.querySelectorAll('.vtable-input');
+        var rows = _container.querySelectorAll('.vtable-row');
         var correctCount = 0;
         var total = 0;
+        var missedLabels = [];
 
-        for (var i = 0; i < inputs.length; i++) {
-            var input = inputs[i];
+        for (var i = 0; i < rows.length; i++) {
+            var row = rows[i];
+            var input = row.querySelector('.vtable-input');
+            var corr = row.querySelector('.vtable-correction');
+            if (!input) continue;
             var correctAnswer = input.dataset.correct;
             if (!correctAnswer) continue; // person not available in this tense
 
@@ -172,33 +181,43 @@ const VerbsTable = (function () {
             if (normalisedUser === normalisedCorrect && userVal.trim() !== '') {
                 input.classList.add('vtable-correct');
                 input.readOnly = true;
-                // Fix casing to canonical form (accents must already match
-                // to reach this branch, now that they're checked directly)
                 if (userVal !== correctAnswer.toLowerCase()) {
                     input.value = correctAnswer;
                 }
+                if (corr) { corr.textContent = ''; corr.classList.add('hidden'); }
                 correctCount++;
             } else {
                 input.classList.add('vtable-wrong');
-                input.value = correctAnswer;
-                // Input stays editable so the user can study the answer
+                var p = input.dataset.person;
+                if (p && PERSON_LABELS[p]) missedLabels.push(PERSON_LABELS[p]);
+                if (corr) {
+                    corr.textContent = 'Correct: ' + correctAnswer;
+                    corr.classList.remove('hidden');
+                }
             }
         }
 
         var feedback = _container.querySelector('.vtable-feedback');
-        if (!feedback) return;
+        var nextBtn = _container.querySelector('[data-action="next"]');
 
         if (correctCount === total && total > 0) {
             _allCorrect = true;
-            feedback.textContent = '\u2713 Perfect!';
-            feedback.className = 'vtable-feedback vtable-feedback-success';
-            var nextBtn = _container.querySelector('[data-action="next"]');
-            if (nextBtn) nextBtn.disabled = false;
-            // Focus the next button for quick progression
-            if (nextBtn) nextBtn.focus();
+            if (feedback) {
+                feedback.textContent = '\u2713 Perfect!';
+                feedback.className = 'vtable-feedback vtable-feedback-success';
+            }
+            if (nextBtn) {
+                nextBtn.disabled = false;
+                nextBtn.focus();
+            }
         } else if (total > 0) {
-            feedback.textContent = correctCount + '/' + total + ' correct';
-            feedback.className = 'vtable-feedback vtable-feedback-error';
+            if (feedback) {
+                var missedList = missedLabels.length ? ' (' + missedLabels.join(', ') + ')' : '';
+                feedback.textContent = '\u2717 ' + correctCount + ' of ' + total + ' correct. Review the corrections shown above' + missedList + '.';
+                feedback.className = 'vtable-feedback vtable-feedback-error';
+            }
+            // Enable next button so the learner can either correct their inputs or proceed after studying corrections
+            if (nextBtn) nextBtn.disabled = false;
         }
     }
 

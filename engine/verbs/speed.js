@@ -31,6 +31,7 @@ const VerbsSpeed = (function () {
     var _currentTenseLabel = '';
     var _currentPersonLabel = '';
     var _currentMeaning = '';
+    var _missedConjugations = [];
     var _busy           = false;   // true while feedback is showing
 
     // ---- Helpers ----
@@ -107,6 +108,7 @@ const VerbsSpeed = (function () {
     function _startSession() {
         VerbsStats.init();
         _score = 0;
+        _missedConjugations = [];
         _verbIndex = Math.floor(Math.random() * _verbList.length);
         _timeRemaining = _timerMinutes * 60;
         _endTime = Date.now() + _timeRemaining * 1000;
@@ -243,13 +245,30 @@ const VerbsSpeed = (function () {
         // Record stats
         VerbsStats.record(isCorrect, _currentTenseLabel, _currentPersonLabel);
 
-        if (isCorrect) _score++;
+        if (isCorrect) {
+            _score++;
+        } else {
+            var verbObj = _verbList[_verbIndex];
+            var verbDisplay = verbObj ? (verbObj.infinitive || verbObj.verb || '') : '';
+            _missedConjugations.push({
+                verb: verbDisplay,
+                meaning: _currentMeaning,
+                tense: _currentTenseLabel,
+                person: _currentPersonLabel,
+                user: userVal,
+                correct: _currentAnswer
+            });
+        }
 
         // Show feedback
         var feedbackEl = _container.querySelector('.vspeed-feedback');
-        var prefix = isCorrect ? '\u2713 ' : '\u2717 ';
-        feedbackEl.textContent = prefix + _currentAnswer;
-        feedbackEl.className = 'vspeed-feedback ' + (isCorrect ? 'vspeed-feedback-correct' : 'vspeed-feedback-wrong');
+        if (isCorrect) {
+            feedbackEl.textContent = '\u2713 ' + _currentAnswer;
+            feedbackEl.className = 'vspeed-feedback vspeed-feedback-correct';
+        } else {
+            feedbackEl.textContent = '\u2717 Correct: ' + _currentAnswer + ' (you wrote: "' + userVal + '")';
+            feedbackEl.className = 'vspeed-feedback vspeed-feedback-wrong';
+        }
 
         // Update score display
         var scoreEl = _container.querySelector('.vspeed-score-value');
@@ -261,11 +280,12 @@ const VerbsSpeed = (function () {
         var submitBtn = _container.querySelector('[data-action="submit"]');
         if (submitBtn) submitBtn.disabled = true;
 
+        var delay = isCorrect ? FEEDBACK_MS : Math.max(FEEDBACK_MS, 1200);
         setTimeout(function () {
             if (_phase !== PHASE.PLAYING) return;
             _busy = false;
             _showNextQuestion();
-        }, FEEDBACK_MS);
+        }, delay);
     }
 
     function _endSession() {
@@ -337,6 +357,23 @@ const VerbsSpeed = (function () {
             +       '<span class="vspeed-stat-value">' + _escapeHtml(stats.weakestPerson) + '</span>'
             +     '</div>'
             +   '</div>'
+            +   (_missedConjugations.length ? (
+                  '<div class="gd-missed-recap">'
+                +   '<h4 class="gd-missed-title">Review Missed Conjugations</h4>'
+                +   '<div class="gd-missed-list">'
+                +   _missedConjugations.map(function (item) {
+                        var qText = item.verb + ' (' + item.tense + ' \u2014 ' + item.person + ')' + (item.meaning ? ' \u2014 ' + item.meaning : '');
+                        return '<div class="gd-missed-card">'
+                            +   '<div class="gd-missed-q">' + _escapeHtml(qText) + '</div>'
+                            +   '<div class="gd-missed-answers">'
+                            +     (item.user ? '<div class="gd-missed-user"><span class="gd-badge-wrong">Your answer:</span> ' + _escapeHtml(item.user) + '</div>' : '')
+                            +     '<div class="gd-missed-correct"><span class="gd-badge-correct">Correct:</span> <strong>' + _escapeHtml(item.correct) + '</strong></div>'
+                            +   '</div>'
+                            + '</div>';
+                    }).join('')
+                +   '</div>'
+                + '</div>'
+               ) : '')
             +   '<div class="vspeed-results-actions">'
             +     '<button class="vbtn vbtn-primary" data-action="play-again">Practice Again</button>'
             +     '<button class="vbtn vbtn-secondary" data-action="change-settings">Change Settings</button>'

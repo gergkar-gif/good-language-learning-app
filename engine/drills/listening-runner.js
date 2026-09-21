@@ -79,13 +79,14 @@ const ListeningRunner = (function () {
         `;
     }
 
-    function _finish(ok, ex) {
-        _setFeedback(ok, ok ? '✓ Correct!' : '✗ Not quite.');
+    function _finish(ok, ex, details = {}) {
+        const feedbackMsg = ok ? '✓ Correct!' : (details.feedback || '✗ Not quite.');
+        _setFeedback(ok, feedbackMsg);
         _reveal(ex);
-        _resolve(ok);
+        _resolve(ok, details);
     }
 
-    function _resolve(correct) {
+    function _resolve(correct, details = {}) {
         if (_solved) return;
         _solved = true;
         const checkBtn = _container.querySelector('[data-action="check"]');
@@ -95,7 +96,7 @@ const ListeningRunner = (function () {
             nextBtn.classList.remove('hidden');
             try { nextBtn.focus(); } catch (e) {}
         }
-        if (_onResult) _onResult(correct);
+        if (_onResult) _onResult(correct, details);
     }
 
     // ---- Renderers, one per kind ----
@@ -127,7 +128,14 @@ const ListeningRunner = (function () {
                 if (i === pick.correct) b.classList.add('correct');
                 else if (i === picked) b.classList.add('wrong');
             });
-            _finish(ok, ex);
+            const correctText = pick.options[pick.correct];
+            const userText = pick.options[picked] || '';
+            _finish(ok, ex, {
+                question: ex.promptText || ex.transcript,
+                correct: correctText,
+                user: userText,
+                feedback: `✗ Not quite. The correct answer is: "${correctText}".`
+            });
         };
     }
 
@@ -141,11 +149,18 @@ const ListeningRunner = (function () {
         input.addEventListener('keydown', e => { if (e.key === 'Enter') _doCheck(); });
 
         _checkFn = () => {
-            const ok = _normalise(input.value) === _normalise(ex.answer);
+            const userVal = input.value;
+            const ok = _normalise(userVal) === _normalise(ex.answer);
             input.classList.toggle('gd-correct', ok);
             input.classList.toggle('gd-wrong', !ok);
-            if (!ok) input.value = ex.answer;
-            _finish(ok, ex);
+            _finish(ok, ex, {
+                question: ex.transcript || 'Type what you heard',
+                correct: ex.answer,
+                user: userVal,
+                feedback: userVal
+                    ? `✗ Not quite. You wrote "${userVal}". The correct answer is "${ex.answer}".`
+                    : `✗ Not quite. The correct answer is "${ex.answer}".`
+            });
         };
     }
 
@@ -160,11 +175,18 @@ const ListeningRunner = (function () {
         input.addEventListener('keydown', e => { if (e.key === 'Enter') _doCheck(); });
 
         _checkFn = () => {
-            const ok = _normalise(input.value) === _normalise(ex.answer);
+            const userVal = input.value;
+            const ok = _normalise(userVal) === _normalise(ex.answer);
             input.classList.toggle('gd-correct', ok);
             input.classList.toggle('gd-wrong', !ok);
-            if (!ok) input.value = ex.answer;
-            _finish(ok, ex);
+            _finish(ok, ex, {
+                question: ex.sentence || ex.transcript,
+                correct: ex.answer,
+                user: userVal,
+                feedback: userVal
+                    ? `✗ Not quite. You wrote "${userVal}". The missing word was "${ex.answer}".`
+                    : `✗ Not quite. The missing word was "${ex.answer}".`
+            });
         };
     }
 
