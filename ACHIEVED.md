@@ -9,6 +9,14 @@ needs re-reading before starting new work; it's reference only.
 
 ## Completed queue items
 
+61. ~~**A1 & A2 Fill-in-the-Blank and Dictation English Translations Backfill**~~ — **Done 2026-09-21.**
+    Backfilled, merged, and validated natural English translations (`english`) for all 1,109 A1 and A2 fill-in-the-blank and dictation exercises across both European Spanish (`content/es-es`) and Latin American Spanish (`content/es-latam`):
+    - **Schema Updates (`content/es-es/schemas/exercises.schema.json`, `content/es-latam/schemas/exercises.schema.json`)**: Added optional `english` property definition to both `fillBlank` and `dictation` exercise types.
+    - **Sentence Reconstitution & Translation**: Extracted all 381 A1 fill-blank, 563 A2 fill-blank, and 165 A2 dictation exercises. Reconstituted full target Spanish sentences, cleanly stripping prompt prefixes (`"Complete: "`) and utilizing contextual cues (`(ella)`, `(usted)`, etc.) to ensure natural, idiomatic, CEFR-aligned English translations.
+    - **Multi-Course Merging & Schema Validation**: Populated `"english"` into 1,109 exercises across 332 files in `content/es-es` and 332 files in `content/es-latam` (664 files total). Verified 100% schema compliance with `python scripts/validate-content.py` (0 errors) and regenerated manifests via `build-manifest.py`.
+    - **Authoring Standards Invariant**: Added strict instruction to `AGENTS.md` and `ROADMAP.md` requiring all future `fill-blank`, `dictation`, and `sentence-builder` exercises to include an `english` translation.
+    - **Backlog Tracking**: Updated Item 16 in `TROUBLESHOOTING_BACKLOG.md` marking A1/A2 complete and logging B1 remaining scope (980 items).
+
 60. ~~**Pedagogical Feedback Clarity, Decks Typing Auto-Assessment, Diagnostic Overhaul & STT Polish**~~ — **Done 2026-09-21.**
     Shipped a unified suite of UX enhancements, pedagogical fixes, and driller optimizations:
     - **Decks & SRS Production-First Review (`engine/srs.js`, `styles/components.css`, `index.html`)**:
