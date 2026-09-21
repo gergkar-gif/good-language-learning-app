@@ -325,7 +325,11 @@ async function handleGoogleAuth(request, env, cors) {
         env.JWT_SECRET
     );
 
-    return json({ token: session, email }, 200, cors);
+    return json({
+        token: session,
+        email,
+        name: tokenInfo.given_name || tokenInfo.name || ''
+    }, 200, cors);
 }
 
 async function handleGetState(request, env, cors) {

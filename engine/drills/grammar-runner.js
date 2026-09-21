@@ -126,7 +126,7 @@ const GrammarRunner = (function () {
         `;
     }
 
-    function _resolve(correct) {
+    function _resolve(correct, details = {}) {
         if (_solved) return;
         _solved = true;
         const checkBtn = _container.querySelector('[data-action="check"]');
@@ -136,7 +136,7 @@ const GrammarRunner = (function () {
             nextBtn.classList.remove('hidden');
             try { nextBtn.focus(); } catch (e) {}
         }
-        if (_onResult) _onResult(correct);
+        if (_onResult) _onResult(correct, details);
     }
 
     // ---- Renderers, one per kind ----
@@ -185,10 +185,12 @@ const GrammarRunner = (function () {
                 if (correctList.includes(i)) b.classList.add('correct');
                 else if (i === picked) b.classList.add('wrong');
             });
-            _setFeedback(ok, ok ? '✓ Correct!' : '✗ Not quite.');
+            const correctText = correctList.map(ci => pick.options[ci]).join(' / ');
+            const userText = pick.options[picked] || '';
+            _setFeedback(ok, ok ? '✓ Correct!' : `✗ Not quite. The correct answer is: "${correctText}".`);
             if (ex.explanation) _container.insertAdjacentHTML('beforeend', _explanationHtml(ex.explanation));
             if (ex.moreInfo) _container.insertAdjacentHTML('beforeend', _moreInfoHtml(ex.moreInfo));
-            _resolve(ok);
+            _resolve(ok, { question: ex.question, correct: correctText, user: userText });
         });
     }
 
@@ -232,10 +234,12 @@ const GrammarRunner = (function () {
                 if (correctList.includes(i)) b.classList.add('correct');
                 else if (i === picked) b.classList.add('wrong');
             });
-            _setFeedback(ok, ok ? '✓ Correct!' : '✗ Not quite.');
+            const correctText = correctList.map(ci => pick.options[ci]).join(' / ');
+            const userText = pick.options[picked] || '';
+            _setFeedback(ok, ok ? '✓ Correct!' : `✗ Not quite. The correct answer is: "${correctText}".`);
             if (ex.explanation) _container.insertAdjacentHTML('beforeend', _explanationHtml(ex.explanation));
             if (ex.moreInfo) _container.insertAdjacentHTML('beforeend', _moreInfoHtml(ex.moreInfo));
-            _resolve(ok);
+            _resolve(ok, { question: 'Complete the dialogue', correct: correctText, user: userText });
         });
     }
 
@@ -253,19 +257,16 @@ const GrammarRunner = (function () {
         input.addEventListener('keydown', e => { if (e.key === 'Enter') _doCheck(); });
 
         _onCheck(() => {
-            // ex.acceptable carries the full list for a multi-answer
-            // fill-blank; ex.answer stays the single displayed/revealed
-            // value either way — same split engine/lessons.js's own
-            // stepState.acceptable/stepState.answer already uses.
             const acceptable = ex.acceptable || [ex.answer];
-            const ok = acceptable.some(a => _normalise(input.value) === _normalise(a));
+            const userVal = input.value;
+            const ok = acceptable.some(a => _normalise(userVal) === _normalise(a));
             input.classList.toggle('gd-correct', ok);
             input.classList.toggle('gd-wrong', !ok);
             if (!ok) input.value = ex.answer;
-            _setFeedback(ok, ok ? '✓ Correct!' : `✗ The answer was "${ex.answer}".`);
+            _setFeedback(ok, ok ? '✓ Correct!' : `✗ The correct answer is "${ex.answer}".`);
             if (ex.explanation) _container.insertAdjacentHTML('beforeend', _explanationHtml(ex.explanation));
             if (ex.moreInfo) _container.insertAdjacentHTML('beforeend', _moreInfoHtml(ex.moreInfo));
-            _resolve(ok);
+            _resolve(ok, { question: ex.sentence, correct: ex.answer, user: userVal });
         });
     }
 
@@ -284,14 +285,15 @@ const GrammarRunner = (function () {
         input.addEventListener('keydown', e => { if (e.key === 'Enter') _doCheck(); });
 
         _onCheck(() => {
-            const ok = _normalise(input.value) === _normalise(ex.solution);
+            const userVal = input.value;
+            const ok = _normalise(userVal) === _normalise(ex.solution);
             input.classList.toggle('gd-correct', ok);
             input.classList.toggle('gd-wrong', !ok);
             if (!ok) input.value = ex.solution;
             _setFeedback(ok, ok ? '✓ Correct!' : `✗ The correct sentence was "${ex.solution}".`);
             if (ex.explanation) _container.insertAdjacentHTML('beforeend', _explanationHtml(ex.explanation));
             if (ex.moreInfo) _container.insertAdjacentHTML('beforeend', _moreInfoHtml(ex.moreInfo));
-            _resolve(ok);
+            _resolve(ok, { question: ex.sentence, correct: ex.solution, user: userVal });
         });
     }
 
@@ -348,10 +350,11 @@ const GrammarRunner = (function () {
 
         _onCheck(() => {
             const sentence = built.map(tileText).join(' ');
-            const ok = _normalise(sentence) === _normalise((ex.solution || []).join(' '));
+            const correctSolution = Array.isArray(ex.solution) ? ex.solution.join(' ') : (ex.solution || ex.sentence || '');
+            const ok = _normalise(sentence) === _normalise(correctSolution);
 
             _container.querySelector('.gd-build-target').innerHTML =
-                `<span class="gd-built ${ok ? 'gd-correct' : 'gd-wrong'}">${_escapeHtml((ex.solution || []).join(' '))}</span>`;
+                `<span class="gd-built ${ok ? 'gd-correct' : 'gd-wrong'}">${_escapeHtml(correctSolution)}</span>`;
             _container.querySelector('.gd-build-bank').innerHTML = '';
 
             if (ex.english) {
@@ -359,8 +362,8 @@ const GrammarRunner = (function () {
                     `<p class="gd-build-english">${_escapeHtml(ex.english)}</p>`);
             }
 
-            _setFeedback(ok, ok ? '✓ Correct!' : '✗ Not quite — the right sentence is shown above.');
-            _resolve(ok);
+            _setFeedback(ok, ok ? '✓ Correct!' : `✗ Not quite. The correct sentence was: "${correctSolution}".`);
+            _resolve(ok, { question: ex.english || 'Build the sentence', correct: correctSolution, user: sentence });
         });
     }
 
@@ -392,6 +395,9 @@ const GrammarRunner = (function () {
             const ok = order.length === (ex.solution || []).length
                 && order.every((v, i) => v === ex.solution[i]);
 
+            const correctOrder = (ex.solution || []).map((i, pos) => `${pos + 1}. ${ex.sentences[i]}`).join(' / ');
+            const userOrder = order.map((i, pos) => `${pos + 1}. ${ex.sentences[i]}`).join(' / ');
+
             if (!ok) {
                 _container.querySelector('.gd-options').insertAdjacentHTML('afterend', `
                     <div class="gd-reveal">
@@ -400,10 +406,10 @@ const GrammarRunner = (function () {
                 `);
             }
 
-            _setFeedback(ok, ok ? '✓ Correct order!' : '✗ Not the right order — shown below.');
+            _setFeedback(ok, ok ? '✓ Correct order!' : '✗ Not the right order — correct sequence shown below.');
             if (ex.explanation) _container.insertAdjacentHTML('beforeend', _explanationHtml(ex.explanation));
             if (ex.moreInfo) _container.insertAdjacentHTML('beforeend', _moreInfoHtml(ex.moreInfo));
-            _resolve(ok);
+            _resolve(ok, { question: 'Order the sentences', correct: correctOrder, user: userOrder });
         });
     }
 

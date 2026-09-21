@@ -436,11 +436,19 @@ const SpeakingRunner = (function () {
         const cantSpeakBtn = _container.querySelector('[data-action="cant-speak"]');
         if (cantSpeakBtn) {
             cantSpeakBtn.addEventListener('click', () => {
-                SpeechInput.setCantSpeakNow(30);
-                _setFeedback(true, 'Speaking snoozed for 30 minutes.');
+                SpeechInput.setCantSpeakNow(10);
+                if (typeof UI !== 'undefined' && UI.toast) {
+                    UI.toast('Understood — speaking exercises disabled for 10 minutes', 'info');
+                } else if (typeof showToast === 'function') {
+                    showToast('Understood — speaking exercises disabled for 10 minutes', 'info');
+                }
                 _evalResult = { isCorrect: true, accuracy: 100, isSnoozed: true, words: [], transcript: '(Skipped)' };
-                _reveal(_evalResult);
                 _resolve(true);
+                if (_userAudioPlayer) {
+                    _userAudioPlayer.pause();
+                    _userAudioPlayer = null;
+                }
+                if (_onNext) _onNext();
             });
         }
 

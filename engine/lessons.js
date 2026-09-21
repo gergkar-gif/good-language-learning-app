@@ -3431,10 +3431,16 @@ function lessonResumeSpeaking() {
 function lessonSkipSpeaking() {
     if (stepState.solved) return;
     if (typeof SpeechInput !== 'undefined') {
-        SpeechInput.setCantSpeakNow(30);
+        SpeechInput.setCantSpeakNow(10);
     }
-    setFeedback(true, 'Speaking snoozed for 30 minutes.');
+    if (typeof showToast === 'function') {
+        showToast('Understood — speaking exercises disabled for 10 minutes', 'info');
+    } else if (typeof UI !== 'undefined' && UI.toast) {
+        UI.toast('Understood — speaking exercises disabled for 10 minutes', 'info');
+    }
+    setFeedback(true, 'Speaking snoozed for 10 minutes.');
     solveStep('Skipped (Speaking snoozed)');
+    advanceLessonStep();
 }
 
 let _inlineVoiceActive = false;

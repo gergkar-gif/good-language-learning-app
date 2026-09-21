@@ -58,9 +58,14 @@ function isLessonComplete(lessonId) {
 // marked complete, so the caller can report how many that actually was.
 function markLevelComplete(levelKey) {
     const data = window._curriculumData;
-    if (!data || !data.levels || !data.levels[levelKey]) return [];
+    if (!data || !data.levels) return [];
+    const normalizedKey = typeof levelKey === 'string'
+        ? (data.levels[levelKey] ? levelKey : (data.levels[levelKey.toUpperCase()] ? levelKey.toUpperCase() : levelKey.toLowerCase()))
+        : levelKey;
+    const levelObj = data.levels[normalizedKey];
+    if (!levelObj) return [];
 
-    const lessons = (data.levels[levelKey].units || []).flatMap(u => u.lessons || []);
+    const lessons = (levelObj.units || []).flatMap(u => u.lessons || []);
     const progress = getProgress();
     const newlyCompleted = [];
 

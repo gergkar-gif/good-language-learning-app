@@ -228,6 +228,11 @@
           "items": { "type": "string", "minLength": 1 },
           "description": "Multiple equally-valid answers."
         },
+        "english": {
+          "type": "string",
+          "minLength": 1,
+          "description": "What the completed sentence means in English. Shown after the learner settles the answer."
+        },
         "teaches": {
           "$ref": "#/definitions/baseFields/teaches"
         }
@@ -705,6 +710,11 @@
           "examples": [
             "He viajado a Vietnam."
           ]
+        },
+        "english": {
+          "type": "string",
+          "minLength": 1,
+          "description": "What the spoken sentence means in English. Shown after the learner settles the answer."
         },
         "teaches": {
           "$ref": "#/definitions/baseFields/teaches"

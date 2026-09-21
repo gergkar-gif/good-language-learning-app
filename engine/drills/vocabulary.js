@@ -80,6 +80,7 @@ const VocabularyDriller = (function () {
     let _seen = 0;
     let _correct = 0;
     let _missed = []; // {lemma, translation, pos} for each distinct word missed this session
+    let _missedDetails = []; // [{question, correct, user}] for pedagogical review recap
 
     let _timerInterval = null;
     let _endTime = 0;
@@ -766,6 +767,7 @@ const VocabularyDriller = (function () {
         _seen = 0;
         _correct = 0;
         _missed = [];
+        _missedDetails = [];
 
         if (!pool.length) {
             _phase = PHASE.SETTINGS;
@@ -801,6 +803,7 @@ const VocabularyDriller = (function () {
         _seen = 0;
         _correct = 0;
         _missed = [];
+        _missedDetails = [];
 
         if (!pool.length) {
             // This is a scoped request (Decks' "Practice these words", or a
@@ -898,12 +901,19 @@ const VocabularyDriller = (function () {
 
         GrammarRunner.render(exerciseRoot, {
             exercise: _queue[_queueIndex],
-            onResult: correct => {
+            onResult: (correct, details) => {
                 _seen++;
                 if (correct) {
                     _correct++;
-                } else if (currentWord && !_missed.some(w => w.lemma === currentWord.lemma)) {
-                    _missed.push({ lemma: currentWord.lemma, translation: currentWord.en, pos: currentWord.pos });
+                } else {
+                    if (currentWord && !_missed.some(w => w.lemma === currentWord.lemma)) {
+                        _missed.push({ lemma: currentWord.lemma, translation: currentWord.en, pos: currentWord.pos });
+                    }
+                    _missedDetails.push({
+                        question: (details && details.question) || (currentWord ? currentWord.lemma : 'Question'),
+                        correct: (details && details.correct) || (currentWord ? currentWord.en : ''),
+                        user: (details && details.user) || ''
+                    });
                 }
                 const score = _container.querySelector('.gd-hud-score');
                 if (score) score.textContent = _scoreLabel();
@@ -961,6 +971,22 @@ const VocabularyDriller = (function () {
                         <span class="vspeed-stat-value">${_seen}</span>
                     </div>
                 </div>
+                ${_missedDetails.length ? `
+                    <div class="gd-missed-recap">
+                        <h4 class="gd-missed-title">Review Missed Items</h4>
+                        <div class="gd-missed-list">
+                            ${_missedDetails.map(item => `
+                                <div class="gd-missed-card">
+                                    <div class="gd-missed-q">${_escapeHtml(item.question)}</div>
+                                    <div class="gd-missed-answers">
+                                        ${item.user ? `<div class="gd-missed-user"><span class="gd-badge-wrong">Your answer:</span> ${_escapeHtml(item.user)}</div>` : ''}
+                                        <div class="gd-missed-correct"><span class="gd-badge-correct">Correct:</span> <strong>${_escapeHtml(item.correct)}</strong></div>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                ` : ''}
                 ${_missed.length ? `
                     <button class="vbtn vbtn-secondary vbtn-block" data-action="add-missed">
                         Add ${_missed.length} missed ${_missed.length === 1 ? 'word' : 'words'} to a deck

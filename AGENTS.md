@@ -23,6 +23,8 @@ failure email per push. A `pre-push` hook in `.githooks/` runs it for you
   or shapes; copy an existing passing lesson as your template.
 - Lesson ids look like `lesson.b1.01.01`, levels are uppercase (`B1`),
   vocabulary words use `lemma`, exercise files need a `lesson` field.
+- Every `fill-blank`, `dictation`, and `sentence-builder` exercise MUST include
+  an `english` translation field (shown to the learner once the exercise is solved).
 - Do not commit empty stub lessons (`"sections": []`) or wire unfinished
   lessons into `curriculum/units/*.json` — the app would show them as empty.
 - Do not hand-edit generated files (`curriculum.json`, `decks.json`,

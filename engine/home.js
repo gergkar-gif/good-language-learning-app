@@ -30,9 +30,18 @@ const Home = (function () {
     // one thing that has nothing to do with how the learner is doing.
     function greeting() {
         const hour = new Date().getHours();
-        if (hour < 12) return 'Good morning';
-        if (hour < 18) return 'Good afternoon';
-        return 'Good evening';
+        let timeStr = 'Good morning';
+        if (hour >= 12 && hour < 18) timeStr = 'Good afternoon';
+        else if (hour >= 18) timeStr = 'Good evening';
+
+        const name = (typeof Sync !== 'undefined' && typeof Sync.getUserName === 'function')
+            ? Sync.getUserName()
+            : (typeof localStorage !== 'undefined' ? localStorage.getItem('parlour_user_name') || '' : '');
+
+        if (name) {
+            return `${timeStr}, ${name}`;
+        }
+        return timeStr;
     }
 
     // ----------------------------------------

@@ -584,7 +584,15 @@ const DiagnosticTest = (function () {
         }
     }
 
-    function _executeJumpAhead(placedLevel) {
+    async function _executeJumpAhead(placedLevel) {
+        if (!window._curriculumData && typeof loadCurriculumData === 'function') {
+            try {
+                window._curriculumData = await loadCurriculumData();
+            } catch (e) {
+                console.warn('DiagnosticTest: could not preload curriculum data:', e);
+            }
+        }
+
         const levelsOrder = (typeof LEVEL_ORDER !== 'undefined') ? LEVEL_ORDER : ['A1', 'A2', 'B1', 'B2', 'C1'];
         const placedIdx = levelsOrder.indexOf(placedLevel.toUpperCase());
         const precedingLevels = placedIdx > 0 ? levelsOrder.slice(0, placedIdx) : [];
@@ -592,7 +600,7 @@ const DiagnosticTest = (function () {
         if (typeof markLevelComplete === 'function') {
             precedingLevels.forEach(lvl => {
                 try {
-                    markLevelComplete(lvl.toLowerCase());
+                    markLevelComplete(lvl);
                 } catch (e) {
                     console.warn('Could not mark level complete:', lvl, e);
                 }

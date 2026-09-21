@@ -49,7 +49,7 @@ const SpeechInput = (function () {
         }
     }
 
-    function setCantSpeakNow(durationMinutes = 30) {
+    function setCantSpeakNow(durationMinutes = 10) {
         try {
             const until = Date.now() + (durationMinutes * 60 * 1000);
             localStorage.setItem(CANT_SPEAK_KEY, String(until));
@@ -81,6 +81,10 @@ const SpeechInput = (function () {
             _recordedAudioUrl = null;
         }
         _recordedAudioBlob = null;
+    }
+
+    function getRecordedAudioUrl() {
+        return _recordedAudioUrl;
     }
 
     let _finishTimeout = null;
@@ -515,10 +519,6 @@ const SpeechInput = (function () {
         }
     }
 
-    function getRecordedAudioUrl() {
-        return _recordedAudioUrl;
-    }
-
     // ---- Text Normalization & Fuzzy Token Matching ----
     function normalizeForSpeech(text) {
         return String(text || '')
@@ -530,20 +530,18 @@ const SpeechInput = (function () {
             .trim();
     }
 
-    // Splits on whitespace AND a colon between digits before anything else —
-    // speech recognition commonly transcribes a spoken time ("seis y media")
-    // as a compact "6:30", which has no whitespace at all. Without this, that
-    // whole "6:30" survives as one raw token whose normalized form (via
-    // normalizeForSpeech, which turns ":" into a space) becomes the two-word
-    // string "6 30" — never equal to a single target token like "seis", so
-    // isWordMatch's own number/digit tolerance below never gets a chance to
-    // apply and a correctly-spoken time reads as entirely missed.
+    // Splits on whitespace, colons between digits, hyphens, dashes, and punctuation
+    // so signs (e.g. -, --, --, quotes) don't form phantom tokens that lower accuracy.
     function tokenize(text) {
-        const rawTokens = String(text || '').trim().replace(/(\d):(\d)/g, '$1 $2').split(/\s+/).filter(Boolean);
+        const cleaned = String(text || '')
+            .replace(/(\d):(\d)/g, '$1 $2')
+            .replace(/[-–—/\\()[\]{}«»"“”'’¿?¡!.,;:*~_+=]/g, ' ')
+            .trim();
+        const rawTokens = cleaned.split(/\s+/).filter(Boolean);
         return rawTokens.map(raw => ({
             raw,
             norm: normalizeForSpeech(raw)
-        }));
+        })).filter(t => t.norm.length > 0);
     }
 
     // Word-level Levenshtein distance

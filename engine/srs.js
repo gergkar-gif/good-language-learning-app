@@ -373,10 +373,10 @@ let reviewLimit = null;
 // plain key rather than one scoped through Lang.key() — a learner who
 // prefers production-first wants that whichever course they are reviewing.
 const REVIEW_DIRECTION_KEY = 'app_reviewDirection';
-let reviewDirection = 'es-en';
+let reviewDirection = 'en-es';
 try {
     const saved = localStorage.getItem(REVIEW_DIRECTION_KEY);
-    reviewDirection = saved === 'en-es' ? saved : 'es-en';
+    reviewDirection = saved === 'es-en' ? 'es-en' : 'en-es';
 } catch (error) {
     // Private browsing with storage disabled: the default is fine.
 }
@@ -739,6 +739,8 @@ let reviewExpectedEnglish = '';
 // checkTypedAnswer() and consumed by continueTypedReview() -- null means
 // "not graded yet" (still typing / card just rendered).
 let typedAnswerCorrect = null;
+let typedAssessedBucket = null;
+let cardStartTime = 0;
 
 // Draws currentReviewCard in whichever direction reviewDirection currently
 // asks for. Split out from showNextCard() so toggling the direction
@@ -795,13 +797,23 @@ function renderCard() {
     const field = document.getElementById('review-type-field');
     if (field) {
         field.value = '';
-        field.classList.remove('correct', 'wrong');
+        field.classList.remove('correct', 'almost', 'wrong');
         field.disabled = false;
         if (typeMode) field.focus();
     }
     typedAnswerCorrect = null;
+    typedAssessedBucket = null;
+    cardStartTime = Date.now();
+    const assessEl = document.getElementById('review-type-assessment');
+    if (assessEl) {
+        assessEl.innerHTML = '';
+        assessEl.className = 'review-type-assessment hidden';
+    }
     const continueBtn = document.getElementById('review-type-continue-btn');
-    if (continueBtn) continueBtn.classList.add('hidden');
+    if (continueBtn) {
+        continueBtn.classList.add('hidden');
+        continueBtn.textContent = 'Continue';
+    }
 
     updateRatingLabels();
     updateReviewStats();
@@ -975,9 +987,20 @@ function checkTypedAnswer() {
     const field = document.getElementById('review-type-field');
     if (!field) return;
 
+    const rawTyped = (field.value || '').trim();
+    if (!rawTyped) return;
+
     const englishFirst = reviewDirection === 'en-es';
-    const typed = srsNormalise(field.value);
-    let ok = false;
+    const typed = srsNormalise(rawTyped);
+
+    const elapsedMs = Date.now() - (cardStartTime || Date.now());
+    const elapsedSec = Math.max(0.4, elapsedMs / 1000);
+
+    const stripAccents = (str) => String(str || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
+
+    let isExact = false;
+    let isNearMiss = false;
+
     if (englishFirst) {
         const acceptableSpanish = new Set([srsNormalise(reviewExpectedSpanish)]);
         if (typeof Lexicon !== 'undefined' && typeof Lexicon.withArticle === 'function') {
@@ -986,36 +1009,95 @@ function checkTypedAnswer() {
         }
         const strippedTyped = typed.replace(/^(el|la|los|las|un|una|unos|unas|a|az)\s+/i, '');
         const strippedExpected = srsNormalise(reviewExpectedSpanish).replace(/^(el|la|los|las|un|una|unos|unas|a|az)\s+/i, '');
-        ok = acceptableSpanish.has(typed) || (strippedTyped.length > 0 && strippedTyped === strippedExpected);
+        isExact = acceptableSpanish.has(typed) || (strippedTyped.length > 0 && strippedTyped === strippedExpected);
+
+        if (!isExact) {
+            const accentLessTyped = stripAccents(strippedTyped || typed);
+            for (const acc of acceptableSpanish) {
+                const strippedAcc = acc.replace(/^(el|la|los|las|un|una|unos|unas|a|az)\s+/i, '');
+                if (stripAccents(strippedAcc) === accentLessTyped) {
+                    isNearMiss = true;
+                    break;
+                }
+            }
+        }
     } else {
-        ok = englishAlternatives(reviewExpectedEnglish).includes(typed);
+        const alts = englishAlternatives(reviewExpectedEnglish);
+        isExact = alts.includes(typed);
+        if (!isExact) {
+            const accentLessTyped = stripAccents(typed);
+            isNearMiss = alts.some(alt => stripAccents(alt) === accentLessTyped);
+        }
     }
 
-    field.classList.toggle('correct', ok);
-    field.classList.toggle('wrong', !ok);
-    // Disabling drops focus off the field, so a following Enter/Space
-    // reaches the window-level keydown handler below instead of
-    // re-triggering this field's own "Enter checks" listener.
+    // Auto-assess into the four SM-2 buckets based on speed and accuracy:
+    // 1. Exact match under 3.0s -> 'easy' (fluent, instantaneous recall)
+    // 2. Exact match 3.0s to 7.5s -> 'good' (confident recall)
+    // 3. Exact match over 7.5s OR near-miss (minor accent slip) -> 'hard' (hesitation or slight inaccuracy)
+    // 4. Inaccurate / incorrect -> 'again' (relearning required)
+    let bucket = 'again';
+    if (isExact) {
+        if (elapsedSec < 3.0) {
+            bucket = 'easy';
+        } else if (elapsedSec <= 7.5) {
+            bucket = 'good';
+        } else {
+            bucket = 'hard';
+        }
+    } else if (isNearMiss) {
+        bucket = 'hard';
+    } else {
+        bucket = 'again';
+    }
+
+    typedAssessedBucket = bucket;
+    typedAnswerCorrect = (bucket !== 'again');
+
+    field.classList.toggle('correct', bucket === 'easy' || bucket === 'good');
+    field.classList.toggle('almost', bucket === 'hard');
+    field.classList.toggle('wrong', bucket === 'again');
     field.disabled = true;
-    typedAnswerCorrect = ok;
-    revealTypedResult();
+
+    revealTypedResult(bucket, elapsedSec, isNearMiss);
 }
 
-// Type mode already knows objectively whether the typed answer matched, so
-// it grades itself via continueTypedReview() instead of also asking the
-// learner to self-rate Again/Hard/Good/Easy on top of that -- tap-based
-// flip review keeps the manual rating buttons untouched (see revealAnswer).
-function revealTypedResult() {
+// Type mode automatically evaluates accuracy and speed to place the card into
+// one of the 4 buckets (Easy, Good, Hard, Again) and provides instant visual feedback.
+function revealTypedResult(bucket, elapsedSec, isNearMiss) {
     document.getElementById('review-answer').style.display = 'block';
     document.getElementById('review-type-input').classList.add('hidden');
     document.getElementById('rating-buttons').style.display = 'none';
+
+    const assessEl = document.getElementById('review-type-assessment');
+    if (assessEl) {
+        const speedText = elapsedSec ? `${elapsedSec.toFixed(1)}s` : '';
+        let badgeHtml = '';
+        if (bucket === 'easy') {
+            badgeHtml = `<span class="srs-bucket-badge srs-bucket-easy">Easy · ${speedText}</span> <span class="srs-bucket-desc">Quick recall</span>`;
+        } else if (bucket === 'good') {
+            badgeHtml = `<span class="srs-bucket-badge srs-bucket-good">Good · ${speedText}</span> <span class="srs-bucket-desc">Accurate recall</span>`;
+        } else if (bucket === 'hard') {
+            const desc = isNearMiss ? 'Minor accent or typo' : (speedText ? `Recalled in ${speedText}` : 'Struggled recall');
+            badgeHtml = `<span class="srs-bucket-badge srs-bucket-hard">Hard · ${desc}</span>`;
+        } else {
+            badgeHtml = `<span class="srs-bucket-badge srs-bucket-again">Again</span> <span class="srs-bucket-desc">Needs practice</span>`;
+        }
+        assessEl.innerHTML = badgeHtml;
+        assessEl.className = `review-type-assessment review-assess-${bucket}`;
+        assessEl.classList.remove('hidden');
+    }
+
     const continueBtn = document.getElementById('review-type-continue-btn');
-    if (continueBtn) continueBtn.classList.remove('hidden');
+    if (continueBtn) {
+        continueBtn.textContent = `Continue [${bucket ? bucket.toUpperCase() : 'NEXT'}] (Enter ↵)`;
+        continueBtn.classList.remove('hidden');
+    }
 }
 
 function continueTypedReview() {
-    if (typedAnswerCorrect === null) return;
-    rateCard(typedAnswerCorrect ? 'good' : 'again');
+    if (typedAssessedBucket === null && typedAnswerCorrect === null) return;
+    const bucket = typedAssessedBucket || (typedAnswerCorrect ? 'good' : 'again');
+    rateCard(bucket);
 }
 
 function rateCard(rating) {

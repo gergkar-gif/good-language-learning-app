@@ -3622,5 +3622,77 @@
     border-color: var(--border);
 }
 
+/* Missed Items Review Recap */
+.gd-missed-recap {
+    margin: 24px 0;
+    text-align: left;
+}
+
+.gd-missed-title {
+    font-family: var(--font-display, Georgia, serif);
+    font-size: 17px;
+    color: var(--primary);
+    margin: 0 0 12px;
+}
+
+.gd-missed-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.gd-missed-card {
+    background: var(--surface, #fff);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm, 6px);
+    padding: 14px 16px;
+}
+
+.gd-missed-q {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 8px;
+}
+
+.gd-missed-answers {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 14px;
+}
+
+.gd-missed-user {
+    color: var(--danger, #B23A22);
+}
+
+.gd-missed-correct {
+    color: var(--success, #2F7A4D);
+}
+
+.gd-badge-wrong {
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    padding: 2px 6px;
+    border-radius: 3px;
+    background: var(--danger-bg, #FAEDE9);
+    color: var(--danger, #B23A22);
+    margin-right: 6px;
+}
+
+.gd-badge-correct {
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    padding: 2px 6px;
+    border-radius: 3px;
+    background: var(--success-bg, #E8F3EC);
+    color: var(--success, #2F7A4D);
+    margin-right: 6px;
+}
+
 
 

@@ -83,7 +83,16 @@ const Sync = (function () {
         try {
             localStorage.removeItem(TOKEN_STORAGE_KEY);
             localStorage.removeItem(EMAIL_STORAGE_KEY);
+            localStorage.removeItem('parlour_user_name');
         } catch (error) { /* private browsing — nothing to clear */ }
+    }
+
+    function getUserName() {
+        try {
+            return localStorage.getItem('parlour_user_name') || '';
+        } catch (e) {
+            return '';
+        }
     }
 
     // ----------------------------------------
@@ -349,6 +358,23 @@ const Sync = (function () {
         const data = await res.json();
         localStorage.setItem(TOKEN_STORAGE_KEY, data.token);
         localStorage.setItem(EMAIL_STORAGE_KEY, data.email);
+
+        let userName = data.name || '';
+        if (!userName) {
+            try {
+                const parts = credential.split('.');
+                if (parts.length === 3) {
+                    const b64 = parts[1].replace(/-/g, '+').replace(/_/g, '/');
+                    const decoded = JSON.parse(decodeURIComponent(escape(atob(b64))));
+                    userName = decoded.given_name || decoded.name || '';
+                }
+            } catch (e) {
+                console.warn('Sync: could not decode name from Google credential', e);
+            }
+        }
+        if (userName) {
+            localStorage.setItem('parlour_user_name', userName);
+        }
 
         // If logging in on a new device with empty progress, automatically restore cloud backup
         const progressKey = (typeof Lang !== 'undefined' && Lang.key) ? Lang.key('progress') : 'es:progress';
@@ -635,7 +661,7 @@ const Sync = (function () {
     }
 
     return {
-        isLoggedIn, email, logout, requestLink, completeVerify,
+        isLoggedIn, email, getUserName, logout, requestLink, completeVerify,
         loginWithGoogle, renderGoogleButton, promptGoogleOneTap,
         isGoogleAuthAvailable, getGoogleClientId,
         gatherSnapshot, applySnapshot, backup, restore, status,

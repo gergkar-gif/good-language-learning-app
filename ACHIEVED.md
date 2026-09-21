@@ -9,6 +9,25 @@ needs re-reading before starting new work; it's reference only.
 
 ## Completed queue items
 
+60. ~~**Pedagogical Feedback Clarity, Decks Typing Auto-Assessment, Diagnostic Overhaul & STT Polish**~~ — **Done 2026-09-21.**
+    Shipped a unified suite of UX enhancements, pedagogical fixes, and driller optimizations:
+    - **Decks & SRS Production-First Review (`engine/srs.js`, `styles/components.css`, `index.html`)**:
+      - Defaulted flashcard review direction to English-first (`en-es`), enforcing active target-language recall rather than passive recognition.
+      - Built automated 4-bucket assessment (`easy`, `good`, `hard`, `again`) for desktop typing review mode based on latency and accuracy: <3.0s exact match rates as Easy, 3.0–7.5s rates as Good, >7.5s or minor accent slips rate as Hard, and incorrect answers rate as Again.
+      - Added instant inline evaluation badges (`.review-type-assessment`, `.srs-bucket-badge`) with latency display and auto-labeled Continue actions (`Continue [BUCKET] (Enter ↵)`).
+    - **Personalized Welcome Screen (`engine/sync.js`, `cloudflare-worker/sync-worker.js`, `engine/home.js`)**:
+      - Captures user display name from Google OAuth identity tokens into `localStorage` (`parlour_user_name`).
+      - Dynamically renders time-of-day greetings for authenticated learners (*"Good [morning/afternoon/evening], [Name] — welcome back to your language journey."*).
+    - **Placement Diagnostic Test Overhaul (`engine/diagnostic.js`, `engine/progress.js`, `styles/components.css`)**:
+      - Restyled the placement interface to strictly adhere to Parlour ink aesthetic: eliminated raw white prompt boxes, unified option button sizing, and created custom styles for `.wk-primary-btn` and `.wk-secondary-btn`.
+      - Resolved case-sensitivity level-jumping bug in `markLevelComplete()` and ensured curriculum manifests are pre-loaded; testing into B2 reliably auto-credits and marks A1, A2, and B1 as completed.
+    - **Pedagogical Immediate Feedback & Missed Items Recap (`engine/drills/grammar-runner.js`, `engine/drills/vocabulary.js`, `engine/drills/grammar.js`, `styles/workshop.css`)**:
+      - Replaced blind wrong-state indicators across grammar and vocabulary drills with immediate display of the exact correct answer.
+      - Added a "Review Missed Items" recap card to session summaries detailing each missed prompt, the learner's response, and the correct solution.
+    - **Speaking Studio & STT Punctuation Normalization (`engine/speech-input.js`, `engine/lessons.js`, `engine/drills/speaking-runner.js`)**:
+      - Stripped non-phonetic punctuation and typographical signs (`-`, `—`, quotes, etc.) from STT comparison tokens so missing punctuation never penalizes speech evaluation.
+      - Configured "Can't speak right now" action in lessons and drills to immediately advance, snooze speaking exercises for 10 minutes, and display confirmation toast feedback.
+
 59. ~~**Google Sign-In & Multi-Device Cloud Sync**~~ — **Done 2026-09-20.**
     Implemented 1-tap Google Sign-In alongside email magic links:
     - **Cloudflare Worker Auth (`cloudflare-worker/sync-worker.js`)**: Added `/auth/google` POST endpoint that cryptographically verifies Google OpenID Connect ID tokens via Google's standard tokeninfo endpoint (zero external dependencies). Validates token audience, issuer (`accounts.google.com`), expiration, and verified email flag.
