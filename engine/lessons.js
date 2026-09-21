@@ -1265,7 +1265,7 @@ const stepRenderers = {
                 ${(step.prompt || []).map(line => `
                     <div class="lsn-line">
                         <div class="lsn-speaker">${esc(line.speaker)}</div>
-                        <div class="lsn-es">${escMd(line.text)}</div>
+                        <div class="lsn-es">${escMd(line.text)}${/_{2,}/.test(line.text) ? '' : say(line.text)}</div>
                     </div>
                 `).join('')}
             </div>
