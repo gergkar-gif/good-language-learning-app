@@ -911,6 +911,8 @@ window.StoryAudioPlayer = StoryAudioPlayer;
 window.Reader = {
     _normSearch: _normSearch,
     _matchesTerm: _matchesTerm,
+    assignCharacterVoices: assignCharacterVoices,
+    inferCharacterGender: inferCharacterGender,
     // Resolved on every read rather than captured at load. The course can
     // change after this file runs — startup falls back to the default when
     // the chosen one has no content — and a value frozen here would leave the

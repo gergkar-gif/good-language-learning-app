@@ -276,6 +276,8 @@ const ParlourTTS = (function () {
         const attrs = [`data-tts-text="${escaped}"`];
         if (opts.type) attrs.push(`data-tts-type="${esc(opts.type)}"`);
         if (opts.language) attrs.push(`data-tts-lang="${esc(opts.language)}"`);
+        if (opts.character) attrs.push(`data-tts-character="${esc(opts.character)}"`);
+        if (opts.gender) attrs.push(`data-tts-gender="${esc(opts.gender)}"`);
         return `<button class="speak-btn" ${attrs.join(' ')} type="button" aria-label="${opts.label || 'Listen'}">${mark}</button>`;
     }
 
@@ -296,6 +298,8 @@ const ParlourTTS = (function () {
                 text: btn.getAttribute('data-tts-text'),
                 type: btn.getAttribute('data-tts-type') || undefined,
                 language: btn.getAttribute('data-tts-lang') || undefined,
+                character: btn.getAttribute('data-tts-character') || undefined,
+                gender: btn.getAttribute('data-tts-gender') || undefined,
                 triggerBtn: btn
             });
         });

@@ -406,12 +406,17 @@ async function buildSteps(lesson) {
 
             else if (section.type === 'story') {
                 const story = await loadContent(section.ref);
+                const voices = (typeof Reader !== 'undefined' && typeof Reader.assignCharacterVoices === 'function')
+                    ? Reader.assignCharacterVoices(story)
+                    : {};
                 steps.push({
                     type: 'story',
                     title: section.title || story.title,
                     // Story files use `paragraphs` (same schema the Library
                     // reader consumes), not a separate bilingual `lines` shape.
-                    lines: story.paragraphs || []
+                    lines: story.paragraphs || [],
+                    characterVoices: voices,
+                    characterGenders: (voices && voices._genders) || {}
                 });
             }
 
@@ -663,10 +668,10 @@ function highlightWord(sentence, word) {
         + esc(text.slice(idx + word.length));
 }
 
-// A listen button for a piece of Spanish. Returns '' only when neither cloud
+// A listen button for a piece of target language. Returns '' only when neither cloud
 // nor device speech can run, so every caller can add it without a guard.
-function say(text) {
-    return (typeof ParlourTTS !== 'undefined') ? ParlourTTS.button(text) : '';
+function say(text, options) {
+    return (typeof ParlourTTS !== 'undefined') ? ParlourTTS.button(text, options) : '';
 }
 
 // A real recording beats TTS whenever content supplies one for this exact
@@ -1196,7 +1201,22 @@ const stepRenderers = {
         const isTargetLanguage = line => !line.lang || line.lang === Lang.code();
         const clickable = text => (typeof Reader !== 'undefined') ? Reader.makeClickable(text) : esc(text);
         const body = line => isTargetLanguage(line) ? clickable(line.text) : esc(line.text);
-        const speech = line => isTargetLanguage(line) ? say(line.text) : '';
+        const voices = step.characterVoices || ((typeof Reader !== 'undefined' && typeof Reader.assignCharacterVoices === 'function')
+            ? Reader.assignCharacterVoices({ characters: step.characters || [], paragraphs: step.lines || [] })
+            : {});
+        const genders = step.characterGenders || (voices && voices._genders) || {};
+        const speech = line => {
+            if (!isTargetLanguage(line)) return '';
+            const spk = line.speaker;
+            const isNarrator = !spk || spk === 'Narrator';
+            const charVoice = isNarrator ? undefined : voices[spk];
+            const charGender = isNarrator ? undefined : genders[spk];
+            return say(line.text, {
+                type: 'story',
+                character: charVoice,
+                gender: charGender
+            });
+        };
         return `
             <p class="lsn-hint">It's okay if you don't understand every word — this is here to get you used to
                 natural ${esc(Lang.name())}, not another test sentence. Read for the general idea; a few questions follow.</p>
