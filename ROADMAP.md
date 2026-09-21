@@ -7,14 +7,16 @@ Completed work is archived out to `ACHIEVED.md`.
 
 ## 1. Active & Parked Priorities
 
-1. **Progressive Authoring of Spain CCSE Track (`content/es-es`, Units 5–36):**
+1. **Progressive Authoring of Spain CCSE Track (`content/es-es`, Units 7–36):**
    - **Completed**:
      - Unit 1: *La Constitución Española de 1978*
      - Unit 2: *La Corona y la Jefatura del Estado*
      - Unit 3: *Las Cortes Generales: Congreso y Senado*
      - Unit 4: *El Gobierno y la Administración del Estado*
+     - Unit 5: *El Poder Judicial y el Tribunal Constitucional*
+     - Unit 6: *Las Instituciones Autonómicas y Locales*
      (Fully authored with B1 pedagogical texts, grammar modules, vocabulary, exercises with English translations, and generating SRS decks).
-   - **Roadmapped / Parked for Future Cycles**: Units 5 through 36 (covering Poder Judicial, Organización Territorial, Derechos Fundamentales, Geografía, Historia, Cultura, y Sociedad Española).
+   - **Roadmapped / Parked for Future Cycles**: Units 7 through 36 (covering Elecciones, Fuerzas Armadas, Unión Europea, Símbolos, Derechos Fundamentales, Geografía, Historia, Cultura, y Sociedad Española).
    - **Authoring Norm**: When resuming, every unit must follow the established three-pillar standard: B1 level pedagogical clarity, 100% factual accuracy (aligned with Instituto Cervantes CCSE syllabus), and *The Rest Is History* (TRIH)-style engaging, humanized narrative storytelling with companion stories in `stories/world/b1/`.
    - `scripts/validate-content.py` maintains `SKIP_STEM_MARKERS = {"es-es": "-ccse-"}` for scaffolded stubs until all units are authored.
 
