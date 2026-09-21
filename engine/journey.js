@@ -570,7 +570,7 @@ const Journey = (function () {
                     if (statusEl) statusEl.textContent = 'Signing in with Google\u2026';
                 },
                 onSuccess: () => {
-                    render();
+                    location.reload();
                 },
                 onError: (err) => {
                     const statusEl = host.querySelector('#jr-account-status');

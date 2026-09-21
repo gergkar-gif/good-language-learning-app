@@ -100,6 +100,14 @@ needs re-reading before starting new work; it's reference only.
       - Stripped non-phonetic punctuation and typographical signs (`-`, `—`, quotes, etc.) from STT comparison tokens so missing punctuation never penalizes speech evaluation.
       - Configured "Can't speak right now" action in lessons and drills to immediately advance, snooze speaking exercises for 10 minutes, and display confirmation toast feedback.
 
+60. ~~**Two-Way Multi-Device Cloud Sync, Additive Merging & Save-on-Leave Lifecycle**~~ — **Done 2026-09-21.**
+    Implemented seamless cross-device synchronization and guaranteed save-on-leave behavior:
+    - **Additive Multi-Device Merging (`engine/sync.js`)**: Merges progress additively via `mergeSnapshots()` — union of completed lesson IDs, deduplicated union of known words, card-level SRS resolution preserving highest intervals/reviews, and merged XP daily histories. Completing lessons across multiple devices combines all work without overwriting.
+    - **Startup Auto-Sync (`engine/init.js`, `engine/sync.js`)**: App launch automatically checks and pulls newer cloud backups with a 3.5s timeout before initializing in-memory caches (`loadDeck()`, `loadKnownWords()`, `loadXP()`), falling back to local storage offline.
+    - **Guaranteed Save-on-Leave**: Flushes pending debounced saves and dirty states on `visibilitychange` (hidden), `pagehide`, and `beforeunload` using `fetch` with `keepalive: true`.
+    - **Foreground Tab Sync**: Detects remote updates on tab focus (`visibilitychange` visible) without interrupting active exercises.
+    - **Google Sign-In Refresh**: Journey card Google Sign-In triggers page reload on success so all curriculum and deck modules initialize with fresh cloud data.
+
 59. ~~**Google Sign-In & Multi-Device Cloud Sync**~~ — **Done 2026-09-20.**
     Implemented 1-tap Google Sign-In alongside email magic links:
     - **Cloudflare Worker Auth (`cloudflare-worker/sync-worker.js`)**: Added `/auth/google` POST endpoint that cryptographically verifies Google OpenID Connect ID tokens via Google's standard tokeninfo endpoint (zero external dependencies). Validates token audience, issuer (`accounts.google.com`), expiration, and verified email flag.

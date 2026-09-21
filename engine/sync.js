@@ -40,6 +40,7 @@ const Sync = (function () {
     const TOKEN_STORAGE_KEY = 'syncToken';
     const EMAIL_STORAGE_KEY = 'syncEmail';
     const FIRST_VISIT_PROMPT_KEY = 'syncPromptSeen';
+    const LAST_SYNCED_KEY = 'syncLastSyncedAt';
 
     function esc(value) {
         return (typeof UI !== 'undefined' && UI.escape)
@@ -84,6 +85,7 @@ const Sync = (function () {
             localStorage.removeItem(TOKEN_STORAGE_KEY);
             localStorage.removeItem(EMAIL_STORAGE_KEY);
             localStorage.removeItem('parlour_user_name');
+            localStorage.removeItem(LAST_SYNCED_KEY);
         } catch (error) { /* private browsing — nothing to clear */ }
     }
 
@@ -376,18 +378,21 @@ const Sync = (function () {
             localStorage.setItem('parlour_user_name', userName);
         }
 
-        // If logging in on a new device with empty progress, automatically restore cloud backup
-        const progressKey = (typeof Lang !== 'undefined' && Lang.key) ? Lang.key('progress') : 'es:progress';
-        const progressRaw = localStorage.getItem(progressKey);
-        if (!progressRaw || progressRaw === '{}') {
-            try {
-                const cloudData = await status();
-                if (cloudData && cloudData.state) {
-                    applySnapshot(cloudData.state);
+        // Merge local state with cloud backup upon login so progress is never lost
+        try {
+            const cloudData = await status();
+            if (cloudData && cloudData.state) {
+                const localSnapshot = gatherSnapshot();
+                const merged = mergeSnapshots(localSnapshot, cloudData.state);
+                applySnapshot(merged);
+                const cloudUpdatedAt = cloudData.updatedAt ? new Date(cloudData.updatedAt).getTime() : Date.now();
+                localStorage.setItem(LAST_SYNCED_KEY, String(cloudUpdatedAt));
+                if (hasLocalAdditions(localSnapshot, cloudData.state)) {
+                    await backup();
                 }
-            } catch (err) {
-                console.warn('Sync: initial auto-restore skipped', err);
             }
+        } catch (err) {
+            console.warn('Sync: initial auto-merge skipped', err);
         }
 
         return data;
@@ -490,18 +495,21 @@ const Sync = (function () {
             localStorage.setItem(TOKEN_STORAGE_KEY, data.token);
             localStorage.setItem(EMAIL_STORAGE_KEY, data.email);
 
-            // If logging in on a new device with empty progress, automatically restore cloud backup
-            const progressKey = (typeof Lang !== 'undefined' && Lang.key) ? Lang.key('progress') : 'es:progress';
-            const progressRaw = localStorage.getItem(progressKey);
-            if (!progressRaw || progressRaw === '{}') {
-                try {
-                    const cloudData = await status();
-                    if (cloudData && cloudData.state) {
-                        applySnapshot(cloudData.state);
+            // Merge local state with cloud backup upon login so progress is never lost
+            try {
+                const cloudData = await status();
+                if (cloudData && cloudData.state) {
+                    const localSnapshot = gatherSnapshot();
+                    const merged = mergeSnapshots(localSnapshot, cloudData.state);
+                    applySnapshot(merged);
+                    const cloudUpdatedAt = cloudData.updatedAt ? new Date(cloudData.updatedAt).getTime() : Date.now();
+                    localStorage.setItem(LAST_SYNCED_KEY, String(cloudUpdatedAt));
+                    if (hasLocalAdditions(localSnapshot, cloudData.state)) {
+                        await backup();
                     }
-                } catch (err) {
-                    console.warn('Sync: initial auto-restore skipped', err);
                 }
+            } catch (err) {
+                console.warn('Sync: initial auto-merge skipped', err);
             }
         } catch (error) {
             // Offline or the worker is unreachable — the learner can just
@@ -565,34 +573,55 @@ const Sync = (function () {
     // BACKUP / RESTORE
     // ----------------------------------------
 
-    async function backup() {
+    async function backup(options = {}) {
         const token = getToken();
         if (!token) throw new Error('Not signed in');
 
-        const res = await fetch(WORKER_URL + '/sync/state', {
+        const fetchInit = {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': 'Bearer ' + token
             },
             body: JSON.stringify({ state: gatherSnapshot() })
-        });
+        };
+        if (options.keepalive) {
+            fetchInit.keepalive = true;
+        }
+
+        const res = await fetch(WORKER_URL + '/sync/state', fetchInit);
         if (!res.ok) throw new Error('Backup failed (' + res.status + ')');
-        return res.json();
+        const data = await res.json();
+        _isDirty = false;
+        if (data && data.updatedAt) {
+            _lastSavedAt = new Date(data.updatedAt).getTime();
+            try {
+                localStorage.setItem(LAST_SYNCED_KEY, String(_lastSavedAt));
+            } catch (e) {}
+        }
+        return data;
     }
 
     // Returns the cloud's last-backed-up timestamp without touching local
     // data — used to label the Restore button so the learner can see how
     // stale it is before choosing to overwrite local data with it.
-    async function status() {
+    async function status(options = {}) {
         const token = getToken();
         if (!token) return null;
 
-        const res = await fetch(WORKER_URL + '/sync/state', {
-            headers: { 'Authorization': 'Bearer ' + token }
-        });
-        if (!res.ok) throw new Error('Could not reach cloud (' + res.status + ')');
-        return res.json();
+        const controller = (typeof AbortController !== 'undefined' && options.timeoutMs) ? new AbortController() : null;
+        const timer = controller ? setTimeout(() => controller.abort(), options.timeoutMs) : null;
+
+        try {
+            const res = await fetch(WORKER_URL + '/sync/state', {
+                headers: { 'Authorization': 'Bearer ' + token },
+                signal: controller ? controller.signal : undefined
+            });
+            if (!res.ok) throw new Error('Could not reach cloud (' + res.status + ')');
+            return await res.json();
+        } finally {
+            if (timer) clearTimeout(timer);
+        }
     }
 
     // Overwrites local data with the cloud copy, then reloads the page —
@@ -604,7 +633,266 @@ const Sync = (function () {
         const data = await status();
         if (!data || !data.state) throw new Error('Nothing backed up yet');
         applySnapshot(data.state);
+        _isDirty = false;
+        if (data && data.updatedAt) {
+            _lastSavedAt = new Date(data.updatedAt).getTime();
+            try {
+                localStorage.setItem(LAST_SYNCED_KEY, String(_lastSavedAt));
+            } catch (e) {}
+        }
         location.reload();
+    }
+
+    // ----------------------------------------
+    // ADDITIVE MERGING (Multi-Device Resolution)
+    // ----------------------------------------
+
+    function safeJsonParse(raw, fallback) {
+        if (!raw || typeof raw !== 'string') return fallback;
+        try {
+            return JSON.parse(raw);
+        } catch (e) {
+            return fallback;
+        }
+    }
+
+    function mergeProgress(localRaw, cloudRaw) {
+        const lProg = safeJsonParse(localRaw, {});
+        const cProg = safeJsonParse(cloudRaw, {});
+        const allIds = new Set([...Object.keys(lProg || {}), ...Object.keys(cProg || {})]);
+        const res = {};
+        allIds.forEach(id => {
+            const l = lProg[id];
+            const c = cProg[id];
+            if (l && c) {
+                const lTime = l.completedAt ? new Date(l.completedAt).getTime() : 0;
+                const cTime = c.completedAt ? new Date(c.completedAt).getTime() : 0;
+                const bestTime = (lTime && cTime)
+                    ? new Date(Math.min(lTime, cTime)).toISOString()
+                    : (l.completedAt || c.completedAt);
+                res[id] = Object.assign({}, c, l, { completedAt: bestTime });
+            } else {
+                res[id] = l || c;
+            }
+        });
+        return JSON.stringify(res);
+    }
+
+    function mergeKnownWords(localRaw, cloudRaw) {
+        const lWords = safeJsonParse(localRaw, []);
+        const cWords = safeJsonParse(cloudRaw, []);
+        const map = new Map();
+        [...cWords, ...lWords].forEach(w => {
+            if (!w) return;
+            const key = w.spanish || w.lemma || w.word;
+            if (!key) return;
+            if (!map.has(key)) {
+                map.set(key, w);
+            } else {
+                const existing = map.get(key);
+                const t1 = existing.added ? new Date(existing.added).getTime() : Infinity;
+                const t2 = w.added ? new Date(w.added).getTime() : Infinity;
+                map.set(key, Object.assign({}, existing, w, {
+                    added: (t1 < t2 ? existing.added : w.added) || existing.added
+                }));
+            }
+        });
+        return JSON.stringify(Array.from(map.values()));
+    }
+
+    function mergeSrsDeck(localRaw, cloudRaw) {
+        const lCards = safeJsonParse(localRaw, []);
+        const cCards = safeJsonParse(cloudRaw, []);
+        const cardMap = new Map();
+        [...cCards, ...lCards].forEach(card => {
+            if (!card) return;
+            const key = card.spanish || card.lemma || card.word;
+            if (!key) return;
+            if (!cardMap.has(key)) {
+                cardMap.set(key, card);
+            } else {
+                const existing = cardMap.get(key);
+                const exReviews = existing.reviews || 0;
+                const newReviews = card.reviews || 0;
+                const exInterval = existing.interval || 0;
+                const newInterval = card.interval || 0;
+                if (newReviews > exReviews || (newReviews === exReviews && newInterval > exInterval)) {
+                    cardMap.set(key, card);
+                }
+            }
+        });
+        return JSON.stringify(Array.from(cardMap.values()));
+    }
+
+    function mergeXP(localRaw, cloudRaw) {
+        const lXP = safeJsonParse(localRaw, {});
+        const cXP = safeJsonParse(cloudRaw, {});
+        const mXP = {
+            xp: Math.max(lXP.xp || 0, cXP.xp || 0),
+            dailyNewWords: Object.assign({}, cXP.dailyNewWords || {}, lXP.dailyNewWords || {}),
+            history: {},
+            streak: Math.max(lXP.streak || 0, cXP.streak || 0),
+            streakFreezeAvailable: lXP.streakFreezeAvailable !== false && cXP.streakFreezeAvailable !== false,
+            lastPracticeDate: (lXP.lastPracticeDate > (cXP.lastPracticeDate || ''))
+                ? lXP.lastPracticeDate
+                : (cXP.lastPracticeDate || lXP.lastPracticeDate || '')
+        };
+        const lHist = lXP.history || {};
+        const cHist = cXP.history || {};
+        const allDates = new Set([...Object.keys(lHist), ...Object.keys(cHist)]);
+        allDates.forEach(d => {
+            const lh = lHist[d] || {};
+            const ch = cHist[d] || {};
+            mXP.history[d] = {
+                total: Math.max(lh.total || 0, ch.total || 0),
+                lessons: Math.max(lh.lessons || 0, ch.lessons || 0),
+                drills: Math.max(lh.drills || 0, ch.drills || 0),
+                stories: Math.max(lh.stories || 0, ch.stories || 0),
+                verbs: Math.max(lh.verbs || 0, ch.verbs || 0),
+                bonus: Math.max(lh.bonus || 0, ch.bonus || 0),
+                newWords: Math.max(lh.newWords || 0, ch.newWords || 0)
+            };
+        });
+        return JSON.stringify(mXP);
+    }
+
+    function mergeArrayById(localRaw, cloudRaw) {
+        const lArr = safeJsonParse(localRaw, []);
+        const cArr = safeJsonParse(cloudRaw, []);
+        const map = new Map();
+        [...cArr, ...lArr].forEach(item => {
+            if (!item) return;
+            const key = item.id || item.spanish || item.lemma || (typeof item === 'string' ? item : null);
+            if (key) {
+                if (!map.has(key)) map.set(key, item);
+                else map.set(key, Object.assign({}, map.get(key), item));
+            } else {
+                map.set(JSON.stringify(item), item);
+            }
+        });
+        return JSON.stringify(Array.from(map.values()));
+    }
+
+    function mergeField(name, localRaw, cloudRaw) {
+        if (!localRaw) return cloudRaw;
+        if (!cloudRaw) return localRaw;
+        if (localRaw === cloudRaw) return localRaw;
+
+        if (name === 'progress') return mergeProgress(localRaw, cloudRaw);
+        if (name === 'knownWords') return mergeKnownWords(localRaw, cloudRaw);
+        if (name === 'srsDeck') return mergeSrsDeck(localRaw, cloudRaw);
+        if (name === 'spanishApp_xp') return mergeXP(localRaw, cloudRaw);
+        if (name === 'readStories' || name === 'savedReadings' || name === 'myTexts' || name === 'myDecks') {
+            return mergeArrayById(localRaw, cloudRaw);
+        }
+        if (name.startsWith('drillHistory:')) {
+            return mergeArrayById(localRaw, cloudRaw);
+        }
+
+        // Generic JSON object fallback
+        try {
+            const lObj = JSON.parse(localRaw);
+            const cObj = JSON.parse(cloudRaw);
+            if (typeof lObj === 'object' && lObj !== null && typeof cObj === 'object' && cObj !== null) {
+                return JSON.stringify(Object.assign({}, cObj, lObj));
+            }
+        } catch (e) {}
+
+        return cloudRaw;
+    }
+
+    function mergeSnapshots(local, cloud) {
+        if (!cloud || typeof cloud !== 'object') return local || {};
+        if (!local || typeof local !== 'object') return cloud || {};
+
+        const merged = {};
+        const courses = new Set([...Object.keys(local), ...Object.keys(cloud)]);
+
+        courses.forEach(course => {
+            if (course === '_global') return;
+            const lData = local[course] || {};
+            const cData = cloud[course] || {};
+            const mData = {};
+            const keys = new Set([...Object.keys(lData), ...Object.keys(cData)]);
+
+            keys.forEach(key => {
+                const lRaw = lData[key];
+                const cRaw = cData[key];
+                if (lRaw === undefined) {
+                    mData[key] = cRaw;
+                } else if (cRaw === undefined) {
+                    mData[key] = lRaw;
+                } else {
+                    mData[key] = mergeField(key, lRaw, cRaw);
+                }
+            });
+            merged[course] = mData;
+        });
+
+        // Merge _global
+        const lGlobal = local._global || {};
+        const cGlobal = cloud._global || {};
+        const mGlobal = {};
+        const gKeys = new Set([...Object.keys(lGlobal), ...Object.keys(cGlobal)]);
+
+        gKeys.forEach(key => {
+            const lRaw = lGlobal[key];
+            const cRaw = cGlobal[key];
+            if (lRaw === undefined) {
+                mGlobal[key] = cRaw;
+            } else if (cRaw === undefined) {
+                mGlobal[key] = lRaw;
+            } else {
+                mGlobal[key] = mergeField(key, lRaw, cRaw);
+            }
+        });
+        merged._global = mGlobal;
+
+        return merged;
+    }
+
+    function hasLocalAdditions(localSnapshot, cloudSnapshot) {
+        if (!localSnapshot) return false;
+        if (!cloudSnapshot) return true;
+
+        for (const course of Object.keys(localSnapshot)) {
+            if (course === '_global') continue;
+            const lData = localSnapshot[course] || {};
+            const cData = cloudSnapshot[course] || {};
+
+            const lProg = safeJsonParse(lData.progress, {});
+            const cProg = safeJsonParse(cData.progress, {});
+            for (const id of Object.keys(lProg)) {
+                if (!cProg[id]) return true;
+            }
+
+            const lWords = safeJsonParse(lData.knownWords, []);
+            const cWords = safeJsonParse(cData.knownWords, []);
+            const cWordSet = new Set(cWords.map(w => w.spanish || w.lemma || w.word));
+            for (const w of lWords) {
+                const key = w && (w.spanish || w.lemma || w.word);
+                if (key && !cWordSet.has(key)) return true;
+            }
+        }
+
+        const lXP = safeJsonParse(localSnapshot._global?.spanishApp_xp, {});
+        const cXP = safeJsonParse(cloudSnapshot._global?.spanishApp_xp, {});
+        if ((lXP.xp || 0) > (cXP.xp || 0)) return true;
+
+        return false;
+    }
+
+    function hasAnyProgress(snapshot) {
+        if (!snapshot || typeof snapshot !== 'object') return false;
+        for (const course of Object.keys(snapshot)) {
+            if (course === '_global') continue;
+            const data = snapshot[course] || {};
+            const prog = safeJsonParse(data.progress, {});
+            if (Object.keys(prog).length > 0) return true;
+        }
+        const xp = safeJsonParse(snapshot._global?.spanishApp_xp, {});
+        if ((xp.xp || 0) > 0) return true;
+        return false;
     }
 
     // ----------------------------------------
@@ -612,22 +900,28 @@ const Sync = (function () {
     // ----------------------------------------
     let _autoSaveTimer = null;
     let _isSaving = false;
+    let _isDirty = false;
     let _lastSavedAt = null;
 
     function scheduleAutoSave() {
         if (!isLoggedIn()) return;
+        _isDirty = true;
         if (_autoSaveTimer) clearTimeout(_autoSaveTimer);
         _autoSaveTimer = setTimeout(() => {
             performAutoSave();
         }, 2500);
     }
 
-    async function performAutoSave() {
+    async function performAutoSave(options = {}) {
         if (!isLoggedIn() || _isSaving) return;
         _isSaving = true;
         try {
-            const data = await backup();
+            const data = await backup(options);
             _lastSavedAt = (data && data.updatedAt) ? new Date(data.updatedAt).getTime() : Date.now();
+            _isDirty = false;
+            try {
+                localStorage.setItem(LAST_SYNCED_KEY, String(_lastSavedAt));
+            } catch (e) {}
             if (typeof window !== 'undefined' && typeof window.dispatchEvent === 'function') {
                 window.dispatchEvent(new CustomEvent('sync-saved', { detail: { timestamp: _lastSavedAt } }));
             }
@@ -642,30 +936,143 @@ const Sync = (function () {
         return _lastSavedAt;
     }
 
+    async function syncOnStartup() {
+        if (!isLoggedIn()) return false;
+        try {
+            const cloudData = await status({ timeoutMs: 3500 });
+            if (!cloudData) return false;
+
+            const cloudUpdatedAt = cloudData.updatedAt ? new Date(cloudData.updatedAt).getTime() : 0;
+            const lastSyncedAt = Number(localStorage.getItem(LAST_SYNCED_KEY) || '0');
+
+            if (!cloudData.state) {
+                const localSnapshot = gatherSnapshot();
+                if (hasAnyProgress(localSnapshot)) {
+                    await backup();
+                }
+                return false;
+            }
+
+            const localSnapshot = gatherSnapshot();
+
+            if (cloudUpdatedAt > lastSyncedAt || !lastSyncedAt) {
+                const merged = mergeSnapshots(localSnapshot, cloudData.state);
+                applySnapshot(merged);
+                _lastSavedAt = cloudUpdatedAt;
+                try {
+                    localStorage.setItem(LAST_SYNCED_KEY, String(cloudUpdatedAt));
+                } catch (e) {}
+                _isDirty = false;
+
+                if (hasLocalAdditions(localSnapshot, cloudData.state)) {
+                    await backup();
+                }
+                return true;
+            } else if (_isDirty) {
+                await backup();
+            }
+        } catch (err) {
+            console.warn('Sync: startup check skipped or timed out', err);
+        }
+        return false;
+    }
+
+    let _lastFocusCheck = 0;
+    async function checkForRemoteUpdates() {
+        if (!isLoggedIn()) return false;
+        const now = Date.now();
+        if (now - _lastFocusCheck < 10000) return false;
+        _lastFocusCheck = now;
+
+        if (typeof document !== 'undefined') {
+            const lessonEl = document.getElementById('lesson-screen');
+            if (lessonEl && !lessonEl.classList.contains('hidden')) return false;
+        }
+
+        try {
+            const cloudData = await status({ timeoutMs: 3000 });
+            if (!cloudData || !cloudData.state) return false;
+
+            const cloudUpdatedAt = cloudData.updatedAt ? new Date(cloudData.updatedAt).getTime() : 0;
+            const lastSyncedAt = Number(localStorage.getItem(LAST_SYNCED_KEY) || '0');
+
+            if (cloudUpdatedAt > lastSyncedAt) {
+                const localSnapshot = gatherSnapshot();
+                const merged = mergeSnapshots(localSnapshot, cloudData.state);
+                applySnapshot(merged);
+                _lastSavedAt = cloudUpdatedAt;
+                try {
+                    localStorage.setItem(LAST_SYNCED_KEY, String(cloudUpdatedAt));
+                } catch (e) {}
+
+                if (hasLocalAdditions(localSnapshot, cloudData.state)) {
+                    await backup();
+                }
+
+                if (typeof location !== 'undefined' && location.reload) {
+                    location.reload();
+                }
+                return true;
+            }
+        } catch (err) {
+            console.warn('Sync: remote update check failed', err);
+        }
+        return false;
+    }
+
     // Flush pending auto-saves when the user switches tabs or navigates away
     if (typeof document !== 'undefined') {
         document.addEventListener('visibilitychange', () => {
-            if (document.visibilityState === 'hidden' && isLoggedIn() && _autoSaveTimer) {
-                clearTimeout(_autoSaveTimer);
-                _autoSaveTimer = null;
-                performAutoSave();
+            if (document.visibilityState === 'hidden') {
+                if (isLoggedIn() && (_autoSaveTimer || _isDirty)) {
+                    if (_autoSaveTimer) {
+                        clearTimeout(_autoSaveTimer);
+                        _autoSaveTimer = null;
+                    }
+                    performAutoSave({ keepalive: true });
+                }
+            } else if (document.visibilityState === 'visible') {
+                if (isLoggedIn()) {
+                    checkForRemoteUpdates();
+                }
             }
         });
         window.addEventListener('pagehide', () => {
-            if (isLoggedIn() && _autoSaveTimer) {
-                clearTimeout(_autoSaveTimer);
-                _autoSaveTimer = null;
-                performAutoSave();
+            if (isLoggedIn() && (_autoSaveTimer || _isDirty)) {
+                if (_autoSaveTimer) {
+                    clearTimeout(_autoSaveTimer);
+                    _autoSaveTimer = null;
+                }
+                performAutoSave({ keepalive: true });
+            }
+        });
+        window.addEventListener('beforeunload', () => {
+            if (isLoggedIn() && (_autoSaveTimer || _isDirty)) {
+                if (_autoSaveTimer) {
+                    clearTimeout(_autoSaveTimer);
+                    _autoSaveTimer = null;
+                }
+                performAutoSave({ keepalive: true });
             }
         });
     }
 
-    return {
+    const api = {
         isLoggedIn, email, getUserName, logout, requestLink, completeVerify,
         loginWithGoogle, renderGoogleButton, promptGoogleOneTap,
         isGoogleAuthAvailable, getGoogleClientId,
         gatherSnapshot, applySnapshot, backup, restore, status,
         maybeShowFirstVisitPrompt, scheduleAutoSave, performAutoSave,
-        lastSavedAt
+        lastSavedAt, syncOnStartup, checkForRemoteUpdates, mergeSnapshots,
+        isDirty: () => _isDirty
     };
+
+    if (typeof window !== 'undefined') {
+        window.Sync = api;
+    }
+    if (typeof module !== 'undefined' && module.exports) {
+        module.exports = api;
+    }
+
+    return api;
 })();

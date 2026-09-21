@@ -214,6 +214,9 @@ async function initialiseApp() {
     // already reads as signed-in the moment the learner arrives.
     if (typeof Sync !== 'undefined') {
         try { await Sync.completeVerify(); } catch (error) { /* offline — the link stays usable */ }
+        if (typeof Sync.syncOnStartup === 'function') {
+            try { await Sync.syncOnStartup(); } catch (error) { /* offline — fallback to local storage */ }
+        }
     }
 
     loadDeck();
