@@ -3462,7 +3462,7 @@ function lessonSkipSpeaking() {
     }
     setFeedback(true, 'Speaking snoozed for 10 minutes.');
     solveStep('Skipped (Speaking snoozed)');
-    advanceLessonStep();
+    nextLessonStep();
 }
 
 let _inlineVoiceActive = false;
