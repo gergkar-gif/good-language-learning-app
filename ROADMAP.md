@@ -21,8 +21,6 @@ Completed work is archived out to `ACHIEVED.md`.
 
 Unscoped enhancements, UX refinements, and candidate features grouped by domain (completed items archived to `ACHIEVED.md`):
 
-### Placement Diagnostic Test Scope
-- **Diagnostic Scope & Multi-Modal Evaluation**: Revisit diagnostic depth (currently 6 multiple-choice questions per tier with no speaking or writing assessment) to expand question coverage, evaluate speaking/writing components, or clarify the rapid-screener diagnostic expectations.
 
 ### Listening Comprehension & Audio Modules
 - **CEFR-Leveled Long-Form Listening Practice**: Introduce dedicated ~2-minute pre-recorded or multi-voice TTS audio modules (interviews, dialogues, monologues) accompanied by comprehension questions. Scale content strictly across CEFR levels: from A1 (simple descriptions of someone's day) to C1 (academic debates between three people on social housing, false friends, and complex idioms).

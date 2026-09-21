@@ -9,6 +9,24 @@ needs re-reading before starting new work; it's reference only.
 
 ## Completed queue items
 
+64. ~~**CEFR Diagnostic Placement Test: 10-Question Hybrid with Active Production, 85% Pass Threshold & Screener Disclosures**~~ — **Done 2026-09-21.**
+    Overhauled the CEFR Diagnostic Placement Test (`engine/diagnostic.js`, `styles/components.css`, content files) from a 6-question multiple-choice screener into a 10-question hybrid assessment per tier requiring active recall and an 85% mastery mark:
+    - **10-Question Hybrid Structure Across Tiers (A1, A2, B1)**:
+      - **Questions 1–5 (Multiple Choice)**: High-discriminator morphological and syntactical items in context.
+      - **Questions 6–7 (Prompted Situational Communication)**: Real-world conversational prompts (`q.prompt`) testing communicative pragmatics, register (*tú* vs. *usted*), and polite request formulas.
+      - **Questions 8–10 (Open Active Production)**: Text-input cloze (`type: "text-input"`) requiring typed production of target verbs, pronouns, and modifiers without multiple-choice crutches.
+    - **Tighter 85% Passing Standard (`passRatio: 0.85`)**:
+      - Raised pass ratio from 66% (4/6) to 85% (requires 9 out of 10 correct per tier to advance). Passive guessing alone cannot pass a tier.
+      - Evaluates text input with casing/whitespace trimming and normalized accent tolerances (`normUser === normAccepted`).
+    - **Desktop Usability & Diacritics**:
+      - Integrated Parlour's virtual diacritics bar (`UI.diacriticsBarHtml('.diag-text-input')`) for quick entry of `á`, `é`, `í`, `ó`, `ú`, `ñ` without international keyboards.
+      - Auto-focuses active text input on question load and supports Enter-key advancement.
+    - **Explicit Screener Disclosures**:
+      - Updated Preface, Testing header, and Debrief screens to clearly state that the diagnostic test is a rapid structural screener, and directs learners seeking comprehensive multi-modal certification (including extended writing and recorded oral speech) to the official curriculum Level Tests.
+    - **Multi-Course Implementation & Verification**:
+      - Updated all 3 tracks (`content/es-latam`, `content/es-es`, `content/hu`) with 10 questions per tier (30 questions each, 90 questions total across courses).
+      - Added automated test suite `tests/test-diagnostic.js` verifying question counts, schema constraints, evaluation logic, and accent tolerance.
+
 63. ~~**Spanish Conjugation Tables Audit, Peninsular Vosotros & Workshop Verb Driller Restoration**~~ — **Done 2026-09-21.**
     Audited and repaired Spanish conjugation tables, drill references, and TTS audio integration across both European Spanish (`content/es-es`) and Latin American Spanish (`content/es-latam`):
     - **Workshop Verb Driller Availability (`engine/workshop.js`)**: Corrected language matching in `_available(driller)` and expanded driller configuration to `['es', 'es-latam', 'es-es']`. Previously `Lang.code()` returning regional codes caused the entire Verb Driller tool to be hidden for Spanish learners in Workshop.

@@ -1,153 +1,437 @@
 {
   "language": "es",
   "title": "Prueba de Diagnóstico de Nivel CEFR",
-  "intro": "Evaluación diagnóstica progresiva para determinar el nivel óptimo de inicio en español.",
-  "passRatio": 0.66,
+  "intro": "Evaluación diagnóstica híbrida progresiva (opción múltiple y producción abierta) para determinar el nivel óptimo de inicio en español.",
+  "passRatio": 0.85,
   "tiers": [
     {
       "level": "A1",
-      "name": "A1: Fundamentos Básicos",
-      "description": "Verbos regulares en presente, ser y estar, concordancia de género y número, preguntas básicas y cortesía.",
+      "name": "A1: Fundamentos Básicos y Presente",
+      "description": "Verbos regulares en presente, ser y estar, concordancia de género y número, preguntas básicas, fórmulas de cortesía y producción activa.",
       "questions": [
         {
           "id": "es-diag-a1-01",
-          "sentence": "Hola, me llamo Elena y _____ médica en un hospital de Valencia.",
-          "options": ["soy", "estoy", "tengo", "hago"],
+          "sentence": "Hola, me llamo Elena y _____ médica en un hospital.",
+          "options": [
+            "soy",
+            "estoy",
+            "tengo",
+            "hago"
+          ],
           "correct": 0,
-          "teaches": ["ser-profession"]
+          "teaches": [
+            "ser-profession"
+          ]
         },
         {
           "id": "es-diag-a1-02",
-          "sentence": "¿Dónde _____ las llaves del coche? No las encuentro.",
-          "options": ["están", "son", "hay", "tienen"],
+          "sentence": "¿Dónde _____ las llaves del auto? No las encuentro.",
+          "options": [
+            "están",
+            "son",
+            "hay",
+            "tienen"
+          ],
           "correct": 0,
-          "teaches": ["estar-location"]
+          "teaches": [
+            "estar-location"
+          ]
         },
         {
           "id": "es-diag-a1-03",
-          "sentence": "Nosotros _____ español tres días a la semana en la academia.",
-          "options": ["estudiamos", "estudian", "estudio", "estudiar"],
+          "sentence": "Nosotros _____ español tres días a la semana en la escuela.",
+          "options": [
+            "estudiamos",
+            "estudian",
+            "estudio",
+            "estudiar"
+          ],
           "correct": 0,
-          "teaches": ["present-regular-ar"]
+          "teaches": [
+            "present-regular-ar"
+          ]
         },
         {
           "id": "es-diag-a1-04",
           "sentence": "Carmen vive en una casa muy _____ cerca de la playa.",
-          "options": ["blanca y bonita", "blanco y bonito", "blancas y bonitas", "blancos y bonitos"],
+          "options": [
+            "blanca y bonita",
+            "blanco y bonito",
+            "blancas y bonitas",
+            "blancos y bonitos"
+          ],
           "correct": 0,
-          "teaches": ["gender-number-agreement"]
+          "teaches": [
+            "gender-number-agreement"
+          ]
         },
         {
           "id": "es-diag-a1-05",
           "sentence": "¿_____ cuesta este diccionario de español?",
-          "options": ["Cuánto", "Cómo", "Quién", "Dónde"],
+          "options": [
+            "Cuánto",
+            "Cómo",
+            "Quién",
+            "Dónde"
+          ],
           "correct": 0,
-          "teaches": ["question-words"]
+          "teaches": [
+            "question-words"
+          ]
         },
         {
           "id": "es-diag-a1-06",
+          "prompt": "Situación: Estás en una cafetería y quieres pedir agua al camarero de manera educada.",
           "sentence": "Por favor, camarero, ¿me _____ un vaso de agua mineral?",
-          "options": ["trae", "traen", "traigo", "traer"],
+          "options": [
+            "trae",
+            "traen",
+            "traigo",
+            "traer"
+          ],
           "correct": 0,
-          "teaches": ["polite-requests"]
+          "teaches": [
+            "polite-requests"
+          ]
+        },
+        {
+          "id": "es-diag-a1-07",
+          "prompt": "Situación: Estás en la calle y preguntas a un transeúnte si hay una farmacia en la zona.",
+          "sentence": "Disculpe, señor, ¿_____ una farmacia por aquí cerca?",
+          "options": [
+            "hay",
+            "está",
+            "es",
+            "tiene"
+          ],
+          "correct": 0,
+          "teaches": [
+            "existential-hay"
+          ]
+        },
+        {
+          "id": "es-diag-a1-08",
+          "type": "text-input",
+          "sentence": "Mis padres tienen una casa grande, pero yo solo _____ un apartamento pequeño.",
+          "answer": "tengo",
+          "altAnswers": [
+            "yo tengo"
+          ],
+          "teaches": [
+            "present-irregular-tener"
+          ]
+        },
+        {
+          "id": "es-diag-a1-09",
+          "type": "text-input",
+          "sentence": "Mi hermano y yo (vivir) _____ juntos en el centro de la ciudad.",
+          "answer": "vivimos",
+          "altAnswers": [
+            "vivimos"
+          ],
+          "teaches": [
+            "present-regular-ir"
+          ]
+        },
+        {
+          "id": "es-diag-a1-10",
+          "type": "text-input",
+          "sentence": "Esta mañana hace frío, pero _____ tarde va a hacer sol.",
+          "answer": "esta",
+          "altAnswers": [
+            "esta"
+          ],
+          "teaches": [
+            "demonstratives"
+          ]
         }
       ]
     },
     {
       "level": "A2",
       "name": "A2: Comunicación Elemental y Pasados",
-      "description": "Narración en pasado (indefinido vs. imperfecto), pronombres de objeto, imperativo afirmativo y perífrasis verbales.",
+      "description": "Narración en pasado (indefinido vs. imperfecto), pronombres de objeto, imperativo y perífrasis verbales.",
       "questions": [
         {
           "id": "es-diag-a2-01",
           "sentence": "Ayer Carlos no fue al trabajo porque _____ un fuerte dolor de cabeza.",
-          "options": ["tenía", "tuvo", "ha tenido", "tenga"],
+          "options": [
+            "tenía",
+            "tuvo",
+            "ha tenido",
+            "tenga"
+          ],
           "correct": 0,
-          "teaches": ["imperfecto-descriptions"]
+          "teaches": [
+            "imperfecto-descriptions"
+          ]
         },
         {
           "id": "es-diag-a2-02",
-          "sentence": "El año pasado mis amigos y yo _____ dos semanas por el sur de España.",
-          "options": ["viajamos", "viajábamos", "hemos viajado", "viajaríamos"],
+          "sentence": "El año pasado mis amigos y yo _____ dos semanas por el sur del país.",
+          "options": [
+            "viajamos",
+            "viajábamos",
+            "hemos viajado",
+            "viajaríamos"
+          ],
           "correct": 0,
-          "teaches": ["indefinido-completed-past"]
+          "teaches": [
+            "indefinido-completed-past"
+          ]
         },
         {
           "id": "es-diag-a2-03",
           "sentence": "¿Has llamado a tu madre? — Sí, _____ llamé esta mañana temprano.",
-          "options": ["la", "le", "lo", "se"],
+          "options": [
+            "la",
+            "le",
+            "lo",
+            "se"
+          ],
           "correct": 0,
-          "teaches": ["direct-object-pronouns"]
+          "teaches": [
+            "direct-object-pronouns"
+          ]
         },
         {
           "id": "es-diag-a2-04",
           "sentence": "Si no entiendes esta palabra, _____ en el diccionario.",
-          "options": ["búscala", "la busca", "no buscas", "buscando"],
+          "options": [
+            "búscala",
+            "la busca",
+            "no buscas",
+            "buscando"
+          ],
           "correct": 0,
-          "teaches": ["imperative-pronoun-clitic"]
+          "teaches": [
+            "imperative-pronoun-clitic"
+          ]
         },
         {
           "id": "es-diag-a2-05",
-          "sentence": "Para aprobar el examen de conducir, _____ practicar mucho más.",
-          "options": ["tienes que", "vas de", "acabas por", "tienes de"],
+          "sentence": "A mi hermana y a mí nos _____ muchísimo las novelas de misterio.",
+          "options": [
+            "gustan",
+            "gusta",
+            "gustamos",
+            "gusten"
+          ],
           "correct": 0,
-          "teaches": ["modal-periphrasis"]
+          "teaches": [
+            "gustar-agreement"
+          ]
         },
         {
           "id": "es-diag-a2-06",
-          "sentence": "A mi hermana y a mí nos _____ muchísimo las novelas de misterio.",
-          "options": ["gustan", "gusta", "gustamos", "gusten"],
+          "prompt": "Situación: Un amigo te invita al cine hoy, pero tienes que estudiar para un examen de mañana.",
+          "sentence": "Me encantaría ir, pero hoy no puedo porque _____ que estudiar mucho.",
+          "options": [
+            "tengo",
+            "debo de",
+            "hago",
+            "voy"
+          ],
           "correct": 0,
-          "teaches": ["gustar-agreement"]
+          "teaches": [
+            "obligation-tener-que"
+          ]
+        },
+        {
+          "id": "es-diag-a2-07",
+          "prompt": "Situación: Te pruebas dos camisas en una tienda y le explicas tu preferencia al dependiente.",
+          "sentence": "Me gustan las dos, pero creo que la camisa azul me queda _____ que la verde.",
+          "options": [
+            "mejor",
+            "más buena",
+            "mayor",
+            "más bien"
+          ],
+          "correct": 0,
+          "teaches": [
+            "comparatives-irregular"
+          ]
+        },
+        {
+          "id": "es-diag-a2-08",
+          "type": "text-input",
+          "sentence": "El sábado pasado nosotros (ir) _____ al cine a ver una película nueva.",
+          "answer": "fuimos",
+          "altAnswers": [
+            "fuimos"
+          ],
+          "teaches": [
+            "indefinido-irregular-ir"
+          ]
+        },
+        {
+          "id": "es-diag-a2-09",
+          "type": "text-input",
+          "sentence": "Ayer mi hermano no (hacer) _____ los deberes de la escuela.",
+          "answer": "hizo",
+          "altAnswers": [
+            "hizo"
+          ],
+          "teaches": [
+            "indefinido-irregular-hacer"
+          ]
+        },
+        {
+          "id": "es-diag-a2-10",
+          "type": "text-input",
+          "sentence": "Ayer vi a mi abuela y _____ di un regalo muy especial.",
+          "answer": "le",
+          "altAnswers": [
+            "le"
+          ],
+          "teaches": [
+            "indirect-object-pronoun"
+          ]
         }
       ]
     },
     {
       "level": "B1",
       "name": "B1: Uso Independiente y Subjuntivo",
-      "description": "Presente de subjuntivo con deseos y dudas, oraciones temporales de futuro, condicional de cortesía y conectores discursivos.",
+      "description": "Presente de subjuntivo con deseos, dudas y oraciones temporales, condicional simple y conectores de discurso.",
       "questions": [
         {
           "id": "es-diag-b1-01",
           "sentence": "Espero que mañana no _____ mal tiempo durante la excursión a la montaña.",
-          "options": ["haga", "hace", "hizo", "haría"],
+          "options": [
+            "haga",
+            "hace",
+            "hizo",
+            "haría"
+          ],
           "correct": 0,
-          "teaches": ["subjuntivo-wishes"]
+          "teaches": [
+            "subjuntivo-wishes"
+          ]
         },
         {
           "id": "es-diag-b1-02",
-          "sentence": "Te llamaré por teléfono en cuanto _____ al hotel en Madrid.",
-          "options": ["llegue", "llego", "llegué", "llegaría"],
+          "sentence": "Te llamaré por teléfono en cuanto _____ al hotel.",
+          "options": [
+            "llegue",
+            "llego",
+            "llegué",
+            "llegaría"
+          ],
           "correct": 0,
-          "teaches": ["subjuntivo-temporal-future"]
+          "teaches": [
+            "subjuntivo-temporal-future"
+          ]
         },
         {
           "id": "es-diag-b1-03",
           "sentence": "¿_____ tan amable de cerrar la ventana? Entra mucho ruido de la calle.",
-          "options": ["Sería", "Sea", "Fue", "Es"],
+          "options": [
+            "Sería",
+            "Sea",
+            "Fue",
+            "Es"
+          ],
           "correct": 0,
-          "teaches": ["condicional-courtesy"]
+          "teaches": [
+            "condicional-courtesy"
+          ]
         },
         {
           "id": "es-diag-b1-04",
           "sentence": "Estudió mucho durante semanas; _____, no logró superar la prueba final.",
-          "options": ["sin embargo", "porque", "para que", "a condición de"],
+          "options": [
+            "sin embargo",
+            "porque",
+            "para que",
+            "a condición de"
+          ],
           "correct": 0,
-          "teaches": ["discourse-connectors"]
+          "teaches": [
+            "discourse-connectors"
+          ]
         },
         {
           "id": "es-diag-b1-05",
           "sentence": "Este informe debe estar listo y entregado a la dirección _____ el viernes por la tarde.",
-          "options": ["para", "por", "en", "desde"],
+          "options": [
+            "para",
+            "por",
+            "en",
+            "desde"
+          ],
           "correct": 0,
-          "teaches": ["por-vs-para-deadlines"]
+          "teaches": [
+            "por-vs-para-deadlines"
+          ]
         },
         {
           "id": "es-diag-b1-06",
-          "sentence": "No creo que Juan _____ la verdad sobre lo que ocurrió ayer.",
-          "options": ["diga", "dice", "dirá", "decía"],
+          "prompt": "Situación: Un compañero cree que la reunión se cancelará, pero tú dudas que eso suceda.",
+          "sentence": "No estoy tan seguro; dudo mucho que el director _____ la reunión tan tarde.",
+          "options": [
+            "cancele",
+            "cancela",
+            "cancelará",
+            "cancelaba"
+          ],
           "correct": 0,
-          "teaches": ["subjuntivo-doubt-negation"]
+          "teaches": [
+            "subjuntivo-doubt"
+          ]
+        },
+        {
+          "id": "es-diag-b1-07",
+          "prompt": "Situación: Un amigo tiene fiebre alta y le das un consejo médico directo.",
+          "sentence": "Te aconsejo que _____ una cita con el médico lo antes posible.",
+          "options": [
+            "pidas",
+            "pides",
+            "pedir",
+            "pedirías"
+          ],
+          "correct": 0,
+          "teaches": [
+            "subjuntivo-advice"
+          ]
+        },
+        {
+          "id": "es-diag-b1-08",
+          "type": "text-input",
+          "sentence": "No creo que Juan (decir) _____ la verdad sobre lo que ocurrió ayer.",
+          "answer": "diga",
+          "altAnswers": [
+            "diga"
+          ],
+          "teaches": [
+            "subjuntivo-doubt-negation"
+          ]
+        },
+        {
+          "id": "es-diag-b1-09",
+          "type": "text-input",
+          "sentence": "Es necesario que todos los participantes (estar) _____ aquí a las nueve en punto.",
+          "answer": "estén",
+          "altAnswers": [
+            "esten",
+            "estéis",
+            "esteis"
+          ],
+          "teaches": [
+            "subjuntivo-impersonal-expressions"
+          ]
+        },
+        {
+          "id": "es-diag-b1-10",
+          "type": "text-input",
+          "sentence": "Si tuviéramos más tiempo libre, nosotros (viajar) _____ mucho más a menudo.",
+          "answer": "viajaríamos",
+          "altAnswers": [
+            "viajariamos"
+          ],
+          "teaches": [
+            "condicional-simple-regular"
+          ]
         }
       ]
     }

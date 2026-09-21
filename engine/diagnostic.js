@@ -153,13 +153,13 @@ const DiagnosticTest = (function () {
                     <div class="diag-philosophy-callout">
                         <div class="diag-callout-header">
                             <svg class="sp-icon-svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
-                            <strong>A Note on Diagnostic Assessment &amp; Learning</strong>
+                            <strong>Quick Diagnostic Screener</strong>
                         </div>
                         <p class="diag-callout-text">
-                            This is just a quick diagnostic test; mistakes are completely natural and possible, and you can retake it at any time from the Lessons or Journey tabs.
+                            This is a rapid 10-question placement screener evaluating core grammar, situational communication, and active recall. Each tier requires <strong>85% mastery</strong> (including open production) to advance.
                         </p>
                         <p class="diag-callout-text" style="margin-top: 8px;">
-                            <strong>Our core recommendation:</strong> If you feel at all shaky on any fundamentals, we strongly encourage taking the lessons anyway. In Parlour, we do not learn a language merely to finish a course, but to actually be able to communicate with confidence.
+                            <strong>Full Certification Note:</strong> This screener provides an initial course entry recommendation. For comprehensive multi-modal proficiency verification (including extended written composition and recorded oral speech evaluation), complete the official <strong>Level Test</strong> at the end of each curriculum tier.
                         </p>
                     </div>
 
@@ -180,15 +180,15 @@ const DiagnosticTest = (function () {
                         </div>
                         <div class="diag-meta-item">
                             <span class="diag-meta-label">Format</span>
-                            <span class="diag-meta-val">Adaptive Multiple-Choice Ladder</span>
+                            <span class="diag-meta-val">10 Questions/Tier (MC &amp; Open Production)</span>
                         </div>
                         <div class="diag-meta-item">
                             <span class="diag-meta-label">Duration</span>
-                            <span class="diag-meta-val">3–5 minutes</span>
+                            <span class="diag-meta-val">5–7 minutes</span>
                         </div>
                         <div class="diag-meta-item">
-                            <span class="diag-meta-label">Starting Tier</span>
-                            <span class="diag-meta-val">Tier 1 (A1 Foundations)</span>
+                            <span class="diag-meta-label">Passing Standard</span>
+                            <span class="diag-meta-val">85% Required to Advance</span>
                         </div>
                     </div>
 
@@ -258,23 +258,71 @@ const DiagnosticTest = (function () {
             return;
         }
 
-        if (!_shuffledOptions[q.id]) {
-            const raw = (q.options || []).map((text, idx) => ({ text, originalIdx: idx }));
-            _shuffledOptions[q.id] = _shuffle(raw);
+        const isTextInput = q.type === 'text-input';
+        let canAdvance = false;
+        let questionBodyHtml = '';
+
+        if (isTextInput) {
+            const typedVal = (typeof _answers[q.id] === 'string') ? _answers[q.id] : '';
+            canAdvance = typedVal.trim().length > 0;
+            questionBodyHtml = `
+                <div class="diag-production-box">
+                    <div class="diag-text-input-wrap">
+                        <input type="text"
+                               class="diag-text-input"
+                               id="diag-input-${_esc(q.id)}"
+                               autocomplete="off"
+                               autocapitalize="off"
+                               spellcheck="false"
+                               placeholder="Type the missing word or phrase..."
+                               value="${_esc(typedVal)}"
+                               aria-label="Your answer">
+                    </div>
+                    ${typeof UI !== 'undefined' && UI.diacriticsBarHtml ? UI.diacriticsBarHtml('.diag-text-input') : ''}
+                    <div class="diag-production-hint">
+                        Type the exact missing word or phrase. You can click the accent buttons above if needed. Press Enter to proceed.
+                    </div>
+                </div>
+            `;
+        } else {
+            if (!_shuffledOptions[q.id]) {
+                const raw = (q.options || []).map((text, idx) => ({ text, originalIdx: idx }));
+                _shuffledOptions[q.id] = _shuffle(raw);
+            }
+            const optionsList = _shuffledOptions[q.id];
+            const selectedOrigIdx = _answers[q.id];
+            canAdvance = selectedOrigIdx !== undefined;
+
+            questionBodyHtml = `
+                <div class="diag-options-grid" role="radiogroup" aria-label="Answer options">
+                    ${optionsList.map((opt, i) => {
+                        const isSelected = selectedOrigIdx === opt.originalIdx;
+                        return `
+                            <button type="button" class="diag-opt-btn ${isSelected ? 'selected' : ''}" data-option-idx="${opt.originalIdx}" role="radio" aria-checked="${isSelected}">
+                                <span class="diag-opt-letter">${String.fromCharCode(65 + i)}</span>
+                                <span class="diag-opt-text">${_esc(opt.text)}</span>
+                                ${isSelected ? '<span class="diag-opt-check"><svg class="sp-icon-svg" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>' : ''}
+                            </button>
+                        `;
+                    }).join('')}
+                </div>
+            `;
         }
-        const optionsList = _shuffledOptions[q.id];
-        const selectedOrigIdx = _answers[q.id];
 
         const isLastQuestionInTier = _currentQuestionIdx === questions.length - 1;
-        const answeredCount = questions.filter(item => _answers[item.id] !== undefined).length;
-        const canAdvance = selectedOrigIdx !== undefined;
+        const promptHtml = q.prompt ? `
+            <div class="diag-situational-prompt">
+                <span class="diag-situational-label">Situational Context</span>
+                <div>${_esc(q.prompt)}</div>
+            </div>
+        ` : '';
 
         host.innerHTML = `
             <div class="diag-wrap">
                 <div class="diag-header-bar">
                     <button type="button" class="dk-back" data-action="close-diag">← Quit</button>
                     <div class="diag-tier-status">
-                        <span class="diag-tier-pill">Tier ${_currentTierIdx + 1} of ${tiers.length}: ${_esc(tier.level)}</span>
+                        <span class="diag-tier-pill">Tier ${_currentTierIdx + 1} of ${tiers.length}: ${_esc(tier.level)} · 85% to Pass</span>
                         <span class="diag-q-counter">Question ${_currentQuestionIdx + 1} of ${questions.length}</span>
                     </div>
                 </div>
@@ -285,22 +333,13 @@ const DiagnosticTest = (function () {
                         <p class="diag-tier-sub">${_esc(tier.description || '')}</p>
                     </div>
 
+                    ${promptHtml}
+
                     <div class="diag-prompt-box">
                         <div class="diag-sentence">${_esc(q.sentence || '').replace(/_____/g, '<span class="diag-blank">_____</span>')}</div>
                     </div>
 
-                    <div class="diag-options-grid" role="radiogroup" aria-label="Answer options">
-                        ${optionsList.map((opt, i) => {
-                            const isSelected = selectedOrigIdx === opt.originalIdx;
-                            return `
-                                <button type="button" class="diag-opt-btn ${isSelected ? 'selected' : ''}" data-option-idx="${opt.originalIdx}" role="radio" aria-checked="${isSelected}">
-                                    <span class="diag-opt-letter">${String.fromCharCode(65 + i)}</span>
-                                    <span class="diag-opt-text">${_esc(opt.text)}</span>
-                                    ${isSelected ? '<span class="diag-opt-check"><svg class="sp-icon-svg" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>' : ''}
-                                </button>
-                            `;
-                        }).join('')}
-                    </div>
+                    ${questionBodyHtml}
 
                     <div class="diag-nav-bar">
                         ${_currentQuestionIdx > 0 ? `
@@ -318,13 +357,42 @@ const DiagnosticTest = (function () {
         const closeBtn = host.querySelector('[data-action="close-diag"]');
         if (closeBtn) closeBtn.addEventListener('click', close);
 
-        host.querySelectorAll('[data-option-idx]').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const idx = parseInt(btn.getAttribute('data-option-idx'), 10);
-                _answers[q.id] = idx;
-                _render();
+        if (isTextInput) {
+            const inputEl = host.querySelector('.diag-text-input');
+            if (inputEl) {
+                setTimeout(() => {
+                    try { inputEl.focus(); } catch (e) {}
+                }, 40);
+
+                inputEl.addEventListener('input', () => {
+                    _answers[q.id] = inputEl.value;
+                    const nextBtn = host.querySelector('[data-action="next-q"]');
+                    if (nextBtn) {
+                        nextBtn.disabled = !inputEl.value.trim();
+                    }
+                });
+
+                inputEl.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter') {
+                        e.preventDefault();
+                        if (inputEl.value.trim()) {
+                            const nextBtn = host.querySelector('[data-action="next-q"]');
+                            if (nextBtn && !nextBtn.disabled) {
+                                nextBtn.click();
+                            }
+                        }
+                    }
+                });
+            }
+        } else {
+            host.querySelectorAll('[data-option-idx]').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const idx = parseInt(btn.getAttribute('data-option-idx'), 10);
+                    _answers[q.id] = idx;
+                    _render();
+                });
             });
-        });
+        }
 
         const prevBtn = host.querySelector('[data-action="prev-q"]');
         if (prevBtn) {
@@ -360,11 +428,24 @@ const DiagnosticTest = (function () {
         const questions = tier.questions || [];
         let correct = 0;
         questions.forEach(q => {
-            if (_answers[q.id] === q.correct) correct++;
+            const userAns = _answers[q.id];
+            if (q.type === 'text-input') {
+                if (typeof userAns === 'string' && userAns.trim()) {
+                    const cleanUser = userAns.trim().toLowerCase();
+                    const normUser = cleanUser.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+                    const accepted = [q.answer, ...(q.altAnswers || [])].filter(Boolean).map(a => a.trim().toLowerCase());
+                    const normAccepted = accepted.map(a => a.normalize('NFD').replace(/[\u0300-\u036f]/g, ''));
+                    if (accepted.includes(cleanUser) || normAccepted.includes(normUser)) {
+                        correct++;
+                    }
+                }
+            } else {
+                if (userAns === q.correct) correct++;
+            }
         });
 
         const ratio = questions.length > 0 ? (correct / questions.length) : 0;
-        const passRatio = (typeof _testData.passRatio === 'number') ? _testData.passRatio : 0.66;
+        const passRatio = (typeof _testData.passRatio === 'number') ? _testData.passRatio : 0.85;
         const passed = ratio >= passRatio;
 
         _tierResults.push({
@@ -397,7 +478,7 @@ const DiagnosticTest = (function () {
                     <span class="sp-level-pill">${_esc(prevTier.level)} Tier Cleared</span>
                     <h2 class="diag-title">${_esc(prevTier.level)} Foundations Mastered!</h2>
                     <p class="diag-transition-score">
-                        You scored <strong>${lastResult.correct} of ${lastResult.total}</strong> on ${_esc(prevTier.level)}.
+                        You scored <strong>${lastResult.correct} of ${lastResult.total}</strong> (85%+ required) on ${_esc(prevTier.level)}.
                     </p>
                     <p class="diag-lead" style="margin-bottom: 24px;">
                         Advancing to <strong>${_esc(nextTier.name || nextTier.level)}</strong> to evaluate higher CEFR competencies.
@@ -516,8 +597,9 @@ const DiagnosticTest = (function () {
                         </div>
                     </div>
 
-                    <div class="diag-pedagogical-reminder" style="margin-top: 20px; padding: 12px; background: var(--bg-card, #f8f9fa); border-radius: var(--radius-sm, 4px); font-size: 0.85rem; color: var(--muted); line-height: 1.5;">
-                        <strong>Communication First:</strong> You can always review or revisit earlier lessons at any time. Accepting placement unlocks your recommended starting unit, but all previous content remains open for study.
+                    <div class="diag-pedagogical-reminder" style="margin-top: 20px; padding: 14px; background: var(--bg-card, #f8f9fa); border-radius: var(--radius-sm, 4px); font-size: 0.85rem; color: var(--muted); line-height: 1.55;">
+                        <p style="margin: 0 0 8px;"><strong>Placement Recommendation:</strong> Accepting placement unlocks your recommended starting level (${_esc(placedLevel)}), but all previous curriculum lessons remain open for practice and review at any time.</p>
+                        <p style="margin: 0;"><strong>Comprehensive Multi-Modal Verification:</strong> This test is an initial rapid screener. Full CEFR certifications (including spoken recording and extended writing evaluation) are verified via the official <strong>Level Tests</strong> at the end of each curriculum level.</p>
                     </div>
 
                     <div class="diag-debrief-actions" style="margin-top: 24px; display: flex; flex-direction: column; gap: 10px;">

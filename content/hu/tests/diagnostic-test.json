@@ -1,55 +1,151 @@
 {
   "language": "hu",
   "title": "CEFR Szintfelmérő és Diagnosztikai Teszt",
-  "intro": "Haladó diagnosztikai felmérő a legmegfelelőbb kezdő szint meghatározásához magyar nyelvből.",
-  "passRatio": 0.66,
+  "intro": "Haladó hibrid diagnosztikai felmérő (feleletválasztós és aktív nyílt produkció) a legmegfelelőbb kezdő szint meghatározásához magyar nyelvből.",
+  "passRatio": 0.85,
   "tiers": [
     {
       "level": "A1",
       "name": "A1: Alapok és Mindennapi Helyzetek",
-      "description": "Magánhangzó-harmónia, alapvető határozóragok, alanyi ragozás jelen időben, számok és udvarias kérések.",
+      "description": "Magánhangzó-harmónia, alapvető határozóragok, alanyi ragozás jelen időben, számok, udvarias kérések és aktív szövegalkotás.",
       "questions": [
         {
           "id": "hu-diag-a1-01",
           "sentence": "Péter Budapesten született, és most is a fővárosban _____.",
-          "options": ["él", "élnek", "élsz", "élni"],
+          "options": [
+            "él",
+            "élnek",
+            "élsz",
+            "élni"
+          ],
           "correct": 0,
-          "teaches": ["present-indefinite-3sg"]
+          "teaches": [
+            "present-indefinite-3sg"
+          ]
         },
         {
           "id": "hu-diag-a1-02",
           "sentence": "A könyvek és a füzetek az _____ vannak.",
-          "options": ["asztalon", "asztalban", "asztalhoz", "asztalnak"],
+          "options": [
+            "asztalon",
+            "asztalban",
+            "asztalhoz",
+            "asztalnak"
+          ],
           "correct": 0,
-          "teaches": ["locative-suffixes-superessive"]
+          "teaches": [
+            "locative-suffixes-superessive"
+          ]
         },
         {
           "id": "hu-diag-a1-03",
           "sentence": "Anna és Gábor minden hétvégén sokat _____ a parkban.",
-          "options": ["sétálnak", "sétál", "sétáltok", "sétálunk"],
+          "options": [
+            "sétálnak",
+            "sétál",
+            "sétáltok",
+            "sétálunk"
+          ],
           "correct": 0,
-          "teaches": ["present-indefinite-3pl"]
+          "teaches": [
+            "present-indefinite-3pl"
+          ]
         },
         {
           "id": "hu-diag-a1-04",
-          "sentence": "Két kávét és egy ásványvizet _____, legyen szíves!",
-          "options": ["kérek", "kérsz", "kérünk", "kér"],
+          "sentence": "A boltban vettem három szép piros _____.",
+          "options": [
+            "almát",
+            "almák",
+            "almátok",
+            "almán"
+          ],
           "correct": 0,
-          "teaches": ["polite-ordering"]
+          "teaches": [
+            "accusative-singular-after-numbers"
+          ]
         },
         {
           "id": "hu-diag-a1-05",
-          "sentence": "A boltban vettem három szép piros _____.",
-          "options": ["almát", "almák", "almátok", "almán"],
+          "sentence": "_____ lakik a barátod, a belvárosban vagy a hegyekben?",
+          "options": [
+            "Hol",
+            "Mikor",
+            "Ki",
+            "Miért"
+          ],
           "correct": 0,
-          "teaches": ["accusative-singular-after-numbers"]
+          "teaches": [
+            "question-words"
+          ]
         },
         {
           "id": "hu-diag-a1-06",
-          "sentence": "_____ van a legközelebbi gyógyszertár a téren?",
-          "options": ["Hol", "Mikor", "Ki", "Miért"],
+          "prompt": "Helyzet: Egy kávézóban vagy, és udvariasan szeretnél rendelni két kávét és ásványvizet.",
+          "sentence": "Két kávét és egy ásványvizet _____, legyen szíves!",
+          "options": [
+            "kérek",
+            "kérsz",
+            "kérünk",
+            "kér"
+          ],
           "correct": 0,
-          "teaches": ["question-words"]
+          "teaches": [
+            "polite-ordering"
+          ]
+        },
+        {
+          "id": "hu-diag-a1-07",
+          "prompt": "Helyzet: Az utcán sétálsz, és megkérdezel valakit a legközelebbi gyógyszertárról.",
+          "sentence": "Elnézést, _____ van a legközelebbi gyógyszertár a téren?",
+          "options": [
+            "hol",
+            "mikor",
+            "ki",
+            "miért"
+          ],
+          "correct": 0,
+          "teaches": [
+            "question-words-polite"
+          ]
+        },
+        {
+          "id": "hu-diag-a1-08",
+          "type": "text-input",
+          "sentence": "A tanár az osztályban van, és a diákok is a teremben (lenni - jelen idő, ők) _____.",
+          "answer": "vannak",
+          "altAnswers": [
+            "vannak"
+          ],
+          "teaches": [
+            "verb-lenni-3pl"
+          ]
+        },
+        {
+          "id": "hu-diag-a1-09",
+          "type": "text-input",
+          "sentence": "Én már két éve egy szép budapesti lakásban (lakni - jelen idő, én) _____.",
+          "answer": "lakom",
+          "altAnswers": [
+            "lakok",
+            "lakom"
+          ],
+          "teaches": [
+            "present-indefinite-1sg-ik"
+          ]
+        },
+        {
+          "id": "hu-diag-a1-10",
+          "type": "text-input",
+          "sentence": "A piacon tegnap vettem egy finom édes (alma) _____.",
+          "answer": "almát",
+          "altAnswers": [
+            "almat",
+            "almát"
+          ],
+          "teaches": [
+            "accusative-stem-lengthening"
+          ]
         }
       ]
     },
@@ -61,44 +157,140 @@
         {
           "id": "hu-diag-a2-01",
           "sentence": "Nem találom a szemüvegemet. Te _____ valahol?",
-          "options": ["látod", "látsz", "látom", "lát"],
+          "options": [
+            "látod",
+            "látsz",
+            "látom",
+            "lát"
+          ],
           "correct": 0,
-          "teaches": ["definite-conjugation-2sg"]
+          "teaches": [
+            "definite-conjugation-2sg"
+          ]
         },
         {
           "id": "hu-diag-a2-02",
           "sentence": "Tegnap este a barátaimmal moziba _____.",
-          "options": ["mentünk", "mentek", "mentem", "mennék"],
+          "options": [
+            "mentünk",
+            "mentek",
+            "mentem",
+            "mennék"
+          ],
           "correct": 0,
-          "teaches": ["past-tense-irregular"]
+          "teaches": [
+            "past-tense-irregular"
+          ]
         },
         {
           "id": "hu-diag-a2-03",
           "sentence": "Holnap délután Péter _____ a barátnőjét a repülőtérre.",
-          "options": ["kikíséri", "kíséri ki", "kikísér", "kísér"],
+          "options": [
+            "kikíséri",
+            "kíséri ki",
+            "kikísér",
+            "kísér"
+          ],
           "correct": 0,
-          "teaches": ["verbal-prefix-normal-order"]
+          "teaches": [
+            "verbal-prefix-normal-order"
+          ]
         },
         {
           "id": "hu-diag-a2-04",
           "sentence": "Nyáron két hétre a Balatonhoz _____ nyaralni.",
-          "options": ["utaztunk", "utazunk", "utaznánk", "utaztatok"],
+          "options": [
+            "utaztunk",
+            "utazunk",
+            "utaznánk",
+            "utaztatok"
+          ],
           "correct": 0,
-          "teaches": ["past-tense-regular"]
+          "teaches": [
+            "past-tense-regular"
+          ]
         },
         {
           "id": "hu-diag-a2-05",
           "sentence": "A vonat most érkezett meg a harmadik _____.",
-          "options": ["vágányra", "vágányon", "vágányból", "vágányhoz"],
+          "options": [
+            "vágányra",
+            "vágányon",
+            "vágányból",
+            "vágányhoz"
+          ],
           "correct": 0,
-          "teaches": ["directional-triads-sublative"]
+          "teaches": [
+            "directional-triads-sublative"
+          ]
         },
         {
           "id": "hu-diag-a2-06",
-          "sentence": "Nem akarok késni, ezért most gyorsan el _____ indulnom.",
-          "options": ["kell", "lehet", "szabad", "tud"],
+          "prompt": "Helyzet: A pályaudvaron megkérdezed az információs pultnál, honnan indul a vonatod.",
+          "sentence": "Elnézést, melyik _____ indul a balatoni gyorsvonat?",
+          "options": [
+            "vágányról",
+            "vágányon",
+            "vágányra",
+            "vágányból"
+          ],
           "correct": 0,
-          "teaches": ["infinitive-with-kell-and-prefix"]
+          "teaches": [
+            "directional-triads-delative"
+          ]
+        },
+        {
+          "id": "hu-diag-a2-07",
+          "prompt": "Helyzet: Sietsz a munkahelyi megbeszélésre, és elköszönsz a kollégádtól.",
+          "sentence": "Nem akarok késni, ezért most gyorsan el _____ indulnom.",
+          "options": [
+            "kell",
+            "lehet",
+            "szabad",
+            "tud"
+          ],
+          "correct": 0,
+          "teaches": [
+            "infinitive-with-kell-and-prefix"
+          ]
+        },
+        {
+          "id": "hu-diag-a2-08",
+          "type": "text-input",
+          "sentence": "Tegnap este a családommal egy hangulatos étterembe (menni - múlt idő, mi) _____ vacsorázni.",
+          "answer": "mentünk",
+          "altAnswers": [
+            "mentunk",
+            "mentünk"
+          ],
+          "teaches": [
+            "past-tense-irregular-menni"
+          ]
+        },
+        {
+          "id": "hu-diag-a2-09",
+          "type": "text-input",
+          "sentence": "Tegnap este a színházban (látni - múlt idő, határozott, én) _____ a nagyszerű új darabot.",
+          "answer": "láttam",
+          "altAnswers": [
+            "lattam",
+            "láttam"
+          ],
+          "teaches": [
+            "definite-past-1sg"
+          ]
+        },
+        {
+          "id": "hu-diag-a2-10",
+          "type": "text-input",
+          "sentence": "A könyvtárból tegnap este hat órakor (hazamenni - múlt idő, én) _____ mentem.",
+          "answer": "haza",
+          "altAnswers": [
+            "haza"
+          ],
+          "teaches": [
+            "verbal-prefix-split-haza"
+          ]
         }
       ]
     },
@@ -110,44 +302,141 @@
         {
           "id": "hu-diag-b1-01",
           "sentence": "Ha több szabadidőm lenne, sokkal többet _____ spanyolul.",
-          "options": ["tanulnék", "tanulok", "tanultam", "tanuljak"],
+          "options": [
+            "tanulnék",
+            "tanulok",
+            "tanultam",
+            "tanuljak"
+          ],
           "correct": 0,
-          "teaches": ["conditional-present-1sg"]
+          "teaches": [
+            "conditional-present-1sg"
+          ]
         },
         {
           "id": "hu-diag-b1-02",
           "sentence": "Megkértem az orvost, hogy minél előbb _____ meg a leleteket.",
-          "options": ["küldje", "küldi", "küldte", "küldené"],
+          "options": [
+            "küldje",
+            "küldi",
+            "küldte",
+            "küldené"
+          ],
           "correct": 0,
-          "teaches": ["subjunctive-in-clause"]
+          "teaches": [
+            "subjunctive-in-clause"
+          ]
         },
         {
           "id": "hu-diag-b1-03",
           "sentence": "Kati mindig szívesen segít nekem, nagyon jóban vagyok _____.",
-          "options": ["vele", "hozzá", "tőle", "nála"],
+          "options": [
+            "vele",
+            "hozzá",
+            "tőle",
+            "nála"
+          ],
           "correct": 0,
-          "teaches": ["inflected-pronouns-instrumental"]
+          "teaches": [
+            "inflected-pronouns-instrumental"
+          ]
         },
         {
           "id": "hu-diag-b1-04",
           "sentence": "_____ szakadt az eső, a kirándulók folytatták az utat a hegycsúcs felé.",
-          "options": ["Bár", "Ezért", "Mert", "Mivel"],
+          "options": [
+            "Bár",
+            "Ezért",
+            "Mert",
+            "Mivel"
+          ],
           "correct": 0,
-          "teaches": ["concessive-conjunctions"]
+          "teaches": [
+            "concessive-conjunctions"
+          ]
         },
         {
           "id": "hu-diag-b1-05",
           "sentence": "Nagyon örülök, hogy megismertelek, és remélem, hamarosan újra _____!",
-          "options": ["látlak", "látom", "látsz", "látnak"],
+          "options": [
+            "látlak",
+            "látom",
+            "látsz",
+            "látnak"
+          ],
           "correct": 0,
-          "teaches": ["lak-lek-suffix"]
+          "teaches": [
+            "lak-lek-suffix"
+          ]
         },
         {
           "id": "hu-diag-b1-06",
-          "sentence": "Annak ellenére nem sikerült a felvételi, _____ hónapokig készült rá.",
-          "options": ["hogy", "mert", "ha", "mint"],
+          "prompt": "Helyzet: Egy hivatalos levélben udvariasan segítséget kérsz az ügyfélszolgálati vezetőtől.",
+          "sentence": "Nagyon hálás lennék, ha a jövő hét elejéig válaszolni _____ a levelemre.",
+          "options": [
+            "tudna",
+            "tud",
+            "tudott",
+            "tudjon"
+          ],
           "correct": 0,
-          "teaches": ["complex-conjunctions-annak-ellenere"]
+          "teaches": [
+            "conditional-polite-request"
+          ]
+        },
+        {
+          "id": "hu-diag-b1-07",
+          "prompt": "Helyzet: Elmondod, hogy a vizsgázó a hónapokig tartó szorgalmas készülés ellenére sem járt sikerrel.",
+          "sentence": "Annak ellenére nem sikerült a felvételi, _____ hónapokig készült rá.",
+          "options": [
+            "hogy",
+            "mert",
+            "ha",
+            "mint"
+          ],
+          "correct": 0,
+          "teaches": [
+            "complex-conjunctions-annak-ellenere"
+          ]
+        },
+        {
+          "id": "hu-diag-b1-08",
+          "type": "text-input",
+          "sentence": "Ha több pénzem és időm lenne, sokkal gyakrabban (utazni - feltételes jelen, én) _____ külföldre.",
+          "answer": "utaznék",
+          "altAnswers": [
+            "utaznek",
+            "utaznék"
+          ],
+          "teaches": [
+            "conditional-present-1sg-utazni"
+          ]
+        },
+        {
+          "id": "hu-diag-b1-09",
+          "type": "text-input",
+          "sentence": "Péter megbízható barát; bármilyen nehéz helyzetben bátran számíthatok (ő + -ra/-re) _____.",
+          "answer": "rá",
+          "altAnswers": [
+            "ra",
+            "rá"
+          ],
+          "teaches": [
+            "inflected-pronouns-sublative"
+          ]
+        },
+        {
+          "id": "hu-diag-b1-10",
+          "type": "text-input",
+          "sentence": "Megkértem a tanáromat, hogy minél előbb (írni - felszólító/kötőmód, ő) _____ meg az ajánlólevelet.",
+          "answer": "írja",
+          "altAnswers": [
+            "irja",
+            "írja"
+          ],
+          "teaches": [
+            "subjunctive-in-clause-irja"
+          ]
         }
       ]
     }
