@@ -1714,8 +1714,8 @@ const stepRenderers = {
                 <div class="sp-live-transcript hidden" id="lesson-live-transcript" aria-live="polite"></div>
             </div>
 
-            <div class="sp-challenge-alt-input" style="margin-top:12px; text-align:center;">
-                <details style="display:inline-block; text-align:left; font-size:0.85rem; color:var(--text-muted);">
+            <div class="sp-challenge-alt-input" style="margin-top:12px;">
+                <details style="font-size:0.85rem; color:var(--text-muted);">
                     <summary style="cursor:pointer; user-select:none;">Or type your response</summary>
                     <div style="margin-top:8px;">
                         <textarea id="lesson-challenge-input" class="lsn-input" style="width:100%; min-height:60px; font-size:0.95rem; padding:8px; border-radius:6px;" placeholder="Type your response in ${esc(langName)}..." oninput="stepState.checkDisabled = false; updateFooterButton();"></textarea>
