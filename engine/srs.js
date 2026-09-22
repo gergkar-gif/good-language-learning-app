@@ -800,6 +800,22 @@ function renderCard() {
             diacriticsEl.innerHTML = '';
         }
     }
+
+    const hintEl = document.getElementById('review-type-hint');
+    if (hintEl) {
+        let hasSeenHint = false;
+        try {
+            hasSeenHint = !!localStorage.getItem('srs_type_mode_hint_seen');
+        } catch (e) {}
+        hintEl.classList.toggle('hidden', !typeMode || hasSeenHint);
+        if (!hintEl._wiredDismiss) {
+            hintEl._wiredDismiss = true;
+            hintEl.addEventListener('click', () => {
+                try { localStorage.setItem('srs_type_mode_hint_seen', '1'); } catch (e) {}
+                hintEl.classList.add('hidden');
+            });
+        }
+    }
     const field = document.getElementById('review-type-field');
     if (field) {
         field.value = '';
@@ -997,6 +1013,12 @@ function checkTypedAnswer() {
 
     const rawTyped = (field.value || '').trim();
     if (!rawTyped) return;
+
+    try {
+        localStorage.setItem('srs_type_mode_hint_seen', '1');
+    } catch (e) {}
+    const hintEl = document.getElementById('review-type-hint');
+    if (hintEl) hintEl.classList.add('hidden');
 
     const englishFirst = reviewDirection === 'en-es';
     const typed = srsNormalise(rawTyped);

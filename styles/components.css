@@ -2768,20 +2768,34 @@
 
 .review-type-input {
   display: flex;
-  gap: 8px;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
   width: 100%;
 }
 
+.review-type-input .lsn-input-with-mic {
+  width: 100%;
+  position: relative;
+}
+
 .review-input {
-  flex: 1;
-  min-width: 0;
-  padding: 12px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 48px 12px 14px;
   border: none;
   border-bottom: 2px solid var(--border);
   border-radius: 0;
   background: none;
-  font-size: 16px;
+  font-size: 17px;
   color: var(--text);
+  text-align: center;
+  transition: border-color var(--dur-fast) var(--ease-standard);
+}
+
+.review-input:focus {
+  outline: none;
+  border-bottom-color: var(--primary);
 }
 
 .review-input.correct {
@@ -2793,13 +2807,69 @@
   border-bottom-color: var(--danger);
 }
 
-.review-type-input .review-show-btn {
-  width: auto;
-  padding: 14px 20px;
-}
-
 .review-input.almost {
   border-bottom-color: var(--secondary);
+}
+
+.review-type-diacritics {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.review-type-diacritics .lsn-diacritics {
+  margin: 0;
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.review-type-hint {
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--muted);
+  text-align: center;
+  padding: 8px 14px;
+  background: rgba(16, 42, 71, 0.04);
+  border-radius: var(--radius-sm);
+  border: 1px dashed var(--border);
+  cursor: pointer;
+  user-select: none;
+  max-width: 95%;
+}
+
+[data-theme="dark"] .review-type-hint,
+:root:not([data-theme="light"]) .review-type-hint {
+  background: rgba(245, 241, 232, 0.04);
+}
+
+.review-type-hint kbd {
+  display: inline-block;
+  padding: 1px 6px;
+  font-family: var(--font-mono, monospace);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.review-type-input .review-type-check-btn {
+  width: 100%;
+  max-width: 240px;
+  padding: 12px 20px;
+  margin-top: 4px;
+}
+
+/* Phone / mobile keyboard ergonomics: on phones (<= 639px), remove the Check button
+   so the screen isn't cluttered; users press Enter / Done on their virtual keyboard. */
+@media (max-width: 639px) {
+  .review-type-input .review-type-check-btn {
+    display: none !important;
+  }
 }
 
 .review-type-assessment {
