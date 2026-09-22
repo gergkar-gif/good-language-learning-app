@@ -15,12 +15,26 @@
 const WritingDriller = (function () {
     'use strict';
 
-    const STUDIO_TAB = { COMPOSITION: 'composition', TRANSLATION: 'translation' };
+    const STUDIO_TAB = { COMPOSITION: 'composition', EXCHANGES: 'exchanges', TRANSLATION: 'translation' };
     let _activeStudioTab = STUDIO_TAB.COMPOSITION;
     let _subOptions = null;
 
     const PHASE = { PROMPT_SELECT: 1, WRITING: 2, ASSESSING: 3, RESULTS: 4, CUSTOM_TASK: 5 };
     const CUSTOM_WORD_OPTIONS = [30, 50, 100, 150, 250];
+
+    // ---- Written Exchanges State ----
+    const EXCHANGE_PHASE = { SELECT: 1, BRIEFING: 2, CHATTING: 3, ASSESSING: 4, DEBRIEF: 5 };
+    const CEFR_ORDER = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
+    let _exchanges = null;
+    let _exchangesLoadedLang = null;
+    let _exchangePhase = EXCHANGE_PHASE.SELECT;
+    let _selectedExchange = null;
+    let _currentTurnIndex = 0;
+    let _completedTurns = [];
+    let _exchangeLevelFilter = 'all';
+    let _exchangeDraftText = '';
+    let _exchangeAssessmentResult = null;
+    let _isPartnerTyping = false;
 
     let _container = null;
     let _phase = PHASE.PROMPT_SELECT;
@@ -60,6 +74,54 @@ const WritingDriller = (function () {
         }
     }
 
+    async function _loadExchanges() {
+        const lang = (typeof Lang !== 'undefined') ? Lang.code() : 'es';
+        if (_exchanges && _exchangesLoadedLang === lang) return;
+        try {
+            const data = await Content.json(Lang.content('writing-exchanges.json'));
+            _exchanges = (data && data.scenarios) ? data.scenarios : [];
+            _exchangesLoadedLang = lang;
+        } catch (e) {
+            _exchanges = [];
+        }
+    }
+
+    function _scenarioText(obj, field, scenarioContext) {
+        if (!obj) return '';
+        const sc = scenarioContext || _selectedExchange;
+        const level = (sc && sc.cefrLevel) || '';
+        if ((level === 'A1' || level === 'A2') && obj[field + 'En']) {
+            return obj[field + 'En'];
+        }
+        return obj[field] || '';
+    }
+
+    function _clickableText(text) {
+        if (!text) return '';
+        if (typeof Reader !== 'undefined' && Reader.makeClickable) return Reader.makeClickable(text);
+        return _esc(text);
+    }
+
+    function _getDiacritics(langCode) {
+        const lang = (langCode || (typeof Lang !== 'undefined' ? Lang.code() : 'es')).toLowerCase();
+        if (lang.startsWith('es')) {
+            return ['á', 'é', 'í', 'ó', 'ú', 'ñ', '¿', '¡'];
+        }
+        if (lang.startsWith('hu')) {
+            return ['á', 'é', 'í', 'ó', 'ö', 'ő', 'ú', 'ü', 'ű'];
+        }
+        return ['á', 'é', 'í', 'ó', 'ú', 'ñ'];
+    }
+
+    if (typeof document !== 'undefined') {
+        document.addEventListener('language-changed', () => {
+            _promptsData = null;
+            _loadedLang = null;
+            _exchanges = null;
+            _exchangesLoadedLang = null;
+        });
+    }
+
     function _getEngine() {
         if (!_engine) {
             if (typeof GraderEngine !== 'undefined') {
@@ -88,6 +150,9 @@ const WritingDriller = (function () {
                 <div class="sp-studio-nav" role="tablist">
                     <button type="button" class="sp-studio-tab ${_activeStudioTab === STUDIO_TAB.COMPOSITION ? 'active' : ''}" data-studio-tab="composition" role="tab" aria-selected="${_activeStudioTab === STUDIO_TAB.COMPOSITION}">
                         Composition Studio
+                    </button>
+                    <button type="button" class="sp-studio-tab ${_activeStudioTab === STUDIO_TAB.EXCHANGES ? 'active' : ''}" data-studio-tab="exchanges" role="tab" aria-selected="${_activeStudioTab === STUDIO_TAB.EXCHANGES}">
+                        Written Exchanges
                     </button>
                     <button type="button" class="sp-studio-tab ${_activeStudioTab === STUDIO_TAB.TRANSLATION ? 'active' : ''}" data-studio-tab="translation" role="tab" aria-selected="${_activeStudioTab === STUDIO_TAB.TRANSLATION}">
                         Sentence Translation
@@ -130,6 +195,8 @@ const WritingDriller = (function () {
             } else {
                 body.innerHTML = '<div class="gd-loading">Loading Translation Driller…</div>';
             }
+        } else if (_activeStudioTab === STUDIO_TAB.EXCHANGES) {
+            _renderWrittenExchanges(body);
         } else {
             if (_phase === PHASE.PROMPT_SELECT) _renderPromptSelect(body);
             else if (_phase === PHASE.CUSTOM_TASK) _renderCustomTask(body);
@@ -866,6 +933,594 @@ const WritingDriller = (function () {
         }
     }
 
+    // ============================================
+    // PART 3: WRITTEN EXCHANGES (INTERACTIVE SITUATIONAL CORRESPONDENCE)
+    // ============================================
+
+    function _renderWrittenExchanges(body) {
+        if (_exchangePhase === EXCHANGE_PHASE.SELECT) {
+            _renderExchangeSelect(body);
+        } else if (_exchangePhase === EXCHANGE_PHASE.BRIEFING) {
+            _renderExchangeBriefing(body);
+        } else if (_exchangePhase === EXCHANGE_PHASE.CHATTING) {
+            _renderExchangeChat(body);
+        } else if (_exchangePhase === EXCHANGE_PHASE.ASSESSING) {
+            _renderExchangeAssessing(body);
+        } else if (_exchangePhase === EXCHANGE_PHASE.DEBRIEF) {
+            _renderExchangeDebrief(body);
+        }
+    }
+
+    function _renderExchangeSelect(body) {
+        const langName = (typeof Lang !== 'undefined') ? Lang.name() : 'the language';
+        const exchanges = _exchanges || [];
+
+        const availableLevels = Array.from(new Set(exchanges.map(s => s.cefrLevel || 'A1')))
+            .sort((a, b) => CEFR_ORDER.indexOf(a) - CEFR_ORDER.indexOf(b));
+        const filteredExchanges = _exchangeLevelFilter === 'all'
+            ? exchanges
+            : exchanges.filter(s => (s.cefrLevel || 'A1') === _exchangeLevelFilter);
+
+        const levelFilterHtml = availableLevels.length > 1 ? `
+            <div class="wk-config-group">
+                <label class="wk-config-label">Level</label>
+                <div class="wk-pill-row">
+                    <button type="button" class="wk-pill ${_exchangeLevelFilter === 'all' ? 'active' : ''}" data-exchange-level-filter="all">All</button>
+                    ${availableLevels.map(lvl => `
+                        <button type="button" class="wk-pill ${_exchangeLevelFilter === lvl ? 'active' : ''}" data-exchange-level-filter="${lvl}">${lvl}</button>
+                    `).join('')}
+                </div>
+            </div>
+        ` : '';
+
+        const exchangesHtml = filteredExchanges.length ? filteredExchanges.map(s => `
+            <div class="wk-card sp-scenario-card wr-exchange-card" data-select-exchange="${_esc(s.id)}" role="button" tabindex="0">
+                <div class="wr-exchange-card-header">
+                    <span class="sp-level-pill">${_esc(s.cefrLevel || 'A1')}</span>
+                    <span class="sp-turns-pill">${(s.turns || []).length} messages</span>
+                </div>
+                <h3 class="wk-card-title">${_esc(_scenarioText(s, 'title', s) || 'Written Exchange')}</h3>
+                <p class="wr-exchange-roleplay-tag">
+                    <strong>Exchange:</strong> ${_esc(s.roleplay ? _scenarioText(s.roleplay, 'interlocutorRole', s) : 'Partner')} ↔ ${_esc(s.roleplay ? _scenarioText(s.roleplay, 'learnerRole', s) : 'You')}
+                </p>
+                <p class="wk-card-sub">${_esc(_scenarioText(s, 'situation', s) || '')}</p>
+                ${s.targetCompetency ? `<div class="wr-exchange-comp-tag"><svg class="sp-icon-svg" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg> <span>${_esc(s.targetCompetency)}</span></div>` : ''}
+            </div>
+        `).join('') : `
+            <div class="sp-empty-state">
+                <p>No written exchanges found for this level yet.</p>
+            </div>
+        `;
+
+        body.innerHTML = `
+            <div class="sp-driller-wrap">
+                <div class="sp-setup-head">
+                    <h2 class="sp-setup-title">Written Exchanges</h2>
+                    <p class="sp-setup-sub">Practice situational text messaging and functional written correspondence in ${langName} with CEFR-aligned formative feedback.</p>
+                </div>
+
+                ${levelFilterHtml}
+
+                <div class="sp-scenarios-grid" style="margin-top: 20px;">
+                    ${exchangesHtml}
+                </div>
+            </div>
+        `;
+
+        body.querySelectorAll('[data-exchange-level-filter]').forEach(el => {
+            el.addEventListener('click', () => {
+                _exchangeLevelFilter = el.getAttribute('data-exchange-level-filter');
+                _renderActiveTab();
+            });
+        });
+
+        body.querySelectorAll('[data-select-exchange]').forEach(el => {
+            const id = el.getAttribute('data-select-exchange');
+            const handler = () => {
+                const found = (_exchanges || []).find(s => s.id === id);
+                if (found) {
+                    _selectedExchange = found;
+                    _exchangePhase = EXCHANGE_PHASE.BRIEFING;
+                    _renderActiveTab();
+                }
+            };
+            el.addEventListener('click', handler);
+            el.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    handler();
+                }
+            });
+        });
+    }
+
+    function _renderExchangeBriefing(body) {
+        const s = _selectedExchange || {};
+        const title = _scenarioText(s, 'title', s) || 'Written Exchange';
+        const situation = _scenarioText(s, 'situation', s) || '';
+        const interlocutor = s.roleplay ? _scenarioText(s.roleplay, 'interlocutorRole', s) : 'Partner';
+        const learner = s.roleplay ? _scenarioText(s.roleplay, 'learnerRole', s) : 'You';
+        const turnsCount = (s.turns || []).length;
+
+        body.innerHTML = `
+            <div class="sp-driller-wrap sp-scenario-briefing-wrap">
+                <div class="sp-prod-header">
+                    <button type="button" class="sp-btn-link" data-action="back-exchanges">← All Written Exchanges</button>
+                    <span class="sp-level-pill">${_esc(s.cefrLevel || 'A1')}</span>
+                </div>
+
+                <div class="sp-scenario-briefing-card">
+                    <h2 class="sp-briefing-title">${_esc(title)}</h2>
+                    <p class="sp-briefing-situation">${_esc(situation)}</p>
+
+                    <div class="sp-briefing-roles">
+                        <div class="sp-role-item">
+                            <span class="sp-role-label">Your Correspondent:</span>
+                            <span class="sp-role-value">${_esc(interlocutor)}</span>
+                        </div>
+                        <div class="sp-role-item">
+                            <span class="sp-role-label">Your Role:</span>
+                            <span class="sp-role-value">${_esc(learner)}</span>
+                        </div>
+                        <div class="sp-role-item">
+                            <span class="sp-role-label">Exchange Length:</span>
+                            <span class="sp-role-value">${turnsCount} messages</span>
+                        </div>
+                    </div>
+
+                    ${s.targetCompetency ? `
+                        <div class="sp-briefing-goal">
+                            <strong>Can-Do Goal:</strong> ${_esc(s.targetCompetency)}
+                        </div>
+                    ` : ''}
+
+                    <div class="sp-briefing-cta-row">
+                        <button type="button" class="wk-primary-btn sp-btn-start-scenario" data-action="start-exchange">
+                            Start Written Exchange →
+                        </button>
+                    </div>
+                </div>
+            </div>
+        `;
+
+        const backBtn = body.querySelector('[data-action="back-exchanges"]');
+        if (backBtn) {
+            backBtn.addEventListener('click', () => {
+                _exchangePhase = EXCHANGE_PHASE.SELECT;
+                _selectedExchange = null;
+                _renderActiveTab();
+            });
+        }
+
+        const startBtn = body.querySelector('[data-action="start-exchange"]');
+        if (startBtn) {
+            startBtn.addEventListener('click', () => {
+                _startExchangeSession();
+            });
+        }
+    }
+
+    function _startExchangeSession() {
+        _currentTurnIndex = 0;
+        _completedTurns = [];
+        _exchangeDraftText = '';
+        _exchangeAssessmentResult = null;
+        _isPartnerTyping = false;
+        _exchangePhase = EXCHANGE_PHASE.CHATTING;
+        _renderActiveTab();
+    }
+
+    function _renderExchangeChat(body) {
+        const s = _selectedExchange || {};
+        const turns = s.turns || [];
+        const currentTurn = turns[_currentTurnIndex] || {};
+        const langCode = (typeof Lang !== 'undefined') ? Lang.code() : 'es';
+        const interlocutorName = s.roleplay ? _scenarioText(s.roleplay, 'interlocutorRole', s) : 'Partner';
+        const learnerName = s.roleplay ? _scenarioText(s.roleplay, 'learnerRole', s) : 'You';
+        const diacritics = _getDiacritics(langCode);
+
+        const minWords = (currentTurn.validationCriteria && currentTurn.validationCriteria.minWords) || 3;
+        const currentWords = _exchangeDraftText.trim() ? _exchangeDraftText.trim().split(/\s+/).length : 0;
+        const isMet = currentWords >= minWords;
+
+        body.innerHTML = `
+            <div class="sp-driller-wrap sp-scenario-chat-wrap">
+                <div class="sp-prod-header">
+                    <button type="button" class="sp-btn-link" data-action="back-exchanges-select">← Written Exchanges</button>
+                    <div style="font-size: 0.85rem; font-weight: 600; color: var(--muted);">
+                        Message ${_currentTurnIndex + 1} of ${turns.length}
+                    </div>
+                </div>
+
+                <div class="sp-scenario-banner" style="margin-bottom: 16px; padding: 8px 12px; background: var(--bg-card, #f8f9fa); border-radius: var(--radius-sm, 6px); display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-weight: 600; font-size: 0.95rem;">${_esc(_scenarioText(s, 'title', s) || 'Written Exchange')}</span>
+                    <span class="sp-level-pill">${_esc(s.cefrLevel || 'A1')}</span>
+                </div>
+
+                <div class="sp-chat-timeline" id="wr-chat-timeline">
+                    ${_completedTurns.map((t, idx) => `
+                        <div class="sp-chat-turn-group">
+                            <div class="sp-chat-bubble partner">
+                                <div class="sp-chat-header">
+                                    <strong>${_esc(interlocutorName)}</strong>
+                                </div>
+                                <div class="sp-chat-body">${_clickableText(t.interlocutorPrompt)}</div>
+                            </div>
+                            <div class="sp-chat-bubble learner">
+                                <div class="sp-chat-header">
+                                    <strong>${_esc(learnerName)}</strong>
+                                    ${t.validation && t.validation.valid ? `<span class="sp-chat-check"><svg class="sp-icon-svg" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>` : ''}
+                                </div>
+                                <div class="sp-chat-body">${_esc(t.learnerTranscript)}</div>
+                            </div>
+                        </div>
+                    `).join('')}
+
+                    <div class="sp-chat-turn-group active">
+                        <div class="sp-chat-bubble partner current">
+                            <div class="sp-chat-header">
+                                <strong>${_esc(interlocutorName)}</strong>
+                            </div>
+                            <div class="sp-chat-body" style="font-size: 1.05rem; font-weight: 500;">
+                                ${_clickableText(currentTurn.interlocutorPrompt || '')}
+                            </div>
+                            ${currentTurn.interlocutorTranslation ? `
+                                <details class="sp-chat-trans-toggle" style="margin-top: 6px; font-size: 0.85rem; color: var(--muted);">
+                                    <summary style="cursor: pointer;">Translate</summary>
+                                    <p style="margin: 4px 0 0; font-style: italic;">${_esc(currentTurn.interlocutorTranslation)}</p>
+                                </details>
+                            ` : ''}
+                        </div>
+
+                        ${_isPartnerTyping ? `
+                            <div class="wr-exchange-typing-notice">
+                                <span>${_esc(interlocutorName)} is writing a reply...</span>
+                            </div>
+                        ` : ''}
+                    </div>
+                </div>
+
+                <div class="wr-exchange-dock">
+                    <div class="sp-turn-objective-card" style="padding: 12px 16px; background: var(--surface, #fff); border: 1px solid var(--border, #ddd); border-radius: var(--radius-md, 8px);">
+                        <div style="font-size: 0.8rem; text-transform: uppercase; font-weight: 700; color: var(--accent); margin-bottom: 4px;">Your Goal</div>
+                        <div style="font-size: 0.95rem; font-weight: 600; color: var(--text);">${_esc(_scenarioText(currentTurn, 'learnerCue', s) || '')}</div>
+
+                        ${((currentTurn.vocabularyHints && currentTurn.vocabularyHints.length) || (currentTurn.suggestedPhrases && currentTurn.suggestedPhrases.length)) ? `
+                            <details class="sp-phrases-drawer" style="margin-top: 8px; font-size: 0.85rem;">
+                                <summary class="sp-phrases-summary">
+                                    <svg class="sp-icon-svg" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                                    <span>Useful phrasing</span>
+                                </summary>
+                                <ul style="margin: 6px 0 0; padding-left: 18px; color: var(--text);">
+                                    ${(currentTurn.vocabularyHints || currentTurn.suggestedPhrases).map(item => `<li>${_esc(item)}</li>`).join('')}
+                                </ul>
+                            </details>
+                        ` : ''}
+                    </div>
+
+                    ${!_isPartnerTyping ? `
+                        <div class="wr-exchange-input-container">
+                            <div class="wr-diacritics-bar" role="toolbar" aria-label="Character accents">
+                                ${diacritics.map(char => `
+                                    <button type="button" class="wr-diacritic-btn" data-insert-char="${_esc(char)}" aria-label="Insert ${_esc(char)}">${_esc(char)}</button>
+                                `).join('')}
+                            </div>
+
+                            <textarea class="wr-exchange-textarea" id="wr-exchange-input" placeholder="Escriba su respuesta aquí... (Press Enter or Send)" aria-label="Your response">${_esc(_exchangeDraftText)}</textarea>
+
+                            <div class="wr-exchange-dock-footer">
+                                <div class="wr-exchange-counter ${isMet ? 'met' : ''}" id="wr-word-counter">
+                                    ${currentWords} words ${minWords ? `(min ${minWords})` : ''}
+                                </div>
+                                <button type="button" class="wk-primary-btn" data-action="submit-exchange-turn">
+                                    <span>Send Reply</span>
+                                    <svg class="sp-icon-svg" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                                </button>
+                            </div>
+                        </div>
+                    ` : ''}
+                </div>
+            </div>
+        `;
+
+        const timelineEl = body.querySelector('#wr-chat-timeline');
+        if (timelineEl) {
+            timelineEl.scrollTop = timelineEl.scrollHeight;
+        }
+
+        const backBtn = body.querySelector('[data-action="back-exchanges-select"]');
+        if (backBtn) {
+            backBtn.addEventListener('click', () => {
+                _exchangePhase = EXCHANGE_PHASE.SELECT;
+                _selectedExchange = null;
+                _renderActiveTab();
+            });
+        }
+
+        const textarea = body.querySelector('#wr-exchange-input');
+        const counterEl = body.querySelector('#wr-word-counter');
+
+        if (textarea) {
+            textarea.focus();
+            textarea.addEventListener('input', () => {
+                _exchangeDraftText = textarea.value;
+                const words = _exchangeDraftText.trim() ? _exchangeDraftText.trim().split(/\s+/).length : 0;
+                if (counterEl) {
+                    counterEl.textContent = `${words} words ${minWords ? `(min ${minWords})` : ''}`;
+                    if (words >= minWords) counterEl.classList.add('met');
+                    else counterEl.classList.remove('met');
+                }
+            });
+
+            textarea.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' && (e.ctrlKey || e.metaKey || !e.shiftKey)) {
+                    e.preventDefault();
+                    const text = textarea.value.trim();
+                    if (text) _submitExchangeTurn(text);
+                }
+            });
+        }
+
+        body.querySelectorAll('[data-insert-char]').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const char = btn.getAttribute('data-insert-char');
+                if (textarea && char) {
+                    const start = textarea.selectionStart || 0;
+                    const end = textarea.selectionEnd || 0;
+                    const val = textarea.value;
+                    textarea.value = val.substring(0, start) + char + val.substring(end);
+                    textarea.selectionStart = textarea.selectionEnd = start + char.length;
+                    textarea.focus();
+                    _exchangeDraftText = textarea.value;
+                    const words = _exchangeDraftText.trim() ? _exchangeDraftText.trim().split(/\s+/).length : 0;
+                    if (counterEl) {
+                        counterEl.textContent = `${words} words ${minWords ? `(min ${minWords})` : ''}`;
+                        if (words >= minWords) counterEl.classList.add('met');
+                        else counterEl.classList.remove('met');
+                    }
+                }
+            });
+        });
+
+        const submitBtn = body.querySelector('[data-action="submit-exchange-turn"]');
+        if (submitBtn) {
+            submitBtn.addEventListener('click', () => {
+                const text = textarea ? textarea.value.trim() : _exchangeDraftText.trim();
+                if (!text) {
+                    if (typeof UI !== 'undefined' && UI.toast) UI.toast('Please write a response first', 'warning');
+                    return;
+                }
+                _submitExchangeTurn(text);
+            });
+        }
+    }
+
+    function _submitExchangeTurn(text) {
+        const s = _selectedExchange || {};
+        const turns = s.turns || [];
+        const currentTurn = turns[_currentTurnIndex];
+        if (!currentTurn) return;
+
+        const valResult = (typeof LocalGrader !== 'undefined' && LocalGrader.validateTurn)
+            ? LocalGrader.validateTurn(text, currentTurn.validationCriteria)
+            : { valid: true, feedback: 'Turn completed.' };
+
+        _completedTurns.push({
+            turnIndex: currentTurn.turnIndex,
+            interlocutorPrompt: currentTurn.interlocutorPrompt,
+            learnerCue: currentTurn.learnerCue,
+            learnerTranscript: text,
+            validation: valResult
+        });
+
+        _exchangeDraftText = '';
+
+        if (_currentTurnIndex + 1 < turns.length) {
+            _isPartnerTyping = true;
+            _renderActiveTab();
+            setTimeout(() => {
+                _isPartnerTyping = false;
+                _currentTurnIndex++;
+                _renderActiveTab();
+            }, 600);
+        } else {
+            _finishExchangeAndDebrief();
+        }
+    }
+
+    function _renderExchangeAssessing(body) {
+        body.innerHTML = `
+            <div class="sp-driller-wrap sp-assessing-wrap">
+                <div class="sp-assessing-card">
+                    <div class="sp-spinner"></div>
+                    <h3 class="sp-assessing-title">Evaluating Written Exchange</h3>
+                    <p class="sp-assessing-sub">Analyzing communicative task achievement, situational register, and written interaction against CEFR standards...</p>
+                </div>
+            </div>
+        `;
+    }
+
+    async function _finishExchangeAndDebrief() {
+        _exchangePhase = EXCHANGE_PHASE.ASSESSING;
+        _renderActiveTab();
+
+        const sc = _selectedExchange || {};
+        const lang = (typeof Lang !== 'undefined') ? Lang.code() : 'es';
+
+        let engine = _getEngine();
+
+        const dialogueTranscript = _completedTurns.map((t, idx) =>
+            `Message ${idx + 1}:\n${sc.roleplay ? sc.roleplay.interlocutorRole : 'Interlocutor'}: ${t.interlocutorPrompt}\n${sc.roleplay ? sc.roleplay.learnerRole : 'Learner'}: ${t.learnerTranscript}`
+        ).join('\n\n');
+
+        const context = {
+            cefrLevel: sc.cefrLevel || 'A1',
+            taskType: 'written_exchange',
+            taskInstructions: `Written Exchange: ${sc.title || ''}\nSituation: ${sc.situation || ''}\nRoles: ${sc.roleplay ? sc.roleplay.learnerRole : 'Learner'} communicating with ${sc.roleplay ? sc.roleplay.interlocutorRole : 'Interlocutor'}.`,
+            targetSkills: sc.targetSkills || ['written_interaction', 'social_exchange'],
+            language: lang,
+            modality: 'written',
+            title: sc.title || 'Written Exchange'
+        };
+
+        try {
+            let result = null;
+            if (engine) {
+                result = await engine.grade(dialogueTranscript, context);
+            } else if (typeof LocalGrader !== 'undefined' && LocalGrader.gradeConversation) {
+                result = LocalGrader.gradeConversation(_completedTurns, sc, { modality: 'written', taskType: 'written_exchange' });
+            }
+            _exchangeAssessmentResult = result;
+
+            if (typeof LearnerModel !== 'undefined' && LearnerModel.recordAssessment) {
+                LearnerModel.recordAssessment(result, context);
+            }
+            if (sc.targetSkills && typeof LearnerModel !== 'undefined' && LearnerModel.recordProduction) {
+                const isPass = (result.overallScore || 0) >= 60;
+                LearnerModel.recordProduction(sc.targetSkills, isPass, result.overallScore || 0, 'written');
+            }
+            if (sc.targetCompetency && (result.overallScore || 0) >= 75) {
+                if (typeof LearnerModel !== 'undefined' && typeof LearnerModel.verifyCompetency === 'function') {
+                    LearnerModel.verifyCompetency(sc.targetCompetency, result.overallScore, 'writing-studio');
+                }
+            }
+            if (typeof XP !== 'undefined' && XP.award) {
+                const earnedXP = Math.max(15, Math.round((result.overallScore || 75) / 3));
+                XP.award(earnedXP, 'writing-studio');
+            }
+
+            _exchangePhase = EXCHANGE_PHASE.DEBRIEF;
+            _renderActiveTab();
+        } catch (error) {
+            console.warn('AI Written Exchange evaluation failed, falling back to LocalGrader:', error);
+            if (typeof LocalGrader !== 'undefined' && LocalGrader.gradeConversation) {
+                _exchangeAssessmentResult = LocalGrader.gradeConversation(_completedTurns, sc, { modality: 'written', taskType: 'written_exchange' });
+            }
+            _exchangePhase = EXCHANGE_PHASE.DEBRIEF;
+            _renderActiveTab();
+        }
+    }
+
+    function _renderExchangeDebrief(body) {
+        const sc = _selectedExchange || {};
+        const result = _exchangeAssessmentResult || {};
+        const score = typeof result.overallScore === 'number' ? result.overallScore : 80;
+        const isPass = score >= 60;
+        const verified = score >= 75 && sc.targetCompetency;
+        const coachSentence = result.examinerFeedback ||
+            result._prodOneLineTip ||
+            (result.feedback && result.feedback.strengths && result.feedback.strengths[0]) ||
+            (result.strengths && result.strengths[0]) ||
+            'Well done practicing this written situational correspondence!';
+
+        body.innerHTML = `
+            <div class="sp-driller-wrap sp-scenario-debrief-wrap">
+                <div class="sp-prod-header">
+                    <button type="button" class="sp-btn-link" data-action="exchanges-list">← Choose another exchange</button>
+                    <span class="sp-level-pill">${_esc(sc.cefrLevel || 'A1')}</span>
+                </div>
+
+                <div class="sp-prod-results-card">
+                    <div class="sp-prod-results-score-row">
+                        <div class="sp-prod-score-badge ${isPass ? 'pass' : 'needs-work'}">
+                            <span class="sp-prod-score-num">${score}</span>
+                            <span class="sp-prod-score-max">/100</span>
+                        </div>
+                        <div class="sp-prod-score-meta">
+                            <div class="sp-prod-score-title">${isPass ? 'Exchange Completed' : 'Needs Practice'}</div>
+                            <div class="sp-prod-score-sub">${_esc(coachSentence)}</div>
+                        </div>
+                    </div>
+
+                    ${verified ? `
+                        <div class="sp-verified-badge" style="margin: 16px 0; padding: 10px 14px; background: rgba(40, 167, 69, 0.1); border-left: 4px solid #28a745; border-radius: 4px; display: flex; align-items: center; gap: 10px;">
+                            <svg class="sp-icon-svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#28a745" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                            <div>
+                                <strong style="color: #28a745; font-size: 0.9rem;">CEFR Competency Demonstrated:</strong>
+                                <div style="font-size: 0.85rem; color: var(--text);">${_esc(sc.targetCompetency)}</div>
+                            </div>
+                        </div>
+                    ` : ''}
+
+                    <div class="sp-chat-review-wrap" style="margin-top: 20px;">
+                        <h4 style="margin: 0 0 12px; font-size: 0.95rem; font-weight: 600;">Exchange Transcript</h4>
+                        <div class="sp-chat-timeline">
+                            ${_completedTurns.map((t, idx) => `
+                                <div class="sp-chat-turn-group">
+                                    <div class="sp-chat-bubble partner">
+                                        <div class="sp-chat-header">
+                                            <strong>${_esc(sc.roleplay ? _scenarioText(sc.roleplay, 'interlocutorRole', sc) : 'Partner')}</strong>
+                                        </div>
+                                        <div class="sp-chat-body">${_clickableText(t.interlocutorPrompt)}</div>
+                                    </div>
+                                    <div class="sp-chat-bubble learner">
+                                        <div class="sp-chat-header">
+                                            <strong>You (${_esc(sc.roleplay ? _scenarioText(sc.roleplay, 'learnerRole', sc) : 'You')})</strong>
+                                            ${t.validation && t.validation.valid ? `<span class="sp-chat-check"><svg class="sp-icon-svg" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>` : ''}
+                                        </div>
+                                        <div class="sp-chat-body">${_esc(t.learnerTranscript)}</div>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+
+                    ${(result.feedback && ((result.feedback.strengths && result.feedback.strengths.length) || (result.feedback.priorities && result.feedback.priorities.length))) ? `
+                        <div class="sp-feedback-sections" style="margin-top: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                            ${(result.feedback.strengths && result.feedback.strengths.length) ? `
+                                <div class="sp-feedback-col" style="padding: 12px; background: var(--surface, #fff); border: 1px solid var(--border); border-radius: 6px;">
+                                    <h5 style="margin: 0 0 8px; color: #28a745; font-size: 0.85rem; text-transform: uppercase; font-weight: 700;">Strengths</h5>
+                                    <ul style="margin: 0; padding-left: 18px; font-size: 0.85rem; color: var(--text);">
+                                        ${result.feedback.strengths.map(s => `<li>${_esc(s)}</li>`).join('')}
+                                    </ul>
+                                </div>
+                            ` : ''}
+                            ${(result.feedback.priorities && result.feedback.priorities.length) ? `
+                                <div class="sp-feedback-col" style="padding: 12px; background: var(--surface, #fff); border: 1px solid var(--border); border-radius: 6px;">
+                                    <h5 style="margin: 0 0 8px; color: #007bff; font-size: 0.85rem; text-transform: uppercase; font-weight: 700;">Focus Areas</h5>
+                                    <ul style="margin: 0; padding-left: 18px; font-size: 0.85rem; color: var(--text);">
+                                        ${result.feedback.priorities.map(p => `<li>${_esc(p)}</li>`).join('')}
+                                    </ul>
+                                </div>
+                            ` : ''}
+                        </div>
+                    ` : ''}
+
+                    <div style="display: flex; gap: 12px; justify-content: flex-end; margin-top: 24px;">
+                        <button type="button" class="wk-secondary-btn" data-action="retry-exchange">Retry Exchange</button>
+                        <button type="button" class="wk-primary-btn" data-action="exchanges-list">Choose Another Exchange →</button>
+                    </div>
+
+                    <div class="vspeed-results-actions" style="margin-top: 24px;"></div>
+                </div>
+            </div>
+        `;
+
+        const retryBtn = body.querySelector('[data-action="retry-exchange"]');
+        if (retryBtn) {
+            retryBtn.addEventListener('click', () => {
+                _startExchangeSession();
+            });
+        }
+
+        body.querySelectorAll('[data-action="exchanges-list"]').forEach(btn => {
+            btn.addEventListener('click', () => {
+                _exchangePhase = EXCHANGE_PHASE.SELECT;
+                _selectedExchange = null;
+                _exchangeAssessmentResult = null;
+                _renderActiveTab();
+            });
+        });
+
+        if (typeof RecommendationEngine !== 'undefined') {
+            const actionsEl = body.querySelector('.vspeed-results-actions');
+            if (actionsEl) {
+                RecommendationEngine.mountNextAction(actionsEl, { excludeDrillerId: 'writing' });
+            }
+        }
+    }
+
     // ----------------------------------------
     // PUBLIC API
     // ----------------------------------------
@@ -873,6 +1528,18 @@ const WritingDriller = (function () {
     async function render(container, options = {}) {
         _container = container;
         await _loadPrompts();
+        await _loadExchanges();
+
+        if (options && options.scenarioId) {
+            _activeStudioTab = STUDIO_TAB.EXCHANGES;
+            const target = (_exchanges || []).find(s => s.id === options.scenarioId);
+            if (target) {
+                _selectedExchange = target;
+                _exchangePhase = EXCHANGE_PHASE.BRIEFING;
+                _renderStudioShell();
+                return;
+            }
+        }
 
         if (options && options.targetCompetency) {
             _activeStudioTab = STUDIO_TAB.COMPOSITION;
@@ -904,9 +1571,14 @@ const WritingDriller = (function () {
         }
 
         if (options && options.activeTab) {
-            _activeStudioTab = (options.activeTab === 'translation' || options.activeTab === 'translate')
-                ? STUDIO_TAB.TRANSLATION
-                : STUDIO_TAB.COMPOSITION;
+            const tab = String(options.activeTab).toLowerCase();
+            if (tab === 'translation' || tab === 'translate') {
+                _activeStudioTab = STUDIO_TAB.TRANSLATION;
+            } else if (tab === 'exchanges' || tab === 'exchange' || tab === 'texting' || tab === 'scenarios') {
+                _activeStudioTab = STUDIO_TAB.EXCHANGES;
+            } else {
+                _activeStudioTab = STUDIO_TAB.COMPOSITION;
+            }
         }
         _subOptions = options;
 

@@ -1,0 +1,1252 @@
+{
+  "language": "es",
+  "scenarios": [
+    {
+      "id": "es-a1-wx01-supermercado",
+      "cefrLevel": "A1",
+      "title": "Compras para la cena",
+      "titleEn": "Shopping for Dinner",
+      "situation": "Tu companero de piso, Mateo, esta en el supermercado y te escribe un mensaje para saber que hace falta comprar para la cena.",
+      "situationEn": "Your flatmate, Mateo, is at the supermarket and messages you to ask what is needed for dinner.",
+      "roleplay": {
+        "interlocutorRole": "Mateo (Companero de piso)",
+        "interlocutorRoleEn": "Mateo (Flatmate)",
+        "learnerRole": "Tu",
+        "learnerRoleEn": "You"
+      },
+      "targetCompetency": "I can write short, simple notes and messages relating to everyday matters",
+      "targetSkills": [
+        "shopping",
+        "food_and_drink",
+        "requests"
+      ],
+      "unitIds": [
+        "unit.a1.08"
+      ],
+      "turns": [
+        {
+          "turnIndex": 1,
+          "interlocutorPrompt": "Hola! Estoy en el supermercado ahora mismo. Hace falta comprar algo para la cena de hoy?",
+          "interlocutorTranslation": "Hi! I am at the supermarket right now. Do we need to buy anything for dinner today?",
+          "learnerCue": "Saluda a Mateo y dile que necesitamos comprar pan, pasta y queso.",
+          "learnerCueEn": "Greet Mateo and tell him that we need to buy bread, pasta, and cheese.",
+          "vocabularyHints": [
+            "hola Mateo — hello Mateo",
+            "hace falta... — we need...",
+            "necesitamos pan — we need bread",
+            "pasta y queso — pasta and cheese",
+            "por favor — please"
+          ],
+          "validationCriteria": {
+            "minWords": 3,
+            "targetKeywords": [
+              "hola",
+              "pan",
+              "pasta",
+              "queso",
+              "necesitamos",
+              "compra",
+              "favor"
+            ]
+          }
+        },
+        {
+          "turnIndex": 2,
+          "interlocutorPrompt": "Listo, ya tengo el pan y la pasta en la cesta. Quieres que compre tambien algo para beber, como zumo o agua?",
+          "interlocutorTranslation": "Got it, I already have the bread and pasta in the basket. Do you want me to also buy something to drink, like juice or water?",
+          "learnerCue": "Pide una botella de agua mineral grande y un zumo de naranja.",
+          "learnerCueEn": "Ask for a large bottle of mineral water and an orange juice.",
+          "vocabularyHints": [
+            "si, una botella de agua — yes, a bottle of water",
+            "agua mineral grande — large mineral water",
+            "zumo de naranja — orange juice",
+            "gracias — thank you"
+          ],
+          "validationCriteria": {
+            "minWords": 3,
+            "targetKeywords": [
+              "agua",
+              "zumo",
+              "naranja",
+              "botella",
+              "si",
+              "por favor",
+              "gracias"
+            ]
+          }
+        },
+        {
+          "turnIndex": 3,
+          "interlocutorPrompt": "Perfecto, ya voy a pagar en caja. Llego al piso en unos quince minutos. Puedes poner la mesa?",
+          "interlocutorTranslation": "Perfect, I am heading to checkout now. I will arrive at the flat in about fifteen minutes. Can you set the table?",
+          "learnerCue": "Responde que si, que tu pones la mesa y le esperas en casa.",
+          "learnerCueEn": "Reply yes, say that you will set the table and wait for him at home.",
+          "vocabularyHints": [
+            "si, claro — yes, of course",
+            "yo pongo la mesa — I will set the table",
+            "te espero en casa — I will wait for you at home",
+            "nos vemos pronto — see you soon"
+          ],
+          "validationCriteria": {
+            "minWords": 3,
+            "targetKeywords": [
+              "si",
+              "claro",
+              "mesa",
+              "pongo",
+              "espero",
+              "casa",
+              "vemos",
+              "gracias"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "es-a1-wx02-retraso-plaza",
+      "cefrLevel": "A1",
+      "title": "Quedar en la plaza",
+      "titleEn": "Meeting at the Plaza",
+      "situation": "Has quedado con tu amiga Lucia a las cinco en la Plaza Mayor, pero el autobus va con retraso y le escribes.",
+      "situationEn": "You arranged to meet your friend Lucia at 5:00 in the Plaza Mayor, but your bus is running late and you text her.",
+      "roleplay": {
+        "interlocutorRole": "Lucia (Amiga)",
+        "interlocutorRoleEn": "Lucia (Friend)",
+        "learnerRole": "Tu",
+        "learnerRoleEn": "You"
+      },
+      "targetCompetency": "I can exchange basic text messages to arrange meeting times and locations",
+      "targetSkills": [
+        "making_plans",
+        "telling_time",
+        "apologizing"
+      ],
+      "unitIds": [
+        "unit.a1.02"
+      ],
+      "turns": [
+        {
+          "turnIndex": 1,
+          "interlocutorPrompt": "Hola! Ya estoy en la plaza, cerca de la estatua grande. Por donde vienes?",
+          "interlocutorTranslation": "Hi! I am already at the plaza, near the big statue. Where are you coming from?",
+          "learnerCue": "Pide disculpas y explica que vas en el autobus y llegas diez minutos tarde.",
+          "learnerCueEn": "Apologize and explain that you are on the bus and arriving ten minutes late.",
+          "vocabularyHints": [
+            "hola Lucia, lo siento — hi Lucia, I am sorry",
+            "estoy en el autobus — I am on the bus",
+            "llego diez minutos tarde — I arrive ten minutes late",
+            "perdon — sorry / excuse me"
+          ],
+          "validationCriteria": {
+            "minWords": 3,
+            "targetKeywords": [
+              "hola",
+              "siento",
+              "perdon",
+              "autobus",
+              "tarde",
+              "minutos",
+              "diez",
+              "llego"
+            ]
+          }
+        },
+        {
+          "turnIndex": 2,
+          "interlocutorPrompt": "No te preocupes, no hay prisa! Hace un poco de fresco aqui fuera. Te parece si entro a la cafeteria del rincon?",
+          "interlocutorTranslation": "Don't worry, no rush! It is a bit cool out here. How about I go inside the corner cafe?",
+          "learnerCue": "Di que si, que es muy buena idea, y pidele que pida una mesa dentro.",
+          "learnerCueEn": "Say yes, that it is a very good idea, and ask her to get a table inside.",
+          "vocabularyHints": [
+            "si, buena idea — yes, good idea",
+            "entra a la cafeteria — go inside the cafe",
+            "pide una mesa dentro — ask for a table inside",
+            "nos vemos dentro — see you inside"
+          ],
+          "validationCriteria": {
+            "minWords": 3,
+            "targetKeywords": [
+              "si",
+              "buena",
+              "idea",
+              "cafeteria",
+              "mesa",
+              "dentro",
+              "perfecto"
+            ]
+          }
+        },
+        {
+          "turnIndex": 3,
+          "interlocutorPrompt": "Genial, ya estoy sentada al lado de la ventana. Quieres que te pida un cafe o un te mientras vienes?",
+          "interlocutorTranslation": "Great, I am already seated next to the window. Would you like me to order you a coffee or tea while you get here?",
+          "learnerCue": "Agradece y pide un cafe con leche caliente.",
+          "learnerCueEn": "Say thank you and ask for a hot white coffee.",
+          "vocabularyHints": [
+            "muchas gracias — thank you very much",
+            "un cafe con leche, por favor — a white coffee, please",
+            "caliente — hot",
+            "llego enseguida — I will be right there"
+          ],
+          "validationCriteria": {
+            "minWords": 3,
+            "targetKeywords": [
+              "gracias",
+              "cafe",
+              "leche",
+              "caliente",
+              "favor",
+              "llego"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "es-a1-wx03-invitacion-cumple",
+      "cefrLevel": "A1",
+      "title": "Invitacion de cumpleanos",
+      "titleEn": "Birthday Invitation",
+      "situation": "Tu amigo Carlos te ha escrito para invitarte a su fiesta de cumpleanos este sabado.",
+      "situationEn": "Your friend Carlos has messaged you to invite you to his birthday party this Saturday.",
+      "roleplay": {
+        "interlocutorRole": "Carlos (Amigo)",
+        "interlocutorRoleEn": "Carlos (Friend)",
+        "learnerRole": "Tu",
+        "learnerRoleEn": "You"
+      },
+      "targetCompetency": "I can respond in writing to an invitation and ask basic logistical questions",
+      "targetSkills": [
+        "invitations",
+        "social_interaction",
+        "dates_and_events"
+      ],
+      "unitIds": [
+        "unit.a1.01",
+        "unit.a1.06"
+      ],
+      "turns": [
+        {
+          "turnIndex": 1,
+          "interlocutorPrompt": "Hola! Este sabado es mi cumpleanos y voy a celebrarlo en mi casa con unos amigos a las ocho de la tarde. Puedes venir?",
+          "interlocutorTranslation": "Hi! This Saturday is my birthday and I am going to celebrate at my place with some friends at 8:00 PM. Can you come?",
+          "learnerCue": "Felicita a Carlos y dile con entusiasmo que si puedes ir.",
+          "learnerCueEn": "Congratulate Carlos and tell him enthusiastically that you can come.",
+          "vocabularyHints": [
+            "felicidades Carlos — happy birthday Carlos",
+            "feliz cumpleanos — happy birthday",
+            "muchas gracias por la invitacion — thank you very much for the invitation",
+            "si, claro que voy — yes, of course I am coming",
+            "alli estare — I will be there"
+          ],
+          "validationCriteria": {
+            "minWords": 3,
+            "targetKeywords": [
+              "felicidades",
+              "cumpleanos",
+              "gracias",
+              "si",
+              "puedo",
+              "voy",
+              "claro"
+            ]
+          }
+        },
+        {
+          "turnIndex": 2,
+          "interlocutorPrompt": "Que alegria que puedas venir! Preparare picoteo y algo de musica en la terraza.",
+          "interlocutorTranslation": "So happy you can make it! I will prepare snacks and some music on the terrace.",
+          "learnerCue": "Preguntale que puedes llevar tu para la fiesta (bebida, comida o postre).",
+          "learnerCueEn": "Ask him what you can bring for the party (drinks, food, or dessert).",
+          "vocabularyHints": [
+            "que puedo llevar? — what can I bring?",
+            "llevo algo de beber? — shall I bring something to drink?",
+            "un postre o tarta — dessert or cake",
+            "dime que hace falta — tell me what is needed"
+          ],
+          "validationCriteria": {
+            "minWords": 3,
+            "targetKeywords": [
+              "puedo",
+              "llevar",
+              "llevo",
+              "comida",
+              "bebida",
+              "postre",
+              "que"
+            ]
+          }
+        },
+        {
+          "turnIndex": 3,
+          "interlocutorPrompt": "Si puedes traer unas botellas de refresco o zumo, seria estupendo! Recuerdas la direccion de mi casa?",
+          "interlocutorTranslation": "If you can bring a few bottles of soft drinks or juice, that would be great! Do you remember my home address?",
+          "learnerCue": "Di que compraras los refrescos y pidele que te recuerde la calle o el numero del portal.",
+          "learnerCueEn": "Say you will buy the soft drinks and ask him to remind you of the street or door number.",
+          "vocabularyHints": [
+            "perfecto, yo llevo los refrescos — perfect, I will bring the drinks",
+            "cual es la direccion? — what is the address?",
+            "me recuerdas la calle? — can you remind me of the street?",
+            "gracias y hasta el sabado — thanks and see you Saturday"
+          ],
+          "validationCriteria": {
+            "minWords": 3,
+            "targetKeywords": [
+              "refrescos",
+              "compro",
+              "llevo",
+              "direccion",
+              "calle",
+              "numero",
+              "sabado",
+              "gracias"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "es-a1-wx04-apuntes-clase",
+      "cefrLevel": "A1",
+      "title": "Los apuntes de clase",
+      "titleEn": "Class Notes",
+      "situation": "Ayer no pudiste ir a la clase de espanol porque estabas enfermo y le escribes a tu companera Sara.",
+      "situationEn": "Yesterday you could not attend Spanish class because you were sick, and you message your classmate Sara.",
+      "roleplay": {
+        "interlocutorRole": "Sara (Companera de clase)",
+        "interlocutorRoleEn": "Sara (Classmate)",
+        "learnerRole": "Tu",
+        "learnerRoleEn": "You"
+      },
+      "targetCompetency": "I can write short messages requesting information and assistance from peers",
+      "targetSkills": [
+        "asking_for_help",
+        "education",
+        "polite_requests"
+      ],
+      "unitIds": [
+        "unit.a1.01",
+        "unit.a1.04"
+      ],
+      "turns": [
+        {
+          "turnIndex": 1,
+          "interlocutorPrompt": "Hola! Te eche de menos en la clase de espanol ayer por la tarde. Esta todo bien?",
+          "interlocutorTranslation": "Hi! I missed you in Spanish class yesterday afternoon. Is everything okay?",
+          "learnerCue": "Explica que estabas resfriado en cama pero hoy ya te sientes un poco mejor.",
+          "learnerCueEn": "Explain that you were in bed with a cold, but today you are feeling a bit better.",
+          "vocabularyHints": [
+            "hola Sara — hello Sara",
+            "estaba enfermo / resfriado — I was sick / had a cold",
+            "en cama — in bed",
+            "hoy estoy mejor — today I am better",
+            "gracias por preguntar — thanks for asking"
+          ],
+          "validationCriteria": {
+            "minWords": 3,
+            "targetKeywords": [
+              "hola",
+              "enfermo",
+              "resfriado",
+              "cama",
+              "hoy",
+              "mejor",
+              "gracias"
+            ]
+          }
+        },
+        {
+          "turnIndex": 2,
+          "interlocutorPrompt": "Vaya, cuidate mucho! Menos mal que ya estas mejor. Vimos el pretérito y leimos un texto corto.",
+          "interlocutorTranslation": "Oh no, take good care! Good thing you are better. We covered the preterite and read a short text.",
+          "learnerCue": "Preguntale si puede enviarte una foto de los apuntes y si hay tarea para manana.",
+          "learnerCueEn": "Ask her if she can send you a photo of the notes and if there is homework for tomorrow.",
+          "vocabularyHints": [
+            "puedes enviarme una foto? — can you send me a photo?",
+            "los apuntes de clase — the class notes",
+            "hay deberes / tarea? — is there homework?",
+            "para manana — for tomorrow"
+          ],
+          "validationCriteria": {
+            "minWords": 3,
+            "targetKeywords": [
+              "puedes",
+              "foto",
+              "apuntes",
+              "tarea",
+              "deberes",
+              "manana",
+              "por favor"
+            ]
+          }
+        },
+        {
+          "turnIndex": 3,
+          "interlocutorPrompt": "Claro, ahora mismo te mando las fotos por aqui. De tarea solo hay los ejercicios tres y cuatro de la pagina veinte.",
+          "interlocutorTranslation": "Sure, I am sending the photos right now here. For homework there are only exercises 3 and 4 on page 20.",
+          "learnerCue": "Agradece mucho su ayuda y dile que nos vemos manana en la escuela.",
+          "learnerCueEn": "Thank her warmly for her help and say see you tomorrow at school.",
+          "vocabularyHints": [
+            "muchisimas gracias Sara — thank you very much Sara",
+            "eres muy amable — you are very kind",
+            "nos vemos manana en clase — see you tomorrow in class",
+            "un saludo — best regards / bye"
+          ],
+          "validationCriteria": {
+            "minWords": 3,
+            "targetKeywords": [
+              "gracias",
+              "muchas",
+              "amable",
+              "manana",
+              "clase",
+              "escuela",
+              "vemos"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "es-a2-wx01-caldera-casero",
+      "cefrLevel": "A2",
+      "title": "Averia en la caldera",
+      "titleEn": "Apartment Boiler Breakdown",
+      "situation": "El agua caliente no funciona en tu piso de alquiler y le escribes un mensaje respetuoso a tu casero, el Sr. Navarro.",
+      "situationEn": "The hot water is not working in your rented apartment, and you write a polite message to your landlord, Sr. Navarro.",
+      "roleplay": {
+        "interlocutorRole": "Sr. Navarro (Casero)",
+        "interlocutorRoleEn": "Sr. Navarro (Landlord)",
+        "learnerRole": "Tu (Inquilino)",
+        "learnerRoleEn": "You (Tenant)"
+      },
+      "targetCompetency": "I can write messages describing everyday problems and asking for repairs or assistance",
+      "targetSkills": [
+        "housing",
+        "explaining_problems",
+        "formal_register"
+      ],
+      "unitIds": [
+        "unit.a2.04",
+        "unit.a2.05"
+      ],
+      "turns": [
+        {
+          "turnIndex": 1,
+          "interlocutorPrompt": "Estimado inquilino: He recibido su aviso. Podria indicarme que ocurre exactamente con la caldera?",
+          "interlocutorTranslation": "Dear tenant: I received your notification. Could you indicate what exactly is happening with the boiler?",
+          "learnerCue": "Saluda educadamente y explica que desde ayer por la tarde no sale agua caliente y la calefaccion no enciende.",
+          "learnerCueEn": "Greet politely and explain that since yesterday afternoon no hot water is coming out and the heating does not turn on.",
+          "vocabularyHints": [
+            "buenos dias Sr. Navarro — good morning Sr. Navarro",
+            "le escribo porque... — I am writing because...",
+            "desde ayer por la tarde — since yesterday afternoon",
+            "no hay agua caliente — there is no hot water",
+            "la calefaccion no enciende — the heating does not turn on"
+          ],
+          "validationCriteria": {
+            "minWords": 4,
+            "targetKeywords": [
+              "buenos",
+              "dias",
+              "tarde",
+              "ayer",
+              "agua",
+              "caliente",
+              "calefaccion",
+              "caldera",
+              "enciende",
+              "funciona"
+            ]
+          }
+        },
+        {
+          "turnIndex": 2,
+          "interlocutorPrompt": "Entiendo el inconveniente. Se ha fijado si la caldera muestra alguna luz roja o algun codigo de error en la pantalla?",
+          "interlocutorTranslation": "I understand the inconvenience. Have you noticed if the boiler shows any red light or an error code on the screen?",
+          "learnerCue": "Responde que hay una luz roja parpadeando con el codigo E04 en la pequena pantalla.",
+          "learnerCueEn": "Answer that there is a flashing red light with the code E04 on the small screen.",
+          "vocabularyHints": [
+            "si, hay una luz roja — yes, there is a red light",
+            "la luz esta parpadeando — the light is flashing",
+            "muestra el codigo E04 — it shows code E04",
+            "en la pantalla — on the screen"
+          ],
+          "validationCriteria": {
+            "minWords": 3,
+            "targetKeywords": [
+              "luz",
+              "roja",
+              "pantalla",
+              "codigo",
+              "parpadeando",
+              "muestra",
+              "si"
+            ]
+          }
+        },
+        {
+          "turnIndex": 3,
+          "interlocutorPrompt": "De acuerdo, llamare al tecnico de mantenimiento para que pase hoy entre las cuatro y las seis. Estara usted en casa?",
+          "interlocutorTranslation": "Understood, I will call the maintenance technician to stop by today between 4:00 and 6:00 PM. Will you be at home?",
+          "learnerCue": "Confirma que si estaras en casa a esa hora para abrirle la puerta y agradece su rapida atencion.",
+          "learnerCueEn": "Confirm that you will be home at that time to open the door and thank him for his prompt attention.",
+          "vocabularyHints": [
+            "si, estare en casa — yes, I will be home",
+            "puedo abrir la puerta al tecnico — I can open the door for the technician",
+            "muchas gracias por su ayuda — thank you very much for your help",
+            "un cordial saludo — kind regards"
+          ],
+          "validationCriteria": {
+            "minWords": 4,
+            "targetKeywords": [
+              "si",
+              "estare",
+              "casa",
+              "hora",
+              "tecnico",
+              "puerta",
+              "gracias",
+              "saludo",
+              "atencion"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "es-a2-wx02-airbnb-llegada",
+      "cefrLevel": "A2",
+      "title": "Llegada al apartamento Airbnb",
+      "titleEn": "Airbnb Check-in Update",
+      "situation": "Has alquilado un apartamento en Sevilla para el fin de semana, pero tu vuelo ha salido con dos horas de retraso y escribes a la anfitriona.",
+      "situationEn": "You rented an apartment in Seville for the weekend, but your flight left with a two-hour delay and you text the host.",
+      "roleplay": {
+        "interlocutorRole": "Elena (Anfitriona de Airbnb)",
+        "interlocutorRoleEn": "Elena (Airbnb Host)",
+        "learnerRole": "Tu (Huesped)",
+        "learnerRoleEn": "You (Guest)"
+      },
+      "targetCompetency": "I can communicate travel delays and coordinate check-in procedures in writing",
+      "targetSkills": [
+        "travel",
+        "time_and_dates",
+        "arrangements"
+      ],
+      "unitIds": [
+        "unit.a2.01",
+        "unit.a2.02"
+      ],
+      "turns": [
+        {
+          "turnIndex": 1,
+          "interlocutorPrompt": "Hola! Te escribo para confirmar si sigues llegando a las siete de la tarde para entregarte las llaves del piso.",
+          "interlocutorTranslation": "Hi! I am writing to check if you are still arriving at 7:00 PM to hand over the apartment keys.",
+          "learnerCue": "Explica que tu vuelo ha tenido un retraso de dos horas y que llegaras sobre las nueve y media.",
+          "learnerCueEn": "Explain that your flight had a two-hour delay and that you will arrive around 9:30.",
+          "vocabularyHints": [
+            "hola Elena, lamentablemente... — hi Elena, unfortunately...",
+            "mi vuelo ha tenido un retraso — my flight had a delay",
+            "dos horas de retraso — two hours delay",
+            "llegare sobre las nueve y media — I will arrive around nine thirty",
+            "lo siento por la molestia — sorry for the inconvenience"
+          ],
+          "validationCriteria": {
+            "minWords": 4,
+            "targetKeywords": [
+              "hola",
+              "vuelo",
+              "retraso",
+              "horas",
+              "llegare",
+              "nueve",
+              "media",
+              "siento",
+              "dos"
+            ]
+          }
+        },
+        {
+          "turnIndex": 2,
+          "interlocutorPrompt": "Vaya, que pena lo del vuelo! A las nueve y media yo tengo una cena, pero puedo dejar las llaves en la caja de seguridad del portal. Te parece bien?",
+          "interlocutorTranslation": "Oh, what a shame about the flight! At 9:30 I have a dinner, but I can leave the keys in the security lockbox by the front door. Does that sound good to you?",
+          "learnerCue": "Di que te parece perfecto y preguntale cual es el codigo de la caja de llaves.",
+          "learnerCueEn": "Say that sounds perfect and ask her what the code for the lockbox is.",
+          "vocabularyHints": [
+            "me parece una solucion perfecta — that seems like a perfect solution",
+            "muchas gracias — thank you very much",
+            "cual es el codigo de la caja? — what is the lockbox code?",
+            "como funciona la caja? — how does the lockbox work?"
+          ],
+          "validationCriteria": {
+            "minWords": 3,
+            "targetKeywords": [
+              "parece",
+              "perfecto",
+              "codigo",
+              "caja",
+              "llaves",
+              "gracias",
+              "bien"
+            ]
+          }
+        },
+        {
+          "turnIndex": 3,
+          "interlocutorPrompt": "El codigo es 4821. Despues de abrirla, recuerde girar la rueda para bloquearla de nuevo. Buen viaje y nos escribimos si necesita cualquier cosa!",
+          "interlocutorTranslation": "The code is 4821. After opening it, remember to spin the wheel to lock it again. Safe travels and let's message if you need anything!",
+          "learnerCue": "Confirma el codigo recibido, agradece su amabilidad y dile que le avisaras cuando entres al piso.",
+          "learnerCueEn": "Confirm the code received, thank her for her kindness, and say you will let her know once you are inside the flat.",
+          "vocabularyHints": [
+            "codigo anotado, 4821 — code noted, 4821",
+            "muchisimas gracias por su amabilidad — thank you very much for your kindness",
+            "le avisare en cuanto llegue — I will let you know as soon as I arrive",
+            "hasta la noche — see you tonight"
+          ],
+          "validationCriteria": {
+            "minWords": 4,
+            "targetKeywords": [
+              "codigo",
+              "gracias",
+              "amabilidad",
+              "avisare",
+              "llegue",
+              "piso",
+              "noche"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "es-a2-wx03-aviso-trabajo",
+      "cefrLevel": "A2",
+      "title": "Aviso de ausencia en el trabajo",
+      "titleEn": "Work Absence Notification",
+      "situation": "Te has levantado con fiebre y dolor de garganta y debes escribirle un mensaje a tu companera de equipo Marta para avisar.",
+      "situationEn": "You woke up with a fever and sore throat and need to write a message to your teammate Marta to notify her.",
+      "roleplay": {
+        "interlocutorRole": "Marta (Companera de equipo)",
+        "interlocutorRoleEn": "Marta (Teammate)",
+        "learnerRole": "Tu",
+        "learnerRoleEn": "You"
+      },
+      "targetCompetency": "I can write short workplace messages explaining unexpected absences and handovers",
+      "targetSkills": [
+        "workplace",
+        "health",
+        "scheduling"
+      ],
+      "unitIds": [
+        "unit.a2.05",
+        "unit.a2.07"
+      ],
+      "turns": [
+        {
+          "turnIndex": 1,
+          "interlocutorPrompt": "Buenos dias! Recuerda que a las diez tenemos la reunion con el cliente para revisar el informe mensual.",
+          "interlocutorTranslation": "Good morning! Remember that at 10:00 we have the client meeting to review the monthly report.",
+          "learnerCue": "Explica que te has despertado con bastante fiebre y que hoy no vas a poder ir a trabajar.",
+          "learnerCueEn": "Explain that you woke up with quite a fever and won't be able to come into work today.",
+          "vocabularyHints": [
+            "buenos dias Marta — good morning Marta",
+            "lo siento mucho pero... — I am very sorry but...",
+            "me he levantado con fiebre — I woke up with a fever",
+            "dolor de garganta — sore throat",
+            "hoy no puedo ir a la oficina — today I cannot go to the office"
+          ],
+          "validationCriteria": {
+            "minWords": 4,
+            "targetKeywords": [
+              "buenos",
+              "dias",
+              "siento",
+              "fiebre",
+              "hoy",
+              "trabajar",
+              "oficina",
+              "puedo",
+              "enfermo"
+            ]
+          }
+        },
+        {
+          "turnIndex": 2,
+          "interlocutorPrompt": "Vaya, que mala suerte! Lo primero es recuperarte. Tienes el informe guardado en la carpeta compartida para que yo pueda presentarlo?",
+          "interlocutorTranslation": "Oh no, what bad luck! First priority is recovering. Do you have the report saved in the shared folder so I can present it?",
+          "learnerCue": "Di que si, que el informe completo esta subido en la carpeta compartida desde ayer.",
+          "learnerCueEn": "Say yes, that the full report has been uploaded to the shared folder since yesterday.",
+          "vocabularyHints": [
+            "si, esta todo subido — yes, everything is uploaded",
+            "en la carpeta compartida — in the shared folder",
+            "lo termine ayer por la tarde — I finished it yesterday afternoon",
+            "cualquier duda me escribes — message me if you have any questions"
+          ],
+          "validationCriteria": {
+            "minWords": 3,
+            "targetKeywords": [
+              "si",
+              "informe",
+              "carpeta",
+              "compartida",
+              "ayer",
+              "guardado",
+              "subido"
+            ]
+          }
+        },
+        {
+          "turnIndex": 3,
+          "interlocutorPrompt": "Ya lo he encontrado, esta impecable. Descansa mucho hoy y avisanos manana si vas a necesitar otro dia de baja.",
+          "interlocutorTranslation": "I found it already, it is spotless. Rest a lot today and let us know tomorrow if you will need another sick day.",
+          "learnerCue": "Agradece su comprension y apoyo y dile que iras al medico esta manana.",
+          "learnerCueEn": "Thank her for her understanding and support and say that you will go to the doctor this morning.",
+          "vocabularyHints": [
+            "muchas gracias por tu comprension — thank you very much for your understanding",
+            "voy a ir al medico ahora — I am going to the doctor now",
+            "te aviso con lo que me diga — I will let you know what they say",
+            "buena suerte en la reunion — good luck in the meeting"
+          ],
+          "validationCriteria": {
+            "minWords": 4,
+            "targetKeywords": [
+              "gracias",
+              "comprension",
+              "apoyo",
+              "medico",
+              "manana",
+              "aviso",
+              "descansar"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "es-a2-wx04-compra-segunda-mano",
+      "cefrLevel": "A2",
+      "title": "Compra de segunda mano",
+      "titleEn": "Marketplace Purchase",
+      "situation": "Has visto una bicicleta de segunda mano en una aplicacion y le escribes al vendedor, Javier, para preguntar detalles.",
+      "situationEn": "You saw a second-hand bicycle on an app and you message the seller, Javier, to ask for details.",
+      "roleplay": {
+        "interlocutorRole": "Javier (Vendedor)",
+        "interlocutorRoleEn": "Javier (Seller)",
+        "learnerRole": "Tu (Comprador)",
+        "learnerRoleEn": "You (Buyer)"
+      },
+      "targetCompetency": "I can ask questions about item conditions, prices, and pickup times in informal marketplace chats",
+      "targetSkills": [
+        "transactions",
+        "questions",
+        "descriptions"
+      ],
+      "unitIds": [
+        "unit.a2.03",
+        "unit.a2.06"
+      ],
+      "turns": [
+        {
+          "turnIndex": 1,
+          "interlocutorPrompt": "Hola! Si, la bicicleta de montana sigue disponible. Que te gustaria saber?",
+          "interlocutorTranslation": "Hi! Yes, the mountain bike is still available. What would you like to know?",
+          "learnerCue": "Preguntale si los frenos y las ruedas estan en buen estado y cuantos anos tiene la bicicleta.",
+          "learnerCueEn": "Ask him if the brakes and wheels are in good condition and how old the bicycle is.",
+          "vocabularyHints": [
+            "hola Javier — hello Javier",
+            "en que estado estan los frenos? — what condition are the brakes in?",
+            "las ruedas estan bien? — are the wheels okay?",
+            "cuantos anos de uso tiene? — how many years of use does it have?",
+            "muchas gracias — thank you"
+          ],
+          "validationCriteria": {
+            "minWords": 4,
+            "targetKeywords": [
+              "frenos",
+              "ruedas",
+              "estado",
+              "anos",
+              "bicicleta",
+              "cuantos",
+              "buen",
+              "hola"
+            ]
+          }
+        },
+        {
+          "turnIndex": 2,
+          "interlocutorPrompt": "Tiene apenas dos anos y las ruedas son casi nuevas. Los frenos los revise en el taller el mes pasado. Pido ochenta euros.",
+          "interlocutorTranslation": "It is barely two years old and the wheels are almost new. I had the brakes serviced last month. I am asking eighty euros.",
+          "learnerCue": "Hazle una oferta: preguntale si aceptaria setenta euros si pasas a recogerla hoy.",
+          "learnerCueEn": "Make an offer: ask if he would accept seventy euros if you come pick it up today.",
+          "vocabularyHints": [
+            "aceptarias setenta euros? — would you accept seventy euros?",
+            "si paso a recogerla hoy mismo — if I come pick it up today",
+            "pago en efectivo o por Bizum — I can pay cash or via Bizum",
+            "que te parece? — what do you think?"
+          ],
+          "validationCriteria": {
+            "minWords": 3,
+            "targetKeywords": [
+              "setenta",
+              "euros",
+              "aceptas",
+              "aceptarias",
+              "recoger",
+              "hoy",
+              "parece"
+            ]
+          }
+        },
+        {
+          "turnIndex": 3,
+          "interlocutorPrompt": "De acuerdo, si vienes hoy la dejamos en setenta euros. Vivo cerca de la estacion de metro Tribunal. A que hora podrias pasar?",
+          "interlocutorTranslation": "Agreed, if you come today we can do seventy euros. I live near Tribunal metro station. What time could you drop by?",
+          "learnerCue": "Di que puedes pasar sobre las seis de la tarde y pidele su direccion exacta o portal.",
+          "learnerCueEn": "Say you can drop by around 6:00 PM and ask for his exact address or door number.",
+          "vocabularyHints": [
+            "puedo pasar a las seis — I can drop by at six",
+            "sobre las seis de la tarde — around six in the evening",
+            "cual es la direccion exacta? — what is the exact address?",
+            "el numero de calle o portal — the street number or door",
+            "gracias y hasta luego — thanks and see you later"
+          ],
+          "validationCriteria": {
+            "minWords": 4,
+            "targetKeywords": [
+              "seis",
+              "tarde",
+              "puedo",
+              "pasar",
+              "direccion",
+              "calle",
+              "portal",
+              "gracias"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "es-b1-wx01-viaje-grupo",
+      "cefrLevel": "B1",
+      "title": "Organizacion de una escapada rural",
+      "titleEn": "Planning a Rural Weekend Trip",
+      "situation": "Estas en un grupo de chat con tus amigos organizando una escapada de fin de semana a una casa rural en la sierra.",
+      "situationEn": "You are in a chat group with friends planning a weekend getaway to a country cottage in the mountains.",
+      "roleplay": {
+        "interlocutorRole": "Andres (Amigo organizador)",
+        "interlocutorRoleEn": "Andres (Trip Organizer)",
+        "learnerRole": "Tu",
+        "learnerRoleEn": "You"
+      },
+      "targetCompetency": "I can contribute actively to group planning discussions, expressing preferences and justifying opinions in writing",
+      "targetSkills": [
+        "group_coordination",
+        "preferences",
+        "budgeting",
+        "travel"
+      ],
+      "unitIds": [
+        "unit.b1.core.03",
+        "unit.b1.core.08"
+      ],
+      "turns": [
+        {
+          "turnIndex": 1,
+          "interlocutorPrompt": "Buenas a todos! He mirado dos casas rurales: una grande con piscina que sale a 60 euros por persona, y otra mas modesta cerca del pueblo por 40 euros. Cual preferis?",
+          "interlocutorTranslation": "Hi all! I looked at two cottages: a big one with a pool at 60 euros each, and a more modest one close to the village for 40. Which do you prefer?",
+          "learnerCue": "Expresa tu preferencia por la opcion mas economica cerca del pueblo y justifica diciendo que asi podremos salir a cenar y hacer compras a pie.",
+          "learnerCueEn": "Express preference for the more economical village option, justifying that this allows going out for dinner and shopping on foot.",
+          "vocabularyHints": [
+            "yo prefiero la segunda opcion — I prefer the second option",
+            "sale mas economica y conveniente — it is more economical and convenient",
+            "podemos ir caminando al pueblo — we can walk to town",
+            "ahorramos dinero para la comida — we save money for food"
+          ],
+          "validationCriteria": {
+            "minWords": 5,
+            "targetKeywords": [
+              "prefiero",
+              "opcion",
+              "pueblo",
+              "economica",
+              "cenar",
+              "compras",
+              "caminando",
+              "pie",
+              "cerca"
+            ]
+          }
+        },
+        {
+          "turnIndex": 2,
+          "interlocutorPrompt": "Muy buen argumento. Ademas para la fecha que vamos no hara tanto calor para piscina. En cuanto al transporte, quien dispone de coche para compartir plazas?",
+          "interlocutorTranslation": "Great point. Plus for that date it won't be warm enough for a pool anyway. Regarding transport, who has a car to share seats?",
+          "learnerCue": "Indica si puedes llevar tu coche (o si necesitas que te lleven) y ofrece compartir los gastos de gasolina.",
+          "learnerCueEn": "Indicate whether you can drive your car (or need a ride) and offer to split fuel expenses.",
+          "vocabularyHints": [
+            "yo puedo llevar mi coche — I can drive my car",
+            "tengo tres plazas libres — I have three spare seats",
+            "compartimos los gastos de gasolina — let's share gas costs",
+            "no tengo coche, pero pago mi parte — I don't have a car, but will pay my share"
+          ],
+          "validationCriteria": {
+            "minWords": 4,
+            "targetKeywords": [
+              "coche",
+              "gasolina",
+              "gastos",
+              "plazas",
+              "puedo",
+              "compartir",
+              "viaje"
+            ]
+          }
+        },
+        {
+          "turnIndex": 3,
+          "interlocutorPrompt": "Perfecto, con eso ya tenemos la logistica de coches resuelta. Reservo la casa del pueblo hoy mismo. Os parece si cada uno me pasa su fianza por Bizum esta tarde?",
+          "interlocutorTranslation": "Perfect, that resolves car logistics. I will book the village house today. Sounds good if everyone sends their deposit via Bizum this afternoon?",
+          "learnerCue": "Confirma que le enviaras tu parte hoy mismo y agradécele por encargarse de toda la gestion.",
+          "learnerCueEn": "Confirm you will send your share today and thank him for taking care of all the arrangements.",
+          "vocabularyHints": [
+            "cuenta con ello — count on it",
+            "te hago el Bizum esta misma tarde — I will send the Bizum this afternoon",
+            "muchisimas gracias por organizarlo todo — thank you very much for organizing everything",
+            "va a ser un viaje genial — it is going to be a great trip"
+          ],
+          "validationCriteria": {
+            "minWords": 5,
+            "targetKeywords": [
+              "bizum",
+              "tarde",
+              "envio",
+              "parte",
+              "fianza",
+              "gracias",
+              "organizar",
+              "gestion"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "es-b1-wx02-atencion-cliente",
+      "cefrLevel": "B1",
+      "title": "Reclamacion de entrega a domicilio",
+      "titleEn": "Customer Service Delivery Claim",
+      "situation": "Hiciste un pedido por internet con envio urgente de 24 horas hace cuatro dias y todavia no lo has recibido. Escribes al chat de atencion al cliente.",
+      "situationEn": "You placed an online order with 24-hour express shipping four days ago and still have not received it. You write to customer service chat.",
+      "roleplay": {
+        "interlocutorRole": "Agente de soporte (Tienda Online)",
+        "interlocutorRoleEn": "Support Agent (Online Store)",
+        "learnerRole": "Tu (Cliente)",
+        "learnerRoleEn": "You (Customer)"
+      },
+      "targetCompetency": "I can write formal and assertive complaints requesting explanations and solutions",
+      "targetSkills": [
+        "complaints",
+        "customer_service",
+        "formal_writing"
+      ],
+      "unitIds": [
+        "unit.b1.core.06",
+        "unit.b1.core.04"
+      ],
+      "turns": [
+        {
+          "turnIndex": 1,
+          "interlocutorPrompt": "Buenas tardes, bienvenido al servicio de atencion al cliente. Mi nombre es Sergio. En que puedo ayudarle hoy?",
+          "interlocutorTranslation": "Good afternoon, welcome to customer support. My name is Sergio. How can I help you today?",
+          "learnerCue": "Expone tu queja educadamente pero con firmeza: pagaste envio urgente de 24 horas hace cuatro dias y el paquete aun no ha llegado.",
+          "learnerCueEn": "State your complaint politely but firmly: you paid for 24-hour express delivery four days ago and the parcel has not arrived.",
+          "vocabularyHints": [
+            "buenas tardes Sergio — good afternoon Sergio",
+            "le escribo para poner una reclamacion — I am writing to submit a complaint",
+            "pague por envio urgente de 24 horas — I paid for 24-hour express shipping",
+            "hace ya cuatro dias — four days ago already",
+            "todavia no he recibido mi pedido — I still have not received my order"
+          ],
+          "validationCriteria": {
+            "minWords": 5,
+            "targetKeywords": [
+              "pedido",
+              "urgente",
+              "dias",
+              "paquete",
+              "recibido",
+              "cuatro",
+              "reclamacion",
+              "envio",
+              "horas"
+            ]
+          }
+        },
+        {
+          "turnIndex": 2,
+          "interlocutorPrompt": "Lamento mucho la demora. Podria facilitarme su numero de pedido y confirmarme la direccion de entrega para consultar el estado en el sistema?",
+          "interlocutorTranslation": "I am very sorry for the delay. Could you provide your order number and confirm the delivery address to check the status in the system?",
+          "learnerCue": "Facilita un numero de pedido ficticio (ej. ES-9042) y una direccion (ej. Calle Mayor 14, 2o B) y pide una solucion inmediata.",
+          "learnerCueEn": "Provide a mock order number (e.g. ES-9042) and an address (e.g. Calle Mayor 14, 2o B) and ask for an immediate solution.",
+          "vocabularyHints": [
+            "el numero de pedido es ES-9042 — the order number is ES-9042",
+            "la direccion es Calle Mayor 14 — the address is Calle Mayor 14",
+            "necesito una solucion rapida — I need a quick solution",
+            "es un regalo urgente — it is an urgent gift"
+          ],
+          "validationCriteria": {
+            "minWords": 4,
+            "targetKeywords": [
+              "pedido",
+              "numero",
+              "calle",
+              "direccion",
+              "solucion",
+              "urgente",
+              "gracias"
+            ]
+          }
+        },
+        {
+          "turnIndex": 3,
+          "interlocutorPrompt": "Compruebo que hubo una incidencia con la agencia de transporte. El paquete se entregara manana antes de las 14:00 y le reembolsaremos los gastos de envio urgente. Esta de acuerdo con esta solucion?",
+          "interlocutorTranslation": "I see that there was an incident with the courier company. The parcel will be delivered tomorrow before 14:00 and we will refund your express shipping fee. Do you agree with this solution?",
+          "learnerCue": "Acepta la solucion propuesta, confirma el reembolso de los gastos de envio y pide que te manden la confirmacion por correo electronico.",
+          "learnerCueEn": "Accept the proposed solution, confirm the shipping refund, and request that the confirmation be sent to your email.",
+          "vocabularyHints": [
+            "estoy de acuerdo con la solucion — I agree with the solution",
+            "le agradezco el reembolso — I appreciate the refund",
+            "por favor envienme la confirmacion por email — please send me confirmation by email",
+            "muchas gracias por su atencion — thank you very much for your assistance"
+          ],
+          "validationCriteria": {
+            "minWords": 5,
+            "targetKeywords": [
+              "acuerdo",
+              "reembolso",
+              "solucion",
+              "correo",
+              "email",
+              "confirmacion",
+              "gracias",
+              "manana"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "es-b1-wx03-modificar-reserva",
+      "cefrLevel": "B1",
+      "title": "Modificacion de reserva de restaurante",
+      "titleEn": "Restaurant Reservation Adjustment",
+      "situation": "Tienes una reserva para seis personas este sabado en un restaurante popular, pero dos amigos mas se unen y uno es celiaco.",
+      "situationEn": "You have a reservation for six people this Saturday at a popular restaurant, but two more friends joined and one has celiac disease.",
+      "roleplay": {
+        "interlocutorRole": "Restaurante El Olivo (Encargado)",
+        "interlocutorRoleEn": "El Olivo Restaurant (Manager)",
+        "learnerRole": "Tu",
+        "learnerRoleEn": "You"
+      },
+      "targetCompetency": "I can negotiate special accommodations, dietary requirements, and group bookings in writing",
+      "targetSkills": [
+        "hospitality",
+        "special_requests",
+        "polite_negotiation"
+      ],
+      "unitIds": [
+        "unit.b1.core.04",
+        "unit.b1.core.05"
+      ],
+      "turns": [
+        {
+          "turnIndex": 1,
+          "interlocutorPrompt": "Hola! Le atendemos desde el Restaurante El Olivo. Nos escribia con relacion a su reserva para este sabado a las nueve?",
+          "interlocutorTranslation": "Hello! You have reached Restaurant El Olivo. Were you messaging us regarding your booking for this Saturday at 9:00?",
+          "learnerCue": "Confirma la reserva a tu nombre y pregunta si es posible ampliar la mesa de seis a ocho comensales.",
+          "learnerCueEn": "Confirm the reservation under your name and ask if it is possible to expand the table from six to eight diners.",
+          "vocabularyHints": [
+            "buenas tardes, si, la reserva esta a mi nombre — good afternoon, yes, the reservation is under my name",
+            "seria posible ampliar la mesa? — would it be possible to expand the table?",
+            "ahora seremos ocho personas en lugar de seis — now we will be eight people instead of six",
+            "a las nueve de la noche — at nine in the evening"
+          ],
+          "validationCriteria": {
+            "minWords": 5,
+            "targetKeywords": [
+              "reserva",
+              "mesa",
+              "ocho",
+              "seis",
+              "personas",
+              "posible",
+              "ampliar",
+              "sabado"
+            ]
+          }
+        },
+        {
+          "turnIndex": 2,
+          "interlocutorPrompt": "El comedor interior esta completo a esa hora, pero podriamos ofrecerles una mesa grande de ocho en la terraza acristalada y climatizada. Le vendria bien?",
+          "interlocutorTranslation": "The indoor dining room is fully booked at that time, but we could offer an eight-person table on our heated enclosed terrace. Would that suit you?",
+          "learnerCue": "Acepta la terraza y aclara que uno de los comensales es celiaco, preguntando si disponen de opciones sin gluten.",
+          "learnerCueEn": "Accept the terrace and explain that one of the diners is celiac, asking if they have gluten-free options.",
+          "vocabularyHints": [
+            "la terraza nos parece fantastica — the terrace sounds fantastic to us",
+            "uno de nuestros amigos es celiaco — one of our friends has celiac disease",
+            "disponen de carta sin gluten? — do you have a gluten-free menu?",
+            "es importante evitar la contaminacion cruzada — it is important to avoid cross-contamination"
+          ],
+          "validationCriteria": {
+            "minWords": 4,
+            "targetKeywords": [
+              "terraza",
+              "parece",
+              "bien",
+              "celiaco",
+              "gluten",
+              "opciones",
+              "carta",
+              "gracias"
+            ]
+          }
+        },
+        {
+          "turnIndex": 3,
+          "interlocutorPrompt": "Por supuesto, nuestra cocina esta certificada para celiacos y tenemos pan y cerveza sin gluten. Queda actualizada su reserva: 8 personas en terraza a las 21:00.",
+          "interlocutorTranslation": "Certainly, our kitchen is gluten-free certified and we have gluten-free bread and beer. Your booking is updated: 8 people on terrace at 21:00.",
+          "learnerCue": "Agradece la atencion y confirma que alli estaran puntuales el sabado.",
+          "learnerCueEn": "Thank them for the attention and confirm you will be there punctually on Saturday.",
+          "vocabularyHints": [
+            "muchisimas gracias por su excelente atencion — thank you very much for your excellent service",
+            "nos alegramos mucho — we are very glad",
+            "estaremos alli puntuales el sabado — we will be there punctually on Saturday",
+            "hasta pronto — see you soon"
+          ],
+          "validationCriteria": {
+            "minWords": 4,
+            "targetKeywords": [
+              "gracias",
+              "atencion",
+              "sabado",
+              "puntuales",
+              "excelente",
+              "pronto",
+              "alli"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "es-b1-wx04-nota-vecino",
+      "cefrLevel": "B1",
+      "title": "Mensaje entre vecinos por obras",
+      "titleEn": "Message Between Neighbors About Renovation",
+      "situation": "Vas a hacer unas pequenas obras de pintura y reparacion en tu bano la proxima semana y escribes al grupo de la comunidad de vecinos.",
+      "situationEn": "You are going to do some minor painting and repairs in your bathroom next week and message the building community chat.",
+      "roleplay": {
+        "interlocutorRole": "Marcos (Presidente de la comunidad)",
+        "interlocutorRoleEn": "Marcos (Building President)",
+        "learnerRole": "Tu (Vecino)",
+        "learnerRoleEn": "You (Neighbor)"
+      },
+      "targetCompetency": "I can write diplomatic messages to neighbors explaining home repairs and respecting community rules",
+      "targetSkills": [
+        "civic_communication",
+        "diplomacy",
+        "politeness"
+      ],
+      "unitIds": [
+        "unit.b1.core.04",
+        "unit.b1.core.05"
+      ],
+      "turns": [
+        {
+          "turnIndex": 1,
+          "interlocutorPrompt": "Hola a todos los vecinos. Recordamos que para cualquier obra ruidosa es obligatorio avisar con antelacion al presidente de la comunidad.",
+          "interlocutorTranslation": "Hello to all neighbors. A reminder that for any noisy repair work it is mandatory to notify the community president in advance.",
+          "learnerCue": "Saluda al presidente y explica que haras obras menores en el bano el proximo martes y miercoles solo en horario de diez a catorce horas.",
+          "learnerCueEn": "Greet the president and explain you will do minor bathroom repairs next Tuesday and Wednesday only between 10:00 and 14:00.",
+          "vocabularyHints": [
+            "estimado Marcos y vecinos — dear Marcos and neighbors",
+            "les escribo para avisar de unas pequenas obras — I am writing to advise of small repairs",
+            "en el bano de mi piso — in the bathroom of my flat",
+            "el proximo martes y miercoles — next Tuesday and Wednesday",
+            "unicamente en horario de diez a dos — only between ten and two"
+          ],
+          "validationCriteria": {
+            "minWords": 5,
+            "targetKeywords": [
+              "estimado",
+              "vecinos",
+              "obras",
+              "bano",
+              "martes",
+              "miercoles",
+              "horario",
+              "diez",
+              "catorce",
+              "horas",
+              "aviso"
+            ]
+          }
+        },
+        {
+          "turnIndex": 2,
+          "interlocutorPrompt": "Gracias por avisar con tiempo! Ese horario respeta perfectamente los estatutos de descanso del edificio. Habra mucho polvo o escombros en las zonas comunes?",
+          "interlocutorTranslation": "Thank you for notifying us in good time! That schedule fully respects the building rest statutes. Will there be much dust or debris in common areas?",
+          "learnerCue": "Aclara que los trabajadores protegeran el rellano con plasticos y limpiaran a fondo al terminar cada jornada.",
+          "learnerCueEn": "Clarify that the workers will protect the hallway with plastic sheeting and clean thoroughly at the end of each day.",
+          "vocabularyHints": [
+            "los operarios van a proteger el suelo — the workers will protect the floor",
+            "con plasticos en el rellano — with plastic sheets on the landing",
+            "limpiaremos a fondo al final del dia — we will clean thoroughly at the end of the day",
+            "no habra suciedad en las zonas comunes — there won't be dirt in common areas"
+          ],
+          "validationCriteria": {
+            "minWords": 4,
+            "targetKeywords": [
+              "plasticos",
+              "rellano",
+              "limpiar",
+              "comunes",
+              "trabajadores",
+              "dia",
+              "suelo",
+              "zonas"
+            ]
+          }
+        },
+        {
+          "turnIndex": 3,
+          "interlocutorPrompt": "Estupendo, muchas gracias por su consideracion y civismo con los demas vecinos. Queda registrado el aviso sin problemas.",
+          "interlocutorTranslation": "Wonderful, thank you very much for your consideration and civic spirit towards other neighbors. The notice is registered without issues.",
+          "learnerCue": "Agradece su colaboracion y ofrece tu contacto directo por si surge cualquier molestia imprevista.",
+          "learnerCueEn": "Thank him for his cooperation and offer your direct contact in case any unforeseen inconvenience arises.",
+          "vocabularyHints": [
+            "muchas gracias por su comprension — thank you very much for your understanding",
+            "quedo a su disposicion — I remain at your disposal",
+            "si surge cualquier problema pueden llamarme — if any problem arises you can call me",
+            "un cordial saludo — warm regards"
+          ],
+          "validationCriteria": {
+            "minWords": 4,
+            "targetKeywords": [
+              "gracias",
+              "comprension",
+              "disposicion",
+              "contacto",
+              "problema",
+              "saludo",
+              "atencion"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -9,6 +9,23 @@ needs re-reading before starting new work; it's reference only.
 
 ## Completed queue items
 
+67. ~~**Situational Written Exchanges (Interactive Texting & Correspondence Engine)**~~ — **Done 2026-09-22.**
+    Shipped multi-turn situational digital correspondence and text messaging as the 3rd studio mode in Writing Studio (`[ Composition Studio | Written Exchanges | Sentence Translation ]`) across Spanish and Hungarian:
+    - **Dignified Editorial Messaging UI**:
+      - Styled in Parlour's restrained, literary aesthetic (`styles/workshop.css`) with calm card borders, muted headers, and zero emojis.
+      - Typographic diacritics bar (`á, é, í, ó, ú, ñ, ¿, ¡` for Spanish; `á, é, í, ó, ö, ő, ú, ü, ű` for Hungarian) for rapid desktop accent insertion.
+      - Simulated partner typing delay note (*"Mateo is writing a reply…"*) during turn transitions.
+    - **Authentic Scenario Datasets**:
+      - Authored 12 authentic Spanish scenarios (`content/es-latam/writing-exchanges.json` and `content/es-es/writing-exchanges.json`) across A1, A2, and B1 covering everyday digital correspondence (shopping lists, meeting coordination, birthday RSVPs, boiler breakdown notices to landlords, Airbnb check-in updates, sick leave notices, marketplace purchases, group trip planning, customer service claims, restaurant reservation adjustments, and diplomatic neighbor notes).
+      - Authored 4 Hungarian scenarios (`content/hu/writing-exchanges.json`).
+      - All scenarios link directly to curriculum units in `curriculum/curriculum.json` and include CEFR can-do goals.
+    - **Formative Written Interaction Assessment**:
+      - Calibrated `GraderPrompt.buildGraderPrompt()` (`engine/grader/grader-prompt.js`) for `written_exchange` evaluating pragmatics, register (*tú* vs *usted*), communicative responsiveness, vocabulary range, and diacritics/orthography.
+      - Enhanced `LocalGrader.gradeConversation()` (`engine/grader/local-grader.js`) with `modality: 'written'` support for zero-latency turn-level validation and deterministic offline end-of-exchange debriefs.
+      - Ingests production evidence into `LearnerModel` (`modality: 'written'`), verifies target competencies on score $\ge 75$, and awards XP.
+    - **Automated Verification**:
+      - Created comprehensive test suite `tests/drills/test-writing-exchanges.js` verifying schema validity, curriculum unit ID mapping, zero emoji enforcement, grader prompt accuracy, and UI tab mounting. All tests pass with schema validator confirmation.
+
 66. ~~**`fill-blank` exercises have no hint mechanism**~~ — **Done 2026-09-22.**
     Implemented an on-demand, progressive two-tier hint system across both Lesson fill-blank steps (`engine/lessons.js`) and GrammarRunner fill-blank practice drills (`engine/drills/grammar-runner.js`), resolving issues #176, #180, and #183:
     - **Progressive Two-Tier Hints**:

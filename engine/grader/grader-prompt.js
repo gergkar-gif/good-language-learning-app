@@ -30,10 +30,125 @@
         const opts = options || {};
         const language = opts.language ? opts.language.toUpperCase() : 'THE TARGET LANGUAGE';
         const formattedSkills = formatSkills(targetSkills);
-        const isConversation = opts.taskType === 'interactive_conversation' || taskType === 'interactive_conversation';
-        const isOral = isConversation || opts.modality === 'oral' ||
+        const isWrittenExchange = opts.taskType === 'written_exchange' || taskType === 'written_exchange' ||
+            opts.taskType === 'texting_scenario' || taskType === 'texting_scenario' ||
+            (opts.modality === 'written' && (opts.taskType === 'interactive_conversation' || taskType === 'interactive_conversation'));
+        const isConversation = !isWrittenExchange && (opts.taskType === 'interactive_conversation' || taskType === 'interactive_conversation');
+        const isOral = !isWrittenExchange && (isConversation || opts.modality === 'oral' ||
             (opts.taskType && String(opts.taskType).toLowerCase().includes('oral')) ||
-            (taskType && String(taskType).toLowerCase().includes('oral'));
+            (taskType && String(taskType).toLowerCase().includes('oral')));
+
+        if (isWrittenExchange) {
+            return `
+Grade the following learner multi-turn written exchange (situational correspondence / text messaging) as a CEFR-aligned formative written interaction assessment in ${language}.
+
+CEFR level: ${cefrLevel}
+Task type: Interactive Written Exchange (Situational Messaging & Correspondence)
+Modality: Multi-turn written digital text correspondence
+
+SCENARIO & ROLEPLAY OBJECTIVES:
+${taskInstructions}
+
+TARGET SKILLS:
+${formattedSkills}
+
+CONVERSATION EXCHANGE TRANSCRIPT:
+${learnerProduction}
+
+IMPORTANT WRITTEN EXCHANGE SCORING PRINCIPLES:
+1. INTERACTIVE WRITTEN MODALITY: This is a series of short written messages exchanged in a situational context (e.g. messaging a landlord, flatmate, colleague, or friend). Evaluate it as authentic functional written communication.
+2. PRAGMATICS & REGISTER: Evaluate whether the register matches the situation (e.g. polite and respectful with formal forms for a landlord or customer service; casual and natural for a friend or flatmate).
+3. ORTHOGRAPHY & ACCENTS: Unlike speech recognition, written text requires orthographic attention. Evaluate key diacritics and accents (e.g. Spanish 'hablo' vs 'habló', inverted question/exclamation marks where appropriate, or Hungarian long/short vowels 'e' vs 'é', 'o' vs 'ö' vs 'ő'). However, do not harshly penalise informal lowercasing in casual chat contexts where communicative clarity is preserved.
+4. COMMUNICATIVE RESPONSIVENESS: The learner must directly respond to the questions, cues, and requirements posed by the interlocutor in each turn.
+5. Judge the production itself, not the label or presumed quality of the scenario.
+6. Do not manufacture errors. Only record errors that are actually supported by the learner's written messages.
+7. Do not treat simple vocabulary as an error merely because more advanced vocabulary exists.
+8. Distinguish language quality from task fulfilment. A linguistically capable writer can lose task-completion points if they fail part of the task, but task completion must not be used to arbitrarily suppress language scores.
+9. Complexity measures the range and control of written sentence structures, connectors, and expressions appropriate for CEFR ${cefrLevel}.
+10. Vocabulary measures lexical range, precision, and situational appropriateness in written correspondence.
+11. Grammar measures accuracy and control of forms actually written (verb endings, agreements, pronouns).
+12. Coherence measures idea progression, logical connection between turns, and message clarity.
+13. Naturalness measures whether the phrasing sounds authentic, conversational, and idiomatic for digital correspondence.
+14. Overall score is a formative estimate, not an official certification exam score.
+
+CALIBRATION:
+- 90-100: Exceptionally strong written interaction for the stated task/level, with natural phrasing, accurate forms, and only minor limitations.
+- 80-89: Strong performance, clearly meeting the level with good communicative control, appropriate register, and good lexical range.
+- 70-79: Competent written performance with noticeable but manageable limitations in forms or vocabulary.
+- 60-69: Weak/borderline performance with multiple meaningful communicative limitations or omissions.
+- Below 60: Substantially below expected performance for the task/level.
+
+DIMENSION SCORING:
+Score each dimension from 0.0 to 1.0 based on concrete evidence in the written exchange.
+Use the full range. Do not automatically cluster every dimension around 0.7-0.9.
+
+For overallScore (0-100), use this conceptual weighting:
+- Task completion: 30%
+- Pragmatics, naturalness & register: 25%
+- Vocabulary range & appropriateness: 20%
+- Grammar & orthography: 15%
+- Complexity: 10%
+
+CRITICAL SCALE RULE: overallScore is an INTEGER from 0 to 100 (a percentage-style grade, e.g. 45, 72, 91) — it is NOT on the same 0.0-1.0 scale as taskCompletion or the dimension scores. Never output overallScore as a decimal below 1.
+
+CRITICAL SHAPE RULE: every entry in demonstratedSkills and weakSkills MUST be an object of the exact form {"skillId": "...", "confidence": 0.0} — never a bare string. Do not output ["skill_name"]; always output [{"skillId": "skill_name", "confidence": 0.5}].
+
+CRITICAL JSON QUOTING RULE: Never use unescaped double quotes inside JSON string values. Always use single quotes ('word') or backticks for quoted words, phrases, grammatical terms, and corrections.
+
+ERRORS:
+Only include concrete, defensible written errors that impair intelligibility, break grammatical agreement, or violate situational register.
+Permissible categories: "grammar" | "vocabulary" | "register" | "spelling" | "syntax"
+For each error:
+- category: "grammar" | "vocabulary" | "register" | "spelling" | "syntax"
+- severity: "minor" | "moderate" | "major"
+- text: Short quoted fragment from the learner's message
+- explanation: Concise description of the written issue and how to express it naturally
+- skillId: Canonical skill ID from TARGET SKILLS when clearly applicable; otherwise null
+
+DEMONSTRATED SKILLS:
+Only include skills from TARGET SKILLS that the learner actually demonstrates.
+Give each a confidence score from 0.0 to 1.0.
+
+WEAK SKILLS:
+Only include skills from TARGET SKILLS for which the production provides meaningful evidence of weakness.
+Do not mark a skill weak simply because it was not used.
+
+FEEDBACK:
+Give 2-3 concrete strengths and 2-3 actionable priorities focused on conversational written correspondence.
+Keep each priority a concise, action-oriented phrase without trailing periods.
+
+Return ONLY valid JSON. No Markdown fences. No introductory or trailing text.
+
+Required JSON shape:
+{
+  "overallScore": 0,
+  "taskCompletion": 0.0,
+  "dimensionScores": {
+    "taskCompletion": 0.0,
+    "grammar": 0.0,
+    "vocabulary": 0.0,
+    "complexity": 0.0,
+    "coherence": 0.0,
+    "naturalness": 0.0
+  },
+  "demonstratedSkills": [{"skillId": "skill_name", "confidence": 0.8}],
+  "weakSkills": [{"skillId": "skill_name", "confidence": 0.5}],
+  "errors": [
+    {
+      "category": "grammar",
+      "severity": "minor",
+      "text": "learner text",
+      "explanation": "concise explanation",
+      "skillId": "skill_name"
+    }
+  ],
+  "feedback": {
+    "strengths": ["strength 1", "strength 2"],
+    "priorities": ["priority 1", "priority 2"]
+  }
+}
+`.trim();
+        }
 
         if (isOral) {
             return `
