@@ -279,6 +279,7 @@ const Decks = (function () {
                 added: new Date().toISOString()
             }, newCardSchedule()));
             saveDeck();
+            if (typeof updateSRSCounter === 'function') updateSRSCounter();
         }
 
         return true;

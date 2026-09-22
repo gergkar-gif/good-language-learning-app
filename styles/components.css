@@ -2336,6 +2336,30 @@
   color: #F5F1E8;
 }
 
+.lsn-play-slow {
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.lsn-play-slow:hover {
+  background: rgba(0, 0, 0, 0.04);
+  border-color: var(--text);
+}
+
+[data-theme="dark"] .lsn-play-slow,
+:root:not([data-theme="light"]) .lsn-play-slow {
+  background: var(--surface);
+  color: var(--text);
+  border-color: var(--border);
+}
+
+[data-theme="dark"] .lsn-play-slow:hover,
+:root:not([data-theme="light"]) .lsn-play-slow:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: var(--text);
+}
+
 /* White on navy here, so the icon takes the button's own colour rather
    than its default navy stroke. */
 .lsn-play .icon .ink-line,

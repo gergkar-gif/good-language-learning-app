@@ -233,10 +233,14 @@ const ListeningRunner = (function () {
                     <span class="lr-stage-badge">Listening drill</span>
                     <span class="lr-stage-sub">${instruction}</span>
                 </div>
-                <div class="lr-audio-wrap">
+                <div class="lr-audio-wrap lr-stage-controls">
                     <button class="lr-play-btn" data-action="play" aria-label="Play audio">
                         <span class="lr-play-icon">${listenIcon}</span>
                         <span class="lr-play-label">Play audio</span>
+                    </button>
+                    <button class="lr-play-btn lr-play-slow" data-action="play-slow" aria-label="Play audio slow">
+                        <span class="lr-play-icon">${listenIcon}</span>
+                        <span class="lr-play-label">Slow</span>
                     </button>
                 </div>
             </div>
@@ -258,7 +262,7 @@ const ListeningRunner = (function () {
 
         const playBtn = _container.querySelector('[data-action="play"]');
         playBtn.addEventListener('click', () => {
-            ParlourTTS.speak({ text: _exercise.audio, type: 'listening', triggerBtn: playBtn });
+            ParlourTTS.speak({ text: _exercise.audio, type: 'listening', speed: 1.0, triggerBtn: playBtn });
             // Unlimited replay, never penalised (spec §3) — this only fires
             // the reveal-the-answer-controls step once.
             if (!_played) {
@@ -269,8 +273,22 @@ const ListeningRunner = (function () {
             if (label) label.textContent = 'Replay audio';
         });
 
+        const playSlowBtn = _container.querySelector('[data-action="play-slow"]');
+        if (playSlowBtn) {
+            playSlowBtn.addEventListener('click', () => {
+                ParlourTTS.speak({ text: _exercise.audio, type: 'listening', speed: 0.75, triggerBtn: playSlowBtn });
+                if (!_played) {
+                    _played = true;
+                    _container.querySelector('.lr-answer').classList.remove('hidden');
+                }
+            });
+        }
+
         _container.querySelector('[data-action="check"]').addEventListener('click', _doCheck);
-        _container.querySelector('[data-action="next"]').addEventListener('click', () => _onNext());
+        _container.querySelector('[data-action="next"]').addEventListener('click', () => {
+            if (typeof ParlourTTS !== 'undefined') ParlourTTS.stop();
+            _onNext();
+        });
         _wireEnterToCheck();
     }
 

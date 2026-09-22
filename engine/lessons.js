@@ -596,6 +596,9 @@ function teardownLesson() {
         SpeechInput.stopListening();
         SpeechInput.releaseStream();
     }
+    if (typeof ParlourTTS !== 'undefined') {
+        ParlourTTS.stop();
+    }
     _inlineVoiceActive = false;
     _lessonSpeakingRecording = false;
     const lessonFooter = document.querySelector('#lesson-screen .lesson-footer');
@@ -1302,7 +1305,8 @@ const stepRenderers = {
         return `
             <p class="lsn-question">Listen and choose what it means.</p>
             <div class="lsn-listen">
-                <button class="lsn-play" onclick="lessonPlayAudio()" aria-label="Play audio">${Art.icon('listening')} Play</button>
+                <button type="button" class="lsn-play" onclick="lessonPlayAudio(1.0)" aria-label="Play audio">${Art.icon('listening')} Play</button>
+                <button type="button" class="lsn-play lsn-play-slow" onclick="lessonPlayAudio(0.75)" aria-label="Play slow speed">${Art.icon('listening')} Slow</button>
                 ${(typeof ParlourTTS === 'undefined' || !ParlourTTS.available())
                     ? `<p class="lsn-hint">No audio available right now — you can still answer after 3 tries.</p>` : ''}
             </div>
@@ -1323,10 +1327,13 @@ const stepRenderers = {
         stepState.audio = step.sentence;
         stepState.translation = step.english || step.translation || '';
         stepState.checkFn = 'lessonCheckBlank';
+        stepState.hintLevel = 0;
+        stepState.usedHint = false;
         return `
             <p class="lsn-question">Listen and type or speak what you hear.</p>
             <div class="lsn-listen">
-                <button class="lsn-play" onclick="lessonPlayAudio()" aria-label="Play audio">${Art.icon('listening')} Play</button>
+                <button type="button" class="lsn-play" onclick="lessonPlayAudio(1.0)" aria-label="Play audio">${Art.icon('listening')} Play</button>
+                <button type="button" class="lsn-play lsn-play-slow" onclick="lessonPlayAudio(0.75)" aria-label="Play slow speed">${Art.icon('listening')} Slow</button>
                 ${(typeof ParlourTTS === 'undefined' || !ParlourTTS.available())
                     ? `<p class="lsn-hint">No audio available right now — you can still answer after 3 tries.</p>` : ''}
             </div>
@@ -1337,6 +1344,10 @@ const stepRenderers = {
                 </button>
             </div>
             ${typeof UI !== 'undefined' && UI.diacriticsBarHtml ? UI.diacriticsBarHtml('#blank-input') : ''}
+            <div class="lsn-hint-action">
+                <button type="button" class="lsn-hint-btn" id="lsn-hint-btn" onclick="lessonRequestHint()">Need a hint?</button>
+            </div>
+            <div id="lsn-hint-area" class="lsn-hint-area" style="display:none;"></div>
             ${feedbackHtml()}
         `;
     },
@@ -1884,11 +1895,20 @@ function renderStep() {
     if (backBtn) backBtn.disabled = currentStepIndex === 0;
 
     updateFooterButton();
+
+    // Auto-focus active text inputs on desktop without triggering scroll jumps
+    const autoInput = container.querySelector('input.lsn-input:not([disabled]), textarea.lsn-input:not([disabled])');
+    if (autoInput) {
+        try { autoInput.focus({ preventScroll: true }); } catch (e) {}
+    }
 }
 
 function nextLessonStep() {
     if (stepState.gated && !stepState.solved) return;
 
+    if (typeof ParlourTTS !== 'undefined') {
+        ParlourTTS.stop();
+    }
     _inlineVoiceActive = false;
     _lessonSpeakingRecording = false;
     if (typeof SpeechInput !== 'undefined') {
@@ -1937,6 +1957,9 @@ function nextLessonStep() {
 // with renderStep() itself, which already treats every step as stateless.
 function prevLessonStep() {
     if (currentStepIndex <= 0) return;
+    if (typeof ParlourTTS !== 'undefined') {
+        ParlourTTS.stop();
+    }
     _inlineVoiceActive = false;
     _lessonSpeakingRecording = false;
     if (typeof SpeechInput !== 'undefined') {
@@ -1947,6 +1970,9 @@ function prevLessonStep() {
 }
 
 async function finishLesson() {
+    if (typeof ParlourTTS !== 'undefined') {
+        ParlourTTS.stop();
+    }
     // Fixed reward: a long lesson isn't worth more than a short one, and
     // scaling by step count rewarded lesson length rather than learning.
     const firstTime = typeof markLessonComplete === 'function'
@@ -2544,15 +2570,24 @@ function lessonRequestHint() {
     stepState.hintLevel = (stepState.hintLevel || 0) + 1;
 
     const raw = String(stepState.answer || '').trim();
-    const match = raw.match(/[\p{L}\p{N}]/u);
-    const firstChar = match ? match[0] : raw.charAt(0);
+    const hasMultipleWords = /\s+/.test(raw);
+    let startHintHtml = '';
+
+    if (hasMultipleWords) {
+        const firstWord = raw.split(/\s+/)[0].replace(/[.,!?;:¡¿"«»]/g, '');
+        startHintHtml = `Starts with <strong>"${esc(firstWord)}..."</strong>`;
+    } else {
+        const match = raw.match(/[\p{L}\p{N}]/u);
+        const firstChar = match ? match[0] : raw.charAt(0);
+        startHintHtml = `Starts with <strong>"${esc(firstChar)}"</strong>`;
+    }
 
     if (stepState.hintLevel === 1) {
         area.style.display = 'block';
         area.innerHTML = `
             <div class="lsn-hint-box">
                 <span class="lsn-hint-label">Hint:</span>
-                <span>Starts with <strong>"${esc(firstChar)}"</strong></span>
+                <span>${startHintHtml}</span>
             </div>
         `;
 
@@ -2571,7 +2606,7 @@ function lessonRequestHint() {
             <div class="lsn-hint-box">
                 <div style="margin-bottom: 4px;">
                     <span class="lsn-hint-label">Hint:</span>
-                    <span>Starts with <strong>"${esc(firstChar)}"</strong></span>
+                    <span>${startHintHtml}</span>
                 </div>
                 ${stepState.translation ? `
                     <div>
@@ -2638,7 +2673,7 @@ function lessonCheckBlank() {
     }
 }
 
-function lessonPlayAudio() {
+function lessonPlayAudio(speed) {
     if (_inlineVoiceActive) {
         _inlineVoiceActive = false;
         if (typeof SpeechInput !== 'undefined') SpeechInput.stopListening();
@@ -2653,7 +2688,8 @@ function lessonPlayAudio() {
         const statusEl = document.getElementById('lesson-mic-status');
         if (statusEl) statusEl.textContent = 'Tap to speak';
     }
-    if (typeof ParlourTTS !== 'undefined') ParlourTTS.speak({ text: stepState.audio, type: 'listening' });
+    const rate = (typeof speed === 'number') ? speed : 1.0;
+    if (typeof ParlourTTS !== 'undefined') ParlourTTS.speak({ text: stepState.audio, type: 'listening', speed: rate });
 }
 
 // ---- Sentence builder ----
@@ -3109,7 +3145,11 @@ function lessonToggleSpeaking(btn) {
                 }
 
                 if (err === 'permission-denied') {
-                    setFeedback(false, 'Microphone permission was denied. Please allow microphone access in your browser settings.');
+                    setFeedback(false, 'Microphone access is blocked in your browser settings. Tap "Can\'t speak right now" below to continue without speaking.');
+                    const cantBtn = document.querySelector('.sp-cant-speak-btn');
+                    if (cantBtn) {
+                        try { cantBtn.focus({ preventScroll: true }); } catch (e) {}
+                    }
                 } else if (err === 'no-speech') {
                     setFeedback(false, 'No voice heard. Did you speak into the microphone?');
                 } else {

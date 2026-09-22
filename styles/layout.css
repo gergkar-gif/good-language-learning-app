@@ -24,6 +24,15 @@
   box-sizing: border-box;
 }
 
+/* While a mobile learner is typing into an input or textarea, lock .app to 100vh
+   to prevent the on-screen keyboard from abruptly collapsing 100dvh and jerking
+   the viewport upwards. */
+@media (max-width: 639px) {
+  .app:has(input:focus, textarea:focus) {
+    min-height: 100vh;
+  }
+}
+
 /* ---- Page header ---- */
 /* Editorial, not a banner: the cream background runs unbroken from the top
    of the screen into the content, and typography carries the weight. */

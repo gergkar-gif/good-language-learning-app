@@ -116,13 +116,21 @@ const VerbsTable = (function () {
         if (revealBtn) revealBtn.addEventListener('click', _handleReveal);
         if (nextBtn)   nextBtn.addEventListener('click', function () { _onNext(); });
 
-        // Enter key triggers check (desktop convenience, not required)
-        var inputs = root.querySelectorAll('.vtable-input');
-        for (var i = 0; i < inputs.length; i++) {
-            inputs[i].addEventListener('keydown', function (e) {
-                if (e.key === 'Enter') _handleCheck();
+        // Enter key moves focus to next row, or triggers check on the last row / when all are filled
+        var inputs = Array.prototype.slice.call(root.querySelectorAll('.vtable-input'));
+        inputs.forEach(function (input, idx) {
+            input.addEventListener('keydown', function (e) {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    var allFilled = inputs.every(function (inp) { return inp.value.trim().length > 0; });
+                    if (idx < inputs.length - 1 && !allFilled) {
+                        inputs[idx + 1].focus({ preventScroll: true });
+                    } else {
+                        _handleCheck();
+                    }
+                }
             });
-        }
+        });
     }
 
     function _handleReveal() {
@@ -252,6 +260,11 @@ const VerbsTable = (function () {
                     if (form) ParlourTTS.preload({ text: form, type: 'vocabulary' });
                 }
             }
+        }
+
+        var firstInput = root.querySelector('.vtable-input');
+        if (firstInput && (!window.matchMedia || !window.matchMedia('(max-width: 639px)').matches)) {
+            firstInput.focus({ preventScroll: true });
         }
     }
 

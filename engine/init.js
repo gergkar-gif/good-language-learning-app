@@ -12,6 +12,9 @@ const LEVELS = ['a1', 'a2', 'b1', 'b2', 'c1'];
 // teardown here is a plain, idempotent state reset that doesn't itself
 // navigate anywhere, so calling it from inside showTab() can't recurse.
 function teardownTab(tabId) {
+    if (typeof ParlourTTS !== 'undefined') {
+        ParlourTTS.stop();
+    }
     if (tabId === 'drills' && typeof Workshop !== 'undefined') {
         Workshop.close();
     } else if (tabId === 'lesson-screen' && typeof teardownLesson === 'function') {

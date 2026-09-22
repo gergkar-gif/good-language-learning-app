@@ -330,8 +330,11 @@ function addToSRS() {
     recordNewWord();
     
     const btn = document.getElementById('popup-add-btn');
-    btn.textContent = '✓ Added!';
-    btn.style.background = 'var(--primary)';
+    if (btn) {
+        btn.textContent = '✓ Added to deck!';
+        btn.disabled = true;
+        btn.style.background = 'var(--primary)';
+    }
     
     updateSRSCounter();
     saveDeck();
@@ -342,6 +345,9 @@ function addToSRS() {
 function updateSRSCounter() {
     const counter = document.getElementById('srs-counter');
     if (counter) counter.textContent = srsDeck.length;
+    if (typeof window !== 'undefined' && typeof window.dispatchEvent === 'function') {
+        window.dispatchEvent(new CustomEvent('srs-updated', { detail: { count: srsDeck.length } }));
+    }
 }
 
 // ============================================
@@ -799,7 +805,9 @@ function renderCard() {
         field.value = '';
         field.classList.remove('correct', 'almost', 'wrong');
         field.disabled = false;
-        if (typeMode) field.focus();
+        if (typeMode && (!window.matchMedia || !window.matchMedia('(max-width: 639px)').matches)) {
+            field.focus({ preventScroll: true });
+        }
     }
     typedAnswerCorrect = null;
     typedAssessedBucket = null;

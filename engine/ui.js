@@ -232,7 +232,7 @@ if (typeof document !== 'undefined') {
         const val = target.value;
         target.value = val.substring(0, start) + char + val.substring(end);
         target.selectionStart = target.selectionEnd = start + char.length;
-        target.focus();
+        try { target.focus({ preventScroll: true }); } catch (e) { target.focus(); }
         target.dispatchEvent(new Event('input', { bubbles: true }));
     });
 }
