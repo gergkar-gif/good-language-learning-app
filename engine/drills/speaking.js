@@ -1963,7 +1963,7 @@ const SpeakingDriller = (function () {
                     ${isRecording ? `
                         <div class="sp-turn-recording-panel" style="text-align: center; padding: 16px; background: var(--bg-card, #f8f9fa); border-radius: var(--radius-md, 8px);">
                             <div class="sp-mic-visualizer" style="margin-bottom: 12px;">
-                                <div class="sp-mic-pulse-ring" style="width: 48px; height: 48px; border-radius: 50%; background: rgba(220, 53, 69, 0.15); margin: 0 auto; display: flex; align-items: center; justify-content: center; color: #dc3545;">
+                                <div class="sp-mic-pulse-ring" style="width: 48px; height: 48px; border-radius: 50%; background: var(--danger-bg); margin: 0 auto; display: flex; align-items: center; justify-content: center; color: var(--danger);">
                                     <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/></svg>
                                 </div>
                             </div>
@@ -2297,7 +2297,7 @@ const SpeakingDriller = (function () {
                                         </div>
                                     ` : ''}
                                     ${note ? `
-                                        <div class="sp-turn-note" style="margin-top:8px; padding:6px 10px; background:rgba(0,123,255,0.06); border-left:3px solid #007bff; border-radius:4px; font-size:0.82rem; color:var(--text);">
+                                        <div class="sp-turn-note" style="margin-top:8px; padding:6px 10px; background:var(--border-subtle); border-left:3px solid var(--primary); border-radius:4px; font-size:0.82rem; color:var(--text);">
                                             ${_esc(note.text)}
                                         </div>
                                     ` : ''}

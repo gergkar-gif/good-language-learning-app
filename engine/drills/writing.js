@@ -1437,10 +1437,10 @@ const WritingDriller = (function () {
                     </div>
 
                     ${verified ? `
-                        <div class="sp-verified-badge" style="margin: 16px 0; padding: 10px 14px; background: rgba(40, 167, 69, 0.1); border-left: 4px solid #28a745; border-radius: 4px; display: flex; align-items: center; gap: 10px;">
-                            <svg class="sp-icon-svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#28a745" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                        <div class="sp-verified-badge" style="margin: 16px 0; padding: 10px 14px; background: var(--success-bg); border-left: 4px solid var(--success); border-radius: 4px; display: flex; align-items: center; gap: 10px;">
+                            <svg class="sp-icon-svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="var(--success)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
                             <div>
-                                <strong style="color: #28a745; font-size: 0.9rem;">CEFR Competency Demonstrated:</strong>
+                                <strong style="color: var(--success); font-size: 0.9rem;">CEFR Competency Demonstrated:</strong>
                                 <div style="font-size: 0.85rem; color: var(--text);">${_esc(sc.targetCompetency)}</div>
                             </div>
                         </div>
@@ -1468,7 +1468,7 @@ const WritingDriller = (function () {
                                         </div>
                                         <div class="sp-chat-body">${_esc(t.learnerTranscript)}</div>
                                         ${note ? `
-                                            <div class="sp-turn-note" style="margin-top:6px; padding:6px 10px; background:rgba(0,123,255,0.06); border-left:3px solid #007bff; border-radius:4px; font-size:0.82rem; color:var(--text);">
+                                            <div class="sp-turn-note" style="margin-top:6px; padding:6px 10px; background:var(--border-subtle); border-left:3px solid var(--primary); border-radius:4px; font-size:0.82rem; color:var(--text);">
                                                 ${_esc(note.text)}
                                             </div>
                                         ` : ''}
@@ -1483,7 +1483,7 @@ const WritingDriller = (function () {
                         <div class="sp-feedback-sections" style="margin-top: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
                             ${(result.feedback.strengths && result.feedback.strengths.length) ? `
                                 <div class="sp-feedback-col" style="padding: 12px; background: var(--surface, #fff); border: 1px solid var(--border); border-radius: 6px;">
-                                    <h5 style="margin: 0 0 8px; color: #28a745; font-size: 0.85rem; text-transform: uppercase; font-weight: 700;">Strengths</h5>
+                                    <h5 style="margin: 0 0 8px; color: var(--success); font-size: 0.85rem; text-transform: uppercase; font-weight: 700;">Strengths</h5>
                                     <ul style="margin: 0; padding-left: 18px; font-size: 0.85rem; color: var(--text);">
                                         ${result.feedback.strengths.map(s => `<li>${_esc(s)}</li>`).join('')}
                                     </ul>
@@ -1491,7 +1491,7 @@ const WritingDriller = (function () {
                             ` : ''}
                             ${(result.feedback.priorities && result.feedback.priorities.length) ? `
                                 <div class="sp-feedback-col" style="padding: 12px; background: var(--surface, #fff); border: 1px solid var(--border); border-radius: 6px;">
-                                    <h5 style="margin: 0 0 8px; color: #007bff; font-size: 0.85rem; text-transform: uppercase; font-weight: 700;">Focus Areas</h5>
+                                    <h5 style="margin: 0 0 8px; color: var(--primary); font-size: 0.85rem; text-transform: uppercase; font-weight: 700;">Focus Areas</h5>
                                     <ul style="margin: 0; padding-left: 18px; font-size: 0.85rem; color: var(--text);">
                                         ${result.feedback.priorities.map(p => `<li>${_esc(p)}</li>`).join('')}
                                     </ul>
