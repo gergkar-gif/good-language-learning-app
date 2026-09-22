@@ -1791,19 +1791,24 @@ button.is-loading,
 .ps-spin-group,
 .ps-triangle {
   transform-box: view-box;
-  transform-origin: 50px 50px;
 }
 
 .ps-spin-group {
+  transform-origin: 50px 50px;
   animation: boot-spin 1.4s linear infinite;
 }
 
 /* Small counter-rotating marker at the disc's centre, spinning the
    opposite way to .ps-spin-group for a bit of visual tension. Uses
    --primary (the app's one structural navy, same as .brand-tile) rather
-   than a one-off colour, so it still inverts correctly in dark mode. */
+   than a one-off colour, so it still inverts correctly in dark mode.
+   Origin is the polygon's actual centroid (points 50,42 58,58 42,58
+   average to 50, 52.67), not the disc's centre (50,50) — anchoring on
+   the disc centre left the shape's own mass off-axis, which read as a
+   wobble rather than a clean spin. */
 .ps-triangle {
   fill: var(--primary);
+  transform-origin: 50px 52.67px;
   animation: boot-spin-reverse 1.6s linear infinite;
 }
 
