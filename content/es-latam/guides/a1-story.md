@@ -30,7 +30,7 @@ Carlos and Meg video-call his family in Hungary. Meg meets his parents, his brot
 ---
 
 ## Unit 8 — El nuevo apartamento
-The friends visit Carlos and Meg's apartment for the first time, exploring the rooms and furniture. They talk about the space and Carlos's living situation in Hanoi.
+The friends visit Carlos's new apartment for the first time, exploring the rooms and furniture. They talk about the space and Carlos's living situation in Hanoi.
 
 ---
 
@@ -80,7 +80,7 @@ Carlos starts a new job in a Hanoi office and meets his colleagues and boss. Lat
 ---
 
 ## Unit 20 — La revisión del bebé
-Ana and Andreas take their baby to a health center for a routine check-up. Carlos and Meg accompany them and spend the afternoon together afterward.
+Ana takes her baby to a health center for a routine check-up with her brother Andreas. Carlos and Meg accompany them and spend the afternoon together afterward.
 
 ---
 

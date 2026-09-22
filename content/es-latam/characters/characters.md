@@ -16,7 +16,7 @@ Hanoi, Vietnam.
 - Ana (sister)
 
 **Relationship**
-Meg (girlfriend)
+Meg (girlfriend, moving together to Budapest at end of A2)
 
 **First Appearance**
 Lesson 1
@@ -39,7 +39,7 @@ Hanoi, Vietnam.
 - Lauren (younger sister, twin)
 
 **Relationship**
-Carlos (boyfriend)
+Carlos (boyfriend, moving together to Budapest at end of A2)
 
 **First Appearance**
 Lesson 1
