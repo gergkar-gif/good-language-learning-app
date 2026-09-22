@@ -115,6 +115,7 @@ Do not mark a skill weak simply because it was not used.
 
 FEEDBACK:
 Give 2-3 concrete strengths and 2-3 actionable priorities focused on conversational written correspondence.
+Every priority must be tied to something specific and evidenced in this exchange (a form, a word choice, a register slip, a missing reply). Never output a generic catch-all like "expand vocabulary" or "practice more grammar" — if there is genuinely nothing to flag, name what the learner did well instead of inventing a vague priority.
 Keep each priority a concise, action-oriented phrase without trailing periods.
 
 Return ONLY valid JSON. No Markdown fences. No introductory or trailing text.
@@ -236,6 +237,7 @@ Do not mark a skill weak simply because it was not used.
 FEEDBACK:
 Give 2-3 concrete strengths and 2-3 actionable priorities focused on conversational speaking.
 Priorities should be based on actual spoken weaknesses found in the production, not generic advice.
+Never output a generic catch-all like "expand vocabulary" or "practice more grammar" — if there is genuinely nothing to flag, name what the learner did well instead of inventing a vague priority.
 Keep each priority a concise, action-oriented phrase (e.g. 'Practice first-person preterite verb endings' or 'Remember adjective gender agreement') without trailing periods.
 
 Return ONLY valid JSON. No Markdown fences. No introductory or trailing text.
@@ -369,6 +371,7 @@ Do not mark a skill weak simply because it was not used.
 FEEDBACK:
 Give 2-3 concrete strengths and 2-3 actionable priorities.
 Priorities should be based on actual weaknesses found in the production, not generic advice.
+Never output a generic catch-all like "expand vocabulary" or "practice more grammar" — if there is genuinely nothing to flag, name what the learner did well instead of inventing a vague priority.
 Keep each priority a concise, action-oriented phrase (e.g. 'Practice first-person preterite verb endings' or 'Remember adjective gender agreement') without trailing periods.
 
 Return ONLY valid JSON. No Markdown fences. No introductory or trailing text.

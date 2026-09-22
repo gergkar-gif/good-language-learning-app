@@ -121,7 +121,8 @@
                     language,
                     modality,
                     taskCompletionPrimary,
-                    retryCount
+                    retryCount,
+                    localStats
                 });
 
                 // Attach deterministic metrics & metadata
@@ -158,7 +159,8 @@
                 language,
                 modality,
                 taskCompletionPrimary,
-                retryCount
+                retryCount,
+                localStats
             } = params;
 
             let prompt = GraderPrompt.buildGraderPrompt(
@@ -259,14 +261,14 @@
                 contentString = responseData.content;
             } else if (responseData && typeof responseData.overallScore === 'number') {
                 // Direct assessment object already parsed by worker
-                return GraderSchema.validateAndCleanResult(responseData);
+                return GraderSchema.validateAndCleanResult(responseData, localStats);
             } else {
                 throw new Error('Grader response structure unrecognized');
             }
 
             try {
                 const parsedObject = this._parseJson(contentString);
-                return GraderSchema.validateAndCleanResult(parsedObject);
+                return GraderSchema.validateAndCleanResult(parsedObject, localStats);
             } catch (parseError) {
                 parseError.rawContent = contentString;
                 parseError.omniRouteData = responseData;

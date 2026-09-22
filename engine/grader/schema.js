@@ -47,7 +47,23 @@
         return result;
     }
 
-    function validateAndCleanResult(raw) {
+    // Builds a fallback priority grounded in the learner's actual submission stats,
+    // used only when the model returns neither errors nor priorities to draw from.
+    function buildFallbackPriority(localStats) {
+        if (!localStats) return 'Keep practicing to build overall accuracy and natural phrasing';
+        if (localStats.targetWordCountMet === false) {
+            return localStats.lengthFeedback || 'Aim for a longer, more developed response';
+        }
+        if (typeof localStats.ttr === 'number' && localStats.ttr < 0.5) {
+            return 'Vary your word choice more — avoid repeating the same words across sentences';
+        }
+        if (typeof localStats.avgSentenceLength === 'number' && localStats.avgSentenceLength < 6) {
+            return 'Combine short sentences using connectors for more complex structure';
+        }
+        return 'Keep practicing to build overall accuracy and natural phrasing';
+    }
+
+    function validateAndCleanResult(raw, localStats) {
         if (!raw || typeof raw !== 'object' || Array.isArray(raw)) {
             throw new Error('Grader result must be a JSON object');
         }
@@ -58,8 +74,9 @@
         // Clean and clamp taskCompletion (0.0-1.0)
         const taskCompletion = Math.round(clampNumber(raw.taskCompletion, 0, 1, overallScore / 100) * 100) / 100;
 
-        // Clean dimensions
-        const rawDims = (raw.dimensions && typeof raw.dimensions === 'object') ? raw.dimensions : {};
+        // Clean dimensions (written-exchange prompts return them under "dimensionScores")
+        const rawDimsSource = raw.dimensions || raw.dimensionScores;
+        const rawDims = (rawDimsSource && typeof rawDimsSource === 'object') ? rawDimsSource : {};
         const dimensions = {};
         for (const dim of DIMENSIONS) {
             dimensions[dim] = Math.round(clampNumber(rawDims[dim], 0, 1, overallScore / 100) * 100) / 100;
@@ -112,7 +129,7 @@
         if (!priorities.length && errors.length) {
             priorities.push((errors[0].explanation || '').replace(/[.;,:!]+$/, ''));
         } else if (!priorities.length) {
-            priorities.push('Continue expanding grammatical complexity and specialized vocabulary');
+            priorities.push(buildFallbackPriority(localStats));
         }
 
         return {
