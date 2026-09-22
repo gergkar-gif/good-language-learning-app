@@ -997,6 +997,9 @@ const WritingDriller = (function () {
                 <div class="sp-setup-head">
                     <h2 class="sp-setup-title">Written Exchanges</h2>
                     <p class="sp-setup-sub">Practice situational text messaging and functional written correspondence in ${langName} with CEFR-aligned formative feedback.</p>
+                    ${(typeof Lang !== 'undefined' && Lang.code() === 'hu') ? `
+                        <p class="gd-hint">When Hungarian people text, accents are often left out — these exchanges simulate that, so don't be surprised if they're missing.</p>
+                    ` : ''}
                 </div>
 
                 ${levelFilterHtml}
