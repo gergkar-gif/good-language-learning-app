@@ -3347,19 +3347,29 @@
 }
 
 .sp-role-badge.learner {
-    background: rgba(40, 167, 69, 0.15);
-    color: #28a745;
+    background: var(--success-bg);
+    color: var(--success);
 }
 
 .sp-role-badge.partner {
-    background: rgba(0, 123, 255, 0.15);
-    color: #007bff;
+    background: var(--border-subtle);
+    color: var(--primary);
 }
 
 .sp-briefing-flow-box {
     padding: 14px;
     border: 1px solid var(--border-light, #eee);
     border-radius: var(--radius-sm, 6px);
+}
+
+.sp-briefing-goal {
+    margin-top: 16px;
+    padding: 12px 16px;
+    background: var(--accent-bg);
+    border-left: 4px solid var(--accent);
+    border-radius: var(--radius-sm, 6px);
+    font-size: 14px;
+    color: var(--text);
 }
 
 /* Chat Timeline */

@@ -1049,23 +1049,28 @@ const WritingDriller = (function () {
                     <span class="sp-level-pill">${_esc(s.cefrLevel || 'A1')}</span>
                 </div>
 
-                <div class="sp-scenario-briefing-card">
+                <div class="sp-briefing-card">
                     <h2 class="sp-briefing-title">${_esc(title)}</h2>
                     <p class="sp-briefing-situation">${_esc(situation)}</p>
 
-                    <div class="sp-briefing-roles">
-                        <div class="sp-role-item">
-                            <span class="sp-role-label">Your Correspondent:</span>
-                            <span class="sp-role-value">${_esc(interlocutor)}</span>
+                    <div class="sp-briefing-roles-box">
+                        <div class="sp-role-row">
+                            <span class="sp-role-badge learner">Your Role</span>
+                            <strong>${_esc(learner)}</strong>
                         </div>
-                        <div class="sp-role-item">
-                            <span class="sp-role-label">Your Role:</span>
-                            <span class="sp-role-value">${_esc(learner)}</span>
+                        <div class="sp-role-row">
+                            <span class="sp-role-badge partner">Correspondent</span>
+                            <strong>${_esc(interlocutor)}</strong>
                         </div>
-                        <div class="sp-role-item">
-                            <span class="sp-role-label">Exchange Length:</span>
-                            <span class="sp-role-value">${turnsCount} messages</span>
-                        </div>
+                    </div>
+
+                    <div class="sp-briefing-flow-box">
+                        <h4 style="margin: 0 0 8px; font-size: 0.9rem; color: var(--muted); text-transform: uppercase;">Message Outline (${turnsCount} Messages)</h4>
+                        <ol style="margin: 0; padding-left: 20px; font-size: 0.9rem; line-height: 1.5;">
+                            ${(s.turns || []).map(t => `
+                                <li style="margin-bottom: 6px;">${_esc(_scenarioText(t, 'learnerCue', s) || '')}</li>
+                            `).join('')}
+                        </ol>
                     </div>
 
                     ${s.targetCompetency ? `
@@ -1074,8 +1079,8 @@ const WritingDriller = (function () {
                         </div>
                     ` : ''}
 
-                    <div class="sp-briefing-cta-row">
-                        <button type="button" class="wk-primary-btn sp-btn-start-scenario" data-action="start-exchange">
+                    <div style="margin-top: 24px; text-align: center;">
+                        <button type="button" class="wk-primary-btn sp-start-scenario-btn" data-action="start-exchange" style="min-width: 200px; font-size: 1rem; padding: 12px 24px;">
                             Start Written Exchange →
                         </button>
                     </div>
