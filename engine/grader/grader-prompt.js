@@ -61,7 +61,7 @@ IMPORTANT WRITTEN EXCHANGE SCORING PRINCIPLES:
 3. ORTHOGRAPHY & ACCENTS: Unlike speech recognition, written text requires orthographic attention. Evaluate key diacritics and accents (e.g. Spanish 'hablo' vs 'habló', inverted question/exclamation marks where appropriate, or Hungarian long/short vowels 'e' vs 'é', 'o' vs 'ö' vs 'ő'). However, do not harshly penalise informal lowercasing in casual chat contexts where communicative clarity is preserved.
 4. COMMUNICATIVE RESPONSIVENESS: The learner must directly respond to the questions, cues, and requirements posed by the interlocutor in each turn.
 5. Judge the production itself, not the label or presumed quality of the scenario.
-6. Do not manufacture errors. Only record errors that are actually supported by the learner's written messages.
+6. Do not manufacture errors. Only record errors that are actually supported by the learner's written messages. In Hungarian, do not flag 'van'/'volt' for needing to agree with the possessor's person in an existential-possessive construction (e.g. "időpontom volt" = "I had an appointment") — 'van'/'volt' agrees with the grammatically third-person possessed noun, not the possessor, whose person is already marked by the possessive suffix on that noun.
 7. Do not treat simple vocabulary as an error merely because more advanced vocabulary exists.
 8. Distinguish language quality from task fulfilment. A linguistically capable writer can lose task-completion points if they fail part of the task, but task completion must not be used to arbitrarily suppress language scores.
 9. Complexity measures the range and control of written sentence structures, connectors, and expressions appropriate for CEFR ${cefrLevel}.
@@ -176,7 +176,7 @@ IMPORTANT ORAL SCORING PRINCIPLES:
 5. SELF-REPAIRS & FALSE STARTS: Spoken false starts, mid-sentence adjustments, and self-repairs (e.g. "ayer fui... digo, iba...") demonstrate positive metacognitive monitoring and real-time self-correction. Do NOT penalise them as grammatical or syntactic errors.
 6. COMMUNICATIVE INTELLIGIBILITY: Prioritise communicative effectiveness, intelligibility, and task fulfilment over pedantic formal syntax. In natural spoken language, coordination, parataxis, ellipsis, and short clauses are completely standard.
 7. Judge the spoken production itself, not the label or presumed quality of the test case.
-8. Do not manufacture errors. Only record genuine, unambiguous spoken errors that clearly impede intelligibility or break core grammatical agreement.
+8. Do not manufacture errors. Only record genuine, unambiguous spoken errors that clearly impede intelligibility or break core grammatical agreement. In Hungarian, do not flag 'van'/'volt' for needing to agree with the possessor's person in an existential-possessive construction (e.g. "időpontom volt" = "I had an appointment") — 'van'/'volt' agrees with the grammatically third-person possessed noun, not the possessor, whose person is already marked by the possessive suffix on that noun.
 9. Do not treat simple vocabulary as an error merely because more advanced vocabulary exists.
 10. Distinguish language quality from task fulfilment. A linguistically capable speaker can lose task-completion points if they fail part of the task, but task completion must not be used to arbitrarily suppress language scores.
 11. Complexity measures the range and control of spoken sentence structures, connectors, and expressions appropriate for CEFR ${cefrLevel}.
@@ -308,7 +308,7 @@ ${learnerProduction}
 
 IMPORTANT SCORING PRINCIPLES:
 1. Judge the production itself, not the label or presumed quality of the test case.
-2. Do not manufacture errors. Only record errors that are actually supported by the learner's text.
+2. Do not manufacture errors. Only record errors that are actually supported by the learner's text. In Hungarian, do not flag 'van'/'volt' for needing to agree with the possessor's person in an existential-possessive construction (e.g. "időpontom volt" = "I had an appointment") — 'van'/'volt' agrees with the grammatically third-person possessed noun, not the possessor, whose person is already marked by the possessive suffix on that noun.
 3. Do not treat simple vocabulary as an error merely because more advanced vocabulary exists.
 4. Distinguish language quality from task fulfilment. A linguistically strong response can lose task-completion points if it genuinely fails part of the task, but task completion must not be used to arbitrarily suppress language scores.
 5. Complexity measures the actual range and control of sentence structures, subordinate clauses, connectors, and other appropriately complex constructions for CEFR ${cefrLevel}.
