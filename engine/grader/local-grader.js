@@ -171,6 +171,62 @@
     }
 
     /**
+     * Attributes AI-grader errors back to the specific completed turn they came
+     * from, by matching each error's quoted text fragment against each turn's
+     * learnerTranscript. Used by the exchange/scenario debrief to annotate
+     * individual turns instead of only showing one aggregate coach sentence.
+     * @param {Array} completedTurns - [{ learnerTranscript, validation, ... }]
+     * @param {Array} errors - result.errors from the AI grader (may be empty/absent)
+     * @returns {{ byTurn: Array<Array>, unmatched: Array }} byTurn is index-aligned with completedTurns
+     */
+    function attributeErrorsToTurns(completedTurns, errors) {
+        const turns = Array.isArray(completedTurns) ? completedTurns : [];
+        const errs = Array.isArray(errors) ? errors : [];
+        const normalize = s => String(s || '').toLowerCase()
+            .normalize('NFD').replace(/[̀-ͯ]/g, '');
+
+        const byTurn = turns.map(() => []);
+        const unmatched = [];
+
+        for (const err of errs) {
+            const fragment = normalize(err && err.text);
+            const matchedIdx = fragment && fragment.length >= 3
+                ? turns.findIndex(t => normalize(t.learnerTranscript).includes(fragment))
+                : -1;
+
+            if (matchedIdx >= 0) {
+                byTurn[matchedIdx].push(err);
+            } else {
+                unmatched.push(err);
+            }
+        }
+
+        return { byTurn, unmatched };
+    }
+
+    /**
+     * Picks the single most relevant feedback note for one turn in the
+     * debrief replay: an attributed AI error takes priority (more specific),
+     * falling back to the turn's own local validation feedback when it was
+     * flagged invalid and no AI error was attributed to it.
+     * @param {object} turn - one entry from completedTurns
+     * @param {Array} errorsForTurn - byTurn[idx] from attributeErrorsToTurns
+     * @returns {{source: 'ai'|'local', severity: string, text: string}|null}
+     */
+    function turnFeedbackNote(turn, errorsForTurn) {
+        if (Array.isArray(errorsForTurn) && errorsForTurn.length) {
+            const e = errorsForTurn[0];
+            if (e && e.explanation) {
+                return { source: 'ai', severity: e.severity || 'minor', text: e.explanation };
+            }
+        }
+        if (turn && turn.validation && turn.validation.valid === false && turn.validation.feedback) {
+            return { source: 'local', severity: 'minor', text: turn.validation.feedback };
+        }
+        return null;
+    }
+
+    /**
      * Complete deterministic evaluation of an entire conversation scenario (offline fallback).
      * @param {Array} completedTurns - [{ turnIndex, interlocutorPrompt, learnerCue, learnerTranscript, validation }]
      * @param {object} scenario - The scenario metadata { title, cefrLevel, targetSkills, roleplay }
@@ -267,6 +323,8 @@
         analyze,
         validateTurn,
         gradeConversation,
+        attributeErrorsToTurns,
+        turnFeedbackNote,
         tokenizeWords,
         tokenizeSentences,
         tokenizeParagraphs,

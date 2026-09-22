@@ -2236,6 +2236,9 @@ const SpeakingDriller = (function () {
             (result.feedback && result.feedback.strengths && result.feedback.strengths[0]) ||
             (result.strengths && result.strengths[0]) ||
             'Well done practicing this real-life conversational exchange!';
+        const _errorsByTurn = (typeof LocalGrader !== 'undefined' && LocalGrader.attributeErrorsToTurns)
+            ? LocalGrader.attributeErrorsToTurns(_completedTurns, result.errors).byTurn
+            : [];
 
         body.innerHTML = `
             <div class="sp-driller-wrap sp-scenario-debrief-wrap">
@@ -2270,7 +2273,11 @@ const SpeakingDriller = (function () {
                     <div class="sp-debrief-replay-section" style="margin-top: 24px;">
                         <h4 style="margin: 0 0 12px; font-size: 1rem; color: var(--text);">Complete Dialogue Replay</h4>
                         <div class="sp-dialogue-timeline">
-                            ${_completedTurns.map((t, idx) => `
+                            ${_completedTurns.map((t, idx) => {
+                                const note = (typeof LocalGrader !== 'undefined' && LocalGrader.turnFeedbackNote)
+                                    ? LocalGrader.turnFeedbackNote(t, _errorsByTurn[idx])
+                                    : null;
+                                return `
                                 <div class="sp-turn-replay-block" style="margin-bottom: 16px; padding: 12px; border: 1px solid var(--border-light, #eee); border-radius: var(--radius-md, 8px);">
                                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
                                         <strong style="font-size: 0.85rem; color: var(--muted);">${_esc(sc.roleplay ? _scenarioText(sc.roleplay, 'interlocutorRole', sc) : 'Partner')}</strong>
@@ -2289,8 +2296,14 @@ const SpeakingDriller = (function () {
                                             ${_customAudioPlayerHtml(t.audioUrl, 'sp-timeline-player')}
                                         </div>
                                     ` : ''}
+                                    ${note ? `
+                                        <div class="sp-turn-note" style="margin-top:8px; padding:6px 10px; background:rgba(0,123,255,0.06); border-left:3px solid #007bff; border-radius:4px; font-size:0.82rem; color:var(--text);">
+                                            ${_esc(note.text)}
+                                        </div>
+                                    ` : ''}
                                 </div>
-                            `).join('')}
+                            `;
+                            }).join('')}
                         </div>
                     </div>
 

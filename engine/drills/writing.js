@@ -1413,6 +1413,9 @@ const WritingDriller = (function () {
             (result.feedback && result.feedback.strengths && result.feedback.strengths[0]) ||
             (result.strengths && result.strengths[0]) ||
             'Well done practicing this written situational correspondence!';
+        const _errorsByTurn = (typeof LocalGrader !== 'undefined' && LocalGrader.attributeErrorsToTurns)
+            ? LocalGrader.attributeErrorsToTurns(_completedTurns, result.errors).byTurn
+            : [];
 
         body.innerHTML = `
             <div class="sp-driller-wrap sp-scenario-debrief-wrap">
@@ -1446,7 +1449,11 @@ const WritingDriller = (function () {
                     <div class="sp-chat-review-wrap" style="margin-top: 20px;">
                         <h4 style="margin: 0 0 12px; font-size: 0.95rem; font-weight: 600;">Exchange Transcript</h4>
                         <div class="sp-chat-timeline">
-                            ${_completedTurns.map((t, idx) => `
+                            ${_completedTurns.map((t, idx) => {
+                                const note = (typeof LocalGrader !== 'undefined' && LocalGrader.turnFeedbackNote)
+                                    ? LocalGrader.turnFeedbackNote(t, _errorsByTurn[idx])
+                                    : null;
+                                return `
                                 <div class="sp-chat-turn-group">
                                     <div class="sp-chat-bubble partner">
                                         <div class="sp-chat-header">
@@ -1460,9 +1467,15 @@ const WritingDriller = (function () {
                                             ${t.validation && t.validation.valid ? `<span class="sp-chat-check"><svg class="sp-icon-svg" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>` : ''}
                                         </div>
                                         <div class="sp-chat-body">${_esc(t.learnerTranscript)}</div>
+                                        ${note ? `
+                                            <div class="sp-turn-note" style="margin-top:6px; padding:6px 10px; background:rgba(0,123,255,0.06); border-left:3px solid #007bff; border-radius:4px; font-size:0.82rem; color:var(--text);">
+                                                ${_esc(note.text)}
+                                            </div>
+                                        ` : ''}
                                     </div>
                                 </div>
-                            `).join('')}
+                            `;
+                            }).join('')}
                         </div>
                     </div>
 
