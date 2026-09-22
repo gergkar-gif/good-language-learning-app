@@ -1786,7 +1786,23 @@ button.is-loading,
 .boot-spinner {
   width: 56px;
   height: 56px;
+}
+
+.ps-spin-group,
+.ps-triangle {
+  transform-box: view-box;
+  transform-origin: 50px 50px;
+}
+
+.ps-spin-group {
   animation: boot-spin 1.4s linear infinite;
+}
+
+/* Small counter-rotating marker at the disc's centre, spinning the
+   opposite way to .ps-spin-group for a bit of visual tension. */
+.ps-triangle {
+  fill: #007bff;
+  animation: boot-spin-reverse 1.6s linear infinite;
 }
 
 .boot-label {
@@ -1802,8 +1818,14 @@ button.is-loading,
   to { transform: rotate(360deg); }
 }
 
+@keyframes boot-spin-reverse {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .boot-spinner {
+  .ps-spin-group,
+  .ps-triangle {
     animation: none;
   }
 }

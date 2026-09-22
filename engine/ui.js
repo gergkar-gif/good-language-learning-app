@@ -146,8 +146,11 @@ const UI = {
                 el.setAttribute('aria-live', 'polite');
                 el.innerHTML = `
                     <svg class="boot-spinner" viewBox="0 0 100 100" aria-hidden="true">
-                        <circle cx="50" cy="50" r="40" class="ps-wash"/>
-                        <circle cx="50" cy="12" r="7" class="ps-accent"/>
+                        <g class="ps-spin-group">
+                            <circle cx="50" cy="50" r="40" class="ps-wash"/>
+                            <circle cx="50" cy="12" r="7" class="ps-accent"/>
+                        </g>
+                        <polygon points="50,42 58,58 42,58" class="ps-triangle"/>
                     </svg>
                     <p class="boot-label">${UI.escape(message || 'Loading…')}</p>
                 `;
