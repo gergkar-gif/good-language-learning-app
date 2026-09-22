@@ -2983,6 +2983,36 @@ function _graderOneLineTip(result) {
     return '';
 }
 
+// Offline stand-in for _graderOneLineTip when GraderEngine is unreachable
+// (no network / AI unavailable). Derived from the actual response — word
+// count against the tier's minimum, whether the prompt's cues were
+// addressed, lexical repetition — rather than a fixed sentence, so the
+// learner still gets a tip grounded in what they actually wrote.
+function _localChallengeTip(userText, minWords, cues) {
+    const words = (userText || '').trim().split(/\s+/).filter(Boolean);
+    const wordCount = words.length;
+
+    if (wordCount < minWords) {
+        return `Try to add a bit more detail — aim for at least ${minWords} words (you wrote ${wordCount}).`;
+    }
+
+    if (Array.isArray(cues) && cues.length) {
+        const normalized = (userText || '').toLowerCase();
+        const missedCues = cues.filter(c => !normalized.includes(String(c).toLowerCase()));
+        if (missedCues.length) {
+            return `Try working in: ${missedCues.slice(0, 2).join(', ')}.`;
+        }
+    }
+
+    const uniqueWords = new Set(words.map(w => w.toLowerCase()));
+    const ttr = wordCount > 0 ? uniqueWords.size / wordCount : 1;
+    if (ttr < 0.6) {
+        return 'Nice length — now try varying your word choice instead of repeating the same words.';
+    }
+
+    return 'Solid, well-formed response for this level.';
+}
+
 // Reveals one substitution option's resulting sentence; Continue unlocks
 // once every option has been viewed (no right/wrong here, same reasoning
 // as lessonRevealWriting() above — this is exposure to a pattern, not a
@@ -3519,7 +3549,7 @@ async function lessonCheckChallenge() {
             const words = userText.split(/\s+/).filter(Boolean).length;
             const minWords = tier === 'tier2' ? 6 : 12;
             score = words >= minWords ? 85 : Math.round((words / minWords) * 80);
-            tip = score >= 70 ? 'Great job formulating your response in context!' : 'Try to expand your answer with more details.';
+            tip = _localChallengeTip(userText, minWords, stepState.cues);
         }
 
         if (revealEl) {
