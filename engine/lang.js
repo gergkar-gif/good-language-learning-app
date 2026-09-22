@@ -30,9 +30,18 @@ const Lang = (function () {
         fr:         ['fr-FR', 'fr-CA', 'fr']
     };
 
-    const NAMES = {
+    // Course-level names for pickers and track settings
+    const COURSE_NAMES = {
         'es-latam': 'Spanish (Latin America)',
         'es-es':    'Spanish (Spain)',
+        hu:         'Hungarian',
+        fr:         'French'
+    };
+
+    // Natural language names for learner-facing prompts, exercises, and drills
+    const LANGUAGE_NAMES = {
+        'es-latam': 'Spanish',
+        'es-es':    'Spanish',
         hu:         'Hungarian',
         fr:         'French'
     };
@@ -58,14 +67,19 @@ const Lang = (function () {
         return DEFAULT;
     }
 
+    // Natural language name for exercises and prompts ('Spanish', 'Hungarian')
     function name() {
-        return NAMES[current] || current;
+        return LANGUAGE_NAMES[current] || current;
     }
 
     // The display name for any course code, not just the current one —
     // for rendering a picker over all of them.
     function nameFor(otherCode) {
-        return NAMES[otherCode] || otherCode;
+        return COURSE_NAMES[otherCode] || otherCode;
+    }
+
+    function courseName() {
+        return COURSE_NAMES[current] || current;
     }
 
     function available() {
@@ -139,5 +153,5 @@ const Lang = (function () {
 
     migrateLegacyKeys();
 
-    return { code, defaultCode, name, nameFor, available, voices, content, key, set };
+    return { code, defaultCode, name, nameFor, courseName, available, voices, content, key, set };
 })();
