@@ -189,7 +189,7 @@ async function runTests() {
     // While recording, live transcript must NOT be visible and must be empty
     assert.strictEqual(liveTranscript.classList.contains('hidden'), true, 'Live transcript must remain hidden while recording begins');
     assert.strictEqual(liveTranscript.textContent, '', 'Live transcript must NOT show text when starting');
-    assert.strictEqual(micStatus.textContent, 'Listening...', 'Status indicates listening');
+    assert.ok(micStatus.textContent.includes('Listening'), 'Status indicates listening');
 
     const recInstance = createdRecognitions[createdRecognitions.length - 1];
     assert.ok(recInstance, 'SpeechRecognition instance must be created');

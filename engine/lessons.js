@@ -1627,8 +1627,19 @@ const stepRenderers = {
             <div class="sp-mic-section">
                 <button type="button" class="sp-mic-btn" id="lesson-mic-btn" onclick="lessonToggleSpeaking(this)" aria-label="Record speech">
                     <span class="sp-mic-icon-wrap">${typeof Art !== 'undefined' ? Art.icon('speaking') : ''}</span>
+                    <span class="sp-mic-stop-cue hidden" id="lesson-mic-stop-cue">Tap to finish</span>
                 </button>
                 <span class="sp-mic-status" id="lesson-mic-status">Tap to speak</span>
+                <div class="sp-voice-wave" id="lesson-voice-wave" aria-hidden="true">
+                    <span class="sp-wave-bar"></span>
+                    <span class="sp-wave-bar"></span>
+                    <span class="sp-wave-bar"></span>
+                    <span class="sp-wave-bar"></span>
+                    <span class="sp-wave-bar"></span>
+                </div>
+                <button type="button" class="sp-done-speaking-btn hidden" id="lesson-done-speaking-btn" onclick="lessonToggleSpeaking(document.getElementById('lesson-mic-btn'))">
+                    Finish speaking & grade ✓
+                </button>
                 <div class="sp-live-transcript hidden" id="lesson-live-transcript" aria-live="polite"></div>
             </div>
             <div class="sp-reveal hidden" id="lesson-sp-reveal"></div>
@@ -1738,8 +1749,19 @@ const stepRenderers = {
             <div class="sp-mic-section" style="margin-top:16px;">
                 <button type="button" class="sp-mic-btn" id="lesson-mic-btn" onclick="lessonToggleSpeaking(this)" aria-label="Record speech">
                     <span class="sp-mic-icon-wrap">${typeof Art !== 'undefined' ? Art.icon('speaking') : ''}</span>
+                    <span class="sp-mic-stop-cue hidden" id="lesson-mic-stop-cue">Tap to finish</span>
                 </button>
                 <span class="sp-mic-status" id="lesson-mic-status">Tap to speak</span>
+                <div class="sp-voice-wave" id="lesson-voice-wave" aria-hidden="true">
+                    <span class="sp-wave-bar"></span>
+                    <span class="sp-wave-bar"></span>
+                    <span class="sp-wave-bar"></span>
+                    <span class="sp-wave-bar"></span>
+                    <span class="sp-wave-bar"></span>
+                </div>
+                <button type="button" class="sp-done-speaking-btn hidden" id="lesson-done-speaking-btn" onclick="lessonToggleSpeaking(document.getElementById('lesson-mic-btn'))">
+                    Finish speaking & grade ✓
+                </button>
                 <div class="sp-live-transcript hidden" id="lesson-live-transcript" aria-live="polite"></div>
             </div>
 
@@ -2685,6 +2707,14 @@ function lessonPlayAudio(speed) {
         if (typeof SpeechInput !== 'undefined') SpeechInput.stopListening();
         const micBtn = document.getElementById('lesson-mic-btn');
         if (micBtn) micBtn.classList.remove('sp-recording');
+        const cueEl = document.getElementById('lesson-mic-stop-cue');
+        const waveEl = document.getElementById('lesson-voice-wave');
+        const doneBtn = document.getElementById('lesson-done-speaking-btn');
+        const bars = waveEl ? waveEl.querySelectorAll('.sp-wave-bar') : null;
+        if (cueEl) cueEl.classList.add('hidden');
+        if (doneBtn) doneBtn.classList.add('hidden');
+        if (waveEl) waveEl.classList.remove('is-active', 'is-hearing');
+        if (bars) bars.forEach(b => { b.style.transform = 'scaleY(0.2)'; });
         const statusEl = document.getElementById('lesson-mic-status');
         if (statusEl) statusEl.textContent = 'Tap to speak';
     }
@@ -3074,7 +3104,16 @@ function lessonToggleSpeaking(btn) {
         _lessonSpeakingRecording = false;
         if (typeof SpeechInput !== 'undefined') SpeechInput.stopListening();
         const statusEl = document.getElementById('lesson-mic-status');
-        if (statusEl) statusEl.textContent = 'Tap to speak';
+        const cueEl = document.getElementById('lesson-mic-stop-cue');
+        const waveEl = document.getElementById('lesson-voice-wave');
+        const doneBtn = document.getElementById('lesson-done-speaking-btn');
+        const bars = waveEl ? waveEl.querySelectorAll('.sp-wave-bar') : null;
+
+        if (statusEl) statusEl.textContent = 'Analyzing speech…';
+        if (cueEl) cueEl.classList.add('hidden');
+        if (doneBtn) doneBtn.classList.add('hidden');
+        if (waveEl) waveEl.classList.remove('is-active', 'is-hearing');
+        if (bars) bars.forEach(b => { b.style.transform = 'scaleY(0.2)'; });
         if (btn) btn.classList.remove('sp-recording');
         return;
     }
@@ -3082,7 +3121,14 @@ function lessonToggleSpeaking(btn) {
     _lessonSpeakingRecording = true;
     if (btn) btn.classList.add('sp-recording');
     const statusEl = document.getElementById('lesson-mic-status');
-    if (statusEl) statusEl.textContent = 'Listening...';
+    const cueEl = document.getElementById('lesson-mic-stop-cue');
+    const waveEl = document.getElementById('lesson-voice-wave');
+    const doneBtn = document.getElementById('lesson-done-speaking-btn');
+
+    if (cueEl) cueEl.classList.remove('hidden');
+    if (waveEl) waveEl.classList.add('is-active');
+    if (doneBtn) doneBtn.classList.remove('hidden');
+    if (statusEl) statusEl.textContent = 'Listening… speak your response';
     const liveEl = document.getElementById('lesson-live-transcript');
     if (liveEl) {
         liveEl.textContent = '';
@@ -3104,10 +3150,44 @@ function lessonToggleSpeaking(btn) {
                     statusEl.textContent = 'Analyzing speech…';
                 }
             },
+            onAudioLevel: (level, meta) => {
+                const currentWave = document.getElementById('lesson-voice-wave');
+                const currentStatus = document.getElementById('lesson-mic-status');
+                const bars = currentWave ? currentWave.querySelectorAll('.sp-wave-bar') : null;
+                if (meta && meta.isHearingVoice) {
+                    if (currentWave) currentWave.classList.add('is-hearing');
+                    if (currentStatus && _lessonSpeakingRecording) {
+                        currentStatus.textContent = 'Hearing voice · Tap mic when done';
+                    }
+                } else {
+                    if (currentWave) currentWave.classList.remove('is-hearing');
+                    if (currentStatus && _lessonSpeakingRecording) {
+                        currentStatus.textContent = meta && meta.hasSpoken
+                            ? 'Tap mic or button below to grade'
+                            : 'Listening… speak your response';
+                    }
+                }
+                if (bars && bars.length > 0) {
+                    const factors = [0.6, 1.1, 1.5, 1.1, 0.7];
+                    bars.forEach((bar, idx) => {
+                        const h = Math.min(1.0, Math.max(0.18, level * factors[idx % factors.length]));
+                        bar.style.transform = `scaleY(${h})`;
+                    });
+                }
+            },
             onFinal: transcript => {
                 _lessonSpeakingRecording = false;
                 if (btn) btn.classList.remove('sp-recording');
+                const cue = document.getElementById('lesson-mic-stop-cue');
+                const wave = document.getElementById('lesson-voice-wave');
+                const finishBtn = document.getElementById('lesson-done-speaking-btn');
+                const bars = wave ? wave.querySelectorAll('.sp-wave-bar') : null;
+                if (cue) cue.classList.add('hidden');
+                if (finishBtn) finishBtn.classList.add('hidden');
+                if (wave) wave.classList.remove('is-active', 'is-hearing');
+                if (bars) bars.forEach(b => { b.style.transform = 'scaleY(0.2)'; });
                 if (statusEl) statusEl.textContent = 'Tap to speak';
+
                 const text = transcript || _lastCapturedLesson;
                 if (liveEl && text) {
                     liveEl.textContent = text;
@@ -3129,6 +3209,14 @@ function lessonToggleSpeaking(btn) {
             onError: err => {
                 _lessonSpeakingRecording = false;
                 if (btn) btn.classList.remove('sp-recording');
+                const cue = document.getElementById('lesson-mic-stop-cue');
+                const wave = document.getElementById('lesson-voice-wave');
+                const finishBtn = document.getElementById('lesson-done-speaking-btn');
+                const bars = wave ? wave.querySelectorAll('.sp-wave-bar') : null;
+                if (cue) cue.classList.add('hidden');
+                if (finishBtn) finishBtn.classList.add('hidden');
+                if (wave) wave.classList.remove('is-active', 'is-hearing');
+                if (bars) bars.forEach(b => { b.style.transform = 'scaleY(0.2)'; });
                 if (statusEl) statusEl.textContent = 'Tap to speak';
 
                 // Defensive guard: if user already spoke and transcript was captured,

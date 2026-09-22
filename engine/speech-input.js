@@ -163,7 +163,25 @@ const SpeechInput = (function () {
     let _currentInterim = '';
     let _bestTranscript = '';
 
+    let _audioCtx = null;
+    let _audioAnalyser = null;
+    let _audioDataArray = null;
+
+    function _cleanupAudioAnalysis() {
+        if (_audioCtx) {
+            try {
+                if (_audioCtx.state !== 'closed' && typeof _audioCtx.close === 'function') {
+                    _audioCtx.close().catch(() => {});
+                }
+            } catch (e) {}
+            _audioCtx = null;
+        }
+        _audioAnalyser = null;
+        _audioDataArray = null;
+    }
+
     function _cleanupTimers() {
+        _cleanupAudioAnalysis();
         if (_finishTimeout) {
             clearTimeout(_finishTimeout);
             _finishTimeout = null;
@@ -234,6 +252,20 @@ const SpeechInput = (function () {
         function _setupRecorder(stream) {
             if (!_isListening || currentToken !== _sessionToken) return;
             _mediaStream = stream;
+
+            _cleanupAudioAnalysis();
+            try {
+                const AudioCtx = (typeof window !== 'undefined' && (window.AudioContext || window.webkitAudioContext));
+                if (AudioCtx) {
+                    _audioCtx = new AudioCtx();
+                    const source = _audioCtx.createMediaStreamSource(stream);
+                    _audioAnalyser = _audioCtx.createAnalyser();
+                    _audioAnalyser.fftSize = 64;
+                    _audioAnalyser.smoothingTimeConstant = 0.3;
+                    source.connect(_audioAnalyser);
+                    _audioDataArray = new Uint8Array(_audioAnalyser.frequencyBinCount);
+                }
+            } catch (e) {}
 
             let mimeType = '';
             if (window.MediaRecorder && typeof MediaRecorder.isTypeSupported === 'function') {
@@ -370,11 +402,32 @@ const SpeechInput = (function () {
             let simAngle = 0;
             _meterInterval = setInterval(() => {
                 if (!_isListening) return;
-                simAngle += 0.2;
-                // Ambient breathing wave while waiting, showing mic is hot
-                const basePulse = _hasSpoken ? 0.35 : 0.12 + Math.sin(simAngle) * 0.08;
-                onAudioLevel(basePulse);
-            }, 80);
+
+                let realLevel = 0;
+                let isHearing = false;
+
+                if (_audioAnalyser && _audioDataArray) {
+                    try {
+                        _audioAnalyser.getByteFrequencyData(_audioDataArray);
+                        let sum = 0;
+                        for (let i = 0; i < _audioDataArray.length; i++) sum += _audioDataArray[i];
+                        const avg = sum / _audioDataArray.length;
+                        realLevel = Math.min(1.0, Math.max(0, avg / 90));
+                        if (realLevel > 0.08) {
+                            _hasSpoken = true;
+                            isHearing = true;
+                        }
+                    } catch (e) {}
+                }
+
+                if (realLevel < 0.05) {
+                    simAngle += 0.2;
+                    const basePulse = _hasSpoken ? 0.22 : 0.08 + Math.sin(simAngle) * 0.05;
+                    realLevel = Math.max(realLevel, basePulse);
+                }
+
+                onAudioLevel(realLevel, { isHearingVoice: isHearing, hasSpoken: _hasSpoken });
+            }, 60);
         }
 
         const RecognitionClass = _getRecognitionClass();

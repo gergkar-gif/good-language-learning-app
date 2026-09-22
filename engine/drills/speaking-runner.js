@@ -223,9 +223,15 @@ const SpeakingRunner = (function () {
         const micBtn = _container.querySelector('.sp-mic-btn');
         const micLabel = _container.querySelector('.sp-mic-status');
         const liveText = _container.querySelector('.sp-live-transcript');
+        const stopCue = _container.querySelector('.sp-mic-stop-cue');
+        const waveContainer = _container.querySelector('.sp-voice-wave');
+        const doneBtn = _container.querySelector('.sp-done-speaking-btn');
 
         if (micBtn) micBtn.classList.add('sp-recording');
-        if (micLabel) micLabel.textContent = 'Listening...';
+        if (stopCue) stopCue.classList.remove('hidden');
+        if (waveContainer) waveContainer.classList.add('is-active');
+        if (doneBtn) doneBtn.classList.remove('hidden');
+        if (micLabel) micLabel.textContent = 'Listening… speak your response';
         if (liveText) {
             liveText.textContent = '';
             liveText.classList.add('hidden');
@@ -251,6 +257,8 @@ const SpeakingRunner = (function () {
                     liveText.classList.remove('hidden');
                 }
                 _stopRecording();
+                const micLabel = _container.querySelector('.sp-mic-status');
+                if (micLabel) micLabel.textContent = 'Tap to speak';
                 const evalResult = SpeechInput.evaluate(_exercise.spanish, text);
                 _finishEvaluation(evalResult);
             },
@@ -258,15 +266,36 @@ const SpeakingRunner = (function () {
                 _userAudioUrl = url;
                 _updateUserAudioButton();
             },
-            onAudioLevel: level => {
-                const meterBar = _container.querySelector('.sp-meter-fill');
-                if (meterBar) {
-                    meterBar.style.transform = `scaleX(${Math.max(0.05, level)})`;
+            onAudioLevel: (level, meta) => {
+                const waveContainer = _container.querySelector('.sp-voice-wave');
+                const micLabel = _container.querySelector('.sp-mic-status');
+                const bars = _container.querySelectorAll('.sp-wave-bar');
+                if (meta && meta.isHearingVoice) {
+                    if (waveContainer) waveContainer.classList.add('is-hearing');
+                    if (micLabel && _isRecording) {
+                        micLabel.textContent = 'Hearing voice · Tap mic when done';
+                    }
+                } else {
+                    if (waveContainer) waveContainer.classList.remove('is-hearing');
+                    if (micLabel && _isRecording) {
+                        micLabel.textContent = meta && meta.hasSpoken
+                            ? 'Tap mic or button below to grade'
+                            : 'Listening… speak your response';
+                    }
+                }
+                if (bars && bars.length > 0) {
+                    const factors = [0.6, 1.1, 1.5, 1.1, 0.7];
+                    bars.forEach((bar, idx) => {
+                        const h = Math.min(1.0, Math.max(0.18, level * factors[idx % factors.length]));
+                        bar.style.transform = `scaleY(${h})`;
+                    });
                 }
             },
             onError: err => {
                 console.warn('SpeakingRunner error:', err);
                 _stopRecording();
+                const micLabel = _container.querySelector('.sp-mic-status');
+                if (micLabel) micLabel.textContent = 'Tap to speak';
 
                 // Defensive guard: if user already spoke and text was captured, evaluate it
                 const captured = _capturedTranscript || (liveText ? liveText.textContent.trim() : '');
@@ -300,11 +329,21 @@ const SpeakingRunner = (function () {
 
         const micBtn = _container.querySelector('.sp-mic-btn');
         const micLabel = _container.querySelector('.sp-mic-status');
-        const meterBar = _container.querySelector('.sp-meter-fill');
+        const stopCue = _container.querySelector('.sp-mic-stop-cue');
+        const waveContainer = _container.querySelector('.sp-voice-wave');
+        const doneBtn = _container.querySelector('.sp-done-speaking-btn');
+        const bars = _container.querySelectorAll('.sp-wave-bar');
 
         if (micBtn) micBtn.classList.remove('sp-recording');
-        if (micLabel) micLabel.textContent = 'Tap to speak';
-        if (meterBar) meterBar.style.transform = 'scaleX(0)';
+        if (stopCue) stopCue.classList.add('hidden');
+        if (doneBtn) doneBtn.classList.add('hidden');
+        if (waveContainer) {
+            waveContainer.classList.remove('is-active', 'is-hearing');
+        }
+        if (bars) {
+            bars.forEach(b => { b.style.transform = 'scaleY(0.2)'; });
+        }
+        if (micLabel) micLabel.textContent = 'Analyzing speech…';
 
         SpeechInput.stopListening();
     }
@@ -368,13 +407,23 @@ const SpeakingRunner = (function () {
                         <span class="sp-mic-icon-wrap">
                             ${typeof Art !== 'undefined' ? Art.icon('speaking') : ''}
                         </span>
+                        <span class="sp-mic-stop-cue hidden">Tap to finish</span>
                     </button>
                     <span class="sp-mic-status">Tap to speak</span>
 
-                    <!-- Sound energy visualizer -->
-                    <div class="sp-meter-track" aria-hidden="true">
-                        <div class="sp-meter-fill"></div>
+                    <!-- Voice wave equalizer -->
+                    <div class="sp-voice-wave" aria-hidden="true">
+                        <span class="sp-wave-bar"></span>
+                        <span class="sp-wave-bar"></span>
+                        <span class="sp-wave-bar"></span>
+                        <span class="sp-wave-bar"></span>
+                        <span class="sp-wave-bar"></span>
                     </div>
+
+                    <!-- Explicit finish button shown while recording -->
+                    <button type="button" class="sp-done-speaking-btn hidden" data-action="finish-speaking">
+                        Finish speaking & grade ✓
+                    </button>
 
                     <!-- Live transcription bubble -->
                     <div class="sp-live-transcript hidden" aria-live="polite"></div>
@@ -431,6 +480,16 @@ const SpeakingRunner = (function () {
                     _stopRecording();
                 } else {
                     _startRecording();
+                }
+            });
+        }
+
+        // 2b. Explicit finish speaking & grade button
+        const finishBtn = _container.querySelector('[data-action="finish-speaking"]');
+        if (finishBtn) {
+            finishBtn.addEventListener('click', () => {
+                if (_isRecording) {
+                    _stopRecording();
                 }
             });
         }

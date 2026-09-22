@@ -1411,6 +1411,93 @@
     transition: transform 0.05s linear;
 }
 
+/* Voice Wave Equalizer */
+.sp-voice-wave {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    height: 24px;
+    margin: 10px 0 4px;
+    opacity: 0.3;
+    transition: opacity 0.2s ease;
+}
+
+.sp-voice-wave.is-active {
+    opacity: 1;
+}
+
+.sp-wave-bar {
+    width: 4px;
+    height: 100%;
+    background: var(--accent-dark, #E94B16);
+    border-radius: 2px;
+    transform: scaleY(0.2);
+    transform-origin: center center;
+    transition: transform 0.06s ease, background-color 0.15s ease;
+}
+
+.sp-voice-wave.is-hearing .sp-wave-bar {
+    background: var(--success, #1B7340);
+}
+
+.sp-mic-stop-cue {
+    position: absolute;
+    bottom: -8px;
+    background: var(--accent-dark, #E94B16);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+    white-space: nowrap;
+    pointer-events: none;
+    animation: sp-cue-bounce 1.4s infinite ease-in-out;
+}
+
+@keyframes sp-cue-bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+}
+
+.sp-done-speaking-btn {
+    margin-top: 10px;
+    padding: 7px 16px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    background: var(--surface);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm, 6px);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: background 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
+}
+
+.sp-done-speaking-btn:hover {
+    background: rgba(0, 0, 0, 0.05);
+    border-color: var(--primary, #102A47);
+    transform: translateY(-1px);
+}
+
+[data-theme="dark"] .sp-done-speaking-btn,
+:root:not([data-theme="light"]) .sp-done-speaking-btn {
+    background: var(--surface);
+    color: var(--text);
+    border-color: var(--border);
+}
+
+[data-theme="dark"] .sp-done-speaking-btn:hover,
+:root:not([data-theme="light"]) .sp-done-speaking-btn:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--text);
+}
+
 .sp-live-transcript {
     margin-top: 12px;
     padding: 8px 14px;
