@@ -3094,9 +3094,15 @@ function lessonToggleSpeaking(btn) {
     if (typeof SpeechInput !== 'undefined') {
         SpeechInput.startListening({
             target: stepState.target || '',
+            preferRecording: true,
             onInterim: interim => {
                 _lastCapturedLesson = interim;
                 // Defer displaying transcribed text until learner finishes speaking
+            },
+            onStatusChange: status => {
+                if (statusEl && status === 'analyzing') {
+                    statusEl.textContent = 'Analyzing speech…';
+                }
             },
             onFinal: transcript => {
                 _lessonSpeakingRecording = false;

@@ -28,8 +28,74 @@ const SpeechInput = (function () {
     let _isListening = false;
     let _hasSpoken = false;
     let _listenStartTime = 0;
+    let _isCloudSttSession = false;
 
     const CANT_SPEAK_KEY = 'parlour_cant_speak_until';
+    const DEFAULT_STT_ENDPOINT = 'https://parlour-stt.gergkar.workers.dev/transcribe';
+    const STT_ENDPOINT_KEY = 'parlour_stt_endpoint';
+    const STT_MODE_KEY = 'parlour_stt_mode'; // 'auto' | 'cloud' | 'native'
+
+    function getSttEndpoint() {
+        try {
+            const stored = localStorage.getItem(STT_ENDPOINT_KEY);
+            if (stored === 'none' || stored === 'disabled') return null;
+            return stored || DEFAULT_STT_ENDPOINT;
+        } catch (e) {
+            return DEFAULT_STT_ENDPOINT;
+        }
+    }
+
+    function setSttEndpoint(url) {
+        try {
+            if (url) localStorage.setItem(STT_ENDPOINT_KEY, url);
+            else localStorage.removeItem(STT_ENDPOINT_KEY);
+        } catch (e) {}
+    }
+
+    function getSttMode() {
+        try {
+            return localStorage.getItem(STT_MODE_KEY) || 'auto';
+        } catch (e) {
+            return 'auto';
+        }
+    }
+
+    function setSttMode(mode) {
+        try {
+            if (mode) localStorage.setItem(STT_MODE_KEY, mode);
+            else localStorage.removeItem(STT_MODE_KEY);
+        } catch (e) {}
+    }
+
+    function isCloudSttAvailable() {
+        return !!getSttEndpoint() && typeof fetch === 'function';
+    }
+
+    async function transcribeBlob(audioBlob, lang) {
+        const endpoint = getSttEndpoint();
+        if (!endpoint) throw new Error('No STT endpoint configured');
+
+        const cleanLang = (lang || getSpeechLang() || 'es').split(/[-_]/)[0];
+        const url = `${endpoint}${endpoint.includes('?') ? '&' : '?'}lang=${encodeURIComponent(cleanLang)}`;
+
+        const type = (audioBlob && audioBlob.type) || 'audio/webm';
+        const response = await fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': type,
+                'X-Language': cleanLang
+            },
+            body: audioBlob
+        });
+
+        if (!response.ok) {
+            const errData = await response.json().catch(() => ({}));
+            throw new Error(errData.error || `STT HTTP ${response.status}`);
+        }
+
+        const data = await response.json();
+        return (data && (data.text || data.transcript || '')).trim();
+    }
 
     // ---- Browser Support & State ----
     function isRecognitionSupported() {
@@ -161,6 +227,7 @@ const SpeechInput = (function () {
     function _startRecordingStream(options = {}) {
         if (!isRecordingSupported()) return;
 
+        const lang = options.lang || getSpeechLang();
         _clearStreamIdleTimer();
         const currentToken = ++_sessionToken;
 
@@ -195,7 +262,7 @@ const SpeechInput = (function () {
                 }
             };
 
-            _mediaRecorder.onstop = () => {
+            _mediaRecorder.onstop = async () => {
                 if (currentToken === _sessionToken && _recordedChunks.length > 0) {
                     _cleanAudioUrl();
                     const type = (_mediaRecorder && _mediaRecorder.mimeType) || mimeType || 'audio/webm';
@@ -203,6 +270,22 @@ const SpeechInput = (function () {
                     _recordedAudioUrl = URL.createObjectURL(_recordedAudioBlob);
                     if (options.onAudioReady) options.onAudioReady(_recordedAudioUrl);
                     if (_onAudioReadyCallback) _onAudioReadyCallback(_recordedAudioUrl);
+
+                    if (_isCloudSttSession && _onFinalCallback) {
+                        const cb = _onFinalCallback;
+                        _onFinalCallback = null;
+                        const onStatus = options.onStatusChange || null;
+                        if (onStatus) onStatus('analyzing');
+                        try {
+                            const transcript = await transcribeBlob(_recordedAudioBlob, lang);
+                            cb(transcript || '');
+                        } catch (err) {
+                            console.warn('SpeechInput: Cloud STT transcription failed:', err);
+                            const onErr = options.onError || null;
+                            if (onErr) onErr('stt-failed');
+                            else cb('');
+                        }
+                    }
                 }
             };
 
@@ -305,8 +388,30 @@ const SpeechInput = (function () {
 
         const isAndroid = typeof navigator !== 'undefined' && /Android/i.test(navigator.userAgent);
 
+        // STT Provider resolution: 'auto' (default), 'cloud', 'native'
+        const requestedProvider = options.sttProvider || 'auto';
+        let useCloudStt = false;
+        if (requestedProvider === 'cloud') {
+            useCloudStt = isCloudSttAvailable();
+        } else if (requestedProvider === 'native') {
+            useCloudStt = false;
+        } else {
+            const pref = getSttMode();
+            if (pref === 'cloud') {
+                useCloudStt = isCloudSttAvailable();
+            } else if (pref === 'native') {
+                useCloudStt = false;
+            } else if (options.preferRecording && isMobile && isCloudSttAvailable()) {
+                useCloudStt = true;
+            } else if (!RecognitionClass && isCloudSttAvailable()) {
+                useCloudStt = true;
+            }
+        }
+
+        _isCloudSttSession = useCloudStt;
+
         // 1. Primary: Native SpeechRecognition Engine
-        if (RecognitionClass) {
+        if (RecognitionClass && !_isCloudSttSession) {
             function _startRecognitionInstance() {
                 if (!_isListening) return;
                 try {
@@ -487,10 +592,10 @@ const SpeechInput = (function () {
         // STT is unsupported (fallback self-evaluation mode), or on desktop where concurrent capture
         // is fully supported by the platform's audio subsystem.
         const canRecordConcurrently = !isMobile;
-        const needsAudioRecording = !RecognitionClass || (!!options.onAudioReady && canRecordConcurrently);
+        const needsAudioRecording = _isCloudSttSession || !RecognitionClass || (!!options.onAudioReady && canRecordConcurrently);
         if (isRecordingSupported() && needsAudioRecording) {
             _startRecordingStream(options);
-        } else if (!RecognitionClass && !isRecordingSupported()) {
+        } else if (!RecognitionClass && !_isCloudSttSession && !isRecordingSupported()) {
             _isListening = false;
             onError('not-supported');
         }
@@ -498,6 +603,7 @@ const SpeechInput = (function () {
 
     function stopListening() {
         const wasListening = _isListening;
+        const isCloud = _isCloudSttSession;
         _isListening = false;
         _cleanupTimers();
         _cleanupRecognition();
@@ -512,7 +618,7 @@ const SpeechInput = (function () {
         _currentInterim = '';
         _bestTranscript = '';
 
-        if (wasListening && _onFinalCallback) {
+        if (wasListening && _onFinalCallback && !isCloud) {
             const cb = _onFinalCallback;
             _onFinalCallback = null;
             cb(finalText || '');
@@ -691,6 +797,12 @@ const SpeechInput = (function () {
         isListening: () => _isListening,
         releaseStream,
         getRecordedAudioUrl,
+        getSttEndpoint,
+        setSttEndpoint,
+        getSttMode,
+        setSttMode,
+        isCloudSttAvailable,
+        transcribeBlob,
         evaluate,
         isFullTargetMatch,
         normalizeForSpeech

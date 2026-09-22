@@ -233,9 +233,16 @@ const SpeakingRunner = (function () {
 
         SpeechInput.startListening({
             target: _exercise.spanish || _exercise.sentence || '',
+            preferRecording: true,
             onInterim: interim => {
                 _capturedTranscript = interim;
                 // Defer displaying transcribed text until speaker finishes
+            },
+            onStatusChange: status => {
+                const micLabel = _container.querySelector('.sp-mic-status');
+                if (micLabel && status === 'analyzing') {
+                    micLabel.textContent = 'Analyzing speech…';
+                }
             },
             onFinal: transcript => {
                 const text = transcript || _capturedTranscript;
@@ -277,7 +284,7 @@ const SpeakingRunner = (function () {
                 if (err === 'permission-denied') {
                     _setFeedback(false, 'Microphone permission was denied. Please allow microphone access in your browser settings.');
                     _offerSelfEvaluation('Microphone permission denied.');
-                } else if (!SpeechInput.isRecognitionSupported() || err === 'recognition-failed' || err === 'no-speech') {
+                } else if (!SpeechInput.isRecognitionSupported() || err === 'recognition-failed' || err === 'no-speech' || err === 'stt-failed') {
                     _offerSelfEvaluation(err === 'no-speech' ? 'No voice heard. Did you speak into the microphone?' : null);
                 } else {
                     _setFeedback(false, 'Microphone error. You can try again or skip.');
