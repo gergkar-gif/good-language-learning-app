@@ -557,7 +557,7 @@ def short_gloss(text):
     first = str(text or "").split(";")[0]
     first = _strip_balanced(first, "(", ")")               # asides, not meaning
     first = _strip_balanced(first, "[", "]")               # stray wiki-link/template leakage
-    first = re.sub(r"^(comparative|superlative|diminutive|augmentative)"
+    first = re.sub(r"^(comparative|superlative|diminutive|augmentative|inflection)"
                    r"\s+of\s+[^:]*:\s*", "", first, flags=re.I)
     first = re.sub(r"\s+", " ", first).strip(" ,")
 
