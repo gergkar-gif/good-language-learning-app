@@ -9,6 +9,20 @@ needs re-reading before starting new work; it's reference only.
 
 ## Completed queue items
 
+66. ~~**`fill-blank` exercises have no hint mechanism**~~ — **Done 2026-09-22.**
+    Implemented an on-demand, progressive two-tier hint system across both Lesson fill-blank steps (`engine/lessons.js`) and GrammarRunner fill-blank practice drills (`engine/drills/grammar-runner.js`), resolving issues #176, #180, and #183:
+    - **Progressive Two-Tier Hints**:
+      - **Hint 1**: Reveals the initial letter of the canonical target word (`Starts with "X"`), respecting unicode word/number characters and accented characters (*É*, *ú*).
+      - **Hint 2**: Reveals the full English gloss / sentence translation (`English: "..."`), then indicates `All hints shown` and disables further clicks.
+    - **Parlour Visual Identity (Strict Zero Emojis)**:
+      - Clean text-only design (`Need a hint?` -> `Next hint` -> `All hints shown`), with dashed surface card styling (`.lsn-hint-box`) and subtle dotted-underline trigger (`.lsn-hint-btn`).
+      - Hint area and buttons automatically tuck away when the step is solved or attempts expire.
+    - **Soft Learner Path & SRS Signal**:
+      - Using hints does not penalize or consume any of the learner's 3 answer attempts.
+      - Softly signals imperfect recall: excludes the step from `lessonStats.correctFirstTry` and schedules the item as `'hard'` (instead of `'good'`) in SM-2 spaced repetition (`Recycle.record`).
+    - **Automated Verification**:
+      - Created comprehensive test suite `tests/drills/test-fill-blank-hints.js` covering initial render, zero emoji enforcement, progressive tier progression, stats tracking, SM-2 scheduling, accent handling, and GrammarRunner parity. All 7 tests pass.
+
 65. ~~**Comprehensive Pedagogical Error Feedback & Post-Session Review Recaps across All Workshop Drills & Minigames**~~ — **Done 2026-09-21.**
     Imbued all Workshop drillers and minigames with direct pedagogical teaching functions so learners always understand mistakes and see corrections immediately:
     - **Verb Table Driller (`engine/verbs/table.js`, `styles/verbs.css`)**:

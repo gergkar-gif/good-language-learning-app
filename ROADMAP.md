@@ -20,7 +20,6 @@ Completed work is archived out to `ACHIEVED.md`.
    - **Authoring Norm**: When resuming, every unit must follow the established three-pillar standard: B1 level pedagogical clarity, 100% factual accuracy (aligned with Instituto Cervantes CCSE syllabus), and *The Rest Is History* (TRIH)-style engaging, humanized narrative storytelling with companion stories in `stories/world/b1/`.
    - `scripts/validate-content.py` maintains `SKIP_STEM_MARKERS = {"es-es": "-ccse-"}` for scaffolded stubs until all units are authored.
 
-66. **`fill-blank` exercises have no hint mechanism** — surfaced 2026-09-21 via three independent bug reports (issues #176, #180, #183) against unrelated exercises, all asking for a hint. Checked `engine/lessons.js`'s `'fill-blank'` renderer and `lessonCheckBlank`, and the exercise schema across both Spanish tracks: no `hint` field is read anywhere, and no other exercise type has a reveal-on-demand hint UI either — the only help currently offered is the English translation, shown only after the step is solved or attempts are exhausted. Needs a UI/UX decision (a toggle? first-letter reveal? infinitive nudge for reflexive-contrast items?) before it's built, since it's a new shared engine affordance, not a per-exercise content tweak.
 
 
 

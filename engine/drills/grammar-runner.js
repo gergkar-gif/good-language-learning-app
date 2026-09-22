@@ -244,11 +244,19 @@ const GrammarRunner = (function () {
     }
 
     function _renderFillBlank(ex) {
+        let hintLevel = 0;
+        let usedHint = false;
+        const englishGloss = ex.english || ex.translation || '';
+
         _container.innerHTML = `
             <p class="gd-question">${_escapeHtml(ex.sentence).replace(/_{2,}/, '<span class="gd-blank">?</span>')}</p>
             <input class="gd-input" type="text" placeholder="Type the missing word"
                 autocomplete="off" autocapitalize="off" spellcheck="false">
             ${typeof UI !== 'undefined' && UI.diacriticsBarHtml ? UI.diacriticsBarHtml('.gd-input') : ''}
+            <div class="lsn-hint-action">
+                <button type="button" class="lsn-hint-btn gd-hint-btn">Need a hint?</button>
+            </div>
+            <div class="lsn-hint-area gd-hint-area" style="display:none;"></div>
             ${_feedbackHtml()}
             ${_actionsHtml()}
         `;
@@ -256,17 +264,66 @@ const GrammarRunner = (function () {
         const input = _container.querySelector('.gd-input');
         input.addEventListener('keydown', e => { if (e.key === 'Enter') _doCheck(); });
 
+        const hintBtn = _container.querySelector('.gd-hint-btn');
+        const hintArea = _container.querySelector('.gd-hint-area');
+        if (hintBtn && hintArea) {
+            hintBtn.addEventListener('click', () => {
+                if (_solved) return;
+                usedHint = true;
+                hintLevel++;
+                const raw = String(ex.answer || '').trim();
+                const match = raw.match(/[\p{L}\p{N}]/u);
+                const firstChar = match ? match[0] : raw.charAt(0);
+
+                if (hintLevel === 1) {
+                    hintArea.style.display = 'block';
+                    hintArea.innerHTML = `
+                        <div class="lsn-hint-box">
+                            <span class="lsn-hint-label">Hint:</span>
+                            <span>Starts with <strong>"${_escapeHtml(firstChar)}"</strong></span>
+                        </div>
+                    `;
+                    if (englishGloss) {
+                        hintBtn.textContent = 'Next hint';
+                    } else {
+                        hintBtn.textContent = 'All hints shown';
+                        hintBtn.disabled = true;
+                    }
+                } else if (hintLevel >= 2) {
+                    hintArea.style.display = 'block';
+                    hintArea.innerHTML = `
+                        <div class="lsn-hint-box">
+                            <div style="margin-bottom: 4px;">
+                                <span class="lsn-hint-label">Hint:</span>
+                                <span>Starts with <strong>"${_escapeHtml(firstChar)}"</strong></span>
+                            </div>
+                            ${englishGloss ? `
+                                <div>
+                                    <span class="lsn-hint-label">English:</span>
+                                    <span>"${_escapeHtml(englishGloss)}"</span>
+                                </div>
+                            ` : ''}
+                        </div>
+                    `;
+                    hintBtn.textContent = 'All hints shown';
+                    hintBtn.disabled = true;
+                }
+            });
+        }
+
         _onCheck(() => {
             const acceptable = ex.acceptable || [ex.answer];
             const userVal = input.value;
             const ok = acceptable.some(a => _normalise(userVal) === _normalise(a));
             input.classList.toggle('gd-correct', ok);
             input.classList.toggle('gd-wrong', !ok);
+            if (hintBtn) hintBtn.style.display = 'none';
+            if (hintArea) hintArea.style.display = 'none';
             if (!ok) input.value = ex.answer;
             _setFeedback(ok, ok ? '✓ Correct!' : `✗ The correct answer is "${ex.answer}".`);
             if (ex.explanation) _container.insertAdjacentHTML('beforeend', _explanationHtml(ex.explanation));
             if (ex.moreInfo) _container.insertAdjacentHTML('beforeend', _moreInfoHtml(ex.moreInfo));
-            _resolve(ok, { question: ex.sentence, correct: ex.answer, user: userVal });
+            _resolve(ok, { question: ex.sentence, correct: ex.answer, user: userVal, usedHint });
         });
     }
 

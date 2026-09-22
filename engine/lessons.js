@@ -929,6 +929,10 @@ function solveStep(message) {
     setFeedback(true, message);
     const diffEl = document.getElementById('step-diff');
     if (diffEl) { diffEl.innerHTML = ''; diffEl.style.display = 'none'; }
+    const hintArea = document.getElementById('lsn-hint-area');
+    const hintBtn = document.getElementById('lsn-hint-btn');
+    if (hintBtn) hintBtn.style.display = 'none';
+    if (hintArea) hintArea.style.display = 'none';
     showTranslation();
     updateFooterButton();
     if (typeof Sound !== 'undefined') Sound.correct();
@@ -943,7 +947,7 @@ function solveStep(message) {
     noteRecycleResult(true);
     queueForRemediationIfMissed();
     lessonStats.total++;
-    if (!stepState.wasMissed) lessonStats.correctFirstTry++;
+    if (!stepState.wasMissed && !stepState.usedHint) lessonStats.correctFirstTry++;
 }
 
 // Records a wrong attempt. Returns true once the learner is out of tries,
@@ -963,6 +967,11 @@ function failStep(message) {
     }
 
     stepState.solved = true;
+    const hintArea = document.getElementById('lsn-hint-area');
+    const hintBtn = document.getElementById('lsn-hint-btn');
+    if (hintBtn) hintBtn.style.display = 'none';
+    if (hintArea) hintArea.style.display = 'none';
+
     // Exhausting every attempt already reveals the answer — that's the
     // existing "never stuck on one item" escape valve. Queuing a gaveUp step
     // for remediation too would turn a step the learner is genuinely stuck
@@ -995,14 +1004,17 @@ function queueForRemediationIfMissed() {
 // just recycle-block repeats — a skill's first-ever encounter is evidence
 // too, and used to be silently discarded unless that exact exercise later
 // got redrawn into some future lesson's recycle pool. Solved clean is
-// "good", solved only after burning every attempt is "again", same
-// distinction the vocabulary deck's rating buttons make.
+// "good", solved with hints is "hard", solved only after burning every attempt is "again",
+// same distinction the vocabulary deck's rating buttons make.
 function noteRecycleResult(success) {
     if (stepState.recycleNoted) return;
     const step = currentLesson.steps[currentStepIndex];
     if (!step || !step.id || !step.teaches || !step.teaches.length) return;
     stepState.recycleNoted = true;
-    if (typeof Recycle !== 'undefined') Recycle.record(step.id, success ? 'good' : 'again');
+    if (typeof Recycle !== 'undefined') {
+        const rating = (!success) ? 'again' : (stepState.usedHint ? 'hard' : 'good');
+        Recycle.record(step.id, rating);
+    }
 }
 
 function revealHtml(inner) {
@@ -1361,6 +1373,8 @@ const stepRenderers = {
         stepState.acceptable = step.answers || [step.answer];
         stepState.translation = step.english || step.translation || '';
         stepState.checkFn = 'lessonCheckBlank';
+        stepState.hintLevel = 0;
+        stepState.usedHint = false;
         return `
             <p class="lsn-question">${escMd(step.sentence).replace(/_{2,}/, '<span class="lsn-blank">?</span>')}</p>
             <div class="lsn-input-with-mic">
@@ -1370,6 +1384,10 @@ const stepRenderers = {
                 </button>
             </div>
             ${typeof UI !== 'undefined' && UI.diacriticsBarHtml ? UI.diacriticsBarHtml('#blank-input') : ''}
+            <div class="lsn-hint-action">
+                <button type="button" class="lsn-hint-btn" id="lsn-hint-btn" onclick="lessonRequestHint()">Need a hint?</button>
+            </div>
+            <div id="lsn-hint-area" class="lsn-hint-area" style="display:none;"></div>
             ${feedbackHtml()}
         `;
     },
@@ -2514,6 +2532,59 @@ function revealMatches() {
     }
     stepState.pick = null;
     setFeedback(false, 'Here are the pairs — continue when you are ready.');
+}
+
+function lessonRequestHint() {
+    if (stepState.solved) return;
+    const btn = document.getElementById('lsn-hint-btn');
+    const area = document.getElementById('lsn-hint-area');
+    if (!btn || !area) return;
+
+    stepState.usedHint = true;
+    stepState.hintLevel = (stepState.hintLevel || 0) + 1;
+
+    const raw = String(stepState.answer || '').trim();
+    const match = raw.match(/[\p{L}\p{N}]/u);
+    const firstChar = match ? match[0] : raw.charAt(0);
+
+    if (stepState.hintLevel === 1) {
+        area.style.display = 'block';
+        area.innerHTML = `
+            <div class="lsn-hint-box">
+                <span class="lsn-hint-label">Hint:</span>
+                <span>Starts with <strong>"${esc(firstChar)}"</strong></span>
+            </div>
+        `;
+
+        if (stepState.translation) {
+            btn.textContent = 'Next hint';
+        } else {
+            btn.textContent = 'All hints shown';
+            btn.disabled = true;
+        }
+        return;
+    }
+
+    if (stepState.hintLevel >= 2) {
+        area.style.display = 'block';
+        area.innerHTML = `
+            <div class="lsn-hint-box">
+                <div style="margin-bottom: 4px;">
+                    <span class="lsn-hint-label">Hint:</span>
+                    <span>Starts with <strong>"${esc(firstChar)}"</strong></span>
+                </div>
+                ${stepState.translation ? `
+                    <div>
+                        <span class="lsn-hint-label">English:</span>
+                        <span>"${esc(stepState.translation)}"</span>
+                    </div>
+                ` : ''}
+            </div>
+        `;
+
+        btn.textContent = 'All hints shown';
+        btn.disabled = true;
+    }
 }
 
 function lessonCheckBlank() {
