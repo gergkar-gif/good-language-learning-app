@@ -13,7 +13,7 @@ On desktop browsers, the browser's built-in Web Speech API can run concurrently 
 **The Solution:**
 1. **Client**: Parlour captures clean audio via `MediaRecorder` exclusively on mobile. This has zero hardware contention and works on 100% of iOS and Android devices.
 2. **Audio URL**: An audio blob URL is immediately created, arming the **"Your Voice"** button.
-3. **STT Worker**: The audio blob is sent to `parlour-stt` running `@cf/openai/whisper` on Cloudflare Workers AI free tier.
+3. **STT Worker**: The audio blob is sent to `parlour-stt` running `@cf/openai/whisper-large-v3-turbo` on Cloudflare Workers AI free tier.
 4. **Scoring**: The returned transcript is evaluated word-by-word against the target prompt.
 
 The Worker source code is located at:
@@ -62,7 +62,7 @@ curl.exe https://parlour-stt.gergkar.workers.dev/health
 
 Expected response:
 ```json
-{"status":"ok","service":"parlour-stt","model":"@cf/openai/whisper","workersAiAvailable":true}
+{"status":"ok","service":"parlour-stt","model":"@cf/openai/whisper-large-v3-turbo","workersAiAvailable":true}
 ```
 
 Once deployed, any speaking drill or oral challenge in Parlour will record your voice cleanly on mobile and desktop, score pronunciation with Whisper, and let you tap **"Your Voice"** to listen to your recording.

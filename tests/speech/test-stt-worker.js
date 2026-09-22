@@ -1,9 +1,9 @@
-// Unit Test: Cloudflare STT Worker (@cf/openai/whisper)
+// Unit Test: Cloudflare STT Worker (@cf/openai/whisper-large-v3-turbo)
 // Verifies:
 // 1. Health check endpoint (GET /health)
 // 2. CORS headers for localhost and production domains
 // 3. Binary audio processing and language normalisation for Whisper
-// 4. Correct invocation of env.AI.run('@cf/openai/whisper', ...)
+// 4. Correct invocation of env.AI.run('@cf/openai/whisper-large-v3-turbo', ...)
 // 5. Error handling: empty audio, 429 quota exhaustion, missing AI binding
 
 const assert = require('assert');
@@ -91,8 +91,9 @@ async function runTests() {
     assert.strictEqual(transcribeData.language, 'es');
 
     assert.ok(lastAiCall, 'AI.run should be called');
-    assert.strictEqual(lastAiCall.model, '@cf/openai/whisper');
+    assert.strictEqual(lastAiCall.model, '@cf/openai/whisper-large-v3-turbo');
     assert.strictEqual(lastAiCall.input.language, 'es');
+    assert.strictEqual(lastAiCall.input.vad_filter, true);
     assert.strictEqual(lastAiCall.input.audio.length, 200);
     console.log('✓ Binary audio transcription and language normalisation verified');
 

@@ -2,7 +2,7 @@
 // CLOUDFLARE SPEECH-TO-TEXT WORKER (Cloudflare Workers AI Whisper)
 // ============================================
 // Zero-dependency production AI speech-to-text worker for Parlour.
-// Transcribes user-recorded audio via @cf/openai/whisper on Cloudflare Workers AI free tier.
+// Transcribes user-recorded audio via @cf/openai/whisper-large-v3-turbo on Cloudflare Workers AI free tier.
 //
 // Solves mobile browser microphone contention:
 // Mobile browsers cannot run webkitSpeechRecognition and MediaRecorder simultaneously.
@@ -70,7 +70,7 @@ export default {
             return json({
                 status: 'ok',
                 service: 'parlour-stt',
-                model: '@cf/openai/whisper',
+                model: '@cf/openai/whisper-large-v3-turbo',
                 workersAiAvailable: !!(env && env.AI)
             }, 200, cors);
         }
@@ -124,16 +124,20 @@ export default {
             return json({ error: 'No audio data received' }, 400, cors);
         }
 
-        // Call Cloudflare Workers AI Whisper
+        // Call Cloudflare Workers AI Whisper (large-v3-turbo: far more accurate than the
+        // base @cf/openai/whisper model, honours the language hint, and suppresses
+        // hallucinated words during silence/noise via vad_filter).
         try {
             const aiInput = {
-                audio: audioBytes
+                audio: audioBytes,
+                task: 'transcribe',
+                vad_filter: true
             };
             if (targetLang) {
                 aiInput.language = targetLang;
             }
 
-            const aiResult = await env.AI.run('@cf/openai/whisper', aiInput);
+            const aiResult = await env.AI.run('@cf/openai/whisper-large-v3-turbo', aiInput);
 
             const transcript = (aiResult && (aiResult.text || aiResult.transcript || '')).trim();
 
