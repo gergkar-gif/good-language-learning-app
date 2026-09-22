@@ -29,10 +29,15 @@ async function runTests() {
                 lastAiCall = { model, input };
                 return {
                     text: 'hola buenos días',
-                    words: [
-                        { word: 'hola', start: 0, end: 0.5 },
-                        { word: 'buenos', start: 0.6, end: 1.1 },
-                        { word: 'días', start: 1.2, end: 1.6 }
+                    segments: [
+                        {
+                            text: 'hola buenos días',
+                            words: [
+                                { word: 'hola', start: 0, end: 0.5 },
+                                { word: 'buenos', start: 0.6, end: 1.1 },
+                                { word: 'días', start: 1.2, end: 1.6 }
+                            ]
+                        }
                     ]
                 };
             }
@@ -94,8 +99,15 @@ async function runTests() {
     assert.strictEqual(lastAiCall.model, '@cf/openai/whisper-large-v3-turbo');
     assert.strictEqual(lastAiCall.input.language, 'es');
     assert.strictEqual(lastAiCall.input.vad_filter, true);
-    assert.strictEqual(lastAiCall.input.audio.length, 200);
-    console.log('✓ Binary audio transcription and language normalisation verified');
+    // whisper-large-v3-turbo requires 'audio' as a base64 string (per Cloudflare's
+    // input schema), not the raw byte array the base whisper model accepted.
+    assert.strictEqual(typeof lastAiCall.input.audio, 'string');
+    assert.strictEqual(Buffer.from(lastAiCall.input.audio, 'base64').length, 200);
+    // Word-level timestamps come nested under segments[].words and must be
+    // flattened into a top-level array in the response.
+    assert.strictEqual(transcribeData.words.length, 3);
+    assert.strictEqual(transcribeData.words[0].word, 'hola');
+    console.log('✓ Binary audio transcription, base64 encoding, and word flattening verified');
 
     // 4. Hungarian language code normalisation
     console.log('4. Testing Hungarian language code normalisation (hu-HU -> hu)...');

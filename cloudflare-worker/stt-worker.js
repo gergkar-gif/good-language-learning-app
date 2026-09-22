@@ -53,6 +53,17 @@ function normaliseWhisperLang(lang) {
     return clean.split(/[-_]/)[0];
 }
 
+// Chunked to avoid blowing the call-stack limit of String.fromCharCode.apply
+// on large recordings (a naive single-call spread fails around ~100KB+).
+function bytesToBase64(bytes) {
+    const CHUNK_SIZE = 0x8000;
+    let binary = '';
+    for (let i = 0; i < bytes.length; i += CHUNK_SIZE) {
+        binary += String.fromCharCode.apply(null, bytes.subarray(i, i + CHUNK_SIZE));
+    }
+    return btoa(binary);
+}
+
 export default {
     async fetch(request, env) {
         const origin = request.headers.get('Origin') || '';
@@ -96,7 +107,7 @@ export default {
         const targetLang = normaliseWhisperLang(reqLang);
 
         // Read audio buffer from request body
-        let audioBytes = null;
+        let audioBuffer = null;
         const contentType = request.headers.get('Content-Type') || '';
 
         try {
@@ -106,30 +117,29 @@ export default {
                 if (!file || typeof file.arrayBuffer !== 'function') {
                     return json({ error: 'No audio file found in form-data payload' }, 400, cors);
                 }
-                const buffer = await file.arrayBuffer();
-                audioBytes = [...new Uint8Array(buffer)];
+                audioBuffer = await file.arrayBuffer();
             } else {
                 // Direct binary audio upload (audio/webm, audio/mp4, audio/wav, etc.)
-                const buffer = await request.arrayBuffer();
-                if (!buffer || buffer.byteLength < 64) {
+                audioBuffer = await request.arrayBuffer();
+                if (!audioBuffer || audioBuffer.byteLength < 64) {
                     return json({ error: 'Audio payload is empty or too short (< 64 bytes)' }, 400, cors);
                 }
-                audioBytes = [...new Uint8Array(buffer)];
             }
         } catch (readErr) {
             return json({ error: 'Failed to read audio request body: ' + readErr.message }, 400, cors);
         }
 
-        if (!audioBytes || audioBytes.length === 0) {
+        if (!audioBuffer || audioBuffer.byteLength === 0) {
             return json({ error: 'No audio data received' }, 400, cors);
         }
 
         // Call Cloudflare Workers AI Whisper (large-v3-turbo: far more accurate than the
         // base @cf/openai/whisper model, honours the language hint, and suppresses
-        // hallucinated words during silence/noise via vad_filter).
+        // hallucinated words during silence/noise via vad_filter). This model's 'audio'
+        // input is a base64-encoded string, unlike the base whisper model's raw byte array.
         try {
             const aiInput = {
-                audio: audioBytes,
+                audio: bytesToBase64(new Uint8Array(audioBuffer)),
                 task: 'transcribe',
                 vad_filter: true
             };
@@ -141,10 +151,18 @@ export default {
 
             const transcript = (aiResult && (aiResult.text || aiResult.transcript || '')).trim();
 
+            // Word-level timestamps live nested under each segment, not at the top level.
+            const words = [];
+            if (aiResult && Array.isArray(aiResult.segments)) {
+                for (const seg of aiResult.segments) {
+                    if (seg && Array.isArray(seg.words)) words.push(...seg.words);
+                }
+            }
+
             return json({
                 text: transcript,
                 language: targetLang,
-                words: (aiResult && aiResult.words) || []
+                words
             }, 200, cors);
 
         } catch (aiErr) {
