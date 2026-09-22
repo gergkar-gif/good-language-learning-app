@@ -1799,9 +1799,11 @@ button.is-loading,
 }
 
 /* Small counter-rotating marker at the disc's centre, spinning the
-   opposite way to .ps-spin-group for a bit of visual tension. */
+   opposite way to .ps-spin-group for a bit of visual tension. Uses
+   --primary (the app's one structural navy, same as .brand-tile) rather
+   than a one-off colour, so it still inverts correctly in dark mode. */
 .ps-triangle {
-  fill: #007bff;
+  fill: var(--primary);
   animation: boot-spin-reverse 1.6s linear infinite;
 }
 
