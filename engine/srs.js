@@ -1119,7 +1119,7 @@ function revealTypedResult(bucket, elapsedSec, isNearMiss) {
 
     const continueBtn = document.getElementById('review-type-continue-btn');
     if (continueBtn) {
-        continueBtn.textContent = `Continue [${bucket ? bucket.toUpperCase() : 'NEXT'}] (Enter ↵)`;
+        continueBtn.textContent = 'Continue';
         continueBtn.classList.remove('hidden');
     }
 }
