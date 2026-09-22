@@ -141,7 +141,15 @@ export default {
             const aiInput = {
                 audio: bytesToBase64(new Uint8Array(audioBuffer)),
                 task: 'transcribe',
-                vad_filter: true
+                vad_filter: true,
+                // Beam search (default beam_size: 5) runs several decode passes per
+                // audio chunk and is most of the latency on short utterances; greedy
+                // decoding (1) is markedly faster and the accuracy cost is negligible
+                // for short, single-sentence speaking-drill recordings. Each segment
+                // is independent here (isolated sentences, not a running dialogue),
+                // so condition_on_previous_text buys nothing and only adds compute.
+                beam_size: 1,
+                condition_on_previous_text: false
             };
             if (targetLang) {
                 aiInput.language = targetLang;
