@@ -21,6 +21,7 @@ const SpeakingRunner = (function () {
     let _userAudioUrl = null;
     let _evalResult = null;
     let _userAudioPlayer = null;
+    let _capturedTranscript = '';
 
     function _esc(text) {
         const d = document.createElement('div');
@@ -218,6 +219,7 @@ const SpeakingRunner = (function () {
         if (_solved || _isRecording) return;
         _isRecording = true;
 
+        _capturedTranscript = '';
         const micBtn = _container.querySelector('.sp-mic-btn');
         const micLabel = _container.querySelector('.sp-mic-status');
         const liveText = _container.querySelector('.sp-live-transcript');
@@ -225,19 +227,24 @@ const SpeakingRunner = (function () {
         if (micBtn) micBtn.classList.add('sp-recording');
         if (micLabel) micLabel.textContent = 'Listening...';
         if (liveText) {
-            liveText.textContent = '...';
-            liveText.classList.remove('hidden');
+            liveText.textContent = '';
+            liveText.classList.add('hidden');
         }
 
         SpeechInput.startListening({
             target: _exercise.spanish || _exercise.sentence || '',
             onInterim: interim => {
-                if (liveText) liveText.textContent = interim;
+                _capturedTranscript = interim;
+                // Defer displaying transcribed text until speaker finishes
             },
             onFinal: transcript => {
-                if (liveText) liveText.textContent = transcript;
+                const text = transcript || _capturedTranscript;
+                if (liveText && text) {
+                    liveText.textContent = text;
+                    liveText.classList.remove('hidden');
+                }
                 _stopRecording();
-                const evalResult = SpeechInput.evaluate(_exercise.spanish, transcript);
+                const evalResult = SpeechInput.evaluate(_exercise.spanish, text);
                 _finishEvaluation(evalResult);
             },
             onAudioReady: url => {
@@ -255,10 +262,13 @@ const SpeakingRunner = (function () {
                 _stopRecording();
 
                 // Defensive guard: if user already spoke and text was captured, evaluate it
-                const liveTextEl = _container ? _container.querySelector('.sp-live-transcript') : null;
-                const liveText = liveTextEl ? liveTextEl.textContent.trim() : '';
-                if (liveText && liveText !== '...') {
-                    const evalResult = SpeechInput.evaluate(_exercise.spanish, liveText);
+                const captured = _capturedTranscript || (liveText ? liveText.textContent.trim() : '');
+                if (captured && captured !== '...') {
+                    if (liveText) {
+                        liveText.textContent = captured;
+                        liveText.classList.remove('hidden');
+                    }
+                    const evalResult = SpeechInput.evaluate(_exercise.spanish, captured);
                     _finishEvaluation(evalResult);
                     return;
                 }
@@ -316,6 +326,7 @@ const SpeakingRunner = (function () {
         _isRecording = false;
         _userAudioUrl = null;
         _evalResult = null;
+        _capturedTranscript = '';
 
         const isPromptSpeak = exercise.kind === 'prompt-speak';
         const hasSTT = SpeechInput.isRecognitionSupported();

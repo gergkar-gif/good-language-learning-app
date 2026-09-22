@@ -753,8 +753,7 @@ const LevelTest = (function () {
                         transcript += e.results[i][0].transcript;
                     }
                     speakingTranscript = transcript;
-                    const spArea = host.querySelector('[data-speaking]');
-                    if (spArea) spArea.value = speakingTranscript;
+                    // Defer displaying transcript in textarea until user stops speaking
                 };
                 try { recognition.start(); } catch (err) {}
             }

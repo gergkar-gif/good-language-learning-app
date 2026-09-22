@@ -1967,8 +1967,8 @@ const SpeakingDriller = (function () {
                                     <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/></svg>
                                 </div>
                             </div>
-                            <div class="sp-turn-live-transcript" style="min-height: 48px; padding: 8px 12px; background: var(--surface, #fff); border: 1px solid var(--border, #eee); border-radius: 6px; margin-bottom: 12px; font-size: 1rem;">
-                                ${_esc(_scenarioTranscript || `Listening in ${langName}...`)}
+                            <div class="sp-turn-live-transcript" style="min-height: 48px; padding: 8px 12px; background: var(--surface, #fff); border: 1px solid var(--border, #eee); border-radius: 6px; margin-bottom: 12px; font-size: 1rem; color: var(--text-muted, #666); font-style: italic; display: flex; align-items: center; justify-content: center;">
+                                Listening in ${langName}... Speak naturally.
                             </div>
                             <button type="button" class="sp-scenario-stop-btn" data-action="stop-turn-record">
                                 <svg class="sp-icon-svg" viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><rect x="5" y="5" width="14" height="14" rx="2"/></svg>
@@ -2080,14 +2080,12 @@ const SpeakingDriller = (function () {
             SpeechInput.startListening({
                 lang: langCode,
                 onInterim: (text) => {
-                    const el = document.querySelector('.sp-turn-live-transcript');
-                    if (el && text) el.textContent = text;
+                    _scenarioTranscript = text;
+                    // Defer displaying transcribed text until speaker finishes speaking
                 },
                 onFinal: (text) => {
                     if (text) {
                         _scenarioTranscript = text;
-                        const el = document.querySelector('.sp-turn-live-transcript');
-                        if (el) el.textContent = text;
                     }
                 },
                 onAudioReady: (audioUrl) => {

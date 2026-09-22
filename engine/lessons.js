@@ -2978,22 +2978,29 @@ function lessonToggleSpeaking(btn) {
     if (statusEl) statusEl.textContent = 'Listening...';
     const liveEl = document.getElementById('lesson-live-transcript');
     if (liveEl) {
-        liveEl.textContent = '...';
-        liveEl.classList.remove('hidden');
+        liveEl.textContent = '';
+        liveEl.classList.add('hidden');
     }
+
+    let _lastCapturedLesson = '';
 
     if (typeof SpeechInput !== 'undefined') {
         SpeechInput.startListening({
             target: stepState.target || '',
             onInterim: interim => {
-                if (liveEl) liveEl.textContent = interim;
+                _lastCapturedLesson = interim;
+                // Defer displaying transcribed text until learner finishes speaking
             },
             onFinal: transcript => {
                 _lessonSpeakingRecording = false;
                 if (btn) btn.classList.remove('sp-recording');
                 if (statusEl) statusEl.textContent = 'Tap to speak';
-                if (liveEl) liveEl.textContent = transcript;
-                stepState.transcript = transcript;
+                const text = transcript || _lastCapturedLesson;
+                if (liveEl && text) {
+                    liveEl.textContent = text;
+                    liveEl.classList.remove('hidden');
+                }
+                stepState.transcript = text;
                 stepState.checkDisabled = false;
                 updateFooterButton();
                 if (stepState.checkFn === 'lessonCheckChallenge') {
@@ -3013,8 +3020,12 @@ function lessonToggleSpeaking(btn) {
 
                 // Defensive guard: if user already spoke and transcript was captured,
                 // evaluate the captured speech rather than showing a spurious "No voice heard" error.
-                const currentText = stepState.transcript || (liveEl && liveEl.textContent && liveEl.textContent !== '...' ? liveEl.textContent.trim() : '');
+                const currentText = stepState.transcript || _lastCapturedLesson || (liveEl && liveEl.textContent && liveEl.textContent !== '...' ? liveEl.textContent.trim() : '');
                 if (currentText) {
+                    if (liveEl) {
+                        liveEl.textContent = currentText;
+                        liveEl.classList.remove('hidden');
+                    }
                     stepState.transcript = currentText;
                     stepState.checkDisabled = false;
                     updateFooterButton();
@@ -3504,18 +3515,20 @@ function lessonInlineVoiceInput(selector, btn) {
         target = (stepState.acceptable || (stepState.answer ? [stepState.answer] : null));
     }
 
+    let _lastCapturedInline = '';
     SpeechInput.startListening({
         lang: speechLang,
         target: target,
         onInterim: interim => {
-            input.value = interim;
-            input.dispatchEvent(new Event('input', { bubbles: true }));
+            _lastCapturedInline = interim;
+            // Defer displaying transcribed text until speaker finishes
         },
         onFinal: transcript => {
             _inlineVoiceActive = false;
             if (btn) btn.classList.remove('is-recording');
-            if (transcript) {
-                input.value = transcript;
+            const text = transcript || _lastCapturedInline;
+            if (text) {
+                input.value = text;
                 input.dispatchEvent(new Event('input', { bubbles: true }));
             }
             try { input.focus(); } catch (e) {}
@@ -3523,6 +3536,11 @@ function lessonInlineVoiceInput(selector, btn) {
         onError: err => {
             _inlineVoiceActive = false;
             if (btn) btn.classList.remove('is-recording');
+            const text = _lastCapturedInline;
+            if (text && !input.value) {
+                input.value = text;
+                input.dispatchEvent(new Event('input', { bubbles: true }));
+            }
         }
     });
 }
