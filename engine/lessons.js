@@ -1917,8 +1917,10 @@ function renderStep() {
     _wireLessonEnterToCheck();
     stepState = { sourceStep: step };
 
+    const isLeech = step.isRecycle && step.id && typeof Recycle !== 'undefined' && Recycle.isLeech(step.id);
+
     let html = lessonProgressHtml();
-    html += `<h3 class="lsn-title">${esc(step.title || '')}</h3>`;
+    html += `<h3 class="lsn-title">${esc(step.title || '')}${isLeech ? ' <span class="srs-leech-badge" title="Rated wrong 8+ times">Leech</span>' : ''}</h3>`;
 
     // Legacy lessons (embedded HTML)
     if (step.html) {

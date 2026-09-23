@@ -201,7 +201,15 @@ async function addRecycleExercises(pool, lessonEntries) {
 
 // Due cards first, then whichever have been seen least — so a course still
 // gets a block from the first eligible lesson on, even though nothing is
-// "due" yet the first time a concept becomes recyclable.
+// "due" yet the first time a concept becomes recyclable. Among due cards, a
+// leech (8+ lapses — the exact same threshold and meaning as the vocabulary
+// deck's, see engine/srs.js) is sorted behind non-leech due cards: since the
+// one-exercise-per-`teaches`-tag diversity rule below only ever lets one
+// exercise represent a concept per block, an item that keeps not sticking
+// would otherwise monopolize that concept's only slot forever. It still gets
+// picked whenever it's the sole due (or only) exercise for its concept — a
+// leech is a signal to serve something else on the topic when something
+// else exists, not a card to hide.
 function pickRecycleExercises(pool, count) {
     if (!pool.length) return [];
     const schedule = loadRecycleSchedule();
@@ -212,6 +220,7 @@ function pickRecycleExercises(pool, count) {
         const aDue = a.card.dueAtOpen <= currentOpen;
         const bDue = b.card.dueAtOpen <= currentOpen;
         if (aDue !== bDue) return aDue ? -1 : 1;
+        if (aDue && a.card.leech !== b.card.leech) return a.card.leech ? 1 : -1;
         return (a.card.reviews - b.card.reviews) || (a.card.dueAtOpen - b.card.dueAtOpen);
     });
 
@@ -248,8 +257,17 @@ function recordRecycleOutcome(id, rating) {
     saveRecycleSchedule(schedule);
 }
 
+// Read-only check so the lesson screen can show the same quiet "Leech"
+// badge the vocabulary deck shows (engine/srs.js) — informational only,
+// same as there; it doesn't change whether this exercise gets served.
+function isRecycleLeech(id) {
+    const schedule = loadRecycleSchedule();
+    return !!(schedule[id] && normalizeRecycleCard(schedule[id]).leech);
+}
+
 window.Recycle = {
     collectPool: collectRecyclePool,
     pick: pickRecycleExercises,
+    isLeech: isRecycleLeech,
     record: recordRecycleOutcome
 };
