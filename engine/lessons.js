@@ -1950,6 +1950,17 @@ function nextLessonStep() {
 
     currentStepIndex++;
 
+    // "Can't speak right now" snoozes speaking/challenge exercises — honor it
+    // by stepping past every mic-required step ahead, not just the one the
+    // learner tapped away from.
+    const cantSpeak = typeof SpeechInput !== 'undefined' && SpeechInput.isCantSpeakNow();
+    if (cantSpeak) {
+        while (currentStepIndex < currentLesson.steps.length && _stepRequiresMic(currentLesson.steps[currentStepIndex])) {
+            currentStepIndex++;
+        }
+        missedSteps = missedSteps.filter(s => !_stepRequiresMic(s));
+    }
+
     // "I can do this" / checklist should ALWAYS be the last screen before results.
     // If the next step is the checklist, but we still have missed exercises to remediate,
     // remediate the missed exercises first before presenting the self-evaluation checklist!
@@ -1971,6 +1982,10 @@ function nextLessonStep() {
     }
 
     finishLesson();
+}
+
+function _stepRequiresMic(step) {
+    return !!step && (step.type === 'speaking' || step.type === 'challenge');
 }
 
 // Re-renders the previous step from scratch, same as arriving at it fresh —
