@@ -240,6 +240,7 @@ async function buildSteps(lesson) {
                 prompt: curated.prompt || '',
                 cues: curated.cues || [],
                 target: curated.target || '',
+                english: curated.english || '',
                 canDo: curated.canDo || primaryCanDo,
                 level: curated.level || level,
                 tier: curated.tier || tier,
@@ -263,8 +264,9 @@ async function buildSteps(lesson) {
                     title: `Communicative Challenge: ${formatted ? formatted.title : 'Put It Into Practice'}`,
                     scenario: (formatted && formatted.scenario) || `Put your ${langName} into action for this lesson's core goal.`,
                     prompt: (formatted && formatted.prompt) || primaryCanDo.replace(/^I can\s+/i, 'Say this in ' + langName + ': ').replace(/\.$/, ''),
-                    cues: cand ? [`Use what you learned: "${cand.english}"`] : ((formatted && formatted.cues) || ['Express this clearly out loud']),
+                    cues: cand ? [] : ((formatted && formatted.cues) || ['Express this clearly out loud']),
                     target: cand ? (cand.spanish || cand.target || '') : '',
+                    english: cand ? (cand.english || '') : '',
                     canDo: primaryCanDo,
                     level: level,
                     tier: 'tier1',
@@ -466,6 +468,7 @@ async function buildSteps(lesson) {
                     prompt: section.prompt || '',
                     cues: section.cues || [],
                     target: section.target || '',
+                    english: section.english || '',
                     canDo: section.canDo || section.canDoRef || '',
                     level: lesson.level || 'A1',
                     tier: section.tier || null,
@@ -1719,6 +1722,7 @@ const stepRenderers = {
         stepState.prompt = step.prompt || '';
         stepState.scenario = step.scenario || '';
         stepState.cues = step.cues || [];
+        stepState.english = step.english || '';
         stepState.tier = step.tier || ((step.level === 'A1') ? 'tier1' : (step.level === 'A2') ? 'tier2' : 'tier3');
         stepState.canDo = step.canDo || '';
         stepState.checkFn = 'lessonCheckChallenge';
@@ -1733,10 +1737,12 @@ const stepRenderers = {
         const level = step.level || 'A1';
         const langName = typeof Lang !== 'undefined' ? Lang.name() : 'Spanish';
 
+        const isSentenceMode = stepState.tier === 'tier1' && !!stepState.english;
+
         return `
             <div class="sp-challenge-header" style="margin-bottom:12px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px;">
                 <span class="cando-badge cando-badge-verified" style="font-size:0.75rem; padding:4px 8px; border-radius:4px; font-weight:700;">CEFR ${esc(level)} • ${esc(tierBadge)}</span>
-                ${stepState.canDo ? `<span style="font-size:0.82rem; color:var(--text-muted); font-style:italic;">Target: "${esc(stepState.canDo)}"</span>` : ''}
+                ${(!isSentenceMode && stepState.canDo) ? `<span style="font-size:0.82rem; color:var(--text-muted); font-style:italic;">Target: "${esc(stepState.canDo)}"</span>` : ''}
             </div>
 
             ${isSnoozed ? `
@@ -1748,11 +1754,17 @@ const stepRenderers = {
 
             <div class="sp-lesson-card" style="padding:16px; border:1px solid var(--border); border-radius:10px; background:var(--card-bg, var(--surface));">
                 ${stepState.scenario ? `<p style="font-size:0.95rem; color:var(--text-muted); margin:0 0 8px 0; font-style:italic;">${esc(stepState.scenario)}</p>` : ''}
-                <p style="font-size:1.2rem; font-weight:700; color:var(--text-heading); margin:0 0 10px 0; line-height:1.35;">${esc(stepState.prompt)}</p>
+
+                ${isSentenceMode ? `
+                    <span style="font-size:0.78rem; text-transform:uppercase; letter-spacing:0.05em; font-weight:700; color:var(--text-muted);">Say this in ${esc(langName)}:</span>
+                    <p style="font-size:1.2rem; font-weight:700; color:var(--text-heading); margin:4px 0 0 0; line-height:1.35;">${esc(stepState.english)}</p>
+                ` : `
+                    <p style="font-size:1.2rem; font-weight:700; color:var(--text-heading); margin:0 0 10px 0; line-height:1.35;">${esc(stepState.prompt)}</p>
+                `}
 
                 ${stepState.cues && stepState.cues.length ? `
                     <div style="background:rgba(0,0,0,0.03); border-radius:6px; padding:10px 14px; margin-top:10px;">
-                        <span style="font-size:0.78rem; text-transform:uppercase; letter-spacing:0.05em; font-weight:700; color:var(--text-muted);">Points to include:</span>
+                        <span style="font-size:0.78rem; text-transform:uppercase; letter-spacing:0.05em; font-weight:700; color:var(--text-muted);">${isSentenceMode ? 'Hint:' : 'Points to include:'}</span>
                         <ul style="margin:6px 0 0 0; padding-left:20px; font-size:0.92rem; color:var(--text);">
                             ${stepState.cues.map(c => `<li style="margin-bottom:4px;">${esc(c)}</li>`).join('')}
                         </ul>
@@ -3548,7 +3560,12 @@ async function lessonCheckChallenge() {
             if (canDo && typeof LearnerModel !== 'undefined' && typeof LearnerModel.verifyCompetency === 'function') {
                 LearnerModel.verifyCompetency(canDo, evalResult.accuracy, 'lesson-challenge', modality);
             }
-            solveStep(`✓ Challenge complete! CEFR goal verified (${evalResult.accuracy}%)`);
+            const youCanStatement = canDo
+                ? canDo.replace(/^I can\s+/i, 'You can ').replace(/\bmyself\b/gi, 'yourself').replace(/\bmy\b/gi, 'your')
+                : '';
+            solveStep(youCanStatement
+                ? `✓ Well done! With this, you've completed a CEFR ${level} requirement: "${youCanStatement}" (${evalResult.accuracy}%)`
+                : `✓ Challenge complete! CEFR goal verified (${evalResult.accuracy}%)`);
         } else {
             if (failStep(`✗ Accuracy ${evalResult.accuracy}%. Try again or continue.`)) {
                 setFeedback(false, 'Keep practicing to master this goal.');
