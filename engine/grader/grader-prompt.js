@@ -70,12 +70,13 @@ IMPORTANT WRITTEN EXCHANGE SCORING PRINCIPLES:
 12. Coherence measures idea progression, logical connection between turns, and message clarity.
 13. Naturalness measures whether the phrasing sounds authentic, conversational, and idiomatic for digital correspondence.
 14. Overall score is a formative estimate, not an official certification exam score.
+15. LEVEL-RELATIVE GRADING: Grade against realistic expectations for a learner AT CEFR ${cefrLevel} — never against native-speaker fluency or advanced style. Short, simple messages with a narrow but accurate range of forms are the CORRECT, expected output at A1/A2 and must not be treated as a limitation at those levels. A response that completes the task, responds appropriately, and uses the target grammar correctly should score in the 80s even when linguistically simple.
 
-CALIBRATION:
+CALIBRATION (relative to CEFR ${cefrLevel}, not to native-speaker writing):
 - 90-100: Exceptionally strong written interaction for the stated task/level, with natural phrasing, accurate forms, and only minor limitations.
-- 80-89: Strong performance, clearly meeting the level with good communicative control, appropriate register, and good lexical range.
-- 70-79: Competent written performance with noticeable but manageable limitations in forms or vocabulary.
-- 60-69: Weak/borderline performance with multiple meaningful communicative limitations or omissions.
+- 80-89: Solid, correct performance that completes the task and responds appropriately — the expected result for a learner who has mastered this level's material. Being simple or short is NOT a limitation here if the task didn't call for more.
+- 70-79: Competent written performance with a few noticeable but non-disruptive errors or gaps.
+- 60-69: Multiple meaningful communicative limitations or omissions that would genuinely confuse the correspondent — not merely "simple" or "could be more complex."
 - Below 60: Substantially below expected performance for the task/level.
 
 DIMENSION SCORING:
@@ -117,6 +118,7 @@ FEEDBACK:
 Give 2-3 concrete strengths and 2-3 actionable priorities focused on conversational written correspondence.
 Every priority must be tied to something specific and evidenced in this exchange (a form, a word choice, a register slip, a missing reply). Never output a generic catch-all like "expand vocabulary" or "practice more grammar" — if there is genuinely nothing to flag, name what the learner did well instead of inventing a vague priority.
 Keep each priority a concise, action-oriented phrase without trailing periods.
+GROUNDING CHECK: Before writing a priority, re-read the learner's actual messages and confirm the issue is really there. Never advise practicing something the learner's messages already do correctly — check every turn, not just the first. If you cannot point to a specific place where it's missing or wrong, do not mention it.
 
 Return ONLY valid JSON. No Markdown fences. No introductory or trailing text.
 
@@ -185,12 +187,13 @@ IMPORTANT ORAL SCORING PRINCIPLES:
 14. Coherence measures spoken idea progression, clarity, and thematic flow.
 15. Naturalness measures whether the spoken phrasing sounds authentic, conversational, and idiomatic.
 16. Overall score is a formative estimate, not an official certification exam score.
+17. LEVEL-RELATIVE GRADING: Grade against realistic expectations for a learner AT CEFR ${cefrLevel} — never against native-speaker fluency or advanced style. Short, simple utterances with a narrow but accurate range of forms are the CORRECT, expected output at A1/A2 and must not be treated as a limitation at those levels. A response that completes the task, communicates clearly, and uses the target grammar correctly should score in the 80s even when linguistically simple.
 
-CALIBRATION:
+CALIBRATION (relative to CEFR ${cefrLevel}, not to native-speaker fluency):
 - 90-100: Exceptionally strong oral performance for the stated task/level, with fluent delivery and only minor limitations.
-- 80-89: Strong spoken performance, clearly meeting the level with good conversational flow and lexical range.
-- 70-79: Competent spoken performance with noticeable but manageable limitations.
-- 60-69: Weak/borderline spoken performance with multiple meaningful communicative limitations.
+- 80-89: Solid, correct performance that completes the task and communicates clearly — the expected result for a learner who has mastered this level's material. Being simple or short is NOT a limitation here if the task didn't call for more.
+- 70-79: Competent spoken performance with a few noticeable but non-disruptive errors or gaps.
+- 60-69: Multiple meaningful communicative limitations that would genuinely confuse a listener — not merely "simple" or "could be more complex."
 - Below 60: Substantially below expected oral performance for the task/level.
 
 DIMENSION SCORING:
@@ -239,6 +242,7 @@ Give 2-3 concrete strengths and 2-3 actionable priorities focused on conversatio
 Priorities should be based on actual spoken weaknesses found in the production, not generic advice.
 Never output a generic catch-all like "expand vocabulary" or "practice more grammar" — if there is genuinely nothing to flag, name what the learner did well instead of inventing a vague priority.
 Keep each priority a concise, action-oriented phrase (e.g. 'Practice first-person preterite verb endings' or 'Remember adjective gender agreement') without trailing periods.
+GROUNDING CHECK: Before writing a priority, re-read the actual transcript and confirm the issue is really there. Never advise practicing something the learner's speech already does correctly — check the whole transcript, not just the start. If you cannot point to a specific place where it's missing or wrong, do not mention it.
 
 Return ONLY valid JSON. No Markdown fences. No introductory or trailing text.
 
@@ -319,13 +323,14 @@ IMPORTANT SCORING PRINCIPLES:
 10. Overall score must reflect the complete profile of the production. Do not let one dimension dominate the overall result unless it represents a substantial failure.
 11. Stronger grammar, vocabulary range, complexity, coherence, and task fulfilment should normally produce a higher overall score than a weaker production. However, do not force an ordering when the evidence does not support it.
 12. The overall score is a formative estimate, not an official certification exam score.
+13. LEVEL-RELATIVE GRADING: Grade against realistic expectations for a learner AT CEFR ${cefrLevel} — never against native-speaker fluency, advanced literary style, or the sentence structures you yourself would prefer to write. Short, simple sentences and a narrow but accurate range of forms are the CORRECT, expected output at A1/A2 and must not be treated as a limitation at those levels. A response that completes the task, uses the target grammar correctly, and communicates clearly should score in the 80s even when it is linguistically simple — reserve scores below 70 for responses with genuine, meaningful errors or omissions, not merely for being basic.
 
-CALIBRATION:
+CALIBRATION (relative to CEFR ${cefrLevel}, not to native-speaker writing):
 - 90-100: Exceptionally strong performance for the stated task/level, with very good control and only minor limitations.
-- 80-89: Strong performance, clearly meeting the level with good control and range.
-- 70-79: Competent performance with noticeable but manageable limitations.
-- 60-69: Weak/borderline performance with multiple meaningful limitations.
-- Below 60: Substantially below expected performance for the task/level.
+- 80-89: Solid, correct performance that completes the task and uses the target grammar accurately — the expected result for a learner who has mastered this level's material. Being simple or short is NOT a limitation here if the task didn't call for more.
+- 70-79: Competent performance with a few noticeable but non-disruptive errors or gaps.
+- 60-69: Multiple meaningful errors, omissions, or a partial task failure that would genuinely confuse a reader — not merely "simple" or "could be more complex."
+- Below 60: Substantially below expected performance for the task/level (wrong, missing, or unintelligible content).
 
 DIMENSION SCORING:
 Score each dimension from 0.0 to 1.0 based on concrete evidence in the production.
@@ -373,6 +378,7 @@ Give 2-3 concrete strengths and 2-3 actionable priorities.
 Priorities should be based on actual weaknesses found in the production, not generic advice.
 Never output a generic catch-all like "expand vocabulary" or "practice more grammar" — if there is genuinely nothing to flag, name what the learner did well instead of inventing a vague priority.
 Keep each priority a concise, action-oriented phrase (e.g. 'Practice first-person preterite verb endings' or 'Remember adjective gender agreement') without trailing periods.
+GROUNDING CHECK: Before writing a priority, re-read the learner's actual text and confirm the issue is really there. Never advise practicing something (a connector, a verb form, a structure) that the learner's text already does correctly — check the whole production first, not just the first sentence. If you cannot point to a specific place where it's missing or wrong, do not mention it.
 
 Return ONLY valid JSON. No Markdown fences. No introductory or trailing text.
 
