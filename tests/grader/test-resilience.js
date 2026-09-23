@@ -68,6 +68,29 @@ async function testSchemaSanitization() {
     assert.strictEqual(cleaned.demonstratedSkills[0].skillId, 'contrast_connectors', 'String skill should normalize to object');
     assert.strictEqual(cleaned.demonstratedSkills[0].confidence, 0.8, 'Default confidence should be set');
     console.log('✓ Score clamping, severity normalization, and skill array normalization');
+
+    // Degenerate "use X instead of X" hallucinations should be dropped
+    const rawDegenerate = {
+        overallScore: 80,
+        taskCompletion: 0.9,
+        dimensions: { grammar: 0.8, vocabulary: 0.8, coherence: 0.8, complexity: 0.8, naturalness: 0.8 },
+        errors: [
+            { category: 'grammar', text: 'un jugo', explanation: 'Use `un` instead of `un` before `jugo` because it starts with a consonant', severity: 'minor' },
+            { category: 'grammar', text: 'un jugo', explanation: 'Use `una` instead of `un` before `naranja` for gender agreement', severity: 'minor' }
+        ],
+        demonstratedSkills: [],
+        weakSkills: [],
+        feedback: {
+            strengths: ['Good communication'],
+            priorities: ["Use `es` instead of `es` here", 'Vary sentence structure more']
+        }
+    };
+    const cleanedDegenerate = GraderSchema.validateAndCleanResult(rawDegenerate);
+    assert.strictEqual(cleanedDegenerate.errors.length, 1, 'Degenerate self-identical correction should be dropped from errors');
+    assert.strictEqual(cleanedDegenerate.errors[0].explanation, 'Use `una` instead of `un` before `naranja` for gender agreement', 'Genuine correction should survive');
+    assert.strictEqual(cleanedDegenerate.feedback.priorities.length, 1, 'Degenerate priority should be dropped');
+    assert.strictEqual(cleanedDegenerate.feedback.priorities[0], 'Vary sentence structure more', 'Genuine priority should survive');
+    console.log('✓ Degenerate self-identical corrections filtered out of errors and feedback');
 }
 
 async function testOfflineFallback() {

@@ -47,6 +47,18 @@
         return result;
     }
 
+    // Occasionally the grader model quotes the same word/phrase on both
+    // sides of a correction ("Use `un` instead of `un`") -- a hallucinated
+    // non-correction that just confuses the learner. Strip any error or
+    // feedback line matching that shape before it reaches the UI.
+    function _isDegenerateCorrection(text) {
+        if (!text) return false;
+        const match = String(text).match(/[`"']([^`"']+)[`"']\s*(?:instead of|rather than)\s*[`"']([^`"']+)[`"']/i);
+        if (!match) return false;
+        const normalize = s => s.trim().toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+        return normalize(match[1]) === normalize(match[2]);
+    }
+
     // Builds a fallback priority grounded in the learner's actual submission stats,
     // used only when the model returns neither errors nor priorities to draw from.
     function buildFallbackPriority(localStats) {
@@ -90,6 +102,7 @@
             const text = String(err.text || err.quote || err.fragment || '').trim();
             const explanation = String(err.explanation || err.reason || err.message || '').trim();
             if (!text && !explanation) continue;
+            if (_isDegenerateCorrection(explanation) || _isDegenerateCorrection(text)) continue;
 
             const category = String(err.category || 'grammar').toLowerCase();
             let severity = String(err.severity || 'minor').toLowerCase();
@@ -117,10 +130,10 @@
         // Clean feedback
         const rawFeedback = (raw.feedback && typeof raw.feedback === 'object') ? raw.feedback : {};
         const strengths = Array.isArray(rawFeedback.strengths)
-            ? rawFeedback.strengths.filter(s => typeof s === 'string' && s.trim()).map(s => s.trim().replace(/[.;,:!]+$/, '')).slice(0, 3)
+            ? rawFeedback.strengths.filter(s => typeof s === 'string' && s.trim() && !_isDegenerateCorrection(s)).map(s => s.trim().replace(/[.;,:!]+$/, '')).slice(0, 3)
             : [];
         const priorities = Array.isArray(rawFeedback.priorities)
-            ? rawFeedback.priorities.filter(p => typeof p === 'string' && p.trim()).map(p => p.trim().replace(/[.;,:!]+$/, '')).slice(0, 3)
+            ? rawFeedback.priorities.filter(p => typeof p === 'string' && p.trim() && !_isDegenerateCorrection(p)).map(p => p.trim().replace(/[.;,:!]+$/, '')).slice(0, 3)
             : [];
 
         if (!strengths.length) {

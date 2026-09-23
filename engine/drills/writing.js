@@ -34,7 +34,6 @@ const WritingDriller = (function () {
     let _exchangeLevelFilter = 'all';
     let _exchangeDraftText = '';
     let _exchangeAssessmentResult = null;
-    let _isPartnerTyping = false;
 
     let _container = null;
     let _phase = PHASE.PROMPT_SELECT;
@@ -1113,7 +1112,6 @@ const WritingDriller = (function () {
         _completedTurns = [];
         _exchangeDraftText = '';
         _exchangeAssessmentResult = null;
-        _isPartnerTyping = false;
         _exchangePhase = EXCHANGE_PHASE.CHATTING;
         _renderActiveTab();
     }
@@ -1123,6 +1121,7 @@ const WritingDriller = (function () {
         const turns = s.turns || [];
         const currentTurn = turns[_currentTurnIndex] || {};
         const langCode = (typeof Lang !== 'undefined') ? Lang.code() : 'es';
+        const langName = (typeof Lang !== 'undefined') ? Lang.name() : 'the language';
         const interlocutorName = s.roleplay ? _scenarioText(s.roleplay, 'interlocutorRole', s) : 'Partner';
         const learnerName = s.roleplay ? _scenarioText(s.roleplay, 'learnerRole', s) : 'You';
         const diacritics = _getDiacritics(langCode);
@@ -1179,12 +1178,6 @@ const WritingDriller = (function () {
                                 </details>
                             ` : ''}
                         </div>
-
-                        ${_isPartnerTyping ? `
-                            <div class="wr-exchange-typing-notice">
-                                <span>${_esc(interlocutorName)} is writing a reply...</span>
-                            </div>
-                        ` : ''}
                     </div>
                 </div>
 
@@ -1206,27 +1199,25 @@ const WritingDriller = (function () {
                         ` : ''}
                     </div>
 
-                    ${!_isPartnerTyping ? `
-                        <div class="wr-exchange-input-container">
-                            <div class="wr-diacritics-bar" role="toolbar" aria-label="Character accents">
-                                ${diacritics.map(char => `
-                                    <button type="button" class="wr-diacritic-btn" data-insert-char="${_esc(char)}" aria-label="Insert ${_esc(char)}">${_esc(char)}</button>
-                                `).join('')}
-                            </div>
-
-                            <textarea class="wr-exchange-textarea" id="wr-exchange-input" placeholder="Escriba su respuesta aquí... (Press Enter or Send)" aria-label="Your response">${_esc(_exchangeDraftText)}</textarea>
-
-                            <div class="wr-exchange-dock-footer">
-                                <div class="wr-exchange-counter ${isMet ? 'met' : ''}" id="wr-word-counter">
-                                    ${currentWords} words ${minWords ? `(min ${minWords})` : ''}
-                                </div>
-                                <button type="button" class="wk-primary-btn" data-action="submit-exchange-turn">
-                                    <span>Send Reply</span>
-                                    <svg class="sp-icon-svg" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-                                </button>
-                            </div>
+                    <div class="wr-exchange-input-container">
+                        <div class="wr-diacritics-bar" role="toolbar" aria-label="Character accents">
+                            ${diacritics.map(char => `
+                                <button type="button" class="wr-diacritic-btn" data-insert-char="${_esc(char)}" aria-label="Insert ${_esc(char)}">${_esc(char)}</button>
+                            `).join('')}
                         </div>
-                    ` : ''}
+
+                        <textarea class="wr-exchange-textarea" id="wr-exchange-input" placeholder="Write your reply in ${_esc(langName)}... (Press Enter or Send)" aria-label="Your response">${_esc(_exchangeDraftText)}</textarea>
+
+                        <div class="wr-exchange-dock-footer">
+                            <div class="wr-exchange-counter ${isMet ? 'met' : ''}" id="wr-word-counter">
+                                ${currentWords} words ${minWords ? `(min ${minWords})` : ''}
+                            </div>
+                            <button type="button" class="wk-primary-btn" data-action="submit-exchange-turn">
+                                <span>Send Reply</span>
+                                <svg class="sp-icon-svg" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         `;
@@ -1325,13 +1316,8 @@ const WritingDriller = (function () {
         _exchangeDraftText = '';
 
         if (_currentTurnIndex + 1 < turns.length) {
-            _isPartnerTyping = true;
+            _currentTurnIndex++;
             _renderActiveTab();
-            setTimeout(() => {
-                _isPartnerTyping = false;
-                _currentTurnIndex++;
-                _renderActiveTab();
-            }, 600);
         } else {
             _finishExchangeAndDebrief();
         }

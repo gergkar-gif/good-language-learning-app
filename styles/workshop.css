@@ -3887,22 +3887,6 @@
     color: #8ab4f8;
 }
 
-.wr-exchange-typing-notice {
-    font-size: 0.85rem;
-    font-style: italic;
-    color: var(--muted);
-    padding: 8px 12px;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    animation: wrPulse 1.4s ease-in-out infinite;
-}
-
-@keyframes wrPulse {
-    0%, 100% { opacity: 0.6; }
-    50% { opacity: 1; }
-}
-
 .wr-exchange-dock {
     margin-top: 20px;
     display: flex;
