@@ -205,16 +205,18 @@
                         <button id="show-answer-btn" class="review-show-btn" onclick="showAnswer()">Show Answer</button>
                     </div>
 
-                    <!-- Type mode: an input + Check stands in for Show Answer.
-                         Checking grades itself against the expected answer
-                         and reveals the card back; review-type-continue-btn
-                         (not the manual rating buttons) advances from there. -->
+                    <!-- Type mode: an input stands in for Show Answer. On phones
+                         the Check/Continue buttons are hidden (see components.css)
+                         and Enter does both jobs — handleTypeFieldEnter() checks
+                         the typed answer against the expected one, then a second
+                         Enter advances — so the keyboard never has to close and
+                         reopen for a button tap between cards. -->
                     <div id="review-type-input" class="review-type-input hidden">
                         <div class="lsn-input-with-mic">
                             <input id="review-type-field" class="review-input" type="text"
                                 placeholder="Type or speak answer" autocomplete="off" autocapitalize="off" spellcheck="false"
-                                enterkeyhint="done"
-                                onkeydown="if(event.key==='Enter')checkTypedAnswer()">
+                                enterkeyhint="next"
+                                onkeydown="handleTypeFieldEnter(event)">
                             <button type="button" class="lsn-mic-addon" onclick="typeof lessonInlineVoiceInput === 'function' && lessonInlineVoiceInput('#review-type-field', this)" aria-label="Speak to type" title="Speak to type">
                                 <svg class="art icon" viewBox="0 0 24 24" role="presentation" aria-hidden="true" focusable="false"><rect class="ink-line" x="9" y="3" width="6" height="11" rx="3"/><path class="ink-line" d="M5 10a7 7 0 0 0 14 0"/><line class="ink-line" x1="12" y1="17" x2="12" y2="21"/><line class="ink-line" x1="8" y1="21" x2="16" y2="21"/></svg>
                             </button>
@@ -386,7 +388,7 @@
 <script src="engine/lessons.js?v=2026-09-21d"></script>
 <script src="engine/progress.js?v=2026-09-14h"></script>
 <script src="engine/learnerPath.js?v=2026-09-14h"></script>
-<script src="engine/recycle.js?v=2026-09-17a"></script>
+<script src="engine/recycle.js?v=2026-09-23a"></script>
 <script src="engine/leveltest.js?v=2026-09-17a"></script>
 <script src="engine/diagnostic.js?v=2026-09-20a"></script>
 <script src="engine/learnerModel.js?v=2026-09-17a"></script>
@@ -424,7 +426,7 @@
 <script src="engine/sync.js?v=2026-09-20f"></script>
 
 <!-- Engine: bootstrap (loads last) -->
-<script src="engine/init.js?v=2026-09-17a"></script>
+<script src="engine/init.js?v=2026-09-23a"></script>
 
 <!-- Engine: bug report (independent floating overlay, loads anywhere after Art) -->
 <script src="engine/bugreport.js?v=2026-09-14h"></script>

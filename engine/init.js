@@ -4,6 +4,25 @@
 
 const LEVELS = ['a1', 'a2', 'b1', 'b2', 'c1'];
 
+// A running count of app opens (one per page load), independent of course
+// and of wall-clock time. engine/recycle.js schedules grammar/skill recycle
+// items against this instead of real dates — a missed exercise should come
+// back the next time the learner opens the app, not "due immediately"
+// forever, and not spaced out by days when they might open the app five
+// times in one afternoon.
+window.AppOpens = (function () {
+    const KEY = 'appOpenCount';
+    function current() {
+        return parseInt(localStorage.getItem(KEY), 10) || 0;
+    }
+    function bump() {
+        const n = current() + 1;
+        localStorage.setItem(KEY, String(n));
+        return n;
+    }
+    return { current, bump };
+})();
+
 // A Workshop driller's Timed-mode timer, an in-progress lesson, or an open
 // story used to just get hidden by the blanket .tab-hiding below, not
 // actually stopped — a driller's setInterval kept ticking against a
@@ -190,6 +209,8 @@ function _attachNavEvents() {
 // --------------------------------------------
 
 async function initialiseApp() {
+    AppOpens.bump();
+
     // Safety timer: guarantee boot screen dismissal within 6s even under network/runtime failure
     let _bootTimer = setTimeout(() => {
         _hideBootScreen();

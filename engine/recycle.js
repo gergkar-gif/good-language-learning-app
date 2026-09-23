@@ -2,10 +2,20 @@
 // RECYCLE BLOCK
 // ============================================
 // Grammar and skills are reviewed by resurfacing exercises from lessons the
-// learner has already completed, scheduled with the same SM-2 curve as the
-// vocabulary deck (engine/srs.js) but keyed by exercise id instead of a
-// lemma. See content/es/guides/a1-srs-srategy.md.
-
+// learner has already completed, on an SM-2-shaped curve (ease grows/shrinks
+// the same way engine/srs.js's vocabulary deck does) but keyed by exercise
+// id instead of a lemma, and scheduled in app OPENS rather than wall-clock
+// time — see below. See content/es/guides/a1-srs-srategy.md.
+//
+// The vocabulary deck's "again" reschedules a card a fixed number of
+// minutes out (SRS_CONFIG.AGAIN_MINUTES), which works when hundreds of
+// other due cards dilute it. A recycle pool for one grammar point can be a
+// handful of exercises, so a real-time "due in 1 minute" never stops being
+// due — the same miss would keep winning that concept's one recycle slot in
+// every lesson taken afterward, no matter how many days passed. Counting in
+// app opens instead fixes that at the source: a miss comes back next time
+// the learner opens the app (never mid-session), and opening the app five
+// times counts as five spaced attempts, not one instant that time forgot.
 const recycleKey = () => Lang.key('recycleSchedule');
 
 function loadRecycleSchedule() {
@@ -20,9 +30,73 @@ function saveRecycleSchedule(schedule) {
     localStorage.setItem(recycleKey(), JSON.stringify(schedule));
 }
 
+function currentAppOpen() {
+    return (typeof AppOpens !== 'undefined') ? AppOpens.current() : 0;
+}
+
+function newRecycleCardSchedule() {
+    return { reviews: 0, ease: SRS_CONFIG.START_EASE, interval: 0, lastOpen: 0, dueAtOpen: 0, lapses: 0, leech: false };
+}
+
+// Cards saved by an older, date-based version of this schedule (or missing
+// fields entirely) just come up due immediately, same as a brand-new card —
+// there is nothing else meaningful to infer an "opens" count from.
+function normalizeRecycleCard(card) {
+    if (typeof card.reviews !== 'number' || !(card.reviews >= 0)) card.reviews = 0;
+    card.ease = (typeof card.ease === 'number' && isFinite(card.ease))
+        ? Math.min(SRS_CONFIG.MAX_EASE, Math.max(SRS_CONFIG.MIN_EASE, card.ease))
+        : SRS_CONFIG.START_EASE;
+    if (typeof card.interval !== 'number' || !isFinite(card.interval) || card.interval < 0) card.interval = 0;
+    if (typeof card.dueAtOpen !== 'number' || !isFinite(card.dueAtOpen)) card.dueAtOpen = 0;
+    if (typeof card.lastOpen !== 'number' || !isFinite(card.lastOpen)) card.lastOpen = 0;
+    if (typeof card.lapses !== 'number' || !(card.lapses >= 0)) card.lapses = 0;
+    card.leech = card.lapses >= SRS_CONFIG.LEECH_THRESHOLD;
+    return card;
+}
+
 function recycleCard(schedule, id) {
-    if (!schedule[id]) schedule[id] = newCardSchedule();
-    return normalizeCard(schedule[id]);
+    if (!schedule[id]) schedule[id] = newRecycleCardSchedule();
+    return normalizeRecycleCard(schedule[id]);
+}
+
+// Same growth shape as srs.js's previewSchedule, but every unit is an app
+// open instead of a day, and "again" always resolves to "next open" — never
+// due again inside the same sitting the learner just missed it in.
+function scheduleRecycleCard(card, rating, currentOpen) {
+    normalizeRecycleCard(card);
+    const ease = Math.min(SRS_CONFIG.MAX_EASE, Math.max(SRS_CONFIG.MIN_EASE, card.ease + (SRS_CONFIG.EASE_DELTA[rating] || 0)));
+
+    if (rating === 'again') {
+        card.ease = ease;
+        card.interval = 0;
+        card.reviews = 0;
+        card.lastOpen = currentOpen;
+        card.dueAtOpen = currentOpen + 1;
+        card.lapses = (card.lapses || 0) + 1;
+        card.leech = card.lapses >= SRS_CONFIG.LEECH_THRESHOLD;
+        return card;
+    }
+
+    let interval;
+    if (card.reviews === 0) {
+        interval = SRS_CONFIG.FIRST_INTERVAL[rating];
+    } else if (card.reviews === 1) {
+        interval = SRS_CONFIG.SECOND_INTERVAL[rating];
+    } else {
+        const elapsed = Math.max(0, currentOpen - card.lastOpen) || card.interval;
+        const base = Math.max(0, Math.min(card.interval, elapsed));
+        const multiplier = rating === 'hard' ? SRS_CONFIG.HARD_MULTIPLIER
+                         : rating === 'easy' ? ease * SRS_CONFIG.EASY_BONUS
+                         : ease;
+        interval = Math.max(card.interval, base * multiplier);
+    }
+
+    card.ease = ease;
+    card.interval = Math.max(1, Math.round(interval));
+    card.reviews += 1;
+    card.lastOpen = currentOpen;
+    card.dueAtOpen = currentOpen + card.interval;
+    return card;
 }
 
 // Same order curriculum.js draws the level list in — duplicated rather than
@@ -131,14 +205,14 @@ async function addRecycleExercises(pool, lessonEntries) {
 function pickRecycleExercises(pool, count) {
     if (!pool.length) return [];
     const schedule = loadRecycleSchedule();
-    const now = new Date();
+    const currentOpen = currentAppOpen();
 
     const scored = pool.map(ex => ({ ex, card: recycleCard(schedule, ex.id) }));
     scored.sort((a, b) => {
-        const aDue = new Date(a.card.nextReview) <= now;
-        const bDue = new Date(b.card.nextReview) <= now;
+        const aDue = a.card.dueAtOpen <= currentOpen;
+        const bDue = b.card.dueAtOpen <= currentOpen;
         if (aDue !== bDue) return aDue ? -1 : 1;
-        return (a.card.reviews - b.card.reviews) || (new Date(a.card.nextReview) - new Date(b.card.nextReview));
+        return (a.card.reviews - b.card.reviews) || (a.card.dueAtOpen - b.card.dueAtOpen);
     });
 
     // No two picks testing the same concept, so a short block still covers
@@ -170,7 +244,7 @@ function pickRecycleExercises(pool, count) {
 function recordRecycleOutcome(id, rating) {
     const schedule = loadRecycleSchedule();
     const card = recycleCard(schedule, id);
-    scheduleCard(card, rating, new Date());
+    scheduleRecycleCard(card, rating, currentAppOpen());
     saveRecycleSchedule(schedule);
 }
 
