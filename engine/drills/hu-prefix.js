@@ -92,6 +92,7 @@ const HuPrefixDriller = (function () {
     let _pairs = null;    // [{prefix, sense, bareLemma, bareGloss, prefixedLemma, prefixedGloss}]
 
     let _mode = MODE.COUNT;
+    let _knownOnly = false; // opt-in: only bare verbs already met in a completed lesson
     let _questionCount = 10;
     let _timerMinutes = 2;
 
@@ -141,7 +142,8 @@ const HuPrefixDriller = (function () {
         const [dict] = await Promise.all([
             fetch('imports/dictionary/hungarian-en.json').then(r => r.ok ? r.json() : {}),
             Lexicon.load(),
-            Content.json(Lang.content('reference/prefixes.json')).catch(() => null).then(r => { _reference = r; })
+            Content.json(Lang.content('reference/prefixes.json')).catch(() => null).then(r => { _reference = r; }),
+            (typeof TaughtWords !== 'undefined') ? TaughtWords.load() : Promise.resolve()
         ]);
 
         // Longest-first, same reason VERB_PREFIXES itself is sorted that
@@ -245,7 +247,10 @@ const HuPrefixDriller = (function () {
     }
 
     function _buildPool(targetCount) {
-        const pool = _pairs;
+        let pool = _pairs;
+        if (_knownOnly && typeof TaughtWords !== 'undefined') {
+            pool = pool.filter(p => TaughtWords.isReached(p.bareLemma));
+        }
         if (!pool || !pool.length) return [];
         const limit = targetCount || 300;
         const shuffled = _shuffled(pool);
@@ -274,6 +279,16 @@ const HuPrefixDriller = (function () {
                 <p class="gd-hint">Meaning and construction for Hungarian's separable verb prefixes
                     (meg-, el-, ki-, be-, ...). Draws from the full dictionary — prefixes get only light
                     coverage in the early lessons, so this runs ahead of the curriculum.</p>
+
+                <div class="vb-setting vb-setting-row">
+                    <label id="hp-known-label">Only verbs from my lessons</label>
+                    <button class="geo-toggle" data-action="toggle-known" role="switch"
+                        aria-checked="${_knownOnly}" aria-labelledby="hp-known-label">
+                        <span class="geo-toggle-track"></span>
+                        <span class="geo-toggle-shape geo-toggle-shape--off"></span>
+                        <span class="geo-toggle-shape geo-toggle-shape--on"></span>
+                    </button>
+                </div>
 
                 <div class="vb-mode-switcher" role="tablist">
                     <button class="vb-mode-btn${_mode === MODE.COUNT ? ' active' : ''}"
@@ -310,6 +325,11 @@ const HuPrefixDriller = (function () {
 
         _container.querySelectorAll('[data-mode]').forEach(btn => {
             btn.addEventListener('click', () => { _mode = btn.dataset.mode; _renderSettings(); });
+        });
+
+        _container.querySelector('[data-action="toggle-known"]').addEventListener('click', function () {
+            _knownOnly = !_knownOnly;
+            _renderSettings();
         });
 
         const countSelect = _container.querySelector('#hp-count');

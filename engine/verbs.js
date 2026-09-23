@@ -26,6 +26,7 @@ const Verbs = (function () {
         mode:            'table',
         tense:           'indicativo.presente',
         includeVosotros: false,
+        knownOnly:       false,
         timer:           120,
         currentVerb:     null,
         currentVerbIndex: 0,
@@ -140,6 +141,17 @@ const Verbs = (function () {
             +         '<span class="geo-toggle-shape geo-toggle-shape--on"></span>'
             +       '</button>'
             +     '</div>'
+            +     '<div class="vb-setting vb-setting-row">'
+            +       '<label id="vb-known-label">Only verbs from my lessons</label>'
+            +       '<button class="geo-toggle"'
+            +         ' data-action="toggle-known" role="switch"'
+            +         ' aria-checked="' + _state.knownOnly + '"'
+            +         ' aria-labelledby="vb-known-label">'
+            +         '<span class="geo-toggle-track"></span>'
+            +         '<span class="geo-toggle-shape geo-toggle-shape--off"></span>'
+            +         '<span class="geo-toggle-shape geo-toggle-shape--on"></span>'
+            +       '</button>'
+            +     '</div>'
             +   '</div>'
 
             // Mode-specific content area
@@ -177,6 +189,26 @@ const Verbs = (function () {
                 this.setAttribute('aria-checked', String(_state.includeVosotros));
                 VerbsSpeed.reset();
                 _renderModeContent();
+            });
+        }
+
+        // Known-words-only toggle — rebuilds the verb list from the same
+        // word-lesson-index.json lookup engine/drills/vocabulary.js already
+        // filters through, opt-in since ALL_VERBS is deliberately the full
+        // list by default (see init()'s own comment).
+        var knownBtn = root.querySelector('[data-action="toggle-known"]');
+        if (knownBtn) {
+            knownBtn.addEventListener('click', function () {
+                _state.knownOnly = !_state.knownOnly;
+                this.setAttribute('aria-checked', String(_state.knownOnly));
+                var btn = this;
+                (typeof TaughtWords !== 'undefined' ? TaughtWords.load() : Promise.resolve()).then(function () {
+                    _rebuildVerbList();
+                    VerbsSpeed.reset();
+                    return _loadRandomVerb();
+                }).then(function () {
+                    _renderModeContent();
+                });
             });
         }
     }
@@ -234,16 +266,28 @@ const Verbs = (function () {
     //  PUBLIC API
     // ================================================================
 
+    // Rebuilds _state.verbList from ALL_VERBS, filtered to only
+    // already-taught verbs when knownOnly is on. Falls back to the
+    // unfiltered list if that filter would leave nothing to drill — same
+    // fail-open reasoning TaughtWords.isReached() itself documents, rather
+    // than silently breaking the driller for a learner early in the course.
+    function _rebuildVerbList() {
+        var base = (typeof ALL_VERBS !== 'undefined') ? ALL_VERBS.slice() : ['hablar', 'comer', 'vivir'];
+        if (_state.knownOnly && typeof TaughtWords !== 'undefined') {
+            var known = base.filter(function (v) { return TaughtWords.isReached(v); });
+            if (known.length) base = known;
+        }
+        _state.verbList = base;
+        _shuffle(_state.verbList);
+        _state.currentVerbIndex = 0;
+    }
+
     /**
      * One-time initialisation.
      * Loads the verb list and renders the Drills tab.
      */
     function init() {
-        _state.verbList = (typeof ALL_VERBS !== 'undefined')
-            ? ALL_VERBS.slice()
-            : ['hablar', 'comer', 'vivir'];
-        _shuffle(_state.verbList);
-        _state.currentVerbIndex = 0;
+        _rebuildVerbList();
 
         // Load first verb but do NOT render — avoid racing with user interactions.
         // The first full render happens when render() is called (tab switch).
@@ -299,8 +343,8 @@ const Verbs = (function () {
         _state.mode = 'table';
         _state.tense = 'indicativo.presente';
         _state.includeVosotros = false;
-        _state.currentVerbIndex = 0;
-        _shuffle(_state.verbList);
+        _state.knownOnly = false;
+        _rebuildVerbList();
         _loadRandomVerb().then(function () {
             _render();
         });

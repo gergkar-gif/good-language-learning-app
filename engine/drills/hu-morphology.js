@@ -53,6 +53,7 @@ const HuMorphologyDriller = (function () {
     }
 
     let _mode = MODE.COUNT;
+    let _knownOnly = false; // opt-in: only words already met in a completed lesson
     let _questionCount = 10;
     let _timerMinutes = 2;
 
@@ -103,7 +104,8 @@ const HuMorphologyDriller = (function () {
             fetch('imports/dictionary/hungarian-en.json').then(r => r.ok ? r.json() : {}),
             Content.json(Lang.content('indexes/word-index.json')).catch(() => ({})),
             Lexicon.load(),
-            Content.json(Lang.content('reference/cases.json')).catch(() => null).then(r => { _reference = r; })
+            Content.json(Lang.content('reference/cases.json')).catch(() => null).then(r => { _reference = r; }),
+            (typeof TaughtWords !== 'undefined') ? TaughtWords.load() : Promise.resolve()
         ]);
 
         _stacked = [];
@@ -122,7 +124,7 @@ const HuMorphologyDriller = (function () {
             const result = HungarianMorphology.ladder(form, dict, wordIndex, tag.lemma);
             if (!result.chain.length) continue;
 
-            const entry = { word: form, chain: result.chain, breakdown: result.breakdown };
+            const entry = { word: form, lemma: tag.lemma, chain: result.chain, breakdown: result.breakdown };
             if (result.breakdown.length >= 2) {
                 if (_stacked.length < 150) _stacked.push(entry);
             } else {
@@ -213,7 +215,10 @@ const HuMorphologyDriller = (function () {
         // keep some single-suffix items in the mix — a session that's only
         // ever three-layer words is a harder driller than the settings
         // screen promises.
-        const source = _stacked.concat(_shuffled(_single).slice(0, Math.max(_stacked.length, 50)));
+        let source = _stacked.concat(_shuffled(_single).slice(0, Math.max(_stacked.length, 50)));
+        if (_knownOnly && typeof TaughtWords !== 'undefined') {
+            source = source.filter(entry => TaughtWords.isReached(entry.lemma));
+        }
         if (!source || !source.length) return [];
         const limit = targetCount || 400;
         const shuffled = _shuffled(source);
@@ -242,6 +247,16 @@ const HuMorphologyDriller = (function () {
                 <p class="gd-hint">Take Hungarian words apart, and put them back together — the same
                     step-by-step breakdown the Reader shows when you tap a word. Runs on the full
                     dictionary, so it can go beyond your lessons so far.</p>
+
+                <div class="vb-setting vb-setting-row">
+                    <label id="hm-known-label">Only words from my lessons</label>
+                    <button class="geo-toggle" data-action="toggle-known" role="switch"
+                        aria-checked="${_knownOnly}" aria-labelledby="hm-known-label">
+                        <span class="geo-toggle-track"></span>
+                        <span class="geo-toggle-shape geo-toggle-shape--off"></span>
+                        <span class="geo-toggle-shape geo-toggle-shape--on"></span>
+                    </button>
+                </div>
 
                 <div class="vb-mode-switcher" role="tablist">
                     <button class="vb-mode-btn${_mode === MODE.COUNT ? ' active' : ''}"
@@ -278,6 +293,11 @@ const HuMorphologyDriller = (function () {
 
         _container.querySelectorAll('[data-mode]').forEach(btn => {
             btn.addEventListener('click', () => { _mode = btn.dataset.mode; _renderSettings(); });
+        });
+
+        _container.querySelector('[data-action="toggle-known"]').addEventListener('click', function () {
+            _knownOnly = !_knownOnly;
+            _renderSettings();
         });
 
         const countSelect = _container.querySelector('#hm-count');

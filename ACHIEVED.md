@@ -9,6 +9,39 @@ needs re-reading before starting new work; it's reference only.
 
 ## Completed queue items
 
+83. ~~**"Only words from my lessons" opt-in toggle on every dictionary-wide driller**~~ — **Done 2026-09-23.**
+    User asked for a switch on the "relevant" Workshop drillers that
+    restricts them to words the learner has actually encountered in a
+    completed lesson. Five drillers deliberately draw from the full
+    dictionary/verb list by default (each says so in its own header
+    comment): `hu-verb`, `hu-suffix`, `hu-prefix`, `hu-morphology`, and the
+    Spanish `verbs` driller (Table + Speed). `engine/drills/vocabulary.js`
+    already does something similar unconditionally via its own
+    `_isReached()`, backed by `content/<lang>/indexes/word-lesson-index.json`
+    (lemma -> first-teaching lesson) — but that one deliberately fails
+    *open* on an indexless lemma, which is fine for an always-on filter
+    over an already-level-scoped pool.
+    Extracted a new shared module, `engine/taughtWords.js` (`TaughtWords`),
+    for the new opt-in toggle — deliberately failing *closed* instead:
+    checked empirically that only ~28% of hu-verb's candidate verbs have
+    any word-lesson-index entry at all, so reusing vocabulary.js's
+    fail-open rule here would have left the toggle barely restricting
+    anything, defeating a feature whose whole point is a strict guarantee.
+    Wired a "geo-toggle" switch (same component as the existing Tense/
+    Definite/vosotros toggles) into all five settings screens, each
+    filtering its own pool by the relevant lemma (verb lemma for hu-verb/
+    hu-prefix/verbs, word lemma for hu-suffix/hu-morphology) once the
+    toggle is on. `engine/verbs.js`'s Spanish list also got a
+    `_rebuildVerbList()` extraction (was inlined in `init()`) with a
+    fail-open *fallback* — not the same as TaughtWords' own fail-closed
+    lookup — for the case where the filtered list would otherwise be
+    completely empty, so flipping the toggle can never silently break the
+    driller for a learner very early in the course. Verified live across
+    all five: toggling on visibly shrinks the pool (Hungarian Verb Driller
+    563 → 4 with ~11 lessons done, → still small but sensible with 60;
+    Spanish Table mode correctly loaded "leer," an early-taught verb, with
+    the toggle on) and toggling off restores the full pool.
+
 82. ~~**"About this drill" info popup added to every Workshop driller's settings screen**~~ — **Done 2026-09-23.**
     User asked for a closeable info bubble on each drill explaining what it
     trains, why it can feel odd at first, and what improvement actually

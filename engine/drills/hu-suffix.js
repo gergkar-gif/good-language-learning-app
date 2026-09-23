@@ -125,6 +125,7 @@ const HuSuffixDriller = (function () {
     let _mode = MODE.COUNT;
     let _type = TYPE.MIXED;
     let _restrictAutoMixed = false;
+    let _knownOnly = false; // opt-in: only words already met in a completed lesson
     let _questionCount = 10;
     let _timerMinutes = 2;
 
@@ -179,7 +180,8 @@ const HuSuffixDriller = (function () {
         const [wordIndex] = await Promise.all([
             Content.json(Lang.content('indexes/word-index.json')).catch(() => ({})),
             Lexicon.load(),
-            Content.json(Lang.content('reference/cases.json')).catch(() => null).then(r => { _reference = r; })
+            Content.json(Lang.content('reference/cases.json')).catch(() => null).then(r => { _reference = r; }),
+            (typeof TaughtWords !== 'undefined') ? TaughtWords.load() : Promise.resolve()
         ]);
 
         _plural = [];
@@ -327,7 +329,10 @@ const HuSuffixDriller = (function () {
     }
 
     function _buildPool(type, targetCount) {
-        const pool = _poolFor(type);
+        let pool = _poolFor(type);
+        if (_knownOnly && typeof TaughtWords !== 'undefined') {
+            pool = pool.filter(entry => TaughtWords.isReached(entry.lemma));
+        }
         if (!pool || !pool.length) return [];
         const limit = targetCount || 400;
         const shuffled = _shuffled(pool);
@@ -374,6 +379,16 @@ const HuSuffixDriller = (function () {
                     </select>
                 </div>
 
+                <div class="vb-setting vb-setting-row">
+                    <label id="hs-known-label">Only words from my lessons</label>
+                    <button class="geo-toggle" data-action="toggle-known" role="switch"
+                        aria-checked="${_knownOnly}" aria-labelledby="hs-known-label">
+                        <span class="geo-toggle-track"></span>
+                        <span class="geo-toggle-shape geo-toggle-shape--off"></span>
+                        <span class="geo-toggle-shape geo-toggle-shape--on"></span>
+                    </button>
+                </div>
+
                 ${_mode === MODE.COUNT ? `
                     <div class="gd-setting">
                         <label for="hs-count">Number of questions</label>
@@ -407,6 +422,11 @@ const HuSuffixDriller = (function () {
         const typeSelect = _container.querySelector('#hs-type');
         typeSelect.value = _type;
         typeSelect.addEventListener('change', e => { _type = e.target.value; });
+
+        _container.querySelector('[data-action="toggle-known"]').addEventListener('click', function () {
+            _knownOnly = !_knownOnly;
+            _renderSettings();
+        });
 
         const countSelect = _container.querySelector('#hs-count');
         if (countSelect) countSelect.addEventListener('change', e => { _questionCount = Number(e.target.value); });

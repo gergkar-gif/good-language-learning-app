@@ -100,6 +100,7 @@ const HuVerbDriller = (function () {
 
     let _tense = 'pres';    // 'pres' | 'past'
     let _definite = false;
+    let _knownOnly = false; // opt-in: only verbs already met in a completed lesson
     let _showTenseInfo = false;
     let _showDefiniteInfo = false;
     let _mode = MODE.COUNT;
@@ -151,7 +152,8 @@ const HuVerbDriller = (function () {
         if (_dict) return;
         const [dict] = await Promise.all([
             fetch('imports/dictionary/hungarian-en.json').then(r => r.ok ? r.json() : {}),
-            Lexicon.load()
+            Lexicon.load(),
+            (typeof TaughtWords !== 'undefined') ? TaughtWords.load() : Promise.resolve()
         ]);
         _dict = dict;
         _buildVerbs();
@@ -171,6 +173,7 @@ const HuVerbDriller = (function () {
         for (const lemma in _dict) {
             const rank = Lexicon.frequencyRank(lemma);
             if (rank === null || rank >= MAX_LEMMA_RANK) continue;
+            if (_knownOnly && typeof TaughtWords !== 'undefined' && !TaughtWords.isReached(lemma)) continue;
             const sense = HungarianMorphology.verbSense(_dict[lemma]);
             if (!sense || FORM_OF_GLOSS.test(sense.en)) continue;
 
@@ -314,6 +317,17 @@ const HuVerbDriller = (function () {
                 </div>
                 ${_showDefiniteInfo ? `<p class="gd-hint hv-info">${DEFINITE_INFO}</p>` : ''}
 
+                <div class="vb-setting vb-setting-row">
+                    <label id="hv-known-label">Only verbs from my lessons</label>
+                    <button class="geo-toggle" data-action="toggle-known" role="switch"
+                        aria-checked="${_knownOnly}" aria-labelledby="hv-known-label">
+                        <span class="geo-toggle-track"></span>
+                        <span class="geo-toggle-shape geo-toggle-shape--off"></span>
+                        <span class="geo-toggle-shape geo-toggle-shape--on"></span>
+                    </button>
+                </div>
+                ${_knownOnly ? `<p class="gd-hint hv-info">${_verbs.length} verbs match — only ones already met in a completed lesson.</p>` : ''}
+
                 <div class="vb-mode-switcher" role="tablist">
                     <button class="vb-mode-btn${_mode === MODE.COUNT ? ' active' : ''}"
                         data-mode="${MODE.COUNT}" role="tab" aria-selected="${_mode === MODE.COUNT}">By Count</button>
@@ -358,6 +372,11 @@ const HuVerbDriller = (function () {
         });
         _container.querySelector('[data-action="toggle-definite"]').addEventListener('click', function () {
             _definite = !_definite;
+            _buildVerbs();
+            _renderSettings();
+        });
+        _container.querySelector('[data-action="toggle-known"]').addEventListener('click', function () {
+            _knownOnly = !_knownOnly;
             _buildVerbs();
             _renderSettings();
         });
