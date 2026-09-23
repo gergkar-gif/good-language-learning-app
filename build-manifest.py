@@ -339,7 +339,9 @@ def lesson_teaching_counts(lang, data):
     exercises = {}
 
     for section in data.get("sections", []):
-        ref = section.get("ref")
+        # Older CCSE lessons stored the reference under `content.ref`.
+        # Accept that shape while the source files are normalized.
+        ref = section.get("ref") or (section.get("content") or {}).get("ref")
         if not ref:
             continue
         path = base / ref

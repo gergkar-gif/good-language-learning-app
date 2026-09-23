@@ -421,7 +421,7 @@ async function buildSteps(lesson) {
             }
 
             else if (section.type === 'exercise-group') {
-                const file = await loadContent(section.ref);
+                const file = await loadContent(section.ref || (section.content && section.content.ref));
                 const all = file.exercises || [];
                 const ids = section.exerciseRefs || [];
                 ids.forEach((id, i) => {

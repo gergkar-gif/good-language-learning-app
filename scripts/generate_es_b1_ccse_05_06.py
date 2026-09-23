@@ -117,24 +117,18 @@ def generate_unit_5():
                 {
                     "type": "vocabulary",
                     "title": "Vocabulario Cívico",
-                    "content": {
-                        "ref": lm["vocab_ref"]
-                    }
+                    "ref": lm["vocab_ref"]
                 },
                 {
                     "type": "grammar",
                     "title": lm["grammar"],
-                    "content": {
-                        "ref": lm["grammar_ref"]
-                    }
+                    "ref": lm["grammar_ref"]
                 },
                 {
                     "type": "exercise-group",
                     "title": "Práctica y Preguntas CCSE",
                     "exerciseRefs": lm["ex_refs"],
-                    "content": {
-                        "ref": lm["ex_ref"]
-                    }
+                    "ref": lm["ex_ref"]
                 }
             ]
         }
@@ -160,9 +154,7 @@ def generate_unit_5():
                     "ex.b1.ccse.judicial.consolidation.2",
                     "ex.b1.ccse.judicial.consolidation.3"
                 ],
-                "content": {
-                    "ref": "exercises/b1/b1-ccse-judicial-consolidation-ex.json"
-                }
+                "ref": "exercises/b1/b1-ccse-judicial-consolidation-ex.json"
             }
         ]
     })
@@ -683,24 +675,18 @@ def generate_unit_6():
                 {
                     "type": "vocabulary",
                     "title": "Vocabulario Cívico",
-                    "content": {
-                        "ref": lm["vocab_ref"]
-                    }
+                    "ref": lm["vocab_ref"]
                 },
                 {
                     "type": "grammar",
                     "title": lm["grammar"],
-                    "content": {
-                        "ref": lm["grammar_ref"]
-                    }
+                    "ref": lm["grammar_ref"]
                 },
                 {
                     "type": "exercise-group",
                     "title": "Práctica y Preguntas CCSE",
                     "exerciseRefs": lm["ex_refs"],
-                    "content": {
-                        "ref": lm["ex_ref"]
-                    }
+                    "ref": lm["ex_ref"]
                 }
             ]
         }
@@ -726,9 +712,7 @@ def generate_unit_6():
                     "ex.b1.ccse.autonomias.inst.consolidation.2",
                     "ex.b1.ccse.autonomias.inst.consolidation.3"
                 ],
-                "content": {
-                    "ref": "exercises/b1/b1-ccse-autonomias-inst-consolidation-ex.json"
-                }
+                "ref": "exercises/b1/b1-ccse-autonomias-inst-consolidation-ex.json"
             }
         ]
     })
