@@ -9,6 +9,41 @@ needs re-reading before starting new work; it's reference only.
 
 ## Completed queue items
 
+80. ~~**Hungarian Verb Driller could quiz untaught plural persons; curriculum now teaches them, driller gated on it**~~ — **Done 2026-09-23.**
+    User reported RecommendationEngine pushed the Verb Driller as a nudge
+    while learning Hungarian, and it quizzed the -unk/-ünk (1pl, "we")
+    ending before that form had ever been taught. Root cause:
+    `engine/drills/hu-verb.js` deliberately draws its verb pool from the
+    full dictionary regardless of lesson progress (by design, for
+    vocabulary breadth), but also hardcoded all six grammatical persons
+    (1/2/3, sg/pl) into every session — including the three plural ones,
+    which no A1 lesson actually named as a grammar point. Confirmed by
+    reading the curriculum: `content/hu/grammar/a1/a1-97-a-gr.json`
+    ("Review of Present Tense Verbs", lesson.a1.97) only reviewed
+    dolgozom/dolgozol/dolgozik (singular) despite being the level's
+    present-tense consolidation point; nothing taught -unk/-ünk,
+    -tok/-tek/-tök, or -nak/-nek as verb endings anywhere in A1.
+    `engine/recommendationEngine.js`'s `hu-verb`/`hu-suffix` candidates
+    gate only on lesson *count* (`completedCount >= 8`), not on what
+    grammar has actually been taught — unlike the `grammar`/`vocabulary`
+    candidates, which route through `LearnerModel.weakSkills()`/
+    `weakWords()` and can't fire on unseen content.
+    Fixed both sides: (1) extended `a1-97-a-gr.json`'s "Review of Present
+    Tense Verbs" into an actual full-paradigm lesson — a 6-row table
+    (dolgozom/dolgozol/dolgozik/dolgozunk/dolgoztok/dolgoznak), new
+    examples, and a tip explaining the -unk/-ünk vs -tok/-tek/-tök vs
+    -nak/-nek vowel-harmony split — plus 5 new drilling exercises in
+    `exercises/a1/a1-97-ex.json` (wired into the lesson's Controlled/Check
+    groups) so plural persons are actually taught and practiced, not just
+    mentioned; (2) added `_availablePersons()` to `hu-verb.js`, which
+    restricts the driller's pool to singular persons only until
+    `LearnerPath.isComplete('lesson.a1.97')`, same lesson-id-gate pattern
+    `hu-suffix`/`hu-prefix` already use elsewhere in
+    `recommendationEngine.js`. Settings-screen hint now says so
+    explicitly when gated. Verified live: with `lesson.a1.97` incomplete,
+    the driller reports only singular forms available; marking it
+    complete immediately unlocks all six persons.
+
 79. ~~**Time-Based Sessions: results screen names and launches the next task directly**~~ — **Done 2026-09-23.**
     User feedback: finishing a task inside a time-based session required
     an extra click ("Back to your plan →") just to get back to the

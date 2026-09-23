@@ -23,6 +23,14 @@
 //
 // Four exercise types from HUNGARIAN_WORKSHOP_IMPLEMENTATION_HANDOVER.md's
 // Verb Driller section: recognition, selection, production, transformation.
+//
+// The verb pool itself draws from the full dictionary rather than just the
+// learner's lessons so far (see _buildVerbs()) — but which PERSONS are
+// drilled is curriculum-gated (_availablePersons()): singular only until
+// lesson.a1.97 teaches the plural endings, since RecommendationEngine can
+// launch this driller as an unattended "for you" nudge well before that
+// lesson, and testing -unk/-ünk etc. before they're taught reads as broken,
+// not challenging.
 
 const HuVerbDriller = (function () {
     'use strict';
@@ -65,6 +73,21 @@ const HuVerbDriller = (function () {
         [1, 'sg', 'Én'], [2, 'sg', 'Te'], [3, 'sg', 'Ő'],
         [1, 'pl', 'Mi'], [2, 'pl', 'Ti'], [3, 'pl', 'Ők']
     ];
+
+    // The curriculum only teaches the singular persons early (1sg at
+    // unit.a1.13, 3sg -ik verbs at unit.a1.17); the plural endings (-unk/
+    // -ünk, -tok/-tek/-tök, -nak/-nek) aren't named as their own grammar
+    // point until lesson.a1.97's "Review of Present Tense Verbs" table.
+    // Before that lesson is done, restrict the pool to singular persons so
+    // this driller — and RecommendationEngine's "weak driller"/mini-game
+    // nudges, which just launch it with a person count, not a specific
+    // cell — can't quiz a form the learner hasn't been taught yet.
+    function _availablePersons() {
+        const pluralsTaught = (typeof LearnerPath === 'undefined' || !LearnerPath.isComplete)
+            ? true // LearnerPath unavailable (e.g. a test harness) — don't block on it
+            : LearnerPath.isComplete('lesson.a1.97');
+        return pluralsTaught ? PERSONS : PERSONS.filter(([, number]) => number === 'sg');
+    }
 
     let _phase = PHASE.SETTINGS;
     let _container = null;
@@ -144,17 +167,18 @@ const HuVerbDriller = (function () {
     // same verb list four ways.
     function _buildVerbs() {
         _verbs = [];
+        const persons = _availablePersons();
         for (const lemma in _dict) {
             const rank = Lexicon.frequencyRank(lemma);
             if (rank === null || rank >= MAX_LEMMA_RANK) continue;
             const sense = HungarianMorphology.verbSense(_dict[lemma]);
             if (!sense || FORM_OF_GLOSS.test(sense.en)) continue;
 
-            const forms = PERSONS.map(([person, number, pronoun]) => ({
+            const forms = persons.map(([person, number, pronoun]) => ({
                 person, number, pronoun,
                 form: HungarianMorphology.conjugate(lemma, { tense: _tense, person, number, definite: _definite })
             })).filter(f => f.form);
-            if (forms.length < PERSONS.length) continue; // skip anything conjugate() couldn't fill in
+            if (forms.length < persons.length) continue; // skip anything conjugate() couldn't fill in
 
             _verbs.push({ lemma, gloss: sense.en, forms });
         }
@@ -259,8 +283,10 @@ const HuVerbDriller = (function () {
         _container.innerHTML = `
             <div class="gd-settings">
                 <h2 class="gd-title">Verb Driller</h2>
+                ${DrillInfo.buttonHtml('hu-verb')}
                 <p class="gd-hint">Decode and produce Hungarian verb forms. Draws from the full dictionary
-                    rather than just your lessons so far — ${_verbs.length} verbs available for this combination.</p>
+                    rather than just your lessons so far — ${_verbs.length} verbs available for this combination.
+                    ${_availablePersons().length < PERSONS.length ? ' Singular persons (I/you/he-she) only, until a later lesson introduces the plural endings.' : ''}</p>
 
                 <div class="vb-setting vb-setting-row">
                     <label id="hv-tense-label">Past tense
@@ -318,6 +344,8 @@ const HuVerbDriller = (function () {
                 <button class="vbtn vbtn-primary vbtn-block" data-action="start">Start</button>
             </div>
         `;
+
+        if (typeof DrillInfo !== 'undefined') DrillInfo.attach(_container);
 
         _container.querySelectorAll('[data-mode]').forEach(btn => {
             btn.addEventListener('click', () => { _mode = btn.dataset.mode; _renderSettings(); });
