@@ -9,6 +9,52 @@ needs re-reading before starting new work; it's reference only.
 
 ## Completed queue items
 
+71. ~~**SRS polish pass: leech detection, interval fuzz, per-deck reset**~~ — **Done 2026-09-23.**
+    Three follow-ups to `engine/srs.js`'s SM-2 scheduler, requested after a
+    review of the system found the core algorithm already solid:
+    - **Leech detection**: `card.lapses` (lifetime count of "again" ratings,
+      distinct from `reviews`) tracked in `normalizeCard()`/`scheduleCard()`;
+      a card is flagged `card.leech` at `SRS_CONFIG.LEECH_THRESHOLD` (8,
+      Anki's own default) lapses. Surfaced as a quiet "Leech" badge on the
+      review card itself (`renderCard()`'s `review-context`) and as the
+      row state in Decks' word list (`dk-word-leech`, outranking
+      mastered/learning), both styled off the same danger-red language the
+      existing "Again" bucket badge already used. The flag never
+      auto-clears (lapses is a lifetime count, not a streak) — verified
+      deliberately in the smoke test below. Also threaded into
+      `engine/learnerModel.js`'s `weakWords()`: among cards tied at
+      `MIN_EASE`, the higher-lapse (more-leechy) one now sorts first, and
+      the returned shape carries `leech` through — sharpens the SRS
+      "weakest words" recommendation from item 70 above.
+    - **Interval fuzz**: cards reviewed together on the same day with the
+      same rating no longer land on the exact same future due date. A
+      deterministic (not `Math.random()`) ±15% fuzz applies only to the
+      ease-driven growth phase (`reviews >= 2`, interval >= 3 days) — the
+      fixed `FIRST_INTERVAL`/`SECOND_INTERVAL` onboarding ramp stays exact.
+      Determinism matters here: `previewSchedule()` is called twice for
+      every real rating (once to label the rating buttons, once inside
+      `scheduleCard()` to actually apply it) as two separate calls with no
+      shared state, so the fuzz is seeded from a hash of
+      `(card.spanish, rating, pre-fuzz interval)` rather than randomness,
+      keeping the label a learner sees and the interval actually saved in
+      agreement.
+    - **Per-deck reset**: `clearDeck()` (the existing "Reset" button) wipes
+      the *entire* SRS pile across every deck at once — flagged previously
+      as too broad for real users. Added `Decks.resetDeckProgress(deck)`
+      (`engine/decks.js`): a "Reset progress" link on any deck's detail
+      screen (any deck with progress in it, excluded on "All my words"
+      since that already IS the whole pile clearDeck() covers) that clears
+      SRS cards and known-word status for only that deck's words, leaving
+      every other deck, XP, and streak untouched.
+    Verified with an ad hoc smoke script (leech threshold/persistence,
+    fuzz determinism/range/floor, `weakWords()` tie-break) plus a live
+    browser pass: seeded a leech card via localStorage, confirmed the
+    "LEECH" row state and its danger-red styling in Decks, the "Leech"
+    badge on the actual review card, the "Reset progress" button appearing
+    on a real Parlour deck (and correctly absent on "All my words"), and
+    that clicking it removed only that deck's card from `srsDeck` while
+    leaving an unrelated card untouched.
+
 70. ~~**SRS "weakest words" recommendation, and grammar demoted off the unit-nudge primary slot**~~ — **Done 2026-09-23.**
     Two follow-ups to the recommendation engine work above (items 68-69),
     both in `engine/recommendationEngine.js`:

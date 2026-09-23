@@ -2920,6 +2920,23 @@
   color: var(--ink-secondary);
 }
 
+/* Quiet flag on a review card that keeps getting rated "again" (see
+   SRS_CONFIG.LEECH_THRESHOLD) — same visual language as the "Again"
+   bucket badge above, since both mean "this one isn't sticking yet." */
+.srs-leech-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 7px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  background: rgba(239, 68, 68, 0.15);
+  color: var(--danger);
+  border: 1px solid rgba(239, 68, 68, 0.35);
+}
+
 /* Rating buttons */
 
 .review-ratings {
@@ -4426,6 +4443,12 @@
 
 .dk-link-btn:hover { color: var(--primary); }
 
+/* A destructive action that still reads as a plain inline link, not the
+   heavier bordered .dk-danger button ("Delete deck") — "Reset progress"
+   sits next to "Edit deck" at the same weight until you hover it. */
+.dk-link-btn-danger { color: var(--danger); }
+.dk-link-btn-danger:hover { color: var(--danger); opacity: 0.75; }
+
 .dk-words-head {
   display: flex;
   align-items: center;
@@ -4475,6 +4498,7 @@
 .dk-word-not-added .dk-word-es { color: var(--muted); }
 .dk-word-mastered .dk-word-state { color: var(--primary); }
 .dk-word-known .dk-word-state { color: var(--primary); }
+.dk-word-leech .dk-word-state { color: var(--danger); }
 
 .dk-empty { color: var(--muted); font-size: 14px; }
 

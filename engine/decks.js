@@ -1410,8 +1410,13 @@ const Decks = (function () {
         const rows = words.map(word => {
             const isKnownWord = word.known || (typeof isKnown === 'function' && isKnown(word.lemma));
             const card = cardFor(word.lemma);
+            // Leech (card.leech, set by engine/srs.js's scheduleCard() once
+            // it's been rated "again" SRS_CONFIG.LEECH_THRESHOLD times)
+            // outranks mastered/learning here — a card can be several
+            // reviews in AND still be the one that keeps not sticking.
             const state = isKnownWord ? 'known'
                 : !card ? 'not added'
+                : card.leech ? 'leech'
                 : (card.reviews || 0) >= 3 ? 'mastered'
                 : (card.reviews || 0) >= 1 ? 'learning'
                 : 'new';
@@ -1460,9 +1465,10 @@ const Decks = (function () {
                     ${words.length ? `<button class="dk-study-tab" data-open-learn="1"><span class="dk-study-tab-label">Learn</span></button>` : ''}
                 </div>
 
-                ${isCustom ? `
+                ${isCustom || s.inDeck > 0 ? `
                     <div class="dk-utility-row">
-                        <button class="dk-link-btn" data-edit-deck="${esc(deck.id)}">Edit deck</button>
+                        ${isCustom ? `<button class="dk-link-btn" data-edit-deck="${esc(deck.id)}">Edit deck</button>` : ''}
+                        ${deck.id !== 'mine' && s.inDeck > 0 ? `<button class="dk-link-btn dk-link-btn-danger" data-reset-deck-progress="${esc(deck.id)}">Reset progress</button>` : ''}
                     </div>
                 ` : ''}
 
@@ -1511,6 +1517,27 @@ const Decks = (function () {
     // from a My Deck, which only ever touches membership; this is the one
     // place in the UI that reaches into the card pile itself, so it asks
     // first.
+    // Scoped counterpart to engine/srs.js's clearDeck(), which wipes the
+    // *entire* SRS pile across every deck — flagged as too broad for real
+    // users (see ROADMAP/ACHIEVED history). This resets only the words
+    // actually in THIS deck: their SRS cards and known-word status, not the
+    // deck's own membership/definition, and nothing outside it. Excluded
+    // from "All my words" (deck.id === 'mine') since that IS the whole
+    // pile — clearDeck()'s existing Reset button already covers it.
+    function resetDeckProgress(deck) {
+        const lemmas = new Set(wordsOf(deck).map(w => w.lemma));
+        if (!lemmas.size) return;
+        const label = deck.name || 'this deck';
+        if (!confirm(`Reset progress for all ${lemmas.size} word${lemmas.size === 1 ? '' : 's'} in "${label}"? Their review history and known status will be cleared — every other deck is untouched.`)) return;
+
+        srsDeck = srsDeck.filter(card => !lemmas.has(card.spanish));
+        knownWords = knownWords.filter(w => !lemmas.has(w.spanish));
+        saveDeck();
+        saveKnownWords();
+        if (typeof UI !== 'undefined' && UI.toast) UI.toast(`Progress reset for "${label}".`, 'info');
+        render();
+    }
+
     function removeFromAllWords(lemma) {
         if (!confirm(`Remove "${lemma}" from your deck? This deletes its review history.`)) return;
         srsDeck = srsDeck.filter(card => card.spanish !== lemma);
@@ -1670,6 +1697,12 @@ const Decks = (function () {
         });
         host.querySelectorAll('[data-edit-deck]').forEach(el => {
             el.onclick = function () { openEditDeck(el.getAttribute('data-edit-deck')); };
+        });
+        host.querySelectorAll('[data-reset-deck-progress]').forEach(el => {
+            el.onclick = function () {
+                const deck = byId(el.getAttribute('data-reset-deck-progress'));
+                if (deck) resetDeckProgress(deck);
+            };
         });
     }
 

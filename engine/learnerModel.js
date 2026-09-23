@@ -269,14 +269,19 @@ const LearnerModel = (function () {
 
         return reviewed
             .slice()
-            .sort((a, b) => a.ease - b.ease)
+            // Ease is the primary sort, but several cards pile up at
+            // SRS_CONFIG.MIN_EASE once they've had a bad run — among those
+            // ties, a card with more lapses (engine/srs.js's card.lapses)
+            // is the more predictively weak one, so it sorts first.
+            .sort((a, b) => (a.ease - b.ease) || ((b.lapses || 0) - (a.lapses || 0)))
             .slice(0, limit || WEAK_WORDS_LIMIT)
             .map(card => ({
                 lemma: card.spanish,
                 translation: card.english,
                 pos: card.type,
                 ease: card.ease,
-                reviews: card.reviews
+                reviews: card.reviews,
+                leech: !!card.leech
             }));
     }
 

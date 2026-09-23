@@ -168,10 +168,48 @@ const SRS_CONFIG = {
     SECOND_INTERVAL: { hard: 3, good: 6, easy: 8 },
     HARD_MULTIPLIER: 1.2,
     EASY_BONUS: 1.3,
-    MAX_INTERVAL: 365
+    MAX_INTERVAL: 365,
+    // A card that has been rated "again" this many times total (not in a
+    // row — SM-2 has no concept of "in a row" here) is flagged a leech: it
+    // keeps failing regardless of how the schedule adjusts, which is a
+    // different problem than "not due enough yet" and worth surfacing
+    // rather than silently cycling forever. Same default Anki uses.
+    LEECH_THRESHOLD: 8,
+    // Spreads reviews that would otherwise land on the exact same future
+    // date (e.g. a batch reviewed together today, all rated "good") across
+    // a few days either side, so a backlog doesn't re-clump every time it
+    // recurs. Only applied to the ease-driven growth phase (reviews >= 2)
+    // — the fixed FIRST_INTERVAL/SECOND_INTERVAL ramp stays exact, and an
+    // interval this short fuzzing to 0 (or flipping order with its
+    // neighbour) isn't worth it anyway.
+    FUZZ_MIN_INTERVAL_DAYS: 3,
+    FUZZ_RANGE: 0.15
 };
 
 const DAY_MS = 24 * 60 * 60 * 1000;
+
+// Deterministic 0..1 pseudo-random from a string (FNV-1a-ish hash) — used
+// only for interval fuzz. Must be deterministic: the interval preview a
+// learner sees on the rating buttons (updateRatingLabels(), a
+// previewSchedule() call) and the interval actually saved when they click
+// (rateCard() -> scheduleCard() -> another previewSchedule() call) need to
+// agree, and they're two separate calls with no shared state to fuzz from
+// other than the card/rating/interval themselves.
+function fuzzSeed(str) {
+    let h = 2166136261;
+    for (let i = 0; i < str.length; i++) {
+        h ^= str.charCodeAt(i);
+        h = Math.imul(h, 16777619);
+    }
+    return ((h >>> 0) % 10000) / 10000;
+}
+
+function fuzzInterval(interval, card, rating) {
+    if (interval < SRS_CONFIG.FUZZ_MIN_INTERVAL_DAYS) return interval;
+    const seed = fuzzSeed(`${card.spanish || ''}|${rating}|${interval}`);
+    const delta = interval * SRS_CONFIG.FUZZ_RANGE * (seed * 2 - 1);
+    return Math.min(SRS_CONFIG.MAX_INTERVAL, Math.max(1, Math.round(interval + delta)));
+}
 
 function newCardSchedule() {
     return {
@@ -203,6 +241,10 @@ function normalizeCard(card) {
     if (typeof card.interval !== 'number' || !isFinite(card.interval) || card.interval < 0) {
         card.interval = inferInterval(card);
     }
+
+    if (typeof card.lapses !== 'number' || !(card.lapses >= 0)) card.lapses = 0;
+    card.leech = card.lapses >= SRS_CONFIG.LEECH_THRESHOLD;
+
     return card;
 }
 
@@ -236,6 +278,7 @@ function previewSchedule(card, rating, now) {
     }
 
     let interval;
+    let fuzzable = false;
     if (reviews === 0) {
         interval = SRS_CONFIG.FIRST_INTERVAL[rating];
     } else if (reviews === 1) {
@@ -250,11 +293,13 @@ function previewSchedule(card, rating, now) {
                          : rating === 'easy' ? ease * SRS_CONFIG.EASY_BONUS
                          : ease;
         interval = Math.max(currentInterval, base * multiplier);
+        fuzzable = true;
     }
 
     // Round up: at a short interval "hard" (1.2x) would otherwise round back
     // down to where it started and the card could never work its way out.
     interval = Math.min(SRS_CONFIG.MAX_INTERVAL, Math.max(1, Math.ceil(interval)));
+    if (fuzzable) interval = fuzzInterval(interval, card, rating);
 
     return { ease: ease, interval: interval, dueInMinutes: interval * 24 * 60, reviews: reviews + 1 };
 }
@@ -270,6 +315,9 @@ function scheduleCard(card, rating, now) {
     card.reviews = next.reviews;
     card.lastReviewed = now.toISOString();
     card.nextReview = new Date(now.getTime() + next.dueInMinutes * 60 * 1000).toISOString();
+
+    if (rating === 'again') card.lapses = (card.lapses || 0) + 1;
+    card.leech = (card.lapses || 0) >= SRS_CONFIG.LEECH_THRESHOLD;
 
     return card;
 }
@@ -771,14 +819,20 @@ function renderCard() {
     if (typeof ParlourTTS !== 'undefined' && ParlourTTS.preload && currentReviewCard.spanish) {
         ParlourTTS.preload({ text: currentReviewCard.spanish, type: 'vocabulary' });
     }
+    // A card flagged leech (see SRS_CONFIG.LEECH_THRESHOLD) gets a quiet
+    // badge here rather than any different treatment of the card itself —
+    // it's information for the learner ("this one keeps not sticking"),
+    // not a reason to skip or suspend it.
+    const contextHtml = (displayType ? `(${esc(displayType)})` : '')
+        + (currentReviewCard.leech ? ' <span class="srs-leech-badge" title="Rated Again 8+ times">Leech</span>' : '');
     if (englishFirst) {
         document.getElementById('review-front').textContent = displayEnglish;
         document.getElementById('review-back').innerHTML = spanishHtml;
-        document.getElementById('review-context').textContent = displayType ? `(${displayType})` : '';
+        document.getElementById('review-context').innerHTML = contextHtml;
     } else {
         document.getElementById('review-front').innerHTML = spanishHtml;
         document.getElementById('review-back').textContent = displayEnglish;
-        document.getElementById('review-context').textContent = displayType ? `(${displayType})` : '';
+        document.getElementById('review-context').innerHTML = contextHtml;
     }
     reviewExpectedSpanish = currentReviewCard.spanish;
     reviewExpectedEnglish = displayEnglish;
