@@ -105,6 +105,7 @@ For each error:
 - text: Short quoted fragment from the learner's message
 - explanation: Concise description of the written issue and how to express it naturally
 - skillId: Canonical skill ID from TARGET SKILLS when clearly applicable; otherwise null
+CATEGORY ACCURACY: Pick "category" by what actually caused the error, never by which label sounds more advanced. A misspelled or mistyped word that is not a real, correctly-formed word (wrong/missing/extra letters producing a non-word) is always "spelling" — never "grammar", even if the intended word is a noun/adjective/verb that also has agreement rules. Only use "grammar" for agreement/conjugation errors where the learner wrote a real, correctly-formed alternate form that doesn't match what the sentence requires. Check that the explanation accurately describes what is wrong with the exact quoted text.
 
 DEMONSTRATED SKILLS:
 Only include skills from TARGET SKILLS that the learner actually demonstrates.
@@ -364,6 +365,7 @@ For each error:
 - text: Short quoted fragment from the learner production
 - explanation: Concise description of the issue and how to correct it
 - skillId: Canonical skill ID from TARGET SKILLS when clearly applicable; otherwise null
+CATEGORY ACCURACY: Pick "category" by what actually caused the error, never by which label sounds more advanced or matches a target skill you'd like to reference. A misspelled or mistyped word that is not a real, correctly-formed word in the language (wrong/missing/extra letters producing a non-word) is always "spelling" — never "grammar", even if the intended word happens to be a noun/adjective/verb that also has agreement rules. Only use "grammar" for agreement/conjugation errors where the learner actually wrote a real, correctly-formed alternate form (e.g. a real plural, a real different gender, a real different verb person) that doesn't match what the sentence requires. Before writing the explanation, check that it accurately describes what is wrong with the exact quoted text — do not describe a phenomenon (e.g. "adjective-noun agreement") that isn't actually present in that fragment.
 
 DEMONSTRATED SKILLS:
 Only include skills from TARGET SKILLS that the learner actually demonstrates.
