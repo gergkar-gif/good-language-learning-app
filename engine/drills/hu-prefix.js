@@ -270,6 +270,7 @@ const HuPrefixDriller = (function () {
         _container.innerHTML = `
             <div class="gd-settings">
                 <h2 class="gd-title">Prefix Driller</h2>
+                ${DrillInfo.buttonHtml('hu-prefix')}
                 <p class="gd-hint">Meaning and construction for Hungarian's separable verb prefixes
                     (meg-, el-, ki-, be-, ...). Draws from the full dictionary — prefixes get only light
                     coverage in the early lessons, so this runs ahead of the curriculum.</p>
@@ -304,6 +305,8 @@ const HuPrefixDriller = (function () {
                 <button class="vbtn vbtn-primary vbtn-block" data-action="start">Start</button>
             </div>
         `;
+
+        if (typeof DrillInfo !== 'undefined') DrillInfo.attach(_container);
 
         _container.querySelectorAll('[data-mode]').forEach(btn => {
             btn.addEventListener('click', () => { _mode = btn.dataset.mode; _renderSettings(); });

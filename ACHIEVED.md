@@ -9,6 +9,39 @@ needs re-reading before starting new work; it's reference only.
 
 ## Completed queue items
 
+82. ~~**"About this drill" info popup added to every Workshop driller's settings screen**~~ — **Done 2026-09-23.**
+    User asked for a closeable info bubble on each drill explaining what it
+    trains, why it can feel odd at first, and what improvement actually
+    looks like — using the Hungarian Verb Driller (items 80-81) as the
+    example: "you might not know the verb itself, but if you know the
+    ending you can construct the correct form." Built one shared component,
+    `engine/drillInfo.js` (`DrillInfo`), reusing the app's existing
+    `.wp-overlay`/`.wp-sheet`/`.wp-header`/`.wp-close` bottom-sheet
+    component (the same one `engine/guide.js`'s "How Parlour Works" modal
+    and the Reader's word-tap popup already use) rather than inventing a
+    new modal pattern — a content dictionary keyed by driller id
+    (`hu-verb`, `hu-suffix`, `hu-prefix`, `hu-morphology`, `verbs`,
+    `grammar`, `vocabulary`, `translation`, `listening`, `speaking`,
+    `writing`), a `buttonHtml(id)` helper that returns a small "ⓘ About
+    this drill" link to splice next to a settings screen's own title, and
+    `attach(container)` to wire its click handler alongside a screen's
+    other event listeners. Wired into all eleven settings/setup screens
+    across `engine/drills/hu-verb.js`, `hu-suffix.js`, `hu-prefix.js`,
+    `hu-morphology.js`, `engine/verbs.js` (Spanish), and
+    `engine/drills/grammar.js`, `vocabulary.js`, `translation.js`,
+    `listening.js`, `speaking.js` (both its Sentence Drills and Verbal
+    Production Studio screens), `writing.js`. New CSS (`.di-info-btn`,
+    `.di-title`, `.di-body`, `.di-p` in `styles/workshop.css`, near the
+    existing `.hv-info-link` it's visually modeled on) plus the usual
+    `?v=` bump and `sw.js` `CACHE_VERSION` bump so it actually reaches
+    already-installed users. Verified live: the link renders under each
+    driller's title, opens the popup centered with a dimmed backdrop,
+    closes via the × button, a backdrop click, or Escape — confirmed
+    directly on the Hungarian Verb Driller (screenshot) and confirmed via
+    console checks that every other listed driller (Spanish `verbs`,
+    `grammar`, `vocabulary`, `listening`, `speaking`, `writing`) renders
+    the same button correctly.
+
 81. ~~**Hungarian Suffix Driller's unattended recommendation could mix in untaught Possessive/Case suffixes; also fixed a pre-existing bug that left its Plural pool permanently empty**~~ — **Done 2026-09-23.**
     Follow-up audit after item 80: user asked whether other
     `RecommendationEngine` candidates had the same "recommends untaught

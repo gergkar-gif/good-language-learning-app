@@ -1240,6 +1240,48 @@
     background: var(--bg);
 }
 
+/* Drill Info popup (engine/drillInfo.js) — a settings-screen-level "About
+   this drill" link and the .wp-sheet it opens, distinct from .hv-info-link
+   above (which explains one toggle, not the whole driller). */
+.di-info-btn {
+    display: block;
+    margin: -10px 0 16px;
+    padding: 0;
+    border: none;
+    background: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: underline;
+    color: var(--accent-dark);
+    cursor: pointer;
+}
+
+.di-info-btn:hover {
+    color: var(--accent);
+}
+
+.di-title {
+    margin: 4px 0 0;
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    color: var(--primary);
+}
+
+.di-body {
+    padding-top: 4px;
+}
+
+.di-p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--text);
+    margin: 0 0 12px;
+}
+
+.di-p:last-child {
+    margin-bottom: 0;
+}
+
 /* ============================================
    SPEAKING DRILLER & EXERCISE STYLES
    ============================================ */

@@ -265,6 +265,7 @@ const ListeningDriller = (function () {
         _container.innerHTML = `
             <div class="gd-settings">
                 <h2 class="gd-title">Listening Driller</h2>
+                ${DrillInfo.buttonHtml('listening')}
                 <p class="gd-hint">Decode spoken ${Lang.name()} — meaning, matching, dictation and missing
                     words, all by ear. Play as many times as you like.</p>
 
@@ -320,6 +321,8 @@ const ListeningDriller = (function () {
                 <button class="vbtn vbtn-primary vbtn-block" data-action="start">Start</button>
             </div>
         `;
+
+        if (typeof DrillInfo !== 'undefined') DrillInfo.attach(_container);
 
         _container.querySelectorAll('[data-mode]').forEach(btn => {
             btn.addEventListener('click', () => { _mode = btn.dataset.mode; _renderSettings(); });

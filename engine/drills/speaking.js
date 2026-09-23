@@ -390,6 +390,7 @@ const SpeakingDriller = (function () {
         body.innerHTML = `
             <div class="sp-settings">
                 <h2 class="gd-title">Sentence Speaking Drills</h2>
+                ${typeof DrillInfo !== 'undefined' ? DrillInfo.buttonHtml('speaking') : ''}
                 <p class="gd-hint">Practise pronunciation, shadowing, and spoken recall in ${langName}.</p>
 
                 <div class="wk-config-group">
@@ -461,6 +462,8 @@ const SpeakingDriller = (function () {
     }
 
     function _attachSettingsEvents(body) {
+        if (typeof DrillInfo !== 'undefined') DrillInfo.attach(body);
+
         body.querySelectorAll('[data-level]').forEach(btn => {
             btn.addEventListener('click', () => {
                 _level = btn.getAttribute('data-level');
@@ -680,6 +683,7 @@ const SpeakingDriller = (function () {
             <div class="sp-driller-wrap">
                 <div class="sp-setup-head">
                     <h2 class="sp-setup-title">Verbal Production Studio</h2>
+                    ${typeof DrillInfo !== 'undefined' ? DrillInfo.buttonHtml('speaking') : ''}
                     <p class="sp-setup-sub">Speak freely or pick a topic. Record up to 5 minutes out loud, listen to your own voice, and receive CEFR-aligned formative feedback.</p>
                 </div>
 
@@ -718,6 +722,8 @@ const SpeakingDriller = (function () {
                 </div>
             </div>
         `;
+
+        if (typeof DrillInfo !== 'undefined') DrillInfo.attach(body);
 
         body.querySelectorAll('[data-prod-level-filter]').forEach(el => {
             el.addEventListener('click', () => {

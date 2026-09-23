@@ -514,6 +514,7 @@ const GrammarDriller = (function () {
         _container.innerHTML = `
             <div class="gd-settings">
                 <h2 class="gd-title">Grammar Driller</h2>
+                ${DrillInfo.buttonHtml('grammar')}
 
                 <div class="vb-mode-switcher" role="tablist">
                     <button class="vb-mode-btn${_mode === MODE.COUNT ? ' active' : ''}"
@@ -569,6 +570,8 @@ const GrammarDriller = (function () {
                 <button class="vbtn vbtn-primary vbtn-block" data-action="start">Start</button>
             </div>
         `;
+
+        if (typeof DrillInfo !== 'undefined') DrillInfo.attach(_container);
 
         _container.querySelectorAll('[data-mode]').forEach(btn => {
             btn.addEventListener('click', () => { _mode = btn.dataset.mode; _renderSettings(); });

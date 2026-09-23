@@ -111,6 +111,7 @@ const Verbs = (function () {
         return ''
             + '<div class="vb">'
             +   '<h2 class="vb-title">Verb Drills</h2>'
+            +   (typeof DrillInfo !== 'undefined' ? DrillInfo.buttonHtml('verbs') : '')
 
             // Mode switcher
             +   '<div class="vb-mode-switcher" role="tablist">'
@@ -147,6 +148,8 @@ const Verbs = (function () {
     }
 
     function _attachShellEvents(root) {
+        if (typeof DrillInfo !== 'undefined') DrillInfo.attach(root);
+
         // Mode switcher
         var modeBtns = root.querySelectorAll('[data-action="switch-mode"]');
         for (var i = 0; i < modeBtns.length; i++) {

@@ -257,6 +257,7 @@ const WritingDriller = (function () {
             <div class="sp-driller-wrap">
                 <div class="sp-setup-head">
                     <h2 class="sp-setup-title">Composition Studio</h2>
+                    ${typeof DrillInfo !== 'undefined' ? DrillInfo.buttonHtml('writing') : ''}
                     <p class="sp-setup-sub">Write open-ended texts in ${langName} and receive CEFR-aligned formative feedback.</p>
                 </div>
 
@@ -294,6 +295,8 @@ const WritingDriller = (function () {
                 </div>
             </div>
         `;
+
+        if (typeof DrillInfo !== 'undefined') DrillInfo.attach(body);
 
         body.querySelectorAll('[data-prompt-level-filter]').forEach(el => {
             el.addEventListener('click', () => {

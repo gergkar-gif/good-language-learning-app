@@ -685,6 +685,7 @@ const VocabularyDriller = (function () {
         _container.innerHTML = `
             <div class="gd-settings">
                 <h2 class="gd-title">Vocabulary Driller</h2>
+                ${DrillInfo.buttonHtml('vocabulary')}
                 <p class="gd-hint">Recognise, infer and retrieve vocabulary from real ${Lang.name()} sentences —
                     not bare flashcards. Direct recall lives in My Decks.</p>
                 <p class="gd-hint">${available} words with example sentences at this level.</p>
@@ -739,6 +740,8 @@ const VocabularyDriller = (function () {
                 <button class="vbtn vbtn-primary vbtn-block" data-action="start">Start</button>
             </div>
         `;
+
+        if (typeof DrillInfo !== 'undefined') DrillInfo.attach(_container);
 
         _container.querySelectorAll('[data-mode]').forEach(btn => {
             btn.addEventListener('click', () => { _mode = btn.dataset.mode; _renderSettings(); });

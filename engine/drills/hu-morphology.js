@@ -238,6 +238,7 @@ const HuMorphologyDriller = (function () {
         _container.innerHTML = `
             <div class="gd-settings">
                 <h2 class="gd-title">Morphology Driller</h2>
+                ${DrillInfo.buttonHtml('hu-morphology')}
                 <p class="gd-hint">Take Hungarian words apart, and put them back together — the same
                     step-by-step breakdown the Reader shows when you tap a word. Runs on the full
                     dictionary, so it can go beyond your lessons so far.</p>
@@ -272,6 +273,8 @@ const HuMorphologyDriller = (function () {
                 <button class="vbtn vbtn-primary vbtn-block" data-action="start">Start</button>
             </div>
         `;
+
+        if (typeof DrillInfo !== 'undefined') DrillInfo.attach(_container);
 
         _container.querySelectorAll('[data-mode]').forEach(btn => {
             btn.addEventListener('click', () => { _mode = btn.dataset.mode; _renderSettings(); });
