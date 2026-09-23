@@ -9,6 +9,75 @@ needs re-reading before starting new work; it's reference only.
 
 ## Completed queue items
 
+78. ~~**Post-unit practice nudge was dead code; fixed, and Written Exchanges given parity with Conversation Scenarios**~~ — **Done 2026-09-23.**
+    While wiring the Writing Studio's Written Exchanges (texting-style
+    roleplay) into the recommendation engine alongside Speaking's oral
+    Conversation Scenarios, found that the existing "Put it into
+    conversation" post-unit nudge (`engine/recommendationEngine.js`'s
+    `_practiceNudge()`) never actually rendered. `recommend()` builds it
+    via `Object.assign({ kind: 'unit-nudge' }, nudge)`, but `nudge` itself
+    carried its own `kind: 'scenario'` field — the later source in
+    `Object.assign` wins, so `primary.kind` silently ended up `'scenario'`
+    instead of `'unit-nudge'`, and every check for `primary.kind ===
+    'unit-nudge'` (`engine/home.js`'s Home render, this engine's own
+    `_nextActionInfo`/`_routeTo`) never matched. The card had presumably
+    never shown since this system was built. Fixed by renaming the inner
+    field to `type` so it no longer collides with the wrapper's `kind`;
+    added a regression test (`tests/drills/test-scenario-learner-path.js`)
+    asserting the merge directly. With that working, `_practiceNudge()`
+    and the per-lesson mini-game candidate list now also try
+    `writing-exchanges.json` (matched by `unitIds`, same shape as
+    `conversation-scenarios.json`) when no oral scenario matches the
+    just-finished unit, routing into Writing Studio's Exchanges tab via
+    the same `scenarioId` option Speaking already used. Verified live:
+    both the scenario and exchange paths now render the Home card and
+    route to the correct driller/item.
+
+77. ~~**Recycle scheduling switched from wall-clock time to app opens, and leech handling wired up**~~ — **Done 2026-09-23.**
+    The grammar/skill recycle system (`engine/recycle.js`) reused the
+    vocabulary deck's SM-2 "again" rule of "due again in 1 minute"
+    (`SRS_CONFIG.AGAIN_MINUTES`, `engine/srs.js`). That works for a large
+    vocab deck where one overdue card is diluted among hundreds of others,
+    but a recycle pool for one grammar point can be a handful of exercises
+    — one miss stayed "due" essentially forever in real time, so it
+    permanently won that concept's one recycle-block slot
+    (`pickRecycleExercises`'s due-first sort + one-exercise-per-`teaches`-
+    tag diversity rule) in every subsequent lesson, however many days
+    passed. Recycle scheduling now runs on a new global open counter
+    (`window.AppOpens`, bumped once per page load in `engine/init.js`)
+    instead of dates: a miss ("again") is due starting the *next* app
+    open, never mid-session, and growth for later ratings (hard/good/
+    easy) uses the same ease-based SM-2 shape but counts in opens instead
+    of days. Vocabulary SRS (`engine/srs.js`) is untouched — this only
+    affects `engine/recycle.js`'s exercise-recycling schedule. **Leech
+    handling wired up same day**: `pickRecycleExercises` now sorts a
+    leech (8+ lapses, same threshold/meaning as the vocab deck) behind
+    any non-leech due exercise on the same `teaches` concept, so a
+    different exercise gets a turn once one exists — it's still served
+    when it's the only option for its concept, never excluded outright.
+    The lesson screen also shows the same quiet "Leech" badge next to the
+    title that the vocab review card shows (`Recycle.isLeech()`,
+    `engine/lessons.js`'s shared `renderStep()` title line) —
+    informational only, matching the vocab deck's existing philosophy
+    (see `engine/decks.js`'s comment on `card.leech`) that a leech is a
+    signal for the learner, not a card to suspend.
+
+76. ~~**Communicative Challenge reshuffle (Tier 1)**~~ — **Done 2026-09-23.**
+    The challenge card had it backwards — the bold headline was the
+    generic CEFR task description (e.g. "Ask for a coffee and water
+    politely"), while the actual sentence to produce was buried inside
+    the "Points to include" bullet list. For Tier 1 (A1, single-target)
+    challenges, the card now leads with "Say this in {language}:" plus
+    the English sentence to translate; the CanDo/task framing moved to
+    the post-solve success message ("Well done! With this, you've
+    completed a CEFR A1 requirement: '...'"). Added an `english` field
+    to the challenge step shape (`engine/lessons.js`, `content/*/schemas/
+    lesson.schema.json`, `content/es-latam/curriculum/challenges.json`)
+    carrying that source sentence. Tier 2/3 (situational, multi-cue, no
+    single target sentence) were intentionally left unchanged — worth
+    revisiting later whether they need the same canDo-framing-moved-to-
+    completion treatment for consistency.
+
 75. ~~**Fix the same white-rectangle `--bg-card` bug in CEFR Diagnostic, Level Test, Home onboarding**~~ — **Done 2026-09-23.**
     Direct follow-up to item 74, at the user's request to check these two
     screens specifically. A project-wide grep found `--bg-card` used in
