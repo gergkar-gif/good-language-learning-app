@@ -107,22 +107,31 @@ const UI = {
         `;
     },
 
-    // Special characters by language for on-screen accent helper bars
-    DIACRITICS: {
-        es: ['á', 'é', 'í', 'ó', 'ú', 'ñ', 'ü', '¿', '¡'],
-        hu: ['á', 'é', 'í', 'ó', 'ö', 'ő', 'ú', 'ü', 'ű'],
-        fr: ['à', 'â', 'ç', 'é', 'è', 'ê', 'ë', 'î', 'ï', 'ô', 'ù', 'û', 'ü', 'œ']
+    // Base-letter -> accented-variant lookup for the contextual accent
+    // popover: when the learner types a base letter, we show only the
+    // variants of that letter instead of a permanently-visible row of
+    // every special character in the language (Conjuguemos-style).
+    DIACRITIC_VARIANTS: {
+        es: { a: ['á'], e: ['é'], i: ['í'], o: ['ó'], u: ['ú', 'ü'], n: ['ñ'] },
+        hu: { a: ['á'], e: ['é'], i: ['í'], o: ['ó', 'ö', 'ő'], u: ['ú', 'ü', 'ű'] },
+        fr: { a: ['à', 'â'], c: ['ç'], e: ['é', 'è', 'ê', 'ë'], i: ['î', 'ï'], o: ['ô', 'œ'], u: ['ù', 'û', 'ü'] }
     },
 
+    // Inverted opening punctuation can't be derived from the letter the
+    // learner just typed, so it's keyed off the closing mark instead: type
+    // "?" and ¿ pops up to insert at the start of the sentence.
+    DIACRITIC_OPENERS: {
+        es: { '?': '¿', '!': '¡' }
+    },
+
+    // Marker only — no visible buttons. It records which input the
+    // contextual accent popover (wired up below) should watch and which
+    // language's accent map to use; call sites are unchanged from the old
+    // always-visible bar.
     diacriticsBarHtml(targetSelector, lang) {
         const langCode = lang || (typeof Lang !== 'undefined' && Lang.code ? Lang.code() : 'es');
-        const chars = UI.DIACRITICS[langCode] || UI.DIACRITICS.es;
         const targetAttr = targetSelector ? ` data-target="${targetSelector}"` : '';
-        return `
-            <div class="lsn-diacritics"${targetAttr} role="toolbar" aria-label="Special characters">
-                ${chars.map(ch => `<button type="button" class="lsn-diacritic-btn" data-char="${ch}" tabindex="-1" aria-label="Insert ${ch}">${ch}</button>`).join('')}
-            </div>
-        `;
+        return `<div class="lsn-diacritics" data-lang="${langCode}"${targetAttr}></div>`;
     },
 
     // A full-screen loading overlay for actions with a real network/parse
@@ -201,42 +210,148 @@ const UI = {
 };
 
 if (typeof document !== 'undefined') {
-    // Track the active/last-focused text input across the app so accent buttons know where to insert
+    // Track the active/last-focused text input across the app so the accent
+    // popover still knows where to insert after its mousedown steals focus.
     document.addEventListener('focusin', e => {
         if (e.target && (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA')) {
             window._lastFocusedInput = e.target;
         }
     });
 
-    // Delegate diacritic button clicks to insert character at current caret position without losing focus
-    document.addEventListener('click', e => {
-        const btn = e.target.closest('.lsn-diacritic-btn');
-        if (!btn) return;
+    let _diacPopoverChar = null; // base char (or opener trigger) the popover is currently showing for
+    let _diacPopoverTarget = null;
+
+    const getDiacPopover = () => {
+        let el = document.getElementById('diacritics-popover');
+        if (!el) {
+            el = document.createElement('div');
+            el.id = 'diacritics-popover';
+            el.className = 'lsn-diacritic-popover';
+            el.setAttribute('role', 'listbox');
+            el.setAttribute('aria-label', 'Accent options');
+            document.body.appendChild(el);
+        }
+        return el;
+    };
+
+    const hideDiacPopover = () => {
+        const el = document.getElementById('diacritics-popover');
+        if (el) el.classList.remove('is-visible');
+        _diacPopoverChar = null;
+        _diacPopoverTarget = null;
+    };
+
+    const insertReplacingLastChar = (target, char) => {
+        const start = target.selectionStart ?? target.value.length;
+        const val = target.value;
+        target.value = val.substring(0, start - 1) + char + val.substring(start);
+        target.selectionStart = target.selectionEnd = start - 1 + char.length;
+    };
+
+    // Openers (¿/¡) go at the start of the current sentence, not at the
+    // caret — scan back for the nearest sentence boundary.
+    const insertAtSentenceStart = (target, char) => {
+        const start = target.selectionStart ?? target.value.length;
+        const val = target.value;
+        const before = val.substring(0, start);
+        const boundary = Math.max(before.lastIndexOf('. '), before.lastIndexOf('! '), before.lastIndexOf('? '), before.lastIndexOf('\n'));
+        const insertAt = boundary === -1 ? 0 : boundary + 2;
+        if (val[insertAt] === char) return; // already there
+        target.value = val.substring(0, insertAt) + char + val.substring(insertAt);
+        target.selectionStart = target.selectionEnd = start + char.length;
+    };
+
+    const showDiacPopover = (target, bar, triggerChar, variants, insertMode) => {
+        const el = getDiacPopover();
+        el.innerHTML = variants.map(ch =>
+            `<button type="button" class="lsn-diacritic-popover-btn" data-char="${ch}" data-mode="${insertMode}" tabindex="-1" aria-label="Insert ${ch}">${ch}</button>`
+        ).join('');
+
+        const rect = target.getBoundingClientRect();
+        el.classList.add('is-visible');
+        const popRect = el.getBoundingClientRect();
+        let left = rect.left;
+        if (left + popRect.width > window.innerWidth - 8) left = window.innerWidth - popRect.width - 8;
+        if (left < 8) left = 8;
+        let top = rect.bottom + 4;
+        if (top + popRect.height > window.innerHeight - 8) top = rect.top - popRect.height - 4;
+        el.style.left = `${left}px`;
+        el.style.top = `${top}px`;
+
+        _diacPopoverChar = triggerChar;
+        _diacPopoverTarget = target;
+    };
+
+    // Find the marker bar (if any) watching this input, and its language.
+    const findDiacBar = (input) => {
+        const bars = document.querySelectorAll('.lsn-diacritics[data-target]');
+        for (const bar of bars) {
+            const el = document.querySelector(bar.dataset.target);
+            if (el === input) return bar;
+        }
+        return null;
+    };
+
+    document.addEventListener('input', e => {
+        const target = e.target;
+        if (!target || (target.tagName !== 'INPUT' && target.tagName !== 'TEXTAREA')) return;
+        if (e.inputType && !e.inputType.startsWith('insert')) { hideDiacPopover(); return; }
+
+        const bar = findDiacBar(target);
+        if (!bar) return;
+        const langCode = bar.dataset.lang || 'es';
+
+        const start = target.selectionStart;
+        if (start == null || start === 0 || start !== target.selectionEnd) { hideDiacPopover(); return; }
+        const typed = target.value[start - 1];
+        const lower = typed.toLowerCase();
+
+        const letterVariants = (UI.DIACRITIC_VARIANTS[langCode] || {})[lower];
+        if (letterVariants) {
+            const cased = typed === lower ? letterVariants : letterVariants.map(ch => ch.toUpperCase());
+            showDiacPopover(target, bar, typed, cased, 'replace');
+            return;
+        }
+
+        const opener = (UI.DIACRITIC_OPENERS[langCode] || {})[typed];
+        if (opener) {
+            showDiacPopover(target, bar, typed, [opener], 'sentence-start');
+            return;
+        }
+
+        hideDiacPopover();
+    });
+
+    document.addEventListener('focusout', e => {
+        if (e.target === _diacPopoverTarget) {
+            // Give a click on the popover a chance to fire (it uses mousedown) before hiding.
+            setTimeout(() => { if (document.activeElement !== _diacPopoverTarget) hideDiacPopover(); }, 150);
+        }
+    });
+
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && _diacPopoverChar) hideDiacPopover();
+    });
+
+    document.addEventListener('mousedown', e => {
+        const btn = e.target.closest('.lsn-diacritic-popover-btn');
+        if (!btn) {
+            if (!e.target.closest('.lsn-diacritic-popover')) hideDiacPopover();
+            return;
+        }
         e.preventDefault();
         const char = btn.dataset.char;
-        if (!char) return;
-
-        const bar = btn.closest('.lsn-diacritics');
-        const selector = bar ? bar.dataset.target : null;
-        let target = selector ? document.querySelector(selector) : null;
-        if (!target) {
-            if (document.activeElement && (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA')) {
-                target = document.activeElement;
-            } else if (window._lastFocusedInput && document.body.contains(window._lastFocusedInput)) {
-                target = window._lastFocusedInput;
-            } else if (bar) {
-                target = bar.parentElement.querySelector('input[type="text"], textarea');
-            }
-        }
+        const mode = btn.dataset.mode;
+        let target = _diacPopoverTarget;
+        if (!target || !document.body.contains(target)) target = window._lastFocusedInput;
         if (!target) return;
 
-        const start = target.selectionStart ?? target.value.length;
-        const end = target.selectionEnd ?? target.value.length;
-        const val = target.value;
-        target.value = val.substring(0, start) + char + val.substring(end);
-        target.selectionStart = target.selectionEnd = start + char.length;
-        try { target.focus({ preventScroll: true }); } catch (e) { target.focus(); }
+        if (mode === 'sentence-start') insertAtSentenceStart(target, char);
+        else insertReplacingLastChar(target, char);
+
+        try { target.focus({ preventScroll: true }); } catch (err) { target.focus(); }
         target.dispatchEvent(new Event('input', { bubbles: true }));
+        hideDiacPopover();
     });
 }
 

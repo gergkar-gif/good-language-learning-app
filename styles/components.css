@@ -2434,16 +2434,32 @@
   border-radius: 2px;
 }
 
-/* Diacritic / Accent Bar */
+/* Diacritic marker (kept in flow but empty — see engine/ui.js diacriticsBarHtml) */
 .lsn-diacritics {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5px;
-  margin-top: 8px;
-  margin-bottom: 6px;
+  display: block;
+  margin: 0;
 }
 
-.lsn-diacritic-btn {
+/* Contextual accent popover — appears near the input only while the last-typed
+   character has accented variants; see the `input`/`diacritics-popover` wiring
+   in engine/ui.js. */
+.lsn-diacritic-popover {
+  position: fixed;
+  z-index: var(--z-modal, 1000);
+  display: none;
+  gap: 4px;
+  padding: 4px;
+  background: var(--bg-elevated, var(--bg));
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-md, 0 4px 12px rgba(0, 0, 0, 0.15));
+}
+
+.lsn-diacritic-popover.is-visible {
+  display: flex;
+}
+
+.lsn-diacritic-popover-btn {
   min-width: 32px;
   height: 32px;
   padding: 0 6px;
@@ -2465,26 +2481,26 @@
               color var(--dur-fast) var(--ease-standard);
 }
 
-.lsn-diacritic-btn:hover {
+.lsn-diacritic-popover-btn:hover {
   background: rgba(16, 42, 71, 0.05);
   border-color: var(--secondary);
 }
 
-.lsn-diacritic-btn:active {
+.lsn-diacritic-popover-btn:active {
   background: rgba(233, 75, 22, 0.1);
   border-color: var(--accent-dark);
   color: var(--accent-dark);
 }
 
-[data-theme="dark"] .lsn-diacritic-btn,
-:root:not([data-theme="light"]) .lsn-diacritic-btn {
+[data-theme="dark"] .lsn-diacritic-popover-btn,
+:root:not([data-theme="light"]) .lsn-diacritic-popover-btn {
   background: transparent;
   border-color: rgba(245, 241, 232, 0.15);
   color: var(--text);
 }
 
-[data-theme="dark"] .lsn-diacritic-btn:hover,
-:root:not([data-theme="light"]) .lsn-diacritic-btn:hover {
+[data-theme="dark"] .lsn-diacritic-popover-btn:hover,
+:root:not([data-theme="light"]) .lsn-diacritic-popover-btn:hover {
   background: rgba(245, 241, 232, 0.08);
   border-color: rgba(245, 241, 232, 0.35);
   color: var(--primary);
@@ -4944,7 +4960,7 @@
   font: inherit;
   font-size: 14px;
   padding: 6px 14px;
-  background: var(--bg-card, var(--bg));
+  background: var(--bg);
   border: 1px solid var(--border);
   border-radius: 6px;
   color: var(--text);
@@ -4954,7 +4970,7 @@
 .lt-opt-btn:hover:not(:disabled) { border-color: var(--primary); color: var(--primary); }
 .lt-opt-btn.is-selected {
   background: var(--primary);
-  color: var(--bg-card, #fff);
+  color: #fff;
   border-color: var(--primary);
 }
 .lt-opt-btn.is-correct-opt {
@@ -4976,7 +4992,7 @@
 }
 .lt-task-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; }
 .lt-task-head h4 { margin: 0; font-size: 16px; font-weight: 600; color: var(--primary); }
-.lt-task-badge { font-size: 12px; color: var(--muted); background: var(--bg-card); padding: 3px 8px; border-radius: 4px; border: 1px solid var(--border); }
+.lt-task-badge { font-size: 12px; color: var(--muted); background: var(--wash); padding: 3px 8px; border-radius: 4px; border: 1px solid var(--border); }
 .lt-task-prompt { font-size: 15px; margin: 4px 0 8px; }
 .lt-task-context { font-size: 13px; color: var(--muted); margin: 0 0 10px; }
 .lt-keywords { margin: 10px 0; }
@@ -4985,7 +5001,7 @@
 .lt-chip {
   font-size: 12px;
   padding: 3px 8px;
-  background: var(--bg-card);
+  background: var(--wash);
   border: 1px solid var(--border);
   border-radius: 12px;
   color: var(--muted);
@@ -5025,7 +5041,7 @@
   padding: 8px 16px;
   border-radius: 6px;
   border: 1px solid var(--border);
-  background: var(--bg-card);
+  background: var(--surface);
   color: var(--primary);
   cursor: pointer;
   transition: all 0.15s ease;
@@ -6351,7 +6367,7 @@
 /* Home Onboarding Welcome Card */
 .hm-onboarding-card {
   border-left: 4px solid var(--accent);
-  background: var(--bg-card, var(--surface));
+  background: var(--surface);
   cursor: default;
 }
 
@@ -6589,7 +6605,7 @@
 .diag-question-card,
 .diag-transition-card,
 .diag-debrief-card {
-  background: var(--bg-card, var(--surface));
+  background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 28px 24px;
@@ -6765,7 +6781,7 @@
   font-family: var(--font-body, system-ui, sans-serif);
   font-size: 17px;
   color: var(--text);
-  background: var(--bg-card, #fff);
+  background: var(--surface, #fff);
   border: 1.5px solid var(--border);
   border-radius: var(--radius-sm, 6px);
   transition: border-color var(--dur-fast, 0.15s) ease, box-shadow var(--dur-fast, 0.15s) ease;
@@ -6796,7 +6812,7 @@
   gap: 14px;
   width: 100%;
   text-align: left;
-  background: var(--bg-card, #FFFFFF);
+  background: var(--bg);
   border: 1px solid var(--border);
   border-radius: var(--radius-sm, 6px);
   padding: 14px 18px;

@@ -280,7 +280,7 @@ const DiagnosticTest = (function () {
                     </div>
                     ${typeof UI !== 'undefined' && UI.diacriticsBarHtml ? UI.diacriticsBarHtml('.diag-text-input') : ''}
                     <div class="diag-production-hint">
-                        Type the exact missing word or phrase. You can click the accent buttons above if needed. Press Enter to proceed.
+                        Type the exact missing word or phrase. Accented letters (like ñ) will pop up as you type them. Press Enter to proceed.
                     </div>
                 </div>
             `;
@@ -597,7 +597,7 @@ const DiagnosticTest = (function () {
                         </div>
                     </div>
 
-                    <div class="diag-pedagogical-reminder" style="margin-top: 20px; padding: 14px; background: var(--bg-card, #f8f9fa); border-radius: var(--radius-sm, 4px); font-size: 0.85rem; color: var(--muted); line-height: 1.55;">
+                    <div class="diag-pedagogical-reminder" style="margin-top: 20px; padding: 14px; background: var(--wash, #f8f9fa); border-radius: var(--radius-sm, 4px); font-size: 0.85rem; color: var(--muted); line-height: 1.55;">
                         <p style="margin: 0 0 8px;"><strong>Placement Recommendation:</strong> Accepting placement unlocks your recommended starting level (${_esc(placedLevel)}), but all previous curriculum lessons remain open for practice and review at any time.</p>
                         <p style="margin: 0;"><strong>Comprehensive Multi-Modal Verification:</strong> This test is an initial rapid screener. Full CEFR certifications (including spoken recording and extended writing evaluation) are verified via the official <strong>Level Tests</strong> at the end of each curriculum level.</p>
                     </div>
