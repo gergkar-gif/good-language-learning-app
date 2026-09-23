@@ -9,6 +9,40 @@ needs re-reading before starting new work; it's reference only.
 
 ## Completed queue items
 
+75. ~~**Fix the same white-rectangle `--bg-card` bug in CEFR Diagnostic, Level Test, Home onboarding**~~ — **Done 2026-09-23.**
+    Direct follow-up to item 74, at the user's request to check these two
+    screens specifically. A project-wide grep found `--bg-card` used in
+    exactly 10 places outside its own token definition — every one of
+    them in `styles/components.css`'s Level Test (`.lt-*`)/Diagnostic
+    (`.diag-*`)/Home-onboarding (`.hm-onboarding-card`) sections, plus the
+    one `.sp-mic-btn` instance items 72-74 deliberately left alone. Not
+    used correctly anywhere else in the app — strong evidence this is a
+    dead vestige of the 2026-08-14 "soft card" design phase that got
+    reversed the same day (per `[[visual-identity-v2-parlour]]` memory),
+    which these newer features copied without realizing it was no longer
+    the live pattern. Most consequential fix: `.diag-opt-btn` — the CEFR
+    Diagnostic's A/B/C/D answer buttons, the single most-seen element in
+    the whole flow — was rendering white when the sanctioned answer-option
+    pattern (`.lsn-option`/`.gd-option`, confirmed by direct comparison)
+    has always used `var(--bg)` (blends with the page, border does the
+    defining). Also fixed a real (not just cosmetic) bug along the way:
+    `.lt-opt-btn.is-selected`'s text color was `var(--bg-card, #fff)` —
+    in dark mode `--bg-card` resolves to the dark surface color, not
+    white, so selected-option text would have gone low-contrast against
+    its own navy `--primary` background; changed to a plain `#fff`,
+    matching the app's existing (untokenized but consistent) convention
+    for text-on-primary everywhere else. Fixed background-color choice
+    was picked per sibling precedent, not uniform: `var(--bg)` for
+    answer-option buttons, `var(--surface)` for bordered panels/cards/
+    inputs, `var(--wash)` for small badges/chips/note-boxes needing
+    visible contrast. Also caught one more inline-JS instance
+    (`engine/diagnostic.js`'s pedagogical-reminder note box) beyond what
+    the CSS-file grep alone would have found. Verified live: CEFR
+    Diagnostic's preface card, tier pill, question card, and A/B/C/D
+    options (including the selected state) all render on-token; Level
+    Test's CSSOM-confirmed via direct rule inspection (completing a full
+    156-lesson level to reach it live wasn't practical this session).
+
 74. ~~**Fix white-rectangle bug in Speaking Conversation Scenarios and Written Exchanges**~~ — **Done 2026-09-23.**
     User reported white rectangles inside a live conversation, in the
     scenario-list turn-count badge, and the same in Written Exchanges.
