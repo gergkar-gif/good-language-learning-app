@@ -96,8 +96,35 @@ const HuSuffixDriller = (function () {
         return rank !== null && rank < MAX_LEMMA_RANK;
     }
 
+    // The three suffix types ship in a fixed curriculum order — plural
+    // first (lesson.a1.22, the same lesson RecommendationEngine's own
+    // hu-suffix unlock already keys off, per engine/learnerModel.js's
+    // DRILLER_UNLOCK), possessive next (lesson.a1.26, "My Family"), case
+    // last (lesson.a1.51, matching the Morphology Driller's own gate for
+    // the same milestone). A learner who opens this driller manually still
+    // sees every type in the settings-screen picker and can pick Mixed/
+    // Case on purpose — the settings screen's own hint already tells them
+    // that can run ahead of their lessons. But RecommendationEngine's mini-
+    // game/weak-driller nudges launch straight into a session via
+    // `autoStart` with no explicit `type`, skipping that screen (and its
+    // warning) entirely — _restrictAutoMixed, set only on that path, keeps
+    // an unattended "recommended for you" launch from mixing in a concept
+    // that hasn't actually been taught yet.
+    const POSSESSIVE_LESSON = 'lesson.a1.26';
+    const CASE_LESSON = 'lesson.a1.51';
+
+    function _taughtTypes() {
+        const isComplete = (typeof LearnerPath !== 'undefined' && LearnerPath.isComplete)
+            ? LearnerPath.isComplete : null;
+        const types = [TYPE.PLURAL];
+        if (!isComplete || isComplete(POSSESSIVE_LESSON)) types.push(TYPE.POSSESSIVE);
+        if (!isComplete || isComplete(CASE_LESSON)) types.push(TYPE.CASE);
+        return types;
+    }
+
     let _mode = MODE.COUNT;
     let _type = TYPE.MIXED;
+    let _restrictAutoMixed = false;
     let _questionCount = 10;
     let _timerMinutes = 2;
 
@@ -169,7 +196,16 @@ const HuSuffixDriller = (function () {
                 if (tag.person) {
                     _possessive.push(entry);
                     _push(_possessiveGroups, _possessiveKey(tag), entry);
-                } else if (tag.case) {
+                } else if (tag.case && tag.case !== 'nom') {
+                    // 'nom' (nominative) is the unmarked, no-suffix baseline
+                    // every noun carries — word-index.json tags it on plural
+                    // forms too ("fák" = fa + plural, case: 'nom'), so
+                    // checking `tag.case` alone swallowed every plural-
+                    // nominative entry into this bucket and left _plural
+                    // permanently empty (found live-testing the new
+                    // curriculum-gating below: TYPE.PLURAL always rendered
+                    // "No entries of this type yet"). Only a genuine case
+                    // suffix (acc/dat/ine/ill/...) belongs here.
                     _case.push(entry);
                     _push(_caseGroups, tag.case, entry);
                 } else if (tag.number === 'pl') {
@@ -183,6 +219,9 @@ const HuSuffixDriller = (function () {
         if (type === TYPE.PLURAL) return _plural;
         if (type === TYPE.POSSESSIVE) return _possessive;
         if (type === TYPE.CASE) return _case;
+        if (_restrictAutoMixed) {
+            return _taughtTypes().reduce((pool, t) => pool.concat(_poolFor(t)), []);
+        }
         return _plural.concat(_possessive, _case);
     }
 
@@ -310,9 +349,11 @@ const HuSuffixDriller = (function () {
     //  RENDERING — Settings
     // ================================================================
     function _renderSettings() {
+        _restrictAutoMixed = false; // manual entry to this screen — no longer an unattended autoStart launch
         _container.innerHTML = `
             <div class="gd-settings">
                 <h2 class="gd-title">Suffix Driller</h2>
+                ${DrillInfo.buttonHtml('hu-suffix')}
                 <p class="gd-hint">Plurals, possession and case — attach the right ending. Draws from the
                     full Hungarian word index, so this can run ahead of what your lessons have covered so far.</p>
 
@@ -356,6 +397,8 @@ const HuSuffixDriller = (function () {
                 <button class="vbtn vbtn-primary vbtn-block" data-action="start">Start</button>
             </div>
         `;
+
+        if (typeof DrillInfo !== 'undefined') DrillInfo.attach(_container);
 
         _container.querySelectorAll('[data-mode]').forEach(btn => {
             btn.addEventListener('click', () => { _mode = btn.dataset.mode; _renderSettings(); });
@@ -577,6 +620,7 @@ const HuSuffixDriller = (function () {
                     _mode = MODE.COUNT;
                     _questionCount = options.count;
                 }
+                _restrictAutoMixed = !options.type;
                 if (options.type) _type = options.type;
                 _startSession();
             } else {

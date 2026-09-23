@@ -9,6 +9,46 @@ needs re-reading before starting new work; it's reference only.
 
 ## Completed queue items
 
+81. ~~**Hungarian Suffix Driller's unattended recommendation could mix in untaught Possessive/Case suffixes; also fixed a pre-existing bug that left its Plural pool permanently empty**~~ — **Done 2026-09-23.**
+    Follow-up audit after item 80: user asked whether other
+    `RecommendationEngine` candidates had the same "recommends untaught
+    content" shape. `engine/drills/hu-suffix.js`'s own header comment
+    already says plainly it "runs dictionary-wide... plural ships Unit 5,
+    possessive Unit 6/9, case Unit 11+" and that the settings screen
+    "frames this plainly" — but `RecommendationEngine`'s mini-game/weak-
+    driller nudges launch it via `autoStart: true` with no explicit
+    `type`, skipping that settings screen (and its warning) and defaulting
+    to `TYPE.MIXED`, so a learner recommended "Suffix Sprint" at
+    `lesson.a1.22` (when Plural ships) could get quizzed on Case suffixes
+    ~30 lessons before Unit 11 teaches them, with no warning shown.
+    Fixed by adding `_taughtTypes()`/`_restrictAutoMixed` to
+    `hu-suffix.js`: an unattended `autoStart` launch with no explicit
+    `type` now only mixes in Plural/Possessive/Case as each is actually
+    taught (`lesson.a1.22`/`lesson.a1.26`/`lesson.a1.51`, the last two
+    matching the driller's own comment and `hu-morphology`'s existing
+    gate for the same milestone); a learner who opens the driller manually
+    still sees every type in the picker and can choose Case on purpose,
+    since they've seen the warning first.
+    While verifying this live, found the Plural pool had been completely
+    empty since the driller shipped: `_load()`'s bucketing checked
+    `tag.case` before `tag.number === 'pl'`, and `word-index.json` tags
+    even plural-nominative forms with `case: 'nom'` (nominative being the
+    unmarked baseline every noun carries) — so every plural entry fell
+    into the Case bucket instead, and picking "Plural" always rendered
+    "No entries of this type yet." Fixed the same edit by excluding
+    `case === 'nom'` from the Case bucket. Verified live across 15-25
+    randomized `autoStart` launches at each curriculum stage: Plural-only
+    before `lesson.a1.26`, Plural+Possessive (no Case leakage) before
+    `lesson.a1.51`, all three once taught; manual settings-screen
+    selection of Case still works unrestricted at any stage. Also checked
+    Spanish for the same class of bug: the one Spanish-specific
+    unattended-recommendation candidate (`verbs`, "Verb Speed Sprint")
+    always defaults to `indicativo.presente` (the first tense taught)
+    unless the learner had personally switched tenses themselves — no
+    equivalent gap found there, or in the shared Translation/Listening/
+    Speaking candidates (already level-scoped) or Grammar/Vocabulary/SRS
+    candidates (already evidence-gated via `LearnerModel`).
+
 80. ~~**Hungarian Verb Driller could quiz untaught plural persons; curriculum now teaches them, driller gated on it**~~ — **Done 2026-09-23.**
     User reported RecommendationEngine pushed the Verb Driller as a nudge
     while learning Hungarian, and it quizzed the -unk/-ünk (1pl, "we")
