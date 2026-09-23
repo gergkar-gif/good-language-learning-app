@@ -9,10 +9,10 @@ const Sound = (function () {
 
     const MUTE_KEY = 'app_sound_muted';
     const CLIPS = {
-        correct: 'assets/audio/pencil.mp3',
-        wrong: 'assets/audio/rewind.mp3',
-        complete: 'assets/audio/gong.mp3',
-        speaking: 'assets/audio/speaking.mp3'
+        correct: 'assets/audio/pencil-cue.mp3',
+        wrong: 'assets/audio/rewind-cue.mp3',
+        complete: 'assets/audio/gong-cue.mp3',
+        speaking: 'assets/audio/speaking-cue.mp3'
     };
 
     function muted() {
