@@ -9,25 +9,29 @@ needs re-reading before starting new work; it's reference only.
 
 ## Completed queue items
 
-79. ~~**Time-Based Sessions: auto-advance back to the plan checklist after finishing a task**~~ — **Done 2026-09-23.**
+79. ~~**Time-Based Sessions: results screen names and launches the next task directly**~~ — **Done 2026-09-23.**
     User feedback: finishing a task inside a time-based session required
-    an extra click ("Back to your plan →") just to return to the
-    checklist, on top of whatever the driller's own results screen
-    already needed. `StudyPlanRunner.mountNextAction()`
-    (`engine/studyPlanRunner.js`) now auto-advances 4 seconds after a
-    result screen mounts — long enough to read a score/missed-items
-    recap, short enough not to feel like a stall — calling the same
-    `StudyPlan.advance(); goTab('study-plan-screen')` the button always
-    did. The button itself stays for anyone who wants to skip the wait.
-    Any OTHER click on that results screen (Practice Again, Change
-    Settings, Back to Workshop, Match's own restart) cancels the pending
-    auto-advance via a capture-phase listener on the whole results
-    container — without it, an uncancelled timer would yank a freshly
-    started "Practice Again" session back to the plan a few seconds in.
-    The timer is also cleared in `teardown()` so leaving the session
-    entirely can't fire a stale advance afterward. Verified in the
-    browser: auto-advance fires correctly at ~4s when untouched, and
-    firing zero times when another action is clicked first.
+    an extra click ("Back to your plan →") just to get back to the
+    checklist, then a second click on the checklist's own "[item] →"
+    button to actually start the next task. First attempt was an
+    auto-advance timer (return to the checklist automatically a few
+    seconds after results) — user clarified that wasn't it: they wanted
+    the button itself to name and launch the next activity directly,
+    skipping the checklist screen in between entirely. `mountNextAction()`
+    (`engine/studyPlanRunner.js`) now peeks the queue's next item
+    (`_peekNextItem()`) and labels the button "Next: {that item's
+    description} →" (e.g. "Next: Quick speaking — 40s"), or "Finish
+    session →" when it's the last one. Clicking it calls
+    `StudyPlan.advance()` and launches the returned item straight into
+    `#study-plan-activity` via the same `launchItem()` the checklist's own
+    button uses (`goTab('study-plan-screen')` first for the few kinds —
+    lesson/test/review — whose results live on a different tab; a
+    same-tick DOM write, so nothing is visibly shown mid-swap). Verified
+    live: the button reads the real next item's label, clicking it
+    advances the plan's index and embeds that driller directly, and the
+    last item correctly shows "Finish session" instead.
+
+78. ~~**Post-unit practice nudge was dead code; fixed, and Written Exchanges given parity with Conversation Scenarios**~~ — **Done 2026-09-23.**
     While wiring the Writing Studio's Written Exchanges (texting-style
     roleplay) into the recommendation engine alongside Speaking's oral
     Conversation Scenarios, found that the existing "Put it into
