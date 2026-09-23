@@ -72,11 +72,24 @@ const LearnerPath = (function () {
     // NEXT STEP (moved verbatim from engine/home.js)
     // ----------------------------------------
 
-    // The whole course, flattened into one ordered walk — every lesson, and
-    // a level-test placeholder right after each level's last lesson, in the
-    // same level→unit→lesson order the app has always used. nextStep()
-    // below walks this twice: once forward from wherever the learner
-    // actually left off, once from the very start as a fallback.
+    // A level's own "core" track — the grammar-progression units every
+    // learner is expected to walk in order. A level with no tracks at all
+    // (most of them) is entirely core. The other track(s) a dual-track
+    // level defines (B1 Spain's CCSE citizenship-exam units, B1 Latin
+    // America's history units) are real content but not core grammar
+    // progression — they're elective, surfaced separately by
+    // RecommendationEngine's elective-track nudge rather than sitting in
+    // the mandatory forward walk or gating the level test.
+    function _isCoreUnit(unit) {
+        return !unit.track || unit.track === 'core';
+    }
+
+    // The whole course, flattened into one ordered walk — every core-track
+    // lesson, and a level-test placeholder right after each level's last
+    // core lesson, in the same level→unit→lesson order the app has always
+    // used. nextStep() below walks this twice: once forward from wherever
+    // the learner actually left off, once from the very start as a
+    // fallback.
     function courseWalk() {
         const data = window._curriculumData;
         if (!data || !data.levels) return [];
@@ -85,7 +98,7 @@ const LearnerPath = (function () {
         const steps = [];
         order.forEach(level => {
             const entry = data.levels[level];
-            const units = (entry && entry.units) || [];
+            const units = ((entry && entry.units) || []).filter(_isCoreUnit);
             const lessons = units.flatMap(u => u.lessons || []);
             if (!lessons.length) return;
 
@@ -109,7 +122,7 @@ const LearnerPath = (function () {
     function levelStats(level, progress) {
         const data = window._curriculumData;
         const entry = data && data.levels && data.levels[level];
-        const lessons = ((entry && entry.units) || []).flatMap(u => u.lessons || []);
+        const lessons = ((entry && entry.units) || []).filter(_isCoreUnit).flatMap(u => u.lessons || []);
         return { done: lessons.filter(l => progress[l.id]).length, total: lessons.length };
     }
 

@@ -164,9 +164,12 @@ const Workshop = (function () {
             ? "You've been shaky on some of this — a quick pass would help it stick."
             : "Fresh from your last lesson — reinforce it while it's recent.";
         const buttons = secondary.map((c, i) => `
-            <button class="wk-recommend-btn" data-recommend-index="${i}">
-                ${_esc(RecommendationEngine.secondaryLabel(c))} →
-            </button>
+            <span class="wk-recommend-item">
+                <button class="wk-recommend-btn" data-recommend-index="${i}">
+                    ${_esc(RecommendationEngine.secondaryLabel(c))} →
+                </button>
+                ${c.kind === 'elective' ? `<button class="wk-recommend-skip" data-recommend-skip="${i}">Not now</button>` : ''}
+            </span>
         `).join('');
         return `
             <div class="wk-recommend">
@@ -315,6 +318,13 @@ const Workshop = (function () {
             root.querySelectorAll('[data-recommend-index]').forEach(btn => {
                 const candidate = rec.secondary[Number(btn.getAttribute('data-recommend-index'))];
                 btn.addEventListener('click', () => RecommendationEngine.openSecondary(candidate));
+            });
+            root.querySelectorAll('[data-recommend-skip]').forEach(btn => {
+                const candidate = rec.secondary[Number(btn.getAttribute('data-recommend-skip'))];
+                btn.addEventListener('click', () => {
+                    RecommendationEngine.dismissUnit(candidate.unit.id);
+                    render();
+                });
             });
         }).catch(() => {});
     }

@@ -120,10 +120,16 @@ const RecommendationEngine = (function () {
     // into for its own match mode — see engine/decks.js's studyMode
     // branch), with onExit handing the container back to Decks.render().
     function _openSrs(candidate) {
+        const isMatch = candidate.action === 'match' && typeof DeckMatch !== 'undefined';
         if (typeof showTab === 'function') {
-            showTab('review', document.querySelector('.nav button[data-tab="review"]'));
+            // skipReviewReset: for a match, we render DeckMatch into
+            // #decks-root ourselves right below — without this, showTab's own
+            // un-awaited Decks.render() (via endReviewSession) can resolve
+            // afterwards and overwrite the match game with the plain deck
+            // list, landing the learner back on the Decks browser instead.
+            showTab('review', document.querySelector('.nav button[data-tab="review"]'), isMatch ? { skipReviewReset: true } : undefined);
         }
-        if (candidate.action === 'match' && typeof DeckMatch !== 'undefined') {
+        if (isMatch) {
             const host = document.getElementById('decks-root');
             if (host) {
                 DeckMatch.render(host, {
@@ -158,6 +164,7 @@ const RecommendationEngine = (function () {
         if (candidate.kind === 'speaking') return candidate.skill ? `Speaking: ${humanizeSkill(candidate.skill)}` : 'Speaking Practice';
         if (candidate.kind === 'writing') return candidate.title || 'Writing Studio';
         if (candidate.kind === 'driller') return candidate.title;
+        if (candidate.kind === 'elective') return `${candidate.trackTitle}: ${candidate.unit.title}`;
         return '';
     }
 
@@ -166,6 +173,10 @@ const RecommendationEngine = (function () {
     function openSecondary(candidate) {
         if (!candidate) return;
         if (candidate.kind === 'srs') { _openSrs(candidate); return; }
+        if (candidate.kind === 'elective') {
+            if (typeof startLesson === 'function') startLesson(candidate.lesson.id);
+            return;
+        }
         if (typeof Workshop === 'undefined') return;
         if (candidate.kind === 'grammar') Workshop.open('grammar', { skill: candidate.skill });
         else if (candidate.kind === 'vocabulary') Workshop.open('vocabulary', { words: candidate.words });
@@ -573,6 +584,44 @@ const RecommendationEngine = (function () {
     }
 
     // ----------------------------------------
+    // ELECTIVE-TRACK CANDIDATE
+    // ----------------------------------------
+    // A dual-track level's non-core track (B1 Spain's CCSE citizenship-exam
+    // units, B1 Latin America's history units) is real content but not core
+    // grammar progression, so engine/learnerPath.js's courseWalk() no
+    // longer walks it and the level test no longer waits on it. It still
+    // deserves surfacing, just occasionally rather than competing with core
+    // grammar every time: gated to roughly once every ELECTIVE_CADENCE
+    // completed lessons, and skippable per-unit via the same
+    // dismissedUnits() store the practice nudge already uses — skipping one
+    // elective unit just moves the offer on to the next.
+    const ELECTIVE_CADENCE = 5;
+
+    function _electiveCandidate() {
+        if (typeof LearnerPath === 'undefined' || !LearnerPath.currentLevel) return null;
+
+        const completed = LearnerPath.completedCount();
+        if (!completed || completed % ELECTIVE_CADENCE !== 0) return null;
+
+        const data = window._curriculumData;
+        const level = LearnerPath.currentLevel();
+        const entry = data && data.levels && data.levels[level];
+        if (!entry || !entry.tracks) return null;
+
+        const progress = (typeof getProgress === 'function') ? getProgress() : {};
+        const dismissed = dismissedUnits();
+        const electiveUnits = (entry.units || []).filter(u => u.track && u.track !== 'core' && !dismissed.includes(u.id));
+
+        for (const unit of electiveUnits) {
+            const lesson = (unit.lessons || []).find(l => !progress[l.id]);
+            if (!lesson) continue;
+            const track = entry.tracks.find(t => t.id === unit.track);
+            return { kind: 'elective', levelKey: level, unit, lesson, trackTitle: (track && track.title) || unit.track };
+        }
+        return null;
+    }
+
+    // ----------------------------------------
     // DRILLER SIGNAL
     // ----------------------------------------
     // The driller-classification metadata (which drillers to track, their
@@ -627,6 +676,11 @@ const RecommendationEngine = (function () {
             if (c.drillerId === 'writing' && secondary.some(s => s.kind === 'writing')) return;
             secondary.push(c);
         });
+
+        // Lowest priority — an occasional, skippable nudge, not something
+        // that should crowd out an actual weak-signal candidate above.
+        const elective = _electiveCandidate();
+        if (elective) secondary.push(elective);
 
         return { primary, secondary: secondary.slice(0, 3) };
     }
