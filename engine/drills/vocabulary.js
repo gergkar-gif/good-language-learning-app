@@ -100,6 +100,16 @@ const VocabularyDriller = (function () {
         return list[Math.floor(Math.random() * list.length)];
     }
 
+    function _escapeHtml(text) {
+        return (typeof UI !== 'undefined' && UI.escape)
+            ? UI.escape(text)
+            : String(text == null ? '' : text)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;');
+    }
+
     function _formatTime(totalSeconds) {
         const m = Math.floor(totalSeconds / 60);
         const s = totalSeconds % 60;
