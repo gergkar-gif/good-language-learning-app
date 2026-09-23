@@ -880,11 +880,18 @@ function renderCard() {
     if (field) {
         field.value = '';
         field.classList.remove('correct', 'almost', 'wrong');
-        field.disabled = false;
+        field.readOnly = false;
         if (typeMode && (!window.matchMedia || !window.matchMedia('(max-width: 639px)').matches)) {
             field.focus({ preventScroll: true });
         }
     }
+    // revealTypedResult() hides these while the previous card's answer is
+    // shown; bring them back for the new card instead of leaving them gone.
+    const micBtn = document.querySelector('#review-type-input .lsn-mic-addon');
+    if (micBtn) micBtn.style.display = '';
+    if (diacriticsEl) diacriticsEl.style.display = '';
+    const checkBtn = document.getElementById('review-check-btn');
+    if (checkBtn) checkBtn.style.display = '';
     typedAnswerCorrect = null;
     typedAssessedBucket = null;
     cardStartTime = Date.now();
@@ -1066,6 +1073,24 @@ function englishAlternatives(text) {
     return String(text || '').split(/[/,]/).map(srsNormalise).filter(Boolean);
 }
 
+// Enter does double duty in type mode: first press checks the typed
+// answer, second press advances — this keeps the mobile keyboard open
+// the whole time instead of it dismissing (Check) then needing a tap
+// on a separate Continue button, which made the viewport jump. Wired to
+// the wrapping <form>'s onsubmit (not the input's onkeydown) because iOS
+// Safari doesn't reliably fire a keydown event for the virtual
+// keyboard's Return/Go key, but every mobile browser submits a
+// single-input form when that key is pressed.
+function handleTypeFieldSubmit(event) {
+    if (event && event.preventDefault) event.preventDefault();
+    if (typedAnswerCorrect === null) {
+        checkTypedAnswer();
+    } else {
+        continueTypedReview();
+    }
+    return false;
+}
+
 function checkTypedAnswer() {
     if (!currentReviewCard || typedAnswerCorrect !== null) return;
     const field = document.getElementById('review-type-field');
@@ -1146,7 +1171,9 @@ function checkTypedAnswer() {
     field.classList.toggle('correct', bucket === 'easy' || bucket === 'good');
     field.classList.toggle('almost', bucket === 'hard');
     field.classList.toggle('wrong', bucket === 'again');
-    field.disabled = true;
+    // readOnly, not disabled — a disabled input can't hold focus, and losing
+    // focus is exactly what dismisses the mobile keyboard between cards.
+    field.readOnly = true;
 
     revealTypedResult(bucket, elapsedSec, isNearMiss);
 }
@@ -1155,8 +1182,20 @@ function checkTypedAnswer() {
 // one of the 4 buckets (Easy, Good, Hard, Again) and provides instant visual feedback.
 function revealTypedResult(bucket, elapsedSec, isNearMiss) {
     document.getElementById('review-answer').style.display = 'block';
-    document.getElementById('review-type-input').classList.add('hidden');
     document.getElementById('rating-buttons').style.display = 'none';
+
+    // Deliberately NOT hiding #review-type-input here: it holds the field
+    // itself, and hiding an ancestor forces the browser to blur it, which
+    // dismisses the mobile keyboard. Instead hide just the pieces that no
+    // longer apply once the answer's checked, and leave the field in place
+    // (readOnly, not display:none) so focus — and the keyboard — survive
+    // through to the next card's Enter press.
+    const micBtn = document.querySelector('#review-type-input .lsn-mic-addon');
+    if (micBtn) micBtn.style.display = 'none';
+    const typeDiacriticsEl = document.getElementById('review-type-diacritics');
+    if (typeDiacriticsEl) typeDiacriticsEl.style.display = 'none';
+    const checkBtn = document.getElementById('review-check-btn');
+    if (checkBtn) checkBtn.style.display = 'none';
 
     const assessEl = document.getElementById('review-type-assessment');
     if (assessEl) {

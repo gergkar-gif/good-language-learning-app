@@ -207,20 +207,25 @@
 
                     <!-- Type mode: an input stands in for Show Answer. On phones
                          the Check/Continue buttons are hidden (see components.css)
-                         and Enter does both jobs — handleTypeFieldEnter() checks
-                         the typed answer against the expected one, then a second
-                         Enter advances — so the keyboard never has to close and
-                         reopen for a button tap between cards. -->
+                         and Enter does both jobs. The field is wrapped in a form
+                         so the virtual keyboard's Return/Go key submits it — iOS
+                         Safari doesn't reliably fire a JS keydown event for that
+                         key, but every mobile browser submits a single-input form
+                         on it. handleTypeFieldSubmit() checks the typed answer
+                         against the expected one, then a second Enter advances —
+                         so the keyboard never has to close and reopen for a
+                         button tap between cards. -->
                     <div id="review-type-input" class="review-type-input hidden">
-                        <div class="lsn-input-with-mic">
-                            <input id="review-type-field" class="review-input" type="text"
-                                placeholder="Type or speak answer" autocomplete="off" autocapitalize="off" spellcheck="false"
-                                enterkeyhint="next"
-                                onkeydown="handleTypeFieldEnter(event)">
-                            <button type="button" class="lsn-mic-addon" onclick="typeof lessonInlineVoiceInput === 'function' && lessonInlineVoiceInput('#review-type-field', this)" aria-label="Speak to type" title="Speak to type">
-                                <svg class="art icon" viewBox="0 0 24 24" role="presentation" aria-hidden="true" focusable="false"><rect class="ink-line" x="9" y="3" width="6" height="11" rx="3"/><path class="ink-line" d="M5 10a7 7 0 0 0 14 0"/><line class="ink-line" x1="12" y1="17" x2="12" y2="21"/><line class="ink-line" x1="8" y1="21" x2="16" y2="21"/></svg>
-                            </button>
-                        </div>
+                        <form id="review-type-form" onsubmit="return handleTypeFieldSubmit(event)">
+                            <div class="lsn-input-with-mic">
+                                <input id="review-type-field" class="review-input" type="text"
+                                    placeholder="Type or speak answer" autocomplete="off" autocapitalize="off" spellcheck="false"
+                                    enterkeyhint="next">
+                                <button type="button" class="lsn-mic-addon" onclick="typeof lessonInlineVoiceInput === 'function' && lessonInlineVoiceInput('#review-type-field', this)" aria-label="Speak to type" title="Speak to type">
+                                    <svg class="art icon" viewBox="0 0 24 24" role="presentation" aria-hidden="true" focusable="false"><rect class="ink-line" x="9" y="3" width="6" height="11" rx="3"/><path class="ink-line" d="M5 10a7 7 0 0 0 14 0"/><line class="ink-line" x1="12" y1="17" x2="12" y2="21"/><line class="ink-line" x1="8" y1="21" x2="16" y2="21"/></svg>
+                                </button>
+                            </div>
+                        </form>
                         <div id="review-type-diacritics" class="review-type-diacritics"></div>
                         <div id="review-type-hint" class="review-type-hint hidden" role="status">
                             In Type mode, just press <kbd>Enter</kbd> to see your result — the engine records speed and precision.
@@ -406,7 +411,7 @@
 
 <!-- Engine: time-based session screen â€” depends on StudyPlan, GrammarDriller,
      VocabularyDriller, Decks, LevelTest, all loaded above -->
-<script src="engine/studyPlanRunner.js?v=2026-09-17b"></script>
+<script src="engine/studyPlanRunner.js?v=2026-09-23a"></script>
 
 <script src="engine/curriculum.js?v=2026-09-17a"></script>
 

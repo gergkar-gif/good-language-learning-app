@@ -2783,6 +2783,11 @@
   width: 100%;
 }
 
+#review-type-form {
+  width: 100%;
+  margin: 0;
+}
+
 .review-type-input .lsn-input-with-mic {
   width: 100%;
   position: relative;
@@ -2872,10 +2877,16 @@
   margin-top: 4px;
 }
 
-/* Phone / mobile keyboard ergonomics: on phones (<= 639px), remove the Check button
-   so the screen isn't cluttered; users press Enter / Done on their virtual keyboard. */
+/* Phone / mobile keyboard ergonomics: on phones (<= 639px), remove the Check
+   and Continue buttons so the screen isn't cluttered and the keyboard never
+   has to close/reopen for a button tap — users press Enter on their virtual
+   keyboard for both checking and advancing to the next card. */
 @media (max-width: 639px) {
   .review-type-input .review-type-check-btn {
+    display: none !important;
+  }
+
+  #review-type-continue-btn {
     display: none !important;
   }
 }
