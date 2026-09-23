@@ -3461,6 +3461,31 @@
     font-weight: bold;
 }
 
+.sp-chat-listen-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--accent);
+    border: none;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 10px 20px;
+    border-radius: 24px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+    transition: transform var(--dur-fast), box-shadow var(--dur-fast);
+}
+
+.sp-chat-listen-btn:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+}
+
+.sp-chat-listen-btn.playing {
+    opacity: 0.85;
+}
+
 .sp-chat-reveal-btn {
     display: inline-flex;
     align-items: center;

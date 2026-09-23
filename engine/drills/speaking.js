@@ -1921,13 +1921,13 @@ const SpeakingDriller = (function () {
                         <div class="sp-chat-bubble partner current">
                             <div class="sp-chat-header">
                                 <strong>${_esc(s.roleplay ? _scenarioText(s.roleplay, 'interlocutorRole', s) : 'Partner')}</strong>
-                                <button type="button" class="sp-inline-replay" data-action="replay-active-tts" title="Listen again">
-                                    <svg class="sp-icon-svg" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
-                                    <span>Listen</span>
-                                </button>
                             </div>
+                            <button type="button" class="sp-chat-listen-btn" data-action="replay-active-tts" aria-label="Listen to what was said">
+                                <svg class="sp-icon-svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+                                <span>${_turnTextRevealed ? 'Listen again' : 'Listen'}</span>
+                            </button>
                             ${_turnTextRevealed ? `
-                                <div class="sp-chat-body" style="font-size: 1.05rem; font-weight: 500;">
+                                <div class="sp-chat-body" style="font-size: 1.05rem; font-weight: 500; margin-top: 10px;">
                                     ${_clickableText(currentTurn.interlocutorPrompt || '')}
                                 </div>
                                 ${currentTurn.interlocutorTranslation ? `
@@ -1937,7 +1937,7 @@ const SpeakingDriller = (function () {
                                     </details>
                                 ` : ''}
                             ` : `
-                                <button type="button" class="sp-chat-reveal-btn" data-action="reveal-turn-text" aria-label="Show the text of what was said">
+                                <button type="button" class="sp-chat-reveal-btn" data-action="reveal-turn-text" aria-label="Show the text of what was said" style="margin-top: 10px;">
                                     <svg class="sp-icon-svg" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7Z"/><circle cx="12" cy="12" r="3"/></svg>
                                     <span>Show text</span>
                                 </button>
