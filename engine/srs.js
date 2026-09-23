@@ -880,7 +880,6 @@ function renderCard() {
     if (field) {
         field.value = '';
         field.classList.remove('correct', 'almost', 'wrong');
-        field.readOnly = false;
         if (typeMode && (!window.matchMedia || !window.matchMedia('(max-width: 639px)').matches)) {
             field.focus({ preventScroll: true });
         }
@@ -1171,9 +1170,12 @@ function checkTypedAnswer() {
     field.classList.toggle('correct', bucket === 'easy' || bucket === 'good');
     field.classList.toggle('almost', bucket === 'hard');
     field.classList.toggle('wrong', bucket === 'again');
-    // readOnly, not disabled — a disabled input can't hold focus, and losing
-    // focus is exactly what dismisses the mobile keyboard between cards.
-    field.readOnly = true;
+    // Deliberately left editable (not disabled, not readOnly): either one
+    // can hold focus but a readOnly field never re-triggers the mobile
+    // keyboard, which the Listen button needs (see the click listener
+    // below) when it steals focus after the answer's been checked. Editing
+    // the text here is harmless — typedAnswerCorrect already locked the
+    // grade in.
 
     revealTypedResult(bucket, elapsedSec, isNearMiss);
 }
@@ -1267,6 +1269,24 @@ function rateCard(rating) {
     saveDeck();
     updateReaderWordColors();
     showNextCard();
+}
+
+// Tapping the word's Listen button (ParlourTTS.button(), rendered inside
+// #review-card) steals focus from #review-type-field, which on mobile also
+// dismisses the keyboard — stranding the learner with no Continue button
+// (hidden on phones, see components.css) and no keyboard to press Enter
+// on. Refocusing here, synchronously inside the click handler, is still
+// within the user gesture that started it, so iOS reopens the keyboard.
+if (typeof document !== 'undefined') {
+    document.addEventListener('click', (event) => {
+        if (reviewMode !== 'type') return;
+        const speakBtn = event.target.closest && event.target.closest('.speak-btn');
+        if (!speakBtn) return;
+        const card = document.getElementById('review-card');
+        if (!card || !card.contains(speakBtn)) return;
+        const field = document.getElementById('review-type-field');
+        if (field) field.focus({ preventScroll: true });
+    });
 }
 
 // Desktop keyboard flow for review session
