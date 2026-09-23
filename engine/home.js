@@ -161,14 +161,20 @@ const Home = (function () {
     // candidate instead, so this card no longer has a non-scenario branch.
     function practiceNudgeCard(nudge) {
         const title = nudge.unit.title || 'that unit';
+        const isExchange = nudge.type === 'exchange';
+        const item = isExchange ? nudge.exchange : nudge.scenario;
+        const driller = isExchange ? 'writing' : 'speaking';
+        const label = isExchange ? 'written exchange' : 'oral roleplay';
+        const cta = isExchange ? 'Start exchange' : 'Start roleplay';
         return `
             <section class="hm-continue hm-nudge">
                 <span class="hm-eyebrow">${esc(nudge.levelKey)} · Unit Milestone</span>
                 <span class="hm-continue-title">Put it into conversation</span>
-                <span class="hm-continue-sub">Complete the oral roleplay "${esc(nudge.scenario.title)}" to put what "${esc(title)}" taught into active practice.</span>
+                <span class="hm-continue-sub">Complete the ${label} "${esc(item.title)}" to put what "${esc(title)}" taught into active practice.</span>
                 <span class="hm-continue-foot">
-                    <button class="hm-cta-btn" data-practice-scenario="${esc(nudge.scenario.id)}"
-                        data-unit-id="${esc(nudge.unit.id)}">Start roleplay →</button>
+                    <button class="hm-cta-btn" data-practice-scenario="${esc(item.id)}"
+                        data-practice-driller="${esc(driller)}"
+                        data-unit-id="${esc(nudge.unit.id)}">${esc(cta)} →</button>
                     <button class="dk-link-btn" data-skip-unit="${esc(nudge.unit.id)}">Not now</button>
                 </span>
             </section>
@@ -401,9 +407,10 @@ const Home = (function () {
                 const unitId = practiseScenario.getAttribute('data-unit-id');
                 if (unitId) dismissUnit(unitId);
                 const scenarioId = practiseScenario.getAttribute('data-practice-scenario');
+                const driller = practiseScenario.getAttribute('data-practice-driller') || 'speaking';
                 goTab('drills');
                 if (typeof Workshop !== 'undefined') {
-                    Workshop.open('speaking', { scenarioId: scenarioId, returnTab: 'home' });
+                    Workshop.open(driller, { scenarioId: scenarioId, returnTab: 'home' });
                 }
                 return;
             }

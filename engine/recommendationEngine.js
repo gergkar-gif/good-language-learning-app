@@ -77,6 +77,34 @@ const RecommendationEngine = (function () {
         }
     }
 
+    // Written Exchanges (Workshop's Writing Studio) — same shape and same
+    // unitIds-matching idea as the oral scenarios above, so a unit that
+    // teaches written-register content (texting a friend, a work email) can
+    // earn the same forced-primary "put it into practice" slot an oral
+    // scenario does, rather than being reachable only by opening Workshop
+    // manually.
+    const _exchangesCache = {};
+
+    async function _loadExchangesForLang() {
+        if (typeof Content === 'undefined' || typeof Lang === 'undefined') return [];
+        const path = Lang.content('writing-exchanges.json');
+        if (!_exchangesCache[path]) {
+            const data = await Content.json(path).catch(() => null);
+            _exchangesCache[path] = (data && data.scenarios) ? data.scenarios : [];
+        }
+        return _exchangesCache[path];
+    }
+
+    async function _exchangeForUnit(unitId) {
+        if (!unitId) return null;
+        try {
+            const exchanges = await _loadExchangesForLang();
+            return exchanges.find(x => (x.unitIds || []).includes(unitId)) || null;
+        } catch (e) {
+            return null;
+        }
+    }
+
     async function _ensureGrammarTitles() {
         if (typeof Content === 'undefined' || typeof Lang === 'undefined') return {};
         const path = Lang.content('indexes/grammar-titles.json');
@@ -305,10 +333,18 @@ const RecommendationEngine = (function () {
 
         if (dismissedUnits().includes(unit.id)) return null;
 
+        // `type` distinguishes oral vs written here — deliberately not
+        // `kind`, which the caller below sets to the outer 'unit-nudge' via
+        // Object.assign(); reusing `kind` on this returned object would
+        // silently win that merge and the card would never render (see the
+        // 2026-09-23 fix that gave this its own key).
         const scenario = await _scenarioForUnit(unit.id);
-        if (!scenario) return null;
+        if (scenario) return { levelKey, unit, scenario, type: 'scenario' };
 
-        return { levelKey, unit, scenario, kind: 'scenario' };
+        const exchange = await _exchangeForUnit(unit.id);
+        if (exchange) return { levelKey, unit, exchange, type: 'exchange' };
+
+        return null;
     }
 
     // Home's per-lesson counterpart: a quick mini-game challenge offered
@@ -365,6 +401,22 @@ const RecommendationEngine = (function () {
                 reason: 'communicative_practice',
                 priority: 96,
                 options: { scenarioId: matchingScenario.id, returnTab: 'home' }
+            });
+        }
+
+        // Candidate 0b: Written Exchange (if the lesson's unit matches one instead) —
+        // same idea as the roleplay above, for units whose communicative goal is
+        // written register (texting, notes, email) rather than spoken.
+        const matchingExchange = matchingScenario ? null : await _exchangeForUnit(unitId);
+        if (matchingExchange) {
+            candidates.push({
+                drillerId: 'writing',
+                title: 'Written Exchange',
+                buttonLabel: `Exchange: ${matchingExchange.title}`,
+                blurb: `Put what you just learned into practice in a written exchange: "${matchingExchange.title}".`,
+                reason: 'communicative_practice',
+                priority: 96,
+                options: { scenarioId: matchingExchange.id, returnTab: 'home' }
             });
         }
 
@@ -707,9 +759,15 @@ const RecommendationEngine = (function () {
                 sub = 'Continue your course';
             }
         } else if (primary.kind === 'unit-nudge') {
-            title = `Oral Roleplay: ${primary.scenario.title}`;
-            cta = `Start roleplay: ${primary.scenario.title}`;
-            sub = `Put "${primary.unit.title || 'that unit'}" into conversation`;
+            if (primary.type === 'exchange') {
+                title = `Written Exchange: ${primary.exchange.title}`;
+                cta = `Start exchange: ${primary.exchange.title}`;
+                sub = `Put "${primary.unit.title || 'that unit'}" into a written conversation`;
+            } else {
+                title = `Oral Roleplay: ${primary.scenario.title}`;
+                cta = `Start roleplay: ${primary.scenario.title}`;
+                sub = `Put "${primary.unit.title || 'that unit'}" into conversation`;
+            }
         } else if (primary.kind === 'mini-game') {
             title = primary.challengeTitle || (primary.skill ? `Grammar: ${humanizeSkill(primary.skill)}` : 'Quick Challenge');
             cta = primary.buttonLabel || title;
@@ -759,7 +817,11 @@ const RecommendationEngine = (function () {
             }
         } else if (primary.kind === 'unit-nudge') {
             dismissUnit(primary.unit.id);
-            _openWorkshopDriller('speaking', { scenarioId: primary.scenario.id, returnTab: 'home' });
+            if (primary.type === 'exchange') {
+                _openWorkshopDriller('writing', { scenarioId: primary.exchange.id, returnTab: 'home' });
+            } else {
+                _openWorkshopDriller('speaking', { scenarioId: primary.scenario.id, returnTab: 'home' });
+            }
         } else if (primary.kind === 'mini-game') {
             dismissMiniGame(primary.lessonId);
             if (primary.drillerId === 'srs') {

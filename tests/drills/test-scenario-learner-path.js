@@ -134,10 +134,23 @@ const RecommendationEngine = require('../../engine/recommendationEngine.js');
     dismissedList = [];
     const nudge = await RecommendationEngine._practiceNudge();
     assert(nudge, 'Practice nudge should be generated');
-    assert.strictEqual(nudge.kind, 'scenario', 'Nudge kind must be scenario');
+    assert.strictEqual(nudge.type, 'scenario', 'Nudge type must be scenario');
     assert.strictEqual(nudge.scenario.id, 'es-a1-sc01-cafe', 'Nudge scenario must be es-a1-sc01-cafe');
     assert.strictEqual(nudge.unit.id, 'unit.a1.11');
     console.log('✓ Unit completion generates scenario milestone nudge');
+
+    // Regression: recommend() wraps this result via
+    // Object.assign({ kind: 'unit-nudge' }, nudge). If `nudge` carried its
+    // own `kind` field (it used to, until 2026-09-23 — see the `type` field
+    // above), that field would win the merge and silently overwrite
+    // 'unit-nudge', so every caller checking primary.kind === 'unit-nudge'
+    // (engine/home.js's render, this engine's own _nextActionInfo/_routeTo)
+    // would never fire. Asserting the merge directly here, the same way
+    // recommend() performs it, catches that regression without having to
+    // mock recommend()'s unrelated candidate sources (window, LearnerPath.currentLevel, etc).
+    const wrapped = Object.assign({ kind: 'unit-nudge' }, nudge);
+    assert.strictEqual(wrapped.kind, 'unit-nudge', 'recommend()-style wrapping must keep kind as unit-nudge');
+    console.log('✓ Practice nudge survives recommend()\'s kind:unit-nudge wrapping');
 
     console.log('\n--- Test 4: Mini-game Candidate Surfaces Oral Roleplay ---');
     // If not the last lesson (e.g. lesson 1 of cafeUnit)
