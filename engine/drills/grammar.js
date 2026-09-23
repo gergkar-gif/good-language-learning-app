@@ -270,6 +270,41 @@ const GrammarDriller = (function () {
                 return { kind: 'sentence-order', sentences: ex.sentences, solution: ex.solution };
             case 'error-correction':
                 return { kind: 'error-correction', sentence: ex.sentence, solution: ex.solution, explanation: ex.explanation };
+            // "fill-in-blank" isn't a real type in exercises.schema.json (the
+            // schema only knows "fill-blank") -- a naming typo in 10 unfinished
+            // CCSE exercise files (content/es-es/exercises/b1/b1-ccse-{constitucion,
+            // monarquia}-*.json), which the pre-push content validator already
+            // skips as unfinished, so it went uncaught. Their shape is a cloze
+            // sentence plus a fixed set of options, which multiple-choice
+            // already renders correctly -- three grammar-index skills
+            // (constitucion, monarquia, verbos-presente) had an empty pool
+            // because of this (2026-09-23).
+            case 'fill-in-blank':
+                return {
+                    kind: 'multiple-choice',
+                    question: ex.sentence,
+                    options: ex.options,
+                    correct: (ex.options || []).indexOf(ex.answer)
+                };
+            case 'matching': {
+                // GrammarRunner has no matching-pairs UI of its own, so a
+                // matching exercise is folded into a multiple-choice question
+                // instead: ask what one random pair's target-language side
+                // means, offering every pair's translation (including its
+                // own) as the options. 12 skills in the Spanish courses are
+                // tagged ONLY by a matching exercise -- without this case
+                // those skills' pool was always empty, so Grammar Driller
+                // could never actually open them (2026-09-23).
+                const pairs = Array.isArray(ex.pairs) ? ex.pairs.filter(p => Array.isArray(p) && p.length === 2) : [];
+                if (pairs.length < 2) return null;
+                const correct = Math.floor(Math.random() * pairs.length);
+                return {
+                    kind: 'multiple-choice',
+                    question: `What does "${pairs[correct][0]}" mean?`,
+                    options: pairs.map(p => p[1]),
+                    correct
+                };
+            }
             default:
                 return null;
         }

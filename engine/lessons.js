@@ -537,6 +537,20 @@ async function startLesson(lessonId) {
         const from = document.querySelector('.tab:not(.hidden)');
         lessonReturnTab = (from && from.id !== 'lesson-screen') ? from.id : 'learn';
 
+        // Entering the lesson screen bypasses showTab() (it isn't a nav
+        // tab), so its own teardownTab()-on-leave never fires for whatever
+        // tab was open a moment ago. Without this, a Workshop driller left
+        // mid-session (Timed mode's setInterval, a Speaking recording, an
+        // in-progress review swipe) just keeps running in the background
+        // for the lesson's whole duration instead of being stopped — the
+        // exact class of bug teardownTab()'s own header comment describes,
+        // just reached through a different door. Guarded to a real,
+        // different tab so re-entering a lesson from the lesson screen
+        // itself (the remediation/redo path) can't teardown itself.
+        if (from && from.id !== 'lesson-screen' && typeof teardownTab === 'function') {
+            teardownTab(from.id);
+        }
+
         document.querySelectorAll('.tab').forEach(tab => tab.classList.add('hidden'));
         document.getElementById('lesson-screen').classList.remove('hidden');
         document.body.classList.add('in-lesson');
