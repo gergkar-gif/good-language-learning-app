@@ -102,6 +102,11 @@ const SpeakingDriller = (function () {
     let _scenarioAssessmentResult = null;
     let _scenarioIsRecording = false;
     let _returnTab = null;
+    // Hides the current turn's interlocutor text until the learner asks for
+    // it -- the exchange is meant to be heard first, like a real
+    // conversation, with the transcript as a fallback rather than the
+    // default. Reset per turn (see _startScenarioSession/_submitTurn).
+    let _turnTextRevealed = false;
 
     function _esc(text) {
         if (typeof UI !== 'undefined' && UI.escape) return UI.escape(text);
@@ -1847,6 +1852,7 @@ const SpeakingDriller = (function () {
         _scenarioTranscript = '';
         _scenarioAudioUrl = null;
         _scenarioIsRecording = false;
+        _turnTextRevealed = false;
         _scenarioPhase = SCENARIO_PHASE.INTERLOCUTOR;
         _renderActiveTab();
         _playCurrentInterlocutorTTS();
@@ -1920,15 +1926,22 @@ const SpeakingDriller = (function () {
                                     <span>Listen</span>
                                 </button>
                             </div>
-                            <div class="sp-chat-body" style="font-size: 1.05rem; font-weight: 500;">
-                                ${_clickableText(currentTurn.interlocutorPrompt || '')}
-                            </div>
-                            ${currentTurn.interlocutorTranslation ? `
-                                <details class="sp-chat-trans-toggle" style="margin-top: 6px; font-size: 0.85rem; color: var(--muted);">
-                                    <summary style="cursor: pointer;">Translate</summary>
-                                    <p style="margin: 4px 0 0; font-style: italic;">${_esc(currentTurn.interlocutorTranslation)}</p>
-                                </details>
-                            ` : ''}
+                            ${_turnTextRevealed ? `
+                                <div class="sp-chat-body" style="font-size: 1.05rem; font-weight: 500;">
+                                    ${_clickableText(currentTurn.interlocutorPrompt || '')}
+                                </div>
+                                ${currentTurn.interlocutorTranslation ? `
+                                    <details class="sp-chat-trans-toggle" style="margin-top: 6px; font-size: 0.85rem; color: var(--muted);">
+                                        <summary style="cursor: pointer;">Translate</summary>
+                                        <p style="margin: 4px 0 0; font-style: italic;">${_esc(currentTurn.interlocutorTranslation)}</p>
+                                    </details>
+                                ` : ''}
+                            ` : `
+                                <button type="button" class="sp-chat-reveal-btn" data-action="reveal-turn-text" aria-label="Show the text of what was said">
+                                    <svg class="sp-icon-svg" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                                    <span>Show text</span>
+                                </button>
+                            `}
                         </div>
                     </div>
                 </div>
@@ -2022,6 +2035,14 @@ const SpeakingDriller = (function () {
         if (replayActiveBtn) {
             replayActiveBtn.addEventListener('click', () => {
                 _playCurrentInterlocutorTTS(replayActiveBtn);
+            });
+        }
+
+        const revealTextBtn = body.querySelector('[data-action="reveal-turn-text"]');
+        if (revealTextBtn) {
+            revealTextBtn.addEventListener('click', () => {
+                _turnTextRevealed = true;
+                _renderActiveTab();
             });
         }
 
@@ -2138,6 +2159,7 @@ const SpeakingDriller = (function () {
 
         if (_currentTurnIndex + 1 < turns.length) {
             _currentTurnIndex++;
+            _turnTextRevealed = false;
             _scenarioPhase = SCENARIO_PHASE.INTERLOCUTOR;
             _renderActiveTab();
             _playCurrentInterlocutorTTS();

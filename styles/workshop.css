@@ -3461,6 +3461,26 @@
     font-weight: bold;
 }
 
+.sp-chat-reveal-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: none;
+    border: 1px dashed var(--border);
+    color: var(--muted);
+    font-size: 13px;
+    padding: 6px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background var(--dur-fast), color var(--dur-fast), border-color var(--dur-fast);
+}
+
+.sp-chat-reveal-btn:hover {
+    background: var(--bg-hover, rgba(0, 0, 0, 0.06));
+    color: var(--text);
+    border-color: var(--muted);
+}
+
 .sp-scenario-record-cta {
     display: inline-flex;
     align-items: center;
