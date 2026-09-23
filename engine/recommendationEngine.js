@@ -178,11 +178,15 @@ const RecommendationEngine = (function () {
             return;
         }
         if (typeof Workshop === 'undefined') return;
-        if (candidate.kind === 'grammar') Workshop.open('grammar', { skill: candidate.skill });
-        else if (candidate.kind === 'vocabulary') Workshop.open('vocabulary', { words: candidate.words });
-        else if (candidate.kind === 'speaking') Workshop.open('speaking', { skill: candidate.skill, autoStart: true });
-        else if (candidate.kind === 'writing') Workshop.open('writing', candidate.options);
-        else if (candidate.kind === 'driller') Workshop.open(candidate.drillerId, candidate.options);
+        // Home's secondary tier (unlike Workshop's own "Recommended for you"
+        // card) isn't the #drills tab -- see _openWorkshopDriller()'s own
+        // comment for why opening straight via Workshop.open() would paint
+        // into a hidden container there.
+        if (candidate.kind === 'grammar') _openWorkshopDriller('grammar', { skill: candidate.skill });
+        else if (candidate.kind === 'vocabulary') _openWorkshopDriller('vocabulary', { words: candidate.words });
+        else if (candidate.kind === 'speaking') _openWorkshopDriller('speaking', { skill: candidate.skill, autoStart: true });
+        else if (candidate.kind === 'writing') _openWorkshopDriller('writing', candidate.options);
+        else if (candidate.kind === 'driller') _openWorkshopDriller(candidate.drillerId, candidate.options);
     }
 
     // ----------------------------------------
@@ -730,6 +734,20 @@ const RecommendationEngine = (function () {
         `;
     }
 
+    // A Workshop driller renders into #drills-root, which only exists inside
+    // the #drills tab. This card is mounted on all sorts of results screens
+    // (lesson-complete, a driller's own results, Home) that aren't
+    // necessarily that tab -- without switching first, Workshop.open()
+    // still runs and updates Workshop's internal state, but paints into a
+    // hidden container while the learner keeps looking at whatever screen
+    // they clicked from, which reads as the button doing nothing at all.
+    function _openWorkshopDriller(drillerId, options) {
+        if (typeof showTab === 'function') {
+            showTab('drills', document.querySelector('.nav button[data-tab="drills"]'));
+        }
+        if (typeof Workshop !== 'undefined') Workshop.open(drillerId, options);
+    }
+
     function _routeTo(primary) {
         if (typeof Workshop !== 'undefined') Workshop.close();
         if (primary.kind === 'continue') {
@@ -741,15 +759,13 @@ const RecommendationEngine = (function () {
             }
         } else if (primary.kind === 'unit-nudge') {
             dismissUnit(primary.unit.id);
-            if (typeof Workshop !== 'undefined') {
-                Workshop.open('speaking', { scenarioId: primary.scenario.id, returnTab: 'home' });
-            }
+            _openWorkshopDriller('speaking', { scenarioId: primary.scenario.id, returnTab: 'home' });
         } else if (primary.kind === 'mini-game') {
             dismissMiniGame(primary.lessonId);
             if (primary.drillerId === 'srs') {
                 _openSrs(primary.options);
-            } else if (typeof Workshop !== 'undefined') {
-                Workshop.open(primary.drillerId, primary.options);
+            } else {
+                _openWorkshopDriller(primary.drillerId, primary.options);
             }
         }
     }
