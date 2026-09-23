@@ -218,6 +218,7 @@ const SpeakingRunner = (function () {
     function _startRecording() {
         if (_solved || _isRecording) return;
         _isRecording = true;
+        if (typeof Sound !== 'undefined') Sound.speaking();
 
         _capturedTranscript = '';
         const micBtn = _container.querySelector('.sp-mic-btn');
@@ -326,6 +327,7 @@ const SpeakingRunner = (function () {
     function _stopRecording() {
         if (!_isRecording) return;
         _isRecording = false;
+        if (typeof Sound !== 'undefined') Sound.speaking();
 
         const micBtn = _container.querySelector('.sp-mic-btn');
         const micLabel = _container.querySelector('.sp-mic-status');

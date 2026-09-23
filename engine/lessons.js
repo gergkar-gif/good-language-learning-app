@@ -3147,6 +3147,7 @@ function lessonToggleSpeaking(btn) {
 
     if (_lessonSpeakingRecording) {
         _lessonSpeakingRecording = false;
+        if (typeof Sound !== 'undefined') Sound.speaking();
         if (typeof SpeechInput !== 'undefined') SpeechInput.stopListening();
         const statusEl = document.getElementById('lesson-mic-status');
         const cueEl = document.getElementById('lesson-mic-stop-cue');
@@ -3164,6 +3165,7 @@ function lessonToggleSpeaking(btn) {
     }
 
     _lessonSpeakingRecording = true;
+    if (typeof Sound !== 'undefined') Sound.speaking();
     if (btn) btn.classList.add('sp-recording');
     const statusEl = document.getElementById('lesson-mic-status');
     const cueEl = document.getElementById('lesson-mic-stop-cue');
@@ -3221,6 +3223,7 @@ function lessonToggleSpeaking(btn) {
                 }
             },
             onFinal: transcript => {
+                if (_lessonSpeakingRecording && typeof Sound !== 'undefined') Sound.speaking();
                 _lessonSpeakingRecording = false;
                 if (btn) btn.classList.remove('sp-recording');
                 const cue = document.getElementById('lesson-mic-stop-cue');
@@ -3252,6 +3255,7 @@ function lessonToggleSpeaking(btn) {
                 _updateLessonCompareAudio();
             },
             onError: err => {
+                if (_lessonSpeakingRecording && typeof Sound !== 'undefined') Sound.speaking();
                 _lessonSpeakingRecording = false;
                 if (btn) btn.classList.remove('sp-recording');
                 const cue = document.getElementById('lesson-mic-stop-cue');
