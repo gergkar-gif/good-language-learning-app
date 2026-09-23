@@ -59,6 +59,15 @@ const LearnerPath = (function () {
         return bestId;
     }
 
+    // Total lessons completed across the whole course. Several callers
+    // (engine/recommendationEngine.js's mini-game candidates) gate on this
+    // to avoid offering a driller before the learner has enough history for
+    // it to make sense.
+    function completedCount() {
+        const progress = (typeof getProgress === 'function') ? getProgress() : {};
+        return Object.keys(progress).length;
+    }
+
     // ----------------------------------------
     // NEXT STEP (moved verbatim from engine/home.js)
     // ----------------------------------------
@@ -167,6 +176,17 @@ const LearnerPath = (function () {
         return null;    // every lesson finished and every test passed
     }
 
+    // The CEFR level the learner is currently working in — the level of
+    // whatever nextStep() says is next. Falls forward to the course's
+    // highest level once nextStep() returns null (every lesson and test
+    // done), rather than snapping back to the first level.
+    function currentLevel() {
+        const step = nextStep();
+        if (step && step.level) return step.level;
+        const order = (typeof LEVEL_ORDER !== 'undefined') ? LEVEL_ORDER : ['A1'];
+        return order[order.length - 1];
+    }
+
     // ----------------------------------------
     // LAST ACTIVITY (new)
     // ----------------------------------------
@@ -201,7 +221,9 @@ const LearnerPath = (function () {
         isComplete,
         unitFor,
         lastCompletedLessonId,
+        completedCount,
         nextStep,
+        currentLevel,
         touchActivity,
         lastActivityAt
     };

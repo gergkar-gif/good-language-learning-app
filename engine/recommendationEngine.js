@@ -79,6 +79,15 @@ const RecommendationEngine = (function () {
         return _grammarTitlesCache[path];
     }
 
+    // The Vocabulary Driller (engine/workshop.js) is gated to B1+ — its
+    // context-inference exercises don't work with a beginner's vocabulary.
+    // Mirrored here so this engine never recommends a driller its own
+    // picker would refuse to show.
+    function _vocabularyAvailable() {
+        if (typeof LearnerPath === 'undefined' || !LearnerPath.currentLevel || typeof LEVEL_ORDER === 'undefined') return false;
+        return LEVEL_ORDER.indexOf(LearnerPath.currentLevel()) >= LEVEL_ORDER.indexOf('B1');
+    }
+
     function humanizeSkill(id) {
         const key = String(id || '');
         const path = (typeof Lang !== 'undefined') ? Lang.content('indexes/grammar-titles.json') : null;
@@ -190,7 +199,9 @@ const RecommendationEngine = (function () {
             }
         }
 
-        const words = LearnerModel.weakWords().map(w => ({ lemma: w.lemma, translation: w.translation, pos: w.pos }));
+        const words = _vocabularyAvailable()
+            ? LearnerModel.weakWords().map(w => ({ lemma: w.lemma, translation: w.translation, pos: w.pos }))
+            : [];
         const wordsReason = words.length ? 'weak' : null;
 
         if (!skill && !words.length) return null;
@@ -307,7 +318,7 @@ const RecommendationEngine = (function () {
         const effectiveWords = (weakWordsList.length >= 3)
             ? weakWordsList.map(w => ({ lemma: w.lemma, translation: w.translation, pos: w.pos }))
             : recentWords;
-        if (effectiveWords && effectiveWords.length > 0) {
+        if (_vocabularyAvailable() && effectiveWords && effectiveWords.length > 0) {
             const isWeak = weakWordsList.length >= 3;
             const chosenWords = effectiveWords.slice(0, 6);
             candidates.push({

@@ -9,6 +9,48 @@ needs re-reading before starting new work; it's reference only.
 
 ## Completed queue items
 
+69. ~~**Vocabulary Driller gated to B1+**~~ — **Done 2026-09-23.**
+    The Vocabulary Driller's exercises all infer a word's meaning from a real
+    sentence context (`PARLOUR_VOCABULARY_DRILLER_SPEC.md`); below B1 the
+    learner doesn't yet know enough surrounding vocabulary/grammar for that
+    inference to work, so it read as an unfair guessing game rather than a
+    useful drill.
+    - `engine/workshop.js`: added a `minLevel` field to the driller
+      definition and extended `_available()` (previously lang-only) to also
+      check `LearnerPath.currentLevel()` against it — the same mechanism
+      already used to hide Hungarian-only drillers from Spanish learners, and
+      already wired so `render()` bounces back to the picker if something
+      still tries to open a gated driller directly.
+    - `engine/recommendationEngine.js`: added `_vocabularyAvailable()` and
+      gated both the secondary-tier vocabulary candidate
+      (`_grammarVocabCandidate()`) and the mini-game's Vocabulary Recall
+      candidate on it, so the recommendation surfaces never suggest a driller
+      the picker would refuse to open.
+
+68. ~~**Recommendation engine silently offered a narrow slice of its own candidates**~~ — **Done 2026-09-23.**
+    Root cause: `engine/recommendationEngine.js`'s mini-game nudge (and
+    `engine/reader.js`, `engine/studyPlan.js`, `engine/drills/writing.js`)
+    all called `LearnerPath.currentLevel()` / `LearnerPath.completedCount()`,
+    but `engine/learnerPath.js` never actually defined either — every call
+    site guarded with `typeof LearnerPath.currentLevel === 'function'` and
+    silently fell back to `'A1'` / `0`. In practice this meant, for every
+    learner regardless of real progress:
+    - Verb Speed Sprint, Fast Translation, Audio Decode, and the Speaking
+      Driller mini-game candidates were dead code — their `completedCount >=
+      N` gates could never pass — so the per-lesson "what's next" nudge only
+      ever rotated through Targeted Grammar, Vocabulary Recall, the
+      scenario-matched roleplay, and (via their `isComplete()` fallback) the
+      three Hungarian sub-drillers.
+    - Any content that keyed off the learner's actual level (translation/
+      listening difficulty, reader story recommendations) was pinned to A1
+      forever, even for a B1 learner.
+    Added real `completedCount()` (count of `getProgress()` entries) and
+    `currentLevel()` (the level of `nextStep()`, falling forward to the
+    course's top level once the course is finished) to `LearnerPath`'s
+    returned API. Existing test suites (`test-challenge-tier.js`,
+    `test-scenario-learner-path.js`, `test-onboarding-guide.js`) still pass
+    unchanged.
+
 67. ~~**Situational Written Exchanges (Interactive Texting & Correspondence Engine)**~~ — **Done 2026-09-22.**
     Shipped multi-turn situational digital correspondence and text messaging as the 3rd studio mode in Writing Studio (`[ Composition Studio | Written Exchanges | Sentence Translation ]`) across Spanish and Hungarian:
     - **Dignified Editorial Messaging UI**:

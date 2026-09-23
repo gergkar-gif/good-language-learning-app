@@ -77,14 +77,30 @@ const Workshop = (function () {
             title: 'Vocabulary Driller',
             sub: 'Meaning and context, drawn from every word taught.',
             containerId: 'vocabulary-driller-root',
-            category: 'foundations'
+            category: 'foundations',
+            // Every exercise here infers a word from a real sentence context
+            // (see PARLOUR_VOCABULARY_DRILLER_SPEC.md) — below B1 the
+            // learner doesn't yet know enough surrounding vocabulary/grammar
+            // for that inference to work, so it reads as a bare guessing
+            // game rather than a useful drill. Gated the same way a
+            // language-unavailable driller is: hidden from the picker, and
+            // render() below bounces back to the picker if something still
+            // tries to open it directly.
+            minLevel: 'B1'
         }
     ];
 
     function _available(driller) {
-        if (!driller.langs) return true;
-        const currentLang = typeof Lang !== 'undefined' ? Lang.code() : 'es-latam';
-        return driller.langs.some(l => l === currentLang || currentLang.startsWith(l + '-'));
+        if (driller.langs) {
+            const currentLang = typeof Lang !== 'undefined' ? Lang.code() : 'es-latam';
+            if (!driller.langs.some(l => l === currentLang || currentLang.startsWith(l + '-'))) return false;
+        }
+        if (driller.minLevel) {
+            const order = (typeof LEVEL_ORDER !== 'undefined') ? LEVEL_ORDER : ['A1', 'A2', 'B1', 'B2', 'C1'];
+            const level = (typeof LearnerPath !== 'undefined' && LearnerPath.currentLevel) ? LearnerPath.currentLevel() : 'A1';
+            if (order.indexOf(level) < order.indexOf(driller.minLevel)) return false;
+        }
+        return true;
     }
 
     // Each driller's own mark, two-tone in the same --wash/--ink/--accent
