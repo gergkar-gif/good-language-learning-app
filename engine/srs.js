@@ -477,16 +477,22 @@ function updateDirectionToggle() {
     const btn = document.getElementById('dk-direction-toggle');
     const esLabel = document.getElementById('dk-direction-es');
     const enLabel = document.getElementById('dk-direction-en');
+    const langName = (typeof Lang !== 'undefined') ? Lang.name() : 'Spanish';
 
     if (btn) {
         btn.setAttribute('data-direction', reviewDirection);
         btn.setAttribute('aria-checked', reviewDirection !== 'es-en' ? 'true' : 'false');
+        btn.setAttribute('aria-label', `Toggle review direction (${langName}, English)`);
     }
     if (esLabel) {
-        esLabel.textContent = (typeof Lang !== 'undefined') ? Lang.name() : 'Spanish';
+        esLabel.textContent = langName;
+        esLabel.title = `${langName} to English`;
         esLabel.classList.toggle('dk-direction-active', reviewDirection === 'es-en');
     }
-    if (enLabel) enLabel.classList.toggle('dk-direction-active', reviewDirection === 'en-es');
+    if (enLabel) {
+        enLabel.title = `English to ${langName}`;
+        enLabel.classList.toggle('dk-direction-active', reviewDirection === 'en-es');
+    }
 }
 
 function setReviewDirection(dir) {
