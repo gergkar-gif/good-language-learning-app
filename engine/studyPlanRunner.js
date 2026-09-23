@@ -43,6 +43,21 @@ const StudyPlanRunner = (function () {
     // here instead so teardown() can call the right module's stop().
     let _embeddedDriller = null;
 
+    // The pending auto-advance timer from mountNextAction() below — tracked
+    // so it can be cancelled the instant the learner does anything else on
+    // that results screen (Practice Again, Change Settings, ...) or leaves
+    // the session outright before it fires. An uncancelled timer would
+    // otherwise yank a fresh "Practice Again" session back to the plan a
+    // few seconds in, or resurrect a screen the learner already left.
+    let _pendingAdvanceTimer = null;
+
+    function _clearPendingAdvance() {
+        if (_pendingAdvanceTimer) {
+            clearTimeout(_pendingAdvanceTimer);
+            _pendingAdvanceTimer = null;
+        }
+    }
+
     // A review plan item is the one kind launched via goTab() — the normal
     // showTab()-driven tab switch, which tears down whatever tab it's
     // leaving (see engine/init.js's teardownTab()). Without this flag,
@@ -229,6 +244,11 @@ const StudyPlanRunner = (function () {
         }
     }
 
+    // How long a just-finished task's results stay on screen before
+    // auto-advancing back to the checklist — long enough to read a score,
+    // short enough not to feel like a stall.
+    const AUTO_ADVANCE_MS = 4000;
+
     // Called by RecommendationEngine.mountNextAction() whenever StudyPlan
     // is active, instead of it computing a fresh generic recommendation.
     // The one thing every item kind needs on its own results/summary
@@ -236,8 +256,19 @@ const StudyPlanRunner = (function () {
     // never actually left #study-plan-screen, so this just re-renders in
     // place; review's own summary lives on the #review tab and genuinely
     // navigates back.
+    //
+    // Auto-advances after AUTO_ADVANCE_MS rather than waiting on the
+    // "Back to your plan" click — finishing a task used to always cost an
+    // extra tap just to get back to the checklist, on top of whatever the
+    // driller's own results screen already needed. The button stays for
+    // anyone who wants to skip the wait, and any OTHER click on this
+    // results screen (Practice Again, Change Settings, ...) cancels the
+    // auto-advance — the learner made an explicit different choice, so it
+    // must not fire underneath it and yank them back mid-way through.
     function mountNextAction(container) {
         if (!container) return;
+        _clearPendingAdvance();
+
         const actionsEl = container.querySelector('.vspeed-results-actions') || container.querySelector('.sp-results-actions') || container.querySelector('.dkm-done-actions');
         if (actionsEl) {
             const playAgainBtn = actionsEl.querySelector('[data-action="play-again"]') || actionsEl.querySelector('[data-action="practice-again"]') || actionsEl.querySelector('[data-match-restart]');
@@ -249,24 +280,29 @@ const StudyPlanRunner = (function () {
             slot.className = 'wk-next-action-slot';
             slot.innerHTML = `
                 <button class="vbtn vbtn-primary wk-next-primary-btn" data-sp-next="1">Back to your plan →</button>
-                <span class="wk-next-sub">Time-based session in progress</span>
+                <span class="wk-next-sub">Returning to your plan automatically…</span>
             `;
             actionsEl.insertAdjacentElement('afterbegin', slot);
         } else {
             container.insertAdjacentHTML('beforeend', `
                 <div class="wk-next-action">
-                    <span class="wk-next-eyebrow">Your time-based session</span>
+                    <span class="wk-next-eyebrow">Returning to your plan automatically…</span>
                     <button class="vbtn vbtn-primary wk-next-primary-btn" data-sp-next="1">Back to your plan →</button>
                 </div>
             `);
         }
-        const btn = container.querySelector('[data-sp-next]');
-        if (btn) {
-            btn.addEventListener('click', () => {
-                StudyPlan.advance();
-                goTab('study-plan-screen');
-            });
+
+        function advance() {
+            _clearPendingAdvance();
+            StudyPlan.advance();
+            goTab('study-plan-screen');
         }
+
+        const btn = container.querySelector('[data-sp-next]');
+        if (btn) btn.addEventListener('click', advance);
+
+        container.addEventListener('click', _clearPendingAdvance, { capture: true, once: true });
+        _pendingAdvanceTimer = setTimeout(advance, AUTO_ADVANCE_MS);
     }
 
     // Fired by showTab()'s dispatch whenever #study-plan-screen becomes
@@ -408,6 +444,7 @@ const StudyPlanRunner = (function () {
     // Workshop's own _active never sees a driller embedded here.
     function teardown() {
         document.body.classList.remove('in-lesson');
+        _clearPendingAdvance();
         if (_embeddedDriller && typeof _embeddedDriller.stop === 'function') _embeddedDriller.stop();
         _embeddedDriller = null;
         if (_leavingForReview) {

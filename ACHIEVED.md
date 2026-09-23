@@ -9,7 +9,25 @@ needs re-reading before starting new work; it's reference only.
 
 ## Completed queue items
 
-78. ~~**Post-unit practice nudge was dead code; fixed, and Written Exchanges given parity with Conversation Scenarios**~~ — **Done 2026-09-23.**
+79. ~~**Time-Based Sessions: auto-advance back to the plan checklist after finishing a task**~~ — **Done 2026-09-23.**
+    User feedback: finishing a task inside a time-based session required
+    an extra click ("Back to your plan →") just to return to the
+    checklist, on top of whatever the driller's own results screen
+    already needed. `StudyPlanRunner.mountNextAction()`
+    (`engine/studyPlanRunner.js`) now auto-advances 4 seconds after a
+    result screen mounts — long enough to read a score/missed-items
+    recap, short enough not to feel like a stall — calling the same
+    `StudyPlan.advance(); goTab('study-plan-screen')` the button always
+    did. The button itself stays for anyone who wants to skip the wait.
+    Any OTHER click on that results screen (Practice Again, Change
+    Settings, Back to Workshop, Match's own restart) cancels the pending
+    auto-advance via a capture-phase listener on the whole results
+    container — without it, an uncancelled timer would yank a freshly
+    started "Practice Again" session back to the plan a few seconds in.
+    The timer is also cleared in `teardown()` so leaving the session
+    entirely can't fire a stale advance afterward. Verified in the
+    browser: auto-advance fires correctly at ~4s when untouched, and
+    firing zero times when another action is clicked first.
     While wiring the Writing Studio's Written Exchanges (texting-style
     roleplay) into the recommendation engine alongside Speaking's oral
     Conversation Scenarios, found that the existing "Put it into
