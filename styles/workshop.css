@@ -1451,8 +1451,7 @@
     letter-spacing: 0.04em;
     text-transform: uppercase;
     padding: 2px 8px;
-    border-radius: 10px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+    border-radius: var(--radius-sm);
     white-space: nowrap;
     pointer-events: none;
     animation: sp-cue-bounce 1.4s infinite ease-in-out;
@@ -1528,27 +1527,15 @@
 }
 
 .sp-word-matched {
-    background: rgba(46, 125, 50, 0.12);
-    border-color: rgba(46, 125, 50, 0.35);
-    color: #1b5e20;
-}
-
-[data-theme="dark"] .sp-word-matched {
-    background: rgba(76, 175, 80, 0.2);
-    border-color: rgba(76, 175, 80, 0.5);
-    color: #81c784;
+    background: var(--success-bg);
+    border-color: var(--success);
+    color: var(--success);
 }
 
 .sp-word-missed {
-    background: rgba(233, 75, 22, 0.12);
-    border-color: rgba(233, 75, 22, 0.35);
-    color: #c62828;
-}
-
-[data-theme="dark"] .sp-word-missed {
-    background: rgba(233, 75, 22, 0.25);
-    border-color: rgba(233, 75, 22, 0.5);
-    color: #ff8a65;
+    background: var(--danger-bg);
+    border-color: var(--danger);
+    color: var(--danger);
 }
 
 .sp-transcript-note {
@@ -1700,14 +1687,14 @@
 }
 
 .sp-eval-good {
-    background: rgba(46, 125, 50, 0.15);
-    color: #1b5e20;
+    background: var(--success-bg);
+    color: var(--success);
     border-color: rgba(46, 125, 50, 0.4);
 }
 
 .sp-eval-retry {
-    background: rgba(233, 75, 22, 0.12);
-    color: #c62828;
+    background: var(--danger-bg);
+    color: var(--danger);
     border-color: rgba(233, 75, 22, 0.4);
 }
 
@@ -2731,7 +2718,7 @@
     color: var(--muted);
     background: none;
     border: 1px solid transparent;
-    border-radius: var(--radius-md, 6px);
+    border-radius: var(--radius);
     cursor: pointer;
     transition: all var(--dur-fast) var(--ease-standard);
     white-space: nowrap;
@@ -2746,7 +2733,6 @@
     color: var(--accent-dark, var(--accent));
     background: var(--surface, #fff);
     border-color: var(--border);
-    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
 }
 
 [data-theme="dark"] .sp-studio-tab.active,
@@ -2840,7 +2826,7 @@
 .sp-prod-prompt-banner {
     background: var(--surface, #fff);
     border: 1px solid var(--border);
-    border-radius: var(--radius-md, 6px);
+    border-radius: var(--radius);
     padding: 16px 18px;
 }
 
@@ -2877,7 +2863,7 @@
     padding: 24px 16px;
     background: var(--surface, #fff);
     border: 1px solid var(--border);
-    border-radius: var(--radius-md, 6px);
+    border-radius: var(--radius);
     gap: 14px;
 }
 
@@ -2918,7 +2904,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 12px rgba(230, 81, 0, 0.3);
 }
 
 .sp-prod-status-line {
@@ -2934,7 +2919,7 @@
     width: 9px;
     height: 9px;
     border-radius: 50%;
-    background: var(--danger, #d32f2f);
+    background: var(--danger);
     animation: spDotPulse 1.5s infinite;
 }
 
@@ -2954,7 +2939,7 @@
     color: var(--muted);
     padding: 12px 18px;
     background: rgba(0, 0, 0, 0.02);
-    border-radius: var(--radius-md, 6px);
+    border-radius: var(--radius);
     border: 1px dashed var(--border);
     margin: 8px 0;
     line-height: 1.45;
@@ -2970,7 +2955,7 @@
 .sp-prod-transcript-container {
     background: var(--surface, #fff);
     border: 1px solid var(--border);
-    border-radius: var(--radius-md, 6px);
+    border-radius: var(--radius);
     overflow: hidden;
 }
 
@@ -3039,7 +3024,7 @@
 .sp-prod-audio-card {
     background: var(--surface, #fff);
     border: 1px solid var(--border);
-    border-radius: var(--radius-md, 6px);
+    border-radius: var(--radius);
     padding: 16px;
     display: flex;
     flex-direction: column;
@@ -3119,7 +3104,7 @@
     color: var(--text);
     background: var(--surface, #fff);
     border: 1px solid var(--border);
-    border-radius: var(--radius-md, 6px);
+    border-radius: var(--radius);
     resize: vertical;
     outline: none;
     font-family: inherit;
@@ -3163,7 +3148,7 @@
 .sp-prod-audio-replay-card {
     background: var(--surface, #fff);
     border: 1px solid var(--border);
-    border-radius: var(--radius-md, 6px);
+    border-radius: var(--radius);
     padding: 14px 16px;
     display: flex;
     flex-direction: column;
@@ -3252,12 +3237,11 @@
     padding: 16px;
     background: var(--surface, #fff);
     border: 1px solid var(--border);
-    border-radius: var(--radius-md, 8px);
+    border-radius: var(--radius);
 }
 
 .sp-scenario-card:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     border-color: var(--accent);
 }
 
@@ -3277,7 +3261,7 @@
     text-transform: uppercase;
     background: var(--bg-card, rgba(0, 0, 0, 0.05));
     color: var(--muted);
-    border-radius: 12px;
+    border-radius: var(--radius-sm);
 }
 
 .sp-scenario-roleplay-tag {
@@ -3299,7 +3283,7 @@
 .sp-briefing-card {
     background: var(--surface, #fff);
     border: 1px solid var(--border);
-    border-radius: var(--radius-md, 8px);
+    border-radius: var(--radius);
     padding: 24px;
     margin-top: 16px;
 }
@@ -3379,7 +3363,7 @@
     padding: 12px;
     background: var(--bg-card, #fcfcfc);
     border: 1px solid var(--border-light, #eee);
-    border-radius: var(--radius-md, 8px);
+    border-radius: var(--radius);
     display: flex;
     flex-direction: column;
     gap: 14px;
@@ -3399,35 +3383,29 @@
 .sp-chat-bubble {
     max-width: 85%;
     padding: 12px 16px;
-    border-radius: 12px;
+    border-radius: var(--radius);
     font-size: 15px;
     line-height: 1.45;
     position: relative;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 }
 
 .sp-chat-bubble.partner {
     align-self: flex-start;
     background: var(--surface, #fff);
     border: 1px solid var(--border);
-    border-top-left-radius: 2px;
+    border-top-left-radius: var(--radius-sm);
 }
 
 .sp-chat-bubble.partner.current {
     border-color: var(--accent);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border-width: 2px;
 }
 
 .sp-chat-bubble.learner {
     align-self: flex-end;
-    background: var(--accent-light, #e8f0fe);
-    color: var(--accent-dark, #1a73e8);
-    border-top-right-radius: 2px;
-}
-
-[data-theme="dark"] .sp-chat-bubble.learner {
-    background: rgba(26, 115, 232, 0.2);
-    color: #8ab4f8;
+    background: var(--accent-bg);
+    color: var(--accent-dark);
+    border-top-right-radius: var(--radius-sm);
 }
 
 .sp-chat-header {
@@ -3457,7 +3435,7 @@
 }
 
 .sp-chat-check {
-    color: #28a745;
+    color: var(--success);
     font-weight: bold;
 }
 
@@ -3471,15 +3449,13 @@
     font-size: 14px;
     font-weight: 700;
     padding: 10px 20px;
-    border-radius: 24px;
+    border-radius: var(--radius);
     cursor: pointer;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
-    transition: transform var(--dur-fast), box-shadow var(--dur-fast);
+    transition: transform var(--dur-fast);
 }
 
 .sp-chat-listen-btn:hover {
-    transform: scale(1.03);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+    transform: translateY(-1px);
 }
 
 .sp-chat-listen-btn.playing {
@@ -3495,7 +3471,7 @@
     color: var(--muted);
     font-size: 13px;
     padding: 6px 10px;
-    border-radius: 8px;
+    border-radius: var(--radius);
     cursor: pointer;
     transition: background var(--dur-fast), color var(--dur-fast), border-color var(--dur-fast);
 }
@@ -3517,15 +3493,13 @@
     color: #fff;
     background: var(--accent);
     border: none;
-    border-radius: 28px;
+    border-radius: var(--radius);
     cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    transition: transform var(--dur-fast), box-shadow var(--dur-fast);
+    transition: transform var(--dur-fast);
 }
 
 .sp-scenario-record-cta:hover {
-    transform: scale(1.03);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(-1px);
 }
 
 .sp-scenario-stop-btn {
@@ -3533,9 +3507,9 @@
     font-size: 14px;
     font-weight: 600;
     color: #fff;
-    background: #dc3545;
+    background: var(--danger);
     border: none;
-    border-radius: 20px;
+    border-radius: var(--radius);
     cursor: pointer;
     display: inline-flex;
     align-items: center;
@@ -3648,7 +3622,7 @@
     background: var(--surface, #fff);
     border: 1px solid var(--border);
     border-left: 3px solid var(--accent);
-    border-radius: var(--radius-md, 8px);
+    border-radius: var(--radius);
     padding: 14px 18px;
     margin: 16px 0;
 }
@@ -3699,7 +3673,7 @@
 .sp-prod-results-card {
     background: var(--surface, #fff);
     border: 1px solid var(--border);
-    border-radius: var(--radius-md, 8px);
+    border-radius: var(--radius);
     padding: 24px;
     margin-bottom: 24px;
 }
@@ -3729,8 +3703,8 @@
 }
 
 .sp-prod-score-badge.pass {
-    border: 3px solid var(--success, #28a745);
-    color: var(--success, #28a745);
+    border: 3px solid var(--success);
+    color: var(--success);
 }
 
 .sp-prod-score-badge.needs-work {
@@ -3873,12 +3847,11 @@
 
 .wr-exchange-card {
     cursor: pointer;
-    transition: transform var(--dur-fast), box-shadow var(--dur-fast), border-color var(--dur-fast);
+    transition: transform var(--dur-fast), border-color var(--dur-fast);
 }
 
 .wr-exchange-card:hover {
     transform: translateY(-2px);
-    box-shadow: var(--shadow-md, 0 4px 12px rgba(0, 0, 0, 0.08));
     border-color: var(--accent);
 }
 
@@ -3900,16 +3873,11 @@
     align-items: center;
     gap: 6px;
     font-size: 0.8rem;
-    color: var(--accent-dark, #1a73e8);
-    background: var(--accent-light, #e8f0fe);
+    color: var(--accent-dark);
+    background: var(--accent-bg);
     padding: 4px 8px;
-    border-radius: 4px;
+    border-radius: var(--radius-sm);
     margin-top: 8px;
-}
-
-[data-theme="dark"] .wr-exchange-comp-tag {
-    background: rgba(26, 115, 232, 0.2);
-    color: #8ab4f8;
 }
 
 .wr-exchange-dock {
@@ -3960,16 +3928,15 @@
     color: var(--text);
     background: var(--surface, #fff);
     border: 1px solid var(--border);
-    border-radius: var(--radius-md, 8px);
+    border-radius: var(--radius);
     box-sizing: border-box;
     resize: vertical;
-    transition: border-color var(--dur-fast), box-shadow var(--dur-fast);
+    transition: border-color var(--dur-fast);
 }
 
 .wr-exchange-textarea:focus {
     outline: none;
     border-color: var(--accent);
-    box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.15);
 }
 
 .wr-exchange-dock-footer {
@@ -3986,6 +3953,6 @@
 }
 
 .wr-exchange-counter.met {
-    color: var(--success, #28a745);
+    color: var(--success);
     font-weight: 600;
 }

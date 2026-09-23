@@ -9,6 +9,66 @@ needs re-reading before starting new work; it's reference only.
 
 ## Completed queue items
 
+72. ~~**Visual-identity drift sweep: Speaking, Diagnostic, Writing Exchanges, Workshop pickers**~~ — **Done 2026-09-23.**
+    User's own instinct ("I feel like new features keep introducing more
+    app-like looks, contradicting our 'no pills' minimalist decision") was
+    checked against `design principles.md` — no shadows anywhere, sharp
+    `--radius`/`--radius-sm` only, pills reserved for the rare control that
+    needs one — and confirmed real. Scoped to every `.sp-*` (Speaking),
+    `.diag-*` (CEFR Diagnostic), `.wr-*` (Written Exchanges), `.wk-pill`/
+    `.hm-budget-pill` (Workshop/Home pickers) selector in
+    `styles/workshop.css`/`styles/components.css`, since those are the
+    newest surfaces (all shipped since ~09-13). Found the actual violations
+    were narrower than the class names suggested — most things named
+    `*-pill` (`.wk-pill`, `.sp-level-pill`, `.sp-skill-pill`,
+    `.hm-budget-pill`) already used `--radius-sm` bordered/fill-tint boxes,
+    not real pills, so those were false positives from naming alone and
+    left untouched. The genuine drift:
+    - **The Conversation Scenarios chat UI** (`.sp-chat-bubble`,
+      `.sp-chat-listen-btn`, `.sp-scenario-record-cta`/`-stop-btn`) was
+      generic chat-app/Material-Design styling: real `box-shadow`s, fully
+      rounded 20-28px pill buttons, `transform: scale()` hover bounces,
+      and a Google-blue (`#1a73e8`/`#e8f0fe`/`#8ab4f8`) learner-bubble
+      color never seen anywhere else in the app. Same Google-blue also
+      leaked into Written Exchanges' `.wr-exchange-comp-tag` and its
+      textarea focus ring — same copy-paste source, both fixed the same
+      way. All converted to `var(--radius)`/`var(--accent-bg)`/
+      `var(--accent-dark)`, box-shadows removed outright, hover bounces
+      changed to `translateY(-1px)` (matching `.lr-play-btn`'s existing
+      convention), and the redundant hand-rolled dark-mode overrides for
+      the Google-blue bubble were deleted since `--accent-bg`/
+      `--accent-dark` already have dark variants in `base.css`.
+    - **Two true 999px pills** — `.diag-tier-pill`, `.diag-verdict-level-pill`
+      in the placement-test flow — converted to `--radius-sm`, matching how
+      every other small status badge in the app (`.sp-level-pill` etc.)
+      already renders.
+    - **Off-token feedback colors**: `.sp-word-matched`/`-missed` (bootstrap
+      green/red `#1b5e20`/`#c62828` etc., with a hand-rolled dark-mode
+      duplicate) and `.sp-eval-good`/`-retry` mapped onto the app's actual
+      `--success`/`--success-bg`/`--danger`/`--danger-bg` tokens, which
+      already carry correct dark-theme values — the manual dark overrides
+      became redundant and were deleted.
+    - **A local `--radius-md`/`--shadow-md` phantom-token pattern**: these
+      names read like design-system tokens but were never defined in
+      `base.css`, so every `var(--radius-md, 6px)`/`var(--radius-md, 8px)`
+      silently always resolved to its own hardcoded fallback — a
+      third, undocumented radius scale invented per-component. All ~20
+      occurrences inside the audited scope mapped onto the real
+      `var(--radius)` token.
+    Verified live in the browser (not just read against source): Home's
+    budget-bar pills, the CEFR Diagnostic question screen's tier badge,
+    Workshop's Speaking Studio scenario picker/briefing/turn screens — all
+    render sharp-cornered, shadow-free, on-token. Confirmed via
+    `getComputedStyle` on the live "Listen" button (`4px` radius, `none`
+    box-shadow) that the fix actually reached the rendered page, not just
+    the source file. Console/network clean (three pre-existing unrelated
+    404s on a missing content index, not caused by this change). Scope was
+    deliberately bounded to the newest features — see the follow-up item
+    in `ROADMAP.md` for what's left (the same phantom-token pattern
+    elsewhere, two off-token Library badge colors, and the mic-button's
+    recording pulse, which still uses `box-shadow` as a ripple technique
+    and needs a live-visual rewrite rather than a token swap).
+
 71. ~~**SRS polish pass: leech detection, interval fuzz, per-deck reset**~~ — **Done 2026-09-23.**
     Three follow-ups to `engine/srs.js`'s SM-2 scheduler, requested after a
     review of the system found the core algorithm already solid:

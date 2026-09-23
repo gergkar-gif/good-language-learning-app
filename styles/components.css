@@ -6573,9 +6573,9 @@
   text-transform: uppercase;
   letter-spacing: 0.04em;
   padding: 4px 10px;
-  background: var(--wash, #f0f0f0);
+  background: var(--wash);
   border: 1px solid var(--border);
-  border-radius: 999px;
+  border-radius: var(--radius-sm);
   color: var(--text);
 }
 
@@ -6591,7 +6591,7 @@
 .diag-debrief-card {
   background: var(--bg-card, var(--surface));
   border: 1px solid var(--border);
-  border-radius: var(--radius-md, 8px);
+  border-radius: var(--radius);
   padding: 28px 24px;
 }
 
@@ -6956,7 +6956,7 @@
   font-size: 12px;
   font-weight: 600;
   padding: 4px 12px;
-  border-radius: 999px;
+  border-radius: var(--radius-sm);
   background: var(--accent);
   color: #fff;
 }
