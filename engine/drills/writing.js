@@ -1139,7 +1139,7 @@ const WritingDriller = (function () {
                     </div>
                 </div>
 
-                <div class="sp-scenario-banner" style="margin-bottom: 16px; padding: 8px 12px; background: var(--bg-card, #f8f9fa); border-radius: var(--radius-sm, 6px); display: flex; justify-content: space-between; align-items: center;">
+                <div class="sp-scenario-banner" style="margin-bottom: 16px; padding: 8px 12px; background: var(--wash, #f8f9fa); border-radius: var(--radius-sm, 6px); display: flex; justify-content: space-between; align-items: center;">
                     <span style="font-weight: 600; font-size: 0.95rem;">${_esc(_scenarioText(s, 'title', s) || 'Written Exchange')}</span>
                     <span class="sp-level-pill">${_esc(s.cefrLevel || 'A1')}</span>
                 </div>
@@ -1182,7 +1182,7 @@ const WritingDriller = (function () {
                 </div>
 
                 <div class="wr-exchange-dock">
-                    <div class="sp-turn-objective-card" style="padding: 12px 16px; background: var(--surface, #fff); border: 1px solid var(--border, #ddd); border-radius: var(--radius-md, 8px);">
+                    <div class="sp-turn-objective-card" style="padding: 12px 16px; background: var(--surface, #fff); border: 1px solid var(--border, #ddd); border-radius: var(--radius);">
                         <div style="font-size: 0.8rem; text-transform: uppercase; font-weight: 700; color: var(--accent); margin-bottom: 4px;">Your Goal</div>
                         <div style="font-size: 0.95rem; font-weight: 600; color: var(--text);">${_esc(_scenarioText(currentTurn, 'learnerCue', s) || '')}</div>
 

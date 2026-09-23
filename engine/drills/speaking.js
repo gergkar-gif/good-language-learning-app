@@ -1885,7 +1885,7 @@ const SpeakingDriller = (function () {
                     </div>
                 </div>
 
-                <div class="sp-scenario-banner" style="margin-bottom: 16px; padding: 8px 12px; background: var(--bg-card, #f8f9fa); border-radius: var(--radius-sm, 6px); display: flex; justify-content: space-between; align-items: center;">
+                <div class="sp-scenario-banner" style="margin-bottom: 16px; padding: 8px 12px; background: var(--wash, #f8f9fa); border-radius: var(--radius-sm, 6px); display: flex; justify-content: space-between; align-items: center;">
                     <span style="font-weight: 600; font-size: 0.95rem;">${_esc(_scenarioText(s, 'title', s) || 'Conversation')}</span>
                     <span class="sp-level-pill">${_esc(s.cefrLevel || 'A1')}</span>
                 </div>
@@ -1947,7 +1947,7 @@ const SpeakingDriller = (function () {
                 </div>
 
                 <div class="sp-scenario-action-dock" style="margin-top: 20px;">
-                    <div class="sp-turn-objective-card" style="padding: 12px 16px; background: var(--surface, #fff); border: 1px solid var(--border, #ddd); border-radius: var(--radius-md, 8px); margin-bottom: 16px;">
+                    <div class="sp-turn-objective-card" style="padding: 12px 16px; background: var(--surface, #fff); border: 1px solid var(--border, #ddd); border-radius: var(--radius); margin-bottom: 16px;">
                         <div style="font-size: 0.8rem; text-transform: uppercase; font-weight: 700; color: var(--accent); margin-bottom: 4px;">Your Goal</div>
                         <div style="font-size: 0.95rem; font-weight: 600; color: var(--text);">${_esc(_scenarioText(currentTurn, 'learnerCue', s) || '')}</div>
 
@@ -1974,7 +1974,7 @@ const SpeakingDriller = (function () {
                     ` : ''}
 
                     ${isRecording ? `
-                        <div class="sp-turn-recording-panel" style="text-align: center; padding: 16px; background: var(--bg-card, #f8f9fa); border-radius: var(--radius-md, 8px);">
+                        <div class="sp-turn-recording-panel" style="text-align: center; padding: 16px; background: var(--wash, #f8f9fa); border-radius: var(--radius);">
                             <div class="sp-mic-visualizer" style="margin-bottom: 12px;">
                                 <div class="sp-mic-pulse-ring" style="width: 48px; height: 48px; border-radius: 50%; background: var(--danger-bg); margin: 0 auto; display: flex; align-items: center; justify-content: center; color: var(--danger);">
                                     <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/></svg>
@@ -1991,7 +1991,7 @@ const SpeakingDriller = (function () {
                     ` : ''}
 
                     ${isReview ? `
-                        <div class="sp-turn-review-panel" style="padding: 16px; background: var(--bg-card, #f8f9fa); border-radius: var(--radius-md, 8px);">
+                        <div class="sp-turn-review-panel" style="padding: 16px; background: var(--wash, #f8f9fa); border-radius: var(--radius);">
                             <label style="display: block; font-size: 0.85rem; font-weight: 600; color: var(--muted); margin-bottom: 4px;">Spoken Transcript (Review / Edit):</label>
                             <textarea class="sp-turn-edit-field" style="width: 100%; min-height: 60px; padding: 8px; font-size: 0.95rem; border: 1px solid var(--border, #ccc); border-radius: 6px; box-sizing: border-box;">${_esc(_scenarioTranscript)}</textarea>
 
@@ -2300,7 +2300,7 @@ const SpeakingDriller = (function () {
                                     ? LocalGrader.turnFeedbackNote(t, _errorsByTurn[idx])
                                     : null;
                                 return `
-                                <div class="sp-turn-replay-block" style="margin-bottom: 16px; padding: 12px; border: 1px solid var(--border-light, #eee); border-radius: var(--radius-md, 8px);">
+                                <div class="sp-turn-replay-block" style="margin-bottom: 16px; padding: 12px; border: 1px solid var(--border-light, #eee); border-radius: var(--radius);">
                                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
                                         <strong style="font-size: 0.85rem; color: var(--muted);">${_esc(sc.roleplay ? _scenarioText(sc.roleplay, 'interlocutorRole', sc) : 'Partner')}</strong>
                                         <button type="button" class="sp-play-audio-btn" data-replay-tts-text="${_esc(t.interlocutorPrompt)}" style="background: none; border: none; cursor: pointer; display: inline-flex; align-items: center; color: var(--muted); padding: 2px 4px;" title="Listen again" aria-label="Listen again">

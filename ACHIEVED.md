@@ -9,6 +9,37 @@ needs re-reading before starting new work; it's reference only.
 
 ## Completed queue items
 
+74. ~~**Fix white-rectangle bug in Speaking Conversation Scenarios and Written Exchanges**~~ — **Done 2026-09-23.**
+    User reported white rectangles inside a live conversation, in the
+    scenario-list turn-count badge, and the same in Written Exchanges.
+    Root cause: `--bg-card` is a real, deliberately-defined token —
+    `#FFFFFF`, pure white — used elsewhere in the app for actual elevated
+    cards, but Speaking/Written Exchanges had been using it as a generic
+    "give this a background" fallback for tinted badges/banners/panels
+    that were never meant to be white, so every one of them rendered as a
+    stark white box against the cream page. The two prior sweep passes
+    (items 72-73) missed this class of bug entirely since they grepped
+    for shadows/hardcoded-hex/radius, not background-color token misuse.
+    Fixed both in `styles/workshop.css` (`.sp-prompt-card`/`.sp-lesson-card`,
+    `.sp-turns-pill`, `.sp-briefing-roles-box`, `.sp-chat-timeline`) and,
+    just as importantly, in **inline styles embedded directly in JS**
+    (`engine/drills/speaking.js`, `engine/drills/writing.js`) — the
+    `.sp-scenario-banner` turn header, `.sp-turn-objective-card`,
+    `.sp-turn-recording-panel`, `.sp-turn-review-panel`, and
+    `.sp-turn-replay-block`, all of which also carried the same
+    `--radius-md` phantom-token pattern items 72-73 had only checked in
+    CSS files, not JS template strings. Replaced `--bg-card` with
+    `--surface` (blends with the page, for panels that already have a
+    border to define their edge) or `--wash` (a visible sand tint, for
+    badges/banners that need contrast against both the page and the
+    white/surface elements sitting inside them) depending on which read
+    correctly against neighboring elements — picked per-case, not a blind
+    find/replace. Verified live end-to-end in both features (scenario
+    list → briefing → live conversation for Speaking; exchange list →
+    briefing → live exchange for Written Exchanges), confirming every
+    previously-white element now reads as an intentional tint, not a
+    stray white box.
+
 73. ~~**Finish the visual-identity drift sweep: remaining phantom tokens, badge colors, dead pulse CSS**~~ — **Done 2026-09-23.**
     Follow-up to item 72, closing out everything that pass had explicitly
     left for later:

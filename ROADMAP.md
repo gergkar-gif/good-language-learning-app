@@ -20,7 +20,7 @@ Completed work is archived out to `ACHIEVED.md`.
    - **Authoring Norm**: When resuming, every unit must follow the established three-pillar standard: B1 level pedagogical clarity, 100% factual accuracy (aligned with Instituto Cervantes CCSE syllabus), and *The Rest Is History* (TRIH)-style engaging, humanized narrative storytelling with companion stories in `stories/world/b1/`.
    - `scripts/validate-content.py` maintains `SKIP_STEM_MARKERS = {"es-es": "-ccse-"}` for scaffolded stubs until all units are authored.
 
-2. **Keep new features cross-referencing `design principles.md`.** The 2026-09-23 visual-identity drift sweep (`ACHIEVED.md` items 72-73) is now fully closed out, but the drift it fixed came from features shipping their own CSS without checking the doc first — a general periodic check for that would prevent the same class of drift recurring.
+2. **Keep new features cross-referencing `design principles.md`.** The 2026-09-23 visual-identity drift sweep (`ACHIEVED.md` items 72-74) is now fully closed out, but the drift it fixed came from features shipping their own CSS (and inline JS styles — item 74 found the phantom-token bug in template strings, not just `.css` files) without checking the doc first. A general periodic check for that would prevent the same class of drift recurring. Also worth a look: `--bg-card` (real token, pure white in light mode) is used the same possibly-unintended way outside Speaking/Written Exchanges — the CEFR Diagnostic (`diag-*`), Level Test (`lt-*`), and a few other spots in `components.css` — not confirmed as bugs (some genuinely want a white card), just unaudited.
 
 
 
