@@ -9,6 +9,43 @@ needs re-reading before starting new work; it's reference only.
 
 ## Completed queue items
 
+73. ~~**Finish the visual-identity drift sweep: remaining phantom tokens, badge colors, dead pulse CSS**~~ — **Done 2026-09-23.**
+    Follow-up to item 72, closing out everything that pass had explicitly
+    left for later:
+    - The `--radius-md`/`--shadow-md`/`--shadow-sm` phantom-token pattern
+      (referenced via `var(--radius-md, 6px)` etc. but never actually
+      defined in `base.css`, so it always silently fell back to an
+      invented value) is now gone project-wide, not just from the
+      Speaking/Diagnostic scope item 72 covered: `.lib-rec-btn` and
+      `.story-comprehension-block` (Library), the offline-PWA status
+      banner, `.pl-guide-banner`/`.pl-guide-room-card`/
+      `.pl-guide-features-box` (Parlour Guide onboarding, which also had
+      a real `box-shadow` on the banner — removed), and `.gg-search-input`
+      (Grammar Guide search) all now use the real `var(--radius)` token.
+      Confirmed with a project-wide grep that no `--radius-md`/
+      `--shadow-md`/`--shadow-sm` reference remains anywhere in `styles/`.
+    - `.badge-comfortable`/`.badge-challenging`'s dark-mode variants
+      (Library recommendations) used raw hex (`#81c784`/`#ffb74d`) where
+      the light-mode rule right above them already correctly used
+      `var(--success)`/`var(--accent)` — dark mode now matches.
+    - The `.sp-mic-btn` recording-pulse investigation turned out to be
+      moot: `styles/workshop.css` had **two** `@keyframes sp-pulse` blocks
+      under the same name (a box-shadow ripple at the mic button's
+      original definition, a scale/opacity pulse defined later for the
+      grading spinner). Per CSS's last-one-wins rule for duplicate
+      `@keyframes` names, the *later* block silently overrode the earlier
+      one for every element using `animation: sp-pulse`, including the
+      mic button — so the box-shadow version was dead code, never
+      actually rendered. Confirmed via `element.getAnimations()` in the
+      live page before touching anything: the mic button was already
+      animating with `transform`/`opacity` only. Deleted the dead
+      box-shadow block rather than rewrite a shadow that was never live.
+    Verified via live `getComputedStyle`/CSSOM inspection in the browser
+    (not just source review) that every fixed selector now resolves to
+    the real token, brace-balance and console/network checked clean
+    (same pre-existing unrelated content-index 404 as item 72, not
+    caused by this pass).
+
 72. ~~**Visual-identity drift sweep: Speaking, Diagnostic, Writing Exchanges, Workshop pickers**~~ — **Done 2026-09-23.**
     User's own instinct ("I feel like new features keep introducing more
     app-like looks, contradicting our 'no pills' minimalist decision") was

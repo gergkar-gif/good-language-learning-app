@@ -20,11 +20,7 @@ Completed work is archived out to `ACHIEVED.md`.
    - **Authoring Norm**: When resuming, every unit must follow the established three-pillar standard: B1 level pedagogical clarity, 100% factual accuracy (aligned with Instituto Cervantes CCSE syllabus), and *The Rest Is History* (TRIH)-style engaging, humanized narrative storytelling with companion stories in `stories/world/b1/`.
    - `scripts/validate-content.py` maintains `SKIP_STEM_MARKERS = {"es-es": "-ccse-"}` for scaffolded stubs until all units are authored.
 
-2. **Finish the visual-identity drift sweep (started 2026-09-23):** the Speaking/Diagnostic/Writing-Exchanges/Workshop-picker cleanup (see `ACHIEVED.md` item 72) fixed the clearest violations of `design principles.md` (box-shadow, off-brand hardcoded colors, true pill radii, a local `--radius-md`/`--shadow-md`/`--bg-hover` phantom-token pattern) but was scoped to `.sp-*`/`.diag-*`/`.wr-*`/`.hm-*` selectors only. Left unaddressed, found but out of scope that pass:
-   - The same `var(--radius-md, 6px/8px)` phantom-token pattern (never actually defined in `base.css`, always silently falls back) also appears outside that scope: `.lib-rec-btn`/`.story-comprehension-block` (`components.css`), the bug-report toast, `.pl-guide-banner`/`.pl-guide-room-card`/`.pl-guide-features-box` (Parlour Guide onboarding), and one spot in `layout.css`.
-   - `.badge-comfortable`/`.badge-challenging` (Library recommendations, dark mode) still use raw hex (`#81c784`/`#ffb74d`) instead of `--success`/tokens.
-   - `.sp-mic-btn`'s recording-state pulse ring (`styles/workshop.css`, `sp-pulse` keyframes) still uses `box-shadow` as a ripple technique — left alone deliberately since converting it to a shadow-free ripple (pseudo-element + scale/opacity) is a small rewrite that needs a live visual check, not a one-line token swap.
-   - A general periodic check that new features are actually cross-referencing `design principles.md` before shipping their own CSS would prevent this class of drift recurring.
+2. **Keep new features cross-referencing `design principles.md`.** The 2026-09-23 visual-identity drift sweep (`ACHIEVED.md` items 72-73) is now fully closed out, but the drift it fixed came from features shipping their own CSS without checking the doc first — a general periodic check for that would prevent the same class of drift recurring.
 
 
 

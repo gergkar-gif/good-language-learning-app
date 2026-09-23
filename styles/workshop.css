@@ -84,6 +84,29 @@
     text-decoration: underline;
 }
 
+.wk-recommend-item {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 10px;
+}
+
+/* Only the elective-track candidate (RecommendationEngine's occasional
+   CCSE/Latin-America-history nudge) pairs its button with this — a muted
+   escape hatch so the nudge stays genuinely skippable rather than sticking
+   around until acted on. */
+.wk-recommend-skip {
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 13px;
+    color: var(--text-muted);
+    cursor: pointer;
+}
+
+.wk-recommend-skip:hover {
+    text-decoration: underline;
+}
+
 /* Shared "what's next" action mounted at the end of every driller's
    results screen, and (since 2026-09-11) lessons.js's/srs.js's own
    completion summaries too — see RecommendationEngine.mountNextAction() in
@@ -1348,18 +1371,6 @@
     border-color: var(--accent-dark, #E94B16);
     background: var(--wash-accent, rgba(233, 75, 22, 0.08));
     animation: sp-pulse 1.4s infinite ease-in-out;
-}
-
-@keyframes sp-pulse {
-    0% {
-        box-shadow: 0 0 0 0 rgba(233, 75, 22, 0.4);
-    }
-    70% {
-        box-shadow: 0 0 0 14px rgba(233, 75, 22, 0);
-    }
-    100% {
-        box-shadow: 0 0 0 0 rgba(233, 75, 22, 0);
-    }
 }
 
 [data-theme="dark"] .sp-mic-btn,

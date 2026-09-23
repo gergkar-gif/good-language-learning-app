@@ -603,7 +603,7 @@
 .lib-rec-btn {
   font-size: 13px;
   padding: 6px 14px;
-  border-radius: var(--radius-md, 6px);
+  border-radius: var(--radius);
   cursor: pointer;
   font-weight: 600;
 }
@@ -615,12 +615,12 @@
 
 [data-theme="dark"] .badge-comfortable {
   background: rgba(76, 175, 80, 0.15);
-  color: #81c784;
+  color: var(--success);
 }
 
 [data-theme="dark"] .badge-challenging {
   background: rgba(255, 152, 0, 0.15);
-  color: #ffb74d;
+  color: var(--accent);
 }
 
 /* Story reading view */
@@ -1032,7 +1032,7 @@
 .story-comprehension-block {
   margin: 32px 0 24px 0;
   border: 1px solid var(--border);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius);
   padding: 18px 20px;
   background: var(--bg-surface);
 }
@@ -6329,7 +6329,7 @@
   border: 1px solid var(--border, #ccc);
   border-left: 4px solid var(--accent, #e65100);
   padding: 10px 16px;
-  border-radius: var(--radius-md, 6px);
+  border-radius: var(--radius);
   font-size: 0.85rem;
   font-weight: 500;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
@@ -7041,8 +7041,7 @@
   background: var(--surface);
   border: 1px solid var(--border);
   border-left: 4px solid var(--accent);
-  border-radius: var(--radius-md, 8px);
-  box-shadow: var(--shadow-sm, 0 1px 3px rgba(0, 0, 0, 0.05));
+  border-radius: var(--radius);
   animation: plGuideFadeIn 0.25s ease-out;
 }
 
@@ -7183,7 +7182,7 @@
 .pl-guide-room-card {
   background: var(--bg);
   border: 1px solid var(--border);
-  border-radius: var(--radius-md, 8px);
+  border-radius: var(--radius);
   padding: 14px 16px;
 }
 
@@ -7215,7 +7214,7 @@
 .pl-guide-features-box {
   background: var(--bg);
   border: 1px solid var(--border);
-  border-radius: var(--radius-md, 8px);
+  border-radius: var(--radius);
   padding: 16px 18px;
 }
 
