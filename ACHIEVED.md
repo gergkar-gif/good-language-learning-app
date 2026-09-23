@@ -9,6 +9,39 @@ needs re-reading before starting new work; it's reference only.
 
 ## Completed queue items
 
+70. ~~**SRS "weakest words" recommendation, and grammar demoted off the unit-nudge primary slot**~~ — **Done 2026-09-23.**
+    Two follow-ups to the recommendation engine work above (items 68-69),
+    both in `engine/recommendationEngine.js`:
+    - **SRS weakest-words candidate**: `engine/studyPlan.js`'s Time-Based
+      Sessions already offer "these are your weakest words, practice them"
+      via an SM-2-ease-ranked review or Match Game slot — the ordinary
+      Home/Workshop recommendations had no equivalent. Added
+      `_srsCandidate()` (sources `LearnerModel.weakWords()`, picks `match`
+      when there are >=4 pairs and `DeckMatch` is loaded, else `review` —
+      same floor `studyPlan.js` uses) and `_openSrs()` (mirrors
+      `studyPlanRunner.js`'s own dispatch: `showTab('review')` +
+      `Decks.reviewDeck()` for a review, or `DeckMatch.render()` straight
+      into the deck browser's own container for a match). Wired into both
+      the secondary tier (`recommend()`) and the mini-game pool
+      (`_miniGameNudge()`), and into `secondaryLabel()`/`openSecondary()`.
+      Unlike the Vocabulary Driller candidate (B1+ only), this works at any
+      level since it reads the SRS deck directly rather than inferring
+      meaning from sentence context.
+    - **Grammar demoted off the forced-primary unit-nudge slot**: the
+      post-unit "practice nudge" used to fall back to a grammar recap of the
+      unit whenever no conversation scenario matched, giving grammar a
+      forced-primary precedence no other driller got. `_practiceNudge()` is
+      now scenario-only (returns `null` otherwise); a unit's grammar recap
+      now only surfaces via the ordinary `_miniGameNudge()` candidate pool
+      (Candidate 1, "Targeted Grammar"), competing on priority like every
+      other candidate. Removed the now-dead non-scenario branch of
+      `engine/home.js`'s `practiceNudgeCard()` and its
+      `[data-practice-unit]` click handler, both orphaned by this change.
+    Verified with the existing `test-scenario-learner-path.js`,
+    `test-challenge-tier.js`, and `test-onboarding-guide.js` suites (all
+    still pass) plus an ad hoc smoke script covering the new SRS candidate's
+    match/review selection and routing.
+
 69. ~~**Vocabulary Driller gated to B1+**~~ — **Done 2026-09-23.**
     The Vocabulary Driller's exercises all infer a word's meaning from a real
     sentence context (`PARLOUR_VOCABULARY_DRILLER_SPEC.md`); below B1 the

@@ -12,10 +12,17 @@
 // Re-ranking Home's hierarchy with LearnerModel evidence is explicitly a
 // later, separate roadmap step (step 4, "Simplify Home experience
 // hierarchy," which the roadmap itself lists as blocked by this one) — not
-// this step's job.
+// this step's job. The post-unit practice nudge is scenario-only (a
+// matching conversation roleplay) — a plain grammar recap of the unit used
+// to force this same forced-primary slot too, but that gave grammar an
+// outsized precedence no other driller got; it now competes as an ordinary
+// _miniGameNudge() candidate like everything else (2026-09-23).
 //
 // `secondary` is a flat list of driller-launchable candidates: grammar
-// (weak/recent skill), vocabulary (weak words) — both absorbed from
+// (weak/recent skill), vocabulary (weak words, B1+ only — see
+// _vocabularyAvailable()), the SRS "weakest words" review/match (same
+// ease-ranked signal engine/studyPlan.js's Time-Based Sessions already use
+// for their own review/match slots) — all absorbed from
 // engine/recommend.js's old recommend(), which owned this decision before
 // this module existed — and a generic `driller` candidate for any of the
 // seven drillers engine/drillHistory.js tracks (Verb Speed, Translation,
@@ -88,6 +95,49 @@ const RecommendationEngine = (function () {
         return LEVEL_ORDER.indexOf(LearnerPath.currentLevel()) >= LEVEL_ORDER.indexOf('B1');
     }
 
+    // "These are your weakest words" — the same SM-2-ease-ranked signal
+    // engine/studyPlan.js's Time-Based Sessions already use for their own
+    // review/match slots (its `build()` step 1 and step 5), surfaced here
+    // too so the ordinary Home/Workshop recommendations offer the same
+    // thing, not just a timed session. Unlike the Vocabulary Driller
+    // secondary candidate (context-inference, B1+ only), this reads
+    // straight off the SRS deck and works at any level. Match needs >=4
+    // pairs to be a real game (studyPlan.js's own floor); below that, or
+    // without DeckMatch loaded, falls back to a plain SRS review.
+    function _srsCandidate() {
+        if (typeof LearnerModel === 'undefined' || !LearnerModel.weakWords) return null;
+        const words = LearnerModel.weakWords(10);
+        if (!words.length) return null;
+        const action = (words.length >= 4 && typeof DeckMatch !== 'undefined') ? 'match' : 'review';
+        return { kind: 'srs', words, action, reason: 'weak' };
+    }
+
+    // Shared landing for the SRS candidate, whichever tier suggested it —
+    // mirrors engine/studyPlanRunner.js's own dispatch for its 'match'/
+    // 'review' plan items: goTab('review') + Decks.reviewDeck() for a plain
+    // review, or DeckMatch.render() straight into the deck browser's own
+    // container for a match (same container Decks itself swaps content
+    // into for its own match mode — see engine/decks.js's studyMode
+    // branch), with onExit handing the container back to Decks.render().
+    function _openSrs(candidate) {
+        if (typeof showTab === 'function') {
+            showTab('review', document.querySelector('.nav button[data-tab="review"]'));
+        }
+        if (candidate.action === 'match' && typeof DeckMatch !== 'undefined') {
+            const host = document.getElementById('decks-root');
+            if (host) {
+                DeckMatch.render(host, {
+                    words: candidate.words,
+                    deckId: 'weakest-words',
+                    exitLabel: 'Back to Decks',
+                    onExit: () => { if (typeof Decks !== 'undefined') Decks.render(); }
+                });
+            }
+        } else if (typeof Decks !== 'undefined' && Decks.reviewDeck) {
+            Decks.reviewDeck('all', { limit: candidate.words.length });
+        }
+    }
+
     function humanizeSkill(id) {
         const key = String(id || '');
         const path = (typeof Lang !== 'undefined') ? Lang.content('indexes/grammar-titles.json') : null;
@@ -102,6 +152,9 @@ const RecommendationEngine = (function () {
     function secondaryLabel(candidate) {
         if (candidate.kind === 'grammar') return `Grammar: ${humanizeSkill(candidate.skill)}`;
         if (candidate.kind === 'vocabulary') return `Vocabulary (${candidate.words.length})`;
+        if (candidate.kind === 'srs') return candidate.action === 'match'
+            ? `Word Match (${candidate.words.length})`
+            : `Review Weakest Words (${candidate.words.length})`;
         if (candidate.kind === 'speaking') return candidate.skill ? `Speaking: ${humanizeSkill(candidate.skill)}` : 'Speaking Practice';
         if (candidate.kind === 'writing') return candidate.title || 'Writing Studio';
         if (candidate.kind === 'driller') return candidate.title;
@@ -111,7 +164,9 @@ const RecommendationEngine = (function () {
     // Launches a `secondary` candidate — same shared surface as above, so
     // both callers route identically.
     function openSecondary(candidate) {
-        if (!candidate || typeof Workshop === 'undefined') return;
+        if (!candidate) return;
+        if (candidate.kind === 'srs') { _openSrs(candidate); return; }
+        if (typeof Workshop === 'undefined') return;
         if (candidate.kind === 'grammar') Workshop.open('grammar', { skill: candidate.skill });
         else if (candidate.kind === 'vocabulary') Workshop.open('vocabulary', { words: candidate.words });
         else if (candidate.kind === 'speaking') Workshop.open('speaking', { skill: candidate.skill, autoStart: true });
@@ -214,7 +269,13 @@ const RecommendationEngine = (function () {
 
     // Home's post-unit practice beat: the last lesson completed was the
     // last lesson in its unit, that unit hasn't already been resolved, and
-    // there's an actual grammar skill or scenario to point at.
+    // a matching conversation scenario exists to point at. Only a scenario
+    // earns this forced-primary slot — it's a genuinely different,
+    // communicative capstone a learner wouldn't otherwise be steered
+    // toward. A plain grammar recap of the unit used to fall back to here
+    // too, but that gave grammar special precedence no other driller got;
+    // it now just competes as an ordinary _miniGameNudge() candidate
+    // (Candidate 1, "Targeted Grammar") via its own "recent" fallback.
     async function _practiceNudge() {
         const lessonId = LearnerPath.lastCompletedLessonId();
         if (!lessonId) return null;
@@ -230,14 +291,9 @@ const RecommendationEngine = (function () {
         if (dismissedUnits().includes(unit.id)) return null;
 
         const scenario = await _scenarioForUnit(unit.id);
-        if (scenario) {
-            return { levelKey, unit, scenario, kind: 'scenario' };
-        }
+        if (!scenario) return null;
 
-        const skill = await Recommend.unitSkillFor(unit);
-        if (!skill) return null;
-
-        return { levelKey, unit, skill, kind: 'grammar' };
+        return { levelKey, unit, scenario, kind: 'scenario' };
     }
 
     // Home's per-lesson counterpart: a quick mini-game challenge offered
@@ -331,6 +387,25 @@ const RecommendationEngine = (function () {
                 reason: isWeak ? 'weak' : 'fresh',
                 priority: isWeak ? 95 : 45,
                 options: { words: chosenWords, autoStart: true }
+            });
+        }
+
+        // Candidate 2b: SRS Weakest Words — same ease-ranked signal
+        // engine/studyPlan.js's Time-Based Sessions use for their own
+        // review/match slots, surfaced here as an ordinary mini-game
+        // candidate too (see _srsCandidate()/_openSrs() above).
+        const srsMini = _srsCandidate();
+        if (srsMini) {
+            candidates.push({
+                drillerId: 'srs',
+                title: srsMini.action === 'match' ? 'Word Match' : 'Weakest Words Review',
+                buttonLabel: srsMini.action === 'match'
+                    ? `Match Game (${srsMini.words.length} words)`
+                    : `Review (${srsMini.words.length} words)`,
+                blurb: "These are your weakest words in spaced review — a quick pass keeps them from fading.",
+                reason: 'weak',
+                priority: 93,
+                options: srsMini
             });
         }
 
@@ -534,6 +609,8 @@ const RecommendationEngine = (function () {
         const secondary = [];
         if (gv && gv.skill) secondary.push({ kind: 'grammar', skill: gv.skill, reason: gv.skillReason });
         if (gv && gv.words.length) secondary.push({ kind: 'vocabulary', words: gv.words, reason: gv.wordsReason });
+        const srsSecondary = _srsCandidate();
+        if (srsSecondary) secondary.push(srsSecondary);
         if (typeof LearnerModel !== 'undefined' && LearnerModel.weakProductionSkills) {
             const weakProd = await LearnerModel.weakProductionSkills(1);
             if (weakProd && weakProd.length > 0) {
@@ -572,15 +649,9 @@ const RecommendationEngine = (function () {
                 sub = 'Continue your course';
             }
         } else if (primary.kind === 'unit-nudge') {
-            if (primary.scenario) {
-                title = `Oral Roleplay: ${primary.scenario.title}`;
-                cta = `Start roleplay: ${primary.scenario.title}`;
-                sub = `Put "${primary.unit.title || 'that unit'}" into conversation`;
-            } else {
-                title = `Practise: ${humanizeSkill(primary.skill)}`;
-                cta = title;
-                sub = `A quick round on what "${primary.unit.title || 'that unit'}" just taught`;
-            }
+            title = `Oral Roleplay: ${primary.scenario.title}`;
+            cta = `Start roleplay: ${primary.scenario.title}`;
+            sub = `Put "${primary.unit.title || 'that unit'}" into conversation`;
         } else if (primary.kind === 'mini-game') {
             title = primary.challengeTitle || (primary.skill ? `Grammar: ${humanizeSkill(primary.skill)}` : 'Quick Challenge');
             cta = primary.buttonLabel || title;
@@ -617,15 +688,13 @@ const RecommendationEngine = (function () {
         } else if (primary.kind === 'unit-nudge') {
             dismissUnit(primary.unit.id);
             if (typeof Workshop !== 'undefined') {
-                if (primary.scenario) {
-                    Workshop.open('speaking', { scenarioId: primary.scenario.id, returnTab: 'home' });
-                } else {
-                    Workshop.open('grammar', { skill: primary.skill, autoStart: true });
-                }
+                Workshop.open('speaking', { scenarioId: primary.scenario.id, returnTab: 'home' });
             }
         } else if (primary.kind === 'mini-game') {
             dismissMiniGame(primary.lessonId);
-            if (typeof Workshop !== 'undefined') {
+            if (primary.drillerId === 'srs') {
+                _openSrs(primary.options);
+            } else if (typeof Workshop !== 'undefined') {
                 Workshop.open(primary.drillerId, primary.options);
             }
         }

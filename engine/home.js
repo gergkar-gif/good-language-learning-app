@@ -156,31 +156,19 @@ const Home = (function () {
     // detour here is worth more than the default "keep going." Two real
     // actions rather than one whole-row click (unlike continueCard's
     // button), since "practise" and "not now" aren't the same weight.
+    // RecommendationEngine's unit-nudge is scenario-only now (2026-09-23) —
+    // a plain grammar recap of the unit competes as an ordinary mini-game
+    // candidate instead, so this card no longer has a non-scenario branch.
     function practiceNudgeCard(nudge) {
         const title = nudge.unit.title || 'that unit';
-        if (nudge.scenario) {
-            return `
-                <section class="hm-continue hm-nudge">
-                    <span class="hm-eyebrow">${esc(nudge.levelKey)} · Unit Milestone</span>
-                    <span class="hm-continue-title">Put it into conversation</span>
-                    <span class="hm-continue-sub">Complete the oral roleplay "${esc(nudge.scenario.title)}" to put what "${esc(title)}" taught into active practice.</span>
-                    <span class="hm-continue-foot">
-                        <button class="hm-cta-btn" data-practice-scenario="${esc(nudge.scenario.id)}"
-                            data-unit-id="${esc(nudge.unit.id)}">Start roleplay →</button>
-                        <button class="dk-link-btn" data-skip-unit="${esc(nudge.unit.id)}">Not now</button>
-                    </span>
-                </section>
-            `;
-        }
         return `
             <section class="hm-continue hm-nudge">
-                <span class="hm-eyebrow">${esc(nudge.levelKey)} · Unit complete</span>
-                <span class="hm-continue-title">Practise before moving on?</span>
-                <span class="hm-continue-sub">A quick round on what "${esc(title)}" just taught,
-                    while it's still fresh.</span>
+                <span class="hm-eyebrow">${esc(nudge.levelKey)} · Unit Milestone</span>
+                <span class="hm-continue-title">Put it into conversation</span>
+                <span class="hm-continue-sub">Complete the oral roleplay "${esc(nudge.scenario.title)}" to put what "${esc(title)}" taught into active practice.</span>
                 <span class="hm-continue-foot">
-                    <button class="hm-cta-btn" data-practice-unit="${esc(nudge.unit.id)}"
-                        data-skill="${esc(nudge.skill)}">Practise now →</button>
+                    <button class="hm-cta-btn" data-practice-scenario="${esc(nudge.scenario.id)}"
+                        data-unit-id="${esc(nudge.unit.id)}">Start roleplay →</button>
                     <button class="dk-link-btn" data-skip-unit="${esc(nudge.unit.id)}">Not now</button>
                 </span>
             </section>
@@ -404,16 +392,6 @@ const Home = (function () {
                     } else {
                         goTab('lessons');
                     }
-                }
-                return;
-            }
-
-            const practise = e.target.closest('[data-practice-unit]');
-            if (practise) {
-                dismissUnit(practise.getAttribute('data-practice-unit'));
-                goTab('drills');
-                if (typeof Workshop !== 'undefined') {
-                    Workshop.open('grammar', { skill: practise.getAttribute('data-skill') });
                 }
                 return;
             }
