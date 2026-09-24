@@ -89,6 +89,9 @@ function markLevelComplete(levelKey) {
     if (newlyCompleted.length) {
         saveProgress(progress);
         if (typeof renderCurriculum === 'function') renderCurriculum();
+        if (typeof creditTestedOutWords === 'function') {
+            creditTestedOutWords(newlyCompleted).catch(e => console.warn('Could not credit tested-out words:', e));
+        }
     }
 
     return newlyCompleted;

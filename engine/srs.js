@@ -91,6 +91,41 @@ function addKnownWord(spanish, english, type, source) {
     return true;
 }
 
+// A learner who tests out of a level (placement or level test) never met its
+// lessons, so none of their words reached the deck — and the Reader, "% familiar"
+// and "Within reach" then treat every A1 word as unknown to someone placed into
+// A2. Credit the words those lessons teach as known instead — read from each
+// lesson's own vocabulary, the same list its "Add to Review" step offers, so
+// the forms and translations match what finishing it would have stored
+// (source 'level-test', so they can be told apart; My Dictionary can send any
+// back to review). Words already in the deck or known are left alone.
+async function creditTestedOutWords(lessonIds) {
+    if (!(lessonIds && lessonIds.length) || typeof loadLesson !== 'function') return 0;
+    const course = Lang.code();
+    const vocab = await Promise.all(lessonIds.map(async id => {
+        const lesson = await loadLesson(id).catch(() => null);
+        return lesson ? collectLessonVocabulary(lesson).catch(() => []) : [];
+    }));
+    if (Lang.code() !== course) return 0; // course switched mid-fetch
+
+    const inDeck = new Set(srsDeck.map(card => card.spanish));
+    const added = new Date().toISOString();
+    let count = 0;
+    vocab.flat().forEach(word => {
+        if (!word.lemma || inDeck.has(word.lemma) || isKnown(word.lemma)) return;
+        knownWords.push({
+            spanish: word.lemma,
+            english: word.translation || 'unknown',
+            type: word.pos || 'unknown',
+            source: 'level-test',
+            added
+        });
+        count++;
+    });
+    if (count) saveKnownWords();
+    return count;
+}
+
 // The undo, from My Dictionary: back into review as a fresh card rather than
 // restoring whatever schedule it had before — a word retired long enough ago
 // to need pulling back deserves to start over, not resume mid-interval.

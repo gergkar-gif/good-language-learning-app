@@ -576,7 +576,9 @@ async function startLesson(lessonId) {
             }
         }
 
-        renderStep();
+        const resume = loadLessonResume(lessonId);
+        if (resume) renderLessonResumePrompt(resume);
+        else renderStep();
     } catch (err) {
         console.error('Failed to start lesson:', lessonId, err);
         if (typeof UI !== 'undefined' && UI.toast) UI.toast('Could not load lesson. Please try again.', 'error');
@@ -584,6 +586,82 @@ async function startLesson(lessonId) {
     } finally {
         if (typeof UI !== 'undefined') UI.hideLoading();
     }
+}
+
+// A lesson left halfway (phone locked, tab switched, nav used) can be
+// picked up where it stopped. One slot per course: the built step list is
+// saved along with the position, because buildSteps() recycles and shuffles
+// and wouldn't rebuild the same lesson twice. Saved on every step render,
+// cleared when the lesson finishes. Stale after two weeks.
+const LESSON_RESUME_MAX_AGE_MS = 14 * 24 * 60 * 60 * 1000;
+
+function lessonResumeKey() {
+    return Lang.key('lessonInProgress');
+}
+
+function saveLessonResume() {
+    // Nothing to resume at step 1 — and saving there would overwrite a
+    // different lesson's slot just because this one was opened for a look.
+    if (!currentLesson || currentStepIndex === 0) return;
+    try {
+        localStorage.setItem(lessonResumeKey(), JSON.stringify({
+            lessonId: currentLesson.id,
+            steps: currentLesson.steps,
+            currentStepIndex,
+            originalStepCount,
+            missedSteps,
+            lessonStats,
+            gradedStepIndices: [...gradedStepIndices],
+            elapsedMs: lessonStartTime ? Date.now() - lessonStartTime : 0,
+            savedAt: Date.now()
+        }));
+    } catch (e) { /* quota or private mode — resuming is a convenience */ }
+}
+
+function loadLessonResume(lessonId) {
+    try {
+        const saved = JSON.parse(localStorage.getItem(lessonResumeKey()) || 'null');
+        if (!saved || saved.lessonId !== lessonId || !Array.isArray(saved.steps)) return null;
+        if (!(saved.currentStepIndex > 0) || saved.currentStepIndex >= saved.steps.length) return null;
+        if (Date.now() - saved.savedAt > LESSON_RESUME_MAX_AGE_MS) return null;
+        return saved;
+    } catch (e) {
+        return null;
+    }
+}
+
+function clearLessonResume() {
+    try { localStorage.removeItem(lessonResumeKey()); } catch (e) {}
+}
+
+function renderLessonResumePrompt(saved) {
+    const footer = document.querySelector('#lesson-screen .lesson-footer');
+    if (footer) footer.style.display = 'none';
+    const container = document.getElementById('lesson-content');
+    container.innerHTML = `
+        <h3 class="lsn-title">Pick up where you left off?</h3>
+        <p>You stopped at step ${Math.min(saved.currentStepIndex, saved.originalStepCount - 1) + 1} of ${saved.originalStepCount}.</p>
+        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:16px;">
+            <button type="button" class="btn-primary" data-lesson-resume="continue">Continue</button>
+            <button type="button" class="btn-secondary" data-lesson-resume="restart">Start over</button>
+        </div>`;
+    container.querySelectorAll('[data-lesson-resume]').forEach(btn => {
+        btn.addEventListener('click', () => {
+            if (footer) footer.style.display = '';
+            if (btn.getAttribute('data-lesson-resume') === 'continue') {
+                currentLesson.steps = saved.steps;
+                currentStepIndex = saved.currentStepIndex;
+                originalStepCount = saved.originalStepCount;
+                missedSteps = saved.missedSteps || [];
+                lessonStats = saved.lessonStats || { total: 0, correctFirstTry: 0 };
+                gradedStepIndices = new Set(saved.gradedStepIndices || []);
+                lessonStartTime = Date.now() - (saved.elapsedMs || 0);
+            } else {
+                clearLessonResume();
+            }
+            renderStep();
+        });
+    });
 }
 
 // Pure state reset — no DOM/tab navigation — so it's safe to call from
@@ -1914,6 +1992,7 @@ function renderStep() {
     const step = currentLesson.steps[currentStepIndex];
     const container = document.getElementById('lesson-content');
 
+    saveLessonResume();
     _wireLessonEnterToCheck();
     stepState = { sourceStep: step };
 
@@ -2038,6 +2117,7 @@ async function finishLesson() {
     if (typeof ParlourTTS !== 'undefined') {
         ParlourTTS.stop();
     }
+    clearLessonResume();
     // Fixed reward: a long lesson isn't worth more than a short one, and
     // scaling by step count rewarded lesson length rather than learning.
     const firstTime = typeof markLessonComplete === 'function'
