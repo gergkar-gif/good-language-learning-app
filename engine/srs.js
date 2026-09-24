@@ -665,7 +665,10 @@ function renderReviewSessionSummary() {
         ? (getStreak() > 0 ? `${getStreak()}-day streak` : 'No streak yet')
         : '';
 
-    const missedCount = s.missed.length;
+    // Inside a timed session the next step is the session's own "Next"
+    // button — practising missed words would leave the session for Workshop.
+    const inTimedSession = typeof StudyPlan !== 'undefined' && StudyPlan.isActive();
+    const missedCount = inTimedSession ? 0 : s.missed.length;
 
     summaryEl.innerHTML = `
         <p class="review-summary-eyebrow">Session complete</p>
