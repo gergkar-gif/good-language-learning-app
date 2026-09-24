@@ -182,13 +182,13 @@ const Home = (function () {
     }
 
     function miniGameCard(mini) {
-        const blurb = mini.blurb || "Reinforce what you just learned, while it's still fresh.";
-        const title = mini.challengeTitle || 'Play a mini-game?';
-        const primaryLabel = mini.buttonLabel || (mini.skill ? `Grammar (${QUICK_REINFORCE_COUNT} questions)` : 'Quick challenge');
+        const blurb = [mini.blurb || 'Your last lesson is worth a second look.', mini.invite || 'Practice it here:'].join(' ');
+        const title = mini.challengeTitle || 'Practice';
+        const primaryLabel = mini.buttonLabel || (mini.skill ? 'Grammar practice' : 'Practice');
 
         return `
             <section class="hm-continue hm-nudge">
-                <span class="hm-eyebrow">Quick challenge</span>
+                <span class="hm-eyebrow">Practice</span>
                 <span class="hm-continue-title">${esc(title)}</span>
                 <span class="hm-continue-sub">${esc(blurb)}</span>
                 <span class="hm-continue-foot">

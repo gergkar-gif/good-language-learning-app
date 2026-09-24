@@ -9,6 +9,29 @@ needs re-reading before starting new work; it's reference only.
 
 ## Completed queue items
 
+88. ~~**Practice suggestions lose their item counts and game names**~~ — **Done 2026-09-24.**
+    Buttons like "Grammar: Cambio Radical Reflexivos (5 questions)",
+    "Match Game (10 words)", "Audio Decode", "Suffix Sprint" and "Fast
+    Translation" read like a quota and a game. Every practice suggestion
+    now names the activity plainly and gives the reason in one sentence.
+    The pattern: *"You made a few mistakes with stem-changing reflexives
+    lately. Practice it here:"* followed by a **Grammar practice**
+    button.
+    - `engine/recommendationEngine.js` `_miniGameNudge()`: each candidate
+      has a plain `title`, a `buttonLabel` with no count ("Listening
+      practice", "Sentence translation", "Suffix practice", "Word
+      matching", "Conjugation practice, timed"), a `blurb` that states
+      the reason, and a new `invite` field ("Practice it/them here:").
+      `secondaryLabel()` lost its counts too.
+    - `engine/home.js` `miniGameCard()`: the eyebrow "Quick challenge"
+      became "Practice", and the card shows `blurb` + `invite` before the
+      buttons. Workshop's "What's next?" card shows `blurb` alone.
+    - `engine/lessons.js` end-of-lesson buttons: "Grammar practice",
+      "Vocabulary practice", "Word matching", "Listening practice",
+      "Speaking practice". The session lengths themselves haven't changed.
+    - Follow-up: skill names in these sentences are often raw IDs
+      (ROADMAP.md active item 6).
+
 87. ~~**New-learner introduction replaced: a quiet first screen, margin notes and end-of-lesson invitations**~~ — **Done 2026-09-24.** (Was ROADMAP.md active item 3.)
     The old system (item 56: Home welcome card, a banner on the first
     visit to each room) felt heavy. It explained rooms up front, with

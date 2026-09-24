@@ -2298,27 +2298,27 @@ function summaryReinforceHtml(grammarSkill, words, level) {
                         Practice in Workshop →
                     </button>
                     <button class="dk-secondary" data-reinforce-grammar="${esc(grammarSkill)}">
-                        Quick Grammar (${QUICK_REINFORCE_COUNT} questions)
+                        Grammar practice
                     </button>
                 ` : ''}
                 ${words.length && _vocabDrillerAvailable() ? `
                     <button class="dk-secondary" data-reinforce-vocab="1">
-                        Vocabulary (${words.length} ${words.length === 1 ? 'word' : 'words'})
+                        Vocabulary practice
                     </button>
                 ` : ''}
                 ${words.length >= 4 && typeof DeckMatch !== 'undefined' ? `
-                    <button class="dk-secondary" data-reinforce-match="1" title="Timed matching game with lesson vocabulary">
-                        Match Game (${Math.min(words.length, 12)} pairs)
+                    <button class="dk-secondary" data-reinforce-match="1" title="Match this lesson's words to their meanings, timed">
+                        Word matching
                     </button>
                 ` : ''}
                 ${hasVoice ? `
                     <button class="dk-secondary" data-reinforce-listening="1" title="Practice listening to spoken sentences">
-                        Listening (${QUICK_REINFORCE_COUNT} questions)
+                        Listening practice
                     </button>
                 ` : ''}
                 ${hasSpeechInput ? `
                     <button class="dk-secondary" data-reinforce-speaking="1" title="Speak sentences out loud">
-                        Speaking (${QUICK_REINFORCE_COUNT} sentences)
+                        Speaking practice
                     </button>
                 ` : ''}
             </div>

@@ -185,10 +185,8 @@ const RecommendationEngine = (function () {
     // surfaces can't drift on how a candidate reads.
     function secondaryLabel(candidate) {
         if (candidate.kind === 'grammar') return `Grammar: ${humanizeSkill(candidate.skill)}`;
-        if (candidate.kind === 'vocabulary') return `Vocabulary (${candidate.words.length})`;
-        if (candidate.kind === 'srs') return candidate.action === 'match'
-            ? `Word Match (${candidate.words.length})`
-            : `Review Weakest Words (${candidate.words.length})`;
+        if (candidate.kind === 'vocabulary') return 'Vocabulary practice';
+        if (candidate.kind === 'srs') return candidate.action === 'match' ? 'Word matching' : 'Word review';
         if (candidate.kind === 'speaking') return candidate.skill ? `Speaking: ${humanizeSkill(candidate.skill)}` : 'Speaking Practice';
         if (candidate.kind === 'writing') return candidate.title || 'Writing Studio';
         if (candidate.kind === 'driller') return candidate.title;
@@ -420,24 +418,32 @@ const RecommendationEngine = (function () {
             });
         }
 
-        // Candidate 1: Targeted Grammar
+        // Labels name the activity plainly — no item counts, no "sprint"/
+        // "challenge" framing. `blurb` says why it's offered (a statement
+        // that also stands alone on Workshop's "What's next?" card);
+        // `invite` is the lead-in Home's card puts before the button.
+        const weakBlurb = topic => `You made a few mistakes with ${topic} lately.`;
+
+        // Candidate 1: Grammar
         const effectiveSkill = topWeakSkill || recentSkill;
         if (effectiveSkill) {
             const isWeak = !!topWeakSkill;
+            const skillName = humanizeSkill(effectiveSkill);
             candidates.push({
                 drillerId: 'grammar',
-                title: 'Targeted Grammar',
-                buttonLabel: `Grammar: ${humanizeSkill(effectiveSkill)} (5 questions)`,
+                title: 'Grammar',
+                buttonLabel: 'Grammar practice',
                 blurb: isWeak
-                    ? "You've been shaky on this grammar concept — a quick pass will lock it in."
-                    : "Reinforce the grammar you just learned, while it's fresh.",
+                    ? weakBlurb(skillName)
+                    : `Your last lesson covered ${skillName}.`,
+                invite: 'Practice it here:',
                 reason: isWeak ? 'weak' : 'fresh',
                 priority: isWeak ? 100 : 50,
                 options: { skill: effectiveSkill, count: 5, autoStart: true }
             });
         }
 
-        // Candidate 2: Vocabulary Recall
+        // Candidate 2: Vocabulary
         const effectiveWords = (weakWordsList.length >= 3)
             ? weakWordsList.map(w => ({ lemma: w.lemma, translation: w.translation, pos: w.pos }))
             : recentWords;
@@ -446,11 +452,12 @@ const RecommendationEngine = (function () {
             const chosenWords = effectiveWords.slice(0, 6);
             candidates.push({
                 drillerId: 'vocabulary',
-                title: isWeak ? 'Tricky Words' : 'Vocabulary Recall',
-                buttonLabel: `Vocabulary (${chosenWords.length} words)`,
+                title: 'Vocabulary',
+                buttonLabel: 'Vocabulary practice',
                 blurb: isWeak
-                    ? "A few words need a quick refresh before they fade."
-                    : "Test your recall of newly introduced words.",
+                    ? weakBlurb('some recent words')
+                    : 'Your last lesson introduced new words.',
+                invite: 'Practice them here:',
                 reason: isWeak ? 'weak' : 'fresh',
                 priority: isWeak ? 95 : 45,
                 options: { words: chosenWords, autoStart: true }
@@ -465,53 +472,61 @@ const RecommendationEngine = (function () {
         if (srsMini) {
             candidates.push({
                 drillerId: 'srs',
-                title: srsMini.action === 'match' ? 'Word Match' : 'Weakest Words Review',
-                buttonLabel: srsMini.action === 'match'
-                    ? `Match Game (${srsMini.words.length} words)`
-                    : `Review (${srsMini.words.length} words)`,
-                blurb: "These are your weakest words in spaced review — a quick pass keeps them from fading.",
+                title: 'Word review',
+                buttonLabel: srsMini.action === 'match' ? 'Word matching' : 'Word review',
+                blurb: 'These are the words you find hardest in review.',
+                invite: 'Practice them here:',
                 reason: 'weak',
                 priority: 93,
                 options: srsMini
             });
         }
 
-        // Candidate 3: Spanish Verb Speed Sprint (60s)
+        // Candidate 3: Spanish verb conjugation, timed (60s)
         if (lang.startsWith('es') && completedCount >= 3) {
             const isWeak = weakDrillerIds.has('verbs');
             candidates.push({
                 drillerId: 'verbs',
-                title: 'Verb Speed Sprint',
-                buttonLabel: 'Verb Speed Sprint (60s)',
-                blurb: "A fast-paced 60-second sprint to sharpen your conjugation reflex.",
+                title: 'Verb conjugation',
+                buttonLabel: 'Conjugation practice, timed',
+                blurb: isWeak
+                    ? weakBlurb('verb conjugation')
+                    : 'Conjugating verbs quickly, against the clock.',
+                invite: 'Practice it here:',
                 reason: isWeak ? 'weak' : 'variety',
                 priority: isWeak ? 90 : 42,
                 options: { mode: 'speed', autoStart: true, duration: 60 }
             });
         }
 
-        // Candidate 4: Hungarian Suffix Sprint
+        // Candidate 4: Hungarian suffixes
         if (lang === 'hu' && (completedCount >= 15 || LearnerPath.isComplete('lesson.a1.22'))) {
             const isWeak = weakDrillerIds.has('hu-suffix');
             candidates.push({
                 drillerId: 'hu-suffix',
-                title: 'Suffix Sprint',
-                buttonLabel: 'Suffix Sprint (5 questions)',
-                blurb: "Practice plurals, possession, and case endings with quick feedback.",
+                title: 'Suffixes',
+                buttonLabel: 'Suffix practice',
+                blurb: isWeak
+                    ? weakBlurb('suffixes')
+                    : 'Plurals, possession and case endings.',
+                invite: 'Practice them here:',
                 reason: isWeak ? 'weak' : 'variety',
                 priority: isWeak ? 90 : 42,
                 options: { autoStart: true, count: 5 }
             });
         }
 
-        // Candidate 5: Hungarian Prefix Sprint
+        // Candidate 5: Hungarian verbal prefixes
         if (lang === 'hu' && (currentLevel !== 'A1' || LearnerPath.isComplete('lesson.a2.01'))) {
             const isWeak = weakDrillerIds.has('hu-prefix');
             candidates.push({
                 drillerId: 'hu-prefix',
-                title: 'Prefix Sprint',
-                buttonLabel: 'Prefix Sprint (5 questions)',
-                blurb: "Master verbal prefixes and directional shifts in 5 quick questions.",
+                title: 'Verbal prefixes',
+                buttonLabel: 'Prefix practice',
+                blurb: isWeak
+                    ? weakBlurb('verbal prefixes')
+                    : 'Verbal prefixes and how they change a verb’s meaning.',
+                invite: 'Practice them here:',
                 reason: isWeak ? 'weak' : 'variety',
                 priority: isWeak ? 90 : 40,
                 options: { autoStart: true, count: 5 }
@@ -523,9 +538,12 @@ const RecommendationEngine = (function () {
             const isWeak = weakDrillerIds.has('hu-verb');
             candidates.push({
                 drillerId: 'hu-verb',
-                title: 'Hungarian Verbs',
-                buttonLabel: 'Verb Forms (5 questions)',
-                blurb: "Test definite and indefinite conjugations across Hungarian stems.",
+                title: 'Verb conjugation',
+                buttonLabel: 'Conjugation practice',
+                blurb: isWeak
+                    ? weakBlurb('verb conjugation')
+                    : 'Definite and indefinite conjugation across verb types.',
+                invite: 'Practice it here:',
                 reason: isWeak ? 'weak' : 'variety',
                 priority: isWeak ? 90 : 38,
                 options: { autoStart: true, count: 5 }
@@ -537,38 +555,48 @@ const RecommendationEngine = (function () {
             const isWeak = weakDrillerIds.has('hu-morphology');
             candidates.push({
                 drillerId: 'hu-morphology',
-                title: 'Morphology Puzzle',
-                buttonLabel: 'Morphology (5 questions)',
-                blurb: "Deconstruct complex agglutinative words into root and affixes.",
+                title: 'Word structure',
+                buttonLabel: 'Word structure practice',
+                blurb: isWeak
+                    ? weakBlurb('word structure')
+                    : 'Breaking longer words into root and suffixes.',
+                invite: 'Practice it here:',
                 reason: isWeak ? 'weak' : 'variety',
                 priority: isWeak ? 90 : 36,
                 options: { autoStart: true, count: 5 }
             });
         }
 
-        // Candidate 8: Fast Translation (intermediate or >= 10 lessons)
+        // Candidate 8: Sentence translation (intermediate or >= 10 lessons)
         if (completedCount >= 10 || currentLevel !== 'A1') {
             const isWeak = weakDrillerIds.has('translation');
             const targetLang = (typeof Lang !== 'undefined') ? Lang.name() : 'the target language';
             candidates.push({
                 drillerId: 'translation',
-                title: 'Fast Translation',
-                buttonLabel: 'Fast Translation (5 sentences)',
-                blurb: `Translate 5 rapid sentences, alternating between English and ${targetLang}.`,
+                title: 'Sentence translation',
+                buttonLabel: 'Sentence translation',
+                blurb: isWeak
+                    ? weakBlurb('sentence translation')
+                    : `Translating sentences between English and ${targetLang}.`,
+                invite: 'Practice it here:',
                 reason: isWeak ? 'weak' : 'variety',
                 priority: isWeak ? 88 : 35,
                 options: { autoStart: true, count: 5, level: currentLevel.toLowerCase(), direction: 'alternate' }
             });
         }
 
-        // Candidate 9: Listening / Audio Decode
+        // Candidate 9: Listening
         if (completedCount >= 5) {
             const isWeak = weakDrillerIds.has('listening');
+            const spokenLang = (typeof Lang !== 'undefined') ? Lang.name() : 'the language';
             candidates.push({
                 drillerId: 'listening',
-                title: 'Audio Decode',
-                buttonLabel: 'Audio Decode (5 questions)',
-                blurb: "Tune your ear to native speech with 5 rapid audio clips.",
+                title: 'Listening',
+                buttonLabel: 'Listening practice',
+                blurb: isWeak
+                    ? weakBlurb('listening')
+                    : `Understanding spoken ${spokenLang}.`,
+                invite: 'Practice it here:',
                 reason: isWeak ? 'weak' : 'variety',
                 priority: isWeak ? 88 : 35,
                 options: { autoStart: true, count: 5, level: currentLevel.toLowerCase() }
@@ -582,13 +610,16 @@ const RecommendationEngine = (function () {
             const targetSkill = topWeakProduction || (isWeak ? null : effectiveSkill);
             candidates.push({
                 drillerId: 'speaking',
-                title: isWeak ? 'Oral Recall Challenge' : 'Speak Out Loud',
-                buttonLabel: targetSkill
-                    ? `Speaking: ${humanizeSkill(targetSkill)} (5 sentences)`
-                    : 'Speaking Sprint (5 sentences)',
+                title: 'Speaking',
+                buttonLabel: 'Speaking practice',
                 blurb: isWeak
-                    ? "Turn written recall into active oral fluency with quick spoken production."
-                    : "Speak sentences aloud to build real-time speech reflexes.",
+                    ? (topWeakProduction
+                        ? `You made a few mistakes with ${humanizeSkill(topWeakProduction)} when speaking lately.`
+                        : 'You made a few mistakes when speaking lately.')
+                    : (targetSkill
+                        ? `Saying sentences with ${humanizeSkill(targetSkill)} aloud.`
+                        : 'Saying sentences aloud.'),
+                invite: 'Practice it here:',
                 reason: isWeak ? 'weak' : 'variety',
                 priority: isWeak ? 92 : 44,
                 options: { autoStart: true, count: 5, level: currentLevel.toLowerCase(), skill: targetSkill || undefined }
@@ -624,6 +655,7 @@ const RecommendationEngine = (function () {
             drillerId: primaryCandidate.drillerId,
             buttonLabel: primaryCandidate.buttonLabel,
             blurb: primaryCandidate.blurb,
+            invite: primaryCandidate.invite || null,
             reason: primaryCandidate.reason,
             options: primaryCandidate.options,
             skill: primaryCandidate.drillerId === 'grammar' ? primaryCandidate.options.skill : null,
@@ -769,7 +801,7 @@ const RecommendationEngine = (function () {
                 sub = `Put "${primary.unit.title || 'that unit'}" into conversation`;
             }
         } else if (primary.kind === 'mini-game') {
-            title = primary.challengeTitle || (primary.skill ? `Grammar: ${humanizeSkill(primary.skill)}` : 'Quick Challenge');
+            title = primary.challengeTitle || (primary.skill ? `Grammar: ${humanizeSkill(primary.skill)}` : 'Practice');
             cta = primary.buttonLabel || title;
             sub = primary.blurb || "Reinforce what you just learned";
         } else {
