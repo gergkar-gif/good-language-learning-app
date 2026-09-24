@@ -9,6 +9,26 @@ needs re-reading before starting new work; it's reference only.
 
 ## Completed queue items
 
+93. ~~**Name the leftover grammar skills "reading"**~~ — **Done 2026-09-25.** (Was ROADMAP.md active item 8.)
+    The user chose not to hand-name or retag what the audits (items 89
+    and 91) left open, but to label it "reading".
+    - The 151 es-es skills and 1 hu skill added by the CCSE and
+      Hungarian citizenship rewrites after the naming pass are named
+      "reading". Many of their IDs are whole phrases, like
+      `acoger-el-festival-internacional-de-cine-y-entregar-la-concha-de-oro`.
+    - The 18 mis-tagged exercises with no fitting skill were moved to
+      a new `reading` skill (named "reading") in each course. These are
+      the two placeholder exercises in `b1-01-consolidation` (ex01,
+      ex13), the plain CCSE and hu citizenship sentence-builders, and
+      the hu *lenni* exercise `a1-21-review-2`. The overhaul had already
+      rewritten one, `b1-orszagma-consolidation.ex12`, and it was left
+      as is. The placeholders still need real content.
+    - Restored the earlier "reading" rename of the 33 no-grammar skills
+      (item 91), which hadn't made it into that commit.
+    - Result: `build_grammar_index.py` reports no unnamed skills in any
+      course. 157 es-es, 30 es-latam and 2 hu skills are named
+      "reading".
+
 91. ~~**Grammar `teaches` tags that don't match the exercise**~~ — **Done 2026-09-24.** (Was ROADMAP.md active item 7.)
     Every grammar exercise was checked against its `teaches` tags, 7,573
     exercise–tag pairs across es-latam, es-es and hu. Parallel agents
@@ -30,7 +50,7 @@ needs re-reading before starting new work; it's reference only.
       names were pruned from `grammar-titles.json`.
     - 18 were left unchanged: plain sentences with no grammar point,
       two placeholder exercises, and one HU *lenni* exercise with no
-      matching skill (ROADMAP.md active item 8).
+      matching skill (resolved in item 93).
     - The 33 skills whose exercises contain no grammar (comprehension
       questions, sentence ordering) are now named "reading", as is
       `gerund`, which is left with one such exercise.
