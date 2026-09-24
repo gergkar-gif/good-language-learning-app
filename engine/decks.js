@@ -153,13 +153,7 @@ const Decks = (function () {
             due: due,
             mastered: mastered,
             missing: missing,
-            // What "Review this deck" will actually cover: already-due cards
-            // PLUS every word with no card yet — reviewDeck() creates those
-            // on the spot (a fresh card is always immediately due), so a
-            // learner never has to visit a separate "add to review" step
-            // before this count/button becomes real. Known words are
-            // excluded above, so they never inflate this.
-            ready: due + missing
+            ready: words.length
         };
     }
 
@@ -308,15 +302,8 @@ const Decks = (function () {
     // there used to be a separate "Add N to review" step required before
     // Review would do anything, which was exactly the two-clicks-for-one-
     // action friction the whole flow got simplified to remove (2026-08-27).
-    // Any word here with no card yet gets a fresh one on the spot; a fresh
-    // card is always immediately due, so it's included in this session
-    // without a separate visit first. No daily cap here either, by the
-    // same 2026-08-27 decision: the cap in engine/xp.js exists to stop the
-    // Reader's incidental, one-word-at-a-time "+Add to SRS Deck" from
-    // burying a learner mid-reading — a deliberate whole-deck review is a
-    // different act with its own built-in judgment call, and doesn't call
-    // canAddNewWord()/recordNewWord() at all, so it neither gets blocked by
-    // that cap nor eats into it for the Reader's sake either.
+    // Reviewing a deck opens a flashcard review session for that deck's words
+    // without bulk-inserting them into the global srsDeck / "All my words".
     async function reviewDeck(id, options) {
         // Same fix as load()'s own Lexicon.load() call above, for the same
         // reason: without it, article() finds no gender data and every card
@@ -329,26 +316,15 @@ const Decks = (function () {
         if (typeof Lexicon !== 'undefined' && !Lexicon.isLoaded()) await Lexicon.load();
 
         const deck = id === 'all' ? null : byId(id);
-        if (deck) {
-            wordsOf(deck).forEach(word => {
-                if (cardFor(word.lemma)) return;
-                // A graduated word has no card on purpose — creating one
-                // here would silently un-graduate it (see statusOf()'s
-                // matching guard, above).
-                if (word.known || (typeof isKnown === 'function' && isKnown(word.lemma))) return;
-                srsDeck.push(Object.assign({
-                    spanish: word.lemma,
-                    english: word.translation || 'unknown',
-                    type: word.pos || 'unknown',
-                    source: deck.id,
-                    added: new Date().toISOString()
-                }, newCardSchedule()));
-            });
-            saveDeck();
+        const deckWords = deck ? wordsOf(deck) : null;
+        const opts = Object.assign({}, options);
+        if (deckWords && (!opts.words || !opts.words.length)) {
+            opts.words = deckWords;
         }
-        startReviewSession(deck ? wordsOf(deck).map(w => w.lemma) : null,
+
+        startReviewSession(deckWords ? deckWords.map(w => w.lemma) : null,
                            deck ? deck.name : 'All decks',
-                           options);
+                           opts);
     }
 
     // ----------------------------------------
@@ -1465,10 +1441,11 @@ const Decks = (function () {
                     ${words.length ? `<button class="dk-study-tab" data-open-learn="1"><span class="dk-study-tab-label">Learn</span></button>` : ''}
                 </div>
 
-                ${isCustom || s.inDeck > 0 ? `
+                ${isCustom || s.inDeck > 0 || (deck.id === 'mine' && s.total > 0) ? `
                     <div class="dk-utility-row">
                         ${isCustom ? `<button class="dk-link-btn" data-edit-deck="${esc(deck.id)}">Edit deck</button>` : ''}
                         ${deck.id !== 'mine' && s.inDeck > 0 ? `<button class="dk-link-btn dk-link-btn-danger" data-reset-deck-progress="${esc(deck.id)}">Reset progress</button>` : ''}
+                        ${deck.id === 'mine' && s.total > 0 ? `<button class="dk-link-btn dk-link-btn-danger" data-reset-deck-progress="mine">Reset all words</button>` : ''}
                     </div>
                 ` : ''}
 
@@ -1512,19 +1489,14 @@ const Decks = (function () {
         render();
     }
 
-    // Deleting a word from "All my words" deletes its SRS card — there is
-    // nothing else to remove it from. That is different from removing a word
-    // from a My Deck, which only ever touches membership; this is the one
-    // place in the UI that reaches into the card pile itself, so it asks
-    // first.
-    // Scoped counterpart to engine/srs.js's clearDeck(), which wipes the
-    // *entire* SRS pile across every deck — flagged as too broad for real
-    // users (see ROADMAP/ACHIEVED history). This resets only the words
-    // actually in THIS deck: their SRS cards and known-word status, not the
-    // deck's own membership/definition, and nothing outside it. Excluded
-    // from "All my words" (deck.id === 'mine') since that IS the whole
-    // pile — clearDeck()'s existing Reset button already covers it.
     function resetDeckProgress(deck) {
+        if (deck.id === 'mine') {
+            if (typeof clearDeck === 'function') {
+                clearDeck();
+                render();
+            }
+            return;
+        }
         const lemmas = new Set(wordsOf(deck).map(w => w.lemma));
         if (!lemmas.size) return;
         const label = deck.name || 'this deck';

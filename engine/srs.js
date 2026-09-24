@@ -438,6 +438,7 @@ function updateSRSCounter() {
 // ============================================
 let currentReviewCard = null;
 let sessionRelearningQueue = [];
+let scopedSessionCards = null;
 
 // A review session can be scoped to one deck. The scope is a set of lemmas
 // rather than a copy of the cards, so rating a card still writes to the one
@@ -584,6 +585,30 @@ function startReviewSession(lemmas, name, options) {
     reviewScope = lemmas ? new Set(lemmas) : null;
     reviewScopeName = reviewScope ? (name || 'Deck') : '';
     reviewLimit = (options && typeof options.limit === 'number' && options.limit > 0) ? options.limit : null;
+
+    if (options && Array.isArray(options.words) && options.words.length > 0) {
+        scopedSessionCards = options.words.map(w => {
+            const existing = srsDeck.find(c => c.spanish === w.lemma);
+            if (existing) {
+                const card = Object.assign({}, existing);
+                card._original = existing;
+                card._seenInSession = false;
+                return card;
+            }
+            return {
+                spanish: w.lemma,
+                english: w.translation || 'unknown',
+                type: w.pos || 'unknown',
+                source: name || 'deck',
+                isEphemeral: true,
+                reviews: 0,
+                _seenInSession: false
+            };
+        });
+    } else {
+        scopedSessionCards = null;
+    }
+
     reviewSessionStats = {
         total: 0, again: 0, hard: 0, good: 0, easy: 0,
         startedAt: Date.now(),
@@ -715,6 +740,7 @@ function practiceMissedFromReview(words) {
 
 function endReviewSession() {
     sessionRelearningQueue = [];
+    scopedSessionCards = null;
     reviewScope = null;
     reviewScopeName = '';
     reviewLimit = null;
@@ -739,6 +765,9 @@ function inScope(card) {
 }
 
 function getDueCards() {
+    if (scopedSessionCards) {
+        return scopedSessionCards.filter(card => !card._seenInSession);
+    }
     const now = Date.now();
     return srsDeck.filter(card => {
         if (!inScope(card)) return false;
@@ -752,6 +781,9 @@ function getDueCards() {
 }
 
 function getNewCards() {
+    if (scopedSessionCards) {
+        return scopedSessionCards.filter(card => !card._seenInSession && (card.reviews || 0) === 0);
+    }
     return srsDeck.filter(card => inScope(card) && card.reviews === 0);
 }
 
@@ -779,7 +811,7 @@ function updateReviewStats() {
     if (total) {
         total.textContent = reviewLimit
             ? reviewLimit
-            : (reviewScope ? srsDeck.filter(inScope).length : srsDeck.length);
+            : (scopedSessionCards ? scopedSessionCards.length : (reviewScope ? srsDeck.filter(inScope).length : srsDeck.length));
     }
 }
 
@@ -1326,15 +1358,23 @@ function rateCard(rating) {
     if (!currentReviewCard) return;
 
     const now = new Date();
+    const targetCard = currentReviewCard._original || (!currentReviewCard.isEphemeral ? currentReviewCard : null);
 
     // Runs before scheduleCard, which is what makes "is this card new?"
     // answerable — rescheduling increments the review count.
-    recordReview(currentReviewCard, rating);
-
-    scheduleCard(currentReviewCard, rating, now);
-    if (maybeGraduate(currentReviewCard) && reviewSessionStats) {
-        reviewSessionStats.graduated = (reviewSessionStats.graduated || 0) + 1;
+    if (typeof recordReview === 'function') {
+        recordReview(currentReviewCard, rating);
     }
+
+    if (targetCard) {
+        scheduleCard(targetCard, rating, now);
+        if (maybeGraduate(targetCard) && reviewSessionStats) {
+            reviewSessionStats.graduated = (reviewSessionStats.graduated || 0) + 1;
+        }
+        saveDeck();
+    }
+
+    currentReviewCard._seenInSession = true;
 
     if (rating === 'again') {
         if (!sessionRelearningQueue.some(c => c.spanish === currentReviewCard.spanish)) {
@@ -1359,7 +1399,6 @@ function rateCard(rating) {
         }
     }
 
-    saveDeck();
     updateReaderWordColors();
     showNextCard();
 }
@@ -1432,6 +1471,10 @@ if (typeof module !== 'undefined' && module.exports) {
         saveKnownWords,
         srsNormalise,
         englishAlternatives,
+        startReviewSession,
+        endReviewSession,
+        rateCard,
+        getCurrentReviewCard: () => currentReviewCard,
         getDeck: () => srsDeck,
         setDeck: (d) => { srsDeck = d; }
     };
