@@ -163,7 +163,7 @@ console.log('[PASS] Preceding levels for jump-ahead calculated accurately');
 const homeSource = fs.readFileSync(path.join(__dirname, '../../engine/home.js'), 'utf8');
 assert(homeSource.includes('data-switch-lang'), 'Home onboarding card must allow switching target language');
 assert(homeSource.includes('hm-onboarding-lang-picker'), 'Home onboarding card must render language choice chips');
-assert(engineSource.includes('data-diag-lang'), 'Diagnostic preface must render language switcher');
+assert(!engineSource.includes('data-diag-lang'), 'The course is chosen on the first-open screen, not in the diagnostic preface');
 console.log('[PASS] Language selection verified on Home Onboarding Card and Diagnostic Preface');
 
 console.log('\nAll CEFR Diagnostic Test Suite checks PASSED successfully!');

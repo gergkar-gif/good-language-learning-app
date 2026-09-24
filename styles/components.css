@@ -6510,35 +6510,6 @@
    CEFR LEVEL DIAGNOSTIC TEST & ONBOARDING
    ============================================ */
 
-/* Home Onboarding Welcome Card */
-
-.diag-lang-chips {
-  display: flex;
-  gap: 6px;
-  margin-top: 4px;
-}
-
-.diag-lang-chip {
-  padding: 4px 10px;
-  font-size: 12px;
-  font-weight: 600;
-  border-radius: 999px;
-  border: 1px solid var(--border);
-  background: var(--bg);
-  color: var(--text);
-  cursor: pointer;
-  transition: all var(--dur-fast, 0.15s) ease;
-}
-
-.diag-lang-chip:hover {
-  border-color: var(--primary-mid, #888);
-}
-
-.diag-lang-chip.is-active {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: #fff;
-}
 /* Curriculum Top Actions */
 .curriculum-top-actions {
   display: flex;

@@ -165,20 +165,6 @@ const DiagnosticTest = (function () {
 
                     <div class="diag-preface-meta">
                         <div class="diag-meta-item">
-                            <span class="diag-meta-label">Course</span>
-                            <div class="diag-lang-chips">
-                                ${(typeof Lang !== 'undefined' ? Lang.available() : ['es', 'hu']).map(c => {
-                                    const isCur = c === ((typeof Lang !== 'undefined') ? Lang.code() : 'es');
-                                    const cName = (typeof Lang !== 'undefined') ? Lang.nameFor(c) : c;
-                                    return `
-                                        <button type="button" class="diag-lang-chip ${isCur ? 'is-active' : ''}" data-diag-lang="${_esc(c)}" ${isCur ? 'aria-pressed="true"' : 'aria-pressed="false"'}>
-                                            ${_esc(cName)}
-                                        </button>
-                                    `;
-                                }).join('')}
-                            </div>
-                        </div>
-                        <div class="diag-meta-item">
                             <span class="diag-meta-label">Format</span>
                             <span class="diag-meta-val">10 Questions/Tier (MC &amp; Open Production)</span>
                         </div>
@@ -206,19 +192,6 @@ const DiagnosticTest = (function () {
 
         const closeBtn = host.querySelector('[data-action="close-diag"]');
         if (closeBtn) closeBtn.addEventListener('click', close);
-
-        host.querySelectorAll('[data-diag-lang]').forEach(btn => {
-            btn.addEventListener('click', async () => {
-                const nextLang = btn.getAttribute('data-diag-lang');
-                if (nextLang && typeof Lang !== 'undefined' && nextLang !== Lang.code()) {
-                    Lang.set(nextLang);
-                    _testData = null;
-                    _loadedLang = null;
-                    await _load();
-                    _render();
-                }
-            });
-        });
 
         const startBtn = host.querySelector('[data-action="begin-diag"]');
         if (startBtn) startBtn.addEventListener('click', _startTesting);
