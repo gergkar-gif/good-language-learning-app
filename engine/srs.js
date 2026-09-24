@@ -850,10 +850,15 @@ function renderCard() {
     reviewExpectedSpanish = currentReviewCard.spanish;
     reviewExpectedEnglish = displayEnglish;
 
-    document.getElementById('review-answer').style.display = 'none';
-    document.getElementById('rating-buttons').style.display = 'none';
-
     const typeMode = reviewMode === 'type';
+
+    // Type mode keeps the answer's slot (invisible) so the input below it
+    // doesn't drop when Check reveals the answer and jump back up on the
+    // next card.
+    const answerEl = document.getElementById('review-answer');
+    answerEl.style.display = typeMode ? 'block' : 'none';
+    answerEl.style.visibility = typeMode ? 'hidden' : '';
+    document.getElementById('rating-buttons').style.display = 'none';
     const flipActions = document.getElementById('review-flip-actions');
     if (flipActions) flipActions.style.display = typeMode ? 'none' : 'flex';
     document.getElementById('show-answer-btn').style.display = typeMode ? 'none' : 'block';
@@ -942,7 +947,9 @@ function updateRatingLabels() {
 // Shared by both modes once the answer is settled — flip mode reaches this
 // straight from a tap, type mode reaches it after grading what was typed.
 function revealAnswer() {
-    document.getElementById('review-answer').style.display = 'block';
+    const answerEl = document.getElementById('review-answer');
+    answerEl.style.display = 'block';
+    answerEl.style.visibility = '';
     const flipActions = document.getElementById('review-flip-actions');
     if (flipActions) flipActions.style.display = 'none';
     document.getElementById('show-answer-btn').style.display = 'none';
@@ -963,6 +970,13 @@ function revealAnswer() {
 
 function showAnswer() {
     revealAnswer();
+}
+
+// Type mode keeps #review-answer laid out but invisible until Check (see
+// renderCard()), so display alone doesn't say whether it's been revealed.
+function isAnswerShown() {
+    const answerEl = document.getElementById('review-answer');
+    return answerEl.style.display === 'block' && answerEl.style.visibility !== 'hidden';
 }
 
 function initCardGestures() {
@@ -1017,7 +1031,7 @@ function initCardGestures() {
         if (!isTracking) return;
         const dx = currentX - startX;
         const dy = currentY - startY;
-        const answerShown = document.getElementById('review-answer').style.display === 'block';
+        const answerShown = isAnswerShown();
 
         if (isDragging) {
             const threshold = Math.min(90, window.innerWidth * 0.22);
@@ -1201,7 +1215,9 @@ function checkTypedAnswer() {
 // Type mode automatically evaluates accuracy and speed to place the card into
 // one of the 4 buckets (Easy, Good, Hard, Again) and provides instant visual feedback.
 function revealTypedResult(bucket, elapsedSec, isNearMiss) {
-    document.getElementById('review-answer').style.display = 'block';
+    const answerEl = document.getElementById('review-answer');
+    answerEl.style.display = 'block';
+    answerEl.style.visibility = '';
     document.getElementById('rating-buttons').style.display = 'none';
 
     // Deliberately NOT hiding #review-type-input here: it holds the field
@@ -1241,6 +1257,12 @@ function revealTypedResult(bucket, elapsedSec, isNearMiss) {
         continueBtn.textContent = 'Continue';
         continueBtn.classList.remove('hidden');
     }
+
+    // Same hold as revealAnswer(): keep the card at its checked height so
+    // the next card doesn't shrink the page and snap the scroll up.
+    const cardEl = document.getElementById('review-card');
+    if (cardEl) cardEl.style.minHeight = cardEl.offsetHeight + 'px';
+    if (assessEl) assessEl.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
 }
 
 function continueTypedReview() {
@@ -1317,7 +1339,7 @@ window.addEventListener('keydown', (e) => {
     // Don't intercept when user is typing in an input or textarea
     if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
 
-    const answerShown = document.getElementById('review-answer').style.display === 'block';
+    const answerShown = isAnswerShown();
 
     if (e.key === ' ' || e.key === 'Enter') {
         e.preventDefault();
