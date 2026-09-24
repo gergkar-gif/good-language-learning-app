@@ -118,7 +118,7 @@ const compCss = fs.readFileSync(path.join(__dirname, '../../styles/components.cs
 const noteRule = (compCss.match(/\.pl-note \{[^}]*\}/) || [''])[0];
 assert(noteRule, 'components.css defines .pl-note');
 assert(noteRule.includes('border-left'), 'the note has its accent rule');
-assert(!/box-shadow|border-radius/.test(noteRule), 'the note has no shadow and no box');
+assert(!/box-shadow/.test(noteRule), 'the note has no shadow (design principles)');
 assert(/\.pl-note-text \{[^}]*font-style: italic/.test(compCss), 'the note text is italic');
 assert(!compCss.includes('pl-guide-banner'), 'the old banner styles are gone');
 console.log('[PASS] Margin note CSS verified.');

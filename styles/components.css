@@ -7008,16 +7008,34 @@
    (engine/guide.js, engine/home.js; copy in docs/feature-guidance-copy.md)
    ============================================ */
 
-/* Margin note: an annotation lifted off the page — serif italic, a thin
-   accent rule, no box and no shadow. Floats below what it describes. */
+/* Margin note: serif italic with a thin accent rule, on a lightly framed
+   panel so it reads as lifted above the page rather than part of the
+   text — the eggshell panel and hairline set it apart without a shadow
+   (design principles: no shadows). The pointer marks what it's about. */
 .pl-note {
   position: fixed;
   z-index: 900;
   max-width: min(300px, calc(100% - 16px));
-  padding: 8px 28px 8px 12px;
-  background: var(--bg);
-  border-left: 1.5px solid var(--accent);
+  margin-top: 6px;
+  padding: 9px 30px 9px 12px;
+  background: var(--note-bg);
+  border: 1px solid var(--border);
+  border-left: 2px solid var(--accent);
+  border-radius: var(--radius);
   animation: plNoteIn var(--dur-base) var(--ease-standard);
+}
+
+.pl-note::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: 14px;
+  width: 10px;
+  height: 10px;
+  background: var(--note-bg);
+  border-top: 1px solid var(--border);
+  border-left: 1px solid var(--border);
+  transform: rotate(45deg);
 }
 
 @keyframes plNoteIn {

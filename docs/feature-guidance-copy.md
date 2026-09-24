@@ -12,9 +12,12 @@ that makes that area useful.
 **Voice:** understated. Say what it does, in one or two plain sentences.
 No exclamation marks, no jokes, one feature per note.
 
-**Look (chosen 2026-09-24):** a margin note. Source Serif italic, primary
-ink, a thin accent-coloured line on the left, no box, no shadow, small muted ×.
-Floats just below the thing it describes rather than pushing content down.
+**Look (chosen 2026-09-24, framed the same day):** Source Serif italic,
+primary ink, a thin accent-coloured line on the left, small muted ×, on a
+lightly framed eggshell panel (#FDFBF6, a shade over white) with a hairline border and a small pointer
+up to what it describes, so it reads as floating above the page. No shadow
+(design principles). Floats just below its anchor rather than pushing content
+down.
 
 **Form:** small floating notes anchored next to the thing they describe.
 They close when tapped away or when the feature is used. Never shown over a
