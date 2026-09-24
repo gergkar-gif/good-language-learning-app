@@ -471,6 +471,14 @@ function _shelfComparator(shelfKey) {
         byTitle(a, b);
 }
 
+// Fixed shelf order within a room, rather than whatever order the manifest
+// happens to list types in: Original, the track, then Classics/World/Current.
+function _shelfRank(shelfKey) {
+    if (shelfKey.indexOf('track-') === 0) return 1;
+    const rank = { original: 0, classics: 2, world: 3, current: 4 }[shelfKey];
+    return rank === undefined ? 5 : rank;
+}
+
 // Every CEFR level gets a reading room, even before it has any stories —
 // matches the Learn tab, which shows all levels up front.
 const CEFR_LEVELS = ['A1', 'A2', 'B1', 'B2', 'C1'];
@@ -1164,9 +1172,11 @@ window.Reader = {
                 const levelId = roomToggle ? roomToggle.getAttribute('data-room-toggle') : null;
                 const body = levelId ? document.getElementById('reading-room-body-' + levelId) : null;
                 const arrow = levelId ? document.getElementById('reading-room-arrow-' + levelId) : null;
-                if (body) body.classList.add('hidden');
-                if (roomToggle) roomToggle.setAttribute('aria-expanded', 'false');
-                if (arrow) arrow.textContent = '▶';
+                // Back to the initial view: only the learner's own level open.
+                const open = room.hasAttribute('data-default-open');
+                if (body) body.classList.toggle('hidden', !open);
+                if (roomToggle) roomToggle.setAttribute('aria-expanded', String(open));
+                if (arrow) arrow.textContent = open ? '▼' : '▶';
 
                 room.querySelectorAll('.story-shelf').forEach(shelf => shelf.classList.remove('hidden'));
                 room.querySelectorAll('.story-card').forEach(card => {
@@ -1353,7 +1363,11 @@ window.Reader = {
         // Priority 1B: An unread story in the current level from a lower/equal unit
         if (!comfortable) {
             const currentLevelStories = pool.filter(s => (s.level || '').toUpperCase() === currentLvl);
-            if (currentLevelStories.length > 0) {
+            // Prefer carrying on a series the learner has already started.
+            const nextInSeries = currentLevelStories.find(s => /^Next in /.test(this._specificReason(s, browsable, readIds) || ''));
+            if (nextInSeries) {
+                comfortable = nextInSeries;
+            } else if (currentLevelStories.length > 0) {
                 // Prefer shorter duration (2-4 min)
                 comfortable = currentLevelStories.slice().sort((a, b) => (a.estimatedMinutes || 3) - (b.estimatedMinutes || 3))[0];
                 comfortableReason = `Reinforces ${currentLvl} vocabulary at a comfortable pace`;
@@ -1419,6 +1433,13 @@ window.Reader = {
             challengingReason = 'Stretch your comprehension with authentic reading';
         }
 
+        // A concrete reason beats a generic one. The "within reach" reason
+        // (names the unit just finished) is already concrete, so it stays.
+        if (!withinReachStory || comfortable !== withinReachStory) {
+            comfortableReason = this._specificReason(comfortable, browsable, readIds) || comfortableReason;
+        }
+        challengingReason = this._specificReason(challenging, browsable, readIds) || challengingReason;
+
         return {
             comfortable: {
                 story: comfortable,
@@ -1429,6 +1450,30 @@ window.Reader = {
                 reason: challengingReason
             }
         };
+    },
+
+    // "Next in the Latin America series" when the learner has started that
+    // shelf and this is its first unread part; "Adapted from <work> by
+    // <author>" for a classic; otherwise null (caller keeps its own reason).
+    _specificReason(story, browsable, readIds) {
+        const key = _trackShelfKey(story) || (story.type === 'original' ? 'original' : null);
+        if (key) {
+            const series = browsable
+                .filter(s => s.level === story.level && (_trackShelfKey(s) || s.type) === key)
+                .sort(_shelfComparator(key));
+            const started = series.some(s => readIds.includes(s.id));
+            const nextUnread = series.find(s => !readIds.includes(s.id));
+            if (started && nextUnread && nextUnread.id === story.id) {
+                const name = key === 'original'
+                    ? story.level + ' story series'
+                    : (TRACK_SHELF_LABELS[key.replace('track-', '')] || 'this') + ' series';
+                return 'Next in the ' + name;
+            }
+        }
+        if (story.author) {
+            return 'Adapted from ' + (story.work ? story.work + ' by ' : '') + story.author;
+        }
+        return null;
     },
 
     buildRecommendationsHtml() {
@@ -1498,6 +1543,9 @@ window.Reader = {
         // (shouldn't normally happen) still gets shown, appended at the end.
         const extraLevels = Object.keys(byLevel).filter(l => !CEFR_LEVELS.includes(l)).sort();
         const levels = CEFR_LEVELS.concat(extraLevels);
+        const currentLevel = (typeof LearnerPath !== 'undefined' && typeof LearnerPath.currentLevel === 'function')
+            ? (LearnerPath.currentLevel() || 'A1').toUpperCase()
+            : 'A1';
 
         const recsHtml = self.buildRecommendationsHtml();
         const guideBanner = (typeof Guide !== 'undefined' && !Guide.hasSeen('reader'))
@@ -1509,7 +1557,7 @@ window.Reader = {
                 <div class="library-search-wrap">
                     <span class="library-search-icon" aria-hidden="true">${typeof Art !== 'undefined' ? Art.icon('decks') : ''}</span>
                     <input type="search" id="library-universal-search" class="library-search-input"
-                           placeholder="Search all stories, topics, authors, or levels..."
+                           placeholder="Search stories, topics, authors…"
                            autocomplete="off" autocapitalize="off" spellcheck="false"
                            aria-label="Search stories">
                     <button type="button" id="library-search-clear" class="library-search-clear hidden" aria-label="Clear search">×</button>
@@ -1529,16 +1577,22 @@ window.Reader = {
             const levelId = level.toLowerCase().replace(/[^a-z0-9]/g, '-');
 
             // Rooms start collapsed — fifty story cards across five levels is
-            // a wall to scroll past before you reach the one you want.
-            html += '<div class="reading-room">' +
-                '<button class="reading-room-header" data-room-toggle="' + levelId + '" aria-expanded="false">' +
+            // a wall to scroll past before you reach the one you want —
+            // except the learner's own level, which is where they'll look.
+            const isHere = level === currentLevel && roomStories.length > 0;
+            const countText = !roomStories.length
+                ? 'Coming soon'
+                : readCount + ' / ' + roomStories.length + ' read' + (isHere ? ' · you’re here' : '');
+            html += '<div class="reading-room' + (roomStories.length ? '' : ' is-empty') + '"' +
+                    (isHere ? ' data-default-open' : '') + '>' +
+                '<button class="reading-room-header" data-room-toggle="' + levelId + '" aria-expanded="' + isHere + '">' +
                     '<div>' +
                         '<h3 class="reading-room-title">' + self.escapeHtml(level) + '</h3>' +
-                        '<span class="reading-room-count">' + readCount + ' / ' + roomStories.length + ' read</span>' +
+                        '<span class="reading-room-count">' + countText + '</span>' +
                     '</div>' +
-                    '<span class="reading-room-arrow" id="reading-room-arrow-' + levelId + '">▶</span>' +
+                    '<span class="reading-room-arrow" id="reading-room-arrow-' + levelId + '">' + (isHere ? '▼' : '▶') + '</span>' +
                 '</button>' +
-                '<div class="reading-room-body hidden" id="reading-room-body-' + levelId + '">';
+                '<div class="reading-room-body' + (isHere ? '' : ' hidden') + '" id="reading-room-body-' + levelId + '">';
 
             if (!roomStories.length) {
                 html += '<p class="text-muted reading-room-empty">No stories at this level yet.</p>';
@@ -1561,7 +1615,7 @@ window.Reader = {
                 // "citizenship") is stored as type 'world' but is a course of
                 // its own, so it gets its own shelf keyed by the track.
                 const shelfKeyOf = s => _trackShelfKey(s) || s.type || s.source || 'original';
-                const types = Array.from(new Set(roomStories.map(shelfKeyOf)));
+                const types = Array.from(new Set(roomStories.map(shelfKeyOf))).sort((a, b) => _shelfRank(a) - _shelfRank(b));
 
                 types.forEach(function(type) {
                     const group = roomStories.filter(s => shelfKeyOf(s) === type).sort(_shelfComparator(type));
@@ -1580,7 +1634,7 @@ window.Reader = {
                         '</button>' +
                         '<div class="story-shelf-body" id="story-shelf-body-' + shelfId + '">' +
                             '<div class="story-grid" data-room="' + levelId + '">' +
-                                group.map(story => self.buildStoryCardHtml(story, readIds)).join('') +
+                                group.map(story => self.buildStoryCardHtml(story, readIds, type.indexOf('track-') === 0)).join('') +
                             '</div>' +
                         '</div>' +
                     '</div>';
@@ -1610,7 +1664,7 @@ window.Reader = {
         return false;
     },
 
-    buildStoryCardHtml(story, readIds) {
+    buildStoryCardHtml(story, readIds, inSeries) {
         const isRead = readIds.includes(story.id);
         const withinReach = this.isStoryWithinReach(story, readIds);
         const art = (typeof pathArt === 'function')
@@ -1619,6 +1673,14 @@ window.Reader = {
         const minutes = story.estimatedMinutes
             ? story.estimatedMinutes + ' min'
             : '';
+        // The card already sits inside its level's room, so the level itself
+        // isn't repeated here. A track reading is one part of a series, so it
+        // shows its part number and the unit it belongs to; a classic shows
+        // who wrote the original.
+        const seriesNo = inSeries && story.unit && story.unit.label;
+        const subtitle = inSeries && story.unit && story.unit.title
+            ? story.unit.title
+            : (story.author || '');
 
         return '<button class="story-card" data-story-id="' + this.escapeHtml(story.id) + '" ' +
             'data-title="' + this.escapeHtml((story.title || '').toLowerCase()) + '" ' +
@@ -1626,14 +1688,14 @@ window.Reader = {
             'data-level="' + this.escapeHtml((story.level || '').toLowerCase()) + '">' +
             '<div class="story-card-cover">' +
                 art +
+                (seriesNo ? '<span class="story-card-series-no" title="Part ' + this.escapeHtml(String(seriesNo)) + '">' + this.escapeHtml(String(seriesNo)) + '</span>' : '') +
                 (isRead ? '<span class="story-card-read-badge" title="Read">✓</span>' : '') +
             '</div>' +
             '<div class="story-card-body">' +
                 '<div class="story-card-title">' + this.escapeHtml(story.title) + '</div>' +
+                (subtitle ? '<div class="story-card-subtitle">' + this.escapeHtml(subtitle) + '</div>' : '') +
                 '<div class="story-card-meta">' +
-                    '<span class="story-card-badge">' + this.escapeHtml(story.level || '') +
-                        (minutes ? ' · ' + minutes : '') +
-                    '</span>' +
+                    (minutes ? '<span class="story-card-badge">' + minutes + '</span>' : '') +
                     (story.hasAudio ? '<span class="story-card-audio-badge" title="Narration available">Audio</span>' : '') +
                     (withinReach ? '<span class="story-card-reach-badge">Within Reach</span>' : '') +
                 '</div>' +
