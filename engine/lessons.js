@@ -48,6 +48,9 @@ let lastLessonChecklist = null;
 
 // The tab the lesson was opened from, so closing it goes back there.
 let lessonReturnTab = 'learn';
+// Words this sitting added to the deck (lessonSaveSrsChoices()), for the
+// end-of-lesson invitation to Decks.
+let lessonNewDeckWords = 0;
 
 // per-step interaction state, reset on every renderStep()
 let stepState = {};
@@ -533,6 +536,7 @@ async function startLesson(lessonId) {
         lessonStartTime = Date.now();
         lessonStats = { total: 0, correctFirstTry: 0 };
         gradedStepIndices = new Set();
+        lessonNewDeckWords = 0;
 
         // A lesson can be opened from the level list or from Home's continue
         // card, and closing it should put the learner back where they were rather
@@ -568,12 +572,10 @@ async function startLesson(lessonId) {
         const levelMark = (typeof levelIcon === 'function') ? levelIcon(currentLesson.level, 'level-icon--sm') : '';
         subtitle.innerHTML = levelMark + '<span>' + UI.escape(currentLesson.level) + '</span>';
 
-        const guideSlot = document.getElementById('lesson-guide-slot');
-        if (guideSlot) {
-            guideSlot.innerHTML = '';
-            if (typeof Guide !== 'undefined' && !Guide.hasSeen('lesson')) {
-                Guide.attachBanner(guideSlot, 'lesson');
-            }
+        // Reopening a finished lesson is when the unit's Grammar Guide
+        // becomes worth pointing out (see curriculum.js).
+        if (typeof Guide !== 'undefined' && typeof isLessonComplete === 'function' && isLessonComplete(lessonId)) {
+            Guide.markSeen('lesson-reopened');
         }
 
         const resume = loadLessonResume(lessonId);
@@ -669,8 +671,7 @@ function renderLessonResumePrompt(saved) {
 // learner leaves via the main nav instead of the lesson's own close button.
 // closeLesson() below calls this too, then handles the navigation part.
 function teardownLesson() {
-    const guideSlot = document.getElementById('lesson-guide-slot');
-    if (guideSlot) guideSlot.innerHTML = '';
+    if (typeof Guide !== 'undefined') Guide.clearNote();
     document.body.classList.remove('in-lesson');
     currentLesson = null;
     currentStepIndex = 0;
@@ -1102,6 +1103,13 @@ function queueForRemediationIfMissed() {
     if (!stepState.wasMissed || stepState.gaveUp) return;
     if (!stepState.sourceStep || stepState.sourceStep.isRecycle) return;
     missedSteps.push(stepState.sourceStep);
+
+    // Only said here, where it's true: a step revealed after three tries
+    // is not queued again (see failStep()).
+    if (typeof Guide !== 'undefined') {
+        Guide.note('lesson-missed', document.getElementById('step-feedback'),
+            'Anything you miss comes back at the end.', { inLesson: true });
+    }
 }
 
 // Every teaches-tagged exercise's outcome feeds its own SM-2 schedule, not
@@ -1997,6 +2005,7 @@ function renderStep() {
 
     const step = currentLesson.steps[currentStepIndex];
     const container = document.getElementById('lesson-content');
+    if (typeof Guide !== 'undefined') Guide.clearNote();
 
     saveLessonResume();
     _wireLessonEnterToCheck();
@@ -2036,6 +2045,22 @@ function renderStep() {
     if (autoInput) {
         try { autoInput.focus({ preventScroll: true }); } catch (e) {}
     }
+
+    lessonGuideNotes(container);
+}
+
+// The first-lesson basics, each shown once. Only on steps that aren't
+// asking anything (a story, a dialogue, new words), so a note never sits
+// over a question in progress. Guide.note() shows at most one at a time.
+function lessonGuideNotes(container) {
+    if (typeof Guide === 'undefined' || stepState.checkFn || stepState.gated) return;
+    const word = container.querySelector('.lsn-story .word');
+    if (word) {
+        Guide.note('lesson-tap-word', word.closest('.lsn-line, .lsn-narration') || word,
+            'Tap any word to see what it means.', { inLesson: true });
+    }
+    Guide.note('lesson-listen', container.querySelector('.speak-btn'),
+        'Tap to hear it read aloud.', { inLesson: true });
 }
 
 function nextLessonStep() {
@@ -2417,6 +2442,7 @@ async function renderLessonSummary(firstTime, rankBefore) {
         ? await Recommend.lessonSkillFor(lesson.id)
         : null;
     const milestones = firstTime ? newlyReachedMilestones() : [];
+    const invitation = guideInvitation(lesson, firstTime);
     const rankAfter = (typeof getRank === 'function') ? getRank().rank : null;
     const rankedUp = firstTime && rankBefore != null && rankAfter != null && rankAfter > rankBefore;
 
@@ -2455,6 +2481,7 @@ async function renderLessonSummary(firstTime, rankBefore) {
             ${numberLabel ? `<p class="lsn-summary-lesson">${esc(numberLabel)} — ${esc(lesson.title || '')}</p>` : ''}
             ${Art.svg('summit', 'lsn-summary-art')}
             ${statsHtml}
+            ${invitation ? guideInvitationHtml(invitation) : ''}
             ${summaryStreakLine()}
             ${rankedUp ? `<p class="lsn-summary-milestone">Rank up! You're now Rank ${rankAfter}.</p>` : ''}
             ${summaryMilestonesHtml(milestones)}
@@ -2490,6 +2517,8 @@ async function renderLessonSummary(firstTime, rankBefore) {
         });
     });
 
+    if (invitation) wireGuideInvitation(container, invitation);
+
     const addWordsBtn = container.querySelector('[data-add-lesson-words]');
     if (addWordsBtn) {
         addWordsBtn.addEventListener('click', () => {
@@ -2506,6 +2535,66 @@ async function renderLessonSummary(firstTime, rankBefore) {
         nextBtn.disabled = false;
         nextBtn.classList.remove('is-locked');
         nextBtn.onclick = renderLessonSummaryNext;
+    }
+}
+
+// The new-learner introduction's end-of-lesson invitation (engine/guide.js
+// decides which one, if any): the deck after the first lesson, then the
+// Library and the Workshop at unit ends.
+function guideInvitation(lesson, firstTime) {
+    if (typeof Guide === 'undefined') return null;
+
+    let unitCompleted = false;
+    let unitsDone = 0;
+    const data = window._curriculumData;
+    if (data && data.levels && typeof isLessonComplete === 'function') {
+        Object.keys(data.levels).forEach(key => {
+            (data.levels[key].units || []).forEach(unit => {
+                const lessons = unit.lessons || [];
+                if (!lessons.length || !lessons.every(l => isLessonComplete(l.id))) return;
+                unitsDone++;
+                if (firstTime && lessons.some(l => l.id === lesson.id)) unitCompleted = true;
+            });
+        });
+    }
+
+    return Guide.invitation({
+        firstTime: firstTime,
+        newWords: lessonNewDeckWords,
+        unitCompleted: unitCompleted,
+        unitsDone: unitsDone
+    });
+}
+
+function guideInvitationHtml(invitation) {
+    return `
+        <div class="lsn-invite">
+            <p class="lsn-invite-text">${esc(invitation.text)}</p>
+            <div class="lsn-invite-actions">
+                <button type="button" class="dk-secondary" data-guide-invite="1">${esc(invitation.button)}</button>
+                ${invitation.nextLesson ? '<button type="button" class="dk-link-btn" data-guide-next-lesson="1">Next lesson</button>' : ''}
+            </div>
+        </div>
+    `;
+}
+
+function wireGuideInvitation(container, invitation) {
+    const go = container.querySelector('[data-guide-invite]');
+    if (go) {
+        go.addEventListener('click', () => {
+            Guide.acceptInvitation(invitation.id);
+            lessonReturnTab = invitation.tab;
+            closeLesson();
+        });
+    }
+
+    const next = container.querySelector('[data-guide-next-lesson]');
+    if (next) {
+        next.addEventListener('click', () => {
+            const step = (typeof LearnerPath !== 'undefined') ? LearnerPath.nextStep() : null;
+            if (step && step.kind === 'lesson') startLesson(step.lesson.id);
+            else renderLessonSummaryNext();
+        });
     }
 }
 
@@ -3244,6 +3333,7 @@ function lessonSaveSrsChoices() {
             source: source,
             added: new Date().toISOString()
         }, newCardSchedule()));
+        lessonNewDeckWords++;
     });
 
     saveDeck();

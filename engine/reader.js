@@ -1104,15 +1104,6 @@ window.Reader = {
             // story), but this listener on the container itself survives that.
             const self = this;
             libraryEl.addEventListener('click', function(e) {
-                const dismissBtn = e.target.closest('[data-guide-dismiss]');
-                if (dismissBtn) {
-                    const featureId = dismissBtn.getAttribute('data-guide-dismiss');
-                    if (typeof Guide !== 'undefined') Guide.markSeen(featureId);
-                    const banner = dismissBtn.closest('.pl-guide-banner');
-                    if (banner) banner.remove();
-                    return;
-                }
-
                 const clearBtn = e.target.closest('#library-search-clear');
                 if (clearBtn) {
                     const input = document.getElementById('library-universal-search');
@@ -1621,11 +1612,8 @@ window.Reader = {
         this._familiarLemmas = this._buildFamiliarSet();
 
         const recsHtml = self.buildRecommendationsHtml();
-        const guideBanner = (typeof Guide !== 'undefined' && !Guide.hasSeen('reader'))
-            ? Guide.renderBannerHtml('reader')
-            : '';
 
-        let html = guideBanner + self.buildContinueReadingHtml(readIds) + recsHtml + `
+        let html = self.buildContinueReadingHtml(readIds) + recsHtml + `
             <div class="library-search-bar">
                 <div class="library-search-wrap">
                     <span class="library-search-icon" aria-hidden="true">${typeof Art !== 'undefined' ? Art.icon('decks') : ''}</span>
@@ -1726,6 +1714,20 @@ window.Reader = {
 
         container.innerHTML = html;
         this._fillFamiliarity(container);
+        this.showGuideNotes();
+    },
+
+    // My Texts, once the learner reads enough to want texts of their own.
+    // Also called from showTab(), since walking into the Library doesn't
+    // rebuild the shelves.
+    showGuideNotes() {
+        if (typeof Guide === 'undefined') return;
+        const level = (typeof LearnerPath !== 'undefined' && typeof LearnerPath.currentLevel === 'function')
+            ? (LearnerPath.currentLevel() || 'A1').toUpperCase()
+            : 'A1';
+        if (getReadStoryIds().length < 5 && level === 'A1') return;
+        Guide.note('library-mytexts', document.querySelector('#lib-subnav [data-lib-tab="mytexts"]'),
+            'You can paste in anything you\'d like to read and look up words the same way.');
     },
 
     // ---- Familiarity ("62% familiar" on story cards) ----
@@ -2201,6 +2203,12 @@ window.Reader = {
         }
 
         updateReaderWordColors();
+
+        // After the reading view is shown: a hidden anchor gets no note.
+        if (typeof Guide !== 'undefined') {
+            Guide.note('library-arrival', container.querySelector('.story-paragraph'),
+                'Tap any word to see what it means. Words you look up can go into your deck.');
+        }
     },
 
     // Spanish (\u00e1 \u00e9 \u00ed \u00f3 \u00fa \u00f1 \u00fc) plus Hungarian's remaining letters not

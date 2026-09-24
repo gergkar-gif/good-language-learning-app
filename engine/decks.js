@@ -1595,19 +1595,20 @@ const Decks = (function () {
             studyMode = null; // module missing/unknown — fall through to the deck screen rather than a blank one
         }
 
-        const guideBanner = (!deck && typeof Guide !== 'undefined' && !Guide.hasSeen('decks'))
-            ? Guide.renderBannerHtml('decks')
-            : '';
-        host.innerHTML = deck ? detailHtml(deck) : (guideBanner + indexHtml());
+        host.innerHTML = deck ? detailHtml(deck) : indexHtml();
 
-        host.querySelectorAll('[data-guide-dismiss]').forEach(el => {
-            el.onclick = function () {
-                const featureId = el.getAttribute('data-guide-dismiss');
-                if (typeof Guide !== 'undefined') Guide.markSeen(featureId);
-                const banner = el.closest('.pl-guide-banner');
-                if (banner) banner.remove();
-            };
-        });
+        // The new-learner introduction: what the deck is, on the first
+        // visit with words in it; importing, from the third visit on.
+        if (!deck && typeof Guide !== 'undefined') {
+            if (typeof srsDeck !== 'undefined' && srsDeck.length) {
+                Guide.note('decks-arrival', host.querySelector('.dk-stats-row'),
+                    'Words from your lessons collect here. There\'s no need to make cards yourself.');
+            }
+            if (Guide.visits('review') >= 3) {
+                Guide.note('decks-import', host.querySelector('[data-import-deck]'),
+                    'If you have flashcards elsewhere, you can import them from Quizlet, Anki, Memrise or a spreadsheet.');
+            }
+        }
 
         host.querySelectorAll('[data-open-match]').forEach(el => {
             el.onclick = function () { studyMode = 'match'; render(); };

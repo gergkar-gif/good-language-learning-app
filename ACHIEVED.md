@@ -9,6 +9,48 @@ needs re-reading before starting new work; it's reference only.
 
 ## Completed queue items
 
+87. ~~**New-learner introduction replaced: a quiet first screen, margin notes and end-of-lesson invitations**~~ — **Done 2026-09-24.** (Was ROADMAP.md active item 3.)
+    The old system (item 56: Home welcome card, a banner on the first
+    visit to each room) felt heavy. It explained rooms up front, with
+    generic onboarding copy. Replaced by a gradual first week, with the
+    flow and all copy in `docs/feature-guidance-copy.md`:
+    - **First screen** (`engine/home.js`, `showWelcome()`): the name, one
+      sentence, then one question at a time: language, which Spanish
+      (Latin America / Spain), then "Start from the beginning" or "Find
+      my level" (straight into the placement test). A course change
+      reloads the app, so the choice is carried across the reload in
+      `parlour_welcome_pending`.
+    - **Margin notes** (`Guide.note()`): one serif-italic line with a
+      thin accent rule, no box or shadow, fixed below its anchor and
+      re-placed on scroll. Closed by any tap, and retired after two
+      showings. At most one a day, except the first-lesson basics
+      (listen, tap a word, "Anything you miss comes back at the end").
+      A note counts only once it has been on screen, and lesson notes
+      appear only on steps that aren't asking a question. Arrival notes
+      are in Decks, the Library (first story), the Speaking/Writing
+      studios and the first review card. Later notes cover Decks import
+      (third visit), My Texts (5 stories read or past A1), Grammar Guide
+      (after reopening a finished lesson), My Dictionary (after a word
+      graduates) and streak import (Journey).
+    - **Invitations** on the lesson summary (`Guide.invitation()`): the
+      deck after the first lesson (with Next lesson), the Library after
+      Unit 1, the Workshop after Unit 2. Each is skipped once that tab has
+      been visited (`Guide.markVisited()` from `showTab()`). A skipped
+      invitation comes back once.
+    - Removed: the per-room banners and their CSS, the Home welcome card,
+      and `#lesson-guide-slot`. "How Parlour works" is unchanged and now
+      opened from a quiet link at the bottom of Home, plus the nav
+      footer. The drillers' "About this drill" info is unchanged.
+    - The approved invitation wording "Tomorrow they'll come back" was
+      changed to "ready for a short review", because new cards are due
+      immediately (`newCardSchedule()`).
+    - Not built: the Verb Driller and Listening Driller notes, which have
+      no signal to trigger on (ROADMAP.md active item 5).
+    - Verified live at phone width on a fresh profile, covering the first
+      screen, the course switch and reload, and every note and
+      invitation. `tests/drills/test-onboarding-guide.js` was rewritten
+      for the new API.
+
 86. ~~**Communicative challenge no longer swaps the can-do for an unrelated canned scenario**~~ — **Done 2026-09-24.**
     User finished LatAm B1 `b1-precolombina-02` and got the challenge "Ask
     someone on the street for directions to a station, hotel…" under the

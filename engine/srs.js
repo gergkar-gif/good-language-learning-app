@@ -695,6 +695,11 @@ function renderReviewSessionSummary() {
 
     if (typeof RecommendationEngine !== 'undefined') RecommendationEngine.mountNextAction(summaryEl);
     if (typeof Sync !== 'undefined' && Sync.scheduleAutoSave) Sync.scheduleAutoSave();
+
+    if (s.graduated && typeof Guide !== 'undefined') {
+        Guide.note('my-dictionary', summaryEl.querySelector('.review-summary-stats'),
+            'Words you already know can go in My Dictionary, so they stop coming up for review.');
+    }
 }
 
 // The words rated "again" this session, straight into a Vocabulary
@@ -1008,6 +1013,10 @@ function revealAnswer() {
     const cardEl = document.getElementById('review-card');
     if (cardEl) cardEl.style.minHeight = cardEl.offsetHeight + 'px';
     ratingsEl.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+
+    if (typeof Guide !== 'undefined') {
+        Guide.note('review-first', ratingsEl, 'Words come back less often as you get them right.');
+    }
 }
 
 function showAnswer() {
@@ -1323,7 +1332,9 @@ function rateCard(rating) {
     recordReview(currentReviewCard, rating);
 
     scheduleCard(currentReviewCard, rating, now);
-    maybeGraduate(currentReviewCard);
+    if (maybeGraduate(currentReviewCard) && reviewSessionStats) {
+        reviewSessionStats.graduated = (reviewSessionStats.graduated || 0) + 1;
+    }
 
     if (rating === 'again') {
         if (!sessionRelearningQueue.some(c => c.spanish === currentReviewCard.spanish)) {

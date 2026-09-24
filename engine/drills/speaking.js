@@ -182,12 +182,7 @@ const SpeakingDriller = (function () {
         if (!_container) return;
 
         const langName = (typeof Lang !== 'undefined') ? Lang.name() : 'the language';
-        const guideBanner = (typeof Guide !== 'undefined' && !Guide.hasSeen('production'))
-            ? Guide.renderBannerHtml('production')
-            : '';
-
         _container.innerHTML = `
-            ${guideBanner}
             <div class="sp-studio-wrap">
                 <div class="sp-studio-nav" role="tablist">
                     <button type="button" class="sp-studio-tab ${_activeStudioTab === STUDIO_TAB.DRILLS ? 'active' : ''}" data-studio-tab="drills" role="tab" aria-selected="${_activeStudioTab === STUDIO_TAB.DRILLS}">
@@ -204,14 +199,10 @@ const SpeakingDriller = (function () {
             </div>
         `;
 
-        _container.querySelectorAll('[data-guide-dismiss]').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const featureId = btn.getAttribute('data-guide-dismiss');
-                if (typeof Guide !== 'undefined') Guide.markSeen(featureId);
-                const banner = btn.closest('.pl-guide-banner');
-                if (banner) banner.remove();
-            });
-        });
+        if (typeof Guide !== 'undefined') {
+            Guide.note('production', _container.querySelector('.sp-studio-nav'),
+                'There\'s no single right answer here. You\'ll get notes on what worked and what to adjust.');
+        }
 
         _container.querySelectorAll('[data-studio-tab]').forEach(btn => {
             btn.addEventListener('click', () => {

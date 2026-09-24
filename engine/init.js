@@ -49,6 +49,12 @@ function teardownTab(tabId) {
 }
 
 function showTab(tabName, button, options) {
+    // A margin note belongs to the screen it was shown on.
+    if (typeof Guide !== 'undefined') {
+        Guide.clearNote();
+        Guide.markVisited(tabName);
+    }
+
     const previousTab = document.querySelector('.tab:not(.hidden)');
     if (previousTab && previousTab.id !== tabName) {
         teardownTab(previousTab.id);
@@ -85,6 +91,9 @@ function showTab(tabName, button, options) {
 
     if (tabName === 'reader' && typeof updateReaderWordColors === 'function') {
         updateReaderWordColors();
+    }
+    if (tabName === 'reader' && typeof Reader !== 'undefined' && Reader.showGuideNotes) {
+        Reader.showGuideNotes();
     }
 
     if (tabName === 'drills' && typeof Workshop !== 'undefined') {

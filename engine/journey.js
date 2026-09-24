@@ -563,6 +563,11 @@ const Journey = (function () {
         _wireClicks(host);
         _refreshAccountStatus(host);
 
+        if (typeof Guide !== 'undefined') {
+            Guide.note('journey-streak', host.querySelector('[data-jr-import-streak]'),
+                'If you\'re coming from another app, you can bring your streak with you.');
+        }
+
         if (typeof Sync !== 'undefined' && !Sync.isLoggedIn() && Sync.isGoogleAuthAvailable && Sync.isGoogleAuthAvailable()) {
             Sync.renderGoogleButton('jr-google-signin-btn', {
                 onStart: () => {

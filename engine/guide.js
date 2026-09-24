@@ -1,52 +1,79 @@
 // ============================================
-// PARLOUR GUIDE & FIRST-ENCOUNTER COACH
+// PARLOUR GUIDE — NEW-LEARNER INTRODUCTION
 // ============================================
-// Provides lightweight, casual, non-intrusive guidance across Parlour:
-// 1. First-encounter coach notes (Lessons, Library, Decks, Workshop, Production).
-// 2. The "How Parlour Works" modal (Philosophy, 6 Rooms, Power Imports).
-//
-// Constructivist principles:
-// - Casual, friendly, conversational tone (no robotic AI prose).
-// - Zero emoji pictograms (100% SVG line/wash icon system).
-// - Remembers dismissed state per feature in localStorage.
+// Parlour introduces itself over the first week rather than in a tour up
+// front (plan and all copy: docs/feature-guidance-copy.md):
+// 1. Margin notes — one short italic line floating just below the thing it
+//    describes. Shown once per feature; closed by tapping anywhere, by the
+//    ×, or by using the feature itself. At most one new note a day, except
+//    the few that belong inside a lesson.
+// 2. Invitations — one line plus a button on the end-of-lesson screen that
+//    takes a new learner to an area they haven't found yet (Decks, then the
+//    Library, then the Workshop). A skipped invitation comes back once.
+// 3. The "How Parlour works" modal, opened from Home.
 
 const Guide = (function () {
     'use strict';
 
     const STORAGE_PREFIX = 'parlour_guide_seen_';
+    const SHOWS_PREFIX = 'parlour_guide_shows_';
+    const VISITS_PREFIX = 'parlour_guide_visits_';
+    const NOTE_DAY_KEY = 'parlour_guide_note_day';
+
+    // A note shown this many times without being dismissed or used is
+    // retired anyway: ignoring it twice is an answer too.
+    const MAX_NOTE_SHOWS = 2;
+    const MAX_INVITATION_SHOWS = 2;
+
+    function _get(key) {
+        try { return localStorage.getItem(key); } catch (e) { return null; }
+    }
+
+    function _set(key, value) {
+        try { localStorage.setItem(key, value); } catch (e) {}
+    }
 
     function _key(featureId) {
         return STORAGE_PREFIX + featureId;
     }
 
     function hasSeen(featureId) {
-        try {
-            return localStorage.getItem(_key(featureId)) === '1';
-        } catch (e) {
-            return false;
-        }
+        return _get(_key(featureId)) === '1';
     }
 
     function markSeen(featureId) {
-        try {
-            localStorage.setItem(_key(featureId), '1');
-        } catch (e) {
-            // Storage unavailable (e.g. private mode)
-        }
+        _set(_key(featureId), '1');
+    }
+
+    function _count(prefix, id) {
+        return parseInt(_get(prefix + id) || '0', 10) || 0;
+    }
+
+    function _bump(prefix, id) {
+        const n = _count(prefix, id) + 1;
+        _set(prefix + id, String(n));
+        return n;
+    }
+
+    function _today() {
+        const d = new Date();
+        return d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate();
     }
 
     function resetAll() {
         try {
             if (typeof localStorage === 'undefined') return;
+            const prefixes = [STORAGE_PREFIX, SHOWS_PREFIX, VISITS_PREFIX, NOTE_DAY_KEY];
+            const matches = k => k && prefixes.some(p => k.startsWith(p));
             const toRemove = [];
             if (typeof localStorage.length === 'number') {
                 for (let i = 0; i < localStorage.length; i++) {
                     const k = localStorage.key(i);
-                    if (k && k.startsWith(STORAGE_PREFIX)) toRemove.push(k);
+                    if (matches(k)) toRemove.push(k);
                 }
             }
             Object.keys(localStorage).forEach(k => {
-                if (k && k.startsWith(STORAGE_PREFIX) && !toRemove.includes(k)) toRemove.push(k);
+                if (matches(k) && !toRemove.includes(k)) toRemove.push(k);
             });
             toRemove.forEach(k => localStorage.removeItem(k));
         } catch (e) {}
@@ -61,115 +88,186 @@ const Guide = (function () {
             .replace(/"/g, '&quot;');
     }
 
-    function _defaultIconSvg() {
-        return `<svg class="art icon" viewBox="0 0 24 24" role="presentation" aria-hidden="true" focusable="false">
-            <circle cx="12" cy="12" r="9" class="ink-line" fill="none" stroke="currentColor" stroke-width="1.75"/>
-            <line x1="12" y1="8" x2="12" y2="12" class="ink-line" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
-            <circle cx="12" cy="15.5" r="0.75" class="ink-line" fill="currentColor"/>
-        </svg>`;
+    // --------------------------------------------
+    // AREA VISITS
+    // --------------------------------------------
+    // Counted per tab (home, learn, reader, drills, review, journey) from
+    // showTab(), so an invitation to an area the learner already found on
+    // their own is skipped, and "third visit to Decks" is answerable.
+
+    function markVisited(tabId) {
+        if (tabId) _bump(VISITS_PREFIX, tabId);
     }
 
-    // Pre-defined encounter tips with casual, human tone
-    const TIPS = {
-        lesson: {
-            title: 'Welcome to your first lesson!',
-            text: 'Work through each card at your own pace. If you miss a question, no sweat — Parlour gathers your mistakes and brings them back at the end for a zero-pressure redo pass.',
-            iconSvg: `<svg class="art icon" viewBox="0 0 24 24" role="presentation" aria-hidden="true" focusable="false">
-                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" class="ink-line" fill="none" stroke="currentColor" stroke-width="1.75"/>
-                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" class="ink-line" fill="none" stroke="currentColor" stroke-width="1.75"/>
-                <line x1="8" y1="7" x2="16" y2="7" class="ink-line" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                <line x1="8" y1="11" x2="14" y2="11" class="ink-line" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-            </svg>`
-        },
-        reader: {
-            title: 'This is the Library',
-            text: 'Read graded stories and classic literature crafted for your level. <strong>Tap any word</strong> while reading to see an instant translation, grammar breakdown, and add it straight to your review deck. Want to read your own texts? Switch to the <strong>My Texts</strong> tab to paste in any article or story.',
-            iconSvg: `<svg class="art icon" viewBox="0 0 24 24" role="presentation" aria-hidden="true" focusable="false">
-                <rect x="3" y="4" width="18" height="16" rx="2" class="ink-line" fill="none" stroke="currentColor" stroke-width="1.75"/>
-                <line x1="7" y1="8" x2="17" y2="8" class="ink-line" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                <line x1="7" y1="12" x2="17" y2="12" class="ink-line" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                <line x1="7" y1="16" x2="13" y2="16" class="ink-line" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-            </svg>`
-        },
-        decks: {
-            title: 'Your Memory Box (Decks)',
-            text: 'As you complete lessons and read stories, target vocabulary collects here automatically for spaced repetition. Already have custom study sets? You can <strong>import decks directly from Quizlet or Anki</strong> via the Import button.',
-            iconSvg: `<svg class="art icon" viewBox="0 0 24 24" role="presentation" aria-hidden="true" focusable="false">
-                <rect x="5" y="7" width="14" height="14" rx="2" class="ink-line" fill="none" stroke="currentColor" stroke-width="1.75"/>
-                <path d="M8 4h10a2 2 0 0 1 2 2v10" class="ink-line" fill="none" stroke="currentColor" stroke-width="1.5"/>
-            </svg>`
-        },
-        workshop: {
-            title: 'The Practice Studio (Workshop)',
-            text: 'Need to drill a specific skill? Workshop is where you can hammer out rapid verb conjugations, train your ear with spoken audio driller, or jump into the <strong>Speaking and Writing Studios</strong> for open-ended composition with instant CEFR feedback.',
-            iconSvg: `<svg class="art icon" viewBox="0 0 24 24" role="presentation" aria-hidden="true" focusable="false">
-                <circle cx="12" cy="12" r="3" class="ink-line" fill="none" stroke="currentColor" stroke-width="1.75"/>
-                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" class="ink-line" fill="none" stroke="currentColor" stroke-width="1.5"/>
-            </svg>`
-        },
-        production: {
-            title: 'Express Yourself (Production)',
-            text: 'Focus on getting your meaning across! In speaking and writing tasks, Parlour does not look for robotic cookie-cutter answers — you will receive personal coaching notes highlighting what worked well and what to tweak next time.',
-            iconSvg: `<svg class="art icon" viewBox="0 0 24 24" role="presentation" aria-hidden="true" focusable="false">
-                <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z" class="ink-line" fill="none" stroke="currentColor" stroke-width="1.75"/>
-                <path d="M19 10v2a7 7 0 0 1-14 0v-2" class="ink-line" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
-                <line x1="12" y1="19" x2="12" y2="22" class="ink-line" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
-            </svg>`
-        }
-    };
+    function visits(tabId) {
+        return _count(VISITS_PREFIX, tabId);
+    }
 
-    function renderBannerHtml(featureId, customOptions) {
-        const config = Object.assign({}, TIPS[featureId] || {}, customOptions || {});
-        const title = config.title || 'Tip';
-        const text = config.text || '';
-        const iconSvg = config.iconSvg || _defaultIconSvg();
+    // --------------------------------------------
+    // MARGIN NOTES
+    // --------------------------------------------
 
-        return `
-            <div class="pl-guide-banner" data-guide-banner="${_esc(featureId)}" role="status">
-                <div class="pl-guide-banner-icon" aria-hidden="true">
-                    ${iconSvg}
-                </div>
-                <div class="pl-guide-banner-content">
-                    <div class="pl-guide-banner-head">
-                        <h4 class="pl-guide-banner-title">${_esc(title)}</h4>
-                        <button type="button" class="pl-guide-dismiss-btn" data-guide-dismiss="${_esc(featureId)}" aria-label="Dismiss tip" title="Dismiss tip">&times;</button>
-                    </div>
-                    <div class="pl-guide-banner-body">${text}</div>
-                </div>
-            </div>
+    let _active = null;
+
+    function _removeActive() {
+        if (!_active) return;
+        const { el, cleanup } = _active;
+        _active = null;
+        cleanup();
+        if (el.parentNode) el.parentNode.removeChild(el);
+    }
+
+    // Closed by the learner (× or tapping elsewhere) or by using the thing
+    // it points at: either way it has done its job.
+    function _dismiss() {
+        if (!_active) return;
+        markSeen(_active.id);
+        _removeActive();
+    }
+
+    // Taken down without counting as read — the screen it belonged to is
+    // being replaced (next lesson step, another tab).
+    function clearNote() {
+        _removeActive();
+    }
+
+    // Fixed to the viewport and re-placed on every scroll, so it follows
+    // its anchor whichever element is doing the scrolling (the page on a
+    // phone, .content on a wide screen). Hidden while the anchor is off
+    // screen.
+    // Returns whether the note is on screen.
+    function _place(el, anchor) {
+        const a = anchor.getBoundingClientRect();
+        const vw = document.documentElement.clientWidth;
+        const vh = document.documentElement.clientHeight;
+        const onScreen = a.bottom >= 0 && a.bottom + 6 < vh;
+        el.style.visibility = onScreen ? '' : 'hidden';
+        const maxLeft = Math.max(8, vw - el.offsetWidth - 8);
+        el.style.top = Math.round(a.bottom + 6) + 'px';
+        el.style.left = Math.round(Math.min(Math.max(8, a.left), maxLeft)) + 'px';
+        return onScreen;
+    }
+
+    // Shows a one-line note just below `anchor`. Returns the note element,
+    // or null when it isn't shown (already seen, another note is up, the
+    // day's note already used, or the anchor isn't rendered).
+    //   options.inLesson — one of the first-lesson basics, not held back by
+    //   the one-a-day limit.
+    function note(featureId, anchor, text, options) {
+        const opts = options || {};
+        if (typeof document === 'undefined') return null;
+        if (!anchor || !anchor.isConnected || hasSeen(featureId) || _active) return null;
+        if (!opts.inLesson && _get(NOTE_DAY_KEY) === _today()) return null;
+
+        if (!anchor.getClientRects().length) return null; // display: none
+
+        const el = document.createElement('div');
+        el.className = 'pl-note';
+        el.setAttribute('role', 'note');
+        el.innerHTML = `
+            <p class="pl-note-text">${_esc(text)}</p>
+            <button type="button" class="pl-note-close" aria-label="Close note">&times;</button>
         `;
+        document.body.appendChild(el);
+
+        // Counted (the day's note, one of its two showings) only once it
+        // has actually been on screen — an anchor below the fold waits
+        // until the learner scrolls to it.
+        let counted = false;
+        const countIfSeen = onScreen => {
+            if (counted || !onScreen) return;
+            counted = true;
+            if (!opts.inLesson) _set(NOTE_DAY_KEY, _today());
+            if (_bump(SHOWS_PREFIX, featureId) >= MAX_NOTE_SHOWS) markSeen(featureId);
+        };
+        countIfSeen(_place(el, anchor));
+
+        // Any tap closes it — on the note's ×, on the thing it points at,
+        // or anywhere else — and the tap still does whatever it would have.
+        const onDocClick = e => {
+            if (el.contains(e.target) && !e.target.closest('.pl-note-close')) return;
+            if (counted) _dismiss();
+            else clearNote();
+        };
+        const onMove = () => {
+            if (anchor.isConnected) countIfSeen(_place(el, anchor));
+            else clearNote();
+        };
+
+        // Attached a tick later so the click that made the note appear
+        // doesn't immediately close it again.
+        const timer = setTimeout(() => document.addEventListener('click', onDocClick, true), 0);
+        window.addEventListener('resize', onMove);
+        document.addEventListener('scroll', onMove, true);
+
+        _active = {
+            id: featureId,
+            el: el,
+            cleanup: () => {
+                clearTimeout(timer);
+                document.removeEventListener('click', onDocClick, true);
+                window.removeEventListener('resize', onMove);
+                document.removeEventListener('scroll', onMove, true);
+            }
+        };
+        return el;
     }
 
-    function attachBanner(container, featureId, customOptions) {
-        if (!container || hasSeen(featureId)) return null;
-
-        const wrapper = document.createElement('div');
-        wrapper.className = 'pl-guide-banner-wrapper';
-        wrapper.innerHTML = renderBannerHtml(featureId, customOptions);
-
-        const bannerEl = wrapper.firstElementChild;
-        container.insertBefore(wrapper, container.firstChild);
-
-        const dismissBtn = wrapper.querySelector('[data-guide-dismiss]');
-        if (dismissBtn) {
-            dismissBtn.addEventListener('click', () => {
-                markSeen(featureId);
-                wrapper.style.transition = 'opacity 0.2s ease, transform 0.2s ease, max-height 0.25s ease';
-                wrapper.style.opacity = '0';
-                wrapper.style.transform = 'translateY(-6px)';
-                wrapper.style.maxHeight = wrapper.offsetHeight + 'px';
-                setTimeout(() => {
-                    wrapper.style.maxHeight = '0px';
-                    wrapper.style.margin = '0px';
-                    wrapper.style.overflow = 'hidden';
-                }, 10);
-                setTimeout(() => {
-                    if (wrapper.parentNode) wrapper.parentNode.removeChild(wrapper);
-                }, 260);
-            });
+    // --------------------------------------------
+    // INVITATIONS (END-OF-LESSON SCREEN)
+    // --------------------------------------------
+    // In order: the deck after the first lesson, the Library after Unit 1,
+    // the Workshop after Unit 2. The first one that applies is offered.
+    //   ctx.firstTime     — the lesson was finished for the first time
+    //   ctx.newWords      — words this lesson added to the deck
+    //   ctx.unitCompleted — this completion finished a unit
+    //   ctx.unitsDone     — units finished in the course so far
+    const INVITATIONS = [
+        {
+            id: 'invite-decks',
+            tab: 'review',
+            applies: ctx => ctx.firstTime && ctx.newWords > 0,
+            text: ctx => `${ctx.newWords} new ${ctx.newWords === 1 ? 'word is' : 'words are'} in your deck, ready for a short review.`,
+            button: 'See your deck',
+            nextLesson: true
+        },
+        {
+            id: 'invite-library',
+            tab: 'reader',
+            applies: ctx => ctx.unitCompleted && ctx.unitsDone >= 1,
+            text: () => 'There\'s a short story in the Library written for where you are now.',
+            button: 'Read it'
+        },
+        {
+            id: 'invite-workshop',
+            tab: 'drills',
+            applies: ctx => ctx.unitCompleted && ctx.unitsDone >= 2,
+            text: () => 'The Workshop is for practising one thing at a time: verbs, listening, speaking.',
+            button: 'Have a look'
         }
+    ];
 
-        return wrapper;
+    // The invitation for this lesson completion, or null. Counts as shown
+    // once returned.
+    function invitation(ctx) {
+        const inv = INVITATIONS.find(i =>
+            !hasSeen(i.id)
+            && visits(i.tab) === 0
+            && _count(SHOWS_PREFIX, i.id) < MAX_INVITATION_SHOWS
+            && i.applies(ctx));
+        if (!inv) return null;
+        _bump(SHOWS_PREFIX, inv.id);
+        return {
+            id: inv.id,
+            tab: inv.tab,
+            text: inv.text(ctx),
+            button: inv.button,
+            nextLesson: !!inv.nextLesson
+        };
+    }
+
+    function acceptInvitation(id) {
+        markSeen(id);
     }
 
     // --------------------------------------------
@@ -296,11 +394,14 @@ const Guide = (function () {
         hasSeen,
         markSeen,
         resetAll,
-        renderBannerHtml,
-        attachBanner,
+        markVisited,
+        visits,
+        note,
+        clearNote,
+        invitation,
+        acceptInvitation,
         openOverviewModal,
-        closeOverviewModal,
-        TIPS
+        closeOverviewModal
     };
 })();
 

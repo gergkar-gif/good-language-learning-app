@@ -1,23 +1,26 @@
 // ============================================
-// TEST SUITE: ONBOARDING, PHILOSOPHY & ENCOUNTER GUIDE
+// TEST SUITE: NEW-LEARNER INTRODUCTION (engine/guide.js)
 // ============================================
 // Verifies:
-// 1. Guide module encounter tracking and localStorage persistence
-// 2. Zero emoji pictograms across all guide texts, modal copy, and philosophy
-// 3. Accessibility attributes (role="status", aria-label on dismiss)
+// 1. Seen-state tracking and localStorage persistence
+// 2. Zero emoji pictograms in the guide copy
+// 3. End-of-lesson invitations: order, skipping areas already found,
+//    coming back once, acceptance
 // 4. Deferred sync prompt logic (does not show on initial empty state)
-// 5. Home onboarding card markup (philosophy, language switcher, guide button)
+// 5. Home: first-open screen and the "How Parlour works" link
+// 6. App shell: guide.js loaded and precached, old banner slot gone
+// 7. Margin note CSS: no box, no shadow, the old banner styles gone
 
 const assert = require('assert');
 const fs = require('fs');
 const path = require('path');
 
-console.log('=== Running Onboarding & Guide Test Suite ===\n');
+console.log('=== Running New-Learner Introduction Test Suite ===\n');
 
 // Mock localStorage for Node test runner
 const mockStore = {};
 global.localStorage = {
-    getItem: (key) => mockStore[key] || null,
+    getItem: (key) => (key in mockStore ? mockStore[key] : null),
     setItem: (key, val) => { mockStore[key] = String(val); },
     removeItem: (key) => { delete mockStore[key]; },
     clear: () => { Object.keys(mockStore).forEach(k => delete mockStore[k]); },
@@ -27,45 +30,57 @@ global.localStorage = {
 
 const Guide = require('../../engine/guide.js');
 
-// Helper to detect emojis (constructivist design principle)
 const EMOJI_REGEX = /[\u{1F300}-\u{1F9FF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}]/u;
 
-// 1. Test Guide tracking & state
-console.log('--- Test 1: Guide State & Persistence ---');
-assert.strictEqual(Guide.hasSeen('lesson'), false, 'Initial state of lesson guide should be false');
-Guide.markSeen('lesson');
-assert.strictEqual(Guide.hasSeen('lesson'), true, 'Guide.hasSeen(lesson) should be true after markSeen');
-assert.strictEqual(mockStore['parlour_guide_seen_lesson'], '1', 'localStorage should store parlour_guide_seen_lesson = 1');
-
-Guide.markSeen('reader');
-assert.strictEqual(Guide.hasSeen('reader'), true, 'Guide.hasSeen(reader) should be true');
-
+// 1. Seen state
+console.log('--- Test 1: Seen State & Persistence ---');
+assert.strictEqual(Guide.hasSeen('lesson-listen'), false);
+Guide.markSeen('lesson-listen');
+assert.strictEqual(Guide.hasSeen('lesson-listen'), true);
+assert.strictEqual(mockStore['parlour_guide_seen_lesson-listen'], '1');
+Guide.markVisited('review');
+assert.strictEqual(Guide.visits('review'), 1);
 Guide.resetAll();
-assert.strictEqual(Guide.hasSeen('lesson'), false, 'resetAll should clear seen guides');
-assert.strictEqual(Guide.hasSeen('reader'), false, 'resetAll should clear seen guides');
-console.log('[PASS] Guide state persistence verified.');
+assert.strictEqual(Guide.hasSeen('lesson-listen'), false, 'resetAll clears seen notes');
+assert.strictEqual(Guide.visits('review'), 0, 'resetAll clears visit counts');
+console.log('[PASS] Seen state and visit counts persist and reset.');
 
-// 2. Zero Emoji Check across all TIPS
+// 2. Zero emoji
 console.log('\n--- Test 2: Zero Emoji Validation ---');
-Object.keys(Guide.TIPS).forEach(key => {
-    const tip = Guide.TIPS[key];
-    assert(!EMOJI_REGEX.test(tip.title), `Tip ${key} title contains emoji: ${tip.title}`);
-    assert(!EMOJI_REGEX.test(tip.text), `Tip ${key} text contains emoji: ${tip.text}`);
-});
-
 const guideCode = fs.readFileSync(path.join(__dirname, '../../engine/guide.js'), 'utf8');
 assert(!EMOJI_REGEX.test(guideCode), 'guide.js must not contain any emoji characters');
-console.log('[PASS] Zero emojis confirmed across all guide copy.');
+console.log('[PASS] No emoji in guide copy.');
 
-// 3. Accessibility & Banner Markup
-console.log('\n--- Test 3: Accessibility & Markup Structure ---');
-const bannerHtml = Guide.renderBannerHtml('lesson');
-assert(bannerHtml.includes('role="status"'), 'Banner must have role="status"');
-assert(bannerHtml.includes('aria-label="Dismiss tip"'), 'Dismiss button must have aria-label');
-assert(bannerHtml.includes('data-guide-dismiss="lesson"'), 'Dismiss button must specify data-guide-dismiss');
-assert(bannerHtml.includes('pl-guide-banner-icon'), 'Banner must render icon container');
-assert(bannerHtml.includes('<svg'), 'Banner must contain inline SVG icon');
-console.log('[PASS] Banner accessibility and markup structure verified.');
+// 3. Invitations
+console.log('\n--- Test 3: End-of-Lesson Invitations ---');
+Guide.resetAll();
+const ctx = (over) => Object.assign({ firstTime: true, newWords: 0, unitCompleted: false, unitsDone: 0 }, over);
+
+let inv = Guide.invitation(ctx({ newWords: 12 }));
+assert(inv && inv.id === 'invite-decks', 'first lesson with new words invites to Decks');
+assert.strictEqual(inv.text, '12 new words are in your deck, ready for a short review.');
+assert.strictEqual(inv.nextLesson, true, 'the Decks invitation also offers the next lesson');
+assert.strictEqual(Guide.invitation(ctx({ newWords: 0 })), null, 'no new words, no Decks invitation');
+
+// Skipped once: comes back once more, then stops.
+inv = Guide.invitation(ctx({ newWords: 3 }));
+assert(inv && inv.id === 'invite-decks', 'a skipped invitation comes back once');
+assert.strictEqual(Guide.invitation(ctx({ newWords: 3 })), null, 'and then stops');
+
+// Library after Unit 1, unless the learner already found it.
+inv = Guide.invitation(ctx({ unitCompleted: true, unitsDone: 1 }));
+assert(inv && inv.id === 'invite-library' && inv.tab === 'reader', 'Unit 1 end invites to the Library');
+Guide.acceptInvitation(inv.id);
+assert.strictEqual(Guide.invitation(ctx({ unitCompleted: true, unitsDone: 1 })), null, 'accepted invitations are not repeated');
+
+Guide.markVisited('drills');
+assert.strictEqual(Guide.invitation(ctx({ unitCompleted: true, unitsDone: 2 })), null,
+    'no Workshop invitation once the learner has found the Workshop');
+
+Guide.resetAll();
+assert.strictEqual(Guide.invitation(ctx({ unitCompleted: false, unitsDone: 3 })), null,
+    'unit invitations only appear at the end of a unit');
+console.log('[PASS] Invitation order, skipping and repetition verified.');
 
 // 4. Deferred Sync Prompt Logic
 console.log('\n--- Test 4: Deferred Sync Prompt Verification ---');
@@ -74,43 +89,38 @@ assert(syncCode.includes('completedCount === 0 && xp === 0'), 'sync.js must chec
 assert(syncCode.includes('// Defer until the learner has actual progress to protect'), 'sync.js must contain explanation comment');
 console.log('[PASS] Sync prompt deferral verified.');
 
-// 5. Home Onboarding Card Markup
-console.log('\n--- Test 5: Home Onboarding Card Markup ---');
+// 5. Home
+console.log('\n--- Test 5: Home First-Open Screen ---');
 const homeCode = fs.readFileSync(path.join(__dirname, '../../engine/home.js'), 'utf8');
-assert(homeCode.includes('hm-onboarding-blurb'), 'home.js must render hm-onboarding-blurb');
-assert(homeCode.includes('hm-onboarding-btn-guide'), 'home.js must render How Parlour Works button');
-assert(homeCode.includes('data-open-guide-modal'), 'home.js must wire data-open-guide-modal');
+assert(homeCode.includes('What would you like to learn?'), 'first-open screen asks for the language');
+assert(homeCode.includes('Which Spanish?'), 'first-open screen asks which Spanish');
+assert(homeCode.includes('Start from the beginning') && homeCode.includes('Find my level'), 'two starting points');
+assert(homeCode.includes('data-open-guide-modal'), 'Home keeps the How Parlour works link');
 assert(homeCode.includes('Guide.openOverviewModal()'), 'home.js must call Guide.openOverviewModal()');
+assert(!homeCode.includes('hm-onboarding'), 'the old welcome card is gone');
 assert(!EMOJI_REGEX.test(homeCode), 'home.js must not contain any emoji characters');
-console.log('[PASS] Home onboarding card markup and event wiring verified.');
+console.log('[PASS] First-open screen and How Parlour works link verified.');
 
-// 6. Navigation Footer and Shell Integration
+// 6. App shell
 console.log('\n--- Test 6: App Shell & Navigation Integration ---');
 const indexHtml = fs.readFileSync(path.join(__dirname, '../../index.html'), 'utf8');
 assert(indexHtml.includes('engine/guide.js'), 'index.html must load engine/guide.js');
 assert(indexHtml.includes('nav-guide-btn'), 'index.html nav-footer must have nav-guide-btn');
-assert(indexHtml.includes('lesson-guide-slot'), 'index.html must include lesson-guide-slot');
+assert(!indexHtml.includes('lesson-guide-slot'), 'the old lesson banner slot is gone');
 
 const swCode = fs.readFileSync(path.join(__dirname, '../../sw.js'), 'utf8');
 assert(swCode.includes('engine/guide.js'), 'sw.js must precache engine/guide.js');
 console.log('[PASS] App shell and service worker integration verified.');
 
-// 7. Dark Mode Coach Notes & High-Contrast Tokens
-console.log('\n--- Test 7: Dark Mode Coach Notes Contrast & CSS Tokens ---');
-const baseCss = fs.readFileSync(path.join(__dirname, '../../styles/base.css'), 'utf8');
-assert(baseCss.includes('--card-bg: var(--surface)'), 'base.css dark theme must define --card-bg using --surface');
-assert(baseCss.includes('--bg-card: var(--surface)'), 'base.css dark theme must define --bg-card using --surface');
-assert(baseCss.includes('--text-muted:'), 'base.css must define --text-muted token');
+// 7. Margin note CSS
+console.log('\n--- Test 7: Margin Note CSS ---');
+const compCss = fs.readFileSync(path.join(__dirname, '../../styles/components.css'), 'utf8').replace(/\r\n/g, '\n');
+const noteRule = (compCss.match(/\.pl-note \{[^}]*\}/) || [''])[0];
+assert(noteRule, 'components.css defines .pl-note');
+assert(noteRule.includes('border-left'), 'the note has its accent rule');
+assert(!/box-shadow|border-radius/.test(noteRule), 'the note has no shadow and no box');
+assert(/\.pl-note-text \{[^}]*font-style: italic/.test(compCss), 'the note text is italic');
+assert(!compCss.includes('pl-guide-banner'), 'the old banner styles are gone');
+console.log('[PASS] Margin note CSS verified.');
 
-const compCss = fs.readFileSync(path.join(__dirname, '../../styles/components.css'), 'utf8');
-assert(compCss.includes('[data-theme="dark"] .pl-guide-banner'), 'components.css must define dark mode override for pl-guide-banner');
-assert(!compCss.includes('.pl-guide-banner {\n  display: flex;\n  align-items: flex-start;\n  gap: 14px;\n  padding: 14px 18px;\n  background: var(--card-bg, #fff);'), 'pl-guide-banner must not fallback to white (#fff) in dark mode');
-assert(compCss.includes('[data-theme="dark"] .pl-guide-banner-title'), 'components.css must define dark mode title contrast');
-assert(compCss.includes('[data-theme="dark"] .pl-guide-banner-body'), 'components.css must define dark mode body contrast');
-
-const wkCss = fs.readFileSync(path.join(__dirname, '../../styles/workshop.css'), 'utf8');
-assert(wkCss.includes('.sp-coach-note-card'), 'workshop.css must define .sp-coach-note-card');
-assert(wkCss.includes('[data-theme="dark"] .sp-coach-note-card'), 'workshop.css must define dark mode for .sp-coach-note-card');
-console.log('[PASS] Dark mode coach note contrast and CSS tokens verified.');
-
-console.log('\n=== All Onboarding & Guide Tests Passed! ===\n');
+console.log('\n=== All New-Learner Introduction Tests Passed! ===\n');

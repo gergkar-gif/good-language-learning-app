@@ -204,40 +204,145 @@ const Home = (function () {
         `;
     }
 
-    function onboardingWelcomeCard() {
-        const currentCode = Lang.code();
-        const chips = Lang.available().map(code => {
-            const isSelected = code === currentCode;
+    // ----------------------------------------
+    // FIRST OPEN
+    // ----------------------------------------
+    // The first thing a new learner sees: a name, one sentence and one
+    // question at a time — which language, which Spanish, then where to
+    // start. No tour (docs/feature-guidance-copy.md, section 1). Shown
+    // over the whole app until a starting point is chosen.
+
+    const WELCOME_PENDING_KEY = 'parlour_welcome_pending';
+
+    const WELCOME_LANGUAGES = [
+        { label: 'Spanish', codes: ['es-latam', 'es-es'] },
+        { label: 'Hungarian', codes: ['hu'] }
+    ];
+    const WELCOME_VARIANTS = [
+        { label: 'Latin America', code: 'es-latam' },
+        { label: 'Spain', code: 'es-es' }
+    ];
+
+    let _welcomeCode = null;
+
+    function _welcomeStepHtml(step) {
+        const available = Lang.available();
+        if (step === 'language') {
+            const choices = WELCOME_LANGUAGES
+                .filter(l => l.codes.some(c => available.includes(c)))
+                .map(l => `<button type="button" class="pl-welcome-choice" data-welcome-language="${esc(l.label)}">${esc(l.label)}</button>`)
+                .join('');
             return `
-                <button type="button" class="hm-lang-choice-btn ${isSelected ? 'is-active' : ''}" data-switch-lang="${esc(code)}" ${isSelected ? 'aria-pressed="true"' : 'aria-pressed="false"'}>
-                    ${esc(Lang.nameFor(code))}
-                </button>
+                <p class="pl-welcome-question">What would you like to learn?</p>
+                <div class="pl-welcome-choices">${choices}</div>
             `;
-        }).join('');
-
+        }
+        if (step === 'variant') {
+            const choices = WELCOME_VARIANTS
+                .filter(v => available.includes(v.code))
+                .map(v => `<button type="button" class="pl-welcome-choice" data-welcome-code="${esc(v.code)}">${esc(v.label)}</button>`)
+                .join('');
+            return `
+                <p class="pl-welcome-question">Which Spanish?</p>
+                <div class="pl-welcome-choices">${choices}</div>
+                <button type="button" class="pl-welcome-back" data-welcome-step="language">← Back</button>
+            `;
+        }
         return `
-            <section class="hm-continue hm-onboarding-card">
-                <div class="hm-onboarding-head">
-                    <span class="hm-eyebrow">Welcome to Parlour</span>
-                    <button class="hm-onboarding-dismiss-btn" data-dismiss-onboarding="1" title="Dismiss" aria-label="Dismiss">&times;</button>
-                </div>
-                <span class="hm-continue-title">Find your starting point</span>
-                <p class="hm-onboarding-blurb">Parlour is for people who actually want to learn languages and cultures. A non-commercial project, we want to provide a place where you can learn, read, review, and practice — welcome!</p>
-                
-                <div class="hm-onboarding-lang-picker">
-                    <span class="hm-onboarding-picker-label">I want to learn:</span>
-                    <div class="hm-onboarding-lang-chips">
-                        ${chips}
-                    </div>
-                </div>
-
-                <div class="hm-onboarding-actions">
-                    <button class="hm-onboarding-cta" data-open-diagnostic="1" type="button">Take placement test →</button>
-                    <button class="hm-onboarding-btn-secondary" data-start-unit-1="1" type="button">Start at Unit 1</button>
-                    <button class="hm-onboarding-btn-guide" data-open-guide-modal="1" type="button">How Parlour works</button>
-                </div>
-            </section>
+            <div class="pl-welcome-choices">
+                <button type="button" class="pl-welcome-choice" data-welcome-start="start">Start from the beginning</button>
+                <button type="button" class="pl-welcome-choice" data-welcome-start="placement">Find my level</button>
+            </div>
+            <button type="button" class="pl-welcome-back" data-welcome-step="language">← Back</button>
         `;
+    }
+
+    function _showWelcomeStep(step) {
+        const slot = document.getElementById('pl-welcome-step');
+        if (slot) slot.innerHTML = _welcomeStepHtml(step);
+    }
+
+    function showWelcome() {
+        if (document.getElementById('pl-welcome')) return;
+        const el = document.createElement('div');
+        el.id = 'pl-welcome';
+        el.className = 'pl-welcome';
+        el.setAttribute('role', 'dialog');
+        el.setAttribute('aria-modal', 'true');
+        el.setAttribute('aria-labelledby', 'pl-welcome-title');
+        el.innerHTML = `
+            <div class="pl-welcome-inner">
+                <h1 id="pl-welcome-title" class="pl-welcome-name">Parlour</h1>
+                <p class="pl-welcome-line">A place to learn a language properly, at your own pace.</p>
+                <div id="pl-welcome-step" class="pl-welcome-step"></div>
+            </div>
+        `;
+        document.body.appendChild(el);
+        _showWelcomeStep('language');
+
+        el.addEventListener('click', e => {
+            const language = e.target.closest('[data-welcome-language]');
+            if (language) {
+                const choice = WELCOME_LANGUAGES.find(l => l.label === language.getAttribute('data-welcome-language'));
+                const codes = choice.codes.filter(c => Lang.available().includes(c));
+                if (codes.length > 1) {
+                    _showWelcomeStep('variant');
+                } else {
+                    _welcomeCode = codes[0];
+                    _showWelcomeStep('start');
+                }
+                return;
+            }
+
+            const variant = e.target.closest('[data-welcome-code]');
+            if (variant) {
+                _welcomeCode = variant.getAttribute('data-welcome-code');
+                _showWelcomeStep('start');
+                return;
+            }
+
+            const back = e.target.closest('[data-welcome-step]');
+            if (back) {
+                _showWelcomeStep(back.getAttribute('data-welcome-step'));
+                return;
+            }
+
+            const start = e.target.closest('[data-welcome-start]');
+            if (start) {
+                const action = start.getAttribute('data-welcome-start');
+                if (_welcomeCode && _welcomeCode !== Lang.code()) {
+                    // Changing course reloads the app; the choice is carried
+                    // across the reload and acted on by render().
+                    try { localStorage.setItem(WELCOME_PENDING_KEY, action); } catch (err) {}
+                    Lang.set(_welcomeCode);
+                    location.reload();
+                    return;
+                }
+                hideWelcome();
+                _startFrom(action);
+            }
+        });
+    }
+
+    function hideWelcome() {
+        const el = document.getElementById('pl-welcome');
+        if (el && el.parentNode) el.parentNode.removeChild(el);
+    }
+
+    // 'placement' opens the short placement test; 'start' goes straight
+    // into the first lesson.
+    function _startFrom(action) {
+        if (action === 'placement' && typeof DiagnosticTest !== 'undefined') {
+            DiagnosticTest.open({ onExit: () => render() });
+            return;
+        }
+        if (typeof DiagnosticTest !== 'undefined') DiagnosticTest.dismissOnboarding();
+        const next = (typeof LearnerPath !== 'undefined') ? LearnerPath.nextStep() : null;
+        if (next && next.kind === 'lesson' && typeof startLesson === 'function') {
+            startLesson(next.lesson.id);
+        } else {
+            render();
+        }
     }
 
     // A one-tap Quick Budget bar directly under the hero card — lets the
@@ -315,48 +420,10 @@ const Home = (function () {
                 return;
             }
 
-            const diag = e.target.closest('[data-open-diagnostic]');
-            if (diag && typeof DiagnosticTest !== 'undefined') {
-                DiagnosticTest.open({
-                    onExit: () => render()
-                });
-                return;
-            }
-
-            const startUnit1 = e.target.closest('[data-start-unit-1]');
-            if (startUnit1) {
-                if (typeof DiagnosticTest !== 'undefined') DiagnosticTest.dismissOnboarding();
-                const next = (typeof LearnerPath !== 'undefined') ? LearnerPath.nextStep() : null;
-                if (next && next.kind === 'lesson' && typeof startLesson === 'function') {
-                    startUnit1.classList.add('is-loading');
-                    startLesson(next.lesson.id);
-                } else {
-                    render();
-                }
-                return;
-            }
-
-            const dismissOnboarding = e.target.closest('[data-dismiss-onboarding]');
-            if (dismissOnboarding) {
-                if (typeof DiagnosticTest !== 'undefined') DiagnosticTest.dismissOnboarding();
-                render();
-                return;
-            }
-
             const openGuideModal = e.target.closest('[data-open-guide-modal]');
             if (openGuideModal) {
                 if (typeof Guide !== 'undefined' && Guide.openOverviewModal) {
                     Guide.openOverviewModal();
-                }
-                return;
-            }
-
-            const switchLang = e.target.closest('[data-switch-lang]');
-            if (switchLang) {
-                const code = switchLang.getAttribute('data-switch-lang');
-                if (code && code !== Lang.code()) {
-                    Lang.set(code);
-                    location.reload();
                 }
                 return;
             }
@@ -566,15 +633,25 @@ const Home = (function () {
             && !DiagnosticTest.hasTaken()
             && !DiagnosticTest.isOnboardingDismissed();
 
+        // A starting point chosen on the first-open screen just before the
+        // course switch reloaded the app.
+        let pending = null;
+        try {
+            pending = localStorage.getItem(WELCOME_PENDING_KEY);
+            if (pending) localStorage.removeItem(WELCOME_PENDING_KEY);
+        } catch (err) {}
+
         host.innerHTML = `
             ${courseBlock()}
-            ${showOnboarding ? onboardingWelcomeCard() : ''}
             ${rec.primary.kind === 'unit-nudge' ? practiceNudgeCard(rec.primary)
                 : rec.primary.kind === 'mini-game' ? miniGameCard(rec.primary)
                 : continueCard(rec.primary.step)}
             ${quickBudgetBar()}
             ${reviewAlert(deck)}
             ${todayStrip()}
+            <p class="hm-guide-row">
+                <button type="button" class="hm-guide-link" data-open-guide-modal="1">How Parlour works</button>
+            </p>
         `;
 
         // The streak, the XP and the three activity marks are written by the
@@ -584,6 +661,15 @@ const Home = (function () {
         if (!host.dataset.wired) {
             attach(host);
             host.dataset.wired = '1';
+        }
+
+        if (pending) {
+            hideWelcome();
+            _startFrom(pending);
+        } else if (showOnboarding) {
+            showWelcome();
+        } else {
+            hideWelcome();
         }
     }
 

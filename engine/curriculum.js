@@ -211,6 +211,13 @@ async function renderCurriculum() {
     // directly instead of leaving the learner to scroll and hunt for it.
     const current = root.querySelector('.is-current');
     if (current) current.scrollIntoView({ block: 'center' });
+
+    // Pointed out once the learner has gone back to a finished lesson —
+    // the first sign they're looking something up (see startLesson()).
+    if (typeof Guide !== 'undefined' && Guide.hasSeen('lesson-reopened')) {
+        Guide.note('grammar-guide', root.querySelector('[data-open-grammar-guide]'),
+            'Every unit\'s grammar is collected here, in case you want to look something up.');
+    }
 }
 
 function levelListHtml() {
