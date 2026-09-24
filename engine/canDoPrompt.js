@@ -34,6 +34,24 @@
             .trim();
     }
 
+    // Whole-word topic triggers. A scenario template replaces the can-do's own
+    // wording, so a trigger must only fire when the can-do really is that
+    // situation — bare substrings sent "…where and when the Maya flourished"
+    // to street directions and "counties" to counting.
+    const TOPIC = {
+        months: /\bmonths?\b/,
+        days: /\bdays of the week\b|\bweekdays\b/,
+        numbers: /\bcount(ing)? (to|from|up|in)\b|\bnumbers (from|to|up)\b|\b(first|ordinal|cardinal) numbers\b/,
+        cafe: /\bcaf[eé](?![a-z])|\b(a|order|ordering) coffee\b/,
+        restaurant: /\brestaurant\b|\border (food|a meal|a dish)\b|\bwaiter\b/,
+        directions: /\b(?!compass )\w+ directions\b|\bway (in|around) town\b|\bask (for )?the way\b/,
+        shopping: /\bshop(ping)?\b|\bat the (store|market|shop)\b|\bbuy(ing)? (food|clothes|things|groceries|a ticket|an item)\b/,
+        routine: /\broutine\b/,
+        family: /\bmy family\b|\bfamily members\b|\b(my|your) relatives\b/,
+        hobbies: /\bhobb(y|ies)\b|\bfree time\b|\bweekends?\b(?! schools?)/,
+        homeCity: /\bwhere i live\b|\bmy (house|town|city|home|flat|apartment)\b/
+    };
+
     /**
      * Derives a crisp, human-readable card/prompt title without ugly mid-word truncation.
      */
@@ -43,19 +61,19 @@
 
         // Known high-frequency topic patterns
         const lower = text.toLowerCase();
-        if (lower.includes('café') || lower.includes('cafe')) return 'At the Café';
-        if (lower.includes('twelve months') || lower.includes('12 months') || lower.includes('months')) return 'Months of the Year';
-        if (lower.includes('days of the week') || lower.includes('days')) return 'Days of the Week';
-        if (lower.includes('this week') || lower.includes('last week') || lower.includes('next week')) return 'Time: Weeks & Days';
-        if (lower.includes('restaurant') || lower.includes('dining')) return 'At the Restaurant';
-        if (lower.includes('directions') || lower.includes('way in town')) return 'Asking for Directions';
-        if (lower.includes('daily routine') || lower.includes('routine')) return 'Daily Routine';
-        if (lower.includes('greet') || lower.includes('hello')) return 'Greetings & Introductions';
-        if (lower.includes('family')) return 'Family & Friends';
-        if (lower.includes('count') || lower.includes('numbers')) return 'Numbers & Counting';
-        if (lower.includes('weather')) return 'The Weather';
-        if (lower.includes('hotel') || lower.includes('check-in')) return 'At the Hotel';
-        if (lower.includes('shopping') || lower.includes('store') || lower.includes('market') || lower.includes('clothes')) return 'Shopping & Market';
+        if (TOPIC.cafe.test(lower)) return 'At the Café';
+        if (TOPIC.months.test(lower)) return 'Months of the Year';
+        if (TOPIC.days.test(lower)) return 'Days of the Week';
+        if (/\b(this|last|next) week\b/.test(lower)) return 'Time: Weeks & Days';
+        if (TOPIC.restaurant.test(lower)) return 'At the Restaurant';
+        if (TOPIC.directions.test(lower)) return 'Asking for Directions';
+        if (TOPIC.routine.test(lower)) return 'Daily Routine';
+        if (/\bgreet\b|\bhello\b/.test(lower)) return 'Greetings & Introductions';
+        if (TOPIC.family.test(lower)) return 'Family & Friends';
+        if (TOPIC.numbers.test(lower)) return 'Numbers & Counting';
+        if (/\bweather\b/.test(lower)) return 'The Weather';
+        if (/\bhotel\b|\bcheck-in\b/.test(lower)) return 'At the Hotel';
+        if (TOPIC.shopping.test(lower) || /\bclothes\b/.test(lower)) return 'Shopping & Market';
 
         // If short enough, title-case the cleaned text
         if (text.length <= 32) {
@@ -108,9 +126,9 @@
         // -------------------------------------------------------------
         // TYPOLOGY 1: ENUMERATION & INVENTORY (months, days, numbers, colors, lists)
         // -------------------------------------------------------------
-        const isMonths = lower.includes('month');
-        const isDays = lower.includes('day') && (lower.includes('week') || lower.includes('name'));
-        const isNumbers = lower.includes('count') || lower.includes('number');
+        const isMonths = TOPIC.months.test(lower);
+        const isDays = TOPIC.days.test(lower);
+        const isNumbers = TOPIC.numbers.test(lower);
 
         if (isMonths) {
             const hasSayWhich = lower.includes('which month') || lower.includes('say which');
@@ -172,10 +190,10 @@
         // -------------------------------------------------------------
         // TYPOLOGY 2: SITUATIONAL & TRANSACTIONAL (café, restaurant, shop, directions, ticket)
         // -------------------------------------------------------------
-        const isCafe = lower.includes('café') || lower.includes('cafe') || lower.includes('coffee');
-        const isRestaurant = lower.includes('restaurant') || lower.includes('meal') || lower.includes('order food') || lower.includes('table');
-        const isDirections = lower.includes('direction') || lower.includes('way in town') || lower.includes('where');
-        const isShopping = lower.includes('shop') || lower.includes('store') || lower.includes('market') || lower.includes('buy');
+        const isCafe = TOPIC.cafe.test(lower);
+        const isRestaurant = TOPIC.restaurant.test(lower);
+        const isDirections = TOPIC.directions.test(lower);
+        const isShopping = TOPIC.shopping.test(lower);
 
         if (isCafe) {
             const cues = (langCode === 'hu') ? [
@@ -260,10 +278,10 @@
         // -------------------------------------------------------------
         // TYPOLOGY 3: PERSONAL MONOLOGUE & DAILY LIFE
         // -------------------------------------------------------------
-        const isRoutine = lower.includes('routine') || lower.includes('daily');
-        const isFamily = lower.includes('family') || lower.includes('relative');
-        const isHobbies = lower.includes('hobby') || lower.includes('free time') || lower.includes('weekend');
-        const isHomeCity = lower.includes('where i live') || lower.includes('my house') || lower.includes('my town') || lower.includes('my city') || lower.includes('apartment');
+        const isRoutine = TOPIC.routine.test(lower);
+        const isFamily = TOPIC.family.test(lower);
+        const isHobbies = TOPIC.hobbies.test(lower);
+        const isHomeCity = TOPIC.homeCity.test(lower);
 
         if (isRoutine) {
             return {

@@ -109,6 +109,18 @@ assert(routine.prompt.includes('daily routine'), 'Prompt should instruct describ
 assert(routine.cues.length >= 2, 'Monologue should provide guidance cues');
 console.log('[PASS] Monologue prompt correctly scaffolded.');
 
+console.log('--- Test 4b: Incidental keywords do not trigger scenario templates ---');
+[
+    'I can explain who the Maya, Mexica and Inca were, and roughly where and when each flourished.',
+    'I can describe how Budapest relates to the country\'s counties.',
+    'I can state how much coffee prices fell between 1929 and 1932.',
+    'I can use compass directions with -ra/-re and -tól/-től to say where something lies relative to Hungary.'
+].forEach((canDo) => {
+    const r = CanDoPrompt.formatPrompt(canDo, { language: 'Spanish', langCode: 'es', modality: 'oral' });
+    assert.strictEqual(r.type, 'functional', `"${canDo}" should fall back to its own wording, got ${r.type}: ${r.prompt}`);
+});
+console.log('[PASS] Only genuine situational can-dos get a canned scenario.');
+
 console.log('--- Test 5: SpeakingDriller Integration with CanDoPrompt ---');
 require('../../engine/drills/speaking.js');
 const mockContainer = { innerHTML: '', querySelector: () => null, querySelectorAll: () => [] };

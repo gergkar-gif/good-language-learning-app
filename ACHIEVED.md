@@ -9,6 +9,26 @@ needs re-reading before starting new work; it's reference only.
 
 ## Completed queue items
 
+86. ~~**Communicative challenge no longer swaps the can-do for an unrelated canned scenario**~~ — **Done 2026-09-24.**
+    User finished LatAm B1 `b1-precolombina-02` and got the challenge "Ask
+    someone on the street for directions to a station, hotel…" under the
+    target "explain who the Maya, Mexica and Inca were, and roughly where
+    and when each flourished". `engine/canDoPrompt.js` picks a scenario
+    template by bare substring match, and `'where'` counted as a directions
+    keyword. A corpus scan showed 340 can-dos across all courses were
+    templated, most of them wrongly: "counties/country/encounter" went to
+    "count out loud", "family structure" to "talk about your family", "market
+    economy" to shopping, "table/meal" to restaurant, and Brazil's coffee
+    economy to "order at the café". Now there is one `TOPIC` table of
+    whole-word regexes, shared by the title and the prompt. Incidental
+    triggers are gone (`where`, `table`, `meal`, `daily`, bare
+    `day`/`count`/`number`/`market`/`buy`). Anything unmatched falls back to
+    the generic prompt, which restates the can-do itself. After the fix, 86
+    can-dos are templated, all genuine café/shop/restaurant/directions/
+    family/routine/hobby/calendar situations. Note that JS `\b` is
+    ASCII-only, so `café` needs `(?![a-z])`, not `\b`. Regression cases
+    were added to `tests/drills/test-cando-prompt.js`.
+
 85. ~~**Vocabulary Driller's B1 gate closed everywhere, including timed sessions**~~ — **Done 2026-09-24.**
     The driller has been B1+ since 2026-09-23 (`minLevel: 'B1'` in
     `engine/workshop.js`, mirrored in RecommendationEngine), but four
