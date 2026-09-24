@@ -60,7 +60,266 @@ def make_narration(paragraphs, target_grammar, key_vocab, comp_questions):
     }
 
 
-def emit_unit(slug, old_prefix, unit_title_match, order_idx, lessons_cfg, comb_story_cfg, consolidation_cfg):
+def _convert_ex_item(ex_id: str, raw: dict, g_slug: str) -> dict:
+    t = raw["type"]
+    cat = raw.get("cat", "grammar")
+    if t == "multiple-choice":
+        opts = list(raw["options"])
+        ans = raw.get("answer", opts[0])
+        correct_idx = opts.index(ans) if ans in opts else 0
+        out = {
+            "id": ex_id,
+            "type": "multiple-choice",
+            "category": cat,
+            "question": raw["prompt"],
+            "options": opts,
+            "correct": correct_idx
+        }
+        if cat != "reading" and g_slug:
+            out["teaches"] = [g_slug]
+        return out
+    elif t == "fill-blank":
+        out = {
+            "id": ex_id,
+            "type": "fill-blank",
+            "category": cat,
+            "sentence": raw["prompt"],
+            "answer": raw["answer"],
+            "english": raw["english"]
+        }
+        if g_slug:
+            out["teaches"] = [g_slug]
+        return out
+    elif t == "sentence-builder":
+        words = list(raw["words"])
+        out = {
+            "id": ex_id,
+            "type": "sentence-builder",
+            "category": cat,
+            "tiles": words,
+            "solution": words,
+            "english": raw["english"]
+        }
+        if g_slug:
+            out["teaches"] = [g_slug]
+        return out
+    elif t == "dictation":
+        out = {
+            "id": ex_id,
+            "type": "dictation",
+            "category": "listening",
+            "sentence": raw["text"],
+            "english": raw["english"]
+        }
+        if g_slug:
+            out["teaches"] = [g_slug]
+        return out
+    raise ValueError(f"Unsupported exercise type: {t}")
+
+
+def emit_unit_from_dict(u: dict):
+    slug = u["slug"]
+    old_prefix = u["legacy_prefix"]
+    unit_title = u["unit_title"]
+    order_idx = u["order"]
+
+    for folder in ["lessons/b1", "vocabulary/b1", "grammar/b1", "exercises/b1"]:
+        dir_path = ROOT / "content/es-es" / folder
+        if dir_path.exists():
+            for old_file in dir_path.glob(f"{old_prefix}*"):
+                old_file.unlink()
+                print(f"Removed legacy file {old_file.relative_to(ROOT)}")
+
+    all_unit_paras = []
+    all_unit_qs = []
+    all_unit_vocab = []
+
+    for lcfg in u["lessons"]:
+        num = lcfg["num"]
+        stem = f"b1-{slug}-{num}"
+        g_slug = lcfg["grammar_slug"]
+
+        # 1. Vocab
+        words_formatted = []
+        for w in lcfg["vocab"]:
+            words_formatted.append({
+                "lemma": w["lemma"],
+                "pos": w["pos"],
+                "translation": w["translation"]
+            })
+        voc_data = {
+            "id": f"vocab.b1.{slug}.{num}",
+            "lesson": stem,
+            "title": lcfg["title"],
+            "theme": unit_title,
+            "words": words_formatted
+        }
+        vocab_rel = f"vocabulary/b1/{stem}-voc.json"
+        write_json(f"content/es-es/{vocab_rel}", voc_data)
+
+        # 2. Grammar
+        gr_sections = [
+            {"type": "text", "content": lcfg["grammar_text"]},
+            {"type": "examples", "items": lcfg["grammar_examples"]},
+            {"type": "tip", "content": lcfg["grammar_tip"]}
+        ]
+        gr_data = {
+            "id": f"grammar.b1.{slug}.{num}.{g_slug}",
+            "title": lcfg["grammar_title"],
+            "sections": gr_sections
+        }
+        gr_rel = f"grammar/b1/{stem}-{g_slug}-gr.json"
+        write_json(f"content/es-es/{gr_rel}", gr_data)
+
+        # 3. Story
+        paras = [{"type": "narration", "text": t} for t in lcfg["story_paragraphs"]]
+        all_unit_paras.extend(paras)
+        all_unit_qs.extend(lcfg["comp_questions"])
+        kv = [
+            {"lemma": words_formatted[0]["lemma"], "pos": words_formatted[0]["pos"], "cefr": "B1", "gloss": words_formatted[0]["translation"]},
+            {"lemma": words_formatted[1]["lemma"], "pos": words_formatted[1]["pos"], "cefr": "B1", "gloss": words_formatted[1]["translation"]},
+            {"lemma": words_formatted[2]["lemma"], "pos": words_formatted[2]["pos"], "cefr": "B1", "gloss": words_formatted[2]["translation"]}
+        ]
+        all_unit_vocab.extend(kv)
+        story_data = {
+            "id": f"story.b1.{slug}.{num}",
+            "title": lcfg["story_title"],
+            "level": "B1",
+            "lesson": int(num),
+            "order": int(num),
+            "type": "world",
+            "estimatedMinutes": 5,
+            "summary": lcfg["story_summary"],
+            "characters": [],
+            "location": lcfg["story_location"],
+            "grammar": [g_slug],
+            "vocabularyTopics": [unit_title, lcfg["title"]],
+            "paragraphs": paras,
+            "narration": make_narration(paras, [g_slug], kv, lcfg["comp_questions"])
+        }
+        story_rel = f"stories/world/b1/{stem}-{lcfg['story_slug']}.json"
+        write_json(f"content/es-es/{story_rel}", story_data)
+
+        # 4. Exercises
+        ex_list = []
+        ex_refs = []
+        for idx, raw_ex in enumerate(lcfg["exercises"], start=1):
+            ex_id = f"{stem}.ex{idx:02d}"
+            ex_refs.append(ex_id)
+            ex_list.append(_convert_ex_item(ex_id, raw_ex, g_slug))
+        ex_rel = f"exercises/b1/{stem}-ex.json"
+        write_json(f"content/es-es/{ex_rel}", {"lesson": stem, "exercises": ex_list})
+
+        # 5. Lesson
+        goals_list = [
+            lcfg["goal"],
+            f"Master 8 key CCSE vocabulary terms related to {lcfg['title']}",
+            f"Apply '{lcfg['grammar_title']}' in civic and constitutional contexts"
+        ]
+        lesson_data = {
+            "id": f"lesson.b1.{slug}.{num}",
+            "title": lcfg["title"],
+            "level": "B1",
+            "goal": lcfg["goal"],
+            "grammar": lcfg["grammar_summary"],
+            "sections": [
+                {"type": "goal", "items": goals_list},
+                {"type": "recycle", "count": 3},
+                {"type": "story", "ref": story_rel},
+                {"type": "vocabulary", "ref": vocab_rel},
+                {"type": "grammar", "ref": gr_rel},
+                {
+                    "type": "exercise-group",
+                    "title": "Practice",
+                    "ref": ex_rel,
+                    "exerciseRefs": ex_refs
+                },
+                {"type": "srs"},
+                {"type": "checklist", "items": [f"I can {g[0].lower() + g[1:]}" for g in goals_list]}
+            ]
+        }
+        write_json(f"content/es-es/lessons/b1/{stem}.json", lesson_data)
+
+    # Combined story (stitched with all 25 paragraphs and 15 comprehension questions)
+    comb_data = {
+        "id": f"story.b1.{slug}",
+        "title": unit_title,
+        "level": "B1",
+        "order": order_idx,
+        "type": "world",
+        "estimatedMinutes": 12,
+        "summary": u["unit_summary"],
+        "characters": [],
+        "location": "España",
+        "grammar": [l["grammar_slug"] for l in u["lessons"]],
+        "vocabularyTopics": [l["title"] for l in u["lessons"]],
+        "paragraphs": all_unit_paras,
+        "narration": make_narration(
+            all_unit_paras,
+            [l["grammar_slug"] for l in u["lessons"][:2]],
+            all_unit_vocab[:15],
+            all_unit_qs
+        )
+    }
+    write_json(f"content/es-es/stories/world/b1/b1-{slug}.json", comb_data)
+
+    # Consolidation exercises & lesson
+    cons_stem = f"b1-{slug}-consolidation"
+    cons_ex_list = []
+    cons_ex_refs = []
+    first_g_slug = u["lessons"][0]["grammar_slug"]
+    for idx, raw_ex in enumerate(u["consolidation_exercises"], start=1):
+        ex_id = f"{cons_stem}.ex{idx:02d}"
+        cons_ex_refs.append(ex_id)
+        cons_ex_list.append(_convert_ex_item(ex_id, raw_ex, first_g_slug))
+
+    cons_ex_rel = f"exercises/b1/{cons_stem}-ex.json"
+    write_json(f"content/es-es/{cons_ex_rel}", {
+        "lesson": cons_stem,
+        "exercises": cons_ex_list
+    })
+
+    cons_goals = [
+        f"Review all 5 lessons of {unit_title} for the CCSE citizenship exam",
+        "Consolidate 40 civic vocabulary terms and 5 B1 grammatical structures"
+    ]
+    cons_lesson = {
+        "id": f"lesson.b1.{slug}.consolidation",
+        "title": f"Consolidación: {unit_title}",
+        "level": "B1",
+        "goal": f"Consolidate your knowledge of {unit_title} for the CCSE citizenship exam.",
+        "grammar": f"Review of grammatical structures from {unit_title}",
+        "sections": [
+            {"type": "goal", "items": cons_goals},
+            {"type": "recycle", "count": 3},
+            {
+                "type": "exercise-group",
+                "title": "Review",
+                "ref": cons_ex_rel,
+                "exerciseRefs": cons_ex_refs
+            },
+            {
+                "type": "checklist",
+                "items": [f"I can {g[0].lower() + g[1:]}" for g in cons_goals]
+            }
+        ]
+    }
+    write_json(f"content/es-es/lessons/b1/{cons_stem}.json", cons_lesson)
+
+    # Update units/b1.json
+    units_path = ROOT / "content/es-es/curriculum/units/b1.json"
+    units_data = json.loads(units_path.read_text(encoding="utf-8"))
+    new_stems = [f"b1-{slug}-{i:02d}" for i in range(1, 6)] + [f"b1-{slug}-consolidation"]
+    for entry in units_data:
+        if entry.get("track") == "cultura" and (unit_title in entry.get("title", "") or any(s.startswith(old_prefix) for s in entry.get("stems", []))):
+            entry["stems"] = new_stems
+            break
+    write_json("content/es-es/curriculum/units/b1.json", units_data)
+
+
+def emit_unit(slug, old_prefix=None, unit_title_match=None, order_idx=None, lessons_cfg=None, comb_story_cfg=None, consolidation_cfg=None):
+    if isinstance(slug, dict):
+        return emit_unit_from_dict(slug)
     # Remove legacy files
     for folder in ["lessons/b1", "vocabulary/b1", "grammar/b1", "exercises/b1"]:
         dir_path = ROOT / "content/es-es" / folder

@@ -8,14 +8,20 @@ Completed work is archived out to `ACHIEVED.md`.
 ## 1. Active & Parked Priorities
 
 1. **Progressive Authoring of Spain CCSE Track (`content/es-es`, Units 1–36):**
-   - **Completed to Full Standard (8-part lessons, 63 exercises/unit, 5+1 world stories with 3 comprehension questions, 40 vocab words)**:
+   - **Completed to Full Standard (8-part lessons, 63 exercises/unit, 5+1 stitched world stories with 15 comprehension questions, 40 vocab words)**:
      - Unit 1: *La Constitución Española de 1978* (`b1-constitucion-01`..`05` + `consolidation`) — reauthored 2026-09-24.
      - Unit 2: *La Corona y la Jefatura del Estado* (`b1-monarquia-01`..`05` + `consolidation`) — reauthored 2026-09-24.
      - Unit 3: *Las Cortes Generales: Congreso y Senado* (`b1-cortes-01`..`05` + `consolidation`) — reauthored 2026-09-24.
      - Unit 4: *El Gobierno y la Administración del Estado* (`b1-gobierno-01`..`05` + `consolidation`) — reauthored 2026-09-24.
      - Unit 5: *El Poder Judicial y el Tribunal Constitucional* (`b1-judicial-01`..`05` + `consolidation`) — reauthored 2026-09-24.
      - Unit 6: *Las Instituciones Autonómicas y Locales* (`b1-autonomias-01`..`05` + `consolidation`) — reauthored 2026-09-24.
-   - **Roadmapped / Parked for Future Cycles**: Units 7 through 36 (covering Elecciones, Fuerzas Armadas, Unión Europea, Símbolos, Derechos Fundamentales, Geografía, Historia, Cultura, y Sociedad Española).
+     - Unit 7: *Elecciones y Participación Ciudadana* (`b1-participacion-01`..`05` + `consolidation`) — authored 2026-09-24.
+     - Unit 8: *Fuerzas Armadas y Cuerpos de Seguridad* (`b1-seguridad-01`..`05` + `consolidation`) — authored 2026-09-24.
+     - Unit 9: *España en la Unión Europea* (`b1-unioneuropea-01`..`05` + `consolidation`) — authored 2026-09-24.
+     - Unit 10: *Símbolos del Estado: Bandera, Escudo e Himno* (`b1-simbolos-01`..`05` + `consolidation`) — authored 2026-09-24.
+     - Unit 11: *El Castellano y las Lenguas Cooficiales* (`b1-lenguas-01`..`05` + `consolidation`) — authored 2026-09-24.
+     - Unit 12: *Difusión Cultural: El Instituto Cervantes* (`b1-cervantes-01`..`05` + `consolidation`) — authored 2026-09-24.
+   - **Roadmapped / Parked for Future Cycles**: Units 13 through 36 (covering Derechos Fundamentales, Igualdad, Deberes, Defensor del Pueblo, Geografía, Historia, Cultura y Sociedad Española).
    - **Authoring Norm**: Every unit must follow the established three-pillar standard: B1 level pedagogical clarity, 100% factual accuracy (aligned with Instituto Cervantes CCSE syllabus), and *The Rest Is History* (TRIH)-style engaging, humanized narrative storytelling with companion stories in `stories/world/b1/` and schema-compliant `b1-<slug>-01` stems.
 
 2. **Keep new features cross-referencing `design principles.md`.** The 2026-09-23 visual-identity drift sweep (`ACHIEVED.md` items 72-75) is now fully closed out — `--bg-card` (real token, pure white in light mode, apparently a vestige of the briefly-adopted-then-reversed 2026-08-14 "soft card" phase) turned out to be used nowhere else in the entire app except the newer Level Test/Diagnostic/Home-onboarding features, all now fixed. The drift consistently came from features shipping their own CSS (and inline JS styles) without checking the doc first — a general periodic check for that would prevent the same class of drift recurring.
