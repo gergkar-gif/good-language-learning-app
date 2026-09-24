@@ -7,19 +7,17 @@ Completed work is archived out to `ACHIEVED.md`.
 
 ## 1. Active & Parked Priorities
 
-1. **Progressive Authoring of Spain CCSE Track (`content/es-es`, Units 7–36):**
-   - **Completed**:
-     - Unit 1: *La Constitución Española de 1978*
+1. **Progressive Authoring of Spain CCSE Track (`content/es-es`, Units 1–36):**
+   - **Completed to Full Standard (8-part lessons, 63 exercises/unit, 5+1 world stories with 3 comprehension questions, 40 vocab words)**:
+     - Unit 1: *La Constitución Española de 1978* (`b1-constitucion-01`..`05` + `consolidation`) — reauthored 2026-09-24.
+   - **Minimal Draft Scaffold (to be upgraded to full standard)**:
      - Unit 2: *La Corona y la Jefatura del Estado*
      - Unit 3: *Las Cortes Generales: Congreso y Senado*
      - Unit 4: *El Gobierno y la Administración del Estado*
      - Unit 5: *El Poder Judicial y el Tribunal Constitucional*
      - Unit 6: *Las Instituciones Autonómicas y Locales*
-     (Fully authored with B1 pedagogical texts, grammar modules, vocabulary, exercises with English translations, and generating SRS decks).
    - **Roadmapped / Parked for Future Cycles**: Units 7 through 36 (covering Elecciones, Fuerzas Armadas, Unión Europea, Símbolos, Derechos Fundamentales, Geografía, Historia, Cultura, y Sociedad Española).
-   - **Authoring Norm**: When resuming, every unit must follow the established three-pillar standard: B1 level pedagogical clarity, 100% factual accuracy (aligned with Instituto Cervantes CCSE syllabus), and *The Rest Is History* (TRIH)-style engaging, humanized narrative storytelling with companion stories in `stories/world/b1/`.
-   - `scripts/validate-content.py` maintains `SKIP_STEM_MARKERS = {"es-es": "-ccse-"}` for scaffolded stubs until all units are authored.
-   - **2026-09-23 grading bug fixed**: the first multiple-choice question in every Unit 1 (Constitución) and Unit 2 (Monarquía) lesson, plus both in Unit 2's consolidation, used an `"answer": "<text>"` field instead of the `"correct": <index>` field every other exercise in the app uses — `shuffledOptions()` in `engine/lessons.js` reads `step.correct`, got `undefined`, and marked every choice wrong regardless of what the learner picked. Fixed by converting all 12 exercises to `"correct": <index>` (`content/es-es/exercises/b1/b1-ccse-constitucion-*-ex.json`, `b1-ccse-monarquia-*-ex.json`). Worth spot-checking Units 3-6 exercise files for the same `answer`-vs-`correct` drift if this recurs.
+   - **Authoring Norm**: Every unit must follow the established three-pillar standard: B1 level pedagogical clarity, 100% factual accuracy (aligned with Instituto Cervantes CCSE syllabus), and *The Rest Is History* (TRIH)-style engaging, humanized narrative storytelling with companion stories in `stories/world/b1/` and schema-compliant `b1-<slug>-01` stems.
 
 2. **Keep new features cross-referencing `design principles.md`.** The 2026-09-23 visual-identity drift sweep (`ACHIEVED.md` items 72-75) is now fully closed out — `--bg-card` (real token, pure white in light mode, apparently a vestige of the briefly-adopted-then-reversed 2026-08-14 "soft card" phase) turned out to be used nowhere else in the entire app except the newer Level Test/Diagnostic/Home-onboarding features, all now fixed. The drift consistently came from features shipping their own CSS (and inline JS styles) without checking the doc first — a general periodic check for that would prevent the same class of drift recurring.
 

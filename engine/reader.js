@@ -476,7 +476,8 @@ const STORY_TYPE_LABELS = {
 
 const TRACK_SHELF_LABELS = {
     latam: 'Latin America',
-    citizenship: 'Citizenship'
+    citizenship: 'Citizenship',
+    cultura: 'Cultura y Ciudadanía'
 };
 
 // Shelf key for a story in a dual-track level's non-core track, else null.
