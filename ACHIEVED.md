@@ -9,6 +9,37 @@ needs re-reading before starting new work; it's reference only.
 
 ## Completed queue items
 
+91. ~~**Grammar `teaches` tags that don't match the exercise**~~ — **Done 2026-09-24.** (Was ROADMAP.md active item 7.)
+    Every grammar exercise was checked against its `teaches` tags, 7,573
+    exercise–tag pairs across es-latam, es-es and hu. Parallel agents
+    checked each skill's exercises against its curated name, then I
+    reviewed the results by hand. 179 findings:
+    - **Removed 105 stray tags** where the exercise already had the
+      right one. The biggest clusters were in es-latam A2. `a2-10-01`
+      to `a2-10-05` tagged present-perfect drills as `porque`, and
+      `a2-16-01` to `a2-16-05` tagged *ir a* + infinitive drills as
+      `preterito-indefinido`. In Hungarian A1, whole lessons had both of
+      their skill tags on every exercise (`ez-az-this-that` +
+      `mi-micsoda-what`, `sok-egy-singular-noun` + `egyutt-together`).
+    - **Retagged 56** to the existing skill that fits, e.g. a
+      `habitos-soler` exercise that tests the passive *se*, and a
+      `cause-consequence` one that tests *si* + imperfect subjunctive.
+      `ser-questions` (all about *llamarse*) was folded into `names`,
+      and the stray `negation`, `gerund` and `passive-voice-legado` tags
+      are gone. These skills disappeared from the index, and their
+      names were pruned from `grammar-titles.json`.
+    - 18 were left unchanged: plain sentences with no grammar point,
+      two placeholder exercises, and one HU *lenni* exercise with no
+      matching skill (ROADMAP.md active item 8).
+    - The 33 skills whose exercises contain no grammar (comprehension
+      questions, sentence ordering) are now named "reading", as is
+      `gerund`, which is left with one such exercise.
+    - Edits were made on the `teaches` array as text, so file
+      formatting was kept. The Hungarian citizenship overhaul
+      (`c67fa8f8`) landed mid-audit. The 7 edited files it touched were
+      reverted and re-checked against the new content before the fixes
+      were applied again.
+
 90. ~~**Complete Authoring of Spain Citizenship Track (`content/es-es`, Units 1–36) & Consolidated Unit Library Readings**~~ — **Done 2026-09-24.** (Was ROADMAP.md active item 1.)
     - Authored all **36 units** (Units 37–72 in `content/es-es/curriculum/units/b1.json`, `b1-constitucion` through `b1-simulacro`) of the Spain Citizenship (`cultura` / CCSE) B1 elective track to the full pedagogical standard matching the Hungarian Citizenship (`hu`) and Latin America (`es-latam`) tracks:
       - **216 lessons** (`180` 8-part main lessons + `36` consolidation lessons) replacing all legacy 6-exercise `b1-ccse-*` stubs.
@@ -33,7 +64,7 @@ needs re-reading before starting new work; it's reference only.
       "estar + gerund for -ar verbs", "stating purpose with a fin de
       que". No colons, dashes or parentheses.
     - Names follow what the tagged exercises actually test, not the ID,
-      where the two disagree (see ROADMAP.md active item 7). Skills whose
+      where the two disagree (see item 91). Skills whose
       exercises contain no grammar are named after the activity:
       "understanding the text", "putting sentences in order".
     - Drafted in parallel batches from each skill's sample exercises and
