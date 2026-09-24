@@ -10,12 +10,11 @@ Completed work is archived out to `ACHIEVED.md`.
 1. **Progressive Authoring of Spain CCSE Track (`content/es-es`, Units 1–36):**
    - **Completed to Full Standard (8-part lessons, 63 exercises/unit, 5+1 world stories with 3 comprehension questions, 40 vocab words)**:
      - Unit 1: *La Constitución Española de 1978* (`b1-constitucion-01`..`05` + `consolidation`) — reauthored 2026-09-24.
-   - **Minimal Draft Scaffold (to be upgraded to full standard)**:
-     - Unit 2: *La Corona y la Jefatura del Estado*
-     - Unit 3: *Las Cortes Generales: Congreso y Senado*
-     - Unit 4: *El Gobierno y la Administración del Estado*
-     - Unit 5: *El Poder Judicial y el Tribunal Constitucional*
-     - Unit 6: *Las Instituciones Autonómicas y Locales*
+     - Unit 2: *La Corona y la Jefatura del Estado* (`b1-monarquia-01`..`05` + `consolidation`) — reauthored 2026-09-24.
+     - Unit 3: *Las Cortes Generales: Congreso y Senado* (`b1-cortes-01`..`05` + `consolidation`) — reauthored 2026-09-24.
+     - Unit 4: *El Gobierno y la Administración del Estado* (`b1-gobierno-01`..`05` + `consolidation`) — reauthored 2026-09-24.
+     - Unit 5: *El Poder Judicial y el Tribunal Constitucional* (`b1-judicial-01`..`05` + `consolidation`) — reauthored 2026-09-24.
+     - Unit 6: *Las Instituciones Autonómicas y Locales* (`b1-autonomias-01`..`05` + `consolidation`) — reauthored 2026-09-24.
    - **Roadmapped / Parked for Future Cycles**: Units 7 through 36 (covering Elecciones, Fuerzas Armadas, Unión Europea, Símbolos, Derechos Fundamentales, Geografía, Historia, Cultura, y Sociedad Española).
    - **Authoring Norm**: Every unit must follow the established three-pillar standard: B1 level pedagogical clarity, 100% factual accuracy (aligned with Instituto Cervantes CCSE syllabus), and *The Rest Is History* (TRIH)-style engaging, humanized narrative storytelling with companion stories in `stories/world/b1/` and schema-compliant `b1-<slug>-01` stems.
 
