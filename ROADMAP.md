@@ -27,7 +27,13 @@ Completed work is archived out to `ACHIEVED.md`.
      - Unit 16: *Garantías Constitucionales y el Defensor del Pueblo* (`b1-garantias-01`..`05` + `consolidation`) — authored 2026-09-24.
      - Unit 17: *Geografía Física: Relieve, Costas, Ríos y Clima* (`b1-geografia-01`..`05` + `consolidation`) — authored 2026-09-24.
      - Unit 18: *La España Verde: Galicia, Asturias, Cantabria y País Vasco* (`b1-norte-01`..`05` + `consolidation`) — authored 2026-09-24.
-   - **Roadmapped / Parked for Future Cycles**: Units 19 through 36 (covering Geografía Autonómica restante, Historia de España, Literatura, Arte, Música, Cine, Gastronomía, Fiestas y Sociedad Española).
+     - Unit 19: *Comunidades del Mediterráneo e Islas Baleares* (`b1-mediterraneo-01`..`05` + `consolidation`) — authored 2026-09-24.
+     - Unit 20: *Comunidades del Centro, Sur y Canarias* (`b1-centrosur-01`..`05` + `consolidation`) — authored 2026-09-24.
+     - Unit 21: *Ceuta, Melilla y Municipios de España* (`b1-ciudadesautonomas-01`..`05` + `consolidation`) — authored 2026-09-24.
+     - Unit 22: *Historia: De Hispania al Siglo de Oro* (`b1-historiaantigua-01`..`05` + `consolidation`) — authored 2026-09-24.
+     - Unit 23: *Historia Contemporánea y Transición a la Democracia* (`b1-historiacontemporanea-01`..`05` + `consolidation`) — authored 2026-09-24.
+     - Unit 24: *Literatura Española: De Cervantes a la Generación del 27* (`b1-literatura-01`..`05` + `consolidation`) — authored 2026-09-24.
+   - **Roadmapped / Parked for Future Cycles**: Units 25 through 36 (covering Arte y Pintura, Música y Cine, Fiestas y Tradiciones, Gastronomía, Sanidad, Educación, Empleo, Vivienda, Documentación, Transporte, Consumo y Simulacro CCSE).
    - **Authoring Norm**: Every unit must follow the established three-pillar standard: B1 level pedagogical clarity, 100% factual accuracy (aligned with Instituto Cervantes CCSE syllabus), and *The Rest Is History* (TRIH)-style engaging, humanized narrative storytelling with companion stories in `stories/world/b1/` and schema-compliant `b1-<slug>-01` stems.
 
 2. **Keep new features cross-referencing `design principles.md`.** The 2026-09-23 visual-identity drift sweep (`ACHIEVED.md` items 72-75) is now fully closed out — `--bg-card` (real token, pure white in light mode, apparently a vestige of the briefly-adopted-then-reversed 2026-08-14 "soft card" phase) turned out to be used nowhere else in the entire app except the newer Level Test/Diagnostic/Home-onboarding features, all now fixed. The drift consistently came from features shipping their own CSS (and inline JS styles) without checking the doc first — a general periodic check for that would prevent the same class of drift recurring.
