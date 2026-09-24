@@ -39,8 +39,14 @@ Completed work is archived out to `ACHIEVED.md`.
      - Unit 28: *Gastronomía Española y Dieta Mediterránea* (`b1-gastronomia-01`..`05` + `consolidation`) — authored 2026-09-24.
      - Unit 29: *El Sistema Nacional de Salud y la Tarjeta Sanitaria* (`b1-sanidad-01`..`05` + `consolidation`) — authored 2026-09-24.
      - Unit 30: *El Sistema Educativo Español* (`b1-educacion-01`..`05` + `consolidation`) — authored 2026-09-24.
-   - **Roadmapped / Parked for Future Cycles**: Units 31 through 36 (covering Empleo, Vivienda, Documentación, Transporte, Consumo y Simulacro CCSE).
-   - **Authoring Norm**: Every unit must follow the established three-pillar standard: B1 level pedagogical clarity, 100% factual accuracy (aligned with Instituto Cervantes CCSE syllabus), and *The Rest Is History* (TRIH)-style engaging, humanized narrative storytelling with companion stories in `stories/world/b1/` and schema-compliant `b1-<slug>-01` stems.
+     - Unit 31: *Mercado Laboral y Seguridad Social* (`b1-empleo-01`..`05` + `consolidation`) — authored 2026-09-24.
+     - Unit 32: *Vivienda, Registro y Empadronamiento* (`b1-vivienda-01`..`05` + `consolidation`) — authored 2026-09-24.
+     - Unit 33: *Documentación: DNI, NIE y Registro Civil* (`b1-documentacion-01`..`05` + `consolidation`) — authored 2026-09-24.
+     - Unit 34: *Transporte, Comunicaciones y Emergencias 112* (`b1-transporte-01`..`05` + `consolidation`) — authored 2026-09-24.
+     - Unit 35: *Consumo, Horarios y Servicios Bancarios* (`b1-consumobanca-01`..`05` + `consolidation`) — authored 2026-09-24.
+     - Unit 36: *Simulacro General de Examen CCSE* (`b1-simulacro-01`..`05` + `consolidation`) — authored 2026-09-24.
+   - **Status**: **100% Complete (All 36 / 36 Units authored, validated, and stitched into 36 Library readings).**
+   - **Authoring Norm**: Every unit follows the established three-pillar standard: B1 level pedagogical clarity, 100% factual accuracy (aligned with Instituto Cervantes CCSE syllabus), and *The Rest Is History* (TRIH)-style engaging, humanized narrative storytelling with companion stories in `stories/world/b1/` and schema-compliant `b1-<slug>-01` stems.
 
 2. **Keep new features cross-referencing `design principles.md`.** The 2026-09-23 visual-identity drift sweep (`ACHIEVED.md` items 72-75) is now fully closed out — `--bg-card` (real token, pure white in light mode, apparently a vestige of the briefly-adopted-then-reversed 2026-08-14 "soft card" phase) turned out to be used nowhere else in the entire app except the newer Level Test/Diagnostic/Home-onboarding features, all now fixed. The drift consistently came from features shipping their own CSS (and inline JS styles) without checking the doc first — a general periodic check for that would prevent the same class of drift recurring.
 

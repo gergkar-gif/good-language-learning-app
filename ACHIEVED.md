@@ -9,6 +9,16 @@ needs re-reading before starting new work; it's reference only.
 
 ## Completed queue items
 
+90. ~~**Complete Authoring of Spain Citizenship Track (`content/es-es`, Units 1–36) & Consolidated Unit Library Readings**~~ — **Done 2026-09-24.** (Was ROADMAP.md active item 1.)
+    - Authored all **36 units** (Units 37–72 in `content/es-es/curriculum/units/b1.json`, `b1-constitucion` through `b1-simulacro`) of the Spain Citizenship (`cultura` / CCSE) B1 elective track to the full pedagogical standard matching the Hungarian Citizenship (`hu`) and Latin America (`es-latam`) tracks:
+      - **216 lessons** (`180` 8-part main lessons + `36` consolidation lessons) replacing all legacy 6-exercise `b1-ccse-*` stubs.
+      - **2,268 schema-validated exercises** (`63` exercises per unit: `11` per main lesson + `8` per consolidation lesson, covering `multiple-choice`, `fill-blank`, `sentence-builder`, and `dictation`).
+      - **1,440 vocabulary items** (`40` per unit across `180` `-voc.json` files) and **180 contextual civic/grammar modules** (`-gr.json`).
+      - **180 TRIH-style 5-paragraph world stories** (`900` narrative paragraphs + `540` comprehension questions) covering all five official Instituto Cervantes CCSE tasks (*Tarea 1: Gobierno, legislación y participación ciudadana; Tarea 2: Derechos y deberes fundamentales; Tarea 3: Organización territorial y geografía física y política; Tarea 4: Cultura e historia; Tarea 5: Sociedad española y vida cotidiana*).
+    - **Consolidated Unit Library Readings (`scripts/stitch_track_unit_stories.py` + `build-manifest.py`)**:
+      - Stitched the 5 lesson readings of each B1 elective track unit into **1 consolidated 25-paragraph Library reading per unit** (`b1-<slug>.json`) whose `"title"` matches the exact Unit Title in `curriculum/units/b1.json` (`36` in `es-latam`, `36` in `es-es`, and `36` in `hu`).
+      - Updated `build-manifest.py` so individual lesson sub-stories (`b1-<slug>-01..05*`) remain accessible inside their lessons while the Library displays one clean consolidated reading per unit.
+
 89. ~~**Readable, CEFR-style names for grammar skills**~~ — **Done 2026-09-24.** (Was ROADMAP.md active item 6.)
     Practice suggestions name the weak skill mid-sentence ("You made a
     few mistakes with … lately", item 88), but Spanish had no curated
