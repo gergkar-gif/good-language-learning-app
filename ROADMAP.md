@@ -21,7 +21,13 @@ Completed work is archived out to `ACHIEVED.md`.
      - Unit 10: *Símbolos del Estado: Bandera, Escudo e Himno* (`b1-simbolos-01`..`05` + `consolidation`) — authored 2026-09-24.
      - Unit 11: *El Castellano y las Lenguas Cooficiales* (`b1-lenguas-01`..`05` + `consolidation`) — authored 2026-09-24.
      - Unit 12: *Difusión Cultural: El Instituto Cervantes* (`b1-cervantes-01`..`05` + `consolidation`) — authored 2026-09-24.
-   - **Roadmapped / Parked for Future Cycles**: Units 13 through 36 (covering Derechos Fundamentales, Igualdad, Deberes, Defensor del Pueblo, Geografía, Historia, Cultura y Sociedad Española).
+     - Unit 13: *Derechos y Libertades Fundamentales* (`b1-derechos-01`..`05` + `consolidation`) — authored 2026-09-24.
+     - Unit 14: *Igualdad, Familia y No Discriminación* (`b1-igualdad-01`..`05` + `consolidation`) — authored 2026-09-24.
+     - Unit 15: *Deberes Ciudadanos y Sistema Tributario* (`b1-deberes-01`..`05` + `consolidation`) — authored 2026-09-24.
+     - Unit 16: *Garantías Constitucionales y el Defensor del Pueblo* (`b1-garantias-01`..`05` + `consolidation`) — authored 2026-09-24.
+     - Unit 17: *Geografía Física: Relieve, Costas, Ríos y Clima* (`b1-geografia-01`..`05` + `consolidation`) — authored 2026-09-24.
+     - Unit 18: *La España Verde: Galicia, Asturias, Cantabria y País Vasco* (`b1-norte-01`..`05` + `consolidation`) — authored 2026-09-24.
+   - **Roadmapped / Parked for Future Cycles**: Units 19 through 36 (covering Geografía Autonómica restante, Historia de España, Literatura, Arte, Música, Cine, Gastronomía, Fiestas y Sociedad Española).
    - **Authoring Norm**: Every unit must follow the established three-pillar standard: B1 level pedagogical clarity, 100% factual accuracy (aligned with Instituto Cervantes CCSE syllabus), and *The Rest Is History* (TRIH)-style engaging, humanized narrative storytelling with companion stories in `stories/world/b1/` and schema-compliant `b1-<slug>-01` stems.
 
 2. **Keep new features cross-referencing `design principles.md`.** The 2026-09-23 visual-identity drift sweep (`ACHIEVED.md` items 72-75) is now fully closed out — `--bg-card` (real token, pure white in light mode, apparently a vestige of the briefly-adopted-then-reversed 2026-08-14 "soft card" phase) turned out to be used nowhere else in the entire app except the newer Level Test/Diagnostic/Home-onboarding features, all now fixed. The drift consistently came from features shipping their own CSS (and inline JS styles) without checking the doc first — a general periodic check for that would prevent the same class of drift recurring.

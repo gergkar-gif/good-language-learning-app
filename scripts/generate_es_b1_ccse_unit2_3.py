@@ -117,7 +117,166 @@ def _convert_ex_item(ex_id: str, raw: dict, g_slug: str) -> dict:
     raise ValueError(f"Unsupported exercise type: {t}")
 
 
+SLUG_TO_CCSE_META = {
+    "derechos": ("b1-ccse-derechos-fundamentales", "Derechos y Libertades Fundamentales"),
+    "igualdad": ("b1-ccse-igualdad-genero", "Igualdad de Género y No Discriminación"),
+    "deberes": ("b1-ccse-deberes-ciudadanos", "Deberes Ciudadanos y Sistema Tributario"),
+    "garantias": ("b1-ccse-defensor-pueblo", "Garantías Constitucionales y Defensor del Pueblo"),
+    "geografia": ("b1-ccse-geografia-fisica", "Geografía Física: Relieve, Costas y Ríos"),
+    "norte": ("b1-ccse-comunidades-norte", "Comunidades del Norte y la Cornisa Cantábrica"),
+    "mediterraneo": ("b1-ccse-comunidades-mediterraneo", "Comunidades del Mediterráneo e Islas Baleares"),
+    "centrosur": ("b1-ccse-comunidades-centro-sur", "Comunidades del Centro, Sur y Canarias"),
+    "ciudadesautonomas": ("b1-ccse-ciudades-autonomas", "Ceuta, Melilla y Municipios de España"),
+    "historiaantigua": ("b1-ccse-historia-antigua", "Historia: De Hispania al Siglo de Oro"),
+    "historiacontemporanea": ("b1-ccse-historia-contemporanea", "Historia Contemporánea y Transición a la Democracia"),
+    "literatura": ("b1-ccse-literatura-letras", "Literatura Española: De Cervantes a la Generación del 27"),
+    "arte": ("b1-ccse-arte-pintura", "Pintura y Escultura: Velázquez, Goya, Picasso y Dalí"),
+    "musicacine": ("b1-ccse-musica-cine", "Música, Danza y Cine Español"),
+    "fiestas": ("b1-ccse-fiestas-tradiciones", "Fiestas Nacionales, Autonómicas y Tradiciones"),
+    "gastronomia": ("b1-ccse-gastronomia", "Gastronomía Española y Dieta Mediterránea"),
+    "sanidad": ("b1-ccse-sanidad", "El Sistema Nacional de Salud y la Tarjeta Sanitaria"),
+    "educacion": ("b1-ccse-educacion", "El Sistema Educativo Español"),
+    "empleo": ("b1-ccse-empleo-seguridad-social", "Mercado Laboral y Seguridad Social"),
+    "vivienda": ("b1-ccse-vivienda-padron", "Vivienda, Registro y Empadronamiento"),
+    "documentacion": ("b1-ccse-tramites-dni", "Documentación: DNI, NIE y Registro Civil"),
+    "transporte": ("b1-ccse-servicios-emergencias", "Transporte, Comunicaciones y Emergencias 112"),
+    "consumobanca": ("b1-ccse-consumo-banca", "Consumo, Horarios y Servicios Bancarios"),
+    "simulacro": ("b1-ccse-simulacro-examen", "Simulacro General de Examen CCSE"),
+}
+
+
+def _normalize_compact_unit(u: dict) -> dict:
+    if "legacy_prefix" in u and "unit_title" in u:
+        return u
+    slug = u["slug"]
+    legacy_prefix, exact_title = SLUG_TO_CCSE_META.get(slug, (f"b1-ccse-{slug}", u.get("title", slug)))
+    u["legacy_prefix"] = legacy_prefix
+    u["unit_title"] = exact_title
+    u["order"] = u.get("unit_num", 49) - 36
+    u["unit_summary"] = u.get("description", exact_title)
+
+    cons_ex = []
+    for lcfg in u["lessons"]:
+        if "story_paragraphs" not in lcfg:
+            lcfg["story_paragraphs"] = lcfg["paragraphs"]
+        if "comp_questions" not in lcfg:
+            lcfg["comp_questions"] = lcfg["questions"]
+        if "goal" not in lcfg:
+            lcfg["goal"] = lcfg["objectives"][0]
+        if "grammar_summary" not in lcfg:
+            lcfg["grammar_summary"] = lcfg["grammar_title"]
+        if "story_summary" not in lcfg:
+            lcfg["story_summary"] = lcfg["objectives"][0]
+        if "story_location" not in lcfg:
+            lcfg["story_location"] = "España"
+
+        norm_examples = []
+        for ex_item in lcfg["grammar_examples"]:
+            if "spanish" in ex_item:
+                norm_examples.append(ex_item)
+            else:
+                norm_examples.append({"spanish": ex_item["es"], "english": ex_item["en"]})
+        lcfg["grammar_examples"] = norm_examples
+
+        if "exercises" not in lcfg:
+            ex_items = []
+            # 1-3: reading MC from questions
+            for q in lcfg["questions"]:
+                opts = list(q["options"])
+                ex_items.append({
+                    "type": "multiple-choice",
+                    "cat": "reading",
+                    "prompt": q["question"],
+                    "options": opts,
+                    "answer": opts[q.get("correctIndex", 0)]
+                })
+            # 4-5: civic/grammar MC from ex_mc
+            for m in lcfg["ex_mc"]:
+                opts = list(m["options"])
+                ex_items.append({
+                    "type": "multiple-choice",
+                    "cat": "grammar",
+                    "prompt": m["prompt"],
+                    "options": opts,
+                    "answer": opts[m.get("correctIndex", 0)]
+                })
+            # 6-7: vocabulary MC from vocab
+            v = lcfg["vocab"]
+            for vi in (0, 3):
+                target_w = v[vi]
+                distractors = [v[(vi + 1) % len(v)]["translation"], v[(vi + 2) % len(v)]["translation"], v[(vi + 4) % len(v)]["translation"]]
+                opts = [target_w["translation"]] + distractors
+                ex_items.append({
+                    "type": "multiple-choice",
+                    "cat": "vocabulary",
+                    "prompt": f"¿Qué significa en inglés el término «{target_w['lemma']}»?",
+                    "options": opts,
+                    "answer": target_w["translation"]
+                })
+            # 8-9: fill-blank from ex_fb
+            for fb in lcfg["ex_fb"]:
+                ex_items.append({
+                    "type": "fill-blank",
+                    "cat": "grammar",
+                    "prompt": fb["sentence"],
+                    "answer": fb["answer"],
+                    "english": fb["english"]
+                })
+            # 10: sentence-builder from ex_sb
+            ex_items.append({
+                "type": "sentence-builder",
+                "cat": "grammar",
+                "words": lcfg["ex_sb"]["words"],
+                "english": lcfg["ex_sb"]["english"]
+            })
+            # 11: dictation from ex_dict
+            ex_items.append({
+                "type": "dictation",
+                "cat": "listening",
+                "text": lcfg["ex_dict"]["audioText"],
+                "english": lcfg["ex_dict"]["english"]
+            })
+            lcfg["exercises"] = ex_items
+
+        # Add one MC from each lesson to consolidation
+        q0 = lcfg["questions"][0]
+        cons_ex.append({
+            "type": "multiple-choice",
+            "cat": "grammar",
+            "prompt": q0["question"],
+            "options": list(q0["options"]),
+            "answer": q0["options"][q0.get("correctIndex", 0)]
+        })
+
+    # Add 1 fill-blank, 1 sentence-builder, 1 dictation to consolidation (8 total)
+    l0 = u["lessons"][0]
+    l1 = u["lessons"][1]
+    l2 = u["lessons"][2]
+    cons_ex.append({
+        "type": "fill-blank",
+        "cat": "grammar",
+        "prompt": l0["ex_fb"][0]["sentence"],
+        "answer": l0["ex_fb"][0]["answer"],
+        "english": l0["ex_fb"][0]["english"]
+    })
+    cons_ex.append({
+        "type": "sentence-builder",
+        "cat": "grammar",
+        "words": l1["ex_sb"]["words"],
+        "english": l1["ex_sb"]["english"]
+    })
+    cons_ex.append({
+        "type": "dictation",
+        "cat": "listening",
+        "text": l2["ex_dict"]["audioText"],
+        "english": l2["ex_dict"]["english"]
+    })
+    u["consolidation_exercises"] = cons_ex
+    return u
+
+
 def emit_unit_from_dict(u: dict):
+    u = _normalize_compact_unit(u)
     slug = u["slug"]
     old_prefix = u["legacy_prefix"]
     unit_title = u["unit_title"]
