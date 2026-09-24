@@ -49,6 +49,16 @@ Reading comprehension is one of the four skills every CEFR exam (DELE, SIELE, th
 6. **Cross-link with Listening**: the same question renderers should serve the long-form listening modules below, so both comprehension skills are built once.
 
 
+### Artifacts — real-world texts you're now ready for
+Added 2026-09-24. Every so often, depending on the learner's level, Parlour presents an **artifact**: a real text, image or object from the real world — a restaurant menu, a traffic sign or instruction, a book title, a train ticket, a shop notice. The point is the moment of *"I can actually read this now"*: proof that the learning works on something that really exists, not on material written for learners.
+
+Open questions for when this is scoped:
+- **Matching an artifact to the learner** — tag each artifact with the words and grammar needed to understand it and show it once the learner has them (the lesson `teaches` tags and the % familiar data could decide this), rather than by CEFR level alone.
+- **When it appears** — e.g. after finishing a unit, on Home, or as its own occasional card; frequent enough to motivate, rare enough to stay special.
+- **What the learner does with it** — just read it (tap words as in the Reader), or answer one or two "what does this say?" questions (ties into the Reading Comprehension section above).
+- **A collection** — artifacts already met could be kept (e.g. in Journey or the Library), a visible record of real things the learner can now read.
+- **Sourcing** — real images need clear rights (own photos, public-domain or openly licensed ones, credited in `CREDITS.md`); a recreated menu or sign is a fallback, but loses some of the "this is real" point.
+
 ### Library & Reading Experience
 Brainstormed 2026-09-24 (quick fixes from the same pass shipped — see ACHIEVED.md, "Library Track Shelf, Shelf Ordering & Card Polish"). Next up: prototype 4.
 1. ~~**"% familiar" on every card**~~ — built 2026-09-24, see ACHIEVED.md ("Library: % Familiar, Continue Reading & Series Progress"). Follow-ups: use the figure in recommendations ("12 of its words are in your deck"); decide whether My Texts' figure should also count content words only (it still counts every word).
