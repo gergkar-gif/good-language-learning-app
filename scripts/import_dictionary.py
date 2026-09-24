@@ -95,6 +95,12 @@ MANUAL_OVERRIDES = {
         "type": "verb",
     },
     "chica": {"en": "girl; young woman", "type": "noun", "gender": "f"},
+    "llamas": {
+        "en": "you call, you're called (from llamar — used reflexively in "
+              "'¿cómo te llamas?', 'what's your name?'); also the plural of "
+              "llama, meaning 'flames' or the South American animal",
+        "type": "verb",
+    },
 }
 
 
