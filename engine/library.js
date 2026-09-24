@@ -192,7 +192,8 @@ const Library = (function () {
     // Everything downstream — the card, the analysis panel, the vocabulary
     // selection list — reads off this one object, computed once per
     // Analyse/Save. "Familiar" mirrors the same reviews>=1 threshold the
-    // reader's word-colouring already uses (word-known), so a percentage
+    // reader's word-colouring already uses (word-known), plus words marked
+    // known in My Dictionary (which the reader colours word-mastered), so a percentage
     // shown here means the same thing as the colour a learner sees while
     // actually reading.
     function analyseText(text) {
@@ -234,7 +235,8 @@ const Library = (function () {
         const lemmas = [];
         lemmaMap.forEach(item => {
             const card = deck.find(c => c.spanish === item.lemma);
-            const familiar = !!(card && (card.reviews || 0) >= 1);
+            const familiar = !!(card && (card.reviews || 0) >= 1) ||
+                (typeof isKnown === 'function' && isKnown(item.lemma));
             const isNew = !card;
             const due = !!(card && (!card.nextReview || new Date(card.nextReview) <= now));
             const inDeckList = myDeckLemmas.has(item.lemma);

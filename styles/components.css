@@ -429,6 +429,35 @@
   padding: 10px 12px 12px;
 }
 
+/* An unfinished story: a ribbon hanging from the cover's top edge, and
+   how far in along the cover's bottom. */
+.story-card-bookmark {
+  position: absolute;
+  top: 0;
+  right: 12px;
+  width: 12px;
+  height: 20px;
+  background: var(--accent);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 72%, 0 100%);
+}
+
+.story-card-progress {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.story-card-familiar {
+  margin-top: 6px;
+  font-size: .75em;
+  color: var(--muted);
+}
+
+.story-card-familiar:empty {
+  display: none;
+}
+
 /* Author (classics) or unit title (track series), under the title. */
 .story-card-subtitle {
   font-size: .78em;
@@ -510,6 +539,101 @@
 /* Library Recommendations Banner */
 .lib-recs-container {
   margin-bottom: 24px;
+}
+
+/* Continue Reading — unfinished stories, above the recommendations. */
+.lib-continue {
+  margin-bottom: 24px;
+}
+
+.lib-continue .lib-recs-heading {
+  margin-bottom: 10px;
+}
+
+.lib-continue-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.lib-continue-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+  text-align: left;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px 12px;
+  cursor: pointer;
+  transition: border-color var(--dur-fast) var(--ease-standard);
+}
+
+.lib-continue-item:hover {
+  border-color: var(--primary);
+  border-left-color: var(--accent);
+}
+
+.lib-continue-title {
+  font-family: var(--font-display);
+  font-size: 1.05em;
+  color: var(--text);
+}
+
+.lib-continue-meta {
+  font-size: .8em;
+  color: var(--muted);
+}
+
+.lib-continue-bar,
+.story-card-progress {
+  display: block;
+  height: 3px;
+  background: var(--border);
+  overflow: hidden;
+}
+
+.lib-continue-bar > span,
+.story-card-progress > span {
+  display: block;
+  height: 100%;
+  background: var(--accent);
+}
+
+/* Between two parts of a series (Reader.showNextInSeries). */
+.story-next {
+  padding: 24px 0;
+}
+
+.story-next-done {
+  color: var(--muted);
+  font-size: .9em;
+  margin: 0 0 20px;
+}
+
+.story-next-label {
+  font-size: .8em;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: var(--accent);
+  font-weight: 600;
+  margin: 0 0 4px;
+}
+
+.story-next-title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1.5em;
+  color: var(--text);
+  margin: 0 0 4px;
+}
+
+.story-next-meta {
+  color: var(--muted);
+  font-size: .85em;
+  margin: 0 0 24px;
 }
 
 .lib-recs-header {

@@ -50,9 +50,9 @@ Reading comprehension is one of the four skills every CEFR exam (DELE, SIELE, th
 
 
 ### Library & Reading Experience
-Brainstormed 2026-09-24 (quick fixes from the same pass shipped — see ACHIEVED.md, "Library Track Shelf, Shelf Ordering & Card Polish"). Recommended order: 1, then 2, then prototype 4.
-1. **"% familiar" on every card** (LingQ-style) — the Library spec (`docs/archive/PARLOUR_LIBRARY_SPEC.md` §3) already called for it. `Library.analyseText()` (`engine/library.js`) computes it for My Texts; reuse it for Parlour readings, cached per story and recomputed when the deck changes. Could also drive recommendations ("12 of its words are in your deck").
-2. **Continue reading + series progress** (EWA/LingQ courses) — save scroll position per story (the scroll progress bar already tracks it) and show a "Continue reading" row at the top with a bookmark on in-progress stories. Series shelves (Original, the track) show "7 / 36", and the end of a reading gets a "Next in series →" button.
+Brainstormed 2026-09-24 (quick fixes from the same pass shipped — see ACHIEVED.md, "Library Track Shelf, Shelf Ordering & Card Polish"). Next up: prototype 4.
+1. ~~**"% familiar" on every card**~~ — built 2026-09-24, see ACHIEVED.md ("Library: % Familiar, Continue Reading & Series Progress"). Follow-ups: use the figure in recommendations ("12 of its words are in your deck"); decide whether My Texts' figure should also count content words only (it still counts every word).
+2. ~~**Continue reading + series progress**~~ — built 2026-09-24, see ACHIEVED.md (same entry). Follow-up: reading positions are local to the device — add `storyProgress` to cloud sync (`engine/sync.js`) if resuming across devices matters.
 3. **Pre-reading word preview** — an optional "5 words worth knowing" screen before a story. Preview only; nothing is added to SRS automatically (spec §17).
 4. **Book-spine view** — a compact toggle that draws a shelf as book spines: height from reading length, colour from shelf type, a ribbon when read. Fixes the long scroll (B1 Classics is ~20 rows of cards on a phone) and fits the Parlour visual language.
 5. **Timeline covers for the history track** — each card's cover is one segment of a single continuous line (the two-tone disc-on-a-line motif used for node art), so the whole shelf reads as a timeline. An optional `era` field on the reading (c. 1500, 1810, 1910) would add dates.

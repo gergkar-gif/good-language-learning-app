@@ -430,6 +430,35 @@ function markStoryRead(storyId) {
     return true;
 }
 
+// ============================================
+// READING POSITION (how far into an unfinished story the learner got)
+// ============================================
+// { storyId: { pct, at } } — pct of the story body scrolled, at = last
+// touched (ms). Cleared when the story is finished. Local to this device.
+const storyProgressKey = () => Lang.key('storyProgress');
+
+// Bump to discard every cached story-lemma list (see Reader._lemmaCache) —
+// e.g. after a lemmatiser or dictionary change.
+const STORY_LEMMA_CACHE_VERSION = 1;
+
+// Below this a story counts as opened, not started.
+const STORY_STARTED_PCT = 5;
+
+function getStoryProgress() {
+    try {
+        return JSON.parse(localStorage.getItem(storyProgressKey()) || '{}') || {};
+    } catch (e) {
+        return {};
+    }
+}
+
+function setStoryProgress(storyId, pct) {
+    const all = getStoryProgress();
+    if (pct === null) delete all[storyId];
+    else all[storyId] = { pct: Math.min(99, Math.round(pct)), at: Date.now() };
+    try { localStorage.setItem(storyProgressKey(), JSON.stringify(all)); } catch (e) {}
+}
+
 function hasReadStory(storyId) {
     return getReadStoryIds().includes(storyId);
 }
@@ -1015,7 +1044,26 @@ window.Reader = {
         }
     },
 
-    _wireScrollProgress() {
+    // Scrolls an unfinished story back to where the learner stopped. Runs a
+    // frame later because the reading view is only shown (and laid out) at
+    // the end of renderStory().
+    _restoreReadingPosition(storyId) {
+        const saved = storyId && getStoryProgress()[storyId];
+        if (!saved || saved.pct < STORY_STARTED_PCT) return;
+        requestAnimationFrame(() => {
+            const storyBody = document.querySelector('.story-body');
+            if (!storyBody) return;
+            const rect = storyBody.getBoundingClientRect();
+            const maxScroll = Math.max(1, rect.height - window.innerHeight * 0.5);
+            window.scrollTo(0, window.scrollY + rect.top + maxScroll * saved.pct / 100);
+            if (typeof UI !== 'undefined' && UI.toast) UI.toast('Picked up where you left off', 'info', 2000);
+        });
+    },
+
+    // With a storyId (Parlour readings, not My Texts), the position is also
+    // remembered so the story can be resumed — see setStoryProgress().
+    _wireScrollProgress(storyId) {
+        let saveTimer = null;
         const onScroll = () => {
             const bar = document.getElementById('story-scroll-bar');
             const storyBody = document.querySelector('.story-body');
@@ -1026,6 +1074,10 @@ window.Reader = {
             const maxScroll = Math.max(1, total - window.innerHeight * 0.5);
             const pct = Math.min(100, Math.max(0, (scrolled / maxScroll) * 100));
             bar.style.width = pct + '%';
+            if (storyId && pct >= STORY_STARTED_PCT) {
+                clearTimeout(saveTimer);
+                saveTimer = setTimeout(() => setStoryProgress(storyId, pct), 400);
+            }
         };
         if (window._storyScrollListener) {
             window.removeEventListener('scroll', window._storyScrollListener);
@@ -1154,10 +1206,9 @@ window.Reader = {
         const summary = document.getElementById('library-search-summary');
         if (clearBtn) clearBtn.classList.toggle('hidden', !q);
 
-        const recsContainer = libraryEl.querySelector('.lib-recs-container');
-        if (recsContainer) {
-            recsContainer.classList.toggle('hidden', !!q);
-        }
+        libraryEl.querySelectorAll('.lib-recs-container, .lib-continue').forEach(el => {
+            el.classList.toggle('hidden', !!q);
+        });
 
         const rooms = libraryEl.querySelectorAll('.reading-room');
 
@@ -1364,7 +1415,7 @@ window.Reader = {
         if (!comfortable) {
             const currentLevelStories = pool.filter(s => (s.level || '').toUpperCase() === currentLvl);
             // Prefer carrying on a series the learner has already started.
-            const nextInSeries = currentLevelStories.find(s => /^Next in /.test(this._specificReason(s, browsable, readIds) || ''));
+            const nextInSeries = currentLevelStories.find(s => /^Next in /.test(this._specificReason(s, readIds) || ''));
             if (nextInSeries) {
                 comfortable = nextInSeries;
             } else if (currentLevelStories.length > 0) {
@@ -1436,9 +1487,9 @@ window.Reader = {
         // A concrete reason beats a generic one. The "within reach" reason
         // (names the unit just finished) is already concrete, so it stays.
         if (!withinReachStory || comfortable !== withinReachStory) {
-            comfortableReason = this._specificReason(comfortable, browsable, readIds) || comfortableReason;
+            comfortableReason = this._specificReason(comfortable, readIds) || comfortableReason;
         }
-        challengingReason = this._specificReason(challenging, browsable, readIds) || challengingReason;
+        challengingReason = this._specificReason(challenging, readIds) || challengingReason;
 
         return {
             comfortable: {
@@ -1452,22 +1503,39 @@ window.Reader = {
         };
     },
 
+    // The series a story belongs to — its level's Original shelf or track
+    // shelf, read in order — with a display name; null for other shelves.
+    _seriesOf(story) {
+        const key = _trackShelfKey(story) || (story.type === 'original' ? 'original' : null);
+        if (!key) return null;
+        const stories = this.stories
+            .filter(s => _isBrowsableStory(s) && s.level === story.level && (_trackShelfKey(s) || s.type) === key)
+            .sort(_shelfComparator(key));
+        const name = key === 'original'
+            ? story.level + ' story series'
+            : (TRACK_SHELF_LABELS[key.replace('track-', '')] || 'this') + ' series';
+        return { key: key, name: name, stories: stories };
+    },
+
+    // The first unread part after this one in its series, or null.
+    _nextInSeries(story, readIds) {
+        const series = this._seriesOf(story);
+        if (!series) return null;
+        const idx = series.stories.findIndex(s => s.id === story.id);
+        const next = series.stories.slice(idx + 1).find(s => !readIds.includes(s.id));
+        return next ? { story: next, seriesName: series.name } : null;
+    },
+
     // "Next in the Latin America series" when the learner has started that
     // shelf and this is its first unread part; "Adapted from <work> by
     // <author>" for a classic; otherwise null (caller keeps its own reason).
-    _specificReason(story, browsable, readIds) {
-        const key = _trackShelfKey(story) || (story.type === 'original' ? 'original' : null);
-        if (key) {
-            const series = browsable
-                .filter(s => s.level === story.level && (_trackShelfKey(s) || s.type) === key)
-                .sort(_shelfComparator(key));
-            const started = series.some(s => readIds.includes(s.id));
-            const nextUnread = series.find(s => !readIds.includes(s.id));
+    _specificReason(story, readIds) {
+        const series = this._seriesOf(story);
+        if (series) {
+            const started = series.stories.some(s => readIds.includes(s.id));
+            const nextUnread = series.stories.find(s => !readIds.includes(s.id));
             if (started && nextUnread && nextUnread.id === story.id) {
-                const name = key === 'original'
-                    ? story.level + ' story series'
-                    : (TRACK_SHELF_LABELS[key.replace('track-', '')] || 'this') + ' series';
-                return 'Next in the ' + name;
+                return 'Next in the ' + series.name;
             }
         }
         if (story.author) {
@@ -1547,12 +1615,16 @@ window.Reader = {
             ? (LearnerPath.currentLevel() || 'A1').toUpperCase()
             : 'A1';
 
+        // Read once per render; the cards and the Continue row both use them.
+        this._progress = getStoryProgress();
+        this._familiarLemmas = this._buildFamiliarSet();
+
         const recsHtml = self.buildRecommendationsHtml();
         const guideBanner = (typeof Guide !== 'undefined' && !Guide.hasSeen('reader'))
             ? Guide.renderBannerHtml('reader')
             : '';
 
-        let html = guideBanner + recsHtml + `
+        let html = guideBanner + self.buildContinueReadingHtml(readIds) + recsHtml + `
             <div class="library-search-bar">
                 <div class="library-search-wrap">
                     <span class="library-search-icon" aria-hidden="true">${typeof Art !== 'undefined' ? Art.icon('decks') : ''}</span>
@@ -1620,6 +1692,13 @@ window.Reader = {
                 types.forEach(function(type) {
                     const group = roomStories.filter(s => shelfKeyOf(s) === type).sort(_shelfComparator(type));
                     const shelfId = levelId + '-' + type;
+                    // A series shelf (Original, the track) shows how far
+                    // through it the learner is, once they've started it.
+                    const isSeries = type === 'original' || type.indexOf('track-') === 0;
+                    const shelfRead = group.filter(s => readIds.includes(s.id)).length;
+                    const shelfCount = isSeries && shelfRead
+                        ? shelfRead + ' / ' + group.length + ' read'
+                        : String(group.length);
                     // Shelves start expanded (unlike rooms) — opening a room
                     // is already the deliberate step that says "let me look
                     // in here"; collapsing is for putting away a shelf you've
@@ -1628,7 +1707,7 @@ window.Reader = {
                         '<button class="story-shelf-header" data-shelf-toggle="' + shelfId + '" aria-expanded="true">' +
                             '<h4 class="story-shelf-title">' +
                                 self.escapeHtml(STORY_TYPE_LABELS[type] || TRACK_SHELF_LABELS[type.replace('track-', '')] || type) +
-                                ' <span class="story-shelf-count">(' + group.length + ')</span>' +
+                                ' <span class="story-shelf-count">(' + shelfCount + ')</span>' +
                             '</h4>' +
                             '<span class="story-shelf-arrow" id="story-shelf-arrow-' + shelfId + '">▼</span>' +
                         '</button>' +
@@ -1645,6 +1724,142 @@ window.Reader = {
         });
 
         container.innerHTML = html;
+        this._fillFamiliarity(container);
+    },
+
+    // ---- Familiarity ("62% familiar" on story cards) ----
+
+    // Words the learner already has standing with: an SRS card reviewed at
+    // least once (the same threshold as the reader's word colours and My
+    // Texts' analysis) or a word marked known. Null for a learner with none
+    // yet, so a brand-new learner doesn't see "0% familiar" on every card.
+    _buildFamiliarSet() {
+        const set = new Set();
+        if (typeof srsDeck !== 'undefined' && Array.isArray(srsDeck)) {
+            srsDeck.forEach(c => { if ((c.reviews || 0) >= 1) set.add(c.spanish); });
+        }
+        if (typeof knownWords !== 'undefined' && Array.isArray(knownWords)) {
+            knownWords.forEach(w => set.add(w.spanish));
+        }
+        return set.size ? set : null;
+    },
+
+    // { storyId: [lemma, ...] } per course. The lemmas come from the story
+    // file, not the learner, so they're cached across sessions; only the
+    // percentage is recomputed (against the current deck) on each render.
+    _lemmaCache() {
+        const key = Lang.key('storyLemmas');
+        if (this._lemmaCacheKey !== key) {
+            let cache = {};
+            try { cache = JSON.parse(localStorage.getItem(key) || '{}') || {}; } catch (e) {}
+            if (cache.v !== STORY_LEMMA_CACHE_VERSION) cache = { v: STORY_LEMMA_CACHE_VERSION };
+            this._lemmaCacheData = cache;
+            this._lemmaCacheKey = key;
+        }
+        return this._lemmaCacheData;
+    },
+
+    // A story's content-word lemmas — nouns, verbs, adjectives, adverbs, as
+    // in the end-of-story word review. Function words ("el", "de") are never
+    // deck items, so counting them would pin every story's figure low.
+    async _storyLemmas(meta) {
+        const cache = this._lemmaCache();
+        if (cache[meta.id]) return cache[meta.id];
+        if (typeof Library === 'undefined' || !Library.analyseText) return null;
+        if (typeof Lexicon !== 'undefined' && !Lexicon.isLoaded()) await Lexicon.load();
+        const story = await Content.story(meta.path);
+        const lemmas = Library.analyseText(this.storyPlainText(story)).lemmas
+            .filter(w => this.CONTENT_POS[w.pos])
+            .map(w => w.lemma);
+        cache[meta.id] = lemmas;
+        try { localStorage.setItem(this._lemmaCacheKey, JSON.stringify(cache)); } catch (e) {}
+        return lemmas;
+    },
+
+    _familiarText(lemmas) {
+        if (!lemmas || !lemmas.length || !this._familiarLemmas) return '';
+        const known = lemmas.filter(l => this._familiarLemmas.has(l)).length;
+        return Math.round((known / lemmas.length) * 100) + '% familiar';
+    },
+
+    // Cached stories get their figure straight away. The rest are worked out
+    // only as their cards scroll into view, one story at a time — a phone
+    // shouldn't fetch a whole level's stories just because the Library opened
+    // (cards in closed rooms aren't visible, so they wait until it's opened).
+    _fillFamiliarity(container) {
+        if (this._familiarObserver) this._familiarObserver.disconnect();
+        this._familiarObserver = null;
+        if (!this._familiarLemmas) return;
+
+        const cache = this._lemmaCache();
+        const pending = [];
+        container.querySelectorAll('[data-familiar-for]').forEach(el => {
+            const id = el.getAttribute('data-familiar-for');
+            if (cache[id]) el.textContent = this._familiarText(cache[id]);
+            else pending.push(el);
+        });
+        if (!pending.length || typeof IntersectionObserver === 'undefined') return;
+
+        const self = this;
+        const queue = [];
+        let running = false;
+        const pump = async function() {
+            if (running) return;
+            running = true;
+            while (queue.length) {
+                const el = queue.shift();
+                const meta = self.stories.find(s => s.id === el.getAttribute('data-familiar-for'));
+                try {
+                    const lemmas = meta ? await self._storyLemmas(meta) : null;
+                    if (el.isConnected) el.textContent = self._familiarText(lemmas);
+                } catch (e) {
+                    // No figure for this card; the rest of the card is unaffected.
+                }
+            }
+            running = false;
+        };
+        const io = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (!entry.isIntersecting) return;
+                io.unobserve(entry.target);
+                const slot = entry.target.querySelector('[data-familiar-for]');
+                if (slot) queue.push(slot);
+            });
+            pump();
+        }, { rootMargin: '200px' });
+        // The card, not the (empty, so hidden) figure slot, is what scrolls
+        // into view.
+        pending.forEach(el => io.observe(el.closest('.story-card') || el));
+        this._familiarObserver = io;
+    },
+
+    // Up to three unfinished stories, most recently read first.
+    buildContinueReadingHtml(readIds) {
+        const progress = this._progress || {};
+        const items = Object.keys(progress)
+            .map(id => ({ story: this.stories.find(s => s.id === id), p: progress[id] }))
+            .filter(x => x.story && !readIds.includes(x.story.id) && x.p.pct >= STORY_STARTED_PCT)
+            .sort((a, b) => b.p.at - a.p.at)
+            .slice(0, 3);
+        if (!items.length) return '';
+
+        const self = this;
+        return '<div class="lib-continue">' +
+            '<h3 class="lib-recs-heading">Continue Reading</h3>' +
+            '<div class="lib-continue-list">' +
+                items.map(function(x) {
+                    const s = x.story;
+                    const shelf = _trackShelfKey(s)
+                        ? TRACK_SHELF_LABELS[_trackShelfKey(s).replace('track-', '')] + (s.unit && s.unit.label ? ' ' + s.unit.label : '')
+                        : (STORY_TYPE_LABELS[s.type] || '');
+                    return '<button type="button" class="lib-continue-item" data-rec-story="' + self.escapeHtml(s.id) + '">' +
+                        '<span class="lib-continue-title">' + self.escapeHtml(s.title) + '</span>' +
+                        '<span class="lib-continue-meta">' + self.escapeHtml(s.level + (shelf ? ' · ' + shelf : '')) + ' · ' + x.p.pct + '%</span>' +
+                        '<span class="lib-continue-bar" aria-hidden="true"><span style="width:' + x.p.pct + '%"></span></span>' +
+                    '</button>';
+                }).join('') +
+            '</div>' +
+        '</div>';
     },
 
     isStoryWithinReach(story, readIds) {
@@ -1677,6 +1892,8 @@ window.Reader = {
         // isn't repeated here. A track reading is one part of a series, so it
         // shows its part number and the unit it belongs to; a classic shows
         // who wrote the original.
+        const saved = (this._progress || {})[story.id];
+        const inProgress = !isRead && saved && saved.pct >= STORY_STARTED_PCT ? saved : null;
         const seriesNo = inSeries && story.unit && story.unit.label;
         const subtitle = inSeries && story.unit && story.unit.title
             ? story.unit.title
@@ -1690,6 +1907,8 @@ window.Reader = {
                 art +
                 (seriesNo ? '<span class="story-card-series-no" title="Part ' + this.escapeHtml(String(seriesNo)) + '">' + this.escapeHtml(String(seriesNo)) + '</span>' : '') +
                 (isRead ? '<span class="story-card-read-badge" title="Read">✓</span>' : '') +
+                (inProgress ? '<span class="story-card-bookmark" title="In progress — ' + inProgress.pct + '%"></span>' +
+                    '<span class="story-card-progress" aria-hidden="true"><span style="width:' + inProgress.pct + '%"></span></span>' : '') +
             '</div>' +
             '<div class="story-card-body">' +
                 '<div class="story-card-title">' + this.escapeHtml(story.title) + '</div>' +
@@ -1699,6 +1918,8 @@ window.Reader = {
                     (story.hasAudio ? '<span class="story-card-audio-badge" title="Narration available">Audio</span>' : '') +
                     (withinReach ? '<span class="story-card-reach-badge">Within Reach</span>' : '') +
                 '</div>' +
+                // Filled in by _fillFamiliarity() — needs the story's words.
+                (this._familiarLemmas ? '<div class="story-card-familiar" data-familiar-for="' + this.escapeHtml(story.id) + '"></div>' : '') +
             '</div>' +
         '</button>';
     },
@@ -1943,7 +2164,8 @@ window.Reader = {
         if (downBtn) downBtn.addEventListener('click', () => self.stepFontScale(-1));
         const upBtn = document.getElementById('reader-font-up');
         if (upBtn) upBtn.addEventListener('click', () => self.stepFontScale(1));
-        this._wireScrollProgress();
+        this._restoreReadingPosition(this.currentStoryId);
+        this._wireScrollProgress(this.currentStoryId);
 
         // Back button
         const backBtn = document.getElementById('reader-back-btn');
@@ -2032,7 +2254,11 @@ window.Reader = {
 
     storyPlainText(story) {
         if (story.paragraphs && story.paragraphs.length) {
-            return story.paragraphs.map(p => p.text || '').join(' ');
+            // Only target-language paragraphs — HU A1 narrates in English
+            // (see renderStory), and those words aren't vocabulary to review.
+            return story.paragraphs
+                .filter(p => !p.lang || (typeof Lang !== 'undefined' && p.lang === Lang.code()))
+                .map(p => p.text || '').join(' ');
         }
         return story.text || '';
     },
@@ -2139,11 +2365,44 @@ window.Reader = {
         if (!this.currentStoryId) return;
 
         const firstTime = markStoryRead(this.currentStoryId);
+        setStoryProgress(this.currentStoryId, null);
         if (typeof recordStoryCompleted === 'function') {
             recordStoryCompleted(firstTime);
         }
 
-        this.closeStory();
+        const meta = this.stories.find(s => s.id === this.currentStoryId);
+        const next = meta && this._nextInSeries(meta, getReadStoryIds());
+        if (next) this.showNextInSeries(meta, next);
+        else this.closeStory();
+    },
+
+    // Between two parts of a series: offer the next one rather than dropping
+    // the learner back at the shelf to find it themselves.
+    showNextInSeries(finished, next) {
+        StoryAudioPlayer.teardown();
+        if (window._storyScrollListener) {
+            window.removeEventListener('scroll', window._storyScrollListener);
+            window._storyScrollListener = null;
+        }
+        const container = document.getElementById('reader-content');
+        if (!container) { this.closeStory(); return; }
+        const n = next.story;
+        const minutes = n.estimatedMinutes ? ' · ' + n.estimatedMinutes + ' min' : '';
+        container.innerHTML =
+            '<div class="story-next">' +
+                '<p class="story-next-done">Finished ✓ <em>' + this.escapeHtml(finished.title) + '</em></p>' +
+                '<p class="story-next-label">Next in the ' + this.escapeHtml(next.seriesName) + '</p>' +
+                '<h3 class="story-next-title">' + this.escapeHtml(n.title) + '</h3>' +
+                '<p class="story-next-meta">' + this.escapeHtml(n.level || '') + minutes + '</p>' +
+                '<div class="lesson-footer">' +
+                    '<button class="btn-back" id="reader-next-back-btn">Back to Library</button>' +
+                    '<button class="btn-primary" id="reader-next-read-btn">Read next →</button>' +
+                '</div>' +
+            '</div>';
+        window.scrollTo(0, 0);
+        const self = this;
+        document.getElementById('reader-next-back-btn').addEventListener('click', () => self.closeStory());
+        document.getElementById('reader-next-read-btn').addEventListener('click', () => self.loadStory(n.id));
     },
 
     closeStory() {
