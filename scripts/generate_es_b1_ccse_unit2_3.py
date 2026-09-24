@@ -157,6 +157,41 @@ def _normalize_compact_unit(u: dict) -> dict:
 
     cons_ex = []
     for lcfg in u["lessons"]:
+        if "objectives" not in lcfg and "objective" in lcfg:
+            lcfg["objectives"] = [lcfg["objective"]]
+        if "grammar_body" not in lcfg and "grammar_Body" in lcfg:
+            lcfg["grammar_body"] = lcfg["grammar_Body"]
+        if "vocab" in lcfg and lcfg["vocab"] and isinstance(lcfg["vocab"][0], (tuple, list)):
+            lcfg["vocab"] = [
+                {"lemma": w[0], "pos": w[1], "translation": w[2], "example": w[3] if len(w) > 3 else ""}
+                for w in lcfg["vocab"]
+            ]
+        if "grammar_examples" not in lcfg:
+            lcfg["grammar_examples"] = [
+                {"spanish": w.get("example", w["lemma"]), "english": w["translation"]}
+                for w in lcfg["vocab"][:3]
+            ]
+        if "questions" in lcfg and lcfg["questions"] and isinstance(lcfg["questions"][0], (tuple, list)):
+            lcfg["questions"] = [
+                {"question": q[0], "options": list(q[1]), "correctIndex": q[2]}
+                for q in lcfg["questions"]
+            ]
+        if "ex_mc" in lcfg and lcfg["ex_mc"] and isinstance(lcfg["ex_mc"][0], (tuple, list)):
+            lcfg["ex_mc"] = [
+                {"prompt": m[0], "options": list(m[1]), "correctIndex": m[2]}
+                for m in lcfg["ex_mc"]
+            ]
+        if "ex_fb" in lcfg and lcfg["ex_fb"] and isinstance(lcfg["ex_fb"][0], (tuple, list)):
+            lcfg["ex_fb"] = [
+                {"sentence": fb[0], "answer": fb[1], "english": fb[2]}
+                for fb in lcfg["ex_fb"]
+            ]
+        if "ex_sb" in lcfg and isinstance(lcfg["ex_sb"], (tuple, list)):
+            sb_raw = lcfg["ex_sb"][0] if isinstance(lcfg["ex_sb"][0], (tuple, list)) else lcfg["ex_sb"]
+            lcfg["ex_sb"] = {"words": list(sb_raw[0]), "english": sb_raw[1]}
+        if "ex_dict" in lcfg and isinstance(lcfg["ex_dict"], (tuple, list)):
+            dt_raw = lcfg["ex_dict"][0] if isinstance(lcfg["ex_dict"][0], (tuple, list)) else lcfg["ex_dict"]
+            lcfg["ex_dict"] = {"audioText": dt_raw[0], "english": dt_raw[1]}
         if "story_paragraphs" not in lcfg:
             lcfg["story_paragraphs"] = lcfg["paragraphs"]
         if "comp_questions" not in lcfg:
@@ -165,6 +200,12 @@ def _normalize_compact_unit(u: dict) -> dict:
             lcfg["goal"] = lcfg["objectives"][0]
         if "grammar_summary" not in lcfg:
             lcfg["grammar_summary"] = lcfg["grammar_title"]
+        if "grammar_text" not in lcfg:
+            lcfg["grammar_text"] = lcfg.get("grammar_body") or lcfg.get("grammar_Body") or lcfg["grammar_title"]
+        if "grammar_tip" not in lcfg:
+            lcfg["grammar_tip"] = f"Dato clave CCSE: {lcfg['goal']}"
+        if "story_slug" not in lcfg:
+            lcfg["story_slug"] = lcfg["grammar_slug"].replace("-", "")
         if "story_summary" not in lcfg:
             lcfg["story_summary"] = lcfg["objectives"][0]
         if "story_location" not in lcfg:
