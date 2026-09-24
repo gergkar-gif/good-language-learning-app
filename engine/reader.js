@@ -31,7 +31,10 @@ function getWordStatus(spanish) {
     }
 
     // 3. If not found, check via Lexicon lemma resolution
-    if (!card && typeof Lexicon !== 'undefined' && typeof Lexicon.lookup === 'function') {
+    // lookup() throws until the dictionary has loaded, which on a slow phone
+    // can still be in flight when the first story paints.
+    if (!card && typeof Lexicon !== 'undefined' && typeof Lexicon.lookup === 'function' &&
+        (typeof Lexicon.isLoaded !== 'function' || Lexicon.isLoaded())) {
         const lookup = Lexicon.lookup(clean);
         if (lookup && lookup.readings && lookup.readings.length > 0) {
             const lemma = lookup.readings[0].lemma.toLowerCase();
@@ -1655,6 +1658,11 @@ window.Reader = {
         const loadId = ++this._storyLoadId;
         try {
             const story = await Content.story(storyMeta.path);
+            // Word colouring resolves each word through the Lexicon; wait for
+            // it here, but a lexicon failure must not fail the story itself.
+            if (typeof Lexicon !== 'undefined' && !Lexicon.isLoaded()) {
+                try { await Lexicon.load(); } catch (e) { console.warn('Reader: lexicon unavailable', e); }
+            }
             if (loadId !== this._storyLoadId) return;
             // The manifest id is what read-state is keyed on; the story file
             // itself doesn't necessarily carry the same id.
