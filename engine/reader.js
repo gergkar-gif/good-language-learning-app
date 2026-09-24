@@ -1885,9 +1885,6 @@ window.Reader = {
         const art = (typeof pathArt === 'function')
             ? pathArt(coverArtIndexFor(story.id), 'story-card-cover-icon')
             : '';
-        const minutes = story.estimatedMinutes
-            ? story.estimatedMinutes + ' min'
-            : '';
         // The card already sits inside its level's room, so the level itself
         // isn't repeated here. A track reading is one part of a series, so it
         // shows its part number and the unit it belongs to; a classic shows
@@ -1913,13 +1910,15 @@ window.Reader = {
             '<div class="story-card-body">' +
                 '<div class="story-card-title">' + this.escapeHtml(story.title) + '</div>' +
                 (subtitle ? '<div class="story-card-subtitle">' + this.escapeHtml(subtitle) + '</div>' : '') +
+                // Kept to what helps choose a book: whether it's within reach
+                // and how familiar its words are. Reading time and the Audio
+                // badge were dropped as clutter (2026-09-24); the narration
+                // player still appears inside a story that has it.
                 '<div class="story-card-meta">' +
-                    (minutes ? '<span class="story-card-badge">' + minutes + '</span>' : '') +
-                    (story.hasAudio ? '<span class="story-card-audio-badge" title="Narration available">Audio</span>' : '') +
                     (withinReach ? '<span class="story-card-reach-badge">Within Reach</span>' : '') +
+                    // Filled in by _fillFamiliarity() — needs the story's words.
+                    (this._familiarLemmas ? '<span class="story-card-familiar" data-familiar-for="' + this.escapeHtml(story.id) + '"></span>' : '') +
                 '</div>' +
-                // Filled in by _fillFamiliarity() — needs the story's words.
-                (this._familiarLemmas ? '<div class="story-card-familiar" data-familiar-for="' + this.escapeHtml(story.id) + '"></div>' : '') +
             '</div>' +
         '</button>';
     },

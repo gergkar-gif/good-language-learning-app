@@ -95,7 +95,6 @@ const Library = (function () {
         const art = (typeof pathArt === 'function' && typeof coverArtIndexFor === 'function')
             ? pathArt(coverArtIndexFor(story.id), 'story-card-cover-icon')
             : '';
-        const minutes = story.estimatedMinutes ? story.estimatedMinutes + ' min' : '';
         const withinReach = !isRead && (typeof Reader !== 'undefined' && typeof Reader.isStoryWithinReach === 'function')
             ? Reader.isStoryWithinReach(story, [story.id].filter(() => isRead))
             : false;
@@ -109,7 +108,6 @@ const Library = (function () {
                     <div class="story-card-body">
                         <div class="story-card-title">${esc(story.title)}</div>
                         <div class="story-card-meta">
-                            <span class="story-card-badge">${esc(story.level || '')}${minutes ? ' · ' + minutes : ''}</span>
                             ${withinReach ? '<span class="story-card-reach-badge">Within Reach</span>' : ''}
                         </div>
                     </div>
