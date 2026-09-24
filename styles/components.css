@@ -1004,7 +1004,7 @@
   bottom: 24px;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 1000;
+  z-index: 200;
   display: flex;
   align-items: center;
   gap: 12px;
@@ -3177,7 +3177,7 @@
   position: fixed;
   inset: 0;
   background: rgba(16, 42, 71, .48);
-  z-index: 100;
+  z-index: 1100;
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -4918,6 +4918,8 @@
 
 
 /* ----- "Add to deck" overlay (reused wp-overlay/wp-sheet chrome) ----- */
+
+#deck-picker-overlay { z-index: 1110; }
 
 .dk-picker-sheet { max-width: 420px; }
 
