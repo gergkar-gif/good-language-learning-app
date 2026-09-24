@@ -22,7 +22,13 @@ needs re-reading before starting new work; it's reference only.
       ex13), the plain CCSE and hu citizenship sentence-builders, and
       the hu *lenni* exercise `a1-21-review-2`. The overhaul had already
       rewritten one, `b1-orszagma-consolidation.ex12`, and it was left
-      as is. The placeholders still need real content.
+      as is. The placeholders, plus a third identical one (ex07) the
+      audit had missed, were then written as real exercises: *mientras*
+      + imperfect interrupted by a preterite, putting events in order
+      with *primero / luego / por último*, and the pluperfect for an
+      earlier past. They are tagged `imperfecto`, `past-sequence` and
+      `pluscuamperfecto`, in es-latam and es-es. See ROADMAP.md active
+      item 94 for the rest of this unit.
     - Restored the earlier "reading" rename of the 33 no-grammar skills
       (item 91), which hadn't made it into that commit.
     - Result: `build_grammar_index.py` reports no unnamed skills in any
