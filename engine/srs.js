@@ -468,6 +468,10 @@ function toggleReviewMode() {
         // survive a reload.
     }
     updateModeToggle();
+    // Drop the flipped-height hold (see revealAnswer()) — Type mode's card
+    // is laid out differently.
+    const cardEl = document.getElementById('review-card');
+    if (cardEl) cardEl.style.minHeight = '';
     // Same reasoning as toggleReviewDirection(): redraw the same card in the
     // new mode rather than skipping to a fresh one.
     if (currentReviewCard) renderCard();
@@ -555,6 +559,9 @@ function startReviewSession(lemmas, name, options) {
     };
 
     updateReviewBanner();
+
+    const cardEl = document.getElementById('review-card');
+    if (cardEl) cardEl.style.minHeight = '';
 
     const root = document.getElementById('review-session');
     if (root) root.classList.remove('hidden');
@@ -940,7 +947,18 @@ function revealAnswer() {
     if (flipActions) flipActions.style.display = 'none';
     document.getElementById('show-answer-btn').style.display = 'none';
     document.getElementById('review-type-input').classList.add('hidden');
-    document.getElementById('rating-buttons').style.display = 'flex';
+    const ratingsEl = document.getElementById('rating-buttons');
+    ratingsEl.style.display = 'flex';
+
+    // On a phone the revealed answer pushes the rating row below the fold,
+    // and hiding it again for the next card shrinks the page, so the browser
+    // snapped the scroll back up — the learner had to scroll down on every
+    // card. Holding the card at its flipped height keeps the page (and the
+    // card) still between cards; .review-flip-actions sits at the card's
+    // bottom, so Show Answer lands where the rating buttons just were.
+    const cardEl = document.getElementById('review-card');
+    if (cardEl) cardEl.style.minHeight = cardEl.offsetHeight + 'px';
+    ratingsEl.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
 }
 
 function showAnswer() {
