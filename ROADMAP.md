@@ -49,6 +49,20 @@ Reading comprehension is one of the four skills every CEFR exam (DELE, SIELE, th
 6. **Cross-link with Listening**: the same question renderers should serve the long-form listening modules below, so both comprehension skills are built once.
 
 
+### Library & Reading Experience
+Brainstormed 2026-09-24 (quick fixes from the same pass shipped — see ACHIEVED.md, "Library Track Shelf, Shelf Ordering & Card Polish"). Recommended order: 1, then 2, then prototype 4.
+1. **"% familiar" on every card** (LingQ-style) — the Library spec (`docs/archive/PARLOUR_LIBRARY_SPEC.md` §3) already called for it. `Library.analyseText()` (`engine/library.js`) computes it for My Texts; reuse it for Parlour readings, cached per story and recomputed when the deck changes. Could also drive recommendations ("12 of its words are in your deck").
+2. **Continue reading + series progress** (EWA/LingQ courses) — save scroll position per story (the scroll progress bar already tracks it) and show a "Continue reading" row at the top with a bookmark on in-progress stories. Series shelves (Original, the track) show "7 / 36", and the end of a reading gets a "Next in series →" button.
+3. **Pre-reading word preview** — an optional "5 words worth knowing" screen before a story. Preview only; nothing is added to SRS automatically (spec §17).
+4. **Book-spine view** — a compact toggle that draws a shelf as book spines: height from reading length, colour from shelf type, a ribbon when read. Fixes the long scroll (B1 Classics is ~20 rows of cards on a phone) and fits the Parlour visual language.
+5. **Timeline covers for the history track** — each card's cover is one segment of a single continuous line (the two-tone disc-on-a-line motif used for node art), so the whole shelf reads as a timeline. An optional `era` field on the reading (c. 1500, 1810, 1910) would add dates.
+6. **Covers that mean something** — cover shape derived from the story's topic, not a hash of its id, so "travel" or "history" becomes recognisable at a glance.
+7. **Filter chips** — Unread · Has audio · Under 5 min · Within reach, alongside the search box.
+8. **"Drill this story"** (Clozemaster-style) — after finishing, a ~10-item cloze drill built from the story's own sentences via the Workshop shell. Related to the deferred idea of a post-lesson mini-game covering any weak Workshop driller.
+9. **Questions during the story** (Duolingo Stories-style) — interleave a check between paragraphs, not only at the end. Ties into the Reading Comprehension item above.
+10. **Save a sentence** — long-press a sentence to add it to a deck as a sentence card (sentence mining), not just single words.
+11. **Listen through a shelf** (LingQ playlists) — play a shelf's narrated readings back-to-back; 244 ES readings already have audio.
+12. **Citizenship exam-readiness view** (HU B1 track) — per-topic status across the track, e.g. "Constitution: read ✓, quiz 4/5". Depends on comprehension scoring (Reading Comprehension item 3).
 ### Listening Comprehension & Audio Modules
 - **CEFR-Leveled Long-Form Listening Practice**: Introduce dedicated ~2-minute pre-recorded or multi-voice TTS audio modules (interviews, dialogues, monologues) accompanied by comprehension questions. Scale content strictly across CEFR levels: from A1 (simple descriptions of someone's day) to C1 (academic debates between three people on social housing, false friends, and complex idioms).
 
