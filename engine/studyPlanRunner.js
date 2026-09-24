@@ -43,14 +43,22 @@ const StudyPlanRunner = (function () {
     // here instead so teardown() can call the right module's stop().
     let _embeddedDriller = null;
 
-    // A review plan item is the one kind launched via goTab() — the normal
-    // showTab()-driven tab switch, which tears down whatever tab it's
+    // Hungarian drillers, looked up lazily — they're only loaded for HU.
+    const HU_DRILLERS = {
+        'hu-verb': () => (typeof HuVerbDriller !== 'undefined' ? HuVerbDriller : null),
+        'hu-suffix': () => (typeof HuSuffixDriller !== 'undefined' ? HuSuffixDriller : null),
+        'hu-prefix': () => (typeof HuPrefixDriller !== 'undefined' ? HuPrefixDriller : null),
+        'hu-morphology': () => (typeof HuMorphologyDriller !== 'undefined' ? HuMorphologyDriller : null)
+    };
+
+    // Review, Verb Driller and reading items are launched via goTab() — the
+    // normal showTab()-driven tab switch, which tears down whatever tab it's
     // leaving (see engine/init.js's teardownTab()). Without this flag,
-    // launching a review item would look identical to the learner
-    // navigating away to abandon the plan, and get its own plan discarded
-    // out from under it before the review even starts. Set immediately
-    // before that one goTab() call, cleared as soon as teardown() reads it.
-    let _leavingForReview = false;
+    // launching one would look identical to the learner navigating away to
+    // abandon the plan, and get its own plan discarded out from under it
+    // before the activity even starts. Set immediately before that goTab()
+    // call, cleared as soon as teardown() reads it.
+    let _leavingForActivity = false;
 
     // Same helper shape as engine/home.js's own goTab() — looks up the real
     // nav button so the bottom nav's active state stays correct when a plan
@@ -77,6 +85,10 @@ const StudyPlanRunner = (function () {
         if (item.kind === 'speaking') return item.skill ? `Speaking: ${humanize(item.skill)} — ${item.count} ${item.count === 1 ? 'sentence' : 'sentences'}` : `Speaking — ${item.count} ${item.count === 1 ? 'sentence' : 'sentences'}`;
         if (item.kind === 'speaking-cando') return `Quick speaking — ${item.seconds}s`;
         if (item.kind === 'match') return `Match Game — ${item.words.length} pairs`;
+        if (item.kind === 'translation') return `Translation — ${item.count} ${item.count === 1 ? 'sentence' : 'sentences'}`;
+        if (item.kind === 'verbs') return `Verb speed drill — ${item.seconds}s`;
+        if (item.kind === 'driller') return `${item.title} — ${item.count} ${item.count === 1 ? 'question' : 'questions'}`;
+        if (item.kind === 'reading') return `Read: ${item.title}`;
         return '';
     }
 
@@ -94,12 +106,21 @@ const StudyPlanRunner = (function () {
     // CHECKLIST
     // ----------------------------------------
 
-    function renderChecklist() {
+    async function renderChecklist() {
         const host = activityHost();
         if (!host) return;
         _embeddedDriller = null;
 
-        if (!StudyPlan.isActive()) {
+        // Time ran out after at least one activity: end here. (If nothing
+        // was started yet, the plan still shows — a late first tap.)
+        if (StudyPlan.isTimeUp() && !StudyPlan.overtime() && StudyPlan.currentIndex() > 0) {
+            if (StudyPlan.isActive()) renderTimeUp();
+            else renderCompletion();
+            return;
+        }
+
+        // Planned items all done with time to spare — add the next one.
+        if (!StudyPlan.isActive() && !(await StudyPlan.extend())) {
             renderCompletion();
             return;
         }
@@ -210,6 +231,37 @@ const StudyPlanRunner = (function () {
                 }
             });
             _embeddedDriller = DeckMatch;
+        } else if (item.kind === 'translation' && typeof TranslationDriller !== 'undefined') {
+            const host = activityHost();
+            host.innerHTML = '<div id="study-plan-driller"></div>';
+            _embeddedDriller = TranslationDriller;
+            if (typeof UI !== 'undefined') UI.showLoading('Preparing translation practice…');
+            try {
+                await TranslationDriller.render(document.getElementById('study-plan-driller'), { count: item.count, level: item.level, autoStart: true });
+            } finally {
+                if (typeof UI !== 'undefined') UI.hideLoading();
+            }
+        } else if (item.kind === 'driller' && HU_DRILLERS[item.drillerId] && HU_DRILLERS[item.drillerId]()) {
+            const mod = HU_DRILLERS[item.drillerId]();
+            const host = activityHost();
+            host.innerHTML = '<div id="study-plan-driller"></div>';
+            _embeddedDriller = mod;
+            if (typeof UI !== 'undefined') UI.showLoading('Preparing practice…');
+            try {
+                await mod.render(document.getElementById('study-plan-driller'), { count: item.count, autoStart: true });
+            } finally {
+                if (typeof UI !== 'undefined') UI.hideLoading();
+            }
+        } else if (item.kind === 'verbs' && typeof Workshop !== 'undefined') {
+            // The Verb Driller only renders inside Workshop's own DOM, so it
+            // leaves this screen the way a review does.
+            _leavingForActivity = true;
+            goTab('drills');
+            Workshop.open('verbs', { mode: 'speed', duration: item.seconds, autoStart: true });
+        } else if (item.kind === 'reading' && typeof Reader !== 'undefined') {
+            _leavingForActivity = true;
+            goTab('reader');
+            Reader.loadStory(item.storyId);
         } else if (item.kind === 'lesson' && typeof startLesson === 'function') {
             startLesson(item.lessonId);
         } else if (item.kind === 'test' && typeof LevelTest !== 'undefined') {
@@ -223,7 +275,7 @@ const StudyPlanRunner = (function () {
             // Respect the time-based budget: only review the budgeted count
             // of words (e.g. 9 words for 5 min) so the learner is never trapped
             // in a large backlog during a finite micro-session.
-            _leavingForReview = true;
+            _leavingForActivity = true;
             goTab('review');
             if (typeof Decks !== 'undefined') Decks.reviewDeck('all', { limit: item.count });
         }
@@ -247,11 +299,18 @@ const StudyPlanRunner = (function () {
     // lesson/test/review item's results live elsewhere, so goTab() brings
     // #study-plan-screen back first — a same-tick DOM write launchItem()
     // immediately overwrites, so there's nothing to actually see mid-swap.
-    function mountNextAction(container) {
+    async function mountNextAction(container) {
         if (!container) return;
 
-        const nextItem = _peekNextItem();
-        const label = nextItem ? `Next: ${itemLine(nextItem)}` : 'Finish session';
+        // Out of planned items with time left: plan one more now, so the
+        // button can name it.
+        const timeUp = StudyPlan.isTimeUp() && !StudyPlan.overtime();
+        let nextItem = _peekNextItem();
+        if (!nextItem && !timeUp) {
+            await StudyPlan.extend();
+            nextItem = _peekNextItem();
+        }
+        const label = (nextItem && !timeUp) ? `Next: ${itemLine(nextItem)}` : 'Finish session';
 
         const actionsEl = container.querySelector('.vspeed-results-actions') || container.querySelector('.sp-results-actions') || container.querySelector('.dkm-done-actions');
         if (actionsEl) {
@@ -278,7 +337,7 @@ const StudyPlanRunner = (function () {
             btn.addEventListener('click', () => {
                 const next = StudyPlan.advance();
                 goTab('study-plan-screen');
-                if (next) launchItem(next);
+                if (next && !(StudyPlan.isTimeUp() && !StudyPlan.overtime())) launchItem(next);
                 else renderChecklist();
             });
         }
@@ -295,18 +354,78 @@ const StudyPlanRunner = (function () {
         if (item && item.kind === 'lesson' && typeof LearnerPath !== 'undefined' && LearnerPath.isComplete(item.lessonId)) {
             StudyPlan.advance();
         }
+        // A reading item counts as done once the learner is back, finished
+        // or not — they chose to stop, and it shouldn't block the plan.
+        if (item && item.kind === 'reading' && _returningFromReading) {
+            StudyPlan.advance();
+        }
+        _returningFromReading = false;
         renderChecklist();
+    }
+
+    // ----------------------------------------
+    // READING HAND-BACK
+    // ----------------------------------------
+    // The Reader has no results screen to mount a "Next" button on, so it
+    // calls these instead (engine/reader.js's finishStory()/closeStory()).
+    let _returningFromReading = false;
+
+    function isReadingItem(storyId) {
+        const item = StudyPlan.current();
+        return !!(item && item.kind === 'reading' && item.storyId === storyId);
+    }
+
+    // Deferred a tick: closeStory() also runs when the learner leaves the
+    // Library via the main nav (teardownTab), and by then the Library tab
+    // is already hidden — that's leaving the session, not finishing a step.
+    function onReadingClosed(storyId) {
+        if (!isReadingItem(storyId)) return;
+        setTimeout(() => {
+            const readerTab = document.getElementById('reader');
+            if (readerTab && !readerTab.classList.contains('hidden')) {
+                _returningFromReading = true;
+                goTab('study-plan-screen');
+            } else {
+                StudyPlan.discard();
+            }
+        }, 0);
     }
 
     // ----------------------------------------
     // COMPLETION / LEAVING
     // ----------------------------------------
 
+    // Time ran out with planned items left — end here, offer the rest.
+    function renderTimeUp() {
+        const host = activityHost();
+        if (!host) return;
+        const left = StudyPlan.items().length - StudyPlan.currentIndex();
+        const next = StudyPlan.current();
+
+        host.innerHTML = `
+            <div class="sp-complete">
+                <p class="sp-complete-eyebrow">Time's up</p>
+                <h2 class="sp-complete-title">That's your ${esc(StudyPlan.minutes())} minutes.</h2>
+                <p class="sp-complete-summary">
+                    You still have ${left} planned ${left === 1 ? 'activity' : 'activities'} — keep going if you like.
+                </p>
+                <button class="btn-primary" data-sp-finish="1">Finish session</button>
+                <button class="dk-secondary" data-sp-more="1">Keep going: ${esc(itemLine(next))} →</button>
+            </div>
+        `;
+
+        host.querySelector('[data-sp-finish]').addEventListener('click', renderCompletion);
+        host.querySelector('[data-sp-more]').addEventListener('click', () => {
+            StudyPlan.keepGoing();
+            launchItem(next);
+        });
+    }
+
     function renderCompletion() {
         const host = activityHost();
         if (!host) return;
 
-        const doneCount = StudyPlan.items().length;
+        const doneCount = StudyPlan.currentIndex();
         const startedAt = StudyPlan.startedAt();
         const elapsed = startedAt ? formatElapsed(Date.now() - startedAt) : null;
         StudyPlan.discard();
@@ -425,8 +544,8 @@ const StudyPlanRunner = (function () {
         document.body.classList.remove('in-lesson');
         if (_embeddedDriller && typeof _embeddedDriller.stop === 'function') _embeddedDriller.stop();
         _embeddedDriller = null;
-        if (_leavingForReview) {
-            _leavingForReview = false;
+        if (_leavingForActivity) {
+            _leavingForActivity = false;
         } else {
             StudyPlan.discard();
         }
@@ -437,5 +556,5 @@ const StudyPlanRunner = (function () {
         open();
     }
 
-    return { open, start, openBudgetPicker, mountNextAction, onEnter, teardown };
+    return { open, start, openBudgetPicker, mountNextAction, onEnter, teardown, isReadingItem, onReadingClosed };
 })();

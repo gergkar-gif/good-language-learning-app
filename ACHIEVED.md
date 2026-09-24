@@ -9,6 +9,60 @@ needs re-reading before starting new work; it's reference only.
 
 ## Completed queue items
 
+84. ~~**Time-Based Sessions rebuilt: urgency-ranked, short blocks, runs to the clock**~~ — **Done 2026-09-24.**
+    The old builder had a fixed order and only used reviews, the next
+    lesson, grammar, vocabulary, listening, speaking and Match Game. It
+    also had a bug: grammar and vocabulary split *all* the remaining time
+    between them, so whenever both had something to practise (the usual
+    case), nothing was left for the "always included" speaking prompt,
+    listening, speaking or Match Game. User's spec for the rebuild: the
+    most urgent thing goes first, then the next most urgent, and so on,
+    with every activity considered; the next lesson goes 2nd; the short
+    speaking prompt always goes 3rd; practice comes in short blocks
+    ("rather 3x1.5 minute activities" than 5 minutes of one driller); and
+    if the learner gets through the plan early, keep recommending
+    activities until the chosen time is up.
+    `engine/studyPlan.js` now builds from *sources*, each ranked on one
+    shared urgency scale (`URGENCY`): due reviews 90-100, weak grammar
+    skill 80 (+5 if the level test flagged it), weak words 75, weak spoken
+    skill 70, weak driller 60-70, developing grammar skill 50. Activities
+    with no weakness signal are filler at 10: Verb Driller, Translation,
+    Listening, Speaking, the Hungarian drillers, Match Game, and one
+    Library story that fits the time. Each block taken from a source costs
+    it 25 points (`REPEAT_PENALTY`), so filler rotates and a big review
+    backlog alternates with other work instead of taking the whole
+    session. The same kind never runs twice in a row while anything else
+    is available. Blocks are ~1.5 min (`BLOCK_MINUTES`); reviews are 9
+    words (~3 min), since 4-word flashcard blocks felt too choppy.
+    The budget is now also a clock, counted from when the plan starts,
+    breaks included. `StudyPlan.extend()` appends the next most urgent
+    thing when the planned items are done and at least a minute is left
+    (the next lesson is a candidate here too). If time runs out with
+    planned items left, the runner shows a "Time's up" screen: "Finish
+    session", or "Keep going: {next} →", which switches off the clock for
+    the rest of that session (`keepGoing()`). There's still no visible
+    countdown.
+    `engine/studyPlanRunner.js` launches the new kinds: Translation and
+    the Hungarian drillers are embedded like Grammar; the Verb Driller (a
+    60s speed drill) and reading leave for their own tabs, the way reviews
+    already did (the flag is now `_leavingForActivity`). The Reader has no
+    results screen, so `engine/reader.js` hands back through
+    `StudyPlanRunner.onReadingClosed()`: closing the story returns to the
+    session and ticks it off (finished or not), skipping the "next in
+    series" offer; leaving the Library through the nav ends the session.
+    `LearnerModel.availableDrillers()` was added so the planner knows
+    which drillers are unlocked for this course.
+    Verified in the preview: plans for a new learner and for a seeded
+    learner (25 due cards, weak words, a speaking prompt) came out in the
+    expected order; an extra activity was added after the plan ran out;
+    the "Time's up" screen appeared with the clock moved forward, and
+    "Keep going" launched Translation embedded; the Verb Driller ran its
+    60s drill and its results button read "Next: Read: Carlos conoce a
+    Meg"; finishing the story returned to the session with it ticked off;
+    leaving the Library through the nav ended the session.
+    Not built: the Writing Studio's open composition (too long for a
+    short block), and a "skip this one" control on the checklist.
+
 83. ~~**"Only words from my lessons" opt-in toggle on every dictionary-wide driller**~~ — **Done 2026-09-23.**
     User asked for a switch on the "relevant" Workshop drillers that
     restricts them to words the learner has actually encountered in a

@@ -352,6 +352,18 @@ const LearnerModel = (function () {
         return candidates;
     }
 
+    // Every tracked driller the learner can use right now (right language,
+    // curriculum-unlocked), with its accuracy classification, weak or not —
+    // StudyPlan ranks the weak ones and uses the rest as filler.
+    function availableDrillers() {
+        return TRACKED_DRILLERS
+            .filter(id => _drillerAvailable(id) && _drillerUnlocked(id))
+            .map(id => {
+                const cls = (typeof DrillHistory !== 'undefined') ? DrillHistory.classify(id) : { state: null };
+                return { drillerId: id, title: DRILLER_TITLES[id], state: cls.state, avgAccuracy: cls.avgAccuracy };
+            });
+    }
+
     // ----------------------------------------
     // ORAL PRODUCTION EVIDENCE (Speaking Driller & Lesson Speaking)
     // ----------------------------------------
@@ -938,6 +950,7 @@ const LearnerModel = (function () {
         weakSkills,
         weakWords,
         weakDrillers,
+        availableDrillers,
         prerequisitesFor,
         isReady,
         recordProduction,

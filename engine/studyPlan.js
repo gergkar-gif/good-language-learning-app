@@ -22,198 +22,307 @@
 //
 // In-memory only, discarded on leaving early or on page reload — matches
 // the roadmap's "a clear start and end," not a lingering to-do list.
+//
+// How a plan is built (reworked 2026-09-24):
+//   1st — the single most urgent thing (see SOURCES below for the ranking)
+//   2nd — the next lesson (or level test), when it fits the budget
+//   3rd — a short speaking prompt, always
+//   then — the next most urgent thing, and so on, until the budget is full.
+// Practice comes in short blocks (~1.5 min) rather than one long block per
+// kind, and the same kind never runs twice in a row when anything else is
+// available. Activities with no weakness signal (never-tried drillers,
+// Library reading, Match Game) are filler: they rank below everything
+// urgent and rotate so a long session gets variety.
+//
+// The budget is also a clock: if the learner gets through the plan with
+// time to spare, extend() keeps recommending the next most urgent thing
+// until the chosen minutes have passed (wall-clock time since the plan
+// started, breaks included). If time runs out with planned items left,
+// the runner ends the session and offers the rest as optional.
 
 const StudyPlan = (function () {
     'use strict';
 
-    // Per-item-type pace. Grammar/vocabulary are untimed, thoughtful pace —
-    // NOT the countdown-race pace of Verb Speed's/Grammar Driller's own
-    // "Timed" mode, which this feature is deliberately not (the budget only
-    // sizes the plan up front; nothing counts down while doing it).
+    // Per-item-type pace. Untimed, thoughtful pace — NOT the countdown-race
+    // pace of Verb Speed's/Grammar Driller's own "Timed" mode. Used to size
+    // blocks and to fill the budget up front.
     const SEC_PER_REVIEW = 20;
     const SEC_PER_GRAMMAR_Q = 30;
     const SEC_PER_VOCAB_WORD = 25;
     const SEC_PER_LISTENING_Q = 35;
     const SEC_PER_SPEAKING_Q = 35;
+    const SEC_PER_TRANSLATION_Q = 30;
+    const SEC_PER_MORPH_Q = 15;        // Hungarian verb/suffix/prefix/morphology drillers
     const SEC_PER_MATCH_PAIR = 8;
+    const BLOCK_MINUTES = 1.5;         // one practice block — several short ones beat one long one
+    const REVIEW_BLOCK_WORDS = 9;      // ~3 min: flashcards are quick, 4-word blocks would be choppy
+    const VERB_SPEED_SECONDS = 60;
+    const SPEAKING_PROMPT_SECONDS = 40;
     const DEFAULT_LESSON_MINUTES = 10; // fallback when estimatedMinutes is null (100% of HU, ~38% of ES)
     const LESSON_GRACE_MINUTES = 2;    // estimate slop tolerance, not a hard wall
     const TEST_MINUTES = 18;           // a level test is one indivisible block
-    const reviewCapMinutes = minutes => Math.min(15, Math.round(minutes * 0.5));
+    const MIN_EXTEND_MINUTES = 1;      // don't start something new with less than this left
+
+    // Urgency scale shared by every source, so different kinds of work can
+    // be ranked against each other. Higher goes first.
+    const URGENCY = {
+        REVIEW: 90,          // + up to 10 for a bigger backlog: overdue SM-2 cards decay the most
+        GRAMMAR_WEAK: 80,    // +5 when the level test also flagged it
+        VOCAB_WEAK: 75,
+        SPEAKING_WEAK: 70,
+        DRILLER_WEAK: 60,    // + up to 10 the lower the accuracy
+        GRAMMAR_DEVELOPING: 50,
+        LESSON: 30,          // only as an extend() candidate — build() gives it slot 2
+        FILLER: 10
+    };
+    const REPEAT_PENALTY = 25; // each block already taken from a source lowers its next one
 
     let _queue = null;   // array of plan items, or null when no plan is active
     let _index = 0;      // pointer into _queue — the current/next item
     let _minutes = null;
     let _skipped = null;
     let _startedAt = null;
+    let _overtime = false; // learner chose to keep going after time ran out
+    let _used = {};        // source key -> blocks taken this plan
+
+    // ----------------------------------------
+    // SOURCES
+    // ----------------------------------------
+    // Each source can hand out blocks of one kind of work. urgency is its
+    // base rank; take() returns the next item (or null once it runs dry).
+
+    function _source(key, kind, urgency, take) {
+        return { key, kind, urgency, take };
+    }
+
+    function _chunks(list, size) {
+        const out = [];
+        for (let i = 0; i < list.length; i += size) out.push(list.slice(i, i + size));
+        return out;
+    }
+
+    function _perBlock(secPerItem) {
+        return Math.max(1, Math.round(BLOCK_MINUTES * 60 / secPerItem));
+    }
+
+    async function _sources(opts) {
+        const sources = [];
+        const curLevel = (typeof LearnerPath !== 'undefined' && LearnerPath.currentLevel)
+            ? LearnerPath.currentLevel().toLowerCase()
+            : 'all';
+        const canListen = typeof ParlourTTS !== 'undefined' && ParlourTTS.available();
+        const canSpeak = (typeof SpeechInput !== 'undefined' && SpeechInput.isSupported()) || canListen;
+
+        // Reviews due — the backlog is split into blocks.
+        const due = (typeof getDueCards === 'function') ? getDueCards() : [];
+        if (due.length) {
+            let left = due.length;
+            sources.push(_source('review', 'review', URGENCY.REVIEW + Math.min(10, Math.floor(due.length / 5)), () => {
+                if (left <= 0) return null;
+                const count = Math.min(left, REVIEW_BLOCK_WORDS);
+                left -= count;
+                return { kind: 'review', count, estMinutes: count * SEC_PER_REVIEW / 60 };
+            }));
+        }
+
+        // Grammar — each weak/developing skill is its own source.
+        const grammarCount = _perBlock(SEC_PER_GRAMMAR_Q);
+        const grammarItem = skill => ({ kind: 'grammar', skill, count: grammarCount, estMinutes: grammarCount * SEC_PER_GRAMMAR_Q / 60 });
+        const skills = (typeof LearnerModel !== 'undefined') ? await LearnerModel.weakSkills() : [];
+        skills.forEach((s, rank) => {
+            const base = s.state === 'weak'
+                ? URGENCY.GRAMMAR_WEAK + (s.levelTestFlagged ? 5 : 0)
+                : URGENCY.GRAMMAR_DEVELOPING;
+            let given = false;
+            sources.push(_source('grammar:' + s.skillId, 'grammar', base - rank, () => {
+                if (given) return null;
+                given = true;
+                return grammarItem(s.skillId);
+            }));
+        });
+        if (!skills.length && typeof RecommendationEngine !== 'undefined' && RecommendationEngine.grammarVocabCandidate) {
+            const gv = await RecommendationEngine.grammarVocabCandidate();
+            if (gv && gv.skill) sources.push(_source('grammar:' + gv.skill, 'grammar', URGENCY.FILLER, () => grammarItem(gv.skill)));
+        }
+
+        // Vocabulary — weakest words first, a few per block.
+        const weak = (typeof LearnerModel !== 'undefined') ? LearnerModel.weakWords(20) : [];
+        const drilled = new Set(opts.drilledWords || []);
+        const wordBlocks = _chunks(weak.filter(w => !drilled.has(w.lemma)), _perBlock(SEC_PER_VOCAB_WORD));
+        if (wordBlocks.length) {
+            sources.push(_source('vocabulary', 'vocabulary', URGENCY.VOCAB_WEAK, () => {
+                const words = wordBlocks.shift();
+                return words ? { kind: 'vocabulary', words, estMinutes: words.length * SEC_PER_VOCAB_WORD / 60 } : null;
+            }));
+        }
+
+        // Drillers — weak ones are urgent, the rest are filler.
+        const drillers = (typeof LearnerModel !== 'undefined' && LearnerModel.availableDrillers) ? LearnerModel.availableDrillers() : [];
+        const weakSpoken = (canSpeak && typeof LearnerModel !== 'undefined' && LearnerModel.weakProductionSkills)
+            ? await LearnerModel.weakProductionSkills(1, 'oral')
+            : [];
+        drillers.forEach(d => {
+            const id = d.drillerId;
+            let urgency = d.state === 'weak'
+                ? URGENCY.DRILLER_WEAK + Math.min(10, Math.round((60 - (d.avgAccuracy || 0)) / 6))
+                : URGENCY.FILLER;
+            let make = null;
+            if (id === 'listening') {
+                if (!canListen) return;
+                const count = _perBlock(SEC_PER_LISTENING_Q);
+                make = () => ({ kind: 'listening', count, level: curLevel, estMinutes: count * SEC_PER_LISTENING_Q / 60 });
+            } else if (id === 'speaking') {
+                if (!canSpeak) return;
+                const count = _perBlock(SEC_PER_SPEAKING_Q);
+                const skill = weakSpoken.length ? weakSpoken[0].skillId : null;
+                if (skill) urgency = Math.max(urgency, URGENCY.SPEAKING_WEAK);
+                make = () => Object.assign({ kind: 'speaking', count, level: curLevel, estMinutes: count * SEC_PER_SPEAKING_Q / 60 }, skill ? { skill } : {});
+            } else if (id === 'translation') {
+                const count = _perBlock(SEC_PER_TRANSLATION_Q);
+                make = () => ({ kind: 'translation', count, level: curLevel, estMinutes: count * SEC_PER_TRANSLATION_Q / 60 });
+            } else if (id === 'verbs') {
+                make = () => ({ kind: 'verbs', seconds: VERB_SPEED_SECONDS, estMinutes: BLOCK_MINUTES });
+            } else if (id.indexOf('hu-') === 0) {
+                const count = _perBlock(SEC_PER_MORPH_Q);
+                make = () => ({ kind: 'driller', drillerId: id, title: d.title, count, estMinutes: count * SEC_PER_MORPH_Q / 60 });
+            }
+            if (make) sources.push(_source('driller:' + id, id, urgency, make));
+        });
+
+        // Match Game — filler, needs at least four words to pair.
+        if (typeof DeckMatch !== 'undefined') {
+            let pool = weak.length >= 4 ? weak.slice(0, 12) : [];
+            if (pool.length < 4 && typeof srsDeck !== 'undefined' && srsDeck.length >= 4) {
+                pool = srsDeck.slice(0, 12).map(c => ({ lemma: c.spanish, translation: c.english }));
+            }
+            if (pool.length >= 4) {
+                const pairs = Math.min(pool.length, Math.max(4, Math.round(BLOCK_MINUTES * 60 / SEC_PER_MATCH_PAIR)));
+                sources.push(_source('match', 'match', URGENCY.FILLER, () => {
+                    const words = pool.slice(0, pairs);
+                    const timeLimit = Math.min(120, words.length * SEC_PER_MATCH_PAIR);
+                    return { kind: 'match', words, count: words.length, timeLimit, estMinutes: timeLimit / 60 };
+                }));
+            }
+        }
+
+        // Library reading — filler, one story that fits the time left.
+        if (typeof Reader !== 'undefined' && Reader.ensureStories && Reader.getRecommendations) {
+            try {
+                await Reader.ensureStories();
+                const rec = Reader.getRecommendations();
+                const story = rec && rec.comfortable && rec.comfortable.story;
+                if (story) {
+                    const est = story.estimatedMinutes || 5;
+                    let given = false;
+                    sources.push(_source('reading', 'reading', URGENCY.FILLER, () => {
+                        if (given) return null;
+                        given = true;
+                        return { kind: 'reading', storyId: story.id, title: story.title, estMinutes: est };
+                    }));
+                }
+            } catch (e) { /* no stories for this course — just no reading filler */ }
+        }
+
+        // Next lesson — build() places it itself; extend() ranks it.
+        if (opts.includeLesson) {
+            const step = (typeof LearnerPath !== 'undefined') ? LearnerPath.nextStep() : null;
+            if (step && step.kind === 'lesson' && !opts.doneLessons.has(step.lesson.id)) {
+                sources.push(_source('lesson', 'lesson', URGENCY.LESSON, () => _lessonItem(step)));
+            }
+        }
+
+        return sources;
+    }
+
+    function _lessonItem(step) {
+        const est = step.lesson.estimatedMinutes || DEFAULT_LESSON_MINUTES;
+        return { kind: 'lesson', lessonId: step.lesson.id, title: step.lesson.title, estMinutes: est };
+    }
+
+    // What "the same kind twice in a row" compares — a source's kind, or
+    // for a plan item the driller it runs.
+    function _variety(item) {
+        if (!item) return null;
+        if (item.kind === 'speaking-cando') return 'speaking';
+        return item.drillerId || item.kind;
+    }
+
+    // The next block: most urgent source whose kind differs from the
+    // previous item's (falls back to same-kind only when nothing else is
+    // left), and whose block fits in `room` minutes. A source that runs dry
+    // or whose block doesn't fit is dropped — room only shrinks from here.
+    function _pick(sources, prevKind, room) {
+        const ranked = sources
+            .map(s => ({ s, score: s.urgency - REPEAT_PENALTY * (_used[s.key] || 0) }))
+            .sort((a, b) => b.score - a.score);
+        const order = ranked.filter(r => r.s.kind !== prevKind).concat(ranked.filter(r => r.s.kind === prevKind));
+        for (const { s } of order) {
+            const item = s.take();
+            if (!item || item.estMinutes > room + LESSON_GRACE_MINUTES) {
+                sources.splice(sources.indexOf(s), 1);
+                continue;
+            }
+            _used[s.key] = (_used[s.key] || 0) + 1;
+            return item;
+        }
+        return null;
+    }
 
     // ----------------------------------------
     // ALLOCATION
     // ----------------------------------------
 
     async function build(minutes) {
+        _used = {};
         const items = [];
         let remaining = minutes;
         let skipped = null;
+        const sources = await _sources({ includeLesson: false, doneLessons: new Set() });
+        const add = item => { items.push(item); remaining -= item.estMinutes; };
+        const last = () => _variety(items[items.length - 1]);
 
-        // 1. Reviews due — time-sensitive (deferring costs real SM-2 decay
-        // the other three inputs don't have), so they get first claim on a
-        // capped share of the budget, and get to absorb leftover time at
-        // the end too (step 4 below) since a backlog is rarely fully
-        // exhausted — avoids inventing busywork for long 45-60 min budgets.
-        const due = (typeof getDueCards === 'function') ? getDueCards() : [];
-        const cap = reviewCapMinutes(minutes);
-        const firstPassMinutes = Math.min(due.length * SEC_PER_REVIEW / 60, cap);
-        const firstPassCount = Math.floor(firstPassMinutes * 60 / SEC_PER_REVIEW);
-        if (firstPassCount > 0) {
-            items.push({ kind: 'review', count: firstPassCount });
-            remaining -= firstPassMinutes;
-        }
+        // 1st — the most urgent thing.
+        const first = _pick(sources, null, remaining);
+        if (first) add(first);
 
-        // 2. Curriculum position — the spine of the plan.
+        // 2nd — the next lesson, or the level test.
         const step = (typeof LearnerPath !== 'undefined') ? LearnerPath.nextStep() : null;
         if (step && step.kind === 'lesson') {
-            const est = step.lesson.estimatedMinutes || DEFAULT_LESSON_MINUTES;
-            if (est <= remaining + LESSON_GRACE_MINUTES) {
-                items.push({ kind: 'lesson', lessonId: step.lesson.id, title: step.lesson.title, estMinutes: est });
-                remaining = Math.max(0, remaining - est);
-            } else {
-                skipped = { reason: 'lesson-too-long', title: step.lesson.title, estMinutes: est };
-            }
+            const lesson = _lessonItem(step);
+            if (lesson.estMinutes <= remaining + LESSON_GRACE_MINUTES) add(lesson);
+            else skipped = { reason: 'lesson-too-long', title: lesson.title, estMinutes: lesson.estMinutes };
         } else if (step && step.kind === 'test') {
-            if (remaining >= TEST_MINUTES) {
-                items.push({ kind: 'test', level: step.level, estMinutes: TEST_MINUTES });
-                remaining -= TEST_MINUTES;
-            } else {
-                skipped = { reason: 'test-needs-bigger-block', level: step.level, estMinutes: TEST_MINUTES };
-            }
+            if (remaining >= TEST_MINUTES) add({ kind: 'test', level: step.level, estMinutes: TEST_MINUTES });
+            else skipped = { reason: 'test-needs-bigger-block', level: step.level, estMinutes: TEST_MINUTES };
+        }
+        if (items.length < 2) {
+            const second = _pick(sources, last(), remaining);
+            if (second) add(second);
         }
 
-        // 3. Knowledge gaps — grammar and vocabulary split evenly over
-        // what's left. Same "either, both, or neither" honesty as
-        // RecommendationEngine: a slot with nothing to fill it is just
-        // omitted, never padded with invented busywork.
-        const half = remaining / 2;
-        const grammarCount = Math.round(half * 60 / SEC_PER_GRAMMAR_Q);
-        const vocabCount = Math.round(half * 60 / SEC_PER_VOCAB_WORD);
-
-        let skill = null;
-        if (grammarCount > 0 && typeof LearnerModel !== 'undefined') {
-            const skills = await LearnerModel.weakSkills();
-            if (skills.length) {
-                skill = skills[0].skillId;
-            } else if (typeof RecommendationEngine !== 'undefined' && RecommendationEngine.grammarVocabCandidate) {
-                const gv = await RecommendationEngine.grammarVocabCandidate();
-                skill = gv ? gv.skill : null;
-            }
-        }
-        if (skill) {
-            items.push({ kind: 'grammar', skill, count: grammarCount });
-            remaining -= half;
-        }
-
-        const words = (vocabCount > 0 && typeof LearnerModel !== 'undefined') ? LearnerModel.weakWords(vocabCount) : [];
-        if (words.length) {
-            items.push({ kind: 'vocabulary', words });
-            remaining -= half;
-        }
-
-        // 4. Listening & Speaking practice — auditory and oral production.
-        // If the learner has remaining time (>= 2.5 min), allocate listening
-        // and speaking practice to create a truly well-rounded session.
-        const canListen = typeof ParlourTTS !== 'undefined' && ParlourTTS.available();
+        // 3rd — a short speaking prompt, always (when speech is available
+        // and the learner has a competency to practise).
         const canSpeak = (typeof SpeechInput !== 'undefined' && SpeechInput.isSupported()) || (typeof ParlourTTS !== 'undefined' && ParlourTTS.available());
-        const curLevel = (typeof LearnerPath !== 'undefined' && LearnerPath.currentLevel)
-            ? LearnerPath.currentLevel().toLowerCase()
-            : 'all';
-
-        // 4a. Guaranteed quick speaking prompt — a single CEFR can-do
-        // statement ("I can greet someone in Spanish"), not the fuller
-        // Sentence-Drills block below. User's ask: every timed session
-        // should get the learner actually talking, even a 5-minute one
-        // that has no room left for real drilling once review/lesson/
-        // grammar/vocab have claimed their share. Cheap (~40s) and placed
-        // ahead of the budget-gated blocks below so it survives a tight
-        // budget; skipped outright (not padded with a placeholder) when
-        // the learner hasn't completed enough to have any competency to
-        // practice yet, or when speech input isn't available at all.
-        const SPEAKING_PROMPT_SECONDS = 40;
-        if (canSpeak && remaining >= SPEAKING_PROMPT_SECONDS / 60 && typeof LearnerModel !== 'undefined' && LearnerModel.pickSpeakingPrompt) {
+        if (canSpeak && typeof LearnerModel !== 'undefined' && LearnerModel.pickSpeakingPrompt) {
+            const curLevel = (typeof LearnerPath !== 'undefined' && LearnerPath.currentLevel) ? LearnerPath.currentLevel().toLowerCase() : 'all';
             const prompt = await LearnerModel.pickSpeakingPrompt(curLevel);
             if (prompt) {
-                items.push({
+                add({
                     kind: 'speaking-cando',
                     text: prompt.text,
                     level: prompt.level || curLevel,
                     lessonId: prompt.lessonId,
-                    seconds: SPEAKING_PROMPT_SECONDS
+                    seconds: SPEAKING_PROMPT_SECONDS,
+                    estMinutes: SPEAKING_PROMPT_SECONDS / 60
                 });
-                remaining -= SPEAKING_PROMPT_SECONDS / 60;
             }
         }
 
-        const weakDrillerList = (typeof LearnerModel !== 'undefined') ? LearnerModel.weakDrillers() : [];
-        const isListeningWeak = weakDrillerList.some(d => d.drillerId === 'listening');
-        const isSpeakingWeak = weakDrillerList.some(d => d.drillerId === 'speaking');
-
-        if (remaining >= 2.5 && canListen) {
-            const listeningMinutes = (remaining >= 5 || isListeningWeak) ? Math.min(3, remaining / 2) : Math.min(2.5, remaining);
-            const count = Math.max(5, Math.round(listeningMinutes * 60 / SEC_PER_LISTENING_Q));
-            items.push({ kind: 'listening', count, level: curLevel });
-            remaining -= (count * SEC_PER_LISTENING_Q) / 60;
-        }
-
-        if (remaining >= 2.5 && canSpeak) {
-            const speakingMinutes = (remaining >= 5 || isSpeakingWeak) ? Math.min(3, remaining) : Math.min(2.5, remaining);
-            const count = Math.max(5, Math.round(speakingMinutes * 60 / SEC_PER_SPEAKING_Q));
-            let targetSkill = null;
-            if (typeof LearnerModel !== 'undefined' && LearnerModel.weakProductionSkills) {
-                const weakProd = LearnerModel.weakProductionSkills(1);
-                if (weakProd && weakProd.length > 0) {
-                    targetSkill = weakProd[0].skillId;
-                }
-            }
-            const speakingItem = { kind: 'speaking', count, level: curLevel };
-            if (targetSkill) {
-                speakingItem.skill = targetSkill;
-            }
-            items.push(speakingItem);
-            remaining -= (count * SEC_PER_SPEAKING_Q) / 60;
-        }
-
-        // 5. Match Game — rapid visual pairing of deck and vocabulary words.
-        if (remaining >= 1.5 && typeof DeckMatch !== 'undefined') {
-            let matchPool = [];
-            if (typeof LearnerModel !== 'undefined') {
-                const weakW = await LearnerModel.weakWords(12);
-                if (weakW && weakW.length >= 4) matchPool = weakW;
-            }
-            if (matchPool.length < 4 && typeof srsDeck !== 'undefined' && srsDeck.length >= 4) {
-                matchPool = srsDeck.slice(0, 12).map(c => ({ lemma: c.spanish, translation: c.english }));
-            }
-            if (matchPool.length >= 4) {
-                const matchCount = Math.min(matchPool.length, Math.max(6, Math.round(remaining * 60 / SEC_PER_MATCH_PAIR)));
-                const matchItems = matchPool.slice(0, matchCount);
-                const timeSec = Math.min(120, matchItems.length * SEC_PER_MATCH_PAIR);
-                items.push({
-                    kind: 'match',
-                    words: matchItems,
-                    count: matchItems.length,
-                    timeLimit: timeSec
-                });
-                remaining -= (timeSec / 60);
-            }
-        }
-
-        // 6. Leftover — top up reviews with whatever's left of the backlog.
-        const dueRemaining = due.length - firstPassCount;
-        if (remaining > 1 && dueRemaining > 0) {
-            const topUp = Math.min(dueRemaining, Math.floor(remaining * 60 / SEC_PER_REVIEW));
-            if (topUp > 0) {
-                const existing = items.find(i => i.kind === 'review');
-                if (existing) existing.count += topUp;
-                else items.push({ kind: 'review', count: topUp });
-            }
+        // Then — most urgent next, until the budget is full.
+        while (remaining > 0.5) {
+            const next = _pick(sources, last(), remaining);
+            if (!next) break;
+            add(next);
         }
 
         _queue = items;
@@ -221,8 +330,51 @@ const StudyPlan = (function () {
         _minutes = minutes;
         _skipped = skipped;
         _startedAt = Date.now();
+        _overtime = false;
 
         return { minutes, items, skipped };
+    }
+
+    // Appends one more activity when the planned ones are done and time is
+    // left. Re-reads the learner's state (reviews just done no longer count
+    // as due, etc.). Returns the new item, or null when time is up or
+    // nothing fits.
+    async function extend() {
+        if (!Array.isArray(_queue) || _overtime) return null;
+        const left = minutesLeft();
+        if (left < MIN_EXTEND_MINUTES) return null;
+
+        const done = _queue.slice(0, _index + 1);
+        const sources = await _sources({
+            includeLesson: true,
+            doneLessons: new Set(done.filter(i => i.kind === 'lesson').map(i => i.lessonId)),
+            drilledWords: done.filter(i => i.kind === 'vocabulary').flatMap(i => i.words.map(w => w.lemma))
+        });
+        const prev = _variety(_queue[_queue.length - 1]);
+        const item = _pick(sources, prev, left);
+        if (item) _queue.push(item);
+        return item;
+    }
+
+    // ----------------------------------------
+    // CLOCK
+    // ----------------------------------------
+
+    function minutesLeft() {
+        if (!_startedAt || _minutes == null) return 0;
+        return _minutes - (Date.now() - _startedAt) / 60000;
+    }
+
+    function isTimeUp() {
+        return Array.isArray(_queue) && minutesLeft() <= 0;
+    }
+
+    function overtime() {
+        return _overtime;
+    }
+
+    function keepGoing() {
+        _overtime = true;
     }
 
     // ----------------------------------------
@@ -231,6 +383,12 @@ const StudyPlan = (function () {
 
     function isActive() {
         return Array.isArray(_queue) && _index < _queue.length;
+    }
+
+    // A plan exists (built, not discarded) — even with its queue used up,
+    // since extend() can still add to it.
+    function exists() {
+        return Array.isArray(_queue);
     }
 
     function items() {
@@ -275,13 +433,21 @@ const StudyPlan = (function () {
         _minutes = null;
         _skipped = null;
         _startedAt = null;
+        _overtime = false;
+        _used = {};
     }
 
     return {
         build,
+        extend,
         isActive,
+        exists,
         items,
         minutes,
+        minutesLeft,
+        isTimeUp,
+        overtime,
+        keepGoing,
         skipped,
         startedAt,
         currentIndex,
