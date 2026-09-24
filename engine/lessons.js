@@ -3163,7 +3163,8 @@ async function lessonGetWritingFeedback() {
             taskType: (stepState.lines && stepState.lines.length) ? 'structured_writing' : 'written_production',
             taskInstructions: `Writing task: ${prompts}`,
             targetSkills: (stepState.sourceStep && stepState.sourceStep.teaches) || [],
-            modality: 'written'
+            modality: 'written',
+            taskCompletionPrimary: true
         });
     } catch (e) {
         if (btn) btn.disabled = false;
@@ -3192,11 +3193,17 @@ async function lessonGetWritingFeedback() {
 // written to be specific and actionable ("use X instead of Y"), so they
 // read better as the one tip than a raw error quote or a bare strength.
 function _graderOneLineTip(result) {
-    const priorities = (result.feedback && result.feedback.priorities) || [];
-    if (priorities.length) return priorities[0];
+    const rawPriorities = (result.feedback && result.feedback.priorities) || [];
     const errors = result.errors || [];
-    if (errors.length && errors[0].explanation) return errors[0].explanation;
     const strengths = (result.feedback && result.feedback.strengths) || [];
+    const score = typeof result.overallScore === 'number' ? result.overallScore : 0;
+
+    const SPURIOUS_COMPLEXITY_RE = /\b(complex|complexity|longer\s+sentence|connectors?|subordinat|varying\s+sentence\s+structure|expand.*sentence)\b/i;
+    const isHighOrNoError = score >= 75 || errors.length === 0;
+    const priorities = rawPriorities.filter(p => !(isHighOrNoError && SPURIOUS_COMPLEXITY_RE.test(p)));
+
+    if (priorities.length) return priorities[0];
+    if (errors.length && errors[0].explanation) return errors[0].explanation;
     if (strengths.length) return strengths[0];
     return '';
 }

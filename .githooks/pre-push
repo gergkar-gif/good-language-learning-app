@@ -7,6 +7,11 @@
 # Enable once per clone:  git config core.hooksPath .githooks
 # Bypass in an emergency: git push --no-verify
 
+# Only validate content files if the commits being pushed actually touch content/
+if ! git diff --name-only origin/master...HEAD 2>/dev/null | grep -q '^content/'; then
+  exit 0
+fi
+
 PY=python
 command -v python >/dev/null 2>&1 || PY=python3
 

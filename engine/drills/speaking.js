@@ -1234,8 +1234,12 @@ const SpeakingDriller = (function () {
         }
 
         // Gather up to 2 actionable priorities or error explanations
+        const SPURIOUS_COMPLEXITY_RE = /\b(complex|complexity|longer\s+sentence|connectors?|subordinat|varying\s+sentence\s+structure|expand.*sentence)\b/i;
+        const isHighOrAccurate = score >= 75 || completion >= 0.75 || errors.length === 0;
+
         const rawSuggestions = [];
         for (const p of priorities) {
+            if (isHighOrAccurate && SPURIOUS_COMPLEXITY_RE.test(p)) continue;
             if (rawSuggestions.length < 2 && p) rawSuggestions.push(p);
         }
         if (rawSuggestions.length < 2) {

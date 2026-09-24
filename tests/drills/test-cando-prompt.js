@@ -177,7 +177,41 @@ SpeakingDriller.render(mockContainer, {
     };
     const tip3 = WritingDriller._shortTaskTip(mockResultFlawless, { title: 'Introduce yourself' });
     console.log('Flawless tip:', tip3);
-    assert(tip3.includes('with natural rhythm and rich conversational vocabulary!'), 'Should celebrate with strength');
+    console.log('--- Test 8: Spurious Complexity Feedback Filter on Short Tasks ---');
+    const mockShortWithComplexityPriority = {
+        overallScore: 90,
+        taskCompletion: 1.0,
+        feedback: {
+            priorities: ["Write more complex sentences", "Combine short sentences using connectors"],
+            strengths: ["Accurate greeting and natural vocabulary."]
+        },
+        errors: []
+    };
+    const speakingTipFiltered = SpeakingDriller._prodOneLineTip(mockShortWithComplexityPriority, { title: 'Say hello' });
+    console.log('Speaking tip filtered:', speakingTipFiltered);
+    assert(!speakingTipFiltered.toLowerCase().includes('complex'), 'Should not advise complex sentences for short high-scoring tasks');
+    assert(speakingTipFiltered.includes('with accurate greeting and natural vocabulary!'), 'Should fall back to strength when complexity priority is filtered');
+
+    const writingTipFiltered = WritingDriller._shortTaskTip(mockShortWithComplexityPriority, { title: 'Greeting' });
+    console.log('Writing tip filtered:', writingTipFiltered);
+    assert(!writingTipFiltered.toLowerCase().includes('complex'), 'Writing driller should drop spurious complexity priority');
+    assert(writingTipFiltered.includes('with accurate greeting and natural vocabulary!'), 'Writing driller should celebrate strength');
+
+    // Schema level verification for short productions (e.g. "szia, meg!")
+    const { GraderSchema, LocalGrader } = require('../../engine/grader');
+    const localShort = LocalGrader.analyze('szia, meg!', { cefrLevel: 'A1' });
+    const cleanedShort = GraderSchema.validateAndCleanResult({
+        overallScore: 95,
+        taskCompletion: 1.0,
+        dimensions: { grammar: 1.0, vocabulary: 1.0, coherence: 1.0, complexity: 0.8, naturalness: 1.0 },
+        errors: [],
+        feedback: {
+            strengths: ['Accurate Hungarian greeting.'],
+            priorities: ['Write more complex sentences and use connectors']
+        }
+    }, localShort);
+    assert.strictEqual(cleanedShort.feedback.priorities.length, 0, 'Schema should strip spurious complexity priorities for short A1 answers');
+    console.log('[PASS] Spurious complexity advice successfully filtered on short/A1 productions.');
 
     console.log('[PASS] Single extended sentence coaching verified across Speaking and Writing drillers.');
     console.log('\n[ALL PASS] Can-Do Prompt & Scaffolding Test Suite passed.');

@@ -118,6 +118,7 @@ Do not mark a skill weak simply because it was not used.
 FEEDBACK:
 Give 2-3 concrete strengths and 2-3 actionable priorities focused on conversational written correspondence.
 Every priority must be tied to something specific and evidenced in this exchange (a form, a word choice, a register slip, a missing reply). Never output a generic catch-all like "expand vocabulary" or "practice more grammar" — if there is genuinely nothing to flag, name what the learner did well instead of inventing a vague priority.
+Never suggest "writing more complex sentences", "using connectors", or "longer responses" for short messages or when the text is brief but accurate for the task/level. If there are no genuine errors or weaknesses, return an empty priorities array [].
 Keep each priority a concise, action-oriented phrase without trailing periods.
 GROUNDING CHECK: Before writing a priority, re-read the learner's actual messages and confirm the issue is really there. Never advise practicing something the learner's messages already do correctly — check every turn, not just the first. If you cannot point to a specific place where it's missing or wrong, do not mention it.
 
@@ -217,7 +218,7 @@ CRITICAL SHAPE RULE: every entry in demonstratedSkills and weakSkills MUST be an
 CRITICAL JSON QUOTING RULE: Never use unescaped double quotes inside JSON string values (such as explanations, texts, strengths, or priorities). Always use single quotes ('word') or backticks for quoted words, phrases, grammatical terms, and corrections.
 ${opts.taskCompletionPrimary ? `
 TASK-COMPLETION-PRIMARY MODE:
-This is a concrete, bounded can-do check (e.g. "count to 10", "state your name and where you're from", "list the days of the week") rather than an open-ended fluency topic. Ignore the weighting above; task completion now dominates. If the learner's spoken production correctly and completely conveys everything the task asked for, score 85-100 even if the response is a brief list, a single phrase, or otherwise not full-sentence prose — a task that only calls for an enumeration or a short factual answer must not be penalised for lacking length, complexity, or grammatical elaboration the task never asked for. Only reduce the score for content that is missing, wrong, or unintelligible.` : ''}
+This is a concrete, bounded can-do check (e.g. "count to 10", "state your name and where you're from", "list the days of the week") rather than an open-ended fluency topic. Ignore the weighting above; task completion now dominates. If the learner's spoken production correctly and completely conveys everything the task asked for, score 85-100 even if the response is a brief list, a single phrase, or otherwise not full-sentence prose — a task that only calls for an enumeration or a short factual answer must not be penalised for lacking length, complexity, or grammatical elaboration the task never asked for. Only reduce the score for content that is missing, wrong, or unintelligible. Under no circumstances suggest "speaking in more complex sentences", "using connectors", or "longer responses". If the response is accurate and complete, leave priorities empty [] or provide only positive reinforcement.` : ''}
 
 ERRORS:
 Only include concrete, defensible spoken errors that impair intelligibility or break grammatical agreement.
@@ -242,6 +243,7 @@ FEEDBACK:
 Give 2-3 concrete strengths and 2-3 actionable priorities focused on conversational speaking.
 Priorities should be based on actual spoken weaknesses found in the production, not generic advice.
 Never output a generic catch-all like "expand vocabulary" or "practice more grammar" — if there is genuinely nothing to flag, name what the learner did well instead of inventing a vague priority.
+Never suggest "speaking in more complex sentences", "using connectors", or "longer responses" for short phrases or when the speech is brief but accurate for the task/level. If there are no genuine errors or weaknesses, return an empty priorities array [].
 Keep each priority a concise, action-oriented phrase (e.g. 'Practice first-person preterite verb endings' or 'Remember adjective gender agreement') without trailing periods.
 GROUNDING CHECK: Before writing a priority, re-read the actual transcript and confirm the issue is really there. Never advise practicing something the learner's speech already does correctly — check the whole transcript, not just the start. If you cannot point to a specific place where it's missing or wrong, do not mention it.
 
@@ -354,7 +356,7 @@ CRITICAL SHAPE RULE: every entry in demonstratedSkills and weakSkills MUST be an
 CRITICAL JSON QUOTING RULE: Never use unescaped double quotes inside JSON string values (such as explanations, texts, strengths, or priorities). Always use single quotes ('word') or backticks for quoted words, phrases, grammatical terms, and corrections.
 ${opts.taskCompletionPrimary ? `
 TASK-COMPLETION-PRIMARY MODE:
-This is a concrete, bounded can-do check (e.g. "list the days of the week", "reserve a hotel room with a window and two separate beds") rather than an open-ended fluency topic. Ignore the weighting above; task completion now dominates. If the learner's production correctly and completely conveys everything the task asked for, score 85-100 even if the response is short or structurally simple — a task with a bounded, concrete requirement must not be penalised for lacking length, complexity, or grammatical elaboration the task never asked for. Only reduce the score for content that is missing, wrong, or unintelligible.` : ''}
+This is a concrete, bounded can-do check (e.g. "list the days of the week", "reserve a hotel room with a window and two separate beds") rather than an open-ended fluency topic. Ignore the weighting above; task completion now dominates. If the learner's production correctly and completely conveys everything the task asked for, score 85-100 even if the response is short or structurally simple — a task with a bounded, concrete requirement must not be penalised for lacking length, complexity, or grammatical elaboration the task never asked for. Only reduce the score for content that is missing, wrong, or unintelligible. Under no circumstances suggest "writing more complex sentences", "using connectors", or "longer responses". If the response is accurate and complete, leave priorities empty [] or provide only positive reinforcement.` : ''}
 
 ERRORS:
 Only include concrete, defensible errors or important limitations.
@@ -379,6 +381,7 @@ FEEDBACK:
 Give 2-3 concrete strengths and 2-3 actionable priorities.
 Priorities should be based on actual weaknesses found in the production, not generic advice.
 Never output a generic catch-all like "expand vocabulary" or "practice more grammar" — if there is genuinely nothing to flag, name what the learner did well instead of inventing a vague priority.
+Never suggest "writing more complex sentences", "using connectors", or "longer responses" for short phrases or when the production is brief but accurate for the task/level. If there are no genuine errors or weaknesses, return an empty priorities array [].
 Keep each priority a concise, action-oriented phrase (e.g. 'Practice first-person preterite verb endings' or 'Remember adjective gender agreement') without trailing periods.
 GROUNDING CHECK: Before writing a priority, re-read the learner's actual text and confirm the issue is really there. Never advise practicing something (a connector, a verb form, a structure) that the learner's text already does correctly — check the whole production first, not just the first sentence. If you cannot point to a specific place where it's missing or wrong, do not mention it.
 

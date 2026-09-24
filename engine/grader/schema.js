@@ -63,6 +63,9 @@
     // used only when the model returns neither errors nor priorities to draw from.
     function buildFallbackPriority(localStats) {
         if (!localStats) return 'Keep practicing to build overall accuracy and natural phrasing';
+        if (localStats.wordCount < 15 || localStats.cefrLevel === 'A1') {
+            return 'Keep practicing to build overall accuracy and natural phrasing';
+        }
         if (localStats.targetWordCountMet === false) {
             return localStats.lengthFeedback || 'Aim for a longer, more developed response';
         }
@@ -132,16 +135,23 @@
         const strengths = Array.isArray(rawFeedback.strengths)
             ? rawFeedback.strengths.filter(s => typeof s === 'string' && s.trim() && !_isDegenerateCorrection(s)).map(s => s.trim().replace(/[.;,:!]+$/, '')).slice(0, 3)
             : [];
-        const priorities = Array.isArray(rawFeedback.priorities)
+        let priorities = Array.isArray(rawFeedback.priorities)
             ? rawFeedback.priorities.filter(p => typeof p === 'string' && p.trim() && !_isDegenerateCorrection(p)).map(p => p.trim().replace(/[.;,:!]+$/, '')).slice(0, 3)
             : [];
+
+        // For short productions or A1, or when task was completed accurately with no errors,
+        // filter out spurious AI advice demanding complexity, connectors, or longer sentences.
+        const SPURIOUS_COMPLEXITY_RE = /\b(complex|complexity|longer\s+sentence|connectors?|subordinat|varying\s+sentence\s+structure|expand.*sentence)\b/i;
+        if (localStats && (localStats.wordCount < 15 || localStats.cefrLevel === 'A1')) {
+            priorities = priorities.filter(p => !SPURIOUS_COMPLEXITY_RE.test(p));
+        }
 
         if (!strengths.length) {
             strengths.push('Demonstrates communicative ability in the target language');
         }
         if (!priorities.length && errors.length) {
             priorities.push((errors[0].explanation || '').replace(/[.;,:!]+$/, ''));
-        } else if (!priorities.length) {
+        } else if (!priorities.length && !(localStats && localStats.wordCount < 15 && overallScore >= 75)) {
             priorities.push(buildFallbackPriority(localStats));
         }
 
