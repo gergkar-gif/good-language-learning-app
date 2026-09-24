@@ -32,6 +32,22 @@ Completed work is archived out to `ACHIEVED.md`.
 
 Unscoped enhancements, UX refinements, and candidate features grouped by domain (completed items archived to `ACHIEVED.md`):
 
+### Reading Comprehension (CEFR) — key feature
+Reading comprehension is one of the four skills every CEFR exam (DELE, SIELE, the Hungarian ECL/Origó exams) tests on its own, and it should be a first-class part of Parlour, not an optional extra at the end of a story.
+
+**What exists (audited 2026-09-24):**
+- **Library reader** — an unscored "Comprehension Check" block at the end of a story, rendered from `narration.pedagogical.comprehensionQuestions` (`engine/reader.js`, `renderStory()`). Coverage is patchy: ES A1 originals have 3 questions each (28 stories); the ES B1 Latin America readings have only 1 each; ES A2 (50 readings), ES B1 originals and classics, all of es-es beyond A1, and HU A1/A2 have **none**. HU B1 citizenship readings have 3 each. Answers aren't saved, scored or shown anywhere else.
+- **Lessons** — a "Reading" exercise group after the lesson's story step: ES A1 16/27 story lessons, A2 27/27, B1 core 36 (297 exercises, nearly all `multiple-choice`; shared between es-latam and es-es). HU has these on only 12 B1 lessons, and none at A1/A2.
+- **Level tests / diagnostic** (`content/<lang>/tests/`) — grammar and vocabulary sentence items plus writing and speaking tasks. **No reading section at all.** So nothing in the app actually measures reading at a CEFR level.
+
+**Proposed:**
+1. **A reading section in every level test** (A1/A2/B1 tests), plus a reading tier in the diagnostic, in exam-style formats: several short texts matched to people/situations, multiple choice on one longer text, a gapped text (sentences removed), and true/false/not-stated. This is the gap that most undermines the "you are B1" claim.
+2. **A standard question set on every Library reading**: 3–5 questions per reading covering gist, detail, inference and vocabulary-in-context. Fill the gaps listed above (ES A2, ES B1 originals/classics, es-es, HU A1/A2), and bring the ES B1 track readings from 1 to 3–5. Questions in English at A1, in the target language from A2 onward (exam convention).
+3. **Score it and remember it**: save each comprehension result, show it on the card ("Read ✓ · 4/5"), and feed a reading-skill score into the learner model/Journey alongside grammar and vocabulary.
+4. **New question renderers** (one function in `engine/lessons.js` + one schema branch each, per the rule below): true/false/not-stated, match headings to paragraphs, gapped text (put the removed sentence back), order the paragraphs, match people to texts. Reusable in lessons, the Library and tests.
+5. **A Reading Driller in Workshop**: timed practice in exam formats on unseen texts at your level, sharing the Count/Timed shell with the other drillers.
+6. **Cross-link with Listening**: the same question renderers should serve the long-form listening modules below, so both comprehension skills are built once.
+
 
 ### Listening Comprehension & Audio Modules
 - **CEFR-Leveled Long-Form Listening Practice**: Introduce dedicated ~2-minute pre-recorded or multi-voice TTS audio modules (interviews, dialogues, monologues) accompanied by comprehension questions. Scale content strictly across CEFR levels: from A1 (simple descriptions of someone's day) to C1 (academic debates between three people on social housing, false friends, and complex idioms).
