@@ -20,6 +20,8 @@ Completed work is archived out to `ACHIEVED.md`.
 
 2. **Keep new features cross-referencing `design principles.md`.** The 2026-09-23 visual-identity drift sweep (`ACHIEVED.md` items 72-75) is now fully closed out — `--bg-card` (real token, pure white in light mode, apparently a vestige of the briefly-adopted-then-reversed 2026-08-14 "soft card" phase) turned out to be used nowhere else in the entire app except the newer Level Test/Diagnostic/Home-onboarding features, all now fixed. The drift consistently came from features shipping their own CSS (and inline JS styles) without checking the doc first — a general periodic check for that would prevent the same class of drift recurring.
 
+4. **Explain an elective track to learners who start mid-track (added 2026-09-24).** The B1 elective tracks (es-es Cultura y Ciudadanía, es-latam Latin America, hu Citizenship) now open with a welcome screen in their first lesson (see ACHIEVED.md, "Welcome Screens for the B1 Elective Tracks"). But the elective nudge (`engine/recommendationEngine.js`, `_electiveCandidate()`) can send a learner straight to a later unit, and they never see that screen. Proposed: a one-line `description` on each track in `curriculum.json`'s `tracks` array (through `build-manifest.py`, since that file is generated), shown on the nudge card.
+
 
 
 

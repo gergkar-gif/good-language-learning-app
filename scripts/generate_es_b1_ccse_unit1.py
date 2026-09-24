@@ -1722,6 +1722,20 @@ def build_unit_1():
                 }
             ]
         }
+        # The track's first lesson opens with a welcome screen explaining
+        # what the Cultura y Ciudadanía track is and how it relates to Core.
+        if num == "01":
+            lesson_data["sections"].insert(0, {
+                "type": "intro",
+                "title": "Welcome to Cultura y Ciudadanía",
+                "body": [
+                    "This is a 36-unit track about Spain itself: how the state works, the rights and duties of the people who live there, its geography and regions, its history, and its culture and everyday life. It follows the topics of the *CCSE*, the test on the constitution and Spanish society that the Instituto Cervantes sets for people applying for Spanish nationality.",
+                    "Every lesson is built around a story: a real episode told as a narrative, not a list of facts to memorise. The words you need come from that story, and so does one B1 grammar point, practised on the same topic. Each unit has five lessons, then a consolidation lesson that ties them together.",
+                    "This track runs alongside Core Spanish, not instead of it. It doesn't gate your level test, but it assumes you're working through B1 Core grammar at the same time, and every word you learn here goes into the same review deck.",
+                    "To be clear about one thing: this track teaches the CCSE topics in Spanish at B1. It isn't an official preparation course. The real exam's questions come from the Instituto Cervantes' own published materials, so study those as well before you sit it.",
+                    "Okay, let's start where modern Spain starts: 1978."
+                ]
+            })
         write_json(f"content/es-es/lessons/b1/{stem}.json", lesson_data)
 
     consolidation_lesson = {
