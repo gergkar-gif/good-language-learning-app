@@ -6,30 +6,57 @@
       "type": "multiple-choice",
       "category": "recognize",
       "question": "Which word marks the event that happened FIRST, even though it's the first word in the sentence?",
-      "options": ["mielőtt", "miután", "eközben"],
+      "options": [
+        "mielőtt",
+        "miután",
+        "eközben"
+      ],
       "correct": 0,
-      "teaches": ["mielott-past"]
+      "teaches": [
+        "mielott-past"
+      ]
     },
     {
       "id": "b1-01-consolidation-2",
       "type": "multiple-choice",
       "category": "recognize",
       "question": "Which word marks the event that happened AFTER the other one?",
-      "options": ["miután", "mielőtt", "korábban"],
+      "options": [
+        "miután",
+        "mielőtt",
+        "korábban"
+      ],
       "correct": 0,
-      "teaches": ["miutan-past"]
+      "teaches": [
+        "miutan-past"
+      ]
     },
     {
       "id": "b1-01-consolidation-3",
       "type": "matching",
       "category": "recognize",
       "pairs": [
-        ["akkoriban", "back then"],
-        ["egymás után", "one after another"],
-        ["fordulópont", "turning point"],
-        ["tanulság", "moral, lesson learned"]
+        [
+          "akkoriban",
+          "back then"
+        ],
+        [
+          "egymás után",
+          "one after another"
+        ],
+        [
+          "fordulópont",
+          "turning point"
+        ],
+        [
+          "tanulság",
+          "moral, lesson learned"
+        ]
       ],
-      "teaches": ["scene-setting-time-words", "sequencing-connectors-deepened"]
+      "teaches": [
+        "scene-setting-time-words",
+        "sequencing-connectors-deepened"
+      ]
     },
     {
       "id": "b1-01-consolidation-4",
@@ -37,7 +64,9 @@
       "category": "recall",
       "sentence": "____ megérkeztünk, elmentünk sétálni. (After)",
       "answer": "Miután",
-      "teaches": ["miutan-past"]
+      "teaches": [
+        "miutan-past"
+      ]
     },
     {
       "id": "b1-01-consolidation-5",
@@ -45,7 +74,9 @@
       "category": "recall",
       "sentence": "____ elindultunk, ellenőriztük a jegyeket. (Before)",
       "answer": "Mielőtt",
-      "teaches": ["mielott-past"]
+      "teaches": [
+        "mielott-past"
+      ]
     },
     {
       "id": "b1-01-consolidation-6",
@@ -53,16 +84,48 @@
       "category": "recall",
       "sentence": "Az ____ az volt, hogy mindenki elkésett. (result)",
       "answer": "eredmény",
-      "teaches": ["narrative-result-connectors"]
+      "teaches": [
+        "narrative-result-connectors"
+      ]
     },
     {
       "id": "b1-01-consolidation-7",
       "type": "sentence-builder",
       "category": "in-context",
-      "tiles": ["Miután", "végzett", "a", "munkával", ",", "mielőtt", "hazament", ",", "még", "beugrott", "a", "boltba", "."],
-      "solution": ["Miután", "végzett", "a", "munkával", ",", "mielőtt", "hazament", ",", "még", "beugrott", "a", "boltba", "."],
+      "tiles": [
+        "Miután",
+        "végzett",
+        "a",
+        "munkával",
+        ",",
+        "mielőtt",
+        "hazament",
+        ",",
+        "még",
+        "beugrott",
+        "a",
+        "boltba",
+        "."
+      ],
+      "solution": [
+        "Miután",
+        "végzett",
+        "a",
+        "munkával",
+        ",",
+        "mielőtt",
+        "hazament",
+        ",",
+        "még",
+        "beugrott",
+        "a",
+        "boltba",
+        "."
+      ],
       "english": "After he finished work, before he went home, he still popped into the shop.",
-      "teaches": ["miutan-mielott-combined"]
+      "teaches": [
+        "miutan-mielott-combined"
+      ]
     },
     {
       "id": "b1-01-consolidation-8",
@@ -74,20 +137,38 @@
         "Mielőtt véglegesen elmentünk, még egyszer visszanéztünk.",
         "Végül egy új városban telepedtünk le."
       ],
-      "solution": [0, 1, 2, 3],
-      "teaches": ["narrative-synthesis"]
+      "solution": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "teaches": [
+        "narrative-synthesis"
+      ]
     },
     {
       "id": "b1-01-consolidation-9",
       "type": "dialogue-complete",
       "category": "in-context",
       "prompt": [
-        { "speaker": "Petra", "text": "Mi volt a fordulópont a történetben?" },
-        { "speaker": "Meg", "text": "_____" }
+        {
+          "speaker": "Petra",
+          "text": "Mi volt a fordulópont a történetben?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
       ],
-      "options": ["Az ég hirtelen elsötétült, és mindenki meglepődött.", "Holnap fogunk elindulni."],
+      "options": [
+        "Az ég hirtelen elsötétült, és mindenki meglepődött.",
+        "Holnap fogunk elindulni."
+      ],
       "correct": 0,
-      "teaches": ["mielott-past"]
+      "teaches": [
+        "mielott-past"
+      ]
     },
     {
       "id": "b1-01-consolidation-10",
@@ -111,7 +192,9 @@
           "answer": "Az eredmény az volt, hogy mindenki boldog volt."
         }
       ],
-      "teaches": ["narrative-synthesis"]
+      "teaches": [
+        "narrative-synthesis"
+      ]
     },
     {
       "id": "b1-01-consolidation-11",
@@ -123,7 +206,9 @@
           "answer": "Még mindig élénken emlékszem egy részletre."
         }
       ],
-      "teaches": ["narrative-synthesis"]
+      "teaches": [
+        "narrative-synthesis"
+      ]
     },
     {
       "id": "b1-01-consolidation-12",
@@ -135,7 +220,9 @@
           "answer": "Ez nem volt kudarc, csak egy tanulság."
         }
       ],
-      "teaches": ["multi-clause-narrative"]
+      "teaches": [
+        "multi-clause-narrative"
+      ]
     }
   ]
 }

@@ -6,10 +6,22 @@
       "type": "matching",
       "category": "vocabulary",
       "pairs": [
-        ["egyházmegye", "diocese"],
-        ["püspök", "bishop"],
-        ["kolostor", "monastery"],
-        ["törvény", "law"]
+        [
+          "egyházmegye",
+          "diocese"
+        ],
+        [
+          "püspök",
+          "bishop"
+        ],
+        [
+          "kolostor",
+          "monastery"
+        ],
+        [
+          "törvény",
+          "law"
+        ]
       ]
     },
     {
@@ -17,10 +29,22 @@
       "type": "matching",
       "category": "vocabulary",
       "pairs": [
-        ["lázadás", "revolt, uprising"],
-        ["lever", "to put down, suppress"],
-        ["bevezet", "to introduce (a law/system)"],
-        ["tized", "tithe"]
+        [
+          "lázadás",
+          "revolt, uprising"
+        ],
+        [
+          "lever",
+          "to put down, suppress"
+        ],
+        [
+          "bevezet",
+          "to introduce (a law/system)"
+        ],
+        [
+          "tized",
+          "tithe"
+        ]
       ]
     },
     {
@@ -51,9 +75,11 @@
       "id": "b1-istvankiraly-03.ex04",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Az ___ kolostorokban szerzetesek éltek és tanítottak. (founded)",
+      "sentence": "Az ___ kolostorokban szerzetesek éltek és tanítottak. (founded) _____",
       "answer": "alapított",
-      "teaches": ["alapitott-intezmenyek"]
+      "teaches": [
+        "alapitott-intezmenyek"
+      ]
     },
     {
       "id": "b1-istvankiraly-03.ex05",
@@ -71,18 +97,42 @@
       "id": "b1-istvankiraly-03.ex06",
       "type": "sentence-builder",
       "category": "grammar",
-      "tiles": ["A", "bevezetett", "törvények", "védték", "az", "egyház", "vagyonát."],
-      "solution": ["A", "bevezetett", "törvények", "védték", "az", "egyház", "vagyonát."],
+      "tiles": [
+        "A",
+        "bevezetett",
+        "törvények",
+        "védték",
+        "az",
+        "egyház",
+        "vagyonát."
+      ],
+      "solution": [
+        "A",
+        "bevezetett",
+        "törvények",
+        "védték",
+        "az",
+        "egyház",
+        "vagyonát."
+      ],
       "english": "The introduced laws protected the church's property.",
-      "teaches": ["alapitott-intezmenyek"]
+      "teaches": [
+        "alapitott-intezmenyek"
+      ]
     },
     {
       "id": "b1-istvankiraly-03.ex07",
       "type": "dialogue-complete",
       "category": "reading",
       "prompt": [
-        { "speaker": "Anna", "text": "Miben állt István egyházszervezése?" },
-        { "speaker": "Márk", "text": "_____" }
+        {
+          "speaker": "Anna",
+          "text": "Miben állt István egyházszervezése?"
+        },
+        {
+          "speaker": "Márk",
+          "text": "_____"
+        }
       ],
       "options": [
         "Érsekséget és tíz egyházmegyét hozott létre, és kolostorokat is alapított.",

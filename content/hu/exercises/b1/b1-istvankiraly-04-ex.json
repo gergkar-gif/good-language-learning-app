@@ -6,10 +6,22 @@
       "type": "matching",
       "category": "vocabulary",
       "pairs": [
-        ["szent", "saint, holy"],
-        ["védőszent", "patron saint"],
-        ["szentté avat", "to canonize"],
-        ["örökség", "legacy, heritage"]
+        [
+          "szent",
+          "saint, holy"
+        ],
+        [
+          "védőszent",
+          "patron saint"
+        ],
+        [
+          "szentté avat",
+          "to canonize"
+        ],
+        [
+          "örökség",
+          "legacy, heritage"
+        ]
       ]
     },
     {
@@ -17,10 +29,22 @@
       "type": "matching",
       "category": "vocabulary",
       "pairs": [
-        ["intelem", "admonition, counsel"],
-        ["utókor", "posterity"],
-        ["legenda", "legend"],
-        ["ünnep", "holiday, feast day"]
+        [
+          "intelem",
+          "admonition, counsel"
+        ],
+        [
+          "utókor",
+          "posterity"
+        ],
+        [
+          "legenda",
+          "legend"
+        ],
+        [
+          "ünnep",
+          "holiday, feast day"
+        ]
       ]
     },
     {
@@ -51,9 +75,11 @@
       "id": "b1-istvankiraly-04.ex04",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A ___ király ma Magyarország védőszentje. (canonized)",
+      "sentence": "A ___ király ma Magyarország védőszentje. (canonized) _____",
       "answer": "szentté avatott",
-      "teaches": ["szentte-avatott"]
+      "teaches": [
+        "szentte-avatott"
+      ]
     },
     {
       "id": "b1-istvankiraly-04.ex05",
@@ -71,18 +97,40 @@
       "id": "b1-istvankiraly-04.ex06",
       "type": "sentence-builder",
       "category": "grammar",
-      "tiles": ["Az", "utókorra", "megőrzött", "Intelmek", "máig", "olvashatók."],
-      "solution": ["Az", "utókorra", "megőrzött", "Intelmek", "máig", "olvashatók."],
+      "tiles": [
+        "Az",
+        "utókorra",
+        "megőrzött",
+        "Intelmek",
+        "máig",
+        "olvashatók."
+      ],
+      "solution": [
+        "Az",
+        "utókorra",
+        "megőrzött",
+        "Intelmek",
+        "máig",
+        "olvashatók."
+      ],
       "english": "The Admonitions, preserved for posterity, can still be read today.",
-      "teaches": ["szentte-avatott"]
+      "teaches": [
+        "szentte-avatott"
+      ]
     },
     {
       "id": "b1-istvankiraly-04.ex07",
       "type": "dialogue-complete",
       "category": "reading",
       "prompt": [
-        { "speaker": "Zsófi", "text": "Miért maradt örökös nélkül István halála előtt?" },
-        { "speaker": "Dávid", "text": "_____" }
+        {
+          "speaker": "Zsófi",
+          "text": "Miért maradt örökös nélkül István halála előtt?"
+        },
+        {
+          "speaker": "Dávid",
+          "text": "_____"
+        }
       ],
       "options": [
         "Mert fia, Imre egy vadászbalesetben meghalt.",

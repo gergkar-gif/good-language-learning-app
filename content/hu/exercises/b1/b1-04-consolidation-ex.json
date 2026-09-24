@@ -6,30 +6,59 @@
       "type": "multiple-choice",
       "category": "recognize",
       "question": "Which phrase means \"in your place\" and introduces advice by imagining yourself there?",
-      "options": ["a helyedben", "a barátod", "a helyeden"],
+      "options": [
+        "a helyedben",
+        "a barátod",
+        "a helyeden"
+      ],
       "correct": 0,
-      "teaches": ["helyedben-advice"]
+      "teaches": [
+        "helyedben-advice"
+      ]
     },
     {
       "id": "b1-04-consolidation-2",
       "type": "multiple-choice",
       "category": "recognize",
       "question": "Which word turns a plain instruction into a caring warning?",
-      "options": ["nehogy", "talán", "szinte"],
+      "options": [
+        "nehogy",
+        "talán",
+        "szinte"
+      ],
       "correct": 0,
-      "teaches": ["nehogy-warning"]
+      "teaches": [
+        "nehogy-warning"
+      ]
     },
     {
       "id": "b1-04-consolidation-3",
       "type": "matching",
       "category": "recognize",
       "pairs": [
-        ["helyedben", "in your place"],
-        ["mérlegel", "to weigh up"],
-        ["kockázat", "risk"],
-        ["meggyőz", "to convince"]
+        [
+          "helyedben",
+          "in your place"
+        ],
+        [
+          "mérlegel",
+          "to weigh up"
+        ],
+        [
+          "kockázat",
+          "risk"
+        ],
+        [
+          "meggyőz",
+          "to convince"
+        ]
       ],
-      "teaches": ["helyedben-advice", "egyreszt-masreszt", "hat-het-warning", "advice-synthesis"]
+      "teaches": [
+        "helyedben-advice",
+        "egyreszt-masreszt",
+        "hat-het-warning",
+        "advice-synthesis"
+      ]
     },
     {
       "id": "b1-04-consolidation-4",
@@ -37,7 +66,9 @@
       "category": "recall",
       "sentence": "A ____ én szólnék a főnöknek. (in your place)",
       "answer": "helyedben",
-      "teaches": ["helyedben-advice"]
+      "teaches": [
+        "helyedben-advice"
+      ]
     },
     {
       "id": "b1-04-consolidation-5",
@@ -45,7 +76,9 @@
       "category": "recall",
       "sentence": "____ ezt a receptet. (You could try it out)",
       "answer": "Kipróbálhatnád",
-      "teaches": ["hat-het-suggestion"]
+      "teaches": [
+        "hat-het-suggestion"
+      ]
     },
     {
       "id": "b1-04-consolidation-6",
@@ -53,16 +86,44 @@
       "category": "recall",
       "sentence": "____ elfelejtsd bezárni az ajtót! (make sure you don't)",
       "answer": "Nehogy",
-      "teaches": ["nehogy-warning"]
+      "teaches": [
+        "nehogy-warning"
+      ]
     },
     {
       "id": "b1-04-consolidation-7",
       "type": "sentence-builder",
       "category": "in-context",
-      "tiles": ["Egyrészt", "olcsóbb", "a", "vonat", ",", "másrészt", "tovább", "tart", "az", "út", "."],
-      "solution": ["Egyrészt", "olcsóbb", "a", "vonat", ",", "másrészt", "tovább", "tart", "az", "út", "."],
+      "tiles": [
+        "Egyrészt",
+        "olcsóbb",
+        "a",
+        "vonat",
+        ",",
+        "másrészt",
+        "tovább",
+        "tart",
+        "az",
+        "út",
+        "."
+      ],
+      "solution": [
+        "Egyrészt",
+        "olcsóbb",
+        "a",
+        "vonat",
+        ",",
+        "másrészt",
+        "tovább",
+        "tart",
+        "az",
+        "út",
+        "."
+      ],
       "english": "On one hand the train is cheaper; on the other hand, the trip takes longer.",
-      "teaches": ["egyreszt-masreszt"]
+      "teaches": [
+        "egyreszt-masreszt"
+      ]
     },
     {
       "id": "b1-04-consolidation-8",
@@ -74,23 +135,38 @@
         "Fábián úr azt mondta: a helyedben én magam intézném el.",
         "Az asszony megnyugodva, bátorítva ment haza."
       ],
-      "solution": [0, 1, 2, 3],
-      "teaches": ["advice-synthesis"]
+      "solution": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "teaches": [
+        "advice-synthesis"
+      ]
     },
     {
       "id": "b1-04-consolidation-9",
       "type": "dialogue-complete",
       "category": "in-context",
       "prompt": [
-        { "speaker": "Petra", "text": "Nem tudom, melyik utat válasszam." },
-        { "speaker": "Meg", "text": "_____" }
+        {
+          "speaker": "Petra",
+          "text": "Nem tudom, melyik utat válasszam."
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
       ],
       "options": [
         "Egyrészt a rövidebb út gyorsabb, másrészt a szebbik sokkal élvezetesebb lenne.",
         "A rövidebb út mindig rosszabb."
       ],
       "correct": 0,
-      "teaches": ["egyreszt-masreszt"]
+      "teaches": [
+        "egyreszt-masreszt"
+      ]
     },
     {
       "id": "b1-04-consolidation-10",
@@ -114,7 +190,9 @@
           "answer": "Nehogy elfelejtsd bezárni az ajtót!"
         }
       ],
-      "teaches": ["advice-synthesis"]
+      "teaches": [
+        "advice-synthesis"
+      ]
     },
     {
       "id": "b1-04-consolidation-11",
@@ -126,7 +204,9 @@
           "answer": "Ez a döntés komoly következményekkel járhat."
         }
       ],
-      "teaches": ["hat-het-warning"]
+      "teaches": [
+        "hat-het-warning"
+      ]
     },
     {
       "id": "b1-04-consolidation-12",
@@ -138,7 +218,9 @@
           "answer": "Inkább várnék egy kicsit, mint azonnal döntenék."
         }
       ],
-      "teaches": ["inkabb-mint-suggestion"]
+      "teaches": [
+        "inkabb-mint-suggestion"
+      ]
     }
   ]
 }
