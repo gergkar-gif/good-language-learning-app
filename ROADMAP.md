@@ -7,47 +7,6 @@ Completed work is archived out to `ACHIEVED.md`.
 
 ## 1. Active & Parked Priorities
 
-1. **Progressive Authoring of Spain CCSE Track (`content/es-es`, Units 1–36):**
-   - **Completed to Full Standard (8-part lessons, 63 exercises/unit, 5+1 stitched world stories with 15 comprehension questions, 40 vocab words)**:
-     - Unit 1: *La Constitución Española de 1978* (`b1-constitucion-01`..`05` + `consolidation`) — reauthored 2026-09-24.
-     - Unit 2: *La Corona y la Jefatura del Estado* (`b1-monarquia-01`..`05` + `consolidation`) — reauthored 2026-09-24.
-     - Unit 3: *Las Cortes Generales: Congreso y Senado* (`b1-cortes-01`..`05` + `consolidation`) — reauthored 2026-09-24.
-     - Unit 4: *El Gobierno y la Administración del Estado* (`b1-gobierno-01`..`05` + `consolidation`) — reauthored 2026-09-24.
-     - Unit 5: *El Poder Judicial y el Tribunal Constitucional* (`b1-judicial-01`..`05` + `consolidation`) — reauthored 2026-09-24.
-     - Unit 6: *Las Instituciones Autonómicas y Locales* (`b1-autonomias-01`..`05` + `consolidation`) — reauthored 2026-09-24.
-     - Unit 7: *Elecciones y Participación Ciudadana* (`b1-participacion-01`..`05` + `consolidation`) — authored 2026-09-24.
-     - Unit 8: *Fuerzas Armadas y Cuerpos de Seguridad* (`b1-seguridad-01`..`05` + `consolidation`) — authored 2026-09-24.
-     - Unit 9: *España en la Unión Europea* (`b1-unioneuropea-01`..`05` + `consolidation`) — authored 2026-09-24.
-     - Unit 10: *Símbolos del Estado: Bandera, Escudo e Himno* (`b1-simbolos-01`..`05` + `consolidation`) — authored 2026-09-24.
-     - Unit 11: *El Castellano y las Lenguas Cooficiales* (`b1-lenguas-01`..`05` + `consolidation`) — authored 2026-09-24.
-     - Unit 12: *Difusión Cultural: El Instituto Cervantes* (`b1-cervantes-01`..`05` + `consolidation`) — authored 2026-09-24.
-     - Unit 13: *Derechos y Libertades Fundamentales* (`b1-derechos-01`..`05` + `consolidation`) — authored 2026-09-24.
-     - Unit 14: *Igualdad, Familia y No Discriminación* (`b1-igualdad-01`..`05` + `consolidation`) — authored 2026-09-24.
-     - Unit 15: *Deberes Ciudadanos y Sistema Tributario* (`b1-deberes-01`..`05` + `consolidation`) — authored 2026-09-24.
-     - Unit 16: *Garantías Constitucionales y el Defensor del Pueblo* (`b1-garantias-01`..`05` + `consolidation`) — authored 2026-09-24.
-     - Unit 17: *Geografía Física: Relieve, Costas, Ríos y Clima* (`b1-geografia-01`..`05` + `consolidation`) — authored 2026-09-24.
-     - Unit 18: *La España Verde: Galicia, Asturias, Cantabria y País Vasco* (`b1-norte-01`..`05` + `consolidation`) — authored 2026-09-24.
-     - Unit 19: *Comunidades del Mediterráneo e Islas Baleares* (`b1-mediterraneo-01`..`05` + `consolidation`) — authored 2026-09-24.
-     - Unit 20: *Comunidades del Centro, Sur y Canarias* (`b1-centrosur-01`..`05` + `consolidation`) — authored 2026-09-24.
-     - Unit 21: *Ceuta, Melilla y Municipios de España* (`b1-ciudadesautonomas-01`..`05` + `consolidation`) — authored 2026-09-24.
-     - Unit 22: *Historia: De Hispania al Siglo de Oro* (`b1-historiaantigua-01`..`05` + `consolidation`) — authored 2026-09-24.
-     - Unit 23: *Historia Contemporánea y Transición a la Democracia* (`b1-historiacontemporanea-01`..`05` + `consolidation`) — authored 2026-09-24.
-     - Unit 24: *Literatura Española: De Cervantes a la Generación del 27* (`b1-literatura-01`..`05` + `consolidation`) — authored 2026-09-24.
-     - Unit 25: *Pintura y Escultura: Velázquez, Goya, Picasso y Dalí* (`b1-arte-01`..`05` + `consolidation`) — authored 2026-09-24.
-     - Unit 26: *Música, Danza y Cine Español* (`b1-musicacine-01`..`05` + `consolidation`) — authored 2026-09-24.
-     - Unit 27: *Fiestas Nacionales, Autonómicas y Tradiciones* (`b1-fiestas-01`..`05` + `consolidation`) — authored 2026-09-24.
-     - Unit 28: *Gastronomía Española y Dieta Mediterránea* (`b1-gastronomia-01`..`05` + `consolidation`) — authored 2026-09-24.
-     - Unit 29: *El Sistema Nacional de Salud y la Tarjeta Sanitaria* (`b1-sanidad-01`..`05` + `consolidation`) — authored 2026-09-24.
-     - Unit 30: *El Sistema Educativo Español* (`b1-educacion-01`..`05` + `consolidation`) — authored 2026-09-24.
-     - Unit 31: *Mercado Laboral y Seguridad Social* (`b1-empleo-01`..`05` + `consolidation`) — authored 2026-09-24.
-     - Unit 32: *Vivienda, Registro y Empadronamiento* (`b1-vivienda-01`..`05` + `consolidation`) — authored 2026-09-24.
-     - Unit 33: *Documentación: DNI, NIE y Registro Civil* (`b1-documentacion-01`..`05` + `consolidation`) — authored 2026-09-24.
-     - Unit 34: *Transporte, Comunicaciones y Emergencias 112* (`b1-transporte-01`..`05` + `consolidation`) — authored 2026-09-24.
-     - Unit 35: *Consumo, Horarios y Servicios Bancarios* (`b1-consumobanca-01`..`05` + `consolidation`) — authored 2026-09-24.
-     - Unit 36: *Simulacro General de Examen CCSE* (`b1-simulacro-01`..`05` + `consolidation`) — authored 2026-09-24.
-   - **Status**: **100% Complete (All 36 / 36 Units authored, validated, and stitched into 36 Library readings).**
-   - **Authoring Norm**: Every unit follows the established three-pillar standard: B1 level pedagogical clarity, 100% factual accuracy (aligned with Instituto Cervantes CCSE syllabus), and *The Rest Is History* (TRIH)-style engaging, humanized narrative storytelling with companion stories in `stories/world/b1/` and schema-compliant `b1-<slug>-01` stems.
-
 2. **Keep new features cross-referencing `design principles.md`.** The 2026-09-23 visual-identity drift sweep (`ACHIEVED.md` items 72-75) is now fully closed out — `--bg-card` (real token, pure white in light mode, apparently a vestige of the briefly-adopted-then-reversed 2026-08-14 "soft card" phase) turned out to be used nowhere else in the entire app except the newer Level Test/Diagnostic/Home-onboarding features, all now fixed. The drift consistently came from features shipping their own CSS (and inline JS styles) without checking the doc first — a general periodic check for that would prevent the same class of drift recurring.
 
 4. **Explain an elective track to learners who start mid-track (added 2026-09-24).** The B1 elective tracks (es-es Cultura y Ciudadanía, es-latam Latin America, hu Citizenship) now open with a welcome screen in their first lesson (see ACHIEVED.md, "Welcome Screens for the B1 Elective Tracks"). But the elective nudge (`engine/recommendationEngine.js`, `_electiveCandidate()`) can send a learner straight to a later unit, and they never see that screen. Proposed: a one-line `description` on each track in `curriculum.json`'s `tracks` array (through `build-manifest.py`, since that file is generated), shown on the nudge card.
