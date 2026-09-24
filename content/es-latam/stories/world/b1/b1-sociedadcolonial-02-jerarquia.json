@@ -5,12 +5,12 @@
   "lesson": 2,
   "order": 2,
   "type": "world",
-  "estimatedMinutes": 6,
-  "summary": "How the colonial hierarchy was written directly into law: two parallel legal systems, genealogical paperwork required for university or guild membership, and a grievance that quietly built for three centuries.",
+  "estimatedMinutes": 5,
+  "summary": "Social stratification: the two republics, limpieza de sangre certificates, caste systems, and criollo exclusion from high office.",
   "characters": [],
-  "location": "El imperio español en América",
+  "location": "América virreinal",
   "grammar": [
-    "se pasiva / impersonal: jerarquía colonial"
+    "se pasiva en estructuras sociales"
   ],
   "vocabularyTopics": [
     "Una sociedad jerárquica"
@@ -18,31 +18,35 @@
   "paragraphs": [
     {
       "type": "narration",
-      "text": "En la sociedad virreinal, el color de la piel y el origen familiar determinaban la posición de cada individuo en la esfera pública."
+      "text": "La sociedad colonial hispanoamericana se organizó sobre una rígida jerarquía estamental basada en el origen étnico, el nacimiento y el estatus jurídico. Desde los primeros momentos, las leyes de la corona concibieron la existencia de dos esferas separadas: la «república de españoles» y la «república de indios»."
     },
     {
       "type": "narration",
-      "text": "Solo los peninsulares nacidos en España ocupaban los puestos más altos en el tribunal y en el gobierno colonial."
+      "text": "En la práctica, se favorecía sistemáticamente a la 'república de españoles' sobre la 'república de indios'. Aunque la nobleza indígena conservó ciertos fueros y cargos locales como caciques gobernadores, la gran masa de población indígena quedó relegada al pago de tributos y al trabajo forzado en minas y haciendas."
     },
     {
       "type": "narration",
-      "text": "Los criollos, hijos de españoles nacidos en América, veían con frustración cómo su influencia política solía descender frente a los recién llegados."
+      "text": "Para asegurar los privilegios de la élite blanca, se desarrolló una obsesión genealógica con el linaje. Para acceder a la universidad o a un cargo público, se exigía presentar un certificado de 'limpieza de sangre'. Este documento probaba, mediante testigos y registros parroquiales, que la persona no descendía de antepasados judíos, musulmanes, africanos ni indígenas."
     },
     {
       "type": "narration",
-      "text": "En las ciudades, cada gremio de artesanos controlaba los oficios, mientras algunos comerciantes intentaban falsificar títulos de hidalguía."
+      "text": "Con el mestizaje generalizado entre europeos, indígenas y personas de origen africano, la administración colonial y los artistas desarrollaron el sistema de castas: complejas clasificaciones pictóricas que categorizaban combinaciones como mestizo, mulato, zambo o castizo, asignando derechos y restricciones a cada grupo."
     },
     {
       "type": "narration",
-      "text": "Este profundo agravio social y el fuerte arraigo a la tierra americana comenzaron a acumularse en el corazón de las élites locales."
+      "text": "Incluso dentro de la élite blanca existía una profunda brecha. Se reservaban los cargos más altos casi exclusivamente para los peninsulares, es decir, funcionarios nacidos en España. Los criollos, nacidos en América de ascendencia española, controlaban haciendas, minas y el comercio local, pero sufrían una discriminación sistemática que les impedía acceder a los puestos de virrey, oidor o arzobispo."
+    },
+    {
+      "type": "narration",
+      "text": "Con el tiempo, se acumuló tanto resentimiento en torno a esta exclusión que buena parte del liderazgo independentista saldría de esas familias criollas educadas y adineradas que sentían a América como su verdadera patria."
     }
   ],
   "narration": {
-    "durationSeconds": 41.6,
+    "durationSeconds": 124.4,
     "pacing": {
       "speedMultiplier": 1.0,
       "rate_str": "+0%",
-      "rate_wpm": 150,
+      "rate_wpm": 145,
       "style": "natural, expressive"
     },
     "speakers": {
@@ -56,7 +60,16 @@
       {
         "paraIndex": 0,
         "startTime": 0.0,
-        "endTime": 9.2,
+        "endTime": 20.4,
+        "speaker": "Narrator",
+        "lang": "es",
+        "cues": [],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 1,
+        "startTime": 20.4,
+        "endTime": 41.7,
         "speaker": "Narrator",
         "lang": "es",
         "cues": [
@@ -69,18 +82,9 @@
         "pronunciations": []
       },
       {
-        "paraIndex": 1,
-        "startTime": 9.2,
-        "endTime": 16.8,
-        "speaker": "Narrator",
-        "lang": "es",
-        "cues": [],
-        "pronunciations": []
-      },
-      {
         "paraIndex": 2,
-        "startTime": 16.8,
-        "endTime": 25.6,
+        "startTime": 41.7,
+        "endTime": 65.6,
         "speaker": "Narrator",
         "lang": "es",
         "cues": [
@@ -94,8 +98,8 @@
       },
       {
         "paraIndex": 3,
-        "startTime": 25.6,
-        "endTime": 32.8,
+        "startTime": 65.6,
+        "endTime": 83.9,
         "speaker": "Narrator",
         "lang": "es",
         "cues": [
@@ -109,37 +113,99 @@
       },
       {
         "paraIndex": 4,
-        "startTime": 32.8,
-        "endTime": 41.6,
+        "startTime": 83.9,
+        "endTime": 109.6,
         "speaker": "Narrator",
         "lang": "es",
-        "cues": [],
+        "cues": [
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 5,
+        "startTime": 109.6,
+        "endTime": 124.4,
+        "speaker": "Narrator",
+        "lang": "es",
+        "cues": [
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
         "pronunciations": []
       }
     ],
     "pedagogical": {
       "keyVocabulary": [
         {
-          "lemma": "historia",
+          "lemma": "la esfera",
           "pos": "noun",
           "cefr": "B1",
-          "gloss": "story"
+          "gloss": "sphere"
+        },
+        {
+          "lemma": "el tribunal",
+          "pos": "noun",
+          "cefr": "B1",
+          "gloss": "court, tribunal"
+        },
+        {
+          "lemma": "descender",
+          "pos": "verb",
+          "cefr": "B1",
+          "gloss": "to descend from"
+        },
+        {
+          "lemma": "el gremio",
+          "pos": "noun",
+          "cefr": "B1",
+          "gloss": "guild"
+        },
+        {
+          "lemma": "falsificar",
+          "pos": "verb",
+          "cefr": "B1",
+          "gloss": "to falsify, forge"
+        },
+        {
+          "lemma": "el agravio",
+          "pos": "noun",
+          "cefr": "B1",
+          "gloss": "grievance, offense"
+        },
+        {
+          "lemma": "el arraigo",
+          "pos": "noun",
+          "cefr": "B1",
+          "gloss": "deep roots, attachment"
+        },
+        {
+          "lemma": "acumularse",
+          "pos": "verb",
+          "cefr": "B1",
+          "gloss": "to accumulate"
         }
       ],
       "targetGrammar": [
-        "se pasiva / impersonal: jerarquía colonial"
+        "se pasiva en estructuras sociales"
       ],
       "comprehensionQuestions": [
         {
-          "question": "¿Cuál es el tema principal de «Una sociedad jerárquica»?",
+          "question": "¿Por qué la exclusión de los criollos de los altos cargos virreinales generó tanto resentimiento?",
           "options": [
-            "How the colonial hierarchy was written directly into law: two parallel legal systems, genealogical paperwork required for university or guild membership, and a grievance that quietly built for three centuries.",
-            "Una discusión sobre gramática",
-            "Una receta de cocina tradicional",
-            "Una carta formal de negocios"
+            "Porque familias criollas ricas y educadas veían que los puestos se entregaban a peninsulares recién llegados.",
+            "Porque a los criollos se les prohibía poseer haciendas o propiedades privadas.",
+            "Porque los criollos pagaban el doble de impuestos que los indígenas."
           ],
           "correctIndex": 0,
-          "explanation": "El texto desarrolla los eventos descritos en la narración."
+          "explanation": "Los criollos consideraban injusto que los mejores cargos estuvieran reservados a los nacidos en la península ibérica."
         }
       ]
     }

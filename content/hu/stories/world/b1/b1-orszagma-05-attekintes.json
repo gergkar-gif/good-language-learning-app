@@ -1,86 +1,117 @@
 {
   "id": "story.b1.orszagma.05",
-  "title": "Első áttekintés",
+  "title": "Első áttekintés: A honosítási beszélgetés",
   "level": "B1",
   "lesson": 5,
   "order": 5,
   "type": "world",
-  "estimatedMinutes": 5,
-  "summary": "Why this basic geography and these symbols are exactly what a honosítási vizsga interview asks about, and how location, counties, rivers, symbols and neighbours all fit into one first picture of Hungary.",
-  "characters": [],
-  "location": "Magyarország",
+  "estimatedMinutes": 6,
+  "summary": "An authentic simulation of the naturalization interview where the applicant confidently presents Hungary's geography, national symbols, and borders.",
+  "characters": [
+    "Kérdező",
+    "Kérelmező"
+  ],
+  "location": "Budapest, Kormányablak",
   "grammar": [
-    "van/vannak és névutók, összefoglalva"
+    "összefoglalás és formális diskurzusjelölők",
+    "udvarias válaszadás és magabiztos érvelés"
   ],
   "vocabularyTopics": [
     "Első áttekintés"
   ],
   "paragraphs": [
     {
-      "type": "narration",
-      "text": "Elérkezett a várva várt nap: a hivatalos állampolgársági interjú pillanata a hivatalban."
+      "type": "dialogue",
+      "speaker": "Kérdező",
+      "text": "Jó napot kívánok! Kérem, foglaljon helyet. Kezdjük a beszélgetést egy általános földrajzi kérdéssel: hogyan jellemezné Magyarország elhelyezkedését és legfőbb tájegységeit?"
     },
     {
-      "type": "narration",
-      "text": "Minden leendő állampolgár számára elengedhetetlen a felkészülés: a vizsgán konkrét kérdésekre kell válaszolni."
+      "type": "dialogue",
+      "speaker": "Kérelmező",
+      "text": "Jó napot kívánok! Magyarország Közép-Európa szívében, a hegykoszorúval védett Kárpát-medencében fekszik. Területe mintegy 93 ezer négyzetkilométer, s két fő tájegysége a dombos Dunántúl és a sík Alföld. Két nagy folyónk a Duna és a Tisza, legnagyobb tavunk pedig a Balaton."
     },
     {
-      "type": "narration",
-      "text": "A jelentkező magabiztosan összefoglalja a tanultakat, és jellemzi Magyarország fekvését és domborzatát."
+      "type": "dialogue",
+      "speaker": "Kérdező",
+      "text": "Nagyon szép összefoglalás. Térjünk át a nemzeti jelképekre: mit érdemes tudni a magyar zászlóról és a címert díszítő elemekről?"
     },
     {
-      "type": "narration",
-      "text": "Beszél a nemzet történelméről, a jellegzetes hagyományokról és a magyar kultúráról szerzett gazdag ismereteiről."
+      "type": "dialogue",
+      "speaker": "Kérelmező",
+      "text": "A nemzeti trikolór piros, fehér és zöld sávjai az erőt, a hűséget és a reményt szimbolizálják. A címer bal oldalán az Árpád-sávok láthatók, amelyek a négy fő folyót idézik, a jobb oldalon pedig a hármas halmon álló apostoli kettős kereszt. A pajzs tetején az ezeréves keresztény államiság záloga, a Szent Korona nyugszik a ferde kereszttel."
     },
     {
-      "type": "narration",
-      "text": "A sikeres honosítás után a jelentkező büszkén teheti le az esküt, és a magyar közösség teljes jogú tagjává válik."
+      "type": "dialogue",
+      "speaker": "Kérdező",
+      "text": "Kitűnő felelet! Végül kérem, sorolja fel Magyarország szomszédait, és magyarázza el, miért fűznek minket hozzájuk különleges szálak!"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Kérelmező",
+      "text": "Magyarország hét országgal határos: Ausztriával, Szlovákiával, Ukrajnával, Romániával, Szerbiával, Horvátországgal és Szlovéniával. Ezek a kapcsolatok azért is kiemelten fontosak, mert a határ túloldalán jelentős számú határon túli magyar nemzetrész él, akikkel a nemzeti összetartozásunk és közös kultúránk elválaszthatatlan."
     }
   ],
   "narration": {
-    "durationSeconds": 28.0,
+    "durationSeconds": 75.0,
     "pacing": {
       "speedMultiplier": 1.0,
       "rate_str": "+0%",
-      "rate_wpm": 150,
-      "style": "natural, expressive"
+      "rate_wpm": 140,
+      "style": "clear, warm, steady storytelling guide"
     },
     "speakers": {
-      "Narrator": {
-        "role": "narrator",
+      "Kérdező": {
+        "role": "interviewer",
         "gender": "neutral",
-        "tone": "clear, warm, steady storytelling guide"
+        "tone": "formal, clear, encouraging civil officer"
+      },
+      "Kérelmező": {
+        "role": "applicant",
+        "gender": "neutral",
+        "tone": "confident, respectful, articulate candidate"
       }
     },
     "segments": [
       {
         "paraIndex": 0,
         "startTime": 0.0,
-        "endTime": 4.8,
-        "speaker": "Narrator",
-        "lang": "hu",
-        "cues": [],
-        "pronunciations": []
-      },
-      {
-        "paraIndex": 1,
-        "startTime": 4.8,
-        "endTime": 10.0,
-        "speaker": "Narrator",
-        "lang": "hu",
-        "cues": [],
-        "pronunciations": []
-      },
-      {
-        "paraIndex": 2,
-        "startTime": 10.0,
-        "endTime": 14.8,
-        "speaker": "Narrator",
+        "endTime": 12.0,
+        "speaker": "Kérdező",
         "lang": "hu",
         "cues": [
           {
             "type": "pause",
-            "durationMs": 250,
+            "durationMs": 300,
+            "reason": "clause-boundary"
+          }
+        ],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 1,
+        "startTime": 12.0,
+        "endTime": 28.0,
+        "speaker": "Kérelmező",
+        "lang": "hu",
+        "cues": [
+          {
+            "type": "pause",
+            "durationMs": 300,
+            "reason": "clause-boundary"
+          }
+        ],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 2,
+        "startTime": 28.0,
+        "endTime": 38.0,
+        "speaker": "Kérdező",
+        "lang": "hu",
+        "cues": [
+          {
+            "type": "pause",
+            "durationMs": 300,
             "reason": "clause-boundary"
           }
         ],
@@ -88,14 +119,14 @@
       },
       {
         "paraIndex": 3,
-        "startTime": 14.8,
-        "endTime": 20.4,
-        "speaker": "Narrator",
+        "startTime": 38.0,
+        "endTime": 55.0,
+        "speaker": "Kérelmező",
         "lang": "hu",
         "cues": [
           {
             "type": "pause",
-            "durationMs": 250,
+            "durationMs": 300,
             "reason": "clause-boundary"
           }
         ],
@@ -103,77 +134,99 @@
       },
       {
         "paraIndex": 4,
-        "startTime": 20.4,
-        "endTime": 28.0,
-        "speaker": "Narrator",
+        "startTime": 55.0,
+        "endTime": 64.0,
+        "speaker": "Kérdező",
         "lang": "hu",
         "cues": [
           {
             "type": "pause",
-            "durationMs": 250,
+            "durationMs": 300,
             "reason": "clause-boundary"
           }
         ],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 5,
+        "startTime": 64.0,
+        "endTime": 75.0,
+        "speaker": "Kérelmező",
+        "lang": "hu",
+        "cues": [],
         "pronunciations": []
       }
     ],
     "pedagogical": {
       "keyVocabulary": [
         {
-          "lemma": "könyv",
-          "pos": "noun",
-          "cefr": "A1",
-          "gloss": "book"
+          "lemma": "honosítási beszélgetés",
+          "pos": "expression",
+          "cefr": "B1",
+          "gloss": "naturalization interview"
         },
         {
-          "lemma": "telefon",
+          "lemma": "kérelmező",
           "pos": "noun",
-          "cefr": "A1",
-          "gloss": "telephone"
+          "cefr": "B1",
+          "gloss": "applicant / petitioner"
         },
         {
-          "lemma": "ház",
+          "lemma": "nemzetrész",
           "pos": "noun",
-          "cefr": "A1",
-          "gloss": "house"
+          "cefr": "B1",
+          "gloss": "part of the nation (living across borders)"
+        },
+        {
+          "lemma": "államiság",
+          "pos": "noun",
+          "cefr": "B1",
+          "gloss": "statehood"
+        },
+        {
+          "lemma": "összefoglalás",
+          "pos": "noun",
+          "cefr": "B1",
+          "gloss": "summary / overview"
         }
       ],
       "targetGrammar": [
-        "van/vannak és névutók, összefoglalva"
+        "összefoglalás és formális diskurzusjelölők",
+        "udvarias válaszadás és magabiztos érvelés"
       ],
       "comprehensionQuestions": [
         {
-          "question": "Hol van Meg és Károly?",
+          "question": "Hogyan mutatja be a kérelmező a magyar nemzeti színek jelentését az interjún?",
           "options": [
-            "Budapesten",
-            "Londonban",
-            "Bécsben",
-            "Madridban"
+            "A piros az erőt, a fehér a hűséget, a zöld a reményt szimbolizálja.",
+            "A piros a tüzet, a fehér a havat, a zöld a füvet jelenti.",
+            "A színek nem bírnak szimbolikus jelentéssel.",
+            "A piros a forradalmat, a fehér a békét, a zöld a mezőgazdaságot jelöli kizárólag."
           ],
           "correctIndex": 0,
-          "explanation": "Meg Budapesten van Károllyal (Meg is in Budapest with Károly)."
+          "explanation": "A hagyományos értelmezés szerint a piros az erő, a fehér a hűség, a zöld a remény színe."
         },
         {
-          "question": "Mi van az asztalon?",
+          "question": "Mivel indokolja a kérelmező a szomszédos országokkal való szoros kapcsolatok fontosságát?",
           "options": [
-            "Egy könyv és egy telefon",
-            "Egy autó és egy kulcs",
-            "Egy kutya és egy macska",
-            "Csak egy pohár tej"
+            "A határ túloldalán élő jelentős őshonos magyar közösségekkel és a közös kultúrával.",
+            "Kizárólag a vasúti közlekedés egyszerűsítésével.",
+            "A szomszédos országok közös pénznemével.",
+            "A tengeri kikötők közös használatával."
           ],
           "correctIndex": 0,
-          "explanation": "Károly rámutat egy könyvre és egy telefonra az asztalon (Ez egy könyv, az egy telefon)."
+          "explanation": "A szomszédos országokban élő határon túli magyarok miatt a kulturális és nemzeti kapcsolatok kiemelt jelentőségűek."
         },
         {
-          "question": "Milyen nyelven beszélnek a párbeszédekben?",
+          "question": "Melyik két fő folyó és tó emelkedik ki a kérelmező földrajzi feleletében?",
           "options": [
-            "Magyarul",
-            "Spanyolul",
-            "Németül",
-            "Olaszul"
+            "A Duna, a Tisza és a Balaton.",
+            "A Rába, a Zala és a Fertő tó.",
+            "A Dráva, a Száva és a Velencei-tó.",
+            "A Sajó, a Hernád és a Tisza-tó."
           ],
           "correctIndex": 0,
-          "explanation": "Meg magyarul gyakorolja az alapvető szavakat Károllyal."
+          "explanation": "A kérelmező a Duna és Tisza folyókat, valamint a Balatont nevezi meg Magyarország legfontosabb vízi földrajzi elemeiként."
         }
       ]
     }

@@ -5,12 +5,12 @@
   "lesson": 1,
   "order": 1,
   "type": "world",
-  "estimatedMinutes": 6,
-  "summary": "How one mountain in the Andes funded a global empire: a mining boomtown that briefly rivaled London in population, a mercury process that poisoned its workers, and silver coins that circulated as far as Ming China.",
+  "estimatedMinutes": 5,
+  "summary": "Mining economy: the silver boom of Cerro Rico in Potosí, the mita labor draft, the patio amalgamation process, and global silver circulation.",
   "characters": [],
-  "location": "Potosí y las minas coloniales",
+  "location": "Potosí (Alto Perú, Bolivia) y Zacatecas",
   "grammar": [
-    "voz pasiva: extracción de plata y oro"
+    "voz pasiva en procesos económicos"
   ],
   "vocabularyTopics": [
     "Plata y oro"
@@ -18,31 +18,35 @@
   "paragraphs": [
     {
       "type": "narration",
-      "text": "Potosí, 1600. A más de cuatro mil metros de altura, el Cerro Rico albergaba el mayor yacimiento de plata del mundo conocido."
+      "text": "El motor financiero del imperio español y el eje de la primera economía global fue la minería de la plata. En 1545 fue descubierto el yacimiento de plata del Cerro Rico de Potosí, en el actual territorio de Bolivia, considerado el depósito de mineral de plata más colosal jamás encontrado en la historia de la humanidad."
     },
     {
       "type": "narration",
-      "text": "Miles de trabajadores eran forzados a extraer el mineral en túneles asfixiantes y oscuros donde no llegaba la luz del sol."
+      "text": "Casi de la noche a la mañana, a más de cuatro mil metros de altitud, surgió la Villa Imperial de Potosí. Hacia 1600, su auge minero atrajo a más de ciento sesenta mil habitantes, convirtiéndola en una urbe más poblada que Londres, París o Madrid."
     },
     {
       "type": "narration",
-      "text": "El mercurio utilizado en el beneficio de la plata era extremadamente tóxico y arruinaba la salud de los mineros en pocos años."
+      "text": "Enormes cantidades de plata fueron extraídas de esa montaña y enviadas a España. Sin embargo, esta riqueza incalculable tuvo un costo humano aterrador. Para garantizar mano de obra constante, el virrey Francisco de Toledo reactivó y transformó el sistema incaico de la mita, convirtiéndolo en un servicio de trabajo forzado rotativo que obligaba a miles de indígenas andinos a trabajar en condiciones extremas dentro de túneles oscuros y asfixiantes."
     },
     {
       "type": "narration",
-      "text": "Cualquier temblor en la montaña provocaba derrumbes catastróficos que sepultaban a cuadrillas enteras bajo las rocas."
+      "text": "A partir de 1554, la producción de plata fue transformada por un nuevo método inventado por Bartolomé de Medina: el proceso de patio. Este método utilizaba mercurio líquido traído de las minas de Huancavelica o Almadén para amalgamar la plata y separar el mineral puro de la roca."
     },
     {
       "type": "narration",
-      "text": "Durante el auge minero, la plata se usó para acuñar millones de monedas que comenzaron a circular por los mercados de todo el planeta."
+      "text": "El mercurio era extremadamente tóxico: miles de trabajadores mineros sufrieron temblores incontrolables, parálisis y graves daños neurológicos irreversibles al inhalar vapores tóxicos o pisar descalzos la mezcla mineral durante meses."
+    },
+    {
+      "type": "narration",
+      "text": "Gran parte de esa plata fue acuñada en monedas, los llamados 'reales de a ocho' (pesos de plata españoles). Gracias a las flotas del Atlántico y a la ruta transpacífica del Galeón de Manila, los reales de a ocho de Potosí y Zacatecas se convirtieron en la primera divisa internacional del planeta, llegando a circular ampliamente en mercados de Europa, el Imperio Otomano, la India y la China Ming."
     }
   ],
   "narration": {
-    "durationSeconds": 42.0,
+    "durationSeconds": 137.8,
     "pacing": {
       "speedMultiplier": 1.0,
       "rate_str": "+0%",
-      "rate_wpm": 150,
+      "rate_wpm": 145,
       "style": "natural, expressive"
     },
     "speakers": {
@@ -56,7 +60,16 @@
       {
         "paraIndex": 0,
         "startTime": 0.0,
-        "endTime": 8.8,
+        "endTime": 24.3,
+        "speaker": "Narrator",
+        "lang": "es",
+        "cues": [],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 1,
+        "startTime": 24.3,
+        "endTime": 43.9,
         "speaker": "Narrator",
         "lang": "es",
         "cues": [
@@ -69,36 +82,54 @@
         "pronunciations": []
       },
       {
-        "paraIndex": 1,
-        "startTime": 8.8,
-        "endTime": 17.2,
-        "speaker": "Narrator",
-        "lang": "es",
-        "cues": [],
-        "pronunciations": []
-      },
-      {
         "paraIndex": 2,
-        "startTime": 17.2,
-        "endTime": 26.0,
+        "startTime": 43.9,
+        "endTime": 73.9,
         "speaker": "Narrator",
         "lang": "es",
-        "cues": [],
+        "cues": [
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
         "pronunciations": []
       },
       {
         "paraIndex": 3,
-        "startTime": 26.0,
-        "endTime": 32.4,
+        "startTime": 73.9,
+        "endTime": 94.8,
         "speaker": "Narrator",
         "lang": "es",
-        "cues": [],
+        "cues": [
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
         "pronunciations": []
       },
       {
         "paraIndex": 4,
-        "startTime": 32.4,
-        "endTime": 42.0,
+        "startTime": 94.8,
+        "endTime": 107.8,
+        "speaker": "Narrator",
+        "lang": "es",
+        "cues": [
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 5,
+        "startTime": 107.8,
+        "endTime": 137.8,
         "speaker": "Narrator",
         "lang": "es",
         "cues": [
@@ -114,26 +145,67 @@
     "pedagogical": {
       "keyVocabulary": [
         {
-          "lemma": "historia",
+          "lemma": "el yacimiento",
           "pos": "noun",
           "cefr": "B1",
-          "gloss": "story"
+          "gloss": "deposit, mineral bed"
+        },
+        {
+          "lemma": "extraer",
+          "pos": "verb",
+          "cefr": "B1",
+          "gloss": "to extract"
+        },
+        {
+          "lemma": "el mineral",
+          "pos": "noun",
+          "cefr": "B1",
+          "gloss": "ore, mineral"
+        },
+        {
+          "lemma": "tóxico",
+          "pos": "adjective",
+          "cefr": "B1",
+          "gloss": "toxic"
+        },
+        {
+          "lemma": "el temblor",
+          "pos": "noun",
+          "cefr": "B1",
+          "gloss": "tremor, shaking"
+        },
+        {
+          "lemma": "el auge",
+          "pos": "noun",
+          "cefr": "B1",
+          "gloss": "boom, height"
+        },
+        {
+          "lemma": "acuñar",
+          "pos": "verb",
+          "cefr": "B1",
+          "gloss": "to coin, mint"
+        },
+        {
+          "lemma": "circular",
+          "pos": "verb",
+          "cefr": "B1",
+          "gloss": "to circulate"
         }
       ],
       "targetGrammar": [
-        "voz pasiva: extracción de plata y oro"
+        "voz pasiva en procesos económicos"
       ],
       "comprehensionQuestions": [
         {
-          "question": "¿Cuál es el tema principal de «Plata y oro»?",
+          "question": "¿Qué consecuencia médica sufrían los trabajadores mineros debido al proceso de patio con mercurio?",
           "options": [
-            "How one mountain in the Andes funded a global empire: a mining boomtown that briefly rivaled London in population, a mercury process that poisoned its workers, and silver coins that circulated as far as Ming China.",
-            "Una discusión sobre gramática",
-            "Una receta de cocina tradicional",
-            "Una carta formal de negocios"
+            "Envenenamiento crónico con temblores y daños neurológicos irreversibles.",
+            "Problemas digestivos pasajeros que se curaban con hierbas locales.",
+            "Fiebre amarilla transmitida por mosquitos en los túneles."
           ],
           "correctIndex": 0,
-          "explanation": "El texto desarrolla los eventos descritos en la narración."
+          "explanation": "La inhalación y el contacto con vapores de mercurio causaban hidrargirismo (envenenamiento por mercurio)."
         }
       ]
     }

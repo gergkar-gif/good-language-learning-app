@@ -6,11 +6,12 @@
   "order": 2,
   "type": "world",
   "estimatedMinutes": 6,
-  "summary": "Hungary's nineteen counties, its two great rivers, the Great Plain and Transdanubia, Lake Balaton, and the country's major cities beyond Budapest.",
+  "summary": "Hungary's major geographic landscapes, the Danube and Tisza river systems, Lake Balaton, the nineteen counties, and key regional cities beyond Budapest.",
   "characters": [],
   "location": "Magyarország",
   "grammar": [
-    "névutók: mellett, mentén, között"
+    "névutók: mellett, mentén, között, túl",
+    "földrajzi tagolás és összehasonlítás"
   ],
   "vocabularyTopics": [
     "Megyék, folyók és városok"
@@ -18,32 +19,32 @@
   "paragraphs": [
     {
       "type": "narration",
-      "text": "Képzeljünk el egy országot, amelyet két fenséges folyó szel ketté. Ez Magyarország földrajzi valósága."
+      "text": "Magyarország domborzata és vízrajza két nagy történelmi tájegységre osztja az országot: a Dunántúlra és az Alföldre. A Dunántúl dombos, erdőkben és történelmi emlékekben gazdag vidék, míg a Duna és a Tisza mentén elterülő Alföld a végtelen síkságok, a jellegzetes puszta és a virágzó mezőgazdaság hazája."
     },
     {
       "type": "narration",
-      "text": "Az ország politikai, kulturális és gazdasági központja a főváros, Budapest. A Duna partján fekvő világváros két történelmi részből, Budából és Pestből egyesült."
+      "text": "Az ország éltető erejét a folyók adják. A Duna északnyugatról érkezik, átfolyik a fővároson, majd észak-déli irányban szeli ketté az országot. Keleten a Tisza kanyarog, amely a magyar irodalom és népköltészet leggyakrabban megénekelt folyója, mielőtt délen végül a Dunába torkollik."
     },
     {
       "type": "narration",
-      "text": "A másik fontos folyó a Tisza, amely a keleti síkság tájait öntözi, majd délen a Dunába torkollik."
+      "text": "A Dunántúl szívében csillog a Balaton, Közép-Európa legnagyobb édesvizű tava, amelyet a magyarok büszkén és szeretettel 'magyar tengernek' neveznek. Északi partja a vulkanikus tanúhegyekről és borvidékeiről híres, míg a déli part lassan mélyülő, homokos strandjaival a nyári turizmus fellegvára."
     },
     {
       "type": "narration",
-      "text": "Nyugaton terül el Közép-Európa legnagyobb édesvizű tava, a Balaton. A magyarok szeretettel hívják ezt a csodás tavat magyar tengernek."
+      "text": "Közigazgatásilag Magyarország 19 megyére (hagyományos nevén vármegyére) tagolódik, amelyeket a főváros, Budapest egészít ki önálló közigazgatási egységként. Budapest a Duna két partján, Buda hegyei és Pest síkja között egyesült 1873-ban, s ma az ország politikai, kulturális és pénzügyi központja."
     },
     {
       "type": "narration",
-      "text": "Közigazgatási szempontból az ország tizenkilenc megyére oszlik. A táj rendkívül változatos: a végtelen Alföld síkság mellett festői középhegységek is magasodnak."
+      "text": "A fővároson kívül jelentős regionális központok gazdagítják az országot: keleten Debrecen (a 'kálvinista Róma'), délen az egyetemi és napfényes Szeged, valamint a mediterrán hangulatú Pécs, északnyugaton a barokk Győr, a Dunántúl történelmi koronázóvárosa, Székesfehérvár, északkeleten pedig Miskolc."
     }
   ],
   "narration": {
-    "durationSeconds": 36.8,
+    "durationSeconds": 68.0,
     "pacing": {
       "speedMultiplier": 1.0,
       "rate_str": "+0%",
-      "rate_wpm": 150,
-      "style": "natural, expressive"
+      "rate_wpm": 140,
+      "style": "clear, warm, steady storytelling guide"
     },
     "speakers": {
       "Narrator": {
@@ -56,49 +57,49 @@
       {
         "paraIndex": 0,
         "startTime": 0.0,
-        "endTime": 5.6,
+        "endTime": 14.0,
         "speaker": "Narrator",
         "lang": "hu",
         "cues": [
           {
             "type": "pause",
-            "durationMs": 250,
+            "durationMs": 300,
+            "reason": "clause-boundary"
+          }
+        ],
+        "pronunciations": [
+          {
+            "word": "Dunántúl",
+            "ipa": "ˈdunaːntuːl",
+            "note": "Compound word, long vowels á and ú"
+          }
+        ]
+      },
+      {
+        "paraIndex": 1,
+        "startTime": 14.0,
+        "endTime": 28.0,
+        "speaker": "Narrator",
+        "lang": "hu",
+        "cues": [
+          {
+            "type": "pause",
+            "durationMs": 300,
             "reason": "clause-boundary"
           }
         ],
         "pronunciations": []
       },
       {
-        "paraIndex": 1,
-        "startTime": 5.6,
-        "endTime": 14.4,
-        "speaker": "Narrator",
-        "lang": "hu",
-        "cues": [
-          {
-            "type": "pause",
-            "durationMs": 250,
-            "reason": "clause-boundary"
-          }
-        ],
-        "pronunciations": [
-          {
-            "word": "Budapest",
-            "ipa": "ˈbudɒpɛʃt",
-            "note": "s is pronounced 'sh' (/ʃ/), a is short open back vowel (/ɒ/)"
-          }
-        ]
-      },
-      {
         "paraIndex": 2,
-        "startTime": 14.4,
-        "endTime": 21.2,
+        "startTime": 28.0,
+        "endTime": 42.0,
         "speaker": "Narrator",
         "lang": "hu",
         "cues": [
           {
             "type": "pause",
-            "durationMs": 250,
+            "durationMs": 300,
             "reason": "clause-boundary"
           }
         ],
@@ -106,86 +107,111 @@
       },
       {
         "paraIndex": 3,
-        "startTime": 21.2,
-        "endTime": 28.8,
+        "startTime": 42.0,
+        "endTime": 55.0,
         "speaker": "Narrator",
         "lang": "hu",
         "cues": [
           {
             "type": "pause",
-            "durationMs": 250,
+            "durationMs": 300,
             "reason": "clause-boundary"
           }
         ],
-        "pronunciations": []
+        "pronunciations": [
+          {
+            "word": "vármegye",
+            "ipa": "ˈvaːrmɛɟɛ",
+            "note": "Digraph gy is pronounced /ɟ/"
+          }
+        ]
       },
       {
         "paraIndex": 4,
-        "startTime": 28.8,
-        "endTime": 36.8,
+        "startTime": 55.0,
+        "endTime": 68.0,
         "speaker": "Narrator",
         "lang": "hu",
         "cues": [],
-        "pronunciations": []
+        "pronunciations": [
+          {
+            "word": "Székesfehérvár",
+            "ipa": "ˈseːkɛʃfɛheːrvaːr",
+            "note": "Primary stress on first syllable Szé"
+          }
+        ]
       }
     ],
     "pedagogical": {
       "keyVocabulary": [
         {
-          "lemma": "könyv",
+          "lemma": "Dunántúl",
           "pos": "noun",
-          "cefr": "A1",
-          "gloss": "book"
+          "cefr": "B1",
+          "gloss": "Transdanubia"
         },
         {
-          "lemma": "telefon",
+          "lemma": "Alföld",
           "pos": "noun",
-          "cefr": "A1",
-          "gloss": "telephone"
+          "cefr": "B1",
+          "gloss": "Great Hungarian Plain"
         },
         {
-          "lemma": "ház",
+          "lemma": "vármegye",
           "pos": "noun",
-          "cefr": "A1",
-          "gloss": "house"
+          "cefr": "B1",
+          "gloss": "county (traditional term)"
+        },
+        {
+          "lemma": "vízrajz",
+          "pos": "noun",
+          "cefr": "B1",
+          "gloss": "hydrography / river systems"
+        },
+        {
+          "lemma": "torkollik",
+          "pos": "verb",
+          "cefr": "B1",
+          "gloss": "to flow into / discharge (river)"
         }
       ],
       "targetGrammar": [
-        "névutók: mellett, mentén, között"
+        "névutók: mellett, mentén, között, túl",
+        "földrajzi tagolás és összehasonlítás"
       ],
       "comprehensionQuestions": [
         {
-          "question": "Hol van Meg és Károly?",
+          "question": "Hány megyére (vármegyére) tagolódik Magyarország közigazgatásilag?",
           "options": [
-            "Budapesten",
-            "Londonban",
-            "Bécsben",
-            "Madridban"
+            "Tizenkilenc megyére, plusz a fővárosra.",
+            "Tíz megyére.",
+            "Huszonöt autonóm tartományra.",
+            "Hét kantonra."
           ],
           "correctIndex": 0,
-          "explanation": "Meg Budapesten van Károllyal (Meg is in Budapest with Károly)."
+          "explanation": "Magyarország közigazgatásilag 19 vármegyére (megyére) oszlik, Budapest pedig önálló státuszú főváros."
         },
         {
-          "question": "Mi van az asztalon?",
+          "question": "Melyik két folyó szeli át Magyarországot?",
           "options": [
-            "Egy könyv és egy telefon",
-            "Egy autó és egy kulcs",
-            "Egy kutya és egy macska",
-            "Csak egy pohár tej"
+            "A Duna és a Tisza.",
+            "A Rajna és a Szajna.",
+            "A Volga és a Dnyeper.",
+            "Az Elba és az Odera."
           ],
           "correctIndex": 0,
-          "explanation": "Károly rámutat egy könyvre és egy telefonra az asztalon (Ez egy könyv, az egy telefon)."
+          "explanation": "A Duna és a Tisza Magyarország két legnagyobb és legmeghatározóbb folyója."
         },
         {
-          "question": "Milyen nyelven beszélnek a párbeszédekben?",
+          "question": "Melyik tavat nevezik a magyarok 'magyar tengernek'?",
           "options": [
-            "Magyarul",
-            "Spanyolul",
-            "Németül",
-            "Olaszul"
+            "A Balatont.",
+            "A Velencei-tavat.",
+            "A Fertő tavat.",
+            "A Tisza-tavat."
           ],
           "correctIndex": 0,
-          "explanation": "Meg magyarul gyakorolja az alapvető szavakat Károllyal."
+          "explanation": "A Dunántúl közepén fekvő Balatont, Közép-Európa legnagyobb édesvizű tavát nevezik hagyományosan magyar tengernek."
         }
       ]
     }

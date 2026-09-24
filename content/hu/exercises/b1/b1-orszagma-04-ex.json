@@ -7,55 +7,65 @@
       "category": "vocabulary",
       "pairs": [
         ["határos", "bordering, adjacent"],
-        ["határ", "border"],
-        ["észak", "north"],
-        ["dél", "south"]
-      ]
+        ["szomszédos ország", "neighbouring country"],
+        ["határszakasz", "border section"],
+        ["schengeni övezet", "Schengen area"]
+      ],
+      "teaches": ["hataros-egtajak"]
     },
     {
       "id": "b1-orszagma-04.ex01b",
       "type": "matching",
       "category": "vocabulary",
       "pairs": [
-        ["kelet", "east"],
-        ["nyugat", "west"],
-        ["szomszédos", "neighbouring"],
-        ["térkép", "map"]
-      ]
+        ["határon túli magyarok", "cross-border ethnic Hungarians"],
+        ["nemzeti összetartozás", "national cohesion / solidarity"],
+        ["Erdély", "Transylvania"],
+        ["Felvidék", "Upper Hungary (Slovakia region)"]
+      ],
+      "teaches": ["hataros-egtajak"]
     },
     {
       "id": "b1-orszagma-04.ex02",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "Hány országgal határos Magyarország?",
-      "options": ["Héttel.", "Öttel.", "Kilenccel."],
+      "question": "Hány szomszédos országgal határos Magyarország?",
+      "options": [
+        "Hét országgal: Ausztriával, Szlovákiával, Ukrajnával, Romániával, Szerbiával, Horvátországgal és Szlovéniával.",
+        "Öt országgal: Lengyelországgal, Csehországgal, Ausztriával, Olaszországgal és Németországgal.",
+        "Négy országgal: Svájccal, Ausztriával, Bajorországgal és Romániával."
+      ],
       "correct": 0
     },
     {
       "id": "b1-orszagma-04.ex03",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "Melyik ország van Magyarországtól nyugatra?",
-      "options": ["Ausztria.", "Ukrajna.", "Szerbia."],
+      "question": "Miért kiemelten fontos a szomszédos országok ismerete a magyar nemzet számára?",
+      "options": [
+        "Mert a 20. századi határmódosítások miatt szinte minden szomszédos országban őshonos magyar közösségek élnek.",
+        "Mert Magyarország kizárólag a szomszédaitól vásárol élelmiszert.",
+        "Mert a szomszédos országok mind magyar nyelvű törvényeket használnak."
+      ],
       "correct": 0
     },
     {
       "id": "b1-orszagma-04.ex04",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Magyarország hét ___ határos. (ország + -val/-vel)",
-      "answer": "országgal",
+      "sentence": "Magyarország északon Szlovákiával, keleten pedig Romániával ___.",
+      "answer": "határos",
       "teaches": ["hataros-egtajak"]
     },
     {
       "id": "b1-orszagma-04.ex05",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "Mely szomszédok tagjai egyszerre az EU-nak és a schengeni övezetnek?",
+      "question": "Mely határokon nincs határellenőrzés a schengeni egyezménynek köszönhetően?",
       "options": [
-        "Ausztria, Szlovákia, Szlovénia, Horvátország és Románia.",
-        "Szerbia és Ukrajna.",
-        "Egyik szomszéd sem."
+        "Az Ausztria, Szlovákia, Szlovénia és Horvátország felé eső belső uniós határokon.",
+        "Az Ukrajna és Szerbia felé eső határokon.",
+        "Magyarország minden határán folyamatos belső vámvizsgálat van."
       ],
       "correct": 0
     },
@@ -63,23 +73,23 @@
       "id": "b1-orszagma-04.ex06",
       "type": "sentence-builder",
       "category": "grammar",
-      "tiles": ["Szlovákia", "Magyarországtól", "északra", "van."],
-      "solution": ["Szlovákia", "Magyarországtól", "északra", "van."],
-      "english": "Slovakia is to the north of Hungary.",
+      "tiles": ["Magyarországtól", "nyugatra", "Ausztria,", "délre", "pedig", "Szerbia", "és", "Horvátország", "fekszik."],
+      "solution": ["Magyarországtól", "nyugatra", "Ausztria,", "délre", "pedig", "Szerbia", "és", "Horvátország", "fekszik."],
+      "english": "To the west of Hungary lies Austria, and to the south lie Serbia and Croatia.",
       "teaches": ["hataros-egtajak"]
     },
     {
       "id": "b1-orszagma-04.ex07",
       "type": "dialogue-complete",
-      "category": "reading",
+      "category": "dialogue",
       "prompt": [
-        { "speaker": "Péter", "text": "Miért él magyar kisebbség a szomszédos országokban?" },
-        { "speaker": "Nóra", "text": "_____" }
+        { "speaker": "Kérdező", "text": "Kérem, mondjon néhány történelmi régiót a szomszédos országokban, ahol magyarok élnek!" },
+        { "speaker": "Kérelmező", "text": "_____" }
       ],
       "options": [
-        "Az 1920-as trianoni békeszerződés miatt.",
-        "Mert nemrég költöztek oda.",
-        "Mert csak turistaként vannak ott."
+        "Például Erdély Romániában, a Felvidék Szlovákiában, a Vajdaság Szerbiában és Kárpátalja Ukrajnában.",
+        "Például Bajorország, Szászország és Bretagne.",
+        "Például Dalmácia szigetei és a tiroli Alpok kizárólag."
       ],
       "correct": 0
     },
@@ -87,11 +97,11 @@
       "id": "b1-orszagma-04.ex08",
       "type": "listening-choice",
       "category": "listening",
-      "sentence": "Magyarország hét szomszédos országgal határos.",
+      "sentence": "A határ túloldalán élő magyar közösségekkel való kapcsolattartás a nemzeti összetartozás alappillére.",
       "options": [
-        "Hungary borders seven neighbouring countries.",
-        "Hungary has no neighbouring countries.",
-        "Hungary borders three countries."
+        "Maintaining ties with Hungarian communities living across the border is a cornerstone of national solidarity.",
+        "Cross-border communication with neighbours has no cultural or historical significance.",
+        "All Hungarian communities abroad relocated to Western Europe after 1920."
       ],
       "correct": 0
     }

@@ -6,44 +6,54 @@
       "type": "matching",
       "category": "vocabulary",
       "pairs": [
-        ["zászló", "flag"],
-        ["címer", "coat of arms"],
-        ["korona", "crown"],
-        ["pajzs", "shield"]
-      ]
+        ["nemzeti jelkép", "national symbol"],
+        ["címerpajzs", "coat of arms shield"],
+        ["Árpád-sávok", "Árpád stripes"],
+        ["Szent Korona", "Holy Crown of Hungary"]
+      ],
+      "teaches": ["bol-bol-all"]
     },
     {
       "id": "b1-orszagma-03.ex01b",
       "type": "matching",
       "category": "vocabulary",
       "pairs": [
-        ["sáv", "stripe, band"],
+        ["hármas halom", "triple mound"],
+        ["kettős kereszt", "apostolic double cross"],
         ["szimbolizál", "to symbolize"],
-        ["kereszt", "cross"],
-        ["jelkép", "symbol"]
-      ]
+        ["államiság", "statehood"]
+      ],
+      "teaches": ["bol-bol-all"]
     },
     {
       "id": "b1-orszagma-03.ex02",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "Hány sávból áll Magyarország zászlaja?",
-      "options": ["Háromból.", "Négyből.", "Kettőből."],
+      "question": "Mit jelképez a magyar zászló három színe a hagyomány szerint?",
+      "options": [
+        "A piros az erőt, a fehér a hűséget, a zöld a reményt.",
+        "A piros a tüzet, a fehér a vizet, a zöld a földet.",
+        "A piros a búzát, a fehér a lisztet, a zöld a szőlőt."
+      ],
       "correct": 0
     },
     {
       "id": "b1-orszagma-03.ex03",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "Mit szimbolizál a hagyomány szerint a zöld szín?",
-      "options": ["A reményt.", "A gazdagságot.", "A háborút."],
+      "question": "Milyen elemek láthatók a magyar címerpajzs jobb és bal oldalán?",
+      "options": [
+        "A bal oldalon a nyolc Árpád-sáv, a jobb oldalon a zöld hármas halom, a korona és a kettős kereszt.",
+        "A bal oldalon egy kétfejű sas, a jobb oldalon egy arany oroszlán.",
+        "A bal oldalon egy kard, a jobb oldalon egy tölgyfaág."
+      ],
       "correct": 0
     },
     {
       "id": "b1-orszagma-03.ex04",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A zászló három sávból ___. (consists)",
+      "sentence": "A magyar nemzeti lobogó három egyenlő vízszintes sávból ___.",
       "answer": "áll",
       "teaches": ["bol-bol-all"]
     },
@@ -51,11 +61,11 @@
       "id": "b1-orszagma-03.ex05",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "Hol őrzik ma a Szent Koronát?",
+      "question": "Hol őrzik ma a Szent Koronát, és miért ferde a tetején lévő kereszt?",
       "options": [
-        "Budapesten, az Országházban.",
-        "Bécsben, egy múzeumban.",
-        "Egy titkos helyen, ismeretlen városban."
+        "Az Országház kupolacsarnokában őrzik; a kereszt egy 17. századi viharos rejtés során görbült meg.",
+        "A Nemzeti Galériában őrzik; a keresztet a mesterek szándékosan készítették ferdére.",
+        "A Mátyás-templomban őrzik; a kereszt a második világháborúban sérült meg."
       ],
       "correct": 0
     },
@@ -63,23 +73,23 @@
       "id": "b1-orszagma-03.ex06",
       "type": "sentence-builder",
       "category": "grammar",
-      "tiles": ["A", "címer", "egy", "pajzsból", "és", "egy", "koronából", "áll."],
-      "solution": ["A", "címer", "egy", "pajzsból", "és", "egy", "koronából", "áll."],
-      "english": "The coat of arms consists of a shield and a crown.",
+      "tiles": ["A", "címer", "egy", "hasított", "pajzsból", "és", "a", "Szent", "Koronából", "áll."],
+      "solution": ["A", "címer", "egy", "hasított", "pajzsból", "és", "a", "Szent", "Koronából", "áll."],
+      "english": "The coat of arms consists of a split shield and the Holy Crown.",
       "teaches": ["bol-bol-all"]
     },
     {
       "id": "b1-orszagma-03.ex07",
       "type": "dialogue-complete",
-      "category": "reading",
+      "category": "dialogue",
       "prompt": [
-        { "speaker": "Tibor", "text": "Miért ferde a Szent Korona teteje?" },
-        { "speaker": "Eszter", "text": "_____" }
+        { "speaker": "Kérdező", "text": "Mit szimbolizálnak az ezüst Árpád-sávok és a hármas halom?" },
+        { "speaker": "Kérelmező", "text": "_____" }
       ],
       "options": [
-        "Mert évszázadok alatt megsérült.",
-        "Mert így tervezték eredetileg.",
-        "Mert soha nem volt kereszt rajta."
+        "Az ezüst sávok a négy folyót (Duna, Tisza, Dráva, Száva), a hármas halom pedig a Tátra, Mátra, Fátra hegyeket.",
+        "A négy királyi várat és a három legnagyobb magyar tavat.",
+        "Az ország négy évszakát és három országrészét."
       ],
       "correct": 0
     },
@@ -87,11 +97,11 @@
       "id": "b1-orszagma-03.ex08",
       "type": "listening-choice",
       "category": "listening",
-      "sentence": "A pajzs bal oldalán nyolc sáv látható, az Árpád-sávok.",
+      "sentence": "A címer jobb oldalán lévő hármas halomból kiemelkedő kettős kereszt Szent István keresztény államalapítására utal.",
       "options": [
-        "Eight stripes, the Árpád stripes, can be seen on the left side of the shield.",
-        "The shield has no stripes at all.",
-        "The Árpád stripes are on the flag, not the coat of arms."
+        "The double cross rising from the triple mound on the right side of the coat of arms refers to Saint Stephen's founding of the Christian state.",
+        "The coat of arms features a single cross representing the Protestant reformation.",
+        "The triple mound in the coat of arms is located on the shield's left side."
       ],
       "correct": 0
     }

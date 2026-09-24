@@ -5,12 +5,12 @@
   "lesson": 1,
   "order": 1,
   "type": "world",
-  "estimatedMinutes": 6,
-  "summary": "How Spain actually governed an empire across an ocean months away: viceroyalties that kept splitting, a trade monopoly run from one city, and a legal loophole that let colonial officials quietly ignore royal orders.",
+  "estimatedMinutes": 5,
+  "summary": "Administrative architecture of the Spanish Empire: the viceroyalties of New Spain and Peru, the Casa de Contratación, and 'se obedece pero no se cumple'.",
   "characters": [],
-  "location": "El imperio español en América",
+  "location": "Ciudad de México, Lima y Sevilla",
   "grammar": [
-    "voz pasiva: administración colonial"
+    "voz pasiva en instituciones coloniales"
   ],
   "vocabularyTopics": [
     "El imperio español"
@@ -18,31 +18,35 @@
   "paragraphs": [
     {
       "type": "narration",
-      "text": "Para gobernar un territorio tan inmenso, la Corona española creó el virreinato como la máxima unidad política y administrativa en América."
+      "text": "Tras la caída de los grandes imperios indígenas, la corona española se enfrentó al colosal desafío de gobernar un territorio miles de veces más extenso que la propia península ibérica, separado por miles de kilómetros de océano."
     },
     {
       "type": "narration",
-      "text": "A la cabeza de cada jurisdicción estaba el virrey, representante directo del monarca en aquel vasto continente."
+      "text": "Para administrar este vasto continente, la corona creó una sofisticada estructura de virreinatos y audiencias reales. El virreinato de Nueva España fue creado en 1535 con capital en la Ciudad de México; el virreinato del Perú fue establecido en 1542 con capital en Lima. Al frente de cada uno se encontraba un virrey, quien actuaba como representante directo y encarnación de la persona del monarca español."
     },
     {
       "type": "narration",
-      "text": "Junto al virrey funcionaba la Real Audiencia, máximo tribunal de justicia cuya sede se ubicaba en las principales capitales coloniales."
+      "text": "Casi dos siglos y medio después, en el marco de las reformas borbónicas del siglo dieciocho, fueron creados dos virreinatos adicionales, el de Nueva Granada (1717) y el del Río de la Plata (1776), para mejorar la defensa costera y la recaudación fiscal en regiones en rápido crecimiento."
     },
     {
       "type": "narration",
-      "text": "El sistema comercial monopolista obligaba a que cada mercancía pasara exclusivamente por puertos autorizados en España."
+      "text": "En el plano económico, todo el comercio con las colonias estaba controlado por una sola institución, la Casa de Contratación, con sede en Sevilla. Este organismo regulaba rigurosamente la navegación, cobraba impuestos aduaneros y supervisaba el monopolio comercial que prohibía a las colonias comerciar con potencias extranjeras o entre sí."
     },
     {
       "type": "narration",
-      "text": "Esta rígida política resultaba muy perjudicial para las provincias periféricas, que quedaban al margen de las grandes rutas de abastecimiento."
+      "text": "Este sistema fue diseñado para mantener el control sobre un territorio enorme y asegurar que las riquezas de América fluyeran directamente hacia las arcas metropolitanas."
+    },
+    {
+      "type": "narration",
+      "text": "No obstante, la enorme distancia y los meses que tardaba en llegar una orden real desde Madrid generaron un célebre mecanismo de pragmatismo legal: la fórmula «se obedece pero no se cumple». Mediante esta práctica jurídica, las autoridades virreinales acataban con respeto la autoridad formal del rey, pero suspendían la aplicación de leyes que consideraban inaplicables o peligrosas para la estabilidad local."
     }
   ],
   "narration": {
-    "durationSeconds": 37.6,
+    "durationSeconds": 125.3,
     "pacing": {
       "speedMultiplier": 1.0,
       "rate_str": "+0%",
-      "rate_wpm": 150,
+      "rate_wpm": 145,
       "style": "natural, expressive"
     },
     "speakers": {
@@ -56,22 +60,16 @@
       {
         "paraIndex": 0,
         "startTime": 0.0,
-        "endTime": 8.4,
+        "endTime": 16.1,
         "speaker": "Narrator",
         "lang": "es",
-        "cues": [
-          {
-            "type": "pause",
-            "durationMs": 250,
-            "reason": "clause-boundary"
-          }
-        ],
+        "cues": [],
         "pronunciations": []
       },
       {
         "paraIndex": 1,
-        "startTime": 8.4,
-        "endTime": 15.2,
+        "startTime": 16.1,
+        "endTime": 44.8,
         "speaker": "Narrator",
         "lang": "es",
         "cues": [
@@ -85,8 +83,8 @@
       },
       {
         "paraIndex": 2,
-        "startTime": 15.2,
-        "endTime": 23.2,
+        "startTime": 44.8,
+        "endTime": 65.7,
         "speaker": "Narrator",
         "lang": "es",
         "cues": [
@@ -100,17 +98,38 @@
       },
       {
         "paraIndex": 3,
-        "startTime": 23.2,
-        "endTime": 29.6,
+        "startTime": 65.7,
+        "endTime": 87.4,
         "speaker": "Narrator",
         "lang": "es",
-        "cues": [],
+        "cues": [
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
         "pronunciations": []
       },
       {
         "paraIndex": 4,
-        "startTime": 29.6,
-        "endTime": 37.6,
+        "startTime": 87.4,
+        "endTime": 98.3,
+        "speaker": "Narrator",
+        "lang": "es",
+        "cues": [
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 5,
+        "startTime": 98.3,
+        "endTime": 125.3,
         "speaker": "Narrator",
         "lang": "es",
         "cues": [
@@ -126,26 +145,67 @@
     "pedagogical": {
       "keyVocabulary": [
         {
-          "lemma": "historia",
+          "lemma": "el virreinato",
           "pos": "noun",
           "cefr": "B1",
-          "gloss": "story"
+          "gloss": "viceroyalty"
+        },
+        {
+          "lemma": "la audiencia",
+          "pos": "noun",
+          "cefr": "B1",
+          "gloss": "royal high court"
+        },
+        {
+          "lemma": "la recaudación",
+          "pos": "noun",
+          "cefr": "B1",
+          "gloss": "tax collection"
+        },
+        {
+          "lemma": "aduanero",
+          "pos": "adjective",
+          "cefr": "B1",
+          "gloss": "customs, tariff"
+        },
+        {
+          "lemma": "el monopolio",
+          "pos": "noun",
+          "cefr": "B1",
+          "gloss": "monopoly"
+        },
+        {
+          "lemma": "acatar",
+          "pos": "verb",
+          "cefr": "B1",
+          "gloss": "to comply with, respect"
+        },
+        {
+          "lemma": "inaplicable",
+          "pos": "adjective",
+          "cefr": "B1",
+          "gloss": "unworkable, inapplicable"
+        },
+        {
+          "lemma": "la estabilidad",
+          "pos": "noun",
+          "cefr": "B1",
+          "gloss": "stability"
         }
       ],
       "targetGrammar": [
-        "voz pasiva: administración colonial"
+        "voz pasiva en instituciones coloniales"
       ],
       "comprehensionQuestions": [
         {
-          "question": "¿Cuál es el tema principal de «El imperio español»?",
+          "question": "¿Qué significaba en la práctica la fórmula colonial «se obedece pero no se cumple»?",
           "options": [
-            "How Spain actually governed an empire across an ocean months away: viceroyalties that kept splitting, a trade monopoly run from one city, and a legal loophole that let colonial officials quietly ignore royal orders.",
-            "Una discusión sobre gramática",
-            "Una receta de cocina tradicional",
-            "Una carta formal de negocios"
+            "Reconocer la autoridad del rey pero suspender la aplicación de una ley considerada dañina o inaplicable.",
+            "Declarar la independencia inmediata de la corona española.",
+            "Negarse a pagar impuestos a la Casa de Contratación."
           ],
           "correctIndex": 0,
-          "explanation": "El texto desarrolla los eventos descritos en la narración."
+          "explanation": "Era un mecanismo legal para adaptar las órdenes reales de Madrid a las complejas realidades locales americanas."
         }
       ]
     }

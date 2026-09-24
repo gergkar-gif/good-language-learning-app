@@ -6,11 +6,11 @@
       "type": "matching",
       "category": "vocabulary",
       "pairs": [
-        ["ország", "country"],
-        ["megye", "county"],
-        ["zászló", "flag"],
-        ["címer", "coat of arms"],
-        ["határos", "bordering"]
+        ["Kárpát-medence", "Carpathian Basin"],
+        ["Dunántúl", "Transdanubia"],
+        ["Alföld", "Great Plain"],
+        ["vármegye", "county"],
+        ["Szent Korona", "Holy Crown of Hungary"]
       ],
       "teaches": ["vocabulary-orszagma"]
     },
@@ -18,8 +18,12 @@
       "id": "b1-orszagma-consolidation.ex02",
       "type": "multiple-choice",
       "category": "vocabulary",
-      "question": "Melyik szó jelenti azt, hogy 'population'?",
-      "options": ["lakosság", "terület", "nemzet"],
+      "question": "Melyik kifejezés jelenti a történelmi, határ túloldalán élő magyar közösségeket?",
+      "options": [
+        "határon túli magyarok",
+        "külföldi turisták",
+        "átutazó vendégek"
+      ],
       "correct": 0,
       "teaches": ["vocabulary-orszagma"]
     },
@@ -27,11 +31,11 @@
       "id": "b1-orszagma-consolidation.ex03",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Melyik mondat használja helyesen a van igét helymeghatározásban?",
+      "question": "Melyik mondat fejezi ki helyesen és formálisan Magyarország elhelyezkedését?",
       "options": [
-        "Magyarország Közép-Európában van.",
-        "Magyarország Közép-Európa.",
-        "Magyarország van szép."
+        "Magyarország a Kárpát-medence szívében helyezkedik el.",
+        "Magyarország a Kárpát-medence van.",
+        "Magyarország elhelyezkedik a Kárpát-medence."
       ],
       "correct": 0,
       "teaches": ["van-vannak-locative"]
@@ -40,8 +44,12 @@
       "id": "b1-orszagma-consolidation.ex04",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Melyik névutó jelenti azt, hogy 'between'?",
-      "options": ["között", "mellett", "mentén"],
+      "question": "Melyik névutó fejezi ki azt, hogy 'valaminek a hosszában / partja mellett haladva'?",
+      "options": [
+        "mentén",
+        "alatt",
+        "mögött"
+      ],
       "correct": 0,
       "teaches": ["postpositions-review"]
     },
@@ -49,11 +57,11 @@
       "id": "b1-orszagma-consolidation.ex05",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Melyik mondat használja helyesen a -ból/-ből áll szerkezetet?",
+      "question": "Melyik mondat használja helyesen a -ból/-ből áll szerkezetet a nemzeti zászlóra?",
       "options": [
-        "A zászló három sávból áll.",
-        "A zászló három sáv van.",
-        "A zászló áll három sáv."
+        "A magyar zászló három vízszintes sávból áll.",
+        "A magyar zászló áll három sávokból.",
+        "A magyar zászló három sávból van állva."
       ],
       "correct": 0,
       "teaches": ["bol-bol-all"]
@@ -62,8 +70,12 @@
       "id": "b1-orszagma-consolidation.ex06",
       "type": "multiple-choice",
       "category": "grammar",
-      "question": "Melyik mondat helyes: 'Magyarország hét ___ határos.'",
-      "options": ["országgal", "ország", "országtól"],
+      "question": "Melyik mondat helyes a határos szerkezet használatával?",
+      "options": [
+        "Magyarország északon Szlovákiával, keleten Romániával határos.",
+        "Magyarország határos Szlovákia és Románia.",
+        "Magyarország Szlovákiától és Romániától határos."
+      ],
       "correct": 0,
       "teaches": ["hataros-egtajak"]
     },
@@ -71,15 +83,15 @@
       "id": "b1-orszagma-consolidation.ex07",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Budapest a Duna ___ fekszik. (beside)",
-      "answer": "mellett",
+      "sentence": "Budapest a Duna két partján, hegyek és síkságok ___ terül el.",
+      "answer": "között",
       "teaches": ["postpositions-review"]
     },
     {
       "id": "b1-orszagma-consolidation.ex08",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "A címer egy pajzsból és egy koronából ___. (consists)",
+      "sentence": "A magyar címerpajzs egy jobb és egy bal oldali mezőből ___.",
       "answer": "áll",
       "teaches": ["bol-bol-all"]
     },
@@ -87,130 +99,130 @@
       "id": "b1-orszagma-consolidation.ex09",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Szlovákia Magyarországtól ___ van. (to the north)",
-      "answer": "északra",
+      "sentence": "Ausztria Magyarországtól ___ fekszik a térképen.",
+      "answer": "nyugatra",
       "teaches": ["hataros-egtajak"]
     },
     {
       "id": "b1-orszagma-consolidation.ex10",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Magyarország Közép-Európában ___. (is)",
-      "answer": "van",
+      "sentence": "A hegykoszorúval védett Kárpát-medencében szárazföldi államként ___ el hazánk.",
+      "answer": "helyezkedik",
       "teaches": ["van-vannak-locative"]
     },
     {
       "id": "b1-orszagma-consolidation.ex11",
-      "type": "fill-blank",
-      "category": "grammar",
-      "sentence": "Magyarország hét ___ határos. (ország + -val/-vel)",
-      "answer": "országgal",
-      "teaches": ["hataros-egtajak"]
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "Mit jelképez a magyar címer bal oldalán lévő négy ezüst sáv?",
+      "options": [
+        "A Kárpát-medence négy történelmi fő folyóját: a Dunát, a Tiszát, a Drávát és a Szávát.",
+        "Négy királyi dinasztiát.",
+        "A négy szomszédos tengerpartot."
+      ],
+      "correct": 0
     },
     {
       "id": "b1-orszagma-consolidation.ex12",
-      "type": "sentence-builder",
-      "category": "grammar",
-      "tiles": ["Magyarország", "Közép-Európában,", "a", "Kárpát-medencében", "fekszik."],
-      "solution": ["Magyarország", "Közép-Európában,", "a", "Kárpát-medencében", "fekszik."],
-      "english": "Hungary lies in Central Europe, in the Carpathian Basin.",
-      "teaches": ["van-vannak-locative"]
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "Melyik három hegycsúcsot szimbolizálja a címerben látható zöld hármas halom?",
+      "options": [
+        "A Tátrát, a Mátrát és a Fátrát.",
+        "A Kékest, a Dobogókőt és a Gellért-hegyet.",
+        "Az Alpokat, a Kárpátokat és az Urál-hegységet."
+      ],
+      "correct": 0
     },
     {
       "id": "b1-orszagma-consolidation.ex13",
-      "type": "sentence-builder",
-      "category": "grammar",
-      "tiles": ["A", "zászló", "három", "sávból", "áll."],
-      "solution": ["A", "zászló", "három", "sávból", "áll."],
-      "english": "The flag consists of three stripes.",
-      "teaches": ["bol-bol-all"]
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "Hány országgal határos Magyarország, és melyik két ország felé van külső schengeni határ?",
+      "options": [
+        "Hét országgal határos; Szerbia és Ukrajna felé van szigorú külső schengeni határ.",
+        "Öt országgal határos; minden határ teljesen nyitott.",
+        "Kilenc országgal határos; csak Ausztria felé van határellenőrzés."
+      ],
+      "correct": 0
     },
     {
       "id": "b1-orszagma-consolidation.ex14",
-      "type": "sentence-order",
+      "type": "sentence-builder",
       "category": "grammar",
-      "sentences": [
-        "Magyarország Közép-Európában fekszik. [Hungary lies in Central Europe.]",
-        "Az ország tizenkilenc megyéből áll. [The country consists of nineteen counties.]",
-        "Hét szomszédos országgal határos. [It borders seven neighbouring countries.]"
-      ],
-      "solution": [0, 1, 2],
-      "teaches": ["van-vannak-locative"]
+      "tiles": ["A", "nemzeti", "trikolór", "piros,", "fehér", "és", "zöld", "színei", "az", "erőt,", "hűséget", "és", "reményt", "hirdetik."],
+      "solution": ["A", "nemzeti", "trikolór", "piros,", "fehér", "és", "zöld", "színei", "az", "erőt,", "hűséget", "és", "reményt", "hirdetik."],
+      "english": "The red, white, and green colours of the national tricolour proclaim strength, loyalty, and hope.",
+      "teaches": ["synthesis-orszagma"]
     },
     {
       "id": "b1-orszagma-consolidation.ex15",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        { "speaker": "A", "text": "Hol fekszik Magyarország?" },
-        { "speaker": "B", "text": "_____" }
-      ],
-      "options": [
-        "Közép-Európában, a Kárpát-medencében.",
-        "Dél-Amerikában.",
-        "Egy szigeten."
-      ],
-      "correct": 0,
-      "teaches": ["van-vannak-locative"]
+      "type": "sentence-builder",
+      "category": "grammar",
+      "tiles": ["Közigazgatásilag", "az", "ország", "tizenkilenc", "vármegyére", "és", "a", "fővárosra", "oszlik."],
+      "solution": ["Közigazgatásilag", "az", "ország", "tizenkilenc", "vármegyére", "és", "a", "fővárosra", "oszlik."],
+      "english": "Administratively, the country is divided into nineteen counties and the capital.",
+      "teaches": ["synthesis-orszagma"]
     },
     {
       "id": "b1-orszagma-consolidation.ex16",
-      "type": "dialogue-complete",
-      "category": "dialogue",
-      "prompt": [
-        { "speaker": "A", "text": "Miből áll Magyarország címere?" },
-        { "speaker": "B", "text": "_____" }
-      ],
-      "options": [
-        "Egy pajzsból, Árpád-sávokból, egy hármas halomból és a Szent Koronából.",
-        "Csak egy egyszerű piros körből.",
-        "Egy sasból és egy koronából, mint sok más országé."
-      ],
-      "correct": 0,
-      "teaches": ["bol-bol-all"]
+      "type": "fill-blank",
+      "category": "grammar",
+      "sentence": "A Szent Korona tetején lévő kereszt a történelem viharaiban ___ meg.",
+      "answer": "sérült",
+      "teaches": ["synthesis-orszagma"]
     },
     {
       "id": "b1-orszagma-consolidation.ex17",
-      "type": "listening-choice",
-      "category": "listening",
-      "sentence": "Az ország két legfontosabb folyója a Duna és a Tisza.",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        { "speaker": "Kérdező", "text": "Kérem, mutassa be röviden a két legfontosabb magyar tájegységet!" },
+        { "speaker": "Kérelmező", "text": "_____" }
+      ],
       "options": [
-        "The country's two most important rivers are the Danube and the Tisza.",
-        "The country has no important rivers.",
-        "The Danube is the only river in Hungary."
+        "A dombos, erdős Dunántúlt a Duna nyugati oldalán, valamint a termékeny, sík Alföldet a Duna és Tisza mentén.",
+        "Kizárólag a Magas-Tátra gleccsereit és az Adriai-tenger öbleit.",
+        "Magyarországon nincsenek különálló tájegységek, az egész ország egyetlen hegycsúcs."
       ],
       "correct": 0
     },
     {
       "id": "b1-orszagma-consolidation.ex18",
-      "type": "dictation",
-      "category": "listening",
-      "sentence": "Budapest a Duna mellett fekszik.",
-      "teaches": ["postpositions-review"]
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "Melyik folyóba torkollik a Tisza Magyarországtól délre?",
+      "options": [
+        "A Dunába.",
+        "A Szávába.",
+        "A Rajnába."
+      ],
+      "correct": 0
     },
     {
       "id": "b1-orszagma-consolidation.ex19",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Say where Hungary is located, using van.",
-          "answer": "Magyarország Közép-Európában van."
-        }
+      "type": "listening-choice",
+      "category": "listening",
+      "sentence": "A magyar állampolgárság megszerzése az ezeréves kultúra és a nemzeti közösség iránti elkötelezettséget fejezi ki.",
+      "options": [
+        "Acquiring Hungarian citizenship expresses commitment towards a thousand-year-old culture and the national community.",
+        "Hungarian citizenship requires giving up all historical knowledge of Central Europe.",
+        "The citizenship interview focuses exclusively on modern commercial maritime law."
       ],
-      "teaches": ["van-vannak-locative"]
+      "correct": 0
     },
     {
       "id": "b1-orszagma-consolidation.ex20",
-      "type": "structured-writing",
-      "category": "writing",
-      "template": [
-        {
-          "prompt": "Say what the flag consists of.",
-          "answer": "A zászló piros, fehér és zöld sávból áll."
-        }
+      "type": "multiple-choice",
+      "category": "reading",
+      "question": "Hol tekinthető meg ma a magyar államiság legfőbb szimbóluma, a Szent Korona?",
+      "options": [
+        "Budapesten, az Országház kupolacsarnokában.",
+        "Visegrádon, a fellegvár bástyáján.",
+        "Esztergomban, a Keresztény Múzeum pincéjében."
       ],
-      "teaches": ["bol-bol-all"]
+      "correct": 0
     }
   ]
 }

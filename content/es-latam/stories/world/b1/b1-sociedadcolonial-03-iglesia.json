@@ -5,12 +5,12 @@
   "lesson": 3,
   "order": 3,
   "type": "world",
-  "estimatedMinutes": 6,
-  "summary": "The Church as the colony's real infrastructure: universities founded within decades of the conquest, self-governing Jesuit mission-states with their own orchestras, and an Inquisition that explicitly could not prosecute indigenous people.",
+  "estimatedMinutes": 5,
+  "summary": "The Catholic Church as imperial pillar: early universities, hospitals, Jesuit reducciones in Paraguay, and the limits of Inquisitorial jurisdiction.",
   "characters": [],
-  "location": "El imperio español en América",
+  "location": "América virreinal",
   "grammar": [
-    "gerundio: religión y sociedad colonial"
+    "gerundio para acciones simultáneas"
   ],
   "vocabularyTopics": [
     "La Iglesia"
@@ -18,31 +18,35 @@
   "paragraphs": [
     {
       "type": "narration",
-      "text": "La Iglesia católica fue el pilar ideológico y espiritual más poderoso de todo el período virreinal en América."
+      "text": "En el imperio hispanoamericano, la Iglesia católica no fue simplemente una institución religiosa, sino un auténtico pilar del poder civil, la educación, la sanidad y la economía. Bajo el régimen del Patronato Real, los reyes de España tenían la facultad de nombrar obispos y administrar los diezmos eclesiásticos."
     },
     {
       "type": "narration",
-      "text": "Cada orden religiosa —como los franciscanos, dominicos y jesuitas— organizó misiones y pueblos de indios de carácter semiautónomo."
+      "text": "Vigilando la ortodoxia religiosa mientras construía hospitales, escuelas y universidades, la Iglesia funcionó como una de las instituciones más poderosas del imperio. Apenas pocas décadas después de la conquista, se fundaron la Real y Pontificia Universidad de México (1551) y la Universidad Nacional Mayor de San Marcos en Lima (1551), centros académicos donde se formaron generaciones de letrados y teólogos."
     },
     {
       "type": "narration",
-      "text": "La Iglesia se convirtió en un próspero terrateniente que controlaba haciendas, escuelas y hospitales, tejiendo un sólido tejido social."
+      "text": "Un experimento social y religioso único fueron las reducciones o misiones jesuitas en la región del Río de la Plata y Paraguay. Enseñando la doctrina cristiana mientras aprendían y usaban el idioma guaraní, los jesuitas lograron una relación menos violenta con las comunidades originarias en comparación con el régimen de la encomienda."
     },
     {
       "type": "narration",
-      "text": "Para combatir la herejía y proteger la ortodoxia de la fe, la Inquisición vigilaba de cerca las lecturas y conductas de los vecinos."
+      "text": "Estas comunidades, produciendo tejidos y ganado mientras desarrollaban una notable tradición musical y artística barroca, llegaron a ser económicamente prósperas y contaron incluso con milicias indígenas armadas para defenderse de los cazadores de esclavos portugueses."
     },
     {
       "type": "narration",
-      "text": "Nadie podía carecer de sacramentos sin ser marginado; el poder eclesiástico regulaba cada hora de la vida cotidiana."
+      "text": "Sin embargo, el inmenso poder e independencia de la Compañía de Jesús despertó recelos en la corte de Madrid. En 1767, el rey Carlos III decretó la expulsión de los jesuitas de todos los dominios de la monarquía hispánica. Las reducciones, dependiendo casi por completo de la administración jesuita, entraron en rápida decadencia tras la expulsión."
+    },
+    {
+      "type": "narration",
+      "text": "Aunque el Tribunal del Santo Oficio de la Inquisición perseguía con severidad la herejía y el contrabando de libros prohibidos entre españoles y criollos, oficialmente carecía de jurisdicción sobre la población indígena, que quedaba sujeta a tribunales eclesiásticos ordinarios considerados menos punitivos."
     }
   ],
   "narration": {
-    "durationSeconds": 38.4,
+    "durationSeconds": 127.4,
     "pacing": {
       "speedMultiplier": 1.0,
       "rate_str": "+0%",
-      "rate_wpm": 150,
+      "rate_wpm": 145,
       "style": "natural, expressive"
     },
     "speakers": {
@@ -56,7 +60,7 @@
       {
         "paraIndex": 0,
         "startTime": 0.0,
-        "endTime": 7.2,
+        "endTime": 20.9,
         "speaker": "Narrator",
         "lang": "es",
         "cues": [],
@@ -64,8 +68,8 @@
       },
       {
         "paraIndex": 1,
-        "startTime": 7.2,
-        "endTime": 14.4,
+        "startTime": 20.9,
+        "endTime": 47.0,
         "speaker": "Narrator",
         "lang": "es",
         "cues": [
@@ -79,8 +83,8 @@
       },
       {
         "paraIndex": 2,
-        "startTime": 14.4,
-        "endTime": 22.0,
+        "startTime": 47.0,
+        "endTime": 69.6,
         "speaker": "Narrator",
         "lang": "es",
         "cues": [
@@ -94,8 +98,8 @@
       },
       {
         "paraIndex": 3,
-        "startTime": 22.0,
-        "endTime": 31.2,
+        "startTime": 69.6,
+        "endTime": 84.8,
         "speaker": "Narrator",
         "lang": "es",
         "cues": [
@@ -109,37 +113,99 @@
       },
       {
         "paraIndex": 4,
-        "startTime": 31.2,
-        "endTime": 38.4,
+        "startTime": 84.8,
+        "endTime": 109.1,
         "speaker": "Narrator",
         "lang": "es",
-        "cues": [],
+        "cues": [
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 5,
+        "startTime": 109.1,
+        "endTime": 127.4,
+        "speaker": "Narrator",
+        "lang": "es",
+        "cues": [
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
         "pronunciations": []
       }
     ],
     "pedagogical": {
       "keyVocabulary": [
         {
-          "lemma": "historia",
+          "lemma": "la orden religiosa",
           "pos": "noun",
           "cefr": "B1",
-          "gloss": "story"
+          "gloss": "religious order"
+        },
+        {
+          "lemma": "semiautónomo",
+          "pos": "adjective",
+          "cefr": "B1",
+          "gloss": "semi-autonomous"
+        },
+        {
+          "lemma": "el tejido",
+          "pos": "noun",
+          "cefr": "B1",
+          "gloss": "fabric, textile"
+        },
+        {
+          "lemma": "próspero",
+          "pos": "adjective",
+          "cefr": "B1",
+          "gloss": "prosperous"
+        },
+        {
+          "lemma": "expulsar",
+          "pos": "verb",
+          "cefr": "B1",
+          "gloss": "to expel"
+        },
+        {
+          "lemma": "la herejía",
+          "pos": "noun",
+          "cefr": "B1",
+          "gloss": "heresy"
+        },
+        {
+          "lemma": "carecer",
+          "pos": "verb",
+          "cefr": "B1",
+          "gloss": "to lack"
+        },
+        {
+          "lemma": "eclesiástico",
+          "pos": "adjective",
+          "cefr": "B1",
+          "gloss": "ecclesiastical, church"
         }
       ],
       "targetGrammar": [
-        "gerundio: religión y sociedad colonial"
+        "gerundio para acciones simultáneas"
       ],
       "comprehensionQuestions": [
         {
-          "question": "¿Cuál es el tema principal de «La Iglesia»?",
+          "question": "¿Tenía el tribunal de la Inquisición jurisdicción sobre los indígenas en las colonias?",
           "options": [
-            "The Church as the colony's real infrastructure: universities founded within decades of the conquest, self-governing Jesuit mission-states with their own orchestras, and an Inquisition that explicitly could not prosecute indigenous people.",
-            "Una discusión sobre gramática",
-            "Una receta de cocina tradicional",
-            "Una carta formal de negocios"
+            "No, oficialmente carecía de jurisdicción sobre la población indígena.",
+            "Sí, todos los procesos inquisitoriales se centraban exclusivamente en los indígenas.",
+            "Solo en los virreinatos de Nueva Granada y Río de la Plata."
           ],
           "correctIndex": 0,
-          "explanation": "El texto desarrolla los eventos descritos en la narración."
+          "explanation": "La corona española consideraba a los indígenas «neófitos» en la fe y los eximió de la jurisdicción del Santo Oficio."
         }
       ]
     }

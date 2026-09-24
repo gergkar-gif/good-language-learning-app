@@ -6,32 +6,34 @@
       "type": "matching",
       "category": "vocabulary",
       "pairs": [
-        ["ország", "country"],
-        ["elhelyezkedik", "to be located"],
-        ["terület", "territory, area"],
+        ["Kárpát-medence", "Carpathian Basin"],
+        ["szárazföldi ország", "landlocked country"],
+        ["hegykoszorú", "ring of mountains"],
         ["lakosság", "population"]
-      ]
+      ],
+      "teaches": ["van-vannak-locative"]
     },
     {
       "id": "b1-orszagma-01.ex01b",
       "type": "matching",
       "category": "vocabulary",
       "pairs": [
+        ["elhelyezkedik", "to be situated"],
         ["fekszik", "to lie, to be situated"],
-        ["Kárpát-medence", "the Carpathian Basin"],
-        ["Közép-Európa", "Central Europe"],
-        ["Magyarország", "Hungary"]
-      ]
+        ["finnugor", "Finno-Ugric"],
+        ["nyelvi sziget", "language island"]
+      ],
+      "teaches": ["van-vannak-locative"]
     },
     {
       "id": "b1-orszagma-01.ex02",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "Miért nevezik Magyarországot szárazföldi országnak?",
+      "question": "Miért számít Magyarország földrajzi fekvése különlegesnek Közép-Európában?",
       "options": [
-        "Mert nincs tengerpartja.",
-        "Mert nincsenek folyói.",
-        "Mert nincs fővárosa."
+        "Mert a természetes hegykoszorúval védett Kárpát-medence szívében helyezkedik el.",
+        "Mert közvetlen tengerparttal és mély óceáni kikötőkkel rendelkezik.",
+        "Mert a kontinens legészakibb, sarkvidéki zónájában fekszik."
       ],
       "correct": 0
     },
@@ -39,11 +41,11 @@
       "id": "b1-orszagma-01.ex03",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "Melyik nyelvcsaládba tartozik a magyar nyelv?",
+      "question": "Miben különbözik a magyar nyelv a szomszédos országok többségének nyelvétől?",
       "options": [
-        "A finnugor nyelvcsaládba.",
-        "Az indoeurópai nyelvcsaládba.",
-        "A szláv nyelvcsaládba."
+        "A magyar a finnugor (uráli) nyelvcsaládhoz tartozik, míg a szomszédok nyelvei indoeurópaiak.",
+        "A magyar egy kizárólag latin eredetű, újlatin nyelvcsaládba tartozó nyelv.",
+        "A magyar azonos a délszláv és germán nyelvcsaládokkal."
       ],
       "correct": 0
     },
@@ -51,19 +53,19 @@
       "id": "b1-orszagma-01.ex04",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Magyarország Közép-Európában ___. (is)",
-      "answer": "van",
+      "sentence": "Magyarország a Kárpát-medence szívében ___ el.",
+      "answer": "helyezkedik",
       "teaches": ["van-vannak-locative"]
     },
     {
       "id": "b1-orszagma-01.ex05",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "Mely országok tartoznak részben a Kárpát-medencéhez Magyarországon kívül?",
+      "question": "Mekkora Magyarország területe és lakossága nagyságrendileg?",
       "options": [
-        "Szlovákia, Ukrajna, Románia és más szomszédos országok.",
-        "Csak Ausztria és Németország.",
-        "Egyik szomszédos ország sem."
+        "Mintegy 93 ezer négyzetkilométer és körülbelül 9,6 millió fő.",
+        "Mintegy 200 ezer négyzetkilométer és 20 millió fő.",
+        "Mintegy 45 ezer négyzetkilométer és 4 millió fő."
       ],
       "correct": 0
     },
@@ -71,23 +73,23 @@
       "id": "b1-orszagma-01.ex06",
       "type": "sentence-builder",
       "category": "grammar",
-      "tiles": ["Magyarország", "Közép-Európában,", "a", "Kárpát-medencében", "fekszik."],
-      "solution": ["Magyarország", "Közép-Európában,", "a", "Kárpát-medencében", "fekszik."],
-      "english": "Hungary lies in Central Europe, in the Carpathian Basin.",
+      "tiles": ["Magyarország", "egy", "Közép-Európában", "fekvő", "szárazföldi", "ország."],
+      "solution": ["Magyarország", "egy", "Közép-Európában", "fekvő", "szárazföldi", "ország."],
+      "english": "Hungary is a landlocked country lying in Central Europe.",
       "teaches": ["van-vannak-locative"]
     },
     {
       "id": "b1-orszagma-01.ex07",
       "type": "dialogue-complete",
-      "category": "reading",
+      "category": "dialogue",
       "prompt": [
-        { "speaker": "Anna", "text": "Hol van Magyarország?" },
-        { "speaker": "Márk", "text": "_____" }
+        { "speaker": "Kérdező", "text": "Hogyan jellemezné Magyarország földrajzi elhelyezkedését?" },
+        { "speaker": "Kérelmező", "text": "_____" }
       ],
       "options": [
-        "Közép-Európában, a Kárpát-medencében.",
-        "Dél-Amerikában.",
-        "Egy szigeten, az óceán közepén."
+        "Közép-Európában, a hegyekkel körülvett Kárpát-medencében fekszik.",
+        "Egy óceáni szigetcsoporton, közvetlenül a tenger mellett terül el.",
+        "Dél-Európa partjainál, a Földközi-tenger szigetvilágában található."
       ],
       "correct": 0
     },
@@ -95,11 +97,11 @@
       "id": "b1-orszagma-01.ex08",
       "type": "listening-choice",
       "category": "listening",
-      "sentence": "Magyarországnak nincs tengerpartja, de két nagy folyója van.",
+      "sentence": "A hegykoszorúval védett Kárpát-medence termékeny földje évszázadokon át menedéket és otthont nyújtott a magyaroknak.",
       "options": [
-        "Hungary has no coastline, but it has two big rivers.",
-        "Hungary has a long coastline and no rivers.",
-        "Hungary has neither a coastline nor rivers."
+        "The fertile land of the Carpathian Basin, protected by a ring of mountains, provided shelter and a home for Hungarians over the centuries.",
+        "Hungary has no natural protective borders and is completely exposed to ocean storms.",
+        "The mountains of the Carpathian Basin prevented any settlement throughout history."
       ],
       "correct": 0
     }

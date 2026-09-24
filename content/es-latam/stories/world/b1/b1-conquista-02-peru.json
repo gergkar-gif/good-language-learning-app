@@ -5,12 +5,12 @@
   "lesson": 2,
   "order": 2,
   "type": "world",
-  "estimatedMinutes": 6,
-  "summary": "How fewer than 200 Spaniards captured an empire in crisis: a civil war, a room filled with gold that didn't save an emperor's life, and a resistance state that survived four decades longer than most people assume.",
+  "estimatedMinutes": 5,
+  "summary": "Pizarro's conquest of the Inca: the civil war, the Cajamarca ambush, Atahualpa's ransom room, his execution, and the Vilcabamba resistance.",
   "characters": [],
-  "location": "Los Andes",
+  "location": "Los Andes (Cajamarca, Cuzco, Vilcabamba)",
   "grammar": [
-    "se pasiva: Pizarro y el Imperio inca"
+    "se pasiva en episodios históricos"
   ],
   "vocabularyTopics": [
     "La conquista del Perú"
@@ -18,31 +18,35 @@
   "paragraphs": [
     {
       "type": "narration",
-      "text": "Cajamarca, noviembre de 1532. Dos hermanos incas, Huáscar y Atahualpa, acababan de disputarse el trono imperial en una sangrienta guerra fratricida."
+      "text": "En 1532, Francisco Pizarro desembarcó en la costa peruana con menos de doscientos soldados. El momento no podía ser más favorable para los invasores: el inmenso imperio del Tawantinsuyu se encontraba dividido y desangrado por una cruenta guerra civil entre dos hermanos herederos, Huáscar y Atahualpa, quienes se disputaban el trono tras la muerte repentina del emperador Huayna Cápac por viruela."
     },
     {
       "type": "narration",
-      "text": "Francisco Pizarro aprovechó el caos interno. Usó como pretexto el rechazo de una biblia para atacar por sorpresa y masacrar a los guardias desarmados."
+      "text": "Atahualpa acababa de derrotar a su hermano cuando aceptó reunirse con los extranjeros en la ciudad andina de Cajamarca. El 16 de noviembre de 1532, en Cajamarca, se organizó un encuentro entre Atahualpa y los españoles. Confiado en la superioridad numérica de sus miles de guardias desarmados, el Inca entró en la plaza principal."
     },
     {
       "type": "narration",
-      "text": "Atahualpa fue tomado prisionero en su propio campamento. Para obtener su libertad, prometió recolectar un fabuloso rescate en oro y plata."
+      "text": "Tras un breve altercado con el fraile Vicente de Valverde sobre un breviario religioso que sirvió de pretexto, los españoles abrieron fuego con cañones y arcabuces ocultos. En cuestión de horas, se masacró a miles de soldados incas y Atahualpa fue capturado con vida."
     },
     {
       "type": "narration",
-      "text": "A pesar de llenar dos cuartos con metales preciosos, el Inca fue ejecutado tras bautizarse forzosamente para evitar la hoguera."
+      "text": "Para obtener su libertad, el Inca ofreció a Pizarro un rescate fabuloso: llenar una gran habitación de oro hasta donde alcanzara su mano y dos veces más de plata. Durante meses se recolectó ese rescate desde templos y palacios de todo el imperio. Sin embargo, tras fundir y repartir el tesoro, Pizarro decidió ejecutar a Atahualpa en julio de 1533 bajo falsos cargos de traición. Para evitar la hoguera, el Inca aceptó bautizarse antes de morir a garrote vil."
     },
     {
       "type": "narration",
-      "text": "Pizarro nombró a un soberano títere, pero la resistencia andina logró organizarse para sitiar la ciudad del Cuzco durante largos meses."
+      "text": "Los españoles marcharon hacia Cuzco e instalaron a Manco Inca como gobernante títere. No obstante, al comprender las verdaderas intenciones de los colonizadores, Manco Inca escapó en 1536 y lideró una masiva rebelión que llegó a sitiar Cuzco y Lima."
+    },
+    {
+      "type": "narration",
+      "text": "Aunque no logró expulsar a los españoles, Manco Inca se retiró a la selva montañosa y fundó el reino rebelde de Vilcabamba. En Vilcabamba se mantuvo una resistencia inca continua durante casi cuarenta años más, hasta que en 1572 el virrey Francisco de Toledo ordenó capturar y ejecutar al último soberano inca, Túpac Amaru I."
     }
   ],
   "narration": {
-    "durationSeconds": 42.8,
+    "durationSeconds": 144.7,
     "pacing": {
       "speedMultiplier": 1.0,
       "rate_str": "+0%",
-      "rate_wpm": 150,
+      "rate_wpm": 145,
       "style": "natural, expressive"
     },
     "speakers": {
@@ -56,7 +60,16 @@
       {
         "paraIndex": 0,
         "startTime": 0.0,
-        "endTime": 8.4,
+        "endTime": 26.5,
+        "speaker": "Narrator",
+        "lang": "es",
+        "cues": [],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 1,
+        "startTime": 26.5,
+        "endTime": 50.0,
         "speaker": "Narrator",
         "lang": "es",
         "cues": [
@@ -69,18 +82,9 @@
         "pronunciations": []
       },
       {
-        "paraIndex": 1,
-        "startTime": 8.4,
-        "endTime": 18.0,
-        "speaker": "Narrator",
-        "lang": "es",
-        "cues": [],
-        "pronunciations": []
-      },
-      {
         "paraIndex": 2,
-        "startTime": 18.0,
-        "endTime": 26.4,
+        "startTime": 50.0,
+        "endTime": 69.1,
         "speaker": "Narrator",
         "lang": "es",
         "cues": [
@@ -94,8 +98,8 @@
       },
       {
         "paraIndex": 3,
-        "startTime": 26.4,
-        "endTime": 34.4,
+        "startTime": 69.1,
+        "endTime": 103.4,
         "speaker": "Narrator",
         "lang": "es",
         "cues": [
@@ -109,8 +113,23 @@
       },
       {
         "paraIndex": 4,
-        "startTime": 34.4,
-        "endTime": 42.8,
+        "startTime": 103.4,
+        "endTime": 120.8,
+        "speaker": "Narrator",
+        "lang": "es",
+        "cues": [
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 5,
+        "startTime": 120.8,
+        "endTime": 144.7,
         "speaker": "Narrator",
         "lang": "es",
         "cues": [
@@ -126,26 +145,67 @@
     "pedagogical": {
       "keyVocabulary": [
         {
-          "lemma": "historia",
+          "lemma": "disputarse",
+          "pos": "verb",
+          "cefr": "B1",
+          "gloss": "to dispute, contest"
+        },
+        {
+          "lemma": "el pretexto",
           "pos": "noun",
           "cefr": "B1",
-          "gloss": "story"
+          "gloss": "pretext"
+        },
+        {
+          "lemma": "masacrar",
+          "pos": "verb",
+          "cefr": "B1",
+          "gloss": "to massacre"
+        },
+        {
+          "lemma": "el rescate",
+          "pos": "noun",
+          "cefr": "B1",
+          "gloss": "ransom"
+        },
+        {
+          "lemma": "recolectar",
+          "pos": "verb",
+          "cefr": "B1",
+          "gloss": "to collect"
+        },
+        {
+          "lemma": "bautizarse",
+          "pos": "verb",
+          "cefr": "B1",
+          "gloss": "to be baptized"
+        },
+        {
+          "lemma": "el títere",
+          "pos": "noun",
+          "cefr": "B1",
+          "gloss": "puppet"
+        },
+        {
+          "lemma": "sitiar",
+          "pos": "verb",
+          "cefr": "B1",
+          "gloss": "to besiege"
         }
       ],
       "targetGrammar": [
-        "se pasiva: Pizarro y el Imperio inca"
+        "se pasiva en episodios históricos"
       ],
       "comprehensionQuestions": [
         {
-          "question": "¿Cuál es el tema principal de «La conquista del Perú»?",
+          "question": "¿Qué ocurrió con la resistencia inca tras la muerte de Atahualpa en 1533?",
           "options": [
-            "How fewer than 200 Spaniards captured an empire in crisis: a civil war, a room filled with gold that didn't save an emperor's life, and a resistance state that survived four decades longer than most people assume.",
-            "Una discusión sobre gramática",
-            "Una receta de cocina tradicional",
-            "Una carta formal de negocios"
+            "Continuó durante casi cuarenta años más desde el reino rebelde de Vilcabamba.",
+            "Terminó por completo de forma inmediata.",
+            "Se trasladó pacíficamente a la costa de Chile."
           ],
           "correctIndex": 0,
-          "explanation": "El texto desarrolla los eventos descritos en la narración."
+          "explanation": "Manco Inca y sus sucesores mantuvieron el estado neoinca de Vilcabamba hasta 1572."
         }
       ]
     }

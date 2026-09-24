@@ -5,7 +5,7 @@
   "lesson": 4,
   "order": 4,
   "type": "world",
-  "estimatedMinutes": 6,
+  "estimatedMinutes": 5,
   "summary": "Everyday life before Europeans arrived: a food-science trick behind maize that Europe didn't understand for centuries, chocolate as a bitter elite drink, coca leaves in the Andes, and a ballgame played across two thousand years.",
   "characters": [],
   "location": "Mesoamérica y los Andes",
@@ -18,31 +18,35 @@
   "paragraphs": [
     {
       "type": "narration",
-      "text": "¿Cómo era un día cualquiera en una ciudad precolombina? La mañana comenzaba temprano entre los aromas del mercado."
+      "text": "¿Cómo transcurría un día común en una ciudad o aldea antes de 1492? Lejos de los palacios y los templos monumentales, la vida cotidiana estaba marcada por el trabajo agrícola, los mercados bulliciosos, la gastronomía y las tradiciones familiares."
     },
     {
       "type": "narration",
-      "text": "La gente común comía tortillas de maíz con frijoles y especias picantes. Los campesinos solían masticar hojas de coca para resistir la fatiga y evitar la desnutrición."
+      "text": "La alimentación popular giraba en torno al maíz, el frijol, la calabaza y el chile. Sin embargo, el secreto fundamental de la nutrición mesoamericana residía en una genial innovación química: la nixtamalización. Cocinando los granos con cal o ceniza, los pueblos mesoamericanos liberaban nutrientes que el maíz crudo no ofrece, especialmente la niacina o vitamina B3 y aminoácidos esenciales. Cuando los europeos llevaron el maíz a su continente pero ignoraron este método tradicional, surgieron durante siglos terribles epidemias de pelagra y desnutrición en poblaciones rurales de Europa."
     },
     {
       "type": "narration",
-      "text": "Los nobles disfrutaban de un lujo especial: una bebida amarga y espumosa hecha con cacao puro. Su elegante vestimenta de plumas indicaba claramente su alto rango social."
+      "text": "Los alimentos se sazonaban con diversas hierbas y cada especia disponible, como la vainilla y el achiote. En ocasiones especiales, los nobles y guerreros disfrutaban del cacao, considerado un regalo divino. El chocolate se preparaba batiendo cacao molido con agua, chile y especias hasta formar espuma. A diferencia de las golosinas dulces actuales, era una bebida densa y de sabor amargo. Además de su uso ceremonial, los granos de cacao servían como moneda para comprar bienes en los mercados o pagar sanciones."
     },
     {
       "type": "narration",
-      "text": "Por la tarde, la multitud se reunía alrededor de la cancha del juego de pelota. El deporte tenía un significado cósmico y religioso muy profundo."
+      "text": "En las altas mesetas de los Andes, la vida diaria exigía una adaptación constante al frío y a la altitud. Masticando hojas de coca, los habitantes de las alturas combatían el hambre, el frío y el mal de altura, aprovechando sus propiedades medicinales y energéticas durante las duras jornadas en las terrazas de cultivo."
     },
     {
       "type": "narration",
-      "text": "En ocasiones solemnes, el ritual terminaba con un sacrificio humano dedicado a los dioses del sol y de la lluvia."
+      "text": "La vestimenta marcaba con absoluta claridad el rango de cada individuo en la comunidad. Mientras los campesinos vestían telas sencillas de maguey o algodón sin teñir, los nobles lucían mantas ricamente bordadas y tocados con plumas de aves exóticas. En el imperio inca, las telas más finas de lana de vicuña estaban reservadas por ley exclusivamente para el soberano y su familia más cercana."
+    },
+    {
+      "type": "narration",
+      "text": "El ocio y la religión se entrelazaban en el juego de pelota, una práctica deportiva practicada durante más de dos milenios en toda Mesoamérica. Comerciando, tejiendo o cultivando, la mayoría de la gente también encontraba tiempo para el juego de pelota. En la cancha de piedra, los jugadores golpeaban una pesada pelota de hule macizo usando solo las caderas, los codos y las rodillas. En algunas ciudades, el juego de pelota se relacionaba con rituales religiosos donde el resultado simbolizaba el movimiento del sol y la lucha cósmica contra las fuerzas del inframundo, culminando en ocasiones solemnes con un sacrificio humano."
     }
   ],
   "narration": {
-    "durationSeconds": 46.8,
+    "durationSeconds": 185.7,
     "pacing": {
       "speedMultiplier": 1.0,
       "rate_str": "+0%",
-      "rate_wpm": 150,
+      "rate_wpm": 145,
       "style": "natural, expressive"
     },
     "speakers": {
@@ -56,39 +60,46 @@
       {
         "paraIndex": 0,
         "startTime": 0.0,
-        "endTime": 7.2,
+        "endTime": 17.0,
+        "speaker": "Narrator",
+        "lang": "es",
+        "cues": [],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 1,
+        "startTime": 17.0,
+        "endTime": 54.8,
         "speaker": "Narrator",
         "lang": "es",
         "cues": [
           {
-            "type": "intonation",
-            "contour": "rising-interrogative"
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
           }
         ],
         "pronunciations": []
       },
       {
-        "paraIndex": 1,
-        "startTime": 7.2,
-        "endTime": 18.0,
-        "speaker": "Narrator",
-        "lang": "es",
-        "cues": [],
-        "pronunciations": []
-      },
-      {
         "paraIndex": 2,
-        "startTime": 18.0,
-        "endTime": 28.8,
+        "startTime": 54.8,
+        "endTime": 90.5,
         "speaker": "Narrator",
         "lang": "es",
-        "cues": [],
+        "cues": [
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
         "pronunciations": []
       },
       {
         "paraIndex": 3,
-        "startTime": 28.8,
-        "endTime": 38.8,
+        "startTime": 90.5,
+        "endTime": 114.0,
         "speaker": "Narrator",
         "lang": "es",
         "cues": [
@@ -102,8 +113,23 @@
       },
       {
         "paraIndex": 4,
-        "startTime": 38.8,
-        "endTime": 46.8,
+        "startTime": 114.0,
+        "endTime": 141.8,
+        "speaker": "Narrator",
+        "lang": "es",
+        "cues": [
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 5,
+        "startTime": 141.8,
+        "endTime": 185.7,
         "speaker": "Narrator",
         "lang": "es",
         "cues": [
@@ -119,10 +145,52 @@
     "pedagogical": {
       "keyVocabulary": [
         {
-          "lemma": "historia",
+          "lemma": "la desnutrición",
           "pos": "noun",
           "cefr": "B1",
-          "gloss": "story"
+          "gloss": "malnutrition"
+        },
+        {
+          "lemma": "amargo",
+          "pos": "adjective",
+          "cefr": "B1",
+          "gloss": "bitter"
+        },
+        {
+          "lemma": "la especia",
+          "pos": "noun",
+          "cefr": "B1",
+          "gloss": "spice"
+        },
+        {
+          "lemma": "masticar",
+          "pos": "verb",
+          "cefr": "B1",
+          "gloss": "to chew"
+        },
+        {
+          "lemma": "la vestimenta",
+          "pos": "noun",
+          "cefr": "B1",
+          "gloss": "clothing, attire"
+        },
+        {
+          "lemma": "el rango",
+          "pos": "noun",
+          "cefr": "B1",
+          "gloss": "rank"
+        },
+        {
+          "lemma": "la cancha",
+          "pos": "noun",
+          "cefr": "B1",
+          "gloss": "court (sports)"
+        },
+        {
+          "lemma": "el sacrificio",
+          "pos": "noun",
+          "cefr": "B1",
+          "gloss": "sacrifice"
         }
       ],
       "targetGrammar": [
@@ -130,15 +198,14 @@
       ],
       "comprehensionQuestions": [
         {
-          "question": "¿Cuál es el tema principal de «Vida cotidiana»?",
+          "question": "¿Qué ventaja ofrecía la técnica de la nixtamalización al cocinar el maíz?",
           "options": [
-            "Everyday life before Europeans arrived: a food-science trick behind maize that Europe didn't understand for centuries, chocolate as a bitter elite drink, coca leaves in the Andes, and a ballgame played across two thousand years.",
-            "Una discusión sobre gramática",
-            "Una receta de cocina tradicional",
-            "Una carta formal de negocios"
+            "Liberaba nutrientes esenciales y vitaminas que prevenían la desnutrición y la pelagra.",
+            "Hacía que el maíz se conservara durante años sin pudrirse.",
+            "Permitía cocinar el maíz sin necesidad de fuego ni agua."
           ],
           "correctIndex": 0,
-          "explanation": "El texto desarrolla los eventos descritos en la narración."
+          "explanation": "La cocción alcalina del maíz con cal o ceniza liberaba niacina asimilable para el cuerpo humano."
         }
       ]
     }

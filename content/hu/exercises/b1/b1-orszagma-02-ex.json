@@ -6,40 +6,46 @@
       "type": "matching",
       "category": "vocabulary",
       "pairs": [
-        ["megye", "county"],
-        ["főváros", "capital city"],
-        ["tó", "lake"],
-        ["síkság", "plain, lowland"]
-      ]
+        ["Dunántúl", "Transdanubia"],
+        ["Alföld", "Great Plain"],
+        ["vármegye", "county (traditional term)"],
+        ["főváros", "capital city"]
+      ],
+      "teaches": ["postpositions-review"]
     },
     {
       "id": "b1-orszagma-02.ex01b",
       "type": "matching",
       "category": "vocabulary",
       "pairs": [
-        ["Tisza", "the Tisza (river)"],
         ["torkollik", "to flow into"],
-        ["Balaton", "Lake Balaton"],
-        ["hegység", "mountain range"]
-      ]
+        ["mentén", "along"],
+        ["között", "between"],
+        ["vízrajz", "hydrography"]
+      ],
+      "teaches": ["postpositions-review"]
     },
     {
       "id": "b1-orszagma-02.ex02",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "Hány megyére oszlik Magyarország közigazgatásilag?",
-      "options": ["Tizenkilencre.", "Húszra.", "Tízre."],
+      "question": "Hogyan tagolódik Magyarország közigazgatása?",
+      "options": [
+        "19 vármegyére (megyére), valamint a különleges jogállású fővárosra, Budapestre.",
+        "8 független tartományra és 100 kantonra.",
+        "Kizárólag 3 nagy közigazgatási körzetre."
+      ],
       "correct": 0
     },
     {
       "id": "b1-orszagma-02.ex03",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "Hol torkollik a Tisza a Dunába?",
+      "question": "Melyek Magyarország legfontosabb folyói és legjelentősebb tava?",
       "options": [
-        "Jóval a magyar határon túl, Szerbiában.",
-        "Budapestnél.",
-        "Pontosan a magyar határon, Szegednél."
+        "A Duna és a Tisza folyók, valamint a Balaton tava.",
+        "A Volga folyó és a Bajkál-tó.",
+        "A Rajna folyó és a Genfi-tó."
       ],
       "correct": 0
     },
@@ -47,19 +53,19 @@
       "id": "b1-orszagma-02.ex04",
       "type": "fill-blank",
       "category": "grammar",
-      "sentence": "Budapest a Duna ___ fekszik. (beside)",
-      "answer": "mellett",
+      "sentence": "A Tisza a keleti síkságokon folyik keresztül, majd délen a Dunába ___.",
+      "answer": "torkollik",
       "teaches": ["postpositions-review"]
     },
     {
       "id": "b1-orszagma-02.ex05",
       "type": "multiple-choice",
       "category": "reading",
-      "question": "Mit jelent a Balaton beceneve, hogy 'magyar tenger'?",
+      "question": "Milyen jellegzetességek különböztetik meg a Dunántúlt az Alföldtől?",
       "options": [
-        "Hogy Közép-Európa legnagyobb tava, és sokan tengerként gondolnak rá.",
-        "Hogy valódi tenger, sós vízzel.",
-        "Hogy a Balaton Horvátországban van."
+        "A Dunántúl dombos, erdős és történelmi emlékekben gazdag, míg az Alföld sík és kiterjedt mezőgazdasági vidék.",
+        "A Dunántúl egy sivatag, az Alföld pedig magashegység.",
+        "Nincs köztük semmilyen domborzati vagy táji különbség."
       ],
       "correct": 0
     },
@@ -67,23 +73,23 @@
       "id": "b1-orszagma-02.ex06",
       "type": "sentence-builder",
       "category": "grammar",
-      "tiles": ["Szeged", "és", "Debrecen", "között", "nagy", "a", "távolság."],
-      "solution": ["Szeged", "és", "Debrecen", "között", "nagy", "a", "távolság."],
-      "english": "There's a great distance between Szeged and Debrecen.",
+      "tiles": ["Budapest", "a", "Duna", "két", "partján,", "Buda", "és", "Pest", "egyesülésével", "jött", "létre."],
+      "solution": ["Budapest", "a", "Duna", "két", "partján,", "Buda", "és", "Pest", "egyesülésével", "jött", "létre."],
+      "english": "Budapest was established on both banks of the Danube through the unification of Buda and Pest.",
       "teaches": ["postpositions-review"]
     },
     {
       "id": "b1-orszagma-02.ex07",
       "type": "dialogue-complete",
-      "category": "reading",
+      "category": "dialogue",
       "prompt": [
-        { "speaker": "Kata", "text": "Melyik városok fontosak Budapesten kívül?" },
-        { "speaker": "Bence", "text": "_____" }
+        { "speaker": "Kérdező", "text": "Melyek a legfontosabb magyar nagyvárosok a fővároson kívül?" },
+        { "speaker": "Kérelmező", "text": "_____" }
       ],
       "options": [
-        "Debrecen, Szeged, Pécs és Győr.",
-        "Csak London és Bécs.",
-        "Egyik város sem fontos Budapesten kívül."
+        "Többek között Debrecen, Szeged, Pécs, Győr, Székesfehérvár és Miskolc.",
+        "Kizárólag Bécs, Pozsony és Kolozsvár.",
+        "Magyarországon nincsenek nagyvárosok Budapesten kívül."
       ],
       "correct": 0
     },
@@ -91,11 +97,11 @@
       "id": "b1-orszagma-02.ex08",
       "type": "listening-choice",
       "category": "listening",
-      "sentence": "A Duna és a Tisza két tájegységre osztja az országot.",
+      "sentence": "A Dunántúl szívében fekvő Balaton Közép-Európa legnagyobb édesvizű tava.",
       "options": [
-        "The Danube and the Tisza divide the country into two regions.",
-        "The Danube and the Tisza have no effect on the country's regions.",
-        "Hungary has no important rivers."
+        "Lake Balaton, lying in the heart of Transdanubia, is Central Europe's largest freshwater lake.",
+        "Lake Balaton is a small artificial reservoir located on the Great Plain.",
+        "The largest lake in Central Europe is situated along the river Tisza."
       ],
       "correct": 0
     }

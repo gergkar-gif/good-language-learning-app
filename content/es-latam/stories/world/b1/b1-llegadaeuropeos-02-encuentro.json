@@ -5,12 +5,12 @@
   "lesson": 2,
   "order": 2,
   "type": "world",
-  "estimatedMinutes": 6,
-  "summary": "How first contact with the Taíno turned from curious exchange to forced labor and demographic collapse within a single generation, and the friar who later condemned it in writing.",
+  "estimatedMinutes": 5,
+  "summary": "First contact with the Taíno: the breakdown of hospitality, the gold tribute, the encomienda labor system, and disease devastation.",
   "characters": [],
-  "location": "El Caribe",
+  "location": "Las Antillas (La Española, Guanahaní)",
   "grammar": [
-    "conectores para ordenar y contrastar acontecimientos"
+    "conectores de contraste y simultaneidad"
   ],
   "vocabularyTopics": [
     "El encuentro"
@@ -18,31 +18,35 @@
   "paragraphs": [
     {
       "type": "narration",
-      "text": "En las playas del Caribe, los primeros encuentros entre taínos y españoles estuvieron marcados por la curiosidad mutua y la sorpresa."
+      "text": "Al desembarcar en las playas caribeñas en octubre de 1492, los navegantes europeos entraron en contacto con el pueblo taíno, una sociedad pacífica de agricultores y pescadores que habitaba las islas de las Antillas Mayores."
     },
     {
       "type": "narration",
-      "text": "Los isleños recibieron a los recién llegados con generosa hospitalidad. Hubo un continuo intercambio de comida fresca, loros y pequeños adornos de oro."
+      "text": "Al principio, el encuentro fue relativamente pacífico. Sin embargo, esa primera impresión cambió con rapidez. Los taínos recibieron a los extranjeros con generosidad y hospitalidad, ofreciéndoles alimentos frescos, loros y ovillos de algodón mediante un amistoso intercambio por cuentas de vidrio y cascabeles de latón."
     },
     {
       "type": "narration",
-      "text": "Pronto la actitud de los europeos cambió radicalmente. Exigieron oro a la fuerza y comenzaron a castigar severamente a quienes se resistían."
+      "text": "Pero la curiosidad inicial pronto dio paso a la codicia. Mientras los españoles buscaban oro, empezaron a exigir a los taínos que entregaran una cantidad fija de metal precioso cada tres meses. Aquellos que no cumplían con la cuota obligatoria eran castigados con extrema crueldad, incluyendo la mutilación de manos."
     },
     {
       "type": "narration",
-      "text": "Los conquistadores convirtieron a los indígenas en mano de obra forzada para buscar oro en los ríos. Poco después, la viruela desató el caos."
+      "text": "Al mismo tiempo, se estableció un sistema conocido como encomienda. Oficialmente, la corona española otorgaba a cada colono un grupo de indígenas para brindarles supuesta protección y educación religiosa. En la práctica, la encomienda funcionaba como un sistema despiadado de explotación que exigía mano de obra forzada en minas de oro y plantaciones agrícolas."
     },
     {
       "type": "narration",
-      "text": "La población nativa comenzó a reducirse drásticamente. Algunos frailes valientes decidieron presenciar el horror y denunciar las injusticias ante la Corona."
+      "text": "Después llegó un factor todavía más devastador que la violencia directa: las enfermedades europeas. Virus y bacterias como la viruela, el sarampión y la gripe cruzaron el océano en los cuerpos de los colonizadores. La población indígena no tenía defensas inmunológicas contra estos patógenos desconocidos. En cuestión de pocas décadas, la población taína de La Española llegó a reducirse en más de un noventa por ciento."
+    },
+    {
+      "type": "narration",
+      "text": "Tras presenciar estas atrocidades de primera mano como colono en La Española y Cuba, Bartolomé de las Casas tomó una decisión radical. Renunció a sus encomiendas, se ordenó fraile dominico y dedicó el resto de su larga vida a denunciar los abusos de los conquistadores ante la corte real, publicando en 1552 su célebre Brevísima relación de la destrucción de las Indias."
     }
   ],
   "narration": {
-    "durationSeconds": 44.4,
+    "durationSeconds": 135.7,
     "pacing": {
       "speedMultiplier": 1.0,
       "rate_str": "+0%",
-      "rate_wpm": 150,
+      "rate_wpm": 145,
       "style": "natural, expressive"
     },
     "speakers": {
@@ -56,22 +60,16 @@
       {
         "paraIndex": 0,
         "startTime": 0.0,
-        "endTime": 8.4,
+        "endTime": 15.2,
         "speaker": "Narrator",
         "lang": "es",
-        "cues": [
-          {
-            "type": "pause",
-            "durationMs": 250,
-            "reason": "clause-boundary"
-          }
-        ],
+        "cues": [],
         "pronunciations": []
       },
       {
         "paraIndex": 1,
-        "startTime": 8.4,
-        "endTime": 17.6,
+        "startTime": 15.2,
+        "endTime": 34.8,
         "speaker": "Narrator",
         "lang": "es",
         "cues": [
@@ -85,17 +83,23 @@
       },
       {
         "paraIndex": 2,
-        "startTime": 17.6,
-        "endTime": 26.4,
+        "startTime": 34.8,
+        "endTime": 56.5,
         "speaker": "Narrator",
         "lang": "es",
-        "cues": [],
+        "cues": [
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
         "pronunciations": []
       },
       {
         "paraIndex": 3,
-        "startTime": 26.4,
-        "endTime": 36.0,
+        "startTime": 56.5,
+        "endTime": 80.0,
         "speaker": "Narrator",
         "lang": "es",
         "cues": [
@@ -109,37 +113,99 @@
       },
       {
         "paraIndex": 4,
-        "startTime": 36.0,
-        "endTime": 44.4,
+        "startTime": 80.0,
+        "endTime": 108.7,
         "speaker": "Narrator",
         "lang": "es",
-        "cues": [],
+        "cues": [
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
+        "pronunciations": []
+      },
+      {
+        "paraIndex": 5,
+        "startTime": 108.7,
+        "endTime": 135.7,
+        "speaker": "Narrator",
+        "lang": "es",
+        "cues": [
+          {
+            "type": "pause",
+            "durationMs": 250,
+            "reason": "clause-boundary"
+          }
+        ],
         "pronunciations": []
       }
     ],
     "pedagogical": {
       "keyVocabulary": [
         {
-          "lemma": "historia",
+          "lemma": "el intercambio",
           "pos": "noun",
           "cefr": "B1",
-          "gloss": "story"
+          "gloss": "exchange"
+        },
+        {
+          "lemma": "la hospitalidad",
+          "pos": "noun",
+          "cefr": "B1",
+          "gloss": "hospitality"
+        },
+        {
+          "lemma": "castigar",
+          "pos": "verb",
+          "cefr": "B1",
+          "gloss": "to punish"
+        },
+        {
+          "lemma": "la mano de obra",
+          "pos": "noun",
+          "cefr": "B1",
+          "gloss": "workforce, labor"
+        },
+        {
+          "lemma": "la viruela",
+          "pos": "noun",
+          "cefr": "B1",
+          "gloss": "smallpox"
+        },
+        {
+          "lemma": "reducirse",
+          "pos": "verb",
+          "cefr": "B1",
+          "gloss": "to shrink, diminish"
+        },
+        {
+          "lemma": "presenciar",
+          "pos": "verb",
+          "cefr": "B1",
+          "gloss": "to witness"
+        },
+        {
+          "lemma": "denunciar",
+          "pos": "verb",
+          "cefr": "B1",
+          "gloss": "to denounce, report"
         }
       ],
       "targetGrammar": [
-        "conectores para ordenar y contrastar acontecimientos"
+        "conectores de contraste y simultaneidad"
       ],
       "comprehensionQuestions": [
         {
-          "question": "¿Cuál es el tema principal de «El encuentro»?",
+          "question": "¿Qué factor causó la caída demográfica más devastadora entre los taínos?",
           "options": [
-            "How first contact with the Taíno turned from curious exchange to forced labor and demographic collapse within a single generation, and the friar who later condemned it in writing.",
-            "Una discusión sobre gramática",
-            "Una receta de cocina tradicional",
-            "Una carta formal de negocios"
+            "Las epidemias de enfermedades europeas como la viruela.",
+            "La escasez natural de alimentos en las islas.",
+            "Guerras internas entre diferentes cacicazgos taínos."
           ],
           "correctIndex": 0,
-          "explanation": "El texto desarrolla los eventos descritos en la narración."
+          "explanation": "La falta de inmunidad biológica frente a la viruela y el sarampión provocó un colapso demográfico masivo."
         }
       ]
     }
