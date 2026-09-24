@@ -17,6 +17,8 @@ Completed work is archived out to `ACHIEVED.md`.
    - Two placeholder exercises with no real content: `b1-01-consolidation.ex01` and `ex13` (es-latam and es-es), "Elige la opción correcta / La opción correcta / Otra opción". They need writing.
    - 16 exercises that test something no existing skill covers, mostly plain sentence-builders in the es-es CCSE and hu citizenship units that contain no grammar point. `a1-21-review-2` (hu) tests *lenni* (vagyok/vagy/van) but is tagged `ez-az-this-that` and `mi-micsoda-what`, and HU has no *lenni* skill yet.
 
+92. **Audit `imports/dictionary/spanish-en.json` for more wrong-primary-sense entries (added 2026-09-24).** Bug report #192 flagged the review card for "llamas" showing "a name of several localities in Asturias, Spain" instead of the taught verb sense — not corrupted/malformed data (the 2026-09-17 audit, ACHIEVED.md item 30, already covers that class), but a real Wiktionary entry that's simply the wrong headword for a common conjugated form that also exists as its own place-name/homograph entry. Fixed via `MANUAL_OVERRIDES` in `scripts/import_dictionary.py`, same mechanism as the 2026-09-18 HU "wrong-sense gloss" fixes (ACHIEVED.md, "HU Dictionary Wrong-Sense Gloss Fixes"), but ES has never had that HU audit's equivalent systematic pass over common words' primary senses — only this one-off fix. Worth a similar targeted audit of the ES dictionary's top N frequency-ranked headwords, since `Lexicon.define()` (used directly by SRS review cards) has no conjugation-aware disambiguation and will surface whatever sense the raw dictionary file happens to carry for that exact string.
+
 
 
 ---
