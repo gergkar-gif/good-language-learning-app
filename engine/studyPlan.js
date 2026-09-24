@@ -24,7 +24,8 @@
 // the roadmap's "a clear start and end," not a lingering to-do list.
 //
 // How a plan is built (reworked 2026-09-24):
-//   1st — the single most urgent thing (see SOURCES below for the ranking)
+//   1st — the single most urgent thing (see SOURCES below for the ranking);
+//         when nothing is urgent, the lesson moves up to 1st
 //   2nd — the next lesson (or level test), when it fits the budget
 //   3rd — a short speaking prompt, always
 //   then — the next most urgent thing, and so on, until the budget is full.
@@ -55,7 +56,7 @@ const StudyPlan = (function () {
     const SEC_PER_MORPH_Q = 15;        // Hungarian verb/suffix/prefix/morphology drillers
     const SEC_PER_MATCH_PAIR = 8;
     const BLOCK_MINUTES = 1.5;         // one practice block — several short ones beat one long one
-    const REVIEW_BLOCK_WORDS = 9;      // ~3 min: flashcards are quick, 4-word blocks would be choppy
+    const REVIEW_BLOCK_WORDS = 10;     // ~3 min: flashcards are quick, 4-word blocks would be choppy
     const VERB_SPEED_SECONDS = 60;
     const SPEAKING_PROMPT_SECONDS = 40;
     const DEFAULT_LESSON_MINUTES = 10; // fallback when estimatedMinutes is null (100% of HU, ~38% of ES)
@@ -84,6 +85,7 @@ const StudyPlan = (function () {
     let _startedAt = null;
     let _overtime = false; // learner chose to keep going after time ran out
     let _used = {};        // source key -> blocks taken this plan
+    let _passed = new Set(); // queue indices the learner skipped (not the same as _skipped, the lesson that didn't fit)
 
     // ----------------------------------------
     // SOURCES
@@ -281,9 +283,13 @@ const StudyPlan = (function () {
         const add = item => { items.push(item); remaining -= item.estMinutes; };
         const last = () => _variety(items[items.length - 1]);
 
-        // 1st — the most urgent thing.
-        const first = _pick(sources, null, remaining);
-        if (first) add(first);
+        // 1st — the most urgent thing. When nothing is actually urgent (a
+        // new learner, say), the lesson goes first instead and filler
+        // follows it.
+        if (sources.some(s => s.urgency > URGENCY.FILLER)) {
+            const first = _pick(sources, null, remaining);
+            if (first) add(first);
+        }
 
         // 2nd — the next lesson, or the level test.
         const step = (typeof LearnerPath !== 'undefined') ? LearnerPath.nextStep() : null;
@@ -295,9 +301,10 @@ const StudyPlan = (function () {
             if (remaining >= TEST_MINUTES) add({ kind: 'test', level: step.level, estMinutes: TEST_MINUTES });
             else skipped = { reason: 'test-needs-bigger-block', level: step.level, estMinutes: TEST_MINUTES };
         }
-        if (items.length < 2) {
-            const second = _pick(sources, last(), remaining);
-            if (second) add(second);
+        while (items.length < 2) {
+            const next = _pick(sources, last(), remaining);
+            if (!next) break;
+            add(next);
         }
 
         // 3rd — a short speaking prompt, always (when speech is available
@@ -331,6 +338,7 @@ const StudyPlan = (function () {
         _skipped = skipped;
         _startedAt = Date.now();
         _overtime = false;
+        _passed = new Set();
 
         return { minutes, items, skipped };
     }
@@ -425,6 +433,21 @@ const StudyPlan = (function () {
         return current();
     }
 
+    // Moves past the current item without it counting as done.
+    function skip() {
+        if (isActive()) _passed.add(_index);
+        return advance();
+    }
+
+    function wasSkipped(index) {
+        return _passed.has(index);
+    }
+
+    // Items actually done (behind the pointer, not skipped).
+    function doneCount() {
+        return _index - [..._passed].filter(i => i < _index).length;
+    }
+
     // Ends the plan without finishing it — "Leave session," no persistence,
     // matches "a clear start and end" rather than a lingering resumable to-do.
     function discard() {
@@ -435,6 +458,7 @@ const StudyPlan = (function () {
         _startedAt = null;
         _overtime = false;
         _used = {};
+        _passed = new Set();
     }
 
     return {
@@ -453,6 +477,9 @@ const StudyPlan = (function () {
         currentIndex,
         current,
         advance,
+        skip,
+        wasSkipped,
+        doneCount,
         discard
     };
 })();

@@ -2372,6 +2372,7 @@ window.Reader = {
         const meta = this.stories.find(s => s.id === this.currentStoryId);
         // Inside a timed session, go straight back to it — no series offer.
         const inSession = typeof StudyPlanRunner !== 'undefined' && StudyPlanRunner.isReadingItem(this.currentStoryId);
+        if (inSession) StudyPlanRunner.markReadingFinished(this.currentStoryId);
         const next = !inSession && meta && this._nextInSeries(meta, getReadStoryIds());
         if (next) this.showNextInSeries(meta, next);
         else this.closeStory();

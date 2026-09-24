@@ -61,7 +61,24 @@ needs re-reading before starting new work; it's reference only.
     Meg"; finishing the story returned to the session with it ticked off;
     leaving the Library through the nav ended the session.
     Not built: the Writing Studio's open composition (too long for a
-    short block), and a "skip this one" control on the checklist.
+    short block).
+    **Follow-ups the same day**, after the user reviewed it:
+    - When nothing is urgent (a new learner), the lesson goes 1st and
+      filler follows it, instead of a verb drill before Lesson 1.
+    - A story only counts as done when it's finished
+      (`StudyPlanRunner.markReadingFinished()`, called from
+      `finishStory()`). Closed early, it stays the current item.
+    - "Skip this activity": a quiet text link under the checklist's main
+      button and above every embedded driller. `StudyPlan.skip()` moves
+      on without counting it: the checklist shows it struck through with
+      "–" and no green tick, and the completion screen's "N things done"
+      leaves skips out (`doneCount()`).
+    - Reviews come in blocks of 10 (`REVIEW_BLOCK_WORDS`).
+    Verified in the preview: a new learner's plan starts with the lesson;
+    reviews came out ×10; the skip link above an embedded Translation
+    moved on to the next item and marked the skipped one; closing a
+    story early left it current, finishing it ticked it off; completion
+    read "2 things done" for 3 items with 1 skipped.
 
 83. ~~**"Only words from my lessons" opt-in toggle on every dictionary-wide driller**~~ — **Done 2026-09-23.**
     User asked for a switch on the "relevant" Workshop drillers that

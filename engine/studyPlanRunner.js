@@ -130,12 +130,17 @@ const StudyPlanRunner = (function () {
         const skip = StudyPlan.skipped();
         const current = items[index];
 
-        const rows = items.map((item, i) => `
-            <li class="sp-item ${i < index ? 'sp-item-done' : ''} ${i === index ? 'sp-item-current' : ''}">
-                <span class="sp-item-check">${i < index ? '✓' : i + 1}</span>
-                <span class="sp-item-label">${esc(itemLine(item))}</span>
-            </li>
-        `).join('');
+        const rows = items.map((item, i) => {
+            const passed = i < index && StudyPlan.wasSkipped(i);
+            const state = passed ? 'sp-item-passed' : (i < index ? 'sp-item-done' : (i === index ? 'sp-item-current' : ''));
+            const mark = passed ? '–' : (i < index ? '✓' : i + 1);
+            return `
+                <li class="sp-item ${state}">
+                    <span class="sp-item-check">${mark}</span>
+                    <span class="sp-item-label">${esc(itemLine(item))}</span>
+                </li>
+            `;
+        }).join('');
 
         host.innerHTML = `
             <div class="sp-checklist">
@@ -143,14 +148,41 @@ const StudyPlanRunner = (function () {
                 <ul class="sp-item-list">${rows}</ul>
                 ${skip ? `<p class="sp-skipped">${esc(skipText(skip))}</p>` : ''}
                 <button class="btn-primary" data-sp-go="1">${esc(itemLine(current))} →</button>
+                <div class="sp-activity-bar"><button class="sp-skip-link" data-sp-skip="1">Skip this activity</button></div>
                 <button class="dk-secondary" data-sp-leave="1">Leave session</button>
             </div>
         `;
 
         const goBtn = host.querySelector('[data-sp-go]');
         if (goBtn) goBtn.addEventListener('click', () => launchItem(current));
+        const skipBtn = host.querySelector('[data-sp-skip]');
+        if (skipBtn) skipBtn.addEventListener('click', skipCurrent);
         const leaveBtn = host.querySelector('[data-sp-leave]');
         if (leaveBtn) leaveBtn.addEventListener('click', leave);
+    }
+
+    // ----------------------------------------
+    // SKIPPING
+    // ----------------------------------------
+
+    // Moves on without the current activity counting as done — from the
+    // checklist, or from the link above an embedded driller.
+    function skipCurrent() {
+        if (_embeddedDriller && typeof _embeddedDriller.stop === 'function') _embeddedDriller.stop();
+        _embeddedDriller = null;
+        const next = StudyPlan.skip();
+        if (next && !(StudyPlan.isTimeUp() && !StudyPlan.overtime())) launchItem(next);
+        else renderChecklist();
+    }
+
+    // The container an embedded activity renders into, with the skip link
+    // above it.
+    function _activityShell(host) {
+        host.innerHTML = `
+            <div class="sp-activity-bar"><button class="sp-skip-link" data-sp-skip="1">Skip this activity</button></div>
+            <div id="study-plan-driller"></div>
+        `;
+        host.querySelector('[data-sp-skip]').addEventListener('click', skipCurrent);
     }
 
     // ----------------------------------------
@@ -161,7 +193,7 @@ const StudyPlanRunner = (function () {
         _embeddedDriller = null;
         if (item.kind === 'grammar' && typeof GrammarDriller !== 'undefined') {
             const host = activityHost();
-            host.innerHTML = '<div id="study-plan-driller"></div>';
+            _activityShell(host);
             _embeddedDriller = GrammarDriller;
             if (typeof UI !== 'undefined') UI.showLoading('Preparing grammar practice…');
             try {
@@ -171,7 +203,7 @@ const StudyPlanRunner = (function () {
             }
         } else if (item.kind === 'vocabulary' && typeof VocabularyDriller !== 'undefined') {
             const host = activityHost();
-            host.innerHTML = '<div id="study-plan-driller"></div>';
+            _activityShell(host);
             _embeddedDriller = VocabularyDriller;
             if (typeof UI !== 'undefined') UI.showLoading('Preparing vocabulary practice…');
             try {
@@ -181,7 +213,7 @@ const StudyPlanRunner = (function () {
             }
         } else if (item.kind === 'listening' && typeof ListeningDriller !== 'undefined') {
             const host = activityHost();
-            host.innerHTML = '<div id="study-plan-driller"></div>';
+            _activityShell(host);
             _embeddedDriller = ListeningDriller;
             if (typeof UI !== 'undefined') UI.showLoading('Preparing listening practice…');
             try {
@@ -191,7 +223,7 @@ const StudyPlanRunner = (function () {
             }
         } else if (item.kind === 'speaking' && typeof SpeakingDriller !== 'undefined') {
             const host = activityHost();
-            host.innerHTML = '<div id="study-plan-driller"></div>';
+            _activityShell(host);
             _embeddedDriller = SpeakingDriller;
             if (typeof UI !== 'undefined') UI.showLoading('Preparing speaking practice…');
             try {
@@ -206,7 +238,7 @@ const StudyPlanRunner = (function () {
             // 'speaking' kind above launches — this is the guaranteed quick
             // slot, not the budget-gated longer drill block.
             const host = activityHost();
-            host.innerHTML = '<div id="study-plan-driller"></div>';
+            _activityShell(host);
             _embeddedDriller = SpeakingDriller;
             if (typeof UI !== 'undefined') UI.showLoading('Preparing speaking prompt…');
             try {
@@ -220,7 +252,7 @@ const StudyPlanRunner = (function () {
             }
         } else if (item.kind === 'match' && typeof DeckMatch !== 'undefined') {
             const host = activityHost();
-            host.innerHTML = '<div id="study-plan-driller"></div>';
+            _activityShell(host);
             DeckMatch.render(document.getElementById('study-plan-driller'), {
                 words: item.words,
                 deckId: 'timed-session',
@@ -233,7 +265,7 @@ const StudyPlanRunner = (function () {
             _embeddedDriller = DeckMatch;
         } else if (item.kind === 'translation' && typeof TranslationDriller !== 'undefined') {
             const host = activityHost();
-            host.innerHTML = '<div id="study-plan-driller"></div>';
+            _activityShell(host);
             _embeddedDriller = TranslationDriller;
             if (typeof UI !== 'undefined') UI.showLoading('Preparing translation practice…');
             try {
@@ -244,7 +276,7 @@ const StudyPlanRunner = (function () {
         } else if (item.kind === 'driller' && HU_DRILLERS[item.drillerId] && HU_DRILLERS[item.drillerId]()) {
             const mod = HU_DRILLERS[item.drillerId]();
             const host = activityHost();
-            host.innerHTML = '<div id="study-plan-driller"></div>';
+            _activityShell(host);
             _embeddedDriller = mod;
             if (typeof UI !== 'undefined') UI.showLoading('Preparing practice…');
             try {
@@ -354,12 +386,13 @@ const StudyPlanRunner = (function () {
         if (item && item.kind === 'lesson' && typeof LearnerPath !== 'undefined' && LearnerPath.isComplete(item.lessonId)) {
             StudyPlan.advance();
         }
-        // A reading item counts as done once the learner is back, finished
-        // or not — they chose to stop, and it shouldn't block the plan.
-        if (item && item.kind === 'reading' && _returningFromReading) {
+        // A reading item only counts as done when the story was finished;
+        // closed early, it stays current (the learner can resume or skip).
+        if (item && item.kind === 'reading' && _returningFromReading && _readingFinished) {
             StudyPlan.advance();
         }
         _returningFromReading = false;
+        _readingFinished = false;
         renderChecklist();
     }
 
@@ -369,10 +402,17 @@ const StudyPlanRunner = (function () {
     // The Reader has no results screen to mount a "Next" button on, so it
     // calls these instead (engine/reader.js's finishStory()/closeStory()).
     let _returningFromReading = false;
+    let _readingFinished = false;
 
     function isReadingItem(storyId) {
         const item = StudyPlan.current();
         return !!(item && item.kind === 'reading' && item.storyId === storyId);
+    }
+
+    // Called by finishStory() — the story was read to the end, not just
+    // closed.
+    function markReadingFinished(storyId) {
+        if (isReadingItem(storyId)) _readingFinished = true;
     }
 
     // Deferred a tick: closeStory() also runs when the learner leaves the
@@ -425,7 +465,7 @@ const StudyPlanRunner = (function () {
         const host = activityHost();
         if (!host) return;
 
-        const doneCount = StudyPlan.currentIndex();
+        const doneCount = StudyPlan.doneCount();
         const startedAt = StudyPlan.startedAt();
         const elapsed = startedAt ? formatElapsed(Date.now() - startedAt) : null;
         StudyPlan.discard();
@@ -556,5 +596,5 @@ const StudyPlanRunner = (function () {
         open();
     }
 
-    return { open, start, openBudgetPicker, mountNextAction, onEnter, teardown, isReadingItem, onReadingClosed };
+    return { open, start, openBudgetPicker, mountNextAction, onEnter, teardown, isReadingItem, markReadingFinished, onReadingClosed };
 })();
