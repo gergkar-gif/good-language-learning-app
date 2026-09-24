@@ -146,7 +146,7 @@ const ListeningRunner = (function () {
             ${typeof UI !== 'undefined' && UI.diacriticsBarHtml ? UI.diacriticsBarHtml('.gd-input') : ''}
         `;
         const input = _container.querySelector('.gd-input');
-        input.addEventListener('keydown', e => { if (e.key === 'Enter') _doCheck(); });
+        input.addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); _doCheck(); } });
 
         _checkFn = () => {
             const userVal = input.value;
@@ -172,7 +172,7 @@ const ListeningRunner = (function () {
             ${typeof UI !== 'undefined' && UI.diacriticsBarHtml ? UI.diacriticsBarHtml('.gd-input') : ''}
         `;
         const input = _container.querySelector('.gd-input');
-        input.addEventListener('keydown', e => { if (e.key === 'Enter') _doCheck(); });
+        input.addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); _doCheck(); } });
 
         _checkFn = () => {
             const userVal = input.value;
@@ -309,6 +309,9 @@ const ListeningRunner = (function () {
             const isInput = e.target && (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA');
 
             if (e.key === 'Enter') {
+                // Same guard as GrammarRunner: a text input's own Enter has
+                // already run Check, so don't also click the Next it revealed.
+                if (e.defaultPrevented) return;
                 const nextBtn = _container.querySelector('[data-action="next"]:not(.hidden)');
                 const checkBtn = _container.querySelector('[data-action="check"]:not(.hidden)');
                 if (nextBtn && !nextBtn.disabled) {

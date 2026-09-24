@@ -262,7 +262,7 @@ const GrammarRunner = (function () {
         `;
 
         const input = _container.querySelector('.gd-input');
-        input.addEventListener('keydown', e => { if (e.key === 'Enter') _doCheck(); });
+        input.addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); _doCheck(); } });
 
         const hintBtn = _container.querySelector('.gd-hint-btn');
         const hintArea = _container.querySelector('.gd-hint-area');
@@ -339,7 +339,7 @@ const GrammarRunner = (function () {
         `;
 
         const input = _container.querySelector('.gd-input');
-        input.addEventListener('keydown', e => { if (e.key === 'Enter') _doCheck(); });
+        input.addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); _doCheck(); } });
 
         _onCheck(() => {
             const userVal = input.value;
@@ -498,6 +498,10 @@ const GrammarRunner = (function () {
             const isInput = e.target && (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA');
 
             if (e.key === 'Enter') {
+                // A text input's own Enter already ran Check (and marked the
+                // event handled); acting on it again here clicked the Next
+                // button Check had just revealed, skipping the feedback.
+                if (e.defaultPrevented) return;
                 const nextBtn = _container.querySelector('[data-action="next"]:not(.hidden)');
                 const checkBtn = _container.querySelector('[data-action="check"]:not(.hidden)');
                 if (nextBtn && !nextBtn.disabled) {
