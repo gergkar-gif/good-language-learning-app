@@ -670,7 +670,9 @@ function renderReviewSessionSummary() {
     // Workshop, and "Done" would drop the learner into Decks with the
     // session left hanging.
     const inTimedSession = typeof StudyPlan !== 'undefined' && StudyPlan.isActive();
-    const missedCount = inTimedSession ? 0 : s.missed.length;
+    // Practising them opens the Vocabulary Driller, which is B1+.
+    const vocabDrillerOpen = typeof Workshop === 'undefined' || !Workshop.isAvailable || Workshop.isAvailable('vocabulary');
+    const missedCount = (inTimedSession || !vocabDrillerOpen) ? 0 : s.missed.length;
 
     summaryEl.innerHTML = `
         <p class="review-summary-eyebrow">Session complete</p>

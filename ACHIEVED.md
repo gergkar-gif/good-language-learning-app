@@ -9,6 +9,23 @@ needs re-reading before starting new work; it's reference only.
 
 ## Completed queue items
 
+85. ~~**Vocabulary Driller's B1 gate closed everywhere, including timed sessions**~~ — **Done 2026-09-24.**
+    The driller has been B1+ since 2026-09-23 (`minLevel: 'B1'` in
+    `engine/workshop.js`, mirrored in RecommendationEngine), but four
+    other buttons opened it directly. Below B1, `Workshop.open()` just
+    bounced them to the picker, which is why the user's "review missed
+    words" after a Decks review "just sends me to Workshop". The leaks:
+    Decks' "Practice N missed words", the lesson summary's "Vocabulary
+    (N words)" reinforce button and its goal-remediation fallback, and
+    the timed session's vocabulary blocks. Added `Workshop.isAvailable(id)`
+    (the picker's own `_available()` rule) and used it at all four, so
+    the gate has one source. Below B1 these buttons are now hidden, and
+    the goal-remediation button falls back to speaking. Applies to every
+    course, not just Spanish, same as the picker. Verified in the
+    preview: at A1 a 30-min plan with 25 weak, due words had no vocabulary
+    blocks and neither button showed; with the level faked to B1 all of
+    them came back.
+
 84. ~~**Time-Based Sessions rebuilt: urgency-ranked, short blocks, runs to the clock**~~ — **Done 2026-09-24.**
     The old builder had a fixed order and only used reviews, the next
     lesson, grammar, vocabulary, listening, speaking and Match Game. It

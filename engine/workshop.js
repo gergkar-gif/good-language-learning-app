@@ -415,7 +415,15 @@ const Workshop = (function () {
         }
     });
 
-    return { render, open, close, activeDriller };
+    // Whether a driller can be opened right now (language, minimum level) —
+    // for buttons elsewhere that open one directly, so they don't offer a
+    // driller that open() would only bounce back to the picker.
+    function isAvailable(id) {
+        const driller = DRILLERS.find(d => d.id === id);
+        return !driller || _available(driller);
+    }
+
+    return { render, open, close, activeDriller, isAvailable };
 })();
 
 if (typeof window !== 'undefined') {

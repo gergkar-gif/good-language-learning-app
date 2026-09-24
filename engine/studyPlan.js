@@ -147,10 +147,12 @@ const StudyPlan = (function () {
             if (gv && gv.skill) sources.push(_source('grammar:' + gv.skill, 'grammar', URGENCY.FILLER, () => grammarItem(gv.skill)));
         }
 
-        // Vocabulary — weakest words first, a few per block.
+        // Vocabulary — weakest words first, a few per block. Only from B1:
+        // the Vocabulary Driller is B1+ (engine/workshop.js's minLevel).
         const weak = (typeof LearnerModel !== 'undefined') ? LearnerModel.weakWords(20) : [];
+        const vocabOpen = typeof Workshop === 'undefined' || !Workshop.isAvailable || Workshop.isAvailable('vocabulary');
         const drilled = new Set(opts.drilledWords || []);
-        const wordBlocks = _chunks(weak.filter(w => !drilled.has(w.lemma)), _perBlock(SEC_PER_VOCAB_WORD));
+        const wordBlocks = vocabOpen ? _chunks(weak.filter(w => !drilled.has(w.lemma)), _perBlock(SEC_PER_VOCAB_WORD)) : [];
         if (wordBlocks.length) {
             sources.push(_source('vocabulary', 'vocabulary', URGENCY.VOCAB_WEAK, () => {
                 const words = wordBlocks.shift();

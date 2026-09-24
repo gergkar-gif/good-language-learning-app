@@ -722,6 +722,12 @@ function closeLesson(options) {
 // on Workshop with a driller already open and scoped, instead of wherever
 // the lesson was originally opened from. The learner chose to keep
 // practicing, not to leave.
+// The Vocabulary Driller is B1+ (engine/workshop.js's minLevel) — below
+// that, opening it only bounces to the Workshop picker.
+function _vocabDrillerAvailable() {
+    return typeof Workshop === 'undefined' || !Workshop.isAvailable || Workshop.isAvailable('vocabulary');
+}
+
 function _openReinforce(drillerId, options) {
     teardownLesson();
     document.getElementById('lesson-screen').classList.add('hidden');
@@ -2270,7 +2276,7 @@ function summaryReinforceHtml(grammarSkill, words, level) {
                         Quick Grammar (${QUICK_REINFORCE_COUNT} questions)
                     </button>
                 ` : ''}
-                ${words.length ? `
+                ${words.length && _vocabDrillerAvailable() ? `
                     <button class="dk-secondary" data-reinforce-vocab="1">
                         Vocabulary (${words.length} ${words.length === 1 ? 'word' : 'words'})
                     </button>
@@ -2465,7 +2471,7 @@ async function renderLessonSummary(firstTime, rankBefore) {
         btn.addEventListener('click', () => {
             if (grammarSkill) {
                 _openReinforce('grammar', { skill: grammarSkill, count: 3 });
-            } else if (words && words.length) {
+            } else if (words && words.length && _vocabDrillerAvailable()) {
                 _openReinforce('vocabulary', { words: words.slice(0, 3) });
             } else {
                 _openReinforce('speaking', { count: 3 });
