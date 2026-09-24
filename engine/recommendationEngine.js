@@ -43,13 +43,12 @@ const RecommendationEngine = (function () {
             ? UI.escape(value) : String(value == null ? '' : value);
     }
 
-    // A curated title map exists for Hungarian skill ids
-    // (content/hu/indexes/grammar-titles.json, e.g. "ban-ben-in" ->
-    // "-ban / -ben — In") specifically because the blind hyphen-to-space
-    // regex below can't know a suffix should keep its leading dash or that
-    // "in"/"to" etc. are prepositions, not words to title-case ("Ban Ben
-    // In"). Spanish has no equivalent file, so that fetch fails (404) and
-    // resolves to {}. Keyed by the resolved path (not a single flat
+    // Curated skill names live in content/<lang>/indexes/grammar-titles.json
+    // (e.g. "cambio-radical-reflexivos" -> "stem-changing reflexive verbs"),
+    // written lowercase-first so they sit mid-sentence in practice
+    // suggestions ("You made a few mistakes with … lately."). A skill
+    // missing from the file falls back to its id with spaces, which reads
+    // better mid-sentence than title case. Keyed by the resolved path (not a single flat
     // variable) so switching course language at runtime — no reload —
     // can't keep serving whichever language's map happened to load first;
     // humanizeSkill() re-resolves the current path on every call, cheap
@@ -177,7 +176,7 @@ const RecommendationEngine = (function () {
         const path = (typeof Lang !== 'undefined') ? Lang.content('indexes/grammar-titles.json') : null;
         const titles = path ? _grammarTitlesCache[path] : null;
         if (titles && titles[key]) return titles[key];
-        return key.replace(/[-_]+/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+        return key.replace(/[-_]+/g, ' ');
     }
 
     // A `secondary` candidate's button label — shared by Home's own

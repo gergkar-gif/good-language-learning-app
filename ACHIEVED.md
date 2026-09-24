@@ -9,6 +9,30 @@ needs re-reading before starting new work; it's reference only.
 
 ## Completed queue items
 
+89. ~~**Readable, CEFR-style names for grammar skills**~~ — **Done 2026-09-24.** (Was ROADMAP.md active item 6.)
+    Practice suggestions name the weak skill mid-sentence ("You made a
+    few mistakes with … lately", item 88), but Spanish had no curated
+    names, so learners saw title-cased IDs ("Cambio Radical Reflexivos",
+    "Estar Ando") or story titles ("La crisis de 1929").
+    - New `content/es-es/indexes/grammar-titles.json` (459) and
+      `content/es-latam/indexes/grammar-titles.json` (751): every skill
+      in both courses, 781 distinct IDs. Hungarian's 46 were restyled to
+      match. Names use plain CEFR-inventory English, start lowercase and
+      are written to sit mid-sentence: "stem-changing reflexive verbs",
+      "estar + gerund for -ar verbs", "stating purpose with a fin de
+      que". No colons, dashes or parentheses.
+    - Names follow what the tagged exercises actually test, not the ID,
+      where the two disagree (see ROADMAP.md active item 7). Skills whose
+      exercises contain no grammar are named after the activity:
+      "understanding the text", "putting sentences in order".
+    - Drafted in parallel batches from each skill's sample exercises and
+      lesson titles, then reviewed by hand against the ID and the
+      exercises.
+    - `engine/drills/grammar.js` capitalises the first letter for its
+      topic list. `humanizeSkill()`'s fallback for an unnamed skill is now
+      the ID with spaces, not title case. `scripts/build_grammar_index.py`
+      warns about any skill missing from `grammar-titles.json`.
+
 88. ~~**Practice suggestions lose their item counts and game names**~~ — **Done 2026-09-24.**
     Buttons like "Grammar: Cambio Radical Reflexivos (5 questions)",
     "Match Game (10 words)", "Audio Decode", "Suffix Sprint" and "Fast
@@ -30,7 +54,7 @@ needs re-reading before starting new work; it's reference only.
       "Vocabulary practice", "Word matching", "Listening practice",
       "Speaking practice". The session lengths themselves haven't changed.
     - Follow-up: skill names in these sentences are often raw IDs
-      (ROADMAP.md active item 6).
+      (done the same day, item 89).
 
 87. ~~**New-learner introduction replaced: a quiet first screen, margin notes and end-of-lesson invitations**~~ — **Done 2026-09-24.** (Was ROADMAP.md active item 3.)
     The old system (item 56: Home welcome card, a banner on the first

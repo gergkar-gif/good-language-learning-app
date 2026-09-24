@@ -149,6 +149,15 @@ def main():
         print(f"[{lang}] Distinct skills:        {len(by_skill)}")
         print(f"[{lang}] Output:                 {output_file} ({raw_size:,} bytes)")
 
+        # Learners see skill names mid-sentence ("You made a few mistakes
+        # with ... lately."), so every skill should have a curated name.
+        curated_path = Path(f"content/{lang}/indexes/grammar-titles.json")
+        curated = json.loads(curated_path.read_text(encoding="utf-8")) if curated_path.is_file() else {}
+        uncurated = sorted(s for s in by_skill if s not in curated)
+        if uncurated:
+            print(f"[{lang}] WARNING: {len(uncurated)} skills have no name in {curated_path}: "
+                  + ", ".join(uncurated[:10]) + (" ..." if len(uncurated) > 10 else ""))
+
 
 if __name__ == "__main__":
     main()

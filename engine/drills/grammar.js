@@ -135,7 +135,10 @@ const GrammarDriller = (function () {
         }
         if (_index && _index.bySkill) {
             return Object.keys(_index.bySkill).map(skillId => {
-                const title = (_index.titles && _index.titles[skillId]) || _formatFallbackTitle(skillId);
+                // Curated titles are written to sit mid-sentence ("stem-changing
+                // reflexive verbs"), so capitalise the first letter for a heading.
+                const raw = (_index.titles && _index.titles[skillId]) || _formatFallbackTitle(skillId);
+                const title = raw.charAt(0).toUpperCase() + raw.slice(1);
                 return {
                     id: skillId,
                     title: title,
