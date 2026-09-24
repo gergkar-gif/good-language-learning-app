@@ -442,6 +442,32 @@ const STORY_TYPE_LABELS = {
     current: 'Current Events'
 };
 
+const TRACK_SHELF_LABELS = {
+    latam: 'Latin America',
+    citizenship: 'Citizenship'
+};
+
+// Shelf key for a story in a dual-track level's non-core track, else null.
+function _trackShelfKey(story) {
+    const track = story.unit && story.unit.track;
+    if (story.type === 'world' && track && track !== 'core') return 'track-' + track;
+    return null;
+}
+
+// Shelf order: Original and the non-core track read chronologically (curriculum
+// order — unit label, then lesson, then id); everything else alphabetically.
+function _shelfComparator(shelfKey) {
+    const byTitle = (a, b) => (a.title || '').localeCompare(b.title || '', undefined, { sensitivity: 'base' });
+    const chronological = shelfKey === 'original' || shelfKey.indexOf('track-') === 0;
+    if (!chronological) return byTitle;
+    const num = v => { const n = parseInt(v, 10); return isNaN(n) ? Infinity : n; };
+    return (a, b) =>
+        (num(a.unit && a.unit.label) - num(b.unit && b.unit.label)) ||
+        (num(a.lesson) - num(b.lesson)) ||
+        (a.id || '').localeCompare(b.id || '', undefined, { numeric: true }) ||
+        byTitle(a, b);
+}
+
 // Every CEFR level gets a reading room, even before it has any stories —
 // matches the Learn tab, which shows all levels up front.
 const CEFR_LEVELS = ['A1', 'A2', 'B1', 'B2', 'C1'];
@@ -1528,10 +1554,14 @@ window.Reader = {
 
                 // Within a room, stories are always split into shelves by type
                 // (original / classics / world) — whichever are available.
-                const types = Array.from(new Set(roomStories.map(s => s.type || s.source || 'original')));
+                // A dual-track level's non-core track (ES B1 "latam", HU B1
+                // "citizenship") is stored as type 'world' but is a course of
+                // its own, so it gets its own shelf keyed by the track.
+                const shelfKeyOf = s => _trackShelfKey(s) || s.type || s.source || 'original';
+                const types = Array.from(new Set(roomStories.map(shelfKeyOf)));
 
                 types.forEach(function(type) {
-                    const group = roomStories.filter(s => (s.type || s.source || 'original') === type);
+                    const group = roomStories.filter(s => shelfKeyOf(s) === type).sort(_shelfComparator(type));
                     const shelfId = levelId + '-' + type;
                     // Shelves start expanded (unlike rooms) — opening a room
                     // is already the deliberate step that says "let me look
@@ -1540,7 +1570,7 @@ window.Reader = {
                     html += '<div class="story-shelf">' +
                         '<button class="story-shelf-header" data-shelf-toggle="' + shelfId + '" aria-expanded="true">' +
                             '<h4 class="story-shelf-title">' +
-                                self.escapeHtml(STORY_TYPE_LABELS[type] || type) +
+                                self.escapeHtml(STORY_TYPE_LABELS[type] || TRACK_SHELF_LABELS[type.replace('track-', '')] || type) +
                                 ' <span class="story-shelf-count">(' + group.length + ')</span>' +
                             '</h4>' +
                             '<span class="story-shelf-arrow" id="story-shelf-arrow-' + shelfId + '">▼</span>' +
