@@ -666,7 +666,9 @@ function renderReviewSessionSummary() {
         : '';
 
     // Inside a timed session the next step is the session's own "Next"
-    // button — practising missed words would leave the session for Workshop.
+    // button — practising missed words would leave the session for
+    // Workshop, and "Done" would drop the learner into Decks with the
+    // session left hanging.
     const inTimedSession = typeof StudyPlan !== 'undefined' && StudyPlan.isActive();
     const missedCount = inTimedSession ? 0 : s.missed.length;
 
@@ -682,7 +684,7 @@ function renderReviewSessionSummary() {
                 Practice ${missedCount} missed ${missedCount === 1 ? 'word' : 'words'}
             </button>
         ` : ''}
-        <button class="dk-secondary" onclick="endReviewSession()">Done</button>
+        ${inTimedSession ? '' : '<button class="dk-secondary" onclick="endReviewSession()">Done</button>'}
     `;
     summaryEl.style.display = 'block';
 
