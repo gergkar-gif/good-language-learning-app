@@ -59,6 +59,7 @@ let openWordBankUnit = null;
 // "global search across the whole course", not per-unit. Sits alongside
 // openLevel as a second top-level screen rather than a fifth depth level.
 let openGlobalGrammarGuide = false;
+let openCulturalExam = false;
 
 // Built once per loaded curriculum (collectUnitGrammarTopics() already
 // caches its own fetches, but walking every unit in every level is still
@@ -190,6 +191,18 @@ async function renderCurriculum() {
     const root = document.getElementById('learn-content');
     if (!root) return;
 
+    if (openCulturalExam && typeof HuCulturalExam !== 'undefined') {
+        attachCurriculumEvents(root);
+        await HuCulturalExam.render(root, {
+            onBackLabel: openUnit ? 'Back to Unit' : (openLevel ? `${openLevel} · Units` : 'Lessons'),
+            onBack: () => {
+                openCulturalExam = false;
+                renderCurriculum();
+            }
+        });
+        return;
+    }
+
     const html = openGlobalGrammarGuide ? await globalGrammarGuideHtml()
         : !openLevel ? levelListHtml()
         : !openUnit ? unitListHtml(openLevel)
@@ -250,6 +263,8 @@ function levelListHtml() {
         `;
     }).join('');
 
+    const isHu = (typeof Lang !== 'undefined') && (Lang.code() === 'hu' || String(Lang.code()).startsWith('hu'));
+
     // No heading here — the page header already says "Lessons".
     return `
         <div class="curriculum-top-actions">
@@ -261,6 +276,12 @@ function levelListHtml() {
                 <span class="ud-grammar-guide-title">Take Placement Diagnostic</span>
                 <span class="ud-grammar-guide-arrow" aria-hidden="true">→</span>
             </button>
+            ${isHu ? `
+            <button class="ud-grammar-guide-row hce-entry-row" data-open-cultural-exam="1">
+                <span class="ud-grammar-guide-title">Hungarian Cultural Exam · Magyar kulturális ismereti vizsga</span>
+                <span class="ud-grammar-guide-arrow" aria-hidden="true">→</span>
+            </button>
+            ` : ''}
         </div>
         <div class="level-list">${cards}</div>
     `;
@@ -499,9 +520,22 @@ function dualTrackPathHtml(level, data, units, progress) {
         `<span class="dtp-key"><span class="dtp-key-line dtp-key-line--t${ti}"></span>${UI.escape(t.title)}</span>`
     ).join('');
 
+    const hasCitizenship = (data.tracks || []).some(t => t.id === 'citizenship');
+    const culturalExamBanner = hasCitizenship ? `
+        <div class="hce-track-banner">
+            <div class="hce-track-banner-body">
+                <span class="hce-track-banner-eyebrow">CITIZENSHIP &amp; CULTURAL EXAM LAYER</span>
+                <strong class="hce-track-banner-title">Hungarian Cultural Exam · Magyar kulturális ismereti vizsga</strong>
+                <span class="hce-track-banner-sub">6 official categories · Explained literary &amp; musical artifacts · 4 matching drills · 3 full 30-point mock exams</span>
+            </div>
+            <button type="button" class="hce-primary-btn" data-open-cultural-exam="1">Open Exam Prep →</button>
+        </div>
+    ` : '';
+
     return `
         <div class="dtp">
             <div class="dtp-legend">${legend}</div>
+            ${culturalExamBanner}
             <div class="dtp-path" style="--dtp-h:${height}px">
                 <svg class="dtp-lines" viewBox="${-NORM} 0 ${NORM * 2} ${height}"
                      preserveAspectRatio="none" aria-hidden="true">${lines}</svg>
@@ -661,6 +695,13 @@ function unitDetailHtml(level, unitId) {
                 <span class="ud-grammar-guide-title">Word Bank</span>
                 <span class="ud-grammar-guide-arrow" aria-hidden="true">→</span>
             </button>
+
+            ${unit.track === 'citizenship' ? `
+            <button class="ud-grammar-guide-row hce-entry-row" data-open-cultural-exam="1">
+                <span class="ud-grammar-guide-title">Hungarian Cultural Exam · Magyar kulturális ismereti vizsga</span>
+                <span class="ud-grammar-guide-arrow" aria-hidden="true">→</span>
+            </button>
+            ` : ''}
 
             ${scenario ? `
             <button class="ud-grammar-guide-row ud-scenario-row" data-open-unit-scenario="${UI.escape(scenario.id)}">
@@ -885,6 +926,12 @@ function attachCurriculumEvents(root) {
         if (open) {
             openLevel = open.getAttribute('data-open-level');
             openUnit = null;
+            renderCurriculum();
+            return;
+        }
+
+        if (e.target.closest('[data-open-cultural-exam]')) {
+            openCulturalExam = true;
             renderCurriculum();
             return;
         }

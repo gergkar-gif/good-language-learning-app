@@ -46,6 +46,15 @@ const Workshop = (function () {
             category: 'studios'
         },
         {
+            id: 'hu-cultural-exam',
+            icon: 'hu-cultural-exam',
+            title: 'Hungarian Cultural Exam',
+            sub: 'Magyar kulturális ismereti vizsga · 6 official categories, explained artifacts, matching & 3 mock exams.',
+            containerId: 'hu-cultural-exam-root',
+            langs: ['hu'],
+            category: 'studios'
+        },
+        {
             id: 'verbs',
             icon: 'verbs',
             title: 'Verb Driller',
@@ -132,7 +141,9 @@ const Workshop = (function () {
         'hu-morphology': '<circle cx="50" cy="50" r="42" class="ps-wash"/><rect x="26" y="26" width="48" height="12" class="ps-ink"/><rect x="26" y="44" width="48" height="12" class="ps-accent"/><rect x="26" y="62" width="30" height="12" class="ps-ink"/>',
         // the table-corner mark again, distinct fill order from the
         // Spanish Verb Driller's since only one of the two ever shows
-        'hu-verb': '<circle cx="50" cy="50" r="42" class="ps-wash"/><path d="M50 92 50 8A42 42 0 0 1 50 92Z" class="ps-ink"/><rect x="60" y="60" width="16" height="16" class="ps-accent"/>'
+        'hu-verb': '<circle cx="50" cy="50" r="42" class="ps-wash"/><path d="M50 92 50 8A42 42 0 0 1 50 92Z" class="ps-ink"/><rect x="60" y="60" width="16" height="16" class="ps-accent"/>',
+        // a dome/arch crowned with an accent jewel — Hungarian Cultural Exam
+        'hu-cultural-exam': '<circle cx="50" cy="50" r="42" class="ps-wash"/><path d="M26 70V48a24 24 0 0 1 48 0v22Z" class="ps-ink"/><circle cx="50" cy="20" r="7" class="ps-accent"/>'
     };
 
     function _drillerIcon(id) {
@@ -249,6 +260,7 @@ const Workshop = (function () {
             speaking: typeof SpeakingDriller !== 'undefined' ? SpeakingDriller : null,
             writing: typeof WritingDriller !== 'undefined' ? WritingDriller : null,
             'hu-verb-studio': typeof HuVerbStudio !== 'undefined' ? HuVerbStudio : null,
+            'hu-cultural-exam': typeof HuCulturalExam !== 'undefined' ? HuCulturalExam : null,
             'hu-verb': typeof HuVerbDriller !== 'undefined' ? HuVerbDriller : null,
             'hu-suffix': typeof HuSuffixDriller !== 'undefined' ? HuSuffixDriller : null,
             'hu-prefix': typeof HuPrefixDriller !== 'undefined' ? HuPrefixDriller : null,
