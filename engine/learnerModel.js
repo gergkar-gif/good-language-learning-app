@@ -13,7 +13,9 @@
 //   - engine/recycle.js's recycleSchedule: exercise-id -> SM-2 card, only
 //     joinable to a "skill" via grammar-index.json's bySkill map. Since
 //     step 6, every teaches-tagged exercise records here on its very first
-//     encounter, not just when later redrawn into a recycle block.
+//     encounter, not just when later redrawn into a recycle block. Since
+//     2026-09-25 the Grammar Driller records here too, including its own
+//     bank items as "bank:<id>" (joined by module in _skillRefs()).
 //   - engine/srs.js's srsDeck (active SM-2 cards) and knownWords (graduated/
 //     manually-known words, which drop all SM-2 evidence on graduation).
 //   - engine/leveltest.js's testResults: a ranked "weakest" topic-id list
@@ -68,6 +70,14 @@ const LearnerModel = (function () {
     // magnitude): it shouldn't unilaterally overrule months of recycle
     // history by nuking straight to 'weak', but it shouldn't be silently
     // ignored either.
+    // A card with review history — including one that has only ever been
+    // missed: 'again' resets `reviews` to 0 (engine/srs.js, engine/
+    // recycle.js), so counting `reviews` alone made a pure miss look
+    // exactly like "never seen" and hid the weakest items of all.
+    function hasHistory(card) {
+        return !!card && (card.reviews > 0 || card.lapses > 0);
+    }
+
     function downgrade(state) {
         const i = STATES.indexOf(state);
         return STATES[Math.max(1, i - 1)]; // never below 'weak' (index 1)
@@ -80,6 +90,40 @@ const LearnerModel = (function () {
         } catch (error) {
             return null;
         }
+    }
+
+    // The Grammar Driller's own item bank (Spanish only today). Its items
+    // aren't in grammar-index.json, so the driller records them in the
+    // recycle schedule as "bank:<id>" and they're joined back here.
+    async function _grammarBank() {
+        if (typeof Content === 'undefined' || typeof Lang === 'undefined') return null;
+        try {
+            return await Content.json(Lang.content('drills/grammar/a1-bank.json'));
+        } catch (error) {
+            return null;
+        }
+    }
+
+    // skillId -> [{ id }] of every recycle-schedule id that is evidence for
+    // it: grammar-index.json's lesson exercises plus the bank items whose
+    // module maps to that skill (same underscore->hyphen rule the Grammar
+    // Driller's _lessonSkillFor() uses). null when neither source loads.
+    async function _skillRefs() {
+        const [index, bank] = await Promise.all([_grammarIndex(), _grammarBank()]);
+        if (!index && !bank) return null;
+        const bySkill = Object.assign({}, (index && index.bySkill) || {});
+        const copied = new Set();
+        ((bank && bank.items) || []).forEach(item => {
+            if (!item || !item.id || !item.module) return;
+            const hyphenated = item.module.replace(/_/g, '-');
+            const skillId = (bySkill[hyphenated] || !bySkill[item.module]) ? hyphenated : item.module;
+            if (!copied.has(skillId)) {
+                bySkill[skillId] = (bySkill[skillId] || []).slice();
+                copied.add(skillId);
+            }
+            bySkill[skillId].push({ id: 'bank:' + item.id });
+        });
+        return bySkill;
     }
 
     // Cached per course after first fetch — a hand-authored file that
@@ -127,14 +171,14 @@ const LearnerModel = (function () {
     // evidence source and the file's own comments below for the combining
     // rule.
     async function skillState(skillId) {
-        const index = await _grammarIndex();
+        const bySkill = await _skillRefs();
         const schedule = (typeof loadRecycleSchedule === 'function') ? loadRecycleSchedule() : {};
-        const refs = (index && index.bySkill && index.bySkill[skillId]) || [];
+        const refs = (bySkill && bySkill[skillId]) || [];
 
         let totalEase = 0, seen = 0;
         refs.forEach(entry => {
             const card = schedule[entry.id];
-            if (card && card.reviews > 0) {
+            if (hasHistory(card)) {
                 seen++;
                 totalEase += card.ease;
             }
@@ -168,18 +212,18 @@ const LearnerModel = (function () {
     // is the actual gap this module closes; today's code silently drops a
     // level-test miss unless recycle evidence also happens to exist.
     async function weakSkills(limit) {
-        const index = await _grammarIndex();
-        if (!index) return [];
+        const bySkill = await _skillRefs();
+        if (!bySkill) return [];
         const schedule = (typeof loadRecycleSchedule === 'function') ? loadRecycleSchedule() : {};
         const flags = _levelTestFlags();
 
         const results = [];
-        Object.keys(index.bySkill || {}).forEach(skillId => {
-            const refs = index.bySkill[skillId] || [];
+        Object.keys(bySkill).forEach(skillId => {
+            const refs = bySkill[skillId] || [];
             let totalEase = 0, seen = 0;
             refs.forEach(entry => {
                 const card = schedule[entry.id];
-                if (card && card.reviews > 0) {
+                if (hasHistory(card)) {
                     seen++;
                     totalEase += card.ease;
                 }
@@ -240,7 +284,7 @@ const LearnerModel = (function () {
         if (typeof srsDeck !== 'undefined' && Array.isArray(srsDeck)) {
             const card = srsDeck.find(c => c.spanish === lemma);
             if (card) {
-                if (!card.reviews) {
+                if (!hasHistory(card)) {
                     return { lemma, state: 'not-yet-seen', verified: false, source: 'srs', ease: card.ease, reviews: 0 };
                 }
                 let state = classifyEase(card.ease);
@@ -261,20 +305,23 @@ const LearnerModel = (function () {
     // rule (returns [] below the review-count floor) but keeps ease/reviews
     // in the returned shape alongside the lemma/translation/pos every
     // caller already expects.
+    //
+    // After those, words the learner keeps looking up in the Reader without
+    // ever taking them on (see recordLookup()) — a word tapped on
+    // LOOKUP_WEAK_DAYS separate days is plainly not known, card or no card.
     function weakWords(limit) {
         if (typeof srsDeck === 'undefined' || !Array.isArray(srsDeck)) return [];
+        const max = limit || WEAK_WORDS_LIMIT;
 
-        const reviewed = srsDeck.filter(card => card.reviews > 0 && typeof card.ease === 'number');
-        if (reviewed.length < MIN_REVIEWED_WORDS) return [];
-
-        return reviewed
+        const reviewed = srsDeck.filter(card => hasHistory(card) && typeof card.ease === 'number');
+        const fromSrs = reviewed.length < MIN_REVIEWED_WORDS ? [] : reviewed
             .slice()
             // Ease is the primary sort, but several cards pile up at
             // SRS_CONFIG.MIN_EASE once they've had a bad run — among those
             // ties, a card with more lapses (engine/srs.js's card.lapses)
             // is the more predictively weak one, so it sorts first.
             .sort((a, b) => (a.ease - b.ease) || ((b.lapses || 0) - (a.lapses || 0)))
-            .slice(0, limit || WEAK_WORDS_LIMIT)
+            .slice(0, max)
             .map(card => ({
                 lemma: card.spanish,
                 translation: card.english,
@@ -282,6 +329,78 @@ const LearnerModel = (function () {
                 ease: card.ease,
                 reviews: card.reviews,
                 leech: !!card.leech
+            }));
+
+        return fromSrs.concat(lookedUpWords()).slice(0, max);
+    }
+
+    // ----------------------------------------
+    // READER LOOKUPS
+    // ----------------------------------------
+    // Tapping a word in the Reader to see what it means is the plainest
+    // "I don't know this" the app gets. Called from showWord() (engine/
+    // reader.js) with the resolved lemma. Two effects:
+    //   - a word with an SRS card counts as a missed review ('again' via
+    //     creditPractice()), at most once per word per day, so re-opening
+    //     the same popup or meeting the word twice in one text isn't
+    //     punished twice;
+    //   - every lookup is logged by day, so a word looked up again and
+    //     again without ever being added still surfaces in weakWords().
+    // Known words (My Dictionary) are skipped — looking one up to hear it
+    // or check a nuance isn't evidence it's been forgotten.
+    const LOOKUP_WEAK_DAYS = 2;
+    const LOOKUP_DAYS_KEPT = 10;
+
+    function _lookupKey() {
+        return (typeof Lang !== 'undefined') ? Lang.key('wordLookups') : 'wordLookups';
+    }
+
+    function _loadLookups() {
+        try {
+            return JSON.parse(localStorage.getItem(_lookupKey()) || '{}');
+        } catch (e) {
+            return {};
+        }
+    }
+
+    function recordLookup(lemma, translation, pos) {
+        if (!lemma) return;
+        if (typeof isKnown === 'function' && isKnown(lemma)) return;
+        const today = new Date().toISOString().slice(0, 10);
+        const lookups = _loadLookups();
+        const entry = lookups[lemma] || { days: [], count: 0 };
+        const firstToday = entry.days.indexOf(today) === -1;
+        entry.count++;
+        if (firstToday) entry.days = entry.days.concat(today).slice(-LOOKUP_DAYS_KEPT);
+        if (translation) entry.translation = translation;
+        if (pos) entry.pos = pos;
+        lookups[lemma] = entry;
+        try {
+            localStorage.setItem(_lookupKey(), JSON.stringify(lookups));
+        } catch (e) {}
+
+        if (firstToday && typeof creditPractice === 'function') {
+            creditPractice([{ lemma, rating: 'again' }]);
+        }
+    }
+
+    // Words looked up on LOOKUP_WEAK_DAYS+ separate days that have no SRS
+    // card and aren't known — most-looked-up first.
+    function lookedUpWords() {
+        const lookups = _loadLookups();
+        const carded = new Set((typeof srsDeck !== 'undefined' && Array.isArray(srsDeck)) ? srsDeck.map(c => c.spanish) : []);
+        return Object.keys(lookups)
+            .filter(lemma => lookups[lemma].days.length >= LOOKUP_WEAK_DAYS)
+            .filter(lemma => !carded.has(lemma) && !(typeof isKnown === 'function' && isKnown(lemma)))
+            .sort((a, b) => (lookups[b].days.length - lookups[a].days.length) || (lookups[b].count - lookups[a].count))
+            .map(lemma => ({
+                lemma,
+                translation: lookups[lemma].translation || '',
+                pos: lookups[lemma].pos || 'unknown',
+                ease: null,
+                reviews: 0,
+                leech: false,
+                lookups: lookups[lemma].days.length
             }));
     }
 
@@ -949,6 +1068,8 @@ const LearnerModel = (function () {
         wordState,
         weakSkills,
         weakWords,
+        recordLookup,
+        lookedUpWords,
         weakDrillers,
         availableDrillers,
         prerequisitesFor,

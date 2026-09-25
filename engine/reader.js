@@ -327,6 +327,14 @@ async function showWord(spanish, contextTokens, tokenIndex) {
     currentWordPos = readings.length ? readings[0].pos : 'unknown';
 
     const cleanWord = currentWord;
+    // A lookup is evidence the word isn't known (LearnerModel.recordLookup()).
+    // Only for a tap that resolved to a dictionary word — names, numbers and
+    // stray punctuation would otherwise pile up as "looked-up words".
+    if (readings.length && typeof LearnerModel !== 'undefined' && LearnerModel.recordLookup) {
+        const gloss = (currentWordTranslation && typeof Lexicon.shortGloss === 'function')
+            ? Lexicon.shortGloss(currentWordTranslation) : currentWordTranslation;
+        LearnerModel.recordLookup(cleanWord, gloss, currentWordPos);
+    }
     const capWarning = document.getElementById('popup-new-word-cap');
     const btn = document.getElementById('popup-add-btn');
     const alreadySaved = srsDeck.find(w => w.spanish === cleanWord);

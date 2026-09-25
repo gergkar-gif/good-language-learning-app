@@ -48,6 +48,7 @@ const GrammarDriller = (function () {
     let _seen = 0;
     let _correct = 0;
     let _missedDetails = [];
+    let _outcomes = new Map(); // recycleId -> 'again' | 'good', sent once per session (_creditRecycle)
 
     let _timerInterval = null;
     let _endTime = 0;
@@ -250,7 +251,11 @@ const GrammarDriller = (function () {
             question: item.prompt,
             options: item.options,
             correct: item.options.indexOf(item.answer),
-            explanation: item.explanation
+            explanation: item.explanation,
+            // Bank items aren't in grammar-index.json; engine/learnerModel.js
+            // joins "bank:" ids back to their skill through the bank's own
+            // module field.
+            recycleId: 'bank:' + item.id
         };
     }
 
@@ -330,7 +335,11 @@ const GrammarDriller = (function () {
             const ex = (file && file.exercises || []).find(e => e.id === entry.id);
             if (!ex) continue;
             const normalised = _normaliseLessonExercise(ex);
-            if (normalised) { resolved.push(normalised); seenIds.add(entry.id); }
+            if (normalised) {
+                normalised.recycleId = entry.id;
+                resolved.push(normalised);
+                seenIds.add(entry.id);
+            }
         }
         return resolved;
     }
@@ -745,6 +754,7 @@ const GrammarDriller = (function () {
         _seen = 0;
         _correct = 0;
         _missedDetails = [];
+        _outcomes = new Map();
 
         if (!pool.length) {
             _phase = PHASE.SETTINGS;
@@ -811,6 +821,7 @@ const GrammarDriller = (function () {
             exercise: _queue[_queueIndex],
             onResult: (correct, details) => {
                 _seen++;
+                _noteOutcome(_queue[_queueIndex], correct);
                 if (correct) {
                     _correct++;
                 } else {
@@ -827,6 +838,25 @@ const GrammarDriller = (function () {
             },
             onNext: _nextExercise
         });
+    }
+
+    // Each answer feeds the item's recycle card (Recycle.credit), which is
+    // what LearnerModel.skillState()/weakSkills() read — so drilling a skill
+    // here moves its weak/developing/strong state, not just this screen's
+    // own [needs review] label. One outcome per item per session; a miss
+    // wins.
+    function _noteOutcome(exercise, correct) {
+        if (!exercise || !exercise.recycleId) return;
+        if (_outcomes.get(exercise.recycleId) === 'again') return;
+        _outcomes.set(exercise.recycleId, correct ? 'good' : 'again');
+    }
+
+    function _creditRecycle() {
+        if (!_outcomes.size || typeof Recycle === 'undefined' || !Recycle.credit) return;
+        const results = [];
+        _outcomes.forEach((rating, id) => results.push({ id, rating }));
+        _outcomes = new Map();
+        Recycle.credit(results);
     }
 
     function _nextExercise() {
@@ -848,6 +878,7 @@ const GrammarDriller = (function () {
     // ================================================================
     function _finishSession() {
         if (_timerInterval) { clearInterval(_timerInterval); _timerInterval = null; }
+        _creditRecycle();
         if (typeof DrillHistory !== 'undefined' && _seen > 0) {
             DrillHistory.record('grammar:' + _selectedModule, {
                 correct: _correct,
@@ -916,6 +947,7 @@ const GrammarDriller = (function () {
 
     function _abortSession() {
         if (_timerInterval) { clearInterval(_timerInterval); _timerInterval = null; }
+        _creditRecycle();
         _phase = PHASE.SETTINGS;
         _renderSettings();
     }

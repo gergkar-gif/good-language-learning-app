@@ -9,6 +9,32 @@ needs re-reading before starting new work; it's reference only.
 
 ## Completed queue items
 
+96. ~~**Grammar Driller, Reader lookups and Vocabulary Driller feed the learner model**~~ — **Done 2026-09-25.**
+    An audit of which activities send no knowledge signal turned up three
+    gaps, and all three are now wired in.
+    - **Grammar Driller:** it recorded only accuracy per module, which the
+      learner model never read, so drilling a skill didn't change its
+      state. Each answer now updates that item's recycle card through the
+      new `Recycle.credit()` (miss = again always; correct = good, due
+      items only). Bank items are recorded as `bank:<id>`, and
+      `LearnerModel._skillRefs()` joins them to their skill by module.
+    - **Reader lookups:** `LearnerModel.recordLookup()` runs from
+      `showWord()`. Looking up a word that has an SRS card counts as
+      **again**, at most once per word per day. Looking up a word with no
+      card is logged (store `wordLookups`, synced), and a word looked up on
+      2+ separate days shows up in `weakWords()`. Known words are skipped.
+    - **Vocabulary Driller:** feeds `creditPractice()`. A miss is again,
+      a correct typed answer is good, and a correct multiple-choice answer
+      is weak.
+    - **Existing bug fixed along the way:** the learner model counted only
+      cards with `reviews > 0`, but "again" resets `reviews` to 0, so an
+      item that had only ever been missed looked "not yet seen". This hid
+      the weakest items of all. It now counts lapses as history too
+      (`hasHistory()`).
+    Test: `tests/drills/test-learner-signals.js`. Still not wired: Library
+    reading, Match outside Decks, Verb Speed by tense and person, and the
+    diagnostic's per-tier answers.
+
 95. ~~**Deck study modes feed the SRS schedule**~~ — **Done 2026-09-25.**
     Learn, Match and Blast used to leave SRS cards untouched, so drilling
     a deck earned no credit and the words stayed due in Review. Now

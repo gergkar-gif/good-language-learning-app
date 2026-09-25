@@ -257,6 +257,26 @@ function recordRecycleOutcome(id, rating) {
     saveRecycleSchedule(schedule);
 }
 
+// Outcomes from the Grammar Driller, which draws these same exercises (and
+// its own bank items, recorded under their bank ids) outside any lesson.
+// Same rule as the Deck modes' creditPractice() in engine/srs.js: a miss
+// is always 'again', but a correct answer only counts when the item is due
+// (or has never been scheduled), so drilling one skill ten times in a
+// sitting can't push its exercises far out of the recycle rotation.
+function creditRecyclePractice(results) {
+    const schedule = loadRecycleSchedule();
+    const currentOpen = currentAppOpen();
+    let changed = false;
+    (results || []).forEach(result => {
+        const existing = schedule[result.id];
+        const due = !existing || normalizeRecycleCard(existing).dueAtOpen <= currentOpen;
+        if (result.rating !== 'again' && !due) return;
+        scheduleRecycleCard(recycleCard(schedule, result.id), result.rating, currentOpen);
+        changed = true;
+    });
+    if (changed) saveRecycleSchedule(schedule);
+}
+
 // Read-only check so the lesson screen can show the same quiet "Leech"
 // badge the vocabulary deck shows (engine/srs.js) — informational only,
 // same as there; it doesn't change whether this exercise gets served.
@@ -269,5 +289,6 @@ window.Recycle = {
     collectPool: collectRecyclePool,
     pick: pickRecycleExercises,
     isLeech: isRecycleLeech,
-    record: recordRecycleOutcome
+    record: recordRecycleOutcome,
+    credit: creditRecyclePractice
 };

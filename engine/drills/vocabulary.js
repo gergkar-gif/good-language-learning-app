@@ -81,6 +81,7 @@ const VocabularyDriller = (function () {
     let _correct = 0;
     let _missed = []; // {lemma, translation, pos} for each distinct word missed this session
     let _missedDetails = []; // [{question, correct, user}] for pedagogical review recap
+    let _srsOutcomes = new Map(); // lemma -> 'again' | 'good' | 'weak', sent to the SRS deck once per session (_creditSrs)
 
     let _timerInterval = null;
     let _endTime = 0;
@@ -781,6 +782,7 @@ const VocabularyDriller = (function () {
         _correct = 0;
         _missed = [];
         _missedDetails = [];
+        _srsOutcomes = new Map();
 
         if (!pool.length) {
             _phase = PHASE.SETTINGS;
@@ -817,6 +819,7 @@ const VocabularyDriller = (function () {
         _correct = 0;
         _missed = [];
         _missedDetails = [];
+        _srsOutcomes = new Map();
 
         if (!pool.length) {
             // This is a scoped request (Decks' "Practice these words", or a
@@ -916,6 +919,7 @@ const VocabularyDriller = (function () {
             exercise: _queue[_queueIndex],
             onResult: (correct, details) => {
                 _seen++;
+                _noteSrsOutcome(currentWord, _queue[_queueIndex], correct);
                 if (correct) {
                     _correct++;
                 } else {
@@ -937,6 +941,27 @@ const VocabularyDriller = (function () {
         });
     }
 
+    // What an answer here is worth to the word's SRS card (creditPractice()
+    // in engine/srs.js): a miss is 'again'; a correct typed answer is
+    // recall, so 'good'; a correct multiple-choice answer is recognition,
+    // so the lighter 'weak'. One outcome per word per session — a miss
+    // wins, then the stronger of two correct answers.
+    function _noteSrsOutcome(word, exercise, correct) {
+        if (!word) return;
+        const rating = !correct ? 'again' : (exercise && exercise.kind === 'fill-blank' ? 'good' : 'weak');
+        const prev = _srsOutcomes.get(word.lemma);
+        if (prev === 'again' || (prev === 'good' && rating === 'weak')) return;
+        _srsOutcomes.set(word.lemma, rating);
+    }
+
+    function _creditSrs() {
+        if (!_srsOutcomes.size || typeof creditPractice !== 'function') return;
+        const results = [];
+        _srsOutcomes.forEach((rating, lemma) => results.push({ lemma, rating }));
+        _srsOutcomes = new Map();
+        creditPractice(results);
+    }
+
     function _nextExercise() {
         if (_mode === MODE.COUNT && _queueIndex + 1 >= _queue.length) {
             _finishSession();
@@ -956,6 +981,7 @@ const VocabularyDriller = (function () {
     // ================================================================
     function _finishSession() {
         if (_timerInterval) { clearInterval(_timerInterval); _timerInterval = null; }
+        _creditSrs();
         _phase = PHASE.RESULTS;
         _renderResults();
     }
@@ -1030,6 +1056,7 @@ const VocabularyDriller = (function () {
 
     function _abortSession() {
         if (_timerInterval) { clearInterval(_timerInterval); _timerInterval = null; }
+        _creditSrs();
         _phase = PHASE.SETTINGS;
         _renderSettings();
     }
