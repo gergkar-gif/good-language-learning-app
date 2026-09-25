@@ -1495,6 +1495,9 @@ const stepRenderers = {
         stepState.checkFn = 'lessonCheckBlank';
         stepState.hintLevel = 0;
         stepState.usedHint = false;
+        // With no translation to fall back on, a single-letter answer has no
+        // hint that wouldn't just be the answer — don't offer one.
+        const canHint = !!stepState.translation || !hintStartRevealsAnswer(stepState.answer);
         return `
             <p class="lsn-question">${escMd(step.sentence).replace(/_{2,}/, '<span class="lsn-blank">?</span>')}</p>
             <div class="lsn-input-with-mic">
@@ -1504,10 +1507,12 @@ const stepRenderers = {
                 </button>
             </div>
             ${typeof UI !== 'undefined' && UI.diacriticsBarHtml ? UI.diacriticsBarHtml('#blank-input') : ''}
-            <div class="lsn-hint-action">
-                <button type="button" class="lsn-hint-btn" id="lsn-hint-btn" onclick="lessonRequestHint()">Need a hint?</button>
-            </div>
-            <div id="lsn-hint-area" class="lsn-hint-area" style="display:none;"></div>
+            ${canHint ? `
+                <div class="lsn-hint-action">
+                    <button type="button" class="lsn-hint-btn" id="lsn-hint-btn" onclick="lessonRequestHint()">Need a hint?</button>
+                </div>
+                <div id="lsn-hint-area" class="lsn-hint-area" style="display:none;"></div>
+            ` : ''}
             ${feedbackHtml()}
         `;
     },
@@ -2801,6 +2806,15 @@ function revealMatches() {
     setFeedback(false, 'Here are the pairs — continue when you are ready.');
 }
 
+// A "starts with" hint reveals the whole answer when the blank is a single
+// letter (Hungarian case/possessive suffixes like "-t" or "-k" are common) —
+// that's not a hint, it's the answer, so callers skip that tier for these.
+function hintStartRevealsAnswer(answer) {
+    const raw = String(answer || '').trim();
+    if (/\s/.test(raw)) return false;
+    return raw.replace(/[^\p{L}\p{N}]/gu, '').length <= 1;
+}
+
 function lessonRequestHint() {
     if (stepState.solved) return;
     const btn = document.getElementById('lsn-hint-btn');
@@ -2812,18 +2826,21 @@ function lessonRequestHint() {
 
     const raw = String(stepState.answer || '').trim();
     const hasMultipleWords = /\s+/.test(raw);
+    const skipStartHint = hintStartRevealsAnswer(raw);
     let startHintHtml = '';
 
-    if (hasMultipleWords) {
-        const firstWord = raw.split(/\s+/)[0].replace(/[.,!?;:¡¿"«»]/g, '');
-        startHintHtml = `Starts with <strong>"${esc(firstWord)}..."</strong>`;
-    } else {
-        const match = raw.match(/[\p{L}\p{N}]/u);
-        const firstChar = match ? match[0] : raw.charAt(0);
-        startHintHtml = `Starts with <strong>"${esc(firstChar)}"</strong>`;
+    if (!skipStartHint) {
+        if (hasMultipleWords) {
+            const firstWord = raw.split(/\s+/)[0].replace(/[.,!?;:¡¿"«»]/g, '');
+            startHintHtml = `Starts with <strong>"${esc(firstWord)}..."</strong>`;
+        } else {
+            const match = raw.match(/[\p{L}\p{N}]/u);
+            const firstChar = match ? match[0] : raw.charAt(0);
+            startHintHtml = `Starts with <strong>"${esc(firstChar)}"</strong>`;
+        }
     }
 
-    if (stepState.hintLevel === 1) {
+    if (stepState.hintLevel === 1 && startHintHtml) {
         area.style.display = 'block';
         area.innerHTML = `
             <div class="lsn-hint-box">
@@ -2841,26 +2858,28 @@ function lessonRequestHint() {
         return;
     }
 
-    if (stepState.hintLevel >= 2) {
-        area.style.display = 'block';
-        area.innerHTML = `
-            <div class="lsn-hint-box">
+    // Either the "starts with" tier was skipped (single-letter answer) or
+    // hintLevel is already 2 — both land on the full hint box.
+    area.style.display = 'block';
+    area.innerHTML = `
+        <div class="lsn-hint-box">
+            ${startHintHtml ? `
                 <div style="margin-bottom: 4px;">
                     <span class="lsn-hint-label">Hint:</span>
                     <span>${startHintHtml}</span>
                 </div>
-                ${stepState.translation ? `
-                    <div>
-                        <span class="lsn-hint-label">English:</span>
-                        <span>"${esc(stepState.translation)}"</span>
-                    </div>
-                ` : ''}
-            </div>
-        `;
+            ` : ''}
+            ${stepState.translation ? `
+                <div>
+                    <span class="lsn-hint-label">English:</span>
+                    <span>"${esc(stepState.translation)}"</span>
+                </div>
+            ` : ''}
+        </div>
+    `;
 
-        btn.textContent = 'All hints shown';
-        btn.disabled = true;
-    }
+    btn.textContent = 'All hints shown';
+    btn.disabled = true;
 }
 
 function lessonCheckBlank() {
