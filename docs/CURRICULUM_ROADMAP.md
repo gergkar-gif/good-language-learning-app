@@ -177,9 +177,14 @@ that's now just a JSON append rather than a `build-manifest.py` edit.
 
 ---
 
-## 🚧 Phase 9: Hungarian B2 — Dual-Track Curriculum Blueprint (`content/hu/b2-curriculum-draft.json`) [PLANNED]
+## 🚧 Phase 9: Hungarian B2 — Dual-Track Curriculum Blueprint (`content/hu/b2-curriculum-draft.json`) [IN PROGRESS]
 
 - **Architecture**: 36 Core B2 Units (`b2-01` to `b2-36`, 216 lessons) + 36 Linked Culture, History & Society Units (`b2-<slug>`, 216 lessons) = **72 Units / 432 Lessons total**.
+- **Progress**:
+  - ✅ **Block 1 (Units 01–06 Core & Culture = 12 units / 72 lessons)**: Completed & shipped.
+  - ✅ **Block 2 (Units 07–12 Core & Culture = 12 units / 72 lessons)**: Completed & shipped.
+  - ✅ **Block 3 (Units 13–18 Core & Culture = 12 units / 72 lessons)**: Completed & shipped (Units 01–18 now live: 36 units / 216 lessons).
+  - ⏳ **Blocks 4–6 (Units 19–36 Core & Culture = 36 units / 216 lessons)**: In progress.
 - **Reading Model**:
   - **Core Track (`core`)**: 1 adapted Hungarian literary classic per unit in Lesson 5 (`content/hu/stories/classics/b2/b2-NN-<slug>.json`).
   - **Culture, History & Society Track (`culture`)**: 5-part serialized reading across Lessons 1–5 (`content/hu/stories/world/b2/b2-<slug>-01..05.json`) + 1 combined standalone story (`content/hu/stories/world/b2/b2-<slug>.json`).
