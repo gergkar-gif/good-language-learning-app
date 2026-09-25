@@ -41,10 +41,12 @@
 //
 // Deliberately NOT the same thing as SRS review (engine/srs.js): this is
 // an unscheduled, on-demand pass through THIS deck's words that resets
-// every time it's opened and touches no review-scheduling data at all —
-// answering here doesn't advance or reset a word's SRS interval. SRS
-// still owns "when should I see this word next"; this is just "let me
-// drill this deck right now."
+// every time it's opened. SRS still owns "when should I see this word
+// next"; this is just "let me drill this deck right now." The one hand-off
+// (2026-09-25): getting stage 4 right on the first try — strict, accented
+// production, as hard as any Review card — counts as a 'good' review, but
+// only for a card that's due (creditPractice()), so re-running a deck
+// can't push intervals out.
 
 const DeckLearn = (function () {
     'use strict';
@@ -299,6 +301,10 @@ const DeckLearn = (function () {
         const stage = STAGES[_current.stage];
         const input = _container.querySelector('.dkl-input');
         const ok = stage.strict ? _gradeTarget(input.value, _current.lemma) : _gradeTargetLenient(input.value, _current.lemma);
+        if (stage.strict && !_current.strictTried) {
+            _current.strictTried = true;
+            if (ok && typeof creditPractice === 'function') creditPractice([{ lemma: _current.lemma, rating: 'good' }]);
+        }
         const correctAnswerText = _withArticle(_current.lemma);
         input.disabled = true;
         input.classList.toggle('dkl-input-correct', ok);

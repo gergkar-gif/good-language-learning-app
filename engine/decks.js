@@ -1554,6 +1554,7 @@ const Decks = (function () {
                 DeckMatch.render(host, {
                     words: wordsOf(deck),
                     deckId: deck.id,
+                    srsCredit: true,
                     onExit: () => { studyMode = null; render(); }
                 });
                 return;
@@ -1569,6 +1570,7 @@ const Decks = (function () {
                 DeckBlast.render(host, {
                     words: wordsOf(deck),
                     deckId: deck.id,
+                    srsCredit: true,
                     onExit: () => { studyMode = null; render(); }
                 });
                 return;

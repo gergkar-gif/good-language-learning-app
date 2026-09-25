@@ -66,6 +66,9 @@ const DeckMatch = (function () {
     let _timeLimitSeconds = null;
     let _wordsByUid = {};
     let _missedWords = new Map();
+    let _matchedUids = new Set();
+    let _srsCredit = false; // Decks only — lessons and the study plan reuse this game without touching the SRS schedule
+    let _credited = false;
     let _feedbackMsg = '';
 
     function _escapeHtml(text) {
@@ -137,11 +140,30 @@ const DeckMatch = (function () {
     }
 
     // ---- Session setup ----
+    // A word missed at any point this session is 'again'; one matched
+    // cleanly is 'weak' (see creditPractice() in engine/srs.js). Sent once
+    // per session — at the end, or on leaving partway — so a word missed
+    // then matched still counts as missed, and unplayed words count as
+    // nothing.
+    function _creditSrs() {
+        if (!_srsCredit || _credited || typeof creditPractice !== 'function') return;
+        _credited = true;
+        const results = [];
+        _missedWords.forEach(w => results.push({ lemma: w.lemma, rating: 'again' }));
+        _matchedUids.forEach(uid => {
+            if (!_missedWords.has(uid)) results.push({ lemma: _wordsByUid[uid].lemma, rating: 'weak' });
+        });
+        creditPractice(results);
+    }
+
     function _startSession() {
+        _creditSrs();
         const shuffledAll = _shuffled(_words0).map((w, i) => ({ uid: i, lemma: w.lemma, translation: w.translation }));
         _wordsByUid = {};
         shuffledAll.forEach(w => { _wordsByUid[w.uid] = w; });
         _missedWords = new Map();
+        _matchedUids = new Set();
+        _credited = false;
         _feedbackMsg = '';
         _totalWords = shuffledAll.length;
         const active = shuffledAll.slice(0, BOARD_SIZE);
@@ -197,6 +219,7 @@ const DeckMatch = (function () {
         });
 
         _recordBest(_finishMs);
+        _creditSrs();
         _render();
         if (typeof _onComplete === 'function') {
             _onComplete({ matched: _matchedTotal, total: _totalWords, timeMs: _finishMs });
@@ -252,6 +275,7 @@ const DeckMatch = (function () {
             a.matched = true;
             b.matched = true;
             _matchedTotal++;
+            _matchedUids.add(a.uid);
             _selected = [];
             _feedbackMsg = '';
             _busy = true; // lock input for the whole flash + remove/insert + settle sequence below
@@ -372,7 +396,7 @@ const DeckMatch = (function () {
     function _wire() {
         const exitBtns = _container.querySelectorAll('[data-match-exit]');
         exitBtns.forEach(btn => {
-            btn.onclick = () => { if (_elapsedInterval) clearInterval(_elapsedInterval); if (_onExit) _onExit(); };
+            btn.onclick = () => { if (_elapsedInterval) clearInterval(_elapsedInterval); _creditSrs(); if (_onExit) _onExit(); };
         });
 
         const restartBtn = _container.querySelector('[data-match-restart]');
@@ -385,7 +409,7 @@ const DeckMatch = (function () {
 
     /**
      * @param {HTMLElement} root
-     * @param {{ words: {lemma:string, translation:string}[], deckId: string, limit: number, timeLimit: number, exitLabel: string, onExit: function, onComplete: function }} options
+     * @param {{ words: {lemma:string, translation:string}[], deckId: string, limit: number, timeLimit: number, exitLabel: string, onExit: function, onComplete: function, srsCredit: boolean }} options
      */
     function render(root, options) {
         _container = root;
@@ -402,6 +426,8 @@ const DeckMatch = (function () {
         _exitLabel = (options && options.exitLabel) || null;
         _onExit = (options && options.onExit) || function () {};
         _onComplete = (options && options.onComplete) || null;
+        _srsCredit = !!(options && options.srsCredit);
+        _credited = true; // nothing from a previous render() to send
         _startSession();
         _render();
     }

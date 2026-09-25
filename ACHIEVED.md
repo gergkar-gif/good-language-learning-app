@@ -9,6 +9,24 @@ needs re-reading before starting new work; it's reference only.
 
 ## Completed queue items
 
+95. ~~**Deck study modes feed the SRS schedule**~~ — **Done 2026-09-25.**
+    Learn, Match and Blast used to leave SRS cards untouched, so drilling
+    a deck earned no credit and the words stayed due in Review. Now
+    `creditPractice()` (`engine/srs.js`) takes their outcomes. A miss in
+    Match or Blast is an automatic **again**, even on a card that isn't
+    due. A correct Match/Blast hit is a new non-button **weak** rating:
+    the interval grows at the "hard" pace (1.2x) and ease stays the same,
+    because recognising a word isn't the same as recalling it. Getting
+    Learn's strict typed stage 4 right on the first try is a full
+    **good**. Weak and good only count for cards that are due, so
+    replaying a deck can't push intervals out. Each game sends one
+    outcome per word per session, and a miss beats a hit. Words with no
+    card are never enrolled. Match is also used by lessons and the study
+    plan, so credit is opt-in (`srsCredit: true`) and only Decks turns it
+    on. Known quirk: a wrong pair in Match marks both tapped words as
+    missed, as the missed-pairs recap already did. Test:
+    `tests/decks/test-deck-srs-credit.js`.
+
 94. ~~**Rewrite the B1 Unit 1 exercises**~~ — **Done 2026-09-25.** (Was ROADMAP.md active item 94.)
     B1 Unit 1 (`b1-01-*`, identical in es-latam and es-es) had been
     machine-templated. The grammar multiple-choice questions quoted
@@ -2337,6 +2355,7 @@ The following completed subsystem initiatives and milestones were previously tra
 ### Decks & SRS Subsystem Polish
 - **Listen to SRS Cards** — Built 2026-09-14. Speech synthesis audio playback on flashcard review.
 - **Quizlet-Style Study Modes (Review / Match / Learn)** — Built 2026-08-27. Full study mode switcher with dedicated mechanics for each mode.
+- **Study Modes Feed SRS** — Built 2026-09-25. Match/Blast misses are "again", hits a weak good; Learn's stage 4 is a good (due cards only). See queue item 95.
 - **Learn Mode Small-Batch Pacing** — Built 2026-08-27. Step-by-step introduction of new words in bite-sized batches.
 - **SRS Hotkeys & Touch Gestures** — Built 2026-09-12. Added desktop keys `1`-`4` and fluid mobile swipe gestures (left = Again, right = Good).
 - **Review Card Stays Put on Phones** — Fixed 2026-09-24. Flipping pushed the rating row below the fold, and hiding it for the next card shrank the page so the browser snapped the scroll back up — the learner scrolled down on every card. `revealAnswer()` (`engine/srs.js`) now scrolls the ratings into view and holds `#review-card` at its flipped height (cleared on session start / Flip↔Type toggle); `.review-flip-actions` uses `margin-top: auto` so Show Answer sits where the ratings were. Same day, Type mode got the same treatment in `revealTypedResult()`, plus `#review-answer` now keeps its (invisible) slot before Check so the input field no longer drops ~90px when the answer appears above it; `isAnswerShown()` checks visibility as well as display for the swipe/keyboard handlers.

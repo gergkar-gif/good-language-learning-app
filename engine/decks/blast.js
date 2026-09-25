@@ -52,6 +52,9 @@ const DeckBlast = (function () {
     let _shields = SURVIVAL_SHIELDS;
     let _timeLeft = TIME_LIMIT_SECONDS;
     let _missedWords = new Map();
+    let _hitUids = new Set();
+    let _srsCredit = false; // set by the Decks screen; see _creditSrs()
+    let _credited = true;
     let _currentTargetWord = null;
     let _activeTargets = [];
     let _shards = [];
@@ -320,7 +323,23 @@ const DeckBlast = (function () {
     // ----------------------------------------
     // SESSION INITIALIZATION
     // ----------------------------------------
+    // A word missed at any point this game (wrong hit on its prompt, or
+    // letting it escape) is 'again'; one only ever hit correctly is 'weak'
+    // (see creditPractice() in engine/srs.js). Sent once per game — at
+    // game over, or on leaving partway.
+    function _creditSrs() {
+        if (!_srsCredit || _credited || typeof creditPractice !== 'function') return;
+        _credited = true;
+        const results = [];
+        _missedWords.forEach(w => results.push({ lemma: w.lemma, rating: 'again' }));
+        _hitUids.forEach(uid => {
+            if (!_missedWords.has(uid)) results.push({ lemma: _words0[uid].lemma, rating: 'weak' });
+        });
+        creditPractice(results);
+    }
+
     function _startSession() {
+        _creditSrs();
         _preloadAudio();
         _pool = _shuffled(_words0);
         _score = 0;
@@ -331,6 +350,8 @@ const DeckBlast = (function () {
         _shields = SURVIVAL_SHIELDS;
         _timeLeft = TIME_LIMIT_SECONDS;
         _missedWords.clear();
+        _hitUids.clear();
+        _credited = false;
         _activeTargets = [];
         _shards = [];
         _screenShake = 0;
@@ -587,6 +608,7 @@ const DeckBlast = (function () {
 
         if (isCorrect) {
             _totalBlasts++;
+            _hitUids.add(_currentTargetWord.uid);
             _streak++;
             if (_streak > _maxStreak) _maxStreak = _streak;
 
@@ -907,6 +929,7 @@ const DeckBlast = (function () {
             _preloadTimer = null;
         }
         _state = 'gameover';
+        _creditSrs();
 
         const prevBest = _getBestScore();
         const isNewBest = _score > prevBest;
@@ -1160,6 +1183,7 @@ const DeckBlast = (function () {
 
         _container.querySelectorAll('[data-blast-exit]').forEach(el => {
             el.onclick = () => {
+                _creditSrs();
                 stop();
                 if (_onExit) _onExit();
             };
@@ -1189,6 +1213,7 @@ const DeckBlast = (function () {
 
         _container.querySelectorAll('[data-blast-lobby]').forEach(el => {
             el.onclick = () => {
+                _creditSrs();
                 stop();
                 _state = 'lobby';
                 _render();
@@ -1219,6 +1244,8 @@ const DeckBlast = (function () {
         _exitLabel = (options && options.exitLabel) || null;
         _onExit = (options && options.onExit) || function () {};
         _onComplete = (options && options.onComplete) || null;
+        _srsCredit = !!(options && options.srsCredit);
+        _credited = true; // nothing played yet
 
         _state = 'lobby';
 

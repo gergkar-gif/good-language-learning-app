@@ -195,12 +195,15 @@ const SRS_CONFIG = {
     MIN_EASE: 1.3,
     MAX_EASE: 3.0,
     // How each rating moves the card's ease factor.
-    EASE_DELTA: { again: -0.20, hard: -0.15, good: 0, easy: 0.15 },
+    // `weak` is never a button: it is what a correct Match/Blast hit is
+    // worth (see creditPractice()) — the 'hard' pace of growth without
+    // 'hard''s ease cut, since recognising a word isn't struggling with it.
+    EASE_DELTA: { again: -0.20, hard: -0.15, weak: 0, good: 0, easy: 0.15 },
     AGAIN_MINUTES: 1,
     // Fixed ramp for the first two successful reviews; after that the
     // interval is driven by the ease factor.
-    FIRST_INTERVAL: { hard: 1, good: 1, easy: 4 },
-    SECOND_INTERVAL: { hard: 3, good: 6, easy: 8 },
+    FIRST_INTERVAL: { hard: 1, weak: 1, good: 1, easy: 4 },
+    SECOND_INTERVAL: { hard: 3, weak: 3, good: 6, easy: 8 },
     HARD_MULTIPLIER: 1.2,
     EASY_BONUS: 1.3,
     MAX_INTERVAL: 365,
@@ -324,7 +327,7 @@ function previewSchedule(card, rating, now) {
         // The floor stops an early rating from ever shortening the schedule.
         const elapsed = card.lastReviewed ? daysBetween(card.lastReviewed, now) : currentInterval;
         const base = Math.max(0, Math.min(currentInterval, elapsed));
-        const multiplier = rating === 'hard' ? SRS_CONFIG.HARD_MULTIPLIER
+        const multiplier = (rating === 'hard' || rating === 'weak') ? SRS_CONFIG.HARD_MULTIPLIER
                          : rating === 'easy' ? ease * SRS_CONFIG.EASY_BONUS
                          : ease;
         interval = Math.max(currentInterval, base * multiplier);
@@ -355,6 +358,30 @@ function scheduleCard(card, rating, now) {
     card.leech = (card.lapses || 0) >= SRS_CONFIG.LEECH_THRESHOLD;
 
     return card;
+}
+
+// Outcomes from the Deck study modes (Learn, Match, Blast), which never
+// show rating buttons of their own. Each result is { lemma, rating }:
+//   'again' — missed in Match/Blast. Always applied: a miss is real
+//             evidence however recently the card was last reviewed.
+//   'good'  — Learn's strict typed stage, answered first time.
+//   'weak'  — a correct Match/Blast hit: recognition, not recall.
+// 'good' and 'weak' only count when the card is due, so replaying a deck
+// can't push its intervals out. A word with no card (never taken on, or
+// already known) is left alone — practising a deck doesn't enrol it.
+function creditPractice(results, now) {
+    now = now || new Date();
+    let changed = false;
+    (results || []).forEach(result => {
+        const card = srsDeck.find(c => c.spanish === result.lemma);
+        if (!card) return;
+        const due = !card.nextReview || new Date(card.nextReview) <= now;
+        if (result.rating !== 'again' && !due) return;
+        scheduleCard(card, result.rating, now);
+        if (result.rating !== 'again') maybeGraduate(card);
+        changed = true;
+    });
+    if (changed) saveDeck();
 }
 
 function formatInterval(minutes) {
