@@ -261,15 +261,33 @@ const SpeechInput = (function () {
         _clearStreamIdleTimer();
         const currentToken = ++_sessionToken;
 
+        // Create the level-meter AudioContext now, synchronously inside the tap
+        // that started listening. iOS Safari leaves a context created later (in
+        // the getUserMedia .then) suspended, so the meter reads silence forever
+        // and the initial-silence timer reports 'no-speech' after 10s.
+        _cleanupAudioAnalysis();
+        const AudioCtx = (typeof window !== 'undefined' && (window.AudioContext || window.webkitAudioContext));
+        if (AudioCtx) {
+            try {
+                _audioCtx = new AudioCtx();
+                if (_audioCtx.state === 'suspended' && typeof _audioCtx.resume === 'function') {
+                    _audioCtx.resume().catch(() => {});
+                }
+            } catch (e) {
+                _audioCtx = null;
+            }
+        }
+        const meterCtx = _audioCtx;
+
         function _setupRecorder(stream) {
             if (!_isListening || currentToken !== _sessionToken) return;
             _mediaStream = stream;
 
-            _cleanupAudioAnalysis();
             try {
-                const AudioCtx = (typeof window !== 'undefined' && (window.AudioContext || window.webkitAudioContext));
-                if (AudioCtx) {
-                    _audioCtx = new AudioCtx();
+                if (meterCtx && _audioCtx === meterCtx) {
+                    if (_audioCtx.state === 'suspended' && typeof _audioCtx.resume === 'function') {
+                        _audioCtx.resume().catch(() => {});
+                    }
                     const source = _audioCtx.createMediaStreamSource(stream);
                     _audioAnalyser = _audioCtx.createAnalyser();
                     _audioAnalyser.fftSize = 64;
@@ -398,7 +416,12 @@ const SpeechInput = (function () {
         // Allow learner to read prompt/prepare before speaking (30s in manual mode, 10s in quick drills)
         _initialSilenceTimeout = setTimeout(() => {
             if (_isListening && !_hasSpoken && !manualStop) {
+                // In a cloud session, a meter that never got a running AudioContext
+                // can't tell silence from speech -- send the recording to Whisper
+                // (stopListening does) instead of declaring 'no-speech'.
+                const meterBlind = _isCloudSttSession && !(_audioCtx && _audioCtx.state === 'running');
                 stopListening();
+                if (meterBlind) return;
                 onError('no-speech');
             }
         }, manualStop ? 30000 : 10000);
