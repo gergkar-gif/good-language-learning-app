@@ -74,6 +74,30 @@ const HuCulturalExam = (function () {
         return copy;
     }
 
+    function _shuffleQuestionOptions(q) {
+        if (!q || !Array.isArray(q.options) || q.options.length < 2) return;
+        const tagged = q.options.map((text, idx) => ({
+            text,
+            isCorrect: idx === q.correct
+        }));
+        const shuffled = _shuffle(tagged);
+        q.options = shuffled.map(item => item.text);
+        q.correct = shuffled.findIndex(item => item.isCorrect);
+    }
+
+    function _shuffleAllMcqs() {
+        if (!_data) return;
+        (_data.mcqs || []).forEach(_shuffleQuestionOptions);
+    }
+
+    function _shuffleMockExam(mockId) {
+        if (!_data || !_data.mockExams) return;
+        const exam = _data.mockExams.find(m => m.id === mockId);
+        if (exam && Array.isArray(exam.questions)) {
+            exam.questions.forEach(_shuffleQuestionOptions);
+        }
+    }
+
     async function _loadData() {
         if (_data) return _data;
         const path = (typeof Lang !== 'undefined' && Lang.content)
@@ -82,6 +106,8 @@ const HuCulturalExam = (function () {
         const res = await fetch(path);
         if (!res.ok) throw new Error('Failed to load cultural-exam.json');
         _data = await res.json();
+        _shuffleAllMcqs();
+        (_data.mockExams || []).forEach(m => _shuffleMockExam(m.id));
         _initMatchRound();
         return _data;
     }
@@ -549,6 +575,7 @@ const HuCulturalExam = (function () {
 
             if (e.target.closest('[data-hce-mcq-reset]')) {
                 _state.mcqAnswers = {};
+                _shuffleAllMcqs();
                 _paint(container, options);
                 return;
             }
@@ -602,6 +629,7 @@ const HuCulturalExam = (function () {
                 _state.activeMockId = mockPickBtn.getAttribute('data-hce-mock-id');
                 _state.mockAnswers = {};
                 _state.mockSubmitted = false;
+                _shuffleMockExam(_state.activeMockId);
                 _paint(container, options);
                 return;
             }
@@ -632,6 +660,7 @@ const HuCulturalExam = (function () {
             if (e.target.closest('[data-hce-mock-retry]')) {
                 _state.mockAnswers = {};
                 _state.mockSubmitted = false;
+                _shuffleMockExam(_state.activeMockId);
                 _paint(container, options);
             }
         });
