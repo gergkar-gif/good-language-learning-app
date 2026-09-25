@@ -364,9 +364,10 @@ function scheduleCard(card, rating, now) {
 // show rating buttons of their own. Each result is { lemma, rating }:
 //   'again' — missed in Match/Blast. Always applied: a miss is real
 //             evidence however recently the card was last reviewed.
-//   'good'  — Learn's strict typed stage, answered first time.
+//   'good'  — Learn's strict typed stage, right on the first try.
+//   'hard'  — the same stage, wrong on the first try.
 //   'weak'  — a correct Match/Blast hit: recognition, not recall.
-// 'good' and 'weak' only count when the card is due, so replaying a deck
+// 'good', 'hard' and 'weak' only count when the card is due, so replaying a deck
 // can't push its intervals out. A word with no card (never taken on, or
 // already known) is left alone — practising a deck doesn't enrol it.
 function creditPractice(results, now) {

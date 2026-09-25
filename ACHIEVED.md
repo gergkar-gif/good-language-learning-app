@@ -18,7 +18,8 @@ needs re-reading before starting new work; it's reference only.
     the interval grows at the "hard" pace (1.2x) and ease stays the same,
     because recognising a word isn't the same as recalling it. Getting
     Learn's strict typed stage 4 right on the first try is a full
-    **good**. Weak and good only count for cards that are due, so
+    **good**; wrong on the first try is **hard**. Weak, good and hard
+    only count for cards that are due, so
     replaying a deck can't push intervals out. Each game sends one
     outcome per word per session, and a miss beats a hit. Words with no
     card are never enrolled. Match is also used by lessons and the study

@@ -76,6 +76,14 @@ credit([{ lemma: 'libro', rating: 'good' }]);
 assert.ok(get('libro').interval >= 21, 'good grows ~2.5x, got ' + get('libro').interval);
 console.log('✓ Learn stage 4 counts as a full good');
 
+// 4b. 'hard' on a due card: 1.2x growth with the ease cut; ignored if not due.
+reset([card('mano'), card('pie', { nextReview: future })]);
+credit([{ lemma: 'mano', rating: 'hard' }, { lemma: 'pie', rating: 'hard' }]);
+assert.strictEqual(get('mano').ease, 2.35, 'hard cuts ease');
+assert.ok(get('mano').interval >= 11 && get('mano').interval <= 14, 'hard grows ~1.2x, got ' + get('mano').interval);
+assert.strictEqual(get('pie').nextReview, future);
+console.log('✓ Learn stage 4 wrong counts as hard (due cards only)');
+
 // 5. Words with no card are not enrolled.
 reset([]);
 credit([{ lemma: 'nuevo', rating: 'again' }, { lemma: 'otro', rating: 'weak' }]);

@@ -43,10 +43,10 @@
 // an unscheduled, on-demand pass through THIS deck's words that resets
 // every time it's opened. SRS still owns "when should I see this word
 // next"; this is just "let me drill this deck right now." The one hand-off
-// (2026-09-25): getting stage 4 right on the first try — strict, accented
-// production, as hard as any Review card — counts as a 'good' review, but
-// only for a card that's due (creditPractice()), so re-running a deck
-// can't push intervals out.
+// (2026-09-25): the first try at stage 4 — strict, accented production,
+// as hard as any Review card — counts as a review: 'good' if right,
+// 'hard' if wrong. Only for a card that's due (creditPractice()), so
+// re-running a deck can't push intervals out.
 
 const DeckLearn = (function () {
     'use strict';
@@ -303,7 +303,7 @@ const DeckLearn = (function () {
         const ok = stage.strict ? _gradeTarget(input.value, _current.lemma) : _gradeTargetLenient(input.value, _current.lemma);
         if (stage.strict && !_current.strictTried) {
             _current.strictTried = true;
-            if (ok && typeof creditPractice === 'function') creditPractice([{ lemma: _current.lemma, rating: 'good' }]);
+            if (typeof creditPractice === 'function') creditPractice([{ lemma: _current.lemma, rating: ok ? 'good' : 'hard' }]);
         }
         const correctAnswerText = _withArticle(_current.lemma);
         input.disabled = true;
