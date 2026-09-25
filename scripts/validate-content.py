@@ -82,19 +82,102 @@ def load_schemas(lang_dir):
     return schemas
 
 
+import re
+
+
+def check_title_style(slug, title):
+    if not isinstance(title, str) or not title.strip():
+        return "empty title"
+    if title == "reading":
+        return None
+    if ":" in title:
+        return "contains colon ':'"
+    if "(" in title or ")" in title:
+        return "contains parentheses"
+    if " - " in title or " – " in title or " — " in title:
+        return "contains separator dash"
+    if " / " in title:
+        return "contains slash between phrases (' / ')"
+    if "*" in title or '"' in title:
+        return "contains asterisk or quote"
+    if re.search(r"\bunit\s*-?\s*\d+", title, re.I):
+        return "contains unit number"
+    if re.search(r"\b(consolidation|unit\d+|translation)\b", title, re.I) or "suffix'" in title.lower():
+        return "contains mechanical/fallback token"
+    allowed_upper_starts = (
+        "España", "América", "Spanish", "Latin", "Hungarian", "DELE", "CCSE",
+        "Magyarország", "Budapest", "István", "Mátyás", "Szent"
+    )
+    if title[0].isupper() and not title.startswith(allowed_upper_starts):
+        return f"starts with uppercase '{title[0]}' (must start lowercase unless proper noun)"
+    words = title.split()
+    if len(words) > 11:
+        return f"too long ({len(words)} words; keep concise)"
+    allowed_caps = {
+        "A1", "A2", "B1", "B2", "C1", "C2", "I",
+        "España", "América", "Latina", "Spanish", "Latin", "American",
+        "Hungarian", "DELE", "CCSE", "Magyarország", "Budapest",
+        "István", "Mátyás", "Szent"
+    }
+    cap_words = [w.strip(",.;") for w in words if w and w[0].isupper() and w.strip(",.;") not in allowed_caps]
+    if cap_words:
+        return f"unexpected capitalized word(s): {cap_words}"
+    return None
+
+
+def validate_grammar_titles(lang_dir, lang):
+    titles_path = lang_dir / "indexes" / "grammar-titles.json"
+    idx_path = lang_dir / "indexes" / "grammar-index.json"
+    if not titles_path.is_file():
+        return []
+    errors = []
+    try:
+        titles = json.loads(titles_path.read_text(encoding="utf-8"))
+    except Exception as e:
+        return [f"{titles_path.relative_to(ROOT)}: invalid JSON ({e})"]
+
+    for slug, title in sorted(titles.items()):
+        reason = check_title_style(slug, title)
+        if reason:
+            errors.append(f"{titles_path.relative_to(ROOT)} :: {slug}\n      title {title!r} violates style: {reason}")
+
+    if idx_path.is_file():
+        try:
+            by_skill = json.loads(idx_path.read_text(encoding="utf-8")).get("bySkill") or {}
+            for skill in sorted(by_skill.keys()):
+                if skill not in titles:
+                    errors.append(
+                        f"{titles_path.relative_to(ROOT)} :: {skill}\n      grammar skill '{skill}' in grammar-index.json has no curated title in grammar-titles.json"
+                    )
+        except Exception:
+            pass
+    return errors
+
+
 def load_skill_registry(lang_dir):
     reg_path = lang_dir / "indexes" / "skill-registry.json"
     if not reg_path.is_file():
-        return None
+        return None, {}, {}
     try:
         data = json.loads(reg_path.read_text(encoding="utf-8"))
-        return set((data.get("skills") or {}).keys())
+        skills_obj = data.get("skills") or {}
+        canonical_set = set(skills_obj.keys())
+        alias_map = {}
+        kind_map = {}
+        for canon, meta in skills_obj.items():
+            if isinstance(meta, dict):
+                if meta.get("kind"):
+                    kind_map[canon] = meta["kind"]
+                for al in meta.get("aliases") or []:
+                    alias_map[al] = canon
+        return canonical_set, alias_map, kind_map
     except Exception:
-        return None
+        return None, {}, {}
 
 
-def validate_exercise_metadata(data, lang, skill_registry):
+def validate_exercise_metadata(data, lang, skill_registry, alias_map=None):
     meta_errors = []
+    alias_map = alias_map or {}
     allowed_str = ", ".join(sorted(ALLOWED_EXERCISE_CATEGORIES))
     for idx, ex in enumerate(data.get("exercises", [])):
         ex_id = ex.get("id", f"exercises[{idx}]")
@@ -118,7 +201,14 @@ def validate_exercise_metadata(data, lang, skill_registry):
 
         if isinstance(teaches, list) and skill_registry is not None:
             for slug in teaches:
-                if slug not in skill_registry:
+                if slug in alias_map:
+                    meta_errors.append(
+                        (
+                            f"exercises/{idx} ({ex_id})",
+                            f"teaches slug '{slug}' is an alias; use '{alias_map[slug]}' instead",
+                        )
+                    )
+                elif slug not in skill_registry:
                     meta_errors.append(
                         (
                             f"exercises/{idx} ({ex_id})",
@@ -143,12 +233,22 @@ def validate_language(lang, only=None):
         return 0, 0, []
 
     schemas = load_schemas(lang_dir)
-    skill_registry = load_skill_registry(lang_dir)
+    skill_registry, alias_map, _kind_map = load_skill_registry(lang_dir)
     enforce_metadata = METADATA_ENFORCED_EVERYWHERE or (only is not None)
     failures = []
     passed = failed = 0
     skip_marker = SKIP_STEM_MARKERS.get(lang)
     skipped = 0
+
+    if enforce_metadata:
+        titles_path = (lang_dir / "indexes" / "grammar-titles.json").resolve()
+        if only is None or titles_path in only or any(str(p).startswith(str(lang_dir.resolve())) for p in only):
+            title_errs = validate_grammar_titles(lang_dir, lang)
+            if title_errs:
+                failed += 1
+                failures.extend(title_errs)
+            elif (lang_dir / "indexes" / "grammar-titles.json").is_file():
+                passed += 1
 
     for name, pattern in TARGETS.items():
         if name not in schemas:
@@ -175,7 +275,7 @@ def validate_language(lang, only=None):
             errors = sorted(validator.iter_errors(data), key=lambda e: list(e.path))
             meta_errors = []
             if name == "exercises" and enforce_metadata:
-                meta_errors = validate_exercise_metadata(data, lang, skill_registry)
+                meta_errors = validate_exercise_metadata(data, lang, skill_registry, alias_map)
 
             if not errors and not meta_errors:
                 passed += 1

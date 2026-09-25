@@ -99,10 +99,12 @@ def resolve_titles(lang, by_skill):
                     titles[skill] = gtitle
                     break
 
-    # 4. Clean formatting fallback
+    # 4. Clean formatting fallback (never silent)
+    fallback_skills = []
     minor_words = {"a", "an", "and", "as", "at", "but", "by", "for", "in", "nor", "of", "on", "or", "so", "the", "to", "up", "vs", "yet", "with"}
     for skill in by_skill:
         if skill not in titles:
+            fallback_skills.append(skill)
             text = (skill.replace("-isn-t", " isn't")
                          .replace("-aren-t", " aren't")
                          .replace("-don-t", " don't")
@@ -121,11 +123,14 @@ def resolve_titles(lang, by_skill):
                     formatted.append(w.capitalize())
             titles[skill] = " ".join(formatted)
 
-    return titles
+    return titles, sorted(fallback_skills)
 
 
 def main():
-    langs = sys.argv[1:] or ["es-latam", "es-es", "hu"]
+    args = [a for a in sys.argv[1:] if a != "--strict"]
+    strict = "--strict" in sys.argv[1:]
+    langs = args or ["es-latam", "es-es", "hu"]
+    any_failures = False
 
     for lang in langs:
         exercises_dir = Path(f"content/{lang}/exercises")
@@ -134,7 +139,7 @@ def main():
             continue
 
         by_skill, stats = build_index(exercises_dir)
-        titles = resolve_titles(lang, by_skill)
+        titles, fallback_skills = resolve_titles(lang, by_skill)
 
         output_dir = Path(f"content/{lang}/indexes")
         output_file = output_dir / "grammar-index.json"
@@ -149,14 +154,23 @@ def main():
         print(f"[{lang}] Distinct skills:        {len(by_skill)}")
         print(f"[{lang}] Output:                 {output_file} ({raw_size:,} bytes)")
 
+        if fallback_skills:
+            print(f"[{lang}] WARNING: {len(fallback_skills)} skills fell through to slug->TitleCase fallback: "
+                  + ", ".join(fallback_skills))
+            any_failures = True
+
         # Learners see skill names mid-sentence ("You made a few mistakes
         # with ... lately."), so every skill should have a curated name.
         curated_path = Path(f"content/{lang}/indexes/grammar-titles.json")
         curated = json.loads(curated_path.read_text(encoding="utf-8")) if curated_path.is_file() else {}
         uncurated = sorted(s for s in by_skill if s not in curated)
         if uncurated:
-            print(f"[{lang}] WARNING: {len(uncurated)} skills have no name in {curated_path}: "
-                  + ", ".join(uncurated[:10]) + (" ..." if len(uncurated) > 10 else ""))
+            print(f"[{lang}] WARNING: {len(uncurated)} skills have no curated name in {curated_path}: "
+                  + ", ".join(uncurated))
+            any_failures = True
+
+    if strict and any_failures:
+        sys.exit(1)
 
 
 if __name__ == "__main__":
