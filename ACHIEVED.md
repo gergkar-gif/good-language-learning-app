@@ -9,6 +9,13 @@ needs re-reading before starting new work; it's reference only.
 
 ## Completed queue items
 
+98. ~~**Give Hungarian a real grammar skill catalogue (added 2026-09-25).**~~ — **Done 2026-09-25.**
+    `content/hu/indexes/grammar-index.json` had only 48 skills because Hungarian exercises used ~25 lesson-stage and content-domain labels (`controlled`, `practice`, `introduce`, `check`, `consolidation`, `review`, `civics`, etc.) in `category` instead of the six canonical categories, and 3,027 Hungarian exercises (278 in A1, 2,749 in B1) plus 114/564 Spanish B1 exercises had no `teaches` tag.
+    - **Canonical skill registries & validator gate (`Phase 1`):** Created `content/<course>/indexes/skill-registry.json` (`es-es`: 1,287 skills, `es-latam`: 1,512 skills, `hu`: 1,549 skills) and extended `scripts/validate-content.py` (`METADATA_ENFORCED_EVERYWHERE = True`) so every exercise across all courses must have a valid 6-value `category` (`vocabulary | grammar | reading | dialogue | writing | listening`) and every non-`reading` exercise must have a non-empty `teaches` array registered in `skill-registry.json`.
+    - **Hungarian `category` → `category` + `stage` (`Phase 2`):** Restored the 6-value `category` enum and added an optional `stage` enum field to `content/hu/schemas/exercises.schema.json`. Migrated all 6,723 off-list Hungarian exercise categories across 580 files via `scripts/backfill_hu_stage.py`.
+    - **Full `teaches` & `category` backfill (`Phase 3`):** Backfilled all 61+61 missing Spanish B1 categories (and fixed 24 Reading-section exercises per Spanish course mislabeled as `grammar`), 114 `es-es` B1 and 564 `es-latam` B1 untagged exercises, 389 Hungarian exercises from sibling tags, 2,143 Hungarian B1 exercises from lesson grammar files (`-gr.json`) and unit vocabulary themes, and 495 Hungarian B1 consolidation exercises.
+    - **Grammar index & diagnostic test resolution:** Rebuilt `content/<course>/indexes/grammar-index.json` and `grammar-titles.json` across all three courses (`hu` grammar exercises rose from 1,404 to 5,321 and distinct grammar skills rose from **48 to 1,202** with 0 uncurated title warnings). Retagged all 29 previously unmapped Hungarian placement diagnostic questions (`30/30` mapped) and the 2 remaining Spanish diagnostic questions (`es-diag-a1-06` and `es-diag-b1-05`, `30/30` mapped in both `es-es` and `es-latam`).
+
 97. ~~**Match outside Decks, Verb Speed and the placement diagnostic feed the learner model**~~ — **Done 2026-09-25.**
     These were the last three gaps left after item 96.
     - **Match:** when a time limit ran out, Match marked every word not

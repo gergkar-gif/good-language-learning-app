@@ -57,8 +57,7 @@ SKIP_STEM_MARKERS = {"es-es": "-ccse-"}
 
 # Flip to True once the exercise metadata backfill (Phases 2-3) is complete
 # across all courses so full CI runs enforce `category` + `teaches` everywhere.
-# When False, exercise metadata rules run only in `--changed` mode.
-METADATA_ENFORCED_EVERYWHERE = False
+METADATA_ENFORCED_EVERYWHERE = True
 
 ALLOWED_EXERCISE_CATEGORIES = {
     "vocabulary",

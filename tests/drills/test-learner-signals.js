@@ -125,18 +125,21 @@ const schedule = () => JSON.parse(store['es_recycleSchedule'] || '{}');
     console.log('✓ weakConjugations() lists the missed tense+person pair');
 
     // ---- 2c. Content: every hand-authored tag names a real skill ----
-    for (const course of ['es-es', 'es-latam']) {
+    for (const course of ['es-es', 'es-latam', 'hu']) {
         const base = path.join(__dirname, '../../content', course);
         const skills = JSON.parse(fs.readFileSync(path.join(base, 'indexes/grammar-index.json'), 'utf8')).bySkill;
-        const tenses = JSON.parse(fs.readFileSync(path.join(base, 'indexes/verb-tense-skills.json'), 'utf8'));
-        Object.keys(tenses).filter(k => k !== '_comment').forEach(t =>
-            tenses[t].forEach(id => assert.ok(skills[id], `${course} verb-tense-skills ${t} -> ${id} missing from grammar-index`)));
+        const tensesPath = path.join(base, 'indexes/verb-tense-skills.json');
+        if (fs.existsSync(tensesPath)) {
+            const tenses = JSON.parse(fs.readFileSync(tensesPath, 'utf8'));
+            Object.keys(tenses).filter(k => k !== '_comment').forEach(t =>
+                tenses[t].forEach(id => assert.ok(skills[id], `${course} verb-tense-skills ${t} -> ${id} missing from grammar-index`)));
+        }
         const diag = JSON.parse(fs.readFileSync(path.join(base, 'tests/diagnostic-test.json'), 'utf8'));
         const tags = diag.tiers.flatMap(t => t.questions.flatMap(q => q.teaches || []));
         const mapped = tags.filter(id => skills[id]).length;
-        assert.ok(mapped >= 28, `${course}: ${mapped}/30 diagnostic tags are real skills`);
+        assert.ok(mapped >= 30, `${course}: ${mapped}/30 diagnostic tags are real skills`);
     }
-    console.log('✓ verb-tense-skills.json and diagnostic tags resolve to real skills (es-es, es-latam)');
+    console.log('✓ verb-tense-skills.json and all 30/30 diagnostic tags resolve to real skills (es-es, es-latam, hu)');
 
     // ---- 3. Vocabulary Driller wiring (source) ----
     const vocab = fs.readFileSync(path.join(__dirname, '../../engine/drills/vocabulary.js'), 'utf8');
