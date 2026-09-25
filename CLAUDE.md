@@ -1,5 +1,25 @@
 # Project instructions
 
+## Exercise metadata is required on all generated content
+
+Every exercise you write or edit must carry the metadata the learner model
+runs on. The full rules are in [AGENTS.md](AGENTS.md) § "Exercise metadata";
+read them before generating content. In short:
+
+- `category`: one of `vocabulary | grammar | reading | dialogue | writing |
+  listening`. Hungarian lesson stages (`practice`, `controlled`, …) go in
+  `stage`, never in `category`.
+- `teaches`: required unless `category` is `reading`. Use existing canonical
+  slugs from `content/<course>/indexes/skill-registry.json`; vocabulary
+  exercises get the unit's vocabulary-theme slug, not a grammar skill. Add
+  a new slug only for a genuinely new reusable skill, never a unit- or
+  topic-specific one (`past-tense-unit24`), and give a new grammar skill a
+  title in `grammar-titles.json` in the house style.
+
+`python scripts/validate-content.py --changed` checks all of this. Run it
+before committing a unit, not only at push time, so a missing tag is caught
+before a whole unit has been written without it.
+
 ## Keep ROADMAP.md current
 
 [ROADMAP.md](ROADMAP.md) is the durable record of what's shipped and what's

@@ -1,5 +1,7 @@
 # A1 Exercise Catalogue
 
+> **Exercise metadata (required, validator-enforced):** every exercise needs a `category` (`vocabulary | grammar | reading | dialogue | writing | listening`) and, unless it is `reading`, a `teaches` array of canonical slugs from `content/<course>/indexes/skill-registry.json`. Vocabulary exercises take the unit's vocabulary-theme slug. Reuse existing skills; don't invent unit- or topic-specific slugs. Full rules: `AGENTS.md` § "Exercise metadata". Check with `python scripts/validate-content.py --changed`.
+
 The canonical list of exercise types is `content/es/schemas/exercises.schema.json`
 — this is a readable mirror of it, not a separate source of truth. All 11
 schema types are documented below; not all of them are in use in A1 content

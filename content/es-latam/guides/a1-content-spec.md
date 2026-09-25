@@ -1,5 +1,7 @@
 # A1 Content Specification
 
+> **Exercise metadata (required, validator-enforced):** every exercise needs a `category` (`vocabulary | grammar | reading | dialogue | writing | listening`) and, unless it is `reading`, a `teaches` array of canonical slugs from `content/<course>/indexes/skill-registry.json`. Vocabulary exercises take the unit's vocabulary-theme slug. Reuse existing skills; don't invent unit- or topic-specific slugs. Full rules: `AGENTS.md` § "Exercise metadata". Check with `python scripts/validate-content.py --changed`.
+
 This document defines the minimum content required for an A1 **teaching**
 lesson and for a unit's **consolidation** lesson.
 

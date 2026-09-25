@@ -1,5 +1,7 @@
 # B1 Content Specification
 
+> **Exercise metadata (required, validator-enforced):** every exercise needs a `category` (`vocabulary | grammar | reading | dialogue | writing | listening`) and, unless it is `reading`, a `teaches` array of canonical slugs from `content/<course>/indexes/skill-registry.json`. Vocabulary exercises take the unit's vocabulary-theme slug. Reuse existing skills; don't invent unit- or topic-specific slugs. Full rules: `AGENTS.md` § "Exercise metadata". Check with `python scripts/validate-content.py --changed`.
+
 This document defines the JSON shape every B1 lesson, grammar, exercise,
 vocabulary and story file must have. It is the document to hand to a
 generator (human or ChatGPT) alongside `B1_GUIDE.md` (curriculum design) and

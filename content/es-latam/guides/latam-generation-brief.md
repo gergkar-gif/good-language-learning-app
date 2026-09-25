@@ -1,5 +1,7 @@
 # Latin America unit generation brief
 
+> **Exercise metadata (required, validator-enforced):** every exercise needs a `category` (`vocabulary | grammar | reading | dialogue | writing | listening`) and, unless it is `reading`, a `teaches` array of canonical slugs from `content/<course>/indexes/skill-registry.json`. Vocabulary exercises take the unit's vocabulary-theme slug. Reuse existing skills; don't invent unit- or topic-specific slugs. Full rules: `AGENTS.md` § "Exercise metadata". Check with `python scripts/validate-content.py --changed`.
+
 **Status: all 36 Latin America units shipped as of 2026-08-29** (see
 `b1-content-spec.md` §3's own status note). Kept here for reference and
 for regenerating/revising an existing unit, not as an active build queue.
