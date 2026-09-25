@@ -51,10 +51,8 @@ function json(data, status, cors) {
 
 const LANGUAGE_CODE = { en: 'en-US', es: 'es-ES', hu: 'hu-HU' };
 
-// Chirp3-HD voice names are used for rich story narration, character dialogue,
-// and Hungarian (which only supports Chirp3-HD in neural tiers).
-// For Spanish vocabulary, listening drills, and pronunciation checks, we use
-// Google's ultra-fast Neural2 models (400-600ms synthesis vs 2500-3500ms Chirp3-HD).
+// Chirp3-HD voice names are used for Spanish and Hungarian alike, so both courses
+// share the same everyday voice (Iapetus, male). English short-form uses Neural2.
 const SHORT_VOICE = {
     male: 'Charon',        // firm, deep — default dialogue/character voice
     female: 'Kore',        // firm — default dialogue/character voice
@@ -77,14 +75,6 @@ function resolveVoiceName(payload, languageCode) {
 
     // Story narration and reading passages use rich multi-voice Chirp3-HD
     const isLongForm = payload.type === 'story' || payload.type === 'reading';
-
-    if (languageCode === 'es-ES' && !isLongForm) {
-        // Fast-path for Spanish vocabulary, listening exercises, and pronunciation drills:
-        // Neural2 synthesizes in ~400-600ms (3-6x faster than Chirp3-HD)
-        if (payload.gender === 'male') return 'es-ES-Neural2-B';
-        if (payload.gender === 'female') return 'es-ES-Neural2-A';
-        return 'es-ES-Neural2-F'; // ultra-clear default neural Spanish voice
-    }
 
     if (languageCode === 'en-US' && !isLongForm) {
         if (payload.gender === 'male') return 'en-US-Neural2-D';
