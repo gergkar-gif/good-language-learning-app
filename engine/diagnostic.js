@@ -400,8 +400,10 @@ const DiagnosticTest = (function () {
 
         const questions = tier.questions || [];
         let correct = 0;
+        const evidence = [];
         questions.forEach(q => {
             const userAns = _answers[q.id];
+            const before = correct;
             if (q.type === 'text-input') {
                 if (typeof userAns === 'string' && userAns.trim()) {
                     const cleanUser = userAns.trim().toLowerCase();
@@ -415,7 +417,20 @@ const DiagnosticTest = (function () {
             } else {
                 if (userAns === q.correct) correct++;
             }
+            if (userAns !== undefined) {
+                evidence.push({ id: 'diag:' + q.id, rating: correct > before ? 'good' : 'again' });
+            }
         });
+
+        // Each answered question is one piece of evidence for the skill its
+        // `teaches` tag names — LearnerModel joins "diag:" cards to skills.
+        // One answer among a skill's many exercise cards: it counts from
+        // day one and is outweighed as real practice builds up, unlike a
+        // level-test miss, which lowers a skill a tier for good. Tiers
+        // never reached send nothing.
+        if (evidence.length && typeof Recycle !== 'undefined' && Recycle.credit) {
+            Recycle.credit(evidence);
+        }
 
         const ratio = questions.length > 0 ? (correct / questions.length) : 0;
         const passRatio = (typeof _testData.passRatio === 'number') ? _testData.passRatio : 0.85;

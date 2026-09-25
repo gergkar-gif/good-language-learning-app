@@ -90,13 +90,15 @@ credit([{ lemma: 'nuevo', rating: 'again' }, { lemma: 'otro', rating: 'weak' }])
 assert.strictEqual(vm.runInContext('srsDeck.length', ctx), 0);
 console.log('✓ words without a card are left alone');
 
-// 6. The modes only credit when the Decks screen opts in.
-const decksJs = fs.readFileSync(path.join(__dirname, '../../engine/decks.js'), 'utf8');
-assert.strictEqual((decksJs.match(/srsCredit: true/g) || []).length, 2, 'Decks opts Match and Blast in');
-for (const f of ['lessons.js', 'studyPlanRunner.js', 'recommendationEngine.js']) {
-    const src = fs.readFileSync(path.join(__dirname, '../../engine', f), 'utf8');
-    assert.ok(!src.includes('srsCredit'), f + ' must not credit SRS from its Match game');
-}
-console.log('✓ only Decks opts Match/Blast into SRS credit');
+// 6. Who opts Match/Blast into SRS credit, and how much.
+const src = f => fs.readFileSync(path.join(__dirname, '../../engine', f), 'utf8');
+assert.strictEqual((src('decks.js').match(/srsCredit: true/g) || []).length, 2, 'Decks opts Match and Blast in');
+assert.ok(src('studyPlanRunner.js').includes('srsCredit: true'), 'study plan Match credits fully');
+assert.ok(src('recommendationEngine.js').includes('srsCredit: true'), 'weakest-words Match credits fully');
+assert.ok(src('lessons.js').includes("srsCredit: 'misses'"), 'lesson Quick Reinforce credits misses only');
+const matchJs = src('decks/match.js');
+assert.ok(/_wrongUids\.forEach\(uid => results\.push\(\{ lemma: _wordsByUid\[uid\]\.lemma, rating: 'again' \}\)\)/.test(matchJs),
+    'Match credits wrong pairs, not words left over at time-out');
+console.log('✓ Match credit: full in Decks/study plan/recommendations, misses-only after a lesson');
 
 console.log('\nAll deck SRS credit tests passed!');

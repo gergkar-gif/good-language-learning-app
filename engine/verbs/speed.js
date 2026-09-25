@@ -31,6 +31,12 @@ const VerbsSpeed = (function () {
     var _currentTenseLabel = '';
     var _currentPersonLabel = '';
     var _currentMeaning = '';
+    var _currentTensePath = '';   // e.g. 'indicativo.preterito'
+    var _currentPersonKey  = '';   // PERSON_LABELS key, e.g. 'uds'
+    var _currentVerbName   = '';
+    // 'verb:<tensePath>:<person>' -> 'again' | 'good' for this session, sent
+    // to the recycle schedule once at the end (_creditConjugations()).
+    var _conjOutcomes = {};
     var _missedConjugations = [];
     var _busy           = false;   // true while feedback is showing
 
@@ -109,6 +115,7 @@ const VerbsSpeed = (function () {
         VerbsStats.init();
         _score = 0;
         _missedConjugations = [];
+        _conjOutcomes = {};
         _verbIndex = Math.floor(Math.random() * _verbList.length);
         _timeRemaining = _timerMinutes * 60;
         _endTime = Date.now() + _timeRemaining * 1000;
@@ -181,6 +188,9 @@ const VerbsSpeed = (function () {
                 _currentAnswer      = correctAnswer;
                 _currentTenseLabel  = tenseLabel;
                 _currentPersonLabel = personLabel;
+                _currentTensePath   = tensePath;
+                _currentPersonKey   = person;
+                _currentVerbName    = verb.infinitivo || verbName;
                 _currentMeaning     = (verb.english && verb.english.infinitivo) ? verb.english.infinitivo : '';
 
                 _renderQuestion(verb.infinitivo.toUpperCase(), tenseLabel, personLabel, _currentMeaning);
@@ -244,14 +254,13 @@ const VerbsSpeed = (function () {
 
         // Record stats
         VerbsStats.record(isCorrect, _currentTenseLabel, _currentPersonLabel);
+        _noteConjugation(isCorrect);
 
         if (isCorrect) {
             _score++;
         } else {
-            var verbObj = _verbList[_verbIndex];
-            var verbDisplay = verbObj ? (verbObj.infinitive || verbObj.verb || '') : '';
             _missedConjugations.push({
-                verb: verbDisplay,
+                verb: _currentVerbName,
                 meaning: _currentMeaning,
                 tense: _currentTenseLabel,
                 person: _currentPersonLabel,
@@ -288,9 +297,32 @@ const VerbsSpeed = (function () {
         }, delay);
     }
 
+    // Each tense+person pair is its own card in the recycle schedule, so
+    // "preterite, ellos" can be weak while "preterite, yo" is solid. A miss
+    // is always 'again'; a correct form only counts when that card is due
+    // (Recycle.credit()). LearnerModel joins these cards to grammar skills
+    // through content/<lang>/indexes/verb-tense-skills.json and lists the
+    // weakest pairs in weakConjugations(). One outcome per pair per
+    // session; a miss wins.
+    function _noteConjugation(isCorrect) {
+        if (!_currentTensePath || !_currentPersonKey) return;
+        var id = 'verb:' + _currentTensePath + ':' + _currentPersonKey;
+        if (_conjOutcomes[id] === 'again') return;
+        _conjOutcomes[id] = isCorrect ? 'good' : 'again';
+    }
+
+    function _creditConjugations() {
+        var ids = Object.keys(_conjOutcomes);
+        if (!ids.length || typeof Recycle === 'undefined' || !Recycle.credit) return;
+        var results = ids.map(function (id) { return { id: id, rating: _conjOutcomes[id] }; });
+        _conjOutcomes = {};
+        Recycle.credit(results);
+    }
+
     function _endSession() {
         _phase = PHASE.RESULTS;
         if (_timerInterval) { clearInterval(_timerInterval); _timerInterval = null; }
+        _creditConjugations();
 
         // Read the previous best before record() folds this session in, so
         // the results screen can tell whether this run just set a new one.
@@ -452,6 +484,7 @@ const VerbsSpeed = (function () {
     /** Stop any running timer and go back to settings. */
     function reset() {
         if (_timerInterval) { clearInterval(_timerInterval); _timerInterval = null; }
+        _creditConjugations(); // leaving mid-run still counts what was answered
         _phase = PHASE.SETTINGS;
         _score = 0;
     }

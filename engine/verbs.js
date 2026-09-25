@@ -307,6 +307,9 @@ const Verbs = (function () {
         if (options && options.mode) {
             _state.mode = options.mode;
         }
+        if (options && options.tense && TENSE_OPTIONS.some(function (t) { return t.value === options.tense; })) {
+            _state.tense = options.tense;
+        }
         _render();
     }
 
@@ -357,6 +360,11 @@ const Verbs = (function () {
         switchMode: switchMode,
         loadVerb:   loadVerb,
         nextVerb:   nextVerb,
-        reset:      reset
+        reset:      reset,
+        // 'indicativo.preterito' -> 'Preterite', for the study plan's label
+        tenseLabel: function (path) {
+            var t = TENSE_OPTIONS.filter(function (o) { return o.value === path; })[0];
+            return t ? t.label : path;
+        }
     };
 })();

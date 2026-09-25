@@ -14,8 +14,9 @@
 //     joinable to a "skill" via grammar-index.json's bySkill map. Since
 //     step 6, every teaches-tagged exercise records here on its very first
 //     encounter, not just when later redrawn into a recycle block. Since
-//     2026-09-25 the Grammar Driller records here too, including its own
-//     bank items as "bank:<id>" (joined by module in _skillRefs()).
+//     2026-09-25 the Grammar Driller, Verb Speed and the placement
+//     diagnostic record here too, under "bank:", "verb:" and "diag:" ids
+//     (all joined to skills in _skillRefs()).
 //   - engine/srs.js's srsDeck (active SM-2 cards) and knownWords (graduated/
 //     manually-known words, which drop all SM-2 evidence on graduation).
 //   - engine/leveltest.js's testResults: a ranked "weakest" topic-id list
@@ -92,37 +93,73 @@ const LearnerModel = (function () {
         }
     }
 
-    // The Grammar Driller's own item bank (Spanish only today). Its items
-    // aren't in grammar-index.json, so the driller records them in the
-    // recycle schedule as "bank:<id>" and they're joined back here.
-    async function _grammarBank() {
+    // Optional per-course content files — each one missing (Hungarian has
+    // no Grammar Driller bank or Verb Speed) just contributes nothing.
+    async function _optionalJson(path) {
         if (typeof Content === 'undefined' || typeof Lang === 'undefined') return null;
         try {
-            return await Content.json(Lang.content('drills/grammar/a1-bank.json'));
+            return await Content.json(Lang.content(path));
         } catch (error) {
             return null;
         }
     }
 
+    // Verb Speed's person keys (engine/verbs/speed.js PERSON_LABELS).
+    const VERB_PERSONS = ['yo', 'tu', 'ud', 'nosotros', 'vosotros', 'uds'];
+
     // skillId -> [{ id }] of every recycle-schedule id that is evidence for
-    // it: grammar-index.json's lesson exercises plus the bank items whose
-    // module maps to that skill (same underscore->hyphen rule the Grammar
-    // Driller's _lessonSkillFor() uses). null when neither source loads.
+    // it. grammar-index.json's lesson exercises, plus three sources recorded
+    // outside lessons under their own id prefixes:
+    //   bank:<id>              Grammar Driller bank items, by module (same
+    //                          underscore->hyphen rule as the driller's
+    //                          _lessonSkillFor())
+    //   verb:<tense>:<person>  Verb Speed, by indexes/verb-tense-skills.json
+    //   diag:<questionId>      placement diagnostic, by each question's
+    //                          `teaches` tags
+    // A lone diagnostic answer or verb card is one data point among a
+    // skill's many exercise cards, so it counts at first and is outweighed
+    // as real practice builds up. null when nothing loads.
     async function _skillRefs() {
-        const [index, bank] = await Promise.all([_grammarIndex(), _grammarBank()]);
+        const [index, bank, tenses, diagnostic] = await Promise.all([
+            _grammarIndex(),
+            _optionalJson('drills/grammar/a1-bank.json'),
+            _optionalJson('indexes/verb-tense-skills.json'),
+            _optionalJson('tests/diagnostic-test.json')
+        ]);
         if (!index && !bank) return null;
         const bySkill = Object.assign({}, (index && index.bySkill) || {});
+        // Verb and diagnostic tags are hand-authored, so one naming a skill
+        // the index doesn't have is skipped rather than inventing a skill
+        // with nothing but that tag behind it.
+        const known = new Set(Object.keys(bySkill));
         const copied = new Set();
-        ((bank && bank.items) || []).forEach(item => {
-            if (!item || !item.id || !item.module) return;
-            const hyphenated = item.module.replace(/_/g, '-');
-            const skillId = (bySkill[hyphenated] || !bySkill[item.module]) ? hyphenated : item.module;
+        function add(skillId, id) {
             if (!copied.has(skillId)) {
                 bySkill[skillId] = (bySkill[skillId] || []).slice();
                 copied.add(skillId);
             }
-            bySkill[skillId].push({ id: 'bank:' + item.id });
+            bySkill[skillId].push({ id });
+        }
+
+        ((bank && bank.items) || []).forEach(item => {
+            if (!item || !item.id || !item.module) return;
+            const hyphenated = item.module.replace(/_/g, '-');
+            add((bySkill[hyphenated] || !bySkill[item.module]) ? hyphenated : item.module, 'bank:' + item.id);
         });
+
+        Object.keys(tenses || {}).forEach(tensePath => {
+            if (!Array.isArray(tenses[tensePath])) return; // skips "_comment"
+            tenses[tensePath].filter(id => known.has(id)).forEach(skillId => {
+                VERB_PERSONS.forEach(person => add(skillId, 'verb:' + tensePath + ':' + person));
+            });
+        });
+
+        ((diagnostic && diagnostic.tiers) || []).forEach(tier => {
+            (tier.questions || []).forEach(q => {
+                (q.teaches || []).filter(id => known.has(id)).forEach(skillId => add(skillId, 'diag:' + q.id));
+            });
+        });
+
         return bySkill;
     }
 
@@ -257,6 +294,28 @@ const LearnerModel = (function () {
         const ease = s => (s.recycle ? s.recycle.avgEase : -1);
         results.sort((a, b) => rank(a) - rank(b) || ease(a) - ease(b));
 
+        return results.slice(0, limit || results.length);
+    }
+
+    // The tense+person pairs Verb Speed has seen missed, worst
+    // first — e.g. { tensePath: 'indicativo.preterito', person: 'uds',
+    // state: 'weak', ease, lapses }. Same classification and ordering as
+    // weakSkills(), one card per pair instead of an average over a skill.
+    function weakConjugations(limit) {
+        const schedule = (typeof loadRecycleSchedule === 'function') ? loadRecycleSchedule() : {};
+        const results = [];
+        Object.keys(schedule).forEach(id => {
+            if (id.indexOf('verb:') !== 0) return;
+            const card = schedule[id];
+            // Only pairs that have actually been missed — one clean answer
+            // sits at the starting ease, which already reads 'developing'.
+            if (!card || !(card.lapses > 0) || typeof card.ease !== 'number') return;
+            const state = classifyEase(card.ease);
+            if (state === 'strong') return;
+            const parts = id.split(':');
+            results.push({ tensePath: parts[1], person: parts[2], state, ease: card.ease, lapses: card.lapses || 0 });
+        });
+        results.sort((a, b) => (a.ease - b.ease) || (b.lapses - a.lapses));
         return results.slice(0, limit || results.length);
     }
 
@@ -1067,6 +1126,7 @@ const LearnerModel = (function () {
         skillState,
         wordState,
         weakSkills,
+        weakConjugations,
         weakWords,
         recordLookup,
         lookedUpWords,

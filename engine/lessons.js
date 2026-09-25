@@ -2673,6 +2673,7 @@ function renderLessonSummaryNext() {
                 deckId: lesson.id || 'lesson-reinforce',
                 limit: matchCount,
                 timeLimit: timeLimit,
+                srsCredit: 'misses',
                 exitLabel: 'Back to summary',
                 onExit: () => {
                     if (footer) footer.style.display = '';

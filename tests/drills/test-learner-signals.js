@@ -98,6 +98,46 @@ const schedule = () => JSON.parse(store['es_recycleSchedule'] || '{}');
     assert.strictEqual(ww[0].translation, 'cat');
     console.log('✓ words looked up on 2+ days without a card surface in weakWords()');
 
+    // ---- 2b. Verb Speed + diagnostic evidence ----
+    files['indexes/grammar-index.json'].bySkill['preterito-indefinido'] = [{ id: 'ex-p', ref: 'x' }];
+    files['indexes/verb-tense-skills.json'] = { _comment: 'x', 'indicativo.preterito': ['preterito-indefinido'], 'indicativo.futuro': ['no-such-skill'] };
+    files['tests/diagnostic-test.json'] = { tiers: [{ questions: [
+        { id: 'd-1', teaches: ['preterito-indefinido'] },
+        { id: 'd-2', teaches: ['free-text-tag'] }
+    ] }] };
+    appOpen += 5;
+    ctx.__r = [
+        { id: 'verb:indicativo.preterito:uds', rating: 'again' },
+        { id: 'verb:indicativo.preterito:yo', rating: 'good' },
+        { id: 'diag:d-1', rating: 'again' },
+        { id: 'diag:d-2', rating: 'again' }
+    ];
+    run('Recycle.credit(__r)');
+    const pret = await run('LearnerModel.skillState("preterito-indefinido")');
+    assert.strictEqual(pret.recycle && pret.recycle.seen, 3, 'preterite joins 2 verb cards + 1 diagnostic card: ' + JSON.stringify(pret.recycle));
+    const ws = await run('LearnerModel.weakSkills()');
+    assert.ok(!ws.some(s => s.skillId === 'free-text-tag' || s.skillId === 'no-such-skill'), 'unknown tags never become skills');
+    console.log('✓ Verb Speed and diagnostic cards join their skills; unknown tags are ignored');
+
+    const wc = run('LearnerModel.weakConjugations()');
+    assert.strictEqual(wc.length, 1, 'only the missed pair is weak/developing: ' + JSON.stringify(wc));
+    assert.strictEqual(wc[0].tensePath + ':' + wc[0].person, 'indicativo.preterito:uds');
+    console.log('✓ weakConjugations() lists the missed tense+person pair');
+
+    // ---- 2c. Content: every hand-authored tag names a real skill ----
+    for (const course of ['es-es', 'es-latam']) {
+        const base = path.join(__dirname, '../../content', course);
+        const skills = JSON.parse(fs.readFileSync(path.join(base, 'indexes/grammar-index.json'), 'utf8')).bySkill;
+        const tenses = JSON.parse(fs.readFileSync(path.join(base, 'indexes/verb-tense-skills.json'), 'utf8'));
+        Object.keys(tenses).filter(k => k !== '_comment').forEach(t =>
+            tenses[t].forEach(id => assert.ok(skills[id], `${course} verb-tense-skills ${t} -> ${id} missing from grammar-index`)));
+        const diag = JSON.parse(fs.readFileSync(path.join(base, 'tests/diagnostic-test.json'), 'utf8'));
+        const tags = diag.tiers.flatMap(t => t.questions.flatMap(q => q.teaches || []));
+        const mapped = tags.filter(id => skills[id]).length;
+        assert.ok(mapped >= 28, `${course}: ${mapped}/30 diagnostic tags are real skills`);
+    }
+    console.log('✓ verb-tense-skills.json and diagnostic tags resolve to real skills (es-es, es-latam)');
+
     // ---- 3. Vocabulary Driller wiring (source) ----
     const vocab = fs.readFileSync(path.join(__dirname, '../../engine/drills/vocabulary.js'), 'utf8');
     assert.ok(/_finishSession\(\) \{[\s\S]{0,120}_creditSrs\(\)/.test(vocab), 'finish sends SRS outcomes');

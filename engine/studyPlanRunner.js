@@ -86,7 +86,9 @@ const StudyPlanRunner = (function () {
         if (item.kind === 'speaking-cando') return `Quick speaking — ${item.seconds}s`;
         if (item.kind === 'match') return `Match Game — ${item.words.length} pairs`;
         if (item.kind === 'translation') return `Translation — ${item.count} ${item.count === 1 ? 'sentence' : 'sentences'}`;
-        if (item.kind === 'verbs') return `Verb speed drill — ${item.seconds}s`;
+        if (item.kind === 'verbs') return item.tense && typeof Verbs !== 'undefined' && Verbs.tenseLabel
+            ? `Verb speed drill: ${Verbs.tenseLabel(item.tense)} — ${item.seconds}s`
+            : `Verb speed drill — ${item.seconds}s`;
         if (item.kind === 'driller') return `${item.title} — ${item.count} ${item.count === 1 ? 'question' : 'questions'}`;
         if (item.kind === 'reading') return `Read: ${item.title}`;
         return '';
@@ -256,6 +258,7 @@ const StudyPlanRunner = (function () {
             DeckMatch.render(document.getElementById('study-plan-driller'), {
                 words: item.words,
                 deckId: 'timed-session',
+                srsCredit: true,
                 exitLabel: 'Back to plan',
                 timeLimit: item.timeLimit,
                 onExit: () => {
@@ -289,7 +292,7 @@ const StudyPlanRunner = (function () {
             // leaves this screen the way a review does.
             _leavingForActivity = true;
             goTab('drills');
-            Workshop.open('verbs', { mode: 'speed', duration: item.seconds, autoStart: true });
+            Workshop.open('verbs', Object.assign({ mode: 'speed', duration: item.seconds, autoStart: true }, item.tense ? { tense: item.tense } : {}));
         } else if (item.kind === 'reading' && typeof Reader !== 'undefined') {
             _leavingForActivity = true;
             goTab('reader');

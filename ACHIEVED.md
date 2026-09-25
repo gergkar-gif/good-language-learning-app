@@ -9,6 +9,43 @@ needs re-reading before starting new work; it's reference only.
 
 ## Completed queue items
 
+97. ~~**Match outside Decks, Verb Speed and the placement diagnostic feed the learner model**~~ — **Done 2026-09-25.**
+    These were the last three gaps left after item 96.
+    - **Match:** when a time limit ran out, Match marked every word not
+      yet shown as missed, so switching on SRS credit would have given
+      Again to words never tried. It now tracks wrong pairs separately
+      (`_wrongUids`), and only those count. The study plan's Match and
+      the recommended "weakest words" Match now credit fully
+      (`srsCredit: true`). The lesson Quick Reinforce credits misses only
+      (`srsCredit: 'misses'`), because a correct match seconds after the
+      word was taught is short-term memory, and brand-new cards are due
+      at once, so a hit would get a free first review.
+    - **Verb Speed:** the tense/person breakdown used to live in memory
+      and vanish at session end. Each answer now updates a
+      `verb:<tense>:<person>` card through `Recycle.credit()` (one outcome
+      per pair per session, flushed at the end or when leaving). The
+      hand-written `content/es-*/indexes/verb-tense-skills.json` links
+      tenses to grammar skills (`subjuntivo.futuro` is left unmapped
+      because no skill teaches it). `LearnerModel.weakConjugations()`
+      lists pairs that have been missed, and the study plan's Verb Speed
+      block now opens on the weakest tense ("Verb speed drill: Preterite").
+      Along the way, the missed-conjugations recap had always shown a
+      blank verb; it now uses the real infinitive.
+    - **Diagnostic:** each answered question is recorded as a `diag:<id>`
+      card and joined to its skill through `teaches`. That's one data
+      point among a skill's many exercise cards, so it's outweighed as
+      practice builds up, unlike a level-test miss, which lowers a skill
+      a tier for good. Tiers never reached send nothing. The tags were
+      free text (2/30 Spanish and 0/30 Hungarian matched a real skill),
+      so they were retagged: 28/30 Spanish (both courses), 1/30
+      Hungarian. The Hungarian gap is in ROADMAP.md item 98.
+      `_skillRefs()` now ignores any verb or diagnostic tag that names an
+      unknown skill, so leftover free-text tags can't create phantom
+      skills.
+    Tests: `tests/drills/test-learner-signals.js` (joins,
+    `weakConjugations`, and that the content tags resolve) and
+    `tests/decks/test-deck-srs-credit.js` (Match wiring).
+
 96. ~~**Grammar Driller, Reader lookups and Vocabulary Driller feed the learner model**~~ — **Done 2026-09-25.**
     An audit of which activities send no knowledge signal turned up three
     gaps, and all three are now wired in.

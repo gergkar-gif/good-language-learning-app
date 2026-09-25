@@ -67,7 +67,12 @@ const DeckMatch = (function () {
     let _wordsByUid = {};
     let _missedWords = new Map();
     let _matchedUids = new Set();
-    let _srsCredit = false; // Decks only — lessons and the study plan reuse this game without touching the SRS schedule
+    let _wrongUids = new Set(); // words in a wrong pair — unlike _missedWords, never the ones merely left over when time ran out
+    // What this session tells the SRS deck: false (nothing), true (misses
+    // 'again', clean matches 'weak') or 'misses' (misses only — the lesson
+    // Quick Reinforce, where a match seconds after the word was taught is
+    // short-term memory, not recall).
+    let _srsCredit = false;
     let _credited = false;
     let _feedbackMsg = '';
 
@@ -140,19 +145,22 @@ const DeckMatch = (function () {
     }
 
     // ---- Session setup ----
-    // A word missed at any point this session is 'again'; one matched
-    // cleanly is 'weak' (see creditPractice() in engine/srs.js). Sent once
-    // per session — at the end, or on leaving partway — so a word missed
-    // then matched still counts as missed, and unplayed words count as
-    // nothing.
+    // A word in a wrong pair at any point this session is 'again'; one
+    // matched cleanly is 'weak' (see creditPractice() in engine/srs.js).
+    // Sent once per session — at the end, or on leaving partway — so a
+    // word missed then matched still counts as missed. Words never tried,
+    // including those still on the board when a time limit ran out, count
+    // as nothing: running out of time isn't not knowing them.
     function _creditSrs() {
         if (!_srsCredit || _credited || typeof creditPractice !== 'function') return;
         _credited = true;
         const results = [];
-        _missedWords.forEach(w => results.push({ lemma: w.lemma, rating: 'again' }));
-        _matchedUids.forEach(uid => {
-            if (!_missedWords.has(uid)) results.push({ lemma: _wordsByUid[uid].lemma, rating: 'weak' });
-        });
+        _wrongUids.forEach(uid => results.push({ lemma: _wordsByUid[uid].lemma, rating: 'again' }));
+        if (_srsCredit !== 'misses') {
+            _matchedUids.forEach(uid => {
+                if (!_wrongUids.has(uid)) results.push({ lemma: _wordsByUid[uid].lemma, rating: 'weak' });
+            });
+        }
         creditPractice(results);
     }
 
@@ -163,6 +171,7 @@ const DeckMatch = (function () {
         shuffledAll.forEach(w => { _wordsByUid[w.uid] = w; });
         _missedWords = new Map();
         _matchedUids = new Set();
+        _wrongUids = new Set();
         _credited = false;
         _feedbackMsg = '';
         _totalWords = shuffledAll.length;
@@ -292,8 +301,8 @@ const DeckMatch = (function () {
             }, MATCH_FLASH_MS);
         } else {
             _busy = true;
-            if (_wordsByUid[a.uid]) _missedWords.set(a.uid, _wordsByUid[a.uid]);
-            if (_wordsByUid[b.uid]) _missedWords.set(b.uid, _wordsByUid[b.uid]);
+            if (_wordsByUid[a.uid]) { _missedWords.set(a.uid, _wordsByUid[a.uid]); _wrongUids.add(a.uid); }
+            if (_wordsByUid[b.uid]) { _missedWords.set(b.uid, _wordsByUid[b.uid]); _wrongUids.add(b.uid); }
             _feedbackMsg = `✗ "${a.text}" does not match "${b.text}"`;
             _render(); // show both as "wrong" briefly
             setTimeout(() => {
@@ -409,7 +418,7 @@ const DeckMatch = (function () {
 
     /**
      * @param {HTMLElement} root
-     * @param {{ words: {lemma:string, translation:string}[], deckId: string, limit: number, timeLimit: number, exitLabel: string, onExit: function, onComplete: function, srsCredit: boolean }} options
+     * @param {{ words: {lemma:string, translation:string}[], deckId: string, limit: number, timeLimit: number, exitLabel: string, onExit: function, onComplete: function, srsCredit: boolean|'misses' }} options
      */
     function render(root, options) {
         _container = root;
@@ -426,7 +435,7 @@ const DeckMatch = (function () {
         _exitLabel = (options && options.exitLabel) || null;
         _onExit = (options && options.onExit) || function () {};
         _onComplete = (options && options.onComplete) || null;
-        _srsCredit = !!(options && options.srsCredit);
+        _srsCredit = (options && options.srsCredit === 'misses') ? 'misses' : !!(options && options.srsCredit);
         _credited = true; // nothing from a previous render() to send
         _startSession();
         _render();

@@ -162,6 +162,7 @@ const RecommendationEngine = (function () {
                 DeckMatch.render(host, {
                     words: candidate.words,
                     deckId: 'weakest-words',
+                    srsCredit: true,
                     exitLabel: 'Back to Decks',
                     onExit: () => { if (typeof Decks !== 'undefined') Decks.render(); }
                 });
