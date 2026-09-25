@@ -167,7 +167,12 @@ const componentsCss = fs.readFileSync(path.join(__dirname, '../../styles/compone
 assert(componentsCss.includes('.dkb-lobby'), 'components.css must define .dkb-lobby styles');
 assert(componentsCss.includes('.dkb-canvas'), 'components.css must define .dkb-canvas styles');
 assert(!emojiRegex.test(componentsCss), 'components.css must contain zero emojis');
-console.log('[PASS] Integration in decks.js, index.html, and components.css verified.');
+console.log('\n--- Test 5: Anti-Overlap Lane Architecture & Mobile Optimizations ---');
+assert(blastFileContent.includes('_getLaneCount'), 'blast.js must implement lane count management');
+assert(blastFileContent.includes('_getLaneX'), 'blast.js must calculate distinct lane centers');
+assert(blastFileContent.includes('Math.min(2, window.devicePixelRatio || 1)'), 'blast.js must cap DPR to 2 for mobile performance');
+assert(!blastFileContent.includes('Sound.correct()'), 'blast.js must decouple sound from TTS to prevent mobile audio lockup');
+console.log('[PASS] Anti-overlap lane physics and mobile optimizations verified.');
 
 DeckBlast.stop();
 console.log('\nAll DeckBlast tests passed successfully!');

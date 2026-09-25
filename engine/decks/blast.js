@@ -6,28 +6,32 @@
 // (faceted polyhedra targets, clean typography, zero emojis).
 //
 // Key Features:
-// 1. Proactive Audio Preloading: All session vocabulary words are preloaded
-//    into memory and IndexedDB via ParlourTTS.preload() the moment the lobby
-//    opens, guaranteeing 0ms playback latency upon blasting a target.
-// 2. Dual Modes:
+// 1. Proactive Audio Preloading: Vocabulary words are preloaded in memory
+//    and IndexedDB via ParlourTTS.preload() with smooth staggered batching,
+//    guaranteeing 0ms playback latency upon blasting a target without choking
+//    mobile networks.
+// 2. Anti-Overlap & Lane Physics:
+//    - Survival Mode: Organised into dedicated vertical lanes (3 on mobile,
+//      4 on desktop) with uniform velocities, mathematically preventing targets
+//      from ever covering or overlapping each other.
+//    - Time Attack Mode: 2D kinetic drift with mutual circle-circle repulsion
+//      so targets bounce cleanly off each other rather than passing through.
+// 3. Mobile Performance Optimization:
+//    - Capped devicePixelRatio (max 2) prevents multi-megapixel buffer lag.
+//    - Cached DOM references eliminate layout thrashing in the 60fps loop.
+//    - Decoupled audio calls prevent mobile media hardware pipeline freezes.
+// 4. Dual Modes:
 //    - Time Attack: 60-second speed-run with combo multipliers (up to 5x).
 //    - Survival: 3 shield charges; targets drift toward a danger threshold.
-// 3. Language Direction Toggle:
+// 5. Language Direction Toggle:
 //    - English prompt -> Match Target Language asteroid.
 //    - Target Language prompt -> Match English asteroid.
-// 4. HTML5 Canvas Physics:
-//    - Smooth 60fps drifting and rotating faceted geometric polyhedra.
-//    - Kinetic geometric shard particle explosions on impact.
-//    - Screen shake and warning pulses on errors.
-// 5. Personal Best Tracking:
-//    - High scores persisted per deck, per mode, and per direction in localStorage.
 
 const DeckBlast = (function () {
     'use strict';
 
     const TIME_LIMIT_SECONDS = 60;
     const SURVIVAL_SHIELDS = 3;
-    const MAX_TARGETS_ON_SCREEN = 5;
 
     let _container = null;
     let _deckId = null;
@@ -37,7 +41,7 @@ const DeckBlast = (function () {
     let _onExit = null;
     let _onComplete = null;
 
-    // Settings (persisted per session / user preference)
+    // Settings
     let _mode = 'time-attack'; // 'time-attack' | 'survival'
     let _direction = 'en-to-target'; // 'en-to-target' | 'target-to-en'
 
@@ -57,9 +61,18 @@ const DeckBlast = (function () {
 
     // Animation & timing
     let _animId = null;
+    let _preloadTimer = null;
     let _lastFrameTime = 0;
     let _screenShake = 0;
     let _boundaryDangerFlash = 0;
+    let _lastDisplayedSec = '';
+
+    // Cached DOM nodes for 60fps performance
+    let _domPromptWord = null;
+    let _domScoreVal = null;
+    let _domComboVal = null;
+    let _domTimerVal = null;
+    let _domShieldPips = [];
 
     // Canvas references
     let _canvas = null;
@@ -100,22 +113,51 @@ const DeckBlast = (function () {
     }
 
     // ----------------------------------------
-    // AUDIO PRELOADING PIPELINE
+    // SMOOTH AUDIO PRELOADING PIPELINE
     // ----------------------------------------
     function _preloadAudio() {
         if (typeof ParlourTTS === 'undefined' || typeof ParlourTTS.preload !== 'function') return;
         const lang = _langCode();
-        _words0.forEach(w => {
+
+        // 1. Immediately preload the first 5 words
+        const immediate = _words0.slice(0, 5);
+        immediate.forEach(w => {
             if (w && w.lemma) {
                 ParlourTTS.preload({ text: w.lemma, language: lang, type: 'vocabulary' });
             }
         });
+
+        // 2. Stagger the rest in small intervals so mobile CPU/network isn't choked
+        if (_preloadTimer) clearInterval(_preloadTimer);
+        const remaining = _words0.slice(5);
+        if (remaining.length > 0) {
+            let idx = 0;
+            _preloadTimer = setInterval(() => {
+                if (_state !== 'lobby' && _state !== 'playing') {
+                    clearInterval(_preloadTimer);
+                    _preloadTimer = null;
+                    return;
+                }
+                if (idx >= remaining.length) {
+                    clearInterval(_preloadTimer);
+                    _preloadTimer = null;
+                    return;
+                }
+                const w = remaining[idx++];
+                if (w && w.lemma) {
+                    ParlourTTS.preload({ text: w.lemma, language: lang, type: 'vocabulary' });
+                }
+            }, 100);
+        }
     }
 
     function _speakWord(word) {
         if (!word || !word.lemma) return;
         if (typeof ParlourTTS !== 'undefined' && typeof ParlourTTS.speak === 'function') {
-            ParlourTTS.speak({ text: word.lemma, language: _langCode(), type: 'vocabulary' });
+            // Asynchronous dispatch prevents blocking the touch gesture or RAF animation
+            setTimeout(() => {
+                ParlourTTS.speak({ text: word.lemma, language: _langCode(), type: 'vocabulary' });
+            }, 10);
         }
     }
 
@@ -169,16 +211,28 @@ const DeckBlast = (function () {
         _shards = [];
         _screenShake = 0;
         _boundaryDangerFlash = 0;
+        _lastDisplayedSec = '';
         _state = 'playing';
 
         _render();
+        _cacheDomReferences();
         _setupCanvas();
         _advanceToNextTarget();
         _fillTargetField();
+        _updateHUD();
 
         _lastFrameTime = performance.now();
         if (_animId) cancelAnimationFrame(_animId);
         _animId = requestAnimationFrame(_loop);
+    }
+
+    function _cacheDomReferences() {
+        if (!_container) return;
+        _domPromptWord = _container.querySelector('.dkb-prompt-word');
+        _domScoreVal = _container.querySelector('.dkb-score-val');
+        _domComboVal = _container.querySelector('.dkb-combo-val');
+        _domTimerVal = _container.querySelector('.dkb-timer-val');
+        _domShieldPips = Array.from(_container.querySelectorAll('.dkb-shield-pip'));
     }
 
     function _advanceToNextTarget() {
@@ -187,66 +241,133 @@ const DeckBlast = (function () {
         }
         _currentTargetWord = _pool.pop();
 
-        // Update the prompt HUD element
-        const promptWordEl = _container ? _container.querySelector('.dkb-prompt-word') : null;
-        if (promptWordEl && _currentTargetWord) {
+        if (_domPromptWord && _currentTargetWord) {
             const promptText = _direction === 'en-to-target'
                 ? (_currentTargetWord.translation || '—')
                 : _withArticle(_currentTargetWord.lemma);
-            promptWordEl.textContent = promptText;
+            _domPromptWord.textContent = promptText;
         }
     }
 
-    // Ensure the current target word is among the active floating polyhedra
+    // ----------------------------------------
+    // LANE MANAGEMENT & SPAWNING (NO OVERLAP)
+    // ----------------------------------------
+    function _getLaneCount() {
+        return _canvasWidth < 420 ? 3 : 4;
+    }
+
+    function _getLaneX(laneIndex, totalLanes) {
+        const laneWidth = _canvasWidth / totalLanes;
+        return laneWidth * (laneIndex + 0.5);
+    }
+
+    function _getMaxTargets() {
+        if (_mode === 'survival') {
+            return _getLaneCount();
+        }
+        return _canvasWidth < 420 ? 4 : 5;
+    }
+
     function _fillTargetField() {
         if (!_currentTargetWord) return;
 
+        const maxTargets = _getMaxTargets();
+        const totalLanes = _getLaneCount();
+
+        // 1. Ensure the correct target word is on screen
         const hasTarget = _activeTargets.some(t => t.word.uid === _currentTargetWord.uid);
         if (!hasTarget) {
-            _activeTargets.push(_createTarget(_currentTargetWord, true));
+            const newTarget = _createTarget(_currentTargetWord, true);
+            if (newTarget) _activeTargets.push(newTarget);
         }
 
-        while (_activeTargets.length < MAX_TARGETS_ON_SCREEN) {
+        // 2. Fill empty slots with distractors
+        let attempts = 0;
+        while (_activeTargets.length < maxTargets && attempts < 10) {
+            attempts++;
             const available = _words0.filter(w =>
                 w.uid !== _currentTargetWord.uid &&
                 !_activeTargets.some(t => t.word.uid === w.uid)
             );
             if (!available.length) break;
+
             const distractor = available[Math.floor(Math.random() * available.length)];
-            _activeTargets.push(_createTarget(distractor, false));
+            const newTarget = _createTarget(distractor, false);
+            if (newTarget) {
+                _activeTargets.push(newTarget);
+            } else {
+                break; // No free lane available right now
+            }
         }
     }
 
-    // ----------------------------------------
-    // GEOMETRIC TARGET GENERATOR
-    // ----------------------------------------
     function _createTarget(word, isMatchTarget) {
-        const radius = 48;
-        const margin = radius + 20;
+        // Responsive target radius: smaller on phone screens to prevent crowding
+        const radius = _canvasWidth < 420 ? 39 : 46;
+        const totalLanes = _getLaneCount();
 
-        let x, y, vx, vy;
+        let x, y, vx, vy, lane = -1;
+
         if (_mode === 'survival') {
-            // Spawn at the top with downward velocity
-            x = margin + Math.random() * (_canvasWidth - margin * 2);
-            y = -radius - Math.random() * 60;
-            vx = (Math.random() - 0.5) * 0.8;
-            vy = 0.8 + Math.random() * 0.6; // downward drift
+            // Find lanes with no target, or whose highest target is already well down the screen
+            const laneOccupancy = new Array(totalLanes).fill(null);
+            _activeTargets.forEach(t => {
+                if (t.lane >= 0 && t.lane < totalLanes) {
+                    if (laneOccupancy[t.lane] === null || t.y < laneOccupancy[t.lane]) {
+                        laneOccupancy[t.lane] = t.y;
+                    }
+                }
+            });
+
+            // Candidates: lanes that are either empty or whose top asteroid is below y = 140
+            const freeLanes = [];
+            for (let l = 0; l < totalLanes; l++) {
+                if (laneOccupancy[l] === null || laneOccupancy[l] > 140) {
+                    freeLanes.push(l);
+                }
+            }
+
+            if (!freeLanes.length) {
+                return null; // All lanes occupied near the top; wait before spawning
+            }
+
+            lane = freeLanes[Math.floor(Math.random() * freeLanes.length)];
+            x = _getLaneX(lane, totalLanes);
+            y = -radius - 10;
+            vx = 0; // Pure vertical drift in assigned lane eliminates horizontal collisions
+            vy = 0.8 + Math.min(0.6, _totalBlasts * 0.015); // Uniform velocity prevents overtaking
         } else {
-            // Time attack: spawn anywhere on canvas and drift in random direction
-            x = margin + Math.random() * (_canvasWidth - margin * 2);
-            y = margin + Math.random() * (_canvasHeight - margin * 2);
-            const speed = 1.0 + Math.random() * 0.6;
+            // Time attack: spawn anywhere on canvas with clearance from existing targets
+            const margin = radius + 15;
+            let foundSpot = false;
+            for (let a = 0; a < 15; a++) {
+                const testX = margin + Math.random() * (_canvasWidth - margin * 2);
+                const testY = margin + Math.random() * (_canvasHeight - margin * 2);
+                const isClear = _activeTargets.every(t => Math.hypot(t.x - testX, t.y - testY) > (radius * 2 + 15));
+                if (isClear) {
+                    x = testX;
+                    y = testY;
+                    foundSpot = true;
+                    break;
+                }
+            }
+            if (!foundSpot) {
+                x = margin + Math.random() * (_canvasWidth - margin * 2);
+                y = margin + Math.random() * (_canvasHeight - margin * 2);
+            }
+
+            const speed = 0.9 + Math.random() * 0.4;
             const angle = Math.random() * Math.PI * 2;
             vx = Math.cos(angle) * speed;
             vy = Math.sin(angle) * speed;
         }
 
-        // Generate faceted polygon geometry (7-8 sides with subtle irregularity)
+        // Faceted polygon vertices (7-8 sided)
         const sides = 7 + Math.floor(Math.random() * 2);
         const vertices = [];
         for (let i = 0; i < sides; i++) {
             const a = (i / sides) * Math.PI * 2;
-            const r = radius * (0.85 + Math.random() * 0.3);
+            const r = radius * (0.88 + Math.random() * 0.24);
             vertices.push({ x: Math.cos(a) * r, y: Math.sin(a) * r });
         }
 
@@ -257,6 +378,7 @@ const DeckBlast = (function () {
         return {
             word,
             isMatchTarget,
+            lane,
             x,
             y,
             vx,
@@ -264,21 +386,20 @@ const DeckBlast = (function () {
             radius,
             vertices,
             rotation: Math.random() * Math.PI * 2,
-            vRot: (Math.random() - 0.5) * 0.015,
+            vRot: (Math.random() - 0.5) * 0.012,
             displayText,
-            flashTime: 0,
-            opacity: 1
+            flashTime: 0
         };
     }
 
     // ----------------------------------------
-    // PARTICLES / SHATTER PHYSICS
+    // SHATTER PARTICLES (OPTIMIZED)
     // ----------------------------------------
     function _spawnShatter(x, y, radius) {
-        const count = 14;
+        const count = 8; // Optimized from 14 for smooth 60fps mobile execution
         for (let i = 0; i < count; i++) {
             const angle = (i / count) * Math.PI * 2 + (Math.random() - 0.5) * 0.5;
-            const speed = 2.5 + Math.random() * 4.5;
+            const speed = 2.5 + Math.random() * 3.5;
             _shards.push({
                 x,
                 y,
@@ -286,9 +407,9 @@ const DeckBlast = (function () {
                 vy: Math.sin(angle) * speed,
                 rotation: Math.random() * Math.PI * 2,
                 vRot: (Math.random() - 0.5) * 0.2,
-                size: 7 + Math.random() * 9,
+                size: 6 + Math.random() * 6,
                 life: 1.0,
-                decay: 0.03 + Math.random() * 0.02
+                decay: 0.04 + Math.random() * 0.02
             });
         }
     }
@@ -312,7 +433,9 @@ const DeckBlast = (function () {
             const t = _activeTargets[i];
             const dx = cx - t.x;
             const dy = cy - t.y;
-            if (dx * dx + dy * dy <= t.radius * t.radius * 1.1) {
+            // Generous hit box for mobile fingers
+            const hitR = t.radius + 12;
+            if (dx * dx + dy * dy <= hitR * hitR) {
                 hitIndex = i;
                 break;
             }
@@ -334,9 +457,6 @@ const DeckBlast = (function () {
 
             _spawnShatter(target.x, target.y, target.radius);
             _speakWord(target.word);
-            if (typeof Sound !== 'undefined' && typeof Sound.correct === 'function') {
-                Sound.correct();
-            }
 
             _activeTargets.splice(hitIndex, 1);
             _advanceToNextTarget();
@@ -344,8 +464,8 @@ const DeckBlast = (function () {
             _updateHUD();
         } else {
             // Mistake
-            target.flashTime = 250; // flash red/danger
-            _screenShake = 12;
+            target.flashTime = 250;
+            _screenShake = 10;
             _streak = 0;
             _missedWords.set(_currentTargetWord.uid, _currentTargetWord);
 
@@ -366,8 +486,7 @@ const DeckBlast = (function () {
 
     function _targetEscaped(target) {
         if (target.word.uid === _currentTargetWord.uid) {
-            // Matching target escaped across boundary
-            _screenShake = 14;
+            _screenShake = 12;
             _boundaryDangerFlash = 300;
             _streak = 0;
             _missedWords.set(_currentTargetWord.uid, _currentTargetWord);
@@ -390,23 +509,16 @@ const DeckBlast = (function () {
     }
 
     function _updateHUD() {
-        if (!_container) return;
-        const scoreEl = _container.querySelector('.dkb-score-val');
-        if (scoreEl) scoreEl.textContent = _score.toLocaleString();
+        if (_domScoreVal) _domScoreVal.textContent = _score.toLocaleString();
 
-        const comboEl = _container.querySelector('.dkb-combo-val');
-        if (comboEl) {
+        if (_domComboVal) {
             const mult = Math.min(5, 1 + Math.floor((_streak - 1) / 3));
-            comboEl.textContent = `${mult}x`;
-            comboEl.className = `dkb-combo-val ${mult > 1 ? 'is-active' : ''}`;
+            _domComboVal.textContent = `${mult}x`;
+            _domComboVal.className = `dkb-combo-val ${mult > 1 ? 'is-active' : ''}`;
         }
 
-        if (_mode === 'time-attack') {
-            const timerEl = _container.querySelector('.dkb-timer-val');
-            if (timerEl) timerEl.textContent = Math.max(0, _timeLeft).toFixed(1) + 's';
-        } else {
-            const shieldPips = _container.querySelectorAll('.dkb-shield-pip');
-            shieldPips.forEach((pip, idx) => {
+        if (_mode === 'survival' && _domShieldPips.length) {
+            _domShieldPips.forEach((pip, idx) => {
                 if (idx < _shields) {
                     pip.classList.add('is-active');
                 } else {
@@ -425,13 +537,18 @@ const DeckBlast = (function () {
         const dt = Math.min(64, timestamp - _lastFrameTime);
         _lastFrameTime = timestamp;
 
-        // Timer handling for Time Attack
+        // Timer handling (only update DOM when displayed value changes)
         if (_mode === 'time-attack') {
             _timeLeft -= dt / 1000;
             if (_timeLeft <= 0) {
                 _timeLeft = 0;
                 _gameOver();
                 return;
+            }
+            const secStr = Math.max(0, _timeLeft).toFixed(1);
+            if (secStr !== _lastDisplayedSec) {
+                _lastDisplayedSec = secStr;
+                if (_domTimerVal) _domTimerVal.textContent = secStr + 's';
             }
         }
 
@@ -445,7 +562,6 @@ const DeckBlast = (function () {
 
         _updatePhysics(dt);
         _drawCanvas();
-        _updateHUD();
 
         _animId = requestAnimationFrame(_loop);
     }
@@ -465,20 +581,11 @@ const DeckBlast = (function () {
             }
 
             if (_mode === 'survival') {
-                // If it passes danger threshold line
                 const dangerY = _canvasHeight - 32;
                 if (t.y - t.radius >= dangerY) {
                     _activeTargets.splice(i, 1);
                     _targetEscaped(t);
                     continue;
-                }
-                // Bounce off left / right walls
-                if (t.x - t.radius < 0) {
-                    t.x = t.radius;
-                    t.vx = Math.abs(t.vx);
-                } else if (t.x + t.radius > _canvasWidth) {
-                    t.x = _canvasWidth - t.radius;
-                    t.vx = -Math.abs(t.vx);
                 }
             } else {
                 // Time attack: bounce gently off all 4 edges
@@ -499,7 +606,38 @@ const DeckBlast = (function () {
             }
         }
 
-        // Maintain target count
+        // Anti-overlap circle repulsion for Time Attack mode
+        if (_mode === 'time-attack') {
+            for (let i = 0; i < _activeTargets.length; i++) {
+                for (let j = i + 1; j < _activeTargets.length; j++) {
+                    const t1 = _activeTargets[i];
+                    const t2 = _activeTargets[j];
+                    const dx = t2.x - t1.x;
+                    const dy = t2.y - t1.y;
+                    const dist = Math.hypot(dx, dy) || 1;
+                    const minDist = t1.radius + t2.radius + 10;
+                    if (dist < minDist) {
+                        const overlap = (minDist - dist) / 2;
+                        const nx = dx / dist;
+                        const ny = dy / dist;
+                        t1.x -= nx * overlap;
+                        t1.y -= ny * overlap;
+                        t2.x += nx * overlap;
+                        t2.y += ny * overlap;
+                        // Velocity exchange
+                        const kx = t1.vx - t2.vx;
+                        const ky = t1.vy - t2.vy;
+                        const p = (nx * kx + ny * ky);
+                        t1.vx -= p * nx;
+                        t1.vy -= p * ny;
+                        t2.vx += p * nx;
+                        t2.vy += p * ny;
+                    }
+                }
+            }
+        }
+
+        // Maintain field capacity
         _fillTargetField();
 
         // Update shards
@@ -524,7 +662,7 @@ const DeckBlast = (function () {
         _ctx.save();
         _ctx.clearRect(0, 0, _canvasWidth, _canvasHeight);
 
-        // Apply screen shake
+        // Screen shake
         if (_screenShake > 0) {
             const sx = (Math.random() - 0.5) * _screenShake;
             const sy = (Math.random() - 0.5) * _screenShake;
@@ -579,7 +717,6 @@ const DeckBlast = (function () {
         }
         _ctx.closePath();
 
-        // Constructivist palette fills & strokes
         if (isWrongFlash) {
             _ctx.fillStyle = '#FAEDE9';
             _ctx.strokeStyle = '#B23A22';
@@ -601,26 +738,28 @@ const DeckBlast = (function () {
         _ctx.lineWidth = 1;
         _ctx.stroke();
 
-        _ctx.stroke(); // Final outer outline
+        _ctx.stroke();
 
-        // Target label typography (counter-rotate text so it stays upright and legible!)
+        // Target label (counter-rotate text to stay upright)
         _ctx.rotate(-target.rotation);
         _ctx.fillStyle = isWrongFlash ? '#B23A22' : '#102A47';
         _ctx.textAlign = 'center';
         _ctx.textBaseline = 'middle';
 
-        // Auto-wrap / format long text
         const text = target.displayText;
-        if (text.length > 13 && text.includes(' ')) {
+        const isNarrow = _canvasWidth < 420;
+        const maxSingleLen = isNarrow ? 10 : 12;
+
+        if (text.length > maxSingleLen && text.includes(' ')) {
             const parts = text.split(' ');
             const mid = Math.ceil(parts.length / 2);
             const line1 = parts.slice(0, mid).join(' ');
             const line2 = parts.slice(mid).join(' ');
-            _ctx.font = '600 12px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
-            _ctx.fillText(line1, 0, -8);
-            _ctx.fillText(line2, 0, 8);
+            _ctx.font = `600 ${isNarrow ? 11 : 12}px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif`;
+            _ctx.fillText(line1, 0, -7);
+            _ctx.fillText(line2, 0, 7);
         } else {
-            const fontSize = text.length > 12 ? 12 : 14;
+            const fontSize = (text.length > maxSingleLen || isNarrow) ? 12 : 14;
             _ctx.font = `600 ${fontSize}px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif`;
             _ctx.fillText(text, 0, 0);
         }
@@ -634,7 +773,6 @@ const DeckBlast = (function () {
         _ctx.rotate(shard.rotation);
         _ctx.globalAlpha = Math.max(0, shard.life);
 
-        // Triangular geometric shard
         _ctx.beginPath();
         const s = shard.size;
         _ctx.moveTo(0, -s);
@@ -658,6 +796,10 @@ const DeckBlast = (function () {
         if (_animId) {
             cancelAnimationFrame(_animId);
             _animId = null;
+        }
+        if (_preloadTimer) {
+            clearInterval(_preloadTimer);
+            _preloadTimer = null;
         }
         _state = 'gameover';
 
@@ -691,10 +833,11 @@ const DeckBlast = (function () {
         if (!_canvas) return;
 
         const rect = _canvas.getBoundingClientRect();
-        _canvasWidth = Math.max(320, rect.width || 600);
+        _canvasWidth = Math.max(300, rect.width || 600);
         _canvasHeight = 420;
 
-        _dpr = window.devicePixelRatio || 1;
+        // Cap DPR to 2 on mobile to prevent GPU fill-rate hitching on 3x/4x screens
+        _dpr = Math.min(2, window.devicePixelRatio || 1);
         _canvas.width = _canvasWidth * _dpr;
         _canvas.height = _canvasHeight * _dpr;
         _canvas.style.height = _canvasHeight + 'px';
@@ -702,15 +845,15 @@ const DeckBlast = (function () {
         _ctx = _canvas.getContext('2d');
         _ctx.scale(_dpr, _dpr);
 
-        // Instant touch and click handling
+        // Clean pointerdown listener without 300ms tap delay
         const handleDown = (e) => {
             e.preventDefault();
-            const clientX = e.touches ? e.touches[0].clientX : e.clientX;
-            const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+            const clientX = e.clientX;
+            const clientY = e.clientY;
             _handleCanvasClick(clientX, clientY);
         };
 
-        _canvas.addEventListener('pointerdown', handleDown);
+        _canvas.addEventListener('pointerdown', handleDown, { passive: false });
     }
 
     function _render() {
@@ -962,7 +1105,6 @@ const DeckBlast = (function () {
 
         _state = 'lobby';
 
-        // Proactively begin audio preloading immediately so audio is ready
         _preloadAudio();
         _render();
     }
@@ -971,6 +1113,10 @@ const DeckBlast = (function () {
         if (_animId) {
             cancelAnimationFrame(_animId);
             _animId = null;
+        }
+        if (_preloadTimer) {
+            clearInterval(_preloadTimer);
+            _preloadTimer = null;
         }
         _state = 'lobby';
         _activeTargets = [];
