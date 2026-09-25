@@ -144,8 +144,14 @@ def main():
         output_dir = Path(f"content/{lang}/indexes")
         output_file = output_dir / "grammar-index.json"
         output_dir.mkdir(parents=True, exist_ok=True)
-        with open(output_file, "w", encoding="utf-8") as f:
-            json.dump({"bySkill": by_skill, "titles": titles}, f, ensure_ascii=False, separators=(",", ":"))
+        payload = json.dumps({"bySkill": by_skill, "titles": titles}, ensure_ascii=False, separators=(",", ":"))
+        for _attempt in range(5):
+            try:
+                output_file.write_text(payload, encoding="utf-8")
+                break
+            except OSError:
+                import time
+                time.sleep(0.3 * (_attempt + 1))
 
         raw_size = output_file.stat().st_size
 
