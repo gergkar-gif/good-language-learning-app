@@ -4,31 +4,33 @@
     {
       "id": "a1-133-review-1",
       "type": "multiple-choice",
-      "category": "review",
+      "category": "vocabulary",
       "question": "What does 'gyógyszertár' mean?",
       "options": [
         "pharmacy",
         "school",
         "hospital"
       ],
-      "correct": 0
+      "correct": 0,
+      "stage": "review"
     },
     {
       "id": "a1-133-review-2",
       "type": "multiple-choice",
-      "category": "review",
+      "category": "vocabulary",
       "question": "What does 'iskola' mean?",
       "options": [
         "school",
         "bank",
         "hospital"
       ],
-      "correct": 0
+      "correct": 0,
+      "stage": "review"
     },
     {
       "id": "a1-133-introduce-1",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "grammar",
       "question": "What does 'posta' mean?",
       "options": [
         "post office",
@@ -39,12 +41,13 @@
       "teaches": [
         "at-the-end-a-possessive-ending-meaning-its-end",
         "is-there-a-van-itt-x"
-      ]
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a1-133-introduce-2",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "grammar",
       "question": "What does 'kórház' mean?",
       "options": [
         "hospital",
@@ -55,23 +58,25 @@
       "teaches": [
         "at-the-end-a-possessive-ending-meaning-its-end",
         "is-there-a-van-itt-x"
-      ]
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a1-133-controlled-1",
       "type": "fill-blank",
-      "category": "controlled",
+      "category": "grammar",
       "sentence": "Van itt ____?",
       "answer": "park",
       "teaches": [
         "at-the-end-a-possessive-ending-meaning-its-end",
         "is-there-a-van-itt-x"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-133-controlled-2",
       "type": "multiple-choice",
-      "category": "controlled",
+      "category": "grammar",
       "question": "Choose the word for 'restaurant'.",
       "options": [
         "étterem",
@@ -82,12 +87,13 @@
       "teaches": [
         "at-the-end-a-possessive-ending-meaning-its-end",
         "is-there-a-van-itt-x"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-133-controlled-3",
       "type": "matching",
-      "category": "controlled",
+      "category": "vocabulary",
       "pairs": [
         [
           "posta",
@@ -109,12 +115,13 @@
       "teaches": [
         "at-the-end-a-possessive-ending-meaning-its-end",
         "is-there-a-van-itt-x"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-133-controlled-4",
       "type": "substitution",
-      "category": "controlled",
+      "category": "grammar",
       "base_sentence": "Van itt park?",
       "base_word": "park",
       "base_gloss": "Is there a park here?",
@@ -135,12 +142,13 @@
       "teaches": [
         "at-the-end-a-possessive-ending-meaning-its-end",
         "is-there-a-van-itt-x"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-133-practice-1",
       "type": "multiple-choice",
-      "category": "practice",
+      "category": "grammar",
       "question": "What does 'Az utca végén van' mean?",
       "options": [
         "It's at the end of the street.",
@@ -151,23 +159,25 @@
       "teaches": [
         "at-the-end-a-possessive-ending-meaning-its-end",
         "is-there-a-van-itt-x"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-133-practice-2",
       "type": "fill-blank",
-      "category": "practice",
+      "category": "grammar",
       "sentence": "Igen, a park közel van. A kórház ____ van.",
       "answer": "messze",
       "teaches": [
         "at-the-end-a-possessive-ending-meaning-its-end",
         "is-there-a-van-itt-x"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-133-practice-3",
       "type": "matching",
-      "category": "practice",
+      "category": "vocabulary",
       "pairs": [
         [
           "posta",
@@ -193,12 +203,13 @@
       "teaches": [
         "at-the-end-a-possessive-ending-meaning-its-end",
         "is-there-a-van-itt-x"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-133-practice-4",
       "type": "substitution",
-      "category": "practice",
+      "category": "grammar",
       "base_sentence": "A kórház messze van.",
       "base_word": "messze",
       "base_gloss": "The hospital is far.",
@@ -219,12 +230,13 @@
       "teaches": [
         "at-the-end-a-possessive-ending-meaning-its-end",
         "is-there-a-van-itt-x"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-133-practice-5",
       "type": "dialogue-complete",
-      "category": "practice",
+      "category": "dialogue",
       "prompt": [
         {
           "speaker": "Meg",
@@ -243,7 +255,8 @@
       "teaches": [
         "at-the-end-a-possessive-ending-meaning-its-end",
         "is-there-a-van-itt-x"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-133-dialogue-1",
@@ -326,7 +339,7 @@
     {
       "id": "a1-133-check-1",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "grammar",
       "question": "Choose the correct word for 'post office'.",
       "options": [
         "posta",
@@ -337,12 +350,13 @@
       "teaches": [
         "at-the-end-a-possessive-ending-meaning-its-end",
         "is-there-a-van-itt-x"
-      ]
+      ],
+      "stage": "check"
     },
     {
       "id": "a1-133-check-2",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "grammar",
       "question": "Choose the correct word for 'hospital'.",
       "options": [
         "kórház",
@@ -353,7 +367,8 @@
       "teaches": [
         "at-the-end-a-possessive-ending-meaning-its-end",
         "is-there-a-van-itt-x"
-      ]
+      ],
+      "stage": "check"
     }
   ]
 }

@@ -4,123 +4,247 @@
     {
       "id": "a2-85-intro-1",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "vocabulary",
       "question": "Which means \"pharmacy\"?",
-      "options": ["gyógyszertár", "rendelő", "tabletta"],
+      "options": [
+        "gyógyszertár",
+        "rendelő",
+        "tabletta"
+      ],
       "correct": 0,
-      "teaches": ["pharmacy-vocab"]
+      "teaches": [
+        "pharmacy-vocab"
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a2-85-intro-2",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "vocabulary",
       "question": "Which means \"pill, tablet\"?",
-      "options": ["tabletta", "kenőcs", "gyógyszerész"],
+      "options": [
+        "tabletta",
+        "kenőcs",
+        "gyógyszerész"
+      ],
       "correct": 0,
-      "teaches": ["pharmacy-vocab"]
+      "teaches": [
+        "pharmacy-vocab"
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a2-85-controlled-1",
       "type": "matching",
-      "category": "controlled",
+      "category": "vocabulary",
       "pairs": [
-        ["gyógyszertár", "pharmacy"],
-        ["gyógyszerész", "pharmacist"],
-        ["tabletta", "pill, tablet"],
-        ["kenőcs", "ointment, cream"]
+        [
+          "gyógyszertár",
+          "pharmacy"
+        ],
+        [
+          "gyógyszerész",
+          "pharmacist"
+        ],
+        [
+          "tabletta",
+          "pill, tablet"
+        ],
+        [
+          "kenőcs",
+          "ointment, cream"
+        ]
       ],
-      "teaches": ["pharmacy-vocab"]
+      "teaches": [
+        "pharmacy-vocab"
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a2-85-controlled-2",
       "type": "matching",
-      "category": "controlled",
+      "category": "vocabulary",
       "pairs": [
-        ["bevesz", "to take (medicine)"],
-        ["naponta", "daily"],
-        ["háromszor", "three times"],
-        ["recept", "prescription"]
+        [
+          "bevesz",
+          "to take (medicine)"
+        ],
+        [
+          "naponta",
+          "daily"
+        ],
+        [
+          "háromszor",
+          "three times"
+        ],
+        [
+          "recept",
+          "prescription"
+        ]
       ],
-      "teaches": ["pharmacy-synthesis"]
+      "teaches": [
+        "pharmacy-synthesis"
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a2-85-controlled-3",
       "type": "fill-blank",
-      "category": "controlled",
+      "category": "grammar",
       "sentence": "Van valami láz ____? (against)",
       "answer": "ellen",
-      "teaches": ["ellen-against"]
+      "teaches": [
+        "ellen-against"
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a2-85-controlled-4",
       "type": "fill-blank",
-      "category": "controlled",
+      "category": "grammar",
       "sentence": "Naponta háromszor kell ____. (take)",
       "answer": "bevenni",
-      "teaches": ["pharmacy-synthesis"]
+      "teaches": [
+        "pharmacy-synthesis"
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a2-85-practice-1",
       "type": "multiple-choice",
-      "category": "practice",
+      "category": "grammar",
       "question": "Which means \"Is there something for a cough?\"",
-      "options": ["Van valami köhögés ellen?", "Fáj a fejem.", "Mennyibe kerül a tabletta?"],
+      "options": [
+        "Van valami köhögés ellen?",
+        "Fáj a fejem.",
+        "Mennyibe kerül a tabletta?"
+      ],
       "correct": 0,
-      "teaches": ["ellen-against"]
+      "teaches": [
+        "ellen-against"
+      ],
+      "stage": "practice"
     },
     {
       "id": "a2-85-practice-2",
       "type": "matching",
-      "category": "practice",
+      "category": "vocabulary",
       "pairs": [
-        ["Van valami láz ellen?", "Is there something for a fever?"],
-        ["Naponta kétszer kell bevenni.", "It needs to be taken twice a day."],
-        ["Ez egy jó kenőcs a hátra.", "This is a good ointment for the back."],
-        ["A gyógyszerész segít.", "The pharmacist helps."]
+        [
+          "Van valami láz ellen?",
+          "Is there something for a fever?"
+        ],
+        [
+          "Naponta kétszer kell bevenni.",
+          "It needs to be taken twice a day."
+        ],
+        [
+          "Ez egy jó kenőcs a hátra.",
+          "This is a good ointment for the back."
+        ],
+        [
+          "A gyógyszerész segít.",
+          "The pharmacist helps."
+        ]
       ],
-      "teaches": ["pharmacy-synthesis"]
+      "teaches": [
+        "pharmacy-synthesis"
+      ],
+      "stage": "practice"
     },
     {
       "id": "a2-85-practice-3",
       "type": "sentence-builder",
-      "category": "practice",
-      "tiles": ["Van", "valami", "köhögés", "ellen", "?"],
-      "solution": ["Van", "valami", "köhögés", "ellen", "?"],
+      "category": "grammar",
+      "tiles": [
+        "Van",
+        "valami",
+        "köhögés",
+        "ellen",
+        "?"
+      ],
+      "solution": [
+        "Van",
+        "valami",
+        "köhögés",
+        "ellen",
+        "?"
+      ],
       "english": "Is there something for a cough?",
-      "teaches": ["ellen-against"]
+      "teaches": [
+        "ellen-against"
+      ],
+      "stage": "practice"
     },
     {
       "id": "a2-85-practice-4",
       "type": "sentence-builder",
-      "category": "practice",
-      "tiles": ["Naponta", "háromszor", "kell", "bevenni", "."],
-      "solution": ["Naponta", "háromszor", "kell", "bevenni", "."],
+      "category": "grammar",
+      "tiles": [
+        "Naponta",
+        "háromszor",
+        "kell",
+        "bevenni",
+        "."
+      ],
+      "solution": [
+        "Naponta",
+        "háromszor",
+        "kell",
+        "bevenni",
+        "."
+      ],
       "english": "It needs to be taken three times a day.",
-      "teaches": ["pharmacy-synthesis"]
+      "teaches": [
+        "pharmacy-synthesis"
+      ],
+      "stage": "practice"
     },
     {
       "id": "a2-85-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
       "prompt": [
-        { "speaker": "Meg", "text": "Van valami torokfájás ellen?" },
-        { "speaker": "Gyógyszerész", "text": "_____" }
+        {
+          "speaker": "Meg",
+          "text": "Van valami torokfájás ellen?"
+        },
+        {
+          "speaker": "Gyógyszerész",
+          "text": "_____"
+        }
       ],
-      "options": ["Igen, tessék, ez egy jó tabletta.", "Nem, ez egy gyógyszertár."],
+      "options": [
+        "Igen, tessék, ez egy jó tabletta.",
+        "Nem, ez egy gyógyszertár."
+      ],
       "correct": 0,
-      "teaches": ["ellen-against"]
+      "teaches": [
+        "ellen-against"
+      ]
     },
     {
       "id": "a2-85-dialogue-2",
       "type": "dialogue-complete",
       "category": "dialogue",
       "prompt": [
-        { "speaker": "Gyógyszerész", "text": "Van receptje?" },
-        { "speaker": "Tamás", "text": "_____" }
+        {
+          "speaker": "Gyógyszerész",
+          "text": "Van receptje?"
+        },
+        {
+          "speaker": "Tamás",
+          "text": "_____"
+        }
       ],
-      "options": ["Igen, itt van.", "Igen, nagyon fáradt vagyok."],
+      "options": [
+        "Igen, itt van.",
+        "Igen, nagyon fáradt vagyok."
+      ],
       "correct": 0,
-      "teaches": ["pharmacy-vocab"]
+      "teaches": [
+        "pharmacy-vocab"
+      ]
     },
     {
       "id": "a2-85-writing-1",
@@ -132,7 +256,9 @@
           "answer": "Van valami fejfájás ellen?"
         }
       ],
-      "teaches": ["ellen-against"]
+      "teaches": [
+        "ellen-against"
+      ]
     },
     {
       "id": "a2-85-writing-2",
@@ -144,25 +270,41 @@
           "answer": "Naponta kétszer kell bevenni."
         }
       ],
-      "teaches": ["pharmacy-synthesis"]
+      "teaches": [
+        "pharmacy-synthesis"
+      ]
     },
     {
       "id": "a2-85-check-1",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "vocabulary",
       "question": "Which means \"ointment, cream\"?",
-      "options": ["kenőcs", "tabletta", "recept"],
+      "options": [
+        "kenőcs",
+        "tabletta",
+        "recept"
+      ],
       "correct": 0,
-      "teaches": ["pharmacy-vocab"]
+      "teaches": [
+        "pharmacy-vocab"
+      ],
+      "stage": "check"
     },
     {
       "id": "a2-85-check-2",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "vocabulary",
       "question": "Which means \"pharmacist\"?",
-      "options": ["gyógyszerész", "orvos", "gyógyszertár"],
+      "options": [
+        "gyógyszerész",
+        "orvos",
+        "gyógyszertár"
+      ],
       "correct": 0,
-      "teaches": ["pharmacy-vocab"]
+      "teaches": [
+        "pharmacy-vocab"
+      ],
+      "stage": "check"
     }
   ]
 }

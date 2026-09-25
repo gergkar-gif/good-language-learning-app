@@ -4,19 +4,20 @@
     {
       "id": "a1-115-review-1",
       "type": "multiple-choice",
-      "category": "review",
+      "category": "vocabulary",
       "question": "Which word means 'bill'?",
       "options": [
         "számla",
         "kér",
         "hoz"
       ],
-      "correct": 0
+      "correct": 0,
+      "stage": "review"
     },
     {
       "id": "a1-115-review-2",
       "type": "matching",
-      "category": "review",
+      "category": "vocabulary",
       "pairs": [
         [
           "számla",
@@ -34,12 +35,13 @@
           "szeretne",
           "would like"
         ]
-      ]
+      ],
+      "stage": "review"
     },
     {
       "id": "a1-115-intro-1",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "grammar",
       "question": "Which word means 'I would like'?",
       "options": [
         "szeretnék",
@@ -50,34 +52,37 @@
       "teaches": [
         "zero-copula-review-meleg-a-kave",
         "cafe-review-kerem-szeretnek"
-      ]
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a1-115-intro-2",
       "type": "fill-blank",
-      "category": "introduce",
+      "category": "grammar",
       "sentence": "Igen, ____. (please)",
       "answer": "kérem",
       "teaches": [
         "zero-copula-review-meleg-a-kave",
         "cafe-review-kerem-szeretnek"
-      ]
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a1-115-controlled-1",
       "type": "fill-blank",
-      "category": "controlled",
+      "category": "grammar",
       "sentence": "____ a kávé. (hot)",
       "answer": "Meleg",
       "teaches": [
         "zero-copula-review-meleg-a-kave",
         "cafe-review-kerem-szeretnek"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-115-controlled-2",
       "type": "multiple-choice",
-      "category": "controlled",
+      "category": "grammar",
       "question": "What does 'még' mean?",
       "options": [
         "more / another",
@@ -88,12 +93,13 @@
       "teaches": [
         "zero-copula-review-meleg-a-kave",
         "cafe-review-kerem-szeretnek"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-115-controlled-3",
       "type": "matching",
-      "category": "controlled",
+      "category": "vocabulary",
       "pairs": [
         [
           "szeretnék",
@@ -115,12 +121,13 @@
       "teaches": [
         "zero-copula-review-meleg-a-kave",
         "cafe-review-kerem-szeretnek"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-115-controlled-4",
       "type": "substitution",
-      "category": "controlled",
+      "category": "grammar",
       "base_sentence": "Meleg a kávé.",
       "base_word": "kávé",
       "base_gloss": "The coffee is hot.",
@@ -141,12 +148,13 @@
       "teaches": [
         "zero-copula-review-meleg-a-kave",
         "cafe-review-kerem-szeretnek"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-115-practice-1",
       "type": "multiple-choice",
-      "category": "practice",
+      "category": "grammar",
       "question": "Which word means 'delicious'?",
       "options": [
         "finom",
@@ -157,23 +165,25 @@
       "teaches": [
         "zero-copula-review-meleg-a-kave",
         "cafe-review-kerem-szeretnek"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-115-practice-2",
       "type": "fill-blank",
-      "category": "practice",
+      "category": "grammar",
       "sentence": "Szeretnék egy ____.",
       "answer": "limonádét",
       "teaches": [
         "zero-copula-review-meleg-a-kave",
         "cafe-review-kerem-szeretnek"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-115-practice-3",
       "type": "matching",
-      "category": "practice",
+      "category": "vocabulary",
       "pairs": [
         [
           "Meleg a kávé.",
@@ -195,12 +205,13 @@
       "teaches": [
         "zero-copula-review-meleg-a-kave",
         "cafe-review-kerem-szeretnek"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-115-practice-4",
       "type": "substitution",
-      "category": "practice",
+      "category": "grammar",
       "base_sentence": "Finom a sütemény.",
       "base_word": "sütemény",
       "base_gloss": "The pastry is delicious.",
@@ -221,12 +232,13 @@
       "teaches": [
         "zero-copula-review-meleg-a-kave",
         "cafe-review-kerem-szeretnek"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-115-practice-5",
       "type": "dialogue-complete",
-      "category": "practice",
+      "category": "dialogue",
       "prompt": [
         {
           "speaker": "Pincér",
@@ -245,7 +257,8 @@
       "teaches": [
         "zero-copula-review-meleg-a-kave",
         "cafe-review-kerem-szeretnek"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-115-dialogue-1",
@@ -289,7 +302,7 @@
     {
       "id": "a1-115-writing-1",
       "type": "structured-writing",
-      "category": "production",
+      "category": "writing",
       "template": [
         {
           "prompt": "Write a sentence using this word: finom",
@@ -299,12 +312,13 @@
       "teaches": [
         "zero-copula-review-meleg-a-kave",
         "cafe-review-kerem-szeretnek"
-      ]
+      ],
+      "stage": "production"
     },
     {
       "id": "a1-115-writing-2",
       "type": "structured-writing",
-      "category": "production",
+      "category": "writing",
       "template": [
         {
           "prompt": "Write a sentence using this word: meleg",
@@ -314,12 +328,13 @@
       "teaches": [
         "zero-copula-review-meleg-a-kave",
         "cafe-review-kerem-szeretnek"
-      ]
+      ],
+      "stage": "production"
     },
     {
       "id": "a1-115-check-1",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "grammar",
       "question": "Which word means 'hot / warm'?",
       "options": [
         "meleg",
@@ -330,18 +345,20 @@
       "teaches": [
         "zero-copula-review-meleg-a-kave",
         "cafe-review-kerem-szeretnek"
-      ]
+      ],
+      "stage": "check"
     },
     {
       "id": "a1-115-check-2",
       "type": "fill-blank",
-      "category": "check",
+      "category": "grammar",
       "sentence": "Kér még ____?",
       "answer": "valamit",
       "teaches": [
         "zero-copula-review-meleg-a-kave",
         "cafe-review-kerem-szeretnek"
-      ]
+      ],
+      "stage": "check"
     }
   ]
 }

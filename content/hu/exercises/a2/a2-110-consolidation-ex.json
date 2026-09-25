@@ -4,130 +4,236 @@
     {
       "id": "a2-110-consolidation-1",
       "type": "multiple-choice",
-      "category": "recognize",
+      "category": "grammar",
       "question": "Which means \"to go out\"?",
-      "options": ["kimegy", "bemegy", "felkel"],
+      "options": [
+        "kimegy",
+        "bemegy",
+        "felkel"
+      ],
       "correct": 0,
-      "teaches": ["be-ki-meaning"]
+      "teaches": [
+        "be-ki-meaning"
+      ],
+      "stage": "recognize"
     },
     {
       "id": "a2-110-consolidation-2",
       "type": "multiple-choice",
-      "category": "recognize",
+      "category": "grammar",
       "question": "Which means \"to sit down\"?",
-      "options": ["leül", "felül", "elindul"],
+      "options": [
+        "leül",
+        "felül",
+        "elindul"
+      ],
       "correct": 0,
-      "teaches": ["fel-le-meaning"]
+      "teaches": [
+        "fel-le-meaning"
+      ],
+      "stage": "recognize"
     },
     {
       "id": "a2-110-consolidation-3",
       "type": "multiple-choice",
-      "category": "recognize",
+      "category": "grammar",
       "question": "Which means \"to eat something up completely\"?",
-      "options": ["megeszik", "eszik", "elkezd"],
+      "options": [
+        "megeszik",
+        "eszik",
+        "elkezd"
+      ],
       "correct": 0,
-      "teaches": ["meg-meaning"]
+      "teaches": [
+        "meg-meaning"
+      ],
+      "stage": "recognize"
     },
     {
       "id": "a2-110-consolidation-4",
       "type": "matching",
-      "category": "recall",
+      "category": "vocabulary",
       "pairs": [
-        ["elkezd", "start, begin"],
-        ["befejez", "finish"],
-        ["elindul", "set off, depart"],
-        ["megcsinál", "get (something) done"]
+        [
+          "elkezd",
+          "start, begin"
+        ],
+        [
+          "befejez",
+          "finish"
+        ],
+        [
+          "elindul",
+          "set off, depart"
+        ],
+        [
+          "megcsinál",
+          "get (something) done"
+        ]
       ],
-      "teaches": ["el-be-meaning", "meg-meaning"]
+      "teaches": [
+        "el-be-meaning",
+        "meg-meaning"
+      ],
+      "stage": "recall"
     },
     {
       "id": "a2-110-consolidation-5",
       "type": "matching",
-      "category": "recall",
+      "category": "vocabulary",
       "pairs": [
-        ["bemegy", "go in"],
-        ["kimegy", "go out"],
-        ["felszáll", "get on"],
-        ["leszáll", "get off"]
+        [
+          "bemegy",
+          "go in"
+        ],
+        [
+          "kimegy",
+          "go out"
+        ],
+        [
+          "felszáll",
+          "get on"
+        ],
+        [
+          "leszáll",
+          "get off"
+        ]
       ],
-      "teaches": ["be-ki-meaning", "fel-le-vocab"]
+      "teaches": [
+        "be-ki-meaning",
+        "fel-le-vocab"
+      ],
+      "stage": "recall"
     },
     {
       "id": "a2-110-consolidation-6",
       "type": "fill-blank",
-      "category": "recall",
+      "category": "grammar",
       "sentence": "Szombaton Meg korán ____, zuhanyozik, és felöltözik.",
       "answer": "felkel",
-      "teaches": ["fel-le-meaning"]
+      "teaches": [
+        "fel-le-meaning"
+      ],
+      "stage": "recall"
     },
     {
       "id": "a2-110-consolidation-7",
       "type": "dialogue-complete",
-      "category": "context",
+      "category": "dialogue",
       "prompt": [
-        { "speaker": "Petra", "text": "Bemész ma a városba?" },
-        { "speaker": "Meg", "text": "_____" }
+        {
+          "speaker": "Petra",
+          "text": "Bemész ma a városba?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
       ],
-      "options": ["Igen, felszállok a buszra, és bemegyek egy boltba.", "Nem, nagyon fáradt vagyok, és lefekszem."],
+      "options": [
+        "Igen, felszállok a buszra, és bemegyek egy boltba.",
+        "Nem, nagyon fáradt vagyok, és lefekszem."
+      ],
       "correct": 0,
-      "teaches": ["be-ki-meaning", "fel-le-vocab"]
+      "teaches": [
+        "be-ki-meaning",
+        "fel-le-vocab"
+      ],
+      "stage": "context"
     },
     {
       "id": "a2-110-consolidation-8",
       "type": "dialogue-complete",
-      "category": "context",
+      "category": "dialogue",
       "prompt": [
-        { "speaker": "Ildikó", "text": "Elkezdted már a jelentést?" },
-        { "speaker": "Meg", "text": "_____" }
+        {
+          "speaker": "Ildikó",
+          "text": "Elkezdted már a jelentést?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
       ],
-      "options": ["Még nem kezdem el, most reggelizem.", "Igen, gyorsan kiszállok a kocsiból."],
+      "options": [
+        "Még nem kezdem el, most reggelizem.",
+        "Igen, gyorsan kiszállok a kocsiból."
+      ],
       "correct": 0,
-      "teaches": ["el-be-meaning", "prefix-word-order"]
+      "teaches": [
+        "el-be-meaning",
+        "prefix-word-order"
+      ],
+      "stage": "context"
     },
     {
       "id": "a2-110-consolidation-9",
       "type": "sentence-builder",
-      "category": "context",
-      "tiles": ["Meg", "megeszi", "az", "ebédet", "."],
-      "solution": ["Meg", "megeszi", "az", "ebédet", "."],
+      "category": "grammar",
+      "tiles": [
+        "Meg",
+        "megeszi",
+        "az",
+        "ebédet",
+        "."
+      ],
+      "solution": [
+        "Meg",
+        "megeszi",
+        "az",
+        "ebédet",
+        "."
+      ],
       "english": "Meg eats up the lunch.",
-      "teaches": ["meg-meaning"]
+      "teaches": [
+        "meg-meaning"
+      ],
+      "stage": "context"
     },
     {
       "id": "a2-110-consolidation-10",
       "type": "structured-writing",
-      "category": "produce",
+      "category": "writing",
       "template": [
         {
           "prompt": "Say Meg gets up early on Saturday, showers, and gets dressed.",
           "answer": "Meg korán felkel, zuhanyozik, és felöltözik."
         }
       ],
-      "teaches": ["fel-le-meaning"]
+      "teaches": [
+        "fel-le-meaning"
+      ],
+      "stage": "produce"
     },
     {
       "id": "a2-110-consolidation-11",
       "type": "structured-writing",
-      "category": "produce",
+      "category": "writing",
       "template": [
         {
           "prompt": "Say you're not going into the shop today.",
           "answer": "Ma nem megyek be a boltba."
         }
       ],
-      "teaches": ["prefix-word-order"]
+      "teaches": [
+        "prefix-word-order"
+      ],
+      "stage": "produce"
     },
     {
       "id": "a2-110-consolidation-12",
       "type": "structured-writing",
-      "category": "produce",
+      "category": "writing",
       "template": [
         {
           "prompt": "Say you start the report in the morning, and finish it by five.",
           "answer": "Reggel elkezdem a jelentést, és ötkor befejezem."
         }
       ],
-      "teaches": ["el-be-meaning"]
+      "teaches": [
+        "el-be-meaning"
+      ],
+      "stage": "produce"
     }
   ]
 }

@@ -4,31 +4,33 @@
     {
       "id": "a1-122-review-1",
       "type": "multiple-choice",
-      "category": "review",
+      "category": "vocabulary",
       "question": "What does 'bolt' mean?",
       "options": [
         "shop",
         "product",
         "gift"
       ],
-      "correct": 0
+      "correct": 0,
+      "stage": "review"
     },
     {
       "id": "a1-122-review-2",
       "type": "multiple-choice",
-      "category": "review",
+      "category": "vocabulary",
       "question": "What does 'nadrág' mean?",
       "options": [
         "trousers",
         "T-shirt",
         "bag"
       ],
-      "correct": 0
+      "correct": 0,
+      "stage": "review"
     },
     {
       "id": "a1-122-introduce-1",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "grammar",
       "question": "What does 'táska' mean?",
       "options": [
         "bag",
@@ -39,12 +41,13 @@
       "teaches": [
         "which-one-melyik",
         "pointing-at-the-object-ezt-azt"
-      ]
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a1-122-introduce-2",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "grammar",
       "question": "What does 'ajándék' mean?",
       "options": [
         "gift",
@@ -55,23 +58,25 @@
       "teaches": [
         "which-one-melyik",
         "pointing-at-the-object-ezt-azt"
-      ]
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a1-122-controlled-1",
       "type": "fill-blank",
-      "category": "controlled",
+      "category": "grammar",
       "sentence": "Melyik ____ szép?",
       "answer": "táska",
       "teaches": [
         "which-one-melyik",
         "pointing-at-the-object-ezt-azt"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-122-controlled-2",
       "type": "multiple-choice",
-      "category": "controlled",
+      "category": "grammar",
       "question": "Choose the word for 'shoe'.",
       "options": [
         "cipő",
@@ -82,12 +87,13 @@
       "teaches": [
         "which-one-melyik",
         "pointing-at-the-object-ezt-azt"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-122-controlled-3",
       "type": "matching",
-      "category": "controlled",
+      "category": "vocabulary",
       "pairs": [
         [
           "cipő",
@@ -109,12 +115,13 @@
       "teaches": [
         "which-one-melyik",
         "pointing-at-the-object-ezt-azt"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-122-controlled-4",
       "type": "substitution",
-      "category": "controlled",
+      "category": "grammar",
       "base_sentence": "Ezt kérem, nem azt.",
       "base_word": "Ezt",
       "base_gloss": "I'd like this one, not that one.",
@@ -135,12 +142,13 @@
       "teaches": [
         "which-one-melyik",
         "pointing-at-the-object-ezt-azt"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-122-practice-1",
       "type": "multiple-choice",
-      "category": "practice",
+      "category": "grammar",
       "question": "Which word means 'which one'?",
       "options": [
         "melyik",
@@ -151,23 +159,25 @@
       "teaches": [
         "which-one-melyik",
         "pointing-at-the-object-ezt-azt"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-122-practice-2",
       "type": "fill-blank",
-      "category": "practice",
+      "category": "grammar",
       "sentence": "Melyik színt szereted? ____ tetszik.",
       "answer": "Ez",
       "teaches": [
         "which-one-melyik",
         "pointing-at-the-object-ezt-azt"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-122-practice-3",
       "type": "matching",
-      "category": "practice",
+      "category": "vocabulary",
       "pairs": [
         [
           "cipő",
@@ -193,12 +203,13 @@
       "teaches": [
         "which-one-melyik",
         "pointing-at-the-object-ezt-azt"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-122-practice-4",
       "type": "substitution",
-      "category": "practice",
+      "category": "grammar",
       "base_sentence": "Ez a könyv ajándék.",
       "base_word": "könyv",
       "base_gloss": "This book is a gift.",
@@ -219,12 +230,13 @@
       "teaches": [
         "which-one-melyik",
         "pointing-at-the-object-ezt-azt"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-122-practice-5",
       "type": "dialogue-complete",
-      "category": "practice",
+      "category": "dialogue",
       "prompt": [
         {
           "speaker": "Meg",
@@ -243,7 +255,8 @@
       "teaches": [
         "which-one-melyik",
         "pointing-at-the-object-ezt-azt"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-122-dialogue-1",
@@ -326,7 +339,7 @@
     {
       "id": "a1-122-check-1",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "grammar",
       "question": "Choose the correct word for 'book'.",
       "options": [
         "könyv",
@@ -337,12 +350,13 @@
       "teaches": [
         "which-one-melyik",
         "pointing-at-the-object-ezt-azt"
-      ]
+      ],
+      "stage": "check"
     },
     {
       "id": "a1-122-check-2",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "grammar",
       "question": "Choose the correct word for 'gift'.",
       "options": [
         "ajándék",
@@ -353,7 +367,8 @@
       "teaches": [
         "which-one-melyik",
         "pointing-at-the-object-ezt-azt"
-      ]
+      ],
+      "stage": "check"
     }
   ]
 }

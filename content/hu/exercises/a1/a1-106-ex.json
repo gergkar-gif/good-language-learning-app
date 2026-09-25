@@ -4,19 +4,20 @@
     {
       "id": "a1-106-review-1",
       "type": "multiple-choice",
-      "category": "review",
+      "category": "vocabulary",
       "question": "Which word means 'expensive'?",
       "options": [
         "drága",
         "olcsó",
         "kérek"
       ],
-      "correct": 0
+      "correct": 0,
+      "stage": "review"
     },
     {
       "id": "a1-106-review-2",
       "type": "matching",
-      "category": "review",
+      "category": "vocabulary",
       "pairs": [
         [
           "drága",
@@ -34,12 +35,13 @@
           "fizet",
           "pay"
         ]
-      ]
+      ],
+      "stage": "review"
     },
     {
       "id": "a1-106-intro-1",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "grammar",
       "question": "Which word means 'market'?",
       "options": [
         "piac",
@@ -50,34 +52,37 @@
       "teaches": [
         "this-is-that-is-ez-az",
         "van-for-existence-sok-arus-van"
-      ]
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a1-106-intro-2",
       "type": "fill-blank",
-      "category": "introduce",
+      "category": "grammar",
       "sentence": "Az a ____. (fruit)",
       "answer": "gyümölcs",
       "teaches": [
         "this-is-that-is-ez-az",
         "van-for-existence-sok-arus-van"
-      ]
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a1-106-controlled-1",
       "type": "fill-blank",
-      "category": "controlled",
+      "category": "grammar",
       "sentence": "Ez a ____. (vegetable)",
       "answer": "zöldség",
       "teaches": [
         "this-is-that-is-ez-az",
         "van-for-existence-sok-arus-van"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-106-controlled-2",
       "type": "multiple-choice",
-      "category": "controlled",
+      "category": "grammar",
       "question": "What does 'árus' mean?",
       "options": [
         "vendor",
@@ -88,12 +93,13 @@
       "teaches": [
         "this-is-that-is-ez-az",
         "van-for-existence-sok-arus-van"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-106-controlled-3",
       "type": "matching",
-      "category": "controlled",
+      "category": "vocabulary",
       "pairs": [
         [
           "piac",
@@ -115,12 +121,13 @@
       "teaches": [
         "this-is-that-is-ez-az",
         "van-for-existence-sok-arus-van"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-106-controlled-4",
       "type": "substitution",
-      "category": "controlled",
+      "category": "grammar",
       "base_sentence": "Ez a zöldség.",
       "base_word": "zöldség",
       "base_gloss": "This is the vegetable.",
@@ -141,12 +148,13 @@
       "teaches": [
         "this-is-that-is-ez-az",
         "van-for-existence-sok-arus-van"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-106-practice-1",
       "type": "multiple-choice",
-      "category": "practice",
+      "category": "grammar",
       "question": "Which word means 'vegetable'?",
       "options": [
         "zöldség",
@@ -157,23 +165,25 @@
       "teaches": [
         "this-is-that-is-ez-az",
         "van-for-existence-sok-arus-van"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-106-practice-2",
       "type": "fill-blank",
-      "category": "practice",
+      "category": "grammar",
       "sentence": "Itt a ____. Sok árus van.",
       "answer": "piac",
       "teaches": [
         "this-is-that-is-ez-az",
         "van-for-existence-sok-arus-van"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-106-practice-3",
       "type": "matching",
-      "category": "practice",
+      "category": "vocabulary",
       "pairs": [
         [
           "Ez a zöldség.",
@@ -195,12 +205,13 @@
       "teaches": [
         "this-is-that-is-ez-az",
         "van-for-existence-sok-arus-van"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-106-practice-4",
       "type": "substitution",
-      "category": "practice",
+      "category": "grammar",
       "base_sentence": "Kérek zöldséget.",
       "base_word": "zöldséget",
       "base_gloss": "I'd like vegetables.",
@@ -221,12 +232,13 @@
       "teaches": [
         "this-is-that-is-ez-az",
         "van-for-existence-sok-arus-van"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-106-practice-5",
       "type": "dialogue-complete",
-      "category": "practice",
+      "category": "dialogue",
       "prompt": [
         {
           "speaker": "Károly",
@@ -245,7 +257,8 @@
       "teaches": [
         "this-is-that-is-ez-az",
         "van-for-existence-sok-arus-van"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-106-dialogue-1",
@@ -289,7 +302,7 @@
     {
       "id": "a1-106-writing-1",
       "type": "structured-writing",
-      "category": "production",
+      "category": "writing",
       "template": [
         {
           "prompt": "Write a sentence using this word: piac",
@@ -299,12 +312,13 @@
       "teaches": [
         "this-is-that-is-ez-az",
         "van-for-existence-sok-arus-van"
-      ]
+      ],
+      "stage": "production"
     },
     {
       "id": "a1-106-writing-2",
       "type": "structured-writing",
-      "category": "production",
+      "category": "writing",
       "template": [
         {
           "prompt": "Write a sentence using this word: árus",
@@ -314,12 +328,13 @@
       "teaches": [
         "this-is-that-is-ez-az",
         "van-for-existence-sok-arus-van"
-      ]
+      ],
+      "stage": "production"
     },
     {
       "id": "a1-106-check-1",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "grammar",
       "question": "Which word means 'fruit'?",
       "options": [
         "gyümölcs",
@@ -330,18 +345,20 @@
       "teaches": [
         "this-is-that-is-ez-az",
         "van-for-existence-sok-arus-van"
-      ]
+      ],
+      "stage": "check"
     },
     {
       "id": "a1-106-check-2",
       "type": "fill-blank",
-      "category": "check",
+      "category": "grammar",
       "sentence": "Kérek zöldséget és ____.",
       "answer": "gyümölcsöt",
       "teaches": [
         "this-is-that-is-ez-az",
         "van-for-existence-sok-arus-van"
-      ]
+      ],
+      "stage": "check"
     }
   ]
 }

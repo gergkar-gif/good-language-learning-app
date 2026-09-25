@@ -4,7 +4,7 @@
     {
       "id": "b1-02-01-intro-1",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "grammar",
       "question": "Which word means \"already, ever\" and signals an experience, not a specific event?",
       "options": [
         "már",
@@ -14,12 +14,13 @@
       "correct": 0,
       "teaches": [
         "mar-experiential"
-      ]
+      ],
+      "stage": "introduce"
     },
     {
       "id": "b1-02-01-intro-2",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "grammar",
       "question": "Which phrase means \"never yet\"?",
       "options": [
         "még soha nem",
@@ -29,12 +30,13 @@
       "correct": 0,
       "teaches": [
         "meg-soha-nem-past"
-      ]
+      ],
+      "stage": "introduce"
     },
     {
       "id": "b1-02-01-controlled-1",
       "type": "matching",
-      "category": "controlled",
+      "category": "vocabulary",
       "pairs": [
         [
           "már",
@@ -56,32 +58,35 @@
       "teaches": [
         "mar-experiential",
         "meg-soha-nem-past"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "b1-02-01-controlled-2",
       "type": "fill-blank",
-      "category": "controlled",
+      "category": "grammar",
       "sentence": "Jártál ____ Japánban? (ever)",
       "answer": "már",
       "teaches": [
         "mar-experiential"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "b1-02-01-controlled-3",
       "type": "fill-blank",
-      "category": "controlled",
+      "category": "grammar",
       "sentence": "Még ____ nem jártam Japánban. (never)",
       "answer": "soha",
       "teaches": [
         "meg-soha-nem-past"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "b1-02-01-controlled-4",
       "type": "multiple-choice",
-      "category": "controlled",
+      "category": "grammar",
       "question": "Próbáltál ____ szusit?",
       "options": [
         "már",
@@ -91,12 +96,13 @@
       "correct": 0,
       "teaches": [
         "mar-experiential"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "b1-02-01-practice-1",
       "type": "sentence-builder",
-      "category": "practice",
+      "category": "grammar",
       "tiles": [
         "Már",
         "jártam",
@@ -112,12 +118,13 @@
       "english": "I've already been to London.",
       "teaches": [
         "mar-experiential"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "b1-02-01-practice-2",
       "type": "sentence-builder",
-      "category": "practice",
+      "category": "grammar",
       "tiles": [
         "Még",
         "soha",
@@ -137,12 +144,13 @@
       "english": "I've never yet been to Japan.",
       "teaches": [
         "meg-soha-nem-past"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "b1-02-01-practice-3",
       "type": "substitution",
-      "category": "practice",
+      "category": "grammar",
       "base_sentence": "Már ettem kaviárt.",
       "base_word": "kaviárt",
       "base_gloss": "I've already eaten caviar.",
@@ -162,12 +170,13 @@
       ],
       "teaches": [
         "mar-experiential"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "b1-02-01-practice-4",
       "type": "multiple-choice",
-      "category": "practice",
+      "category": "grammar",
       "question": "Which sentence describes a general experience, not one specific past event?",
       "options": [
         "Már jártam Párizsban.",
@@ -177,7 +186,8 @@
       "correct": 0,
       "teaches": [
         "mar-experiential"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "b1-02-01-dialogue-1",
@@ -256,7 +266,7 @@
     {
       "id": "b1-02-01-check-1",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "grammar",
       "question": "Which sentence means \"Have you ever tried sushi?\"",
       "options": [
         "Próbáltál már szusit?",
@@ -266,17 +276,19 @@
       "correct": 0,
       "teaches": [
         "mar-experiential"
-      ]
+      ],
+      "stage": "check"
     },
     {
       "id": "b1-02-01-check-2",
       "type": "fill-blank",
-      "category": "check",
+      "category": "grammar",
       "sentence": "Még ____ nem próbáltam ki a szörfözést. (never)",
       "answer": "soha",
       "teaches": [
         "meg-soha-nem-past"
-      ]
+      ],
+      "stage": "check"
     }
   ]
 }

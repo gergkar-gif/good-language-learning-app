@@ -4,130 +4,247 @@
     {
       "id": "a2-95-consolidation-1",
       "type": "multiple-choice",
-      "category": "recognize",
+      "category": "vocabulary",
       "question": "Which means \"exam\"?",
-      "options": ["vizsga", "tantárgy", "kollégium"],
+      "options": [
+        "vizsga",
+        "tantárgy",
+        "kollégium"
+      ],
       "correct": 0,
-      "teaches": ["school-vocab"]
+      "teaches": [
+        "school-vocab"
+      ],
+      "stage": "recognize"
     },
     {
       "id": "a2-95-consolidation-2",
       "type": "multiple-choice",
-      "category": "recognize",
+      "category": "vocabulary",
       "question": "Which means \"pronunciation\"?",
-      "options": ["kiejtés", "nyelvtan", "szókincs"],
+      "options": [
+        "kiejtés",
+        "nyelvtan",
+        "szókincs"
+      ],
       "correct": 0,
-      "teaches": ["language-vocab"]
+      "teaches": [
+        "language-vocab"
+      ],
+      "stage": "recognize"
     },
     {
       "id": "a2-95-consolidation-3",
       "type": "multiple-choice",
-      "category": "recognize",
+      "category": "vocabulary",
       "question": "Which means \"to concentrate\"?",
-      "options": ["koncentrál", "fejlődik", "remél"],
+      "options": [
+        "koncentrál",
+        "fejlődik",
+        "remél"
+      ],
       "correct": 0,
-      "teaches": ["learning-methods-vocab"]
+      "teaches": [
+        "learning-methods-vocab"
+      ],
+      "stage": "recognize"
     },
     {
       "id": "a2-95-consolidation-4",
       "type": "matching",
-      "category": "recall",
+      "category": "vocabulary",
       "pairs": [
-        ["tanár", "teacher"],
-        ["tantárgy", "school subject"],
-        ["nyelv", "language"],
-        ["cél", "goal"]
+        [
+          "tanár",
+          "teacher"
+        ],
+        [
+          "tantárgy",
+          "school subject"
+        ],
+        [
+          "nyelv",
+          "language"
+        ],
+        [
+          "cél",
+          "goal"
+        ]
       ],
-      "teaches": ["school-vocab", "subjects-vocab", "language-vocab", "goals-vocab"]
+      "teaches": [
+        "school-vocab",
+        "subjects-vocab",
+        "language-vocab",
+        "goals-vocab"
+      ],
+      "stage": "recall"
     },
     {
       "id": "a2-95-consolidation-5",
       "type": "matching",
-      "category": "recall",
+      "category": "vocabulary",
       "pairs": [
-        ["gyakorol", "to practice"],
-        ["folyékonyan", "fluently"],
-        ["órarend", "timetable, schedule"],
-        ["biológia", "biology"]
+        [
+          "gyakorol",
+          "to practice"
+        ],
+        [
+          "folyékonyan",
+          "fluently"
+        ],
+        [
+          "órarend",
+          "timetable, schedule"
+        ],
+        [
+          "biológia",
+          "biology"
+        ]
       ],
-      "teaches": ["learning-methods-vocab", "goals-vocab", "school-vocab", "subjects-vocab"]
+      "teaches": [
+        "learning-methods-vocab",
+        "goals-vocab",
+        "school-vocab",
+        "subjects-vocab"
+      ],
+      "stage": "recall"
     },
     {
       "id": "a2-95-consolidation-6",
       "type": "fill-blank",
-      "category": "recall",
+      "category": "grammar",
       "sentence": "2018 ____ egyetemre járok Budapesten.",
       "answer": "óta",
-      "teaches": ["ota-since", "jar-iskolaba"]
+      "teaches": [
+        "ota-since",
+        "jar-iskolaba"
+      ],
+      "stage": "recall"
     },
     {
       "id": "a2-95-consolidation-7",
       "type": "dialogue-complete",
-      "category": "context",
+      "category": "dialogue",
       "prompt": [
-        { "speaker": "Petra", "text": "Milyen tantárgyban vagy jó?" },
-        { "speaker": "Meg", "text": "_____" }
+        {
+          "speaker": "Petra",
+          "text": "Milyen tantárgyban vagy jó?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
       ],
-      "options": ["Jó vagyok matematikában, de rossz irodalomban.", "2019 óta egyetemre járok."],
+      "options": [
+        "Jó vagyok matematikában, de rossz irodalomban.",
+        "2019 óta egyetemre járok."
+      ],
       "correct": 0,
-      "teaches": ["jo-vmiben"]
+      "teaches": [
+        "jo-vmiben"
+      ],
+      "stage": "context"
     },
     {
       "id": "a2-95-consolidation-8",
       "type": "dialogue-complete",
-      "category": "context",
+      "category": "dialogue",
       "prompt": [
-        { "speaker": "Meg", "text": "Hogyan tanulsz nyelveket?" },
-        { "speaker": "Tamás", "text": "_____" }
+        {
+          "speaker": "Meg",
+          "text": "Hogyan tanulsz nyelveket?"
+        },
+        {
+          "speaker": "Tamás",
+          "text": "_____"
+        }
       ],
-      "options": ["Gyakorlással és ismétléssel, elég gyorsan.", "A tanárom nagyon jó."],
+      "options": [
+        "Gyakorlással és ismétléssel, elég gyorsan.",
+        "A tanárom nagyon jó."
+      ],
       "correct": 0,
-      "teaches": ["as-es-val-vel", "an-en-adverb"]
+      "teaches": [
+        "as-es-val-vel",
+        "an-en-adverb"
+      ],
+      "stage": "context"
     },
     {
       "id": "a2-95-consolidation-9",
       "type": "sentence-builder",
-      "category": "context",
-      "tiles": ["Remélem,", "hogy", "jövőre", "folyékonyan", "beszélek", "magyarul", "."],
-      "solution": ["Remélem,", "hogy", "jövőre", "folyékonyan", "beszélek", "magyarul", "."],
+      "category": "grammar",
+      "tiles": [
+        "Remélem,",
+        "hogy",
+        "jövőre",
+        "folyékonyan",
+        "beszélek",
+        "magyarul",
+        "."
+      ],
+      "solution": [
+        "Remélem,",
+        "hogy",
+        "jövőre",
+        "folyékonyan",
+        "beszélek",
+        "magyarul",
+        "."
+      ],
       "english": "I hope that next year I'll speak Hungarian fluently.",
-      "teaches": ["hogy-clause", "present-future-time"]
+      "teaches": [
+        "hogy-clause",
+        "present-future-time"
+      ],
+      "stage": "context"
     },
     {
       "id": "a2-95-consolidation-10",
       "type": "structured-writing",
-      "category": "produce",
+      "category": "writing",
       "template": [
         {
           "prompt": "Say you've been attending university since 2019.",
           "answer": "2019 óta egyetemre járok."
         }
       ],
-      "teaches": ["ota-since", "jar-iskolaba"]
+      "teaches": [
+        "ota-since",
+        "jar-iskolaba"
+      ],
+      "stage": "produce"
     },
     {
       "id": "a2-95-consolidation-11",
       "type": "structured-writing",
-      "category": "produce",
+      "category": "writing",
       "template": [
         {
           "prompt": "Say you're good at biology but bad at math.",
           "answer": "Jó vagyok biológiában, de rossz vagyok matematikában."
         }
       ],
-      "teaches": ["jo-vmiben"]
+      "teaches": [
+        "jo-vmiben"
+      ],
+      "stage": "produce"
     },
     {
       "id": "a2-95-consolidation-12",
       "type": "structured-writing",
-      "category": "produce",
+      "category": "writing",
       "template": [
         {
           "prompt": "Say you learn new words easily by practicing.",
           "answer": "Könnyen tanulok új szavakat gyakorlással."
         }
       ],
-      "teaches": ["an-en-adverb", "as-es-val-vel"]
+      "teaches": [
+        "an-en-adverb",
+        "as-es-val-vel"
+      ],
+      "stage": "produce"
     }
   ]
 }

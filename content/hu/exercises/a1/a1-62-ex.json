@@ -4,31 +4,33 @@
     {
       "id": "a1-62-review-1",
       "type": "multiple-choice",
-      "category": "review",
+      "category": "vocabulary",
       "question": "Which means “I work”?",
       "options": [
         "dolgozom",
         "dolgozik",
         "dolgozni"
       ],
-      "correct": 0
+      "correct": 0,
+      "stage": "review"
     },
     {
       "id": "a1-62-review-2",
       "type": "multiple-choice",
-      "category": "review",
+      "category": "grammar",
       "question": "Which form is a present-tense verb?",
       "options": [
         "tanulok",
         "tanulni",
         "tanulás"
       ],
-      "correct": 0
+      "correct": 0,
+      "stage": "review"
     },
     {
       "id": "a1-62-intro-1",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "grammar",
       "question": "Choose the correct first-person sentence.",
       "options": [
         "Nézek.",
@@ -39,12 +41,13 @@
       "teaches": [
         "present-tense-ok-ek-ok-62",
         "subject-omission-62"
-      ]
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a1-62-intro-2",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "grammar",
       "question": "Which means “Anna speaks”?",
       "options": [
         "Anna beszél.",
@@ -55,12 +58,13 @@
       "teaches": [
         "present-tense-ok-ek-ok-62",
         "subject-omission-62"
-      ]
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a1-62-controlled-1",
       "type": "matching",
-      "category": "controlled",
+      "category": "vocabulary",
       "pairs": [
         [
           "beszélni",
@@ -82,23 +86,25 @@
       "teaches": [
         "present-tense-ok-ek-ok-62",
         "subject-omission-62"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-62-controlled-2",
       "type": "fill-blank",
-      "category": "controlled",
+      "category": "grammar",
       "sentence": "Én ____ magyarul.",
       "answer": "beszélek",
       "teaches": [
         "present-tense-ok-ek-ok-62",
         "subject-omission-62"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-62-controlled-3",
       "type": "multiple-choice",
-      "category": "controlled",
+      "category": "grammar",
       "question": "Which sentence is correct?",
       "options": [
         "Meg néz.",
@@ -109,12 +115,13 @@
       "teaches": [
         "present-tense-ok-ek-ok-62",
         "subject-omission-62"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-62-controlled-4",
       "type": "multiple-choice",
-      "category": "controlled",
+      "category": "grammar",
       "question": "Which sentence naturally omits the subject?",
       "options": [
         "Hallgatok.",
@@ -125,12 +132,13 @@
       "teaches": [
         "present-tense-ok-ek-ok-62",
         "subject-omission-62"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-62-practice-1",
       "type": "matching",
-      "category": "practice",
+      "category": "vocabulary",
       "pairs": [
         [
           "beszélni",
@@ -152,12 +160,13 @@
       "teaches": [
         "present-tense-ok-ek-ok-62",
         "subject-omission-62"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-62-practice-2",
       "type": "multiple-choice",
-      "category": "practice",
+      "category": "grammar",
       "question": "Which answer fits Mit csinálsz?",
       "options": [
         "Nézek.",
@@ -168,23 +177,25 @@
       "teaches": [
         "present-tense-ok-ek-ok-62",
         "subject-omission-62"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-62-practice-3",
       "type": "fill-blank",
-      "category": "practice",
+      "category": "grammar",
       "sentence": "Anna ____ egy filmet. (Anna is watching a movie)",
       "answer": "néz",
       "teaches": [
         "present-tense-ok-ek-ok-62",
         "subject-omission-62"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-62-practice-4",
       "type": "sentence-builder",
-      "category": "practice",
+      "category": "grammar",
       "tiles": [
         "Ma",
         "beszélek",
@@ -203,12 +214,13 @@
       "teaches": [
         "present-tense-ok-ek-ok-62",
         "subject-omission-62"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-62-practice-5",
       "type": "dialogue-complete",
-      "category": "practice",
+      "category": "dialogue",
       "prompt": [
         {
           "speaker": "Károly",
@@ -227,7 +239,8 @@
       "teaches": [
         "present-tense-ok-ek-ok-62",
         "subject-omission-62"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-62-dialogue-1",
@@ -312,7 +325,7 @@
     {
       "id": "a1-62-check-1",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "grammar",
       "question": "Which translates \"I work\"?",
       "options": [
         "Dolgozom.",
@@ -323,12 +336,13 @@
       "teaches": [
         "present-tense-ok-ek-ok-62",
         "subject-omission-62"
-      ]
+      ],
+      "stage": "check"
     },
     {
       "id": "a1-62-check-2",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "grammar",
       "question": "Which form means “I speak”?",
       "options": [
         "Beszélek.",
@@ -339,7 +353,8 @@
       "teaches": [
         "present-tense-ok-ek-ok-62",
         "subject-omission-62"
-      ]
+      ],
+      "stage": "check"
     }
   ]
 }

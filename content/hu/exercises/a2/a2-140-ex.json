@@ -4,156 +4,309 @@
     {
       "id": "a2-140-intro-1",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "grammar",
       "question": "Which sentence describes something imagined, not something you actually expect to happen?",
-      "options": ["Ha lenne időm, elmennék.", "Ha lesz időm, elmegyek.", "Van időm ma."],
+      "options": [
+        "Ha lenne időm, elmennék.",
+        "Ha lesz időm, elmegyek.",
+        "Van időm ma."
+      ],
       "correct": 0,
-      "teaches": ["hypothetical-ha-conditional"]
+      "teaches": [
+        "hypothetical-ha-conditional"
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a2-140-intro-2",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "grammar",
       "question": "Which word means \"it would rain\"?",
-      "options": ["esne", "esik", "esett"],
+      "options": [
+        "esne",
+        "esik",
+        "esett"
+      ],
       "correct": 0,
-      "teaches": ["hypothetical-ha-conditional"]
+      "teaches": [
+        "hypothetical-ha-conditional"
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a2-140-controlled-1",
       "type": "matching",
-      "category": "controlled",
+      "category": "vocabulary",
       "pairs": [
-        ["Ha lenne időm, elmennék.", "If I had time, I'd go."],
-        ["Ha esne, otthon maradnánk.", "If it rained, we'd stay home."],
-        ["Jobb lenne, ha korábban indulnánk.", "It would be better if we left earlier."],
-        ["Jó lenne, ha többet pihennél.", "It would be good if you rested more."]
+        [
+          "Ha lenne időm, elmennék.",
+          "If I had time, I'd go."
+        ],
+        [
+          "Ha esne, otthon maradnánk.",
+          "If it rained, we'd stay home."
+        ],
+        [
+          "Jobb lenne, ha korábban indulnánk.",
+          "It would be better if we left earlier."
+        ],
+        [
+          "Jó lenne, ha többet pihennél.",
+          "It would be good if you rested more."
+        ]
       ],
-      "teaches": ["hypothetical-ha-conditional", "jobb-lenne-ha"]
+      "teaches": [
+        "hypothetical-ha-conditional",
+        "jobb-lenne-ha"
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a2-140-controlled-2",
       "type": "matching",
-      "category": "controlled",
+      "category": "vocabulary",
       "pairs": [
-        ["időjárás", "weather"],
-        ["megoldás", "solution"],
-        ["kár", "a pity, a shame"],
-        ["helyette", "instead (of it/him/her)"]
+        [
+          "időjárás",
+          "weather"
+        ],
+        [
+          "megoldás",
+          "solution"
+        ],
+        [
+          "kár",
+          "a pity, a shame"
+        ],
+        [
+          "helyette",
+          "instead (of it/him/her)"
+        ]
       ],
-      "teaches": ["wish-vocab"]
+      "teaches": [
+        "wish-vocab"
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a2-140-controlled-3",
       "type": "fill-blank",
-      "category": "controlled",
+      "category": "grammar",
       "sentence": "Ha ____ időm, elmennék moziba. (there would be)",
       "answer": "lenne",
-      "teaches": ["hypothetical-ha-conditional"]
+      "teaches": [
+        "hypothetical-ha-conditional"
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a2-140-controlled-4",
       "type": "fill-blank",
-      "category": "controlled",
+      "category": "grammar",
       "sentence": "Ha esne, otthon ____. (we would stay)",
       "answer": "maradnánk",
-      "teaches": ["hypothetical-ha-conditional"]
+      "teaches": [
+        "hypothetical-ha-conditional"
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a2-140-practice-1",
       "type": "multiple-choice",
-      "category": "practice",
+      "category": "grammar",
       "question": "Which correctly completes: \"Jobb lenne, ha korábban ____.\" (we would leave)",
-      "options": ["indulnánk", "indulunk", "indultunk"],
+      "options": [
+        "indulnánk",
+        "indulunk",
+        "indultunk"
+      ],
       "correct": 0,
-      "teaches": ["jobb-lenne-ha"]
+      "teaches": [
+        "jobb-lenne-ha"
+      ],
+      "stage": "practice"
     },
     {
       "id": "a2-140-practice-2",
       "type": "multiple-choice",
-      "category": "practice",
+      "category": "vocabulary",
       "question": "Which means \"solution\"?",
-      "options": ["megoldás", "probléma", "ötlet"],
+      "options": [
+        "megoldás",
+        "probléma",
+        "ötlet"
+      ],
       "correct": 0,
-      "teaches": ["wish-vocab"]
+      "teaches": [
+        "wish-vocab"
+      ],
+      "stage": "practice"
     },
     {
       "id": "a2-140-practice-3",
       "type": "sentence-builder",
-      "category": "practice",
-      "tiles": ["Ha", "nem", "esne", ",", "sétálnánk", "egyet", "."],
-      "solution": ["Ha", "nem", "esne", ",", "sétálnánk", "egyet", "."],
+      "category": "grammar",
+      "tiles": [
+        "Ha",
+        "nem",
+        "esne",
+        ",",
+        "sétálnánk",
+        "egyet",
+        "."
+      ],
+      "solution": [
+        "Ha",
+        "nem",
+        "esne",
+        ",",
+        "sétálnánk",
+        "egyet",
+        "."
+      ],
       "english": "If it weren't raining, we'd take a walk.",
-      "teaches": ["hypothetical-ha-conditional"]
+      "teaches": [
+        "hypothetical-ha-conditional"
+      ],
+      "stage": "practice"
     },
     {
       "id": "a2-140-practice-4",
       "type": "sentence-builder",
-      "category": "practice",
-      "tiles": ["Az", "lenne", "a", "megoldás", ",", "ha", "kevesebbet", "dolgoznék", "."],
-      "solution": ["Az", "lenne", "a", "megoldás", ",", "ha", "kevesebbet", "dolgoznék", "."],
+      "category": "grammar",
+      "tiles": [
+        "Az",
+        "lenne",
+        "a",
+        "megoldás",
+        ",",
+        "ha",
+        "kevesebbet",
+        "dolgoznék",
+        "."
+      ],
+      "solution": [
+        "Az",
+        "lenne",
+        "a",
+        "megoldás",
+        ",",
+        "ha",
+        "kevesebbet",
+        "dolgoznék",
+        "."
+      ],
       "english": "The solution would be for me to work less.",
-      "teaches": ["jobb-lenne-ha"]
+      "teaches": [
+        "jobb-lenne-ha"
+      ],
+      "stage": "practice"
     },
     {
       "id": "a2-140-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
       "prompt": [
-        { "speaker": "Petra", "text": "Ma egész nap esik az eső." },
-        { "speaker": "Meg", "text": "_____" }
+        {
+          "speaker": "Petra",
+          "text": "Ma egész nap esik az eső."
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
       ],
-      "options": ["Ha nem esne, sétálnánk egyet a parkban.", "Tegnap esett az eső."],
+      "options": [
+        "Ha nem esne, sétálnánk egyet a parkban.",
+        "Tegnap esett az eső."
+      ],
       "correct": 0,
-      "teaches": ["hypothetical-ha-conditional"]
+      "teaches": [
+        "hypothetical-ha-conditional"
+      ]
     },
     {
       "id": "a2-140-dialogue-2",
       "type": "dialogue-complete",
       "category": "dialogue",
       "prompt": [
-        { "speaker": "Károly", "text": "Egész nap dolgozom, nincs időm pihenni." },
-        { "speaker": "Meg", "text": "_____" }
+        {
+          "speaker": "Károly",
+          "text": "Egész nap dolgozom, nincs időm pihenni."
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
       ],
-      "options": ["Jobb lenne, ha kevesebbet dolgoznál.", "Sokat dolgoztál tegnap."],
+      "options": [
+        "Jobb lenne, ha kevesebbet dolgoznál.",
+        "Sokat dolgoztál tegnap."
+      ],
       "correct": 0,
-      "teaches": ["jobb-lenne-ha"]
+      "teaches": [
+        "jobb-lenne-ha"
+      ]
     },
     {
       "id": "a2-140-writing-1",
       "type": "structured-writing",
       "category": "writing",
       "template": [
-        { "prompt": "Say: if I had time, I would go to the cinema.", "answer": "Ha lenne időm, elmennék moziba." }
+        {
+          "prompt": "Say: if I had time, I would go to the cinema.",
+          "answer": "Ha lenne időm, elmennék moziba."
+        }
       ],
-      "teaches": ["hypothetical-ha-conditional"]
+      "teaches": [
+        "hypothetical-ha-conditional"
+      ]
     },
     {
       "id": "a2-140-writing-2",
       "type": "structured-writing",
       "category": "writing",
       "template": [
-        { "prompt": "Say it would be better if we left earlier.", "answer": "Jobb lenne, ha korábban indulnánk." }
+        {
+          "prompt": "Say it would be better if we left earlier.",
+          "answer": "Jobb lenne, ha korábban indulnánk."
+        }
       ],
-      "teaches": ["jobb-lenne-ha"]
+      "teaches": [
+        "jobb-lenne-ha"
+      ]
     },
     {
       "id": "a2-140-check-1",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "grammar",
       "question": "Which correctly says \"If it rained, we would stay home\"?",
-      "options": ["Ha esne, otthon maradnánk.", "Ha esik, otthon maradunk.", "Esett, otthon maradtunk."],
+      "options": [
+        "Ha esne, otthon maradnánk.",
+        "Ha esik, otthon maradunk.",
+        "Esett, otthon maradtunk."
+      ],
       "correct": 0,
-      "teaches": ["hypothetical-ha-conditional"]
+      "teaches": [
+        "hypothetical-ha-conditional"
+      ],
+      "stage": "check"
     },
     {
       "id": "a2-140-check-2",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "vocabulary",
       "question": "Which means \"a pity, a shame\"?",
-      "options": ["kár", "remek", "mindegy"],
+      "options": [
+        "kár",
+        "remek",
+        "mindegy"
+      ],
       "correct": 0,
-      "teaches": ["wish-vocab"]
+      "teaches": [
+        "wish-vocab"
+      ],
+      "stage": "check"
     }
   ]
 }

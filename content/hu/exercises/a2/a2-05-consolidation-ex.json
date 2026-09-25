@@ -4,130 +4,234 @@
     {
       "id": "a2-05-consolidation-1",
       "type": "multiple-choice",
-      "category": "recognize",
+      "category": "vocabulary",
       "question": "Which means “I get up”?",
-      "options": ["felkelek", "lefekszem", "pihenek"],
+      "options": [
+        "felkelek",
+        "lefekszem",
+        "pihenek"
+      ],
       "correct": 0,
-      "teaches": ["daily-routine-verbs"]
+      "teaches": [
+        "daily-routine-verbs"
+      ],
+      "stage": "recognize"
     },
     {
       "id": "a2-05-consolidation-2",
       "type": "multiple-choice",
-      "category": "recognize",
+      "category": "grammar",
       "question": "Which means “I shave”?",
-      "options": ["borotválkozom", "mosakodom", "fésülködöm"],
+      "options": [
+        "borotválkozom",
+        "mosakodom",
+        "fésülködöm"
+      ],
       "correct": 0,
-      "teaches": ["getting-ready-verbs"]
+      "teaches": [
+        "getting-ready-verbs"
+      ],
+      "stage": "recognize"
     },
     {
       "id": "a2-05-consolidation-3",
       "type": "multiple-choice",
-      "category": "recognize",
+      "category": "grammar",
       "question": "Which means “on Wednesday”?",
-      "options": ["szerdán", "szerda", "szerdától"],
+      "options": [
+        "szerdán",
+        "szerda",
+        "szerdától"
+      ],
       "correct": 0,
-      "teaches": ["days-superessive"]
+      "teaches": [
+        "days-superessive"
+      ],
+      "stage": "recognize"
     },
     {
       "id": "a2-05-consolidation-4",
       "type": "matching",
-      "category": "recall",
+      "category": "vocabulary",
       "pairs": [
-        ["hétköznap", "weekday"],
-        ["hétvégén", "on the weekend"],
-        ["egyszer", "once"],
-        ["soha", "never"]
+        [
+          "hétköznap",
+          "weekday"
+        ],
+        [
+          "hétvégén",
+          "on the weekend"
+        ],
+        [
+          "egyszer",
+          "once"
+        ],
+        [
+          "soha",
+          "never"
+        ]
       ],
-      "teaches": ["weekday-vs-weekend"]
+      "teaches": [
+        "weekday-vs-weekend"
+      ],
+      "stage": "recall"
     },
     {
       "id": "a2-05-consolidation-5",
       "type": "matching",
-      "category": "recall",
+      "category": "vocabulary",
       "pairs": [
-        ["naponta", "daily"],
-        ["hetente", "weekly"],
-        ["havonta", "monthly"],
-        ["évente", "yearly"]
+        [
+          "naponta",
+          "daily"
+        ],
+        [
+          "hetente",
+          "weekly"
+        ],
+        [
+          "havonta",
+          "monthly"
+        ],
+        [
+          "évente",
+          "yearly"
+        ]
       ],
-      "teaches": ["every-day-nta"]
+      "teaches": [
+        "every-day-nta"
+      ],
+      "stage": "recall"
     },
     {
       "id": "a2-05-consolidation-6",
       "type": "fill-blank",
-      "category": "recall",
+      "category": "vocabulary",
       "sentence": "Hét ____ felkelek.",
       "answer": "órakor",
-      "teaches": ["telling-time-kor"]
+      "teaches": [
+        "telling-time-kor"
+      ],
+      "stage": "recall"
     },
     {
       "id": "a2-05-consolidation-7",
       "type": "dialogue-complete",
-      "category": "context",
+      "category": "dialogue",
       "prompt": [
-        { "speaker": "Meg", "text": "Milyen a napirended?" },
-        { "speaker": "Károly", "text": "_____" }
+        {
+          "speaker": "Meg",
+          "text": "Milyen a napirended?"
+        },
+        {
+          "speaker": "Károly",
+          "text": "_____"
+        }
       ],
-      "options": ["Hét órakor felkelek, kilenctől ötig dolgozom.", "Öt vagyok."],
+      "options": [
+        "Hét órakor felkelek, kilenctől ötig dolgozom.",
+        "Öt vagyok."
+      ],
       "correct": 0,
-      "teaches": ["routine-summary"]
+      "teaches": [
+        "routine-summary"
+      ],
+      "stage": "context"
     },
     {
       "id": "a2-05-consolidation-8",
       "type": "dialogue-complete",
-      "category": "context",
+      "category": "dialogue",
       "prompt": [
-        { "speaker": "Károly", "text": "Milyen gyakran sportolsz?" },
-        { "speaker": "Meg", "text": "_____" }
+        {
+          "speaker": "Károly",
+          "text": "Milyen gyakran sportolsz?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
       ],
-      "options": ["Hetente kétszer.", "Este vagyok."],
+      "options": [
+        "Hetente kétszer.",
+        "Este vagyok."
+      ],
       "correct": 0,
-      "teaches": ["how-many-times-szor"]
+      "teaches": [
+        "how-many-times-szor"
+      ],
+      "stage": "context"
     },
     {
       "id": "a2-05-consolidation-9",
       "type": "sentence-builder",
-      "category": "context",
-      "tiles": ["Előbb", "mosakodom", ",", "aztán", "felöltözöm", "."],
-      "solution": ["Előbb", "mosakodom", ",", "aztán", "felöltözöm", "."],
+      "category": "grammar",
+      "tiles": [
+        "Előbb",
+        "mosakodom",
+        ",",
+        "aztán",
+        "felöltözöm",
+        "."
+      ],
+      "solution": [
+        "Előbb",
+        "mosakodom",
+        ",",
+        "aztán",
+        "felöltözöm",
+        "."
+      ],
       "english": "First I wash up, then I get dressed.",
-      "teaches": ["sequencing-elobb-aztan-utana-vegul"]
+      "teaches": [
+        "sequencing-elobb-aztan-utana-vegul"
+      ],
+      "stage": "context"
     },
     {
       "id": "a2-05-consolidation-10",
       "type": "structured-writing",
-      "category": "produce",
+      "category": "writing",
       "template": [
         {
           "prompt": "Say you work from nine to five on weekdays.",
           "answer": "Hétköznap kilenctől ötig dolgozom."
         }
       ],
-      "teaches": ["from-to-tol-ig"]
+      "teaches": [
+        "from-to-tol-ig"
+      ],
+      "stage": "produce"
     },
     {
       "id": "a2-05-consolidation-11",
       "type": "structured-writing",
-      "category": "produce",
+      "category": "writing",
       "template": [
         {
           "prompt": "Say you never work on Sunday, and you rest.",
           "answer": "Soha nem dolgozom vasárnap, és pihenek."
         }
       ],
-      "teaches": ["routine-summary"]
+      "teaches": [
+        "routine-summary"
+      ],
+      "stage": "produce"
     },
     {
       "id": "a2-05-consolidation-12",
       "type": "structured-writing",
-      "category": "produce",
+      "category": "writing",
       "template": [
         {
           "prompt": "Describe a full morning: first you get up, then you shower, finally you have breakfast.",
           "answer": "Előbb felkelek, aztán zuhanyozom, végül reggelizem."
         }
       ],
-      "teaches": ["daily-routine-verbs"]
+      "teaches": [
+        "daily-routine-verbs"
+      ],
+      "stage": "produce"
     }
   ]
 }

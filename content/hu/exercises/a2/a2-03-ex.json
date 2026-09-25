@@ -4,120 +4,240 @@
     {
       "id": "a2-03-intro-1",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "grammar",
       "question": "Which means “on Monday”?",
-      "options": ["hétfőn", "hétfő", "hétfőig"],
+      "options": [
+        "hétfőn",
+        "hétfő",
+        "hétfőig"
+      ],
       "correct": 0,
-      "teaches": ["days-superessive"]
+      "teaches": [
+        "days-superessive"
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a2-03-intro-2",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "vocabulary",
       "question": "Which means “weekend”?",
-      "options": ["hétvége", "hétköznap", "munkanap"],
+      "options": [
+        "hétvége",
+        "hétköznap",
+        "munkanap"
+      ],
       "correct": 0,
-      "teaches": ["weekday-vs-weekend"]
+      "teaches": [
+        "weekday-vs-weekend"
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a2-03-controlled-1",
       "type": "matching",
-      "category": "controlled",
+      "category": "vocabulary",
       "pairs": [
-        ["hétfőn", "on Monday"],
-        ["kedden", "on Tuesday"],
-        ["szerdán", "on Wednesday"],
-        ["csütörtökön", "on Thursday"]
+        [
+          "hétfőn",
+          "on Monday"
+        ],
+        [
+          "kedden",
+          "on Tuesday"
+        ],
+        [
+          "szerdán",
+          "on Wednesday"
+        ],
+        [
+          "csütörtökön",
+          "on Thursday"
+        ]
       ],
-      "teaches": ["days-superessive"]
+      "teaches": [
+        "days-superessive"
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a2-03-controlled-2",
       "type": "fill-blank",
-      "category": "controlled",
+      "category": "grammar",
       "sentence": "Szombat____ nem dolgozom.",
       "answer": "on",
-      "teaches": ["days-superessive"]
+      "teaches": [
+        "days-superessive"
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a2-03-controlled-3",
       "type": "multiple-choice",
-      "category": "controlled",
+      "category": "grammar",
       "question": "Which day never takes a suffix for “on”?",
-      "options": ["vasárnap", "hétfő", "kedd"],
+      "options": [
+        "vasárnap",
+        "hétfő",
+        "kedd"
+      ],
       "correct": 0,
-      "teaches": ["days-superessive"]
+      "teaches": [
+        "days-superessive"
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a2-03-controlled-4",
       "type": "fill-blank",
-      "category": "controlled",
+      "category": "vocabulary",
       "sentence": "Hétvégé____ nem dolgozom.",
       "answer": "n",
-      "teaches": ["weekday-vs-weekend"]
+      "teaches": [
+        "weekday-vs-weekend"
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a2-03-practice-1",
       "type": "multiple-choice",
-      "category": "practice",
+      "category": "vocabulary",
       "question": "Which means “day off”?",
-      "options": ["szabadnap", "munkanap", "hétköznap"],
+      "options": [
+        "szabadnap",
+        "munkanap",
+        "hétköznap"
+      ],
       "correct": 0,
-      "teaches": ["weekday-vs-weekend"]
+      "teaches": [
+        "weekday-vs-weekend"
+      ],
+      "stage": "practice"
     },
     {
       "id": "a2-03-practice-2",
       "type": "matching",
-      "category": "practice",
+      "category": "vocabulary",
       "pairs": [
-        ["pénteken", "on Friday"],
-        ["szombaton", "on Saturday"],
-        ["hétköznap", "weekday"],
-        ["munkanap", "workday"]
+        [
+          "pénteken",
+          "on Friday"
+        ],
+        [
+          "szombaton",
+          "on Saturday"
+        ],
+        [
+          "hétköznap",
+          "weekday"
+        ],
+        [
+          "munkanap",
+          "workday"
+        ]
       ],
-      "teaches": ["days-superessive"]
+      "teaches": [
+        "days-superessive"
+      ],
+      "stage": "practice"
     },
     {
       "id": "a2-03-practice-3",
       "type": "sentence-builder",
-      "category": "practice",
-      "tiles": ["Hétköznap", "dolgozom", ",", "hétvégén", "nem", "."],
-      "solution": ["Hétköznap", "dolgozom", ",", "hétvégén", "nem", "."],
+      "category": "vocabulary",
+      "tiles": [
+        "Hétköznap",
+        "dolgozom",
+        ",",
+        "hétvégén",
+        "nem",
+        "."
+      ],
+      "solution": [
+        "Hétköznap",
+        "dolgozom",
+        ",",
+        "hétvégén",
+        "nem",
+        "."
+      ],
       "english": "On weekdays I work, on the weekend I don't.",
-      "teaches": ["weekday-vs-weekend"]
+      "teaches": [
+        "weekday-vs-weekend"
+      ],
+      "stage": "practice"
     },
     {
       "id": "a2-03-practice-4",
       "type": "sentence-builder",
-      "category": "practice",
-      "tiles": ["Pénteken", "és", "szombaton", "nem", "dolgozom", "."],
-      "solution": ["Pénteken", "és", "szombaton", "nem", "dolgozom", "."],
+      "category": "grammar",
+      "tiles": [
+        "Pénteken",
+        "és",
+        "szombaton",
+        "nem",
+        "dolgozom",
+        "."
+      ],
+      "solution": [
+        "Pénteken",
+        "és",
+        "szombaton",
+        "nem",
+        "dolgozom",
+        "."
+      ],
       "english": "I don't work on Friday and Saturday.",
-      "teaches": ["days-superessive"]
+      "teaches": [
+        "days-superessive"
+      ],
+      "stage": "practice"
     },
     {
       "id": "a2-03-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
       "prompt": [
-        { "speaker": "Meg", "text": "Mikor van a szabadnapod?" },
-        { "speaker": "Károly", "text": "_____" }
+        {
+          "speaker": "Meg",
+          "text": "Mikor van a szabadnapod?"
+        },
+        {
+          "speaker": "Károly",
+          "text": "_____"
+        }
       ],
-      "options": ["Vasárnap.", "Hétkor."],
+      "options": [
+        "Vasárnap.",
+        "Hétkor."
+      ],
       "correct": 0,
-      "teaches": ["weekday-vs-weekend"]
+      "teaches": [
+        "weekday-vs-weekend"
+      ]
     },
     {
       "id": "a2-03-dialogue-2",
       "type": "dialogue-complete",
       "category": "dialogue",
       "prompt": [
-        { "speaker": "Károly", "text": "Dolgozol hétvégén?" },
-        { "speaker": "Meg", "text": "_____" }
+        {
+          "speaker": "Károly",
+          "text": "Dolgozol hétvégén?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
       ],
-      "options": ["Nem, hétvégén nem dolgozom.", "Igen, öt óra."],
+      "options": [
+        "Nem, hétvégén nem dolgozom.",
+        "Igen, öt óra."
+      ],
       "correct": 0,
-      "teaches": ["weekday-vs-weekend"]
+      "teaches": [
+        "weekday-vs-weekend"
+      ]
     },
     {
       "id": "a2-03-writing-1",
@@ -129,7 +249,9 @@
           "answer": "Hétfőn és kedden dolgozom."
         }
       ],
-      "teaches": ["days-superessive"]
+      "teaches": [
+        "days-superessive"
+      ]
     },
     {
       "id": "a2-03-writing-2",
@@ -141,25 +263,41 @@
           "answer": "Szombat és vasárnap a hétvége."
         }
       ],
-      "teaches": ["weekday-vs-weekend"]
+      "teaches": [
+        "weekday-vs-weekend"
+      ]
     },
     {
       "id": "a2-03-check-1",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "grammar",
       "question": "Which means “on Wednesday”?",
-      "options": ["szerdán", "szerda", "szerdától"],
+      "options": [
+        "szerdán",
+        "szerda",
+        "szerdától"
+      ],
       "correct": 0,
-      "teaches": ["days-superessive"]
+      "teaches": [
+        "days-superessive"
+      ],
+      "stage": "check"
     },
     {
       "id": "a2-03-check-2",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "vocabulary",
       "question": "Which means “weekday”?",
-      "options": ["hétköznap", "hétvége", "szabadnap"],
+      "options": [
+        "hétköznap",
+        "hétvége",
+        "szabadnap"
+      ],
       "correct": 0,
-      "teaches": ["weekday-vs-weekend"]
+      "teaches": [
+        "weekday-vs-weekend"
+      ],
+      "stage": "check"
     }
   ]
 }

@@ -4,25 +4,39 @@
     {
       "id": "a2-160-consolidation-1",
       "type": "multiple-choice",
-      "category": "recognize",
+      "category": "vocabulary",
       "question": "Which pattern best connects a full day of actions?",
-      "options": ["Előbb ..., aztán ..., utána ..., végül ...", "Talán, esetleg, lehet", "Szerintem, viszont"],
+      "options": [
+        "Előbb ..., aztán ..., utána ..., végül ...",
+        "Talán, esetleg, lehet",
+        "Szerintem, viszont"
+      ],
       "correct": 0,
-      "teaches": ["day-in-hungary-review"]
+      "teaches": [
+        "day-in-hungary-review"
+      ],
+      "stage": "recognize"
     },
     {
       "id": "a2-160-consolidation-2",
       "type": "multiple-choice",
-      "category": "recognize",
+      "category": "vocabulary",
       "question": "Which word means \"to relax, to unwind\"?",
-      "options": ["kikapcsolódik", "dolgozik", "hívtam"],
+      "options": [
+        "kikapcsolódik",
+        "dolgozik",
+        "hívtam"
+      ],
       "correct": 0,
-      "teaches": ["work-free-time-review"]
+      "teaches": [
+        "work-free-time-review"
+      ],
+      "stage": "recognize"
     },
     {
       "id": "a2-160-consolidation-3",
       "type": "multiple-choice",
-      "category": "recognize",
+      "category": "grammar",
       "question": "Which sentence correctly reports a problem?",
       "options": [
         "Elromlott a mosógép, nem működik.",
@@ -30,118 +44,194 @@
         "Holnap elromlik a mosógép."
       ],
       "correct": 0,
-      "teaches": ["living-in-hungarian-review"]
+      "teaches": [
+        "living-in-hungarian-review"
+      ],
+      "stage": "recognize"
     },
     {
       "id": "a2-160-consolidation-4",
       "type": "matching",
-      "category": "recall",
+      "category": "vocabulary",
       "pairs": [
-        ["szerelő", "repairman"],
-        ["büszke", "proud"],
-        ["magabiztos", "confident"],
-        ["önállóan", "independently"]
+        [
+          "szerelő",
+          "repairman"
+        ],
+        [
+          "büszke",
+          "proud"
+        ],
+        [
+          "magabiztos",
+          "confident"
+        ],
+        [
+          "önállóan",
+          "independently"
+        ]
       ],
-      "teaches": ["living-in-hungarian-review"]
+      "teaches": [
+        "living-in-hungarian-review"
+      ],
+      "stage": "recall"
     },
     {
       "id": "a2-160-consolidation-5",
       "type": "matching",
-      "category": "recall",
+      "category": "vocabulary",
       "pairs": [
-        ["kolléga", "colleague"],
-        ["bérel", "to rent"],
-        ["hagyma", "onion"],
-        ["fárasztó", "tiring"]
+        [
+          "kolléga",
+          "colleague"
+        ],
+        [
+          "bérel",
+          "to rent"
+        ],
+        [
+          "hagyma",
+          "onion"
+        ],
+        [
+          "fárasztó",
+          "tiring"
+        ]
       ],
-      "teaches": ["day-in-hungary-review", "family-friends-home-review", "shopping-eating-review", "work-free-time-review"]
+      "teaches": [
+        "day-in-hungary-review",
+        "family-friends-home-review",
+        "shopping-eating-review",
+        "work-free-time-review"
+      ],
+      "stage": "recall"
     },
     {
       "id": "a2-160-consolidation-6",
       "type": "fill-blank",
-      "category": "recall",
+      "category": "grammar",
       "sentence": "Tegnap ____ egy szerelőt, mert elromlott a zuhany. (I called)",
       "answer": "hívtam",
-      "teaches": ["living-in-hungarian-review", "past-tense-unit24-25"]
+      "teaches": [
+        "living-in-hungarian-review",
+        "past-tense-unit24-25"
+      ],
+      "stage": "recall"
     },
     {
       "id": "a2-160-consolidation-7",
       "type": "sentence-order",
-      "category": "context",
+      "category": "grammar",
       "sentences": [
         "Reggel hétkor felkeltem, és gyorsan megreggeliztem.",
         "Munka után hazamentem, de elromlott a zuhany.",
         "Hívtam egy szerelőt, és gyorsan megjavította.",
         "Este büszke voltam, hogy egyedül mindent megoldottam."
       ],
-      "solution": [0, 1, 2, 3],
-      "teaches": ["living-in-hungarian-review", "day-in-hungary-review"]
+      "solution": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "teaches": [
+        "living-in-hungarian-review",
+        "day-in-hungary-review"
+      ],
+      "stage": "context"
     },
     {
       "id": "a2-160-consolidation-8",
       "type": "dialogue-complete",
-      "category": "context",
+      "category": "dialogue",
       "prompt": [
-        { "speaker": "Károly", "text": "Hogy telt a hétvégéd?" },
-        { "speaker": "Meg", "text": "_____" }
+        {
+          "speaker": "Károly",
+          "text": "Hogy telt a hétvégéd?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
       ],
       "options": [
         "Remekül, kirándultunk Zsófiával és Tamással, aztán pihentünk.",
         "Sajnos nem sikerült semmit megoldanom."
       ],
       "correct": 0,
-      "teaches": ["work-free-time-review"]
+      "teaches": [
+        "work-free-time-review"
+      ],
+      "stage": "context"
     },
     {
       "id": "a2-160-consolidation-9",
       "type": "dialogue-complete",
-      "category": "context",
+      "category": "dialogue",
       "prompt": [
-        { "speaker": "Petra", "text": "Nehéz volt magyarul megoldani a problémát?" },
-        { "speaker": "Meg", "text": "_____" }
+        {
+          "speaker": "Petra",
+          "text": "Nehéz volt magyarul megoldani a problémát?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
       ],
       "options": [
         "Eleinte nehéz volt, de most már elég magabiztos vagyok.",
         "Igen, ezért még mindig nem tudok semmit."
       ],
       "correct": 0,
-      "teaches": ["living-in-hungarian-review"]
+      "teaches": [
+        "living-in-hungarian-review"
+      ],
+      "stage": "context"
     },
     {
       "id": "a2-160-consolidation-10",
       "type": "structured-writing",
-      "category": "produce",
+      "category": "writing",
       "template": [
         {
           "prompt": "Say you get up at seven, first shower, then have breakfast.",
           "answer": "Hétkor felkelek, előbb zuhanyozom, aztán reggelizem."
         }
       ],
-      "teaches": ["day-in-hungary-review"]
+      "teaches": [
+        "day-in-hungary-review"
+      ],
+      "stage": "produce"
     },
     {
       "id": "a2-160-consolidation-11",
       "type": "structured-writing",
-      "category": "produce",
+      "category": "writing",
       "template": [
         {
           "prompt": "Say that last weekend you were at Ildikó's, and ate a delicious dinner.",
           "answer": "Múlt hétvégén Ildikónál voltunk, és finom vacsorát ettünk."
         }
       ],
-      "teaches": ["family-friends-home-review"]
+      "teaches": [
+        "family-friends-home-review"
+      ],
+      "stage": "produce"
     },
     {
       "id": "a2-160-consolidation-12",
       "type": "structured-writing",
-      "category": "produce",
+      "category": "writing",
       "template": [
         {
           "prompt": "Say that in the end you managed to solve everything on your own, and you feel proud and confident.",
           "answer": "Végül sikerült mindent önállóan megoldanom, és nagyon büszke és magabiztos vagyok."
         }
       ],
-      "teaches": ["living-in-hungarian-review"]
+      "teaches": [
+        "living-in-hungarian-review"
+      ],
+      "stage": "produce"
     }
   ]
 }

@@ -4,31 +4,33 @@
     {
       "id": "a1-08-review-1",
       "type": "multiple-choice",
-      "category": "review",
+      "category": "vocabulary",
       "question": "Which means “good evening”?",
       "options": [
         "jó estét",
         "jó reggelt",
         "viszlát"
       ],
-      "correct": 0
+      "correct": 0,
+      "stage": "review"
     },
     {
       "id": "a1-08-review-2",
       "type": "multiple-choice",
-      "category": "review",
+      "category": "vocabulary",
       "question": "Which means “please”?",
       "options": [
         "légy szíves",
         "szívesen",
         "bocsánat"
       ],
-      "correct": 0
+      "correct": 0,
+      "stage": "review"
     },
     {
       "id": "a1-08-intro-1",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "grammar",
       "question": "Which asks how someone is doing?",
       "options": [
         "Hogy vagy?",
@@ -39,12 +41,13 @@
       "teaches": [
         "hogy-vagy-asking-how-someone-is",
         "jol-and-rosszul"
-      ]
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a1-08-intro-2",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "grammar",
       "question": "Which means “I'm well”?",
       "options": [
         "Jól vagyok.",
@@ -55,23 +58,25 @@
       "teaches": [
         "hogy-vagy-asking-how-someone-is",
         "jol-and-rosszul"
-      ]
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a1-08-controlled-1",
       "type": "fill-blank",
-      "category": "controlled",
+      "category": "grammar",
       "sentence": "Hogy ____? (informal)",
       "answer": "vagy",
       "teaches": [
         "hogy-vagy-asking-how-someone-is",
         "jol-and-rosszul"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-08-controlled-2",
       "type": "multiple-choice",
-      "category": "controlled",
+      "category": "grammar",
       "question": "You feel great. Which reply fits?",
       "options": [
         "Jól vagyok.",
@@ -82,12 +87,13 @@
       "teaches": [
         "hogy-vagy-asking-how-someone-is",
         "jol-and-rosszul"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-08-controlled-3",
       "type": "matching",
-      "category": "controlled",
+      "category": "vocabulary",
       "pairs": [
         [
           "hogy vagy?",
@@ -109,12 +115,13 @@
       "teaches": [
         "hogy-vagy-asking-how-someone-is",
         "jol-and-rosszul"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-08-practice-1",
       "type": "multiple-choice",
-      "category": "practice",
+      "category": "grammar",
       "question": "Someone asks “Hogy vagy?” and you feel great. You say:",
       "options": [
         "Jól vagyok, köszönöm.",
@@ -125,12 +132,13 @@
       "teaches": [
         "hogy-vagy-asking-how-someone-is",
         "jol-and-rosszul"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-08-practice-2",
       "type": "matching",
-      "category": "practice",
+      "category": "vocabulary",
       "pairs": [
         [
           "hogy vagy?",
@@ -152,23 +160,25 @@
       "teaches": [
         "hogy-vagy-asking-how-someone-is",
         "jol-and-rosszul"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-08-practice-3",
       "type": "fill-blank",
-      "category": "practice",
+      "category": "grammar",
       "sentence": "Jól vagyok, köszönöm. ____ te?",
       "answer": "És",
       "teaches": [
         "hogy-vagy-asking-how-someone-is",
         "jol-and-rosszul"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-08-practice-4",
       "type": "sentence-builder",
-      "category": "practice",
+      "category": "grammar",
       "tiles": [
         "Hogy",
         "vagy",
@@ -183,12 +193,13 @@
       "teaches": [
         "hogy-vagy-asking-how-someone-is",
         "jol-and-rosszul"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-08-practice-5",
       "type": "dialogue-complete",
-      "category": "practice",
+      "category": "dialogue",
       "prompt": [
         {
           "speaker": "Meg",
@@ -207,12 +218,13 @@
       "teaches": [
         "hogy-vagy-asking-how-someone-is",
         "jol-and-rosszul"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-08-controlled-extra",
       "type": "multiple-choice",
-      "category": "controlled",
+      "category": "grammar",
       "question": "Which word means “well” (not badly)?",
       "options": [
         "Jól",
@@ -223,7 +235,8 @@
       "teaches": [
         "hogy-vagy-asking-how-someone-is",
         "jol-and-rosszul"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-08-dialogue-1",
@@ -306,7 +319,7 @@
     {
       "id": "a1-08-check-1",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "grammar",
       "question": "Which expression fits a polite daytime greeting?",
       "options": [
         "Jó napot!",
@@ -317,12 +330,13 @@
       "teaches": [
         "hogy-vagy-asking-how-someone-is",
         "jol-and-rosszul"
-      ]
+      ],
+      "stage": "check"
     },
     {
       "id": "a1-08-check-2",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "grammar",
       "question": "Which means “I'm well”?",
       "options": [
         "Jól vagyok.",
@@ -333,7 +347,8 @@
       "teaches": [
         "hogy-vagy-asking-how-someone-is",
         "jol-and-rosszul"
-      ]
+      ],
+      "stage": "check"
     }
   ]
 }

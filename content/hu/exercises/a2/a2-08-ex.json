@@ -4,123 +4,251 @@
     {
       "id": "a2-08-intro-1",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "grammar",
       "question": "Which means “appointment, time slot”?",
-      "options": ["időpont", "dátum", "hét"],
+      "options": [
+        "időpont",
+        "dátum",
+        "hét"
+      ],
       "correct": 0,
-      "teaches": ["appointments"]
+      "teaches": [
+        "appointments"
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a2-08-intro-2",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "grammar",
       "question": "Which means “free” (not busy)?",
-      "options": ["szabad", "foglalt", "korán"],
+      "options": [
+        "szabad",
+        "foglalt",
+        "korán"
+      ],
       "correct": 0,
-      "teaches": ["appointments"]
+      "teaches": [
+        "appointments"
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a2-08-controlled-1",
       "type": "matching",
-      "category": "controlled",
+      "category": "vocabulary",
       "pairs": [
-        ["időpont", "appointment"],
-        ["foglalt", "busy"],
-        ["szabad", "free"],
-        ["fogorvos", "dentist"]
+        [
+          "időpont",
+          "appointment"
+        ],
+        [
+          "foglalt",
+          "busy"
+        ],
+        [
+          "szabad",
+          "free"
+        ],
+        [
+          "fogorvos",
+          "dentist"
+        ]
       ],
-      "teaches": ["appointments"]
+      "teaches": [
+        "appointments"
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a2-08-controlled-2",
       "type": "fill-blank",
-      "category": "controlled",
+      "category": "vocabulary",
       "sentence": "Hétfőn reggel kilenc____ dolgozom.",
       "answer": "kor",
-      "teaches": ["stacking-time"]
+      "teaches": [
+        "stacking-time"
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a2-08-controlled-3",
       "type": "fill-blank",
-      "category": "controlled",
+      "category": "grammar",
       "sentence": "Van egy ____ a fogorvosnál pénteken.",
       "answer": "időpontom",
-      "teaches": ["appointments"]
+      "teaches": [
+        "appointments"
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a2-08-controlled-4",
       "type": "multiple-choice",
-      "category": "controlled",
+      "category": "grammar",
       "question": "Which means “Hungarian class”?",
-      "options": ["magyaróra", "magyarul", "magyarórakor"],
+      "options": [
+        "magyaróra",
+        "magyarul",
+        "magyarórakor"
+      ],
       "correct": 0,
-      "teaches": ["appointments"]
+      "teaches": [
+        "appointments"
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a2-08-practice-1",
       "type": "multiple-choice",
-      "category": "practice",
+      "category": "vocabulary",
       "question": "Which sentence means “On Tuesday evening at seven I have Hungarian class”?",
-      "options": ["Kedden este hétkor magyarórám van.", "Kedden hét óra van.", "Este keddkor magyarórám."],
+      "options": [
+        "Kedden este hétkor magyarórám van.",
+        "Kedden hét óra van.",
+        "Este keddkor magyarórám."
+      ],
       "correct": 0,
-      "teaches": ["stacking-time"]
+      "teaches": [
+        "stacking-time"
+      ],
+      "stage": "practice"
     },
     {
       "id": "a2-08-practice-2",
       "type": "matching",
-      "category": "practice",
+      "category": "vocabulary",
       "pairs": [
-        ["hétfőn reggel", "Monday morning"],
-        ["kedden este", "Tuesday evening"],
-        ["szabad vagy foglalt?", "free or busy?"],
-        ["fogorvosnál", "at the dentist's"]
+        [
+          "hétfőn reggel",
+          "Monday morning"
+        ],
+        [
+          "kedden este",
+          "Tuesday evening"
+        ],
+        [
+          "szabad vagy foglalt?",
+          "free or busy?"
+        ],
+        [
+          "fogorvosnál",
+          "at the dentist's"
+        ]
       ],
-      "teaches": ["stacking-time"]
+      "teaches": [
+        "stacking-time"
+      ],
+      "stage": "practice"
     },
     {
       "id": "a2-08-practice-3",
       "type": "sentence-builder",
-      "category": "practice",
-      "tiles": ["Hétfőn", "reggel", "kilenckor", "dolgozom", "."],
-      "solution": ["Hétfőn", "reggel", "kilenckor", "dolgozom", "."],
+      "category": "vocabulary",
+      "tiles": [
+        "Hétfőn",
+        "reggel",
+        "kilenckor",
+        "dolgozom",
+        "."
+      ],
+      "solution": [
+        "Hétfőn",
+        "reggel",
+        "kilenckor",
+        "dolgozom",
+        "."
+      ],
       "english": "On Monday morning at nine I work.",
-      "teaches": ["stacking-time"]
+      "teaches": [
+        "stacking-time"
+      ],
+      "stage": "practice"
     },
     {
       "id": "a2-08-practice-4",
       "type": "sentence-builder",
-      "category": "practice",
-      "tiles": ["Van", "egy", "időpontom", "a", "fogorvosnál", "pénteken", "."],
+      "category": "grammar",
+      "tiles": [
+        "Van",
+        "egy",
+        "időpontom",
+        "a",
+        "fogorvosnál",
+        "pénteken",
+        "."
+      ],
       "solutions": [
-        ["Van", "egy", "időpontom", "a", "fogorvosnál", "pénteken", "."],
-        ["Van", "egy", "időpontom", "pénteken", "a", "fogorvosnál", "."]
+        [
+          "Van",
+          "egy",
+          "időpontom",
+          "a",
+          "fogorvosnál",
+          "pénteken",
+          "."
+        ],
+        [
+          "Van",
+          "egy",
+          "időpontom",
+          "pénteken",
+          "a",
+          "fogorvosnál",
+          "."
+        ]
       ],
       "english": "I have an appointment at the dentist's on Friday.",
-      "teaches": ["appointments"]
+      "teaches": [
+        "appointments"
+      ],
+      "stage": "practice"
     },
     {
       "id": "a2-08-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
       "prompt": [
-        { "speaker": "Károly", "text": "Szabad vagy foglalt vagy csütörtökön?" },
-        { "speaker": "Meg", "text": "_____" }
+        {
+          "speaker": "Károly",
+          "text": "Szabad vagy foglalt vagy csütörtökön?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
       ],
-      "options": ["Foglalt vagyok, van egy időpontom a fogorvosnál.", "Csütörtök vagyok."],
+      "options": [
+        "Foglalt vagyok, van egy időpontom a fogorvosnál.",
+        "Csütörtök vagyok."
+      ],
       "correct": 0,
-      "teaches": ["appointments"]
+      "teaches": [
+        "appointments"
+      ]
     },
     {
       "id": "a2-08-dialogue-2",
       "type": "dialogue-complete",
       "category": "dialogue",
       "prompt": [
-        { "speaker": "Meg", "text": "Mikor van a magyaróránk?" },
-        { "speaker": "Károly", "text": "_____" }
+        {
+          "speaker": "Meg",
+          "text": "Mikor van a magyaróránk?"
+        },
+        {
+          "speaker": "Károly",
+          "text": "_____"
+        }
       ],
-      "options": ["Kedden este hétkor.", "Fogorvosnál vagyok."],
+      "options": [
+        "Kedden este hétkor.",
+        "Fogorvosnál vagyok."
+      ],
       "correct": 0,
-      "teaches": ["stacking-time"]
+      "teaches": [
+        "stacking-time"
+      ]
     },
     {
       "id": "a2-08-writing-1",
@@ -132,7 +260,9 @@
           "answer": "Szabad vagy foglalt vagy csütörtökön?"
         }
       ],
-      "teaches": ["appointments"]
+      "teaches": [
+        "appointments"
+      ]
     },
     {
       "id": "a2-08-writing-2",
@@ -144,25 +274,41 @@
           "answer": "Kedden este hétkor magyarórám van."
         }
       ],
-      "teaches": ["stacking-time"]
+      "teaches": [
+        "stacking-time"
+      ]
     },
     {
       "id": "a2-08-check-1",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "grammar",
       "question": "Which means “busy, taken”?",
-      "options": ["foglalt", "szabad", "időpont"],
+      "options": [
+        "foglalt",
+        "szabad",
+        "időpont"
+      ],
       "correct": 0,
-      "teaches": ["appointments"]
+      "teaches": [
+        "appointments"
+      ],
+      "stage": "check"
     },
     {
       "id": "a2-08-check-2",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "grammar",
       "question": "Which means “dentist”?",
-      "options": ["fogorvos", "magyaróra", "időpont"],
+      "options": [
+        "fogorvos",
+        "magyaróra",
+        "időpont"
+      ],
       "correct": 0,
-      "teaches": ["appointments"]
+      "teaches": [
+        "appointments"
+      ],
+      "stage": "check"
     }
   ]
 }

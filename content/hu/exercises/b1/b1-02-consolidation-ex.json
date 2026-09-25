@@ -4,7 +4,7 @@
     {
       "id": "b1-02-consolidation-1",
       "type": "multiple-choice",
-      "category": "recognize",
+      "category": "grammar",
       "question": "Which word marks a general experience as having happened at some point, not a specific narrated event?",
       "options": [
         "már",
@@ -14,12 +14,13 @@
       "correct": 0,
       "teaches": [
         "mar-experiential"
-      ]
+      ],
+      "stage": "recognize"
     },
     {
       "id": "b1-02-consolidation-2",
       "type": "multiple-choice",
-      "category": "recognize",
+      "category": "grammar",
       "question": "Which phrase marks that something has never happened, even once?",
       "options": [
         "még soha nem",
@@ -29,12 +30,13 @@
       "correct": 0,
       "teaches": [
         "meg-soha-nem-past"
-      ]
+      ],
+      "stage": "recognize"
     },
     {
       "id": "b1-02-consolidation-3",
       "type": "matching",
-      "category": "recognize",
+      "category": "vocabulary",
       "pairs": [
         [
           "először",
@@ -58,42 +60,46 @@
         "past-participle-adjective",
         "looking-back-framing",
         "comparing-experiences-synthesis"
-      ]
+      ],
+      "stage": "recognize"
     },
     {
       "id": "b1-02-consolidation-4",
       "type": "fill-blank",
-      "category": "recall",
+      "category": "grammar",
       "sentence": "Jártál ____ Japánban? (ever)",
       "answer": "már",
       "teaches": [
         "mar-experiential"
-      ]
+      ],
+      "stage": "recall"
     },
     {
       "id": "b1-02-consolidation-5",
       "type": "fill-blank",
-      "category": "recall",
+      "category": "grammar",
       "sentence": "Szeretem az anyám által ____ ételeket. (prepared)",
       "answer": "elkészített",
       "teaches": [
         "past-participle-adjective"
-      ]
+      ],
+      "stage": "recall"
     },
     {
       "id": "b1-02-consolidation-6",
       "type": "fill-blank",
-      "category": "recall",
+      "category": "grammar",
       "sentence": "Ha ____ az elmúlt évekre, sokat változtam. (I look back)",
       "answer": "visszatekintek",
       "teaches": [
         "visszatekint-case-government"
-      ]
+      ],
+      "stage": "recall"
     },
     {
       "id": "b1-02-consolidation-7",
       "type": "sentence-builder",
-      "category": "in-context",
+      "category": "grammar",
       "tiles": [
         "Még",
         "soha",
@@ -124,12 +130,13 @@
       "teaches": [
         "meg-soha-nem-past",
         "first-time-framing"
-      ]
+      ],
+      "stage": "in-context"
     },
     {
       "id": "b1-02-consolidation-8",
       "type": "sentence-order",
-      "category": "in-context",
+      "category": "grammar",
       "sentences": [
         "Már sokszor gondoltam arra az útra.",
         "Életemben először utaztam egyedül.",
@@ -144,12 +151,13 @@
       ],
       "teaches": [
         "comparing-experiences-synthesis"
-      ]
+      ],
+      "stage": "in-context"
     },
     {
       "id": "b1-02-consolidation-9",
       "type": "dialogue-complete",
-      "category": "in-context",
+      "category": "dialogue",
       "prompt": [
         {
           "speaker": "Petra",
@@ -167,12 +175,13 @@
       "correct": 0,
       "teaches": [
         "looking-back-framing"
-      ]
+      ],
+      "stage": "in-context"
     },
     {
       "id": "b1-02-consolidation-10",
       "type": "structured-writing",
-      "category": "produce",
+      "category": "writing",
       "template": [
         {
           "prompt": "Say you've already been to Japan.",
@@ -193,12 +202,13 @@
       ],
       "teaches": [
         "comparing-experiences-synthesis"
-      ]
+      ],
+      "stage": "produce"
     },
     {
       "id": "b1-02-consolidation-11",
       "type": "structured-writing",
-      "category": "produce",
+      "category": "writing",
       "template": [
         {
           "prompt": "Say you've never yet tried out sushi.",
@@ -207,12 +217,13 @@
       ],
       "teaches": [
         "meg-soha-nem-past"
-      ]
+      ],
+      "stage": "produce"
     },
     {
       "id": "b1-02-consolidation-12",
       "type": "structured-writing",
-      "category": "produce",
+      "category": "writing",
       "template": [
         {
           "prompt": "Say that looking back, you've become increasingly braver.",
@@ -222,7 +233,8 @@
       "teaches": [
         "visszatekint-case-government",
         "comparing-experiences-synthesis"
-      ]
+      ],
+      "stage": "produce"
     }
   ]
 }

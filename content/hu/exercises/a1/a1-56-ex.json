@@ -4,31 +4,33 @@
     {
       "id": "a1-56-review-1",
       "type": "multiple-choice",
-      "category": "review",
+      "category": "grammar",
       "question": "Which form shows a destination?",
       "options": [
         "a boltba",
         "a boltban",
         "a bolt"
       ],
-      "correct": 0
+      "correct": 0,
+      "stage": "review"
     },
     {
       "id": "a1-56-review-2",
       "type": "multiple-choice",
-      "category": "review",
+      "category": "vocabulary",
       "question": "Which question asks where someone is going?",
       "options": [
         "Hová?",
         "Hol?",
         "Ki?"
       ],
-      "correct": 0
+      "correct": 0,
+      "stage": "review"
     },
     {
       "id": "a1-56-intro-1",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "grammar",
       "question": "Choose the movement sentence.",
       "options": [
         "Károly a boltba megy.",
@@ -39,12 +41,13 @@
       "teaches": [
         "movement-with-ba-be",
         "hova-movement"
-      ]
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a1-56-intro-2",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "grammar",
       "question": "Which form means “in the café”?",
       "options": [
         "a kávézóban",
@@ -55,12 +58,13 @@
       "teaches": [
         "movement-with-ba-be",
         "hova-movement"
-      ]
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a1-56-controlled-1",
       "type": "matching",
-      "category": "controlled",
+      "category": "vocabulary",
       "pairs": [
         [
           "menni",
@@ -82,23 +86,25 @@
       "teaches": [
         "movement-with-ba-be",
         "hova-movement"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-56-controlled-2",
       "type": "fill-blank",
-      "category": "controlled",
+      "category": "grammar",
       "sentence": "Károly a ____ megy.",
       "answer": "moziba",
       "teaches": [
         "movement-with-ba-be",
         "hova-movement"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-56-controlled-3",
       "type": "multiple-choice",
-      "category": "controlled",
+      "category": "grammar",
       "question": "Which is the correct destination form?",
       "options": [
         "az étterembe",
@@ -109,12 +115,13 @@
       "teaches": [
         "movement-with-ba-be",
         "hova-movement"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-56-controlled-4",
       "type": "multiple-choice",
-      "category": "controlled",
+      "category": "grammar",
       "question": "Hová megy Meg?",
       "options": [
         "A múzeumba megy.",
@@ -125,12 +132,13 @@
       "teaches": [
         "movement-with-ba-be",
         "hova-movement"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-56-practice-1",
       "type": "matching",
-      "category": "practice",
+      "category": "vocabulary",
       "pairs": [
         [
           "menni",
@@ -152,12 +160,13 @@
       "teaches": [
         "movement-with-ba-be",
         "hova-movement"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-56-practice-2",
       "type": "multiple-choice",
-      "category": "practice",
+      "category": "grammar",
       "question": "Which answer fits Hová mész?",
       "options": [
         "A postára megyek.",
@@ -168,23 +177,25 @@
       "teaches": [
         "movement-with-ba-be",
         "hova-movement"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-56-practice-3",
       "type": "fill-blank",
-      "category": "practice",
+      "category": "grammar",
       "sentence": "Hová ____ Károly?",
       "answer": "megy",
       "teaches": [
         "movement-with-ba-be",
         "hova-movement"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-56-practice-4",
       "type": "sentence-builder",
-      "category": "practice",
+      "category": "grammar",
       "tiles": [
         "Károly",
         "a",
@@ -203,12 +214,13 @@
       "teaches": [
         "movement-with-ba-be",
         "hova-movement"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-56-practice-5",
       "type": "dialogue-complete",
-      "category": "practice",
+      "category": "dialogue",
       "prompt": [
         {
           "speaker": "Károly",
@@ -227,7 +239,8 @@
       "teaches": [
         "movement-with-ba-be",
         "hova-movement"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-56-dialogue-1",
@@ -312,7 +325,7 @@
     {
       "id": "a1-56-check-1",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "grammar",
       "question": "Which sentence is correct?",
       "options": [
         "Károly a bankba megy.",
@@ -323,12 +336,13 @@
       "teaches": [
         "movement-with-ba-be",
         "hova-movement"
-      ]
+      ],
+      "stage": "check"
     },
     {
       "id": "a1-56-check-2",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "grammar",
       "question": "Which question asks for a destination?",
       "options": [
         "Hová mész?",
@@ -339,7 +353,8 @@
       "teaches": [
         "movement-with-ba-be",
         "hova-movement"
-      ]
+      ],
+      "stage": "check"
     }
   ]
 }

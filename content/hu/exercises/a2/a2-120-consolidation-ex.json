@@ -4,113 +4,209 @@
     {
       "id": "a2-120-consolidation-1",
       "type": "multiple-choice",
-      "category": "recognize",
+      "category": "vocabulary",
       "question": "Which means \"yesterday evening\"?",
-      "options": ["tegnap este", "tegnap reggel", "ma este"],
+      "options": [
+        "tegnap este",
+        "tegnap reggel",
+        "ma este"
+      ],
       "correct": 0,
-      "teaches": ["tegnap-time-words"]
+      "teaches": [
+        "tegnap-time-words"
+      ],
+      "stage": "recognize"
     },
     {
       "id": "a2-120-consolidation-2",
       "type": "multiple-choice",
-      "category": "recognize",
+      "category": "grammar",
       "question": "Which is the past tense of van for \"he/she was\"?",
-      "options": ["volt", "van", "lesz"],
+      "options": [
+        "volt",
+        "van",
+        "lesz"
+      ],
       "correct": 0,
-      "teaches": ["van-past"]
+      "teaches": [
+        "van-past"
+      ],
+      "stage": "recognize"
     },
     {
       "id": "a2-120-consolidation-3",
       "type": "multiple-choice",
-      "category": "recognize",
+      "category": "grammar",
       "question": "Which means \"strange, unusual\"?",
-      "options": ["különös", "szép", "nagy"],
+      "options": [
+        "különös",
+        "szép",
+        "nagy"
+      ],
       "correct": 0,
-      "teaches": ["megy-jon-eszik-iszik-past"]
+      "teaches": [
+        "megy-jon-eszik-iszik-past"
+      ],
+      "stage": "recognize"
     },
     {
       "id": "a2-120-consolidation-4",
       "type": "fill-blank",
-      "category": "recall",
+      "category": "grammar",
       "sentence": "Tegnap egész nap ____. (I worked)",
       "answer": "dolgoztam",
-      "teaches": ["past-tense-indefinite"]
+      "teaches": [
+        "past-tense-indefinite"
+      ],
+      "stage": "recall"
     },
     {
       "id": "a2-120-consolidation-5",
       "type": "fill-blank",
-      "category": "recall",
+      "category": "grammar",
       "sentence": "Károly és Ildikó tavaly sokat ____. (hiked)",
       "answer": "kirándultak",
-      "teaches": ["weekend-verbs-past"]
+      "teaches": [
+        "weekend-verbs-past"
+      ],
+      "stage": "recall"
     },
     {
       "id": "a2-120-consolidation-6",
       "type": "fill-blank",
-      "category": "recall",
+      "category": "grammar",
       "sentence": "Ti hol ____ a hétvégén? (were)",
       "answer": "voltatok",
-      "teaches": ["van-past"]
+      "teaches": [
+        "van-past"
+      ],
+      "stage": "recall"
     },
     {
       "id": "a2-120-consolidation-7",
       "type": "dialogue-complete",
-      "category": "context",
+      "category": "dialogue",
       "prompt": [
-        { "speaker": "Petra", "text": "Mit csináltál tegnap?" },
-        { "speaker": "Meg", "text": "_____" }
+        {
+          "speaker": "Petra",
+          "text": "Mit csináltál tegnap?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
       ],
-      "options": ["Egész nap dolgoztam, aztán moziba mentem.", "Holnap dolgozom."],
+      "options": [
+        "Egész nap dolgoztam, aztán moziba mentem.",
+        "Holnap dolgozom."
+      ],
       "correct": 0,
-      "teaches": ["past-tense-questions"]
+      "teaches": [
+        "past-tense-questions"
+      ],
+      "stage": "context"
     },
     {
       "id": "a2-120-consolidation-8",
       "type": "dialogue-complete",
-      "category": "context",
+      "category": "dialogue",
       "prompt": [
-        { "speaker": "Ildikó", "text": "Hol voltatok a hétvégén?" },
-        { "speaker": "Károly", "text": "_____" }
+        {
+          "speaker": "Ildikó",
+          "text": "Hol voltatok a hétvégén?"
+        },
+        {
+          "speaker": "Károly",
+          "text": "_____"
+        }
       ],
-      "options": ["Kirándultunk, és piknikeztünk a parkban.", "Kirándulunk, és piknikezünk a parkban."],
+      "options": [
+        "Kirándultunk, és piknikeztünk a parkban.",
+        "Kirándulunk, és piknikezünk a parkban."
+      ],
       "correct": 0,
-      "teaches": ["weekend-verbs-past", "van-past"]
+      "teaches": [
+        "weekend-verbs-past",
+        "van-past"
+      ],
+      "stage": "context"
     },
     {
       "id": "a2-120-consolidation-9",
       "type": "sentence-builder",
-      "category": "context",
-      "tiles": ["Levest", "ettem", ",", "aztán", "moziba", "mentem", "."],
-      "solution": ["Levest", "ettem", ",", "aztán", "moziba", "mentem", "."],
+      "category": "grammar",
+      "tiles": [
+        "Levest",
+        "ettem",
+        ",",
+        "aztán",
+        "moziba",
+        "mentem",
+        "."
+      ],
+      "solution": [
+        "Levest",
+        "ettem",
+        ",",
+        "aztán",
+        "moziba",
+        "mentem",
+        "."
+      ],
       "english": "I ate soup, then I went to the movies.",
-      "teaches": ["definite-past", "megy-jon-eszik-iszik-past"]
+      "teaches": [
+        "definite-past",
+        "megy-jon-eszik-iszik-past"
+      ],
+      "stage": "context"
     },
     {
       "id": "a2-120-consolidation-10",
       "type": "structured-writing",
-      "category": "produce",
+      "category": "writing",
       "template": [
-        { "prompt": "Say you worked yesterday and then watched a film.", "answer": "Tegnap dolgoztam, aztán filmet néztem." }
+        {
+          "prompt": "Say you worked yesterday and then watched a film.",
+          "answer": "Tegnap dolgoztam, aztán filmet néztem."
+        }
       ],
-      "teaches": ["past-tense-indefinite", "tegnap-time-words"]
+      "teaches": [
+        "past-tense-indefinite",
+        "tegnap-time-words"
+      ],
+      "stage": "produce"
     },
     {
       "id": "a2-120-consolidation-11",
       "type": "structured-writing",
-      "category": "produce",
+      "category": "writing",
       "template": [
-        { "prompt": "Say Károly and Ildikó were at a concert last weekend.", "answer": "Károly és Ildikó egy koncerten voltak múlt hétvégén." }
+        {
+          "prompt": "Say Károly and Ildikó were at a concert last weekend.",
+          "answer": "Károly és Ildikó egy koncerten voltak múlt hétvégén."
+        }
       ],
-      "teaches": ["van-past", "mult-hetvegen"]
+      "teaches": [
+        "van-past",
+        "mult-hetvegen"
+      ],
+      "stage": "produce"
     },
     {
       "id": "a2-120-consolidation-12",
       "type": "structured-writing",
-      "category": "produce",
+      "category": "writing",
       "template": [
-        { "prompt": "Say you ate up the soup and drank a glass of water.", "answer": "Megettem a levest, és ittam egy pohár vizet." }
+        {
+          "prompt": "Say you ate up the soup and drank a glass of water.",
+          "answer": "Megettem a levest, és ittam egy pohár vizet."
+        }
       ],
-      "teaches": ["definite-past", "megy-jon-eszik-iszik-past"]
+      "teaches": [
+        "definite-past",
+        "megy-jon-eszik-iszik-past"
+      ],
+      "stage": "produce"
     }
   ]
 }

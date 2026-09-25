@@ -4,123 +4,247 @@
     {
       "id": "a2-152-intro-1",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "vocabulary",
       "question": "Which means \"help\" (the noun)?",
-      "options": ["segítség", "szükség", "gond"],
+      "options": [
+        "segítség",
+        "szükség",
+        "gond"
+      ],
       "correct": 0,
-      "teaches": ["help-vocab"]
+      "teaches": [
+        "help-vocab"
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a2-152-intro-2",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "grammar",
       "question": "Which politely asks a stranger \"Could you help?\"?",
-      "options": ["Tudna segíteni?", "Tud segíteni.", "Segítek."],
+      "options": [
+        "Tudna segíteni?",
+        "Tud segíteni.",
+        "Segítek."
+      ],
       "correct": 0,
-      "teaches": ["tudna-segiteni"]
+      "teaches": [
+        "tudna-segiteni"
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a2-152-controlled-1",
       "type": "matching",
-      "category": "controlled",
+      "category": "vocabulary",
       "pairs": [
-        ["segítség", "help"],
-        ["szükség", "need"],
-        ["kölcsönkér", "to borrow"],
-        ["kölcsönad", "to lend"]
+        [
+          "segítség",
+          "help"
+        ],
+        [
+          "szükség",
+          "need"
+        ],
+        [
+          "kölcsönkér",
+          "to borrow"
+        ],
+        [
+          "kölcsönad",
+          "to lend"
+        ]
       ],
-      "teaches": ["help-vocab"]
+      "teaches": [
+        "help-vocab"
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a2-152-controlled-2",
       "type": "matching",
-      "category": "controlled",
+      "category": "vocabulary",
       "pairs": [
-        ["gond", "trouble, hassle"],
-        ["segít", "to help"],
-        ["szükségem van", "I need"],
-        ["tudna", "could (formal 'you')"]
+        [
+          "gond",
+          "trouble, hassle"
+        ],
+        [
+          "segít",
+          "to help"
+        ],
+        [
+          "szükségem van",
+          "I need"
+        ],
+        [
+          "tudna",
+          "could (formal 'you')"
+        ]
       ],
-      "teaches": ["help-vocab", "szuksegem-van", "tudna-segiteni"]
+      "teaches": [
+        "help-vocab",
+        "szuksegem-van",
+        "tudna-segiteni"
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a2-152-controlled-3",
       "type": "fill-blank",
-      "category": "controlled",
+      "category": "grammar",
       "sentence": "Elnézést, ____ segíteni? (could you help - formal)",
       "answer": "tudna",
-      "teaches": ["tudna-segiteni"]
+      "teaches": [
+        "tudna-segiteni"
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a2-152-controlled-4",
       "type": "fill-blank",
-      "category": "controlled",
+      "category": "grammar",
       "sentence": "Egy kis pénzre van ____. (I need)",
       "answer": "szükségem",
-      "teaches": ["szuksegem-van"]
+      "teaches": [
+        "szuksegem-van"
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a2-152-practice-1",
       "type": "multiple-choice",
-      "category": "practice",
+      "category": "grammar",
       "question": "Which form of tud would you use to ask a close friend for help, informally?",
-      "options": ["tudnál", "tudna", "tudnak"],
+      "options": [
+        "tudnál",
+        "tudna",
+        "tudnak"
+      ],
       "correct": 0,
-      "teaches": ["tudna-segiteni"]
+      "teaches": [
+        "tudna-segiteni"
+      ],
+      "stage": "practice"
     },
     {
       "id": "a2-152-practice-2",
       "type": "matching",
-      "category": "practice",
+      "category": "vocabulary",
       "pairs": [
-        ["Tudna segíteni?", "Could you help? (formal)"],
-        ["Tudnál segíteni?", "Could you help? (informal)"],
-        ["Szükségem van segítségre.", "I need help."],
-        ["Segítségre van szükségem.", "I need help."]
+        [
+          "Tudna segíteni?",
+          "Could you help? (formal)"
+        ],
+        [
+          "Tudnál segíteni?",
+          "Could you help? (informal)"
+        ],
+        [
+          "Szükségem van segítségre.",
+          "I need help."
+        ],
+        [
+          "Segítségre van szükségem.",
+          "I need help."
+        ]
       ],
-      "teaches": ["tudna-segiteni", "szuksegem-van"]
+      "teaches": [
+        "tudna-segiteni",
+        "szuksegem-van"
+      ],
+      "stage": "practice"
     },
     {
       "id": "a2-152-practice-3",
       "type": "sentence-builder",
-      "category": "practice",
-      "tiles": ["Elnézést,", "tudna", "segíteni", "?"],
-      "solution": ["Elnézést,", "tudna", "segíteni", "?"],
+      "category": "grammar",
+      "tiles": [
+        "Elnézést,",
+        "tudna",
+        "segíteni",
+        "?"
+      ],
+      "solution": [
+        "Elnézést,",
+        "tudna",
+        "segíteni",
+        "?"
+      ],
       "english": "Excuse me, could you help me?",
-      "teaches": ["tudna-segiteni"]
+      "teaches": [
+        "tudna-segiteni"
+      ],
+      "stage": "practice"
     },
     {
       "id": "a2-152-practice-4",
       "type": "sentence-builder",
-      "category": "practice",
-      "tiles": ["Segítségre", "van", "szükségem", "."],
-      "solution": ["Segítségre", "van", "szükségem", "."],
+      "category": "grammar",
+      "tiles": [
+        "Segítségre",
+        "van",
+        "szükségem",
+        "."
+      ],
+      "solution": [
+        "Segítségre",
+        "van",
+        "szükségem",
+        "."
+      ],
       "english": "I need help.",
-      "teaches": ["szuksegem-van"]
+      "teaches": [
+        "szuksegem-van"
+      ],
+      "stage": "practice"
     },
     {
       "id": "a2-152-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
       "prompt": [
-        { "speaker": "Meg", "text": "Elnézést, tudna segíteni?" },
-        { "speaker": "Recepciós", "text": "_____" }
+        {
+          "speaker": "Meg",
+          "text": "Elnézést, tudna segíteni?"
+        },
+        {
+          "speaker": "Recepciós",
+          "text": "_____"
+        }
       ],
-      "options": ["Persze! Miben tudok segíteni?", "Nem, foglalt vagyok pénteken."],
+      "options": [
+        "Persze! Miben tudok segíteni?",
+        "Nem, foglalt vagyok pénteken."
+      ],
       "correct": 0,
-      "teaches": ["tudna-segiteni"]
+      "teaches": [
+        "tudna-segiteni"
+      ]
     },
     {
       "id": "a2-152-dialogue-2",
       "type": "dialogue-complete",
       "category": "dialogue",
       "prompt": [
-        { "speaker": "Károly", "text": "Mi a gond, Meg?" },
-        { "speaker": "Meg", "text": "_____" }
+        {
+          "speaker": "Károly",
+          "text": "Mi a gond, Meg?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
       ],
-      "options": ["Szükségem van egy kis segítségre a bőrönddel.", "Nagyon elégedett vagyok."],
+      "options": [
+        "Szükségem van egy kis segítségre a bőrönddel.",
+        "Nagyon elégedett vagyok."
+      ],
       "correct": 0,
-      "teaches": ["szuksegem-van", "help-vocab"]
+      "teaches": [
+        "szuksegem-van",
+        "help-vocab"
+      ]
     },
     {
       "id": "a2-152-writing-1",
@@ -132,7 +256,9 @@
           "answer": "Elnézést, tudna segíteni?"
         }
       ],
-      "teaches": ["tudna-segiteni"]
+      "teaches": [
+        "tudna-segiteni"
+      ]
     },
     {
       "id": "a2-152-writing-2",
@@ -144,25 +270,41 @@
           "answer": "Szükségem van segítségre."
         }
       ],
-      "teaches": ["szuksegem-van"]
+      "teaches": [
+        "szuksegem-van"
+      ]
     },
     {
       "id": "a2-152-check-1",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "vocabulary",
       "question": "Which means \"to borrow\"?",
-      "options": ["kölcsönkér", "kölcsönad", "segít"],
+      "options": [
+        "kölcsönkér",
+        "kölcsönad",
+        "segít"
+      ],
       "correct": 0,
-      "teaches": ["help-vocab"]
+      "teaches": [
+        "help-vocab"
+      ],
+      "stage": "check"
     },
     {
       "id": "a2-152-check-2",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "grammar",
       "question": "Which correctly completes: \"Segítségre van ____.\" (\"I need help.\")?",
-      "options": ["szükségem", "szükséged", "szükség"],
+      "options": [
+        "szükségem",
+        "szükséged",
+        "szükség"
+      ],
       "correct": 0,
-      "teaches": ["szuksegem-van"]
+      "teaches": [
+        "szuksegem-van"
+      ],
+      "stage": "check"
     }
   ]
 }

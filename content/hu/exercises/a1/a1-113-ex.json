@@ -4,19 +4,20 @@
     {
       "id": "a1-113-review-1",
       "type": "multiple-choice",
-      "category": "review",
+      "category": "vocabulary",
       "question": "Which word means 'sandwich'?",
       "options": [
         "szendvics",
         "sütemény",
         "reggeli"
       ],
-      "correct": 0
+      "correct": 0,
+      "stage": "review"
     },
     {
       "id": "a1-113-review-2",
       "type": "matching",
-      "category": "review",
+      "category": "vocabulary",
       "pairs": [
         [
           "szendvics",
@@ -34,12 +35,13 @@
           "cukor",
           "sugar"
         ]
-      ]
+      ],
+      "stage": "review"
     },
     {
       "id": "a1-113-intro-1",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "grammar",
       "question": "Which word means 'milk'?",
       "options": [
         "tej",
@@ -50,34 +52,37 @@
       "teaches": [
         "itt-van-here-s-the-menu",
         "hol-asking-where"
-      ]
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a1-113-intro-2",
       "type": "fill-blank",
-      "category": "introduce",
+      "category": "grammar",
       "sentence": "Kérek cukrot és ____ is.",
       "answer": "tejet",
       "teaches": [
         "itt-van-here-s-the-menu",
         "hol-asking-where"
-      ]
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a1-113-controlled-1",
       "type": "fill-blank",
-      "category": "controlled",
+      "category": "grammar",
       "sentence": "Jó napot kívánok! Itt az ____.",
       "answer": "étlap",
       "teaches": [
         "itt-van-here-s-the-menu",
         "hol-asking-where"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-113-controlled-2",
       "type": "multiple-choice",
-      "category": "controlled",
+      "category": "grammar",
       "question": "What does 'pincér' mean?",
       "options": [
         "waiter",
@@ -88,12 +93,13 @@
       "teaches": [
         "itt-van-here-s-the-menu",
         "hol-asking-where"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-113-controlled-3",
       "type": "matching",
-      "category": "controlled",
+      "category": "vocabulary",
       "pairs": [
         [
           "tej",
@@ -115,12 +121,13 @@
       "teaches": [
         "itt-van-here-s-the-menu",
         "hol-asking-where"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-113-controlled-4",
       "type": "substitution",
-      "category": "controlled",
+      "category": "grammar",
       "base_sentence": "Kérek egy teát.",
       "base_word": "teát",
       "base_gloss": "I'd like a tea.",
@@ -141,12 +148,13 @@
       "teaches": [
         "itt-van-here-s-the-menu",
         "hol-asking-where"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-113-practice-1",
       "type": "multiple-choice",
-      "category": "practice",
+      "category": "grammar",
       "question": "Which word means 'menu'?",
       "options": [
         "étlap",
@@ -157,23 +165,25 @@
       "teaches": [
         "itt-van-here-s-the-menu",
         "hol-asking-where"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-113-practice-2",
       "type": "fill-blank",
-      "category": "practice",
+      "category": "grammar",
       "sentence": "Itt az ____.",
       "answer": "asztal",
       "teaches": [
         "itt-van-here-s-the-menu",
         "hol-asking-where"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-113-practice-3",
       "type": "matching",
-      "category": "practice",
+      "category": "vocabulary",
       "pairs": [
         [
           "Jó napot kívánok! Itt az étlap.",
@@ -195,12 +205,13 @@
       "teaches": [
         "itt-van-here-s-the-menu",
         "hol-asking-where"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-113-practice-4",
       "type": "substitution",
-      "category": "practice",
+      "category": "grammar",
       "base_sentence": "Itt az asztal.",
       "base_word": "asztal",
       "base_gloss": "Here's the table.",
@@ -221,12 +232,13 @@
       "teaches": [
         "itt-van-here-s-the-menu",
         "hol-asking-where"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-113-practice-5",
       "type": "dialogue-complete",
-      "category": "practice",
+      "category": "dialogue",
       "prompt": [
         {
           "speaker": "Meg",
@@ -245,7 +257,8 @@
       "teaches": [
         "itt-van-here-s-the-menu",
         "hol-asking-where"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-113-dialogue-1",
@@ -289,7 +302,7 @@
     {
       "id": "a1-113-writing-1",
       "type": "structured-writing",
-      "category": "production",
+      "category": "writing",
       "template": [
         {
           "prompt": "Write a sentence using this word: pincér",
@@ -299,12 +312,13 @@
       "teaches": [
         "itt-van-here-s-the-menu",
         "hol-asking-where"
-      ]
+      ],
+      "stage": "production"
     },
     {
       "id": "a1-113-writing-2",
       "type": "structured-writing",
-      "category": "production",
+      "category": "writing",
       "template": [
         {
           "prompt": "Write a sentence using this word: asztal",
@@ -314,12 +328,13 @@
       "teaches": [
         "itt-van-here-s-the-menu",
         "hol-asking-where"
-      ]
+      ],
+      "stage": "production"
     },
     {
       "id": "a1-113-check-1",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "grammar",
       "question": "Which word means 'table'?",
       "options": [
         "asztal",
@@ -330,18 +345,20 @@
       "teaches": [
         "itt-van-here-s-the-menu",
         "hol-asking-where"
-      ]
+      ],
+      "stage": "check"
     },
     {
       "id": "a1-113-check-2",
       "type": "fill-blank",
-      "category": "check",
+      "category": "grammar",
       "sentence": "Hol a ____? (the waiter)",
       "answer": "pincér",
       "teaches": [
         "itt-van-here-s-the-menu",
         "hol-asking-where"
-      ]
+      ],
+      "stage": "check"
     }
   ]
 }

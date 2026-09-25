@@ -4,31 +4,33 @@
     {
       "id": "a1-03-review-1",
       "type": "multiple-choice",
-      "category": "review",
+      "category": "vocabulary",
       "question": "Which means “you”?",
       "options": [
         "én",
         "te",
         "ő"
       ],
-      "correct": 1
+      "correct": 1,
+      "stage": "review"
     },
     {
       "id": "a1-03-review-2",
       "type": "multiple-choice",
-      "category": "review",
+      "category": "grammar",
       "question": "Én Károly ____.",
       "options": [
         "vagyok",
         "vagy",
         "van"
       ],
-      "correct": 0
+      "correct": 0,
+      "stage": "review"
     },
     {
       "id": "a1-03-intro-1",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "grammar",
       "question": "Which asks about a person?",
       "options": [
         "Ki?",
@@ -39,12 +41,13 @@
       "teaches": [
         "ki-and-mi",
         "ez-az-egy"
-      ]
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a1-03-intro-2",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "grammar",
       "question": "Which asks about a thing?",
       "options": [
         "Ki?",
@@ -55,12 +58,13 @@
       "teaches": [
         "ki-and-mi",
         "ez-az-egy"
-      ]
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a1-03-controlled-1",
       "type": "multiple-choice",
-      "category": "controlled",
+      "category": "grammar",
       "question": "____ ő?",
       "options": [
         "Ki",
@@ -70,12 +74,13 @@
       "teaches": [
         "ki-and-mi",
         "ez-az-egy"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-03-controlled-2",
       "type": "multiple-choice",
-      "category": "controlled",
+      "category": "grammar",
       "question": "____ ez?",
       "options": [
         "Ki",
@@ -85,12 +90,13 @@
       "teaches": [
         "ki-and-mi",
         "ez-az-egy"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-03-controlled-3",
       "type": "multiple-choice",
-      "category": "controlled",
+      "category": "grammar",
       "question": "____ egy tea.",
       "options": [
         "Ez",
@@ -101,12 +107,13 @@
       "teaches": [
         "ki-and-mi",
         "ez-az-egy"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-03-controlled-4",
       "type": "multiple-choice",
-      "category": "controlled",
+      "category": "grammar",
       "question": "____ egy kávé.",
       "options": [
         "Az",
@@ -117,12 +124,13 @@
       "teaches": [
         "ki-and-mi",
         "ez-az-egy"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-03-practice-1",
       "type": "sentence-builder",
-      "category": "practice",
+      "category": "grammar",
       "tiles": [
         "Mi",
         "ez",
@@ -137,23 +145,25 @@
       "teaches": [
         "ki-and-mi",
         "ez-az-egy"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-03-practice-3",
       "type": "fill-blank",
-      "category": "practice",
+      "category": "grammar",
       "sentence": "Mi ez? Ez egy ____. (coffee)",
       "answer": "kávé",
       "teaches": [
         "ki-and-mi",
         "ez-az-egy"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-03-practice-5",
       "type": "multiple-choice",
-      "category": "practice",
+      "category": "grammar",
       "question": "You see Meg. Which question?",
       "options": [
         "Mi ő?",
@@ -164,12 +174,13 @@
       "teaches": [
         "ki-and-mi",
         "ez-az-egy"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-03-practice-7",
       "type": "matching",
-      "category": "practice",
+      "category": "vocabulary",
       "pairs": [
         [
           "Ki?",
@@ -191,7 +202,8 @@
       "teaches": [
         "ki-and-mi",
         "ez-az-egy"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-03-dialogue-1",
@@ -274,7 +286,7 @@
     {
       "id": "a1-03-check-1",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "grammar",
       "question": "Which asks “who”?",
       "options": [
         "ki",
@@ -285,12 +297,13 @@
       "teaches": [
         "ki-and-mi",
         "ez-az-egy"
-      ]
+      ],
+      "stage": "check"
     },
     {
       "id": "a1-03-check-2",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "grammar",
       "question": "Which means “this”?",
       "options": [
         "ez",
@@ -301,12 +314,13 @@
       "teaches": [
         "ki-and-mi",
         "ez-az-egy"
-      ]
+      ],
+      "stage": "check"
     },
     {
       "id": "a1-03-practice-dialogue",
       "type": "dialogue-complete",
-      "category": "practice",
+      "category": "dialogue",
       "prompt": [
         {
           "speaker": "Károly",
@@ -325,7 +339,8 @@
       "teaches": [
         "ki-and-mi",
         "ez-az-egy"
-      ]
+      ],
+      "stage": "practice"
     }
   ]
 }

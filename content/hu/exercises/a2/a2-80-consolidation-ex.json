@@ -4,130 +4,238 @@
     {
       "id": "a2-80-consolidation-1",
       "type": "multiple-choice",
-      "category": "recognize",
+      "category": "vocabulary",
       "question": "Which means \"reservation, booking\"?",
-      "options": ["foglalás", "éjszaka", "vendég"],
+      "options": [
+        "foglalás",
+        "éjszaka",
+        "vendég"
+      ],
       "correct": 0,
-      "teaches": ["room-types-vocab"]
+      "teaches": [
+        "room-types-vocab"
+      ],
+      "stage": "recognize"
     },
     {
       "id": "a2-80-consolidation-2",
       "type": "multiple-choice",
-      "category": "recognize",
+      "category": "vocabulary",
       "question": "Which word names the person who checks you in at the hotel?",
-      "options": ["recepciós", "vendég", "szobaszám"],
+      "options": [
+        "recepciós",
+        "vendég",
+        "szobaszám"
+      ],
       "correct": 0,
-      "teaches": ["hotel-people-vocab"]
+      "teaches": [
+        "hotel-people-vocab"
+      ],
+      "stage": "recognize"
     },
     {
       "id": "a2-80-consolidation-3",
       "type": "multiple-choice",
-      "category": "recognize",
+      "category": "vocabulary",
       "question": "Which means \"towel\"?",
-      "options": ["törölköző", "franciaágy", "klíma"],
+      "options": [
+        "törölköző",
+        "franciaágy",
+        "klíma"
+      ],
       "correct": 0,
-      "teaches": ["room-amenities-vocab"]
+      "teaches": [
+        "room-amenities-vocab"
+      ],
+      "stage": "recognize"
     },
     {
       "id": "a2-80-consolidation-4",
       "type": "matching",
-      "category": "recall",
+      "category": "vocabulary",
       "pairs": [
-        ["hibás", "broken, faulty"],
-        ["zajos", "noisy"],
-        ["elégedett", "satisfied"],
-        ["borravaló", "tip"]
+        [
+          "hibás",
+          "broken, faulty"
+        ],
+        [
+          "zajos",
+          "noisy"
+        ],
+        [
+          "elégedett",
+          "satisfied"
+        ],
+        [
+          "borravaló",
+          "tip"
+        ]
       ],
-      "teaches": ["problems-vocab"]
+      "teaches": [
+        "problems-vocab"
+      ],
+      "stage": "recall"
     },
     {
       "id": "a2-80-consolidation-5",
       "type": "matching",
-      "category": "recall",
+      "category": "vocabulary",
       "pairs": [
-        ["kétágyas", "double, twin-bed (room)"],
-        ["franciaágy", "double bed"],
-        ["minibár", "minibar"],
-        ["kijelentkezik", "to check out"]
+        [
+          "kétágyas",
+          "double, twin-bed (room)"
+        ],
+        [
+          "franciaágy",
+          "double bed"
+        ],
+        [
+          "minibár",
+          "minibar"
+        ],
+        [
+          "kijelentkezik",
+          "to check out"
+        ]
       ],
-      "teaches": ["room-types-vocab"]
+      "teaches": [
+        "room-types-vocab"
+      ],
+      "stage": "recall"
     },
     {
       "id": "a2-80-consolidation-6",
       "type": "fill-blank",
-      "category": "recall",
+      "category": "grammar",
       "sentence": "Nem ____ a lift, menjünk lépcsőn. (works)",
       "answer": "működik",
-      "teaches": ["nem-mukodik"]
+      "teaches": [
+        "nem-mukodik"
+      ],
+      "stage": "recall"
     },
     {
       "id": "a2-80-consolidation-7",
       "type": "dialogue-complete",
-      "category": "context",
+      "category": "dialogue",
       "prompt": [
-        { "speaker": "Recepciós", "text": "Foglalása van?" },
-        { "speaker": "Vendég", "text": "_____" }
+        {
+          "speaker": "Recepciós",
+          "text": "Foglalása van?"
+        },
+        {
+          "speaker": "Vendég",
+          "text": "_____"
+        }
       ],
-      "options": ["Igen, két éjszakára foglaltam egy kétágyas szobát.", "Nem működik a klíma."],
+      "options": [
+        "Igen, két éjszakára foglaltam egy kétágyas szobát.",
+        "Nem működik a klíma."
+      ],
       "correct": 0,
-      "teaches": ["nights-ra-re"]
+      "teaches": [
+        "nights-ra-re"
+      ],
+      "stage": "context"
     },
     {
       "id": "a2-80-consolidation-8",
       "type": "dialogue-complete",
-      "category": "context",
+      "category": "dialogue",
       "prompt": [
-        { "speaker": "Vendég", "text": "A szobában piszkos a törölköző." },
-        { "speaker": "Recepciós", "text": "_____" }
+        {
+          "speaker": "Vendég",
+          "text": "A szobában piszkos a törölköző."
+        },
+        {
+          "speaker": "Recepciós",
+          "text": "_____"
+        }
       ],
-      "options": ["Sajnálom, adok egy tisztát.", "Kártyával fizetek."],
+      "options": [
+        "Sajnálom, adok egy tisztát.",
+        "Kártyával fizetek."
+      ],
       "correct": 0,
-      "teaches": ["kerek-masikat"]
+      "teaches": [
+        "kerek-masikat"
+      ],
+      "stage": "context"
     },
     {
       "id": "a2-80-consolidation-9",
       "type": "sentence-builder",
-      "category": "context",
-      "tiles": ["A", "szoba", "szép", "de", "az", "utca", "zajos", "."],
-      "solution": ["A", "szoba", "szép", "de", "az", "utca", "zajos", "."],
+      "category": "vocabulary",
+      "tiles": [
+        "A",
+        "szoba",
+        "szép",
+        "de",
+        "az",
+        "utca",
+        "zajos",
+        "."
+      ],
+      "solution": [
+        "A",
+        "szoba",
+        "szép",
+        "de",
+        "az",
+        "utca",
+        "zajos",
+        "."
+      ],
       "english": "The room is nice, but the street is noisy.",
-      "teaches": ["problems-vocab"]
+      "teaches": [
+        "problems-vocab"
+      ],
+      "stage": "context"
     },
     {
       "id": "a2-80-consolidation-10",
       "type": "structured-writing",
-      "category": "produce",
+      "category": "writing",
       "template": [
         {
           "prompt": "Say you'd like to book a double room for three nights.",
           "answer": "Szeretnék foglalni egy kétágyas szobát három éjszakára."
         }
       ],
-      "teaches": ["nights-ra-re"]
+      "teaches": [
+        "nights-ra-re"
+      ],
+      "stage": "produce"
     },
     {
       "id": "a2-80-consolidation-11",
       "type": "structured-writing",
-      "category": "produce",
+      "category": "writing",
       "template": [
         {
           "prompt": "Say the elevator doesn't work and you'd like a different room.",
           "answer": "Nem működik a lift, kérek egy másik szobát."
         }
       ],
-      "teaches": ["nem-mukodik"]
+      "teaches": [
+        "nem-mukodik"
+      ],
+      "stage": "produce"
     },
     {
       "id": "a2-80-consolidation-12",
       "type": "structured-writing",
-      "category": "produce",
+      "category": "writing",
       "template": [
         {
           "prompt": "Say you're very satisfied with the room and you'll pay by card.",
           "answer": "Nagyon elégedett vagyok a szobával, kártyával fizetek."
         }
       ],
-      "teaches": ["elegedett-val-vel"]
+      "teaches": [
+        "elegedett-val-vel"
+      ],
+      "stage": "produce"
     }
   ]
 }

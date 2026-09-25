@@ -4,31 +4,33 @@
     {
       "id": "a1-09-review-1",
       "type": "multiple-choice",
-      "category": "review",
+      "category": "vocabulary",
       "question": "Which means “I'm well”?",
       "options": [
         "Jól vagyok.",
         "Rosszul vagyok.",
         "Hogy vagy?"
       ],
-      "correct": 0
+      "correct": 0,
+      "stage": "review"
     },
     {
       "id": "a1-09-review-2",
       "type": "multiple-choice",
-      "category": "review",
+      "category": "vocabulary",
       "question": "Which means “you're welcome”?",
       "options": [
         "szívesen",
         "bocsánat",
         "viszlát"
       ],
-      "correct": 0
+      "correct": 0,
+      "stage": "review"
     },
     {
       "id": "a1-09-intro-1",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "grammar",
       "question": "Which means “I understand”?",
       "options": [
         "értem",
@@ -39,12 +41,13 @@
       "teaches": [
         "ertem-and-nem-ertem",
         "asking-for-help"
-      ]
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a1-09-intro-2",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "grammar",
       "question": "Which means “I don't understand”?",
       "options": [
         "nem értem",
@@ -55,23 +58,25 @@
       "teaches": [
         "ertem-and-nem-ertem",
         "asking-for-help"
-      ]
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a1-09-controlled-1",
       "type": "fill-blank",
-      "category": "controlled",
+      "category": "grammar",
       "sentence": "I understand. → ____.",
       "answer": "Értem.",
       "teaches": [
         "ertem-and-nem-ertem",
         "asking-for-help"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-09-controlled-2",
       "type": "multiple-choice",
-      "category": "controlled",
+      "category": "grammar",
       "question": "Which is a negative statement?",
       "options": [
         "Nem értem.",
@@ -82,12 +87,13 @@
       "teaches": [
         "ertem-and-nem-ertem",
         "asking-for-help"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-09-controlled-3",
       "type": "matching",
-      "category": "controlled",
+      "category": "vocabulary",
       "pairs": [
         [
           "értem",
@@ -109,12 +115,13 @@
       "teaches": [
         "ertem-and-nem-ertem",
         "asking-for-help"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-09-practice-1",
       "type": "multiple-choice",
-      "category": "practice",
+      "category": "grammar",
       "question": "You did not understand. What do you say?",
       "options": [
         "Nem értem.",
@@ -125,12 +132,13 @@
       "teaches": [
         "ertem-and-nem-ertem",
         "asking-for-help"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-09-practice-2",
       "type": "matching",
-      "category": "practice",
+      "category": "vocabulary",
       "pairs": [
         [
           "értem",
@@ -152,23 +160,25 @@
       "teaches": [
         "ertem-and-nem-ertem",
         "asking-for-help"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-09-practice-3",
       "type": "fill-blank",
-      "category": "practice",
+      "category": "grammar",
       "sentence": "Beszélj ____! (more slowly)",
       "answer": "lassabban",
       "teaches": [
         "ertem-and-nem-ertem",
         "asking-for-help"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-09-practice-4",
       "type": "matching",
-      "category": "practice",
+      "category": "vocabulary",
       "pairs": [
         [
           "még egyszer",
@@ -190,12 +200,13 @@
       "teaches": [
         "ertem-and-nem-ertem",
         "asking-for-help"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-09-practice-5",
       "type": "dialogue-complete",
-      "category": "practice",
+      "category": "dialogue",
       "prompt": [
         {
           "speaker": "Meg",
@@ -214,12 +225,13 @@
       "teaches": [
         "ertem-and-nem-ertem",
         "asking-for-help"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-09-controlled-extra",
       "type": "multiple-choice",
-      "category": "controlled",
+      "category": "grammar",
       "question": "Which phrase asks for repetition politely?",
       "options": [
         "Még egyszer, légyszi.",
@@ -230,7 +242,8 @@
       "teaches": [
         "ertem-and-nem-ertem",
         "asking-for-help"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-09-dialogue-1",
@@ -313,7 +326,7 @@
     {
       "id": "a1-09-check-1",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "grammar",
       "question": "Which expression fits a polite daytime greeting?",
       "options": [
         "Jó napot!",
@@ -324,12 +337,13 @@
       "teaches": [
         "ertem-and-nem-ertem",
         "asking-for-help"
-      ]
+      ],
+      "stage": "check"
     },
     {
       "id": "a1-09-check-2",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "grammar",
       "question": "Which expression asks for repetition?",
       "options": [
         "Megismételnéd?",
@@ -340,7 +354,8 @@
       "teaches": [
         "ertem-and-nem-ertem",
         "asking-for-help"
-      ]
+      ],
+      "stage": "check"
     }
   ]
 }

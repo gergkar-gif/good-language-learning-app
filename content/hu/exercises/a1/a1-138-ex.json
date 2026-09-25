@@ -4,31 +4,33 @@
     {
       "id": "a1-138-review-1",
       "type": "multiple-choice",
-      "category": "review",
+      "category": "vocabulary",
       "question": "What does 'jegy' mean?",
       "options": [
         "ticket",
         "stop",
         "taxi"
       ],
-      "correct": 0
+      "correct": 0,
+      "stage": "review"
     },
     {
       "id": "a1-138-review-2",
       "type": "multiple-choice",
-      "category": "review",
+      "category": "vocabulary",
       "question": "What does 'pályaudvar' mean?",
       "options": [
         "railway station",
         "stop",
         "ticket"
       ],
-      "correct": 0
+      "correct": 0,
+      "stage": "review"
     },
     {
       "id": "a1-138-introduce-1",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "grammar",
       "question": "What does 'gyalog' mean?",
       "options": [
         "on foot",
@@ -39,12 +41,13 @@
       "teaches": [
         "coming-the-irregular-verb-jon",
         "giving-a-direction-the-imperative-of-megy"
-      ]
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a1-138-introduce-2",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "grammar",
       "question": "What does 'jön' mean?",
       "options": [
         "to come",
@@ -55,23 +58,25 @@
       "teaches": [
         "coming-the-irregular-verb-jon",
         "giving-a-direction-the-imperative-of-megy"
-      ]
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a1-138-controlled-1",
       "type": "fill-blank",
-      "category": "controlled",
+      "category": "grammar",
       "sentence": "____ a busz. (is coming)",
       "answer": "Jön",
       "teaches": [
         "coming-the-irregular-verb-jon",
         "giving-a-direction-the-imperative-of-megy"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-138-controlled-2",
       "type": "multiple-choice",
-      "category": "controlled",
+      "category": "grammar",
       "question": "Choose the word for 'bicycle'.",
       "options": [
         "bicikli",
@@ -82,12 +87,13 @@
       "teaches": [
         "coming-the-irregular-verb-jon",
         "giving-a-direction-the-imperative-of-megy"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-138-controlled-3",
       "type": "matching",
-      "category": "controlled",
+      "category": "vocabulary",
       "pairs": [
         [
           "gyalog",
@@ -109,12 +115,13 @@
       "teaches": [
         "coming-the-irregular-verb-jon",
         "giving-a-direction-the-imperative-of-megy"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-138-controlled-4",
       "type": "substitution",
-      "category": "controlled",
+      "category": "grammar",
       "base_sentence": "Jön a busz.",
       "base_word": "Jön",
       "base_gloss": "The bus is coming.",
@@ -135,12 +142,13 @@
       "teaches": [
         "coming-the-irregular-verb-jon",
         "giving-a-direction-the-imperative-of-megy"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-138-practice-1",
       "type": "multiple-choice",
-      "category": "practice",
+      "category": "grammar",
       "question": "How do you tell someone to 'Go straight'?",
       "options": [
         "Menj egyenesen.",
@@ -151,23 +159,25 @@
       "teaches": [
         "coming-the-irregular-verb-jon",
         "giving-a-direction-the-imperative-of-megy"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-138-practice-2",
       "type": "fill-blank",
-      "category": "practice",
+      "category": "grammar",
       "sentence": "____ egyenesen, aztán jobbra.",
       "answer": "Menj",
       "teaches": [
         "coming-the-irregular-verb-jon",
         "giving-a-direction-the-imperative-of-megy"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-138-practice-3",
       "type": "matching",
-      "category": "practice",
+      "category": "vocabulary",
       "pairs": [
         [
           "gyalog",
@@ -193,12 +203,13 @@
       "teaches": [
         "coming-the-irregular-verb-jon",
         "giving-a-direction-the-imperative-of-megy"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-138-practice-4",
       "type": "substitution",
-      "category": "practice",
+      "category": "grammar",
       "base_sentence": "Gyalog megyek.",
       "base_word": "Gyalog",
       "base_gloss": "I go on foot.",
@@ -219,12 +230,13 @@
       "teaches": [
         "coming-the-irregular-verb-jon",
         "giving-a-direction-the-imperative-of-megy"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-138-practice-5",
       "type": "dialogue-complete",
-      "category": "practice",
+      "category": "dialogue",
       "prompt": [
         {
           "speaker": "Meg",
@@ -243,7 +255,8 @@
       "teaches": [
         "coming-the-irregular-verb-jon",
         "giving-a-direction-the-imperative-of-megy"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-138-dialogue-1",
@@ -326,7 +339,7 @@
     {
       "id": "a1-138-check-1",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "grammar",
       "question": "Choose the correct word for 'on foot'.",
       "options": [
         "gyalog",
@@ -337,12 +350,13 @@
       "teaches": [
         "coming-the-irregular-verb-jon",
         "giving-a-direction-the-imperative-of-megy"
-      ]
+      ],
+      "stage": "check"
     },
     {
       "id": "a1-138-check-2",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "grammar",
       "question": "Choose the correct word for 'come'.",
       "options": [
         "jön",
@@ -353,7 +367,8 @@
       "teaches": [
         "coming-the-irregular-verb-jon",
         "giving-a-direction-the-imperative-of-megy"
-      ]
+      ],
+      "stage": "check"
     }
   ]
 }

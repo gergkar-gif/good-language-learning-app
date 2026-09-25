@@ -4,130 +4,242 @@
     {
       "id": "a2-40-consolidation-1",
       "type": "multiple-choice",
-      "category": "recognize",
+      "category": "grammar",
       "question": "Which means “eleven”?",
-      "options": ["tizenegy", "tíz", "húsz"],
+      "options": [
+        "tizenegy",
+        "tíz",
+        "húsz"
+      ],
       "correct": 0,
-      "teaches": ["szamok-11"]
+      "teaches": [
+        "szamok-11"
+      ],
+      "stage": "recognize"
     },
     {
       "id": "a2-40-consolidation-2",
       "type": "multiple-choice",
-      "category": "recognize",
+      "category": "grammar",
       "question": "Which means “medium”?",
-      "options": ["közepes", "kicsi", "nagy"],
+      "options": [
+        "közepes",
+        "kicsi",
+        "nagy"
+      ],
       "correct": 0,
-      "teaches": ["meret-tul"]
+      "teaches": [
+        "meret-tul"
+      ],
+      "stage": "recognize"
     },
     {
       "id": "a2-40-consolidation-3",
       "type": "multiple-choice",
-      "category": "recognize",
+      "category": "grammar",
       "question": "Which means “discount”?",
-      "options": ["kedvezmény", "akció", "ár"],
+      "options": [
+        "kedvezmény",
+        "akció",
+        "ár"
+      ],
       "correct": 0,
-      "teaches": ["akcio-kedvezmeny"]
+      "teaches": [
+        "akcio-kedvezmeny"
+      ],
+      "stage": "recognize"
     },
     {
       "id": "a2-40-consolidation-4",
       "type": "matching",
-      "category": "recall",
+      "category": "vocabulary",
       "pairs": [
-        ["keres", "to look for"],
-        ["talál", "to find"],
-        ["választ", "to choose"],
-        ["kerül", "to cost"]
+        [
+          "keres",
+          "to look for"
+        ],
+        [
+          "talál",
+          "to find"
+        ],
+        [
+          "választ",
+          "to choose"
+        ],
+        [
+          "kerül",
+          "to cost"
+        ]
       ],
-      "teaches": ["valaszt-biztos"]
+      "teaches": [
+        "valaszt-biztos"
+      ],
+      "stage": "recall"
     },
     {
       "id": "a2-40-consolidation-5",
       "type": "matching",
-      "category": "recall",
+      "category": "vocabulary",
       "pairs": [
-        ["zöld", "green"],
-        ["sárga", "yellow"],
-        ["túl", "too"],
-        ["ezer", "thousand"]
+        [
+          "zöld",
+          "green"
+        ],
+        [
+          "sárga",
+          "yellow"
+        ],
+        [
+          "túl",
+          "too"
+        ],
+        [
+          "ezer",
+          "thousand"
+        ]
       ],
-      "teaches": ["szinek"]
+      "teaches": [
+        "szinek"
+      ],
+      "stage": "recall"
     },
     {
       "id": "a2-40-consolidation-6",
       "type": "fill-blank",
-      "category": "recall",
+      "category": "grammar",
       "sentence": "Mennyibe ____ ez a szoknya? (costs)",
       "answer": "kerül",
-      "teaches": ["ert-kerul"]
+      "teaches": [
+        "ert-kerul"
+      ],
+      "stage": "recall"
     },
     {
       "id": "a2-40-consolidation-7",
       "type": "dialogue-complete",
-      "category": "context",
+      "category": "dialogue",
       "prompt": [
-        { "speaker": "Eladó", "text": "Mit keresel?" },
-        { "speaker": "Meg", "text": "_____" }
+        {
+          "speaker": "Eladó",
+          "text": "Mit keresel?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
       ],
-      "options": ["Egy kék pulóvert keresek.", "Egy kék pulóvert találok."],
+      "options": [
+        "Egy kék pulóvert keresek.",
+        "Egy kék pulóvert találok."
+      ],
       "correct": 0,
-      "teaches": ["keres"]
+      "teaches": [
+        "keres"
+      ],
+      "stage": "context"
     },
     {
       "id": "a2-40-consolidation-8",
       "type": "dialogue-complete",
-      "category": "context",
+      "category": "dialogue",
       "prompt": [
-        { "speaker": "Károly", "text": "Mennyibe kerül ez a sapka?" },
-        { "speaker": "Eladó", "text": "_____" }
+        {
+          "speaker": "Károly",
+          "text": "Mennyibe kerül ez a sapka?"
+        },
+        {
+          "speaker": "Eladó",
+          "text": "_____"
+        }
       ],
-      "options": ["Kilencvenhét forint.", "Kilencvenhét méret."],
+      "options": [
+        "Kilencvenhét forint.",
+        "Kilencvenhét méret."
+      ],
       "correct": 0,
-      "teaches": ["ert-kerul"]
+      "teaches": [
+        "ert-kerul"
+      ],
+      "stage": "context"
     },
     {
       "id": "a2-40-consolidation-9",
       "type": "sentence-builder",
-      "category": "context",
-      "tiles": ["A", "sárga", "pulóver", "olyan", "szép", ",", "mint", "a", "zöld", "."],
-      "solution": ["A", "sárga", "pulóver", "olyan", "szép", ",", "mint", "a", "zöld", "."],
+      "category": "grammar",
+      "tiles": [
+        "A",
+        "sárga",
+        "pulóver",
+        "olyan",
+        "szép",
+        ",",
+        "mint",
+        "a",
+        "zöld",
+        "."
+      ],
+      "solution": [
+        "A",
+        "sárga",
+        "pulóver",
+        "olyan",
+        "szép",
+        ",",
+        "mint",
+        "a",
+        "zöld",
+        "."
+      ],
       "english": "The yellow sweater is as nice as the green one.",
-      "teaches": ["olyan-mint-termekek"]
+      "teaches": [
+        "olyan-mint-termekek"
+      ],
+      "stage": "context"
     },
     {
       "id": "a2-40-consolidation-10",
       "type": "structured-writing",
-      "category": "produce",
+      "category": "writing",
       "template": [
         {
           "prompt": "Ask how much this sweater costs.",
           "answer": "Mennyibe kerül ez a pulóver?"
         }
       ],
-      "teaches": ["ert-kerul"]
+      "teaches": [
+        "ert-kerul"
+      ],
+      "stage": "produce"
     },
     {
       "id": "a2-40-consolidation-11",
       "type": "structured-writing",
-      "category": "produce",
+      "category": "writing",
       "template": [
         {
           "prompt": "Say this one is as expensive as that one.",
           "answer": "Ez olyan drága, mint az."
         }
       ],
-      "teaches": ["olyan-mint-termekek"]
+      "teaches": [
+        "olyan-mint-termekek"
+      ],
+      "stage": "produce"
     },
     {
       "id": "a2-40-consolidation-12",
       "type": "structured-writing",
-      "category": "produce",
+      "category": "writing",
       "template": [
         {
           "prompt": "Say it's a hard decision, but you're sure.",
           "answer": "Ez egy nehéz döntés, de biztos vagyok."
         }
       ],
-      "teaches": ["vasarlas-osszefoglalas"]
+      "teaches": [
+        "vasarlas-osszefoglalas"
+      ],
+      "stage": "produce"
     }
   ]
 }

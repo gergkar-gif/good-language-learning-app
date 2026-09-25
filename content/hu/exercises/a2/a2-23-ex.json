@@ -4,120 +4,232 @@
     {
       "id": "a2-23-intro-1",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "grammar",
       "question": "Which means “to get along”?",
-      "options": ["kijön", "ismerkedik", "segít"],
+      "options": [
+        "kijön",
+        "ismerkedik",
+        "segít"
+      ],
       "correct": 0,
-      "teaches": ["kijon"]
+      "teaches": [
+        "kijon"
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a2-23-intro-2",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "grammar",
       "question": "Which means “each other”?",
-      "options": ["egymás", "közös", "ismerős"],
+      "options": [
+        "egymás",
+        "közös",
+        "ismerős"
+      ],
       "correct": 0,
-      "teaches": ["egymas"]
+      "teaches": [
+        "egymas"
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a2-23-controlled-1",
       "type": "matching",
-      "category": "controlled",
+      "category": "vocabulary",
       "pairs": [
-        ["kijövök", "I get along"],
-        ["egymással", "with each other"],
-        ["nehezen", "with difficulty"],
-        ["jól", "well"]
+        [
+          "kijövök",
+          "I get along"
+        ],
+        [
+          "egymással",
+          "with each other"
+        ],
+        [
+          "nehezen",
+          "with difficulty"
+        ],
+        [
+          "jól",
+          "well"
+        ]
       ],
-      "teaches": ["kijon"]
+      "teaches": [
+        "kijon"
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a2-23-controlled-2",
       "type": "fill-blank",
-      "category": "controlled",
+      "category": "grammar",
       "sentence": "Jól ____ Petrával.",
       "answer": "kijövök",
-      "teaches": ["kijon"]
+      "teaches": [
+        "kijon"
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a2-23-controlled-3",
       "type": "fill-blank",
-      "category": "controlled",
+      "category": "grammar",
       "sentence": "Sokat beszélünk ____.",
       "answer": "egymással",
-      "teaches": ["egymas"]
+      "teaches": [
+        "egymas"
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a2-23-controlled-4",
       "type": "multiple-choice",
-      "category": "controlled",
+      "category": "grammar",
       "question": "Which suffix does the person you get along with always take?",
-      "options": ["-val/-vel", "-nál/-nél", "-hoz/-hez/-höz"],
+      "options": [
+        "-val/-vel",
+        "-nál/-nél",
+        "-hoz/-hez/-höz"
+      ],
       "correct": 0,
-      "teaches": ["kijon"]
+      "teaches": [
+        "kijon"
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a2-23-practice-1",
       "type": "multiple-choice",
-      "category": "practice",
+      "category": "grammar",
       "question": "Which means “with difficulty”?",
-      "options": ["nehezen", "könnyen", "jól"],
+      "options": [
+        "nehezen",
+        "könnyen",
+        "jól"
+      ],
       "correct": 0,
-      "teaches": ["kijon"]
+      "teaches": [
+        "kijon"
+      ],
+      "stage": "practice"
     },
     {
       "id": "a2-23-practice-2",
       "type": "matching",
-      "category": "practice",
+      "category": "vocabulary",
       "pairs": [
-        ["Jól kijövök Petrával", "I get along well with Petra"],
-        ["Jól kijövünk egymással", "We get along well with each other"],
-        ["Sokat beszélünk egymással", "We talk a lot with each other"],
-        ["Nehezen jövök ki valakivel, aki mindig komoly", "I have a hard time getting along with someone who's always serious"]
+        [
+          "Jól kijövök Petrával",
+          "I get along well with Petra"
+        ],
+        [
+          "Jól kijövünk egymással",
+          "We get along well with each other"
+        ],
+        [
+          "Sokat beszélünk egymással",
+          "We talk a lot with each other"
+        ],
+        [
+          "Nehezen jövök ki valakivel, aki mindig komoly",
+          "I have a hard time getting along with someone who's always serious"
+        ]
       ],
-      "teaches": ["egymas"]
+      "teaches": [
+        "egymas"
+      ],
+      "stage": "practice"
     },
     {
       "id": "a2-23-practice-3",
       "type": "sentence-builder",
-      "category": "practice",
-      "tiles": ["Jól", "kijövök", "Petrával", "."],
-      "solution": ["Jól", "kijövök", "Petrával", "."],
+      "category": "grammar",
+      "tiles": [
+        "Jól",
+        "kijövök",
+        "Petrával",
+        "."
+      ],
+      "solution": [
+        "Jól",
+        "kijövök",
+        "Petrával",
+        "."
+      ],
       "english": "I get along well with Petra.",
-      "teaches": ["kijon"]
+      "teaches": [
+        "kijon"
+      ],
+      "stage": "practice"
     },
     {
       "id": "a2-23-practice-4",
       "type": "sentence-builder",
-      "category": "practice",
-      "tiles": ["Sokat", "beszélünk", "egymással", "."],
-      "solution": ["Sokat", "beszélünk", "egymással", "."],
+      "category": "grammar",
+      "tiles": [
+        "Sokat",
+        "beszélünk",
+        "egymással",
+        "."
+      ],
+      "solution": [
+        "Sokat",
+        "beszélünk",
+        "egymással",
+        "."
+      ],
       "english": "We talk a lot with each other.",
-      "teaches": ["egymas"]
+      "teaches": [
+        "egymas"
+      ],
+      "stage": "practice"
     },
     {
       "id": "a2-23-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
       "prompt": [
-        { "speaker": "Károly", "text": "Hogy jössz ki Petrával?" },
-        { "speaker": "Meg", "text": "_____" }
+        {
+          "speaker": "Károly",
+          "text": "Hogy jössz ki Petrával?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
       ],
-      "options": ["Jól kijövök vele.", "Nehezen ismerek."],
+      "options": [
+        "Jól kijövök vele.",
+        "Nehezen ismerek."
+      ],
       "correct": 0,
-      "teaches": ["kijon"]
+      "teaches": [
+        "kijon"
+      ]
     },
     {
       "id": "a2-23-dialogue-2",
       "type": "dialogue-complete",
       "category": "dialogue",
       "prompt": [
-        { "speaker": "Meg", "text": "Ti sokat beszéltek egymással?" },
-        { "speaker": "Károly", "text": "_____" }
+        {
+          "speaker": "Meg",
+          "text": "Ti sokat beszéltek egymással?"
+        },
+        {
+          "speaker": "Károly",
+          "text": "_____"
+        }
       ],
-      "options": ["Igen, sokat beszélünk egymással.", "Igen, egymás vagyunk."],
+      "options": [
+        "Igen, sokat beszélünk egymással.",
+        "Igen, egymás vagyunk."
+      ],
       "correct": 0,
-      "teaches": ["egymas"]
+      "teaches": [
+        "egymas"
+      ]
     },
     {
       "id": "a2-23-writing-1",
@@ -129,7 +241,9 @@
           "answer": "Jól kijövök Petrával."
         }
       ],
-      "teaches": ["kijon"]
+      "teaches": [
+        "kijon"
+      ]
     },
     {
       "id": "a2-23-writing-2",
@@ -141,25 +255,41 @@
           "answer": "Sokat beszélünk egymással."
         }
       ],
-      "teaches": ["egymas"]
+      "teaches": [
+        "egymas"
+      ]
     },
     {
       "id": "a2-23-check-1",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "grammar",
       "question": "Which means “to get along”?",
-      "options": ["kijön", "megy", "ismerkedik"],
+      "options": [
+        "kijön",
+        "megy",
+        "ismerkedik"
+      ],
       "correct": 0,
-      "teaches": ["kijon"]
+      "teaches": [
+        "kijon"
+      ],
+      "stage": "check"
     },
     {
       "id": "a2-23-check-2",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "grammar",
       "question": "Which means “with each other”?",
-      "options": ["egymással", "közösen", "vele"],
+      "options": [
+        "egymással",
+        "közösen",
+        "vele"
+      ],
       "correct": 0,
-      "teaches": ["egymas"]
+      "teaches": [
+        "egymas"
+      ],
+      "stage": "check"
     }
   ]
 }

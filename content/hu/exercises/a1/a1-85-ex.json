@@ -4,31 +4,33 @@
     {
       "id": "a1-85-review-1",
       "type": "multiple-choice",
-      "category": "review",
+      "category": "vocabulary",
       "question": "Which word means \"today\"?",
       "options": [
         "ma",
         "most",
         "otthon"
       ],
-      "correct": 0
+      "correct": 0,
+      "stage": "review"
     },
     {
       "id": "a1-85-review-2",
       "type": "multiple-choice",
-      "category": "review",
+      "category": "vocabulary",
       "question": "Which sentence puts the emphasis on WHERE, not WHEN?",
       "options": [
         "Otthon vagyok ma.",
         "Ma otthon vagyok.",
         "Vagyok otthon ma."
       ],
-      "correct": 0
+      "correct": 0,
+      "stage": "review"
     },
     {
       "id": "a1-85-intro-1",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "grammar",
       "question": "Which word means \"work\" (the noun)?",
       "options": [
         "munka",
@@ -39,12 +41,13 @@
       "teaches": [
         "naming-habits-and-their-verbs",
         "ik-verbs-dolgozom-not-dolgozok"
-      ]
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a1-85-intro-2",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "grammar",
       "question": "Which word means \"resting\"?",
       "options": [
         "pihenés",
@@ -55,12 +58,13 @@
       "teaches": [
         "naming-habits-and-their-verbs",
         "ik-verbs-dolgozom-not-dolgozok"
-      ]
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a1-85-controlled-1",
       "type": "matching",
-      "category": "controlled",
+      "category": "vocabulary",
       "pairs": [
         [
           "munka",
@@ -82,23 +86,25 @@
       "teaches": [
         "naming-habits-and-their-verbs",
         "ik-verbs-dolgozom-not-dolgozok"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-85-controlled-2",
       "type": "fill-blank",
-      "category": "controlled",
+      "category": "grammar",
       "sentence": "Hétvégén gyakran van ____. (work)",
       "answer": "munka",
       "teaches": [
         "naming-habits-and-their-verbs",
         "ik-verbs-dolgozom-not-dolgozok"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-85-controlled-3",
       "type": "multiple-choice",
-      "category": "controlled",
+      "category": "grammar",
       "question": "Which is the correct 1st person singular of dolgozik (to work)?",
       "options": [
         "dolgozom",
@@ -109,23 +115,25 @@
       "teaches": [
         "naming-habits-and-their-verbs",
         "ik-verbs-dolgozom-not-dolgozok"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-85-controlled-4",
       "type": "fill-blank",
-      "category": "controlled",
+      "category": "grammar",
       "sentence": "Délben ____. (I work)",
       "answer": "dolgozom",
       "teaches": [
         "naming-habits-and-their-verbs",
         "ik-verbs-dolgozom-not-dolgozok"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-85-practice-1",
       "type": "multiple-choice",
-      "category": "practice",
+      "category": "grammar",
       "question": "Which answer fits \"Mit csinálsz hétvégén?\"",
       "options": [
         "Sportolok és pihenek.",
@@ -136,23 +144,25 @@
       "teaches": [
         "naming-habits-and-their-verbs",
         "ik-verbs-dolgozom-not-dolgozok"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-85-practice-2",
       "type": "fill-blank",
-      "category": "practice",
+      "category": "grammar",
       "sentence": "A ____ is fontos. A pihenés is fontos. (studying)",
       "answer": "tanulás",
       "teaches": [
         "naming-habits-and-their-verbs",
         "ik-verbs-dolgozom-not-dolgozok"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-85-practice-3",
       "type": "matching",
-      "category": "practice",
+      "category": "vocabulary",
       "pairs": [
         [
           "A tanulás is fontos.",
@@ -174,12 +184,13 @@
       "teaches": [
         "naming-habits-and-their-verbs",
         "ik-verbs-dolgozom-not-dolgozok"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-85-practice-4",
       "type": "sentence-builder",
-      "category": "practice",
+      "category": "grammar",
       "tiles": [
         "A",
         "sport",
@@ -196,12 +207,13 @@
       "teaches": [
         "naming-habits-and-their-verbs",
         "ik-verbs-dolgozom-not-dolgozok"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-85-practice-5",
       "type": "dialogue-complete",
-      "category": "practice",
+      "category": "dialogue",
       "prompt": [
         {
           "speaker": "Meg",
@@ -220,7 +232,8 @@
       "teaches": [
         "naming-habits-and-their-verbs",
         "ik-verbs-dolgozom-not-dolgozok"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-85-dialogue-1",
@@ -295,7 +308,7 @@
     {
       "id": "a1-85-check-1",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "grammar",
       "question": "Which word means \"sport\"?",
       "options": [
         "sport",
@@ -306,12 +319,13 @@
       "teaches": [
         "naming-habits-and-their-verbs",
         "ik-verbs-dolgozom-not-dolgozok"
-      ]
+      ],
+      "stage": "check"
     },
     {
       "id": "a1-85-check-2",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "grammar",
       "question": "Which is the correct -ik-verb 1st person singular pattern?",
       "options": [
         "-om / -em / -öm",
@@ -322,7 +336,8 @@
       "teaches": [
         "naming-habits-and-their-verbs",
         "ik-verbs-dolgozom-not-dolgozok"
-      ]
+      ],
+      "stage": "check"
     }
   ]
 }

@@ -4,130 +4,234 @@
     {
       "id": "a2-30-consolidation-1",
       "type": "multiple-choice",
-      "category": "recognize",
+      "category": "vocabulary",
       "question": "Which means “shelf”?",
-      "options": ["polc", "szekrény", "fiók"],
+      "options": [
+        "polc",
+        "szekrény",
+        "fiók"
+      ],
       "correct": 0,
-      "teaches": ["furniture-vocab"]
+      "teaches": [
+        "furniture-vocab"
+      ],
+      "stage": "recognize"
     },
     {
       "id": "a2-30-consolidation-2",
       "type": "multiple-choice",
-      "category": "recognize",
+      "category": "grammar",
       "question": "Which means “to move house”?",
-      "options": ["költözik", "lakik", "bérel"],
+      "options": [
+        "költözik",
+        "lakik",
+        "bérel"
+      ],
       "correct": 0,
-      "teaches": ["koltozik"]
+      "teaches": [
+        "koltozik"
+      ],
+      "stage": "recognize"
     },
     {
       "id": "a2-30-consolidation-3",
       "type": "multiple-choice",
-      "category": "recognize",
+      "category": "grammar",
       "question": "Which means “balcony”?",
-      "options": ["erkély", "emelet", "földszint"],
+      "options": [
+        "erkély",
+        "emelet",
+        "földszint"
+      ],
       "correct": 0,
-      "teaches": ["erkely"]
+      "teaches": [
+        "erkely"
+      ],
+      "stage": "recognize"
     },
     {
       "id": "a2-30-consolidation-4",
       "type": "matching",
-      "category": "recall",
+      "category": "vocabulary",
       "pairs": [
-        ["fal", "wall"],
-        ["mennyezet", "ceiling"],
-        ["padló", "floor"],
-        ["bútor", "furniture"]
+        [
+          "fal",
+          "wall"
+        ],
+        [
+          "mennyezet",
+          "ceiling"
+        ],
+        [
+          "padló",
+          "floor"
+        ],
+        [
+          "bútor",
+          "furniture"
+        ]
       ],
-      "teaches": ["furniture-vocab"]
+      "teaches": [
+        "furniture-vocab"
+      ],
+      "stage": "recall"
     },
     {
       "id": "a2-30-consolidation-5",
       "type": "matching",
-      "category": "recall",
+      "category": "vocabulary",
       "pairs": [
-        ["üres", "empty"],
-        ["kilátás", "view"],
-        ["doboz", "box"],
-        ["bérel", "to rent"]
+        [
+          "üres",
+          "empty"
+        ],
+        [
+          "kilátás",
+          "view"
+        ],
+        [
+          "doboz",
+          "box"
+        ],
+        [
+          "bérel",
+          "to rent"
+        ]
       ],
-      "teaches": ["flat-vocab"]
+      "teaches": [
+        "flat-vocab"
+      ],
+      "stage": "recall"
     },
     {
       "id": "a2-30-consolidation-6",
       "type": "fill-blank",
-      "category": "recall",
+      "category": "grammar",
       "sentence": "A második emelet____ lakunk.",
       "answer": "en",
-      "teaches": ["on-en-on"]
+      "teaches": [
+        "on-en-on"
+      ],
+      "stage": "recall"
     },
     {
       "id": "a2-30-consolidation-7",
       "type": "dialogue-complete",
-      "category": "context",
+      "category": "dialogue",
       "prompt": [
-        { "speaker": "Károly", "text": "Hol van a kulcs?" },
-        { "speaker": "Meg", "text": "_____" }
+        {
+          "speaker": "Károly",
+          "text": "Hol van a kulcs?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
       ],
-      "options": ["A fiókban van.", "A fiókra van."],
+      "options": [
+        "A fiókban van.",
+        "A fiókra van."
+      ],
       "correct": 0,
-      "teaches": ["three-locatives"]
+      "teaches": [
+        "three-locatives"
+      ],
+      "stage": "context"
     },
     {
       "id": "a2-30-consolidation-8",
       "type": "dialogue-complete",
-      "category": "context",
+      "category": "dialogue",
       "prompt": [
-        { "speaker": "Petra", "text": "Milyen az új lakásod?" },
-        { "speaker": "Meg", "text": "_____" }
+        {
+          "speaker": "Petra",
+          "text": "Milyen az új lakásod?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
       ],
-      "options": ["Üres, de szép a kilátás.", "Üres, de szép a szekrényben."],
+      "options": [
+        "Üres, de szép a kilátás.",
+        "Üres, de szép a szekrényben."
+      ],
       "correct": 0,
-      "teaches": ["flat-vocab"]
+      "teaches": [
+        "flat-vocab"
+      ],
+      "stage": "context"
     },
     {
       "id": "a2-30-consolidation-9",
       "type": "sentence-builder",
-      "category": "context",
-      "tiles": ["Leveszem", "a", "könyvet", "a", "polcról", "."],
-      "solution": ["Leveszem", "a", "könyvet", "a", "polcról", "."],
+      "category": "grammar",
+      "tiles": [
+        "Leveszem",
+        "a",
+        "könyvet",
+        "a",
+        "polcról",
+        "."
+      ],
+      "solution": [
+        "Leveszem",
+        "a",
+        "könyvet",
+        "a",
+        "polcról",
+        "."
+      ],
       "english": "I take the book off the shelf.",
-      "teaches": ["rol-rel"]
+      "teaches": [
+        "rol-rel"
+      ],
+      "stage": "context"
     },
     {
       "id": "a2-30-consolidation-10",
       "type": "structured-writing",
-      "category": "produce",
+      "category": "writing",
       "template": [
         {
           "prompt": "Say you put the box onto the shelf.",
           "answer": "A dobozt a polcra teszem."
         }
       ],
-      "teaches": ["ra-re"]
+      "teaches": [
+        "ra-re"
+      ],
+      "stage": "produce"
     },
     {
       "id": "a2-30-consolidation-11",
       "type": "structured-writing",
-      "category": "produce",
+      "category": "writing",
       "template": [
         {
           "prompt": "Say the clothes are in the wardrobe, and the books are on the shelf.",
           "answer": "A ruha a szekrényben van, és a könyvek a polcon vannak."
         }
       ],
-      "teaches": ["on-vs-ban"]
+      "teaches": [
+        "on-vs-ban"
+      ],
+      "stage": "produce"
     },
     {
       "id": "a2-30-consolidation-12",
       "type": "structured-writing",
-      "category": "produce",
+      "category": "writing",
       "template": [
         {
           "prompt": "Say Károly and you are moving into a new apartment together.",
           "answer": "Károllyal együtt költözünk egy új lakásba."
         }
       ],
-      "teaches": ["koltozik"]
+      "teaches": [
+        "koltozik"
+      ],
+      "stage": "produce"
     }
   ]
 }

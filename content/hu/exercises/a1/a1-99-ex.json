@@ -4,31 +4,33 @@
     {
       "id": "a1-99-review-1",
       "type": "multiple-choice",
-      "category": "review",
+      "category": "vocabulary",
       "question": "Which word means \"Monday\"?",
       "options": [
         "hétfő",
         "reggel",
         "mindig"
       ],
-      "correct": 0
+      "correct": 0,
+      "stage": "review"
     },
     {
       "id": "a1-99-review-2",
       "type": "multiple-choice",
-      "category": "review",
+      "category": "grammar",
       "question": "How do you say \"Tomorrow we also meet\"?",
       "options": [
         "Holnap is találkozunk.",
         "Holnap van találkozunk.",
         "Találkozunk holnap is van."
       ],
-      "correct": 0
+      "correct": 0,
+      "stage": "review"
     },
     {
       "id": "a1-99-intro-1",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "vocabulary",
       "question": "Which word means \"room\"?",
       "options": [
         "szoba",
@@ -39,12 +41,13 @@
       "teaches": [
         "home-and-rooms",
         "food-at-home"
-      ]
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a1-99-intro-2",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "vocabulary",
       "question": "Which word means \"kitchen\"?",
       "options": [
         "konyha",
@@ -55,12 +58,13 @@
       "teaches": [
         "home-and-rooms",
         "food-at-home"
-      ]
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a1-99-controlled-1",
       "type": "matching",
-      "category": "controlled",
+      "category": "vocabulary",
       "pairs": [
         [
           "otthon",
@@ -82,23 +86,25 @@
       "teaches": [
         "home-and-rooms",
         "food-at-home"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-99-controlled-2",
       "type": "fill-blank",
-      "category": "controlled",
+      "category": "vocabulary",
       "sentence": "A ____ és a konyha rendben van. (room)",
       "answer": "szoba",
       "teaches": [
         "home-and-rooms",
         "food-at-home"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-99-controlled-3",
       "type": "multiple-choice",
-      "category": "controlled",
+      "category": "vocabulary",
       "question": "Which sentence correctly says \"In the kitchen there is bread\"?",
       "options": [
         "A konyhában van a kenyér.",
@@ -109,23 +115,25 @@
       "teaches": [
         "home-and-rooms",
         "food-at-home"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-99-controlled-4",
       "type": "fill-blank",
-      "category": "controlled",
+      "category": "vocabulary",
       "sentence": "Az ágy a ____ van. (in the room)",
       "answer": "szobában",
       "teaches": [
         "home-and-rooms",
         "food-at-home"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-99-practice-1",
       "type": "multiple-choice",
-      "category": "practice",
+      "category": "vocabulary",
       "question": "Which suffix shows something is on a surface, like a table?",
       "options": [
         "-on/-en",
@@ -136,23 +144,25 @@
       "teaches": [
         "home-and-rooms",
         "food-at-home"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-99-practice-2",
       "type": "fill-blank",
-      "category": "practice",
+      "category": "vocabulary",
       "sentence": "Az ____ a kávé. (on the table)",
       "answer": "asztalon",
       "teaches": [
         "home-and-rooms",
         "food-at-home"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-99-practice-3",
       "type": "matching",
-      "category": "practice",
+      "category": "vocabulary",
       "pairs": [
         [
           "A konyhában van a kenyér.",
@@ -174,12 +184,13 @@
       "teaches": [
         "home-and-rooms",
         "food-at-home"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-99-practice-4",
       "type": "sentence-builder",
-      "category": "practice",
+      "category": "vocabulary",
       "tiles": [
         "Az",
         "ágy",
@@ -200,12 +211,13 @@
       "teaches": [
         "home-and-rooms",
         "food-at-home"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-99-practice-5",
       "type": "substitution",
-      "category": "practice",
+      "category": "vocabulary",
       "base_sentence": "A konyhában van a kenyér.",
       "base_word": "konyhában",
       "base_gloss": "In the kitchen there is bread.",
@@ -220,7 +232,8 @@
       "teaches": [
         "home-and-rooms",
         "food-at-home"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-99-dialogue-1",
@@ -303,7 +316,7 @@
     {
       "id": "a1-99-check-1",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "vocabulary",
       "question": "Which word means \"table\"?",
       "options": [
         "asztal",
@@ -314,12 +327,13 @@
       "teaches": [
         "home-and-rooms",
         "food-at-home"
-      ]
+      ],
+      "stage": "check"
     },
     {
       "id": "a1-99-check-2",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "vocabulary",
       "question": "How do you say \"In the kitchen there is bread, on the table (there is) coffee\"?",
       "options": [
         "A konyhában van a kenyér, az asztalon a kávé.",
@@ -330,7 +344,8 @@
       "teaches": [
         "home-and-rooms",
         "food-at-home"
-      ]
+      ],
+      "stage": "check"
     }
   ]
 }

@@ -4,31 +4,33 @@
     {
       "id": "a1-83-review-1",
       "type": "multiple-choice",
-      "category": "review",
+      "category": "vocabulary",
       "question": "Which word means \"sometimes\"?",
       "options": [
         "néha",
         "ritkán",
         "soha"
       ],
-      "correct": 0
+      "correct": 0,
+      "stage": "review"
     },
     {
       "id": "a1-83-review-2",
       "type": "multiple-choice",
-      "category": "review",
+      "category": "vocabulary",
       "question": "Which sentence correctly uses negative concord?",
       "options": [
         "Soha nem dolgozom vasárnap.",
         "Soha dolgozom vasárnap.",
         "Nem soha dolgozom vasárnap."
       ],
-      "correct": 0
+      "correct": 0,
+      "stage": "review"
     },
     {
       "id": "a1-83-intro-1",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "grammar",
       "question": "Which word means \"every / all\"?",
       "options": [
         "minden",
@@ -39,12 +41,13 @@
       "teaches": [
         "is-placing-also-too",
         "utan-and-kell"
-      ]
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a1-83-intro-2",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "grammar",
       "question": "Which word means \"day\"?",
       "options": [
         "nap",
@@ -55,12 +58,13 @@
       "teaches": [
         "is-placing-also-too",
         "utan-and-kell"
-      ]
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a1-83-controlled-1",
       "type": "matching",
-      "category": "controlled",
+      "category": "vocabulary",
       "pairs": [
         [
           "minden",
@@ -82,23 +86,25 @@
       "teaches": [
         "is-placing-also-too",
         "utan-and-kell"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-83-controlled-2",
       "type": "fill-blank",
-      "category": "controlled",
+      "category": "grammar",
       "sentence": "____ nap tanulok. (every)",
       "answer": "Minden",
       "teaches": [
         "is-placing-also-too",
         "utan-and-kell"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-83-controlled-3",
       "type": "multiple-choice",
-      "category": "controlled",
+      "category": "grammar",
       "question": "Which sentence correctly places is (also/too)?",
       "options": [
         "A pihenés is fontos.",
@@ -109,23 +115,25 @@
       "teaches": [
         "is-placing-also-too",
         "utan-and-kell"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-83-controlled-4",
       "type": "fill-blank",
-      "category": "controlled",
+      "category": "grammar",
       "sentence": "A munka ____ pihenés kell. (after)",
       "answer": "után",
       "teaches": [
         "is-placing-also-too",
         "utan-and-kell"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-83-practice-1",
       "type": "multiple-choice",
-      "category": "practice",
+      "category": "grammar",
       "question": "Which answer fits \"Minden nap együtt vagyunk?\"",
       "options": [
         "Nem. Ma otthon vagyok.",
@@ -136,23 +144,25 @@
       "teaches": [
         "is-placing-also-too",
         "utan-and-kell"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-83-practice-2",
       "type": "fill-blank",
-      "category": "practice",
+      "category": "grammar",
       "sentence": "Minden nap tanulok, de hétvégén ____ van tanulás. (rarely)",
       "answer": "ritkán",
       "teaches": [
         "is-placing-also-too",
         "utan-and-kell"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-83-practice-3",
       "type": "matching",
-      "category": "practice",
+      "category": "vocabulary",
       "pairs": [
         [
           "Minden nap együtt vagyunk?",
@@ -174,12 +184,13 @@
       "teaches": [
         "is-placing-also-too",
         "utan-and-kell"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-83-practice-4",
       "type": "sentence-builder",
-      "category": "practice",
+      "category": "grammar",
       "tiles": [
         "A",
         "tanulás",
@@ -198,12 +209,13 @@
       "teaches": [
         "is-placing-also-too",
         "utan-and-kell"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-83-practice-5",
       "type": "dialogue-complete",
-      "category": "practice",
+      "category": "dialogue",
       "prompt": [
         {
           "speaker": "Károly",
@@ -222,7 +234,8 @@
       "teaches": [
         "is-placing-also-too",
         "utan-and-kell"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-83-dialogue-1",
@@ -297,7 +310,7 @@
     {
       "id": "a1-83-check-1",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "grammar",
       "question": "Which word means \"together\"?",
       "options": [
         "együtt",
@@ -308,12 +321,13 @@
       "teaches": [
         "is-placing-also-too",
         "utan-and-kell"
-      ]
+      ],
+      "stage": "check"
     },
     {
       "id": "a1-83-check-2",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "grammar",
       "question": "Which correctly means \"after work\"?",
       "options": [
         "a munka után",
@@ -324,7 +338,8 @@
       "teaches": [
         "is-placing-also-too",
         "utan-and-kell"
-      ]
+      ],
+      "stage": "check"
     }
   ]
 }

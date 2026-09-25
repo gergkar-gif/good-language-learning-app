@@ -4,31 +4,33 @@
     {
       "id": "a1-63-review-1",
       "type": "multiple-choice",
-      "category": "review",
+      "category": "vocabulary",
       "question": "Which means “I work”?",
       "options": [
         "dolgozom",
         "dolgozik",
         "dolgozni"
       ],
-      "correct": 0
+      "correct": 0,
+      "stage": "review"
     },
     {
       "id": "a1-63-review-2",
       "type": "multiple-choice",
-      "category": "review",
+      "category": "grammar",
       "question": "Which form is a present-tense verb?",
       "options": [
         "tanulok",
         "tanulni",
         "tanulás"
       ],
-      "correct": 0
+      "correct": 0,
+      "stage": "review"
     },
     {
       "id": "a1-63-intro-1",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "grammar",
       "question": "Choose the correct first-person sentence.",
       "options": [
         "Főzök.",
@@ -39,12 +41,13 @@
       "teaches": [
         "present-tense-ok-ek-ok-63",
         "subject-omission-63"
-      ]
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a1-63-intro-2",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "grammar",
       "question": "Which means “Anna reads”?",
       "options": [
         "Anna olvas.",
@@ -55,12 +58,13 @@
       "teaches": [
         "present-tense-ok-ek-ok-63",
         "subject-omission-63"
-      ]
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a1-63-controlled-1",
       "type": "matching",
-      "category": "controlled",
+      "category": "vocabulary",
       "pairs": [
         [
           "inni",
@@ -82,23 +86,25 @@
       "teaches": [
         "present-tense-ok-ek-ok-63",
         "subject-omission-63"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-63-controlled-2",
       "type": "fill-blank",
-      "category": "controlled",
+      "category": "grammar",
       "sentence": "Én ____. (I'm cooking)",
       "answer": "főzök",
       "teaches": [
         "present-tense-ok-ek-ok-63",
         "subject-omission-63"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-63-controlled-3",
       "type": "multiple-choice",
-      "category": "controlled",
+      "category": "grammar",
       "question": "Which sentence is correct?",
       "options": [
         "Meg főz.",
@@ -109,12 +115,13 @@
       "teaches": [
         "present-tense-ok-ek-ok-63",
         "subject-omission-63"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-63-controlled-4",
       "type": "multiple-choice",
-      "category": "controlled",
+      "category": "grammar",
       "question": "Which sentence naturally omits the subject?",
       "options": [
         "Főzök.",
@@ -125,12 +132,13 @@
       "teaches": [
         "present-tense-ok-ek-ok-63",
         "subject-omission-63"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-63-practice-1",
       "type": "matching",
-      "category": "practice",
+      "category": "vocabulary",
       "pairs": [
         [
           "inni",
@@ -152,12 +160,13 @@
       "teaches": [
         "present-tense-ok-ek-ok-63",
         "subject-omission-63"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-63-practice-2",
       "type": "multiple-choice",
-      "category": "practice",
+      "category": "grammar",
       "question": "Which answer fits Mit csinálsz?",
       "options": [
         "Főzök.",
@@ -168,23 +177,25 @@
       "teaches": [
         "present-tense-ok-ek-ok-63",
         "subject-omission-63"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-63-practice-3",
       "type": "fill-blank",
-      "category": "practice",
+      "category": "grammar",
       "sentence": "Anna ____ egy levest. (Anna is cooking a soup)",
       "answer": "főz",
       "teaches": [
         "present-tense-ok-ek-ok-63",
         "subject-omission-63"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-63-practice-4",
       "type": "sentence-builder",
-      "category": "practice",
+      "category": "grammar",
       "tiles": [
         "Ma",
         "főzök",
@@ -203,12 +214,13 @@
       "teaches": [
         "present-tense-ok-ek-ok-63",
         "subject-omission-63"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-63-practice-5",
       "type": "dialogue-complete",
-      "category": "practice",
+      "category": "dialogue",
       "prompt": [
         {
           "speaker": "Károly",
@@ -227,7 +239,8 @@
       "teaches": [
         "present-tense-ok-ek-ok-63",
         "subject-omission-63"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-63-dialogue-1",
@@ -312,7 +325,7 @@
     {
       "id": "a1-63-check-1",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "grammar",
       "question": "Which translates \"I work\"?",
       "options": [
         "Dolgozom.",
@@ -323,12 +336,13 @@
       "teaches": [
         "present-tense-ok-ek-ok-63",
         "subject-omission-63"
-      ]
+      ],
+      "stage": "check"
     },
     {
       "id": "a1-63-check-2",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "grammar",
       "question": "Which form means “I cook”?",
       "options": [
         "Főzök.",
@@ -339,7 +353,8 @@
       "teaches": [
         "present-tense-ok-ek-ok-63",
         "subject-omission-63"
-      ]
+      ],
+      "stage": "check"
     }
   ]
 }

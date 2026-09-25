@@ -4,31 +4,33 @@
     {
       "id": "a1-11-review-1",
       "type": "multiple-choice",
-      "category": "review",
+      "category": "vocabulary",
       "question": "Which means “yes”?",
       "options": [
         "igen",
         "nem",
         "szia"
       ],
-      "correct": 0
+      "correct": 0,
+      "stage": "review"
     },
     {
       "id": "a1-11-review-2",
       "type": "multiple-choice",
-      "category": "review",
+      "category": "vocabulary",
       "question": "Which means “thank you”?",
       "options": [
         "kérem",
         "köszönöm",
         "igen"
       ],
-      "correct": 1
+      "correct": 1,
+      "stage": "review"
     },
     {
       "id": "a1-11-intro-1",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "grammar",
       "question": "Which pronoun means “I”? ",
       "options": [
         "én",
@@ -39,12 +41,13 @@
       "teaches": [
         "personal-pronouns",
         "the-present-forms-of-lenni"
-      ]
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a1-11-intro-2",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "grammar",
       "question": "Which pronoun means “you”? ",
       "options": [
         "te",
@@ -55,12 +58,13 @@
       "teaches": [
         "personal-pronouns",
         "the-present-forms-of-lenni"
-      ]
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a1-11-controlled-1",
       "type": "multiple-choice",
-      "category": "controlled",
+      "category": "grammar",
       "question": "Which completes “Én Meg ___.”?",
       "options": [
         "vagyok",
@@ -71,23 +75,25 @@
       "teaches": [
         "personal-pronouns",
         "the-present-forms-of-lenni"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-11-controlled-2",
       "type": "fill-blank",
-      "category": "controlled",
+      "category": "grammar",
       "sentence": "Én Meg ____.",
       "answer": "vagyok",
       "teaches": [
         "personal-pronouns",
         "the-present-forms-of-lenni"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-11-controlled-3",
       "type": "matching",
-      "category": "controlled",
+      "category": "vocabulary",
       "pairs": [
         [
           "én",
@@ -109,12 +115,13 @@
       "teaches": [
         "personal-pronouns",
         "the-present-forms-of-lenni"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-11-controlled-4",
       "type": "multiple-choice",
-      "category": "controlled",
+      "category": "grammar",
       "question": "Which completes “Te Károly ___.”?",
       "options": [
         "vagyok",
@@ -125,12 +132,13 @@
       "teaches": [
         "personal-pronouns",
         "the-present-forms-of-lenni"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-11-practice-1",
       "type": "sentence-builder",
-      "category": "practice",
+      "category": "grammar",
       "tiles": [
         "Én",
         "Meg",
@@ -147,23 +155,25 @@
       "teaches": [
         "personal-pronouns",
         "the-present-forms-of-lenni"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-11-practice-2",
       "type": "fill-blank",
-      "category": "practice",
+      "category": "grammar",
       "sentence": "Te Károly ____.",
       "answer": "vagy",
       "teaches": [
         "personal-pronouns",
         "the-present-forms-of-lenni"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-11-practice-3",
       "type": "multiple-choice",
-      "category": "practice",
+      "category": "grammar",
       "question": "Which is correct?",
       "options": [
         "Én Meg vagyok.",
@@ -174,12 +184,13 @@
       "teaches": [
         "personal-pronouns",
         "the-present-forms-of-lenni"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-11-practice-4",
       "type": "matching",
-      "category": "practice",
+      "category": "vocabulary",
       "pairs": [
         [
           "vagyok",
@@ -201,12 +212,13 @@
       "teaches": [
         "personal-pronouns",
         "the-present-forms-of-lenni"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-11-practice-5",
       "type": "dialogue-complete",
-      "category": "practice",
+      "category": "dialogue",
       "prompt": [
         {
           "speaker": "Meg",
@@ -225,7 +237,8 @@
       "teaches": [
         "personal-pronouns",
         "the-present-forms-of-lenni"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-11-dialogue-1",
@@ -308,7 +321,7 @@
     {
       "id": "a1-11-check-1",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "grammar",
       "question": "Which means “I am”?",
       "options": [
         "vagyok",
@@ -319,12 +332,13 @@
       "teaches": [
         "personal-pronouns",
         "the-present-forms-of-lenni"
-      ]
+      ],
+      "stage": "check"
     },
     {
       "id": "a1-11-check-2",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "grammar",
       "question": "Which means “you are”?",
       "options": [
         "vagyok",
@@ -335,7 +349,8 @@
       "teaches": [
         "personal-pronouns",
         "the-present-forms-of-lenni"
-      ]
+      ],
+      "stage": "check"
     }
   ]
 }

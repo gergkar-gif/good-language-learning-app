@@ -4,31 +4,33 @@
     {
       "id": "a1-19-review-1",
       "type": "multiple-choice",
-      "category": "review",
+      "category": "vocabulary",
       "question": "Which means “address”? ",
       "options": [
         "cím",
         "utca",
         "szám"
       ],
-      "correct": 0
+      "correct": 0,
+      "stage": "review"
     },
     {
       "id": "a1-19-review-2",
       "type": "multiple-choice",
-      "category": "review",
+      "category": "vocabulary",
       "question": "Which means “street”? ",
       "options": [
         "utca",
         "cím",
         "szám"
       ],
-      "correct": 0
+      "correct": 0,
+      "stage": "review"
     },
     {
       "id": "a1-19-intro-1",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "grammar",
       "question": "Which means “birthday”? ",
       "options": [
         "születésnap",
@@ -39,12 +41,13 @@
       "teaches": [
         "personal-information-questions",
         "short-factual-answers"
-      ]
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a1-19-intro-2",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "grammar",
       "question": "Which means “what number / how many”? ",
       "options": [
         "hány",
@@ -55,12 +58,13 @@
       "teaches": [
         "personal-information-questions",
         "short-factual-answers"
-      ]
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a1-19-controlled-1",
       "type": "matching",
-      "category": "controlled",
+      "category": "vocabulary",
       "pairs": [
         [
           "születésnap",
@@ -82,23 +86,25 @@
       "teaches": [
         "personal-information-questions",
         "short-factual-answers"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-19-controlled-2",
       "type": "fill-blank",
-      "category": "controlled",
+      "category": "grammar",
       "sentence": "Mi a ____? (your phone number)",
       "answer": "telefonszámod",
       "teaches": [
         "personal-information-questions",
         "short-factual-answers"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-19-controlled-3",
       "type": "multiple-choice",
-      "category": "controlled",
+      "category": "grammar",
       "question": "Which question asks for a phone number?",
       "options": [
         "Mi a telefonszámod?",
@@ -109,12 +115,13 @@
       "teaches": [
         "personal-information-questions",
         "short-factual-answers"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-19-controlled-4",
       "type": "multiple-choice",
-      "category": "controlled",
+      "category": "grammar",
       "question": "Which is a useful short answer to Mi a telefonszámod?",
       "options": [
         "06 30 123 4567.",
@@ -125,12 +132,13 @@
       "teaches": [
         "personal-information-questions",
         "short-factual-answers"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-19-practice-1",
       "type": "matching",
-      "category": "practice",
+      "category": "vocabulary",
       "pairs": [
         [
           "születésnap",
@@ -152,12 +160,13 @@
       "teaches": [
         "personal-information-questions",
         "short-factual-answers"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-19-practice-2",
       "type": "multiple-choice",
-      "category": "practice",
+      "category": "grammar",
       "question": "Which asks “What is your address?”",
       "options": [
         "Mi a címed?",
@@ -168,23 +177,25 @@
       "teaches": [
         "personal-information-questions",
         "short-factual-answers"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-19-practice-3",
       "type": "fill-blank",
-      "category": "practice",
+      "category": "grammar",
       "sentence": "Mi a ____számod?",
       "answer": "telefon",
       "teaches": [
         "personal-information-questions",
         "short-factual-answers"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-19-practice-4",
       "type": "sentence-builder",
-      "category": "practice",
+      "category": "grammar",
       "tiles": [
         "Mi",
         "a",
@@ -201,12 +212,13 @@
       "teaches": [
         "personal-information-questions",
         "short-factual-answers"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-19-practice-7",
       "type": "dialogue-complete",
-      "category": "practice",
+      "category": "dialogue",
       "prompt": [
         {
           "speaker": "Anna",
@@ -225,7 +237,8 @@
       "teaches": [
         "personal-information-questions",
         "short-factual-answers"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-19-dialogue-1",
@@ -293,7 +306,7 @@
     {
       "id": "a1-19-check-1",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "grammar",
       "question": "Which means “birthday”? ",
       "options": [
         "születésnap",
@@ -304,7 +317,8 @@
       "teaches": [
         "personal-information-questions",
         "short-factual-answers"
-      ]
+      ],
+      "stage": "check"
     },
     {
       "id": "a1-19-writing-2",
@@ -324,7 +338,7 @@
     {
       "id": "a1-19-check-2",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "grammar",
       "question": "Which question asks for a phone number?",
       "options": [
         "Mi a telefonszámod?",
@@ -335,7 +349,8 @@
       "teaches": [
         "personal-information-questions",
         "short-factual-answers"
-      ]
+      ],
+      "stage": "check"
     }
   ]
 }

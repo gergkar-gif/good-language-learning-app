@@ -4,53 +4,88 @@
     {
       "id": "a2-19-intro-1",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "grammar",
       "question": "Which means “who” (relative pronoun)?",
-      "options": ["aki", "ki", "olyan"],
+      "options": [
+        "aki",
+        "ki",
+        "olyan"
+      ],
       "correct": 0,
-      "teaches": ["aki-relative"]
+      "teaches": [
+        "aki-relative"
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a2-19-intro-2",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "grammar",
       "question": "Which means “to know (a person)”?",
-      "options": ["ismer", "tud", "van"],
+      "options": [
+        "ismer",
+        "tud",
+        "van"
+      ],
       "correct": 0,
-      "teaches": ["ismer"]
+      "teaches": [
+        "ismer"
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a2-19-controlled-1",
       "type": "matching",
-      "category": "controlled",
+      "category": "vocabulary",
       "pairs": [
-        ["aki", "who"],
-        ["ismerek", "I know (someone)"],
-        ["valaki, aki...", "someone who..."],
-        ["olyan ember, aki...", "someone who..."]
+        [
+          "aki",
+          "who"
+        ],
+        [
+          "ismerek",
+          "I know (someone)"
+        ],
+        [
+          "valaki, aki...",
+          "someone who..."
+        ],
+        [
+          "olyan ember, aki...",
+          "someone who..."
+        ]
       ],
-      "teaches": ["aki-relative"]
+      "teaches": [
+        "aki-relative"
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a2-19-controlled-2",
       "type": "fill-blank",
-      "category": "controlled",
+      "category": "grammar",
       "sentence": "A szomszédom olyan ember, ____ sokat dolgozik.",
       "answer": "aki",
-      "teaches": ["aki-relative"]
+      "teaches": [
+        "aki-relative"
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a2-19-controlled-3",
       "type": "fill-blank",
-      "category": "controlled",
+      "category": "grammar",
       "sentence": "____ egy kollégát, aki nagyon vicces.",
       "answer": "Ismerek",
-      "teaches": ["ismer"]
+      "teaches": [
+        "ismer"
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a2-19-controlled-4",
       "type": "multiple-choice",
-      "category": "controlled",
+      "category": "grammar",
       "question": "Which sentence means “I have a colleague who is hardworking and friendly”?",
       "options": [
         "Van egy kollégám, aki szorgalmas és barátságos.",
@@ -58,70 +93,177 @@
         "A kollégám aki, szorgalmas."
       ],
       "correct": 0,
-      "teaches": ["aki-relative"]
+      "teaches": [
+        "aki-relative"
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a2-19-practice-1",
       "type": "matching",
-      "category": "practice",
+      "category": "vocabulary",
       "pairs": [
-        ["Ismerek egy kollégát, aki nagyon vicces", "I know a colleague who is very funny"],
-        ["A szomszédom olyan ember, aki sokat dolgozik", "My neighbor is someone who works a lot"],
-        ["Van egy kollégám, aki szorgalmas és barátságos", "I have a colleague who is hardworking and friendly"],
-        ["aki szemüveges és nagyon türelmes", "who wears glasses and is very patient"]
+        [
+          "Ismerek egy kollégát, aki nagyon vicces",
+          "I know a colleague who is very funny"
+        ],
+        [
+          "A szomszédom olyan ember, aki sokat dolgozik",
+          "My neighbor is someone who works a lot"
+        ],
+        [
+          "Van egy kollégám, aki szorgalmas és barátságos",
+          "I have a colleague who is hardworking and friendly"
+        ],
+        [
+          "aki szemüveges és nagyon türelmes",
+          "who wears glasses and is very patient"
+        ]
       ],
-      "teaches": ["aki-relative"]
+      "teaches": [
+        "aki-relative"
+      ],
+      "stage": "practice"
     },
     {
       "id": "a2-19-practice-2",
       "type": "sentence-builder",
-      "category": "practice",
-      "tiles": ["Ismerek", "egy", "kollégát", ",", "aki", "nagyon", "vicces", "."],
-      "solution": ["Ismerek", "egy", "kollégát", ",", "aki", "nagyon", "vicces", "."],
+      "category": "grammar",
+      "tiles": [
+        "Ismerek",
+        "egy",
+        "kollégát",
+        ",",
+        "aki",
+        "nagyon",
+        "vicces",
+        "."
+      ],
+      "solution": [
+        "Ismerek",
+        "egy",
+        "kollégát",
+        ",",
+        "aki",
+        "nagyon",
+        "vicces",
+        "."
+      ],
       "english": "I know a colleague who is very funny.",
-      "teaches": ["ismer"]
+      "teaches": [
+        "ismer"
+      ],
+      "stage": "practice"
     },
     {
       "id": "a2-19-practice-3",
       "type": "sentence-builder",
-      "category": "practice",
-      "tiles": ["A", "szomszédom", "olyan", "ember", ",", "aki", "sokat", "dolgozik", "."],
-      "solution": ["A", "szomszédom", "olyan", "ember", ",", "aki", "sokat", "dolgozik", "."],
+      "category": "grammar",
+      "tiles": [
+        "A",
+        "szomszédom",
+        "olyan",
+        "ember",
+        ",",
+        "aki",
+        "sokat",
+        "dolgozik",
+        "."
+      ],
+      "solution": [
+        "A",
+        "szomszédom",
+        "olyan",
+        "ember",
+        ",",
+        "aki",
+        "sokat",
+        "dolgozik",
+        "."
+      ],
       "english": "My neighbor is someone who works a lot.",
-      "teaches": ["aki-relative"]
+      "teaches": [
+        "aki-relative"
+      ],
+      "stage": "practice"
     },
     {
       "id": "a2-19-practice-4",
       "type": "sentence-builder",
-      "category": "practice",
-      "tiles": ["Van", "egy", "kollégám", ",", "aki", "szorgalmas", "és", "barátságos", "."],
-      "solution": ["Van", "egy", "kollégám", ",", "aki", "szorgalmas", "és", "barátságos", "."],
+      "category": "grammar",
+      "tiles": [
+        "Van",
+        "egy",
+        "kollégám",
+        ",",
+        "aki",
+        "szorgalmas",
+        "és",
+        "barátságos",
+        "."
+      ],
+      "solution": [
+        "Van",
+        "egy",
+        "kollégám",
+        ",",
+        "aki",
+        "szorgalmas",
+        "és",
+        "barátságos",
+        "."
+      ],
       "english": "I have a colleague who is hardworking and friendly.",
-      "teaches": ["aki-relative"]
+      "teaches": [
+        "aki-relative"
+      ],
+      "stage": "practice"
     },
     {
       "id": "a2-19-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
       "prompt": [
-        { "speaker": "Károly", "text": "Milyen a kollégád?" },
-        { "speaker": "Meg", "text": "_____" }
+        {
+          "speaker": "Károly",
+          "text": "Milyen a kollégád?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
       ],
-      "options": ["Van egy kollégám, aki szorgalmas és barátságos.", "Ismerek, aki kolléga."],
+      "options": [
+        "Van egy kollégám, aki szorgalmas és barátságos.",
+        "Ismerek, aki kolléga."
+      ],
       "correct": 0,
-      "teaches": ["aki-relative"]
+      "teaches": [
+        "aki-relative"
+      ]
     },
     {
       "id": "a2-19-dialogue-2",
       "type": "dialogue-complete",
       "category": "dialogue",
       "prompt": [
-        { "speaker": "Meg", "text": "Ismersz valakit, aki szemüveges?" },
-        { "speaker": "Károly", "text": "_____" }
+        {
+          "speaker": "Meg",
+          "text": "Ismersz valakit, aki szemüveges?"
+        },
+        {
+          "speaker": "Károly",
+          "text": "_____"
+        }
       ],
-      "options": ["Igen, a szomszédom szemüveges.", "Igen, aki vagyok."],
+      "options": [
+        "Igen, a szomszédom szemüveges.",
+        "Igen, aki vagyok."
+      ],
       "correct": 0,
-      "teaches": ["ismer"]
+      "teaches": [
+        "ismer"
+      ]
     },
     {
       "id": "a2-19-writing-1",
@@ -133,7 +275,9 @@
           "answer": "Ismerek egy kollégát, aki nagyon vicces."
         }
       ],
-      "teaches": ["ismer"]
+      "teaches": [
+        "ismer"
+      ]
     },
     {
       "id": "a2-19-writing-2",
@@ -145,25 +289,41 @@
           "answer": "A szomszédom olyan valaki, aki szemüveges és nagyon türelmes."
         }
       ],
-      "teaches": ["aki-relative"]
+      "teaches": [
+        "aki-relative"
+      ]
     },
     {
       "id": "a2-19-check-1",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "grammar",
       "question": "Which word means “who” in a description like “someone who...”?",
-      "options": ["aki", "milyen", "olyan"],
+      "options": [
+        "aki",
+        "milyen",
+        "olyan"
+      ],
       "correct": 0,
-      "teaches": ["aki-relative"]
+      "teaches": [
+        "aki-relative"
+      ],
+      "stage": "check"
     },
     {
       "id": "a2-19-check-2",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "grammar",
       "question": "Which means “I know (a person)”?",
-      "options": ["ismerek", "tudok", "vagyok"],
+      "options": [
+        "ismerek",
+        "tudok",
+        "vagyok"
+      ],
       "correct": 0,
-      "teaches": ["ismer"]
+      "teaches": [
+        "ismer"
+      ],
+      "stage": "check"
     }
   ]
 }

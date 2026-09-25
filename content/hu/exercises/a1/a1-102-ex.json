@@ -4,19 +4,20 @@
     {
       "id": "a1-102-review-1",
       "type": "multiple-choice",
-      "category": "review",
+      "category": "vocabulary",
       "question": "Which word means 'bread'?",
       "options": [
         "kenyér",
         "tej",
         "sajt"
       ],
-      "correct": 0
+      "correct": 0,
+      "stage": "review"
     },
     {
       "id": "a1-102-review-2",
       "type": "matching",
-      "category": "review",
+      "category": "vocabulary",
       "pairs": [
         [
           "kenyér",
@@ -34,12 +35,13 @@
           "alma",
           "apple"
         ]
-      ]
+      ],
+      "stage": "review"
     },
     {
       "id": "a1-102-intro-1",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "grammar",
       "question": "Which word means 'orange'?",
       "options": [
         "narancs",
@@ -50,34 +52,37 @@
       "teaches": [
         "how-the-accusative-t-works",
         "accusative-without-a-linking-vowel"
-      ]
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a1-102-intro-2",
       "type": "fill-blank",
-      "category": "introduce",
+      "category": "grammar",
       "sentence": "Kérek ____. (egg)",
       "answer": "tojást",
       "teaches": [
         "how-the-accusative-t-works",
         "accusative-without-a-linking-vowel"
-      ]
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a1-102-controlled-1",
       "type": "fill-blank",
-      "category": "controlled",
+      "category": "grammar",
       "sentence": "Kérek ____. (orange)",
       "answer": "narancsot",
       "teaches": [
         "how-the-accusative-t-works",
         "accusative-without-a-linking-vowel"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-102-controlled-2",
       "type": "multiple-choice",
-      "category": "controlled",
+      "category": "grammar",
       "question": "What does 'tojás' mean?",
       "options": [
         "egg",
@@ -88,12 +93,13 @@
       "teaches": [
         "how-the-accusative-t-works",
         "accusative-without-a-linking-vowel"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-102-controlled-3",
       "type": "matching",
-      "category": "controlled",
+      "category": "vocabulary",
       "pairs": [
         [
           "narancs",
@@ -115,12 +121,13 @@
       "teaches": [
         "how-the-accusative-t-works",
         "accusative-without-a-linking-vowel"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-102-controlled-4",
       "type": "substitution",
-      "category": "controlled",
+      "category": "grammar",
       "base_sentence": "Kérek narancsot.",
       "base_word": "narancsot",
       "base_gloss": "I'd like an orange.",
@@ -141,12 +148,13 @@
       "teaches": [
         "how-the-accusative-t-works",
         "accusative-without-a-linking-vowel"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-102-practice-1",
       "type": "multiple-choice",
-      "category": "practice",
+      "category": "grammar",
       "question": "Which word means 'meat'?",
       "options": [
         "hús",
@@ -157,23 +165,25 @@
       "teaches": [
         "how-the-accusative-t-works",
         "accusative-without-a-linking-vowel"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-102-practice-2",
       "type": "fill-blank",
-      "category": "practice",
+      "category": "grammar",
       "sentence": "Szeretnék ____. (fish)",
       "answer": "halat",
       "teaches": [
         "how-the-accusative-t-works",
         "accusative-without-a-linking-vowel"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-102-practice-3",
       "type": "matching",
-      "category": "practice",
+      "category": "vocabulary",
       "pairs": [
         [
           "Kérek narancsot.",
@@ -195,12 +205,13 @@
       "teaches": [
         "how-the-accusative-t-works",
         "accusative-without-a-linking-vowel"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-102-practice-4",
       "type": "substitution",
-      "category": "practice",
+      "category": "grammar",
       "base_sentence": "Szeretnék halat.",
       "base_word": "halat",
       "base_gloss": "I would like fish.",
@@ -221,12 +232,13 @@
       "teaches": [
         "how-the-accusative-t-works",
         "accusative-without-a-linking-vowel"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-102-practice-5",
       "type": "dialogue-complete",
-      "category": "practice",
+      "category": "dialogue",
       "prompt": [
         {
           "speaker": "Eladó",
@@ -245,12 +257,13 @@
       "teaches": [
         "how-the-accusative-t-works",
         "accusative-without-a-linking-vowel"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-102-practice-6",
       "type": "multiple-choice",
-      "category": "practice",
+      "category": "grammar",
       "question": "You want any orange, not a particular one. Which fits?",
       "options": [
         "Kérek egy narancsot.",
@@ -261,12 +274,13 @@
       "teaches": [
         "how-the-accusative-t-works",
         "accusative-without-a-linking-vowel"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-102-practice-7",
       "type": "multiple-choice",
-      "category": "practice",
+      "category": "grammar",
       "question": "You mean the specific orange already on the counter. Which fits?",
       "options": [
         "Kérem a narancsot.",
@@ -277,7 +291,8 @@
       "teaches": [
         "how-the-accusative-t-works",
         "accusative-without-a-linking-vowel"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-102-dialogue-1",
@@ -321,7 +336,7 @@
     {
       "id": "a1-102-writing-1",
       "type": "structured-writing",
-      "category": "production",
+      "category": "writing",
       "template": [
         {
           "prompt": "Write a sentence using this word: narancs",
@@ -331,12 +346,13 @@
       "teaches": [
         "how-the-accusative-t-works",
         "accusative-without-a-linking-vowel"
-      ]
+      ],
+      "stage": "production"
     },
     {
       "id": "a1-102-writing-2",
       "type": "structured-writing",
-      "category": "production",
+      "category": "writing",
       "template": [
         {
           "prompt": "Write a sentence using this word: hal",
@@ -346,12 +362,13 @@
       "teaches": [
         "how-the-accusative-t-works",
         "accusative-without-a-linking-vowel"
-      ]
+      ],
+      "stage": "production"
     },
     {
       "id": "a1-102-check-1",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "grammar",
       "question": "Which word means 'fish'?",
       "options": [
         "hal",
@@ -362,18 +379,20 @@
       "teaches": [
         "how-the-accusative-t-works",
         "accusative-without-a-linking-vowel"
-      ]
+      ],
+      "stage": "check"
     },
     {
       "id": "a1-102-check-2",
       "type": "fill-blank",
-      "category": "check",
+      "category": "grammar",
       "sentence": "Kérek ____. (meat)",
       "answer": "húst",
       "teaches": [
         "how-the-accusative-t-works",
         "accusative-without-a-linking-vowel"
-      ]
+      ],
+      "stage": "check"
     }
   ]
 }

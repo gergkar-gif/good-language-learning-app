@@ -4,31 +4,33 @@
     {
       "id": "a1-86-review-1",
       "type": "multiple-choice",
-      "category": "review",
+      "category": "vocabulary",
       "question": "Which word means \"sport\"?",
       "options": [
         "sport",
         "munka",
         "tanulás"
       ],
-      "correct": 0
+      "correct": 0,
+      "stage": "review"
     },
     {
       "id": "a1-86-review-2",
       "type": "multiple-choice",
-      "category": "review",
+      "category": "vocabulary",
       "question": "Which is the correct -ik-verb 1st person singular pattern?",
       "options": [
         "-om / -em / -öm",
         "-ok / -ek / -ök",
         "-unk / -ünk"
       ],
-      "correct": 0
+      "correct": 0,
+      "stage": "review"
     },
     {
       "id": "a1-86-intro-1",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "grammar",
       "question": "Which word means \"living room\"?",
       "options": [
         "nappali",
@@ -39,12 +41,13 @@
       "teaches": [
         "the-rooms-of-a-home",
         "ban-ben-review-in-a-room"
-      ]
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a1-86-intro-2",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "grammar",
       "question": "Which word means \"kitchen\"?",
       "options": [
         "konyha",
@@ -55,12 +58,13 @@
       "teaches": [
         "the-rooms-of-a-home",
         "ban-ben-review-in-a-room"
-      ]
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a1-86-controlled-1",
       "type": "matching",
-      "category": "controlled",
+      "category": "vocabulary",
       "pairs": [
         [
           "nappali",
@@ -82,23 +86,25 @@
       "teaches": [
         "the-rooms-of-a-home",
         "ban-ben-review-in-a-room"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-86-controlled-2",
       "type": "fill-blank",
-      "category": "controlled",
+      "category": "grammar",
       "sentence": "A ____ világos és otthonos. (living room)",
       "answer": "nappali",
       "teaches": [
         "the-rooms-of-a-home",
         "ban-ben-review-in-a-room"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-86-controlled-3",
       "type": "multiple-choice",
-      "category": "controlled",
+      "category": "grammar",
       "question": "Which means \"in the kitchen\"?",
       "options": [
         "a konyhában",
@@ -109,23 +115,25 @@
       "teaches": [
         "the-rooms-of-a-home",
         "ban-ben-review-in-a-room"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-86-controlled-4",
       "type": "fill-blank",
-      "category": "controlled",
+      "category": "grammar",
       "sentence": "A ____ is világos. (bedroom)",
       "answer": "hálószoba",
       "teaches": [
         "the-rooms-of-a-home",
         "ban-ben-review-in-a-room"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-86-practice-1",
       "type": "multiple-choice",
-      "category": "practice",
+      "category": "grammar",
       "question": "Which room is \"a fürdőszoba\"?",
       "options": [
         "bathroom",
@@ -136,23 +144,25 @@
       "teaches": [
         "the-rooms-of-a-home",
         "ban-ben-review-in-a-room"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-86-practice-2",
       "type": "fill-blank",
-      "category": "practice",
+      "category": "grammar",
       "sentence": "A konyha a nappali ____ van. (next to)",
       "answer": "mellett",
       "teaches": [
         "the-rooms-of-a-home",
         "ban-ben-review-in-a-room"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-86-practice-3",
       "type": "matching",
-      "category": "practice",
+      "category": "vocabulary",
       "pairs": [
         [
           "A nappali világos és otthonos.",
@@ -174,12 +184,13 @@
       "teaches": [
         "the-rooms-of-a-home",
         "ban-ben-review-in-a-room"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-86-practice-4",
       "type": "sentence-builder",
-      "category": "practice",
+      "category": "grammar",
       "tiles": [
         "A",
         "nappali",
@@ -200,12 +211,13 @@
       "teaches": [
         "the-rooms-of-a-home",
         "ban-ben-review-in-a-room"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-86-practice-5",
       "type": "dialogue-complete",
-      "category": "practice",
+      "category": "dialogue",
       "prompt": [
         {
           "speaker": "Károly",
@@ -224,7 +236,8 @@
       "teaches": [
         "the-rooms-of-a-home",
         "ban-ben-review-in-a-room"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-86-dialogue-1",
@@ -299,7 +312,7 @@
     {
       "id": "a1-86-check-1",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "grammar",
       "question": "Which word means \"bathroom\"?",
       "options": [
         "fürdőszoba",
@@ -310,12 +323,13 @@
       "teaches": [
         "the-rooms-of-a-home",
         "ban-ben-review-in-a-room"
-      ]
+      ],
+      "stage": "check"
     },
     {
       "id": "a1-86-check-2",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "grammar",
       "question": "Which is the correct \"in the bedroom\" form?",
       "options": [
         "hálószobában",
@@ -326,7 +340,8 @@
       "teaches": [
         "the-rooms-of-a-home",
         "ban-ben-review-in-a-room"
-      ]
+      ],
+      "stage": "check"
     }
   ]
 }

@@ -4,31 +4,33 @@
     {
       "id": "a1-20-review-1",
       "type": "multiple-choice",
-      "category": "review",
+      "category": "vocabulary",
       "question": "Which means “I live”? ",
       "options": [
         "lakom",
         "vagyok",
         "szám"
       ],
-      "correct": 0
+      "correct": 0,
+      "stage": "review"
     },
     {
       "id": "a1-20-review-2",
       "type": "multiple-choice",
-      "category": "review",
+      "category": "vocabulary",
       "question": "Which means “birthday”? ",
       "options": [
         "születésnap",
         "cím",
         "utca"
       ],
-      "correct": 0
+      "correct": 0,
+      "stage": "review"
     },
     {
       "id": "a1-20-intro-1",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "grammar",
       "question": "Which question asks for age?",
       "options": [
         "Hány éves vagy?",
@@ -39,12 +41,13 @@
       "teaches": [
         "basic-personal-information-exchange",
         "basic-hungarian-word-order"
-      ]
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a1-20-intro-2",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "grammar",
       "question": "Which question asks where someone lives?",
       "options": [
         "Hol laksz?",
@@ -55,12 +58,13 @@
       "teaches": [
         "basic-personal-information-exchange",
         "basic-hungarian-word-order"
-      ]
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a1-20-controlled-1",
       "type": "matching",
-      "category": "controlled",
+      "category": "vocabulary",
       "pairs": [
         [
           "Hány éves vagy?",
@@ -82,12 +86,13 @@
       "teaches": [
         "basic-personal-information-exchange",
         "basic-hungarian-word-order"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-20-controlled-2",
       "type": "fill-blank",
-      "category": "controlled",
+      "category": "grammar",
       "sentence": "____ éves vagyok.",
       "answers": [
         "egy",
@@ -103,12 +108,13 @@
       "teaches": [
         "basic-personal-information-exchange",
         "basic-hungarian-word-order"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-20-controlled-3",
       "type": "multiple-choice",
-      "category": "controlled",
+      "category": "grammar",
       "question": "Which is the correct question for “Where do you live?”",
       "options": [
         "Hol laksz?",
@@ -119,12 +125,13 @@
       "teaches": [
         "basic-personal-information-exchange",
         "basic-hungarian-word-order"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-20-controlled-4",
       "type": "multiple-choice",
-      "category": "controlled",
+      "category": "grammar",
       "question": "Which answer matches Mi a telefonszámod?",
       "options": [
         "06 30 123 4567.",
@@ -135,12 +142,13 @@
       "teaches": [
         "basic-personal-information-exchange",
         "basic-hungarian-word-order"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-20-practice-1",
       "type": "matching",
-      "category": "practice",
+      "category": "vocabulary",
       "pairs": [
         [
           "Hány éves vagy?",
@@ -162,12 +170,13 @@
       "teaches": [
         "basic-personal-information-exchange",
         "basic-hungarian-word-order"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-20-practice-2",
       "type": "multiple-choice",
-      "category": "practice",
+      "category": "grammar",
       "question": "Which answer matches Hol laksz?",
       "options": [
         "Budapesten lakom.",
@@ -178,12 +187,13 @@
       "teaches": [
         "basic-personal-information-exchange",
         "basic-hungarian-word-order"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-20-practice-3",
       "type": "fill-blank",
-      "category": "practice",
+      "category": "grammar",
       "sentence": "Hány éves ____?",
       "answers": [
         "vagy"
@@ -191,12 +201,13 @@
       "teaches": [
         "basic-personal-information-exchange",
         "basic-hungarian-word-order"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-20-practice-4",
       "type": "sentence-builder",
-      "category": "practice",
+      "category": "grammar",
       "tiles": [
         "Hány",
         "éves",
@@ -213,12 +224,13 @@
       "teaches": [
         "basic-personal-information-exchange",
         "basic-hungarian-word-order"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-20-practice-7",
       "type": "dialogue-complete",
-      "category": "practice",
+      "category": "dialogue",
       "options": [
         "Budapesten lakom.",
         "Harminc éves vagyok."
@@ -237,7 +249,8 @@
       "teaches": [
         "basic-personal-information-exchange",
         "basic-hungarian-word-order"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-20-dialogue-1",
@@ -305,7 +318,7 @@
     {
       "id": "a1-20-check-1",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "grammar",
       "question": "Which question asks for an address?",
       "options": [
         "Mi a címed?",
@@ -316,7 +329,8 @@
       "teaches": [
         "basic-personal-information-exchange",
         "basic-hungarian-word-order"
-      ]
+      ],
+      "stage": "check"
     },
     {
       "id": "a1-20-writing-2",
@@ -336,7 +350,7 @@
     {
       "id": "a1-20-check-2",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "grammar",
       "question": "Which sentence is correct?",
       "options": [
         "Hány éves vagy?",
@@ -347,7 +361,8 @@
       "teaches": [
         "basic-personal-information-exchange",
         "basic-hungarian-word-order"
-      ]
+      ],
+      "stage": "check"
     }
   ]
 }

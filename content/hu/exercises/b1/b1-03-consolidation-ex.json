@@ -4,7 +4,7 @@
     {
       "id": "b1-03-consolidation-1",
       "type": "multiple-choice",
-      "category": "recognize",
+      "category": "grammar",
       "question": "Which word points forward to one specific, definite wish, not a general one?",
       "options": [
         "szeretném",
@@ -14,12 +14,13 @@
       "correct": 0,
       "teaches": [
         "szeretnem-def-indef"
-      ]
+      ],
+      "stage": "recognize"
     },
     {
       "id": "b1-03-consolidation-2",
       "type": "multiple-choice",
-      "category": "recognize",
+      "category": "grammar",
       "question": "Which word means \"if only\" and needs the conditional right after it?",
       "options": [
         "bárcsak",
@@ -29,12 +30,13 @@
       "correct": 0,
       "teaches": [
         "barcsak-wish"
-      ]
+      ],
+      "stage": "recognize"
     },
     {
       "id": "b1-03-consolidation-3",
       "type": "matching",
-      "category": "recognize",
+      "category": "vocabulary",
       "pairs": [
         [
           "akadály",
@@ -57,42 +59,46 @@
         "azert-hogy-purpose",
         "hogy-jon-jen",
         "planning-synthesis"
-      ]
+      ],
+      "stage": "recognize"
     },
     {
       "id": "b1-03-consolidation-4",
       "type": "fill-blank",
-      "category": "recall",
+      "category": "grammar",
       "sentence": "Szeretném, ha ____ a tervem. (it would succeed)",
       "answer": "sikerülne",
       "teaches": [
         "szeretnem-ha-wish"
-      ]
+      ],
+      "stage": "recall"
     },
     {
       "id": "b1-03-consolidation-5",
       "type": "fill-blank",
-      "category": "recall",
+      "category": "grammar",
       "sentence": "Azt akarom, hogy ____ a karrierem. (develop/progress)",
       "answer": "fejlődjön",
       "teaches": [
         "hogy-jon-jen"
-      ]
+      ],
+      "stage": "recall"
     },
     {
       "id": "b1-03-consolidation-6",
       "type": "fill-blank",
-      "category": "recall",
+      "category": "grammar",
       "sentence": "Korán indulok, ____ elkéssek a megbeszélésről. (so that I'm not)",
       "answer": "nehogy",
       "teaches": [
         "nehogy-purpose"
-      ]
+      ],
+      "stage": "recall"
     },
     {
       "id": "b1-03-consolidation-7",
       "type": "sentence-builder",
-      "category": "in-context",
+      "category": "grammar",
       "tiles": [
         "Szeretném",
         ",",
@@ -129,12 +135,13 @@
       "teaches": [
         "szeretnem-ha-wish",
         "azert-hogy-purpose"
-      ]
+      ],
+      "stage": "in-context"
     },
     {
       "id": "b1-03-consolidation-8",
       "type": "sentence-order",
-      "category": "in-context",
+      "category": "grammar",
       "sentences": [
         "Már régóta elképzelem, milyen lehetne a jövőm.",
         "Bárcsak sikerülne végre elindítanom a saját vállalkozásomat!",
@@ -149,12 +156,13 @@
       ],
       "teaches": [
         "planning-synthesis"
-      ]
+      ],
+      "stage": "in-context"
     },
     {
       "id": "b1-03-consolidation-9",
       "type": "dialogue-complete",
-      "category": "in-context",
+      "category": "dialogue",
       "prompt": [
         {
           "speaker": "Petra",
@@ -172,12 +180,13 @@
       "correct": 0,
       "teaches": [
         "planning-synthesis"
-      ]
+      ],
+      "stage": "in-context"
     },
     {
       "id": "b1-03-consolidation-10",
       "type": "structured-writing",
-      "category": "produce",
+      "category": "writing",
       "template": [
         {
           "prompt": "Say you wish your plan would succeed.",
@@ -198,12 +207,13 @@
       ],
       "teaches": [
         "planning-synthesis"
-      ]
+      ],
+      "stage": "produce"
     },
     {
       "id": "b1-03-consolidation-11",
       "type": "structured-writing",
-      "category": "produce",
+      "category": "writing",
       "template": [
         {
           "prompt": "Say you check your notes twice so that you don't make a mistake on the exam.",
@@ -212,12 +222,13 @@
       ],
       "teaches": [
         "nehogy-purpose"
-      ]
+      ],
+      "stage": "produce"
     },
     {
       "id": "b1-03-consolidation-12",
       "type": "structured-writing",
-      "category": "produce",
+      "category": "writing",
       "template": [
         {
           "prompt": "Say that you set aside a little money every month for the purpose of making your vision for the future come true.",
@@ -226,7 +237,8 @@
       ],
       "teaches": [
         "planning-synthesis"
-      ]
+      ],
+      "stage": "produce"
     }
   ]
 }

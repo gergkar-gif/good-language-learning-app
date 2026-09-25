@@ -4,31 +4,33 @@
     {
       "id": "a1-07-review-1",
       "type": "multiple-choice",
-      "category": "review",
+      "category": "vocabulary",
       "question": "Which means “good evening”?",
       "options": [
         "jó estét",
         "jó reggelt",
         "jó éjszakát"
       ],
-      "correct": 0
+      "correct": 0,
+      "stage": "review"
     },
     {
       "id": "a1-07-review-2",
       "type": "multiple-choice",
-      "category": "review",
+      "category": "vocabulary",
       "question": "Which means “goodbye”?",
       "options": [
         "viszlát",
         "szívesen",
         "igen"
       ],
-      "correct": 0
+      "correct": 0,
+      "stage": "review"
     },
     {
       "id": "a1-07-intro-1",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "grammar",
       "question": "Which means “you're welcome”?",
       "options": [
         "szívesen",
@@ -39,12 +41,13 @@
       "teaches": [
         "legy-szives-and-szivesen",
         "bocsanat-and-elnezest"
-      ]
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a1-07-intro-2",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "grammar",
       "question": "Which means “sorry / excuse me”?",
       "options": [
         "bocsánat",
@@ -55,23 +58,25 @@
       "teaches": [
         "legy-szives-and-szivesen",
         "bocsanat-and-elnezest"
-      ]
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a1-07-controlled-1",
       "type": "fill-blank",
-      "category": "controlled",
+      "category": "grammar",
       "sentence": "Köszönöm! – ____. (you're welcome)",
       "answer": "Szívesen!",
       "teaches": [
         "legy-szives-and-szivesen",
         "bocsanat-and-elnezest"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-07-controlled-2",
       "type": "multiple-choice",
-      "category": "controlled",
+      "category": "grammar",
       "question": "You bump into someone. What can you say?",
       "options": [
         "Bocsánat!",
@@ -82,12 +87,13 @@
       "teaches": [
         "legy-szives-and-szivesen",
         "bocsanat-and-elnezest"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-07-controlled-3",
       "type": "matching",
-      "category": "controlled",
+      "category": "vocabulary",
       "pairs": [
         [
           "köszönöm",
@@ -109,12 +115,13 @@
       "teaches": [
         "legy-szives-and-szivesen",
         "bocsanat-and-elnezest"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-07-practice-1",
       "type": "multiple-choice",
-      "category": "practice",
+      "category": "grammar",
       "question": "Someone helps you. You say:",
       "options": [
         "Köszönöm!",
@@ -125,12 +132,13 @@
       "teaches": [
         "legy-szives-and-szivesen",
         "bocsanat-and-elnezest"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-07-practice-2",
       "type": "matching",
-      "category": "practice",
+      "category": "vocabulary",
       "pairs": [
         [
           "légy szíves",
@@ -152,23 +160,25 @@
       "teaches": [
         "legy-szives-and-szivesen",
         "bocsanat-and-elnezest"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-07-practice-3",
       "type": "fill-blank",
-      "category": "practice",
+      "category": "grammar",
       "sentence": "____, hol van a kávé?",
       "answer": "Elnézést",
       "teaches": [
         "legy-szives-and-szivesen",
         "bocsanat-and-elnezest"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-07-practice-4",
       "type": "matching",
-      "category": "practice",
+      "category": "vocabulary",
       "pairs": [
         [
           "köszönöm",
@@ -190,12 +200,13 @@
       "teaches": [
         "legy-szives-and-szivesen",
         "bocsanat-and-elnezest"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-07-practice-5",
       "type": "dialogue-complete",
-      "category": "practice",
+      "category": "dialogue",
       "prompt": [
         {
           "speaker": "Anna",
@@ -214,12 +225,13 @@
       "teaches": [
         "legy-szives-and-szivesen",
         "bocsanat-and-elnezest"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-07-controlled-extra",
       "type": "multiple-choice",
-      "category": "controlled",
+      "category": "grammar",
       "question": "Which expression can politely get someone's attention?",
       "options": [
         "Elnézést!",
@@ -230,7 +242,8 @@
       "teaches": [
         "legy-szives-and-szivesen",
         "bocsanat-and-elnezest"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-07-dialogue-1",
@@ -313,7 +326,7 @@
     {
       "id": "a1-07-check-1",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "grammar",
       "question": "Which expression fits a polite daytime greeting?",
       "options": [
         "Jó napot!",
@@ -324,12 +337,13 @@
       "teaches": [
         "legy-szives-and-szivesen",
         "bocsanat-and-elnezest"
-      ]
+      ],
+      "stage": "check"
     },
     {
       "id": "a1-07-check-2",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "grammar",
       "question": "Which word means “please”?",
       "options": [
         "Légy szíves.",
@@ -340,7 +354,8 @@
       "teaches": [
         "legy-szives-and-szivesen",
         "bocsanat-and-elnezest"
-      ]
+      ],
+      "stage": "check"
     }
   ]
 }

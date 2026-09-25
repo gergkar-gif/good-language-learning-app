@@ -4,19 +4,20 @@
     {
       "id": "a1-112-review-1",
       "type": "multiple-choice",
-      "category": "review",
+      "category": "vocabulary",
       "question": "Which word means 'coffee'?",
       "options": [
         "kávé",
         "tea",
         "limonádé"
       ],
-      "correct": 0
+      "correct": 0,
+      "stage": "review"
     },
     {
       "id": "a1-112-review-2",
       "type": "matching",
-      "category": "review",
+      "category": "vocabulary",
       "pairs": [
         [
           "kávé",
@@ -34,12 +35,13 @@
           "üdítő",
           "soft drink"
         ]
-      ]
+      ],
+      "stage": "review"
     },
     {
       "id": "a1-112-intro-1",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "grammar",
       "question": "Which word means 'sandwich'?",
       "options": [
         "szendvics",
@@ -50,34 +52,37 @@
       "teaches": [
         "szeretnek-the-conditional-ending-nek",
         "meg-one-more-another"
-      ]
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a1-112-intro-2",
       "type": "fill-blank",
-      "category": "introduce",
+      "category": "grammar",
       "sentence": "Kér még ____?",
       "answer": "süteményt",
       "teaches": [
         "szeretnek-the-conditional-ending-nek",
         "meg-one-more-another"
-      ]
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a1-112-controlled-1",
       "type": "fill-blank",
-      "category": "controlled",
+      "category": "grammar",
       "sentence": "És egy ____ kérek.",
       "answer": "szendvicset",
       "teaches": [
         "szeretnek-the-conditional-ending-nek",
         "meg-one-more-another"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-112-controlled-2",
       "type": "multiple-choice",
-      "category": "controlled",
+      "category": "grammar",
       "question": "What does 'sütemény' mean?",
       "options": [
         "pastry",
@@ -88,12 +93,13 @@
       "teaches": [
         "szeretnek-the-conditional-ending-nek",
         "meg-one-more-another"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-112-controlled-3",
       "type": "matching",
-      "category": "controlled",
+      "category": "vocabulary",
       "pairs": [
         [
           "szendvics",
@@ -115,12 +121,13 @@
       "teaches": [
         "szeretnek-the-conditional-ending-nek",
         "meg-one-more-another"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-112-controlled-4",
       "type": "substitution",
-      "category": "controlled",
+      "category": "grammar",
       "base_sentence": "Kérek egy szendvicset.",
       "base_word": "szendvicset",
       "base_gloss": "I'd like a sandwich.",
@@ -141,12 +148,13 @@
       "teaches": [
         "szeretnek-the-conditional-ending-nek",
         "meg-one-more-another"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-112-practice-1",
       "type": "multiple-choice",
-      "category": "practice",
+      "category": "grammar",
       "question": "Which word means 'breakfast'?",
       "options": [
         "reggeli",
@@ -157,23 +165,25 @@
       "teaches": [
         "szeretnek-the-conditional-ending-nek",
         "meg-one-more-another"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-112-practice-2",
       "type": "fill-blank",
-      "category": "practice",
+      "category": "grammar",
       "sentence": "Igen, kérek egy ____.",
       "answer": "süteményt",
       "teaches": [
         "szeretnek-the-conditional-ending-nek",
         "meg-one-more-another"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-112-practice-3",
       "type": "matching",
-      "category": "practice",
+      "category": "vocabulary",
       "pairs": [
         [
           "És egy szendvicset kérek.",
@@ -195,12 +205,13 @@
       "teaches": [
         "szeretnek-the-conditional-ending-nek",
         "meg-one-more-another"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-112-practice-4",
       "type": "substitution",
-      "category": "practice",
+      "category": "grammar",
       "base_sentence": "Kérek cukrot.",
       "base_word": "cukrot",
       "base_gloss": "I'd like sugar.",
@@ -221,12 +232,13 @@
       "teaches": [
         "szeretnek-the-conditional-ending-nek",
         "meg-one-more-another"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-112-practice-5",
       "type": "dialogue-complete",
-      "category": "practice",
+      "category": "dialogue",
       "prompt": [
         {
           "speaker": "Pincér",
@@ -245,7 +257,8 @@
       "teaches": [
         "szeretnek-the-conditional-ending-nek",
         "meg-one-more-another"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-112-dialogue-1",
@@ -289,7 +302,7 @@
     {
       "id": "a1-112-writing-1",
       "type": "structured-writing",
-      "category": "production",
+      "category": "writing",
       "template": [
         {
           "prompt": "Write a sentence using this word: szendvics",
@@ -299,12 +312,13 @@
       "teaches": [
         "szeretnek-the-conditional-ending-nek",
         "meg-one-more-another"
-      ]
+      ],
+      "stage": "production"
     },
     {
       "id": "a1-112-writing-2",
       "type": "structured-writing",
-      "category": "production",
+      "category": "writing",
       "template": [
         {
           "prompt": "Write a sentence using this word: cukor",
@@ -314,12 +328,13 @@
       "teaches": [
         "szeretnek-the-conditional-ending-nek",
         "meg-one-more-another"
-      ]
+      ],
+      "stage": "production"
     },
     {
       "id": "a1-112-check-1",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "grammar",
       "question": "Which word means 'sugar'?",
       "options": [
         "cukor",
@@ -330,18 +345,20 @@
       "teaches": [
         "szeretnek-the-conditional-ending-nek",
         "meg-one-more-another"
-      ]
+      ],
+      "stage": "check"
     },
     {
       "id": "a1-112-check-2",
       "type": "fill-blank",
-      "category": "check",
+      "category": "grammar",
       "sentence": "Kérek ____ és tejet is.",
       "answer": "cukrot",
       "teaches": [
         "szeretnek-the-conditional-ending-nek",
         "meg-one-more-another"
-      ]
+      ],
+      "stage": "check"
     }
   ]
 }

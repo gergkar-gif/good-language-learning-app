@@ -4,19 +4,20 @@
     {
       "id": "a1-120-review-1",
       "type": "multiple-choice",
-      "category": "review",
+      "category": "vocabulary",
       "question": "Which word means 'would like'?",
       "options": [
         "szeretne",
         "kérek",
         "és"
       ],
-      "correct": 0
+      "correct": 0,
+      "stage": "review"
     },
     {
       "id": "a1-120-review-2",
       "type": "matching",
-      "category": "review",
+      "category": "vocabulary",
       "pairs": [
         [
           "szeretne",
@@ -34,12 +35,13 @@
           "de",
           "but"
         ]
-      ]
+      ],
+      "stage": "review"
     },
     {
       "id": "a1-120-intro-1",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "grammar",
       "question": "Which word means 'because'?",
       "options": [
         "mert",
@@ -50,34 +52,37 @@
       "teaches": [
         "kartya-or-keszpenz-paying-at-the-end",
         "unit-review-preferences-and-reasons"
-      ]
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a1-120-intro-2",
       "type": "fill-blank",
-      "category": "introduce",
+      "category": "grammar",
       "sentence": "Kártya. ____. (I'll pay)",
       "answer": "Fizetek",
       "teaches": [
         "kartya-or-keszpenz-paying-at-the-end",
         "unit-review-preferences-and-reasons"
-      ]
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a1-120-controlled-1",
       "type": "fill-blank",
-      "category": "controlled",
+      "category": "grammar",
       "sentence": "Kártya vagy ____?",
       "answer": "készpénz",
       "teaches": [
         "kartya-or-keszpenz-paying-at-the-end",
         "unit-review-preferences-and-reasons"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-120-controlled-2",
       "type": "multiple-choice",
-      "category": "controlled",
+      "category": "grammar",
       "question": "What does 'kártya' mean?",
       "options": [
         "card",
@@ -88,12 +93,13 @@
       "teaches": [
         "kartya-or-keszpenz-paying-at-the-end",
         "unit-review-preferences-and-reasons"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-120-controlled-3",
       "type": "matching",
-      "category": "controlled",
+      "category": "vocabulary",
       "pairs": [
         [
           "mert",
@@ -115,12 +121,13 @@
       "teaches": [
         "kartya-or-keszpenz-paying-at-the-end",
         "unit-review-preferences-and-reasons"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-120-controlled-4",
       "type": "substitution",
-      "category": "controlled",
+      "category": "grammar",
       "base_sentence": "Kártya vagy készpénz?",
       "base_word": "Kártya",
       "base_gloss": "Card or cash?",
@@ -135,12 +142,13 @@
       "teaches": [
         "kartya-or-keszpenz-paying-at-the-end",
         "unit-review-preferences-and-reasons"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-120-practice-1",
       "type": "multiple-choice",
-      "category": "practice",
+      "category": "grammar",
       "question": "Which word means 'cash'?",
       "options": [
         "készpénz",
@@ -151,23 +159,25 @@
       "teaches": [
         "kartya-or-keszpenz-paying-at-the-end",
         "unit-review-preferences-and-reasons"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-120-practice-2",
       "type": "fill-blank",
-      "category": "practice",
+      "category": "grammar",
       "sentence": "Szeretnék ____, mert éhes vagyok.",
       "answer": "menüt",
       "teaches": [
         "kartya-or-keszpenz-paying-at-the-end",
         "unit-review-preferences-and-reasons"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-120-practice-3",
       "type": "matching",
-      "category": "practice",
+      "category": "vocabulary",
       "pairs": [
         [
           "Kártya vagy készpénz?",
@@ -189,12 +199,13 @@
       "teaches": [
         "kartya-or-keszpenz-paying-at-the-end",
         "unit-review-preferences-and-reasons"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-120-practice-4",
       "type": "substitution",
-      "category": "practice",
+      "category": "grammar",
       "base_sentence": "Szeretnék menüt, mert éhes vagyok.",
       "base_word": "menüt",
       "base_gloss": "I would like the set meal because I'm hungry.",
@@ -215,12 +226,13 @@
       "teaches": [
         "kartya-or-keszpenz-paying-at-the-end",
         "unit-review-preferences-and-reasons"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-120-practice-5",
       "type": "dialogue-complete",
-      "category": "practice",
+      "category": "dialogue",
       "prompt": [
         {
           "speaker": "Pincér",
@@ -239,7 +251,8 @@
       "teaches": [
         "kartya-or-keszpenz-paying-at-the-end",
         "unit-review-preferences-and-reasons"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-120-dialogue-1",
@@ -283,7 +296,7 @@
     {
       "id": "a1-120-writing-1",
       "type": "structured-writing",
-      "category": "production",
+      "category": "writing",
       "template": [
         {
           "prompt": "Write a sentence using this word: kártya",
@@ -293,12 +306,13 @@
       "teaches": [
         "kartya-or-keszpenz-paying-at-the-end",
         "unit-review-preferences-and-reasons"
-      ]
+      ],
+      "stage": "production"
     },
     {
       "id": "a1-120-writing-2",
       "type": "structured-writing",
-      "category": "production",
+      "category": "writing",
       "template": [
         {
           "prompt": "Write a sentence using this word: készpénz",
@@ -308,12 +322,13 @@
       "teaches": [
         "kartya-or-keszpenz-paying-at-the-end",
         "unit-review-preferences-and-reasons"
-      ]
+      ],
+      "stage": "production"
     },
     {
       "id": "a1-120-check-1",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "grammar",
       "question": "Which word means 'pay'?",
       "options": [
         "fizet",
@@ -324,18 +339,20 @@
       "teaches": [
         "kartya-or-keszpenz-paying-at-the-end",
         "unit-review-preferences-and-reasons"
-      ]
+      ],
+      "stage": "check"
     },
     {
       "id": "a1-120-check-2",
       "type": "fill-blank",
-      "category": "check",
+      "category": "grammar",
       "sentence": "Köszönöm! ____. (you're welcome)",
       "answer": "Kérem",
       "teaches": [
         "kartya-or-keszpenz-paying-at-the-end",
         "unit-review-preferences-and-reasons"
-      ]
+      ],
+      "stage": "check"
     }
   ]
 }

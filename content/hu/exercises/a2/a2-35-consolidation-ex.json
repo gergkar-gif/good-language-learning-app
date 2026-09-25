@@ -4,130 +4,236 @@
     {
       "id": "a2-35-consolidation-1",
       "type": "multiple-choice",
-      "category": "recognize",
+      "category": "grammar",
       "question": "Which means “bakery”?",
-      "options": ["pékség", "bolt", "könyvtár"],
+      "options": [
+        "pékség",
+        "bolt",
+        "könyvtár"
+      ],
       "correct": 0,
-      "teaches": ["neighbourhood-vocab"]
+      "teaches": [
+        "neighbourhood-vocab"
+      ],
+      "stage": "recognize"
     },
     {
       "id": "a2-35-consolidation-2",
       "type": "multiple-choice",
-      "category": "recognize",
+      "category": "grammar",
       "question": "Which suffix means “to/toward”?",
-      "options": ["-hoz/-hez/-höz", "-nál/-nél", "-tól/-től"],
+      "options": [
+        "-hoz/-hez/-höz",
+        "-nál/-nél",
+        "-tól/-től"
+      ],
       "correct": 0,
-      "teaches": ["hoz-suffix"]
+      "teaches": [
+        "hoz-suffix"
+      ],
+      "stage": "recognize"
     },
     {
       "id": "a2-35-consolidation-3",
       "type": "multiple-choice",
-      "category": "recognize",
+      "category": "vocabulary",
       "question": "Which means “river”?",
-      "options": ["folyó", "híd", "part"],
+      "options": [
+        "folyó",
+        "híd",
+        "part"
+      ],
       "correct": 0,
-      "teaches": ["river-vocab"]
+      "teaches": [
+        "river-vocab"
+      ],
+      "stage": "recognize"
     },
     {
       "id": "a2-35-consolidation-4",
       "type": "matching",
-      "category": "recall",
+      "category": "vocabulary",
       "pairs": [
-        ["rendőrség", "police station"],
-        ["színház", "theatre"],
-        ["negyed", "district"],
-        ["szomszédság", "neighbourhood"]
+        [
+          "rendőrség",
+          "police station"
+        ],
+        [
+          "színház",
+          "theatre"
+        ],
+        [
+          "negyed",
+          "district"
+        ],
+        [
+          "szomszédság",
+          "neighbourhood"
+        ]
       ],
-      "teaches": ["city-places"]
+      "teaches": [
+        "city-places"
+      ],
+      "stage": "recall"
     },
     {
       "id": "a2-35-consolidation-5",
       "type": "matching",
-      "category": "recall",
+      "category": "vocabulary",
       "pairs": [
-        ["honnan", "from where"],
-        ["ide", "to here"],
-        ["oda", "to there"],
-        ["onnan", "from there"]
+        [
+          "honnan",
+          "from where"
+        ],
+        [
+          "ide",
+          "to here"
+        ],
+        [
+          "oda",
+          "to there"
+        ],
+        [
+          "onnan",
+          "from there"
+        ]
       ],
-      "teaches": ["here-there"]
+      "teaches": [
+        "here-there"
+      ],
+      "stage": "recall"
     },
     {
       "id": "a2-35-consolidation-6",
       "type": "fill-blank",
-      "category": "recall",
+      "category": "grammar",
       "sentence": "A negyedünk ____, nem forgalmas. (calm)",
       "answer": "nyugodt",
-      "teaches": ["city-adjectives"]
+      "teaches": [
+        "city-adjectives"
+      ],
+      "stage": "recall"
     },
     {
       "id": "a2-35-consolidation-7",
       "type": "dialogue-complete",
-      "category": "context",
+      "category": "dialogue",
       "prompt": [
-        { "speaker": "Károly", "text": "Hová mész?" },
-        { "speaker": "Meg", "text": "_____" }
+        {
+          "speaker": "Károly",
+          "text": "Hová mész?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
       ],
-      "options": ["A pékséghez megyek.", "A pékségnél vagyok."],
+      "options": [
+        "A pékséghez megyek.",
+        "A pékségnél vagyok."
+      ],
       "correct": 0,
-      "teaches": ["case-contrast"]
+      "teaches": [
+        "case-contrast"
+      ],
+      "stage": "context"
     },
     {
       "id": "a2-35-consolidation-8",
       "type": "dialogue-complete",
-      "category": "context",
+      "category": "dialogue",
       "prompt": [
-        { "speaker": "Meg", "text": "Milyen ez a negyed?" },
-        { "speaker": "Károly", "text": "_____" }
+        {
+          "speaker": "Meg",
+          "text": "Milyen ez a negyed?"
+        },
+        {
+          "speaker": "Károly",
+          "text": "_____"
+        }
       ],
-      "options": ["Nagyon szép és nyugodt.", "Nagyon messze és forgalmas."],
+      "options": [
+        "Nagyon szép és nyugodt.",
+        "Nagyon messze és forgalmas."
+      ],
       "correct": 0,
-      "teaches": ["negyed-district"]
+      "teaches": [
+        "negyed-district"
+      ],
+      "stage": "context"
     },
     {
       "id": "a2-35-consolidation-9",
       "type": "sentence-builder",
-      "category": "context",
-      "tiles": ["A", "park", "közel", "van", "a", "folyóhoz", "."],
-      "solution": ["A", "park", "közel", "van", "a", "folyóhoz", "."],
+      "category": "grammar",
+      "tiles": [
+        "A",
+        "park",
+        "közel",
+        "van",
+        "a",
+        "folyóhoz",
+        "."
+      ],
+      "solution": [
+        "A",
+        "park",
+        "közel",
+        "van",
+        "a",
+        "folyóhoz",
+        "."
+      ],
       "english": "The park is close to the river.",
-      "teaches": ["kozel-hoz"]
+      "teaches": [
+        "kozel-hoz"
+      ],
+      "stage": "context"
     },
     {
       "id": "a2-35-consolidation-10",
       "type": "structured-writing",
-      "category": "produce",
+      "category": "writing",
       "template": [
         {
           "prompt": "Say you're going to the bakery.",
           "answer": "Megyek a pékséghez."
         }
       ],
-      "teaches": ["hoz-suffix"]
+      "teaches": [
+        "hoz-suffix"
+      ],
+      "stage": "produce"
     },
     {
       "id": "a2-35-consolidation-11",
       "type": "structured-writing",
-      "category": "produce",
+      "category": "writing",
       "template": [
         {
           "prompt": "Say “Where are you going? I'm going to the bakery.”",
           "answer": "Hová mész? A pékséghez megyek."
         }
       ],
-      "teaches": ["case-contrast"]
+      "teaches": [
+        "case-contrast"
+      ],
+      "stage": "produce"
     },
     {
       "id": "a2-35-consolidation-12",
       "type": "structured-writing",
-      "category": "produce",
+      "category": "writing",
       "template": [
         {
           "prompt": "Say our district is calm, not busy, and you have a favourite bakery on the corner.",
           "answer": "A negyedünk nyugodt, nem forgalmas, és van egy kedvenc pékségem a sarkon."
         }
       ],
-      "teaches": ["neighbourhood-summary"]
+      "teaches": [
+        "neighbourhood-summary"
+      ],
+      "stage": "produce"
     }
   ]
 }

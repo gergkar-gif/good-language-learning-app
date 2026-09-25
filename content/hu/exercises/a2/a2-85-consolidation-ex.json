@@ -4,130 +4,236 @@
     {
       "id": "a2-85-consolidation-1",
       "type": "multiple-choice",
-      "category": "recognize",
+      "category": "vocabulary",
       "question": "Which means \"head\"?",
-      "options": ["fej", "kéz", "láb"],
+      "options": [
+        "fej",
+        "kéz",
+        "láb"
+      ],
       "correct": 0,
-      "teaches": ["body-parts-vocab"]
+      "teaches": [
+        "body-parts-vocab"
+      ],
+      "stage": "recognize"
     },
     {
       "id": "a2-85-consolidation-2",
       "type": "multiple-choice",
-      "category": "recognize",
+      "category": "vocabulary",
       "question": "Which means \"doctor\"?",
-      "options": ["orvos", "rendelő", "gyógyszer"],
+      "options": [
+        "orvos",
+        "rendelő",
+        "gyógyszer"
+      ],
       "correct": 0,
-      "teaches": ["doctor-vocab"]
+      "teaches": [
+        "doctor-vocab"
+      ],
+      "stage": "recognize"
     },
     {
       "id": "a2-85-consolidation-3",
       "type": "multiple-choice",
-      "category": "recognize",
+      "category": "vocabulary",
       "question": "Which means \"pharmacy\"?",
-      "options": ["gyógyszertár", "rendelő", "tabletta"],
+      "options": [
+        "gyógyszertár",
+        "rendelő",
+        "tabletta"
+      ],
       "correct": 0,
-      "teaches": ["pharmacy-vocab"]
+      "teaches": [
+        "pharmacy-vocab"
+      ],
+      "stage": "recognize"
     },
     {
       "id": "a2-85-consolidation-4",
       "type": "matching",
-      "category": "recall",
+      "category": "vocabulary",
       "pairs": [
-        ["Fáj a fejem.", "My head hurts."],
-        ["Lázam van.", "I have a fever."],
-        ["Mi a panasza?", "What's the matter (formal)?"],
-        ["Van valami láz ellen?", "Is there something for a fever?"]
+        [
+          "Fáj a fejem.",
+          "My head hurts."
+        ],
+        [
+          "Lázam van.",
+          "I have a fever."
+        ],
+        [
+          "Mi a panasza?",
+          "What's the matter (formal)?"
+        ],
+        [
+          "Van valami láz ellen?",
+          "Is there something for a fever?"
+        ]
       ],
-      "teaches": ["faj-construction"]
+      "teaches": [
+        "faj-construction"
+      ],
+      "stage": "recall"
     },
     {
       "id": "a2-85-consolidation-5",
       "type": "matching",
-      "category": "recall",
+      "category": "vocabulary",
       "pairs": [
-        ["kezem", "my hand"],
-        ["torkom", "my throat"],
-        ["két napja", "for two days"],
-        ["naponta kétszer", "twice a day"]
+        [
+          "kezem",
+          "my hand"
+        ],
+        [
+          "torkom",
+          "my throat"
+        ],
+        [
+          "két napja",
+          "for two days"
+        ],
+        [
+          "naponta kétszer",
+          "twice a day"
+        ]
       ],
-      "teaches": ["duration-napja"]
+      "teaches": [
+        "duration-napja"
+      ],
+      "stage": "recall"
     },
     {
       "id": "a2-85-consolidation-6",
       "type": "fill-blank",
-      "category": "recall",
+      "category": "grammar",
       "sentence": "Két ____ fáj a hasam. (days)",
       "answer": "napja",
-      "teaches": ["duration-napja"]
+      "teaches": [
+        "duration-napja"
+      ],
+      "stage": "recall"
     },
     {
       "id": "a2-85-consolidation-7",
       "type": "dialogue-complete",
-      "category": "context",
+      "category": "dialogue",
       "prompt": [
-        { "speaker": "Orvos", "text": "Mi a panasza?" },
-        { "speaker": "Meg", "text": "_____" }
+        {
+          "speaker": "Orvos",
+          "text": "Mi a panasza?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
       ],
-      "options": ["Fáj a hasam, és szédülök.", "Nagyon szeretem a várost."],
+      "options": [
+        "Fáj a hasam, és szédülök.",
+        "Nagyon szeretem a várost."
+      ],
       "correct": 0,
-      "teaches": ["mi-a-panasza"]
+      "teaches": [
+        "mi-a-panasza"
+      ],
+      "stage": "context"
     },
     {
       "id": "a2-85-consolidation-8",
       "type": "dialogue-complete",
-      "category": "context",
+      "category": "dialogue",
       "prompt": [
-        { "speaker": "Gyógyszerész", "text": "Van receptje?" },
-        { "speaker": "Károly", "text": "_____" }
+        {
+          "speaker": "Gyógyszerész",
+          "text": "Van receptje?"
+        },
+        {
+          "speaker": "Károly",
+          "text": "_____"
+        }
       ],
-      "options": ["Nincs, de van lázam.", "Igen, finom a leves."],
+      "options": [
+        "Nincs, de van lázam.",
+        "Igen, finom a leves."
+      ],
       "correct": 0,
-      "teaches": ["pharmacy-vocab"]
+      "teaches": [
+        "pharmacy-vocab"
+      ],
+      "stage": "context"
     },
     {
       "id": "a2-85-consolidation-9",
       "type": "sentence-builder",
-      "category": "context",
-      "tiles": ["Naponta", "kétszer", "kell", "bevenni", "a", "tablettát", "."],
-      "solution": ["Naponta", "kétszer", "kell", "bevenni", "a", "tablettát", "."],
+      "category": "grammar",
+      "tiles": [
+        "Naponta",
+        "kétszer",
+        "kell",
+        "bevenni",
+        "a",
+        "tablettát",
+        "."
+      ],
+      "solution": [
+        "Naponta",
+        "kétszer",
+        "kell",
+        "bevenni",
+        "a",
+        "tablettát",
+        "."
+      ],
       "english": "The tablet needs to be taken twice a day.",
-      "teaches": ["pharmacy-synthesis"]
+      "teaches": [
+        "pharmacy-synthesis"
+      ],
+      "stage": "context"
     },
     {
       "id": "a2-85-consolidation-10",
       "type": "structured-writing",
-      "category": "produce",
+      "category": "writing",
       "template": [
         {
           "prompt": "Say your throat has hurt for three days.",
           "answer": "Három napja fáj a torkom."
         }
       ],
-      "teaches": ["duration-napja"]
+      "teaches": [
+        "duration-napja"
+      ],
+      "stage": "produce"
     },
     {
       "id": "a2-85-consolidation-11",
       "type": "structured-writing",
-      "category": "produce",
+      "category": "writing",
       "template": [
         {
           "prompt": "Ask the pharmacist if there's something for a stomachache.",
           "answer": "Van valami hasfájás ellen?"
         }
       ],
-      "teaches": ["ellen-against"]
+      "teaches": [
+        "ellen-against"
+      ],
+      "stage": "produce"
     },
     {
       "id": "a2-85-consolidation-12",
       "type": "structured-writing",
-      "category": "produce",
+      "category": "writing",
       "template": [
         {
           "prompt": "Say the doctor examines you and prescribes medicine.",
           "answer": "Az orvos megvizsgál, és felír egy gyógyszert."
         }
       ],
-      "teaches": ["felir-prescribe"]
+      "teaches": [
+        "felir-prescribe"
+      ],
+      "stage": "produce"
     }
   ]
 }

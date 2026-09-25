@@ -4,7 +4,7 @@
     {
       "id": "b1-04-04-intro-1",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "grammar",
       "question": "Which word starts a caring warning meaning \"watch out that you don't...!\"?",
       "options": [
         "nehogy",
@@ -14,12 +14,13 @@
       "correct": 0,
       "teaches": [
         "nehogy-warning"
-      ]
+      ],
+      "stage": "introduce"
     },
     {
       "id": "b1-04-04-intro-2",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "grammar",
       "question": "Which sentence uses -hat/-het to name a possible risk, not a certainty?",
       "options": [
         "Ez veszélyes lehet.",
@@ -29,12 +30,13 @@
       "correct": 0,
       "teaches": [
         "hat-het-warning"
-      ]
+      ],
+      "stage": "introduce"
     },
     {
       "id": "b1-04-04-controlled-1",
       "type": "matching",
-      "category": "controlled",
+      "category": "vocabulary",
       "pairs": [
         [
           "vigyáz",
@@ -56,32 +58,35 @@
       "teaches": [
         "nehogy-warning",
         "hat-het-warning"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "b1-04-04-controlled-2",
       "type": "fill-blank",
-      "category": "controlled",
+      "category": "grammar",
       "sentence": "____ elfelejtsd bezárni az ajtót! (make sure you don't)",
       "answer": "Nehogy",
       "teaches": [
         "nehogy-warning"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "b1-04-04-controlled-3",
       "type": "fill-blank",
-      "category": "controlled",
+      "category": "grammar",
       "sentence": "Ez a döntés komoly következményekkel ____. (could carry)",
       "answer": "járhat",
       "teaches": [
         "hat-het-warning"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "b1-04-04-controlled-4",
       "type": "multiple-choice",
-      "category": "controlled",
+      "category": "grammar",
       "question": "\"Nehogy elkéss a találkozóról!\" — what mood is elkéss in?",
       "options": [
         "imperative (command form)",
@@ -91,12 +96,13 @@
       "correct": 0,
       "teaches": [
         "nehogy-warning"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "b1-04-04-practice-1",
       "type": "sentence-builder",
-      "category": "practice",
+      "category": "grammar",
       "tiles": [
         "Nehogy",
         "megbántsd",
@@ -118,12 +124,13 @@
       "english": "Be careful not to hurt his/her feelings when you tell him/her!",
       "teaches": [
         "nehogy-warning"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "b1-04-04-practice-2",
       "type": "sentence-builder",
-      "category": "practice",
+      "category": "grammar",
       "tiles": [
         "Ha",
         "most",
@@ -147,12 +154,13 @@
       "english": "If you don't speak up now, you might regret it later.",
       "teaches": [
         "hat-het-warning"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "b1-04-04-practice-3",
       "type": "substitution",
-      "category": "practice",
+      "category": "grammar",
       "base_sentence": "Vigyázz, ez veszélyes lehet!",
       "base_word": "veszélyes",
       "base_gloss": "Be careful, this could be dangerous!",
@@ -172,12 +180,13 @@
       ],
       "teaches": [
         "hat-het-warning"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "b1-04-04-practice-4",
       "type": "multiple-choice",
-      "category": "practice",
+      "category": "grammar",
       "question": "Which sentence is a caring warning, not a flat prohibition?",
       "options": [
         "Nehogy elfelejtsd!",
@@ -187,7 +196,8 @@
       "correct": 0,
       "teaches": [
         "nehogy-warning"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "b1-04-04-dialogue-1",
@@ -266,7 +276,7 @@
     {
       "id": "b1-04-04-check-1",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "grammar",
       "question": "\"Nehogy elfelejted.\" — what's wrong with this sentence?",
       "options": [
         "elfelejted should be the imperative elfelejtsd",
@@ -276,17 +286,19 @@
       "correct": 0,
       "teaches": [
         "nehogy-warning"
-      ]
+      ],
+      "stage": "check"
     },
     {
       "id": "b1-04-04-check-2",
       "type": "fill-blank",
-      "category": "check",
+      "category": "grammar",
       "sentence": "Vigyázz, ez veszélyes ____! (could be)",
       "answer": "lehet",
       "teaches": [
         "hat-het-warning"
-      ]
+      ],
+      "stage": "check"
     }
   ]
 }

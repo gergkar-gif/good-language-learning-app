@@ -4,31 +4,33 @@
     {
       "id": "a1-131-review-1",
       "type": "multiple-choice",
-      "category": "review",
+      "category": "vocabulary",
       "question": "What does 'hosszú' mean?",
       "options": [
         "long",
         "short",
         "comfortable"
       ],
-      "correct": 0
+      "correct": 0,
+      "stage": "review"
     },
     {
       "id": "a1-131-review-2",
       "type": "multiple-choice",
-      "category": "review",
+      "category": "vocabulary",
       "question": "What does 'visel' mean?",
       "options": [
         "to wear",
         "to try",
         "to look for"
       ],
-      "correct": 0
+      "correct": 0,
+      "stage": "review"
     },
     {
       "id": "a1-131-introduce-1",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "grammar",
       "question": "What does 'város' mean?",
       "options": [
         "city",
@@ -39,12 +41,13 @@
       "teaches": [
         "asking-where-something-is-hol-van",
         "near-and-far-kozel-messze-with-van"
-      ]
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a1-131-introduce-2",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "grammar",
       "question": "What does 'állomás' mean?",
       "options": [
         "station",
@@ -55,23 +58,25 @@
       "teaches": [
         "asking-where-something-is-hol-van",
         "near-and-far-kozel-messze-with-van"
-      ]
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a1-131-controlled-1",
       "type": "fill-blank",
-      "category": "controlled",
+      "category": "grammar",
       "sentence": "Hol van a ____?",
       "answer": "bank",
       "teaches": [
         "asking-where-something-is-hol-van",
         "near-and-far-kozel-messze-with-van"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-131-controlled-2",
       "type": "multiple-choice",
-      "category": "controlled",
+      "category": "grammar",
       "question": "Choose the word for 'street'.",
       "options": [
         "utca",
@@ -82,12 +87,13 @@
       "teaches": [
         "asking-where-something-is-hol-van",
         "near-and-far-kozel-messze-with-van"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-131-controlled-3",
       "type": "matching",
-      "category": "controlled",
+      "category": "vocabulary",
       "pairs": [
         [
           "város",
@@ -109,12 +115,13 @@
       "teaches": [
         "asking-where-something-is-hol-van",
         "near-and-far-kozel-messze-with-van"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-131-controlled-4",
       "type": "substitution",
-      "category": "controlled",
+      "category": "grammar",
       "base_sentence": "Hol van a bank?",
       "base_word": "bank",
       "base_gloss": "Where is the bank?",
@@ -135,12 +142,13 @@
       "teaches": [
         "asking-where-something-is-hol-van",
         "near-and-far-kozel-messze-with-van"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-131-practice-1",
       "type": "multiple-choice",
-      "category": "practice",
+      "category": "grammar",
       "question": "Which word means 'where' (asking about a location)?",
       "options": [
         "hol",
@@ -151,23 +159,25 @@
       "teaches": [
         "asking-where-something-is-hol-van",
         "near-and-far-kozel-messze-with-van"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-131-practice-2",
       "type": "fill-blank",
-      "category": "practice",
+      "category": "grammar",
       "sentence": "Az állomásra ____.",
       "answer": "megyünk",
       "teaches": [
         "asking-where-something-is-hol-van",
         "near-and-far-kozel-messze-with-van"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-131-practice-3",
       "type": "matching",
-      "category": "practice",
+      "category": "vocabulary",
       "pairs": [
         [
           "város",
@@ -193,12 +203,13 @@
       "teaches": [
         "asking-where-something-is-hol-van",
         "near-and-far-kozel-messze-with-van"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-131-practice-4",
       "type": "substitution",
-      "category": "practice",
+      "category": "grammar",
       "base_sentence": "Hová megyünk?",
       "base_word": "Hová",
       "base_gloss": "Where are we going?",
@@ -219,12 +230,13 @@
       "teaches": [
         "asking-where-something-is-hol-van",
         "near-and-far-kozel-messze-with-van"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-131-practice-5",
       "type": "dialogue-complete",
-      "category": "practice",
+      "category": "dialogue",
       "prompt": [
         {
           "speaker": "Meg",
@@ -243,7 +255,8 @@
       "teaches": [
         "asking-where-something-is-hol-van",
         "near-and-far-kozel-messze-with-van"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-131-dialogue-1",
@@ -326,7 +339,7 @@
     {
       "id": "a1-131-check-1",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "grammar",
       "question": "Choose the correct word for 'city'.",
       "options": [
         "város",
@@ -337,12 +350,13 @@
       "teaches": [
         "asking-where-something-is-hol-van",
         "near-and-far-kozel-messze-with-van"
-      ]
+      ],
+      "stage": "check"
     },
     {
       "id": "a1-131-check-2",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "grammar",
       "question": "Choose the correct word for 'square'.",
       "options": [
         "tér",
@@ -353,7 +367,8 @@
       "teaches": [
         "asking-where-something-is-hol-van",
         "near-and-far-kozel-messze-with-van"
-      ]
+      ],
+      "stage": "check"
     }
   ]
 }

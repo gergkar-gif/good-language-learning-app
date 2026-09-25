@@ -4,19 +4,20 @@
     {
       "id": "a1-114-review-1",
       "type": "multiple-choice",
-      "category": "review",
+      "category": "vocabulary",
       "question": "Which word means 'milk'?",
       "options": [
         "tej",
         "pincér",
         "étlap"
       ],
-      "correct": 0
+      "correct": 0,
+      "stage": "review"
     },
     {
       "id": "a1-114-review-2",
       "type": "matching",
-      "category": "review",
+      "category": "vocabulary",
       "pairs": [
         [
           "tej",
@@ -34,12 +35,13 @@
           "asztal",
           "table"
         ]
-      ]
+      ],
+      "stage": "review"
     },
     {
       "id": "a1-114-intro-1",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "grammar",
       "question": "Which word means 'bill'?",
       "options": [
         "számla",
@@ -50,34 +52,37 @@
       "teaches": [
         "ker-vs-kerek",
         "hozom-i-ll-bring-it"
-      ]
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a1-114-intro-2",
       "type": "fill-blank",
-      "category": "introduce",
+      "category": "grammar",
       "sentence": "____ kenyeret. (I'd like)",
       "answer": "Kérek",
       "teaches": [
         "ker-vs-kerek",
         "hozom-i-ll-bring-it"
-      ]
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a1-114-controlled-1",
       "type": "fill-blank",
-      "category": "controlled",
+      "category": "grammar",
       "sentence": "Mit ____? (would he/she like)",
       "answer": "kér",
       "teaches": [
         "ker-vs-kerek",
         "hozom-i-ll-bring-it"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-114-controlled-2",
       "type": "multiple-choice",
-      "category": "controlled",
+      "category": "grammar",
       "question": "What does 'kér' mean?",
       "options": [
         "ask",
@@ -88,12 +93,13 @@
       "teaches": [
         "ker-vs-kerek",
         "hozom-i-ll-bring-it"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-114-controlled-3",
       "type": "matching",
-      "category": "controlled",
+      "category": "vocabulary",
       "pairs": [
         [
           "számla",
@@ -115,12 +121,13 @@
       "teaches": [
         "ker-vs-kerek",
         "hozom-i-ll-bring-it"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-114-controlled-4",
       "type": "substitution",
-      "category": "controlled",
+      "category": "grammar",
       "base_sentence": "Kérek egy számlát.",
       "base_word": "számlát",
       "base_gloss": "I'd like the bill.",
@@ -141,12 +148,13 @@
       "teaches": [
         "ker-vs-kerek",
         "hozom-i-ll-bring-it"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-114-practice-1",
       "type": "multiple-choice",
-      "category": "practice",
+      "category": "grammar",
       "question": "Which word means 'bring'?",
       "options": [
         "hoz",
@@ -157,23 +165,25 @@
       "teaches": [
         "ker-vs-kerek",
         "hozom-i-ll-bring-it"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-114-practice-2",
       "type": "fill-blank",
-      "category": "practice",
+      "category": "grammar",
       "sentence": "Kérik a ____? (the bill)",
       "answer": "számlát",
       "teaches": [
         "ker-vs-kerek",
         "hozom-i-ll-bring-it"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-114-practice-3",
       "type": "matching",
-      "category": "practice",
+      "category": "vocabulary",
       "pairs": [
         [
           "Mit kér?",
@@ -195,12 +205,13 @@
       "teaches": [
         "ker-vs-kerek",
         "hozom-i-ll-bring-it"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-114-practice-4",
       "type": "substitution",
-      "category": "practice",
+      "category": "grammar",
       "base_sentence": "Hozom a kávét.",
       "base_word": "kávét",
       "base_gloss": "I'll bring the coffee.",
@@ -221,12 +232,13 @@
       "teaches": [
         "ker-vs-kerek",
         "hozom-i-ll-bring-it"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-114-practice-5",
       "type": "dialogue-complete",
-      "category": "practice",
+      "category": "dialogue",
       "prompt": [
         {
           "speaker": "Pincér",
@@ -245,7 +257,8 @@
       "teaches": [
         "ker-vs-kerek",
         "hozom-i-ll-bring-it"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-114-dialogue-1",
@@ -289,7 +302,7 @@
     {
       "id": "a1-114-writing-1",
       "type": "structured-writing",
-      "category": "production",
+      "category": "writing",
       "template": [
         {
           "prompt": "Write a sentence using this word: kér",
@@ -299,12 +312,13 @@
       "teaches": [
         "ker-vs-kerek",
         "hozom-i-ll-bring-it"
-      ]
+      ],
+      "stage": "production"
     },
     {
       "id": "a1-114-writing-2",
       "type": "structured-writing",
-      "category": "production",
+      "category": "writing",
       "template": [
         {
           "prompt": "Write a sentence using this word: hoz",
@@ -314,12 +328,13 @@
       "teaches": [
         "ker-vs-kerek",
         "hozom-i-ll-bring-it"
-      ]
+      ],
+      "stage": "production"
     },
     {
       "id": "a1-114-check-1",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "grammar",
       "question": "Which word means 'would like'?",
       "options": [
         "szeretne",
@@ -330,18 +345,20 @@
       "teaches": [
         "ker-vs-kerek",
         "hozom-i-ll-bring-it"
-      ]
+      ],
+      "stage": "check"
     },
     {
       "id": "a1-114-check-2",
       "type": "fill-blank",
-      "category": "check",
+      "category": "grammar",
       "sentence": "____ a kávét. (I'll bring)",
       "answer": "Hozom",
       "teaches": [
         "ker-vs-kerek",
         "hozom-i-ll-bring-it"
-      ]
+      ],
+      "stage": "check"
     }
   ]
 }

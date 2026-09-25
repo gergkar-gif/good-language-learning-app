@@ -4,19 +4,20 @@
     {
       "id": "a1-109-review-1",
       "type": "multiple-choice",
-      "category": "review",
+      "category": "vocabulary",
       "question": "Which word means 'sour cream'?",
       "options": [
         "tejföl",
         "vaj",
         "csirke"
       ],
-      "correct": 0
+      "correct": 0,
+      "stage": "review"
     },
     {
       "id": "a1-109-review-2",
       "type": "matching",
-      "category": "review",
+      "category": "vocabulary",
       "pairs": [
         [
           "tejföl",
@@ -34,12 +35,13 @@
           "kolbász",
           "sausage"
         ]
-      ]
+      ],
+      "stage": "review"
     },
     {
       "id": "a1-109-intro-1",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "grammar",
       "question": "Which word means 'bottle/jar'?",
       "options": [
         "üveg",
@@ -50,34 +52,37 @@
       "teaches": [
         "fel-half-of-a-unit",
         "csomag-packets-and-containers"
-      ]
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a1-109-intro-2",
       "type": "fill-blank",
-      "category": "introduce",
+      "category": "grammar",
       "sentence": "Kérek egy ____ tejfölt.",
       "answer": "üveg",
       "teaches": [
         "fel-half-of-a-unit",
         "csomag-packets-and-containers"
-      ]
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a1-109-controlled-1",
       "type": "fill-blank",
-      "category": "controlled",
+      "category": "grammar",
       "sentence": "Kérek ____ kiló paradicsomot.",
       "answer": "fél",
       "teaches": [
         "fel-half-of-a-unit",
         "csomag-packets-and-containers"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-109-controlled-2",
       "type": "multiple-choice",
-      "category": "controlled",
+      "category": "grammar",
       "question": "What does 'csomag' mean?",
       "options": [
         "packet",
@@ -88,12 +93,13 @@
       "teaches": [
         "fel-half-of-a-unit",
         "csomag-packets-and-containers"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-109-controlled-3",
       "type": "matching",
-      "category": "controlled",
+      "category": "vocabulary",
       "pairs": [
         [
           "üveg",
@@ -115,12 +121,13 @@
       "teaches": [
         "fel-half-of-a-unit",
         "csomag-packets-and-containers"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-109-controlled-4",
       "type": "substitution",
-      "category": "controlled",
+      "category": "grammar",
       "base_sentence": "Kérek egy üveg tejfölt.",
       "base_word": "tejfölt",
       "base_gloss": "I'd like a bottle of sour cream.",
@@ -141,12 +148,13 @@
       "teaches": [
         "fel-half-of-a-unit",
         "csomag-packets-and-containers"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-109-practice-1",
       "type": "multiple-choice",
-      "category": "practice",
+      "category": "grammar",
       "question": "Which word means 'kilo'?",
       "options": [
         "kiló",
@@ -157,23 +165,25 @@
       "teaches": [
         "fel-half-of-a-unit",
         "csomag-packets-and-containers"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-109-practice-2",
       "type": "fill-blank",
-      "category": "practice",
+      "category": "grammar",
       "sentence": "Kérek egy ____ vajat.",
       "answer": "csomag",
       "teaches": [
         "fel-half-of-a-unit",
         "csomag-packets-and-containers"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-109-practice-3",
       "type": "matching",
-      "category": "practice",
+      "category": "vocabulary",
       "pairs": [
         [
           "Kérek fél kiló paradicsomot.",
@@ -195,12 +205,13 @@
       "teaches": [
         "fel-half-of-a-unit",
         "csomag-packets-and-containers"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-109-practice-4",
       "type": "substitution",
-      "category": "practice",
+      "category": "grammar",
       "base_sentence": "Kérek fél kiló paradicsomot.",
       "base_word": "paradicsomot",
       "base_gloss": "I'd like half a kilo of tomatoes.",
@@ -221,12 +232,13 @@
       "teaches": [
         "fel-half-of-a-unit",
         "csomag-packets-and-containers"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-109-practice-5",
       "type": "dialogue-complete",
-      "category": "practice",
+      "category": "dialogue",
       "prompt": [
         {
           "speaker": "Meg",
@@ -245,7 +257,8 @@
       "teaches": [
         "fel-half-of-a-unit",
         "csomag-packets-and-containers"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-109-dialogue-1",
@@ -289,7 +302,7 @@
     {
       "id": "a1-109-writing-1",
       "type": "structured-writing",
-      "category": "production",
+      "category": "writing",
       "template": [
         {
           "prompt": "Write a sentence using this word: üveg",
@@ -299,12 +312,13 @@
       "teaches": [
         "fel-half-of-a-unit",
         "csomag-packets-and-containers"
-      ]
+      ],
+      "stage": "production"
     },
     {
       "id": "a1-109-writing-2",
       "type": "structured-writing",
-      "category": "production",
+      "category": "writing",
       "template": [
         {
           "prompt": "Write a sentence using this word: csomag",
@@ -314,12 +328,13 @@
       "teaches": [
         "fel-half-of-a-unit",
         "csomag-packets-and-containers"
-      ]
+      ],
+      "stage": "production"
     },
     {
       "id": "a1-109-check-1",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "grammar",
       "question": "Which word means 'half'?",
       "options": [
         "fél",
@@ -330,18 +345,20 @@
       "teaches": [
         "fel-half-of-a-unit",
         "csomag-packets-and-containers"
-      ]
+      ],
+      "stage": "check"
     },
     {
       "id": "a1-109-check-2",
       "type": "fill-blank",
-      "category": "check",
+      "category": "grammar",
       "sentence": "Egy ____ három forint.",
       "answer": "kiló",
       "teaches": [
         "fel-half-of-a-unit",
         "csomag-packets-and-containers"
-      ]
+      ],
+      "stage": "check"
     }
   ]
 }

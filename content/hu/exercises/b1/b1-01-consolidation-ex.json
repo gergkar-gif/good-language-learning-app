@@ -4,7 +4,7 @@
     {
       "id": "b1-01-consolidation-1",
       "type": "multiple-choice",
-      "category": "recognize",
+      "category": "grammar",
       "question": "Which word marks the event that happened FIRST, even though it's the first word in the sentence?",
       "options": [
         "mielőtt",
@@ -14,12 +14,13 @@
       "correct": 0,
       "teaches": [
         "mielott-past"
-      ]
+      ],
+      "stage": "recognize"
     },
     {
       "id": "b1-01-consolidation-2",
       "type": "multiple-choice",
-      "category": "recognize",
+      "category": "grammar",
       "question": "Which word marks the event that happened AFTER the other one?",
       "options": [
         "miután",
@@ -29,12 +30,13 @@
       "correct": 0,
       "teaches": [
         "miutan-past"
-      ]
+      ],
+      "stage": "recognize"
     },
     {
       "id": "b1-01-consolidation-3",
       "type": "matching",
-      "category": "recognize",
+      "category": "vocabulary",
       "pairs": [
         [
           "akkoriban",
@@ -56,42 +58,46 @@
       "teaches": [
         "scene-setting-time-words",
         "sequencing-connectors-deepened"
-      ]
+      ],
+      "stage": "recognize"
     },
     {
       "id": "b1-01-consolidation-4",
       "type": "fill-blank",
-      "category": "recall",
+      "category": "grammar",
       "sentence": "____ megérkeztünk, elmentünk sétálni. (After)",
       "answer": "Miután",
       "teaches": [
         "miutan-past"
-      ]
+      ],
+      "stage": "recall"
     },
     {
       "id": "b1-01-consolidation-5",
       "type": "fill-blank",
-      "category": "recall",
+      "category": "grammar",
       "sentence": "____ elindultunk, ellenőriztük a jegyeket. (Before)",
       "answer": "Mielőtt",
       "teaches": [
         "mielott-past"
-      ]
+      ],
+      "stage": "recall"
     },
     {
       "id": "b1-01-consolidation-6",
       "type": "fill-blank",
-      "category": "recall",
+      "category": "grammar",
       "sentence": "Az ____ az volt, hogy mindenki elkésett. (result)",
       "answer": "eredmény",
       "teaches": [
         "narrative-result-connectors"
-      ]
+      ],
+      "stage": "recall"
     },
     {
       "id": "b1-01-consolidation-7",
       "type": "sentence-builder",
-      "category": "in-context",
+      "category": "grammar",
       "tiles": [
         "Miután",
         "végzett",
@@ -125,12 +131,13 @@
       "english": "After he finished work, before he went home, he still popped into the shop.",
       "teaches": [
         "miutan-mielott-combined"
-      ]
+      ],
+      "stage": "in-context"
     },
     {
       "id": "b1-01-consolidation-8",
       "type": "sentence-order",
-      "category": "in-context",
+      "category": "grammar",
       "sentences": [
         "Akkoriban egy kis faluban laktunk.",
         "Miután elköltöztünk, minden megváltozott.",
@@ -145,12 +152,13 @@
       ],
       "teaches": [
         "narrative-synthesis"
-      ]
+      ],
+      "stage": "in-context"
     },
     {
       "id": "b1-01-consolidation-9",
       "type": "dialogue-complete",
-      "category": "in-context",
+      "category": "dialogue",
       "prompt": [
         {
           "speaker": "Petra",
@@ -168,12 +176,13 @@
       "correct": 0,
       "teaches": [
         "mielott-past"
-      ]
+      ],
+      "stage": "in-context"
     },
     {
       "id": "b1-01-consolidation-10",
       "type": "structured-writing",
-      "category": "produce",
+      "category": "writing",
       "template": [
         {
           "prompt": "Set the scene: say that back then you lived in a small village.",
@@ -194,12 +203,13 @@
       ],
       "teaches": [
         "narrative-synthesis"
-      ]
+      ],
+      "stage": "produce"
     },
     {
       "id": "b1-01-consolidation-11",
       "type": "structured-writing",
-      "category": "produce",
+      "category": "writing",
       "template": [
         {
           "prompt": "Say that you still vividly remember one detail.",
@@ -208,12 +218,13 @@
       ],
       "teaches": [
         "narrative-synthesis"
-      ]
+      ],
+      "stage": "produce"
     },
     {
       "id": "b1-01-consolidation-12",
       "type": "structured-writing",
-      "category": "produce",
+      "category": "writing",
       "template": [
         {
           "prompt": "Say that this wasn't a failure, just a lesson.",
@@ -222,7 +233,8 @@
       ],
       "teaches": [
         "multi-clause-narrative"
-      ]
+      ],
+      "stage": "produce"
     }
   ]
 }

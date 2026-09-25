@@ -4,123 +4,242 @@
     {
       "id": "a2-102-intro-1",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "vocabulary",
       "question": "Which means \"office\"?",
-      "options": ["iroda", "bolt", "kórház"],
+      "options": [
+        "iroda",
+        "bolt",
+        "kórház"
+      ],
       "correct": 0,
-      "teaches": ["munkahely-vocab"]
+      "teaches": [
+        "munkahely-vocab"
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a2-102-intro-2",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "vocabulary",
       "question": "Which means \"factory\"?",
-      "options": ["gyár", "cég", "üzletember"],
+      "options": [
+        "gyár",
+        "cég",
+        "üzletember"
+      ],
       "correct": 0,
-      "teaches": ["munkahely-vocab"]
+      "teaches": [
+        "munkahely-vocab"
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a2-102-controlled-1",
       "type": "matching",
-      "category": "controlled",
+      "category": "vocabulary",
       "pairs": [
-        ["iroda", "office"],
-        ["bolt", "shop, store"],
-        ["kórház", "hospital"],
-        ["gyár", "factory"]
+        [
+          "iroda",
+          "office"
+        ],
+        [
+          "bolt",
+          "shop, store"
+        ],
+        [
+          "kórház",
+          "hospital"
+        ],
+        [
+          "gyár",
+          "factory"
+        ]
       ],
-      "teaches": ["munkahely-vocab"]
+      "teaches": [
+        "munkahely-vocab"
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a2-102-controlled-2",
       "type": "matching",
-      "category": "controlled",
+      "category": "vocabulary",
       "pairs": [
-        ["cég", "company, firm"],
-        ["üzletember", "businessperson"],
-        ["iroda", "office"],
-        ["kórház", "hospital"]
+        [
+          "cég",
+          "company, firm"
+        ],
+        [
+          "üzletember",
+          "businessperson"
+        ],
+        [
+          "iroda",
+          "office"
+        ],
+        [
+          "kórház",
+          "hospital"
+        ]
       ],
-      "teaches": ["munkahely-vocab"]
+      "teaches": [
+        "munkahely-vocab"
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a2-102-controlled-3",
       "type": "fill-blank",
-      "category": "controlled",
+      "category": "grammar",
       "sentence": "Zsófia orvos, ezért egy ____ dolgozik. (hospital)",
       "answer": "kórházban",
-      "teaches": ["hol-dolgozol"]
+      "teaches": [
+        "hol-dolgozol"
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a2-102-controlled-4",
       "type": "fill-blank",
-      "category": "controlled",
+      "category": "grammar",
       "sentence": "Anna eladó, ezért egy ____ dolgozik. (shop)",
       "answer": "boltban",
-      "teaches": ["hol-dolgozol"]
+      "teaches": [
+        "hol-dolgozol"
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a2-102-practice-1",
       "type": "multiple-choice",
-      "category": "practice",
+      "category": "grammar",
       "question": "Which case do most workplace nouns take after dolgozik?",
-      "options": ["-ban/-ben", "-ra/-re", "-tól/-től"],
+      "options": [
+        "-ban/-ben",
+        "-ra/-re",
+        "-tól/-től"
+      ],
       "correct": 0,
-      "teaches": ["hol-dolgozol"]
+      "teaches": [
+        "hol-dolgozol"
+      ],
+      "stage": "practice"
     },
     {
       "id": "a2-102-practice-2",
       "type": "matching",
-      "category": "practice",
+      "category": "vocabulary",
       "pairs": [
-        ["Hol dolgozol?", "Where do you work?"],
-        ["Egy irodában dolgozom.", "I work in an office."],
-        ["Kinél dolgozol?", "Who do you work for?"],
-        ["Egy cégnél dolgozom.", "I work for a company."]
+        [
+          "Hol dolgozol?",
+          "Where do you work?"
+        ],
+        [
+          "Egy irodában dolgozom.",
+          "I work in an office."
+        ],
+        [
+          "Kinél dolgozol?",
+          "Who do you work for?"
+        ],
+        [
+          "Egy cégnél dolgozom.",
+          "I work for a company."
+        ]
       ],
-      "teaches": ["hol-dolgozol", "kinel-dolgozol"]
+      "teaches": [
+        "hol-dolgozol",
+        "kinel-dolgozol"
+      ],
+      "stage": "practice"
     },
     {
       "id": "a2-102-practice-3",
       "type": "sentence-builder",
-      "category": "practice",
-      "tiles": ["Egy", "irodában", "dolgozom", "."],
-      "solution": ["Egy", "irodában", "dolgozom", "."],
+      "category": "grammar",
+      "tiles": [
+        "Egy",
+        "irodában",
+        "dolgozom",
+        "."
+      ],
+      "solution": [
+        "Egy",
+        "irodában",
+        "dolgozom",
+        "."
+      ],
       "english": "I work in an office.",
-      "teaches": ["hol-dolgozol"]
+      "teaches": [
+        "hol-dolgozol"
+      ],
+      "stage": "practice"
     },
     {
       "id": "a2-102-practice-4",
       "type": "sentence-builder",
-      "category": "practice",
-      "tiles": ["Kinél", "dolgozol", "?"],
-      "solution": ["Kinél", "dolgozol", "?"],
+      "category": "grammar",
+      "tiles": [
+        "Kinél",
+        "dolgozol",
+        "?"
+      ],
+      "solution": [
+        "Kinél",
+        "dolgozol",
+        "?"
+      ],
       "english": "Who do you work for?",
-      "teaches": ["kinel-dolgozol"]
+      "teaches": [
+        "kinel-dolgozol"
+      ],
+      "stage": "practice"
     },
     {
       "id": "a2-102-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
       "prompt": [
-        { "speaker": "Petra", "text": "Hol dolgozol?" },
-        { "speaker": "Meg", "text": "_____" }
+        {
+          "speaker": "Petra",
+          "text": "Hol dolgozol?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
       ],
-      "options": ["Egy iskolában dolgozom.", "Reggel nyolckor kezdek dolgozni."],
+      "options": [
+        "Egy iskolában dolgozom.",
+        "Reggel nyolckor kezdek dolgozni."
+      ],
       "correct": 0,
-      "teaches": ["hol-dolgozol"]
+      "teaches": [
+        "hol-dolgozol"
+      ]
     },
     {
       "id": "a2-102-dialogue-2",
       "type": "dialogue-complete",
       "category": "dialogue",
       "prompt": [
-        { "speaker": "Meg", "text": "Kinél dolgozol?" },
-        { "speaker": "Károly", "text": "_____" }
+        {
+          "speaker": "Meg",
+          "text": "Kinél dolgozol?"
+        },
+        {
+          "speaker": "Károly",
+          "text": "_____"
+        }
       ],
-      "options": ["Egy nagy cégnél dolgozom.", "Reggel nyolckor kezdek dolgozni."],
+      "options": [
+        "Egy nagy cégnél dolgozom.",
+        "Reggel nyolckor kezdek dolgozni."
+      ],
       "correct": 0,
-      "teaches": ["kinel-dolgozol"]
+      "teaches": [
+        "kinel-dolgozol"
+      ]
     },
     {
       "id": "a2-102-writing-1",
@@ -132,7 +251,9 @@
           "answer": "Egy irodában dolgozom."
         }
       ],
-      "teaches": ["hol-dolgozol"]
+      "teaches": [
+        "hol-dolgozol"
+      ]
     },
     {
       "id": "a2-102-writing-2",
@@ -144,25 +265,41 @@
           "answer": "Egy nagy cégnél dolgozom."
         }
       ],
-      "teaches": ["kinel-dolgozol"]
+      "teaches": [
+        "kinel-dolgozol"
+      ]
     },
     {
       "id": "a2-102-check-1",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "grammar",
       "question": "Which suffix names your employer, not the physical place you work?",
-      "options": ["-nál/-nél", "-ban/-ben", "-ra/-re"],
+      "options": [
+        "-nál/-nél",
+        "-ban/-ben",
+        "-ra/-re"
+      ],
       "correct": 0,
-      "teaches": ["kinel-dolgozol"]
+      "teaches": [
+        "kinel-dolgozol"
+      ],
+      "stage": "check"
     },
     {
       "id": "a2-102-check-2",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "vocabulary",
       "question": "Which means \"hospital\"?",
-      "options": ["kórház", "gyár", "cég"],
+      "options": [
+        "kórház",
+        "gyár",
+        "cég"
+      ],
       "correct": 0,
-      "teaches": ["munkahely-vocab"]
+      "teaches": [
+        "munkahely-vocab"
+      ],
+      "stage": "check"
     }
   ]
 }

@@ -41,7 +41,15 @@
       },
       "category": {
         "type": "string",
-        "description": "What the exercise is testing. Informational; the lesson decides placement. Hungarian's 25-step lesson shape uses its own stage names (review, introduce, controlled, practice, dialogue, writing/production, check, consolidation) rather than Spanish's part-based categories, so this is deliberately not a closed enum."
+        "enum": [
+          "vocabulary",
+          "grammar",
+          "reading",
+          "dialogue",
+          "writing",
+          "listening"
+        ],
+        "description": "What the exercise is testing. Restricted to the six shared values across all courses. For Hungarian lesson stages or content domains, use the optional stage field."
       },
       "teaches": {
         "type": "array",
@@ -60,6 +68,37 @@
             "cafe-food-drinks"
           ]
         ]
+      },
+      "stage": {
+        "type": "string",
+        "enum": [
+          "introduce",
+          "controlled",
+          "practice",
+          "check",
+          "consolidation",
+          "review",
+          "recognize",
+          "recall",
+          "produce",
+          "production",
+          "context",
+          "in-context",
+          "dialogue",
+          "writing",
+          "reading",
+          "listening",
+          "vocabulary",
+          "grammar",
+          "civics",
+          "citizenship",
+          "history",
+          "literature",
+          "law",
+          "culture",
+          "geography"
+        ],
+        "description": "Optional Hungarian lesson-stage or content-domain label (e.g. controlled, practice, introduce, check, consolidation, review, civics, citizenship, history, literature)."
       }
     },
     "exercise": {
@@ -115,6 +154,9 @@
         "category": {
           "$ref": "#/definitions/baseFields/category"
         },
+        "stage": {
+          "$ref": "#/definitions/baseFields/stage"
+        },
         "type": {
           "const": "matching"
         },
@@ -155,6 +197,9 @@
         "category": {
           "$ref": "#/definitions/baseFields/category"
         },
+        "stage": {
+          "$ref": "#/definitions/baseFields/stage"
+        },
         "type": {
           "const": "multiple-choice"
         },
@@ -172,8 +217,18 @@
         },
         "correct": {
           "oneOf": [
-            { "type": "integer", "minimum": 0 },
-            { "type": "array", "minItems": 2, "items": { "type": "integer", "minimum": 0 } }
+            {
+              "type": "integer",
+              "minimum": 0
+            },
+            {
+              "type": "array",
+              "minItems": 2,
+              "items": {
+                "type": "integer",
+                "minimum": 0
+              }
+            }
           ],
           "description": "Zero-based index into options, or (rarely) an array of indexes when more than one option is a genuinely correct answer. Options render in the order given, so this must point at the right one(s)."
         },
@@ -198,6 +253,9 @@
         "category": {
           "$ref": "#/definitions/baseFields/category"
         },
+        "stage": {
+          "$ref": "#/definitions/baseFields/stage"
+        },
         "type": {
           "const": "fill-blank"
         },
@@ -217,7 +275,10 @@
         "answers": {
           "type": "array",
           "minItems": 1,
-          "items": { "type": "string", "minLength": 1 },
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
           "description": "Multiple equally-valid answers, e.g. either 'Igen' or 'Nem' correctly completing a yes/no blank."
         },
         "teaches": {
@@ -225,8 +286,16 @@
         }
       },
       "oneOf": [
-        { "required": ["answer"] },
-        { "required": ["answers"] }
+        {
+          "required": [
+            "answer"
+          ]
+        },
+        {
+          "required": [
+            "answers"
+          ]
+        }
       ]
     },
     "sentenceBuilder": {
@@ -244,6 +313,9 @@
         },
         "category": {
           "$ref": "#/definitions/baseFields/category"
+        },
+        "stage": {
+          "$ref": "#/definitions/baseFields/stage"
         },
         "type": {
           "const": "sentence-builder"
@@ -272,7 +344,10 @@
           "items": {
             "type": "array",
             "minItems": 3,
-            "items": { "type": "string", "minLength": 1 }
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
           },
           "description": "Every acceptable tile order, each containing exactly the same strings as tiles. The first is shown on reveal as the canonical answer."
         },
@@ -286,8 +361,16 @@
         }
       },
       "oneOf": [
-        { "required": ["solution"] },
-        { "required": ["solutions"] }
+        {
+          "required": [
+            "solution"
+          ]
+        },
+        {
+          "required": [
+            "solutions"
+          ]
+        }
       ]
     },
     "sentenceOrder": {
@@ -306,6 +389,9 @@
         },
         "category": {
           "$ref": "#/definitions/baseFields/category"
+        },
+        "stage": {
+          "$ref": "#/definitions/baseFields/stage"
         },
         "type": {
           "const": "sentence-order"
@@ -351,6 +437,9 @@
         "category": {
           "$ref": "#/definitions/baseFields/category"
         },
+        "stage": {
+          "$ref": "#/definitions/baseFields/stage"
+        },
         "type": {
           "const": "dialogue-complete"
         },
@@ -392,8 +481,18 @@
         },
         "correct": {
           "oneOf": [
-            { "type": "integer", "minimum": 0 },
-            { "type": "array", "minItems": 2, "items": { "type": "integer", "minimum": 0 } }
+            {
+              "type": "integer",
+              "minimum": 0
+            },
+            {
+              "type": "array",
+              "minItems": 2,
+              "items": {
+                "type": "integer",
+                "minimum": 0
+              }
+            }
           ],
           "description": "Zero-based index into options, or (rarely) an array of indexes when more than one reply is a genuinely natural answer."
         },
@@ -419,6 +518,9 @@
         },
         "category": {
           "$ref": "#/definitions/baseFields/category"
+        },
+        "stage": {
+          "$ref": "#/definitions/baseFields/stage"
         },
         "type": {
           "const": "substitution"
@@ -532,6 +634,9 @@
         "category": {
           "$ref": "#/definitions/baseFields/category"
         },
+        "stage": {
+          "$ref": "#/definitions/baseFields/stage"
+        },
         "type": {
           "const": "error-correction"
         },
@@ -577,6 +682,9 @@
         "category": {
           "$ref": "#/definitions/baseFields/category"
         },
+        "stage": {
+          "$ref": "#/definitions/baseFields/stage"
+        },
         "type": {
           "const": "structured-writing"
         },
@@ -613,11 +721,24 @@
             ]
           ]
         },
-        "prompt": { "type": "string" },
-        "scenario": { "type": "string" },
-        "cues": { "type": "array", "items": { "type": "string" } },
-        "minWords": { "type": "integer" },
-        "model": { "type": "string" },
+        "prompt": {
+          "type": "string"
+        },
+        "scenario": {
+          "type": "string"
+        },
+        "cues": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "minWords": {
+          "type": "integer"
+        },
+        "model": {
+          "type": "string"
+        },
         "teaches": {
           "$ref": "#/definitions/baseFields/teaches"
         }
@@ -640,6 +761,9 @@
         },
         "category": {
           "$ref": "#/definitions/baseFields/category"
+        },
+        "stage": {
+          "$ref": "#/definitions/baseFields/stage"
         },
         "type": {
           "const": "listening-choice"
@@ -686,6 +810,9 @@
         },
         "category": {
           "$ref": "#/definitions/baseFields/category"
+        },
+        "stage": {
+          "$ref": "#/definitions/baseFields/stage"
         },
         "type": {
           "const": "dictation"

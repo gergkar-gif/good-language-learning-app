@@ -4,123 +4,253 @@
     {
       "id": "a2-58-intro-1",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "vocabulary",
       "question": "Which means \"novel\"?",
-      "options": ["regény", "történet", "fejezet"],
+      "options": [
+        "regény",
+        "történet",
+        "fejezet"
+      ],
       "correct": 0,
-      "teaches": ["books-vocab"]
+      "teaches": [
+        "books-vocab"
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a2-58-intro-2",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "vocabulary",
       "question": "Which means \"author\"?",
-      "options": ["szerző", "olvasó", "fejezet"],
+      "options": [
+        "szerző",
+        "olvasó",
+        "fejezet"
+      ],
       "correct": 0,
-      "teaches": ["books-vocab"]
+      "teaches": [
+        "books-vocab"
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a2-58-controlled-1",
       "type": "matching",
-      "category": "controlled",
+      "category": "vocabulary",
       "pairs": [
-        ["regény", "novel"],
-        ["szerző", "author"],
-        ["történet", "story"],
-        ["kölcsönöz", "to borrow, to lend"]
+        [
+          "regény",
+          "novel"
+        ],
+        [
+          "szerző",
+          "author"
+        ],
+        [
+          "történet",
+          "story"
+        ],
+        [
+          "kölcsönöz",
+          "to borrow, to lend"
+        ]
       ],
-      "teaches": ["books-vocab"]
+      "teaches": [
+        "books-vocab"
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a2-58-controlled-2",
       "type": "matching",
-      "category": "controlled",
+      "category": "vocabulary",
       "pairs": [
-        ["ami", "which/that (subject)"],
-        ["amit", "which/that (object)"],
-        ["Ez az a könyv, amit olvasok.", "This is the book that I'm reading."],
-        ["A regény, ami az asztalon van", "The novel that's on the table"]
+        [
+          "ami",
+          "which/that (subject)"
+        ],
+        [
+          "amit",
+          "which/that (object)"
+        ],
+        [
+          "Ez az a könyv, amit olvasok.",
+          "This is the book that I'm reading."
+        ],
+        [
+          "A regény, ami az asztalon van",
+          "The novel that's on the table"
+        ]
       ],
-      "teaches": ["ami-clause"]
+      "teaches": [
+        "ami-clause"
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a2-58-controlled-3",
       "type": "fill-blank",
-      "category": "controlled",
+      "category": "grammar",
       "sentence": "Ez az a könyv, ____ olvasok. (that - object form)",
       "answer": "amit",
-      "teaches": ["ami-clause"]
+      "teaches": [
+        "ami-clause"
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a2-58-controlled-4",
       "type": "fill-blank",
-      "category": "controlled",
+      "category": "grammar",
       "sentence": "____ ez egy jó könyv. (in my opinion)",
       "answer": "Szerintem",
-      "teaches": ["szerintem"]
+      "teaches": [
+        "szerintem"
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a2-58-practice-1",
       "type": "multiple-choice",
-      "category": "practice",
+      "category": "grammar",
       "question": "Which form of ami do you need when it's the OBJECT of its clause?",
-      "options": ["amit", "ami", "amire"],
+      "options": [
+        "amit",
+        "ami",
+        "amire"
+      ],
       "correct": 0,
-      "teaches": ["ami-clause"]
+      "teaches": [
+        "ami-clause"
+      ],
+      "stage": "practice"
     },
     {
       "id": "a2-58-practice-2",
       "type": "matching",
-      "category": "practice",
+      "category": "vocabulary",
       "pairs": [
-        ["szerintem", "in my opinion"],
-        ["szerinted", "in your opinion"],
-        ["szerinte", "in his/her opinion"],
-        ["szerintünk", "in our opinion"]
+        [
+          "szerintem",
+          "in my opinion"
+        ],
+        [
+          "szerinted",
+          "in your opinion"
+        ],
+        [
+          "szerinte",
+          "in his/her opinion"
+        ],
+        [
+          "szerintünk",
+          "in our opinion"
+        ]
       ],
-      "teaches": ["szerintem"]
+      "teaches": [
+        "szerintem"
+      ],
+      "stage": "practice"
     },
     {
       "id": "a2-58-practice-3",
       "type": "sentence-builder",
-      "category": "practice",
-      "tiles": ["Ez", "az", "a", "könyv,", "amit", "olvasok", "."],
-      "solution": ["Ez", "az", "a", "könyv,", "amit", "olvasok", "."],
+      "category": "grammar",
+      "tiles": [
+        "Ez",
+        "az",
+        "a",
+        "könyv,",
+        "amit",
+        "olvasok",
+        "."
+      ],
+      "solution": [
+        "Ez",
+        "az",
+        "a",
+        "könyv,",
+        "amit",
+        "olvasok",
+        "."
+      ],
       "english": "This is the book that I'm reading.",
-      "teaches": ["ami-clause"]
+      "teaches": [
+        "ami-clause"
+      ],
+      "stage": "practice"
     },
     {
       "id": "a2-58-practice-4",
       "type": "sentence-builder",
-      "category": "practice",
-      "tiles": ["Szerintem", "ez", "egy", "jó", "könyv", "."],
-      "solution": ["Szerintem", "ez", "egy", "jó", "könyv", "."],
+      "category": "grammar",
+      "tiles": [
+        "Szerintem",
+        "ez",
+        "egy",
+        "jó",
+        "könyv",
+        "."
+      ],
+      "solution": [
+        "Szerintem",
+        "ez",
+        "egy",
+        "jó",
+        "könyv",
+        "."
+      ],
       "english": "In my opinion, this is a good book.",
-      "teaches": ["szerintem"]
+      "teaches": [
+        "szerintem"
+      ],
+      "stage": "practice"
     },
     {
       "id": "a2-58-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
       "prompt": [
-        { "speaker": "Ildikó", "text": "Melyik a kedvenc könyved?" },
-        { "speaker": "Meg", "text": "_____" }
+        {
+          "speaker": "Ildikó",
+          "text": "Melyik a kedvenc könyved?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
       ],
-      "options": ["Az a regény, amit most olvasok.", "Nincs otthon egy fejezet sem."],
+      "options": [
+        "Az a regény, amit most olvasok.",
+        "Nincs otthon egy fejezet sem."
+      ],
       "correct": 0,
-      "teaches": ["ami-clause"]
+      "teaches": [
+        "ami-clause"
+      ]
     },
     {
       "id": "a2-58-dialogue-2",
       "type": "dialogue-complete",
       "category": "dialogue",
       "prompt": [
-        { "speaker": "Károly", "text": "Szerinted jó ez a történet?" },
-        { "speaker": "Ildikó", "text": "_____" }
+        {
+          "speaker": "Károly",
+          "text": "Szerinted jó ez a történet?"
+        },
+        {
+          "speaker": "Ildikó",
+          "text": "_____"
+        }
       ],
-      "options": ["Szerintem nagyon izgalmas.", "Kölcsönzök egy tollat."],
+      "options": [
+        "Szerintem nagyon izgalmas.",
+        "Kölcsönzök egy tollat."
+      ],
       "correct": 0,
-      "teaches": ["szerintem"]
+      "teaches": [
+        "szerintem"
+      ]
     },
     {
       "id": "a2-58-writing-1",
@@ -132,7 +262,9 @@
           "answer": "Ez az a könyv, amit olvasok."
         }
       ],
-      "teaches": ["ami-clause"]
+      "teaches": [
+        "ami-clause"
+      ]
     },
     {
       "id": "a2-58-writing-2",
@@ -144,25 +276,41 @@
           "answer": "Szerintem ez egy jó regény."
         }
       ],
-      "teaches": ["szerintem"]
+      "teaches": [
+        "szerintem"
+      ]
     },
     {
       "id": "a2-58-check-1",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "vocabulary",
       "question": "Which means \"chapter\"?",
-      "options": ["fejezet", "történet", "regény"],
+      "options": [
+        "fejezet",
+        "történet",
+        "regény"
+      ],
       "correct": 0,
-      "teaches": ["books-vocab"]
+      "teaches": [
+        "books-vocab"
+      ],
+      "stage": "check"
     },
     {
       "id": "a2-58-check-2",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "grammar",
       "question": "Which word means \"which/that\" when a thing is the OBJECT?",
-      "options": ["amit", "ami", "aki"],
+      "options": [
+        "amit",
+        "ami",
+        "aki"
+      ],
       "correct": 0,
-      "teaches": ["ami-clause"]
+      "teaches": [
+        "ami-clause"
+      ],
+      "stage": "check"
     }
   ]
 }

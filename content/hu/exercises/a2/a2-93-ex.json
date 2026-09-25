@@ -4,123 +4,249 @@
     {
       "id": "a2-93-intro-1",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "vocabulary",
       "question": "Which means \"native language, mother tongue\"?",
-      "options": ["anyanyelv", "idegen nyelv", "kiejtés"],
+      "options": [
+        "anyanyelv",
+        "idegen nyelv",
+        "kiejtés"
+      ],
       "correct": 0,
-      "teaches": ["language-vocab"]
+      "teaches": [
+        "language-vocab"
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a2-93-intro-2",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "vocabulary",
       "question": "Which means \"grammar\"?",
-      "options": ["nyelvtan", "szókincs", "kiejtés"],
+      "options": [
+        "nyelvtan",
+        "szókincs",
+        "kiejtés"
+      ],
       "correct": 0,
-      "teaches": ["language-vocab"]
+      "teaches": [
+        "language-vocab"
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a2-93-controlled-1",
       "type": "matching",
-      "category": "controlled",
+      "category": "vocabulary",
       "pairs": [
-        ["nyelv", "language"],
-        ["anyanyelv", "native language, mother tongue"],
-        ["idegen nyelv", "foreign language"],
-        ["kiejtés", "pronunciation"]
+        [
+          "nyelv",
+          "language"
+        ],
+        [
+          "anyanyelv",
+          "native language, mother tongue"
+        ],
+        [
+          "idegen nyelv",
+          "foreign language"
+        ],
+        [
+          "kiejtés",
+          "pronunciation"
+        ]
       ],
-      "teaches": ["language-vocab"]
+      "teaches": [
+        "language-vocab"
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a2-93-controlled-2",
       "type": "matching",
-      "category": "controlled",
+      "category": "vocabulary",
       "pairs": [
-        ["nyelvtan", "grammar"],
-        ["szókincs", "vocabulary"],
-        ["nyelv", "language"],
-        ["kiejtés", "pronunciation"]
+        [
+          "nyelvtan",
+          "grammar"
+        ],
+        [
+          "szókincs",
+          "vocabulary"
+        ],
+        [
+          "nyelv",
+          "language"
+        ],
+        [
+          "kiejtés",
+          "pronunciation"
+        ]
       ],
-      "teaches": ["language-vocab"]
+      "teaches": [
+        "language-vocab"
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a2-93-controlled-3",
       "type": "fill-blank",
-      "category": "controlled",
+      "category": "vocabulary",
       "sentence": "Az angol nem az anyanyelvem, hanem egy ____.",
       "answer": "idegen nyelv",
-      "teaches": ["language-vocab"]
+      "teaches": [
+        "language-vocab"
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a2-93-controlled-4",
       "type": "fill-blank",
-      "category": "controlled",
+      "category": "vocabulary",
       "sentence": "A magyar ____ bonyolult a sok eset miatt.",
       "answer": "nyelvtan",
-      "teaches": ["language-vocab"]
+      "teaches": [
+        "language-vocab"
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a2-93-practice-1",
       "type": "multiple-choice",
-      "category": "practice",
+      "category": "grammar",
       "question": "Which ending turns a language name into \"in that language\"?",
-      "options": ["-ul/-ül", "-ban/-ben", "-val/-vel"],
+      "options": [
+        "-ul/-ül",
+        "-ban/-ben",
+        "-val/-vel"
+      ],
       "correct": 0,
-      "teaches": ["ul-ul-adverb"]
+      "teaches": [
+        "ul-ul-adverb"
+      ],
+      "stage": "practice"
     },
     {
       "id": "a2-93-practice-2",
       "type": "matching",
-      "category": "practice",
+      "category": "vocabulary",
       "pairs": [
-        ["Otthon magyarul beszélünk.", "At home we speak in Hungarian."],
-        ["Hogy mondod ezt angolul?", "How do you say this in English?"],
-        ["Tudok magyarul.", "I know Hungarian."],
-        ["Tudsz franciául?", "Do you know French?"]
+        [
+          "Otthon magyarul beszélünk.",
+          "At home we speak in Hungarian."
+        ],
+        [
+          "Hogy mondod ezt angolul?",
+          "How do you say this in English?"
+        ],
+        [
+          "Tudok magyarul.",
+          "I know Hungarian."
+        ],
+        [
+          "Tudsz franciául?",
+          "Do you know French?"
+        ]
       ],
-      "teaches": ["ul-ul-adverb", "tud-nyelvet"]
+      "teaches": [
+        "ul-ul-adverb",
+        "tud-nyelvet"
+      ],
+      "stage": "practice"
     },
     {
       "id": "a2-93-practice-3",
       "type": "sentence-builder",
-      "category": "practice",
-      "tiles": ["Jól", "tudok", "németül", "."],
-      "solution": ["Jól", "tudok", "németül", "."],
+      "category": "grammar",
+      "tiles": [
+        "Jól",
+        "tudok",
+        "németül",
+        "."
+      ],
+      "solution": [
+        "Jól",
+        "tudok",
+        "németül",
+        "."
+      ],
       "english": "I know German well.",
-      "teaches": ["tud-nyelvet"]
+      "teaches": [
+        "tud-nyelvet"
+      ],
+      "stage": "practice"
     },
     {
       "id": "a2-93-practice-4",
       "type": "sentence-builder",
-      "category": "practice",
-      "tiles": ["Nem", "tudok", "jól", "beszélni", "magyarul", "."],
-      "solution": ["Nem", "tudok", "jól", "beszélni", "magyarul", "."],
+      "category": "grammar",
+      "tiles": [
+        "Nem",
+        "tudok",
+        "jól",
+        "beszélni",
+        "magyarul",
+        "."
+      ],
+      "solution": [
+        "Nem",
+        "tudok",
+        "jól",
+        "beszélni",
+        "magyarul",
+        "."
+      ],
       "english": "I can't speak Hungarian well.",
-      "teaches": ["tud-nyelvet", "ul-ul-adverb"]
+      "teaches": [
+        "tud-nyelvet",
+        "ul-ul-adverb"
+      ],
+      "stage": "practice"
     },
     {
       "id": "a2-93-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
       "prompt": [
-        { "speaker": "Petra", "text": "Milyen nyelveket beszélsz?" },
-        { "speaker": "Meg", "text": "_____" }
+        {
+          "speaker": "Petra",
+          "text": "Milyen nyelveket beszélsz?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
       ],
-      "options": ["Angolul és egy kicsit magyarul.", "Nagyon jó vagyok matematikában."],
+      "options": [
+        "Angolul és egy kicsit magyarul.",
+        "Nagyon jó vagyok matematikában."
+      ],
       "correct": 0,
-      "teaches": ["ul-ul-adverb"]
+      "teaches": [
+        "ul-ul-adverb"
+      ]
     },
     {
       "id": "a2-93-dialogue-2",
       "type": "dialogue-complete",
       "category": "dialogue",
       "prompt": [
-        { "speaker": "Meg", "text": "Tudsz spanyolul?" },
-        { "speaker": "Petra", "text": "_____" }
+        {
+          "speaker": "Meg",
+          "text": "Tudsz spanyolul?"
+        },
+        {
+          "speaker": "Petra",
+          "text": "_____"
+        }
       ],
-      "options": ["Nem, nem tudok spanyolul.", "Igen, minden nap tanulok történelmet."],
+      "options": [
+        "Nem, nem tudok spanyolul.",
+        "Igen, minden nap tanulok történelmet."
+      ],
       "correct": 0,
-      "teaches": ["tud-nyelvet"]
+      "teaches": [
+        "tud-nyelvet"
+      ]
     },
     {
       "id": "a2-93-writing-1",
@@ -132,7 +258,9 @@
           "answer": "Jól tudok magyarul."
         }
       ],
-      "teaches": ["tud-nyelvet"]
+      "teaches": [
+        "tud-nyelvet"
+      ]
     },
     {
       "id": "a2-93-writing-2",
@@ -144,25 +272,41 @@
           "answer": "Hogy mondod ezt németül?"
         }
       ],
-      "teaches": ["ul-ul-adverb"]
+      "teaches": [
+        "ul-ul-adverb"
+      ]
     },
     {
       "id": "a2-93-check-1",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "vocabulary",
       "question": "Which means \"vocabulary\" (the word stock of a language)?",
-      "options": ["szókincs", "nyelvtan", "kiejtés"],
+      "options": [
+        "szókincs",
+        "nyelvtan",
+        "kiejtés"
+      ],
       "correct": 0,
-      "teaches": ["language-vocab"]
+      "teaches": [
+        "language-vocab"
+      ],
+      "stage": "check"
     },
     {
       "id": "a2-93-check-2",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "grammar",
       "question": "Which correctly says \"I know English\"?",
-      "options": ["Tudok angolul.", "Tudok angol.", "Tudok az angolul."],
+      "options": [
+        "Tudok angolul.",
+        "Tudok angol.",
+        "Tudok az angolul."
+      ],
       "correct": 0,
-      "teaches": ["ul-ul-adverb"]
+      "teaches": [
+        "ul-ul-adverb"
+      ],
+      "stage": "check"
     }
   ]
 }

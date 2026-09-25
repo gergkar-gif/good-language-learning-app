@@ -4,53 +4,88 @@
     {
       "id": "a2-20-intro-1",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "grammar",
       "question": "Which means “female colleague”?",
-      "options": ["kolléganő", "barátnő", "szomszéd"],
+      "options": [
+        "kolléganő",
+        "barátnő",
+        "szomszéd"
+      ],
       "correct": 0,
-      "teaches": ["new-people"]
+      "teaches": [
+        "new-people"
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a2-20-intro-2",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "grammar",
       "question": "Which means “to help”?",
-      "options": ["segít", "ismer", "ünnepel"],
+      "options": [
+        "segít",
+        "ismer",
+        "ünnepel"
+      ],
       "correct": 0,
-      "teaches": ["new-people"]
+      "teaches": [
+        "new-people"
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a2-20-controlled-1",
       "type": "matching",
-      "category": "controlled",
+      "category": "vocabulary",
       "pairs": [
-        ["kolléganő", "female colleague"],
-        ["segít", "to help"],
-        ["mindig", "always"],
-        ["aki", "who"]
+        [
+          "kolléganő",
+          "female colleague"
+        ],
+        [
+          "segít",
+          "to help"
+        ],
+        [
+          "mindig",
+          "always"
+        ],
+        [
+          "aki",
+          "who"
+        ]
       ],
-      "teaches": ["new-people"]
+      "teaches": [
+        "new-people"
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a2-20-controlled-2",
       "type": "fill-blank",
-      "category": "controlled",
+      "category": "grammar",
       "sentence": "Petra egy kolléganő, aki mindig ____.",
       "answer": "segít",
-      "teaches": ["new-people"]
+      "teaches": [
+        "new-people"
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a2-20-controlled-3",
       "type": "fill-blank",
-      "category": "controlled",
+      "category": "grammar",
       "sentence": "Tamás olyan szomszéd, ____ barátságos és vicces.",
       "answer": "aki",
-      "teaches": ["describing-someone"]
+      "teaches": [
+        "describing-someone"
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a2-20-controlled-4",
       "type": "multiple-choice",
-      "category": "controlled",
+      "category": "grammar",
       "question": "Which sentence means “Tamás is my neighbor, who is bearded and very patient”?",
       "options": [
         "Tamás a szomszédom, aki szakállas és nagyon türelmes.",
@@ -58,70 +93,179 @@
         "A szomszédom Tamás türelmes."
       ],
       "correct": 0,
-      "teaches": ["describing-someone"]
+      "teaches": [
+        "describing-someone"
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a2-20-practice-1",
       "type": "matching",
-      "category": "practice",
+      "category": "vocabulary",
       "pairs": [
-        ["Petra a kolléganőm", "Petra is my colleague"],
-        ["Tamás a szomszédom", "Tamás is my neighbor"],
-        ["aki mindig segít", "who always helps"],
-        ["aki szakállas és türelmes", "who is bearded and patient"]
+        [
+          "Petra a kolléganőm",
+          "Petra is my colleague"
+        ],
+        [
+          "Tamás a szomszédom",
+          "Tamás is my neighbor"
+        ],
+        [
+          "aki mindig segít",
+          "who always helps"
+        ],
+        [
+          "aki szakállas és türelmes",
+          "who is bearded and patient"
+        ]
       ],
-      "teaches": ["new-people"]
+      "teaches": [
+        "new-people"
+      ],
+      "stage": "practice"
     },
     {
       "id": "a2-20-practice-2",
       "type": "sentence-builder",
-      "category": "practice",
-      "tiles": ["Petra", "egy", "kolléganő", ",", "aki", "mindig", "segít", "."],
-      "solution": ["Petra", "egy", "kolléganő", ",", "aki", "mindig", "segít", "."],
+      "category": "grammar",
+      "tiles": [
+        "Petra",
+        "egy",
+        "kolléganő",
+        ",",
+        "aki",
+        "mindig",
+        "segít",
+        "."
+      ],
+      "solution": [
+        "Petra",
+        "egy",
+        "kolléganő",
+        ",",
+        "aki",
+        "mindig",
+        "segít",
+        "."
+      ],
       "english": "Petra is a colleague who always helps.",
-      "teaches": ["new-people"]
+      "teaches": [
+        "new-people"
+      ],
+      "stage": "practice"
     },
     {
       "id": "a2-20-practice-3",
       "type": "sentence-builder",
-      "category": "practice",
-      "tiles": ["Tamás", "a", "szomszédom", ",", "aki", "szakállas", "és", "nagyon", "türelmes", "."],
-      "solution": ["Tamás", "a", "szomszédom", ",", "aki", "szakállas", "és", "nagyon", "türelmes", "."],
+      "category": "grammar",
+      "tiles": [
+        "Tamás",
+        "a",
+        "szomszédom",
+        ",",
+        "aki",
+        "szakállas",
+        "és",
+        "nagyon",
+        "türelmes",
+        "."
+      ],
+      "solution": [
+        "Tamás",
+        "a",
+        "szomszédom",
+        ",",
+        "aki",
+        "szakállas",
+        "és",
+        "nagyon",
+        "türelmes",
+        "."
+      ],
       "english": "Tamás is my neighbor, who is bearded and very patient.",
-      "teaches": ["describing-someone"]
+      "teaches": [
+        "describing-someone"
+      ],
+      "stage": "practice"
     },
     {
       "id": "a2-20-practice-4",
       "type": "sentence-builder",
-      "category": "practice",
-      "tiles": ["Tamás", "olyan", "szomszéd", ",", "aki", "barátságos", "és", "vicces", "."],
-      "solution": ["Tamás", "olyan", "szomszéd", ",", "aki", "barátságos", "és", "vicces", "."],
+      "category": "grammar",
+      "tiles": [
+        "Tamás",
+        "olyan",
+        "szomszéd",
+        ",",
+        "aki",
+        "barátságos",
+        "és",
+        "vicces",
+        "."
+      ],
+      "solution": [
+        "Tamás",
+        "olyan",
+        "szomszéd",
+        ",",
+        "aki",
+        "barátságos",
+        "és",
+        "vicces",
+        "."
+      ],
       "english": "Tamás is a neighbor who is friendly and funny.",
-      "teaches": ["describing-someone"]
+      "teaches": [
+        "describing-someone"
+      ],
+      "stage": "practice"
     },
     {
       "id": "a2-20-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
       "prompt": [
-        { "speaker": "Károly", "text": "Ki Petra?" },
-        { "speaker": "Meg", "text": "_____" }
+        {
+          "speaker": "Károly",
+          "text": "Ki Petra?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
       ],
-      "options": ["Petra a kolléganőm, aki mindig segít.", "Petra a szomszédom, aki lusta."],
+      "options": [
+        "Petra a kolléganőm, aki mindig segít.",
+        "Petra a szomszédom, aki lusta."
+      ],
       "correct": 0,
-      "teaches": ["new-people"]
+      "teaches": [
+        "new-people"
+      ]
     },
     {
       "id": "a2-20-dialogue-2",
       "type": "dialogue-complete",
       "category": "dialogue",
       "prompt": [
-        { "speaker": "Meg", "text": "Milyen a szomszédod, Tamás?" },
-        { "speaker": "Károly", "text": "_____" }
+        {
+          "speaker": "Meg",
+          "text": "Milyen a szomszédod, Tamás?"
+        },
+        {
+          "speaker": "Károly",
+          "text": "_____"
+        }
       ],
-      "options": ["Barátságos és vicces.", "Kolléganő, aki segít."],
+      "options": [
+        "Barátságos és vicces.",
+        "Kolléganő, aki segít."
+      ],
       "correct": 0,
-      "teaches": ["describing-someone"]
+      "teaches": [
+        "describing-someone"
+      ]
     },
     {
       "id": "a2-20-writing-1",
@@ -133,7 +277,9 @@
           "answer": "Petra egy kolléganő, aki mindig segít."
         }
       ],
-      "teaches": ["new-people"]
+      "teaches": [
+        "new-people"
+      ]
     },
     {
       "id": "a2-20-writing-2",
@@ -145,25 +291,41 @@
           "answer": "Tamás a szomszédom, aki szakállas és nagyon türelmes."
         }
       ],
-      "teaches": ["describing-someone"]
+      "teaches": [
+        "describing-someone"
+      ]
     },
     {
       "id": "a2-20-check-1",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "grammar",
       "question": "Which means “to help”?",
-      "options": ["segít", "ismer", "izgul"],
+      "options": [
+        "segít",
+        "ismer",
+        "izgul"
+      ],
       "correct": 0,
-      "teaches": ["new-people"]
+      "teaches": [
+        "new-people"
+      ],
+      "stage": "check"
     },
     {
       "id": "a2-20-check-2",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "grammar",
       "question": "Which means “female colleague”?",
-      "options": ["kolléganő", "kolléga", "barátnő"],
+      "options": [
+        "kolléganő",
+        "kolléga",
+        "barátnő"
+      ],
       "correct": 0,
-      "teaches": ["new-people"]
+      "teaches": [
+        "new-people"
+      ],
+      "stage": "check"
     }
   ]
 }

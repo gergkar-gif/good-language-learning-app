@@ -4,19 +4,20 @@
     {
       "id": "a1-116-review-1",
       "type": "multiple-choice",
-      "category": "review",
+      "category": "vocabulary",
       "question": "Which word means 'I would like'?",
       "options": [
         "szeretnék",
         "még",
         "finom"
       ],
-      "correct": 0
+      "correct": 0,
+      "stage": "review"
     },
     {
       "id": "a1-116-review-2",
       "type": "matching",
-      "category": "review",
+      "category": "vocabulary",
       "pairs": [
         [
           "szeretnék",
@@ -34,12 +35,13 @@
           "meleg",
           "hot / warm"
         ]
-      ]
+      ],
+      "stage": "review"
     },
     {
       "id": "a1-116-intro-1",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "grammar",
       "question": "Which word means 'restaurant'?",
       "options": [
         "étterem",
@@ -50,34 +52,37 @@
       "teaches": [
         "ordering-a-full-meal",
         "etteremben-in-the-restaurant"
-      ]
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a1-116-intro-2",
       "type": "fill-blank",
-      "category": "introduce",
+      "category": "grammar",
       "sentence": "Én csirkét kérek ____.",
       "answer": "körettel",
       "teaches": [
         "ordering-a-full-meal",
         "etteremben-in-the-restaurant"
-      ]
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a1-116-controlled-1",
       "type": "fill-blank",
-      "category": "controlled",
+      "category": "grammar",
       "sentence": "Szeretnék ____ és salátát.",
       "answer": "levest",
       "teaches": [
         "ordering-a-full-meal",
         "etteremben-in-the-restaurant"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-116-controlled-2",
       "type": "multiple-choice",
-      "category": "controlled",
+      "category": "grammar",
       "question": "What does 'leves' mean?",
       "options": [
         "soup",
@@ -88,12 +93,13 @@
       "teaches": [
         "ordering-a-full-meal",
         "etteremben-in-the-restaurant"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-116-controlled-3",
       "type": "matching",
-      "category": "controlled",
+      "category": "vocabulary",
       "pairs": [
         [
           "étterem",
@@ -115,12 +121,13 @@
       "teaches": [
         "ordering-a-full-meal",
         "etteremben-in-the-restaurant"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-116-controlled-4",
       "type": "substitution",
-      "category": "controlled",
+      "category": "grammar",
       "base_sentence": "Szeretnék levest.",
       "base_word": "levest",
       "base_gloss": "I would like soup.",
@@ -141,12 +148,13 @@
       "teaches": [
         "ordering-a-full-meal",
         "etteremben-in-the-restaurant"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-116-practice-1",
       "type": "multiple-choice",
-      "category": "practice",
+      "category": "grammar",
       "question": "Which word means 'salad'?",
       "options": [
         "saláta",
@@ -157,23 +165,25 @@
       "teaches": [
         "ordering-a-full-meal",
         "etteremben-in-the-restaurant"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-116-practice-2",
       "type": "fill-blank",
-      "category": "practice",
+      "category": "grammar",
       "sentence": "Jó napot kívánok! Itt az ____.",
       "answer": "étlap",
       "teaches": [
         "ordering-a-full-meal",
         "etteremben-in-the-restaurant"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-116-practice-3",
       "type": "matching",
-      "category": "practice",
+      "category": "vocabulary",
       "pairs": [
         [
           "Szeretnék levest és salátát.",
@@ -195,12 +205,13 @@
       "teaches": [
         "ordering-a-full-meal",
         "etteremben-in-the-restaurant"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-116-practice-4",
       "type": "substitution",
-      "category": "practice",
+      "category": "grammar",
       "base_sentence": "Kérek egy köretet.",
       "base_word": "köretet",
       "base_gloss": "I'd like a side dish.",
@@ -221,12 +232,13 @@
       "teaches": [
         "ordering-a-full-meal",
         "etteremben-in-the-restaurant"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-116-practice-5",
       "type": "dialogue-complete",
-      "category": "practice",
+      "category": "dialogue",
       "prompt": [
         {
           "speaker": "Pincér",
@@ -245,7 +257,8 @@
       "teaches": [
         "ordering-a-full-meal",
         "etteremben-in-the-restaurant"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-116-dialogue-1",
@@ -289,7 +302,7 @@
     {
       "id": "a1-116-writing-1",
       "type": "structured-writing",
-      "category": "production",
+      "category": "writing",
       "template": [
         {
           "prompt": "Write a sentence using this word: leves",
@@ -299,12 +312,13 @@
       "teaches": [
         "ordering-a-full-meal",
         "etteremben-in-the-restaurant"
-      ]
+      ],
+      "stage": "production"
     },
     {
       "id": "a1-116-writing-2",
       "type": "structured-writing",
-      "category": "production",
+      "category": "writing",
       "template": [
         {
           "prompt": "Write a sentence using this word: saláta",
@@ -314,12 +328,13 @@
       "teaches": [
         "ordering-a-full-meal",
         "etteremben-in-the-restaurant"
-      ]
+      ],
+      "stage": "production"
     },
     {
       "id": "a1-116-check-1",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "grammar",
       "question": "Which word means 'side dish'?",
       "options": [
         "köret",
@@ -330,18 +345,20 @@
       "teaches": [
         "ordering-a-full-meal",
         "etteremben-in-the-restaurant"
-      ]
+      ],
+      "stage": "check"
     },
     {
       "id": "a1-116-check-2",
       "type": "fill-blank",
-      "category": "check",
+      "category": "grammar",
       "sentence": "Kérek egy ____.",
       "answer": "köretet",
       "teaches": [
         "ordering-a-full-meal",
         "etteremben-in-the-restaurant"
-      ]
+      ],
+      "stage": "check"
     }
   ]
 }

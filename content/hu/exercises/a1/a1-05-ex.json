@@ -4,31 +4,33 @@
     {
       "id": "a1-05-review-1",
       "type": "multiple-choice",
-      "category": "review",
+      "category": "vocabulary",
       "question": "Which asks about a thing?",
       "options": [
         "Ki?",
         "Mi?",
         "Te?"
       ],
-      "correct": 1
+      "correct": 1,
+      "stage": "review"
     },
     {
       "id": "a1-05-review-2",
       "type": "multiple-choice",
-      "category": "review",
+      "category": "grammar",
       "question": "____ Károly vagyok.",
       "options": [
         "Én",
         "Te",
         "Ő"
       ],
-      "correct": 0
+      "correct": 0,
+      "stage": "review"
     },
     {
       "id": "a1-05-intro-1",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "grammar",
       "question": "Which means “This is a tea”?",
       "options": [
         "Ez egy tea.",
@@ -39,12 +41,13 @@
       "teaches": [
         "unit-1-pattern-review",
         "unit-1-negation-review"
-      ]
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a1-05-intro-2",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "grammar",
       "question": "Which means “Are you Meg”?",
       "options": [
         "Te Meg vagy?",
@@ -55,12 +58,13 @@
       "teaches": [
         "unit-1-pattern-review",
         "unit-1-negation-review"
-      ]
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a1-05-controlled-1",
       "type": "multiple-choice",
-      "category": "controlled",
+      "category": "grammar",
       "question": "Én ____.",
       "options": [
         "vagyok",
@@ -71,12 +75,13 @@
       "teaches": [
         "unit-1-pattern-review",
         "unit-1-negation-review"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-05-controlled-2",
       "type": "multiple-choice",
-      "category": "controlled",
+      "category": "grammar",
       "question": "____ ő? (More than one option makes sense — pick either one)",
       "options": [
         "Ki",
@@ -90,12 +95,13 @@
       "teaches": [
         "unit-1-pattern-review",
         "unit-1-negation-review"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-05-controlled-3",
       "type": "multiple-choice",
-      "category": "controlled",
+      "category": "grammar",
       "question": "____ egy tea.",
       "options": [
         "Ez",
@@ -106,12 +112,13 @@
       "teaches": [
         "unit-1-pattern-review",
         "unit-1-negation-review"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-05-practice-1",
       "type": "sentence-builder",
-      "category": "practice",
+      "category": "grammar",
       "tiles": [
         "Meg",
         "vagyok",
@@ -126,12 +133,13 @@
       "teaches": [
         "unit-1-pattern-review",
         "unit-1-negation-review"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-05-practice-4",
       "type": "multiple-choice",
-      "category": "practice",
+      "category": "grammar",
       "question": "Ki ő?",
       "options": [
         "Ő Meg.",
@@ -142,7 +150,8 @@
       "teaches": [
         "unit-1-pattern-review",
         "unit-1-negation-review"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-05-dialogue-1",
@@ -225,7 +234,7 @@
     {
       "id": "a1-05-check-1",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "grammar",
       "question": "____ egy tea.",
       "options": [
         "Ez",
@@ -236,12 +245,13 @@
       "teaches": [
         "unit-1-pattern-review",
         "unit-1-negation-review"
-      ]
+      ],
+      "stage": "check"
     },
     {
       "id": "a1-05-check-2",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "grammar",
       "question": "____ ő?",
       "options": [
         "Ki",
@@ -252,12 +262,13 @@
       "teaches": [
         "unit-1-pattern-review",
         "unit-1-negation-review"
-      ]
+      ],
+      "stage": "check"
     },
     {
       "id": "a1-05-practice-match",
       "type": "matching",
-      "category": "practice",
+      "category": "vocabulary",
       "pairs": [
         [
           "szia",
@@ -275,12 +286,13 @@
       "teaches": [
         "unit-1-pattern-review",
         "unit-1-negation-review"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-05-practice-dialogue",
       "type": "dialogue-complete",
-      "category": "practice",
+      "category": "dialogue",
       "prompt": [
         {
           "speaker": "Károly",
@@ -299,18 +311,20 @@
       "teaches": [
         "unit-1-pattern-review",
         "unit-1-negation-review"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-05-practice-fill",
       "type": "fill-blank",
-      "category": "practice",
+      "category": "grammar",
       "sentence": "Mi ez? Ez egy ____. (book)",
       "answer": "könyv",
       "teaches": [
         "unit-1-pattern-review",
         "unit-1-negation-review"
-      ]
+      ],
+      "stage": "practice"
     }
   ]
 }

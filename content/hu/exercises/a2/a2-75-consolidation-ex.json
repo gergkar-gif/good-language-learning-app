@@ -4,121 +4,245 @@
     {
       "id": "a2-75-consolidation-1",
       "type": "multiple-choice",
-      "category": "recognize",
+      "category": "vocabulary",
       "question": "Which means \"destination\"?",
-      "options": ["úticél", "szabadság", "csatlakozás"],
+      "options": [
+        "úticél",
+        "szabadság",
+        "csatlakozás"
+      ],
       "correct": 0,
-      "teaches": ["travel-planning-vocab"]
+      "teaches": [
+        "travel-planning-vocab"
+      ],
+      "stage": "recognize"
     },
     {
       "id": "a2-75-consolidation-2",
       "type": "multiple-choice",
-      "category": "recognize",
+      "category": "vocabulary",
       "question": "Which means \"boarding pass\"?",
-      "options": ["beszállókártya", "útlevél", "poggyász"],
+      "options": [
+        "beszállókártya",
+        "útlevél",
+        "poggyász"
+      ],
       "correct": 0,
-      "teaches": ["airport-vocab"]
+      "teaches": [
+        "airport-vocab"
+      ],
+      "stage": "recognize"
     },
     {
       "id": "a2-75-consolidation-3",
       "type": "multiple-choice",
-      "category": "recognize",
+      "category": "vocabulary",
       "question": "Which means \"to miss (a train, a flight)\"?",
-      "options": ["lekésik", "késik", "elromlik"],
+      "options": [
+        "lekésik",
+        "késik",
+        "elromlik"
+      ],
       "correct": 0,
-      "teaches": ["travel-problem-vocab"]
+      "teaches": [
+        "travel-problem-vocab"
+      ],
+      "stage": "recognize"
     },
     {
       "id": "a2-75-consolidation-4",
       "type": "matching",
-      "category": "recall",
+      "category": "vocabulary",
       "pairs": [
-        ["vágány", "track, platform number"],
-        ["peron", "platform"],
-        ["helyjegy", "seat reservation"],
-        ["csatlakozás", "connection, transfer"]
+        [
+          "vágány",
+          "track, platform number"
+        ],
+        [
+          "peron",
+          "platform"
+        ],
+        [
+          "helyjegy",
+          "seat reservation"
+        ],
+        [
+          "csatlakozás",
+          "connection, transfer"
+        ]
       ],
-      "teaches": ["station-vocab"]
+      "teaches": [
+        "station-vocab"
+      ],
+      "stage": "recall"
     },
     {
       "id": "a2-75-consolidation-5",
       "type": "matching",
-      "category": "recall",
+      "category": "vocabulary",
       "pairs": [
-        ["szeretek utazni", "I like to travel"],
-        ["utálok repülni", "I hate flying"],
-        ["imádok új helyeket látni", "I love seeing new places"],
-        ["fárasztó", "tiring"]
+        [
+          "szeretek utazni",
+          "I like to travel"
+        ],
+        [
+          "utálok repülni",
+          "I hate flying"
+        ],
+        [
+          "imádok új helyeket látni",
+          "I love seeing new places"
+        ],
+        [
+          "fárasztó",
+          "tiring"
+        ]
       ],
-      "teaches": ["szeret-utal-infinitive"]
+      "teaches": [
+        "szeret-utal-infinitive"
+      ],
+      "stage": "recall"
     },
     {
       "id": "a2-75-consolidation-6",
       "type": "fill-blank",
-      "category": "recall",
+      "category": "vocabulary",
       "sentence": "Két hét ____ külföldre utazunk. (in)",
       "answer": "múlva",
-      "teaches": ["mulva-in-time"]
+      "teaches": [
+        "mulva-in-time"
+      ],
+      "stage": "recall"
     },
     {
       "id": "a2-75-consolidation-7",
       "type": "dialogue-complete",
-      "category": "context",
+      "category": "dialogue",
       "prompt": [
-        { "speaker": "Tamás", "text": "Mennyi ideig maradtok külföldön, és mikor indultok?" },
-        { "speaker": "Ildikó", "text": "_____" }
+        {
+          "speaker": "Tamás",
+          "text": "Mennyi ideig maradtok külföldön, és mikor indultok?"
+        },
+        {
+          "speaker": "Ildikó",
+          "text": "_____"
+        }
       ],
-      "options": ["Két hétig maradunk, és három nap múlva indulunk.", "Tele van a vonat, nincs helyünk."],
+      "options": [
+        "Két hétig maradunk, és három nap múlva indulunk.",
+        "Tele van a vonat, nincs helyünk."
+      ],
       "correct": 0,
-      "teaches": ["ig-duration", "mulva-in-time"]
+      "teaches": [
+        "ig-duration",
+        "mulva-in-time"
+      ],
+      "stage": "context"
     },
     {
       "id": "a2-75-consolidation-8",
       "type": "dialogue-complete",
-      "category": "context",
+      "category": "dialogue",
       "prompt": [
-        { "speaker": "Meg", "text": "Mi történt a repülőtéren?" },
-        { "speaker": "Károly", "text": "_____" }
+        {
+          "speaker": "Meg",
+          "text": "Mi történt a repülőtéren?"
+        },
+        {
+          "speaker": "Károly",
+          "text": "_____"
+        }
       ],
-      "options": ["Lekéstük a csatlakozást, mert be kellett csekkolni, és az sokáig tartott.", "Imádok új helyeket látni."],
+      "options": [
+        "Lekéstük a csatlakozást, mert be kellett csekkolni, és az sokáig tartott.",
+        "Imádok új helyeket látni."
+      ],
       "correct": 0,
-      "teaches": ["kell-infinitive", "travel-problem-vocab"]
+      "teaches": [
+        "kell-infinitive",
+        "travel-problem-vocab"
+      ],
+      "stage": "context"
     },
     {
       "id": "a2-75-consolidation-9",
       "type": "sentence-builder",
-      "category": "context",
-      "tiles": ["Ha", "elromlik", "a", "vonat", ",", "a", "váróteremben", "várunk", "."],
-      "solution": ["Ha", "elromlik", "a", "vonat", ",", "a", "váróteremben", "várunk", "."],
+      "category": "grammar",
+      "tiles": [
+        "Ha",
+        "elromlik",
+        "a",
+        "vonat",
+        ",",
+        "a",
+        "váróteremben",
+        "várunk",
+        "."
+      ],
+      "solution": [
+        "Ha",
+        "elromlik",
+        "a",
+        "vonat",
+        ",",
+        "a",
+        "váróteremben",
+        "várunk",
+        "."
+      ],
       "english": "If the train breaks down, we wait in the waiting room.",
-      "teaches": ["ha-akkor", "station-vocab"]
+      "teaches": [
+        "ha-akkor",
+        "station-vocab"
+      ],
+      "stage": "context"
     },
     {
       "id": "a2-75-consolidation-10",
       "type": "structured-writing",
-      "category": "produce",
+      "category": "writing",
       "template": [
-        { "prompt": "Say you're staying abroad for two weeks.", "answer": "Két hétig maradok külföldön." }
+        {
+          "prompt": "Say you're staying abroad for two weeks.",
+          "answer": "Két hétig maradok külföldön."
+        }
       ],
-      "teaches": ["ig-duration"]
+      "teaches": [
+        "ig-duration"
+      ],
+      "stage": "produce"
     },
     {
       "id": "a2-75-consolidation-11",
       "type": "structured-writing",
-      "category": "produce",
+      "category": "writing",
       "template": [
-        { "prompt": "Say that's why you love traveling by plane, because it's fast.", "answer": "Azért imádok repülővel utazni, mert gyors." }
+        {
+          "prompt": "Say that's why you love traveling by plane, because it's fast.",
+          "answer": "Azért imádok repülővel utazni, mert gyors."
+        }
       ],
-      "teaches": ["azert-mert", "szeret-utal-infinitive"]
+      "teaches": [
+        "azert-mert",
+        "szeret-utal-infinitive"
+      ],
+      "stage": "produce"
     },
     {
       "id": "a2-75-consolidation-12",
       "type": "structured-writing",
-      "category": "produce",
+      "category": "writing",
       "template": [
-        { "prompt": "Say that at the gate, you have to show your boarding pass.", "answer": "A kapunál meg kell mutatni a beszállókártyát." }
+        {
+          "prompt": "Say that at the gate, you have to show your boarding pass.",
+          "answer": "A kapunál meg kell mutatni a beszállókártyát."
+        }
       ],
-      "teaches": ["kell-infinitive", "airport-location-case"]
+      "teaches": [
+        "kell-infinitive",
+        "airport-location-case"
+      ],
+      "stage": "produce"
     }
   ]
 }

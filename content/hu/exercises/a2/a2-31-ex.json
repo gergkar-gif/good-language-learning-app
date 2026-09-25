@@ -4,120 +4,236 @@
     {
       "id": "a2-31-intro-1",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "grammar",
       "question": "Which means “bakery”?",
-      "options": ["pékség", "bolt", "könyvtár"],
+      "options": [
+        "pékség",
+        "bolt",
+        "könyvtár"
+      ],
       "correct": 0,
-      "teaches": ["neighbourhood-vocab"]
+      "teaches": [
+        "neighbourhood-vocab"
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a2-31-intro-2",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "grammar",
       "question": "Which means “corner”?",
-      "options": ["sarok", "negyed", "templom"],
+      "options": [
+        "sarok",
+        "negyed",
+        "templom"
+      ],
       "correct": 0,
-      "teaches": ["neighbourhood-vocab"]
+      "teaches": [
+        "neighbourhood-vocab"
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a2-31-controlled-1",
       "type": "matching",
-      "category": "controlled",
+      "category": "vocabulary",
       "pairs": [
-        ["pékség", "bakery"],
-        ["sarok", "corner"],
-        ["szomszédság", "neighbourhood"],
-        ["templom", "church"]
+        [
+          "pékség",
+          "bakery"
+        ],
+        [
+          "sarok",
+          "corner"
+        ],
+        [
+          "szomszédság",
+          "neighbourhood"
+        ],
+        [
+          "templom",
+          "church"
+        ]
       ],
-      "teaches": ["neighbourhood-vocab"]
+      "teaches": [
+        "neighbourhood-vocab"
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a2-31-controlled-2",
       "type": "fill-blank",
-      "category": "controlled",
+      "category": "grammar",
       "sentence": "Megyek a ____. (to the bakery)",
       "answer": "pékséghez",
-      "teaches": ["hoz-suffix"]
+      "teaches": [
+        "hoz-suffix"
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a2-31-controlled-3",
       "type": "fill-blank",
-      "category": "controlled",
+      "category": "grammar",
       "sentence": "Károly a ____ megy. (to the church)",
       "answer": "templomhoz",
-      "teaches": ["hoz-suffix"]
+      "teaches": [
+        "hoz-suffix"
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a2-31-controlled-4",
       "type": "multiple-choice",
-      "category": "controlled",
+      "category": "grammar",
       "question": "Which suffix does szülő (\"parent\") take?",
-      "options": ["-höz", "-hoz", "-hez"],
+      "options": [
+        "-höz",
+        "-hoz",
+        "-hez"
+      ],
       "correct": 0,
-      "teaches": ["hoz-suffix"]
+      "teaches": [
+        "hoz-suffix"
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a2-31-practice-1",
       "type": "multiple-choice",
-      "category": "practice",
+      "category": "grammar",
       "question": "Which means “neighbourhood”?",
-      "options": ["szomszédság", "szomszéd", "negyed"],
+      "options": [
+        "szomszédság",
+        "szomszéd",
+        "negyed"
+      ],
       "correct": 0,
-      "teaches": ["neighbourhood-vocab"]
+      "teaches": [
+        "neighbourhood-vocab"
+      ],
+      "stage": "practice"
     },
     {
       "id": "a2-31-practice-2",
       "type": "matching",
-      "category": "practice",
+      "category": "vocabulary",
       "pairs": [
-        ["Megyek a pékséghez", "I'm going to the bakery"],
-        ["A pékség a sarkon van", "The bakery is on the corner"],
-        ["Károly a templomhoz megy", "Károly is going to the church"],
-        ["Szeretem ezt a szomszédságot", "I like this neighbourhood"]
+        [
+          "Megyek a pékséghez",
+          "I'm going to the bakery"
+        ],
+        [
+          "A pékség a sarkon van",
+          "The bakery is on the corner"
+        ],
+        [
+          "Károly a templomhoz megy",
+          "Károly is going to the church"
+        ],
+        [
+          "Szeretem ezt a szomszédságot",
+          "I like this neighbourhood"
+        ]
       ],
-      "teaches": ["hoz-suffix"]
+      "teaches": [
+        "hoz-suffix"
+      ],
+      "stage": "practice"
     },
     {
       "id": "a2-31-practice-3",
       "type": "sentence-builder",
-      "category": "practice",
-      "tiles": ["Megyek", "a", "pékséghez", "."],
-      "solution": ["Megyek", "a", "pékséghez", "."],
+      "category": "grammar",
+      "tiles": [
+        "Megyek",
+        "a",
+        "pékséghez",
+        "."
+      ],
+      "solution": [
+        "Megyek",
+        "a",
+        "pékséghez",
+        "."
+      ],
       "english": "I'm going to the bakery.",
-      "teaches": ["hoz-suffix"]
+      "teaches": [
+        "hoz-suffix"
+      ],
+      "stage": "practice"
     },
     {
       "id": "a2-31-practice-4",
       "type": "sentence-builder",
-      "category": "practice",
-      "tiles": ["A", "pékség", "a", "sarkon", "van", "."],
-      "solution": ["A", "pékség", "a", "sarkon", "van", "."],
+      "category": "grammar",
+      "tiles": [
+        "A",
+        "pékség",
+        "a",
+        "sarkon",
+        "van",
+        "."
+      ],
+      "solution": [
+        "A",
+        "pékség",
+        "a",
+        "sarkon",
+        "van",
+        "."
+      ],
       "english": "The bakery is on the corner.",
-      "teaches": ["neighbourhood-vocab"]
+      "teaches": [
+        "neighbourhood-vocab"
+      ],
+      "stage": "practice"
     },
     {
       "id": "a2-31-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
       "prompt": [
-        { "speaker": "Károly", "text": "Hová mész?" },
-        { "speaker": "Meg", "text": "_____" }
+        {
+          "speaker": "Károly",
+          "text": "Hová mész?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
       ],
-      "options": ["A pékséghez megyek.", "A pékségnél vagyok."],
+      "options": [
+        "A pékséghez megyek.",
+        "A pékségnél vagyok."
+      ],
       "correct": 0,
-      "teaches": ["hoz-suffix"]
+      "teaches": [
+        "hoz-suffix"
+      ]
     },
     {
       "id": "a2-31-dialogue-2",
       "type": "dialogue-complete",
       "category": "dialogue",
       "prompt": [
-        { "speaker": "Meg", "text": "Hol van a templom?" },
-        { "speaker": "Károly", "text": "_____" }
+        {
+          "speaker": "Meg",
+          "text": "Hol van a templom?"
+        },
+        {
+          "speaker": "Károly",
+          "text": "_____"
+        }
       ],
-      "options": ["A sarkon van.", "A sarokhoz megyek."],
+      "options": [
+        "A sarkon van.",
+        "A sarokhoz megyek."
+      ],
       "correct": 0,
-      "teaches": ["neighbourhood-vocab"]
+      "teaches": [
+        "neighbourhood-vocab"
+      ]
     },
     {
       "id": "a2-31-writing-1",
@@ -129,7 +245,9 @@
           "answer": "Megyek a pékséghez."
         }
       ],
-      "teaches": ["hoz-suffix"]
+      "teaches": [
+        "hoz-suffix"
+      ]
     },
     {
       "id": "a2-31-writing-2",
@@ -141,25 +259,41 @@
           "answer": "A templom a sarkon van."
         }
       ],
-      "teaches": ["neighbourhood-vocab"]
+      "teaches": [
+        "neighbourhood-vocab"
+      ]
     },
     {
       "id": "a2-31-check-1",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "grammar",
       "question": "Which means “church”?",
-      "options": ["templom", "pékség", "szomszédság"],
+      "options": [
+        "templom",
+        "pékség",
+        "szomszédság"
+      ],
       "correct": 0,
-      "teaches": ["neighbourhood-vocab"]
+      "teaches": [
+        "neighbourhood-vocab"
+      ],
+      "stage": "check"
     },
     {
       "id": "a2-31-check-2",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "grammar",
       "question": "Which suffix means “to/toward”?",
-      "options": ["-hoz/-hez/-höz", "-nál/-nél", "-tól/-től"],
+      "options": [
+        "-hoz/-hez/-höz",
+        "-nál/-nél",
+        "-tól/-től"
+      ],
       "correct": 0,
-      "teaches": ["hoz-suffix"]
+      "teaches": [
+        "hoz-suffix"
+      ],
+      "stage": "check"
     }
   ]
 }

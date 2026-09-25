@@ -4,31 +4,33 @@
     {
       "id": "a1-06-review-1",
       "type": "multiple-choice",
-      "category": "review",
+      "category": "vocabulary",
       "question": "Which means “thank you”?",
       "options": [
         "köszönöm",
         "szia",
         "nem"
       ],
-      "correct": 0
+      "correct": 0,
+      "stage": "review"
     },
     {
       "id": "a1-06-review-2",
       "type": "multiple-choice",
-      "category": "review",
+      "category": "vocabulary",
       "question": "Which can mean “hi” or “bye”?",
       "options": [
         "szia",
         "igen",
         "kérem"
       ],
-      "correct": 0
+      "correct": 0,
+      "stage": "review"
     },
     {
       "id": "a1-06-intro-1",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "grammar",
       "question": "Which means “good morning”?",
       "options": [
         "jó reggelt",
@@ -39,12 +41,13 @@
       "teaches": [
         "greetings-by-time-of-day",
         "saying-goodbye"
-      ]
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a1-06-intro-2",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "grammar",
       "question": "Which means “goodbye”?",
       "options": [
         "viszlát",
@@ -55,23 +58,25 @@
       "teaches": [
         "greetings-by-time-of-day",
         "saying-goodbye"
-      ]
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a1-06-controlled-1",
       "type": "fill-blank",
-      "category": "controlled",
+      "category": "grammar",
       "sentence": "Anna: Jó reggelt! Te: ____!",
       "answer": "Jó reggelt",
       "teaches": [
         "greetings-by-time-of-day",
         "saying-goodbye"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-06-controlled-2",
       "type": "multiple-choice",
-      "category": "controlled",
+      "category": "grammar",
       "question": "You are leaving. Which expression fits?",
       "options": [
         "Viszlát!",
@@ -82,12 +87,13 @@
       "teaches": [
         "greetings-by-time-of-day",
         "saying-goodbye"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-06-controlled-3",
       "type": "matching",
-      "category": "controlled",
+      "category": "vocabulary",
       "pairs": [
         [
           "jó reggelt",
@@ -109,12 +115,13 @@
       "teaches": [
         "greetings-by-time-of-day",
         "saying-goodbye"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-06-practice-1",
       "type": "multiple-choice",
-      "category": "practice",
+      "category": "grammar",
       "question": "It is morning. What do you say?",
       "options": [
         "Jó reggelt!",
@@ -125,12 +132,13 @@
       "teaches": [
         "greetings-by-time-of-day",
         "saying-goodbye"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-06-practice-2",
       "type": "matching",
-      "category": "practice",
+      "category": "vocabulary",
       "pairs": [
         [
           "jó reggelt",
@@ -152,23 +160,25 @@
       "teaches": [
         "greetings-by-time-of-day",
         "saying-goodbye"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-06-practice-3",
       "type": "fill-blank",
-      "category": "practice",
+      "category": "grammar",
       "sentence": "Meg: Jó napot! Károly: ____!",
       "answer": "Jó napot",
       "teaches": [
         "greetings-by-time-of-day",
         "saying-goodbye"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-06-practice-4",
       "type": "matching",
-      "category": "practice",
+      "category": "vocabulary",
       "pairs": [
         [
           "jó reggelt",
@@ -190,12 +200,13 @@
       "teaches": [
         "greetings-by-time-of-day",
         "saying-goodbye"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-06-practice-5",
       "type": "dialogue-complete",
-      "category": "practice",
+      "category": "dialogue",
       "prompt": [
         {
           "speaker": "Anna",
@@ -214,12 +225,13 @@
       "teaches": [
         "greetings-by-time-of-day",
         "saying-goodbye"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-06-controlled-extra",
       "type": "multiple-choice",
-      "category": "controlled",
+      "category": "grammar",
       "question": "Which greeting fits early in the day?",
       "options": [
         "Jó reggelt!",
@@ -230,7 +242,8 @@
       "teaches": [
         "greetings-by-time-of-day",
         "saying-goodbye"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-06-dialogue-1",
@@ -313,7 +326,7 @@
     {
       "id": "a1-06-check-1",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "grammar",
       "question": "Which expression fits a polite daytime greeting?",
       "options": [
         "Jó napot!",
@@ -324,12 +337,13 @@
       "teaches": [
         "greetings-by-time-of-day",
         "saying-goodbye"
-      ]
+      ],
+      "stage": "check"
     },
     {
       "id": "a1-06-check-2",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "grammar",
       "question": "Someone is going to bed. Which parting phrase fits?",
       "options": [
         "Jó éjszakát!",
@@ -340,7 +354,8 @@
       "teaches": [
         "greetings-by-time-of-day",
         "saying-goodbye"
-      ]
+      ],
+      "stage": "check"
     }
   ]
 }

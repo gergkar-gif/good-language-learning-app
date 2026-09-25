@@ -4,31 +4,33 @@
     {
       "id": "a1-136-review-1",
       "type": "multiple-choice",
-      "category": "review",
+      "category": "vocabulary",
       "question": "What does 'közel' mean?",
       "options": [
         "near",
         "far",
         "right"
       ],
-      "correct": 0
+      "correct": 0,
+      "stage": "review"
     },
     {
       "id": "a1-136-review-2",
       "type": "multiple-choice",
-      "category": "review",
+      "category": "vocabulary",
       "question": "What does 'jobb' mean?",
       "options": [
         "right",
         "left",
         "far"
       ],
-      "correct": 0
+      "correct": 0,
+      "stage": "review"
     },
     {
       "id": "a1-136-introduce-1",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "grammar",
       "question": "What does 'busz' mean?",
       "options": [
         "bus",
@@ -39,12 +41,13 @@
       "teaches": [
         "travelling-by-the-suffix-val-vel",
         "going-the-irregular-verb-megy"
-      ]
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a1-136-introduce-2",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "grammar",
       "question": "What does 'vonat' mean?",
       "options": [
         "train",
@@ -55,23 +58,25 @@
       "teaches": [
         "travelling-by-the-suffix-val-vel",
         "going-the-irregular-verb-megy"
-      ]
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a1-136-controlled-1",
       "type": "fill-blank",
-      "category": "controlled",
+      "category": "grammar",
       "sentence": "____ vagy villamossal.",
       "answer": "Busszal",
       "teaches": [
         "travelling-by-the-suffix-val-vel",
         "going-the-irregular-verb-megy"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-136-controlled-2",
       "type": "multiple-choice",
-      "category": "controlled",
+      "category": "grammar",
       "question": "Choose the word for 'metro'.",
       "options": [
         "metró",
@@ -82,12 +87,13 @@
       "teaches": [
         "travelling-by-the-suffix-val-vel",
         "going-the-irregular-verb-megy"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-136-controlled-3",
       "type": "matching",
-      "category": "controlled",
+      "category": "vocabulary",
       "pairs": [
         [
           "busz",
@@ -109,12 +115,13 @@
       "teaches": [
         "travelling-by-the-suffix-val-vel",
         "going-the-irregular-verb-megy"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-136-controlled-4",
       "type": "substitution",
-      "category": "controlled",
+      "category": "grammar",
       "base_sentence": "Busszal megyünk.",
       "base_word": "Busszal",
       "base_gloss": "We're going by bus.",
@@ -135,12 +142,13 @@
       "teaches": [
         "travelling-by-the-suffix-val-vel",
         "going-the-irregular-verb-megy"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-136-practice-1",
       "type": "multiple-choice",
-      "category": "practice",
+      "category": "grammar",
       "question": "How do you say 'we go' in Hungarian?",
       "options": [
         "megyünk",
@@ -151,23 +159,25 @@
       "teaches": [
         "travelling-by-the-suffix-val-vel",
         "going-the-irregular-verb-megy"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-136-practice-2",
       "type": "fill-blank",
-      "category": "practice",
+      "category": "grammar",
       "sentence": "Mivel ____? (do we go)",
       "answer": "megyünk",
       "teaches": [
         "travelling-by-the-suffix-val-vel",
         "going-the-irregular-verb-megy"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-136-practice-3",
       "type": "matching",
-      "category": "practice",
+      "category": "vocabulary",
       "pairs": [
         [
           "busz",
@@ -193,12 +203,13 @@
       "teaches": [
         "travelling-by-the-suffix-val-vel",
         "going-the-irregular-verb-megy"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-136-practice-4",
       "type": "substitution",
-      "category": "practice",
+      "category": "grammar",
       "base_sentence": "A metróval megyünk?",
       "base_word": "metróval",
       "base_gloss": "Are we going by metro?",
@@ -219,12 +230,13 @@
       "teaches": [
         "travelling-by-the-suffix-val-vel",
         "going-the-irregular-verb-megy"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-136-practice-5",
       "type": "dialogue-complete",
-      "category": "practice",
+      "category": "dialogue",
       "prompt": [
         {
           "speaker": "Meg",
@@ -243,7 +255,8 @@
       "teaches": [
         "travelling-by-the-suffix-val-vel",
         "going-the-irregular-verb-megy"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-136-dialogue-1",
@@ -326,7 +339,7 @@
     {
       "id": "a1-136-check-1",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "grammar",
       "question": "Choose the correct word for 'bus'.",
       "options": [
         "busz",
@@ -337,12 +350,13 @@
       "teaches": [
         "travelling-by-the-suffix-val-vel",
         "going-the-irregular-verb-megy"
-      ]
+      ],
+      "stage": "check"
     },
     {
       "id": "a1-136-check-2",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "grammar",
       "question": "Choose the correct word for 'tram'.",
       "options": [
         "villamos",
@@ -353,7 +367,8 @@
       "teaches": [
         "travelling-by-the-suffix-val-vel",
         "going-the-irregular-verb-megy"
-      ]
+      ],
+      "stage": "check"
     }
   ]
 }

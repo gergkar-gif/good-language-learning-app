@@ -4,7 +4,7 @@
     {
       "id": "b1-07-01-intro-1",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "grammar",
       "question": "Which suffix attaches to verb stems to express potential/permission ('can', 'may')?",
       "options": [
         "-hat / -het",
@@ -14,12 +14,13 @@
       "correct": 0,
       "teaches": [
         "potential-hat-het"
-      ]
+      ],
+      "stage": "introduce"
     },
     {
       "id": "b1-07-01-intro-2",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "vocabulary",
       "question": "What is the Hungarian term for the secondary school-leaving exam?",
       "options": [
         "érettségi",
@@ -29,12 +30,13 @@
       "correct": 0,
       "teaches": [
         "school-vocab"
-      ]
+      ],
+      "stage": "introduce"
     },
     {
       "id": "b1-07-01-controlled-1",
       "type": "matching",
-      "category": "controlled",
+      "category": "vocabulary",
       "pairs": [
         [
           "iskolarendszer",
@@ -55,12 +57,13 @@
       ],
       "teaches": [
         "school-vocab"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "b1-07-01-controlled-2",
       "type": "multiple-choice",
-      "category": "controlled",
+      "category": "grammar",
       "question": "Choose the correct potential form: 'A diákok könyvtárban is (tanul).' -> ...",
       "options": [
         "tanulhatnak",
@@ -70,22 +73,24 @@
       "correct": 0,
       "teaches": [
         "potential-hat-het"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "b1-07-01-controlled-3",
       "type": "fill-blank",
-      "category": "controlled",
+      "category": "grammar",
       "sentence": "A nyolcadik osztály után a diákok gimnáziumba ____. (they may apply)",
       "teaches": [
         "potential-hat-het"
       ],
-      "answer": "jelentkezhetnek"
+      "answer": "jelentkezhetnek",
+      "stage": "controlled"
     },
     {
       "id": "b1-07-01-controlled-4",
       "type": "multiple-choice",
-      "category": "controlled",
+      "category": "grammar",
       "question": "Which word order is natural?",
       "options": [
         "Az érettségi előtt a diákok sokat tanulnak.",
@@ -95,12 +100,13 @@
       "correct": 0,
       "teaches": [
         "school-postpositions"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "b1-07-01-practice-1",
       "type": "matching",
-      "category": "practice",
+      "category": "vocabulary",
       "pairs": [
         [
           "jelentkezhet",
@@ -121,12 +127,13 @@
       ],
       "teaches": [
         "potential-hat-het"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "b1-07-01-practice-2",
       "type": "multiple-choice",
-      "category": "practice",
+      "category": "vocabulary",
       "question": "Hány évig tart általában a magyar általános iskola?",
       "options": [
         "Nyolc évig.",
@@ -136,22 +143,24 @@
       "correct": 0,
       "teaches": [
         "hungarian-school-facts"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "b1-07-01-practice-3",
       "type": "fill-blank",
-      "category": "practice",
+      "category": "grammar",
       "sentence": "Az állami iskolákban minden gyermek ingyen ____. (can study)",
       "teaches": [
         "potential-hat-het"
       ],
-      "answer": "tanulhat"
+      "answer": "tanulhat",
+      "stage": "practice"
     },
     {
       "id": "b1-07-01-practice-4",
       "type": "multiple-choice",
-      "category": "practice",
+      "category": "vocabulary",
       "question": "Mit tesznek a diákok a gimnázium végén?",
       "options": [
         "Érettségi vizsgát tesznek.",
@@ -161,7 +170,8 @@
       "correct": 0,
       "teaches": [
         "hungarian-school-facts"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "b1-07-01-dialogue-1",
@@ -196,7 +206,7 @@
     {
       "id": "b1-07-01-writing-1",
       "type": "multiple-choice",
-      "category": "production",
+      "category": "writing",
       "question": "How do you say: 'Anyone can apply for this course.'?",
       "options": [
         "Bárki jelentkezhet erre a képzésre.",
@@ -206,12 +216,13 @@
       "correct": 0,
       "teaches": [
         "production-potential"
-      ]
+      ],
+      "stage": "production"
     },
     {
       "id": "b1-07-01-writing-2",
       "type": "multiple-choice",
-      "category": "production",
+      "category": "writing",
       "question": "How do you say: 'The Hungarian school system is well structured.'?",
       "options": [
         "A magyar iskolarendszer jól felépített.",
@@ -221,12 +232,13 @@
       "correct": 0,
       "teaches": [
         "production-school"
-      ]
+      ],
+      "stage": "production"
     },
     {
       "id": "b1-07-01-check-1",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "grammar",
       "question": "Which verb contains the potential suffix -hat/-het?",
       "options": [
         "választhat",
@@ -236,12 +248,13 @@
       "correct": 0,
       "teaches": [
         "potential-check"
-      ]
+      ],
+      "stage": "check"
     },
     {
       "id": "b1-07-01-check-2",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "vocabulary",
       "question": "Which school comes immediately after primary school for academic students?",
       "options": [
         "gimnázium",
@@ -251,7 +264,8 @@
       "correct": 0,
       "teaches": [
         "school-check"
-      ]
+      ],
+      "stage": "check"
     }
   ]
 }

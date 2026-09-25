@@ -4,31 +4,33 @@
     {
       "id": "a1-10-review-1",
       "type": "multiple-choice",
-      "category": "review",
+      "category": "vocabulary",
       "question": "Which asks how someone is doing?",
       "options": [
         "Hogy vagy?",
         "Nem értem.",
         "Bocsánat."
       ],
-      "correct": 0
+      "correct": 0,
+      "stage": "review"
     },
     {
       "id": "a1-10-review-2",
       "type": "multiple-choice",
-      "category": "review",
+      "category": "vocabulary",
       "question": "Which means “I don't understand”?",
       "options": [
         "nem értem",
         "értem",
         "szívesen"
       ],
-      "correct": 0
+      "correct": 0,
+      "stage": "review"
     },
     {
       "id": "a1-10-intro-1",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "grammar",
       "question": "Which means “okay / all right”?",
       "options": [
         "rendben",
@@ -39,12 +41,13 @@
       "teaches": [
         "rendben-and-persze",
         "tessek"
-      ]
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a1-10-intro-2",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "grammar",
       "question": "Which means “of course”?",
       "options": [
         "persze",
@@ -55,23 +58,25 @@
       "teaches": [
         "rendben-and-persze",
         "tessek"
-      ]
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a1-10-controlled-1",
       "type": "fill-blank",
-      "category": "controlled",
+      "category": "grammar",
       "sentence": "Okay. → ____",
       "answer": "Rendben",
       "teaches": [
         "rendben-and-persze",
         "tessek"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-10-controlled-2",
       "type": "multiple-choice",
-      "category": "controlled",
+      "category": "grammar",
       "question": "Which reply means “of course”?",
       "options": [
         "Persze.",
@@ -82,12 +87,13 @@
       "teaches": [
         "rendben-and-persze",
         "tessek"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-10-controlled-3",
       "type": "matching",
-      "category": "controlled",
+      "category": "vocabulary",
       "pairs": [
         [
           "rendben",
@@ -109,12 +115,13 @@
       "teaches": [
         "rendben-and-persze",
         "tessek"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-10-practice-1",
       "type": "multiple-choice",
-      "category": "practice",
+      "category": "grammar",
       "question": "Someone asks you politely to wait. You agree:",
       "options": [
         "Rendben.",
@@ -125,12 +132,13 @@
       "teaches": [
         "rendben-and-persze",
         "tessek"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-10-practice-2",
       "type": "matching",
-      "category": "practice",
+      "category": "vocabulary",
       "pairs": [
         [
           "rendben",
@@ -152,23 +160,25 @@
       "teaches": [
         "rendben-and-persze",
         "tessek"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-10-practice-3",
       "type": "fill-blank",
-      "category": "practice",
+      "category": "grammar",
       "sentence": "Tessék, a kávéd! – ____.",
       "answer": "Köszönöm",
       "teaches": [
         "rendben-and-persze",
         "tessek"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-10-practice-4",
       "type": "sentence-builder",
-      "category": "practice",
+      "category": "grammar",
       "tiles": [
         "Nem",
         "értem",
@@ -187,12 +197,13 @@
       "teaches": [
         "rendben-and-persze",
         "tessek"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-10-practice-5",
       "type": "dialogue-complete",
-      "category": "practice",
+      "category": "dialogue",
       "prompt": [
         {
           "speaker": "Károly",
@@ -211,12 +222,13 @@
       "teaches": [
         "rendben-and-persze",
         "tessek"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-10-controlled-extra",
       "type": "multiple-choice",
-      "category": "controlled",
+      "category": "grammar",
       "question": "Which reply means “okay”?",
       "options": [
         "Rendben.",
@@ -227,7 +239,8 @@
       "teaches": [
         "rendben-and-persze",
         "tessek"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-10-dialogue-1",
@@ -310,7 +323,7 @@
     {
       "id": "a1-10-check-1",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "grammar",
       "question": "Which expression fits a polite daytime greeting?",
       "options": [
         "Jó napot!",
@@ -321,12 +334,13 @@
       "teaches": [
         "rendben-and-persze",
         "tessek"
-      ]
+      ],
+      "stage": "check"
     },
     {
       "id": "a1-10-check-2",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "grammar",
       "question": "Which expression asks for repetition?",
       "options": [
         "Megismételné?",
@@ -337,7 +351,8 @@
       "teaches": [
         "rendben-and-persze",
         "tessek"
-      ]
+      ],
+      "stage": "check"
     }
   ]
 }

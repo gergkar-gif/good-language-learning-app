@@ -4,31 +4,33 @@
     {
       "id": "a1-02-review-1",
       "type": "multiple-choice",
-      "category": "review",
+      "category": "vocabulary",
       "question": "Which means “thank you”?",
       "options": [
         "köszönöm",
         "kérem",
         "igen"
       ],
-      "correct": 0
+      "correct": 0,
+      "stage": "review"
     },
     {
       "id": "a1-02-review-2",
       "type": "multiple-choice",
-      "category": "review",
+      "category": "dialogue",
       "question": "Complete: Szia! → ____.",
       "options": [
         "Nem.",
         "Szia!",
         "Köszönöm."
       ],
-      "correct": 1
+      "correct": 1,
+      "stage": "review"
     },
     {
       "id": "a1-02-intro-1",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "grammar",
       "question": "Who is speaking in “Én Károly vagyok”?",
       "options": [
         "I",
@@ -39,12 +41,13 @@
       "teaches": [
         "en-te-o",
         "vagyok-vagy-and-where-van-goes"
-      ]
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a1-02-intro-2",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "grammar",
       "question": "Which means “You are Meg”?",
       "options": [
         "Te Meg vagy.",
@@ -55,12 +58,13 @@
       "teaches": [
         "en-te-o",
         "vagyok-vagy-and-where-van-goes"
-      ]
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a1-02-controlled-1",
       "type": "multiple-choice",
-      "category": "controlled",
+      "category": "grammar",
       "question": "Choose the pronoun for “I”.",
       "options": [
         "én",
@@ -71,12 +75,13 @@
       "teaches": [
         "en-te-o",
         "vagyok-vagy-and-where-van-goes"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-02-controlled-2",
       "type": "multiple-choice",
-      "category": "controlled",
+      "category": "grammar",
       "question": "Én Károly ____.",
       "options": [
         "vagy",
@@ -87,12 +92,13 @@
       "teaches": [
         "en-te-o",
         "vagyok-vagy-and-where-van-goes"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-02-controlled-3",
       "type": "multiple-choice",
-      "category": "controlled",
+      "category": "grammar",
       "question": "Te Meg ____.",
       "options": [
         "vagyok",
@@ -103,12 +109,13 @@
       "teaches": [
         "en-te-o",
         "vagyok-vagy-and-where-van-goes"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-02-controlled-4",
       "type": "multiple-choice",
-      "category": "controlled",
+      "category": "grammar",
       "question": "Which correctly says “She is Meg”?",
       "options": [
         "Ő Meg.",
@@ -119,12 +126,13 @@
       "teaches": [
         "en-te-o",
         "vagyok-vagy-and-where-van-goes"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-02-practice-1",
       "type": "sentence-builder",
-      "category": "practice",
+      "category": "grammar",
       "tiles": [
         "Én",
         "Károly",
@@ -141,23 +149,25 @@
       "teaches": [
         "en-te-o",
         "vagyok-vagy-and-where-van-goes"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-02-practice-3",
       "type": "fill-blank",
-      "category": "practice",
+      "category": "grammar",
       "sentence": "Te Meg ____.",
       "answer": "vagy",
       "teaches": [
         "en-te-o",
         "vagyok-vagy-and-where-van-goes"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-02-practice-5",
       "type": "multiple-choice",
-      "category": "practice",
+      "category": "grammar",
       "question": "Natural Hungarian for “I am Károly”?",
       "options": [
         "Károly vagyok.",
@@ -168,12 +178,13 @@
       "teaches": [
         "en-te-o",
         "vagyok-vagy-and-where-van-goes"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-02-practice-7",
       "type": "matching",
-      "category": "practice",
+      "category": "vocabulary",
       "pairs": [
         [
           "én",
@@ -195,7 +206,8 @@
       "teaches": [
         "en-te-o",
         "vagyok-vagy-and-where-van-goes"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-02-dialogue-1",
@@ -278,7 +290,7 @@
     {
       "id": "a1-02-check-1",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "grammar",
       "question": "Én ____.",
       "options": [
         "vagyok",
@@ -289,12 +301,13 @@
       "teaches": [
         "en-te-o",
         "vagyok-vagy-and-where-van-goes"
-      ]
+      ],
+      "stage": "check"
     },
     {
       "id": "a1-02-check-2",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "grammar",
       "question": "Te ____.",
       "options": [
         "vagyok",
@@ -305,12 +318,13 @@
       "teaches": [
         "en-te-o",
         "vagyok-vagy-and-where-van-goes"
-      ]
+      ],
+      "stage": "check"
     },
     {
       "id": "a1-02-practice-dialogue",
       "type": "dialogue-complete",
-      "category": "practice",
+      "category": "dialogue",
       "prompt": [
         {
           "speaker": "Meg",
@@ -329,7 +343,8 @@
       "teaches": [
         "en-te-o",
         "vagyok-vagy-and-where-van-goes"
-      ]
+      ],
+      "stage": "practice"
     }
   ]
 }

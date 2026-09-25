@@ -4,123 +4,260 @@
     {
       "id": "a2-155-intro-1",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "vocabulary",
       "question": "Which means \"to solve\"?",
-      "options": ["megold", "hiányzik", "reklamál"],
+      "options": [
+        "megold",
+        "hiányzik",
+        "reklamál"
+      ],
       "correct": 0,
-      "teaches": ["solve-vocab"]
+      "teaches": [
+        "solve-vocab"
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a2-155-intro-2",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "vocabulary",
       "question": "Which means \"immediately\"?",
-      "options": ["azonnal", "sajnos", "ezért"],
+      "options": [
+        "azonnal",
+        "sajnos",
+        "ezért"
+      ],
       "correct": 0,
-      "teaches": ["solve-vocab"]
+      "teaches": [
+        "solve-vocab"
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a2-155-controlled-1",
       "type": "matching",
-      "category": "controlled",
+      "category": "vocabulary",
       "pairs": [
-        ["megold", "to solve"],
-        ["megoldódik", "to get solved"],
-        ["azonnal", "immediately"],
-        ["kellemetlen", "unpleasant, annoying"]
+        [
+          "megold",
+          "to solve"
+        ],
+        [
+          "megoldódik",
+          "to get solved"
+        ],
+        [
+          "azonnal",
+          "immediately"
+        ],
+        [
+          "kellemetlen",
+          "unpleasant, annoying"
+        ]
       ],
-      "teaches": ["solve-vocab", "megold-megoldodik"]
+      "teaches": [
+        "solve-vocab",
+        "megold-megoldodik"
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a2-155-controlled-2",
       "type": "matching",
-      "category": "controlled",
+      "category": "vocabulary",
       "pairs": [
-        ["ezért", "that's why, therefore"],
-        ["probléma", "problem"],
-        ["sajnos", "unfortunately"],
-        ["gond", "trouble, hassle"]
+        [
+          "ezért",
+          "that's why, therefore"
+        ],
+        [
+          "probléma",
+          "problem"
+        ],
+        [
+          "sajnos",
+          "unfortunately"
+        ],
+        [
+          "gond",
+          "trouble, hassle"
+        ]
       ],
-      "teaches": ["ezert-linking", "solve-vocab"]
+      "teaches": [
+        "ezert-linking",
+        "solve-vocab"
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a2-155-controlled-3",
       "type": "fill-blank",
-      "category": "controlled",
+      "category": "grammar",
       "sentence": "Végül minden ____. (got solved)",
       "answer": "megoldódott",
-      "teaches": ["megold-megoldodik"]
+      "teaches": [
+        "megold-megoldodik"
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a2-155-controlled-4",
       "type": "fill-blank",
-      "category": "controlled",
+      "category": "grammar",
       "sentence": "Nem működik a klíma, ____ reklamálok. (that's why)",
       "answer": "ezért",
-      "teaches": ["ezert-linking"]
+      "teaches": [
+        "ezert-linking"
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a2-155-practice-1",
       "type": "multiple-choice",
-      "category": "practice",
+      "category": "grammar",
       "question": "Which verb needs someone doing the solving as its subject?",
-      "options": ["megold", "megoldódik", "hiányzik"],
+      "options": [
+        "megold",
+        "megoldódik",
+        "hiányzik"
+      ],
       "correct": 0,
-      "teaches": ["megold-megoldodik"]
+      "teaches": [
+        "megold-megoldodik"
+      ],
+      "stage": "practice"
     },
     {
       "id": "a2-155-practice-2",
       "type": "matching",
-      "category": "practice",
+      "category": "vocabulary",
       "pairs": [
-        ["Megoldom a problémát.", "I'll solve the problem."],
-        ["Megoldódott a probléma.", "The problem got solved."],
-        ["Elromlott a klíma, ezért reklamálok.", "The air conditioning broke, that's why I'm complaining."],
-        ["Hiányzik egy törölköző, ezért szükségem van segítségre.", "A towel is missing, that's why I need help."]
+        [
+          "Megoldom a problémát.",
+          "I'll solve the problem."
+        ],
+        [
+          "Megoldódott a probléma.",
+          "The problem got solved."
+        ],
+        [
+          "Elromlott a klíma, ezért reklamálok.",
+          "The air conditioning broke, that's why I'm complaining."
+        ],
+        [
+          "Hiányzik egy törölköző, ezért szükségem van segítségre.",
+          "A towel is missing, that's why I need help."
+        ]
       ],
-      "teaches": ["megold-megoldodik", "ezert-linking"]
+      "teaches": [
+        "megold-megoldodik",
+        "ezert-linking"
+      ],
+      "stage": "practice"
     },
     {
       "id": "a2-155-practice-3",
       "type": "sentence-builder",
-      "category": "practice",
-      "tiles": ["Károly", "gyorsan", "megoldta", "a", "problémát", "."],
-      "solution": ["Károly", "gyorsan", "megoldta", "a", "problémát", "."],
+      "category": "grammar",
+      "tiles": [
+        "Károly",
+        "gyorsan",
+        "megoldta",
+        "a",
+        "problémát",
+        "."
+      ],
+      "solution": [
+        "Károly",
+        "gyorsan",
+        "megoldta",
+        "a",
+        "problémát",
+        "."
+      ],
       "english": "Károly solved the problem quickly.",
-      "teaches": ["megold-megoldodik"]
+      "teaches": [
+        "megold-megoldodik"
+      ],
+      "stage": "practice"
     },
     {
       "id": "a2-155-practice-4",
       "type": "sentence-builder",
-      "category": "practice",
-      "tiles": ["Elromlott", "a", "telefonom,", "ezért", "szeretnék", "egy", "időpontot", "módosítani", "."],
-      "solution": ["Elromlott", "a", "telefonom,", "ezért", "szeretnék", "egy", "időpontot", "módosítani", "."],
+      "category": "grammar",
+      "tiles": [
+        "Elromlott",
+        "a",
+        "telefonom,",
+        "ezért",
+        "szeretnék",
+        "egy",
+        "időpontot",
+        "módosítani",
+        "."
+      ],
+      "solution": [
+        "Elromlott",
+        "a",
+        "telefonom,",
+        "ezért",
+        "szeretnék",
+        "egy",
+        "időpontot",
+        "módosítani",
+        "."
+      ],
       "english": "My phone broke, that's why I'd like to change an appointment.",
-      "teaches": ["ezert-linking"]
+      "teaches": [
+        "ezert-linking"
+      ],
+      "stage": "practice"
     },
     {
       "id": "a2-155-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
       "prompt": [
-        { "speaker": "Meg", "text": "Hiányzik egy törölköző a szobából, és nem működik a klíma." },
-        { "speaker": "Recepciós", "text": "_____" }
+        {
+          "speaker": "Meg",
+          "text": "Hiányzik egy törölköző a szobából, és nem működik a klíma."
+        },
+        {
+          "speaker": "Recepciós",
+          "text": "_____"
+        }
       ],
-      "options": ["Elnézést, azonnal megoldjuk.", "Nagyon elégedett vagyok a szobával."],
+      "options": [
+        "Elnézést, azonnal megoldjuk.",
+        "Nagyon elégedett vagyok a szobával."
+      ],
       "correct": 0,
-      "teaches": ["solve-vocab"]
+      "teaches": [
+        "solve-vocab"
+      ]
     },
     {
       "id": "a2-155-dialogue-2",
       "type": "dialogue-complete",
       "category": "dialogue",
       "prompt": [
-        { "speaker": "Petra", "text": "Megoldódott már a probléma?" },
-        { "speaker": "Meg", "text": "_____" }
+        {
+          "speaker": "Petra",
+          "text": "Megoldódott már a probléma?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
       ],
-      "options": ["Igen, a recepciós azonnal megoldta.", "Nem, még mindig nem működik semmi."],
+      "options": [
+        "Igen, a recepciós azonnal megoldta.",
+        "Nem, még mindig nem működik semmi."
+      ],
       "correct": 0,
-      "teaches": ["megold-megoldodik"]
+      "teaches": [
+        "megold-megoldodik"
+      ]
     },
     {
       "id": "a2-155-writing-1",
@@ -132,7 +269,9 @@
           "answer": "Végül megoldódott a probléma."
         }
       ],
-      "teaches": ["megold-megoldodik"]
+      "teaches": [
+        "megold-megoldodik"
+      ]
     },
     {
       "id": "a2-155-writing-2",
@@ -144,25 +283,41 @@
           "answer": "Nem működik a wifi, ezért szeretnék reklamálni."
         }
       ],
-      "teaches": ["ezert-linking"]
+      "teaches": [
+        "ezert-linking"
+      ]
     },
     {
       "id": "a2-155-check-1",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "vocabulary",
       "question": "Which means \"unpleasant, annoying\"?",
-      "options": ["kellemetlen", "elégedetlen", "sürgős"],
+      "options": [
+        "kellemetlen",
+        "elégedetlen",
+        "sürgős"
+      ],
       "correct": 0,
-      "teaches": ["solve-vocab"]
+      "teaches": [
+        "solve-vocab"
+      ],
+      "stage": "check"
     },
     {
       "id": "a2-155-check-2",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "grammar",
       "question": "Which correctly completes: \"A probléma ____, mert a recepciós azonnal segített.\" (\"The problem got solved, because the receptionist helped immediately.\")?",
-      "options": ["megoldódott", "megoldotta", "megoldom"],
+      "options": [
+        "megoldódott",
+        "megoldotta",
+        "megoldom"
+      ],
       "correct": 0,
-      "teaches": ["megold-megoldodik"]
+      "teaches": [
+        "megold-megoldodik"
+      ],
+      "stage": "check"
     }
   ]
 }

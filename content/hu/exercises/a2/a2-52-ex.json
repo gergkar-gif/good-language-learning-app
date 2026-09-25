@@ -4,123 +4,243 @@
     {
       "id": "a2-52-intro-1",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "vocabulary",
       "question": "Which means \"team\"?",
-      "options": ["csapat", "mérkőzés", "pálya"],
+      "options": [
+        "csapat",
+        "mérkőzés",
+        "pálya"
+      ],
       "correct": 0,
-      "teaches": ["sports-vocab"]
+      "teaches": [
+        "sports-vocab"
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a2-52-intro-2",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "vocabulary",
       "question": "Which means \"training, workout\"?",
-      "options": ["edzés", "mérkőzés", "pálya"],
+      "options": [
+        "edzés",
+        "mérkőzés",
+        "pálya"
+      ],
       "correct": 0,
-      "teaches": ["sports-vocab"]
+      "teaches": [
+        "sports-vocab"
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a2-52-controlled-1",
       "type": "matching",
-      "category": "controlled",
+      "category": "vocabulary",
       "pairs": [
-        ["sportol", "to do sport"],
-        ["edzés", "training, workout"],
-        ["csapat", "team"],
-        ["mérkőzés", "match, game"]
+        [
+          "sportol",
+          "to do sport"
+        ],
+        [
+          "edzés",
+          "training, workout"
+        ],
+        [
+          "csapat",
+          "team"
+        ],
+        [
+          "mérkőzés",
+          "match, game"
+        ]
       ],
-      "teaches": ["sports-vocab"]
+      "teaches": [
+        "sports-vocab"
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a2-52-controlled-2",
       "type": "matching",
-      "category": "controlled",
+      "category": "vocabulary",
       "pairs": [
-        ["két éve", "for two years"],
-        ["gyerekkora óta", "since childhood"],
-        ["január óta", "since January"],
-        ["régóta", "for a long time"]
+        [
+          "két éve",
+          "for two years"
+        ],
+        [
+          "gyerekkora óta",
+          "since childhood"
+        ],
+        [
+          "január óta",
+          "since January"
+        ],
+        [
+          "régóta",
+          "for a long time"
+        ]
       ],
-      "teaches": ["ota-duration"]
+      "teaches": [
+        "ota-duration"
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a2-52-controlled-3",
       "type": "fill-blank",
-      "category": "controlled",
+      "category": "grammar",
       "sentence": "Csütörtökön ____ jár a csapat. (training)",
       "answer": "edzésre",
-      "teaches": ["jar-infinitive"]
+      "teaches": [
+        "jar-infinitive"
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a2-52-controlled-4",
       "type": "fill-blank",
-      "category": "controlled",
+      "category": "grammar",
       "sentence": "____ futok. (for two years)",
       "answer": "Két éve",
-      "teaches": ["ota-duration"]
+      "teaches": [
+        "ota-duration"
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a2-52-practice-1",
       "type": "multiple-choice",
-      "category": "practice",
+      "category": "grammar",
       "question": "Which pattern means \"goes swimming\" as a regular habit, not just once?",
-      "options": ["úszni jár", "jár", "úszik"],
+      "options": [
+        "úszni jár",
+        "jár",
+        "úszik"
+      ],
       "correct": 0,
-      "teaches": ["jar-infinitive"]
+      "teaches": [
+        "jar-infinitive"
+      ],
+      "stage": "practice"
     },
     {
       "id": "a2-52-practice-2",
       "type": "matching",
-      "category": "practice",
+      "category": "vocabulary",
       "pairs": [
-        ["úszni jár", "goes swimming (regularly)"],
-        ["futni jár", "goes running (regularly)"],
-        ["edzésre jár", "goes to training (regularly)"],
-        ["sportolni jár", "goes to do sports (regularly)"]
+        [
+          "úszni jár",
+          "goes swimming (regularly)"
+        ],
+        [
+          "futni jár",
+          "goes running (regularly)"
+        ],
+        [
+          "edzésre jár",
+          "goes to training (regularly)"
+        ],
+        [
+          "sportolni jár",
+          "goes to do sports (regularly)"
+        ]
       ],
-      "teaches": ["jar-infinitive"]
+      "teaches": [
+        "jar-infinitive"
+      ],
+      "stage": "practice"
     },
     {
       "id": "a2-52-practice-3",
       "type": "sentence-builder",
-      "category": "practice",
-      "tiles": ["Két", "éve", "futok", "."],
-      "solution": ["Két", "éve", "futok", "."],
+      "category": "grammar",
+      "tiles": [
+        "Két",
+        "éve",
+        "futok",
+        "."
+      ],
+      "solution": [
+        "Két",
+        "éve",
+        "futok",
+        "."
+      ],
       "english": "I've been running for two years.",
-      "teaches": ["ota-duration"]
+      "teaches": [
+        "ota-duration"
+      ],
+      "stage": "practice"
     },
     {
       "id": "a2-52-practice-4",
       "type": "sentence-builder",
-      "category": "practice",
-      "tiles": ["Gyerekkora", "óta", "focizik", "."],
-      "solution": ["Gyerekkora", "óta", "focizik", "."],
+      "category": "grammar",
+      "tiles": [
+        "Gyerekkora",
+        "óta",
+        "focizik",
+        "."
+      ],
+      "solution": [
+        "Gyerekkora",
+        "óta",
+        "focizik",
+        "."
+      ],
       "english": "He's been playing football since childhood.",
-      "teaches": ["ota-duration"]
+      "teaches": [
+        "ota-duration"
+      ],
+      "stage": "practice"
     },
     {
       "id": "a2-52-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
       "prompt": [
-        { "speaker": "Ildikó", "text": "Milyen sportot szeretsz?" },
-        { "speaker": "Meg", "text": "_____" }
+        {
+          "speaker": "Ildikó",
+          "text": "Milyen sportot szeretsz?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
       ],
-      "options": ["Szeretek úszni. Hetente háromszor úszni járok.", "Nem szeretek sportot nézni a tévében."],
+      "options": [
+        "Szeretek úszni. Hetente háromszor úszni járok.",
+        "Nem szeretek sportot nézni a tévében."
+      ],
       "correct": 0,
-      "teaches": ["jar-infinitive"]
+      "teaches": [
+        "jar-infinitive"
+      ]
     },
     {
       "id": "a2-52-dialogue-2",
       "type": "dialogue-complete",
       "category": "dialogue",
       "prompt": [
-        { "speaker": "Károly", "text": "Mióta focizol?" },
-        { "speaker": "Ildikó", "text": "_____" }
+        {
+          "speaker": "Károly",
+          "text": "Mióta focizol?"
+        },
+        {
+          "speaker": "Ildikó",
+          "text": "_____"
+        }
       ],
-      "options": ["Gyerekkorom óta focizom.", "Két mérkőzés van ma."],
+      "options": [
+        "Gyerekkorom óta focizom.",
+        "Két mérkőzés van ma."
+      ],
       "correct": 0,
-      "teaches": ["ota-duration"]
+      "teaches": [
+        "ota-duration"
+      ]
     },
     {
       "id": "a2-52-writing-1",
@@ -132,7 +252,9 @@
           "answer": "Két éve úszom."
         }
       ],
-      "teaches": ["ota-duration"]
+      "teaches": [
+        "ota-duration"
+      ]
     },
     {
       "id": "a2-52-writing-2",
@@ -144,25 +266,41 @@
           "answer": "Csütörtökön edzésre jár a csapat."
         }
       ],
-      "teaches": ["jar-infinitive"]
+      "teaches": [
+        "jar-infinitive"
+      ]
     },
     {
       "id": "a2-52-check-1",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "vocabulary",
       "question": "Which means \"match, game\"?",
-      "options": ["mérkőzés", "edzés", "pálya"],
+      "options": [
+        "mérkőzés",
+        "edzés",
+        "pálya"
+      ],
       "correct": 0,
-      "teaches": ["sports-vocab"]
+      "teaches": [
+        "sports-vocab"
+      ],
+      "stage": "check"
     },
     {
       "id": "a2-52-check-2",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "grammar",
       "question": "In \"Két éve futok\", what does két éve mean?",
-      "options": ["for two years", "two years ago", "in two years"],
+      "options": [
+        "for two years",
+        "two years ago",
+        "in two years"
+      ],
       "correct": 0,
-      "teaches": ["ota-duration"]
+      "teaches": [
+        "ota-duration"
+      ],
+      "stage": "check"
     }
   ]
 }

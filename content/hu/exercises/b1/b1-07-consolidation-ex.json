@@ -4,7 +4,7 @@
     {
       "id": "b1-07-consolidation-1",
       "type": "matching",
-      "category": "recognize",
+      "category": "vocabulary",
       "pairs": [
         [
           "iskolarendszer",
@@ -22,12 +22,13 @@
           "önképzés",
           "self-education"
         ]
-      ]
+      ],
+      "stage": "recognize"
     },
     {
       "id": "b1-07-consolidation-2",
       "type": "matching",
-      "category": "recognize",
+      "category": "vocabulary",
       "pairs": [
         [
           "gimnázium",
@@ -45,117 +46,128 @@
           "átképzés",
           "retraining"
         ]
-      ]
+      ],
+      "stage": "recognize"
     },
     {
       "id": "b1-07-consolidation-3",
       "type": "multiple-choice",
-      "category": "recognize",
+      "category": "grammar",
       "question": "Which suffix indicates possibility/permission ('can/may')?",
       "options": [
         "-hat / -het",
         "-gat / -get",
         "-ság / -ség"
       ],
-      "correct": 0
+      "correct": 0,
+      "stage": "recognize"
     },
     {
       "id": "b1-07-consolidation-4",
       "type": "multiple-choice",
-      "category": "recall",
+      "category": "grammar",
       "question": "Complete: 'Azért tanulok, hogy sikeresen ...' (I pass)",
       "options": [
         "átmenjek a vizsgán",
         "átmegyek a vizsgán",
         "átmentem a vizsgán"
       ],
-      "correct": 0
+      "correct": 0,
+      "stage": "recall"
     },
     {
       "id": "b1-07-consolidation-5",
       "type": "fill-blank",
-      "category": "recall",
+      "category": "grammar",
       "sentence": "A nehéz tananyagra kell ____. (we must concentrate)",
-      "answer": "összpontosítanunk"
+      "answer": "összpontosítanunk",
+      "stage": "recall"
     },
     {
       "id": "b1-07-consolidation-6",
       "type": "multiple-choice",
-      "category": "recall",
+      "category": "vocabulary",
       "question": "What is the highest grade in the Hungarian school system?",
       "options": [
         "ötös (5)",
         "egyes (1)",
         "tízes (10)"
       ],
-      "correct": 0
+      "correct": 0,
+      "stage": "recall"
     },
     {
       "id": "b1-07-consolidation-7",
       "type": "multiple-choice",
-      "category": "in-context",
+      "category": "vocabulary",
       "question": "A gimnázium után a diákok egyetemi képzésre ...",
       "options": [
         "jelentkezhetnek",
         "jelentkezik",
         "jelentkeztél"
       ],
-      "correct": 0
+      "correct": 0,
+      "stage": "in-context"
     },
     {
       "id": "b1-07-consolidation-8",
       "type": "fill-blank",
-      "category": "in-context",
+      "category": "grammar",
       "sentence": "A tanfolyam célja, hogy ____ a diákok szaktudását. (to develop / subjunctive)",
-      "answer": "fejlessze"
+      "answer": "fejlessze",
+      "stage": "in-context"
     },
     {
       "id": "b1-07-consolidation-9",
       "type": "multiple-choice",
-      "category": "in-context",
+      "category": "vocabulary",
       "question": "Mit jelent az 'élethosszig tartó tanulás' a felnőttek számára?",
       "options": [
         "Folyamatos önképzést és új készségek elsajátítását.",
         "Hogy soha nem hagyhatják el az iskolapadot.",
         "Hogy minden évben érettségizniük kell."
       ],
-      "correct": 0
+      "correct": 0,
+      "stage": "in-context"
     },
     {
       "id": "b1-07-consolidation-10",
       "type": "multiple-choice",
-      "category": "produce",
+      "category": "writing",
       "question": "Translate: 'Anyone can study in state schools.'",
       "options": [
         "Bárki tanulhat az állami iskolákban.",
         "Mindenki tanult az iskola előtt.",
         "Senki nem tanulhat az iskolában."
       ],
-      "correct": 0
+      "correct": 0,
+      "stage": "produce"
     },
     {
       "id": "b1-07-consolidation-11",
       "type": "multiple-choice",
-      "category": "produce",
+      "category": "writing",
       "question": "Translate: 'I take notes attentively during the lecture.'",
       "options": [
         "Figyelmesen jegyzetelek az előadás alatt.",
         "Figyelmetlenül írok egy levelet tegnap.",
         "Jegyzeteket veszek a boltban reggel."
       ],
-      "correct": 0
+      "correct": 0,
+      "stage": "produce"
     },
     {
       "id": "b1-07-consolidation-12",
       "type": "multiple-choice",
-      "category": "produce",
+      "category": "writing",
       "question": "Translate: 'We passed both the oral and written examinations.'",
       "options": [
         "A szóbeli és az írásbeli vizsgán is átmentünk.",
         "A szóbeli és írásbeli vizsgát megbuktuk.",
         "A vizsgáról szóban és írásban hallottunk."
       ],
-      "correct": 0
+      "correct": 0,
+      "stage": "produce"
     }
   ]
 }

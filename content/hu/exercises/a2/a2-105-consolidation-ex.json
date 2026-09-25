@@ -4,130 +4,239 @@
     {
       "id": "a2-105-consolidation-1",
       "type": "multiple-choice",
-      "category": "recognize",
+      "category": "vocabulary",
       "question": "Which means \"engineer\"?",
-      "options": ["mérnök", "orvos", "eladó"],
+      "options": [
+        "mérnök",
+        "orvos",
+        "eladó"
+      ],
       "correct": 0,
-      "teaches": ["foglalkozas-vocab"]
+      "teaches": [
+        "foglalkozas-vocab"
+      ],
+      "stage": "recognize"
     },
     {
       "id": "a2-105-consolidation-2",
       "type": "multiple-choice",
-      "category": "recognize",
+      "category": "vocabulary",
       "question": "Which means \"colleague, coworker\"?",
-      "options": ["munkatárs", "főnök", "csapat"],
+      "options": [
+        "munkatárs",
+        "főnök",
+        "csapat"
+      ],
       "correct": 0,
-      "teaches": ["munkatars-vocab"]
+      "teaches": [
+        "munkatars-vocab"
+      ],
+      "stage": "recognize"
     },
     {
       "id": "a2-105-consolidation-3",
       "type": "multiple-choice",
-      "category": "recognize",
+      "category": "vocabulary",
       "question": "Which means \"report\"?",
-      "options": ["jelentés", "megbeszélés", "feladat"],
+      "options": [
+        "jelentés",
+        "megbeszélés",
+        "feladat"
+      ],
       "correct": 0,
-      "teaches": ["munka-feladat-vocab"]
+      "teaches": [
+        "munka-feladat-vocab"
+      ],
+      "stage": "recognize"
     },
     {
       "id": "a2-105-consolidation-4",
       "type": "matching",
-      "category": "recall",
+      "category": "vocabulary",
       "pairs": [
-        ["tanár", "teacher"],
-        ["iroda", "office"],
-        ["munkaidő", "working hours"],
-        ["főnök", "boss"]
+        [
+          "tanár",
+          "teacher"
+        ],
+        [
+          "iroda",
+          "office"
+        ],
+        [
+          "munkaidő",
+          "working hours"
+        ],
+        [
+          "főnök",
+          "boss"
+        ]
       ],
-      "teaches": ["foglalkozas-vocab", "munkahely-vocab", "munkaido-vocab", "munkatars-vocab"]
+      "teaches": [
+        "foglalkozas-vocab",
+        "munkahely-vocab",
+        "munkaido-vocab",
+        "munkatars-vocab"
+      ],
+      "stage": "recall"
     },
     {
       "id": "a2-105-consolidation-5",
       "type": "matching",
-      "category": "recall",
+      "category": "vocabulary",
       "pairs": [
-        ["szünet", "break"],
-        ["túlóra", "overtime"],
-        ["jelentés", "report"],
-        ["cég", "company, firm"]
+        [
+          "szünet",
+          "break"
+        ],
+        [
+          "túlóra",
+          "overtime"
+        ],
+        [
+          "jelentés",
+          "report"
+        ],
+        [
+          "cég",
+          "company, firm"
+        ]
       ],
-      "teaches": ["munkaido-vocab", "munka-feladat-vocab", "munkahely-vocab"]
+      "teaches": [
+        "munkaido-vocab",
+        "munka-feladat-vocab",
+        "munkahely-vocab"
+      ],
+      "stage": "recall"
     },
     {
       "id": "a2-105-consolidation-6",
       "type": "fill-blank",
-      "category": "recall",
+      "category": "grammar",
       "sentence": "Mérnök vagyok, egy ____ dolgozom. (company)",
       "answer": "cégnél",
-      "teaches": ["kinel-dolgozol"]
+      "teaches": [
+        "kinel-dolgozol"
+      ],
+      "stage": "recall"
     },
     {
       "id": "a2-105-consolidation-7",
       "type": "dialogue-complete",
-      "category": "context",
+      "category": "dialogue",
       "prompt": [
-        { "speaker": "Petra", "text": "Mi a foglalkozásod?" },
-        { "speaker": "Meg", "text": "_____" }
+        {
+          "speaker": "Petra",
+          "text": "Mi a foglalkozásod?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
       ],
-      "options": ["Tanár vagyok, egy iskolában dolgozom.", "Nagyon fárasztó volt a hét."],
+      "options": [
+        "Tanár vagyok, egy iskolában dolgozom.",
+        "Nagyon fárasztó volt a hét."
+      ],
       "correct": 0,
-      "teaches": ["x-vagyok", "hol-dolgozol"]
+      "teaches": [
+        "x-vagyok",
+        "hol-dolgozol"
+      ],
+      "stage": "context"
     },
     {
       "id": "a2-105-consolidation-8",
       "type": "dialogue-complete",
-      "category": "context",
+      "category": "dialogue",
       "prompt": [
-        { "speaker": "Meg", "text": "Bemutatom a munkatársamat, Petrát." },
-        { "speaker": "Tamás", "text": "_____" }
+        {
+          "speaker": "Meg",
+          "text": "Bemutatom a munkatársamat, Petrát."
+        },
+        {
+          "speaker": "Tamás",
+          "text": "_____"
+        }
       ],
-      "options": ["Szia, Petra! Hogy vagy?", "Kilenctől ötig dolgozom."],
+      "options": [
+        "Szia, Petra! Hogy vagy?",
+        "Kilenctől ötig dolgozom."
+      ],
       "correct": 0,
-      "teaches": ["acc-poss"]
+      "teaches": [
+        "acc-poss"
+      ],
+      "stage": "context"
     },
     {
       "id": "a2-105-consolidation-9",
       "type": "sentence-builder",
-      "category": "context",
-      "tiles": ["Kell", "egy", "jelentést", "írnom", "."],
-      "solution": ["Kell", "egy", "jelentést", "írnom", "."],
+      "category": "grammar",
+      "tiles": [
+        "Kell",
+        "egy",
+        "jelentést",
+        "írnom",
+        "."
+      ],
+      "solution": [
+        "Kell",
+        "egy",
+        "jelentést",
+        "írnom",
+        "."
+      ],
       "english": "I have to write a report.",
-      "teaches": ["kell-szemelyes-infinitivus"]
+      "teaches": [
+        "kell-szemelyes-infinitivus"
+      ],
+      "stage": "context"
     },
     {
       "id": "a2-105-consolidation-10",
       "type": "structured-writing",
-      "category": "produce",
+      "category": "writing",
       "template": [
         {
           "prompt": "Say you are a doctor and you work in a hospital.",
           "answer": "Orvos vagyok, egy kórházban dolgozom."
         }
       ],
-      "teaches": ["x-vagyok", "hol-dolgozol"]
+      "teaches": [
+        "x-vagyok",
+        "hol-dolgozol"
+      ],
+      "stage": "produce"
     },
     {
       "id": "a2-105-consolidation-11",
       "type": "structured-writing",
-      "category": "produce",
+      "category": "writing",
       "template": [
         {
           "prompt": "Say your working hours start at nine and end at five.",
           "answer": "A munkaidőm kilenckor kezdődik, és ötkor végződik."
         }
       ],
-      "teaches": ["kezdodik-vegzodik"]
+      "teaches": [
+        "kezdodik-vegzodik"
+      ],
+      "stage": "produce"
     },
     {
       "id": "a2-105-consolidation-12",
       "type": "structured-writing",
-      "category": "produce",
+      "category": "writing",
       "template": [
         {
           "prompt": "Say you have to work overtime today.",
           "answer": "Ma kell túlóráznom."
         }
       ],
-      "teaches": ["kell-szemelyes-infinitivus"]
+      "teaches": [
+        "kell-szemelyes-infinitivus"
+      ],
+      "stage": "produce"
     }
   ]
 }

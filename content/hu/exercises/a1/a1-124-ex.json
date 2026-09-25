@@ -4,31 +4,33 @@
     {
       "id": "a1-124-review-1",
       "type": "multiple-choice",
-      "category": "review",
+      "category": "vocabulary",
       "question": "What does 'méret' mean?",
       "options": [
         "size",
         "price",
         "colour"
       ],
-      "correct": 0
+      "correct": 0,
+      "stage": "review"
     },
     {
       "id": "a1-124-review-2",
       "type": "multiple-choice",
-      "category": "review",
+      "category": "vocabulary",
       "question": "What does 'piros' mean?",
       "options": [
         "red",
         "blue",
         "black"
       ],
-      "correct": 0
+      "correct": 0,
+      "stage": "review"
     },
     {
       "id": "a1-124-introduce-1",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "grammar",
       "question": "What does 'kék' mean?",
       "options": [
         "blue",
@@ -39,12 +41,13 @@
       "teaches": [
         "polite-questions-addressing-someone-as-on",
         "what-s-available-van-with-lists"
-      ]
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a1-124-introduce-2",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "grammar",
       "question": "What does 'nagy' mean?",
       "options": [
         "large",
@@ -55,23 +58,25 @@
       "teaches": [
         "polite-questions-addressing-someone-as-on",
         "what-s-available-van-with-lists"
-      ]
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a1-124-controlled-1",
       "type": "fill-blank",
-      "category": "controlled",
+      "category": "grammar",
       "sentence": "Piros, kék, fekete és ____ van.",
       "answer": "fehér",
       "teaches": [
         "polite-questions-addressing-someone-as-on",
         "what-s-available-van-with-lists"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-124-controlled-2",
       "type": "multiple-choice",
-      "category": "controlled",
+      "category": "grammar",
       "question": "Choose the word for 'black'.",
       "options": [
         "fekete",
@@ -82,12 +87,13 @@
       "teaches": [
         "polite-questions-addressing-someone-as-on",
         "what-s-available-van-with-lists"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-124-controlled-3",
       "type": "matching",
-      "category": "controlled",
+      "category": "vocabulary",
       "pairs": [
         [
           "kék",
@@ -109,12 +115,13 @@
       "teaches": [
         "polite-questions-addressing-someone-as-on",
         "what-s-available-van-with-lists"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-124-controlled-4",
       "type": "substitution",
-      "category": "controlled",
+      "category": "grammar",
       "base_sentence": "A kék pólót kérem.",
       "base_word": "kék",
       "base_gloss": "I'd like the blue T-shirt.",
@@ -135,12 +142,13 @@
       "teaches": [
         "polite-questions-addressing-someone-as-on",
         "what-s-available-van-with-lists"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-124-practice-1",
       "type": "multiple-choice",
-      "category": "practice",
+      "category": "grammar",
       "question": "How would a shop assistant politely ask 'What are you looking for?'",
       "options": [
         "Mit keres?",
@@ -151,23 +159,25 @@
       "teaches": [
         "polite-questions-addressing-someone-as-on",
         "what-s-available-van-with-lists"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-124-practice-2",
       "type": "fill-blank",
-      "category": "practice",
+      "category": "grammar",
       "sentence": "Jó napot kívánok! Mit ____?",
       "answer": "keres",
       "teaches": [
         "polite-questions-addressing-someone-as-on",
         "what-s-available-van-with-lists"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-124-practice-3",
       "type": "matching",
-      "category": "practice",
+      "category": "vocabulary",
       "pairs": [
         [
           "kék",
@@ -193,12 +203,13 @@
       "teaches": [
         "polite-questions-addressing-someone-as-on",
         "what-s-available-van-with-lists"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-124-practice-4",
       "type": "substitution",
-      "category": "practice",
+      "category": "grammar",
       "base_sentence": "Nagy és kicsi van.",
       "base_word": "Nagy",
       "base_gloss": "There's large and small.",
@@ -219,12 +230,13 @@
       "teaches": [
         "polite-questions-addressing-someone-as-on",
         "what-s-available-van-with-lists"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-124-practice-5",
       "type": "dialogue-complete",
-      "category": "practice",
+      "category": "dialogue",
       "prompt": [
         {
           "speaker": "Meg",
@@ -243,7 +255,8 @@
       "teaches": [
         "polite-questions-addressing-someone-as-on",
         "what-s-available-van-with-lists"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-124-dialogue-1",
@@ -326,7 +339,7 @@
     {
       "id": "a1-124-check-1",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "grammar",
       "question": "Choose the correct word for 'blue'.",
       "options": [
         "kék",
@@ -337,12 +350,13 @@
       "teaches": [
         "polite-questions-addressing-someone-as-on",
         "what-s-available-van-with-lists"
-      ]
+      ],
+      "stage": "check"
     },
     {
       "id": "a1-124-check-2",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "grammar",
       "question": "Choose the correct word for 'large'.",
       "options": [
         "nagy",
@@ -353,7 +367,8 @@
       "teaches": [
         "polite-questions-addressing-someone-as-on",
         "what-s-available-van-with-lists"
-      ]
+      ],
+      "stage": "check"
     }
   ]
 }

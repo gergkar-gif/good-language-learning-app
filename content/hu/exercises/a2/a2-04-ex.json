@@ -4,120 +4,230 @@
     {
       "id": "a2-04-intro-1",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "vocabulary",
       "question": "Which means “twice”?",
-      "options": ["kétszer", "egyszer", "háromszor"],
+      "options": [
+        "kétszer",
+        "egyszer",
+        "háromszor"
+      ],
       "correct": 0,
-      "teaches": ["how-many-times-szor"]
+      "teaches": [
+        "how-many-times-szor"
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a2-04-intro-2",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "vocabulary",
       "question": "Which means “never”?",
-      "options": ["soha", "mindig", "ritkán"],
+      "options": [
+        "soha",
+        "mindig",
+        "ritkán"
+      ],
       "correct": 0,
-      "teaches": ["how-many-times-szor"]
+      "teaches": [
+        "how-many-times-szor"
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a2-04-controlled-1",
       "type": "matching",
-      "category": "controlled",
+      "category": "vocabulary",
       "pairs": [
-        ["egyszer", "once"],
-        ["kétszer", "twice"],
-        ["háromszor", "three times"],
-        ["soha", "never"]
+        [
+          "egyszer",
+          "once"
+        ],
+        [
+          "kétszer",
+          "twice"
+        ],
+        [
+          "háromszor",
+          "three times"
+        ],
+        [
+          "soha",
+          "never"
+        ]
       ],
-      "teaches": ["how-many-times-szor"]
+      "teaches": [
+        "how-many-times-szor"
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a2-04-controlled-2",
       "type": "fill-blank",
-      "category": "controlled",
+      "category": "vocabulary",
       "sentence": "Soha ____ dolgozom vasárnap.",
       "answer": "nem",
-      "teaches": ["how-many-times-szor"]
+      "teaches": [
+        "how-many-times-szor"
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a2-04-controlled-3",
       "type": "multiple-choice",
-      "category": "controlled",
+      "category": "vocabulary",
       "question": "Which means “daily”?",
-      "options": ["naponta", "hetente", "havonta"],
+      "options": [
+        "naponta",
+        "hetente",
+        "havonta"
+      ],
       "correct": 0,
-      "teaches": ["every-day-nta"]
+      "teaches": [
+        "every-day-nta"
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a2-04-controlled-4",
       "type": "matching",
-      "category": "controlled",
+      "category": "vocabulary",
       "pairs": [
-        ["naponta", "daily"],
-        ["hetente", "weekly"],
-        ["havonta", "monthly"],
-        ["évente", "yearly"]
+        [
+          "naponta",
+          "daily"
+        ],
+        [
+          "hetente",
+          "weekly"
+        ],
+        [
+          "havonta",
+          "monthly"
+        ],
+        [
+          "évente",
+          "yearly"
+        ]
       ],
-      "teaches": ["every-day-nta"]
+      "teaches": [
+        "every-day-nta"
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a2-04-controlled-5",
       "type": "fill-blank",
-      "category": "controlled",
+      "category": "vocabulary",
       "sentence": "____ egyszer moziba megyek.",
       "answer": "Havonta",
-      "teaches": ["every-day-nta"]
+      "teaches": [
+        "every-day-nta"
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a2-04-practice-1",
       "type": "multiple-choice",
-      "category": "practice",
+      "category": "vocabulary",
       "question": "Which means “yearly”?",
-      "options": ["évente", "naponta", "hetente"],
+      "options": [
+        "évente",
+        "naponta",
+        "hetente"
+      ],
       "correct": 0,
-      "teaches": ["every-day-nta"]
+      "teaches": [
+        "every-day-nta"
+      ],
+      "stage": "practice"
     },
     {
       "id": "a2-04-practice-2",
       "type": "sentence-builder",
-      "category": "practice",
-      "tiles": ["Hetente", "kétszer", "sportolok", "."],
-      "solution": ["Hetente", "kétszer", "sportolok", "."],
+      "category": "vocabulary",
+      "tiles": [
+        "Hetente",
+        "kétszer",
+        "sportolok",
+        "."
+      ],
+      "solution": [
+        "Hetente",
+        "kétszer",
+        "sportolok",
+        "."
+      ],
       "english": "I do sports twice a week.",
-      "teaches": ["how-many-times-szor"]
+      "teaches": [
+        "how-many-times-szor"
+      ],
+      "stage": "practice"
     },
     {
       "id": "a2-04-practice-3",
       "type": "sentence-builder",
-      "category": "practice",
-      "tiles": ["Naponta", "reggelizem", "."],
-      "solution": ["Naponta", "reggelizem", "."],
+      "category": "vocabulary",
+      "tiles": [
+        "Naponta",
+        "reggelizem",
+        "."
+      ],
+      "solution": [
+        "Naponta",
+        "reggelizem",
+        "."
+      ],
       "english": "I have breakfast every day.",
-      "teaches": ["every-day-nta"]
+      "teaches": [
+        "every-day-nta"
+      ],
+      "stage": "practice"
     },
     {
       "id": "a2-04-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
       "prompt": [
-        { "speaker": "Meg", "text": "Milyen gyakran sportolsz?" },
-        { "speaker": "Károly", "text": "_____" }
+        {
+          "speaker": "Meg",
+          "text": "Milyen gyakran sportolsz?"
+        },
+        {
+          "speaker": "Károly",
+          "text": "_____"
+        }
       ],
-      "options": ["Hetente kétszer.", "Este vagyok."],
+      "options": [
+        "Hetente kétszer.",
+        "Este vagyok."
+      ],
       "correct": 0,
-      "teaches": ["how-many-times-szor"]
+      "teaches": [
+        "how-many-times-szor"
+      ]
     },
     {
       "id": "a2-04-dialogue-2",
       "type": "dialogue-complete",
       "category": "dialogue",
       "prompt": [
-        { "speaker": "Károly", "text": "Milyen gyakran mész moziba?" },
-        { "speaker": "Meg", "text": "_____" }
+        {
+          "speaker": "Károly",
+          "text": "Milyen gyakran mész moziba?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
       ],
-      "options": ["Havonta egyszer.", "Kettő vagyok."],
+      "options": [
+        "Havonta egyszer.",
+        "Kettő vagyok."
+      ],
       "correct": 0,
-      "teaches": ["every-day-nta"]
+      "teaches": [
+        "every-day-nta"
+      ]
     },
     {
       "id": "a2-04-writing-1",
@@ -129,7 +239,9 @@
           "answer": "Soha nem dolgozom vasárnap."
         }
       ],
-      "teaches": ["how-many-times-szor"]
+      "teaches": [
+        "how-many-times-szor"
+      ]
     },
     {
       "id": "a2-04-writing-2",
@@ -141,25 +253,41 @@
           "answer": "Havonta egyszer moziba megyek."
         }
       ],
-      "teaches": ["every-day-nta"]
+      "teaches": [
+        "every-day-nta"
+      ]
     },
     {
       "id": "a2-04-check-1",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "vocabulary",
       "question": "Which means “three times”?",
-      "options": ["háromszor", "harminc", "harmadik"],
+      "options": [
+        "háromszor",
+        "harminc",
+        "harmadik"
+      ],
       "correct": 0,
-      "teaches": ["how-many-times-szor"]
+      "teaches": [
+        "how-many-times-szor"
+      ],
+      "stage": "check"
     },
     {
       "id": "a2-04-check-2",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "vocabulary",
       "question": "Which means “weekly”?",
-      "options": ["hetente", "naponta", "évente"],
+      "options": [
+        "hetente",
+        "naponta",
+        "évente"
+      ],
       "correct": 0,
-      "teaches": ["every-day-nta"]
+      "teaches": [
+        "every-day-nta"
+      ],
+      "stage": "check"
     }
   ]
 }

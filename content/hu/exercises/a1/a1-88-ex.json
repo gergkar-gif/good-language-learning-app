@@ -4,31 +4,33 @@
     {
       "id": "a1-88-review-1",
       "type": "multiple-choice",
-      "category": "review",
+      "category": "vocabulary",
       "question": "Which word means \"bed\"?",
       "options": [
         "ágy",
         "asztal",
         "szék"
       ],
-      "correct": 0
+      "correct": 0,
+      "stage": "review"
     },
     {
       "id": "a1-88-review-2",
       "type": "multiple-choice",
-      "category": "review",
+      "category": "vocabulary",
       "question": "Which article is correct for ágy?",
       "options": [
         "az",
         "a",
         "nincs (none)"
       ],
-      "correct": 0
+      "correct": 0,
+      "stage": "review"
     },
     {
       "id": "a1-88-intro-1",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "grammar",
       "question": "Which word means \"lamp\"?",
       "options": [
         "lámpa",
@@ -39,12 +41,13 @@
       "teaches": [
         "household-objects",
         "my-possessive-endings"
-      ]
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a1-88-intro-2",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "grammar",
       "question": "Which word means \"window\"?",
       "options": [
         "ablak",
@@ -55,12 +58,13 @@
       "teaches": [
         "household-objects",
         "my-possessive-endings"
-      ]
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a1-88-controlled-1",
       "type": "matching",
-      "category": "controlled",
+      "category": "vocabulary",
       "pairs": [
         [
           "lámpa",
@@ -82,23 +86,25 @@
       "teaches": [
         "household-objects",
         "my-possessive-endings"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-88-controlled-2",
       "type": "fill-blank",
-      "category": "controlled",
+      "category": "grammar",
       "sentence": "____ ablak nyitva van. (the — vowel-initial article)",
       "answer": "Az",
       "teaches": [
         "household-objects",
         "my-possessive-endings"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-88-controlled-3",
       "type": "multiple-choice",
-      "category": "controlled",
+      "category": "grammar",
       "question": "Which is correct: \"the mirror\"?",
       "options": [
         "a tükör",
@@ -109,23 +115,25 @@
       "teaches": [
         "household-objects",
         "my-possessive-endings"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-88-controlled-4",
       "type": "fill-blank",
-      "category": "controlled",
+      "category": "grammar",
       "sentence": "A lámpa a tükör ____ van. (in front of)",
       "answer": "előtt",
       "teaches": [
         "household-objects",
         "my-possessive-endings"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-88-practice-1",
       "type": "multiple-choice",
-      "category": "practice",
+      "category": "grammar",
       "question": "Which is the correct \"my window\" form?",
       "options": [
         "ablakom",
@@ -136,23 +144,25 @@
       "teaches": [
         "household-objects",
         "my-possessive-endings"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-88-practice-2",
       "type": "fill-blank",
-      "category": "practice",
+      "category": "grammar",
       "sentence": "Az ajtó az ablak ____ van. (next to)",
       "answer": "mellett",
       "teaches": [
         "household-objects",
         "my-possessive-endings"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-88-practice-3",
       "type": "matching",
-      "category": "practice",
+      "category": "vocabulary",
       "pairs": [
         [
           "A lámpa a tükör előtt van.",
@@ -174,12 +184,13 @@
       "teaches": [
         "household-objects",
         "my-possessive-endings"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-88-practice-4",
       "type": "sentence-builder",
-      "category": "practice",
+      "category": "grammar",
       "tiles": [
         "A",
         "lámpa",
@@ -202,12 +213,13 @@
       "teaches": [
         "household-objects",
         "my-possessive-endings"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-88-practice-5",
       "type": "dialogue-complete",
-      "category": "practice",
+      "category": "dialogue",
       "prompt": [
         {
           "speaker": "Meg",
@@ -226,7 +238,8 @@
       "teaches": [
         "household-objects",
         "my-possessive-endings"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-88-dialogue-1",
@@ -301,7 +314,7 @@
     {
       "id": "a1-88-check-1",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "grammar",
       "question": "Which word means \"mirror\"?",
       "options": [
         "tükör",
@@ -312,12 +325,13 @@
       "teaches": [
         "household-objects",
         "my-possessive-endings"
-      ]
+      ],
+      "stage": "check"
     },
     {
       "id": "a1-88-check-2",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "grammar",
       "question": "Which is the correct \"my mirror\" form?",
       "options": [
         "tükröm",
@@ -328,7 +342,8 @@
       "teaches": [
         "household-objects",
         "my-possessive-endings"
-      ]
+      ],
+      "stage": "check"
     }
   ]
 }

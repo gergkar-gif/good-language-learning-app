@@ -4,19 +4,20 @@
     {
       "id": "a1-118-review-1",
       "type": "multiple-choice",
-      "category": "review",
+      "category": "vocabulary",
       "question": "Which word means 'dessert'?",
       "options": [
         "desszert",
         "menü",
         "marha"
       ],
-      "correct": 0
+      "correct": 0,
+      "stage": "review"
     },
     {
       "id": "a1-118-review-2",
       "type": "matching",
-      "category": "review",
+      "category": "vocabulary",
       "pairs": [
         [
           "desszert",
@@ -34,12 +35,13 @@
           "csirke",
           "chicken"
         ]
-      ]
+      ],
+      "stage": "review"
     },
     {
       "id": "a1-118-intro-1",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "grammar",
       "question": "Which word means 'vegetarian'?",
       "options": [
         "vegetáriánus",
@@ -50,34 +52,37 @@
       "teaches": [
         "ehes-vagyok-i-am-hungry",
         "kell-an-impersonal-need"
-      ]
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a1-118-intro-2",
       "type": "fill-blank",
-      "category": "introduce",
+      "category": "grammar",
       "sentence": "Anna ____. (vegetarian)",
       "answer": "vegetáriánus",
       "teaches": [
         "ehes-vagyok-i-am-hungry",
         "kell-an-impersonal-need"
-      ]
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a1-118-controlled-1",
       "type": "fill-blank",
-      "category": "controlled",
+      "category": "grammar",
       "sentence": "Éhes vagyok, de nem vagyok ____.",
       "answer": "szomjas",
       "teaches": [
         "ehes-vagyok-i-am-hungry",
         "kell-an-impersonal-need"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-118-controlled-2",
       "type": "multiple-choice",
-      "category": "controlled",
+      "category": "grammar",
       "question": "What does 'éhes' mean?",
       "options": [
         "hungry",
@@ -88,12 +93,13 @@
       "teaches": [
         "ehes-vagyok-i-am-hungry",
         "kell-an-impersonal-need"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-118-controlled-3",
       "type": "matching",
-      "category": "controlled",
+      "category": "vocabulary",
       "pairs": [
         [
           "vegetáriánus",
@@ -115,12 +121,13 @@
       "teaches": [
         "ehes-vagyok-i-am-hungry",
         "kell-an-impersonal-need"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-118-controlled-4",
       "type": "substitution",
-      "category": "controlled",
+      "category": "grammar",
       "base_sentence": "Éhes vagyok.",
       "base_word": "Éhes",
       "base_gloss": "I am hungry.",
@@ -141,12 +148,13 @@
       "teaches": [
         "ehes-vagyok-i-am-hungry",
         "kell-an-impersonal-need"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-118-practice-1",
       "type": "multiple-choice",
-      "category": "practice",
+      "category": "grammar",
       "question": "Which word means 'thirsty'?",
       "options": [
         "szomjas",
@@ -157,23 +165,25 @@
       "teaches": [
         "ehes-vagyok-i-am-hungry",
         "kell-an-impersonal-need"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-118-practice-2",
       "type": "fill-blank",
-      "category": "practice",
+      "category": "grammar",
       "sentence": "____ még valami?",
       "answer": "Kell",
       "teaches": [
         "ehes-vagyok-i-am-hungry",
         "kell-an-impersonal-need"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-118-practice-3",
       "type": "matching",
-      "category": "practice",
+      "category": "vocabulary",
       "pairs": [
         [
           "Éhes vagyok, de nem vagyok szomjas.",
@@ -195,12 +205,13 @@
       "teaches": [
         "ehes-vagyok-i-am-hungry",
         "kell-an-impersonal-need"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-118-practice-4",
       "type": "substitution",
-      "category": "practice",
+      "category": "grammar",
       "base_sentence": "Anna vegetáriánus.",
       "base_word": "vegetáriánus",
       "base_gloss": "Anna is vegetarian.",
@@ -221,12 +232,13 @@
       "teaches": [
         "ehes-vagyok-i-am-hungry",
         "kell-an-impersonal-need"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-118-practice-5",
       "type": "dialogue-complete",
-      "category": "practice",
+      "category": "dialogue",
       "prompt": [
         {
           "speaker": "Károly",
@@ -245,7 +257,8 @@
       "teaches": [
         "ehes-vagyok-i-am-hungry",
         "kell-an-impersonal-need"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-118-dialogue-1",
@@ -289,7 +302,7 @@
     {
       "id": "a1-118-writing-1",
       "type": "structured-writing",
-      "category": "production",
+      "category": "writing",
       "template": [
         {
           "prompt": "Write a sentence using this word: éhes",
@@ -299,12 +312,13 @@
       "teaches": [
         "ehes-vagyok-i-am-hungry",
         "kell-an-impersonal-need"
-      ]
+      ],
+      "stage": "production"
     },
     {
       "id": "a1-118-writing-2",
       "type": "structured-writing",
-      "category": "production",
+      "category": "writing",
       "template": [
         {
           "prompt": "Write a sentence using this word: szomjas",
@@ -314,12 +328,13 @@
       "teaches": [
         "ehes-vagyok-i-am-hungry",
         "kell-an-impersonal-need"
-      ]
+      ],
+      "stage": "production"
     },
     {
       "id": "a1-118-check-1",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "grammar",
       "question": "Which word means 'need / must'?",
       "options": [
         "kell",
@@ -330,18 +345,20 @@
       "teaches": [
         "ehes-vagyok-i-am-hungry",
         "kell-an-impersonal-need"
-      ]
+      ],
+      "stage": "check"
     },
     {
       "id": "a1-118-check-2",
       "type": "fill-blank",
-      "category": "check",
+      "category": "grammar",
       "sentence": "Igen, ____ kérek.",
       "answer": "vizet",
       "teaches": [
         "ehes-vagyok-i-am-hungry",
         "kell-an-impersonal-need"
-      ]
+      ],
+      "stage": "check"
     }
   ]
 }

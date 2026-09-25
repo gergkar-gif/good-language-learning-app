@@ -4,31 +4,33 @@
     {
       "id": "a1-87-review-1",
       "type": "multiple-choice",
-      "category": "review",
+      "category": "vocabulary",
       "question": "Which word means \"bathroom\"?",
       "options": [
         "fürdőszoba",
         "hálószoba",
         "konyha"
       ],
-      "correct": 0
+      "correct": 0,
+      "stage": "review"
     },
     {
       "id": "a1-87-review-2",
       "type": "multiple-choice",
-      "category": "review",
+      "category": "vocabulary",
       "question": "Which is the correct \"in the bedroom\" form?",
       "options": [
         "hálószobában",
         "hálószobaban",
         "hálószobán"
       ],
-      "correct": 0
+      "correct": 0,
+      "stage": "review"
     },
     {
       "id": "a1-87-intro-1",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "grammar",
       "question": "Which word means \"table\"?",
       "options": [
         "asztal",
@@ -39,12 +41,13 @@
       "teaches": [
         "a-or-az-furniture-and-the-definite-article",
         "saying-where-furniture-is"
-      ]
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a1-87-intro-2",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "grammar",
       "question": "Which word means \"sofa\"?",
       "options": [
         "kanapé",
@@ -55,12 +58,13 @@
       "teaches": [
         "a-or-az-furniture-and-the-definite-article",
         "saying-where-furniture-is"
-      ]
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a1-87-controlled-1",
       "type": "matching",
-      "category": "controlled",
+      "category": "vocabulary",
       "pairs": [
         [
           "asztal",
@@ -82,23 +86,25 @@
       "teaches": [
         "a-or-az-furniture-and-the-definite-article",
         "saying-where-furniture-is"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-87-controlled-2",
       "type": "fill-blank",
-      "category": "controlled",
+      "category": "grammar",
       "sentence": "____ asztal itt van. (the — vowel-initial article)",
       "answer": "Az",
       "teaches": [
         "a-or-az-furniture-and-the-definite-article",
         "saying-where-furniture-is"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-87-controlled-3",
       "type": "multiple-choice",
-      "category": "controlled",
+      "category": "grammar",
       "question": "Which is correct: \"the chair\"?",
       "options": [
         "a szék",
@@ -109,23 +115,25 @@
       "teaches": [
         "a-or-az-furniture-and-the-definite-article",
         "saying-where-furniture-is"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-87-controlled-4",
       "type": "fill-blank",
-      "category": "controlled",
+      "category": "grammar",
       "sentence": "____ ágy az ablak mögött van. (the)",
       "answer": "Az",
       "teaches": [
         "a-or-az-furniture-and-the-definite-article",
         "saying-where-furniture-is"
-      ]
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a1-87-practice-1",
       "type": "multiple-choice",
-      "category": "practice",
+      "category": "grammar",
       "question": "Which article goes with kanapé?",
       "options": [
         "a",
@@ -136,23 +144,25 @@
       "teaches": [
         "a-or-az-furniture-and-the-definite-article",
         "saying-where-furniture-is"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-87-practice-2",
       "type": "fill-blank",
-      "category": "practice",
+      "category": "grammar",
       "sentence": "Az asztal a kanapé ____ van. (in front of)",
       "answer": "előtt",
       "teaches": [
         "a-or-az-furniture-and-the-definite-article",
         "saying-where-furniture-is"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-87-practice-3",
       "type": "matching",
-      "category": "practice",
+      "category": "vocabulary",
       "pairs": [
         [
           "Az asztal a kanapé előtt van.",
@@ -174,12 +184,13 @@
       "teaches": [
         "a-or-az-furniture-and-the-definite-article",
         "saying-where-furniture-is"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-87-practice-4",
       "type": "sentence-builder",
-      "category": "practice",
+      "category": "grammar",
       "tiles": [
         "A",
         "szék",
@@ -202,12 +213,13 @@
       "teaches": [
         "a-or-az-furniture-and-the-definite-article",
         "saying-where-furniture-is"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-87-practice-5",
       "type": "dialogue-complete",
-      "category": "practice",
+      "category": "dialogue",
       "prompt": [
         {
           "speaker": "Meg",
@@ -226,7 +238,8 @@
       "teaches": [
         "a-or-az-furniture-and-the-definite-article",
         "saying-where-furniture-is"
-      ]
+      ],
+      "stage": "practice"
     },
     {
       "id": "a1-87-dialogue-1",
@@ -301,7 +314,7 @@
     {
       "id": "a1-87-check-1",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "grammar",
       "question": "Which word means \"bed\"?",
       "options": [
         "ágy",
@@ -312,12 +325,13 @@
       "teaches": [
         "a-or-az-furniture-and-the-definite-article",
         "saying-where-furniture-is"
-      ]
+      ],
+      "stage": "check"
     },
     {
       "id": "a1-87-check-2",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "grammar",
       "question": "Which article is correct for ágy?",
       "options": [
         "az",
@@ -328,7 +342,8 @@
       "teaches": [
         "a-or-az-furniture-and-the-definite-article",
         "saying-where-furniture-is"
-      ]
+      ],
+      "stage": "check"
     }
   ]
 }

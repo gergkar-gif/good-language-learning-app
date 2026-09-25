@@ -4,123 +4,245 @@
     {
       "id": "a2-06-intro-1",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "grammar",
       "question": "Which means “next week”?",
-      "options": ["jövő héten", "múlt héten", "ezen a héten"],
+      "options": [
+        "jövő héten",
+        "múlt héten",
+        "ezen a héten"
+      ],
       "correct": 0,
-      "teaches": ["which-week"]
+      "teaches": [
+        "which-week"
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a2-06-intro-2",
       "type": "multiple-choice",
-      "category": "introduce",
+      "category": "vocabulary",
       "question": "Which means “August”?",
-      "options": ["augusztus", "április", "január"],
+      "options": [
+        "augusztus",
+        "április",
+        "január"
+      ],
       "correct": 0,
-      "teaches": ["months-continued"]
+      "teaches": [
+        "months-continued"
+      ],
+      "stage": "introduce"
     },
     {
       "id": "a2-06-controlled-1",
       "type": "matching",
-      "category": "controlled",
+      "category": "vocabulary",
       "pairs": [
-        ["ezen a héten", "this week"],
-        ["múlt héten", "last week"],
-        ["jövő héten", "next week"],
-        ["hét", "week"]
+        [
+          "ezen a héten",
+          "this week"
+        ],
+        [
+          "múlt héten",
+          "last week"
+        ],
+        [
+          "jövő héten",
+          "next week"
+        ],
+        [
+          "hét",
+          "week"
+        ]
       ],
-      "teaches": ["which-week"]
+      "teaches": [
+        "which-week"
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a2-06-controlled-2",
       "type": "matching",
-      "category": "controlled",
+      "category": "vocabulary",
       "pairs": [
-        ["május", "May"],
-        ["szeptember", "September"],
-        ["november", "November"],
-        ["december", "December"]
+        [
+          "május",
+          "May"
+        ],
+        [
+          "szeptember",
+          "September"
+        ],
+        [
+          "november",
+          "November"
+        ],
+        [
+          "december",
+          "December"
+        ]
       ],
-      "teaches": ["months-continued"]
+      "teaches": [
+        "months-continued"
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a2-06-controlled-3",
       "type": "fill-blank",
-      "category": "controlled",
+      "category": "vocabulary",
       "sentence": "Októ____ sokat dolgozom.",
       "answer": "berben",
-      "teaches": ["months-continued"]
+      "teaches": [
+        "months-continued"
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a2-06-controlled-4",
       "type": "fill-blank",
-      "category": "controlled",
+      "category": "grammar",
       "sentence": "Jövő ____ magyarórám van kedden.",
       "answer": "héten",
-      "teaches": ["which-week"]
+      "teaches": [
+        "which-week"
+      ],
+      "stage": "controlled"
     },
     {
       "id": "a2-06-practice-1",
       "type": "multiple-choice",
-      "category": "practice",
+      "category": "vocabulary",
       "question": "Which means “in June”?",
-      "options": ["júniusban", "júliusban", "májusban"],
+      "options": [
+        "júniusban",
+        "júliusban",
+        "májusban"
+      ],
       "correct": 0,
-      "teaches": ["months-continued"]
+      "teaches": [
+        "months-continued"
+      ],
+      "stage": "practice"
     },
     {
       "id": "a2-06-practice-2",
       "type": "matching",
-      "category": "practice",
+      "category": "vocabulary",
       "pairs": [
-        ["június", "June"],
-        ["július", "July"],
-        ["augusztus", "August"],
-        ["október", "October"]
+        [
+          "június",
+          "June"
+        ],
+        [
+          "július",
+          "July"
+        ],
+        [
+          "augusztus",
+          "August"
+        ],
+        [
+          "október",
+          "October"
+        ]
       ],
-      "teaches": ["months-continued"]
+      "teaches": [
+        "months-continued"
+      ],
+      "stage": "practice"
     },
     {
       "id": "a2-06-practice-3",
       "type": "sentence-builder",
-      "category": "practice",
-      "tiles": ["Decemberben", "nem", "dolgozom", "."],
-      "solution": ["Decemberben", "nem", "dolgozom", "."],
+      "category": "vocabulary",
+      "tiles": [
+        "Decemberben",
+        "nem",
+        "dolgozom",
+        "."
+      ],
+      "solution": [
+        "Decemberben",
+        "nem",
+        "dolgozom",
+        "."
+      ],
       "english": "In December I don't work.",
-      "teaches": ["months-continued"]
+      "teaches": [
+        "months-continued"
+      ],
+      "stage": "practice"
     },
     {
       "id": "a2-06-practice-4",
       "type": "sentence-builder",
-      "category": "practice",
-      "tiles": ["Jövő", "héten", "sokat", "dolgozom", "."],
-      "solution": ["Jövő", "héten", "sokat", "dolgozom", "."],
+      "category": "grammar",
+      "tiles": [
+        "Jövő",
+        "héten",
+        "sokat",
+        "dolgozom",
+        "."
+      ],
+      "solution": [
+        "Jövő",
+        "héten",
+        "sokat",
+        "dolgozom",
+        "."
+      ],
       "english": "Next week I'm working a lot.",
-      "teaches": ["which-week"]
+      "teaches": [
+        "which-week"
+      ],
+      "stage": "practice"
     },
     {
       "id": "a2-06-dialogue-1",
       "type": "dialogue-complete",
       "category": "dialogue",
       "prompt": [
-        { "speaker": "Károly", "text": "Mikor van magyarórád?" },
-        { "speaker": "Meg", "text": "_____" }
+        {
+          "speaker": "Károly",
+          "text": "Mikor van magyarórád?"
+        },
+        {
+          "speaker": "Meg",
+          "text": "_____"
+        }
       ],
-      "options": ["Jövő héten, kedden.", "Novemberben vagyok."],
+      "options": [
+        "Jövő héten, kedden.",
+        "Novemberben vagyok."
+      ],
       "correct": 0,
-      "teaches": ["which-week"]
+      "teaches": [
+        "which-week"
+      ]
     },
     {
       "id": "a2-06-dialogue-2",
       "type": "dialogue-complete",
       "category": "dialogue",
       "prompt": [
-        { "speaker": "Meg", "text": "Mikor van a szülinapod?" },
-        { "speaker": "Károly", "text": "_____" }
+        {
+          "speaker": "Meg",
+          "text": "Mikor van a szülinapod?"
+        },
+        {
+          "speaker": "Károly",
+          "text": "_____"
+        }
       ],
-      "options": ["Októberben.", "Kedden vagyok."],
+      "options": [
+        "Októberben.",
+        "Kedden vagyok."
+      ],
       "correct": 0,
-      "teaches": ["months-continued"]
+      "teaches": [
+        "months-continued"
+      ]
     },
     {
       "id": "a2-06-writing-1",
@@ -132,7 +254,9 @@
           "answer": "Ezen a héten sokat dolgozom."
         }
       ],
-      "teaches": ["which-week"]
+      "teaches": [
+        "which-week"
+      ]
     },
     {
       "id": "a2-06-writing-2",
@@ -144,25 +268,41 @@
           "answer": "Decemberben nem dolgozom, csak pihenek."
         }
       ],
-      "teaches": ["months-continued"]
+      "teaches": [
+        "months-continued"
+      ]
     },
     {
       "id": "a2-06-check-1",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "grammar",
       "question": "Which means “last week”?",
-      "options": ["múlt héten", "jövő héten", "ezen a héten"],
+      "options": [
+        "múlt héten",
+        "jövő héten",
+        "ezen a héten"
+      ],
       "correct": 0,
-      "teaches": ["which-week"]
+      "teaches": [
+        "which-week"
+      ],
+      "stage": "check"
     },
     {
       "id": "a2-06-check-2",
       "type": "multiple-choice",
-      "category": "check",
+      "category": "vocabulary",
       "question": "Which means “in September”?",
-      "options": ["szeptemberben", "októberben", "novemberben"],
+      "options": [
+        "szeptemberben",
+        "októberben",
+        "novemberben"
+      ],
       "correct": 0,
-      "teaches": ["months-continued"]
+      "teaches": [
+        "months-continued"
+      ],
+      "stage": "check"
     }
   ]
 }
