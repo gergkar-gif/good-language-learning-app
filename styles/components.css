@@ -4099,6 +4099,348 @@
 }
 
 /* ============================================
+   DECK BLAST GAME
+   ============================================ */
+.dkb {
+  width: 100%;
+}
+
+.dkb-lobby {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 8px 0;
+}
+
+.dkb-lobby-nav {
+  margin-bottom: 12px;
+}
+
+.dkb-lobby-card {
+  background: var(--bg-card, #FFFFFF);
+  border: 1px solid var(--border, #D0C9B8);
+  border-radius: var(--radius-md, 8px);
+  padding: 28px 24px;
+  text-align: center;
+}
+
+.dkb-badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: var(--surface, #F5F1E8);
+  background: var(--primary, #102A47);
+  padding: 3px 8px;
+  border-radius: 2px;
+  margin-bottom: 12px;
+}
+
+.dkb-title {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--primary);
+  margin: 0 0 6px;
+  letter-spacing: -0.5px;
+}
+
+.dkb-subtitle {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.45;
+  margin: 0 0 24px;
+}
+
+.dkb-section {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.dkb-section-title {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.dkb-segmented {
+  display: flex;
+  border: 1px solid var(--border, #D0C9B8);
+  border-radius: var(--radius-sm, 6px);
+  overflow: hidden;
+  background: var(--bg, #F5F1E8);
+}
+
+.dkb-seg-btn {
+  flex: 1;
+  padding: 10px 8px;
+  font-size: 13px;
+  font-weight: 600;
+  background: transparent;
+  border: none;
+  border-right: 1px solid var(--border, #D0C9B8);
+  color: var(--muted);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.dkb-seg-btn:last-child {
+  border-right: none;
+}
+
+.dkb-seg-btn.is-active {
+  background: var(--primary, #102A47);
+  color: #FFFFFF;
+  font-weight: 700;
+}
+
+.dkb-control-hint {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 6px;
+  line-height: 1.35;
+}
+
+.dkb-best-pill {
+  font-size: 12px;
+  color: var(--primary);
+  background: rgba(16, 42, 71, 0.05);
+  border: 1px solid rgba(16, 42, 71, 0.12);
+  padding: 6px 14px;
+  border-radius: 16px;
+  margin: 4px auto 20px;
+  display: inline-block;
+}
+
+.dkb-start-btn {
+  width: 100%;
+  padding: 14px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+/* In-game HUD */
+.dkb-game {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.dkb-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.dkb-back-btn {
+  margin: 0;
+}
+
+.dkb-center-indicator {
+  display: flex;
+  align-items: center;
+}
+
+.dkb-metric {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dkb-metric-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  color: var(--muted);
+}
+
+.dkb-timer-val {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--primary);
+  font-variant-numeric: tabular-nums;
+}
+
+.dkb-shields {
+  display: flex;
+  gap: 4px;
+  margin-top: 3px;
+}
+
+.dkb-shield-pip {
+  width: 13px;
+  height: 13px;
+  border: 2px solid var(--primary, #102A47);
+  border-radius: 2px;
+  background: transparent;
+  transition: background 0.15s;
+}
+
+.dkb-shield-pip.is-active {
+  background: var(--primary, #102A47);
+}
+
+.dkb-stats {
+  display: flex;
+  gap: 16px;
+}
+
+.dkb-score-val {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--primary);
+  font-variant-numeric: tabular-nums;
+}
+
+.dkb-combo-val {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.dkb-combo-val.is-active {
+  color: var(--accent, #E94B16);
+}
+
+.dkb-prompt-bar {
+  background: var(--bg-card, #FFFFFF);
+  border: 1px solid var(--border, #D0C9B8);
+  border-radius: var(--radius-sm, 6px);
+  padding: 10px 16px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.dkb-prompt-kicker {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--muted);
+  display: block;
+  margin-bottom: 2px;
+}
+
+.dkb-prompt-word {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--primary);
+  letter-spacing: -0.3px;
+}
+
+.dkb-canvas-wrap {
+  background: var(--bg-surface, #F5F1E8);
+  border: 1px solid var(--border, #D0C9B8);
+  border-radius: var(--radius-md, 8px);
+  overflow: hidden;
+  position: relative;
+  touch-action: none;
+  user-select: none;
+}
+
+.dkb-canvas {
+  display: block;
+  width: 100%;
+  height: 420px;
+  cursor: crosshair;
+}
+
+/* Results / Game over */
+.dkb-done {
+  text-align: center;
+  padding: 16px 0;
+}
+
+.dkb-done-card {
+  max-width: 440px;
+  margin: 0 auto;
+  background: var(--bg-card, #FFFFFF);
+  border: 1px solid var(--border, #D0C9B8);
+  border-radius: var(--radius-md, 8px);
+  padding: 28px 24px;
+}
+
+.dkb-done-kicker {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--muted);
+}
+
+.dkb-done-score {
+  font-size: 44px;
+  font-weight: 900;
+  color: var(--primary);
+  line-height: 1.1;
+  margin-top: 4px;
+  font-variant-numeric: tabular-nums;
+}
+
+.dkb-done-score-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.dkb-new-best {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--success, #1E7E34);
+  margin-bottom: 16px;
+}
+
+.dkb-best {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+
+.dkb-stats-grid {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.dkb-stat-box {
+  flex: 1;
+  background: var(--bg, #F5F1E8);
+  padding: 10px 6px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dkb-stat-num {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--primary);
+  font-variant-numeric: tabular-nums;
+}
+
+.dkb-stat-name {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.dkb-missed-recap {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.dkb-done-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 280px;
+  margin: 0 auto;
+}
+
+/* ============================================
    DECK LEARN MODE
    ============================================ */
 .dkl-round-line {

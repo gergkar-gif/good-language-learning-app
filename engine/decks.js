@@ -55,7 +55,7 @@ const Decks = (function () {
     let activeSection = 'mine'; // 'mine' or 'parlour' — which top-level tab is showing
 
     let sortOrder = 'natural'; // 'natural' | 'alphabetical' — how the open deck's word list is displayed. Shuffling is a per-mode concern (Match/Learn already randomize their own round), never something that reorders the list itself.
-    let studyMode = null;      // null | 'match' | 'learn' — which study mode (if any) is open over the current deck
+    let studyMode = null;      // null | 'match' | 'learn' | 'blast' — which study mode (if any) is open over the current deck
 
     if (typeof document !== 'undefined') {
         document.addEventListener('language-changed', () => {
@@ -1439,6 +1439,7 @@ const Decks = (function () {
                     </button>
                     ${words.length > 1 ? `<button class="dk-study-tab" data-open-match="1"><span class="dk-study-tab-label">Match</span></button>` : ''}
                     ${words.length ? `<button class="dk-study-tab" data-open-learn="1"><span class="dk-study-tab-label">Learn</span></button>` : ''}
+                    ${words.length > 1 ? `<button class="dk-study-tab" data-open-blast="1"><span class="dk-study-tab-label">Blast</span></button>` : ''}
                 </div>
 
                 ${isCustom || s.inDeck > 0 || (deck.id === 'mine' && s.total > 0) ? `
@@ -1564,6 +1565,14 @@ const Decks = (function () {
                 });
                 return;
             }
+            if (studyMode === 'blast' && typeof DeckBlast !== 'undefined') {
+                DeckBlast.render(host, {
+                    words: wordsOf(deck),
+                    deckId: deck.id,
+                    onExit: () => { studyMode = null; render(); }
+                });
+                return;
+            }
             studyMode = null; // module missing/unknown — fall through to the deck screen rather than a blank one
         }
 
@@ -1587,6 +1596,9 @@ const Decks = (function () {
         });
         host.querySelectorAll('[data-open-learn]').forEach(el => {
             el.onclick = function () { studyMode = 'learn'; render(); };
+        });
+        host.querySelectorAll('[data-open-blast]').forEach(el => {
+            el.onclick = function () { studyMode = 'blast'; render(); };
         });
         host.querySelectorAll('[data-group-toggle]').forEach(el => {
             el.onclick = function () {
