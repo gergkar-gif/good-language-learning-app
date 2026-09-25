@@ -24,9 +24,78 @@ const ParlourTTS = (function () {
         (typeof localStorage !== 'undefined' && localStorage.getItem('parlour_tts_endpoint')) ||
         'https://parlour-tts.gergkar.workers.dev/synthesize';
 
-    const cache = {}; // sessionKey -> HTMLAudioElement, memory cache
-    const inFlight = {}; // sessionKey -> Promise<HTMLAudioElement | null>
+    const cache = {}; // sessionKey -> HTMLAudioElement | { __buffer: AudioBuffer }, memory cache
+    const bufferCache = {}; // sessionKey -> AudioBuffer (pre-decoded PCM for 0ms mobile playback)
+    const inFlight = {}; // sessionKey -> Promise<any>
     let activeAudio = null;
+    let activeSource = null;
+    let activeTriggerBtn = null;
+    let audioCtx = null;
+
+    function getAudioCtx() {
+        if (audioCtx) return audioCtx;
+        const Ctx = (typeof window !== 'undefined') && (window.AudioContext || window.webkitAudioContext);
+        if (!Ctx) return null;
+        try {
+            audioCtx = new Ctx();
+        } catch {
+            audioCtx = null;
+        }
+        return audioCtx;
+    }
+
+    function decodeBase64ToBuffer(key, b64) {
+        if (bufferCache[key]) return Promise.resolve(bufferCache[key]);
+        const ctx = getAudioCtx();
+        if (!ctx || typeof ctx.decodeAudioData !== 'function' || typeof atob !== 'function') {
+            return Promise.resolve(null);
+        }
+        try {
+            const binary = atob(b64);
+            const len = binary.length;
+            const bytes = new Uint8Array(len);
+            for (let i = 0; i < len; i++) {
+                bytes[i] = binary.charCodeAt(i);
+            }
+            return new Promise((resolve) => {
+                try {
+                    const res = ctx.decodeAudioData(
+                        bytes.buffer,
+                        (decoded) => {
+                            if (decoded) bufferCache[key] = decoded;
+                            resolve(decoded || null);
+                        },
+                        () => resolve(null)
+                    );
+                    if (res && typeof res.then === 'function') {
+                        res.then((decoded) => {
+                            if (decoded) bufferCache[key] = decoded;
+                            resolve(decoded || null);
+                        }).catch(() => resolve(null));
+                    }
+                } catch {
+                    resolve(null);
+                }
+            });
+        } catch {
+            return Promise.resolve(null);
+        }
+    }
+
+    async function cacheAudioFromBase64(key, b64) {
+        const decoded = await decodeBase64ToBuffer(key, b64);
+        if (decoded) {
+            const holder = { __buffer: decoded };
+            cache[key] = holder;
+            return holder;
+        }
+        if (typeof Audio !== 'undefined') {
+            const audio = new Audio('data:audio/mp3;base64,' + b64);
+            cache[key] = audio;
+            return audio;
+        }
+        return null;
+    }
 
     // ----------------------------------------
     // INDEXEDDB PERSISTENT CACHE
@@ -119,18 +188,14 @@ const ParlourTTS = (function () {
                 // 1. Check IndexedDB persistent store first
                 const storedB64 = await idbGet(key);
                 if (storedB64) {
-                    const audio = new Audio('data:audio/mp3;base64,' + storedB64);
-                    cache[key] = audio;
-                    return audio;
+                    return await cacheAudioFromBase64(key, storedB64);
                 }
 
                 // 2. Fetch from Cloudflare Worker / Google TTS
                 if (isOnline()) {
                     const b64 = await cloudSynthesize(said, { language: lang, voiceName, character, gender, type });
                     idbSet(key, b64);
-                    const audio = new Audio('data:audio/mp3;base64,' + b64);
-                    cache[key] = audio;
-                    return audio;
+                    return await cacheAudioFromBase64(key, b64);
                 }
             } catch (err) {
                 // Best-effort preload; failures fall back during speak()
@@ -147,37 +212,38 @@ const ParlourTTS = (function () {
     // control changing mid-paragraph, for instance. No-op on the device
     // path: SpeechSynthesisUtterance.rate can't be changed after speak().
     function setRate(rate) {
+        if (activeSource && activeSource.playbackRate) {
+            try { activeSource.playbackRate.value = rate; } catch {}
+        }
         if (activeAudio) activeAudio.playbackRate = rate;
     }
 
     function stop() {
+        if (activeSource) {
+            try {
+                activeSource.onended = null;
+                activeSource.stop(0);
+                activeSource.disconnect();
+            } catch {}
+            activeSource = null;
+        }
         if (activeAudio) {
-            activeAudio.pause();
+            try { activeAudio.pause(); } catch {}
             activeAudio = null;
         }
         if (typeof window !== 'undefined' && typeof window.speechSynthesis !== 'undefined') {
-            window.speechSynthesis.cancel();
+            // Only invoke native cancel() if speechSynthesis is actually speaking or queued;
+            // unconditional cancel() triggers a blocking 150ms+ OS IPC call on Android/iOS.
+            if (window.speechSynthesis.speaking || window.speechSynthesis.pending) {
+                window.speechSynthesis.cancel();
+            }
         }
-        if (typeof document !== 'undefined') {
-            document.querySelectorAll('.speak-btn.is-loading, .speak-btn.is-playing').forEach(el => {
-                el.classList.remove('is-loading', 'is-playing');
-            });
+        if (activeTriggerBtn) {
+            activeTriggerBtn.classList.remove('is-loading', 'is-playing');
+            activeTriggerBtn = null;
         }
     }
 
-    // text: what to say. language: course language code ('es'/'hu'/'en'), defaults
-    // to the active course. type: what kind of content this is (vocabulary,
-    // example, instruction, dialogue, listening, story, reading, pronunciation) —
-    // picks a purposeful default voice per type. character: a short Chirp3-HD
-    // voice name (e.g. 'Puck') a caller already assigned to a specific named
-    // character, so the same character sounds the same in every line — takes
-    // priority over gender/type. gender: 'male'/'female' when a caller knows
-    // who's speaking but hasn't assigned a specific voice. voiceName/speed:
-    // optional overrides a caller already knows. onEnded: called once
-    // playback finishes, whichever provider actually spoke — cloud audio and
-    // device speech report "done" through different browser APIs, so a
-    // caller that wants to chain onto the next line needs a provider-agnostic
-    // hook rather than an audio element it can't get from the device path.
     async function speak({ text, language, type, voiceName, character, gender, speed, onEnded, triggerBtn } = {}) {
         stop();
 
@@ -189,31 +255,37 @@ const ParlourTTS = (function () {
         const rate = speed || 1.0;
 
         let btn = triggerBtn || null;
-        if (btn && !cache[key]) {
-            btn.classList.add('is-loading');
+        if (btn) {
+            activeTriggerBtn = btn;
+            if (!cache[key]) btn.classList.add('is-loading');
         }
 
         const cleanupBtn = () => {
             if (btn) btn.classList.remove('is-loading', 'is-playing');
+            if (activeTriggerBtn === btn) activeTriggerBtn = null;
         };
 
-        let audio = cache[key] || null;
+        // Ensure Web Audio context is resumed while inside user gesture
+        const ctx = getAudioCtx();
+        if (ctx && ctx.state === 'suspended' && typeof ctx.resume === 'function') {
+            try { ctx.resume(); } catch {}
+        }
+
+        let cached = cache[key] || null;
 
         // If not in memory, resolve via in-flight preload, IndexedDB, or cloud synthesis
-        if (!audio) {
+        if (!cached) {
             if (inFlight[key]) {
-                audio = await inFlight[key];
+                cached = await inFlight[key];
             } else {
                 const storedB64 = await idbGet(key);
                 if (storedB64) {
-                    audio = new Audio('data:audio/mp3;base64,' + storedB64);
-                    cache[key] = audio;
+                    cached = await cacheAudioFromBase64(key, storedB64);
                 } else if (isOnline()) {
                     try {
                         const b64 = await cloudSynthesize(said, { language: lang, voiceName, character, gender, type });
                         idbSet(key, b64);
-                        audio = new Audio('data:audio/mp3;base64,' + b64);
-                        cache[key] = audio;
+                        cached = await cacheAudioFromBase64(key, b64);
                     } catch (error) {
                         console.warn('ParlourTTS: cloud provider unavailable, falling back to device speech', error);
                     }
@@ -221,6 +293,37 @@ const ParlourTTS = (function () {
             }
         }
 
+        // Fast path: Play pre-decoded Web Audio PCM buffer in <0.02ms with zero main-thread blocking
+        const pcmBuffer = bufferCache[key] || (cached && cached.__buffer);
+        if (pcmBuffer && ctx) {
+            if (btn) {
+                btn.classList.remove('is-loading');
+                btn.classList.add('is-playing');
+            }
+            try {
+                if (ctx.state === 'suspended' && typeof ctx.resume === 'function') {
+                    ctx.resume();
+                }
+                const source = ctx.createBufferSource();
+                source.buffer = pcmBuffer;
+                if (source.playbackRate) source.playbackRate.value = rate;
+                source.connect(ctx.destination);
+                activeSource = source;
+                source.onended = () => {
+                    if (activeSource === source) activeSource = null;
+                    cleanupBtn();
+                    if (onEnded) onEnded();
+                };
+                source.start(0);
+                return true;
+            } catch (err) {
+                activeSource = null;
+                cleanupBtn();
+            }
+        }
+
+        // Fallback path: HTMLAudioElement
+        const audio = (cached && !cached.__buffer) ? cached : null;
         if (audio) {
             if (btn) {
                 btn.classList.remove('is-loading');
