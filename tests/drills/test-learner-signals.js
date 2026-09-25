@@ -187,5 +187,26 @@ const schedule = () => JSON.parse(store['es_recycleSchedule'] || '{}');
     assert.strictEqual(run(`LearnerModel.productionState('old-accusative-alias')`).attempts, 4, 'read-time alias lookup resolves to canonical skill');
     console.log('✓ productionEvidence alias migration folds evidence into canonical skill and deletes alias key');
 
+    // Cloud sync merges productionEvidence key by key (engine/sync.js, local
+    // wins per key), so a stale copy of the alias entry from before the
+    // migration comes back on the first sync afterwards. Folding it again
+    // would double-count that evidence.
+    const resurrected = JSON.parse(ctx.localStorage.getItem('es_productionEvidence'));
+    resurrected['old-accusative-alias'] = {
+        attempts: 3, correct: 2, avgAccuracy: 70, lastSeen: '2026-09-24T10:00:00.000Z',
+        modalities: {
+            oral: { attempts: 2, correct: 1, avgAccuracy: 60, lastSeen: '2026-09-24T10:00:00.000Z' },
+            written: { attempts: 1, correct: 1, avgAccuracy: 90, lastSeen: '2026-09-24T10:00:00.000Z' }
+        }
+    };
+    ctx.localStorage.setItem('es_productionEvidence', JSON.stringify(resurrected));
+    await run(`LearnerModel.migrateProductionAliases({
+        skills: { 'accusative-t': { kind: 'grammar', aliases: ['old-accusative-alias'] } }
+    })`);
+    const afterSync = JSON.parse(ctx.localStorage.getItem('es_productionEvidence'));
+    assert.strictEqual(afterSync['old-accusative-alias'], undefined, 'resurrected alias copy is dropped');
+    assert.strictEqual(afterSync['accusative-t'].attempts, 4, 'a stale alias copy from sync is not folded in twice');
+    console.log('✓ an alias entry resurrected by cloud sync is not double-counted');
+
     console.log('\nAll learner signal tests passed!');
 })().catch(e => { console.error(e); process.exit(1); });

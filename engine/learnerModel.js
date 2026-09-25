@@ -616,13 +616,26 @@ const LearnerModel = (function () {
         };
     }
 
+    // Each canonical entry remembers which aliases were folded into it
+    // (`mergedFrom`). productionEvidence syncs to the cloud and is merged
+    // key by key (engine/sync.js), so the first sync after a migration
+    // brings back a stale copy of every alias entry. Its evidence is already
+    // in the canonical entry, so it is dropped, not folded in a second time.
+    // `mergedFrom` lives inside the entry, so it syncs with it and protects
+    // every device, not just the one that migrated.
     function _foldStoreAliases(store, aliasMap) {
         if (!store || !aliasMap) return false;
         let mutated = false;
         Object.keys(store).forEach(key => {
             const canonical = aliasMap[key];
             if (canonical && canonical !== key) {
-                store[canonical] = _mergeProductionEntries(store[canonical], store[key]);
+                const target = store[canonical];
+                const alreadyFolded = !!(target && Array.isArray(target.mergedFrom) && target.mergedFrom.indexOf(key) !== -1);
+                if (!alreadyFolded) {
+                    const merged = _mergeProductionEntries(target, store[key]);
+                    merged.mergedFrom = ((target && target.mergedFrom) || []).concat(key);
+                    store[canonical] = merged;
+                }
                 delete store[key];
                 mutated = true;
             }
