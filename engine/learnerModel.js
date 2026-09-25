@@ -207,7 +207,9 @@ const LearnerModel = (function () {
     // with the level-test vote. See the module header for the shape of each
     // evidence source and the file's own comments below for the combining
     // rule.
-    async function skillState(skillId) {
+    async function skillState(rawSkillId) {
+        await _ensureAliasesLoaded();
+        const skillId = _canonicalSkill(rawSkillId);
         const bySkill = await _skillRefs();
         const schedule = (typeof loadRecycleSchedule === 'function') ? loadRecycleSchedule() : {};
         const refs = (bySkill && bySkill[skillId]) || [];
@@ -560,9 +562,119 @@ const LearnerModel = (function () {
         return (typeof Lang !== 'undefined') ? Lang.key('productionEvidence') : 'productionEvidence';
     }
 
+    const _aliasCache = {};
+    const _aliasLoadPromises = {};
+
+    function _courseKey() {
+        return (typeof Lang !== 'undefined') ? Lang.key('') : '';
+    }
+
+    function _buildAliasMap(registryData) {
+        const map = {};
+        const skills = (registryData && registryData.skills) || {};
+        Object.keys(skills).forEach(canonical => {
+            const meta = skills[canonical];
+            if (meta && Array.isArray(meta.aliases)) {
+                meta.aliases.forEach(alias => {
+                    if (alias && alias !== canonical) map[alias] = canonical;
+                });
+            }
+        });
+        return map;
+    }
+
+    function _mergeStatBlock(a, b) {
+        const attA = (a && a.attempts) || 0;
+        const attB = (b && b.attempts) || 0;
+        const totalAtt = attA + attB;
+        const corrA = (a && a.correct) || 0;
+        const corrB = (b && b.correct) || 0;
+        const accA = (a && a.avgAccuracy) || 0;
+        const accB = (b && b.avgAccuracy) || 0;
+        const avgAccuracy = totalAtt > 0 ? Math.round(((accA * attA) + (accB * attB)) / totalAtt) : 0;
+        const lastA = (a && a.lastSeen) || null;
+        const lastB = (b && b.lastSeen) || null;
+        const lastSeen = (!lastA) ? lastB : ((!lastB || lastA >= lastB) ? lastA : lastB);
+        return { attempts: totalAtt, correct: corrA + corrB, avgAccuracy, lastSeen };
+    }
+
+    function _mergeProductionEntries(existing, incoming) {
+        if (!existing || !existing.attempts) return JSON.parse(JSON.stringify(incoming));
+        if (!incoming || !incoming.attempts) return existing;
+        const top = _mergeStatBlock(existing, incoming);
+        const modEx = existing.modalities || {};
+        const modIn = incoming.modalities || {};
+        return {
+            attempts: top.attempts,
+            correct: top.correct,
+            avgAccuracy: top.avgAccuracy,
+            lastSeen: top.lastSeen,
+            modalities: {
+                oral: _mergeStatBlock(modEx.oral, modIn.oral),
+                written: _mergeStatBlock(modEx.written, modIn.written)
+            }
+        };
+    }
+
+    function _foldStoreAliases(store, aliasMap) {
+        if (!store || !aliasMap) return false;
+        let mutated = false;
+        Object.keys(store).forEach(key => {
+            const canonical = aliasMap[key];
+            if (canonical && canonical !== key) {
+                store[canonical] = _mergeProductionEntries(store[canonical], store[key]);
+                delete store[key];
+                mutated = true;
+            }
+        });
+        return mutated;
+    }
+
+    function _canonicalSkill(skillId) {
+        if (!skillId) return skillId;
+        const map = _aliasCache[_courseKey()];
+        return (map && map[skillId]) || skillId;
+    }
+
+    async function migrateProductionAliases(registryData) {
+        const course = _courseKey();
+        let data = registryData;
+        if (!data) {
+            data = await _optionalJson('indexes/skill-registry.json');
+        }
+        const aliasMap = _buildAliasMap(data);
+        _aliasCache[course] = aliasMap;
+        let rawStore = {};
+        try {
+            rawStore = JSON.parse(localStorage.getItem(_productionKey()) || '{}');
+        } catch (e) {
+            rawStore = {};
+        }
+        if (_foldStoreAliases(rawStore, aliasMap)) {
+            _saveProduction(rawStore);
+        }
+        return aliasMap;
+    }
+
+    function _ensureAliasesLoaded() {
+        const course = _courseKey();
+        if (_aliasCache[course]) return Promise.resolve(_aliasCache[course]);
+        if (!_aliasLoadPromises[course]) {
+            _aliasLoadPromises[course] = migrateProductionAliases().finally(() => {
+                delete _aliasLoadPromises[course];
+            });
+        }
+        return _aliasLoadPromises[course];
+    }
+
     function _loadProduction() {
         try {
-            return JSON.parse(localStorage.getItem(_productionKey()) || '{}');
+            const store = JSON.parse(localStorage.getItem(_productionKey()) || '{}');
+            const aliasMap = _aliasCache[_courseKey()];
+            if (aliasMap && _foldStoreAliases(store, aliasMap)) {
+                _saveProduction(store);
+            }
+            return store;
         } catch (e) {
             return {};
         }
@@ -602,7 +714,8 @@ const LearnerModel = (function () {
         const modKey = (modality === 'written' || modality === 'written-production') ? 'written' : 'oral';
         let changed = false;
 
-        list.forEach(skillId => {
+        list.forEach(rawSkillId => {
+            const skillId = _canonicalSkill(rawSkillId);
             if (!skillId) return;
             const entry = store[skillId] || {
                 attempts: 0,
@@ -641,6 +754,7 @@ const LearnerModel = (function () {
         if (changed) {
             _saveProduction(store);
         }
+        _ensureAliasesLoaded();
     }
 
     /**
@@ -712,10 +826,11 @@ const LearnerModel = (function () {
         return typeof limit === 'number' ? list.slice(0, limit) : list;
     }
 
-    function productionState(skillId) {
-        if (!skillId) return null;
+    function productionState(rawSkillId) {
+        if (!rawSkillId) return null;
+        const skillId = _canonicalSkill(rawSkillId);
         const store = _loadProduction();
-        const entry = store[skillId];
+        const entry = store[skillId] || store[rawSkillId];
         if (!entry || !entry.attempts) return null;
 
         function calcState(attempts, avgAccuracy) {
@@ -1122,6 +1237,11 @@ const LearnerModel = (function () {
         };
     }
 
+    // Trigger one-time idempotent alias migration on load when in a browser/content environment
+    if (typeof Promise !== 'undefined') {
+        Promise.resolve().then(() => { _ensureAliasesLoaded().catch(() => {}); });
+    }
+
     return {
         skillState,
         wordState,
@@ -1140,6 +1260,7 @@ const LearnerModel = (function () {
         weakProductionSkills,
         productionSummary,
         assessmentHistory,
+        migrateProductionAliases,
         recordCompetencies,
         verifyCompetency,
         getCompetency,

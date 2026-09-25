@@ -150,5 +150,42 @@ const schedule = () => JSON.parse(store['es_recycleSchedule'] || '{}');
     assert.ok(/_abortSession\(\) \{[\s\S]{0,120}_creditRecycle\(\)/.test(grammar));
     console.log('✓ both drillers flush outcomes on finish and on leaving');
 
+    // ---- 4. Phase 2 alias migration in productionEvidence ----
+    ctx.localStorage.setItem('es_productionEvidence', JSON.stringify({
+        'old-accusative-alias': {
+            attempts: 3,
+            correct: 2,
+            avgAccuracy: 70,
+            lastSeen: '2026-09-24T10:00:00.000Z',
+            modalities: {
+                oral: { attempts: 2, correct: 1, avgAccuracy: 60, lastSeen: '2026-09-24T10:00:00.000Z' },
+                written: { attempts: 1, correct: 1, avgAccuracy: 90, lastSeen: '2026-09-24T10:00:00.000Z' }
+            }
+        },
+        'accusative-t': {
+            attempts: 1,
+            correct: 1,
+            avgAccuracy: 90,
+            lastSeen: '2026-09-23T10:00:00.000Z',
+            modalities: {
+                oral: { attempts: 1, correct: 1, avgAccuracy: 90, lastSeen: '2026-09-23T10:00:00.000Z' },
+                written: { attempts: 0, correct: 0, avgAccuracy: 0, lastSeen: null }
+            }
+        }
+    }));
+    await run(`LearnerModel.migrateProductionAliases({
+        skills: {
+            'accusative-t': { kind: 'grammar', aliases: ['old-accusative-alias'] }
+        }
+    })`);
+    const migratedStore = JSON.parse(ctx.localStorage.getItem('es_productionEvidence') || '{}');
+    assert.strictEqual(migratedStore['old-accusative-alias'], undefined, 'alias key is deleted after migration');
+    assert.ok(migratedStore['accusative-t'], 'canonical key exists');
+    assert.strictEqual(migratedStore['accusative-t'].attempts, 4, 'attempts merged (3 + 1 = 4)');
+    assert.strictEqual(migratedStore['accusative-t'].correct, 3, 'correct count merged (2 + 1 = 3)');
+    assert.strictEqual(migratedStore['accusative-t'].avgAccuracy, 75, 'weighted average accuracy merged ((210 + 90)/4 = 75)');
+    assert.strictEqual(run(`LearnerModel.productionState('old-accusative-alias')`).attempts, 4, 'read-time alias lookup resolves to canonical skill');
+    console.log('✓ productionEvidence alias migration folds evidence into canonical skill and deletes alias key');
+
     console.log('\nAll learner signal tests passed!');
 })().catch(e => { console.error(e); process.exit(1); });
