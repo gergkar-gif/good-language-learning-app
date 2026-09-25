@@ -52,7 +52,7 @@ function json(data, status, cors) {
 const LANGUAGE_CODE = { en: 'en-US', es: 'es-ES', hu: 'hu-HU' };
 
 // Chirp3-HD voice names are used for Spanish and Hungarian alike, so both courses
-// share the same everyday voice (Iapetus, male). English short-form uses Neural2.
+// use the same voice family (Spanish everyday audio: Enceladus). English short-form uses Neural2.
 const SHORT_VOICE = {
     male: 'Charon',        // firm, deep — default dialogue/character voice
     female: 'Kore',        // firm — default dialogue/character voice
@@ -75,6 +75,12 @@ function resolveVoiceName(payload, languageCode) {
 
     // Story narration and reading passages use rich multi-voice Chirp3-HD
     const isLongForm = payload.type === 'story' || payload.type === 'reading';
+
+    // Spanish everyday audio (words, drills, prompts): Enceladus, the deep male voice
+    // Hungarian uses for narration
+    if (languageCode === 'es-ES' && !isLongForm && !SHORT_VOICE[payload.gender]) {
+        return 'es-ES-Chirp3-HD-Enceladus';
+    }
 
     if (languageCode === 'en-US' && !isLongForm) {
         if (payload.gender === 'male') return 'en-US-Neural2-D';

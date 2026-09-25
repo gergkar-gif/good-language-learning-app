@@ -16,10 +16,11 @@ function extractVoiceResolver() {
 const resolveVoiceName = extractVoiceResolver();
 
 console.log('--- Test 1: Fast Voice Tiering in tts-worker.js ---');
-// Spanish micro-interactions use the same Chirp3-HD voice as Hungarian (Iapetus)
-assert.strictEqual(resolveVoiceName({ type: 'vocabulary' }, 'es-ES'), 'es-ES-Chirp3-HD-Iapetus');
-assert.strictEqual(resolveVoiceName({ type: 'listening' }, 'es-ES'), 'es-ES-Chirp3-HD-Iapetus');
-assert.strictEqual(resolveVoiceName({ type: 'pronunciation' }, 'es-ES'), 'es-ES-Chirp3-HD-Iapetus');
+// Spanish micro-interactions use Enceladus (the deep male Hungarian narrator voice)
+assert.strictEqual(resolveVoiceName({ type: 'vocabulary' }, 'es-ES'), 'es-ES-Chirp3-HD-Enceladus');
+assert.strictEqual(resolveVoiceName({ type: 'listening' }, 'es-ES'), 'es-ES-Chirp3-HD-Enceladus');
+assert.strictEqual(resolveVoiceName({ type: 'pronunciation' }, 'es-ES'), 'es-ES-Chirp3-HD-Enceladus');
+assert.strictEqual(resolveVoiceName({}, 'es-ES'), 'es-ES-Chirp3-HD-Enceladus');
 assert.strictEqual(resolveVoiceName({ type: 'vocabulary', gender: 'male' }, 'es-ES'), 'es-ES-Chirp3-HD-Charon');
 assert.strictEqual(resolveVoiceName({ type: 'vocabulary', gender: 'female' }, 'es-ES'), 'es-ES-Chirp3-HD-Kore');
 
