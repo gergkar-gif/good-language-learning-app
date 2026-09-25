@@ -175,9 +175,10 @@ def load_skill_registry(lang_dir):
         return None, {}, {}
 
 
-def validate_exercise_metadata(data, lang, skill_registry, alias_map=None):
+def validate_exercise_metadata(data, lang, skill_registry, alias_map=None, kind_map=None):
     meta_errors = []
     alias_map = alias_map or {}
+    kind_map = kind_map or {}
     allowed_str = ", ".join(sorted(ALLOWED_EXERCISE_CATEGORIES))
     for idx, ex in enumerate(data.get("exercises", [])):
         ex_id = ex.get("id", f"exercises[{idx}]")
@@ -216,6 +217,14 @@ def validate_exercise_metadata(data, lang, skill_registry, alias_map=None):
                             f"(add it to the registry if it is genuinely new)",
                         )
                     )
+                elif cat == "vocabulary" and kind_map.get(slug) == "grammar":
+                    meta_errors.append(
+                        (
+                            f"exercises/{idx} ({ex_id})",
+                            f"vocabulary exercise is tagged with grammar skill '{slug}' (kind='grammar'); "
+                            f"use a vocabulary theme slug (kind='vocabulary') instead",
+                        )
+                    )
     return meta_errors
 
 
@@ -233,7 +242,7 @@ def validate_language(lang, only=None):
         return 0, 0, []
 
     schemas = load_schemas(lang_dir)
-    skill_registry, alias_map, _kind_map = load_skill_registry(lang_dir)
+    skill_registry, alias_map, kind_map = load_skill_registry(lang_dir)
     enforce_metadata = METADATA_ENFORCED_EVERYWHERE or (only is not None)
     failures = []
     passed = failed = 0
@@ -275,7 +284,7 @@ def validate_language(lang, only=None):
             errors = sorted(validator.iter_errors(data), key=lambda e: list(e.path))
             meta_errors = []
             if name == "exercises" and enforce_metadata:
-                meta_errors = validate_exercise_metadata(data, lang, skill_registry, alias_map)
+                meta_errors = validate_exercise_metadata(data, lang, skill_registry, alias_map, kind_map)
 
             if not errors and not meta_errors:
                 passed += 1
