@@ -15,20 +15,80 @@
 //      onto tiny offscreen canvas sprites upon spawn.
 //    - The 60fps render loop performs pure GPU texture blits (drawImage)
 //      with zero per-frame fillText(), font parsing, or path tessellation.
-// 3. Anti-Overlap & Lane Physics:
-//    - Survival Mode: Organised into dedicated vertical lanes (3 on mobile,
-//      4 on desktop) with uniform velocities, mathematically preventing targets
-//      from ever covering or overlapping each other.
-//    - Time Attack Mode: 2D kinetic drift with mutual circle-circle repulsion.
-// 4. Zero-Reflow Touch Input:
-//    - Uses native PointerEvent offsetX/offsetY coordinates to avoid
-//      synchronous getBoundingClientRect() layout reflows on tap.
+// 3. Three Difficulty Tiers (Easy / Medium / Impossible):
+//    - Easy: 3 lanes, 4 meteors, relaxed drift, random distractors, 3 shields.
+//    - Medium: 4 lanes, 5-6 meteors, brisk pace, confusable lookalike distractors,
+//      -1.5s wrong-tap clock penalty in Time Attack (1.5x score).
+//    - Impossible: 4-5 lanes, 6-7 meteors, high-velocity meteor storm, high-similarity
+//      prefix/suffix decoys, 1-shield Sudden Death in Survival / -4.0s penalty in
+//      45s Time Attack (3x score).
+// 4. Unpredictable Target Selection:
+//    - New prompts are selected primarily from seasoned meteors already mid-flight
+//      across the lanes rather than newly spawned meteors, making spawn-order
+//      guessing impossible.
 
 const DeckBlast = (function () {
     'use strict';
 
-    const TIME_LIMIT_SECONDS = 60;
-    const SURVIVAL_SHIELDS = 3;
+    const DIFFICULTY_CONFIG = {
+        easy: {
+            label: 'Easy',
+            hint: 'Relaxed drift speed, fewer simultaneous targets, and forgiving rules.',
+            scoreMult: 1,
+            survivalShields: 3,
+            timeLimit: 60,
+            wrongTimePenalty: 0,
+            survivalVyBase: 0.62,
+            survivalVyRamp: 0.01,
+            survivalVyMax: 0.45,
+            timeAttackSpeed: 0.8,
+            mobileLanes: 3,
+            desktopLanes: 3,
+            mobileMaxTargets: 4,
+            desktopMaxTargets: 4,
+            mobileRadius: 40,
+            desktopRadius: 47,
+            confusableRatio: 0.0
+        },
+        medium: {
+            label: 'Medium',
+            hint: 'Brisk arcade pace, more targets on screen, and confusable distractors. (1.5x score)',
+            scoreMult: 1.5,
+            survivalShields: 3,
+            timeLimit: 60,
+            wrongTimePenalty: 1.5,
+            survivalVyBase: 0.98,
+            survivalVyRamp: 0.018,
+            survivalVyMax: 0.75,
+            timeAttackSpeed: 1.25,
+            mobileLanes: 4,
+            desktopLanes: 4,
+            mobileMaxTargets: 5,
+            desktopMaxTargets: 6,
+            mobileRadius: 34,
+            desktopRadius: 42,
+            confusableRatio: 0.55
+        },
+        impossible: {
+            label: 'Impossible',
+            hint: 'High-velocity meteor storm, deceptive lookalike decoys, and 1-shield sudden death. (3x score)',
+            scoreMult: 3,
+            survivalShields: 1,
+            timeLimit: 45,
+            wrongTimePenalty: 4.0,
+            survivalVyBase: 1.45,
+            survivalVyRamp: 0.028,
+            survivalVyMax: 1.15,
+            timeAttackSpeed: 1.85,
+            mobileLanes: 4,
+            desktopLanes: 5,
+            mobileMaxTargets: 6,
+            desktopMaxTargets: 7,
+            mobileRadius: 32,
+            desktopRadius: 38,
+            confusableRatio: 0.85
+        }
+    };
 
     let _container = null;
     let _deckId = null;
@@ -40,6 +100,7 @@ const DeckBlast = (function () {
 
     // Settings
     let _mode = 'time-attack'; // 'time-attack' | 'survival'
+    let _difficulty = 'medium'; // 'easy' | 'medium' | 'impossible'
     let _direction = 'en-to-target'; // 'en-to-target' | 'target-to-en'
 
     // Game state
@@ -49,8 +110,9 @@ const DeckBlast = (function () {
     let _maxStreak = 0;
     let _totalBlasts = 0;
     let _totalAttempts = 0;
-    let _shields = SURVIVAL_SHIELDS;
-    let _timeLeft = TIME_LIMIT_SECONDS;
+    let _shields = 3;
+    let _maxShields = 3;
+    let _timeLeft = 60;
     let _missedWords = new Map();
     let _hitUids = new Set();
     let _srsCredit = false; // set by the Decks screen; see _creditSrs()
@@ -84,6 +146,10 @@ const DeckBlast = (function () {
     let _canvasCssHeight = 420;
     let _dpr = 1;
     let _shardSprite = null;
+
+    function _cfg() {
+        return DIFFICULTY_CONFIG[_difficulty] || DIFFICULTY_CONFIG.medium;
+    }
 
     function _escapeHtml(text) {
         return (typeof UI !== 'undefined' && UI.escape)
@@ -123,7 +189,6 @@ const DeckBlast = (function () {
         if (typeof ParlourTTS === 'undefined' || typeof ParlourTTS.preload !== 'function') return;
         const lang = _langCode();
 
-        // 1. Immediately preload the first 6 words
         const immediate = _words0.slice(0, 6);
         for (let i = 0; i < immediate.length; i++) {
             const w = immediate[i];
@@ -132,7 +197,6 @@ const DeckBlast = (function () {
             }
         }
 
-        // 2. Stagger the rest in small intervals so mobile CPU/network isn't choked
         if (_preloadTimer) clearInterval(_preloadTimer);
         const remaining = _words0.slice(6);
         if (remaining.length > 0) {
@@ -170,7 +234,7 @@ const DeckBlast = (function () {
         const langKey = (typeof Lang !== 'undefined' && typeof Lang.key === 'function')
             ? Lang.key('deckBlastBest')
             : 'deckBlastBest';
-        return `${langKey}:${_mode}:${_direction}:${_deckId}`;
+        return `${langKey}:${_mode}:${_difficulty}:${_direction}:${_deckId}`;
     }
 
     function _getBestScore() {
@@ -236,21 +300,18 @@ const DeckBlast = (function () {
         const box = half * 2;
         target.spriteHalf = half;
 
-        // 1. Normal polyhedron sprite
         const polyOff = _createOffscreenCanvas(box, box);
         if (polyOff) {
             _renderPolyToContext(polyOff.ctx, half, target.vertices, false);
             target.polySprite = polyOff.canvas;
         }
 
-        // 2. Wrong-hit flash polyhedron sprite
         const flashOff = _createOffscreenCanvas(box, box);
         if (flashOff) {
             _renderPolyToContext(flashOff.ctx, half, target.vertices, true);
             target.flashSprite = flashOff.canvas;
         }
 
-        // 3. Upright text sprite (normal & flash)
         const textOff = _createOffscreenCanvas(box, box);
         if (textOff) {
             _renderTextToContext(textOff.ctx, half, target.displayText, false);
@@ -281,7 +342,6 @@ const DeckBlast = (function () {
         ctx.fill();
         ctx.stroke();
 
-        // Internal geometric facet lines
         ctx.beginPath();
         for (let k = 0; k < verts.length; k += 2) {
             ctx.moveTo(0, 0);
@@ -302,18 +362,18 @@ const DeckBlast = (function () {
         ctx.textBaseline = 'middle';
 
         const isNarrow = _canvasWidth < 420;
-        const maxSingleLen = isNarrow ? 10 : 12;
+        const maxSingleLen = isNarrow ? 9 : 12;
 
         if (text.length > maxSingleLen && text.includes(' ')) {
             const parts = text.split(' ');
             const mid = Math.ceil(parts.length / 2);
             const line1 = parts.slice(0, mid).join(' ');
             const line2 = parts.slice(mid).join(' ');
-            ctx.font = `600 ${isNarrow ? 11 : 12}px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif`;
-            ctx.fillText(line1, 0, -7);
-            ctx.fillText(line2, 0, 7);
+            ctx.font = `600 ${isNarrow ? 10.5 : 12}px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif`;
+            ctx.fillText(line1, 0, -6.5);
+            ctx.fillText(line2, 0, 6.5);
         } else {
-            const fontSize = (text.length > maxSingleLen || isNarrow) ? 12 : 14;
+            const fontSize = text.length > 13 ? (isNarrow ? 10 : 11) : ((text.length > maxSingleLen || isNarrow) ? 11.5 : 13.5);
             ctx.font = `600 ${fontSize}px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif`;
             ctx.fillText(text, 0, 0);
         }
@@ -323,10 +383,6 @@ const DeckBlast = (function () {
     // ----------------------------------------
     // SESSION INITIALIZATION
     // ----------------------------------------
-    // A word missed at any point this game (wrong hit on its prompt, or
-    // letting it escape) is 'again'; one only ever hit correctly is 'weak'
-    // (see creditPractice() in engine/srs.js). Sent once per game — at
-    // game over, or on leaving partway.
     function _creditSrs() {
         if (!_srsCredit || _credited || typeof creditPractice !== 'function') return;
         _credited = true;
@@ -340,6 +396,7 @@ const DeckBlast = (function () {
 
     function _startSession() {
         _creditSrs();
+        const cfg = _cfg();
         _preloadAudio();
         _pool = _shuffled(_words0);
         _score = 0;
@@ -347,8 +404,9 @@ const DeckBlast = (function () {
         _maxStreak = 0;
         _totalBlasts = 0;
         _totalAttempts = 0;
-        _shields = SURVIVAL_SHIELDS;
-        _timeLeft = TIME_LIMIT_SECONDS;
+        _maxShields = cfg.survivalShields;
+        _shields = _maxShields;
+        _timeLeft = cfg.timeLimit;
         _missedWords.clear();
         _hitUids.clear();
         _credited = false;
@@ -363,7 +421,10 @@ const DeckBlast = (function () {
         _render();
         _cacheDomReferences();
         _setupCanvas();
-        _advanceToNextTarget();
+
+        // Populate initial staggered meteor field first, then select a target from it
+        _seedInitialField();
+        _advanceToNextTarget(-1);
         _fillTargetField();
         _updateHUD();
 
@@ -381,11 +442,121 @@ const DeckBlast = (function () {
         _domShieldPips = Array.from(_container.querySelectorAll('.dkb-shield-pip'));
     }
 
-    function _advanceToNextTarget() {
-        if (!_pool.length) {
-            _pool = _shuffled(_words0);
+    function _isWordOnScreen(uid) {
+        for (let i = 0; i < _activeTargets.length; i++) {
+            if (_activeTargets[i].word.uid === uid) return true;
         }
-        _currentTargetWord = _pool.pop();
+        return false;
+    }
+
+    function _getTargetDisplayText(word) {
+        return _direction === 'en-to-target'
+            ? word.displayLemma
+            : (word.translation || '—');
+    }
+
+    // Pick a distractor word, biased toward orthographic lookalikes (same initial,
+    // same suffix/case ending, similar length) in Medium and Impossible modes
+    function _pickDistractor(referenceWord) {
+        if (!_words0.length) return null;
+        const cfg = _cfg();
+        const ref = referenceWord || _currentTargetWord || _words0[0];
+        const useConfusable = Math.random() < cfg.confusableRatio && _words0.length > 4;
+
+        if (!useConfusable) {
+            for (let a = 0; a < 12; a++) {
+                const cand = _words0[Math.floor(Math.random() * _words0.length)];
+                if (cand.uid !== ref.uid && !_isWordOnScreen(cand.uid)) {
+                    return cand;
+                }
+            }
+        }
+
+        const refStr = _getTargetDisplayText(ref).toLowerCase();
+        const rLen = refStr.length;
+        const rFirst = refStr.charCodeAt(0);
+        const rLast2 = refStr.slice(-2);
+
+        let bestCand = null;
+        let bestScore = -1;
+        const sampleCount = Math.min(_words0.length, 20);
+
+        for (let i = 0; i < sampleCount; i++) {
+            const cand = _words0[Math.floor(Math.random() * _words0.length)];
+            if (cand.uid === ref.uid || _isWordOnScreen(cand.uid)) continue;
+
+            const cStr = _getTargetDisplayText(cand).toLowerCase();
+            let sim = 0;
+            if (cStr.charCodeAt(0) === rFirst) sim += 4;
+            if (cStr.length > 2 && cStr.slice(-2) === rLast2) sim += 3;
+            const lenDiff = Math.abs(cStr.length - rLen);
+            if (lenDiff <= 1) sim += 3;
+            else if (lenDiff <= 3) sim += 1;
+
+            if (sim > bestScore) {
+                bestScore = sim;
+                bestCand = cand;
+            }
+        }
+        return bestCand;
+    }
+
+    // Seed the arena at game start with staggered heights so meteors don't fall in a flat line
+    function _seedInitialField() {
+        const maxTargets = _getMaxTargets();
+        const totalLanes = _getLaneCount();
+        const shuffledPool = _shuffled(_words0).slice(0, maxTargets);
+
+        for (let i = 0; i < shuffledPool.length; i++) {
+            const w = shuffledPool[i];
+            const t = _createTarget(w, false);
+            if (t) {
+                if (_mode === 'survival') {
+                    // Stagger initial heights across the upper half of the arena
+                    const row = Math.floor(i / totalLanes);
+                    const col = i % totalLanes;
+                    t.lane = col;
+                    t.x = _getLaneX(col, totalLanes);
+                    t.y = -t.radius + 35 + (col * 38) + (row * 115);
+                }
+                _activeTargets.push(t);
+            }
+        }
+    }
+
+    // Select the next prompt word primarily from seasoned meteors ALREADY floating
+    // on screen so the player can never guess the answer from spawn order!
+    function _advanceToNextTarget(justBlastedUid) {
+        const maxFairY = _mode === 'survival' ? (_canvasHeight * 0.58) : _canvasHeight;
+        const existingCandidates = [];
+        const seasonedCandidates = [];
+
+        for (let i = 0; i < _activeTargets.length; i++) {
+            const t = _activeTargets[i];
+            if (t.word.uid === justBlastedUid) continue;
+            if (_mode !== 'survival' || t.y < maxFairY) {
+                existingCandidates.push(t.word);
+                if (t.y > 8) {
+                    seasonedCandidates.push(t.word);
+                }
+            }
+        }
+
+        // 82% of the time, choose from seasoned meteors already mid-screen
+        if (seasonedCandidates.length > 0 && Math.random() < 0.82) {
+            _currentTargetWord = seasonedCandidates[Math.floor(Math.random() * seasonedCandidates.length)];
+        } else if (existingCandidates.length > 0 && Math.random() < 0.75) {
+            _currentTargetWord = existingCandidates[Math.floor(Math.random() * existingCandidates.length)];
+        } else {
+            if (!_pool.length) {
+                _pool = _shuffled(_words0);
+            }
+            let nextWord = _pool.pop();
+            if (nextWord && nextWord.uid === justBlastedUid && _pool.length > 0) {
+                nextWord = _pool.pop();
+            }
+            _currentTargetWord = nextWord || _words0[0];
+        }
 
         if (_domPromptWord && _currentTargetWord) {
             const promptText = _direction === 'en-to-target'
@@ -399,7 +570,8 @@ const DeckBlast = (function () {
     // LANE MANAGEMENT & SPAWNING (NO OVERLAP)
     // ----------------------------------------
     function _getLaneCount() {
-        return _canvasWidth < 420 ? 3 : 4;
+        const cfg = _cfg();
+        return _canvasWidth < 420 ? cfg.mobileLanes : cfg.desktopLanes;
     }
 
     function _getLaneX(laneIndex, totalLanes) {
@@ -408,10 +580,19 @@ const DeckBlast = (function () {
     }
 
     function _getMaxTargets() {
+        const cfg = _cfg();
+        return _canvasWidth < 420 ? cfg.mobileMaxTargets : cfg.desktopMaxTargets;
+    }
+
+    function _getRadius() {
+        const cfg = _cfg();
+        const baseR = _canvasWidth < 420 ? cfg.mobileRadius : cfg.desktopRadius;
         if (_mode === 'survival') {
-            return _getLaneCount();
+            const laneWidth = _canvasWidth / _getLaneCount();
+            // Ensure diameter never exceeds 82% of lane width so lanes never touch
+            return Math.min(baseR, Math.floor(laneWidth * 0.41));
         }
-        return _canvasWidth < 420 ? 4 : 5;
+        return baseR;
     }
 
     function _fillTargetField() {
@@ -420,79 +601,84 @@ const DeckBlast = (function () {
         const maxTargets = _getMaxTargets();
 
         // 1. Ensure the correct target word is on screen
-        let hasTarget = false;
-        for (let i = 0; i < _activeTargets.length; i++) {
-            if (_activeTargets[i].word.uid === _currentTargetWord.uid) {
-                hasTarget = true;
-                break;
-            }
-        }
-        if (!hasTarget) {
+        if (!_isWordOnScreen(_currentTargetWord.uid)) {
             const newTarget = _createTarget(_currentTargetWord, true);
             if (newTarget) _activeTargets.push(newTarget);
         }
 
-        // 2. Fill empty slots with distractors in O(1) random picks
+        // 2. Fill remaining capacity with confusable or random distractors
         let attempts = 0;
-        const totalWords = _words0.length;
-        while (_activeTargets.length < maxTargets && attempts < 12) {
+        while (_activeTargets.length < maxTargets && attempts < 10) {
             attempts++;
-            const candidate = _words0[Math.floor(Math.random() * totalWords)];
-            if (candidate.uid === _currentTargetWord.uid) continue;
-
-            let alreadyOnScreen = false;
-            for (let i = 0; i < _activeTargets.length; i++) {
-                if (_activeTargets[i].word.uid === candidate.uid) {
-                    alreadyOnScreen = true;
-                    break;
-                }
-            }
-            if (alreadyOnScreen) continue;
+            const candidate = _pickDistractor(_currentTargetWord);
+            if (!candidate) break;
 
             const newTarget = _createTarget(candidate, false);
             if (newTarget) {
                 _activeTargets.push(newTarget);
             } else {
-                break; // No free lane available right now
+                break; // No free lane with sufficient vertical separation right now
             }
         }
     }
 
     function _createTarget(word, isMatchTarget) {
-        const radius = _canvasWidth < 420 ? 39 : 46;
+        const cfg = _cfg();
+        const radius = _getRadius();
         const totalLanes = _getLaneCount();
 
         let x, y, vx, vy, lane = -1;
 
         if (_mode === 'survival') {
-            const laneOccupancy = new Array(totalLanes).fill(null);
+            // Track the highest (minimum y) meteor currently in each lane
+            const highestYInLane = new Array(totalLanes).fill(Infinity);
             for (let i = 0; i < _activeTargets.length; i++) {
                 const t = _activeTargets[i];
                 if (t.lane >= 0 && t.lane < totalLanes) {
-                    if (laneOccupancy[t.lane] === null || t.y < laneOccupancy[t.lane]) {
-                        laneOccupancy[t.lane] = t.y;
+                    if (t.y < highestYInLane[t.lane]) {
+                        highestYInLane[t.lane] = t.y;
                     }
                 }
             }
 
+            // A lane is eligible if it is empty OR its highest meteor has drifted down
+            // by at least (radius * 2.75) pixels, guaranteeing zero vertical overlap
+            const minClearanceY = Math.max(82, radius * 2.75);
             const freeLanes = [];
             for (let l = 0; l < totalLanes; l++) {
-                if (laneOccupancy[l] === null || laneOccupancy[l] > 135) {
+                if (highestYInLane[l] > minClearanceY) {
                     freeLanes.push(l);
                 }
             }
 
             if (!freeLanes.length) {
-                return null;
+                // If this is the required match target and all lanes are near the top,
+                // pick the lane whose top meteor is furthest down and spawn above it
+                if (isMatchTarget) {
+                    let bestLane = 0;
+                    let maxTopY = -Infinity;
+                    for (let l = 0; l < totalLanes; l++) {
+                        if (highestYInLane[l] > maxTopY) {
+                            maxTopY = highestYInLane[l];
+                            bestLane = l;
+                        }
+                    }
+                    lane = bestLane;
+                    x = _getLaneX(lane, totalLanes);
+                    y = Math.min(-radius - 10, maxTopY - (radius * 2.6));
+                } else {
+                    return null;
+                }
+            } else {
+                lane = freeLanes[Math.floor(Math.random() * freeLanes.length)];
+                x = _getLaneX(lane, totalLanes);
+                y = -radius - 10 - Math.random() * 18;
             }
 
-            lane = freeLanes[Math.floor(Math.random() * freeLanes.length)];
-            x = _getLaneX(lane, totalLanes);
-            y = -radius - 10;
             vx = 0;
-            vy = 0.8 + Math.min(0.6, _totalBlasts * 0.015);
+            vy = cfg.survivalVyBase + Math.min(cfg.survivalVyMax, _totalBlasts * cfg.survivalVyRamp);
         } else {
-            const margin = radius + 15;
+            const margin = radius + 14;
             let foundSpot = false;
             for (let a = 0; a < 12; a++) {
                 const testX = margin + Math.random() * (_canvasWidth - margin * 2);
@@ -517,7 +703,7 @@ const DeckBlast = (function () {
                 y = margin + Math.random() * (_canvasHeight - margin * 2);
             }
 
-            const speed = 0.9 + Math.random() * 0.4;
+            const speed = cfg.timeAttackSpeed * (0.88 + Math.random() * 0.28);
             const angle = Math.random() * Math.PI * 2;
             vx = Math.cos(angle) * speed;
             vy = Math.sin(angle) * speed;
@@ -531,9 +717,7 @@ const DeckBlast = (function () {
             vertices.push({ x: Math.cos(a) * r, y: Math.sin(a) * r });
         }
 
-        const displayText = _direction === 'en-to-target'
-            ? word.displayLemma
-            : (word.translation || '—');
+        const displayText = _getTargetDisplayText(word);
 
         const targetObj = {
             word,
@@ -546,7 +730,7 @@ const DeckBlast = (function () {
             radius,
             vertices,
             rotation: Math.random() * Math.PI * 2,
-            vRot: (Math.random() - 0.5) * 0.012,
+            vRot: (Math.random() - 0.5) * (0.012 * cfg.scoreMult),
             displayText,
             flashTime: 0,
             spriteHalf: radius + 4,
@@ -594,7 +778,7 @@ const DeckBlast = (function () {
             const t = _activeTargets[i];
             const dx = cx - t.x;
             const dy = cy - t.y;
-            const hitR = t.radius + 12;
+            const hitR = t.radius + 10;
             if (dx * dx + dy * dy <= hitR * hitR) {
                 hitIndex = i;
                 break;
@@ -603,23 +787,38 @@ const DeckBlast = (function () {
 
         if (hitIndex === -1) return;
 
+        const cfg = _cfg();
         const target = _activeTargets[hitIndex];
         const isCorrect = (target.word.uid === _currentTargetWord.uid);
 
         if (isCorrect) {
             _totalBlasts++;
-            _hitUids.add(_currentTargetWord.uid);
             _streak++;
             if (_streak > _maxStreak) _maxStreak = _streak;
+            _hitUids.add(target.word.uid);
 
             const comboMultiplier = Math.min(5, 1 + Math.floor((_streak - 1) / 3));
-            _score += 100 * comboMultiplier;
+            _score += Math.round(100 * cfg.scoreMult * comboMultiplier);
 
             _spawnShatter(target.x, target.y);
             _speakWord(target.word);
 
+            const blastedUid = target.word.uid;
             _activeTargets.splice(hitIndex, 1);
-            _advanceToNextTarget();
+
+            // Synchronize velocities of all survival meteors as speed ramps up
+            if (_mode === 'survival') {
+                const newVy = cfg.survivalVyBase + Math.min(cfg.survivalVyMax, _totalBlasts * cfg.survivalVyRamp);
+                for (let i = 0; i < _activeTargets.length; i++) {
+                    _activeTargets[i].vy = newVy;
+                }
+            }
+
+            // 1. Refill empty lane slots first so newcomers are at the top
+            _fillTargetField();
+            // 2. Pick next prompt from seasoned meteors already mid-screen
+            _advanceToNextTarget(blastedUid);
+            // 3. Ensure chosen target is present on screen
             _fillTargetField();
             _updateHUD();
         } else {
@@ -635,6 +834,13 @@ const DeckBlast = (function () {
             if (_mode === 'survival') {
                 _shields--;
                 if (_shields <= 0) {
+                    _gameOver();
+                    return;
+                }
+            } else if (cfg.wrongTimePenalty > 0) {
+                // Time penalty in Medium / Impossible Time Attack prevents blind tapping
+                _timeLeft = Math.max(0, _timeLeft - cfg.wrongTimePenalty);
+                if (_timeLeft <= 0) {
                     _gameOver();
                     return;
                 }
@@ -671,7 +877,8 @@ const DeckBlast = (function () {
                     return;
                 }
             }
-            _advanceToNextTarget();
+            _fillTargetField();
+            _advanceToNextTarget(target.word.uid);
         }
         _fillTargetField();
         _updateHUD();
@@ -801,10 +1008,10 @@ const DeckBlast = (function () {
             }
         }
 
-        // Throttled spawn check (only every 250ms when needed, never 60fps)
+        // Throttled spawn check (only every 220ms when needed, never 60fps)
         if (_activeTargets.length < _getMaxTargets()) {
             _spawnAccumMs += dt;
-            if (_spawnAccumMs >= 250) {
+            if (_spawnAccumMs >= 220) {
                 _spawnAccumMs = 0;
                 _fillTargetField();
             }
@@ -868,7 +1075,6 @@ const DeckBlast = (function () {
     }
 
     function _drawTarget(target) {
-        // Fast hardware-accelerated offscreen sprite path
         if (target.polySprite && target.textSprite) {
             const half = target.spriteHalf;
             const box = half * 2;
@@ -884,7 +1090,6 @@ const DeckBlast = (function () {
             return;
         }
 
-        // Fallback immediate path (for headless unit test environments)
         _ctx.save();
         _ctx.translate(target.x, target.y);
         _ctx.rotate(target.rotation);
@@ -929,7 +1134,6 @@ const DeckBlast = (function () {
             _preloadTimer = null;
         }
         _state = 'gameover';
-        _creditSrs();
 
         const prevBest = _getBestScore();
         const isNewBest = _score > prevBest;
@@ -945,10 +1149,12 @@ const DeckBlast = (function () {
                 blasts: _totalBlasts,
                 maxStreak: _maxStreak,
                 mode: _mode,
+                difficulty: _difficulty,
                 direction: _direction
             });
         }
 
+        _creditSrs();
         _render();
     }
 
@@ -966,7 +1172,6 @@ const DeckBlast = (function () {
         _canvasCssWidth = _canvasWidth;
         _canvasCssHeight = _canvasHeight;
 
-        // Cap DPR to 2 on mobile to prevent GPU fill-rate hitching on 3x/4x screens
         _dpr = Math.min(2, window.devicePixelRatio || 1);
         _canvas.width = _canvasWidth * _dpr;
         _canvas.height = _canvasHeight * _dpr;
@@ -977,7 +1182,6 @@ const DeckBlast = (function () {
 
         _shardSprite = _bakeShardSprite();
 
-        // Zero-reflow pointerdown handler using native offsetX / offsetY
         const handleDown = (e) => {
             e.preventDefault();
             if (typeof e.offsetX === 'number' && typeof e.offsetY === 'number' && _canvasCssWidth > 0) {
@@ -996,6 +1200,7 @@ const DeckBlast = (function () {
         if (!_container) return;
         const exitText = _exitLabel || 'Back to deck';
         const langName = _langName();
+        const cfg = _cfg();
 
         if (!_words0.length || _words0.length < 2) {
             _container.innerHTML = `
@@ -1033,8 +1238,26 @@ const DeckBlast = (function () {
                             </div>
                             <p class="dkb-control-hint">
                                 ${_mode === 'time-attack'
-                                    ? '60-second speed challenge. Blast targets and build combo multipliers.'
-                                    : '3 shield charges. Avoid letting matching targets escape and avoid wrong hits.'}
+                                    ? `${cfg.timeLimit}-second speed challenge. Blast targets and build combo multipliers.`
+                                    : `${cfg.survivalShields} shield ${cfg.survivalShields === 1 ? 'charge (Sudden Death)' : 'charges'}. Avoid letting matching targets escape and avoid wrong hits.`}
+                            </p>
+                        </div>
+
+                        <div class="dkb-section">
+                            <span class="dkb-section-title">Difficulty</span>
+                            <div class="dkb-segmented" role="group" aria-label="Difficulty">
+                                <button class="dkb-seg-btn ${_difficulty === 'easy' ? 'is-active' : ''}" data-set-diff="easy">
+                                    Easy
+                                </button>
+                                <button class="dkb-seg-btn ${_difficulty === 'medium' ? 'is-active' : ''}" data-set-diff="medium">
+                                    Medium
+                                </button>
+                                <button class="dkb-seg-btn ${_difficulty === 'impossible' ? 'is-active' : ''}" data-set-diff="impossible">
+                                    Impossible
+                                </button>
+                            </div>
+                            <p class="dkb-control-hint">
+                                ${_escapeHtml(cfg.hint)}
                             </p>
                         </div>
 
@@ -1055,7 +1278,7 @@ const DeckBlast = (function () {
                             </p>
                         </div>
 
-                        ${best > 0 ? `<div class="dkb-best-pill">Personal best: <strong>${best.toLocaleString()}</strong> pts</div>` : ''}
+                        ${best > 0 ? `<div class="dkb-best-pill">Personal best (${_escapeHtml(cfg.label)}): <strong>${best.toLocaleString()}</strong> pts</div>` : ''}
 
                         <button class="btn-primary dkb-start-btn" data-blast-start="1">Start Game</button>
                     </div>
@@ -1069,6 +1292,11 @@ const DeckBlast = (function () {
             const promptText = _currentTargetWord
                 ? (_direction === 'en-to-target' ? (_currentTargetWord.translation || '—') : _currentTargetWord.displayLemma)
                 : '';
+
+            const shieldPipsHtml = [];
+            for (let s = 1; s <= _maxShields; s++) {
+                shieldPipsHtml.push(`<span class="dkb-shield-pip ${_shields >= s ? 'is-active' : ''}"></span>`);
+            }
 
             _container.innerHTML = `
                 <div class="dkb dkb-game">
@@ -1085,9 +1313,7 @@ const DeckBlast = (function () {
                                 <div class="dkb-metric">
                                     <span class="dkb-metric-label">SHIELDS</span>
                                     <div class="dkb-shields">
-                                        <span class="dkb-shield-pip ${_shields >= 1 ? 'is-active' : ''}"></span>
-                                        <span class="dkb-shield-pip ${_shields >= 2 ? 'is-active' : ''}"></span>
-                                        <span class="dkb-shield-pip ${_shields >= 3 ? 'is-active' : ''}"></span>
+                                        ${shieldPipsHtml.join('')}
                                     </div>
                                 </div>
                             `}
@@ -1106,7 +1332,7 @@ const DeckBlast = (function () {
                     </div>
 
                     <div class="dkb-prompt-bar">
-                        <span class="dkb-prompt-kicker">FIND MATCH</span>
+                        <span class="dkb-prompt-kicker">FIND MATCH · ${_escapeHtml(cfg.label.toUpperCase())}</span>
                         <div class="dkb-prompt-word">${_escapeHtml(promptText)}</div>
                     </div>
 
@@ -1129,7 +1355,7 @@ const DeckBlast = (function () {
                     <button class="dk-back" data-blast-exit="1">← ${_escapeHtml(exitText)}</button>
 
                     <div class="dkb-done-card">
-                        <span class="dkb-done-kicker">${_mode === 'time-attack' ? 'TIME EXPIRED' : 'GAME OVER'}</span>
+                        <span class="dkb-done-kicker">${_mode === 'time-attack' ? 'TIME EXPIRED' : 'GAME OVER'} · ${_escapeHtml(cfg.label.toUpperCase())}</span>
                         <div class="dkb-done-score">${_score.toLocaleString()}</div>
                         <div class="dkb-done-score-label">POINTS</div>
 
@@ -1196,6 +1422,14 @@ const DeckBlast = (function () {
             };
         });
 
+        _container.querySelectorAll('[data-set-diff]').forEach(el => {
+            el.onclick = () => {
+                const d = el.getAttribute('data-set-diff');
+                if (DIFFICULTY_CONFIG[d]) _difficulty = d;
+                _render();
+            };
+        });
+
         _container.querySelectorAll('[data-set-dir]').forEach(el => {
             el.onclick = () => {
                 _direction = el.getAttribute('data-set-dir');
@@ -1240,12 +1474,15 @@ const DeckBlast = (function () {
         });
 
         if (options && options.mode) _mode = options.mode;
+        if (options && options.difficulty && DIFFICULTY_CONFIG[options.difficulty]) {
+            _difficulty = options.difficulty;
+        }
         if (options && options.direction) _direction = options.direction;
         _exitLabel = (options && options.exitLabel) || null;
         _onExit = (options && options.onExit) || function () {};
         _onComplete = (options && options.onComplete) || null;
         _srsCredit = !!(options && options.srsCredit);
-        _credited = true; // nothing played yet
+        _credited = true;
 
         _state = 'lobby';
 

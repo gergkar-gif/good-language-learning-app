@@ -147,13 +147,16 @@ assert.strictEqual(preloadedAudio[0].text, 'libro');
 assert.strictEqual(preloadedAudio[0].language, 'es');
 console.log(`[PASS] Proactively preloaded ${preloadedAudio.length} words into ParlourTTS memory/IDB cache.`);
 
-console.log('\n--- Test 3: Lobby Markup & Mode/Direction Toggles ---');
+console.log('\n--- Test 3: Lobby Markup & Mode/Difficulty/Direction Toggles ---');
 assert(mockContainer.innerHTML.includes('Time Attack'), 'Lobby must contain Time Attack mode');
 assert(mockContainer.innerHTML.includes('Survival'), 'Lobby must contain Survival mode');
+assert(mockContainer.innerHTML.includes('Easy'), 'Lobby must contain Easy difficulty');
+assert(mockContainer.innerHTML.includes('Medium'), 'Lobby must contain Medium difficulty');
+assert(mockContainer.innerHTML.includes('Impossible'), 'Lobby must contain Impossible difficulty');
 assert(mockContainer.innerHTML.includes('English → Spanish'), 'Lobby must contain English -> Spanish option');
 assert(mockContainer.innerHTML.includes('Spanish → English'), 'Lobby must contain Spanish -> English option');
 assert(!emojiRegex.test(mockContainer.innerHTML), 'Lobby HTML must not contain emojis');
-console.log('[PASS] Lobby rendered with required modes and zero emojis.');
+console.log('[PASS] Lobby rendered with required modes, 3 difficulties, and zero emojis.');
 
 console.log('\n--- Test 4: Integration in engine/decks.js and index.html ---');
 const decksJs = fs.readFileSync(path.join(__dirname, '../../engine/decks.js'), 'utf8');
@@ -167,12 +170,14 @@ const componentsCss = fs.readFileSync(path.join(__dirname, '../../styles/compone
 assert(componentsCss.includes('.dkb-lobby'), 'components.css must define .dkb-lobby styles');
 assert(componentsCss.includes('.dkb-canvas'), 'components.css must define .dkb-canvas styles');
 assert(!emojiRegex.test(componentsCss), 'components.css must contain zero emojis');
-console.log('\n--- Test 5: Anti-Overlap Lane Architecture & Mobile Optimizations ---');
+console.log('\n--- Test 5: Anti-Overlap Lane Architecture, Unpredictable Targeting & Mobile Optimizations ---');
 assert(blastFileContent.includes('_getLaneCount'), 'blast.js must implement lane count management');
 assert(blastFileContent.includes('_getLaneX'), 'blast.js must calculate distinct lane centers');
+assert(blastFileContent.includes('seasonedCandidates'), 'blast.js must select targets from seasoned mid-flight meteors to prevent spawn-order guessing');
+assert(blastFileContent.includes('_pickDistractor'), 'blast.js must implement confusable distractor selection');
 assert(blastFileContent.includes('Math.min(2, window.devicePixelRatio || 1)'), 'blast.js must cap DPR to 2 for mobile performance');
 assert(!blastFileContent.includes('Sound.correct()'), 'blast.js must decouple sound from TTS to prevent mobile audio lockup');
-console.log('[PASS] Anti-overlap lane physics and mobile optimizations verified.');
+console.log('[PASS] Anti-overlap lane physics, unpredictable mid-flight targeting, and mobile optimizations verified.');
 
 DeckBlast.stop();
 console.log('\nAll DeckBlast tests passed successfully!');
