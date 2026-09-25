@@ -64,7 +64,8 @@ across them. Those are exactly the rules that break when authoring at volume.
 | Rule | Enforced by |
 |---|---|
 | Each file matches its shape, required fields, known types | ✅ `validate-content.py` |
-| Every exercise has a valid 6-value `category`, non-empty `teaches` (except `reading`), and all `teaches` slugs exist in `indexes/skill-registry.json` | ✅ `validate-content.py` |
+| Every exercise has a valid 6-value `category`, non-empty `teaches` (except `reading`), all `teaches` slugs are canonical (non-alias) entries in `indexes/skill-registry.json`, and `category: "vocabulary"` exercises only use `kind: "vocabulary"` slugs | ✅ `validate-content.py` |
+| Every grammar skill in `indexes/grammar-index.json` has a curated lowercase-start CEFR title in `indexes/grammar-titles.json` | ✅ `validate-content.py` & `build_grammar_index.py --strict` |
 | A lesson has a non-empty `sections` array | ✅ `validate-content.py` |
 | Section and grammar-part types are ones the engine renders | ✅ `validate-content.py` |
 | Every `sections[].ref` resolves to a file that exists | ✅ `build-manifest.py` |

@@ -31,9 +31,11 @@ failure email per push. A `pre-push` hook in `.githooks/` runs it for you
   `stories/manifest.json`, `indexes/*` except hand-maintained `skill-registry.json`,
   `grammar-titles.json`, `verb-tense-skills.json`, `skill-prereqs.json`); the workflow regenerates them.
 
-## Exercise metadata (`category` + `teaches`)
+## Exercise metadata (`category` + `teaches` + `grammar-titles.json`)
 
 - Every exercise in `content/<course>/exercises/*/*.json` MUST include `category`, restricted to the six shared values: `vocabulary | grammar | reading | dialogue | writing | listening`. (In Hungarian, lesson stages such as `controlled`, `practice`, `introduce`, `check`, or content domains such as `civics` belong in the optional `stage` field, never in `category`.)
 - Every non-`reading` exercise MUST include a non-empty `teaches` array of lowercase-hyphenated skill slugs (e.g. `["preterito-indefinido"]`).
-- Every `teaches` slug MUST exist in `content/<course>/indexes/skill-registry.json`. Prefer existing slugs; only add a new reusable skill slug to `skill-registry.json` (and `grammar-titles.json` for grammar skills) deliberately when no existing slug fits.
+- Every `teaches` slug MUST be a canonical skill in `content/<course>/indexes/skill-registry.json` (`validate-content.py` rejects unknown slugs as well as retired `"aliases"` slugs). Prefer existing canonical slugs; only add a new reusable skill slug when no existing slug fits.
+- Every `category: "vocabulary"` exercise MUST be tagged with a `kind: "vocabulary"` unit theme slug (e.g. `["a1-unit01-vocab"]`), never a `kind: "grammar"` skill (`validate-content.py` enforces this).
+- Every grammar skill in `grammar-index.json` MUST have a curated title in `content/<course>/indexes/grammar-titles.json` that fits mid-sentence after `"We recommend practicing "` (starts lowercase unless a proper noun, plain CEFR English, `<= 11` words, no colons `:`, parentheses `()`, separator dashes, ` / `, or unit numbers; `"reading"` for non-grammar skills). Run `python scripts/build_grammar_index.py --strict` when updating grammar skills.
 
