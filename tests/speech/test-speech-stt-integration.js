@@ -222,6 +222,96 @@ async function runTests() {
     assert.strictEqual(errorReceived, 'stt-failed', 'Worker error must report stt-failed to trigger self-eval fallback');
     console.log('✓ Error handling and fallback verified');
 
+    // 6. Hungarian homophone and boundary-merge canonicalization & evaluation ('hogy vadj' -> 'hogy vagy', 'hollax' -> 'hol laksz')
+    console.log('6. Testing Hungarian ASR homophone and word-boundary resolution...');
+
+    // Case A: 'hogy vagy' transcribed as 'hogy vadj'
+    const evalHogy = SpeechInput.evaluate('Hogy vagy?', 'hogy vadj');
+    assert.strictEqual(evalHogy.isCorrect, true, "'hogy vadj' must pass as 100% phonetic match for 'Hogy vagy?'");
+    assert.strictEqual(evalHogy.accuracy, 100);
+    assert.strictEqual(evalHogy.matchedCount, 2);
+    assert.strictEqual(SpeechInput.canonicalizeTranscript('Hogy vagy?', 'hogy vadj'), 'hogy vagy');
+
+    // Case B: 'hol laksz' transcribed as 'hollax' (merged word boundary + x/ksz homophone)
+    const evalHol = SpeechInput.evaluate('Hol laksz?', 'hollax');
+    assert.strictEqual(evalHol.isCorrect, true, "'hollax' must pass as 100% merged phonetic match for 'Hol laksz?'");
+    assert.strictEqual(evalHol.accuracy, 100);
+    assert.strictEqual(evalHol.matchedCount, 2);
+    assert.strictEqual(SpeechInput.canonicalizeTranscript('Hol laksz?', 'hollax'), 'hol laksz');
+    assert.strictEqual(SpeechInput.canonicalizeTranscript('Hol laksz?', 'Hollax'), 'Hol laksz');
+
+    // Case C: End-to-end Cloud STT flow with 'hollax' from Whisper worker
+    mockFetchResponse = {
+        ok: true,
+        status: 200,
+        json: async () => ({
+            text: 'hollax',
+            language: 'hu'
+        })
+    };
+    let huFinalTranscript = null;
+    SpeechInput.startListening({
+        target: 'Hol laksz?',
+        preferRecording: true,
+        lang: 'hu-HU',
+        onFinal: (txt) => {
+            huFinalTranscript = txt;
+        }
+    });
+    await new Promise(r => setTimeout(r, 10));
+    SpeechInput.stopListening();
+    await new Promise(r => setTimeout(r, 50));
+
+    assert.ok(lastFetchCall.url.includes('lang=hu'), 'Must send lang=hu');
+    assert.ok(lastFetchCall.url.includes('prompt='), 'Must send target prompt hint to Whisper worker');
+    assert.strictEqual(huFinalTranscript, 'hol laksz', "Cloud STT must canonicalize 'hollax' to 'hol laksz'");
+
+    // Case D: Genuine wrong answer must NOT be falsely matched
+    const evalWrong = SpeechInput.evaluate('Hol laksz?', 'hol vagy');
+    assert.strictEqual(evalWrong.isCorrect, false, "Wrong word 'vagy' must not match 'laksz'");
+    assert.strictEqual(evalWrong.accuracy, 50);
+    assert.strictEqual(SpeechInput.canonicalizeTranscript('Hol laksz?', 'hol vagy'), 'hol vagy');
+    // Hungarian 'h' and 'b'/'v' must remain distinct
+    assert.strictEqual(SpeechInput.evaluate('Hol', 'ol', 'hu').isCorrect, false, "Hungarian 'h' is pronounced and must not match 'ol'");
+    console.log('✓ Hungarian homophone and boundary resolution verified');
+
+    // 7. Spanish homophones, seseo, yeísmo, betacismo, sinalefa & hallucination stripping
+    console.log('7. Testing Spanish ASR homophones, sinalefa boundary merges, and hallucination filtering...');
+
+    // Betacismo (b/v), seseo (z/c/s), yeísmo (ll/y), silent h
+    assert.strictEqual(SpeechInput.evaluate('Hola, ¿cómo estás?', 'ola como estas', 'es').accuracy, 100);
+    assert.strictEqual(SpeechInput.canonicalizeTranscript('Hola, ¿cómo estás?', 'ola como estas', 'es'), 'hola como estas');
+    assert.strictEqual(SpeechInput.evaluate('La vaca tuvo un bello pollo en casa', 'la baca tubo un vello poyo en caza', 'es').accuracy, 100);
+    assert.strictEqual(SpeechInput.canonicalizeTranscript('La vaca tuvo un bello pollo en casa', 'la baca tubo un vello poyo en caza', 'es'), 'la vaca tuvo un bello pollo en casa');
+
+    // Sinalefa & compound boundary merges ('vamos a ver' <-> 'vamos haber', 'voy a hablar' <-> 'voy hablar', 'va a ir' <-> 'va ir', 'por qué' <-> 'porque')
+    const evalHaber = SpeechInput.evaluate('Vamos a ver qué pasa', 'vamos haber que pasa', 'es');
+    assert.strictEqual(evalHaber.isCorrect, true, "'vamos haber' must match 'Vamos a ver'");
+    assert.strictEqual(evalHaber.accuracy, 100);
+    assert.strictEqual(SpeechInput.canonicalizeTranscript('Vamos a ver qué pasa', 'vamos haber que pasa', 'es'), 'vamos a ver que pasa');
+
+    const evalSinalefaRight = SpeechInput.evaluate('Voy a hablar español', 'voy hablar español', 'es');
+    assert.strictEqual(evalSinalefaRight.isCorrect, true, "'voy hablar' (rightward sinalefa) must match 'Voy a hablar'");
+    assert.strictEqual(evalSinalefaRight.accuracy, 100);
+    assert.strictEqual(SpeechInput.canonicalizeTranscript('Voy a hablar español', 'voy hablar español', 'es'), 'voy a hablar español');
+
+    const evalSinalefaLeft = SpeechInput.evaluate('Ella va a ir mañana', 'ella va ir mañana', 'es');
+    assert.strictEqual(evalSinalefaLeft.isCorrect, true, "'va ir' (leftward sinalefa) must match 'va a ir'");
+    assert.strictEqual(evalSinalefaLeft.accuracy, 100);
+    assert.strictEqual(SpeechInput.canonicalizeTranscript('Ella va a ir mañana', 'ella va ir mañana', 'es'), 'ella va a ir mañana');
+
+    const evalPorque = SpeechInput.evaluate('¿Por qué no vienes?', 'Porque no bienes', 'es');
+    assert.strictEqual(evalPorque.isCorrect, true, "'Porque no bienes' must match '¿Por qué no vienes?'");
+    assert.strictEqual(evalPorque.accuracy, 100);
+    assert.strictEqual(SpeechInput.canonicalizeTranscript('¿Por qué no vienes?', 'Porque no bienes', 'es'), 'Por qué no vienes');
+
+    // Whisper subtitle / outro hallucination stripping
+    const hallucinatedEs = 'Buenos días amigo. Subtítulos realizados por la comunidad de Amara.org';
+    const evalHallucinated = SpeechInput.evaluate('Buenos días amigo', hallucinatedEs, 'es');
+    assert.strictEqual(evalHallucinated.accuracy, 100);
+    assert.strictEqual(SpeechInput.canonicalizeTranscript('Buenos días amigo', hallucinatedEs, 'es'), 'Buenos días amigo');
+    console.log('✓ Spanish homophones, sinalefa, and hallucination filtering verified');
+
     console.log('\nAll SpeechInput Cloud STT integration tests passed successfully!');
 }
 

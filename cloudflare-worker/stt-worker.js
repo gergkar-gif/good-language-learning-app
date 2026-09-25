@@ -28,7 +28,7 @@ function corsHeaders(origin) {
     return {
         'Access-Control-Allow-Origin': allowOrigin,
         'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-        'Access-Control-Allow-Headers': 'Content-Type, Authorization, X-Language'
+        'Access-Control-Allow-Headers': 'Content-Type, Authorization, X-Language, X-Prompt'
     };
 }
 
@@ -51,6 +51,76 @@ function normaliseWhisperLang(lang) {
     if (clean.startsWith('it')) return 'it';
     if (clean.startsWith('pt')) return 'pt';
     return clean.split(/[-_]/)[0];
+}
+
+// Language-specific orthographic primer + optional drill vocabulary hint.
+// Framed as a glossary/orthography header rather than a conversational dialogue so
+// Whisper absorbs the target word spellings without trying to continue a dialogue turn.
+const DEFAULT_LANGUAGE_PRIMERS = {
+    hu: 'Tiszta magyar kiejtés és helyesírás: hogy vagy, hol laksz, köszönöm szépen, jó napot kívánok.',
+    es: 'Pronunciación en español claro y estándar: hola, buenos días, cómo estás, dónde vives, muchas gracias.'
+};
+
+function buildInitialPrompt(targetLang, hint) {
+    const cleanHint = String(hint || '').replace(/\s+/g, ' ').trim().slice(0, 240);
+    if (targetLang === 'hu') {
+        return cleanHint
+            ? `Tiszta magyar kiejtés és helyesírás. Kifejezés: ${cleanHint}.`
+            : DEFAULT_LANGUAGE_PRIMERS.hu;
+    }
+    if (targetLang === 'es') {
+        return cleanHint
+            ? `Pronunciación en español claro y estándar. Vocabulario: ${cleanHint}.`
+            : DEFAULT_LANGUAGE_PRIMERS.es;
+    }
+    return cleanHint || DEFAULT_LANGUAGE_PRIMERS[targetLang] || '';
+}
+
+// Known Whisper training-set subtitle/outro hallucinations in Spanish, Hungarian, and English
+// that can trigger on quiet or short recordings.
+const WHISPER_HALLUCINATION_PATTERNS = [
+    /subt[íi]tulos\s+(realizados|creados|hechos|por)\b[^.?!]*/gi,
+    /subtitulado\s+por\b[^.?!]*/gi,
+    /amara\.org/gi,
+    /suscr[íi]bete\s+al\s+canal[^.?!]*/gi,
+    /gracias\s+por\s+ver(\s+el\s+v[íi]deo)?[^.?!]*/gi,
+    /feliratozta\b[^.?!]*/gi,
+    /a\s+feliratokat\s+k[ée]sz[íi]tette\b[^.?!]*/gi,
+    /k[öo]sz[öo]n[öo]m\s+a\s+figyelmet[^.?!]*/gi,
+    /subtitles\s+by\b[^.?!]*/gi,
+    /thank\s+you\s+for\s+watching[^.?!]*/gi
+];
+
+function cleanWhisperTranscript(aiResult) {
+    if (!aiResult) return '';
+
+    let rawText = '';
+    if (Array.isArray(aiResult.segments) && aiResult.segments.length > 0) {
+        // Filter out silent/noise segments (no_speech_prob > 0.65) or degenerate
+        // repetitive loop segments (compression_ratio > 2.4)
+        const validSegments = aiResult.segments.filter(seg => {
+            if (!seg || typeof seg.text !== 'string') return false;
+            if (typeof seg.no_speech_prob === 'number' && seg.no_speech_prob > 0.65) return false;
+            if (typeof seg.compression_ratio === 'number' && seg.compression_ratio > 2.4) return false;
+            return seg.text.trim().length > 0;
+        });
+        if (validSegments.length > 0) {
+            rawText = validSegments.map(s => s.text.trim()).join(' ');
+        } else if (aiResult.segments.every(s => typeof s.no_speech_prob === 'number' && s.no_speech_prob > 0.85)) {
+            return '';
+        }
+    }
+
+    if (!rawText) {
+        rawText = String(aiResult.text || aiResult.transcript || '');
+    }
+
+    let cleaned = rawText;
+    for (const pattern of WHISPER_HALLUCINATION_PATTERNS) {
+        cleaned = cleaned.replace(pattern, '');
+    }
+
+    return cleaned.replace(/\s+/g, ' ').trim();
 }
 
 // Chunked to avoid blowing the call-stack limit of String.fromCharCode.apply
@@ -102,9 +172,11 @@ export default {
             }, 500, cors);
         }
 
-        // Extract language parameter
+        // Extract language and optional vocabulary prompt parameters
         const reqLang = url.searchParams.get('lang') || request.headers.get('X-Language') || 'es';
         const targetLang = normaliseWhisperLang(reqLang);
+        const reqPrompt = url.searchParams.get('prompt') || request.headers.get('X-Prompt') || '';
+        const initialPrompt = buildInitialPrompt(targetLang, reqPrompt);
 
         // Read audio buffer from request body
         let audioBuffer = null;
@@ -133,31 +205,31 @@ export default {
             return json({ error: 'No audio data received' }, 400, cors);
         }
 
-        // Call Cloudflare Workers AI Whisper (large-v3-turbo: far more accurate than the
-        // base @cf/openai/whisper model, honours the language hint, and suppresses
-        // hallucinated words during silence/noise via vad_filter). This model's 'audio'
-        // input is a base64-encoded string, unlike the base whisper model's raw byte array.
+        // Call Cloudflare Workers AI Whisper (large-v3-turbo: 4-layer decoder distilled from
+        // large-v3, honours the language hint and initial_prompt, and suppresses hallucinated
+        // words during silence/noise via vad_filter).
+        // - beam_size: 5 resolves multi-token Hungarian/Spanish digraphs & word boundaries
+        // - temperature: 0 disables random sampling fallback (0.2..1.0) on short clips
+        // - condition_on_previous_text: false prevents looping/drift
         try {
             const aiInput = {
                 audio: bytesToBase64(new Uint8Array(audioBuffer)),
                 task: 'transcribe',
                 vad_filter: true,
-                // Beam search (default beam_size: 5) runs several decode passes per
-                // audio chunk and is most of the latency on short utterances; greedy
-                // decoding (1) is markedly faster and the accuracy cost is negligible
-                // for short, single-sentence speaking-drill recordings. Each segment
-                // is independent here (isolated sentences, not a running dialogue),
-                // so condition_on_previous_text buys nothing and only adds compute.
-                beam_size: 1,
+                beam_size: 5,
+                temperature: 0,
                 condition_on_previous_text: false
             };
             if (targetLang) {
                 aiInput.language = targetLang;
             }
+            if (initialPrompt) {
+                aiInput.initial_prompt = initialPrompt;
+            }
 
             const aiResult = await env.AI.run('@cf/openai/whisper-large-v3-turbo', aiInput);
 
-            const transcript = (aiResult && (aiResult.text || aiResult.transcript || '')).trim();
+            const transcript = cleanWhisperTranscript(aiResult);
 
             // Word-level timestamps live nested under each segment, not at the top level.
             const words = [];

@@ -71,20 +71,31 @@ const SpeechInput = (function () {
         return !!getSttEndpoint() && typeof fetch === 'function';
     }
 
-    async function transcribeBlob(audioBlob, lang) {
+    async function transcribeBlob(audioBlob, lang, hint) {
         const endpoint = getSttEndpoint();
         if (!endpoint) throw new Error('No STT endpoint configured');
 
         const cleanLang = (lang || getSpeechLang() || 'es').split(/[-_]/)[0];
-        const url = `${endpoint}${endpoint.includes('?') ? '&' : '?'}lang=${encodeURIComponent(cleanLang)}`;
+        const hintList = (Array.isArray(hint) ? hint : [hint]).filter(Boolean);
+        const cleanHint = hintList.join(' · ').replace(/\s+/g, ' ').trim().slice(0, 240);
+
+        let url = `${endpoint}${endpoint.includes('?') ? '&' : '?'}lang=${encodeURIComponent(cleanLang)}`;
+        if (cleanHint) {
+            url += `&prompt=${encodeURIComponent(cleanHint)}`;
+        }
 
         const type = (audioBlob && audioBlob.type) || 'audio/webm';
+        const headers = {
+            'Content-Type': type,
+            'X-Language': cleanLang
+        };
+        if (cleanHint) {
+            headers['X-Prompt'] = cleanHint;
+        }
+
         const response = await fetch(url, {
             method: 'POST',
-            headers: {
-                'Content-Type': type,
-                'X-Language': cleanLang
-            },
+            headers,
             body: audioBlob
         });
 
@@ -94,7 +105,8 @@ const SpeechInput = (function () {
         }
 
         const data = await response.json();
-        return (data && (data.text || data.transcript || '')).trim();
+        const rawText = stripWhisperHallucinations((data && (data.text || data.transcript || '')).trim());
+        return hint ? canonicalizeTranscript(hint, rawText, cleanLang) : rawText;
     }
 
     // ---- Browser Support & State ----
@@ -309,7 +321,7 @@ const SpeechInput = (function () {
                         const onStatus = options.onStatusChange || null;
                         if (onStatus) onStatus('analyzing');
                         try {
-                            const transcript = await transcribeBlob(_recordedAudioBlob, lang);
+                            const transcript = await transcribeBlob(_recordedAudioBlob, lang, options.target);
                             cb(transcript || '');
                         } catch (err) {
                             console.warn('SpeechInput: Cloud STT transcription failed:', err);
@@ -420,6 +432,24 @@ const SpeechInput = (function () {
                     } catch (e) {}
                 }
 
+                // Automatic silence commit for Cloud STT sessions (matches native STT behavior)
+                if (_isCloudSttSession && !manualStop) {
+                    if (isHearing) {
+                        if (_initialSilenceTimeout) {
+                            clearTimeout(_initialSilenceTimeout);
+                            _initialSilenceTimeout = null;
+                        }
+                        if (_finishTimeout) {
+                            clearTimeout(_finishTimeout);
+                            _finishTimeout = null;
+                        }
+                    } else if (_hasSpoken && !_finishTimeout) {
+                        _finishTimeout = setTimeout(() => {
+                            if (_isListening) stopListening();
+                        }, 2200);
+                    }
+                }
+
                 if (realLevel < 0.05) {
                     simAngle += 0.2;
                     const basePulse = _hasSpoken ? 0.22 : 0.08 + Math.sin(simAngle) * 0.05;
@@ -496,7 +526,8 @@ const SpeechInput = (function () {
                             }
                         }
                         _currentInterim = interim;
-                        const combined = (_accumulatedFinal + ' ' + _currentInterim).trim();
+                        const rawCombined = (_accumulatedFinal + ' ' + _currentInterim).trim();
+                        const combined = (target && rawCombined) ? canonicalizeTranscript(target, rawCombined) : rawCombined;
 
                         if (combined) {
                             _hasSpoken = true;
@@ -725,42 +756,165 @@ const SpeechInput = (function () {
         return matrix[b.length][a.length];
     }
 
+    const WHISPER_HALLUCINATION_PATTERNS = [
+        /subt[íi]tulos\s+(realizados|creados|hechos|por)\b[^.?!]*/gi,
+        /subtitulado\s+por\b[^.?!]*/gi,
+        /amara\.org/gi,
+        /suscr[íi]bete\s+al\s+canal[^.?!]*/gi,
+        /gracias\s+por\s+ver(\s+el\s+v[íi]deo)?[^.?!]*/gi,
+        /feliratozta\b[^.?!]*/gi,
+        /a\s+feliratokat\s+k[ée]sz[íi]tette\b[^.?!]*/gi,
+        /k[öo]sz[öo]n[öo]m\s+a\s+figyelmet[^.?!]*/gi,
+        /subtitles\s+by\b[^.?!]*/gi,
+        /thank\s+you\s+for\s+watching[^.?!]*/gi
+    ];
+
+    function stripWhisperHallucinations(text) {
+        if (!text) return '';
+        let cleaned = String(text);
+        for (const pattern of WHISPER_HALLUCINATION_PATTERNS) {
+            cleaned = cleaned.replace(pattern, '');
+        }
+        return cleaned.replace(/\s+/g, ' ').trim();
+    }
+
+    function _detectPhoneticLang(langHint, textSample) {
+        if (langHint) {
+            const l = String(langHint).toLowerCase();
+            if (l.startsWith('hu')) return 'hu';
+            if (l.startsWith('es')) return 'es';
+        }
+        if (textSample) {
+            const s = String(textSample);
+            if (/[őűŐŰ]|\b(hogy|vagy|laksz|szia|köszönöm|milyen)\b|(gy|sz|zs|cs|ly|ny|ty)/i.test(s)) {
+                return 'hu';
+            }
+            if (/[ñ¿¡]/i.test(s)) {
+                return 'es';
+            }
+        }
+        const active = getSpeechLang();
+        if (active && active.toLowerCase().startsWith('hu')) return 'hu';
+        return 'es';
+    }
+
+    // Hungarian phonetic folding: resolves Hungarian digraph homophones and assimilations
+    // while preserving Hungarian 'h' and 'b'/'v' distinctions.
+    function phoneticFoldHu(word) {
+        if (!word) return '';
+        return String(word)
+            .toLowerCase()
+            .normalize('NFD')
+            .replace(/[\u0300-\u036f]/g, '')
+            .replace(/x/g, 'ksz')
+            .replace(/ggy|gyj|dj/g, 'gy')
+            .replace(/tty|tyj|tj/g, 'ty')
+            .replace(/nny|nyj|nj/g, 'ny')
+            .replace(/ly|jj/g, 'j')
+            .replace(/ccs|tsz|ts/g, 'cs')
+            .replace(/ddzs|dzsj|ds/g, 'dzs')
+            .replace(/szs/g, 's')
+            .replace(/ssz/g, 'sz')
+            .replace(/(.)\1+/g, '$1');
+    }
+
+    // Spanish phonetic folding: resolves betacismo (b/v), silent h, seseo (z/ce/ci <-> s),
+    // yeísmo (ll <-> y, word-final -y <-> -i), g/j before e/i, c/qu/k velars, and sinalefa
+    // vowel fusions across word boundaries (e.g. 'voy a hablar' <-> 'voy hablar', 'a ver' <-> 'haber').
+    function phoneticFoldEs(word) {
+        if (!word) return '';
+        return String(word)
+            .toLowerCase()
+            .normalize('NFD')
+            .replace(/[\u0300-\u036f]/g, '')
+            .replace(/ch/g, '\u010d')      // protect 'ch' (/tʃ/) before stripping silent 'h'
+            .replace(/h/g, '')             // silent 'h' ('hola' <-> 'ola', 'haber' <-> 'a ver', 'hablar' <-> 'ablar')
+            .replace(/ll/g, 'y')           // yeísmo ('valla' <-> 'vaya', 'calló' <-> 'cayó', 'pollo' <-> 'poyo')
+            .replace(/y$/g, 'i')           // word-final '-y' /i/ ('hay' <-> 'ahí' <-> 'ay', 'hoy' <-> 'oi')
+            .replace(/v/g, 'b')            // betacismo ('vaca' <-> 'baca', 'tubo' <-> 'tuvo', 'vienes' <-> 'bienes')
+            .replace(/que/g, 'ke')
+            .replace(/qui/g, 'ki')
+            .replace(/ce/g, 'se')          // seseo ('cena' <-> 'sena', 'cocer' <-> 'coser', 'hice' <-> 'hise')
+            .replace(/ci/g, 'si')          // seseo ('cien' <-> 'sien', 'cierra' <-> 'sierra')
+            .replace(/z/g, 's')            // seseo ('casa' <-> 'caza', 'vez' <-> 'ves', 'haz' <-> 'has')
+            .replace(/ge/g, 'je')          // velar fricative ('gente' <-> 'jente', 'coger' <-> 'cojer')
+            .replace(/gi/g, 'ji')          // velar fricative ('elegir' <-> 'elejir', 'gira' <-> 'jira')
+            .replace(/gue/g, 'ge')
+            .replace(/gui/g, 'gi')
+            .replace(/ca/g, 'ka')
+            .replace(/co/g, 'ko')
+            .replace(/cu/g, 'ku')
+            .replace(/qu/g, 'k')
+            .replace(/x/g, 'ks')
+            .replace(/(.)\1+/g, '$1');     // collapse adjacent duplicates ('rr'->'r', sinalefa 'aa'->'a', 'ee'->'e')
+    }
+
+    function phoneticFold(word, langHint) {
+        if (!word) return '';
+        const lang = _detectPhoneticLang(langHint, word);
+        return lang === 'hu' ? phoneticFoldHu(word) : phoneticFoldEs(word);
+    }
+
     // Check if two individual words are phonetically close enough
-    function isWordMatch(targetNorm, recNorm) {
+    function isWordMatch(targetNorm, recNorm, langHint) {
         if (!targetNorm || !recNorm) return false;
         if (targetNorm === recNorm) return true;
+
+        const lang = _detectPhoneticLang(langHint, `${targetNorm} ${recNorm}`);
+        const targetFold = lang === 'hu' ? phoneticFoldHu(targetNorm) : phoneticFoldEs(targetNorm);
+        const recFold = lang === 'hu' ? phoneticFoldHu(recNorm) : phoneticFoldEs(recNorm);
+        if (targetFold && targetFold === recFold) return true;
 
         // Number words vs digits tolerance (e.g. "dos" vs "2"); Hungarian
         // words included alongside Spanish since spoken numbers rarely
         // collide across the two languages. "ket" covers Hungarian "két",
         // the form used before a noun, alongside the standalone "kettő".
         const numMap = {
-            '1': ['uno', 'egy'], '2': ['dos', 'ketto', 'ket'], '3': ['tres', 'harom'],
+            '1': ['uno', 'una', 'un', 'egy'], '2': ['dos', 'ketto', 'ket'], '3': ['tres', 'harom'],
             '4': ['cuatro', 'negy'], '5': ['cinco', 'ot'], '6': ['seis', 'hat'],
             '7': ['siete', 'het'], '8': ['ocho', 'nyolc'], '9': ['nueve', 'kilenc'],
             '10': ['diez', 'tiz']
         };
         if ((numMap[recNorm] || []).includes(targetNorm) || (numMap[targetNorm] || []).includes(recNorm)) return true;
 
-        // Abbreviation equivalence (e.g. Hungarian "db" <-> "darab")
-        const abbrMap = { 'db': 'darab' };
+        // Abbreviation & contraction equivalence
+        const abbrMap = { 'db': 'darab', 'pa': 'para', 'pal': 'parael', 'al': 'ael', 'del': 'deel' };
         if (abbrMap[recNorm] === targetNorm || abbrMap[targetNorm] === recNorm) return true;
 
-        // Short words (<= 3 chars) need exact match
-        if (targetNorm.length <= 3) return targetNorm === recNorm;
+        // Short words (<= 3 chars) need exact or phonetic match
+        if (targetNorm.length <= 3) return false;
 
-        // Allow Levenshtein distance 1 for 4-7 chars, 2 for 8+ chars
+        // Allow Levenshtein distance 1 for 4-7 chars, 2 for 8+ chars (on raw norm or phonetic fold)
         const maxDist = targetNorm.length >= 8 ? 2 : 1;
-        return levenshtein(targetNorm, recNorm) <= maxDist;
+        if (levenshtein(targetNorm, recNorm) <= maxDist) return true;
+        if (targetFold.length >= 4 && levenshtein(targetFold, recFold) <= (targetFold.length >= 8 ? 2 : 1)) return true;
+        return false;
+    }
+
+    // Boundary merge/split check: requires exact normalized or phoneticFold equality
+    // so 1-letter words (like Spanish 'a') are only merged when a genuine phonetic fusion
+    // occurred (e.g. 'va'+'a' -> 'ba' === 'va', 'a'+'hablar' -> 'ablar' === 'hablar',
+    // 'a'+'ver' -> 'aber' === 'haber', 'hol'+'laksz' -> 'holaksz' === 'hollax'),
+    // and never swallowed by a 1-char Levenshtein deletion on an unrelated word like 'vamos'.
+    function isBoundaryMergeMatch(mergedNorm, singleNorm, lang) {
+        if (!mergedNorm || !singleNorm) return false;
+        if (mergedNorm === singleNorm) return true;
+        const mFold = lang === 'hu' ? phoneticFoldHu(mergedNorm) : phoneticFoldEs(mergedNorm);
+        const sFold = lang === 'hu' ? phoneticFoldHu(singleNorm) : phoneticFoldEs(singleNorm);
+        return !!(mFold && mFold === sFold);
     }
 
     // Evaluates target sentence against spoken transcript with word-by-word alignment
-    function evaluate(targetSentence, recognizedTranscript) {
+    // and multi-token word boundary handling (merged compounds/sinalefa like 'hol laksz' -> 'hollax',
+    // 'voy a hablar' -> 'voy hablar', 'vamos a ver' -> 'vamos haber', 'por qué' <-> 'porque').
+    function evaluate(targetSentence, recognizedTranscript, langHint) {
+        const cleanedTranscript = stripWhisperHallucinations(recognizedTranscript);
         const targetTokens = tokenize(targetSentence);
-        const recTokens = tokenize(recognizedTranscript);
+        const recTokens = tokenize(cleanedTranscript);
+        const lang = _detectPhoneticLang(langHint, `${targetSentence || ''} ${cleanedTranscript || ''}`);
 
         if (!targetTokens.length) {
-            return { isCorrect: true, accuracy: 100, words: [], transcript: recognizedTranscript };
+            return { isCorrect: true, accuracy: 100, words: [], transcript: cleanedTranscript };
         }
 
         // Align target tokens with recognized tokens
@@ -772,10 +926,36 @@ const SpeechInput = (function () {
             const t = targetTokens[i];
             let found = false;
 
-            // Search ahead up to 3 tokens in recognized list
+            // Check if t + nextT fused into a single recognized token (e.g. 'hol laksz' -> 'hollax',
+            // 'a ver' -> 'haber', 'voy a hablar' -> 'voy hablar', or leftward sinalefa 'va a ir' -> 'va ir')
+            // when the following recognized token does not separately match nextT.
+            if (i + 1 < targetTokens.length) {
+                const nextT = targetTokens[i + 1];
+                const mergedTargetNorm = t.norm + nextT.norm;
+                for (let j = recPointer; j < recTokens.length; j++) {
+                    if (matchedIndices.has(j)) continue;
+                    if (isBoundaryMergeMatch(mergedTargetNorm, recTokens[j].norm, lang)) {
+                        const nextRecExistsAndMatchesNextT = (j + 1 < recTokens.length) &&
+                            !matchedIndices.has(j + 1) &&
+                            isWordMatch(nextT.norm, recTokens[j + 1].norm, lang);
+                        if (!nextRecExistsAndMatchesNextT) {
+                            matchedIndices.add(j);
+                            recPointer = Math.max(recPointer, j + 1);
+                            wordResults.push({ word: t.raw, status: 'matched' });
+                            wordResults.push({ word: nextT.raw, status: 'matched' });
+                            i++; // Advance past nextT since both target tokens are matched
+                            found = true;
+                            break;
+                        }
+                    }
+                }
+                if (found) continue;
+            }
+
+            // 1. Search ahead up to 3 tokens in recognized list for 1-to-1 match
             const searchEnd = Math.min(recTokens.length, recPointer + 4);
             for (let j = recPointer; j < searchEnd; j++) {
-                if (!matchedIndices.has(j) && isWordMatch(t.norm, recTokens[j].norm)) {
+                if (!matchedIndices.has(j) && isWordMatch(t.norm, recTokens[j].norm, lang)) {
                     matchedIndices.add(j);
                     recPointer = j + 1;
                     found = true;
@@ -786,10 +966,45 @@ const SpeechInput = (function () {
             // If not found ahead, scan backwards once if missed
             if (!found) {
                 for (let j = 0; j < recTokens.length; j++) {
-                    if (!matchedIndices.has(j) && isWordMatch(t.norm, recTokens[j].norm)) {
+                    if (!matchedIndices.has(j) && isWordMatch(t.norm, recTokens[j].norm, lang)) {
                         matchedIndices.add(j);
                         found = true;
                         break;
+                    }
+                }
+            }
+
+            // 2. Fallback 2-to-1 merged boundary scan across all remaining tokens
+            if (!found && i + 1 < targetTokens.length) {
+                const nextT = targetTokens[i + 1];
+                const mergedTargetNorm = t.norm + nextT.norm;
+                for (let j = 0; j < recTokens.length; j++) {
+                    if (!matchedIndices.has(j) && isBoundaryMergeMatch(mergedTargetNorm, recTokens[j].norm, lang)) {
+                        matchedIndices.add(j);
+                        recPointer = Math.max(recPointer, j + 1);
+                        wordResults.push({ word: t.raw, status: 'matched' });
+                        wordResults.push({ word: nextT.raw, status: 'matched' });
+                        i++;
+                        found = true;
+                        break;
+                    }
+                }
+                if (found) continue;
+            }
+
+            // 3. 1-to-2 split boundary match: ASR split one target word into two tokens
+            // (e.g. 'porque' -> 'por qué', 'haber' -> 'a ver', 'viszontlátásra' -> 'viszont látásra')
+            if (!found) {
+                for (let j = 0; j + 1 < recTokens.length; j++) {
+                    if (!matchedIndices.has(j) && !matchedIndices.has(j + 1)) {
+                        const mergedRecNorm = recTokens[j].norm + recTokens[j + 1].norm;
+                        if (isBoundaryMergeMatch(t.norm, mergedRecNorm, lang)) {
+                            matchedIndices.add(j);
+                            matchedIndices.add(j + 1);
+                            recPointer = Math.max(recPointer, j + 2);
+                            found = true;
+                            break;
+                        }
                     }
                 }
             }
@@ -814,8 +1029,116 @@ const SpeechInput = (function () {
             matchedCount,
             totalCount: targetTokens.length,
             words: wordResults,
-            transcript: recognizedTranscript
+            transcript: cleanedTranscript
         };
+    }
+
+    function _applyCasingOf(sourceWord, replacementText) {
+        if (!sourceWord || !replacementText) return replacementText;
+        const firstChar = sourceWord.charAt(0);
+        const isCap = firstChar === firstChar.toUpperCase() && firstChar !== firstChar.toLowerCase();
+        if (isCap) {
+            return replacementText.charAt(0).toUpperCase() + replacementText.slice(1).toLowerCase();
+        }
+        return replacementText.toLowerCase();
+    }
+
+    // Normalises phonetic homophones, sinalefa merges, and word boundaries in an ASR transcript
+    // against the expected target sentence (e.g. 'hogy vadj' -> 'hogy vagy', 'hollax' -> 'hol laksz',
+    // 'vamos haber' -> 'vamos a ver', 'voy hablar' -> 'voy a hablar', 'va ir' -> 'va a ir', 'baca' -> 'vaca'),
+    // while leaving genuinely different or mispronounced words untouched.
+    function canonicalizeTranscript(target, rawTranscript, langHint) {
+        const cleanedRaw = stripWhisperHallucinations(rawTranscript);
+        if (!target || !cleanedRaw) return cleanedRaw || '';
+        const targetList = (Array.isArray(target) ? target : [target]).filter(Boolean);
+        if (!targetList.length) return cleanedRaw;
+
+        let bestTarget = targetList[0];
+        if (targetList.length > 1) {
+            let bestAcc = -1;
+            for (const cand of targetList) {
+                const res = evaluate(cand, cleanedRaw, langHint);
+                if (res.accuracy > bestAcc) {
+                    bestAcc = res.accuracy;
+                    bestTarget = cand;
+                }
+            }
+        }
+
+        const lang = _detectPhoneticLang(langHint, `${bestTarget} ${cleanedRaw}`);
+        const targetTokens = tokenize(bestTarget);
+        const recTokens = tokenize(cleanedRaw);
+        if (!targetTokens.length || !recTokens.length) return cleanedRaw;
+
+        const usedTarget = new Set();
+        const outEntries = [];
+
+        for (let j = 0; j < recTokens.length; j++) {
+            const r = recTokens[j];
+            let replaced = false;
+
+            // 1. Check 2-to-1 merged boundary / sinalefa match when nextR does not separately match t2
+            for (let i = 0; i + 1 < targetTokens.length; i++) {
+                if (usedTarget.has(i) || usedTarget.has(i + 1)) continue;
+                const t1 = targetTokens[i];
+                const t2 = targetTokens[i + 1];
+                if (isBoundaryMergeMatch(t1.norm + t2.norm, r.norm, lang)) {
+                    const nextRecMatchesT2 = (j + 1 < recTokens.length) && isWordMatch(t2.norm, recTokens[j + 1].norm, lang);
+                    if (!nextRecMatchesT2) {
+                        usedTarget.add(i);
+                        usedTarget.add(i + 1);
+                        outEntries.push({ text: _applyCasingOf(r.raw, `${t1.raw} ${t2.raw.toLowerCase()}`), matched: true });
+                        replaced = true;
+                        break;
+                    }
+                }
+            }
+            if (replaced) continue;
+
+            // 2. 1-to-1 phonetic / fuzzy match
+            for (let i = 0; i < targetTokens.length; i++) {
+                if (usedTarget.has(i)) continue;
+                const t = targetTokens[i];
+                if (isWordMatch(t.norm, r.norm, lang)) {
+                    usedTarget.add(i);
+                    if (r.norm === t.norm) {
+                        outEntries.push({ text: r.raw, matched: true });
+                    } else {
+                        outEntries.push({ text: _applyCasingOf(r.raw, t.raw), matched: true });
+                    }
+                    replaced = true;
+                    break;
+                }
+            }
+            if (replaced) continue;
+
+            // 3. 1-to-2 split boundary match
+            if (j + 1 < recTokens.length) {
+                const nextR = recTokens[j + 1];
+                for (let i = 0; i < targetTokens.length; i++) {
+                    if (usedTarget.has(i)) continue;
+                    const t = targetTokens[i];
+                    if (isBoundaryMergeMatch(t.norm, r.norm + nextR.norm, lang)) {
+                        usedTarget.add(i);
+                        outEntries.push({ text: _applyCasingOf(r.raw, t.raw), matched: true });
+                        j++;
+                        replaced = true;
+                        break;
+                    }
+                }
+            }
+            if (replaced) continue;
+
+            outEntries.push({ text: r.raw, matched: false });
+        }
+
+        // If 100% of target words were spoken and matched, strip at most 1 stray trailing/leading
+        // hallucinated noise word (e.g. from a trailing breath or button tap) so it doesn't fail the user.
+        if (usedTarget.size === targetTokens.length && recTokens.length <= targetTokens.length + 1) {
+            return outEntries.filter(e => e.matched).map(e => e.text).join(' ');
+        }
+
+        return outEntries.map(e => e.text).join(' ');
     }
 
     // Determine if candidate speech has cleanly and fully matched the target (100% words matched)
@@ -858,7 +1181,9 @@ const SpeechInput = (function () {
         transcribeBlob,
         evaluate,
         isFullTargetMatch,
-        normalizeForSpeech
+        normalizeForSpeech,
+        phoneticFold,
+        canonicalizeTranscript
     };
 })();
 

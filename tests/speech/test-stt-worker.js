@@ -99,6 +99,9 @@ async function runTests() {
     assert.strictEqual(lastAiCall.model, '@cf/openai/whisper-large-v3-turbo');
     assert.strictEqual(lastAiCall.input.language, 'es');
     assert.strictEqual(lastAiCall.input.vad_filter, true);
+    assert.strictEqual(lastAiCall.input.beam_size, 5);
+    assert.strictEqual(lastAiCall.input.temperature, 0);
+    assert.ok(lastAiCall.input.initial_prompt.includes('español'), 'Spanish initial_prompt primer must be included');
     // whisper-large-v3-turbo requires 'audio' as a base64 string (per Cloudflare's
     // input schema), not the raw byte array the base whisper model accepted.
     assert.strictEqual(typeof lastAiCall.input.audio, 'string');
@@ -109,9 +112,9 @@ async function runTests() {
     assert.strictEqual(transcribeData.words[0].word, 'hola');
     console.log('✓ Binary audio transcription, base64 encoding, and word flattening verified');
 
-    // 4. Hungarian language code normalisation
-    console.log('4. Testing Hungarian language code normalisation (hu-HU -> hu)...');
-    const huReq = createRequest('POST', 'https://parlour-stt.gergkar.workers.dev/transcribe?lang=hu-HU', {
+    // 4. Hungarian language code normalisation and vocabulary prompt hint
+    console.log('4. Testing Hungarian language code normalisation (hu-HU -> hu) and prompt hint...');
+    const huReq = createRequest('POST', 'https://parlour-stt.gergkar.workers.dev/transcribe?lang=hu-HU&prompt=Hol%20laksz%3F', {
         Origin: 'http://localhost:8131',
         'Content-Type': 'audio/webm'
     }, fakeAudio.buffer);
@@ -119,7 +122,10 @@ async function runTests() {
     const huRes = await worker.fetch(huReq, mockEnv);
     assert.strictEqual(huRes.status, 200);
     assert.strictEqual(lastAiCall.input.language, 'hu');
-    console.log('✓ Hungarian normalisation verified');
+    assert.strictEqual(lastAiCall.input.beam_size, 5);
+    assert.ok(lastAiCall.input.initial_prompt.toLowerCase().includes('magyar'), 'Hungarian orthographic primer must be included');
+    assert.ok(lastAiCall.input.initial_prompt.includes('Hol laksz?'), 'Target prompt hint must be included in initial_prompt');
+    console.log('✓ Hungarian normalisation and initial_prompt verified');
 
     // 5. Empty audio handling (400)
     console.log('5. Testing empty audio validation...');
