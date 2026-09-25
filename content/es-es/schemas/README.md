@@ -40,6 +40,9 @@ step — but only after `build_grammar_index.py` has been re-run, since it
 reads `generated/indexes/grammar-index.json` rather than scanning content
 live. Run it whenever a lesson's exercises change, same as `build-manifest.py`.
 
+**Exercise metadata (`category` + `teaches`) is mandatory:**
+Every exercise in `exercises/*/*.json` must carry `category` (`vocabulary | grammar | reading | dialogue | writing | listening`), and every non-`reading` exercise must carry a non-empty `teaches` array of lowercase-hyphenated skill slugs present in `content/es-es/indexes/skill-registry.json`. (Peninsular Spanish lessons also follow the shared Spanish authoring guides under `content/es-latam/guides/`.)
+
 Likewise, any grammar file's `examples` items or `sentence-builder` exercise
 with an `english` field automatically becomes drillable in the Translation
 Driller (and, through the same sentence pool, the Vocabulary Driller's
@@ -61,6 +64,7 @@ across them. Those are exactly the rules that break when authoring at volume.
 | Rule | Enforced by |
 |---|---|
 | Each file matches its shape, required fields, known types | ✅ `validate-content.py` |
+| Every exercise has a valid 6-value `category`, non-empty `teaches` (except `reading`), and all `teaches` slugs exist in `indexes/skill-registry.json` | ✅ `validate-content.py` |
 | A lesson has a non-empty `sections` array | ✅ `validate-content.py` |
 | Section and grammar-part types are ones the engine renders | ✅ `validate-content.py` |
 | Every `sections[].ref` resolves to a file that exists | ✅ `build-manifest.py` |

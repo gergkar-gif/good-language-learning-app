@@ -677,3 +677,13 @@ B1 is the stage where the learner begins using Spanish to understand more than t
 **Latin America gives that language a substantive historical world.**
 
 The two tracks should progress side by side, share vocabulary where useful, and feed the same Workshop and review systems.
+
+---
+
+# 22. Exercise Metadata (`category` + `teaches`)
+
+Every exercise in `content/<course>/exercises/*/*.json` (for both `es-latam` and `es-es`) must include:
+
+- `category`: one of the six canonical values (`vocabulary | grammar | reading | dialogue | writing | listening`).
+- `teaches`: a non-empty array of lowercase-hyphenated reusable skill slugs for all exercises except `category: "reading"`. Every slug must exist in `content/<course>/indexes/skill-registry.json` (checked by `scripts/validate-content.py`). Prefer existing slugs from `skill-registry.json`; if a genuinely new reusable skill is needed, register it in `skill-registry.json` (and `grammar-titles.json` for grammar skills) first.
+

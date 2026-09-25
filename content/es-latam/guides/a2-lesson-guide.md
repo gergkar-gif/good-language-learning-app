@@ -1,3 +1,5 @@
+> **Exercise metadata rule (`es-latam` and `es-es`):** Every exercise in `exercises/a2/*.json` must specify `category` (`vocabulary | grammar | reading | dialogue | writing | listening`), and every non-`reading` exercise must have a non-empty `teaches` array whose slugs exist in `content/<course>/indexes/skill-registry.json`.
+
 Unit 1: Talking About Your Trip
 
 Grammar: Pretérito perfecto: recent experiences and completed actions

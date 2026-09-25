@@ -187,14 +187,14 @@ automatically via CSS.
 {
   "lesson": "a1-01",
   "exercises": [
-    { "id": "a1-01-practice-match", "type": "matching", "category": "vocabulary", "pairs": [["ház", "house"], ["asztal", "table"]], "teaches": ["alphabet"] },
-    { "id": "a1-01-practice-choice", "type": "multiple-choice", "category": "grammar", "question": "Which is the long vowel?", "options": ["a", "á"], "correct": 1, "teaches": ["alphabet"] },
-    { "id": "a1-01-practice-blank", "type": "fill-blank", "sentence": "H_z.", "answer": "ház", "teaches": ["alphabet"] },
-    { "id": "a1-01-practice-build", "type": "sentence-builder", "tiles": ["Ez", "egy", "ház"], "solution": ["Ez", "egy", "ház"], "english": "This is a house.", "teaches": ["alphabet"] },
-    { "id": "a1-01-practice-order", "type": "sentence-order", "sentences": ["Ez egy ház.", "A ház nagy."], "solution": [0, 1], "teaches": ["alphabet"] },
+    { "id": "a1-01-practice-match", "type": "matching", "category": "vocabulary", "stage": "practice", "pairs": [["ház", "house"], ["asztal", "table"]], "teaches": ["alphabet"] },
+    { "id": "a1-01-practice-choice", "type": "multiple-choice", "category": "grammar", "stage": "practice", "question": "Which is the long vowel?", "options": ["a", "á"], "correct": 1, "teaches": ["alphabet"] },
+    { "id": "a1-01-practice-blank", "type": "fill-blank", "category": "grammar", "stage": "controlled", "sentence": "H_z.", "answer": "ház", "english": "House.", "teaches": ["alphabet"] },
+    { "id": "a1-01-practice-build", "type": "sentence-builder", "category": "grammar", "stage": "practice", "tiles": ["Ez", "egy", "ház"], "solution": ["Ez", "egy", "ház"], "english": "This is a house.", "teaches": ["alphabet"] },
+    { "id": "a1-01-practice-order", "type": "sentence-order", "category": "grammar", "stage": "practice", "sentences": ["Ez egy ház.", "A ház nagy."], "solution": [0, 1], "teaches": ["alphabet"] },
     { "id": "a1-01-reading-choice", "type": "multiple-choice", "category": "reading", "question": "...", "options": ["...", "..."], "correct": 0 },
-    { "id": "a1-01-dialogue", "type": "dialogue-complete", "category": "dialogue", "prompt": [{ "speaker": "Anna", "text": "Szia!" }, { "speaker": "Péter", "text": "_____" }], "options": ["Szia!", "Köszönöm."], "correct": 0 },
-    { "id": "a1-01-writing", "type": "structured-writing", "category": "writing", "template": [{ "prompt": "Greet someone.", "answer": "Szia!" }] }
+    { "id": "a1-01-dialogue", "type": "dialogue-complete", "category": "dialogue", "stage": "dialogue", "prompt": [{ "speaker": "Anna", "text": "Szia!" }, { "speaker": "Péter", "text": "_____" }], "options": ["Szia!", "Köszönöm."], "correct": 0, "teaches": ["alphabet"] },
+    { "id": "a1-01-writing", "type": "structured-writing", "category": "writing", "stage": "production", "template": [{ "prompt": "Greet someone.", "answer": "Szia!" }], "teaches": ["alphabet"] }
   ]
 }
 ```
@@ -207,13 +207,11 @@ shape of one you haven't used yet). **Do not use `error-correction`** — it's
 in the schema but the lesson screen doesn't render it yet; only Workshop's
 driller does, and only after separate wiring.
 
-**`teaches` tags:** lowercase-hyphenated slugs naming the grammar point(s) an
-exercise tests — e.g. `["vowel-harmony"]`, `["accusative", "food-vocab"]`.
-This is what makes an exercise eligible for recycling in later lessons and
-for Workshop's Grammar Driller, so **reuse the same slug every time the same
-concept comes up** (the grammar file's own id suffix is a natural choice —
-keep them matching). Omit `teaches` on reading-comprehension exercises; they
-only make sense right after that lesson's own story.
+**`category` vs `stage` (required):**
+- `category` MUST be present on every exercise and MUST be one of the six shared values across all courses: `vocabulary | grammar | reading | dialogue | writing | listening`. Never put lesson stages (`controlled`, `practice`, `introduce`, `check`, `consolidation`, `review`, `recognize`, `recall`, `produce`, `production`, `context`, `in-context`) or content domains (`civics`, `citizenship`, `history`, `literature`, `law`, `culture`, `geography`) in `category`.
+- Use the optional `stage` field (`content/hu/schemas/exercises.schema.json`) to record the lesson stage or content domain when needed.
+
+**`teaches` tags (required for all non-reading exercises):** lowercase-hyphenated slugs naming the reusable grammar, vocabulary, or communicative skill(s) an exercise tests — e.g. `["vowel-harmony"]`, `["accusative", "food-vocab"]`. Every non-`reading` exercise MUST have a non-empty `teaches` array, and every slug MUST exist in `content/hu/indexes/skill-registry.json` (enforced by `scripts/validate-content.py`). Prefer an existing slug from `skill-registry.json`; if a genuinely new reusable skill is needed, add it to `skill-registry.json` (and `grammar-titles.json` for grammar skills) first. Omit `teaches` on `category: "reading"` exercises; they only make sense right after that lesson's own story.
 
 **Answer-checking behavior to write for:** `fill-blank`/`dictation` compare
 with accents, punctuation and case stripped — but Hungarian accents (á, é, í,
