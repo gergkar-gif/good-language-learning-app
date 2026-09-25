@@ -9,6 +9,42 @@ needs re-reading before starting new work; it's reference only.
 
 ## Completed queue items
 
+94. ~~**Rewrite the B1 Unit 1 exercises**~~ — **Done 2026-09-25.** (Was ROADMAP.md active item 94.)
+    B1 Unit 1 (`b1-01-*`, identical in es-latam and es-es) had been
+    machine-templated. The grammar multiple-choice questions quoted
+    their own answer ("Elige la opción que mejor encaja en «Ya había
+    salido.»") next to a fixed "La historia ocurre mañana." distractor.
+    Dialogues were a generic "¿Qué sabes sobre el tema?" / "Entiendo.",
+    and the consolidation repeated one set of items three times. The
+    whole unit was rewritten around one storytelling thread, keeping
+    every exercise ID, type and section so the lesson files didn't
+    change:
+    - **Lessons:** 1 is a power cut (the preterite), 2 is waiting in the
+      rain (imperfect vs preterite, *soler*), 3 is the missed train (the
+      pluperfect), 4 is the lost wallet (*sin embargo*, *por eso*,
+      *así que*, *además*), and 5 is Don Quijote (all three tenses). Its
+      four reading questions now ask about the actual story
+      (`stories/classics/b1/b1-01.json`).
+    - **Consolidation:** 15 new mixed items, plus the 3 rewritten earlier
+      (item 93).
+    - **Grammar pages:** full conjugation tables (regular endings,
+      including a labelled *vosotros* row, the irregulars the lesson
+      uses, *haber* + participle, irregular participles), a
+      "which tense?" table and a connector table. Examples come from
+      each lesson's scene, and each page has a tip and a link reused
+      from existing ones.
+    - **Vocabulary:** 7–8 words per lesson that match the scenes. The
+      stray *diverso*, *sociedad* and *mensajero* were dropped. The
+      lesson goals' "three new expressions" became "the new
+      expressions".
+    - **Language:** neutral enough for both courses (no *móvil*,
+      *coche*, *piso*, *vale*, *camarero* or *ustedes*/*vosotros* verb
+      forms in exercises), and correct answers are spread across option
+      positions.
+    - **Other units:** a check of es-latam found no other exercise file
+      with the template's phrases, so this was the only unit built that
+      way. Committed as `318bea27`.
+
 93. ~~**Name the leftover grammar skills "reading"**~~ — **Done 2026-09-25.** (Was ROADMAP.md active item 8.)
     The user chose not to hand-name or retag what the audits (items 89
     and 91) left open, but to label it "reading".
@@ -27,8 +63,8 @@ needs re-reading before starting new work; it's reference only.
       + imperfect interrupted by a preterite, putting events in order
       with *primero / luego / por último*, and the pluperfect for an
       earlier past. They are tagged `imperfecto`, `past-sequence` and
-      `pluscuamperfecto`, in es-latam and es-es. See ROADMAP.md active
-      item 94 for the rest of this unit.
+      `pluscuamperfecto`, in es-latam and es-es. The rest of the unit was
+      rewritten next (item 94).
     - Restored the earlier "reading" rename of the 33 no-grammar skills
       (item 91), which hadn't made it into that commit.
     - Result: `build_grammar_index.py` reports no unnamed skills in any
