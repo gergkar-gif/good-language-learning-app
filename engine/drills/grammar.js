@@ -105,6 +105,14 @@ const GrammarDriller = (function () {
         return moduleId.replace(/_/g, '-');
     }
 
+    // LearnerModel.weakSkills() and the recommendations built on it speak
+    // lesson-index ids ("ser-estar"); the bank's modules use underscores
+    // ("ser_estar"), and _buildPool filters bank items by exact module id.
+    function _moduleIdFor(skillId) {
+        const bankModule = (_bank && _bank.modules || []).find(m => _lessonSkillFor(m.id) === skillId);
+        return bankModule ? bankModule.id : skillId;
+    }
+
     function _lessonPoolSize(moduleId) {
         const skillKey = _lessonSkillFor(moduleId);
         const entries = (_index && _index.bySkill && (_index.bySkill[skillKey] || _index.bySkill[moduleId])) || [];
@@ -981,11 +989,11 @@ const GrammarDriller = (function () {
             await _load();
             if (options && (options.skill || options.autoStart)) {
                 if (options.skill) {
-                    _selectedModule = options.skill;
+                    _selectedModule = _moduleIdFor(options.skill);
                 } else {
-                    const weak = (typeof LearnerModel !== 'undefined') ? LearnerModel.weakSkills(1) : [];
+                    const weak = (typeof LearnerModel !== 'undefined') ? await LearnerModel.weakSkills(1) : [];
                     if (weak.length && weak[0].skillId) {
-                        _selectedModule = weak[0].skillId;
+                        _selectedModule = _moduleIdFor(weak[0].skillId);
                     } else {
                         const learned = Array.from(_getLearnedSkillIds());
                         if (learned.length) {

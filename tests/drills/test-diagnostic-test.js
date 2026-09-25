@@ -45,13 +45,20 @@ for (const lang of languages) {
         tier.questions.forEach((q, qIdx) => {
             assert(q.id, `${lang} ${tier.level} Q${qIdx}: missing id`);
             assert(q.sentence, `${lang} ${tier.level} Q${qIdx}: missing sentence`);
+            // Emoji check
+            assert(!EMOJI_REGEX.test(q.sentence), `${lang} ${tier.level} Q${qIdx}: sentence must not contain emojis`);
+
+            // Open-production questions (graded against answer/altAnswers in engine/diagnostic.js)
+            if (q.type === 'text-input') {
+                assert(typeof q.answer === 'string' && q.answer.trim(), `${lang} ${tier.level} Q${qIdx}: text-input needs an answer`);
+                assert(!q.altAnswers || Array.isArray(q.altAnswers), `${lang} ${tier.level} Q${qIdx}: altAnswers should be array`);
+                return;
+            }
+
             assert(Array.isArray(q.options), `${lang} ${tier.level} Q${qIdx}: options should be array`);
             assert(q.options.length >= 3, `${lang} ${tier.level} Q${qIdx}: should have at least 3 options`);
             assert(typeof q.correct === 'number', `${lang} ${tier.level} Q${qIdx}: correct must be a number`);
             assert(q.correct >= 0 && q.correct < q.options.length, `${lang} ${tier.level} Q${qIdx}: correct index out of bounds`);
-            
-            // Emoji check
-            assert(!EMOJI_REGEX.test(q.sentence), `${lang} ${tier.level} Q${qIdx}: sentence must not contain emojis`);
             q.options.forEach((opt, oIdx) => {
                 assert(!EMOJI_REGEX.test(opt), `${lang} ${tier.level} Q${qIdx} Opt ${oIdx}: option must not contain emojis`);
             });
@@ -70,8 +77,10 @@ assert(!EMOJI_REGEX.test(engineSource), 'engine/diagnostic.js must contain zero 
 console.log('[PASS] Zero emojis in engine/diagnostic.js verified');
 
 // Check pedagogical preface quote in engine
-assert(engineSource.includes('we are not doing language learning to finish a course, but to actually be able to communicate') ||
-       engineSource.includes('we do not learn a language merely to finish a course, but to actually be able to communicate'),
+// The quote lives in a wrapped header comment — collapse line breaks and "//" markers first
+const engineProse = engineSource.replace(/\s*\r?\n\s*\/\/\s*/g, ' ');
+assert(engineProse.includes('we are not doing language learning to finish a course, but to actually be able to communicate') ||
+       engineProse.includes('we do not learn a language merely to finish a course, but to actually be able to communicate'),
        'Engine must contain the pedagogical preface statement about learning to communicate');
 console.log('[PASS] Pedagogical philosophy quote present in engine');
 
@@ -161,9 +170,8 @@ console.log('[PASS] Preceding levels for jump-ahead calculated accurately');
 
 // 6. Language Selection Prior to Diagnostic
 const homeSource = fs.readFileSync(path.join(__dirname, '../../engine/home.js'), 'utf8');
-assert(homeSource.includes('data-switch-lang'), 'Home onboarding card must allow switching target language');
-assert(homeSource.includes('hm-onboarding-lang-picker'), 'Home onboarding card must render language choice chips');
+assert(homeSource.includes('data-welcome-language'), 'First-open welcome screen must let the learner choose a target language');
 assert(!engineSource.includes('data-diag-lang'), 'The course is chosen on the first-open screen, not in the diagnostic preface');
-console.log('[PASS] Language selection verified on Home Onboarding Card and Diagnostic Preface');
+console.log('[PASS] Language selection verified on first-open welcome screen, not the Diagnostic Preface');
 
 console.log('\nAll CEFR Diagnostic Test Suite checks PASSED successfully!');

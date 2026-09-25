@@ -57,7 +57,7 @@ vm.runInThisContext(fs.readFileSync(path.resolve('engine/drills/vocabulary.js'),
 
 (async () => {
     console.log('--- Test 1: Loading Spanish Lexicon and Curriculum ---');
-    Lang.set('es');
+    Lang.set('es-latam');
     await Lexicon.load();
 
     const driller = VocabularyDriller;

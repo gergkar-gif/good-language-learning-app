@@ -130,8 +130,9 @@ const updatedIndexHtml = fs.readFileSync(path.join(__dirname, '../../index.html'
 const componentsCss = fs.readFileSync(path.join(__dirname, '../../styles/components.css'), 'utf8');
 
 assert(
-    updatedIndexHtml.includes('id="review-type-hint"') && updatedIndexHtml.includes('enterkeyhint="done"'),
-    'index.html review-type-field must have enterkeyhint="done" and review-type-hint'
+    // "next", not "done": Enter checks the answer, then a second Enter advances to the next card
+    updatedIndexHtml.includes('id="review-type-hint"') && /id="review-type-field"[^>]*enterkeyhint="next"/.test(updatedIndexHtml),
+    'index.html review-type-field must have enterkeyhint="next" and review-type-hint'
 );
 assert(
     srsJs.includes('srs_type_mode_hint_seen'),
