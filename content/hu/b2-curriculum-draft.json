@@ -1,0 +1,1396 @@
+{
+  "level": "B2",
+  "title": "Hungarian B2",
+  "description": "Dual-track B2 (Upper-Intermediate): a Core track mastering Hungarian information structure, advanced verbal derivation, participial syntax, modality, and rhetorical register through 36 adapted Hungarian literary classics, paired with a Culture, History & Society track ('Kultúra, történelem és társadalom') exploring Hungarian intellectual history, literary movements, scientific heritage, media, regional sociology, constitutional debates, and contemporary public life via 5-part serialized readings.",
+  "notes": [
+    "STATUS (2026-09-25): Full 36-unit Dual-Track B2 Blueprint (36 Core units + 36 Culture, History & Society units = 72 units / 432 lessons total).",
+    "Each unit consists of 5 regular lessons plus 1 consolidation lesson (6 lessons/unit).",
+    "Core Track ('core'): Uses stem pattern b2-NN-01..b2-NN-05 + b2-NN-consolidation (e.g. b2-01-01..b2-01-consolidation). Each Core unit embeds ONE adapted Hungarian literary classic in Lesson 5 under content/hu/stories/classics/b2/b2-NN-<slug>.json.",
+    "Culture, History & Society Track ('culture'): Uses slug stem pattern b2-<slug>-01..b2-<slug>-05 + b2-<slug>-consolidation. Replicates the serialized world reading architecture: 5 per-lesson segments (content/hu/stories/world/b2/b2-<slug>-01-<seg>.json .. 05) embedded in Lessons 1-5 plus 1 combined standalone story (content/hu/stories/world/b2/b2-<slug>.json) for the Library.",
+    "Thematic & Grammatical Pairing: Every Track 2 unit is explicitly linked to its parallel Core B2 unit both thematically (applying the Core unit's communicative theme to a concrete Hungarian cultural, historical, or political phenomenon) and grammatically (teaching a complementary B2 grammatical structure tailored to narrating and analyzing that topic)."
+  ],
+  "tracks": {
+    "core": {
+      "title": "Core Hungarian",
+      "hungarian": "Alaptanterv (B2)",
+      "units": [
+        {
+          "id": 1,
+          "title": "Nuance, Focus & Emphasis in Narrative",
+          "hungarian": "Árnyalatok, fókusz és hangsúly az elbeszélésben",
+          "cefrTopic": "Subtle psychological narration, unspoken motives, and contrasting perspectives",
+          "grammar": "Exhaustive focus position & preverb-verb inversion (Megértettem vs. Én értettem meg); contrastive topicalization (ami X-et illeti, X viszont)",
+          "reading": {
+            "author": "Kosztolányi Dezső",
+            "work": "Pacsirta (1924)",
+            "title": "Pacsirta elutazik: Csend és kimondatlan szavak",
+            "file": "stories/classics/b2/b2-01-pacsirta.json"
+          },
+          "linkedTrackUnitId": 1,
+          "lessons": [
+            "What Goes Unsaid",
+            "Shifting the Spotlight: Focus & Inversion",
+            "Contrasting Two Perspectives",
+            "Subtext and Tone",
+            "Retelling a Scene with Psychological Nuance"
+          ]
+        },
+        {
+          "id": 2,
+          "title": "Memory, Nostalgia & Sensory Description",
+          "hungarian": "Emlékezet, nosztalgia és érzékszervi leírás",
+          "cefrTopic": "Evoking atmosphere, layered memories, and vivid spatial/sensory detail",
+          "grammar": "Left-branching pre-nominal participial clauses (-ó/-ő and -t/-tt participles carrying full arguments before the noun: a régóta elfeledettnek hitt emlékek)",
+          "reading": {
+            "author": "Krúdy Gyula",
+            "work": "A vörös postakocsi (1913)",
+            "title": "Utazás a régi Pest-Budán a vörös postakocsival",
+            "file": "stories/classics/b2/b2-02-vorospostakocsi.json"
+          },
+          "linkedTrackUnitId": 2,
+          "lessons": [
+            "Sights, Sounds, and Atmospheres",
+            "Packing Detail Before the Noun",
+            "Layered Past Participial Modifiers",
+            "The Language of Nostalgia",
+            "Painting a Scene in Prose"
+          ]
+        },
+        {
+          "id": 3,
+          "title": "Language, Style & Word Formation",
+          "hungarian": "Nyelv, stílus és szóalkotás",
+          "cefrTopic": "How words are coined, stylistic registers, and expressing precision",
+          "grammar": "Productive nominalization (-ás/-és with possessive & postpositional chains: a kifejezés megalkotása során) and deadjectival abstract nouns (-ság/-ség)",
+          "reading": {
+            "author": "Karinthy Frigyes",
+            "work": "Így írtok ti (1912)",
+            "title": "A stílusparódia művészete: Így írtok ti",
+            "file": "stories/classics/b2/b2-03-igyirtokti.json"
+          },
+          "linkedTrackUnitId": 3,
+          "lessons": [
+            "Coining Words and Concepts",
+            "Nominalized Action Chains (-ás/-és)",
+            "High Literary vs. Everyday Register",
+            "Parody, Imitation, and Voice",
+            "Rewriting a Passage Across Registers"
+          ]
+        },
+        {
+          "id": 4,
+          "title": "Performance, Drama & Persuasion",
+          "hungarian": "Előadás, dráma és meggyőzés",
+          "cefrTopic": "Dramatic tension, indirect commands, warnings, and rhetorical persuasion",
+          "grammar": "Advanced jussive/subjunctive (-jon/-jen) in indirect commands, negative purpose clauses (nehogy + -jon/-jen, azért, hogy ... ne), and optative clauses",
+          "reading": {
+            "author": "Katona József",
+            "work": "Bánk bán (1819)",
+            "title": "Bánk bán és Tiborc panasza",
+            "file": "stories/classics/b2/b2-04-bankban.json"
+          },
+          "linkedTrackUnitId": 4,
+          "lessons": [
+            "Urging, Warning, and Forbidding",
+            "Lest It Happen: Negative Purpose with nehogy",
+            "Dramatic Dialogue and Confrontation",
+            "Rhetorical Questions and Appeals",
+            "Delivering a Persuasive Monologue"
+          ]
+        },
+        {
+          "id": 5,
+          "title": "Roots, Tradition & Collective Memory",
+          "hungarian": "Gyökerek, hagyomány és kollektív emlékezet",
+          "cefrTopic": "Cultural heritage, folkloric motifs, recurring customs, and generational change",
+          "grammar": "Frequentative and iterative verbal suffixes (-gat/-get, -dogál/-degél, -ong/-eng) vs. instantaneous aspect; distributive numerals and temporal idioms",
+          "reading": {
+            "author": "Tamási Áron",
+            "work": "Ábel a rengetegben (1932)",
+            "title": "Ábel a Hargita fenyveseiben",
+            "file": "stories/classics/b2/b2-05-abelarengetegben.json"
+          },
+          "linkedTrackUnitId": 5,
+          "lessons": [
+            "Repeated Actions and Lingering Habits (-gat/-get)",
+            "Living Close to Nature and Tradition",
+            "Passing Knowledge Across Generations",
+            "Idioms of Time, Rhythm, and Custom",
+            "Narrating a Living Tradition"
+          ]
+        },
+        {
+          "id": 6,
+          "title": "Aesthetics, Vision & Creative Obsession",
+          "hungarian": "Esztétika, látomás és alkotói megszállottság",
+          "cefrTopic": "Artistic creation, visual interpretation, beauty, and critique",
+          "grammar": "Adverbial participles in contrast: -va/-ve (manner vs. stative passive van + -va/-ve) and literary/causal -ván/-vén (anteriority/reason)",
+          "reading": {
+            "author": "Csáth Géza",
+            "work": "A varázsló kertje és más novellák (1908)",
+            "title": "A festő látomása és a varázsló kertje",
+            "file": "stories/classics/b2/b2-06-avarazslokertje.json"
+          },
+          "linkedTrackUnitId": 6,
+          "lessons": [
+            "Describing Visual Art and Composition",
+            "State vs. Process: van festve vs. festve",
+            "Literary Participles (-ván/-vén) in Elevated Prose",
+            "Critiquing a Work of Art",
+            "The Artist's Inner World"
+          ]
+        },
+        {
+          "id": 7,
+          "title": "Scientific Discovery & Hypothesis",
+          "hungarian": "Tudományos felfedezés és hipotézis",
+          "cefrTopic": "Formulating hypotheses, theoretical models, causality, and breakthroughs",
+          "grammar": "Proportional & conditional correlatives (amennyiben... abban az esetben; feltéve, hogy; attól függően, hogy; minél inkább... annál kevésbé)",
+          "reading": {
+            "author": "Karinthy Frigyes",
+            "work": "Utazás a koponyám körül (1937)",
+            "title": "Utazás a koponyám körül: A megfigyelő elme",
+            "file": "stories/classics/b2/b2-07-utazasakoponyamkorul.json"
+          },
+          "linkedTrackUnitId": 7,
+          "lessons": [
+            "Provided That: Exact Conditions (amennyiben, feltéve, hogy)",
+            "Proportional Relationships and Variables",
+            "Observing and Documenting Phenomena",
+            "From Hypothesis to Proof",
+            "Explaining a Complex Scientific Concept"
+          ]
+        },
+        {
+          "id": 8,
+          "title": "Medicine, Ethics & Responsibility",
+          "hungarian": "Orvoslás, etika és felelősség",
+          "cefrTopic": "Medical dilemmas, prevention, hindsight responsibility, and institutional resistance",
+          "grammar": "Past deontic & epistemic modals (kellett volna + inf, lehetett volna + inf, szabadott volna, -hatott/-hetett volna) for hindsight evaluation",
+          "reading": {
+            "author": "Németh László",
+            "work": "Iszony (1947)",
+            "title": "Lelkiismeret, kötelesség és gyógyítás",
+            "file": "stories/classics/b2/b2-08-nemethlaszlo.json"
+          },
+          "linkedTrackUnitId": 8,
+          "lessons": [
+            "What Should Have Been Done (kellett volna)",
+            "What Could Have Been Prevented (-hatott volna)",
+            "Weighing Ethical Obligations",
+            "Challenging Established Dogma",
+            "Arguing a Bioethical Case"
+          ]
+        },
+        {
+          "id": 9,
+          "title": "Logic, Paradox & Abstract Reasoning",
+          "hungarian": "Logika, paradoxon és elvont gondolkodás",
+          "cefrTopic": "Deductive reasoning, paradoxes, strategy, and problem-solving",
+          "grammar": "Universal & concessive indefinite pronouns and clauses (akárki, bármi, bárhogyan is + subjunctive/indicative; akár... akár...)",
+          "reading": {
+            "author": "Örkény István",
+            "work": "Egyperces novellák (1968)",
+            "title": "Az abszurd logikája: Egyperces történetek",
+            "file": "stories/classics/b2/b2-09-egypercesek.json"
+          },
+          "linkedTrackUnitId": 9,
+          "lessons": [
+            "No Matter How: Concessive Generalizations (bárhogyan is)",
+            "Either Way: Disjunctive Concessions (akár... akár...)",
+            "Paradoxes and Thought Experiments",
+            "Strategic Thinking and Deduction",
+            "Deconstructing a Flawed Argument"
+          ]
+        },
+        {
+          "id": 10,
+          "title": "Mentorship, Discipline & Intellectual Growth",
+          "hungarian": "Mentorálás, fegyelem és szellemi fejlődés",
+          "cefrTopic": "Pedagogy, character formation, intellectual rigor, and agency",
+          "grammar": "Productive causative verbs (-tat/-tet, -at/-et) with double objects and instrumental intermediate agents (-val/-vel: megíratja a diákkal a dolgozatot)",
+          "reading": {
+            "author": "Babits Mihály",
+            "work": "Halálfiai (1927)",
+            "title": "Tanárok, könyvek és eszmélkedés",
+            "file": "stories/classics/b2/b2-10-halalfiai.json"
+          },
+          "linkedTrackUnitId": 10,
+          "lessons": [
+            "Having Something Done (-tat/-tet Causatives)",
+            "Who Performs the Action? Instrumental Agents (-val/-vel)",
+            "Causative Chains in Academic & Institutional Contexts",
+            "Strictness vs. Inspiration in Education",
+            "Reflecting on a Formative Mentor"
+          ]
+        },
+        {
+          "id": 11,
+          "title": "The Unconscious, Dreams & Inner Conflict",
+          "hungarian": "A tudattalan, álmok és belső konfliktusok",
+          "cefrTopic": "Psychology, self-deception, repression, and emotional ambivalence",
+          "grammar": "Reflexive, middle, and reciprocal verb nuances (-kodik/-kedik/-ködik, -ul/-ül vs. -ít transitive pairs, magába fojt, szembenéz valamivel)",
+          "reading": {
+            "author": "Füst Milán",
+            "work": "A feleségem története (1942)",
+            "title": "Störr kapitány kételyei és az önvizsgálat",
+            "file": "stories/classics/b2/b2-11-afelesegemtortenete.json"
+          },
+          "linkedTrackUnitId": 11,
+          "lessons": [
+            "Transitive vs. Intransitive Psychological Shifts (-ít vs. -ul/-ül)",
+            "Self-Directed Actions and Poses (-kodik/-kedik)",
+            "Doubt, Jealousy, and Projection",
+            "Analyzing Hidden Motivations",
+            "A Psychological Character Study"
+          ]
+        },
+        {
+          "id": 12,
+          "title": "Ingenuity, Design & Practical Problem-Solving",
+          "hungarian": "Találékonyság, tervezés és gyakorlati problémamegoldás",
+          "cefrTopic": "Engineering, mechanism design, constraints, and creative solutions",
+          "grammar": "Obligatory/future participles (-andó/-endő) in formal specifications and complex purpose/means postpositions (révén, útján, segítségével, céljából)",
+          "reading": {
+            "author": "Jókai Mór",
+            "work": "Fekete gyémántok (1870)",
+            "title": "Berend Iván kísérletei és a bányamérnök találmánya",
+            "file": "stories/classics/b2/b2-12-feketegyemantok.json"
+          },
+          "linkedTrackUnitId": 12,
+          "lessons": [
+            "Tasks to Be Accomplished (-andó/-endő)",
+            "By Means Of: Formal Postpositions of Instrumentality (révén, útján)",
+            "Describing Mechanisms and Prototypes",
+            "Overcoming Technical Obstacles",
+            "Pitching an Innovation"
+          ]
+        },
+        {
+          "id": 13,
+          "title": "Irony, Satire & Reading Between the Lines",
+          "hungarian": "Irónia, szatíra és a sorok közötti olvasás",
+          "cefrTopic": "Understatement, irony, humorous critique, and pragmatic discourse particles",
+          "grammar": "Pragmatic & modal discourse particles (hiszen, ugyebár, hát, éppenséggel, korántsem, aligha, mégiscsak) for irony and speaker stance",
+          "reading": {
+            "author": "Mikszáth Kálmán",
+            "work": "Beszterce ostroma (1894)",
+            "title": "Pongrácz István gróf különös világa",
+            "file": "stories/classics/b2/b2-13-beszterceostroma.json"
+          },
+          "linkedTrackUnitId": 13,
+          "lessons": [
+            "Hardly and By No Means (aligha, korántsem, éppenséggel)",
+            "Signaling Shared Knowledge and Irony (hiszen, ugyebár)",
+            "Exaggeration and Understatement",
+            "Social Satire in Action",
+            "Writing an Ironic Commentary"
+          ]
+        },
+        {
+          "id": 14,
+          "title": "Visual Storytelling, Perspective & Time",
+          "hungarian": "Vizuális történetmesélés, nézőpont és idő",
+          "cefrTopic": "Framing scenes, simultaneous vs. sequential unfolding, and critical appreciation",
+          "grammar": "Simultaneity & temporal proportion conjunctions (miközben, mialatt, amint, mihelyt, valahányszor, ahányszor csak)",
+          "reading": {
+            "author": "Mészöly Miklós",
+            "work": "Magasiskola (1967)",
+            "title": "A sólyomröptetés és a távlat fegyelme",
+            "file": "stories/classics/b2/b2-14-magasiskola.json"
+          },
+          "linkedTrackUnitId": 14,
+          "lessons": [
+            "The Moment That: Immediate Sequence (amint, mihelyt)",
+            "Long Takes: Simultaneity and Duration (miközben, mialatt)",
+            "Framing, Pacing, and Atmosphere",
+            "Interpreting Allegory and Symbolism",
+            "An Analytical Film or Theatre Review"
+          ]
+        },
+        {
+          "id": 15,
+          "title": "Censorship, Ambiguity & Indirect Expression",
+          "hungarian": "Cenzúra, kétértelműség és burkolt kifejezésmód",
+          "cefrTopic": "Euphemism, diplomatic phrasing, passive-avoidance, and speaking under constraint",
+          "grammar": "Impersonal and agent-backgrounding constructions (passzív elkerülés: 3rd plural, -ódik/-ődik, kerülni + -ásra/-ésre: megvitatásra kerül, elhallgatják)",
+          "reading": {
+            "author": "Déry Tibor",
+            "work": "Niki: Egy kutya története (1956)",
+            "title": "Niki és a kimondhatatlan évek",
+            "file": "stories/classics/b2/b2-15-niki.json"
+          },
+          "linkedTrackUnitId": 15,
+          "lessons": [
+            "When the Agent Disappears (megvitatásra kerül)",
+            "Bureaucratic Nominal-Verbal Constructions (bevezetésre kerül)",
+            "Euphemism and Diplomatic Hedging",
+            "Decoding Double Meaning",
+            "Rewriting Blunt Statements Diplomatically"
+          ]
+        },
+        {
+          "id": 16,
+          "title": "Ideological Debates & Public Polemics",
+          "hungarian": "Eszmei viták és közéleti polémiák",
+          "cefrTopic": "Structuring refutations, conceding points strategically, and defending a thesis",
+          "grammar": "High-register concessive & adversative structures (jóllehet, ámbár, holott, csakhogy, ellenben, ezzel szemben, bármennyire is)",
+          "reading": {
+            "author": "Ady Endre",
+            "work": "Publicisztikai írások és tárcák (1906–1914)",
+            "title": "Vihar a kávéházban: Publicisztika és vitairat",
+            "file": "stories/classics/b2/b2-16-adypublicisztika.json"
+          },
+          "linkedTrackUnitId": 16,
+          "lessons": [
+            "Whereas and Albeit (holott, jóllehet, csakhogy)",
+            "Setting Up a Counter-Thesis (ezzel szemben, ellenben)",
+            "Conceding a Point Without Yielding the Argument",
+            "Dissecting Rhetorical Fallacies",
+            "Writing a Polemical Op-Ed"
+          ]
+        },
+        {
+          "id": 17,
+          "title": "Information Overload, Rumor & Verification",
+          "hungarian": "Információbőség, szóbeszéd és hitelesség",
+          "cefrTopic": "Evaluating source credibility, hearsay, epistemic distance, and media literacy",
+          "grammar": "Epistemic & evidential framing (úgy hírlik, hogy; állításuk szerint; a jelek szerint; minden valószínűség szerint; nem kizárt, hogy)",
+          "reading": {
+            "author": "Kosztolányi Dezső",
+            "work": "Nero, a véres költő (1921)",
+            "title": "A szóbeszéd hatalma Rómában",
+            "file": "stories/classics/b2/b2-17-nero.json"
+          },
+          "linkedTrackUnitId": 17,
+          "lessons": [
+            "Rumor Has It: Evidential Distancing (úgy hírlik, állítólag)",
+            "By All Appearances: Inferential Markers (a jelek szerint)",
+            "Quoting and Attributing Contested Claims",
+            "Fact-Checking and Source Criticism",
+            "Synthesizing Conflicting Reports"
+          ]
+        },
+        {
+          "id": 18,
+          "title": "Rhetoric, Framing & Mass Persuasion",
+          "hungarian": "Retorika, keretezés és tömegbefolyásolás",
+          "cefrTopic": "How language shapes public perception, emotional appeals, and framing",
+          "grammar": "Cataphoric demonstratives & heavy complement clauses (arra a következtetésre jutott, hogy...; abban a hitben él, hogy...; azon a véleményen van, hogy...)",
+          "reading": {
+            "author": "Móricz Zsigmond",
+            "work": "Úri muri (1927)",
+            "title": "Szakhmáry Zoltán tervei és a nagy szavak",
+            "file": "stories/classics/b2/b2-18-urimuri.json"
+          },
+          "linkedTrackUnitId": 18,
+          "lessons": [
+            "Cataphoric Anchors (arra, abban, ahhoz + hogy-clauses)",
+            "Framing Claims with Abstract Nouns (azon az állásponton van, hogy)",
+            "Emotional vs. Rational Appeals",
+            "Analyzing Political and Commercial Slogans",
+            "Deconstructing a Public Speech"
+          ]
+        },
+        {
+          "id": 19,
+          "title": "Landscape, Belonging & Regional Character",
+          "hungarian": "Táj, kötődés és tájjelleg",
+          "cefrTopic": "Human geography, regional dialects/flavors, attachment to place, and periphery vs. center",
+          "grammar": "Advanced spatial & directional postpositions and case contrasts (túl, innen, végig, szerte, mentén, táján; surface vs. enclosure idioms)",
+          "reading": {
+            "author": "Illyés Gyula",
+            "work": "Puszták népe (1936)",
+            "title": "A puszta világa és a horizont",
+            "file": "stories/classics/b2/b2-19-pusztaknepe.json"
+          },
+          "linkedTrackUnitId": 19,
+          "lessons": [
+            "This Side Of and Beyond (innen és túl a Dunán)",
+            "Along, Across, and Throughout (mentén, szerte, végig)",
+            "Center and Periphery",
+            "Regional Stereotypes and Realities",
+            "Portraying a Cultural Landscape"
+          ]
+        },
+        {
+          "id": 20,
+          "title": "Social Mobility, Class & Opportunity",
+          "hungarian": "Társadalmi mobilitás, rétegződés és esélyek",
+          "cefrTopic": "Social origin, barriers to advancement, meritocracy, and economic transformation",
+          "grammar": "Compound postpositional & relational constructions (szempontjából, függvényében, rovására, javára, híján, ellenében)",
+          "reading": {
+            "author": "Veres Péter",
+            "work": "Számadás (1937)",
+            "title": "A föld, a munka és a felemelkedés ára",
+            "file": "stories/classics/b2/b2-20-szamadas.json"
+          },
+          "linkedTrackUnitId": 20,
+          "lessons": [
+            "At the Expense Of, In Favor Of (rovására, javára)",
+            "In Function Of, For Lack Of (függvényében, híján)",
+            "Breaking Through Social Barriers",
+            "Comparing Generational Opportunities",
+            "Analyzing a Socioeconomic Trend"
+          ]
+        },
+        {
+          "id": 21,
+          "title": "Economic Cycles, Crisis & Adaptation",
+          "hungarian": "Gazdasági ciklusok, válság és alkalmazkodás",
+          "cefrTopic": "Inflation, restructuring, entrepreneurship, risk management, and resilience",
+          "grammar": "Proportional comparison & rate/degree expressions (kétszer akkora, mint; arányban áll valamivel; mértékben; -szorosára/-szeresére nő)",
+          "reading": {
+            "author": "Márai Sándor",
+            "work": "A gyertyák csonkig égnek (1942)",
+            "title": "Változó világok és a múlt mérlege",
+            "file": "stories/classics/b2/b2-21-agyertyakcsonkigegnek.json"
+          },
+          "linkedTrackUnitId": 21,
+          "lessons": [
+            "Multiples and Proportions (-szorosára nő, arányban áll)",
+            "Boom, Bust, and Recovery",
+            "Risk, Debt, and Financial Prudence",
+            "Adapting to Structural Change",
+            "Presenting an Economic Case Study"
+          ]
+        },
+        {
+          "id": 22,
+          "title": "Demographics, Generations & the Life Course",
+          "hungarian": "Demográfia, nemzedékek és életút",
+          "cefrTopic": "Aging societies, intergenerational solidarity, family structures, and longevity",
+          "grammar": "Temporal framing postpositions & clauses (korában, idején, folyamán, során, küszöbén, múltával; mire + past/future)",
+          "reading": {
+            "author": "Szabó Magda",
+            "work": "Az ajtó (1987)",
+            "title": "Emerenc és a bizalom határai",
+            "file": "stories/classics/b2/b2-22-azajto.json"
+          },
+          "linkedTrackUnitId": 22,
+          "lessons": [
+            "Over the Course Of, With the Passing Of (folyamán, múltával)",
+            "By the Time That (mire + perfective preverbs)",
+            "Generational Expectations and Care",
+            "Interpreting Demographic Data",
+            "Debating Social Policy for an Aging Society"
+          ]
+        },
+        {
+          "id": 23,
+          "title": "Urban Space, Architecture & Coexistence",
+          "hungarian": "Városi tér, építészet és együttélés",
+          "cefrTopic": "Housing policy, gentrification, heritage preservation, and neighborhood dynamics",
+          "grammar": "Complex relative clauses with postpositions & case-marked pronouns (amely mellett, amelynek keretében, akire nézve, amiből kifolyólag)",
+          "reading": {
+            "author": "Ottlik Géza",
+            "work": "Buda (1993)",
+            "title": "Hidak, bérházak és budai udvarok",
+            "file": "stories/classics/b2/b2-23-buda.json"
+          },
+          "linkedTrackUnitId": 23,
+          "lessons": [
+            "Relative Pronouns with Postpositions (amely mellett, amely által)",
+            "Possessive Relative Chains (amelynek a tetején)",
+            "Historic Preservation vs. Modern Development",
+            "Life in Shared Urban Spaces",
+            "Proposing an Urban Renewal Plan"
+          ]
+        },
+        {
+          "id": 24,
+          "title": "Ecology, Infrastructure & Stewardship",
+          "hungarian": "Ökológia, infrastruktúra és felelős gazdálkodás",
+          "cefrTopic": "Water management, biodiversity, energy trade-offs, and long-term impact",
+          "grammar": "Causal & consequential prepositional-like chains (következtében, hatására, eredményeképpen, elkerülése végett, megóvása érdekében)",
+          "reading": {
+            "author": "Fekete István",
+            "work": "Tüskevár (1957)",
+            "title": "A Kis-Balaton nádasa és Matula bácsi bölcsessége",
+            "file": "stories/classics/b2/b2-24-tuskevar.json"
+          },
+          "linkedTrackUnitId": 24,
+          "lessons": [
+            "For the Purpose of Avoiding (elkerülése végett, megóvása érdekében)",
+            "Long-Chain Cause and Consequence (következtében, hatására)",
+            "Balancing Infrastructure and Ecosystems",
+            "Environmental Impact Assessment",
+            "Debating a Major Infrastructure Project"
+          ]
+        },
+        {
+          "id": 25,
+          "title": "Law, Justice & Constitutional Principles",
+          "hungarian": "Jog, igazságosság és alkotmányos alapelvek",
+          "cefrTopic": "Rule of law, due process, rights vs. state authority, and legal reasoning",
+          "grammar": "Legal & administrative register (értelemben, alapján, összhangban valamivel, sérelmére, terhére; normative -andó/-endő and jogosult/köteles + inf)",
+          "reading": {
+            "author": "Eötvös József",
+            "work": "A falu jegyzője (1845)",
+            "title": "Törvény, igazság és vármegyei hatalom",
+            "file": "stories/classics/b2/b2-25-afalujegyzoje.json"
+          },
+          "linkedTrackUnitId": 25,
+          "lessons": [
+            "In Accordance With, Pursuant To (alapján, összhangban)",
+            "Entitled and Obliged (jogosult, köteles + infinitive)",
+            "The Letter vs. the Spirit of the Law",
+            "Analyzing a Legal Dilemma",
+            "Drafting a Formal Petition or Legal Argument"
+          ]
+        },
+        {
+          "id": 26,
+          "title": "Pluralism, Heritage & Minority Perspectives",
+          "hungarian": "Sokszínűség, örökség és kisebbségi nézőpontok",
+          "cefrTopic": "Coexistence, cultural autonomy, prejudice, assimilation, and shared heritage",
+          "grammar": "Reciprocal & distributive syntax (egymás iránt, egymással szemben, egyenként, csoportonként) and contrastive attribution",
+          "reading": {
+            "author": "Kertész Imre",
+            "work": "Sorstalanság (1975)",
+            "title": "Szembenézés a történelemmel és az emberi méltóság",
+            "file": "stories/classics/b2/b2-26-sorstalansag.json"
+          },
+          "linkedTrackUnitId": 26,
+          "lessons": [
+            "Toward and Against Each Other (egymás iránt, egymással szemben)",
+            "Shared Spaces, Distinct Traditions",
+            "Memory, Dignity, and Testimony",
+            "Legal and Cultural Autonomy",
+            "Facilitating Intercultural Dialogue"
+          ]
+        },
+        {
+          "id": 27,
+          "title": "Borders, Kinship & Transborder Identity",
+          "hungarian": "Határok, összetartozás és határon túli identitás",
+          "cefrTopic": "Bilingualism, state borders vs. linguistic communities, and regional heritage",
+          "grammar": "Complex concessive conditionals (még akkor is, ha...; még ha ... volna is; függetlenül attól, hogy...)",
+          "reading": {
+            "author": "Sütő András",
+            "work": "Anyám könnyű álmot ígér (1970)",
+            "title": "Szülőföld, anyanyelv és megtartó közösség",
+            "file": "stories/classics/b2/b2-27-anyamkonnyualmotiger.json"
+          },
+          "linkedTrackUnitId": 27,
+          "lessons": [
+            "Even If It Had Been (még ha ... volna is)",
+            "Regardless of Whether (függetlenül attól, hogy)",
+            "Living in Two Languages",
+            "Preserving Heritage Across Borders",
+            "Personal Narratives of Belonging"
+          ]
+        },
+        {
+          "id": 28,
+          "title": "Exile, Emigration & Global Networks",
+          "hungarian": "Száműzetés, kivándorlás és globális hálózatok",
+          "cefrTopic": "Émigré life, brain drain, return migration, and maintaining roots from afar",
+          "grammar": "Verbs with subtle preverb contrasts (ki- vs. el-, vissza- vs. haza-, át- vs. meg-) and idiomatic figurative preverbs (beilleszkedik, elidegenedik, gyökeret ver)",
+          "reading": {
+            "author": "Márai Sándor",
+            "work": "Napló (1945–1957)",
+            "title": "Anyanyelv és haza az emigrációban",
+            "file": "stories/classics/b2/b2-28-marainaplo.json"
+          },
+          "linkedTrackUnitId": 28,
+          "lessons": [
+            "Figurative Preverbs of Integration and Alienation",
+            "Leaving, Returning, and Starting Over",
+            "Language Preservation in the Diaspora",
+            "Brain Drain vs. Brain Circulation",
+            "Debating Mobility in a Globalized Europe"
+          ]
+        },
+        {
+          "id": 29,
+          "title": "Diplomacy, Alliances & Sovereignty",
+          "hungarian": "Diplomácia, szövetségek és szuverenitás",
+          "cefrTopic": "International negotiations, small-state strategy, European integration, and geopolitics",
+          "grammar": "Diplomatic hedging, conditional mood in negotiations (hajlandó lenne, indokolt volna, kívánatosnak tartaná), and verbs governing sublative/allative",
+          "reading": {
+            "author": "Bánffy Miklós",
+            "work": "Erdélyi történet: Megszámláltattál... (1934)",
+            "title": "Politikai egyensúlyozás a vihar előtt",
+            "file": "stories/classics/b2/b2-29-banffymiklos.json"
+          },
+          "linkedTrackUnitId": 29,
+          "lessons": [
+            "Diplomatic Conditionals (kívánatos volna, hajlandó lenne)",
+            "Negotiating Compromises and Red Lines",
+            "Small States Between Great Powers",
+            "Sovereignty and Shared Institutions",
+            "Simulating a Diplomatic Summit"
+          ]
+        },
+        {
+          "id": 30,
+          "title": "Civic Participation, Advocacy & Public Institutions",
+          "hungarian": "Állampolgári részvétel, érdekképviselet és közintézmények",
+          "cefrTopic": "Civil society, NGOs, public consultations, ombudsman procedures, and transparency",
+          "grammar": "Abstract verb-case government mastery (hozzájárul -hoz, ragaszkodik -hoz, hivatkozik -ra, kitér -ra, eltekint -tól, beszámol -ról)",
+          "reading": {
+            "author": "Mikszáth Kálmán",
+            "work": "Különös házasság (1900)",
+            "title": "Buttler János pere az intézményi önkény ellen",
+            "file": "stories/classics/b2/b2-30-kulonoshazassag.json"
+          },
+          "linkedTrackUnitId": 30,
+          "lessons": [
+            "High-Frequency Abstract Verbs + -hoz/-hez/-höz",
+            "High-Frequency Abstract Verbs + -ra/-re and -tól/-től",
+            "Holding Institutions Accountable",
+            "Writing an Official Complaint or Proposal",
+            "Leading a Public Consultation"
+          ]
+        },
+        {
+          "id": 31,
+          "title": "Gastronomy, Conviviality & Cultural Rituals",
+          "hungarian": "Gasztronómia, vendégszeretet és kulturális rítusok",
+          "cefrTopic": "Culinary history, terroir, wine culture, and the social meaning of shared meals",
+          "grammar": "Sensory adjectives, Resultative compounds (puhára főz, aranybarnára süt), and rich idiomatic similes (olyan..., mintha + conditional)",
+          "reading": {
+            "author": "Krúdy Gyula",
+            "work": "Szindbád: Ínyesmesék és gasztronómiai tárcák",
+            "title": "Szindbád az óbudai kiskocsmában: Az ízek emlékezete",
+            "file": "stories/classics/b2/b2-31-szindbadinyesmesek.json"
+          },
+          "linkedTrackUnitId": 31,
+          "lessons": [
+            "Cooking to a State: Resultative Sublative (puhára főz, pirosra süt)",
+            "As If It Were: Hypothetical Comparisons (mintha + conditional)",
+            "The Vocabulary of Taste, Aroma, and Wine",
+            "Food as Cultural Memory",
+            "Writing a Culinary and Cultural Essay"
+          ]
+        },
+        {
+          "id": 32,
+          "title": "Competition, Mastery & Peak Performance",
+          "hungarian": "Versengés, mesterségbeli tudás és csúcsteljesítmény",
+          "cefrTopic": "Excellence, teamwork under pressure, national pride in sport, and resilience after defeat",
+          "grammar": "Dynamic aspectual preverb pairs (le- vs. meg-, ki- vs. túl-, végig- vs. át-) and emphatic degree structures (olyannyira..., hogy)",
+          "reading": {
+            "author": "Esterházy Péter",
+            "work": "Utazás a tizenhatos mélyére (2006)",
+            "title": "A futballpálya geometriája és a játék szelleme",
+            "file": "stories/classics/b2/b2-32-tizenhatosmelyere.json"
+          },
+          "linkedTrackUnitId": 32,
+          "lessons": [
+            "To Such an Extent That (olyannyira..., hogy)",
+            "Preverbs of Exhaustion, Triumph, and Endurance (végig-, túl-, ki-)",
+            "Tactics, Genius, and Teamwork",
+            "Grace in Victory and Defeat",
+            "Narrating a Legendary Match or Contest"
+          ]
+        },
+        {
+          "id": 33,
+          "title": "Political Philosophy, Freedom & Historical Hysteria",
+          "hungarian": "Politikai filozófia, szabadság és történelmi zsákutcák",
+          "cefrTopic": "Democracy, political realism vs. hysteria, social contract, and moral courage",
+          "grammar": "Dense academic subordination: cleft-like identificational clauses (az, ami...; azáltal, hogy...; abban rejlik, hogy...) and abstract synthesis",
+          "reading": {
+            "author": "Bibó István",
+            "work": "A kelet-európai kisállamok nyomorúsága (1946)",
+            "title": "A politikai hisztéria természete és a szabadság egyensúlya",
+            "file": "stories/classics/b2/b2-33-biboistvan.json"
+          },
+          "linkedTrackUnitId": 33,
+          "lessons": [
+            "Lies In the Fact That (abban rejlik, hogy; azáltal, hogy)",
+            "Cleft Identificational Structures (Az, ami igazán számít...)",
+            "Diagnosing Political Hysteria",
+            "Realism vs. Wishful Thinking in History",
+            "Constructing a Philosophical Essay"
+          ]
+        },
+        {
+          "id": 34,
+          "title": "Slang, Register Shifting & Living Language",
+          "hungarian": "Szleng, regiszterváltás és az élő nyelv",
+          "cefrTopic": "Colloquialisms, generational slang, code-switching across registers, and humor",
+          "grammar": "Colloquial ellipsis, expressive reduplication & twin-words (ikerítő szavak: csihi-puhi, ímmel-ámmal, kire-mire, lim-lom), and register conversion",
+          "reading": {
+            "author": "Rejtő Jenő (P. Howard)",
+            "work": "Piszkos Fred, a kapitány (1940)",
+            "title": "Fülig Jimmy naplója és a pesti argó",
+            "file": "stories/classics/b2/b2-34-piszkosfred.json"
+          },
+          "linkedTrackUnitId": 34,
+          "lessons": [
+            "Expressive Twin-Words (ikerítő szavak: ímmel-ámmal, hébe-hóba)",
+            "Colloquial Ellipsis and Spoken Word Order",
+            "Translating Between Street Slang and Officialese",
+            "Humor Through Register Clash",
+            "Mastering Spontaneous Conversational Hungarian"
+          ]
+        },
+        {
+          "id": 35,
+          "title": "Technology, Futurism & Human Agency",
+          "hungarian": "Technológia, jövőkutatás és emberi cselekvőképesség",
+          "cefrTopic": "AI, automation, bioethics, digital sovereignty, and the human condition",
+          "grammar": "Speculative & counterfactual multi-clause architectures (ha ...-na/-ne, akkor sem ...-hatna/-hetne; amennyiben ... válna, úgy ...)",
+          "reading": {
+            "author": "Karinthy Frigyes",
+            "work": "Utazás Faremidóba (1916)",
+            "title": "A gépek szigete: Utazás Faremidóba",
+            "file": "stories/classics/b2/b2-35-faremido.json"
+          },
+          "linkedTrackUnitId": 35,
+          "lessons": [
+            "Multi-Layered Speculative Conditionals",
+            "Even Then It Could Not (akkor sem ...-hatna/-hetne)",
+            "Automation, Intelligence, and Ethics",
+            "Evaluating Technological Utopias and Dystopias",
+            "Debating the Future of Human Work and Creativity"
+          ]
+        },
+        {
+          "id": 36,
+          "title": "Mastery & Voice: Upper-Intermediate Synthesis",
+          "hungarian": "Nyelvi mesterség és saját hang: B2 szintézis",
+          "cefrTopic": "Full B2 synthesis: integrating narrative elegance, analytical precision, and cultural fluency",
+          "grammar": "Comprehensive synthesis of B2 information structure, participial chains, causatives, modality, and discourse cohesion",
+          "reading": {
+            "author": "Kosztolányi Dezső",
+            "work": "Esti Kornél kalandjai (1933)",
+            "title": "Esti Kornél és a bolgár kalauz: A nyelv csodája",
+            "file": "stories/classics/b2/b2-36-bolgarkalauz.json"
+          },
+          "linkedTrackUnitId": 36,
+          "lessons": [
+            "Precision in Argument, Warmth in Narrative",
+            "Weaving Complex Clauses Effortlessly",
+            "Cultural Allusions and Shared References",
+            "Defending a Nuanced Position Live",
+            "From Learner to Independent Speaker"
+          ]
+        }
+      ]
+    },
+    "culture": {
+      "title": "Culture, History & Society",
+      "hungarian": "Kultúra, történelem és társadalom",
+      "description": "Deep cultural, intellectual, historical, and political-sociological exploration of Hungary at B2 level. Each unit is directly paired with its corresponding Core B2 unit in topic and grammar, featuring a 5-part serialized world reading (stories/world/b2/b2-<slug>-01..05 + combined story).",
+      "units": [
+        {
+          "id": 1,
+          "slug": "b2-kavehazikultura",
+          "title": "The Coffeehouse Republic: Nyugat & Print Culture",
+          "hungarian": "A kávéházi köztársaság: A Nyugat folyóirat és a sajtókultúra",
+          "linkedCoreUnitId": 1,
+          "culturalHistoricalPoliticalTopic": "Budapest's 500 coffeehouses at the turn of the 20th century (New York, Centrál, Hadik), the founding of the journal Nyugat (1908), and the clash between modernist literary circles and conservative academicians.",
+          "grammar": "Contrastive focus and topicalization (ami a konzervatívokat illeti...; ezzel szemben a Nyugat írói...) to contrast competing aesthetic and political camps",
+          "serializedStoryTitle": "A New York kávéház tintatartója (5-part serialized history)",
+          "lessons": [
+            "Five Hundred Coffeehouses on the Danube",
+            "The Birth of Nyugat (1908)",
+            "Osvát Ernő, the Invisible Editor",
+            "Modernists vs. Conservatives in Public Debate",
+            "Legacy of the Literary Coffeehouse"
+          ]
+        },
+        {
+          "id": 2,
+          "slug": "b2-szecesszio",
+          "title": "Fin-de-Siècle Budapest & Hungarian Secession",
+          "hungarian": "A századfordulós Budapest és a magyar szecesszió",
+          "linkedCoreUnitId": 2,
+          "culturalHistoricalPoliticalTopic": "How Budapest became Europe's fastest-growing metropolis (1873–1914): Ödön Lechner's quest for a Hungarian national architectural style, Zsolnay pyrogranite ceramics, and the transformation of avenues and tenements.",
+          "grammar": "Extended pre-nominal participial modifiers (-ó/-ő and -t/-tt clauses before the noun: a Zsolnay-kerámiával díszített tetők) for architectural and urban description",
+          "serializedStoryTitle": "Zsolnay-máz és vasbeton: Egy világváros születése",
+          "lessons": [
+            "Uniting Buda, Pest, and Óbuda",
+            "Ödön Lechner and the Search for a National Style",
+            "Zsolnay Ceramics and Folk Motifs in Stone",
+            "Grand Boulevards and Courtyard Tenements",
+            "Reading History in Budapest's Facades"
+          ]
+        },
+        {
+          "id": 3,
+          "slug": "b2-nyelvujitas",
+          "title": "The Language Reform & the Politics of Hungarian",
+          "hungarian": "A nyelvújítás és az anyanyelv politikája",
+          "linkedCoreUnitId": 3,
+          "culturalHistoricalPoliticalTopic": "Ferenc Kazinczy and the 19th-century Nyelvújítás (Language Reform) that created ~10,000 new Hungarian words, the Orthologist vs. Neologist battle, and how Hungarian replaced Latin as the official language of state in 1844.",
+          "grammar": "Action nominalizations (-ás/-és) and abstract noun derivations (-ság/-ség, -zat/-zet) mirroring how reformers engineered modern Hungarian vocabulary",
+          "serializedStoryTitle": "Kazinczy tollától az államnyelvig",
+          "lessons": [
+            "When Latin Ruled the Diet",
+            "Kazinczy and the Neologist Revolution",
+            "Orthologists vs. Neologists: A Cultural War",
+            "Ten Thousand New Words We Speak Today",
+            "1844: Hungarian Becomes the Language of State"
+          ]
+        },
+        {
+          "id": 4,
+          "slug": "b2-szinhazmuveszet",
+          "title": "The National Stage: Theatre, Censorship & Politics",
+          "hungarian": "A nemzet színpada: Színház, cenzúra és politika",
+          "linkedCoreUnitId": 4,
+          "culturalHistoricalPoliticalTopic": "Hungarian theatre as a substitute parliament under Habsburg and later authoritarian rule: from the opening of the Nemzeti Színház (1837) and Bánk bán on March 15, 1848, to the golden age of the Vígszínház and Hungarian operetta (Kálmán Imre, Lehár Ferenc).",
+          "grammar": "Indirect commands, jussive clauses (-jon/-jen), and negative purpose clauses (nehogy a cenzor betiltsa...) describing theatrical subversion and staging",
+          "serializedStoryTitle": "Függöny fel: Színház és szabadság",
+          "lessons": [
+            "Building a National Theatre Through Public Donations",
+            "Bánk bán and the Stage as Political Forum",
+            "The Rise of the Vígszínház and Urban Comedy",
+            "Budapest Operetta Conquerors the World",
+            "Director's Vision vs. State Censorship"
+          ]
+        },
+        {
+          "id": 5,
+          "slug": "b2-bartokkodaly",
+          "title": "Bartók, Kodály & the Ethnomusicological Revolution",
+          "hungarian": "Bartók, Kodály és a népzenekutatás forradalma",
+          "linkedCoreUnitId": 5,
+          "culturalHistoricalPoliticalTopic": "How Béla Bartók and Zoltán Kodály traveled to remote villages with Edison phonograph cylinders to record ancient pentatonic folk songs, distinguishing authentic peasant music from urban 'magyar nóta' and creating modernist world music and the Kodály Method.",
+          "grammar": "Frequentative/iterative verbs (-gat/-get, -dogál/-degél) and temporal/distributive structures describing fieldwork, recurring folk motifs, and musical transmission",
+          "serializedStoryTitle": "Fonográfhenger a faluvégen: Bartók és Kodály útja",
+          "lessons": [
+            "With Phonograph Cylinders into the Villages",
+            "Urban Nóta vs. Ancient Pentatonic Folk Song",
+            "Bartók's Radical Modernism",
+            "The Kodály Concept: Music Belongs to Everyone",
+            "From the Táncház Movement to UNESCO Heritage"
+          ]
+        },
+        {
+          "id": 6,
+          "slug": "b2-festeszet",
+          "title": "Light, Myth & Modernism: Hungarian Visual Arts",
+          "hungarian": "Fény, mítosz és modernség: A magyar képzőművészet",
+          "linkedCoreUnitId": 6,
+          "culturalHistoricalPoliticalTopic": "From Mihály Munkácsy's monumental realism and Pál Szinyei Merse's plein-air breakthrough (Majális) to the Nagybánya artists' colony, Tivadar Csontváry Kosztka's visionary canvases, and László Moholy-Nagy at the Bauhaus.",
+          "grammar": "Adverbial participles (-va/-ve for visual composition and state vs. -ván/-vén in art-historical commentary)",
+          "serializedStoryTitle": "A Majálistól a Bauhausig: Magyar festők és látomások",
+          "lessons": [
+            "Munkácsy and Historical Monumentalism",
+            "Szinyei Merse and the Plein-Air Turn at Nagybánya",
+            "The Solitary Vision of Csontváry Kosztka",
+            "Hungarian Avant-Garde and Moholy-Nagy at the Bauhaus",
+            "Art Museums, Collectors, and Cultural Memory"
+          ]
+        },
+        {
+          "id": 7,
+          "slug": "b2-marslakok",
+          "title": "The 'Martians' of Budapest: Physics & Computing",
+          "hungarian": "A budapesti 'marslakók': Fizika és számítástechnika",
+          "linkedCoreUnitId": 7,
+          "culturalHistoricalPoliticalTopic": "Why a single generation from Budapest schools—János Neumann (von Neumann), Leó Szilárd, Jenő Wigner, Ede Teller, and Tódor Kármán—transformed nuclear physics, game theory, and modern computer architecture.",
+          "grammar": "Proportional and conditional correlatives (amennyiben..., abban az esetben; minél összetettebb..., annál inkább...) explaining scientific theories and historical turning points",
+          "serializedStoryTitle": "A marslakók már itt vannak: Neumann, Szilárd és a 20. század",
+          "lessons": [
+            "Who Were the 'Martians'?",
+            "Neumann János: Game Theory and Computer Architecture",
+            "Leó Szilárd: Chain Reaction and Moral Conscience",
+            "Wigner, Kármán, and Theoretical Breakthroughs",
+            "The Secret of Budapest's Intellectual Ecosystem"
+          ]
+        },
+        {
+          "id": 8,
+          "slug": "b2-semmelweis",
+          "title": "Semmelweis, Szent-Györgyi & Medical Pioneers",
+          "hungarian": "Semmelweis, Szent-Györgyi és az orvostudomány úttörői",
+          "linkedCoreUnitId": 8,
+          "culturalHistoricalPoliticalTopic": "Ignác Semmelweis ('the Savior of Mothers') and institutional blindness in 19th-century Vienna and Pest, Albert Szent-Györgyi's discovery of Vitamin C in Szeged paprika, and Katalin Karikó's decades-long persistence with mRNA.",
+          "grammar": "Past deontic and epistemic modals (megelőzhető lett volna, el kellett volna fogadniuk) analyzing institutional resistance and medical breakthroughs",
+          "serializedStoryTitle": "Klórvíz, paprika és mRNS: Magyar orvosi sorsok",
+          "lessons": [
+            "Semmelweis and the Mystery of Childbed Fever",
+            "Why the Medical Establishment Refused to Listen",
+            "Szent-Györgyi Albert and the Szeged Laboratory",
+            "Katalin Karikó: Persistence Against Skepticism",
+            "Science, Ethics, and Public Trust"
+          ]
+        },
+        {
+          "id": 9,
+          "slug": "b2-matematikasakk",
+          "title": "Non-Euclidean Worlds: Hungarian Mathematics & Chess",
+          "hungarian": "Nemeuklideszi világok: A magyar matematika és sakkiskola",
+          "linkedCoreUnitId": 9,
+          "culturalHistoricalPoliticalTopic": "János Bolyai creating a new universe out of nothing in Transylvania, Paul Erdős's nomadic mathematical network ('My brain is open'), the KöMaL journal tradition, and the Polgár sisters redefining genius in chess.",
+          "grammar": "Universal & concessive indefinites (bárhol, akármilyen, bármennyire is) and logical conditional chains",
+          "serializedStoryTitle": "Semmiből egy új világot: Bolyaitól Erdősig és a Polgár lányokig",
+          "lessons": [
+            "János Bolyai: 'Out of Nothing I Have Created a Strange New Universe'",
+            "The KöMaL Tradition and Problem-Solving Culture",
+            "Pál Erdős: Mathematics as a Social Art",
+            "Judit Polgár and the Experiment in Genius",
+            "Why Small Nations Excel in Abstract Disciplines"
+          ]
+        },
+        {
+          "id": 10,
+          "slug": "b2-gimnaziumok",
+          "title": "The Fasori & Eötvös Tradition: Elite Education",
+          "hungarian": "A Fasori gimnáziumtól az Eötvös Collegiumig: Oktatási örökség",
+          "linkedCoreUnitId": 10,
+          "culturalHistoricalPoliticalTopic": "Inside the legendary secondary schools (Fasori Evangélikus Gimnázium, Minta Gimnázium, Piarista) and the Eötvös József Collegium: how teachers like László Rátz cultivated Nobel laureates, and modern debates over educational equity.",
+          "grammar": "Causative constructions (-tat/-tet with -val/-vel agent) describing pedagogical mentorship, examination reforms, and institutional governance",
+          "serializedStoryTitle": "Rátz tanár úr katedrája: A magyar iskola titka",
+          "lessons": [
+            "Inside the Fasori Gimnázium Classroom",
+            "Kármán Mór and the Minta Gimnázium Model",
+            "The Eötvös Collegium and Intellectual Meritocracy",
+            "Denominational, State, and Alternative Schools",
+            "Modern Debates: Excellence vs. Equal Opportunity"
+          ]
+        },
+        {
+          "id": 11,
+          "slug": "b2-pszichoanalizis",
+          "title": "The Budapest School of Psychoanalysis & the Mind",
+          "hungarian": "A budapesti pszichoanalitikus iskola és a lélek kutatása",
+          "linkedCoreUnitId": 11,
+          "culturalHistoricalPoliticalTopic": "Sándor Ferenczi and the Budapest School of Psychoanalysis, its dialogue with writers like Kosztolányi, Csáth, and Babits, Michael Balint's doctor-patient groups, and Mihály Csíkszentmihályi's psychology of 'Flow'.",
+          "grammar": "Reflexive/middle verbs (-kodik/-kedik, -ul/-ül vs. -ít) and abstract psychological case government (szembenéz -val, elfojt, azonosul -val)",
+          "serializedStoryTitle": "A díványtól a flow-élményig: Ferenczi és a budapesti iskola",
+          "lessons": [
+            "Sándor Ferenczi and Freud's 'Capital of Psychoanalysis'",
+            "When Poets Met Analysts in Café Ignotus",
+            "Trauma, Empathy, and the Doctor-Patient Relationship",
+            "Suppression and Rebirth After 1989",
+            "Csíkszentmihályi and the Psychology of Optimal Experience"
+          ]
+        },
+        {
+          "id": 12,
+          "slug": "b2-talalmanyok",
+          "title": "From Kempelen's Chess Turk to Rubik's Cube",
+          "hungarian": "Kempelen sakkozógépétől a Rubik-kockáig: Magyar találmányok",
+          "linkedCoreUnitId": 12,
+          "culturalHistoricalPoliticalTopic": "Hungarian industrial and everyday inventions: Farkas Kempelen's speaking machine, Ányos Jedlik's dynamo, the Ganz transformers, Donát Bánki's carburetor, László Bíró's ballpoint pen, Dénes Gábor's holography, and Ernő Rubik's three-dimensional spatial puzzle.",
+          "grammar": "Future/obligatory participles (-andó/-endő) and postpositions of means/agency (révén, útján, segítségével)",
+          "serializedStoryTitle": "Gondolatból tárgy: Hét találmány, amely megváltoztatta a hétköznapokat",
+          "lessons": [
+            "Kempelen's Automata and Early Engineering",
+            "Jedlik, Ganz, and the Electrification of Cities",
+            "László Bíró and the Pen That Never Smudged",
+            "Dénes Gábor and the Invention of Holography",
+            "Ernő Rubik's Spatial Teaching Tool Becomes a Global Icon"
+          ]
+        },
+        {
+          "id": 13,
+          "slug": "b2-pestihumor",
+          "title": "The Pesti Humor: Cabaret, Satire & Survival",
+          "hungarian": "A pesti humor: Kabaré, szatíra és túlélés",
+          "linkedCoreUnitId": 13,
+          "culturalHistoricalPoliticalTopic": "How political cabaret (Endre Nagy, Béla Salamon, Géza Hofi) and satirical magazines (Borsszem Jankó, Ludas Matyi) used irony and double entendres as a survival mechanism through empire, war, and dictatorship.",
+          "grammar": "Modal & pragmatic particles (hiszen, ugyebár, korántsem, aligha, éppenséggel) in ironic commentary and cabaret punchlines",
+          "serializedStoryTitle": "Ha már sírni nem lehet: A pesti kabaré száz éve",
+          "lessons": [
+            "Endre Nagy and the Birth of the Pesti Cabaret",
+            "Laughing Through Historical Catastrophes",
+            "Géza Hofi and the Art of Licensed Criticism",
+            "Satirical Press from Borsszem Jankó to Today",
+            "Why Hungarian Humor Thrives on Self-Irony"
+          ]
+        },
+        {
+          "id": 14,
+          "slug": "b2-magyarfilm",
+          "title": "Allegory on Screen: A Century of Hungarian Cinema",
+          "hungarian": "Allegória a vásznon: A magyar filmművészet évszázada",
+          "linkedCoreUnitId": 14,
+          "culturalHistoricalPoliticalTopic": "From early pioneers who founded Hollywood studios (Adolph Zukor, Michael Curtiz, Alexander Korda) to the Hungarian New Wave (Miklós Jancsó's long-take historical parables, István Szabó's Mephisto, Márta Mészáros, Béla Tarr's Sátántangó, and Ildikó Enyedi).",
+          "grammar": "Simultaneity and temporal unfolding clauses (miközben, mialatt, amint, valahányszor) describing camera movement, visual rhythm, and historical allegory",
+          "serializedStoryTitle": "A pusztai plánoktól az Oscar-díjig: A magyar film története",
+          "lessons": [
+            "Hungarians Who Built Classic Hollywood",
+            "Miklós Jancsó: Choreography of Power and History",
+            "István Szabó and Moral Compromise in Central Europe",
+            "Márta Mészáros and Béla Tarr: Realism and Cosmic Time",
+            "Contemporary Revival: Saul fia and Testről és lélekről"
+          ]
+        },
+        {
+          "id": 15,
+          "slug": "b2-szamizdat",
+          "title": "The Three Ts: Censorship, Aczel's Cultural Policy & Samizdat",
+          "hungarian": "A három T korszaka: Aczél György kultúrpolitikája és a szamizdat",
+          "linkedCoreUnitId": 15,
+          "culturalHistoricalPoliticalTopic": "How cultural life operated under Kádár-era soft dictatorship via György Aczél's 'Three Ts' (Támogatott, Tűrt, Tiltott — Supported, Tolerated, Prohibited), self-censorship, and the underground Samizdat press (Beszélő, AB Kiadó) of the 1980s.",
+          "grammar": "Impersonal & passive-avoidance structures (tűrt kategóriába sorolják, betiltásra kerül, hallgatólagosan tudomásul veszik) reflecting bureaucratic control and coded dissent",
+          "serializedStoryTitle": "Támogatott, tűrt, tiltott: Kultúra a sorok között",
+          "lessons": [
+            "How the 'Three Ts' System Worked",
+            "Bargaining Between Artists and Censors",
+            "Allegory as a Language of Truth",
+            "Stencils in the Kitchen: The Samizdat Underground",
+            "How Democratic Opposition Emerged from Print"
+          ]
+        },
+        {
+          "id": 16,
+          "slug": "b2-urbanusnepi",
+          "title": "Great Intellectual Debates: Urbanists vs. Populists",
+          "hungarian": "Nagy szellemi viták: Urbánusok és népiek",
+          "linkedCoreUnitId": 16,
+          "culturalHistoricalPoliticalTopic": "One of Hungary's defining 20th-century intellectual fault lines: the debate between the 'Népi' (Populist/Ruralist) movement focusing on the peasantry and folk roots (Illyés, Németh, Erdei) and the 'Urbánus' (Cosmopolitan/Urban) circle (Ignotus, Zsolt Béla, Fejtő) — and how it still echoes in public discourse.",
+          "grammar": "High-register adversative & concessive connectors (holott, jóllehet, csakhogy, ellenben, ezzel szemben) structuring multi-perspective historical analysis",
+          "serializedStoryTitle": "Két tükör, egy ország: A népi–urbánus vita története",
+          "lessons": [
+            "Village Sociographers and the 'Népi' Diagnosis",
+            "Cosmopolitan Modernity and the 'Urbánus' Vision",
+            "Where the Two Camps Agreed—and Clashed",
+            "The Monor Meeting (1985): Bridging the Divide",
+            "Echoes of the Debate in Modern Hungary"
+          ]
+        },
+        {
+          "id": 17,
+          "slug": "b2-mediatortenet",
+          "title": "From the Town Crier to the Digital Public Sphere",
+          "hungarian": "A kisbírótól a digitális nyilvánosságig: Magyar médiatörténet",
+          "linkedCoreUnitId": 17,
+          "culturalHistoricalPoliticalTopic": "The evolution of Hungarian news and public information: Kossuth's Pesti Hírlap (1841), the golden age of feuilleton journalism, the Telephone Herald (Telefonhírmondó, 1893 — the world's first streaming news service), state television monopolies, and contemporary digital media polarization.",
+          "grammar": "Evidential and source-distancing constructions (értesülések szerint, a korabeli beszámolók alapján, úgy vélték, hogy) for media analysis",
+          "serializedStoryTitle": "A Telefonhírmondótól az algoritmusokig",
+          "lessons": [
+            "Kossuth's Pesti Hírlap and the Birth of Modern Journalism",
+            "Tivadar Puskás and Budapest's Telefonhírmondó (1893)",
+            "Radio and Television in Historical Turning Points",
+            "The Privatization of Media After 1989",
+            "Navigating Polarization in the Digital Age"
+          ]
+        },
+        {
+          "id": 18,
+          "slug": "b2-politikairetorika",
+          "title": "Public Memory, Monuments & Political Rhetoric",
+          "hungarian": "Köztéri emlékezet, emlékművek és politikai beszédmód",
+          "linkedCoreUnitId": 18,
+          "culturalHistoricalPoliticalTopic": "How Hungarian political transitions rewrite city streets and monuments: Heroes' Square (Hősök tere), the renaming of streets across 1919, 1945, 1956, and 1990, Memento Park (Szoborpark), and the rhetorical traditions of parliamentary oratory.",
+          "grammar": "Cataphoric demonstratives with complement clauses (azzal az indokkal, hogy...; abban a szellemben, hogy...) analyzing public rhetoric and commemoration",
+          "serializedStoryTitle": "Ledöntött és felállított szobrok: A magyar emlékezetpolitika",
+          "lessons": [
+            "Millennium Grandeur: The Making of Hősök tere",
+            "When Street Names Change Overnight",
+            "Memento Park: Where Toppled Statues Go",
+            "Traditions of Hungarian Parliamentary Oratory",
+            "Why History Remains Live Politics in Central Europe"
+          ]
+        },
+        {
+          "id": 19,
+          "slug": "b2-tajegysegek",
+          "title": "Alföld, Dunántúl & Felföld: Regional Identities",
+          "hungarian": "Alföld, Dunántúl és a történelmi tájegységek arca",
+          "linkedCoreUnitId": 19,
+          "culturalHistoricalPoliticalTopic": "The cultural geography of Hungary's regions: the Roman-Catholic, rolling hills and wine towns of Transdanubia (Dunántúl) vs. the Calvinist 'Civis' market towns and vast plains of the Alföld (Debrecen, Hortobágy, Kecskemét), Northern uplands, and Budapest's gravitational pull.",
+          "grammar": "Advanced spatial postpositions (innen, túl, szerte, mentén, táján) and regional contrastive structures",
+          "serializedStoryTitle": "A Dunától innen és túl: Magyarország kulturális földrajza",
+          "lessons": [
+            "The River That Divides and Connects: Dunántúl vs. Alföld",
+            "Debrecen, the 'Calvinist Rome' and Market Towns",
+            "Pannonia's Legacy in Transdanubian Towns",
+            "Budapest and the Country: The 'Water-Head' Debate",
+            "Dialects, Architecture, and Regional Pride"
+          ]
+        },
+        {
+          "id": 20,
+          "slug": "b2-falutortenet",
+          "title": "The Changing Hungarian Village: From Tanya to Today",
+          "hungarian": "Az átalakuló magyar falu: A tanyavilágtól napjainkig",
+          "linkedCoreUnitId": 20,
+          "culturalHistoricalPoliticalTopic": "The dramatic 20th- and 21st-century transformation of rural Hungary: traditional Alföld homesteads (tanyák), 1945 land distribution, forced collectivization vs. profitable 'household plots' (háztáji gazdaság), post-1990 rural depopulation, and modern eco-tourism and urban-to-rural migration.",
+          "grammar": "Relational postpositional chains (rovására, javára, függvényében, ellenében, híján) analyzing social and agricultural transformation",
+          "serializedStoryTitle": "Háztájitól a falusi turizmusig: A magyar vidék száz éve",
+          "lessons": [
+            "The World of the Alföld Tanya",
+            "Land Reform and the Trauma of Collectivization",
+            "The Paradox of the 'Háztáji' Miracle",
+            "Depopulation and Aging Villages After 1990",
+            "New Life in the Countryside: Winemakers and Remote Workers"
+          ]
+        },
+        {
+          "id": 21,
+          "slug": "b2-gazdasagiatmenet",
+          "title": "From Goulash Socialism to the European Single Market",
+          "hungarian": "A gulyáskommunizmustól az európai belső piacig",
+          "linkedCoreUnitId": 21,
+          "culturalHistoricalPoliticalTopic": "Economic history of modern Hungary: the 1968 New Economic Mechanism (Új Gazdasági Mechanizmus), the shock of 1990s privatization and disappearance of heavy industry, foreign direct investment (automotive & tech hubs), inflation history (from the 1946 pengő to the forint), and economic convergence.",
+          "grammar": "Proportional and quantitative change structures (-szorosára nő, arányban áll, mértékben csökken) in economic and historical reporting",
+          "serializedStoryTitle": "Pengő, forint, piacgazdaság: A magyar gazdaság fordulópontjai",
+          "lessons": [
+            "1946: The World's Most Extreme Hyperinflation and the Birth of the Forint",
+            "1968: The New Economic Mechanism Experiment",
+            "Privatization: Winners, Losers, and Structural Shock in the 1990s",
+            "Industrial Hubs and Global Supply Chains",
+            "The Challenge of Value-Added Innovation"
+          ]
+        },
+        {
+          "id": 22,
+          "slug": "b2-demografia",
+          "title": "Demographics, Family Policy & Generational Shifts",
+          "hungarian": "Népesedés, családpolitika és nemzedéki változások",
+          "linkedCoreUnitId": 22,
+          "culturalHistoricalPoliticalTopic": "Hungary's long-standing demographic debate (from Gyula Illyés's warnings to the Ratkó generation baby boom of the 1950s, the introduction of GYES in 1967, modern family tax incentives, aging population pressures, and changing household norms).",
+          "grammar": "Temporal framing postpositions (idején, folyamán, során, múltával) and mire-clauses tracing multi-generational social trends",
+          "serializedStoryTitle": "A Ratkó-korszaktól a 21. századi családokig",
+          "lessons": [
+            "The Ratkó Era and Generational Waves",
+            "Pioneering Parental Leave: The History of GYES",
+            "Modern Family Policies and Public Debate",
+            "Healthcare, Longevity, and the Care Economy",
+            "How Young Hungarians Envision Family Today"
+          ]
+        },
+        {
+          "id": 23,
+          "slug": "b2-lakhatas",
+          "title": "Courtyards, Panel Estates & Urban Renewal",
+          "hungarian": "Gangos bérházak, lakótelepek és városmegújítás",
+          "linkedCoreUnitId": 23,
+          "culturalHistoricalPoliticalTopic": "A social history of Hungarian housing: the iconic 19th-century Pest courtyard tenement (körfolyosós/gangos bérház) where all social classes lived under one roof, the garden-city Wekerletelep, the 1970s prefabricated concrete estates (panelházak), and modern gentrification and ruin bars (romkocsmák).",
+          "grammar": "Complex relative clauses with postpositions and possessive chains (amelynek az udvarán, amelyben lakók...) describing architectural and social spaces",
+          "serializedStoryTitle": "A körfolyosótól a tizedik emeletig: Hogyan lakunk?",
+          "lessons": [
+            "Sociology of the Pest 'Gangos' Courtyard",
+            "Wekerletelep: A Garden City Vision in Budapest",
+            "The Panel Era: Millions Move into Concrete Towers",
+            "Ruin Bars and the Reinvention of the Inner Districts",
+            "Affordability, Heritage, and the Future of the City"
+          ]
+        },
+        {
+          "id": 24,
+          "slug": "b2-kornyezetpolitika",
+          "title": "The Blue Danube: Ecology, Dams & Civic Awakening",
+          "hungarian": "A kék Duna: Ökológia, vízlépcsők és civil ébredés",
+          "linkedCoreUnitId": 24,
+          "culturalHistoricalPoliticalTopic": "How environmental protection became the catalyst for Hungary's 1988–89 democratic transition (the Duna Kör protests against the Bős–Nagymaros Dam), alongside the ecological restoration of Kis-Balaton, the Tisza cyanide spill (2000), and climate adaptation on the Great Plain.",
+          "grammar": "Causal and purposive postpositional chains (következtében, hatására, megóvása érdekében, elkerülése végett)",
+          "serializedStoryTitle": "A Duna Kör és a folyó szabadsága",
+          "lessons": [
+            "Regulating the Rivers: 19th-Century Flood Control",
+            "The Bős–Nagymaros Dam Controversy",
+            "How the Duna Kör Mobilized Tens of Thousands in 1988",
+            "Saving Lake Balaton and the Tisza River",
+            "Drought on the Alföld and 21st-Century Water Strategy"
+          ]
+        },
+        {
+          "id": 25,
+          "slug": "b2-alkotmanytortenet",
+          "title": "From the Historical Constitution to Constitutional Review",
+          "hungarian": "A történeti alkotmánytól az alkotmánybíráskodásig",
+          "linkedCoreUnitId": 25,
+          "culturalHistoricalPoliticalTopic": "Hungary's unique legal evolution: the centuries-old unwritten 'Historical Constitution' (történeti alkotmány) and Doctrine of the Holy Crown, Act III of 1848, the 1989 Round Table constitutional overhaul, László Sólyom and the activist Constitutional Court of the 1990s, and the 2011 Alaptörvény.",
+          "grammar": "Formal legal and normative syntax (alapján, összhangban, sérelmére; jogosult/köteles + inf; -andó/-endő)",
+          "serializedStoryTitle": "A Szent Korona-tantól az Alkotmánybíróságig",
+          "lessons": [
+            "What Was Hungary's 'Historical Constitution'?",
+            "The April Laws of 1848 and Parliamentary Government",
+            "1989: A Constitutional Revolution Without Violence",
+            "The Constitutional Court and Fundamental Rights Jurisprudence",
+            "Continuity and Change in the 2011 Alaptörvény"
+          ]
+        },
+        {
+          "id": 26,
+          "slug": "b2-nemzetisegek",
+          "slugTitle": "Thirteen Nationalities & Jewish-Hungarian Heritage",
+          "title": "Thirteen Nationalities & Shared Cultural Heritage",
+          "hungarian": "Tizenhárom nemzetiség és a közös kulturális örökség",
+          "linkedCoreUnitId": 26,
+          "culturalHistoricalPoliticalTopic": "The history, languages, and cultural contributions of Hungary's 13 recognized nationalities (Roma, German/Swabian, Slovak, Croat, Serb, Romanian, Rusyn, etc.) and Budapest's vibrant Jewish cultural, architectural, and literary legacy, alongside the system of Nationality Self-Governments (nemzetiségi önkormányzatok).",
+          "grammar": "Reciprocal & distributive constructions (egymás iránt, egymással szemben, nemzetiségenként) and contrastive attribution",
+          "serializedStoryTitle": "Sok nyelv, közös haza: Nemzetiségek Magyarországon",
+          "lessons": [
+            "A Mosaic of Peoples in the Carpathian Basin",
+            "Budapest's Jewish Quarter, Synagogues, and Literary Contribution",
+            "Roma Musical, Artistic, and Social History",
+            "Swabian, Slovak, and South Slavic Traditions",
+            "How Nationality Self-Governments Work Today"
+          ]
+        },
+        {
+          "id": 27,
+          "slug": "b2-hatarontul",
+          "title": "Hungarian Communities Across the Carpathian Basin Today",
+          "hungarian": "Magyar közösségek a Kárpát-medencében ma",
+          "linkedCoreUnitId": 27,
+          "culturalHistoricalPoliticalTopic": "Contemporary cultural, educational, and civic life of Hungarian communities in Transylvania (Erdély/Székelyföld), Southern Slovakia (Felvidék), Vojvodina (Vajdaság), and Transcarpathia (Kárpátalja): bilingual theatres, universities (Sapientia, Selye János), and dual citizenship.",
+          "grammar": "Concessive conditionals (még akkor is, ha...; függetlenül attól, hogy...) discussing cultural resilience and cross-border cooperation",
+          "serializedStoryTitle": "Kolozsvártól Szabadkáig: Élet két nyelv és két kultúra határán",
+          "lessons": [
+            "Transylvania and Székelyföld: Living Traditions and Urban Centers",
+            "Felvidék and Vajdaság: Bilingual Cities and Cultural Bridges",
+            "Schools, Universities, and Theatre in the Mother Tongue",
+            "Simplified Naturalization and Dual Citizenship in Practice",
+            "Central European Cross-Border Cooperation"
+          ]
+        },
+        {
+          "id": 28,
+          "slug": "b2-diaszpora",
+          "title": "Global Hungarians: Émigré Waves & Returnees",
+          "hungarian": "Világmagyarság: Emigrációs hullámok és hazatérők",
+          "linkedCoreUnitId": 28,
+          "culturalHistoricalPoliticalTopic": "Three great waves of Hungarian migration—the turn-of-the-century 'Amerikás' peasant migration, the 200,000 refugees of November 1956 who reshaped Western orchestras, universities, and businesses, and post-2004 EU freedom of movement—plus modern 'Hazaváró' returnee experiences.",
+          "grammar": "Figurative and directional preverb contrasts (beilleszkedik, elvándorol, hazatelepül, újrakezd) and complex temporal framing",
+          "serializedStoryTitle": "Kitántorgott milliók és hazatérők: A magyar diaszpóra története",
+          "lessons": [
+            "Turn-of-the-Century 'Amerikások' and Returnees",
+            "1956: How Two Hundred Thousand Refugees Changed the West",
+            "Émigré Journals, Scouts, and Weekend Schools Abroad",
+            "Freedom of Movement After 2004: London, Vienna, Munich",
+            "Coming Home: Bringing Global Experience Back to Hungary"
+          ]
+        },
+        {
+          "id": 29,
+          "slug": "b2-kulpolitika",
+          "title": "Central European Geopolitics & Visegrád Cooperation",
+          "hungarian": "Közép-európai geopolitika és a visegrádi együttműködés",
+          "linkedCoreUnitId": 29,
+          "culturalHistoricalPoliticalTopic": "From the medieval 1335 Congress of Visegrád (Charles Robert, Casimir III, John of Bohemia) to the 1991 Visegrád Group (V4) revival, Hungary's strategic position between East and West, Danube macro-regional diplomacy, and debates over European sovereignty vs. federalization.",
+          "grammar": "Diplomatic conditionals (indokolt volna, érdekükben állna) and abstract verbs governing sublative/allative (törekszik -ra, hozzájárul -hoz)",
+          "serializedStoryTitle": "1335-től a V4-ekig: Közép-Európa diplomáciája",
+          "lessons": [
+            "1335: Three Kings Meet at Visegrád Castle",
+            "1991: Rebuilding Central European Cooperation",
+            "Energy Routes, Trade Corridors, and Geography",
+            "Debates Over the Future Architecture of the European Union",
+            "Hungary's Diplomatic Strategy in a Multipolar World"
+          ]
+        },
+        {
+          "id": 30,
+          "slug": "b2-jogvedelem",
+          "title": "Public Administration, Ombudsman & Civic Rights",
+          "hungarian": "Közigazgatás, alapvető jogok biztosa és civil kurázsi",
+          "linkedCoreUnitId": 30,
+          "culturalHistoricalPoliticalTopic": "Navigating high-register Hungarian institutional life: the Commissioner for Fundamental Rights (Alapvető Jogok Biztosa), constitutional complaints, administrative court procedures, consumer protection, freedom of information requests (közérdekű adatigénylés), and civic foundations.",
+          "grammar": "Mastery of institutional verb-case government (hivatkozik -ra, fellebbez -ellen, eltekint -tól, kötelez -ra, beszámol -ról)",
+          "serializedStoryTitle": "Hogyan érvényesítsük jogainkat? Közintézmények és polgárok",
+          "lessons": [
+            "The Role of the Ombudsman (Alapvető Jogok Biztosa)",
+            "Administrative Decisions and the Right to Appeal",
+            "Public Interest Data and Transparency Laws",
+            "Foundations, Associations, and Volunteering (1% Tax Designation)",
+            "Writing Formal Submissions to Public Bodies"
+          ]
+        },
+        {
+          "id": 31,
+          "slug": "b2-borkultura",
+          "title": "Paprika, Tokaj & Terroir: A Cultural History of Hungarian Cuisine",
+          "hungarian": "Paprika, Tokaj és terroir: A magyar konyha kultúrtörténete",
+          "linkedCoreUnitId": 31,
+          "culturalHistoricalPoliticalTopic": "How Hungarian cuisine evolved over centuries: Renaissance court banquets under Matthias (onion, saffron, ginger), the Ottoman arrival of paprika and coffee, 19th-century French-Hungarian synthesis (Gundel Károly, Dobos C. József), Tokaj as the world's first classified wine region (1737), and the 21st-century Michelin gastronomic revolution.",
+          "grammar": "Resultative sublatives (aranybarnára pirít, sűrűre főz) and hypothetical sensory comparisons (mintha + conditional)",
+          "serializedStoryTitle": "Mátyás lakomájától a tokaji aszúig: Ízek és évszázadok",
+          "lessons": [
+            "Before Paprika: Medieval and Renaissance Flavors",
+            "Tokaj-Hegyalja (1737): The World's First Classified Wine Region",
+            "Károly Gundel and the Golden Age of Pest Gastronomy",
+            "How Socialist Standardization Changed—and Simplified—Recipes",
+            "The Modern Hungarian Culinary Renaissance"
+          ]
+        },
+        {
+          "id": 32,
+          "slug": "b2-sporttortenet",
+          "title": "From Alfréd Hajós to the Aranycsapat: Sport & National Identity",
+          "hungarian": "Hajós Alfrédtól az Aranycsapatig: Sport és nemzeti önkép",
+          "linkedCoreUnitId": 32,
+          "culturalHistoricalPoliticalTopic": "Why Hungary ranks among the top 10 all-time Summer Olympic medal nations despite its size: Alfréd Hajós (Olympic swimming champion AND award-winning architect), the fencing and water polo dynasties, Puskás and the Golden Team's 6–3 triumph at Wembley (1953), and Krisztina Egerszegi & Katinka Hosszú.",
+          "grammar": "Consecutive degree clauses (olyannyira..., hogy...) and dynamic preverb pairs (le-, meg-, túl-, végig-)",
+          "serializedStoryTitle": "Hat-három és öt karika: A magyar sporttörténet legendái",
+          "lessons": [
+            "Alfréd Hajós: Champion in the Water, Master Architect on Land",
+            "Why Water Polo and Fencing Became Hungarian Dynasties",
+            "November 25, 1953: Puskás and the Match of the Century at Wembley",
+            "Melbourne 1956: Blood in the Water and Olympic Defiance",
+            "How Sporting Excellence Shapes National Morale"
+          ]
+        },
+        {
+          "id": 33,
+          "slug": "b2-eszmetortenet",
+          "title": "Central European Political Thought: Széchenyi, Eötvös, Polányi, Bibó",
+          "hungarian": "Közép-európai eszmetörténet: Széchenyi, Eötvös, Polányi és Bibó",
+          "linkedCoreUnitId": 33,
+          "culturalHistoricalPoliticalTopic": "Four towering Hungarian thinkers on modernization, freedom, and society: István Széchenyi's gradualist civic reform (Hitel), József Eötvös's classic liberal treatise on nationalism and the state, Karl & Michael Polányi on market society and tacit knowledge, and István Bibó's diagnosis of Central European political hysteria.",
+          "grammar": "Cleft-like identificational clauses (Az, ami...; abban rejlik, hogy...) and high-register academic synthesis",
+          "serializedStoryTitle": "Szabadság és felelősség: Négy magyar gondolkodó",
+          "lessons": [
+            "Széchenyi's Hitel: Moral and Economic Reform from Within",
+            "József Eötvös on Liberty, Equality, and Nationality",
+            "Karl and Michael Polányi: The Great Transformation and Tacit Knowledge",
+            "István Bibó: Overcoming Fear and Political Hysteria",
+            "Reading Contemporary Challenges Through Classic Thinkers"
+          ]
+        },
+        {
+          "id": 34,
+          "slug": "b2-ifjusagikultura",
+          "title": "Beats, Festivals & Living Slang: Youth Culture Since the 1960s",
+          "hungarian": "Beatkorszak, táncház és fesztiválok: Ifjúsági kultúra és élő nyelv",
+          "linkedCoreUnitId": 34,
+          "culturalHistoricalPoliticalTopic": "How each postwar Hungarian generation forged its own cultural space and language: the 1960s–70s Beat and Rock explosion (Illés, Omega, Locomotiv GT), the 1970s urban Táncház folk-revival subculture, 1980s underground art bands, the founding of Sziget Festival (1993), and how digital slang is reshaping spoken Hungarian today.",
+          "grammar": "Expressive twin-words (ikerítő szavak), colloquial ellipsis, and register shifting between informal youth speech and standard prose",
+          "serializedStoryTitle": "Az Illés-klubtól a Szigetig: Nemzedékek és nyelvi divatok",
+          "lessons": [
+            "Guitar Chords in Hungarian: Illés, Omega, and the Beat Era",
+            "The Táncház Movement: Folk Music as Urban Counterculture",
+            "1980s Underground and Alternative Art Spaces",
+            "1993: How Student Campers Created the Sziget Festival",
+            "How English Loanwords and Internet Slang Adapt to Hungarian Suffixes"
+          ]
+        },
+        {
+          "id": 35,
+          "slug": "b2-tudomanyjovo",
+          "title": "Hungary in the 21st-Century Knowledge Economy",
+          "hungarian": "Magyarország a 21. századi tudásalapú gazdaságban",
+          "linkedCoreUnitId": 35,
+          "culturalHistoricalPoliticalTopic": "Contemporary science and technology in Hungary: the ELI-ALPS laser research center in Szeged (Gérard Mourou & Ferenc Krausz, 2023 Nobel Prize in Attosecond Physics), biotechnology, autonomous vehicle engineering, renewable energy transition, and ethical debates around AI for medium-sized languages.",
+          "grammar": "Speculative & counterfactual multi-clause conditionals (amennyiben... válna; ha ...-na/-ne, akkor sem ...-hatna/-hetne)",
+          "serializedStoryTitle": "Attoszekundumok és mesterséges intelligencia: A jövő műhelyei",
+          "lessons": [
+            "Ferenc Krausz and the Attosecond Physics Breakthrough",
+            "Inside Szeged's ELI-ALPS Laser Research Center",
+            "Teaching Artificial Intelligence to Think in Agglutinative Hungarian",
+            "Green Energy, Geothermal Potential, and Sustainability",
+            "How Medium-Sized Languages Thrive in the Technological Future"
+          ]
+        },
+        {
+          "id": 36,
+          "slug": "b2-magyaridentitas",
+          "title": "Synthesis: What It Means to Speak and Understand Hungarian Today",
+          "hungarian": "Szintézis: Mit jelent ma magyarul érteni és gondolkodni?",
+          "linkedCoreUnitId": 36,
+          "culturalHistoricalPoliticalTopic": "Capstone reflection on the Hungarian cultural universe: how an isolated Finno-Ugric language in the heart of Europe absorbed Turkic, Slavic, Latin, German, and modern global influences while keeping its unmistakable logic, humor, poetic density, and historical self-awareness.",
+          "grammar": "Full B2 synthesis: integrating focus-comment architecture, participial left-branching modifiers, epistemic nuance, and stylistic versatility",
+          "serializedStoryTitle": "Szigetnyelv Európa szívében: A magyar gondolkodás tükre",
+          "lessons": [
+            "Finno-Ugric Roots and Ten Centuries of European Layers",
+            "Why Poets Have Always Been Hungary's Prophets",
+            "Humor, Melancholy, and Resilience in the National Character",
+            "Speaking Hungarian as an Insider",
+            "Your Journey Ahead: Toward C1 Mastery"
+          ]
+        }
+      ]
+    }
+  }
+}

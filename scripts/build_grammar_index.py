@@ -169,6 +169,19 @@ def main():
                   + ", ".join(uncurated))
             any_failures = True
 
+        # Skill-size sanity check: warn when a grammar skill has >150 exercises or >25 aliases
+        reg_path = Path(f"content/{lang}/indexes/skill-registry.json")
+        reg_skills = json.loads(reg_path.read_text(encoding="utf-8")).get("skills", {}) if reg_path.is_file() else {}
+        oversized = []
+        for s in sorted(by_skill):
+            ex_cnt = len(by_skill[s])
+            al_cnt = len(reg_skills.get(s, {}).get("aliases") or [])
+            if ex_cnt > 150 or al_cnt > 25:
+                oversized.append(f"{s} ({ex_cnt} exercises, {al_cnt} aliases)")
+        if oversized:
+            print(f"[{lang}] SIZE WARNING: {len(oversized)} grammar skills exceed 150 exercises or 25 aliases: "
+                  + ", ".join(oversized))
+
     if strict and any_failures:
         sys.exit(1)
 

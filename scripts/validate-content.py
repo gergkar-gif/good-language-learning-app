@@ -151,6 +151,23 @@ def validate_grammar_titles(lang_dir, lang):
                     )
         except Exception:
             pass
+
+    reg_path = lang_dir / "indexes" / "skill-registry.json"
+    if reg_path.is_file():
+        try:
+            reg_skills = json.loads(reg_path.read_text(encoding="utf-8")).get("skills") or {}
+            slug_re = re.compile(r"^[a-z0-9]+(-[a-z0-9]+)*$")
+            for canon, meta in sorted(reg_skills.items()):
+                if not slug_re.match(canon):
+                    errors.append(f"{reg_path.relative_to(ROOT)} :: {canon}\n      invalid canonical skill slug '{canon}'")
+                for al in (meta.get("aliases") or []) if isinstance(meta, dict) else []:
+                    if not isinstance(al, str) or not slug_re.match(al):
+                        errors.append(
+                            f"{reg_path.relative_to(ROOT)} :: {canon}.aliases\n      invalid alias slug {al!r} (must match ^[a-z0-9]+(-[a-z0-9]+)*$)"
+                        )
+        except Exception as e:
+            errors.append(f"{reg_path.relative_to(ROOT)}: invalid JSON ({e})")
+
     return errors
 
 
