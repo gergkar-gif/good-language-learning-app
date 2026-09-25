@@ -4,9 +4,19 @@
     {
       "name": "parlour",
       "runtimeExecutable": "python",
-      "runtimeArgs": ["scripts/dev-server.py"],
+      "runtimeArgs": [
+        "scripts/dev-server.py"
+      ],
       "port": 8131,
       "autoPort": true
+    },
+    {
+      "name": "hu-sound-recorder",
+      "runtimeExecutable": "python",
+      "runtimeArgs": [
+        "tools/sound-recorder/server.py"
+      ],
+      "port": 8132
     }
   ]
 }
