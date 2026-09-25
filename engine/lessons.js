@@ -1529,6 +1529,7 @@ const stepRenderers = {
         stepState.solution = stepState.solutions[0];
         stepState.english = step.english || '';
         stepState.checkFn = 'lessonCheckBuild';
+        stepState.usedHint = false;
 
         // Tiles are stored with their file index and shuffled once. The index
         // is what the two rows exchange, not the text — a sentence with the
@@ -1537,10 +1538,24 @@ const stepRenderers = {
         stepState.tiles = shuffled((step.tiles || []).map((text, i) => ({ text, i })));
         stepState.built = [];
 
+        // The English is feedback, not a prompt (see revealBuildEnglish's own
+        // comment) — showing it up front while tiles are still on the table
+        // turns ordering into translating. But past a certain length, tile
+        // order alone gets genuinely hard to hold in your head, so an opt-in
+        // "Need a hint?" is offered above that threshold — it stays a
+        // deliberate ask, not something shown by default.
+        const canHint = stepState.tiles.length > 8 && !!stepState.english;
+
         return `
             <p class="lsn-question">Build the sentence.</p>
             <div id="build-target" class="lsn-target">${buildTargetHtml()}</div>
             <div id="build-bank" class="lsn-options lsn-tiles">${buildBankHtml()}</div>
+            ${canHint ? `
+                <div class="lsn-hint-action">
+                    <button type="button" class="lsn-hint-btn" id="lsn-hint-btn" onclick="lessonRequestBuildHint()">Need a hint?</button>
+                </div>
+                <div id="lsn-hint-area" class="lsn-hint-area" style="display:none;"></div>
+            ` : ''}
             ${feedbackHtml()}
         `;
     },
@@ -2813,6 +2828,27 @@ function hintStartRevealsAnswer(answer) {
     const raw = String(answer || '').trim();
     if (/\s/.test(raw)) return false;
     return raw.replace(/[^\p{L}\p{N}]/gu, '').length <= 1;
+}
+
+// Single-tier: the opt-in hint for a long sentence-builder is just the
+// English translation, shown once — there's no partial-reveal tier the way
+// fill-blank has, since ordering is what's being tested, not word recall.
+function lessonRequestBuildHint() {
+    if (stepState.solved) return;
+    const btn = document.getElementById('lsn-hint-btn');
+    const area = document.getElementById('lsn-hint-area');
+    if (!btn || !area || !stepState.english) return;
+
+    stepState.usedHint = true;
+    area.style.display = 'block';
+    area.innerHTML = `
+        <div class="lsn-hint-box">
+            <span class="lsn-hint-label">English:</span>
+            <span>"${esc(stepState.english)}"</span>
+        </div>
+    `;
+    btn.textContent = 'Hint shown';
+    btn.disabled = true;
 }
 
 function lessonRequestHint() {
