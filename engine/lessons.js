@@ -2483,7 +2483,7 @@ async function renderLessonSummary(firstTime, rankBefore) {
             ${statsHtml}
             ${invitation ? guideInvitationHtml(invitation) : ''}
             ${summaryStreakLine()}
-            ${rankedUp ? `<p class="lsn-summary-milestone">Rank up! You're now Rank ${rankAfter}.</p>` : ''}
+            ${rankedUp ? (typeof renderRankUpCard === 'function' ? renderRankUpCard(rankAfter) : `<p class="lsn-summary-milestone">Rank up! You're now Rank ${rankAfter}.</p>`) : ''}
             ${summaryMilestonesHtml(milestones)}
             ${summaryGoalsHtml(lastLessonChecklist)}
             ${summaryWordsHtml(words)}

@@ -175,16 +175,34 @@ function getRank() {
 // AWARDING
 // ============================================
 function awardXP(amount, source, reason) {
-    if (!amount) return;
+    if (!amount) return null;
+
+    const rankBefore = rankForXP(xpData.total);
 
     const day = dayEntry(getTodayString());
     day.total += amount;
     if (typeof day[source] === 'number') day[source] += amount;
     xpData.total += amount;
 
+    const rankInfo = getRank();
+    const rankedUp = rankInfo.rank > rankBefore;
+
     saveXP();
     const displayReason = reason || (typeof source === 'string' ? source.replace(/[-_]/g, ' ') : 'Practice');
-    showXPNotification(amount, displayReason);
+
+    if (rankedUp) {
+        // Lesson summary already plays Sound.complete() on arrival; trigger
+        // it here for reviews, stories, and any other XP source.
+        if (source !== 'grammar' && typeof Sound !== 'undefined' && typeof Sound.complete === 'function') {
+            Sound.complete();
+        }
+        pulseRankBadges();
+        showRankUpNotification(rankInfo, amount, displayReason);
+    } else {
+        showXPNotification(amount, displayReason);
+    }
+
+    return { rankedUp, rankBefore, rankAfter: rankInfo.rank, rankInfo };
 }
 
 // Call before the card is rescheduled — "new" means it has no reviews yet.
@@ -198,10 +216,10 @@ function recordReview(card, rating) {
 
     const amount = REVIEW_XP[rating] || 0;
     if (amount) {
-        awardXP(amount, 'review', RATING_LABELS[rating]);
-    } else {
-        saveXP();
+        return awardXP(amount, 'review', RATING_LABELS[rating]);
     }
+    saveXP();
+    return null;
 }
 
 // isFirstTime is false when the learner is re-reading or replaying: the
@@ -209,19 +227,19 @@ function recordReview(card, rating) {
 function recordStoryCompleted(isFirstTime) {
     dayEntry(getTodayString()).storiesDone++;
     if (isFirstTime) {
-        awardXP(READING_XP, 'reading', 'Story complete');
-    } else {
-        saveXP();
+        return awardXP(READING_XP, 'reading', 'Story complete');
     }
+    saveXP();
+    return null;
 }
 
 function recordLessonCompleted(isFirstTime) {
     dayEntry(getTodayString()).lessonsDone++;
     if (isFirstTime) {
-        awardXP(GRAMMAR_XP, 'grammar', 'Lesson complete');
-    } else {
-        saveXP();
+        return awardXP(GRAMMAR_XP, 'grammar', 'Lesson complete');
     }
+    saveXP();
+    return null;
 }
 
 function showXPNotification(amount, reason) {
@@ -233,6 +251,62 @@ function showXPNotification(amount, reason) {
     notif.innerHTML = `<strong>${sign}${amount} XP</strong><span class="xp-toast-sep">·</span><span>${cleanReason}</span>`;
     document.body.appendChild(notif);
     setTimeout(() => notif.remove(), 2000);
+}
+
+function showRankUpNotification(rankInfo, amount, reason) {
+    if (typeof document === 'undefined' || !document.body) return;
+    const notif = document.createElement('div');
+    notif.className = 'xp-toast xp-toast-rankup';
+    const sign = amount > 0 ? '+' : '';
+    const cleanReason = String(reason == null ? '' : reason);
+    const iconHtml = (typeof Art !== 'undefined' && typeof Art.icon === 'function')
+        ? `<span class="xp-toast-rank-icon">${Art.icon('flag')}</span>`
+        : '';
+    const xpRemaining = Math.max(0, rankInfo.xpForNextRank - rankInfo.xpIntoRank);
+    notif.innerHTML = `
+        ${iconHtml}
+        <span class="xp-toast-rank-body">
+            <strong>Rank ${rankInfo.rank} reached!</strong>
+            <span class="xp-toast-rank-sub">${sign}${amount} XP · ${cleanReason} · ${xpRemaining} XP to Rank ${rankInfo.rank + 1}</span>
+        </span>
+    `;
+    document.body.appendChild(notif);
+    setTimeout(() => notif.remove(), 4000);
+}
+
+function pulseRankBadges() {
+    if (typeof document === 'undefined') return;
+    ['header-xp', 'nav-xp'].forEach(id => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        el.classList.remove('is-rank-up');
+        // Force reflow so back-to-back rank-ups restart the animation cleanly
+        void el.offsetWidth;
+        el.classList.add('is-rank-up');
+        setTimeout(() => el.classList.remove('is-rank-up'), 1800);
+    });
+}
+
+function renderRankUpCard(rankAfter) {
+    const info = (typeof getRank === 'function') ? getRank() : null;
+    const rankNum = rankAfter != null ? rankAfter : (info ? info.rank : 1);
+    const iconHtml = (typeof Art !== 'undefined' && typeof Art.icon === 'function')
+        ? `<div class="rank-up-card-icon">${Art.icon('flag')}</div>`
+        : '';
+    const xpRemaining = info ? Math.max(0, info.xpForNextRank - info.xpIntoRank) : null;
+    const metaHtml = info
+        ? `<p class="rank-up-card-meta">${info.xp.toLocaleString()} XP total · ${xpRemaining} XP to Rank ${rankNum + 1}</p>`
+        : '';
+    return `
+        <div class="rank-up-card lsn-summary-milestone review-summary-milestone" role="status">
+            ${iconHtml}
+            <div class="rank-up-card-content">
+                <p class="rank-up-card-eyebrow">New milestone</p>
+                <p class="rank-up-card-title">Rank up! You're now Rank ${rankNum}.</p>
+                ${metaHtml}
+            </div>
+        </div>
+    `;
 }
 
 // ============================================
@@ -371,6 +445,7 @@ function getConsistency(windowDays) {
 // HEADER
 // ============================================
 function updateXPHeader() {
+    if (typeof document === 'undefined') return;
     const xpEl = document.getElementById('header-xp');
     if (xpEl) xpEl.textContent = `Rank ${getRank().rank} · ${xpData.total} XP`;
 
@@ -439,12 +514,14 @@ const XP = {
     award: (amount, source, reason) => awardXP(amount, source, reason),
     getRank,
     getStreak,
+    renderRankUpCard,
     updateHeader: updateXPHeader,
     data: () => xpData
 };
 
 if (typeof window !== 'undefined') {
     window.XP = XP;
+    window.renderRankUpCard = renderRankUpCard;
 }
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = {
@@ -452,6 +529,7 @@ if (typeof module !== 'undefined' && module.exports) {
         awardXP,
         getRank,
         getStreak,
+        renderRankUpCard,
         updateXPHeader,
         getDailyActivities,
         loadXP,

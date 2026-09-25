@@ -2380,24 +2380,27 @@ window.Reader = {
     finishStory() {
         if (!this.currentStoryId) return;
 
+        const rankBefore = (typeof getRank === 'function') ? getRank().rank : null;
         const firstTime = markStoryRead(this.currentStoryId);
         setStoryProgress(this.currentStoryId, null);
         if (typeof recordStoryCompleted === 'function') {
             recordStoryCompleted(firstTime);
         }
+        const rankAfter = (typeof getRank === 'function') ? getRank().rank : null;
+        const rankedUp = firstTime && rankBefore != null && rankAfter != null && rankAfter > rankBefore;
 
         const meta = this.stories.find(s => s.id === this.currentStoryId);
         // Inside a timed session, go straight back to it — no series offer.
         const inSession = typeof StudyPlanRunner !== 'undefined' && StudyPlanRunner.isReadingItem(this.currentStoryId);
         if (inSession) StudyPlanRunner.markReadingFinished(this.currentStoryId);
         const next = !inSession && meta && this._nextInSeries(meta, getReadStoryIds());
-        if (next) this.showNextInSeries(meta, next);
+        if (next) this.showNextInSeries(meta, next, rankedUp, rankAfter);
         else this.closeStory();
     },
 
     // Between two parts of a series: offer the next one rather than dropping
     // the learner back at the shelf to find it themselves.
-    showNextInSeries(finished, next) {
+    showNextInSeries(finished, next, rankedUp, rankAfter) {
         StoryAudioPlayer.teardown();
         if (window._storyScrollListener) {
             window.removeEventListener('scroll', window._storyScrollListener);
@@ -2407,9 +2410,15 @@ window.Reader = {
         if (!container) { this.closeStory(); return; }
         const n = next.story;
         const minutes = n.estimatedMinutes ? ' · ' + n.estimatedMinutes + ' min' : '';
+        const rankCardHtml = rankedUp
+            ? (typeof renderRankUpCard === 'function'
+                ? renderRankUpCard(rankAfter)
+                : '<p class="lsn-summary-milestone">Rank up! You\'re now Rank ' + rankAfter + '.</p>')
+            : '';
         container.innerHTML =
             '<div class="story-next">' +
                 '<p class="story-next-done">Finished ✓ <em>' + this.escapeHtml(finished.title) + '</em></p>' +
+                rankCardHtml +
                 '<p class="story-next-label">Next in the ' + this.escapeHtml(next.seriesName) + '</p>' +
                 '<h3 class="story-next-title">' + this.escapeHtml(n.title) + '</h3>' +
                 '<p class="story-next-meta">' + this.escapeHtml(n.level || '') + minutes + '</p>' +

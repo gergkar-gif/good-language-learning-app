@@ -732,7 +732,7 @@ function renderReviewSessionSummary() {
         <h2 class="review-summary-title">Nice work.</h2>
         ${statsHtml}
         ${streakText ? `<p class="review-summary-streak">${escFn(streakText)}</p>` : ''}
-        ${rankedUp ? `<p class="review-summary-milestone">Rank up! You're now Rank ${rankAfter}.</p>` : ''}
+        ${rankedUp ? (typeof renderRankUpCard === 'function' ? renderRankUpCard(rankAfter) : `<p class="review-summary-milestone">Rank up! You're now Rank ${rankAfter}.</p>`) : ''}
         ${milestones.map(m => `<p class="review-summary-milestone">Milestone: ${escFn(m.label)}</p>`).join('')}
         ${missedCount ? `
             <button class="dk-secondary" data-action="practice-missed">

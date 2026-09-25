@@ -6203,6 +6203,166 @@
   }
 }
 
+.xp-toast.xp-toast-rankup {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 20px;
+  border-radius: 24px;
+  border: 1px solid var(--accent, #D9532F);
+  box-shadow: 0 8px 24px rgba(16, 42, 71, 0.18);
+  animation: rankToastFade 4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.xp-toast-rank-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+}
+
+.xp-toast-rank-icon .art.icon {
+  width: 20px;
+  height: 20px;
+}
+
+.xp-toast-rank-icon .ink-line {
+  stroke: #F5F1E8;
+}
+
+.xp-toast-rank-body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.25;
+}
+
+.xp-toast-rank-body strong {
+  font-size: 13.5px;
+  letter-spacing: 0.01em;
+}
+
+.xp-toast-rank-sub {
+  font-size: 11.5px;
+  opacity: 0.82;
+  margin-top: 2px;
+}
+
+@keyframes rankToastFade {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 10px) scale(0.96);
+  }
+  8% {
+    opacity: 1;
+    transform: translate(-50%, 0) scale(1);
+  }
+  85% {
+    opacity: 1;
+    transform: translate(-50%, 0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -8px) scale(0.98);
+  }
+}
+
+/* Header & nav rank badge pulse when crossing a threshold */
+#header-xp.is-rank-up,
+#nav-xp.is-rank-up {
+  color: var(--accent, #D9532F);
+  transition: color 0.25s ease, transform 0.25s ease;
+  animation: rankBadgePulse 1.6s ease-out;
+}
+
+@keyframes rankBadgePulse {
+  0% { transform: scale(1); }
+  25% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+/* Rank-up milestone card on Lesson, Review, and Story summary screens */
+.rank-up-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  max-width: 380px;
+  margin: 16px auto 10px;
+  padding: 14px 18px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent, #D9532F);
+  background: rgba(16, 42, 71, 0.03);
+  text-align: left;
+}
+
+[data-theme="dark"] .rank-up-card {
+  background: rgba(245, 241, 232, 0.04);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .rank-up-card {
+    background: rgba(245, 241, 232, 0.04);
+  }
+}
+
+.rank-up-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(16, 42, 71, 0.06);
+  flex-shrink: 0;
+}
+
+[data-theme="dark"] .rank-up-card-icon {
+  background: rgba(245, 241, 232, 0.08);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .rank-up-card-icon {
+    background: rgba(245, 241, 232, 0.08);
+  }
+}
+
+.rank-up-card-icon .art.icon {
+  width: 20px;
+  height: 20px;
+}
+
+.rank-up-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.rank-up-card-eyebrow {
+  margin: 0;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent, #D9532F);
+}
+
+.rank-up-card-title {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.rank-up-card-meta {
+  margin: 2px 0 0;
+  font-size: 12.5px;
+  font-weight: 400;
+  color: var(--muted);
+}
+
 /* ============================================
    APP NOTIFICATION TOAST
 ============================================ */
