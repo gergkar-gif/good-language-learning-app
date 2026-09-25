@@ -151,8 +151,8 @@ const ParlourTTS = (function () {
     }
 
     function sessionKey(text, language, voiceName, character, gender, type) {
-        // 'v2' = Spanish moved to the Hungarian Chirp3-HD voices; bump when the worker's default voices change
-        return `v2::${language}::${voiceName || ''}::${character || ''}::${gender || ''}::${type || ''}::${text}`;
+        // 'v3' = Spanish + Hungarian words/readings moved to Enceladus; bump when the worker's default voices change
+        return `v3::${language}::${voiceName || ''}::${character || ''}::${gender || ''}::${type || ''}::${text}`;
     }
 
     function isOnline() {

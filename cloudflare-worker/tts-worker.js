@@ -51,16 +51,16 @@ function json(data, status, cors) {
 
 const LANGUAGE_CODE = { en: 'en-US', es: 'es-ES', hu: 'hu-HU' };
 
-// Chirp3-HD voice names are used for Spanish and Hungarian alike, so both courses
-// use the same voice family (Spanish everyday audio: Enceladus). English short-form uses Neural2.
+// Chirp3-HD voice names are used for Spanish and Hungarian alike. Enceladus (deep
+// male) is the main voice for both: words, drills and readings. English short-form uses Neural2.
 const SHORT_VOICE = {
     male: 'Charon',        // firm, deep — default dialogue/character voice
     female: 'Kore',        // firm — default dialogue/character voice
     narrator: 'Sulafat',   // warm, steady — stories and long reading passages
     reading: 'Sulafat',
-    vocabulary: 'Iapetus', // clear — word-level clarity matters most
-    listening: 'Iapetus',
-    pronunciation: 'Iapetus',
+    vocabulary: 'Enceladus', // deep male — the main course voice
+    listening: 'Enceladus',
+    pronunciation: 'Enceladus',
     example: 'Despina',    // smooth
     instruction: 'Achird'  // friendly — reads as the app talking to you, not the language
 };
@@ -76,9 +76,8 @@ function resolveVoiceName(payload, languageCode) {
     // Story narration and reading passages use rich multi-voice Chirp3-HD
     const isLongForm = payload.type === 'story' || payload.type === 'reading';
 
-    // Spanish everyday audio (words, drills, prompts): Enceladus, the deep male voice
-    // Hungarian uses for narration
-    if (languageCode === 'es-ES' && !isLongForm && !SHORT_VOICE[payload.gender]) {
+    // Spanish: Enceladus for everything without an explicit dialogue gender (words, drills, readings)
+    if (languageCode === 'es-ES' && !SHORT_VOICE[payload.gender]) {
         return 'es-ES-Chirp3-HD-Enceladus';
     }
 
@@ -87,7 +86,7 @@ function resolveVoiceName(payload, languageCode) {
         return 'en-US-Neural2-F';
     }
 
-    // Hungarian: Enceladus (lower-tone male) for story/reading narration; dialogue characters and other types use SHORT_VOICE table
+    // Hungarian: Enceladus for story/reading narration and words (via SHORT_VOICE); dialogue genders and other types use SHORT_VOICE table
     if (languageCode === 'hu-HU') {
         if (payload.gender && SHORT_VOICE[payload.gender]) {
             return `hu-HU-Chirp3-HD-${SHORT_VOICE[payload.gender]}`;
