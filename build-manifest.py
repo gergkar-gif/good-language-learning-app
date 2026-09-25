@@ -187,6 +187,10 @@ LEVEL_TRACKS = {
             {"id": "core", "title": "Core Hungarian"},
             {"id": "citizenship", "title": "Citizenship"},
         ],
+        "b2": [
+            {"id": "core", "title": "Core Hungarian"},
+            {"id": "culture", "title": "Culture, History & Society"},
+        ],
     },
 }
 

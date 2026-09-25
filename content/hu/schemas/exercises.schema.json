@@ -281,6 +281,11 @@
           },
           "description": "Multiple equally-valid answers, e.g. either 'Igen' or 'Nem' correctly completing a yes/no blank."
         },
+        "english": {
+          "type": "string",
+          "minLength": 1,
+          "description": "What the completed sentence means in English. Shown after the learner settles the answer."
+        },
         "teaches": {
           "$ref": "#/definitions/baseFields/teaches"
         }

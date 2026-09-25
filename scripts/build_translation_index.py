@@ -186,6 +186,43 @@ SLUG_TOPIC_LABELS = {
     "ccse-servicios-emergencias": "Emergency Services & 112",
     "ccse-consumo-banca": "Consumer Rights & Banking",
     "ccse-simulacro-examen": "CCSE Mock Exam Simulation",
+    # Hungarian B2 Culture, History & Society topics
+    "kavehazikultura": "The Coffeehouse Republic: Nyugat & Print Culture",
+    "szecesszio": "Fin-de-Siècle Budapest & Hungarian Secession",
+    "nyelvujitas": "The Language Reform & the Politics of Hungarian",
+    "szinhazmuveszet": "The National Stage: Theatre, Censorship & Politics",
+    "bartokkodaly": "Bartók, Kodály & the Ethnomusicological Revolution",
+    "festeszet": "Light, Myth & Modernism: Hungarian Visual Arts",
+    "marslakok": "The 'Martians' of Budapest: Physics & Computing",
+    "semmelweis": "Semmelweis, Szent-Györgyi & Medical Pioneers",
+    "matematikasakk": "Non-Euclidean Worlds: Hungarian Mathematics & Chess",
+    "gimnaziumok": "The Fasori & Eötvös Tradition: Elite Education",
+    "pszichoanalizis": "The Budapest School of Psychoanalysis & the Mind",
+    "talalmanyok": "From Kempelen's Chess Turk to Rubik's Cube",
+    "pestihumor": "The Pesti Humor: Cabaret, Satire & Survival",
+    "magyarfilm": "Allegory on Screen: A Century of Hungarian Cinema",
+    "szamizdat": "The Three Ts: Censorship, Aczel's Cultural Policy & Samizdat",
+    "urbanusnepi": "Great Intellectual Debates: Urbanists vs. Populists",
+    "mediatortenet": "From the Town Crier to the Digital Public Sphere",
+    "politikairetorika": "Public Memory, Monuments & Political Rhetoric",
+    "tajegysegek": "Alföld, Dunántúl & Felföld: Regional Identities",
+    "falutortenet": "The Changing Hungarian Village: From Tanya to Today",
+    "gazdasagiatmenet": "From Goulash Socialism to the European Single Market",
+    "demografia": "Demographics, Family Policy & Generational Shifts",
+    "lakhatas": "Courtyards, Panel Estates & Urban Renewal",
+    "kornyezetpolitika": "The Blue Danube: Ecology, Dams & Civic Awakening",
+    "alkotmanytortenet": "From the Historical Constitution to Constitutional Review",
+    "nemzetisegek": "Thirteen Nationalities & Shared Cultural Heritage",
+    "hatarontul": "Hungarian Communities Across the Carpathian Basin Today",
+    "diaszpora": "Global Hungarians: Émigré Waves & Returnees",
+    "kulpolitika": "Central European Geopolitics & Visegrád Cooperation",
+    "jogvedelem": "Public Administration, Ombudsman & Civic Rights",
+    "borkultura": "Paprika, Tokaj & Terroir: A Cultural History of Hungarian Cuisine",
+    "sporttortenet": "From Alfréd Hajós to the Aranycsapat: Sport & National Identity",
+    "eszmetortenet": "Central European Political Thought: Széchenyi, Eötvös, Polányi, Bibó",
+    "ifjusagikultura": "Beats, Festivals & Living Slang: Youth Culture Since the 1960s",
+    "tudomanyjovo": "Hungary in the 21st-Century Knowledge Economy",
+    "magyaridentitas": "Synthesis: What It Means to Speak and Understand Hungarian Today",
 }
 
 # Order matters: these are mutually exclusive by construction (slug requires
@@ -281,12 +318,15 @@ _SLUG_TRACK_NAME = {
 
 
 def _track_for(stem, level, lang):
-    """The slug-named second track's own name (see _SLUG_TRACK_NAME) for B1's
-    slug-named files, "core" for B1's numeric-unit files, None everywhere
-    else -- only B1 is dual-track today. A1 also has a handful of slug
-    filenames (see SLUG_TOPIC_LABELS' "8 A1 entries"), but those are just
-    A1's own topic-naming convention, not a second track, so this
-    deliberately only fires for B1."""
+    """The slug-named second track's own name (see _SLUG_TRACK_NAME) for B1/B2's
+    slug-named files, "core" for B1/B2's numeric-unit files, None everywhere
+    else."""
+    if level == "B2" and lang == "hu":
+        if _SLUG_RE.match(stem):
+            return "culture"
+        if _UNIT_RE.match(stem) or _LESSON_ACROSS_LEVEL_RE.match(stem):
+            return "core"
+        return None
     if level != "B1":
         return None
     if _SLUG_RE.match(stem):
