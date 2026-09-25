@@ -253,10 +253,45 @@ def changed_files(ref="origin/master"):
     return git("diff", "--name-only", "--diff-filter=ACMR", ref) | git("ls-files", "--others", "--exclude-standard")
 
 
+# Every schema a course must carry, and the tag registry its exercises are
+# checked against. A new course (Polish, German, ...) copies these from
+# content/es-es/ — see AGENTS.md "Adding a new course".
+REQUIRED_SCHEMAS = ["lesson", "grammar", "exercises", "vocabulary", "story", "test", "units"]
+
+
+def has_course_content(lang_dir):
+    """True once a course folder holds any lesson or exercise file."""
+    return any(lang_dir.glob("lessons/*/*.json")) or any(lang_dir.glob("exercises/*/*.json"))
+
+
+def course_setup_errors(lang_dir):
+    """A course with content but no schemas or tag registry would otherwise be
+    skipped silently (nothing validated at all) or have its `teaches` tags
+    accepted unchecked. Both must fail loudly instead."""
+    errors = []
+    rel = lang_dir.relative_to(ROOT)
+    missing = [n for n in REQUIRED_SCHEMAS if not (lang_dir / "schemas" / f"{n}.schema.json").is_file()]
+    if missing:
+        errors.append(
+            f"{rel}/schemas: missing {', '.join(m + '.schema.json' for m in missing)} — a course with content "
+            f"must carry the full schema set (copy it from content/es-es/schemas; see AGENTS.md \"Adding a new course\")"
+        )
+    if not (lang_dir / "indexes" / "skill-registry.json").is_file():
+        errors.append(
+            f"{rel}/indexes/skill-registry.json: missing — every course needs a tag registry so its exercises' "
+            f"`teaches` slugs can be checked (see AGENTS.md \"Adding a new course\")"
+        )
+    return errors
+
+
 def validate_language(lang, only=None):
     lang_dir = ROOT / "content" / lang
-    if not (lang_dir / "schemas").exists():
-        return 0, 0, []
+    if not has_course_content(lang_dir):
+        return 0, 0, []  # an empty or placeholder course folder has nothing to check yet
+    touched = only is None or any(str(p).startswith(str(lang_dir.resolve())) for p in only)
+    setup_errors = course_setup_errors(lang_dir) if touched else []
+    if setup_errors:
+        return 0, len(setup_errors), setup_errors
 
     schemas = load_schemas(lang_dir)
     skill_registry, alias_map, kind_map = load_skill_registry(lang_dir)

@@ -20,6 +20,12 @@ read them before generating content. In short:
 before committing a unit, not only at push time, so a missing tag is caught
 before a whole unit has been written without it.
 
+**Starting a new language** (Polish, Czech, Slovak, French, German, …):
+follow AGENTS.md § "Adding a new course" *before* writing content. The new
+course copies the reference schemas, gets its own `skill-registry.json`,
+and is held to exactly the same metadata rules. The validator fails a
+course folder that has content but no schemas or tag registry.
+
 ## Keep ROADMAP.md current
 
 [ROADMAP.md](ROADMAP.md) is the durable record of what's shipped and what's

@@ -432,7 +432,7 @@ def from_backfill(backfill_dir):
 
 
 def main():
-    langs = sys.argv[1:] or ["es-latam", "es-es", "hu"]
+    langs = sys.argv[1:] or sorted(p.name for p in Path("content").iterdir() if p.is_dir())  # every course folder
 
     for lang in langs:
         grammar_dir = Path(f"content/{lang}/grammar")

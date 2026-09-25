@@ -129,7 +129,7 @@ def resolve_titles(lang, by_skill):
 def main():
     args = [a for a in sys.argv[1:] if a != "--strict"]
     strict = "--strict" in sys.argv[1:]
-    langs = args or ["es-latam", "es-es", "hu"]
+    langs = args or sorted(p.name for p in Path("content").iterdir() if p.is_dir())  # every course folder, so a new language is indexed without editing this list
     any_failures = False
 
     for lang in langs:

@@ -25,7 +25,8 @@ if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
 ROOT = Path(__file__).resolve().parent.parent
-COURSES = ["es-es", "es-latam", "hu"]
+# Every course folder, so a new language is audited without editing this list.
+COURSES = sorted(p.name for p in (ROOT / "content").iterdir() if p.is_dir())
 ALLOWED_CATEGORIES = {"vocabulary", "grammar", "reading", "dialogue", "writing", "listening"}
 SKIP_STEM_MARKERS = {"es-es": "-ccse-"}
 
@@ -120,7 +121,7 @@ def audit_course(course, show_files=False):
 
 def main():
     parser = argparse.ArgumentParser(description="Audit exercise metadata across courses.")
-    parser.add_argument("courses", nargs="*", default=COURSES, help="Courses to audit (default: es-es es-latam hu)")
+    parser.add_argument("courses", nargs="*", default=COURSES, help="Courses to audit (default: every folder under content/)")
     parser.add_argument("--files", "--show-files", dest="show_files", action="store_true", help="Print files that fail checks")
     args = parser.parse_args()
 
