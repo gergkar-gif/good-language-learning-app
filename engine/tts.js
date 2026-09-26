@@ -36,6 +36,11 @@ const ParlourTTS = (function () {
         if (audioCtx) return audioCtx;
         const Ctx = (typeof window !== 'undefined') && (window.AudioContext || window.webkitAudioContext);
         if (!Ctx) return null;
+        // iOS mutes Web Audio under the ring/silent switch (unlike <audio>);
+        // declaring this as media playback opts out of that (Safari 16.4+).
+        if (typeof navigator !== 'undefined' && navigator.audioSession) {
+            try { navigator.audioSession.type = 'playback'; } catch {}
+        }
         try {
             audioCtx = new Ctx();
         } catch {
