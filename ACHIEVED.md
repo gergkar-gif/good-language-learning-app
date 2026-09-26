@@ -9,6 +9,9 @@ needs re-reading before starting new work; it's reference only.
 
 ## Completed queue items
 
+102. ~~**Confirm TTS plays on iOS after the silent-switch fix (added 2026-09-26).**~~ — **Done 2026-09-26.**
+    Since `b6480096` (2026-09-25) `ParlourTTS` plays through Web Audio buffers instead of `<audio>`. iOS mutes Web Audio under the ring/silent switch, and Safari throws no error, so `speak()` "succeeded" silently and never fell back to device speech: no TTS on iPhone in lessons or stories, while desktop was fine. Fix: `getAudioCtx()` in `engine/tts.js` sets `navigator.audioSession.type = 'playback'` before creating the context. Confirmed working on the user's iPhone 2026-09-26. The Audio Session API needs iOS 16.4+, so on older iOS the path is still muted. If that matters, skip Web Audio on iOS when `navigator.audioSession` is missing and let `speak()` use its `<audio>` fallback.
+
 100. ~~**Split catch-all "junk-drawer" grammar skills and add skill-size/alias checks (added 2026-09-25).**~~ — **Done 2026-09-25.**
     The consolidation pass in item 99 left several oversized catch-all skills where a substring/fallback matcher folded unrelated lessons, review tags, and lexical tags into default buckets (plus a `_comment` string from `verb-tense-skills.json` folded into `subjuntivo-morfologia.aliases`).
     - **Preventative Validator & Index Checks:** Added a skill-size sanity check to `scripts/build_grammar_index.py` that warns whenever a grammar skill exceeds `150` grammar exercises or `25` aliases in `skill-registry.json` (`0` warnings across all three courses after split), and extended `validate_grammar_titles()` in `scripts/validate-content.py` to enforce the `^[a-z0-9]+(-[a-z0-9]+)*$` slug format on every canonical skill and alias in `skill-registry.json` (removing the `_comment` string from `subjuntivo-morfologia.aliases` in `es-es` and `es-latam`).
