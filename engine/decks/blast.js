@@ -595,13 +595,17 @@ const DeckBlast = (function () {
         return baseR;
     }
 
-    function _fillTargetField() {
+    // `ensureTarget` false skips step 1: right after a hit the current
+    // target is still the word just blasted, and putting it back would
+    // refill the field with it — in Time Attack, where nothing ever leaves
+    // the screen, that locked the game onto the same few words.
+    function _fillTargetField(ensureTarget = true) {
         if (!_currentTargetWord || !_words0.length) return;
 
         const maxTargets = _getMaxTargets();
 
         // 1. Ensure the correct target word is on screen
-        if (!_isWordOnScreen(_currentTargetWord.uid)) {
+        if (ensureTarget && !_isWordOnScreen(_currentTargetWord.uid)) {
             const newTarget = _createTarget(_currentTargetWord, true);
             if (newTarget) _activeTargets.push(newTarget);
         }
@@ -815,7 +819,7 @@ const DeckBlast = (function () {
             }
 
             // 1. Refill empty lane slots first so newcomers are at the top
-            _fillTargetField();
+            _fillTargetField(false);
             // 2. Pick next prompt from seasoned meteors already mid-screen
             _advanceToNextTarget(blastedUid);
             // 3. Ensure chosen target is present on screen
