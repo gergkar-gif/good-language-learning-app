@@ -1,6 +1,6 @@
 # Parlour CEFR Curriculum Roadmap
 
-**Status**: Phases 1 through 8 **COMPLETED** ✅  
+**Status**: Phases 1 through 14 **COMPLETED** ✅  
 **Remaining Phases**: Strategic & Product Ideas scheduled as **TO-BE-DONE LATER** ⏳
 
 ---
@@ -229,6 +229,63 @@ that's now just a JSON append rather than a `build-manifest.py` edit.
 | **34** | **Slang, Register Shifting & Living Language** (*Szleng, regiszterváltás és az élő nyelv*)<br>_Topic_: Colloquialisms, generational slang, code-switching across registers, and humor | Colloquial ellipsis, expressive reduplication & twin-words (ikerítő szavak: csihi-puhi, ímmel-ámmal, kire-mire, lim-lom), and register conversion | **Rejtő Jenő (P. Howard)**: *Piszkos Fred, a kapitány (1940)* — "Fülig Jimmy naplója és a pesti argó" (`b2-34-piszkosfred.json`) | **Beats, Festivals & Living Slang: Youth Culture Since the 1960s** (`b2-ifjusagikultura`)<br>How each postwar Hungarian generation forged its own cultural space and language: the 1960s–70s Beat and Rock explosion (Illés, Omega, Locomotiv GT), the 1970s urban Táncház folk-revival subculture, 1980s underground art bands, the founding of Sziget Festival (1993), and how digital slang is reshaping spoken Hungarian today.<br>_Serialized Story_: *Az Illés-klubtól a Szigetig: Nemzedékek és nyelvi divatok* | Expressive twin-words (ikerítő szavak), colloquial ellipsis, and register shifting between informal youth speech and standard prose |
 | **35** | **Technology, Futurism & Human Agency** (*Technológia, jövőkutatás és emberi cselekvőképesség*)<br>_Topic_: AI, automation, bioethics, digital sovereignty, and the human condition | Speculative & counterfactual multi-clause architectures (ha ...-na/-ne, akkor sem ...-hatna/-hetne; amennyiben ... válna, úgy ...) | **Karinthy Frigyes**: *Utazás Faremidóba (1916)* — "A gépek szigete: Utazás Faremidóba" (`b2-35-faremido.json`) | **Hungary in the 21st-Century Knowledge Economy** (`b2-tudomanyjovo`)<br>Contemporary science and technology in Hungary: the ELI-ALPS laser research center in Szeged (Gérard Mourou & Ferenc Krausz, 2023 Nobel Prize in Attosecond Physics), biotechnology, autonomous vehicle engineering, renewable energy transition, and ethical debates around AI for medium-sized languages.<br>_Serialized Story_: *Attoszekundumok és mesterséges intelligencia: A jövő műhelyei* | Speculative & counterfactual multi-clause conditionals (amennyiben... válna; ha ...-na/-ne, akkor sem ...-hatna/-hetne) |
 | **36** | **Mastery & Voice: Upper-Intermediate Synthesis** (*Nyelvi mesterség és saját hang: B2 szintézis*)<br>_Topic_: Full B2 synthesis: integrating narrative elegance, analytical precision, and cultural fluency | Comprehensive synthesis of B2 information structure, participial chains, causatives, modality, and discourse cohesion | **Kosztolányi Dezső**: *Esti Kornél kalandjai (1933)* — "Esti Kornél és a bolgár kalauz: A nyelv csodája" (`b2-36-bolgarkalauz.json`) | **Synthesis: What It Means to Speak and Understand Hungarian Today** (`b2-magyaridentitas`)<br>Capstone reflection on the Hungarian cultural universe: how an isolated Finno-Ugric language in the heart of Europe absorbed Turkic, Slavic, Latin, German, and modern global influences while keeping its unmistakable logic, humor, poetic density, and historical self-awareness.<br>_Serialized Story_: *Szigetnyelv Európa szívében: A magyar gondolkodás tükre* | Full B2 synthesis: integrating focus-comment architecture, participial left-branching modifiers, epistemic nuance, and stylistic versatility |
+
+---
+
+## ✅ Phase 10: Spanish A2 Core Additions — Units 30 to 33 [DONE 2026-09-27]
+
+- **Rationale & Scope**: Resolves high-priority CEFR A2 gaps identified in the Instituto Cervantes PCIC audit:
+  - **Unit 30 (`a2-porpara`)**: Prepositions in Action: Por vs. Para (destination, purpose, cause, recipient, duration, deadlines, exchanges).
+  - **Unit 31 (`a2-indefinidosnegacion`)**: Indefinites & Double Negation (alguien/nadie, algo/nada, algún/ningún, apocope, tampoco, nunca/jamás).
+  - **Unit 32 (`a2-perifrasisduracion`)**: Life in Duration & Aspectual Periphrases (acabar de + inf, llevar + tiempo + gerundio, llevar + tiempo + sin + inf, ponerse a + inf, al + inf).
+  - **Unit 33 (`a2-vosotrospeninsular`)**: Speaking to the Group: Vosotros in Spain (Peninsular Spanish present indicative, affirmative imperative `-ad/-ed/-id` & `-aos/-eos/-íos`, pretérito perfecto `habéis`, pretérito indefinido `-asteis/-isteis`, clitic `os`, possessive `vuestro`, and sociolinguistic register vs. ustedes).
+- **Deliverables**:
+  - 23 new lessons, 23 grammar explanations, 20 vocabulary modules, 246 schema-validated exercises, 4 original stories (`content/es-es/stories/original/a2/`).
+  - Units 30–32 generated for both `content/es-es` and `content/es-latam`; Unit 33 tailored exclusively for the Peninsular track (`content/es-es`).
+  - Clean schema validation (`python scripts/validate-content.py --changed` passing 0 errors).
+
+---
+
+## ✅ Phase 11: Spanish B1 Core Missing Grammar — Units 37 to 40 [DONE 2026-09-27]
+
+- **Rationale & Scope**: Completes the core B1 grammatical inventory against the Instituto Cervantes Plan Curricular:
+  - **Unit 37 (`b1-37`)**: The Past in the Mind: Pretérito Perfecto de Subjuntivo (*haya hablado / vivido* for feelings, completed doubts, and future anteriority *cuando haya llegado*).
+  - **Unit 38 (`b1-38`)**: Time & Perspective: Sequence of Tenses & Reported Speech (*correlación temporal del subjuntivo*, past reporting of commands *me dijo que fuera*, and tense backshift).
+  - **Unit 39 (`b1-39`)**: The Nuances of Change: Spanish Verbs of Becoming (*ponerse, quedarse, volverse, hacerse, convertirse en, llegar a ser*).
+  - **Unit 40 (`b1-40`)**: Advanced Connectors & Prepositional Regimes (*soñar con, pensar en, contar con, depender de*, contrastive *pero* vs. *sino* vs. *sino que*, abstract & emphatic neuter *lo*).
+- **Deliverables**:
+  - 24 new lessons, 24 grammar modules, 20 vocabulary modules, 264 schema-validated exercises across `content/es-es` and `content/es-latam`.
+  - Wired into `curriculum/units/b1.json` under `"track": "core"`, seamlessly linking into existing adapted literary classics (`Sherlock Holmes`, `Alicia`, `El retrato`, `Cenicienta`).
+
+---
+
+## ✅ Phase 12: Peninsular Spanish Track Vosotros & Lexical Authentic Alignment [DONE 2026-09-27]
+
+- **Rationale & Scope**: Ensures the Peninsular Spanish track (`content/es-es`) maintains authentic European Spanish norms.
+- **Implementations**:
+  - Dedicated active mastery unit for *vosotros* in A2 (Unit 33) and systemic incorporation in B1 exercises (*habláis, habéis hecho, hicisteis, sentaos*).
+  - Authentic Spain lexical variants integrated throughout dialogues, reading passages, and vocabulary: *coche, ordenador, móvil, piso, zumo, camarero, chavales, colegas, pandilla, quedada, tapeo, caña, chulo*.
+
+---
+
+## ✅ Phase 13: Full Build Pipeline & Index Regeneration [DONE 2026-09-27]
+
+- **Rationale & Scope**: Synchronizes all generated artifacts, search indexes, and manifest metadata:
+  - `build-manifest.py`: Rebuilt curricula (810 lessons in 135 units in `es-es`, 816 lessons in 136 units in `es-latam`), decks (415 in `es-es`, 418 in `es-latam`), and story manifests.
+  - `build_grammar_index.py --strict`: Indexed 5,027 grammar exercises across 213 skills in `es-es`, 5,425 exercises across 234 skills in `es-latam`, and 7,782 exercises in Hungarian with zero errors.
+  - `build_translation_index.py`: Regenerated all bilingual topic and track translation indexes.
+  - `audit_exercise_metadata.py`: Verified 12,094 exercises in `es-es` and 12,113 exercises in `es-latam` with 0 missing teaches, 0 missing categories, 0 off-list categories, and 0 unregistered tags.
+
+---
+
+## ✅ Phase 14: Comprehensive Spanish B1 CEFR Assessment Test [DONE 2026-09-27]
+
+- **Rationale & Scope**: Provides an end-of-level evaluation instrument for B1 learners, aligning with DELE B1 and Instituto Cervantes standards.
+- **Deliverables**:
+  - `content/es-es/tests/b1-test.json` and `content/es-latam/tests/b1-test.json`.
+  - **Part 1 (Language in Context)**: 28 multi-modal questions evaluating present and perfect subjunctive, sequence of tenses, reported commands, conditionals, verbs of becoming, prepositional verbs, sino/pero, neuter lo, and pragmatic sociolinguistic interaction.
+  - **Part 2 (Writing Task)**: Formal debate text (80–120 words) on remote work and work-life balance using subjunctive opinion formulas and contrastive connectors.
+  - **Part 3 (Speaking Task)**: Voice memo (45–60 seconds) proposing a solution to a teamwork conflict using hypothetical advice and future completion with subjunctive.
 
 ---
 
