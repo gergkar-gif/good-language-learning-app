@@ -175,6 +175,10 @@ LEVEL_TRACKS = {
             {"id": "core", "title": "Core Spanish"},
             {"id": "latam", "title": "Latin America"},
         ],
+        "b2": [
+            {"id": "core", "title": "Core Spanish"},
+            {"id": "latam", "title": "Latin America"},
+        ],
     },
     "es-es": {
         "b1": [
@@ -285,6 +289,13 @@ LANG_UNIT_TITLES = {
             "Change of State: The Translative Case",
             "Roles & Capacities: The Essive-Formal",
             "Sociocultural Pragmatics & Customs",
+            "The -lak/-lek Verbal Suffix",
+            "Possessions in the Plural: The Plural Possessed",
+            "Inflected Postpositions: Personal Relations",
+            "Inflected Infinitives & Necessity",
+            "Post Office, Mail & Parcel Lockers",
+            "Banking, Payments & ATM Services",
+            "Pharmacy, Medication & Medical Triage",
         ],
     },
 }
@@ -694,12 +705,45 @@ def _apply_story_unit_families(stories):
                 break
 
 
+def _vocab_unit_index(lang, curriculum):
+    """Map vocabulary references and lesson stems -> unit dict
+    {id, title, label, level, track}, matching how _story_unit_index
+    resolves story refs to units."""
+    lesson_unit = _lesson_id_to_unit(curriculum)
+    ref_to_unit = {}
+    lang_path = BASE_LESSONS / lang
+    lessons_dir = lang_path / "lessons"
+    if not lessons_dir.exists():
+        return ref_to_unit
+
+    for level_dir in sorted(p for p in lessons_dir.iterdir() if p.is_dir()):
+        for f in sorted(level_dir.glob("*.json")):
+            if f.name in SKIP_FILENAMES or f.stat().st_size == 0:
+                continue
+            try:
+                data = json.loads(f.read_text(encoding="utf-8"))
+            except json.JSONDecodeError:
+                continue
+            unit = lesson_unit.get(data.get("id"))
+            if not unit:
+                continue
+            ref_to_unit[f.stem] = unit
+            for section in data.get("sections", []):
+                if section.get("type") == "vocabulary":
+                    ref = section.get("ref") or (section.get("content") or {}).get("ref")
+                    if ref:
+                        ref_to_unit[ref] = unit
+                        ref_to_unit[Path(ref).name] = unit
+                        ref_to_unit[Path(ref).stem.replace("-voc", "")] = unit
+    return ref_to_unit
+
+
 def build_decks(lang="es", curriculum=None):
     """Every deck the Decks tab can offer, built from content that already
     exists rather than maintained by hand.
 
     A deck is a named list of words, not a schedule. The same word turns up in
-    its lesson deck, a frequency band and a topic — scheduling it three times
+    its unit deck, a frequency band and a topic — scheduling it three times
     would mean reviewing it three times and would wreck the SM-2 interval, so
     the card store stays single and decks only select from it.
 
@@ -707,11 +751,11 @@ def build_decks(lang="es", curriculum=None):
     lemma, because a word that belongs to three decks should not be stored
     three times.
 
-    "Lesson" decks are grouped by unit, not by individual lesson file — a
-    single lesson's vocabulary (4-8 words) was too thin to be a useful review
-    deck on its own; a unit's (5-6 lessons pooled) lands close to the ~20
-    words a deck is meant to hold. Unit membership comes from the same
-    curriculum structure the Learn tab uses, not re-derived from filenames."""
+    "Lesson" (unit) decks are grouped by unit, pooling all the lesson vocabulary
+    across that unit — a single lesson's vocabulary (4-8 words) was too thin
+    to be a useful review deck on its own; a unit's (5-6 lessons pooled) lands
+    close to the ~20 words a deck is meant to hold. Unit membership comes from
+    the same curriculum structure the Learn tab uses, not re-derived from filenames."""
     base = BASE_LESSONS / lang
     vocab_dir = base / "vocabulary"
     if not vocab_dir.exists():
@@ -720,9 +764,25 @@ def build_decks(lang="es", curriculum=None):
     if curriculum is None:
         curriculum = build_curriculum(lang)
     lesson_to_unit = _lesson_id_to_unit(curriculum)
+    vocab_to_unit = _vocab_unit_index(lang, curriculum)
 
     words = {}          # lemma -> {en, pos}
     by_unit, unit_order, by_theme = {}, [], {}
+
+    # Seed unit buckets in curriculum order so the Decks tab mirrors the Learn order.
+    for level_id, level in curriculum.get("levels", {}).items():
+        for unit in level.get("units", []):
+            key = unit["id"]
+            if key not in by_unit:
+                by_unit[key] = {
+                    "name": unit["title"],
+                    "label": unit["label"],
+                    "level": level_id,
+                    "track": unit.get("track", "core"),
+                    "lemmas": [],
+                    "seen": set()
+                }
+                unit_order.append(key)
 
     def remember(lemma, translation, pos):
         if lemma not in words:
@@ -746,30 +806,30 @@ def build_decks(lang="es", curriculum=None):
                 continue
 
             lesson_key = data.get("lesson", f.stem.replace("-voc", ""))
-            lesson_id = "lesson." + lesson_key.replace("-", ".")
-            unit = lesson_to_unit.get(lesson_id)
+            rel_ref = f"vocabulary/{level_dir.name}/{f.name}"
+            unit = (vocab_to_unit.get(rel_ref) or
+                    vocab_to_unit.get(f.name) or
+                    vocab_to_unit.get(lesson_key) or
+                    vocab_to_unit.get(f.stem.replace("-voc", "")) or
+                    lesson_to_unit.get("lesson." + lesson_key.replace("-", ".")))
 
-            # A lesson whose unit can't be found (missing from the
-            # curriculum, e.g. a stray vocab file with no matching lesson)
-            # still gets a deck of its own rather than being silently
-            # dropped — same fallback shape, just scoped to that one lesson.
             if unit:
-                key, name, label, level, track = unit["id"], unit["title"], unit["label"], unit["level"], unit.get("track", "core")
-            else:
-                key = lesson_key
-                name = data.get("title", lesson_key)
-                label = lesson_key.split("-", 1)[-1]
-                level = level_dir.name.upper()
-                track = "citizenship" if (lang == "hu" and re.search(r"^[abc]\d-[a-z]+-", key)) else "core"
-
-            if key not in by_unit:
-                by_unit[key] = {"name": name, "label": label, "level": level, "track": track, "lemmas": [], "seen": set()}
-                unit_order.append(key)
-            bucket = by_unit[key]
-            for lemma in lemmas:
-                if lemma not in bucket["seen"]:
-                    bucket["seen"].add(lemma)
-                    bucket["lemmas"].append(lemma)
+                key = unit["id"]
+                if key not in by_unit:
+                    by_unit[key] = {
+                        "name": unit["title"],
+                        "label": unit["label"],
+                        "level": unit["level"],
+                        "track": unit.get("track", "core"),
+                        "lemmas": [],
+                        "seen": set()
+                    }
+                    unit_order.append(key)
+                bucket = by_unit[key]
+                for lemma in lemmas:
+                    if lemma not in bucket["seen"]:
+                        bucket["seen"].add(lemma)
+                        bucket["lemmas"].append(lemma)
 
             theme = data.get("theme")
             if theme:
@@ -778,6 +838,8 @@ def build_decks(lang="es", curriculum=None):
     lesson_decks = []
     for key in unit_order:
         bucket = by_unit[key]
+        if not bucket["lemmas"]:
+            continue
         lesson_decks.append({
             "id": "lesson:" + key,
             "kind": "lesson",

@@ -806,7 +806,8 @@
       "required": [
         "id",
         "type",
-        "sentence"
+        "sentence",
+        "english"
       ],
       "additionalProperties": false,
       "properties": {
@@ -829,6 +830,11 @@
           "examples": [
             "He viajado a Vietnam."
           ]
+        },
+        "english": {
+          "type": "string",
+          "minLength": 1,
+          "description": "What the spoken sentence means in English. Shown after the learner settles the answer."
         },
         "teaches": {
           "$ref": "#/definitions/baseFields/teaches"

@@ -1,0 +1,294 @@
+{
+  "lesson": "a2-207",
+  "exercises": [
+    {
+      "id": "a2-207-intro-1",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "question": "What is 'tértivevény' used for?",
+      "options": [
+        "Legal proof that the recipient personally received and signed for the letter.",
+        "A discount coupon for envelopes.",
+        "A stamp for postcards."
+      ],
+      "correct": 0,
+      "teaches": [
+        "public-service-interactions"
+      ],
+      "stage": "introduce"
+    },
+    {
+      "id": "a2-207-intro-2",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "question": "Where does the sender's address go on a Hungarian envelope?",
+      "options": [
+        "In the top-left corner (bal felső sarok)",
+        "In the bottom-right corner",
+        "On the back of the envelope only"
+      ],
+      "correct": 0,
+      "teaches": [
+        "public-service-interactions"
+      ],
+      "stage": "introduce"
+    },
+    {
+      "id": "a2-207-controlled-1",
+      "type": "fill-blank",
+      "category": "grammar",
+      "sentence": "Ezt a fontos szerződést ____ (as registered: ajánlottan) szeretném elküldeni.",
+      "answer": "ajánlottan",
+      "english": "I would like to send this important contract as registered mail.",
+      "teaches": [
+        "public-service-interactions"
+      ],
+      "stage": "controlled"
+    },
+    {
+      "id": "a2-207-controlled-2",
+      "type": "fill-blank",
+      "category": "grammar",
+      "sentence": "Kérem, a vonalon ____ (sign it: írja alá) a nyomtatványt!",
+      "answer": "írja alá",
+      "english": "Please sign the form on the line!",
+      "teaches": [
+        "public-service-interactions"
+      ],
+      "stage": "controlled"
+    },
+    {
+      "id": "a2-207-controlled-3",
+      "type": "matching",
+      "category": "vocabulary",
+      "pairs": [
+        [
+          "ajánlott levél",
+          "registered letter"
+        ],
+        [
+          "tértivevény",
+          "return receipt"
+        ],
+        [
+          "feladó",
+          "sender"
+        ],
+        [
+          "címzett",
+          "recipient"
+        ]
+      ],
+      "teaches": [
+        "a2-unit42-vocab"
+      ],
+      "stage": "controlled"
+    },
+    {
+      "id": "a2-207-controlled-4",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "question": "What does the postal clerk mean by 'Töltse ki a feladóvevényt'?",
+      "options": [
+        "Fill out the dispatch slip with sender and recipient details.",
+        "Pay the bill immediately.",
+        "Open the letter."
+      ],
+      "correct": 0,
+      "teaches": [
+        "public-service-interactions"
+      ],
+      "stage": "controlled"
+    },
+    {
+      "id": "a2-207-practice-1",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "tiles": [
+        "Kérem",
+        ",",
+        "írja",
+        "rá",
+        "a",
+        "pontos",
+        "irányítószámot",
+        "!"
+      ],
+      "solution": [
+        "Kérem",
+        ",",
+        "írja",
+        "rá",
+        "a",
+        "pontos",
+        "irányítószámot",
+        "!"
+      ],
+      "english": "Please write the exact postal code on it!",
+      "teaches": [
+        "public-service-interactions"
+      ],
+      "stage": "practice"
+    },
+    {
+      "id": "a2-207-practice-2",
+      "type": "fill-blank",
+      "category": "grammar",
+      "sentence": "A tértivevényes levél kézbesítésekor a címzettnek alá kell ____ (to sign: írnia) az átvételi elismervényt.",
+      "answer": "írnia",
+      "english": "Upon delivery of a return receipt letter, the recipient has to sign the delivery receipt.",
+      "teaches": [
+        "public-service-interactions"
+      ],
+      "stage": "practice"
+    },
+    {
+      "id": "a2-207-practice-3",
+      "type": "multiple-choice",
+      "category": "vocabulary",
+      "question": "What is the English meaning of 'irányítószám'?",
+      "options": [
+        "postal code / postcode",
+        "phone number",
+        "street address"
+      ],
+      "correct": 0,
+      "teaches": [
+        "a2-unit42-vocab"
+      ],
+      "stage": "practice"
+    },
+    {
+      "id": "a2-207-practice-4",
+      "type": "fill-blank",
+      "category": "grammar",
+      "sentence": "Kérlek, őrizd meg a ____ (the certificate of posting: feladóvevényt), hogy tudjuk követni a csomagot!",
+      "answer": "feladóvevényt",
+      "english": "Please keep the dispatch receipt so that we can track the parcel!",
+      "teaches": [
+        "public-service-interactions"
+      ],
+      "stage": "practice"
+    },
+    {
+      "id": "a2-207-dialogue-1",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        {
+          "speaker": "Ügyfél",
+          "text": "Hivatalos iratot küldök a bíróságnak. Milyen feladást javasol?"
+        },
+        {
+          "speaker": "Ügyintéző",
+          "text": "Mindenképpen az ____ feladást javaslom tértivevénnyel."
+        }
+      ],
+      "options": [
+        "ajánlott",
+        "egyszerű",
+        "utánvétes"
+      ],
+      "correct": 0,
+      "teaches": [
+        "public-service-interactions",
+        "a2-unit42-vocab"
+      ],
+      "stage": "dialogue"
+    },
+    {
+      "id": "a2-207-dialogue-2",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        {
+          "speaker": "Ügyintéző",
+          "text": "Itt a feladóvevény. Kérem, ____ a feladó nevét és címét!"
+        },
+        {
+          "speaker": "Ügyfél",
+          "text": "Rendben, mindjárt felírom a címemet."
+        }
+      ],
+      "options": [
+        "töltse ki",
+        "törölje le",
+        "adja el"
+      ],
+      "correct": 0,
+      "teaches": [
+        "public-service-interactions",
+        "a2-unit42-vocab"
+      ],
+      "stage": "dialogue"
+    },
+    {
+      "id": "a2-207-writing-1",
+      "type": "fill-blank",
+      "category": "writing",
+      "sentence": "A feladóvevény segítségével a Magyar Posta honlapján bármikor le tudom ____ (to track / check: követni) a küldemény utolsó helyzetét.",
+      "answer": "követni",
+      "english": "With the help of the dispatch receipt, I can track the latest status of the item on the Magyar Posta website anytime.",
+      "teaches": [
+        "public-service-interactions"
+      ],
+      "stage": "production"
+    },
+    {
+      "id": "a2-207-writing-2",
+      "type": "sentence-builder",
+      "category": "writing",
+      "tiles": [
+        "Őrizze",
+        "meg",
+        "a",
+        "feladóvevényt",
+        "a",
+        "kézbesítésig",
+        "!"
+      ],
+      "solution": [
+        "Őrizze",
+        "meg",
+        "a",
+        "feladóvevényt",
+        "a",
+        "kézbesítésig",
+        "!"
+      ],
+      "english": "Keep the dispatch receipt until delivery!",
+      "teaches": [
+        "public-service-interactions"
+      ],
+      "stage": "production"
+    },
+    {
+      "id": "a2-207-check-1",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "question": "What document proves you mailed an official letter on a specific calendar day?",
+      "options": [
+        "A lebélyegzett feladóvevény.",
+        "Egy üres boríték.",
+        "A villamosjegy."
+      ],
+      "correct": 0,
+      "teaches": [
+        "public-service-interactions"
+      ],
+      "stage": "check"
+    },
+    {
+      "id": "a2-207-check-2",
+      "type": "fill-blank",
+      "category": "grammar",
+      "sentence": "A címzett neve alá a pontos várost és az ____ (postcode: irányítószámot) kell írni.",
+      "answer": "irányítószámot",
+      "english": "Under the recipient's name, the exact town and postcode must be written.",
+      "teaches": [
+        "public-service-interactions"
+      ],
+      "stage": "check"
+    }
+  ]
+}

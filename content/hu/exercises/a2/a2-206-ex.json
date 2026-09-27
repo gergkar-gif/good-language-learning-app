@@ -1,0 +1,294 @@
+{
+  "lesson": "a2-206",
+  "exercises": [
+    {
+      "id": "a2-206-intro-1",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "question": "What must you do first upon entering a Hungarian post office?",
+      "options": [
+        "Sorszámot kell húzni a bejáratnál.",
+        "Azonnal az ablakhoz kell tolakodni.",
+        "Fel kell hívni az ügyfélszolgálatot."
+      ],
+      "correct": 0,
+      "teaches": [
+        "public-service-interactions"
+      ],
+      "stage": "introduce"
+    },
+    {
+      "id": "a2-206-intro-2",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "question": "How do you politely say 'I would like to post a letter'?",
+      "options": [
+        "Szeretnék feladni egy levelet.",
+        "Kell adnom egy levél.",
+        "Feladom levelet azonnal."
+      ],
+      "correct": 0,
+      "teaches": [
+        "public-service-interactions"
+      ],
+      "stage": "introduce"
+    },
+    {
+      "id": "a2-206-controlled-1",
+      "type": "fill-blank",
+      "category": "grammar",
+      "sentence": "Jó napot kívánok! ____ (I would like: Szeretnék) venni három darab bélyeget.",
+      "answer": "Szeretnék",
+      "english": "Good day! I would like to buy three stamps.",
+      "teaches": [
+        "public-service-interactions"
+      ],
+      "stage": "controlled"
+    },
+    {
+      "id": "a2-206-controlled-2",
+      "type": "fill-blank",
+      "category": "grammar",
+      "sentence": "Kérem, tegye a borítékot a ____ (on the scales: mérlegre)!",
+      "answer": "mérlegre",
+      "english": "Please put the envelope on the scales!",
+      "teaches": [
+        "public-service-interactions"
+      ],
+      "stage": "controlled"
+    },
+    {
+      "id": "a2-206-controlled-3",
+      "type": "matching",
+      "category": "vocabulary",
+      "pairs": [
+        [
+          "sorszám",
+          "queue ticket"
+        ],
+        [
+          "bélyeg",
+          "postage stamp"
+        ],
+        [
+          "boríték",
+          "envelope"
+        ],
+        [
+          "ablak",
+          "counter window"
+        ]
+      ],
+      "teaches": [
+        "a2-unit42-vocab"
+      ],
+      "stage": "controlled"
+    },
+    {
+      "id": "a2-206-controlled-4",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "question": "What does 'A 14-es ügyfelet várjuk a hármas ablakhoz' announce?",
+      "options": [
+        "Customer 14 is requested at counter window 3.",
+        "Customer 3 is requested at window 14.",
+        "Window 3 is closing now."
+      ],
+      "correct": 0,
+      "teaches": [
+        "public-service-interactions"
+      ],
+      "stage": "controlled"
+    },
+    {
+      "id": "a2-206-practice-1",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "tiles": [
+        "Húzzon",
+        "egy",
+        "sorszámot",
+        "a",
+        "bejáratnál",
+        "lévő",
+        "gépből",
+        "!"
+      ],
+      "solution": [
+        "Húzzon",
+        "egy",
+        "sorszámot",
+        "a",
+        "bejáratnál",
+        "lévő",
+        "gépből",
+        "!"
+      ],
+      "english": "Take a queue ticket from the machine at the entrance!",
+      "teaches": [
+        "public-service-interactions"
+      ],
+      "stage": "practice"
+    },
+    {
+      "id": "a2-206-practice-2",
+      "type": "fill-blank",
+      "category": "grammar",
+      "sentence": "Nem kell sokat várnunk, mindjárt sorra ____ (we get called / our turn comes: kerülünk).",
+      "answer": "kerülünk",
+      "english": "We don't need to wait a lot, our turn is coming right away.",
+      "teaches": [
+        "public-service-interactions"
+      ],
+      "stage": "practice"
+    },
+    {
+      "id": "a2-206-practice-3",
+      "type": "multiple-choice",
+      "category": "vocabulary",
+      "question": "What is the meaning of 'felbélyegzett boríték'?",
+      "options": [
+        "stamped envelope",
+        "empty package",
+        "registered document"
+      ],
+      "correct": 0,
+      "teaches": [
+        "a2-unit42-vocab"
+      ],
+      "stage": "practice"
+    },
+    {
+      "id": "a2-206-practice-4",
+      "type": "fill-blank",
+      "category": "grammar",
+      "sentence": "Mennyibe ____ (does it cost: kerül) egy képeslap feladása Spanyolországba?",
+      "answer": "kerül",
+      "english": "How much does it cost to send a postcard to Spain?",
+      "teaches": [
+        "public-service-interactions"
+      ],
+      "stage": "practice"
+    },
+    {
+      "id": "a2-206-dialogue-1",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        {
+          "speaker": "Ügyintéző",
+          "text": "Jó napot! Miben segíthetek?"
+        },
+        {
+          "speaker": "Ügyfél",
+          "text": "Jó napot! ____ feladni ezt a hivatalos levelet."
+        }
+      ],
+      "options": [
+        "Szeretnék",
+        "Muszáj vagyok",
+        "Kellhetek"
+      ],
+      "correct": 0,
+      "teaches": [
+        "public-service-interactions",
+        "a2-unit42-vocab"
+      ],
+      "stage": "dialogue"
+    },
+    {
+      "id": "a2-206-dialogue-2",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        {
+          "speaker": "Ügyintéző",
+          "text": "Készpénzzel vagy kártyával óhajt fizetni?"
+        },
+        {
+          "speaker": "Ügyfél",
+          "text": "Bankkártyával ____ fizetni, ha lehetséges."
+        }
+      ],
+      "options": [
+        "szeretnék",
+        "akarok",
+        "muszáj"
+      ],
+      "correct": 0,
+      "teaches": [
+        "public-service-interactions",
+        "a2-unit42-vocab"
+      ],
+      "stage": "dialogue"
+    },
+    {
+      "id": "a2-206-writing-1",
+      "type": "fill-blank",
+      "category": "writing",
+      "sentence": "A postahivatalban udvariasan megkérdeztem, hogy hol lehet sorszámot ____ (for me to pull/take: húznom).",
+      "answer": "húznom",
+      "english": "At the post office I politely asked where I could take a queue ticket.",
+      "teaches": [
+        "public-service-interactions"
+      ],
+      "stage": "production"
+    },
+    {
+      "id": "a2-206-writing-2",
+      "type": "sentence-builder",
+      "category": "writing",
+      "tiles": [
+        "Kérem",
+        ",",
+        "fáradjon",
+        "a",
+        "négyes",
+        "ablakhoz",
+        "!"
+      ],
+      "solution": [
+        "Kérem",
+        ",",
+        "fáradjon",
+        "a",
+        "négyes",
+        "ablakhoz",
+        "!"
+      ],
+      "english": "Please step to counter window four!",
+      "teaches": [
+        "public-service-interactions"
+      ],
+      "stage": "production"
+    },
+    {
+      "id": "a2-206-check-1",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "question": "Which phrase is the standard polite Hungarian formula at a service counter?",
+      "options": [
+        "Miben segíthetek?",
+        "Mit akarsz?",
+        "Mit csinálsz itt?"
+      ],
+      "correct": 0,
+      "teaches": [
+        "public-service-interactions"
+      ],
+      "stage": "check"
+    },
+    {
+      "id": "a2-206-check-2",
+      "type": "fill-blank",
+      "category": "grammar",
+      "sentence": "Kérjük, várja meg, amíg a sorszáma megjelenik a ____ (on the display: kijelzőn)!",
+      "answer": "kijelzőn",
+      "english": "Please wait until your number appears on the display!",
+      "teaches": [
+        "public-service-interactions"
+      ],
+      "stage": "check"
+    }
+  ]
+}

@@ -1,0 +1,300 @@
+{
+  "lesson": "a2-217",
+  "exercises": [
+    {
+      "id": "a2-217-intro-1",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "question": "What document do you present to collect an electronic prescription in Hungary?",
+      "options": [
+        "A TAJ-kártyát és a személyi igazolványt.",
+        "Egy boltos blokkot.",
+        "A bankkártyát."
+      ],
+      "correct": 0,
+      "teaches": [
+        "medical-triage-instructions"
+      ],
+      "stage": "introduce"
+    },
+    {
+      "id": "a2-217-intro-2",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "question": "What does 'vényköteles gyógyszer' mean?",
+      "options": [
+        "Medication that can only be dispensed with an official doctor's prescription.",
+        "Medication that is free of charge.",
+        "Herbal tea."
+      ],
+      "correct": 0,
+      "teaches": [
+        "medical-triage-instructions"
+      ],
+      "stage": "introduce"
+    },
+    {
+      "id": "a2-217-controlled-1",
+      "type": "fill-blank",
+      "category": "grammar",
+      "sentence": "A háziorvosom elektronikus e-receptet írt fel a ____ (into the cloud: felhőbe).",
+      "answer": "felhőbe",
+      "english": "My GP wrote an electronic e-prescription into the cloud.",
+      "teaches": [
+        "medical-triage-instructions"
+      ],
+      "stage": "controlled"
+    },
+    {
+      "id": "a2-217-controlled-2",
+      "type": "fill-blank",
+      "category": "grammar",
+      "sentence": "A gyógyszerek kiváltásához meg kell adnod a kilencjegyű ____ (social security number: TAJ-számodat).",
+      "answer": "TAJ-számodat",
+      "english": "To collect the medications you must provide your nine-digit TAJ number.",
+      "teaches": [
+        "medical-triage-instructions"
+      ],
+      "stage": "controlled"
+    },
+    {
+      "id": "a2-217-controlled-3",
+      "type": "matching",
+      "category": "vocabulary",
+      "pairs": [
+        [
+          "vényköteles",
+          "prescription-only"
+        ],
+        [
+          "vény nélküli",
+          "over-the-counter"
+        ],
+        [
+          "kivált",
+          "to collect prescription"
+        ],
+        [
+          "hatóanyag",
+          "active ingredient"
+        ]
+      ],
+      "teaches": [
+        "a2-unit44-vocab"
+      ],
+      "stage": "controlled"
+    },
+    {
+      "id": "a2-217-controlled-4",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "question": "Can you buy antibiotics in Hungary without a prescription?",
+      "options": [
+        "Nem, az antibiotikumok szigorúan vénykötelesek.",
+        "Igen, bármelyik benzinkúton kaphatók.",
+        "Csak este nyolc után."
+      ],
+      "correct": 0,
+      "teaches": [
+        "medical-triage-instructions"
+      ],
+      "stage": "controlled"
+    },
+    {
+      "id": "a2-217-practice-1",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "tiles": [
+        "Szeretném",
+        "kiváltani",
+        "a",
+        "felhőbe",
+        "felírt",
+        "gyógyszereimet",
+        "."
+      ],
+      "solution": [
+        "Szeretném",
+        "kiváltani",
+        "a",
+        "felhőbe",
+        "felírt",
+        "gyógyszereimet",
+        "."
+      ],
+      "english": "I would like to collect my medications prescribed into the cloud.",
+      "teaches": [
+        "medical-triage-instructions"
+      ],
+      "stage": "practice"
+    },
+    {
+      "id": "a2-217-practice-2",
+      "type": "fill-blank",
+      "category": "grammar",
+      "sentence": "A gyógyszerész a számítógépes rendszerben azonnal látta a nekem felírt ____ (prescriptions: recepteket).",
+      "answer": "recepteket",
+      "english": "The pharmacist immediately saw the prescriptions written for me in the computer system.",
+      "teaches": [
+        "medical-triage-instructions"
+      ],
+      "stage": "practice"
+    },
+    {
+      "id": "a2-217-practice-3",
+      "type": "multiple-choice",
+      "category": "vocabulary",
+      "question": "What is the English meaning of 'e-recept kiváltása'?",
+      "options": [
+        "dispensing an electronic prescription",
+        "booking an appointment",
+        "cancelling a doctor's visit"
+      ],
+      "correct": 0,
+      "teaches": [
+        "a2-unit44-vocab"
+      ],
+      "stage": "practice"
+    },
+    {
+      "id": "a2-217-practice-4",
+      "type": "fill-blank",
+      "category": "grammar",
+      "sentence": "Ez a gyógyszer ugyanazt a ható____ (ingredient: anyagot) tartalmazza, de olcsóbb a hazai gyártású változata.",
+      "answer": "anyagot",
+      "english": "This medicine contains the same active ingredient, but the domestically produced version is cheaper.",
+      "teaches": [
+        "medical-triage-instructions"
+      ],
+      "stage": "practice"
+    },
+    {
+      "id": "a2-217-dialogue-1",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        {
+          "speaker": "Gyógyszerész",
+          "text": "Jó napot! Papír receptet hozott, vagy felhőben van?"
+        },
+        {
+          "speaker": "Beteg",
+          "text": "Az orvosom a ____ írta fel, itt van a TAJ-kártyám."
+        }
+      ],
+      "options": [
+        "felhőbe",
+        "postára",
+        "bankba"
+      ],
+      "correct": 0,
+      "teaches": [
+        "medical-triage-instructions",
+        "a2-unit44-vocab"
+      ],
+      "stage": "dialogue"
+    },
+    {
+      "id": "a2-217-dialogue-2",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "prompt": [
+        {
+          "speaker": "Gyógyszerész",
+          "text": "Megtaláltam az e-receptet. Három doboz antibiotikum van felírva."
+        },
+        {
+          "speaker": "Beteg",
+          "text": "Köszönöm, mindet szeretném ____ most."
+        }
+      ],
+      "options": [
+        "kiváltani",
+        "letiltani",
+        "felbélyegezni"
+      ],
+      "correct": 0,
+      "teaches": [
+        "medical-triage-instructions",
+        "a2-unit44-vocab"
+      ],
+      "stage": "dialogue"
+    },
+    {
+      "id": "a2-217-writing-1",
+      "type": "fill-blank",
+      "category": "writing",
+      "sentence": "Nem kellett orvosi papírokkal bajlódnom, mert a modern e-recept rendszer segítségével a TAJ-számom alapján azonnal megkaptam a ____ (medication: gyógyszert).",
+      "answer": "gyógyszert",
+      "english": "I didn't have to bother with medical papers because with the modern e-prescription system based on my TAJ number I immediately received the medication.",
+      "teaches": [
+        "medical-triage-instructions"
+      ],
+      "stage": "production"
+    },
+    {
+      "id": "a2-217-writing-2",
+      "type": "sentence-builder",
+      "category": "writing",
+      "tiles": [
+        "Kérem",
+        ",",
+        "készítse",
+        "elő",
+        "a",
+        "TAJ-kártyáját",
+        "és",
+        "a",
+        "személyi",
+        "igazolványát",
+        "!"
+      ],
+      "solution": [
+        "Kérem",
+        ",",
+        "készítse",
+        "elő",
+        "a",
+        "TAJ-kártyáját",
+        "és",
+        "a",
+        "személyi",
+        "igazolványát",
+        "!"
+      ],
+      "english": "Please prepare your TAJ card and your identity card!",
+      "teaches": [
+        "medical-triage-instructions"
+      ],
+      "stage": "production"
+    },
+    {
+      "id": "a2-217-check-1",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "question": "Can another person collect your e-prescription from the pharmacy for you?",
+      "options": [
+        "Igen, ha megadja az Ön TAJ-számát és bemutatja a saját személyi igazolványát.",
+        "Nem, csak a beteg személyesen mehet.",
+        "Csak bírói engedéllyel."
+      ],
+      "correct": 0,
+      "teaches": [
+        "medical-triage-instructions"
+      ],
+      "stage": "check"
+    },
+    {
+      "id": "a2-217-check-2",
+      "type": "fill-blank",
+      "category": "grammar",
+      "sentence": "A C-vitamin és a torokfertőtlenítő tabletta vény ____ (without: nélkül) is megvásárolható.",
+      "answer": "nélkül",
+      "english": "Vitamin C and throat disinfectant tablets can be bought without a prescription too.",
+      "teaches": [
+        "medical-triage-instructions"
+      ],
+      "stage": "check"
+    }
+  ]
+}

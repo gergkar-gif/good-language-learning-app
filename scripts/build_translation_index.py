@@ -108,6 +108,7 @@ SLUG_TOPIC_LABELS = {
     "nuevasrepublicas": "New Republics",
     "populismo": "Populism",
     "precolombina": "Pre-Columbian Era",
+    "mexicocentro": "Mexico I: Central Mexico & the Valley of Anáhuac",
     "razaclasepoder": "Race, Class & Power",
     "represionpolitica": "Political Repression",
     "revolucion": "Revolution",
@@ -324,6 +325,12 @@ def _track_for(stem, level, lang):
     if level == "B2" and lang == "hu":
         if _SLUG_RE.match(stem):
             return "culture"
+        if _UNIT_RE.match(stem) or _LESSON_ACROSS_LEVEL_RE.match(stem):
+            return "core"
+        return None
+    if level == "B2" and lang == "es-latam":
+        if _SLUG_RE.match(stem):
+            return "latam"
         if _UNIT_RE.match(stem) or _LESSON_ACROSS_LEVEL_RE.match(stem):
             return "core"
         return None
