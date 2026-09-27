@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "test.schema.json",
   "title": "Level test",
-  "description": "The check at the end of a level. Multi-modal CEFR assessment covering Language in Context (cloze, text-input, communicative choice) and optional written/spoken productive tasks.",
+  "description": "The check at the end of a level. Multi-modal CEFR assessment covering Language in Context (cloze, text-input, communicative choice), Reading Comprehension, and optional written/spoken productive tasks.",
   "type": "object",
   "required": [
     "id",
@@ -143,9 +143,100 @@
           }
         }
       }
+    },
+    "readingSection": {
+      "type": "object",
+      "description": "An unseen passage with CEFR-style comprehension questions (reading-mc, true-false-not-stated, gapped-text). Questions are in the target language at all levels. No teaches tag — reading questions test passage understanding, not a reusable grammar skill.",
+      "required": ["id", "title", "passage", "questions"],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "passage": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source": {
+          "type": "string",
+          "description": "Optional attribution line shown below the passage."
+        },
+        "questions": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 8,
+          "items": {
+            "$ref": "#/definitions/readingQuestion"
+          }
+        }
+      }
     }
   },
   "definitions": {
+    "readingQuestion": {
+      "oneOf": [
+        {
+          "title": "reading-mc",
+          "description": "Standard multiple-choice question about the passage. Options shuffled at runtime.",
+          "type": "object",
+          "required": ["id", "type", "question", "options", "correct"],
+          "additionalProperties": false,
+          "properties": {
+            "id": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+            "type": { "const": "reading-mc" },
+            "question": { "type": "string", "minLength": 1 },
+            "options": {
+              "type": "array",
+              "minItems": 3,
+              "maxItems": 4,
+              "items": { "type": "string", "minLength": 1 }
+            },
+            "correct": { "type": "integer", "minimum": 0 }
+          }
+        },
+        {
+          "title": "true-false-not-stated",
+          "description": "CEFR standard TFNS: learner reads a statement about the passage and picks True (0) / False (1) / Not stated in the text (2). Options are always in this fixed order — do not shuffle.",
+          "type": "object",
+          "required": ["id", "type", "statement", "correct"],
+          "additionalProperties": false,
+          "properties": {
+            "id": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+            "type": { "const": "true-false-not-stated" },
+            "statement": { "type": "string", "minLength": 1 },
+            "correct": { "type": "integer", "enum": [0, 1, 2] }
+          }
+        },
+        {
+          "title": "gapped-text",
+          "description": "A sentence has been removed from the passage and must be selected from options. textWithGap must contain exactly one [___] placeholder marking where the removed sentence goes. Options shuffled at runtime.",
+          "type": "object",
+          "required": ["id", "type", "textWithGap", "options", "correct"],
+          "additionalProperties": false,
+          "properties": {
+            "id": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+            "type": { "const": "gapped-text" },
+            "textWithGap": {
+              "type": "string",
+              "pattern": "\\[___\\]",
+              "description": "The passage excerpt with exactly one [___] where the removed sentence belongs."
+            },
+            "options": {
+              "type": "array",
+              "minItems": 3,
+              "maxItems": 4,
+              "items": { "type": "string", "minLength": 1 }
+            },
+            "correct": { "type": "integer", "minimum": 0 }
+          }
+        }
+      ]
+    },
     "question": {
       "oneOf": [
         {

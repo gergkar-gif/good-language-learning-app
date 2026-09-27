@@ -33,13 +33,17 @@ Reading comprehension is one of the four skills every CEFR exam (DELE, SIELE, th
 - **Lessons** — a "Reading" exercise group after the lesson's story step: ES A1 16/27 story lessons, A2 27/27, B1 core 36 (297 exercises, nearly all `multiple-choice`; shared between es-latam and es-es). HU has these on only 12 B1 lessons, and none at A1/A2.
 - **Level tests / diagnostic** (`content/<lang>/tests/`) — grammar and vocabulary sentence items plus writing and speaking tasks. **No reading section at all.** So nothing in the app actually measures reading at a CEFR level.
 
-**Proposed:**
-1. **A reading section in every level test** (A1/A2/B1 tests), plus a reading tier in the diagnostic, in exam-style formats: several short texts matched to people/situations, multiple choice on one longer text, a gapped text (sentences removed), and true/false/not-stated. This is the gap that most undermines the "you are B1" claim.
-2. **A standard question set on every Library reading**: 3–5 questions per reading covering gist, detail, inference and vocabulary-in-context. Fill the gaps listed above (ES A2, ES B1 originals/classics, es-es, HU A1/A2), and bring the ES B1 track readings from 1 to 3–5. Questions in English at A1, in the target language from A2 onward (exam convention).
-3. **Score it and remember it**: save each comprehension result, show it on the card ("Read ✓ · 4/5"), and feed a reading-skill score into the learner model/Journey alongside grammar and vocabulary.
-4. **New question renderers** (one function in `engine/lessons.js` + one schema branch each, per the rule below): true/false/not-stated, match headings to paragraphs, gapped text (put the removed sentence back), order the paragraphs, match people to texts. Reusable in lessons, the Library and tests.
-5. **A Reading Driller in Workshop**: timed practice in exam formats on unseen texts at your level, sharing the Count/Timed shell with the other drillers.
-6. **Cross-link with Listening**: the same question renderers should serve the long-form listening modules below, so both comprehension skills are built once.
+**Reading section in level tests & diagnostic — built (2026-09-27):**
+- New question types added to `engine/leveltest.js` & `engine/diagnostic.js`: `reading-mc`, `true-false-not-stated`, `gapped-text`
+- `readingSection` schema added to `test.schema.json` (all 3 courses)
+- Reading sections authored and validated for 9 level test files: A1/A2/B1 × es-es/es-latam/hu
+- Diagnostic placement test (`engine/diagnostic.js`) now features an adaptive reading comprehension section on every tier (A1, A2, B1 × es-es, es-latam, hu), evaluated seamlessly with core questions and surfaced in tier debrief
+- Scores saved to `Lang.key('readingScores')` across both level tests and diagnostic placement
+- **Library Comprehension Scoring (Phase 5):** `engine/reader.js` and `engine/library.js` now score and persist reading comprehension checks to `Lang.key('storyComprehension')`, surface completion feedback upon answering, and display a `Quiz N/M ✓` badge on both home shelves and saved cards
+
+**Future items:**
+1. Backfilling comprehension questions across remaining Library readings (A2/B1 classics & originals).
+2. Connecting reading skills directly into the Can-Do Journey passport.
 
 
 ### Artifacts — real-world texts you're now ready for

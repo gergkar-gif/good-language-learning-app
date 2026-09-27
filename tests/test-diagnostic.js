@@ -45,9 +45,25 @@ langs.forEach(lang => {
             assert(Array.isArray(q.altAnswers), `${lang} ${tier.level} Q${i+1}: altAnswers required`);
             assert(q.sentence.includes('_____'), `${lang} ${tier.level} Q${i+1}: sentence must contain blank '_____'`);
         }
+
+        // Tier Reading Section
+        assert(tier.readingSection, `${lang} ${tier.level}: readingSection object required`);
+        assert(typeof tier.readingSection.passage === 'string' && tier.readingSection.passage.length > 20, `${lang} ${tier.level}: reading passage required`);
+        assert(Array.isArray(tier.readingSection.questions) && tier.readingSection.questions.length >= 2, `${lang} ${tier.level}: reading questions required`);
+        tier.readingSection.questions.forEach((rq, rqIdx) => {
+            assert(['reading-mc', 'true-false-not-stated'].includes(rq.type), `${lang} ${tier.level} RQ${rqIdx+1}: valid question type`);
+            assert(typeof rq.correct === 'number', `${lang} ${tier.level} RQ${rqIdx+1}: correct index required`);
+            if (rq.type === 'reading-mc') {
+                assert(typeof rq.question === 'string' && rq.question.length > 0, `${lang} ${tier.level} RQ${rqIdx+1}: question string required`);
+                assert(Array.isArray(rq.options) && rq.options.length >= 3, `${lang} ${tier.level} RQ${rqIdx+1}: options array required`);
+            } else if (rq.type === 'true-false-not-stated') {
+                assert(typeof rq.statement === 'string' && rq.statement.length > 0, `${lang} ${tier.level} RQ${rqIdx+1}: statement string required`);
+                assert([0, 1, 2].includes(rq.correct), `${lang} ${tier.level} RQ${rqIdx+1}: correct must be 0, 1, or 2`);
+            }
+        });
     });
 
-    console.log(`[PASS] ${lang} diagnostic-test.json structure validated (3 tiers, 10 questions each, 85% pass mark).`);
+    console.log(`[PASS] ${lang} diagnostic-test.json structure validated (3 tiers, 10 core questions + readingSection each, 85% pass mark).`);
 });
 
 // 2. Test evaluation logic

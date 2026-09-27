@@ -997,6 +997,32 @@ window.Reader = {
     currentStory: null,
     _storyLoadId: 0,
 
+    getComprehension(storyId) {
+        if (!storyId) return null;
+        try {
+            const key = (typeof Lang !== 'undefined' && Lang.key) ? Lang.key('storyComprehension') : 'parlour_storyComprehension';
+            const all = JSON.parse(localStorage.getItem(key) || '{}');
+            return all[storyId] || null;
+        } catch (e) {
+            return null;
+        }
+    },
+
+    saveComprehension(storyId, correct, total) {
+        if (!storyId || !total) return;
+        try {
+            const key = (typeof Lang !== 'undefined' && Lang.key) ? Lang.key('storyComprehension') : 'parlour_storyComprehension';
+            const all = JSON.parse(localStorage.getItem(key) || '{}');
+            const prev = all[storyId];
+            if (!prev || (correct / total) >= (prev.correct / prev.total)) {
+                all[storyId] = { correct, total, takenAt: new Date().toISOString() };
+                localStorage.setItem(key, JSON.stringify(all));
+            }
+        } catch (e) {
+            console.warn('Reader: failed to save story comprehension result', e);
+        }
+    },
+
     init() {
         this.renderLibrary();
     },
@@ -1907,6 +1933,9 @@ window.Reader = {
             ? story.unit.title
             : (story.author || '');
 
+        const comp = this.getComprehension(story.id);
+        const compBadge = comp ? '<span class="story-card-comp-badge" title="Quiz: ' + comp.correct + '/' + comp.total + '">Quiz ' + comp.correct + '/' + comp.total + ' ✓</span>' : '';
+
         return '<button class="story-card" data-story-id="' + this.escapeHtml(story.id) + '" ' +
             'data-title="' + this.escapeHtml((story.title || '').toLowerCase()) + '" ' +
             'data-author="' + this.escapeHtml((story.author || '').toLowerCase()) + '" ' +
@@ -1927,6 +1956,7 @@ window.Reader = {
                 // player still appears inside a story that has it.
                 '<div class="story-card-meta">' +
                     (withinReach ? '<span class="story-card-reach-badge">Within Reach</span>' : '') +
+                    compBadge +
                     // Filled in by _fillFamiliarity() — needs the story's words.
                     (this._familiarLemmas ? '<span class="story-card-familiar" data-familiar-for="' + this.escapeHtml(story.id) + '"></span>' : '') +
                 '</div>' +
@@ -2110,8 +2140,15 @@ window.Reader = {
         let compHtml = '';
         if (story.narration && story.narration.pedagogical && story.narration.pedagogical.comprehensionQuestions && story.narration.pedagogical.comprehensionQuestions.length) {
             const qs = story.narration.pedagogical.comprehensionQuestions;
+            const prevComp = this.getComprehension(this.currentStoryId);
+            const prevBadge = prevComp
+                ? '<span class="story-comp-prev-score">Previous score: ' + prevComp.correct + '/' + prevComp.total + ' ✓</span>'
+                : '';
             compHtml = '<div class="story-comprehension-block">' +
-                '<h4 class="story-comp-title">Comprehension Check</h4>' +
+                '<div class="story-comp-header">' +
+                    '<h4 class="story-comp-title">Comprehension Check</h4>' +
+                    prevBadge +
+                '</div>' +
                 '<div class="story-comp-list">' +
                     qs.map((q, qIdx) =>
                         '<div class="story-comp-item" data-comp-idx="' + qIdx + '">' +
@@ -2157,6 +2194,10 @@ window.Reader = {
                 const itemEl = btn.closest('.story-comp-item');
                 if (!itemEl) return;
 
+                const chosenOpt = parseInt(btn.getAttribute('data-opt'), 10);
+                itemEl.setAttribute('data-answered', '1');
+                itemEl.setAttribute('data-is-correct', chosenOpt === correctIdx ? '1' : '0');
+
                 itemEl.querySelectorAll('.story-comp-opt').forEach(b => {
                     b.disabled = true;
                     const bOpt = parseInt(b.getAttribute('data-opt'), 10);
@@ -2166,6 +2207,28 @@ window.Reader = {
 
                 const expEl = itemEl.querySelector('#comp-exp-' + qIdx);
                 if (expEl) expEl.hidden = false;
+
+                const totalItems = container.querySelectorAll('.story-comp-item');
+                const answeredItems = container.querySelectorAll('.story-comp-item[data-answered="1"]');
+                if (totalItems.length > 0 && answeredItems.length === totalItems.length) {
+                    let numCorrect = 0;
+                    answeredItems.forEach(it => {
+                        if (it.getAttribute('data-is-correct') === '1') numCorrect++;
+                    });
+                    self.saveComprehension(self.currentStoryId, numCorrect, totalItems.length);
+
+                    let summaryEl = container.querySelector('.story-comp-summary');
+                    if (!summaryEl) {
+                        summaryEl = document.createElement('div');
+                        summaryEl.className = 'story-comp-summary';
+                        const blockEl = container.querySelector('.story-comprehension-block');
+                        if (blockEl) blockEl.appendChild(summaryEl);
+                    }
+                    if (summaryEl) {
+                        const pct = Math.round((numCorrect / totalItems.length) * 100);
+                        summaryEl.textContent = 'Quiz completed: ' + numCorrect + ' of ' + totalItems.length + ' correct (' + pct + '%)';
+                    }
+                }
             });
         });
 

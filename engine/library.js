@@ -98,6 +98,11 @@ const Library = (function () {
         const withinReach = !isRead && (typeof Reader !== 'undefined' && typeof Reader.isStoryWithinReach === 'function')
             ? Reader.isStoryWithinReach(story, [story.id].filter(() => isRead))
             : false;
+        const comp = (typeof Reader !== 'undefined' && typeof Reader.getComprehension === 'function')
+            ? Reader.getComprehension(story.id)
+            : null;
+        const compBadge = comp ? `<span class="story-card-comp-badge" title="Quiz: ${comp.correct}/${comp.total}">Quiz ${comp.correct}/${comp.total} ✓</span>` : '';
+
         return `
             <div class="story-card lt-saved-card">
                 <button class="story-card-open" data-saved-open="${esc(story.id)}">
@@ -109,6 +114,7 @@ const Library = (function () {
                         <div class="story-card-title">${esc(story.title)}</div>
                         <div class="story-card-meta">
                             ${withinReach ? '<span class="story-card-reach-badge">Within Reach</span>' : ''}
+                            ${compBadge}
                         </div>
                     </div>
                 </button>

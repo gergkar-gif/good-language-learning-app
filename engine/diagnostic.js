@@ -231,96 +231,275 @@ const DiagnosticTest = (function () {
             return;
         }
 
-        const isTextInput = q.type === 'text-input';
-        let canAdvance = false;
-        let questionBodyHtml = '';
+        const hasReadingSection = !!(tier.readingSection && tier.readingSection.questions && tier.readingSection.questions.length);
 
-        if (isTextInput) {
-            const typedVal = (typeof _answers[q.id] === 'string') ? _answers[q.id] : '';
-            canAdvance = typedVal.trim().length > 0;
-            questionBodyHtml = `
-                <div class="diag-production-box">
-                    <div class="diag-text-input-wrap">
-                        <input type="text"
-                               class="diag-text-input"
-                               id="diag-input-${_esc(q.id)}"
-                               autocomplete="off"
-                               autocapitalize="off"
-                               spellcheck="false"
-                               placeholder="Type the missing word or phrase..."
-                               value="${_esc(typedVal)}"
-                               aria-label="Your answer">
+        if (_currentQuestionIdx < questions.length) {
+            const isTextInput = q.type === 'text-input';
+            let canAdvance = false;
+            let questionBodyHtml = '';
+
+            if (isTextInput) {
+                const typedVal = (typeof _answers[q.id] === 'string') ? _answers[q.id] : '';
+                canAdvance = typedVal.trim().length > 0;
+                questionBodyHtml = `
+                    <div class="diag-production-box">
+                        <div class="diag-text-input-wrap">
+                            <input type="text"
+                                   class="diag-text-input"
+                                   id="diag-input-${_esc(q.id)}"
+                                   autocomplete="off"
+                                   autocapitalize="off"
+                                   spellcheck="false"
+                                   placeholder="Type the missing word or phrase..."
+                                   value="${_esc(typedVal)}"
+                                   aria-label="Your answer">
+                        </div>
+                        ${typeof UI !== 'undefined' && UI.diacriticsBarHtml ? UI.diacriticsBarHtml('.diag-text-input') : ''}
+                        <div class="diag-production-hint">
+                            Type the exact missing word or phrase. Accented letters (like ñ) will pop up as you type them. Press Enter to proceed.
+                        </div>
                     </div>
-                    ${typeof UI !== 'undefined' && UI.diacriticsBarHtml ? UI.diacriticsBarHtml('.diag-text-input') : ''}
-                    <div class="diag-production-hint">
-                        Type the exact missing word or phrase. Accented letters (like ñ) will pop up as you type them. Press Enter to proceed.
+                `;
+            } else {
+                if (!_shuffledOptions[q.id]) {
+                    const raw = (q.options || []).map((text, idx) => ({ text, originalIdx: idx }));
+                    _shuffledOptions[q.id] = _shuffle(raw);
+                }
+                const optionsList = _shuffledOptions[q.id];
+                const selectedOrigIdx = _answers[q.id];
+                canAdvance = selectedOrigIdx !== undefined;
+
+                questionBodyHtml = `
+                    <div class="diag-options-grid" role="radiogroup" aria-label="Answer options">
+                        ${optionsList.map((opt, i) => {
+                            const isSelected = selectedOrigIdx === opt.originalIdx;
+                            return `
+                                <button type="button" class="diag-opt-btn ${isSelected ? 'selected' : ''}" data-option-idx="${opt.originalIdx}" role="radio" aria-checked="${isSelected}">
+                                    <span class="diag-opt-letter">${String.fromCharCode(65 + i)}</span>
+                                    <span class="diag-opt-text">${_esc(opt.text)}</span>
+                                    ${isSelected ? '<span class="diag-opt-check"><svg class="sp-icon-svg" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>' : ''}
+                                </button>
+                            `;
+                        }).join('')}
                     </div>
-                </div>
-            `;
-        } else {
-            if (!_shuffledOptions[q.id]) {
-                const raw = (q.options || []).map((text, idx) => ({ text, originalIdx: idx }));
-                _shuffledOptions[q.id] = _shuffle(raw);
+                `;
             }
-            const optionsList = _shuffledOptions[q.id];
-            const selectedOrigIdx = _answers[q.id];
-            canAdvance = selectedOrigIdx !== undefined;
 
-            questionBodyHtml = `
-                <div class="diag-options-grid" role="radiogroup" aria-label="Answer options">
-                    ${optionsList.map((opt, i) => {
-                        const isSelected = selectedOrigIdx === opt.originalIdx;
-                        return `
-                            <button type="button" class="diag-opt-btn ${isSelected ? 'selected' : ''}" data-option-idx="${opt.originalIdx}" role="radio" aria-checked="${isSelected}">
-                                <span class="diag-opt-letter">${String.fromCharCode(65 + i)}</span>
-                                <span class="diag-opt-text">${_esc(opt.text)}</span>
-                                ${isSelected ? '<span class="diag-opt-check"><svg class="sp-icon-svg" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>' : ''}
+            const isLastQuestionInTier = _currentQuestionIdx === questions.length - 1;
+            const promptHtml = q.prompt ? `
+                <div class="diag-situational-prompt">
+                    <span class="diag-situational-label">Situational Context</span>
+                    <div>${_esc(q.prompt)}</div>
+                </div>
+            ` : '';
+
+            host.innerHTML = `
+                <div class="diag-wrap">
+                    <div class="diag-header-bar">
+                        <button type="button" class="dk-back" data-action="close-diag">← Quit</button>
+                        <div class="diag-tier-status">
+                            <span class="diag-tier-pill">Tier ${_currentTierIdx + 1} of ${tiers.length}: ${_esc(tier.level)} · 85% to Pass</span>
+                            <span class="diag-q-counter">Question ${_currentQuestionIdx + 1} of ${questions.length}</span>
+                        </div>
+                    </div>
+
+                    <div class="diag-question-card">
+                        <div class="diag-tier-info">
+                            <h3 class="diag-tier-name">${_esc(tier.name || tier.level)}</h3>
+                            <p class="diag-tier-sub">${_esc(tier.description || '')}</p>
+                        </div>
+
+                        ${promptHtml}
+
+                        <div class="diag-prompt-box">
+                            <div class="diag-sentence">${_esc(q.sentence || '').replace(/_____/g, '<span class="diag-blank">_____</span>')}</div>
+                        </div>
+
+                        ${questionBodyHtml}
+
+                        <div class="diag-nav-bar">
+                            ${_currentQuestionIdx > 0 ? `
+                                <button type="button" class="wk-secondary-btn" data-action="prev-q">← Previous</button>
+                            ` : '<div></div>'}
+
+                            <button type="button" class="wk-primary-btn" data-action="next-q" ${canAdvance ? '' : 'disabled'}>
+                                ${isLastQuestionInTier ? (hasReadingSection ? 'Reading Section →' : 'Complete Tier →') : 'Next Question →'}
                             </button>
-                        `;
-                    }).join('')}
+                        </div>
+                    </div>
                 </div>
             `;
+
+            const closeBtn = host.querySelector('[data-action="close-diag"]');
+            if (closeBtn) closeBtn.addEventListener('click', close);
+
+            if (isTextInput) {
+                const inputEl = host.querySelector('.diag-text-input');
+                if (inputEl) {
+                    setTimeout(() => {
+                        try { inputEl.focus(); } catch (e) {}
+                    }, 40);
+
+                    inputEl.addEventListener('input', () => {
+                        _answers[q.id] = inputEl.value;
+                        const nextBtn = host.querySelector('[data-action="next-q"]');
+                        if (nextBtn) {
+                            nextBtn.disabled = !inputEl.value.trim();
+                        }
+                    });
+
+                    inputEl.addEventListener('keydown', (e) => {
+                        if (e.key === 'Enter') {
+                            e.preventDefault();
+                            if (inputEl.value.trim()) {
+                                const nextBtn = host.querySelector('[data-action="next-q"]');
+                                if (nextBtn && !nextBtn.disabled) {
+                                    nextBtn.click();
+                                }
+                            }
+                        }
+                    });
+                }
+            } else {
+                host.querySelectorAll('[data-option-idx]').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const idx = parseInt(btn.getAttribute('data-option-idx'), 10);
+                        _answers[q.id] = idx;
+                        _render();
+                    });
+                });
+            }
+
+            const prevBtn = host.querySelector('[data-action="prev-q"]');
+            if (prevBtn) {
+                prevBtn.addEventListener('click', () => {
+                    if (_currentQuestionIdx > 0) {
+                        _currentQuestionIdx--;
+                        _render();
+                    }
+                });
+            }
+
+            const nextBtn = host.querySelector('[data-action="next-q"]');
+            if (nextBtn) {
+                nextBtn.addEventListener('click', () => {
+                    if (_currentQuestionIdx + 1 < questions.length) {
+                        _currentQuestionIdx++;
+                        _render();
+                    } else if (hasReadingSection && _currentQuestionIdx + 1 === questions.length) {
+                        _currentQuestionIdx++;
+                        _render();
+                    } else {
+                        _evaluateCurrentTier();
+                    }
+                });
+            }
+        } else if (hasReadingSection && _currentQuestionIdx === questions.length) {
+            _renderTierReading(host, tier);
+        } else {
+            _evaluateCurrentTier();
+        }
+    }
+
+    function _renderTierReading(host, tier) {
+        const tiers = (_testData && _testData.tiers) ? _testData.tiers : [];
+        const rs = tier.readingSection;
+        if (!rs || !rs.questions || !rs.questions.length) {
+            _evaluateCurrentTier();
+            return;
         }
 
-        const isLastQuestionInTier = _currentQuestionIdx === questions.length - 1;
-        const promptHtml = q.prompt ? `
-            <div class="diag-situational-prompt">
-                <span class="diag-situational-label">Situational Context</span>
-                <div>${_esc(q.prompt)}</div>
-            </div>
-        ` : '';
+        const lang = (typeof Lang !== 'undefined' && typeof Lang.current === 'function')
+            ? Lang.current() : ((typeof Lang !== 'undefined' && typeof Lang.code === 'function') ? Lang.code() : 'es');
+
+        const tfnsLabels = lang === 'hu'
+            ? ['Igaz', 'Hamis', 'A szöveg nem tartalmaz ilyen információt']
+            : ['Verdadero', 'Falso', 'No se menciona en el texto'];
+
+        let allAnswered = true;
+        rs.questions.forEach(rq => {
+            if (_answers[rq.id] === undefined) allAnswered = false;
+        });
+
+        const questionsHtml = rs.questions.map((rq, qIdx) => {
+            const isTFNS = rq.type === 'true-false-not-stated';
+            const userChoice = _answers[rq.id];
+
+            let optionsHtml = '';
+            if (isTFNS) {
+                optionsHtml = `
+                    <div class="diag-options-grid" role="radiogroup" aria-label="Answer options">
+                        ${tfnsLabels.map((lbl, idx) => {
+                            const isSelected = userChoice === idx;
+                            return `
+                                <button type="button" class="diag-opt-btn ${isSelected ? 'selected' : ''}" data-rq-id="${_esc(rq.id)}" data-rq-idx="${idx}" role="radio" aria-checked="${isSelected}">
+                                    <span class="diag-opt-letter">${String.fromCharCode(65 + idx)}</span>
+                                    <span class="diag-opt-text">${_esc(lbl)}</span>
+                                    ${isSelected ? '<span class="diag-opt-check"><svg class="sp-icon-svg" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>' : ''}
+                                </button>
+                            `;
+                        }).join('')}
+                    </div>
+                `;
+            } else {
+                if (!_shuffledOptions[rq.id]) {
+                    const raw = (rq.options || []).map((text, idx) => ({ text, originalIdx: idx }));
+                    _shuffledOptions[rq.id] = _shuffle(raw);
+                }
+                const optionsList = _shuffledOptions[rq.id];
+                optionsHtml = `
+                    <div class="diag-options-grid" role="radiogroup" aria-label="Answer options">
+                        ${optionsList.map((opt, i) => {
+                            const isSelected = userChoice === opt.originalIdx;
+                            return `
+                                <button type="button" class="diag-opt-btn ${isSelected ? 'selected' : ''}" data-rq-id="${_esc(rq.id)}" data-rq-idx="${opt.originalIdx}" role="radio" aria-checked="${isSelected}">
+                                    <span class="diag-opt-letter">${String.fromCharCode(65 + i)}</span>
+                                    <span class="diag-opt-text">${_esc(opt.text)}</span>
+                                    ${isSelected ? '<span class="diag-opt-check"><svg class="sp-icon-svg" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>' : ''}
+                                </button>
+                            `;
+                        }).join('')}
+                    </div>
+                `;
+            }
+
+            const promptText = isTFNS ? rq.statement : rq.question;
+
+            return `
+                <div class="diag-reading-item" style="margin-bottom: 24px;">
+                    <p class="diag-reading-q" style="font-weight: 600; font-size: 15px; margin: 0 0 10px; color: var(--text);">
+                        <strong>${qIdx + 1}.</strong> ${_esc(promptText)}
+                    </p>
+                    ${optionsHtml}
+                </div>
+            `;
+        }).join('');
 
         host.innerHTML = `
             <div class="diag-wrap">
                 <div class="diag-header-bar">
                     <button type="button" class="dk-back" data-action="close-diag">← Quit</button>
                     <div class="diag-tier-status">
-                        <span class="diag-tier-pill">Tier ${_currentTierIdx + 1} of ${tiers.length}: ${_esc(tier.level)} · 85% to Pass</span>
-                        <span class="diag-q-counter">Question ${_currentQuestionIdx + 1} of ${questions.length}</span>
+                        <span class="diag-tier-pill">Tier ${_currentTierIdx + 1} of ${tiers.length}: ${_esc(tier.level)} · Reading Comprehension</span>
                     </div>
                 </div>
 
                 <div class="diag-question-card">
                     <div class="diag-tier-info">
                         <h3 class="diag-tier-name">${_esc(tier.name || tier.level)}</h3>
-                        <p class="diag-tier-sub">${_esc(tier.description || '')}</p>
+                        <p class="diag-tier-sub">${_esc(rs.title || 'Reading Comprehension')}</p>
                     </div>
 
-                    ${promptHtml}
-
-                    <div class="diag-prompt-box">
-                        <div class="diag-sentence">${_esc(q.sentence || '').replace(/_____/g, '<span class="diag-blank">_____</span>')}</div>
+                    <div class="diag-passage" style="font-family: var(--font-display, Georgia, serif); font-size: 16px; line-height: 1.6; color: var(--text); margin-bottom: 24px; padding: 16px 20px; background: var(--wash, #F5F1E8); border-radius: var(--radius-sm, 6px); border: 1px solid var(--border);">
+                        ${_esc(rs.passage).replace(/\n/g, '<br>')}
                     </div>
 
-                    ${questionBodyHtml}
+                    ${questionsHtml}
 
-                    <div class="diag-nav-bar">
-                        ${_currentQuestionIdx > 0 ? `
-                            <button type="button" class="wk-secondary-btn" data-action="prev-q">← Previous</button>
-                        ` : '<div></div>'}
-
-                        <button type="button" class="wk-primary-btn" data-action="next-q" ${canAdvance ? '' : 'disabled'}>
-                            ${isLastQuestionInTier ? 'Complete Tier →' : 'Next Question →'}
+                    <div class="diag-nav-bar" style="margin-top: 24px;">
+                        <button type="button" class="wk-secondary-btn" data-action="prev-q">← Previous Question</button>
+                        <button type="button" class="wk-primary-btn" data-action="complete-tier" ${allAnswered ? '' : 'disabled'}>
+                            Complete Tier ${_esc(tier.level)} →
                         </button>
                     </div>
                 </div>
@@ -330,62 +509,28 @@ const DiagnosticTest = (function () {
         const closeBtn = host.querySelector('[data-action="close-diag"]');
         if (closeBtn) closeBtn.addEventListener('click', close);
 
-        if (isTextInput) {
-            const inputEl = host.querySelector('.diag-text-input');
-            if (inputEl) {
-                setTimeout(() => {
-                    try { inputEl.focus(); } catch (e) {}
-                }, 40);
-
-                inputEl.addEventListener('input', () => {
-                    _answers[q.id] = inputEl.value;
-                    const nextBtn = host.querySelector('[data-action="next-q"]');
-                    if (nextBtn) {
-                        nextBtn.disabled = !inputEl.value.trim();
-                    }
-                });
-
-                inputEl.addEventListener('keydown', (e) => {
-                    if (e.key === 'Enter') {
-                        e.preventDefault();
-                        if (inputEl.value.trim()) {
-                            const nextBtn = host.querySelector('[data-action="next-q"]');
-                            if (nextBtn && !nextBtn.disabled) {
-                                nextBtn.click();
-                            }
-                        }
-                    }
-                });
-            }
-        } else {
-            host.querySelectorAll('[data-option-idx]').forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const idx = parseInt(btn.getAttribute('data-option-idx'), 10);
-                    _answers[q.id] = idx;
-                    _render();
-                });
+        host.querySelectorAll('[data-rq-id]').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const qId = btn.getAttribute('data-rq-id');
+                const idx = parseInt(btn.getAttribute('data-rq-idx'), 10);
+                _answers[qId] = idx;
+                _render();
             });
-        }
+        });
 
         const prevBtn = host.querySelector('[data-action="prev-q"]');
         if (prevBtn) {
             prevBtn.addEventListener('click', () => {
-                if (_currentQuestionIdx > 0) {
-                    _currentQuestionIdx--;
-                    _render();
-                }
+                const questions = tier.questions || [];
+                _currentQuestionIdx = Math.max(0, questions.length - 1);
+                _render();
             });
         }
 
-        const nextBtn = host.querySelector('[data-action="next-q"]');
-        if (nextBtn) {
-            nextBtn.addEventListener('click', () => {
-                if (_currentQuestionIdx + 1 < questions.length) {
-                    _currentQuestionIdx++;
-                    _render();
-                } else {
-                    _evaluateCurrentTier();
-                }
+        const completeBtn = host.querySelector('[data-action="complete-tier"]');
+        if (completeBtn) {
+            completeBtn.addEventListener('click', () => {
+                _evaluateCurrentTier();
             });
         }
     }
@@ -399,11 +544,14 @@ const DiagnosticTest = (function () {
         }
 
         const questions = tier.questions || [];
-        let correct = 0;
+        let coreCorrect = 0;
+        let readingCorrect = 0;
+        let readingTotal = 0;
         const evidence = [];
+
         questions.forEach(q => {
             const userAns = _answers[q.id];
-            const before = correct;
+            const before = coreCorrect;
             if (q.type === 'text-input') {
                 if (typeof userAns === 'string' && userAns.trim()) {
                     const cleanUser = userAns.trim().toLowerCase();
@@ -411,16 +559,46 @@ const DiagnosticTest = (function () {
                     const accepted = [q.answer, ...(q.altAnswers || [])].filter(Boolean).map(a => a.trim().toLowerCase());
                     const normAccepted = accepted.map(a => a.normalize('NFD').replace(/[\u0300-\u036f]/g, ''));
                     if (accepted.includes(cleanUser) || normAccepted.includes(normUser)) {
-                        correct++;
+                        coreCorrect++;
                     }
                 }
             } else {
-                if (userAns === q.correct) correct++;
+                if (userAns === q.correct) coreCorrect++;
             }
             if (userAns !== undefined) {
-                evidence.push({ id: 'diag:' + q.id, rating: correct > before ? 'good' : 'again' });
+                evidence.push({ id: 'diag:' + q.id, rating: coreCorrect > before ? 'good' : 'again' });
             }
         });
+
+        // Reading section scoring
+        if (tier.readingSection && Array.isArray(tier.readingSection.questions)) {
+            readingTotal = tier.readingSection.questions.length;
+            tier.readingSection.questions.forEach(rq => {
+                const userAns = _answers[rq.id];
+                if (userAns !== undefined && userAns === rq.correct) {
+                    readingCorrect++;
+                }
+            });
+
+            // Persist reading scores per tier
+            if (readingTotal > 0) {
+                try {
+                    const rsKey = (typeof Lang !== 'undefined' && Lang.key) ? Lang.key('readingScores') : 'readingScores';
+                    const allRS = JSON.parse(localStorage.getItem(rsKey) || '{}');
+                    const prevRS = allRS[tier.level];
+                    const pct = readingCorrect / readingTotal;
+                    const prevPct = prevRS ? prevRS.correct / prevRS.total : -1;
+                    if (pct > prevPct) {
+                        allRS[tier.level] = {
+                            correct: readingCorrect,
+                            total: readingTotal,
+                            takenAt: new Date().toISOString()
+                        };
+                        localStorage.setItem(rsKey, JSON.stringify(allRS));
+                    }
+                } catch (e) {}
+            }
+        }
 
         // Each answered question is one piece of evidence for the skill its
         // `teaches` tag names — LearnerModel joins "diag:" cards to skills.
@@ -432,15 +610,21 @@ const DiagnosticTest = (function () {
             Recycle.credit(evidence);
         }
 
-        const ratio = questions.length > 0 ? (correct / questions.length) : 0;
+        const totalEarned = coreCorrect + readingCorrect;
+        const totalPossible = questions.length + readingTotal;
+        const ratio = totalPossible > 0 ? (totalEarned / totalPossible) : 0;
         const passRatio = (typeof _testData.passRatio === 'number') ? _testData.passRatio : 0.85;
         const passed = ratio >= passRatio;
 
         _tierResults.push({
             level: tier.level,
             name: tier.name || tier.level,
-            correct,
-            total: questions.length,
+            correct: totalEarned,
+            total: totalPossible,
+            coreCorrect,
+            coreTotal: questions.length,
+            readingCorrect,
+            readingTotal,
             passed
         });
 
@@ -460,13 +644,17 @@ const DiagnosticTest = (function () {
         const nextTier = tiers[_currentTierIdx];
         const lastResult = _tierResults[_tierResults.length - 1];
 
+        const scoreDetail = (lastResult && lastResult.readingTotal)
+            ? `You scored <strong>${lastResult.correct} of ${lastResult.total}</strong> (including ${lastResult.readingCorrect}/${lastResult.readingTotal} reading comprehension) on ${_esc(prevTier.level)}.`
+            : `You scored <strong>${lastResult.correct} of ${lastResult.total}</strong> (85%+ required) on ${_esc(prevTier.level)}.`;
+
         host.innerHTML = `
             <div class="diag-wrap">
                 <div class="diag-transition-card">
                     <span class="sp-level-pill">${_esc(prevTier.level)} Tier Cleared</span>
                     <h2 class="diag-title">${_esc(prevTier.level)} Foundations Mastered!</h2>
                     <p class="diag-transition-score">
-                        You scored <strong>${lastResult.correct} of ${lastResult.total}</strong> (85%+ required) on ${_esc(prevTier.level)}.
+                        ${scoreDetail}
                     </p>
                     <p class="diag-lead" style="margin-bottom: 24px;">
                         Advancing to <strong>${_esc(nextTier.name || nextTier.level)}</strong> to evaluate higher CEFR competencies.
@@ -574,7 +762,7 @@ const DiagnosticTest = (function () {
                                 <div class="diag-tier-summary-item ${r.passed ? 'passed' : 'developing'}">
                                     <div class="diag-ts-left">
                                         <strong>Tier ${_esc(r.level)}</strong>
-                                        <span class="diag-ts-desc">${_esc(r.name)}</span>
+                                        <span class="diag-ts-desc">${_esc(r.name)}${r.readingTotal ? ' (incl. ' + r.readingCorrect + '/' + r.readingTotal + ' reading)' : ''}</span>
                                     </div>
                                     <div class="diag-ts-right">
                                         <span class="diag-ts-score">${r.correct}/${r.total}</span>

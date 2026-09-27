@@ -23,6 +23,8 @@ const LevelTest = (function () {
     let test = null;        // the loaded test
     let answers = {};       // question id -> chosen option text or typed input
     let order = {};         // question id -> shuffled options, fixed per sitting
+    let readingAnswers = {}; // reading question id -> chosen option text or index string
+    let readingOrder = {};  // reading question id -> shuffled options (reading-mc, gapped-text only)
     let writingText = '';   // Part 2 writing text
     let speakingTranscript = ''; // Part 3 speaking transcript or typed text
     let speakingAudioUrl = null; // Part 3 audio recording blob url
@@ -204,8 +206,47 @@ const LevelTest = (function () {
             };
         }
 
-        const totalEarned = part1Correct + writingScore + speakingScore;
-        const totalPossible = test.questions.length + writingMax + speakingMax;
+        // Reading comprehension section scoring
+        let readingCorrect = 0;
+        let readingMax = 0;
+        let readingBreakdown = null;
+        if (test.readingSection) {
+            readingMax = test.readingSection.questions.length;
+            test.readingSection.questions.forEach(q => {
+                const chosen = readingAnswers[q.id];
+                let isRight = false;
+                if (q.type === 'true-false-not-stated') {
+                    // stored as string "0"/"1"/"2"
+                    isRight = chosen === String(q.correct);
+                } else {
+                    // reading-mc and gapped-text: stored as the option text
+                    isRight = chosen === q.options[q.correct];
+                }
+                if (isRight) readingCorrect++;
+            });
+            readingBreakdown = { correct: readingCorrect, total: readingMax };
+
+            // Persist best reading score per level (for learner model / future UI)
+            try {
+                const rsKey = (typeof Lang !== 'undefined' && Lang.key)
+                    ? Lang.key('readingScores') : 'readingScores';
+                const allRS = JSON.parse(localStorage.getItem(rsKey) || '{}');
+                const prevRS = allRS[test.level];
+                const pct = readingCorrect / readingMax;
+                const prevPct = prevRS ? prevRS.correct / prevRS.total : -1;
+                if (pct > prevPct) {
+                    allRS[test.level] = {
+                        correct: readingCorrect,
+                        total: readingMax,
+                        takenAt: new Date().toISOString()
+                    };
+                    localStorage.setItem(rsKey, JSON.stringify(allRS));
+                }
+            } catch (e) {}
+        }
+
+        const totalEarned = part1Correct + readingCorrect + writingScore + speakingScore;
+        const totalPossible = test.questions.length + readingMax + writingMax + speakingMax;
         const score = totalEarned / totalPossible;
         const jumpAhead = score >= JUMP_AHEAD_MARK;
 
@@ -220,6 +261,7 @@ const LevelTest = (function () {
                 correct: part1Correct,
                 total: test.questions.length
             },
+            reading: readingBreakdown,
             writing: writingBreakdown,
             speaking: speakingBreakdown,
             weakest: Object.keys(wrongBy).sort((a, b) => wrongBy[b] - wrongBy[a]),
@@ -329,6 +371,144 @@ const LevelTest = (function () {
         `;
     }
 
+    // ----------------------------------------
+    // READING QUESTION RENDERER
+    // Used by readingSectionHtml(). Separate from questionHtml() so reading
+    // state (readingAnswers / readingOrder) stays isolated from Part 1.
+    // ----------------------------------------
+    function readingQuestionHtml(q, index) {
+        const chosen = readingAnswers[q.id];
+
+        if (q.type === 'true-false-not-stated') {
+            // Fixed option order — True / False / Not stated. Never shuffled.
+            // Labels are in the target language (CEFR exam convention).
+            const lang = (typeof Lang !== 'undefined' && typeof Lang.current === 'function')
+                ? Lang.current() : 'es';
+            const labels = lang === 'hu'
+                ? ['Igaz', 'Hamis', 'A szöveg nem tartalmaz ilyen információt']
+                : ['Verdadero', 'Falso', 'No se menciona en el texto'];
+            const right = String(q.correct);
+            const isRight = chosen === right;
+
+            let state = '';
+            if (marked) {
+                state = isRight
+                    ? '<span class="lt-mark lt-right">✓</span>'
+                    : `<span class="lt-mark lt-wrong">✗ ${esc(labels[q.correct])}</span>`;
+            }
+
+            return `
+                <li class="lt-question lt-q-tfns${marked ? (isRight ? ' is-right' : ' is-wrong') : ''}">
+                    <span class="lt-num">${index + 1}</span>
+                    <div class="lt-choice-body">
+                        <p class="lt-choice-prompt">${esc(q.statement)}${state}</p>
+                        <div class="lt-options">
+                            ${labels.map((label, i) => `
+                                <button type="button" class="lt-opt-btn ${chosen === String(i) ? 'is-selected' : ''} ${marked ? (String(i) === right ? 'is-correct-opt' : (chosen === String(i) ? 'is-wrong-opt' : '')) : ''}"
+                                        data-rq="${esc(q.id)}" data-ropt="${i}" ${marked ? 'disabled' : ''}>
+                                    ${esc(label)}
+                                </button>
+                            `).join('')}
+                        </div>
+                    </div>
+                </li>
+            `;
+        }
+
+        if (q.type === 'gapped-text') {
+            if (!readingOrder[q.id]) readingOrder[q.id] = shuffle(q.options);
+            const right = q.options[q.correct];
+            const isRight = chosen === right;
+
+            // Render textWithGap: highlight [___] as a visible placeholder
+            const gapHtml = esc(q.textWithGap).replace(
+                /\[___\]/g,
+                '<span class="lt-gap-marker">[___]</span>'
+            );
+
+            let state = '';
+            if (marked) {
+                state = isRight
+                    ? '<span class="lt-mark lt-right">✓</span>'
+                    : `<span class="lt-mark lt-wrong">✗ ${esc(right)}</span>`;
+            }
+
+            return `
+                <li class="lt-question lt-q-gap${marked ? (isRight ? ' is-right' : ' is-wrong') : ''}">
+                    <span class="lt-num">${index + 1}</span>
+                    <div class="lt-choice-body">
+                        <p class="lt-gap-context">${gapHtml}${state}</p>
+                        <div class="lt-options">
+                            ${readingOrder[q.id].map(opt => `
+                                <button type="button" class="lt-opt-btn ${chosen === opt ? 'is-selected' : ''} ${marked ? (opt === right ? 'is-correct-opt' : (chosen === opt ? 'is-wrong-opt' : '')) : ''}"
+                                        data-rq="${esc(q.id)}" data-ropt="${esc(opt)}" ${marked ? 'disabled' : ''}>
+                                    ${esc(opt)}
+                                </button>
+                            `).join('')}
+                        </div>
+                    </div>
+                </li>
+            `;
+        }
+
+        // Default: reading-mc — standard multiple choice, options shuffled
+        if (!readingOrder[q.id]) readingOrder[q.id] = shuffle(q.options);
+        const right = q.options[q.correct];
+        const isRight = chosen === right;
+
+        let state = '';
+        if (marked) {
+            state = isRight
+                ? '<span class="lt-mark lt-right">✓</span>'
+                : `<span class="lt-mark lt-wrong">✗ ${esc(right)}</span>`;
+        }
+
+        return `
+            <li class="lt-question lt-q-rmc${marked ? (isRight ? ' is-right' : ' is-wrong') : ''}">
+                <span class="lt-num">${index + 1}</span>
+                <div class="lt-choice-body">
+                    <p class="lt-choice-prompt">${esc(q.question)}${state}</p>
+                    <div class="lt-options">
+                        ${readingOrder[q.id].map(opt => `
+                            <button type="button" class="lt-opt-btn ${chosen === opt ? 'is-selected' : ''} ${marked ? (opt === right ? 'is-correct-opt' : (chosen === opt ? 'is-wrong-opt' : '')) : ''}"
+                                    data-rq="${esc(q.id)}" data-ropt="${esc(opt)}" ${marked ? 'disabled' : ''}>
+                                ${esc(opt)}
+                            </button>
+                        `).join('')}
+                    </div>
+                </div>
+            </li>
+        `;
+    }
+
+    // ----------------------------------------
+    // READING SECTION HTML
+    // Renders the full "Part 2: Reading Comprehension" block.
+    // Part 1 question count is passed so question numbering is sequential.
+    // ----------------------------------------
+    function readingSectionHtml(part1Count) {
+        if (!test.readingSection) return '';
+        const rs = test.readingSection;
+
+        return `
+            <div class="lt-section lt-section-reading">
+                <h3 class="lt-section-title">Part 2: Reading Comprehension</h3>
+                <div class="lt-task-card">
+                    <div class="lt-task-head">
+                        <h4>${esc(rs.title)}</h4>
+                    </div>
+                    <div class="lt-passage">
+                        ${esc(rs.passage).replace(/\n/g, '<br>')}
+                    </div>
+                    ${rs.source ? `<p class="lt-passage-source">${esc(rs.source)}</p>` : ''}
+                    <ol class="lt-questions lt-reading-questions">
+                        ${rs.questions.map((q, i) => readingQuestionHtml(q, part1Count + i)).join('')}
+                    </ol>
+                </div>
+            </div>
+        `;
+    }
+
     function writingSectionHtml() {
         if (!test.writingTask) return '';
         const t = test.writingTask;
@@ -427,15 +607,21 @@ const LevelTest = (function () {
                         <span class="lt-breakdown-label">Part 1: Language in Context</span>
                         <span class="lt-breakdown-val">${result.part1.correct} / ${result.part1.total}</span>
                     </div>
+                    ${result.reading ? `
+                        <div class="lt-breakdown-row">
+                            <span class="lt-breakdown-label">Part 2: Reading Comprehension</span>
+                            <span class="lt-breakdown-val">${result.reading.correct} / ${result.reading.total}</span>
+                        </div>
+                    ` : ''}
                     ${result.writing ? `
                         <div class="lt-breakdown-row">
-                            <span class="lt-breakdown-label">Part 2: Written Production</span>
+                            <span class="lt-breakdown-label">Part ${result.reading ? '3' : '2'}: Written Production</span>
                             <span class="lt-breakdown-val">${result.writing.score} / ${result.writing.max} (${result.writing.words} words, ${result.writing.matchedKeywords.length} targets)</span>
                         </div>
                     ` : ''}
                     ${result.speaking ? `
                         <div class="lt-breakdown-row">
-                            <span class="lt-breakdown-label">Part 3: Spoken Production</span>
+                            <span class="lt-breakdown-label">Part ${result.reading && result.writing ? '4' : result.reading ? '3' : '3'}: Spoken Production</span>
                             <span class="lt-breakdown-val">${result.speaking.score} / ${result.speaking.max} (${result.speaking.hasAudio ? 'audio recorded' : 'transcript'}, ${result.speaking.matchedKeywords.length} targets)</span>
                         </div>
                     ` : ''}
@@ -451,7 +637,7 @@ const LevelTest = (function () {
         if (!host) return;
 
         if (!test || test.level !== level) {
-            answers = {}; order = {}; marked = false;
+            answers = {}; order = {}; readingAnswers = {}; readingOrder = {}; marked = false;
             await load(level);
         }
         if (!test) {
@@ -543,9 +729,18 @@ const LevelTest = (function () {
             }
         }
 
+        const readingTotal = test.readingSection ? test.readingSection.questions.length : 0;
+        const readingAnswered = test.readingSection
+            ? test.readingSection.questions.filter(q => readingAnswers[q.id] !== undefined).length
+            : 0;
+
         const isReady = answered === test.questions.length &&
+            readingAnswered === readingTotal &&
             (!test.writingTask || countWords(writingText) >= 5) &&
             (!test.speakingTask || speakingTranscript.trim().length > 0 || speakingAudioUrl);
+
+        const totalItems = test.questions.length + readingTotal;
+        const totalAnswered = answered + readingAnswered;
 
         host.innerHTML = `
             <button class="dk-back" data-close-test="1">← Back to lessons</button>
@@ -564,6 +759,8 @@ const LevelTest = (function () {
                 </ol>
             </div>
 
+            ${readingSectionHtml(test.questions.length)}
+
             ${writingSectionHtml()}
             ${speakingSectionHtml()}
 
@@ -571,8 +768,8 @@ const LevelTest = (function () {
                 <div class="lt-actions">
                     <button class="btn-primary" data-check="1" ${isReady ? '' : 'disabled'}>
                         ${isReady
-                            ? 'Check & Grade Assessment'
-                            : `Complete all items to check (${answered}/${test.questions.length} questions)`}
+                            ? 'Check &amp; Grade Assessment'
+                            : `Complete all items to check (${totalAnswered}/${totalItems} answered)`}
                     </button>
                 </div>
             `}
@@ -676,15 +873,37 @@ const LevelTest = (function () {
             const chk = host.querySelector('[data-check]');
             if (!chk) return;
             const ansCount = Object.keys(answers).filter(k => (answers[k] || '').trim()).length;
+            const rAnsCount = test.readingSection
+                ? test.readingSection.questions.filter(q => readingAnswers[q.id] !== undefined).length
+                : 0;
+            const rTotal = test.readingSection ? test.readingSection.questions.length : 0;
+            const totalA = ansCount + rAnsCount;
+            const totalT = test.questions.length + rTotal;
             const ready = ansCount === test.questions.length &&
+                rAnsCount === rTotal &&
                 (!test.writingTask || countWords(writingText) >= 5) &&
                 (!test.speakingTask || speakingTranscript.trim().length > 0 || speakingAudioUrl);
 
             chk.disabled = !ready;
             chk.textContent = ready
                 ? 'Check & Grade Assessment'
-                : `Complete all items to check (${ansCount}/${test.questions.length} questions)`;
+                : `Complete all items to check (${totalA}/${totalT} answered)`;
         }
+
+        // Bind reading option buttons (data-rq / data-ropt — separate from Part 1 data-q / data-opt)
+        host.querySelectorAll('[data-rq]').forEach(btn => {
+            btn.onclick = function () {
+                if (marked) return;
+                const qId = btn.getAttribute('data-rq');
+                readingAnswers[qId] = btn.getAttribute('data-ropt');
+                const parent = btn.closest('.lt-options');
+                if (parent) {
+                    parent.querySelectorAll('.lt-opt-btn').forEach(b => b.classList.remove('is-selected'));
+                    btn.classList.add('is-selected');
+                }
+                updateCheckButton();
+            };
+        });
 
         const check = host.querySelector('[data-check]');
         if (check) check.onclick = function () {
@@ -696,7 +915,7 @@ const LevelTest = (function () {
         };
         const retake = host.querySelector('[data-retake]');
         if (retake) retake.onclick = function () {
-            answers = {}; order = {}; marked = false;
+            answers = {}; order = {}; readingAnswers = {}; readingOrder = {}; marked = false;
             writingText = ''; speakingTranscript = ''; speakingAudioUrl = null;
             render(level);
         };
