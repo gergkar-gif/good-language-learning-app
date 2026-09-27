@@ -373,6 +373,19 @@ const GrammarDriller = (function () {
         return sampled;
     }
 
+    // Only index entries from lessons the learner has reached — skills are
+    // tagged across levels, so an A1 skill's full list also carries B2
+    // sentences. Falls back to the whole list when none are reached (a
+    // skill picked by hand from Settings the learner hasn't got to yet, or
+    // no lessons done), so the driller never opens empty.
+    function _reachedOnly(entries) {
+        const reached = (typeof LearnerPath !== 'undefined' && LearnerPath.reachedExerciseRefs)
+            ? LearnerPath.reachedExerciseRefs() : null;
+        if (!reached) return entries;
+        const kept = entries.filter(e => reached.has(e.ref));
+        return kept.length ? kept : entries;
+    }
+
     // Every normalised exercise available for a skill (or every skill, for
     // "mixed" or "mixed-learned"), in random order.
     async function _buildPool(moduleId) {
@@ -396,13 +409,13 @@ const GrammarDriller = (function () {
                     if (_index.bySkill[m.id] && m.id !== skillKey) entries.push(..._index.bySkill[m.id]);
                 }
             });
-            lessonEntries = _sampleMixedEntries(entries);
+            lessonEntries = _sampleMixedEntries(_reachedOnly(entries));
         } else if (moduleId === 'mixed') {
             bankItems = (_bank && _bank.items) || [];
-            lessonEntries = _sampleMixedEntries(Object.values((_index && _index.bySkill) || {}).flat());
+            lessonEntries = _sampleMixedEntries(_reachedOnly(Object.values((_index && _index.bySkill) || {}).flat()));
         } else {
             bankItems = (_bank && _bank.items || []).filter(i => i.module === moduleId);
-            lessonEntries = (_index && _index.bySkill && (_index.bySkill[_lessonSkillFor(moduleId)] || _index.bySkill[moduleId])) || [];
+            lessonEntries = _reachedOnly((_index && _index.bySkill && (_index.bySkill[_lessonSkillFor(moduleId)] || _index.bySkill[moduleId])) || []);
         }
 
         const lessonExercises = await _resolveLessonEntries(lessonEntries);

@@ -68,6 +68,36 @@ const LearnerPath = (function () {
         return Object.keys(progress).length;
     }
 
+    // Every lesson exercise file the learner has reached: all lessons (any
+    // track) in course order up to the furthest one completed, plus every
+    // lesson of a level whose test was passed. Skills are tagged across
+    // levels (an A1 unit-3 skill also tags B2 exercises), so anything that
+    // drills or ranks a skill reads this to stay within where the learner
+    // actually is. null when the curriculum isn't loaded — callers then
+    // don't gate at all.
+    function reachedExerciseRefs() {
+        const data = window._curriculumData;
+        if (!data || !data.levels) return null;
+        const progress = (typeof getProgress === 'function') ? getProgress() : {};
+        const order = (typeof LEVEL_ORDER !== 'undefined') ? LEVEL_ORDER : ['A1'];
+
+        const lessons = [];
+        let reachedUpTo = -1;
+        order.forEach(level => {
+            const entry = data.levels[level];
+            ((entry && entry.units) || []).forEach(u => (u.lessons || []).forEach(l => lessons.push(l)));
+            const test = (typeof LevelTest !== 'undefined') ? LevelTest.resultFor(level) : null;
+            if (test && test.passed) reachedUpTo = lessons.length - 1;
+        });
+        lessons.forEach((l, i) => { if (progress[l.id] && i > reachedUpTo) reachedUpTo = i; });
+
+        // Same lesson-id -> exercises-file split as Recommend.exerciseRefFor().
+        return new Set(lessons.slice(0, reachedUpTo + 1).map(l => {
+            const parts = l.id.replace(/^lesson\./, '').split('.');
+            return `exercises/${parts[0]}/${parts[0]}-${parts.slice(1).join('-')}-ex.json`;
+        }));
+    }
+
     // ----------------------------------------
     // NEXT STEP (moved verbatim from engine/home.js)
     // ----------------------------------------
@@ -235,6 +265,7 @@ const LearnerPath = (function () {
         unitFor,
         lastCompletedLessonId,
         completedCount,
+        reachedExerciseRefs,
         nextStep,
         currentLevel,
         touchActivity,

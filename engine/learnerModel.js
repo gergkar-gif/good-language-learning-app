@@ -255,12 +255,19 @@ const LearnerModel = (function () {
         if (!bySkill) return [];
         const schedule = (typeof loadRecycleSchedule === 'function') ? loadRecycleSchedule() : {};
         const flags = _levelTestFlags();
+        // Evidence from lessons the learner hasn't reached yet (a B2
+        // exercise sharing an A1 skill's tag, pulled into a drill) doesn't
+        // make a skill something to recommend now — and missing it, which
+        // is likely, would otherwise keep that skill "weak" indefinitely.
+        const reached = (typeof LearnerPath !== 'undefined' && LearnerPath.reachedExerciseRefs)
+            ? LearnerPath.reachedExerciseRefs() : null;
 
         const results = [];
         Object.keys(bySkill).forEach(skillId => {
             const refs = bySkill[skillId] || [];
             let totalEase = 0, seen = 0;
             refs.forEach(entry => {
+                if (reached && entry.ref && !reached.has(entry.ref)) return;
                 const card = schedule[entry.id];
                 if (hasHistory(card)) {
                     seen++;
