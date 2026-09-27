@@ -39,6 +39,7 @@ Reading comprehension is one of the four skills every CEFR exam (DELE, SIELE, th
 - Reading sections authored and validated for 9 level test files: A1/A2/B1 × es-es/es-latam/hu
 - Diagnostic placement test (`engine/diagnostic.js`) now features an adaptive reading comprehension section on every tier (A1, A2, B1 × es-es, es-latam, hu), evaluated seamlessly with core questions and surfaced in tier debrief
 - Scores saved to `Lang.key('readingScores')` across both level tests and diagnostic placement
+- **Fix + "nearly there" band (2026-09-28):** the diagnostic's reading section was never actually shown — `_renderTesting` scored the tier as soon as the last core question was answered, so reading always counted 0/2 and the best possible tier score was 10/12 (83%), under the 85% pass mark. Nobody could pass A1, so everyone was placed in A1 (surfaced by a learner who scored 8/10). Fixed, plus a middle band: 70% to 84% on a tier (`borderlineRatio`, optional per test file) places one level up with a "Review <tier> first" option and a "Nearly there" badge. The preface now shows the real per-tier question count (12, not 10) and the pass/band percentages from the data.
 - **Library Comprehension Scoring (Phase 5):** `engine/reader.js` and `engine/library.js` now score and persist reading comprehension checks to `Lang.key('storyComprehension')`, surface completion feedback upon answering, and display a `Quiz N/M ✓` badge on both home shelves and saved cards
 
 **Future items:**
