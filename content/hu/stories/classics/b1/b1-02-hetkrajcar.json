@@ -6,9 +6,20 @@
   "order": 2,
   "type": "classics",
   "estimatedMinutes": 5,
-  "characters": ["az elbeszélő", "édesanya"],
-  "grammar": ["mar-experiential", "meg-soha-experiential", "participle-as-adjective"],
-  "vocabularyTopics": ["memories", "childhood", "reflection"],
+  "characters": [
+    "az elbeszélő",
+    "édesanya"
+  ],
+  "grammar": [
+    "mar-experiential",
+    "meg-soha-experiential",
+    "participle-as-adjective"
+  ],
+  "vocabularyTopics": [
+    "memories",
+    "childhood",
+    "reflection"
+  ],
   "summary": "An adapted retelling of Zsigmond Móricz's short story: an adult narrator remembers a poor but warm childhood afternoon spent with his mother, searching the house for seven missing krajcárs.",
   "source": "Adaptation inspired by the public-domain text by Zsigmond Móricz",
   "author": "Zsigmond Móricz",
@@ -42,5 +53,44 @@
       "type": "narration",
       "text": "Ma már felnőtt vagyok, és sokat változott az életem azóta. De valahányszor nehéz napom van, eszembe jut az a délután, és eszembe jut, hogy egy emlék legfontosabb részletei sosem a pénzről szólnak, hanem az emberekről, akikkel átéltük."
     }
-  ]
+  ],
+  "narration": {
+    "pedagogical": {
+      "comprehensionQuestions": [
+        {
+          "question": "Miről szól a Hét krajcár című elbeszélés alapvetően?",
+          "options": [
+            "Egy gazdag kereskedőcsalád pénzügyi válságáról",
+            "Egy szegény, de szerető anya és gyermeke megható délutánjáról, a szeretet erejéről",
+            "Egy régi kincs megtalálásáról egy elhagyatott kastélyban",
+            "A falusi iskolások mindennapi feladatairól és játékairól"
+          ],
+          "correctIndex": 1,
+          "explanation": "A történet a szegénységben élő anya derűjét és a gyermek iránti feltétlen szeretetét állítja a középpontba (The story centers on a poor mother's warmth and the enduring power of love amidst hardship)."
+        },
+        {
+          "question": "Miért volt szüksége az édesanyának pontosan hét krajcárra?",
+          "options": [
+            "Hogy szappant vehessen belőle",
+            "Hogy kenyeret vásároljon a péknél",
+            "Hogy kifizesse a ház bérleti díját",
+            "Hogy új könyvet vegyen a fiának"
+          ],
+          "correctIndex": 0,
+          "explanation": "A 3. bekezdés szerint: 'Anyám hét krajcárt keresett, hogy szappant vehessen belőle' (The mother was looking for seven krajcárs to buy soap)."
+        },
+        {
+          "question": "Milyen fontos életbölcsességre jön rá a felnőtt elbeszélő a történet végén?",
+          "options": [
+            "A szegénységből csak a gyors vagyonosodás jelenthet kiutat",
+            "A szülők hibáit soha nem szabad elfelejteni a nehéz időkben",
+            "A legfontosabb emlékek sosem a pénzről szólnak, hanem az emberekről, akikkel átéltük őket",
+            "A játékosság a felnőttkorban már teljesen haszontalan dolog"
+          ],
+          "correctIndex": 2,
+          "explanation": "A záró bekezdés tanulsága szerint az igazi emlékek értéke nem a pénzben mérhető, hanem az emberi kapcsolatokban (The key realization is that our most important memories are never about money, but about the people we shared them with)."
+        }
+      ]
+    }
+  }
 }

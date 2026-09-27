@@ -6,9 +6,22 @@
   "order": 2,
   "type": "classics",
   "estimatedMinutes": 5,
-  "characters": ["Bede Jánosné", "Fábián úr, a jegyző", "a fiatal hivatalnok"],
-  "grammar": ["helyedben-advice", "hat-het-suggestion", "nehogy-warning", "egyreszt-masreszt"],
-  "vocabularyTopics": ["advice", "village life", "compassion"],
+  "characters": [
+    "Bede Jánosné",
+    "Fábián úr, a jegyző",
+    "a fiatal hivatalnok"
+  ],
+  "grammar": [
+    "helyedben-advice",
+    "hat-het-suggestion",
+    "nehogy-warning",
+    "egyreszt-masreszt"
+  ],
+  "vocabularyTopics": [
+    "advice",
+    "village life",
+    "compassion"
+  ],
   "summary": "An adapted retelling of Kálmán Mikszáth's short story: a grieving widow receives a bureaucratic demand to pay her late daughter's small old debt, and the village notary must decide how to advise and help her.",
   "source": "Adaptation inspired by the public-domain text by Kálmán Mikszáth",
   "author": "Kálmán Mikszáth",
@@ -46,5 +59,44 @@
       "type": "narration",
       "text": "Bede Jánosné sosem tudta meg, hogy a jegyző végül a saját pénzéből fizette ki a régi tartozást. Csak annyit érzett, hogy valaki meghallgatta, és nem hagyta magára a bánatával. Fábián úr pedig mindig azt vallotta: a legjobb tanács néha nem is szavakban van, hanem abban, amit valaki helyetted, csendben megtesz."
     }
-  ]
+  ],
+  "narration": {
+    "pedagogical": {
+      "comprehensionQuestions": [
+        {
+          "question": "Mi a központi erkölcsi konfliktus Mikszáth elbeszélésében?",
+          "options": [
+            "A falu és a főváros közötti gazdasági versengés",
+            "A diákok lázadása a szigorú iskolai szabályok ellen",
+            "Egy elhúzódó családi vita a földbirtok örökléséről",
+            "A szigorú hivatali bürokrácia és az emberi együttérzés ellentéte"
+          ],
+          "correctIndex": 3,
+          "explanation": "A novella azt mutatja be, hogyan írja felül a jóság és az emberi tapintat a rideg hivatali szabályokat (The story contrasts unfeeling bureaucratic rules with genuine human empathy and compassion)."
+        },
+        {
+          "question": "Milyen tartozást akart behajtani a városi adóhivatal a levél szerint?",
+          "options": [
+            "A ház után fizetendő telekadót",
+            "Néhány krajcárt az elhunyt Anna iskolai könyveiért",
+            "Egy régi bolti hitelt a falu fűszeresénél",
+            "A postakocsi használatának díját"
+          ],
+          "correctIndex": 1,
+          "explanation": "A 2. bekezdés leírja, hogy a hivatal a régen elhunyt lány iskolai könyveinek néhány krajcáros tartozását követelte (The letter demanded a few krajcárs for late Anna's schoolbooks)."
+        },
+        {
+          "question": "Hogyan oldotta meg Fábián úr valójában a szegény asszony problémáját?",
+          "options": [
+            "Csendben, a saját pénzéből fizette ki a tartozást, megkímélve az asszonyt a fájdalomtól",
+            "Hivatalos panaszt nyújtott be a minisztériumhoz a bírság eltörléséért",
+            "Gyűjtést szervezett a falusi lakosok körében a tartozás kifizetésére",
+            "Visszaküldte a levelet a postával, megtagadva az adó kifizetését"
+          ],
+          "correctIndex": 0,
+          "explanation": "Az özvegyasszony nem tudta meg, hogy a jegyző a saját vagyonából rendezte az összeget, hogy ne okozzon újabb sebeket a gyászoló anyának (The notary quietly paid the debt out of his own pocket to spare the grieving mother)."
+        }
+      ]
+    }
+  }
 }

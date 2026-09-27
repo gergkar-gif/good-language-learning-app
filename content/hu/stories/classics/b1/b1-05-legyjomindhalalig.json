@@ -6,9 +6,22 @@
   "order": 5,
   "type": "classics",
   "estimatedMinutes": 6,
-  "characters": ["Nyilas Misi", "Gimesi Feri"],
-  "grammar": ["reciprocal-egymast", "osszevesz-veszekedik", "kibekul-megbocsat", "annak-ellenere-hogy"],
-  "vocabularyTopics": ["relationships", "friendship", "school life", "trust"],
+  "characters": [
+    "Nyilas Misi",
+    "Gimesi Feri"
+  ],
+  "grammar": [
+    "reciprocal-egymast",
+    "osszevesz-veszekedik",
+    "kibekul-megbocsat",
+    "annak-ellenere-hogy"
+  ],
+  "vocabularyTopics": [
+    "relationships",
+    "friendship",
+    "school life",
+    "trust"
+  ],
   "summary": "An adapted retelling inspired by Zsigmond Móricz's novel Légy jó mindhalálig: a poor scholarship boy at the Debrecen boarding school is entrusted with money that goes missing, and must rebuild the trust of his closest friend and classmates despite the injustice.",
   "source": "Adaptation inspired by the public-domain novel by Zsigmond Móricz",
   "author": "Zsigmond Móricz",
@@ -50,5 +63,44 @@
       "type": "narration",
       "text": "Nyilas Misi később gyakran visszagondolt erre a történetre. Megtanulta, hogy a hűséges barátság nem azt jelenti, hogy sosem veszekednek — hanem azt, hogy annak ellenére, hogy néha összevesznek és megbántják egymást, mindig megtalálják a módját, hogy kibéküljenek, és egyre közelebb kerüljenek egymáshoz."
     }
-  ]
+  ],
+  "narration": {
+    "pedagogical": {
+      "comprehensionQuestions": [
+        {
+          "question": "Mi a történet legfontosabb üzenete a barátságról?",
+          "options": [
+            "Az igazi barátság a félreértések és nehéz próbák ellenére is megbocsátáson és őszinteségen alapul",
+            "A gazdag és szegény diákok sohasem bízhatnak meg egymásban az iskolában",
+            "Ha elveszítünk egy értéket, jobb mindent eltitkolni még a barátaink elől is",
+            "A közös tanulás fontosabb, mint az egymás iránti érzelmi hűség"
+          ],
+          "correctIndex": 0,
+          "explanation": "A történet bemutatja, hogy a hibák és a gyanakvás után a bocsánatkérés és a megértés teheti igazán szilárddá a barátságot (True friendship overcomes misunderstandings and mistrust through honesty and forgiveness)."
+        },
+        {
+          "question": "Miért orrolt meg kezdetben Gimesi Feri Nyilas Misire a pénz eltűnése után?",
+          "options": [
+            "Mert azt hitte, Misi elköltötte a pénzt könyvekre",
+            "Mert Misi nem tanult vele a délutáni dolgozatra",
+            "Mert Misi nem bízott benne eléggé ahhoz, hogy rögtön elmondja neki az igazságot",
+            "Mert Misi másik padtársat választott a tanteremben"
+          ],
+          "correctIndex": 2,
+          "explanation": "A 4. bekezdésben Gimesi azért háborodik fel, mert barátja elhallgatta előle a bajt: 'úgy érezte, Misi nem bízott meg benne eléggé' (Gimesi felt hurt because Misi hadn't trusted him enough to tell him the truth immediately)."
+        },
+        {
+          "question": "Hogyan derült ki végül a pénz eltűnésének valódi története?",
+          "options": [
+            "A tanár találta meg a kollégium udvarán a fűben",
+            "Egy fiatalabb diák magától bevallotta, hogy gyengeségből ő vette el a pénzt",
+            "Misi maga fedezte fel a kabátja szakadt bélésében",
+            "A városi rendőrség nyomozta ki a tettes személyét"
+          ],
+          "correctIndex": 1,
+          "explanation": "A 6. bekezdés szerint egy fiatalabb diák önként beismerte a tettét, mert nem merte visszajuttatni a pénzt (A younger student confessed that he had taken the money in a moment of weakness)."
+        }
+      ]
+    }
+  }
 }

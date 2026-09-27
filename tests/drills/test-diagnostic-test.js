@@ -142,6 +142,19 @@ const resD = [
 assert.strictEqual(determinePlacement(resD, testData.es.tiers), 'B2', 'Passing all authored tiers (A1, A2, B1) should place into B2');
 console.log('[PASS] Placement ladder logic correctly resolves A1, A2, B1, and B2 placements');
 
+// 3b. "Nearly there" band, run against the real engine: a borderline score on
+// the first missed tier places one level up; a plain miss does not.
+const Engine = require('../../engine/diagnostic.js');
+assert.strictEqual(Engine._determinePlacement([{ level: 'A1', passed: false, borderline: true }]), 'A2',
+    'Borderline A1 should place into A2');
+assert.strictEqual(Engine._determinePlacement([{ level: 'A1', passed: false, borderline: false }]), 'A1',
+    'Clear miss on A1 should place into A1');
+assert.strictEqual(Engine._determinePlacement([
+    { level: 'A1', passed: true },
+    { level: 'A2', passed: false, borderline: true }
+]), 'B1', 'Passing A1 and borderline A2 should place into B1');
+console.log('[PASS] Borderline band places one level up, clear misses do not');
+
 // 4. Future Extensibility: Dynamically adding B2 tier
 const extendedTiers = [
     ...testData.es.tiers,

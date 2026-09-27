@@ -6,9 +6,22 @@
   "order": 1,
   "type": "classics",
   "estimatedMinutes": 5,
-  "characters": ["Kukorica Jancsi", "Iluska"],
-  "grammar": ["miutan-past", "mielott-past", "miutan-mielott-combined", "scene-setting-time-words", "narrative-result-connectors"],
-  "vocabularyTopics": ["storytelling", "narrative connectors", "folk tale"],
+  "characters": [
+    "Kukorica Jancsi",
+    "Iluska"
+  ],
+  "grammar": [
+    "miutan-past",
+    "mielott-past",
+    "miutan-mielott-combined",
+    "scene-setting-time-words",
+    "narrative-result-connectors"
+  ],
+  "vocabularyTopics": [
+    "storytelling",
+    "narrative connectors",
+    "folk tale"
+  ],
   "summary": "An adapted retelling of the opening of Petőfi's folk epic János vitéz: an orphaned goose-herd loses his geese, is driven from home, says goodbye to the girl he loves, and sets out to become a soldier.",
   "source": "Adaptation inspired by the public-domain text by Sándor Petőfi",
   "author": "Sándor Petőfi",
@@ -46,5 +59,44 @@
       "type": "narration",
       "text": "Ha valaki megkérdezné, mi a tanulsága Jancsi történetének, talán az lenne a válasz: egy nehéz kezdet nem jelenti azt, hogy az élet kudarccal végződik. A részletek — egy elveszett liba, egy könnyes búcsú, egy váratlan találkozás — együtt alkotják azt a történetet, amelyet még ma is sokan ismernek és szeretnek Magyarországon."
     }
-  ]
+  ],
+  "narration": {
+    "pedagogical": {
+      "comprehensionQuestions": [
+        {
+          "question": "Mi a történet legfontosabb központi témája?",
+          "options": [
+            "Egy szegény, árva fiú felemelkedése és útja a nehézségekből a bátorságig",
+            "A falusi gazdák és a földesurak közötti politikai küzdelem",
+            "A huszárok mindennapi kiképzése a bécsi udvarban",
+            "Egy pásztorfiú gazdálkodási sikerei a szülőfalujában"
+          ],
+          "correctIndex": 0,
+          "explanation": "A történet Kukorica Jancsi sorsát mutatja be, aki nehéz körülmények közül indulva, kitartásával és bátorságával küzdi le a megpróbáltatásokat (The central theme is an orphaned boy's journey and rise from hardship through courage)."
+        },
+        {
+          "question": "Miért kergette el a mostohaanyja Jancsit a háztól?",
+          "options": [
+            "Mert Jancsi nem akart dolgozni a mezőn",
+            "Mert összeveszett a falu többi fiataljával",
+            "Mert elaludt a fűben, és a libák átmentek a földesúr búzájába",
+            "Mert titokban pénzt kért a szomszédoktól"
+          ],
+          "correctIndex": 2,
+          "explanation": "A szöveg szerint Jancsi elaludt őrzés közben, néhány liba átment a tiltott búzamezőre, emiatt haragudott meg a mostohája (He fell asleep and some geese wandered into the landlord's wheat field)."
+        },
+        {
+          "question": "Milyen tanulságot von le az elbeszélő Jancsi sorsából a történet végén?",
+          "options": [
+            "Aki egyszer elhagyja a faluját, soha többé nem találhat boldogságra",
+            "A nehéz, hányatott kezdet nem jelenti azt, hogy az élet kudarccal végződik",
+            "Csak a gazdag családba született emberek érhetnek el sikert a világban",
+            "A katonai pálya az egyetlen járható út a szegények számára"
+          ],
+          "correctIndex": 1,
+          "explanation": "A 8. bekezdés kimondja: 'egy nehéz kezdet nem jelenti azt, hogy az élet kudarccal végződik' (A difficult beginning does not mean life will end in failure)."
+        }
+      ]
+    }
+  }
 }

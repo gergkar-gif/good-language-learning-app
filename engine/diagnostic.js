@@ -134,8 +134,24 @@ const DiagnosticTest = (function () {
         }
     }
 
+    function _passRatio() {
+        return (_testData && typeof _testData.passRatio === 'number') ? _testData.passRatio : 0.85;
+    }
+
+    // A tier scored at or above this, but under the pass mark, is "nearly
+    // there": testing stops, but the learner is placed one level up and
+    // offered the tier's own level as the review option.
+    function _borderlineRatio() {
+        return (_testData && typeof _testData.borderlineRatio === 'number') ? _testData.borderlineRatio : 0.7;
+    }
+
     function _renderPreface(host) {
         const langName = (typeof Lang !== 'undefined') ? Lang.name() : 'the language';
+        const firstTier = (_testData && _testData.tiers && _testData.tiers[0]) || {};
+        const perTier = (firstTier.questions || []).length +
+            ((firstTier.readingSection && firstTier.readingSection.questions) || []).length;
+        const passPct = Math.round(_passRatio() * 100);
+        const nearPct = Math.round(_borderlineRatio() * 100);
 
         host.innerHTML = `
             <div class="diag-wrap">
@@ -156,7 +172,7 @@ const DiagnosticTest = (function () {
                             <strong>Quick Diagnostic Screener</strong>
                         </div>
                         <p class="diag-callout-text">
-                            This is a rapid 10-question placement screener evaluating core grammar, situational communication, and active recall. Each tier requires <strong>85% mastery</strong> (including open production) to advance.
+                            This is a rapid placement screener evaluating core grammar, situational communication, reading and active recall. Each tier has ${perTier} questions and requires <strong>${passPct}% mastery</strong> (including open production) to advance. Score ${nearPct}% or more and you can choose to start one level up.
                         </p>
                         <p class="diag-callout-text" style="margin-top: 8px;">
                             <strong>Full Certification Note:</strong> This screener provides an initial course entry recommendation. For comprehensive multi-modal proficiency verification (including extended written composition and recorded oral speech evaluation), complete the official <strong>Level Test</strong> at the end of each curriculum tier.
@@ -166,7 +182,7 @@ const DiagnosticTest = (function () {
                     <div class="diag-preface-meta">
                         <div class="diag-meta-item">
                             <span class="diag-meta-label">Format</span>
-                            <span class="diag-meta-val">10 Questions/Tier (MC &amp; Open Production)</span>
+                            <span class="diag-meta-val">${perTier} Questions/Tier (MC, Open Production &amp; Reading)</span>
                         </div>
                         <div class="diag-meta-item">
                             <span class="diag-meta-label">Duration</span>
@@ -174,7 +190,7 @@ const DiagnosticTest = (function () {
                         </div>
                         <div class="diag-meta-item">
                             <span class="diag-meta-label">Passing Standard</span>
-                            <span class="diag-meta-val">85% Required to Advance</span>
+                            <span class="diag-meta-val">${passPct}% Required to Advance</span>
                         </div>
                     </div>
 
@@ -225,13 +241,14 @@ const DiagnosticTest = (function () {
         }
 
         const questions = tier.questions || [];
+        const hasReadingSection = !!(tier.readingSection && tier.readingSection.questions && tier.readingSection.questions.length);
+
+        // Past the last question is the reading section, when the tier has one
         const q = questions[_currentQuestionIdx];
-        if (!q) {
+        if (!q && !(hasReadingSection && _currentQuestionIdx === questions.length)) {
             _evaluateCurrentTier();
             return;
         }
-
-        const hasReadingSection = !!(tier.readingSection && tier.readingSection.questions && tier.readingSection.questions.length);
 
         if (_currentQuestionIdx < questions.length) {
             const isTextInput = q.type === 'text-input';
@@ -298,7 +315,7 @@ const DiagnosticTest = (function () {
                     <div class="diag-header-bar">
                         <button type="button" class="dk-back" data-action="close-diag">← Quit</button>
                         <div class="diag-tier-status">
-                            <span class="diag-tier-pill">Tier ${_currentTierIdx + 1} of ${tiers.length}: ${_esc(tier.level)} · 85% to Pass</span>
+                            <span class="diag-tier-pill">Tier ${_currentTierIdx + 1} of ${tiers.length}: ${_esc(tier.level)} · ${Math.round(_passRatio() * 100)}% to Pass</span>
                             <span class="diag-q-counter">Question ${_currentQuestionIdx + 1} of ${questions.length}</span>
                         </div>
                     </div>
@@ -613,8 +630,8 @@ const DiagnosticTest = (function () {
         const totalEarned = coreCorrect + readingCorrect;
         const totalPossible = questions.length + readingTotal;
         const ratio = totalPossible > 0 ? (totalEarned / totalPossible) : 0;
-        const passRatio = (typeof _testData.passRatio === 'number') ? _testData.passRatio : 0.85;
-        const passed = ratio >= passRatio;
+        const passed = ratio >= _passRatio();
+        const borderline = !passed && ratio >= _borderlineRatio();
 
         _tierResults.push({
             level: tier.level,
@@ -625,7 +642,8 @@ const DiagnosticTest = (function () {
             coreTotal: questions.length,
             readingCorrect,
             readingTotal,
-            passed
+            passed,
+            borderline
         });
 
         if (passed && _currentTierIdx + 1 < tiers.length) {
@@ -646,7 +664,7 @@ const DiagnosticTest = (function () {
 
         const scoreDetail = (lastResult && lastResult.readingTotal)
             ? `You scored <strong>${lastResult.correct} of ${lastResult.total}</strong> (including ${lastResult.readingCorrect}/${lastResult.readingTotal} reading comprehension) on ${_esc(prevTier.level)}.`
-            : `You scored <strong>${lastResult.correct} of ${lastResult.total}</strong> (85%+ required) on ${_esc(prevTier.level)}.`;
+            : `You scored <strong>${lastResult.correct} of ${lastResult.total}</strong> (${Math.round(_passRatio() * 100)}%+ required) on ${_esc(prevTier.level)}.`;
 
         host.innerHTML = `
             <div class="diag-wrap">
@@ -680,28 +698,34 @@ const DiagnosticTest = (function () {
         _render();
     }
 
-    function _determinePlacement() {
+    function _determinePlacement(results) {
+        results = results || _tierResults;
         const tiers = (_testData && _testData.tiers) ? _testData.tiers : [];
         const levelsOrder = (typeof LEVEL_ORDER !== 'undefined') ? LEVEL_ORDER : ['A1', 'A2', 'B1', 'B2', 'C1'];
 
-        if (_tierResults.length === 0) return 'A1';
+        if (results.length === 0) return 'A1';
 
         // Find the highest tier that was passed
         let highestPassedIdx = -1;
-        for (let i = 0; i < _tierResults.length; i++) {
-            if (_tierResults[i].passed) {
+        for (let i = 0; i < results.length; i++) {
+            if (results[i].passed) {
                 highestPassedIdx = i;
             } else {
                 break;
             }
         }
 
+        // A "nearly there" score on the first missed tier counts as clearing
+        // it for placement; the debrief offers that tier as the review option.
+        const firstMiss = results[highestPassedIdx + 1];
+        if (firstMiss && firstMiss.borderline) highestPassedIdx++;
+
         if (highestPassedIdx === -1) {
             return tiers[0] ? tiers[0].level : 'A1';
         }
 
         // If learner passed tier i, place them into tier i + 1
-        const passedLevel = _tierResults[highestPassedIdx].level;
+        const passedLevel = results[highestPassedIdx].level;
         const normPassed = passedLevel.toUpperCase();
         const orderIdx = levelsOrder.indexOf(normPassed);
 
@@ -725,6 +749,11 @@ const DiagnosticTest = (function () {
             coachSentence = `You demonstrated clear competence in basic communication and past narration; Level B1 (Intermediate) is your ideal starting stage to tackle the subjunctive mood, complex clauses, and independent expression.`;
         } else {
             coachSentence = `Outstanding proficiency! You demonstrated command of foundational and intermediate ${langName}; you are placed directly into ${placedLevel} for advanced communicative expression.`;
+        }
+
+        const nearly = _tierResults.find(r => r.borderline);
+        if (nearly) {
+            coachSentence = `You scored ${nearly.correct} of ${nearly.total} on ${nearly.level}, just under the ${Math.round(_passRatio() * 100)}% mark. You're mostly there: start at ${placedLevel}, or review ${nearly.level} first if parts of it felt shaky.`;
         }
 
         const levelsOrder = (typeof LEVEL_ORDER !== 'undefined') ? LEVEL_ORDER : ['A1', 'A2', 'B1', 'B2', 'C1'];
@@ -766,7 +795,7 @@ const DiagnosticTest = (function () {
                                     </div>
                                     <div class="diag-ts-right">
                                         <span class="diag-ts-score">${r.correct}/${r.total}</span>
-                                        <span class="diag-ts-badge">${r.passed ? 'Mastered' : 'Developing'}</span>
+                                        <span class="diag-ts-badge">${r.passed ? 'Mastered' : (r.borderline ? 'Nearly there' : 'Developing')}</span>
                                     </div>
                                 </div>
                             `).join('')}
@@ -790,9 +819,16 @@ const DiagnosticTest = (function () {
                         `}
 
                         <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-                            <button type="button" class="wk-secondary-btn" data-action="start-a1-anyway" style="flex: 1;">
-                                Start from Level A1 Anyway
-                            </button>
+                            ${nearly ? `
+                                <button type="button" class="wk-secondary-btn" data-action="review-nearly" style="flex: 1;">
+                                    Review ${_esc(nearly.level)} First
+                                </button>
+                            ` : ''}
+                            ${!nearly || nearly.level.toUpperCase() !== 'A1' ? `
+                                <button type="button" class="wk-secondary-btn" data-action="start-a1-anyway" style="flex: 1;">
+                                    Start from Level A1 Anyway
+                                </button>
+                            ` : ''}
                             <button type="button" class="wk-secondary-btn" data-action="retake-diag" style="flex: 1;">
                                 Retake Diagnostic
                             </button>
@@ -827,6 +863,22 @@ const DiagnosticTest = (function () {
         if (startA1Btn) {
             startA1Btn.addEventListener('click', () => {
                 _saveResult(placedLevel, _tierResults, false);
+                close();
+                if (typeof showTab === 'function') {
+                    showTab('learn', document.querySelector('.nav button[data-tab="learn"]'));
+                }
+            });
+        }
+
+        const reviewBtn = host.querySelector('[data-action="review-nearly"]');
+        if (reviewBtn) {
+            reviewBtn.addEventListener('click', () => {
+                const reviewIdx = levelsOrder.indexOf(nearly.level.toUpperCase());
+                if (reviewIdx > 0) {
+                    _executeJumpAhead(nearly.level);
+                    return;
+                }
+                _saveResult(nearly.level, _tierResults, false);
                 close();
                 if (typeof showTab === 'function') {
                     showTab('learn', document.querySelector('.nav button[data-tab="learn"]'));
