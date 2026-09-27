@@ -52,7 +52,7 @@ const Workshop = (function () {
             sub: 'Magyar kulturális ismereti vizsga · 6 official categories, explained artifacts, matching & 3 mock exams.',
             containerId: 'hu-cultural-exam-root',
             langs: ['hu'],
-            category: 'studios'
+            category: 'exams'
         },
         {
             id: 'verbs',
@@ -208,6 +208,7 @@ const Workshop = (function () {
         const available = DRILLERS.filter(_available);
         const studios = available.filter(d => d.category === 'studios');
         const foundations = available.filter(d => d.category === 'foundations');
+        const exams = available.filter(d => d.category === 'exams');
         return `
             ${_recommendationHtml(recommendation)}
             ${studios.length ? `
@@ -220,6 +221,12 @@ const Workshop = (function () {
                 <div class="wk-section-heading">Foundations</div>
                 <div class="wk-picker">
                     ${_renderCards(foundations)}
+                </div>
+            ` : ''}
+            ${exams.length ? `
+                <div class="wk-section-heading">Exam Preparation</div>
+                <div class="wk-picker">
+                    ${_renderCards(exams)}
                 </div>
             ` : ''}
         `;
