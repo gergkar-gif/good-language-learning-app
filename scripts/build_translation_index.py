@@ -150,6 +150,8 @@ SLUG_TOPIC_LABELS = {
     "nemzetiertekek": "Hungarian Culture, Science & Heritage",
     "magyarsag": "Hungarians Across the World & International Relations",
     "allampolgarsag": "Being a Citizen: Rights, Duties & the Oath",
+    "kormanyablak": "Public Administration & Kormányablak",
+    "alberlet": "Residential Tenancy & Housing Contracts",
     # Spain CCSE Cultura y Ciudadanía topics
     "ccse-constitucion": "The Spanish Constitution",
     "ccse-monarquia": "The Monarchy & Head of State",
@@ -322,6 +324,12 @@ def _track_for(stem, level, lang):
     """The slug-named second track's own name (see _SLUG_TRACK_NAME) for B1/B2's
     slug-named files, "core" for B1/B2's numeric-unit files, None everywhere
     else."""
+    if level == "C1" and lang == "hu":
+        if _SLUG_RE.match(stem):
+            return "discourse"
+        if _UNIT_RE.match(stem) or _LESSON_ACROSS_LEVEL_RE.match(stem):
+            return "core"
+        return None
     if level == "B2" and lang == "hu":
         if _SLUG_RE.match(stem):
             return "culture"

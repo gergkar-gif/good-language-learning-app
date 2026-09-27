@@ -195,6 +195,10 @@ LEVEL_TRACKS = {
             {"id": "core", "title": "Core Hungarian"},
             {"id": "culture", "title": "Culture, History & Society"},
         ],
+        "c1": [
+            {"id": "core", "title": "Core Hungarian"},
+            {"id": "discourse", "title": "Public Discourse & Society"},
+        ],
     },
 }
 

@@ -305,6 +305,114 @@
       "minWords": 120,
       "targetWords": 135,
       "maxWords": 150
+    },
+    {
+      "id": "hu-b1-w06",
+      "cefrLevel": "B1",
+      "taskType": "hivatalos_kerelem",
+      "title": "Hivatalos kérelem a Kormányablaknak",
+      "situation": "Nemrég új lakásba költöztél, és sürgősen el kell intézned a lakcímkártyád megújítását, valamint egy sürgősségi útlevél kiállítását utazás miatt.",
+      "task": "Írj egy hivatalos kérelmet az illetékes Kormányablak vezetőjének.",
+      "points": [
+        "add meg a személyes adataidat és a kérelem tárgyát",
+        "indokold meg röviden a költözést és a sürgősségi eljárás szükségességét",
+        "sorold fel a csatolt mellékleteket (bérleti szerződés, lakcímbejelentő lap)",
+        "kérj hivatalos visszajelzést és használd a megfelelő hivatalos záradékot (Tisztelettel)"
+      ],
+      "prompt": "Helyzet: Nemrég új lakásba költöztél, és sürgősen el kell intézned a lakcímkártyád megújítását, valamint egy sürgősségi útlevél kiállítását utazás miatt.\n\nFeladat: Írj egy hivatalos kérelmet az illetékes Kormányablak vezetőjének (100–130 szóban). Tartalmazza: személyes adatok és kérelem tárgya; indoklás; csatolt mellékletek felsorolása; hivatalos forma és udvarias elköszönés.",
+      "minWords": 100,
+      "targetWords": 120,
+      "maxWords": 150
+    },
+    {
+      "id": "hu-b1-w07",
+      "cefrLevel": "B1",
+      "taskType": "alberlet_felmondas",
+      "title": "Albérleti felmondólevél és kaució elszámolása",
+      "situation": "Munkahelyváltás miatt elköltözöl a jelenlegi bérelt lakásodból. Írásban fel kell mondanod a bérleti szerződést a bérbeadónál a szerződésben szereplő felmondási idővel.",
+      "task": "Írj hivatalos felmondólevelet a bérbeadónak.",
+      "points": [
+        "hivatkozz a bérleti szerződés keltére és a lakás pontos címére",
+        "közöld a felmondás tényét és a kiköltözés pontos dátumát",
+        "javasolj időpontot a mérőórák leolvasására és az átadási jegyzőkönyv felvételére",
+        "kérd a kéthavi kaució visszautalását a megadott bankszámlaszámra"
+      ],
+      "prompt": "Helyzet: Munkahelyváltás miatt elköltözöl a jelenlegi bérelt lakásodból. Írásban fel kell mondanod a bérleti szerződést a bérbeadónál.\n\nFeladat: Írj hivatalos felmondólevelet a bérbeadónak (100–130 szóban). Tartalmazza: szerződés hivatkozása és cím; felmondási határidő és kiköltözés napja; mérőóra-leolvasás és jegyzőkönyv időpontja; kaució elszámolása és bankszámla.",
+      "minWords": 100,
+      "targetWords": 120,
+      "maxWords": 150
+    },
+    {
+      "id": "hu-b2-w01",
+      "cefrLevel": "B2",
+      "taskType": "panaszlevel_kartérítés",
+      "title": "Hivatalos panaszlevél és kártérítési követelés",
+      "situation": "Egy nemzetközi utazási irodánál lefoglalt és kifizetett szállodai szolgáltatás jelentősen elmaradt az ígértektől (nem működő légkondicionáló, befejezetlen építkezés a medence körül, elmaradt transzfer).",
+      "task": "Írj hivatalos panaszlevelet az utazási iroda ügyvezetőjének.",
+      "points": [
+        "hivatkozz a foglalási azonosítóra, az utazás időpontjára és a szerződéses feltételekre",
+        "részletezd a szerződésszegés konkrét eseteit és azok negatív hatásait",
+        "hivatkozz a helyszínen felvett kifogásolási jegyzőkönyvre",
+        "támassz konkrét, 40%-os díjvisszafizetési és kártérítési igényt 15 napos határidővel"
+      ],
+      "prompt": "Helyzet: Egy utazási irodánál lefoglalt prémium utazás során a szolgáltatás minősége súlyosan elmaradt a szerződésben vállaltaktól.\n\nFeladat: Írj hivatalos panaszlevelet a cégvezetésnek (180–240 szóban). Tartalmazza: foglalási adatok és hivatkozások; a hiányosságok részletes és tárgyilagos kifejtése; hivatkozás a helyszíni jegyzőkönyvre; határozott kártérítési és árleszállítási követelés törvényi határidővel; formális nyelvezet.",
+      "minWords": 180,
+      "targetWords": 220,
+      "maxWords": 260
+    },
+    {
+      "id": "hu-b2-w02",
+      "cefrLevel": "B2",
+      "taskType": "ervelo_essze",
+      "title": "Érvelő esszé: Távmunka vagy irodai jelenlét?",
+      "situation": "A modern munkaerőpiacon intenzív vita folyik arról, hogy a távmunka (home office) vagy a személyes irodai jelenlét szolgálja-e jobban a munkavállalók és a vállalatok érdekeit.",
+      "task": "Írj érvelő esszét egy gazdasági és társadalmi magazin számára.",
+      "points": [
+        "fogalmazd meg a téma aktualitását a bevezetésben",
+        "mutasd be a távmunka előnyeit (rugalmasság, ingázási idő megtakarítása, környezetvédelem)",
+        "elemezd az irodai jelenlét pozitívumait (csapatszellem, spontán innováció, elmagányosodás megelőzése)",
+        "fejts ki egy kiegyensúlyozott, hibrid modellre épülő konklúziót saját álláspontoddal"
+      ],
+      "prompt": "Helyzet: A hibrid munkavégzés korában vita zajlik a távmunka és az irodai jelenlét előnyeiről és hátrányairól.\n\nFeladat: Írj egy érvelő esszét (200–260 szóban). Tartalmazza: bevezetés a jelenkori trendekkel; a home office melletti érvek; a személyes jelenlét melletti érvek; ellentétező kötőszavak (ugyanakkor, mindazonáltal, jóllehet); szintetizáló lezárás.",
+      "minWords": 200,
+      "targetWords": 230,
+      "maxWords": 280
+    },
+    {
+      "id": "hu-b2-w03",
+      "cefrLevel": "B2",
+      "taskType": "osztondij_palyazat",
+      "title": "Motivációs levél és kutatói ösztöndíjpályázat",
+      "situation": "Egy budapesti egyetemi kutatóintézet posztgraduális vendéghallgatói ösztöndíjat hirdetett meg közép-európai történelem és kultúratudomány szakterületen.",
+      "task": "Írj hivatalos motivációs levelet a bírálóbizottsághoz.",
+      "points": [
+        "ismertesd tanulmányi és szakmai előképzettségedet",
+        "indokold meg a választott kutatási téma tudományos relevanciáját",
+        "mutass rá, miért éppen a megjelölt magyarországi intézmény a legalkalmasabb a kutatás lebonyolítására",
+        "fogalmazd meg, hogyan hasznosulnak majd az eredmények a szakmai jövődben"
+      ],
+      "prompt": "Helyzet: Pályázatot nyújtasz be egy rangos magyar kutatóintézethez vendégkutatói ösztöndíj elnyerésére.\n\nFeladat: Írj formális motivációs levelet a pályázati bizottságnak (190–250 szóban). Tartalmazza: szakmai háttér; a tervezett kutatás célja és módszertana; az intézményhez való kapcsolódás indoklása; a kutatás várható eredményei és hatásai; tudományos, választékos regiszter.",
+      "minWords": 190,
+      "targetWords": 220,
+      "maxWords": 260
+    },
+    {
+      "id": "hu-b2-w04",
+      "cefrLevel": "B2",
+      "taskType": "velemenycikk_kornyezet",
+      "title": "Véleménycikk: Fenntartható városi közlekedés",
+      "situation": "Egy környezetvédelmi portál vitát indított arról, hogyan lehetne a magyar nagyvárosokban visszaszorítani az egyéni gépjármű-forgalmat a kerékpáros és közösségi közlekedés javára.",
+      "task": "Írj véleménycikket a portál szerkesztőségének.",
+      "points": [
+        "vázold fel a jelenlegi nagyvárosi forgalmi és környezeti kihívásokat (légszennyezés, dugók)",
+        "érvelj az integrált közösségi közlekedés és a biztonságos mikromobilitás mellett",
+        "cáfold azokat az álláspontokat, amelyek szerint a korlátozások hátrányosak a gazdaságra",
+        "fogalmazz meg konkrét javaslatokat a döntéshozók és az állampolgárok számára"
+      ],
+      "prompt": "Helyzet: Nagyvárosi mobilitási reformról zajlik vita a sajtóban.\n\nFeladat: Írj egy publicisztikai véleménycikket (190–250 szóban). Tartalmazza: figyelemfelkeltő felütés; a fenntartható közlekedés környezeti és egészségügyi előnyei; ellenérvek logikus cáfolata; javaslatok a városvezetésnek; meggyőző retorikai stílus.",
+      "minWords": 190,
+      "targetWords": 220,
+      "maxWords": 260
     }
   ]
 }

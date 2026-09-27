@@ -291,6 +291,114 @@
       "minSeconds": 180,
       "targetSeconds": 210,
       "maxSeconds": 270
+    },
+    {
+      "id": "hu-b1-s06",
+      "cefrLevel": "B1",
+      "taskType": "egeszseg_sport",
+      "title": "Egészséges életmód és sport",
+      "situation": "A nyelvvizsgán a vizsgáztató az egészséges életmódról és a testmozgás szerepéről kérdez.",
+      "task": "Beszélj önállóan az egészséges életmódról.",
+      "points": [
+        "mit teszel a mindennapokban az egészséged megőrzéséért",
+        "milyen sportokat űzöl vagy követsz szívesen",
+        "hogyan változtak az étkezési szokásaid az utóbbi években",
+        "miért fontos a stressz kezelése és a megfelelő alvás"
+      ],
+      "prompt": "Situation: You are asked about healthy living and sport during an oral exam.\n\nTask: Speak on your own about healthy lifestyle (2-3 minutes). Include: what you do daily to stay healthy; sports you play or follow; how your eating habits have changed; managing stress and rest.",
+      "minSeconds": 90,
+      "targetSeconds": 140,
+      "maxSeconds": 180
+    },
+    {
+      "id": "hu-b1-s07",
+      "cefrLevel": "B1",
+      "taskType": "orvosi_szituacio",
+      "title": "Szituációs párbeszéd: Időpont-egyeztetés a rendelőben",
+      "situation": "Hirtelen rosszul lettél a munkahelyeden, és felhívod a háziorvosi rendelőt, hogy még ma bejuthass orvoshoz.",
+      "task": "Kérj sürgős vizsgálati időpontot az asszisztenstől.",
+      "points": [
+        "mutatkozz be és add meg a TAJ-számodat",
+        "írd le a panaszaidat (erős fejfájás, émelygés, szédülés)",
+        "magyarázd el, miért nem tudsz várni a jövő hétig",
+        "egyeztess időpontot és érdeklődj, mit vigyél magaddal"
+      ],
+      "prompt": "Situation: You call the doctor's clinic for an urgent appointment due to sudden illness.\n\nTask: Request an appointment from the receptionist (2-3 minutes). Include: name and health card (TAJ) number; describe symptoms clearly; explain urgency; agree on time slot and required documents.",
+      "minSeconds": 90,
+      "targetSeconds": 140,
+      "maxSeconds": 180
+    },
+    {
+      "id": "hu-b2-s01",
+      "cefrLevel": "B2",
+      "taskType": "keposszehasonlitas_oktatas",
+      "title": "Képösszehasonlítás: Hagyományos könyvtár és digitális távoktatás",
+      "situation": "A szóbeli vizsgán két képet kapsz: az egyiken diákok egy csendes egyetemi könyvtárban könyvekből tanulnak, a másikon egy hallgató otthon, laptoppal és fejhallgatóval online előadást hallgat.",
+      "task": "Hasonlítsd össze a két képet és fejtsd ki a véleményedet az oktatás jövőjéről.",
+      "points": [
+        "írd le és állítsd szembe a két tanulási formát és környezetet",
+        "elemezd a digitális tanulás rugalmasságát és technológiai előnyeit",
+        "térj ki a hagyományos tanulás szociális és elmélyülést segítő hatásaira",
+        "fogalmazd meg személyes preferenciádat és az oktatás várható irányait"
+      ],
+      "prompt": "Situation: Picture comparison task at B2 oral exam.\n\nTask: Compare and contrast two photos showing traditional library study vs online digital distance education (3-4 minutes). Include: descriptions and differences; pros and cons of both learning environments; social vs technical aspects; your balanced conclusion on the future of education.",
+      "minSeconds": 120,
+      "targetSeconds": 180,
+      "maxSeconds": 240
+    },
+    {
+      "id": "hu-b2-s02",
+      "cefrLevel": "B2",
+      "taskType": "monolog_mesterseges_intelligencia",
+      "title": "Önálló témakifejtés: A mesterséges intelligencia hatása a társadalomra",
+      "situation": "A B2 szóbeli vizsga monológ részében a technológiai fejlődés és a mesterséges intelligencia társadalmi hatásait kell elemezned.",
+      "task": "Tarts strukturált előadást a mesterséges intelligencia előnyeiről és veszélyeiről.",
+      "points": [
+        "mutass be területeket, ahol a gépi tanulás forradalmasítja a mindennapokat (orvostudomány, közlekedés, fordítás)",
+        "elemezd az automatizáció okozta munkaerőpiaci félelmeket és kihívásokat",
+        "érints etikai kérdéseket (adatvédelem, algoritmusok elfogultsága)",
+        "vázolj fel lehetséges szabályozási megoldásokat a felelős használat érdekében"
+      ],
+      "prompt": "Situation: Monologue on contemporary issues at B2 level.\n\nTask: Deliver a structured presentation on the social and economic impact of artificial intelligence (3-4 minutes). Include: transformative applications; employment disruptions; ethical and data privacy dilemmas; regulatory perspectives.",
+      "minSeconds": 120,
+      "targetSeconds": 180,
+      "maxSeconds": 240
+    },
+    {
+      "id": "hu-b2-s03",
+      "cefrLevel": "B2",
+      "taskType": "keposszehasonlitas_lakhatas",
+      "title": "Képösszehasonlítás: Nagyvárosi panelnegyed és vidéki családi ház",
+      "situation": "A vizsgán két fotót látsz: az egyiken egy sűrűn beépített, modern nagyvárosi lakótelep látható metróállomással, a másikon egy csendes, vidéki zöldövezeti családi ház kerttel.",
+      "task": "Hasonlítsd össze a két életformát, a városi és a vidéki lakhatás előnyeit és kihívásait.",
+      "points": [
+        "elemezd a városi életforma előnyeit (infrastruktúra, kulturális kínálat, munkahelyek közelsége)",
+        "mutass rá a nagyvárosi élet nehézségeire (zaj, szmog, zsúfoltság, magas lakásárak)",
+        "részletezd a vidéki élet pozitívumait (tiszta levegő, nyugalom, nagyobb élettér, közösség)",
+        "fejtsd ki, hogyan változtak az igények a különböző generációk körében"
+      ],
+      "prompt": "Situation: Picture comparison at B2 exam.\n\nTask: Compare urban high-density apartment living with quiet rural/suburban family home living (3-4 minutes). Include: infrastructure and convenience vs space and environment; cost of living and pace of life; generational preferences; your personal perspective.",
+      "minSeconds": 120,
+      "targetSeconds": 180,
+      "maxSeconds": 240
+    },
+    {
+      "id": "hu-b2-s04",
+      "cefrLevel": "B2",
+      "taskType": "vita_donteshozatal_kornyezet",
+      "title": "Szituációs vita: Vállalati fenntarthatósági intézkedések",
+      "situation": "Egy vállalat vezetői megbeszélésén veszel részt a kollégáddal. Dönteniük kell egy 50 millió forintos zöld beruházási keret felosztásáról.",
+      "task": "Érvelj a saját javaslataid mellett, reagálj a partnered ellenvetéseire, és kössetek kompromisszumot.",
+      "points": [
+        "javasold napelemes rendszer telepítését az irodaház tetejére",
+        "érvelj az elektromos céges autók és kerékpártárolók támogatása mellett",
+        "hallgasd meg a partner ellenérveit a magas kezdeti beruházási költségekről",
+        "állapodjatok meg egy ütemezett, kombinált intézkedési csomagban"
+      ],
+      "prompt": "Situation: Interactive discussion and consensus building at B2 level.\n\nTask: Negotiate allocation of a company sustainability budget with your conversational partner (3-4 minutes). Include: proposing green energy initiatives; discussing ROI and environmental gains; addressing budget objections; reaching a binding mutual compromise.",
+      "minSeconds": 120,
+      "targetSeconds": 180,
+      "maxSeconds": 240
     }
   ]
 }

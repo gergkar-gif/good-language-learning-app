@@ -397,6 +397,783 @@
           }
         }
       ]
+    },
+    {
+      "id": "hu-b1-sc01-patika",
+      "cefrLevel": "B1",
+      "title": "A Patikában: Láz, köhögés és gyógyszerkiváltás",
+      "titleEn": "At the Pharmacy: Fever, Cough & Over-the-Counter Medication",
+      "situation": "Két napja lázas vagy és erősen köhögsz. Elmentél a gyógyszertárba, hogy recept nélküli gyógyszert kérj, és érdeklődj az adagolásról.",
+      "situationEn": "You have had a fever and bad cough for two days. You go to the pharmacy to ask for over-the-counter medicine and inquire about dosage.",
+      "roleplay": {
+        "interlocutorRole": "Gyógyszerész",
+        "interlocutorRoleEn": "Pharmacist",
+        "learnerRole": "Beteg / Vásárló",
+        "learnerRoleEn": "Patient / Customer",
+        "interlocutorVoice": "hu-HU"
+      },
+      "targetCompetency": "I can explain symptoms to a pharmacist, ask for OTC medication, and understand dosage instructions in Hungarian",
+      "targetSkills": [
+        "medical_consultation",
+        "explaining_symptoms",
+        "dosage_instructions"
+      ],
+      "unitIds": [
+        "unit.a2.44"
+      ],
+      "turns": [
+        {
+          "turnIndex": 1,
+          "interlocutorPrompt": "Jó napot kívánok! Miben segíthetek?",
+          "interlocutorTranslation": "Good day! How can I help you?",
+          "learnerCue": "Köszönj, és mondd el, hogy két napja lázad van, fáj a torkod és szárazon köhögsz. Kérj valamilyen hatásos gyógyszert.",
+          "learnerCueEn": "Greet, and say that you have had a fever for two days, a sore throat, and a dry cough. Ask for an effective medicine.",
+          "vocabularyHints": [
+            "lázam van — I have a fever",
+            "fáj a torkom — my throat hurts",
+            "száraz köhögés — dry cough",
+            "tudna ajánlani valamit? — could you recommend something?"
+          ],
+          "validationCriteria": {
+            "minWords": 5,
+            "targetKeywords": [
+              "láz",
+              "torok",
+              "köhög",
+              "fáj",
+              "ajánl",
+              "gyógyszer"
+            ]
+          }
+        },
+        {
+          "turnIndex": 2,
+          "interlocutorPrompt": "Értem. Láz- és fájdalomcsillapításra paracetamolt vagy ibuprofent ajánlok, a köhögésre pedig ezt a szirupot. Van bármilyen ismert gyógyszerallergiája?",
+          "interlocutorTranslation": "I see. For fever and pain relief I recommend paracetamol or ibuprofen, and for the cough this syrup. Do you have any known drug allergies?",
+          "learnerCue": "Válaszolj, hogy nincs gyógyszerallergiád, és kérdezd meg, pontosan hogyan kell adagolni a tablettát és a szirupot.",
+          "learnerCueEn": "Reply that you have no drug allergies, and ask how exactly to dose the tablet and the syrup.",
+          "vocabularyHints": [
+            "nincs allergiám — I have no allergy",
+            "hogyan kell szedni? — how should it be taken?",
+            "adagolás — dosage",
+            "étkezés előtt / után — before / after meals"
+          ],
+          "validationCriteria": {
+            "minWords": 4,
+            "targetKeywords": [
+              "allergia",
+              "nincs",
+              "hogyan",
+              "kell",
+              "szedni",
+              "adagol"
+            ]
+          }
+        },
+        {
+          "turnIndex": 3,
+          "interlocutorPrompt": "A tablettát naponta háromszor, étkezés után vegye be bő vízzel, a szirupból pedig reggel és este egy-egy adagolókanállal. Ha három nap után sem javul, feltétlenül forduljon orvoshoz! Adhatok még valamit?",
+          "interlocutorTranslation": "Take the tablet three times a day after meals with plenty of water, and one measuring spoon of the syrup morning and evening. If it doesn't improve after three days, definitely see a doctor! Can I give you anything else?",
+          "learnerCue": "Köszönd meg a tájékoztatást, mondd, hogy más nem kell, és kérdezd meg, fizethetsz-e bankkártyával.",
+          "learnerCueEn": "Thank them for the information, say that nothing else is needed, and ask if you can pay by bank card.",
+          "vocabularyHints": [
+            "köszönöm szépen — thank you very much",
+            "más nem szükséges — nothing else is required",
+            "lehet kártyával fizetni? — can one pay by card?",
+            "mennyibe kerül? — how much does it cost?"
+          ],
+          "validationCriteria": {
+            "minWords": 4,
+            "targetKeywords": [
+              "köszön",
+              "más",
+              "kártya",
+              "fizet"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "hu-b1-sc02-alberlet",
+      "cefrLevel": "B1",
+      "title": "Lakásmegtekintés és Bérleti Szerződés",
+      "titleEn": "Apartment Viewing & Lease Agreement",
+      "situation": "Megtekintesz egy kiadó budapesti albérletet. A tulajdonossal beszélsz a bérleti díjról, a rezsiről, a kaucióról és a beköltözés feltételeiről.",
+      "situationEn": "You are viewing an apartment for rent in Budapest. You discuss rent, utilities, security deposit, and move-in conditions with the landlord.",
+      "roleplay": {
+        "interlocutorRole": "Főbérlő / Tulajdonos",
+        "interlocutorRoleEn": "Landlord / Owner",
+        "learnerRole": "Leendő bérlő",
+        "learnerRoleEn": "Prospective Tenant",
+        "interlocutorVoice": "hu-HU"
+      },
+      "targetCompetency": "I can negotiate lease terms, ask about utilities and deposit, and agree on moving-in protocol in Hungarian",
+      "targetSkills": [
+        "tenancy_negotiation",
+        "contractual_terms",
+        "utility_fees"
+      ],
+      "unitIds": [
+        "unit.b1.alberlet"
+      ],
+      "turns": [
+        {
+          "turnIndex": 1,
+          "interlocutorPrompt": "Jó napot kívánok! Örülök, hogy eljött megnézni a lakást. Tetszik Önnek a beosztás és az erkély?",
+          "interlocutorTranslation": "Good day! I'm glad you came to see the apartment. Do you like the layout and the balcony?",
+          "learnerCue": "Köszönj, dicsérd meg a lakást, és kérdezd meg, mennyi a havi bérleti díj és a közös költség.",
+          "learnerCueEn": "Greet, compliment the flat, and ask how much the monthly rent and condominium common cost are.",
+          "vocabularyHints": [
+            "nagyon tetszik — I like it very much",
+            "világos és csendes — bright and quiet",
+            "havi bérleti díj — monthly rent",
+            "közös költség — condominium fee"
+          ],
+          "validationCriteria": {
+            "minWords": 5,
+            "targetKeywords": [
+              "tetszik",
+              "bérleti díj",
+              "közös költség",
+              "havi",
+              "mennyi"
+            ]
+          }
+        },
+        {
+          "turnIndex": 2,
+          "interlocutorPrompt": "A bérleti díj kétszázhúszezer forint havonta, a közös költség pedig tizenötezer forint, ami tartalmazza a szemétszállítást is. Kéthavi kauciót kérek a szerződés aláírásakor. Ön mikor tudna beköltözni?",
+          "interlocutorTranslation": "The rent is 220,000 forints per month, and common cost is 15,000 forints, which includes garbage collection. I ask for two months' deposit upon signing. When would you be able to move in?",
+          "learnerCue": "Mondd el, hogy a jövő hónap elsejétől szeretnél beköltözni, és kérdezd meg, hogy készítenek-e átadás-átvételi jegyzőkönyvet az óraállásokról.",
+          "learnerCueEn": "Say that you would like to move in from the first of next month, and ask if a handover protocol will be prepared for meter readings.",
+          "vocabularyHints": [
+            "jövő hónap elsejétől — from the first of next month",
+            "átadás-átvételi jegyzőkönyv — handover protocol",
+            "mérőóra-állások — meter readings",
+            "szerződéskötés — signing the contract"
+          ],
+          "validationCriteria": {
+            "minWords": 5,
+            "targetKeywords": [
+              "hónap",
+              "beköltöz",
+              "jegyzőkönyv",
+              "óraállás",
+              "szerződés"
+            ]
+          }
+        },
+        {
+          "turnIndex": 3,
+          "interlocutorPrompt": "Természetesen, a kulcsátadáskor tételes jegyzőkönyvet veszünk fel, és lefotózzuk a villany- és gázórát. Szüksége van lakcímbejelentésre a tartózkodási helyhez?",
+          "interlocutorTranslation": "Naturally, upon key handover we draw up an itemized protocol and photograph the electricity and gas meters. Do you need address registration for temporary residence?",
+          "learnerCue": "Válaszolj, hogy igen, szükséged lesz a tulajdonos aláírására a lakcímbejelentő lapon, és javasold a szerződéstervezet áttekintését.",
+          "learnerCueEn": "Reply yes, you will need the owner's signature on the address form, and suggest reviewing the contract draft.",
+          "vocabularyHints": [
+            "igen, szükségem van — yes, I need",
+            "lakcímbejelentő lap — address registration form",
+            "aláírás — signature",
+            "szerződéstervezet — contract draft"
+          ],
+          "validationCriteria": {
+            "minWords": 5,
+            "targetKeywords": [
+              "igen",
+              "szükség",
+              "aláír",
+              "lakcím",
+              "szerződés"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "hu-b1-sc03-kormanyablak",
+      "cefrLevel": "B1",
+      "title": "Ügyintézés a Kormányablakban",
+      "titleEn": "Official Administration at the Kormányablak",
+      "situation": "A Kormányablakban vagy, mert új lakcímkártyát és személyi igazolványt szeretnél csináltatni költözés miatt.",
+      "situationEn": "You are at the government office (Kormányablak) because you want to get a new address card and ID card due to moving.",
+      "roleplay": {
+        "interlocutorRole": "Hivatali ügyintéző",
+        "interlocutorRoleEn": "Government Desk Officer",
+        "learnerRole": "Ügyfél",
+        "learnerRoleEn": "Client / Citizen",
+        "interlocutorVoice": "hu-HU"
+      },
+      "targetCompetency": "I can register a new address and apply for official identity documents in Hungarian",
+      "targetSkills": [
+        "official_procedures",
+        "document_application",
+        "civic_interaction"
+      ],
+      "unitIds": [
+        "unit.b1.kormanyablak"
+      ],
+      "turns": [
+        {
+          "turnIndex": 1,
+          "interlocutorPrompt": "Jó napot kívánok! Kérem a sorszámát és a meglévő okmányait. Milyen ügyben járul a hatóság elé?",
+          "interlocutorTranslation": "Good day! Please give me your queue ticket and existing documents. In what matter do you appear before the authority?",
+          "learnerCue": "Köszönj, add át a sorszámot és a régi személyidet, és mondd el, hogy új lakcímet szeretnél bejelenteni és új lakcímkártyát igényelsz.",
+          "learnerCueEn": "Greet, hand over the ticket and your old ID, and state that you want to register a new address and apply for a new address card.",
+          "vocabularyHints": [
+            "itt a sorszámom — here is my queue ticket",
+            "lakcímváltozást szeretnék bejelenteni — I want to register a change of address",
+            "új lakcímkártya — new address card",
+            "beköltöztem — I moved in"
+          ],
+          "validationCriteria": {
+            "minWords": 5,
+            "targetKeywords": [
+              "sorszám",
+              "személyi",
+              "lakcím",
+              "bejelent",
+              "új"
+            ]
+          }
+        },
+        {
+          "turnIndex": 2,
+          "interlocutorPrompt": "Rendben van. Hozta magával a szállásadó által kitöltött és aláírt lakcímbejelentő lapot, valamint a bérleti szerződést?",
+          "interlocutorTranslation": "Alright. Did you bring the address registration form filled in and signed by the accommodation provider, as well as the lease agreement?",
+          "learnerCue": "Mondd el, hogy igen, itt van a kitöltött és aláírt nyomtatvány az eredeti bérleti szerződéssel együtt.",
+          "learnerCueEn": "Say yes, here is the completed and signed form together with the original lease agreement.",
+          "vocabularyHints": [
+            "itt van az aláírt lap — here is the signed form",
+            "eredeti bérleti szerződés — original lease contract",
+            "minden adatot kitöltöttünk — we filled in all data"
+          ],
+          "validationCriteria": {
+            "minWords": 5,
+            "targetKeywords": [
+              "igen",
+              "itt",
+              "szerződés",
+              "aláír",
+              "eredeti",
+              "nyomtatvány"
+            ]
+          }
+        },
+        {
+          "turnIndex": 3,
+          "interlocutorPrompt": "Minden adat egyezik a rendszerben. A lakcímkártyát máris kinyomtatom Önnek. Szeretné az Ügyfélkapu+ hozzáférést is aktiválni az elektronikus ügyintézéshez?",
+          "interlocutorTranslation": "All data matches in the system. I will print the address card for you right away. Would you also like to activate Ügyfélkapu+ access for electronic administration?",
+          "learnerCue": "Köszönd meg, mondd, hogy nagyon szeretnéd aktiválni az Ügyfélkaput, és kérdezd meg, kell-e illetéket fizetni.",
+          "learnerCueEn": "Thank them, say you would very much like to activate Ügyfélkapu, and ask whether an administrative fee must be paid.",
+          "vocabularyHints": [
+            "nagyon köszönöm — thank you very much",
+            "szeretném aktiválni — I would like to activate",
+            "kell illetéket fizetni? — does one need to pay a fee?",
+            "díjmentes — free of charge"
+          ],
+          "validationCriteria": {
+            "minWords": 5,
+            "targetKeywords": [
+              "köszön",
+              "Ügyfélkapu",
+              "aktivál",
+              "illeték",
+              "fizet"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "hu-b1-sc04-bank",
+      "cefrLevel": "B1",
+      "title": "Banki Ügyintézés és Új Kártya Igénylése",
+      "titleEn": "Banking Services & Requesting a New Card",
+      "situation": "A bankfiókban vagy, mert a bankkártyád megsérült, nem működik az érintéses fizetés, és szeretnél új kártyát igényelni.",
+      "situationEn": "You are at a bank branch because your bank card was damaged, contactless payment is not working, and you want to order a replacement.",
+      "roleplay": {
+        "interlocutorRole": "Banki tanácsadó",
+        "interlocutorRoleEn": "Bank Consultant",
+        "learnerRole": "Ügyfél",
+        "learnerRoleEn": "Client",
+        "interlocutorVoice": "hu-HU"
+      },
+      "targetCompetency": "I can explain banking issues, request a card replacement, and verify fees in Hungarian",
+      "targetSkills": [
+        "banking_transactions",
+        "problem_explanation",
+        "payment_options"
+      ],
+      "unitIds": [
+        "unit.a2.43"
+      ],
+      "turns": [
+        {
+          "turnIndex": 1,
+          "interlocutorPrompt": "Üdvözlöm! Kérem, foglaljon helyet! Milyen banki ügyben állhatok a rendelkezésére?",
+          "interlocutorTranslation": "Welcome! Please take a seat! What banking matter may I assist you with?",
+          "learnerCue": "Köszönj, és mondd el, hogy megsérült a bankkártyád chipje, nem működik a fizetés, és cserét szeretnél kérni.",
+          "learnerCueEn": "Greet, and say that your bank card chip is damaged, payment is not working, and you would like to request a replacement.",
+          "vocabularyHints": [
+            "megsérült a kártyám — my card got damaged",
+            "nem működik a chip — the chip doesn't work",
+            "új kártyát szeretnék igényelni — I'd like to apply for a new card",
+            "érintéses fizetés — contactless payment"
+          ],
+          "validationCriteria": {
+            "minWords": 5,
+            "targetKeywords": [
+              "kártya",
+              "sérült",
+              "nem működik",
+              "új",
+              "igényel"
+            ]
+          }
+        },
+        {
+          "turnIndex": 2,
+          "interlocutorPrompt": "Megnézem a rendszerben. Kérem a személyi igazolványát és a lakcímkártyáját az azonosításhoz! Szeretné, hogy a postacímére küldjük ki az új kártyát, vagy személyesen veszi át a fiókban?",
+          "interlocutorTranslation": "I'll check the system. Please provide your ID card and address card for identification! Would you like the new card sent to your postal address, or will you collect it in person at the branch?",
+          "learnerCue": "Add át az okmányaidat, és mondd el, hogy postai kézbesítést kérsz az állandó lakcímedre.",
+          "learnerCueEn": "Hand over your documents, and say that you request postal delivery to your permanent address.",
+          "vocabularyHints": [
+            "itt vannak az irataim — here are my papers",
+            "postai kézbesítést kérek — I request postal delivery",
+            "az állandó lakcímemre — to my permanent address",
+            "biztonságos levélben — in secure mail"
+          ],
+          "validationCriteria": {
+            "minWords": 5,
+            "targetKeywords": [
+              "okmány",
+              "posta",
+              "cím",
+              "kézbesít",
+              "lakcím"
+            ]
+          }
+        },
+        {
+          "turnIndex": 3,
+          "interlocutorPrompt": "Rendben, a kártya öt munkanapon belül megérkezik ajánlott levélben. A PIN-kódot a mobilbanki alkalmazásban tudja majd megtekinteni. Van még bármi, amiben segíthetek?",
+          "interlocutorTranslation": "Alright, the card will arrive within five working days by registered mail. You will be able to view the PIN code in the mobile banking app. Is there anything else I can help with?",
+          "learnerCue": "Köszönd meg a gyors segítséget, mondd el, hogy minden világos, és kívánj szép napot.",
+          "learnerCueEn": "Thank them for the prompt help, say that everything is clear, and wish them a nice day.",
+          "vocabularyHints": [
+            "köszönöm a segítséget — thank you for the help",
+            "minden világos — everything is clear",
+            "szép napot kívánok — I wish you a nice day",
+            "viszontlátásra — goodbye"
+          ],
+          "validationCriteria": {
+            "minWords": 4,
+            "targetKeywords": [
+              "köszön",
+              "segítség",
+              "világos",
+              "szép napot",
+              "viszontlátásra"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "hu-b2-sc01-munkahely",
+      "cefrLevel": "B2",
+      "title": "Éves Értékelés és Bértárgyalás",
+      "titleEn": "Annual Performance Review & Salary Negotiation",
+      "situation": "A feletteseddel ülsz az éves teljesítményértékelő megbeszélésen. Bemutatod az elmúlt évi sikereidet, új feladataidat, és érvelsz a fizetésemelés mellett.",
+      "situationEn": "You are sitting with your supervisor for your annual performance review. You present your past year's successes, new responsibilities, and make a case for a salary raise.",
+      "roleplay": {
+        "interlocutorRole": "Osztályvezető / Felettes",
+        "interlocutorRoleEn": "Department Head / Supervisor",
+        "learnerRole": "Munkatárs",
+        "learnerRoleEn": "Employee",
+        "interlocutorVoice": "hu-HU"
+      },
+      "targetCompetency": "I can articulate professional accomplishments, negotiate compensation, and handle counter-arguments persuasively in Hungarian",
+      "targetSkills": [
+        "workplace_negotiation",
+        "professional_argumentation",
+        "persuasion"
+      ],
+      "unitIds": [
+        "unit.b2.core.01"
+      ],
+      "turns": [
+        {
+          "turnIndex": 1,
+          "interlocutorPrompt": "Köszönöm, hogy eljöttél a mai értékelésre. Összességében nagyon elégedettek vagyunk az ez évi munkáddal. Te hogyan látod az elmúlt évet, és mely projektekre vagy a legbüszkébb?",
+          "interlocutorTranslation": "Thank you for coming to today's review. Overall we are very satisfied with your work this year. How do you see the past year, and which projects are you most proud of?",
+          "learnerCue": "Köszönd meg az elismerést. Részletezd, hogy sikeresen levezényelted a nemzetközi projektet, új ügyfeleket szereztél, és jelentősen növelted a hatékonyságot.",
+          "learnerCueEn": "Thank them for the recognition. Detail that you successfully spearheaded the international project, acquired new clients, and significantly increased efficiency.",
+          "vocabularyHints": [
+            "sikeresen levezényeltem — I successfully managed/orchestrated",
+            "hatékonyság növelése — increasing efficiency",
+            "többletfeladatokat vállaltam — I took on extra responsibilities",
+            "pozitív visszajelzések — positive feedback"
+          ],
+          "validationCriteria": {
+            "minWords": 8,
+            "targetKeywords": [
+              "projekt",
+              "siker",
+              "eredmény",
+              "hatékonyság",
+              "ügyfél",
+              "felelősség"
+            ]
+          }
+        },
+        {
+          "turnIndex": 2,
+          "interlocutorPrompt": "Valóban, a csapat vezetésében nyújtott teljesítményed kiemelkedő volt. Ugyanakkor tudod, hogy a jelenlegi gazdasági környezetben a cég költségvetése szigorú keretek közé van szorítva. Milyen elvárásaid vannak a jövő évet illetően?",
+          "interlocutorTranslation": "Indeed, your performance in leading the team was outstanding. At the same time, you know that in the current economic environment the company's budget is strictly constrained. What expectations do you have regarding next year?",
+          "learnerCue": "Érvelj professzionálisan: ismerd el a piaci kihívásokat, de mutass rá, hogy a megnövekedett felelősség és a mérhető eredmények alapján indokolt egy 15%-os alapbér-korrekció.",
+          "learnerCueEn": "Argue professionally: acknowledge market challenges, but point out that based on increased responsibility and measurable results, a 15% base salary adjustment is justified.",
+          "vocabularyHints": [
+            "megértem a költségvetési korlátokat — I understand budget constraints",
+            "mérhető eredmények alapján — on the basis of measurable results",
+            "alapbér-korrekció — base salary adjustment",
+            "arányos ellentételezés — proportionate compensation",
+            "mindazonáltal úgy gondolom — nevertheless I believe"
+          ],
+          "validationCriteria": {
+            "minWords": 8,
+            "targetKeywords": [
+              "eredmény",
+              "felelősség",
+              "fizetés",
+              "bér",
+              "százalék",
+              "indokolt",
+              "érték"
+            ]
+          }
+        },
+        {
+          "turnIndex": 3,
+          "interlocutorPrompt": "Meggyőzőek az érveid. Egy tizenöt százalékos azonnali emelés most nehézkes lenne, de tíz százalék alapbér-emelést, plusz a következő negyedév végén egy sikerdíjat fel tudok ajánlani. Megfelelne ez a kompromisszum?",
+          "interlocutorTranslation": "Your arguments are convincing. An immediate 15% raise would be difficult now, but I can offer a 10% base raise plus a performance bonus at the end of next quarter. Would this compromise suit you?",
+          "learnerCue": "Fogadd el a konstruktív kompromisszumot, fogalmazd meg az elkötelezettségedet a kitűzött célok mellett, és kérd meg a megállapodás írásba foglalását.",
+          "learnerCueEn": "Accept the constructive compromise, state your commitment to the targeted goals, and ask for the agreement to be recorded in writing.",
+          "vocabularyHints": [
+            "elfogadom a kompromisszumos javaslatot — I accept the compromise proposal",
+            "elkötelezett vagyok a célok mellett — I am committed to the targets",
+            "írásban rögzíteni — to record in writing",
+            "örömmel folytatom a közös munkát — I am glad to continue our collaboration"
+          ],
+          "validationCriteria": {
+            "minWords": 6,
+            "targetKeywords": [
+              "elfogad",
+              "kompromisszum",
+              "írásban",
+              "cél",
+              "köszön"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "hu-b2-sc02-reklamacio",
+      "cefrLevel": "B2",
+      "title": "Fogyasztói Reklamáció és Garanciális Ügyintézés",
+      "titleEn": "Consumer Complaint & Warranty Claims",
+      "situation": "Egy elektronikai szaküzlet ügyfélszolgálatán reklamálsz, mert a két hete vásárolt prémium laptopod alaplapja meghibásodott, és a szerviz nem akarja garanciában kicserélni.",
+      "situationEn": "You are making a complaint at an electronics store customer desk because your premium laptop bought two weeks ago has a motherboard failure, and the repair shop refuses warranty replacement.",
+      "roleplay": {
+        "interlocutorRole": "Ügyfélszolgálati vezető",
+        "interlocutorRoleEn": "Customer Service Manager",
+        "learnerRole": "Vásárló / Fogyasztó",
+        "learnerRoleEn": "Consumer / Customer",
+        "interlocutorVoice": "hu-HU"
+      },
+      "targetCompetency": "I can assert consumer rights, cite statutory warranty laws, and demand replacement or full refund in Hungarian",
+      "targetSkills": [
+        "consumer_rights",
+        "formal_complaints",
+        "legal_assertion"
+      ],
+      "unitIds": [
+        "unit.b2.core.03"
+      ],
+      "turns": [
+        {
+          "turnIndex": 1,
+          "interlocutorPrompt": "Jó napot kívánok! Hallom, hogy problémája akadt a vásárolt készülékkel. Miben áll pontosan a meghibásodás?",
+          "interlocutorTranslation": "Good day! I hear you had an issue with the purchased device. What exactly does the malfunction consist of?",
+          "learnerCue": "Mondd el határozottan és udvariasan: a két hete vásárolt laptop magától leáll, nem kapcsol be, és a hivatalos szakvélemény szerint gyári hardverhiba történt.",
+          "learnerCueEn": "State firmly and politely: the laptop bought two weeks ago shuts down on its own, won't turn on, and according to expert opinion it is an inherent manufacturing defect.",
+          "vocabularyHints": [
+            "gyári hibás — defect from factory",
+            "alaplap meghibásodása — motherboard breakdown",
+            "magától leáll — shuts down spontaneously",
+            "jótállási jegy — warranty certificate",
+            "vásárlást igazoló számla — invoice proving purchase"
+          ],
+          "validationCriteria": {
+            "minWords": 7,
+            "targetKeywords": [
+              "laptop",
+              "hiba",
+              "vásárol",
+              "számla",
+              "garancia",
+              "meghibásod"
+            ]
+          }
+        },
+        {
+          "turnIndex": 2,
+          "interlocutorPrompt": "A szerviztechnikus azt állítja a jegyzőkönyvben, hogy a hiba esetleg nem rendeltetésszerű használat miatt lépett fel, ezért harminc napos vizsgálatot javasol.",
+          "interlocutorTranslation": "The service technician claims in the protocol that the defect might have occurred due to improper use, hence recommending a thirty-day investigation.",
+          "learnerCue": "Utasítsd el a harminc napos halasztást a fogyasztóvédelmi törvényre hivatkozva: a vásárlástól számított hat hónapon belül a bizonyítási teher a kereskedőt terheli, és követelj azonnali cserét vagy elállást.",
+          "learnerCueEn": "Reject the thirty-day delay citing consumer protection law: within six months of purchase the burden of proof rests on the trader, and demand immediate replacement or cancellation.",
+          "vocabularyHints": [
+            "visszautasítom ezt a feltételezést — I reject this assumption",
+            "bizonyítási teher — burden of proof",
+            "fogyasztóvédelmi jogszabályok — consumer protection regulations",
+            "azonnali csere — immediate replacement",
+            "elállás a szerződéstől — withdrawal from the contract"
+          ],
+          "validationCriteria": {
+            "minWords": 8,
+            "targetKeywords": [
+              "törvény",
+              "jog",
+              "csere",
+              "bizonyít",
+              "fogyasztóvédelem",
+              "azonnali"
+            ]
+          }
+        },
+        {
+          "turnIndex": 3,
+          "interlocutorPrompt": "Megértem az álláspontját, és elnézést kérek a kellemetlenségért. Áttekintettem az iratokat, és valóban jogos a követelése. Raktáron van egy vadonatúj, bontatlan cserekészülékünk. Elfogadja a helyszíni cserét?",
+          "interlocutorTranslation": "I understand your stance, and apologize for the inconvenience. I reviewed the documents and your claim is indeed justified. We have a brand-new, unopened replacement unit in stock. Do you accept an on-site replacement?",
+          "learnerCue": "Fogadd el a cserét, kérd meg, hogy állítsanak ki új garanciajegyet az új készülékre, és köszönd meg a korrekt ügyintézést.",
+          "learnerCueEn": "Accept the replacement, ask that a new warranty slip be issued for the new unit, and thank them for the fair resolution.",
+          "vocabularyHints": [
+            "elfogadom a cserét — I accept the replacement",
+            "új jótállási jegy kiállítása — issuance of a new warranty certificate",
+            "köszönöm a korrekt hozzáállást — thank you for the fair attitude",
+            "jegyzőkönyv másolata — copy of the protocol"
+          ],
+          "validationCriteria": {
+            "minWords": 6,
+            "targetKeywords": [
+              "elfogad",
+              "csere",
+              "garancia",
+              "új",
+              "köszön",
+              "jegyzőkönyv"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "hu-b2-sc03-tarsashaz",
+      "cefrLevel": "B2",
+      "title": "Társasházi Közgyűlés és Szomszédi Egyeztetés",
+      "titleEn": "Condominium Assembly & Neighborhood Negotiation",
+      "situation": "A társasház éves közgyűlésén veszel részt tulajdonosként. A napirenden az elavult fűtési rendszer korszerűsítése és a felújítási alap megemelése szerepel.",
+      "situationEn": "You are attending the annual condominium assembly as an owner. The agenda includes modernizing the outdated heating system and increasing the renovation fund.",
+      "roleplay": {
+        "interlocutorRole": "Közös képviselő",
+        "interlocutorRoleEn": "Condominium Representative / Manager",
+        "learnerRole": "Tulajdonostárs",
+        "learnerRoleEn": "Co-owner",
+        "interlocutorVoice": "hu-HU"
+      },
+      "targetCompetency": "I can contribute to formal civic meetings, express arguments for communal investments, and propose compromises in Hungarian",
+      "targetSkills": [
+        "civic_debate",
+        "formal_meetings",
+        "consensus_building"
+      ],
+      "unitIds": [
+        "unit.b2.core.05"
+      ],
+      "turns": [
+        {
+          "turnIndex": 1,
+          "interlocutorPrompt": "Köszöntöm a megjelent tulajdonostársakat! A legfontosabb napirendi pontunk a kazáncsere és a tetőszigetelés. Néhány lakó azonban sokallja a felújítási alap harminc százalékos emelését. Mi a véleménye erről a javaslatról?",
+          "interlocutorTranslation": "Welcome fellow owners! Our most important agenda item is boiler replacement and roof insulation. However, some residents consider the 30% increase of the renovation fund excessive. What is your opinion on this proposal?",
+          "learnerCue": "Szólalj fel határozottan: mutass rá, hogy a régi kazán energiapazarló és balesetveszélyes, a felújítás pedig hosszú távon csökkenti a rezsiköltségeket.",
+          "learnerCueEn": "Speak up firmly: point out that the old boiler is energy-wasting and hazardous, and modernization will reduce utility bills in the long run.",
+          "vocabularyHints": [
+            "hosszú távon megtérül — pays off in the long run",
+            "energiatakarékos — energy-efficient",
+            "balesetveszélyes — safety hazard",
+            "ingatlan értéknövekedése — property value increase",
+            "mielőbb el kell végezni — must be carried out as soon as possible"
+          ],
+          "validationCriteria": {
+            "minWords": 8,
+            "targetKeywords": [
+              "felújítás",
+              "költség",
+              "hosszú táv",
+              "energia",
+              "biztonság",
+              "rezsi"
+            ]
+          }
+        },
+        {
+          "turnIndex": 2,
+          "interlocutorPrompt": "Egyetértek Önnel, de több idős lakó jelezte, hogy a nyugdíjukból nem tudják kigazdálkodni a hirtelen díjemelést. Hogyan tudnánk ezt szociálisan méltányosan megoldani?",
+          "interlocutorTranslation": "I agree with you, but several elderly residents indicated they cannot manage a sudden fee hike from their pensions. How could we solve this in a socially equitable way?",
+          "learnerCue": "Tegyél kompromisszumos javaslatot: lépcsőzetes emelést indítványozz, valamint pályázat benyújtását önkormányzati támogatásra és kamatmentes hitelre.",
+          "learnerCueEn": "Make a compromise proposal: suggest a phased increase, as well as applying for municipal subsidies and an interest-free loan.",
+          "vocabularyHints": [
+            "lépcsőzetes bevezetés — phased introduction",
+            "önkormányzati pályázat — municipal grant/tender",
+            "kamatmentes hitel — interest-free loan",
+            "méltányos megoldás — equitable solution",
+            "javaslom, hogy szavazzunk róla — I propose we vote on it"
+          ],
+          "validationCriteria": {
+            "minWords": 8,
+            "targetKeywords": [
+              "javasol",
+              "pályázat",
+              "támogatás",
+              "lépcsőzetes",
+              "hitel",
+              "megoldás"
+            ]
+          }
+        },
+        {
+          "turnIndex": 3,
+          "interlocutorPrompt": "Ez egy kiváló, konstruktív indítvány! Ha a közgyűlés többsége támogatja a pályázati források bevonását és a fokozatos emelést, jegyzőkönyvbe veszem a határozati javaslatot. Támogatja Ön a határozat elfogadását?",
+          "interlocutorTranslation": "That is an excellent, constructive motion! If the majority of the assembly supports utilizing tender resources and a gradual increase, I will record the draft resolution in the minutes. Do you support adopting the resolution?",
+          "learnerCue": "Nyilvánítsd ki a támogató szavazatodat, és kérd meg a képviselőt, hogy a pályázati felhívást küldje meg minden lakónak e-mailben.",
+          "learnerCueEn": "Cast your supporting vote, and ask the manager to send the tender call to all residents by email.",
+          "vocabularyHints": [
+            "igen, támogatom a határozatot — yes, I support the resolution",
+            "igenlő szavazat — affirmative vote",
+            "jegyzőkönyv hitelesítése — authentication of the minutes",
+            "tájékoztatás e-mailben — notification by email"
+          ],
+          "validationCriteria": {
+            "minWords": 6,
+            "targetKeywords": [
+              "támogat",
+              "szavaz",
+              "igen",
+              "jegyzőkönyv",
+              "küld",
+              "tájékoztat"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "hu-b2-sc04-vasut-keses",
+      "cefrLevel": "B2",
+      "title": "Vasúti Késés, Járatkimaradás és Kártérítés",
+      "titleEn": "Train Delay, Cancellation & Passenger Rights",
+      "situation": "A Keleti pályaudvar ügyfélszolgálati irodájában vagy. A nemzetközi gyorsvonatod felsővezeték-szakadás miatt két órát késett, lekésted a bécsi csatlakozást, és kártérítést, valamint új helyjegyet kérsz.",
+      "situationEn": "You are at the customer service desk at Keleti railway station. Your international express train was delayed two hours due to overhead wire breakdown, you missed your Vienna connection, and you request compensation and rebooking.",
+      "roleplay": {
+        "interlocutorRole": "Vasúti ügyfélszolgálati referens",
+        "interlocutorRoleEn": "Railway Customer Service Agent",
+        "learnerRole": "Utas",
+        "learnerRoleEn": "Passenger",
+        "interlocutorVoice": "hu-HU"
+      },
+      "targetCompetency": "I can navigate complex transit disruptions, assert passenger rights, and negotiate rerouting in Hungarian",
+      "targetSkills": [
+        "travel_disruptions",
+        "passenger_rights",
+        "rebooking"
+      ],
+      "unitIds": [
+        "unit.b2.core.07"
+      ],
+      "turns": [
+        {
+          "turnIndex": 1,
+          "interlocutorPrompt": "Jó napot kívánok! MÁV Ügyfélszolgálat. Miben segíthetek Önnek?",
+          "interlocutorTranslation": "Good day! MÁV Customer Service. How may I help you?",
+          "learnerCue": "Köszönj, mutasd be a jegyedet, és magyarázd el: a vonatkésés miatt lekésted a bécsi csatlakozást, és szükséged van a következő elérhető vonatra szóló átfoglalásra.",
+          "learnerCueEn": "Greet, show your ticket, and explain: due to train delay you missed your Vienna connection, and need rebooking onto the next available train.",
+          "vocabularyHints": [
+            "jelentős késés — significant delay",
+            "lekéstem a csatlakozást — I missed the connection",
+            "átfoglalás díjmentesen — rebooking free of charge",
+            "érvényes menetjegy és helyjegy — valid travel and seat ticket"
+          ],
+          "validationCriteria": {
+            "minWords": 7,
+            "targetKeywords": [
+              "késés",
+              "vonat",
+              "csatlakozás",
+              "lekést",
+              "átfoglal",
+              "jegy"
+            ]
+          }
+        },
+        {
+          "turnIndex": 2,
+          "interlocutorPrompt": "Elnézést kérünk a műszaki hiba okozta kellemetlenségért. A következő Railjet járat egy óra múlva indul. Ki tudom állítani az igazolást és az új helyjegyet felár nélkül. Kíván kártérítési igényt benyújtani a több mint 120 perces késés miatt?",
+          "interlocutorTranslation": "We apologize for the inconvenience caused by the technical fault. The next Railjet departs in an hour. I can issue the certificate and new seat reservation without surcharge. Do you wish to file a compensation claim for the delay exceeding 120 minutes?",
+          "learnerCue": "Igeneld határozottan: az uniós és nemzeti vasúti szabályzat szerint 120 perc felett a jegyár 50%-a jár vissza átalány-kártérítésként, és kérd a hivatalos kárbejelentő lapot.",
+          "learnerCueEn": "Affirm firmly: under EU and national rail regulations over 120 minutes 50% of ticket price is reimbursed as lump-sum compensation, and request the official claim form.",
+          "vocabularyHints": [
+            "természetesen igényt tartok a kártérítésre — naturally I claim compensation",
+            "utasjogi szabályzat — passenger rights regulation",
+            "a jegyár ötven százaléka — fifty percent of the ticket price",
+            "kárbejelentő nyomtatvány — compensation claim form"
+          ],
+          "validationCriteria": {
+            "minWords": 7,
+            "targetKeywords": [
+              "igen",
+              "kártérítés",
+              "százalék",
+              "jog",
+              "nyomtatvány",
+              "igényel"
+            ]
+          }
+        },
+        {
+          "turnIndex": 3,
+          "interlocutorPrompt": "Itt az átbélyegzett menetjegye az új vonatra, valamint a kártérítési jegyzőkönyv. A kártérítést banki átutalással teljesítjük tizennégy napon belül. Kér még bármilyen egyéb igazolást a munkáltatója felé?",
+          "interlocutorTranslation": "Here is your endorsed ticket for the new train, as well as the compensation protocol. We fulfill compensation by bank transfer within fourteen days. Do you require any other certificate for your employer?",
+          "learnerCue": "Kérj egy lepecsételt késési igazolást a munkáltatódnak, köszönd meg a korrekt ügyintézést, és búcsúzz el.",
+          "learnerCueEn": "Ask for a stamped certificate of delay for your employer, thank them for the fair handling, and say goodbye.",
+          "vocabularyHints": [
+            "pecséttel ellátott késési igazolás — stamped delay certificate",
+            "munkáltató számára — for the employer",
+            "köszönöm a gyors és udvarias segítséget — thank you for the quick and polite assistance",
+            "minden jót kívánok — I wish you all the best"
+          ],
+          "validationCriteria": {
+            "minWords": 6,
+            "targetKeywords": [
+              "igazolás",
+              "pecsét",
+              "munka",
+              "köszön",
+              "viszontlátásra"
+            ]
+          }
+        }
+      ]
     }
   ]
 }
