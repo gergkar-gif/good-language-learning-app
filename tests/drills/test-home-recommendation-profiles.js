@@ -31,7 +31,7 @@ const NOW = Date.parse('2026-09-28T12:00:00Z');
 
 // A fresh app per profile: its own localStorage, progress and app-open
 // counter, with the engine files evaluated inside it.
-function world({ progress = {}, appOpen = 50, store = {} } = {}) {
+function world({ progress = {}, appOpen = 50, store = {}, returned = null, levelTests = {}, course = COURSE } = {}) {
     const ctx = {
         console, Math, JSON, Map, Set, Promise, Object, Array, Number, String, isFinite,
         Date: class extends Date {
@@ -43,25 +43,26 @@ function world({ progress = {}, appOpen = 50, store = {} } = {}) {
             setItem: (k, v) => { store[k] = String(v); },
             removeItem: k => { delete store[k]; }
         },
-        Lang: { key: k => COURSE + ':' + k, name: () => 'Spanish', code: () => COURSE, content: p => p },
+        Lang: { key: k => course + ':' + k, name: () => 'Spanish', code: () => course, content: p => p },
         Content: {
             json: async p => {
-                const file = path.join(root, 'content', COURSE, p);
+                const file = path.join(root, 'content', course, p);
                 if (!fs.existsSync(file)) throw new Error('404 ' + p);
                 return JSON.parse(fs.readFileSync(file, 'utf8'));
             }
         },
-        AppOpens: { current: () => appOpen },
+        AppOpens: { current: () => appOpen, returned: () => returned },
         LEVEL_ORDER: ['A1', 'A2', 'B1', 'B2', 'C1'],
         getProgress: () => progress,
-        LevelTest: { resultFor: () => null },
+        LevelTest: { resultFor: level => levelTests[level] || null },
         document: { getElementById: () => null, querySelector: () => null, querySelectorAll: () => [], addEventListener: () => {} },
         CustomEvent: function () {}
     };
     ctx.window = ctx;
     ctx.window.addEventListener = () => {};
     ctx.window.dispatchEvent = () => {};
-    ctx.window._curriculumData = curriculum;
+    ctx.window._curriculumData = course === COURSE ? curriculum
+        : JSON.parse(fs.readFileSync(path.join(root, 'content', course, 'curriculum/curriculum.json'), 'utf8'));
     vm.createContext(ctx);
     ENGINE_FILES.forEach(f => vm.runInContext(fs.readFileSync(path.join(root, 'engine', f), 'utf8'), ctx));
     ctx.run = code => vm.runInContext(code, ctx);
@@ -263,16 +264,112 @@ profile('a drill scored badly this week → that drill', async () => {
     assert.strictEqual(p.drillerId, 'listening');
 });
 
-profile('B1, 5th core lesson, elective track open → elective', async () => {
-    const b1 = allCoreLessons('B1');
-    let progress;
-    for (let i = 1; i < b1.length; i++) {
-        progress = progressThrough(b1[i].id);
-        if (Object.keys(progress).length % 5 === 0) break;
-    }
-    const p = await recommend(world({ progress }));
+// B1 progress: all of A1/A2 plus the first `n` B1 core lessons.
+const b1Progress = n => progressThrough(allCoreLessons('B1')[n - 1].id);
+
+profile('B1, 5 core lessons in → elective', async () => {
+    const p = await recommend(world({ progress: b1Progress(5) }));
     assert.strictEqual(p.kind, 'elective', `got ${p.kind}`);
     assert.ok(p.lesson && p.unit.track && p.unit.track !== 'core');
+});
+
+profile('B1, 4 core lessons in → not yet', async () => {
+    const p = await recommend(world({ progress: b1Progress(4) }));
+    assert.strictEqual(p.kind, 'continue', `got ${p.kind}`);
+});
+
+profile('elective skipped → next offer only after 5 more core lessons', async () => {
+    const store = {};
+    let w = world({ progress: b1Progress(5), store });
+    const first = await recommend(w);
+    assert.strictEqual(first.kind, 'elective');
+    w.__p = first;
+    w.run('RecommendationEngine.skip(__p)');
+    w = world({ progress: b1Progress(8), store });
+    assert.strictEqual((await recommend(w)).kind, 'continue', 'offered again too soon');
+    w = world({ progress: b1Progress(10), store });
+    const again = await recommend(w);
+    assert.strictEqual(again.kind, 'elective', `got ${again.kind}`);
+    assert.notStrictEqual(again.unit.id, first.unit.id, 'skipped unit offered again');
+});
+
+// ---- returning after a break ----
+const dueDeck = n => Array.from({ length: n }, (_, i) => ({ spanish: 'w' + i, english: 'w' + i, type: 'noun', reviews: 2, ease: 2.5, lapses: 0, nextReview: new Date(NOW - DAY).toISOString() }));
+
+profile('back after 5 days with words due → welcome back, review first', async () => {
+    const w = world({ progress: progressThrough(mid.lesson.id), returned: { days: 5, at: new Date(NOW - 60 * 60 * 1000).toISOString() } });
+    w.run('srsDeck = ' + JSON.stringify(dueDeck(12)));
+    const p = await recommend(w);
+    assert.strictEqual(p.kind, 'welcome-back', `got ${p.kind}`);
+    assert.strictEqual(p.due, 12);
+    assert.strictEqual(p.days, 5);
+});
+
+profile('back after 5 days, only 2 words due → Continue', async () => {
+    const w = world({ progress: progressThrough(mid.lesson.id), returned: { days: 5, at: new Date(NOW - 60 * 60 * 1000).toISOString() } });
+    w.run('srsDeck = ' + JSON.stringify(dueDeck(2)));
+    assert.strictEqual((await recommend(w)).kind, 'continue');
+});
+
+profile('welcome back skipped → Continue', async () => {
+    const w = world({ progress: progressThrough(mid.lesson.id), returned: { days: 5, at: new Date(NOW - 60 * 60 * 1000).toISOString() } });
+    w.run('srsDeck = ' + JSON.stringify(dueDeck(12)));
+    w.__p = await recommend(w);
+    w.run('RecommendationEngine.skip(__p)');
+    assert.strictEqual((await recommend(w)).kind, 'continue');
+});
+
+profile('the return was yesterday → no welcome back today', async () => {
+    const w = world({ progress: progressThrough(mid.lesson.id), returned: { days: 5, at: new Date(NOW - 20 * 60 * 60 * 1000).toISOString() } });
+    w.run('srsDeck = ' + JSON.stringify(dueDeck(12)));
+    assert.strictEqual((await recommend(w)).kind, 'continue');
+});
+
+// ---- level-test weak spots ----
+const a1TestSkill = mid.skill;
+const levelTest = (daysAgo, takenAtOpen) => ({ A1: { passed: true, level: 'A1', weakest: [a1TestSkill], takenAt: new Date(NOW - daysAgo * DAY).toISOString(), takenAtOpen } });
+
+profile('level test 3 days ago flagged a skill → practice it, and say where it came from', async () => {
+    const w = world({ progress: progressThrough(mid.lesson.id), levelTests: levelTest(3, 45) });
+    const p = await recommend(w);
+    assert.strictEqual(p.kind, 'mini-game', `got ${p.kind}`);
+    assert.strictEqual(p.skill, a1TestSkill);
+    assert.ok(/A1 test/.test(p.blurb), p.blurb);
+});
+
+profile('level test a month ago → Continue', async () => {
+    const w = world({ progress: progressThrough(mid.lesson.id), levelTests: levelTest(30, 20) });
+    assert.strictEqual((await recommend(w)).kind, 'continue');
+});
+
+profile('level-test skill answered right since the test → Continue', async () => {
+    const w = world({ progress: progressThrough(mid.lesson.id), levelTests: levelTest(3, 45), store: recycleStore(cards(mid.ids, 'good', 48)) });
+    assert.strictEqual((await recommend(w)).kind, 'continue');
+});
+
+// ---- vocabulary skills ----
+profile('misses on a unit\'s vocabulary → names the unit\'s words, not "reading" (hu)', async () => {
+    const hu = p => JSON.parse(fs.readFileSync(path.join(root, 'content/hu', p), 'utf8'));
+    const huCurriculum = hu('curriculum/curriculum.json');
+    const huIndex = hu('indexes/grammar-index.json');
+    const registry = hu('indexes/skill-registry.json').skills;
+    const vocab = Object.keys(huIndex.bySkill).find(k => registry[k] && registry[k].kind === 'vocabulary' && huIndex.bySkill[k].length >= 2);
+    assert.ok(vocab, 'hu has a vocabulary skill in its grammar index');
+    const ids = huIndex.bySkill[vocab].slice(0, 2).map(e => e.id);
+    // Every lesson done (so the vocabulary is reached); the most recent a
+    // unit's first lesson, so no unit-end card gets in first.
+    const progress = {};
+    let t = NOW - 30 * DAY;
+    const units = Object.values(huCurriculum.levels).flatMap(l => l.units || []);
+    units.forEach(u => (u.lessons || []).forEach(l => { progress[l.id] = { completedAt: new Date(t += 60000).toISOString() }; }));
+    const firstOfMulti = units.find(u => (u.lessons || []).length > 1).lessons[0];
+    progress[firstOfMulti.id] = { completedAt: new Date(NOW).toISOString() };
+    const w = world({ course: 'hu', progress, store: { ['hu:recycleSchedule']: JSON.stringify(cards(ids, 'missed', 49)) } });
+    const p = await recommend(w);
+    assert.strictEqual(p.kind, 'mini-game', `got ${p.kind}`);
+    assert.strictEqual(p.skill, vocab);
+    assert.ok(!/reading/.test(p.blurb), p.blurb);
+    assert.ok(/words from “.+”/.test(p.blurb), p.blurb);
 });
 
 // ------------------------------------------------------------------

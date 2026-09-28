@@ -328,13 +328,15 @@ const RecommendationEngine = (function () {
     // ----------------------------------------
     // OUTCOMES + COOL-DOWN
     // ----------------------------------------
-    // What happened to each practice card: 'taken' or 'skipped', with the
-    // app open it happened at. A skipped offer stays away for
-    // SKIP_COOLDOWN_OPENS opens, so "Not now" isn't met by the same card
-    // after the next lesson; a taken one isn't offered again in the same
-    // sitting. Also the start of a record of how the cards are received.
+    // What happened to each card Home showed: 'shown' (once per card per
+    // app open), then 'taken' or 'skipped', with the app open and time.
+    // A skipped practice offer stays away for SKIP_COOLDOWN_OPENS opens, so
+    // "Not now" isn't met by the same card after the next lesson; a taken
+    // one isn't offered again in the same sitting. outcomeStats() rolls
+    // the log up per card type for the ?recstats view (engine/home.js).
+    // Backed up by engine/sync.js with the rest of the course's progress.
     const SKIP_COOLDOWN_OPENS = 5;
-    const OUTCOMES_KEPT = 50;
+    const OUTCOMES_KEPT = 300;
 
     function _outcomesKey() {
         return Lang.key('recommendationOutcomes');
@@ -345,7 +347,11 @@ const RecommendationEngine = (function () {
         catch (error) { return []; }
     }
 
+    // `type:detail`, e.g. 'grammar:ser-estar', 'srs:', 'elective:latam'.
     function _offerKey(offer) {
+        if (offer.kind === 'unit-nudge') return 'unit-nudge:' + (offer.type || '');
+        if (offer.kind === 'elective') return 'elective:' + offer.unit.track;
+        if (offer.kind === 'welcome-back') return 'welcome-back:';
         return offer.drillerId + ':' + (offer.skill || '');
     }
 
@@ -360,11 +366,73 @@ const RecommendationEngine = (function () {
         return (typeof AppOpens !== 'undefined') ? AppOpens.current() : 0;
     }
 
+    // Called by Home each time it renders a card other than Continue.
+    function noteShown(primary) {
+        if (!primary || primary.kind === 'continue') return;
+        const key = _offerKey(primary);
+        const open = _currentOpen();
+        if (_outcomes().some(o => o.key === key && o.outcome === 'shown' && o.open === open)) return;
+        _noteOutcome(primary, 'shown');
+    }
+
+    // { type: { shown, taken, skipped } } over the whole log, where type is
+    // the part of the key before ':' ('grammar', 'srs', 'elective', …).
+    function outcomeStats() {
+        const stats = {};
+        _outcomes().forEach(o => {
+            const type = String(o.key).split(':')[0];
+            const row = stats[type] || (stats[type] = { shown: 0, taken: 0, skipped: 0 });
+            if (o.outcome in row) row[o.outcome]++;
+        });
+        return stats;
+    }
+
     function _coolingDown(offer, outcomes, open) {
         const key = _offerKey(offer);
         return outcomes.some(o => o.key === key && (
             (o.outcome === 'skipped' && open - o.open < SKIP_COOLDOWN_OPENS) ||
             (o.outcome === 'taken' && o.open === open)));
+    }
+
+    // Vocabulary themes share `teaches` with grammar (see each course's
+    // indexes/skill-registry.json, `kind`), and their titles in
+    // grammar-titles.json read "reading" — so a weak vocabulary slug is
+    // named by the unit whose exercises carry it instead: "words from
+    // 'Greetings'". Same for any skill still titled "reading" (no grammar
+    // in it): "the exercises from 'Greetings'", never "mistakes with
+    // reading".
+    const _registryCache = {};
+    const _skillUnitCache = {};
+
+    async function _skillKind(skillId) {
+        const path = Lang.content('indexes/skill-registry.json');
+        if (!_registryCache[path]) {
+            const data = await Content.json(path).catch(() => null);
+            _registryCache[path] = (data && data.skills) || {};
+        }
+        const entry = _registryCache[path][skillId];
+        return (entry && entry.kind) || 'grammar';
+    }
+
+    async function _unitTitleForSkill(skillId) {
+        const path = Lang.content('indexes/grammar-index.json');
+        if (!_skillUnitCache[path]) {
+            const index = await Content.json(path).catch(() => null);
+            const unitByRef = {};
+            const data = window._curriculumData;
+            Object.values((data && data.levels) || {}).forEach(level => (level.units || []).forEach(unit =>
+                (unit.lessons || []).forEach(lesson => { unitByRef[Recommend.exerciseRefFor(lesson.id)] = unit; })));
+            _skillUnitCache[path] = { index, unitByRef };
+        }
+        const { index, unitByRef } = _skillUnitCache[path];
+        const counts = new Map();
+        ((index && index.bySkill && index.bySkill[skillId]) || []).forEach(entry => {
+            const unit = unitByRef[entry.ref];
+            if (unit) counts.set(unit, (counts.get(unit) || 0) + 1);
+        });
+        let best = null;
+        counts.forEach((n, unit) => { if (!best || n > counts.get(best)) best = unit; });
+        return best ? best.title : null;
     }
 
     async function _miniGameNudge() {
@@ -375,19 +443,34 @@ const RecommendationEngine = (function () {
         const weakBlurb = topic => `You made a few mistakes with ${topic} lately.`;
         const candidates = [];
 
-        // Grammar: every skill with recent unresolved misses, worst first,
-        // so a cooled-down top skill hands over to the next one.
+        // Grammar Driller skills: recent unresolved misses, then recent
+        // level-test weak spots, worst first, so a cooled-down top skill
+        // hands over to the next one. A vocabulary-theme skill is drilled
+        // the same way but named as words.
         const trouble = LearnerModel.troubleSkills ? await LearnerModel.troubleSkills(3) : [];
-        trouble.forEach((t, i) => candidates.push({
-            drillerId: 'grammar',
-            skill: t.skillId,
-            title: 'Grammar',
-            buttonLabel: 'Grammar practice',
-            blurb: weakBlurb(humanizeSkill(t.skillId)),
-            invite: 'Practice it here:',
-            priority: 100 - i,
-            options: { skill: t.skillId, count: 5, autoStart: true }
-        }));
+        for (let i = 0; i < trouble.length; i++) {
+            const t = trouble[i];
+            const isVocab = (await _skillKind(t.skillId)) === 'vocabulary';
+            let topic = humanizeSkill(t.skillId);
+            if (isVocab || topic === 'reading') {
+                const unitTitle = await _unitTitleForSkill(t.skillId);
+                topic = isVocab
+                    ? (unitTitle ? `words from “${unitTitle}”` : 'some recent words')
+                    : (unitTitle ? `the exercises from “${unitTitle}”` : 'some recent exercises');
+            }
+            candidates.push({
+                drillerId: 'grammar',
+                skill: t.skillId,
+                title: isVocab ? 'Vocabulary' : 'Grammar',
+                buttonLabel: isVocab ? 'Word practice' : 'Grammar practice',
+                blurb: t.levelTest
+                    ? `Your ${t.levelTest} test showed a few mistakes with ${topic}.`
+                    : weakBlurb(topic),
+                invite: isVocab ? 'Practice them here:' : 'Practice it here:',
+                priority: 100 - i,
+                options: { skill: t.skillId, count: 5, autoStart: true }
+            });
+        }
 
         // Words: in context for B1+ (Vocabulary Driller), as a review
         // otherwise. Same words either way, so only one of the two.
@@ -485,17 +568,40 @@ const RecommendationEngine = (function () {
     // longer walks it and the level test no longer waits on it. It still
     // deserves surfacing, just occasionally, as Home's one card, after any
     // practice offer for the lesson just finished and before the plain
-    // continue card: gated to roughly once every ELECTIVE_CADENCE
-    // completed lessons, and skippable per-unit via the same
-    // dismissedUnits() store the practice nudge already uses — skipping one
-    // elective unit just moves the offer on to the next.
+    // continue card: once ELECTIVE_CADENCE core lessons of this level have
+    // been completed since the offer was last started or skipped (counted
+    // from the level's start the first time), so elective lessons
+    // themselves don't move the rhythm. "Not now" also skips that unit via
+    // the same dismissedUnits() store the practice nudge uses, so the next
+    // offer moves on to the following unit.
     const ELECTIVE_CADENCE = 5;
+
+    function _electiveKey() {
+        return Lang.key('electiveResolvedAt');
+    }
+
+    function _coreDoneIn(entry, progress) {
+        return (entry.units || []).filter(u => !u.track || u.track === 'core')
+            .flatMap(u => u.lessons || []).filter(l => progress[l.id]).length;
+    }
+
+    function _electiveResolvedAt(level) {
+        try { return (JSON.parse(localStorage.getItem(_electiveKey()) || '{}'))[level] || 0; }
+        catch (error) { return 0; }
+    }
+
+    function _resolveElective(primary) {
+        const entry = window._curriculumData.levels[primary.levelKey];
+        const progress = (typeof getProgress === 'function') ? getProgress() : {};
+        try {
+            const all = JSON.parse(localStorage.getItem(_electiveKey()) || '{}');
+            all[primary.levelKey] = _coreDoneIn(entry, progress);
+            localStorage.setItem(_electiveKey(), JSON.stringify(all));
+        } catch (error) { /* storage disabled — the offer just comes back sooner */ }
+    }
 
     function _electiveCandidate() {
         if (typeof LearnerPath === 'undefined' || !LearnerPath.currentLevel) return null;
-
-        const completed = LearnerPath.completedCount();
-        if (!completed || completed % ELECTIVE_CADENCE !== 0) return null;
 
         const data = window._curriculumData;
         const level = LearnerPath.currentLevel();
@@ -503,6 +609,7 @@ const RecommendationEngine = (function () {
         if (!entry || !entry.tracks) return null;
 
         const progress = (typeof getProgress === 'function') ? getProgress() : {};
+        if (_coreDoneIn(entry, progress) - _electiveResolvedAt(level) < ELECTIVE_CADENCE) return null;
         const dismissed = dismissedUnits();
         const electiveUnits = (entry.units || []).filter(u => u.track && u.track !== 'core' && !dismissed.includes(u.id));
 
@@ -516,6 +623,34 @@ const RecommendationEngine = (function () {
     }
 
     // ----------------------------------------
+    // WELCOME BACK
+    // ----------------------------------------
+    // Back after a real break (AppOpens.returned(), engine/init.js: 3+
+    // days since the previous open) with RETURN_MIN_DUE or more words due:
+    // a review first makes the next lesson easier than walking into it
+    // cold. Offered for RETURN_CARD_HOURS after the return, until taken or
+    // skipped. Due grammar isn't counted — it comes back on its own in the
+    // next lesson's recycle block.
+    const RETURN_CARD_HOURS = 12;
+    const RETURN_MIN_DUE = 5;
+
+    function _dueWordCount() {
+        if (typeof srsDeck === 'undefined' || !Array.isArray(srsDeck)) return 0;
+        const now = Date.now();
+        return srsDeck.filter(card => !card.nextReview || Date.parse(card.nextReview) <= now).length;
+    }
+
+    function _welcomeBack() {
+        const back = (typeof AppOpens !== 'undefined' && AppOpens.returned) ? AppOpens.returned() : null;
+        const at = back ? Date.parse(back.at) : NaN;
+        if (!isFinite(at) || Date.now() - at > RETURN_CARD_HOURS * 60 * 60 * 1000) return null;
+        if (_outcomes().some(o => o.key === 'welcome-back:' && o.outcome !== 'shown' && Date.parse(o.at) >= at)) return null;
+        const due = _dueWordCount();
+        if (due < RETURN_MIN_DUE) return null;
+        return { kind: 'welcome-back', days: back.days, due };
+    }
+
+    // ----------------------------------------
     // THE ENGINE
     // ----------------------------------------
 
@@ -524,6 +659,9 @@ const RecommendationEngine = (function () {
         // computes a label via humanizeSkill() -- every real
         // recommendation is produced through this function first.
         await _ensureGrammarTitles();
+
+        const back = _welcomeBack();
+        if (back) return { primary: back };
 
         const nudge = await _practiceNudge();
         if (nudge) return { primary: Object.assign({ kind: 'unit-nudge' }, nudge) };
@@ -565,6 +703,10 @@ const RecommendationEngine = (function () {
                 cta = `Start roleplay: ${primary.scenario.title}`;
                 sub = `Put "${primary.unit.title || 'that unit'}" into conversation`;
             }
+        } else if (primary.kind === 'welcome-back') {
+            title = 'Review due words';
+            cta = `Review ${primary.due} words`;
+            sub = 'Due while you were away';
         } else if (primary.kind === 'elective') {
             title = `${primary.trackTitle}: ${primary.unit.title}`;
             cta = `Start: ${primary.lesson.title}`;
@@ -616,14 +758,21 @@ const RecommendationEngine = (function () {
             } else if (typeof startLesson === 'function') {
                 startLesson(primary.step.lesson.id);
             }
+        } else if (primary.kind === 'welcome-back') {
+            _noteOutcome(primary, 'taken');
+            if (typeof showTab === 'function') showTab('review', document.querySelector('.nav button[data-tab="review"]'));
+            if (typeof Decks !== 'undefined' && Decks.reviewDeck) Decks.reviewDeck('all');
         } else if (primary.kind === 'unit-nudge') {
             dismissUnit(primary.unit.id);
+            _noteOutcome(primary, 'taken');
             if (primary.type === 'exchange') {
                 _openWorkshopDriller('writing', { scenarioId: primary.exchange.id, returnTab: 'home' });
             } else {
                 _openWorkshopDriller('speaking', { scenarioId: primary.scenario.id, returnTab: 'home' });
             }
         } else if (primary.kind === 'elective') {
+            _resolveElective(primary);
+            _noteOutcome(primary, 'taken');
             if (typeof startLesson === 'function') startLesson(primary.lesson.id);
         } else if (primary.kind === 'mini-game') {
             dismissMiniGame(primary.lessonId);
@@ -636,10 +785,12 @@ const RecommendationEngine = (function () {
         }
     }
 
-    // Home's "Not now" on a practice card.
+    // Home's "Not now", for whichever card is showing.
     function skip(primary) {
-        if (!primary || primary.kind !== 'mini-game') return;
-        dismissMiniGame(primary.lessonId);
+        if (!primary || primary.kind === 'continue') return;
+        if (primary.kind === 'mini-game') dismissMiniGame(primary.lessonId);
+        if (primary.kind === 'unit-nudge' || primary.kind === 'elective') dismissUnit(primary.unit.id);
+        if (primary.kind === 'elective') _resolveElective(primary);
         _noteOutcome(primary, 'skipped');
     }
 
@@ -709,6 +860,8 @@ const RecommendationEngine = (function () {
         recommend,
         open: _routeTo,
         skip,
+        noteShown,
+        outcomeStats,
         mountNextAction,
         dismissUnit,
         dismissMiniGame,

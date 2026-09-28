@@ -10,17 +10,36 @@ const LEVELS = ['a1', 'a2', 'b1', 'b2', 'c1'];
 // back the next time the learner opens the app, not "due immediately"
 // forever, and not spaced out by days when they might open the app five
 // times in one afternoon.
+//
+// Each open also notes when it happened, so a return after a real break
+// (RETURN_GAP_DAYS or more since the previous open) can be recognised:
+// `returned()` gives { days, at } for the most recent such return, which
+// Home's recommendation reads to open with a review.
 window.AppOpens = (function () {
     const KEY = 'appOpenCount';
+    const AT_KEY = 'appOpenAt';
+    const RETURN_KEY = 'appReturn';
+    const RETURN_GAP_DAYS = 3;
     function current() {
         return parseInt(localStorage.getItem(KEY), 10) || 0;
     }
     function bump() {
         const n = current() + 1;
         localStorage.setItem(KEY, String(n));
+        const now = new Date();
+        const previous = Date.parse(localStorage.getItem(AT_KEY) || '');
+        const days = isFinite(previous) ? Math.floor((now - previous) / 86400000) : 0;
+        if (days >= RETURN_GAP_DAYS) {
+            localStorage.setItem(RETURN_KEY, JSON.stringify({ days, at: now.toISOString() }));
+        }
+        localStorage.setItem(AT_KEY, now.toISOString());
         return n;
     }
-    return { current, bump };
+    function returned() {
+        try { return JSON.parse(localStorage.getItem(RETURN_KEY) || 'null'); }
+        catch (error) { return null; }
+    }
+    return { current, bump, returned };
 })();
 
 // A Workshop driller's Timed-mode timer, an in-progress lesson, or an open

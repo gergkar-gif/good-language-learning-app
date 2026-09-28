@@ -265,7 +265,11 @@ const LevelTest = (function () {
             writing: writingBreakdown,
             speaking: speakingBreakdown,
             weakest: Object.keys(wrongBy).sort((a, b) => wrongBy[b] - wrongBy[a]),
-            takenAt: new Date().toISOString()
+            takenAt: new Date().toISOString(),
+            // Lets LearnerModel.troubleSkills() tell whether a flagged
+            // skill has been answered right since (recycle cards count in
+            // app opens, not dates).
+            takenAtOpen: (typeof AppOpens !== 'undefined') ? AppOpens.current() : null
         };
 
         if (jumpAhead && typeof markLevelComplete === 'function') {

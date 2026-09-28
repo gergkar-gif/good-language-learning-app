@@ -317,10 +317,32 @@ const LearnerModel = (function () {
     // been answered right (engine/recycle.js's `recoveredAtOpen`, set by
     // Grammar Driller practice that doesn't reschedule the item). A skill
     // needs TROUBLE_MIN_MISSED such exercises — one slip isn't "a few
-    // mistakes". Reached lessons only, same as weakSkills(). Level-test
-    // flags aren't used: results carry no date, so they can't be "lately".
+    // mistakes". Reached lessons only, same as weakSkills().
+    //
+    // A level test's top TROUBLE_TEST_TOPICS "topics to revisit" also count,
+    // for TROUBLE_TEST_DAYS after the test, until any exercise of that
+    // skill has been answered right since (a card rescheduled or recovered
+    // at or after the test's `takenAtOpen`). Those entries carry
+    // `levelTest: '<level>'`. Results from before `takenAt` was saved are
+    // ignored — without a date they can't be "lately".
     const TROUBLE_RECENT_OPENS = 20;
     const TROUBLE_MIN_MISSED = 2;
+    const TROUBLE_TEST_DAYS = 14;
+    const TROUBLE_TEST_TOPICS = 3;
+
+    function _recentTestFlags() {
+        const flags = new Map();
+        if (typeof LevelTest === 'undefined' || typeof LEVEL_ORDER === 'undefined') return flags;
+        LEVEL_ORDER.forEach(level => {
+            const result = LevelTest.resultFor(level);
+            const at = result && result.takenAt ? Date.parse(result.takenAt) : NaN;
+            if (!isFinite(at) || Date.now() - at > TROUBLE_TEST_DAYS * 86400000) return;
+            (result.weakest || []).slice(0, TROUBLE_TEST_TOPICS).forEach(skillId => {
+                if (!flags.has(skillId)) flags.set(skillId, { level, open: result.takenAtOpen });
+            });
+        });
+        return flags;
+    }
 
     async function troubleSkills(limit) {
         const bySkill = await _skillRefs();
@@ -333,15 +355,24 @@ const LearnerModel = (function () {
         const stillMissed = card => !!card && card.lapses > 0 && card.reviews === 0
             && !card.recoveredAtOpen && currentOpen - (card.lastOpen || 0) <= TROUBLE_RECENT_OPENS;
 
+        const testFlags = _recentTestFlags();
+        const rightSince = (card, open) => !!card && typeof open === 'number'
+            && ((card.reviews > 0 && card.lastOpen >= open) || card.recoveredAtOpen >= open);
+
         const results = [];
         Object.keys(bySkill).forEach(skillId => {
             const missed = new Set();
+            const flag = testFlags.get(skillId);
+            let cleared = false;
             (bySkill[skillId] || []).forEach(entry => {
                 if (reached && entry.ref && !reached.has(entry.ref)) return;
                 if (stillMissed(schedule[entry.id])) missed.add(entry.id);
+                if (flag && rightSince(schedule[entry.id], flag.open)) cleared = true;
             });
             if (missed.size >= TROUBLE_MIN_MISSED) results.push({ skillId, missed: missed.size });
+            else if (flag && !cleared) results.push({ skillId, missed: 0, levelTest: flag.level });
         });
+        // Recent misses first; level-test flags after them.
         results.sort((a, b) => b.missed - a.missed);
         return results.slice(0, limit || results.length);
     }

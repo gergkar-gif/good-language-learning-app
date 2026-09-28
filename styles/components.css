@@ -7745,6 +7745,27 @@
   color: var(--text);
 }
 
+/* ?recstats only: how each kind of Home card has been received (tuning
+   aid, not a learner feature — see recStatsPanel() in engine/home.js). */
+.hm-recstats {
+  margin: 24px 0 0;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.hm-recstats table {
+  width: 100%;
+  margin-top: 6px;
+  border-collapse: collapse;
+}
+
+.hm-recstats th,
+.hm-recstats td {
+  padding: 4px 6px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+
 
 /* Modal styles */
 .pl-guide-modal {

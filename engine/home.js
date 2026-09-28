@@ -77,9 +77,8 @@ const Home = (function () {
     // both computed by engine/recommendationEngine.js now, alongside the
     // plain continue card — one RecommendationEngine.recommend() call in
     // render() below replaces what used to be three separate calls here.
-    // dismissUnit()/dismissMiniGame() stay as thin delegates since Home's
-    // own click handlers below still need to call them directly.
-    const dismissUnit = RecommendationEngine.dismissUnit;
+    // Every card's buttons go through RecommendationEngine.open()/skip()
+    // (data-rec-open / data-skip-rec), which also log the outcome.
     const dismissMiniGame = RecommendationEngine.dismissMiniGame;
     let _currentPrimaryRec = null;
 
@@ -175,7 +174,7 @@ const Home = (function () {
                     <button class="hm-cta-btn" data-practice-scenario="${esc(item.id)}"
                         data-practice-driller="${esc(driller)}"
                         data-unit-id="${esc(nudge.unit.id)}">${esc(cta)} →</button>
-                    <button class="dk-link-btn" data-skip-unit="${esc(nudge.unit.id)}">Not now</button>
+                    <button class="dk-link-btn" data-skip-rec="1">Not now</button>
                 </span>
             </section>
         `;
@@ -192,8 +191,8 @@ const Home = (function () {
                 <span class="hm-continue-title">${esc(title)}</span>
                 <span class="hm-continue-sub">${esc(blurb)}</span>
                 <span class="hm-continue-foot">
-                    <button class="hm-cta-btn" data-mini-game-primary="1">${esc(primaryLabel)} →</button>
-                    <button class="dk-link-btn" data-skip-mini-game="${esc(mini.lessonId)}">Not now</button>
+                    <button class="hm-cta-btn" data-rec-open="1">${esc(primaryLabel)} →</button>
+                    <button class="dk-link-btn" data-skip-rec="1">Not now</button>
                 </span>
             </section>
         `;
@@ -210,9 +209,47 @@ const Home = (function () {
                 <span class="hm-continue-title">${esc(elective.unit.title)}</span>
                 <span class="hm-continue-sub">From ${esc(elective.trackTitle)}, alongside the main course. Next up: ${esc(elective.lesson.title)}.</span>
                 <span class="hm-continue-foot">
-                    <button class="hm-cta-btn" data-elective-start="1">Start →</button>
-                    <button class="dk-link-btn" data-skip-unit="${esc(elective.unit.id)}">Not now</button>
+                    <button class="hm-cta-btn" data-rec-open="1">Start →</button>
+                    <button class="dk-link-btn" data-skip-rec="1">Not now</button>
                 </span>
+            </section>
+        `;
+    }
+
+    // Back after a break with words due (RecommendationEngine's
+    // _welcomeBack()): review first, then the course.
+    function welcomeBackCard(back) {
+        return `
+            <section class="hm-continue hm-nudge">
+                <span class="hm-eyebrow">Welcome back</span>
+                <span class="hm-continue-title">Start with a review</span>
+                <span class="hm-continue-sub">It's been ${back.days} days. ${back.due} ${plural(back.due, 'word')} came due while you were away, and going through them first makes the next lesson easier.</span>
+                <span class="hm-continue-foot">
+                    <button class="hm-cta-btn" data-rec-open="1">Review ${back.due} ${plural(back.due, 'word')} →</button>
+                    <button class="dk-link-btn" data-skip-rec="1">Not now</button>
+                </span>
+            </section>
+        `;
+    }
+
+    // How each kind of card has been received on this account, for tuning
+    // the engine. Not for learners: only drawn when the address has
+    // ?recstats. See RecommendationEngine.outcomeStats().
+    function recStatsPanel() {
+        if (!/[?&]recstats\b/.test(location.search)) return '';
+        const stats = RecommendationEngine.outcomeStats();
+        const pct = (n, d) => d ? Math.round((n / d) * 100) + '%' : '–';
+        const rows = Object.keys(stats).sort().map(type => {
+            const r = stats[type];
+            return `<tr><td>${esc(type)}</td><td>${r.shown}</td><td>${r.taken} (${pct(r.taken, r.shown)})</td><td>${r.skipped} (${pct(r.skipped, r.shown)})</td></tr>`;
+        }).join('');
+        return `
+            <section class="hm-recstats">
+                <span class="hm-eyebrow">Recommendation outcomes</span>
+                <table>
+                    <thead><tr><th>Card</th><th>Shown</th><th>Taken</th><th>Skipped</th></tr></thead>
+                    <tbody>${rows || '<tr><td colspan="4">Nothing logged yet</td></tr>'}</tbody>
+                </table>
             </section>
         `;
     }
@@ -484,36 +521,20 @@ const Home = (function () {
 
             const practiseScenario = e.target.closest('[data-practice-scenario]');
             if (practiseScenario) {
-                const unitId = practiseScenario.getAttribute('data-unit-id');
-                if (unitId) dismissUnit(unitId);
-                const scenarioId = practiseScenario.getAttribute('data-practice-scenario');
-                const driller = practiseScenario.getAttribute('data-practice-driller') || 'speaking';
-                goTab('drills');
-                if (typeof Workshop !== 'undefined') {
-                    Workshop.open(driller, { scenarioId: scenarioId, returnTab: 'home' });
+                if (_currentPrimaryRec && _currentPrimaryRec.kind === 'unit-nudge') {
+                    RecommendationEngine.open(_currentPrimaryRec);
                 }
                 return;
             }
 
-            const skip = e.target.closest('[data-skip-unit]');
-            if (skip) {
-                dismissUnit(skip.getAttribute('data-skip-unit'));
+            if (e.target.closest('[data-rec-open]')) {
+                if (_currentPrimaryRec) RecommendationEngine.open(_currentPrimaryRec);
+                return;
+            }
+
+            if (e.target.closest('[data-skip-rec]')) {
+                if (_currentPrimaryRec) RecommendationEngine.skip(_currentPrimaryRec);
                 render();
-                return;
-            }
-
-            const miniPrimary = e.target.closest('[data-mini-game-primary]');
-            if (miniPrimary) {
-                if (_currentPrimaryRec && _currentPrimaryRec.kind === 'mini-game') {
-                    RecommendationEngine.open(_currentPrimaryRec);
-                }
-                return;
-            }
-
-            if (e.target.closest('[data-elective-start]')) {
-                if (_currentPrimaryRec && _currentPrimaryRec.kind === 'elective') {
-                    RecommendationEngine.open(_currentPrimaryRec);
-                }
                 return;
             }
 
@@ -541,17 +562,6 @@ const Home = (function () {
                     goTab('drills');
                     if (typeof Workshop !== 'undefined') Workshop.open('vocabulary', { words: words });
                 })();
-                return;
-            }
-
-            const skipMini = e.target.closest('[data-skip-mini-game]');
-            if (skipMini) {
-                if (_currentPrimaryRec && _currentPrimaryRec.kind === 'mini-game') {
-                    RecommendationEngine.skip(_currentPrimaryRec);
-                } else {
-                    dismissMiniGame(skipMini.getAttribute('data-skip-mini-game'));
-                }
-                render();
                 return;
             }
 
@@ -623,17 +633,20 @@ const Home = (function () {
 
         host.innerHTML = `
             ${courseBlock()}
-            ${rec.primary.kind === 'unit-nudge' ? practiceNudgeCard(rec.primary)
+            ${rec.primary.kind === 'welcome-back' ? welcomeBackCard(rec.primary)
+                : rec.primary.kind === 'unit-nudge' ? practiceNudgeCard(rec.primary)
                 : rec.primary.kind === 'mini-game' ? miniGameCard(rec.primary)
                 : rec.primary.kind === 'elective' ? electiveCard(rec.primary)
                 : continueCard(rec.primary.step)}
             ${quickBudgetBar()}
-            ${reviewAlert(deck)}
+            ${rec.primary.kind === 'welcome-back' ? '' : reviewAlert(deck)}
             ${todayStrip()}
             <p class="hm-guide-row">
                 <button type="button" class="hm-guide-link" data-open-guide-modal="1">How Parlour works</button>
             </p>
+            ${recStatsPanel()}
         `;
+        RecommendationEngine.noteShown(rec.primary);
 
         // The streak, the XP and the three activity marks are written by the
         // XP module, which owns them and keeps them right everywhere.
