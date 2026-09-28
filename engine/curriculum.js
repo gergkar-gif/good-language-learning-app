@@ -835,7 +835,7 @@ async function globalGrammarGuideHtml() {
             </header>
 
             <input type="text" class="gg-search-input" id="gg-search-input"
-                placeholder="Search grammar topics…" autocomplete="off">
+                placeholder="Search grammar in ${Lang.name()} or English…" autocomplete="off">
 
             ${topics.length
                 ? `<ul class="gg-search-results" id="gg-search-results">${rows}</ul>`
