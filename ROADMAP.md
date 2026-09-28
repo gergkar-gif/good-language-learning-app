@@ -29,6 +29,8 @@ Completed work is archived out to `ACHIEVED.md`.
     - **B2 classics (~700 words target).** All 36 average ~288 words (e.g. *Pacsirta*, *A vörös postakocsi*, *Bánk bán*, *Ábel a rengetegben*, *Sorstalanság*, *Az ajtó*). The prose and dialogue are authentic, but they're 1-page vignettes; expand into ~700-word B2 adaptations with text-grounded comprehension questions.
     - **B1/B2 World/Civics shelf.** Consider expanding the short cultural vignettes too (currently ~130 words at B1, ~360 at B2).
 
+108. **Grammar search: bridge grammar terms across languages (added 2026-09-28).** Grammar Guide search now matches English and target-language keywords (see ACHIEVED.md, "Grammar & Decks Search in Both Languages"), but only the words each topic actually contains. A term used in one language doesn't find topics written in the other: on es-es, "subjunctive" finds 34 topics and "subjuntivo" only 14, because most English-language topics never write *subjuntivo*. The same will be true for HU case names (*tárgyeset* vs "accusative"). A small hand-made synonym list of grammar terms per course (subjuntivo ↔ subjunctive, pretérito indefinido ↔ preterite, tárgyeset ↔ accusative, …), applied to the query the way the Library's `BILINGUAL_TOPIC_SYNONYMS` (`engine/reader.js`) is, would close the gap.
+
 ---
 
 ## 2. Future Feature Ideas
