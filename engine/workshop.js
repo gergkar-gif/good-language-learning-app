@@ -159,38 +159,6 @@ const Workshop = (function () {
         return d.innerHTML;
     }
 
-    // Grammar, vocabulary, and now any weak driller (see
-    // engine/recommendationEngine.js) are independent candidates — any
-    // subset can have something to suggest, so this renders up to three
-    // action buttons under one shared blurb. Labels come from
-    // RecommendationEngine.secondaryLabel() — shared with Home's own
-    // secondary tier, so the two surfaces can't drift on how a candidate
-    // reads. Each button carries its own index in the secondary array
-    // (data-recommend-index) so _loadRecommendation() can route it via
-    // RecommendationEngine.openSecondary() without re-deriving the kind.
-    function _recommendationHtml(secondary) {
-        if (!secondary || !secondary.length) return '';
-        const anyWeak = secondary.some(c => c.reason === 'weak');
-        const blurb = anyWeak
-            ? "You've been shaky on some of this — a quick pass would help it stick."
-            : "Fresh from your last lesson — reinforce it while it's recent.";
-        const buttons = secondary.map((c, i) => `
-            <span class="wk-recommend-item">
-                <button class="wk-recommend-btn" data-recommend-index="${i}">
-                    ${_esc(RecommendationEngine.secondaryLabel(c))} →
-                </button>
-                ${c.kind === 'elective' ? `<button class="wk-recommend-skip" data-recommend-skip="${i}">Not now</button>` : ''}
-            </span>
-        `).join('');
-        return `
-            <div class="wk-recommend">
-                <span class="wk-recommend-eyebrow">Recommended for you</span>
-                <span class="wk-recommend-body">${_esc(blurb)}</span>
-                <div class="wk-recommend-actions">${buttons}</div>
-            </div>
-        `;
-    }
-
     function _renderCards(items) {
         return items.map(d => `
             <button class="wk-card" data-driller="${d.id}">
@@ -204,13 +172,12 @@ const Workshop = (function () {
         `).join('');
     }
 
-    function _pickerHtml(recommendation) {
+    function _pickerHtml() {
         const available = DRILLERS.filter(_available);
         const studios = available.filter(d => d.category === 'studios');
         const foundations = available.filter(d => d.category === 'foundations');
         const exams = available.filter(d => d.category === 'exams');
         return `
-            ${_recommendationHtml(recommendation)}
             ${studios.length ? `
                 <div class="wk-section-heading">Studios</div>
                 <div class="wk-picker">
@@ -244,9 +211,6 @@ const Workshop = (function () {
         root.querySelectorAll('[data-driller]').forEach(btn => {
             btn.addEventListener('click', () => open(btn.dataset.driller));
         });
-        // The recommendation card itself is patched in later, by
-        // _loadRecommendation() — it doesn't exist in `root` yet at this
-        // point, so its own buttons are wired there instead.
     }
 
     function _attachActiveEvents(root) {
@@ -300,50 +264,13 @@ const Workshop = (function () {
         if (mod && typeof mod.stop === 'function') mod.stop();
     }
 
-    // The picker itself renders synchronously, same as always — the
-    // "Recommended for you" card is fetched separately afterwards and
-    // patched in once ready (grammar-index.json can be several hundred KB
-    // on a course with a lot of content; blocking the whole picker on it
-    // would turn opening Workshop into a wait). _pickerToken guards against
-    // patching a stale picker if the learner has already navigated away or
-    // opened a driller by the time the fetch resolves.
-    let _pickerToken = 0;
-
-    function _loadRecommendation(root, token) {
-        if (typeof RecommendationEngine === 'undefined') return;
-        RecommendationEngine.recommend().then(rec => {
-            if (!rec || !rec.secondary.length || token !== _pickerToken) return;
-            const target = document.getElementById('drills-root');
-            if (!target || target !== root || _active) return;
-            root.insertAdjacentHTML('afterbegin', _recommendationHtml(rec.secondary));
-
-            // Each button's own candidate is closed over via its index
-            // rather than round-tripped through data attributes — a word
-            // list doesn't serialise cleanly into one, and every button
-            // here is only ever wired against this exact rec anyway.
-            root.querySelectorAll('[data-recommend-index]').forEach(btn => {
-                const candidate = rec.secondary[Number(btn.getAttribute('data-recommend-index'))];
-                btn.addEventListener('click', () => RecommendationEngine.openSecondary(candidate));
-            });
-            root.querySelectorAll('[data-recommend-skip]').forEach(btn => {
-                const candidate = rec.secondary[Number(btn.getAttribute('data-recommend-skip'))];
-                btn.addEventListener('click', () => {
-                    RecommendationEngine.dismissUnit(candidate.unit.id);
-                    render();
-                });
-            });
-        }).catch(() => {});
-    }
-
     function render() {
         const root = document.getElementById('drills-root');
         if (!root) return;
 
         if (!_active) {
-            _pickerToken++;
-            root.innerHTML = _pickerHtml(null);
+            root.innerHTML = _pickerHtml();
             _attachPickerEvents(root);
-            _loadRecommendation(root, _pickerToken);
             return;
         }
 

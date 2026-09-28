@@ -125,7 +125,7 @@ const RecommendationEngine = (function () {
     // "These are your weakest words" — the same SM-2-ease-ranked signal
     // engine/studyPlan.js's Time-Based Sessions already use for their own
     // review/match slots (its `build()` step 1 and step 5), surfaced here
-    // too so the ordinary Home/Workshop recommendations offer the same
+    // too so the ordinary Home recommendations offer the same
     // thing, not just a timed session. Unlike the Vocabulary Driller
     // secondary candidate (context-inference, B1+ only), this reads
     // straight off the SRS deck and works at any level. Match needs >=4
@@ -180,9 +180,9 @@ const RecommendationEngine = (function () {
         return key.replace(/[-_]+/g, ' ');
     }
 
-    // A `secondary` candidate's button label — shared by Home's own
-    // secondary tier and Workshop's "Recommended for you" card, so the two
-    // surfaces can't drift on how a candidate reads.
+    // A `secondary` candidate's button label, for Home's secondary tier.
+    // (Workshop's own "Recommended for you" card was removed 2026-09-28 —
+    // recommendations live on Home only.)
     function secondaryLabel(candidate) {
         if (candidate.kind === 'grammar') return `Grammar: ${humanizeSkill(candidate.skill)}`;
         if (candidate.kind === 'vocabulary') return 'Vocabulary practice';
@@ -194,8 +194,7 @@ const RecommendationEngine = (function () {
         return '';
     }
 
-    // Launches a `secondary` candidate — same shared surface as above, so
-    // both callers route identically.
+    // Launches a `secondary` candidate from Home's secondary tier.
     function openSecondary(candidate) {
         if (!candidate) return;
         if (candidate.kind === 'srs') { _openSrs(candidate); return; }
@@ -204,8 +203,7 @@ const RecommendationEngine = (function () {
             return;
         }
         if (typeof Workshop === 'undefined') return;
-        // Home's secondary tier (unlike Workshop's own "Recommended for you"
-        // card) isn't the #drills tab -- see _openWorkshopDriller()'s own
+        // Home's secondary tier isn't the #drills tab -- see _openWorkshopDriller()'s own
         // comment for why opening straight via Workshop.open() would paint
         // into a hidden container there.
         if (candidate.kind === 'grammar') _openWorkshopDriller('grammar', { skill: candidate.skill });

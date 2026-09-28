@@ -560,8 +560,7 @@ const Home = (function () {
             }
 
             // Vocabulary's word list doesn't serialise cleanly into a data
-            // attribute — same reasoning engine/workshop.js's own secondary
-            // wiring already documents — so this recomputes the
+            // attribute, so this recomputes the
             // recommendation fresh rather than caching rec.secondary across
             // the render/click boundary, keeping this file's "no state of
             // its own" rule intact.

@@ -27,93 +27,11 @@
     margin-top: 4px;
 }
 
-/* One or two suggested mini-game sessions (grammar and/or vocabulary —
-   see engine/recommend.js), ahead of the picker list — patched in
-   asynchronously once Recommend.recommend() resolves (see
-   Workshop.render()), so it can appear a beat after the picker itself
-   rather than blocking it. Same bordered-card language as Home's
-   .hm-continue, since both answer the same question ("what should I do
-   right now?"). Not itself a button — .wk-recommend-actions holds up to
-   two independent action buttons instead of one whole-card click, since
-   either half (or both) may be present. */
-.wk-recommend {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    max-width: 480px;
-    margin: 0 auto 20px;
-    text-align: left;
-    background: var(--bg);
-    border: 1px solid var(--accent-dark);
-    border-radius: var(--radius-sm);
-    padding: 16px 18px;
-}
-
-.wk-recommend-eyebrow {
-    font-size: 12px;
-    letter-spacing: .04em;
-    color: var(--accent-dark);
-    font-weight: 600;
-    margin-bottom: 6px;
-}
-
-.wk-recommend-body {
-    font-size: 15px;
-    color: var(--text);
-    line-height: 1.4;
-}
-
-.wk-recommend-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-    margin-top: 10px;
-}
-
-.wk-recommend-btn {
-    background: none;
-    border: none;
-    padding: 0;
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--accent-dark);
-    cursor: pointer;
-}
-
-.wk-recommend-btn:hover {
-    text-decoration: underline;
-}
-
-.wk-recommend-item {
-    display: inline-flex;
-    align-items: baseline;
-    gap: 10px;
-}
-
-/* Only the elective-track candidate (RecommendationEngine's occasional
-   CCSE/Latin-America-history nudge) pairs its button with this — a muted
-   escape hatch so the nudge stays genuinely skippable rather than sticking
-   around until acted on. */
-.wk-recommend-skip {
-    background: none;
-    border: none;
-    padding: 0;
-    font-size: 13px;
-    color: var(--text-muted);
-    cursor: pointer;
-}
-
-.wk-recommend-skip:hover {
-    text-decoration: underline;
-}
-
 /* Shared "what's next" action mounted at the end of every driller's
    results screen, and (since 2026-09-11) lessons.js's/srs.js's own
    completion summaries too — see RecommendationEngine.mountNextAction() in
-   engine/recommendationEngine.js. Same bordered-card language as
-   .wk-recommend above (both answer "what should I do right now?"), but
-   sits at the END of a screen the learner is about to leave rather than
-   the top of one they just entered. */
+   engine/recommendationEngine.js. Bordered-card language, sitting at
+   the END of a screen the learner is about to leave. */
 .wk-next-action-slot {
     display: flex;
     flex-direction: column;
