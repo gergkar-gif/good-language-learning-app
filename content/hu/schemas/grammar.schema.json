@@ -68,8 +68,12 @@
         },
         "audioMap": {
           "type": "object",
-          "description": "Optional: exact cell text -> a real recording's URL, for cells where content has sourced actual human audio instead of relying on TTS. A cell whose text isn't a key here still gets the normal TTS listen button (subject to bothAudible/pronoun rules) - this only ever upgrades specific cells, never removes a button.",
+          "description": "Optional: exact cell text -> a real recording's URL, for cells where content has sourced actual human audio instead of relying on TTS. A cell whose text isn't a key here still gets the normal TTS listen button (subject to bothAudible/pronoun rules) - this only ever upgrades specific cells, never removes a button, unless audioOnly is set.",
           "additionalProperties": { "type": "string", "minLength": 1 }
+        },
+        "audioOnly": {
+          "type": "boolean",
+          "description": "Recordings only: a cell plays its audioMap recording or gets no listen button at all - never the TTS fallback. Use it on sound tables (bare letters, vowel pairs): TTS given a single letter returns silence or the letter's name, not the sound."
         },
         "rows": {
           "type": "array",

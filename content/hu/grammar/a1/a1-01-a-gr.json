@@ -11,6 +11,23 @@
       "type": "table",
       "title": "All seven pairs",
       "bothAudible": true,
+      "audioOnly": true,
+      "audioMap": {
+        "a": "content/hu/audio/sounds/vowel-a.mp3",
+        "á": "content/hu/audio/sounds/vowel-a-long.mp3",
+        "e": "content/hu/audio/sounds/vowel-e.mp3",
+        "é": "content/hu/audio/sounds/vowel-e-long.mp3",
+        "i": "content/hu/audio/sounds/vowel-i.mp3",
+        "í": "content/hu/audio/sounds/vowel-i-long.mp3",
+        "o": "content/hu/audio/sounds/vowel-o.mp3",
+        "ó": "content/hu/audio/sounds/vowel-o-long.mp3",
+        "ö": "content/hu/audio/sounds/vowel-oe.mp3",
+        "ő": "content/hu/audio/sounds/vowel-oe-long.mp3",
+        "u": "content/hu/audio/sounds/vowel-u.mp3",
+        "ú": "content/hu/audio/sounds/vowel-u-long.mp3",
+        "ü": "content/hu/audio/sounds/vowel-ue.mp3",
+        "ű": "content/hu/audio/sounds/vowel-ue-long.mp3"
+      },
       "rows": [
         ["a", "á"],
         ["e", "é"],
@@ -22,17 +39,61 @@
       ]
     },
     {
+      "type": "text",
+      "title": "Length changes the word",
+      "content": "Play each pair and listen for the length: *hat* (six) / *hát* (back), *szel* (slices) / *szél* (wind), *irt* (clears) / *írt* (wrote), *kor* (age) / *kór* (illness), *tör* (breaks) / *tőr* (dagger), *hurok* (loop) / *húrok* (strings). *üt* (hits) and *űr* (space) aren't an exact pair, but they put the short *ü* right next to the long *ű*."
+    },
+    {
+      "type": "table",
+      "title": "Short or long",
+      "bothAudible": true,
+      "audioOnly": true,
+      "audioMap": {
+        "hat": "content/hu/audio/sounds/word-hat.mp3",
+        "hát": "content/hu/audio/sounds/word-hat-long.mp3",
+        "szel": "content/hu/audio/sounds/word-szel.mp3",
+        "szél": "content/hu/audio/sounds/word-szel-long.mp3",
+        "irt": "content/hu/audio/sounds/word-irt.mp3",
+        "írt": "content/hu/audio/sounds/word-irt-long.mp3",
+        "kor": "content/hu/audio/sounds/word-kor.mp3",
+        "kór": "content/hu/audio/sounds/word-kor-long.mp3",
+        "tör": "content/hu/audio/sounds/word-tor.mp3",
+        "tőr": "content/hu/audio/sounds/word-tor-long.mp3",
+        "hurok": "content/hu/audio/sounds/word-hurok.mp3",
+        "húrok": "content/hu/audio/sounds/word-hurok-long.mp3",
+        "üt": "content/hu/audio/sounds/word-ut.mp3",
+        "űr": "content/hu/audio/sounds/word-ur-long.mp3"
+      },
+      "rows": [
+        ["hat", "hát"],
+        ["szel", "szél"],
+        ["irt", "írt"],
+        ["kor", "kór"],
+        ["tör", "tőr"],
+        ["hurok", "húrok"],
+        ["üt", "űr"]
+      ]
+    },
+    {
       "type": "table",
       "title": "Sound examples",
       "bothAudible": true,
+      "audioOnly": true,
       "audioMap": {
-        "lát": "content/hu/audio/letters/vowel-a-long.mp3",
-        "rész": "content/hu/audio/letters/vowel-e-long.mp3",
-        "víz": "content/hu/audio/letters/vowel-i-long.mp3",
-        "tó": "content/hu/audio/letters/vowel-o-long.mp3",
-        "bőr": "content/hu/audio/letters/vowel-oumlaut-long.mp3",
-        "kút": "content/hu/audio/letters/vowel-u-long.mp3",
-        "tűz": "content/hu/audio/letters/vowel-uumlaut-long.mp3"
+        "á": "content/hu/audio/sounds/vowel-a-long.mp3",
+        "é": "content/hu/audio/sounds/vowel-e-long.mp3",
+        "í": "content/hu/audio/sounds/vowel-i-long.mp3",
+        "ó": "content/hu/audio/sounds/vowel-o-long.mp3",
+        "ő": "content/hu/audio/sounds/vowel-oe-long.mp3",
+        "ú": "content/hu/audio/sounds/vowel-u-long.mp3",
+        "ű": "content/hu/audio/sounds/vowel-ue-long.mp3",
+        "lát": "content/hu/audio/sounds/word-lat.mp3",
+        "rész": "content/hu/audio/sounds/word-resz.mp3",
+        "víz": "content/hu/audio/sounds/word-viz.mp3",
+        "tó": "content/hu/audio/sounds/word-to.mp3",
+        "bőr": "content/hu/audio/sounds/word-bor-long.mp3",
+        "kút": "content/hu/audio/sounds/word-kut.mp3",
+        "tűz": "content/hu/audio/sounds/word-tuz.mp3"
       },
       "rows": [
         ["á", "lát"],

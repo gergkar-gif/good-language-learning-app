@@ -144,7 +144,10 @@ notice → practice" progression onto the available part types:
 - `table` — for paradigms/patterns (vowel groups, endings). Real files also
   use `bothAudible`/`audioMap` fields on some tables for audio playback —
   check a recent example before assuming the plain `rows` shape above is
-  the whole story.
+  the whole story. Never let TTS voice a bare letter: a sound table sets
+  `audioOnly: true` and maps its cells to recordings in
+  `content/hu/audio/sounds/` (made with `tools/sound-recorder/`), and
+  cells with no recording simply get no button. See `a1-01-a-gr.json`.
 - `examples` — **the field names are literally `spanish`/`english`** even
   though the sentence is Hungarian. That's a fixed schema field name, not a
   content instruction — put the Hungarian in `spanish` and the English gloss

@@ -1219,10 +1219,17 @@ const stepRenderers = {
     // to a real recording's URL — content that can source one (so far just
     // Hungarian's letter-sound tables) gets a human voice instead of TTS,
     // cell by cell, with TTS as the fallback for any cell not in the map.
+    // `audioOnly: true` drops that fallback: a cell plays its recording or
+    // has no button. Sound tables need it — TTS given a bare letter returns
+    // silence (a, e, gy, sz…) or the letter's name ("es" for s), never the
+    // sound being taught.
     table(step) {
         const PRONOUN_PART = '(yo|tú|tu|usted|ud\\.?|él|el|ella|nosotros|nosotras|nosotros/as|vosotros|vosotras|vosotros/as|ustedes|uds\\.?|ellos|ellas|én|te|ő|ön|mi|ti|ők|önök|a\\s+mí|a\\s+ti|a\\s+él|a\\s+ella|a\\s+usted)';
         const PRONOUN_RE = new RegExp(`^${PRONOUN_PART}(\\s*[/,]\\s*${PRONOUN_PART})*$`, 'i');
         const audioMap = step.audioMap || {};
+        const cellAudio = text => step.audioOnly
+            ? (audioMap[text] && typeof Speech !== 'undefined' ? Speech.audioButton(audioMap[text], text) : '')
+            : sayOrPlay(text, audioMap[text]);
         return `
             <table class="lsn-table">
                 ${(step.rows || []).map(row => {
@@ -1235,8 +1242,8 @@ const stepRenderers = {
                     const col0IsEnglish = !isConjugation && /^[a-z\s.,'?!-]*$/i.test(col0) && /\b(the|to|i|you|he|she|we|they|my|your|what|where|when|is|are|please|thank|good|hello|how|do|have|rest|drink|want)\b/i.test(col0);
                     const primaryText = col0IsEnglish ? col1 : col0;
                     const secondaryText = col0IsEnglish ? col0 : col1;
-                    const primaryAudio = sayOrPlay(primaryText, audioMap[primaryText]);
-                    const secondaryAudio = (isConjugation && !col0IsEnglish) ? sayOrPlay(secondaryText, audioMap[secondaryText]) : '';
+                    const primaryAudio = cellAudio(primaryText);
+                    const secondaryAudio = (isConjugation && !col0IsEnglish) ? cellAudio(secondaryText) : '';
 
                     return `
                     <tr>
