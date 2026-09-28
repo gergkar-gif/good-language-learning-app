@@ -15,14 +15,43 @@ the two never teach a different topic list for the same unit.
 
 Output: content/<lang>/indexes/grammar-guide-index.json
     [ { "level": "A1", "unitId": "unit.a1.01", "unitTitle": "...",
-        "title": "..." }, ... ]
+        "title": "...", "keywords": "..." }, ... ]
+
+`keywords` lets the search find a topic in either language whatever
+language its title is in: English from the topic id and section headings,
+target-language forms from the *italicised* terms in its explanation
+(house style italicises every embedded target-language word). Full prose
+and examples are left out on purpose, or "verb" would match everything.
 
 Usage:
     python scripts/build_grammar_guide_index.py [lang ...]   (default: es hu)
 """
 import json
+import re
 import sys
 from pathlib import Path
+
+# Word- or phrase-sized italics only; italicised whole sentences add bulk
+# to the index without making anything findable that its words don't.
+ITALIC = re.compile(r"\*([^*\n]{1,30})\*")
+
+
+def topic_keywords(grammar):
+    # "grammar.b1.08.01.future-intention" -> "future intention"; ids ending
+    # in a bare letter or number ("grammar.a1.01.b") carry no words.
+    slug = grammar.get("id", "").rsplit(".", 1)[-1]
+    terms = [slug.replace("-", " ")] if len(slug) > 2 and not slug.isdigit() else []
+    for section in grammar.get("sections", []):
+        if section.get("title"):
+            terms.append(section["title"].replace("*", ""))
+        if isinstance(section.get("content"), str):
+            terms += ITALIC.findall(section["content"])
+    seen, out = set(), []
+    for t in (t.strip() for t in terms):
+        if t and t.lower() not in seen:
+            seen.add(t.lower())
+            out.append(t)
+    return " · ".join(out)
 
 
 def lesson_path(lang, lesson_id):
@@ -56,10 +85,12 @@ def build_index(lang, curriculum):
                         continue
                     gf = Path(f"content/{lang}") / section["ref"]
                     title = section.get("title", "Grammar")
+                    keywords = ""
                     if gf.is_file():
                         try:
                             grammar = json.loads(gf.read_text(encoding="utf-8"))
                             title = grammar.get("title") or title
+                            keywords = topic_keywords(grammar)
                         except (json.JSONDecodeError, OSError):
                             stats["grammar_missing"] += 1
                     else:
@@ -69,7 +100,8 @@ def build_index(lang, curriculum):
                         "level": level_key,
                         "unitId": unit["id"],
                         "unitTitle": unit.get("title", ""),
-                        "title": title
+                        "title": title,
+                        "keywords": keywords
                     })
 
     return index, stats
