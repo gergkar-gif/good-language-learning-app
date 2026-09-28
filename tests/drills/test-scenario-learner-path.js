@@ -98,8 +98,7 @@ global.LearnerModel = {
 };
 
 global.Recommend = {
-    unitSkillFor: async (unit) => 'unit-skill-placeholder',
-    lessonSkillFor: async (lessonId) => 'lesson-skill-placeholder'
+    unitSkillFor: async (unit) => 'unit-skill-placeholder'
 };
 
 // Load RecommendationEngine
@@ -153,20 +152,17 @@ const RecommendationEngine = require('../../engine/recommendationEngine.js');
     assert.strictEqual(wrapped.kind, 'unit-nudge', 'recommend()-style wrapping must keep kind as unit-nudge');
     console.log('✓ Practice nudge survives recommend()\'s kind:unit-nudge wrapping');
 
-    console.log('\n--- Test 4: Mid-unit Mini-game Practises the Lesson, Not the Unit Roleplay ---');
+    console.log('\n--- Test 4: Mid-unit, Nothing Weak: No Practice Card, No Roleplay ---');
     // Not the last lesson (lesson 1 of cafeUnit): the unit's roleplay is
     // held back for the unit-end milestone (Test 3), and with nothing weak
-    // the offer is grammar practice on the lesson's own skill.
+    // there's no practice card at all, so Continue leads. The full set of
+    // cases lives in test-home-recommendation-profiles.js.
     const firstLesson = cafeUnit.lessons[0];
     global.LearnerPath.lastCompletedLessonId = () => firstLesson.id;
 
     const mini = await RecommendationEngine._miniGameNudge();
-    assert(mini, 'Mini-game nudge should be generated');
-    assert(!(mini.options && mini.options.scenarioId), 'Unit roleplay must not be offered mid-unit');
-    assert.strictEqual(mini.drillerId, 'grammar', 'With nothing weak, the lesson\'s own grammar comes first');
-    assert.strictEqual(mini.skill, 'lesson-skill-placeholder', 'Skill must be the lesson\'s, not the unit\'s');
-    assert.strictEqual(mini.alt, undefined, 'One recommendation, no alternative');
-    console.log('✓ Mid-unit mini-game practises the lesson just finished');
+    assert.strictEqual(mini, null, 'Nothing weak: no practice card');
+    console.log('✓ Mid-unit with nothing weak leaves Continue in front');
 
     console.log('\n--- Test 5: Parlour Style Zero-Emoji Check ---');
     const emojiRegex = /[\u{1F300}-\u{1F9FF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}]/u;

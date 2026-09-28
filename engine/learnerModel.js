@@ -306,6 +306,46 @@ const LearnerModel = (function () {
         return results.slice(0, limit || results.length);
     }
 
+    // Skills with RECENT, UNRESOLVED mistakes — what Home means by "You
+    // made a few mistakes with X lately". Narrower than weakSkills(), on
+    // purpose: that one ranks by average ease, so it also returns
+    // 'developing' skills (a skill only ever answered right sits at the
+    // starting ease, 2.5, which classifies 'developing') and never forgets
+    // a miss however old. Here an exercise counts only while its latest
+    // answer is a miss (`reviews === 0` after an 'again'), that miss is
+    // within the last TROUBLE_RECENT_OPENS app opens, and it hasn't since
+    // been answered right (engine/recycle.js's `recoveredAtOpen`, set by
+    // Grammar Driller practice that doesn't reschedule the item). A skill
+    // needs TROUBLE_MIN_MISSED such exercises — one slip isn't "a few
+    // mistakes". Reached lessons only, same as weakSkills(). Level-test
+    // flags aren't used: results carry no date, so they can't be "lately".
+    const TROUBLE_RECENT_OPENS = 20;
+    const TROUBLE_MIN_MISSED = 2;
+
+    async function troubleSkills(limit) {
+        const bySkill = await _skillRefs();
+        if (!bySkill) return [];
+        const schedule = (typeof loadRecycleSchedule === 'function') ? loadRecycleSchedule() : {};
+        const currentOpen = (typeof currentAppOpen === 'function') ? currentAppOpen() : 0;
+        const reached = (typeof LearnerPath !== 'undefined' && LearnerPath.reachedExerciseRefs)
+            ? LearnerPath.reachedExerciseRefs() : null;
+
+        const stillMissed = card => !!card && card.lapses > 0 && card.reviews === 0
+            && !card.recoveredAtOpen && currentOpen - (card.lastOpen || 0) <= TROUBLE_RECENT_OPENS;
+
+        const results = [];
+        Object.keys(bySkill).forEach(skillId => {
+            const missed = new Set();
+            (bySkill[skillId] || []).forEach(entry => {
+                if (reached && entry.ref && !reached.has(entry.ref)) return;
+                if (stillMissed(schedule[entry.id])) missed.add(entry.id);
+            });
+            if (missed.size >= TROUBLE_MIN_MISSED) results.push({ skillId, missed: missed.size });
+        });
+        results.sort((a, b) => b.missed - a.missed);
+        return results.slice(0, limit || results.length);
+    }
+
     // The tense+person pairs Verb Speed has seen missed, worst
     // first — e.g. { tensePath: 'indicativo.preterito', person: 'uds',
     // state: 'weak', ease, lapses }. Same classification and ordering as
@@ -533,7 +573,7 @@ const LearnerModel = (function () {
             if (!_drillerAvailable(id) || !_drillerUnlocked(id)) return;
             const cls = (typeof DrillHistory !== 'undefined') ? DrillHistory.classify(id) : { state: null };
             if (cls.state === 'weak') {
-                candidates.push({ drillerId: id, title: DRILLER_TITLES[id], avgAccuracy: cls.avgAccuracy });
+                candidates.push({ drillerId: id, title: DRILLER_TITLES[id], avgAccuracy: cls.avgAccuracy, lastDate: cls.lastDate || null });
             }
         });
         return candidates;
@@ -1266,6 +1306,7 @@ const LearnerModel = (function () {
         skillState,
         wordState,
         weakSkills,
+        troubleSkills,
         weakConjugations,
         weakWords,
         recordLookup,

@@ -94,7 +94,7 @@ const DrillHistory = (function () {
         else if (avgAccuracy < STRONG_ACCURACY_FLOOR) state = 'developing';
         else state = 'strong';
 
-        return { state, sessions: sessions.length, avgAccuracy };
+        return { state, sessions: sessions.length, avgAccuracy, lastDate: sessions[0].date || null };
     }
 
     return { record, classify };

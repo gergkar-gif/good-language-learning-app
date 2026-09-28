@@ -546,7 +546,11 @@ const Home = (function () {
 
             const skipMini = e.target.closest('[data-skip-mini-game]');
             if (skipMini) {
-                dismissMiniGame(skipMini.getAttribute('data-skip-mini-game'));
+                if (_currentPrimaryRec && _currentPrimaryRec.kind === 'mini-game') {
+                    RecommendationEngine.skip(_currentPrimaryRec);
+                } else {
+                    dismissMiniGame(skipMini.getAttribute('data-skip-mini-game'));
+                }
                 render();
                 return;
             }

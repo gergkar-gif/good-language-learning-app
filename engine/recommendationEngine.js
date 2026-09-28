@@ -114,24 +114,7 @@ const RecommendationEngine = (function () {
         return LEVEL_ORDER.indexOf(LearnerPath.currentLevel()) >= LEVEL_ORDER.indexOf('B1');
     }
 
-    // "These are your weakest words" — the same SM-2-ease-ranked signal
-    // engine/studyPlan.js's Time-Based Sessions already use for their own
-    // review/match slots (its `build()` step 1 and step 5), surfaced here
-    // too so the ordinary Home recommendations offer the same
-    // thing, not just a timed session. Unlike the Vocabulary Driller
-    // candidate (context-inference, B1+ only), this reads
-    // straight off the SRS deck and works at any level. Match needs >=4
-    // pairs to be a real game (studyPlan.js's own floor); below that, or
-    // without DeckMatch loaded, falls back to a plain SRS review.
-    function _srsCandidate() {
-        if (typeof LearnerModel === 'undefined' || !LearnerModel.weakWords) return null;
-        const words = LearnerModel.weakWords(10);
-        if (!words.length) return null;
-        const action = (words.length >= 4 && typeof DeckMatch !== 'undefined') ? 'match' : 'review';
-        return { kind: 'srs', words, action, reason: 'weak' };
-    }
-
-    // Shared landing for the SRS candidate, whichever tier suggested it —
+    // Where a word-review practice card lands —
     // mirrors engine/studyPlanRunner.js's own dispatch for its 'match'/
     // 'review' plan items: goTab('review') + Decks.reviewDeck() for a plain
     // review, or DeckMatch.render() straight into the deck browser's own
@@ -302,293 +285,194 @@ const RecommendationEngine = (function () {
         return null;
     }
 
-    // Home's per-lesson counterpart: a quick mini-game challenge offered
-    // after a lesson. Varied dynamically across all 9 Workshop drillers
-    // depending on the learner's previous knowledge (weaknesses first, then
-    // curriculum-unlocked variety).
+    // Home's per-lesson counterpart: a short practice session offered in
+    // Continue's place after a lesson — but only when there's a real,
+    // recent weakness to point at. With nothing weak this returns null and
+    // Continue leads: a card that always stands in the way just teaches
+    // people to tap "Not now" without reading it. Every candidate below
+    // must make its blurb true.
+    //
+    // "Recent" is TROUBLE_RECENT_OPENS app opens for grammar (see
+    // LearnerModel.troubleSkills()) and RECENT_DAYS for the signals that
+    // carry dates (drill sessions, speaking attempts).
+    const RECENT_DAYS = 14;
+    const MIN_MISSED_WORDS = 3;
+
+    function _isRecent(iso) {
+        const t = iso ? Date.parse(iso) : NaN;
+        return isFinite(t) && Date.now() - t <= RECENT_DAYS * 24 * 60 * 60 * 1000;
+    }
+
+    // Words the learner has actually got wrong: below the starting ease
+    // (only 'again'/'hard' move it down), or looked up in the Reader on
+    // several days (`ease: null`). weakWords() on its own returns the
+    // lowest-ease cards even when none was ever missed.
+    function _missedWords() {
+        if (typeof LearnerModel === 'undefined' || !LearnerModel.weakWords) return [];
+        const start = (typeof SRS_CONFIG !== 'undefined') ? SRS_CONFIG.START_EASE : 2.5;
+        return LearnerModel.weakWords(10).filter(w => w.ease == null || w.ease < start);
+    }
+
+    // What each weak driller's card says and opens with. Speaking has its
+    // own candidate below.
+    const DRILLER_OFFERS = {
+        verbs: { title: 'Verb conjugation', buttonLabel: 'Conjugation practice, timed', topic: 'verb conjugation', invite: 'Practice it here:', priority: 90, options: () => ({ mode: 'speed', autoStart: true, duration: 60 }) },
+        'hu-verb': { title: 'Verb conjugation', buttonLabel: 'Conjugation practice', topic: 'verb conjugation', invite: 'Practice it here:', priority: 90, options: () => ({ autoStart: true, count: 5 }) },
+        'hu-suffix': { title: 'Suffixes', buttonLabel: 'Suffix practice', topic: 'suffixes', invite: 'Practice them here:', priority: 90, options: () => ({ autoStart: true, count: 5 }) },
+        'hu-prefix': { title: 'Verbal prefixes', buttonLabel: 'Prefix practice', topic: 'verbal prefixes', invite: 'Practice them here:', priority: 90, options: () => ({ autoStart: true, count: 5 }) },
+        'hu-morphology': { title: 'Word structure', buttonLabel: 'Word structure practice', topic: 'word structure', invite: 'Practice it here:', priority: 90, options: () => ({ autoStart: true, count: 5 }) },
+        translation: { title: 'Sentence translation', buttonLabel: 'Sentence translation', topic: 'sentence translation', invite: 'Practice it here:', priority: 88, options: level => ({ autoStart: true, count: 5, level, direction: 'alternate' }) },
+        listening: { title: 'Listening', buttonLabel: 'Listening practice', topic: 'listening', invite: 'Practice it here:', priority: 88, options: level => ({ autoStart: true, count: 5, level }) }
+    };
+
+    // ----------------------------------------
+    // OUTCOMES + COOL-DOWN
+    // ----------------------------------------
+    // What happened to each practice card: 'taken' or 'skipped', with the
+    // app open it happened at. A skipped offer stays away for
+    // SKIP_COOLDOWN_OPENS opens, so "Not now" isn't met by the same card
+    // after the next lesson; a taken one isn't offered again in the same
+    // sitting. Also the start of a record of how the cards are received.
+    const SKIP_COOLDOWN_OPENS = 5;
+    const OUTCOMES_KEPT = 50;
+
+    function _outcomesKey() {
+        return Lang.key('recommendationOutcomes');
+    }
+
+    function _outcomes() {
+        try { return JSON.parse(localStorage.getItem(_outcomesKey()) || '[]'); }
+        catch (error) { return []; }
+    }
+
+    function _offerKey(offer) {
+        return offer.drillerId + ':' + (offer.skill || '');
+    }
+
+    function _noteOutcome(offer, outcome) {
+        const list = _outcomes();
+        list.push({ key: _offerKey(offer), outcome, open: _currentOpen(), at: new Date().toISOString() });
+        try { localStorage.setItem(_outcomesKey(), JSON.stringify(list.slice(-OUTCOMES_KEPT))); }
+        catch (error) { /* storage disabled — the cool-down just won't hold */ }
+    }
+
+    function _currentOpen() {
+        return (typeof AppOpens !== 'undefined') ? AppOpens.current() : 0;
+    }
+
+    function _coolingDown(offer, outcomes, open) {
+        const key = _offerKey(offer);
+        return outcomes.some(o => o.key === key && (
+            (o.outcome === 'skipped' && open - o.open < SKIP_COOLDOWN_OPENS) ||
+            (o.outcome === 'taken' && o.open === open)));
+    }
+
     async function _miniGameNudge() {
         const lessonId = LearnerPath.lastCompletedLessonId();
-        if (!lessonId || miniGameDismissed(lessonId)) return null;
+        if (!lessonId || miniGameDismissed(lessonId) || typeof LearnerModel === 'undefined') return null;
 
-        const lang = (typeof Lang !== 'undefined') ? Lang.code() : 'es';
-        const completedCount = (typeof LearnerPath !== 'undefined' && LearnerPath.completedCount)
-            ? LearnerPath.completedCount() : 0;
-        const currentLevel = (typeof LearnerPath !== 'undefined' && LearnerPath.currentLevel)
-            ? LearnerPath.currentLevel() : 'A1';
-
-        // 1. Weakness signals from LearnerModel
-        const weakSkillsList = (typeof LearnerModel !== 'undefined') ? await LearnerModel.weakSkills(1) : [];
-        const topWeakSkill = weakSkillsList[0] ? weakSkillsList[0].skillId : null;
-
-        const weakWordsList = (typeof LearnerModel !== 'undefined') ? LearnerModel.weakWords() : [];
-        const weakDrillersList = (typeof LearnerModel !== 'undefined') ? LearnerModel.weakDrillers() : [];
-        const weakDrillerIds = new Set(weakDrillersList.map(d => d.drillerId));
-
-        const weakProductionList = (typeof LearnerModel !== 'undefined' && LearnerModel.weakProductionSkills)
-            ? LearnerModel.weakProductionSkills(1) : [];
-        const topWeakProduction = weakProductionList[0] ? weakProductionList[0].skillId : null;
-
-        // 2. Recent lesson content. The lesson's own skill, not its unit's:
-        // the blurb says "Your last lesson covered X", and a unit's
-        // top skill can come from lessons the learner hasn't reached yet.
-        let recentWords = [];
-        const recentSkill = await Recommend.lessonSkillFor(lessonId);
-        if (typeof loadLesson === 'function' && typeof collectLessonVocabulary === 'function') {
-            try {
-                const lesson = await loadLesson(lessonId);
-                if (lesson) recentWords = await collectLessonVocabulary(lesson);
-            } catch (err) {}
-        }
-
-        // No roleplay/written-exchange candidate here: the unit's scenario
-        // is offered once, by _practiceNudge(), when the unit is finished —
-        // offering it after every lesson in the unit put it in front of
-        // learners who hadn't yet met most of what it practises.
+        const level = (LearnerPath.currentLevel ? LearnerPath.currentLevel() : 'A1').toLowerCase();
+        const weakBlurb = topic => `You made a few mistakes with ${topic} lately.`;
         const candidates = [];
 
-        // Labels name the activity plainly — no item counts, no "sprint"/
-        // "challenge" framing. `blurb` says why it's offered (a statement
-        // that also stands alone on Workshop's "What's next?" card);
-        // `invite` is the lead-in Home's card puts before the button.
-        const weakBlurb = topic => `You made a few mistakes with ${topic} lately.`;
+        // Grammar: every skill with recent unresolved misses, worst first,
+        // so a cooled-down top skill hands over to the next one.
+        const trouble = LearnerModel.troubleSkills ? await LearnerModel.troubleSkills(3) : [];
+        trouble.forEach((t, i) => candidates.push({
+            drillerId: 'grammar',
+            skill: t.skillId,
+            title: 'Grammar',
+            buttonLabel: 'Grammar practice',
+            blurb: weakBlurb(humanizeSkill(t.skillId)),
+            invite: 'Practice it here:',
+            priority: 100 - i,
+            options: { skill: t.skillId, count: 5, autoStart: true }
+        }));
 
-        // Candidate 1: Grammar
-        const effectiveSkill = topWeakSkill || recentSkill;
-        if (effectiveSkill) {
-            const isWeak = !!topWeakSkill;
-            const skillName = humanizeSkill(effectiveSkill);
-            candidates.push({
-                drillerId: 'grammar',
-                title: 'Grammar',
-                buttonLabel: 'Grammar practice',
-                blurb: isWeak
-                    ? weakBlurb(skillName)
-                    : `Your last lesson covered ${skillName}.`,
-                invite: 'Practice it here:',
-                reason: isWeak ? 'weak' : 'fresh',
-                priority: isWeak ? 100 : 50,
-                options: { skill: effectiveSkill, count: 5, autoStart: true }
-            });
-        }
-
-        // Candidate 2: Vocabulary
-        const effectiveWords = (weakWordsList.length >= 3)
-            ? weakWordsList.map(w => ({ lemma: w.lemma, translation: w.translation, pos: w.pos }))
-            : recentWords;
-        if (_vocabularyAvailable() && effectiveWords && effectiveWords.length > 0) {
-            const isWeak = weakWordsList.length >= 3;
-            const chosenWords = effectiveWords.slice(0, 6);
-            candidates.push({
-                drillerId: 'vocabulary',
-                title: 'Vocabulary',
-                buttonLabel: 'Vocabulary practice',
-                blurb: isWeak
-                    ? weakBlurb('some recent words')
-                    : 'Your last lesson introduced new words.',
-                invite: 'Practice them here:',
-                reason: isWeak ? 'weak' : 'fresh',
-                priority: isWeak ? 95 : 45,
-                options: { words: chosenWords, autoStart: true }
-            });
-        }
-
-        // Candidate 2b: SRS Weakest Words — same ease-ranked signal
-        // engine/studyPlan.js's Time-Based Sessions use for their own
-        // review/match slots, surfaced here as an ordinary mini-game
-        // candidate too (see _srsCandidate()/_openSrs() above).
-        const srsMini = _srsCandidate();
-        if (srsMini) {
-            candidates.push({
-                drillerId: 'srs',
-                title: 'Word review',
-                buttonLabel: srsMini.action === 'match' ? 'Word matching' : 'Word review',
-                blurb: 'These are the words you find hardest in review.',
-                invite: 'Practice them here:',
-                reason: 'weak',
-                priority: 93,
-                options: srsMini
-            });
-        }
-
-        // Candidate 3: Spanish verb conjugation, timed (60s)
-        if (lang.startsWith('es') && completedCount >= 3) {
-            const isWeak = weakDrillerIds.has('verbs');
-            candidates.push({
-                drillerId: 'verbs',
-                title: 'Verb conjugation',
-                buttonLabel: 'Conjugation practice, timed',
-                blurb: isWeak
-                    ? weakBlurb('verb conjugation')
-                    : 'Conjugating verbs quickly, against the clock.',
-                invite: 'Practice it here:',
-                reason: isWeak ? 'weak' : 'variety',
-                priority: isWeak ? 90 : 42,
-                options: { mode: 'speed', autoStart: true, duration: 60 }
-            });
-        }
-
-        // Candidate 4: Hungarian suffixes
-        if (lang === 'hu' && (completedCount >= 15 || LearnerPath.isComplete('lesson.a1.22'))) {
-            const isWeak = weakDrillerIds.has('hu-suffix');
-            candidates.push({
-                drillerId: 'hu-suffix',
-                title: 'Suffixes',
-                buttonLabel: 'Suffix practice',
-                blurb: isWeak
-                    ? weakBlurb('suffixes')
-                    : 'Plurals, possession and case endings.',
-                invite: 'Practice them here:',
-                reason: isWeak ? 'weak' : 'variety',
-                priority: isWeak ? 90 : 42,
-                options: { autoStart: true, count: 5 }
-            });
-        }
-
-        // Candidate 5: Hungarian verbal prefixes
-        if (lang === 'hu' && (currentLevel !== 'A1' || LearnerPath.isComplete('lesson.a2.01'))) {
-            const isWeak = weakDrillerIds.has('hu-prefix');
-            candidates.push({
-                drillerId: 'hu-prefix',
-                title: 'Verbal prefixes',
-                buttonLabel: 'Prefix practice',
-                blurb: isWeak
-                    ? weakBlurb('verbal prefixes')
-                    : 'Verbal prefixes and how they change a verb’s meaning.',
-                invite: 'Practice them here:',
-                reason: isWeak ? 'weak' : 'variety',
-                priority: isWeak ? 90 : 40,
-                options: { autoStart: true, count: 5 }
-            });
-        }
-
-        // Candidate 6: Hungarian Verb Driller
-        if (lang === 'hu' && completedCount >= 8) {
-            const isWeak = weakDrillerIds.has('hu-verb');
-            candidates.push({
-                drillerId: 'hu-verb',
-                title: 'Verb conjugation',
-                buttonLabel: 'Conjugation practice',
-                blurb: isWeak
-                    ? weakBlurb('verb conjugation')
-                    : 'Definite and indefinite conjugation across verb types.',
-                invite: 'Practice it here:',
-                reason: isWeak ? 'weak' : 'variety',
-                priority: isWeak ? 90 : 38,
-                options: { autoStart: true, count: 5 }
-            });
-        }
-
-        // Candidate 7: Hungarian Morphology Driller
-        if (lang === 'hu' && (completedCount >= 25 || LearnerPath.isComplete('lesson.a1.51'))) {
-            const isWeak = weakDrillerIds.has('hu-morphology');
-            candidates.push({
-                drillerId: 'hu-morphology',
-                title: 'Word structure',
-                buttonLabel: 'Word structure practice',
-                blurb: isWeak
-                    ? weakBlurb('word structure')
-                    : 'Breaking longer words into root and suffixes.',
-                invite: 'Practice it here:',
-                reason: isWeak ? 'weak' : 'variety',
-                priority: isWeak ? 90 : 36,
-                options: { autoStart: true, count: 5 }
-            });
-        }
-
-        // Candidate 8: Sentence translation (intermediate or >= 10 lessons)
-        if (completedCount >= 10 || currentLevel !== 'A1') {
-            const isWeak = weakDrillerIds.has('translation');
-            const targetLang = (typeof Lang !== 'undefined') ? Lang.name() : 'the target language';
-            candidates.push({
-                drillerId: 'translation',
-                title: 'Sentence translation',
-                buttonLabel: 'Sentence translation',
-                blurb: isWeak
-                    ? weakBlurb('sentence translation')
-                    : `Translating sentences between English and ${targetLang}.`,
-                invite: 'Practice it here:',
-                reason: isWeak ? 'weak' : 'variety',
-                priority: isWeak ? 88 : 35,
-                options: { autoStart: true, count: 5, level: currentLevel.toLowerCase(), direction: 'alternate' }
-            });
-        }
-
-        // Candidate 9: Listening
-        if (completedCount >= 5) {
-            const isWeak = weakDrillerIds.has('listening');
-            const spokenLang = (typeof Lang !== 'undefined') ? Lang.name() : 'the language';
-            candidates.push({
-                drillerId: 'listening',
-                title: 'Listening',
-                buttonLabel: 'Listening practice',
-                blurb: isWeak
-                    ? weakBlurb('listening')
-                    : `Understanding spoken ${spokenLang}.`,
-                invite: 'Practice it here:',
-                reason: isWeak ? 'weak' : 'variety',
-                priority: isWeak ? 88 : 35,
-                options: { autoStart: true, count: 5, level: currentLevel.toLowerCase() }
-            });
-        }
-
-        // Candidate 10: Speaking Driller (Oral production)
-        const canSpeak = (typeof SpeechInput !== 'undefined' && SpeechInput.isSupported()) || (typeof ParlourTTS !== 'undefined' && ParlourTTS.available());
-        if (canSpeak && completedCount >= 2) {
-            const isWeak = !!topWeakProduction || weakDrillerIds.has('speaking');
-            const targetSkill = topWeakProduction || (isWeak ? null : effectiveSkill);
-            candidates.push({
-                drillerId: 'speaking',
-                title: 'Speaking',
-                buttonLabel: 'Speaking practice',
-                blurb: isWeak
-                    ? (topWeakProduction
-                        ? `You made a few mistakes with ${humanizeSkill(topWeakProduction)} when speaking lately.`
-                        : 'You made a few mistakes when speaking lately.')
-                    : (targetSkill
-                        ? `Saying sentences with ${humanizeSkill(targetSkill)} aloud.`
-                        : 'Saying sentences aloud.'),
-                invite: 'Practice it here:',
-                reason: isWeak ? 'weak' : 'variety',
-                priority: isWeak ? 92 : 44,
-                options: { autoStart: true, count: 5, level: currentLevel.toLowerCase(), skill: targetSkill || undefined }
-            });
-        }
-
-        if (!candidates.length) return null;
-
-        // Selection: the highest-priority weak candidate (priority >= 80);
-        // otherwise practice on what the last lesson taught ('fresh');
-        // only when neither exists, rotate through the general drillers by
-        // lessonId hash so it isn't always the same one.
-        const byPriority = (a, b) => b.priority - a.priority;
-        const weak = candidates.filter(c => c.priority >= 80).sort(byPriority);
-        const fresh = candidates.filter(c => c.reason === 'fresh').sort(byPriority);
-        let primaryCandidate;
-        if (weak.length) {
-            primaryCandidate = weak[0];
-        } else if (fresh.length) {
-            primaryCandidate = fresh[0];
-        } else {
-            let hash = 0;
-            for (let i = 0; i < lessonId.length; i++) {
-                hash = (hash * 31 + lessonId.charCodeAt(i)) >>> 0;
+        // Words: in context for B1+ (Vocabulary Driller), as a review
+        // otherwise. Same words either way, so only one of the two.
+        const words = _missedWords();
+        if (words.length >= MIN_MISSED_WORDS) {
+            if (_vocabularyAvailable()) {
+                candidates.push({
+                    drillerId: 'vocabulary',
+                    title: 'Vocabulary',
+                    buttonLabel: 'Vocabulary practice',
+                    blurb: weakBlurb('some recent words'),
+                    invite: 'Practice them here:',
+                    priority: 95,
+                    options: { words: words.slice(0, 6).map(w => ({ lemma: w.lemma, translation: w.translation, pos: w.pos })), autoStart: true }
+                });
+            } else {
+                const action = (words.length >= 4 && typeof DeckMatch !== 'undefined') ? 'match' : 'review';
+                candidates.push({
+                    drillerId: 'srs',
+                    title: 'Word review',
+                    buttonLabel: action === 'match' ? 'Word matching' : 'Word review',
+                    blurb: 'These are the words you find hardest in review.',
+                    invite: 'Practice them here:',
+                    priority: 93,
+                    options: { kind: 'srs', words, action }
+                });
             }
-            primaryCandidate = candidates[hash % candidates.length];
         }
+
+        // Speaking: a skill that's recently gone badly aloud, or the
+        // Speaking Driller as a whole.
+        const canSpeak = (typeof SpeechInput !== 'undefined' && SpeechInput.isSupported())
+            || (typeof ParlourTTS !== 'undefined' && ParlourTTS.available());
+        const weakDrillers = (LearnerModel.weakDrillers ? LearnerModel.weakDrillers() : []).filter(d => _isRecent(d.lastDate));
+        if (canSpeak) {
+            const prod = LearnerModel.weakProductionSkills
+                ? (await LearnerModel.weakProductionSkills(3, 'oral')).find(p => _isRecent(p.lastSeen)) : null;
+            if (prod || weakDrillers.some(d => d.drillerId === 'speaking')) {
+                candidates.push({
+                    drillerId: 'speaking',
+                    skill: prod ? prod.skillId : null,
+                    title: 'Speaking',
+                    buttonLabel: 'Speaking practice',
+                    blurb: prod
+                        ? `You made a few mistakes with ${humanizeSkill(prod.skillId)} when speaking lately.`
+                        : 'You made a few mistakes when speaking lately.',
+                    invite: 'Practice it here:',
+                    priority: 92,
+                    options: { autoStart: true, count: 5, level, skill: prod ? prod.skillId : undefined }
+                });
+            }
+        }
+
+        // Any other driller whose recent sessions have gone badly.
+        weakDrillers.forEach(d => {
+            const offer = DRILLER_OFFERS[d.drillerId];
+            if (!offer) return;
+            candidates.push({
+                drillerId: d.drillerId,
+                title: offer.title,
+                buttonLabel: offer.buttonLabel,
+                blurb: weakBlurb(offer.topic),
+                invite: offer.invite,
+                priority: offer.priority,
+                options: offer.options(level)
+            });
+        });
+
+        const outcomes = _outcomes();
+        const open = _currentOpen();
+        const pick = candidates
+            .filter(c => !_coolingDown(c, outcomes, open))
+            .sort((a, b) => b.priority - a.priority)[0];
+        if (!pick) return null;
 
         return {
             lessonId,
-            challengeTitle: primaryCandidate.title,
-            drillerId: primaryCandidate.drillerId,
-            buttonLabel: primaryCandidate.buttonLabel,
-            blurb: primaryCandidate.blurb,
-            invite: primaryCandidate.invite || null,
-            reason: primaryCandidate.reason,
-            options: primaryCandidate.options,
-            skill: primaryCandidate.drillerId === 'grammar' ? primaryCandidate.options.skill : null,
-            skillReason: primaryCandidate.drillerId === 'grammar' ? primaryCandidate.reason : null,
-            words: primaryCandidate.drillerId === 'vocabulary' ? primaryCandidate.options.words : [],
-            wordsReason: primaryCandidate.drillerId === 'vocabulary' ? primaryCandidate.reason : null
+            challengeTitle: pick.title,
+            drillerId: pick.drillerId,
+            skill: pick.skill || null,
+            buttonLabel: pick.buttonLabel,
+            blurb: pick.blurb,
+            invite: pick.invite,
+            reason: 'weak',
+            options: pick.options
         };
     }
 
@@ -743,12 +627,20 @@ const RecommendationEngine = (function () {
             if (typeof startLesson === 'function') startLesson(primary.lesson.id);
         } else if (primary.kind === 'mini-game') {
             dismissMiniGame(primary.lessonId);
+            _noteOutcome(primary, 'taken');
             if (primary.drillerId === 'srs') {
                 _openSrs(primary.options);
             } else {
                 _openWorkshopDriller(primary.drillerId, primary.options);
             }
         }
+    }
+
+    // Home's "Not now" on a practice card.
+    function skip(primary) {
+        if (!primary || primary.kind !== 'mini-game') return;
+        dismissMiniGame(primary.lessonId);
+        _noteOutcome(primary, 'skipped');
     }
 
     // Mounted on results screens. When a results actions container (.vspeed-results-actions)
@@ -816,6 +708,7 @@ const RecommendationEngine = (function () {
     return {
         recommend,
         open: _routeTo,
+        skip,
         mountNextAction,
         dismissUnit,
         dismissMiniGame,

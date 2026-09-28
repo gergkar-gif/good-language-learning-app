@@ -74,6 +74,7 @@ function scheduleRecycleCard(card, rating, currentOpen) {
         card.dueAtOpen = currentOpen + 1;
         card.lapses = (card.lapses || 0) + 1;
         card.leech = card.lapses >= SRS_CONFIG.LEECH_THRESHOLD;
+        delete card.recoveredAtOpen;
         return card;
     }
 
@@ -96,6 +97,7 @@ function scheduleRecycleCard(card, rating, currentOpen) {
     card.reviews += 1;
     card.lastOpen = currentOpen;
     card.dueAtOpen = currentOpen + card.interval;
+    delete card.recoveredAtOpen;
     return card;
 }
 
@@ -263,6 +265,10 @@ function recordRecycleOutcome(id, rating) {
 // is always 'again', but a correct answer only counts when the item is due
 // (or has never been scheduled), so drilling one skill ten times in a
 // sitting can't push its exercises far out of the recycle rotation.
+// That skipped correct answer still counts as evidence, though: an item
+// whose last answer was a miss gets `recoveredAtOpen`, which is what
+// LearnerModel.troubleSkills() reads to stop calling it a recent mistake
+// once it has been put right. The schedule itself is untouched.
 function creditRecyclePractice(results) {
     const schedule = loadRecycleSchedule();
     const currentOpen = currentAppOpen();
@@ -270,7 +276,13 @@ function creditRecyclePractice(results) {
     (results || []).forEach(result => {
         const existing = schedule[result.id];
         const due = !existing || normalizeRecycleCard(existing).dueAtOpen <= currentOpen;
-        if (result.rating !== 'again' && !due) return;
+        if (result.rating !== 'again' && !due) {
+            if (existing && existing.reviews === 0 && existing.lapses > 0 && !existing.recoveredAtOpen) {
+                existing.recoveredAtOpen = currentOpen;
+                changed = true;
+            }
+            return;
+        }
         scheduleRecycleCard(recycleCard(schedule, result.id), result.rating, currentOpen);
         changed = true;
     });
