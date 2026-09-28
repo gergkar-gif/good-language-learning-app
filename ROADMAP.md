@@ -24,6 +24,11 @@ Completed work is archived out to `ACHIEVED.md`.
 
 92. **Audit `imports/dictionary/spanish-en.json` for more wrong-primary-sense entries (added 2026-09-24).** Bug report #192 flagged the review card for "llamas" showing "a name of several localities in Asturias, Spain" instead of the taught verb sense — not corrupted/malformed data (the 2026-09-17 audit, ACHIEVED.md item 30, already covers that class), but a real Wiktionary entry that's simply the wrong headword for a common conjugated form that also exists as its own place-name/homograph entry. Fixed via `MANUAL_OVERRIDES` in `scripts/import_dictionary.py`, same mechanism as the 2026-09-18 HU "wrong-sense gloss" fixes (ACHIEVED.md, "HU Dictionary Wrong-Sense Gloss Fixes"), but ES has never had that HU audit's equivalent systematic pass over common words' primary senses — only this one-off fix. Worth a similar targeted audit of the ES dictionary's top N frequency-ranked headwords, since `Lexicon.define()` (used directly by SRS review cards) has no conjugation-aware disambiguation and will surface whatever sense the raw dictionary file happens to carry for that exact string.
 
+107. **Expand the Hungarian B1/B2 classic adaptations to target length (added 2026-09-28).** The Hungarian literary classics in `content/hu/stories/classics/` are much shorter than the Library's word-count standards (the Spanish B1/B2 classics were expanded in commit `4aabea4b`):
+    - **B1 classics (~400 words target).** 32 of 36 average ~225 words, with severe outliers under 120 words (*Édes Anna* `b1-10`: 114w, *Légy jó mindhalálig* `b1-11`: 98w, *Szindbád* `b1-12`: 91w). Expand to ~400 words, keeping B1 grammar and dialogue.
+    - **B2 classics (~700 words target).** All 36 average ~288 words (e.g. *Pacsirta*, *A vörös postakocsi*, *Bánk bán*, *Ábel a rengetegben*, *Sorstalanság*, *Az ajtó*). The prose and dialogue are authentic, but they're 1-page vignettes; expand into ~700-word B2 adaptations with text-grounded comprehension questions.
+    - **B1/B2 World/Civics shelf.** Consider expanding the short cultural vignettes too (currently ~130 words at B1, ~360 at B2).
+
 ---
 
 ## 2. Future Feature Ideas
@@ -78,6 +83,7 @@ Brainstormed 2026-09-24 (quick fixes from the same pass shipped — see ACHIEVED
 12. **Citizenship exam-readiness view** (HU B1 track) — per-topic status across the track, e.g. "Constitution: read ✓, quiz 4/5". Depends on comprehension scoring (Reading Comprehension item 3).
 ### Listening Comprehension & Audio Modules
 - **CEFR-Leveled Long-Form Listening Practice**: Introduce dedicated ~2-minute pre-recorded or multi-voice TTS audio modules (interviews, dialogues, monologues) accompanied by comprehension questions. Scale content strictly across CEFR levels: from A1 (simple descriptions of someone's day) to C1 (academic debates between three people on social housing, false friends, and complex idioms).
+- **Listening Lab**: the existing Listening Driller (`engine/drills/listening.js`) is single-sentence and TTS-based only. A Listening Lab would be the longer-form mode, adapting the Conjuguemos model for paragraphs and short dialogues at A2–B1 — likely the first step towards the long-form practice above, not a from-scratch listening feature.
 
 
 ### Curriculum, Content & Extended Tracks
@@ -91,9 +97,13 @@ Brainstormed 2026-09-24 (quick fixes from the same pass shipped — see ACHIEVED
 - **New App Sounds**: Audio effects and sound palette refresh.
 - **Teacher-Facing Version & Portal**: Separate teacher log-in and teacher-facing management/monitoring version.
 - **Legal & Trademark**: Legal compliance, trademark registration, and administrative/bureaucratic requirements.
+- **IP / Attribution Audit for Content Resources**: Review all third-party content used (word lists, texts, images, audio). Where Creative Commons material is used, add an acknowledgments page or footer (alongside `CREDITS.md`) next to an AI-use disclosure.
+- **User-Configurable Feature Visibility (especially Workshop)**: Let learners choose which modules are shown. Too many options at once creates friction; an onboarding toggle or a settings page could hide unused sections.
+- **Hero Load Animation**: On page load, the hero section "powers up" element by element, like a machine booting (originally pitched as a cyberpunk aesthetic, so check it against `design principles.md` first). Stagger reveals of logo, tagline, buttons, stat cards. Progressive enhancement only, per "Core First" below.
+- **Language Expansion Order**: Finish Spanish & Hungarian content → V4 release milestone → Eastern European languages (e.g. Polish, Czech, Romanian) → Vietnamese. How to set up a new course is in §3 ("New courses").
 
 ### Ideas from other language apps (APK scan, 2026-09-24)
-Found by pulling the UI strings out of the 12 language-app APKs in `apps for ux-ui inspiration/`. The per-app inventories are in `feature-inventories/` there. Only ideas that fit Parlour and aren't already built are listed. Items 1–2 were gaps confirmed in our code, and both are now fixed.
+Found by pulling the UI strings out of the 12 language-app APKs in `apps for ux-ui inspiration/`. The per-app inventories are in `feature-inventories/` there. Only ideas that fit Parlour and aren't already built are listed. Items 1–2 were gaps confirmed in our code, and both are now fixed. This scan was a first pass at a wider idea: a systematic audit of competitor apps (Duolingo, Babbel, Clozemaster, Conjuguemos, Busuu, etc.) for UX patterns, exercise types and engagement hooks, going beyond UI strings to actually using them.
 1. ~~**Resume a lesson where you left off**~~ — built 2026-09-24, see ACHIEVED.md ("Resume a Lesson Where You Left Off").
 2. ~~**Credit vocabulary when a learner tests out**~~ — built 2026-09-24, see ACHIEVED.md ("Vocabulary Credit When Testing Out"). Follow-up: words are credited as fully known. A weaker "assumed known" status could be used instead if placed learners find the Reader too generous.
 3. **Word-level error hints on typed answers** (Duolingo: "You missed a word" / "You used the wrong word"; LingoDeer: "Check the word form" / "Check the word order" / "There's something extra"). `generateAnswerDiff()` already separates accent slips from typos, letter by letter. Add a word-level layer for multi-word answers. Use `Lexicon` / the HU morphology engine to spot "right word, wrong form", the most common error in a course built on conjugations and suffixes. That makes the 2nd and 3rd tries (lesson gating rule) more useful.
@@ -121,10 +131,11 @@ Left out on purpose, so they aren't proposed again: hearts and energy, leagues, 
 
 ### Modularity & Content Authoring Rules
 
-- **Adding Lessons to an Existing Unit**:
-  - `content/<lang>/curriculum/curriculum.json` holds each unit as `{id, label, title, lessons: [...]}`.
-  - Adding lessons is an array edit (new lesson JSON file with a unique ID + entry in `lessons`), not a rewrite.
-  - Regenerate derived indexes afterward via `python build-manifest.py`.
+- **Wiring a Unit into the Learn Tab** (as of 2026-09-16):
+  - Authoring a unit's lesson/grammar/exercise/vocabulary files is not enough on its own. A level's unit titles, ordering and lesson-stem groupings are a separate, curated list, and a lesson file with nothing pointing at it is invisible to the Learn tab (this happened to the Phase 2 imperfecto content: it validated cleanly for a while before anyone wired it in).
+  - For a level with an explicit table (Spanish A1/A2/B1, Hungarian B1): (1) author and validate the files as usual (`python scripts/validate-content.py`); (2) append one entry to `content/<lang>/curriculum/units/<level>.json`: `{"title": "...", "stems": ["<level>-<slug>-01", ..., "<level>-<slug>-consolidation"]}` (add `"track": "core"` / `"latam"` / etc. only for a level that runs more than one parallel track; schema: `content/<lang>/schemas/units.schema.json`); (3) run `python build-manifest.py` (or just push — `sync-generated-content.yml` does this for anything touching `content/**`) to regenerate `curriculum.json`, `decks.json` and the story/grammar indexes.
+  - `curriculum.json` is generated — never edit it by hand. No `build-manifest.py` edit is needed either: before 2026-09-16 this table lived in a hardcoded Python dict there, which is what made Phase 2's units hard to wire in after the fact.
+  - A level with no such file (Hungarian A1/A2 today) auto-groups plain-numbered lesson files from disk (`auto_group_units()` in `build-manifest.py`), so there's nothing to hand-wire.
 - **Adding a New Exercise Type**:
   - `engine/lessons.js`'s `stepRenderers` dispatches dynamically by step `type` (`stepRenderers[part.type](part)`).
   - A new type requires one new function in `engine/lessons.js` and one new branch in `content/<lang>/schemas/exercises.schema.json`. Existing renderers remain untouched.

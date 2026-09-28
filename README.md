@@ -29,7 +29,7 @@ Then open `http://localhost:8131`.
 `engine/` holds the reusable app logic, `content/<lang>/` holds one
 language's curriculum (lessons, grammar, exercises, vocabulary, stories),
 and `styles/` holds the CSS — see `content/es/schemas/README.md` for the
-content schemas and `docs/CURRICULUM_ROADMAP.md` for how a lesson becomes
+content schemas and `ROADMAP.md` §3 ("Wiring a Unit into the Learn Tab") for how a lesson becomes
 part of the Learn tab.
 
 ## Development

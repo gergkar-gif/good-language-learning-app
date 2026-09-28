@@ -2484,7 +2484,7 @@ The following completed subsystem initiatives and milestones were previously tra
 
 ---
 
-## Completed Curriculum Phases (archived from `docs/CURRICULUM_ROADMAP.md`)
+## Completed Curriculum Phases (archived from `docs/CURRICULUM_ROADMAP.md`, merged into ROADMAP.md 2026-09-28)
 
 ### Phase 1: Spanish A1 Core Gaps — Done
 Six units filling A1 gaps: **Gustar** (inverted syntax, indirect object pronouns), **Daily Routine / Reflexive Verbs** (paradigm, stem-changing reflexives, sequencing connectors), **Demonstratives** (3-tier spatial system, neuter pronouns), **Present Continuous** (*estar + gerundio*, irregular gerunds), **Doler** (inverted *doler*, body parts, pharmacy vocab), and **Poder & Saber** (ability vs. skill, *saber vs. conocer*, personal *a*). Each with 5 lessons + consolidation + original story set in Hanói.

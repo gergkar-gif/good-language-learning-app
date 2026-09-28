@@ -80,7 +80,7 @@ Original targets (kept for context on the intended pacing, not current
 counts — actual vocabulary files ran well ahead of these as content was
 authored: A1 shipped with 803 words, A2 with 520, B1 with 2,018,
 verified against `content/es/vocabulary/*/*.json`; see
-`docs/CURRICULUM_ROADMAP.md`'s "How units get wired in" for where the
+`ROADMAP.md`'s "Wiring a Unit into the Learn Tab" (§3) for where the
 generated ground truth lives):
 
 - A1: approximately **450 new words**
