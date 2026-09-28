@@ -109,6 +109,8 @@ SLUG_TOPIC_LABELS = {
     "populismo": "Populism",
     "precolombina": "Pre-Columbian Era",
     "mexicocentro": "Mexico I: Central Mexico & the Valley of Anáhuac",
+    "mexiconorte": "Mexico II: The North, the Border & Industrial Modernity",
+    "mexicosur": "Mexico III: The South, Indigenous Pueblos & Biodiversity",
     "razaclasepoder": "Race, Class & Power",
     "represionpolitica": "Political Repression",
     "revolucion": "Revolution",
