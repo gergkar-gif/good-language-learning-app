@@ -2481,3 +2481,73 @@ The following completed subsystem initiatives and milestones were previously tra
 - **Language-Isolated Asset Loading** — Optimized 2026-09-14. Isolated dictionaries and indexes per language to eliminate unnecessary network/memory overhead.
 - **Contextual Accent Popover** — Built 2026-09-23. Replaced the always-visible diacritics bar (`UI.diacriticsBarHtml`) across all text-entry drills with a Conjuguemos-style popover that only shows the accented variants of the letter just typed (`n` → `ñ`, `o` → `ó/ö/ő` in Hungarian, etc.), plus `¿`/`¡` openers triggered by typing `?`/`!` and inserted at the sentence start. Same call-site API, so no runner/lesson code changed — only `engine/ui.js` and `styles/components.css`.
 - **iOS Speaking Studio falling into self-evaluation** — Fixed 2026-09-25. On iPhone (cloud Whisper STT path), every Read & Repeat after the first ended in "No voice heard" + self-eval buttons. The level-meter `AudioContext` was created inside the `getUserMedia` `.then`, outside the tap gesture, so iOS left it suspended; the meter read silence, `_hasSpoken` never flipped, and the 10s initial-silence timer fired `no-speech` and discarded a perfectly good recording. `engine/speech-input.js` now creates (and resumes) the context synchronously in `_startRecordingStream`, and if a cloud session's meter still isn't `running` when the silence timer fires, it sends the recording to Whisper instead of reporting `no-speech`. Regression test: `tests/speech/test-speech-ios-meter.js`. Not yet confirmed on a real iPhone.
+
+---
+
+## Completed Curriculum Phases (archived from `docs/CURRICULUM_ROADMAP.md`)
+
+### Phase 1: Spanish A1 Core Gaps — Done
+Six units filling A1 gaps: **Gustar** (inverted syntax, indirect object pronouns), **Daily Routine / Reflexive Verbs** (paradigm, stem-changing reflexives, sequencing connectors), **Demonstratives** (3-tier spatial system, neuter pronouns), **Present Continuous** (*estar + gerundio*, irregular gerunds), **Doler** (inverted *doler*, body parts, pharmacy vocab), and **Poder & Saber** (ability vs. skill, *saber vs. conocer*, personal *a*). Each with 5 lessons + consolidation + original story set in Hanói.
+
+### Phase 2: Spanish A2 — Pretérito Imperfecto — Done 2026-09-16
+- **Unit 21** (`a2-imperfectobasico-*`): Regular *-ar/-er/-ir* endings, the 3 irregulars (*ser/ir/ver*), states/descriptions in the past.
+- **Unit 22** (`a2-imperfectocontraste-*`): Imperfect (background) vs. Preterite (foreground), *mientras + imperfecto*, narrative structure. Both units shipped as 5 lessons + consolidation.
+
+### Phase 3: Spanish A2 — Imperativo & Clitic Pronouns — Done 2026-09-17
+- **Unit 23** (`a2-imperativoafirmativo-*`): Regular & 8 irregular *tú* imperatives, formal *usted/ustedes*. Story: *Las instrucciones de la abuela*.
+- **Unit 24** (`a2-imperativonegativo-*`): Negative *tú* commands, pronoun attachment vs. pre-command placement, accent shifts. Story: *Las reglas del hostel*.
+- **Unit 25** (`a2-pronombrescliticos-*`): Indirect object pronouns, double-object clitics (*se lo dije*, *le → se* rule). Story: *Un favor entre amigos*.
+
+### Phase 4: Spanish A2 — Modality, Subjunctive & Pragmatics — Done 2026-09-17
+- **Unit 26** (`a2-condicionalsimple-*`): *-ría* endings for polite requests & advice. Story: *El dilema del café*.
+- **Unit 27** (`a2-subjuntivobasico-*`): Introductory subjunctive triggers (desires, feelings, impersonal expressions, future *cuando*). Story: *Deseos para el viaje*.
+- **Unit 28** (`a2-perifrasisverbales-*`): Verbal periphrases & discourse connectors. Story: *Nuevos hábitos en Valencia*.
+- **Unit 29** (`a2-educacionyestudios-*`): School life vocabulary & *se me da bien / me cuesta*. Story: *El primer día en la facultad*.
+
+### Phase 5: Hungarian A1 — Core Case Integrations — Done 2026-09-17
+- **Unit 31** (`a1-151` to `a1-155-consolidation`): Elative *-ból/-ből*, Delative *-ról/-ről*, 3-way source contrast. Story: *Honnan jöttök?*
+- **Unit 32** (`a1-156` to `a1-160-consolidation`): Essive-modal *-ul/-ül*, language adverbials, fluency adverbs. Story: *Nyelvgyakorlás a kávézóban*.
+- **Unit 33** (`a1-161` to `a1-165-consolidation`): Core postpositions (*alatt, felett, mellett, előtt, mögött, között, után*). Story: *Hol van a jegy?*
+
+### Phase 6: Hungarian A2 — Inflected Personal Pronouns — Done 2026-09-17
+- **Unit 33** (`a2-161` to `a2-165-consolidation`): Inessive, Superessive, Sublative declined pronouns + governing verbs.
+- **Unit 34** (`a2-166` to `a2-170-consolidation`): Adessive, Allative, Ablative, Delative declined pronouns; hosting & visiting etiquette.
+
+### Phase 7: Hungarian A2 — Advanced Grammar & Culture — Done 2026-09-17
+- **Unit 35** (`a2-171` to `a2-175-consolidation`): Translative *-vá/-vé* with consonant assimilation, verbs of becoming. Story: *Az új műhely*.
+- **Unit 36** (`a2-176` to `a2-180-consolidation`): Essive-Formal *-ként*, professions, temporal distributives. Story: *Önkéntesként a táborban*.
+- **Unit 37** (`a2-181` to `a2-185-consolidation`): Deferential politeness (*tetszikelés*), Hungarian name order, honorifics, Name Day etiquette. Story: *Névnap a nagymamánál*.
+
+### Phase 8: Comprehensive CEFR Assessment Tests — Done 2026-09-17
+Multi-modal 3-part test engine (contextual cloze, active recall, pragmatic choice, writing task, speaking task with SpeechRecognition). Tests authored and validated for: `es` A1 (22 items), `es` A2 (24 items), `hu` A1 (26 items), `hu` A2 (26 items), `hu` B1 (28 items). Schema updated for all courses.
+
+### Phase 9: Hungarian B2 — Dual-Track Curriculum Blueprint — Done 2026-09-27
+Full 72-unit / 432-lesson B2 curriculum (`content/hu/curriculum/units/b2.json`) — 36 Core grammar units paired with 36 Culture, History & Society track units across 6 blocks (Units 01–36). Core track: one adapted Hungarian literary classic per unit (lesson 5). Culture track: 5-part serialised reading across lessons 1–5 plus a combined standalone story. All 432 lessons live on master.
+
+### Phase 10: Spanish A2 Core Additions — Units 30 to 33 — Done 2026-09-27
+Resolves Instituto Cervantes PCIC A2 gaps:
+- **Unit 30** (`a2-porpara`): *Por* vs. *Para*.
+- **Unit 31** (`a2-indefinidosnegacion`): Indefinites & double negation.
+- **Unit 32** (`a2-perifrasisduracion`): Life in Duration & aspectual periphrases.
+- **Unit 33** (`a2-vosotrospeninsular`): Vosotros in Peninsular Spanish (es-es only).
+Deliverables: 23 new lessons, 23 grammar modules, 20 vocabulary modules, 246 schema-validated exercises, 4 original stories. Units 30–32 in both es-es and es-latam; Unit 33 es-es only.
+
+### Phase 11: Spanish B1 Core Missing Grammar — Units 37 to 40 — Done 2026-09-27
+Completes B1 grammatical inventory vs. Instituto Cervantes Plan Curricular:
+- **Unit 37** (`b1-37`): Pretérito Perfecto de Subjuntivo.
+- **Unit 38** (`b1-38`): Sequence of tenses & reported speech.
+- **Unit 39** (`b1-39`): Spanish verbs of becoming (*ponerse, quedarse, volverse, hacerse, convertirse en, llegar a ser*).
+- **Unit 40** (`b1-40`): Advanced connectors, prepositional regimes, *pero/sino/sino que*, neuter *lo*.
+Deliverables: 24 new lessons, 24 grammar modules, 20 vocabulary modules, 264 exercises across es-es and es-latam. Wired into `curriculum/units/b1.json` under `"track": "core"`.
+
+### Phase 12: Peninsular Spanish Track Vosotros & Lexical Alignment — Done 2026-09-27
+Dedicated *vosotros* active mastery unit at A2 (Unit 33) and systemic B1 integration. Authentic Spain lexical variants throughout: *coche, ordenador, móvil, piso, zumo, camarero, chavales, colegas, pandilla, quedada, tapeo, caña, chulo*.
+
+### Phase 13: Full Build Pipeline & Index Regeneration — Done 2026-09-27
+- `build-manifest.py`: 810 lessons/135 units (es-es), 816 lessons/136 units (es-latam), decks and story manifests rebuilt.
+- `build_grammar_index.py --strict`: 5,027 exercises/213 skills (es-es), 5,425/234 (es-latam), 7,782 (HU) — zero errors.
+- `build_translation_index.py`: All bilingual indexes regenerated.
+- `audit_exercise_metadata.py`: 12,094 (es-es) + 12,113 (es-latam) exercises — 0 missing teaches, 0 missing categories, 0 unregistered tags.
+
+### Phase 14: Comprehensive Spanish B1 CEFR Assessment Test — Done 2026-09-27
+`content/es-es/tests/b1-test.json` and `content/es-latam/tests/b1-test.json`. Part 1: 28 multi-modal questions (present & perfect subjunctive, sequence of tenses, reported commands, conditionals, verbs of becoming, prepositional verbs, *sino/pero*, neuter *lo*, pragmatic interaction). Part 2 Writing: formal debate text (80–120 words). Part 3 Speaking: voice memo (45–60 s) proposing a teamwork conflict solution.
