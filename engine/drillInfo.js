@@ -157,7 +157,7 @@ const DrillInfo = (function () {
     // caller can splice it in unconditionally without an extra guard.
     function buttonHtml(id) {
         if (!COPY[id]) return '';
-        return `<button type="button" class="di-info-btn" data-drill-info="${id}">ⓘ About this drill</button>`;
+        return `<button type="button" class="di-info-btn" data-drill-info="${id}">About this drill</button>`;
     }
 
     function attach(root) {
