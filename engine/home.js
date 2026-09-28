@@ -192,13 +192,26 @@ const Home = (function () {
                 <span class="hm-continue-title">${esc(title)}</span>
                 <span class="hm-continue-sub">${esc(blurb)}</span>
                 <span class="hm-continue-foot">
-                    <button class="hm-cta-btn" data-mini-game-primary="1"
-                        data-mini-game-lesson="${esc(mini.lessonId)}">${esc(primaryLabel)} →</button>
-                    ${mini.alt ? `
-                        <button class="hm-cta-btn" data-mini-game-alt="1"
-                            data-mini-game-lesson="${esc(mini.lessonId)}">${esc(mini.alt.buttonLabel)} →</button>
-                    ` : ''}
+                    <button class="hm-cta-btn" data-mini-game-primary="1">${esc(primaryLabel)} →</button>
                     <button class="dk-link-btn" data-skip-mini-game="${esc(mini.lessonId)}">Not now</button>
+                </span>
+            </section>
+        `;
+    }
+
+    // An occasional pointer at the level's optional track (B1 Spain's CCSE
+    // units, B1 Latin America's history units) — see
+    // RecommendationEngine's _electiveCandidate(). "Not now" skips that
+    // unit for good; the next offer moves on to the following one.
+    function electiveCard(elective) {
+        return `
+            <section class="hm-continue hm-nudge">
+                <span class="hm-eyebrow">${esc(elective.levelKey)} · Optional track</span>
+                <span class="hm-continue-title">${esc(elective.unit.title)}</span>
+                <span class="hm-continue-sub">From ${esc(elective.trackTitle)}, alongside the main course. Next up: ${esc(elective.lesson.title)}.</span>
+                <span class="hm-continue-foot">
+                    <button class="hm-cta-btn" data-elective-start="1">Start →</button>
+                    <button class="dk-link-btn" data-skip-unit="${esc(elective.unit.id)}">Not now</button>
                 </span>
             </section>
         `;
@@ -491,22 +504,15 @@ const Home = (function () {
 
             const miniPrimary = e.target.closest('[data-mini-game-primary]');
             if (miniPrimary) {
-                const lessonId = miniPrimary.getAttribute('data-mini-game-lesson');
-                dismissMiniGame(lessonId);
-                goTab('drills');
-                if (_currentPrimaryRec && _currentPrimaryRec.kind === 'mini-game' && typeof Workshop !== 'undefined') {
-                    Workshop.open(_currentPrimaryRec.drillerId, _currentPrimaryRec.options);
+                if (_currentPrimaryRec && _currentPrimaryRec.kind === 'mini-game') {
+                    RecommendationEngine.open(_currentPrimaryRec);
                 }
                 return;
             }
 
-            const miniAlt = e.target.closest('[data-mini-game-alt]');
-            if (miniAlt) {
-                const lessonId = miniAlt.getAttribute('data-mini-game-lesson');
-                dismissMiniGame(lessonId);
-                goTab('drills');
-                if (_currentPrimaryRec && _currentPrimaryRec.kind === 'mini-game' && _currentPrimaryRec.alt && typeof Workshop !== 'undefined') {
-                    Workshop.open(_currentPrimaryRec.alt.drillerId, _currentPrimaryRec.alt.options);
+            if (e.target.closest('[data-elective-start]')) {
+                if (_currentPrimaryRec && _currentPrimaryRec.kind === 'elective') {
+                    RecommendationEngine.open(_currentPrimaryRec);
                 }
                 return;
             }
@@ -542,35 +548,6 @@ const Home = (function () {
             if (skipMini) {
                 dismissMiniGame(skipMini.getAttribute('data-skip-mini-game'));
                 render();
-                return;
-            }
-
-            const secGrammar = e.target.closest('[data-secondary-grammar]');
-            if (secGrammar) {
-                goTab('drills');
-                RecommendationEngine.openSecondary({ kind: 'grammar', skill: secGrammar.getAttribute('data-secondary-grammar') });
-                return;
-            }
-
-            const secDriller = e.target.closest('[data-secondary-driller]');
-            if (secDriller) {
-                goTab('drills');
-                RecommendationEngine.openSecondary({ kind: 'driller', drillerId: secDriller.getAttribute('data-secondary-driller') });
-                return;
-            }
-
-            // Vocabulary's word list doesn't serialise cleanly into a data
-            // attribute, so this recomputes the
-            // recommendation fresh rather than caching rec.secondary across
-            // the render/click boundary, keeping this file's "no state of
-            // its own" rule intact.
-            if (e.target.closest('[data-secondary-vocab]')) {
-                goTab('drills');
-                (async () => {
-                    const rec = await RecommendationEngine.recommend();
-                    const candidate = rec.secondary.find(c => c.kind === 'vocabulary');
-                    RecommendationEngine.openSecondary(candidate);
-                })();
                 return;
             }
 
@@ -644,6 +621,7 @@ const Home = (function () {
             ${courseBlock()}
             ${rec.primary.kind === 'unit-nudge' ? practiceNudgeCard(rec.primary)
                 : rec.primary.kind === 'mini-game' ? miniGameCard(rec.primary)
+                : rec.primary.kind === 'elective' ? electiveCard(rec.primary)
                 : continueCard(rec.primary.step)}
             ${quickBudgetBar()}
             ${reviewAlert(deck)}

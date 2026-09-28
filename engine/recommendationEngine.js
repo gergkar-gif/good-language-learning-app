@@ -1,5 +1,5 @@
 // ============================================
-// RECOMMENDATION ENGINE — "one strong recommendation, occasional secondary"
+// RECOMMENDATION ENGINE — one recommendation, shown on Home
 // ============================================
 // Step 3 of the Learner model & personalized path roadmap initiative, built
 // on step 1 (engine/learnerPath.js, position) and step 2
@@ -18,18 +18,10 @@
 // outsized precedence no other driller got; it now competes as an ordinary
 // _miniGameNudge() candidate like everything else (2026-09-23).
 //
-// `secondary` is a flat list of driller-launchable candidates: grammar
-// (weak/recent skill), vocabulary (weak words, B1+ only — see
-// _vocabularyAvailable()), the SRS "weakest words" review/match (same
-// ease-ranked signal engine/studyPlan.js's Time-Based Sessions already use
-// for their own review/match slots) — all absorbed from
-// engine/recommend.js's old recommend(), which owned this decision before
-// this module existed — and a generic `driller` candidate for any of the
-// seven drillers engine/drillHistory.js tracks (Verb Speed, Translation,
-// Listening, and the four Hungarian-specific drillers). Since step 6, the
-// driller-tracking metadata itself lives in engine/learnerModel.js
-// (weakDrillers()) alongside weakSkills()/weakWords() — this module only
-// ranks/presents it, same as the other two.
+// There is no secondary tier (removed 2026-09-28, along with Workshop's
+// "Recommended for you" card): Home shows exactly one recommendation, so
+// every signal that matters — weak skills/words/drillers, the lesson just
+// finished, the elective track — competes for that one slot instead.
 //
 // Also owns the shared "what's next" action every driller's results screen
 // mounts (mountNextAction()) — the roadmap's other named gap: every
@@ -127,7 +119,7 @@ const RecommendationEngine = (function () {
     // review/match slots (its `build()` step 1 and step 5), surfaced here
     // too so the ordinary Home recommendations offer the same
     // thing, not just a timed session. Unlike the Vocabulary Driller
-    // secondary candidate (context-inference, B1+ only), this reads
+    // candidate (context-inference, B1+ only), this reads
     // straight off the SRS deck and works at any level. Match needs >=4
     // pairs to be a real game (studyPlan.js's own floor); below that, or
     // without DeckMatch loaded, falls back to a plain SRS review.
@@ -178,39 +170,6 @@ const RecommendationEngine = (function () {
         const titles = path ? _grammarTitlesCache[path] : null;
         if (titles && titles[key]) return titles[key];
         return key.replace(/[-_]+/g, ' ');
-    }
-
-    // A `secondary` candidate's button label, for Home's secondary tier.
-    // (Workshop's own "Recommended for you" card was removed 2026-09-28 —
-    // recommendations live on Home only.)
-    function secondaryLabel(candidate) {
-        if (candidate.kind === 'grammar') return `Grammar: ${humanizeSkill(candidate.skill)}`;
-        if (candidate.kind === 'vocabulary') return 'Vocabulary practice';
-        if (candidate.kind === 'srs') return candidate.action === 'match' ? 'Word matching' : 'Word review';
-        if (candidate.kind === 'speaking') return candidate.skill ? `Speaking: ${humanizeSkill(candidate.skill)}` : 'Speaking Practice';
-        if (candidate.kind === 'writing') return candidate.title || 'Writing Studio';
-        if (candidate.kind === 'driller') return candidate.title;
-        if (candidate.kind === 'elective') return `${candidate.trackTitle}: ${candidate.unit.title}`;
-        return '';
-    }
-
-    // Launches a `secondary` candidate from Home's secondary tier.
-    function openSecondary(candidate) {
-        if (!candidate) return;
-        if (candidate.kind === 'srs') { _openSrs(candidate); return; }
-        if (candidate.kind === 'elective') {
-            if (typeof startLesson === 'function') startLesson(candidate.lesson.id);
-            return;
-        }
-        if (typeof Workshop === 'undefined') return;
-        // Home's secondary tier isn't the #drills tab -- see _openWorkshopDriller()'s own
-        // comment for why opening straight via Workshop.open() would paint
-        // into a hidden container there.
-        if (candidate.kind === 'grammar') _openWorkshopDriller('grammar', { skill: candidate.skill });
-        else if (candidate.kind === 'vocabulary') _openWorkshopDriller('vocabulary', { words: candidate.words });
-        else if (candidate.kind === 'speaking') _openWorkshopDriller('speaking', { skill: candidate.skill, autoStart: true });
-        else if (candidate.kind === 'writing') _openWorkshopDriller('writing', candidate.options);
-        else if (candidate.kind === 'driller') _openWorkshopDriller(candidate.drillerId, candidate.options);
     }
 
     // ----------------------------------------
@@ -369,13 +328,11 @@ const RecommendationEngine = (function () {
             ? LearnerModel.weakProductionSkills(1) : [];
         const topWeakProduction = weakProductionList[0] ? weakProductionList[0].skillId : null;
 
-        // 2. Recent lesson content
-        let recentSkill = null;
+        // 2. Recent lesson content. The lesson's own skill, not its unit's:
+        // the blurb says "Your last lesson covered X", and a unit's
+        // top skill can come from lessons the learner hasn't reached yet.
         let recentWords = [];
-        const found = LearnerPath.unitFor(lessonId);
-        if (found) {
-            recentSkill = await Recommend.unitSkillFor(found.unit);
-        }
+        const recentSkill = await Recommend.lessonSkillFor(lessonId);
         if (typeof loadLesson === 'function' && typeof collectLessonVocabulary === 'function') {
             try {
                 const lesson = await loadLesson(lessonId);
@@ -383,38 +340,11 @@ const RecommendationEngine = (function () {
             } catch (err) {}
         }
 
+        // No roleplay/written-exchange candidate here: the unit's scenario
+        // is offered once, by _practiceNudge(), when the unit is finished —
+        // offering it after every lesson in the unit put it in front of
+        // learners who hadn't yet met most of what it practises.
         const candidates = [];
-
-        // Candidate 0: Conversation Roleplay (if the lesson's unit matches a scenario)
-        const unitId = found ? found.unit.id : null;
-        const matchingScenario = await _scenarioForUnit(unitId);
-        if (matchingScenario) {
-            candidates.push({
-                drillerId: 'speaking',
-                title: 'Oral Roleplay',
-                buttonLabel: `Roleplay: ${matchingScenario.title}`,
-                blurb: `Put what you just learned into practice in a real-life dialogue: "${matchingScenario.title}".`,
-                reason: 'communicative_practice',
-                priority: 96,
-                options: { scenarioId: matchingScenario.id, returnTab: 'home' }
-            });
-        }
-
-        // Candidate 0b: Written Exchange (if the lesson's unit matches one instead) —
-        // same idea as the roleplay above, for units whose communicative goal is
-        // written register (texting, notes, email) rather than spoken.
-        const matchingExchange = matchingScenario ? null : await _exchangeForUnit(unitId);
-        if (matchingExchange) {
-            candidates.push({
-                drillerId: 'writing',
-                title: 'Written Exchange',
-                buttonLabel: `Exchange: ${matchingExchange.title}`,
-                blurb: `Put what you just learned into practice in a written exchange: "${matchingExchange.title}".`,
-                reason: 'communicative_practice',
-                priority: 96,
-                options: { scenarioId: matchingExchange.id, returnTab: 'home' }
-            });
-        }
 
         // Labels name the activity plainly — no item counts, no "sprint"/
         // "challenge" framing. `blurb` says why it's offered (a statement
@@ -626,25 +556,24 @@ const RecommendationEngine = (function () {
 
         if (!candidates.length) return null;
 
-        // Selection:
-        // If there are weak candidates (priority >= 80), pick the highest priority weak candidate.
-        // If all are non-weak, rotate through candidates using lessonId hash for variety.
-        const weakCandidates = candidates.filter(c => c.priority >= 80);
-        let primaryCandidate, altCandidate;
-
-        if (weakCandidates.length > 0) {
-            weakCandidates.sort((a, b) => b.priority - a.priority);
-            primaryCandidate = weakCandidates[0];
-            const others = candidates.filter(c => c.drillerId !== primaryCandidate.drillerId);
-            altCandidate = others.length ? others[0] : null;
+        // Selection: the highest-priority weak candidate (priority >= 80);
+        // otherwise practice on what the last lesson taught ('fresh');
+        // only when neither exists, rotate through the general drillers by
+        // lessonId hash so it isn't always the same one.
+        const byPriority = (a, b) => b.priority - a.priority;
+        const weak = candidates.filter(c => c.priority >= 80).sort(byPriority);
+        const fresh = candidates.filter(c => c.reason === 'fresh').sort(byPriority);
+        let primaryCandidate;
+        if (weak.length) {
+            primaryCandidate = weak[0];
+        } else if (fresh.length) {
+            primaryCandidate = fresh[0];
         } else {
             let hash = 0;
             for (let i = 0; i < lessonId.length; i++) {
                 hash = (hash * 31 + lessonId.charCodeAt(i)) >>> 0;
             }
-            const idx = hash % candidates.length;
-            primaryCandidate = candidates[idx];
-            altCandidate = candidates[(idx + 1) % candidates.length];
+            primaryCandidate = candidates[hash % candidates.length];
         }
 
         return {
@@ -659,13 +588,7 @@ const RecommendationEngine = (function () {
             skill: primaryCandidate.drillerId === 'grammar' ? primaryCandidate.options.skill : null,
             skillReason: primaryCandidate.drillerId === 'grammar' ? primaryCandidate.reason : null,
             words: primaryCandidate.drillerId === 'vocabulary' ? primaryCandidate.options.words : [],
-            wordsReason: primaryCandidate.drillerId === 'vocabulary' ? primaryCandidate.reason : null,
-            alt: altCandidate ? {
-                drillerId: altCandidate.drillerId,
-                title: altCandidate.title,
-                buttonLabel: altCandidate.buttonLabel,
-                options: altCandidate.options
-            } : null
+            wordsReason: primaryCandidate.drillerId === 'vocabulary' ? primaryCandidate.reason : null
         };
     }
 
@@ -676,8 +599,9 @@ const RecommendationEngine = (function () {
     // units, B1 Latin America's history units) is real content but not core
     // grammar progression, so engine/learnerPath.js's courseWalk() no
     // longer walks it and the level test no longer waits on it. It still
-    // deserves surfacing, just occasionally rather than competing with core
-    // grammar every time: gated to roughly once every ELECTIVE_CADENCE
+    // deserves surfacing, just occasionally, as Home's one card, after any
+    // practice offer for the lesson just finished and before the plain
+    // continue card: gated to roughly once every ELECTIVE_CADENCE
     // completed lessons, and skippable per-unit via the same
     // dismissedUnits() store the practice nudge already uses — skipping one
     // elective unit just moves the offer on to the next.
@@ -708,67 +632,26 @@ const RecommendationEngine = (function () {
     }
 
     // ----------------------------------------
-    // DRILLER SIGNAL
-    // ----------------------------------------
-    // The driller-classification metadata (which drillers to track, their
-    // curriculum-unlock gates, availability by language) moved to
-    // engine/learnerModel.js in step 6, alongside grammar/vocabulary's
-    // weakSkills()/weakWords() — this module only ranks/presents what
-    // LearnerModel already found weak, the same way it already does for
-    // grammar and vocabulary via _grammarVocabCandidate().
-    function _drillerCandidates() {
-        if (typeof LearnerModel === 'undefined') return [];
-        return LearnerModel.weakDrillers().map(c => Object.assign({ kind: 'driller', reason: 'weak' }, c));
-    }
-
-    // ----------------------------------------
     // THE ENGINE
     // ----------------------------------------
 
     async function recommend() {
         // Warmed up here so it's ready by the time any caller downstream
-        // computes a label via secondaryLabel()/humanizeSkill() -- every
-        // real recommendation is produced through this function first.
+        // computes a label via humanizeSkill() -- every real
+        // recommendation is produced through this function first.
         await _ensureGrammarTitles();
 
         const nudge = await _practiceNudge();
-        const mini = nudge ? null : await _miniGameNudge();
-        const step = (typeof LearnerPath !== 'undefined') ? LearnerPath.nextStep() : null;
+        if (nudge) return { primary: Object.assign({ kind: 'unit-nudge' }, nudge) };
 
-        let primary;
-        if (nudge) primary = Object.assign({ kind: 'unit-nudge' }, nudge);
-        else if (mini) primary = Object.assign({ kind: 'mini-game' }, mini);
-        else primary = { kind: 'continue', step };
+        const mini = await _miniGameNudge();
+        if (mini) return { primary: Object.assign({ kind: 'mini-game' }, mini) };
 
-        const gv = await _grammarVocabCandidate();
-        const secondary = [];
-        if (gv && gv.skill) secondary.push({ kind: 'grammar', skill: gv.skill, reason: gv.skillReason });
-        if (gv && gv.words.length) secondary.push({ kind: 'vocabulary', words: gv.words, reason: gv.wordsReason });
-        const srsSecondary = _srsCandidate();
-        if (srsSecondary) secondary.push(srsSecondary);
-        if (typeof LearnerModel !== 'undefined' && LearnerModel.weakProductionSkills) {
-            const weakProd = await LearnerModel.weakProductionSkills(1);
-            if (weakProd && weakProd.length > 0) {
-                const p = weakProd[0];
-                if (p.modality === 'written') {
-                    secondary.push({ kind: 'writing', title: `Writing: ${humanizeSkill(p.skillId)}`, reason: 'weak' });
-                } else {
-                    secondary.push({ kind: 'speaking', skill: p.skillId, reason: 'weak' });
-                }
-            }
-        }
-        _drillerCandidates().forEach(c => {
-            if (c.drillerId === 'speaking' && secondary.some(s => s.kind === 'speaking')) return;
-            if (c.drillerId === 'writing' && secondary.some(s => s.kind === 'writing')) return;
-            secondary.push(c);
-        });
-
-        // Lowest priority — an occasional, skippable nudge, not something
-        // that should crowd out an actual weak-signal candidate above.
         const elective = _electiveCandidate();
-        if (elective) secondary.push(elective);
+        if (elective) return { primary: elective };
 
-        return { primary, secondary: secondary.slice(0, 3) };
+        const step = (typeof LearnerPath !== 'undefined') ? LearnerPath.nextStep() : null;
+        return { primary: { kind: 'continue', step } };
     }
 
     // ----------------------------------------
@@ -798,6 +681,10 @@ const RecommendationEngine = (function () {
                 cta = `Start roleplay: ${primary.scenario.title}`;
                 sub = `Put "${primary.unit.title || 'that unit'}" into conversation`;
             }
+        } else if (primary.kind === 'elective') {
+            title = `${primary.trackTitle}: ${primary.unit.title}`;
+            cta = `Start: ${primary.lesson.title}`;
+            sub = `${primary.trackTitle} · optional track`;
         } else if (primary.kind === 'mini-game') {
             title = primary.challengeTitle || (primary.skill ? `Grammar: ${humanizeSkill(primary.skill)}` : 'Practice');
             cta = primary.buttonLabel || title;
@@ -852,6 +739,8 @@ const RecommendationEngine = (function () {
             } else {
                 _openWorkshopDriller('speaking', { scenarioId: primary.scenario.id, returnTab: 'home' });
             }
+        } else if (primary.kind === 'elective') {
+            if (typeof startLesson === 'function') startLesson(primary.lesson.id);
         } else if (primary.kind === 'mini-game') {
             dismissMiniGame(primary.lessonId);
             if (primary.drillerId === 'srs') {
@@ -885,7 +774,12 @@ const RecommendationEngine = (function () {
             return;
         }
         if (!rec || !rec.primary) return;
-        if (rec.primary.kind === 'driller' && rec.primary.drillerId === opts.excludeDrillerId) return;
+        // Don't send the learner straight back into the driller they just
+        // finished — point them on along the course instead.
+        if (rec.primary.kind === 'mini-game' && rec.primary.drillerId === opts.excludeDrillerId) {
+            const step = (typeof LearnerPath !== 'undefined') ? LearnerPath.nextStep() : null;
+            rec = { primary: { kind: 'continue', step } };
+        }
 
         const info = _nextActionInfo(rec.primary);
         if (!info) return;
@@ -921,11 +815,10 @@ const RecommendationEngine = (function () {
 
     return {
         recommend,
+        open: _routeTo,
         mountNextAction,
         dismissUnit,
         dismissMiniGame,
-        secondaryLabel,
-        openSecondary,
         grammarVocabCandidate: _grammarVocabCandidate,
         _scenarioForUnit,
         _practiceNudge,

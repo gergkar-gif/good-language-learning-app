@@ -98,7 +98,8 @@ global.LearnerModel = {
 };
 
 global.Recommend = {
-    unitSkillFor: async (unit) => 'unit-skill-placeholder'
+    unitSkillFor: async (unit) => 'unit-skill-placeholder',
+    lessonSkillFor: async (lessonId) => 'lesson-skill-placeholder'
 };
 
 // Load RecommendationEngine
@@ -152,20 +153,20 @@ const RecommendationEngine = require('../../engine/recommendationEngine.js');
     assert.strictEqual(wrapped.kind, 'unit-nudge', 'recommend()-style wrapping must keep kind as unit-nudge');
     console.log('✓ Practice nudge survives recommend()\'s kind:unit-nudge wrapping');
 
-    console.log('\n--- Test 4: Mini-game Candidate Surfaces Oral Roleplay ---');
-    // If not the last lesson (e.g. lesson 1 of cafeUnit)
+    console.log('\n--- Test 4: Mid-unit Mini-game Practises the Lesson, Not the Unit Roleplay ---');
+    // Not the last lesson (lesson 1 of cafeUnit): the unit's roleplay is
+    // held back for the unit-end milestone (Test 3), and with nothing weak
+    // the offer is grammar practice on the lesson's own skill.
     const firstLesson = cafeUnit.lessons[0];
     global.LearnerPath.lastCompletedLessonId = () => firstLesson.id;
 
     const mini = await RecommendationEngine._miniGameNudge();
     assert(mini, 'Mini-game nudge should be generated');
-    assert(mini.drillerId === 'speaking' || (mini.alt && mini.alt.drillerId === 'speaking'), 'Speaking scenario roleplay should be a candidate');
-    if (mini.drillerId === 'speaking') {
-        assert.strictEqual(mini.challengeTitle, 'Oral Roleplay');
-        assert.strictEqual(mini.options.scenarioId, 'es-a1-sc01-cafe');
-        assert.strictEqual(mini.options.returnTab, 'home');
-    }
-    console.log('✓ Mini-game candidate surfaces oral roleplay for matching lesson unit');
+    assert(!(mini.options && mini.options.scenarioId), 'Unit roleplay must not be offered mid-unit');
+    assert.strictEqual(mini.drillerId, 'grammar', 'With nothing weak, the lesson\'s own grammar comes first');
+    assert.strictEqual(mini.skill, 'lesson-skill-placeholder', 'Skill must be the lesson\'s, not the unit\'s');
+    assert.strictEqual(mini.alt, undefined, 'One recommendation, no alternative');
+    console.log('✓ Mid-unit mini-game practises the lesson just finished');
 
     console.log('\n--- Test 5: Parlour Style Zero-Emoji Check ---');
     const emojiRegex = /[\u{1F300}-\u{1F9FF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}]/u;
