@@ -1093,6 +1093,17 @@ const Decks = (function () {
         return (typeof Lexicon !== 'undefined') ? Lexicon.withArticle(lemma) : lemma;
     }
 
+    // Every word in the deck plus its full English gloss, so the search box
+    // finds a deck by any of its words in either language, not just the
+    // five on the card.
+    function searchTextOf(deck) {
+        const table = (catalogue && catalogue.words) || {};
+        const words = deck.words
+            ? deck.words.map(w => [w.lemma, w.translation])
+            : (deck.lemmas || []).map(lemma => [lemma, (table[lemma] || {}).en]);
+        return words.map(pair => pair.filter(Boolean).join(' ')).join(' · ');
+    }
+
     function deckCard(deck) {
         const s = statusOf(deck);
         const percent = s.total ? Math.round((s.inDeck / s.total) * 100) : 0;
@@ -1103,7 +1114,7 @@ const Decks = (function () {
                     data-name="${esc((deck.name || '').toLowerCase())}"
                     data-level="${esc((deck.level || '').toLowerCase())}"
                     data-kind="${esc((deck.kind || '').toLowerCase())}"
-                    data-preview="${esc((preview || '').toLowerCase())}">
+                    data-words="${esc(searchTextOf(deck))}">
                 <span class="dk-card-top">
                     ${deck.label ? `<span class="dk-num">${esc(deck.label)}</span>` : ''}
                     <span class="dk-name">${esc(deck.name)}</span>
@@ -1247,13 +1258,20 @@ const Decks = (function () {
             return;
         }
 
+        // Accent-insensitive, same normalizer as the Library search
+        // (reader.js); words and glosses go through _matchesTerm so a short
+        // query like "sol" doesn't match inside "soldado".
+        const norm = s => (typeof _normSearch === 'function') ? _normSearch(s) : s.toLowerCase();
+        const matchesWords = (text, term) => (typeof _matchesTerm === 'function') ? _matchesTerm(text, term) : text.toLowerCase().includes(term);
+        const qNorm = norm(q);
+
         let matchCount = 0;
         cards.forEach(card => {
             const name = card.getAttribute('data-name') || '';
             const level = card.getAttribute('data-level') || '';
             const kind = card.getAttribute('data-kind') || '';
-            const preview = card.getAttribute('data-preview') || '';
-            const matches = name.includes(q) || level === q || kind.includes(q) || preview.includes(q);
+            const words = card.getAttribute('data-words') || '';
+            const matches = norm(name).includes(qNorm) || level === q || kind.includes(q) || matchesWords(words, q);
             card.classList.toggle('hidden', !matches);
             if (matches) matchCount++;
         });

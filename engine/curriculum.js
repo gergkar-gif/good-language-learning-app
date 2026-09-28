@@ -815,7 +815,8 @@ async function globalGrammarGuideHtml() {
     const topics = await buildGlobalGrammarIndex();
 
     const rows = topics.map((topic, i) => `
-        <li class="gg-search-row" data-gg-search-title="${UI.escape(topic.title)}">
+        <li class="gg-search-row" data-gg-search-title="${UI.escape(topic.title)}"
+            data-gg-search-keywords="${UI.escape(topic.keywords || '')}">
             <button class="gg-search-result" data-goto-grammar-topic="${i}">
                 <span class="gg-search-level">${topic.level}</span>
                 <span class="gg-search-title">${UI.escape(topic.title)}</span>
@@ -1089,17 +1090,29 @@ function attachCurriculumEvents(root) {
 
     // Live filter for the global Grammar Guide search box — instant
     // .hidden toggling on keystroke rather than re-rendering, same approach
-    // as the Library's search (reader.js's _filterUniversalSearch).
+    // as the Library's search (reader.js's _filterUniversalSearch). A topic
+    // matches on its title or its hidden keywords (English and target-
+    // language terms, built by scripts/build_grammar_guide_index.py);
+    // title matches are listed first, each group in course order.
     root.addEventListener('input', e => {
         if (e.target.id !== 'gg-search-input') return;
         const query = e.target.value;
-        const rows = root.querySelectorAll('.gg-search-row');
-        const matches = (title, q) => (typeof _matchesTerm === 'function') ? _matchesTerm(title, q) : title.toLowerCase().includes(q.toLowerCase());
+        const list = root.querySelector('#gg-search-results');
+        if (!list) return;
+        const rows = Array.from(list.querySelectorAll('.gg-search-row'));
+        const matches = (text, q) => (typeof _matchesTerm === 'function') ? _matchesTerm(text, q) : text.toLowerCase().includes(q.toLowerCase());
+        const titleHits = [], keywordHits = [], misses = [];
         rows.forEach(row => {
             const title = row.getAttribute('data-gg-search-title') || '';
-            const visible = !query.trim() || matches(title, query);
-            row.classList.toggle('hidden', !visible);
+            const keywords = row.getAttribute('data-gg-search-keywords') || '';
+            if (!query.trim() || matches(title, query)) titleHits.push(row);
+            else if (matches(keywords, query)) keywordHits.push(row);
+            else misses.push(row);
         });
+        const courseOrder = (a, b) => a.firstElementChild.getAttribute('data-goto-grammar-topic') - b.firstElementChild.getAttribute('data-goto-grammar-topic');
+        [titleHits, keywordHits, misses].forEach(group => group.sort(courseOrder).forEach(row => list.appendChild(row)));
+        titleHits.concat(keywordHits).forEach(row => row.classList.remove('hidden'));
+        misses.forEach(row => row.classList.add('hidden'));
     });
 }
 
