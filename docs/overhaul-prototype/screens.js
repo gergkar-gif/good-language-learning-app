@@ -124,22 +124,20 @@
       '<a class="how" href="#home">How Parlour works</a>';
   } };
 
-  function toolRows(hu) {
+  function toolRows() {
     var t = function (go, name, desc) { return '<button class="tool" data-go="' + go + '"><span><span class="name">' + name + '</span><span class="desc">' + desc + '</span></span>' + ARW_S + '</button>'; };
-    return '<div class="rows toolrows" style="margin-top:26px">' + t('guide/search', 'Search Grammar Guide', 'Every topic in the course') + t('diag', 'Take the placement diagnostic', 'Find your starting level') + (hu ? t('lessons', 'Hungarian Cultural Exam', 'Magyar kulturális ismereti vizsga') : '') + '</div>';
+    return '<div class="rows toolrows" style="margin-top:26px">' + t('guide/search', 'Search Grammar Guide', 'Every topic in the course') + t('diag', 'Take the placement diagnostic', 'Find your starting level') + '</div>';
   }
   var ARW_S = '<svg viewBox="0 0 22 14" width="22" height="14" aria-hidden="true"><path d="M0 7h19M13 1l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"/></svg>';
-  S.lessons = { tab: 'lessons', label: 'Lessons: levels', html: function (hu) {
+  S.lessons = { tab: 'lessons', label: 'Lessons: levels', html: function () {
     var L = [['A1', 'Fundamentals', 'Survival skills', 115, 115], ['A2', 'Basic', 'Everyday needs', 120, 120], ['B1', 'Intermediate', 'Opinions and stories', 41, 144], ['B2', 'Upper Intermediate', 'Argument and nuance', 0, 36], ['C1', 'Advanced', 'Coming later', 0, 0]];
-    return head('Lessons', 'Five levels, one path forward.', HERO.lessons) + toolRows(hu) +
+    return head('Lessons', 'Five levels, one path forward.', HERO.lessons) + toolRows() +
       '<div class="rows" style="margin-top:34px;border-top:1px solid var(--hair)">' + L.map(function (l) {
         var pct = l[4] ? Math.round(100 * l[3] / l[4]) : 0;
         return '<button class="lvl" data-go="lessons/path">' + lvlIcon(l[0], pct >= 100 ? 'done' : l[0] === 'B1' ? 'now' : 'todo') + '<span><span class="code">' + l[0] + '</span><span class="nm">' + l[1] + '</span><span class="desc" style="margin-top:2px">' + l[2] + '</span>' +
           '<span class="meta">' + track(pct) + '<span>' + (l[4] ? (pct >= 100 ? '<span class="cmp">Complete</span>' : l[3] + ' / ' + l[4]) : 'Soon') + '</span></span></span></button>';
       }).join('') + '</div>';
   } };
-
-  S['lessons/hu'] = { tab: 'lessons', label: 'Lessons: levels (Hungarian, with the exam row)', html: function () { return S.lessons.html(true); } };
 
   S['lessons/path'] = { tab: 'lessons', label: 'Lessons: unit path', html: function () {
     var U = [['Greetings and introductions', 5, 5, 0], ['Meeting someone new', 5, 5, 1], ['Naming things', 5, 5, 2], ['Describing people', 5, 5, 3], ['Family', 5, 5, 0], ['Daily routine', 5, 3, 1], ['At home', 5, 0, 2], ['At the supermarket', 5, 0, 3]];
@@ -712,7 +710,7 @@
 
   
   /* ---------- shell ---------- */
-  var order = ['home', 'lessons', 'lessons/path', 'gallery', 'lesson', 'lesson/correct', 'lesson/wrong', 'lesson/done', 'library', 'library/saved', 'library/texts', 'library/editor', 'library/read', 'workshop', 'workshop/verb', 'workshop/drill', 'decks', 'decks/review', 'decks/answer', 'journey', 'journey/passport', 'journey/knowledge', 'journey/skills', 'journey/milestones', 'journey/account', 'welcome', 'welcome/variant', 'welcome/start', 'plan', 'test', 'test/writing', 'test/speaking', 'test/result', 'speaking', 'speaking/feedback', 'writing', 'writing/feedback', 'lesson/type', 'lesson/listen', 'lesson/dialogue', 'lesson/match', 'decks/empty', 'decks/caught-up', 'sheet/deck', 'sheet/streak', 'lessons/hu', 'unit', 'wordbank', 'diag', 'diag/result', 'guide', 'guide/topic', 'guide/search', 'lexicon', 'decks/editor', 'decks/browse', 'test/part1', 'quiz', 'quiz/done', 'library/search', 'library/nomatch', 'hu/settings', 'hu/drill', 'hu/results', 'home/note', 'sheet/bug', 'sheet/sync', 'state/offline', 'state/error', 'about'];
+  var order = ['home', 'lessons', 'lessons/path', 'gallery', 'lesson', 'lesson/correct', 'lesson/wrong', 'lesson/done', 'library', 'library/saved', 'library/texts', 'library/editor', 'library/read', 'workshop', 'workshop/verb', 'workshop/drill', 'decks', 'decks/review', 'decks/answer', 'journey', 'journey/passport', 'journey/knowledge', 'journey/skills', 'journey/milestones', 'journey/account', 'welcome', 'welcome/variant', 'welcome/start', 'plan', 'test', 'test/writing', 'test/speaking', 'test/result', 'speaking', 'speaking/feedback', 'writing', 'writing/feedback', 'lesson/type', 'lesson/listen', 'lesson/dialogue', 'lesson/match', 'decks/empty', 'decks/caught-up', 'sheet/deck', 'sheet/streak', 'unit', 'wordbank', 'diag', 'diag/result', 'guide', 'guide/topic', 'guide/search', 'lexicon', 'decks/editor', 'decks/browse', 'test/part1', 'quiz', 'quiz/done', 'library/search', 'library/nomatch', 'hu/settings', 'hu/drill', 'hu/results', 'home/note', 'sheet/bug', 'sheet/sync', 'state/offline', 'state/error', 'about'];
   $('screen').innerHTML = order.map(function (k) { return '<option value="' + k + '">' + S[k].label + '</option>'; }).join('');
 
   function renderNav(tab) {
