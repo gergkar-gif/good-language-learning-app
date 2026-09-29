@@ -1379,3 +1379,86 @@ body:has(.dkb-game) .content, body:has(.dkb-lobby) .content, body:has(.dkb-done)
 .lt-subnav { margin-bottom: 8px; }
 .dk-empty, .level-empty { margin: 28px 0; line-height: 1.6; color: var(--muted); }
 .dk-group-blurb { margin: 24px 0 20px; line-height: 1.6; }
+
+/* ============================================
+   CONVERSATION SCENARIOS
+   The scene is an open page: a serif title on a rule, the partner's line as
+   a ruled block, the learner's indented, the goal as a ruled section, and
+   one vermilion block to record (vermilion is live).
+============================================ */
+.sp-scenario-banner {
+  background: none;
+  border: 0;
+  border-radius: 0;
+  border-bottom: 1px solid var(--primary);
+  padding: 4px 0 12px;
+  margin: 8px 0 20px;
+  font: 400 1.6rem/1.15 var(--font-display);
+  letter-spacing: -0.01em;
+  color: var(--text);
+}
+.sp-chat-timeline { background: none; border: 0; border-radius: 0; padding: 0; margin: 0 0 8px; }
+.sp-chat-bubble {
+  background: none;
+  border: 0;
+  border-top: 1.5px solid var(--primary);
+  border-radius: 0;
+  box-shadow: none;
+  padding: 14px 0 6px;
+}
+.sp-chat-bubble.current { border: 0; border-top: 3px solid var(--primary); box-shadow: none; }
+.sp-chat-bubble.learner { margin-left: 28px; border-top: 1.5px solid var(--border); color: var(--text); }
+.sp-chat-header strong { font: 600 13px/1 var(--font-ui); letter-spacing: .02em; color: var(--muted); text-transform: none; }
+.sp-chat-listen-btn {
+  background: none;
+  color: var(--text);
+  border: 0;
+  border-radius: var(--radius-sm);
+  box-shadow: inset 0 0 0 1.5px var(--primary);
+}
+.sp-chat-listen-btn:hover { background: var(--primary); color: var(--bg); }
+.sp-chat-reveal-btn {
+  background: none;
+  border: 0;
+  color: var(--muted);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+.sp-chat-reveal-btn:hover { color: var(--text); background: none; }
+.sp-turn-objective-card {
+  background: none;
+  border: 0;
+  border-top: 1.5px solid var(--primary);
+  border-radius: 0;
+  box-shadow: none;
+  padding: 16px 0 6px;
+  margin-top: 22px;
+  font: 400 1.25rem/1.35 var(--font-display);
+  color: var(--text);
+}
+.sp-turn-objective-card .sp-eyebrow, .sp-turn-objective-card [class*="label"] { font: 600 13px/1 var(--font-ui); color: var(--accent-text); text-transform: none; letter-spacing: .02em; }
+.sp-phrases-summary { color: var(--muted); font-size: 14px; }
+.sp-scenario-record-cta {
+  display: block;
+  width: 100%;
+  max-width: none;
+  margin: 22px 0 8px;
+  padding: 18px 20px;
+  background: var(--accent);
+  color: var(--bg);
+  border: 0;
+  border-radius: var(--radius-sm);
+  font: 600 1.05rem/1 var(--font-ui);
+}
+.sp-scenario-record-cta:hover { background: var(--accent-text); }
+.sp-scenario-record-cta .icon, .sp-scenario-record-cta svg { stroke: currentColor; color: inherit; }
+
+/* Briefing */
+.sp-briefing-card { background: none; border: 0; border-radius: 0; box-shadow: none; padding: 0; }
+.sp-briefing-title { font: 400 1.9rem/1.1 var(--font-display); letter-spacing: -0.015em; }
+.sp-briefing-roles-box, .sp-briefing-flow-box { background: none; border: 0; border-top: 1.5px solid var(--primary); border-radius: 0; padding: 14px 0 6px; }
+.sp-briefing-flow-box h4 { font: 600 13px/1 var(--font-ui); letter-spacing: .02em; text-transform: none; color: var(--muted); }
+.sp-role-badge { background: none; border: 0; box-shadow: inset 0 0 0 1.5px var(--border); border-radius: var(--radius-sm); color: var(--text); padding: 2px 6px; }
+.sp-role-badge.learner { box-shadow: inset 0 0 0 1.5px var(--primary); }
+.sp-btn-link { color: var(--muted); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; }
