@@ -979,8 +979,11 @@ function showTranslation() {
 function setFeedback(ok, message) {
     const el = document.getElementById('step-feedback');
     if (!el) return;
-    el.textContent = message;
-    el.style.color = ok ? 'var(--success)' : 'var(--accent-dark)';
+    // The mark is drawn in CSS (is-ok / is-bad), so the glyph prefix is dropped.
+    el.textContent = String(message).replace(/^[✓✗]\s*/, '');
+    el.classList.toggle('is-ok', !!ok);
+    el.classList.toggle('is-bad', !ok);
+    el.style.color = ok ? 'var(--success)' : 'var(--danger)';
 }
 
 // ============================================
@@ -2506,7 +2509,7 @@ async function renderLessonSummary(firstTime, rankBefore) {
             <p class="lsn-summary-eyebrow">Lesson complete</p>
             <h2 class="lsn-summary-title">Congratulations!</h2>
             ${numberLabel ? `<p class="lsn-summary-lesson">${esc(numberLabel)} — ${esc(lesson.title || '')}</p>` : ''}
-            ${Art.svg('summit', 'lsn-summary-art')}
+            ${Art.heroSvg ? Art.heroSvg('complete', 'lsn-summary-art') : Art.svg('summit', 'lsn-summary-art')}
             ${statsHtml}
             ${invitation ? guideInvitationHtml(invitation) : ''}
             ${summaryStreakLine()}

@@ -919,3 +919,127 @@ body.in-lesson .nav { display: none !important; }
 .jr-cando-chip.chip-gap, .jr-cando-chip.chip-review { color: var(--ochre-text); }
 .jr-theme-option.active { box-shadow: inset 0 0 0 2px var(--primary); }
 .jr-theme-hint { font-size: 13px; }
+
+/* ============================================
+   LESSON EXERCISES
+   Bordered rectangles with a letter key; correctness is a colour, a drawn
+   mark and a word, never colour alone.
+============================================ */
+.lsn-question { font: 400 1.35rem/1.4 var(--font-display); margin-bottom: 20px; }
+.lsn-options { gap: 10px; }
+.lsn-option {
+  padding: 15px 16px;
+  border: 0;
+  border-radius: var(--radius-sm);
+  box-shadow: inset 0 0 0 1.5px var(--border);
+  background: none;
+  font: 400 1.1rem/1.3 var(--font-ui);
+}
+.lsn-option:hover { border: 0; box-shadow: inset 0 0 0 1.5px var(--primary); }
+.lsn-option.selected { border: 0; box-shadow: inset 0 0 0 2px var(--primary); background: var(--wash); color: var(--text); }
+.lsn-key-hint { border: 0; box-shadow: inset 0 0 0 1.5px var(--muted); border-radius: var(--radius-sm); color: var(--muted); background: none; width: 22px; height: 22px; }
+.lsn-option.selected .lsn-key-hint,
+.gd-option.selected .lsn-key-hint { box-shadow: inset 0 0 0 1.5px var(--primary); color: var(--primary); background: none; }
+
+.lsn-option.correct { border: 0; box-shadow: inset 0 0 0 2px var(--success); background: var(--success-bg); color: var(--text); font-weight: 600; opacity: 1; }
+.lsn-option.correct .lsn-key-hint { box-shadow: inset 0 0 0 1.5px var(--success); color: var(--success); }
+.lsn-option.correct::after {
+  content: "";
+  right: 18px;
+  width: 12px;
+  height: 6px;
+  border-radius: 0;
+  background: none;
+  border-left: 2px solid var(--success);
+  border-bottom: 2px solid var(--success);
+  transform: translateY(-70%) rotate(-45deg);
+}
+.lsn-option.wrong { border: 0; box-shadow: inset 0 0 0 2px var(--danger); background: var(--danger-bg); color: var(--text); opacity: 1; transform: none; }
+.lsn-option.wrong .lsn-key-hint { box-shadow: inset 0 0 0 1.5px var(--danger); color: var(--danger); }
+.lsn-option.wrong::after,
+.lsn-option.wrong::before {
+  content: "";
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  width: 14px;
+  height: 0;
+  border-top: 2px solid var(--danger);
+}
+.lsn-option.wrong::after { transform: translateY(-50%) rotate(45deg); }
+.lsn-option.wrong::before { transform: translateY(-50%) rotate(-45deg); }
+
+.lsn-tile { border: 0; box-shadow: inset 0 0 0 1.5px var(--border); background: none; }
+.lsn-tile:hover { box-shadow: inset 0 0 0 1.5px var(--primary); }
+.lsn-target { border: 0; box-shadow: inset 0 0 0 1.5px var(--border); }
+.lsn-built.is-correct { color: var(--success); }
+
+/* Typed answers: a hairline field; wrong is brick dashed, right is pine */
+.lsn-input { border: 0; border-radius: var(--radius-sm); box-shadow: inset 0 0 0 1.5px var(--border); padding: 13px 14px; font: 400 1.1rem/1.3 var(--font-ui); }
+.lsn-input:focus { box-shadow: inset 0 0 0 2px var(--primary); }
+.lsn-input.correct { box-shadow: inset 0 0 0 2px var(--success); background: var(--success-bg); }
+.lsn-input.wrong { box-shadow: inset 0 0 0 2px var(--danger); background: var(--danger-bg); }
+.lsn-diacritic-popover-btn, .lsn-diacritics button { border-radius: var(--radius-sm); }
+.lsn-mic-addon { border: 0; box-shadow: inset 0 0 0 1.5px var(--border); border-radius: var(--radius-sm); }
+
+/* Feedback: a tinted strip under a 3px rule with a drawn mark before the word */
+.lsn-feedback { font: 400 1.25rem/1.3 var(--font-display); }
+.lsn-feedback:empty { display: none; }
+.lsn-feedback.is-ok,
+.lsn-feedback.is-bad {
+  position: relative;
+  margin-top: 18px;
+  padding: 14px 16px 14px 44px;
+  border-top: 3px solid currentColor;
+}
+.lsn-feedback.is-ok { background: var(--success-bg); }
+.lsn-feedback.is-bad { background: var(--danger-bg); }
+.lsn-feedback.is-ok::before {
+  content: "";
+  position: absolute;
+  left: 16px;
+  top: 21px;
+  width: 12px;
+  height: 6px;
+  border-left: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(-45deg);
+}
+.lsn-feedback.is-bad::before,
+.lsn-feedback.is-bad::after {
+  content: "";
+  position: absolute;
+  left: 15px;
+  top: 27px;
+  width: 14px;
+  border-top: 2px solid currentColor;
+}
+.lsn-feedback.is-bad::before { transform: rotate(45deg); }
+.lsn-feedback.is-bad::after { transform: rotate(-45deg); }
+
+/* Listen and speak: a solid navy disc; the record disc is vermilion */
+.lsn-play { width: 96px; height: 96px; border: 0; border-radius: 50%; background: var(--primary); color: var(--bg); box-shadow: none; }
+.lsn-play:hover { background: var(--primary-mid); color: var(--bg); }
+.lsn-play-slow { border: 0; box-shadow: inset 0 0 0 1.5px var(--primary); border-radius: var(--radius-sm); background: none; color: var(--text); }
+.lsn-play-slow:hover { background: var(--primary); color: var(--bg); }
+
+/* Progress: a hairline with a navy fill; the footer buttons are flat rectangles */
+.lsn-progress-bar { background: var(--primary); }
+.lesson-footer .btn-primary { border-radius: var(--radius-sm); }
+.lesson-footer .btn-back { border-radius: var(--radius-sm); }
+.lsn-model { border: 0; border-top: 1px solid var(--primary); border-radius: 0; background: none; }
+.lsn-check-item { border-radius: 0; }
+
+/* The floating report-a-problem flag must not sit over Continue */
+@media (max-width: 1023px) { .lesson-footer { padding-right: 56px; } }
+
+/* Lesson complete: a pine composition, left-aligned like the other heroes */
+.lsn-summary { text-align: left; padding-top: 12px; }
+.lsn-summary-art { display: block; width: 100%; max-width: 300px; max-height: none; height: auto; margin: 8px 0 16px auto; }
+.lsn-summary-eyebrow { color: var(--success); text-transform: none; letter-spacing: .02em; font-size: 14px; font-weight: 600; }
+.lsn-summary-title { font-size: clamp(2.2rem, 10vw, 3rem); letter-spacing: -0.02em; }
+.lsn-summary-stats { border-top: 1px solid var(--primary); padding-top: 18px; }
+.lsn-summary-stat { text-align: left; }
+.lsn-word-chip { border: 0; box-shadow: inset 0 0 0 1.5px var(--border); border-radius: var(--radius-sm); background: none; }
+.lsn-summary-stat, .lsn-summary-stat * { text-align: left; }
+.lsn-summary-stats { justify-content: flex-start; }
