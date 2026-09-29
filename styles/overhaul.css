@@ -620,38 +620,7 @@ body.in-lesson .nav { display: none !important; }
 .story-card-familiar { font-size: 12.5px; }
 .story-card-topic-match { background: none; border: 0; color: var(--ochre-text); padding: 0; border-radius: 0; }
 
-/* Continue reading and recommendations: open rows, no boxes, no side bars, no lift */
-.lib-continue { margin: 24px 0 0; }
-.lib-recs-container { margin: 24px 0 0; }
-.lib-recs-heading { font: 400 1.3rem/1 var(--font-display); letter-spacing: 0; margin: 0 0 4px; }
-.lib-recs-sub { font-size: 14px; }
-.lib-continue-list, .lib-recs-grid { display: block; border-top: 1px solid var(--primary); margin-top: 10px; }
-.lib-continue-item,
-.lib-rec-card {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  width: 100%;
-  background: none;
-  border: 0;
-  border-bottom: 1px solid var(--border);
-  border-radius: 0;
-  padding: 14px 0;
-  box-shadow: none;
-  transform: none;
-  overflow: visible;
-}
-.lib-continue-item:hover, .lib-continue-item:hover { border-color: var(--border); }
-.lib-rec-card:hover { transform: none; box-shadow: none; border-color: var(--border); }
-.lib-rec-card::before { display: none; }
-.lib-continue-title, .lib-rec-title { font: 400 1.15rem/1.25 var(--font-display); }
-.lib-continue-item:hover .lib-continue-title,
-.lib-rec-card:hover .lib-rec-title { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; }
-.lib-continue-bar, .story-card-progress { height: 3px; }
-.lib-continue-bar > span { background: var(--accent); }
-.lib-rec-badge { background: none; padding: 0; border-radius: 0; font-size: 12px; letter-spacing: .03em; text-transform: none; }
-.badge-comfortable, .badge-challenging, [data-theme="dark"] .badge-comfortable, [data-theme="dark"] .badge-challenging { background: none; color: var(--muted); }
-.lib-rec-btn { padding: 0; }
+/* Continue reading and recommendations keep their original card layout (the user preferred it). */
 
 /* Saved and My texts */
 .lt-saved-card { display: block; position: relative; }
@@ -1101,7 +1070,6 @@ body.in-lesson .nav { display: none !important; }
 }
 .ssp-speed-btn { border: 0; border-radius: var(--radius-sm); box-shadow: inset 0 0 0 1.5px var(--primary); color: var(--text); }
 .story-audio-bar { box-shadow: none; }
-.lib-rec-card:hover { box-shadow: none; }
 
 /* Chips and badges become outlined rectangles or plain figures */
 .dkb-best-pill, .dk-study-tab-badge, .lt-chip, .hce-points-badge, .hce-filter-chip {
