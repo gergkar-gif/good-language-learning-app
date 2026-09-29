@@ -1126,6 +1126,7 @@ const Decks = (function () {
                     <span>${s.total} ${s.total === 1 ? 'word' : 'words'}</span>
                     <span>${s.inDeck ? s.inDeck + ' in your deck' : 'none added yet'}</span>
                 </span>
+                ${(typeof Art !== 'undefined' && Art.thumb) ? Art.thumb('decks', { due: s.due > 0 }) : ''}
             </button>
         `;
     }
@@ -1331,7 +1332,7 @@ const Decks = (function () {
                 building your own.</p>
             <div class="dk-top">
                 <div class="dk-stats-row">
-                    <div class="dk-stat">
+                    <div class="dk-stat${mineStatus.due ? ' is-due' : ''}">
                         <p class="dk-stat-num">${mineStatus.due}</p>
                         <p class="dk-stat-label">waiting to review</p>
                     </div>

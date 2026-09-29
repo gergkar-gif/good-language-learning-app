@@ -509,6 +509,12 @@ const Art = (function () {
         bars: `<rect class="mk-navy" x="10" y="20" width="8" height="32"/><rect class="mk-navy" x="24" y="8" width="8" height="44"/><rect class="mk-line" stroke-width="1.5" x="39" y="24" width="8" height="28"/><circle class="mk-acc" cx="56" cy="20" r="7"/>`,
         wave: `<path class="mk-line" stroke-width="2.5" d="M10 28v0M18 18v20M26 10v36M34 20v16M42 14v28M50 22v12"/><circle class="mk-acc" cx="62" cy="28" r="5"/>`,
         disc: `<circle cx="36" cy="28" r="22" class="mk-sand"/><circle cx="30" cy="30" r="10" class="mk-navy"/><rect class="mk-acc" x="46" y="10" width="9" height="9"/>`
+,
+        speaking: `<circle class="mk-sand" cx="36" cy="28" r="22"/><rect class="mk-navy" x="30" y="12" width="12" height="22"/><path class="mk-line" stroke-width="1.5" d="M22 30a14 14 0 0 0 28 0M36 44v8"/><circle class="mk-acc" cx="54" cy="14" r="5"/>`,
+        writing: `<rect class="mk-line" stroke-width="1.5" x="16" y="6" width="40" height="44"/><path class="mk-line" stroke-width="1.5" d="M24 18h24M24 26h24M24 34h14"/><rect class="mk-acc" x="42" y="36" width="8" height="8"/>`,
+        exam: `<circle class="mk-sand" cx="36" cy="28" r="22"/><path class="mk-navy" d="M18 48V28a18 18 0 0 1 36 0v20z"/><circle class="mk-acc" cx="36" cy="8" r="5"/>`,
+        suffix: `<circle class="mk-sand" cx="34" cy="28" r="22"/><rect class="mk-navy" x="12" y="20" width="30" height="24"/><rect class="mk-acc" x="42" y="26" width="16" height="12"/>`,
+        prefix: `<circle class="mk-sand" cx="38" cy="28" r="22"/><rect class="mk-navy" x="30" y="20" width="30" height="24"/><rect class="mk-acc" x="14" y="26" width="16" height="12"/>`
     };
     const THUMB_ALIAS = {
         review: 'ochre',
@@ -516,10 +522,16 @@ const Art = (function () {
         practise: 'half',
         decks: 'cards',
         verb: 'bars',
+        verbs: 'bars',
         grammar: 'half',
         translation: 'beam',
         vocabulary: 'disc',
-        listening: 'wave'
+        listening: 'wave',
+        'hu-suffix': 'suffix',
+        'hu-prefix': 'prefix',
+        'hu-morphology': 'disc',
+        'hu-verb': 'bars',
+        'hu-cultural-exam': 'exam'
     };
 
     function thumb(id, opts) {
