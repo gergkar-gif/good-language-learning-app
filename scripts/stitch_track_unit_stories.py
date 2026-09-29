@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
 """
-Stitch the 5 per-lesson world readings (01..05) of each B1 added-track unit
-into its single consolidated Library reading (stories/world/b1/b1-<slug>.json),
-with the main title set to the unit's title from curriculum/units/b1.json.
+Stitch the 5 per-lesson world readings (01..05) of each added-track unit
+into its single consolidated Library reading (stories/world/<level>/<stem>.json),
+with the main title set to the unit's title from curriculum/units/<level>.json.
 
 Applies to:
-  - es-latam (track: 'latam', 36 units)
-  - hu       (track: 'citizenship', 36 units)
-  - es-es    (track: 'cultura', 6 authored units so far)
+  - es-latam B1 (track: 'latam', 36 units)
+  - es-latam B2 (tracks: 'latam' + 'regional', 36 units each)
+  - hu       B1 (track: 'citizenship', 36 units)
+  - es-es    B1 (track: 'cultura', 6 authored units so far)
 """
 
 import json
@@ -15,10 +16,18 @@ import re
 from pathlib import Path
 
 
-def stitch_language_track(lang: str, track_id: str, lang_audio_code: str):
-    units_path = Path(f"content/{lang}/curriculum/units/b1.json")
-    lessons_dir = Path(f"content/{lang}/lessons/b1")
-    world_dir = Path(f"content/{lang}/stories/world/b1")
+def stitch_language_track(lang: str, level: str, track_id: str, lang_audio_code: str):
+    level_lc = level.lower()
+    units_path = Path(f"content/{lang}/curriculum/units/{level_lc}.json")
+    lessons_dir = Path(f"content/{lang}/lessons/{level_lc}")
+    world_dir = Path(f"content/{lang}/stories/world/{level_lc}")
+
+    if not units_path.exists():
+        print(f"{lang} {level} ({track_id}): no units file at {units_path}, skipping")
+        return
+    if not world_dir.exists():
+        print(f"{lang} {level} ({track_id}): no world dir at {world_dir}, skipping")
+        return
 
     units = json.loads(units_path.read_text(encoding="utf-8"))
     track_units = [u for u in units if u.get("track") == track_id]
@@ -30,7 +39,7 @@ def stitch_language_track(lang: str, track_id: str, lang_audio_code: str):
         if not stems:
             continue
 
-        # Collect the 5 lesson story files via the lesson files' story sections
+        # Collect the per-lesson story files via the lesson files' story sections
         segment_files = []
         for stem in stems:
             lesson_file = lessons_dir / f"{stem}.json"
@@ -47,9 +56,10 @@ def stitch_language_track(lang: str, track_id: str, lang_audio_code: str):
             # Skip unauthored stub units (e.g. es-es units 7..36)
             continue
 
-        # Find the corresponding combined story file in world_dir
+        # Find the corresponding combined story file in world_dir.
         # Derive slug from first stem: e.g. b1-independencia-01 -> b1-independencia
-        m = re.match(r"^(b1-[a-z0-9-]+)-\d{2}$", stems[0])
+        #                              or b2-amazoniapan-01 -> b2-amazoniapan
+        m = re.match(rf"^({level_lc}-[a-z0-9-]+)-\d{{2}}$", stems[0])
         if not m:
             print(f"  [WARN] Could not parse stem prefix from {stems[0]}")
             continue
@@ -57,13 +67,15 @@ def stitch_language_track(lang: str, track_id: str, lang_audio_code: str):
         combined_path = world_dir / f"{unit_prefix}.json"
 
         if not combined_path.exists():
-            # Check hyphen-insensitive or prefix fallback (e.g. b1-represionpolitica vs b1-represion-politica,
-            # or b1-eeuu vs b1-eeuu-latinoamerica, matching build-manifest.py's _apply_story_unit_families)
+            # Check hyphen-insensitive or prefix fallback (e.g. b1-represionpolitica vs
+            # b1-represion-politica, or b1-eeuu vs b1-eeuu-latinoamerica, matching
+            # build-manifest.py's _apply_story_unit_families)
             norm_target = unit_prefix.replace("-", "")
             candidates = [
-                f for f in world_dir.glob("b1-*.json")
-                if not re.search(r"-\d{2}(-|$)", f.stem)
-                and (f.stem.replace("-", "") == norm_target or f.stem.replace("-", "").startswith(norm_target))
+                f for f in world_dir.glob(f"{level_lc}-*.json")
+                if not re.search(r"-\d{2}(-|$)|-consolidation", f.stem)
+                and (f.stem.replace("-", "") == norm_target
+                     or f.stem.replace("-", "").startswith(norm_target))
             ]
             if candidates:
                 combined_path = candidates[0]
@@ -121,7 +133,7 @@ def stitch_language_track(lang: str, track_id: str, lang_audio_code: str):
         est_minutes = max(8, round(total_words / 110))
 
         combined["title"] = unit_title
-        combined["level"] = "B1"
+        combined["level"] = level.upper()
         combined["type"] = "world"
         combined["order"] = order_idx
         combined["estimatedMinutes"] = est_minutes
@@ -164,13 +176,17 @@ def stitch_language_track(lang: str, track_id: str, lang_audio_code: str):
         )
         updated_count += 1
 
-    print(f"{lang} ({track_id}): stitched {updated_count} consolidated unit stories")
+    print(f"{lang} {level} ({track_id}): stitched {updated_count} consolidated unit stories")
 
 
 def main():
-    stitch_language_track("es-latam", "latam", "es")
-    stitch_language_track("hu", "citizenship", "hu")
-    stitch_language_track("es-es", "cultura", "es")
+    # B1 tracks
+    stitch_language_track("es-latam", "b1", "latam", "es")
+    stitch_language_track("hu", "b1", "citizenship", "hu")
+    stitch_language_track("es-es", "b1", "cultura", "es")
+    # B2 tracks
+    stitch_language_track("es-latam", "b2", "latam", "es")
+    stitch_language_track("es-latam", "b2", "regional", "es")
 
 
 if __name__ == "__main__":

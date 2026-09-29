@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-29T00:00:00Z",
+  "title": "Design System: Parlour",
+  "extensions": {
+    "colorMeta": {
+      "cream-paper": {"role": "neutral", "displayName": "Cream Paper", "canonical": "#F5F1E8"},
+      "ink-navy": {"role": "primary", "displayName": "Ink Navy", "canonical": "#102A47"},
+      "vermilion": {"role": "secondary", "displayName": "Vermilion", "canonical": "#E94B16"}
+    },
+    "typographyMeta": {
+      "display": {"displayName": "Display (serif)", "purpose": "Titles and content headings."},
+      "body": {"displayName": "Body (sans)", "purpose": "Interface text and controls."}
+    },
+    "shadows": [
+      {"name": "shadow", "value": "0 1px 3px rgba(16, 42, 71, .06)", "purpose": "Defined but deliberately unused; the system is flat."}
+    ],
+    "motion": [
+      {"name": "dur-fast", "value": "180ms", "purpose": "Hover and border transitions."},
+      {"name": "dur-base", "value": "280ms", "purpose": "Standard state changes."},
+      {"name": "dur-slow", "value": "450ms", "purpose": "Larger reveals."},
+      {"name": "ease-standard", "value": "cubic-bezier(.4, 0, .2, 1)", "purpose": "Default easing."}
+    ],
+    "breakpoints": [
+      {"name": "phone", "value": "639px"},
+      {"name": "tablet", "value": "640px"},
+      {"name": "desktop", "value": "1024px"}
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button", "kind": "button", "refersTo": "button-primary",
+      "description": "Default filled action.",
+      "html": "<button class=\"ds-btn-primary\">Continue</button>",
+      "css": ".ds-btn-primary{background:#102A47;color:#fff;padding:12px 24px;border:none;border-radius:2px;font-size:16px;font-family:Inter,system-ui,sans-serif;cursor:pointer;transition:background 180ms cubic-bezier(.4,0,.2,1)}.ds-btn-primary:hover{background:#0A1D33}.ds-btn-primary:focus-visible{outline:2px solid #E94B16;outline-offset:2px}"
+    },
+    {
+      "name": "Accent Button", "kind": "button", "refersTo": "button-accent",
+      "description": "The single most important action on a screen.",
+      "html": "<button class=\"ds-btn-accent\">Start lesson</button>",
+      "css": ".ds-btn-accent{background:#E94B16;color:#fff;padding:12px 24px;border:none;border-radius:2px;font-size:16px;font-family:Inter,system-ui,sans-serif;cursor:pointer;transition:background 180ms cubic-bezier(.4,0,.2,1)}.ds-btn-accent:hover{background:#A8371C}.ds-btn-accent:focus-visible{outline:2px solid #E94B16;outline-offset:2px}"
+    },
+    {
+      "name": "Back Action", "kind": "button", "refersTo": "button-back",
+      "description": "Typographic action without a fill.",
+      "html": "<button class=\"ds-btn-back\">Back</button>",
+      "css": ".ds-btn-back{background:none;border:none;color:#3C5570;padding:6px 4px;font-size:14px;font-family:Inter,system-ui,sans-serif;cursor:pointer}.ds-btn-back:hover{color:#102A47}.ds-btn-back:focus-visible{outline:2px solid #E94B16;outline-offset:2px}"
+    },
+    {
+      "name": "Card", "kind": "card", "refersTo": "card",
+      "description": "Open container on cream with a hairline border.",
+      "html": "<div class=\"ds-card\"><h3>Unit 1</h3><p>Greetings</p></div>",
+      "css": ".ds-card{background:#F5F1E8;color:#102A47;border:1px solid rgba(16,42,71,.18);border-radius:4px;padding:16px;cursor:pointer;transition:border-color 180ms cubic-bezier(.4,0,.2,1)}.ds-card:hover{border-color:#102A47}.ds-card h3{margin:0 0 4px;font-family:'Source Serif 4',Georgia,serif;font-weight:600}.ds-card p{margin:0;color:#5A6B80;font-family:Inter,system-ui,sans-serif;font-size:14px}"
+    },
+    {
+      "name": "Geometry: Disc and Line", "kind": "custom",
+      "description": "Signature two-tone disc centred on a line, the preferred motif.",
+      "html": "<svg class=\"ds-geo\" viewBox=\"0 0 120 120\" width=\"96\" height=\"96\"><line x1=\"0\" y1=\"60\" x2=\"120\" y2=\"60\" stroke=\"#102A47\" stroke-width=\"1\"/><path d=\"M60 20a40 40 0 0 1 0 80z\" fill=\"#102A47\"/><path d=\"M60 20a40 40 0 0 0 0 80z\" fill=\"#E94B16\"/></svg>",
+      "css": ".ds-geo{display:block}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Composed Room",
+    "overview": "Parlour is a sparse, architectural room, not a dashboard. Space comes first, then typography, then one dominant geometric gesture, then small supporting details. Rows sit open on cream separated by hairlines; navy carries structure and vermilion is the one scarce voice. It rejects the gamified language-app look and the generic SaaS dashboard.",
+    "keyCharacteristics": [
+      "Warm cream ground, deep navy structure, one vermilion accent.",
+      "Serif for content, sans for chrome; system-font stacks.",
+      "Flat by default; depth from hairlines, wash tint and scale.",
+      "Sharp geometry: 2px and 4px radii.",
+      "Geometric primitives are functional objects.",
+      "Full dark theme."
+    ],
+    "rules": [
+      {"name": "The One Voice Rule", "body": "Vermilion is rationed for active or live states and focus.", "section": "colors"},
+      {"name": "The Paper Rule", "body": "Cards share the page's cream ground; white is for text on fills.", "section": "colors"},
+      {"name": "The No Gradient Rule", "body": "Flat fills only.", "section": "colors"},
+      {"name": "The Serif-For-Content Rule", "body": "Titles and content headings use the serif; chrome stays sans.", "section": "typography"},
+      {"name": "The Flat-By-Default Rule", "body": "No resting shadows; hover changes border colour.", "section": "elevation"}
+    ],
+    "dos": [
+      "Do lead each screen with space, type and at most one dominant geometric gesture.",
+      "Do separate rows with hairlines on cream.",
+      "Do ration Vermilion to active, live and focus states.",
+      "Do use the serif for titles and content, the sans for chrome.",
+      "Do keep a dark theme equivalent for every new colour and honour reduced motion.",
+      "Do show grammar forms as tables."
+    ],
+    "donts": [
+      "Don't use mascots, streak flames, confetti or glossy lifted cards.",
+      "Don't stack white shadowed cards or bolt illustrations onto a dashboard.",
+      "Don't add resting shadows, gradients or large radii.",
+      "Don't add geometric objects to fill emptiness.",
+      "Don't load webfonts.",
+      "Don't put running state in the header."
+    ]
+  }
+}

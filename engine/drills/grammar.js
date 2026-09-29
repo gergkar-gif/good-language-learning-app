@@ -116,7 +116,11 @@ const GrammarDriller = (function () {
     function _lessonPoolSize(moduleId) {
         const skillKey = _lessonSkillFor(moduleId);
         const entries = (_index && _index.bySkill && (_index.bySkill[skillKey] || _index.bySkill[moduleId])) || [];
-        return entries ? entries.length : 0;
+        // Apply the same reachedOnly filter that _buildPool uses when serving exercises,
+        // so the displayed count reflects what the driller would actually serve — not
+        // all entries across every level (which inflates counts for early learners).
+        const reached = _reachedOnly(entries);
+        return reached ? reached.length : 0;
     }
 
     function _formatFallbackTitle(skillId) {

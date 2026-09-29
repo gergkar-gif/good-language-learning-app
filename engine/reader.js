@@ -485,7 +485,8 @@ const STORY_TYPE_LABELS = {
 const TRACK_SHELF_LABELS = {
     latam: 'Latin America',
     citizenship: 'Citizenship',
-    cultura: 'Cultura y Ciudadanía'
+    cultura: 'Cultura y Ciudadanía',
+    regional: 'Regional'
 };
 
 // Shelf key for a story in a dual-track level's non-core track, else null.
@@ -526,20 +527,23 @@ const CEFR_LEVELS = ['A1', 'A2', 'B1', 'B2', 'C1'];
 const SEARCH_THRESHOLD = 15;
 
 // A 'world' story comes in two shapes: one short segment per lesson of its
-// unit (id ends in a numeric suffix, e.g. "story.b1.americalatinadosmil.03")
-// plus one "combined" version pulling all of them together for standalone
-// reading (no numeric suffix — see scripts/build_translation_index.py's
-// docstring and content/es/stories/world/b1/*.json for the schema). The
-// segments are meant to surface automatically inside their own lesson, not
-// to be discovered independently — showing all of them as separate Library
+// unit plus one "combined" version pulling them together for standalone
+// reading. B1 segments use dot-notation (e.g. "story.b1.americalatinadosmil.03");
+// B2/C1 segments use hyphen-notation (e.g. "b2-amazoniapan-01"). Both should
+// be hidden from the Library — showing all of them as separate Library
 // cards inflated ES B1's World shelf to 216 entries for what are really 36
 // readings. Filtering to the combined version only is scoped to type
 // 'world' specifically because other shelves (classics, original) also use
 // a trailing-number id ("story.b1.12") that means something different there
 // — a plain per-unit story, not a fragment of a larger one.
+// Consolidation stories (id ends in "-consolidation") are grammar exercises
+// embedded in their lesson, not standalone readings for the Library.
 function _isBrowsableStory(story) {
     if (story.type !== 'world') return true;
-    return !/\.\d+$/.test(story.id);
+    const id = story.id || '';
+    if (/[.\-]\d+$/.test(id)) return false;       // segment: story.b1.xxx.01 or b2-xxx-01
+    if (id.endsWith('-consolidation')) return false; // grammar consolidation lesson
+    return true;
 }
 
 // Deterministic disc mark per story, so the same book always looks the

@@ -622,7 +622,7 @@ def _lesson_id_to_unit(curriculum):
     return index
 
 
-_FAMILY_SUFFIX_RE = re.compile(r"\.\d+$")
+_FAMILY_SUFFIX_RE = re.compile(r"([.\-]\d+|-consolidation)$")
 
 
 def _story_unit_index(lang, curriculum):
