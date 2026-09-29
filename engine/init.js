@@ -219,7 +219,7 @@ function _drawNavIcons() {
     if (typeof Art === 'undefined') return;
     document.querySelectorAll('.nav button[data-icon]').forEach(btn => {
         const label = btn.textContent.trim();
-        btn.innerHTML = Art.icon(btn.dataset.icon) +
+        btn.innerHTML = (Art.navIcon ? Art.navIcon(btn.dataset.icon) : Art.icon(btn.dataset.icon)) +
             '<span class="nav-label">' + label + '</span>';
     });
     if (typeof Theme !== 'undefined') Theme.apply();
@@ -408,4 +408,4 @@ function _initServiceWorker() {
     }
 }
 
-document.addEventListener('DOMContentLoaded', initialiseApp);
+document.addEventListener('DOMContentLoaded', initialiseApp);

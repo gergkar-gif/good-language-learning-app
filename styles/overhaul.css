@@ -1,0 +1,391 @@
+/* ============================================
+   OVERHAUL — "The Composed Room"
+   Loaded after every other stylesheet. Rules here implement DESIGN.md (the
+   spec) and docs/overhaul-prototype/ (the reference). Where a rule here
+   matches an older selector it wins by load order, so the older rule can be
+   deleted once nothing depends on it.
+
+   Colour semantics (one meaning each, everywhere):
+     --accent   vermilion   here and now
+     --success  pine        finished or right
+     --danger   brick       wrong or needs redoing
+     --ochre    ochre       waiting for you (due, new)
+     --primary  navy        structure and ordinary content
+     --wash     sand        background, or locked and not yet
+============================================ */
+
+/* ---- Illustration classes (heroes, level marks, unit and story marks) ----
+   stroke-width is set per shape in the markup, so it is NOT set here. */
+.mk-sand     { fill: var(--wash); }
+.mk-navy     { fill: var(--primary); }
+.mk-line     { fill: none; stroke: var(--primary); }
+.mk-acc      { fill: var(--accent); }
+.mk-accline  { fill: none; stroke: var(--accent); }
+.mk-pine     { fill: var(--success); }
+.mk-pineline { fill: none; stroke: var(--success); }
+.mk-cream    { fill: var(--bg); }
+
+/* A mark's accent follows state. Hero art keeps the vermilion accent. */
+.art-mark { display: block; overflow: visible; }
+.art-mark .mk-acc { fill: var(--secondary); }
+.art-mark.is-done .mk-acc { fill: var(--success); }
+.art-mark.is-now .mk-acc { fill: var(--accent); }
+.art-mark.is-locked { opacity: .55; }
+
+.art-hero .rise {
+  transform-origin: 50% 100%;
+  transform-box: fill-box;
+  animation: heroRise 800ms cubic-bezier(.16, 1, .3, 1) both;
+}
+@keyframes heroRise {
+  from { transform: scaleY(.6); opacity: 0; }
+  to   { transform: none; opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .art-hero .rise { animation: none; }
+}
+
+/* ---- Page header: title beside the hero ---- */
+.page-header {
+  display: block;
+  min-height: 212px;
+  padding: 36px 0 0;
+}
+
+.page-header-text {
+  position: relative;
+  z-index: 1;
+}
+
+.page-header-title {
+  font-size: clamp(2.4rem, 11vw, 3.2rem);
+  line-height: .98;
+  letter-spacing: -0.02em;
+  max-width: 8em;
+  text-wrap: balance;
+}
+
+.page-header-sub {
+  margin-top: 12px;
+  max-width: 11.5em;
+}
+
+.page-header-art {
+  position: absolute;
+  top: 44px;
+  right: -16px;
+  width: 252px;
+  height: 184px;
+  max-height: none;
+  margin: 0;
+  grid-column: auto;
+}
+
+.page-header-actions {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+}
+
+@media (max-width: 420px) {
+  .page-header { padding-top: 32px; }
+  .page-header-title { font-size: clamp(2.2rem, 11vw, 2.6rem); }
+  .page-header-art { top: 40px; max-height: none; margin-top: 0; }
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .page-header-art { right: -24px; }
+}
+
+@media (min-width: 1024px) {
+  .page-header {
+    min-height: 330px;
+    padding-top: 64px;
+  }
+  .page-header-title { font-size: 4.4rem; }
+  .page-header-art {
+    top: 40px;
+    right: 0;
+    width: 380px;
+    height: 277px;
+  }
+}
+
+/* ---- Navigation ---- */
+.nav-icon {
+  width: 30px;
+  height: 30px;
+  display: block;
+  overflow: visible;
+  flex: none;
+}
+.nv-navy   { fill: currentColor; }
+.nv-line   { fill: none; stroke: currentColor; stroke-width: 1.6; }
+.nv-acc    { fill: currentColor; transform-box: fill-box; transition: transform 240ms cubic-bezier(.16, 1, .3, 1); }
+.nv-accline { fill: none; stroke: currentColor; stroke-width: 2; }
+
+/* Only the active or hovered item shows its accent, and it moves a little. */
+.nav button:hover .nv-acc,
+.nav button.active .nv-acc { fill: var(--accent); transform: translate(2px, -2px); }
+.nav button:hover .nv-accline,
+.nav button.active .nv-accline { stroke: var(--accent); }
+
+.nav button.active { color: var(--text); }
+
+/* Phone and tablet: a bottom bar with a heavy navy rule; the active item takes
+   a vermilion bar across the rule. In-lesson screens hide it (layout.css). */
+@media (max-width: 1023px) {
+  .nav {
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 500px;
+    margin: 0;
+    padding: 0 0 env(safe-area-inset-bottom, 0px);
+    border: 0;
+    border-top: 3px solid var(--primary);
+    background: var(--bg);
+  }
+
+  .nav-items {
+    height: 70px;
+    gap: 0;
+    justify-content: stretch;
+  }
+
+  .nav button {
+    justify-content: center;
+    gap: 6px;
+    padding: 0 1px;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--secondary);
+  }
+
+  .nav button .nav-icon { width: 30px; height: 30px; }
+
+  .nav button::after {
+    top: -3px;
+    bottom: auto;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--accent);
+    transform: scaleX(0);
+  }
+  .nav button.active::after { transform: scaleX(1); }
+
+  .content {
+    padding-bottom: calc(70px + 28px + env(safe-area-inset-bottom, 0px));
+  }
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .nav { max-width: 680px; }
+}
+
+/* Desktop: the sidebar keeps its structure; heavier edge, bold icons, and the
+   active item takes a 6px vermilion bar on its left. */
+@media (min-width: 1024px) {
+  .nav { border-right: 3px solid var(--primary); }
+  .nav button { font-weight: 500; color: var(--secondary); }
+  .nav button .nav-icon { width: 26px; height: 26px; }
+  .nav button:hover { background: none; color: var(--text); }
+  .nav button.active { background: none; color: var(--text); font-weight: 600; }
+  .nav button::after {
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 6px;
+    height: auto;
+    border-radius: 0;
+    background: var(--accent);
+    transform: scaleY(0);
+  }
+  .nav button.active::after { transform: scaleY(1); }
+}
+
+body.in-lesson .nav { display: none !important; }
+
+/* Floating controls clear the bottom bar on phone and tablet. */
+@media (max-width: 1023px) {
+  .br-flag-btn { bottom: calc(70px + 3px + 16px + env(safe-area-inset-bottom, 0px)); }
+  .story-substack-player { bottom: calc(70px + 3px + 16px + env(safe-area-inset-bottom, 0px)); }
+}
+
+/* ---- Row thumbnails ---- */
+.art-thumb { width: 72px; height: 56px; display: block; overflow: visible; flex: none; }
+.art-thumb .mk-acc { fill: var(--secondary); }
+.art-thumb .mk-accline { stroke: var(--secondary); }
+.art-thumb.is-due .mk-acc { fill: var(--ochre); }
+.art-thumb.is-due .mk-accline { stroke: var(--ochre-text); }
+
+/* ---- Home ----
+   One recommendation as an open block (no card), a navy button with a
+   vermilion rule running to the edge, quiet time options, three doors. */
+.hm-continue {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: 0;
+  border-radius: 0;
+  padding: 8px 0 0;
+  margin: 0;
+}
+.hm-continue:hover, .hm-continue.is-done:hover, .hm-continue.hm-nudge:hover { border-color: transparent; }
+
+.hm-eyebrow {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  letter-spacing: 0;
+  color: var(--muted);
+  margin: 0;
+}
+.hm-continue-title {
+  display: block;
+  font-size: clamp(1.55rem, 7vw, 1.9rem);
+  line-height: 1.1;
+  margin-top: 14px;
+}
+.hm-continue-sub { display: block; font-size: 15px; margin-top: 6px; }
+.hm-continue .hm-track { margin-top: 18px; height: 3px; background: var(--border); }
+.hm-fill { background: var(--primary); }
+.hm-count { display: block; margin-top: 8px; font-size: 13px; }
+
+.hm-continue-foot {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 20px -16px 0 0;
+}
+.hm-cta,
+.hm-cta-btn {
+  display: inline-block;
+  flex: none;
+  background: var(--primary);
+  color: var(--bg);
+  padding: 13px 20px;
+  border: 0;
+  border-radius: var(--radius-sm);
+  font: 600 15px/1 var(--font-ui);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 120ms linear, color 120ms linear;
+}
+.hm-continue:hover .hm-cta,
+.hm-cta-btn:hover { background: var(--accent); color: #fff; text-decoration: none; }
+.hm-continue:active .hm-cta,
+.hm-cta-btn:active { background: var(--primary-dark); }
+.hm-rule { flex: 1; height: 1.5px; background: var(--accent); position: relative; }
+.hm-rule::after {
+  content: "";
+  position: absolute;
+  right: 44px;
+  top: -4px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+.hm-nudge .hm-continue-foot { margin-right: 0; margin-top: 20px; flex-wrap: wrap; }
+
+.hm-budget-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px 14px;
+  padding: 0;
+  margin: 24px 0 0;
+  background: none;
+  border: 0;
+  border-radius: 0;
+}
+.hm-budget-label {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: var(--muted);
+}
+.hm-budget-pills { width: auto; justify-content: flex-start; gap: 6px; }
+.hm-budget-pill {
+  flex: none;
+  padding: 8px 11px;
+  border: 0;
+  border-radius: var(--radius-sm);
+  box-shadow: inset 0 0 0 1.5px var(--border);
+  background: none;
+  font: 600 13px/1 var(--font-ui);
+  color: var(--text);
+}
+.hm-budget-pill:hover { background: var(--primary); color: var(--bg); box-shadow: none; }
+
+.hm-sec {
+  font: 400 1.4rem/1 var(--font-display);
+  margin: 44px 0 6px;
+  color: var(--text);
+}
+.hm-rows { border-top: 1px solid var(--border); }
+.hm-row {
+  display: grid;
+  grid-template-columns: 1fr auto 72px;
+  gap: 14px;
+  align-items: center;
+  width: 100%;
+  padding: 14px 0;
+  background: none;
+  border: 0;
+  border-bottom: 1px solid var(--border);
+  border-radius: 0;
+  text-align: left;
+  cursor: pointer;
+  color: var(--text);
+}
+.hm-row-main { display: block; min-width: 0; }
+.hm-row-name { display: block; font: 400 1.25rem/1.1 var(--font-display); }
+.hm-row-desc { display: block; margin-top: 4px; font-size: 14px; color: var(--muted); }
+.hm-row:hover .hm-row-name { text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
+.hm-row-fact { text-align: right; }
+.hm-figure { display: block; font: 400 1.6rem/1 var(--font-display); color: var(--ochre-text); }
+.hm-row-fact small { display: block; margin-top: 3px; font: 500 12px/1.2 var(--font-ui); color: var(--muted); }
+
+/* Today: quiet, below the doors. */
+.today { margin: 40px 0 0; }
+.today-head { align-items: baseline; }
+.daily-activity { border: 0; box-shadow: inset 0 0 0 1.5px var(--border); }
+.daily-activity.is-done { box-shadow: inset 0 0 0 1.5px var(--success); color: var(--text); }
+.daily-activity.is-done .daily-activity-mark { color: var(--success); }
+
+.hm-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 22px;
+  margin-top: 36px;
+}
+.hm-topbar { margin: 0; justify-content: flex-start; }
+.hm-lang-chip { border: 0; padding: 0; background: none; }
+.hm-lang-label { text-transform: none; letter-spacing: 0; font-size: 13px; font-weight: 400; }
+.hm-lang-select { font-size: 13px; }
+.hm-guide-link { font-size: 14px; }
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .hm-continue-foot { margin-right: -24px; }
+}
+@media (min-width: 1024px) {
+  .hm-continue-foot { margin-right: 0; max-width: 520px; }
+  .hm-rule::after { right: 0; }
+}
+
+@media (max-width: 639px) {
+  .hm-budget-bar { flex-direction: row; align-items: center; justify-content: flex-start; text-align: left; gap: 10px 14px; }
+  .hm-budget-pills { width: auto; justify-content: flex-start; }
+  .hm-budget-pill { flex: none; padding: 8px 11px; }
+}

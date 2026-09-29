@@ -110,6 +110,11 @@ const Home = (function () {
         const levelTitle = step.title;
         const percent = step.total ? Math.round((step.done / step.total) * 100) : 0;
         const count = `${step.done} of ${step.total} ${plural(step.total, 'lesson')}`;
+        const foot = label => `
+            <span class="hm-continue-foot">
+                <span class="hm-cta">${label}</span>
+                <span class="hm-rule" aria-hidden="true"></span>
+            </span>`;
 
         if (step.kind === 'test') {
             const best = step.result
@@ -122,10 +127,8 @@ const Home = (function () {
                     <span class="hm-continue-title">${esc(level)} level test</span>
                     <span class="hm-continue-sub">${esc(best)}</span>
                     ${meter(percent)}
-                    <span class="hm-continue-foot">
-                        <span class="hm-count">${count}</span>
-                        <span class="hm-cta">Take the test →</span>
-                    </span>
+                    <span class="hm-count">${count}</span>
+                    ${foot('Take the test')}
                 </button>
             `;
         }
@@ -142,10 +145,8 @@ const Home = (function () {
                 <span class="hm-continue-title">${esc(lesson.title)}</span>
                 <span class="hm-continue-sub">${esc(sub)}</span>
                 ${meter(percent)}
-                <span class="hm-continue-foot">
-                    <span class="hm-count">${count}</span>
-                    <span class="hm-cta">${step.done ? 'Continue' : 'Begin'} →</span>
-                </span>
+                <span class="hm-count">${count}</span>
+                ${foot(step.done ? 'Resume lesson' : 'Begin')}
             </button>
         `;
     }
@@ -173,7 +174,7 @@ const Home = (function () {
                 <span class="hm-continue-foot">
                     <button class="hm-cta-btn" data-practice-scenario="${esc(item.id)}"
                         data-practice-driller="${esc(driller)}"
-                        data-unit-id="${esc(nudge.unit.id)}">${esc(cta)} →</button>
+                        data-unit-id="${esc(nudge.unit.id)}">${esc(cta)}</button>
                     <button class="dk-link-btn" data-skip-rec="1">Not now</button>
                 </span>
             </section>
@@ -191,7 +192,7 @@ const Home = (function () {
                 <span class="hm-continue-title">${esc(title)}</span>
                 <span class="hm-continue-sub">${esc(blurb)}</span>
                 <span class="hm-continue-foot">
-                    <button class="hm-cta-btn" data-rec-open="1">${esc(primaryLabel)} →</button>
+                    <button class="hm-cta-btn" data-rec-open="1">${esc(primaryLabel)}</button>
                     <button class="dk-link-btn" data-skip-rec="1">Not now</button>
                 </span>
             </section>
@@ -209,7 +210,7 @@ const Home = (function () {
                 <span class="hm-continue-title">${esc(elective.unit.title)}</span>
                 <span class="hm-continue-sub">From ${esc(elective.trackTitle)}, alongside the main course. Next up: ${esc(elective.lesson.title)}.</span>
                 <span class="hm-continue-foot">
-                    <button class="hm-cta-btn" data-rec-open="1">Start →</button>
+                    <button class="hm-cta-btn" data-rec-open="1">Start</button>
                     <button class="dk-link-btn" data-skip-rec="1">Not now</button>
                 </span>
             </section>
@@ -225,7 +226,7 @@ const Home = (function () {
                 <span class="hm-continue-title">Start with a review</span>
                 <span class="hm-continue-sub">It's been ${back.days} days. ${back.due} ${plural(back.due, 'word')} came due while you were away, and going through them first makes the next lesson easier.</span>
                 <span class="hm-continue-foot">
-                    <button class="hm-cta-btn" data-rec-open="1">Review ${back.due} ${plural(back.due, 'word')} →</button>
+                    <button class="hm-cta-btn" data-rec-open="1">Review ${back.due} ${plural(back.due, 'word')}</button>
                     <button class="dk-link-btn" data-skip-rec="1">Not now</button>
                 </span>
             </section>
@@ -430,6 +431,36 @@ const Home = (function () {
         `;
     }
 
+    // The three doors. Each is a door into the section that owns the work;
+    // only Review carries a figure, because a due count is what decides whether
+    // it is worth opening. Practise carries none: drill accuracy is never
+    // written down.
+    function exploreRows(deck) {
+        const due = deck && deck.due ? deck.due : 0;
+        const thumb = (id, opts) => (typeof Art !== 'undefined' && Art.thumb) ? Art.thumb(id, opts) : '';
+        const row = (attrs, name, desc, fact, art, cls) => `
+            <button class="hm-row${cls ? ' ' + cls : ''}" type="button" ${attrs}>
+                <span class="hm-row-main"><span class="hm-row-name">${name}</span><span class="hm-row-desc">${desc}</span></span>
+                <span class="hm-row-fact">${fact}</span>
+                ${art}
+            </button>`;
+        const reviewFact = due
+            ? `<span class="hm-figure">${due}</span><small>due today</small>`
+            : (deck && deck.size ? '<small>nothing due</small>' : '');
+        return `
+            <h2 class="hm-sec">Explore</h2>
+            <div class="hm-rows">
+                ${row(due ? 'data-review-all="1"' : 'data-go="review"', 'Review',
+                    due ? 'Words that have come due' : 'Your deck, and its decks',
+                    reviewFact, thumb('review', { due: !!due }), due ? 'is-due' : '')}
+                ${row('data-go="reader"', 'Read', 'Stories and your own texts', '', thumb('read'))}
+                ${row('data-go="drills"', 'Practise', 'Speak, write, drill a skill', '', thumb('practise'))}
+            </div>
+        `;
+    }
+
+    // Today's three activities
+
     // Today's three activities and the streak they keep. Streamlined to keep
     // Home calm and focused: daily trio status and interactive activity chips.
     function todayStrip() {
@@ -632,18 +663,18 @@ const Home = (function () {
         } catch (err) {}
 
         host.innerHTML = `
-            ${courseBlock()}
             ${rec.primary.kind === 'welcome-back' ? welcomeBackCard(rec.primary)
                 : rec.primary.kind === 'unit-nudge' ? practiceNudgeCard(rec.primary)
                 : rec.primary.kind === 'mini-game' ? miniGameCard(rec.primary)
                 : rec.primary.kind === 'elective' ? electiveCard(rec.primary)
                 : continueCard(rec.primary.step)}
             ${quickBudgetBar()}
-            ${rec.primary.kind === 'welcome-back' ? '' : reviewAlert(deck)}
+            ${exploreRows(deck)}
             ${todayStrip()}
-            <p class="hm-guide-row">
+            <div class="hm-footer">
+                ${courseBlock()}
                 <button type="button" class="hm-guide-link" data-open-guide-modal="1">How Parlour works</button>
-            </p>
+            </div>
             ${recStatsPanel()}
         `;
         RecommendationEngine.noteShown(rec.primary);
