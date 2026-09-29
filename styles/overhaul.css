@@ -1604,3 +1604,35 @@ body:has(.dkb-game) .content, body:has(.dkb-lobby) .content, body:has(.dkb-done)
 .sp-card-custom, .sp-prompt-grid .sp-card-custom { border-left: 0; border-right: 0; border-radius: 0; padding: 16px 0; background: none; }
 .sp-prompt-grid .wk-card { padding-left: 0; padding-right: 0; }
 .sp-setup-sub, .sp-prod-lead, .gd-hint { line-height: 1.6; margin-bottom: 10px; }
+
+/* ============================================
+   PLACEMENT DIAGNOSTIC: questions, transitions and the verdict
+============================================ */
+.diag-question-card, .diag-transition-card, .diag-debrief-card, .diag-result-card { background: none; border: 0; border-radius: 0; box-shadow: none; padding: 8px 0 0; }
+.diag-tier-pill { background: none; box-shadow: inset 0 0 0 1.5px var(--primary); color: var(--text); border: 0; border-radius: var(--radius-sm); text-transform: none; letter-spacing: 0; font-weight: 600; }
+.diag-tier-info { border-bottom: 1px solid var(--primary); }
+.diag-tier-name { font: 400 1.7rem/1.15 var(--font-display); letter-spacing: -0.01em; }
+.diag-prompt-box { background: none; border: 0; border-top: 1.5px solid var(--primary); border-radius: 0; padding: 18px 0 0; margin: 22px 0 24px; }
+.diag-sentence { font-size: 1.5rem; color: var(--text); }
+.diag-blank { color: var(--accent-text); border-bottom-color: var(--accent); }
+.diag-situational-prompt { background: none; border-left: 0; border-top: 1.5px solid var(--primary); border-radius: 0; padding: 14px 0 0; }
+.diag-situational-label { color: var(--accent-text); text-transform: none; letter-spacing: .02em; font-size: 13px; }
+.diag-text-input { border: 0; border-radius: var(--radius-sm); box-shadow: inset 0 0 0 1.5px var(--border); background: none; }
+.diag-text-input:focus { box-shadow: inset 0 0 0 2px var(--primary); }
+.diag-opt-btn { border: 0; border-radius: var(--radius-sm); box-shadow: inset 0 0 0 1.5px var(--border); background: none; color: var(--text); }
+.diag-opt-btn:hover { background: none; box-shadow: inset 0 0 0 1.5px var(--primary); }
+.diag-opt-btn.selected { box-shadow: inset 0 0 0 2px var(--primary); background: var(--wash); }
+.diag-opt-letter { border: 0; box-shadow: inset 0 0 0 1.5px var(--muted); border-radius: var(--radius-sm); background: none; color: var(--muted); }
+.diag-opt-btn.selected .diag-opt-letter { background: none; box-shadow: inset 0 0 0 1.5px var(--primary); color: var(--primary); }
+.diag-nav-bar { border-top: 1px solid var(--border); }
+.diag-transition-card { text-align: left; }
+.diag-transition-score { color: var(--text); font: 400 1.3rem/1.3 var(--font-display); }
+.diag-verdict-banner { background: none; border: 0; border-top: 3px solid var(--success); border-radius: 0; text-align: left; padding: 18px 0 8px; }
+.diag-verdict-eyebrow { text-transform: none; letter-spacing: .02em; color: var(--success); font-weight: 600; font-size: 14px; }
+.diag-verdict-title { color: var(--text); font: 400 clamp(2rem, 8vw, 2.7rem)/1.08 var(--font-display); letter-spacing: -0.02em; }
+.diag-verdict-level-pill { background: none; color: var(--text); box-shadow: inset 0 0 0 1.5px var(--primary); border: 0; border-radius: var(--radius-sm); }
+.diag-tiers-summary { gap: 0; border-top: 1px solid var(--primary); }
+.diag-tier-summary-item { background: none; border: 0; border-bottom: 1px solid var(--border); border-radius: 0; padding: 14px 0; }
+.diag-tier-summary-item.passed, .diag-tier-summary-item.developing { border-left: 0; border-top: 0; }
+.diag-ts-badge, .diag-tier-summary-item.passed .diag-ts-badge { background: none; box-shadow: none; padding: 0; text-transform: none; letter-spacing: 0; font-size: 13px; color: var(--muted); border: 0; }
+.diag-tier-summary-item.passed .diag-ts-badge { color: var(--success); }
