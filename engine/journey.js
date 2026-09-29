@@ -616,7 +616,7 @@ const Journey = (function () {
             day.setDate(day.getDate() - i);
             const key = day.toISOString().slice(0, 10);
             const active = (typeof isStreakDay === 'function') && isStreakDay(key);
-            cells.push(`<i class="${i === 0 ? 'today' : active ? 'on' : ''}${i === 0 && active ? ' on' : ''}"></i>`);
+            cells.push(`<i class="${active ? 'on' : ''}${i === 0 ? ' is-today' : ''}"></i>`);
         }
         const rank = (typeof getRank === 'function') ? getRank() : null;
         const side = ['Best ' + d.bestStreak + (d.bestStreak === 1 ? ' day' : ' days')]

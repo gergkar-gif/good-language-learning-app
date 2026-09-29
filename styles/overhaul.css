@@ -869,12 +869,12 @@ body.in-lesson .nav { display: none !important; }
 .jr-dgrid { display: grid; grid-template-columns: repeat(15, minmax(0, 1fr)); gap: 5px; margin-top: 18px; max-width: 30em; }
 .jr-dgrid i { width: 100%; height: auto; aspect-ratio: 1; min-width: 0; display: block; background: var(--border); border-radius: 1px; }
 .jr-dgrid i.on { background: var(--primary); }
-.jr-dgrid i.today { box-shadow: 0 0 0 2px var(--bg), 0 0 0 3.5px var(--accent); }
+.jr-dgrid i.is-today { box-shadow: 0 0 0 2px var(--bg), 0 0 0 3.5px var(--accent); }
 .jr-link { background: none; border: 0; padding: 0; font: inherit; color: var(--muted); text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; cursor: pointer; }
 .jr-link:hover { color: var(--text); }
 
 .jr-mountain { margin: 38px 0 0; }
-.jr-mt { display: block; width: 100%; max-width: 640px; height: auto; overflow: visible; }
+.jr-mt { display: block; width: 100%; max-width: 520px; height: auto; overflow: visible; }
 .jr-mt-label { font: 400 22px/1 var(--font-display); fill: var(--text); }
 .jr-mt-label.is-todo { fill: var(--muted); }
 .jr-mt-label.is-now { font-size: 26px; text-decoration: underline; }
