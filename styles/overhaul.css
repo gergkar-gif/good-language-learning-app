@@ -1359,3 +1359,29 @@ body:has(#leveltest:not(.hidden)) .content { padding-bottom: 96px; max-width: 10
 .hce-mcq-exp { border-top-color: var(--success); }
 .sp-coach-note-card, .sp-briefing-goal, .sp-card-competency { border-top-color: var(--accent); }
 .offline-banner { border-left: 0; }
+
+/* ============================================
+   TOKENS THE OLD CSS EXPECTED
+   Cards were white and a few tokens were never defined, so they fell back to
+   white or to the browser's grey. In this design nothing sits on a white fill.
+============================================ */
+:root {
+  --card-bg: var(--bg);
+  --bg-card: var(--bg);
+  --bg-hover: var(--wash);
+  --bg-subtle: var(--wash);
+  --surface-alt: var(--wash);
+  --radius-md: var(--radius);
+  --radius-lg: var(--radius);
+  --text-heading: var(--text);
+  --ink-secondary: var(--muted);
+}
+
+/* Blast and the other deck games are focus screens too */
+body:has(.dkb-game) .nav, body:has(.dkb-lobby) .nav, body:has(.dkb-done) .nav { display: none !important; }
+body:has(.dkb-game) .page-header, body:has(.dkb-lobby) .page-header, body:has(.dkb-done) .page-header { display: none !important; }
+body:has(.dkb-game) .app, body:has(.dkb-lobby) .app, body:has(.dkb-done) .app { display: block !important; max-width: 680px; margin: 0 auto; padding: 0 20px; }
+body:has(.dkb-game) .content, body:has(.dkb-lobby) .content, body:has(.dkb-done) .content { padding-bottom: 96px; }
+@media (max-width: 1023px) {
+  body:has(.dkb-game) .br-flag-btn, body:has(.dkb-lobby) .br-flag-btn, body:has(.dkb-done) .br-flag-btn { bottom: calc(16px + env(safe-area-inset-bottom, 0px)); }
+}
