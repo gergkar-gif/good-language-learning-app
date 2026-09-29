@@ -1546,3 +1546,10 @@ body:has(.dkb-game) .content, body:has(.dkb-lobby) .content, body:has(.dkb-done)
 .lsn-vocab-add:hover { box-shadow: inset 0 0 0 1.5px var(--primary); background: none; }
 .gg-topic-num { border: 0; box-shadow: inset 0 0 0 1.5px var(--primary); border-radius: var(--radius-sm); background: none; color: var(--text); }
 .gg-topic-title { font: 400 1.3rem/1.2 var(--font-display); }
+
+/* My Texts: the analysis is an open section under a navy rule; its coverage is a figure */
+.lt-analysis { background: none; border: 0; border-top: 3px solid var(--primary); border-radius: 0; padding: 18px 0 0; margin-top: 24px; }
+.lt-analysis-headline { font: 400 1.05rem/1.3 var(--font-display); color: var(--text); }
+.lt-analysis-line { color: var(--muted); }
+.lt-analysis-coverage { font: 400 2.2rem/1.1 var(--font-display); letter-spacing: -0.02em; margin: 14px 0 8px; color: var(--text); }
+.lt-analysis-breakdown { list-style: none; padding: 0; color: var(--muted); font-size: 14px; }
