@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Parlour overhaul prototype: The Composed Room</title>
+<link rel="stylesheet" href="overhaul.css">
+</head>
+<body>
+<div class="mock" id="mock">
+  <label>Screen <select id="screen"></select></label>
+  <button type="button" id="layout">Layout: auto</button>
+  <button type="button" id="theme">Dark</button>
+</div>
+<div class="stage" id="stage">
+  <div class="device" id="device">
+    <nav class="nav" id="nav" aria-label="Sections"></nav>
+    <main class="scroller" id="scroller"><div class="page" id="page"></div></main>
+  </div>
+</div>
+<script src="screens.js"></script>
+</body>
+</html>

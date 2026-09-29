@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Door, deconstructed</title>
+<style>
+  :root { --cream:#F5F1E8; --sand:#E9DFC9; --navy:#102A47; --muted:#55677D; --vermilion:#E94B16; --hair:rgba(16,42,71,.16); --serif: 'Source Serif 4', Charter, Georgia, serif; --sans: Inter, 'Segoe UI', system-ui, sans-serif; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--cream); color: var(--navy); font: 15px/1.4 var(--sans); padding: 24px 20px 60px; }
+  h1 { font: 400 2rem/1 var(--serif); margin: 0 0 6px; }
+  p.l { color: var(--muted); margin: 0 0 24px; max-width: 42em; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 30px 24px; }
+  .c { border-top: 3px solid var(--navy); padding-top: 10px; }
+  .c b { font: 400 1.25rem/1 var(--serif); display: block; }
+  .c span.d { color: var(--muted); font-size: 13px; display: block; margin: 4px 0 10px; }
+  .hero { width: 100%; max-width: 340px; height: auto; display: block; box-shadow: inset 0 0 0 1px var(--hair); }
+  .ic { display: flex; align-items: center; gap: 22px; margin-top: 12px; }
+  .ic svg { display: block; overflow: visible; }
+  .ic small { color: var(--muted); font-size: 12px; }
+  .sand { fill: var(--sand); } .n { fill: var(--navy); } .nl { fill: none; stroke: var(--navy); } .v { fill: var(--vermilion); }
+</style>
+</head>
+<body>
+<h1>The door, deconstructed</h1>
+<p class="l">Variant 7 broken into parts: a free wedge for the leaf, the frame reduced to a hinge line and lintel, the swing of the door as a hairline arc, a floating knob. Three arrangements, each at hero size and as the nav icon at three sizes.</p>
+<div class="grid" id="g"></div>
+<script>
+  var H = [
+    { t: 'A · Wedge and swing', d: 'The wedge stands on its hinge line. The swing arc sweeps out from the hinge, the lintel is a short line, and the hypotenuse runs on as an axis.',
+      hero: '<circle class="sand" cx="184" cy="72" r="64"/>' +
+        '<path class="nl" stroke-width="1.2" d="M128 62A108 108 0 0 1 236 170"/>' +
+        '<path class="n" d="M128 62V170H202z"/>' +
+        '<path class="nl" stroke-width="2" d="M128 24V170M128 62H236"/>' +
+        '<path class="nl" stroke-width="1.2" d="M202 170 100 24"/>' +
+        '<circle class="v" cx="149" cy="142" r="6"/>' +
+        '<path class="nl" stroke-width="1.2" d="M20 170h232"/>',
+      icon: '<path class="nl" stroke-width="1.5" d="M8 3V29"/><path class="n" d="M8 7V29H24z"/><path class="nl" stroke-width="1.2" d="M8 5A24 24 0 0 1 30 29"/><circle class="v" cx="12.5" cy="23" r="2.2"/>' },
+    { t: 'B · Floating parts', d: 'Everything detached: the wedge floats off its hinge line, the knob sits in the light above it, a small navy square marks the threshold.',
+      hero: '<circle class="sand" cx="176" cy="70" r="70"/>' +
+        '<path class="nl" stroke-width="1.2" d="M120 58A112 112 0 0 1 232 170"/>' +
+        '<path class="nl" stroke-width="2" d="M120 26V170"/>' +
+        '<path class="n" d="M136 66V170H206z"/>' +
+        '<circle class="v" cx="178" cy="112" r="6.5"/>' +
+        '<rect class="n" x="214" y="146" width="16" height="24"/>' +
+        '<path class="nl" stroke-width="1.2" d="M20 170h232"/>',
+      icon: '<path class="nl" stroke-width="1.5" d="M6 3V29"/><path class="n" d="M11 8V29H26z"/><circle class="v" cx="21" cy="14" r="2.4"/><path class="nl" stroke-width="1.2" d="M6 4A24 24 0 0 1 30 29"/>' },
+    { t: 'C · Point on the circle', d: 'Two concentric arcs, the wedge overlapping the light, and the knob as a point riding on the arc, Kandinsky-style.',
+      hero: '<circle class="sand" cx="150" cy="104" r="72"/>' +
+        '<path class="nl" stroke-width="1.2" d="M128 62A108 108 0 0 1 236 170"/>' +
+        '<path class="nl" stroke-width="1.2" d="M128 100A70 70 0 0 1 198 170"/>' +
+        '<path class="n" d="M128 62V170H206z"/>' +
+        '<path class="nl" stroke-width="2" d="M128 30V170"/>' +
+        '<circle class="v" cx="204.5" cy="94.6" r="7"/>' +
+        '<path class="nl" stroke-width="1.2" d="M20 170h232"/>',
+      icon: '<path class="nl" stroke-width="1.5" d="M7 3V29"/><path class="n" d="M7 7V29H24z"/><path class="nl" stroke-width="1.2" d="M7 4A25 25 0 0 1 30 29"/><circle class="v" cx="26.3" cy="12.4" r="2.6"/>' }
+  ];
+  document.getElementById('g').innerHTML = H.map(function (v) {
+    var hero = '<svg class="hero" viewBox="0 0 252 184">' + v.hero + '</svg>';
+    var icon = function (s) { return '<svg width="' + s + '" height="' + s + '" viewBox="0 0 32 32">' + v.icon + '</svg>'; };
+    return '<div class="c"><b>' + v.t + '</b><span class="d">' + v.d + '</span>' + hero + '<div class="ic">' + icon(44) + icon(30) + icon(22) + '<small>nav icon, 3 sizes</small></div></div>';
+  }).join('');
+</script>
+</body>
+</html>
