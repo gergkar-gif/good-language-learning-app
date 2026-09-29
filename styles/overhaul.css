@@ -855,3 +855,67 @@ body.in-lesson .nav { display: none !important; }
 .review-rate-label { font-weight: 600; }
 .review-rate-time { opacity: .85; }
 .review-empty-title { font-family: var(--font-display); font-weight: 400; }
+
+/* ============================================
+   JOURNEY
+   The streak, one mountain, a short list of rows; the older readings open as
+   views of their own, styled as open sections.
+============================================ */
+.jr-consistency { margin: 8px 0 0; }
+.jr-cline { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+.jr-big { font: 400 2.6rem/1 var(--font-display); letter-spacing: -0.02em; margin-bottom: 0; color: var(--text); }
+.jr-of { font: 400 1.05rem/1.2 var(--font-ui); letter-spacing: 0; color: var(--muted); margin-left: 4px; }
+.jr-cside { font-size: 13px; color: var(--muted); white-space: nowrap; }
+.jr-dgrid { display: grid; grid-template-columns: repeat(15, minmax(0, 1fr)); gap: 5px; margin-top: 18px; max-width: 30em; }
+.jr-dgrid i { width: 100%; height: auto; aspect-ratio: 1; min-width: 0; display: block; background: var(--border); border-radius: 1px; }
+.jr-dgrid i.on { background: var(--primary); }
+.jr-dgrid i.today { box-shadow: 0 0 0 2px var(--bg), 0 0 0 3.5px var(--accent); }
+.jr-link { background: none; border: 0; padding: 0; font: inherit; color: var(--muted); text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; cursor: pointer; }
+.jr-link:hover { color: var(--text); }
+
+.jr-mountain { margin: 38px 0 0; }
+.jr-mt { display: block; width: 100%; max-width: 640px; height: auto; overflow: visible; }
+.jr-mt-label { font: 400 22px/1 var(--font-display); fill: var(--text); }
+.jr-mt-label.is-todo { fill: var(--muted); }
+.jr-mt-label.is-now { font-size: 26px; text-decoration: underline; }
+.jr-mt-sum { margin-top: 6px; font: 400 1.05rem/1.2 var(--font-display); color: var(--muted); }
+
+.jr-nav-rows { margin-top: 30px; border-top: 1px solid var(--primary); }
+.jr-nav-row {
+  display: grid;
+  grid-template-columns: 1fr auto 20px;
+  gap: 12px;
+  align-items: center;
+  width: 100%;
+  padding: 18px 0;
+  text-align: left;
+  background: none;
+  border: 0;
+  border-bottom: 1px solid var(--border);
+  border-radius: 0;
+  cursor: pointer;
+  color: var(--text);
+}
+.jr-nav-label { font: 400 1.3rem/1.1 var(--font-display); }
+.jr-nav-value { font: 500 13.5px/1 var(--font-ui); color: var(--muted); text-align: right; }
+.jr-nav-value.is-good { color: var(--success); font-weight: 600; }
+.jr-nav-chev { width: 9px; height: 9px; border-right: 1.5px solid var(--muted); border-top: 1.5px solid var(--muted); transform: rotate(45deg); justify-self: end; transition: transform 160ms cubic-bezier(.16, 1, .3, 1); }
+.jr-nav-row:hover .jr-nav-label { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 5px; }
+.jr-nav-row:hover .jr-nav-chev { transform: rotate(45deg) translate(2px, -2px); }
+
+/* Detail views: the older readings as open sections */
+.jr-back { background: none; border: 0; padding: 0; margin: 0 0 8px; font-size: 14px; color: var(--muted); cursor: pointer; }
+.jr-back:hover { color: var(--text); }
+.jr-detail-title { font: 400 clamp(2rem, 9vw, 2.7rem)/1.05 var(--font-display); letter-spacing: -0.02em; margin: 0 0 8px; }
+.jr-card { border-top: 1px solid var(--border); padding-top: 26px; margin-top: 26px; }
+.jr-card:first-child { border-top: 0; padding-top: 0; margin-top: 8px; }
+.jr-card-head h3 { font: 400 1.4rem/1.1 var(--font-display); color: var(--text); }
+.jr-fill { background: var(--primary); }
+.jr-track { height: 3px; }
+.jr-row-clickable:hover { background: none; }
+.jr-row-clickable:hover .jr-row-label { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+.jr-milestone.is-reached .jr-tick { color: var(--success); border-color: var(--success); }
+.jr-cando-chip.chip-verified { color: var(--success); }
+.jr-cando-chip.chip-gap, .jr-cando-chip.chip-review { color: var(--ochre-text); }
+.jr-theme-option.active { box-shadow: inset 0 0 0 2px var(--primary); }
+.jr-theme-hint { font-size: 13px; }
