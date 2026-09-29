@@ -1448,3 +1448,8 @@ body:has(.dkb-game) .content, body:has(.dkb-lobby) .content, body:has(.dkb-done)
 .sp-level-pill,
 [data-theme="dark"] .sp-level-pill,
 :root:not([data-theme="light"]) .sp-level-pill { background: none; color: var(--text); border: 0; }
+
+/* Lesson header: serif title, outlined close and sound controls */
+.lesson-header h2 { font: 400 1.5rem/1.1 var(--font-display); letter-spacing: -0.01em; color: var(--text); }
+.lesson-close-btn, .lesson-sound-btn { border: 0; box-shadow: inset 0 0 0 1.5px var(--border); border-radius: var(--radius-sm); background: none; }
+.lesson-close-btn:hover, .lesson-sound-btn:hover { box-shadow: inset 0 0 0 1.5px var(--primary); background: none; }
