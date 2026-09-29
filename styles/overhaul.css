@@ -1522,3 +1522,17 @@ body:has(.dkb-game) .content, body:has(.dkb-lobby) .content, body:has(.dkb-done)
 .dk-direction > .dk-direction-label:first-child { text-align: right; }
 .dk-direction > .dk-direction-label:last-child { text-align: left; }
 .dk-direction .geo-toggle { margin: 6px 0; }
+
+/* Swipe cue on the review card: the outline turns brick (left, Again) or pine
+   (right, Good) and a word names the rating as you drag. */
+.review-card { position: relative; }
+.review-card[data-swipe="again"] { box-shadow: inset 0 0 0 2.5px var(--danger); background: var(--danger-bg); }
+.review-card[data-swipe="good"] { box-shadow: inset 0 0 0 2.5px var(--success); background: var(--success-bg); }
+.review-card[data-swipe]::after {
+  position: absolute;
+  top: 14px;
+  font: 400 1.15rem/1 var(--font-display);
+  pointer-events: none;
+}
+.review-card[data-swipe="again"]::after { content: "Again"; right: 16px; color: var(--danger); }
+.review-card[data-swipe="good"]::after { content: "Good"; left: 16px; color: var(--success); }
