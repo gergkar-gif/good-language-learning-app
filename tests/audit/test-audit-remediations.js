@@ -144,6 +144,11 @@ assert.strictEqual(Object.keys(Lessons.contentCache).length, 0, 'contentCache mu
 assert.strictEqual(Srs.getDeck().length, 1, 'SRS deck should reload for new language');
 assert.strictEqual(Srs.getDeck()[0].spanish, 'kutya', 'SRS deck should load Hungarian cards');
 assert.strictEqual(LevelTest.hasTest('B1'), true, 'LevelTest.hasTest(B1) must be true when language is hu');
+
+// Switch language to es-latam
+currentLang = 'es-latam';
+assert.strictEqual(LevelTest.hasTest('B1'), true, 'LevelTest.hasTest(B1) must be true when language is es-latam');
+assert.strictEqual(LevelTest.hasTest('B2'), true, 'LevelTest.hasTest(B2) must be true when language is es-latam');
 console.log('[PASS] Language switch clears content cache and reloads language-scoped deck.');
 
 // ----------------------------------------

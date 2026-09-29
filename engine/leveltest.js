@@ -42,11 +42,14 @@ const LevelTest = (function () {
         if (!level || typeof level !== 'string') return false;
         const norm = level.toUpperCase();
         if (norm === 'A1' || norm === 'A2') return true;
+        const lang = (typeof Lang !== 'undefined' && typeof Lang.current === 'function')
+            ? Lang.current()
+            : ((typeof Lang !== 'undefined' && typeof Lang.code === 'function') ? Lang.code() : 'es');
         if (norm === 'B1') {
-            const lang = (typeof Lang !== 'undefined' && typeof Lang.current === 'function')
-                ? Lang.current()
-                : ((typeof Lang !== 'undefined' && typeof Lang.code === 'function') ? Lang.code() : 'es');
-            return lang === 'hu';
+            return lang === 'hu' || lang === 'es-latam' || lang === 'es-es';
+        }
+        if (norm === 'B2') {
+            return lang === 'es-latam';
         }
         return false;
     }
