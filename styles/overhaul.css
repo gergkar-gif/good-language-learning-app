@@ -1404,3 +1404,33 @@ body:has(.dkb-game) .content, body:has(.dkb-lobby) .content, body:has(.dkb-done)
 .cando-portfolio-sheet .sp-studio-tab { flex: none; }
 .cando-portfolio-sheet .sp-studio-nav { flex-shrink: 0; margin-bottom: 14px; }
 .cando-portfolio-sheet .cando-scroll-body { min-height: 0; }
+
+/* ============================================
+   SPEAKING AND WRITING STUDIOS
+   The record disc is vermilion with a hairline ring; it is live, so it is
+   the one place vermilion is a control. Prompt cards are open, ruled sections.
+============================================ */
+.sp-mic-btn,
+[data-theme="dark"] .sp-mic-btn,
+:root:not([data-theme="light"]) .sp-mic-btn {
+  width: 96px;
+  height: 96px;
+  background: var(--accent);
+  border: 0;
+  color: var(--bg);
+  box-shadow: 0 0 0 5px var(--bg), 0 0 0 6.5px var(--accent);
+  margin: 8px 0 14px;
+}
+.sp-mic-btn:hover { transform: none; }
+.sp-mic-btn .icon, .sp-mic-btn svg { color: var(--bg); stroke: var(--bg); }
+.sp-mic-btn .icon .ink-line, [data-theme="dark"] .sp-mic-btn .icon .ink-line,
+:root:not([data-theme="light"]) .sp-mic-btn .icon .ink-line { stroke: var(--bg); }
+.sp-mic-btn.sp-recording { background: var(--accent-text); animation: none; }
+.sp-mic-status { font: 400 1.05rem/1.2 var(--font-display); color: var(--muted); }
+.sp-prompt-card { background: none; border: 0; border-top: 1.5px solid var(--primary); border-radius: 0; padding: 18px 0 8px; box-shadow: none; }
+.sp-es-text, .sp-es-lead { font-weight: 400; font-size: 1.6rem; letter-spacing: -0.01em; }
+.sp-eyebrow { text-transform: none; letter-spacing: .02em; font-size: 13px; }
+.sp-listen-btn { border: 0; box-shadow: inset 0 0 0 1.5px var(--border); }
+.sp-listen-btn:hover { box-shadow: inset 0 0 0 1.5px var(--primary); background: none; }
+.sp-session-quit, .sp-cant-speak-btn { color: var(--muted); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+.sp-progress-text { color: var(--muted); }
