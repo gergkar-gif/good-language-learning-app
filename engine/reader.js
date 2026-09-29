@@ -2125,18 +2125,24 @@ window.Reader = {
         // work/author fields as classics, but the line names the source
         // publication (story.source) instead of implying a book.
         const isCurrent = story.type === 'current';
-        if ((isClassic || isCurrent) && story.work) {
-            html += '<p class="story-attribution">Adapted from ' +
-                (isCurrent && story.source ? self.escapeHtml(story.source) + ': ' : '') +
-                '<em>' + self.escapeHtml(story.work) + '</em>' +
-                (story.author ? ' by ' + self.escapeHtml(story.author) : '') +
-            '</p>';
-        } else if (!isClassic && !isCurrent && story.unit) {
+        if ((isClassic || isCurrent) && (story.work || story.author)) {
+            let adapted = 'Adapted from ';
+            if (isCurrent && story.source) adapted += self.escapeHtml(story.source) + ': ';
+            if (story.work) adapted += '<em>' + self.escapeHtml(story.work) + '</em>';
+            if (story.work && story.author) adapted += ' by ';
+            if (story.author) adapted += self.escapeHtml(story.author);
+            if (story.unit) {
+                adapted += ' · Reading for Level ' + self.escapeHtml(story.level) +
+                    ', Unit ' + self.escapeHtml(String(story.unit.label)) +
+                    ': ' + self.escapeHtml(story.unit.title);
+            }
+            html += '<p class="story-attribution">' + adapted + '</p>';
+        } else if (story.unit) {
             html += '<p class="story-attribution">This is the reading for Level ' +
                 self.escapeHtml(story.level) + ', Unit ' + self.escapeHtml(String(story.unit.label)) +
                 ': ' + self.escapeHtml(story.unit.title) +
             '</p>';
-        } else if (!isClassic && !isCurrent) {
+        } else {
             html += '<p class="story-attribution">This is a Level ' + self.escapeHtml(story.level) + ' reading.</p>';
         }
 
