@@ -1115,3 +1115,51 @@ body.in-lesson .nav { display: none !important; }
 .jr-tick { border-radius: 0; }
 .hce-cat-block, .sp-results-xp { border-radius: var(--radius-sm); }
 .gd-select-panel { box-shadow: none; outline: 1px solid var(--border); }
+
+/* ============================================
+   FOCUS SCREENS
+   Drillers, studios, review sessions and level tests take the whole screen:
+   no navigation, no hero. The only way out is their own back/close control.
+============================================ */
+body:has(.wk-back) .nav,
+body:has(#review-session:not(.hidden)) .nav,
+body:has(#leveltest:not(.hidden)) .nav { display: none !important; }
+body:has(.wk-back) .page-header,
+body:has(#review-session:not(.hidden)) .page-header,
+body:has(#leveltest:not(.hidden)) .page-header { display: none !important; }
+body:has(.wk-back) .app,
+body:has(#review-session:not(.hidden)) .app,
+body:has(#leveltest:not(.hidden)) .app { display: block !important; max-width: 680px; margin: 0 auto; padding: 0 20px; }
+body:has(.wk-back) .content,
+body:has(#review-session:not(.hidden)) .content,
+body:has(#leveltest:not(.hidden)) .content { padding-bottom: 96px; max-width: 100%; }
+@media (max-width: 1023px) {
+  body:has(.wk-back) .br-flag-btn,
+  body:has(#review-session:not(.hidden)) .br-flag-btn,
+  body:has(#leveltest:not(.hidden)) .br-flag-btn,
+  body.in-lesson .br-flag-btn { bottom: calc(16px + env(safe-area-inset-bottom, 0px)); }
+}
+
+/* ============================================
+   WORKSHOP: studio tabs, option chips, start buttons
+============================================ */
+.sp-studio-tabs, .sp-studio-tab-row { border-bottom: 1px solid var(--border); padding-bottom: 0; gap: 22px; }
+.sp-studio-tab,
+.sp-studio-tab:hover { background: none; border: 0; border-bottom: 3px solid transparent; border-radius: 0; padding: 8px 0 11px; margin-bottom: -1px; font: 400 1.05rem/1.2 var(--font-display); color: var(--muted); }
+.sp-studio-tab:hover { color: var(--text); }
+.sp-studio-tab.active,
+[data-theme="dark"] .sp-studio-tab.active,
+:root:not([data-theme="light"]) .sp-studio-tab.active { background: none; color: var(--text); border-color: transparent; border-bottom-color: var(--primary); }
+
+/* Option chips: outlined rectangles; the chosen one takes a 2px navy outline on sand */
+.wk-pill,
+[data-theme="dark"] .wk-pill,
+:root:not([data-theme="light"]) .wk-pill { background: none; border: 0; box-shadow: inset 0 0 0 1.5px var(--border); border-radius: var(--radius-sm); color: var(--text); font-weight: 500; }
+.wk-pill:hover { box-shadow: inset 0 0 0 1.5px var(--primary); color: var(--text); border: 0; }
+.wk-pill.active,
+[data-theme="dark"] .wk-pill.active,
+:root:not([data-theme="light"]) .wk-pill.active { background: var(--wash); color: var(--text); border: 0; box-shadow: inset 0 0 0 2px var(--primary); font-weight: 600; }
+
+.di-info-btn { color: var(--muted); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+.sp-start-btn, .sp-next-btn, .wk-primary-btn { border-radius: var(--radius-sm); background: var(--primary); color: var(--bg); }
+.sp-start-btn:hover, .sp-next-btn:hover, .wk-primary-btn:hover { opacity: 1; background: var(--primary-dark); }
