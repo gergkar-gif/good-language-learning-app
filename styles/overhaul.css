@@ -1315,3 +1315,47 @@ body:has(#leveltest:not(.hidden)) .content { padding-bottom: 96px; max-width: 10
 .dkb-stat-box { background: none; box-shadow: inset 0 0 0 1.5px var(--border); border-radius: var(--radius-sm); }
 .dkb-prompt-word, .dkb-done-score { font-weight: 400; }
 .dkb-combo-val.is-active { color: var(--accent); }
+
+/* ============================================
+   COLOUR MEANING, ENFORCED
+   The old "accent-dark" was used for wrong, for live, and for links alike.
+   Brick is wrong, vermilion is live or here, ochre is waiting, and links and
+   eyebrows are the muted navy text colour.
+============================================ */
+.lsn-diff-del, .lsn-diff-accent, .lsn-diff-accent-hint,
+.lt-wrong, .lt-verdict.is-fail, .gd-feedback-wrong, .sp-feedback-wrong,
+.sp-recap-miss .sp-recap-indicator { color: var(--danger); border-color: var(--danger); }
+.lt-opt-btn.is-wrong-opt { border-color: var(--danger); box-shadow: inset 0 0 0 2px var(--danger); background: var(--danger-bg); }
+.lsn-goal-badge-review, .jr-cando-chip.chip-review, .cando-badge-review { color: var(--ochre-text); }
+.lt-mic-btn.recording, .sp-mic-btn.sp-recording { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+.sp-meter-fill, .sp-wave-bar, .sp-mic-stop-cue { background: var(--accent); }
+.sp-eyebrow, .sp-skill-pill, .sp-skill-tag, .sp-scenario-roleplay-tag, .wr-exchange-comp-tag,
+.sp-results-xp, .sp-btn-link:hover, .wk-next-btn { color: var(--accent-text); }
+.sp-skill-pill, .sp-skill-tag { background: none; box-shadow: inset 0 0 0 1.5px var(--border); border-radius: var(--radius-sm); border: 0; }
+.sp-severity-tag.sp-severity-moderate { color: var(--ochre-text); }
+.sp-chat-bubble.learner { color: var(--text); }
+.wk-card:hover .wk-card-title, .level-card:hover .level-card-code, .level-card:hover .level-card-title,
+.ud-lesson:hover .ud-lesson-title { color: var(--text); }
+.btn-accent:hover { background: var(--accent-text); }
+.unit-path-num, .dtp-num { color: var(--muted); }
+
+/* ============================================
+   NO SIDE BARS
+   Callouts and notes take a hairline rule above instead of a thick bar at the
+   side; it is the same signal without the boxed-card tell.
+============================================ */
+.story-paragraph.dialogue, .lsn-reveal, .lsn-model, .wp-why, .rank-up-card, .sp-card-competency,
+.diag-philosophy-callout, .diag-situational-prompt, .diag-tier-summary-item.passed,
+.diag-tier-summary-item.developing, .pl-note, .lr-reveal, .hv-info, .sp-error-card,
+.sp-briefing-goal, .sp-coach-note-card, .hce-fact-clue, .hce-mcq-exp, .hce-track-banner {
+  border-left: 0;
+  border-top: 1.5px solid var(--primary);
+  border-radius: 0;
+  padding-left: 0;
+}
+.story-paragraph.dialogue { border-top: 0; padding-left: 1.2em; text-indent: 0; }
+.story-paragraph.is-narrating { border-left: 0 !important; background: var(--wash); }
+.sp-error-card { border-top-color: var(--danger); }
+.hce-mcq-exp { border-top-color: var(--success); }
+.sp-coach-note-card, .sp-briefing-goal, .sp-card-competency { border-top-color: var(--accent); }
+.offline-banner { border-left: 0; }
