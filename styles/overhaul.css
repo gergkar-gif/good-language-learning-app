@@ -389,3 +389,89 @@ body.in-lesson .nav { display: none !important; }
   .hm-budget-pills { width: auto; justify-content: flex-start; }
   .hm-budget-pill { flex: none; padding: 8px 11px; }
 }
+
+/* ---- Lessons: level list ---- */
+.level-mark { width: 72px; height: 72px; flex: none; }
+.level-card { padding: 18px 0; border-bottom: 1px solid var(--border); gap: 16px; }
+.level-card:last-child { border-bottom: 1px solid var(--border); }
+.level-list { border-top: 1px solid var(--border); margin-top: 26px; }
+.level-card-code { font-size: 2rem; letter-spacing: -0.01em; }
+.level-card-title { font: 600 14px/1.2 var(--font-ui); margin-top: 4px; }
+.level-card-sub { font-size: 14px; margin-top: 2px; }
+.level-card-meter { width: 100%; align-self: stretch; margin-top: 12px; }
+.level-card-track { height: 3px; border-radius: 0; overflow: visible; }
+.level-card-fill { border-radius: 0; background: var(--primary); }
+.level-card.is-complete .level-card-fill { background: var(--success); }
+.level-card-done { color: var(--success); font-weight: 600; }
+.level-card:hover .level-card-code,
+.level-card:hover .level-card-title { color: var(--text); }
+.level-card:hover .level-card-code { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 5px; }
+
+/* ---- Tool rows (search grammar, diagnostic, and the rows on a unit page) ---- */
+.curriculum-top-actions { margin-top: 26px; border-top: 1px solid var(--primary); }
+.ud-grammar-guide-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  margin: 0;
+  padding: 15px 0;
+  text-align: left;
+  background: none;
+  border: 0;
+  border-bottom: 1px solid var(--border);
+  border-radius: 0;
+  color: var(--text);
+}
+.ud-grammar-guide-row:hover { border-color: var(--border); border-style: solid; }
+.ud-grammar-guide-row:hover .ud-grammar-guide-title { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+.ud-grammar-guide-title { font-size: 1.15rem; color: var(--text); }
+.ud-scenario-row .ud-grammar-guide-title { color: var(--text); }
+.ud-scenario-row:hover { border-color: var(--border); }
+.ud-grammar-guide-arrow { color: var(--muted); transition: transform 160ms var(--ease-standard, ease), color 120ms linear; }
+.ud-grammar-guide-row:hover .ud-grammar-guide-arrow { transform: translateX(4px); color: var(--text); }
+.ud-grammar-guide-row .icon { width: 20px; height: 20px; color: var(--muted); }
+.unit-list-view .ud-grammar-guide-row { margin-top: 18px; border-top: 1px solid var(--primary); }
+
+/* ---- Unit path ---- */
+.unit-path-line path { stroke-width: 1.5; }
+.unit-path-cap { background: var(--primary); }
+.unit-path-num { color: var(--muted); letter-spacing: .04em; }
+.unit-path-node:hover .unit-path-title,
+.dtp-node:hover .dtp-title { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+.unit-path-node.is-current .unit-path-title,
+.dtp-node.is-current .dtp-title { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+.unit-path-art.art-mark, .dtp-art.art-mark { overflow: visible; }
+.unit-path-node.is-upcoming .unit-path-art,
+.dtp-node.is-upcoming .dtp-art { opacity: .6; }
+.unit-path-summary { border: 0; border-radius: 0; padding: 0; margin: 28px 0; background: none; }
+.unit-path-summary-dot { background: var(--primary); }
+.unit-path-summary-fill { background: var(--primary); }
+/* The two tracks are told apart by line style, not by a second colour. */
+.dtp-line--t1 { stroke: var(--primary); stroke-dasharray: 2 7; }
+.dtp-key-line--t1 { background: none; border-top: 2px dotted var(--primary); height: 0; }
+.dtp-node.is-t1 .dtp-track { color: var(--primary-mid); }
+.dtp-num { color: var(--muted); letter-spacing: .04em; }
+
+/* ---- Unit page ---- */
+.ud-head { position: relative; padding-right: 130px; min-height: 116px; margin-top: 8px; }
+.ud-mark { position: absolute; top: 0; right: 0; width: 116px; height: 116px; overflow: visible; }
+.ud-num { color: var(--muted); font-size: 1.05rem; letter-spacing: .04em; }
+.ud-title { font-size: clamp(2rem, 9vw, 2.7rem); letter-spacing: -0.01em; }
+.ud-track { color: var(--muted); letter-spacing: .05em; }
+.ud-lesson:hover .ud-lesson-title { color: var(--text); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+.ud-lesson.is-done .ud-lesson-node { background: var(--success); border-color: var(--success); }
+.ud-lesson.is-current .ud-lesson-node { background: var(--accent); border-color: var(--accent); box-shadow: 0 0 0 3px var(--bg), 0 0 0 4.5px var(--accent); }
+.ud-lesson.is-done .ud-lesson-mark { background: var(--success); border-color: var(--success); }
+.ud-lesson.is-current .ud-lesson-mark { border-color: var(--accent); }
+.ud-lessons::before { display: none; }
+.ud-dot.is-done { background: var(--success); border-color: var(--success); }
+@media (max-width: 420px) {
+  .ud-head { padding-right: 104px; }
+  .ud-mark { width: 100px; height: 100px; }
+}
+
+/* A unit page is open rows, not a panel with a spine. */
+.level-detail { padding-left: 0; }
+.level-detail::before { display: none; }
+.level-back { font-size: 14px; }

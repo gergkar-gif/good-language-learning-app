@@ -91,6 +91,23 @@ function _scenarioForUnit(unitId) {
     return _scenariosIndex.find(s => (s.unitIds || []).includes(unitId)) || null;
 }
 
+// A unit's picture is generated from its id (Art.unitMark), so the same unit
+// always looks the same; only its accent changes with state: green once
+// finished, vermilion for the unit you are on, grey ahead.
+function unitMarkHtml(unit, status, artClass) {
+    if (typeof Art === 'undefined' || !Art.unitMark) return '';
+    const state = status === 'done' ? 'done' : status === 'current' ? 'now' : 'todo';
+    return Art.unitMark(unit.id, state, artClass);
+}
+
+// The level the learner is on, from their canonical position; falls back to
+// the first level that is not finished.
+function currentLevelKey(levels, progress) {
+    const next = (typeof LearnerPath !== 'undefined') ? LearnerPath.nextStep() : null;
+    if (next && next.level && levels[next.level]) return next.level;
+    return LEVEL_ORDER.find(l => levels[l] && progressStats(levelLessons(levels[l]), progress).percent < 100) || null;
+}
+
 function levelIcon(level, extraClass) {
     return '<svg class="level-icon' + (extraClass ? ' ' + extraClass : '') + '" viewBox="0 0 100 100" aria-hidden="true">' +
         (LEVEL_ICONS[level] || LEVEL_ICONS.A1) + '</svg>';
@@ -237,16 +254,21 @@ function levelListHtml() {
     const progress = getProgress();
     const levels = window._curriculumData.levels;
 
+    const nowLevel = currentLevelKey(levels, progress);
     const cards = LEVEL_ORDER.filter(l => levels[l]).map(level => {
         const data = levels[level];
         const stats = progressStats(levelLessons(data), progress);
+        const complete = stats.total > 0 && stats.percent === 100;
+        const mark = (typeof Art !== 'undefined' && Art.levelMark)
+            ? Art.levelMark(level, complete ? 'done' : level === nowLevel ? 'now' : 'todo', 'level-mark')
+            : levelIcon(level, 'level-icon--lg');
 
         // The code is the row's heading and the name its gloss — this is a
         // list of levels, so the code is what identifies one. No ordinal
         // number: LEVEL_ORDER's position was never meaningful to a learner.
         return `
-            <button class="level-card" data-open-level="${level}" data-level="${level}">
-                ${levelIcon(level, 'level-icon--lg')}
+            <button class="level-card${complete ? ' is-complete' : ''}" data-open-level="${level}" data-level="${level}">
+                ${mark}
                 <span class="level-card-body">
                     <span class="level-card-code">${level}</span>
                     <span class="level-card-title">${UI.escape(data.title || level)}</span>
@@ -255,15 +277,13 @@ function levelListHtml() {
                         <span class="level-card-track">
                             <span class="level-card-fill" style="width:${stats.percent}%"></span>
                         </span>
-                        <span class="level-card-count">${stats.done} / ${stats.total}</span>
+                        <span class="level-card-count">${complete ? '<span class="level-card-done">Complete</span>' : `${stats.done} / ${stats.total}`}</span>
                     </span>
                 </span>
                 <span class="level-card-arrow" aria-hidden="true"></span>
             </button>
         `;
     }).join('');
-
-    const isHu = (typeof Lang !== 'undefined') && (Lang.code() === 'hu' || String(Lang.code()).startsWith('hu'));
 
     // No heading here — the page header already says "Lessons".
     return `
@@ -276,12 +296,6 @@ function levelListHtml() {
                 <span class="ud-grammar-guide-title">Take Placement Diagnostic</span>
                 <span class="ud-grammar-guide-arrow" aria-hidden="true">→</span>
             </button>
-            ${isHu ? `
-            <button class="ud-grammar-guide-row hce-entry-row" data-open-cultural-exam="1">
-                <span class="ud-grammar-guide-title">Hungarian Cultural Exam · Magyar kulturális ismereti vizsga</span>
-                <span class="ud-grammar-guide-arrow" aria-hidden="true">→</span>
-            </button>
-            ` : ''}
         </div>
         <div class="level-list">${cards}</div>
     `;
@@ -405,7 +419,7 @@ function unitPathHtml(level, units, progress) {
             <button class="unit-path-node is-${status} is-${side}"
                     style="--sx:${points[i].sx}; --y:${points[i].y}px"
                     data-open-unit="${UI.escape(unit.id)}">
-                ${pathArt(i, 'unit-path-art')}
+                ${unitMarkHtml(unit, status, 'unit-path-art')}
                 <span class="unit-path-text">
                     <span class="unit-path-num">${UI.escape(String(unit.label).padStart(2, '0'))}</span>
                     <span class="unit-path-title">${UI.escape(unit.title)}</span>
@@ -505,7 +519,7 @@ function dualTrackPathHtml(level, data, units, progress) {
             <button class="dtp-node is-t${r.ti} is-${status} is-${side}"
                     style="--sx:${r.sx}; --y:${r.y}px"
                     data-open-unit="${UI.escape(r.unit.id)}">
-                ${pathArt(i, 'dtp-art')}
+                ${unitMarkHtml(r.unit, status, 'dtp-art')}
                 <span class="dtp-text">
                     <span class="dtp-num">${UI.escape(String(r.unit.label).padStart(2, '0'))}</span>
                     <span class="dtp-title">${UI.escape(r.unit.title)}</span>
@@ -520,17 +534,8 @@ function dualTrackPathHtml(level, data, units, progress) {
         `<span class="dtp-key"><span class="dtp-key-line dtp-key-line--t${ti}"></span>${UI.escape(t.title)}</span>`
     ).join('');
 
-    const hasCitizenship = (data.tracks || []).some(t => t.id === 'citizenship');
-    const culturalExamBanner = hasCitizenship ? `
-        <div class="hce-track-banner">
-            <div class="hce-track-banner-body">
-                <span class="hce-track-banner-eyebrow">CITIZENSHIP &amp; CULTURAL EXAM LAYER</span>
-                <strong class="hce-track-banner-title">Hungarian Cultural Exam · Magyar kulturális ismereti vizsga</strong>
-                <span class="hce-track-banner-sub">6 official categories · Explained literary &amp; musical artifacts · 4 matching drills · 3 full 30-point mock exams</span>
-            </div>
-            <button type="button" class="hce-primary-btn" data-open-cultural-exam="1">Open Exam Prep →</button>
-        </div>
-    ` : '';
+    // The Hungarian Cultural Exam lives in Workshop > Exam Preparation only.
+    const culturalExamBanner = '';
 
     return `
         <div class="dtp">
@@ -678,6 +683,7 @@ function unitDetailHtml(level, unitId) {
             <button class="level-back" data-close-unit="1">← ${UI.escape(data.title || level)}</button>
 
             <header class="ud-head">
+                ${unitMarkHtml(unit, stats.percent === 100 ? 'done' : 'current', 'ud-mark')}
                 <span class="ud-num">${UI.escape(String(unit.label).padStart(2, '0'))}</span>
                 <h2 class="ud-title">${UI.escape(unit.title)}</h2>
                 ${track ? `<span class="ud-track">${UI.escape(track.title)}</span>` : ''}
@@ -695,13 +701,6 @@ function unitDetailHtml(level, unitId) {
                 <span class="ud-grammar-guide-title">Word Bank</span>
                 <span class="ud-grammar-guide-arrow" aria-hidden="true">→</span>
             </button>
-
-            ${unit.track === 'citizenship' ? `
-            <button class="ud-grammar-guide-row hce-entry-row" data-open-cultural-exam="1">
-                <span class="ud-grammar-guide-title">Hungarian Cultural Exam · Magyar kulturális ismereti vizsga</span>
-                <span class="ud-grammar-guide-arrow" aria-hidden="true">→</span>
-            </button>
-            ` : ''}
 
             ${scenario ? `
             <button class="ud-grammar-guide-row ud-scenario-row" data-open-unit-scenario="${UI.escape(scenario.id)}">

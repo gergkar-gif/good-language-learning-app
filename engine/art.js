@@ -491,8 +491,10 @@ const Art = (function () {
         const acc = R() < .5
             ? `<circle class="mk-acc" cx="${ax}" cy="${ay}" r="${_f(4 + R() * 1.6)}"/>`
             : `<rect class="mk-acc" x="${_f(ax - 4.5)}" y="${_f(ay - 4.5)}" width="9" height="9"/>`;
+        const ring = state === 'now'
+            ? `<circle class="mk-accline" stroke-width="1.5" cx="${cx}" cy="${cy}" r="${r + 5}"/>` : '';
         return `<svg class="art art-mark is-${state || 'todo'} ${className || ''}" viewBox="0 0 64 64"
-            role="presentation" aria-hidden="true" focusable="false">${disc}${extra}${main}${acc}</svg>`;
+            role="presentation" aria-hidden="true" focusable="false">${disc}${extra}${main}${acc}${ring}</svg>`;
     }
 
 
