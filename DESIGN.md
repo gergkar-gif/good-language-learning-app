@@ -169,11 +169,12 @@ Every colour has one meaning, everywhere in the app. State is never carried by c
 Open rows on cream separated by hairlines; whitespace is the primary structure. Spacing follows a 4px base (4, 8, 12, 16, 24, 32, 48, 64). Page gutter 20px on phone, 56px (max width 940px) on desktop.
 
 - **Phone (up to 639px)** is the primary device. **Bottom navigation** (70px, heavy 3px navy top rule). This changes the current app, which uses a top bar on phones.
-- **Tablet (640 to 1023px)**: centred column.
+- **Tablet (640 to 1023px)**: the phone layout as a centred column, 640px wide, with the bottom nav limited to 560px.
 - **Desktop (1024px and up)**: a 210px sidebar with the Parlour wordmark and tagline, a 3px navy edge, and the six sections.
 - **Focus screens hide navigation entirely**: lessons and their exercises, the level test, Speaking and Writing Studios, drillers, review, and sheets. The only way out is the close button.
+- **Desktop specifics**: the unit path keeps phone geometry (460px wide) so its line never reaches the labels; focus screens sit in a centred 720px column; the streak line and grid stay 30em wide.
 - **Page header**: serif title top-left, one-line lede (max 11.5em) beneath, the hero at top-right. Header minimum height 200px on phone.
-- **Heroes** are 252 x 184 (20% wider and 20% shorter than the first attempt), sitting 36px from the top, anchored right; 456 x 336 on desktop. Keep title and lede clear of the artwork (shorten diagonals and axes rather than letting them run under text).
+- **Heroes** are 252 x 184 (20% wider and 20% shorter than the first attempt), sitting 36px from the top, anchored right; 380 x 277 on desktop (the header is 330px tall there so the hero never overlaps content below). Keep title and lede clear of the artwork (shorten diagonals and axes rather than letting them run under text).
 
 ## Elevation & Depth
 

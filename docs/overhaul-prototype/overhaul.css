@@ -65,12 +65,12 @@ a { color: inherit; }
 
 /* ---- page header with hero art ---- */
 .head { position: relative; min-height: 200px; padding: 40px 20px 0; }
-[data-layout="desktop"] .head { padding: 64px 0 0; min-height: 250px; }
+[data-layout="desktop"] .head { padding: 64px 0 0; min-height: 330px; }
 .head h1 { font: 400 clamp(2.4rem, 11vw, 3.2rem)/.98 var(--serif); letter-spacing: -.02em; position: relative; z-index: 1; max-width: 8em; text-wrap: balance; }
 [data-layout="desktop"] .head h1 { font-size: 4.4rem; }
 .head .lede { color: var(--muted); margin-top: 12px; max-width: 11.5em; position: relative; z-index: 1; font-size: 15px; }
 .hero { position: absolute; top: 36px; right: 0; width: 252px; height: 184px; }
-[data-layout="desktop"] .hero { top: 40px; width: 456px; height: 336px; }
+[data-layout="desktop"] .hero { top: 40px; width: 380px; height: 277px; }
 .hero .rise { animation: rise 800ms var(--ease) both; transform-origin: 50% 100%; transform-box: fill-box; }
 @keyframes rise { from { transform: scaleY(.6); opacity: 0; } to { transform: none; opacity: 1; } }
 .sand { fill: var(--sand); } .navf { fill: var(--navy); } .vf { fill: var(--vermilion); }
@@ -496,3 +496,18 @@ button.jbl:hover .jbig { text-decoration: underline; text-decoration-thickness: 
 .tos-b { display: flex; gap: 6px; }
 .tos-b button { padding: 8px 11px; border-radius: 2px; box-shadow: inset 0 0 0 1.5px var(--hair); font: 600 13px/1 var(--sans); color: var(--navy); transition: background 120ms linear, color 120ms linear; }
 .tos-b button:hover { background: var(--navy); color: var(--on-navy); box-shadow: none; }
+
+/* ---- desktop fixes from the verification pass ---- */
+/* the unit path keeps phone geometry on wide screens so the line never reaches the labels */
+[data-layout="desktop"] .path { max-width: 460px; }
+/* focus screens (exercises, tests, studios, sheets) sit in a centred column */
+[data-layout="desktop"] .page.x { margin: 0 auto; max-width: 720px; padding: 0 20px 24px; }
+/* keep the streak line and its figure together */
+[data-layout="desktop"] .streakline { max-width: 30em; }
+[data-layout="desktop"] .dgrid { max-width: 30em; }
+
+/* tablet: the phone layout becomes a centred column rather than stretching */
+@media (min-width: 640px) {
+  [data-layout="phone"][data-frame="0"] .page { max-width: 640px; margin: 0 auto; }
+  [data-layout="phone"][data-frame="0"] .nav .items { max-width: 560px; margin: 0 auto; }
+}
