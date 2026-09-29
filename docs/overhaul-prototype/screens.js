@@ -124,9 +124,14 @@
       '<a class="how" href="#home">How Parlour works</a>';
   } };
 
-  S.lessons = { tab: 'lessons', label: 'Lessons: levels', html: function () {
+  function toolRows(hu) {
+    var t = function (go, name, desc) { return '<button class="tool" data-go="' + go + '"><span><span class="name">' + name + '</span><span class="desc">' + desc + '</span></span>' + ARW_S + '</button>'; };
+    return '<div class="rows toolrows" style="margin-top:26px">' + t('guide/search', 'Search Grammar Guide', 'Every topic in the course') + t('diag', 'Take the placement diagnostic', 'Find your starting level') + (hu ? t('lessons', 'Hungarian Cultural Exam', 'Magyar kulturális ismereti vizsga') : '') + '</div>';
+  }
+  var ARW_S = '<svg viewBox="0 0 22 14" width="22" height="14" aria-hidden="true"><path d="M0 7h19M13 1l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"/></svg>';
+  S.lessons = { tab: 'lessons', label: 'Lessons: levels', html: function (hu) {
     var L = [['A1', 'Fundamentals', 'Survival skills', 115, 115], ['A2', 'Basic', 'Everyday needs', 120, 120], ['B1', 'Intermediate', 'Opinions and stories', 41, 144], ['B2', 'Upper Intermediate', 'Argument and nuance', 0, 36], ['C1', 'Advanced', 'Coming later', 0, 0]];
-    return head('Lessons', 'Five levels, one path forward.', HERO.lessons) +
+    return head('Lessons', 'Five levels, one path forward.', HERO.lessons) + toolRows(hu) +
       '<div class="rows" style="margin-top:34px;border-top:1px solid var(--hair)">' + L.map(function (l) {
         var pct = l[4] ? Math.round(100 * l[3] / l[4]) : 0;
         return '<button class="lvl" data-go="lessons/path">' + lvlIcon(l[0], pct >= 100 ? 'done' : l[0] === 'B1' ? 'now' : 'todo') + '<span><span class="code">' + l[0] + '</span><span class="nm">' + l[1] + '</span><span class="desc" style="margin-top:2px">' + l[2] + '</span>' +
@@ -134,14 +139,16 @@
       }).join('') + '</div>';
   } };
 
+  S['lessons/hu'] = { tab: 'lessons', label: 'Lessons: levels (Hungarian, with the exam row)', html: function () { return S.lessons.html(true); } };
+
   S['lessons/path'] = { tab: 'lessons', label: 'Lessons: unit path', html: function () {
     var U = [['Greetings and introductions', 5, 5, 0], ['Meeting someone new', 5, 5, 1], ['Naming things', 5, 5, 2], ['Describing people', 5, 5, 3], ['Family', 5, 5, 0], ['Daily routine', 5, 3, 1], ['At home', 5, 0, 2], ['At the supermarket', 5, 0, 3]];
     var STEP = 140, top = 62, h = top * 2 + STEP * (U.length - 1) - 40, d = '', pos = [];
     U.forEach(function (u, i) { var x = i % 2 ? 68 : 32, y = top + i * STEP; pos.push([x, y]); d += (i ? 'C ' + x + ' ' + (y - STEP * .55) + ' ' + pos[i - 1][0] + ' ' + (y - STEP * .45) + ' ' + x + ' ' + y + ' ' : 'M ' + x + ' ' + y + ' '); });
     var nodes = U.map(function (u, i) {
       var x = pos[i][0], y = pos[i][1], right = i % 2, done = u[2] === u[1], now = !done && u[2] > 0, state = done ? 'done' : now ? 'now' : 'todo';
-      var lab = '<div class="ut ' + state + '" style="top:' + y + 'px;' + (right ? 'right:calc(' + (100 - x) + '% + 72px);text-align:right' : 'left:calc(' + x + '% + 72px)') + '"><span class="un">' + (i < 9 ? '0' : '') + (i + 1) + '</span><h3>' + u[0] + '</h3><p>' + (done ? 'Complete · ' + u[1] + ' lessons' : u[2] + ' of ' + u[1] + ' lessons') + '</p></div>';
-      var disc = '<div class="ud ' + state + '" style="top:' + y + 'px;left:' + x + '%">' + unitIcon('b1-' + (i + 1)) + '</div>';
+      var lab = '<div class="ut ' + state + '" data-go="unit" style="top:' + y + 'px;' + (right ? 'right:calc(' + (100 - x) + '% + 72px);text-align:right' : 'left:calc(' + x + '% + 72px)') + '"><span class="un">' + (i < 9 ? '0' : '') + (i + 1) + '</span><h3>' + u[0] + '</h3><p>' + (done ? 'Complete · ' + u[1] + ' lessons' : u[2] + ' of ' + u[1] + ' lessons') + '</p></div>';
+      var disc = '<div class="ud ' + state + '" data-go="unit" style="top:' + y + 'px;left:' + x + '%">' + unitIcon('b1-' + (i + 1)) + '</div>';
       return disc + lab;
     }).join('');
     return '<a class="backl" href="#lessons" data-go="lessons">‹ Lessons</a>' + head('B1', 'Intermediate. Opinions and stories.', HERO.lessons) +
@@ -538,7 +545,7 @@
   /* Grammar Guide */
   S.guide = { tab: 'lessons', label: 'Grammar Guide: unit topics', html: function () {
     var t = function (n, title, sub) { return '<div class="gt"><button class="gt-main" data-go="guide/topic"><span class="gt-n">' + n + '</span><span><span class="name">' + title + '</span><span class="desc">' + sub + '</span></span></button><button class="linkbtn" data-go="workshop">Practise</button></div>'; };
-    return '<a class="backl" href="#lessons/path" data-go="lessons/path">\u2039 Unit 6</a>' + head('Grammar Guide', 'Unit 6 \u00b7 Caf\u00e9 and Market', HERO.lessons) +
+    return '<a class="backl" href="#unit" data-go="unit">\u2039 Ordering at a caf\u00e9</a>' + head('Grammar Guide', 'Unit 6 \u00b7 Caf\u00e9 and Market', HERO.lessons) +
       '<div class="rows" style="margin-top:30px">' + t(1, 'Ordering with quisiera', 'Polite requests') + t(2, 'Uncountable and countable nouns', 'un caf\u00e9, unas galletas') + t(3, 'Prices and numbers to 1,000', 'cu\u00e1nto cuesta, cuestan') + '</div>' +
       '<p class="pad" style="padding-top:24px"><button class="linkbtn" data-go="guide/search">Search grammar across the whole course</button></p>';
   } };
@@ -671,8 +678,41 @@
   } };
 
   
+  /* ---------- the unit page, Word Bank, placement diagnostic ---------- */
+  S.unit = { tab: 'lessons', label: 'Unit page (from the path)', html: function () {
+    var tool = function (go, name, desc) { return '<button class="tool" data-go="' + go + '"><span><span class="name">' + name + '</span><span class="desc">' + desc + '</span></span>' + ARW_S + '</button>'; };
+    var L = [['8.1', 'Ordering a drink', 'done'], ['8.2', 'Asking for the bill', 'done'], ['8.3', 'Ordering at a caf\u00e9', 'now'], ['8.4', 'Small talk with the waiter', 'todo'], ['8.5', 'Consolidation', 'todo']];
+    return '<a class="backl" href="#lessons/path" data-go="lessons/path">\u2039 B1</a>' +
+      '<header class="head" style="min-height:0;padding-bottom:6px"><span class="unum">08</span><h1 style="font-size:clamp(2rem,9vw,2.7rem);max-width:7em">Ordering at a caf\u00e9</h1><p class="lede" style="max-width:none">Latin America \u00b7 5 lessons</p><span class="umark">' + unitIcon('b1-8') + '</span></header>' +
+      '<div class="rows toolrows" style="margin-top:22px">' + tool('guide', 'Grammar Guide', '3 topics in this unit') + tool('wordbank', 'Word Bank', '42 words') + tool('speaking', 'Oral Roleplay: Ordering food', 'Put the unit into conversation') + '</div>' +
+      '<h2 class="sec">Unit path</h2><div class="unitpath">' + L.map(function (l) {
+        var st = l[2] === 'done' ? '<span class="cmp">Done</span>' : l[2] === 'now' ? '<span class="nowl">Continue</span>' : '';
+        return '<button class="ul ' + l[2] + '" data-go="lesson"><span class="un2">' + l[0] + '</span><span class="name" style="font-size:1.15rem">' + l[1] + '</span><span class="ul-s">' + st + '</span></button>';
+      }).join('') + '</div>';
+  } };
+  S.wordbank = { tab: 'lessons', label: 'Word Bank (unit vocabulary)', html: function () {
+    var w = function (a, b) { return '<div class="wbr"><span class="serif">' + a + '</span><span class="muted small">' + b + '</span></div>'; };
+    var topic = function (n, t, words) { return '<div class="wbt"><div class="wbh"><span class="gt-n">' + n + '</span><span class="name">' + t + '</span><button class="linkbtn">Add all to a deck</button></div>' + words.map(function (x) { return w(x[0], x[1]); }).join('') + '</div>'; };
+    return '<a class="backl" href="#unit" data-go="unit">\u2039 Ordering at a caf\u00e9</a><header class="head" style="min-height:0;padding-bottom:0"><h1 style="font-size:clamp(2rem,9vw,2.7rem)">Word Bank</h1><p class="lede" style="max-width:none">42 words</p></header>' +
+      '<h2 class="sec">What you\u2019ll encounter</h2>' + topic(1, 'Ordering a drink', [['el caf\u00e9', 'coffee'], ['la leche', 'milk'], ['el t\u00e9', 'tea'], ['con az\u00facar', 'with sugar']]) + topic(2, 'Asking for the bill', [['la cuenta', 'the bill'], ['pagar', 'to pay'], ['la propina', 'the tip']]) + topic(3, 'Ordering at a caf\u00e9', [['una mesa para dos', 'a table for two'], ['quisiera', 'I would like'], ['el men\u00fa', 'the menu']]);
+  } };
+  S.diag = { tab: 'lessons', label: 'Placement diagnostic: introduction', html: function () {
+    var m = function (a, b) { return '<div class="dm"><span class="muted small">' + a + '</span><span class="serif" style="font-size:1.1rem">' + b + '</span></div>'; };
+    return '<a class="backl" href="#lessons" data-go="lessons">\u2039 Lessons</a>' + head('Find your level', 'A short adaptive check. It places you at the right starting point.', HERO.lessons) +
+      '<div class="rows" style="margin-top:30px;border-top:1px solid var(--navy)">' + m('Format', '5 questions a level: choice, short answers and reading') + m('Time', '5 to 7 minutes') + m('To move up', '70% at each level') + '</div>' +
+      '<div class="pad" style="padding-top:20px"><p class="muted" style="font-size:15px;max-width:28em">This is a quick screener that recommends where to begin. It is not a certificate: for a full assessment, take the level tests as you go.</p><div class="actline"><button class="btn" data-go="lesson/type">Begin the check</button><span class="rule"></span></div></div>';
+  } };
+  S['diag/result'] = { tab: 'lessons', label: 'Placement diagnostic: result', html: function () {
+    var art = hero('<circle class="sand" cx="150" cy="46" r="80"/><path class="navf" d="M60 170a72 72 0 0 1 144 0z"/><path class="navs" d="M30 170h222"/><g class="rise"><path class="ps" stroke-width="1.5" d="M132 66v104"/><circle class="pf" cx="132" cy="66" r="9"/></g>');
+    var t = function (k, pct, ok) { return '<div class="dt">' + lvlIcon(k, ok ? 'done' : 'todo') + '<span class="serif" style="font-size:1.5rem">' + k + '</span>' + track(pct) + '<span class="jr-v">' + pct + '%' + (ok ? ' \u00b7 passed' : '') + '</span></div>'; };
+    return head('We suggest<br>B1.', 'Start there, or choose for yourself.', art) +
+      '<div class="rows jrows" style="margin-top:96px">' + t('A1', 96, 1) + t('A2', 88, 1) + t('B1', 76, 1) + t('B2', 41, 0) + '</div>' +
+      '<div class="pad" style="padding-top:12px"><div class="actline" style="gap:10px;flex-wrap:wrap"><button class="btn" data-go="lessons/path">Start at B1</button><button class="linkbtn" data-go="lessons" style="margin-left:6px">Choose my own level</button></div></div>';
+  } };
+
+  
   /* ---------- shell ---------- */
-  var order = ['home', 'lessons', 'lessons/path', 'gallery', 'lesson', 'lesson/correct', 'lesson/wrong', 'lesson/done', 'library', 'library/saved', 'library/texts', 'library/editor', 'library/read', 'workshop', 'workshop/verb', 'workshop/drill', 'decks', 'decks/review', 'decks/answer', 'journey', 'journey/passport', 'journey/knowledge', 'journey/skills', 'journey/milestones', 'journey/account', 'welcome', 'welcome/variant', 'welcome/start', 'plan', 'test', 'test/writing', 'test/speaking', 'test/result', 'speaking', 'speaking/feedback', 'writing', 'writing/feedback', 'lesson/type', 'lesson/listen', 'lesson/dialogue', 'lesson/match', 'decks/empty', 'decks/caught-up', 'sheet/deck', 'sheet/streak', 'guide', 'guide/topic', 'guide/search', 'lexicon', 'decks/editor', 'decks/browse', 'test/part1', 'quiz', 'quiz/done', 'library/search', 'library/nomatch', 'hu/settings', 'hu/drill', 'hu/results', 'home/note', 'sheet/bug', 'sheet/sync', 'state/offline', 'state/error', 'about'];
+  var order = ['home', 'lessons', 'lessons/path', 'gallery', 'lesson', 'lesson/correct', 'lesson/wrong', 'lesson/done', 'library', 'library/saved', 'library/texts', 'library/editor', 'library/read', 'workshop', 'workshop/verb', 'workshop/drill', 'decks', 'decks/review', 'decks/answer', 'journey', 'journey/passport', 'journey/knowledge', 'journey/skills', 'journey/milestones', 'journey/account', 'welcome', 'welcome/variant', 'welcome/start', 'plan', 'test', 'test/writing', 'test/speaking', 'test/result', 'speaking', 'speaking/feedback', 'writing', 'writing/feedback', 'lesson/type', 'lesson/listen', 'lesson/dialogue', 'lesson/match', 'decks/empty', 'decks/caught-up', 'sheet/deck', 'sheet/streak', 'lessons/hu', 'unit', 'wordbank', 'diag', 'diag/result', 'guide', 'guide/topic', 'guide/search', 'lexicon', 'decks/editor', 'decks/browse', 'test/part1', 'quiz', 'quiz/done', 'library/search', 'library/nomatch', 'hu/settings', 'hu/drill', 'hu/results', 'home/note', 'sheet/bug', 'sheet/sync', 'state/offline', 'state/error', 'about'];
   $('screen').innerHTML = order.map(function (k) { return '<option value="' + k + '">' + S[k].label + '</option>'; }).join('');
 
   function renderNav(tab) {

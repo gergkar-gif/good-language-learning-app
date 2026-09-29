@@ -248,6 +248,12 @@ A 3px hairline track with a navy fill and a vermilion marker at the current posi
 ### Switches
 A switch is a 46 x 24 rectangle (2px radius) with a 1.5px navy outline and a 16px navy square at the left when off; on, it fills navy and the square turns cream and slides right. The label is serif, "What's this?" is a text action. Never a pill toggle.
 
+### Lessons: tools, units, Word Bank, diagnostic
+- **Tool rows** sit above the level list on the Lessons page: "Search Grammar Guide", "Take the placement diagnostic", and on Hungarian "Hungarian Cultural Exam". Open rows on hairlines with a serif name, a muted description and a drawn arrow that nudges 4px on hover. A navy rule opens the group.
+- **Unit page** (a unit on the path opens it): a muted unit number, the serif unit title, the track and lesson count, and the unit's generated mark at the top right. Then the tool rows (Grammar Guide, Word Bank, Oral Roleplay), then "Unit path": a vertical line with a node per lesson (pine when done, a vermilion ring for the one you are on, hollow when ahead), the lesson number, the title, and "Done" or "Continue" beside it.
+- **Word Bank:** numbered topics ("What you'll encounter") with a navy rule under each heading, then word and meaning rows; "Add all to a deck" is a text action.
+- **Placement diagnostic:** an introduction (format, time, passing mark as label and value rows, one honest note that it is a screener, not a certificate) with a Begin button; the questions reuse the lesson exercise screens; the result names a suggested level with a pass mark per level using the level marks.
+
 ### Reference pages (Grammar Guide, lexicon)
 - **Topic list:** a large muted serif number, the topic in serif with its one-line description, and a text action "Practise" at the right. A "Search grammar across the whole course" text action follows.
 - **Paradigm table:** forms always sit in a table (pronoun in small grey sans, form in serif), a navy rule above the first row, hairlines between rows. Examples follow as serif lines with a muted translation.
