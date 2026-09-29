@@ -551,92 +551,15 @@ body.in-lesson .nav { display: none !important; }
 .story-shelf-count { font: 500 13px/1 var(--font-ui); color: var(--muted); opacity: 1; margin-left: 6px; }
 .story-shelf-header:hover .story-shelf-title { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; }
 
-/* Story rows */
-.story-grid { display: block; margin: 0; }
-.story-card {
-  position: relative;
-  display: grid;
-  grid-template-columns: 64px 1fr;
-  gap: 4px 14px;
-  align-items: center;
-  width: 100%;
-  background: none;
-  border: 0;
-  border-bottom: 1px solid var(--border);
-  border-radius: 0;
-  padding: 14px 0;
-  overflow: visible;
-}
-.story-card:hover { border-color: var(--border); }
+/* Story cards keep the original grid of cover tiles (the user preferred it with many stories);
+   only the cover art is new: a mark generated from the story id, green once read. */
 .story-card:hover .story-card-title { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; }
-.story-card-cover { position: relative; height: auto; display: block; background: none; }
-.story-card-cover-icon { width: 64px; height: 64px; display: block; overflow: visible; }
-.story-card-series-no {
-  position: static;
-  display: block;
-  margin-bottom: 4px;
-  font: 600 12px/1 var(--font-ui);
-  color: var(--muted);
-  letter-spacing: .03em;
-}
-.story-card-read-badge {
-  position: absolute;
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
-  width: 22px;
-  height: 22px;
-  background: none;
-  color: var(--success);
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 22px;
-}
-.story-card-bookmark { display: none; }
-.story-card-progress {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -8px;
-  height: 3px;
-  background: var(--border);
-}
+.story-card-cover-icon { width: 60px; height: 60px; }
+.story-card-read-badge { color: var(--success); background: none; }
 .story-card-progress > span { background: var(--accent); }
-.story-card-body { padding: 0 28px 0 0; min-width: 0; }
-.story-card-title { font-size: 1.15rem; line-height: 1.2; margin-bottom: 4px; }
-.story-card-subtitle { font-style: normal; font-size: 14px; margin: 0 0 6px; }
-.story-card-meta { gap: 4px 12px; font: 500 12.5px/1.2 var(--font-ui); }
-.story-card-reach-badge {
-  background: none;
-  border: 0;
-  padding: 0;
-  border-radius: 0;
-  color: var(--ochre-text);
-  font-size: 12.5px;
-  font-weight: 600;
-  letter-spacing: 0;
-}
-.story-card-comp-badge { color: var(--success); font-weight: 600; }
-.story-card-familiar { font-size: 12.5px; }
-.story-card-topic-match { background: none; border: 0; color: var(--ochre-text); padding: 0; border-radius: 0; }
 
 /* Continue reading and recommendations keep their original card layout (the user preferred it). */
 
-/* Saved and My texts */
-.lt-saved-card { display: block; position: relative; }
-.story-card-open { display: grid; grid-template-columns: 64px 1fr; gap: 4px 14px; align-items: center; padding: 14px 0; border-bottom: 0; }
-.lt-saved-card .story-card-cover { grid-row: 1; }
-.lt-saved-remove {
-  margin: -6px 0 12px 78px;
-  padding: 6px 0;
-  border: 0;
-  background: none;
-  font-size: 13.5px;
-  text-decoration: underline;
-  text-underline-offset: 4px;
-  text-decoration-thickness: 1px;
-}
-.lt-saved-remove:hover { color: var(--danger); border: 0; }
 .lt-list { border-top: 1px solid var(--primary); }
 .lt-card { padding: 4px 0; border-bottom: 1px solid var(--border); }
 .lt-card-title { font-size: 1.15rem; color: var(--text); }
@@ -1451,3 +1374,7 @@ body:has(.dkb-game) .content, body:has(.dkb-lobby) .content, body:has(.dkb-done)
 @media (max-width: 420px) { .ud-head { padding-right: 0; } .ud-head:has(.ud-mark) { padding-right: 104px; } }
 .gg-search-all-link { color: var(--muted); font: 500 14px/1.3 var(--font-ui); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; background: none; border: 0; padding: 0; }
 .gg-search-all-link:hover { color: var(--text); }
+
+/* Air under the Parlour | Saved | My Texts tabs, and in empty states generally */
+.lt-subnav { margin-bottom: 8px; }
+.dk-empty, .level-empty { margin: 28px 0; line-height: 1.6; color: var(--muted); }
