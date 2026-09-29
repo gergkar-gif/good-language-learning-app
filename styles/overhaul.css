@@ -1462,3 +1462,56 @@ body:has(.dkb-game) .content, body:has(.dkb-lobby) .content, body:has(.dkb-done)
 .sp-role-badge { background: none; border: 0; box-shadow: inset 0 0 0 1.5px var(--border); border-radius: var(--radius-sm); color: var(--text); padding: 2px 6px; }
 .sp-role-badge.learner { box-shadow: inset 0 0 0 1.5px var(--primary); }
 .sp-btn-link { color: var(--muted); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+
+/* ============================================
+   HUNGARIAN CULTURAL EXAM (Workshop > Exam Preparation)
+   Tabs on a rule, categories as open rows, answers as the lesson options.
+============================================ */
+.hce-eyebrow, .hce-cat-eyebrow, .hce-cat-num, .hce-cat-pill { font: 600 13px/1.2 var(--font-ui); letter-spacing: .02em; text-transform: none; color: var(--accent-text); background: none; box-shadow: none; padding: 0; border: 0; }
+.hce-title { font: 400 clamp(1.9rem, 8vw, 2.6rem)/1.08 var(--font-display); letter-spacing: -0.015em; color: var(--text); }
+.hce-subtitle, .hce-section-desc, .hce-section-intro { color: var(--muted); line-height: 1.6; font-size: 1rem; }
+.hce-back { color: var(--muted); background: none; border: 0; padding: 0; }
+
+.hce-tabs { display: flex; flex-wrap: wrap; gap: 6px 24px; border-bottom: 1px solid var(--border); margin: 22px 0 0; padding: 0; }
+.hce-tab { background: none; border: 0; border-bottom: 3px solid transparent; border-radius: 0; margin-bottom: -1px; padding: 8px 0 11px; font: 400 1.05rem/1.25 var(--font-display); color: var(--muted); box-shadow: none; }
+.hce-tab:hover { background: none; color: var(--text); }
+.hce-tab.is-active { background: none; color: var(--text); border-bottom-color: var(--primary); }
+
+.hce-cat-grid { display: block; border-top: 1px solid var(--primary); margin-top: 22px; }
+.hce-cat-card { display: block; width: 100%; text-align: left; background: none; border: 0; border-bottom: 1px solid var(--border); border-radius: 0; box-shadow: none; padding: 16px 0; color: var(--text); }
+.hce-cat-card:hover { background: none; }
+.hce-cat-card:hover .hce-cat-name { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+.hce-cat-card.is-selected { background: var(--wash); box-shadow: inset 0 0 0 2px var(--primary); padding: 16px 14px; }
+.hce-cat-name { font: 400 1.25rem/1.25 var(--font-display); color: var(--text); }
+.hce-cat-en { color: var(--muted); font-size: 14px; }
+
+.hce-filter-chip, .hce-match-mode { background: none; border: 0; box-shadow: inset 0 0 0 1.5px var(--border); border-radius: var(--radius-sm); color: var(--text); font-weight: 500; }
+.hce-filter-chip:hover, .hce-match-mode:hover { box-shadow: inset 0 0 0 1.5px var(--primary); background: none; }
+.hce-filter-chip.is-active, .hce-match-mode.is-active { background: var(--wash); box-shadow: inset 0 0 0 2px var(--primary); color: var(--text); font-weight: 600; }
+
+.hce-primary-btn { background: var(--primary); color: var(--bg); border: 0; border-radius: var(--radius-sm); box-shadow: none; }
+.hce-primary-btn:hover { background: var(--primary-dark); }
+.hce-secondary-btn { background: none; color: var(--text); border: 0; border-radius: var(--radius-sm); box-shadow: inset 0 0 0 1.5px var(--primary); }
+.hce-secondary-btn:hover { background: var(--primary); color: var(--bg); }
+
+.hce-section-title, .hce-cat-block-title, .hce-fact-title, .hce-mock-card-title, .hce-mock-result-title { font: 400 1.35rem/1.2 var(--font-display); letter-spacing: -0.005em; color: var(--text); }
+.hce-cat-block { background: none; border: 0; border-top: 1.5px solid var(--primary); border-radius: 0; box-shadow: none; padding: 16px 0; }
+.hce-fact-card, .hce-vocab-card, .hce-mcq-card, .hce-mock-card { background: none; border: 0; border-bottom: 1px solid var(--border); border-radius: 0; box-shadow: none; padding: 16px 0; }
+.hce-mock-card.is-active { background: var(--wash); box-shadow: inset 0 0 0 2px var(--primary); padding: 16px 14px; }
+.hce-fact-hu, .hce-vocab-term { font-family: var(--font-display); font-weight: 400; font-size: 1.2rem; }
+.hce-fact-en, .hce-vocab-en, .hce-vocab-ctx, .hce-fact-sub { color: var(--muted); }
+.hce-points-badge, .hce-mock-badge { border: 0; box-shadow: inset 0 0 0 1.5px var(--border); border-radius: var(--radius-sm); background: none; color: var(--text); font-weight: 600; }
+.hce-toolbar, .hce-toggle-row { border-color: var(--border); }
+
+/* Answers use the lesson option language */
+.hce-mcq-opt, .hce-mock-opt { background: none; border: 0; box-shadow: inset 0 0 0 1.5px var(--border); border-radius: var(--radius-sm); color: var(--text); text-align: left; padding: 14px 16px; }
+.hce-mcq-opt:hover:not(:disabled), .hce-mock-opt:hover:not(:disabled) { box-shadow: inset 0 0 0 1.5px var(--primary); background: none; }
+.hce-mcq-opt.is-selected, .hce-mock-opt.is-selected { box-shadow: inset 0 0 0 2px var(--primary); background: var(--wash); }
+.hce-mcq-opt.is-correct, .hce-mcq-opt.correct, .hce-mock-opt.is-correct { box-shadow: inset 0 0 0 2px var(--success); background: var(--success-bg); }
+.hce-mcq-opt.is-wrong, .hce-mcq-opt.wrong, .hce-mock-opt.is-wrong { box-shadow: inset 0 0 0 2px var(--danger); background: var(--danger-bg); }
+.hce-match-tile { background: none; border: 0; box-shadow: inset 0 0 0 1.5px var(--border); border-radius: var(--radius-sm); color: var(--text); }
+.hce-match-tile.is-selected { box-shadow: inset 0 0 0 2px var(--primary); background: var(--wash); }
+.hce-match-tile.is-matched { box-shadow: inset 0 0 0 2px var(--success); background: var(--success-bg); }
+.hce-match-tile.is-wrong { box-shadow: inset 0 0 0 2px var(--danger); background: var(--danger-bg); }
+.hce-mcq-exp { color: var(--text); }
+.hce-mock-result { background: none; border: 0; border-top: 3px solid var(--primary); border-radius: 0; }
