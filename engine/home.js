@@ -323,6 +323,7 @@ const Home = (function () {
         el.setAttribute('aria-labelledby', 'pl-welcome-title');
         el.innerHTML = `
             <div class="pl-welcome-inner">
+                ${(typeof Art !== 'undefined' && Art.heroSvg) ? Art.heroSvg('home', 'pl-welcome-art') : ''}
                 <h1 id="pl-welcome-title" class="pl-welcome-name">Parlour</h1>
                 <p class="pl-welcome-line">A place to learn a language properly, at your own pace.</p>
                 <div id="pl-welcome-step" class="pl-welcome-step"></div>
