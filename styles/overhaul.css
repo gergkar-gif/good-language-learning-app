@@ -1215,3 +1215,43 @@ body:has(#leveltest:not(.hidden)) .content { padding-bottom: 96px; max-width: 10
 .sp-item-done .sp-item-check { background: var(--success); box-shadow: none; color: var(--bg); }
 .sp-item-passed { text-decoration: none; }
 .sp-complete-title { font: 400 clamp(2rem, 9vw, 2.6rem)/1.05 var(--font-display); letter-spacing: -0.02em; color: var(--text); }
+
+/* ============================================
+   LEVEL TESTS, forms and fields
+   One field language: a 1.5px hairline rectangle, 2px navy on focus.
+============================================ */
+.lt-select, .lt-input, .lt-textarea, .dk-input, .dk-textarea, .rd-input,
+.lsn-writing-input, textarea.lsn-input {
+  border: 0;
+  border-radius: var(--radius-sm);
+  box-shadow: inset 0 0 0 1.5px var(--border);
+  background: none;
+  color: var(--text);
+  font-family: var(--font-ui);
+}
+.lt-select:focus, .lt-input:focus, .lt-textarea:focus, .dk-input:focus, .dk-textarea:focus, .rd-input:focus {
+  outline: none;
+  box-shadow: inset 0 0 0 2px var(--primary);
+}
+.lt-section-title { font: 400 1.4rem/1.1 var(--font-display); border-bottom: 1px solid var(--primary); }
+.lt-opt-btn { border: 0; box-shadow: inset 0 0 0 1.5px var(--border); border-radius: var(--radius-sm); background: none; }
+.lt-opt-btn:hover { box-shadow: inset 0 0 0 1.5px var(--primary); }
+.lt-opt-btn.selected, .lt-opt-btn.active { box-shadow: inset 0 0 0 2px var(--primary); background: var(--wash); }
+.lt-mic-btn { border: 0; box-shadow: inset 0 0 0 1.5px var(--border); border-radius: var(--radius-sm); }
+.dk-back { color: var(--muted); }
+
+/* ============================================
+   READER: story header controls and the narration player
+============================================ */
+.btn-font-scale { border: 0; border-radius: var(--radius-sm); box-shadow: inset 0 0 0 1.5px var(--border); background: none; color: var(--text); }
+.btn-font-scale:hover { box-shadow: inset 0 0 0 1.5px var(--primary); }
+.ssp-play-btn { background: var(--primary); color: var(--bg); border: 0; }
+.ssp-play-btn:hover { background: var(--primary-mid); }
+.ssp-speaker { color: var(--muted); letter-spacing: .04em; text-transform: none; font-weight: 600; }
+.ssp-slider { accent-color: var(--primary); }
+
+/* Word popup: serif word under a navy rule; the sheet is otherwise flat */
+.wp-sheet { border: 0; border-top: 3px solid var(--primary); border-radius: 0; }
+@media (min-width: 640px) { .wp-sheet { border-radius: 0; border: 0; border-top: 3px solid var(--primary); outline: 1px solid var(--border); } }
+.wp-word { font: 400 2rem/1.1 var(--font-display); color: var(--text); }
+.wp-close { color: var(--muted); }
