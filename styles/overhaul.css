@@ -1470,3 +1470,8 @@ body:has(.dkb-game) .content, body:has(.dkb-lobby) .content, body:has(.dkb-done)
 .app-toast.app-toast--success { border-top-color: var(--success); }
 .app-toast.app-toast--error, .app-toast.app-toast--danger { border-top-color: var(--danger); }
 .app-toast.app-toast--warning { border-top-color: var(--ochre); }
+
+/* Unit page path: leave room on the left so the current node's ring is not clipped */
+.ud-lesson { padding-left: 36px; }
+.ud-lesson::before { left: 11px; }
+.ud-lesson-node { left: 5px; }
