@@ -245,6 +245,23 @@ A 3px hairline track with a navy fill and a vermilion marker at the current posi
 - **Keyword chips** (writing, tests): outlined rectangles, turning pine with a tick as the learner uses each word. Word counter below the field.
 - **Learner text feedback:** the learner's version struck through in brick, the correction in pine serif, a one-line reason in muted sans; marks inside running text are dashed brick underlines.
 
+### Switches
+A switch is a 46 x 24 rectangle (2px radius) with a 1.5px navy outline and a 16px navy square at the left when off; on, it fills navy and the square turns cream and slides right. The label is serif, "What's this?" is a text action. Never a pill toggle.
+
+### Reference pages (Grammar Guide, lexicon)
+- **Topic list:** a large muted serif number, the topic in serif with its one-line description, and a text action "Practise" at the right. A "Search grammar across the whole course" text action follows.
+- **Paradigm table:** forms always sit in a table (pronoun in small grey sans, form in serif), a navy rule above the first row, hairlines between rows. Examples follow as serif lines with a muted translation.
+- **Level tag:** a small outlined square with the level code (A1 to C1) marks search results and topics.
+- **Morphology ladder** (Hungarian Reader lexicon): a word is shown in a sheet split into its parts (stem, plural, possessive, case) as outlined boxes joined by plus signs, each with its meaning beneath.
+
+### Word and story lists
+Deck words carry a small status square: hollow ochre for new, half navy for learning, solid pine for mastered, always with the word beside it. Search matches are underlined with a sand highlight; a search with no results says what was searched and offers to clear it.
+
+### Notes, support and states
+- **First-time note:** a margin note between hairlines: a 10px navy square, one italic serif sentence in the app's voice (understated, slightly wry), and a "Got it" text action. Never a modal, never a coloured card.
+- **Support sheets** (report a problem, back up your progress) follow the sheet pattern. The report sheet names what it is about (story and paragraph).
+- **Offline and load-failure states** are full pages with a small hero (a dashed route to a hollow square for offline, a crossed frame for failure), a title, one muted reassurance line (progress is safe) and Try again plus an escape.
+
 ### Fields and sheets
 Fields are a 1.5px hairline inset box (2px radius), serif text, navy 2px on focus. Checklist items use an 18px square box, navy filled with a cream tick when checked. Sheets sit at the bottom over a page dimmed to 35%, with a 3px navy top rule, a serif title, content, then the actions; cancel is a text action.
 

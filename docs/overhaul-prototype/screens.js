@@ -529,8 +529,150 @@
   } };
 
   
+  /* ---------- the last gaps: guide, lexicon, decks, tests, quiz, search, Hungarian, notes, support ---------- */
+  function sw(on, label, info) { return '<div class="swr"><button class="sw' + (on ? ' on' : '') + '" role="switch" aria-checked="' + on + '" aria-label="' + label + '"><i></i></button><span class="swl">' + label + '</span>' + (info ? '<button class="linkbtn">What\u2019s this?</button>' : '') + '</div>'; }
+  function lvtag(l) { return '<span class="lvtag">' + l + '</span>'; }
+  function searchBox(v, label) { return '<div class="searchw pad" style="margin-top:20px"><input class="fi" type="search" value="' + (v || '') + '" placeholder="Search\u2026" aria-label="' + label + '"></div>'; }
+  var HUKEYS = '<div class="akeys">' + ['\u00e1', '\u00e9', '\u00ed', '\u00f3', '\u00f6', '\u0151', '\u00fa', '\u00fc', '\u0171'].map(function (k) { return '<button class="key">' + k + '</button>'; }).join('') + '</div>';
+
+  /* Grammar Guide */
+  S.guide = { tab: 'lessons', label: 'Grammar Guide: unit topics', html: function () {
+    var t = function (n, title, sub) { return '<div class="gt"><button class="gt-main" data-go="guide/topic"><span class="gt-n">' + n + '</span><span><span class="name">' + title + '</span><span class="desc">' + sub + '</span></span></button><button class="linkbtn" data-go="workshop">Practise</button></div>'; };
+    return '<a class="backl" href="#lessons/path" data-go="lessons/path">\u2039 Unit 6</a>' + head('Grammar Guide', 'Unit 6 \u00b7 Caf\u00e9 and Market', HERO.lessons) +
+      '<div class="rows" style="margin-top:30px">' + t(1, 'Ordering with quisiera', 'Polite requests') + t(2, 'Uncountable and countable nouns', 'un caf\u00e9, unas galletas') + t(3, 'Prices and numbers to 1,000', 'cu\u00e1nto cuesta, cuestan') + '</div>' +
+      '<p class="pad" style="padding-top:24px"><button class="linkbtn" data-go="guide/search">Search grammar across the whole course</button></p>';
+  } };
+  S['guide/topic'] = { tab: 'lessons', label: 'Grammar Guide: topic (paradigm)', html: function () {
+    var r = function (a, b) { return '<tr><td>' + a + '</td><td class="serif">' + b + '</td></tr>'; };
+    var ex = function (a, b) { return '<li><span class="serif">' + a + '</span><span class="muted small">' + b + '</span></li>'; };
+    return '<a class="backl" href="#guide" data-go="guide">\u2039 Grammar Guide</a><header class="head" style="min-height:0;padding-bottom:0"><h1 style="font-size:clamp(2rem,9vw,2.6rem)">Ordering with quisiera</h1><p class="lede" style="max-width:none">' + lvtag('B1') + ' Polite requests</p></header>' +
+      '<div class="pad" style="padding-top:22px"><p class="serif" style="font-size:1.2rem;line-height:1.55;max-width:32em">Use <b style="font-weight:600">quisiera</b> instead of quiero when you want to sound polite. It works like an ordinary verb form, followed by a noun or an infinitive.</p></div>' +
+      '<h2 class="sec">The forms</h2><div class="pad"><table class="tbl"><tbody>' + r('yo', 'quisiera') + r('t\u00fa', 'quisieras') + r('\u00e9l, ella, usted', 'quisiera') + r('nosotros', 'quisi\u00e9ramos') + r('ellos, ustedes', 'quisieran') + '</tbody></table></div>' +
+      '<h2 class="sec">In use</h2><ul class="exl">' + ex('Quisiera un caf\u00e9, por favor.', 'I would like a coffee, please.') + ex('\u00bfQuisieras venir conmigo?', 'Would you like to come with me?') + '</ul>' +
+      '<div class="pad" style="padding-top:26px"><div class="actline"><button class="btn ghost" data-go="workshop">Practise this in the Workshop</button></div></div>';
+  } };
+  S['guide/search'] = { tab: 'lessons', label: 'Grammar Guide: search', html: function () {
+    var r = function (lv, t, k) { return '<button class="sres" data-go="guide/topic">' + lvtag(lv) + '<span><span class="name">' + t + '</span><span class="desc">' + k + '</span></span></button>'; };
+    return '<a class="backl" href="#guide" data-go="guide">\u2039 Grammar Guide</a>' + head('Search grammar', 'Across the whole course.', HERO.lessons) + searchBox('subj', 'Search grammar') +
+      '<p class="pad muted small" style="margin-top:14px">3 topics match</p><div class="rows" style="margin-top:6px">' + r('B1', 'Subjunctive after espero que', 'subjuntivo, wishes, hopes') + r('B2', 'Subjunctive in relative clauses', 'subjuntivo, unknown, nonexistent') + r('B2', 'Imperfect subjunctive with si', 'si tuviera, conditionals') + '</div>';
+  } };
+
+  /* Reader lexicon (Hungarian): a word broken into its parts */
+  S.lexicon = { tab: 'library', x: 1, label: 'Reader lexicon: Hungarian word breakdown', html: function () {
+    var sg = function (a, b, last) { return '<div class="seg2"><b>' + a + '</b><span>' + b + '</span></div>' + (last ? '' : '<i class="plus">+</i>'); };
+    return '<div class="xwrap"><div class="dim"><div class="reader"><h1 class="serif" style="font-size:2rem;line-height:1.05;margin-top:40px;letter-spacing:-.02em">A h\u00e1z</h1><p>A <span class="w new sel">h\u00e1zaimban</span> sok k\u00f6nyv van.</p></div></div>' +
+      '<div class="sheet"><p class="serif" style="font-size:2rem;line-height:1">h\u00e1zaimban</p><p class="muted" style="margin-top:6px">in my houses</p>' +
+      '<div class="ladder">' + sg('h\u00e1z', 'house') + sg('-a-i', 'plural') + sg('-m', 'my') + sg('-ban', 'in', 1) + '</div>' +
+      '<div class="actline" style="margin-top:18px;gap:10px;flex-wrap:wrap"><button class="btn ghost">Listen</button><button class="btn">Add to deck</button><button class="linkbtn" style="margin-left:auto">Close</button></div></div></div>';
+  } };
+
+  /* Decks: editor and browse */
+  S['decks/editor'] = { tab: 'decks', label: 'Decks: create or edit a deck', html: function () {
+    var w = function (a, b) { return '<div class="wr"><span class="serif">' + a + '</span><span class="muted small">' + b + '</span><button class="linkbtn danger" aria-label="Remove">Remove</button></div>'; };
+    return '<a class="backl" href="#decks" data-go="decks">\u2039 Decks</a><div class="pad"><h1 class="serif" style="font-size:2.2rem;line-height:1.05;margin-top:22px;letter-spacing:-.02em">New deck</h1>' +
+      '<label class="fl" for="dn">Name</label><input id="dn" class="fi" value="At the market">' +
+      '<label class="fl" for="dw">Add a word</label><div class="addrow"><input id="dw" class="fi" placeholder="Word or phrase\u2026"><button class="btn ghost">Add</button></div></div>' +
+      '<h2 class="sec">4 words</h2><div class="rows">' + w('la fruta', 'fruit') + w('el kilo', 'kilo') + w('fresco', 'fresh') + w('\u00bfcu\u00e1nto cuesta?', 'how much is it?') + '</div>' +
+      '<div class="pad" style="padding-top:26px"><div class="actline" style="gap:10px;flex-wrap:wrap"><button class="btn" data-go="decks">Save</button><button class="btn ghost" data-go="decks">Cancel</button><button class="linkbtn danger" style="margin-left:auto">Delete deck</button></div></div>';
+  } };
+  S['decks/browse'] = { tab: 'decks', label: 'Decks: browse the words in a deck', html: function () {
+    var w = function (a, b, st) { var lab = st === 'n' ? '<span class="ot">New</span>' : st === 'l' ? '<span>Learning</span>' : '<span class="cmp">Mastered</span>'; return '<div class="bw"><span class="stm ' + st + '"></span><span><span class="name" style="font-size:1.15rem">' + a + '</span><span class="desc">' + b + '</span></span><span class="bw-s">' + lab + '</span></div>'; };
+    return '<a class="backl" href="#decks" data-go="decks">\u2039 Decks</a><header class="head" style="min-height:0;padding-bottom:0"><h1 style="font-size:clamp(2rem,9vw,2.6rem)">A1 Core Vocabulary</h1><p class="lede" style="max-width:none">235 words \u00b7 72% learned</p></header>' + searchBox('', 'Search this deck') +
+      '<div class="rows" style="margin-top:14px">' + w('el caf\u00e9', 'coffee', 'm') + w('la leche', 'milk', 'l') + w('el pan', 'bread', 'm') + w('la cerveza', 'beer', 'n') + w('el az\u00facar', 'sugar', 'l') + '</div>';
+  } };
+
+  /* Level test, Part 1 */
+  S['test/part1'] = { tab: 'lessons', x: 1, label: 'Level test: Part 1, language in context', html: function () {
+    var b = function (n) { return '<span class="ibl">' + n + '</span>'; };
+    var f = function (n, hint, v) { return '<div class="fr"><span class="fr-n">' + n + '</span><input class="fi" value="' + (v || '') + '" aria-label="Answer ' + n + '"><span class="muted small">' + hint + '</span></div>'; };
+    return '<div class="xwrap">' + xbar(18, 'Part 1 of 3') + '<div class="pad" style="padding-top:26px"><p class="serif muted" style="font-size:1.05rem">Language in context</p>' +
+      '<p class="serif" style="font-size:1.45rem;line-height:1.7;margin-top:14px">Marta vive en Madrid. Todos los d\u00edas ' + b(1) + ' al trabajo en metro y ' + b(2) + ' un caf\u00e9 en la estaci\u00f3n. Ayer ' + b(3) + ' tarde.</p>' +
+      '<div style="margin-top:20px;border-top:1px solid var(--hair)">' + f(1, 'ir, present', 'va') + f(2, 'tomar, present', '') + f(3, 'llegar, past', '') + '</div></div>' +
+      '<div class="pad" style="margin-top:auto;padding-top:22px;padding-bottom:24px"><button class="btn" style="width:100%;text-align:center" disabled>Next</button></div></div>';
+  } };
+
+  /* Reading quiz */
+  S.quiz = { tab: 'library', x: 1, label: 'Reading quiz: question', html: function () {
+    var o = [['A', 'To read the news'], ['B', 'To have breakfast'], ['C', 'To meet a friend'], ['D', 'To buy bread']];
+    return '<div class="xwrap">' + xbar(40, '2 of 5') + '<div class="xq" style="min-height:0"><p class="lab">El tren de las ocho</p><p class="sent" style="font-size:clamp(1.5rem,6.5vw,1.9rem)">Why does Marta go down to the caf\u00e9 every morning?</p></div>' +
+      '<div class="opts">' + o.map(function (x, i) { return '<button class="opt' + (i === 1 ? ' sel' : '') + '"><span class="k">' + x[0] + '</span><span>' + x[1] + '</span><span></span></button>'; }).join('') + '</div>' +
+      '<div class="pad" style="margin-top:auto;padding-top:24px;padding-bottom:24px"><button class="btn" style="width:100%;text-align:center">Check</button></div></div>';
+  } };
+  S['quiz/done'] = { tab: 'library', label: 'Reading quiz: result', html: function () {
+    var art = hero('<circle class="sand" cx="150" cy="46" r="80"/><path class="navf" d="M60 170a72 72 0 0 1 144 0z"/><path class="navs" d="M30 170h222"/><g class="rise"><path class="ps" stroke-width="1.5" d="M132 66v104"/><circle class="pf" cx="132" cy="66" r="9"/></g>');
+    var q = function (t, ok) { return '<div class="qr"><span class="tk ' + (ok ? 'ok' : 'no') + '">' + (ok ? TICK : '<svg class="rd" style="stroke:var(--brick)" viewBox="0 0 20 20"><path d="M5 5l10 10M15 5L5 15"/></svg>') + '</span><span class="serif" style="font-size:1.1rem">' + t + '</span></div>'; };
+    return head('Quiz 4 / 5', 'El tren de las ocho', art) + '<div class="rows" style="margin-top:96px">' + q('Why Marta goes to the caf\u00e9', 1) + q('What she orders', 1) + q('Where she sits', 1) + q('What she watches', 0) + q('When she starts work', 1) + '</div>' +
+      '<div class="pad" style="padding-top:8px"><div class="actline" style="gap:10px;flex-wrap:wrap"><button class="btn" data-go="library">Back to the Library</button><button class="linkbtn" data-go="library/read">Read again</button></div></div>';
+  } };
+
+  /* Library search */
+  S['library/search'] = { tab: 'library', label: 'Library: search results', html: function () {
+    return head('Library', 'Stories to read, and your own texts.', HERO.library) + libTabs('library') + searchBox('mercado', 'Search titles') +
+      '<p class="pad muted small" style="margin-top:14px">3 stories match</p><div class="rows lvls" style="margin-top:6px;border-top:0"><button class="lvl room-h open">' + lvlIcon('A2', 'todo') + '<span><span class="code">A2</span><span class="nm">1 story</span></span></button>' +
+      storyRow('lib-s-m1', '', 'En el <span class="hl">mercado</span>', 'Unit 12 \u00b7 Shopping', { fam: 90 }) +
+      '<button class="lvl room-h open">' + lvlIcon('B1', 'now') + '<span><span class="code">B1</span><span class="nm">2 stories</span></span></button>' +
+      storyRow('lib-b1-o1', 'Part 1', 'Un d\u00eda en el <span class="hl">mercado</span>', 'Unit 6 \u00b7 Caf\u00e9 and Market', { read: 1, fam: 91 }) + storyRow('lib-b1-l2', 'Part 2', '<span class="hl">Mercado</span> de San Telmo', 'Latin America track', { fam: 70 }) + '</div>';
+  } };
+  S['library/nomatch'] = { tab: 'library', label: 'Library: nothing found', html: function () {
+    return head('Library', 'Stories to read, and your own texts.', HERO.library) + libTabs('library') + searchBox('zzz', 'Search titles') +
+      '<div class="pad" style="padding-top:34px"><h2 class="serif" style="font-size:1.6rem;line-height:1.1">No stories match \u201czzz\u201d.</h2><p class="muted" style="margin-top:10px;font-size:15px;max-width:24em">Try a shorter word, or clear the search to see every story at your level.</p><div class="actline"><button class="btn ghost">Clear search</button></div></div>';
+  } };
+
+  /* Hungarian drillers */
+  S['hu/settings'] = { tab: 'workshop', label: 'Hungarian Verb Driller: settings', html: function () {
+    return '<a class="backl" href="#workshop" data-go="workshop">\u2039 Workshop</a>' + head('Verb Driller', 'Decode and produce Hungarian verb forms.', HERO.workshop) +
+      '<div class="pad" style="padding-top:30px"><p class="muted" style="font-size:15px;max-width:26em">Draws from the whole dictionary, not only your lessons. 238 verbs are available for this combination.</p>' +
+      '<div class="swrows">' + sw(0, 'Past tense', 1) + sw(1, 'Definite conjugation', 1) + sw(0, 'Only verbs from my lessons') + '</div>' +
+      '<div class="seg two" role="radiogroup" style="margin:26px 0 0"><button role="radio" aria-checked="true" class="on">10 questions</button><button role="radio" aria-checked="false">Timed, 60 s</button></div>' +
+      '<div class="actline"><button class="btn" data-go="hu/drill">Start</button><span class="rule"></span></div></div>';
+  } };
+  S['hu/drill'] = { tab: 'workshop', x: 1, label: 'Hungarian Verb Driller: a question', html: function () {
+    return '<div class="xwrap">' + xbar(30, '3 / 10') + '<div class="xq" style="min-height:0"><p class="lab">Definite \u00b7 present \u00b7 \u0151, he or she</p><p class="sent" style="font-size:2.6rem">l\u00e1t</p><p class="muted" style="margin-top:6px">to see</p></div>' +
+      '<div class="pad" style="padding-top:14px"><input class="fi" value="l\u00e1tj" aria-label="Your answer">' + HUKEYS + '</div>' +
+      '<div class="pad" style="margin-top:auto;padding-top:24px;padding-bottom:24px"><button class="btn" style="width:100%;text-align:center">Check</button></div></div>';
+  } };
+  S['hu/results'] = { tab: 'workshop', label: 'Driller session results (all drillers)', html: function () {
+    var m = function (a, b) { return '<div class="fx"><span class="bad-w">' + a + '</span><span class="fix">' + b + '</span></div>'; };
+    return '<a class="backl" href="#workshop" data-go="workshop">\u2039 Workshop</a><header class="head" style="min-height:0;padding-bottom:0"><h1>8 / 10</h1><p class="lede">Session results. 1:42 for ten.</p></header>' +
+      '<div class="rows jrows" style="margin-top:22px">' + crit('Accuracy', 80, '80%') + crit('Speed', 64, '10.2 s each') + '</div>' +
+      '<h2 class="sec">Review missed items</h2><div class="rows">' + m('l\u00e1tja', 'l\u00e1tsz') + m('\u00edrn\u00e1', '\u00edrja') + '</div>' +
+      '<div class="pad" style="padding-top:22px;display:flex;gap:10px;flex-wrap:wrap"><button class="btn">Review missed items</button><button class="btn ghost" data-go="hu/settings">Again</button></div>';
+  } };
+
+  /* First-time note, support sheets, states, about */
+  S['home/note'] = { tab: 'home', label: 'First-time note on Home (margin note)', html: function () {
+    var note = '<div class="gnote"><span class="gm"></span><p class="serif">One recommendation, not five. It is whatever will help most today.</p><button class="linkbtn">Got it</button></div>';
+    return S.home.html().replace('<div class="tos">', note + '<div class="tos">');
+  } };
+  S['sheet/bug'] = { tab: 'library', x: 1, label: 'Sheet: report a problem', html: function () {
+    return '<div class="xwrap"><div class="dim"><div class="reader"><h1 class="serif" style="font-size:2rem;line-height:1.05;margin-top:40px;letter-spacing:-.02em">El tren de las ocho</h1><p>Todas las ma\u00f1anas, Marta baja a la estaci\u00f3n de la esquina.</p></div></div>' +
+      '<div class="sheet"><p class="serif" style="font-size:1.6rem;line-height:1">Report a problem</p><p class="muted small" style="margin-top:6px">El tren de las ocho \u00b7 paragraph 1</p>' +
+      '<textarea class="fi ta-area" rows="4" style="margin-top:16px" placeholder="What\u2019s wrong here?"></textarea>' +
+      '<div class="actline" style="margin-top:16px;gap:10px;flex-wrap:wrap"><button class="btn">Send</button><button class="linkbtn" style="margin-left:auto">Cancel</button></div></div></div>';
+  } };
+  S['sheet/sync'] = { tab: 'home', x: 1, label: 'Sheet: back up your progress', html: function () {
+    return '<div class="xwrap"><div class="dim"><header class="head" style="min-height:0"><h1>Hola, Gergely.</h1></header></div>' +
+      '<div class="sheet"><p class="serif" style="font-size:1.6rem;line-height:1">Keep your progress safe</p><p class="muted" style="margin-top:8px;font-size:15px;max-width:26em">Back it up so it is not stuck on one device.</p>' +
+      '<div class="actline" style="margin-top:16px"><button class="btn ghost">Continue with Google</button></div><p class="muted small" style="margin:16px 0 8px">Or with email</p><input class="fi" type="email" placeholder="you@example.com" aria-label="Email">' +
+      '<div class="actline" style="margin-top:14px;gap:10px;flex-wrap:wrap"><button class="btn">Send me a login link</button><button class="linkbtn" style="margin-left:auto">Not now</button></div></div></div>';
+  } };
+  S['state/offline'] = { tab: 'home', x: 1, label: 'State: offline', html: function () {
+    var art = hero('<circle class="sand" cx="176" cy="60" r="60"/><path class="navs" stroke-width="1.5" stroke-dasharray="5 6" d="M60 150C110 150 120 90 200 84"/><circle class="navf" cx="60" cy="150" r="7"/><rect class="navs" stroke-width="1.5" x="198" y="76" width="16" height="16"/>');
+    return '<div class="xwrap">' + head('You\u2019re offline.', 'What you have already opened still works.', art) + '<div class="pad" style="padding-top:30px"><p class="muted" style="font-size:15px;max-width:24em">New stories and audio need a connection. Your progress is saved on this device and will sync when you are back.</p><div class="actline" style="gap:10px;flex-wrap:wrap"><button class="btn">Try again</button><button class="btn ghost" data-go="home">Go to Home</button></div></div></div>';
+  } };
+  S['state/error'] = { tab: 'home', x: 1, label: 'State: something failed to load', html: function () {
+    var art = hero('<circle class="sand" cx="176" cy="60" r="60"/><rect class="navs" stroke-width="1.5" x="120" y="60" width="70" height="90"/><path class="navs" stroke-width="1.5" d="M120 60 190 150"/>');
+    return '<div class="xwrap">' + head('That didn\u2019t load.', 'Something went wrong on our side.', art) + '<div class="pad" style="padding-top:30px"><p class="muted" style="font-size:15px;max-width:24em">Your progress is safe. Try again, and if it keeps happening, tell us what you were doing.</p><div class="actline" style="gap:10px;flex-wrap:wrap"><button class="btn">Try again</button><button class="btn ghost" data-go="sheet/bug">Report a problem</button></div></div></div>';
+  } };
+  S.about = { tab: 'home', label: 'How Parlour works', html: function () {
+    var it = function (k, t, d) { return '<div class="ab"><svg class="am" viewBox="0 0 32 32" aria-hidden="true">' + ICON[k] + '</svg><span><span class="name">' + t + '</span><span class="desc">' + d + '</span></span></div>'; };
+    return '<a class="backl" href="#home" data-go="home">\u2039 Home</a>' + head('How Parlour works', 'Six rooms, one path.', HERO.home) +
+      '<div class="rows" style="margin-top:28px">' + it('lessons', 'Lessons', 'A short lesson each time. Levels run A1 to C1, and each unit has a story.') + it('library', 'Library', 'Stories at your level, and your own texts. Tap any word to look it up.') + it('workshop', 'Workshop', 'Drills for one skill at a time, plus speaking and writing practice.') + it('decks', 'Decks', 'Words that come back just before you would forget them.') + it('journey', 'Journey', 'Where you are on the way from A1 to C1, and what you can already do.') + it('home', 'Home', 'One recommendation for today. Start there.') + '</div>';
+  } };
+
+  
   /* ---------- shell ---------- */
-  var order = ['home', 'lessons', 'lessons/path', 'gallery', 'lesson', 'lesson/correct', 'lesson/wrong', 'lesson/done', 'library', 'library/saved', 'library/texts', 'library/editor', 'library/read', 'workshop', 'workshop/verb', 'workshop/drill', 'decks', 'decks/review', 'decks/answer', 'journey', 'journey/passport', 'journey/knowledge', 'journey/skills', 'journey/milestones', 'journey/account', 'welcome', 'welcome/variant', 'welcome/start', 'plan', 'test', 'test/writing', 'test/speaking', 'test/result', 'speaking', 'speaking/feedback', 'writing', 'writing/feedback', 'lesson/type', 'lesson/listen', 'lesson/dialogue', 'lesson/match', 'decks/empty', 'decks/caught-up', 'sheet/deck', 'sheet/streak'];
+  var order = ['home', 'lessons', 'lessons/path', 'gallery', 'lesson', 'lesson/correct', 'lesson/wrong', 'lesson/done', 'library', 'library/saved', 'library/texts', 'library/editor', 'library/read', 'workshop', 'workshop/verb', 'workshop/drill', 'decks', 'decks/review', 'decks/answer', 'journey', 'journey/passport', 'journey/knowledge', 'journey/skills', 'journey/milestones', 'journey/account', 'welcome', 'welcome/variant', 'welcome/start', 'plan', 'test', 'test/writing', 'test/speaking', 'test/result', 'speaking', 'speaking/feedback', 'writing', 'writing/feedback', 'lesson/type', 'lesson/listen', 'lesson/dialogue', 'lesson/match', 'decks/empty', 'decks/caught-up', 'sheet/deck', 'sheet/streak', 'guide', 'guide/topic', 'guide/search', 'lexicon', 'decks/editor', 'decks/browse', 'test/part1', 'quiz', 'quiz/done', 'library/search', 'library/nomatch', 'hu/settings', 'hu/drill', 'hu/results', 'home/note', 'sheet/bug', 'sheet/sync', 'state/offline', 'state/error', 'about'];
   $('screen').innerHTML = order.map(function (k) { return '<option value="' + k + '">' + S[k].label + '</option>'; }).join('');
 
   function renderNav(tab) {
