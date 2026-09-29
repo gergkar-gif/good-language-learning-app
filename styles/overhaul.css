@@ -1582,3 +1582,25 @@ body:has(.dkb-game) .content, body:has(.dkb-lobby) .content, body:has(.dkb-done)
   padding: 3px 9px;
 }
 .wr-exchange-comp-tag, .sp-scenario-comp-tag { background: none; border: 0; box-shadow: inset 0 0 0 1.5px var(--border); color: var(--text); border-radius: var(--radius-sm); }
+
+/* ============================================
+   PLACEMENT DIAGNOSTIC: intro as label and value rows
+============================================ */
+.diag-preface-card { background: none; border: 0; border-radius: 0; box-shadow: none; padding: 8px 0 0; }
+.diag-title { font: 400 clamp(2rem, 8vw, 2.7rem)/1.08 var(--font-display); letter-spacing: -0.02em; }
+.diag-lead { color: var(--muted); font-size: 1.05rem; line-height: 1.6; max-width: 34em; }
+.diag-preface-meta { display: block; background: none; border: 0; border-top: 1px solid var(--primary); border-radius: 0; padding: 0; margin: 26px 0 0; }
+.diag-meta-item { display: grid; grid-template-columns: minmax(7em, 11em) 1fr; gap: 16px; align-items: baseline; padding: 14px 0; border-bottom: 1px solid var(--border); }
+.diag-meta-label { font: 400 1rem/1.3 var(--font-display); color: var(--muted); text-transform: none; letter-spacing: 0; }
+.diag-meta-val { font: 500 1rem/1.4 var(--font-ui); color: var(--text); }
+.diag-honest-note { margin: 22px 0 0; color: var(--muted); line-height: 1.6; max-width: 34em; }
+.diag-preface-actions { margin-top: 26px; display: flex; flex-wrap: wrap; gap: 14px 22px; align-items: center; }
+.diag-btn-start { padding: 15px 26px; }
+.diag-btn-skip { background: none; border: 0; box-shadow: none; color: var(--muted); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; padding: 6px 0; }
+.diag-header-bar { border: 0; }
+@media (max-width: 480px) { .diag-meta-item { grid-template-columns: 1fr; gap: 2px; } }
+
+/* "Set Your Own Task" and other custom prompt cards: same open row as the rest */
+.sp-card-custom, .sp-prompt-grid .sp-card-custom { border-left: 0; border-right: 0; border-radius: 0; padding: 16px 0; background: none; }
+.sp-prompt-grid .wk-card { padding-left: 0; padding-right: 0; }
+.sp-setup-sub, .sp-prod-lead, .gd-hint { line-height: 1.6; margin-bottom: 10px; }
