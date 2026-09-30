@@ -759,6 +759,10 @@ body.in-lesson .content {
   margin-top: 26px;
 }
 
+/* The tool rows above already end on a hairline; a second one here read as a
+   double rule. The gap separates the two groups. */
+.curriculum-top-actions + .level-list { border-top: 0; }
+
 /* An archive of open rows on cream, divided by hairlines — not a stack of
    lifted white cards. No spine bar either: it was a fixed navy accent
    regardless of level, so it carried no information. */
@@ -1345,8 +1349,6 @@ body.in-lesson .content {
   flex-wrap: wrap;
   gap: 10px;
   margin: var(--space-5) 0;
-  padding-bottom: var(--space-5);
-  border-bottom: 1px solid var(--border-light);
 }
 
 .ud-dot {
