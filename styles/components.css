@@ -8888,3 +8888,44 @@
   .review-rate-label { font-weight: 500; }
   h1, h2, h3, h4 { font-weight: 400; }
 }
+
+/* Hungarian Cultural Exam: a hub of rows, each opening its own screen.
+   The same row is used at every level (sections, categories, question sets,
+   matching modes, mock exams). */
+.hce-rows { border-top: 1px solid var(--primary); margin-top: 24px; }
+.hce-row {
+  display: grid;
+  grid-template-columns: 1fr 20px;
+  gap: 14px;
+  align-items: center;
+  width: 100%;
+  padding: 18px 0;
+  text-align: left;
+  background: none;
+  border: 0;
+  border-bottom: 1px solid var(--border);
+  border-radius: 0;
+  color: var(--text);
+  cursor: pointer;
+}
+.hce-row-text { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.hce-row-name { font: 400 1.3rem/1.2 var(--font-display); }
+.hce-row-en { font: 400 14px/1.4 var(--font-ui); color: var(--muted); }
+.hce-row-value { font: 500 13px/1.3 var(--font-ui); color: var(--muted); text-align: right; white-space: nowrap; }
+.hce-row-chev { width: 9px; height: 9px; justify-self: end; border-right: 1.5px solid var(--muted); border-top: 1.5px solid var(--muted); transform: rotate(45deg); }
+@media (hover: hover) {
+  .hce-row:hover .hce-row-name { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 5px; }
+}
+.hce-link-btn { background: none; border: 0; padding: 0; font: inherit; font-size: 14px; color: var(--muted); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; cursor: pointer; }
+@media (hover: hover) {
+  .hce-link-btn:hover { color: var(--text); }
+}
+.hce-actions { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin: 18px 0 6px; }
+.hce-header { margin-bottom: 0; }
+.hce-mcq-stats, .hce-match-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin: 20px 0 8px; color: var(--muted); font-size: 14px; }
+.hce-header { border-bottom: 0; padding-bottom: 0; }
+.hce-toolbar.hce-actions { flex-direction: row; align-items: center; justify-content: flex-start; gap: 12px 24px; text-align: left; }
+.hce-fact-hu { font: 400 1.05rem/1.65 var(--font-display); }
+.hce-fact-title { font: 400 1.3rem/1.25 var(--font-display); }
+.hce-fact-en { font-size: 15px; line-height: 1.6; }
+.hce-rows, .hce-section > .hce-section-desc { max-width: 40em; }

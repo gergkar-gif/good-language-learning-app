@@ -19,11 +19,15 @@ const HuCulturalExam = (function () {
     const STORAGE_KEY = 'parlour_hu_cultural_exam_v1';
     let _data = null;
     let _state = {
-        tab: 'categories',        // 'categories' | 'vocab' | 'mcq' | 'matching' | 'mocks'
-        selectedCategory: 'all',  // 'all' or category.id
+        // Navigation: the exam opens on a hub of five sections. A section opens
+        // its own screen, and most of those open one item at a time.
+        tab: null,                // null (hub) | 'categories' | 'vocab' | 'mcq' | 'matching' | 'mocks'
+        selectedCategory: null,   // null (list of categories) or category.id
         showEnglishAll: true,
+        mcqOpen: false,           // false: list of question sets; true: the questions
         mcqCategory: 'all',
         mcqAnswers: {},           // { [mcqId]: selectedOptionIdx }
+        matchOpen: false,         // false: list of modes; true: the board
         matchMode: 'nameToWork',  // 'nameToWork' | 'personToField' | 'dateToEvent' | 'symbolToMeaning'
         matchRoundPairs: [],      // array of { id, left, right }
         matchLeftOrder: [],
@@ -31,6 +35,7 @@ const HuCulturalExam = (function () {
         matchSelectedLeft: null,
         matchSolvedIds: {},
         matchWrongFlash: false,
+        mockOpen: false,          // false: list of mock exams; true: the exam
         activeMockId: 'mock-1',
         mockAnswers: {},          // { [qIndex]: optionIdx }
         mockSubmitted: false
@@ -135,103 +140,166 @@ const HuCulturalExam = (function () {
         return `<span class="hce-cat-pill">Témakör ${cat.num} · ${_esc(cat.titleHu)}</span>`;
     }
 
-    function _renderHeader(options) {
-        const backBtn = (options && options.onBackLabel)
-            ? `<button type="button" class="level-back" data-hce-back="1">← ${_esc(options.onBackLabel)}</button>`
-            : '';
-        const tabs = [
-            { id: 'categories', label: '1. 6 Témakör & Művek (Facts & Artifacts)' },
-            { id: 'vocab',      label: '2. Vizsgaszókincs (Vocabulary)' },
-            { id: 'mcq',        label: '3. Tesztkérdések (Targeted MCQs)' },
-            { id: 'matching',   label: '4. Párosító gyakorlatok (4 Matching Modes)' },
-            { id: 'mocks',      label: '5. Mintavizsgák (3 Mock Exams)' }
-        ];
+    const SECTIONS = [
+        { id: 'categories', hu: 'Témakörök és művek',    en: 'Facts and artifacts' },
+        { id: 'vocab',      hu: 'Vizsgaszókincs',        en: 'Exam vocabulary' },
+        { id: 'mcq',        hu: 'Tesztkérdések',         en: 'Targeted questions' },
+        { id: 'matching',   hu: 'Párosító gyakorlatok',  en: 'Matching practice' },
+        { id: 'mocks',      hu: 'Mintavizsgák',          en: 'Mock exams' }
+    ];
+
+    const MATCH_MODES = [
+        { id: 'nameToWork',      hu: 'Alkotó → Mű',        en: 'Name to work' },
+        { id: 'personToField',   hu: 'Személy → Szerep',   en: 'Person to field' },
+        { id: 'dateToEvent',     hu: 'Évszám → Esemény',   en: 'Date to event' },
+        { id: 'symbolToMeaning', hu: 'Jelkép → Jelentés',  en: 'Symbol to meaning' }
+    ];
+
+    function _section(id) { return SECTIONS.find(x => x.id === id) || null; }
+    function _category(id) { return (_data.categories || []).find(c => c.id === id) || null; }
+
+    // Is an item (one category, one question set, one mode, one exam) open
+    // inside the current section?
+    function _itemOpen() {
+        switch (_state.tab) {
+            case 'categories': return !!_state.selectedCategory;
+            case 'mcq': return _state.mcqOpen;
+            case 'matching': return _state.matchOpen;
+            case 'mocks': return _state.mockOpen;
+            default: return false;
+        }
+    }
+
+    function _backBtn(kind, label) {
+        return `<button type="button" class="level-back" data-hce-back="${kind}">← ${_esc(label)}</button>`;
+    }
+
+    // One row: name in serif, a muted gloss beneath, an optional figure and a
+    // drawn chevron. The same row is used at every level of the exam.
+    function _row(attrs, name, gloss, value) {
+        const line = [gloss, value].filter(Boolean).join(' · ');
         return `
-            ${backBtn}
+            <button type="button" class="hce-row" ${attrs}>
+                <span class="hce-row-text">
+                    <span class="hce-row-name">${_esc(name)}</span>
+                    ${line ? `<span class="hce-row-en">${_esc(line)}</span>` : ''}
+                </span>
+                <span class="hce-row-chev" aria-hidden="true"></span>
+            </button>
+        `;
+    }
+
+    function _rows(html) { return `<div class="hce-rows">${html}</div>`; }
+
+    function _renderHeader(options) {
+        const sec = _section(_state.tab);
+        const exitLabel = options && options.onBackLabel;
+
+        // The hub.
+        if (!sec) {
+            return `
+                ${exitLabel ? _backBtn('exit', exitLabel) : ''}
+                <header class="hce-header">
+                    <div class="hce-eyebrow">Magyar kulturális ismereti vizsga</div>
+                    <h2 class="hce-title">${_esc(_data.title)}</h2>
+                    <p class="hce-subtitle">Preparation for the Hungarian citizenship culture exam: six official categories, from national symbols to everyday Hungary.</p>
+                </header>
+            `;
+        }
+
+        // A section's own list.
+        if (!_itemOpen()) {
+            return `
+                ${_backBtn('hub', 'Cultural exam')}
+                <header class="hce-header">
+                    <h2 class="hce-title">${_esc(sec.hu)}</h2>
+                    <p class="hce-subtitle">${_esc(sec.en)}</p>
+                </header>
+            `;
+        }
+
+        // One item inside a section.
+        let title = sec.hu, sub = sec.en;
+        if (_state.tab === 'categories') {
+            const c = _category(_state.selectedCategory);
+            if (c) { title = `${c.num}. ${c.titleHu}`; sub = c.titleEn; }
+        } else if (_state.tab === 'mcq') {
+            const c = _category(_state.mcqCategory);
+            title = c ? `${c.num}. ${c.titleHu}` : 'Összes témakör';
+            sub = c ? c.titleEn : 'All categories';
+        } else if (_state.tab === 'matching') {
+            const set = (_data.matchingSets && _data.matchingSets[_state.matchMode]) || {};
+            title = set.title || sec.hu;
+            sub = set.subtitle || sec.en;
+        } else if (_state.tab === 'mocks') {
+            const exam = (_data.mockExams || []).find(m => m.id === _state.activeMockId) || (_data.mockExams || [])[0];
+            if (exam) { title = exam.title; sub = exam.description; }
+        }
+        return `
+            ${_backBtn('section', sec.hu)}
             <header class="hce-header">
-                <div class="hce-eyebrow">HUNGARIAN CULTURAL EXAM · MAGYAR KULTURÁLIS ISMERETI VIZSGA</div>
-                <h2 class="hce-title">${_esc(_data.title)}</h2>
-                <p class="hce-subtitle">
-                    Official 6-category preparation layer on top of the Hungarian Citizenship track — covering national symbols, historical turning points, the European &amp; Hungarian literary/musical canon, the Fundamental Law, civic rights/duties, and everyday Hungary.
-                </p>
-                <nav class="hce-tabs" role="tablist">
-                    ${tabs.map(t => `
-                        <button type="button"
-                                class="hce-tab${_state.tab === t.id ? ' is-active' : ''}"
-                                data-hce-tab="${t.id}">
-                            ${_esc(t.label)}
-                        </button>
-                    `).join('')}
-                </nav>
+                <h2 class="hce-title">${_esc(title)}</h2>
+                ${sub ? `<p class="hce-subtitle">${_esc(sub)}</p>` : ''}
             </header>
         `;
     }
 
+    function _renderHub() {
+        const cats = _data.categories || [];
+        const factCount = cats.reduce((n, c) => n + (c.facts || []).length, 0);
+        const mocks = _data.mockExams || [];
+        const saved = (_loadSavedProgress().mocks) || {};
+        const passed = mocks.filter(m => saved[m.id] && saved[m.id].passed).length;
+        const values = {
+            categories: `${cats.length} témakör · ${factCount} facts`,
+            vocab: `${(_data.vocabulary || []).length} terms`,
+            mcq: `${(_data.mcqs || []).length} questions`,
+            matching: `${MATCH_MODES.length} modes`,
+            mocks: mocks.length ? `${passed} of ${mocks.length} passed` : ''
+        };
+        return `<div class="hce-section">${_rows(SECTIONS.map(x =>
+            _row(`data-hce-tab="${x.id}"`, x.hu, x.en, values[x.id])).join(''))}</div>`;
+    }
+
     function _renderCategoriesTab() {
         const cats = _data.categories || [];
-        const visibleCats = _state.selectedCategory === 'all'
-            ? cats
-            : cats.filter(c => c.id === _state.selectedCategory);
 
+        // The six categories, one row each.
+        if (!_state.selectedCategory) {
+            return `<div class="hce-section">${_rows(cats.map(c =>
+                _row(`data-hce-cat="${_esc(c.id)}"`, `${c.num}. ${c.titleHu}`, c.titleEn,
+                     `${(c.facts || []).length} facts`)).join(''))}</div>`;
+        }
+
+        // One category: its facts, and a way to practise it.
+        const c = _category(_state.selectedCategory) || cats[0];
+        if (!c) return '';
         return `
             <div class="hce-section">
-                <div class="hce-toolbar">
-                    <div class="hce-cat-grid">
-                        <button type="button"
-                                class="hce-cat-card${_state.selectedCategory === 'all' ? ' is-selected' : ''}"
-                                data-hce-cat="all">
-                            <span class="hce-cat-num">1–6</span>
-                            <span class="hce-cat-name">Összes hivatalos témakör (All 6 Categories)</span>
-                        </button>
-                        ${cats.map(c => `
-                            <button type="button"
-                                    class="hce-cat-card${_state.selectedCategory === c.id ? ' is-selected' : ''}"
-                                    data-hce-cat="${_esc(c.id)}">
-                                <span class="hce-cat-num">${c.num}. témakör</span>
-                                <span class="hce-cat-name">${_esc(c.titleHu)}</span>
-                                <span class="hce-cat-en">${_esc(c.titleEn)}</span>
-                            </button>
-                        `).join('')}
-                    </div>
-                    <div class="hce-toggle-row">
-                        <button type="button" class="hce-secondary-btn" data-hce-toggle-en="1">
-                            ${_state.showEnglishAll ? 'Hide English Explanations' : 'Show English Explanations'}
-                        </button>
-                    </div>
+                <p class="hce-cat-block-sub">${_esc(c.summary)}</p>
+                <div class="hce-toolbar hce-actions">
+                    <button type="button" class="hce-secondary-btn" data-hce-practice-cat="${_esc(c.id)}">Practise these questions →</button>
+                    <button type="button" class="hce-link-btn" data-hce-toggle-en="1">
+                        ${_state.showEnglishAll ? 'Hide English' : 'Show English'}
+                    </button>
                 </div>
-
-                ${visibleCats.map(c => `
-                    <section class="hce-cat-block">
-                        <div class="hce-cat-block-head">
-                            <div>
-                                <span class="hce-cat-eyebrow">${c.num}. HIVATALOS TÉMAKÖR</span>
-                                <h3 class="hce-cat-block-title">${_esc(c.titleHu)}</h3>
-                                <p class="hce-cat-block-sub">${_esc(c.titleEn)} — ${_esc(c.summary)}</p>
+                <div class="hce-facts-list">
+                    ${(c.facts || []).map(f => `
+                        <article class="hce-fact-card">
+                            <div class="hce-fact-head">
+                                <h4 class="hce-fact-title">${_esc(f.title)}</h4>
+                                <span class="hce-fact-sub">${_esc(f.subtitle)}</span>
                             </div>
-                            <button type="button" class="hce-secondary-btn" data-hce-practice-cat="${_esc(c.id)}">
-                                Practice MCQs →
-                            </button>
-                        </div>
-
-                        <div class="hce-facts-list">
-                            ${(c.facts || []).map(f => `
-                                <article class="hce-fact-card">
-                                    <div class="hce-fact-head">
-                                        <h4 class="hce-fact-title">${_esc(f.title)}</h4>
-                                        <span class="hce-fact-sub">${_esc(f.subtitle)}</span>
-                                    </div>
-                                    <p class="hce-fact-hu">${_esc(f.explanationHu)}</p>
-                                    ${_state.showEnglishAll ? `
-                                        <p class="hce-fact-en"><strong>English explanation:</strong> ${_esc(f.explanationEn)}</p>
-                                    ` : ''}
-                                    <div class="hce-fact-clue">
-                                        <strong>Vizsgakulcs (Required Fact):</strong> ${_esc(f.examClue)}
-                                    </div>
-                                </article>
-                            `).join('')}
-                        </div>
-                    </section>
-                `).join('')}
+                            <p class="hce-fact-hu">${_esc(f.explanationHu)}</p>
+                            ${_state.showEnglishAll ? `
+                                <p class="hce-fact-en">${_esc(f.explanationEn)}</p>
+                            ` : ''}
+                            <div class="hce-fact-clue">
+                                <strong>Vizsgakulcs:</strong> ${_esc(f.examClue)}
+                            </div>
+                        </article>
+                    `).join('')}
+                </div>
             </div>
         `;
     }
@@ -240,10 +308,7 @@ const HuCulturalExam = (function () {
         const vocab = _data.vocabulary || [];
         return `
             <div class="hce-section">
-                <div class="hce-section-intro">
-                    <h3 class="hce-section-title">Vizsgaszókincs (Exam-Specific Hungarian Vocabulary)</h3>
-                    <p class="hce-section-desc">Key official terms and sentence patterns used in the written Hungarian Cultural Knowledge &amp; Citizenship exams.</p>
-                </div>
+                <p class="hce-section-desc">Key official terms and sentence patterns used in the written exam.</p>
                 <div class="hce-vocab-grid">
                     ${vocab.map(v => `
                         <div class="hce-vocab-card">
@@ -260,43 +325,44 @@ const HuCulturalExam = (function () {
         `;
     }
 
+    function _mcqProgress(list) {
+        let answered = 0, correct = 0;
+        list.forEach(q => {
+            if (_state.mcqAnswers[q.id] !== undefined) {
+                answered++;
+                if (_state.mcqAnswers[q.id] === q.correct) correct++;
+            }
+        });
+        return { answered, correct };
+    }
+
     function _renderMcqTab() {
         const cats = _data.categories || [];
         const allMcqs = _data.mcqs || [];
+
+        // Pick a set of questions: all of them, or one category's.
+        if (!_state.mcqOpen) {
+            const value = list => {
+                const p = _mcqProgress(list);
+                return p.answered ? `${p.correct} / ${p.answered} right` : `${list.length} questions`;
+            };
+            return `<div class="hce-section">${_rows(
+                _row('data-hce-mcq-cat="all"', 'Összes témakör', 'All categories', value(allMcqs)) +
+                cats.map(c => _row(`data-hce-mcq-cat="${_esc(c.id)}"`, `${c.num}. ${c.titleHu}`, c.titleEn,
+                    value(allMcqs.filter(q => q.category === c.id)))).join('')
+            )}</div>`;
+        }
+
         const filtered = _state.mcqCategory === 'all'
             ? allMcqs
             : allMcqs.filter(q => q.category === _state.mcqCategory);
-
-        let answeredCount = 0;
-        let correctCount = 0;
-        filtered.forEach(q => {
-            if (_state.mcqAnswers[q.id] !== undefined) {
-                answeredCount++;
-                if (_state.mcqAnswers[q.id] === q.correct) correctCount++;
-            }
-        });
+        const prog = _mcqProgress(filtered);
 
         return `
             <div class="hce-section">
-                <div class="hce-mcq-bar">
-                    <div class="hce-mcq-filters">
-                        <button type="button"
-                                class="hce-filter-chip${_state.mcqCategory === 'all' ? ' is-active' : ''}"
-                                data-hce-mcq-cat="all">
-                            All Categories (${allMcqs.length})
-                        </button>
-                        ${cats.map(c => `
-                            <button type="button"
-                                    class="hce-filter-chip${_state.mcqCategory === c.id ? ' is-active' : ''}"
-                                    data-hce-mcq-cat="${_esc(c.id)}">
-                                ${c.num}. ${_esc(c.titleEn)}
-                            </button>
-                        `).join('')}
-                    </div>
-                    <div class="hce-mcq-stats">
-                        <span>Score: <strong>${correctCount} / ${answeredCount}</strong> answered</span>
-                        <button type="button" class="hce-secondary-btn" data-hce-mcq-reset="1">Reset Answers</button>
-                    </div>
+                <div class="hce-mcq-stats">
+                    <span>${prog.answered ? `${prog.correct} / ${prog.answered} right · ` : ''}${filtered.length} questions</span>
+                    <button type="button" class="hce-link-btn" data-hce-mcq-reset="1">Reset answers</button>
                 </div>
 
                 <div class="hce-mcq-list">
@@ -307,7 +373,7 @@ const HuCulturalExam = (function () {
                             <div class="hce-mcq-card${isAnswered ? (chosen === q.correct ? ' is-correct' : ' is-wrong') : ''}">
                                 <div class="hce-mcq-meta">
                                     <span class="hce-mcq-num">Question ${idx + 1}</span>
-                                    ${_categoryBadge(q.category)}
+                                    ${_state.mcqCategory === 'all' ? _categoryBadge(q.category) : ''}
                                 </div>
                                 <p class="hce-mcq-q">${_esc(q.question)}</p>
                                 <div class="hce-mcq-options">
@@ -342,48 +408,33 @@ const HuCulturalExam = (function () {
     }
 
     function _renderMatchingTab() {
-        const modes = [
-            { id: 'nameToWork',      label: '5. Name → Work (Alkotó → Mű)' },
-            { id: 'personToField',   label: '6. Person → Field (Személy → Szerep)' },
-            { id: 'dateToEvent',     label: '7. Date → Event (Évszám → Esemény)' },
-            { id: 'symbolToMeaning', label: '8. Symbol → Meaning (Jelkép → Jelentés)' }
-        ];
-        const currentSet = (_data.matchingSets && _data.matchingSets[_state.matchMode]) || { title: '', subtitle: '' };
+        // Pick a mode.
+        if (!_state.matchOpen) {
+            return `<div class="hce-section">${_rows(MATCH_MODES.map(m => {
+                const set = (_data.matchingSets && _data.matchingSets[m.id]) || {};
+                return _row(`data-hce-match-mode="${m.id}"`, m.hu, set.title || m.en, '');
+            }).join(''))}</div>`;
+        }
+
         const totalInRound = _state.matchRoundPairs.length;
         const solvedCount = Object.keys(_state.matchSolvedIds).length;
 
         return `
             <div class="hce-section">
-                <div class="hce-match-modes">
-                    ${modes.map(m => `
-                        <button type="button"
-                                class="hce-filter-chip${_state.matchMode === m.id ? ' is-active' : ''}"
-                                data-hce-match-mode="${m.id}">
-                            ${_esc(m.label)}
-                        </button>
-                    `).join('')}
-                </div>
-
                 <div class="hce-match-head">
-                    <div>
-                        <h3 class="hce-section-title">${_esc(currentSet.title)}</h3>
-                        <p class="hce-section-desc">${_esc(currentSet.subtitle)}</p>
-                    </div>
-                    <div class="hce-match-controls">
-                        <span class="hce-match-progress">Matched: <strong>${solvedCount} / ${totalInRound}</strong></span>
-                        <button type="button" class="hce-secondary-btn" data-hce-match-shuffle="1">New Shuffled Round ↻</button>
-                    </div>
+                    <span class="hce-match-progress">${solvedCount} / ${totalInRound} matched</span>
+                    <button type="button" class="hce-link-btn" data-hce-match-shuffle="1">New round ↻</button>
                 </div>
 
                 ${solvedCount === totalInRound && totalInRound > 0 ? `
                     <div class="hce-match-banner">
-                        All 6 pairs matched! Click <strong>New Shuffled Round ↻</strong> to practice another batch from this pool.
+                        All ${totalInRound} pairs matched. Start a new round to practise another batch.
                     </div>
                 ` : ''}
 
                 <div class="hce-match-board">
                     <div class="hce-match-col">
-                        <div class="hce-match-col-title">Select item (Bal oszlop)</div>
+                        <div class="hce-match-col-title">Select an item</div>
                         ${_state.matchLeftOrder.map(item => {
                             const solved = !!_state.matchSolvedIds[item.id];
                             const selected = _state.matchSelectedLeft === item.id;
@@ -398,7 +449,7 @@ const HuCulturalExam = (function () {
                         }).join('')}
                     </div>
                     <div class="hce-match-col">
-                        <div class="hce-match-col-title">Match with pair (Jobb oszlop)</div>
+                        <div class="hce-match-col-title">Then its pair</div>
                         ${_state.matchRightOrder.map(item => {
                             const solved = !!_state.matchSolvedIds[item.id];
                             return `
@@ -419,53 +470,43 @@ const HuCulturalExam = (function () {
     function _renderMocksTab() {
         const mocks = _data.mockExams || [];
         const saved = (_loadSavedProgress().mocks) || {};
-        const exam = mocks.find(m => m.id === _state.activeMockId) || mocks[0];
-        if (!exam) return '';
-
-        const questions = exam.questions || [];
-        let earnedPoints = 0;
         const maxPoints = _data.maxPoints || 30;
         const passMark = _data.passThresholdPoints || 16;
 
-        if (_state.mockSubmitted) {
-            questions.forEach((q, idx) => {
-                if (_state.mockAnswers[idx] === q.correct) {
-                    earnedPoints += (q.points || 2);
-                }
-            });
+        // Pick a mock exam.
+        if (!_state.mockOpen) {
+            return `<div class="hce-section">
+                <p class="hce-section-desc">Each mock has 30 points; the pass mark is ${passMark}.</p>
+                ${_rows(mocks.map(m => {
+                    const prev = saved[m.id];
+                    return _row(`data-hce-mock-id="${_esc(m.id)}"`, m.title,
+                        `${(m.questions || []).length} questions · ${maxPoints} points`,
+                        prev ? `Best ${prev.points}${prev.passed ? ', passed' : ''}` : 'Not taken');
+                }).join(''))}
+            </div>`;
         }
 
+        const exam = mocks.find(m => m.id === _state.activeMockId) || mocks[0];
+        if (!exam) return '';
+        const questions = exam.questions || [];
+        let earnedPoints = 0;
+        if (_state.mockSubmitted) {
+            questions.forEach((q, idx) => {
+                if (_state.mockAnswers[idx] === q.correct) earnedPoints += (q.points || 2);
+            });
+        }
         const passed = earnedPoints >= passMark;
 
         return `
             <div class="hce-section">
-                <div class="hce-mock-picker">
-                    ${mocks.map(m => {
-                        const prev = saved[m.id];
-                        return `
-                            <button type="button"
-                                    class="hce-mock-card${exam.id === m.id ? ' is-active' : ''}"
-                                    data-hce-mock-id="${_esc(m.id)}">
-                                <div class="hce-mock-card-title">${_esc(m.title)}</div>
-                                <div class="hce-mock-card-desc">${_esc(m.description)}</div>
-                                ${prev ? `
-                                    <div class="hce-mock-badge ${prev.passed ? 'is-pass' : 'is-fail'}">
-                                        Best: ${prev.points} / ${prev.maxPoints} pts (${prev.passed ? 'PASSED' : 'RETRY'})
-                                    </div>
-                                ` : `<div class="hce-mock-badge">Not taken yet · 30 pts</div>`}
-                            </button>
-                        `;
-                    }).join('')}
-                </div>
-
                 ${_state.mockSubmitted ? `
                     <div class="hce-mock-result ${passed ? 'is-pass' : 'is-fail'}">
                         <h4 class="hce-mock-result-title">
-                            ${passed ? 'Sikeres vizsga! (Exam Passed)' : 'Ismétlés javasolt (Below 16-point threshold)'}
+                            ${passed ? 'Sikeres vizsga' : 'Ismétlés javasolt'}
                             — ${earnedPoints} / ${maxPoints} pont
                         </h4>
-                        <p>Official requirement: minimum <strong>${passMark} / ${maxPoints} points</strong> across the 6 categories.</p>
-                        <button type="button" class="hce-secondary-btn" data-hce-mock-retry="1">Retake This Mock Exam</button>
+                        <p>${passed ? 'You passed.' : `Below the ${passMark}-point pass mark.`} The official requirement is at least ${passMark} of ${maxPoints} points across the six categories.</p>
+                        <button type="button" class="hce-secondary-btn" data-hce-mock-retry="1">Retake this mock exam</button>
                     </div>
                 ` : ''}
 
@@ -506,7 +547,7 @@ const HuCulturalExam = (function () {
                 ${!_state.mockSubmitted ? `
                     <div class="hce-mock-submit-bar">
                         <button type="button" class="hce-primary-btn" data-hce-mock-submit="1">
-                            Submit Mock Exam &amp; Calculate Score (30 pts)
+                            Submit and see my score
                         </button>
                     </div>
                 ` : ''}
@@ -516,14 +557,27 @@ const HuCulturalExam = (function () {
 
     function _renderBody() {
         switch (_state.tab) {
+            case 'categories': return _renderCategoriesTab();
             case 'vocab': return _renderVocabTab();
             case 'mcq': return _renderMcqTab();
             case 'matching': return _renderMatchingTab();
             case 'mocks': return _renderMocksTab();
-            case 'categories':
-            default:
-                return _renderCategoriesTab();
+            default: return _renderHub();
         }
+    }
+
+    // Closes whatever item is open in the current section, back to its list.
+    function _closeItem() {
+        _state.selectedCategory = null;
+        _state.mcqOpen = false;
+        _state.matchOpen = false;
+        _state.mockOpen = false;
+    }
+
+    // Repaint after moving between screens, and start at the top.
+    function _go(container, options) {
+        _paint(container, options);
+        if (typeof window !== 'undefined' && window.scrollTo) window.scrollTo(0, 0);
     }
 
     function _wireEvents(container, options) {
@@ -531,24 +585,34 @@ const HuCulturalExam = (function () {
         container.dataset.hceWired = '1';
 
         container.addEventListener('click', e => {
-            if (e.target.closest('[data-hce-back]')) {
-                if (options && typeof options.onBack === 'function') {
-                    options.onBack();
+            const backBtn = e.target.closest('[data-hce-back]');
+            if (backBtn) {
+                const kind = backBtn.getAttribute('data-hce-back');
+                if (kind === 'exit') {
+                    if (options && typeof options.onBack === 'function') options.onBack();
+                    return;
                 }
+                if (kind === 'hub') {
+                    _state.tab = null;
+                } else {
+                    _closeItem();
+                }
+                _go(container, options);
                 return;
             }
 
             const tabBtn = e.target.closest('[data-hce-tab]');
             if (tabBtn) {
                 _state.tab = tabBtn.getAttribute('data-hce-tab');
-                _paint(container, options);
+                _closeItem();
+                _go(container, options);
                 return;
             }
 
             const catBtn = e.target.closest('[data-hce-cat]');
             if (catBtn) {
                 _state.selectedCategory = catBtn.getAttribute('data-hce-cat');
-                _paint(container, options);
+                _go(container, options);
                 return;
             }
 
@@ -561,15 +625,17 @@ const HuCulturalExam = (function () {
             const practiceCatBtn = e.target.closest('[data-hce-practice-cat]');
             if (practiceCatBtn) {
                 _state.mcqCategory = practiceCatBtn.getAttribute('data-hce-practice-cat');
+                _state.mcqOpen = true;
                 _state.tab = 'mcq';
-                _paint(container, options);
+                _go(container, options);
                 return;
             }
 
             const mcqCatBtn = e.target.closest('[data-hce-mcq-cat]');
             if (mcqCatBtn) {
                 _state.mcqCategory = mcqCatBtn.getAttribute('data-hce-mcq-cat');
-                _paint(container, options);
+                _state.mcqOpen = true;
+                _go(container, options);
                 return;
             }
 
@@ -592,8 +658,9 @@ const HuCulturalExam = (function () {
             const matchModeBtn = e.target.closest('[data-hce-match-mode]');
             if (matchModeBtn) {
                 _state.matchMode = matchModeBtn.getAttribute('data-hce-match-mode');
+                _state.matchOpen = true;
                 _initMatchRound();
-                _paint(container, options);
+                _go(container, options);
                 return;
             }
 
@@ -629,8 +696,9 @@ const HuCulturalExam = (function () {
                 _state.activeMockId = mockPickBtn.getAttribute('data-hce-mock-id');
                 _state.mockAnswers = {};
                 _state.mockSubmitted = false;
+                _state.mockOpen = true;
                 _shuffleMockExam(_state.activeMockId);
-                _paint(container, options);
+                _go(container, options);
                 return;
             }
 
@@ -681,6 +749,8 @@ const HuCulturalExam = (function () {
         container.innerHTML = '<p class="text-muted level-empty">Loading Hungarian Cultural Exam…</p>';
         try {
             await _loadData();
+            _state.tab = null;
+            _closeItem();
             _wireEvents(container, options);
             _paint(container, options);
         } catch (err) {
