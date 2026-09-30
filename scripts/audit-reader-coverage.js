@@ -59,6 +59,14 @@ const WORD_CHARS = 'a-zA-ZáéíóúÁÉÍÓÚ' +
     'ñÑüÜöÖőŐűŰ';
 const WORD_RE = new RegExp('[' + WORD_CHARS + ']+', 'g');
 
+// Words that are never dictionary gaps: Roman numerals written in capitals ("XX", "XIX")
+// and whatever imports/dictionary/coverage-ignore.json lists (units, English titles, acronyms).
+const ROMAN = /^(?=[ivxlcdm]+$)m{0,3}(cm|cd|d?c{0,3})(xc|xl|l?x{0,3})(ix|iv|v?i{0,3})$/;
+let IGNORED = new Set();
+try {
+    IGNORED = new Set(JSON.parse(fs.readFileSync('imports/dictionary/coverage-ignore.json', 'utf8')).words || []);
+} catch (e) { /* no ignore list yet */ }
+
 function storyFiles(course) {
     const out = [];
     (function walk(dir) {
@@ -105,11 +113,12 @@ async function auditCourse(course) {
                 const key = token.toLowerCase();
                 let w = words.get(key);
                 if (!w) {
-                    w = { count: 0, stories: new Set(), capMid: 0, lowerMid: 0, sample: null };
+                    w = { count: 0, stories: new Set(), capMid: 0, lowerMid: 0, sample: null, allCaps: true };
                     words.set(key, w);
                 }
                 w.count++;
                 w.stories.add(storyId);
+                if (!(token.length >= 2 && token === token.toUpperCase())) w.allCaps = false;
                 // capitalised somewhere other than sentence start suggests a name
                 const before = text.slice(0, m.index).replace(/\s+$/, '');
                 const atStart = before === '' || /[.!?—–:„"“]$/.test(before);
@@ -126,6 +135,7 @@ async function auditCourse(course) {
     const crashes = [];
     for (const [key, w] of words) {
         if (key.length < 2) continue;   // single letters aren't meaningful lookups
+        if (IGNORED.has(key) || (w.allCaps && ROMAN.test(key))) continue;
         let res;
         try {
             res = Lexicon.lookup(key);
