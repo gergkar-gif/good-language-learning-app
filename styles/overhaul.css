@@ -1658,3 +1658,36 @@ body:has(.dkb-game) .content, body:has(.dkb-lobby) .content, body:has(.dkb-done)
 .dkb-done-card { border-top-color: var(--success); }
 .dkb-done-kicker, .dkb-done-score-label { color: var(--success); text-transform: none; letter-spacing: .02em; font-weight: 600; }
 .dkb-done-score { font-size: clamp(2.6rem, 12vw, 3.4rem); color: var(--text); }
+
+/* ============================================
+   WRITING AND SPEAKING FEEDBACK
+   The result is an open page: a score figure, dimensions as bars on hairlines,
+   errors as ruled entries with the learner's text struck in brick and the
+   correction in pine serif.
+============================================ */
+.sp-results-score-card, .sp-prod-results-card, .sp-challenge-feedback-card, .sp-assessing-card, .sp-dim-card, .sp-error-group, .sp-unverified-section, .sp-competency-verified-banner, .sp-local-metrics {
+  background: none; border: 0; border-radius: 0; box-shadow: none;
+}
+.sp-results-score-card, .sp-prod-results-card { border-top: 3px solid var(--primary); padding: 18px 0 8px; }
+.sp-score-circle { border-radius: 50%; background: none; box-shadow: inset 0 0 0 2px var(--primary); color: var(--text); }
+.sp-score-num, .sp-prod-score-num { font: 400 3rem/1 var(--font-display); letter-spacing: -0.02em; color: var(--text); }
+.sp-score-max, .sp-prod-score-max, .sp-score-sub, .sp-prod-score-sub, .sp-score-meta, .sp-prod-score-meta { color: var(--muted); }
+.sp-score-title, .sp-prod-score-title, .sp-section-heading, .sp-error-group-title { font: 400 1.35rem/1.2 var(--font-display); letter-spacing: -0.005em; color: var(--text); text-transform: none; }
+.sp-dimensions-grid { display: block; border-top: 1px solid var(--primary); margin-top: 14px; }
+.sp-dim-card { padding: 12px 0; border-bottom: 1px solid var(--border); }
+.sp-dim-bar { height: 3px; background: var(--border); border-radius: 0; overflow: visible; }
+.sp-dim-fill { background: var(--primary); border-radius: 0; }
+.sp-dim-name { font-family: var(--font-ui); color: var(--text); }
+.sp-dim-val { color: var(--muted); font-weight: 600; }
+.sp-error-group { border-top: 1.5px solid var(--primary); padding: 14px 0 6px; }
+.sp-error-group-badge { background: none; box-shadow: inset 0 0 0 1.5px var(--border); border: 0; border-radius: var(--radius-sm); color: var(--text); text-transform: none; }
+.sp-error-quote { color: var(--danger); text-decoration: line-through; text-decoration-thickness: 1px; background: none; }
+.sp-error-expl { color: var(--muted); }
+.sp-strengths li::marker { color: var(--success); }
+.sp-verified-badge, .sp-competency-verified-banner { color: var(--success); }
+.sp-assessing-title { font: 400 1.6rem/1.15 var(--font-display); }
+.sp-spinner { border-color: var(--border); border-top-color: var(--primary); }
+.wr-exchange-textarea, .wr-exchange-input-container { border: 0; border-radius: var(--radius-sm); box-shadow: inset 0 0 0 1.5px var(--border); background: none; }
+.wr-diacritic-btn { border: 0; box-shadow: inset 0 0 0 1.5px var(--border); border-radius: var(--radius-sm); background: none; color: var(--text); width: 38px; height: 38px; }
+.wr-diacritic-btn:hover { box-shadow: inset 0 0 0 1.5px var(--primary); background: none; }
+.wr-exchange-dock, .wr-exchange-dock-footer { background: var(--bg); border-color: var(--border); box-shadow: none; }
