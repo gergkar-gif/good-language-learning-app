@@ -57,9 +57,33 @@ function updateReaderWordColors() {
     document.querySelectorAll('[data-word]').forEach(el => {
         const word = el.getAttribute('data-word');
         const status = getWordStatus(word);
-        el.className = 'word word-' + status;
+        const tapped = el.classList.contains('word-tapped');
+        el.className = 'word word-' + status + (tapped ? ' word-tapped' : '');
     });
 }
+
+// Word status is not drawn by default: the page reads as plain text and every
+// word is tappable. The learner can switch on marks for the words they are
+// learning (in their deck), which styles/overhaul.css keys off this class on
+// <html>. New words stay plain either way.
+const READER_MARKS_KEY = 'parlour_reader_mark_learning';
+
+function readerMarksOn() {
+    try { return localStorage.getItem(READER_MARKS_KEY) === '1'; } catch (e) { return false; }
+}
+
+function setReaderMarks(on) {
+    try { localStorage.setItem(READER_MARKS_KEY, on ? '1' : '0'); } catch (e) {}
+    _applyReaderMarks(on);
+}
+
+function _applyReaderMarks(on) {
+    if (typeof document !== 'undefined' && document.documentElement && document.documentElement.classList) {
+        document.documentElement.classList.toggle('reader-marks', !!on);
+    }
+}
+
+_applyReaderMarks(readerMarksOn());
 
 // ============================================
 // WORD POPUP
@@ -2074,6 +2098,14 @@ window.Reader = {
                 '<button class="btn-back" id="reader-back-btn">&larr; Back</button>' +
             '</div>' +
         '</div>' +
+        '<div class="story-marks-row">' +
+            '<span class="story-marks-label" id="story-marks-label">Mark words you\'re learning</span>' +
+            '<button type="button" class="geo-toggle" id="story-marks-toggle" role="switch" aria-labelledby="story-marks-label" aria-checked="' + (readerMarksOn() ? 'true' : 'false') + '">' +
+                '<span class="geo-toggle-track"></span>' +
+                '<span class="geo-toggle-shape geo-toggle-shape--off"></span>' +
+                '<span class="geo-toggle-shape geo-toggle-shape--on"></span>' +
+            '</button>' +
+        '</div>' +
         '<div class="story-scroll-track" aria-hidden="true"><div class="story-scroll-bar" id="story-scroll-bar"></div></div>';
 
         html += '<div class="story-body">';
@@ -2254,6 +2286,12 @@ window.Reader = {
         if (downBtn) downBtn.addEventListener('click', () => self.stepFontScale(-1));
         const upBtn = document.getElementById('reader-font-up');
         if (upBtn) upBtn.addEventListener('click', () => self.stepFontScale(1));
+        const marksToggle = document.getElementById('story-marks-toggle');
+        if (marksToggle) marksToggle.addEventListener('click', () => {
+            const on = marksToggle.getAttribute('aria-checked') !== 'true';
+            marksToggle.setAttribute('aria-checked', on ? 'true' : 'false');
+            setReaderMarks(on);
+        });
         this._restoreReadingPosition(this.currentStoryId);
         this._wireScrollProgress(this.currentStoryId);
 
@@ -2557,6 +2595,16 @@ window.Reader = {
 document.addEventListener('click', function (e) {
     const wordEl = e.target.closest('.word');
     if (!wordEl) return;
+
+    // A word you have looked up gets a faint line everywhere it appears in
+    // this story, so you can spot it again a few lines later. It lasts until
+    // the story is re-rendered.
+    const story = wordEl.closest('.story-body, #lesson-content') || document;
+    const key = wordEl.getAttribute('data-word');
+    if (key) {
+        story.querySelectorAll('.word[data-word="' + CSS.escape(key) + '"]')
+            .forEach(el => el.classList.add('word-tapped'));
+    }
 
     // Pass the surrounding words so showWord() can recognise a multi-word
     // expression the tapped word belongs to ("mucho gusto", "hasta luego").

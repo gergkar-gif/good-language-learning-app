@@ -132,7 +132,7 @@ Every colour has one meaning, everywhere in the app. State is never carried by c
 | Vermilion | Here and now: the one thing you are on or should do next | Current unit and its ring, the Continue line and dot, the active nav tab, focus rings, primary-button hover, a track's progress marker, your true position on the Journey mountain, the record disc |
 | Pine green | Finished or right | Completed unit or level accent, full progress line, correct answer, completed stretch of the Journey, Easy grade, a passed test, a met keyword, "Complete" |
 | Brick red | Wrong or needs redoing | Incorrect answer, the Again grade, marks in a learner's own text, error messages |
-| Ochre | Waiting for you: due or new | Review door, due counts, new-story markers, new and review words in the Reader, confidence gaps, the Hard grade |
+| Ochre | Waiting for you: due or new | Review door, due counts, new-story markers, not-yet-reviewed deck words in the Reader (when marks are on), confidence gaps, the Hard grade |
 | Navy | Structure and ordinary content | Text, shapes, buttons, partial progress fill, streak dots, a selected answer or tense, score-track markers |
 | Sand and grey | Background, or locked and not yet | Discs, empty tracks, locked units (faded, grey accent), row thumbnails with nothing due |
 
@@ -158,7 +158,7 @@ Every colour has one meaning, everywhere in the app. State is never carried by c
 - **Figure** (serif, 1.6 to 2.6rem): due counts, big stats, in ochre text when they mean "due".
 - **Body** (sans, 16px): descriptions, in muted blue-grey when secondary.
 - **Label** (sans 600, 12 to 13px): counts, tabs' small text, chips.
-- Reader text: serif 1.25rem, line-height 1.75, measure about 34em.
+- Reader text: serif 1.25rem, line-height 1.75, measure about 34em. Words read as plain text, with no status underlines by default; every word is tappable. A word you have looked up gets a faint 1px ochre underline wherever it appears in that story. An optional switch, "Mark words you're learning", adds a dotted underline to words in your deck (ochre until first reviewed, navy after); new and known words stay plain either way.
 
 ### Named Rules
 **The Serif-For-Content Rule.** Titles and content headings use the serif; controls, labels and chrome stay sans.
