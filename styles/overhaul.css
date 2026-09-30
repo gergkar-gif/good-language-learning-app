@@ -1886,3 +1886,21 @@ body:has(.dkb-game) .content, body:has(.dkb-lobby) .content, body:has(.dkb-done)
 @media (hover: hover) {
   .pl-note-close:hover { color: var(--text); }
 }
+
+/* Studio topic lists (Speaking and Writing, every tab): no outline around the
+   topics, just space between them and a hairline under the whole list. */
+.sp-studio-body .wk-card,
+.sp-studio-body .sp-card-clickable,
+.sp-studio-body .sp-card-custom,
+.sp-studio-body .sp-scenario-card,
+.sp-studio-body .wr-exchange-card {
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background: none;
+  padding: 18px 0;
+}
+.sp-studio-body .sp-prompt-grid,
+.sp-studio-body .sp-scenarios-grid,
+.sp-studio-body .wk-cards-grid { border-left: 0; border-right: 0; border-bottom: 0; gap: 4px; }
+.sp-studio-body .wk-card-title { font: 400 1.25rem/1.25 var(--font-display); color: var(--text); }
