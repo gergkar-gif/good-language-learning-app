@@ -113,6 +113,8 @@ def build_stories(lang="es", ref_to_unit=None):
                 entry["author"] = author
             if work:
                 entry["work"] = work
+            if data.get("inspired"):
+                entry["inspired"] = True
             if clean_topics:
                 entry["topics"] = clean_topics
             if keywords:

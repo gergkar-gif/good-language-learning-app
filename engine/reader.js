@@ -1593,7 +1593,7 @@ window.Reader = {
             }
         }
         if (story.author) {
-            return 'Adapted from ' + (story.work ? story.work + ' by ' : '') + story.author;
+            return (story.inspired ? 'Inspired by ' : 'Adapted from ') + (story.work ? story.work + ' by ' : '') + story.author;
         }
         return null;
     },
@@ -2165,7 +2165,7 @@ window.Reader = {
         // publication (story.source) instead of implying a book.
         const isCurrent = story.type === 'current';
         if ((isClassic || isCurrent) && (story.work || story.author)) {
-            let adapted = 'Adapted from ';
+            let adapted = story.inspired ? 'Inspired by ' : 'Adapted from ';
             if (isCurrent && story.source) adapted += self.escapeHtml(story.source) + ': ';
             if (story.work) adapted += '<em>' + self.escapeHtml(story.work) + '</em>';
             if (story.work && story.author) adapted += ' by ';
