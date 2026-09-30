@@ -747,51 +747,6 @@
   margin-left: auto;
 }
 
-.story-font-controls {
-  display: inline-flex;
-  align-items: center;
-  border-radius: var(--radius-sm);
-  overflow: hidden;
-  height: 32px;
-  border: 0;
-  box-shadow: inset 0 0 0 1.5px var(--border);
-  background: none;
-}
-
-.btn-font-scale {
-  padding: 0 10px;
-  height: 100%;
-  font-size: 13px;
-  font-weight: 600;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition: background 0.15s ease, color 0.15s ease;
-}
-
-@media (hover: hover) {
-  .btn-font-scale:hover:not(:disabled) {
-  background: var(--border-subtle);
-  color: var(--primary);
-}
-}
-
-.btn-font-scale:disabled {
-  opacity: 0.35;
-  cursor: not-allowed;
-}
-
-.story-font-indicator {
-  font-size: 11px;
-  color: var(--muted);
-  padding: 0 8px;
-  line-height: 32px;
-  user-select: none;
-  border-left: 1px solid var(--border);
-  border-right: 1px solid var(--border);
-}
-
 /* Scroll Progress Track */
 .story-scroll-track {
   position: sticky;
@@ -8458,7 +8413,9 @@
 }
 .story-header { align-items: flex-start; }
 .story-paragraph.dialogue { border-left: 0; padding-left: 0; margin-left: 20px; }
-.speaker-label { color: var(--primary-mid); font: 600 12px/1 var(--font-ui); letter-spacing: .03em; }
+.speaker-label { color: var(--accent); font: 600 0.82em/1 var(--font-ui); letter-spacing: .05em; text-transform: uppercase; }
+/* The story text size the reader used to set inline through the text-size control. */
+.story-body { font-size: 1.125rem; line-height: 1.6; }
 
 /* DECKS */
 .dk-stat.is-due .dk-stat-num { color: var(--ochre-text); }
@@ -8526,7 +8483,8 @@
 .jr-cline { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
 .jr-of { font: 400 1.05rem/1.2 var(--font-ui); letter-spacing: 0; color: var(--muted); margin-left: 4px; }
 .jr-cside { font-size: 13px; color: var(--muted); white-space: nowrap; }
-.jr-dgrid { display: grid; grid-template-columns: repeat(15, minmax(0, 1fr)); gap: 5px; margin-top: 18px; max-width: 30em; }
+/* 4px of room on every side so today's ring is never clipped at the edge */
+.jr-dgrid { display: grid; grid-template-columns: repeat(15, minmax(0, 1fr)); gap: 5px; margin: 14px 0 0 -4px; padding: 4px; max-width: calc(30em + 4px); box-sizing: border-box; }
 .jr-dgrid i { width: 100%; height: auto; aspect-ratio: 1; min-width: 0; display: block; background: var(--border); border-radius: 1px; }
 .jr-dgrid i.on { background: var(--primary); }
 .jr-dgrid i.is-today { box-shadow: 0 0 0 2px var(--bg), 0 0 0 3.5px var(--accent); }
@@ -8698,10 +8656,6 @@
 .lt-mic-btn { border: 0; box-shadow: inset 0 0 0 1.5px var(--border); border-radius: var(--radius-sm); }
 
 /* READER: story header controls and the narration player */
-.btn-font-scale { border: 0; border-radius: var(--radius-sm); box-shadow: inset 0 0 0 1.5px var(--border); background: none; color: var(--text); }
-@media (hover: hover) {
-  .btn-font-scale:hover { box-shadow: inset 0 0 0 1.5px var(--primary); }
-}
 .wp-sheet { border: 0; border-top: 3px solid var(--primary); border-radius: 0; }
 @media (min-width: 640px) {
   .wp-sheet { border-radius: 0; border: 0; border-top: 3px solid var(--primary); outline: 1px solid var(--border); }
@@ -8876,8 +8830,6 @@
   .library-search-wrap:focus-within { box-shadow: inset 0 0 0 1.5px var(--primary); }
   .reading-room-search-input { box-shadow: inset 0 0 0 1px var(--border); }
   .reading-room-search-input:focus { box-shadow: inset 0 0 0 1.5px var(--primary); }
-  .speaker-label { font: 500 12px/1 var(--font-ui); }
-  .story-font-controls { box-shadow: inset 0 0 0 1px var(--border); }
   .dk-top { border-top: 1.5px solid var(--primary); }
   .dk-secondary { box-shadow: inset 0 0 0 1px var(--primary); font: 500 15px/1 var(--font-ui); }
   .dk-search-wrap { box-shadow: inset 0 0 0 1px var(--border); }
@@ -8903,7 +8855,6 @@
   .story-substack-player { border-top: 1.5px solid var(--primary); }
   .ssp-speed-btn { box-shadow: inset 0 0 0 1px var(--primary); }
   .lt-mic-btn { box-shadow: inset 0 0 0 1px var(--border); }
-  .btn-font-scale { box-shadow: inset 0 0 0 1px var(--border); }
   .ssp-speaker { font-weight: 500; }
   .wp-sheet { border-top: 1.5px solid var(--primary); }
   .dk-editor-input, .dkl-input, .dk-import-word, .dk-import-trans { box-shadow: inset 0 0 0 1px var(--border); }

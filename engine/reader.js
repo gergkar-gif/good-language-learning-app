@@ -1066,47 +1066,6 @@ window.Reader = {
         return this.stories;
     },
 
-    // Typography & font-size scaling controls (85% to 150%)
-    FONT_SCALES: [85, 100, 115, 130, 150],
-
-    getFontScale() {
-        try {
-            const val = parseInt(localStorage.getItem('parlour_reader_font_scale'), 10);
-            if (this.FONT_SCALES.includes(val)) return val;
-        } catch (e) {}
-        return 100;
-    },
-
-    setFontScale(scale) {
-        try { localStorage.setItem('parlour_reader_font_scale', String(scale)); } catch (e) {}
-        this.applyFontScale(scale);
-    },
-
-    applyFontScale(scale, container) {
-        const root = container || document.getElementById('reader-content');
-        if (!root) return;
-        const body = root.querySelector('.story-body');
-        if (body) {
-            body.style.fontSize = (scale / 100 * 1.125) + 'rem';
-            body.style.lineHeight = scale >= 130 ? '1.75' : '1.6';
-        }
-        const indicator = root.querySelector('#reader-font-indicator');
-        if (indicator) indicator.textContent = scale + '%';
-        const downBtn = root.querySelector('#reader-font-down');
-        const upBtn = root.querySelector('#reader-font-up');
-        if (downBtn) downBtn.disabled = scale <= this.FONT_SCALES[0];
-        if (upBtn) upBtn.disabled = scale >= this.FONT_SCALES[this.FONT_SCALES.length - 1];
-    },
-
-    stepFontScale(direction) {
-        const current = this.getFontScale();
-        const idx = this.FONT_SCALES.indexOf(current);
-        const nextIdx = idx + direction;
-        if (nextIdx >= 0 && nextIdx < this.FONT_SCALES.length) {
-            this.setFontScale(this.FONT_SCALES[nextIdx]);
-        }
-    },
-
     // Scrolls an unfinished story back to where the learner stopped. Runs a
     // frame later because the reading view is only shown (and laid out) at
     // the end of renderStory().
@@ -2055,14 +2014,6 @@ window.Reader = {
                 (Library.isSaved(this.currentStoryId) ? '● Saved' : '○ Save') + '</button>'
             : '';
 
-        const fontControlsHtml = `
-            <div class="story-font-controls" role="group" aria-label="Adjust font size">
-                <button type="button" class="btn-font-scale" id="reader-font-down" title="Smaller text" aria-label="Smaller text">A−</button>
-                <span class="story-font-indicator" id="reader-font-indicator">100%</span>
-                <button type="button" class="btn-font-scale" id="reader-font-up" title="Larger text" aria-label="Larger text">A+</button>
-            </div>
-        `;
-
         const hasNarration = !!(story.paragraphs && story.paragraphs.length);
         const isOnline = (typeof navigator !== 'undefined' && typeof navigator.onLine === 'boolean') ? navigator.onLine : true;
         let substackPlayerHtml = '';
@@ -2093,7 +2044,6 @@ window.Reader = {
                 '<span class="story-level-badge">' + this.escapeHtml(story.level) + '</span>' +
             '</div>' +
             '<div class="story-header-actions">' +
-                fontControlsHtml +
                 saveBtnHtml +
                 '<button class="btn-back" id="reader-back-btn">&larr; Back</button>' +
             '</div>' +
@@ -2281,11 +2231,6 @@ window.Reader = {
             });
         });
 
-        this.applyFontScale(this.getFontScale(), container);
-        const downBtn = document.getElementById('reader-font-down');
-        if (downBtn) downBtn.addEventListener('click', () => self.stepFontScale(-1));
-        const upBtn = document.getElementById('reader-font-up');
-        if (upBtn) upBtn.addEventListener('click', () => self.stepFontScale(1));
         const marksToggle = document.getElementById('story-marks-toggle');
         if (marksToggle) marksToggle.addEventListener('click', () => {
             const on = marksToggle.getAttribute('aria-checked') !== 'true';

@@ -158,7 +158,7 @@ Every colour has one meaning, everywhere in the app. State is never carried by c
 - **Figure** (serif, 1.6 to 2.6rem): due counts, big stats, in ochre text when they mean "due".
 - **Body** (sans, 16px): descriptions, in muted blue-grey when secondary.
 - **Label** (sans 600, 12 to 13px): counts, tabs' small text, chips.
-- Reader text: serif 1.25rem, line-height 1.75, measure about 34em. Words read as plain text, with no status underlines by default; every word is tappable. A word you have looked up gets a faint 1px ochre underline wherever it appears in that story. An optional switch, "Mark words you're learning", adds a dotted underline to words in your deck (ochre until first reviewed, navy after); new and known words stay plain either way.
+- Reader text: 1.125rem, line-height 1.6, measure about 34em; there is no text-size control (removed 2026-09-30). Speaker names in stories are vermilion, uppercase, semibold, 0.82em of the text, with slight tracking (the lesson-dialogue style the user asked to keep). Words read as plain text, with no status underlines by default; every word is tappable. A word you have looked up gets a faint 1px ochre underline wherever it appears in that story. An optional switch, "Mark words you're learning", adds a dotted underline to words in your deck (ochre until first reviewed, navy after); new and known words stay plain either way.
 
 ### Named Rules
 **The Serif-For-Content Rule.** Titles and content headings use the serif; controls, labels and chrome stay sans.

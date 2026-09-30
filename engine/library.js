@@ -601,21 +601,12 @@ const Library = (function () {
         if (!container) return;
 
         const level = t.analysis && t.analysis.level ? t.analysis.level : 'Unassessed';
-        const fontControlsHtml = `
-            <div class="story-font-controls" role="group" aria-label="Adjust font size">
-                <button type="button" class="btn-font-scale" id="reader-font-down" title="Smaller text" aria-label="Smaller text">A−</button>
-                <span class="story-font-indicator" id="reader-font-indicator">100%</span>
-                <button type="button" class="btn-font-scale" id="reader-font-up" title="Larger text" aria-label="Larger text">A+</button>
-            </div>
-        `;
-
         let html = '<div class="story-header">' +
             '<div class="story-header-left">' +
                 '<h3 class="story-title">' + esc(t.title) + '</h3>' +
                 '<span class="story-level-badge">' + esc(level) + '</span>' +
             '</div>' +
             '<div class="story-header-actions">' +
-                fontControlsHtml +
                 '<button class="btn-back" data-mytext-back="1">&larr; Back</button>' +
             '</div>' +
         '</div>' +
@@ -636,11 +627,6 @@ const Library = (function () {
         if (backBtn) backBtn.onclick = closeMyText;
 
         if (typeof Reader !== 'undefined') {
-            Reader.applyFontScale(Reader.getFontScale(), container);
-            const downBtn = container.querySelector('#reader-font-down');
-            if (downBtn) downBtn.addEventListener('click', () => Reader.stepFontScale(-1));
-            const upBtn = container.querySelector('#reader-font-up');
-            if (upBtn) upBtn.addEventListener('click', () => Reader.stepFontScale(1));
             if (typeof Reader._wireScrollProgress === 'function') Reader._wireScrollProgress();
         }
 
