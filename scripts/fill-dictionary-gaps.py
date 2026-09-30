@@ -187,6 +187,10 @@ def parse_reply(text, lang):
         elif gender not in GENDERS:
             rejected.append((raw, 'gender %r not allowed' % gender))
         else:
+            # a gloss that is just the capitalised name itself ("Ferenc", "NATO") gets a small
+            # tag so the Reader shows it as a name rather than a bare word
+            if gloss[0].isupper() and gloss.lower() == lemma:
+                gloss += ' (name)'
             sense = {'en': gloss, 'type': pos}
             if lang == 'es' and pos == 'noun' and gender:
                 sense['gender'] = 'm; f' if gender == 'mf' else gender
