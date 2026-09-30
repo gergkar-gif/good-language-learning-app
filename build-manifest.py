@@ -317,24 +317,27 @@ def auto_group_units(lang, level_id, level_path):
     level should never have reached here, since every level using those
     already has an explicit units.json, but this keeps that assumption
     from silently producing an empty curriculum if it's ever wrong."""
-    plain = []
+    # A lesson split into parts (a1-16a, a1-16b) counts once for block sizing
+    # and stays together in its block, so splitting never shifts the units
+    # after it.
+    by_number = {}
     for f in sorted(level_path.glob(f"{level_id}-*.json")):
         if f.name in SKIP_FILENAMES:
             continue
-        m = re.match(rf"^{re.escape(level_id)}-(\d+)$", f.stem)
+        m = re.match(rf"^{re.escape(level_id)}-(\d+)([a-z]?)$", f.stem)
         if m:
-            plain.append((int(m.group(1)), f.stem))
-    if not plain:
+            by_number.setdefault(int(m.group(1)), []).append((m.group(2), f.stem))
+    if not by_number:
         return None
-    plain.sort()
+    plain = [(num, [stem for _, stem in sorted(parts)]) for num, parts in sorted(by_number.items())]
 
     titles = LANG_UNIT_TITLES.get(lang, {}).get(level_id, [])
     units = []
     for block_index, start in enumerate(range(0, len(plain), 5)):
         position = block_index + 1
         chunk = plain[start:start + 5]
-        stems = [stem for _, stem in chunk]
-        consolidation_stem = f"{chunk[-1][1]}-consolidation"
+        stems = [stem for _, parts in chunk for stem in parts]
+        consolidation_stem = re.sub(r"[a-z]$", "", chunk[-1][1][-1]) + "-consolidation"
         if (level_path / f"{consolidation_stem}.json").exists():
             stems.append(consolidation_stem)
         lessons = [e for e in

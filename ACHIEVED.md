@@ -2555,3 +2555,6 @@ Dedicated *vosotros* active mastery unit at A2 (Unit 33) and systemic B1 integra
 
 ### Phase 14: Comprehensive Spanish B1 CEFR Assessment Test — Done 2026-09-27
 `content/es-es/tests/b1-test.json` and `content/es-latam/tests/b1-test.json`. Part 1: 28 multi-modal questions (present & perfect subjunctive, sequence of tenses, reported commands, conditionals, verbs of becoming, prepositional verbs, *sino/pero*, neuter *lo*, pragmatic interaction). Part 2 Writing: formal debate text (80–120 words). Part 3 Speaking: voice memo (45–60 s) proposing a teamwork conflict solution.
+
+### Hungarian A1 Lesson 16 split into 16a / 16b — Done 2026-09-30
+"Numbers 0-10 - Számok 0-10" became `a1-16a` (numbers 0–10, *hány?*; 11 words, 19 exercises) and `a1-16b` (numbers 11–100; 9 words, 21 exercises, 15 of them newly written). Lesson files use a letter suffix so lessons 17+ keep their numbers. `auto_group_units()` in `build-manifest.py` now accepts `a1-NNx` stems and keeps the parts inside one block, so unit boundaries do not shift. Note: progress recorded against `lesson.a1.16` now maps to nothing; `16a` is a new lesson id.
