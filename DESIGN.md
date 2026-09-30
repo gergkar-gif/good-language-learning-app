@@ -243,6 +243,7 @@ Don't restyle these toward rows without asking.
 A 3px hairline track with a navy fill and a vermilion marker at the current position. At 100% the fill is pine and the marker disappears. Score and skill tracks use a navy marker.
 
 ### The Journey
+- The whole Journey column (streak, mountain, rows and the detail views) shares one measure, 34em, so every right edge lines up; the hero stays at the right of the page header.
 - Order: hero, Consistency (streak, best and rank, the 30-day grid: navy squares for active days, a vermilion ring on today), the **mountain**, then quiet rows that open their own screens (Can-Do Passport, Grammar and vocabulary, Skills, Milestones, Account and appearance).
 - **The mountain**: a right-triangle ridge, A1 at the left to C1 at the summit, in five equal bands. The climbed part is solid navy, the rest an unfilled sand region with a dashed ridge; gates between levels are green when passed and hollow otherwise; a hollow square flag marks the summit. The vermilion marker sits at the learner's true position between the gates (completed levels plus the fraction through the current one). A sand disc sits behind the upper ridge.
 
