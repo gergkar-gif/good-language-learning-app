@@ -2588,4 +2588,6 @@ B2's Library showed a "Latin America" shelf and a separate "Regional" shelf with
 - **`PLANNING.md`** archived; its exercise-behaviour, teaching and `es-latam` (no `vosotros`) rules are now "Teaching and exercise principles" in `AGENTS.md`, next to a new "Wiring a new unit into the app" section taken from `docs/CURRICULUM_ROADMAP.md`, which was archived (its product ideas were already in `ROADMAP.md`).
 - **`TROUBLESHOOTING_BACKLOG.md`** (1,560 lines, resolved except two items) archived; the open items are ROADMAP 112 and 113.
 - **`README.md`** fixed (stale `content/es` paths) and given a documentation map.
+- **Guides and drafts**: six unreferenced Latin America A1/A2 guides and the four Hungarian planning drafts moved to `docs/archive/guides/` and `docs/archive/hu-drafts/`. The `backfill_sentences/` batches stay: `build_translation_index.py` reads them as input.
+- **Worktrees**: eight orphaned folders under `.claude/worktrees/` (not registered with git) deleted. The registered ones, including seven `agent-*` worktrees with uncommitted files, were left for the owner to review.
 

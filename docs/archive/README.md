@@ -37,6 +37,14 @@ treated as a current spec.
   `AGENTS.md`; its product ideas are all in `ROADMAP.md`.
 - `TROUBLESHOOTING_BACKLOG.md` — the 2026-08-18 brain-dump intake list, all
   resolved except two items now tracked as ROADMAP 112 and 113.
+- `guides/` — six Latin America A1/A2 authoring guides nothing referenced
+  (`a1-learning-objectives`, `a1-story`, `a1-progression-matrix`,
+  `a1-reading-plan`, `a1-quality-checklist`, `a2`), archived 2026-09-30. The
+  guides still in `content/es-latam/guides/` are the ones `audit-lesson.py` and
+  the remaining guides cite.
+- `hu-drafts/` — the Hungarian A2/B1/B2 curriculum drafts and the A2 story-arc
+  draft. The content they planned is built; the real curriculum is generated
+  from `content/hu/curriculum/`.
 - `PARLOUR_DECKS_SPEC.md`, `PARLOUR_LIBRARY_SPEC.md`,
   `PARLOUR_LISTENING_SPEC.md`, `PARLOUR_VOCABULARY_DRILLER_SPEC.md` —
   implementation specs for Decks, Library, the Listening Driller, and the
