@@ -39,8 +39,10 @@
                 border-color var(--dur-fast) var(--ease-standard);
 }
 
-.vb-mode-btn:hover {
+@media (hover: hover) {
+  .vb-mode-btn:hover {
     color: var(--primary-dark);
+}
 }
 
 .vb-mode-btn.active {
@@ -88,8 +90,10 @@
     cursor: pointer;
 }
 
-.vb-select:hover {
+@media (hover: hover) {
+  .vb-select:hover {
     border-color: var(--primary-mid);
+}
 }
 
 .vb-select:focus {
@@ -152,12 +156,16 @@
     outline-offset: 2px;
 }
 
-.vbtn-primary:hover {
+@media (hover: hover) {
+  .vbtn-primary:hover {
     border-color: var(--primary-dark);
 }
+}
 
-.vbtn-secondary:hover {
+@media (hover: hover) {
+  .vbtn-secondary:hover {
     border-color: var(--primary);
+}
 }
 
 [data-theme="dark"] .vbtn-primary,
@@ -167,11 +175,13 @@
     border-color: var(--primary);
 }
 
-[data-theme="dark"] .vbtn-primary:hover,
-:root:not([data-theme="light"]) .vbtn-primary:hover {
+@media (hover: hover) {
+  [data-theme="dark"] .vbtn-primary:hover,
+  :root:not([data-theme="light"]) .vbtn-primary:hover {
     background: #E5DFD4;
     border-color: #E5DFD4;
     color: var(--bg);
+}
 }
 
 [data-theme="dark"] .vbtn-secondary,
@@ -181,11 +191,13 @@
     border-color: var(--border);
 }
 
-[data-theme="dark"] .vbtn-secondary:hover,
-:root:not([data-theme="light"]) .vbtn-secondary:hover {
+@media (hover: hover) {
+  [data-theme="dark"] .vbtn-secondary:hover,
+  :root:not([data-theme="light"]) .vbtn-secondary:hover {
     background: rgba(245, 241, 232, 0.12);
     border-color: var(--primary);
     color: var(--primary);
+}
 }
 
 .vbtn-block {

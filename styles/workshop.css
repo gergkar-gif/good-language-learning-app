@@ -43,8 +43,10 @@
     transition: background var(--dur-fast) var(--ease-standard), filter var(--dur-fast);
 }
 
-.wk-next-primary-btn:hover {
+@media (hover: hover) {
+  .wk-next-primary-btn:hover {
     filter: brightness(1.1);
+}
 }
 
 .wk-next-action {
@@ -75,8 +77,10 @@
     cursor: pointer;
 }
 
-.wk-next-btn:hover {
+@media (hover: hover) {
+  .wk-next-btn:hover {
     text-decoration: underline;
+}
 }
 
 .wk-next-sub {
@@ -107,10 +111,15 @@
     transition: color var(--dur-fast) var(--ease-standard);
 }
 
-.wk-card:hover .wk-card-arrow,
 .wk-card:focus-visible .wk-card-arrow {
     background: var(--accent-dark);
     transform: translateX(3px);
+}
+@media (hover: hover) {
+  .wk-card:hover .wk-card-arrow {
+    background: var(--accent-dark);
+    transform: translateX(3px);
+}
 }
 
 .wk-card-icon {
@@ -151,8 +160,10 @@
     cursor: pointer;
 }
 
-.wk-back:hover {
+@media (hover: hover) {
+  .wk-back:hover {
     color: var(--primary);
+}
 }
 
 /* ============================================
@@ -224,8 +235,10 @@
     transition: border-color 0.15s ease;
 }
 
-.gd-select-trigger:hover {
+@media (hover: hover) {
+  .gd-select-trigger:hover {
     border-color: var(--primary-mid);
+}
 }
 
 .gd-select-trigger:focus-visible {
@@ -360,8 +373,10 @@
     transition: background 0.12s ease;
 }
 
-.gd-skill-item:hover {
+@media (hover: hover) {
+  .gd-skill-item:hover {
     background: var(--border);
+}
 }
 
 .gd-skill-item.is-selected {
@@ -492,8 +507,10 @@
     transition: color var(--dur-fast) var(--ease-standard);
 }
 
-.gd-change-skill:hover {
+@media (hover: hover) {
+  .gd-change-skill:hover {
     color: var(--text);
+}
 }
 
 /* Tier 2 cross-link — same treatment as its Reader sibling
@@ -508,8 +525,10 @@
     text-align: left;
 }
 
-.gd-change-skill:hover {
+@media (hover: hover) {
+  .gd-change-skill:hover {
     color: var(--primary);
+}
 }
 
 .gd-exercise {
@@ -569,8 +588,10 @@
                 opacity var(--dur-fast) var(--ease-standard);
 }
 
-.gd-option:hover {
+@media (hover: hover) {
+  .gd-option:hover {
     border-color: var(--primary-mid);
+}
 }
 
 .gd-option.selected {
@@ -967,9 +988,11 @@
     transition: transform var(--dur-fast), background var(--dur-fast), border-color var(--dur-fast);
 }
 
-.lr-play-btn:hover {
+@media (hover: hover) {
+  .lr-play-btn:hover {
     background: var(--primary-dark);
     transform: translateY(-1px);
+}
 }
 
 .lr-play-btn .icon {
@@ -995,11 +1018,13 @@
     color: #F5F1E8;
 }
 
-[data-theme="dark"] .lr-play-btn:hover,
-:root:not([data-theme="light"]) .lr-play-btn:hover {
+@media (hover: hover) {
+  [data-theme="dark"] .lr-play-btn:hover,
+  :root:not([data-theme="light"]) .lr-play-btn:hover {
     background: #1B3550;
     border-color: var(--accent);
     color: #F5F1E8;
+}
 }
 
 .lr-stage-controls {
@@ -1016,10 +1041,12 @@
     border: 1px solid var(--border);
 }
 
-.lr-play-slow:hover {
+@media (hover: hover) {
+  .lr-play-slow:hover {
     background: rgba(0, 0, 0, 0.04);
     border-color: var(--text);
     transform: translateY(-1px);
+}
 }
 
 [data-theme="dark"] .lr-play-slow,
@@ -1029,10 +1056,12 @@
     border-color: var(--border);
 }
 
-[data-theme="dark"] .lr-play-slow:hover,
-:root:not([data-theme="light"]) .lr-play-slow:hover {
+@media (hover: hover) {
+  [data-theme="dark"] .lr-play-slow:hover,
+  :root:not([data-theme="light"]) .lr-play-slow:hover {
     background: rgba(255, 255, 255, 0.06);
     border-color: var(--text);
+}
 }
 
 .lr-answer {
@@ -1113,8 +1142,10 @@
     cursor: pointer;
 }
 
-.hv-info-link:hover {
+@media (hover: hover) {
+  .hv-info-link:hover {
     color: var(--accent);
+}
 }
 
 .hv-info {
@@ -1138,8 +1169,10 @@
     cursor: pointer;
 }
 
-.di-info-btn:hover {
+@media (hover: hover) {
+  .di-info-btn:hover {
     color: var(--accent);
+}
 }
 
 .di-title {
@@ -1247,8 +1280,10 @@
     transition: background var(--dur-fast, 0.15s), border-color var(--dur-fast, 0.15s);
 }
 
-.sp-listen-btn:hover {
+@media (hover: hover) {
+  .sp-listen-btn:hover {
     border-color: var(--text, #102A47);
+}
 }
 
 .sp-listen-btn svg {
@@ -1397,10 +1432,12 @@
     transition: background 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
 }
 
-.sp-done-speaking-btn:hover {
+@media (hover: hover) {
+  .sp-done-speaking-btn:hover {
     background: rgba(0, 0, 0, 0.05);
     border-color: var(--primary, #102A47);
     transform: translateY(-1px);
+}
 }
 
 [data-theme="dark"] .sp-done-speaking-btn,
@@ -1410,10 +1447,12 @@
     border-color: var(--border);
 }
 
-[data-theme="dark"] .sp-done-speaking-btn:hover,
-:root:not([data-theme="light"]) .sp-done-speaking-btn:hover {
+@media (hover: hover) {
+  [data-theme="dark"] .sp-done-speaking-btn:hover,
+  :root:not([data-theme="light"]) .sp-done-speaking-btn:hover {
     background: rgba(255, 255, 255, 0.08);
     border-color: var(--text);
+}
 }
 
 .sp-live-transcript {
@@ -1486,9 +1525,11 @@
     transition: background var(--dur-fast, 0.15s), border-color var(--dur-fast, 0.15s);
 }
 
-.sp-audio-compare-btn:hover {
+@media (hover: hover) {
+  .sp-audio-compare-btn:hover {
     border-color: var(--text, #102A47);
     background: var(--wash, rgba(16, 42, 71, 0.04));
+}
 }
 
 .sp-audio-compare-btn svg,
@@ -1510,10 +1551,12 @@
     color: #F5F1E8;
 }
 
-[data-theme="dark"] .sp-audio-compare-btn:hover,
-:root:not([data-theme="light"]) .sp-audio-compare-btn:hover {
+@media (hover: hover) {
+  [data-theme="dark"] .sp-audio-compare-btn:hover,
+  :root:not([data-theme="light"]) .sp-audio-compare-btn:hover {
     background: #1B3550;
     border-color: var(--accent);
+}
 }
 
 [data-theme="dark"] .sp-audio-compare-btn.is-playing,
@@ -1549,8 +1592,10 @@
     padding: 4px 8px;
 }
 
-.sp-cant-speak-btn:hover {
+@media (hover: hover) {
+  .sp-cant-speak-btn:hover {
     color: var(--text, #102A47);
+}
 }
 
 .sp-next-btn,
@@ -1568,9 +1613,11 @@
     transition: opacity var(--dur-fast, 0.15s);
 }
 
-.sp-next-btn:hover,
-.sp-start-btn:hover {
+@media (hover: hover) {
+  .sp-next-btn:hover,
+  .sp-start-btn:hover {
     opacity: 0.92;
+}
 }
 
 /* Self-evaluation Fallback */
@@ -1694,11 +1741,13 @@
     border-color: var(--border, rgba(245, 241, 232, 0.15));
 }
 
-[data-theme="dark"] .wk-pill:hover,
-:root:not([data-theme="light"]) .wk-pill:hover {
+@media (hover: hover) {
+  [data-theme="dark"] .wk-pill:hover,
+  :root:not([data-theme="light"]) .wk-pill:hover {
     background: rgba(224, 113, 72, 0.14);
     border-color: var(--accent, #E07148);
     color: var(--accent, #E07148);
+}
 }
 
 [data-theme="dark"] .wk-pill.active,
@@ -1918,8 +1967,10 @@
     }
 }
 
-.sp-prompt-grid .wk-card:hover {
+@media (hover: hover) {
+  .sp-prompt-grid .wk-card:hover {
     border-color: var(--accent);
+}
 }
 
 .sp-prompt-grid .wk-card .wk-card-title {
@@ -1937,8 +1988,10 @@
     line-height: 1.45;
 }
 
-.sp-prompt-grid .wk-card:hover .wk-card-title {
+@media (hover: hover) {
+  .sp-prompt-grid .wk-card:hover .wk-card-title {
     color: var(--accent);
+}
 }
 
 [data-theme="dark"] .sp-prompt-grid .wk-card,
@@ -1947,9 +2000,11 @@
     border-color: var(--border);
 }
 
-[data-theme="dark"] .sp-prompt-grid .wk-card:hover,
-:root:not([data-theme="light"]) .sp-prompt-grid .wk-card:hover {
+@media (hover: hover) {
+  [data-theme="dark"] .sp-prompt-grid .wk-card:hover,
+  :root:not([data-theme="light"]) .sp-prompt-grid .wk-card:hover {
     border-color: var(--accent);
+}
 }
 
 .sp-card-clickable {
@@ -2607,8 +2662,10 @@
     white-space: nowrap;
 }
 
-.sp-studio-tab:hover {
+@media (hover: hover) {
+  .sp-studio-tab:hover {
     background: var(--bg-hover, rgba(0,0,0,0.03));
+}
 }
 
 .sp-studio-tab.active {
@@ -2673,8 +2730,10 @@
     padding: 0;
 }
 
-.sp-btn-link:hover {
+@media (hover: hover) {
+  .sp-btn-link:hover {
     color: var(--primary, var(--accent-dark));
+}
 }
 
 .sp-prod-timer-box {
@@ -3120,9 +3179,11 @@
     border-radius: var(--radius);
 }
 
-.sp-scenario-card:hover {
+@media (hover: hover) {
+  .sp-scenario-card:hover {
     transform: translateY(-2px);
     border-color: var(--accent);
+}
 }
 
 .sp-scenario-card-header {
@@ -3289,9 +3350,11 @@
     transition: background var(--dur-fast);
 }
 
-.sp-inline-replay:hover {
+@media (hover: hover) {
+  .sp-inline-replay:hover {
     background: var(--bg-hover, rgba(0, 0, 0, 0.06));
     color: var(--text);
+}
 }
 
 .sp-chat-check {
@@ -3310,8 +3373,10 @@
     transition: transform var(--dur-fast);
 }
 
-.sp-chat-listen-btn:hover {
+@media (hover: hover) {
+  .sp-chat-listen-btn:hover {
     transform: translateY(-1px);
+}
 }
 
 .sp-chat-listen-btn.playing {
@@ -3329,8 +3394,10 @@
     transition: background var(--dur-fast), color var(--dur-fast), border-color var(--dur-fast);
 }
 
-.sp-chat-reveal-btn:hover {
+@media (hover: hover) {
+  .sp-chat-reveal-btn:hover {
     border-color: var(--muted);
+}
 }
 
 .sp-scenario-record-cta {
@@ -3341,8 +3408,10 @@
     transition: transform var(--dur-fast);
 }
 
-.sp-scenario-record-cta:hover {
+@media (hover: hover) {
+  .sp-scenario-record-cta:hover {
     transform: translateY(-1px);
+}
 }
 
 .sp-scenario-stop-btn {
@@ -3393,8 +3462,10 @@
     transition: background var(--dur-fast), transform var(--dur-fast);
 }
 
-.sp-player-toggle:hover {
+@media (hover: hover) {
+  .sp-player-toggle:hover {
     transform: scale(1.08);
+}
 }
 
 .sp-player-track {
@@ -3450,13 +3521,17 @@
     font-weight: 500;
 }
 
-.sp-phrases-summary:hover {
+@media (hover: hover) {
+  .sp-phrases-summary:hover {
     color: var(--text);
 }
+}
 
-.sp-play-audio-btn:hover .sp-icon-svg,
-.sp-inline-replay:hover .sp-icon-svg {
+@media (hover: hover) {
+  .sp-play-audio-btn:hover .sp-icon-svg,
+  .sp-inline-replay:hover .sp-icon-svg {
     stroke: var(--accent);
+}
 }
 
 /* Speaking Coach & Diagnostic Note Card */
@@ -3692,9 +3767,11 @@
     transition: transform var(--dur-fast), border-color var(--dur-fast);
 }
 
-.wr-exchange-card:hover {
+@media (hover: hover) {
+  .wr-exchange-card:hover {
     transform: translateY(-2px);
     border-color: var(--accent);
+}
 }
 
 .wr-exchange-card-header {
@@ -3751,9 +3828,11 @@
     transition: background var(--dur-fast), border-color var(--dur-fast);
 }
 
-.wr-diacritic-btn:hover {
+@media (hover: hover) {
+  .wr-diacritic-btn:hover {
     background: var(--bg-hover, rgba(0, 0, 0, 0.04));
     border-color: var(--accent);
+}
 }
 
 .wr-diacritic-btn:active {

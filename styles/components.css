@@ -23,8 +23,10 @@
   transition: border-color var(--dur-fast) var(--ease-standard);
 }
 
-.card:hover {
+@media (hover: hover) {
+  .card:hover {
   border-color: var(--primary);
+}
 }
 
 .card h3 {
@@ -63,8 +65,10 @@
   border: none;
 }
 
-.btn-primary:hover {
+@media (hover: hover) {
+  .btn-primary:hover {
   background: var(--primary-dark);
+}
 }
 
 .btn-accent {
@@ -85,8 +89,10 @@
   font-size: 14px;
 }
 
-.btn-back:hover {
+@media (hover: hover) {
+  .btn-back:hover {
   color: var(--primary);
+}
 }
 
 /* ============================================
@@ -166,8 +172,10 @@
   cursor: pointer;
 }
 
-.library-search-clear:hover {
+@media (hover: hover) {
+  .library-search-clear:hover {
   color: var(--text);
+}
 }
 
 .library-search-summary {
@@ -250,8 +258,10 @@
   cursor: pointer;
 }
 
-.story-shelf-header:hover .story-shelf-title {
+@media (hover: hover) {
+  .story-shelf-header:hover .story-shelf-title {
   color: var(--text);
+}
 }
 
 .story-shelf-title {
@@ -290,8 +300,10 @@
   transition: border-color var(--dur-fast) var(--ease-standard);
 }
 
-.story-card:hover {
+@media (hover: hover) {
+  .story-card:hover {
   border-color: var(--primary);
+}
 }
 
 /* Switched 2026-08-14 from four flat navy-shade backgrounds + one shared
@@ -463,9 +475,11 @@
   transition: border-color var(--dur-fast) var(--ease-standard);
 }
 
-.lib-continue-item:hover {
+@media (hover: hover) {
+  .lib-continue-item:hover {
   border-color: var(--primary);
   border-left-color: var(--accent);
+}
 }
 
 .lib-continue-title {
@@ -566,10 +580,12 @@
   box-sizing: border-box;
 }
 
-.lib-rec-card:hover {
+@media (hover: hover) {
+  .lib-rec-card:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.07);
   border-color: var(--accent, #e65100);
+}
 }
 
 .lib-rec-card::before {
@@ -734,9 +750,11 @@
   transition: background 0.15s ease, color 0.15s ease;
 }
 
-.btn-font-scale:hover:not(:disabled) {
+@media (hover: hover) {
+  .btn-font-scale:hover:not(:disabled) {
   background: var(--border-subtle);
   color: var(--primary);
+}
 }
 
 .btn-font-scale:disabled {
@@ -810,9 +828,11 @@
   transition: transform 0.1s ease, background 0.15s ease;
 }
 
-.story-audio-play-btn:hover {
+@media (hover: hover) {
+  .story-audio-play-btn:hover {
   transform: scale(1.04);
   background: var(--accent);
+}
 }
 
 .story-audio-play-btn svg {
@@ -857,9 +877,11 @@
   transition: background 0.15s ease, border-color 0.15s ease;
 }
 
-.story-audio-speed-btn:hover {
+@media (hover: hover) {
+  .story-audio-speed-btn:hover {
   border-color: var(--accent);
   background: var(--border-subtle);
+}
 }
 
 /* Synchronized active paragraph highlight */
@@ -913,9 +935,11 @@
   transition: transform 0.15s ease, filter 0.15s ease;
 }
 
-.ssp-play-btn:hover {
+@media (hover: hover) {
+  .ssp-play-btn:hover {
   transform: scale(1.06);
   filter: brightness(1.08);
+}
 }
 
 .ssp-play-btn svg {
@@ -978,9 +1002,11 @@
   transition: border-color 0.15s ease, background 0.15s ease;
 }
 
-.ssp-speed-btn:hover {
+@media (hover: hover) {
+  .ssp-speed-btn:hover {
   border-color: var(--accent);
   background: var(--border-subtle);
+}
 }
 
 @media (max-width: 480px) {
@@ -1010,8 +1036,10 @@
   transition: color 0.15s ease;
 }
 
-.story-para-play-btn:hover {
+@media (hover: hover) {
+  .story-para-play-btn:hover {
   color: var(--accent);
+}
 }
 
 .story-para-play-btn svg {
@@ -1069,8 +1097,10 @@
   transition: border-color 0.15s ease, background 0.15s ease;
 }
 
-.story-comp-opt:hover:not(:disabled) {
+@media (hover: hover) {
+  .story-comp-opt:hover:not(:disabled) {
   border-color: var(--accent);
+}
 }
 
 .story-comp-opt.is-correct {
@@ -1185,7 +1215,9 @@
   cursor: pointer;
 }
 
-.lt-saved-remove:hover { border-color: var(--danger); color: var(--danger); }
+@media (hover: hover) {
+  .lt-saved-remove:hover { border-color: var(--danger); color: var(--danger); }
+}
 
 /* ----- My Texts ----- */
 
@@ -1232,7 +1264,9 @@
   color: var(--muted);
   cursor: pointer;
 }
-.lt-card-action-danger:hover { border-color: var(--danger); }
+@media (hover: hover) {
+  .lt-card-action-danger:hover { border-color: var(--danger); }
+}
 
 /* Add/edit text editor — reuses the Deck editor's input/label/actions
    classes (dk-editor-*) for a consistent form language across the app. */
@@ -1400,8 +1434,10 @@
   color: var(--muted);
 }
 
-.lesson-sound-btn:hover {
+@media (hover: hover) {
+  .lesson-sound-btn:hover {
   color: var(--primary);
+}
 }
 
 .lesson-sound-btn .icon {
@@ -1430,15 +1466,19 @@
               background var(--dur-fast) var(--ease-standard);
 }
 
-.lesson-close-btn:hover {
+@media (hover: hover) {
+  .lesson-close-btn:hover {
   color: var(--primary);
   border-color: var(--primary-mid);
   background: rgba(16, 42, 71, 0.04);
 }
+}
 
-[data-theme="dark"] .lesson-close-btn:hover,
-:root:not([data-theme="light"]) .lesson-close-btn:hover {
+@media (hover: hover) {
+  [data-theme="dark"] .lesson-close-btn:hover,
+  :root:not([data-theme="light"]) .lesson-close-btn:hover {
   background: rgba(245, 241, 232, 0.08);
+}
 }
 
 .lsn-title {
@@ -1588,9 +1628,11 @@
   cursor: not-allowed;
 }
 
-.btn-primary:disabled:hover,
-.btn-primary.is-locked:hover {
+@media (hover: hover) {
+  .btn-primary:disabled:hover,
+  .btn-primary.is-locked:hover {
   background: var(--primary);
+}
 }
 
 /* Shown when a learner runs out of attempts */
@@ -1637,8 +1679,10 @@
               color var(--dur-fast) var(--ease-standard);
 }
 
-.lsn-srs-opt:hover {
+@media (hover: hover) {
+  .lsn-srs-opt:hover {
   border-color: var(--primary-mid);
+}
 }
 
 .lsn-srs-opt.is-selected {
@@ -1829,9 +1873,11 @@
   cursor: pointer;
 }
 
-.lsn-vocab-add:hover {
+@media (hover: hover) {
+  .lsn-vocab-add:hover {
   border-color: var(--primary);
   color: var(--primary);
+}
 }
 
 .lsn-dialogue,
@@ -2066,10 +2112,12 @@
               background var(--dur-fast) var(--ease-standard);
 }
 
-.lsn-mic-addon:hover {
+@media (hover: hover) {
+  .lsn-mic-addon:hover {
   color: var(--accent);
   border-color: var(--accent);
   background: rgba(224, 113, 72, 0.08);
+}
 }
 
 .lsn-mic-addon .icon {
@@ -2096,11 +2144,13 @@
   color: var(--muted);
 }
 
-[data-theme="dark"] .lsn-mic-addon:hover,
-:root:not([data-theme="light"]) .lsn-mic-addon:hover {
+@media (hover: hover) {
+  [data-theme="dark"] .lsn-mic-addon:hover,
+  :root:not([data-theme="light"]) .lsn-mic-addon:hover {
   border-color: var(--accent);
   color: var(--accent);
   background: rgba(224, 113, 72, 0.12);
+}
 }
 
 /* ---- Fill-blank progressive hints ---- */
@@ -2125,9 +2175,11 @@
   text-underline-offset: 3px;
 }
 
-.lsn-hint-btn:hover:not(:disabled) {
+@media (hover: hover) {
+  .lsn-hint-btn:hover:not(:disabled) {
   color: var(--accent);
   background: rgba(0, 0, 0, 0.04);
+}
 }
 
 .lsn-hint-btn:disabled {
@@ -2208,15 +2260,19 @@
   color: #F5F1E8;
 }
 
-[data-theme="dark"] .lsn-play:hover,
-:root:not([data-theme="light"]) .lsn-play:hover {
+@media (hover: hover) {
+  [data-theme="dark"] .lsn-play:hover,
+  :root:not([data-theme="light"]) .lsn-play:hover {
   background: #1B3550;
   border-color: var(--accent);
   color: #F5F1E8;
 }
+}
 
-.lsn-play-slow:hover {
+@media (hover: hover) {
+  .lsn-play-slow:hover {
   border-color: var(--text);
+}
 }
 
 [data-theme="dark"] .lsn-play-slow,
@@ -2226,10 +2282,12 @@
   border-color: var(--border);
 }
 
-[data-theme="dark"] .lsn-play-slow:hover,
-:root:not([data-theme="light"]) .lsn-play-slow:hover {
+@media (hover: hover) {
+  [data-theme="dark"] .lsn-play-slow:hover,
+  :root:not([data-theme="light"]) .lsn-play-slow:hover {
   background: rgba(255, 255, 255, 0.06);
   border-color: var(--text);
+}
 }
 
 /* White on navy here, so the icon takes the button's own colour rather
@@ -2359,9 +2417,11 @@
               color var(--dur-fast) var(--ease-standard);
 }
 
-.lsn-diacritic-popover-btn:hover {
+@media (hover: hover) {
+  .lsn-diacritic-popover-btn:hover {
   background: rgba(16, 42, 71, 0.05);
   border-color: var(--secondary);
+}
 }
 
 .lsn-diacritic-popover-btn:active {
@@ -2377,11 +2437,13 @@
   color: var(--text);
 }
 
-[data-theme="dark"] .lsn-diacritic-popover-btn:hover,
-:root:not([data-theme="light"]) .lsn-diacritic-popover-btn:hover {
+@media (hover: hover) {
+  [data-theme="dark"] .lsn-diacritic-popover-btn:hover,
+  :root:not([data-theme="light"]) .lsn-diacritic-popover-btn:hover {
   background: rgba(245, 241, 232, 0.08);
   border-color: rgba(245, 241, 232, 0.35);
   color: var(--primary);
+}
 }
 
 .lsn-checklist {
@@ -2438,9 +2500,11 @@
   cursor: pointer;
 }
 
-.review-clear-btn:hover {
+@media (hover: hover) {
+  .review-clear-btn:hover {
   color: var(--danger);
   border-color: var(--danger);
+}
 }
 
 /* Direction switch: which side of the card shows first */
@@ -2458,8 +2522,10 @@
   transition: color 0.15s ease;
 }
 
-.dk-direction-label:hover {
+@media (hover: hover) {
+  .dk-direction-label:hover {
   color: var(--text);
+}
 }
 
 .dk-direction-label.dk-direction-active {
@@ -3168,7 +3234,9 @@
   cursor: pointer;
 }
 
-.wp-add-to-deck:hover { background: var(--border); }
+@media (hover: hover) {
+  .wp-add-to-deck:hover { background: var(--border); }
+}
 
 /* ============================================
    LISTEN BUTTONS
@@ -3444,7 +3512,9 @@
   text-align: left;
 }
 
-.jr-milestones-toggle:hover { color: var(--primary-dark); }
+@media (hover: hover) {
+  .jr-milestones-toggle:hover { color: var(--primary-dark); }
+}
 
 .jr-milestones-arrow {
   font-size: .8em;
@@ -3579,8 +3649,10 @@
   cursor: pointer;
 }
 
-.jr-lang-select:hover {
+@media (hover: hover) {
+  .jr-lang-select:hover {
   border-bottom-color: var(--primary-mid);
+}
 }
 
 /* ============================================
@@ -4251,8 +4323,10 @@
   cursor: pointer;
 }
 
-.dk-search-clear:hover {
+@media (hover: hover) {
+  .dk-search-clear:hover {
   color: var(--text);
+}
 }
 
 .dk-search-summary {
@@ -4426,7 +4500,9 @@
   cursor: pointer;
 }
 
-.dk-back:hover { text-decoration: underline; }
+@media (hover: hover) {
+  .dk-back:hover { text-decoration: underline; }
+}
 
 .dk-scope {
   font-size: 13px;
@@ -4493,12 +4569,16 @@
   padding: 0;
 }
 
-.dk-link-btn:hover { color: var(--primary); }
+@media (hover: hover) {
+  .dk-link-btn:hover { color: var(--primary); }
+}
 
 /* A destructive action that still reads as a plain inline link, not the
    heavier bordered .dk-danger button ("Delete deck") — "Reset progress"
    sits next to "Edit deck" at the same weight until you hover it. */
-.dk-link-btn-danger:hover { color: var(--danger); opacity: 0.75; }
+@media (hover: hover) {
+  .dk-link-btn-danger:hover { color: var(--danger); opacity: 0.75; }
+}
 
 .dk-words-head {
   display: flex;
@@ -4571,7 +4651,9 @@
   font-size: 15px;
 }
 
-.dk-danger:hover { background: var(--danger-bg); }
+@media (hover: hover) {
+  .dk-danger:hover { background: var(--danger-bg); }
+}
 
 /* ----- Deck editor ----- */
 
@@ -4614,7 +4696,9 @@
   padding: 0 4px;
 }
 
-.dk-word-remove:hover { color: var(--danger); }
+@media (hover: hover) {
+  .dk-word-remove:hover { color: var(--danger); }
+}
 
 .dk-editor-actions { margin-top: 18px; }
 
@@ -4642,7 +4726,9 @@
 
 .dk-picker-results li:last-child .dk-picker-result { border-bottom: 0; }
 
-.dk-picker-result:hover:not(:disabled) { background: var(--border); }
+@media (hover: hover) {
+  .dk-picker-result:hover:not(:disabled) { background: var(--border); }
+}
 .dk-picker-result:disabled { cursor: default; opacity: .6; }
 
 .dk-picker-result-es { color: var(--primary); font-size: 14px; flex: 0 0 auto; }
@@ -4663,7 +4749,9 @@
   cursor: pointer;
 }
 
-.dk-picker-manual:hover { border-color: var(--primary); color: var(--primary); }
+@media (hover: hover) {
+  .dk-picker-manual:hover { border-color: var(--primary); color: var(--primary); }
+}
 
 /* ----- Deck importer ----- */
 .dk-index-actions {
@@ -4687,10 +4775,15 @@
   text-align: center;
 }
 
-.dk-dropzone:hover,
 .dk-dropzone.drag-active {
   border-color: var(--primary);
   background: var(--surface);
+}
+@media (hover: hover) {
+  .dk-dropzone:hover {
+  border-color: var(--primary);
+  background: var(--surface);
+}
 }
 
 .dk-dropzone-text {
@@ -4824,7 +4917,9 @@
 
 .dk-picker-list li:last-child .dk-picker-deck { border-bottom: 0; }
 
-.dk-picker-deck:hover:not(:disabled) { color: var(--primary); }
+@media (hover: hover) {
+  .dk-picker-deck:hover:not(:disabled) { color: var(--primary); }
+}
 .dk-picker-deck:disabled { cursor: default; color: var(--primary); }
 
 .dk-picker-deck-count { font-size: 12px; color: var(--muted); }
@@ -4861,7 +4956,9 @@
   transition: border-color .2s;
 }
 
-.level-test-row:hover { border-color: var(--primary); border-style: solid; }
+@media (hover: hover) {
+  .level-test-row:hover { border-color: var(--primary); border-style: solid; }
+}
 
 /* A passed level is the one thing in the list that is not simply
    "lessons finished", so it gets the solid border rather than the dashed. */
@@ -4989,7 +5086,9 @@
   cursor: pointer;
   transition: background 0.15s, border-color 0.15s, color 0.15s;
 }
-.lt-opt-btn:hover:not(:disabled) { border-color: var(--primary); color: var(--primary); }
+@media (hover: hover) {
+  .lt-opt-btn:hover:not(:disabled) { border-color: var(--primary); color: var(--primary); }
+}
 .lt-opt-btn.is-selected {
   background: var(--primary);
   color: #fff;
@@ -5062,7 +5161,9 @@
   cursor: pointer;
   transition: all 0.15s ease;
 }
-.lt-mic-btn:hover:not(:disabled) { border-color: var(--primary); }
+@media (hover: hover) {
+  .lt-mic-btn:hover:not(:disabled) { border-color: var(--primary); }
+}
 .lt-mic-btn.recording {
   background: var(--accent-dark, #dc4e2e);
   border-color: var(--accent-dark, #dc4e2e);
@@ -5112,9 +5213,13 @@
   transition: border-color var(--dur-fast) var(--ease-standard);
 }
 
-.hm-lang-chip:hover,
 .hm-lang-chip:focus-within {
   border-color: var(--primary-mid);
+}
+@media (hover: hover) {
+  .hm-lang-chip:hover {
+  border-color: var(--primary-mid);
+}
 }
 
 .hm-lang-label {
@@ -5145,8 +5250,10 @@
   transition: border-color var(--dur-fast) var(--ease-standard);
 }
 
-.hm-continue:hover {
+@media (hover: hover) {
+  .hm-continue:hover {
   border-color: var(--primary-mid);
+}
 }
 
 /* A finished course is a statement rather than a door — nothing to press. */
@@ -5154,8 +5261,10 @@
   cursor: default;
 }
 
-.hm-continue.is-done:hover {
+@media (hover: hover) {
+  .hm-continue.is-done:hover {
   border-color: var(--border);
+}
 }
 
 /* The practice nudge is a section with two real buttons in it, not one
@@ -5165,8 +5274,10 @@
   cursor: default;
 }
 
-.hm-continue.hm-nudge:hover {
+@media (hover: hover) {
+  .hm-continue.hm-nudge:hover {
   border-color: var(--border);
+}
 }
 
 /* A button wearing .hm-cta's own look (the one accent-coloured call to
@@ -5183,8 +5294,10 @@
   cursor: pointer;
 }
 
-.hm-cta-btn:hover {
+@media (hover: hover) {
+  .hm-cta-btn:hover {
   text-decoration: underline;
+}
 }
 
 .hm-continue-title {
@@ -5268,8 +5381,10 @@
   cursor: pointer;
 }
 
-.hm-secondary-btn:hover {
+@media (hover: hover) {
+  .hm-secondary-btn:hover {
   color: var(--primary-mid);
+}
 }
 
 /* ---- Quick Budget Bar (Timed Mode) ---- */
@@ -5287,8 +5402,10 @@
   transition: all var(--dur-fast) var(--ease-standard);
 }
 
-.hm-budget-pill:hover {
+@media (hover: hover) {
+  .hm-budget-pill:hover {
   border-color: var(--primary);
+}
 }
 
 /* ---- Dynamic Review Alert ---- */
@@ -5364,8 +5481,10 @@
   transition: opacity var(--dur-fast) var(--ease-standard);
 }
 
-.hm-review-alert-cta:hover {
+@media (hover: hover) {
+  .hm-review-alert-cta:hover {
   opacity: 0.9;
+}
 }
 
 .today-streak {
@@ -5428,8 +5547,10 @@
   transition: border-color var(--dur-fast) var(--ease-standard);
 }
 
-.br-flag-btn:hover {
+@media (hover: hover) {
+  .br-flag-btn:hover {
   border-color: var(--primary-mid);
+}
 }
 
 .br-flag-btn .icon {
@@ -5565,9 +5686,11 @@
               background-color var(--dur-fast) var(--ease-standard);
 }
 
-.jr-theme-option:hover {
+@media (hover: hover) {
+  .jr-theme-option:hover {
   color: var(--text);
   border-color: var(--primary-mid);
+}
 }
 
 .jr-theme-option.active {
@@ -5952,9 +6075,11 @@
   z-index: 2;
 }
 
-.lsn-mic-addon:hover {
+@media (hover: hover) {
+  .lsn-mic-addon:hover {
   background: var(--surface-alt, #ebe5d8);
   border-color: var(--navy, #102A47);
+}
 }
 
 .lsn-mic-addon.is-recording {
@@ -6452,8 +6577,10 @@
   border-color: var(--border);
 }
 
-.ud-diagnostic-row:hover {
+@media (hover: hover) {
+  .ud-diagnostic-row:hover {
   border-color: var(--accent);
+}
 }
 
 /* Diagnostic Test Container */
@@ -6644,8 +6771,10 @@
   transition: border-color var(--dur-fast, 0.15s) ease, background var(--dur-fast, 0.15s) ease, box-shadow var(--dur-fast, 0.15s) ease;
 }
 
-.diag-opt-btn:hover {
+@media (hover: hover) {
+  .diag-opt-btn:hover {
   border-color: var(--primary-mid, #3C5570);
+}
 }
 
 .diag-opt-btn.selected {
@@ -6695,9 +6824,11 @@
   transition: background var(--dur-fast, 0.15s) ease, border-color var(--dur-fast, 0.15s) ease, opacity var(--dur-fast, 0.15s) ease;
 }
 
-.wk-primary-btn:hover:not(:disabled) {
+@media (hover: hover) {
+  .wk-primary-btn:hover:not(:disabled) {
   background: var(--primary-dark);
   border-color: var(--primary-dark);
+}
 }
 
 .wk-primary-btn:disabled {
@@ -6722,10 +6853,12 @@
   transition: all var(--dur-fast, 0.15s) ease;
 }
 
-.wk-secondary-btn:hover:not(:disabled) {
+@media (hover: hover) {
+  .wk-secondary-btn:hover:not(:disabled) {
   color: var(--primary);
   border-color: var(--primary-mid);
   background: var(--wash, rgba(0, 0, 0, 0.03));
+}
 }
 
 .wk-secondary-btn:disabled {
@@ -6893,8 +7026,10 @@
   cursor: pointer;
 }
 
-.pl-note-close:hover {
+@media (hover: hover) {
+  .pl-note-close:hover {
   color: var(--text);
+}
 }
 
 /* First open: a name, one sentence, one question at a time. */
@@ -6957,8 +7092,10 @@
   cursor: pointer;
 }
 
-.pl-welcome-back:hover {
+@media (hover: hover) {
+  .pl-welcome-back:hover {
   color: var(--text);
+}
 }
 
 /* End-of-lesson invitation: one line and a way to get there. */
@@ -6996,8 +7133,10 @@
   cursor: pointer;
 }
 
-.hm-guide-link:hover {
+@media (hover: hover) {
+  .hm-guide-link:hover {
   color: var(--text);
+}
 }
 
 /* ?recstats only: how each kind of Home card has been received (tuning
@@ -7165,8 +7304,10 @@
   transition: opacity var(--dur-fast, 0.15s) ease;
 }
 
-.pl-guide-primary-btn:hover {
+@media (hover: hover) {
+  .pl-guide-primary-btn:hover {
   opacity: 0.9;
+}
 }
 
 /* Dark Mode Coach & Guide Overrides */
@@ -7247,8 +7388,10 @@
   transition: color var(--dur-fast, 0.15s) ease;
 }
 
-.nav-guide-btn:hover {
+@media (hover: hover) {
+  .nav-guide-btn:hover {
   color: var(--accent);
+}
 }
 
 /* ============================================

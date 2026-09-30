@@ -243,18 +243,20 @@
   color: var(--bg);
 }
 
-[data-theme="dark"] .btn-primary:hover,
-[data-theme="dark"] .vbtn-primary:hover,
-[data-theme="dark"] .br-primary:hover,
-[data-theme="dark"] .review-show-btn:hover,
-[data-theme="dark"] .lsn-check:not(.lsn-secondary):hover,
-[data-theme="dark"] .hm-review-alert-cta:hover,
-[data-theme="dark"] .wk-next-primary-btn:hover,
-[data-theme="dark"] .sp-next-btn:hover,
-[data-theme="dark"] .sp-start-btn:hover,
-[data-theme="dark"] .wp-add:not(.is-saved):not(.is-disabled):hover {
+@media (hover: hover) {
+  [data-theme="dark"] .btn-primary:hover,
+  [data-theme="dark"] .vbtn-primary:hover,
+  [data-theme="dark"] .br-primary:hover,
+  [data-theme="dark"] .review-show-btn:hover,
+  [data-theme="dark"] .lsn-check:not(.lsn-secondary):hover,
+  [data-theme="dark"] .hm-review-alert-cta:hover,
+  [data-theme="dark"] .wk-next-primary-btn:hover,
+  [data-theme="dark"] .sp-next-btn:hover,
+  [data-theme="dark"] .sp-start-btn:hover,
+  [data-theme="dark"] .wp-add:not(.is-saved):not(.is-disabled):hover {
   background: #E5DFD4;
   color: var(--bg);
+}
 }
 
 @media (prefers-color-scheme: dark) {
@@ -277,18 +279,20 @@
     color: var(--bg);
   }
 
-  :root:not([data-theme="light"]) .btn-primary:hover,
-  :root:not([data-theme="light"]) .vbtn-primary:hover,
-  :root:not([data-theme="light"]) .br-primary:hover,
-  :root:not([data-theme="light"]) .review-show-btn:hover,
-  :root:not([data-theme="light"]) .lsn-check:not(.lsn-secondary):hover,
-  :root:not([data-theme="light"]) .hm-review-alert-cta:hover,
-  :root:not([data-theme="light"]) .wk-next-primary-btn:hover,
-  :root:not([data-theme="light"]) .sp-next-btn:hover,
-  :root:not([data-theme="light"]) .sp-start-btn:hover,
-  :root:not([data-theme="light"]) .wp-add:not(.is-saved):not(.is-disabled):hover {
+  @media (hover: hover) {
+    :root:not([data-theme="light"]) .btn-primary:hover,
+    :root:not([data-theme="light"]) .vbtn-primary:hover,
+    :root:not([data-theme="light"]) .br-primary:hover,
+    :root:not([data-theme="light"]) .review-show-btn:hover,
+    :root:not([data-theme="light"]) .lsn-check:not(.lsn-secondary):hover,
+    :root:not([data-theme="light"]) .hm-review-alert-cta:hover,
+    :root:not([data-theme="light"]) .wk-next-primary-btn:hover,
+    :root:not([data-theme="light"]) .sp-next-btn:hover,
+    :root:not([data-theme="light"]) .sp-start-btn:hover,
+    :root:not([data-theme="light"]) .wp-add:not(.is-saved):not(.is-disabled):hover {
     background: #E5DFD4;
     color: var(--bg);
+  }
   }
 }
 
@@ -317,9 +321,11 @@ body, .nav, .page-header, .wp-sheet, .lsn-option, .gd-option, .vspeed-stat {
               transform var(--dur-fast) var(--ease-standard);
 }
 
-.theme-toggle-btn:hover {
+@media (hover: hover) {
+  .theme-toggle-btn:hover {
   border-color: var(--primary);
   transform: translateY(-1px);
+}
 }
 
 .nav-theme-btn {
@@ -339,8 +345,10 @@ body, .nav, .page-header, .wp-sheet, .lsn-option, .gd-option, .vspeed-stat {
               border-color var(--dur-fast) var(--ease-standard);
 }
 
-.nav-theme-btn:hover {
+@media (hover: hover) {
+  .nav-theme-btn:hover {
   color: var(--text);
+}
 }
 
 .theme-toggle-btn .theme-toggle-icon,

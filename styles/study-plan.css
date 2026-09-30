@@ -19,8 +19,10 @@
     transition: border-color var(--dur-fast) var(--ease-standard), color var(--dur-fast) var(--ease-standard);
 }
 
-.sp-budget-btn:hover {
+@media (hover: hover) {
+  .sp-budget-btn:hover {
     border-color: var(--primary-mid);
+}
 }
 
 .sp-checklist,
@@ -111,8 +113,10 @@
     cursor: pointer;
 }
 
-.sp-skip-link:hover {
+@media (hover: hover) {
+  .sp-skip-link:hover {
     color: var(--text);
+}
 }
 
 .sp-skipped {

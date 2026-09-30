@@ -80,14 +80,18 @@
   transition: color var(--dur-fast) var(--ease-standard), background var(--dur-fast) var(--ease-standard), border-color var(--dur-fast) var(--ease-standard);
 }
 
-.mobile-theme-btn:hover {
+@media (hover: hover) {
+  .mobile-theme-btn:hover {
   color: var(--text);
   border-color: var(--text);
   background: rgba(16, 42, 71, 0.04);
 }
+}
 
-[data-theme="dark"] .mobile-theme-btn:hover {
+@media (hover: hover) {
+  [data-theme="dark"] .mobile-theme-btn:hover {
   background: rgba(245, 241, 232, 0.06);
+}
 }
 
 .mobile-theme-btn .theme-toggle-icon {
@@ -280,9 +284,11 @@
   transition: all 0.15s ease;
 }
 
-.daily-activity:hover {
+@media (hover: hover) {
+  .daily-activity:hover {
   border-color: var(--primary-mid);
   color: var(--text);
+}
 }
 
 .daily-activity.is-done {
@@ -346,8 +352,10 @@
   transition: color var(--dur-base) var(--ease-standard);
 }
 
-.nav button:hover {
+@media (hover: hover) {
+  .nav button:hover {
   color: var(--text);
+}
 }
 
 /* The selected mark: a thin line growing in under the tab on mobile/tablet,
@@ -565,9 +573,11 @@
     transition: background var(--dur-fast) var(--ease-standard), color var(--dur-fast) var(--ease-standard);
   }
 
-  .nav button:hover {
+  @media (hover: hover) {
+    .nav button:hover {
     background: rgba(16, 42, 71, 0.04);
     color: var(--text);
+  }
   }
 
   .nav button.active {
@@ -649,13 +659,17 @@
     transition: color var(--dur-fast) var(--ease-standard), background var(--dur-fast) var(--ease-standard);
   }
 
-  .nav-theme-btn:hover {
+  @media (hover: hover) {
+    .nav-theme-btn:hover {
     color: var(--text);
     background: rgba(16, 42, 71, 0.04);
   }
+  }
 
-  [data-theme="dark"] .nav-theme-btn:hover {
+  @media (hover: hover) {
+    [data-theme="dark"] .nav-theme-btn:hover {
     background: rgba(245, 241, 232, 0.06);
+  }
   }
 
   .nav-theme-btn .theme-toggle-icon {
@@ -862,10 +876,15 @@ body.in-lesson .content {
               border-color var(--dur-fast) var(--ease-standard);
 }
 
-.level-card:hover .level-card-arrow,
 .level-card:focus-visible .level-card-arrow {
   border-color: var(--accent-dark);
   transform: rotate(45deg) translate(2px, -2px);
+}
+@media (hover: hover) {
+  .level-card:hover .level-card-arrow {
+  border-color: var(--accent-dark);
+  transform: rotate(45deg) translate(2px, -2px);
+}
 }
 
 /* ---- Level detail head (visual identity v2) ----
@@ -1422,8 +1441,10 @@ body.in-lesson .content {
   color: var(--muted);
 }
 
-.level-back:hover {
+@media (hover: hover) {
+  .level-back:hover {
   color: var(--text);
+}
 }
 
 /* ---- Grammar Guide ---- */
@@ -1431,8 +1452,10 @@ body.in-lesson .content {
    treatment, so both entry points into a unit's extra material read as the
    same kind of thing. */
 
-.ud-scenario-row:hover {
+@media (hover: hover) {
+  .ud-scenario-row:hover {
   border-style: solid;
+}
 }
 
 .ud-grammar-guide-title {
@@ -1512,9 +1535,11 @@ body.in-lesson .content {
   transition: all 0.15s ease;
 }
 
-.gg-drill-btn:hover {
+@media (hover: hover) {
+  .gg-drill-btn:hover {
   background: var(--wash);
   border-color: var(--primary);
+}
 }
 
 .gg-search-input {
