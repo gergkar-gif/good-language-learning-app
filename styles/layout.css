@@ -1975,3 +1975,9 @@ body.in-lesson .nav { display: none !important; }
   .page-header-title { font-size: clamp(2.1rem, 10vw, 2.6rem); }
   .page-header-title, .ud-title, .lsn-title { font-weight: 400; }
 }
+
+/* The narration player's play and pause shapes are solid, drawn in the button's
+   foreground colour. Without this the general `.art .ink-line` rule above
+   draws them as outlines in the primary colour, which is also the button's own
+   fill, so the icon vanished (navy on navy in light mode, cream on cream in dark). */
+.ssp-play-btn svg.art .ink-line { fill: currentColor; stroke: currentColor; }
