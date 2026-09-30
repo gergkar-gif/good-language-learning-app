@@ -215,7 +215,7 @@ const Home = (function () {
             <section class="hm-continue hm-nudge">
                 <span class="hm-eyebrow">${esc(elective.levelKey)} · Optional track</span>
                 <span class="hm-continue-title">${esc(elective.unit.title)}</span>
-                <span class="hm-continue-sub">From ${esc(elective.trackTitle)}, alongside the main course. Next up: ${esc(elective.lesson.title)}.</span>
+                <span class="hm-continue-sub">${esc(elective.trackDescription || `From ${elective.trackTitle}, alongside the main course.`)} Next up: ${esc(elective.lesson.title)}.</span>
                 <span class="hm-continue-foot">
                     <button class="hm-cta-btn" data-rec-open="1">Start</button>
                     <button class="dk-link-btn" data-skip-rec="1">Not now</button>

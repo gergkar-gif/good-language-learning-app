@@ -617,7 +617,7 @@ const RecommendationEngine = (function () {
             const lesson = (unit.lessons || []).find(l => !progress[l.id]);
             if (!lesson) continue;
             const track = entry.tracks.find(t => t.id === unit.track);
-            return { kind: 'elective', levelKey: level, unit, lesson, trackTitle: (track && track.title) || unit.track };
+            return { kind: 'elective', levelKey: level, unit, lesson, trackTitle: (track && track.title) || unit.track, trackDescription: track && track.description };
         }
         return null;
     }

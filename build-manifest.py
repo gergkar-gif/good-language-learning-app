@@ -175,31 +175,37 @@ LEVEL_TRACKS = {
     "es-latam": {
         "b1": [
             {"id": "core", "title": "Core Spanish"},
-            {"id": "latam", "title": "Latin America"},
+            {"id": "latam", "title": "Latin America",
+             "description": "Latin American history, from the first civilisations to today."},
         ],
         "b2": [
             {"id": "core", "title": "Core Spanish"},
-            {"id": "latam", "title": "Latin America"},
+            {"id": "latam", "title": "Latin America",
+             "description": "Latin America country by country: places, culture and current affairs."},
         ],
     },
     "es-es": {
         "b1": [
             {"id": "core", "title": "Core Spanish"},
-            {"id": "cultura", "title": "Cultura y Ciudadanía"},
+            {"id": "cultura", "title": "Cultura y Ciudadanía",
+             "description": "The history, institutions and culture behind the CCSE citizenship exam."},
         ],
     },
     "hu": {
         "b1": [
             {"id": "core", "title": "Core Hungarian"},
-            {"id": "citizenship", "title": "Citizenship"},
+            {"id": "citizenship", "title": "Citizenship",
+             "description": "The history, institutions and culture the Hungarian citizenship exam draws on."},
         ],
         "b2": [
             {"id": "core", "title": "Core Hungarian"},
-            {"id": "culture", "title": "Culture, History & Society"},
+            {"id": "culture", "title": "Culture, History & Society",
+             "description": "Hungarian history, culture and society, in longer readings."},
         ],
         "c1": [
             {"id": "core", "title": "Core Hungarian"},
-            {"id": "discourse", "title": "Public Discourse & Society"},
+            {"id": "discourse", "title": "Public Discourse & Society",
+             "description": "How Hungarians argue about public life, in the language of the press."},
         ],
     },
 }
