@@ -811,6 +811,7 @@ const StoryAudioPlayer = {
 
         if (slider) {
             slider.oninput = (e) => {
+                if (e.target.style) e.target.style.setProperty('--p', e.target.value + '%');
                 const targetIdx = Math.min(
                     this.paragraphs.length - 1,
                     Math.floor((parseFloat(e.target.value) / 100) * this.paragraphs.length)
@@ -955,6 +956,8 @@ const StoryAudioPlayer = {
 
         if (slider) {
             slider.value = total > 1 ? (this.currentParaIndex / (total - 1)) * 100 : 0;
+            // The filled part of the bar is drawn from this (see .ssp-slider).
+            if (slider.style) slider.style.setProperty('--p', slider.value + '%');
         }
         if (curEl) {
             curEl.textContent = `${cur}/${total}`;

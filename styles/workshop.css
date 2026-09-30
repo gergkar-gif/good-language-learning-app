@@ -4546,3 +4546,56 @@ body:has(.dkb-game) .content, body:has(.dkb-lobby) .content, body:has(.dkb-done)
   .wk-pill:hover { background: none; box-shadow: none; border: 0; border-bottom: 2px solid var(--border); color: var(--text); }
   .wk-pill.active:hover { border-bottom-color: var(--primary); }
 }
+
+/* ============================================
+   FLOATING NARRATION PLAYER (Library reader)
+   A surface of its own, a progress bar you can read, and clear of the
+   report-a-problem flag.
+============================================ */
+.story-substack-player {
+  background: var(--wash);
+  border: 0;
+  border-top: 2px solid var(--primary);
+  outline: 0;
+}
+.ssp-speaker { color: var(--text); font-weight: 500; }
+.ssp-time-cur, .ssp-time-rem { color: var(--text); }
+
+/* Progress: the played part in the primary colour, the rest a darker track. */
+.ssp-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 16px;
+  background: transparent;
+  border-radius: 0;
+  margin: 0;
+  cursor: pointer;
+}
+.ssp-slider::-webkit-slider-runnable-track {
+  height: 4px;
+  border-radius: 0;
+  background: linear-gradient(to right, var(--primary) var(--p, 0%), color-mix(in srgb, var(--primary) 30%, transparent) var(--p, 0%));
+}
+.ssp-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  margin-top: -5px;
+  border-radius: 50%;
+  border: 2px solid var(--wash);
+  background: var(--primary);
+}
+.ssp-slider::-moz-range-track { height: 4px; border-radius: 0; background: color-mix(in srgb, var(--primary) 30%, transparent); }
+.ssp-slider::-moz-range-progress { height: 4px; border-radius: 0; background: var(--primary); }
+.ssp-slider::-moz-range-thumb { width: 10px; height: 10px; border-radius: 50%; border: 2px solid var(--wash); background: var(--primary); }
+
+/* On a narrow phone the player is as wide as the screen, so the flag would sit
+   on its speed button: lift the flag above the player while it is showing. */
+@media (max-width: 560px) {
+  .story-substack-player { bottom: calc(62px + 1px + 12px + env(safe-area-inset-bottom, 0px)); }
+  body:has(#story-substack-player:not([hidden]):not(.is-offline)) .br-flag-btn {
+    bottom: calc(62px + 1px + 12px + 52px + 12px + env(safe-area-inset-bottom, 0px));
+  }
+}
+/* The paragraph being read aloud gets a lighter wash than the player, so the two never merge. */
+.story-paragraph.is-narrating, [data-theme="dark"] .story-paragraph.is-narrating { background: color-mix(in srgb, var(--wash) 45%, transparent); }
