@@ -177,7 +177,7 @@ Open rows on cream separated by hairlines; whitespace is the primary structure. 
 - **Heroes** are 176 x 129 on phone and tablet, sitting 38px from the top, anchored right; 266 x 194 on desktop. (They were 252 x 184 and 380 x 277 at first; the user found them overwhelming and they were cut by 30% on 2026-09-30.) Keep title and lede clear of the artwork (shorten diagonals and axes rather than letting them run under text).
 
 ### Named Rules
-**The Phone-Weight Rule.** On phone (up to 639px) everything is one step lighter than desktop, because the same strokes read heavier on a small screen: 3px and 2px rules become 1.5px, inset outlines drop by half a pixel (2px to 1.5px, 1.5px to 1px), weights 600 to 800 become 500, headings are regular, and the navy fills in illustrations, marks and thumbnails are mixed 80% with the background. This lives in the generated block at the end of `styles/overhaul.css` (`PHONE: LIGHTER`); a new heavy style needs its own light phone value.
+**The Phone-Weight Rule.** On phone (up to 639px) everything is one step lighter than desktop, because the same strokes read heavier on a small screen: 3px and 2px rules become 1.5px, inset outlines drop by half a pixel (2px to 1.5px, 1.5px to 1px), weights 600 to 800 become 500, headings are regular, and the navy fills in illustrations, marks and thumbnails are mixed 80% with the background. The phone values live in `@media (max-width: 639px)` blocks inside each stylesheet's overhaul section (marked "The Composed Room overhaul"); a new heavy style needs its own light phone value there.
 
 ## Elevation & Depth
 

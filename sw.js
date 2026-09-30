@@ -2,7 +2,7 @@
 // Parlour Service Worker (Offline Support & PWA App Shell)
 // ==========================================================
 
-const CACHE_VERSION = 'v2026-09-30l';
+const CACHE_VERSION = 'v2026-09-30m';
 const SHELL_CACHE_NAME = `parlour-shell-${CACHE_VERSION}`;
 const CONTENT_CACHE_NAME = `parlour-content-${CACHE_VERSION}`;
 
@@ -22,7 +22,6 @@ const PRECACHE_ASSETS = [
     'styles/verbs.css',
     'styles/workshop.css',
     'styles/study-plan.css',
-    'styles/overhaul.css',
 
     // Core Engine & Submodules
     'imports/verbs/verb-list.js',

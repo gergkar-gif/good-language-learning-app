@@ -378,7 +378,7 @@ const Art = (function () {
     // Page heroes, nav icons, level marks and generated unit/story marks. All
     // drawn from sand discs, navy shapes and hairlines with ONE accent, whose
     // colour follows state (see DESIGN.md, "Colour semantics"). Classes are
-    // defined in styles/overhaul.css: mk-sand, mk-navy, mk-line (its
+    // defined in styles/components.css: mk-sand, mk-navy, mk-line (its
     // stroke-width is set per shape), mk-acc, mk-accline, mk-pine, mk-pineline
     // for illustration; nv-navy, nv-line, nv-acc, nv-accline for the nav.
     // Heroes are drawn to a 252 x 184 viewBox with the ground at y=170.

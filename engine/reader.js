@@ -64,7 +64,7 @@ function updateReaderWordColors() {
 
 // Word status is not drawn by default: the page reads as plain text and every
 // word is tappable. The learner can switch on marks for the words they are
-// learning (in their deck), which styles/overhaul.css keys off this class on
+// learning (in their deck), which styles/components.css keys off this class on
 // <html>. New words stay plain either way.
 const READER_MARKS_KEY = 'parlour_reader_mark_learning';
 

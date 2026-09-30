@@ -129,6 +129,15 @@
   --dur-base: 280ms;
   --dur-slow: 450ms;
   --ease-standard: cubic-bezier(.4, 0, .2, 1);
+  --card-bg: var(--bg);
+  --bg-card: var(--bg);
+  --bg-hover: var(--wash);
+  --bg-subtle: var(--wash);
+  --surface-alt: var(--wash);
+  --radius-md: var(--radius);
+  --radius-lg: var(--radius);
+  --text-heading: var(--text);
+  --ink-secondary: var(--muted);
 }
 
 /* ============================================
@@ -451,4 +460,17 @@ option {
 @keyframes fadeIn {
   from { opacity: 0; transform: scale(0.98); }
   to   { opacity: 1; transform: scale(1); }
+}
+
+/* ==== The Composed Room overhaul (folded in from overhaul.css, 2026-09-30) ==== */
+
+/* LIBRARY */
+.story-level-badge {
+  background: none;
+  color: var(--muted);
+  padding: 0;
+  border-radius: 0;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: .03em;
 }

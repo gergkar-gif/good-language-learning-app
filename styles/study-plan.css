@@ -11,6 +11,7 @@
 .sp-budget-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
 }
 
 .sp-budget-btn {
@@ -47,6 +48,8 @@
 .sp-complete-eyebrow {
     color: var(--muted);
     margin-bottom: 8px;
+    letter-spacing: 0;
+    font-size: 14px;
 }
 
 .sp-item-list {
@@ -91,6 +94,7 @@
 .sp-item-passed {
     color: var(--muted);
     opacity: 0.6;
+    text-decoration: none;
 }
 
 /* "Skip this activity" above an embedded driller — a quiet text link,
@@ -133,10 +137,37 @@
 
 .sp-complete-title {
     margin: 0 0 12px;
+    font: 400 clamp(2rem, 9vw, 2.6rem)/1.05 var(--font-display);
+    letter-spacing: -0.02em;
+    color: var(--text);
 }
 
 .sp-complete-summary {
     font-size: 15px;
     color: var(--text);
     margin: 0 0 20px;
+}
+
+/* ==== The Composed Room overhaul (folded in from overhaul.css, 2026-09-30) ==== */
+
+/* STUDY PLAN ("Short on time?") */
+.sp-budget-btn { border: 0; box-shadow: inset 0 0 0 1.5px var(--primary); background: none; border-radius: var(--radius-sm); font: 400 1.4rem/1 var(--font-display); padding: 20px 8px; }
+@media (hover: hover) {
+  .sp-budget-btn:hover { background: var(--primary); color: var(--bg); }
+}
+.sp-item-list { gap: 0; border-top: 1px solid var(--primary); }
+.sp-item { padding: 15px 0; font: 400 1.1rem/1.25 var(--font-display); }
+.sp-item-check { border-radius: 0; width: 20px; height: 20px; border: 0; box-shadow: inset 0 0 0 1.5px var(--muted); }
+.sp-item-current .sp-item-check { box-shadow: inset 0 0 0 2px var(--accent); color: var(--accent); }
+.sp-item-done { text-decoration: none; color: var(--muted); }
+.sp-item-done .sp-item-check { background: var(--success); box-shadow: none; color: var(--bg); }
+
+/* MARGIN NOTES (the small info bubbles) */
+@media (max-width: 639px) {
+  .sp-budget-btn { box-shadow: inset 0 0 0 1px var(--primary); }
+  .sp-item-check { box-shadow: inset 0 0 0 1px var(--muted); }
+  .sp-item-current .sp-item-check { box-shadow: inset 0 0 0 1.5px var(--accent); }
+  .btn-primary, .wk-primary-btn, .sp-start-btn, .sp-next-btn, .vbtn-primary, .hce-primary-btn, .review-show-btn { font-weight: 500; }
+  .dk-secondary, .wk-pill, .dk-study-tab, .lsn-option, .diag-opt-btn, .hce-filter-chip, .sp-budget-btn { font-weight: 400; }
+  .wk-pill.active, .hce-filter-chip.is-active, .lsn-option.selected, .lsn-option.correct, .diag-opt-btn.selected { font-weight: 500; }
 }
