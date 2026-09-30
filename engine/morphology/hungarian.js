@@ -155,6 +155,131 @@ const HungarianMorphology = (function () {
             sense = nominalSense(dictionary[restored]);
             if (sense) return { lemma: restored, sense: sense };
         }
+        // a stem whose long vowel shortens before the possessive, and the
+        // o-stems that grow a j: nyara -> nyar, neve -> nev, ideje -> idej
+        for (const longer of lengthenedStems(remainder)) {
+            sense = nominalSense(dictionary[longer]);
+            if (sense) return { lemma: longer, sense: sense };
+        }
+        return resolveDerived(dictionary, remainder);
+    }
+
+    // First gloss of a dictionary sense, without parentheticals.
+    function briefGloss(en) {
+        return String(en || '').split(';')[0].replace(/\([^)]*\)/g, '').split(',')[0].replace(/\s+/g, ' ').trim();
+    }
+
+    // Candidate dictionary headwords for a stem that lost length or gained a j
+    // when a possessive or case ending was added: nyar -> nyár, nev -> név,
+    // kez -> kéz, viz -> víz, and the -ej/-aj stems of idő, erő, ajtó.
+    const LONGER_VOWEL = { a: 'á', e: 'é', i: 'í', o: 'ó', 'ö': 'ő', u: 'ú', 'ü': 'ű' };
+    function lengthenedStems(stem) {
+        const out = [];
+        const m = /^(.*?)([aeiouöü])([^aeiouáéíóöőúüű]+)$/.exec(stem);
+        if (m && LONGER_VOWEL[m[2]]) out.push(m[1] + LONGER_VOWEL[m[2]] + m[3]);
+        if (stem.endsWith('ej')) out.push(stem.slice(0, -2) + 'ő');
+        if (stem.endsWith('aj')) out.push(stem.slice(0, -2) + 'ó');
+        return out;
+    }
+
+    // A verb headword for `stem` (with -ik added, or after a known prefix is
+    // peeled off): { lemma, sense } or null.
+    function verbBaseOf(dictionary, stem) {
+        if (!stem) return null;
+        for (const cand of [stem, stem + 'ik']) {
+            const vs = verbSense(dictionary[cand]);
+            if (vs) return { lemma: cand, sense: vs };
+        }
+        const pfx = stripKnownPrefix(stem);
+        if (pfx) {
+            for (const cand of [pfx.stem, pfx.stem + 'ik']) {
+                const vs = verbSense(dictionary[cand]);
+                if (vs) return { lemma: pfx.prefix + cand, sense: vs };
+            }
+        }
+        return null;
+    }
+
+    // Irregular comparatives that aren't built from their own adjective's spelling.
+    const IRREGULAR_COMPARATIVES = { jobb: 'jó', szebb: 'szép', kevesebb: 'kevés', nehezebb: 'nehéz' };
+
+    // Comparative ("nagyobb"), superlative ("legnagyobb"), abstract -ság/-ség
+    // nouns ("szabadság") and present/future/past participles used as
+    // adjectives ("érkező", "megoldandó", "elnyomott") built from a headword
+    // that is in the dictionary. Nothing is guessed: every reading needs its
+    // base word to resolve as a real adjective, noun or verb.
+    function resolveDerived(dictionary, word) {
+        if (word == null || word.length < 5) return null;
+        const find = stem => {
+            if (!stem) return null;
+            const direct = nominalSense(dictionary[stem]);
+            if (direct) return { lemma: stem, sense: direct };
+            for (const longer of lengthenedStems(stem)) {
+                const s = nominalSense(dictionary[longer]);
+                if (s) return { lemma: longer, sense: s };
+            }
+            return null;
+        };
+        const adjective = r => r && r.sense.type === 'adjective' ? r : null;
+
+        // comparative, then superlative (leg + comparative)
+        const comparative = (w, prefix, label) => {
+            const irregular = IRREGULAR_COMPARATIVES[w];
+            if (irregular) {
+                const s = nominalSense(dictionary[irregular]);
+                return s ? { lemma: irregular, sense: s } : null;
+            }
+            for (const end of ['abb', 'ebb', 'obb', '\u00f6bb', 'bb']) {
+                if (!w.endsWith(end) || w.length <= end.length + 1) continue;
+                const base = w.slice(0, -end.length);
+                const r = adjective(find(base)) || adjective(find(base + '\u0171')) || adjective(find(base + '\u00f3'));
+                if (r) return r;
+            }
+            return null;
+        };
+        let r = comparative(word);
+        if (r) {
+            return { lemma: word, sense: { type: 'adjective', en: 'more ' + briefGloss(r.sense.en) + ' (comparative of ' + r.lemma + ')' } };
+        }
+        if (word.startsWith('leg') && word.length > 7) {
+            r = comparative(word.slice(3));
+            if (r) {
+                return { lemma: word, sense: { type: 'adjective', en: 'most ' + briefGloss(r.sense.en) + ' (superlative of ' + r.lemma + ')' } };
+            }
+        }
+
+        // -ság / -ség: the state or quality of being the base word
+        for (const end of ['s\u00e1g', 's\u00e9g']) {
+            if (word.endsWith(end)) {
+                const base = find(word.slice(0, -end.length));
+                if (base && word.length > end.length + 3) {
+                    return { lemma: word, sense: { type: 'noun', en: 'the quality or state of being ' + briefGloss(base.sense.en) + ' (from ' + base.lemma + ')' } };
+                }
+            }
+        }
+
+        // participles of a verb: -\u00f3/-\u0151 (doing), -and\u00f3/-end\u0151 (to be done), -ott/-ett/-\u00f6tt (done)
+        const verbBase = stem => verbBaseOf(dictionary, stem);
+
+        // -\u00e1s / -\u00e9s: the action or result of a verb ("elnyom\u00e1s", "lever\u00e9se")
+        for (const end of ['\u00e1s', '\u00e9s']) {
+            if (word.endsWith(end) && word.length > end.length + 3) {
+                const v = verbBase(word.slice(0, -end.length));
+                if (v) {
+                    return { lemma: word, sense: { type: 'noun', en: briefGloss(v.sense.en) + ' (noun: the action or result of ' + v.lemma + ')' } };
+                }
+            }
+        }
+        const participles = [['and\u00f3', 'future participle'], ['end\u0151', 'future participle'],
+            ['ott', 'past participle'], ['ett', 'past participle'], ['\u00f6tt', 'past participle'],
+            ['\u00f3', 'present participle'], ['\u0151', 'present participle']];
+        for (const [end, label] of participles) {
+            if (!word.endsWith(end) || word.length <= end.length + 2) continue;
+            const v = verbBase(word.slice(0, -end.length));
+            if (v) {
+                return { lemma: word, sense: { type: 'adjective', en: briefGloss(v.sense.en) + ' (' + label + ' of ' + v.lemma + ')' } };
+            }
+        }
         return null;
     }
 
@@ -355,6 +480,11 @@ const HungarianMorphology = (function () {
         ['tatok', 'past', 2, 'pl'], ['tetek', 'past', 2, 'pl'],
         ['ottatok', 'past', 2, 'pl'], ['ettetek', 'past', 2, 'pl'], ['öttetek', 'past', 2, 'pl'],
         ['tak', 'past', 3, 'pl'], ['tek', 'past', 3, 'pl'],
+        // long-vowel stems take a doubled -tt- before every personal ending
+        ['ttem', 'past', 1, 'sg'], ['ttél', 'past', 2, 'sg'], ['ttünk', 'past', 1, 'pl'],
+        ['ttetek', 'past', 2, 'pl'], ['ttek', 'past', 3, 'pl'],
+        ['tted', 'past', 2, 'sg'], ['tte', 'past', 3, 'sg'], ['ttük', 'past', 1, 'pl'],
+        ['ttétek', 'past', 2, 'pl'], ['tték', 'past', 3, 'pl'],
         ['ottak', 'past', 3, 'pl'], ['ettek', 'past', 3, 'pl'], ['öttek', 'past', 3, 'pl'],
         // past, definite conjugation — 3sg/3pl get the same linking-vowel
         // treatment as indefinite above ("gyűjtötte", not "gyűjtte";
@@ -1526,6 +1656,31 @@ const HungarianMorphology = (function () {
             }
         }
 
+        // 0. potential without a personal ending ("v\u00e1lhat", "\u00e9lhet") and the
+        // infinitive with a personal ending ("fizetnie" = for him to pay)
+        if (/h[ae]t$/.test(word) && word.length > 5) {
+            const pv = verbBaseOf(dictionary, word.slice(0, -3));
+            if (pv) addFromLemma(word, { type: 'verb', en: 'can ' + briefGloss(pv.sense.en).replace(/^to /, '') + ' (potential of ' + pv.lemma + ')' }, 'Present, 3rd person singular');
+        }
+        for (const end of ['nom', 'nem', 'n\u00f6m', 'nod', 'ned', 'n\u00f6d', 'nia', 'nie', 'nunk', 'n\u00fcnk', 'notok', 'netek', 'n\u00f6t\u00f6k', 'niuk', 'ni\u00fck']) {
+            if (!word.endsWith(end) || word.length <= end.length + 2) continue;
+            const inner = analyze(word.slice(0, -end.length) + 'ni', dictionary, wordIndex);
+            inner.forEach(r => addFromLemma(r.lemma, { type: r.pos, en: r.translation }, 'infinitive with personal ending'));
+            if (inner.length) break;
+        }
+
+        // 0a. demonstratives and relatives with a case ending ("abban", "ahhoz",
+        // "ebből", "amellyel"): closed-class forms whose stem changes (az -> abb-,
+        // ann-, att-, ah-), so they can't be reached by stripping a suffix.
+        const demonstrative = DEMONSTRATIVE_FORMS[word];
+        if (demonstrative) {
+            // the pronoun sense ("that"), not the article sense of az ("the")
+            const entry = dictionary[demonstrative[0]];
+            const senses = entry ? (Array.isArray(entry) ? entry : [entry]) : [];
+            const pick = senses.find(s => s.type === 'pronoun') || senses.find(s => s.type === 'determiner') || nominalSense(entry);
+            addFromLemma(demonstrative[0], pick, demonstrative[1]);
+        }
+
         // 0b. infinitive (-ni/-ani/-eni) — its own step, before the
         // personal-conjugation loop below, since an infinitive carries no
         // person/number and would never match a VERB_SUFFIXES row.
@@ -1633,6 +1788,17 @@ const HungarianMorphology = (function () {
             const remainderSense = verbSense(dictionary[remainder]);
             if (remainderSense) {
                 addFromLemma(remainder, remainderSense, label);
+            }
+            // iz-stems drop the i before a vowel-initial ending (\u0151riz -> \u0151rzi, \u0151rzik)
+            if (!remainderSense && /[^aeiou\u00e1\u00e9\u00ed\u00f3\u00f6\u0151\u00fa\u00fc\u0171]z$/.test(remainder)) {
+                const izForm = remainder.slice(0, -1) + 'iz';
+                const izSense = verbSense(dictionary[izForm]);
+                if (izSense) addFromLemma(izForm, izSense, label);
+            }
+            // potential -hat/-het (tanulhatnak, \u00e9lhetnek): can + base verb
+            if (!remainderSense && /h[ae]t$/.test(remainder)) {
+                const pv = verbBaseOf(dictionary, remainder.slice(0, -3));
+                if (pv) addFromLemma(remainder, { type: 'verb', en: 'can ' + briefGloss(pv.sense.en).replace(/^to /, '') + ' (potential of ' + pv.lemma + ')' }, label);
             }
             // Guard against the one suffix in this table that IS itself
             // "ik" (present definite 3pl's own front-harmony ending):
@@ -1798,6 +1964,44 @@ const HungarianMorphology = (function () {
         // by engine/reader.js to render this distinctly, with a caveat,
         // rather than as an ordinary grammatical label) and compoundParts
         // carries the split itself for that same rendering.
+        // the word itself is a derived form of a headword: comparative,
+        // superlative, -s\u00e1g/-s\u00e9g noun or a participle (inflected ones reach
+        // this through resolveNominal() in the case/plural steps above)
+        if (!results.length) {
+            const derived = resolveDerived(dictionary, word);
+            if (derived) addFromLemma(derived.lemma, derived.sense, 'nominative');
+        }
+
+        // adverbial participles -va/-ve (and archaic -v\u00e1n/-v\u00e9n): "bizony\u00edtva",
+        // "\u00e1llva", "mondv\u00e1n"; and -i adjectives made from a noun
+        // ("nemzetis\u00e9gi", "logikai"). Both only ever reached last: a real
+        // reading above always wins, so the 83% false-positive rate a bare
+        // "-i" rule has against the whole dictionary never shows.
+        if (!results.length) {
+            for (const [end, label] of [['v\u00e1n', 'adverbial participle'], ['v\u00e9n', 'adverbial participle'],
+                ['va', 'adverbial participle'], ['ve', 'adverbial participle']]) {
+                if (!word.endsWith(end) || word.length <= end.length + 2) continue;
+                const stem = word.slice(0, -end.length);
+                for (const cand of [stem, stem + 'ik']) {
+                    const vs = verbSense(dictionary[cand]);
+                    if (vs) { addFromLemma(word, { type: 'adverb', en: briefGloss(vs.en) + ' (' + label + ' of ' + cand + ')' }, label); break; }
+                }
+                if (results.length) break;
+                const pfx = stripKnownPrefix(stem);
+                if (pfx && (verbSense(dictionary[pfx.stem]) || verbSense(dictionary[pfx.stem + 'ik']))) {
+                    const baseLemma = verbSense(dictionary[pfx.stem]) ? pfx.stem : pfx.stem + 'ik';
+                    addPrefixedVerb(pfx.prefix, pfx.sense, baseLemma, label);
+                    break;
+                }
+            }
+        }
+        if (!results.length && word.length > 4 && word.endsWith('i')) {
+            const base = resolveNominal(dictionary, word.slice(0, -1));
+            if (base && (base.sense.type === 'noun' || base.sense.type === 'adjective')) {
+                addFromLemma(word, { type: 'adjective', en: 'of or from ' + briefGloss(base.sense.en) + ' (adjective from ' + base.lemma + ')' }, 'adjective in -i');
+            }
+        }
+
         if (!results.length) {
             const split = splitCompound(word, dictionary);
             if (split) {
@@ -2488,6 +2692,27 @@ const HungarianMorphology = (function () {
     // BACK_HARMONY_NEUTRAL_STEMS above) since this hint has to work for
     // every lemma that reaches it, not just the front-harmony ones it
     // originally covered.
+    // az ("that") and ez ("this") with a case ending change their stem (az +
+    // -ban is "abban"), as do the relatives ami and amely.
+    const DEMONSTRATIVE_FORMS = (function () {
+        const table = {};
+        const set = (lemma, pairs) => pairs.split(' ').forEach(p => {
+            const [form, label] = p.split(':');
+            table[form] = [lemma, label];
+        });
+        set('az', 'abban:inessive abb\u00f3l:elative abba:illative ahhoz:allative ann\u00e1l:adessive att\u00f3l:ablative arra:sublative ar\u00f3l:delative azzal:instrumental az\u00e9rt:causal-final addig:terminative azon:superessive annak:dative azt:accusative azz\u00e1:translative');
+        set('ez', 'ebben:inessive ebb\u00f6l:elative ebbe:illative ehhez:allative enn\u00e9l:adessive ett\u0151l:ablative erre:sublative err\u0151l:delative ezzel:instrumental ez\u00e9rt:causal-final eddig:terminative ezen:superessive ennek:dative ezt:accusative ezz\u00e9:translative');
+        set('\u00e9n', 'engem:accusative nekem:dative bennem:inessive rajtam:superessive n\u00e1lam:adessive bel\u0151lem:elative r\u00f3lam:delative t\u0151lem:ablative bel\u00e9m:illative r\u00e1m:sublative hozz\u00e1m:allative velem:instrumental \u00e9rtem:causal-final');
+        set('te', 't\u00e9ged:accusative neked:dative benned:inessive rajtad:superessive n\u00e1lad:adessive bel\u0151led:elative r\u00f3lad:delative t\u0151led:ablative bel\u00e9d:illative r\u00e1d:sublative hozz\u00e1d:allative veled:instrumental \u00e9rted:causal-final');
+        set('\u0151', '\u0151t:accusative neki:dative benne:inessive rajta:superessive n\u00e1la:adessive bel\u0151le:elative r\u00f3la:delative t\u0151le:ablative bele:illative r\u00e1:sublative hozz\u00e1:allative vele:instrumental \u00e9rte:causal-final');
+        set('mi', 'minket:accusative bennünket:accusative nekünk:dative bennünk:inessive rajtunk:superessive nálunk:adessive belőlünk:elative rólunk:delative tőlünk:ablative belénk:illative ránk:sublative hozzánk:allative velünk:instrumental értünk:causal-final');
+        set('ti', 'titeket:accusative benneteket:accusative nektek:dative bennetek:inessive rajtatok:superessive n\u00e1latok:adessive bel\u0151letek:elative r\u00f3latok:delative t\u0151letek:ablative bel\u00e9tek:illative r\u00e1tok:sublative hozz\u00e1tok:allative veletek:instrumental \u00e9rtetek:causal-final');
+        set('\u0151k', '\u0151ket:accusative nekik:dative benn\u00fck:inessive rajtuk:superessive n\u00e1luk:adessive bel\u0151l\u00fck:elative r\u00f3luk:delative t\u0151l\u00fck:ablative bel\u00e9j\u00fck:illative r\u00e1juk:sublative hozz\u00e1juk:allative vel\u00fck:instrumental \u00e9rt\u00fck:causal-final');
+        set('ami', 'amiben:inessive ami\u0151l:elative amibe:illative amihez:allative amin\u00e9l:adessive amit\u0151l:ablative amire:sublative amir\u0151l:delative amivel:instrumental ami\u00e9rt:causal-final amin:superessive aminek:dative amit:accusative');
+        set('amely', 'amelyben:inessive amelyb\u0151l:elative amelybe:illative amelyhez:allative amelyn\u00e9l:adessive amelyt\u0151l:ablative amelyre:sublative amelyr\u0151l:delative amellyel:instrumental amely\u00e9rt:causal-final amelyen:superessive amelynek:dative amelyet:accusative');
+        return table;
+    })();
+
     const IRREGULAR_LEMMAS = new Set(Object.values(IRREGULAR_VERBS).map(tags => tags[0]));
     const IRREGULAR_DEFINITE_HINT = {
         2: { sg: ['ted', 'tad'], pl: ['tétek', 'tátok'] },

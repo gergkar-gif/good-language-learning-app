@@ -2195,6 +2195,13 @@ const SpanishMorphology = (function () {
         const after = stem.slice(end);
         const repl = { ie: 'e', ue: 'o', i: 'e', í: 'i', ú: 'u' }[cluster];
         if (repl) cands.add(before + repl + after);
+        // i->ie and u->ue (adquirir -> adquiere, jugar -> juega)
+        if (/ie$/.test(cluster)) cands.add(before + cluster.slice(0, -2) + 'i' + after);
+        if (/ue$/.test(cluster)) cands.add(before + cluster.slice(0, -2) + 'u' + after);
+        // accented hiatus: the written accent marks a stressed i/u after
+        // another vowel (reunir -> reúne, prohibir -> prohíbe)
+        const hiatus = /^([aeiou])([íú])$/.exec(cluster);
+        if (hiatus) cands.add(before + hiatus[1] + UNACCENT_MAP[hiatus[2]] + after);
         return cands;
     }
 
@@ -2313,11 +2320,19 @@ const SpanishMorphology = (function () {
                 });
                 out.add(rawStem + cls);
             }
-            const participleEnd = cls === 'ar' ? 'ado' : 'ido';
+            const participleEnd = cls === 'ar' ? 'ado' : (form.endsWith('ído') ? 'ído' : 'ido');
             if (form.endsWith(participleEnd) && form.length > participleEnd.length) {
                 out.add(form.slice(0, form.length - participleEnd.length) + cls);
             }
         });
+
+        // -uir verbs insert a y before a/e/o (concluir -> concluyó,
+        // atribuir -> atribuye, confluir -> confluyen)
+        const yInsertion = /^(.*u)y(ó|eron|endo|es|en|e|o|a|as|an|amos|áis|éis|era|eras|eran|ese|eses|esen)$/.exec(form);
+        if (yInsertion) out.add(yInsertion[1] + 'ir');
+
+        // irregular -scrito participles (inscribir -> inscrito)
+        if (/scrito$/.test(form)) out.add(form.replace(/scrito$/, 'scribir'));
 
         out.add(form);
         Array.from(out).forEach(c => { if (/^(ar|er|ir)$/.test(c.slice(-2))) out.add(c + 'se'); });
@@ -2330,16 +2345,32 @@ const SpanishMorphology = (function () {
         if (form === lemma || form + 'se' === lemma || form === lemma.replace(/se$/, '')) {
             return { lemma: lemma, form: 'infinitive' };
         }
-        const irregular = IRREGULAR_VERBS[lemma] || IRREGULAR_VERBS[lemma.replace(/se$/, '')];
+        // A compound of an irregular root (desoír = des + oír) inherits that
+        // root's forms: match against the root's table with the prefix removed.
+        let irregular = IRREGULAR_VERBS[lemma] || IRREGULAR_VERBS[lemma.replace(/se$/, '')];
+        let irregularForm = form;
+        if (!irregular) {
+            const base = lemma.replace(/se$/, '');
+            for (const root of Object.keys(IRREGULAR_VERBS)) {
+                if (base.length > root.length && base.endsWith(root)) {
+                    const prefix = base.slice(0, base.length - root.length);
+                    if (COMPOUND_PREFIX.test(prefix) && form.startsWith(prefix)) {
+                        irregular = IRREGULAR_VERBS[root];
+                        irregularForm = form.slice(prefix.length);
+                        break;
+                    }
+                }
+            }
+        }
         if (irregular) {
-            if (irregular.gerundio && irregular.gerundio.toLowerCase() === form) return { lemma: lemma, form: 'gerund' };
-            if (irregular.participioPasado && irregular.participioPasado.toLowerCase() === form) return { lemma: lemma, form: 'participle' };
+            if (irregular.gerundio && irregular.gerundio.toLowerCase() === irregularForm) return { lemma: lemma, form: 'gerund' };
+            if (irregular.participioPasado && irregular.participioPasado.toLowerCase() === irregularForm) return { lemma: lemma, form: 'participle' };
             for (const mood of ['indicativo', 'subjuntivo']) {
                 const tenses = irregular[mood] || {};
                 for (const tense of Object.keys(tenses)) {
                     const persons = tenses[tense];
                     for (const p of Object.keys(persons)) {
-                        if ((persons[p] || '').toLowerCase() === form) {
+                        if ((persons[p] || '').toLowerCase() === irregularForm) {
                             const meta = PERSON_META[p] || {};
                             return { lemma: lemma, mood: mood, tense: tense, person: meta.person, number: meta.number };
                         }
@@ -2349,27 +2380,31 @@ const SpanishMorphology = (function () {
             for (const pol of ['afirmativo', 'negativo']) {
                 const persons = irregular[pol] || {};
                 for (const p of Object.keys(persons)) {
-                    if ((persons[p] || '').replace(/^no /, '').toLowerCase() === form) {
+                    if ((persons[p] || '').replace(/^no /, '').toLowerCase() === irregularForm) {
                         const meta = PERSON_META[p] || {};
                         return { lemma: lemma, mood: 'imperative', polarity: pol, person: meta.person, number: meta.number };
                     }
                 }
             }
         }
+        if (/scrito$/.test(form) && /scribir(se)?$/.test(lemma)) return { lemma: lemma, form: 'participle' };
         const participleRoot = lemma.replace(/se$/, '');
-        if (IRREGULAR_PARTICIPLES[participleRoot] && IRREGULAR_PARTICIPLES[participleRoot].toLowerCase() === form) {
-            return { lemma: lemma, form: 'participle' };
+        // the irregular participle of the root, or of a compound of it (cubrir -> recubrir: recubierto)
+        for (const root of Object.keys(IRREGULAR_PARTICIPLES)) {
+            if (participleRoot.endsWith(root) && form.endsWith(IRREGULAR_PARTICIPLES[root].toLowerCase())) {
+                return { lemma: lemma, form: 'participle' };
+            }
         }
         // Regular reconstruction: recompute which cell this lemma+form pair
         // corresponds to by regenerating candidate endings the same way
         // candidateLemmas() did, this time keeping the (mood,tense,person).
-        const cls = lemma.slice(-2) === 'se' ? lemma.slice(-4, -2) : lemma.slice(-2);
+        const cls = (lemma.slice(-2) === 'se' ? lemma.slice(-4, -2) : lemma.slice(-2)).replace('í', 'i');
         const bareLemma = lemma.replace(/se$/, '');
         const stem = bareLemma.slice(0, -2);
         const gerundEnd = cls === 'ar' ? 'ando' : 'iendo';
         if (form === stem + gerundEnd || form === (stemVowelForward(stem)) + gerundEnd) return { lemma: lemma, form: 'gerund' };
         const participleEnd = cls === 'ar' ? 'ado' : 'ido';
-        if (form === stem + participleEnd) return { lemma: lemma, form: 'participle' };
+        if (form === stem + participleEnd || (cls !== 'ar' && form === stem + 'ído')) return { lemma: lemma, form: 'participle' };
 
         for (const cell of Object.keys(REGULAR_ENDINGS[cls] || {})) {
             const persons = REGULAR_ENDINGS[cls][cell];
@@ -2382,7 +2417,7 @@ const SpanishMorphology = (function () {
             }
         }
         for (const pol of ['afirmativo', 'negativo']) {
-            const persons = IMPERATIVE_ENDINGS[cls][pol];
+            const persons = (IMPERATIVE_ENDINGS[cls] || {})[pol] || {};
             for (const person of Object.keys(persons)) {
                 if (formMatchesCell(form, stem, persons[person])) {
                     const meta = PERSON_META[person] || {};

@@ -507,7 +507,7 @@ const LearnerModel = (function () {
         if (typeof isKnown === 'function' && isKnown(lemma)) return;
         const today = new Date().toISOString().slice(0, 10);
         const lookups = _loadLookups();
-        const entry = lookups[lemma] || { days: [], count: 0 };
+        const entry = Object.prototype.hasOwnProperty.call(lookups, lemma) ? lookups[lemma] : { days: [], count: 0 };
         const firstToday = entry.days.indexOf(today) === -1;
         entry.count++;
         if (firstToday) entry.days = entry.days.concat(today).slice(-LOOKUP_DAYS_KEPT);

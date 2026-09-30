@@ -225,7 +225,7 @@ function _compoundSplitHtml(primary) {
     `;
 }
 
-function _renderWordReadings(tappedWord, readings, phrase, ladder) {
+function _renderWordReadings(tappedWord, readings, phrase, ladder, looksLikeName) {
     const body = document.getElementById('popup-body');
     const analysisEl = document.getElementById('popup-analysis');
 
@@ -243,6 +243,15 @@ function _renderWordReadings(tappedWord, readings, phrase, ladder) {
 
     if (!readings.length) {
         if (phrase) { body.innerHTML = phraseHtml; return; }
+        // A capitalised word in the middle of a sentence that has no entry is
+        // almost always a name (person, place, title). Say so, rather than
+        // suggesting the dictionary is missing something.
+        if (looksLikeName) {
+            analysisEl.textContent = 'name';
+            body.innerHTML = '<p class="wp-meaning">' + Reader.escapeHtml(tappedWord) + '</p>' +
+                '<p class="wp-lemma">A name of a person or a place.</p>';
+            return;
+        }
         analysisEl.textContent = '';
         body.innerHTML = '<p class="wp-empty">Not in the dictionary yet.</p>';
         return;
@@ -323,7 +332,7 @@ function _renderWordReadings(tappedWord, readings, phrase, ladder) {
 // own display purposes mid-flow.
 let _wordPopupTapId = 0;
 
-async function showWord(spanish, contextTokens, tokenIndex) {
+async function showWord(spanish, contextTokens, tokenIndex, looksLikeName) {
     const tapId = ++_wordPopupTapId;
     const popup = _ensureWordPopup();
     document.getElementById('popup-word').textContent = spanish;
@@ -341,7 +350,7 @@ async function showWord(spanish, contextTokens, tokenIndex) {
     const phrase = Lexicon.findPhrase(contextTokens, tokenIndex);
     const lookup = Lexicon.lookup(spanish);
     const readings = lookup.readings;
-    _renderWordReadings(spanish, readings, phrase, lookup.ladder);
+    _renderWordReadings(spanish, readings, phrase, lookup.ladder, !!looksLikeName);
 
     // The deck stores dictionary forms, so a tapped "días" is saved as "día".
     currentWord = readings.length
@@ -366,6 +375,8 @@ async function showWord(spanish, contextTokens, tokenIndex) {
     const atCap = !canAddNewWord();
 
     btn.classList.remove('is-saved', 'is-disabled');
+    // a name has no translation to learn, so there is nothing to add to a deck
+    btn.style.display = (!readings.length && looksLikeName && !phrase) ? 'none' : '';
     capWarning.style.display = 'none';
 
     if (alreadyKnown) {
@@ -2303,7 +2314,12 @@ window.Reader = {
         const self = this;
         const wordRe = new RegExp('^[' + w + '0-9]+$');
 
-        return tokens.map(function(token) {
+        return tokens.map(function(token, i) {
+            // the ending stuck to a number ("A2-es", "1948-as") is part of
+            // the number, not a word to look up
+            if (i >= 2 && tokens[i - 1] === '-' && /^[0-9]+$/.test(tokens[i - 2]) && wordRe.test(token)) {
+                return self.escapeHtml(token);
+            }
             if (wordRe.test(token)) {
                 const cleanWord = token.toLowerCase().replace(/[.,]/g, '');
 
@@ -2539,6 +2555,21 @@ window.Reader = {
 // AUTO-INIT
 // ============================================
 
+// True when the tapped word starts with a capital and is not the first word
+// of its sentence, so a capital there marks a name rather than ordinary
+// sentence-initial capitalisation.
+function _isMidSentenceCapital(wordEl) {
+    const text = wordEl.textContent.trim();
+    if (!text || text[0] === text[0].toLowerCase()) return false;
+    let before = '';
+    for (const node of Array.from(wordEl.parentNode.childNodes)) {
+        if (node === wordEl) break;
+        before += node.textContent;
+    }
+    before = before.replace(/\s+$/, '');
+    return before !== '' && !/[.!?\u2026:\u2014\u2013\u201e\u201c\u00ab\u00bf\u00a1]$/.test(before);
+}
+
 // Word taps, delegated once at the document level so it covers both the
 // Library's story view and the story step inside a lesson, and survives
 // every re-render of either.
@@ -2563,7 +2594,8 @@ document.addEventListener('click', function (e) {
     showWord(
         wordEl.textContent.trim(),
         siblings.map(el => el.textContent.trim()),
-        siblings.indexOf(wordEl)
+        siblings.indexOf(wordEl),
+        _isMidSentenceCapital(wordEl)
     );
 });
 

@@ -83,10 +83,13 @@ const Lexicon = (function () {
                 fetch('generated/indexes/frequency.json').then(r => r.ok ? r.json() : [])
             ];
 
+        // Prototype-less copies: a tapped word like "constructor" must not
+        // resolve to Object.prototype.constructor (a function) and throw.
+        const bare = obj => Object.assign(Object.create(null), obj);
         _loadPromise = Promise.all(sources).then(([verbs, words, dict, freq]) => {
-            _verbIndex = verbs;
-            _wordIndex = words;
-            _dictionary = dict;
+            _verbIndex = bare(verbs);
+            _wordIndex = bare(words);
+            _dictionary = bare(dict);
             _frequency = new Map(freq.map((lemma, i) => [lemma, i]));
         }).catch(err => {
             console.error('Lexicon failed to load:', err);
@@ -197,8 +200,28 @@ const Lexicon = (function () {
     const ENCLITIC_PRONOUNS = ['selo', 'sela', 'selos', 'selas',
         'nos', 'les', 'los', 'las', 'me', 'te', 'se', 'lo', 'la', 'le'];
 
+    // Acute accents only: ñ and ü are letters, not accents, and stripping
+    // them ("enseñar" -> "ensenar") turns a real verb into a non-word.
+    const ACUTE = { á: 'a', é: 'e', í: 'i', ó: 'o', ú: 'u' };
     function stripAccents(text) {
-        return text.normalize('NFD').replace(/[̀-ͯ]/g, '');
+        return text.replace(/[áéíóú]/g, ch => ACUTE[ch]);
+    }
+
+    // a + el and de + el are written as one word, so neither is a
+    // dictionary headword ("al" is only there as an initialism).
+    const CONTRACTIONS = Object.assign(Object.create(null), {
+        del: { lemma: 'de', translation: 'of the; from the', analysis: 'contraction of de + el' },
+        al: { lemma: 'a', translation: 'to the; at the', analysis: 'contraction of a + el' }
+    });
+
+    // Feminine and plural forms of a past participle ("fundada", "liderados",
+    // "inscritas") are not in the verb index, which only lists the masculine
+    // singular. Rebuild that form and reuse its participle reading.
+    function participleGender(key) {
+        const m = /^(.{3,})(a|os|as)$/.exec(key);
+        if (!m) return null;
+        const label = { a: 'feminine', os: 'plural', as: 'feminine plural' }[m[2]];
+        return { masculine: m[1] + 'o', label: label };
     }
 
     // Every way `word` could be an infinitive/gerund with one or two
@@ -385,6 +408,9 @@ const Lexicon = (function () {
         const seen = new Set();
 
         function add(lemma, pos, analysis) {
+            if (!_dictionary[lemma] && /(ar|er|ir)se$/.test(lemma) && _dictionary[lemma.slice(0, -2)]) {
+                lemma = lemma.slice(0, -2);
+            }
             const entry = _dictionary[lemma];
             const dedupeKey = lemma + '|' + (analysis || '');
             if (seen.has(dedupeKey)) return;
@@ -398,6 +424,14 @@ const Lexicon = (function () {
             });
         }
 
+        // "del" / "al": the contraction leads, ahead of any homograph headword
+        const contraction = CONTRACTIONS[key];
+        if (contraction) {
+            readings.push({
+                lemma: contraction.lemma, pos: 'contraction', gender: undefined,
+                translation: contraction.translation, analysis: contraction.analysis
+            });
+        }
         // the word is already a dictionary headword
         if (_dictionary[key]) add(key, null, '');
         // inflected noun / adjective / adverb
@@ -418,6 +452,11 @@ const Lexicon = (function () {
                     verbForms.forEach(a => add(a.lemma, 'verb', describeVerb(a) + ' + pronoun'));
                 } else if (_dictionary[stem]) {
                     add(stem, null, 'infinitive + pronoun');
+                } else if (typeof SpanishMorphology !== 'undefined') {
+                    // a verb outside the verb index (gerund or infinitive of
+                    // any dictionary verb) still resolves by rule
+                    SpanishMorphology.analyze(stem, _dictionary)
+                        .forEach(a => add(a.lemma, 'verb', describeVerb(a) + ' + pronoun'));
                 }
             }
         }
@@ -448,6 +487,20 @@ const Lexicon = (function () {
         // reading of the same word.
         if (!readings.some(r => r.pos === 'adjective') && typeof SpanishMorphology !== 'undefined') {
             SpanishMorphology.analyzeWord(key, _dictionary).forEach(a => add(a.lemma, a.pos, describeWord(key, a.lemma)));
+        }
+
+        // Feminine / plural participle ("fundada", "liderados"): the verb
+        // index only has the masculine singular, so add that reading with
+        // the gender/number of the tapped form. Merged alongside whatever
+        // adjective readings exist, since most such words are both.
+        const pg = participleGender(key);
+        if (pg && !readings.some(r => /^Past participle/.test(r.analysis))) {
+            const base = _verbIndex[pg.masculine] || [];
+            let parts = base.filter(a => a.form === 'participle');
+            if (!parts.length && typeof SpanishMorphology !== 'undefined') {
+                parts = SpanishMorphology.analyze(pg.masculine, _dictionary).filter(a => a.form === 'participle');
+            }
+            parts.forEach(a => add(a.lemma, 'verb', 'Past participle (' + pg.label + ')'));
         }
 
         // Rank the readings so the likeliest one leads. Proper nouns sink

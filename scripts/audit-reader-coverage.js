@@ -99,6 +99,8 @@ async function auditCourse(course) {
             WORD_RE.lastIndex = 0;
             while ((m = WORD_RE.exec(text))) {
                 const token = m[0];
+                // the ending after a number ("A2-es", "1948-as") isn't tappable in the Reader
+                if (/[0-9]-$/.test(text.slice(0, m.index))) continue;
                 tokenTotal++;
                 const key = token.toLowerCase();
                 let w = words.get(key);
