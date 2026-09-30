@@ -134,16 +134,23 @@ const Home = (function () {
         }
 
         const lesson = step.lesson;
-        const sub = [
-            lesson.label ? 'Lesson ' + lesson.label : '',
-            lesson.grammar || ''
-        ].filter(Boolean).join(' · ');
+        // Just the lesson number: the lesson's grammar note is authoring
+        // metadata, and repeating it here made the card long and jargon-heavy.
+        const sub = lesson.label ? 'Lesson ' + lesson.label : '';
+
+        // Bilingual titles read "English - Hungarian". Split them so the second
+        // language sits on its own quieter line instead of one long sentence.
+        const dash = String(lesson.title || '').indexOf(' - ');
+        const titleHtml = dash > 0
+            ? esc(lesson.title.slice(0, dash)) +
+              '<span class="hm-title-alt">' + esc(lesson.title.slice(dash + 3)) + '</span>'
+            : esc(lesson.title);
 
         return `
             <button class="hm-continue" data-start-lesson="${esc(lesson.id)}">
                 <span class="hm-eyebrow">${esc(level)}${levelTitle ? ' · ' + esc(levelTitle) : ''}</span>
-                <span class="hm-continue-title">${esc(lesson.title)}</span>
-                <span class="hm-continue-sub">${esc(sub)}</span>
+                <span class="hm-continue-title">${titleHtml}</span>
+                ${sub ? `<span class="hm-continue-sub">${esc(sub)}</span>` : ''}
                 ${meter(percent)}
                 <span class="hm-count">${count}</span>
                 ${foot(step.done ? 'Resume lesson' : 'Begin')}

@@ -177,13 +177,16 @@ const HuCulturalExam = (function () {
     // One row: name in serif, a muted gloss beneath, an optional figure and a
     // drawn chevron. The same row is used at every level of the exam.
     function _row(attrs, name, gloss, value) {
-        const line = [gloss, value].filter(Boolean).join(' · ');
+        // The figure is drawn twice and CSS shows one: at the end of the gloss
+        // line on a phone, in its own column at the right of the row on a wide
+        // screen, so the row has something on its right besides the chevron.
         return `
             <button type="button" class="hce-row" ${attrs}>
                 <span class="hce-row-text">
                     <span class="hce-row-name">${_esc(name)}</span>
-                    ${line ? `<span class="hce-row-en">${_esc(line)}</span>` : ''}
+                    ${(gloss || value) ? `<span class="hce-row-en">${_esc(gloss || '')}${value ? `<span class="hce-row-inline">${gloss ? ' · ' : ''}${_esc(value)}</span>` : ''}</span>` : ''}
                 </span>
+                ${value ? `<span class="hce-row-value">${_esc(value)}</span>` : ''}
                 <span class="hce-row-chev" aria-hidden="true"></span>
             </button>
         `;

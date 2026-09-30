@@ -8929,3 +8929,12 @@
 .hce-fact-title { font: 400 1.3rem/1.25 var(--font-display); }
 .hce-fact-en { font-size: 15px; line-height: 1.6; }
 .hce-rows, .hce-section > .hce-section-desc { max-width: 40em; }
+/* The second language of a bilingual lesson title, on its own quieter line. */
+.hm-title-alt { display: block; margin-top: 4px; font-size: .68em; line-height: 1.2; color: var(--muted); letter-spacing: 0; }
+/* Row figure: on the gloss line on a phone, a right-hand column from 640px up. */
+.hce-row-value { display: none; }
+@media (min-width: 640px) {
+  .hce-row { grid-template-columns: 1fr auto 20px; }
+  .hce-row-inline { display: none; }
+  .hce-row-value { display: block; font: 500 13.5px/1.3 var(--font-ui); color: var(--muted); text-align: right; white-space: nowrap; }
+}
