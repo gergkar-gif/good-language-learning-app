@@ -39,11 +39,9 @@
 
 .page-header {
   position: relative;
-  display: grid;
   grid-template-columns: 1fr auto;
   align-items: start;
   column-gap: 16px;
-  padding: 28px 0 12px;
 }
 
 .page-header-text {
@@ -52,15 +50,11 @@
 
 .page-header-title {
   font-family: var(--font-display);
-  font-size: 38px;
   font-weight: 400;
-  line-height: 1.05;
-  letter-spacing: -0.01em;
   color: var(--text);
 }
 
 .page-header-sub {
-  margin-top: 4px;
   font-size: 15px;
   color: var(--muted);
 }
@@ -130,11 +124,6 @@
 /* A frontispiece, not a watermark: full strength but mostly empty, sitting
    under the title across the column. */
 .page-header-art {
-  grid-column: 1 / -1;
-  width: 100%;
-  height: auto;
-  max-height: 108px;
-  margin-top: 14px;
   pointer-events: none;
 }
 
@@ -249,14 +238,9 @@
 /* On Home, the screen that asks what to do today. They sit on cream rather
    than in the header, which is editorial and carries no running state. */
 
-.today {
-  margin-bottom: 16px;
-}
-
 .today-head {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
   gap: 12px;
   font-size: 14px;
   color: var(--muted);
@@ -286,7 +270,6 @@
   gap: 6px;
   padding: 5px 11px;
   border-radius: var(--radius-sm);
-  border: 1px solid var(--border);
   background: var(--bg);
   font-family: inherit;
   font-size: 13px;
@@ -304,7 +287,6 @@
 
 .daily-activity.is-done {
   border-color: var(--primary);
-  color: var(--text);
 }
 
 /* The mark is drawn from the art registry rather than set as an emoji, so it
@@ -402,10 +384,6 @@
 .nav button .icon .ink-line,
 .nav button .icon .ink-rule { stroke: currentColor; }
 .nav button .icon .ink-solid { fill: currentColor; }
-
-.nav button.active {
-  color: var(--accent-dark);
-}
 
 /* ---- Mobile viewport: Sticky Top Navigation Bar (<640px) ---- */
 @media (max-width: 639px) {
@@ -765,24 +743,12 @@ body.in-lesson .content {
   position: relative;
   display: flex;
   align-items: center;
-  gap: 18px;
   width: 100%;
-  padding: 20px 4px;
   background: none;
   border: none;
-  border-bottom: 1px solid var(--border-light);
   border-radius: 0;
   text-align: left;
   cursor: pointer;
-}
-
-.level-card:last-child {
-  border-bottom: none;
-}
-
-.level-card:hover .level-card-code,
-.level-card:hover .level-card-title {
-  color: var(--accent-dark);
 }
 
 /* Fill comes from .ps-wash/.ps-ink/.ps-accent on the shapes themselves
@@ -843,22 +809,16 @@ body.in-lesson .content {
    code is what identifies one. The name sits under it as the gloss. */
 .level-card-code {
   font-family: var(--font-display);
-  font-size: 26px;
   font-weight: 400;
   line-height: 1.1;
   color: var(--text);
 }
 
 .level-card-title {
-  font-family: var(--font-display);
-  font-size: 16px;
-  font-weight: 400;
   color: var(--text);
 }
 
 .level-card-sub {
-  margin-top: 1px;
-  font-size: 12.5px;
   line-height: 1.35;
   color: var(--muted);
 }
@@ -869,25 +829,17 @@ body.in-lesson .content {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-top: 10px;
-  align-self: flex-end;
-  width: 72%;
 }
 
 .level-card-track {
   flex: 1;
-  height: 3px;
   min-width: 50px;
-  border-radius: var(--radius-pill);
   background: var(--border);
-  overflow: hidden;
 }
 
 .level-card-fill {
   display: block;
   height: 100%;
-  border-radius: var(--radius-pill);
-  background: var(--accent);
 }
 
 .level-card-count {
@@ -986,7 +938,6 @@ body.in-lesson .content {
 .unit-path-line path {
   fill: none;
   stroke: var(--primary);
-  stroke-width: 2.5;
   stroke-linecap: round;
   vector-effect: non-scaling-stroke;
 }
@@ -999,7 +950,6 @@ body.in-lesson .content {
   width: 11px;
   height: 11px;
   border-radius: 50%;
-  background: var(--accent);
 }
 
 /* The disc is centred on its line — hence the negative margin of half its
@@ -1060,7 +1010,6 @@ body.in-lesson .content {
 .unit-path-num {
   font-size: 12px;
   font-weight: 600;
-  color: var(--accent-dark);
   font-variant-numeric: tabular-nums;
 }
 
@@ -1088,11 +1037,6 @@ body.in-lesson .content {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin: var(--space-5) 0 var(--space-6);
-  padding: 14px 16px;
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
 }
 
 .unit-path-summary-dot {
@@ -1100,7 +1044,6 @@ body.in-lesson .content {
   height: 10px;
   flex: none;
   border-radius: 50%;
-  background: var(--accent);
 }
 
 .unit-path-summary-text {
@@ -1121,7 +1064,6 @@ body.in-lesson .content {
 .unit-path-summary-fill {
   display: block;
   height: 100%;
-  background: var(--primary);
 }
 
 .unit-path-summary-pct {
@@ -1207,8 +1149,6 @@ body.in-lesson .content {
   background: var(--primary);
 }
 
-.dtp-key-line--t1 { background: var(--accent); }
-
 .dtp-path {
   position: relative;
   width: 100%;
@@ -1234,8 +1174,6 @@ body.in-lesson .content {
   vector-effect: non-scaling-stroke;
   stroke: var(--primary);
 }
-
-.dtp-line--t1 { stroke: var(--accent); }
 
 /* The disc is centred on its line — hence the negative margin of half its
    width — and the label hangs outside it, never over it. */
@@ -1285,7 +1223,6 @@ body.in-lesson .content {
 .dtp-num {
   font-size: 12px;
   font-weight: 600;
-  color: var(--accent-dark);
   font-variant-numeric: tabular-nums;
 }
 
@@ -1305,8 +1242,6 @@ body.in-lesson .content {
   color: var(--primary-mid);
 }
 
-.dtp-node.is-t1 .dtp-track { color: var(--accent-dark); }
-
 .dtp-count {
   font-size: 12px;
   color: var(--muted);
@@ -1323,7 +1258,6 @@ body.in-lesson .content {
    button into the unit's own heading. */
 
 .ud-head {
-  margin-top: var(--space-4);
   display: flex;
   flex-direction: column;
   gap: 2px;
@@ -1331,14 +1265,11 @@ body.in-lesson .content {
 
 .ud-num {
   font-family: var(--font-display);
-  font-size: 24px;
-  color: var(--accent);
   font-variant-numeric: tabular-nums;
 }
 
 .ud-title {
   font-family: var(--font-display);
-  font-size: 30px;
   font-weight: 400;
   line-height: 1.1;
   color: var(--text);
@@ -1348,9 +1279,7 @@ body.in-lesson .content {
   margin-top: 8px;
   font-size: 11px;
   font-weight: 600;
-  letter-spacing: .07em;
   text-transform: uppercase;
-  color: var(--primary);
 }
 
 .ud-count {
@@ -1374,11 +1303,6 @@ body.in-lesson .content {
   border-radius: 50%;
   border: 1.5px solid var(--border);
   background: none;
-}
-
-.ud-dot.is-done {
-  background: var(--primary);
-  border-color: var(--primary);
 }
 
 .ud-section {
@@ -1414,7 +1338,6 @@ body.in-lesson .content {
 .ud-lesson::before {
   content: "";
   position: absolute;
-  left: 5px;
   top: 0;
   bottom: 0;
   width: 1.5px;
@@ -1426,7 +1349,6 @@ body.in-lesson .content {
 
 .ud-lesson-node {
   position: absolute;
-  left: 0;
   top: 50%;
   width: 12px;
   height: 12px;
@@ -1434,15 +1356,6 @@ body.in-lesson .content {
   background: var(--bg);
   border: 2px solid var(--border);
   transform: translateY(-50%);
-}
-
-.ud-lesson.is-done .ud-lesson-node {
-  background: var(--primary);
-  border-color: var(--primary);
-}
-
-.ud-lesson.is-current .ud-lesson-node {
-  border-color: var(--accent);
 }
 
 .ud-lesson-num {
@@ -1460,8 +1373,6 @@ body.in-lesson .content {
   color: var(--text);
 }
 
-.ud-lesson:hover .ud-lesson-title { color: var(--accent-dark); }
-
 .ud-lesson.is-todo .ud-lesson-title { color: var(--muted); }
 
 /* Ring at the end of the row: filled with a check when done, an open
@@ -1473,13 +1384,6 @@ body.in-lesson .content {
   height: 26px;
   border-radius: 50%;
   border: 1.5px solid var(--border);
-}
-
-.ud-lesson.is-current .ud-lesson-mark { border-color: var(--accent); }
-
-.ud-lesson.is-done .ud-lesson-mark {
-  background: var(--primary);
-  border-color: var(--primary);
 }
 
 .ud-lesson.is-done .ud-lesson-mark::after {
@@ -1498,7 +1402,6 @@ body.in-lesson .content {
 
 .level-detail {
   position: relative;
-  padding-left: 18px;
 }
 
 .level-detail::before {
@@ -1516,7 +1419,6 @@ body.in-lesson .content {
   background: none;
   padding: 0;
   margin-bottom: 16px;
-  font-size: 14px;
   color: var(--muted);
 }
 
@@ -1528,42 +1430,17 @@ body.in-lesson .content {
 /* A dashed-border row matching .level-test-row's "opens a related sub-view"
    treatment, so both entry points into a unit's extra material read as the
    same kind of thing. */
-.ud-grammar-guide-row {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  width: 100%;
-  text-align: left;
-  margin-top: var(--space-4);
-  padding: 14px 18px;
-  background: var(--bg);
-  border: 1px dashed var(--border);
-  border-radius: 8px;
-}
-
-.ud-grammar-guide-row:hover {
-  border-color: var(--primary);
-  border-style: solid;
-}
 
 .ud-scenario-row:hover {
-  border-color: var(--accent);
   border-style: solid;
-}
-
-.ud-scenario-row .ud-grammar-guide-title {
-  color: var(--accent);
 }
 
 .ud-grammar-guide-title {
   font-family: var(--font-display);
-  font-size: 16px;
-  color: var(--primary);
 }
 
 .ud-grammar-guide-arrow {
   margin-left: auto;
-  color: var(--muted);
 }
 
 /* The unit's grammar topics as one line, up top — a preview of what the
@@ -1577,17 +1454,8 @@ body.in-lesson .content {
 .gg-search-all-link {
   display: inline-block;
   margin-top: 10px;
-  padding: 0;
-  background: none;
-  border: none;
-  font-size: 13px;
-  color: var(--primary);
   cursor: pointer;
   text-align: left;
-}
-
-.gg-search-all-link:hover {
-  color: var(--primary-dark);
 }
 
 .gg-topics {
@@ -1612,11 +1480,8 @@ body.in-lesson .content {
   justify-content: center;
   width: 26px;
   height: 26px;
-  border-radius: 50%;
-  border: 1.5px solid var(--border);
   font-family: var(--font-display);
   font-size: 13px;
-  color: var(--primary);
 }
 
 .gg-topic-body { flex: 1; min-width: 0; }
@@ -1630,9 +1495,6 @@ body.in-lesson .content {
 }
 
 .gg-topic-title {
-  font-family: var(--font-display);
-  font-size: 16px;
-  font-weight: 400;
   color: var(--text);
   margin: 0;
 }

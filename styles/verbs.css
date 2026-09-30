@@ -152,27 +152,12 @@
     outline-offset: 2px;
 }
 
-.vbtn-primary {
-    background: var(--primary);
-    color: var(--bg);
-    border-color: var(--primary);
-}
-
 .vbtn-primary:hover {
-    background: var(--primary-dark);
     border-color: var(--primary-dark);
 }
 
-.vbtn-secondary {
-    background: transparent;
-    color: var(--text);
-    border-color: var(--border);
-}
-
 .vbtn-secondary:hover {
-    background: rgba(16, 42, 71, 0.06);
     border-color: var(--primary);
-    color: var(--primary);
 }
 
 [data-theme="dark"] .vbtn-primary,
