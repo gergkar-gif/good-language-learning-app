@@ -254,7 +254,7 @@ A 3px hairline track with a navy fill and a vermilion marker at the current posi
 - **Match pairs:** two columns of options; matched pairs pine.
 - **Dialogue:** speaker label in small caps sans, line in serif; the learner's lines indented; reply options as answer options.
 - **Keyword chips** (writing, tests): outlined rectangles, turning pine with a tick as the learner uses each word. Word counter below the field.
-- **Studio topic lists** (Speaking and Writing, every tab): topics sit open on the page with space between them and a navy rule above the list: no outline, box or side line around a topic. Titles in regular serif.
+- **Studio topic lists** (Speaking and Writing, every tab): topics sit open on the page with space between them and a navy rule above the list: no outline, box or side line around a topic. Titles in regular serif. Conversation scenarios and written exchanges are one column of left-aligned rows: level and length as quiet metadata, the roleplay as a muted line (not vermilion), the situation, then the competency as a plain line with its icon and no box.
 - **Review card swipe** (Decks, phone): dragging the card shows the rating it will give: a brick outline and tint with "Again" to the left, a pine outline and tint with "Good" to the right. The cue clears when the next card appears.
 - **Learner text feedback:** the learner's version struck through in brick, the correction in pine serif, a one-line reason in muted sans; marks inside running text are dashed brick underlines.
 
