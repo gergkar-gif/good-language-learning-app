@@ -1035,6 +1035,8 @@ function renderCard() {
         cardEl.style.opacity = '';
         cardEl.style.transition = '';
         cardEl.style.borderColor = '';
+        // The swipe cue (data-swipe) belongs to the card that was dragged, not to the next one.
+        cardEl.dataset.swipe = '';
         initCardGestures();
     }
 }
