@@ -10,7 +10,7 @@
 //
 // Deploy via the Cloudflare dashboard (Workers & Pages -> Create ->
 // paste this in), same as cloudflare-worker/bug-report-proxy.js — see
-// CLOUD_SYNC_SETUP.md for the full walkthrough, including the D1
+// docs/SERVICES.md for the full walkthrough, including the D1
 // database and the two secrets this needs (JWT_SECRET, RESEND_API_KEY).
 // Zero external imports on purpose, same reason bug-report-proxy.js has
 // none: the dashboard's paste-and-deploy flow has no bundler.
@@ -143,7 +143,7 @@ async function sendMagicLinkEmail(email, link, env) {
 
 // ----------------------------------------
 // TURNSTILE (bot check ahead of sending a real email — see
-// TURNSTILE_SETUP.md). Verification is skipped entirely, not just
+// docs/SERVICES.md). Verification is skipped entirely, not just
 // permissive, when TURNSTILE_SECRET_KEY isn't set: that's the "not
 // configured yet" state, matching engine/sync.js's client-side no-op when
 // TURNSTILE_SITE_KEY is empty, so request-link keeps working before the

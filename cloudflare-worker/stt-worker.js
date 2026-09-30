@@ -11,7 +11,7 @@
 //
 // Deploy via Cloudflare Dashboard (Workers & Pages -> Create -> paste this in)
 // or via Wrangler CLI. Bind Workers AI as 'AI' in Settings -> Bindings.
-// See STT_SETUP.md for full walkthrough.
+// See docs/SERVICES.md for full walkthrough.
 
 const ALLOWED_ORIGINS = [
     'https://gergkar-gif.github.io',

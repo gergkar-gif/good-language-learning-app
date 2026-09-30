@@ -1,6 +1,6 @@
 -- Run once via D1's dashboard Console tab (Workers & Pages -> D1 ->
 -- your database -> Console), after creating the database. See
--- CLOUD_SYNC_SETUP.md for the full walkthrough.
+-- docs/SERVICES.md for the full walkthrough.
 
 CREATE TABLE magic_links (
     token_hash TEXT PRIMARY KEY,

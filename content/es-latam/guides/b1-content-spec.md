@@ -170,7 +170,7 @@ proper nouns that translate to themselves (`Maya → Maya`). Reasoning
 through abstract-policy units (Neoliberalismo, Democratización) made this
 worse, not better — with no named country, leader or date to anchor it,
 those Focus screens could describe any country's economic policy in any
-decade. See `TROUBLESHOOTING_BACKLOG.md`'s Latin America audit entries for
+decade. See `docs/archive/TROUBLESHOOTING_BACKLOG.md`'s Latin America audit entries for
 the full findings.
 
 Direct user feedback drove the rebuild: *"if someone finishes the Maya

@@ -20,8 +20,7 @@ const filesToCheck = [
     'engine/sync.js',
     'engine/journey.js',
     'styles/components.css',
-    'GOOGLE_SIGNIN_SETUP.md',
-    'CLOUD_SYNC_SETUP.md',
+    'docs/SERVICES.md',
     'ROADMAP.md',
     'ACHIEVED.md'
 ];

@@ -19,7 +19,7 @@
 // link instead — safe, but a real tap-through-GitHub's-mobile-UI tax on a
 // phone. The worker is the fix for both: it holds the token server-side,
 // so this file never touches it, and submission is a single request with
-// no page to navigate through. See BUG_REPORT_SETUP.md for how to deploy
+// no page to navigate through. See docs/SERVICES.md for how to deploy
 // the worker (one-time, ~10 minutes) and where WORKER_URL below comes from.
 
 const BugReport = (function () {

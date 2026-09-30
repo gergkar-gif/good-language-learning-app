@@ -4,7 +4,7 @@
 // Step 7 (last step) of the Learner model & personalized path roadmap
 // initiative. Opt-in backup/restore of a learner's local progress via a
 // small Cloudflare Worker + D1 (see cloudflare-worker/sync-worker.js) —
-// see CLOUD_SYNC_SETUP.md for how to deploy it and where WORKER_URL
+// see docs/SERVICES.md for how to deploy it and where WORKER_URL
 // below comes from, same one-time-setup pattern engine/bugreport.js
 // already established for its own worker.
 //
@@ -29,12 +29,12 @@ const Sync = (function () {
     // key, held only by the Worker, that actually matters). Empty until a
     // Turnstile widget is created in the Cloudflare dashboard; while empty,
     // getTurnstileToken() is a no-op and the Worker skips verification too
-    // (see TURNSTILE_SETUP.md), so requestLink() keeps working unprotected
+    // (see docs/SERVICES.md), so requestLink() keeps working unprotected
     // rather than breaking sign-in before the widget exists.
     const TURNSTILE_SITE_KEY = '0x4AAAAAAE5nXnu8zfuPH7yB';
 
     // Public Google OAuth 2.0 Web Client ID (safe to ship client-side — see
-    // GOOGLE_SIGNIN_SETUP.md). Enables 1-tap Google Sign-In button and prompt.
+    // docs/SERVICES.md). Enables 1-tap Google Sign-In button and prompt.
     const GOOGLE_CLIENT_ID = '191870279923-7ed8193v1av9q5tpm9u1h046idqc6k7s.apps.googleusercontent.com';
 
     const TOKEN_STORAGE_KEY = 'syncToken';

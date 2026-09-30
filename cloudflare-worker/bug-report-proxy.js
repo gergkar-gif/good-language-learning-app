@@ -7,7 +7,7 @@
 //
 // Deploy via the Cloudflare dashboard (Workers & Pages -> Create -> paste
 // this in), not committed-and-auto-deployed from this repo - see
-// BUG_REPORT_SETUP.md for the full walkthrough. The token itself is set as
+// docs/SERVICES.md for the full walkthrough. The token itself is set as
 // a Worker secret (Settings -> Variables -> "GITHUB_TOKEN", encrypted),
 // never as plain text anywhere, including here.
 

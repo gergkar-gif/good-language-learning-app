@@ -21,6 +21,22 @@ treated as a current spec.
   that was never what got built. The actual Hungarian A1 is 30 units,
   150 lessons — see `content/hu/curriculum/curriculum.json` and memory
   `hungarian-a1-unit1-25step-model`.
+- `BUG_REPORT_SETUP.md`, `CLOUD_SYNC_SETUP.md`, `GOOGLE_SIGNIN_SETUP.md`,
+  `GRADER_SETUP.md`, `STT_SETUP.md` — the five per-service setup guides, merged
+  into `docs/SERVICES.md` on 2026-09-30.
+- `design-principles-v2.md` (was `design principles.md`),
+  `design-principles-v1-superseded.md`, `parlour_visual_overhaul_spec.md` — the
+  earlier visual-identity docs. `DESIGN.md` is now the one authoritative visual
+  reference; the overhaul spec's §-numbers are still cited in a few CSS comments.
+- `PLANNING.md` — the ChatGPT/Claude co-production handoff and the A1 revision
+  requirements. The rules that still apply moved into `AGENTS.md` ("Teaching and
+  exercise principles").
+- `CURRICULUM_ROADMAP.md` — the finished-phases record (Phases 1 to 8) plus the
+  Hungarian B2 dual-track blueprint (which also lives in
+  `content/hu/b2-curriculum-draft.json`). The unit-wiring procedure moved into
+  `AGENTS.md`; its product ideas are all in `ROADMAP.md`.
+- `TROUBLESHOOTING_BACKLOG.md` — the 2026-08-18 brain-dump intake list, all
+  resolved except two items now tracked as ROADMAP 112 and 113.
 - `PARLOUR_DECKS_SPEC.md`, `PARLOUR_LIBRARY_SPEC.md`,
   `PARLOUR_LISTENING_SPEC.md`, `PARLOUR_VOCABULARY_DRILLER_SPEC.md` —
   implementation specs for Decks, Library, the Listening Driller, and the

@@ -299,6 +299,15 @@ Durations 120 to 280ms with `cubic-bezier(.16, 1, .3, 1)` for movement; hover fi
 ### Empty and complete states
 A title in serif, one muted line, the actions as primary and ghost buttons, and a hero: sand disc and outlined shapes when empty, pine accent when there is nothing left to do.
 
+## Standing rules carried over from the earlier principles doc
+
+These came from `design principles.md` (2026-08-14, now `docs/archive/design-principles-v2.md`), which this file otherwise supersedes.
+
+- **Copy discipline.** Never fabricate quotes or attributions, in mockups, placeholder copy or shipped content. If a design calls for a quote, source and cite a real one, or leave the slot empty.
+- **Mockups are visual references only.** Page structure, tab sets and exercise mechanics in any reference mockup are illustrative; defer to each feature's own spec and to the prototype named at the top of this file.
+- **The "Lessons" versus "Learn" nav label** (and a possible later rename to "Study") is unsettled and deliberately deferred; don't resolve it as part of an unrelated pass.
+- **Shared components worth reusing.** A word-status indicator (see Word and story lists) wherever word familiarity is shown (Reader, Decks, Vocabulary Driller), and the tap-a-word popup (definition, Listen, Add to deck) as one small card.
+
 ## Do's and Don'ts
 
 ### Do:
