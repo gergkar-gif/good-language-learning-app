@@ -11,8 +11,7 @@ const Sound = (function () {
     const CLIPS = {
         correct: 'assets/audio/pencil-cue.mp3',
         wrong: 'assets/audio/rewind-cue.mp3',
-        complete: 'assets/audio/gong-cue.mp3',
-        speaking: 'assets/audio/speaking-cue.mp3'
+        complete: 'assets/audio/gong-cue.mp3'
     };
     const GONG_SOURCE = 'assets/audio/gong.mp3';
 
@@ -96,7 +95,9 @@ const Sound = (function () {
             play('complete');
         }
     }
-    function speaking() { play('speaking'); }
+    // Silent by design: the cassette cue on mic start/stop was annoying. Kept as a
+    // no-op so the speaking call sites need no changes.
+    function speaking() {}
 
     return { correct, wrong, complete, speaking, muted, toggleMuted };
 })();
