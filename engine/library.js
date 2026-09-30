@@ -601,13 +601,13 @@ const Library = (function () {
         if (!container) return;
 
         const level = t.analysis && t.analysis.level ? t.analysis.level : 'Unassessed';
-        let html = '<div class="story-header">' +
+        let html = '<div class="story-bar">' +
+            '<button type="button" class="story-action" data-mytext-back="1">&larr; My texts</button>' +
+        '</div>' +
+        '<div class="story-header">' +
             '<div class="story-header-left">' +
                 '<h3 class="story-title">' + esc(t.title) + '</h3>' +
                 '<span class="story-level-badge">' + esc(level) + '</span>' +
-            '</div>' +
-            '<div class="story-header-actions">' +
-                '<button class="btn-back" data-mytext-back="1">&larr; Back</button>' +
             '</div>' +
         '</div>' +
         '<div class="story-scroll-track" aria-hidden="true"><div class="story-scroll-bar" id="story-scroll-bar"></div></div>' +

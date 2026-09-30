@@ -2013,7 +2013,7 @@ window.Reader = {
         // while looking at the thing — see PARLOUR_LIBRARY_SPEC.md §1.
         const canSave = typeof Library !== 'undefined' && this.currentStoryId;
         const saveBtnHtml = canSave
-            ? '<button class="btn-back" id="reader-save-btn">' +
+            ? '<button type="button" class="story-action" id="reader-save-btn">' +
                 (Library.isSaved(this.currentStoryId) ? '● Saved' : '○ Save') + '</button>'
             : '';
 
@@ -2041,14 +2041,16 @@ window.Reader = {
             `;
         }
 
-        let html = '<div class="story-header">' +
+        // One slim bar above the title: where you came from on the left, Save on
+        // the right. The title and its level sit beneath it, on their own.
+        let html = '<div class="story-bar">' +
+            '<button type="button" class="story-action" id="reader-back-btn">&larr; Library</button>' +
+            saveBtnHtml +
+        '</div>' +
+        '<div class="story-header">' +
             '<div class="story-header-left">' +
                 '<h3 class="story-title">' + this.escapeHtml(story.title) + '</h3>' +
                 '<span class="story-level-badge">' + this.escapeHtml(story.level) + '</span>' +
-            '</div>' +
-            '<div class="story-header-actions">' +
-                saveBtnHtml +
-                '<button class="btn-back" id="reader-back-btn">&larr; Back</button>' +
             '</div>' +
         '</div>' +
         '<div class="story-marks-row">' +
