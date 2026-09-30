@@ -261,10 +261,6 @@
   position: relative;
   display: inline-flex;
   align-items: center;
-  width: 64px;
-  height: 44px;
-  min-width: 44px;
-  min-height: 44px;
   padding: 0;
   background: none;
   border: none;
@@ -283,38 +279,18 @@
 
 .geo-toggle-shape {
   position: absolute;
-  top: 50%;
-  width: 18px;
-  height: 18px;
   transition: opacity var(--dur-base) var(--ease-standard),
               transform var(--dur-base) var(--ease-standard);
 }
 
 .geo-toggle-shape--off {
-  left: 10px;
   transform: translate(0, -50%) scale(1);
   border-radius: 50%;
-  border: 1.5px solid var(--primary);
-  background: var(--bg);
   opacity: 1;
 }
 
 .geo-toggle-shape--on {
-  left: 36px;
-  transform: translate(0, -50%) scale(.5);
-  background: var(--accent);
   clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
-  opacity: 0;
-}
-
-.geo-toggle[aria-checked="true"] .geo-toggle-shape--off {
-  opacity: 0;
-  transform: translate(0, -50%) scale(.5);
-}
-
-.geo-toggle[aria-checked="true"] .geo-toggle-shape--on {
-  opacity: 1;
-  transform: translate(0, -50%) scale(1);
 }
 
 .geo-toggle:disabled,

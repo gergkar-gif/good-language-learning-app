@@ -1128,13 +1128,9 @@ function initCardGestures() {
             const rotate = dx / 16;
             cardEl.style.transform = `translateX(${dx}px) rotate(${rotate}deg)`;
 
-            if (dx < -30) {
-                cardEl.style.borderColor = 'var(--danger)';
-            } else if (dx > 30) {
-                cardEl.style.borderColor = 'var(--success)';
-            } else {
-                cardEl.style.borderColor = 'var(--border)';
-            }
+            // The drag direction is shown by data-swipe (styled in CSS): brick and
+            // "Again" to the left, pine and "Good" to the right.
+            cardEl.dataset.swipe = dx < -30 ? 'again' : dx > 30 ? 'good' : '';
         }
     }, { passive: true });
 
@@ -1167,12 +1163,12 @@ function initCardGestures() {
                 showAnswer();
                 cardEl.style.transition = 'transform 0.2s ease, border-color 0.2s ease';
                 cardEl.style.transform = 'translateX(0) rotate(0deg)';
-                cardEl.style.borderColor = 'var(--border)';
+                cardEl.dataset.swipe = '';
             } else {
                 // Snap back
                 cardEl.style.transition = 'transform 0.2s ease, border-color 0.2s ease';
                 cardEl.style.transform = 'translateX(0) rotate(0deg)';
-                cardEl.style.borderColor = 'var(--border)';
+                cardEl.dataset.swipe = '';
             }
         } else if (Math.abs(dx) < 10 && Math.abs(dy) < 10) {
             // Tap on card body: flip/reveal answer if not already revealed

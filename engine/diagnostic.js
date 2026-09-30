@@ -161,45 +161,40 @@ const DiagnosticTest = (function () {
                 </div>
 
                 <div class="diag-preface-card">
-                    <h2 class="diag-title">CEFR Level Diagnostic Placement</h2>
+                    <h2 class="diag-title">Find your starting level</h2>
                     <p class="diag-lead">
-                        Find your optimal starting place in ${langName}. This adaptive test quickly checks your language foundations and guides you to the right level.
+                        A short test to show where to begin in ${langName}. It gets harder as you go and stops when it finds your level.
                     </p>
-
-                    <div class="diag-philosophy-callout">
-                        <div class="diag-callout-header">
-                            <svg class="sp-icon-svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
-                            <strong>Quick Diagnostic Screener</strong>
-                        </div>
-                        <p class="diag-callout-text">
-                            This is a rapid placement screener evaluating core grammar, situational communication, reading and active recall. Each tier has ${perTier} questions and requires <strong>${passPct}% mastery</strong> (including open production) to advance. Score ${nearPct}% or more and you can choose to start one level up.
-                        </p>
-                        <p class="diag-callout-text" style="margin-top: 8px;">
-                            <strong>Full Certification Note:</strong> This screener provides an initial course entry recommendation. For comprehensive multi-modal proficiency verification (including extended written composition and recorded oral speech evaluation), complete the official <strong>Level Test</strong> at the end of each curriculum tier.
-                        </p>
-                    </div>
 
                     <div class="diag-preface-meta">
                         <div class="diag-meta-item">
-                            <span class="diag-meta-label">Format</span>
-                            <span class="diag-meta-val">${perTier} Questions/Tier (MC, Open Production &amp; Reading)</span>
+                            <span class="diag-meta-label">Questions</span>
+                            <span class="diag-meta-val">${perTier} per level, mixed choice, short answers and reading</span>
                         </div>
                         <div class="diag-meta-item">
-                            <span class="diag-meta-label">Duration</span>
-                            <span class="diag-meta-val">5–7 minutes</span>
+                            <span class="diag-meta-label">Time</span>
+                            <span class="diag-meta-val">5 to 7 minutes</span>
                         </div>
                         <div class="diag-meta-item">
-                            <span class="diag-meta-label">Passing Standard</span>
-                            <span class="diag-meta-val">${passPct}% Required to Advance</span>
+                            <span class="diag-meta-label">To move up a level</span>
+                            <span class="diag-meta-val">${passPct}% correct</span>
+                        </div>
+                        <div class="diag-meta-item">
+                            <span class="diag-meta-label">Close call</span>
+                            <span class="diag-meta-val">${nearPct}% or more lets you choose to start one level higher</span>
                         </div>
                     </div>
 
+                    <p class="diag-callout-text diag-honest-note">
+                        This is a screener, not a certificate. To confirm a level, take its Level Test at the end of that level.
+                    </p>
+
                     <div class="diag-preface-actions">
                         <button type="button" class="wk-primary-btn diag-btn-start" data-action="begin-diag">
-                            Begin Diagnostic Test →
+                            Begin the test
                         </button>
                         <button type="button" class="wk-secondary-btn diag-btn-skip" data-action="skip-to-a1">
-                            Start from Level A1 (No Test)
+                            Start at A1 instead
                         </button>
                     </div>
                 </div>

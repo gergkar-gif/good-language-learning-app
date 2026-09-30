@@ -1685,7 +1685,8 @@ window.Reader = {
             html += '<div class="reading-room' + (roomStories.length ? '' : ' is-empty') + '"' +
                     (isHere ? ' data-default-open' : '') + '>' +
                 '<button class="reading-room-header" data-room-toggle="' + levelId + '" aria-expanded="' + isHere + '">' +
-                    '<div>' +
+                    ((typeof Art !== 'undefined' && Art.levelMark) ? Art.levelMark(level, isHere ? 'now' : 'todo', 'reading-room-mark') : '') +
+                    '<div class="reading-room-head-text">' +
                         '<h3 class="reading-room-title">' + self.escapeHtml(level) + '</h3>' +
                         '<span class="reading-room-count">' + countText + '</span>' +
                     '</div>' +
@@ -1923,9 +1924,15 @@ window.Reader = {
     buildStoryCardHtml(story, readIds, inSeries) {
         const isRead = readIds.includes(story.id);
         const withinReach = this.isStoryWithinReach(story, readIds);
-        const art = (typeof pathArt === 'function')
-            ? pathArt(coverArtIndexFor(story.id), 'story-card-cover-icon')
-            : '';
+        // The cover is generated from the story id (Art.unitMark), so a story
+        // always gets the same picture; its accent is green once read and
+        // vermilion while it is under way.
+        const savedPct = (this._progress || {})[story.id];
+        const coverState = isRead ? 'done'
+            : (savedPct && savedPct.pct >= STORY_STARTED_PCT ? 'now' : 'todo');
+        const art = (typeof Art !== 'undefined' && Art.unitMark)
+            ? Art.unitMark(story.id, coverState, 'story-card-cover-icon')
+            : ((typeof pathArt === 'function') ? pathArt(coverArtIndexFor(story.id), 'story-card-cover-icon') : '');
         // The card already sits inside its level's room, so the level itself
         // isn't repeated here. A track reading is one part of a series, so it
         // shows its part number and the unit it belongs to; a classic shows

@@ -147,6 +147,12 @@ const Workshop = (function () {
     };
 
     function _drillerIcon(id) {
+        // Row thumbnails come from the art registry (a grey accent; the
+        // Workshop has nothing due, so none turns ochre).
+        if (typeof Art !== 'undefined' && Art.thumb) {
+            const t = Art.thumb(id);
+            if (t) return t;
+        }
         return `<svg class="wk-card-icon" viewBox="0 0 100 100" aria-hidden="true">${DRILLER_ICONS[id] || ''}</svg>`;
     }
 

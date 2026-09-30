@@ -372,5 +372,177 @@ const Art = (function () {
         return Object.keys(SECTIONS);
     }
 
-    return { section, svg, ids, icon, iconIds };
+    // ----------------------------------------
+    // THE COMPOSED ROOM (visual overhaul, 2026-09-29)
+    // ----------------------------------------
+    // Page heroes, nav icons, level marks and generated unit/story marks. All
+    // drawn from sand discs, navy shapes and hairlines with ONE accent, whose
+    // colour follows state (see DESIGN.md, "Colour semantics"). Classes are
+    // defined in styles/overhaul.css: mk-sand, mk-navy, mk-line (its
+    // stroke-width is set per shape), mk-acc, mk-accline, mk-pine, mk-pineline
+    // for illustration; nv-navy, nv-line, nv-acc, nv-accline for the nav.
+    // Heroes are drawn to a 252 x 184 viewBox with the ground at y=170.
+
+    const HEROES = {
+        home: `<circle class="mk-sand" cx="184" cy="72" r="64"/><path class="mk-line" stroke-width="1.2" d="M128 62A108 108 0 0 1 236 170"/><path class="mk-navy" d="M128 62V170H202z"/><path class="mk-line" stroke-width="2" d="M128 40V170M128 62H236"/><path class="mk-line" stroke-width="1.2" d="M202 170 116 46"/><g class="rise"><circle class="mk-acc" cx="149" cy="142" r="6"/></g><path class="mk-line" stroke-width="1.2" d="M20 170h232"/>`,
+        lessons: `<circle class="mk-sand" cx="176" cy="52" r="70"/><path class="mk-navy" d="M44 170a72 72 0 0 1 144 0z"/><path class="mk-line" stroke-width="1.2" d="M96 118 204 44M188 170 204 44M20 170h232"/><g class="rise"><circle class="mk-acc" cx="204" cy="44" r="8"/></g>`,
+        library: `<circle class="mk-sand" cx="176" cy="64" r="58"/><rect class="mk-navy" x="96" y="92" width="15" height="78"/><rect class="mk-navy" x="118" y="48" width="15" height="122"/><rect class="mk-line" stroke-width="1.5" x="141" y="106" width="13" height="64"/><rect class="mk-navy" x="161" y="76" width="15" height="94"/><path class="mk-line" d="M76 170h176"/><g class="rise"><circle class="mk-acc" cx="150" cy="60" r="9"/></g>`,
+        workshop: `<circle class="mk-sand" cx="178" cy="58" r="62"/><path class="mk-line" stroke-width="2" d="M48 162 232 88"/><circle class="mk-navy" cx="132" cy="124" r="22"/><g class="rise"><rect class="mk-acc" x="188" y="56" width="20" height="20"/></g>`,
+        decks: `<circle class="mk-sand" cx="182" cy="52" r="58"/><rect class="mk-line" stroke-width="1.5" x="128" y="22" width="66" height="102"/><rect class="mk-line" stroke-width="1.5" x="108" y="46" width="66" height="102"/><rect class="mk-navy" x="88" y="70" width="66" height="100"/><g class="rise"><path class="mk-accline" stroke-width="2.5" d="M194 22v102"/></g><path class="mk-line" d="M60 170h192"/>`,
+        journey: `<circle class="mk-sand" cx="176" cy="64" r="64"/><circle class="mk-navy" cx="72" cy="162" r="7"/><path class="mk-line" stroke-width="2" d="M72 162C124 162 122 76 208 66"/><g class="rise"><rect class="mk-acc" x="206" y="52" width="16" height="16"/></g>`,
+        complete: `<circle class="mk-sand" cx="150" cy="46" r="80"/><path class="mk-navy" d="M60 170a72 72 0 0 1 144 0z"/><path class="mk-line" d="M30 170h222"/><g class="rise"><path class="mk-pineline" stroke-width="1.5" d="M132 66v104"/><circle class="mk-pine" cx="132" cy="66" r="9"/></g>`
+    };
+
+    const NAV_ICONS = {
+        home: `<path class="nv-line" style="stroke-width:1.5" d="M8 3V29"/><path class="nv-navy" d="M8 7V29H24z"/><path class="nv-line" style="stroke-width:1.2" d="M8 5A24 24 0 0 1 30 29"/><circle class="nv-acc" cx="12.5" cy="23" r="2.2"/>`,
+        lessons: `<path class="nv-navy" d="M3 26a10 10 0 0 1 20 0z"/><path class="nv-line" d="M13 16 27 5M23 26 27 5M3 26.8h26"/><circle class="nv-acc" cx="27" cy="5.5" r="3.4"/>`,
+        library: `<rect class="nv-navy" x="3" y="10" width="4.5" height="18"/><rect class="nv-navy" x="10" y="3" width="4.5" height="25"/><rect class="nv-line" x="17.8" y="13" width="3.9" height="15"/><rect class="nv-navy" x="24" y="8" width="4.5" height="20"/><circle class="nv-acc" cx="19.5" cy="9" r="4.2"/>`,
+        workshop: `<path class="nv-line" d="M2 26 30 12" style="stroke-width:2.2"/><circle class="nv-navy" cx="15" cy="19" r="5.6"/><rect class="nv-acc" x="21" y="3" width="8" height="8"/>`,
+        decks: `<rect class="nv-line" x="11" y="3" width="16" height="20"/><rect class="nv-line" x="6.5" y="7.5" width="16" height="20"/><rect class="nv-navy" x="2" y="12" width="16" height="17"/><path class="nv-accline" d="M27 3v20"/>`,
+        journey: `<circle class="nv-navy" cx="5" cy="26" r="3"/><path class="nv-line" d="M5 26C14 26 13 12 24 11" style="stroke-width:2"/><rect class="nv-acc" x="22" y="6" width="7" height="7"/>`
+    };
+
+    const LEVEL_MARKS = {
+        A1: `<circle class="mk-sand" cx="32" cy="30" r="24"/><path class="mk-navy" d="M12 48a20 20 0 0 1 40 0z"/><path class="mk-line" stroke-width="1.2" d="M4 48h56"/><circle class="mk-acc" cx="47" cy="15" r="5"/>`,
+        A2: `<circle class="mk-sand" cx="26" cy="32" r="22"/><circle class="mk-navy" cx="40" cy="35" r="16"/><path class="mk-line" stroke-width="1.2" d="M6 58 58 8"/><circle class="mk-acc" cx="13" cy="14" r="4.5"/>`,
+        B1: `<circle class="mk-sand" cx="32" cy="32" r="26"/><path class="mk-navy" d="M32 32V6A26 26 0 0 1 58 32z"/><rect class="mk-acc" x="38" y="38" width="11" height="11"/>`,
+        B2: `<circle class="mk-sand" cx="32" cy="34" r="24"/><path class="mk-navy" d="M12 54V16l34 38z"/><path class="mk-line" stroke-width="1.2" d="M32 4v56"/><circle class="mk-acc" cx="47" cy="20" r="5"/>`,
+        C1: `<circle class="mk-sand" cx="32" cy="32" r="26"/><path class="mk-line" stroke-width="6" d="M13 32A19 19 0 0 1 51 32"/><circle class="mk-navy" cx="32" cy="45" r="7"/><path class="mk-line" stroke-width="1.2" d="M6 58 58 6"/><circle class="mk-acc" cx="51" cy="32" r="4.5"/>`
+    };
+
+    function heroSvg(id, className) {
+        const art = HEROES[id];
+        if (!art) return '';
+        return `
+            <svg class="art art-hero ${className || 'page-header-art'}" viewBox="0 0 252 184"
+                preserveAspectRatio="xMaxYMin meet"
+                role="presentation" aria-hidden="true" focusable="false">
+                ${art}
+            </svg>
+        `;
+    }
+
+    function heroIds() { return Object.keys(HEROES); }
+
+    function navIcon(id) {
+        const art = NAV_ICONS[id];
+        if (!art) return icon(id);
+        return `<svg class="nav-icon" viewBox="0 0 32 32" role="presentation" aria-hidden="true" focusable="false">${art}</svg>`;
+    }
+
+    // state: 'done' (accent goes green), 'now' (accent stays vermilion),
+    // anything else is neutral grey. Locked units are faded by CSS (.is-locked).
+    function levelMark(code, state, className) {
+        const art = LEVEL_MARKS[String(code || '').toUpperCase()];
+        if (!art) return '';
+        return `<svg class="art art-mark is-${state || 'todo'} ${className || ''}" viewBox="0 0 64 64"
+            role="presentation" aria-hidden="true" focusable="false">${art}</svg>`;
+    }
+
+    // A composition generated from an id, so the same unit or story always
+    // gets the same picture. One sand disc; one navy form of eight, rotated in
+    // quarter turns; optionally a hairline or a small second form opposite
+    // (never beside a navy disc); exactly one accent opposite the main form.
+    function _rng(seed) {
+        let h = 1779033703 ^ seed.length;
+        for (let i = 0; i < seed.length; i++) {
+            h = Math.imul(h ^ seed.charCodeAt(i), 3432918353);
+            h = (h << 13) | (h >>> 19);
+        }
+        return function () {
+            h = Math.imul(h ^ (h >>> 16), 2246822507);
+            h = Math.imul(h ^ (h >>> 13), 3266489909);
+            return ((h ^= h >>> 16) >>> 0) / 4294967296;
+        };
+    }
+    function _f(n) { return Math.round(n * 10) / 10; }
+    function _form(kind, cx, cy, r) {
+        const a = _f(cx - r), b = _f(cx + r);
+        switch (kind) {
+            case 0: return `<path class="mk-navy" d="M${a} ${cy}A${r} ${r} 0 0 1 ${b} ${cy}z"/>`;
+            case 1: return `<path class="mk-navy" d="M${cx} ${cy}V${_f(cy - r)}A${r} ${r} 0 0 1 ${b} ${cy}z"/>`;
+            case 2: return `<circle class="mk-navy" cx="${_f(cx + r * .32)}" cy="${_f(cy - r * .3)}" r="${_f(r * .48)}"/>`;
+            case 3: return `<circle class="mk-line" stroke-width="${_f(r * .22)}" cx="${cx}" cy="${cy}" r="${_f(r * .58)}"/>`;
+            case 4: return `<path class="mk-navy" d="M${_f(cx - r * .7)} ${_f(cy + r * .7)}V${_f(cy - r * .7)}L${_f(cx + r * .7)} ${_f(cy + r * .7)}z"/>`;
+            case 5: return `<rect class="mk-navy" x="${a}" y="${_f(cy - r * .58)}" width="${_f(r * 2)}" height="${_f(r * .4)}"/>`;
+            case 6: return `<circle class="mk-navy" cx="${_f(cx + r * .42)}" cy="${_f(cy - r * .18)}" r="${_f(r * .62)}"/>`;
+            default: return `<path class="mk-navy" d="M${cx} ${cy}H${a}A${r} ${r} 0 0 1 ${cx} ${_f(cy - r)}z"/><path class="mk-navy" d="M${cx} ${cy}H${b}A${r} ${r} 0 0 1 ${cx} ${_f(cy + r)}z"/>`;
+        }
+    }
+    function unitMark(seed, state, className) {
+        const R = _rng(String(seed));
+        const pick = n => Math.floor(R() * n);
+        const r = 21 + pick(5), cx = 32 + pick(5) - 2, cy = 32 + pick(5) - 2;
+        const rot = pick(4) * 90, kind = pick(8);
+        const disc = `<circle class="mk-sand" cx="${cx}" cy="${cy}" r="${r}"/>`;
+        const main = `<g transform="rotate(${rot} ${cx} ${cy})">${_form(kind, cx, cy, r)}</g>`;
+        let extra = '';
+        const roll = R();
+        if (roll < .34) {
+            const t = pick(3), lx = _f(cx + (R() - .5) * r * .8);
+            extra = t === 0 ? `<path class="mk-line" stroke-width="1.2" d="M${lx} ${cy - r - 6}V${cy + r + 6}"/>`
+                : t === 1 ? `<path class="mk-line" stroke-width="1.2" d="M${cx - r - 6} ${_f(cy + (R() - .5) * r * .8)}H${cx + r + 6}"/>`
+                : `<path class="mk-line" stroke-width="1.2" d="M${cx - r} ${cy + r}L${cx + r} ${cy - r}"/>`;
+        } else if (roll < .6 && kind !== 2 && kind !== 6) {
+            extra = `<g transform="rotate(${(rot + 180) % 360} ${cx} ${cy})">${_form([0, 1, 4][pick(3)], cx, cy, _f(r * .42))}</g>`;
+        }
+        const ang = (rot + 180 + (R() - .5) * 70) * Math.PI / 180, d = r * (.7 + R() * .28);
+        const ax = _f(cx + d * Math.sin(ang)), ay = _f(cy - d * Math.cos(ang));
+        const acc = R() < .5
+            ? `<circle class="mk-acc" cx="${ax}" cy="${ay}" r="${_f(4 + R() * 1.6)}"/>`
+            : `<rect class="mk-acc" x="${_f(ax - 4.5)}" y="${_f(ay - 4.5)}" width="9" height="9"/>`;
+        const ring = state === 'now'
+            ? `<circle class="mk-accline" stroke-width="1.5" cx="${cx}" cy="${cy}" r="${r + 5}"/>` : '';
+        return `<svg class="art art-mark is-${state || 'todo'} ${className || ''}" viewBox="0 0 64 64"
+            role="presentation" aria-hidden="true" focusable="false">${disc}${extra}${main}${acc}${ring}</svg>`;
+    }
+
+
+    // Row thumbnails (72 x 56): two shapes and a grey accent. The accent turns
+    // ochre only when the row has something due or new (opts.due).
+    const THUMBS = {
+        ochre: `<circle cx="30" cy="30" r="22" class="mk-acc"/><rect x="40" y="16" width="20" height="30" class="mk-navy"/>`,
+        sand: `<circle cx="40" cy="26" r="24" class="mk-sand"/><path class="mk-navy" d="M12 52V22h26z"/>`,
+        half: `<path class="mk-navy" d="M10 50A26 26 0 0 1 62 50z"/><path class="mk-accline" stroke-width="1.5" d="M36 10v40"/><circle class="mk-acc" cx="36" cy="10" r="5"/>`,
+        beam: `<path class="mk-line" stroke-width="1.5" d="M6 44 66 20"/><circle class="mk-navy" cx="34" cy="32" r="8"/><rect class="mk-acc" x="50" y="8" width="10" height="10"/>`,
+        cards: `<rect class="mk-line" stroke-width="1.5" x="24" y="6" width="34" height="38"/><rect class="mk-navy" x="10" y="16" width="34" height="34"/>`,
+        bars: `<rect class="mk-navy" x="10" y="20" width="8" height="32"/><rect class="mk-navy" x="24" y="8" width="8" height="44"/><rect class="mk-line" stroke-width="1.5" x="39" y="24" width="8" height="28"/><circle class="mk-acc" cx="56" cy="20" r="7"/>`,
+        wave: `<path class="mk-line" stroke-width="2.5" d="M10 28v0M18 18v20M26 10v36M34 20v16M42 14v28M50 22v12"/><circle class="mk-acc" cx="62" cy="28" r="5"/>`,
+        disc: `<circle cx="36" cy="28" r="22" class="mk-sand"/><circle cx="30" cy="30" r="10" class="mk-navy"/><rect class="mk-acc" x="46" y="10" width="9" height="9"/>`
+,
+        speaking: `<circle class="mk-sand" cx="40" cy="28" r="24"/><path class="mk-navy" d="M8 12a16 16 0 0 1 0 32z"/><path class="mk-line" stroke-width="1.5" d="M26 12.4A22 22 0 0 1 26 43.6M34 4.4A34 34 0 0 1 34 51.6"/><circle class="mk-acc" cx="58" cy="28" r="5"/>`,
+        writing: `<circle class="mk-sand" cx="46" cy="24" r="22"/><rect class="mk-navy" x="8" y="12" width="36" height="6"/><rect class="mk-navy" x="8" y="25" width="52" height="6"/><rect class="mk-line" stroke-width="1.5" x="8" y="38" width="28" height="6"/><rect class="mk-acc" x="42" y="37" width="8" height="8"/>`,
+        exam: `<circle class="mk-sand" cx="36" cy="28" r="22"/><path class="mk-navy" d="M18 48V28a18 18 0 0 1 36 0v20z"/><circle class="mk-acc" cx="36" cy="8" r="5"/>`,
+        suffix: `<circle class="mk-sand" cx="34" cy="28" r="22"/><rect class="mk-navy" x="12" y="20" width="30" height="24"/><rect class="mk-acc" x="42" y="26" width="16" height="12"/>`,
+        prefix: `<circle class="mk-sand" cx="38" cy="28" r="22"/><rect class="mk-navy" x="30" y="20" width="30" height="24"/><rect class="mk-acc" x="14" y="26" width="16" height="12"/>`
+    };
+    const THUMB_ALIAS = {
+        review: 'ochre',
+        read: 'sand',
+        practise: 'half',
+        decks: 'cards',
+        verb: 'bars',
+        verbs: 'bars',
+        grammar: 'half',
+        translation: 'beam',
+        vocabulary: 'disc',
+        listening: 'wave',
+        'hu-suffix': 'suffix',
+        'hu-prefix': 'prefix',
+        'hu-morphology': 'disc',
+        'hu-verb': 'bars',
+        'hu-cultural-exam': 'exam'
+    };
+
+    function thumb(id, opts) {
+        const key = THUMBS[id] ? id : THUMB_ALIAS[id];
+        const art = THUMBS[key];
+        if (!art) return '';
+        const due = opts && opts.due;
+        return `<svg class="art art-thumb${due ? ' is-due' : ''}" viewBox="0 0 72 56"
+            role="presentation" aria-hidden="true" focusable="false">${art}</svg>`;
+    }
+
+
+    return { section, svg, ids, icon, iconIds, heroSvg, heroIds, navIcon, levelMark, unitMark, thumb };
 })();

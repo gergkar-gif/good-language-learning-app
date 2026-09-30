@@ -539,36 +539,156 @@ const Journey = (function () {
     // ----------------------------------------
     // RENDER
     // ----------------------------------------
-    function render() {
+    // The page is one hero, the streak, one mountain and a short list of rows.
+    // Each row opens the older readings (kept as they were, restyled as open
+    // sections) as a view of its own, so nothing is lost and nothing competes.
+    let _view = 'main';
+
+    function _levelKeys(d) {
+        const order = (typeof LEVEL_ORDER !== 'undefined') ? LEVEL_ORDER : ['A1', 'A2', 'B1', 'B2', 'C1'];
+        return order.filter(k => d.levels[k]);
+    }
+
+    // A right-triangle ridge from A1 (left) to the last level (summit), in
+    // equal bands. Gates between bands are green once a level is finished;
+    // the vermilion marker sits at the learner's true position: the levels
+    // finished plus the fraction of the current one.
+    function mountainHtml(d) {
+        const keys = _levelKeys(d);
+        if (!keys.length) return '';
+        const n = keys.length;
+        const next = (typeof LearnerPath !== 'undefined') ? LearnerPath.nextStep() : null;
+        let idx = next && next.level ? keys.indexOf(next.level) : -1;
+        if (idx !== -1 && d.levelDone[keys[idx]]) idx = keys.findIndex(k => !d.levelDone[k]);
+        if (idx === -1) idx = keys.findIndex(k => !d.levelDone[k]);
+        if (idx === -1) idx = n - 1;
+        const cur = d.levels[keys[idx]];
+        const frac = d.levelDone[keys[idx]] ? 1 : (cur.percent || 0) / 100;
+        const t = Math.min(1, (idx + frac) / n);
+
+        const x0 = 14, y0 = 200, x1 = 336, y1 = 52;
+        const pt = u => [x0 + (x1 - x0) * u, y0 + (y1 - y0) * u];
+        const me = pt(t), top = pt(1);
+        const r1 = v => Math.round(v * 10) / 10;
+
+        let lines = '', gates = '', labels = '';
+        for (let i = 1; i < n; i++) {
+            const g = pt(i / n), passed = i / n < t;
+            lines += `<path d="M${r1(g[0])} ${r1(g[1])}V${y0}" stroke="${passed ? 'var(--bg)' : 'var(--muted)'}" stroke-width="1" opacity="${passed ? '.55' : '.45'}" fill="none"/>`;
+            gates += d.levelDone[keys[i - 1]]
+                ? `<circle cx="${r1(g[0])}" cy="${r1(g[1])}" r="5.5" fill="var(--success)"/>`
+                : `<circle cx="${r1(g[0])}" cy="${r1(g[1])}" r="4.5" fill="var(--bg)" stroke="var(--muted)" stroke-width="1.5"/>`;
+        }
+        keys.forEach((k, i) => {
+            const m = pt((i + 0.5) / n);
+            const cls = d.levelDone[k] ? 'is-done' : i === idx ? 'is-now' : 'is-todo';
+            labels += `<text x="${r1(m[0])}" y="${r1(m[1] - 16)}" text-anchor="middle" class="jr-mt-label ${cls}">${esc(k)}</text>`;
+        });
+
+        const svg = `
+            <svg class="jr-mt" viewBox="0 0 360 236" role="img"
+                aria-label="${esc(keys[idx])}, ${cur.done} of ${cur.total} lessons done, on the way from ${esc(keys[0])} to ${esc(keys[n - 1])}">
+                <circle cx="262" cy="86" r="64" fill="var(--wash)"/>
+                <path d="M${r1(me[0])} ${r1(me[1])}L${x1} ${y1}V${y0}H${r1(me[0])}z" fill="var(--wash)" opacity=".7"/>
+                <path d="M${r1(me[0])} ${r1(me[1])}L${x1} ${y1}V${y0}" fill="none" stroke="var(--muted)" stroke-width="1.2" stroke-dasharray="4 5"/>
+                <path d="M${x0} ${y0}L${r1(me[0])} ${r1(me[1])}V${y0}z" fill="var(--primary)"/>
+                ${lines}
+                <path d="M8 ${y0}H352" stroke="var(--primary)" stroke-width="1.2" fill="none"/>
+                <path d="M${r1(top[0])} ${r1(top[1])}V${r1(top[1] - 26)}" stroke="var(--muted)" stroke-width="1.2" fill="none"/>
+                <rect x="${r1(top[0] - 5)}" y="${r1(top[1] - 36)}" width="10" height="10" fill="var(--bg)" stroke="var(--muted)" stroke-width="1.5"/>
+                ${gates}${labels}
+                <circle cx="${r1(me[0])}" cy="${r1(me[1])}" r="9.5" fill="var(--accent)" stroke="var(--bg)" stroke-width="2.5"/>
+            </svg>`;
+
+        return `
+            <section class="jr-mountain">
+                ${svg}
+                <p class="jr-mt-sum">${esc(keys[idx])} · ${cur.done} of ${cur.total} ${plural(cur.total, 'lesson')} · ${d.lessonsComplete} of ${d.lessonsTotal} overall</p>
+            </section>
+        `;
+    }
+
+    function consistencyHtml(d) {
+        const cells = [];
+        const today = new Date();
+        for (let i = 29; i >= 0; i--) {
+            const day = new Date(today);
+            day.setDate(day.getDate() - i);
+            const key = day.toISOString().slice(0, 10);
+            const active = (typeof isStreakDay === 'function') && isStreakDay(key);
+            cells.push(`<i class="${active ? 'on' : ''}${i === 0 ? ' is-today' : ''}"></i>`);
+        }
+        const rank = (typeof getRank === 'function') ? getRank() : null;
+        const side = ['Best ' + d.bestStreak + (d.bestStreak === 1 ? ' day' : ' days')]
+            .concat(rank ? ['Rank ' + rank.rank] : []).join(' · ');
+        const imported = (typeof getImportedStreak === 'function') ? getImportedStreak() : 0;
+        return `
+            <section class="jr-consistency">
+                <div class="jr-cline">
+                    <p class="jr-big">${d.streak}<span class="jr-of"> ${d.streak === 1 ? 'day' : 'days'} in a row</span></p>
+                    <span class="jr-cside">${esc(side)}</span>
+                </div>
+                <div class="jr-dgrid" role="img" aria-label="${d.consistency.activeDays} active days of the last ${d.consistency.windowDays}">${cells.join('')}</div>
+                <p class="jr-next">${d.consistency.activeDays} active of the last ${d.consistency.windowDays} days.
+                    <button class="jr-link" data-jr-import-streak="1">${imported ? 'Update imported streak' : 'Import a streak'}</button></p>
+            </section>
+        `;
+    }
+
+    function rowsHtml(d) {
+        const stats = d.candoStats || { verified: 0 };
+        const skillsMeasured = SKILLS.filter(sk => (d.totalSkills[sk.from] || 0) > 0).length + (d.speakingProduction ? 1 : 0);
+        const remaining = MILESTONES.filter(m => !m.test(d)).length;
+        const row = (attrs, label, value, cls) => `
+            <button class="jr-nav-row" type="button" ${attrs}>
+                <span class="jr-nav-label">${label}</span>
+                <span class="jr-nav-value${cls ? ' ' + cls : ''}">${value}</span>
+                <span class="jr-nav-chev" aria-hidden="true"></span>
+            </button>`;
+        return `
+            <div class="jr-nav-rows">
+                ${row('data-jr-cando-open="1"', 'Can-Do Passport', `${stats.verified} verified`, 'is-good')}
+                ${row('data-jr-view="knowledge"', 'Grammar and vocabulary', `${d.grammarDone} / ${d.grammarTotal}`)}
+                ${row('data-jr-view="skills"', 'Skills', `${skillsMeasured} measured`)}
+                ${row('data-jr-view="milestones"', 'Milestones', remaining ? `${remaining} to go` : 'All reached')}
+                ${row('data-jr-view="account"', 'Account and appearance', (typeof Sync !== 'undefined' && Sync.isLoggedIn()) ? 'Signed in' : '')}
+            </div>
+        `;
+    }
+
+    function detailHtml(view, d) {
+        const titles = { knowledge: 'Grammar and vocabulary', skills: 'Skills', milestones: 'Milestones', account: 'Account and appearance' };
+        const body = view === 'knowledge' ? curriculumBlock(d) + grammarBlock(d) + vocabularyBlock(d)
+            : view === 'skills' ? skillsBlock(d) + xpBlock(d)
+            : view === 'milestones' ? milestonesBlock(d)
+            : accountBlock() + appearanceBlock();
+        return `
+            <div class="jr-detail">
+                <button class="jr-back" type="button" data-jr-back="1">← Journey</button>
+                <h2 class="jr-detail-title">${esc(titles[view] || '')}</h2>
+                <div class="jr-grid">${body}</div>
+            </div>
+        `;
+    }
+
+    function _draw() {
         const host = document.getElementById('journey-root');
         if (!host) return;
 
         const d = collect();
 
-        host.innerHTML = `
-            <div class="jr-grid">
-                ${curriculumBlock(d)}
-                ${canDoPortfolioBlock(d)}
-                ${grammarBlock(d)}
-                ${vocabularyBlock(d)}
-                ${skillsBlock(d)}
-                ${xpBlock(d)}
-                ${streakBlock(d)}
-                ${activityBlock(d)}
-                ${milestonesBlock(d)}
-                ${appearanceBlock()}
-                ${accountBlock()}
-            </div>
-        `;
+        host.innerHTML = _view === 'main'
+            ? `${consistencyHtml(d)}${mountainHtml(d)}${rowsHtml(d)}`
+            : detailHtml(_view, d);
         _wireClicks(host);
-        _refreshAccountStatus(host);
+        if (_view === 'account') _refreshAccountStatus(host);
 
-        if (typeof Guide !== 'undefined') {
+        if (_view === 'main' && typeof Guide !== 'undefined') {
             Guide.note('journey-streak', host.querySelector('[data-jr-import-streak]'),
                 'If you\'re coming from another app, you can bring your streak with you.');
         }
 
-        if (typeof Sync !== 'undefined' && !Sync.isLoggedIn() && Sync.isGoogleAuthAvailable && Sync.isGoogleAuthAvailable()) {
+        if (_view === 'account' && typeof Sync !== 'undefined' && !Sync.isLoggedIn() && Sync.isGoogleAuthAvailable && Sync.isGoogleAuthAvailable()) {
             Sync.renderGoogleButton('jr-google-signin-btn', {
                 onStart: () => {
                     const statusEl = host.querySelector('#jr-account-status');
@@ -583,6 +703,12 @@ const Journey = (function () {
                 }
             });
         }
+    }
+
+    // Entering the tab always starts at the top of the page.
+    function render() {
+        _view = 'main';
+        _draw();
     }
 
     async function showCanDoPassportModal(initialLevel) {
@@ -796,7 +922,7 @@ const Journey = (function () {
                 if (typeof importStreak === 'function') {
                     importStreak(0);
                     if (typeof updateXPHeader === 'function') updateXPHeader();
-                    render();
+                    _draw();
                     close();
                 }
             });
@@ -812,7 +938,7 @@ const Journey = (function () {
             if (typeof importStreak === 'function') {
                 importStreak(val);
                 if (typeof updateXPHeader === 'function') updateXPHeader();
-                render();
+                _draw();
                 close();
             } else {
                 if (statusEl) statusEl.textContent = 'Unable to save streak.';
@@ -841,6 +967,10 @@ const Journey = (function () {
         host.dataset.wired = '1';
 
         host.addEventListener('click', e => {
+            const view = e.target.closest('[data-jr-view]');
+            if (view) { _view = view.getAttribute('data-jr-view'); _draw(); window.scrollTo(0, 0); return; }
+            if (e.target.closest('[data-jr-back]')) { _view = 'main'; _draw(); window.scrollTo(0, 0); return; }
+
             const milestonesToggle = e.target.closest('[data-jr-milestones-toggle]');
             if (milestonesToggle) {
                 const upcomingEl = document.getElementById('jr-milestones-upcoming');
@@ -930,7 +1060,7 @@ const Journey = (function () {
 
             if (e.target.closest('[data-sync-logout]')) {
                 Sync.logout();
-                render();
+                _draw();
                 return;
             }
 

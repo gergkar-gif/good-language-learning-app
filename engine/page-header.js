@@ -19,32 +19,32 @@ const PAGE_HEADERS = {
     home: {
         title: () => (typeof Home !== 'undefined') ? Home.greeting() : 'Home',
         subtitle: 'Welcome back to your language journey.',
-        illustration: 'threshold'
+        illustration: 'home'
     },
     learn: {
         title: 'Lessons',
         subtitle: () => `Your ${(typeof Lang !== 'undefined') ? Lang.name() : 'Spanish'} course.`,
-        illustration: 'path'
+        illustration: 'lessons'
     },
     reader: {
         title: 'Library',
         subtitle: 'Your reading rooms.',
-        illustration: 'horizon'
+        illustration: 'library'
     },
     drills: {
         title: 'Workshop',
         subtitle: 'Focused practice.',
-        illustration: 'balance'
+        illustration: 'workshop'
     },
     review: {
         title: 'Decks',
         subtitle: 'Spaced repetition.',
-        illustration: 'stack'
+        illustration: 'decks'
     },
     journey: {
         title: 'My Journey',
         subtitle: 'How far you have come.',
-        illustration: 'ascent'
+        illustration: 'journey'
     }
 };
 
@@ -54,7 +54,7 @@ const PageHeader = {
         const host = document.getElementById('page-header');
         if (!host || !config) return;
 
-        const art = Art.section(config.illustration);
+        const art = Art.heroSvg(config.illustration);
         const actions = (config.actions || []).filter(Boolean);
         const dark = (typeof Theme !== 'undefined' && typeof Theme.isDark === 'function') ? Theme.isDark() : false;
         const themeIcon = (typeof Art !== 'undefined' && typeof Art.icon === 'function')
@@ -71,12 +71,7 @@ const PageHeader = {
                 <p class="page-header-sub">${UI.escape(subtitle || '')}</p>
             </div>
             ${allActions.length ? `<div class="page-header-actions">${allActions.join('')}</div>` : ''}
-            ${art ? `
-                <svg class="page-header-art" viewBox="0 0 320 100" preserveAspectRatio="xMidYMid meet"
-                    role="presentation" aria-hidden="true" focusable="false">
-                    ${art}
-                </svg>
-            ` : ''}
+            ${art}
         `;
 
         // Restart the entrance animation on every change of section.

@@ -319,6 +319,11 @@ const DeckBlast = (function () {
         }
     }
 
+    // Theme colours for the canvas sprites, read from the CSS tokens.
+    function tok(name, fallback) {
+        return getComputedStyle(document.documentElement).getPropertyValue(name).trim() || fallback;
+    }
+
     function _renderPolyToContext(ctx, half, verts, isWrongFlash) {
         ctx.save();
         ctx.translate(half, half);
@@ -330,13 +335,14 @@ const DeckBlast = (function () {
         }
         ctx.closePath();
 
+        // Fills follow the theme (cream targets on the sand field, brick on a miss).
         if (isWrongFlash) {
-            ctx.fillStyle = '#FAEDE9';
-            ctx.strokeStyle = '#B23A22';
+            ctx.fillStyle = tok('--danger-bg', '#F6E4DF');
+            ctx.strokeStyle = tok('--danger', '#B23A22');
             ctx.lineWidth = 2.5;
         } else {
-            ctx.fillStyle = '#FFFFFF';
-            ctx.strokeStyle = '#102A47';
+            ctx.fillStyle = tok('--bg', '#F5F1E8');
+            ctx.strokeStyle = tok('--primary', '#102A47');
             ctx.lineWidth = 2.0;
         }
         ctx.fill();
@@ -357,7 +363,7 @@ const DeckBlast = (function () {
     function _renderTextToContext(ctx, half, text, isWrongFlash) {
         ctx.save();
         ctx.translate(half, half);
-        ctx.fillStyle = isWrongFlash ? '#B23A22' : '#102A47';
+        ctx.fillStyle = isWrongFlash ? tok('--danger', '#B23A22') : tok('--text', '#102A47');
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
 
