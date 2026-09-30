@@ -168,20 +168,24 @@ Every colour has one meaning, everywhere in the app. State is never carried by c
 
 Open rows on cream separated by hairlines; whitespace is the primary structure. Spacing follows a 4px base (4, 8, 12, 16, 24, 32, 48, 64). Page gutter 20px on phone, 56px (max width 940px) on desktop.
 
-- **Phone (up to 639px)** is the primary device. **Bottom navigation** (70px, heavy 3px navy top rule). This changes the current app, which uses a top bar on phones.
+- **Phone (up to 639px)** is the primary device. **Bottom navigation** (62px, a 1px navy hairline on top, 26px icons, 10.5px labels in weight 500). Everything on phone runs one step lighter than desktop; see The Phone-Weight Rule below.
 - **Tablet (640 to 1023px)**: the phone layout as a centred column, 640px wide, with the bottom nav limited to 560px.
 - **Desktop (1024px and up)**: a 210px sidebar with the Parlour wordmark and tagline, a 3px navy edge, and the six sections.
 - **Focus screens hide navigation entirely**: lessons and their exercises, the level test, Speaking and Writing Studios, drillers, review, and sheets. The only way out is the close button.
 - **Desktop specifics**: the unit path keeps phone geometry (460px wide) so its line never reaches the labels; focus screens sit in a centred 720px column; the streak line and grid stay 30em wide.
-- **Page header**: serif title top-left, one-line lede (max 11.5em) beneath, the hero at top-right. Header minimum height 200px on phone.
-- **Heroes** are 252 x 184 (20% wider and 20% shorter than the first attempt), sitting 36px from the top, anchored right; 380 x 277 on desktop (the header is 330px tall there so the hero never overlaps content below). Keep title and lede clear of the artwork (shorten diagonals and axes rather than letting them run under text).
+- **Page header**: serif title top-left, one-line lede (max 11.5em) beneath, the hero at top-right. Header minimum height 150px on phone and tablet, 236px on desktop.
+- **Heroes** are 176 x 129 on phone and tablet, sitting 38px from the top, anchored right; 266 x 194 on desktop. (They were 252 x 184 and 380 x 277 at first; the user found them overwhelming and they were cut by 30% on 2026-09-30.) Keep title and lede clear of the artwork (shorten diagonals and axes rather than letting them run under text).
+
+### Named Rules
+**The Phone-Weight Rule.** On phone (up to 639px) everything is one step lighter than desktop, because the same strokes read heavier on a small screen: 3px and 2px rules become 1.5px, inset outlines drop by half a pixel (2px to 1.5px, 1.5px to 1px), weights 600 to 800 become 500, headings are regular, and the navy fills in illustrations, marks and thumbnails are mixed 80% with the background. This lives in the generated block at the end of `styles/overhaul.css` (`PHONE: LIGHTER`); a new heavy style needs its own light phone value.
 
 ## Elevation & Depth
 
-Flat by default. `--shadow` exists but is unused. Depth comes from hairlines, a heavy 3px navy rule (navigation, section starts), sand discs behind content, and scale contrast. Sheets are separated from the page they sit over by dimming the page to 35% and giving the sheet a 3px navy top rule.
+Flat by default. `--shadow` exists but is unused. Depth comes from hairlines, a heavy 3px navy rule on desktop (sidebar edge, section starts; 1.5px on phone), sand discs behind content, and scale contrast. Sheets are separated from the page they sit over by dimming the page to 35% and giving the sheet a 3px navy top rule.
 
 ### Named Rules
 **The Flat-By-Default Rule.** No resting shadows. Hover changes a hairline to navy or fills a control, never lifts it.
+**The Mouse-Only Hover Rule.** Hover styles apply only on devices that can hover (`@media (hover: hover)`). On a phone a hover state sticks to the last thing tapped, so a filled hover would leave the next question's button or card coloured.
 
 ## Shapes
 
@@ -223,10 +227,17 @@ Tabs are type on a rule: serif labels on a 1px hairline, the selected one navy w
 
 ### Navigation
 - Six sections: Home, Lessons, Library, Workshop, Decks, Journey. Each has its own icon at 30px, a small composition of navy shapes plus one accent: Home the door, Lessons a half-disc with lines rising to a point, Library bars with a circle, Workshop a pivoting beam with a square, Decks layered cards with a coloured edge, Journey a path to a square.
-- Only the active or hovered item shows its accent in vermilion; the rest are single-colour. The active item takes a vermilion bar on the rule (top on phone, left 6px on desktop) and its accent nudges 2px. Labels 11px (phone) or 15px (desktop).
+- Only the active or hovered item shows its accent in vermilion; the rest are single-colour. The active item takes a vermilion bar on the rule (2px on top on phone, 6px at the left on desktop) and its accent nudges 2px. Labels 10.5px (phone) or 15px (desktop).
 
 ### Rows
-Open rows on 1px hairlines: serif name, muted description, a figure only when it decides whether to open the row (due counts in ochre), and a 72px two-shape thumbnail on the right. No card frames, no shadows. Level rows lead with the level mark, the code in serif, the level name, a track and a count ("Complete" in pine at 100%). Story rows lead with the generated cover, then a "Part n" label, title, author or unit, and a meta line: "Within reach" (ochre), "Quiz 4/5" (pine), "% familiar" (grey); a green tick when read; a track with a vermilion marker and percent when in progress.
+Open rows on 1px hairlines: serif name, muted description, a figure only when it decides whether to open the row (due counts in ochre), and a 72px two-shape thumbnail on the right. No card frames, no shadows. Level rows lead with the level mark, the code in serif, the level name, a track and a count ("Complete" in pine at 100%).
+
+**Library exceptions (the user's call, 2026-09-30).** Three Library pieces keep their earlier design instead of open rows:
+- **Stories** are a grid of cover tiles (cover on sand, title beneath), because shelves hold dozens of stories and a grid scans faster than rows. Only the cover art is new: the generated story mark, pine once read.
+- **Continue reading** keeps its boxed card with a vermilion side bar and a progress track.
+- **Recommended for you** keeps its cards with tinted "Comfortable" and "Challenging" badges and a Read now button.
+
+Don't restyle these toward rows without asking.
 
 ### Progress tracks
 A 3px hairline track with a navy fill and a vermilion marker at the current position. At 100% the fill is pine and the marker disappears. Score and skill tracks use a navy marker.
@@ -243,6 +254,8 @@ A 3px hairline track with a navy fill and a vermilion marker at the current posi
 - **Match pairs:** two columns of options; matched pairs pine.
 - **Dialogue:** speaker label in small caps sans, line in serif; the learner's lines indented; reply options as answer options.
 - **Keyword chips** (writing, tests): outlined rectangles, turning pine with a tick as the learner uses each word. Word counter below the field.
+- **Studio topic lists** (Speaking and Writing, every tab): topics sit open on the page with space between them and a navy rule above the list: no outline, box or side line around a topic. Titles in regular serif.
+- **Review card swipe** (Decks, phone): dragging the card shows the rating it will give: a brick outline and tint with "Again" to the left, a pine outline and tint with "Good" to the right. The cue clears when the next card appears.
 - **Learner text feedback:** the learner's version struck through in brick, the correction in pine serif, a one-line reason in muted sans; marks inside running text are dashed brick underlines.
 
 ### Switches
@@ -264,7 +277,7 @@ A switch is a 46 x 24 rectangle (2px radius) with a 1.5px navy outline and a 16p
 Deck words carry a small status square: hollow ochre for new, half navy for learning, solid pine for mastered, always with the word beside it. Search matches are underlined with a sand highlight; a search with no results says what was searched and offers to clear it.
 
 ### Notes, support and states
-- **First-time note:** a margin note between hairlines: a 10px navy square, one italic serif sentence in the app's voice (understated, slightly wry), and a "Got it" text action. Never a modal, never a coloured card.
+- **First-time note:** a small flat sand rectangle under a 2px navy top rule, no pointer arrow, no rounded corners; one italic serif sentence in the app's voice (understated, slightly wry; the user asked to keep the italics) and a muted × to close. Never a modal, never vermilion.
 - **Support sheets** (report a problem, back up your progress) follow the sheet pattern. The report sheet names what it is about (story and paragraph).
 - **Offline and load-failure states** are full pages with a small hero (a dashed route to a hollow square for offline, a crossed frame for failure), a title, one muted reassurance line (progress is safe) and Try again plus an escape.
 
