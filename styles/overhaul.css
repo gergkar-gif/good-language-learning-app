@@ -1636,3 +1636,25 @@ body:has(.dkb-game) .content, body:has(.dkb-lobby) .content, body:has(.dkb-done)
 .diag-tier-summary-item.passed, .diag-tier-summary-item.developing { border-left: 0; border-top: 0; }
 .diag-ts-badge, .diag-tier-summary-item.passed .diag-ts-badge { background: none; box-shadow: none; padding: 0; text-transform: none; letter-spacing: 0; font-size: 13px; color: var(--muted); border: 0; }
 .diag-tier-summary-item.passed .diag-ts-badge { color: var(--success); }
+
+/* ============================================
+   REVIEW RESULTS, BLAST RESULTS, NEXT-STEP BLOCKS
+   Completion is pine, like the lesson-complete screen: left-aligned, a large
+   serif line, figures under a navy rule.
+============================================ */
+.review-summary { text-align: left; }
+.review-summary-eyebrow { color: var(--success); text-transform: none; letter-spacing: .02em; font-size: 14px; font-weight: 600; }
+.review-summary-title { font: 400 clamp(2.2rem, 10vw, 3rem)/1.05 var(--font-display); letter-spacing: -0.02em; color: var(--text); }
+.review-summary-stats { border-top: 1px solid var(--primary); padding-top: 18px; justify-content: flex-start; }
+.review-summary-stat, .review-summary-stat * { text-align: left; }
+.review-summary-streak { color: var(--muted); }
+.review-summary-milestone, .rank-up-card { background: none; border-radius: 0; box-shadow: none; }
+.rank-up-card-eyebrow { color: var(--success); text-transform: none; letter-spacing: .02em; font-weight: 600; }
+.rank-up-card-title { font-family: var(--font-display); font-weight: 400; }
+.wk-next-action { background: none; border: 0; border-top: 1.5px solid var(--primary); border-radius: 0; box-shadow: none; padding: 16px 0 0; }
+.wk-next-eyebrow { text-transform: none; letter-spacing: .02em; color: var(--muted); font-weight: 600; font-size: 13px; }
+.wk-next-title { font: 400 1.25rem/1.25 var(--font-display); color: var(--text); }
+.wk-next-primary-btn, .wk-next-btn { border-radius: var(--radius-sm); }
+.dkb-done-card { border-top-color: var(--success); }
+.dkb-done-kicker, .dkb-done-score-label { color: var(--success); text-transform: none; letter-spacing: .02em; font-weight: 600; }
+.dkb-done-score { font-size: clamp(2.6rem, 12vw, 3.4rem); color: var(--text); }
