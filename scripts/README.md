@@ -16,6 +16,7 @@ Run everything from the repository root (`python scripts/<name>.py`).
 | `triage-teaching-order.py`, `triage-teaching-order-hu.py` | Split the audit's teaching-order flags into real gaps versus noise. |
 | `audit-reading-quality.py` | Paragraph typing, dialogue speakers and other reading-quality rules. |
 | `audit_exercise_metadata.py` | Per-course, per-level report of missing `category` / `teaches`. |
+| `audit-reader-coverage.js` | Runs every story word through the Reader's own `Lexicon.lookup()` (headless) and reports the words that would show "Not in the dictionary yet", plus any that make the lookup throw. `node scripts/audit-reader-coverage.js [hu\|es-es\|es-latam\|all] [--out report.json]`. Takes seconds. |
 
 ## Generated indexes (also rebuilt by CI, `sync-generated-content.yml`)
 
