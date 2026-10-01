@@ -10,6 +10,7 @@ global.document = {
     querySelectorAll: () => [],
     getElementById: (id) => ({
         style: {},
+        dataset: {},
         classList: { add: () => {}, remove: () => {}, contains: () => false, toggle: () => {} },
         querySelectorAll: () => [],
         querySelector: () => null,

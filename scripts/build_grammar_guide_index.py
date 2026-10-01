@@ -23,17 +23,96 @@ target-language forms from the *italicised* terms in its explanation
 (house style italicises every embedded target-language word). Full prose
 and examples are left out on purpose, or "verb" would match everything.
 
+A topic's own words only find it in the language it happens to use, so
+GRAMMAR_TERM_SYNONYMS bridges grammar terms: a topic that mentions any term
+of a group also gets the rest of the group in its keywords ("subjunctive"
+topics become findable by "subjuntivo" and the other way round).
+
 Usage:
     python scripts/build_grammar_guide_index.py [lang ...]   (default: es hu)
 """
 import json
 import re
 import sys
+import unicodedata
 from pathlib import Path
 
 # Word- or phrase-sized italics only; italicised whole sentences add bulk
 # to the index without making anything findable that its words don't.
 ITALIC = re.compile(r"\*([^*\n]{1,30})\*")
+
+# Per language family (es-es and es-latam share "es"). A term matches at the
+# start of a word, accent- and case-insensitively, so "pronoun" also covers
+# "pronouns". Keep every group to terms that mean the same thing.
+GRAMMAR_TERM_SYNONYMS = {
+    "es": [
+        ["subjunctive", "subjuntivo"],
+        ["preterite", "pretérito indefinido", "pretérito perfecto simple", "simple past"],
+        ["present perfect", "pretérito perfecto compuesto"],
+        ["imperfect", "imperfecto"],
+        ["pluperfect", "past perfect", "pluscuamperfecto"],
+        ["conditional", "condicional"],
+        ["future", "futuro"],
+        ["imperative", "imperativo"],
+        ["direct object", "objeto directo", "complemento directo"],
+        ["indirect object", "objeto indirecto", "complemento indirecto"],
+        ["reflexive", "reflexivo"],
+        ["gerund", "gerundio"],
+        ["participle", "participio"],
+        ["passive", "pasiva"],
+        ["relative pronoun", "pronombre relativo"],
+        ["comparative", "comparativo"],
+        ["superlative", "superlativo"],
+        ["infinitive", "infinitivo"],
+        ["article", "artículo"],
+        ["pronoun", "pronombre"],
+        ["adjective", "adjetivo"],
+        ["adverb", "adverbio"],
+        ["preposition", "preposición"],
+        ["possessive", "posesivo"],
+        ["demonstrative", "demostrativo"],
+    ],
+    "hu": [
+        ["accusative", "tárgyeset"],
+        ["dative", "részes eset"],
+        ["possessive", "birtokos"],
+        ["imperative", "felszólító mód"],
+        ["conditional", "feltételes mód"],
+        ["past tense", "múlt idő"],
+        ["future", "jövő idő"],
+        ["present tense", "jelen idő"],
+        ["definite conjugation", "határozott ragozás", "tárgyas ragozás"],
+        ["indefinite conjugation", "határozatlan ragozás", "alanyi ragozás"],
+        ["preverb", "verbal prefix", "igekötő"],
+        ["postposition", "névutó"],
+        ["plural", "többes szám"],
+        ["vowel harmony", "hangrendi illeszkedés"],
+        ["infinitive", "főnévi igenév"],
+        ["participle", "melléknévi igenév"],
+        ["adverbial participle", "határozói igenév"],
+        ["causative", "műveltető"],
+        ["comparative", "középfok"],
+        ["superlative", "felsőfok"],
+        ["adjective", "melléknév"],
+        ["pronoun", "névmás"],
+        ["article", "névelő"],
+    ],
+}
+
+
+def _norm(text):
+    text = unicodedata.normalize("NFD", text.lower())
+    text = "".join(c for c in text if unicodedata.category(c) != "Mn")
+    return " ".join(re.sub(r"[^\w\s]", " ", text).split())
+
+
+def add_term_synonyms(lang, title, keywords):
+    haystack = " " + _norm(title + " " + keywords)
+    extra = []
+    for group in GRAMMAR_TERM_SYNONYMS.get(lang.split("-")[0], []):
+        if any(" " + _norm(t) in haystack for t in group):
+            extra += [t for t in group if " " + _norm(t) not in haystack]
+    return " · ".join([keywords] + extra if keywords else extra)
 
 
 def topic_keywords(grammar):
@@ -101,7 +180,7 @@ def build_index(lang, curriculum):
                         "unitId": unit["id"],
                         "unitTitle": unit.get("title", ""),
                         "title": title,
-                        "keywords": keywords
+                        "keywords": add_term_synonyms(lang, title, keywords)
                     })
 
     return index, stats

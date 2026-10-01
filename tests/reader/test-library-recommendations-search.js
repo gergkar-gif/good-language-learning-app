@@ -48,6 +48,7 @@ class MockElement {
     setAttribute(k, v) { this.attributes[k] = String(v); }
     getAttribute(k) { return this.attributes[k] !== undefined ? this.attributes[k] : null; }
     removeAttribute(k) { delete this.attributes[k]; }
+    hasAttribute(k) { return this.attributes[k] !== undefined; }
 
     get classList() {
         const self = this;
@@ -94,6 +95,11 @@ class MockElement {
     }
 
     querySelectorAll(selector) {
+        if (selector.includes(',')) {
+            const seen = new Set();
+            return selector.split(',').flatMap(s => this.querySelectorAll(s.trim()))
+                .filter(el => !seen.has(el) && seen.add(el));
+        }
         const results = [];
         const match = (el) => {
             if (selector.startsWith('.')) {
@@ -141,7 +147,7 @@ global.document = {
 const Reader = require('../../engine/reader.js');
 
 // Load Spanish manifest for realistic tests
-const esManifestPath = path.resolve(__dirname, '../../content/es/stories/manifest.json');
+const esManifestPath = path.resolve(__dirname, '../../content/es-es/stories/manifest.json');
 const manifestData = JSON.parse(fs.readFileSync(esManifestPath, 'utf8'));
 assert(Array.isArray(manifestData.stories), 'Manifest must contain stories array');
 Reader.stories = manifestData.stories;
