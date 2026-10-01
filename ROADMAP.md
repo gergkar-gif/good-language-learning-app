@@ -31,6 +31,8 @@ Completed work is archived out to `ACHIEVED.md`.
 
 115. **Reader coverage follow-ups (added 2026-10-01).** (1) Run `scripts/audit-reader-coverage.js` in CI as a report, not a gate, so a content change that adds many unreadable words shows up. (2) `imports/dictionary/coverage-ignore.json` is shared by Hungarian and Spanish; split it per language if a word ever needs ignoring in only one. (3) The weekly gloss review uses the desktop app's default model, because the scheduling tool has no model setting; set the app default to Opus 5.5 (or check the task's own settings) if that matters.
 
+117. **One correct answer per choice exercise: B1 and above (added 2026-10-01).** A1-A2 were audited (ACHIEVED.md, "One correct answer per choice exercise, A1-A2"). B1-C1 hold about 8,000 more choice exercises, not yet checked. The cheap checks are reusable: exact duplicate options, `correct` that isn't a single index, and the dictionary synonym check; the rest needs reading, best limited to the risky question types ("Which sentence is correct?", "Which reply fits…", "describes a completed past action"-style tense questions, which proved the most common source of two right answers).
+
 ---
 
 ## 2. Future Feature Ideas
