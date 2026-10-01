@@ -2471,7 +2471,9 @@ const SpanishMorphology = (function () {
      * resolves as a real verb — shaped exactly like a generated/indexes/
      * verb-index.json entry, so Lexicon.js's existing describeVerb()/add()
      * handling needs no changes to consume it. */
-    function analyze(word, dictionary) {
+    // extraVerbs: lemma -> verb sense for verbs whose headword is already taken by
+    // another part of speech in `dictionary` (circular: adjective and verb).
+    function analyze(word, dictionary, extraVerbs) {
         if (!word || !dictionary) return [];
         const form = word.toLowerCase();
         const results = [];
@@ -2479,7 +2481,7 @@ const SpanishMorphology = (function () {
         candidateLemmas(form).forEach(lemma => {
             if (seen.has(lemma)) return;
             const entry = dictionary[lemma];
-            const isVerb = entry && (entry.type === 'verb' || entry.type === 'v');
+            const isVerb = (entry && (entry.type === 'verb' || entry.type === 'v')) || (extraVerbs && extraVerbs[lemma]);
             if (!isVerb && !IRREGULAR_VERBS[lemma] && !IRREGULAR_VERBS[lemma.replace(/se$/, '')]) return;
             seen.add(lemma);
             results.push(analysisFor(lemma, form, dictionary));

@@ -44,6 +44,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 IGNORE = ROOT / 'imports/dictionary/coverage-ignore.json'
+VERB_HOMOGRAPHS = ROOT / 'imports/dictionary/spanish-verb-homographs.json'
 DICTS = {
     'hu': ROOT / 'imports/dictionary/hungarian-en.json',
     'es': ROOT / 'imports/dictionary/spanish-en.json',
@@ -231,6 +232,7 @@ def merge(lang):
     raw = DICTS[lang].read_bytes().decode('utf-8')
     dictionary = json.loads(raw)
     added = skipped = conflicts = 0
+    homographs = {}   # Spanish verbs whose headword is already another part of speech
     for lemma, senses in additions.items():
         current = dictionary.get(lemma)
         if lang == 'hu':
@@ -245,12 +247,17 @@ def merge(lang):
             if current is None:
                 dictionary[lemma] = senses[0]   # Spanish entries hold one sense
                 added += 1
+            elif senses[0]['type'] == 'verb' and current.get('type') != 'verb':
+                homographs[lemma] = senses[0]   # kept in a sidecar the Reader reads (a dictionary entry holds one sense)
+                added += 1
             elif current.get('type') != senses[0]['type']:
                 conflicts += 1
                 print('  conflict (kept the existing %s entry): %s -> %s' % (current.get('type'), lemma, senses[0]['type']))
             else:
                 skipped += 1
     DICTS[lang].write_bytes(dump_like(dictionary, raw).encode('utf-8'))
+    if lang == 'es':
+        VERB_HOMOGRAPHS.write_text(json.dumps(dict(sorted(homographs.items())), ensure_ascii=False, indent=1) + '\n', encoding='utf-8')
     print('%s dictionary: %d added, %d already covered, %d conflicts' % (lang, added, skipped, conflicts))
 
 

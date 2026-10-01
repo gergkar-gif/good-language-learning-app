@@ -27,6 +27,7 @@ const Lexicon = (function () {
     let _verbIndex = null;
     let _wordIndex = null;
     let _dictionary = null;
+    let _verbExtra = null;   // verb senses for headwords the dictionary holds as another part of speech
     let _frequency = null;   // lemma -> rank (lower is more common)
     let _loadPromise = null;
     let _lang = null;        // language this load() call fetched data for
@@ -74,19 +75,22 @@ const Lexicon = (function () {
                 Promise.resolve({}),   // no separate verb index — see file header
                 fetch(Lang.content('indexes/word-index.json')).then(r => r.ok ? r.json() : {}),
                 fetch('imports/dictionary/hungarian-en.json').then(r => r.ok ? r.json() : {}),
-                fetch(Lang.content('indexes/frequency.json')).then(r => r.ok ? r.json() : [])
+                fetch(Lang.content('indexes/frequency.json')).then(r => r.ok ? r.json() : []),
+                Promise.resolve({})
             ]
             : [
                 fetch('generated/indexes/verb-index.json').then(r => r.ok ? r.json() : {}),
                 fetch('generated/indexes/word-index.json').then(r => r.ok ? r.json() : {}),
                 fetch('imports/dictionary/spanish-en.json').then(r => r.ok ? r.json() : {}),
-                fetch('generated/indexes/frequency.json').then(r => r.ok ? r.json() : [])
+                fetch('generated/indexes/frequency.json').then(r => r.ok ? r.json() : []),
+                fetch('imports/dictionary/spanish-verb-homographs.json').then(r => r.ok ? r.json() : {})
             ];
 
         // Prototype-less copies: a tapped word like "constructor" must not
         // resolve to Object.prototype.constructor (a function) and throw.
         const bare = obj => Object.assign(Object.create(null), obj);
-        _loadPromise = Promise.all(sources).then(([verbs, words, dict, freq]) => {
+        _loadPromise = Promise.all(sources).then(([verbs, words, dict, freq, extraVerbs]) => {
+            _verbExtra = bare(extraVerbs);
             _verbIndex = bare(verbs);
             _wordIndex = bare(words);
             _dictionary = bare(dict);
@@ -96,6 +100,7 @@ const Lexicon = (function () {
             _verbIndex = _verbIndex || {};
             _wordIndex = _wordIndex || {};
             _dictionary = _dictionary || {};
+            _verbExtra = _verbExtra || {};
             _frequency = _frequency || new Map();
         });
 
@@ -411,7 +416,8 @@ const Lexicon = (function () {
             if (!_dictionary[lemma] && /(ar|er|ir)se$/.test(lemma) && _dictionary[lemma.slice(0, -2)]) {
                 lemma = lemma.slice(0, -2);
             }
-            const entry = _dictionary[lemma];
+            // a verb reading of a headword the dictionary files under another part of speech
+            const entry = (pos === 'verb' && _verbExtra && _verbExtra[lemma]) || _dictionary[lemma];
             const dedupeKey = lemma + '|' + (analysis || '');
             if (seen.has(dedupeKey)) return;
             seen.add(dedupeKey);
@@ -434,6 +440,8 @@ const Lexicon = (function () {
         }
         // the word is already a dictionary headword
         if (_dictionary[key]) add(key, null, '');
+        // ...and its verb reading when the headword is also a verb (circular)
+        if (_verbExtra && _verbExtra[key]) add(key, 'verb', 'Infinitive');
         // inflected noun / adjective / adverb
         (_wordIndex[key] || []).forEach(a => add(a.lemma, a.pos, describeWord(key, a.lemma)));
         // conjugated verb
@@ -455,7 +463,7 @@ const Lexicon = (function () {
                 } else if (typeof SpanishMorphology !== 'undefined') {
                     // a verb outside the verb index (gerund or infinitive of
                     // any dictionary verb) still resolves by rule
-                    SpanishMorphology.analyze(stem, _dictionary)
+                    SpanishMorphology.analyze(stem, _dictionary, _verbExtra)
                         .forEach(a => add(a.lemma, 'verb', describeVerb(a) + ' + pronoun'));
                 }
             }
@@ -468,7 +476,7 @@ const Lexicon = (function () {
         // that's actually in the dictionary still resolves, same idea as
         // HungarianMorphology above.
         if (!readings.length && typeof SpanishMorphology !== 'undefined') {
-            SpanishMorphology.analyze(key, _dictionary).forEach(a => add(a.lemma, 'verb', describeVerb(a)));
+            SpanishMorphology.analyze(key, _dictionary, _verbExtra).forEach(a => add(a.lemma, 'verb', describeVerb(a)));
         }
 
         // Same idea for noun/adjective plural and gender forms: word-index
@@ -498,7 +506,7 @@ const Lexicon = (function () {
             const base = _verbIndex[pg.masculine] || [];
             let parts = base.filter(a => a.form === 'participle');
             if (!parts.length && typeof SpanishMorphology !== 'undefined') {
-                parts = SpanishMorphology.analyze(pg.masculine, _dictionary).filter(a => a.form === 'participle');
+                parts = SpanishMorphology.analyze(pg.masculine, _dictionary, _verbExtra).filter(a => a.form === 'participle');
             }
             parts.forEach(a => add(a.lemma, 'verb', 'Past participle (' + pg.label + ')'));
         }
