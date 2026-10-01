@@ -2,7 +2,7 @@
 // Parlour Service Worker (Offline Support & PWA App Shell)
 // ==========================================================
 
-const CACHE_VERSION = 'v2026-10-01i';
+const CACHE_VERSION = 'v2026-10-02a';
 const SHELL_CACHE_NAME = `parlour-shell-${CACHE_VERSION}`;
 const CONTENT_CACHE_NAME = `parlour-content-${CACHE_VERSION}`;
 
@@ -30,6 +30,7 @@ const PRECACHE_ASSETS = [
     'engine/morphology/hungarian.js',
     'engine/morphology/spanish.js',
     'engine/lexicon.js',
+    'engine/gloss-ai.js',
     'engine/srs.js',
     'engine/content-loader.js',
     'engine/ui.js',

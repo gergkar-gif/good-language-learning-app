@@ -321,6 +321,39 @@ function _renderWordReadings(tappedWord, readings, phrase, ladder, looksLikeName
     body.innerHTML = html;
 }
 
+// The sentence a tapped word sits in, for the gloss service (a few words of
+// context change which meaning a model picks).
+function _sentenceAround(text, word) {
+    const flat = String(text || '').replace(/\s+/g, ' ');
+    const at = flat.toLowerCase().indexOf(String(word).toLowerCase());
+    if (at === -1) return flat.slice(0, 300);
+    let start = at, end = at + word.length;
+    while (start > 0 && !/[.!?…]/.test(flat[start - 1])) start--;
+    while (end < flat.length && !/[.!?…]/.test(flat[end])) end++;
+    return flat.slice(start, Math.min(end + 1, flat.length)).trim().slice(0, 300);
+}
+
+// Machine-suggested gloss (engine/gloss-ai.js) shown under "Not in the
+// dictionary yet". Labelled as a suggestion, never saved to a deck, and a
+// stale-tap guard keeps a slow answer from landing on the next word's popup.
+async function _showAiGloss(word, contextText, tapId) {
+    if (typeof GlossAI === 'undefined' || !GlossAI.available()) return;
+    const body = document.getElementById('popup-body');
+    const analysisEl = document.getElementById('popup-analysis');
+    const empty = '<p class="wp-empty">Not in the dictionary yet.</p>';
+    body.innerHTML = empty + '<p class="wp-ai-note">Looking for a suggestion…</p>';
+
+    const answer = await GlossAI.lookup(word, _sentenceAround(contextText, word), Lang.code());
+    if (tapId !== _wordPopupTapId) return;
+    if (!answer || !answer.found) { body.innerHTML = empty; return; }
+
+    analysisEl.textContent = 'machine suggestion';
+    body.innerHTML =
+        '<p class="wp-meaning">' + Reader.escapeHtml(answer.gloss) + '</p>' +
+        '<p class="wp-lemma">from <strong>' + Reader.escapeHtml(answer.lemma) + '</strong> · ' + Reader.escapeHtml(answer.pos) + '</p>' +
+        '<p class="wp-ai-note">A machine suggestion, not from the dictionary. It may be wrong.</p>';
+}
+
 // Identifies which call to showWord() is the most recent one, so an async
 // step resuming after the learner has since tapped another word (or a
 // phrase match has legitimately overwritten #popup-word's own text — see
@@ -332,7 +365,7 @@ function _renderWordReadings(tappedWord, readings, phrase, ladder, looksLikeName
 // own display purposes mid-flow.
 let _wordPopupTapId = 0;
 
-async function showWord(spanish, contextTokens, tokenIndex, looksLikeName) {
+async function showWord(spanish, contextTokens, tokenIndex, looksLikeName, contextText) {
     const tapId = ++_wordPopupTapId;
     const popup = _ensureWordPopup();
     document.getElementById('popup-word').textContent = spanish;
@@ -351,6 +384,11 @@ async function showWord(spanish, contextTokens, tokenIndex, looksLikeName) {
     const lookup = Lexicon.lookup(spanish);
     const readings = lookup.readings;
     _renderWordReadings(spanish, readings, phrase, lookup.ladder, !!looksLikeName);
+    // Nothing from the dictionary or the rules, and not a name: ask the gloss
+    // service for a machine suggestion rather than leaving the learner empty-handed.
+    if (!readings.length && !phrase && !looksLikeName) {
+        _showAiGloss(spanish, contextText, tapId);
+    }
 
     // The deck stores dictionary forms, so a tapped "días" is saved as "día".
     currentWord = readings.length
@@ -2596,7 +2634,8 @@ document.addEventListener('click', function (e) {
         wordEl.textContent.trim(),
         siblings.map(el => el.textContent.trim()),
         siblings.indexOf(wordEl),
-        _isMidSentenceCapital(wordEl)
+        _isMidSentenceCapital(wordEl),
+        scope.textContent
     );
 });
 

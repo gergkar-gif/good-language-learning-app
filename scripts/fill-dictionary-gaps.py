@@ -24,6 +24,15 @@ reply back into the dictionary.
         re-running import_dictionary.py / import_hu_dictionary.py, which
         rebuild the dictionary from Wiktionary and would drop the additions.
 
+  4. pull-ai  python scripts/fill-dictionary-gaps.py pull-ai hu
+        Downloads the answers the Reader's AI fallback (cloudflare-worker/
+        gloss-worker.js) has cached for words learners actually tapped, and
+        writes the ones still missing from the dictionary as
+        imports/dictionary/gap-batches/<lang>-ai-cache.reply.txt, in the reply
+        format. Skim it, delete lines you don't trust, then run `import` on it.
+        Needs GLOSS_EXPORT_TOKEN (the Worker's EXPORT_TOKEN secret) in the
+        environment; GLOSS_EXPORT_URL overrides the default Worker address.
+
 After an import, run the audit again: the remaining list shrinks, and words
 whose base form was added start resolving in every inflected form too.
 
@@ -35,11 +44,15 @@ Hungarian names are stored as nouns so case endings still resolve.
 """
 import argparse
 import json
+import os
 import re
 import subprocess
 import sys
 import tempfile
 import unicodedata
+import urllib.error
+import urllib.parse
+import urllib.request
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -194,7 +207,7 @@ def parse_reply(text, lang):
             # a gloss that is just the capitalised name itself ("Ferenc", "NATO") gets a small
             # tag so the Reader shows it as a name rather than a bare word
             if gloss[0].isupper() and gloss.lower() == lemma:
-                gloss += ' (name)'
+                gloss += ', a name'   # not in parentheses: the Reader strips those from a gloss
             sense = {'en': gloss, 'type': pos}
             if lang == 'es' and pos == 'noun' and gender:
                 sense['gender'] = 'm; f' if gender == 'mf' else gender
@@ -284,6 +297,39 @@ def do_import(reply_path, lang):
     merge(lang)
 
 
+def pull_ai(lang):
+    token = os.environ.get('GLOSS_EXPORT_TOKEN')
+    if not token:
+        raise SystemExit('Set GLOSS_EXPORT_TOKEN to the gloss Worker\'s EXPORT_TOKEN secret first.')
+    base = os.environ.get('GLOSS_EXPORT_URL', 'https://parlour-gloss.gergkar.workers.dev/export')
+    dictionary = json.loads(DICTS[lang].read_text(encoding='utf-8'))
+    entries, cursor = [], None
+    while True:
+        query = {'lang': lang}
+        if cursor:
+            query['cursor'] = cursor
+        req = urllib.request.Request(base + '?' + urllib.parse.urlencode(query),
+                                     headers={'Authorization': 'Bearer ' + token})
+        try:
+            with urllib.request.urlopen(req, timeout=30) as res:
+                page = json.loads(res.read().decode('utf-8'))
+        except urllib.error.URLError as err:
+            raise SystemExit('Could not reach the gloss Worker: %s' % err)
+        entries.extend(page.get('entries', []))
+        cursor = page.get('cursor')
+        if page.get('complete') or not cursor:
+            break
+    fresh = [e for e in entries if e['word'] not in dictionary and e['lemma'] not in dictionary]
+    BATCH_DIR.mkdir(parents=True, exist_ok=True)
+    out = BATCH_DIR / ('%s-ai-cache.reply.txt' % lang)
+    out.write_text(''.join('%s | %s | %s | %s |\n' % (e['word'], e['lemma'], e['pos'], e['gloss']) for e in fresh),
+                   encoding='utf-8')
+    print('%d cached answers, %d not yet in the dictionary -> %s' % (len(entries), len(fresh), out.relative_to(ROOT)))
+    if fresh:
+        print('Skim the file (delete lines you don\'t trust), then:\n  python scripts/fill-dictionary-gaps.py import %s %s'
+              % (out.relative_to(ROOT), lang))
+
+
 def main():
     p = argparse.ArgumentParser(description=__doc__.split('\n')[0])
     sub = p.add_subparsers(dest='cmd', required=True)
@@ -298,11 +344,15 @@ def main():
     i.add_argument('lang', choices=sorted(COURSES))
     m = sub.add_parser('merge')
     m.add_argument('lang', choices=sorted(COURSES))
+    pa = sub.add_parser('pull-ai', help="download the Reader's cached AI glosses for review")
+    pa.add_argument('lang', choices=sorted(COURSES))
     a = p.parse_args()
     if a.cmd == 'export':
         export(a.lang, a.batch_size, a.min_count, a.limit, a.dry_run)
     elif a.cmd == 'import':
         do_import(a.reply, a.lang)
+    elif a.cmd == 'pull-ai':
+        pull_ai(a.lang)
     else:
         merge(a.lang)
 

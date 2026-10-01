@@ -13,6 +13,7 @@ dashboard by hand, then put the Worker's URL into the client file named below.
 | [Cloud sync](#cloud-sync-and-sign-in) | `sync-worker.js`, `sync-schema.sql` | `engine/sync.js` | Email magic-link login plus backup and restore of progress (D1 database, Resend email) |
 | [Google Sign-In](#google-sign-in) | `sync-worker.js` (`/auth/google`) | `engine/sync.js` | 1-tap login that shares the same accounts as the magic link |
 | [Grader](#grader) | `grader-worker.js` | Writing Studio, Open Production drills | CEFR-aligned feedback on writing and speaking (Workers AI) |
+| [Word gloss](#word-gloss-ai-fallback) | `gloss-worker.js` | `engine/gloss-ai.js` | A machine-suggested gloss when a tapped word has no dictionary entry (Workers AI + a KV cache) |
 | [Speech-to-text](#speech-to-text) | `stt-worker.js` | Speaking drills and lessons | Whisper transcription of the learner's recording on mobile |
 
 All five run on Cloudflare's free tier with no card. The two Workers AI services
@@ -184,6 +185,60 @@ A deployed Worker returns a JSON response from Workers AI rather than error code
 `1042`. In the app, open **Workshop**, launch **Writing Studio** and submit a
 short sentence: it shows CEFR scoring, vocabulary commendations and grammar
 guidance.
+
+---
+
+## Word gloss (AI fallback)
+
+When a learner taps a word that has no dictionary entry, no morphological reading and
+is not a name, the Reader asks this Worker for the base form and a short English gloss,
+and shows it labelled "machine suggestion". It is never saved to a deck. If the Worker
+is unreachable, over its daily cap or unsure, the popup keeps saying "Not in the
+dictionary yet", so the feature can only add help, never remove it.
+
+- The client sends only the tapped word, its sentence and the language.
+- Answers are cached in a KV namespace, so each word is generated once for every learner
+  (an "unsure" answer is retried after a week). The browser also remembers answers
+  (`glossAi:*` in localStorage), so a second tap is instant.
+- A daily cap (default 600 uncached model calls) protects the free Workers AI allowance.
+  Requests from origins other than the app's own domains and localhost are refused.
+- Switch it off on one device with `localStorage.setItem('parlour_gloss_endpoint', 'none')`.
+
+**Setup (~10 minutes).** Worker name `parlour-gloss` (the client's default address is
+`https://parlour-gloss.gergkar.workers.dev/gloss`), source `gloss-worker.js`.
+
+1. **Create the Worker** (shared steps above).
+2. **Workers AI.** Add the `AI` binding as described above.
+3. **KV cache.** **Workers & Pages** then **KV** then **Create a namespace**
+   (`parlour-gloss-cache`). In the Worker, **Settings** then **Bindings** then **Add**
+   then **KV namespace**, variable name exactly `GLOSS_CACHE`.
+4. **Optional.** A plain variable `GLOSS_DAILY_CAP` to change the daily cap, and an
+   encrypted secret `EXPORT_TOKEN` (any long random string) to enable `/export`.
+5. If your Worker URL differs from the default, change `DEFAULT_ENDPOINT` in
+   `engine/gloss-ai.js`.
+
+**Verifying.**
+
+```bash
+curl.exe https://parlour-gloss.gergkar.workers.dev/health
+curl.exe -X POST https://parlour-gloss.gergkar.workers.dev/gloss -H "Origin: https://parlour.me.uk" -H "Content-Type: application/json" -d "{\"word\":\"elnyomta\",\"lang\":\"hu\",\"sentence\":\"A hatalom elnyomta a nepet.\"}"
+```
+
+The first answers `{"status":"ok","service":"parlour-gloss",...}` with both bindings
+reported true; the second returns `{"found":true,"lemma":"elnyom",...}` and, called again,
+`"cached":true`.
+
+**Turning taps into dictionary entries.** With `EXPORT_TOKEN` set, the words learners
+actually tapped can be reviewed and promoted:
+
+```bash
+set GLOSS_EXPORT_TOKEN=<the secret>
+python scripts/fill-dictionary-gaps.py pull-ai hu
+```
+
+That writes `imports/dictionary/gap-batches/hu-ai-cache.reply.txt`. Skim it, delete any
+line you don't trust, then `python scripts/fill-dictionary-gaps.py import <that file> hu`.
+The long tail of rare words fills itself, a little at a time, in the order people meet it.
 
 ---
 
