@@ -2,7 +2,7 @@
 // GLOSS AI — machine-suggested gloss for words the dictionary lacks
 // ============================================
 // The Reader's last resort. When a tapped word has no dictionary entry, no
-// morphological reading and isn't a name, this asks the parlour-gloss
+// morphological reading and isn't a name, this asks the gloss-worker
 // Cloudflare Worker (cloudflare-worker/gloss-worker.js) for the base form and
 // a short English gloss, so the learner isn't left with nothing. The answer is
 // labelled a machine suggestion in the popup and is never saved to a deck.
@@ -15,7 +15,7 @@
 const GlossAI = (function () {
     'use strict';
 
-    const DEFAULT_ENDPOINT = 'https://parlour-gloss.gergkar.workers.dev/gloss';
+    const DEFAULT_ENDPOINT = 'https://gloss-worker.gergkar.workers.dev/gloss';
     const ENDPOINT_KEY = 'parlour_gloss_endpoint';   // 'none' or 'disabled' switches the feature off
     const CACHE_PREFIX = 'glossAi:';
     const TIMEOUT_MS = 8000;

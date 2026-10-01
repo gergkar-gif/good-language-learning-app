@@ -118,6 +118,20 @@ async function post(e, b, opts) {
     assert.strictEqual((await post(env('not json at all'), body('valami'))).data.found, false);
     assert.strictEqual((await post(env('{"lemma":"x","pos":"noun","gloss":"' + 'a'.repeat(120) + '","confident":true}'), body('valami'))).data.found, false);
 
+    console.log('6b. Workers AI may return the JSON already parsed (an object), not text');
+    r = await post(env({ lemma: 'elnyom', pos: 'verb', gloss: 'to oppress', confident: true }), body('elnyomta'));
+    assert.deepStrictEqual([r.data.found, r.data.lemma, r.data.gloss], [true, 'elnyom', 'to oppress']);
+
+    console.log('6c. a reply we cannot read is not cached (a genuine "unsure" is), and retried next time');
+    e = env('this is not json');
+    r = await post(e, body('olvashatatlan'));
+    assert.strictEqual(r.data.found, false);
+    assert(!('unreadable' in r.data), 'the internal flag never leaks to the client');
+    assert(!e.GLOSS_CACHE.puts.some(p => p.key === 'v1:hu:olvashatatlan'), 'unreadable replies are not stored');
+    e.AI.run = async () => ({ response: REPLY });
+    r = await post(e, body('olvashatatlan'));
+    assert.strictEqual(r.data.found, true, 'the next tap asks the model again');
+
     console.log('7. daily cap protects the free AI allowance');
     e = env(REPLY, { GLOSS_DAILY_CAP: '2' });
     await post(e, body('egyik'));

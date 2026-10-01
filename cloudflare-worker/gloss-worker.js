@@ -91,12 +91,20 @@ function buildMessages(lang, word, sentence) {
 
 // A model reply -> { found, lemma, pos, gloss } or { found: false }. Defensive on
 // purpose: models wrap JSON in prose or code fences, and may invent a part of speech.
-function parseModelReply(text) {
-    const match = /\{[\s\S]*\}/.exec(String(text || ''));
-    if (!match) return { found: false };
-    let data;
-    try { data = JSON.parse(match[0]); } catch (e) { return { found: false }; }
-    if (!data || data.confident === false) return { found: false };
+function parseModelReply(reply) {
+    // Workers AI sometimes hands back JSON already parsed (an object), sometimes text.
+    // `unreadable` marks a reply we couldn't make sense of, as opposed to a model that
+    // answered "not sure": only the second is worth caching.
+    let data = null;
+    if (reply && typeof reply === 'object') {
+        data = reply;
+    } else {
+        const match = /\{[\s\S]*\}/.exec(String(reply || ''));
+        if (!match) return { found: false, unreadable: true };
+        try { data = JSON.parse(match[0]); } catch (e) { return { found: false, unreadable: true }; }
+    }
+    if (!data || typeof data !== 'object') return { found: false, unreadable: true };
+    if (data.confident === false) return { found: false };
     const lemma = String(data.lemma || '').trim().toLowerCase();
     const pos = String(data.pos || '').trim().toLowerCase();
     const gloss = String(data.gloss || '').replace(/["|]/g, '').replace(/\s+/g, ' ').trim();
@@ -128,7 +136,8 @@ async function askModel(env, lang, word, sentence) {
                 temperature: 0,
                 max_tokens: 160
             });
-            return Object.assign(parseModelReply(result.response || result.content || ''), { model: model });
+            const reply = result.response !== undefined && result.response !== null ? result.response : result.content;
+            return Object.assign(parseModelReply(reply), { model: model });
         } catch (err) {
             lastError = err;
             const text = String(err);
@@ -173,9 +182,10 @@ async function handleGloss(request, env, cors) {
         }
         return json({ error: 'Workers AI inference failed', details: String(err) }, 500, cors);
     }
-    if (env.GLOSS_CACHE) {
+    if (env.GLOSS_CACHE && !answer.unreadable) {
         await env.GLOSS_CACHE.put(key, JSON.stringify(answer), answer.found ? undefined : { expirationTtl: NOT_FOUND_TTL });
     }
+    delete answer.unreadable;
     return json(Object.assign({ cached: false }, answer), 200, cors);
 }
 

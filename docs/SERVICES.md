@@ -204,8 +204,8 @@ dictionary yet", so the feature can only add help, never remove it.
   Requests from origins other than the app's own domains and localhost are refused.
 - Switch it off on one device with `localStorage.setItem('parlour_gloss_endpoint', 'none')`.
 
-**Setup (~10 minutes).** Worker name `parlour-gloss` (the client's default address is
-`https://parlour-gloss.gergkar.workers.dev/gloss`), source `gloss-worker.js`.
+**Setup (~10 minutes).** Worker name `gloss-worker` (the client's default address is
+`https://gloss-worker.gergkar.workers.dev/gloss`), source `gloss-worker.js`.
 
 1. **Create the Worker** (shared steps above).
 2. **Workers AI.** Add the `AI` binding as described above.
@@ -220,8 +220,8 @@ dictionary yet", so the feature can only add help, never remove it.
 **Verifying.**
 
 ```bash
-curl.exe https://parlour-gloss.gergkar.workers.dev/health
-curl.exe -X POST https://parlour-gloss.gergkar.workers.dev/gloss -H "Origin: https://parlour.me.uk" -H "Content-Type: application/json" -d "{\"word\":\"elnyomta\",\"lang\":\"hu\",\"sentence\":\"A hatalom elnyomta a nepet.\"}"
+curl.exe https://gloss-worker.gergkar.workers.dev/health
+curl.exe -X POST https://gloss-worker.gergkar.workers.dev/gloss -H "Origin: https://parlour.me.uk" -H "Content-Type: application/json" -d "{\"word\":\"elnyomta\",\"lang\":\"hu\",\"sentence\":\"A hatalom elnyomta a nepet.\"}"
 ```
 
 The first answers `{"status":"ok","service":"parlour-gloss",...}` with both bindings

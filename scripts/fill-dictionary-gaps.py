@@ -301,7 +301,7 @@ def pull_ai(lang):
     token = os.environ.get('GLOSS_EXPORT_TOKEN')
     if not token:
         raise SystemExit('Set GLOSS_EXPORT_TOKEN to the gloss Worker\'s EXPORT_TOKEN secret first.')
-    base = os.environ.get('GLOSS_EXPORT_URL', 'https://parlour-gloss.gergkar.workers.dev/export')
+    base = os.environ.get('GLOSS_EXPORT_URL', 'https://gloss-worker.gergkar.workers.dev/export')
     dictionary = json.loads(DICTS[lang].read_text(encoding='utf-8'))
     entries, cursor = [], None
     while True:
