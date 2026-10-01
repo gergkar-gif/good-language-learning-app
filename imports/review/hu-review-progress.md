@@ -723,31 +723,31 @@ Work level by level, top to bottom. Commit after each block of about 25 files.
 - [x] content/hu/exercises/b1/b1-arpadhaz-02-ex.json
 - [x] content/hu/exercises/b1/b1-arpadhaz-03-ex.json
 - [x] content/hu/exercises/b1/b1-arpadhaz-04-ex.json
-- [ ] content/hu/exercises/b1/b1-arpadhaz-05-ex.json
-- [ ] content/hu/exercises/b1/b1-arpadhaz-consolidation-ex.json
-- [ ] content/hu/exercises/b1/b1-demokracia-01-ex.json
-- [ ] content/hu/exercises/b1/b1-demokracia-02-ex.json
-- [ ] content/hu/exercises/b1/b1-demokracia-03-ex.json
-- [ ] content/hu/exercises/b1/b1-demokracia-04-ex.json
-- [ ] content/hu/exercises/b1/b1-demokracia-05-ex.json
-- [ ] content/hu/exercises/b1/b1-demokracia-consolidation-ex.json
-- [ ] content/hu/exercises/b1/b1-erdelyaranykora-01-ex.json
-- [ ] content/hu/exercises/b1/b1-erdelyaranykora-02-ex.json
-- [ ] content/hu/exercises/b1/b1-erdelyaranykora-03-ex.json
-- [ ] content/hu/exercises/b1/b1-erdelyaranykora-04-ex.json
-- [ ] content/hu/exercises/b1/b1-erdelyaranykora-05-ex.json
-- [ ] content/hu/exercises/b1/b1-erdelyaranykora-consolidation-ex.json
-- [ ] content/hu/exercises/b1/b1-europaiorokseg-01-ex.json
-- [ ] content/hu/exercises/b1/b1-europaiorokseg-02-ex.json
-- [ ] content/hu/exercises/b1/b1-europaiorokseg-03-ex.json
-- [ ] content/hu/exercises/b1/b1-europaiorokseg-04-ex.json
-- [ ] content/hu/exercises/b1/b1-europaiorokseg-05-ex.json
-- [ ] content/hu/exercises/b1/b1-europaiorokseg-consolidation-ex.json
-- [ ] content/hu/exercises/b1/b1-forradalom-01-ex.json
-- [ ] content/hu/exercises/b1/b1-forradalom-02-ex.json
-- [ ] content/hu/exercises/b1/b1-forradalom-03-ex.json
-- [ ] content/hu/exercises/b1/b1-forradalom-04-ex.json
-- [ ] content/hu/exercises/b1/b1-forradalom-05-ex.json
+- [x] content/hu/exercises/b1/b1-arpadhaz-05-ex.json
+- [x] content/hu/exercises/b1/b1-arpadhaz-consolidation-ex.json
+- [x] content/hu/exercises/b1/b1-demokracia-01-ex.json
+- [x] content/hu/exercises/b1/b1-demokracia-02-ex.json
+- [x] content/hu/exercises/b1/b1-demokracia-03-ex.json
+- [x] content/hu/exercises/b1/b1-demokracia-04-ex.json
+- [x] content/hu/exercises/b1/b1-demokracia-05-ex.json
+- [x] content/hu/exercises/b1/b1-demokracia-consolidation-ex.json
+- [x] content/hu/exercises/b1/b1-erdelyaranykora-01-ex.json
+- [x] content/hu/exercises/b1/b1-erdelyaranykora-02-ex.json
+- [x] content/hu/exercises/b1/b1-erdelyaranykora-03-ex.json
+- [x] content/hu/exercises/b1/b1-erdelyaranykora-04-ex.json
+- [x] content/hu/exercises/b1/b1-erdelyaranykora-05-ex.json
+- [x] content/hu/exercises/b1/b1-erdelyaranykora-consolidation-ex.json
+- [x] content/hu/exercises/b1/b1-europaiorokseg-01-ex.json
+- [x] content/hu/exercises/b1/b1-europaiorokseg-02-ex.json
+- [x] content/hu/exercises/b1/b1-europaiorokseg-03-ex.json
+- [x] content/hu/exercises/b1/b1-europaiorokseg-04-ex.json
+- [x] content/hu/exercises/b1/b1-europaiorokseg-05-ex.json
+- [x] content/hu/exercises/b1/b1-europaiorokseg-consolidation-ex.json
+- [x] content/hu/exercises/b1/b1-forradalom-01-ex.json
+- [x] content/hu/exercises/b1/b1-forradalom-02-ex.json
+- [x] content/hu/exercises/b1/b1-forradalom-03-ex.json
+- [x] content/hu/exercises/b1/b1-forradalom-04-ex.json
+- [x] content/hu/exercises/b1/b1-forradalom-05-ex.json
 - [ ] content/hu/exercises/b1/b1-forradalom-consolidation-ex.json
 - [ ] content/hu/exercises/b1/b1-haromresz-01-ex.json
 - [ ] content/hu/exercises/b1/b1-haromresz-02-ex.json
