@@ -848,31 +848,31 @@ Work level by level, top to bottom. Commit after each block of about 25 files.
 - [x] content/hu/exercises/b1/b1-nemzetiugy-01-ex.json
 - [x] content/hu/exercises/b1/b1-nemzetiugy-02-ex.json
 - [x] content/hu/exercises/b1/b1-nemzetiugy-03-ex.json
-- [ ] content/hu/exercises/b1/b1-nemzetiugy-04-ex.json
-- [ ] content/hu/exercises/b1/b1-nemzetiugy-05-ex.json
-- [ ] content/hu/exercises/b1/b1-nemzetiugy-consolidation-ex.json
-- [ ] content/hu/exercises/b1/b1-nemzetiunnepek-01-ex.json
-- [ ] content/hu/exercises/b1/b1-nemzetiunnepek-02-ex.json
-- [ ] content/hu/exercises/b1/b1-nemzetiunnepek-03-ex.json
-- [ ] content/hu/exercises/b1/b1-nemzetiunnepek-04-ex.json
-- [ ] content/hu/exercises/b1/b1-nemzetiunnepek-05-ex.json
-- [ ] content/hu/exercises/b1/b1-nemzetiunnepek-consolidation-ex.json
-- [ ] content/hu/exercises/b1/b1-onkormanyzat-01-ex.json
-- [ ] content/hu/exercises/b1/b1-onkormanyzat-02-ex.json
-- [ ] content/hu/exercises/b1/b1-onkormanyzat-03-ex.json
-- [ ] content/hu/exercises/b1/b1-onkormanyzat-04-ex.json
-- [ ] content/hu/exercises/b1/b1-onkormanyzat-05-ex.json
-- [ ] content/hu/exercises/b1/b1-onkormanyzat-consolidation-ex.json
-- [ ] content/hu/exercises/b1/b1-orszagma-01-ex.json
-- [ ] content/hu/exercises/b1/b1-orszagma-02-ex.json
-- [ ] content/hu/exercises/b1/b1-orszagma-03-ex.json
-- [ ] content/hu/exercises/b1/b1-orszagma-04-ex.json
-- [ ] content/hu/exercises/b1/b1-orszagma-05-ex.json
-- [ ] content/hu/exercises/b1/b1-orszagma-consolidation-ex.json
-- [ ] content/hu/exercises/b1/b1-otvenhat-01-ex.json
-- [ ] content/hu/exercises/b1/b1-otvenhat-02-ex.json
-- [ ] content/hu/exercises/b1/b1-otvenhat-03-ex.json
-- [ ] content/hu/exercises/b1/b1-otvenhat-04-ex.json
+- [x] content/hu/exercises/b1/b1-nemzetiugy-04-ex.json
+- [x] content/hu/exercises/b1/b1-nemzetiugy-05-ex.json
+- [x] content/hu/exercises/b1/b1-nemzetiugy-consolidation-ex.json
+- [x] content/hu/exercises/b1/b1-nemzetiunnepek-01-ex.json
+- [x] content/hu/exercises/b1/b1-nemzetiunnepek-02-ex.json
+- [x] content/hu/exercises/b1/b1-nemzetiunnepek-03-ex.json
+- [x] content/hu/exercises/b1/b1-nemzetiunnepek-04-ex.json
+- [x] content/hu/exercises/b1/b1-nemzetiunnepek-05-ex.json
+- [x] content/hu/exercises/b1/b1-nemzetiunnepek-consolidation-ex.json
+- [x] content/hu/exercises/b1/b1-onkormanyzat-01-ex.json
+- [x] content/hu/exercises/b1/b1-onkormanyzat-02-ex.json
+- [x] content/hu/exercises/b1/b1-onkormanyzat-03-ex.json
+- [x] content/hu/exercises/b1/b1-onkormanyzat-04-ex.json
+- [x] content/hu/exercises/b1/b1-onkormanyzat-05-ex.json
+- [x] content/hu/exercises/b1/b1-onkormanyzat-consolidation-ex.json
+- [x] content/hu/exercises/b1/b1-orszagma-01-ex.json
+- [x] content/hu/exercises/b1/b1-orszagma-02-ex.json
+- [x] content/hu/exercises/b1/b1-orszagma-03-ex.json
+- [x] content/hu/exercises/b1/b1-orszagma-04-ex.json
+- [x] content/hu/exercises/b1/b1-orszagma-05-ex.json
+- [x] content/hu/exercises/b1/b1-orszagma-consolidation-ex.json
+- [x] content/hu/exercises/b1/b1-otvenhat-01-ex.json
+- [x] content/hu/exercises/b1/b1-otvenhat-02-ex.json
+- [x] content/hu/exercises/b1/b1-otvenhat-03-ex.json
+- [x] content/hu/exercises/b1/b1-otvenhat-04-ex.json
 - [ ] content/hu/exercises/b1/b1-otvenhat-05-ex.json
 - [ ] content/hu/exercises/b1/b1-otvenhat-consolidation-ex.json
 - [ ] content/hu/exercises/b1/b1-rakoczi-01-ex.json
