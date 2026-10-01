@@ -26,6 +26,7 @@ const flag = (name, dflt) => {
 const positional = args.filter((a, i) => !a.startsWith('--') && !(args[i - 1] || '').startsWith('--'));
 const courseArg = positional[0] || 'all';
 const outFile = flag('--out', null);
+const mdFile = flag('--markdown', null);
 const topN = parseInt(flag('--top', '40'), 10);
 const minCount = parseInt(flag('--min-count', '1'), 10);
 
@@ -61,10 +62,14 @@ const WORD_RE = new RegExp('[' + WORD_CHARS + ']+', 'g');
 // Words that are never dictionary gaps: Roman numerals written in capitals ("XX", "XIX")
 // and whatever imports/dictionary/coverage-ignore.json lists (units, English titles, acronyms).
 const ROMAN = /^(?=[ivxlcdm]+$)m{0,3}(cm|cd|d?c{0,3})(xc|xl|l?x{0,3})(ix|iv|v?i{0,3})$/;
-let IGNORED = new Set();
+// coverage-ignore.json: { all: [...], hu: [...], es: [...] } (a legacy `words` list counts as `all`)
+let IGNORE_CONFIG = {};
 try {
-    IGNORED = new Set(JSON.parse(fs.readFileSync('imports/dictionary/coverage-ignore.json', 'utf8')).words || []);
+    IGNORE_CONFIG = JSON.parse(fs.readFileSync('imports/dictionary/coverage-ignore.json', 'utf8'));
 } catch (e) { /* no ignore list yet */ }
+function ignoredFor(lang) {
+    return new Set([].concat(IGNORE_CONFIG.words || [], IGNORE_CONFIG.all || [], IGNORE_CONFIG[lang] || []));
+}
 
 function storyFiles(course) {
     const out = [];
@@ -129,12 +134,13 @@ async function auditCourse(course) {
         }
     }
 
+    const ignored = ignoredFor(lang);
     const misses = [];
     const literalOnly = [];
     const crashes = [];
     for (const [key, w] of words) {
         if (key.length < 2) continue;   // single letters aren't meaningful lookups
-        if (IGNORED.has(key) || (w.allCaps && ROMAN.test(key))) continue;
+        if (ignored.has(key) || (w.allCaps && ROMAN.test(key))) continue;
         let res;
         try {
             res = Lexicon.lookup(key);
@@ -190,5 +196,18 @@ async function auditCourse(course) {
     if (outFile) {
         fs.writeFileSync(outFile, JSON.stringify(report, null, 1));
         console.log('\nWrote ' + outFile);
+    }
+    if (mdFile) {
+        const lines = ['## Reader dictionary coverage', '',
+            'Words a learner can tap in a story that return no dictionary reading. A report, not a gate: names are shown with a name tag, and the AI fallback covers the rest at run time.', '',
+            '| Course | Stories | Unique words | No reading | Of which names | Literal guess only | Lookup throws |', '|---|---:|---:|---:|---:|---:|---:|'];
+        report.forEach(r => lines.push(`| ${r.course} | ${r.stories} | ${r.uniqueWords} | ${r.misses.length} | ${r.misses.filter(x => x.likelyName).length} | ${r.literalOnly.length} | ${r.crashes.length} |`));
+        report.forEach(r => {
+            const top = r.misses.filter(x => !x.likelyName).slice(0, 15).map(x => `${x.word} (${x.count})`).join(', ');
+            lines.push('', `**${r.course}, most frequent gaps (names excluded):** ${top || 'none'}`);
+            if (r.crashes.length) lines.push('', `**${r.course}: ${r.crashes.length} lookups throw:** ` + r.crashes.slice(0, 10).map(x => x.word).join(', '));
+        });
+        fs.writeFileSync(mdFile, lines.join('\n') + '\n');
+        console.log('Wrote ' + mdFile);
     }
 })();

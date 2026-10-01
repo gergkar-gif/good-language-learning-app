@@ -1,0 +1,41 @@
+name: Reader coverage report
+
+# How many words in the stories would show "Not in the dictionary yet" in the Reader.
+# A report only: it never fails the build. The numbers appear in the run summary, and
+# the full list is attached as an artifact (reader-coverage.json). It runs when the
+# stories, the dictionaries or the word-lookup rules change, and can be started by hand.
+on:
+  push:
+    branches: [master]
+    paths:
+      - 'content/*/stories/**'
+      - 'imports/dictionary/**'
+      - 'engine/lexicon.js'
+      - 'engine/morphology/**'
+      - 'scripts/audit-reader-coverage.js'
+      - '.github/workflows/reader-coverage.yml'
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  coverage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Audit story words against the Reader's own lookup
+        continue-on-error: true
+        run: node scripts/audit-reader-coverage.js all --top 0 --out reader-coverage.json --markdown "$GITHUB_STEP_SUMMARY"
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: reader-coverage
+          path: reader-coverage.json
+          if-no-files-found: ignore

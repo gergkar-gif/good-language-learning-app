@@ -282,8 +282,9 @@ def do_import(reply_path, lang):
     senses, rejected, nonwords = parse_reply(Path(reply_path).read_text(encoding='utf-8'), lang)
     if nonwords:
         # remembered, so these never come back in a later export or the audit report
-        ignore = load_json(IGNORE, {'words': []})
-        ignore['words'] = sorted(set(ignore.get('words', [])) | set(nonwords))
+        ignore = load_json(IGNORE, {})
+        ignore['all'] = sorted(set(ignore.get('all', [])) | set(ignore.pop('words', [])))   # migrate the old single list
+        ignore[lang] = sorted(set(ignore.get(lang, [])) | set(nonwords))
         IGNORE.write_text(json.dumps(ignore, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
         print('%d non-words added to coverage-ignore.json' % len(nonwords))
     additions = load_json(ADDITIONS[lang], {})

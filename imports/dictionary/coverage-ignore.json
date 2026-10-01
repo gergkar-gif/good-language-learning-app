@@ -1,6 +1,6 @@
 {
-  "_comment": "Tokens scripts/audit-reader-coverage.js never reports as dictionary gaps: units, acronyms and English words that appear inside the texts. Roman numerals in capitals (XX, XIX) are skipped automatically.",
-  "words": [
+  "_comment": "Tokens scripts/audit-reader-coverage.js never reports as dictionary gaps: units, acronyms and English words that appear inside the texts. `all` applies to every course; `hu` and `es` only to that language (the import step adds words ChatGPT calls non-words to the language it was run for). Roman numerals in capitals are skipped automatically.",
+  "all": [
     "actio",
     "alps",
     "and",
@@ -75,5 +75,7 @@
     "wall",
     "york",
     "époque"
-  ]
+  ],
+  "hu": [],
+  "es": []
 }
