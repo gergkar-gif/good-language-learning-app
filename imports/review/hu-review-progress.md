@@ -673,31 +673,31 @@ Work level by level, top to bottom. Commit after each block of about 25 files.
 - [x] content/hu/exercises/b1/b1-33-consolidation-ex.json
 - [x] content/hu/exercises/b1/b1-34-01-ex.json
 - [x] content/hu/exercises/b1/b1-34-02-ex.json
-- [ ] content/hu/exercises/b1/b1-34-03-ex.json
-- [ ] content/hu/exercises/b1/b1-34-04-ex.json
-- [ ] content/hu/exercises/b1/b1-34-05-ex.json
-- [ ] content/hu/exercises/b1/b1-34-consolidation-ex.json
-- [ ] content/hu/exercises/b1/b1-35-01-ex.json
-- [ ] content/hu/exercises/b1/b1-35-02-ex.json
-- [ ] content/hu/exercises/b1/b1-35-03-ex.json
-- [ ] content/hu/exercises/b1/b1-35-04-ex.json
-- [ ] content/hu/exercises/b1/b1-35-05-ex.json
-- [ ] content/hu/exercises/b1/b1-35-consolidation-ex.json
-- [ ] content/hu/exercises/b1/b1-36-01-ex.json
-- [ ] content/hu/exercises/b1/b1-36-02-ex.json
-- [ ] content/hu/exercises/b1/b1-36-03-ex.json
-- [ ] content/hu/exercises/b1/b1-36-04-ex.json
-- [ ] content/hu/exercises/b1/b1-36-05-ex.json
-- [ ] content/hu/exercises/b1/b1-36-consolidation-ex.json
-- [ ] content/hu/exercises/b1/b1-alaptorveny-01-ex.json
-- [ ] content/hu/exercises/b1/b1-alaptorveny-02-ex.json
-- [ ] content/hu/exercises/b1/b1-alaptorveny-03-ex.json
-- [ ] content/hu/exercises/b1/b1-alaptorveny-04-ex.json
-- [ ] content/hu/exercises/b1/b1-alaptorveny-05-ex.json
-- [ ] content/hu/exercises/b1/b1-alaptorveny-consolidation-ex.json
-- [ ] content/hu/exercises/b1/b1-alberlet-01-ex.json
-- [ ] content/hu/exercises/b1/b1-alberlet-02-ex.json
-- [ ] content/hu/exercises/b1/b1-alberlet-03-ex.json
+- [x] content/hu/exercises/b1/b1-34-03-ex.json
+- [x] content/hu/exercises/b1/b1-34-04-ex.json
+- [x] content/hu/exercises/b1/b1-34-05-ex.json
+- [x] content/hu/exercises/b1/b1-34-consolidation-ex.json
+- [x] content/hu/exercises/b1/b1-35-01-ex.json
+- [x] content/hu/exercises/b1/b1-35-02-ex.json
+- [x] content/hu/exercises/b1/b1-35-03-ex.json
+- [x] content/hu/exercises/b1/b1-35-04-ex.json
+- [x] content/hu/exercises/b1/b1-35-05-ex.json
+- [x] content/hu/exercises/b1/b1-35-consolidation-ex.json
+- [x] content/hu/exercises/b1/b1-36-01-ex.json
+- [x] content/hu/exercises/b1/b1-36-02-ex.json
+- [x] content/hu/exercises/b1/b1-36-03-ex.json
+- [x] content/hu/exercises/b1/b1-36-04-ex.json
+- [x] content/hu/exercises/b1/b1-36-05-ex.json
+- [x] content/hu/exercises/b1/b1-36-consolidation-ex.json
+- [x] content/hu/exercises/b1/b1-alaptorveny-01-ex.json
+- [x] content/hu/exercises/b1/b1-alaptorveny-02-ex.json
+- [x] content/hu/exercises/b1/b1-alaptorveny-03-ex.json
+- [x] content/hu/exercises/b1/b1-alaptorveny-04-ex.json
+- [x] content/hu/exercises/b1/b1-alaptorveny-05-ex.json
+- [x] content/hu/exercises/b1/b1-alaptorveny-consolidation-ex.json
+- [x] content/hu/exercises/b1/b1-alberlet-01-ex.json
+- [x] content/hu/exercises/b1/b1-alberlet-02-ex.json
+- [x] content/hu/exercises/b1/b1-alberlet-03-ex.json
 - [ ] content/hu/exercises/b1/b1-alberlet-04-ex.json
 - [ ] content/hu/exercises/b1/b1-alberlet-05-ex.json
 - [ ] content/hu/exercises/b1/b1-alberlet-consolidation-ex.json
