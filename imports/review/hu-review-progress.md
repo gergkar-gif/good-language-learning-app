@@ -337,32 +337,32 @@ Work level by level, top to bottom. Commit after each block of about 25 files.
 - [x] content/hu/exercises/a2/a2-107-ex.json
 - [x] content/hu/exercises/a2/a2-108-ex.json
 - [x] content/hu/exercises/a2/a2-109-ex.json
-- [ ] content/hu/exercises/a2/a2-110-consolidation-ex.json
-- [ ] content/hu/exercises/a2/a2-110-ex.json
-- [ ] content/hu/exercises/a2/a2-111-ex.json
-- [ ] content/hu/exercises/a2/a2-112-ex.json
-- [ ] content/hu/exercises/a2/a2-113-ex.json
-- [ ] content/hu/exercises/a2/a2-114-ex.json
-- [ ] content/hu/exercises/a2/a2-115-consolidation-ex.json
-- [ ] content/hu/exercises/a2/a2-115-ex.json
-- [ ] content/hu/exercises/a2/a2-116-ex.json
-- [ ] content/hu/exercises/a2/a2-117-ex.json
-- [ ] content/hu/exercises/a2/a2-118-ex.json
-- [ ] content/hu/exercises/a2/a2-119-ex.json
-- [ ] content/hu/exercises/a2/a2-120-consolidation-ex.json
-- [ ] content/hu/exercises/a2/a2-120-ex.json
-- [ ] content/hu/exercises/a2/a2-121-ex.json
-- [ ] content/hu/exercises/a2/a2-122-ex.json
-- [ ] content/hu/exercises/a2/a2-123-ex.json
-- [ ] content/hu/exercises/a2/a2-124-ex.json
-- [ ] content/hu/exercises/a2/a2-125-consolidation-ex.json
-- [ ] content/hu/exercises/a2/a2-125-ex.json
-- [ ] content/hu/exercises/a2/a2-126-ex.json
-- [ ] content/hu/exercises/a2/a2-127-ex.json
-- [ ] content/hu/exercises/a2/a2-128-ex.json
-- [ ] content/hu/exercises/a2/a2-129-ex.json
-- [ ] content/hu/exercises/a2/a2-130-consolidation-ex.json
-- [ ] content/hu/exercises/a2/a2-130-ex.json
+- [x] content/hu/exercises/a2/a2-110-consolidation-ex.json
+- [x] content/hu/exercises/a2/a2-110-ex.json
+- [x] content/hu/exercises/a2/a2-111-ex.json
+- [x] content/hu/exercises/a2/a2-112-ex.json
+- [x] content/hu/exercises/a2/a2-113-ex.json
+- [x] content/hu/exercises/a2/a2-114-ex.json
+- [x] content/hu/exercises/a2/a2-115-consolidation-ex.json
+- [x] content/hu/exercises/a2/a2-115-ex.json
+- [x] content/hu/exercises/a2/a2-116-ex.json
+- [x] content/hu/exercises/a2/a2-117-ex.json
+- [x] content/hu/exercises/a2/a2-118-ex.json
+- [x] content/hu/exercises/a2/a2-119-ex.json
+- [x] content/hu/exercises/a2/a2-120-consolidation-ex.json
+- [x] content/hu/exercises/a2/a2-120-ex.json
+- [x] content/hu/exercises/a2/a2-121-ex.json
+- [x] content/hu/exercises/a2/a2-122-ex.json
+- [x] content/hu/exercises/a2/a2-123-ex.json
+- [x] content/hu/exercises/a2/a2-124-ex.json
+- [x] content/hu/exercises/a2/a2-125-consolidation-ex.json
+- [x] content/hu/exercises/a2/a2-125-ex.json
+- [x] content/hu/exercises/a2/a2-126-ex.json
+- [x] content/hu/exercises/a2/a2-127-ex.json
+- [x] content/hu/exercises/a2/a2-128-ex.json
+- [x] content/hu/exercises/a2/a2-129-ex.json
+- [x] content/hu/exercises/a2/a2-130-consolidation-ex.json
+- [x] content/hu/exercises/a2/a2-130-ex.json
 - [ ] content/hu/exercises/a2/a2-131-ex.json
 - [ ] content/hu/exercises/a2/a2-132-ex.json
 - [ ] content/hu/exercises/a2/a2-133-ex.json
