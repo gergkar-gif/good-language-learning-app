@@ -925,37 +925,6 @@ const Sync = (function () {
         return false;
     }
 
-    function hasLocalAdditions(localSnapshot, cloudSnapshot) {
-        if (!localSnapshot) return false;
-        if (!cloudSnapshot) return true;
-
-        for (const course of Object.keys(localSnapshot)) {
-            if (course === '_global') continue;
-            const lData = localSnapshot[course] || {};
-            const cData = cloudSnapshot[course] || {};
-
-            const lProg = safeJsonParse(lData.progress, {});
-            const cProg = safeJsonParse(cData.progress, {});
-            for (const id of Object.keys(lProg)) {
-                if (!cProg[id]) return true;
-            }
-
-            const lWords = safeJsonParse(lData.knownWords, []);
-            const cWords = safeJsonParse(cData.knownWords, []);
-            const cWordSet = new Set(cWords.map(w => w.spanish || w.lemma || w.word));
-            for (const w of lWords) {
-                const key = w && (w.spanish || w.lemma || w.word);
-                if (key && !cWordSet.has(key)) return true;
-            }
-        }
-
-        const lXP = safeJsonParse(localSnapshot._global?.spanishApp_xp, {});
-        const cXP = safeJsonParse(cloudSnapshot._global?.spanishApp_xp, {});
-        if ((lXP.xp || 0) > (cXP.xp || 0)) return true;
-
-        return false;
-    }
-
     function hasAnyProgress(snapshot) {
         if (!snapshot || typeof snapshot !== 'object') return false;
         for (const course of Object.keys(snapshot)) {
@@ -993,6 +962,8 @@ const Sync = (function () {
         if (_isSaving) { scheduleAutoSave(); return; }
         _isSaving = true;
         try {
+            // backup() sets the last-synced marker itself (and deliberately
+            // doesn't after merging another device's save).
             const data = await backup(options);
             _lastSavedAt = (data && data.updatedAt) ? new Date(data.updatedAt).getTime() : Date.now();
             if (typeof window !== 'undefined' && typeof window.dispatchEvent === 'function') {
