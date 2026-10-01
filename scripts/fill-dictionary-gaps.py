@@ -30,8 +30,12 @@ reply back into the dictionary.
         writes the ones still missing from the dictionary as
         imports/dictionary/gap-batches/<lang>-ai-cache.reply.txt, in the reply
         format. Skim it, delete lines you don't trust, then run `import` on it.
-        Needs GLOSS_EXPORT_TOKEN (the Worker's EXPORT_TOKEN secret) in the
-        environment; GLOSS_EXPORT_URL overrides the default Worker address.
+        Needs the Worker's EXPORT_TOKEN secret, from GLOSS_EXPORT_TOKEN or
+        from the one-line file ~/.parlour-gloss-token; GLOSS_EXPORT_URL
+        overrides the default Worker address. Words listed in
+        imports/dictionary/ai-rejected.json (per language) are skipped, so a
+        turned-down gloss is not offered again. The weekly review task
+        (imports/dictionary/ai-review-log.md) uses this loop.
 
 After an import, run the audit again: the remaining list shrinks, and words
 whose base form was added start resolving in every inflected form too.
@@ -298,9 +302,15 @@ def do_import(reply_path, lang):
 
 
 def pull_ai(lang):
+    # the token comes from the environment, or from ~/.parlour-gloss-token (one line, outside the repo),
+    # which is what an unattended weekly run uses
     token = os.environ.get('GLOSS_EXPORT_TOKEN')
+    token_file = Path.home() / '.parlour-gloss-token'
+    if not token and token_file.exists():
+        token = token_file.read_text(encoding='utf-8').strip()
     if not token:
-        raise SystemExit('Set GLOSS_EXPORT_TOKEN to the gloss Worker\'s EXPORT_TOKEN secret first.')
+        raise SystemExit("No export token. Set GLOSS_EXPORT_TOKEN to the gloss Worker's EXPORT_TOKEN secret, "
+                         "or save it as the only line of %s" % token_file)
     base = os.environ.get('GLOSS_EXPORT_URL', 'https://gloss-worker.gergkar.workers.dev/export')
     dictionary = json.loads(DICTS[lang].read_text(encoding='utf-8'))
     entries, cursor = [], None
@@ -319,7 +329,11 @@ def pull_ai(lang):
         cursor = page.get('cursor')
         if page.get('complete') or not cursor:
             break
-    fresh = [e for e in entries if e['word'] not in dictionary and e['lemma'] not in dictionary]
+    # words an earlier review turned down (imports/dictionary/ai-rejected.json) are not offered again
+    rejected_file = ROOT / 'imports/dictionary/ai-rejected.json'
+    rejected = set(load_json(rejected_file, {}).get(lang, []))
+    fresh = [e for e in entries
+             if e['word'] not in dictionary and e['lemma'] not in dictionary and e['word'] not in rejected]
     BATCH_DIR.mkdir(parents=True, exist_ok=True)
     out = BATCH_DIR / ('%s-ai-cache.reply.txt' % lang)
     out.write_text(''.join('%s | %s | %s | %s |\n' % (e['word'], e['lemma'], e['pos'], e['gloss']) for e in fresh),
