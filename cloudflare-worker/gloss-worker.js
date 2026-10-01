@@ -14,6 +14,9 @@
 //        Used by scripts/fill-dictionary-gaps.py pull-ai to turn the words
 //        learners actually tapped into reviewed dictionary entries.
 //
+// Cache keys carry a version (v2:...). Bump it in cacheKey() and handleExport() when the
+// prompt changes, so answers produced by the old prompt are ignored instead of served.
+//
 // Bindings (Settings -> Bindings): AI (Workers AI) and GLOSS_CACHE (a KV
 // namespace; without it the worker still works, just uncached).
 // Optional: GLOSS_DAILY_CAP (variable, default 600 uncached model calls a
@@ -69,7 +72,7 @@ function cleanSentence(sentence) {
 }
 
 function cacheKey(lang, word) {
-    return 'v1:' + lang + ':' + word.toLowerCase();
+    return 'v2:' + lang + ':' + word.toLowerCase();
 }
 
 function buildMessages(lang, word, sentence) {
@@ -82,7 +85,10 @@ function buildMessages(lang, word, sentence) {
                 (sentence ? ' in this sentence:\n"' + sentence + '"\n' : '.\n') +
                 '\nGive its dictionary form and a short English gloss. Reply with JSON only, in exactly this shape:\n' +
                 '{"lemma":"base form, lower case","pos":"' + POS_VALUES.join('|') + '","gloss":"2 to 8 words of English","confident":true}\n' +
-                'Rules: the gloss describes the lemma as used in the sentence. Use no double quotes inside values. ' +
+                'Rules: the gloss is the plain dictionary meaning of the LEMMA, as a dictionary would print it: ' +
+                'for a verb use "to ..." ("to oppress"), for a noun the bare noun ("soul"), for an adjective the bare adjective. ' +
+                'Do not translate the inflected form or the sentence, and do not include tense, plural or case. ' +
+                'Use the sentence only to choose between meanings. Use no double quotes inside values. ' +
                 'If the word is a typo, a fragment of a longer word, or you are not sure of its meaning, ' +
                 'set "confident" to false and "gloss" to an empty string. Never guess.'
         }
@@ -197,7 +203,7 @@ async function handleExport(request, url, env, cors) {
     if (!env.GLOSS_CACHE) return json({ error: 'No cache bound' }, 503, cors);
     const lang = url.searchParams.get('lang');
     if (!LANG_NAME[lang]) return json({ error: 'lang must be hu or es' }, 400, cors);
-    const prefix = 'v1:' + lang + ':';
+    const prefix = 'v2:' + lang + ':';
     const page = await env.GLOSS_CACHE.list({ prefix: prefix, cursor: url.searchParams.get('cursor') || undefined, limit: 200 });
     const entries = [];
     for (const k of page.keys) {

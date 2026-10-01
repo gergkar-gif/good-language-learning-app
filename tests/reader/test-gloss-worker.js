@@ -96,7 +96,7 @@ async function post(e, b, opts) {
     assert(e.calls[0].input.messages[1].content.includes('Hungarian'), 'prompt names the language');
     assert(e.calls[0].input.messages[1].content.includes('"elnyomta"'), 'prompt carries the word');
     assert(e.calls[0].input.messages[1].content.includes('A hatalom elnyomta a népet.'), 'prompt carries the sentence');
-    assert.strictEqual(e.GLOSS_CACHE.puts.filter(p => p.key.startsWith('v1:hu:')).length, 1);
+    assert.strictEqual(e.GLOSS_CACHE.puts.filter(p => p.key.startsWith('v2:hu:')).length, 1);
     r = await post(e, body('Elnyomta'));   // different capitalisation, same cache entry
     assert.strictEqual(r.data.cached, true);
     assert.strictEqual(e.calls.length, 1, 'cache hit must not call the model again');
@@ -112,7 +112,7 @@ async function post(e, b, opts) {
     e = env('{"lemma":"x","pos":"verb","gloss":"","confident":false}');
     r = await post(e, body('bizonytalan'));
     assert.strictEqual(r.data.found, false);
-    const negativePut = e.GLOSS_CACHE.puts.find(p => p.key === 'v1:hu:bizonytalan');
+    const negativePut = e.GLOSS_CACHE.puts.find(p => p.key === 'v2:hu:bizonytalan');
     assert(negativePut && negativePut.opts && negativePut.opts.expirationTtl > 0, 'negative answers expire');
     assert.strictEqual((await post(env('{"lemma":"x","pos":"widget","gloss":"thing","confident":true}'), body('valami'))).data.found, false);
     assert.strictEqual((await post(env('not json at all'), body('valami'))).data.found, false);
@@ -127,7 +127,7 @@ async function post(e, b, opts) {
     r = await post(e, body('olvashatatlan'));
     assert.strictEqual(r.data.found, false);
     assert(!('unreadable' in r.data), 'the internal flag never leaks to the client');
-    assert(!e.GLOSS_CACHE.puts.some(p => p.key === 'v1:hu:olvashatatlan'), 'unreadable replies are not stored');
+    assert(!e.GLOSS_CACHE.puts.some(p => p.key === 'v2:hu:olvashatatlan'), 'unreadable replies are not stored');
     e.AI.run = async () => ({ response: REPLY });
     r = await post(e, body('olvashatatlan'));
     assert.strictEqual(r.data.found, true, 'the next tap asks the model again');
@@ -168,7 +168,7 @@ async function post(e, b, opts) {
     e = env(REPLY, { EXPORT_TOKEN: 'secret' });
     await post(e, body('elnyomta'));
     await post(env('{"lemma":"","pos":"noun","gloss":"","confident":false}'), body('semmi'));
-    e.GLOSS_CACHE.store.set('v1:hu:semmi', JSON.stringify({ found: false }));
+    e.GLOSS_CACHE.store.set('v2:hu:semmi', JSON.stringify({ found: false }));
     const exp = (auth) => worker.fetch(request('GET', 'https://x.test/export?lang=hu', { auth }), e);
     assert.strictEqual((await exp(null)).status, 401);
     assert.strictEqual((await exp('Bearer wrong')).status, 401);
