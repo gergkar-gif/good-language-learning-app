@@ -388,7 +388,7 @@ const Sync = (function () {
                 applySnapshot(merged);
                 const cloudUpdatedAt = cloudData.updatedAt ? new Date(cloudData.updatedAt).getTime() : Date.now();
                 localStorage.setItem(LAST_SYNCED_KEY, String(cloudUpdatedAt));
-                if (hasLocalAdditions(localSnapshot, cloudData.state)) {
+                if (differsFromCloud(merged, cloudData.state)) {
                     await backup();
                 }
             }
@@ -505,7 +505,7 @@ const Sync = (function () {
                     applySnapshot(merged);
                     const cloudUpdatedAt = cloudData.updatedAt ? new Date(cloudData.updatedAt).getTime() : Date.now();
                     localStorage.setItem(LAST_SYNCED_KEY, String(cloudUpdatedAt));
-                    if (hasLocalAdditions(localSnapshot, cloudData.state)) {
+                    if (differsFromCloud(merged, cloudData.state)) {
                         await backup();
                     }
                 }
@@ -574,19 +574,37 @@ const Sync = (function () {
     // BACKUP / RESTORE
     // ----------------------------------------
 
+    // The server stores whatever it's sent, so a device that hasn't pulled
+    // yet would overwrite another device's newer save. Merge the cloud copy
+    // in first whenever it's newer than what this device last synced. If
+    // the cloud can't be read, don't upload at all rather than risk it.
     async function backup(options = {}) {
         const token = getToken();
         if (!token) throw new Error('Not signed in');
 
+        let state = gatherSnapshot();
+        let mergedRemote = false;
+        const cloud = await status({ timeoutMs: 8000 });
+        const cloudAt = (cloud && cloud.updatedAt) ? new Date(cloud.updatedAt).getTime() : 0;
+        const lastSynced = Number(localStorage.getItem(LAST_SYNCED_KEY) || '0');
+        if (cloud && cloud.state && cloudAt > lastSynced) {
+            state = mergeSnapshots(state, cloud.state);
+            applySnapshot(state);
+            mergedRemote = true;
+        }
+
+        const body = JSON.stringify({ state });
         const fetchInit = {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': 'Bearer ' + token
             },
-            body: JSON.stringify({ state: gatherSnapshot() })
+            body
         };
-        if (options.keepalive) {
+        // Browsers reject keepalive bodies over 64 KB outright, and any
+        // real progress is bigger than that — use it only when it fits.
+        if (options.keepalive && body.length < 60000) {
             fetchInit.keepalive = true;
         }
 
@@ -596,9 +614,14 @@ const Sync = (function () {
         _isDirty = false;
         if (data && data.updatedAt) {
             _lastSavedAt = new Date(data.updatedAt).getTime();
-            try {
-                localStorage.setItem(LAST_SYNCED_KEY, String(_lastSavedAt));
-            } catch (e) {}
+            // After merging another device's save, this page's in-memory
+            // state (srsDeck, xpData…) still predates it — leave the marker
+            // behind so the next foreground check pulls and reloads.
+            if (!mergedRemote) {
+                try {
+                    localStorage.setItem(LAST_SYNCED_KEY, String(_lastSavedAt));
+                } catch (e) {}
+            }
         }
         return data;
     }
@@ -713,6 +736,14 @@ const Sync = (function () {
                 cardMap.set(key, card);
             } else {
                 const existing = cardMap.get(key);
+                // Most recently reviewed copy wins: "Again" resets reviews
+                // to 0, so a review count says nothing about which is newer.
+                const exAt = existing.lastReviewed ? new Date(existing.lastReviewed).getTime() : 0;
+                const newAt = card.lastReviewed ? new Date(card.lastReviewed).getTime() : 0;
+                if (exAt !== newAt) {
+                    if (newAt > exAt) cardMap.set(key, card);
+                    return;
+                }
                 const exReviews = existing.reviews || 0;
                 const newReviews = card.reviews || 0;
                 const exInterval = existing.interval || 0;
@@ -879,6 +910,21 @@ const Sync = (function () {
         return merged;
     }
 
+    // Does the merged result hold anything the cloud doesn't? Compares
+    // every stored value, so deck reviews, drill history etc. count too,
+    // not just lessons/known words/XP. A false positive costs one upload.
+    function differsFromCloud(merged, cloudSnapshot) {
+        if (!cloudSnapshot) return true;
+        for (const course of Object.keys(merged)) {
+            const m = merged[course] || {};
+            const c = cloudSnapshot[course] || {};
+            for (const key of Object.keys(m)) {
+                if (m[key] !== c[key]) return true;
+            }
+        }
+        return false;
+    }
+
     function hasLocalAdditions(localSnapshot, cloudSnapshot) {
         if (!localSnapshot) return false;
         if (!cloudSnapshot) return true;
@@ -941,15 +987,14 @@ const Sync = (function () {
     }
 
     async function performAutoSave(options = {}) {
-        if (!isLoggedIn() || _isSaving) return;
+        if (!isLoggedIn()) return;
+        // A save already in flight gathered its snapshot before this
+        // change — queue another rather than dropping it.
+        if (_isSaving) { scheduleAutoSave(); return; }
         _isSaving = true;
         try {
             const data = await backup(options);
             _lastSavedAt = (data && data.updatedAt) ? new Date(data.updatedAt).getTime() : Date.now();
-            _isDirty = false;
-            try {
-                localStorage.setItem(LAST_SYNCED_KEY, String(_lastSavedAt));
-            } catch (e) {}
             if (typeof window !== 'undefined' && typeof window.dispatchEvent === 'function') {
                 window.dispatchEvent(new CustomEvent('sync-saved', { detail: { timestamp: _lastSavedAt } }));
             }
@@ -992,7 +1037,7 @@ const Sync = (function () {
                 } catch (e) {}
                 _isDirty = false;
 
-                if (hasLocalAdditions(localSnapshot, cloudData.state)) {
+                if (differsFromCloud(merged, cloudData.state)) {
                     await backup();
                 }
                 return true;
@@ -1033,7 +1078,7 @@ const Sync = (function () {
                     localStorage.setItem(LAST_SYNCED_KEY, String(cloudUpdatedAt));
                 } catch (e) {}
 
-                if (hasLocalAdditions(localSnapshot, cloudData.state)) {
+                if (differsFromCloud(merged, cloudData.state)) {
                     await backup();
                 }
 
