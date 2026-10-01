@@ -2304,8 +2304,9 @@ window.Reader = {
     // it splits the word itself into separate tap targets at those
     // letters ("bel\u0151le" -> "bel" / "\u0151" / "le" as three spans), which is
     // worse than an ordinary lookup miss.
-    WORD_CHARS: 'a-zA-Z\u00e1\u00e9\u00ed\u00f3\u00fa\u00c1\u00c9\u00cd\u00d3\u00da' +
-        '\u00f1\u00d1\u00fc\u00dc\u00f6\u00d6\u0151\u0150\u0171\u0170',
+    // (Latin-1 and Latin Extended-A/B letters, so Portuguese, Catalan, Vietnamese and
+    // Hungarian names are not cut in two at õ, ô, è, ì ...)
+    WORD_CHARS: 'a-zA-Z\u00c0-\u00d6\u00d8-\u00f6\u00f8-\u024f',
 
     makeClickable(text) {
         if (!text) return '';

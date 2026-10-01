@@ -55,8 +55,7 @@ load('engine/lexicon.js');
 
 // The Reader's own tokenizer (engine/reader.js WORD_CHARS): letters incl.
 // Spanish and Hungarian diacritics; digits are never looked up.
-const WORD_CHARS = 'a-zA-ZáéíóúÁÉÍÓÚ' +
-    'ñÑüÜöÖőŐűŰ';
+const WORD_CHARS = 'a-zA-ZÀ-ÖØ-öø-ɏ';
 const WORD_RE = new RegExp('[' + WORD_CHARS + ']+', 'g');
 
 // Words that are never dictionary gaps: Roman numerals written in capitals ("XX", "XIX")

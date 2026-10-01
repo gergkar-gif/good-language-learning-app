@@ -144,6 +144,13 @@ const HungarianMorphology = (function () {
         if (shortened) {
             sense = nominalSense(dictionary[shortened]);
             if (sense) return { lemma: shortened, sense: sense };
+            // the shortened form may itself be stem + a linking vowel (lelké -> lelke -> lelk -> lélek)
+            if (/[ae]$/.test(shortened)) {
+                for (const cand of lengthenedStems(shortened.slice(0, -1))) {
+                    sense = nominalSense(dictionary[cand]);
+                    if (sense) return { lemma: cand, sense: sense };
+                }
+            }
         }
         const listedStem = VOWEL_DELETION_NOUNS[remainder];
         if (listedStem) {
@@ -175,10 +182,34 @@ const HungarianMorphology = (function () {
     const LONGER_VOWEL = { a: 'á', e: 'é', i: 'í', o: 'ó', 'ö': 'ő', u: 'ú', 'ü': 'ű' };
     function lengthenedStems(stem) {
         const out = [];
-        const m = /^(.*?)([aeiouöü])([^aeiouáéíóöőúüű]+)$/.exec(stem);
-        if (m && LONGER_VOWEL[m[2]]) out.push(m[1] + LONGER_VOWEL[m[2]] + m[3]);
-        if (stem.endsWith('ej')) out.push(stem.slice(0, -2) + 'ő');
-        if (stem.endsWith('aj')) out.push(stem.slice(0, -2) + 'ó');
+        const add = s => { if (s && s !== stem && !out.includes(s)) out.push(s); };
+        const VOWEL = /[aeiouáéíóöőúüű]/;
+        const longer = s => {
+            const m = /^(.*?)([aeiouöü])([^aeiouáéíóöőúüű]+)$/.exec(s);
+            return (m && LONGER_VOWEL[m[2]]) ? m[1] + LONGER_VOWEL[m[2]] + m[3] : null;
+        };
+        const longerFirst = s => {
+            const m = /^([^aeiouáéíóöőúüű]*)([aeiouöü])(.*)$/.exec(s);
+            return (m && LONGER_VOWEL[m[2]]) ? m[1] + LONGER_VOWEL[m[2]] + m[3] : null;
+        };
+        add(longer(stem));                                       // nyar -> nyár, nev -> név
+        if (stem.endsWith('ej')) add(stem.slice(0, -2) + 'ő');   // ideje -> idő
+        if (stem.endsWith('aj')) add(stem.slice(0, -2) + 'ó');   // ajtaja -> ajtó
+        // possessive j (apja, anyja)
+        if (/[^aeiouáéíóöőúüű]j$/.test(stem)) { add(stem.slice(0, -1) + 'a'); add(stem.slice(0, -1) + 'e'); }
+        // o- and u-stems that add a v (műve, köve): műv -> mű, alapköv -> alapkő
+        const v = /^(.*)([öőüű])v$/.exec(stem);
+        if (v) add(v[1] + ({ 'ö': 'ő', 'ü': 'ű' }[v[2]] || v[2]));
+        // a vowel that disappears before an ending (ezrek, lelke, bátrabb): put it back
+        const last = stem.slice(-1), pre = stem.slice(-2, -1);
+        if (stem.length >= 3 && !VOWEL.test(last) && !VOWEL.test(pre)) {
+            for (const vow of ['e', 'o', 'a', 'ö']) {
+                const ins = stem.slice(0, -1) + vow + last;
+                add(ins);
+                add(longer(ins));
+                add(longerFirst(ins));   // lelek -> lélek
+            }
+        }
         return out;
     }
 
@@ -195,6 +226,14 @@ const HungarianMorphology = (function () {
             for (const cand of [pfx.stem, pfx.stem + 'ik']) {
                 const vs = verbSense(dictionary[cand]);
                 if (vs) return { lemma: pfx.prefix + cand, sense: vs };
+            }
+        }
+        // a stem that dropped its last vowel before the ending (füstölg -> füstölög, ünnepl -> ünnepel)
+        if (/[^aeiouáéíóöőúüű][zlrgn]$/.test(stem)) {
+            for (const vow of ['e', 'i', 'a', 'o', 'ö']) {
+                const cand = stem.slice(0, -1) + vow + stem.slice(-1);
+                const vs = verbSense(dictionary[cand]);
+                if (vs) return { lemma: cand, sense: vs };
             }
         }
         return null;
@@ -222,33 +261,49 @@ const HungarianMorphology = (function () {
         };
         const adjective = r => r && r.sense.type === 'adjective' ? r : null;
 
-        // comparative, then superlative (leg + comparative)
-        const comparative = (w, prefix, label) => {
+        // comparative, then superlative (leg + comparative), also as an adverb
+        // (jobban, gyakrabban) or an adjective in -i (régebbi)
+        const findAdj = stem => {
+            const entry = dictionary[stem];
+            const senses = entry ? (Array.isArray(entry) ? entry : [entry]) : [];
+            const s = senses.find(x => x.type === 'adjective') || senses.find(x => x.type === 'adverb');
+            return s ? { lemma: stem, sense: s } : null;
+        };
+        const comparative = w => {
             const irregular = IRREGULAR_COMPARATIVES[w];
             if (irregular) {
-                const s = nominalSense(dictionary[irregular]);
-                return s ? { lemma: irregular, sense: s } : null;
+                const s = findAdj(irregular) || (nominalSense(dictionary[irregular]) && { lemma: irregular, sense: nominalSense(dictionary[irregular]) });
+                return s || null;
             }
-            for (const end of ['abb', 'ebb', 'obb', '\u00f6bb', 'bb']) {
+            for (const [end, extra] of [['\u00e1bb', 'a'], ['\u00e9bb', 'e'], ['abb', ''], ['ebb', ''], ['obb', ''], ['\u00f6bb', ''], ['bb', '']]) {
                 if (!w.endsWith(end) || w.length <= end.length + 1) continue;
-                const base = w.slice(0, -end.length);
-                const r = adjective(find(base)) || adjective(find(base + '\u0171')) || adjective(find(base + '\u00f3'));
-                if (r) return r;
+                const stem = w.slice(0, -end.length) + extra;
+                for (const s of [stem].concat(lengthenedStems(stem))) {
+                    for (const tail of ['', 'i', '\u0171', '\u00f3']) {
+                        const r = findAdj(s + tail);
+                        if (r) return r;
+                    }
+                }
             }
             return null;
         };
-        let r = comparative(word);
-        if (r) {
-            return { lemma: word, sense: { type: 'adjective', en: 'more ' + briefGloss(r.sense.en) + ' (comparative of ' + r.lemma + ')' } };
-        }
-        if (word.startsWith('leg') && word.length > 7) {
-            r = comparative(word.slice(3));
+        const forms = [word];
+        if (/(an|en)$/.test(word)) forms.push(word.slice(0, -2));
+        if (word.endsWith('i')) forms.push(word.slice(0, -1));
+        for (const f of forms) {
+            let r = comparative(f);
             if (r) {
-                return { lemma: word, sense: { type: 'adjective', en: 'most ' + briefGloss(r.sense.en) + ' (superlative of ' + r.lemma + ')' } };
+                return { lemma: word, sense: { type: f === word ? 'adjective' : 'adverb', en: 'more ' + briefGloss(r.sense.en) + ' (comparative of ' + r.lemma + ')' } };
+            }
+            if (f.startsWith('leg') && f.length > 6) {
+                r = comparative(f.slice(3));
+                if (r) {
+                    return { lemma: word, sense: { type: f === word ? 'adjective' : 'adverb', en: 'most ' + briefGloss(r.sense.en) + ' (superlative of ' + r.lemma + ')' } };
+                }
             }
         }
 
-        // -ság / -ség: the state or quality of being the base word
+        // -s\u00e1g / -s\u00e9g: the state or quality of being the base word
         for (const end of ['s\u00e1g', 's\u00e9g']) {
             if (word.endsWith(end)) {
                 const base = find(word.slice(0, -end.length));
@@ -1003,7 +1058,9 @@ const HungarianMorphology = (function () {
         ['elő', 'ahead/forward'], ['után', 'after'],
         ['el', 'away'], ['ki', 'out'], ['be', 'in'],
         ['le', 'down'], ['fel', 'up'], ['föl', 'up'],
-        ['át', 'across/through'], ['rá', 'onto'], ['ide', 'here'], ['oda', 'there']
+        ['át', 'across/through'], ['rá', 'onto'], ['ide', 'here'], ['oda', 'there'],
+        ['létre', 'into being'], ['szét', 'apart'], ['körül', 'around'], ['tovább', 'onward'],
+        ['végig', 'all the way through'], ['hozzá', 'to/toward']
     ].sort((a, b) => b[0].length - a[0].length);
 
     // A prefixed verb often isn't its own dictionary headword even though
@@ -1669,6 +1726,13 @@ const HungarianMorphology = (function () {
             if (inner.length) break;
         }
 
+        // 0a-. participles of verbs whose stem changes (tesz -> téve, van -> lévő)
+        const irregularParticiple = IRREGULAR_PARTICIPLE_FORMS[word];
+        if (irregularParticiple) {
+            const vs = verbSense(dictionary[irregularParticiple[0]]);
+            if (vs) addFromLemma(word, { type: irregularParticiple[2], en: briefGloss(vs.en) + ' (' + irregularParticiple[1] + ' of ' + irregularParticiple[0] + ')' }, irregularParticiple[1]);
+        }
+
         // 0a. demonstratives and relatives with a case ending ("abban", "ahhoz",
         // "ebből", "amellyel"): closed-class forms whose stem changes (az -> abb-,
         // ann-, att-, ah-), so they can't be reached by stripping a suffix.
@@ -1789,11 +1853,14 @@ const HungarianMorphology = (function () {
             if (remainderSense) {
                 addFromLemma(remainder, remainderSense, label);
             }
-            // iz-stems drop the i before a vowel-initial ending (\u0151riz -> \u0151rzi, \u0151rzik)
-            if (!remainderSense && /[^aeiou\u00e1\u00e9\u00ed\u00f3\u00f6\u0151\u00fa\u00fc\u0171]z$/.test(remainder)) {
-                const izForm = remainder.slice(0, -1) + 'iz';
-                const izSense = verbSense(dictionary[izForm]);
-                if (izSense) addFromLemma(izForm, izSense, label);
+            // stems that drop their last vowel before a vowel-initial ending (őriz -> őrzik,
+            // jelez -> jelzik, ünnepel -> ünnepli, szerez -> szerzett)
+            if (!remainderSense && /[^aeiouáéíóöőúüű][zlr]$/.test(remainder)) {
+                for (const vow of ['i', 'e', 'a', 'o', 'ö']) {
+                    const dropForm = remainder.slice(0, -1) + vow + remainder.slice(-1);
+                    const dropSense = verbSense(dictionary[dropForm]);
+                    if (dropSense) { addFromLemma(dropForm, dropSense, label); break; }
+                }
             }
             // potential -hat/-het (tanulhatnak, \u00e9lhetnek): can + base verb
             if (!remainderSense && /h[ae]t$/.test(remainder)) {
@@ -1930,6 +1997,24 @@ const HungarianMorphology = (function () {
             }
         }
 
+        // 2b. possessive + accusative (lelkét, nevét, lelkeit): -t is not in
+        // CASE_SUFFIXES because a bare -t would match every past-tense verb, so
+        // it is only tried here, under the possessive endings that can take it.
+        if (word.endsWith('t') && word.length > 4) {
+            const accRemainder = word.slice(0, -1);
+            for (const [possSuffix, person, ownerNumber, possessedNumber] of POSSESSIVE_SUFFIXES) {
+                if (!['á', 'é', 'já', 'jé', 'ai', 'ei', 'jai', 'jei'].includes(possSuffix)) continue;
+                const deeper = strip(accRemainder, possSuffix);
+                if (deeper === null) continue;
+                if (BARE_3RD_POSSESSIVE_NO_J[possSuffix] && endsInVowel(deeper)) continue;
+                const deeperResolved = resolveNominal(dictionary, deeper);
+                if (deeperResolved) {
+                    addFromLemma(deeperResolved.lemma, deeperResolved.sense,
+                        describePossessive(person, ownerNumber, possessedNumber) + ', ' + CASE_LABELS.acc);
+                }
+            }
+        }
+
         // 3. possessive suffix alone (no case) — for lemmas outside the
         // static index's frequency cutoff
         for (const [suffix, person, ownerNumber, possessedNumber] of POSSESSIVE_SUFFIXES) {
@@ -1980,7 +2065,7 @@ const HungarianMorphology = (function () {
         if (!results.length) {
             for (const [end, label] of [['v\u00e1n', 'adverbial participle'], ['v\u00e9n', 'adverbial participle'],
                 ['va', 'adverbial participle'], ['ve', 'adverbial participle']]) {
-                if (!word.endsWith(end) || word.length <= end.length + 2) continue;
+                if (!word.endsWith(end) || word.length <= end.length + 1) continue;
                 const stem = word.slice(0, -end.length);
                 for (const cand of [stem, stem + 'ik']) {
                     const vs = verbSense(dictionary[cand]);
@@ -2712,6 +2797,13 @@ const HungarianMorphology = (function () {
         set('amely', 'amelyben:inessive amelyb\u0151l:elative amelybe:illative amelyhez:allative amelyn\u00e9l:adessive amelyt\u0151l:ablative amelyre:sublative amelyr\u0151l:delative amellyel:instrumental amely\u00e9rt:causal-final amelyen:superessive amelynek:dative amelyet:accusative');
         return table;
     })();
+
+    // participles whose stem differs from the verb's: [verb, label, part of speech]
+    const IRREGULAR_PARTICIPLE_FORMS = {
+        'téve': ['tesz', 'adverbial participle', 'adverb'], 'véve': ['vesz', 'adverbial participle', 'adverb'],
+        'lévén': ['van', 'adverbial participle', 'adverb'], 'lévő': ['van', 'present participle', 'adjective'],
+        'való': ['van', 'present participle', 'adjective'], 'jövő': ['jön', 'present participle', 'adjective']
+    };
 
     const IRREGULAR_LEMMAS = new Set(Object.values(IRREGULAR_VERBS).map(tags => tags[0]));
     const IRREGULAR_DEFINITE_HINT = {

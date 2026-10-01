@@ -2193,6 +2193,8 @@ const SpanishMorphology = (function () {
         const end = start + cluster.length;
         const before = stem.slice(0, start);
         const after = stem.slice(end);
+        // erguir takes ye- instead of ie- (yergue -> ergu-)
+        if (/^ye/.test(stem)) cands.add('e' + stem.slice(2));
         const repl = { ie: 'e', ue: 'o', i: 'e', í: 'i', ú: 'u' }[cluster];
         if (repl) cands.add(before + repl + after);
         // i->ie and u->ue (adquirir -> adquiere, jugar -> juega)
