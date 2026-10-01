@@ -773,31 +773,31 @@ Work level by level, top to bottom. Commit after each block of about 25 files.
 - [x] content/hu/exercises/b1/b1-istvankiraly-04-ex.json
 - [x] content/hu/exercises/b1/b1-istvankiraly-05-ex.json
 - [x] content/hu/exercises/b1/b1-istvankiraly-consolidation-ex.json
-- [ ] content/hu/exercises/b1/b1-kadarkorszak-01-ex.json
-- [ ] content/hu/exercises/b1/b1-kadarkorszak-02-ex.json
-- [ ] content/hu/exercises/b1/b1-kadarkorszak-03-ex.json
-- [ ] content/hu/exercises/b1/b1-kadarkorszak-04-ex.json
-- [ ] content/hu/exercises/b1/b1-kadarkorszak-05-ex.json
-- [ ] content/hu/exercises/b1/b1-kadarkorszak-consolidation-ex.json
-- [ ] content/hu/exercises/b1/b1-karpatmedence-01-ex.json
-- [ ] content/hu/exercises/b1/b1-karpatmedence-02-ex.json
-- [ ] content/hu/exercises/b1/b1-karpatmedence-03-ex.json
-- [ ] content/hu/exercises/b1/b1-karpatmedence-04-ex.json
-- [ ] content/hu/exercises/b1/b1-karpatmedence-05-ex.json
-- [ ] content/hu/exercises/b1/b1-karpatmedence-consolidation-ex.json
-- [ ] content/hu/exercises/b1/b1-kiegyezes-01-ex.json
-- [ ] content/hu/exercises/b1/b1-kiegyezes-02-ex.json
-- [ ] content/hu/exercises/b1/b1-kiegyezes-03-ex.json
-- [ ] content/hu/exercises/b1/b1-kiegyezes-04-ex.json
-- [ ] content/hu/exercises/b1/b1-kiegyezes-05-ex.json
-- [ ] content/hu/exercises/b1/b1-kiegyezes-consolidation-ex.json
-- [ ] content/hu/exercises/b1/b1-kormanyablak-01-ex.json
-- [ ] content/hu/exercises/b1/b1-kormanyablak-02-ex.json
-- [ ] content/hu/exercises/b1/b1-kormanyablak-03-ex.json
-- [ ] content/hu/exercises/b1/b1-kormanyablak-04-ex.json
-- [ ] content/hu/exercises/b1/b1-kormanyablak-05-ex.json
-- [ ] content/hu/exercises/b1/b1-kormanyablak-consolidation-ex.json
-- [ ] content/hu/exercises/b1/b1-magyarsag-01-ex.json
+- [x] content/hu/exercises/b1/b1-kadarkorszak-01-ex.json
+- [x] content/hu/exercises/b1/b1-kadarkorszak-02-ex.json
+- [x] content/hu/exercises/b1/b1-kadarkorszak-03-ex.json
+- [x] content/hu/exercises/b1/b1-kadarkorszak-04-ex.json
+- [x] content/hu/exercises/b1/b1-kadarkorszak-05-ex.json
+- [x] content/hu/exercises/b1/b1-kadarkorszak-consolidation-ex.json
+- [x] content/hu/exercises/b1/b1-karpatmedence-01-ex.json
+- [x] content/hu/exercises/b1/b1-karpatmedence-02-ex.json
+- [x] content/hu/exercises/b1/b1-karpatmedence-03-ex.json
+- [x] content/hu/exercises/b1/b1-karpatmedence-04-ex.json
+- [x] content/hu/exercises/b1/b1-karpatmedence-05-ex.json
+- [x] content/hu/exercises/b1/b1-karpatmedence-consolidation-ex.json
+- [x] content/hu/exercises/b1/b1-kiegyezes-01-ex.json
+- [x] content/hu/exercises/b1/b1-kiegyezes-02-ex.json
+- [x] content/hu/exercises/b1/b1-kiegyezes-03-ex.json
+- [x] content/hu/exercises/b1/b1-kiegyezes-04-ex.json
+- [x] content/hu/exercises/b1/b1-kiegyezes-05-ex.json
+- [x] content/hu/exercises/b1/b1-kiegyezes-consolidation-ex.json
+- [x] content/hu/exercises/b1/b1-kormanyablak-01-ex.json
+- [x] content/hu/exercises/b1/b1-kormanyablak-02-ex.json
+- [x] content/hu/exercises/b1/b1-kormanyablak-03-ex.json
+- [x] content/hu/exercises/b1/b1-kormanyablak-04-ex.json
+- [x] content/hu/exercises/b1/b1-kormanyablak-05-ex.json
+- [x] content/hu/exercises/b1/b1-kormanyablak-consolidation-ex.json
+- [x] content/hu/exercises/b1/b1-magyarsag-01-ex.json
 - [ ] content/hu/exercises/b1/b1-magyarsag-02-ex.json
 - [ ] content/hu/exercises/b1/b1-magyarsag-03-ex.json
 - [ ] content/hu/exercises/b1/b1-magyarsag-04-ex.json
