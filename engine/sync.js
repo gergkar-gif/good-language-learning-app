@@ -774,7 +774,26 @@ const Sync = (function () {
         return JSON.stringify(Array.from(map.values()));
     }
 
+    // An array that went through the old Object.assign fallback came back
+    // as {"0": …, "1": …} — turn it back into the array it was.
+    function _isArrayLike(value) {
+        if (!value || typeof value !== 'object' || Array.isArray(value)) return false;
+        const keys = Object.keys(value);
+        return keys.length > 0 && keys.every(k => /^\d+$/.test(k));
+    }
+
+    function _repairArrayLike(raw) {
+        try {
+            const value = JSON.parse(raw);
+            return _isArrayLike(value) ? JSON.stringify(Object.values(value)) : raw;
+        } catch (e) {
+            return raw;
+        }
+    }
+
     function mergeField(name, localRaw, cloudRaw) {
+        if (localRaw) localRaw = _repairArrayLike(localRaw);
+        if (cloudRaw) cloudRaw = _repairArrayLike(cloudRaw);
         if (!localRaw) return cloudRaw;
         if (!cloudRaw) return localRaw;
         if (localRaw === cloudRaw) return localRaw;
@@ -794,6 +813,14 @@ const Sync = (function () {
         try {
             const lObj = JSON.parse(localRaw);
             const cObj = JSON.parse(cloudRaw);
+            // Array stores (assessmentHistory, listeningLog, milestonesSeen,
+            // recommendationOutcomes, …) must stay arrays — Object.assign
+            // would turn them into {"0": …} objects.
+            if (Array.isArray(lObj) && Array.isArray(cObj)) {
+                return mergeArrayById(localRaw, cloudRaw);
+            }
+            if (Array.isArray(lObj)) return localRaw;
+            if (Array.isArray(cObj)) return cloudRaw;
             if (typeof lObj === 'object' && lObj !== null && typeof cObj === 'object' && cObj !== null) {
                 return JSON.stringify(Object.assign({}, cObj, lObj));
             }

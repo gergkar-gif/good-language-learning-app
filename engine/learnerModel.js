@@ -783,7 +783,12 @@ const LearnerModel = (function () {
 
     function _loadAssessments() {
         try {
-            return JSON.parse(localStorage.getItem(_assessmentKey()) || '[]');
+            const parsed = JSON.parse(localStorage.getItem(_assessmentKey()) || '[]');
+            // Older sync merges stored this array as {"0": …, "1": …}.
+            const list = Array.isArray(parsed) ? parsed
+                : (parsed && typeof parsed === 'object') ? Object.values(parsed) : [];
+            // Newest first — a sync merge can interleave devices' entries.
+            return list.filter(Boolean).sort((a, b) => String(b.timestamp || '').localeCompare(String(a.timestamp || '')));
         } catch (e) {
             return [];
         }
