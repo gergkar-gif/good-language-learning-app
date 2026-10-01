@@ -6210,35 +6210,6 @@
   background: #0d442a;
 }
 
-/* Review rating buttons text contrast in dark mode */
-[data-theme="dark"] .review-rate-hard,
-[data-theme="dark"] .review-rate-good,
-[data-theme="dark"] .review-rate-easy {
-  color: var(--bg);
-}
-
-[data-theme="dark"] .review-rate-hard .review-rate-hint,
-[data-theme="dark"] .review-rate-good .review-rate-hint,
-[data-theme="dark"] .review-rate-easy .review-rate-hint {
-  background: rgba(0, 0, 0, 0.2);
-  color: var(--bg);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .review-rate-hard,
-  :root:not([data-theme="light"]) .review-rate-good,
-  :root:not([data-theme="light"]) .review-rate-easy {
-    color: var(--bg);
-  }
-
-  :root:not([data-theme="light"]) .review-rate-hard .review-rate-hint,
-  :root:not([data-theme="light"]) .review-rate-good .review-rate-hint,
-  :root:not([data-theme="light"]) .review-rate-easy .review-rate-hint {
-    background: rgba(0, 0, 0, 0.2);
-    color: var(--bg);
-  }
-}
-
 /* ============================================
    SPEAKING & INLINE VOICE ADDON STYLES
    ============================================ */
