@@ -41,7 +41,13 @@ treated as a current spec.
   (`a1-learning-objectives`, `a1-story`, `a1-progression-matrix`,
   `a1-reading-plan`, `a1-quality-checklist`, `a2`), archived 2026-09-30. The
   guides still in `content/es-latam/guides/` are the ones `audit-lesson.py` and
-  the remaining guides cite.
+  the remaining guides cite. Seven more A1 guide files moved here on 2026-10-02:
+  `a1-content-spec.md`, `a1-exercises.md`, `a1-lesson-template.md` and
+  `a1-srs-srategy.md` were merged (and corrected) into
+  `content/es-latam/guides/a1-authoring-guide.md`; `a1.md`, `a1-vocabulary-themes.md`
+  and `a1-grammar.md` were hand-synced tables of data that lives in
+  `curriculum/units/a1.json`, the vocabulary files and the lesson files, so they were
+  dropped rather than merged.
 - `hu-drafts/` — the Hungarian A2/B1/B2 curriculum drafts and the A2 story-arc
   draft. The content they planned is built; the real curriculum is generated
   from `content/hu/curriculum/`.

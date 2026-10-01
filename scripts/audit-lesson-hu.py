@@ -19,7 +19,7 @@ Three real differences from the Spanish version, not just a find/replace:
    grouping at all.
 
 2. Diacritics are not noise. Spanish's checker strips all accents before
-   comparing tokens (a1-content-spec.md's normalise() does the same, and
+   comparing tokens (the old a1-content-spec.md's normalise(), now archived, did the same, and
    [[hungarian-accent-sensitive-grading]] memory already establishes why:
    Hungarian a/á, o/o"/ö and u/ú/ü are different letters, not accent
    variants of one letter. Stripping them would silently treat "haz" (not

@@ -258,7 +258,7 @@ string. Once that field exists in `exercises.schema.json`, use it instead
   `number`, `unknown` (or two joined with `/`, e.g. `noun/adjective`, only
   where both readings are actually taught).
 - `theme` is a short freeform topic label (2–4 words) — there's no
-  Hungarian equivalent of Spanish's `a1-vocabulary-themes.md` yet, so pick
+  Hungarian equivalent of Spanish's list of vocabulary themes yet (Spanish keeps its themes in the vocabulary files' `theme` field), so pick
   something sensible and **keep it consistent** across lessons that share a
   topic, since it groups words into a shared deck.
 - **10–15 words** per lesson (original target — not re-verified against

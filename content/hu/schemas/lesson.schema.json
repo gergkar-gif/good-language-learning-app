@@ -121,7 +121,7 @@
 
     "recycleSection": {
       "type": "object",
-      "description": "Warms the learner up on earlier material before anything new. Takes no ref: engine/recycle.js assembles it at runtime from `teaches`-tagged exercises in lessons already completed, scheduled per exercise id with the same SM-2 curve as the vocabulary deck. A lesson with nothing yet to recycle (lesson 1, or a learner starting fresh) contributes zero screens rather than an empty block. See content/es/guides/a1-srs-srategy.md.",
+      "description": "Warms the learner up on earlier material before anything new. Takes no ref: engine/recycle.js assembles it at runtime from `teaches`-tagged exercises in lessons already completed, scheduled per exercise id with the same SM-2 curve as the vocabulary deck. A lesson with nothing yet to recycle (lesson 1, or a learner starting fresh) contributes zero screens rather than an empty block. See content/es-latam/guides/a1-authoring-guide.md, section 6.",
       "required": ["type"],
       "additionalProperties": false,
       "properties": {
@@ -145,7 +145,7 @@
 
     "exerciseGroupSection": {
       "type": "object",
-      "description": "Produces one screen per id in exerciseRefs, each gated. With more than one id the screens are numbered ('Practice 3/6'). A lesson has four groups totalling 15 exercises — Practice 6, Reading 4, Dialogue 3, Writing 2 — and the Practice group must span at least 5 distinct exercise types. See a1-content-spec.md; scripts/audit-lesson.py enforces it.",
+      "description": "Produces one screen per id in exerciseRefs, each gated. With more than one id the screens are numbered ('Practice 3/6'). A lesson has four groups totalling 15 exercises — Practice 6, Reading 4, Dialogue 3, Writing 2 — and the Practice group must span at least 4 distinct exercise types and the lesson as a whole at least 5. See content/es-latam/guides/a1-authoring-guide.md; scripts/audit-lesson.py enforces it.",
       "required": ["type", "ref", "exerciseRefs"],
       "additionalProperties": false,
       "properties": {

@@ -11,10 +11,10 @@ what shape*.
 
 It is grounded directly in the current schemas
 (`content/es/schemas/*.schema.json`) and in the actual A1/A2 production
-files, not in `a1-content-spec.md`, which describes an earlier one-file-per-
+files, not in the old `a1-content-spec.md` (now archived in `docs/archive/guides/`), which described an earlier one-file-per-
 lesson layout the content has since moved on from. Where this spec disagrees
-with `a1-content-spec.md`, this one is current — A1 itself no longer matches
-its own spec document in several respects (see §8).
+with that old document, this one is current. The A1 rules now live in
+`a1-authoring-guide.md` (see §8).
 
 ---
 
@@ -140,7 +140,7 @@ goal → recycle → exercise-group "Review" → checklist
 ```
 
 No grammar section, no vocabulary section, no srs section, no story — this
-follows the settled A1 review-lesson rationale (`a1-content-spec.md` §4c):
+follows the settled A1 review-lesson rationale (`a1-authoring-guide.md` §4):
 nothing new is being taught, the block's words are already in Decks, and a
 "review screen" would either repeat a screen already seen or become a new
 grammar explanation, which is what the next lesson is for. A2's
@@ -448,7 +448,7 @@ One file per teaching lesson (lessons 01–05; consolidation has none).
   "embedded" to isolate there.
 - one concept per file. A unit whose grammar needs more room than one
   700-word-lesson screen can comfortably hold should be split the way A1
-  splits an overloaded lesson into parts (`a1-content-spec.md` §4b) —
+  splits an overloaded lesson into parts (the old `a1-content-spec.md` §4b, archived) —
   prefer narrowing what lesson 3, say, tries to teach over cramming two
   grammar screens into one lesson
 
@@ -648,7 +648,7 @@ already know, not a preview of what's coming.
 
 ## 8. What this spec deliberately does not inherit from A1
 
-`a1-content-spec.md` describes A1 as it existed on 2026-08-09: one file per
+The old `a1-content-spec.md` (archived) described A1 as it existed on 2026-08-09: one file per
 lesson (`a1-01.json`), with lessons 18–20 as a separate "review" format.
 Since then A1 itself was restructured into the six-lessons-per-unit shape
 this document describes (`a1-01-01.json` … `a1-01-consolidation.json`).

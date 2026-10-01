@@ -5,7 +5,7 @@
 // learner has already completed, on an SM-2-shaped curve (ease grows/shrinks
 // the same way engine/srs.js's vocabulary deck does) but keyed by exercise
 // id instead of a lemma, and scheduled in app OPENS rather than wall-clock
-// time — see below. See content/es/guides/a1-srs-srategy.md.
+// time — see below. See content/es-latam/guides/a1-authoring-guide.md, section 6.
 //
 // The vocabulary deck's "again" reschedules a card a fixed number of
 // minutes out (SRS_CONFIG.AGAIN_MINUTES), which works when hundreds of
