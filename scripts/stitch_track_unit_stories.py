@@ -131,8 +131,8 @@ def stitch_language_track(lang: str, level: str, track_id: str, lang_audio_code:
 
         total_words = sum(len((p.get("text") or "").split()) for p in all_paras)
         est_minutes = max(8, round(total_words / 110))
-
-        combined["title"] = unit_title
+        if not combined.get("title"):
+            combined["title"] = unit_title
         combined["level"] = level.upper()
         combined["type"] = "world"
         combined["order"] = order_idx

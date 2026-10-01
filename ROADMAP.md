@@ -19,7 +19,6 @@ Completed work is archived out to `ACHIEVED.md`.
     - **B2 classics (~700 words target).** All 36 average ~288 words (e.g. *Pacsirta*, *A vörös postakocsi*, *Bánk bán*, *Ábel a rengetegben*, *Sorstalanság*, *Az ajtó*). The prose and dialogue are authentic, but they're 1-page vignettes; expand into ~700-word B2 adaptations with text-grounded comprehension questions.
     - **B1/B2 World/Civics shelf.** Consider expanding the short cultural vignettes too (currently ~130 words at B1, ~360 at B2).
 
-111. **ES-LATAM leftovers from the B2 Library shelf fix (added 2026-09-30).** The three combined readings built from segments (Guatemala, El Salvador & Honduras, Nicaragua) are thin: 15 short paragraphs, no narration, no comprehension questions, unlike the other 33. (The last four Latin America units' "B2 Regional: …" titles and the B1 "inspired by" readings were fixed — see ACHIEVED.md.)
 
 113. **GitHub issue #132, "'m' shouldn't be in the dictionary as a separate entry" (investigated 2026-09, could not reproduce).** None of `story.a2.unit01`'s 35 words looks up as `m`, the Reader tokenizer covers every Hungarian diacritic, English narration isn't tappable, and `word-index.json` has no entry mapping to lemma `m`. The dictionary does hold about 205 abbreviation and unit-symbol entries like `m` (SI metre), but many of the same shape (`db`, `ft`, `h`, `am`, `p`) are genuine Hungarian shorthand, so filtering short entries wholesale would remove real vocabulary. Needs a repro detail: which word was tapped, or how `m` was reached.
 
