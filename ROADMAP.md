@@ -31,8 +31,6 @@ Completed work is archived out to `ACHIEVED.md`.
 
 115. **Reader coverage follow-ups (added 2026-10-01).** (1) Run `scripts/audit-reader-coverage.js` in CI as a report, not a gate, so a content change that adds many unreadable words shows up. (2) `imports/dictionary/coverage-ignore.json` is shared by Hungarian and Spanish; split it per language if a word ever needs ignoring in only one. (3) The weekly gloss review uses the desktop app's default model, because the scheduling tool has no model setting; set the app default to Opus 5.5 (or check the task's own settings) if that matters.
 
-116. **Hungarian A1 units 121-150 read as generated (found 2026-10-01 during the item 103 audit, see ACHIEVED.md).** Beyond the "Nem tudom." distractors fixed then, several practice dialogues have correct answers that don't answer the question or aren't natural Hungarian: "Szeretnétek együtt programot?" (no verb), "Mit csinálsz szabadidőben?" (should be *szabadidődben*), "A kabát hosszú, de kényelmes." answered with "A nadrág rövid?", "Akarunk találkozni hétkor?". The same exchanges recur across each unit's practice and consolidation files. Worth a native-speaker pass over these 30 units' `dialogue-complete` steps (about 150 exercises).
-
 ---
 
 ## 2. Future Feature Ideas
