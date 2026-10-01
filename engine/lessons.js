@@ -757,6 +757,16 @@ function escMd(value) {
         .replace(/\*([^*]+)\*/g, '<em>$1</em>');
 }
 
+// Some choice options end in an English gloss: "Viajaría más. [I would
+// travel more.]". On the button it gives the answer away (the right
+// option's English is fluent, the wrong ones' is broken), so the button
+// shows only the target language and the right option's gloss appears
+// with the feedback once the answer is settled.
+function splitOptionGloss(option) {
+    const m = String(option).match(/^(.*\S)\s*\[([^\]]*[A-Za-z][^\]]*)\]\s*$/);
+    return m ? { text: m[1], gloss: m[2] } : { text: option, gloss: '' };
+}
+
 // Bolds `word` where it appears literally in `sentence` — used by the
 // substitution exercise to show what changed. Deliberately a plain
 // substring match, not a guess: the caller passes the word's ACTUAL
@@ -1372,6 +1382,8 @@ const stepRenderers = {
         const pick = shuffledOptions(step.options, step.correct);
         stepState.correct = pick.correct;
         stepState.checkFn = 'lessonCheckChoice';
+        const parts = pick.options.map(splitOptionGloss);
+        if (!Array.isArray(pick.correct)) stepState.translation = parts[pick.correct].gloss;
         const isMulti = Array.isArray(step.correct) && step.correct.length > 1;
         const multiHint = isMulti && !/more than one|multiple|either|any of|which two/i.test(step.question || '')
             ? `<p class="lsn-multi-hint">(More than one answer is acceptable — pick any)</p>`
@@ -1380,8 +1392,8 @@ const stepRenderers = {
             <p class="lsn-question">${escMd(step.question)}</p>
             ${multiHint}
             <div class="lsn-options">
-                ${pick.options.map((option, i) => `
-                    <button class="lsn-option" onclick="lessonSelectOption(this, ${i})"><span class="lsn-key-hint">${i + 1}</span><span class="lsn-option-text">${escMd(option)}</span></button>
+                ${parts.map((option, i) => `
+                    <button class="lsn-option" onclick="lessonSelectOption(this, ${i})"><span class="lsn-key-hint">${i + 1}</span><span class="lsn-option-text">${escMd(option.text)}</span></button>
                 `).join('')}
             </div>
             ${feedbackHtml()}
@@ -1393,6 +1405,8 @@ const stepRenderers = {
         const pick = shuffledOptions(step.options, step.correct);
         stepState.correct = pick.correct;
         stepState.checkFn = 'lessonCheckChoice';
+        const parts = pick.options.map(splitOptionGloss);
+        if (!Array.isArray(pick.correct)) stepState.translation = parts[pick.correct].gloss;
         const isMulti = Array.isArray(step.correct) && step.correct.length > 1;
         return `
             <div class="lsn-dialogue">
@@ -1405,8 +1419,8 @@ const stepRenderers = {
             </div>
             <p class="lsn-question">Choose the missing line:${isMulti ? ' <span class="lsn-multi-hint">(more than one answer is acceptable — pick any)</span>' : ''}</p>
             <div class="lsn-options">
-                ${pick.options.map((option, i) => `
-                    <button class="lsn-option" onclick="lessonSelectOption(this, ${i})"><span class="lsn-key-hint">${i + 1}</span><span class="lsn-option-text">${escMd(option)}</span></button>
+                ${parts.map((option, i) => `
+                    <button class="lsn-option" onclick="lessonSelectOption(this, ${i})"><span class="lsn-key-hint">${i + 1}</span><span class="lsn-option-text">${escMd(option.text)}</span></button>
                 `).join('')}
             </div>
             ${feedbackHtml()}
