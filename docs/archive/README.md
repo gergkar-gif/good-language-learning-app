@@ -47,7 +47,13 @@ treated as a current spec.
   `content/es-latam/guides/a1-authoring-guide.md`; `a1.md`, `a1-vocabulary-themes.md`
   and `a1-grammar.md` were hand-synced tables of data that lives in
   `curriculum/units/a1.json`, the vocabulary files and the lesson files, so they were
-  dropped rather than merged.
+  dropped rather than merged. The merged guide itself, `a1-authoring-guide.md`, was archived
+  the same day with `B1_GUIDE.md`, `b1-content-spec.md` and `latam-generation-brief.md`: the
+  shipped content no longer follows them (the audit flags 123 of 156 A1 lessons and 296 B1
+  ones), and what is enforced today is the validator, the schemas and `AGENTS.md`. The
+  rules still worth keeping were moved into `AGENTS.md`. Left in place because code reads
+  them: `a2-lesson-guide.md` and `Parlour B1 Consolidated Unit List.md` (parsed by
+  `scripts/audit-lesson.py`), and `editorial-style-guide.md`.
 - `hu-drafts/` — the Hungarian A2/B1/B2 curriculum drafts and the A2 story-arc
   draft. The content they planned is built; the real curriculum is generated
   from `content/hu/curriculum/`.

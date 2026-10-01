@@ -66,6 +66,9 @@ Carried over from `docs/archive/PLANNING.md`; the rules that still apply to cont
 - Sentence-order exercises: at most 2 per unit, and they must produce natural sentences, never artificial word-order demonstrations.
 - Conjugation prompts: never ask for a form when the subject is unclear; make it explicit.
 - Accept every grammatically valid alternative (interchangeable names and nouns, and similar).
+- `fill-blank` hints: add a short parenthetical to `sentence` only when the blank is genuinely unrecoverable (a brand-new noun, an ambiguous verb person or tense), and never let it repeat the answer: for the answer `mientras que` the hint is `(meanwhile)`, not `(mientras que)`. There is no typed `hint` field yet.
+- A question must be answerable from the exercise itself: a pronoun with no antecedent (`ő`, `él`) makes two options equally valid, and the same question must not appear twice in a row.
+- Per-level exercise shape (types per block, the review-lesson shape) is checked by `python scripts/audit-lesson.py a1|a2|b1`. Many older lessons predate it and do not all pass, so treat it as a guide, not a gate. The old prose guides are in `docs/archive/guides/`.
 
 **Teaching style.** Grammar explanations are short, explicit and natural, and explain why a structure works, not only which form to memorise. Give concepts unfamiliar to English speakers enough explanation before drilling. Prefer natural wording (`uses`, `is used to`, `means`) over awkward phrasing such as `run on`. Context lives inside lessons and exercises, not in a separate tab.
 

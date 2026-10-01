@@ -17,7 +17,7 @@ whichever planning document actually describes lessons at this grain:
   a2  content/es/guides/a2-lesson-guide.md
   b1  content/es/guides/Parlour B1 Consolidated Unit List.md (Core track only
       — Latin America units use word-slug ids the document doesn't carry;
-      see b1-content-spec.md section 1a)
+      see the archived docs/archive/guides/b1-content-spec.md, section 1a)
   a1  no such document exists. The old guides/a1.md (archived) described 20 units at unit grain
       (one title/goal/grammar per unit), but the lesson files are five
       classes per unit with their own narrower titles — the two no longer
@@ -59,7 +59,7 @@ HAS_LISTENING = {"a1": False, "a2": True, "b1": True}
 
 # Consolidation shape. "single" = one "Review" exercise-group, every exercise
 # `teaches`-tagged, spanning several types and several distinct points — A1's
-# design (guides/a1-authoring-guide.md, section 4), adopted for B1. "split" = the same
+# design (archived: docs/archive/guides/a1-authoring-guide.md, section 4), adopted for B1. "split" = the same
 # Practice/Listening/Dialogue/Writing blocks as a teaching lesson, just
 # without grammar/vocabulary/story — what A2 actually shipped, which drifted
 # from A1's design rather than deliberately choosing a different one.
