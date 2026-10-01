@@ -748,31 +748,31 @@ Work level by level, top to bottom. Commit after each block of about 25 files.
 - [x] content/hu/exercises/b1/b1-forradalom-03-ex.json
 - [x] content/hu/exercises/b1/b1-forradalom-04-ex.json
 - [x] content/hu/exercises/b1/b1-forradalom-05-ex.json
-- [ ] content/hu/exercises/b1/b1-forradalom-consolidation-ex.json
-- [ ] content/hu/exercises/b1/b1-haromresz-01-ex.json
-- [ ] content/hu/exercises/b1/b1-haromresz-02-ex.json
-- [ ] content/hu/exercises/b1/b1-haromresz-03-ex.json
-- [ ] content/hu/exercises/b1/b1-haromresz-04-ex.json
-- [ ] content/hu/exercises/b1/b1-haromresz-05-ex.json
-- [ ] content/hu/exercises/b1/b1-haromresz-consolidation-ex.json
-- [ ] content/hu/exercises/b1/b1-honfoglalas-01-ex.json
-- [ ] content/hu/exercises/b1/b1-honfoglalas-02-ex.json
-- [ ] content/hu/exercises/b1/b1-honfoglalas-03-ex.json
-- [ ] content/hu/exercises/b1/b1-honfoglalas-04-ex.json
-- [ ] content/hu/exercises/b1/b1-honfoglalas-05-ex.json
-- [ ] content/hu/exercises/b1/b1-honfoglalas-consolidation-ex.json
-- [ ] content/hu/exercises/b1/b1-horthykorszak-01-ex.json
-- [ ] content/hu/exercises/b1/b1-horthykorszak-02-ex.json
-- [ ] content/hu/exercises/b1/b1-horthykorszak-03-ex.json
-- [ ] content/hu/exercises/b1/b1-horthykorszak-04-ex.json
-- [ ] content/hu/exercises/b1/b1-horthykorszak-05-ex.json
-- [ ] content/hu/exercises/b1/b1-horthykorszak-consolidation-ex.json
-- [ ] content/hu/exercises/b1/b1-istvankiraly-01-ex.json
-- [ ] content/hu/exercises/b1/b1-istvankiraly-02-ex.json
-- [ ] content/hu/exercises/b1/b1-istvankiraly-03-ex.json
-- [ ] content/hu/exercises/b1/b1-istvankiraly-04-ex.json
-- [ ] content/hu/exercises/b1/b1-istvankiraly-05-ex.json
-- [ ] content/hu/exercises/b1/b1-istvankiraly-consolidation-ex.json
+- [x] content/hu/exercises/b1/b1-forradalom-consolidation-ex.json
+- [x] content/hu/exercises/b1/b1-haromresz-01-ex.json
+- [x] content/hu/exercises/b1/b1-haromresz-02-ex.json
+- [x] content/hu/exercises/b1/b1-haromresz-03-ex.json
+- [x] content/hu/exercises/b1/b1-haromresz-04-ex.json
+- [x] content/hu/exercises/b1/b1-haromresz-05-ex.json
+- [x] content/hu/exercises/b1/b1-haromresz-consolidation-ex.json
+- [x] content/hu/exercises/b1/b1-honfoglalas-01-ex.json
+- [x] content/hu/exercises/b1/b1-honfoglalas-02-ex.json
+- [x] content/hu/exercises/b1/b1-honfoglalas-03-ex.json
+- [x] content/hu/exercises/b1/b1-honfoglalas-04-ex.json
+- [x] content/hu/exercises/b1/b1-honfoglalas-05-ex.json
+- [x] content/hu/exercises/b1/b1-honfoglalas-consolidation-ex.json
+- [x] content/hu/exercises/b1/b1-horthykorszak-01-ex.json
+- [x] content/hu/exercises/b1/b1-horthykorszak-02-ex.json
+- [x] content/hu/exercises/b1/b1-horthykorszak-03-ex.json
+- [x] content/hu/exercises/b1/b1-horthykorszak-04-ex.json
+- [x] content/hu/exercises/b1/b1-horthykorszak-05-ex.json
+- [x] content/hu/exercises/b1/b1-horthykorszak-consolidation-ex.json
+- [x] content/hu/exercises/b1/b1-istvankiraly-01-ex.json
+- [x] content/hu/exercises/b1/b1-istvankiraly-02-ex.json
+- [x] content/hu/exercises/b1/b1-istvankiraly-03-ex.json
+- [x] content/hu/exercises/b1/b1-istvankiraly-04-ex.json
+- [x] content/hu/exercises/b1/b1-istvankiraly-05-ex.json
+- [x] content/hu/exercises/b1/b1-istvankiraly-consolidation-ex.json
 - [ ] content/hu/exercises/b1/b1-kadarkorszak-01-ex.json
 - [ ] content/hu/exercises/b1/b1-kadarkorszak-02-ex.json
 - [ ] content/hu/exercises/b1/b1-kadarkorszak-03-ex.json
