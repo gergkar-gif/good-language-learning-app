@@ -663,11 +663,21 @@ const Lexicon = (function () {
     // learn "mesa" and its gender as two separate facts. Deliberately silent
     // for anything not plainly 'm' or 'f' (invariant nouns, "m; f", plurals,
     // etc.) — a wrong guess is worse than no article at all.
+    // Feminine nouns stressed on an initial a/ha take "el"/"un" in the
+    // singular (el agua, un águila). Has to be a list: "starts with a"
+    // alone would also catch la amiga, la abeja, la habitación.
+    const STRESSED_A_FEMININE = new Set([
+        'agua', 'águila', 'alma', 'arma', 'aula', 'área', 'ala', 'alba', 'ancla',
+        'ansia', 'arca', 'arpa', 'asa', 'asma', 'acta', 'alza', 'ama', 'aura',
+        'ave', 'aria', 'álgebra', 'ánima', 'ánfora', 'áncora', 'haba', 'habla',
+        'hacha', 'hada', 'hambre', 'hampa', 'haya'
+    ]);
+
     function article(lemma) {
         const entry = define(lemma);
         if (!entry || entry.type !== 'noun') return null;
         if (entry.gender === 'm') return 'el';
-        if (entry.gender === 'f') return 'la';
+        if (entry.gender === 'f') return STRESSED_A_FEMININE.has(String(lemma).toLowerCase()) ? 'el' : 'la';
         return null;
     }
 
@@ -680,14 +690,15 @@ const Lexicon = (function () {
     }
 
     // Articles a typed answer may put before this noun: the definite and
-    // indefinite form of its gender. A feminine noun starting with a/ha
-    // also takes el/un (el agua). null when the gender isn't known, so
-    // graders don't demand an article nobody can check.
+    // indefinite form of its gender. A stressed-a feminine noun takes
+    // el/un, and una is also correct there (una águila). null when the
+    // gender isn't known, so graders don't demand an article nobody can
+    // check.
     function acceptedArticles(lemma) {
         const a = article(lemma);
         if (!a) return null;
-        if (a === 'el') return ['el', 'un'];
-        return /^h?[aá]/i.test(lemma) ? ['la', 'una', 'el', 'un'] : ['la', 'una'];
+        if (a === 'la') return ['la', 'una'];
+        return define(lemma).gender === 'f' ? ['el', 'un', 'una'] : ['el', 'un'];
     }
 
     // Rank of a lemma in the frequency list (0 = most common), or null if it
