@@ -798,31 +798,31 @@ Work level by level, top to bottom. Commit after each block of about 25 files.
 - [x] content/hu/exercises/b1/b1-kormanyablak-05-ex.json
 - [x] content/hu/exercises/b1/b1-kormanyablak-consolidation-ex.json
 - [x] content/hu/exercises/b1/b1-magyarsag-01-ex.json
-- [ ] content/hu/exercises/b1/b1-magyarsag-02-ex.json
-- [ ] content/hu/exercises/b1/b1-magyarsag-03-ex.json
-- [ ] content/hu/exercises/b1/b1-magyarsag-04-ex.json
-- [ ] content/hu/exercises/b1/b1-magyarsag-05-ex.json
-- [ ] content/hu/exercises/b1/b1-magyarsag-consolidation-ex.json
-- [ ] content/hu/exercises/b1/b1-mariaterezia-01-ex.json
-- [ ] content/hu/exercises/b1/b1-mariaterezia-02-ex.json
-- [ ] content/hu/exercises/b1/b1-mariaterezia-03-ex.json
-- [ ] content/hu/exercises/b1/b1-mariaterezia-04-ex.json
-- [ ] content/hu/exercises/b1/b1-mariaterezia-05-ex.json
-- [ ] content/hu/exercises/b1/b1-mariaterezia-consolidation-ex.json
-- [ ] content/hu/exercises/b1/b1-masodikvh-01-ex.json
-- [ ] content/hu/exercises/b1/b1-masodikvh-02-ex.json
-- [ ] content/hu/exercises/b1/b1-masodikvh-03-ex.json
-- [ ] content/hu/exercises/b1/b1-masodikvh-04-ex.json
-- [ ] content/hu/exercises/b1/b1-masodikvh-05-ex.json
-- [ ] content/hu/exercises/b1/b1-masodikvh-consolidation-ex.json
-- [ ] content/hu/exercises/b1/b1-matyas-01-ex.json
-- [ ] content/hu/exercises/b1/b1-matyas-02-ex.json
-- [ ] content/hu/exercises/b1/b1-matyas-03-ex.json
-- [ ] content/hu/exercises/b1/b1-matyas-04-ex.json
-- [ ] content/hu/exercises/b1/b1-matyas-05-ex.json
-- [ ] content/hu/exercises/b1/b1-matyas-consolidation-ex.json
-- [ ] content/hu/exercises/b1/b1-mohacs-01-ex.json
-- [ ] content/hu/exercises/b1/b1-mohacs-02-ex.json
+- [x] content/hu/exercises/b1/b1-magyarsag-02-ex.json
+- [x] content/hu/exercises/b1/b1-magyarsag-03-ex.json
+- [x] content/hu/exercises/b1/b1-magyarsag-04-ex.json
+- [x] content/hu/exercises/b1/b1-magyarsag-05-ex.json
+- [x] content/hu/exercises/b1/b1-magyarsag-consolidation-ex.json
+- [x] content/hu/exercises/b1/b1-mariaterezia-01-ex.json
+- [x] content/hu/exercises/b1/b1-mariaterezia-02-ex.json
+- [x] content/hu/exercises/b1/b1-mariaterezia-03-ex.json
+- [x] content/hu/exercises/b1/b1-mariaterezia-04-ex.json
+- [x] content/hu/exercises/b1/b1-mariaterezia-05-ex.json
+- [x] content/hu/exercises/b1/b1-mariaterezia-consolidation-ex.json
+- [x] content/hu/exercises/b1/b1-masodikvh-01-ex.json
+- [x] content/hu/exercises/b1/b1-masodikvh-02-ex.json
+- [x] content/hu/exercises/b1/b1-masodikvh-03-ex.json
+- [x] content/hu/exercises/b1/b1-masodikvh-04-ex.json
+- [x] content/hu/exercises/b1/b1-masodikvh-05-ex.json
+- [x] content/hu/exercises/b1/b1-masodikvh-consolidation-ex.json
+- [x] content/hu/exercises/b1/b1-matyas-01-ex.json
+- [x] content/hu/exercises/b1/b1-matyas-02-ex.json
+- [x] content/hu/exercises/b1/b1-matyas-03-ex.json
+- [x] content/hu/exercises/b1/b1-matyas-04-ex.json
+- [x] content/hu/exercises/b1/b1-matyas-05-ex.json
+- [x] content/hu/exercises/b1/b1-matyas-consolidation-ex.json
+- [x] content/hu/exercises/b1/b1-mohacs-01-ex.json
+- [x] content/hu/exercises/b1/b1-mohacs-02-ex.json
 - [ ] content/hu/exercises/b1/b1-mohacs-03-ex.json
 - [ ] content/hu/exercises/b1/b1-mohacs-04-ex.json
 - [ ] content/hu/exercises/b1/b1-mohacs-05-ex.json
