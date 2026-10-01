@@ -3413,6 +3413,12 @@ function lessonSaveChecklistChoices() {
 
     if (currentLesson && currentLesson.id && typeof LearnerModel !== 'undefined' && typeof LearnerModel.recordCompetencies === 'function') {
         LearnerModel.recordCompetencies(currentLesson.id, recorded);
+        // The summary's goals list reads each item's `state`, which only
+        // recordCompetencies() assigns — without the stored records every
+        // goal showed as still to lock down, even at 100%.
+        if (typeof LearnerModel.getCompetency === 'function') {
+            lastLessonChecklist = recorded.map(item => LearnerModel.getCompetency(item.text) || item);
+        }
     }
 }
 

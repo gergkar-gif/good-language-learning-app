@@ -307,10 +307,25 @@ const RecommendationEngine = (function () {
     // (only 'again'/'hard' move it down), or looked up in the Reader on
     // several days (`ease: null`). weakWords() on its own returns the
     // lowest-ease cards even when none was ever missed.
+    //
+    // A card only counts while it's due: a correct match credits only due
+    // cards and never raises ease (creditPractice() in engine/srs.js), so
+    // without this the same lowest-ease ten came back after every lesson,
+    // played or not. Due, a played card is rescheduled and drops out, and
+    // the next-weakest due words take its place.
     function _missedWords() {
         if (typeof LearnerModel === 'undefined' || !LearnerModel.weakWords) return [];
         const start = (typeof SRS_CONFIG !== 'undefined') ? SRS_CONFIG.START_EASE : 2.5;
-        return LearnerModel.weakWords(10).filter(w => w.ease == null || w.ease < start);
+        const now = Date.now();
+        const cardFor = lemma => (typeof srsDeck !== 'undefined' && Array.isArray(srsDeck))
+            ? srsDeck.find(c => c.spanish === lemma) : null;
+        return LearnerModel.weakWords(100)
+            .filter(w => w.ease == null || w.ease < start)
+            .filter(w => {
+                const card = cardFor(w.lemma);
+                return !card || !card.nextReview || Date.parse(card.nextReview) <= now;
+            })
+            .slice(0, 10);
     }
 
     // What each weak driller's card says and opens with. Speaking has its
@@ -387,11 +402,18 @@ const RecommendationEngine = (function () {
         return stats;
     }
 
+    // A taken offer also stays away for TAKEN_COOLDOWN_HOURS: an "open" is
+    // a page load, and a phone reloads the page often enough that "not in
+    // the same open" alone let one card come back after every lesson.
+    const TAKEN_COOLDOWN_HOURS = 4;
+
     function _coolingDown(offer, outcomes, open) {
         const key = _offerKey(offer);
+        const now = Date.now();
         return outcomes.some(o => o.key === key && (
             (o.outcome === 'skipped' && open - o.open < SKIP_COOLDOWN_OPENS) ||
-            (o.outcome === 'taken' && o.open === open)));
+            (o.outcome === 'taken' && (o.open === open ||
+                now - Date.parse(o.at) < TAKEN_COOLDOWN_HOURS * 60 * 60 * 1000))));
     }
 
     // Vocabulary themes share `teaches` with grammar (see each course's
