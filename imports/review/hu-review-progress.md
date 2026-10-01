@@ -898,31 +898,31 @@ Work level by level, top to bottom. Commit after each block of about 25 files.
 - [x] content/hu/exercises/b1/b1-rendszervaltas-03-ex.json
 - [x] content/hu/exercises/b1/b1-rendszervaltas-04-ex.json
 - [x] content/hu/exercises/b1/b1-rendszervaltas-05-ex.json
-- [ ] content/hu/exercises/b1/b1-rendszervaltas-consolidation-ex.json
-- [ ] content/hu/exercises/b1/b1-tatarjaras-01-ex.json
-- [ ] content/hu/exercises/b1/b1-tatarjaras-02-ex.json
-- [ ] content/hu/exercises/b1/b1-tatarjaras-03-ex.json
-- [ ] content/hu/exercises/b1/b1-tatarjaras-04-ex.json
-- [ ] content/hu/exercises/b1/b1-tatarjaras-05-ex.json
-- [ ] content/hu/exercises/b1/b1-tatarjaras-consolidation-ex.json
-- [ ] content/hu/exercises/b1/b1-torokkiuzese-01-ex.json
-- [ ] content/hu/exercises/b1/b1-torokkiuzese-02-ex.json
-- [ ] content/hu/exercises/b1/b1-torokkiuzese-03-ex.json
-- [ ] content/hu/exercises/b1/b1-torokkiuzese-04-ex.json
-- [ ] content/hu/exercises/b1/b1-torokkiuzese-05-ex.json
-- [ ] content/hu/exercises/b1/b1-torokkiuzese-consolidation-ex.json
-- [ ] content/hu/exercises/b1/b1-trianon-01-ex.json
-- [ ] content/hu/exercises/b1/b1-trianon-02-ex.json
-- [ ] content/hu/exercises/b1/b1-trianon-03-ex.json
-- [ ] content/hu/exercises/b1/b1-trianon-04-ex.json
-- [ ] content/hu/exercises/b1/b1-trianon-05-ex.json
-- [ ] content/hu/exercises/b1/b1-trianon-consolidation-ex.json
-- [ ] content/hu/exercises/b1/b1-vilaghaboru-01-ex.json
-- [ ] content/hu/exercises/b1/b1-vilaghaboru-02-ex.json
-- [ ] content/hu/exercises/b1/b1-vilaghaboru-03-ex.json
-- [ ] content/hu/exercises/b1/b1-vilaghaboru-04-ex.json
-- [ ] content/hu/exercises/b1/b1-vilaghaboru-05-ex.json
-- [ ] content/hu/exercises/b1/b1-vilaghaboru-consolidation-ex.json
+- [x] content/hu/exercises/b1/b1-rendszervaltas-consolidation-ex.json
+- [x] content/hu/exercises/b1/b1-tatarjaras-01-ex.json
+- [x] content/hu/exercises/b1/b1-tatarjaras-02-ex.json
+- [x] content/hu/exercises/b1/b1-tatarjaras-03-ex.json
+- [x] content/hu/exercises/b1/b1-tatarjaras-04-ex.json
+- [x] content/hu/exercises/b1/b1-tatarjaras-05-ex.json
+- [x] content/hu/exercises/b1/b1-tatarjaras-consolidation-ex.json
+- [x] content/hu/exercises/b1/b1-torokkiuzese-01-ex.json
+- [x] content/hu/exercises/b1/b1-torokkiuzese-02-ex.json
+- [x] content/hu/exercises/b1/b1-torokkiuzese-03-ex.json
+- [x] content/hu/exercises/b1/b1-torokkiuzese-04-ex.json
+- [x] content/hu/exercises/b1/b1-torokkiuzese-05-ex.json
+- [x] content/hu/exercises/b1/b1-torokkiuzese-consolidation-ex.json
+- [x] content/hu/exercises/b1/b1-trianon-01-ex.json
+- [x] content/hu/exercises/b1/b1-trianon-02-ex.json
+- [x] content/hu/exercises/b1/b1-trianon-03-ex.json
+- [x] content/hu/exercises/b1/b1-trianon-04-ex.json
+- [x] content/hu/exercises/b1/b1-trianon-05-ex.json
+- [x] content/hu/exercises/b1/b1-trianon-consolidation-ex.json
+- [x] content/hu/exercises/b1/b1-vilaghaboru-01-ex.json
+- [x] content/hu/exercises/b1/b1-vilaghaboru-02-ex.json
+- [x] content/hu/exercises/b1/b1-vilaghaboru-03-ex.json
+- [x] content/hu/exercises/b1/b1-vilaghaboru-04-ex.json
+- [x] content/hu/exercises/b1/b1-vilaghaboru-05-ex.json
+- [x] content/hu/exercises/b1/b1-vilaghaboru-consolidation-ex.json
 ## B2 (432 files, 5292 exercises)
 
 
