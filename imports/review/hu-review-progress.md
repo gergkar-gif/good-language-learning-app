@@ -698,31 +698,31 @@ Work level by level, top to bottom. Commit after each block of about 25 files.
 - [x] content/hu/exercises/b1/b1-alberlet-01-ex.json
 - [x] content/hu/exercises/b1/b1-alberlet-02-ex.json
 - [x] content/hu/exercises/b1/b1-alberlet-03-ex.json
-- [ ] content/hu/exercises/b1/b1-alberlet-04-ex.json
-- [ ] content/hu/exercises/b1/b1-alberlet-05-ex.json
-- [ ] content/hu/exercises/b1/b1-alberlet-consolidation-ex.json
-- [ ] content/hu/exercises/b1/b1-allampolgarsag-01-ex.json
-- [ ] content/hu/exercises/b1/b1-allampolgarsag-02-ex.json
-- [ ] content/hu/exercises/b1/b1-allampolgarsag-03-ex.json
-- [ ] content/hu/exercises/b1/b1-allampolgarsag-04-ex.json
-- [ ] content/hu/exercises/b1/b1-allampolgarsag-05-ex.json
-- [ ] content/hu/exercises/b1/b1-allampolgarsag-consolidation-ex.json
-- [ ] content/hu/exercises/b1/b1-allamszervezet-01-ex.json
-- [ ] content/hu/exercises/b1/b1-allamszervezet-02-ex.json
-- [ ] content/hu/exercises/b1/b1-allamszervezet-03-ex.json
-- [ ] content/hu/exercises/b1/b1-allamszervezet-04-ex.json
-- [ ] content/hu/exercises/b1/b1-allamszervezet-05-ex.json
-- [ ] content/hu/exercises/b1/b1-allamszervezet-consolidation-ex.json
-- [ ] content/hu/exercises/b1/b1-anjouk-01-ex.json
-- [ ] content/hu/exercises/b1/b1-anjouk-02-ex.json
-- [ ] content/hu/exercises/b1/b1-anjouk-03-ex.json
-- [ ] content/hu/exercises/b1/b1-anjouk-04-ex.json
-- [ ] content/hu/exercises/b1/b1-anjouk-05-ex.json
-- [ ] content/hu/exercises/b1/b1-anjouk-consolidation-ex.json
-- [ ] content/hu/exercises/b1/b1-arpadhaz-01-ex.json
-- [ ] content/hu/exercises/b1/b1-arpadhaz-02-ex.json
-- [ ] content/hu/exercises/b1/b1-arpadhaz-03-ex.json
-- [ ] content/hu/exercises/b1/b1-arpadhaz-04-ex.json
+- [x] content/hu/exercises/b1/b1-alberlet-04-ex.json
+- [x] content/hu/exercises/b1/b1-alberlet-05-ex.json
+- [x] content/hu/exercises/b1/b1-alberlet-consolidation-ex.json
+- [x] content/hu/exercises/b1/b1-allampolgarsag-01-ex.json
+- [x] content/hu/exercises/b1/b1-allampolgarsag-02-ex.json
+- [x] content/hu/exercises/b1/b1-allampolgarsag-03-ex.json
+- [x] content/hu/exercises/b1/b1-allampolgarsag-04-ex.json
+- [x] content/hu/exercises/b1/b1-allampolgarsag-05-ex.json
+- [x] content/hu/exercises/b1/b1-allampolgarsag-consolidation-ex.json
+- [x] content/hu/exercises/b1/b1-allamszervezet-01-ex.json
+- [x] content/hu/exercises/b1/b1-allamszervezet-02-ex.json
+- [x] content/hu/exercises/b1/b1-allamszervezet-03-ex.json
+- [x] content/hu/exercises/b1/b1-allamszervezet-04-ex.json
+- [x] content/hu/exercises/b1/b1-allamszervezet-05-ex.json
+- [x] content/hu/exercises/b1/b1-allamszervezet-consolidation-ex.json
+- [x] content/hu/exercises/b1/b1-anjouk-01-ex.json
+- [x] content/hu/exercises/b1/b1-anjouk-02-ex.json
+- [x] content/hu/exercises/b1/b1-anjouk-03-ex.json
+- [x] content/hu/exercises/b1/b1-anjouk-04-ex.json
+- [x] content/hu/exercises/b1/b1-anjouk-05-ex.json
+- [x] content/hu/exercises/b1/b1-anjouk-consolidation-ex.json
+- [x] content/hu/exercises/b1/b1-arpadhaz-01-ex.json
+- [x] content/hu/exercises/b1/b1-arpadhaz-02-ex.json
+- [x] content/hu/exercises/b1/b1-arpadhaz-03-ex.json
+- [x] content/hu/exercises/b1/b1-arpadhaz-04-ex.json
 - [ ] content/hu/exercises/b1/b1-arpadhaz-05-ex.json
 - [ ] content/hu/exercises/b1/b1-arpadhaz-consolidation-ex.json
 - [ ] content/hu/exercises/b1/b1-demokracia-01-ex.json
