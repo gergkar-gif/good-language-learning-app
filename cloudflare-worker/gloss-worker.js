@@ -196,8 +196,10 @@ async function handleGloss(request, env, cors) {
 }
 
 async function handleExport(request, url, env, cors) {
-    const auth = request.headers.get('Authorization') || '';
-    if (!env.EXPORT_TOKEN || auth !== 'Bearer ' + env.EXPORT_TOKEN) {
+    // Both sides are trimmed: a secret pasted into the dashboard often carries a trailing space or newline.
+    const auth = (request.headers.get('Authorization') || '').trim();
+    const expected = String(env.EXPORT_TOKEN || '').trim();
+    if (!expected || auth !== 'Bearer ' + expected) {
         return json({ error: 'Unauthorized' }, 401, cors);
     }
     if (!env.GLOSS_CACHE) return json({ error: 'No cache bound' }, 503, cors);
@@ -224,7 +226,7 @@ export default {
         if (request.method === 'OPTIONS') return new Response(null, { headers: cors });
 
         if (request.method === 'GET' && url.pathname === '/health') {
-            return json({ status: 'ok', service: 'parlour-gloss', workersAiAvailable: !!(env && env.AI), cacheAvailable: !!(env && env.GLOSS_CACHE), exportEnabled: !!(env && env.EXPORT_TOKEN) }, 200, cors);
+            return json({ status: 'ok', service: 'parlour-gloss', workersAiAvailable: !!(env && env.AI), cacheAvailable: !!(env && env.GLOSS_CACHE), exportEnabled: !!(env && env.EXPORT_TOKEN), exportTokenLength: env && env.EXPORT_TOKEN ? String(env.EXPORT_TOKEN).length : 0 }, 200, cors);
         }
         if (request.method === 'GET' && url.pathname === '/export') {
             return handleExport(request, url, env || {}, cors);

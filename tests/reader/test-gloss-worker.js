@@ -177,6 +177,10 @@ async function post(e, b, opts) {
     assert.deepStrictEqual(ok.entries.map(x => x.word), ['elnyomta']);
     assert.strictEqual(ok.entries[0].lemma, 'elnyom');
     assert.strictEqual((await worker.fetch(request('GET', 'https://x.test/export?lang=hu', { auth: 'Bearer secret' }), env(REPLY))).status, 401, 'no EXPORT_TOKEN configured means no export');
+    e.EXPORT_TOKEN = 'secret \n';   // a secret pasted with a trailing space and newline still matches
+    assert.strictEqual((await exp('Bearer secret')).status, 200);
+    const health = await (await worker.fetch(request('GET', 'https://x.test/health'), e)).json();
+    assert.deepStrictEqual([health.exportEnabled, health.exportTokenLength], [true, 8]);
 
     console.log('\nALL GLOSS WORKER TESTS PASSED');
 })().catch(err => { console.error('FAILED:', err); process.exit(1); });
