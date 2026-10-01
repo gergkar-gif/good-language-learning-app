@@ -1,22 +1,20 @@
 // ============================================
 // SOUND
 // ============================================
-// Short, user-provided sound cues for learning feedback and speaking.
+// Short, user-friendly sound cues for learning feedback. Synthesized
+// via Web Audio API for zero latency, zero asset loading, and soft,
+// non-annoying tones:
+//   - Correct: crisp, gentle modern micro chime (E5 -> A5)
+//   - Wrong: warm acoustic wooden marimba/block thud (220Hz + soft mallet attack)
+//   - Complete: uplifting modern micro arpeggio (C5 -> E5 -> G5 -> C6)
+//
 // Muting is one global preference shared across the app.
 
 const Sound = (function () {
     'use strict';
 
     const MUTE_KEY = 'app_sound_muted';
-    const CLIPS = {
-        correct: 'assets/audio/pencil-cue.mp3',
-        wrong: 'assets/audio/rewind-cue.mp3',
-        complete: 'assets/audio/gong-cue.mp3'
-    };
-    const GONG_SOURCE = 'assets/audio/gong.mp3';
-
-    let gongContext = null;
-    let gongBufferPromise = null;
+    let audioCtx = null;
 
     function muted() {
         try {
@@ -40,63 +38,126 @@ const Sound = (function () {
         return muted();
     }
 
-    function play(name) {
-        if (muted() || typeof Audio === 'undefined') return;
+    function getContext() {
+        if (!audioCtx) {
+            const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+            if (!AudioContextClass) return null;
+            audioCtx = new AudioContextClass();
+        }
+        if (audioCtx.state === 'suspended') {
+            audioCtx.resume().catch(() => {});
+        }
+        return audioCtx;
+    }
+
+    function safely(fn) {
+        if (muted()) return;
         try {
-            const audio = new Audio(CLIPS[name]);
-            audio.play().catch(() => {});
+            fn();
         } catch (error) {
             // Sound playback must never interrupt the learning flow.
         }
     }
 
-    function correct() { play('correct'); }
-    function wrong() { play('wrong'); }
-    function complete() {
-        if (muted()) return;
+    // Modern Micro Correct: gentle two-tone chime (E5 -> A5) with natural decay
+    function correct() {
+        safely(() => {
+            const ctx = getContext();
+            if (!ctx) return;
+            const now = ctx.currentTime;
+            const vol = 0.14;
 
-        // Use only the opening two seconds of the gong, fading the final
-        // 650ms so the cue resolves gently instead of cutting off sharply.
-        if (typeof AudioContext === 'undefined') {
-            play('complete');
-            return;
-        }
+            // Note 1: E5 (659.25Hz)
+            const osc1 = ctx.createOscillator();
+            const gain1 = ctx.createGain();
+            osc1.type = 'sine';
+            osc1.frequency.setValueAtTime(659.25, now);
+            gain1.gain.setValueAtTime(0, now);
+            gain1.gain.linearRampToValueAtTime(vol, now + 0.015);
+            gain1.gain.exponentialRampToValueAtTime(0.0001, now + 0.22);
+            osc1.connect(gain1).connect(ctx.destination);
+            osc1.start(now);
+            osc1.stop(now + 0.23);
 
-        try {
-            gongContext = gongContext || new AudioContext();
-            const context = gongContext;
-            const resume = context.state === 'suspended'
-                ? context.resume()
-                : Promise.resolve();
-            gongBufferPromise = gongBufferPromise || fetch(GONG_SOURCE)
-                .then(response => {
-                    if (!response.ok) throw new Error('Could not load gong audio');
-                    return response.arrayBuffer();
-                })
-                .then(data => context.decodeAudioData(data));
-
-            gongBufferPromise.then(async buffer => {
-                if (muted()) return;
-                await resume;
-
-                const source = context.createBufferSource();
-                const gain = context.createGain();
-                const duration = Math.min(2, buffer.duration);
-                const start = context.currentTime;
-                source.buffer = buffer;
-                source.connect(gain);
-                gain.connect(context.destination);
-                gain.gain.setValueAtTime(1, start);
-                gain.gain.setValueAtTime(1, start + Math.max(0, duration - 0.65));
-                gain.gain.linearRampToValueAtTime(0, start + duration);
-                source.start(start, 0, duration);
-            }).catch(() => play('complete'));
-        } catch (error) {
-            play('complete');
-        }
+            // Note 2: A5 (880Hz)
+            const osc2 = ctx.createOscillator();
+            const gain2 = ctx.createGain();
+            osc2.type = 'sine';
+            osc2.frequency.setValueAtTime(880, now + 0.08);
+            gain2.gain.setValueAtTime(0, now + 0.08);
+            gain2.gain.linearRampToValueAtTime(vol * 1.1, now + 0.095);
+            gain2.gain.exponentialRampToValueAtTime(0.0001, now + 0.42);
+            osc2.connect(gain2).connect(ctx.destination);
+            osc2.start(now + 0.08);
+            osc2.stop(now + 0.43);
+        });
     }
-    // Silent by design: the cassette cue on mic start/stop was annoying. Kept as a
-    // no-op so the speaking call sites need no changes.
+
+    // Warm Wooden Wrong: acoustic marimba / wooden block tap with soft overtone
+    function wrong() {
+        safely(() => {
+            const ctx = getContext();
+            if (!ctx) return;
+            const now = ctx.currentTime;
+            const vol = 0.16;
+            const duration = 0.24;
+
+            // Fundamental: warm 220Hz wood body
+            const osc = ctx.createOscillator();
+            const gain = ctx.createGain();
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(220, now);
+            gain.gain.setValueAtTime(0, now);
+            gain.gain.linearRampToValueAtTime(vol, now + 0.008);
+            gain.gain.exponentialRampToValueAtTime(0.0001, now + duration);
+            osc.connect(gain).connect(ctx.destination);
+            osc.start(now);
+            osc.stop(now + duration + 0.02);
+
+            // Mallet strike harmonic (~3.98x) with fast decay for wooden tactile bite
+            const oscHarmonic = ctx.createOscillator();
+            const harmGain = ctx.createGain();
+            oscHarmonic.type = 'sine';
+            oscHarmonic.frequency.setValueAtTime(220 * 3.98, now);
+            harmGain.gain.setValueAtTime(vol * 0.25, now);
+            harmGain.gain.exponentialRampToValueAtTime(0.0001, now + 0.05);
+            oscHarmonic.connect(harmGain).connect(ctx.destination);
+            oscHarmonic.start(now);
+            oscHarmonic.stop(now + 0.06);
+        });
+    }
+
+    // Modern Micro Complete: uplifting major triad arpeggio (C5 -> E5 -> G5 -> C6)
+    function complete() {
+        safely(() => {
+            const ctx = getContext();
+            if (!ctx) return;
+            const now = ctx.currentTime;
+            const vol = 0.13;
+            const notes = [523.25, 659.25, 783.99, 1046.50];
+
+            notes.forEach((freq, idx) => {
+                const osc = ctx.createOscillator();
+                const gain = ctx.createGain();
+                const t = now + idx * 0.09;
+                const isFinal = idx === notes.length - 1;
+                const noteDuration = isFinal ? 0.85 : 0.30;
+
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(freq, t);
+
+                gain.gain.setValueAtTime(0, t);
+                gain.gain.linearRampToValueAtTime(vol * (isFinal ? 1.15 : 0.95), t + 0.015);
+                gain.gain.exponentialRampToValueAtTime(0.0001, t + noteDuration);
+
+                osc.connect(gain).connect(ctx.destination);
+                osc.start(t);
+                osc.stop(t + noteDuration + 0.02);
+            });
+        });
+    }
+
+    // Kept as a no-op so existing speaking exercise call sites need no changes.
     function speaking() {}
 
     return { correct, wrong, complete, speaking, muted, toggleMuted };
