@@ -679,6 +679,17 @@ const Lexicon = (function () {
         return a ? a + ' ' + lemma : lemma;
     }
 
+    // Articles a typed answer may put before this noun: the definite and
+    // indefinite form of its gender. A feminine noun starting with a/ha
+    // also takes el/un (el agua). null when the gender isn't known, so
+    // graders don't demand an article nobody can check.
+    function acceptedArticles(lemma) {
+        const a = article(lemma);
+        if (!a) return null;
+        if (a === 'el') return ['el', 'un'];
+        return /^h?[aá]/i.test(lemma) ? ['la', 'una', 'el', 'un'] : ['la', 'una'];
+    }
+
     // Rank of a lemma in the frequency list (0 = most common), or null if it
     // falls outside the top 20k or the list hasn't loaded. Used to estimate a
     // My Text's reading level — a coarse proxy, not a real CEFR assessment.
@@ -690,7 +701,7 @@ const Lexicon = (function () {
 
     return {
         load: load, lookup: lookup, isLoaded: isLoaded, article: article,
-        withArticle: withArticle, frequencyRank: frequencyRank,
+        withArticle: withArticle, acceptedArticles: acceptedArticles, frequencyRank: frequencyRank,
         define: define, findPhrase: findPhrase, search: search,
         shortGloss: shortGloss, stripExplanatoryClauses: stripExplanatoryClauses
     };

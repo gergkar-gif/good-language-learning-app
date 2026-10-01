@@ -128,12 +128,20 @@ const DeckLearn = (function () {
     // settled on for the same reason (engine/lessons.js's normalise(),
     // also 2026-08-27) — an accent is often the entire distinction between
     // two different target-language words, not typing friction to wave
-    // through. Lenient about the article, though: a learner who typed the
-    // bare noun without "el"/"la" still knew the word.
-    function _gradeTarget(input, lemma) {
-        const guess = _normaliseTarget(input);
+    // through. A noun whose gender is known must come with a matching
+    // article (el/un perro, la/una casa, el agua) — the gender is part of
+    // knowing the word.
+    function _matchesTarget(guess, lemma, fold) {
         if (!guess) return false;
-        return guess === _normaliseTarget(lemma) || guess === _normaliseTarget(_withArticle(lemma));
+        const accepted = (typeof Lexicon !== 'undefined' && Lexicon.acceptedArticles) ? Lexicon.acceptedArticles(lemma) : null;
+        const bare = fold(_normaliseTarget(lemma));
+        if (!accepted) return guess === bare || guess === fold(_normaliseTarget(_withArticle(lemma)));
+        const m = guess.match(/^(\S+)\s+(.+)$/);
+        return !!m && accepted.includes(m[1]) && m[2] === bare;
+    }
+
+    function _gradeTarget(input, lemma) {
+        return _matchesTarget(_normaliseTarget(input), lemma, s => s);
     }
 
     // Lenient: same as above but with accents stripped from both sides
@@ -141,9 +149,7 @@ const DeckLearn = (function () {
     // accent when a stricter identical-direction stage is coming right
     // after it.
     function _gradeTargetLenient(input, lemma) {
-        const guess = _stripAccents(_normaliseTarget(input));
-        if (!guess) return false;
-        return guess === _stripAccents(_normaliseTarget(lemma)) || guess === _stripAccents(_normaliseTarget(_withArticle(lemma)));
+        return _matchesTarget(_stripAccents(_normaliseTarget(input)), lemma, _stripAccents);
     }
 
     // ---- Round setup ----
@@ -335,6 +341,11 @@ const DeckLearn = (function () {
         }
         const nextBtn = _container.querySelector('[data-learn-next]');
         if (nextBtn) nextBtn.classList.remove('hidden');
+        // Read the target-language word (with its article) once the
+        // answer is settled.
+        if (typeof ParlourTTS !== 'undefined' && ParlourTTS.speak) {
+            ParlourTTS.speak({ text: _withArticle(_current.lemma), type: 'vocabulary' });
+        }
     }
 
     function _wireExitAndNext() {

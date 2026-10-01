@@ -942,6 +942,8 @@ function renderCard() {
     const spanishHtml = esc(spanishDisplay) + (typeof ParlourTTS !== 'undefined' ? ParlourTTS.button(currentReviewCard.spanish, { type: 'vocabulary' }) : '');
     if (typeof ParlourTTS !== 'undefined' && ParlourTTS.preload && currentReviewCard.spanish) {
         ParlourTTS.preload({ text: currentReviewCard.spanish, type: 'vocabulary' });
+        // The reveal reads it with its article (speakRevealedWord()).
+        if (spanishDisplay !== currentReviewCard.spanish) ParlourTTS.preload({ text: spanishDisplay, type: 'vocabulary' });
     }
     // A card flagged leech (see SRS_CONFIG.LEECH_THRESHOLD) gets a quiet
     // badge here rather than any different treatment of the card itself —
@@ -1079,6 +1081,7 @@ function revealAnswer() {
     const cardEl = document.getElementById('review-card');
     if (cardEl) cardEl.style.minHeight = cardEl.offsetHeight + 'px';
     ratingsEl.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    speakRevealedWord();
 
     if (typeof Guide !== 'undefined') {
         Guide.note('review-first', ratingsEl, 'Words come back less often as you get them right.');
@@ -1270,29 +1273,16 @@ function checkTypedAnswer() {
         const strippedExpected = srsNormalise(reviewExpectedSpanish).replace(/^(el|la|los|las|un|una|unos|unas|a|az)\s+/i, '');
         isExact = acceptableSpanish.has(typed) || (strippedTyped.length > 0 && strippedTyped === strippedExpected);
 
-        // A bare noun is fine, but an article that was typed has to have
-        // the right gender — "la perro" is a wrong answer, not a near miss.
-        // Feminine nouns starting with a/ha also take el/un (el agua).
-        const MASC_ARTS = ['el', 'los', 'un', 'unos'];
-        const FEM_ARTS = ['la', 'las', 'una', 'unas'];
-        const typedArtMatch = typed.match(/^(el|la|los|las|un|una|unos|unas)\s+/i);
-        let expectedArt = null;
-        for (const acc of acceptableSpanish) {
-            const m = acc.match(/^(el|la|los|las|un|una|unos|unas)\s+/i);
-            if (m) { expectedArt = m[1].toLowerCase(); break; }
-        }
+        // A noun whose gender we know has to be typed with a matching
+        // article — "perro" alone or "la perro" is wrong, not a near miss.
+        const accepted = (typeof Lexicon !== 'undefined' && typeof Lexicon.acceptedArticles === 'function')
+            ? Lexicon.acceptedArticles(strippedExpected) : null;
         let wrongArticle = false;
-        if (typedArtMatch && expectedArt) {
-            const typedArt = typedArtMatch[1].toLowerCase();
-            const expectedFem = FEM_ARTS.includes(expectedArt);
-            if (expectedFem) {
-                wrongArticle = MASC_ARTS.includes(typedArt)
-                    && !(/^h?[aá]/.test(stripAccents(strippedExpected)) && (typedArt === 'el' || typedArt === 'un'));
-            } else {
-                wrongArticle = FEM_ARTS.includes(typedArt);
-            }
+        if (accepted) {
+            const typedArtMatch = typed.match(/^(\S+)\s+/);
+            wrongArticle = !typedArtMatch || !accepted.includes(typedArtMatch[1].toLowerCase());
+            if (wrongArticle) isExact = false;
         }
-        if (wrongArticle) isExact = false;
 
         if (!isExact && !wrongArticle) {
             const accentLessTyped = stripAccents(strippedTyped || typed);
@@ -1400,6 +1390,17 @@ function revealTypedResult(bucket, elapsedSec, isNearMiss) {
     const cardEl = document.getElementById('review-card');
     if (cardEl) cardEl.style.minHeight = cardEl.offsetHeight + 'px';
     if (assessEl) assessEl.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    speakRevealedWord();
+}
+
+// Read the target-language word aloud the moment the answer shows — with
+// its article, so the gender is heard too. Both reveals come from a tap or
+// Enter, so mobile browsers allow the audio.
+function speakRevealedWord() {
+    if (!currentReviewCard || typeof ParlourTTS === 'undefined' || !ParlourTTS.speak) return;
+    const word = (typeof Lexicon !== 'undefined' && Lexicon.withArticle)
+        ? Lexicon.withArticle(currentReviewCard.spanish) : currentReviewCard.spanish;
+    ParlourTTS.speak({ text: word, type: 'vocabulary' });
 }
 
 function continueTypedReview() {
