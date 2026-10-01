@@ -222,6 +222,10 @@ const Guide = (function () {
     //   ctx.newWords      — words this lesson added to the deck
     //   ctx.unitCompleted — this completion finished a unit
     //   ctx.unitsDone     — units finished in the course so far
+    //   ctx.weakVerbTense — a verb-tense skill ranks weak (LearnerModel.weakVerbTense)
+    //   ctx.weakListening — recent listening steps are mostly missed (LearnerModel.listeningState)
+    // The two driller notes come before the general Workshop one, and, like every
+    // invitation here, stop once the learner has opened the Workshop.
     const INVITATIONS = [
         {
             id: 'invite-decks',
@@ -237,6 +241,20 @@ const Guide = (function () {
             applies: ctx => ctx.unitCompleted && ctx.unitsDone >= 1,
             text: () => 'There\'s a short story in the Library written for where you are now.',
             button: 'Read it'
+        },
+        {
+            id: 'invite-verb-driller',
+            tab: 'drills',
+            applies: ctx => !!ctx.weakVerbTense,
+            text: () => 'If a verb keeps catching you out, the Verb Driller practises just that.',
+            button: 'Have a look'
+        },
+        {
+            id: 'invite-listening-driller',
+            tab: 'drills',
+            applies: ctx => !!ctx.weakListening,
+            text: () => 'Listening practice has its own space in the Workshop.',
+            button: 'Have a look'
         },
         {
             id: 'invite-workshop',

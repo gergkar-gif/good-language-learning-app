@@ -99,13 +99,13 @@ their own. A skipped invitation comes back once, later, then stops.
 
 These appear only when there's a reason, at most one per day.
 
-**6a. Verb Driller** — not built yet: nothing records which verb was missed (ROADMAP.md active item 5)
-- Trigger: the same verb missed three times across lessons
+**6a. Verb Driller** — built 2026-10-02
+- Trigger: a verb-tense skill ranks weak (the skills in `indexes/verb-tense-skills.json`, judged by the learner model's usual weak-skill rule). Spanish only: Hungarian has no tense mapping, so it never shows there. Per-verb counting was considered and dropped (Spanish forms are ambiguous, and finding the verb needs the dictionary loaded mid-lesson)
 - Where: end-of-lesson screen
 - Text: If a verb keeps catching you out, the Verb Driller practises just that.
 
-**6b. Listening Driller** — not built yet: there's no listening score to trigger on (ROADMAP.md active item 5)
-- Trigger: low listening scores
+**6b. Listening Driller** — built 2026-10-02
+- Trigger: at least 8 of the last 20 listening steps (listening-choice and dictation) attempted, and 60% or fewer right first try. Kept per course in `listeningLog` and synced
 - Where: end-of-lesson screen
 - Text: Listening practice has its own space in the Workshop.
 

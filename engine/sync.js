@@ -57,7 +57,7 @@ const Sync = (function () {
         'readStories', 'savedReadings', 'myTexts', 'myDecks',
         'verbSpeedScores', 'unitPracticeDismissed', 'miniGameDismissed',
         'milestonesSeen', 'lastActivity', 'productionEvidence', 'assessmentHistory',
-        'wordLookups', 'recommendationOutcomes', 'electiveResolvedAt'
+        'wordLookups', 'recommendationOutcomes', 'electiveResolvedAt', 'listeningLog'
     ];
     // Per-course, but with a variable suffix (one key per deck/driller) —
     // matched by prefix instead of an exact name.

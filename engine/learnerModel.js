@@ -1333,12 +1333,85 @@ const LearnerModel = (function () {
         Promise.resolve().then(() => { _ensureAliasesLoaded().catch(() => {}); });
     }
 
+    // ----------------------------------------
+    // SIGNALS FOR THE END-OF-LESSON DRILLER NOTES (engine/guide.js)
+    // ----------------------------------------
+    // Listening: the first-try result of every lesson step that tests
+    // listening (category 'listening': listening-choice and dictation),
+    // newest last, capped. Weak = enough attempts and a low hit rate.
+    const LISTENING_LOG_MAX = 20;
+    const LISTENING_MIN_ATTEMPTS = 8;
+    const LISTENING_WEAK_ACCURACY = 0.6;
+
+    function _listeningKey() {
+        return (typeof Lang !== 'undefined') ? Lang.key('listeningLog') : 'listeningLog';
+    }
+
+    function _loadListening() {
+        try {
+            const log = JSON.parse(localStorage.getItem(_listeningKey()) || '[]');
+            return Array.isArray(log) ? log : [];
+        } catch (e) {
+            return [];
+        }
+    }
+
+    function recordListeningOutcome(correctFirstTry) {
+        const log = _loadListening();
+        log.push(correctFirstTry ? 1 : 0);
+        try {
+            localStorage.setItem(_listeningKey(), JSON.stringify(log.slice(-LISTENING_LOG_MAX)));
+        } catch (e) { /* storage full or blocked: the signal just isn't kept */ }
+    }
+
+    function listeningState() {
+        const log = _loadListening();
+        const attempts = log.length;
+        const accuracy = attempts ? log.reduce((sum, hit) => sum + hit, 0) / attempts : null;
+        return {
+            attempts: attempts,
+            accuracy: accuracy,
+            weak: attempts >= LISTENING_MIN_ATTEMPTS && accuracy <= LISTENING_WEAK_ACCURACY
+        };
+    }
+
+    // Verbs: a skill that a Verb Speed tense is evidence for
+    // (indexes/verb-tense-skills.json) ranks weak. The same evidence the rest
+    // of the learner model already uses, so nothing new is recorded. Only
+    // Spanish has that mapping; in Hungarian this is simply false.
+    function _anyWeakTenseSkill(weakList, tenseSkillIds) {
+        return (weakList || []).some(w => w.state === 'weak' && tenseSkillIds.has(w.skillId));
+    }
+
+    async function weakVerbTense() {
+        const tenses = await _optionalJson('indexes/verb-tense-skills.json');
+        if (!tenses) return false;
+        const ids = new Set();
+        Object.keys(tenses).forEach(key => {
+            if (key.charAt(0) !== '_' && Array.isArray(tenses[key])) tenses[key].forEach(id => ids.add(id));
+        });
+        if (!ids.size) return false;
+        return _anyWeakTenseSkill(await weakSkills(), ids);
+    }
+
+    // Both signals for the end-of-lesson invitation.
+    async function guideSignals() {
+        let verbs = false;
+        try { verbs = await weakVerbTense(); } catch (e) { verbs = false; }
+        return { weakVerbTense: verbs, weakListening: listeningState().weak };
+    }
+
     return {
         skillState,
         wordState,
         weakSkills,
         troubleSkills,
         weakConjugations,
+        recordListeningOutcome,
+        listeningState,
+        weakVerbTense,
+        guideSignals,
+        _anyWeakTenseSkill,
         weakWords,
         recordLookup,
         lookedUpWords,

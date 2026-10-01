@@ -1066,6 +1066,7 @@ function solveStep(message) {
     queueForRemediationIfMissed();
     lessonStats.total++;
     if (!stepState.wasMissed && !stepState.usedHint) lessonStats.correctFirstTry++;
+    noteListeningOutcome(!stepState.wasMissed && !stepState.usedHint);
 }
 
 // Records a wrong attempt. Returns true once the learner is out of tries,
@@ -1105,6 +1106,7 @@ function failStep(message) {
 
     noteRecycleResult(false);
     lessonStats.total++;
+    noteListeningOutcome(false);
     return true;
 }
 
@@ -1123,6 +1125,16 @@ function queueForRemediationIfMissed() {
         Guide.note('lesson-missed', document.getElementById('step-feedback'),
             'Anything you miss comes back at the end.', { inLesson: true });
     }
+}
+
+// A step that tests listening (category 'listening': listening-choice and
+// dictation) adds its first-try result to the learner's listening log, which
+// decides whether the end-of-lesson screen mentions the Listening Driller.
+function noteListeningOutcome(correctFirstTry) {
+    const step = currentLesson && currentLesson.steps[currentStepIndex];
+    if (!step || typeof LearnerModel === 'undefined' || !LearnerModel.recordListeningOutcome) return;
+    if (step.category !== 'listening' && step.type !== 'listening-choice' && step.type !== 'dictation') return;
+    LearnerModel.recordListeningOutcome(correctFirstTry);
 }
 
 // Every teaches-tagged exercise's outcome feeds its own SM-2 schedule, not
@@ -2486,7 +2498,10 @@ async function renderLessonSummary(firstTime, rankBefore) {
         ? await Recommend.lessonSkillFor(lesson.id)
         : null;
     const milestones = firstTime ? newlyReachedMilestones() : [];
-    const invitation = guideInvitation(lesson, firstTime);
+    const guideSignals = (typeof LearnerModel !== 'undefined' && LearnerModel.guideSignals)
+        ? await LearnerModel.guideSignals()
+        : {};
+    const invitation = guideInvitation(lesson, firstTime, guideSignals);
     const rankAfter = (typeof getRank === 'function') ? getRank().rank : null;
     const rankedUp = firstTime && rankBefore != null && rankAfter != null && rankAfter > rankBefore;
 
@@ -2585,7 +2600,7 @@ async function renderLessonSummary(firstTime, rankBefore) {
 // The new-learner introduction's end-of-lesson invitation (engine/guide.js
 // decides which one, if any): the deck after the first lesson, then the
 // Library and the Workshop at unit ends.
-function guideInvitation(lesson, firstTime) {
+function guideInvitation(lesson, firstTime, signals) {
     if (typeof Guide === 'undefined') return null;
 
     let unitCompleted = false;
@@ -2606,7 +2621,9 @@ function guideInvitation(lesson, firstTime) {
         firstTime: firstTime,
         newWords: lessonNewDeckWords,
         unitCompleted: unitCompleted,
-        unitsDone: unitsDone
+        unitsDone: unitsDone,
+        weakVerbTense: !!(signals && signals.weakVerbTense),
+        weakListening: !!(signals && signals.weakListening)
     });
 }
 
