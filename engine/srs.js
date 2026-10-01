@@ -1270,7 +1270,31 @@ function checkTypedAnswer() {
         const strippedExpected = srsNormalise(reviewExpectedSpanish).replace(/^(el|la|los|las|un|una|unos|unas|a|az)\s+/i, '');
         isExact = acceptableSpanish.has(typed) || (strippedTyped.length > 0 && strippedTyped === strippedExpected);
 
-        if (!isExact) {
+        // A bare noun is fine, but an article that was typed has to have
+        // the right gender — "la perro" is a wrong answer, not a near miss.
+        // Feminine nouns starting with a/ha also take el/un (el agua).
+        const MASC_ARTS = ['el', 'los', 'un', 'unos'];
+        const FEM_ARTS = ['la', 'las', 'una', 'unas'];
+        const typedArtMatch = typed.match(/^(el|la|los|las|un|una|unos|unas)\s+/i);
+        let expectedArt = null;
+        for (const acc of acceptableSpanish) {
+            const m = acc.match(/^(el|la|los|las|un|una|unos|unas)\s+/i);
+            if (m) { expectedArt = m[1].toLowerCase(); break; }
+        }
+        let wrongArticle = false;
+        if (typedArtMatch && expectedArt) {
+            const typedArt = typedArtMatch[1].toLowerCase();
+            const expectedFem = FEM_ARTS.includes(expectedArt);
+            if (expectedFem) {
+                wrongArticle = MASC_ARTS.includes(typedArt)
+                    && !(/^h?[aá]/.test(stripAccents(strippedExpected)) && (typedArt === 'el' || typedArt === 'un'));
+            } else {
+                wrongArticle = FEM_ARTS.includes(typedArt);
+            }
+        }
+        if (wrongArticle) isExact = false;
+
+        if (!isExact && !wrongArticle) {
             const accentLessTyped = stripAccents(strippedTyped || typed);
             for (const acc of acceptableSpanish) {
                 const strippedAcc = acc.replace(/^(el|la|los|las|un|una|unos|unas|a|az)\s+/i, '');
