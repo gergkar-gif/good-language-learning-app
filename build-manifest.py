@@ -547,6 +547,28 @@ FREQUENCY_GLOSS = {
     "yo": "I", "se": "himself, herself, itself", "me": "me, myself",
     "te": "you, yourself", "nos": "us, ourselves", "le": "him, her, to them",
     "su": "his, her, their", "mi": "my", "tu": "your",
+    "él": "he, him", "ello": "it", "usted": "formal you", "ustedes": "you all",
+    "ni": "neither, nor, not even",
+    # A gloss narrower than the word: the dictionary's, or the first lesson's.
+    "por": "for, by, through", "hasta": "until, up to, even",
+    "tiempo": "time, weather", "encontrar": "to find, to meet",
+    "carne": "meat, flesh", "señorito": "young gentleman", "alejar": "to move away",
+    "amar": "to love",
+}
+
+# decks.json's shared word table (read by topic decks, frequency decks and the
+# Vocabulary Driller) keeps the first gloss the course gives a word. For these
+# Spanish words that first gloss is a unit-specific sense from a grammar or
+# culture unit, so the table carries the general one instead; the unit's own
+# lesson deck still shows its own sense (see build_decks()). Picking the
+# general sense automatically was tried against the dictionary and rejected:
+# the dictionary keeps one terse sense per word ("probar" = "to prove").
+SHARED_GLOSS = {
+    "llevar": "to take / carry",        # first met as "to have been doing" (A2 grammar)
+    "cuyo": "whose",                    # "Cuyo (western Andean region)" (B2 Argentina)
+    "estado": "state",                  # "state / resultant condition" (B2 grammar)
+    "andar": "to walk / go",            # "to go around doing" (B2 grammar)
+    "agente": "agent",                  # "agent / initiator of action" (B2 grammar)
 }
 
 # A gloss that begins like this is describing the word rather than translating
@@ -783,6 +805,7 @@ def build_decks(lang="es", curriculum=None):
 
     words = {}          # lemma -> {en, pos}
     by_unit, unit_order, by_theme = {}, [], {}
+    shared_overrides = SHARED_GLOSS if lang.startswith("es") else {}
 
     # Seed unit buckets in curriculum order so the Decks tab mirrors the Learn order.
     for level_id, level in curriculum.get("levels", {}).items():
@@ -801,7 +824,8 @@ def build_decks(lang="es", curriculum=None):
 
     def remember(lemma, translation, pos):
         if lemma not in words:
-            words[lemma] = {"en": translation or "", "pos": pos or "unknown"}
+            words[lemma] = {"en": shared_overrides.get(lemma) or translation or "",
+                            "pos": pos or "unknown"}
 
     for level_dir in sorted(p for p in vocab_dir.iterdir() if p.is_dir()):
         for f in sorted(level_dir.glob("*-voc.json")):
@@ -853,11 +877,10 @@ def build_decks(lang="es", curriculum=None):
             if theme:
                 by_theme.setdefault(theme, []).extend(lemmas)
 
-    # The shared word table keeps the first gloss it meets, which for a word
-    # taught in several units is only right for the first one ("llevar" as
-    # "to have been doing" in a grammar unit, "to take / carry" elsewhere).
-    # A deck carries its own gloss wherever its unit's sense differs, and the
-    # app prefers it over the table's (engine/decks.js, wordsOf()).
+    # The shared gloss is only right for some units ("llevar" is "to have been
+    # doing" in one, "to take / carry" in another), so a lesson deck carries
+    # its own gloss wherever its unit's sense differs, and the app prefers it
+    # over the table's (engine/decks.js, wordsOf()).
     lesson_decks = []
     for key in unit_order:
         bucket = by_unit[key]
@@ -904,7 +927,7 @@ def build_decks(lang="es", curriculum=None):
     # Spanish dictionary) was the later mistake this replaced: it silently
     # produced Spanish frequency decks for every language.
     frequency_decks = []
-    sources = FREQUENCY_SOURCES.get(lang)
+    sources = FREQUENCY_SOURCES.get(lang.split("-")[0])   # es-es and es-latam share "es"
 
     if sources and sources[0].exists() and sources[1].exists():
         ranks_path, dict_path = sources
@@ -914,10 +937,10 @@ def build_decks(lang="es", curriculum=None):
         except (OSError, json.JSONDecodeError):
             ranked, lexicon = [], {}
 
-        gloss_overrides = FREQUENCY_GLOSS if lang == "es" else {}
+        gloss_overrides = FREQUENCY_GLOSS if lang.startswith("es") else {}
 
         for low, high in FREQUENCY_BANDS:
-            band = []
+            band, band_glosses = [], {}
             for lemma in ranked[low - 1:high]:
                 gloss = gloss_overrides.get(lemma)
                 pos = "unknown"
@@ -945,14 +968,22 @@ def build_decks(lang="es", curriculum=None):
                 remember(lemma, gloss, pos)
                 band.append(lemma)
 
+                # A course gloss already in the shared table is kept over the
+                # dictionary's, but not over a curated FREQUENCY_GLOSS one.
+                if lemma in gloss_overrides and gloss != words[lemma]["en"]:
+                    band_glosses[lemma] = gloss
+
             if band:
-                frequency_decks.append({
+                deck = {
                     "id": "frequency:%d-%d" % (low, high),
                     "kind": "frequency",
                     "name": ("Top %d words" % high) if low == 1
                             else ("Words %d–%d" % (low, high)),
                     "lemmas": band
-                })
+                }
+                if band_glosses:
+                    deck["glosses"] = band_glosses
+                frequency_decks.append(deck)
 
     return {
         "generated": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
