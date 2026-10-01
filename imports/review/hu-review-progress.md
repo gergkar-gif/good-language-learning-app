@@ -181,29 +181,29 @@ Work level by level, top to bottom. Commit after each block of about 25 files.
 - [x] content/hu/exercises/a1/a1-145-consolidation-ex.json
 - [x] content/hu/exercises/a1/a1-145-ex.json
 - [x] content/hu/exercises/a1/a1-146-ex.json
-- [ ] content/hu/exercises/a1/a1-147-ex.json
-- [ ] content/hu/exercises/a1/a1-148-ex.json
-- [ ] content/hu/exercises/a1/a1-149-ex.json
-- [ ] content/hu/exercises/a1/a1-150-consolidation-ex.json
-- [ ] content/hu/exercises/a1/a1-150-ex.json
-- [ ] content/hu/exercises/a1/a1-151-ex.json
-- [ ] content/hu/exercises/a1/a1-152-ex.json
-- [ ] content/hu/exercises/a1/a1-153-ex.json
-- [ ] content/hu/exercises/a1/a1-154-ex.json
-- [ ] content/hu/exercises/a1/a1-155-consolidation-ex.json
-- [ ] content/hu/exercises/a1/a1-155-ex.json
-- [ ] content/hu/exercises/a1/a1-156-ex.json
-- [ ] content/hu/exercises/a1/a1-157-ex.json
-- [ ] content/hu/exercises/a1/a1-158-ex.json
-- [ ] content/hu/exercises/a1/a1-159-ex.json
-- [ ] content/hu/exercises/a1/a1-160-consolidation-ex.json
-- [ ] content/hu/exercises/a1/a1-160-ex.json
-- [ ] content/hu/exercises/a1/a1-161-ex.json
-- [ ] content/hu/exercises/a1/a1-162-ex.json
-- [ ] content/hu/exercises/a1/a1-163-ex.json
-- [ ] content/hu/exercises/a1/a1-164-ex.json
-- [ ] content/hu/exercises/a1/a1-165-consolidation-ex.json
-- [ ] content/hu/exercises/a1/a1-165-ex.json
+- [x] content/hu/exercises/a1/a1-147-ex.json
+- [x] content/hu/exercises/a1/a1-148-ex.json
+- [x] content/hu/exercises/a1/a1-149-ex.json
+- [x] content/hu/exercises/a1/a1-150-consolidation-ex.json
+- [x] content/hu/exercises/a1/a1-150-ex.json
+- [x] content/hu/exercises/a1/a1-151-ex.json
+- [x] content/hu/exercises/a1/a1-152-ex.json
+- [x] content/hu/exercises/a1/a1-153-ex.json
+- [x] content/hu/exercises/a1/a1-154-ex.json
+- [x] content/hu/exercises/a1/a1-155-consolidation-ex.json
+- [x] content/hu/exercises/a1/a1-155-ex.json
+- [x] content/hu/exercises/a1/a1-156-ex.json
+- [x] content/hu/exercises/a1/a1-157-ex.json
+- [x] content/hu/exercises/a1/a1-158-ex.json
+- [x] content/hu/exercises/a1/a1-159-ex.json
+- [x] content/hu/exercises/a1/a1-160-consolidation-ex.json
+- [x] content/hu/exercises/a1/a1-160-ex.json
+- [x] content/hu/exercises/a1/a1-161-ex.json
+- [x] content/hu/exercises/a1/a1-162-ex.json
+- [x] content/hu/exercises/a1/a1-163-ex.json
+- [x] content/hu/exercises/a1/a1-164-ex.json
+- [x] content/hu/exercises/a1/a1-165-consolidation-ex.json
+- [x] content/hu/exercises/a1/a1-165-ex.json
 ## A2 (263 files, 4154 exercises)
 
 
