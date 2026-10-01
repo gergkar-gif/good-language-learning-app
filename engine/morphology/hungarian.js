@@ -2052,7 +2052,8 @@ const HungarianMorphology = (function () {
         // the word itself is a derived form of a headword: comparative,
         // superlative, -s\u00e1g/-s\u00e9g noun or a participle (inflected ones reach
         // this through resolveNominal() in the case/plural steps above)
-        if (!results.length) {
+        // (skipped when the word is itself a headword: its dictionary entry already answers)
+        if (!results.length && !dictionary[word]) {
             const derived = resolveDerived(dictionary, word);
             if (derived) addFromLemma(derived.lemma, derived.sense, 'nominative');
         }
@@ -2062,7 +2063,7 @@ const HungarianMorphology = (function () {
         // ("nemzetis\u00e9gi", "logikai"). Both only ever reached last: a real
         // reading above always wins, so the 83% false-positive rate a bare
         // "-i" rule has against the whole dictionary never shows.
-        if (!results.length) {
+        if (!results.length && !dictionary[word]) {
             for (const [end, label] of [['v\u00e1n', 'adverbial participle'], ['v\u00e9n', 'adverbial participle'],
                 ['va', 'adverbial participle'], ['ve', 'adverbial participle']]) {
                 if (!word.endsWith(end) || word.length <= end.length + 1) continue;
@@ -2080,7 +2081,7 @@ const HungarianMorphology = (function () {
                 }
             }
         }
-        if (!results.length && word.length > 4 && word.endsWith('i')) {
+        if (!results.length && !dictionary[word] && word.length > 4 && word.endsWith('i')) {
             const base = resolveNominal(dictionary, word.slice(0, -1));
             if (base && (base.sense.type === 'noun' || base.sense.type === 'adjective')) {
                 addFromLemma(word, { type: 'adjective', en: 'of or from ' + briefGloss(base.sense.en) + ' (adjective from ' + base.lemma + ')' }, 'adjective in -i');
