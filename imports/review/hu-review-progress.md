@@ -823,31 +823,31 @@ Work level by level, top to bottom. Commit after each block of about 25 files.
 - [x] content/hu/exercises/b1/b1-matyas-consolidation-ex.json
 - [x] content/hu/exercises/b1/b1-mohacs-01-ex.json
 - [x] content/hu/exercises/b1/b1-mohacs-02-ex.json
-- [ ] content/hu/exercises/b1/b1-mohacs-03-ex.json
-- [ ] content/hu/exercises/b1/b1-mohacs-04-ex.json
-- [ ] content/hu/exercises/b1/b1-mohacs-05-ex.json
-- [ ] content/hu/exercises/b1/b1-mohacs-consolidation-ex.json
-- [ ] content/hu/exercises/b1/b1-monarchia-01-ex.json
-- [ ] content/hu/exercises/b1/b1-monarchia-02-ex.json
-- [ ] content/hu/exercises/b1/b1-monarchia-03-ex.json
-- [ ] content/hu/exercises/b1/b1-monarchia-04-ex.json
-- [ ] content/hu/exercises/b1/b1-monarchia-05-ex.json
-- [ ] content/hu/exercises/b1/b1-monarchia-consolidation-ex.json
-- [ ] content/hu/exercises/b1/b1-nemzetiertekek-01-ex.json
-- [ ] content/hu/exercises/b1/b1-nemzetiertekek-02-ex.json
-- [ ] content/hu/exercises/b1/b1-nemzetiertekek-03-ex.json
-- [ ] content/hu/exercises/b1/b1-nemzetiertekek-04-ex.json
-- [ ] content/hu/exercises/b1/b1-nemzetiertekek-05-ex.json
-- [ ] content/hu/exercises/b1/b1-nemzetiertekek-consolidation-ex.json
-- [ ] content/hu/exercises/b1/b1-nemzetijelkepek-01-ex.json
-- [ ] content/hu/exercises/b1/b1-nemzetijelkepek-02-ex.json
-- [ ] content/hu/exercises/b1/b1-nemzetijelkepek-03-ex.json
-- [ ] content/hu/exercises/b1/b1-nemzetijelkepek-04-ex.json
-- [ ] content/hu/exercises/b1/b1-nemzetijelkepek-05-ex.json
-- [ ] content/hu/exercises/b1/b1-nemzetijelkepek-consolidation-ex.json
-- [ ] content/hu/exercises/b1/b1-nemzetiugy-01-ex.json
-- [ ] content/hu/exercises/b1/b1-nemzetiugy-02-ex.json
-- [ ] content/hu/exercises/b1/b1-nemzetiugy-03-ex.json
+- [x] content/hu/exercises/b1/b1-mohacs-03-ex.json
+- [x] content/hu/exercises/b1/b1-mohacs-04-ex.json
+- [x] content/hu/exercises/b1/b1-mohacs-05-ex.json
+- [x] content/hu/exercises/b1/b1-mohacs-consolidation-ex.json
+- [x] content/hu/exercises/b1/b1-monarchia-01-ex.json
+- [x] content/hu/exercises/b1/b1-monarchia-02-ex.json
+- [x] content/hu/exercises/b1/b1-monarchia-03-ex.json
+- [x] content/hu/exercises/b1/b1-monarchia-04-ex.json
+- [x] content/hu/exercises/b1/b1-monarchia-05-ex.json
+- [x] content/hu/exercises/b1/b1-monarchia-consolidation-ex.json
+- [x] content/hu/exercises/b1/b1-nemzetiertekek-01-ex.json
+- [x] content/hu/exercises/b1/b1-nemzetiertekek-02-ex.json
+- [x] content/hu/exercises/b1/b1-nemzetiertekek-03-ex.json
+- [x] content/hu/exercises/b1/b1-nemzetiertekek-04-ex.json
+- [x] content/hu/exercises/b1/b1-nemzetiertekek-05-ex.json
+- [x] content/hu/exercises/b1/b1-nemzetiertekek-consolidation-ex.json
+- [x] content/hu/exercises/b1/b1-nemzetijelkepek-01-ex.json
+- [x] content/hu/exercises/b1/b1-nemzetijelkepek-02-ex.json
+- [x] content/hu/exercises/b1/b1-nemzetijelkepek-03-ex.json
+- [x] content/hu/exercises/b1/b1-nemzetijelkepek-04-ex.json
+- [x] content/hu/exercises/b1/b1-nemzetijelkepek-05-ex.json
+- [x] content/hu/exercises/b1/b1-nemzetijelkepek-consolidation-ex.json
+- [x] content/hu/exercises/b1/b1-nemzetiugy-01-ex.json
+- [x] content/hu/exercises/b1/b1-nemzetiugy-02-ex.json
+- [x] content/hu/exercises/b1/b1-nemzetiugy-03-ex.json
 - [ ] content/hu/exercises/b1/b1-nemzetiugy-04-ex.json
 - [ ] content/hu/exercises/b1/b1-nemzetiugy-05-ex.json
 - [ ] content/hu/exercises/b1/b1-nemzetiugy-consolidation-ex.json
