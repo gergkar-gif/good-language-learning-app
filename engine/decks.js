@@ -104,10 +104,13 @@ const Decks = (function () {
         if (deck.words) {
             return deck.words.map(w => Object.assign({}, w, { translation: Lexicon.shortGloss(w.translation) }));
         }
+        // A deck's own gloss (deck.glosses) wins where its unit taught a
+        // different sense of the word than the shared table's first one.
         const table = (catalogue && catalogue.words) || {};
+        const own = deck.glosses || {};
         return (deck.lemmas || []).map(lemma => {
             const entry = table[lemma] || {};
-            return { lemma: lemma, translation: Lexicon.shortGloss(entry.en || ''), pos: entry.pos || 'unknown' };
+            return { lemma: lemma, translation: Lexicon.shortGloss(own[lemma] || entry.en || ''), pos: entry.pos || 'unknown' };
         });
     }
 
@@ -1100,7 +1103,7 @@ const Decks = (function () {
         const table = (catalogue && catalogue.words) || {};
         const words = deck.words
             ? deck.words.map(w => [w.lemma, w.translation])
-            : (deck.lemmas || []).map(lemma => [lemma, (table[lemma] || {}).en]);
+            : (deck.lemmas || []).map(lemma => [lemma, (deck.glosses || {})[lemma] || (table[lemma] || {}).en]);
         return words.map(pair => pair.filter(Boolean).join(' ')).join(' · ');
     }
 

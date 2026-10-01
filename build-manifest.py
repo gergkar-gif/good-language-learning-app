@@ -811,12 +811,14 @@ def build_decks(lang="es", curriculum=None):
                 continue
 
             lemmas = []
+            glosses = {}
             for w in data.get("words", []):
                 lemma = w.get("lemma")
                 if not lemma:
                     continue
                 remember(lemma, w.get("translation"), w.get("pos"))
                 lemmas.append(lemma)
+                glosses.setdefault(lemma, w.get("translation") or "")
             if not lemmas:
                 continue
 
@@ -845,17 +847,23 @@ def build_decks(lang="es", curriculum=None):
                     if lemma not in bucket["seen"]:
                         bucket["seen"].add(lemma)
                         bucket["lemmas"].append(lemma)
+                        bucket.setdefault("glosses", {})[lemma] = glosses[lemma]
 
             theme = data.get("theme")
             if theme:
                 by_theme.setdefault(theme, []).extend(lemmas)
 
+    # The shared word table keeps the first gloss it meets, which for a word
+    # taught in several units is only right for the first one ("llevar" as
+    # "to have been doing" in a grammar unit, "to take / carry" elsewhere).
+    # A deck carries its own gloss wherever its unit's sense differs, and the
+    # app prefers it over the table's (engine/decks.js, wordsOf()).
     lesson_decks = []
     for key in unit_order:
         bucket = by_unit[key]
         if not bucket["lemmas"]:
             continue
-        lesson_decks.append({
+        deck = {
             "id": "lesson:" + key,
             "kind": "lesson",
             "name": bucket["name"],
@@ -863,7 +871,12 @@ def build_decks(lang="es", curriculum=None):
             "level": bucket["level"],
             "track": bucket.get("track", "core"),
             "lemmas": bucket["lemmas"]
-        })
+        }
+        glosses = {lemma: gloss for lemma, gloss in bucket.get("glosses", {}).items()
+                   if gloss and gloss != words[lemma]["en"]}
+        if glosses:
+            deck["glosses"] = glosses
+        lesson_decks.append(deck)
 
     # Topic decks pool every lesson that teaches the same theme, so "City &
     # places" stays one deck however many lessons contribute to it.
