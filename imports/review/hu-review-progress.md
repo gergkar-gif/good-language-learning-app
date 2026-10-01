@@ -873,31 +873,31 @@ Work level by level, top to bottom. Commit after each block of about 25 files.
 - [x] content/hu/exercises/b1/b1-otvenhat-02-ex.json
 - [x] content/hu/exercises/b1/b1-otvenhat-03-ex.json
 - [x] content/hu/exercises/b1/b1-otvenhat-04-ex.json
-- [ ] content/hu/exercises/b1/b1-otvenhat-05-ex.json
-- [ ] content/hu/exercises/b1/b1-otvenhat-consolidation-ex.json
-- [ ] content/hu/exercises/b1/b1-rakoczi-01-ex.json
-- [ ] content/hu/exercises/b1/b1-rakoczi-02-ex.json
-- [ ] content/hu/exercises/b1/b1-rakoczi-03-ex.json
-- [ ] content/hu/exercises/b1/b1-rakoczi-04-ex.json
-- [ ] content/hu/exercises/b1/b1-rakoczi-05-ex.json
-- [ ] content/hu/exercises/b1/b1-rakoczi-consolidation-ex.json
-- [ ] content/hu/exercises/b1/b1-rakosikorszak-01-ex.json
-- [ ] content/hu/exercises/b1/b1-rakosikorszak-02-ex.json
-- [ ] content/hu/exercises/b1/b1-rakosikorszak-03-ex.json
-- [ ] content/hu/exercises/b1/b1-rakosikorszak-04-ex.json
-- [ ] content/hu/exercises/b1/b1-rakosikorszak-05-ex.json
-- [ ] content/hu/exercises/b1/b1-rakosikorszak-consolidation-ex.json
-- [ ] content/hu/exercises/b1/b1-reformkor-01-ex.json
-- [ ] content/hu/exercises/b1/b1-reformkor-02-ex.json
-- [ ] content/hu/exercises/b1/b1-reformkor-03-ex.json
-- [ ] content/hu/exercises/b1/b1-reformkor-04-ex.json
-- [ ] content/hu/exercises/b1/b1-reformkor-05-ex.json
-- [ ] content/hu/exercises/b1/b1-reformkor-consolidation-ex.json
-- [ ] content/hu/exercises/b1/b1-rendszervaltas-01-ex.json
-- [ ] content/hu/exercises/b1/b1-rendszervaltas-02-ex.json
-- [ ] content/hu/exercises/b1/b1-rendszervaltas-03-ex.json
-- [ ] content/hu/exercises/b1/b1-rendszervaltas-04-ex.json
-- [ ] content/hu/exercises/b1/b1-rendszervaltas-05-ex.json
+- [x] content/hu/exercises/b1/b1-otvenhat-05-ex.json
+- [x] content/hu/exercises/b1/b1-otvenhat-consolidation-ex.json
+- [x] content/hu/exercises/b1/b1-rakoczi-01-ex.json
+- [x] content/hu/exercises/b1/b1-rakoczi-02-ex.json
+- [x] content/hu/exercises/b1/b1-rakoczi-03-ex.json
+- [x] content/hu/exercises/b1/b1-rakoczi-04-ex.json
+- [x] content/hu/exercises/b1/b1-rakoczi-05-ex.json
+- [x] content/hu/exercises/b1/b1-rakoczi-consolidation-ex.json
+- [x] content/hu/exercises/b1/b1-rakosikorszak-01-ex.json
+- [x] content/hu/exercises/b1/b1-rakosikorszak-02-ex.json
+- [x] content/hu/exercises/b1/b1-rakosikorszak-03-ex.json
+- [x] content/hu/exercises/b1/b1-rakosikorszak-04-ex.json
+- [x] content/hu/exercises/b1/b1-rakosikorszak-05-ex.json
+- [x] content/hu/exercises/b1/b1-rakosikorszak-consolidation-ex.json
+- [x] content/hu/exercises/b1/b1-reformkor-01-ex.json
+- [x] content/hu/exercises/b1/b1-reformkor-02-ex.json
+- [x] content/hu/exercises/b1/b1-reformkor-03-ex.json
+- [x] content/hu/exercises/b1/b1-reformkor-04-ex.json
+- [x] content/hu/exercises/b1/b1-reformkor-05-ex.json
+- [x] content/hu/exercises/b1/b1-reformkor-consolidation-ex.json
+- [x] content/hu/exercises/b1/b1-rendszervaltas-01-ex.json
+- [x] content/hu/exercises/b1/b1-rendszervaltas-02-ex.json
+- [x] content/hu/exercises/b1/b1-rendszervaltas-03-ex.json
+- [x] content/hu/exercises/b1/b1-rendszervaltas-04-ex.json
+- [x] content/hu/exercises/b1/b1-rendszervaltas-05-ex.json
 - [ ] content/hu/exercises/b1/b1-rendszervaltas-consolidation-ex.json
 - [ ] content/hu/exercises/b1/b1-tatarjaras-01-ex.json
 - [ ] content/hu/exercises/b1/b1-tatarjaras-02-ex.json
