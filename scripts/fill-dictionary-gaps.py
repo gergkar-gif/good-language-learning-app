@@ -43,6 +43,7 @@ import unicodedata
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+IGNORE = ROOT / 'imports/dictionary/coverage-ignore.json'
 DICTS = {
     'hu': ROOT / 'imports/dictionary/hungarian-en.json',
     'es': ROOT / 'imports/dictionary/spanish-en.json',
@@ -162,9 +163,10 @@ def nfc(s):
 
 
 def parse_reply(text, lang):
-    """-> (senses: {lemma: [sense]}, rejected: [(line, reason)])"""
+    """-> (senses: {lemma: [sense]}, rejected: [(line, reason)], nonwords: [word])"""
     senses = {}
     rejected = []
+    nonwords = []
     for raw in text.splitlines():
         line = raw.strip().strip('`').strip()
         line = re.sub(r'^\s*(?:[-*•]|\d+[.)])\s+', '', line)
@@ -177,7 +179,8 @@ def parse_reply(text, lang):
         word, lemma, pos, gloss = cols[0], cols[1].lower(), cols[2].lower(), cols[3]
         gender = cols[4].lower() if len(cols) > 4 else ''
         if lemma in ('-', '') or pos == '-' or gloss == '-':
-            continue   # the model marked it as not a real word
+            nonwords.append(word.lower())   # the model marked it as not a real word
+            continue
         if not LEMMA_RE.match(lemma):
             rejected.append((raw, 'lemma has unexpected characters'))
         elif pos not in POS[lang]:
@@ -197,7 +200,7 @@ def parse_reply(text, lang):
             existing = senses.setdefault(lemma, [])
             if not any(s['en'] == gloss and s['type'] == pos for s in existing):
                 existing.append(sense)
-    return senses, rejected
+    return senses, rejected, nonwords
 
 
 def load_json(path, default):
@@ -252,7 +255,13 @@ def merge(lang):
 
 
 def do_import(reply_path, lang):
-    senses, rejected = parse_reply(Path(reply_path).read_text(encoding='utf-8'), lang)
+    senses, rejected, nonwords = parse_reply(Path(reply_path).read_text(encoding='utf-8'), lang)
+    if nonwords:
+        # remembered, so these never come back in a later export or the audit report
+        ignore = load_json(IGNORE, {'words': []})
+        ignore['words'] = sorted(set(ignore.get('words', [])) | set(nonwords))
+        IGNORE.write_text(json.dumps(ignore, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+        print('%d non-words added to coverage-ignore.json' % len(nonwords))
     additions = load_json(ADDITIONS[lang], {})
     for lemma, new in senses.items():
         bucket = additions.setdefault(lemma, [])
