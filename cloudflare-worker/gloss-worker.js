@@ -224,7 +224,7 @@ export default {
         if (request.method === 'OPTIONS') return new Response(null, { headers: cors });
 
         if (request.method === 'GET' && url.pathname === '/health') {
-            return json({ status: 'ok', service: 'parlour-gloss', workersAiAvailable: !!(env && env.AI), cacheAvailable: !!(env && env.GLOSS_CACHE) }, 200, cors);
+            return json({ status: 'ok', service: 'parlour-gloss', workersAiAvailable: !!(env && env.AI), cacheAvailable: !!(env && env.GLOSS_CACHE), exportEnabled: !!(env && env.EXPORT_TOKEN) }, 200, cors);
         }
         if (request.method === 'GET' && url.pathname === '/export') {
             return handleExport(request, url, env || {}, cors);

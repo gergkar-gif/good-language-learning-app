@@ -318,11 +318,20 @@ def pull_ai(lang):
         query = {'lang': lang}
         if cursor:
             query['cursor'] = cursor
+        # an explicit User-Agent: Cloudflare answers the default "Python-urllib" one with a 403
+        # before the request reaches the Worker
         req = urllib.request.Request(base + '?' + urllib.parse.urlencode(query),
-                                     headers={'Authorization': 'Bearer ' + token})
+                                     headers={'Authorization': 'Bearer ' + token,
+                                              'User-Agent': 'parlour-fill-dictionary-gaps/1.0'})
         try:
             with urllib.request.urlopen(req, timeout=30) as res:
                 page = json.loads(res.read().decode('utf-8'))
+        except urllib.error.HTTPError as err:
+            if err.code == 401:
+                raise SystemExit('The Worker refused the token (401). Check that the EXPORT_TOKEN secret is set on the Worker, '
+                                 'the Worker was redeployed after adding it, and it is the same string as in the token file. '
+                                 '%s/health shows exportEnabled.' % base.rsplit('/', 1)[0])
+            raise SystemExit('The gloss Worker answered HTTP %d: %s' % (err.code, err.reason))
         except urllib.error.URLError as err:
             raise SystemExit('Could not reach the gloss Worker: %s' % err)
         entries.extend(page.get('entries', []))
