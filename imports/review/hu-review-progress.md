@@ -1276,31 +1276,31 @@ Work level by level, top to bottom. Commit after each block of about 25 files.
 - [x] content/hu/exercises/b2/b2-mediatortenet-consolidation-ex.json
 - [x] content/hu/exercises/b2/b2-nemzetisegek-01-ex.json
 - [x] content/hu/exercises/b2/b2-nemzetisegek-02-ex.json
-- [ ] content/hu/exercises/b2/b2-nemzetisegek-03-ex.json
-- [ ] content/hu/exercises/b2/b2-nemzetisegek-04-ex.json
-- [ ] content/hu/exercises/b2/b2-nemzetisegek-05-ex.json
-- [ ] content/hu/exercises/b2/b2-nemzetisegek-consolidation-ex.json
-- [ ] content/hu/exercises/b2/b2-nyelvujitas-01-ex.json
-- [ ] content/hu/exercises/b2/b2-nyelvujitas-02-ex.json
-- [ ] content/hu/exercises/b2/b2-nyelvujitas-03-ex.json
-- [ ] content/hu/exercises/b2/b2-nyelvujitas-04-ex.json
-- [ ] content/hu/exercises/b2/b2-nyelvujitas-05-ex.json
-- [ ] content/hu/exercises/b2/b2-nyelvujitas-consolidation-ex.json
-- [ ] content/hu/exercises/b2/b2-pestihumor-01-ex.json
-- [ ] content/hu/exercises/b2/b2-pestihumor-02-ex.json
-- [ ] content/hu/exercises/b2/b2-pestihumor-03-ex.json
-- [ ] content/hu/exercises/b2/b2-pestihumor-04-ex.json
-- [ ] content/hu/exercises/b2/b2-pestihumor-05-ex.json
-- [ ] content/hu/exercises/b2/b2-pestihumor-consolidation-ex.json
-- [ ] content/hu/exercises/b2/b2-politikairetorika-01-ex.json
-- [ ] content/hu/exercises/b2/b2-politikairetorika-02-ex.json
-- [ ] content/hu/exercises/b2/b2-politikairetorika-03-ex.json
-- [ ] content/hu/exercises/b2/b2-politikairetorika-04-ex.json
-- [ ] content/hu/exercises/b2/b2-politikairetorika-05-ex.json
-- [ ] content/hu/exercises/b2/b2-politikairetorika-consolidation-ex.json
-- [ ] content/hu/exercises/b2/b2-pszichoanalizis-01-ex.json
-- [ ] content/hu/exercises/b2/b2-pszichoanalizis-02-ex.json
-- [ ] content/hu/exercises/b2/b2-pszichoanalizis-03-ex.json
+- [x] content/hu/exercises/b2/b2-nemzetisegek-03-ex.json
+- [x] content/hu/exercises/b2/b2-nemzetisegek-04-ex.json
+- [x] content/hu/exercises/b2/b2-nemzetisegek-05-ex.json
+- [x] content/hu/exercises/b2/b2-nemzetisegek-consolidation-ex.json
+- [x] content/hu/exercises/b2/b2-nyelvujitas-01-ex.json
+- [x] content/hu/exercises/b2/b2-nyelvujitas-02-ex.json
+- [x] content/hu/exercises/b2/b2-nyelvujitas-03-ex.json
+- [x] content/hu/exercises/b2/b2-nyelvujitas-04-ex.json
+- [x] content/hu/exercises/b2/b2-nyelvujitas-05-ex.json
+- [x] content/hu/exercises/b2/b2-nyelvujitas-consolidation-ex.json
+- [x] content/hu/exercises/b2/b2-pestihumor-01-ex.json
+- [x] content/hu/exercises/b2/b2-pestihumor-02-ex.json
+- [x] content/hu/exercises/b2/b2-pestihumor-03-ex.json
+- [x] content/hu/exercises/b2/b2-pestihumor-04-ex.json
+- [x] content/hu/exercises/b2/b2-pestihumor-05-ex.json
+- [x] content/hu/exercises/b2/b2-pestihumor-consolidation-ex.json
+- [x] content/hu/exercises/b2/b2-politikairetorika-01-ex.json
+- [x] content/hu/exercises/b2/b2-politikairetorika-02-ex.json
+- [x] content/hu/exercises/b2/b2-politikairetorika-03-ex.json
+- [x] content/hu/exercises/b2/b2-politikairetorika-04-ex.json
+- [x] content/hu/exercises/b2/b2-politikairetorika-05-ex.json
+- [x] content/hu/exercises/b2/b2-politikairetorika-consolidation-ex.json
+- [x] content/hu/exercises/b2/b2-pszichoanalizis-01-ex.json
+- [x] content/hu/exercises/b2/b2-pszichoanalizis-02-ex.json
+- [x] content/hu/exercises/b2/b2-pszichoanalizis-03-ex.json
 - [ ] content/hu/exercises/b2/b2-pszichoanalizis-04-ex.json
 - [ ] content/hu/exercises/b2/b2-pszichoanalizis-05-ex.json
 - [ ] content/hu/exercises/b2/b2-pszichoanalizis-consolidation-ex.json
