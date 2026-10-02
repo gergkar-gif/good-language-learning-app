@@ -1326,31 +1326,31 @@ Work level by level, top to bottom. Commit after each block of about 25 files.
 - [x] content/hu/exercises/b2/b2-szecesszio-02-ex.json
 - [x] content/hu/exercises/b2/b2-szecesszio-03-ex.json
 - [x] content/hu/exercises/b2/b2-szecesszio-04-ex.json
-- [ ] content/hu/exercises/b2/b2-szecesszio-05-ex.json
-- [ ] content/hu/exercises/b2/b2-szecesszio-consolidation-ex.json
-- [ ] content/hu/exercises/b2/b2-szinhazmuveszet-01-ex.json
-- [ ] content/hu/exercises/b2/b2-szinhazmuveszet-02-ex.json
-- [ ] content/hu/exercises/b2/b2-szinhazmuveszet-03-ex.json
-- [ ] content/hu/exercises/b2/b2-szinhazmuveszet-04-ex.json
-- [ ] content/hu/exercises/b2/b2-szinhazmuveszet-05-ex.json
-- [ ] content/hu/exercises/b2/b2-szinhazmuveszet-consolidation-ex.json
-- [ ] content/hu/exercises/b2/b2-tajegysegek-01-ex.json
-- [ ] content/hu/exercises/b2/b2-tajegysegek-02-ex.json
-- [ ] content/hu/exercises/b2/b2-tajegysegek-03-ex.json
-- [ ] content/hu/exercises/b2/b2-tajegysegek-04-ex.json
-- [ ] content/hu/exercises/b2/b2-tajegysegek-05-ex.json
-- [ ] content/hu/exercises/b2/b2-tajegysegek-consolidation-ex.json
-- [ ] content/hu/exercises/b2/b2-talalmanyok-01-ex.json
-- [ ] content/hu/exercises/b2/b2-talalmanyok-02-ex.json
-- [ ] content/hu/exercises/b2/b2-talalmanyok-03-ex.json
-- [ ] content/hu/exercises/b2/b2-talalmanyok-04-ex.json
-- [ ] content/hu/exercises/b2/b2-talalmanyok-05-ex.json
-- [ ] content/hu/exercises/b2/b2-talalmanyok-consolidation-ex.json
-- [ ] content/hu/exercises/b2/b2-tudomanyjovo-01-ex.json
-- [ ] content/hu/exercises/b2/b2-tudomanyjovo-02-ex.json
-- [ ] content/hu/exercises/b2/b2-tudomanyjovo-03-ex.json
-- [ ] content/hu/exercises/b2/b2-tudomanyjovo-04-ex.json
-- [ ] content/hu/exercises/b2/b2-tudomanyjovo-05-ex.json
+- [x] content/hu/exercises/b2/b2-szecesszio-05-ex.json
+- [x] content/hu/exercises/b2/b2-szecesszio-consolidation-ex.json
+- [x] content/hu/exercises/b2/b2-szinhazmuveszet-01-ex.json
+- [x] content/hu/exercises/b2/b2-szinhazmuveszet-02-ex.json
+- [x] content/hu/exercises/b2/b2-szinhazmuveszet-03-ex.json
+- [x] content/hu/exercises/b2/b2-szinhazmuveszet-04-ex.json
+- [x] content/hu/exercises/b2/b2-szinhazmuveszet-05-ex.json
+- [x] content/hu/exercises/b2/b2-szinhazmuveszet-consolidation-ex.json
+- [x] content/hu/exercises/b2/b2-tajegysegek-01-ex.json
+- [x] content/hu/exercises/b2/b2-tajegysegek-02-ex.json
+- [x] content/hu/exercises/b2/b2-tajegysegek-03-ex.json
+- [x] content/hu/exercises/b2/b2-tajegysegek-04-ex.json
+- [x] content/hu/exercises/b2/b2-tajegysegek-05-ex.json
+- [x] content/hu/exercises/b2/b2-tajegysegek-consolidation-ex.json
+- [x] content/hu/exercises/b2/b2-talalmanyok-01-ex.json
+- [x] content/hu/exercises/b2/b2-talalmanyok-02-ex.json
+- [x] content/hu/exercises/b2/b2-talalmanyok-03-ex.json
+- [x] content/hu/exercises/b2/b2-talalmanyok-04-ex.json
+- [x] content/hu/exercises/b2/b2-talalmanyok-05-ex.json
+- [x] content/hu/exercises/b2/b2-talalmanyok-consolidation-ex.json
+- [x] content/hu/exercises/b2/b2-tudomanyjovo-01-ex.json
+- [x] content/hu/exercises/b2/b2-tudomanyjovo-02-ex.json
+- [x] content/hu/exercises/b2/b2-tudomanyjovo-03-ex.json
+- [x] content/hu/exercises/b2/b2-tudomanyjovo-04-ex.json
+- [x] content/hu/exercises/b2/b2-tudomanyjovo-05-ex.json
 - [ ] content/hu/exercises/b2/b2-tudomanyjovo-consolidation-ex.json
 - [ ] content/hu/exercises/b2/b2-urbanusnepi-01-ex.json
 - [ ] content/hu/exercises/b2/b2-urbanusnepi-02-ex.json
