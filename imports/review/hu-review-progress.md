@@ -1351,13 +1351,13 @@ Work level by level, top to bottom. Commit after each block of about 25 files.
 - [x] content/hu/exercises/b2/b2-tudomanyjovo-03-ex.json
 - [x] content/hu/exercises/b2/b2-tudomanyjovo-04-ex.json
 - [x] content/hu/exercises/b2/b2-tudomanyjovo-05-ex.json
-- [ ] content/hu/exercises/b2/b2-tudomanyjovo-consolidation-ex.json
-- [ ] content/hu/exercises/b2/b2-urbanusnepi-01-ex.json
-- [ ] content/hu/exercises/b2/b2-urbanusnepi-02-ex.json
-- [ ] content/hu/exercises/b2/b2-urbanusnepi-03-ex.json
-- [ ] content/hu/exercises/b2/b2-urbanusnepi-04-ex.json
-- [ ] content/hu/exercises/b2/b2-urbanusnepi-05-ex.json
-- [ ] content/hu/exercises/b2/b2-urbanusnepi-consolidation-ex.json
+- [x] content/hu/exercises/b2/b2-tudomanyjovo-consolidation-ex.json
+- [x] content/hu/exercises/b2/b2-urbanusnepi-01-ex.json
+- [x] content/hu/exercises/b2/b2-urbanusnepi-02-ex.json
+- [x] content/hu/exercises/b2/b2-urbanusnepi-03-ex.json
+- [x] content/hu/exercises/b2/b2-urbanusnepi-04-ex.json
+- [x] content/hu/exercises/b2/b2-urbanusnepi-05-ex.json
+- [x] content/hu/exercises/b2/b2-urbanusnepi-consolidation-ex.json
 ## C1 (12 files, 144 exercises)
 
 
