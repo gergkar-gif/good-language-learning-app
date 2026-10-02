@@ -1301,31 +1301,31 @@ Work level by level, top to bottom. Commit after each block of about 25 files.
 - [x] content/hu/exercises/b2/b2-pszichoanalizis-01-ex.json
 - [x] content/hu/exercises/b2/b2-pszichoanalizis-02-ex.json
 - [x] content/hu/exercises/b2/b2-pszichoanalizis-03-ex.json
-- [ ] content/hu/exercises/b2/b2-pszichoanalizis-04-ex.json
-- [ ] content/hu/exercises/b2/b2-pszichoanalizis-05-ex.json
-- [ ] content/hu/exercises/b2/b2-pszichoanalizis-consolidation-ex.json
-- [ ] content/hu/exercises/b2/b2-semmelweis-01-ex.json
-- [ ] content/hu/exercises/b2/b2-semmelweis-02-ex.json
-- [ ] content/hu/exercises/b2/b2-semmelweis-03-ex.json
-- [ ] content/hu/exercises/b2/b2-semmelweis-04-ex.json
-- [ ] content/hu/exercises/b2/b2-semmelweis-05-ex.json
-- [ ] content/hu/exercises/b2/b2-semmelweis-consolidation-ex.json
-- [ ] content/hu/exercises/b2/b2-sporttortenet-01-ex.json
-- [ ] content/hu/exercises/b2/b2-sporttortenet-02-ex.json
-- [ ] content/hu/exercises/b2/b2-sporttortenet-03-ex.json
-- [ ] content/hu/exercises/b2/b2-sporttortenet-04-ex.json
-- [ ] content/hu/exercises/b2/b2-sporttortenet-05-ex.json
-- [ ] content/hu/exercises/b2/b2-sporttortenet-consolidation-ex.json
-- [ ] content/hu/exercises/b2/b2-szamizdat-01-ex.json
-- [ ] content/hu/exercises/b2/b2-szamizdat-02-ex.json
-- [ ] content/hu/exercises/b2/b2-szamizdat-03-ex.json
-- [ ] content/hu/exercises/b2/b2-szamizdat-04-ex.json
-- [ ] content/hu/exercises/b2/b2-szamizdat-05-ex.json
-- [ ] content/hu/exercises/b2/b2-szamizdat-consolidation-ex.json
-- [ ] content/hu/exercises/b2/b2-szecesszio-01-ex.json
-- [ ] content/hu/exercises/b2/b2-szecesszio-02-ex.json
-- [ ] content/hu/exercises/b2/b2-szecesszio-03-ex.json
-- [ ] content/hu/exercises/b2/b2-szecesszio-04-ex.json
+- [x] content/hu/exercises/b2/b2-pszichoanalizis-04-ex.json
+- [x] content/hu/exercises/b2/b2-pszichoanalizis-05-ex.json
+- [x] content/hu/exercises/b2/b2-pszichoanalizis-consolidation-ex.json
+- [x] content/hu/exercises/b2/b2-semmelweis-01-ex.json
+- [x] content/hu/exercises/b2/b2-semmelweis-02-ex.json
+- [x] content/hu/exercises/b2/b2-semmelweis-03-ex.json
+- [x] content/hu/exercises/b2/b2-semmelweis-04-ex.json
+- [x] content/hu/exercises/b2/b2-semmelweis-05-ex.json
+- [x] content/hu/exercises/b2/b2-semmelweis-consolidation-ex.json
+- [x] content/hu/exercises/b2/b2-sporttortenet-01-ex.json
+- [x] content/hu/exercises/b2/b2-sporttortenet-02-ex.json
+- [x] content/hu/exercises/b2/b2-sporttortenet-03-ex.json
+- [x] content/hu/exercises/b2/b2-sporttortenet-04-ex.json
+- [x] content/hu/exercises/b2/b2-sporttortenet-05-ex.json
+- [x] content/hu/exercises/b2/b2-sporttortenet-consolidation-ex.json
+- [x] content/hu/exercises/b2/b2-szamizdat-01-ex.json
+- [x] content/hu/exercises/b2/b2-szamizdat-02-ex.json
+- [x] content/hu/exercises/b2/b2-szamizdat-03-ex.json
+- [x] content/hu/exercises/b2/b2-szamizdat-04-ex.json
+- [x] content/hu/exercises/b2/b2-szamizdat-05-ex.json
+- [x] content/hu/exercises/b2/b2-szamizdat-consolidation-ex.json
+- [x] content/hu/exercises/b2/b2-szecesszio-01-ex.json
+- [x] content/hu/exercises/b2/b2-szecesszio-02-ex.json
+- [x] content/hu/exercises/b2/b2-szecesszio-03-ex.json
+- [x] content/hu/exercises/b2/b2-szecesszio-04-ex.json
 - [ ] content/hu/exercises/b2/b2-szecesszio-05-ex.json
 - [ ] content/hu/exercises/b2/b2-szecesszio-consolidation-ex.json
 - [ ] content/hu/exercises/b2/b2-szinhazmuveszet-01-ex.json
