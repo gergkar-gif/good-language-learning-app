@@ -1226,31 +1226,31 @@ Work level by level, top to bottom. Commit after each block of about 25 files.
 - [x] content/hu/exercises/b2/b2-kavehazikultura-04-ex.json
 - [x] content/hu/exercises/b2/b2-kavehazikultura-05-ex.json
 - [x] content/hu/exercises/b2/b2-kavehazikultura-consolidation-ex.json
-- [ ] content/hu/exercises/b2/b2-kornyezetpolitika-01-ex.json
-- [ ] content/hu/exercises/b2/b2-kornyezetpolitika-02-ex.json
-- [ ] content/hu/exercises/b2/b2-kornyezetpolitika-03-ex.json
-- [ ] content/hu/exercises/b2/b2-kornyezetpolitika-04-ex.json
-- [ ] content/hu/exercises/b2/b2-kornyezetpolitika-05-ex.json
-- [ ] content/hu/exercises/b2/b2-kornyezetpolitika-consolidation-ex.json
-- [ ] content/hu/exercises/b2/b2-kulpolitika-01-ex.json
-- [ ] content/hu/exercises/b2/b2-kulpolitika-02-ex.json
-- [ ] content/hu/exercises/b2/b2-kulpolitika-03-ex.json
-- [ ] content/hu/exercises/b2/b2-kulpolitika-04-ex.json
-- [ ] content/hu/exercises/b2/b2-kulpolitika-05-ex.json
-- [ ] content/hu/exercises/b2/b2-kulpolitika-consolidation-ex.json
-- [ ] content/hu/exercises/b2/b2-lakhatas-01-ex.json
-- [ ] content/hu/exercises/b2/b2-lakhatas-02-ex.json
-- [ ] content/hu/exercises/b2/b2-lakhatas-03-ex.json
-- [ ] content/hu/exercises/b2/b2-lakhatas-04-ex.json
-- [ ] content/hu/exercises/b2/b2-lakhatas-05-ex.json
-- [ ] content/hu/exercises/b2/b2-lakhatas-consolidation-ex.json
-- [ ] content/hu/exercises/b2/b2-magyarfilm-01-ex.json
-- [ ] content/hu/exercises/b2/b2-magyarfilm-02-ex.json
-- [ ] content/hu/exercises/b2/b2-magyarfilm-03-ex.json
-- [ ] content/hu/exercises/b2/b2-magyarfilm-04-ex.json
-- [ ] content/hu/exercises/b2/b2-magyarfilm-05-ex.json
-- [ ] content/hu/exercises/b2/b2-magyarfilm-consolidation-ex.json
-- [ ] content/hu/exercises/b2/b2-magyaridentitas-01-ex.json
+- [x] content/hu/exercises/b2/b2-kornyezetpolitika-01-ex.json
+- [x] content/hu/exercises/b2/b2-kornyezetpolitika-02-ex.json
+- [x] content/hu/exercises/b2/b2-kornyezetpolitika-03-ex.json
+- [x] content/hu/exercises/b2/b2-kornyezetpolitika-04-ex.json
+- [x] content/hu/exercises/b2/b2-kornyezetpolitika-05-ex.json
+- [x] content/hu/exercises/b2/b2-kornyezetpolitika-consolidation-ex.json
+- [x] content/hu/exercises/b2/b2-kulpolitika-01-ex.json
+- [x] content/hu/exercises/b2/b2-kulpolitika-02-ex.json
+- [x] content/hu/exercises/b2/b2-kulpolitika-03-ex.json
+- [x] content/hu/exercises/b2/b2-kulpolitika-04-ex.json
+- [x] content/hu/exercises/b2/b2-kulpolitika-05-ex.json
+- [x] content/hu/exercises/b2/b2-kulpolitika-consolidation-ex.json
+- [x] content/hu/exercises/b2/b2-lakhatas-01-ex.json
+- [x] content/hu/exercises/b2/b2-lakhatas-02-ex.json
+- [x] content/hu/exercises/b2/b2-lakhatas-03-ex.json
+- [x] content/hu/exercises/b2/b2-lakhatas-04-ex.json
+- [x] content/hu/exercises/b2/b2-lakhatas-05-ex.json
+- [x] content/hu/exercises/b2/b2-lakhatas-consolidation-ex.json
+- [x] content/hu/exercises/b2/b2-magyarfilm-01-ex.json
+- [x] content/hu/exercises/b2/b2-magyarfilm-02-ex.json
+- [x] content/hu/exercises/b2/b2-magyarfilm-03-ex.json
+- [x] content/hu/exercises/b2/b2-magyarfilm-04-ex.json
+- [x] content/hu/exercises/b2/b2-magyarfilm-05-ex.json
+- [x] content/hu/exercises/b2/b2-magyarfilm-consolidation-ex.json
+- [x] content/hu/exercises/b2/b2-magyaridentitas-01-ex.json
 - [ ] content/hu/exercises/b2/b2-magyaridentitas-02-ex.json
 - [ ] content/hu/exercises/b2/b2-magyaridentitas-03-ex.json
 - [ ] content/hu/exercises/b2/b2-magyaridentitas-04-ex.json
