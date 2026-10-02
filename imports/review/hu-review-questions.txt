@@ -15,3 +15,21 @@
 #   proposed:
 #   <same shape, with the change>
 
+### b1-06-01-dialogue-1   (content/hu/exercises/b1/b1-06-01-ex.json)
+why: Dialogue reply - second person distractor used to create unambiguous grammatical near-miss
+current:
+Gábor: Meddig tart a munkaidőd ma?
+* Ötig tart a hivatalos munkaidőm, de ma túlórázom egy fontos ügyfél miatt.
+- Ötig tart a hivatalos munkaidőm, de ma túlórázol egy fontos ügyfél miatt.
+proposed:
+KEEP
+
+### b1-08-01-dialogue-1   (content/hu/exercises/b1/b1-08-01-ex.json)
+why: Inflected infinitive error distractor (átszállniad instead of átszállnod) vs self-contradiction
+current:
+— Van közvetlen járat Pécsre, vagy átszállással kell menni?
+* Szerencsére van egy közvetlen InterCity, nem kell átszállnod.
+- Szerencsére van egy közvetlen InterCity, nem kell átszállniad.
+- Közvetlen járat van, de mégis át kell szállnod rá.
+proposed:
+KEEP
