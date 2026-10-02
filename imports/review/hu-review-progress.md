@@ -1176,31 +1176,31 @@ Work level by level, top to bottom. Commit after each block of about 25 files.
 - [x] content/hu/exercises/b2/b2-eszmetortenet-02-ex.json
 - [x] content/hu/exercises/b2/b2-eszmetortenet-03-ex.json
 - [x] content/hu/exercises/b2/b2-eszmetortenet-04-ex.json
-- [ ] content/hu/exercises/b2/b2-eszmetortenet-05-ex.json
-- [ ] content/hu/exercises/b2/b2-eszmetortenet-consolidation-ex.json
-- [ ] content/hu/exercises/b2/b2-falutortenet-01-ex.json
-- [ ] content/hu/exercises/b2/b2-falutortenet-02-ex.json
-- [ ] content/hu/exercises/b2/b2-falutortenet-03-ex.json
-- [ ] content/hu/exercises/b2/b2-falutortenet-04-ex.json
-- [ ] content/hu/exercises/b2/b2-falutortenet-05-ex.json
-- [ ] content/hu/exercises/b2/b2-falutortenet-consolidation-ex.json
-- [ ] content/hu/exercises/b2/b2-festeszet-01-ex.json
-- [ ] content/hu/exercises/b2/b2-festeszet-02-ex.json
-- [ ] content/hu/exercises/b2/b2-festeszet-03-ex.json
-- [ ] content/hu/exercises/b2/b2-festeszet-04-ex.json
-- [ ] content/hu/exercises/b2/b2-festeszet-05-ex.json
-- [ ] content/hu/exercises/b2/b2-festeszet-consolidation-ex.json
-- [ ] content/hu/exercises/b2/b2-gazdasagiatmenet-01-ex.json
-- [ ] content/hu/exercises/b2/b2-gazdasagiatmenet-02-ex.json
-- [ ] content/hu/exercises/b2/b2-gazdasagiatmenet-03-ex.json
-- [ ] content/hu/exercises/b2/b2-gazdasagiatmenet-04-ex.json
-- [ ] content/hu/exercises/b2/b2-gazdasagiatmenet-05-ex.json
-- [ ] content/hu/exercises/b2/b2-gazdasagiatmenet-consolidation-ex.json
-- [ ] content/hu/exercises/b2/b2-gimnaziumok-01-ex.json
-- [ ] content/hu/exercises/b2/b2-gimnaziumok-02-ex.json
-- [ ] content/hu/exercises/b2/b2-gimnaziumok-03-ex.json
-- [ ] content/hu/exercises/b2/b2-gimnaziumok-04-ex.json
-- [ ] content/hu/exercises/b2/b2-gimnaziumok-05-ex.json
+- [x] content/hu/exercises/b2/b2-eszmetortenet-05-ex.json
+- [x] content/hu/exercises/b2/b2-eszmetortenet-consolidation-ex.json
+- [x] content/hu/exercises/b2/b2-falutortenet-01-ex.json
+- [x] content/hu/exercises/b2/b2-falutortenet-02-ex.json
+- [x] content/hu/exercises/b2/b2-falutortenet-03-ex.json
+- [x] content/hu/exercises/b2/b2-falutortenet-04-ex.json
+- [x] content/hu/exercises/b2/b2-falutortenet-05-ex.json
+- [x] content/hu/exercises/b2/b2-falutortenet-consolidation-ex.json
+- [x] content/hu/exercises/b2/b2-festeszet-01-ex.json
+- [x] content/hu/exercises/b2/b2-festeszet-02-ex.json
+- [x] content/hu/exercises/b2/b2-festeszet-03-ex.json
+- [x] content/hu/exercises/b2/b2-festeszet-04-ex.json
+- [x] content/hu/exercises/b2/b2-festeszet-05-ex.json
+- [x] content/hu/exercises/b2/b2-festeszet-consolidation-ex.json
+- [x] content/hu/exercises/b2/b2-gazdasagiatmenet-01-ex.json
+- [x] content/hu/exercises/b2/b2-gazdasagiatmenet-02-ex.json
+- [x] content/hu/exercises/b2/b2-gazdasagiatmenet-03-ex.json
+- [x] content/hu/exercises/b2/b2-gazdasagiatmenet-04-ex.json
+- [x] content/hu/exercises/b2/b2-gazdasagiatmenet-05-ex.json
+- [x] content/hu/exercises/b2/b2-gazdasagiatmenet-consolidation-ex.json
+- [x] content/hu/exercises/b2/b2-gimnaziumok-01-ex.json
+- [x] content/hu/exercises/b2/b2-gimnaziumok-02-ex.json
+- [x] content/hu/exercises/b2/b2-gimnaziumok-03-ex.json
+- [x] content/hu/exercises/b2/b2-gimnaziumok-04-ex.json
+- [x] content/hu/exercises/b2/b2-gimnaziumok-05-ex.json
 - [ ] content/hu/exercises/b2/b2-gimnaziumok-consolidation-ex.json
 - [ ] content/hu/exercises/b2/b2-hatarontul-01-ex.json
 - [ ] content/hu/exercises/b2/b2-hatarontul-02-ex.json
