@@ -1251,31 +1251,31 @@ Work level by level, top to bottom. Commit after each block of about 25 files.
 - [x] content/hu/exercises/b2/b2-magyarfilm-05-ex.json
 - [x] content/hu/exercises/b2/b2-magyarfilm-consolidation-ex.json
 - [x] content/hu/exercises/b2/b2-magyaridentitas-01-ex.json
-- [ ] content/hu/exercises/b2/b2-magyaridentitas-02-ex.json
-- [ ] content/hu/exercises/b2/b2-magyaridentitas-03-ex.json
-- [ ] content/hu/exercises/b2/b2-magyaridentitas-04-ex.json
-- [ ] content/hu/exercises/b2/b2-magyaridentitas-05-ex.json
-- [ ] content/hu/exercises/b2/b2-magyaridentitas-consolidation-ex.json
-- [ ] content/hu/exercises/b2/b2-marslakok-01-ex.json
-- [ ] content/hu/exercises/b2/b2-marslakok-02-ex.json
-- [ ] content/hu/exercises/b2/b2-marslakok-03-ex.json
-- [ ] content/hu/exercises/b2/b2-marslakok-04-ex.json
-- [ ] content/hu/exercises/b2/b2-marslakok-05-ex.json
-- [ ] content/hu/exercises/b2/b2-marslakok-consolidation-ex.json
-- [ ] content/hu/exercises/b2/b2-matematikasakk-01-ex.json
-- [ ] content/hu/exercises/b2/b2-matematikasakk-02-ex.json
-- [ ] content/hu/exercises/b2/b2-matematikasakk-03-ex.json
-- [ ] content/hu/exercises/b2/b2-matematikasakk-04-ex.json
-- [ ] content/hu/exercises/b2/b2-matematikasakk-05-ex.json
-- [ ] content/hu/exercises/b2/b2-matematikasakk-consolidation-ex.json
-- [ ] content/hu/exercises/b2/b2-mediatortenet-01-ex.json
-- [ ] content/hu/exercises/b2/b2-mediatortenet-02-ex.json
-- [ ] content/hu/exercises/b2/b2-mediatortenet-03-ex.json
-- [ ] content/hu/exercises/b2/b2-mediatortenet-04-ex.json
-- [ ] content/hu/exercises/b2/b2-mediatortenet-05-ex.json
-- [ ] content/hu/exercises/b2/b2-mediatortenet-consolidation-ex.json
-- [ ] content/hu/exercises/b2/b2-nemzetisegek-01-ex.json
-- [ ] content/hu/exercises/b2/b2-nemzetisegek-02-ex.json
+- [x] content/hu/exercises/b2/b2-magyaridentitas-02-ex.json
+- [x] content/hu/exercises/b2/b2-magyaridentitas-03-ex.json
+- [x] content/hu/exercises/b2/b2-magyaridentitas-04-ex.json
+- [x] content/hu/exercises/b2/b2-magyaridentitas-05-ex.json
+- [x] content/hu/exercises/b2/b2-magyaridentitas-consolidation-ex.json
+- [x] content/hu/exercises/b2/b2-marslakok-01-ex.json
+- [x] content/hu/exercises/b2/b2-marslakok-02-ex.json
+- [x] content/hu/exercises/b2/b2-marslakok-03-ex.json
+- [x] content/hu/exercises/b2/b2-marslakok-04-ex.json
+- [x] content/hu/exercises/b2/b2-marslakok-05-ex.json
+- [x] content/hu/exercises/b2/b2-marslakok-consolidation-ex.json
+- [x] content/hu/exercises/b2/b2-matematikasakk-01-ex.json
+- [x] content/hu/exercises/b2/b2-matematikasakk-02-ex.json
+- [x] content/hu/exercises/b2/b2-matematikasakk-03-ex.json
+- [x] content/hu/exercises/b2/b2-matematikasakk-04-ex.json
+- [x] content/hu/exercises/b2/b2-matematikasakk-05-ex.json
+- [x] content/hu/exercises/b2/b2-matematikasakk-consolidation-ex.json
+- [x] content/hu/exercises/b2/b2-mediatortenet-01-ex.json
+- [x] content/hu/exercises/b2/b2-mediatortenet-02-ex.json
+- [x] content/hu/exercises/b2/b2-mediatortenet-03-ex.json
+- [x] content/hu/exercises/b2/b2-mediatortenet-04-ex.json
+- [x] content/hu/exercises/b2/b2-mediatortenet-05-ex.json
+- [x] content/hu/exercises/b2/b2-mediatortenet-consolidation-ex.json
+- [x] content/hu/exercises/b2/b2-nemzetisegek-01-ex.json
+- [x] content/hu/exercises/b2/b2-nemzetisegek-02-ex.json
 - [ ] content/hu/exercises/b2/b2-nemzetisegek-03-ex.json
 - [ ] content/hu/exercises/b2/b2-nemzetisegek-04-ex.json
 - [ ] content/hu/exercises/b2/b2-nemzetisegek-05-ex.json
