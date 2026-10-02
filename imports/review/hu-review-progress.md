@@ -1076,31 +1076,31 @@ Work level by level, top to bottom. Commit after each block of about 25 files.
 - [x] content/hu/exercises/b2/b2-25-04-ex.json
 - [x] content/hu/exercises/b2/b2-25-05-ex.json
 - [x] content/hu/exercises/b2/b2-25-consolidation-ex.json
-- [ ] content/hu/exercises/b2/b2-26-01-ex.json
-- [ ] content/hu/exercises/b2/b2-26-02-ex.json
-- [ ] content/hu/exercises/b2/b2-26-03-ex.json
-- [ ] content/hu/exercises/b2/b2-26-04-ex.json
-- [ ] content/hu/exercises/b2/b2-26-05-ex.json
-- [ ] content/hu/exercises/b2/b2-26-consolidation-ex.json
-- [ ] content/hu/exercises/b2/b2-27-01-ex.json
-- [ ] content/hu/exercises/b2/b2-27-02-ex.json
-- [ ] content/hu/exercises/b2/b2-27-03-ex.json
-- [ ] content/hu/exercises/b2/b2-27-04-ex.json
-- [ ] content/hu/exercises/b2/b2-27-05-ex.json
-- [ ] content/hu/exercises/b2/b2-27-consolidation-ex.json
-- [ ] content/hu/exercises/b2/b2-28-01-ex.json
-- [ ] content/hu/exercises/b2/b2-28-02-ex.json
-- [ ] content/hu/exercises/b2/b2-28-03-ex.json
-- [ ] content/hu/exercises/b2/b2-28-04-ex.json
-- [ ] content/hu/exercises/b2/b2-28-05-ex.json
-- [ ] content/hu/exercises/b2/b2-28-consolidation-ex.json
-- [ ] content/hu/exercises/b2/b2-29-01-ex.json
-- [ ] content/hu/exercises/b2/b2-29-02-ex.json
-- [ ] content/hu/exercises/b2/b2-29-03-ex.json
-- [ ] content/hu/exercises/b2/b2-29-04-ex.json
-- [ ] content/hu/exercises/b2/b2-29-05-ex.json
-- [ ] content/hu/exercises/b2/b2-29-consolidation-ex.json
-- [ ] content/hu/exercises/b2/b2-30-01-ex.json
+- [x] content/hu/exercises/b2/b2-26-01-ex.json
+- [x] content/hu/exercises/b2/b2-26-02-ex.json
+- [x] content/hu/exercises/b2/b2-26-03-ex.json
+- [x] content/hu/exercises/b2/b2-26-04-ex.json
+- [x] content/hu/exercises/b2/b2-26-05-ex.json
+- [x] content/hu/exercises/b2/b2-26-consolidation-ex.json
+- [x] content/hu/exercises/b2/b2-27-01-ex.json
+- [x] content/hu/exercises/b2/b2-27-02-ex.json
+- [x] content/hu/exercises/b2/b2-27-03-ex.json
+- [x] content/hu/exercises/b2/b2-27-04-ex.json
+- [x] content/hu/exercises/b2/b2-27-05-ex.json
+- [x] content/hu/exercises/b2/b2-27-consolidation-ex.json
+- [x] content/hu/exercises/b2/b2-28-01-ex.json
+- [x] content/hu/exercises/b2/b2-28-02-ex.json
+- [x] content/hu/exercises/b2/b2-28-03-ex.json
+- [x] content/hu/exercises/b2/b2-28-04-ex.json
+- [x] content/hu/exercises/b2/b2-28-05-ex.json
+- [x] content/hu/exercises/b2/b2-28-consolidation-ex.json
+- [x] content/hu/exercises/b2/b2-29-01-ex.json
+- [x] content/hu/exercises/b2/b2-29-02-ex.json
+- [x] content/hu/exercises/b2/b2-29-03-ex.json
+- [x] content/hu/exercises/b2/b2-29-04-ex.json
+- [x] content/hu/exercises/b2/b2-29-05-ex.json
+- [x] content/hu/exercises/b2/b2-29-consolidation-ex.json
+- [x] content/hu/exercises/b2/b2-30-01-ex.json
 - [ ] content/hu/exercises/b2/b2-30-02-ex.json
 - [ ] content/hu/exercises/b2/b2-30-03-ex.json
 - [ ] content/hu/exercises/b2/b2-30-04-ex.json
