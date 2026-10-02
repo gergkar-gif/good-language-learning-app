@@ -245,6 +245,72 @@ def validate_exercise_metadata(data, lang, skill_registry, alias_map=None, kind_
     return meta_errors
 
 
+def validate_story_metadata(data, path):
+    """Ensure stories have proper tagging and ID conventions so they appear
+    correctly in the Library."""
+    meta_errors = []
+    level = data.get("level")
+    story_type = data.get("type") or data.get("category")
+    sid = data.get("id", "")
+
+    # C1 stories and any newly added world combined stories must carry topic tags
+    if level == "C1":
+        has_topics = bool(data.get("vocabularyTopics") or data.get("grammar") or data.get("topics") or data.get("tags"))
+        if not has_topics:
+            meta_errors.append((
+                "topics",
+                "missing topic tags (at least one of 'vocabularyTopics', 'grammar', or 'topics' is required for Library discovery)"
+            ))
+
+    if story_type == "world":
+        # Check if segment or combined
+        is_segment = bool(re.search(r"[.\-]\d+([.\-][a-z0-9]+)?$", sid))
+        if is_segment:
+            if level == "C1" and not sid.startswith("story.") and not re.match(r"^[a-z0-9]+-[a-z0-9]+-\d{2}$", sid):
+                meta_errors.append((
+                    "id",
+                    f"world segment id '{sid}' should follow the segment convention 'story.<level>.<slug>.<num>' or '<level>-<slug>-<num>'"
+                ))
+        else:
+            if level == "C1":
+                if not data.get("order"):
+                    meta_errors.append(("order", "combined world story must have an 'order' integer field specifying its sequence in the track shelf"))
+                if not data.get("estimatedMinutes"):
+                    meta_errors.append(("estimatedMinutes", "combined world story must have an 'estimatedMinutes' integer field"))
+                if not data.get("vocabularyTopics") and not data.get("grammar"):
+                    meta_errors.append(("vocabularyTopics", "combined world story must carry 'vocabularyTopics' or 'grammar' topic tags"))
+
+    return meta_errors
+
+
+def validate_unit_tracks(data, path):
+    """Ensure every non-core track declared in units/*.json is registered in
+    engine/reader.js TRACK_SHELF_LABELS so that track shelves display a proper title."""
+    meta_errors = []
+    reader_js = ROOT / "engine" / "reader.js"
+    if not reader_js.exists():
+        return meta_errors
+
+    reader_content = reader_js.read_text(encoding="utf-8")
+    m = re.search(r"const\s+TRACK_SHELF_LABELS\s*=\s*\{([^}]+)\};", reader_content)
+    if not m:
+        return meta_errors
+
+    labels_block = m.group(1)
+    known_tracks = set(re.findall(r"([a-z0-9_-]+)\s*:", labels_block))
+
+    if isinstance(data, list):
+        for idx, u in enumerate(data):
+            track = u.get("track")
+            if track and track != "core" and track not in known_tracks:
+                meta_errors.append((
+                    f"units[{idx}] (track='{track}')",
+                    f"track '{track}' is not registered in TRACK_SHELF_LABELS in engine/reader.js "
+                    f"— register it so the Library can display a human-readable shelf title instead of 'track-{track}'"
+                ))
+    return meta_errors
+
+
 def changed_files(ref="origin/master"):
     """Absolute paths of files that differ from `ref`, plus untracked ones."""
     def git(*args):
@@ -337,6 +403,10 @@ def validate_language(lang, only=None):
             meta_errors = []
             if name == "exercises" and enforce_metadata:
                 meta_errors = validate_exercise_metadata(data, lang, skill_registry, alias_map, kind_map)
+            elif name == "story" and enforce_metadata:
+                meta_errors = validate_story_metadata(data, path)
+            elif name == "units" and enforce_metadata:
+                meta_errors = validate_unit_tracks(data, path)
 
             if not errors and not meta_errors:
                 passed += 1

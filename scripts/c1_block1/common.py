@@ -166,31 +166,43 @@ def emit_instructional_lesson(unit_num: int, track_type: str, l_data: dict, unit
     # 4. Stories
     if "classic_story" in l_data:
         s = l_data["classic_story"]
+        words_count = sum(len((p.get("text") or "").split()) for p in s.get("paragraphs", []))
         write_json(
             f"stories/classics/c1/{s['slug']}.json",
             {
                 "id": f"story.c1.classics.{s['slug']}",
                 "title": s["title"],
                 "level": "C1",
-                "type": "classic",
+                "lesson": num,
+                "order": unit_num,
+                "type": "classics",
                 "author": s["author"],
                 "work": s["work"],
+                "source": f"Adapted for C1 learners from {s['author']}, {s['work']}",
                 "summary": s["summary"],
+                "estimatedMinutes": max(5, round(words_count / 120)),
+                "grammar": [grammar_skill],
+                "vocabularyTopics": [unit_title, title],
                 "characters": s.get("characters", []),
                 "paragraphs": s["paragraphs"],
             },
         )
     elif "world_story_seg" in l_data:
         s = l_data["world_story_seg"]
+        slug = stem.split("-")[1]
+        words_count = sum(len((p.get("text") or "").split()) for p in s.get("paragraphs", []))
         write_json(
             f"stories/world/c1/{stem}-{s['seg_slug']}.json",
             {
-                "id": f"story.c1.world.{stem}-{s['seg_slug']}",
+                "id": f"story.c1.{slug}.{num:02d}",
                 "title": s["title"],
                 "level": "C1",
                 "lesson": num,
                 "order": num,
                 "type": "world",
+                "estimatedMinutes": max(3, round(words_count / 120)),
+                "grammar": [grammar_skill],
+                "vocabularyTopics": [unit_title, title],
                 "summary": s["summary"],
                 "paragraphs": s["paragraphs"],
             },

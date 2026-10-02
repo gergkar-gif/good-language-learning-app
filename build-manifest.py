@@ -655,7 +655,7 @@ def _lesson_id_to_unit(curriculum):
     return index
 
 
-_FAMILY_SUFFIX_RE = re.compile(r"([.\-]\d+|-consolidation)$")
+_FAMILY_SUFFIX_RE = re.compile(r"([.\-]\d+([.\-][a-z0-9]+)?|-consolidation)$")
 
 
 def _story_unit_index(lang, curriculum):
@@ -734,10 +734,10 @@ def _apply_story_unit_families(stories):
         if fam in family_unit:
             s["unit"] = family_unit[fam]
             continue
-        fam_norm = fam.replace("-", "")
+        fam_norm = fam.replace("-", "").replace(".world.", ".")
         for rid_fam, unit in family_unit.items():
-            rid_fam_norm = rid_fam.replace("-", "")
-            if rid_fam_norm and fam_norm.startswith(rid_fam_norm):
+            rid_fam_norm = rid_fam.replace("-", "").replace(".world.", ".")
+            if rid_fam_norm and (fam_norm.startswith(rid_fam_norm) or rid_fam_norm.startswith(fam_norm)):
                 s["unit"] = unit
                 break
 

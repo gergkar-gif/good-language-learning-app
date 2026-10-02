@@ -68,14 +68,14 @@ def stitch_language_track(lang: str, level: str, track_id: str, lang_audio_code:
 
         if not combined_path.exists():
             # Check hyphen-insensitive or prefix fallback (e.g. b1-represionpolitica vs
-            # b1-represion-politica, or b1-eeuu vs b1-eeuu-latinoamerica, matching
-            # build-manifest.py's _apply_story_unit_families)
+            # b1-represion-politica, or b1-eeuu vs b1-eeuu-latinoamerica, or c1-bioetika vs bioetika)
             norm_target = unit_prefix.replace("-", "")
+            raw_target = unit_prefix[len(level_lc)+1:].replace("-", "") if unit_prefix.startswith(f"{level_lc}-") else norm_target
             candidates = [
-                f for f in world_dir.glob(f"{level_lc}-*.json")
+                f for f in world_dir.glob("*.json")
                 if not re.search(r"-\d{2}(-|$)|-consolidation", f.stem)
-                and (f.stem.replace("-", "") == norm_target
-                     or f.stem.replace("-", "").startswith(norm_target))
+                and (f.stem.replace("-", "") in (norm_target, raw_target)
+                     or f.stem.replace("-", "").startswith((norm_target, raw_target)))
             ]
             if candidates:
                 combined_path = candidates[0]
@@ -131,11 +131,14 @@ def stitch_language_track(lang: str, level: str, track_id: str, lang_audio_code:
 
         total_words = sum(len((p.get("text") or "").split()) for p in all_paras)
         est_minutes = max(8, round(total_words / 110))
+        clean_slug = unit_prefix[len(level_lc)+1:] if unit_prefix.startswith(f"{level_lc}-") else unit_prefix
+        combined["id"] = f"story.{level_lc}.{clean_slug}"
         if not combined.get("title"):
             combined["title"] = unit_title
         combined["level"] = level.upper()
         combined["type"] = "world"
         combined["order"] = order_idx
+        combined["lesson"] = 5
         combined["estimatedMinutes"] = est_minutes
         if all_grammar:
             combined["grammar"] = all_grammar
@@ -187,6 +190,8 @@ def main():
     # B2 tracks
     stitch_language_track("es-latam", "b2", "latam", "es")
     stitch_language_track("es-latam", "b2", "regional", "es")
+    # C1 tracks
+    stitch_language_track("hu", "c1", "discourse", "hu")
 
 
 if __name__ == "__main__":

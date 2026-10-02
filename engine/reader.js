@@ -559,7 +559,9 @@ const TRACK_SHELF_LABELS = {
     latam: 'Latin America',
     citizenship: 'Citizenship',
     cultura: 'Cultura y Ciudadanía',
-    regional: 'Regional'
+    regional: 'Regional',
+    culture: 'Culture',
+    discourse: 'Discourse'
 };
 
 // Shelf key for a story in a dual-track level's non-core track, else null.
@@ -614,7 +616,7 @@ const SEARCH_THRESHOLD = 15;
 function _isBrowsableStory(story) {
     if (story.type !== 'world') return true;
     const id = story.id || '';
-    if (/[.\-]\d+$/.test(id)) return false;       // segment: story.b1.xxx.01 or b2-xxx-01
+    if (/[.\-]\d+([.\-][a-z0-9]+)?$/.test(id)) return false;       // segment: story.b1.xxx.01, b2-xxx-01, or c1-xxx-01-deak
     if (id.endsWith('-consolidation')) return false; // grammar consolidation lesson
     return true;
 }
@@ -2665,5 +2667,8 @@ document.addEventListener('language-changed', () => {
 });
 
 if (typeof module !== 'undefined' && module.exports) {
+    window.Reader._isBrowsableStory = _isBrowsableStory;
+    window.Reader._trackShelfKey = _trackShelfKey;
+    window.Reader.TRACK_SHELF_LABELS = TRACK_SHELF_LABELS;
     module.exports = window.Reader;
 }
