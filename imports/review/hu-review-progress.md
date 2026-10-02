@@ -1201,31 +1201,31 @@ Work level by level, top to bottom. Commit after each block of about 25 files.
 - [x] content/hu/exercises/b2/b2-gimnaziumok-03-ex.json
 - [x] content/hu/exercises/b2/b2-gimnaziumok-04-ex.json
 - [x] content/hu/exercises/b2/b2-gimnaziumok-05-ex.json
-- [ ] content/hu/exercises/b2/b2-gimnaziumok-consolidation-ex.json
-- [ ] content/hu/exercises/b2/b2-hatarontul-01-ex.json
-- [ ] content/hu/exercises/b2/b2-hatarontul-02-ex.json
-- [ ] content/hu/exercises/b2/b2-hatarontul-03-ex.json
-- [ ] content/hu/exercises/b2/b2-hatarontul-04-ex.json
-- [ ] content/hu/exercises/b2/b2-hatarontul-05-ex.json
-- [ ] content/hu/exercises/b2/b2-hatarontul-consolidation-ex.json
-- [ ] content/hu/exercises/b2/b2-ifjusagikultura-01-ex.json
-- [ ] content/hu/exercises/b2/b2-ifjusagikultura-02-ex.json
-- [ ] content/hu/exercises/b2/b2-ifjusagikultura-03-ex.json
-- [ ] content/hu/exercises/b2/b2-ifjusagikultura-04-ex.json
-- [ ] content/hu/exercises/b2/b2-ifjusagikultura-05-ex.json
-- [ ] content/hu/exercises/b2/b2-ifjusagikultura-consolidation-ex.json
-- [ ] content/hu/exercises/b2/b2-jogvedelem-01-ex.json
-- [ ] content/hu/exercises/b2/b2-jogvedelem-02-ex.json
-- [ ] content/hu/exercises/b2/b2-jogvedelem-03-ex.json
-- [ ] content/hu/exercises/b2/b2-jogvedelem-04-ex.json
-- [ ] content/hu/exercises/b2/b2-jogvedelem-05-ex.json
-- [ ] content/hu/exercises/b2/b2-jogvedelem-consolidation-ex.json
-- [ ] content/hu/exercises/b2/b2-kavehazikultura-01-ex.json
-- [ ] content/hu/exercises/b2/b2-kavehazikultura-02-ex.json
-- [ ] content/hu/exercises/b2/b2-kavehazikultura-03-ex.json
-- [ ] content/hu/exercises/b2/b2-kavehazikultura-04-ex.json
-- [ ] content/hu/exercises/b2/b2-kavehazikultura-05-ex.json
-- [ ] content/hu/exercises/b2/b2-kavehazikultura-consolidation-ex.json
+- [x] content/hu/exercises/b2/b2-gimnaziumok-consolidation-ex.json
+- [x] content/hu/exercises/b2/b2-hatarontul-01-ex.json
+- [x] content/hu/exercises/b2/b2-hatarontul-02-ex.json
+- [x] content/hu/exercises/b2/b2-hatarontul-03-ex.json
+- [x] content/hu/exercises/b2/b2-hatarontul-04-ex.json
+- [x] content/hu/exercises/b2/b2-hatarontul-05-ex.json
+- [x] content/hu/exercises/b2/b2-hatarontul-consolidation-ex.json
+- [x] content/hu/exercises/b2/b2-ifjusagikultura-01-ex.json
+- [x] content/hu/exercises/b2/b2-ifjusagikultura-02-ex.json
+- [x] content/hu/exercises/b2/b2-ifjusagikultura-03-ex.json
+- [x] content/hu/exercises/b2/b2-ifjusagikultura-04-ex.json
+- [x] content/hu/exercises/b2/b2-ifjusagikultura-05-ex.json
+- [x] content/hu/exercises/b2/b2-ifjusagikultura-consolidation-ex.json
+- [x] content/hu/exercises/b2/b2-jogvedelem-01-ex.json
+- [x] content/hu/exercises/b2/b2-jogvedelem-02-ex.json
+- [x] content/hu/exercises/b2/b2-jogvedelem-03-ex.json
+- [x] content/hu/exercises/b2/b2-jogvedelem-04-ex.json
+- [x] content/hu/exercises/b2/b2-jogvedelem-05-ex.json
+- [x] content/hu/exercises/b2/b2-jogvedelem-consolidation-ex.json
+- [x] content/hu/exercises/b2/b2-kavehazikultura-01-ex.json
+- [x] content/hu/exercises/b2/b2-kavehazikultura-02-ex.json
+- [x] content/hu/exercises/b2/b2-kavehazikultura-03-ex.json
+- [x] content/hu/exercises/b2/b2-kavehazikultura-04-ex.json
+- [x] content/hu/exercises/b2/b2-kavehazikultura-05-ex.json
+- [x] content/hu/exercises/b2/b2-kavehazikultura-consolidation-ex.json
 - [ ] content/hu/exercises/b2/b2-kornyezetpolitika-01-ex.json
 - [ ] content/hu/exercises/b2/b2-kornyezetpolitika-02-ex.json
 - [ ] content/hu/exercises/b2/b2-kornyezetpolitika-03-ex.json
