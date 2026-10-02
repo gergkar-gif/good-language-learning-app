@@ -14,11 +14,6 @@ Completed work is archived out to `ACHIEVED.md`.
     - **CCSE (Spanish citizenship, Instituto Cervantes).** An es-es counterpart built on the same shell. The es-es B1 "Cultura y Ciudadanía" track already covers CCSE ground as lessons, but there's no exam-style practice module (question bank by CCSE task area, mock exams) like HU's.
     - **Full CEFR exam prep (later).** DELE/SIELE for Spanish, ECL/Origó for Hungarian, covering all four skills. It should build on the level-test reading section (§2, Reading Comprehension) and the Speaking/Writing Studio graders rather than start from scratch.
 
-107. **Expand the Hungarian B1/B2 classic adaptations to target length (added 2026-09-28).** The Hungarian literary classics in `content/hu/stories/classics/` are much shorter than the Library's word-count standards (the Spanish B1/B2 classics were expanded in commit `4aabea4b`):
-    - **B1 classics (~400 words target).** 32 of 36 average ~225 words, with severe outliers under 120 words (*Édes Anna* `b1-10`: 114w, *Légy jó mindhalálig* `b1-11`: 98w, *Szindbád* `b1-12`: 91w). Expand to ~400 words, keeping B1 grammar and dialogue.
-    - **B2 classics (~700 words target).** All 36 average ~288 words (e.g. *Pacsirta*, *A vörös postakocsi*, *Bánk bán*, *Ábel a rengetegben*, *Sorstalanság*, *Az ajtó*). The prose and dialogue are authentic, but they're 1-page vignettes; expand into ~700-word B2 adaptations with text-grounded comprehension questions.
-    - **B1/B2 World/Civics shelf.** Consider expanding the short cultural vignettes too (currently ~130 words at B1, ~360 at B2).
-
 
 113. **GitHub issue #132, "'m' shouldn't be in the dictionary as a separate entry" (investigated 2026-09, could not reproduce).** None of `story.a2.unit01`'s 35 words looks up as `m`, the Reader tokenizer covers every Hungarian diacritic, English narration isn't tappable, and `word-index.json` has no entry mapping to lemma `m`. The dictionary does hold about 205 abbreviation and unit-symbol entries like `m` (SI metre), but many of the same shape (`db`, `ft`, `h`, `am`, `p`) are genuine Hungarian shorthand, so filtering short entries wholesale would remove real vocabulary. Needs a repro detail: which word was tapped, or how `m` was reached.
 
