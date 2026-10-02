@@ -1126,31 +1126,31 @@ Work level by level, top to bottom. Commit after each block of about 25 files.
 - [x] content/hu/exercises/b2/b2-33-consolidation-ex.json
 - [x] content/hu/exercises/b2/b2-34-01-ex.json
 - [x] content/hu/exercises/b2/b2-34-02-ex.json
-- [ ] content/hu/exercises/b2/b2-34-03-ex.json
-- [ ] content/hu/exercises/b2/b2-34-04-ex.json
-- [ ] content/hu/exercises/b2/b2-34-05-ex.json
-- [ ] content/hu/exercises/b2/b2-34-consolidation-ex.json
-- [ ] content/hu/exercises/b2/b2-35-01-ex.json
-- [ ] content/hu/exercises/b2/b2-35-02-ex.json
-- [ ] content/hu/exercises/b2/b2-35-03-ex.json
-- [ ] content/hu/exercises/b2/b2-35-04-ex.json
-- [ ] content/hu/exercises/b2/b2-35-05-ex.json
-- [ ] content/hu/exercises/b2/b2-35-consolidation-ex.json
-- [ ] content/hu/exercises/b2/b2-36-01-ex.json
-- [ ] content/hu/exercises/b2/b2-36-02-ex.json
-- [ ] content/hu/exercises/b2/b2-36-03-ex.json
-- [ ] content/hu/exercises/b2/b2-36-04-ex.json
-- [ ] content/hu/exercises/b2/b2-36-05-ex.json
-- [ ] content/hu/exercises/b2/b2-36-consolidation-ex.json
-- [ ] content/hu/exercises/b2/b2-alkotmanytortenet-01-ex.json
-- [ ] content/hu/exercises/b2/b2-alkotmanytortenet-02-ex.json
-- [ ] content/hu/exercises/b2/b2-alkotmanytortenet-03-ex.json
-- [ ] content/hu/exercises/b2/b2-alkotmanytortenet-04-ex.json
-- [ ] content/hu/exercises/b2/b2-alkotmanytortenet-05-ex.json
-- [ ] content/hu/exercises/b2/b2-alkotmanytortenet-consolidation-ex.json
-- [ ] content/hu/exercises/b2/b2-bartokkodaly-01-ex.json
-- [ ] content/hu/exercises/b2/b2-bartokkodaly-02-ex.json
-- [ ] content/hu/exercises/b2/b2-bartokkodaly-03-ex.json
+- [x] content/hu/exercises/b2/b2-34-03-ex.json
+- [x] content/hu/exercises/b2/b2-34-04-ex.json
+- [x] content/hu/exercises/b2/b2-34-05-ex.json
+- [x] content/hu/exercises/b2/b2-34-consolidation-ex.json
+- [x] content/hu/exercises/b2/b2-35-01-ex.json
+- [x] content/hu/exercises/b2/b2-35-02-ex.json
+- [x] content/hu/exercises/b2/b2-35-03-ex.json
+- [x] content/hu/exercises/b2/b2-35-04-ex.json
+- [x] content/hu/exercises/b2/b2-35-05-ex.json
+- [x] content/hu/exercises/b2/b2-35-consolidation-ex.json
+- [x] content/hu/exercises/b2/b2-36-01-ex.json
+- [x] content/hu/exercises/b2/b2-36-02-ex.json
+- [x] content/hu/exercises/b2/b2-36-03-ex.json
+- [x] content/hu/exercises/b2/b2-36-04-ex.json
+- [x] content/hu/exercises/b2/b2-36-05-ex.json
+- [x] content/hu/exercises/b2/b2-36-consolidation-ex.json
+- [x] content/hu/exercises/b2/b2-alkotmanytortenet-01-ex.json
+- [x] content/hu/exercises/b2/b2-alkotmanytortenet-02-ex.json
+- [x] content/hu/exercises/b2/b2-alkotmanytortenet-03-ex.json
+- [x] content/hu/exercises/b2/b2-alkotmanytortenet-04-ex.json
+- [x] content/hu/exercises/b2/b2-alkotmanytortenet-05-ex.json
+- [x] content/hu/exercises/b2/b2-alkotmanytortenet-consolidation-ex.json
+- [x] content/hu/exercises/b2/b2-bartokkodaly-01-ex.json
+- [x] content/hu/exercises/b2/b2-bartokkodaly-02-ex.json
+- [x] content/hu/exercises/b2/b2-bartokkodaly-03-ex.json
 - [ ] content/hu/exercises/b2/b2-bartokkodaly-04-ex.json
 - [ ] content/hu/exercises/b2/b2-bartokkodaly-05-ex.json
 - [ ] content/hu/exercises/b2/b2-bartokkodaly-consolidation-ex.json
