@@ -308,7 +308,7 @@ for (const s of discourseGroup) {
 console.log('[PASS] Hungarian C1 properly isolates 12 classics and 12 discourse stories, filtering out all lesson segments.');
 
 console.log('\n--- Test 9: Track Shelf Label Mapping ---');
-assert.strictEqual(Reader.TRACK_SHELF_LABELS['discourse'], 'Discourse', 'discourse track must map to "Discourse"');
+assert.strictEqual(Reader.TRACK_SHELF_LABELS['discourse'], 'Culture', 'the C1 discourse track shows as the "Culture" shelf, like B2');
 assert.strictEqual(Reader.TRACK_SHELF_LABELS['culture'], 'Culture', 'culture track must map to "Culture"');
 assert.strictEqual(Reader.TRACK_SHELF_LABELS['citizenship'], 'Citizenship', 'citizenship track must map to "Citizenship"');
 assert.strictEqual(Reader.TRACK_SHELF_LABELS['latam'], 'Latin America', 'latam track must map to "Latin America"');
