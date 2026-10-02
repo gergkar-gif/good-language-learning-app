@@ -1151,31 +1151,31 @@ Work level by level, top to bottom. Commit after each block of about 25 files.
 - [x] content/hu/exercises/b2/b2-bartokkodaly-01-ex.json
 - [x] content/hu/exercises/b2/b2-bartokkodaly-02-ex.json
 - [x] content/hu/exercises/b2/b2-bartokkodaly-03-ex.json
-- [ ] content/hu/exercises/b2/b2-bartokkodaly-04-ex.json
-- [ ] content/hu/exercises/b2/b2-bartokkodaly-05-ex.json
-- [ ] content/hu/exercises/b2/b2-bartokkodaly-consolidation-ex.json
-- [ ] content/hu/exercises/b2/b2-borkultura-01-ex.json
-- [ ] content/hu/exercises/b2/b2-borkultura-02-ex.json
-- [ ] content/hu/exercises/b2/b2-borkultura-03-ex.json
-- [ ] content/hu/exercises/b2/b2-borkultura-04-ex.json
-- [ ] content/hu/exercises/b2/b2-borkultura-05-ex.json
-- [ ] content/hu/exercises/b2/b2-borkultura-consolidation-ex.json
-- [ ] content/hu/exercises/b2/b2-demografia-01-ex.json
-- [ ] content/hu/exercises/b2/b2-demografia-02-ex.json
-- [ ] content/hu/exercises/b2/b2-demografia-03-ex.json
-- [ ] content/hu/exercises/b2/b2-demografia-04-ex.json
-- [ ] content/hu/exercises/b2/b2-demografia-05-ex.json
-- [ ] content/hu/exercises/b2/b2-demografia-consolidation-ex.json
-- [ ] content/hu/exercises/b2/b2-diaszpora-01-ex.json
-- [ ] content/hu/exercises/b2/b2-diaszpora-02-ex.json
-- [ ] content/hu/exercises/b2/b2-diaszpora-03-ex.json
-- [ ] content/hu/exercises/b2/b2-diaszpora-04-ex.json
-- [ ] content/hu/exercises/b2/b2-diaszpora-05-ex.json
-- [ ] content/hu/exercises/b2/b2-diaszpora-consolidation-ex.json
-- [ ] content/hu/exercises/b2/b2-eszmetortenet-01-ex.json
-- [ ] content/hu/exercises/b2/b2-eszmetortenet-02-ex.json
-- [ ] content/hu/exercises/b2/b2-eszmetortenet-03-ex.json
-- [ ] content/hu/exercises/b2/b2-eszmetortenet-04-ex.json
+- [x] content/hu/exercises/b2/b2-bartokkodaly-04-ex.json
+- [x] content/hu/exercises/b2/b2-bartokkodaly-05-ex.json
+- [x] content/hu/exercises/b2/b2-bartokkodaly-consolidation-ex.json
+- [x] content/hu/exercises/b2/b2-borkultura-01-ex.json
+- [x] content/hu/exercises/b2/b2-borkultura-02-ex.json
+- [x] content/hu/exercises/b2/b2-borkultura-03-ex.json
+- [x] content/hu/exercises/b2/b2-borkultura-04-ex.json
+- [x] content/hu/exercises/b2/b2-borkultura-05-ex.json
+- [x] content/hu/exercises/b2/b2-borkultura-consolidation-ex.json
+- [x] content/hu/exercises/b2/b2-demografia-01-ex.json
+- [x] content/hu/exercises/b2/b2-demografia-02-ex.json
+- [x] content/hu/exercises/b2/b2-demografia-03-ex.json
+- [x] content/hu/exercises/b2/b2-demografia-04-ex.json
+- [x] content/hu/exercises/b2/b2-demografia-05-ex.json
+- [x] content/hu/exercises/b2/b2-demografia-consolidation-ex.json
+- [x] content/hu/exercises/b2/b2-diaszpora-01-ex.json
+- [x] content/hu/exercises/b2/b2-diaszpora-02-ex.json
+- [x] content/hu/exercises/b2/b2-diaszpora-03-ex.json
+- [x] content/hu/exercises/b2/b2-diaszpora-04-ex.json
+- [x] content/hu/exercises/b2/b2-diaszpora-05-ex.json
+- [x] content/hu/exercises/b2/b2-diaszpora-consolidation-ex.json
+- [x] content/hu/exercises/b2/b2-eszmetortenet-01-ex.json
+- [x] content/hu/exercises/b2/b2-eszmetortenet-02-ex.json
+- [x] content/hu/exercises/b2/b2-eszmetortenet-03-ex.json
+- [x] content/hu/exercises/b2/b2-eszmetortenet-04-ex.json
 - [ ] content/hu/exercises/b2/b2-eszmetortenet-05-ex.json
 - [ ] content/hu/exercises/b2/b2-eszmetortenet-consolidation-ex.json
 - [ ] content/hu/exercises/b2/b2-falutortenet-01-ex.json
