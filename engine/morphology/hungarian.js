@@ -1344,7 +1344,7 @@ const HungarianMorphology = (function () {
                 sense = verbSense(dictionary[remainder + 'ik']);
                 lemma = remainder + 'ik';
             }
-            if (!sense || !matches(lemma)) continue;
+            if (!sense || !matches(lemma) || verbEndingClashes(suffix, lemma)) continue;
             const base = gloss(sense);
             const label = [TENSE_LABELS[tense], PERSON_LABELS[person][number]].join(', ');
             const breakdown = { suffix: suffix, label: label };
@@ -1849,7 +1849,10 @@ const HungarianMorphology = (function () {
             const remainder = strip(word, suffix);
             if (remainder === null) continue;
             const label = [TENSE_LABELS[tense], PERSON_LABELS[person][number]].join(', ');
-            const remainderSense = verbSense(dictionary[remainder]);
+            // A lemma whose harmony the ending can't take counts as no
+            // match (see verbEndingClashes), checked on every lemma below.
+            const fits = lemma => !verbEndingClashes(suffix, lemma);
+            const remainderSense = fits(remainder) ? verbSense(dictionary[remainder]) : null;
             if (remainderSense) {
                 addFromLemma(remainder, remainderSense, label);
             }
@@ -1858,7 +1861,7 @@ const HungarianMorphology = (function () {
             if (!remainderSense && /[^aeiouáéíóöőúüű][zlr]$/.test(remainder)) {
                 for (const vow of ['i', 'e', 'a', 'o', 'ö']) {
                     const dropForm = remainder.slice(0, -1) + vow + remainder.slice(-1);
-                    const dropSense = verbSense(dictionary[dropForm]);
+                    const dropSense = fits(dropForm) && verbSense(dictionary[dropForm]);
                     if (dropSense) { addFromLemma(dropForm, dropSense, label); break; }
                 }
             }
@@ -1882,7 +1885,7 @@ const HungarianMorphology = (function () {
             // headword tripped it, since analyze() had simply never been
             // exercised on an already-a-headword bare -ik verb before.
             const ikForm = remainder + 'ik';
-            const ikSense = ikForm !== word ? verbSense(dictionary[ikForm]) : null;
+            const ikSense = ikForm !== word && fits(ikForm) ? verbSense(dictionary[ikForm]) : null;
             if (ikSense) {
                 addFromLemma(ikForm, ikSense, label);
             }
@@ -1896,11 +1899,11 @@ const HungarianMorphology = (function () {
             if (!remainderSense && !ikSense) {
                 const pfx = stripKnownPrefix(remainder);
                 if (pfx) {
-                    if (verbSense(dictionary[pfx.stem])) {
+                    if (fits(pfx.stem) && verbSense(dictionary[pfx.stem])) {
                         addPrefixedVerb(pfx.prefix, pfx.sense, pfx.stem, label);
                     }
                     const pfxIk = pfx.stem + 'ik';
-                    if (verbSense(dictionary[pfxIk])) {
+                    if (fits(pfxIk) && verbSense(dictionary[pfxIk])) {
                         addPrefixedVerb(pfx.prefix, pfx.sense, pfxIk, label);
                     }
                 }
@@ -2219,6 +2222,44 @@ const HungarianMorphology = (function () {
         if (sawEE) return 'front-unrounded';
         if (sawII) return null; // i/í-only and not on either list - unreliable, don't guess
         return 'front-unrounded'; // no vowels at all - shouldn't happen for a real word
+    }
+
+    // VERB_SUFFIXES lists every harmony variant of an ending, and analyze()
+    // used to accept any of them on any verb, so "mentunk" read as "menik"
+    // + back "-tunk" although a front verb only takes "-tünk". An ending
+    // with a back vowel now needs a back stem, and one with e/é/ö/ő/ü/ű a
+    // front one — but only where the stem's harmony is certain, judged
+    // from its last vowel after the prefix and any "-ik" come off:
+    //   a/á/o/ó/u/ú -> back; ö/ő/ü/ű -> front;
+    //   e/é -> front, unless a back vowel comes earlier: compounds take
+    //     the last part's harmony, which the vowels alone can't show
+    //     ("hazatér", "túlél" are front, "árverez" too);
+    //   i/í -> unknown ("bénít" is back, "épít" front), unless listed in
+    //     BACK_HARMONY_NEUTRAL_STEMS / FRONT_HARMONY_II_ONLY_STEMS.
+    // i/í-only and vowelless endings ("-i", "-ik", "-t") fit any stem, and
+    // so do the few é endings both harmonies share: conditional "-nék"
+    // ("gondolnék") and the formal -ik imperative "-jék" ("aggódjék",
+    // assimilated "-sék"/"-zék").
+    const HARMONY_FREE_ENDINGS = ['nék', 'jék', 'sék', 'zék'];
+    function verbEndingClashes(suffix, lemma) {
+        if (HARMONY_FREE_ENDINGS.includes(suffix)) return false;
+        const back = /[aáoóuú]/.test(suffix);
+        if (!back && !/[eéöőüű]/.test(suffix)) return false;
+        const pfx = stripKnownPrefix(lemma);
+        let stem = pfx && /[aáeéiíoóöőuúüű]/.test(pfx.stem) ? pfx.stem : lemma;
+        let harmony;
+        if (BACK_HARMONY_NEUTRAL_STEMS.includes(stem)) harmony = 'back';
+        else if (FRONT_HARMONY_II_ONLY_STEMS.includes(stem)) harmony = 'front';
+        else {
+            if (stem.endsWith('ik')) stem = stem.slice(0, -2);
+            const vowels = stem.match(/[aáeéiíoóöőuúüű]/g);
+            const last = vowels ? vowels[vowels.length - 1] : '';
+            if (/[aáoóuú]/.test(last)) harmony = 'back';
+            else if (/[öőüű]/.test(last)) harmony = 'front';
+            else if (/[eé]/.test(last) && !/[aáoóuú]/.test(stem)) harmony = 'front';
+            else return false;
+        }
+        return back !== (harmony === 'back');
     }
 
     // s/sz/z-final stems take -ol/-el/-öl instead of -asz/-esz (or bare
