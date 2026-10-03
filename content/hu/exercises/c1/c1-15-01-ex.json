@@ -1,0 +1,162 @@
+{
+  "lesson": "c1-15-01",
+  "exercises": [
+    {
+      "id": "c1-15-01-introduce-1",
+      "type": "multiple-choice",
+      "category": "vocabulary",
+      "stage": "introduce",
+      "question": "Mit jelent a 'túlilleszkedés' (overfitting) a gépi tanulásban?",
+      "options": [
+        "Amikor a modell túlságosan rögzíti a tanító adatok zaját, így képtelen általánosítani új adatokon.",
+        "Amikor túl kicsi a számítógép memóriája a program futtatásához.",
+        "Amikor az algoritmus hibátlanul működik minden elképzelhető helyzetben."
+      ],
+      "correct": 0,
+      "teaches": [
+        "c1-15-vocab"
+      ]
+    },
+    {
+      "id": "c1-15-01-controlled-2",
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "controlled",
+      "sentence": "A neurális háló képes általánosítani az ismeretlen mintákon, _____ (except if / kivéve ha) a tanító adathalmaz túlzottan elfogult.",
+      "answer": "kivéve ha",
+      "english": "The neural network is able to generalize on unseen patterns, except if the training dataset is overly biased.",
+      "teaches": [
+        "c1-restrictive-exceptive-adverbials"
+      ]
+    },
+    {
+      "id": "c1-15-01-controlled-3",
+      "type": "matching",
+      "category": "vocabulary",
+      "stage": "controlled",
+      "pairs": [
+        [
+          "veszteségfüggvény",
+          "a hiba számszerűsítése"
+        ],
+        [
+          "gradiens-csökkentés",
+          "optimalizációs algoritmus"
+        ],
+        [
+          "tanító adathalmaz",
+          "bemeneti minta tanuláshoz"
+        ],
+        [
+          "regularizáció",
+          "túlilleszkedés megelőzése"
+        ]
+      ],
+      "teaches": [
+        "c1-15-vocab"
+      ]
+    },
+    {
+      "id": "c1-15-01-practice-4",
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "practice",
+      "sentence": "A tanulás elméletileg befejezettnek tekinthető, _____ annyiban, hogy a hibaérték egy minimális küszöb alatt marad. (merely / mindössze)",
+      "answer": "mindössze",
+      "english": "The learning can theoretically be considered complete, merely to the extent that the error remains below a minimum threshold.",
+      "teaches": [
+        "c1-restrictive-exceptive-adverbials"
+      ]
+    },
+    {
+      "id": "c1-15-01-practice-5",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "practice",
+      "tiles": [
+        "A",
+        "gradiens-csökkentés",
+        "során",
+        "az",
+        "algoritmus",
+        "lépésről",
+        "lépésre",
+        "minimalizálja",
+        "a",
+        "veszteségfüggvényt."
+      ],
+      "solution": [
+        "A",
+        "gradiens-csökkentés",
+        "során",
+        "az",
+        "algoritmus",
+        "lépésről",
+        "lépésre",
+        "minimalizálja",
+        "a",
+        "veszteségfüggvényt."
+      ],
+      "english": "During gradient descent the algorithm minimizes the loss function step by step.",
+      "teaches": [
+        "c1-restrictive-exceptive-adverbials"
+      ]
+    },
+    {
+      "id": "c1-15-01-dialogue-6",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "stage": "dialogue",
+      "prompt": [
+        {
+          "speaker": "Adattudós",
+          "text": "Miért téveszt a modellünk az éles környezetben?"
+        },
+        {
+          "speaker": "Kutató",
+          "text": "Valószínűleg túlilleszkedett, _____ nem alkalmaztunk megfelelő regularizációs eljárást a tanulás során."
+        }
+      ],
+      "options": [
+        "mivel",
+        "bár",
+        "pedig"
+      ],
+      "correct": 0,
+      "teaches": [
+        "c1-restrictive-exceptive-adverbials"
+      ]
+    },
+    {
+      "id": "c1-15-01-production-7",
+      "type": "structured-writing",
+      "category": "writing",
+      "stage": "production",
+      "template": [
+        {
+          "prompt": "Formulate a restrictive sentence describing machine learning convergence conditions.",
+          "answer": "A gépi tanulási folyamat garantáltan konvergál az optimális megoldáshoz, kivéve ha a tanulási ráta túl magas, vagy a veszteségfüggvény több lokális minimummal rendelkezik."
+        }
+      ],
+      "teaches": [
+        "c1-restrictive-exceptive-adverbials"
+      ]
+    },
+    {
+      "id": "c1-15-01-check-8",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "check",
+      "question": "Melyik mondat alkalmaz helyesen kivételt kifejező szerkezetet?",
+      "options": [
+        "A modell megbízható predikciót garantál, kivéve ha a bemeneti adatok mintázata drasztikusan módosul.",
+        "A modell megbízható predikciót garantál, miközben a bemeneti adatok mintázata módosul.",
+        "A modell megbízható predikciót garantál, hogy a bemeneti adatok mintázata módosuljon."
+      ],
+      "correct": 0,
+      "teaches": [
+        "c1-restrictive-exceptive-adverbials"
+      ]
+    }
+  ]
+}
