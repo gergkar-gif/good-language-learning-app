@@ -1,0 +1,158 @@
+{
+  "lesson": "c1-kiberbiztonsag-03",
+  "exercises": [
+    {
+      "id": "c1-kiberbiztonsag-03-introduce-1",
+      "type": "multiple-choice",
+      "category": "vocabulary",
+      "stage": "introduce",
+      "question": "Milyen áttörést hoz az Európai Unió NIS2-irányelve a vállalati kibervédelemben?",
+      "options": [
+        "Kötelezővé teszi a 24 órán belüli incidensbejelentést, kiterjeszti a felelősséget a felsővezetésre, és szigorú bírságokat szab ki a mulasztásokra.",
+        "Ingyenes laptopot biztosít minden európai középiskolás diáknak.",
+        "Megtiltja a számítógépek éjszakai kikapcsolását a minisztériumokban."
+      ],
+      "correct": 0,
+      "teaches": [
+        "c1-kiberbiztonsag-vocab"
+      ]
+    },
+    {
+      "id": "c1-kiberbiztonsag-03-controlled-2",
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "controlled",
+      "sentence": "A támadás komplexitása alapján az akciót _____ egy állami háttérrel rendelkező egység szervezte. (in all likelihood / minden valószínűség szerint)",
+      "answer": "minden valószínűség szerint",
+      "english": "Based on the complexity of the attack, the action was in all likelihood organized by a unit with state backing.",
+      "teaches": [
+        "c1-epistemic-uncertainty-markers"
+      ]
+    },
+    {
+      "id": "c1-kiberbiztonsag-03-controlled-3",
+      "type": "matching",
+      "category": "vocabulary",
+      "stage": "controlled",
+      "pairs": [
+        [
+          "NIS2-irányelv",
+          "az EU megújított kiberbiztonsági jogszabálya"
+        ],
+        [
+          "GovCERT-Hungary",
+          "a nemzeti kormányzati incidenskezelő központ"
+        ],
+        [
+          "kiberhigiénia",
+          "alapvető biztonsági szokások és eljárások"
+        ],
+        [
+          "megfelelési audit",
+          "a biztonsági előírások teljesülésének hivatalos vizsgálata"
+        ]
+      ],
+      "teaches": [
+        "c1-kiberbiztonsag-vocab"
+      ]
+    },
+    {
+      "id": "c1-kiberbiztonsag-03-practice-4",
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "practice",
+      "sentence": "A logfájlok elemzése alapján az elkövetők _____ több hónapon át észrevétlenül tartózkodtak a rendszerben. (presumably / vélhetően)",
+      "answer": "vélhetően",
+      "english": "Based on the analysis of log files, the perpetrators presumably remained unnoticed in the system for several months.",
+      "teaches": [
+        "c1-epistemic-uncertainty-markers"
+      ]
+    },
+    {
+      "id": "c1-kiberbiztonsag-03-practice-5",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "practice",
+      "tiles": [
+        "A",
+        "támadók",
+        "minden",
+        "valószínűség",
+        "szerint",
+        "orosz",
+        "nyomokat",
+        "hagytak."
+      ],
+      "solution": [
+        "A",
+        "támadók",
+        "minden",
+        "valószínűség",
+        "szerint",
+        "orosz",
+        "nyomokat",
+        "hagytak."
+      ],
+      "english": "The attackers in all likelihood left Russian traces.",
+      "teaches": [
+        "c1-epistemic-uncertainty-markers"
+      ]
+    },
+    {
+      "id": "c1-kiberbiztonsag-03-dialogue-6",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "stage": "dialogue",
+      "prompt": [
+        {
+          "speaker": "Védelmi tanácsadó",
+          "text": "Biztosak lehetünk abban, hogy melyik külföldi hírszerzés áll a támadás mögött?"
+        },
+        {
+          "speaker": "Hálózatelemző",
+          "text": "A technikai bizonyítékok minden valószínűség szerint egy keleti APT-csoportra utalnak, ám a felelősségvállalás teljes bizonyossággal nem _____."
+        }
+      ],
+      "options": [
+        "bizonyítható",
+        "tagadható",
+        "ünnepelhető"
+      ],
+      "correct": 0,
+      "teaches": [
+        "c1-epistemic-uncertainty-markers"
+      ]
+    },
+    {
+      "id": "c1-kiberbiztonsag-03-production-7",
+      "type": "structured-writing",
+      "category": "writing",
+      "stage": "production",
+      "template": [
+        {
+          "prompt": "Write a threat attribution assessment sentence using 'minden valószínűség szerint'.",
+          "answer": "A támadás módszertana és a célpontok köre minden valószínűség szerint államilag támogatott szereplők beavatkozását valószínűsíti."
+        }
+      ],
+      "teaches": [
+        "c1-epistemic-uncertainty-markers"
+      ]
+    },
+    {
+      "id": "c1-kiberbiztonsag-03-check-8",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "check",
+      "question": "Melyik kifejezés fejez ki óvatos, magas valószínűségű tényattribúciót (epistemic uncertainty marker)?",
+      "options": [
+        "minden valószínűség szerint / vélhetően",
+        "biztosan nem és soha",
+        "teljesen kizárt módon"
+      ],
+      "correct": 0,
+      "teaches": [
+        "c1-epistemic-uncertainty-markers"
+      ]
+    }
+  ]
+}

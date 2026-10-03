@@ -1,0 +1,162 @@
+{
+  "lesson": "c1-18-04",
+  "exercises": [
+    {
+      "id": "c1-18-04-introduce-1",
+      "type": "multiple-choice",
+      "category": "vocabulary",
+      "stage": "introduce",
+      "question": "Miért jelent egzisztenciális 'kvantumfenyegetést' a kvantumszámítógép az aszimmetrikus titkosításra?",
+      "options": [
+        "Mert a Shor-algoritmus segítségével a kvantumszámítógépek percek alatt képesek feltörni az RSA- és elliptikus görbe alapú kulcscserét.",
+        "Mert a kvantumszámítógépek fizikai mágnesként vonzzák magukhoz az internetkábeleket.",
+        "Mert a kvantumszámítógépek túl sok villanyáramot fogyasztanak a bankfiókokban."
+      ],
+      "correct": 0,
+      "teaches": [
+        "c1-18-vocab"
+      ]
+    },
+    {
+      "id": "c1-18-04-controlled-2",
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "controlled",
+      "sentence": "A védelem hatékonysága _____ alakul, mikor kezdődik meg a posztkvantum-titkosításra való átállás. (depending on whether / annak függvényében, hogy)",
+      "answer": "annak függvényében, hogy",
+      "english": "The effectiveness of defence shapes depending on whether when the transition to post-quantum encryption begins.",
+      "teaches": [
+        "c1-complex-modal-contingency"
+      ]
+    },
+    {
+      "id": "c1-18-04-controlled-3",
+      "type": "matching",
+      "category": "vocabulary",
+      "stage": "controlled",
+      "pairs": [
+        [
+          "végpontok közötti titkosítás",
+          "csak a küldő és a fogadó látja a nyers adatot"
+        ],
+        [
+          "posztkvantum-titkosítás",
+          "kvantumszámítógépeknek is ellenálló algoritmusok"
+        ],
+        [
+          "zéró tudású bizonyítás",
+          "információ igazolása a titok felfedése nélkül"
+        ],
+        [
+          "entrópia",
+          "kriptográfiai véletlenszerűség mértéke"
+        ]
+      ],
+      "teaches": [
+        "c1-18-vocab"
+      ]
+    },
+    {
+      "id": "c1-18-04-practice-4",
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "practice",
+      "sentence": "A rendszer sérülékenysége _____ nő vagy csökken, hogy a hálózat milyen gyakran frissíti a biztonsági kulcsokat. (depending on / attól függően)",
+      "answer": "attól függően",
+      "english": "The vulnerability of the system increases or decreases depending on how often the network updates security keys.",
+      "teaches": [
+        "c1-complex-modal-contingency"
+      ]
+    },
+    {
+      "id": "c1-18-04-practice-5",
+      "type": "sentence-builder",
+      "category": "grammar",
+      "stage": "practice",
+      "tiles": [
+        "A",
+        "biztonság",
+        "annak",
+        "függvényében",
+        "változik,",
+        "hogy",
+        "milyen",
+        "erős",
+        "a",
+        "kriptográfia."
+      ],
+      "solution": [
+        "A",
+        "biztonság",
+        "annak",
+        "függvényében",
+        "változik,",
+        "hogy",
+        "milyen",
+        "erős",
+        "a",
+        "kriptográfia."
+      ],
+      "english": "Security varies depending on how strong the cryptography is.",
+      "teaches": [
+        "c1-complex-modal-contingency"
+      ]
+    },
+    {
+      "id": "c1-18-04-dialogue-6",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "stage": "dialogue",
+      "prompt": [
+        {
+          "speaker": "Kriptográfus",
+          "text": "Mikor kell leváltanunk a jelenlegi nyilvános kulcsú infrastruktúrát?"
+        },
+        {
+          "speaker": "Biztonsági igazgató",
+          "text": "Annak függvényében, hogy mikorra várható a működőképes kriptográfiai _____ megjelenése."
+        }
+      ],
+      "options": [
+        "kvantumszámítógépek",
+        "analóg telefonok",
+        "mechanikus írógépek"
+      ],
+      "correct": 0,
+      "teaches": [
+        "c1-complex-modal-contingency"
+      ]
+    },
+    {
+      "id": "c1-18-04-production-7",
+      "type": "structured-writing",
+      "category": "writing",
+      "stage": "production",
+      "template": [
+        {
+          "prompt": "Write a technical proposition about encryption using 'annak függvényében, hogy'.",
+          "answer": "Egy kiberrendszer ellenálló képessége annak függvényében mérhető, hogy a titkosítási kulcsok mekkora entrópiát biztosítanak a külső behatolási kísérletekkel szemben."
+        }
+      ],
+      "teaches": [
+        "c1-complex-modal-contingency"
+      ]
+    },
+    {
+      "id": "c1-18-04-check-8",
+      "type": "multiple-choice",
+      "category": "grammar",
+      "stage": "check",
+      "question": "Melyik szerkezet fejez ki funkcionális kölcsönös függőséget és strukturális feltételességet?",
+      "options": [
+        "annak függvényében, hogy / attól függően, hogy",
+        "annak ellenére, hogy",
+        "anélkül, hogy"
+      ],
+      "correct": 0,
+      "teaches": [
+        "c1-complex-modal-contingency"
+      ]
+    }
+  ]
+}
