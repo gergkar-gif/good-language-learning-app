@@ -43,6 +43,9 @@ const top = w => {
         // verb forms
         ['kerdezte', 'kérdez'], ['tudom', 'tud'], ['irok', 'ír'],
         ['csinaltam', 'csinál'], ['olvastuk', 'olvas'],
+        // irregular verbs, reached once the wrong-harmony readings are gone
+        // (ROADMAP 123/124)
+        ['mentunk', 'megy'], ['elmentunk', 'elmegy'],
         // an accented word that already resolves must not change
         ['kérdés', 'kérdés'], ['nagyon', 'nagyon'],
         // unaccented spelling that is itself a real word keeps its own reading

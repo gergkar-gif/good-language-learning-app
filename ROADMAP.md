@@ -27,8 +27,6 @@ Completed work is archived out to `ACHIEVED.md`.
     - **Phase B (after Antigravity's HU work): move hints into a typed `hint` field.** This is the 2026-09-14 "typed hint field" idea (~6,000 fill-blanks carry their hint inside `sentence`). Once `sentence` is clean, the cleaner becomes a no-op safety net.
     - **Later:** the same rule for the Workshop Grammar and Vocabulary drillers.
 
-124. **Hungarian noun/adjective endings have no vowel-harmony check (added 2026-10-03).** Verb endings got one (ACHIEVED.md item 123), but case and possessive endings still accept every harmony variant, so an accentless "mentunk" (*mentünk*, "we went") reads as "ment" (adjective, "exempt") + back possessive "-unk", and the Reader's accentless fallback never reaches *mentünk*. Nouns can't use the verb rule as-is: e/é/i/í-only stems often take back endings (*cél* → *célunk*, *híd* → *hidunk*, *nyíl* → *nyilak*). A safe first step: enforce only where the stem's last vowel is back or ö/ő/ü/ű, and check `scripts/audit-reader-coverage.js hu` plus a before/after snapshot of every story word's top reading, as was done for 123.
-
 ---
 
 ## 2. Future Feature Ideas

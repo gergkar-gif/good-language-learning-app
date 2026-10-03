@@ -300,9 +300,10 @@ const Lexicon = (function () {
     // "városban"), then, for inflections neither index lists (any verb
     // form), a dictionary stem plus every accent variant of the remaining
     // suffix ("kerdez|te" -> "kérdez" + "te"/"té"), longest stem first —
-    // kept only when it reads as a verb form of that very stem, since the
-    // analyser accepts too many odd nominal spellings ("kés"+"ma") for
-    // a blind guess to be trusted.
+    // kept only when it reads as a verb form of that very stem, or is a
+    // listed irregular form ("ment|ünk" -> "megy"): the analyser accepts
+    // too many odd spellings ("kés"+"ma", English "bans" as an imperative)
+    // for a blind guess to be trusted.
     // Each candidate goes through the ordinary exact lookup, so morphology
     // still decides what it actually is.
     const HU_FOLD = { á: 'a', é: 'e', í: 'i', ó: 'o', ö: 'o', ő: 'o', ú: 'u', ü: 'u', ű: 'u' };
@@ -349,7 +350,8 @@ const Lexicon = (function () {
                 const res = lookupHungarianKey(c);
                 const top = res.readings[0];
                 if (!top || top.compoundParts) return;
-                if (stem && !(top.pos === 'verb' && top.lemma === stem(c))) return;
+                if (stem && !(top.pos === 'verb' && (top.lemma === stem(c) ||
+                    HungarianMorphology.isIrregularVerbForm(c)))) return;
                 hits.push(res);
             });
             if (!hits.length) return null;
