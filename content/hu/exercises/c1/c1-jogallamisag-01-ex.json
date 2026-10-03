@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Milyen jogot biztosított az Aranybulla 31. cikkelye a nemességnek?",
+      "question": "Miért jelentett súlyos jogállami jogsértést a bírák kötelező nyugdíjkorhatárának 62 évre szállítása 2011-ben?",
       "options": [
-        "A fegyveres ellenállás jogát a törvényszegő királlyal szemben.",
-        "A király teljes adómentességét.",
-        "A külföldre vándorlás jogát."
+        "Mert célzottan lefejezte a bíróságok független vezetését, megsértve a bírói elmozdíthatatlanság alapelvét és az uniós antidiszkriminációs jogot.",
+        "Mert túl drága volt a bírák nyugdíjának kifizetése az államkincstárnak.",
+        "Mert a fiatalabb bírák nem akartak tárgyalni."
       ],
       "correct": 0,
       "teaches": [
@@ -22,11 +22,11 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "Az Aranybulla kimondta, hogy a királyi jogsértéssel szembeni fellépés nem minősül _____ vétkének. (treason / hűtlenség)",
-      "answer": "hűtlenség",
-      "english": "The Golden Bull declared that taking action against royal rights violations does not qualify as the sin of treason.",
+      "sentence": "A lépést politikai beavatkozásként _____ a luxembourgi bíróság elmarasztalta a tagállamot. (evaluating / értékelve)",
+      "answer": "értékelve",
+      "english": "Evaluating the step as a political intervention the Luxembourg court condemned the member state.",
       "teaches": [
-        "c1-constitutional-discourse"
+        "c1-discourse-judicial-subjugation-framing"
       ]
     },
     {
@@ -36,20 +36,20 @@
       "stage": "controlled",
       "pairs": [
         [
-          "Aranybulla",
-          "Golden Bull (1222)"
+          "kényszernyugdíjazás",
+          "a bírói kar felső vezetésének drasztikus, azonnali eltávolítása"
         ],
         [
-          "ellenállási záradék",
-          "resistance clause"
+          "bírói függetlenség",
+          "a bíró mentes minden külső politikai és hivatali utasítástól"
         ],
         [
-          "királyi önkény",
-          "royal tyranny"
+          "elmozdíthatatlanság elve",
+          "a bíró törvényes mandátuma nem vonható vissza önkényesen"
         ],
         [
-          "szabadságlevél",
-          "charter of liberties"
+          "hatalmi ágak elválasztása",
+          "a bírói, törvényhozói és végrehajtói hatalom szigorú autonómiája"
         ]
       ],
       "teaches": [
@@ -58,65 +58,104 @@
     },
     {
       "id": "c1-jogallamisag-01-practice-4",
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "practice",
+      "sentence": "A reformot a jogállami normák felrúgásaként _____ ítélte el a szakma. (characterizing / aposztrofálva)",
+      "answer": "aposztrofálva",
+      "english": "Characterizing the reform as an overthrow of rule of law norms the profession condemned it.",
+      "teaches": [
+        "c1-discourse-judicial-subjugation-framing"
+      ]
+    },
+    {
+      "id": "c1-jogallamisag-01-practice-5",
       "type": "sentence-builder",
       "category": "grammar",
       "stage": "practice",
       "tiles": [
         "A",
-        "törvényesség",
-        "védelmében",
-        "az",
-        "ellenállás",
-        "nem",
-        "bűn,",
-        "hanem",
-        "kötelesség."
+        "kényszernyugdíjazás",
+        "durván",
+        "sértette",
+        "a",
+        "bírói",
+        "függetlenség",
+        "elvét."
       ],
       "solution": [
         "A",
-        "törvényesség",
-        "védelmében",
-        "az",
-        "ellenállás",
-        "nem",
-        "bűn,",
-        "hanem",
-        "kötelesség."
+        "kényszernyugdíjazás",
+        "durván",
+        "sértette",
+        "a",
+        "bírói",
+        "függetlenség",
+        "elvét."
       ],
-      "english": "In defense of legality, resistance is not a sin, but a duty.",
+      "english": "Forced retirement severely violated the principle of judicial independence.",
       "teaches": [
-        "c1-constitutional-discourse"
+        "c1-discourse-judicial-subjugation-framing"
       ]
     },
     {
-      "id": "c1-jogallamisag-01-production-5",
+      "id": "c1-jogallamisag-01-dialogue-6",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "stage": "dialogue",
+      "prompt": [
+        {
+          "speaker": "Újságíró",
+          "text": "Hogyan értékelték az európai intézmények a magyar bírói reformot?"
+        },
+        {
+          "speaker": "Uniós jogász",
+          "text": "Intézményi szintű politikai beavatkozásként _____ a bíróság kimondta a jogsértést."
+        },
+        {
+          "speaker": "Újságíró",
+          "text": "De a bírósági pozíciókat addigra már átvették."
+        }
+      ],
+      "options": [
+        "értékelve",
+        "örülve",
+        "felejtve"
+      ],
+      "correct": 0,
+      "teaches": [
+        "c1-discourse-judicial-subjugation-framing"
+      ]
+    },
+    {
+      "id": "c1-jogallamisag-01-production-7",
       "type": "structured-writing",
       "category": "writing",
       "stage": "production",
       "template": [
         {
-          "prompt": "Explain the significance of the 'ellenállási záradék' in Hungarian constitutional history.",
-          "answer": "Az ellenállási záradék megteremtette a királyi hatalom jogi korlátozásának elvét, rögzítve, hogy a törvények és az alkotmányos szokások a mindenkori uralkodó felett állnak."
+          "prompt": "Write a critique of the judicial purge using a discourse framing marker.",
+          "answer": "A tapasztalt bírák hirtelen kényszernyugdíjazását a hatalmi ágak elválasztásának durva felrúgásaként aposztrofálva az Európai Bíróság kimondta a bírói függetlenség súlyos és rendszerszintű sérelmét."
         }
       ],
       "teaches": [
-        "c1-constitutional-discourse"
+        "c1-discourse-judicial-subjugation-framing"
       ]
     },
     {
-      "id": "c1-jogallamisag-01-check-6",
+      "id": "c1-jogallamisag-01-check-8",
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Melyik állítás világítja meg legpontosabban az Aranybulla jogtörténeti értékét?",
+      "question": "Melyik kifejezés diagnosztizálja a bíróságok politikai alávetését a legpontosabban?",
       "options": [
-        "A korai európai alkotmányfejlődésben az írott szabadságlevél rögzítette a hatalom és az alattvalók szerződéses viszonyát.",
-        "Egyszerű mezőgazdasági szerződés volt a jobbágyok között.",
-        "Semmilyen hatása nem volt a magyar történelemre."
+        "intézményi szintű politikai beavatkozásként értékelve / a bírói függetlenség felrúgásaként aposztrofálva",
+        "amikor a bírák korán mennek haza a bíróságról",
+        "egy kedves törvénymódosítást elfogadva a teremben"
       ],
       "correct": 0,
       "teaches": [
-        "c1-constitutional-discourse"
+        "c1-discourse-judicial-subjugation-framing"
       ]
     }
   ]

@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Melyik vívmány tette a kormányt az országgyűlésnek felelőssé 1848-ban?",
+      "question": "Milyen történelmi lépést tett az Országos Bírói Tanács (OBT) az OBH elnökével szemben?",
       "options": [
-        "A független, felelős magyar minisztérium intézménye.",
-        "A nemesi adómentesség visszaállítása.",
-        "A királyi cenzúra bevezetése."
+        "Hivatalosan megállapította az elnök sorozatos törvénysértéseit, és alkotmányos jogával élve kezdeményezte annak parlamenti felmentését.",
+        "Lemondott minden jogköréről és bezárta az irodáját.",
+        "Kérvényezte az igazságügyi minisztérium felügyeletének kiterjesztését."
       ],
       "correct": 0,
       "teaches": [
@@ -22,11 +22,11 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "A jobbágyfelszabadítás és az általános _____ megteremtette a polgári egyenlőség alapjait. (universal taxation / közteherviselés)",
-      "answer": "közteherviselés",
-      "english": "The emancipation of serfs and universal taxation created the foundations of civic equality.",
+      "sentence": "A bírói kar képviselőinek alkotmányos _____ volt ellenállni a törvénytelen nyomásgyakorlásnak. (duty / kötelessége)",
+      "answer": "kötelessége",
+      "english": "It was the constitutional duty of the representatives of the judiciary to resist unlawful pressure.",
       "teaches": [
-        "c1-constitutional-discourse"
+        "c1-modal-deontic-judicial-integrity"
       ]
     },
     {
@@ -36,20 +36,20 @@
       "stage": "controlled",
       "pairs": [
         [
-          "közteherviselés",
-          "universal taxation"
+          "Országos Bírói Tanács",
+          "a bírák által választott független felügyeleti testület"
         ],
         [
-          "jobbágyfelszabadítás",
-          "emancipation of serfs"
+          "testületi ellenállás",
+          "a bírói közösség bátor kiállása az igazgatási önkénnyel szemben"
         ],
         [
-          "népképviselet",
-          "popular representation"
+          "felügyeleti jogkör",
+          "a bírósági igazgatás törvényességét ellenőrző hatáskör"
         ],
         [
-          "sajtószabadság",
-          "freedom of the press"
+          "törvénysértés megállapítása",
+          "a hivatali visszaélések hivatalos testületi elmarasztalása"
         ]
       ],
       "teaches": [
@@ -58,65 +58,104 @@
     },
     {
       "id": "c1-jogallamisag-03-practice-4",
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "practice",
+      "sentence": "Megalkuvást nem ismerve kell _____ az ítélkezés pártatlansága felett. (guard / őrködni)",
+      "answer": "őrködni",
+      "english": "Without compromise one must watch over the impartiality of adjudication.",
+      "teaches": [
+        "c1-modal-deontic-judicial-integrity"
+      ]
+    },
+    {
+      "id": "c1-jogallamisag-03-practice-5",
       "type": "sentence-builder",
       "category": "grammar",
       "stage": "practice",
       "tiles": [
         "A",
-        "miniszteri",
-        "ellenjegyzés",
-        "nélkül",
+        "bíráknak",
+        "kötelessége",
+        "védeni",
         "a",
-        "királyi",
-        "rendelet",
-        "érvénytelen",
-        "volt."
+        "bírósági",
+        "autonómia",
+        "integritását."
       ],
       "solution": [
         "A",
-        "miniszteri",
-        "ellenjegyzés",
-        "nélkül",
+        "bíráknak",
+        "kötelessége",
+        "védeni",
         "a",
-        "királyi",
-        "rendelet",
-        "érvénytelen",
-        "volt."
+        "bírósági",
+        "autonómia",
+        "integritását."
       ],
-      "english": "Without ministerial countersignature, the royal decree was invalid.",
+      "english": "It is the duty of judges to defend the integrity of judicial autonomy.",
       "teaches": [
-        "c1-constitutional-discourse"
+        "c1-modal-deontic-judicial-integrity"
       ]
     },
     {
-      "id": "c1-jogallamisag-03-production-5",
+      "id": "c1-jogallamisag-03-dialogue-6",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "stage": "dialogue",
+      "prompt": [
+        {
+          "speaker": "Joghallgató",
+          "text": "Hogyan tudott ellenállni a maroknyi OBT-tag a hatalmas politikai ellenszélben?"
+        },
+        {
+          "speaker": "OBT-tag",
+          "text": "Úgy, hogy felismertük: alkotmányos kötelességünk megalkuvást nem ismerve kiállni a bírói _____ mellett."
+        },
+        {
+          "speaker": "Joghallgató",
+          "text": "Ez a történeti bátorság példája a jövő generációknak."
+        }
+      ],
+      "options": [
+        "függetlenség",
+        "fegyelem",
+        "csend"
+      ],
+      "correct": 0,
+      "teaches": [
+        "c1-modal-deontic-judicial-integrity"
+      ]
+    },
+    {
+      "id": "c1-jogallamisag-03-production-7",
       "type": "structured-writing",
       "category": "writing",
       "stage": "production",
       "template": [
         {
-          "prompt": "Summarize the significance of the 1848 April Laws in one sentence.",
-          "answer": "Az 1848-as áprilisi törvények vérontás nélkül számolták fel a feudalizmust, megalapozva a népképviseleten és kormányzati felelősségen nyugvó polgári jogállamot."
+          "prompt": "Write a sentence formulating the ethical duty of judicial integrity using a deontic modal.",
+          "answer": "A független bírói kar tagjainak alkotmányos kötelessége ellenállni minden külső politikai beavatkozásnak, és megalkuvást nem ismerve kell őrködniük az ítélkezés pártatlansága és az emberi jogok védelme felett."
         }
       ],
       "teaches": [
-        "c1-constitutional-discourse"
+        "c1-modal-deontic-judicial-integrity"
       ]
     },
     {
-      "id": "c1-jogallamisag-03-check-6",
+      "id": "c1-jogallamisag-03-check-8",
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Miért tekinthető az 1848-as fordulat a modern magyar jogállam születésének?",
+      "question": "Melyik szerkezet fogalmazza meg a bírói hivatás deontikus követelményét a leghatározottabban?",
       "options": [
-        "Mert felszámolta a rendi előjogokat és törvény előtti polgári egyenlőséget hozott létre.",
-        "Mert visszatért a középkori feudális bíráskodáshoz.",
-        "Mert betiltotta a független újságírást."
+        "kötelessége ellenállni a nyomásnak / megalkuvást nem ismerve kell őrködni a függetlenség felett",
+        "talán érdemes lenne elolvasni a szabályzatot néha",
+        "a bíróknak szabadidejükben sétálniuk kell"
       ],
       "correct": 0,
       "teaches": [
-        "c1-constitutional-discourse"
+        "c1-modal-deontic-judicial-integrity"
       ]
     }
   ]

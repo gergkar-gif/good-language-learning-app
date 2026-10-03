@@ -6,11 +6,11 @@
       "type": "multiple-choice",
       "category": "vocabulary",
       "stage": "introduce",
-      "question": "Mit jelent a 'láthatatlan alkotmány' koncepciója Sólyom László felfogásában?",
+      "question": "Milyen közvetlen pénzügyi következménnyel járt a jogállamisági kondicionalitási mechanizmus alkalmazása Magyarországgal szemben?",
       "options": [
-        "Az Alkotmánybíróság határozataiból kibontakozó, az emberi jogokat koherens rendszerbe foglaló elveket.",
-        "Egy titkos törvénykönyvet, amit senki sem láthat.",
-        "A jogszabályok teljes eltörlését."
+        "Több ezer milliárd forintnyi uniós kohéziós és helyreállítási forrást fagyasztottak be mindaddig, amíg az igazságügyi reformok nem biztosítják a bíróságok függetlenségét.",
+        "Az EU azonnal bevezette az eurót Magyarországon.",
+        "Minden magyar állampolgárnak különadót kellett fizetnie Brüsszelnek."
       ],
       "correct": 0,
       "teaches": [
@@ -22,11 +22,11 @@
       "type": "fill-blank",
       "category": "grammar",
       "stage": "controlled",
-      "sentence": "Az Alkotmánybíróság szerint az emberi _____ való jog minden más alapjog forrása és korlátja. (to dignity / méltósághoz)",
-      "answer": "méltósághoz",
-      "english": "According to the Constitutional Court, the right to human dignity is the source and boundary of all other fundamental rights.",
+      "sentence": "Minél súlyosabbak az igazságügyi hiányosságok, _____ szigorúbb szankciókat alkalmaz az Európai Bizottság. (the / annál)",
+      "answer": "annál",
+      "english": "The more severe the judicial deficiencies, the stricter sanctions the European Commission applies.",
       "teaches": [
-        "c1-constitutional-discourse"
+        "c1-adv-proportional-eu-infringement-measures"
       ]
     },
     {
@@ -36,20 +36,20 @@
       "stage": "controlled",
       "pairs": [
         [
-          "Alkotmánybíróság",
-          "Constitutional Court"
+          "7-es cikkely szerinti eljárás",
+          "az uniós alapértékek súlyos sérelme esetén indítható politikai szankció"
         ],
         [
-          "emberi méltóság",
-          "human dignity"
+          "jogállamisági mechanizmus",
+          "az uniós pénzek kifizetésének jogállami normákhoz kötése"
         ],
         [
-          "normakontroll",
-          "review of norms"
+          "kohéziós források befagyasztása",
+          "a fejlesztési támogatások zárolása bírósági hiányosságok miatt"
         ],
         [
-          "arányossági teszt",
-          "proportionality test"
+          "Sargentini-jelentés",
+          "az Európai Parlament átfogó elmarasztaló dokumentuma a magyar jogállamiságról"
         ]
       ],
       "teaches": [
@@ -58,65 +58,108 @@
     },
     {
       "id": "c1-jogallamisag-04-practice-4",
+      "type": "fill-blank",
+      "category": "grammar",
+      "stage": "practice",
+      "sentence": "Amilyen mértékben csorbul a bírói autonómia, _____ mértékben szigorodnak az uniós feltételek. (such / olyan)",
+      "answer": "olyan",
+      "english": "To such an extent as judicial autonomy is curtailed, to that extent EU conditions become stricter.",
+      "teaches": [
+        "c1-adv-proportional-eu-infringement-measures"
+      ]
+    },
+    {
+      "id": "c1-jogallamisag-04-practice-5",
       "type": "sentence-builder",
       "category": "grammar",
       "stage": "practice",
       "tiles": [
-        "Az",
-        "alapvető",
-        "jogok",
-        "korlátozása",
-        "csak",
-        "szükséges",
-        "és",
-        "arányos",
-        "lehet."
+        "Minél",
+        "mélyebb",
+        "a",
+        "jogi",
+        "válság,",
+        "annál",
+        "nagyobb",
+        "a",
+        "pénzügyi",
+        "veszteség."
       ],
       "solution": [
-        "Az",
-        "alapvető",
-        "jogok",
-        "korlátozása",
-        "csak",
-        "szükséges",
-        "és",
-        "arányos",
-        "lehet."
+        "Minél",
+        "mélyebb",
+        "a",
+        "jogi",
+        "válság,",
+        "annál",
+        "nagyobb",
+        "a",
+        "pénzügyi",
+        "veszteség."
       ],
-      "english": "The limitation of fundamental rights can only be necessary and proportionate.",
+      "english": "The deeper the legal crisis, the greater the financial loss.",
       "teaches": [
-        "c1-constitutional-discourse"
+        "c1-adv-proportional-eu-infringement-measures"
       ]
     },
     {
-      "id": "c1-jogallamisag-04-production-5",
+      "id": "c1-jogallamisag-04-dialogue-6",
+      "type": "dialogue-complete",
+      "category": "dialogue",
+      "stage": "dialogue",
+      "prompt": [
+        {
+          "speaker": "Diplomata",
+          "text": "Miért vált hatásos eszközzé a jogállamisági kondicionalitás?"
+        },
+        {
+          "speaker": "Közgazdász",
+          "text": "Mert minél nyilvánvalóbbá vált a bírói függetlenség sérelme, annál szigorúbban zárolták az uniós _____."
+        },
+        {
+          "speaker": "Diplomata",
+          "text": "A pénzügyi nyomás rákényszerítette a kormányt a tárgyalásokra."
+        }
+      ],
+      "options": [
+        "forrásokat",
+        "autókat",
+        "utazásokat"
+      ],
+      "correct": 0,
+      "teaches": [
+        "c1-adv-proportional-eu-infringement-measures"
+      ]
+    },
+    {
+      "id": "c1-jogallamisag-04-production-7",
       "type": "structured-writing",
       "category": "writing",
       "stage": "production",
       "template": [
         {
-          "prompt": "Explain the role of the proportionality test in fundamental rights adjudication.",
-          "answer": "Az arányossági teszt biztosítja, hogy az állam kizárólag elkerülhetetlen kényszer esetén, a célhoz kötötten és a legkisebb mértékben korlátozhassa a polgárok alapvető jogait."
+          "prompt": "Write a sentence linking backsliding to sanctions using a proportional correlative structure.",
+          "answer": "Minél inkább elmélyült az igazságszolgáltatás autonómiájának válsága, annál szigorúbb pénzügyi szankciókat és forrásbefagyasztást léptetett életbe az Európai Unió a demokratikus normák kikényszerítésére."
         }
       ],
       "teaches": [
-        "c1-constitutional-discourse"
+        "c1-adv-proportional-eu-infringement-measures"
       ]
     },
     {
-      "id": "c1-jogallamisag-04-check-6",
+      "id": "c1-jogallamisag-04-check-8",
       "type": "multiple-choice",
       "category": "grammar",
       "stage": "check",
-      "question": "Miért volt korszakalkotó a Sólyom-bíróság halálbüntetést eltörlő határozata?",
+      "question": "Melyik páros kötőszó fejezi ki az arányossági összefüggést a szankciók terén?",
       "options": [
-        "Mert elvi alapon mondta ki az emberi élet és az emberi méltóság abszolút, sérthetetlen jellegét.",
-        "Mert pénzügyi okokra hivatkozva takarékoskodni akart az államkasszával.",
-        "Mert a törvényhozók elfelejtettek szavazni róla."
+        "minél inkább... annál elkerülhetetlenebbé válik / amilyen mértékben... olyan mértékben",
+        "bár esik az eső, mégis kimegyünk a térre",
+        "vagy a parlament dönt vagy a kormányhivatal"
       ],
       "correct": 0,
       "teaches": [
-        "c1-constitutional-discourse"
+        "c1-adv-proportional-eu-infringement-measures"
       ]
     }
   ]
