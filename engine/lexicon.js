@@ -60,6 +60,7 @@ const Lexicon = (function () {
         _frequency = null;
         _loadPromise = null;
         _lang = null;
+        _foldAll = _foldDict = null;
     });
 
     function load() {
@@ -70,6 +71,7 @@ const Lexicon = (function () {
         _wordIndex = null;
         _dictionary = null;
         _frequency = null;
+        _foldAll = _foldDict = null;
         const sources = _lang === 'hu'
             ? [
                 Promise.resolve({}),   // no separate verb index — see file header
@@ -95,6 +97,11 @@ const Lexicon = (function () {
             _wordIndex = bare(words);
             _dictionary = bare(dict);
             _frequency = new Map(freq.map((lemma, i) => [lemma, i]));
+            // The accent-folding index takes a few hundred ms to build;
+            // do it while idle so the first accentless tap doesn't wait.
+            if (_lang === 'hu' && typeof requestIdleCallback === 'function') {
+                requestIdleCallback(() => { if (!_foldAll && _dictionary && _lang === 'hu') buildFoldIndexes(); });
+            }
         }).catch(err => {
             console.error('Lexicon failed to load:', err);
             _verbIndex = _verbIndex || {};
@@ -274,7 +281,107 @@ const Lexicon = (function () {
     function lookupHungarian(word) {
         const key = normalise(word);
         if (!key) return { word: word, readings: [] };
+        let result = lookupHungarianKey(key);
+        // Only an unresolved word (nothing, or just a compound-split guess)
+        // written with no accents at all gets the accent-restoring retry:
+        // Hungarian accents are distinctive ("kor" age / "kór" disease /
+        // "kör" circle), so a word that resolves as written keeps its own
+        // reading, and one that carries any accent was typed with accents.
+        if (!result.readings.some(r => !r.compoundParts) && foldHu(key) === key) {
+            result = lookupHungarianAccentless(key) || result;
+        }
+        return { word: word, readings: result.readings, ladder: result.ladder };
+    }
 
+    // Texts pasted or typed without accents ("kerdes", "kerdezte") have no
+    // exact match. Fold every accented vowel to its bare letter and look for
+    // real spellings that fold the same way: first whole words (dictionary
+    // headwords and word-index forms — "kerdes" -> "kérdés", "varosban" ->
+    // "városban"), then, for inflections neither index lists (any verb
+    // form), a dictionary stem plus every accent variant of the remaining
+    // suffix ("kerdez|te" -> "kérdez" + "te"/"té"), longest stem first —
+    // kept only when it reads as a verb form of that very stem, since the
+    // analyser accepts too many odd nominal spellings ("kés"+"ma") for
+    // a blind guess to be trusted.
+    // Each candidate goes through the ordinary exact lookup, so morphology
+    // still decides what it actually is.
+    const HU_FOLD = { á: 'a', é: 'e', í: 'i', ó: 'o', ö: 'o', ő: 'o', ú: 'u', ü: 'u', ű: 'u' };
+    const HU_VARIANTS = { a: ['a', 'á'], e: ['e', 'é'], i: ['i', 'í'], o: ['o', 'ó', 'ö', 'ő'], u: ['u', 'ú', 'ü', 'ű'] };
+    let _foldAll = null;    // folded spelling -> real dictionary/word-index spellings
+    let _foldDict = null;   // same, dictionary headwords only (stems for the suffix pass)
+
+    function foldHu(text) {
+        return text.replace(/[áéíóöőúüű]/g, ch => HU_FOLD[ch]);
+    }
+
+    function buildFoldIndexes() {
+        const index = (map, form) => {
+            const k = foldHu(form);
+            const list = map.get(k);
+            if (!list) map.set(k, [form]);
+            else if (!list.includes(form)) list.push(form);
+        };
+        _foldDict = new Map();
+        _foldAll = new Map();
+        Object.keys(_dictionary).forEach(f => { index(_foldDict, f); index(_foldAll, f); });
+        // An accentless word-index form folds only to itself, which the exact
+        // lookup already tried — skipping those keeps this build cheap.
+        Object.keys(_wordIndex).forEach(f => { if (/[áéíóöőúüű]/.test(f)) index(_foldAll, f); });
+    }
+
+    function suffixVariants(suffix) {
+        let out = [''];
+        for (const ch of suffix) {
+            const vs = HU_VARIANTS[ch] || [ch];
+            out = out.flatMap(prefix => vs.map(v => prefix + v));
+        }
+        return out;
+    }
+
+    function lookupHungarianAccentless(key) {
+        const folded = foldHu(key);
+        if (!_foldAll) buildFoldIndexes();
+
+        const resolve = (candidates, stem) => {
+            const hits = [];
+            candidates.forEach(c => {
+                if (c === key) return;
+                const res = lookupHungarianKey(c);
+                const top = res.readings[0];
+                if (!top || top.compoundParts) return;
+                if (stem && !(top.pos === 'verb' && top.lemma === stem(c))) return;
+                hits.push(res);
+            });
+            if (!hits.length) return null;
+            // The most frequent restored word wins; the rest stay on as
+            // alternate readings (deduped), same as any ambiguous form.
+            hits.sort((a, b) => rankOf(a.readings[0]) - rankOf(b.readings[0]));
+            const seen = new Set();
+            const readings = [];
+            hits.forEach(h => h.readings.forEach(r => {
+                const k = r.lemma + '|' + r.analysis + '|' + r.pos + ':' + r.translation;
+                if (!seen.has(k)) { seen.add(k); readings.push(r); }
+            }));
+            return { readings: readings, ladder: hits[0].ladder };
+        };
+
+        const whole = resolve(_foldAll.get(folded) || []);
+        if (whole) return whole;
+
+        // Stems shorter than 2 letters, or suffixes with more than 4 vowels
+        // (4^5 spellings), aren't worth guessing at.
+        for (let i = folded.length - 1; i >= 2; i--) {
+            const stems = _foldDict.get(folded.slice(0, i));
+            const suffix = folded.slice(i);
+            if (!stems || (suffix.match(/[aeiou]/g) || []).length > 4) continue;
+            const variants = suffixVariants(suffix);
+            const found = resolve(stems.flatMap(s => variants.map(v => s + v)), c => c.slice(0, i));
+            if (found) return found;
+        }
+        return null;
+    }
+
+    function lookupHungarianKey(key) {
         const readings = [];
         const seen = new Set();
 
@@ -400,7 +507,7 @@ const Lexicon = (function () {
         // one the popup is showing above it).
         const ladder = (readings.length && typeof HungarianMorphology !== 'undefined')
             ? HungarianMorphology.ladder(key, _dictionary, _wordIndex, readings[0].lemma) : { chain: [], breakdown: [] };
-        return { word: word, readings: readings, ladder: ladder };
+        return { readings: readings, ladder: ladder };
     }
 
     function lookup(word) {

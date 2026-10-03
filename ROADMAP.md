@@ -27,6 +27,8 @@ Completed work is archived out to `ACHIEVED.md`.
     - **Phase B (after Antigravity's HU work): move hints into a typed `hint` field.** This is the 2026-09-14 "typed hint field" idea (~6,000 fill-blanks carry their hint inside `sentence`). Once `sentence` is clean, the cleaner becomes a no-op safety net.
     - **Later:** the same rule for the Workshop Grammar and Vocabulary drillers.
 
+123. **Hungarian analyser ignores vowel harmony on some verb endings (added 2026-10-03).** "mentunk" (an accentless "mentünk", *we went*) resolves as *menik* ("to flee") + back-vowel past 1pl "-tunk", though *menik* is a front-vowel verb and only takes "-tünk". `HungarianMorphology.analyze()` accepts the ending without checking harmony, so the Reader's accentless fallback (ACHIEVED.md, "Hungarian Reader: words written without accents now resolve") never gets to run for it. Enforcing harmony on verb endings would also make the fallback's stem+suffix pass stricter; check against `scripts/audit-reader-coverage.js hu` so real stories don't lose readings.
+
 ---
 
 ## 2. Future Feature Ideas
