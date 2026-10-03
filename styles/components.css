@@ -1468,6 +1468,19 @@
 
 .lesson-sound-btn .icon .ink-line { stroke: currentColor; }
 
+/* Spoken-answers and sound-effects toggles side by side (ROADMAP 122). */
+.lesson-header-actions {
+  flex: 0 0 auto;
+  display: flex;
+  gap: 6px;
+}
+
+/* Replay for the answer that was just spoken, under the feedback banner. */
+.lsn-listen-again {
+  margin-top: 8px;
+}
+.lsn-listen-again:empty { display: none; }
+
 .lesson-close-btn {
   flex: 0 0 auto;
   display: inline-flex;

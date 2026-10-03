@@ -209,6 +209,28 @@ function _attachSoundToggle() {
     });
 }
 
+// Spoken answers (ROADMAP 122): exercises read the right answer aloud once
+// settled. On by default, unlike sound effects; the preference lives with
+// the code that speaks (exerciseVoiceMuted() in engine/lessons.js).
+function _renderVoiceToggleIcon(btn) {
+    const isMuted = exerciseVoiceMuted();
+    btn.innerHTML = (typeof Art !== 'undefined') ? Art.icon(isMuted ? 'listeningOff' : 'listening') : '';
+    btn.setAttribute('aria-label', isMuted ? 'Spoken answers off — tap to turn on' : 'Spoken answers on — tap to turn off');
+    btn.setAttribute('title', isMuted ? 'Spoken answers off' : 'Spoken answers on');
+    btn.setAttribute('aria-pressed', String(!isMuted));
+}
+
+function _attachVoiceToggle() {
+    const btn = document.getElementById('lesson-voice-btn');
+    if (!btn || typeof exerciseVoiceMuted !== 'function') return;
+
+    _renderVoiceToggleIcon(btn);
+    btn.addEventListener('click', () => {
+        setExerciseVoiceMuted(!exerciseVoiceMuted());
+        _renderVoiceToggleIcon(btn);
+    });
+}
+
 // --------------------------------------------
 // Nav delegation (replaces inline onclick)
 // --------------------------------------------
@@ -315,6 +337,7 @@ async function initialiseApp() {
     // Lesson screen events
     _attachLessonClose();
     _attachSoundToggle();
+    _attachVoiceToggle();
 
     // Verbs module — imports/verbs/verb-list.js is Spanish content with
     // no language scoping (same reason Workshop's own DRILLERS list gates

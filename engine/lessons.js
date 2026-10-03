@@ -964,7 +964,55 @@ function generateAnswerDiff(userRaw, acceptableList) {
 }
 
 function feedbackHtml() {
-    return '<p id="step-feedback" class="lsn-feedback"></p><div id="step-diff" class="lsn-diff" style="display:none;"></div><p id="step-translation" class="lsn-en"></p>';
+    return '<p id="step-feedback" class="lsn-feedback"></p><div id="step-listen" class="lsn-listen-again"></div><div id="step-diff" class="lsn-diff" style="display:none;"></div><p id="step-translation" class="lsn-en"></p>';
+}
+
+// ============================================
+// SPOKEN ANSWERS (ROADMAP 122)
+// ============================================
+// A learner should hear the right target-language form, not only see it.
+// Each exercise renderer puts what to say in stepState.spoken (worked out by
+// engine/exercise-audio.js). Once the step is settled -- solved, or revealed
+// after the last try, never before, so audio can't give the answer away --
+// it plays once and a replay button stays. The voice can be muted from the
+// lesson header; that's separate from the sound-effects toggle, which is
+// off by default while the voice is on.
+const EXERCISE_VOICE_KEY = 'parlour_exercise_voice_muted';
+
+function exerciseVoiceMuted() {
+    try { return localStorage.getItem(EXERCISE_VOICE_KEY) === '1'; } catch (e) { return false; }
+}
+
+function setExerciseVoiceMuted(value) {
+    try { localStorage.setItem(EXERCISE_VOICE_KEY, value ? '1' : '0'); } catch (e) {}
+    if (value && typeof ParlourTTS !== 'undefined') ParlourTTS.stop();
+}
+
+function speakExercise(text) {
+    if (!text || exerciseVoiceMuted() || typeof ParlourTTS === 'undefined') return;
+    ParlourTTS.speak({ text });
+}
+
+function speakSettled() {
+    const text = stepState.spoken;
+    if (!text) return;
+    const slot = document.getElementById('step-listen');
+    if (slot) slot.innerHTML = say(text, { label: 'Hear the answer again' });
+    // Let the "correct" chime finish first when sound effects are on.
+    const soundOn = typeof Sound !== 'undefined' && !Sound.muted();
+    const step = currentStepIndex;
+    setTimeout(() => {
+        if (currentStepIndex === step && stepState.spoken === text) speakExercise(text);
+    }, soundOn ? 350 : 0);
+}
+
+// What a choice exercise says for option i, once it's the settled answer.
+function choiceSpoken(i) {
+    const text = (stepState.choiceTexts || [])[i];
+    if (!text || typeof ExerciseAudio === 'undefined') return '';
+    return stepState.choiceIsDialogue
+        ? ExerciseAudio.stripAsides(text)
+        : ExerciseAudio.forChoice(stepState.question, text, Lang.code());
 }
 
 // Shown once the answer is settled (solved or revealed after 3 tries), so a
@@ -1054,6 +1102,7 @@ function solveStep(message) {
     showTranslation();
     updateFooterButton();
     if (typeof Sound !== 'undefined') Sound.correct();
+    speakSettled();
 
     // A revisit via the Back button re-renders this same step index fully
     // interactive (see gradedStepIndices' own comment) — the learner still
@@ -1098,6 +1147,7 @@ function failStep(message) {
     stepState.gaveUp = true;
     showTranslation();
     updateFooterButton();
+    speakSettled();
 
     // Same revisit guard as solveStep() — see gradedStepIndices' own
     // comment on why a Back-button redo mustn't double-count.
@@ -1396,6 +1446,9 @@ const stepRenderers = {
         stepState.checkFn = 'lessonCheckChoice';
         const parts = pick.options.map(splitOptionGloss);
         if (!Array.isArray(pick.correct)) stepState.translation = parts[pick.correct].gloss;
+        stepState.choiceTexts = parts.map(p => p.text);
+        stepState.question = step.question || '';
+        stepState.spoken = choiceSpoken(Array.isArray(pick.correct) ? pick.correct[0] : pick.correct);
         const isMulti = Array.isArray(step.correct) && step.correct.length > 1;
         const multiHint = isMulti && !/more than one|multiple|either|any of|which two/i.test(step.question || '')
             ? `<p class="lsn-multi-hint">(More than one answer is acceptable — pick any)</p>`
@@ -1419,6 +1472,9 @@ const stepRenderers = {
         stepState.checkFn = 'lessonCheckChoice';
         const parts = pick.options.map(splitOptionGloss);
         if (!Array.isArray(pick.correct)) stepState.translation = parts[pick.correct].gloss;
+        stepState.choiceTexts = parts.map(p => p.text);
+        stepState.choiceIsDialogue = true;
+        stepState.spoken = choiceSpoken(Array.isArray(pick.correct) ? pick.correct[0] : pick.correct);
         const isMulti = Array.isArray(step.correct) && step.correct.length > 1;
         return `
             <div class="lsn-dialogue">
@@ -1471,6 +1527,8 @@ const stepRenderers = {
         stepState.answer = step.sentence;
         stepState.audio = step.sentence;
         stepState.translation = step.english || step.translation || '';
+        stepState.sentence = step.sentence || '';
+        stepState.spoken = typeof ExerciseAudio !== 'undefined' ? ExerciseAudio.fillBlank(step.sentence, stepState.answer, Lang.code()) : '';
         stepState.checkFn = 'lessonCheckBlank';
         stepState.hintLevel = 0;
         stepState.usedHint = false;
@@ -1528,6 +1586,8 @@ const stepRenderers = {
         stepState.answer = step.answer || (step.answers && step.answers[0]) || '';
         stepState.acceptable = step.answers || [step.answer];
         stepState.translation = step.english || step.translation || '';
+        stepState.sentence = step.sentence || '';
+        stepState.spoken = typeof ExerciseAudio !== 'undefined' ? ExerciseAudio.fillBlank(step.sentence, stepState.answer, Lang.code()) : '';
         stepState.checkFn = 'lessonCheckBlank';
         stepState.hintLevel = 0;
         stepState.usedHint = false;
@@ -1564,6 +1624,7 @@ const stepRenderers = {
         stepState.solutions = step.solutions || [step.solution || []];
         stepState.solution = stepState.solutions[0];
         stepState.english = step.english || '';
+        stepState.spoken = stepState.solution.join(' ');
         stepState.checkFn = 'lessonCheckBuild';
         stepState.usedHint = false;
 
@@ -1600,6 +1661,7 @@ const stepRenderers = {
         gateStep();
         stepState.solution = step.solution || [];
         stepState.sentences = step.sentences || [];
+        stepState.spoken = stepState.solution.map(i => stepState.sentences[i]).join(' ');
         stepState.order = [];
         stepState.checkFn = 'lessonCheckOrder';
         return `
@@ -1659,7 +1721,7 @@ const stepRenderers = {
                 ${modelAnswer ? `
                     <div class="lsn-model hidden" data-model="comp" style="margin-top:12px; padding:12px; border-radius:8px; background:rgba(0,0,0,0.04);">
                         <span class="lsn-model-label" style="display:block; margin-bottom:4px; font-weight:700;">Example Model Text</span>
-                        <span class="lsn-es" style="font-size:0.95rem; line-height:1.4;">${esc(modelAnswer)}</span>
+                        <span class="lsn-es" style="font-size:0.95rem; line-height:1.4;">${esc(modelAnswer)}${say(modelAnswer)}</span>
                     </div>
                 ` : ''}
                 <div class="lsn-writing-feedback hidden" id="lsn-writing-feedback">
@@ -1683,7 +1745,7 @@ const stepRenderers = {
                     ${line.answer ? `
                         <div class="lsn-model" data-model="${i}">
                             <span class="lsn-model-label">One way to say it</span>
-                            <span class="lsn-es">${esc(line.answer)}</span>
+                            <span class="lsn-es">${esc(line.answer)}${say(line.answer)}</span>
                         </div>
                     ` : ''}
                 </div>
@@ -2095,6 +2157,11 @@ function renderStep() {
     if (backBtn) backBtn.disabled = currentStepIndex === 0;
 
     updateFooterButton();
+
+    // Fetch the answer's audio now, so it plays the moment the step settles.
+    if (stepState.spoken && !exerciseVoiceMuted() && typeof ParlourTTS !== 'undefined') {
+        ParlourTTS.preload({ text: stepState.spoken });
+    }
 
     // Auto-focus active text inputs on desktop without triggering scroll jumps
     const autoInput = container.querySelector('input.lsn-input:not([disabled]), textarea.lsn-input:not([disabled])');
@@ -2789,6 +2856,7 @@ function lessonCheckChoice() {
         // Blur so the focus ring (still showing from the click that picked
         // this option) doesn't linger over the green correct state.
         if (btn) { btn.classList.add('correct'); btn.blur(); }
+        stepState.spoken = choiceSpoken(stepState.picked);
         solveStep('✓ Correct!');
         return;
     }
@@ -2803,6 +2871,9 @@ function lessonCheckChoice() {
 
 function lessonMatch(btn) {
     if (btn.classList.contains('correct') || stepState.solved) return;
+    // The left column is the target language; hearing a word you tapped
+    // doesn't give its pair away.
+    if (btn.dataset.side === 'left') speakExercise(btn.textContent);
 
     if (!stepState.pick) {
         document.querySelectorAll('.lsn-option.selected').forEach(b => b.classList.remove('selected'));
@@ -2973,7 +3044,13 @@ function lessonCheckBlank() {
     // stepState.acceptable carries the full list, stepState.answer stays the
     // one shown on reveal.
     const acceptable = stepState.acceptable || [stepState.answer];
-    const ok = acceptable.some(a => normalise(input.value) === normalise(a));
+    const matched = acceptable.find(a => normalise(input.value) === normalise(a));
+    const ok = matched !== undefined;
+    // Say the sentence with the answer the learner actually gave, when it's
+    // one of several accepted ones.
+    if (ok && typeof ExerciseAudio !== 'undefined') {
+        stepState.spoken = ExerciseAudio.fillBlank(stepState.sentence, matched, Lang.code()) || stepState.spoken;
+    }
     input.classList.toggle('correct', ok);
     input.classList.toggle('wrong', !ok);
 
@@ -3350,6 +3427,7 @@ function lessonRevealSub(i) {
         result.querySelector('.lsn-es').innerHTML = highlightWord(opt.sentence, opt.inflected || opt.word);
         result.classList.add('is-shown');
     }
+    speakExercise(opt.sentence);
     const btn = document.querySelector('[data-sub-index="' + i + '"]');
     if (btn) btn.classList.add('used');
 

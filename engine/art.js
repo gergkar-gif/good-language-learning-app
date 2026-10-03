@@ -248,6 +248,15 @@ const Art = (function () {
             <line class="ink-line" x1="16" y1="8" x2="16" y2="16"/>
             <line class="ink-line" x1="20" y1="11" x2="20" y2="13"/>
         `,
+        // Spoken answers muted — the same waveform, struck through.
+        listeningOff: `
+            <line class="ink-line" x1="4" y1="10" x2="4" y2="14"/>
+            <line class="ink-line" x1="8" y1="7" x2="8" y2="17"/>
+            <line class="ink-line" x1="12" y1="4" x2="12" y2="20"/>
+            <line class="ink-line" x1="16" y1="8" x2="16" y2="16"/>
+            <line class="ink-line" x1="20" y1="11" x2="20" y2="13"/>
+            <line class="ink-line" x1="3" y1="21" x2="21" y2="3"/>
+        `,
 
         // Sound effects on/off — a speaker with (or without) the two arcs
         // of sound leaving it. Reuses the same speaker cone as `listening`

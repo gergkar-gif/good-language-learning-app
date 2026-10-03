@@ -14,7 +14,7 @@
 
     <link rel="stylesheet" href="styles/base.css?v=2026-09-30merged">
     <link rel="stylesheet" href="styles/geometry.css?v=2026-09-30merged">
-    <link rel="stylesheet" href="styles/components.css?v=2026-10-02c">
+    <link rel="stylesheet" href="styles/components.css?v=2026-10-03voice">
     <link rel="stylesheet" href="styles/layout.css?v=2026-09-30player">
     <link rel="stylesheet" href="styles/utilities.css?v=2026-09-30merged">
     <link rel="stylesheet" href="styles/verbs.css?v=2026-09-30merged">
@@ -285,7 +285,10 @@
                         <p id="lesson-subtitle"></p>
                     </div>
 
-                    <button id="lesson-sound-btn" class="lesson-sound-btn" aria-label="Sound effects"></button>
+                    <div class="lesson-header-actions">
+                        <button id="lesson-voice-btn" class="lesson-sound-btn" type="button" aria-label="Spoken answers"></button>
+                        <button id="lesson-sound-btn" class="lesson-sound-btn" aria-label="Sound effects"></button>
+                    </div>
 
                 </div>
 
@@ -324,7 +327,7 @@
 <script src="engine/srs.js?v=2026-10-02f"></script>
 <script src="engine/content-loader.js?v=2026-09-14h"></script>
 <script src="engine/ui.js?v=2026-09-17b"></script>
-<script src="engine/art.js?v=2026-09-16a"></script>
+<script src="engine/art.js?v=2026-10-03voice"></script>
 <script src="engine/theme.js?v=2026-09-14h"></script>
 <script src="engine/sound.js?v=2026-09-30a"></script>
 <script src="engine/geo.js?v=2026-09-14h"></script>
@@ -400,7 +403,8 @@
 <script src="engine/workshop.js?v=2026-09-28exams"></script>
 
 <!-- Engine: lessons, progress, curriculum -->
-<script src="engine/lessons.js?v=2026-10-02goals"></script>
+<script src="engine/exercise-audio.js?v=2026-10-03a"></script>
+<script src="engine/lessons.js?v=2026-10-03voice"></script>
 <script src="engine/progress.js?v=2026-09-24a"></script>
 <script src="engine/learnerPath.js?v=2026-09-27a"></script>
 <script src="engine/recycle.js?v=2026-09-28trouble"></script>
@@ -442,7 +446,7 @@
 <script src="engine/sync.js?v=2026-10-02m"></script>
 
 <!-- Engine: bootstrap (loads last) -->
-<script src="engine/init.js?v=2026-09-28r105"></script>
+<script src="engine/init.js?v=2026-10-03voice"></script>
 
 <!-- Engine: bug report (independent floating overlay, loads anywhere after Art) -->
 <script src="engine/bugreport.js?v=2026-09-14h"></script>

@@ -2,7 +2,7 @@
 // Parlour Service Worker (Offline Support & PWA App Shell)
 // ==========================================================
 
-const CACHE_VERSION = 'v2026-10-02-sync2';
+const CACHE_VERSION = 'v2026-10-03-voice';
 const SHELL_CACHE_NAME = `parlour-shell-${CACHE_VERSION}`;
 const CONTENT_CACHE_NAME = `parlour-content-${CACHE_VERSION}`;
 
@@ -71,6 +71,7 @@ const PRECACHE_ASSETS = [
     'engine/drills/hu-verb.js',
     'engine/drills/hu-verb-studio.js',
     'engine/workshop.js',
+    'engine/exercise-audio.js',
     'engine/lessons.js',
     'engine/progress.js',
     'engine/learnerPath.js',
