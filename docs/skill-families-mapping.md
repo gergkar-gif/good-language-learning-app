@@ -1,6 +1,6 @@
 # Vocabulary topic families: unit-by-unit mapping (draft)
 
-Status: **draft, 2026-10-04, for review.** Families are defined in
+Status: **approved 2026-10-04.** Reviewed the same day: every `language` and `ideas` row was checked against its word list and 23 skills corrected (rules in the draft, § "Choosing a family"). Families are defined in
 [skill-families-draft.md](skill-families-draft.md). Data:
 [skill-families-mapping.json](skill-families-mapping.json). The main family
 comes first, and no skill has more than two. `ideas` is the proposed family 26 (see the
@@ -173,7 +173,7 @@ glosses below), not only the unit title.
 
 | Skill | Unit most of its exercises are in | Families | Sample words |
 |---|---|---|---|
-| `b2-01-vocab` | Nuance, Focus & Emphasis in Narrative | `feelings-character`, `language` | unspoken, left unsai; relief; silence, keeping sil; anxiety, anguish; to betray, to give a |
+| `b2-01-vocab` | Nuance, Focus & Emphasis in Narrative | `feelings-character` | unspoken, left unsai; relief; silence, keeping sil; anxiety, anguish; to betray, to give a |
 | `b2-02-vocab` | Memory, Nostalgia & Sensory Description | `feelings-character` | to roll along smooth; to knock, to clatter; to glide past, to fl; fading away, dying d; to evoke, to recall  |
 | `b2-03-vocab` | Language, Style & Word Formation | `language` | mannerism, stylistic; flexibility, adaptab; distinctive feature,; unmasking, exposure; creation, crafting |
 | `b2-04-vocab` | Performance, Drama & Persuasion | `language`, `arts` | to call upon; to caution; to demand; hasty; emphatically |
@@ -227,14 +227,14 @@ glosses below), not only the unit title.
 | `b2-kulpolitika-vocab` | Central European Geopolitics & Visegrád Cooperation | `society-politics` | royal summit; staple right; trade route; alliance treaty; mediation |
 | `b2-lakhatas-vocab` | Courtyards, Panel Estates & Urban Renewal | `housing`, `town-places` | open access gallery; tenement; concierge; grand bourgeois apar; gate-opening fee (pa |
 | `b2-magyarfilm-vocab` | Allegory on Screen: A Century of Hungarian Cinema | `arts` | film production; director; while; silent film; screenplay |
-| `b2-magyaridentitas-vocab` | Synthesis: What It Means to Speak and Understand Hungarian Today | `language`, `personal-identity` | island language; Finno-Ugric origin; agglutinative langua; linguistic stratific; loanword |
+| `b2-magyaridentitas-vocab` | Synthesis: What It Means to Speak and Understand Hungarian Today | `language`, `arts` | island language; Finno-Ugric origin; agglutinative langua; linguistic stratific; loanword |
 | `b2-marslakok-vocab` | The 'Martians' of Budapest: Physics & Computing | `science-technology` | extraterrestrial; research institute; emigration; theoretical physics; the more ... the mor |
 | `b2-matematikasakk-vocab` | Non-Euclidean Worlds: Hungarian Mathematics & Chess | `science-technology`, `leisure` | axiom; parallel (line); consistent; treatise; however much |
 | `b2-mediatortenet-vocab` | From the Town Crier to the Digital Public Sphere | `media` | lead editorial; prior censorship (pr; subscriber; pamphlet; universal taxation |
 | `b2-nemzetisegek-vocab` | Thirteen Nationalities & Shared Cultural Heritage | `society-politics` | ethnic mosaic; resettlement; constituent; coexistence; mutual influence |
 | `b2-nyelvujitas-vocab` | The Language Reform & the Politics of Hungarian | `language`, `history` | language decree; legislation; public administratio; vocabulary; drafting |
 | `b2-pestihumor-vocab` | The Pesti Humor: Cabaret, Satire & Survival | `arts` | cabaret; cabaret master of ce; after all; self-irony; social criticism |
-| `b2-politikairetorika-vocab` | Public Memory, Monuments & Political Rhetoric | `society-politics`, `language` | Conquest of the Carp; pantheon; colonnade; representative; palimpsest (layered  |
+| `b2-politikairetorika-vocab` | Public Memory, Monuments & Political Rhetoric | `history`, `town-places` | Conquest of the Carp; pantheon; colonnade; representative; palimpsest (layered  |
 | `b2-pszichoanalizis-vocab` | The Budapest School of Psychoanalysis & the Mind | `science-technology`, `feelings-character` | the unconscious (min; repression (psycholo; to be revealed; slip of the tongue (; depth psychology |
 | `b2-semmelweis-vocab` | Semmelweis, Szent-Györgyi & Medical Pioneers | `health`, `science-technology` | childbed fever; autopsy; disinfection; mortality rate; chlorinated lime sol |
 | `b2-sporttortenet-vocab` | From Alfréd Hajós to the Aranycsapat: Sport & National Identity | `leisure`, `history` | gold medal; swimming champion; harsh; to surpass; sports swimming comp |
@@ -255,7 +255,7 @@ glosses below), not only the unit title.
 | `c1-03-vocab` | Epistemic Hedging, Probability & Evidential Stance | `language` | evidentiality; rumor has it, report; allegedly, supposedl; according to the tes; citation, reference |
 | `c1-04-vocab` | The Mechanics of Polemics & Rhetorical Refutation | `language` | no matter how much, ; be that as it may, e; refutation, rebuttal; specious, superficia; irrefutable |
 | `c1-05-vocab` | Irony, Understatement & Sarcastic Register Shifting | `language` | is it not so?, mind ; after all, when all ; after all, neverthel; perchance, by any ch; as a matter of fact, |
-| `c1-06-vocab` | Metaphor, Idiomatic Resonance & Conceptual Blending | `language` | double-edged sword; cornerstone, keyston; watershed moment, tu; dead end, cul-de-sac; milestone |
+| `c1-06-vocab` | Metaphor, Idiomatic Resonance & Conceptual Blending | `language`, `feelings-character` | double-edged sword; cornerstone, keyston; watershed moment, tu; dead end, cul-de-sac; milestone |
 | `c1-07-vocab` | Legal Syntactic Architecture & Normative Modality | `society-politics`, `language` | to be applied, appli; payable, to be paid; to be followed, mode; to be resolved; to be executed, enfo |
 | `c1-08-vocab` | Institutional Impersonalization & Passive Avoidance | `society-politics` | was established; is promulgated; receives rejection, ; receives support; was submitted |
 | `c1-09-vocab` | Bioethics, Human Dignity & Moral Quandaries | `religion-philosophy`, `health` | would have been avoi; could have been prev; it would have been t; holding accountable,; omission, neglect, f |
@@ -265,13 +265,13 @@ glosses below), not only the unit title.
 | `c1-13-vocab` | Macroeconomic Architecture, Fiscal Policy & Monetary Stance | `economy` | Gross Domestic Produ; base effect (statist; real wage growth; economic upturn, boo; recession, economic  |
 | `c1-14-vocab` | Ecological System Dynamics, Energy Transition & Green Taxonomy | `geography-nature`, `science-technology` | ecosystem service; biodiversity, specie; habitat fragmentatio; soil erosion; water retention |
 | `c1-15-vocab` | Artificial Intelligence, Cognitive Systems & Algorithmic Reason | `science-technology` | machine learning; algorithm; training dataset; overfitting; loss function |
-| `c1-16-vocab` | Public Sphere, Rhetorical Framing & Deliberative Communication | `media`, `language` | structure of the pub; deliberative democra; consensus seeking; rational discourse; fallacy, argumentati |
+| `c1-16-vocab` | Public Sphere, Rhetorical Framing & Deliberative Communication | `society-politics`, `media` | structure of the pub; deliberative democra; consensus seeking; rational discourse; fallacy, argumentati |
 | `c1-17-vocab` | Regional Geopolitics, Diplomatic Strategy & Transnational Coalitions | `society-politics` | diplomatic protocol; realpolitik; strategic hedging; bilateral relations; joint communiqué |
 | `c1-18-vocab` | Digital Sovereignty, Algorithmic Surveillance & Information Security | `science-technology`, `society-politics` | digital sovereignty; data colonialism; technological exposu; cloud-based infrastr; data localization |
 | `c1-19-vocab` | Sociological Stratification, Class Structures & Social Mobility | `society-politics` | social stratificatio; status consistency; social scissor (weal; middle-class downwar; income polarization |
 | `c1-20-vocab` | Ecological Fragility, The Drying Alföld & Environmental Causality | `geography-nature` | ecological vulnerabi; desertification; groundwater level dr; drought damage; anthropogenic impact |
 | `c1-21-vocab` | Labor Economics, Technological Displacement & Collective Bargaining | `economy`, `work` | precariat; re-industrialization; technological unempl; labor market polariz; structural unemploym |
-| `c1-22-vocab` | Computational Linguistics, Algorithmic Thought & Small-Language Survival | `language`, `science-technology` | natural language pro; synthetic intelligen; algorithmic thinking; machine learning; probabilistic model |
+| `c1-22-vocab` | Computational Linguistics, Algorithmic Thought & Small-Language Survival | `science-technology`, `language` | natural language pro; synthetic intelligen; algorithmic thinking; machine learning; probabilistic model |
 | `c1-23-vocab` | Spatial Urban Geometry, Historic Preservation & Architectural Semiotics | `town-places`, `arts` | urban structure; radial-concentric ri; visual axis; spatial wall; urban fabric |
 | `c1-24-vocab` | Epistemology of Research, Academic Autonomy & Scientific Discovery | `science-technology`, `education` | epistemology; falsifiability; empirical verificati; methodological rigor; scientific paradigm |
 | `c1-25-vocab` | Constitutionalism, Separation of Powers & The Hierarchy of Legal Norms | `society-politics` | cogent; dispositive provisio; normative force; rule of law requirem; exceeding of compete |
@@ -321,7 +321,7 @@ glosses below), not only the unit title.
 | `c1-tudomanyosszabadsag-vocab` | The Stripping of MTA Research Institutes & The CEU Expulsion | `education`, `science-technology` | research network of ; stripping; academic autonomy; Palkovics ultimatum ; confiscation |
 | `c1-varosfejlesztes-vocab` | Urbanism in Crisis: Agglomeration Sprawl, Transit & Brownfield Renewal | `town-places` | suburbanization; dormitory town; car dependency; traffic deadlock; infrastructural defi |
 | `c1-visegrad-vocab` | The Visegrád Group (V4), Regional Alliances & European Cohesion | `society-politics` | Visegrád cooperation; royal summit (1335 m; Euro-Atlantic integr; post-communist trans; historical solidarit |
-| `c1-vitakultura-vocab` | The Art of Hungarian Public Debate | `language`, `society-politics` | Reform Era (1825–184; oratorical duel; organic development; enthusiasm, zeal; deliberation, circum |
+| `c1-vitakultura-vocab` | The Art of Hungarian Public Debate | `history`, `society-politics` | Reform Era (1825–184; oratorical duel; organic development; enthusiasm, zeal; deliberation, circum |
 | `c1-vizgazdalkodas-vocab` | Water Management, Drought Crises & Wetland Restoration | `geography-nature` | sand ridge; semi-desertification; focal point of desic; groundwater reserve; acute emergency |
 
 ## es-es
@@ -362,15 +362,15 @@ glosses below), not only the unit title.
 | `a2-unit13-vocab` | Describing Events in Time | `town-places` | community; park; to arrive; to clean; volunteer |
 | `a2-unit14-vocab` | Asking About What Happened | `work`, `media` | interview; journalist; to ask; to answer; craft |
 | `a2-unit15-vocab` | Explaining What Happened | `relationships`, `feelings-character` | goodbye; friend; to leave; to explain; sad |
-| `a2-unit16-vocab` | Talking About Plans | `ideas` | letter; to write; future; to plan; tomorrow |
+| `a2-unit16-vocab` | Talking About Plans | `daily-life`, `ideas` | letter; to write; future; to plan; tomorrow |
 | `a2-unit17-vocab` | Reviewing A2 Experiences | `education` | class; course; to learn; experience; classmate |
 | `a2-unit18-vocab` | Talking About Travel and Goodbyes | `travel` | airport; flight; suitcase; to prepare; to leave |
 | `a2-unit19-vocab` | Talking About the Future | `ideas`, `work` | future; plan; tomorrow; to travel; to work |
 | `a2-unit20-vocab` | Looking Back and Moving Forward | `ideas` | memory; experience; to learn; to meet; to share |
-| `a2-unit30-vocab` | Prepositions in Action: Por vs. Para | `ideas` | goal; destination; recipient; gift; objective |
+| `a2-unit30-vocab` | Prepositions in Action: Por vs. Para | `daily-life` | goal; destination; recipient; gift; objective |
 | `a2-unit31-vocab` | Indefinites and Double Negation: Alguien, Nadie, Algo, Nada | `basics` | someone; no one; stranger; suspicious; audience |
 | `a2-unit32-vocab` | Life in Duration and Recent Actions: Verbal Periphrases | `media` | to have just done; recently; news; to land; to announce |
-| `a2-unit33-vocab` | Speaking to the Group: Vosotros in Spain | `language` | you all (informal, m; you all (informal, f; your; your; guys |
+| `a2-unit33-vocab` | Speaking to the Group: Vosotros in Spain | `leisure`, `relationships` | you all (informal, m; you all (informal, f; your; your; guys |
 
 ### B1
 
@@ -379,7 +379,7 @@ glosses below), not only the unit title.
 | `b1-arte-vocab` | Pintura y Escultura: Velázquez, Goya, Picasso y Dalí | `arts` | El Greco (Renaissanc; The Burial of the Co; Diego Velázquez (Sev; Las Meninas (masterp; The Surrender of Bre |
 | `b1-autonomias-vocab` | Las Instituciones Autonómicas y Locales | `society-politics` | regional parliament; Regional Governing C; President of the Aut; High Court of Justic; regional minister (m |
 | `b1-centrosur-vocab` | Comunidades del Centro, Sur y Canarias | `geography-nature` | the town/city of Mad; Puerta del Sol (Kilo; Paseo del Prado and ; Prado Museum; Monastery of San Lor |
-| `b1-cervantes-vocab` | Difusión Cultural: El Instituto Cervantes | `language`, `arts` | Instituto Cervantes ; cultural promotion; Ministry of Foreign ; Vault of Letters (at; teaching of Spanish |
+| `b1-cervantes-vocab` | Difusión Cultural: El Instituto Cervantes | `language`, `education` | Instituto Cervantes ; cultural promotion; Ministry of Foreign ; Vault of Letters (at; teaching of Spanish |
 | `b1-ciudadesautonomas-vocab` | Ceuta, Melilla y Municipios de España | `geography-nature`, `society-politics` | Autonomous City of C; 1995 Statute of Auto; Assembly of Ceuta (2; President-Mayor (hea; Royal Walls of Ceuta |
 | `b1-constitucion-vocab` | La Constitución Española de 1978 | `society-politics` | sovereignty; referendum; to ratify; to emanate, originat; consensus |
 | `b1-consumobanca-vocab` | Consumo, Horarios y Servicios Bancarios | `services`, `economy` | the euro (€, Spain's; the peseta (Spain's ; Bank of Spain (natio; International Bank A; direct debit (automa |
@@ -411,7 +411,7 @@ glosses below), not only the unit title.
 | `b1-simulacro-vocab` | Simulacro General de Examen CCSE | `society-politics` | Constitutional and S; PASS grade (minimum ; official exam sessio; accredited examinati; multiple-choice ques |
 | `b1-transporte-vocab` | Transporte, Comunicaciones y Emergencias 112 | `travel`, `services` | Spanish High-Speed T; National Network of ; Railway Infrastructu; commuter; RENFE senior/disabil |
 | `b1-unioneuropea-vocab` | España en la Unión Europea | `society-politics` | Treaty of Accession; Member State; European Union (EU); Treaty of Maastricht; full right |
-| `b1-unit01-vocab` | Telling Stories | `language` | suddenly; immediately; to happen; to flee; power cut |
+| `b1-unit01-vocab` | Telling Stories | `arts` | suddenly; immediately; to happen; to flee; power cut |
 | `b1-unit02-vocab` | Experiences & Memories | `feelings-character` | childhood; neighbourhood; habit; scent; to dare |
 | `b1-unit03-vocab` | Plans & Ambitions | `work` | to plan; to plan; to be about to; intention; sector |
 | `b1-unit04-vocab` | Giving Advice | `ideas` | advice; to advise; should; precaution; contract |
@@ -442,15 +442,15 @@ glosses below), not only the unit title.
 | `b1-unit29-vocab` | Migration & Identity | `society-politics`, `personal-identity` | to belong; identity; origin; sense of belonging; to move house |
 | `b1-unit30-vocab` | Culture, Language & Society | `language` | accent; variety; expression; pronunciation; language |
 | `b1-unit31-vocab` | The Future of Society | `society-politics` | society; trend; development; to transform; likely |
-| `b1-unit32-vocab` | Connecting Ideas | `language` | cause; due to; to cause; reason; consequence |
+| `b1-unit32-vocab` | Connecting Ideas | `ideas` | cause; due to; to cause; reason; consequence |
 | `b1-unit33-vocab` | Reported Speech | `language`, `media` | to state; to tell; to explain; comment; to inform |
 | `b1-unit34-vocab` | Complex Opinions | `ideas` | to doubt; to deny; to believe; opinion; possibility |
 | `b1-unit35-vocab` | Hypotheticals & Possibilities | `ideas` | to choose; option; decision; to prefer; consequence |
-| `b1-unit36-vocab` | Independent Spanish | `language` | account; experience; memory; to overcome; position |
+| `b1-unit36-vocab` | Independent Spanish | `ideas` | account; experience; memory; to overcome; position |
 | `b1-unit37-vocab` | The Past in the Mind: Present Perfect Subjunctive | `feelings-character` | participle; to be glad; arrival; received; news |
 | `b1-unit38-vocab` | Time & Perspective: Sequence of Tenses & Reported Speech | `language` | sequence; subordinate clause; to govern; to advise; rest |
 | `b1-unit39-vocab` | The Nuances of Change: Spanish Verbs of Becoming | `feelings-character`, `body` | embarrassment; pale; nervous; furious; compliment |
-| `b1-unit40-vocab` | Advanced Connectors & Prepositional Regimes | `ideas` | to dream of; to think about; to count on; to depend on; to insist on |
+| `b1-unit40-vocab` | Advanced Connectors & Prepositional Regimes | `language` | to dream of; to think about; to count on; to depend on; to insist on |
 | `b1-vivienda-vocab` | Vivienda, Registro y Empadronamiento | `housing`, `services` | public deed (signed ; notary public; mortgage; Land Registry (Prope; Land Registry summar |
 
 ### B2
@@ -498,15 +498,15 @@ glosses below), not only the unit title.
 | `a2-unit13-vocab` | Describing Events in Time | `town-places` | community; park; to arrive; to clean; volunteer |
 | `a2-unit14-vocab` | Asking About What Happened | `work`, `media` | interview; journalist; to ask; to answer; craft |
 | `a2-unit15-vocab` | Explaining What Happened | `relationships`, `feelings-character` | goodbye; friend; to leave; to explain; sad |
-| `a2-unit16-vocab` | Talking About Plans | `ideas` | letter; to write; future; to plan; tomorrow |
+| `a2-unit16-vocab` | Talking About Plans | `daily-life`, `ideas` | letter; to write; future; to plan; tomorrow |
 | `a2-unit17-vocab` | Reviewing A2 Experiences | `education` | class; course; to learn; experience; classmate |
 | `a2-unit18-vocab` | Talking About Travel and Goodbyes | `travel` | airport; flight; suitcase; to prepare; to leave |
 | `a2-unit19-vocab` | Talking About the Future | `ideas`, `work` | future; plan; tomorrow; to travel; to work |
 | `a2-unit20-vocab` | Looking Back and Moving Forward | `ideas` | memory; experience; to learn; to meet; to share |
-| `a2-unit30-vocab` | Prepositions in Action: Por vs. Para | `ideas` | goal; destination; recipient; gift; objective |
+| `a2-unit30-vocab` | Prepositions in Action: Por vs. Para | `daily-life` | goal; destination; recipient; gift; objective |
 | `a2-unit31-vocab` | Indefinites and Double Negation: Alguien, Nadie, Algo, Nada | `basics` | someone; no one; stranger; suspicious; audience |
 | `a2-unit32-vocab` | Life in Duration and Recent Actions: Verbal Periphrases | `media` | to have just done; recently; news; to land; to announce |
-| `a2-unit33-vocab` | (no exercises) | `language` |  |
+| `a2-unit33-vocab` | (no exercises) | `leisure`, `relationships` |  |
 
 ### B1
 
@@ -548,7 +548,7 @@ glosses below), not only the unit title.
 | `b1-revolucioncubana-vocab` | The Cuban Revolution | `history` | per capita; sugar harvest season; quota; notorious, well-know; gambling |
 | `b1-revolucionmexicana-vocab` | The Mexican Revolution | `history` | to be re-elected; indicator; notable, considerabl; precondition; relentless |
 | `b1-sociedadcolonial-vocab` | Colonial Society | `history` | viceroyalty; viceroy; vast; high court (colonial; headquarters, seat |
-| `b1-unit01-vocab` | Telling Stories | `language` | suddenly; immediately; to happen; to flee; power cut |
+| `b1-unit01-vocab` | Telling Stories | `arts` | suddenly; immediately; to happen; to flee; power cut |
 | `b1-unit02-vocab` | Experiences & Memories | `feelings-character` | childhood; neighbourhood; habit; scent; to dare |
 | `b1-unit03-vocab` | Plans & Ambitions | `work` | to plan; to plan; to be about to; intention; sector |
 | `b1-unit04-vocab` | Giving Advice | `ideas` | advice; to advise; should; precaution; contract |
@@ -579,15 +579,15 @@ glosses below), not only the unit title.
 | `b1-unit29-vocab` | Migration & Identity | `society-politics`, `personal-identity` | to belong; identity; origin; sense of belonging; to move house |
 | `b1-unit30-vocab` | Culture, Language & Society | `language` | accent; variety; expression; pronunciation; language |
 | `b1-unit31-vocab` | The Future of Society | `society-politics` | society; trend; development; to transform; likely |
-| `b1-unit32-vocab` | Connecting Ideas | `language` | cause; due to; to cause; reason; consequence |
+| `b1-unit32-vocab` | Connecting Ideas | `ideas` | cause; due to; to cause; reason; consequence |
 | `b1-unit33-vocab` | Reported Speech | `language`, `media` | to state; to tell; to explain; comment; to inform |
 | `b1-unit34-vocab` | Complex Opinions | `ideas` | to doubt; to deny; to believe; opinion; possibility |
 | `b1-unit35-vocab` | Hypotheticals & Possibilities | `ideas` | to choose; option; decision; to prefer; consequence |
-| `b1-unit36-vocab` | Independent Spanish | `language` | account; experience; memory; to overcome; position |
+| `b1-unit36-vocab` | Independent Spanish | `ideas` | account; experience; memory; to overcome; position |
 | `b1-unit37-vocab` | The Past in the Mind: Present Perfect Subjunctive | `feelings-character` | participle; to be glad; arrival; received; news |
 | `b1-unit38-vocab` | Time & Perspective: Sequence of Tenses & Reported Speech | `language` | sequence; subordinate clause; to govern; to advise; rest |
 | `b1-unit39-vocab` | The Nuances of Change: Spanish Verbs of Becoming | `feelings-character`, `body` | embarrassment; pale; nervous; furious; compliment |
-| `b1-unit40-vocab` | Advanced Connectors & Prepositional Regimes | `ideas` | to dream of; to think about; to count on; to depend on; to insist on |
+| `b1-unit40-vocab` | Advanced Connectors & Prepositional Regimes | `language` | to dream of; to think about; to count on; to depend on; to insist on |
 
 ### B2
 
@@ -604,7 +604,7 @@ glosses below), not only the unit title.
 | `b2-18-vocab` | Rhetorical Reporting Verbs | `language` | to assert firmly, to; to maintain, to argu; to point out, to spe; to emphasize, to str; to verify, to establ |
 | `b2-19-vocab` | The Passive with 'Se' | `society-politics` | agreement; stipulation; to promulgate; to dispose; concordant |
 | `b2-20-vocab` | Analytical & Resultative Passives | `society-politics` | to erect; to draft; monument; international formal; syntactic patient re |
-| `b2-21-vocab` | Impersonality & Strategic Distance | `language` | speaker; community; background; anonymity; distancing |
+| `b2-21-vocab` | Impersonality & Strategic Distance | `language`, `society-politics` | speaker; community; background; anonymity; distancing |
 | `b2-22-vocab` | Verbs of Becoming & Transformation | `feelings-character` | to become (sudden, e; to end up, be left i; mutability; transitory; to blush |
 | `b2-24-vocab` | Durative & Progressive Periphrases | `ideas` | to have been doing (; trajectory; walk; continuity; uninterrupted |
 | `b2-25-vocab` | Terminative & Resultative Periphrases | `ideas` | cessation; interruption; relinquishment; resignation; detachment |
@@ -613,11 +613,11 @@ glosses below), not only the unit title.
 | `b2-28-vocab` | Discourse Markers I: Structuring & Sequencing | `language` | preamble; epilogue; succinct; to elucidate; to detail |
 | `b2-29-vocab` | Discourse Markers II: Reformulation & Precision | `language` | clarification; unequivocal; to reformulate; semantics; nuance |
 | `b2-30-vocab` | Discourse Markers III: Contrast & Restriction | `language` | antagonism; irreconcilable; to counterpose; discrepancy; paradox |
-| `b2-31-01-vocab` | Discourse Markers IV: Consequence & Causality | `language` | consequently; therefore; hence; corollary; aftermath |
-| `b2-31-02-vocab` | Discourse Markers IV: Consequence & Causality | `language` | so; so; so that; outcome; witty remark |
-| `b2-31-03-vocab` | Discourse Markers IV: Consequence & Causality | `language` | given that; seeing that; inasmuch as; since; ground |
-| `b2-31-04-vocab` | Discourse Markers IV: Consequence & Causality | `language` | so that; therefore; in consequence; syllogism; postulate |
-| `b2-31-05-vocab` | Discourse Markers IV: Consequence & Causality | `language` | well; the thing is that; pretext; motive; explanation |
+| `b2-31-01-vocab` | Discourse Markers IV: Consequence & Causality | `ideas` | consequently; therefore; hence; corollary; aftermath |
+| `b2-31-02-vocab` | Discourse Markers IV: Consequence & Causality | `ideas` | so; so; so that; outcome; witty remark |
+| `b2-31-03-vocab` | Discourse Markers IV: Consequence & Causality | `ideas` | given that; seeing that; inasmuch as; since; ground |
+| `b2-31-04-vocab` | Discourse Markers IV: Consequence & Causality | `ideas` | so that; therefore; in consequence; syllogism; postulate |
+| `b2-31-05-vocab` | Discourse Markers IV: Consequence & Causality | `ideas` | well; the thing is that; pretext; motive; explanation |
 | `b2-32-01-vocab` | Subordinación adverbial I: Concesivas avanzadas y modales | `feelings-character` | no matter how much (; however much (+ subj; tenacity; untamed; adversity |
 | `b2-32-02-vocab` | Subordinación adverbial I: Concesivas avanzadas y modales | `feelings-character` | even at the risk of ; even with the fact t; contingency; recklessness; eventful |
 | `b2-32-03-vocab` | Subordinación adverbial I: Concesivas avanzadas y modales | `feelings-character` | whatever it takes; come what may; whatever he/she does; resolve; firmness |
@@ -671,7 +671,7 @@ glosses below), not only the unit title.
 | `b2-puertorico-vocab` | Puerto Rico: Boricua Identity, Sovereignty & Cultural Defiance | `society-politics`, `history` | karst limestone hill; coqui (endemic Puert; bioluminescence; karst topography; sinkhole |
 | `b2-salvadorhonduras-vocab` | El Salvador & Honduras: Copán, Memory, Migration & Resilience | `history`, `society-politics` | stela, carved stone ; hieroglyphic stairwa; low relief, bas-reli; mangrove swamp; estuary |
 | `b2-unit01-vocab` | Nuance, Precision & Emphasis | `language` | nuance; emphasis; to highlight; precisely; to emphasize |
-| `b2-unit02-vocab` | Narrative Time & Aspect | `language` | tale, account, story; gloom, half-light; murmur, whisper; to shudder, to shake; to fade away, to van |
+| `b2-unit02-vocab` | Narrative Time & Aspect | `arts` | tale, account, story; gloom, half-light; murmur, whisper; to shudder, to shake; to fade away, to van |
 | `b2-unit03-vocab` | Hypothesizing & Probability | `ideas` | hypothesis; certainty; conjecture, guess; plausible; improbable, unbeliev |
 | `b2-unit04-vocab` | Influence, Will & Value Judgments | `ideas`, `society-politics` | to demand, to requir; requirement, formal ; to urge, to press; prerogative, privile; to comply with, to a |
 | `b2-unit05-vocab` | Doubt, Denial & Epistemic Stance | `ideas` | postulate, premise; to conceive, to imag; unlikely, implausibl; assertion, claim; to dissent, to disag |
